@@ -152,3 +152,39 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-23"
 cited_for = ["Section 3.0: low-order curve points"]
+
+[[source]]
+id = "DKS13"
+authors = "Carlos D’Andrea, Teresa Krick, Martín Sombra"
+title = "Heights of varieties in multiprojective spaces and arithmetic Nullstellensätze"
+year = 2013
+doi = "10.24033/asens.2196"
+arxiv = "1103.4561v2"
+locator_scheme = "theorem"
+locator = "Theorem 0.2 (arXiv numbering; Theorem 2 of the published version)"
+url = "https://arxiv.org/abs/1103.4561v2"
+fetched_from = "https://arxiv.org/pdf/1103.4561v2"
+fetched_at = "2026-11-15T20:31:43Z"
+sha256 = "17b312a97917369a3435c693c5994f2ff4281a452868fc89049570653d466726"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2 (2012) read; published in Ann. Sci. Éc. Norm. Supér. 46 (2013), 549–627, where arXiv Theorem 0.2 is Theorem 2; locators use the arXiv numbering"
+cited_for = ["3.0"]
+
+[[source]]
+id = "BS02"
+authors = "Frits Beukers, Chris J. Smyth"
+title = "Cyclotomic points on curves"
+year = 2002
+locator_scheme = "section"
+locator = "§4.1 Theorem, preprint p. 7; Remark 3, preprint p. 10"
+url = "https://webhomes.maths.ed.ac.uk/~chris/preprints/beukers_smyth.pdf"
+fetched_from = "https://webhomes.maths.ed.ac.uk/~chris/preprints/beukers_smyth.pdf"
+fetched_at = "2026-11-15T20:32:41Z"
+sha256 = "f08cc6a42f1922476d99782abcb43c49f6f37bcd11e224557fafbfd4e5b26d19"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "Author preprint on the second author's Edinburgh page; published in Number Theory for the Millennium I (A K Peters, 2002), 67–85; locators use the preprint pagination"
+cited_for = ["3.0"]
