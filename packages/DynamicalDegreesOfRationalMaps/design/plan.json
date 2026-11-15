@@ -404,6 +404,7 @@
       "roadmap:SchemeAndStackFoundations §5.1",
       "roadmap:SchemeAndStackFoundations §5.2",
       "roadmap:SchemeAndStackFoundations §5.3",
+      "roadmap:SchemeAndStackFoundations §5.10",
       "roadmap:StableReduction Layer 2"
      ],
      "api": [],
@@ -553,6 +554,8 @@
      },
      "prerequisites": [
       "roadmap:AlgebraicModuliForArithmeticGeometryPartII §0.1",
+      "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.2",
+      "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.4",
       "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.5",
       "roadmap:AlgebraicModuliForArithmeticGeometryPartII §1.7",
       "roadmap:ArakelovGeometryAndAbelianHeightsPartII §0.1",
@@ -1391,7 +1394,9 @@
       "mathlib:AlgebraicGeometry.Scheme.RationalMap.compHom",
       "mathlib:AlgebraicGeometry.IsFinite",
       "roadmap:SchemeAndStackFoundations §0.3",
-      "roadmap:StableReduction Layer 2"
+      "roadmap:StableReduction Layer 2",
+      "roadmap:ArithmeticDynamics §0.18",
+      "roadmap:ArithmeticDynamics §0.26"
      ],
      "api": [],
      "tests": [
@@ -1450,8 +1455,7 @@
       "target:6.1",
       "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
       "tauceti:AlgebraicGeometry.Scheme.IdealSheafData.IsEffectiveCartier",
-      "roadmap:ArithmeticDynamics §0.18",
-      "roadmap:ArithmeticDynamics §0.26"
+      "roadmap:ArithmeticDynamics §0.18"
      ],
      "api": [],
      "tests": [
@@ -1594,10 +1598,12 @@
    "sections": [
     "§0.1",
     "§1.1",
+    "§1.2",
+    "§1.4",
     "§1.5",
     "§1.7"
    ],
-   "what": "curve degree with the length-weighted component law; the real numerical space N^1(X/K) = Num(X/K) ⊗ R with its class map from Pic(X); nefness of line bundles and of classes of N^1(X/K) over a field and the nef cone Nef(X/K) (sums, positive scaling, pullback, base change along field extensions); Kleiman nonnegativity on integral closed subschemes, nef plus ample is ample, ample has positive degree on curves and mL + E is ample for ample L and large m, over every field"
+   "what": "curve degree with the length-weighted component law; the real numerical space N^1(X/K) = Num(X/K) ⊗ R with its class map from Pic(X); nefness of line bundles and of classes of N^1(X/K) over a field and the nef cone Nef(X/K) (sums, positive scaling, pullback, base change along field extensions); Kleiman nonnegativity on integral closed subschemes, nef plus ample is ample, ample has positive degree on curves and mL + E is ample for ample L and large m, over every field; the Checks of §1.2 and §1.4 (Picard number 3 and nef cone of positive semidefinite matrices for E × E, E without CM), in a Check of §3.1"
   },
   {
    "roadmap": "AlgebraicModuliForArithmeticGeometry",
@@ -1658,7 +1664,7 @@
     "§0.18",
     "§0.26"
    ],
-   "what": "rational self-maps of P^1 by binary forms and their scheme endomorphisms (Check of §6.2)"
+   "what": "rational self-maps of P^1 by binary forms and their scheme endomorphisms (Checks of §§6.1 and 6.2)"
   }
  ],
  "consumers": [
