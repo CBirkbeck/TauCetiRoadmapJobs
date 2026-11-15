@@ -51,3 +51,20 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-15"
 cited_for = ["7.6"]
+
+[[source]]
+id = "dJvdP96"
+authors = "A. J. de Jong, M. van der Put"
+title = "Étale cohomology of rigid analytic spaces"
+year = 1996
+doi = "10.4171/dm/1"
+locator_scheme = "theorem"
+locator = "Prop. 2.5.8"
+url = "https://ems.press/content/serial-article-files/25781?nt=1"
+fetched_from = "https://ems.press/content/serial-article-files/25781?nt=1"
+fetched_at = "2026-11-15T17:06:56Z"
+sha256 = "34a0f015eafeb3f418bca39378206aea0d1935acb2529ccc1d1913136a2217d4"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["6.36"]
