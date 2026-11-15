@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComputationalNumberTheory~7",
+  "head": "a901968a061eb6b10405ae04af8c2e1e5d0eaa3c",
+  "pr": 1408,
+  "folder": "ComputationalNumberTheory",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since be60f36; the folder is unchanged and the gate passes (all scanners 0, depcheck 0 problems on the moved order, build OK; Suggested.lean elaborates with 27 sorry warnings only). Checked the pull request's title and description against the head: two P3 findings, the summary block and the prose both claim Platt's finite-conductor theorems (and a Bennett-Siksek corollary) as this roadmap's, while README 120-123 hands them to ExplicitZetaBounds 0.3 and 0.4b and states none. Supplier citations resolved again at the open heads and on main; adversarial rows computed for the ExplicitZetaBounds contract, Rabin, complete-DVR Hensel and the multiplier criterion; the seeded sample lies in unchanged text and was not reopened.",
+  "text": "4af99e1cf07a5213",
+  "carried": {
+   "from": "a901968a061eb6b10405ae04af8c2e1e5d0eaa3c",
+   "head": "a901968a061eb6b10405ae04af8c2e1e5d0eaa3c",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
