@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ExplicitMultiplicativeFunctions~17",
+  "head": "1739d7fd33c60e8404b3bdd8338b224386daca8a",
+  "pr": 1946,
+  "folder": "ExplicitMultiplicativeFunctions",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 1739d7f; this round read the pull request's title and description against the head: one P3 (the sentence 'the library has the asymptotic forms but none with constants' is contradicted by README lines 364-366, 384 and 4122 and by TauCeti.sigma_le_rpow_mul_tsum at the pin); every other sentence of the summary block and the prose agrees with the head. Gate run on this head: passes; depcheck 0 problems; Suggested.lean elaborates with 16 sorry warnings only; nothing changed outside the folder. Adversarial rows computed: M(1078852)=350 > 349.9150, M(1078853)=349 <= 349.9153 (1.5 instance, threshold sharp); tau(12)=6 <= 236.87 and tau_3(12)=18 <= 389.64 (9.2); log 89693 = 11.404 >= 5 (9.3a). The previous report had no finding; no source locator re-checked (no changed passage).",
+  "text": "ece7c870dfa194fd",
+  "carried": {
+   "from": "1739d7fd33c60e8404b3bdd8338b224386daca8a",
+   "head": "1739d7fd33c60e8404b3bdd8338b224386daca8a",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
