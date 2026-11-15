@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompletedCohomologyPartII~5",
+  "head": "867beac48d01de05714777814604157eb8dbc921",
+  "pr": 1035,
+  "folder": "CompletedCohomologyPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 867beac. Checked: the pull request's title and description against the head (one P3: the Dependencies paragraph names only NoncommutativeAndEquivariantIwasawa by section and calls every other named roadmap a consumer, while the README cites ten further open suppliers by section); the gate (all counters 0, worker build=0); depcheck 245 roadmaps, 2243 edges, 0 problems; elaboration of Suggested.lean (sorry the only warning) and a #check probe of its 3 declarations; one fresh instance of completedHecke_decomposition (F_s = Z/6^s over Z/6). The seeded source sample was not re-read (no passage changed).",
+  "text": "4a85d7de0cf5cd0c",
+  "carried": {
+   "from": "867beac48d01de05714777814604157eb8dbc921",
+   "head": "e9263dc6f931b05714b5d4d81dc1e7fb368e751c",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "CompletedCohomologyPartII"
+   ]
+  }
+ }
+}
