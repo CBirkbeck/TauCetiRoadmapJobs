@@ -1434,7 +1434,7 @@
       {
        "name": "measurableSMul₂_relationalConfiguration",
        "role": "constructor",
-       "statement": "The logic action on RelationalConfiguration L ℕ (countable relational L) is a Borel S∞-space: it is continuous (CountableStructureSpaces continuousSMul_relationalConfiguration) and ContinuousSMul.measurableSMul₂ applies; its orbit relation is isoSetoid L ℕ (isoSetoid_eq_orbitRel)."
+       "statement": "The logic action on RelationalConfiguration L ℕ (countable relational L) is a Borel S∞-space: it is jointly continuous (CountableStructureSpaces Layer 1.2, the ContinuousSMul (Equiv.Perm ℕ) (RelationalConfiguration L ℕ) instance from continuous_uncurry_restrict and Equiv.Perm.continuous_inv_apply) and ContinuousSMul.measurableSMul₂ applies; its orbit relation is isoSetoid L ℕ (isoSetoid_eq_orbitRel)."
       },
       {
        "name": "measurableSMul₂_subtype",
@@ -1984,11 +1984,11 @@
      "id": "6.8",
      "kind": "theorem",
      "name": "not_borelComplete_of_rank_bounded",
-     "statement": "Let K ⊆ RelationalConfiguration L ℕ be measurable and ρ : RelationalConfiguration L ℕ → Ordinal.{0}. If for every α < ω₁ isomorphism restricted to K ∩ {ρ ≤ α} is measurable in the square, and every analytic subset of K has ρ bounded below ω₁, then ¬ BorelComplete K.",
+     "statement": "Let K ⊆ RelationalConfiguration L ℕ be measurable, ρ : RelationalConfiguration L ℕ → Ordinal.{0}, and K_α = K ∩ {c | ρ c ≤ α} (not necessarily measurable). If for every α < ω₁ the set of isomorphic pairs of K_α × K_α is measurable for the product of the subtype σ-algebras (classIso K_α has measurable graph), and every analytic subset of K has ρ bounded below ω₁, then ¬ BorelComplete K.",
      "hypotheses": [
       "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])",
       "MeasurableSet K",
-      "(a) Borel isomorphism on each stratum",
+      "(a) for every α < ω₁, classIso K_α has measurable graph in K_α × K_α for the product of the subtype σ-algebras",
       "(b) ρ bounded on analytic subsets of K"
      ],
      "locator": {
@@ -1998,14 +1998,21 @@
      "prerequisites": [
       "target:6.3",
       "target:2.5",
-      "mathlib:MeasurableSet.analyticSet_image"
+      "mathlib:MeasurableSet.analyticSet_image",
+      "target:0.1",
+      "mathlib:Measurable.subtype_mk"
      ],
      "api": [],
      "tests": [
       {
        "name": "rho_zero",
        "kind": "degenerate",
-       "statement": "ρ = 0 gives the contrapositive of 6.3."
+       "statement": "ρ = 0 gives K_α = K, (a) is the negation of the conclusion of 6.3 and the lemma is its contrapositive."
+      },
+      {
+       "name": "two_readings",
+       "kind": "non-example",
+       "statement": "For K = graphClass and ρ = 0 exactly on the image A of a non-measurable subset of Cantor space under an injective reduction of equality, K_0 = A and the diagonal of A is measurable in A × A for the subtype σ-algebras but not in the ambient square."
       },
       {
        "name": "unary",
@@ -2074,7 +2081,7 @@
     "§6.2",
     "Worked example 2"
    ],
-   "what": "the targets the pinned Tau Ceti does not implement: closedness of the simple-graph codes, continuousSMul_relationalConfiguration, analytic_treeHeight_bounded, measurableSet_iso_inter_of_scottHeight_le, exists_uniform_bfSeparation, lopez_escobar, wellOrderClass with exists_mem_wellOrderClass_type_eq, analyticSet_compl_wellOrderClass and not_measurableSet_wellOrderClass, and the one-unary-predicate worked example"
+   "what": "the targets the pinned Tau Ceti does not implement: closedness of the simple-graph codes, joint continuity of the logic action (the ContinuousSMul instance from continuous_uncurry_restrict and Equiv.Perm.continuous_inv_apply), analytic_treeHeight_bounded, measurableSet_iso_inter_of_scottHeight_le, exists_uniform_bfSeparation, lopez_escobar, wellOrderClass with exists_mem_wellOrderClass_type_eq, analyticSet_compl_wellOrderClass and not_measurableSet_wellOrderClass, and the one-unary-predicate worked example"
   },
   {
    "roadmap": "NoncompactQuantumSymmetry",

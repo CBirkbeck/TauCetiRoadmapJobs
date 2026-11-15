@@ -112,9 +112,9 @@ Layer 5 and Layer 6.4; nothing below depends on them.
    continuous, even on `treeClass`, and is stated as Borel only. Outside Layers 2 and 3,
    continuity is claimed only where a section proves it (Layers 1.3, 4.2 step 3 and 6.3).
 4. **The logic action.** Tau Ceti's relabelling action, `σ • c = c.restrict σ⁻¹`
-   (`perm_smul_def`), so `(σ • c).eval (atom R v) = c.eval (atom R (σ⁻¹ ∘ v))` (`eval_perm_smul`;
-   base Layer 1.2 `eval_smul_atom`). Witness: in the language of one unary predicate, the 3-cycle
-   `0 ↦ 1 ↦ 2 ↦ 0` sends the code of `P = {0}` to the code of `P = {1}` (base Layer 1.2 acceptance
+   (`perm_smul_def`), so `(σ • c).eval (atom R v) = c.eval (atom R (σ⁻¹ ∘ v))` (`eval_perm_smul`,
+   as in base Layer 1.2). Witness: in the language of one unary predicate, the 3-cycle
+   `0 ↦ 1 ↦ 2 ↦ 0` sends the code of `P = {0}` to the code of `P = {1}` (base Layer 1 acceptance
    check); every equivariance computation below is checked against this convention.
 5. **S∞ as a Borel space.** `Equiv.Perm ℕ` carries Tau Ceti's topology
    `Equiv.Perm.instTopologicalSpace` and the Borel σ-algebra of that topology (Layer 4.1). A
@@ -268,12 +268,16 @@ The targets of the base that the pin does not implement, by the base's names and
 
 - Layer 0: closedness of `{c | IsSimpleGraph c}`, the range of the graph coding (Checks of 1.2 and
   2.3).
-- Layer 1.2: `continuousSMul_relationalConfiguration`, joint continuity of the logic action for
-  every language.
+- Layer 1.2: joint continuity of the logic action for every language and every discrete carrier
+  `α`, the `ContinuousSMul (Equiv.Perm α) (RelationalConfiguration L α)` instance, obtained from
+  Tau Ceti `continuous_uncurry_restrict` composed with `Equiv.Perm.continuous_inv_apply`; the pin
+  states the two ingredients and not the instance.
 - Layer 3: `analytic_treeHeight_bounded` (an analytic family of well-founded trees with closed node
   sets has heights bounded below `ω₁`), used in a Check of Layer 6.4.
 - Layer 4.3: `measurableSet_iso_inter_of_scottHeight_le` (Scott height bounded by `β < ω₁` on
-  `modelsOf φ` makes isomorphism restricted to `modelsOf φ` Borel in the square).
+  `modelsOf φ` makes the set of isomorphic pairs in `modelsOf φ ×ˢ modelsOf φ` measurable in the
+  ambient square; `modelsOf φ` being measurable, this is the same as measurability for the product
+  of the subtype σ-algebras).
 - Layer 4.4: `exists_uniform_bfSeparation` (an analytic set of non-isomorphic pairs of codes is
   separated at one level `β < ω₁`).
 - Layer 5: `lopez_escobar` (an invariant Borel class of codes is `modelsOf φ` for a sentence `φ`).
@@ -561,7 +565,8 @@ graph symbol `GraphRelation.graph f` of a `k`-ary `f` and a tuple `w : Fin (k + 
 `model_graphAxioms_iff`, `reconstructStructure`, `reconstructStructure_graphExpansion`,
 `RelationalConfiguration`, `ofStructure`, `continuous_iff`, `isoSetoid`, the Polish instances of
 the coding space and `LEquiv.onConfiguration`; Layer 1.2; CountableStructureSpaces Layer 1.2
-(`continuousSMul_relationalConfiguration`).
+(joint continuity of the logic action, the `ContinuousSMul` instance from
+`continuous_uncurry_restrict` and `Equiv.Perm.continuous_inv_apply`).
 
 **Checks.**
 
@@ -939,7 +944,8 @@ Put on `Equiv.Perm ℕ` the Borel σ-algebra `borel` of Tau Ceti's topology
 (becker-kechris-bams lines 126–131). API:
 
 - The logic action on `RelationalConfiguration L ℕ` (countable relational `L`) is a Borel
-  S∞-space: it is continuous (base `continuousSMul_relationalConfiguration`), both spaces are
+  S∞-space: it is jointly continuous (base Layer 1.2, the instance
+  `ContinuousSMul (Equiv.Perm ℕ) (RelationalConfiguration L ℕ)`), both spaces are
   second countable and the coding space carries its Borel σ-algebra (Tau Ceti's `BorelSpace`
   instance), so `ContinuousSMul.measurableSMul₂` applies. Its orbit relation is `isoSetoid L ℕ`
   (`isoSetoid_eq_orbitRel`).
@@ -950,7 +956,8 @@ Put on `Equiv.Perm ℕ` the Borel σ-algebra `borel` of Tau Ceti's topology
 
 *Needs:* Tau Ceti `Equiv.Perm.instTopologicalSpace`, `Equiv.Perm.instPolishSpace`, the Polish and
 Borel instances of the coding space and `isoSetoid_eq_orbitRel`; CountableStructureSpaces
-Layer 1.2 (`continuousSMul_relationalConfiguration`); Mathlib `MeasurableSMul₂`,
+Layer 1.2 (joint continuity of the logic action, from Tau Ceti `continuous_uncurry_restrict` and
+`Equiv.Perm.continuous_inv_apply`); Mathlib `MeasurableSMul₂`,
 `ContinuousSMul.measurableSMul₂`, `MeasurableSet.image_of_measurable_injOn`.
 
 **Checks.**
@@ -1137,7 +1144,9 @@ moved to the codes by `FirstOrder.Language.Equiv.bfEquiv` and `BFEquiv.trans`, a
 
 - Unbounded Scott height: for every `β < ω₁` some code in `K` has `scottHeight` greater than `β`;
   otherwise `lopez_escobar` writes `K = modelsOf φ` and `measurableSet_iso_inter_of_scottHeight_le`
-  makes isomorphism on `K` Borel.
+  makes the isomorphic pairs of `K ×ˢ K` measurable in the ambient square, hence, pulled back along
+  the measurable inclusion of `K × K`, for the product of the subtype σ-algebras, against the
+  theorem.
 - `classIso K` is Borel reducible to no equivalence relation with Borel graph on a measurable
   space, since Borelness pulls back along reductions (`BorelReducible.measurableSet_setOf`); in
   particular not to `eZero` (`measurableSet_eZero`).
@@ -1196,18 +1205,33 @@ and `not_isSmooth_of_borelComplete`: `¬ Setoid.IsSmooth (classIso K)`
 ### 6.4 The Friedman–Stanley obstruction
 
 Prove `not_borelComplete_of_rank_bounded`: let `K ⊆ RelationalConfiguration L ℕ` be Borel and
-`ρ : RelationalConfiguration L ℕ → Ordinal.{0}`; assume (a) for every `α < ω₁`, isomorphism
-restricted to `K ∩ {c | ρ c ≤ α}` is measurable as a subset of the square; (b) every analytic subset
-of `K` has `ρ` bounded by some `α < ω₁`. Then `¬ BorelComplete K` (friedman-stanley-1989 §4;
+`ρ : RelationalConfiguration L ℕ → Ordinal.{0}`, and write `K_α = K ∩ {c | ρ c ≤ α}` (a set that
+need not be measurable, `ρ` being arbitrary); assume (a) for every `α < ω₁`, the set of pairs of
+`K_α × K_α` with isomorphic entries is measurable for the product of the subtype σ-algebras, that
+is, `classIso K_α` has measurable graph; (b) every analytic subset of `K` has `ρ` bounded by some
+`α < ω₁`. Then `¬ BorelComplete K` (friedman-stanley-1989 §4;
 hjorth-kechris-1996 §4–§5). Proof: a reduction `f` of `classIso graphClass` to `classIso K` has
 analytic image (`MeasurableSet.analyticSet_image`, `graphClass` being standard Borel), contained in
-some `{ρ ≤ α}` by (b); then isomorphism on `graphClass` is the preimage of a measurable set by (a),
-against 6.2. *Needs:* 6.2, Layer 2.3; Mathlib `MeasurableSet.analyticSet_image`.
+some `K_α` by (b); `f` corestricts to a measurable map `f' : graphClass → K_α`
+(`Measurable.subtype_mk`), the graph of `classIso graphClass` is the preimage of the graph of
+`classIso K_α` under `f' × f'`, and so it is measurable by (a), against 6.2. Read in the ambient
+square instead, (a) would be a stronger hypothesis whenever `K_α` is not measurable, and the proof
+does not use it. *Needs:* 6.2, Layer 2.3, Layer 0.1; Mathlib `MeasurableSet.analyticSet_image`,
+`Measurable.subtype_mk`.
 
 **Checks.**
 
-- With `ρ = 0`, hypothesis (a) says isomorphism on `K` is Borel, and the lemma is the
-  contrapositive of 6.2.
+- With `ρ = 0`, `K_α = K` for every `α`, hypothesis (a) says that `classIso K` has measurable
+  graph in `K × K` for the product of the subtype σ-algebras, which is the negation of the
+  conclusion of 6.2, (b) holds with `α = 0`, and the lemma is the contrapositive of 6.2.
+- The two readings of (a) differ. A Borel reduction `g` of equality on Cantor space to
+  `classIso graphClass` (6.3, `graphClass` being Borel complete by Layer 2) is injective, so for
+  a non-measurable subset `B` of Cantor space the set `A = g '' B ⊆ graphClass` is not measurable
+  (`g ⁻¹' A = B`) and its codes are pairwise non-isomorphic. With `K = graphClass` and `ρ` equal
+  to `0` on `A` and `1` elsewhere, `K_0 = A`, and the isomorphic pairs of `A × A` form the
+  diagonal of `A`: measurable in `A × A` for the product of the subtype σ-algebras (the preimage
+  of the closed diagonal of the coding space) and not measurable in the ambient square (its
+  preimage under `c ↦ (c, c)` is `A`).
 - For the codes of one unary predicate and `ρ = 0`, (a) and (b) hold and the conclusion is the
   Check of 1.2.
 - For `K = graphClass` no `ρ` satisfies both hypotheses; when `ρ` restricted to `K` is the height
