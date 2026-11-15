@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ExplicitZetaBounds~16",
+  "head": "cea8938cac2970a5b8c484d6dd415861e0c261e7",
+  "pr": 1954,
+  "folder": "ExplicitZetaBounds",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since cea8938; this round checked the pull request's title and description against the head: two P3 findings, both in the description's prose (\"Each bound is proved once for a general record\" and \"single owner of those bounds\" are contradicted by README 3.2, 5.1 and 'Not owned here'); no change to the folder is requested. Gate run here: all checks 0, OK (worker's gate records build=0); depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean exits 0 with 43 sorry warnings only; nothing changed outside the folder; the two Lean-name leads resolve at the open head of SieveMethodsAndPrimePatterns; one adversarial row recomputed (3.2 at riemannZetaData); seeded sample not re-read since no passage changed.",
+  "text": "88cb4a344bd7b128",
+  "carried": {
+   "from": "cea8938cac2970a5b8c484d6dd415861e0c261e7",
+   "head": "24991b28994c7ca747f32a811b068781e9e183ae",
+   "findings": 2,
+   "lines": 12,
+   "folders": [
+    "ExplicitZetaBounds"
+   ]
+  }
+ }
+}
