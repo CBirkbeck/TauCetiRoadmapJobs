@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GaugeQuiltFieldTheory~6",
+  "head": "df970ca20d6d68395c8fbc264f4ef35c88cdb4a3",
+  "pr": 1076,
+  "folder": "GaugeQuiltFieldTheory",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since df970ca; the rewritten title and description were read sentence by sentence against the head (step 8) and stand; previous R01 and R02 (description) repaired. Seeded sample (Rank two, odd degree; InstantonFloerTheory) checked against dfl-atiyah-floer Remark 2.2, eq. (2.5), Lemma 2.43 and InstantonFloerTheory IF9 at its open head. Gate rerun: all checks 0, OK (worker build=0); elaboration: three sorry warnings only; depcheck 0 problems; adversarial table with computed values in the report.",
+  "text": "9703b7b88160e5ae"
+ }
+}
