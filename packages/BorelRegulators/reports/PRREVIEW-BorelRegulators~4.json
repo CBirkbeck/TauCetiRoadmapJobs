@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BorelRegulators~4",
+  "head": "c564441e8b2ece794039faa3e718e222e06ad01d",
+  "pr": 1461,
+  "folder": "BorelRegulators",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since c564441; this round checked the pull request's title and description against the head: every sentence of the summary block and prose agrees with README sections 1.3, 2.2-2.3, 3.1-3.2, 5.1-5.5, 6.0a-6.2, Scope and Downstream consumers; the pull request adds the folder (3 files, 978 insertions, 4 Lean theorems), nothing removed or renumbered; supplier list matches the depends-on block (10 open, 2 merged, the rest on main). Gate rerun: all scanners 0, depcheck 0 (244 roadmaps, 2231 edges, 0 problems), outside-folder 0; worker build=0; lake env lean on Suggested.lean: four sorry warnings only. Adversarial rows computed for the statements the description cites (zeta covolume at Q n=2,3 and Q(i) n=2; determinant ratio (-2)^d; degree a>=1; rank-zero values). Previous R01 (borel1980 manifest entry) remains outside the pull request, settled, passed to the human reviewers. No seeded-sample passage changed.",
+  "text": "50959dbda7aab230"
+ }
+}
