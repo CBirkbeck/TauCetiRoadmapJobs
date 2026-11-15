@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LorentzianGeometry~7",
+  "head": "fc070ae89fe81d601d3161f4dbf5c5ca11a67503",
+  "pr": 2232,
+  "folder": "LorentzianGeometry",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since fc070ae. The previous finding R01 (description omitted the eighth sorry theorem) is repaired in the description. Title and description read sentence by sentence against the head: 48 targets, nine suppliers, the seven headline theorems, the auxiliary theorem and the four not-statable groups all match; no sentence contradicted. Adversarial rows computed for section 6.2 (b) with two negative controls, the section 8.1 setoid and the Hawking bound on the Milne region. Gate OK at this head (worker's run); depcheck rerun: 245 roadmaps, 2234 edges, 0 problems; elaboration: 0 errors, 8 sorry warnings. RelativisticQuantumFieldTheory section 1.1 resolved at its open head. Seeded sample: no changed passage, 0 locators re-read; source independence: changed passages only. Not verifiable: the description's 'Annals definitions 50 and 51' and the uncertified oneill1983 Theorem 14.55A.",
+  "text": "f659651d97f60c58"
+ }
+}
