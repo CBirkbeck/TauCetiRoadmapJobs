@@ -52,7 +52,7 @@ sha256 = "8a0aca35f1817d60967c48a7e0070d20973b5b057d2dde945780e70ca4a09678"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["Exact supplier contracts: gap auxiliary-character-finite-avoidance", "11.5"]
+cited_for = ["Exact supplier contracts: gap auxiliary-character-finite-avoidance", "10.2"]
 
 [[source]]
 id = "Shin09"
