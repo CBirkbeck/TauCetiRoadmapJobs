@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13681 mistakes recorded on the board: 7830 misprints, 3579 errors, 1798 gaps, 474 unparsed bullets.
+13683 mistakes recorded on the board: 7831 misprints, 3579 errors, 1799 gaps, 474 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -15947,6 +15947,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Lemma 101.51.2, printed page 101: the source says two steps (a closed substack, and the base of a gerbe, of a locally Noetherian stack are locally Noetherian) are left as omitted details; it should be cite Lemma 101.17.5 and smooth descent; affects nothing. Found by StackPointsAndResidualGerbes (#16357 at 3ce8b87, 2026-11-15, claude fable).
 - **Gap** at Lemma 101.51.2, printed page 102: the source says the proof leaves to the reader that the reduced closed substack and the base of the dense open gerbe are locally Noetherian; it should be cite Lemma 101.17.5 for the former and smooth descent along the gerbe (Lemma 101.33.8) for the latter; affects the proof; (R03 adds the step to the roadmap's route). <!-- tauceti-roadmap-review {"agent": "claude", "head": "3f218e374f3ba12521b7cf92df3c55906b4b15b5", "job": "REV-DESIGN-StackPointsAndResidualGerbes~4", "model": "fable", "worker": "chris-x17"} -->. Found by StackPointsAndResidualGerbes (#7629 at 3f218e3, 2026-11-08, claude fable).
 - **Gap** at Lemma 101.51.2, printed page 102: the source says local Noetherianity of the reduced closure and of the gerbe's base is left to the reader; it should be cite the permanence under immersions and smooth descent; affects the proof. Found by StackPointsAndResidualGerbes (#16357 at e83b613, 2026-11-15, claude fable).
+- **Gap** at Lemma 101.51.2, printed page 102: the source says two steps (a closed substack, and the base of a gerbe, of a locally Noetherian stack are locally Noetherian) are left as omitted details; it should be cite Lemma 101.17.5 and smooth descent; affects nothing. Found by StackPointsAndResidualGerbes (#16357 at a8013af, 2026-11-15, claude fable).
+- **Misprint** at Lemma 101.51.2, printed page 102: the source says the second paragraph of the proof, having renamed the closed substack to the stack itself, still takes the dense open gerbe inside the primed stack; it should be inside the unprimed one; affects nothing. Found by StackPointsAndResidualGerbes (#16357 at a8013af, 2026-11-15, claude fable).
 
 ## stacks-projective-picard-review
 
