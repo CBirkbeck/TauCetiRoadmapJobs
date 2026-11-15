@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AnalyticToricGeometryPartII~2",
+  "head": "13894ce4699ad705f731457c86701ff076be5c20",
+  "pr": 1647,
+  "folder": "AnalyticToricGeometryPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 48 changed lines since 4c15f2e. Previous R01 (supplier section numbers) and R02 (WeilConjectures overlap) are repaired; the changed locators were resolved at the open heads of ShimuraCompactifications and WeilConjectures; four adversarial rows computed for the statements the changed text cites (P1, P(1,1,2), properness, regular charts). Gate rerun: all counters 0; depcheck 0 problems; Suggested.lean elaborates with no warning and has zero declarations. Title and description checked against the head: one P3 finding, the description says the Lean states definitions and theorems and builds with sorry warnings, while the file declares nothing.",
+  "text": "3979288a201754f3",
+  "carried": {
+   "from": "13894ce4699ad705f731457c86701ff076be5c20",
+   "head": "de81660ff4435929c12c2b5ed47924e470c3abc0",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
