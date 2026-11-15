@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassicalSerreModularity~5",
+  "head": "e8c52645f18670f203b0536f49645abd6f19936f",
+  "pr": 1020,
+  "folder": "ClassicalSerreModularity",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since bacf7a7. Previous R01 (BLGGT Theorem 5.5.2 parenthesis, README 1263) repaired; the new sentence checked against the arXiv v4 text (Theorem 5.5.2 at p. 81: CM field, polarizable cuspidal, extremely regular weight, density-one set of primes; definition of extreme regularity at p. 32) and against the rank-two computation (every rank-two weight is extremely regular, so the every-prime statement is strictly stronger and is proved by the target's own route). Title and description read against this head and the folder's change: no sentence contradicted, nothing removed or left unstated; the 30 roadmap names of the README split into 20 open suppliers (all in the depends-on block, all earlier in the merge order), 5 on main and 5 later consumers. Citation leads R15.3 and R15.4 resolve through the supplier's identifier mapping. Gate rerun: all counters zero, OK; depcheck 245 roadmaps, 2251 edges, 0 problems; Suggested.lean elaborates with five sorry warnings only. Overlap check against the five closest roadmaps: nothing shared. Source independence: changed passages only, 1 passage against 1 source, none shared.",
+  "text": "ee910f393245c615"
+ }
+}
