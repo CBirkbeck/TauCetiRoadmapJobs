@@ -38,7 +38,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1; research announcement with proof sketches only, the full proofs are in becker-kechris-1996"
-cited_for = ["1.1", "4.1", "4.2", "4.3", "4.4", "4.5"]
+cited_for = ["1.1", "4.1", "4.2", "4.3", "4.4", "4.5", "Conventions: the logic action"]
 
 [[source]]
 id = "camerlo-gao-boolean"
@@ -67,12 +67,12 @@ year = 1995
 venue = "Graduate Texts in Mathematics 156, Springer"
 doi = "10.1007/978-1-4612-4190-4"
 locator_scheme = "section"
-locator = "§9.B (S_inf as a Polish group), §16.C (spaces of structures, the logic action), §26.C and §27 (complete analytic sets; isomorphism of countable structures), §27.D"
+locator = "§16.C (spaces of countable structures and the logic action of S_inf)"
 url = "https://doi.org/10.1007/978-1-4612-4190-4"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["background: spaces of structures and the logic action (§16.C)"]
+cited_for = ["Conventions: the logic action"]
 
 [[source]]
 id = "friedman-stanley-1989"
@@ -118,21 +118,6 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text; the announcement becker-kechris-bams is the open statement of the same results"
 cited_for = ["4.5", "5.4"]
-
-[[source]]
-id = "hjorth-2000"
-authors = "Greg Hjorth"
-title = "Classification and Orbit Equivalence Relations"
-year = 2000
-venue = "Mathematical Surveys and Monographs 75, American Mathematical Society"
-doi = "10.1090/surv/075"
-locator_scheme = "chapter"
-locator = "Chapter 1 (Borel reducibility, classification by countable structures)"
-url = "https://doi.org/10.1090/surv/075"
-licence_class = "none"
-status = "uncertified"
-version_note = "paywalled; cited by its locator without the text"
-cited_for = ["background: orbit equivalence relations and classification by countable structures (Chapter 1)"]
 
 [[source]]
 id = "hjorth-kechris-1996"

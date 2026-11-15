@@ -115,7 +115,9 @@ Layer 5 and Layer 6.4; nothing below depends on them.
    continuity is claimed only where a section proves it (Layers 1.3, 4.2 step 3 and 6.3).
 4. **The logic action.** Tau Ceti's relabelling action, `σ • c = c.restrict σ⁻¹`
    (`perm_smul_def`), so `(σ • c).eval (atom R v) = c.eval (atom R (σ⁻¹ ∘ v))` (`eval_perm_smul`,
-   as in base Layer 1.2). Witness: in the language of one unary predicate, the 3-cycle
+   as in base Layer 1.2). This is the logic action of S∞ on the space of countable structures
+   (kechris-cdst §16.C; becker-kechris-bams lines 159–164, where `g · x` reads `x` at the image of
+   each tuple under `g⁻¹`). Witness: in the language of one unary predicate, the 3-cycle
    `0 ↦ 1 ↦ 2 ↦ 0` sends the code of `P = {0}` to the code of `P = {1}` (base Layer 1 acceptance
    check); every equivariance computation below is checked against this convention.
 5. **S∞ as a Borel space.** `Equiv.Perm ℕ` carries Tau Ceti's topology
@@ -1331,7 +1333,6 @@ reducibility, smoothness, E₀, Scott height); CountableStructureSpaces Layers 3
 - becker-kechris-1996: H. Becker and A. S. Kechris, *The Descriptive Set Theory of Polish Group
   Actions*, LMS Lecture Notes 232, 1996.
 - kechris-cdst: A. S. Kechris, *Classical Descriptive Set Theory*, GTM 156, 1995.
-- hjorth-2000: G. Hjorth, *Classification and Orbit Equivalence Relations*, AMS, 2000.
 - hjorth-kechris-1996: G. Hjorth and A. S. Kechris, *Borel equivalence relations and
   classifications of countable models*, Ann. Pure Appl. Logic 82 (1996).
 - mekler-1981: A. H. Mekler, *Stability of nilpotent groups of class 2 and prime exponent*,
