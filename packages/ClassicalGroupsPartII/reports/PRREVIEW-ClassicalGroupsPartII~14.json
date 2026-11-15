@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassicalGroupsPartII~14",
+  "head": "a8badcd06b16a3a125b84a9a0b00ce9eae81eef3",
+  "pr": 1492,
+  "folder": "ClassicalGroupsPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Incremental re-review of 0 changed lines since a8badcd. The previous review raised no finding. The title, summary block and prose were checked against the head. One P3: the description still lists the ClassicalGroups revision #1192 as an open supplier, but it merged into main as 848b62d0 and ClassicalGroups on main is byte-identical to its head 47ca68e. All cited ClassicalGroups and ReductiveGroups anchors were re-resolved on main 8ad4192; #856 and #966 are still open at unchanged heads. Gate OK (every counter 0). Depcheck: 246 roadmaps, 0 problems. lake env lean on Suggested.lean exits 0 with only sorry warnings. Adversarial rows for the three headlines, §3A.3 and the CG.2.5 Check were recomputed with an exact script for g=0..3. The seeded sample falls on no changed passage.",
+  "text": "e27937e475780f35",
+  "carried": {
+   "from": "a8badcd06b16a3a125b84a9a0b00ce9eae81eef3",
+   "head": "a8badcd06b16a3a125b84a9a0b00ce9eae81eef3",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
