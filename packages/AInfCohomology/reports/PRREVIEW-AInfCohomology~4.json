@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AInfCohomology~4",
+  "head": "99b809b0abc5704edda17ce7c160c99cb01d0a96",
+  "pr": 1044,
+  "folder": "AInfCohomology",
+  "date": "2026-11-15",
+  "findings": 7,
+  "blocking": 2,
+  "notes": "Full review. All seven findings of the previous review are repaired. Seeded sample of 15 targets and the headline theorems checked against the arXiv texts of BMS1 (v3), Cesnavicius-Koshikawa (v3), BMS2 (v2) and Scholze 2013 (v2): 41 locators. Adversarial table of 30 rows with computed values. Gate passes every check; lake env lean on Suggested.lean gives six sorry warnings only; one-tactic probe closes none; depcheck 0 problems (no UPWARD or CYCLE). Findings: R01 (P2) the proper torsion end theorem of AI.5.2 has no statement; R02 (P2) proof plans at README lines 2951 and 2965 follow CK section 4 clause by clause; R03-R07 (P3) undefined labels (aomega and others), a PerfectoidSpaces title that does not exist, works missing from the References, missing layer comments in Suggested.lean, two slips (f(E), Theorem 14.3(i)). Not verifiable: Publ. IHES page numbers, Kato, Fujiwara-Kato, EGA, Stacks tags, Lodh, Zavyalov, Nikolaus-Scholze.",
+  "text": "6b61e2ab84c63fc2"
+ }
+}
