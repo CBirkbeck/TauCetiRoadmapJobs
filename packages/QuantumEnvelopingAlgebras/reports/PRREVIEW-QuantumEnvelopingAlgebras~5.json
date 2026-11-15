@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuantumEnvelopingAlgebras~5",
+  "head": "4f34e39af88abedc03d007d3e3f78f68de01b400",
+  "pr": 2363,
+  "folder": "QuantumEnvelopingAlgebras",
+  "date": "2026-11-15",
+  "findings": 14,
+  "blocking": 5,
+  "notes": "Full review. Gate at this head fails (statement-hygiene=1, readme-ids-missing=2; all other checks 0); depcheck 0 problems; Suggested.lean elaborates with 22 sorry warnings only; one-tactic probe closes none of the 22. Seeded sample of 15 targets checked: 47 locators read in 8 cached sources (Tanisaki2016 fetched from arXiv; Lusztig1993, Lusztig1990, Kassel1995 uncertified). P1: the Serre presentation over every (k, q) in 1.3a rests on an unsourced step equivalent to the theorem (exact computation in characteristic 2, 3, 5 found no counterexample). P2: pinned Tau Ceti already has quantum integers, quantum binomials and UqSl2 (false library claim, duplicated qInt); the rank-one comparison is statable and absent; the bicharacter-braided ambient is owned by HopfologicalAlgebra 7.3 and not cited; freeness of f_A over Z[v, v^-1] has no owner and is not needed. P3: the two gate failures, the QuantumPlaneLattice padding, Lean form, the q = 0 case of 0.2, two findings of the previous review not repaired, the description, the Summary. The sources service added a Tanisaki2016 entry to the board manifest when fetching.",
+  "text": "be1b2af5a8fb7315"
+ }
+}
