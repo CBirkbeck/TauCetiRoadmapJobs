@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StratifiedSpacesAndTameTopology~19",
+  "head": "bd1eb6b7789fb53d1a9631b5f9211149f3521ccf",
+  "pr": 1519,
+  "folder": "StratifiedSpacesAndTameTopology",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 1b76d50. The folder is byte-identical, there are no changes outside it, and the pins are unchanged. The pull request title and description were checked against the head: two P3 findings. The description's supplier list names ShimuraVarieties §3.5a, which the head does not consume (R01), and lists the triangulation theorems of RealAnalyticGeometry R2.1 and AffineMorseLefschetz A4.1 as consumed, while the head takes only R2.1's comparison with the realization carrier and nothing from A4.1 (R02). Gate with --build and the candidate order: all checks 0, build=0, OK. With the public order the only failure is depcheck NOT IN ORDER, which the brief says is not a defect. Dependency check: 245 roadmaps, 2234 edges, 0 problems. lake env lean exits 0 with four sorry warnings only. Supplier citations resolved at the ShimuraVarieties and AlgebraicTopologyPartII heads and on main. Overlap check over 8 closest roadmaps: one owner per object. Untouched-text remarks: Tau Ceti's ModelWithCorners.AbstractBoundary exists at the pin; MixedHodgeModulesAndIrregularHodgeTheory now cites §§7.2-7.3.",
+  "text": "91c3871af0246b94"
+ }
+}
