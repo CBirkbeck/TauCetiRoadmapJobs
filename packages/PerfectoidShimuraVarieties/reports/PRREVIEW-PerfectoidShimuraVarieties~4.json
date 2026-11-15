@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PerfectoidShimuraVarieties~4",
+  "head": "884245255f5a14c8ea53ff06b2380bd027be4fef",
+  "pr": 1085,
+  "folder": "PerfectoidShimuraVarieties",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 5 changed lines since e6686d6. Both previous findings (R01 stale docstring sentence, R02 description written for an earlier head) are repaired. Checked: the README's new baseline revisions equal the lake-manifest pins; all 22 mathlib:/tauceti: supplier declarations exist in their named modules at the new pins; the docstring's not-statable claim against both pins; the pull request's title and description against the head (no contradiction, nothing unstated; no change outside the folder). Gate passes every check (rerun, same result); depcheck 246 roadmaps, 0 problems; lake env lean on Suggested.lean exits 0 with no output (no declaration). No seeded sample target lies in a changed passage. Not verifiable: Faltings-Chai V Thm 2.5 (no open copy).",
+  "text": "dfb8e6665a646294"
+ }
+}
