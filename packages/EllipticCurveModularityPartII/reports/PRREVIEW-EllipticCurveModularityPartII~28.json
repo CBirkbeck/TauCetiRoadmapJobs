@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularityPartII~28",
+  "head": "99111f0b0692e5912c83dfb6e2d5104f305fa97b",
+  "pr": 1491,
+  "folder": "EllipticCurveModularityPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 149 changed lines since cd7c37d. Previous R01-R03 all repaired (EC.6 locators; deletionLevel owned in 2.2 and listed under EC.1; description settles EllipticModularityEffectiveComparisons, #1810 no longer open). Changed passages checked: sharpF/sharpG/sharpH (values at N=0,1,4,11,15,35,47 against Kraus1997 eqs (7)-(9)), 2.2 M0>=1 (pins opened), new 3.4 deletion_level_realization and 5.6 deletion_level_full_two_realization (routes checked step by step against Kraus Lemma 1/Thms 3-4 and BS2020 Thm 3, Lemmas 2.1-2.2, Thm 4; Checks recomputed on 11a1, 26b1, 141a1, 15a1), 4.8 level comparison, 6.0f Cartier import from GroupSchemesOverABase 4.5 (smooth_of_charZero resolved at its open head, no affineness). Seeded targets in changed passages: 1.6, 1.8, 3.4. Gate rerun OK, all counters 0 (worker build=0); depcheck 245 roadmaps, 0 problems; lake env lean: 17 sorry warnings only; signatures of the 5 new declarations match the README; one-tactic probe closes neither new theorem. Accepted conditional on the declared gap gap:mixed-modular-jacobians (ModularCurvesPartII).",
+  "text": "17c01699ec33ddd4"
+ }
+}
