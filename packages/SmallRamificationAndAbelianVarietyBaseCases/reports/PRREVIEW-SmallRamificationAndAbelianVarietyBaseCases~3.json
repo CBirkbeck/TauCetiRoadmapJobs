@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SmallRamificationAndAbelianVarietyBaseCases~3",
+  "head": "92d13bb52f6fec1c2e3d98a6c1e0430121613ba7",
+  "pr": 970,
+  "folder": "SmallRamificationAndAbelianVarietyBaseCases",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 54 changed lines since b7abeaa. Both findings of the previous report are repaired (Dedekind-zeta input now cited to LFunctions Layer 3, on main; the bare Lean-style identifiers are gone from the prose). Two P3 findings: the worker's gate fails at this head on one statement-hygiene hit ([Fintype F] beside [Field F], Suggested.lean line 125; the [Finite F] repair was elaborated on a scratch copy), and the pull request's summary states Fontaine's theorem over Q only while the head states it over four fields. Checked: the changed passages of sections 1.0, 3.3, 5.0c, 5.0d, 5.1 and 5.3 (the seeded targets 3.3, 5.0, 5.1, 5.3 fall in them); the reworded 5.3 paragraphs against Snowden, Proposition 9.4.1 and its proof; the cited supplier sections at main and at the open heads; the dependency check (0 problems); lake env lean on Suggested.lean (13 sorry warnings, nothing else); the title and description sentence by sentence against the head.",
+  "text": "e5f69ff58f0ccaee",
+  "carried": {
+   "from": "92d13bb52f6fec1c2e3d98a6c1e0430121613ba7",
+   "head": "62c25a3c71112296608ce170df83694b68dab3c5",
+   "findings": 2,
+   "lines": 37,
+   "folders": [
+    "SmallRamificationAndAbelianVarietyBaseCases"
+   ],
+   "outside": true
+  }
+ }
+}
