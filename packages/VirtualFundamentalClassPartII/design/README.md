@@ -1183,15 +1183,17 @@ isomorphism classes of `ℳ(Spec Ω)` and `M(Spec Ω)`: a *moduliSpace* in the s
 Let `G` be a smooth affine group of dimension `g` over `k` acting on a smooth quasi-projective `k`-scheme
 `X` of pure dimension `n` with a `G`-linearised ample invertible sheaf (EquivariantIntersectionTheory
 Conventions 1 and 5), properly and with finite reduced stabilisers, so that `[X/G]` is a smooth separated
-stack of pure dimension `n − g` (edidin-graham1998 lines 758–759). Prove that the isomorphism
-`A^G_i(X) ⊗ ℚ ≅ A_{i−g}([X/G])_ℚ` of StableReductionPartII §5.15, read in the codimension grading as
-`A^c_G(X) ⊗ ℚ ≅ A^c([X/G])_ℚ`, is an isomorphism of graded rings from the equivariant product of
-EquivariantIntersectionTheory §2.2 to the product of 5.1 (edidin-graham1998 Proposition 11, lines
-790–798, under its assumption of a quasi-projective moduli scheme, which is not made here). Route: in
-codimension below the codimension of `V ∖ U`, the comparison is flat pullback along the smooth
-representable morphism `X ×^G U → [X/G]` from the mixed space, a scheme, and both products are computed
-there; flat representable pullback between smooth stacks is a ring homomorphism (5.1). The equivariant
-groups are integral and the stack groups rational; the integral torsion of the left side is lost.
+Deligne–Mumford stack of pure dimension `n − g` (edidin-graham1998 §5.1, lines 1042–1045). Prove that the
+isomorphism `A^G_i(X) ⊗ ℚ ≅ A_{i−g}([X/G])_ℚ` of StableReductionPartII §5.15, read in the codimension
+grading as `A^c_G(X) ⊗ ℚ ≅ A^c([X/G])_ℚ`, is an isomorphism of graded rings from the equivariant product
+of EquivariantIntersectionTheory §2.2 to the product of 5.1 (edidin-graham1998 Proposition 15, lines
+1069–1076, for smooth `X` with `[X/G]` locally separated and Deligne–Mumford, no moduli scheme assumed;
+the hypotheses here are those under which EquivariantIntersectionTheory and StableReductionPartII §5.15
+supply the two sides). Route: in codimension below the codimension of `V ∖ U`, the comparison is flat
+pullback along the smooth representable morphism `X ×^G U → [X/G]` from the mixed space, a scheme, and
+both products are computed there; flat representable pullback between smooth stacks is a ring
+homomorphism (5.1). The equivariant groups are integral and the stack groups rational; the integral
+torsion of the left side is lost.
 *Needs:* 5.1; StableReductionPartII §5.15; EquivariantIntersectionTheory §§2.1–2.2.
 
 **Checks.**
@@ -1920,7 +1922,7 @@ EnhancedDerivedSheaves §0.3, E1.4, E1.8; DerivedModuleAlgebra §0.12; VirtualFu
 
 - **AlgebraicGromovWittenTheory**: its §§4.1–4.3 (the stable-map obstruction theory, its global
   resolution and its virtual dimension) are the case of 9.3–9.5 with `𝔅` the prestable-curve stack and a
-  smooth projective target over an algebraically closed field of characteristic zero; 6.2 removes the use
+  smooth projective target over a field of characteristic zero; 6.2 removes the use
   of the resolution property in its §4.2; 8.4 gives deformation invariance of its invariants; 5.4 computes
   its degrees on coarse spaces.
 
@@ -1941,7 +1943,10 @@ EnhancedDerivedSheaves §0.3, E1.4, E1.8; DerivedModuleAlgebra §0.12; VirtualFu
 - [keel-mori1997] S. Keel, S. Mori, *Quotients by groupoids*, Ann. of Math. 145 (1997), 193–213,
   [arXiv:alg-geom/9508012](https://arxiv.org/abs/alg-geom/9508012).
 - [edidin-graham1998] D. Edidin, W. Graham, *Equivariant intersection theory*, Invent. Math. 131 (1998),
-  595–634, [arXiv:alg-geom/9603008](https://arxiv.org/abs/alg-geom/9603008).
+  595–634, [arXiv:alg-geom/9609018](https://arxiv.org/abs/alg-geom/9609018); read in the arXiv v3
+  numbering, the version its arXiv comments give as the one to appear in Invent. Math. (the earlier
+  preprint arXiv:alg-geom/9603008 numbers the product comparison Proposition 11 and assumes there a
+  quasi-projective moduli scheme).
 - [kresch1999] A. Kresch, *Cycle groups for Artin stacks*, Invent. Math. 138 (1999), 495–536,
   [arXiv:math/9810166](https://arxiv.org/abs/math/9810166).
 - [deligne-mumford1969] P. Deligne, D. Mumford, *The irreducibility of the space of curves of given genus*,

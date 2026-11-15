@@ -1056,7 +1056,7 @@
      ],
      "locator": {
       "source": "edidin-graham1998",
-      "where": "Proposition 11, lines 790-798; lines 758-759"
+      "where": "Proposition 15, lines 1069-1076; Section 5.1, lines 1042-1045 (arXiv v3 of alg-geom/9609018, the Invent. Math. numbering)"
      },
      "prerequisites": [
       "target:5.1",

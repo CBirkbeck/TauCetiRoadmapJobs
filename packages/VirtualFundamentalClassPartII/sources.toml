@@ -123,18 +123,18 @@ authors = "Dan Edidin, William Graham"
 title = "Equivariant intersection theory"
 year = 1996
 venue = "Inventiones Mathematicae 131 (1998), 595–634"
-arxiv = "alg-geom/9603008v3"
+arxiv = "alg-geom/9609018v3"
 locator_scheme = "theorem"
-locator = "Proposition 11; the remarks before Proposition 10"
-url = "https://arxiv.org/abs/alg-geom/9603008v3"
-fetched_from = "https://arxiv.org/pdf/alg-geom/9603008v3"
-fetched_at = "2026-11-11T13:40:22Z"
-sha256 = "f2e80eb90005fccba2702fdcb9f09b071c14f17aa19c596995ea345bb23a12f1"
+locator = "Proposition 15; Section 5.1 (the diagonal of a quotient stack for proper actions with finite reduced stabilisers)"
+url = "https://arxiv.org/abs/alg-geom/9609018v3"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9609018v3"
+fetched_at = "2026-11-15T16:57:56Z"
+sha256 = "9a7b60f5b4584c3dc44d759bc10d3a0915280edc5f3cc5377477d9a4baed3df8"
 licence_class = "open-repository"
 status = "certified"
-accessed = "2026-11-11"
-version_note = "arXiv v3"
-cited_for = ["5.3 products on Deligne–Mumford quotient stacks (Proposition 11, lines 790–798; lines 758–759)"]
+accessed = "2026-11-15"
+version_note = "read in arXiv:alg-geom/9609018v3 (16 May 1997), whose arXiv comments give it as the version to appear in Invent. Math.; numbering and line numbers are those of that text. The earlier preprint arXiv:alg-geom/9603008v3 (11 March 1996) numbers the product comparison Proposition 11 and assumes there a quasi-projective moduli scheme."
+cited_for = ["5.3 products on Deligne–Mumford quotient stacks (Proposition 15, lines 1069–1076; Section 5.1, lines 1042–1045)"]
 
 [[source]]
 id = "kresch1999"
