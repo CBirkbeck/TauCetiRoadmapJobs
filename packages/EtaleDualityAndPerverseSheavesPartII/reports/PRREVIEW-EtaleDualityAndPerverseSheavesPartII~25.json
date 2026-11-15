@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EtaleDualityAndPerverseSheavesPartII~25",
+  "head": "b826e54856633d02a789fcfd5ab37071b1fa56bf",
+  "pr": 1743,
+  "folder": "EtaleDualityAndPerverseSheavesPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since 5818348: the ILO-final-XIII reference entry now names F. Orgogozo, checked against the cached text (author, pages 261-275, Theoreme 2.2.2 and 2.2.3 on p. 263); previous R01 (description's summary of where Part I stops) repaired; title and description read against the head, no contradiction; D01 (PurityForFlatCohomology 1.4-1.5) stands, deferred; adversarial rows computed for the entry and for 2.4 and 4.1 which cite it; gate rerun OK (exit 0, worker build=0); depcheck 0 problems; Suggested.lean elaborates with nine sorry warnings only.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "R01: at its open head (160e354), PurityForFlatCohomology must replace its §1.4 (README line 1107) and §1.5 (line 1160) by citations of this roadmap's §§6.11, 6.12, 7.1 and 7.3, and delete the lines th",
+    "where": "PurityForFlatCohomology README §§1.4–1.5 and its two \"is to import\" lines",
+    "raised": "PRREVIEW-EtaleDualityAndPerverseSheavesPartII~24"
+   }
+  ],
+  "text": "09e890d76f9fb4ed"
+ }
+}
