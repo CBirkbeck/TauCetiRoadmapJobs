@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PadicHodgeRegulators~7",
+  "head": "0c9e8c60d22b07983ab704a014a4dcb9d35ea217",
+  "pr": 1498,
+  "folder": "PadicHodgeRegulators",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since a63b5f6. Checked the pull request's title and description against the head: previous R02 repaired, previous R01 partly repaired (the rewritten dependency paragraph names two open suppliers and calls everything else a consumer; the README consumes 22 more by section or layer), raised again as R01 (P3). Gate passes at 0c9e8c6; elaboration exits 0 with three sorry warnings only; depcheck 244 roadmaps, 2229 edges, 0 problems; outside-folder diff 0 paths; 5 cited supplier sections resolved at their open heads; adversarial rows computed at p=5 and the p=3 control.",
+  "text": "1f1ca6d2d9970acc",
+  "carried": {
+   "from": "0c9e8c60d22b07983ab704a014a4dcb9d35ea217",
+   "head": "0c9e8c60d22b07983ab704a014a4dcb9d35ea217",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
