@@ -1317,6 +1317,11 @@
        "statement": "n = 0: E*g = dr²."
       },
       {
+       "name": "surface_case",
+       "kind": "convention",
+       "statement": "n = 1, against RiemannianGeometry/Surfaces 1.2 with the inward normal: in arclength s on ∂M, h_r = a(s, r)² ds², II = −a_t(s, 0) ds² = k_g ds²; disc of radius R: a = 1 − r/R, II = ds²/R, k_g = 1/R; cap {φ ≤ φ₀} of the unit sphere: a = sin(φ₀ − r)/sin φ₀, II = cot φ₀ · ds² (6.3 at R = φ₀), k_g = cot φ₀; the outward normal would give a = 1 + r/R and II = −ds²/R on the disc, the exterior's value."
+      },
+      {
        "name": "unequal_strips",
        "kind": "non-example",
        "statement": "ℝ², ρ = x(1 − x), M = [0, 1] × ℝ: radii ε = 0.9 on {x = 0} and 0.01 on {x = 1} satisfy the tube, sign and Gauss conclusions of 4.3.2 (disjoint strips (−0.9, 0.9) × ℝ and (0.99, 1.01) × ℝ), but at (0.8, 0) the normal coordinate is 0.8 while d_M(·, ∂M) = 0.2; with η = 0.4 and 0.005 the distance equals r on the smaller half-tube, which omits (0.8, 0)."
@@ -1615,6 +1620,36 @@
      ]
     },
     {
+     "id": "5.4.4",
+     "kind": "theorem",
+     "name": "exitTime_fold_near_glancing",
+     "statement": "Near every z₀ ∈ ∂₀SM, on SM: τ(x, v) = Q(√a(x, v), x, v) and −τ(x, −v) = Q(−√a(x, v), x, v) with Q, a smooth and a ≥ 0 on SM (route: 5.3.1 for h(t, y) = ρ(γ_y(t)), smooth by the flow of 5.1, with h = ∂_t h = 0 and ∂_t² h = −|dρ| II(v₀, v₀) < 0 at (0, z₀) by 4.2.1; for y ∈ SM near z₀, h(·, y) is concave near 0 with h(0, y) ≥ 0, so the realisation formula of 5.2 gives τ(y) as the larger root and γ_{x,−v}(t) = γ_{x,v}(−t) gives −τ(x, −v) as the smaller; continuity of τ is not used).",
+     "hypotheses": [
+      "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
+      "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
+      "M compact",
+      "∂M strictly convex near the base point of z₀"
+     ],
+     "locator": {
+      "source": "paternain-salo-uhlmann2023",
+      "where": "Lemma 3.2.9, lines 2955–2966"
+     },
+     "prerequisites": [
+      "target:5.3.1",
+      "target:4.2.1",
+      "target:5.1",
+      "target:5.2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "ball",
+       "kind": "computation",
+       "statement": "Unit ball, on SM (|v| = 1): a = 4(⟨x, v⟩² + 1 − |x|²), Q(r, ·) = (−2⟨x, v⟩ + r)/2."
+      }
+     ]
+    },
+    {
      "id": "5.4.1",
      "kind": "theorem",
      "name": "exitTime_continuous_smooth",
@@ -1733,35 +1768,6 @@
        "name": "disc",
        "kind": "computation",
        "statement": "Disc: μ/τ̃ = sin θ/(2 sin θ) = 1/2 = II(v, v)/2."
-      }
-     ]
-    },
-    {
-     "id": "5.4.4",
-     "kind": "theorem",
-     "name": "exitTime_fold_near_glancing",
-     "statement": "Near every z₀ ∈ ∂₀SM, on SM: τ(x, v) = Q(√a(x, v), x, v) and −τ(x, −v) = Q(−√a(x, v), x, v) with Q, a smooth and a ≥ 0 on SM.",
-     "hypotheses": [
-      "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
-      "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
-      "M compact",
-      "∂M strictly convex near the base point of z₀"
-     ],
-     "locator": {
-      "source": "paternain-salo-uhlmann2023",
-      "where": "Lemma 3.2.9, lines 2955–2966"
-     },
-     "prerequisites": [
-      "target:5.3.1",
-      "target:4.2.1",
-      "target:5.2"
-     ],
-     "api": [],
-     "tests": [
-      {
-       "name": "ball",
-       "kind": "computation",
-       "statement": "Unit ball, on SM (|v| = 1): a = 4(⟨x, v⟩² + 1 − |x|²), Q(r, ·) = (−2⟨x, v⟩ + r)/2."
       }
      ]
     },

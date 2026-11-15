@@ -91,6 +91,15 @@ It leaves to other roadmaps, by section:
   RiemannianGeometry 2.2 (R1.4);
 - the normal exponential of an embedding and its tubular neighbourhoods: already in Tau Ceti
   (`TauCeti.SmoothEmbedding.normalExp` and the tube theorems);
+- the normal strip of an embedded arc in a boundaryless surface, `F*g = dt² + a(s, t)² ds²` with
+  `a(s, 0) = 1`, `a_t(s, 0) = −k_g` and the Jacobi equation `a_tt + K a = 0`, also for an arc of
+  the boundary of a domain with the inward normal, and the distance to a compact subarc on a small
+  tube when the nearest point is interior: RiemannianGeometry/Surfaces 1.2–1.3; this roadmap
+  states, in every dimension and on a tube along the whole hypersurface, the tube and signed
+  distance of a regular level set (4.3) and, for the boundary of a regular domain, the form
+  `dr² + h_r` with `II = −½ ∂_r h_r|₀` (4.4), which for `n = 1`, in an arclength parameter `s` of
+  `∂M`, is `h_r = a(s, r)² ds²` and `II = k_g ds²` with Surfaces' `a` and `k_g` for the inward
+  normal;
 - smooth collars and the interior `M ∖ ∂M` as a boundaryless manifold: GeometricTopology 1.1;
   gluing along the boundary, hence the collar extension `M̃ = M ∪_{∂M} (∂M × (−1, 0])` and the
   double `DM = M ∪_id M`: GeometricTopology 1.3 (the same collar extension is formed from
@@ -1066,6 +1075,14 @@ With `ε` and `E := E_{∂M}` from 4.3 for `f = ρ`, prove (Stefanov–Uhlmann�
 - Exterior of the unit ball: `h_r = (1 + r)² h_0`, `II = −h_0`; half-space: `h_r = h_0`, `II = 0`.
 - Dimension one: `∂M` is discrete, `h_r` is the zero metric on a point, and the statement reduces to
   `E* g = dr²`.
+- Dimension two (`n = 1`), against the normal strips of RiemannianGeometry/Surfaces 1.2 with the
+  inward normal, whose `t` is `r` here: in an arclength parameter `s` of `∂M`, Surfaces'
+  normal-strip Jacobian `a(s, r)` gives `h_r = a(s, r)² ds²` and
+  `II = −a_t(s, 0) ds² = k_g ds²`. Disc of radius `R`: `a = 1 − r/R`, `II = ds²/R`, `k_g = 1/R`.
+  Cap `{φ ≤ φ₀}` of the unit sphere, `0 < φ₀ < π`, `φ` the polar angle from the pole:
+  `a = sin(φ₀ − r)/sin φ₀`, `II = cot φ₀ · ds²`, which is 6.3's `cot R · h` at `R = φ₀`, and
+  `k_g = cot φ₀`. Exponentiating along the outward normal instead gives `a = 1 + r/R` and
+  `II = −ds²/R` on the disc, the value of the exterior, not of the disc.
 - The tube radius is not a distance radius: in `ℝ²` with `ρ(x, y) = x(1 − x)`, `M = [0, 1] × ℝ`
   has the noncompact boundary `{0, 1} × ℝ`, and the radii `ε = 0.9` on `{x = 0}` and `ε = 0.01` on
   `{x = 1}` meet every conclusion of 4.3's tube statement: `E((0, y), r) = (r, y)` and
@@ -1276,21 +1293,27 @@ Assume `M` compact, `∂M` strictly convex and `M` non-trapping. Prove (Paternai
 lines 2955–2966; Lemma 3.2.11, lines 3027–3043; Remark 3.2.13, lines 3046–3055; Exercise 3.3.3,
 lines 3110–3113):
 
+- Fold form (Lemma 3.2.9, which needs only `M` compact and `∂M` strictly convex near the base point
+  of `z₀`, not non-trapping): near every `z₀ ∈ ∂₀SM`, on `SM`, `τ(x, v) = Q(√a(x, v), x, v)` and
+  `−τ(x, −v) = Q(−√a(x, v), x, v)` with `Q`, `a` smooth and `a ≥ 0` on `SM`. Route: 5.3's fold
+  normal form for `h(t, y) = ρ(γ_y(t))`, smooth near `(0, z₀)` by the smooth flow of 5.1, with
+  `h = ∂_t h = 0` and `∂_t² h = −|dρ_{x₀}| II_{x₀}(v₀, v₀) < 0` at `(0, z₀)`, `z₀ = (x₀, v₀)`
+  (4.2). For `y ∈ SM` near `z₀`, `h(·, y)` is concave near `0` and `h(0, y) ≥ 0`, so `0` lies
+  between its two roots, `h ≥ 0` between them and `h < 0` just beyond; the realisation formula of
+  5.2 then gives `τ(y)` as the larger root, and `γ_{x, −v}(t) = γ_{x, v}(−t)` gives `−τ(x, −v)`
+  as the smaller. Continuity of `τ` is not used.
 - `τ` is smooth on `SM ∖ ∂₀SM`: every `z ∈ SM ∖ ∂₀SM` has an open neighbourhood in `SN` and a
   smooth function on it agreeing with `τ` on `SM`. For such `z`, `μ(φ_{τ(z)} z) < 0`: the exit is
   transversal. Route: no interior tangency (4.2) keeps nearby geodesics in `int M` away from the
   endpoints, and the implicit function theorem applies to `h(t, y) = ρ(γ_y(t))` at the transversal
   exit, so the root it produces is the exit time of every nearby `y`.
 - `τ` is continuous on `SM` (Exercise 3.2.4, lines 2868 and 2891, which the source leaves to the
-  reader): off `∂₀SM` by the previous item, and at `∂₀SM` by the fold form below, where
+  reader): off `∂₀SM` by the previous item, and at `∂₀SM` by the fold form above, where
   `τ = Q(√a, ·)` with `Q(0, z₀) = 0`.
 - The odd extension `τ̃ : ∂SM → ℝ`, `τ̃ = τ` on `∂₊SM` and `τ̃(x, v) = −τ(x, −v)` on `∂₋SM` (both are `0`
   on `∂₀SM`), is smooth on the manifold `∂SM`, and `τ̃ = 0` exactly on `∂₀SM`.
 - `μ/τ̃` on `∂SM ∖ ∂₀SM` extends to a smooth positive function on `∂SM` whose value at
   `(q, dι u) ∈ ∂₀SM` is `II_q(u, u)/2`.
-- Fold form (Lemma 3.2.9, which needs only `M` compact and `∂M` strictly convex near the base point
-  of `z₀`, not non-trapping): near every `z₀ ∈ ∂₀SM`, on `SM`, `τ(x, v) = Q(√a(x, v), x, v)` and
-  `−τ(x, −v) = Q(−√a(x, v), x, v)` with `Q`, `a` smooth and `a ≥ 0` on `SM`.
 - `σ := τ(x, v) − τ(x, −v)` and `T := τ(x, v) τ(x, −v)` are smooth on the manifold with boundary
   `SM`, `σ = τ̃` on `∂SM`, and `τ = (σ + √(σ² + 4T))/2`, the nonnegative root of
   `τ² − σ τ − T = 0`.
