@@ -46,3 +46,20 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["7.1a"]
+
+[[source]]
+id = "DeligneMilne"
+authors = "P. Deligne and J. S. Milne"
+title = "Tannakian Categories"
+year = 2012
+version_note = "Corrected 2012 text; theorem numbering unchanged from the 1982 article."
+locator_scheme = "theorem"
+locator = "Theorem 2.11, pp.20–24"
+url = "https://www.jmilne.org/math/xnotes/tc.pdf"
+fetched_from = "https://www.jmilne.org/math/xnotes/tc.pdf"
+fetched_at = "2026-11-15T06:18:54Z"
+sha256 = "48f8af5249081217fc4a806414a764d9d69d66eff9092ddd8e2cf0ea078579e8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["6.1–6.2"]
