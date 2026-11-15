@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KloostermanMomentsAndPotentialAutomorphy~2",
+  "head": "954c2942f3f7d9dee7a7a8fe6e4b8a0e58b76f70",
+  "pr": 2301,
+  "folder": "KloostermanMomentsAndPotentialAutomorphy",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 30 changed lines since 399a75b. R01, R02, R03 of the previous review are repaired. Checked: the new Haessig-Hecke citations (Theorem 1.1 p. 1, Theorem 4.1 p. 5) and FSY Remarks 5.28 and 5.41 against the texts; the sampled target 2.4 locator (FSY 2.2, p. 12); Z_6(2;T) and Z_10(2;T) recomputed from the Kloosterman sums over F_{2^n} (valuations 0,0,3 and 0,0,3,11); the pull request title and description against the head (14 claims, none contradicted). Gate rerun: all checks 0, OK; depcheck 0 problems; lake env lean on Suggested.lean: five sorry warnings only; outside-folder diff empty.",
+  "text": "3fed9352f103e342"
+ }
+}
