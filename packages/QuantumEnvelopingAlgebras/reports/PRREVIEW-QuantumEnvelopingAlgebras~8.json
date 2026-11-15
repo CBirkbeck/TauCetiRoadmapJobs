@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuantumEnvelopingAlgebras~8",
+  "head": "c1f4398f145c5c5d7892fcae05f19a1ef59f4599",
+  "pr": 2363,
+  "folder": "QuantumEnvelopingAlgebras",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 140 changed lines since ccc89ca. Previous R02 and R03 repaired, R01 partly repaired and re-raised (P3, re-raises F01: the QuantumPlaneLattice section of Suggested.lean; the author asks for a human decision). Checked: 11 source locators in HeckenbergerDoubles2010, Tanisaki2016 and AndersenPoloWen1991 against the text for the changed passages of 1.0, 1.1, 1.3a, 2.1, 2.3, 8.2; KacMoody citations on main; adversarial rows with computed values for the changed passages; gate OK; depcheck 0 problems; elaboration 23 sorry warnings only; one-tactic probe on the seven Layer 8 theorems; pull-request text against the head.",
+  "text": "329d69de041f712c"
+ }
+}
