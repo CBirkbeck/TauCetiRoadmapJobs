@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-VStackSheavesAndLisseCategories~5",
+  "head": "e6747720ec600f628d4f19bbb0a364588481ceb7",
+  "pr": 1230,
+  "folder": "VStackSheavesAndLisseCategories",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 32 changed lines since d7ccf5e: the three retitled sections (VS2.4, VS4.3, VS5.1), their three new opening paragraphs and the five headings turned into run-in labels (VS2.5, VS2.6, VS4.4, VS5.2, VS5.3). Each consumption claim of the new paragraphs checked against every Needs line of VS3-VS5 and against IgusaVarietiesAndTorsionConcentration 3.0f at its open head; citations of the regrouped labels from HeckeStacksAndLocalShtukas and VStackSheavesAndLisseCategoriesPartII still resolve; 208 internal anchor links, 0 broken. Pull request title and description read against the head: no sentence contradicted, no unstated change. Sample: 17 FS locators of the sampled sections in the changed passages verified against the author-hosted text (VII.2.6, VII.3.2-3.5, VII.4.1-4.3, V.2.3, V.4.1, V.7.1-7.3, VII.7.3-7.10), all exact; one source misprint recorded (FS Prop. VII.7.10). Adversarial table: 7 rows with computed values (torsion Kunneth and lisse ULA at G=1). Gate passes (all counters 0); depcheck 245 roadmaps, 0 problems; Suggested.lean elaborates with sorry the only warning and is byte-identical to d7ccf5e. No previous finding outstanding (the review of d7ccf5e accepted).",
+  "text": "2cf2af6684f06a38"
+ }
+}
