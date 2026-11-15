@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CohomologyComparisonsPartII~8",
+  "head": "0d00ac6661d976fe347657caafabd47cb9913ee7",
+  "pr": 1364,
+  "folder": "CohomologyComparisonsPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 30 changed lines since 212f91b. Checked: the five previous findings R01-R05 are all repaired (module line and build=0; HuberKings in the manifest with nine line locators on target; BesserI locators 741-743, 1116-1119, 1141; kappa_r through a de Rham datum with an arbitrary V-compactification; ColemanIntegration L3.Fb.1 cited for the affine stupid-filtered complex). 18 changed source locators read against the BesserI and HuberKings extractions, plus the sampled 2.1 locators; the other sampled targets lie outside the diff. New supplier citations resolved: EtaleCohomologyFoundations G.2-G.3 on main with matching hypotheses, ColemanIntegration L3.Fb.1 at its open head, RigidAnalyticGeometry 8.1 on main and 8.4 through the open revision's old-to-new mapping. Adversarial rows F01-F09 with computed values: kappa_1 on A1 and G_m, the cuspidal-cubic Check, Spec K, P1 proper, the U_lambda identification, Nagata hypotheses, independence of the compactification. Gate rerun: every counter 0, OK (worker's run build=0); depcheck 245 roadmaps, 2241 edges, 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean exit 0, no output (no declaration); no change outside the folder; 34 plan gaps all present in the README. Pull request title and description read against the head: no contradiction. Acceptance is conditional on the declared supplier gaps.",
+  "text": "24e1c9ebc87d7029"
+ }
+}
