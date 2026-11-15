@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TorsionCohomologyInfrastructure~4",
+  "head": "1f49a766ddc4b3e113da267709bf7537ca5506b0",
+  "pr": 1087,
+  "folder": "TorsionCohomologyInfrastructure",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 264642f. Checked: previous R01 (AI-assistance sentence of the description) repaired against the commit trailers; title and description read sentence by sentence against the head and the folder's change (0 contradicted; 14 open suppliers of the README equal the dependency block; no change outside the folder against origin/main); gate passes; depcheck 246 roadmaps, 2255 edges, 0 problems; Suggested.lean elaborates with five sorry warnings only; adversarial rows computed for section 3a.7 laurentCoeffIdeal_pow_eq_bot (N=0, N=1, Z/4, a wrong-model control over F_2[x,y]/(x^2,y^2)); overlap check on the six closest roadmaps, nothing shared. Seeded sample falls in no changed passage.",
+  "text": "f6a79ab41f0228ea"
+ }
+}
