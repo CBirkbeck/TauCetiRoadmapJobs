@@ -475,6 +475,11 @@
        "name": "lowerGibbs_cohomologous",
        "role": "functoriality",
        "statement": "Lower Gibbs for phi iff for phi + c (same K) and for phi + L_g psi (K times e^{2 sup|psi|})."
+      },
+      {
+       "name": "lowerGibbs_mono_scale",
+       "role": "structure",
+       "statement": "Lower Gibbs at scale eps0 with constant K gives every scale eps >= eps0 with the same K, since B_t(x,eps) contains B_t(x,eps0); so every sufficiently small scale gives every scale eps > 0, and int_0^t phi(g^s x) ds - t P_g(phi) <= log K for all x, t >= 0."
       }
      ],
      "tests": [
@@ -492,6 +497,11 @@
        "name": "periodic_measure_nonexample",
        "kind": "non-example",
        "statement": "The time measure of a periodic orbit of that suspension is not lower Gibbs for phi = 0."
+      },
+      {
+       "name": "upper_bound_large_scale",
+       "kind": "non-example",
+       "statement": "Full two-shift, phi = 0, Bernoulli: at eps = 1 the product mu(B_n(x,1)) 2^n is 1; at eps = 2 > diameter B_n = X and the product is 2^n: lower bound with K = 1, upper Gibbs bound fails, so only the lower bound passes to large scales; the roof-one suspension gives 2^t likewise."
       }
      ]
     },
@@ -549,7 +559,7 @@
      "id": "5.3",
      "kind": "theorem",
      "name": "Flow.existsUnique_isEquilibriumState_of_expansive_weakSpecification",
-     "statement": "X nonempty compact metric, g Bowen-Walters expansive flow (IsExpansiveFlow) with weak specification, phi continuous with HasFlowBowenProperty: unique flow equilibrium state, flow-ergodic, lower Gibbs property (5.1) at small scales, positive on nonempty open sets; generalises ClassicalErgodicTheory 8.5's theorem, covering the roof-one suspension of the two-shift.",
+     "statement": "X nonempty compact metric, g Bowen-Walters expansive flow (IsExpansiveFlow) with weak specification, phi continuous with HasFlowBowenProperty: unique flow equilibrium state, flow-ergodic, lower Gibbs property (5.1) at every scale eps > 0 (every sufficiently small scale by the route, larger ones by 5.1), positive on nonempty open sets; generalises ClassicalErgodicTheory 8.5's theorem, covering the roof-one suspension of the two-shift.",
      "hypotheses": [
       "X nonempty compact metric",
       "g expansive flow",
@@ -922,7 +932,7 @@
      "id": "6.8",
      "kind": "theorem",
      "name": "Dynamics.existsUnique_isEquilibriumState_of_hyperbolic",
-     "statement": "With transitivity in forward time: (a) transitive homeomorphism with hyperbolic local product structure and Hoelder phi: unique, ergodic, Gibbs, fully supported equilibrium state; unique MME, h_top > 0 unless X finite. (b) same for transitive flows with flow-ergodicity and lower Gibbs bound.",
+     "statement": "With transitivity in forward time: (a) transitive homeomorphism with hyperbolic local product structure and Hoelder phi: unique, ergodic, fully supported equilibrium state, Gibbs at every sufficiently small scale (5.2); unique MME, h_top > 0 unless X finite. (b) same for transitive flows with flow-ergodicity and the lower Gibbs property (5.1) at every scale eps > 0 (5.3).",
      "hypotheses": [
       "X nonempty compact metric",
       "f or g transitive in forward time (n >= 0, resp. t >= 0) with hyperbolic local product structure",
@@ -1917,7 +1927,7 @@
      "id": "10.2",
      "kind": "theorem",
      "name": "Manifold.IsBasicSet.existsUnique_equilibriumState",
-     "statement": "Bowen's theorem: a Hoelder potential on a basic set of a C^1 diffeomorphism has a unique equilibrium state, ergodic, Gibbs, positive on relatively open sets, unchanged by phi + c + psi o f - psi; in particular for transitive Anosov diffeomorphisms.",
+     "statement": "Bowen's theorem: a Hoelder potential on a basic set of a C^1 diffeomorphism has a unique equilibrium state, ergodic, Gibbs at every sufficiently small scale, positive on relatively open sets, unchanged by phi + c + psi o f - psi; in particular for transitive Anosov diffeomorphisms.",
      "hypotheses": [
       "f C^1 diffeomorphism of compact M",
       "Lambda basic set (nonempty)",
@@ -1956,7 +1966,7 @@
      "id": "10.3",
      "kind": "theorem",
      "name": "Flow.IsBasicSet.existsUnique_equilibriumState",
-     "statement": "Bowen-Ruelle: a Hoelder F on a basic set of a C^1 flow has a unique equilibrium state nu_{g,F}, flow-ergodic, positive on relatively open sets, lower Gibbs bound, unchanged by F + c + L_g psi, equilibrium for g^t and F_t, invariant under rescaling; in particular transitive Anosov flows.",
+     "statement": "Bowen-Ruelle: a Hoelder F on a basic set of a C^1 flow has a unique equilibrium state nu_{g,F}, flow-ergodic, positive on relatively open sets, lower Gibbs bound at every scale eps > 0 (for every eps > 0 a C_eps > 0 with nu(B_T(x,eps)) >= C_eps exp(-T P + int_0^T F(g^t x) dt) for all x in Lambda, T >= 0; via 6.8(b)), unchanged by F + c + L_g psi, equilibrium for g^t and F_t, invariant under rescaling; in particular transitive Anosov flows.",
      "hypotheses": [
       "g C^1 flow on compact M",
       "Lambda basic set (nonempty)",
@@ -1990,6 +2000,11 @@
        "name": "shift_by_five",
        "kind": "computation",
        "statement": "F + 5 + L_g psi: same state, pressure + 5."
+      },
+      {
+       "name": "periodic_orbit_every_scale",
+       "kind": "computation",
+       "statement": "Periodic orbit O of period p: B_T(x,eps) contains the arc of time half-width s_eps, measure 2 s_eps/p, and -TP + int_0^T F lies in [-2p max|F|, 2p max|F|], so C_eps = (2 s_eps/p) e^{-2p max|F|} for every eps > 0; above the diameter of O the ball is O and C_eps = e^{-2p max|F|}."
       }
      ]
     },
