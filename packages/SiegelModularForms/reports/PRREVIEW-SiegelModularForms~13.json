@@ -1,0 +1,33 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SiegelModularForms~13",
+  "head": "8723e790b4a21a65738ec51e41590a86aa2a0ecb",
+  "pr": 1714,
+  "folder": "SiegelModularForms",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 8723e79; this round read the pull request's title and description against the head. One P3: the roadmap-summary block says the roadmap supplies the half-integral weight roadmap's Jacobi theory and theta series needed by lattice packings, while the head consumes HalfIntegralWeightModularForms 6.1-6.4 and LatticePackingsAndPerfectForms 5.6 (README 447-463, 3507-3508; both siblings read at their open heads). Other description claims checked and consistent (12 layers, 66 milestones, level 2/3/4 rings, metadata math.NT, 11 further sentences). Previous review had no findings. Gate passes (all checks 0, build 0); depcheck 238 roadmaps, 2254 edges, 0 problems; Suggested.lean elaborates with 72 sorry warnings only; nothing changed outside the folder; no seeded-sample target falls in a changed passage.",
+  "text": "961fc25bf2799ba4",
+  "carried": {
+   "from": "8723e790b4a21a65738ec51e41590a86aa2a0ecb",
+   "head": "bee9025c8cac666d178144115f847d3a7b6924c5",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "SiegelModularForms"
+   ],
+   "outside": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "Unnumbered (*For the human reviewers*): the DOIs in these three records resolve to other works, and the records took their titles and authors from those works.",
+    "where": "board manifest packages/SiegelModularForms/sources.toml, records mizumoto1991, arakawa1983, satoh1986",
+    "raised": "PRREVIEW-SiegelModularForms~13"
+   }
+  ]
+ }
+}
