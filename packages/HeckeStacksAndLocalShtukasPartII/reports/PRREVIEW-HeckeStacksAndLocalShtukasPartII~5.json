@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeckeStacksAndLocalShtukasPartII~5",
+  "head": "754645e3b8e6305d2f50e3995449bdd64188709f",
+  "pr": 1844,
+  "folder": "HeckeStacksAndLocalShtukasPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 236bae3; the pull request's title and description were read against the head: the previous R01 (summary missing the double-flat Newton bound) is repaired and no sentence contradicts the head; he21 Theorems 1.1, 6.1, Remark 6.2 and Corollary 6.4 reread for sampled sections 8.1 and 8.2; adversarial rows computed for the summary's theorem (A2, A1, Res PGL2) and the chart bound; gate passes at 754645e (build, depcheck, hygiene, outside-folder all 0); elaboration exits 0 with sorry the only warning; depcheck 240 roadmaps, 2243 edges, 0 problems; overlaps none.",
+  "text": "813a139f2c2ae09d"
+ }
+}
