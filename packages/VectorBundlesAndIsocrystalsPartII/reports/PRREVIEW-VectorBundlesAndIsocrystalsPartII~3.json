@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-VectorBundlesAndIsocrystalsPartII~3",
+  "head": "d2f7530ee9fa81bd0bffc17068de1392fcf89802",
+  "pr": 2264,
+  "folder": "VectorBundlesAndIsocrystalsPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since d2f7530; this round checked the pull request's title and description against the head: 23 sentences, none contradicted, the 11 suppliers, the 3 Lean declarations and the not-statable headlines match README and Suggested.lean; 6 source locators the description relies on verified (Fontaine03 lines 213, 254, 1816; CN25 lines 387, 939, 1291); adversarial rows recomputed for 5 cited statements; gate passes (all scanners 0), depcheck 0 problems, Suggested.lean elaborates with 2 sorry warnings only; accepted conditional on the declared gap:G-HOM.",
+  "text": "c02acf66948da576"
+ }
+}
