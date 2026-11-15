@@ -35,8 +35,8 @@ Stated here:
   Gaussian law on a Euclidean space (§8.1), the Minkowski-content form (§8.2), Bobkov's
   functional inequality (§8.3), concentration of Lipschitz functions about a median (§8.4) and
   of maxima of Gaussian vectors (§8.5);
-* Layer 9: convexity of closed Gaussian symmetrals of closed convex sets (§9.4) and Ehrhard's
-  inequality for convex sets (§9.5).
+* Layer 9: Ehrhard's inequality for convex sets, and convexity of the closed Gaussian symmetrals
+  of convex sets (§9.5).
 
 Every headline theorem of the roadmap is statable at the pins; none is omitted for want of a
 carrier.
@@ -370,11 +370,11 @@ theorem borell_sudakov_tsirelson_multivariateGaussian {ι : Type*} [Fintype ι] 
 
 /-- **The Minkowski-content form** (§8.2). For every `A ⊆ E` (its Gaussian measure being the outer
 measure), the lower Minkowski content of `A` for `γ` is at least `I(γ(A))`:
-`liminf_{r → 0⁺} (γ(A_r) − γ(A))/r ≥ I(γ(A))` with `A_r` the closed `r`-thickening (Ledoux1999,
-(1.3)–(1.4)). -/
+`liminf_{r → 0⁺} (γ(A_r) − γ(A))/r ≥ I(γ(A))` with `A_r` the open `r`-thickening, which contains `A`
+for `r > 0` (Ledoux1999, (1.3)–(1.4)). -/
 theorem gaussian_minkowskiContent_ge (A : Set E) :
     ENNReal.ofReal (gaussianIsoperimetricProfile (stdGaussian E A).toReal) ≤
-      liminf (fun r : ℝ => (stdGaussian E (cthickening r A) - stdGaussian E A) /
+      liminf (fun r : ℝ => (stdGaussian E (thickening r A) - stdGaussian E A) /
         ENNReal.ofReal r) (𝓝[>] 0) := by
   sorry
 
@@ -417,14 +417,6 @@ noncomputable def closedGaussianSymmetral (F : Submodule ℝ E) (u : E) (C : Set
   {x | cdf (gaussianReal 0 1) ⟪x, u⟫ ≤
     (stdGaussian F {y : F | x - F.starProjection x + (y : E) ∈ C}).toReal}
 
-/-- **Gaussian symmetrisation preserves convexity** (§9.4). For a subspace `F`, a unit vector
-`u ∈ F` and a closed convex `C ⊆ E`, the closed Gaussian symmetral `S̄_{F,u}(C)` is convex
-(Ehrhard1983, Théorème 3.1). -/
-theorem convex_closedGaussianSymmetral {F : Submodule ℝ E} {u : E} (hu : u ∈ F) (hu1 : ‖u‖ = 1)
-    {C : Set E} (hC : IsClosed C) (hconv : Convex ℝ C) :
-    Convex ℝ (closedGaussianSymmetral F u C) := by
-  sorry
-
 /-- **Ehrhard's inequality for convex sets** (§9.5). For convex `A, B ⊆ E`, `0 ≤ θ ≤ 1` and reals
 `a, b` with `Φ(a) ≤ γ(A)` and `Φ(b) ≤ γ(B)`, `γ(θA + (1 − θ)B) ≥ Φ(θa + (1 − θ)b)`; equivalently
 `Φ⁻¹ ∘ γ` is concave along Minkowski combinations of convex sets (Ehrhard1983, Théorème 3.2). -/
@@ -434,6 +426,15 @@ theorem ehrhard_inequality_convex {A B : Set E} (hA : Convex ℝ A) (hB : Convex
     (hb : ENNReal.ofReal (cdf (gaussianReal 0 1) b) ≤ stdGaussian E B) :
     ENNReal.ofReal (cdf (gaussianReal 0 1) (θ * a + (1 - θ) * b)) ≤
       stdGaussian E (θ • A + (1 - θ) • B) := by
+  sorry
+
+/-- **Gaussian symmetrisation preserves convexity** (§9.5). For a subspace `F`, a unit vector
+`u ∈ F` and a convex `C ⊆ E`, with no topological assumption, the closed Gaussian symmetral
+`S̄_{F,u}(C)` is convex (Ehrhard1983, Théorème 3.1, for closed `C`; the general case follows from
+Ehrhard's inequality in `F` applied to the sections of `C`). -/
+theorem convex_closedGaussianSymmetral {F : Submodule ℝ E} {u : E} (hu : u ∈ F) (hu1 : ‖u‖ = 1)
+    {C : Set E} (hconv : Convex ℝ C) :
+    Convex ℝ (closedGaussianSymmetral F u C) := by
   sorry
 
 end Symmetrisation
