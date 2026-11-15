@@ -218,6 +218,7 @@ Subfactors
 SymplecticFieldTheory
 CompactQuantumMetricSpaces
 QuantumFoundations
+SchrodingerOperatorsAndSpectralTypes
 StochasticCalculus
 RelativisticQuantumFieldTheory
 RicciFlow
