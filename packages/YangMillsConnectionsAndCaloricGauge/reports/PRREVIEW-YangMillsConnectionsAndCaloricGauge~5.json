@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-YangMillsConnectionsAndCaloricGauge~5",
+  "head": "00950d4632a26878591401aa23705ff7712744c0",
+  "pr": 2164,
+  "folder": "YangMillsConnectionsAndCaloricGauge",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 106 changed lines since 8e1ec25. Checked: every consumer claim of the 10 new group paragraphs against the *Needs:* lines (one mismatch, R01: 10.4 does not list 9.5); the renamed headings against their statements; the source locators of the sample targets whose headings changed (OhTataru-YMHF Theorems 4.1-4.8); the pull request title and description against the head (one sentence says the route follows a source, R02); suppliers on main and merge-order positions. Gate re-run: all checks 0, OK; depcheck 0 problems; Suggested.lean elaborates with two sorry warnings only. Both findings are P3.",
+  "text": "0a0f80d9f01d254a",
+  "carried": {
+   "from": "00950d4632a26878591401aa23705ff7712744c0",
+   "head": "65b773c2cc6deb8c813be5bb752d83810a1a8234",
+   "findings": 2,
+   "lines": 2,
+   "folders": [
+    "YangMillsConnectionsAndCaloricGauge"
+   ]
+  }
+ }
+}
