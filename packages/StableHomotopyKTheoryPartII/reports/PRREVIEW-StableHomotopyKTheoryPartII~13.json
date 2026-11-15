@@ -1,0 +1,30 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StableHomotopyKTheoryPartII~13",
+  "head": "0bccf340ef072b72dd4e9909ada5bf039c129b69",
+  "pr": 1733,
+  "folder": "StableHomotopyKTheoryPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 1 changed lines since b984cf9. Checked: the added Scope bullet (README line 15) against HermitianKTheoryOfPoincareCategories §5.1a at its open head, AInfCohomology §AI.7.2 and ns18 line 3236 (Definition III.1.4, p.286); uniqueness under S computed (pi_0 = Z_2, u = 1); previous R02 repaired; previous R01 (stacks-algebra manifest entry lacks authors/title/year, sources check: 3 problems) not repaired and carried as the only finding, P3, in the board manifest outside the pull request. Gate passes (all counters 0), depcheck 245 roadmaps 0 problems, Suggested.lean elaborates with no output, outside-folder diff empty, pull request text agrees with the head. No seeded-sample target lies in the changed line.",
+  "text": "0beafd990d107f75",
+  "carried": {
+   "from": "0bccf340ef072b72dd4e9909ada5bf039c129b69",
+   "head": "0bccf340ef072b72dd4e9909ada5bf039c129b69",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "The `stacks-algebra` manifest entry still has no `authors`, `title` or `year`",
+    "where": "board manifest `packages/StableHomotopyKTheoryPartII/sources.toml`, existing `stacks-algebra` record",
+    "raised": "PRREVIEW-StableHomotopyKTheoryPartII~13"
+   }
+  ]
+ }
+}
