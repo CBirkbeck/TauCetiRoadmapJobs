@@ -3,8 +3,12 @@ roadmap = "HigherHidaAndColemanTheory"
 
 [[source]]
 id = "BP-Hida"
+authors = "George Boxer and Vincent Pilloni"
+title = "Higher Hida theory for Siegel modular forms"
+year = 2026
+doi = "10.1007/s00222-025-01393-2"
 locator_scheme = "theorem"
-locator = "Introduction §1.1; Definition 1.4.1; Definitions 2.1.15, 2.1.19, 2.1.24, 2.1.26, 2.2.4, 2.4.2; Lemma-construction 2.2.6; §§1.4, 2.1, 2.2–2.3, 2.5, 2.11, 3.1, 3.4.19–3.4.25, 4.1, 4.1.11, 4.1.16, 4.2, 4.3–4.4, 5.2.6, 5.3.1, 5.4 (T_w paragraph), 6.2.1–6.2.8; Theorems 2.5.1, 2.6.8, 2.6.10, 2.7.4, 2.11.4, 4.5.2, 5.1.4, 5.3.5, 5.5.1–5.5.2, 6.2.9, 6.2.15; Propositions 2.3.13, 2.5.4, 2.6.2, 2.6.13, 2.7.2–2.7.3, 2.8.2, 2.10.3–2.10.4, 4.1.13, 4.3.9, 4.3.11, 4.3.13, 4.3.17, 4.4.4–4.4.5, 5.2.3, 5.2.5, 5.2.7, 5.3.3, 5.6.3, 6.1.7, 6.1.11, 6.2.3, 6.2.12–6.2.14; Remarks 2.1.20, 2.11.1–2.11.2; Lemmas 2.4.3–2.4.4, 2.6.11, 2.10.1(4), 4.3.8, 4.3.14, 4.4.2, 5.2.2, 5.4.1–5.4.2; Corollaries 2.3.11, 4.4.3, 4.5.4–4.5.5, 6.2.10, 6.2.16–6.2.17; Remarks 4.3.10, 4.3.12, 4.5.3, 5.4.3, 6.2.18; Conjecture 5.6.1 (author PDF, pp. 2–64)."
+locator = "Introduction §1.1; Definition 1.4.1; §2.1.14; Lemmas 2.1.4–2.1.6, 2.1.12–2.1.13, 2.1.29–2.1.32; §2.3.1 and Propositions 2.3.2, 2.3.8; §2.9.1; §2.10 and Lemma 2.10.1(1); Definitions 2.1.15, 2.1.19, 2.1.24, 2.1.26, 2.2.4, 2.4.2; Lemma-construction 2.2.6; §§1.4, 2.1, 2.2–2.3, 2.5, 2.11, 3.1, 3.4.19–3.4.25, 4.1, 4.1.11, 4.1.16, 4.2, 4.3–4.4, 5.2.6, 5.3.1, 5.4 (T_w paragraph), 6.2.1–6.2.8; Theorems 2.5.1, 2.6.8, 2.6.10, 2.7.4, 2.11.4, 4.5.2, 5.1.4, 5.3.5, 5.5.1–5.5.2, 6.2.9, 6.2.15; Propositions 2.3.13, 2.5.4, 2.6.2, 2.6.13, 2.7.2–2.7.3, 2.8.2, 2.10.3–2.10.4, 4.1.13, 4.3.9, 4.3.11, 4.3.13, 4.3.17, 4.4.4–4.4.5, 5.2.3, 5.2.5, 5.2.7, 5.3.3, 5.6.3, 6.1.7, 6.1.11, 6.2.3, 6.2.12–6.2.14; Remarks 2.1.20, 2.11.1–2.11.2; Lemmas 2.4.3–2.4.4, 2.6.11, 2.10.1(4), 4.3.8, 4.3.14, 4.4.2, 5.2.2, 5.4.1–5.4.2; Corollaries 2.3.11, 4.4.3, 4.5.4–4.5.5, 6.2.10, 6.2.16–6.2.17; Remarks 4.3.10, 4.3.12, 4.5.3, 5.4.3, 6.2.18; Conjecture 5.6.1 (author PDF, pp. 2–64)."
 url = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/higherhidaSiegel.pdf"
 fetched_from = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/higherhidaSiegel.pdf"
 fetched_at = "2026-10-25T13:33:35Z"
@@ -12,17 +16,17 @@ sha256 = "af70d084612b1b75761694923ef2395752d23b41e0b8b458910d096df4c8c3c6"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "8.1", "8.2", "8.3", "8.4", "8.5", "9.1", "9.3", "Source issues/E1", "Source issues/E2", "Source issues/E8", "Source issues/E12", "Source issues/E15", "Conventions", "Scope and ownership", "Exact supplier contracts"]
-authors = "George Boxer and Vincent Pilloni"
-title = "Higher Hida theory for Siegel modular forms"
-year = 2026
-doi = "10.1007/s00222-025-01393-2"
 version_note = "All theorem and page locators refer to the author PDF fetched above; journal pagination and numbering have not been substituted."
+cited_for = ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "8.1", "8.2", "8.3", "8.4", "8.5", "9.1", "9.3", "Source issues/E1", "Source issues/E2", "Source issues/E8", "Source issues/E12", "Source issues/E15", "Conventions", "Scope and ownership", "Exact supplier contracts"]
 
 [[source]]
 id = "BP-Coleman"
+authors = "George Boxer and Vincent Pilloni"
+title = "Higher Coleman theory"
+year = 2021
+arxiv = "2110.10251"
 locator_scheme = "theorem"
-locator = "§§1.1–1.3, 2.4–2.6, 2.4.7, 2.4.8, 2.7, 3.4, 4.1, 4.4.41, 4.6, 5.4.1, 5.9, 5.9.8, 5.11, 5.14.2–5.14.3, 6.1.10–6.1.17, 6.2.20, 6.4.1, 6.5.4, 6.9; Principle 4.4.44; Examples 3.3.9, 5.4.11; Definitions 2.4.12–2.4.13, 3.3.10, 4.4.3, 5.4.10, 5.11.2, 5.11.14, 6.4.7; Theorems 2.7.1, 4.1.7, 4.4.45, 4.5.2, 5.3.7, 5.4.3, 5.4.12, 5.4.14, 5.5.1, 5.6.1, 5.7.1–5.7.3, 5.9.6, 5.12.3, 5.12.5, 6.2.16, 6.4.3 (and proof), 6.4.5, 6.4.8, 6.4.10, 6.5.2, 6.5.5, 6.6.1, 6.7.1–6.7.3 (and proofs), 6.8.3 (and proof), 6.9.3(1)–(2) (and proof), 6.9.7(1)–(3), 6.10.1–6.10.3; Propositions 2.7.3, 4.4.53(2), 4.6.12, 4.6.14–4.6.15, 4.6.19, 5.1.4, 5.3.2, 5.7.4, 5.10.2(1)–(3) (and proof), 6.1.11, 6.9.5(1)–(4); Lemmas 2.4.10, 2.5.19, 3.3.24, 3.5.11, 5.9.10, 6.1.15, 6.1.18, 6.3.10–6.3.11, 6.6.2, 6.6.4 (and proof); Corollaries 5.3.4, 5.3.8, 5.7.5, 5.7.7, 5.8.1, 6.2.18, 6.8.4; Remarks 4.6.6, 4.6.13, 5.7.6, 5.9.3, 6.1.16, 6.5.3, 6.8.2, 6.8.5, 6.10.4; Conjectures 5.9.2, 6.8.1 (revised author PDF, pp. 2–174)."
+locator = "§§1.1–1.3, 2.4–2.6, 2.7, 3.4, 4.1, 4.4.41, 4.6, 5.4.1, 5.9, 5.11, 5.14.2–5.14.3, 6.1.10–6.1.17, 6.2.1, 6.2.4, 6.2.20, 6.4.1, 6.5.4, 6.9; Principle 4.4.44; Examples 3.3.9, 5.4.11; Definitions 2.4.12–2.4.13, 3.3.10, 4.4.3, 5.4.10, 5.11.2, 5.11.14, 6.4.7; Theorems 2.7.1, 4.1.7, 4.4.45, 4.5.2, 5.3.7, 5.4.3, 5.4.12, 5.4.14, 5.5.1, 5.6.1, 5.7.1–5.7.3, 5.9.6, 5.12.3, 5.12.5, 6.2.16, 6.4.3 (and proof), 6.4.5, 6.4.8, 6.4.10, 6.5.2, 6.5.5, 6.6.1, 6.7.1–6.7.3 (and proofs), 6.8.3 (and proof), 6.9.3(1)–(2) (and proof), 6.9.7(1)–(3), 6.10.1–6.10.3; Propositions 2.7.3, 4.4.53(2), 4.6.12, 4.6.14–4.6.15, 4.6.19, 5.1.4, 5.3.2, 5.7.4, 5.10.2(1)–(3) (and proof), 6.1.11, 6.9.5(1)–(4); Lemmas 2.4.10, 2.5.19, 3.3.24, 3.5.11, 5.9.10, 6.1.15, 6.1.18, 6.2.13, 6.3.10–6.3.11, 6.6.2, 6.6.4 (and proof); Corollaries 5.3.4, 5.3.8, 5.7.5, 5.7.7, 5.8.1, 6.2.18, 6.8.4; Remarks 4.6.6, 4.6.13, 5.7.6, 5.9.3, 6.1.16, 6.2.14–6.2.15, 6.5.3, 6.8.2, 6.8.5, 6.10.4; Conjectures 5.9.2, 6.8.1 (pp. 2–174)."
 url = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/HigherColeman.pdf"
 fetched_from = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/HigherColeman.pdf"
 fetched_at = "2026-10-25T13:34:01Z"
@@ -30,17 +34,17 @@ sha256 = "d340c9a020cc5fdbca781a8630b6fae35e14607142bed700d6ab82334faa80ae"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["1.1", "1.2", "5.1", "5.2", "5.3", "5.4", "5.4a", "5.5", "5.6", "5.7", "5.8", "6.1", "6.1a", "6.2", "6.3", "6.4", "6.5", "6.6", "6.6a", "6.6b", "6.7", "6.8", "6.9", "6.10", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "8.5", "9.1", "9.2", "9.3", "9.9", "Source issues/E3", "Source issues/E4", "Source issues/E5", "Source issues/E6", "Source issues/E7", "Source issues/E13", "Source issues/E14", "Source issues/E17", "Source issues/E18", "Conventions", "Scope and ownership", "Exact supplier contracts"]
-authors = "George Boxer and Vincent Pilloni"
-title = "Higher Coleman theory"
-year = 2021
-arxiv = "2110.10251"
 version_note = "Locators use the revised 180-page author PDF. arXiv:2110.10251v1 has 174 pages and different numbering; it is the comparison version of this same work."
-comparison_url = "https://arxiv.org/pdf/2110.10251v1"
+cited_for = ["1.1", "1.2", "5.1", "5.2", "5.3", "5.4", "5.4a", "5.5", "5.6", "5.7", "5.8", "6.1", "6.1a", "6.2", "6.3", "6.4", "6.5", "6.6", "6.6a", "6.6b", "6.7", "6.8", "6.9", "6.10", "7.1", "7.2", "7.3", "7.4", "7.5", "7.6", "8.5", "9.1", "9.2", "9.3", "9.9", "Source issues/E3", "Source issues/E4", "Source issues/E5", "Source issues/E6", "Source issues/E7", "Source issues/E13", "Source issues/E14", "Source issues/E17", "Source issues/E18", "Conventions", "Scope and ownership", "Exact supplier contracts"]
 comparison_sha256 = "85526b90c48d0955f2a042f63d619a22584e3801391934504563994733d58596"
+comparison_url = "https://arxiv.org/pdf/2110.10251v1"
 
 [[source]]
 id = "Pilloni-Singular"
+authors = "Vincent Pilloni"
+title = "Higher coherent cohomology and p-adic modular forms of singular weights"
+year = 2020
+doi = "10.1215/00127094-2019-0075"
 locator_scheme = "theorem"
 locator = "Theorem 1.1, pp. 2–3; §5.1.5, pp. 21–22; Proposition 6.1.4.1, p. 26; Theorem 6.1.5.1, p. 29; §7.1, pp. 38–40; §§9.1–9.4, pp. 54–57; §10.7 and §§11.1–11.3, pp. 66–72 (Corollary 11.2.1, Theorem 11.3.1(4)); §12.3, p. 75; §§12.6.2, 12.8, pp. 76–80 (Proposition 12.8.2.1); §13.2, pp. 85–88 (Lemma 13.2.2.1, Corollary 13.2.4.2, Remark 13.2.4.1); §13.3, pp. 88–90 (Propositions 13.3.1.1, 13.3.2.1, 13.3.3.1, Lemma 13.3.2.1, Corollaries 13.3.2.1, 13.3.3.1); §13.4, p. 91 (Proposition 13.4.1); §§14.1–14.6, pp. 91–99; §14.7, pp. 99–100 (Lemma 14.7.1, Theorem 14.7.1, Corollary 14.7.1); §14.8, pp. 100–102 (Theorem 14.8.1, Lemmas 14.8.2–14.8.4); §14.9, pp. 102–106 (Proposition 14.9.1, Corollary 14.9.1, Lemmas 14.9.1, 14.9.2, 14.9.2.1)"
 url = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/complexhidatheorygsp4.pdf"
@@ -50,12 +54,8 @@ sha256 = "4c05724efeab1dbbb108f980ec9a722127d2a8cd2abf6e8c2a6a2251cf0f9f58"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["9.4", "9.5", "9.6", "9.7", "9.8", "Source issues/E9", "Source issues/E10", "Source issues/E11", "Source issues/E16", "Exact supplier contracts"]
-authors = "Vincent Pilloni"
-title = "Higher coherent cohomology and p-adic modular forms of singular weights"
-year = 2020
-doi = "10.1215/00127094-2019-0075"
 version_note = "All theorem and page locators refer to the author PDF fetched above; journal pagination and numbering have not been substituted."
+cited_for = ["9.4", "9.5", "9.6", "9.7", "9.8", "Source issues/E9", "Source issues/E10", "Source issues/E11", "Source issues/E16", "Exact supplier contracts"]
 
 [[source]]
 id = "BP-GL2"
@@ -76,3 +76,38 @@ status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
 cited_for = ["9.2"]
+
+[[source]]
+id = "Jones-BGG"
+authors = "Owen T. R. Jones"
+title = "An analogue of the BGG resolution for locally analytic principal series"
+year = 2009
+venue = "Journal of Number Theory 131 (2011), pp. 1616-1640"
+doi = "10.1016/j.jnt.2011.02.010"
+arxiv = "0912.4756v2"
+locator_scheme = "theorem"
+locator = "§5, display (4), p. 16; Lemma 2, p. 9; Remark after Theorem 13, p. 19; Theorem 10, p. 14; Lemma 16, p. 21; Theorem 19, p. 22; Lemma 22, p. 23; Proposition 24, p. 24; Corollary 25, p. 25; Theorem 26, p. 26"
+url = "https://arxiv.org/abs/0912.4756v2"
+fetched_from = "https://arxiv.org/pdf/0912.4756v2"
+fetched_at = "2026-11-15T03:10:16Z"
+sha256 = "5ad269d9236edc6acf84e4548035d4a42c088dfb104f86b3be44984fa235bdc8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2 (title of v1: An exact sequence for locally analytic principal series for subgroups of reductive groups with Iwahori decompositions); numbering and pages refer to v2."
+cited_for = ["6.5"]
+
+[[source]]
+id = "Humphreys-BGG"
+authors = "James E. Humphreys"
+title = "Representations of Semisimple Lie Algebras in the BGG Category O"
+year = 2008
+venue = "Graduate Studies in Mathematics 94, American Mathematical Society"
+doi = "10.1090/gsm/094"
+locator_scheme = "section"
+locator = "§§6.1–6.3, pp. 108–111"
+url = "https://doi.org/10.1090/gsm/094"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.5"]
