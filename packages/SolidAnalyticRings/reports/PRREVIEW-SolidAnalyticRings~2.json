@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SolidAnalyticRings~2",
+  "head": "849039dc262586bff89ee6bdb1e64de3c0f9fe40",
+  "pr": 1458,
+  "folder": "SolidAnalyticRings",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 4 changed lines since 5d395ae. Both previous findings repaired (R01 fully; R02 with a wrong page, raised again as P3). Gate re-run: FAIL on statement-hygiene=2 (letI in the signature of isLightSolid_closed_monoidal_reflection, lines 150 and 152; P3, replacement statement tested with lake env lean); all other checks 0; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry the only warning. Changed passages checked against RC line 2092 and 2123 and the page markers; the rewritten 6.4 Check recomputed at p=2 and p=3. Title and description read against the head: no contradiction. Outside-folder diff empty. Conditional on the three declared supplier gaps.",
+  "text": "f2aefa34ff9d2cc6",
+  "carried": {
+   "from": "849039dc262586bff89ee6bdb1e64de3c0f9fe40",
+   "head": "afa637a50adec1e55894232231e6081889a90660",
+   "findings": 2,
+   "lines": 15,
+   "folders": [
+    "SolidAnalyticRings"
+   ],
+   "outside": true
+  }
+ }
+}
