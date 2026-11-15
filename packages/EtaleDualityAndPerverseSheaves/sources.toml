@@ -1,0 +1,56 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EtaleDualityAndPerverseSheaves"
+
+[[source]]
+id = "Zhu-2017"
+authors = "Xinwen Zhu"
+title = "Affine Grassmannians and the geometric Satake in mixed characteristic"
+year = 2014
+arxiv = "1407.8519v3"
+locator_scheme = "theorem"
+locator = "Lemma 2.12"
+url = "https://arxiv.org/abs/1407.8519v3"
+fetched_from = "https://arxiv.org/pdf/1407.8519v3"
+fetched_at = "2026-11-15T13:00:28Z"
+sha256 = "2c23e397d21e84812daec2c637e2a763eec54ef0d784748eb74e3b2093de1e5b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["5.6"]
+
+[[source]]
+id = "Varshavsky-LocalTerms-2023"
+authors = "Yakov Varshavsky"
+title = "Local terms for transversal intersections"
+year = 2020
+arxiv = "2003.06815v3"
+locator_scheme = "theorem"
+locator = "Theorem 4.10"
+url = "https://arxiv.org/abs/2003.06815v3"
+fetched_from = "https://arxiv.org/pdf/2003.06815v3"
+fetched_at = "2026-11-15T13:00:33Z"
+sha256 = "6a2c74173b5cbd164d28eb5a7669af5102d0ecb570d108eb71969e7c10e0ed8e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["7.5"]
+
+[[source]]
+id = "Hansen-Kaletha-Weinstein-2022"
+authors = "Tasho Kaletha, David Hansen, Jared Weinstein"
+title = "On the Kottwitz conjecture for local shtuka spaces"
+year = 2017
+arxiv = "1709.06651v4"
+locator_scheme = "theorem"
+locator = "Proposition 5.6.2"
+url = "https://arxiv.org/abs/1709.06651v4"
+fetched_from = "https://arxiv.org/pdf/1709.06651v4"
+fetched_at = "2026-11-15T13:01:29Z"
+sha256 = "d37e986ef599420a8e206dc289e18965422b03ec923184737fbcead2abc0bd5c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v4"
+cited_for = ["7.5"]
