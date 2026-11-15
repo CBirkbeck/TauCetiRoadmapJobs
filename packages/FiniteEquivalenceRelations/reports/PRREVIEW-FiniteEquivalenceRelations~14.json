@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FiniteEquivalenceRelations~14",
+  "head": "3286e7341cd6184ad76d39bed5f5aa3f26a76db1",
+  "pr": 1929,
+  "folder": "FiniteEquivalenceRelations",
+  "date": "2026-11-15",
+  "findings": 6,
+  "blocking": 1,
+  "notes": "incremental re-review of 31 changed lines since 34c9767 (README only: the new Provenance section on AxiomMath's Stacks Project in Lean and its References entry). The previous review had no findings. Checked: every path and tag the section names, against 11 AxiomMath Lean files and its LICENSE, README, lean-toolchain and lake-manifest at c496df0; Stacks Tags 022P, 02V8, 022Q, 0232, 0233, 03BJ, 03BK and 03BM in the cached groupoids chapter, and 07S6 and 08XA online. R01 (P2): the section states Tag 03BM / AffineQuotient.lean for groupoids in general, but both assume (t, s) is an equivalence relation (trivial Z/2-groupoid counterexample). P3: 1.1 should be 1.2, and the integrality there is not 03BJ's (R02); 02V8 is restriction, i.e. 0.2 (R03); the 08XA declaration has no file (R04); 4.4's Tag 0EUA is in AxiomMath (R05); the review-status wording (R06). Gate rerun OK (all counts 0); depcheck 237 roadmaps, 2241 edges, 0 problems; lake env lean on Suggested.lean exit 0 with only sorry warnings (file unchanged); nothing outside the folder; overlap check against GroupSchemesOverABase found nothing shared; source independence on changed passages only, nothing shared.",
+  "text": "cd144689b9ce86d1"
+ }
+}
