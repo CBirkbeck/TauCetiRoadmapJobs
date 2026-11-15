@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ModularCurvesPartII~4",
+  "head": "5d81b10a495d2e210f1eece4ea3d555038f5bfb7",
+  "pr": 913,
+  "folder": "ModularCurvesPartII",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 16 changed lines since 82d96e2. Previous R01-R04 all repaired. Gate run at this head: FAIL on statement-hygiene=1 (letI in the signature of congruenceClasses_invariant, R01, repair elaborated on a scratch copy with an unchanged type); depcheck 245 roadmaps, 0 problems. Elaboration: 7 sorry warnings only. Changed passages (summary, A6 and section 4.3 contracts, reworded 0.2, 16.3, 16.5) checked against Edixhoven Thm 1.1.4.1 and Ribet-Stein Thm 5.2-5.14 and against the suppliers' open heads: the backticked names cited from CyclotomicClassGroupsAndStickelberger 4.3 no longer occur at its head f2e0f0d (R02). Title and description checked against the head: two stale passages (R03, R04). Seeded sample: only 13.4 touches the changed passages; locators correct.",
+  "text": "c70fd6515a013d16",
+  "carried": {
+   "from": "5d81b10a495d2e210f1eece4ea3d555038f5bfb7",
+   "head": "9be1eb82d40269be441ec06ab741a3da27181779",
+   "findings": 4,
+   "lines": 20,
+   "folders": [
+    "ModularCurvesPartII"
+   ],
+   "outside": true
+  }
+ }
+}
