@@ -622,8 +622,15 @@ cgpt-2023 lines 217–219). When `‖T‖_p < ∞`, `T` extends uniquely to a bo
 - Duality: if `T, T^♯ : S₂ → S₂` satisfy `Tr(T(A) B) = Tr(A T^♯(B))` for all `A, B ∈ S₂`, then
   `‖T‖_p = ‖T^♯‖_{p'}` and `‖T‖_{cb,p} = ‖T^♯‖_{cb,p'}`, by §1.2 at every level, since
   `(T^{(m)})^♯ = (T^♯)^{(m)}` for the block trace.
-- Interpolation: `log ‖T^{(m)}‖_p` and `log ‖T‖_{cb,p}` are convex functions of `1/p` (§1.3 at every
-  level).
+- Interpolation: for `1 ≤ p₀, p₁ ≤ ∞`, `0 < θ < 1` and `1/p_θ = (1 − θ)/p₀ + θ/p₁`, if
+  `‖T^{(m)}‖_{p₀}` and `‖T^{(m)}‖_{p₁}` are finite then
+  `‖T^{(m)}‖_{p_θ} ≤ ‖T^{(m)}‖_{p₀}^{1−θ} ‖T^{(m)}‖_{p₁}^θ`; and if `‖T‖_{cb,p₀}` and `‖T‖_{cb,p₁}`
+  are finite then `‖T‖_{cb,p_θ} ≤ ‖T‖_{cb,p₀}^{1−θ} ‖T‖_{cb,p₁}^θ` (the supremum over `m`). Route:
+  §1.3 applied to `T^{(m)}` on the finite-rank operators with `C_j = ‖T^{(m)}‖_{p_j}`; then for
+  `A ∈ S₂(H^m)` with `‖A‖_{p_θ} ≤ 1` and `q = max(p₀, p₁) ≥ p_θ`, the spectral truncations `A_k` of
+  `A` have finite rank, `‖A_k‖_{p_θ} ≤ ‖A‖_{p_θ}` and `‖A − A_k‖_q → 0`, so
+  `‖T^{(m)}(A − A_k)‖_q ≤ ‖T^{(m)}‖_q ‖A − A_k‖_q → 0`, `T^{(m)} A_k → T^{(m)} A` in operator
+  norm, and the lower semicontinuity of the gauge (§1.1) concludes.
 - Stabilisation: for a Hilbert space `L` of dimension `d` let `T ⊗ id` act entrywise on block
   matrices `[A_{βγ}]` along a Hilbert basis of `L`. For finite `d` it is `T^{(d)}` on all of
   `S₂(H ⊗ L)` (the zero map of the zero space when `d = 0`). For infinite `d` it is defined on the block matrices with finitely many nonzero
@@ -653,6 +660,13 @@ cgpt-2023 lines 217–219). When `‖T‖_p < ∞`, `T` extends uniquely to a bo
 - Stabilisation needs `‖T‖₂ < ∞` for infinite `d`: if `‖T‖₂ = ∞`, choose `B_k ∈ S₂(H)` with
   `‖B_k‖₂ ≤ 2^{−k}` and `‖T B_k‖₂ ≥ 1`; the block-diagonal `A` with blocks `B_k` lies in
   `S₂(H ⊗ ℓ²(ℕ))`, while `[T(A_{βγ})]` has `Σ ‖T B_k‖₂² = ∞` and is not Hilbert–Schmidt.
+- Interpolation needs finite endpoint norms: on `S₂(ℓ²(ℕ))` let `w₀ = diag(1/(j+1))`, which lies
+  in `S_{4/3}` (`Σ (j+1)^{−4/3} < ∞`) and not in `S₁`, and let `T` be the linear map that fixes `w₀`
+  and is `0` on `S₁` and on an algebraic complement of `S₁ ⊕ ℂw₀` in `S₂`. Then `‖T‖₁ = 0`;
+  `‖T‖₂ = ∞`, since `T ≠ 0` vanishes on the dense subspace `S₁` of `S₂` and so is not bounded; and
+  `‖T‖_{4/3} ≥ ‖T w₀‖_{4/3}/‖w₀‖_{4/3} = 1`. With `p₀ = 1`, `p₁ = 2`, `θ = 1/2` (so `p_θ = 4/3`)
+  the bound read in `[0, ∞]` would give `1 ≤ 0^{1/2} ∞^{1/2} = 0`; the interpolation law asserts
+  nothing here because `‖T‖₂ = ∞`.
 - Conjugation `A ↦ U A U*` by a unitary of `H ≠ 0` has `‖·‖_{cb,p} = 1` for every `p`; on
   `H = 0` it is the zero map, with every norm `0`.
 - The map `A ↦ E₁₁ A E₁₁` on `M₂` has `‖·‖_{cb,p} = 1` for every `p` (a compression), and the
@@ -1124,11 +1138,17 @@ On `{1, 2}` with `M = 1_{(1,2)}`: `Tr(S_M(A) B) = A₁₂ B₂₁ = Tr(A S_{M^t}
 
 ### 4.2 Interpolation and monotonicity in the exponent
 
-Prove that for `1 ≤ p₀, p₁ ≤ ∞`, `0 < θ < 1` and `1/p_θ = (1 − θ)/p₀ + θ/p₁`,
-`‖S_M‖_{p_θ} ≤ ‖S_M‖_{p₀}^{1−θ} ‖S_M‖_{p₁}^θ`, and the same for the completely bounded norms (§1.3
-at every amplification level). Deduce: if `|1/p − 1/2| ≤ |1/q − 1/2|` then `‖S_M‖_p ≤ ‖S_M‖_q` and
-`‖S_M‖_{cb,p} ≤ ‖S_M‖_{cb,q}`; in particular `‖M‖_∞ = ‖S_M‖₂ ≤ ‖S_M‖_p ≤ ‖S_M‖_∞` for every `p`, and
-`‖S_M‖_p ≤ ‖S_M‖_q` for `2 ≤ p ≤ q ≤ ∞` (lafforgue-delasalle-2011 Remark 1.4, lines 246–252).
+Prove that for `1 ≤ p₀, p₁ ≤ ∞`, `0 < θ < 1` and `1/p_θ = (1 − θ)/p₀ + θ/p₁`, in `[0, ∞]`,
+`‖S_M‖_{p_θ} ≤ ‖S_M‖_{p₀}^{1−θ} ‖S_M‖_{p₁}^θ`, and the same for the completely bounded norms. When
+both endpoint norms are finite this is the interpolation law of §1.4 for `T = S_M` and its
+amplifications `S_{M_m}` (§3.5). Unlike a general map (§1.4), a Schur multiplier needs no
+finiteness hypothesis: a zero endpoint norm (for the completely bounded norms, through
+`‖S_M‖_p ≤ ‖S_M‖_{cb,p}`) makes `S_M` vanish on the finite-rank operators, which are dense in `S₂`
+(§1.1), so `S_M = 0` and `M = 0` (§3.1) and every norm is `0`; hence when one endpoint norm is `∞`
+the other is positive and the right side is `∞`. Deduce: if `|1/p − 1/2| ≤ |1/q − 1/2|` then
+`‖S_M‖_p ≤ ‖S_M‖_q` and `‖S_M‖_{cb,p} ≤ ‖S_M‖_{cb,q}`; in particular
+`‖M‖_∞ = ‖S_M‖₂ ≤ ‖S_M‖_p ≤ ‖S_M‖_∞` for every `p`, and `‖S_M‖_p ≤ ‖S_M‖_q` for
+`2 ≤ p ≤ q ≤ ∞` (lafforgue-delasalle-2011 Remark 1.4, lines 246–252).
 Route: `1/p` lies between `1/q` and `1/q' = 1 − 1/q`, so `1/p = (1 − θ)/q + θ/q'` for some
 `θ ∈ [0, 1]`, and `‖S_M‖_p ≤ ‖S_M‖_q^{1−θ} ‖S_M‖_{q'}^θ = ‖S_M‖_q` by §4.1. The source writes the
 interpolation identity with `p` and `q` exchanged (line 249); the version here is the one the
@@ -1138,7 +1158,7 @@ On `M₂` the triangular truncation has norms `1` at `p = 2` and `2/√3` at `p 
 the interpolation bound is `(2/√3)^{1/2} ≈ 1.0746`, between the two. For `M = [[1, 2], [2, 1]]` all
 norms equal `2 = ‖M‖_∞`, so the chain can be an equality throughout.
 
-*Needs:* §1.3, §1.4, §4.1.
+*Needs:* §1.1, §1.3, §1.4, §3.1, §3.5, §4.1.
 
 ### 4.3 The weak-* extension to `B(H)`
 

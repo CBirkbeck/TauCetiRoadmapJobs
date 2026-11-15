@@ -195,7 +195,7 @@
       {
        "name": "cbNorm_interpolation",
        "role": "interpolation",
-       "statement": "log ||T^(m)||_p and log ||T||_{cb,p} are convex in 1/p"
+       "statement": "for 1 <= p0, p1 <= infinity, 0 < theta < 1 and 1/p_theta = (1-theta)/p0 + theta/p1: if ||T^(m)||_{p0} and ||T^(m)||_{p1} are finite then ||T^(m)||_{p_theta} <= ||T^(m)||_{p0}^(1-theta) ||T^(m)||_{p1}^theta, and if ||T||_{cb,p0} and ||T||_{cb,p1} are finite then ||T||_{cb,p_theta} <= ||T||_{cb,p0}^(1-theta) ||T||_{cb,p1}^theta (1.3 at every level on finite-rank operators; for A in S_2 with ||A||_{p_theta} <= 1 the spectral truncations A_k converge to A in the norm of q = max(p0, p1), so T A_k -> T A in operator norm, and the gauge is lower semicontinuous, 1.1)"
       },
       {
        "name": "cbNorm_stabilisation",
@@ -218,6 +218,11 @@
        "name": "stabilisation_needs_bounded",
        "kind": "non-example",
        "statement": "for infinite d and ||T||_2 = infinity, blocks B_k with ||B_k||_2 <= 2^-k and ||T B_k||_2 >= 1 give a block-diagonal A in S_2(H (x) l2(N)) whose entrywise image has sum ||T B_k||_2^2 = infinity, so T (x) id is not defined on all of S_2"
+      },
+      {
+       "name": "interpolation_needs_finite",
+       "kind": "non-example",
+       "statement": "on S_2(l2(N)), with w0 = diag(1/(j+1)) in S_{4/3} and not in S_1, the linear T fixing w0 and vanishing on S_1 and on an algebraic complement of S_1 + C w0 has ||T||_1 = 0, ||T||_2 = infinity (zero on the dense subspace S_1, not zero) and ||T||_{4/3} >= 1, while 0^(1/2) infinity^(1/2) = 0 in [0, infinity]: the interpolation bound needs finite endpoint norms"
       },
       {
        "name": "unitary_conjugation",
@@ -764,7 +769,7 @@
      "id": "4.2",
      "kind": "theorem",
      "name": "SchattenClasses.schurMultiplier_interpolation",
-     "statement": "For 1 <= p0, p1 <= infinity, ||S_M||_{p_theta} <= ||S_M||_{p0}^(1-theta) ||S_M||_{p1}^theta and the same for cb norms; if |1/p - 1/2| <= |1/q - 1/2| then ||S_M||_p <= ||S_M||_q and ||S_M||_{cb,p} <= ||S_M||_{cb,q}; in particular ||M||_inf = ||S_M||_2 <= ||S_M||_p <= ||S_M||_infinity, and ||S_M||_p <= ||S_M||_q for 2 <= p <= q <= infinity.",
+     "statement": "For 1 <= p0, p1 <= infinity, 0 < theta < 1 and 1/p_theta = (1-theta)/p0 + theta/p1, in [0, infinity] and with no finiteness hypothesis, ||S_M||_{p_theta} <= ||S_M||_{p0}^(1-theta) ||S_M||_{p1}^theta and the same for cb norms (both endpoints finite: the interpolation law of 1.4; a zero endpoint norm forces M = 0, so 0 times infinity never occurs); if |1/p - 1/2| <= |1/q - 1/2| then ||S_M||_p <= ||S_M||_q and ||S_M||_{cb,p} <= ||S_M||_{cb,q}; in particular ||M||_inf = ||S_M||_2 <= ||S_M||_p <= ||S_M||_infinity, and ||S_M||_p <= ||S_M||_q for 2 <= p <= q <= infinity.",
      "hypotheses": [
       "(Omega, mu) sigma-finite",
       "M in Linf(mu x mu)"
@@ -774,8 +779,11 @@
       "where": "Remark 1.4, lines 246-252 (interpolation identity with p and q exchanged in the source, line 249)"
      },
      "prerequisites": [
+      "target:1.1",
       "target:1.3",
       "target:1.4",
+      "target:3.1",
+      "target:3.5",
       "target:4.1"
      ],
      "api": [],
