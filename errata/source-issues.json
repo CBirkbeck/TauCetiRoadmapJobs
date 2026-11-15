@@ -220923,10 +220923,42 @@
    "reported": "2026-11-15",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13063#issuecomment-6899907188"
+  },
+  {
+   "kind": "gap",
+   "source": "stacks-06RD",
+   "locator": "Lemma 101.51.2, printed page 102",
+   "says": "two steps (a closed substack, and the base of a gerbe, of a locally Noetherian stack are locally Noetherian) are left as omitted details",
+   "should": "cite Lemma 101.17.5 and smooth descent",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "StackPointsAndResidualGerbes",
+   "job": "REV-DESIGN-StackPointsAndResidualGerbes~12",
+   "board_pr": 16357,
+   "head": "a8013af",
+   "reported": "2026-11-15",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/16357#issuecomment-6900056421"
+  },
+  {
+   "kind": "misprint",
+   "source": "stacks-06RD",
+   "locator": "Lemma 101.51.2, printed page 102",
+   "says": "the second paragraph of the proof, having renamed the closed substack to the stack itself, still takes the dense open gerbe inside the primed stack",
+   "should": "inside the unprimed one",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "StackPointsAndResidualGerbes",
+   "job": "REV-DESIGN-StackPointsAndResidualGerbes~12",
+   "board_pr": 16357,
+   "head": "a8013af",
+   "reported": "2026-11-15",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/16357#issuecomment-6900056421"
   }
  ],
- "scanned_to": "2026-11-15T19:26:39Z",
- "updated": "2026-11-15T19:28:32Z",
+ "scanned_to": "2026-11-15T19:32:43Z",
+ "updated": "2026-11-15T19:35:16Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
