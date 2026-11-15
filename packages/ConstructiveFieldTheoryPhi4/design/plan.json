@@ -420,7 +420,7 @@
      ],
      "locator": {
       "source": "frohlich-1982",
-      "where": "lines 266-269; simon-2020-twelve-tales (3.8) lines 960-975; sokal-1982 footnote lines 394-396"
+      "where": "lines 266-269; simon-2020-twelve-tales Section 3 lines 954-975 (free lattice field as Gaussian ferromagnet, formal, other mass normalisation; not the limit); sokal-1982 footnote lines 394-396"
      },
      "prerequisites": [
       "target:0.2.1",
@@ -1908,7 +1908,7 @@
      ],
      "locator": {
       "source": "sokal-1982",
-      "where": "Section 2.3 and Lemma 2.2, lines 620-721; frohlich-1982 lines 266-269; simon-2020-twelve-tales lines 960-975"
+      "where": "Section 2.3 and Lemma 2.2, lines 620-721; frohlich-1982 lines 266-269; simon-2020-twelve-tales Section 3 lines 954-975 (free lattice field as Gaussian ferromagnet, formal, other mass normalisation)"
      },
      "prerequisites": [
       "target:1.5",
