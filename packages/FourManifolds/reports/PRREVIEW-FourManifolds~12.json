@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FourManifolds~12",
+  "head": "46ee76a937369c15878a853455d970f5ea51655c",
+  "pr": 936,
+  "folder": "FourManifolds",
+  "date": "2026-11-15",
+  "findings": 11,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 46ee76a; checked: the five findings of the previous report (none repaired, carried as R01-R05); the gate, re-run, FAILS with statement-hygiene=2 (letI in exoticFourSpace_exists, repair elaborated at the pins) and dropped=19 (HomotopySpheres, which is on main: believed a false positive of the list, flagged to the human reviewers); depcheck 244 roadmaps, 2206 edges, 0 problems; lake env lean on Suggested.lean: six sorry warnings only; the pull request's title and description against the head: four P3 findings (amendment framing with a nonexistent RadialControlTargets.lean and wrong line counts, SBC B8 consumption, three gaps said removed, HeegaardFloer edition); no seeded-sample passage changed; overlap check over HomotopySpheres, GeometricTopology, TangentialBordism, InstantonFloerTheory, RibbonKnots: no shared owner.",
+  "text": "7eef920b513c0338"
+ }
+}
