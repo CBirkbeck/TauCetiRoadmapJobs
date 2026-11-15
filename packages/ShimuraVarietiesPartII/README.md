@@ -662,7 +662,7 @@ Assume the corrected Hodge setup of Conventions together with conditions (D) and
 
 *Proof sketch.* KP extends the adjoint symmetry by central twisting of the universal abelian moduli point and its tensor frames. Check descent after a finite torsor trivialization, including conjugation of the prime-to-p level. Apply the normalization universal property and verify the diagonal relation on frames.
 
-*Needs:* §3.1; §0.4; AbelianSchemesAndArithmeticModuli §§A6.28–A6.29; §0.1.
+*Needs:* §3.1; §0.4; AbelianSchemesAndArithmeticModuli §§A6.28–A6.29; §0.1; ShimuraVarieties §§6.3–6.6.
 
 **API.**
 
@@ -856,7 +856,7 @@ For an Iwahori I in GL₂(Q_p), j=diag(p,1) sends [[a,b],[c,d]] to [[a,pb],[c/p,
 
 *Proof sketch.* HT applies Newton semicontinuity to the universal G-isocrystal to construct the strata. Use representation-detection of dominance and the family semicontinuity theorem of PadicDifferentialEquationsAndRigidCohomology §RD.3.43, then equip the strata with reduced locally closed structures.
 
-*Needs:* §4.1; §4.2; BunGAndNewtonStrata §§1.22–1.26, 2.16.
+*Needs:* §4.1; §4.2; §0.6; BunGAndNewtonStrata §§1.22–1.26, 2.16; PadicDifferentialEquationsAndRigidCohomology §RD.3.43.
 
 **API.**
 
@@ -1257,25 +1257,27 @@ For split-at-p GU(1,1) at hyperspecial level the KR index set has one element wh
 
 ### 7.1 Intrinsic group-valued tower local systems
 
-**Construction.** For ℓ≠p, refine the ℓ-component of the prime-to-p Shimura tower to obtain its pro-étale K_ℓ-cover, then extend structure group to G(Q_ℓ). On the special fibre this defines a G(Q_ℓ)-local system L_ℓ. At neat level it agrees with the tensor-frame torsor of the abelian H₁=T_ℓ(A)⊗Q_ℓ realization; it descends as a local system on the non-neat Shimura stack. A path or frame changes the associated fundamental-group homomorphism only by G(Q_ℓ)-conjugation.
+**Construction.** Let (G,X,G°) be a strongly acceptable triple (§2.1) with its integral model S_K (§3.8), let ℓ≠p, and let K^p be any prime-to-p level. Write K_ℓ for the image of K^p under the projection G(A_f^p)→G(Q_ℓ), a compact open subgroup onto which K^p surjects, and K^(ℓ) for the kernel of K^p→K_ℓ, the elements of K^p with trivial ℓ-component. At neat K^p the pro-prime-to-p tower over S_K is a pro-étale K^p-torsor: its transitions are finite étale (§3.8), and K^p acts freely, because at neat level the stabilizer of a point is central and, (G,X) being of Hodge type, Z_G(Q) is discrete in Z_G(A_f) and meets a neat level only in the identity; freeness on the generic fibre extends to the normal integral tower. Its quotient by K^(ℓ) is a pro-étale K_ℓ-torsor over S_K; extend its structure group along K_ℓ⊂G(Q_ℓ). Equivalently, push the K^p-torsor out along the projection K^p→G(Q_ℓ). When K^p=K_ℓK^ℓ is a product, the quotient is the limit of the S_(K_pK′_ℓK^ℓ) over open K′_ℓ⊂K_ℓ, the cover of KZ §5.1.1, which assumes that product form. On the special fibre this defines a G(Q_ℓ)-local system L_ℓ. At neat level it agrees with the tensor-frame torsor of the abelian H₁=T_ℓ(A)⊗Q_ℓ realization, A the pullback of the universal abelian scheme by the integral Siegel map of §5.4; it descends as a local system on the non-neat Shimura stack of §0.2, where the K^p-torsor is formed over the stack and K_ℓ is again the image of K^p. A path or frame changes the associated fundamental-group homomorphism only by G(Q_ℓ)-conjugation.
 
 (KZ, §5.1.1–5.1.2, p.47).
 
-*Proof sketch.* KZ defines the group-valued local system intrinsically from the integral tower and identifies its tensor-frame realization. Extend structure group from the compact-level cover and descend along a neat normal quotient.
+*Proof sketch.* KZ defines the group-valued local system from the integral tower at levels that are products at ℓ and identifies its tensor-frame realization. Form the K^p-torsor at neat level, divide by K^(ℓ), extend structure group from K_ℓ to G(Q_ℓ), and descend along a neat normal quotient; at a product level this returns KZ's cover.
 
-*Needs:* §0.3; §0.2; §0.4; AutomorphicBundles §§3.4–3.8.
+*Needs:* §2.1; §3.8; §0.3; §0.2; §0.4; §5.4; AutomorphicBundles §§3.4–3.8.
 
 **API.**
 
 - A Hodge embedding identifies L_ℓ with Isom_tensor(V_Qℓ,H₁(A)); the dual representation gives H¹_ét(A).
 - An algebraic G-representation gives a lisse coefficient sheaf, preserving tensor, dual and coefficient extension.
-- Prime-to-p level maps pull back the local system compatibly with the pro-étale tower.
+- Prime-to-p level maps and Hecke translations pull back the local system compatibly with the pro-étale tower; for K′^p⊂K^p the pullback is the local system built from K′^p, whose group K′_ℓ, the image of K′^p, lies in K_ℓ.
 
 **Checks.**
 
 - The trivial representation gives the constant rank-one sheaf with Frobenius 1.
 - A new frame conjugates the fundamental-group image; character values remain unchanged.
 - The construction does not present the characteristic-p p-divisible group’s geometric points as an étale rank-2g local system.
+- Take E=Q(i), p=5 (split in E), G=GU(1,1) for the hermitian form diag(1,−1) on E² with similitude ν and hyperspecial level at 5, a strongly acceptable triple by §2.1. Let K^p be the subgroup of a product level, with components G(Z₃) and G(Z₇) (the stabilizers of O_E²) at 3 and 7, cut out by χ₃(ν(k₃))χ₇(ν(k₇))=1, where χ_v is the quadratic character of Z_v^×. As 3 and 7 are inert, ν(G(Z_v)) contains the norms of local units, which are all of Z_v^×. So K_3=G(Z₃) and K^p/K^(3)≅G(Z₃), whereas K^p∩G(Q₃)=ker(χ₃∘ν) has index 2 in G(Z₃). The level is not a product at 3: (K^p∩G(Q₃))·K^(3) is cut out by χ₃(ν(k₃))=1=χ₇(ν(k₇)) and has index 2 in K^p, so a cover built from the intersection lies over a degree-two cover of S_K, not over S_K.
+- For the Hilbert modular datum G=Res_(F/Q)GL₂, F real quadratic, which is of abelian but not Hodge type, and K the principal congruence level N≥3, the units of O_F congruent to 1 modulo N form an infinite subgroup of Z_G(Q)∩K. Each acts trivially on every Sh_(K′), K′⊂K, because a central rational element moves (x,g) to an equivalent pair. The tower over Sh_K is then a torsor only under K modulo the closure of these units, whose ℓ-component is a nontrivial central subgroup of K_ℓ, so the push-out along K→G(Q_ℓ) is not defined; the Hodge-type condition of §2.1 excludes this.
 
 *Remark.* The local system is defined before choosing an auxiliary Hodge embedding.
 
@@ -1357,7 +1359,7 @@ For the elliptic trace-2 point over F₅ the tower quotient has coordinates (2/5
 
 ### Dependencies
 
-*Needs:* §0.3; §0.2; §0.4; AutomorphicBundles §§3.4–3.8; ArithmeticGaloisRepresentations §1.11; AbelianSchemesAndArithmeticModuli §A6.21; AbelianSchemesAndArithmeticModuli §A4.1; ReductiveGroupsPartII §RG2.1; MotivesAndAlgebraicCycles §6.3; §5.10; §6.3; GlobalShtukasAndFunctionFieldLanglands §§6.1–6.2 (gap:open-curve-companions); ArithmeticGaloisRepresentations §§5.1, 5.13; ReductiveGroupsPartIII §§0.6 and 1.3; ReductiveGroupsPartIII §0.5; ReductiveGroupsPartIII §1.2.
+*Needs:* §2.1; §3.8; §0.3; §0.2; §0.4; §5.4; AutomorphicBundles §§3.4–3.8; ArithmeticGaloisRepresentations §1.11; AbelianSchemesAndArithmeticModuli §A6.21; AbelianSchemesAndArithmeticModuli §A4.1; ReductiveGroupsPartII §RG2.1; MotivesAndAlgebraicCycles §6.3; §5.10; §6.3; GlobalShtukasAndFunctionFieldLanglands §§6.1–6.2 (gap:open-curve-companions); ArithmeticGaloisRepresentations §§5.1, 5.13; ReductiveGroupsPartIII §§0.6 and 1.3; ReductiveGroupsPartIII §0.5; ReductiveGroupsPartIII §1.2.
 
 ## Downstream consumers
 
