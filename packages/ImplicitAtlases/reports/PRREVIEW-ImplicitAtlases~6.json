@@ -1,0 +1,32 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ImplicitAtlases~6",
+  "head": "81fc759fb6e436cfef79bc3936e2b689c605e89e",
+  "pr": 974,
+  "folder": "ImplicitAtlases",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 81fc759; this round checked the pull request's title and description against the head: two P3 findings, both in the description (the validation paragraph reports 12 declarations, checker tests, an audit and a prototype that the head does not have, Suggested.lean declaring nothing; the dependency sentence omits the supplier AbelianSchemesAndArithmeticModuliPartII §B2.9). Folder files stand as accepted. Gate re-run: every check 0, OK (worker's build=0); depcheck 244 roadmaps, 0 problems; lake env lean on Suggested.lean exit 0 with no output; the five supplier citations resolved again on main and at the open head; overlaps: none; adversarial rows with values for the statements the description cites.",
+  "text": "f91d796b30dd77bb",
+  "carried": {
+   "from": "81fc759fb6e436cfef79bc3936e2b689c605e89e",
+   "head": "d4d479c82461bb8ce549be3961d912b3c3179896",
+   "findings": 2,
+   "lines": 4,
+   "folders": [
+    "ImplicitAtlases"
+   ]
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "Remark on untouched text (unnumbered): two sentences of TopologicalSheafCohomology's README on main describe ImplicitAtlases §0.7 wrongly.",
+    "where": "TopologicalSheafCohomology README on main, scope paragraph line 10 and line 221",
+    "raised": "PRREVIEW-ImplicitAtlases~6"
+   }
+  ]
+ }
+}
