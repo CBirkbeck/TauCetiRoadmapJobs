@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ColemanIntegration~4",
+  "head": "c35168fa4c5aeacae610e350bab360dae8789f7e",
+  "pr": 1043,
+  "folder": "ColemanIntegration",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 12 changed lines since 4903670. Previous R01 (Tau Ceti namespace of indClassFun and its transitivity theorem) repaired and confirmed in the pinned source; previous R02 (Galois scope of the injectivity cited for noLowWeightKTheory_numberField) not repaired, carried as R01 (P3). Title and description checked against the head: one stale sentence (R02, P3). Gate passes (build=0), Suggested.lean elaborates with sorry as the only warning, depcheck 0 problems, no file outside the folder. Seeded sample: only the L3.Fd.2(d) Construction falls in the changed passages, locators untouched.",
+  "text": "e6469676eab3075c",
+  "carried": {
+   "from": "c35168fa4c5aeacae610e350bab360dae8789f7e",
+   "head": "9d45df98d3d8fd5eaaca6e1e2481088ce6e8d5cc",
+   "findings": 2,
+   "lines": 11,
+   "folders": [
+    "ColemanIntegration"
+   ],
+   "outside": true
+  }
+ }
+}
