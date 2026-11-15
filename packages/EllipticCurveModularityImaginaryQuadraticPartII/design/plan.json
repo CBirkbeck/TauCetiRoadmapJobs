@@ -1518,7 +1518,7 @@
     "§7.7",
     "§7.9"
    ],
-   "what": "Decomposition groups, subgroups of PSL₂ and perfectness, the Tate curve, the trace-zero adjoint with its trace pairing, splitting and base change (ContinuousRep.adZero, ResidualImage.adZeroRep), finite-group cohomology of SL₂ with adjoint coefficients (H⁰ = H¹ = 0 for SL₂(F), F finite of odd characteristic with #F ≠ 5; H¹(SL₂(F5), ad⁰) one-dimensional; coefficient change)."
+   "what": "Decomposition groups, subgroups of PSL₂ and perfectness, the Tate curve, the trace-zero adjoint with its trace pairing, splitting and base change (ContinuousRep.adZero, ResidualImage.adZeroRep), finite-group cohomology of SL₂ with adjoint coefficients (H⁰ = H¹ = 0 for SL₂(k), k finite of odd characteristic with #k ≠ 5; H¹(SL₂(F5), ad⁰) one-dimensional; coefficient change)."
   },
   {
    "roadmap": "FaltingsFinitenessAndIsogenyTheorems",

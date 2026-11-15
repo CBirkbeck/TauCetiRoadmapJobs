@@ -113,16 +113,24 @@ of Layer 3 are proved by explicit computations recorded in their Checks.
   characters of orders `3, p` and `χ = ηψ`. A *switch parameter* is a `t ∈ U(K)` produced by the
   parent's §7.4 `simultaneous_specialization` for a finite set of places containing those above `3p`,
   lying in the opens of the parent's §6.5 `local_type_opens` at every place above `3p`. The field
-  `F = K(μ_n)` is meant in the Summary, Layers 2 and 8, §7.5 and Layer 1 outside §1.2; §1.2, Layers 4–6
-  and §7.4 each introduce their own number field `F` in their statements, and Layer 3 uses only local
-  fields `F_v` and their extensions `F'_w`. The switch parameter `t` occurs in Layers 2, 7 and 8 only;
-  in Layers 4–5 the letter `t` is the number `|T|` of framed places. The characters `η, ψ, χ` and their
-  systems `V_η, V_ψ, V_χ` occur in How to read the build, Layer 2 and §8.1 only. Elsewhere `ψ` is the
+  `F = K(μ_n)` is meant in the Summary, Scope and ownership, How to read the build, Layers 2 and 8, §7.5
+  and Layer 1 outside §1.2; §1.2, Layers 4–6 and §7.4 each introduce their own number field `F` in
+  their statements, and Layer 3 uses only local fields `F_v` and their extensions `F'_w`. In the
+  supplier contracts `F` is the field of the cited statement: a finite extension of `ℚ_ℓ` for the
+  Tau Ceti Euler characteristic, the CM field of CrystallineLocalGlobalCompatibilityCM and of ACC23
+  §3.1 elsewhere; in Downstream consumers it is the CM field of ModularityAndLanglandsExtensions
+  §2.29. The conventions below on `M(1)` and unramified classes apply to whichever `F` is in force.
+  The letter `F` never denotes a finite field; finite coefficient fields are written `k`. The switch
+  parameter `t` occurs in Layers 2, 7 and 8 only, and the parameter `t` of the curves `A_t` and `B_t`
+  also in the Summary, Scope and ownership and the parent's supplier contract; in Layers 4–5 the
+  letter `t` is the number `|T|` of framed places. The characters `η, ψ, χ` and their systems
+  `V_η, V_ψ, V_χ` occur in How to read the build, Layer 2 and §8.1 only. Elsewhere `ψ` is the
   unramified determinant character of §3.4, `χ = (χ_v)_{v∈R}` is the tuple of tame characters at `R` in
-  Layer 5 (the index of the problems `𝒮_χ` of CrystallineLocalGlobalCompatibilityCM §9.5), and
-  `χ_(h(t))` is the quadratic character of `K(√h(t))/K` by which `B_t` twists `E` (the parent's §8.4,
-  used in Layer 2). The reflection `w` occurs in §7.1 only; elsewhere `w` is a finite place. The letter
-  `p` is the prime of the parent's switch (`p > 100`; in §7.1 any prime `p > 3`) in the Summary's
+  Layer 5 and in the supplier contract of CrystallineLocalGlobalCompatibilityCM (the index of the
+  problems `𝒮_χ` of that roadmap's §9.5), and `χ_(h(t))` is the quadratic character of `K(√h(t))/K`
+  by which `B_t` twists `E` (the parent's §8.4, used in Layer 2). The reflection `w` occurs in §7.1
+  only; elsewhere `w` is a finite place. The letter `p` is the prime of the parent's switch
+  (`p > 100`; in §7.1 any prime `p > 3`) in the Summary's
   account of the switch, the Layer 1 Examples and Layers 2, 7 and 8; everywhere else it is a coefficient
   prime, odd in the coefficient conventions below, in Layer 3 and in the supplier obligations, and five
   where `p = 5` is written.
@@ -146,10 +154,11 @@ of Layer 3 are proved by explicit computations recorded in their Checks.
   `GL₂(k)`, its §7.9 `ResidualImage.adZeroRep`): the trace-zero `2×2` matrices with the conjugation
   action, with the standard basis `e = E₁₂`, `h = diag(1, −1)`, `f = E₂₁` (used in Layers 3–4 only,
   where the cubic `h` of the curve does not occur). The matrix `U = 1 + e = [[1,1],[0,1]]` occurs in
-  Layers 3–6 only, the parameter open `U ⊂ 𝔸¹_K` in Layers 2 and 7 only. For `D = Ad(U)`:
-  `D(e) = e`, `D(h) = h − 2e`, `D(f) = f + h − e`; `D` has this meaning in Layer 3 only, while in
-  Layer 7 `D_t` is the quotient curve of §7.1 and `G_D` the absolute Galois group of the finite
-  Galois field `D/ℚ` of the parent's §7.4. The trace form `⟨X, Y⟩ = tr(XY)` has Gram matrix
+  the Frobenius witness above and in Layers 3–6 only, the parameter open `U ⊂ 𝔸¹_K` in Layers 2 and 7
+  only. For `D = Ad(U)`: `D(e) = e`, `D(h) = h − 2e`, `D(f) = f + h − e`; `D` has this meaning in
+  Layer 3 only, while in Layer 7 `D_t` is the quotient curve of §7.1, and in Layer 7 and the parent's
+  supplier contract `G_D` is the absolute Galois group of the finite Galois field `D/ℚ` of the
+  parent's §7.4. The trace form `⟨X, Y⟩ = tr(XY)` has Gram matrix
   `[[0,0,1],[0,2,0],[1,0,0]]` in this basis, of determinant `−2`; it identifies `ad⁰` with its dual
   whenever `2` is invertible (the perfectness and splitting of §7.2 there) and is degenerate in
   characteristic two.
@@ -290,8 +299,8 @@ through Taylor–Wiles selection (CN23 line 4404); Layer 4 replaces that step.
   profinite group with its conjugation action; the invariant trace pairing, perfect between `ad⁰`
   and `ad/A·1` and hence on `ad⁰` when `2 ∈ A^×` through the splitting `ad = A·1 ⊕ ad⁰`; base
   change), §7.7 (restriction to a subgroup containing a Sylow subgroup is
-  injective on `H¹`; `H⁰(SL₂(F), ad⁰) = H¹(SL₂(F), ad⁰) = 0` for `F` finite of odd characteristic
-  with `#F ≠ 5`; `H¹(SL₂(𝔽₅), ad⁰)` is one-dimensional; change of coefficient field, in particular
+  injective on `H¹`; `H⁰(SL₂(k), ad⁰) = H¹(SL₂(k), ad⁰) = 0` for `k` finite of odd characteristic
+  with `#k ≠ 5`; `H¹(SL₂(𝔽₅), ad⁰)` is one-dimensional; change of coefficient field, in particular
   `(M ⊗ k')^G = M^G ⊗ k'` for fields `k ⊆ k'` and `M` finite-dimensional), §7.9
   (`ResidualImage.adZeroRep`: the same adjoint for a homomorphism into `GL_n(k)`, on the trace kernel
   `LinearMap.ker (LinearMap.trace k (n → k))`).
@@ -587,7 +596,7 @@ Let `k` be a field and let `ad⁰` be the trace-zero adjoint of the tautological
 it is that roadmap's §7.9 `ResidualImage.adZeroRep` of `Matrix.SpecialLinearGroup.toGL`, on the
 trace-zero endomorphisms `LinearMap.ker (LinearMap.trace k (Fin 2 → k))` with `g · X = g X g⁻¹`;
 for finite `k`, where `SL(2, k)` is a finite and hence profinite group, it is its §7.2
-*ContinuousRep.adZero*, and it is the coefficient module of the groups `H¹(SL₂(F), ad⁰)` of its §7.7.
+*ContinuousRep.adZero*, and it is the coefficient module of the groups `H¹(SL₂(k), ad⁰)` of its §7.7.
 Prove that the central element `−1` acts trivially, so the representation factors through
 `PSL₂(k)`, and that if `2 ∈ k^×` the invariants vanish: a trace-zero matrix commuting with
 `U = [[1,1],[0,1]]` and with its transpose `Uᵀ` is zero, so `H⁰(SL(2, k), ad⁰) = 0`. For finite `k`
