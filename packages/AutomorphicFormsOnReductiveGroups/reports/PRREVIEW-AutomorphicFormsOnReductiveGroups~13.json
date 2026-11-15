@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicFormsOnReductiveGroups~13",
+  "head": "4a031773749fbd197dc504006d9ae9f910ea1d84",
+  "pr": 1037,
+  "folder": "AutomorphicFormsOnReductiveGroups",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 4a03177; both previous findings repaired; title and description checked against base/head; no seeded sample target changed; compact-finite and smooth-topology examples computed; signature re-elaborated; gate and dependency check pass; targeted build and direct elaboration pass, but targeted build replays a module-system warning contradicting the description (P3).",
+  "text": "b3334a6aa489cc04",
+  "carried": {
+   "from": "4a031773749fbd197dc504006d9ae9f910ea1d84",
+   "head": "4a031773749fbd197dc504006d9ae9f910ea1d84",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
