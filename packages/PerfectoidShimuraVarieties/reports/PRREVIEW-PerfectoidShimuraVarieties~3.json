@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PerfectoidShimuraVarieties~3",
+  "head": "e6686d6a5fbc142e05ba23ed1e9f0a48a57b8940",
+  "pr": 1085,
+  "folder": "PerfectoidShimuraVarieties",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 13 changed lines since 917a589: previous R01 repaired, R02 partly repaired (the Suggested.lean docstring sentence remains, P3); the five changed README passages recomputed (the Q(sqrt5), N=4, p=7 Check, odd-p transition injectivity, the S3 coset Check) and their three source locators read (bp25 4.4.25, bhw Lemma 8.20, Scholze p. 1002); pull request title and description checked against the head (one P3: validation paragraph written for an earlier head); gate passes, depcheck 0 problems, Suggested.lean elaborates with no output; none of the 15 seeded targets lies in a changed passage.",
+  "text": "61fb3c48dd35db7d",
+  "carried": {
+   "from": "e6686d6a5fbc142e05ba23ed1e9f0a48a57b8940",
+   "head": "884245255f5a14c8ea53ff06b2380bd027be4fef",
+   "findings": 2,
+   "lines": 5,
+   "folders": [
+    "PerfectoidShimuraVarieties"
+   ],
+   "outside": true
+  }
+ }
+}
