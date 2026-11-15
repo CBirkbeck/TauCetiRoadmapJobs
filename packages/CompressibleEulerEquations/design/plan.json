@@ -676,7 +676,7 @@
      "id": "3.2.3",
      "kind": "theorem",
      "name": "AcousticalGeometry.limit_curve",
-     "statement": "Causal curves with graphs in a compact K ⊆ D are equi-Lipschitz and those on a common [a,b] have a uniformly convergent subsequence with causal limit; if D is a domain, p_m → p and x_m end at p_m on [a_m, t_{p_m}] with a_m → a < t_p, a subsequence converges locally uniformly on an interval J ∋ t_p with inf J = a′ ≥ a to a causal curve ending at p, past-inextendible in D if a′ > a. Differs from LorentzianGeometry §11.4 (curves of a spacetime parametrised by auxiliary complete Riemannian arc length): the field is continuous only on D and the curves are time-parametrised.",
+     "statement": "Causal curves with graphs in a compact K ⊆ D are equi-Lipschitz and those on a common [a,b] have a uniformly convergent subsequence with causal limit; if D is a domain, p_m → p and x_m end at p_m on [a_m, t_{p_m}] with a_m → a < t_p, a subsequence converges locally uniformly on an interval J ∋ t_p with inf J = a′ ≥ a to a causal curve ending at p, past-inextendible in D if a′ > a. Differs from LorentzianGeometry §11.4 (curves of a spacetime parametrised by auxiliary complete Riemannian arc length) and from the limit curve theorem of its §12.7 (inextendible causal curves of a locally Lipschitz metric on a manifold without boundary): the field is continuous only on D and the curves are time-parametrised.",
      "hypotheses": [
       "D a domain",
       "p_m → p in D"
@@ -1469,9 +1469,10 @@
      "id": "6.2.1",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.eq_on_slab",
-     "statement": "Two classical solutions on [t₀,t₁) × E with the same data on Σ_{t₀} and bounded cone fields on each [t₀,t₂] × E agree.",
+     "statement": "Two classical solutions on [t₀,t₁) × E with the same data on Σ_{t₀}, one of which has a cone field κ ∘ U bounded on each [t₀,t₂] × E (t₂ < t₁), agree: 6.2 with D = O = [t₀,t₁) × E, S = Σ_{t₀} and U₁ that solution, since D⁺_D(Σ_{t₀}) = D for its field (3.3.3) and only the cones of U₁ enter; nothing is assumed of the other solution's cone field.",
      "hypotheses": [
-      "bounded cone fields on compact time ranges"
+      "the cone field of one of the two solutions bounded on each [t₀,t₂] × E, t₂ < t₁",
+      "same data on Σ_{t₀}"
      ],
      "locator": {
       "source": "Majda1984",
@@ -1480,6 +1481,18 @@
      "prerequisites": [
       "target:6.2",
       "target:3.3.3"
+     ],
+     "tests": [
+      {
+       "name": "burgers_one_bounded_field",
+       "kind": "computation",
+       "statement": "Burgers, κ(u) = (1 + |u|, 0), U₁ ≡ 0 with field (1,0): a classical U₂ on [0,T) × ℝ with zero data and no bound is constant on the straight backward characteristic of slope U₂(p), which reaches t = 0, so U₂ = 0"
+      },
+      {
+       "name": "neither_field_bounded",
+       "kind": "non-example",
+       "statement": "the solutions (0, x) and (u, x) of the nonperiodic_solutions test of 6.1.1, with Λ = 0, both have field (1 + x², 0), agree at t = 0 and differ at (0.9, −10/3): one bounded field is needed"
+      }
      ]
     }
    ]
@@ -1492,7 +1505,7 @@
      "id": "7.1",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.localWellPosedness",
-     "statement": "For a quasilinear symmetric hyperbolic system, Ū ∈ G with F(Ū) = 0, a period group Λ, 2k > n + 2, a compact K ⊆ G and M > 0, there are T(M,K) > 0 and R(M,K) such that every U₀ with U₀ − Ū ∈ Hᵏ_Λ, ‖U₀ − Ū‖ ≤ M and U₀(E) ⊆ K has a unique Λ-periodic classical solution U on [0,T] × E with U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) and ‖U(t) − Ū‖_{Hᵏ_Λ} ≤ R on [0,T]; it is unique among classical solutions with bounded cone fields, depends continuously on the data in C([0,T];Hᵏ_Λ), and persists in Hᵏ′_Λ for k′ > k on the same maximal interval.",
+     "statement": "For a quasilinear symmetric hyperbolic system, Ū ∈ G with F(Ū) = 0, a period group Λ, 2k > n + 2, a compact K ⊆ G and M > 0, there are T(M,K) > 0 and R(M,K) such that every U₀ with U₀ − Ū ∈ Hᵏ_Λ, ‖U₀ − Ū‖ ≤ M and U₀(E) ⊆ K has a unique Λ-periodic classical solution U on [0,T] × E with U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) and ‖U(t) − Ū‖_{Hᵏ_Λ} ≤ R on [0,T]; it is the only classical solution on [0,T) × E with this data (U([0,T] × E) has compact closure in G by 4.2, so κ ∘ U is bounded, and 6.2.1 needs one bounded cone field), depends continuously on the data in C([0,T];Hᵏ_Λ), and persists in Hᵏ′_Λ for k′ > k on the same maximal interval.",
      "hypotheses": [
       "F(Ū) = 0",
       "2k > n + 2",
@@ -2007,7 +2020,7 @@
      "id": "8.4.1",
      "kind": "theorem",
      "name": "CompressibleEuler.boundary_null_of_maximal",
-     "statement": "If moreover (D,U) is maximal and U extends to a classical solution Ũ on N (periodically on Λ-translates), then ∂_tφ(q) + ṽ(q)·∇φ(q) = c̃(q)|∇φ(q)| and ∇φ(q) ≠ 0: ∂D is null for the acoustical form of Ũ at q. Route: if strict, with a = ∂_tφ(q) + ṽ(q)·∇φ(q) > c̃(q)|∇φ(q)|, choose M with c̃ + |ṽ − ṽ(q)| < M near q and M|∇φ(q)| < a (no upper bound when ∇φ(q) = 0); the lens {φ ≥ 0} ∩ {ψ > 0} ∩ N₀, ψ the periodised moving cone (ε, x_q, ṽ(q), M), lies in a ball of radius O(ε) about q (its linearisation is {|y| − (M/a)b·y < ε}, bounded iff M|b| < a), and adding it to D contradicts maximality.",
+     "statement": "If moreover (D,U) is maximal and U extends to a classical solution Ũ on N (periodically on Λ-translates), then ∂_tφ(q) + ṽ(q)·∇φ(q) = c̃(q)|∇φ(q)| and ∇φ(q) ≠ 0: ∂D is null for the acoustical form of Ũ at q. Route: if strict, with a = ∂_tφ(q) + ṽ(q)·∇φ(q) > c̃(q)|∇φ(q)|, choose M with c̃ + |ṽ − ṽ(q)| < M near q and M|∇φ(q)| < a (no upper bound when ∇φ(q) = 0); the lens {φ ≥ 0} ∩ {ψ > 0} ∩ N₀, ψ the periodised moving cone (ε, x_q, ṽ(q), M), lies in a ball of radius O(ε) about q (its linearisation is {|y| − (M/a)b·y < ε}, bounded iff M|b| < a), and adding it to D contradicts maximality. Differs from LorentzianGeometry §12.7 (∂_U D⁺_U(S) ∩ {t > t₀} = H⁺_U(S) ∩ {t > t₀}, null where C¹, for a locally Lipschitz metric on an open U of a manifold without boundary and S closed in a slice): the form exists only on D and N, S is open, D is relatively open in the half-space H_{t₀}, and nullity comes from maximality through the lens of 6.1.",
      "hypotheses": [
       "(D,U) maximal",
       "classical extension Ũ on N",
@@ -2038,6 +2051,11 @@
        "name": "lens_bound",
        "kind": "non-example",
        "statement": "n = 1, c̃ = 1, ṽ = 0, q = 0, φ = t − 0.9x: M = 5 gives (−100,−400) with φ = 260 ≥ 0, ψ = ε + 100 > 0 (unbounded); M = 1.05 gives |x| < ε/0.055 ≈ 18.2ε, |t| < 16.4ε"
+      },
+      {
+       "name": "separates_from_horizon_theorem",
+       "kind": "non-example",
+       "statement": "c = 1, v = 0, n = 1, S = (−1,1): the truncation {|x| < 1 − t, 0 ≤ t < 1/2} is a development with spacelike top t = 1/2, allowed by 8.4 and excluded by 8.4.1 (not maximal); LorentzianGeometry §12.7 with U = ℝ² sees D⁺_U({0} × [−1,1]) = {0 ≤ t ≤ 1 − |x|}, null boundary above t = 0"
       }
      ]
     }

@@ -91,8 +91,13 @@ Boundaries:
   statement says how it differs. LorentzianGeometry's causal vectors are nonzero (its §7.3: a
   causal vector `X` has `dt(X) ≠ 0`), while the closed cone `g(X, X) ≤ 0` of §3.1 contains `0`;
   both give `g(0, 0) = 0`, and on time-parametrised curves, whose velocities `(1, ẋ)` never
-  vanish, the two conventions agree. Null hypersurfaces, null generators and geodesics of
-  `C^{1,1}` metrics are LorentzianGeometry's as well and are not used here.
+  vanish, the two conventions agree. Null hypersurfaces are LorentzianGeometry's as well
+  (§9.2 there); §8.4 states the nullity of a boundary through the conormal condition of §3.1
+  (`dφ ≠ 0` a null covector), which is §9.2's equivalent form `g⁻¹(dφ, dφ) = 0`.
+  LorentzianGeometry §12.7 proves, for a locally Lipschitz metric on a manifold without
+  boundary, the limit curve theorem and the nullity of Cauchy horizons where they are `C¹`
+  hypersurfaces; §3.2 (limit curves) and §8.4 each say how their statements differ. Null
+  generators and geodesics of `C^{1,1}` metrics are LorentzianGeometry's and are not used here.
 - **Linear symmetric hyperbolic systems with classical solutions** are
   SymmetricHyperbolicSystems'. Its §1.2 owns the linear system carrier `LinearSystem` and the
   predicate `LinearSystem.IsSymmetricHyperbolic`, §2.1 the pointwise energy identity, §2.2
@@ -727,8 +732,10 @@ Prove, beyond LorentzianGeometry §8.2 and §12.6:
   subsets of an interval `J ∋ t_p` with `inf J = a′ ≥ a` to a causal curve `x` ending at `p`, and
   if `a′ > a` then `x` is past-inextendible in `D` (Minguzzi2019 line 1917, §2.11; Chrusciel2011
   line 1352, §2.6). This differs from LorentzianGeometry §11.4, which treats causal curves of a
-  spacetime parametrised by arc length of an auxiliary complete Riemannian metric, in that the
-  field is continuous only on `D` and the curves are time-parametrised.
+  spacetime parametrised by arc length of an auxiliary complete Riemannian metric, and from the
+  limit curve theorem of its §12.7, for inextendible causal curves of a locally Lipschitz metric
+  on a manifold without boundary, in that the field is continuous only on `D` and the curves are
+  time-parametrised.
 - *Covariance.* Λ-translates, spacetime translations and Galilean boosts carry causal curves of
   a field to causal curves of the transformed field. A boost `(t, x) ↦ (t, x + tw)` changes the
   field `(c, v)` into `(c, v + w)` and is not an isometry of one field, so this is not
@@ -1525,8 +1532,11 @@ small the total loss `O(ε(t_p − t₀))` stays below the distance from `J⁻_D
 of `N` (Majda1984, Ch. 2, §2.3; ChristodoulouMiao2014 lines 872–878; EperonReallSbierski2019
 lines 1178–1189).
 
-- *Slab uniqueness.* Two classical solutions on `[t₀, t₁) × E` with the same data on `Σ_{t₀}`
-  and bounded cone fields on `[t₀, t₂] × E` for each `t₂ < t₁` agree (§3.3, slabs).
+- *Slab uniqueness.* Two classical solutions on `[t₀, t₁) × E` with the same data on `Σ_{t₀}`,
+  one of which has a cone field bounded on `[t₀, t₂] × E` for each `t₂ < t₁`, agree: take that
+  solution as `U₁` and `D = O = [t₀, t₁) × E`, `S = Σ_{t₀}` in the Theorem; then
+  `D⁺_D(Σ_{t₀}) = D` for the field of `U₁` (§3.3, slabs) and `J⁻_D(p) ⊆ O` for every `p`, and
+  only the cones of `U₁` enter, so nothing is assumed of the other solution's cone field.
 - *Domain-of-dependence form.* If `U₁` on `D` and `U₂` on `O ⊇ D` agree on `S`, then they
   agree on `D⁺_D(S)`.
 
@@ -1541,6 +1551,15 @@ lines 1178–1189).
 - For the expanding flow of §3.3 the theorem gives uniqueness exactly on
   `{|x| < 2√(1 + t) − (1 + t)}` from data on `(−1, 1)`, not on the static cone `{|x| < 1 − t}`
   computed with the wrong (frozen) field.
+- Slab uniqueness needs one bounded cone field, not two: for Burgers `∂_tu + u∂_xu = 0`
+  (`N = n = 1`, `A⁰ = 1`, `A¹ = u`) and the cone map `κ(u) = (1 + |u|, 0)` of §2.1, `U₁ ≡ 0` has
+  the constant field `(1, 0)`, and every classical solution `U₂` on `[0, T) × ℝ` with zero data,
+  whose field `(1 + |U₂|, 0)` is not assumed bounded, is constant along the backward
+  characteristic through each point `p`, which is therefore the straight line of slope `U₂(p)`
+  and reaches `t = 0` inside the slab; so `U₂(p) = 0 = U₁(p)`, as the statement asserts.
+  Dropping the bound altogether fails: the two solutions `(0, x)` and `(u, x)` of the periodicity
+  Check of §6.1, read with `Λ = 0`, both have the field `(1 + x², 0)` for the cone map of §2.1,
+  agree at `t = 0`, and differ at `(0.9, −10/3)`, where `t + 1/x = 0.6`.
 
 *Needs:* §3.3 (compact pasts, slabs), §6.1, Layer 2.
 
@@ -1566,7 +1585,10 @@ period group `Λ`, `k ∈ ℕ` with `2k > n + 2`, a compact `K ⊆ G` and `M > 0
   which is `C¹` on `[0, T] × E` and a classical solution with `U(0) = U₀`, and
   `‖U(t) − Ū‖_{Hᵏ_Λ} ≤ R` for `t ∈ [0, T]`;
 - *uniqueness:* `U` is the only such solution, and the only classical solution on
-  `[0, T) × E` with this data and bounded cone field on each `[0, t₂] × E` (§6.2);
+  `[0, T) × E` with this data: `U([0, T] × E)` has compact closure in `G`, because by §4.2
+  `t ↦ U(t) − Ū` is continuous into the bounded continuous functions and each `U(t) − Ū` tends
+  to `0` at infinity orthogonally to the span of `Λ`, so the cone field `κ ∘ U` of §6.2 is
+  bounded, and slab uniqueness (§6.2) needs the cones of one of the two solutions only;
 - *continuous dependence:* if `U₀^m → U₀` in `Ū + Hᵏ_Λ` with values in `K`, the solutions
   converge in `C([0, T]; Hᵏ_Λ)`;
 - *continuation:* the maximal existence time `T*` satisfies: if `T* < ∞`, then
@@ -1894,6 +1916,20 @@ open neighbourhood `N` of `q` and a `C¹` function `φ` on `N` with `dφ(q) ≠ 
 development is a null hypersurface; ChristodoulouMiao2014 lines 880–886; LuoYu2023b
 lines 417–419; EperonReallSbierski2019 line 1603, Theorem 4.82, for the role of maximal
 developments lying on one side of their boundary.)
+
+LorentzianGeometry §12.7 proves, for a locally Lipschitz time-oriented Lorentzian metric on an
+open set `U` of a manifold without boundary and `S` closed in a slice `{t = t₀}` of a temporal
+function on `U`, that `∂_U D⁺_U(S) ∩ {t > t₀} = H⁺_U(S) ∩ {t > t₀}` and that the horizon
+`H⁺_U(S)` is null, in the sense of its §9.2, wherever it is a `C¹` hypersurface. Statement (b)
+differs: the acoustical form exists only on `D` and on the neighbourhood `N` to which the
+solution extends, `S` is open, `D` is a relatively open subset of the half-space `H_{t₀}`, which
+has boundary, and nullity follows from maximality among developments through the moving-cone
+lens of §6.1, not from achronality in a fixed spacetime; (a), for a development that need not
+be maximal, gives only spacelike or null. The two are separated by the constant state `c = 1`,
+`v = 0`, `n = 1`, `S = (−1, 1)`: its truncation `{|x| < 1 − t, 0 ≤ t < 1/2}` is a development
+(§8.1) whose top `t = 1/2` is spacelike, which (a) allows and (b) excludes by non-maximality,
+while §12.7 with `U = ℝ²` sees only `D⁺_U({0} × [−1, 1]) = {0 ≤ t ≤ 1 − |x|}`, whose boundary
+above `t = 0` is null, and says nothing about the truncation.
 
 - Consequently, a `C¹` hypersurface contained in `∂D ∩ {t > t₀}`, with `D` on one side and along
   which `U` extends as a classical solution, is null for the acoustical form of the extension at
