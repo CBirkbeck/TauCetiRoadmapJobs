@@ -133,7 +133,8 @@ Planned by other roadmaps, and imported by name and section:
 - RepresentationTheory/CharacterTheory §2.1 (the sum of the squares of the degrees), §3.5 (column
   orthogonality and primitive central idempotents), §3.6 (irreducible characters of a direct
   product), §4.3 (central characters and their integrality), §4.4 (the Galois action and the field
-  of values).
+  of values), §4.5 (Brauer's splitting field: a field of characteristic zero containing a
+  primitive `exp(G)`-th root of unity splits `G`).
 - RepresentationTheory/InductionRestriction Layer 1 (conjugate representations), Layer 2 (induced
   characters and Frobenius reciprocity), Layer 5 (Clifford theory) and Layer 7 (the scalar
   extension obstruction and the tensor factorisation over a compatible projective extension). Its
@@ -310,8 +311,18 @@ normal subgroup and `k` the residue field); `IsCyclotomicExtension`, `IsPrimitiv
 for a finite group `G` acting on `B` as a Galois group over `A`, `IsGaloisGroup G A B`, two primes
 of `B` lying over the same ideal of `A` are exchanged by some element of `G`), used with `A = ℤ`,
 `B = 𝓞 F` and the instance `IsGaloisGroup G ℤ (𝓞 L)` of
-`Mathlib/FieldTheory/Galois/IsGaloisGroup.lean` for a Galois group of a number field `L` over `ℚ`.
-Assumed: their statements, nothing more.
+`Mathlib/FieldTheory/Galois/IsGaloisGroup.lean` for a Galois group of a number field `L` over `ℚ`;
+`IsDedekindDomain.HeightOneSpectrum.adicCompletion`
+(`Mathlib/RingTheory/DedekindDomain/AdicValuation/Completion.lean`: for a Dedekind domain `R` with
+fraction field `K` and a height-one prime `v`, the completion of `K` for the `v`-adic valuation, a
+structure wrapping the uniform-space completion `(v.valuation K).Completion`; with `R = 𝓞 F` it is
+the completion `F_w` of a number field at a finite place) and `UniformSpace.Completion.extension`
+(`Mathlib/Topology/UniformSpace/Completion.lean`: the extension of a map `f : α → β` to the
+completion of `α`, uniformly continuous when `β` is complete, and equal to `f` on `α` when `f` is
+uniformly continuous and `β` is `T0Space`, by `UniformSpace.Completion.extension_coe`; for a map
+that is not uniformly continuous it is a junk constant), used in the change of system of §6.1 to
+identify the closure of `ℚ(ζ_{exp H})` in a complete `K'` with the completion at the place `w`
+below `m'`. Assumed: their statements, nothing more.
 
 ### From Tau Ceti
 
@@ -443,7 +454,13 @@ projective multiplicity representation with factor set `β⁻¹`; this roadmap u
 §2.1 (the sum of the squares of the degrees), §3.5 (column orthogonality, primitive central
 idempotents), §3.6 (the irreducible characters of `G × H` are the products `ψ × ξ`), §4.3 (central
 characters, `ω_χ(𝒞⁺) = |𝒞| χ(x)/χ(1)`, integrality), §4.4 (the Galois action and
-`fieldOfValues_eq_map_fixedField_stabilizer`).
+`fieldOfValues_eq_map_fixedField_stabilizer`), §4.5 (Brauer's splitting field: for a field `K` of
+characteristic zero containing a primitive `exp(G)`-th root of unity, every irreducible
+representation of `G` over an algebraically closed extension of `K` is the scalar extension of an
+absolutely irreducible representation over `K`, so `K`, and with it every extension of `K`, splits
+`G`; §4.5 also transports the realisation along `ULift` and `Shrink` to a group in another universe
+than the fields). It is used in Conventions, for the values of the `K`-valued irreducible characters, and
+in the change of system of §6.1, where it applies to the closure `K_w` of `ℚ(ζ_{exp H})` in `K'`.
 
 ### From TauCetiRoadmap.RepresentationTheory.InductionRestriction
 
@@ -1289,7 +1306,8 @@ base §§4.3, 6.2, 7.1.
 Base Conventions and §§1.1, 1.3, 2.1–2.4, 3.1, 4.1–4.3, 6.1–6.2, 7.1, 8.2 (§§7.1 and 8.2 for the
 changes of system and of level only); CharacterTheory §§4.3, 4.4, 4.5 (§4.5 for the change of
 system); Tau Ceti central characters and degrees; Mathlib `Ideal.exists_smul_eq_of_isGaloisGroup`
-for the change of place.
+for the change of place, and `IsDedekindDomain.HeightOneSpectrum.adicCompletion` with
+`UniformSpace.Completion.extension` for the change of system.
 
 ## Layer 7: blocks and normal subgroups
 
