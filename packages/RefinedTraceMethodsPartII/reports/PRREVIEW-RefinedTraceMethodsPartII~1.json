@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RefinedTraceMethodsPartII~1",
+  "head": "e827f7741138917b6ebc91acfce2f5c5da54affc",
+  "pr": 2410,
+  "folder": "RefinedTraceMethodsPartII",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "Full review. Gate passes (all checks; depcheck 242 roadmaps, 2246 edges, 0 problems); lake env lean Suggested.lean: three sorry warnings only; #check @ of 6 declarations matches the README; one-tactic probe closes none. Seeded sample 1.1, 2.3, 2.5, 3.4, 4.1, 4.2, 5.1, 5.2, 5.3, 7.1, 7.2, 8.3, 9.1, 9.3, 9.6 checked against the cached texts (about 80 locators, 10 sources); one locator range misses its statement (R03). Layer 1 identities checked by enumeration. Every supplier section resolved at the heads; declared gaps match plan.json and are not provided upstream. Four P3 findings: §7.2 syntomic form narrower than sulyma Remark 1.3 / riggenbach-trunc; wrong RefinedTraceMethods locator for the Tate witness; §2.5 Frobenius locator; undefined symbols in §7.2 and a §9.3 Check. Five source issues recorded (speirs-axes p=2 odd formula, akn-delta Prop 8.6 bound, akn24 Rem 5.3, hesselholt-cusp-polytopes Cor 1.7, hn-cusp intro).",
+  "text": "02b3ae7efe525087"
+ }
+}
