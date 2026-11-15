@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RelativeFarguesFontainePartII~3",
+  "head": "3a7b7c1efb6b7a8d8f2912e05fdf8ee533204dd5",
+  "pr": 1825,
+  "folder": "RelativeFarguesFontainePartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 12 changed lines since a4f22ee, plus the first check of the pull request's title and description against the head. One P3 (R01): the change demotes targets 1.9 and 1.10 from ### subsections to run-in paragraphs under a retitled 1.8, so headings run 1.8 -> 1.11 and the Needs lines of 1.9 and 1.10 cite the section that contains them. Checked: the new sentence's r-th-power claim computed on all three targets; FF17 locators of 1.8-1.10 read at lines 2905, 3335-3496; gate re-run, all checks 0; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged, elaborates with three sorry warnings only; title and description: 14 claims checked against the head, none contradicted; no file changed outside the folder; no seeded-sample target falls in the changed passages.",
+  "text": "17f9b9ec0909915b",
+  "carried": {
+   "from": "3a7b7c1efb6b7a8d8f2912e05fdf8ee533204dd5",
+   "head": "7c931f363774b91b15e32c977ff3931ab9232ab5",
+   "findings": 1,
+   "lines": 12,
+   "folders": [
+    "RelativeFarguesFontainePartII"
+   ],
+   "outside": true
+  }
+ }
+}
