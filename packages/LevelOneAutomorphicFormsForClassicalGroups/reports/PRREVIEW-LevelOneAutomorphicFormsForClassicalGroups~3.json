@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LevelOneAutomorphicFormsForClassicalGroups~3",
+  "head": "7466633ad9ac76621193149a3a092b23ce57f95e",
+  "pr": 2285,
+  "folder": "LevelOneAutomorphicFormsForClassicalGroups",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "Full review at 7466633. Both findings of the previous review are repaired. One P2 (section 5.1 states its cover theorem without c >= A_F/m and without its (delta, m) hypothesis; false as written) and three P3 (a false Check in 2.11, a vacuous Check in 2.17, an undefined term in 2.8). Seeded sample of 15 targets verified against CT20, CL14, CT19a, Tai17, BoechererNote, Mil02, MR18 (92 locators); KT87 uncertified and Boecherer 1989 read only through the note. Recomputed independently: the 20 index-set sizes of 4.9 (Sp14 = 1158), the SO3 system (determinant 288), the 223/199/59 parameter counts and all 58 regular rows of 7.4, 7.8, 7.9, the five order rows of 8.7. 94 supplier section ids in 22 roadmaps resolved at main or open heads; nine declared gaps checked for minimality (the ninth slug is absent from plan.json: for the humans). Gate passed on this head; depcheck 244 roadmaps, 2233 edges, 0 problems. Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the four theorems; signatures equal the README statements. Sixteen source issues recorded for the errata register.",
+  "text": "335565d33d3f8157"
+ }
+}
