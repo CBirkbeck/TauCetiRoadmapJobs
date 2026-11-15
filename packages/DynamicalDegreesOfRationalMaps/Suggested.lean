@@ -24,21 +24,20 @@ line-bundle classes, an element of `LineBundleClass X →₀ ℝ`; its image in 
 class, and every number below depends only on that image (README §2.3). A real polarization
 is a real class `ω` with `IsNef K ω` and `0 < realIntersection K X (fun _ : Fin d ↦ ω)`.
 
-Headline theorems that are not statable at the pins, and what each lacks:
+The base change `f_{K'}` of a rational self-map along a field extension `K'/K` (README §1.4) is
+not defined here: it enters the statements through its characterization (README §1.4) as the
+unique `K'`-rational self-map `f'` of `X' = X ×_K Spec K'` with `π ∘ f' = f ∘ π` for the
+projection `π : X' → X`, written `f'.compHom π = π.toRationalMap.comp f`.
 
-* Invariance of the dynamical degrees and of the algebraic entropy under extension of the
-  ground field for a geometrically integral variety (README §§4.3, 5.3, 5.4) lacks the base
-  change `f_{K'} : X_{K'} ⤏ X_{K'}` of a rational map along a field extension. Mathlib's
-  `Scheme.PartialMap` carries the density of its domain as a field, and the density of the
-  base-changed domain is itself a theorem, so the map cannot be written down as a definition
-  with a real body.
-* The formulas on projective space (README §§6.1–6.4): `deg_{1,H}(f) = a` for a map given by
-  forms of degree `a` without common factor, the degrees and dynamical degrees of the standard
-  Cremona involution, `λ_1 = Real.goldenRatio` for the Fibonacci map, and the extension of
-  polynomial self-maps of affine space, lack the rational self-map `[F_0 : ⋯ : F_d]` of `ℙ^d_K`
-  attached to forms. README §6.1 constructs it by gluing the morphisms that Mathlib's
-  `AlgebraicGeometry.Proj.fromOfGlobalSections` gives on the affine charts `D_+(F_i)`; neither
-  library has the glued map, whose `Scheme.PartialMap` also needs the density of its domain.
+Headline theorems that are not statable at the pins, and what each lacks: the formulas on
+projective space (README §§6.1–6.4), namely `deg_{1,H}(f) = a` for a map given by forms of degree
+`a` without common factor, the degrees and dynamical degrees of the standard Cremona involution,
+`λ_1 = Real.goldenRatio` for the Fibonacci map, and the extension of polynomial self-maps of
+affine space. They lack the rational self-map `[F_0 : ⋯ : F_d]` of `ℙ^d_K` attached to forms.
+README §6.1 constructs it by gluing the morphisms that Mathlib's
+`AlgebraicGeometry.Proj.fromOfGlobalSections` gives on the affine charts `D_+(F_i)`. Neither
+library has the glued map, nor the chart morphisms `y_j ↦ F_j/F_i` into the degree-zero
+localizations; pinning the map down through them would be a long ad hoc encoding.
 
 Invariance under the normalization lift (README §§4.3, 5.3) is the case of
 `dynamicalDegree_birational_conj` in which the partial isomorphism is the inverse of the
@@ -199,6 +198,31 @@ theorem mixedDegree_boundary (K : Type u) [Field K] {X Y : Scheme.{u}}
     mixedDegree K f L M d 0 = realIntersection K X (fun _ : Fin d ↦ L) ∧
       mixedDegree K f L M 0 d =
         (topologicalDegree f : ℝ) * realIntersection K Y (fun _ : Fin d ↦ M) := by
+  sorry
+
+/-- **The degrees over an extension of the field** (README §4.3). For a dominant `K`-rational map
+`f : X ⤏ Y` between projective varieties of dimension `d`, real classes `L` on `X` and `M` on `Y`,
+`p + q = d` and every field extension `K'/K`, the mixed degree `deg(f; L^p | M^q)` over `K` is the
+intersection number over `K'`, on the base change `(Γ_f)_{K'} = Γ_f ×_K Spec K'` of the graph, of
+`p` copies of the pullback of `L` and `q` copies of the pullback of `M`. The graph is a `K`-scheme
+through `π_1` (the instance binders: a structure morphism for which `π_1` is a `K`-morphism, so
+`Γ_f → Spec K` is `π_1` followed by `X → Spec K`), and the fibre product is a `K'`-scheme through
+its second projection (Mathlib's `AlgebraicGeometry.Scheme.canonicallyOverPullback`). No
+geometric integrality is assumed: `(Γ_f)_{K'}` may be reducible. -/
+theorem mixedDegree_baseChange (K K' : Type u) [Field K] [Field K'] [Algebra K K']
+    {X Y : Scheme.{u}} [X.Over (Spec (.of K))] [Y.Over (Spec (.of K))] [IsIntegral X]
+    [IsIntegral Y] [X.IsProjectiveOver K] [Y.IsProjectiveOver K] {d : ℕ}
+    (hX : topologicalKrullDim X = d) (hY : topologicalKrullDim Y = d) (f : X ⤏ Y)
+    [f.IsDominant] [f.IsOver (Spec (.of K))] [(graph f).Over (Spec (.of K))]
+    [(graphFst f).IsOver (Spec (.of K))] (L : LineBundleClass X →₀ ℝ)
+    (M : LineBundleClass Y →₀ ℝ) (p q : ℕ) (hpq : p + q = d) :
+    mixedDegree K f L M p q =
+      realIntersection K' (pullback (graph f ↘ Spec (.of K))
+          (Spec.map (CommRingCat.ofHom (algebraMap K K'))))
+        (Fin.append
+          (fun _ : Fin p ↦ L.mapDomain (LineBundleClass.pullback (pullback.fst _ _ ≫ graphFst f)))
+          (fun _ : Fin q ↦
+            M.mapDomain (LineBundleClass.pullback (pullback.fst _ _ ≫ graphSnd f)))) := by
   sorry
 
 /-- **Sub-multiplicativity of the degrees** (README §4.4). Let `f_1 : X_1 ⤏ X_2` and
@@ -381,6 +405,29 @@ theorem dynamicalDegree_birational_conj (K : Type u) [Field K] {X Y : Scheme.{u}
       dynamicalDegree K d k f ωX := by
   sorry
 
+/-- **Invariance of the dynamical degrees under extension of the field** (README §5.3). Let `X` be
+a geometrically integral projective variety of dimension `d` over `K`, `K'/K` a field extension
+and `X'` the base change `X ×_K Spec K'`, with projection `π : X' → X` (`hπ`); `X'` is an
+integral projective variety over `K'` and `π` is dominant. For a dominant `K`-rational self-map
+`f` of `X`, its base change `f_{K'}` is the unique `K'`-rational self-map `f'` of `X'` with
+`π ∘ f' = f ∘ π` (`hf`). For a real polarization `ω` on `X` and `k ≤ d`, `λ_k(f_{K'})` computed
+with the pullback of `ω` is `λ_k(f)`. -/
+theorem dynamicalDegree_baseChange (K K' : Type u) [Field K] [Field K'] [Algebra K K']
+    {X X' : Scheme.{u}} [X.Over (Spec (.of K))] [X'.Over (Spec (.of K'))] [IsIntegral X]
+    [IsIntegral X'] [X.IsProjectiveOver K] [X'.IsProjectiveOver K']
+    [GeometricallyIntegral (X ↘ Spec (.of K))] {d : ℕ} (hX : topologicalKrullDim X = d)
+    (π : X' ⟶ X) [IsDominant π]
+    (hπ : IsPullback π (X' ↘ Spec (.of K')) (X ↘ Spec (.of K))
+      (Spec.map (CommRingCat.ofHom (algebraMap K K'))))
+    (f : X ⤏ X) [f.IsDominant] [f.IsOver (Spec (.of K))]
+    (f' : X' ⤏ X') [f'.IsDominant] [f'.IsOver (Spec (.of K'))]
+    (hf : f'.compHom π = π.toRationalMap.comp f)
+    (ω : LineBundleClass X →₀ ℝ) (hω : IsNef K ω)
+    (hωd : 0 < realIntersection K X fun _ : Fin d ↦ ω) (k : ℕ) (hk : k ≤ d) :
+    dynamicalDegree K' d k f' (ω.mapDomain (LineBundleClass.pullback π)) =
+      dynamicalDegree K d k f ω := by
+  sorry
+
 /-- **Algebraic entropy of iterates** (README §5.4): `h_alg(f^n) = n·h_alg(f)`. -/
 theorem algebraicEntropy_iterate (K : Type u) [Field K] {X : Scheme.{u}}
     [X.Over (Spec (.of K))] [IsIntegral X] [X.IsProjectiveOver K] {d : ℕ}
@@ -399,6 +446,25 @@ theorem algebraicEntropy_bounds (K : Type u) [Field K] {X : Scheme.{u}}
     (hωd : 0 < realIntersection K X fun _ : Fin d ↦ ω) :
     Real.log (topologicalDegree f) ≤ algebraicEntropy K d f ω ∧
       algebraicEntropy K d f ω ≤ d * Real.log (dynamicalDegree K d 1 f ω) := by
+  sorry
+
+/-- **Invariance of the algebraic entropy under extension of the field** (README §5.4). In the
+setting of `dynamicalDegree_baseChange`, with `f'` the base change `f_{K'}` of `f`,
+`h_alg(f_{K'}) = h_alg(f)`. -/
+theorem algebraicEntropy_baseChange (K K' : Type u) [Field K] [Field K'] [Algebra K K']
+    {X X' : Scheme.{u}} [X.Over (Spec (.of K))] [X'.Over (Spec (.of K'))] [IsIntegral X]
+    [IsIntegral X'] [X.IsProjectiveOver K] [X'.IsProjectiveOver K']
+    [GeometricallyIntegral (X ↘ Spec (.of K))] {d : ℕ} (hX : topologicalKrullDim X = d)
+    (π : X' ⟶ X) [IsDominant π]
+    (hπ : IsPullback π (X' ↘ Spec (.of K')) (X ↘ Spec (.of K))
+      (Spec.map (CommRingCat.ofHom (algebraMap K K'))))
+    (f : X ⤏ X) [f.IsDominant] [f.IsOver (Spec (.of K))]
+    (f' : X' ⤏ X') [f'.IsDominant] [f'.IsOver (Spec (.of K'))]
+    (hf : f'.compHom π = π.toRationalMap.comp f)
+    (ω : LineBundleClass X →₀ ℝ) (hω : IsNef K ω)
+    (hωd : 0 < realIntersection K X fun _ : Fin d ↦ ω) :
+    algebraicEntropy K' d f' (ω.mapDomain (LineBundleClass.pullback π)) =
+      algebraicEntropy K d f ω := by
   sorry
 
 end
