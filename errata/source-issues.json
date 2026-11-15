@@ -214827,10 +214827,26 @@
    "reported": "2026-11-15",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13045#issuecomment-6888958912"
+  },
+  {
+   "kind": "error",
+   "source": "BieriEckmann1973",
+   "locator": "Proposition 5.1, printed page 119",
+   "says": "the duality groups of dimension one are exactly all finitely generated free groups",
+   "should": "the nontrivial ones, the trivial group having dimension zero, as its proof assumes",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "FinitenessAndDualityOfGroups",
+   "job": "RT-FinitenessAndDualityOfGroups~1b",
+   "board_pr": 15391,
+   "head": "4505272",
+   "reported": "2026-11-15",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15391#issuecomment-6889172438"
   }
  ],
- "scanned_to": "2026-11-15T04:07:41Z",
- "updated": "2026-11-15T04:13:22Z",
+ "scanned_to": "2026-11-15T04:29:04Z",
+ "updated": "2026-11-15T04:38:20Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
