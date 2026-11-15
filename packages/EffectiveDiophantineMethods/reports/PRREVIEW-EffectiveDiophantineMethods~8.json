@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EffectiveDiophantineMethods~8",
+  "head": "1f96c0dc89b2b0400d55364af77ef55fbf5d7985",
+  "pr": 1046,
+  "folder": "EffectiveDiophantineMethods",
+  "date": "2026-11-15",
+  "findings": 6,
+  "blocking": 0,
+  "notes": "Full review. The five findings of the previous review are repaired. Six P3 findings: section 3.7 (elliptic 2-Selmer bound) cited as the rank datum of Jacobians in sections 4.17, 4.19, 5.27-5.29; section 3.9 restates the definition of 3.8 as an equivalence; Checks of 1.10 and 4.16 written as verdicts of an undefined checking procedure; cut code spans, two dangling symbols, a damaged sentence and a repeated Check; a Check of 6.7 false in characteristic 2; five cited works absent from the References. Seeded sample of 15 targets recomputed and 32 locators checked in 13 sources (all agree); the headline solution lists recomputed (Thue quartics, integral points, triangular numbers, 545/514 S-unit solutions, 72 Thue-Mahler tuples); the C1(3_2) Chabauty values recomputed (alpha = 68 mod 81, valuations, #J(F_3) = 27, #J(F_5) = 43). Gate passes at this head (worker); lake env lean gives twelve sorry warnings only; depcheck 0 problems; Suggested.lean unchanged since the previous head, so the one-tactic probe and pin checks were not rerun.",
+  "text": "03b5e29282034e64",
+  "carried": {
+   "from": "1f96c0dc89b2b0400d55364af77ef55fbf5d7985",
+   "head": "e98a4b07f948793259de74a651cfc96ff43ce710",
+   "findings": 6,
+   "lines": 105,
+   "folders": [
+    "EffectiveDiophantineMethods"
+   ]
+  }
+ }
+}

@@ -35,3 +35,103 @@ status = "certified"
 accessed = "2026-11-15"
 version_note = "arXiv v4"
 cited_for = ["5.22"]
+
+[[source]]
+id = "biluParentRebolledo2013"
+authors = "Yu. Bilu, P. Parent, M. Rebolledo"
+title = "Rational points on X_0^+ (p^r)"
+year = 2011
+venue = "Annales de l'Institut Fourier 63 (2013), no. 3, 957-984"
+doi = "10.5802/aif.2781"
+arxiv = "1104.4641v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 and Corollary 1.2, pp. 2-3 (arXiv v1 numbering)"
+url = "https://arxiv.org/abs/1104.4641v1"
+fetched_from = "https://arxiv.org/pdf/1104.4641v1"
+fetched_at = "2026-11-15T18:18:44Z"
+sha256 = "bc13ecbff16f7d61130e02deecea0adf60e5d67133a99d1f89da593563e2869c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["6.31"]
+
+[[source]]
+id = "bruinPoonenStoll2016"
+authors = "Nils Bruin, Bjorn Poonen, Michael Stoll"
+title = "Generalized explicit descent and its application to curves of genus 3"
+year = 2012
+venue = "Forum of Mathematics, Sigma 4 (2016), e6"
+doi = "10.1017/fms.2016.1"
+arxiv = "1205.4456v2"
+locator_scheme = "section"
+locator = "§12.9.3, Proposition 12.18, pp. 43-44 (arXiv v2)"
+url = "https://arxiv.org/abs/1205.4456v2"
+fetched_from = "https://arxiv.org/pdf/1205.4456v2"
+fetched_at = "2026-11-15T18:19:07Z"
+sha256 = "e53e4912cab98eb0e514afa2fbf17b21f446ac032b6b1855e11784bbc478fb47"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["6.21"]
+
+[[source]]
+id = "diamondShurman2005"
+authors = "Fred Diamond, Jerry Shurman"
+title = "A First Course in Modular Forms"
+year = 2005
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-0-387-27226-9"
+locator_scheme = "theorem"
+locator = "§3.1, Theorem 3.1.1"
+url = "https://doi.org/10.1007/978-0-387-27226-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.30"]
+
+[[source]]
+id = "silverman2009aec"
+authors = "Joseph H. Silverman"
+title = "The Arithmetic of Elliptic Curves"
+year = 2009
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-0-387-09494-6"
+locator_scheme = "theorem"
+locator = "III.4, Theorem 4.8; III.6, Corollary 6.4"
+url = "https://doi.org/10.1007/978-0-387-09494-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.30"]
+
+[[source]]
+id = "stichtenoth2009"
+authors = "Henning Stichtenoth"
+title = "Algebraic Function Fields and Codes"
+year = 2009
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-3-540-76878-4"
+locator_scheme = "theorem"
+locator = "Proposition 6.2.4"
+url = "https://doi.org/10.1007/978-3-540-76878-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.15"]
+
+[[source]]
+id = "baran2014"
+authors = "Burcu Baran"
+title = "An exceptional isomorphism between modular curves of level 13"
+year = 2014
+venue = "Journal of Number Theory 145 (2014), 273-300"
+doi = "10.1016/j.jnt.2014.05.017"
+locator_scheme = "page"
+locator = "pp. 273-300"
+url = "https://doi.org/10.1016/j.jnt.2014.05.017"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.18", "6.32"]
