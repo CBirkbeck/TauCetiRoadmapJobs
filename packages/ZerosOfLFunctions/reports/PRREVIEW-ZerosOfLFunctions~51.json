@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ZerosOfLFunctions~51",
+  "head": "2371fdba06b79fd86f28f646a206338bed8232a7",
+  "pr": 1913,
+  "folder": "ZerosOfLFunctions",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 2371fdb. Checked the pull request's title and description sentence by sentence against the head and the folder's change against origin/main (13 headings added, 0 removed; 4 Lean theorems added, 0 removed or restated; one import added; the same seven supplier roadmaps at main and head; no hunk in Layer 9): no sentence contradicted, no unstated change. Gate re-run: every check passes (worker's build=0); depcheck 245 roadmaps, 2207 edges, 0 problems; lake env lean on Suggested.lean exits 0 with 23 sorry warnings only; nothing changed outside the folder. Adversarial rows recomputed for the statements the description cites (5.6 coefficient b = -0.0230957 vs 0.9769043 for exp s times xi; 2.4 newform 90 vs 15.75; 8.5 prime-power weights 5.3333 vs pi(10) = 4; 5.6a first zero pair 0.0099606); other rows stand as in the review of 2371fdb. Overlap check and Source independence lines are in the report; no source locator changed.",
+  "text": "503959ff1b5f7dc2"
+ }
+}
