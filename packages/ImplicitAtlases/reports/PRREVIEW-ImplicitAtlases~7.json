@@ -1,0 +1,32 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ImplicitAtlases~7",
+  "head": "d4d479c82461bb8ce549be3961d912b3c3179896",
+  "pr": 974,
+  "folder": "ImplicitAtlases",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 4 changed lines since 81fc759. Checked: the two changed passages (Summary attribution, Layer 7 opening paragraph) against Pardon arXiv:1309.2370v6 at 5 locators, all correct; the pull request's title and description against the head (previous R01 and R02 repaired); gate re-run, every check 0; depcheck 0 problems; Suggested.lean elaborates with no output (no declarations). One P3 finding: AbelianSchemesAndArithmeticModuliPartII's open head (6684834) no longer has §B2.9 and maps it to Tau Ceti's invariance of domain, which is at this pull request's pin (TauCeti/AlgebraicTopology/Singular/InvarianceOfDomain.lean); the README, the Suggested.lean docstring and the description should cite the pin and drop the open-roadmap dependency. D01 stands.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "Remark on untouched text (unnumbered): two sentences of TopologicalSheafCohomology's README on main describe ImplicitAtlases §0.7 wrongly.",
+    "where": "TopologicalSheafCohomology README on main, scope paragraph line 10 and line 221",
+    "raised": "PRREVIEW-ImplicitAtlases~6"
+   }
+  ],
+  "text": "d40f1a5187423067",
+  "carried": {
+   "from": "d4d479c82461bb8ce549be3961d912b3c3179896",
+   "head": "8352e536af023a243aa1b9c9004c9632ad488ae6",
+   "findings": 1,
+   "lines": 17,
+   "folders": [
+    "ImplicitAtlases"
+   ]
+  }
+ }
+}
