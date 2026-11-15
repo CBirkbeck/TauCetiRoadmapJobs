@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuaternionArithmetic~10",
+  "head": "e0f2268e0fdeac9c2b5ab29d321a9c4ce573c452",
+  "pr": 1722,
+  "folder": "QuaternionArithmetic",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since e0f2268; this round checked the pull request's title and description against the head. Two P3 findings, both in the description: it lists the classification by ramification as content although README 84-86 consumes it from GL2AutomorphicRepresentationsAndTransfer R17.1.5, and its Suggested.lean bullet says 'what can be stated' although the file states the 30 headline theorems only. Counts confirmed: 11 layers, 87 milestones, topic math.NT. Worker's gate OK (build=0); rerun agrees except depcheck NOT IN ORDER (not a finding); dependency check with --movable: 244 roadmaps, 2229 edges, 0 problems; lake env lean on Suggested.lean exits 0 with 30 sorry warnings only; nothing changed outside the folder; no overlaps. Previous report had no findings.",
+  "text": "99d74b209c9b5cb3",
+  "carried": {
+   "from": "e0f2268e0fdeac9c2b5ab29d321a9c4ce573c452",
+   "head": "17a00a036ec46ca26464d3e7f18893eeba7211d5",
+   "findings": 2,
+   "lines": 11,
+   "folders": [
+    "QuaternionArithmetic"
+   ],
+   "outside": true
+  }
+ }
+}
