@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsHighDimensional~2",
+  "head": "3d248d3d12760554b7d0000b6448c1c8c4bbd734",
+  "pr": 2396,
+  "folder": "MathematicalStatisticsHighDimensional",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 1,
+  "notes": "Full re-review. Previous R01-R08 repaired (the Akaike reference left behind is R03 here). R01 (P1): the probability bound of 8.2 spiked_leading_eigenvector is false for large and small nu (witness p=2, n=3, delta=1, nu to infinity); repair exponent min(1, nu delta^2, nu^2 delta^2). R02-R05 are P3 (Checks, a reference not cited, an overclaim in Prior formalization, a Needs line). Gate passes; depcheck 0 problems; Suggested.lean elaborates with 76 sorry warnings only; 10 one-tactic probes, none closed; 121 of 123 #check signatures compared. Seeded sample of 15 targets recomputed; source locators verified in CandesPlan2011, Johnstone2017, BickelLevina2008 (7); Wainwright, Giraud, Foucart-Rauhut, van de Geer, Dickhaus, Yao-Zheng-Bai, Vershynin, Massart, BLM not readable legally. 16 cross-roadmap citations resolved.",
+  "text": "3c6a128c4ca94c04"
+ }
+}
