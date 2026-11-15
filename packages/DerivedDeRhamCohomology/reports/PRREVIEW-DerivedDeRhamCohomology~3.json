@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DerivedDeRhamCohomology~3",
+  "head": "38e20bfb03585dd155f355d0fb9533abeee399ec",
+  "pr": 868,
+  "folder": "DerivedDeRhamCohomology",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 61 changed lines since e0b83c0; checked all three previous findings, changed PD statements, seeded target 0.20, 16 source locators and Roby page images, changed ownership and supplier contracts, PR title and description, adversarial values, wording and reuse. Gate and dependency check pass; targeted build, direct elaboration and all 11 signature checks pass. Three P3 findings: erroneous prior Roby correction and two description defects.",
+  "text": "8efc30acce596bc4",
+  "carried": {
+   "from": "38e20bfb03585dd155f355d0fb9533abeee399ec",
+   "head": "de758afad24c0d8a090449cd6ac3e56e17aea9f2",
+   "findings": 3,
+   "lines": 2,
+   "folders": [
+    "DerivedDeRhamCohomology"
+   ],
+   "outside": true
+  }
+ }
+}

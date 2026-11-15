@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DerivedDeRhamCohomology"
+
+[[source]]
+id = "Roby"
+authors = "Norbert Roby"
+title = "Lois polynômes et lois formelles en théorie des modules"
+year = 1963
+locator_scheme = "theorem"
+locator = "Theorem IV.2 and Proposition IV.8, pp.272, 284"
+url = "https://www.numdam.org/item/ASENS_1963_3_80_3_213_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASENS_1963_3_80_3_213_0.pdf"
+fetched_at = "2026-11-15T02:30:55Z"
+sha256 = "1679797ecbd2a655d8d0dfe38ffe28bc8c49b881bf84bb965d018190c331e330"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["PD.5"]
