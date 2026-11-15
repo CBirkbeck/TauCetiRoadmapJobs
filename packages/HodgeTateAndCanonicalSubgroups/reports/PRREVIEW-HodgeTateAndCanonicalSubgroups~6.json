@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HodgeTateAndCanonicalSubgroups~6",
+  "head": "c6ed07fc51d7e4b4d1b78bf2afeb499769663663",
+  "pr": 1084,
+  "folder": "HodgeTateAndCanonicalSubgroups",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 117 changed lines since 333737c. All seven previous findings repaired (odd-p cokernel bound in 0.5 and the Lean headline, 3.2 dropped with later numbers kept, consumer citations by layer and section, locators of 6.12/6.36/6.37, notation, Checks of 0.17/1.2/6.10). Checked: 19 source locators in 9 sources (FAR10, FAR11, SCH15, PS16, SW20, BHW, DLLZ-adic, DLLZ-RH, dJvdP96), sampled targets 2.3 and 6.36 where the change touches them, every new cross-roadmap citation at the open heads, the new Checks by computation, the pull request text against the head. Gate: every counter 0, build 0. Dependency check: 246 roadmaps, 2258 edges, 0 problems. Elaboration: sorry the only warning; six one-tactic probes fail. Not verifiable: HALO and ZIE not in the cache; the hypothesis line of dJvdP96 Prop. 2.5.8 is lost in the scan's text. For the human reviewers: the restriction of 0.5 to odd p, the BPC25 manuscript, the FLT-project sentence.",
+  "text": "056d45ea5febb48e"
+ }
+}
