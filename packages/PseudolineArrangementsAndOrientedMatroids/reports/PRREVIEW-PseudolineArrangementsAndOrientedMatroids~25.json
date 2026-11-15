@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PseudolineArrangementsAndOrientedMatroids~25",
+  "head": "837b31e4cd8da5bd7cf1dd6eef77fcb5967fb5df",
+  "pr": 1523,
+  "folder": "PseudolineArrangementsAndOrientedMatroids",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 8 changed lines since d37350b. The diff deletes the Research-context sentence and the References entry citing Grothendieck's unpublished notes (folder 80) and adds nothing; no dangling reference remains. Previous R01 and R02 (pull request description) are repaired. Description reread against the head: no contradiction, nothing unstated. Adversarial rows computed for 3.8 (b), 3.8 (c) and the Research-context n/2 question. Gate: worker's run all 0 with build=0; own run matches except the default-order NOT IN ORDER line; depcheck against the candidate order 0 problems. Elaboration: exit 0, 51 sorry warnings only. No diff outside the folder against origin/main. No seeded source target lies in changed text; no locator rechecked. For the humans: 3.8 (b) and (c) now carry no source locator.",
+  "text": "cee24691423bd1bc"
+ }
+}
