@@ -41,13 +41,16 @@ over an affine base and the Plücker closed immersion are AlgebraicModuliForArit
 (`coherentGrassmannian`, `plucker`); the normalisation of a reduced scheme (as the scheme case of the
 normalisation of a locally Noetherian Deligne–Mumford stack), its universal property, its finiteness
 over a Nagata base and the flat base change of scheme-theoretic images are
-AlgebraicModuliForArithmeticGeometry §5.4. Dimension theory of schemes of finite type over a field is
-SchemeAndStackFoundations §0.7; descent of smoothness along field extensions §0.11; depth and
-`bijective_of_depth` §0.17; universal homeomorphisms §0.23; normal schemes and their codimension-one
-stalks §0.30; modifications with witness §4.11; regular schemes, `regularLocus_eq_smoothLocus` over a
-perfect field and Serre's normality criterion §4.13. The converse of Kunz's theorem
-(`isRegular_of_frobenius_flat`) is EnhancedDerivedSheaves §E1.6. F-finiteness (the absolute Frobenius
-makes the ring a finite module over itself: a field `k` is F-finite exactly when `[k : k^p] < ∞`, and the
+AlgebraicModuliForArithmeticGeometry §5.4. Descent of smoothness along field extensions is
+SchemeAndStackFoundations §0.11, the chosen witness of a modification (`IsModification.Witness`) §4.11 and
+`regularLocus_eq_smoothLocus` over a perfect field §4.13. Dimension theory of schemes locally of finite type
+over a field, the depth criterion for bijectivity of a linear map, the criterion for universal
+homeomorphisms, normal schemes and their codimension-one stalks, modifications, the normality of regular
+schemes and Serre's normality criterion are in the pinned Tau Ceti (Exact supplier contracts, From Tau
+Ceti); SchemeAndStackFoundations §§0.7, 0.17, 0.23, 0.30, 4.11 and 4.13 record them, and this roadmap cites
+those sections for them. The converse of Kunz's theorem (`isRegular_of_frobenius_flat`) is
+EnhancedDerivedSheaves §E1.6. F-finiteness (the absolute Frobenius makes the ring a finite module over
+itself: a field `k` is F-finite exactly when `[k : k^p] < ∞`, and the
 property passes to finite-type algebras and to localisations), hence the finiteness of the Frobenius of an
 algebra essentially of finite type over a perfect field, is DeformationAndDerivedPatchingAlgebra §3.14. The
 theory of `p`-bases of fields (a family is a `p`-basis exactly when its differentials form a basis of `Ω¹`) is
@@ -181,6 +184,33 @@ planned.
   `Scheme.Hom.preimage_smoothLocus_le_smoothLocus_pullback_snd`
   (`TauCeti/AlgebraicGeometry/Morphisms/Smooth/Locus.lean`): the smooth locus is smooth and its preimage
   under a base change lies in the smooth locus of the base change (an inclusion, not an equality).
+- Local dimension over a field (recorded in SchemeAndStackFoundations §0.7), in
+  `TauCeti/AlgebraicGeometry/Scheme/LocalDimension.lean`, for `X` locally of finite type over a field `k`:
+  `TauCeti.AlgebraicGeometry.topologicalKrullDimAt_eq_ringKrullDim_stalk_add_toNat_trdeg_residueField`
+  (`dim_x X = dim O_{X,x} + trdeg_k κ(x)`), `topologicalKrullDimAt_eq_iSup_toNat_trdeg_residueField` (`dim_x X` is
+  the supremum of `trdeg_k κ(ξ)` over the generic points `ξ` of the irreducible components through `x`) and
+  `topologicalKrullDim_closure_singleton_eq_toNat_trdeg_residueField` (the closure of `x` has dimension
+  `trdeg_k κ(x)`).
+- `LinearMap.bijective_of_depth` (`TauCeti/RingTheory/Depth/Bijectivity.lean`; recorded in
+  SchemeAndStackFoundations §0.17): over a Noetherian ring `R`, an `R`-linear map `M → N` of arbitrary modules is
+  bijective if at every prime `p` its localisation is bijective or `depth M_p ≥ 2` and `p` is not an associated
+  prime of `N`; no finiteness of `M` is assumed.
+- `TauCeti.AlgebraicGeometry.isUniversalHomeomorphism_iff_isIntegralHom_universallyInjective_surjective`
+  (`TauCeti/AlgebraicGeometry/Morphisms/UniversalHomeomorphism.lean`; recorded in SchemeAndStackFoundations
+  §0.23): a morphism of schemes is a universal homeomorphism iff it is integral, universally injective and
+  surjective.
+- `TauCeti.AlgebraicGeometry.IsNormalScheme` (every stalk an integrally closed domain), with
+  `isNormalScheme_iff_forall_affineOpens` (normality is local) and `IsNormalScheme.isDiscreteValuationRing_stalk`
+  (on a locally Noetherian normal scheme the stalk at a point of coheight one is a discrete valuation ring)
+  (`TauCeti/AlgebraicGeometry/Scheme/Normal.lean`; recorded in SchemeAndStackFoundations §0.30), and the instance
+  `TauCeti.AlgebraicGeometry.IsRegular.isNormal` (`TauCeti/AlgebraicGeometry/Scheme/Regular/Scheme.lean`: regular
+  schemes are normal; recorded in SchemeAndStackFoundations §§0.30, 4.13).
+- `TauCeti.AlgebraicGeometry.IsModification` (`TauCeti/AlgebraicGeometry/Morphisms/Modification/Basic.lean`;
+  recorded in SchemeAndStackFoundations §4.11): `f` is proper and there is a dense open `U` of the target with
+  `f⁻¹(U)` dense and `f` an isomorphism over `U`; no integrality is assumed.
+- `TauCeti.forall_isDomain_and_isIntegrallyClosed_iff_satisfiesSerreR_one_and_satisfiesSerreS_two`
+  (`TauCeti/RingTheory/SerreCondition/Normal.lean`; recorded in SchemeAndStackFoundations §4.13): a Noetherian ring
+  has every localisation at a prime an integrally closed domain iff it satisfies `(R_1)` and `(S_2)`.
 - `TauCeti.IsPureDimensional` (`TauCeti/Topology/PureDimension.lean`; every irreducible component has
   the given Krull dimension; the empty space is pure of every dimension) and
   `TauCeti.AlgebraicGeometry.isPureDimensional_pullback_Spec_map_iff_of_field`
@@ -223,20 +253,16 @@ planned.
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-- §0.7 `dimension_theory_finiteType` and `topologicalKrullDimAt_eq_stalk`: for `X` locally of finite type
-  over `k`, `dim O_{X,x} + trdeg_k κ(x) = dim_x X`, and `dim_x X` is the maximum of `trdeg_k κ(ξ)` over
-  the generic points `ξ` of components through `x`.
 - §0.11 `field_extension_descent`: smoothness of `X → Spec k` descends from `X_{k'}`.
-- §0.17 `bijective_of_depth`: a linear map `M → N` with `M` finite is bijective if at every prime it is
-  bijective or `depth M_p ≥ 2` and `p` is not associated to `N`.
-- §0.23 `universalHomeomorphism_criteria`: integral, universally injective and surjective morphisms are
-  universal homeomorphisms.
-- §0.30 `IsNormalScheme`, `IsNormalScheme.isDiscreteValuationRing_stalk` (codimension-one stalks of a
-  locally Noetherian normal scheme are discrete valuation rings).
-- §4.11 `IsModification` and *IsModification.Witness* (proper, an isomorphism over a dense open whose
-  preimage is dense).
-- §4.13 `regularLocus_eq_smoothLocus` (finite type over a perfect field), *IsRegular.isNormal*,
-  `serre_normality_criterion` (normal iff `(R_1)` and `(S_2)`).
+- §4.11 `IsModification.Witness`: for a modification `φ` (Tau Ceti's `IsModification`), a chosen dense open of
+  the target over which `φ` is an isomorphism and whose preimage is dense.
+- §4.13 `regularLocus_eq_smoothLocus`: for `X` locally of finite type over a perfect field, the points with
+  regular local ring are exactly the smooth locus.
+- §§0.7, 0.17, 0.23, 0.30, §4.11 for modifications and §4.13 for the normality of regular schemes and Serre's
+  criterion: these sections record pinned Tau Ceti declarations (local dimension over a field,
+  `LinearMap.bijective_of_depth`, the universal-homeomorphism criterion, `IsNormalScheme`, `IsModification`,
+  `IsRegular.isNormal`, Serre's criterion), stated under From Tau Ceti; this roadmap's citations of these
+  sections denote those declarations.
 
 ### From TauCetiRoadmap.EnhancedDerivedSheaves
 
@@ -440,8 +466,8 @@ point (`LocallyOfFiniteType.jacobsonSpace`, `nonempty_inter_closedPoints`).
 ### 0.6 Normality under separable extension of the ground field
 
 Prove *isNormalScheme_pullback_of_isTranscendentalSeparable*: for a field `k`, a normal `k`-scheme `W` (every
-stalk an integrally closed domain, `IsNormalScheme` of SchemeAndStackFoundations §0.30) and a separable field
-extension `k'/k` in the sense of the Conventions (`Algebra.IsTranscendentalSeparable k k'`), the base change
+stalk an integrally closed domain, Tau Ceti's `IsNormalScheme`, SchemeAndStackFoundations §0.30) and a
+separable field extension `k'/k` in the sense of the Conventions (`Algebra.IsTranscendentalSeparable k k'`), the base change
 `W_{k'} = W ×_{Spec k} Spec k'` is normal (stacksVarieties, Lemma 33.10.6, tag 0C3M, line 1049). Neither `W` nor
 `k'/k` is assumed finite, of finite type or Noetherian. Route: `k'` is geometrically normal over `k`
 (stacksAlgebra, Lemma 10.165.4, tag 0C30, line 21510: `k^perf ⊗_k k'` is a field), and the tensor product over
@@ -467,7 +493,8 @@ normality being local (SchemeAndStackFoundations §0.30).
   subextensions `L`, hence absolutely flat, so every local ring is a field and `W_{k'}` is normal: no
   Noetherian hypothesis is needed.
 
-*Needs:* SchemeAndStackFoundations §0.30 (`IsNormalScheme`); Mathlib `Algebra.IsTranscendentalSeparable`.
+*Needs:* Tau Ceti `IsNormalScheme`, `isNormalScheme_iff_forall_affineOpens` (SchemeAndStackFoundations §0.30);
+Mathlib `Algebra.IsTranscendentalSeparable`.
 
 ### Examples
 
@@ -1113,8 +1140,8 @@ nashModificationNotes2024, Section 5, lines 408–439). Route:
    `ρ_Q(f) = Σ_γ σ_Q(φ_γ(f)) e_γ` is a surjection of free modules of rank `p^d` with `ρ_Q ∘ ψ_Q = id`, so `ψ_Q` is
    bijective.
 4. At primes of height `≥ 2`, `depth R_Q ≥ 2` (Serre's criterion, SchemeAndStackFoundations §4.13) and `0` is the
-   only associated prime of the torsion-free `F_*R`; SchemeAndStackFoundations §0.17 `bijective_of_depth` gives
-   bijectivity of `ψ`.
+   only associated prime of the torsion-free `F_*R`; Tau Ceti's `LinearMap.bijective_of_depth` over the Noetherian
+   ring `R` (SchemeAndStackFoundations §0.17) gives bijectivity of `ψ`.
 5. `F_*R` free implies Frobenius flat, and EnhancedDerivedSheaves §E1.6 `isRegular_of_frobenius_flat` gives `R`
    regular.
 
@@ -1134,7 +1161,8 @@ nashModificationNotes2024, Section 5, lines 408–439). Route:
   rank count of steps 2 and 3, not through finiteness: `R` is still F-finite, as `[k : k^p] = p` is finite.
 
 *Needs:* §§0.3, 1.1, 4.1, 5.1, 5.2; DeformationAndDerivedPatchingAlgebra §3.14; SchemeAndStackFoundations §§0.17,
-0.30, 4.13; EnhancedDerivedSheaves §E1.6.
+0.30, 4.13 (Tau Ceti `LinearMap.bijective_of_depth`, `IsNormalScheme.isDiscreteValuationRing_stalk` and Serre's
+criterion); EnhancedDerivedSheaves §E1.6.
 
 ### 5.4 The theorem of Duarte and Núñez-Betancourt
 
@@ -1211,8 +1239,11 @@ specialisation of one of them.
 - For `Z = X̄*` itself the lift is the identity.
 - For the cusp in characteristic `2` and `Z = 𝔸¹` (normalisation) with `M` the pullback of the free quotient
   `dx ↦ 0`, `dy ↦ 1`, the lift is the isomorphism `𝔸¹ ≅ X̄*`.
-- A closed point `Spec k → X_sm` does not map a generic point to a generic point; it still factors (through the
-  isomorphism over `X_sm`) but is outside the hypotheses, which are those of the normalisation.
+- For `d ≥ 1` and a closed point `x ∈ X_sm`, the morphism `Spec κ(x) → X_sm` does not map a generic point to a
+  generic point (every irreducible component of `X` has dimension `d ≥ 1`, so its generic point is not closed); it
+  still factors (through the isomorphism over `X_sm`) but is outside the hypotheses, which are those of the
+  normalisation. For `d = 0` the bound is needed: for `X = Spec k` (§2.1) the closed point is the generic point,
+  `Spec k → X` is the identity, the hypotheses hold and the lift is the identity of `X̄* = X`.
 
 *Needs:* §§2.4, 6.1; AlgebraicModuliForArithmeticGeometry §5.4.
 

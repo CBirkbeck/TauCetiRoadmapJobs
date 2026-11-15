@@ -262,6 +262,8 @@
       "where": "Lemma 33.10.6 (0C3M), line 1049; stacksAlgebra Lemma 10.165.4 (0C30), line 21510, Lemma 10.165.5 (06DF), line 21516, Definition 10.42.1 (030O), line 4671"
      },
      "prerequisites": [
+      "tauceti:TauCeti.AlgebraicGeometry.IsNormalScheme",
+      "tauceti:TauCeti.AlgebraicGeometry.isNormalScheme_iff_forall_affineOpens",
       "roadmap:SchemeAndStackFoundations §0.30",
       "mathlib:Algebra.IsTranscendentalSeparable"
      ],
@@ -1295,6 +1297,9 @@
       "target:5.1",
       "target:5.2",
       "roadmap:DeformationAndDerivedPatchingAlgebra §3.14",
+      "tauceti:LinearMap.bijective_of_depth",
+      "tauceti:TauCeti.AlgebraicGeometry.IsNormalScheme.isDiscreteValuationRing_stalk",
+      "tauceti:TauCeti.forall_isDomain_and_isIntegrallyClosed_iff_satisfiesSerreR_one_and_satisfiesSerreS_two",
       "roadmap:SchemeAndStackFoundations §0.17",
       "roadmap:SchemeAndStackFoundations §0.30",
       "roadmap:SchemeAndStackFoundations §4.13",
@@ -1454,7 +1459,7 @@
       {
        "name": "lift_closed_point",
        "kind": "non-example",
-       "statement": "a closed point of X_sm does not map a generic point to a generic point; outside the hypotheses"
+       "statement": "for d ≥ 1 and a closed point x ∈ X_sm, Spec κ(x) → X_sm does not map a generic point to a generic point (the generic points of the d-dimensional components are not closed); outside the hypotheses. For d = 0 and X = Spec k it is the identity, satisfies the hypotheses, and the lift is the identity of X̄* = X"
       }
      ]
     },
@@ -1713,7 +1718,7 @@
     "§4.11",
     "§4.13"
    ],
-   "what": "dimension theory of finite-type k-schemes; descent of smoothness along field extensions; bijective_of_depth; universal homeomorphisms; normal schemes and DVR codimension-one stalks; modifications with witness; regularLocus_eq_smoothLocus over a perfect field and Serre's normality criterion."
+   "what": "descent of smoothness along field extensions (§0.11, field_extension_descent); the chosen witness of a modification (§4.11, IsModification.Witness); regularLocus_eq_smoothLocus over a perfect field (§4.13). §§0.7, 0.17, 0.23, 0.30, 4.11 and 4.13 are also cited for the pinned Tau Ceti declarations they record: local dimension over a field (topologicalKrullDimAt_eq_ringKrullDim_stalk_add_toNat_trdeg_residueField, topologicalKrullDimAt_eq_iSup_toNat_trdeg_residueField), LinearMap.bijective_of_depth, isUniversalHomeomorphism_iff_isIntegralHom_universallyInjective_surjective, IsNormalScheme with IsNormalScheme.isDiscreteValuationRing_stalk, IsModification, IsRegular.isNormal and Serre's criterion forall_isDomain_and_isIntegrallyClosed_iff_satisfiesSerreR_one_and_satisfiesSerreS_two."
   },
   {
    "roadmap": "EnhancedDerivedSheaves",
