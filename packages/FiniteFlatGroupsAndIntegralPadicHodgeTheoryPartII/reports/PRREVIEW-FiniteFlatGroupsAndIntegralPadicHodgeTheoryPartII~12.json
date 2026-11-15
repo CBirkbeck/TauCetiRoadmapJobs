@@ -1,0 +1,40 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII~12",
+  "head": "006b950b79535ec4191e8b5e417df2c7a531d791",
+  "pr": 1843,
+  "folder": "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 006b950; this round read the pull request's title and description against the head: two P3 findings, both in the description (it restricts Layer 0 to p>2 and p-frames where the README states every prime and general frame constant; it says fourteen supplier contracts where the README has fifteen). Folder files unchanged and need no edit. Gate passes (all counters 0, build=0); depcheck 0 problems, no UPWARD/CYCLE; Suggested.lean elaborates with no output; outside-folder diff empty. No source reopened (no changed passage). plan.json gap list (11 vs 15 README contracts) reported to the human reviewers.",
+  "text": "dc77de06c5213f90",
+  "carried": {
+   "from": "006b950b79535ec4191e8b5e417df2c7a531d791",
+   "head": "18defe26faefd039c158021a6cddc3f1be43bd81",
+   "findings": 2,
+   "lines": 10,
+   "folders": [
+    "FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII"
+   ],
+   "outside": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "R01: `packages/FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII/design/plan.json` needs four new `gaps` entries, with each `needs` taken from the sentence after the colon of README lines 102–108: `sc",
+    "where": "board `plan.json` `gaps` list; four GeometricSatakeAndFusion entries need adding by hand",
+    "raised": "PRREVIEW-FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII~12"
+   },
+   {
+    "id": "D02",
+    "severity": "",
+    "title": "R01: In `packages/FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII/design/plan.json`, the `needs` of `full-fixer-cutting-tensors` and `ordinary-levi-full-fixer` must be replaced by the sentences afte",
+    "where": "board `plan.json`, `needs` of two ReductiveGroupsPartII gaps need replacing",
+    "raised": "PRREVIEW-FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII~12"
+   }
+  ]
+ }
+}
