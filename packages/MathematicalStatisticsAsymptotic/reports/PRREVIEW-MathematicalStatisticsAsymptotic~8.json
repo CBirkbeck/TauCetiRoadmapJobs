@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsAsymptotic~8",
+  "head": "fb780f91fc174c0cadbe136a8737b1cbaef765e4",
+  "pr": 2320,
+  "folder": "MathematicalStatisticsAsymptotic",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since fb780f9; this round checked the pull request's title and description against the head. Two P3 findings, both in the description's Dependencies paragraph: it names a Mathlib decision-theoretic risk API the roadmap does not consume, and it omits Foundations 4.3 from the consumed sections. The folder's files need no change. Seeded sample: no changed passage, 0 locators rechecked. Worker's gate passed (build included); local rerun shows only the exempt NOT IN ORDER line; depcheck 245 roadmaps, 2207 edges, 0 problems; Suggested.lean elaborates with sorry the only warning (87). Adversarial rows computed for fisherInformation and lintegral_multivariateGaussian_le_iSup_risk; cross-roadmap citations resolved at Foundations' open head and on main.",
+  "text": "393c37f626a672d3"
+ }
+}
