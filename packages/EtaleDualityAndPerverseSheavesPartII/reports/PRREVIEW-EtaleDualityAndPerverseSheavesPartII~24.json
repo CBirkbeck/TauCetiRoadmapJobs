@@ -1,0 +1,32 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EtaleDualityAndPerverseSheavesPartII~24",
+  "head": "58183488fafdf4b301bcf4ceaf4cc03214b360cb",
+  "pr": 1743,
+  "folder": "EtaleDualityAndPerverseSheavesPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since b9f5936: the reworded glueing step of the §8.3 proof route was checked against CS24 lines 827-851, Corollary 2.1.6 and (2.1.2.2), with computed instances (O_C x O_C: 4 = 4; F_p with pi = 0: 2 = 2); its supplier citations resolve at the open heads; sampled §8.4 locator checked. Gate passes (all counters 0), depcheck 0 problem(s), Suggested.lean elaborates with nine sorry warnings only. The title and description were read against the head: one P3 finding, the summary block's sentence 'Part I stops at finite-type schemes over fields' contradicts README line 7 (Part I also covers its excellent one-dimensional bases); no change is asked for in the folder. For the humans: PurityForFlatCohomology §§1.4-1.5 still duplicate §§6.11-7.3.",
+  "text": "e7a8fd8ba82f1574",
+  "carried": {
+   "from": "58183488fafdf4b301bcf4ceaf4cc03214b360cb",
+   "head": "b826e54856633d02a789fcfd5ab37071b1fa56bf",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "EtaleDualityAndPerverseSheavesPartII"
+   ]
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "R01: at its open head (160e354), PurityForFlatCohomology must replace its §1.4 (README line 1107) and §1.5 (line 1160) by citations of this roadmap's §§6.11, 6.12, 7.1 and 7.3, and delete the lines th",
+    "where": "PurityForFlatCohomology README §§1.4–1.5 and its two \"is to import\" lines",
+    "raised": "PRREVIEW-EtaleDualityAndPerverseSheavesPartII~24"
+   }
+  ]
+ }
+}
