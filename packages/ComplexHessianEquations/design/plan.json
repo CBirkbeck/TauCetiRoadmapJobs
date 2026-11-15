@@ -129,7 +129,7 @@
      ],
      "locator": {
       "source": "lewis1996",
-      "where": "line 145–148 and Theorem 2.1, line 150–158; spruck2005 Lemma 1.5, line 11089–11091 for the lower trace bound"
+      "where": "line 145–148 (the sum of the m largest eigenvalues and Fan's convexity theorem) and Theorem 2.1, line 154–159 (differentiability at a diagonal matrix under the gap); spruck2005 Lemma 1.5, line 11089–11091 for the lower trace bound"
      },
      "prerequisites": [
       "tauceti:LinearMap.IsSymmetric.re_trace_comp_le_sum_eigenvalues_mul_eigenvalues",
