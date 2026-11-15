@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassicalErgodicTheory~8",
+  "head": "e3c51083ea43388488e956e68be6597047e01cea",
+  "pr": 2231,
+  "folder": "ClassicalErgodicTheory",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 15 changed lines since 1966f38. Previous R01 (Auer2024 page and Z^d restriction) is repaired: Theorem 3 is on p. 5 of arXiv v3 (Auer2024 line 212), the restriction is a Z^d action and the time-1 map when d = 1 (lines 191-193). The new Chung2013 note (arXiv:1110.0699v3 numbering) matches the cached text: all README locators for it checked (section 3 pp. 8-9, Thm 1.1 p. 2, Thm 5.3 p. 21, Prop 6.1 pp. 23-24, p. 23 remark). Seeded sample: only 3.2 falls in the change and was checked; the diff changes no Lean statement, heading or supplier. Adversarial rows with computed values for section 3.2, 1 <=> 4 <=> 5 (one-point flow, linear flow on the 2-torus, R^2 translation action restricted to Z^2, negative t). Pull request title and description read against this head: supplier lines, stated and unstated headlines, restated definitions, metadata and summary-block hypotheses all agree; no finding. Gate: the worker's gate passed; candidate-order depcheck 245 roadmaps, 0 problems, no UPWARD or CYCLE. lake env lean: 39 sorry warnings, 0 errors. No change outside the folder. Overlap check: nothing shared. Source independence: changed passages only, none shared. Not verified: the published pagination of Chung2013 (paywalled).",
+  "text": "9be635e855182a99"
+ }
+}
