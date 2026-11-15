@@ -49,8 +49,10 @@ It leaves to other roadmaps, by section:
   IgusaVarietiesAndTorsionConcentration §0.31.
 - Locally noetherian formal schemes and the Berthelot generic fibre are AdicSpacesPartIII Layer F0
   and §R2.9; descent, algebraic spaces and stacks are SchemeAndStackFoundations Layer 1, formal
-  deformation theory its Layer 4; Grassmannians and their tangent spaces are
-  AlgebraicModuliForArithmeticGeometry §1.3.
+  deformation theory its Layer 4; the Grassmannian scheme of a module over an affine base is already
+  in Tau Ceti (`Module.Grassmannian.scheme`), and Grassmannians of locally free sheaves over an
+  arbitrary base, their smoothness and their tangent spaces are AlgebraicModuliForArithmeticGeometry
+  §1.3.
 - p-divisible groups and their Dieudonné theory are FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer
   R07.1 and §§R07.2.10, R07.2.17, R07.2.20, R07.2.26; Grothendieck–Messing, effectivity of polarized
   formal lifts and Serre–Tate with structures are AbelianSchemesAndArithmeticModuli §§A4.7–A4.9.
@@ -169,8 +171,10 @@ The declarations consumed, with what is assumed of them:
   of a square matrix, used in item 3 of the Conventions.
 - `Module.Grassmannian` (`Mathlib/RingTheory/Grassmannian.lean`): submodules of a module whose
   quotient is finite projective of constant rank k. It is the set of R-points of the Grassmannians of
-  quotients used in §§0.6, 1.2, 5.1 and 7.5; their representability and smoothness are imported from
-  AlgebraicModuliForArithmeticGeometry §1.3.
+  quotients used in §§0.6, 1.2, 5.1 and 7.5. Over an affine base the representing scheme is Tau
+  Ceti's (below); the Grassmannian of rank-k quotients of a locally free sheaf of rank m over an
+  arbitrary base, its smoothness of relative dimension k(m−k) and its tangent Hom formula are
+  imported from AlgebraicModuliForArithmeticGeometry §1.3.
 - `WittVector` (`Mathlib/RingTheory/WittVector/Defs.lean`) and `WittVector.Isocrystal`
   (`Mathlib/RingTheory/WittVector/Isocrystal.lean`): p-typical Witt vectors and isocrystals over the
   fraction field of W(k) for a perfect field k. The relative O-Witt vectors of §0.1 and the relative
@@ -189,6 +193,16 @@ The declarations consumed, with what is assumed of them:
   abelian varieties over a field, with smooth structure morphism. It is the carrier of the abelian
   varieties over F̄_p in §9.1; abelian schemes over a discrete valuation ring or a nilpotent thickening
   are not supplied and are imported from AbelianSchemesAndArithmeticModuli.
+- `Module.Grassmannian.scheme` and `Module.Grassmannian.toSpec`
+  (`TauCeti/AlgebraicGeometry/Grassmannian/Basic.lean`), `Module.Grassmannian.schemeHomEquiv`
+  (`.../Grassmannian/Points.lean`) and `Module.Grassmannian.isSeparated_toSpec` and
+  `Module.Grassmannian.isProper_toSpec` (`.../Grassmannian/Proper.lean`): for a module M over a
+  commutative ring R, in the universe of R, and k≥0, the scheme over Spec R glued from the standard
+  affine charts; its morphisms from Spec A over Spec R, for an R-algebra A, are the points of
+  Mathlib's `Module.Grassmannian` of rank-k quotients of A⊗_R M; it is separated over Spec R, and
+  proper when M is finite. It is the carrier of the Grassmannian of rank-r quotients of a free
+  rank-n module in §0.6, over Spec O_L̆. Smoothness and the tangent space are not at the pin; they
+  are AlgebraicModuliForArithmeticGeometry §1.3.
 - `TauCeti.FormalScheme.Spf.carrier` and `TauCeti.FormalScheme.Spf.structureSheaf`
   (`TauCeti/AlgebraicGeometry/FormalScheme/Spf/Carrier.lean`, `.../Spf/StructureSheaf.lean`): the
   underlying space of the formal spectrum of a topological ring and its structure sheaf for an adic
@@ -429,7 +443,7 @@ For unramified quadratic L/K, intermediate K₀⊂K and the signature P(r,s) wit
 **API.**
 
 - The local model is the functor on schemes S over Spec O_L̆ of O_L-stable Lagrangian subbundles F of D⊗O_S, where D is the free module of rank n over `O_L ⊗_{O_{K₀}} O_L̆` with its split perfect alternating pairing for which the O_L-action is adjoint to its conjugate, such that the O_L-action on the quotient D⊗O_S/F satisfies the characteristic-polynomial condition (i) for P(r,s) and the structural-action clause (ii) on the distinguished summand; it is a closed subfunctor of the Grassmannian of O_L-stable Lagrangian subbundles of D (Mih19, Definition 2.11, p. 9).
-- The subfunctor cut out by clause (ii) and the rank conditions (i′) on the embedding-graded pieces of the quotient (zero on the banal summands of the chosen half-system, full on the banal summands of its conjugate, r on the distinguished summand and the complementary rank on its conjugate; Mih19, Lemma 2.10, p. 9) is a closed subscheme isomorphic to the Grassmannian of rank-r quotients of the free rank-n O_L̆-module obtained from the distinguished summand of D by the structural action, the banal pieces being forced and the conjugate piece the orthogonal complement of the distinguished one. It contains the local model, the two have the same generic fibre, and they coincide (Mih19, Proposition 2.12 and its proof, pp. 9–10). The Grassmannian is the R-points functor of `Module.Grassmannian` of the Mathlib contract, represented by AlgebraicModuliForArithmeticGeometry §1.3.
+- The subfunctor cut out by clause (ii) and the rank conditions (i′) on the embedding-graded pieces of the quotient (zero on the banal summands of the chosen half-system, full on the banal summands of its conjugate, r on the distinguished summand and the complementary rank on its conjugate; Mih19, Lemma 2.10, p. 9) is a closed subscheme isomorphic to the Grassmannian of rank-r quotients of the free rank-n O_L̆-module obtained from the distinguished summand of D by the structural action, the banal pieces being forced and the conjugate piece the orthogonal complement of the distinguished one. It contains the local model, the two have the same generic fibre, and they coincide (Mih19, Proposition 2.12 and its proof, pp. 9–10). The Grassmannian is the R-points functor of `Module.Grassmannian` of the Mathlib contract, represented over Spec O_L̆ by Tau Ceti's `Module.Grassmannian.scheme` of the free O_L̆-module of rank n with k=r; its smoothness of relative dimension rs is AlgebraicModuliForArithmeticGeometry §1.3.
 - The local model is integral and smooth over Spec O_L̆ of relative dimension rs, and its relative tangent space at a point is the module of homomorphisms from the rank-s kernel to the rank-r quotient on the distinguished summand (Mih19, Proposition 2.12, p. 9; the tangent formula of AlgebraicModuliForArithmeticGeometry §1.3).
 - For a hermitian O_L–O_K₀-module over a scheme over Spf O_L̆, the Hodge filtration of its relative Dieudonné crystal D_X of §0.1 is, Zariski locally after trivializing the crystal by a basis adapted to the embedding grading, a point of the Lagrangian Grassmannian of D, and the module has signature (r,s) exactly when that point lies in the local model; this is the chart through which §0.4 and §1.2 compute deformations (Mih19, Lemma 2.13 and the proof of Lemma 2.10, pp. 9–10).
 
@@ -440,7 +454,7 @@ For unramified quadratic L/K, intermediate K₀⊂K and the signature P(r,s) wit
 - Replacing the characteristic-polynomial condition (i) by the rank conditions (i′), keeping clause (ii), does not change the functor: the subfunctor so defined is the integral smooth Grassmannian of the second API bullet, it contains the local model because (i) evaluated on the maximal unramified subring of O_L over O_K₀ forces the ranks of the graded pieces, and the two have the same generic fibre (Mih19, Proposition 2.12, pp. 9–10). A definition that only recorded multiplicities of embeddings, without the equality of generic fibres, would not know that (i) imposes nothing beyond (i′) integrally.
 - Clause (ii) is not implied by (i) when K/K₀ is ramified. Take K₀=ℚ_p, K=ℚ_p(√p), n=2, (r,s)=(2,0) and S the spectrum of the residue field k. The local model has a single k-point, the subbundle whose distinguished part is the image of √p, on whose rank-2 quotient √p acts by zero, as clause (ii) demands since the structural image of √p vanishes in k. The O_L-stable Lagrangian F whose distinguished part is the second coordinate copy of `O_L ⊗_{O_{K₀}} k` inside the free rank-2 module, with conjugate part forced by the pairing, has a rank-2 quotient on which √p acts as a nonzero square-zero nilpotent; for every a in O_L both sides of (i) equal `(t − a₀)²(t − ā₀)²` in k[t], where a₀ and ā₀ are the images of a under the two residue embeddings, so F satisfies (i) and the rank conditions (i′) but not (ii). A definition without clause (ii) therefore has a larger special fibre; when K/K₀ is unramified clause (ii) is automatic (Mih19, Remark 2.9, p. 9).
 
-*Needs:* §0.4; §0.1; AlgebraicModuliForArithmeticGeometry §1.3; AbelianSchemesAndArithmeticModuli §A4.7.
+*Needs:* §0.4; §0.1; Tau Ceti `Module.Grassmannian.scheme`; AlgebraicModuliForArithmeticGeometry §1.3; AbelianSchemesAndArithmeticModuli §A4.7.
 
 ### 0.7 Comparison of signature conventions
 
@@ -466,7 +480,7 @@ Precomposing i with the nontrivial automorphism of L/K gives an involutive equiv
 
 Within this roadmap: none; this is the first layer.
 
-Suppliers: PELModuli §M2.15, §M0.18; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.26, §R07.2.10; EndoscopicTransferAndUnitaryTraceComparison §7.6; IgusaVarietiesAndTorsionConcentration §0.27 (unstructured framed functor); AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7; AlgebraicModuliForArithmeticGeometry §1.3; Mathlib `LinearMap.charpoly`.
+Suppliers: PELModuli §M2.15, §M0.18; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.26, §R07.2.10; EndoscopicTransferAndUnitaryTraceComparison §7.6; IgusaVarietiesAndTorsionConcentration §0.27 (unstructured framed functor); AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7; AlgebraicModuliForArithmeticGeometry §1.3; Mathlib `LinearMap.charpoly`; Tau Ceti `Module.Grassmannian.scheme`.
 
 Supplier contracts: gap:zink-display-equivalence (see Exact supplier contracts).
 
@@ -670,15 +684,15 @@ Put `W_n=Hom^0_{O_L}(𝔈̄,𝕐)` with h(x,y)=λ_𝔈̄^−1 y^∨λ_𝕐 x. It
 
 ### 2.4 Auxiliary isogeny space
 
-Construct Ñ_n with points (Y,X,α), where Y∈N_n^1, `X∈N_{n+1}`, and α:Y×ℰ̄→X is an O_L-linear isogeny with kernel contained in (Y×ℰ̄)[ϖ], compatible with the fixed rational framings, and satisfying α*λ_X=λ_Y×ϖλ_ℰ̄. Write π_1 and π_2 for the two forgetful maps. In the induced rational special-Hom description the distinguished rank-one direction has norm ϖ. For a fixed pair (Y,X) and the chosen rational framing isogeny, the integral lift α is unique if it exists; Ñ is a closed subfunctor of `N_n^1×N_{n+1}`. The source has signature (1,n), since ℰ̄ has signature (0,1), and deg α=q². (LZ22, §10.2, p. 65.)
+Construct Ñ_n with points (Y,X,α), where Y∈N_n^1, `X∈N_{n+1}`, and α:Y×ℰ̄→X is an O_L-linear isogeny with kernel contained in (Y×ℰ̄)[ϖ], compatible with the fixed rational framings, and satisfying α*λ_X=λ_Y×ϖλ_ℰ̄. Write π_1 and π_2 for the two forgetful maps. In the induced rational special-Hom description the distinguished rank-one direction has norm ϖ. For a fixed pair (Y,X) and the chosen rational framing isogeny, the integral lift α is unique if it exists; Ñ_n is a closed subfunctor of `N_n^1×N_{n+1}`. The source has signature (1,n), since ℰ̄ has signature (0,1), and deg α=q². (LZ22, §10.2, p. 65.) Write Z(x₀) for the special divisor on `N_{n+1}` of the vector x₀ of §2.3: the closed formal subscheme over which the quasi-homomorphism ρ_X⁻¹∘x₀∘ρ_ℰ̄ from ℰ̄ to X, given over the uniformizer-zero subscheme, lifts to a homomorphism ℰ̄_S→X. The map π₂ factors through Z(x₀), the lift being the restriction of α to the factor ℰ̄. (LZ22, §2.3, p. 11; diagram (10.2.0.3), p. 65.)
 
-*Route.* Choose once the framing isogeny matching W_n⊥Lx_0. Impose the prescribed finite flat kernel and pullback-polarization conditions as closed conditions on `N¹_n×N_{n+1}` (§0.2). Construct the two projections and verify their base changes.
+*Route.* Choose once the framing isogeny matching W_n⊥Lx_0. Impose the prescribed finite flat kernel and pullback-polarization conditions as closed conditions on `N¹_n×N_{n+1}` (§0.2). Construct the two projections and verify their base changes. Z(x₀) is closed: by rigidity the quasi-homomorphism lifts uniquely over S, locally on S some p^m times it is a homomorphism, and it is a homomorphism exactly where p^m times it kills ℰ̄[p^m], a closed condition (RZ96, proof of Proposition 2.9 and Lemma 2.10, pp. 52–53).
 
 **API.**
 
 - A point of Ñ_n is (Y,X,α) with ker α⊂(Y×ℰ̄)[ϖ] and α*λ_X=λ_Y×ϖλ_ℰ̄.
 - π₁ forgets X and α and lands in N¹_n.
-- π₂ forgets Y and α and lands in `N_{n+1}`.
+- π₂ forgets Y and α and lands in `N_{n+1}`; it factors through the special divisor Z(x₀), the restriction of α to ℰ̄ being the lift of x₀.
 - Both projections commute with nilpotent-base pullback.
 - For the same pair (Y,X) and fixed rational framing isogeny, two integral lifts agree by rigidity; this is not uniqueness of the target given Y alone.
 
@@ -688,6 +702,7 @@ Construct Ñ_n with points (Y,X,α), where Y∈N_n^1, `X∈N_{n+1}`, and α:Y×�
 - Replacing ϖλ_ℰ̄ by λ_ℰ̄ changes the polarization equation and does not define the same auxiliary functor.
 - Two objects with the same Y can have distinct isogeny choices; π_1 does not discard a uniqueness datum.
 - At n=2, Y×ℰ̄ has signature (1,2). Substituting ℰ gives (2,1) and cannot be isogenous in characteristic zero to the specified N₃ target.
+- The restriction β of α to ℰ̄ has λ_ℰ̄⁻¹β^∨λ_Xβ=λ_ℰ̄⁻¹(ϖλ_ℰ̄)=ϖ, read off from α*λ_X=λ_Y×ϖλ_ℰ̄ on the second factor; this is h(x₀,x₀), as it must be for β to lift x₀, and β is never the lift of a vector of unit norm, so reading π₂ as landing in the divisor of a unit vector of W_n is excluded.
 
 *Needs:* §2.1; §2.3; §1.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1; §0.2.
 
@@ -700,7 +715,7 @@ On rigid/adic generic fibres of the representing spaces, π_1:Ñ_n→N_n^1 is fi
 **Checks.**
 
 - For q=3 the first generic projection has degree 4.
-- The generic assertions follow without an integral resolution theorem; LRZ26 Theorem 14.6.2 proves integral finite flatness of π₁ and a proper resolution by π₂, not an integral isomorphism of Ñ with its lifting divisor.
+- The generic assertions follow without an integral resolution theorem; LRZ26 Theorem 14.6.2 proves integral finite flatness of π₁ and a proper resolution by π₂, not an integral isomorphism of Ñ_n with the special divisor Z(x₀) of §2.4.
 
 *Needs:* §2.4; AdicSpacesPartIII Layer F0; AdicSpacesPartIII §R2.9; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
 
@@ -960,6 +975,8 @@ With unramified K/ℚ_p of degree f, let X₀,Φ be the principal CM source of a
 
 ### 4.6 Absolute and relative exotic spaces
 
+Fix a supersingular object 𝕏_Φ of Exo_Φ(n−1,1) over the residue field of O_L̆. Define N_Φ as the functor of pairs (X,ρ) with X an object of Exo_Φ(n−1,1) over S and ρ a height-zero O_L-linear framing quasi-isogeny from X to 𝕏_Φ on the uniformizer-zero subscheme with `ρ*λ_{𝕏_Φ}=λ_X`, arrows preserving the action, the exact polarization and the framing, as in §3.3. Put `V_Φ=Hom^0_{O_L}(X₀,Φ,𝕏_Φ)`, with X₀,Φ the principal source of §4.5 taken over the residue field, and give it the u^−2-normalized form `h_Φ(x,y)=u^−2 λ_{X₀,Φ}^−1 y^∨ λ_{𝕏_Φ} x` of §3.6, read in `End^0_{O_L}(X₀,Φ)=L`. (LL22, §2.8, Definition 2.64 and the paragraph preceding (2.25), p. 43.)
+
 After choosing an identification rel(𝕏_Φ)≅𝕏 and the principal-source contraction of `X_{0,Φ}≅X_0`, rel induces an equivariant isomorphism N_Φ≅N^exo of framed formal schemes and an isometry V_Φ≅V^exo for the normalized u^−2 special-Hom forms. It transports the condition that a rational homomorphism is integral on a deformation; changing the chosen framing identifications conjugates the comparison. (LL22, §2.8, Corollaries 2.65–2.66, pp. 42–43.)
 
 *Route.* Transport framed objects and the two framings under the categorical equivalence. Use Lemma 2.63 for quasi-homomorphism descent and the polarization calculation for its isometry. Apply formal Yoneda and compare the postcomposition actions.
@@ -968,8 +985,9 @@ After choosing an identification rel(𝕏_Φ)≅𝕏 and the principal-source co
 
 - For f=1 and identity framing choices the comparison is identity.
 - Integrality of a rational homomorphism is preserved; no intersection-number theorem is needed.
+- For f=2 and n=2, 𝕏_Φ has absolute height 8 and dimension 4 and X₀,Φ height 4 and dimension 2, while V_Φ has L-dimension n=2 (ℚ_p-dimension 8), the dimension of V^exo; a framing with `ρ*λ_{𝕏_Φ}=c·λ_X` for a unit c≠1 is not a point of N_Φ, as for N^exo in §3.3.
 
-*Needs:* §4.4; §3.3; §3.6; §0.2; §4.5.
+*Needs:* §4.1; §4.4; §3.3; §3.6; §0.2; §4.5.
 
 ### Examples
 
@@ -1877,7 +1895,7 @@ For every n≥2, in the ramified setting of §7.4 with `E_ν/F_{v₀}` unramifie
 
 ### 9.10 Mixed basic-locus comparison
 
-The completion of the corrected mixed integral isogeny model at its chosen basic framing component is the arithmetic quotient of the mixed local framed space Ñ¹_n with the same CM, other-p and tame factors as in Layer 9. The two forgetful maps to the almost self-dual and principal rank-(n+1) completions correspond to π₁ and π₂ of Layer 2, equivariantly for the embedded nearby group. On generic fibres they recover the stated isogeny correspondence. Its proof uses the moduli functor and generic projections. For context, LRZ26 Theorem 14.6.2 proves that π₁ is integrally finite flat of degree q+1 and π₂ is proper and an isomorphism away from a zero-dimensional center, with exceptional projective spaces. There is no integral identification Ñ¹_n≅Z(x₀). That divisor-resolution and its intersection consequences belong to the cycle consumer, rather than being a hypothesis of this moduli uniformization. (LZ22, §13.4, pp. 82–83; §10.2 and Remark 10.2.1, pp. 64–65; distinguish Conjecture 10.4.1, p. 67.)
+The completion of the corrected mixed integral isogeny model at its chosen basic framing component is the arithmetic quotient of the mixed local framed space Ñ_n of §2.4 with the same CM, other-p and tame factors as in Layer 9. The two forgetful maps to the almost self-dual and principal rank-(n+1) completions correspond to π₁ and π₂ of Layer 2, equivariantly for the embedded nearby group. On generic fibres they recover the stated isogeny correspondence. Its proof uses the moduli functor and generic projections. For context, LRZ26 Theorem 14.6.2 proves that π₁ is integrally finite flat of degree q+1 and π₂ is proper and an isomorphism away from a zero-dimensional center, with exceptional projective spaces. There is no integral identification of Ñ_n with the special divisor Z(x₀) of §2.4, through which π₂ factors. That divisor-resolution and its intersection consequences belong to the cycle consumer, rather than being a hypothesis of this moduli uniformization. (LZ22, §13.4, pp. 82–83; §10.2 and Remark 10.2.1, pp. 64–65; distinguish Conjecture 10.4.1, p. 67.)
 
 *Route.* Use Serre–Tate full faithfulness for the finite-kernel isogeny α as well as its source and target. Identify the local framing isogeny and the two transported level structures. Apply Θ to the enhanced functor and verify that forgetting α commutes with both quotient maps.
 
@@ -1923,7 +1941,8 @@ the smooth models of LTXZZ22 §4.2, which that roadmap requests in its supplier 
 The local spaces of Layers 1–5, their special homomorphism spaces and the uniformizations of Layer 9
 are the inputs of arithmetic intersection problems on unitary Shimura varieties (the Kudla–Rapoport
 conjecture in the principal, almost self-dual and Krämer cases, and the arithmetic fundamental lemma);
-the special cycles and intersection numbers themselves are not constructed here.
+apart from the single divisor Z(x₀) of §2.4, through which π₂ factors, the special cycles and
+intersection numbers themselves are not constructed here.
 
 ## References
 
