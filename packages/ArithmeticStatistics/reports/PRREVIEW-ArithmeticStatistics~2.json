@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticStatistics~2",
+  "head": "af2c1d128731140e466e74b75f24ecdd8e7bc743",
+  "pr": 1531,
+  "folder": "ArithmeticStatistics",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since af2c1d1; this round checked the pull request's title and description against the head: 3 P3 findings, all in the description (a sentence promising shared supplier contracts and numerical convention checks the README no longer has; a sentence saying the Lean states definitions and theorems and the README every target, while Suggested.lean declares nothing; a validation line reporting a sorry warning the build does not emit). Folder files need no change. Seeded sample: 0 targets and 0 locators in the folder. 8 of 8 part citations resolved at their open heads. Gate rerun: all checks 0, OK. depcheck: 244 roadmaps, 2229 edges, 0 problems. Suggested.lean elaborates with exit 0 and no diagnostics. Previous report had no findings.",
+  "text": "ab4941ac7c1c788e",
+  "carried": {
+   "from": "af2c1d128731140e466e74b75f24ecdd8e7bc743",
+   "head": "1e931c33cbcc9a438cc25c643e2678bc01d4ce4e",
+   "findings": 3,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
