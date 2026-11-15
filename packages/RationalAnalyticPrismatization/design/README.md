@@ -6,7 +6,7 @@
 
 This roadmap owns the Gelfand analytic geometry over ℚ_p that the prismatization uses (Layers 1–6: bounded solid ℚ_p-algebras, Gelfand rings and stacks, derived Berkovich spaces, analytic de Rham stacks, deformation theory, cones, and Fargues–Fontaine discs, curves and Hyodo–Kato stacks as Gelfand stacks), the rational analytic prismatization with its δ-spaces, twistor and Hodge–Tate stacks, its comparison theorems and their consequences for duality and Chern classes (Layers 7–9, 11 and 12), and the decompletion of semilinear representations over Gelfand rings by locally analytic vectors (Layer 10). No other roadmap defines Gelfand rings or stacks, derived Berkovich spaces, analytic de Rham or Hyodo–Kato stacks, rational δ-spaces, analytic δ-stacks, the analytic prismatization, the p-adic twistor stack, analytic Hodge–Tate stacks or decompletions over Gelfand rings. Layers 1–7 form a self-contained public interface for downstream consumers, such as a rational analytic syntomification or an integral analytic prismatization.
 
-The following are imported, not rebuilt. Light profinite sets and light condensed sets are already in the library (Mathlib `LightProfinite`, `LightCondensed`); light solid abelian groups are SolidAnalyticRings §1.5. The Berkovich spectrum of a normed ring is TropicalAndBerkovichArithmetic §§0.1–0.24 and AdicSpacesPartIII §R3.9; this roadmap only identifies M(A) := M(A^u) with it. Rigid spaces, the rigid–adic comparison, partially proper and smooth morphisms and dagger spaces are RigidAnalyticGeometry §6.2, AdicSpacesPartII §§R0.4, R0.10, R0.16, R1.1 and AdicSpacesPartIV §F1; the Banach arc-site and Marc(A) are MotivesAndAlgebraicCyclesPartII §BM.0, of which this roadmap uses the light qfd hypersheaf version of ABLB with a comparison (2.8). Perfectoid rings, tilting, A_inf and Fontaine's θ are PerfectoidSpaces §§P1–P2 and P7.16; diamonds and the diamond of an analytic adic space are DiamondsAndVStacks §§D2, D4, D6. Relative Fargues–Fontaine curves, untilt divisors and Div¹ as v-sheaves are RelativeFarguesFontaine §§1.2, 2.1–2.2, 3.2, 4.7, FarguesFontaineDiamonds §§F2, F4 and VectorBundlesAndIsocrystals Layers 0, 1, 2, 5 and 6; this roadmap realizes them as Gelfand stacks and proves the comparisons. Period sheaves, the classical Faltings' extension, Sen operators of C_p-representations and the functor associatedLocalSystem are PadicHodgeTheory §§2.2–2.3, 4.4, 7.1 with FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.P7.2; Tate's normalized traces are PadicPeriodRings §§1.3–1.4; the cyclotomic decompletion of Robba (φ, Γ)-modules is PhiGammaModulesAndIwasawaCohomology §1.4. The linear theory of locally analytic vectors is LocallyAnalyticRepresentationsOfLocalGroups §2.3 (Banach representations) and §3.8 (solid representations); uniform groups, compact p-adic analytic groups, ordered coordinates and finite-rank p-valuations with ordered bases are NoncommutativeAndEquivariantIwasawa §§0.1, 0.2, 0.6, 0.7; this roadmap builds the light, semilinear version on Gelfand stacks and compares. The integral prismatic objects of PrismaticCohomology §1.5, PrismaticCohomologyPartII §§3.9, 4.12–4.13 and PrismaticCohomologyPartIII §6.10, the étale Chern classes and Poincaré duality of ClassicalAdicEtaleCohomology §9.3 and ClassicalAdicEtaleCohomologyPartII §5.9, and the Chern class comparison of CohomologyComparisons §6.7 are used only as Checks.
+The following are imported, not rebuilt. Light profinite sets and light condensed sets are already in the library (Mathlib `LightProfinite`, `LightCondensed`); light solid abelian groups are SolidAnalyticRings §1.5. The Berkovich spectrum of a normed ring is TropicalAndBerkovichArithmetic §§0.1–0.24 and AdicSpacesPartIII §R3.9; this roadmap only identifies M(A) := M(A^u) with it. Rigid spaces, the rigid–adic comparison, partially proper and smooth morphisms and dagger spaces are RigidAnalyticGeometry §6.2, AdicSpacesPartII §§R0.4, R0.10, R0.16, R1.1 and AdicSpacesPartIV §F1; the Banach arc-site and Marc(A) are MotivesAndAlgebraicCyclesPartII Layer 0, of which this roadmap uses the light qfd hypersheaf version of ABLB with a comparison (2.8). Perfectoid rings, tilting, A_inf and Fontaine's θ are PerfectoidSpaces §§P1–P2 and P7.16; diamonds and the diamond of an analytic adic space are DiamondsAndVStacks §§D2, D4, D6. Relative Fargues–Fontaine curves, untilt divisors and Div¹ as v-sheaves are RelativeFarguesFontaine §§1.2, 2.1–2.2, 3.2, 4.7, FarguesFontaineDiamonds §§F2, F4 and VectorBundlesAndIsocrystals Layers 0, 1, 2, 5 and 6; this roadmap realizes them as Gelfand stacks and proves the comparisons. Period sheaves, the classical Faltings' extension, Sen operators of C_p-representations and Scholze's associated local system functor E ↦ M(E) are PadicHodgeTheory §§2.2–2.3, 4.4, 7.1 with FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.P7.2; Tate's normalized traces are PadicPeriodRings §§1.3–1.4; the cyclotomic decompletion of Robba (φ, Γ)-modules is PhiGammaModulesAndIwasawaCohomology §1.4. The linear theory of locally analytic vectors is LocallyAnalyticRepresentationsOfLocalGroups §2.3 (Banach representations) and §3.8 (solid representations); uniform groups, compact p-adic analytic groups, ordered coordinates and finite-rank p-valuations with ordered bases are NoncommutativeAndEquivariantIwasawa §§0.1, 0.2, 0.6, 0.7; this roadmap builds the light, semilinear version on Gelfand stacks and compares. The integral prismatic objects of PrismaticCohomology §1.5, PrismaticCohomologyPartII §§3.9, 4.12–4.13 and PrismaticCohomologyPartIII §6.10, the étale Chern classes and Poincaré duality of ClassicalAdicEtaleCohomology §9.3 and ClassicalAdicEtaleCohomologyPartII §5.9, and the Chern class comparison of CohomologyComparisons §6.7 are used only as Checks.
 
 The general theory of analytic stacks — light analytic rings over ℚ_{p,■}, the ∞-topos of analytic stacks for !-equivalences, its quasi-coherent six-functor formalism and the Heyer–Mann extension theorem, suave, prim and cohomologically smooth or proper maps, Betti stacks, nuclear modules, perfect complexes on analytic stacks of Fredholm rings, the cotangent complex of analytic rings, Cartier duality for analytic vector bundles and algebraic stacks as analytic stacks — is AnalyticStacks (Layers 0–7), consumed through the declared gaps below at the sections named there. Following ALRS Construction 2.1.2, the six-functor formalism on Gelfand stacks (2.2) is the one enlarged along Scholze's Gestalten: the n-affine and n-proper maps of Gestalten (Gest Definitions 6.5 and 6.12) and the transmutation of a six-functor formalism into Gestalten (Gest Proposition 9.5) are general theory with no owner (AnalyticStacks places them outside its scope) and are the contracts `gestalten-affine-proper` and `gestalten-transmutation`. Maps that ALRS proves 0-affine or 0-proper are stated as such, and Δ-!-ability is stated for all locally †-finitely presented maps of Berkovich spaces (12.1, 12.4).
 
@@ -67,7 +67,7 @@ The classical cotangent complex (§0.4), square-zero extensions (§0.5), cotange
 
 ### From TauCetiRoadmap.MotivesAndAlgebraicCyclesPartII
 
-The Banach arc-site, Marc(A) = Marc(A^u), strictly totally disconnected Banach rings and quasi-pro-étale maps (§BM.0); compared with ABLB light qfd arc-stacks in 2.8. Sections consumed: §BM.0.
+The Banach arc-site, Marc(A) = Marc(A^u), strictly totally disconnected Banach rings and quasi-pro-étale maps (Layer 0); compared with ABLB light qfd arc-stacks in 2.8. Sections consumed: Layer 0.
 
 ### From TauCetiRoadmap.TropicalAndBerkovichArithmetic
 
@@ -131,7 +131,7 @@ The diamond of an analytic adic space (§D6.4) and the étale-site comparison ex
 
 ### From TauCetiRoadmap.PadicHodgeTheory
 
-Horizontal and structural de Rham period sheaves and the classical Faltings' extension (§§2.2–2.3), Sen operators of C-representations (§4.4) and Scholze's functor associatedLocalSystem (§7.1). Sections consumed: §2.2, §2.3, §4.4, §7.1.
+Horizontal and structural de Rham period sheaves and the classical Faltings' extension (§§2.2–2.3), Sen operators of C-representations (§4.4) and Scholze's associated local system functor E ↦ M(E) (§7.1). Sections consumed: §2.2, §2.3, §4.4, §7.1.
 
 ### From TauCetiRoadmap.AInfCohomology
 
@@ -295,7 +295,7 @@ Call a bounded solid ℚ_p-algebra A a Gelfand ring if A/A_{≤1} is a discrete 
 
 A proof route: A/A_{≤1} = A^u/A^u_{≤1} by 1.3, so the condition depends only on A^u; A^u is Banach if and only if A_{≤1}/A_{≤1/p} is discrete, and discreteness is stable under filtered colimits, subobjects, quotients and extensions (ABLB Remark 3.1.2).
 
-*Needs:* §1.3; MotivesAndAlgebraicCyclesPartII §BM.0; required contract `light-solid-analytic-rings`.
+*Needs:* §1.3; MotivesAndAlgebraicCyclesPartII Layer 0; required contract `light-solid-analytic-rings`.
 
 The API has the following laws.
 
@@ -378,13 +378,13 @@ Call a Gelfand ring A totally disconnected if M(A) is profinite, strictly totall
 
 A proof route: For the remark, residue fields of a strictly totally disconnected ring are complete algebraically closed, hence perfectoid fields (PerfectoidSpaces §P1.10); ABLB Lemma 3.1.17 propagates perfectoidness from the residue fields over the profinite spectrum using a locally defined pseudo-uniformizer π with π^p | p.
 
-*Needs:* Mathlib `PadicComplex`; §1.5; PerfectoidSpaces §P1.1; PerfectoidSpaces §P1.10; MotivesAndAlgebraicCyclesPartII §BM.0.
+*Needs:* Mathlib `PadicComplex`; §1.5; PerfectoidSpaces §P1.1; PerfectoidSpaces §P1.10; MotivesAndAlgebraicCyclesPartII Layer 0.
 
 The API has the following laws.
 
 - A is nilperfectoid if and only if Nil†(A) → A → A^u is a fibre sequence and A^u is a perfectoid Banach ℚ_p-algebra.
 - Nilperfectoid rings are uniformly perfectoid; perfectoid Banach ℚ_p-algebras are nilperfectoid.
-- Among Banach ℚ_p-algebras, the strictly totally disconnected Banach rings of MotivesAndAlgebraicCyclesPartII §BM.0 (strict-basis) are exactly the uniform strictly totally disconnected Gelfand rings.
+- Among Banach ℚ_p-algebras, the strictly totally disconnected Banach rings of MotivesAndAlgebraicCyclesPartII §0.4 are exactly the uniform strictly totally disconnected Gelfand rings.
 
 **Checks.**
 
@@ -399,7 +399,7 @@ The Tate algebra ℚ_p⟨T⟩ is a uniform qfd Gelfand ring with M(ℚ_p⟨T⟩)
 
 ### Dependencies
 
-The light solid ℚ_p analytic ring and induced structures (required contract `light-solid-analytic-rings`); Scholze's Fredholm criteria (required contract `fredholm-criteria`); TropicalAndBerkovichArithmetic §0.1, §0.11, §0.13, §0.15, §0.7, §0.8; AdicSpacesPartIII §R3.9; AdicSpacesPartII §R0.4; AdicSpacesPartIV §F1.1–§F1.2; PerfectoidSpaces §P1.1, §P1.10; MotivesAndAlgebraicCyclesPartII §BM.0; EnhancedDerivedSheaves §E5:descent.
+The light solid ℚ_p analytic ring and induced structures (required contract `light-solid-analytic-rings`); Scholze's Fredholm criteria (required contract `fredholm-criteria`); TropicalAndBerkovichArithmetic §0.1, §0.11, §0.13, §0.15, §0.7, §0.8; AdicSpacesPartIII §R3.9; AdicSpacesPartII §R0.4; AdicSpacesPartIV §F1.1–§F1.2; PerfectoidSpaces §P1.1, §P1.10; MotivesAndAlgebraicCyclesPartII Layer 0; EnhancedDerivedSheaves §E5:descent.
 
 ## Layer 2: Gelfand stacks, perfect complexes and derived Berkovich spaces
 
@@ -468,9 +468,9 @@ A proof route: D(X) is the limit of D(A) over affinoids GSpec(A) → X along sym
 
 Prove: (1) every separable Gelfand ring A admits a descendable map A → A′ with A′ separable nilperfectoid, quasi-pro-étale after uniform completion; (2) every separable qfd Gelfand ring admits a descendable map to a separable qfd strictly totally disconnected nilperfectoid ring; (3) for an arc-hypercover A → A^• of qfd perfectoid rings, colim_Δ GSpec(A^•) → GSpec(A) is a !-equivalence (ALRS Theorem 2.1.7, p. 15, ALRS line 797; ABLB Proposition 4.6.4, p. 55, ABLB line 2916; ABLB Corollary 4.4.10, p. 50, ABLB line 2641).
 
-A proof route: For (1), choose a surjection onto A^u from ℚ_p⟨T_n : n ∈ ℕ⟩, base change the descendable map colim_n ℚ_p⟨T_1,…,T_n⟩ → ℚ_p⟨T_n : n ∈ ℕ⟩ (index ≤ 2, EnhancedDerivedSheaves §E5:descent, isDescendable_colimit_of_uniformIndex) to get A′ with A′^{†-red} = A′^u, then pass to a perfectoid quasi-pro-étale cover; for (2) use the strictly totally disconnected basis of MotivesAndAlgebraicCyclesPartII §BM.0 and ind-finite étale covers; (3) is the almost-mathematics descent of ABLB §4.4 (Lemmas 4.4.3–4.4.9).
+A proof route: For (1), choose a surjection onto A^u from ℚ_p⟨T_n : n ∈ ℕ⟩, base change the descendable map colim_n ℚ_p⟨T_1,…,T_n⟩ → ℚ_p⟨T_n : n ∈ ℕ⟩ (index ≤ 2, EnhancedDerivedSheaves §E5:descent, isDescendable_colimit_of_uniformIndex) to get A′ with A′^{†-red} = A′^u, then pass to a perfectoid quasi-pro-étale cover; for (2) use the strictly totally disconnected basis of MotivesAndAlgebraicCyclesPartII Layer 0 and ind-finite étale covers; (3) is the almost-mathematics descent of ABLB §4.4 (Lemmas 4.4.3–4.4.9).
 
-*Needs:* EnhancedDerivedSheaves §E2.6; §1.8; §2.1; §2.3; MotivesAndAlgebraicCyclesPartII §BM.0; PerfectoidSpaces §P2.10; EnhancedDerivedSheaves §E5:descent; required contract `analytic-stack-topos`.
+*Needs:* EnhancedDerivedSheaves §E2.6; §1.8; §2.1; §2.3; MotivesAndAlgebraicCyclesPartII Layer 0; PerfectoidSpaces §P2.10; EnhancedDerivedSheaves §E5:descent; required contract `analytic-stack-topos`.
 
 **Checks.**
 
@@ -544,18 +544,18 @@ The API has the following laws.
 
 ### 2.8 Light arc-stacks and perfectoidization
 
-Define the ∞-category ArcStk_{ℚ_p} of light arc-stacks over Marc(ℚ_p) as hypersheaves of anima on the arc-site of separable perfectoid spaces over ℚ_p, and its qfd variant on separable qfd perfectoid spaces (ABLB Definition 4.1.8, p. 39, ABLB line 2023; ABLB Definition 4.1.11(3), p. 39, ABLB line 2067). For a separable Banach algebra A let Marc(A) be the arc-sheaf of pairs (R^♯, A → R^♯) of an untilt and a map of Banach algebras; tilting identifies ArcStk_{ℚ_p} with arc-stacks over Marc(ℚ_p) on perfectoid spaces of characteristic p (ALRS §2.3, p. 19, ALRS line 996). Construct the perfectoidization functor (−)^⋄: GelfStk → ArcStk_{ℚ_p} by restriction along totally disconnected perfectoid affinoids, colimit-preserving, with GSpec(A)^⋄ = Marc(A^u), and its left adjoint X ↦ X̂, written (X)^∧ on compound expressions, which preserves fibre products but not the final object (ABLB Lemma 4.5.1, p. 51, ABLB line 2690; ABLB Proposition 4.5.5, p. 52, ABLB line 2737; ALRS §2.3, p. 19, ALRS line 1005). Compare Marc(A) with the Banach arc-site of MotivesAndAlgebraicCyclesPartII §BM.0.
+Define the ∞-category ArcStk_{ℚ_p} of light arc-stacks over Marc(ℚ_p) as hypersheaves of anima on the arc-site of separable perfectoid spaces over ℚ_p, and its qfd variant on separable qfd perfectoid spaces (ABLB Definition 4.1.8, p. 39, ABLB line 2023; ABLB Definition 4.1.11(3), p. 39, ABLB line 2067). For a separable Banach algebra A let Marc(A) be the arc-sheaf of pairs (R^♯, A → R^♯) of an untilt and a map of Banach algebras; tilting identifies ArcStk_{ℚ_p} with arc-stacks over Marc(ℚ_p) on perfectoid spaces of characteristic p (ALRS §2.3, p. 19, ALRS line 996). Construct the perfectoidization functor (−)^⋄: GelfStk → ArcStk_{ℚ_p} by restriction along totally disconnected perfectoid affinoids, colimit-preserving, with GSpec(A)^⋄ = Marc(A^u), and its left adjoint X ↦ X̂, written (X)^∧ on compound expressions, which preserves fibre products but not the final object (ABLB Lemma 4.5.1, p. 51, ABLB line 2690; ABLB Proposition 4.5.5, p. 52, ABLB line 2737; ALRS §2.3, p. 19, ALRS line 1005). Compare Marc(A) with the Banach arc-site of MotivesAndAlgebraicCyclesPartII Layer 0.
 
 A proof route: Geometric realizations of arc-hypercovers of separable strictly totally disconnected perfectoid rings are !-equivalences (2.4(3)), so restriction to perfectoids defines (−)^⋄ with a left adjoint (ABLB Lemma 4.4.3, Proposition 4.5.5).
 
-*Needs:* §2.1; §2.4; MotivesAndAlgebraicCyclesPartII §BM.0; PerfectoidSpaces §P1.27; PerfectoidSpaces §P2.10; EnhancedDerivedSheaves §E2.7.
+*Needs:* §2.1; §2.4; MotivesAndAlgebraicCyclesPartII Layer 0; PerfectoidSpaces §P1.27; PerfectoidSpaces §P2.10; EnhancedDerivedSheaves §E2.7.
 
 The API has the following laws.
 
 - GSpec(A)^⋄ = Marc(A) = Marc(A^u) for every separable Gelfand ring A.
 - (−)^⋄ preserves colimits and finite limits, and is itself the inverse image of a geometric morphism of ∞-topoi (ALRS §2.3, ALRS line 1016; ABLB Lemma 4.5.1(1), ABLB line 2691).
 - For a qfd nilperfectoid A, the left adjoint sends Marc(A^u) to GSpec(A^u).
-- For a separable Banach ℚ_p-algebra A, Marc(A) agrees on separable perfectoid spaces with the arc-sheafified representable of MotivesAndAlgebraicCyclesPartII §BM.0 arc-site.
+- For a separable Banach ℚ_p-algebra A, Marc(A) agrees on separable perfectoid spaces with the arc-sheafified representable of the arc-site of MotivesAndAlgebraicCyclesPartII Layer 0.
 
 **Checks.**
 
@@ -569,7 +569,7 @@ GSpec(ℚ_p) is the final Gelfand stack and GSpec(0) the initial one. The Betti 
 
 ### Dependencies
 
-Layer 1; required contracts `light-solid-analytic-rings`, `analytic-stack-topos`, `qcoh-six-functors`, `suave-prim-calculus`, `perfect-complexes-fredholm-stacks`, `betti-realization`, `nuclear-modules`, `fredholm-criteria`, `gestalten-affine-proper` and `gestalten-transmutation`; EnhancedDerivedSheaves §E2.6, §E2.7, §E5:descent, §E5:presentability.4; TropicalAndBerkovichArithmetic §0.17, §0.19; RigidAnalyticGeometry §6.2; AdicSpacesPartII §R1.1, §R0.10; AdicSpacesPartIV §F1.7; PerfectoidSpaces §P2.10; MotivesAndAlgebraicCyclesPartII §BM.0.
+Layer 1; required contracts `light-solid-analytic-rings`, `analytic-stack-topos`, `qcoh-six-functors`, `suave-prim-calculus`, `perfect-complexes-fredholm-stacks`, `betti-realization`, `nuclear-modules`, `fredholm-criteria`, `gestalten-affine-proper` and `gestalten-transmutation`; EnhancedDerivedSheaves §E2.6, §E2.7, §E5:descent, §E5:presentability.4; TropicalAndBerkovichArithmetic §0.17, §0.19; RigidAnalyticGeometry §6.2; AdicSpacesPartII §R1.1, §R0.10; AdicSpacesPartIV §F1.7; PerfectoidSpaces §P2.10; MotivesAndAlgebraicCyclesPartII Layer 0.
 
 ## Layer 3: Analytic de Rham stacks, analytification and Cartier divisors
 
@@ -587,7 +587,7 @@ The API has the following laws.
 
 - Maps Y → X^dR of qfd Gelfand stacks are equivalent to maps Y^⋄ → X of arc-stacks.
 - For a qfd nilperfectoid A and a qfd Gelfand stack X, X^dR(A) = X(A^u); in particular X^dR(A) depends only on A^u.
-- The unit X → X^dR induces (X^dR)^dR ≅ X^dR, and X^dR → GSpec(ℚ_p) is †-formally étale.
+- The unit X → X^dR induces (X^dR)^dR ≅ X^dR.
 - For an immersion Z → X of qfd derived Berkovich spaces on arc-stacks, Z^{dR/X} = X^†_Z.
 
 **Checks.**
@@ -700,7 +700,7 @@ A proof route: (2) ⇒ (1) ⇒ (3) are formal; for (3) ⇒ (2) cover A by a nilp
 The API has the following laws.
 
 - †-formally étale maps are stable under base change and composition and satisfy cancellation; †-rational localizations of Berkovich spaces are †-formally étale.
-- For every map Y → X, Y^{dR/X} → X is †-formally étale.
+- For every map Y → X, Y^{dR/X} → X is †-formally étale; in particular Y^dR → GSpec(ℚ_p) is, Y^{dR/GSpec(ℚ_p)} being Y^dR.
 - Strongly †-formally smooth ⇒ †-formally smooth ⇒ †-formally étale locally †-formally smooth ⇒ weakly †-formally smooth.
 - A weakly †-formally smooth map is an epimorphism of Gelfand stacks if and only if its perfectoidization is an epimorphism of arc-stacks.
 
@@ -807,7 +807,7 @@ Call A → B a †-quasi-pro-étale map of Gelfand rings if Marc(B) → Marc(A) 
 
 A proof route: ALRS Lemma A.2.20: over strictly totally disconnected A, GSpec(B) = GSpec(A) ×_{M(A)^Betti} M(B)^Betti and M(B) → M(A) is a countable limit of finite disjoint unions of clopens. For ALRS Proposition A.2.15 lift points along the epimorphism using formal smoothness, and identify the cotangent complex by the transitivity sequence.
 
-*Needs:* §4.6; §4.2; §2.4; MotivesAndAlgebraicCyclesPartII §BM.0.
+*Needs:* §4.6; §4.2; §2.4; MotivesAndAlgebraicCyclesPartII Layer 0.
 
 **Checks.**
 
@@ -834,7 +834,7 @@ The closed point 0 → A¹ is a Zariski closed immersion with cotangent complex 
 
 ### Dependencies
 
-Layers 1–3; required contract `solid-cotangent-complex`; DerivedModuleAlgebra §0.5, §0.25; EnhancedDerivedSheaves §E5:cotangent-export.1, §E5:cotangent-export.2, §E5:animation.1; RefinedTraceMethods §1.7, §1.10; MotivesAndAlgebraicCyclesPartII §BM.0; AdicEtaleGeometry §A2.4.
+Layers 1–3; required contract `solid-cotangent-complex`; DerivedModuleAlgebra §0.5, §0.25; EnhancedDerivedSheaves §E5:cotangent-export.1, §E5:cotangent-export.2, §E5:animation.1; RefinedTraceMethods §1.7, §1.10; MotivesAndAlgebraicCyclesPartII Layer 0; AdicEtaleGeometry §A2.4.
 
 ## Layer 5: The cone construction and the filtered de Rham stack
 
@@ -904,7 +904,7 @@ A proof route: R/(I ⊗ Nil†R) is the pullback of R/I and R^{†-red} over R^{
 
 - GSpec(ℚ_p)^{dR,+} = A¹/G_m, since the point takes value a point on every ring.
 - Over G_m/G_m, (A¹)^{dR,+} restricts to (A¹)^dR = A¹/G_a^†.
-- Vector bundles on A¹/G_m^† are vector bundles on A¹ with a T-connection whose operator T∂_T integrates (ALRS Remark 3.1.6, ALRS line 2263); vector bundles on A¹/Ĝ_m are all T-connections, so A¹/Ĝ_m and A¹/G_m^† differ.
+- Vector bundles on A¹/G_m^† are vector bundles on A¹ with a T-connection, that is, after dividing by T, a connection with a logarithmic singularity at 0 (ALRS Remark 3.1.6, p. 43, ALRS line 2263). For Ĝ_m the formal completion of G_m at 1, pullback along A¹/Ĝ_m → A¹/G_m^† is fully faithful: sheaves on A¹/Ĝ_m are all T-connections, and the essential image consists of those on which the action of T∂_T extends to an action of the entire functions in T∂_T. A vector bundle with T-connection is locally a Banach module on which T∂_T is continuous, so every entire series in T∂_T converges on it: the two stacks have the same vector bundles, and a description that separates them by vector bundles is wrong. They differ on larger sheaves: on the skyscraper at T = 0 with fibre ℚ_p[θ], T acting by 0 and T∂_T by multiplication by θ, the entire series Σ_n p^{n²}θ^n does not act, its partial sums applied to 1 having unbounded degree and so no limit in ℚ_p[θ].
 - Without †-cohesiveness the square of ALRS Proposition 3.1.3 need not be cartesian; the proof uses exactly the cohesive square for the †-thickening R/I → R^{†-red}/(R^{†-red} ⊗ I).
 
 ### Examples
@@ -923,7 +923,7 @@ This layer realizes the relative Fargues–Fontaine disc and curve of a perfecto
 
 For an affinoid perfectoid space S = Spa(A) of characteristic p, qfd and separable, with pseudo-uniformizer ϖ, define the relative Fargues–Fontaine disc D_{FF,S} = Spa(A_inf(A)) ∖ V([ϖ]) as the Berkovich space ⋃_s GSpec(B^†_{[0,s]}(S)), where A_inf(A) = W(A°) and B^†_{[0,s]} is the overconvergent rational localization of {|p|^s ≤ |[ϖ]| ≠ 0}, and the punctured disc D^×_{FF,S} = D_{FF,S} ∖ V(p) (ALRS §3.2, p. 44, ALRS line 2295). Construct its Frobenius φ_S and the radius map κ_ϖ: D_{FF,S} → [0, ∞)^Betti with κ_ϖ(x) = log|[ϖ]|_x / log|p|_x, so that κ_ϖ ∘ φ = p·κ_ϖ, κ_ϖ^{-1}(0) is the overconvergent neighbourhood of {p = 0} and κ_ϖ^{-1}((0,∞)) = D^×_{FF,S}; for S = T♭ with T perfectoid over ℚ_p fix the canonical radius κ by taking ϖ = p♭, which does not depend on the choice (ALRS Remark 3.2.1, p. 44, ALRS line 2322). Prove D^⋄_{FF,S} = S × Marc(ℤ_p) and D^{×,⋄}_{FF,S} = S × Marc(ℚ_p), that the constructions globalize to perfectoid spaces over 𝔽_p preserving Tate-analytic covers, and that every map of Gelfand stacks X → D^×_{FF,Y} from a perfectoid space X over ℚ_p extends uniquely to a φ-equivariant map D^×_{FF,X♭} → D^×_{FF,Y} through the untilt (ALRS Lemma 3.2.2, p. 45, ALRS line 2336).
 
-A proof route: The disc is glued from the overconvergent rational localizations of Spa(A_inf); its perfectoidization is computed on the classical adic space (RelativeFarguesFontaine §2.2, diamondFormulaAndMapToBase). ALRS Lemma 3.2.2 follows from D^{×,⋄}_{FF,Y} = Y × Marc(ℚ_p) and X̂^⋄ = X for perfectoid X.
+A proof route: The disc is glued from the overconvergent rational localizations of Spa(A_inf); its perfectoidization is computed on the classical adic space (RelativeFarguesFontaine §2.2, the diamond formula). ALRS Lemma 3.2.2 follows from D^{×,⋄}_{FF,Y} = Y × Marc(ℚ_p) and X̂^⋄ = X for perfectoid X.
 
 *Needs:* RelativeFarguesFontaine §2.2; Mathlib `WittVector`; §2.6; §2.8; §1.6; PerfectoidSpaces §P1.16; PerfectoidSpaces §P1.27; RelativeFarguesFontaine §1.2; VectorBundlesAndIsocrystals Layer 0; FarguesFontaineDiamonds §F2; Tau Ceti `TauCeti.FarguesFontaine.spaY`; Tau Ceti `TauCeti.FarguesFontaine.isRadiusLowerBound_comap_frobenius_iff`.
 
@@ -1420,9 +1420,9 @@ A proof route: Construct Φ on the comodule presentation: a right C(Π_0, ℚ_p)
 
 ### 10.3 The groups G_r, G^la and locally analytic representations
 
-Let G be a compact p-adic Lie group with an open normal subgroup G_0 that is uniform pro-p, with ordered basis g_1, …, g_d, G_0 ≅ ℤ_p^d, and p-valuation; after shrinking G_0 its group law and the conjugation action of G extend to integral power series on the polydisc D^d. Let G_0(r) ⊂ G_0(1) be the polydisc of radius r ∈ (0, 1] ∩ ℚ, G_r the induced rigid analytic group ⊔_{g ∈ G/G_r} gG_0(r), G^la = ⋂_{r→0} G_r with O(G^la) = C^la_G = colim_r O(G_r), G_{<r} = ⋃_{r′<r} G_{r′} for r ∈ (0, 1] and G_{≤r} = ⋂_{r′>r} G_{r′} for r ∈ (0, 1) (ALRS §5.2.2, p. 97, ALRS line 5086; ALRS Definition 5.2.8, p. 98, ALRS line 5110). A solid representation M is locally analytic if M^la := Γ(G, C^la_G ⊗ M) → M is an isomorphism (ALRS Definition 5.2.9, p. 98, ALRS line 5124). Prove: BG^cont → BG^la is 0-proper with pushforward of O equal to O, so pullback is fully faithful; Ψ: D(BG^la) → Rep^■_{ℚ_p}(G) is fully faithful with a linear right adjoint, which for compact G is (−)^la, so the essential image is the category of locally analytic representations (ALRS Lemma 5.2.10, p. 98, ALRS line 5137); for r ∈ (0, 1) define Rep^{<r} and Rep^{≤r} as D(GSpec(ℚ_p)/G_{<r}) and D(GSpec(ℚ_p)/G_{≤r}) (ALRS Definition 5.2.11, p. 99, ALRS line 5163); for r ∈ (0, 1), GSpec(ℚ_p) → BG^la and → BG^{≤r} are 0-proper and descendable, so BG^la and BG^{≤r} are 0-proper over GSpec(ℚ_p), and both are suave, and GSpec(ℚ_p) → BG^{<r} is cohomologically smooth with BG^{<r} prim (ALRS Lemma 5.2.12, p. 99, ALRS line 5169). For a rigid analytic group G with G = G(ℚ_p) compact, G^la agrees with G(ℚ_p)^la of 3.4.
+Let G be a compact p-adic Lie group with an open normal subgroup G_0 that is uniform pro-p, with ordered basis g_1, …, g_d, G_0 ≅ ℤ_p^d, and p-valuation; after shrinking G_0 its group law and the conjugation action of G extend to integral power series on the polydisc D^d. Let G_0(r) ⊂ G_0(1) be the polydisc of radius r ∈ (0, 1] ∩ ℚ, G_r the induced rigid analytic group ⊔_{g ∈ G/G_r} gG_0(r), G^la = ⋂_{r→0} G_r with O(G^la) = C^la_G = colim_r O(G_r), G_{<r} = ⋃_{r′<r} G_{r′} for r ∈ (0, 1] and G_{≤r} = ⋂_{r′>r} G_{r′} for r ∈ (0, 1) (ALRS §5.2.2, p. 97, ALRS line 5086; ALRS Definition 5.2.8, p. 98, ALRS line 5110). A solid representation M is locally analytic if M^la := Γ(G, C^la_G ⊗ M) → M is an isomorphism (ALRS Definition 5.2.9, p. 98, ALRS line 5124). For a p-adic Lie group G, not necessarily compact, and a compact open subgroup G_c, put G^la = ⊔_{g ∈ G/G_c} g·G_c^la; this does not depend on G_c, since G_c^la = ⊔_{h ∈ G_c/G_c′} h·G_c′^la for every open subgroup G_c′ ⊆ G_c, and G^cont and G^sm are the corresponding disjoint unions over G/G_c. Prove, for every p-adic Lie group G, not necessarily compact: BG^cont → BG^la is 0-proper with pushforward of O equal to O, so pullback is fully faithful, and Ψ: D(BG^la) → Rep^■_{ℚ_p}(G), pullback to BG^cont followed by Φ of 10.2, is fully faithful with a D(BG^la)-linear right adjoint Ψ^R (ALRS Lemma 5.2.10(1)–(2), p. 98, ALRS line 5137). For compact G prove that Ψ^R followed by pullback along GSpec(ℚ_p) → BG^la is (−)^la, so the essential image of Ψ is the category of locally analytic representations (ALRS Lemma 5.2.10(3), p. 98, ALRS line 5143); for compact G and r ∈ (0, 1) define Rep^{<r} and Rep^{≤r} as D(GSpec(ℚ_p)/G_{<r}) and D(GSpec(ℚ_p)/G_{≤r}) (ALRS Definition 5.2.11, p. 99, ALRS line 5163); for compact G and r ∈ (0, 1), GSpec(ℚ_p) → BG^la and → BG^{≤r} are 0-proper and descendable, so BG^la and BG^{≤r} are 0-proper over GSpec(ℚ_p), and both are suave, and GSpec(ℚ_p) → BG^{<r} is cohomologically smooth with BG^{<r} prim (ALRS Lemma 5.2.12, p. 99, ALRS line 5169). For a rigid analytic group G with G = G(ℚ_p), G^la agrees with G(ℚ_p)^la of 3.4, coset by coset of a compact open subgroup when G(ℚ_p) is not compact.
 
-A proof route: 0-properness of BG^cont → BG^la is checked after pullback along the effective epimorphism GSpec(ℚ_p) → BG^la (Gest Proposition 7.9), where G^la/G^cont → GSpec(ℚ_p) is 0-proper since G^la is affinoid and BG^cont is proper (10.2); the pushforward computes locally analytic vectors (RJRC Proposition 6.1.5).
+A proof route: For non-compact G, the base change of BG^cont → BG^la along the epimorphism BG_c^la → BG^la, whose fibre is the discrete set G/G_c, is BG_c^cont → BG_c^la, so descent along it reduces the 0-properness and the value of the pushforward to compact G. For compact G, 0-properness of BG^cont → BG^la is checked after pullback along the effective epimorphism GSpec(ℚ_p) → BG^la (Gest Proposition 7.9), where G^la/G^cont → GSpec(ℚ_p) is 0-proper since G^la is affinoid and BG^cont is proper (10.2); the pushforward computes locally analytic vectors (RJRC Proposition 6.1.5). Ψ^R is D(BG^la)-linear because Φ^R is D(BG^cont)-linear (10.2) and the pushforward along BG^cont → BG^la is D(BG^la)-linear by the projection formula.
 
 *Needs:* §10.2; §3.4; NoncommutativeAndEquivariantIwasawa §0.1; NoncommutativeAndEquivariantIwasawa §0.2; NoncommutativeAndEquivariantIwasawa §0.6; NoncommutativeAndEquivariantIwasawa §0.7; required contract `suave-prim-calculus`; required contract `classifying-stack-dualizing`.
 
@@ -1430,7 +1430,7 @@ The API has the following laws.
 
 - For compact G, Ψ identifies D(BG^la) with the full subcategory of locally analytic solid representations, and Ψ^R ∘ pullback = (−)^la.
 - The ind-systems {C^r_G}, {C^{<r}_G}, {C^{≤r}_G} are ind-equivalent, so C^la_G = colim C^r_G = colim C^{<r}_G = colim C^{≤r}_G (RJRC Remark 2.1.5).
-- BG^cont → BG^la is 0-proper with O ≅ s_*O; GSpec(ℚ_p) → BG^la is 0-proper and descendable.
+- For every p-adic Lie group G, BG^cont → BG^la is 0-proper with O ≅ s_*O; for compact G, GSpec(ℚ_p) → BG^la is 0-proper and descendable.
 - The coordinates and p-valuation are those of NoncommutativeAndEquivariantIwasawa §0.6 and §0.7: the ordered coordinate homeomorphism ℤ_p^d → G_0 and a finite-rank p-valuation with an ordered basis, which fixes the compatible analytic structure.
 
 **Checks.**
@@ -1440,6 +1440,7 @@ The API has the following laws.
 - The representation C(ℤ_p, ℚ_p) with the regular action is not locally analytic: its locally analytic vectors are C^la(ℤ_p, ℚ_p) ⊊ C(ℤ_p, ℚ_p).
 - For a Banach representation B, the cohomology of the derived locally analytic vectors equals R^iLA(B) of LocallyAnalyticRepresentationsOfLocalGroups §2.3, and agrees with RJRC22 Theorems 4.36, 5.3 and 5.5; the derived locally analytic vectors V^Rla of solid representations of its §3.8 are the κ-condensed counterpart.
 - For G = ℤ_p, with coordinate x and G_0(1) the closed unit disc, and r = 1/p, G_{≤1/p} = ⋂_{r′>1/p} G_{r′} is the disjoint union over a = 0, …, p − 1 of the overconvergent closed discs of radius 1/p around a, since G_{r′} ∩ ℤ_p = pℤ_p for 1/p ≤ r′ < 1. For r = 1 the intersection ⋂_{r′>1} G_{r′} has no terms, the polydiscs G_0(r′) being defined for r′ ≤ 1 only, so G_{≤1} and Rep^{≤1} are not defined, whereas G_{<1} = ⋃_{r′<1} G_{r′} is.
+- For the discrete group G = ℤ, a p-adic Lie group of dimension 0 that is not compact, take G_c = {0}: G^cont = G^la = G^sm = ⊔_{n ∈ ℤ} GSpec(ℚ_p), so BG^cont → BG^la is the identity and Ψ = Φ is the equivalence of D(Bℤ) with Rep^■_{ℚ_p}(ℤ), the solid ℚ_p[T^{±1}]-modules; the identification of Ψ^R with (−)^la is not asserted, M^la being defined for compact G only. A version of Lemma 5.2.10(1)–(2) for compact G only would not cover the second Check of 10.6 for G = ℚ_p^×, where G^la = ⊔_{n ∈ ℤ} p^n·ℤ_p^{×,la}.
 
 ### 10.4 Lazard's criterion and binomial analytic functions
 
@@ -1613,8 +1614,8 @@ A proof route: (1) follows from 11.1 and the cartesian square X̂^⋄ = FF_{X̂^
 **Checks.**
 
 - For M = C_p(n): if n ≠ 0, θ = n is invertible and H*(Gal_K, C_p(n)) = 0; if n = 0, θ = 0 and H⁰ = H¹ = K, H² = 0, Tate's theorem.
-- On finite-dimensional C_p-semilinear representations θ_M is the Sen operator senOperator of PadicHodgeTheory §4.4 and the labelled Sen operator Θ = log ρ(γ)/log χ_p(γ) of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.P7.2, with HT(χ_p) = +1.
-- With the opposite sign θ_{O{1}} = −1 one would get H*(Gal_K, C_p(1)) computed by K →^{−1} K, still zero, but the Sen weight of the Tate twist would be −1, contradicting senOperator on C_p(1), which is multiplication by 1.
+- On finite-dimensional C_p-semilinear representations θ_M is the Sen operator of PadicHodgeTheory §4.4 and the labelled Sen operator Θ = log ρ(γ)/log χ_p(γ) of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.P7.2, with HT(χ_p) = +1.
+- With the opposite sign θ_{O{1}} = −1 one would get H*(Gal_K, C_p(1)) computed by K →^{−1} K, still zero, but the Sen weight of the Tate twist would be −1, contradicting the Sen operator of PadicHodgeTheory §4.4 on C_p(1), which is multiplication by 1.
 - L_{X^HT/ℚ_p} = O[−1]: the classifying stack BG_m^† of the band contributes the shifted dual of its one-dimensional Lie algebra.
 
 ### 11.3 Toric charts: the twistor stack as a locally analytic quotient
@@ -1649,7 +1650,7 @@ A proof route: The statements are local on the target, so D = GSpec(A) affinoid 
 
 For D and X → D as in 11.4 prove: (1) α^HT_{X/D}: X̂^⋄ → X^HT is 0-proper with O ≅ α^HT_*O and Perf(X^HT ×_X U) ≃ Perf(X̂^⋄ ×_X U) for Berkovich-étale U → X; (2) L_{X^HT/X} ≅ Ω¹_{X/D}{−1}[−1]; (3) the BT^†_{X/D}{1}-torsor structure of X^HT → X and Cartier duality make every M ∈ D(X^HT) a Sym_{O_X}(T_{X/D}{1})-module, its geometric Sen operator θ_M, an Ω¹_{X/D}{−1}-Higgs field, which pulls back to the essential image of α^{HT,*}; (4) π_X^*π_{X,*}M is computed by the Higgs complex M → M ⊗ Ω¹_{X/D}{−1} → ⋯ → M ⊗ Ω^{dim X}_{X/D}{−dim X}; (5) every relative locally analytic orthonormalizable Banach Ô_X-sheaf lies in the essential image of α^{HT,*} and its geometric Sen operator is that of RCSen Theorem 1.0.3 (ALRS Theorem 6.2.2, p. 147, ALRS line 7976; RCSen Theorem 1.0.3, p. 2, RCSen line 64).
 
-A proof route: (1) follows from 11.4 and X̂^⋄ = FF_{X^⋄} ×_{X^{Div¹/FF_D}} X^HT; (2) from the cartesian square X^HT → X over X/T_{X/D}{1} → X/T^dR_{X/D}{1} and 4.8; (3)–(4) from Cartier duality for BT^†{1} (RC26a, contracts `vector-group-cartier-duality` and `stacky-cartier-duality`) and the relative de Rham complex of X → BT^†_{X/D}{−1}; (5) from the local description of RCSen §3.2 on toric charts.
+A proof route: (1) follows from 11.4 and X̂^⋄ = FF_{X^⋄} ×_{X^{Div¹/FF_D}} X^HT; (2) from the cartesian square X^HT → X over X/T_{X/D}{1} → X/T^dR_{X/D}{1} and 4.8; (3)–(4) from Cartier duality for BT^†{1} (RC26a, contracts `vector-group-cartier-duality` and `stacky-cartier-duality`) and the relative de Rham complex of X → BT^†_{X/D}{1}; (5) from the local description of RCSen §3.2 on toric charts.
 
 *Needs:* §11.4; §9.2; §4.8; required contract `vector-group-cartier-duality`; required contract `stacky-cartier-duality`.
 
@@ -1822,7 +1823,7 @@ A proof route: P^d_X → X is locally †-finitely presented with proper underly
 
 ### 12.6 Formal Hodge–Tate stacks and the Riemann–Hilbert functor
 
-For a smooth rigid space X over ℚ_p prove that f̂: X^{HT^} → X^{cone^} ×_{Â¹/G_m} Q_p^{HT^} is a T^dR_X{1}-torsor, {1} the Breuil–Kisin twist, so f̂ is suave with f̂_♮1 = 1 and f̂^* is fully faithful; the same holds for the overconvergent version when X is partially proper (ALRS Proposition 6.7.1, p. 169, ALRS line 9143). Writing Q_p^{HT^} = Spf(K_∞[[t]])/ℤ_p^{×,la} and B⁺_dR = B⁺_dR(ℚ_p^cyc), prove that after base change along Spf(B⁺_dR) → Q_p^{HT^} the pullback f̂^* is fully faithful with essential image the sheaves whose pullback to X^HT_{ℚ_p^cyc} has †-nilpotent geometric Sen operators, and that vector bundles on X^{cone^/(B⁺_dR, t)} correspond to B⁺_dR-local systems on X_{ℚ_p^cyc} whose underlying Ô-bundle has nilpotent geometric Sen operator (ALRS Proposition 6.7.3, p. 170, ALRS line 9177). Construct the maps Spf(B⁺_pdR,X) → X^{pHT^} → X^{cone^} (ALRS Construction 6.7.5, p. 171, ALRS line 9223) and prove that pullback along F̃: Spf(B⁺_pdR,X) → X^{cone^}, restricted to vector bundles, is the base change along B⁺_dR,X → B⁺_pdR,X of Scholze's functor F(E) = Fil⁰(E ⊗_O OB_dR,X)^{∇=0}, the functor associatedLocalSystem of PadicHodgeTheory §7.1 (ALRS Proposition 6.7.6, p. 171, ALRS line 9237; Sch13 Theorem 7.6, p. 42, Sch13 line 1936). For X smooth over a perfectoid D with a lift X̃ to Spf(B⁺_dR(D)), prove that f^* is fully faithful from flat t-connections on X̃ relative to B⁺_dR(D), nilpotent modulo t, to B⁺_dR-local systems on X (ALRS Proposition 6.7.7, p. 172, ALRS line 9297).
+For a smooth rigid space X over ℚ_p prove that f̂: X^{HT^} → X^{cone^} ×_{Â¹/G_m} Q_p^{HT^} is a T^dR_X{1}-torsor, {1} the Breuil–Kisin twist, so f̂ is suave with f̂_♮1 = 1 and f̂^* is fully faithful; the same holds for the overconvergent version when X is partially proper (ALRS Proposition 6.7.1, p. 169, ALRS line 9143). Writing Q_p^{HT^} = Spf(K_∞[[t]])/ℤ_p^{×,la} and B⁺_dR = B⁺_dR(ℚ_p^cyc), prove that after base change along Spf(B⁺_dR) → Q_p^{HT^} the pullback f̂^* is fully faithful with essential image the sheaves whose pullback to X^HT_{ℚ_p^cyc} has †-nilpotent geometric Sen operators, and that vector bundles on X^{cone^/(B⁺_dR, t)} correspond to B⁺_dR-local systems on X_{ℚ_p^cyc} whose underlying Ô-bundle has nilpotent geometric Sen operator (ALRS Proposition 6.7.3, p. 170, ALRS line 9177). Construct the maps Spf(B⁺_pdR,X) → X^{pHT^} → X^{cone^} (ALRS Construction 6.7.5, p. 171, ALRS line 9223) and prove that pullback along F̃: Spf(B⁺_pdR,X) → X^{cone^}, restricted to vector bundles, is the base change along B⁺_dR,X → B⁺_pdR,X of Scholze's functor F(E) = Fil⁰(E ⊗_O OB_dR,X)^{∇=0}, the associated local system functor E ↦ M(E) of PadicHodgeTheory §7.1 (ALRS Proposition 6.7.6, p. 171, ALRS line 9237; Sch13 Theorem 7.6, p. 42, Sch13 line 1936). For X smooth over a perfectoid D with a lift X̃ to Spf(B⁺_dR(D)), prove that f^* is fully faithful from flat t-connections on X̃ relative to B⁺_dR(D), nilpotent modulo t, to B⁺_dR-local systems on X (ALRS Proposition 6.7.7, p. 172, ALRS line 9297).
 
 A proof route: ALRS Proposition 6.7.1 is the base change of 9.6 along X → X^dR and Q_p^{HT^} → GSpec(ℚ_p), using X^{cone^,dR} = T^dR_X(−1)[1]. For 6.7.3, full faithfulness is proper base change; the essential image is detected on the special fibre X^HT_{ℚ_p^cyc} → X_{ℚ_p^cyc}/T_X{1}, where the BT^†_X{1}-action integrates to a BT_X{1}-action exactly when the Sen operator is †-nilpotent (Cartier duality for vector bundles, contract `stacky-cartier-duality`). For 6.7.6 replace the formal cone by the algebraic one (its Gelfandification, inducing an equivalence on perfect complexes) and identify F̃′_*1 = 1 with the filtered equivalence dR_X ≅ Rν_*B_pdR,X; ALRS Proposition 6.7.7 uses ALRS Remark 2.9.10 (5.3) to identify vector bundles on the relative formal cone with t-connections nilpotent modulo t.
 
