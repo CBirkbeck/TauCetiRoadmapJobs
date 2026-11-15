@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GrothendieckTeichmuller~22",
+  "head": "40010b59652d895f5234f82ba1610383319e71a5",
+  "pr": 1058,
+  "folder": "GrothendieckTeichmuller",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 23 changed lines since c77a80f. Checked the new Provenance section and References entry against AxiomMath Stacks at c496df0 (README, LICENSE, lean-toolchain, lake-manifest, 482-entry directory listing, 9 Lean files) and Stacks Tag 0BNB (Lemma 58.5.5); BelyiMaps section 12.8 on main and at its open revision; the pull request's title and description against the head. Gate rerun OK (worker build=0); depcheck 237 roadmaps, 0 problems; elaboration exit 0 with 15 sorry warnings. Seeded sample: no target in the changed passage. One P3 finding: the Tag 0BNB paraphrase drops the hypothesis that the scheme is connected (fails for Spec(C x C)).",
+  "text": "14a0712be886b19e"
+ }
+}
