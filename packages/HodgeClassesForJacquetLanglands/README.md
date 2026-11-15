@@ -1546,7 +1546,11 @@ Let `ℓ ≥ 0`. For `p > 0` define `φ_{q,ℓ} ∈ ℂ[z] ⊗ ⋀^q𝔭^* ⊗ S
 `p = 0` define `φ_ℓ = (4πi)^{−ℓ} Σ_{β∈{1..m}^ℓ} z_β ⊗ e_β` and its harmonic projection `φ′_ℓ`. Prove
 that `φ′_{q,ℓ}` is `K`-invariant, closed for the relative Lie algebra differential and of weight
 `ℓ + m/2` for `K′ = U(1) ⊂ SL₂(ℝ)`, and that `φ′_ℓ` is `G`-invariant of weight `−ℓ − m/2` (IP23, §8.4,
-pp. 51–52). The first formula carries the factor `2^{−q/2}` relative to Funke–Millson.
+pp. 51–52). The first formula is `2^{−q/2}` times the Funke–Millson form, whose constant is
+`2^{q/2}(−i/4π)^{q+ℓ}` and whose coefficients lie in the tensor power `V^{⊗ℓ}`, composed with the
+projection `V^{⊗ℓ} → S^ℓV` (FM06, §6.2, p. 25; IP23, §8.4, p. 51). The `K`-invariance with the
+`K′`-character `ℓ + m/2` and the closedness are FM06, Theorems 5.6 and 5.7, p. 20, for that form; the
+scalar and the `G`-equivariant projections `V^{⊗ℓ} → S^ℓV → ℋ^ℓV` preserve both.
 
 - `dφ′_{q,ℓ} = 0`.
 - The `K′`-character is `ℓ + m/2` for `p ≥ 1` and `−ℓ − m/2` for `p = 0`.
@@ -1556,6 +1560,11 @@ pp. 51–52). The first formula carries the factor `2^{−q/2}` relative to Funk
 **Checks.**
 
 - For `ℓ = 0` the projection is the identity and the coefficient is a scalar.
+- The normalisation: `(4πi)^{−1} = −i/4π`, so the first constant is `2^{−q/2}` times Funke–Millson's,
+  the ratio `1/2` at `(p, q) = (4, 2)`. At `ℓ = 0` the wedge pairings of `ω_{a5} ∧ ω_{b6}` with `ω^ε`
+  of §4.5 are `1, −1, εi, εi` for `(a, b) = (1,1), (2,2), (1,2), (2,1)`, so the contraction is
+  `(z₁ + εiz₂)²/(4πi)²`, whose preimage under `ι` is `(x₁ + εix₂)²φ₀` by §4.2; their constant would
+  give `2(x₁ + εix₂)²φ₀`, twice the value of §4.5.
 - For `p = 0` and `ℓ = 0`, `φ′₀ = φ₀` with `K′`-weight `−m/2`; for `(0, 6)` this is `−3`.
 - For `(p, q) = (4, 2)` and `ℓ = 0` the form has degree two and `K′`-weight `+3`, so the linear theta
   integral pairs it with a vector of weight `−3` of the antiholomorphic input `D₃^∨`, whose lift is
@@ -2684,7 +2693,9 @@ factors, which belong to different groups, is asserted.
 
 - For real quadratic `F` and `d = 1`, the class lies in `H²(X₁ × X₂, ℚ)(1)` and acts on `H¹`.
 - Every harmonic degree `ℓ_v = k_v − 2` is zero, so the Schwartz forms are the Kudla–Millson forms
-  with trivial coefficients.
+  with trivial coefficients, with their constant: where `p > 0` the Funke–Millson form at `ℓ = 0` is
+  `2^{q/2}` times the Kudla–Millson form (FM06, §5.2, p. 18), and §4.3 removes exactly that factor;
+  where `p = 0` the form at `ℓ = 0` is the Gaussian `φ₀` (§4.3).
 - At a finite place split in both algebras where `π_v` is unramified, the Iwahori-fixed and the
   maximal-compact-fixed vectors of `π_v` have dimensions `2` and `1`. With these local levels and
   one-dimensional fixed spaces elsewhere, for `d = 1` the full `π_i`-isotypic summands of `H¹` have
@@ -2789,6 +2800,11 @@ surrounding argument.
 
 ## References
 
+- [FM06] Jens Funke and John Millson, *Cycles with local coefficients for orthogonal groups and
+  vector-valued Siegel modular forms*, American Journal of Mathematics 128 (2006), 899–948,
+  [arXiv:math/0408050](https://arxiv.org/abs/math/0408050). Locators are to arXiv version 1; IP23
+  cites §§5.1 and 6.2 and Theorems 5.6–5.7 of the published version, and arXiv version 1 carries the
+  same items under the same numbers.
 - [IP23] Atsushi Ichino and Kartik Prasanna, *Hodge classes and the Jacquet–Langlands
   correspondence*, Forum of Mathematics, Pi 11 (2023), e22, pp. 1–135,
   [doi:10.1017/fmp.2023.20](https://doi.org/10.1017/fmp.2023.20). Locators are to the printed pages
