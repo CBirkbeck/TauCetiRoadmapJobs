@@ -290,9 +290,12 @@ boundary (1.3) and K5a's Seeley extension of the metric, positive definite on a 
 **From TauCetiRoadmap.GeometricTopology**: 1.1 (Lee, *Introduction to Smooth Manifolds*,
 Theorem 9.25): a second-countable `M` has a smooth collar, a smooth embedding
 `c : ∂M × [0, 1) → M` with open image `U` and `c(q, 0) = q`; the interior `M ∖ ∂M` is a smooth
-boundaryless manifold, with the structure for which its inclusion into `M` is a smooth open
-embedding. 1.3: for manifolds with boundary `M`, `N` with collars `c_M`, `c_N` and a
-diffeomorphism `f : ∂M ≃ ∂N`, the glued manifold `M ∪_f N` is boundaryless, the two interiors
+boundaryless manifold. Assumed: the structure of `M ∖ ∂M` is the open-submanifold one, whose
+charts are the charts of `M` restricted to the interior (with values in the open half-space
+`{x⁰ > 0}`, open in `ℝⁿ⁺¹`), for which the inclusion into `M` is a smooth open embedding; 1.3's
+open embeddings of the interiors into the glued manifold use it. 1.3: for manifolds with
+boundary `M`, `N` with collars `c_M`, `c_N` and a diffeomorphism `f : ∂M ≃ ∂N`, the glued
+manifold `M ∪_f N` is boundaryless, the two interiors
 embed openly, the union of the two collars is an open subset identified with `∂M × (−1, 1)`
 through `c_M` on `[0, 1)` and `c_N ∘ (f × id)` on `(−1, 0]`, the inclusions of `M` and `N` are
 smooth embeddings with closed images meeting exactly in the image of `∂M`, and `M ∪_f N` is
@@ -533,7 +536,10 @@ Define, for `q ∈ ∂M`: `∂M` is strictly convex at `q` if `II_q(u, u) > 0` f
 `II_q(u, u) < 0` for every nonzero `u`. For `S ⊆ ∂M`, `∂M` is strictly convex on `S` if it is at
 every point of `S`; `∂M` is strictly convex if it is at every point of `∂M`
 (Paternain–Salo–Uhlmann, Definition 3.1.7, lines 2738–2739; Stefanov–Uhlmann–Vasy, lines 89–90
-and 93; Paternain–Salo–Uhlmann, Definition 2.5.1, lines 2449–2461, for concavity).
+and 93; Paternain–Salo–Uhlmann, Definition 2.5.1, lines 2449–2461, for concavity, in dimension
+two, where a circle `{r = r̄}` is named as seen from the side of the larger radii, that is, as the
+boundary of the region `{r ≤ r̄}`: its strictly concave circle, `r̈(0) < 0`, is a strictly
+concave boundary of `{r ≤ r̄}` in the sense here and a strictly convex boundary of `{r ≥ r̄}`).
 
 - Strictly convex at `q` implies convex at `q`; for `n ≥ 1` strict convexity and strict concavity
   at `q` exclude each other.
@@ -716,7 +722,8 @@ holds at every `y ∈ U` (Stefanov–Uhlmann–Vasy, lines 128–129 and 198–2
 
 Let `M` be Hausdorff and second countable, `c : ∂M × [0, 1) → M` a smooth collar with open image
 `U` (GeometricTopology 1.1), and `int M` the interior with GeometricTopology 1.1's boundaryless
-structure, for which `int M → M` is a smooth open embedding. Let `M̃` be the collar extension:
+structure, which the supplier contracts assume to be the open-submanifold one, for which
+`int M → M` is a smooth open embedding. Let `M̃` be the collar extension:
 GeometricTopology 1.3's glued manifold `M ∪_f N` for `N = ∂M × [0, 1)` with its product collar
 and `f(q) = (q, 0)`. By GeometricTopology 1.3, `M̃` is a Hausdorff second-countable boundaryless
 manifold of dimension `n + 1`, `M` is a closed subset of `M̃` through its smooth embedding, and the
@@ -1439,7 +1446,10 @@ nowhere strictly convex; its tangent geodesics stay in `∂M`, and `τ = ∞` on
 closed exterior `{|x − c| ≥ R}` has `II = −h/R` and is strictly concave, with `H = −1/R` for
 `n ≥ 1`, and for `q ∈ ∂M` and `0 ≠ v ⊥ (q − c)` the tangent line `q + tv` enters `int M` to second
 order: `ρ(q + tv) = t²|v|²` for `ρ = |x − c|² − R²` (Paternain–Salo–Uhlmann, Definition 2.5.1 and
-Lemma 2.5.2, lines 2449–2473).
+Lemma 2.5.2, lines 2449–2473, in dimension two; the source names a circle `{r = r̄}` as seen from
+the side of the larger radii, so for the Euclidean `b(r) = r`, with `b′ = 1 > 0` and tangential
+geodesics moving to larger `r`, its strictly convex circle `{r = R}` is the strictly convex
+boundary of the ball `{r ≤ R}` and the strictly concave boundary of the exterior `{r ≥ R}`).
 
 **Checks.**
 
@@ -1447,6 +1457,10 @@ Lemma 2.5.2, lines 2449–2473).
   the half-line `[0, ∞)`, strictly convex (vacuously) and still with `II = 0`.
 - Exterior of the unit ball, unit `v ⊥ q`: `ρ(q + tv) = t²` along the tangent line; `II = −h`, and
   `H = −1` for `n ≥ 1`. For `v = 0` the constant curve stays on `∂M` and does not enter `int M`.
+- The side fixes the name: in the plane, at `q = (1, 0)` with `v = (0, 1)`, `|q + tv|² = 1 + t²`, so
+  `r̈(0) = 1 > 0` and the source calls the unit circle strictly convex; the exterior's
+  `ρ = |x|² − 1 = t² ≥ 0` along the line, with `II = −h`, while the ball's `ρ = 1 − |x|² = −t²`,
+  with `II = h`. Taking the source's name for the exterior would give the exterior `II = +h`.
 - Both are non-compact, so 5.4 and 5.6 do not apply; the exterior has `τ = ∞` in every direction
   that does not point at the ball.
 
@@ -1493,11 +1507,14 @@ closed balls `{u ≤ cosh R}`, `R > 0`, are strictly convex with `II = coth R ·
 Prove: for a boundaryless Hausdorff second-countable Riemannian `(N, g)` and `p ∈ N` there is
 `r_p > 0` such that for `0 < R < r_p` the function `d(p, ·)²` is smooth on `B(p, r_p)` with `R²` a
 regular value there, and the closed ball `B̄(p, R) = {d(p, ·)² ≤ R²}` is a compact regular domain
-with strictly convex boundary which is non-trapping; on a compact set of centres `r_p` can be
+of the open submanifold `B(p, r_p)` (Hausdorff, second countable and boundaryless, with the
+restricted metric), with defining function `R² − d(p, ·)²`; its boundary is strictly convex and it
+is non-trapping; on a compact set of centres `r_p` can be
 chosen uniformly (Lee, *Introduction to Riemannian Manifolds*, Ch. 6; the spherical-cap instance is
-Paternain–Salo–Uhlmann, Example 3.1.4, lines 2677–2678). Second countability is the standing
-hypothesis of Layer 5, whose non-trapping criterion 5.5 the route applies, and of
-SmoothBundlesConnections B6.0. Route:
+Paternain–Salo–Uhlmann, Example 3.1.4, lines 2677–2678). The ambient manifold of the regular
+domain is `B(p, r_p)`, not `N`: `d(p, ·)²` need not be smooth on all of `N`. Second countability is
+the standing hypothesis of Layer 5, whose non-trapping criterion 5.5 the route applies (it passes
+to the open submanifold `B(p, r_p)`), and of SmoothBundlesConnections B6.0. Route:
 in normal coordinates `z` at `p`, `d(p, ·) = |z|` (HopfRinow Layer 2); with the coordinate
 fields `∂_i` of an orthonormal basis of `T_pN` (`TauCeti.Manifold.normalCoordinateField`), the
 metric coefficients satisfy `g_ij = δ_ij + O(|z|²)`
@@ -1505,7 +1522,8 @@ metric coefficients satisfy `g_ij = δ_ij + O(|z|²)`
 Christoffel symbols vanish at `p`
 (`TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self`), so
 `Hess |z|²(∂_i, ∂_j) = 2δ_ij − 2 z_k Γ^k_ij = 2g_ij + O(|z|²)`, positive definite on a small
-ball; apply 3.2 and 5.5; uniformity from SmoothBundlesConnections B6.0.
+ball; apply 3.2 on `U = B(p, r_p)` with `x = d(p, ·)²` and `c = R²`, and 5.5's Hessian criterion
+with `u = d(p, ·)²` on `B(p, r_p)`; uniformity from SmoothBundlesConnections B6.0.
 
 **Checks.**
 
@@ -1514,8 +1532,12 @@ ball; apply 3.2 and 5.5; uniformity from SmoothBundlesConnections B6.0.
   `d(p, ·)² = θ²` is smooth on `B(p, π)`, `R²` is a regular value for `0 < R < π`, and every arc
   `B̄(p, R)` is non-trapping with vacuously strictly convex boundary.
 - `ℝⁿ⁺¹` and hyperbolic space: every radius works (6.1, 6.3).
-- Flat torus `ℝ²/ℤ²`: `d(p, ·)²` is smooth on `B(p, 1/2)` and not beyond, and the balls of radius
-  `R < 1/2` are flat discs with `II = h/R`.
+- Flat torus `ℝ²/ℤ²`: `d(p, ·)²` is smooth on `B(p, 1/2)` and not beyond (along the line through
+  `p` and the cut point `p + (1/2, 0)` it is `min(s², (1 − s)²)`, with one-sided derivatives `1` and
+  `−1` at `s = 1/2`), so `R² − d(p, ·)²` is a defining function on `B(p, 1/2)` and not on the torus.
+  With `r_p = 1/2` and `R = 1/4`, in the coordinate `z` centred at `p`: `ρ = 1/16 − |z|²` has
+  `dρ = −2z ≠ 0` on `|z| = 1/4` and `Hess |z|² = 2g`, so `II = 2h/(2 · 1/4) = 4h = h/R`; 5.5's bound
+  with `u = |z|²/2`, `f(z, v) = ⟨z, v⟩`, `Xf = 1` gives `τ ≤ (1/4 − (−1/4))/1 = 1/2`, the diameter.
 
 *Needs:* 3.1, 3.2, 5.5; HopfRinow Layer 2; Tau Ceti `TauCeti.Manifold.IsNormalDomain`,
 `TauCeti.Manifold.normalCoordinateField`,

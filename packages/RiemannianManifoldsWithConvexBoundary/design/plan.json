@@ -405,7 +405,7 @@
      ],
      "locator": {
       "source": "paternain-salo-uhlmann2023",
-      "where": "Definition 3.1.7, lines 2738–2739; Definition 2.5.1, lines 2449–2461; stefanov-uhlmann-vasy2021 lines 89–90, 93"
+      "where": "Definition 3.1.7, lines 2738–2739; Definition 2.5.1, lines 2449–2461 (dimension two; a circle {r = r̄} named as seen from the larger radii, so its strictly concave circle is a strictly concave boundary of {r ≤ r̄}); stefanov-uhlmann-vasy2021 lines 89–90, 93"
      },
      "prerequisites": [
       "target:1.4",
@@ -2091,7 +2091,7 @@
      ],
      "locator": {
       "source": "paternain-salo-uhlmann2023",
-      "where": "Definition 2.5.1 and Lemma 2.5.2, lines 2449–2473"
+      "where": "Definition 2.5.1 and Lemma 2.5.2, lines 2449–2473, in dimension two; the source names the circle {r = r̄} as seen from the larger radii, so its strictly convex circle {r = R} (b(r) = r, b′ = 1 > 0) is the strictly convex boundary of the ball {r ≤ R} and the strictly concave boundary of the exterior {r ≥ R}"
      },
      "prerequisites": [
       "target:1.4",
@@ -2106,6 +2106,11 @@
        "name": "exterior",
        "kind": "computation",
        "statement": "Unit exterior, unit v ⊥ q: ρ(q + tv) = t² along the tangent line, II = −h, H = −1 for n ≥ 1; v = 0 gives the constant curve on ∂M, which does not enter int M."
+      },
+      {
+       "name": "side_of_the_name",
+       "kind": "convention",
+       "statement": "Plane, q = (1, 0), v = (0, 1): |q + tv|² = 1 + t², r̈(0) = 1 > 0 (the source calls the unit circle strictly convex); exterior ρ = |x|² − 1 = t² ≥ 0 with II = −h, ball ρ = 1 − |x|² = −t² with II = h; taking the source's name for the exterior would give II = +h."
       },
       {
        "name": "halfline",
@@ -2188,7 +2193,7 @@
      "id": "6.4",
      "kind": "example",
      "name": "smallGeodesicBall",
-     "statement": "For boundaryless Hausdorff second-countable (N, g) and p ∈ N there is r_p > 0 such that for 0 < R < r_p, d(p, ·)² is smooth on B(p, r_p) with R² regular, and B̄(p, R) is a compact regular domain with strictly convex boundary, non-trapping; r_p uniform over compact sets of centres.",
+     "statement": "For boundaryless Hausdorff second-countable (N, g) and p ∈ N there is r_p > 0 such that for 0 < R < r_p, d(p, ·)² is smooth on B(p, r_p) with R² regular, and B̄(p, R) is a compact regular domain of the open submanifold B(p, r_p) (Hausdorff, second countable, boundaryless, with the restricted metric), with defining function R² − d(p, ·)², whose boundary is strictly convex and which is non-trapping (d(p, ·)² need not be smooth on all of N); r_p uniform over compact sets of centres.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "N second countable (the standing hypothesis of Layer 5, whose criterion 5.5.1 the route applies, and of SmoothBundlesConnections B6.0)",
@@ -2219,7 +2224,7 @@
       {
        "name": "flat_torus",
        "kind": "computation",
-       "statement": "ℝ²/ℤ²: d(p, ·)² smooth on B(p, 1/2), balls are flat discs with II = h/R."
+       "statement": "ℝ²/ℤ²: d(p, ·)² is smooth on B(p, 1/2) and not beyond (min(s², (1 − s)²) through the cut point p + (1/2, 0), one-sided derivatives ±1), so R² − d(p, ·)² is a defining function on B(p, 1/2), not on the torus; r_p = 1/2, R = 1/4: ρ = 1/16 − |z|², dρ = −2z ≠ 0 on |z| = 1/4, II = 2h/(2 · 1/4) = 4h = h/R, and 5.5 with u = |z|²/2, f = ⟨z, v⟩, Xf = 1 gives τ ≤ 1/2, the diameter."
       }
      ]
     },
@@ -2310,7 +2315,7 @@
     "§1.1",
     "§1.3"
    ],
-   "what": "smooth collars and the interior as a boundaryless manifold (1.1); gluing along the boundary with collars, hence the collar extension M ∪_f (∂M × [0, 1)) and the double M ∪_id M (1.3)"
+   "what": "smooth collars and the interior as a boundaryless manifold (1.1; assumed: with the open-submanifold structure, charts of M restricted to the interior, so that the inclusion is a smooth open embedding); gluing along the boundary with collars, hence the collar extension M ∪_f (∂M × [0, 1)) and the double M ∪_id M (1.3)"
   },
   {
    "roadmap": "ComplexKahlerGeometry",
