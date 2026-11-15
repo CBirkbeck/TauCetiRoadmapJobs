@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DeligneWeightsAndPurityPartII~5",
+  "head": "f44c08cb9acc65ad1133b913112048bdd8d3ce1d",
+  "pr": 1760,
+  "folder": "DeligneWeightsAndPurityPartII",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 10 changed lines since 01f26c4. Previous R01 and R02 repaired, R03 partly (the projectivity notion of §4.7 is still unnamed; carried as R01, P3, with a repair that no longer names the vanished IsProjectiveOverSpec). Title and description checked against the head: one contradicted sentence (the Lean is said to state definitions and theorems; it declares nothing), R02, P3. Checked: the five changed README passages; Fan.prod and algebraicProdIso at the Tau Ceti pin; ITO20 lines 189-250 against the reworded sliced-nearby-cycles passage (mathematics and wording); citations of ShimuraCompactifications §0.16, AnalyticToricGeometry and SchemeAndStackFoundations §4.19; adversarial table of five rows with computed values. Gate passes (all counters 0, build OK); depcheck 244 roadmaps, 2229 edges, 0 problems; Suggested.lean elaborates with no output and declares nothing; nothing changed outside the folder. The seeded sample does not fall in the changed passages.",
+  "text": "88e90494f574756c",
+  "carried": {
+   "from": "f44c08cb9acc65ad1133b913112048bdd8d3ce1d",
+   "head": "71dd6697eaf843f64991129e83376a0691bccf09",
+   "findings": 2,
+   "lines": 22,
+   "folders": [
+    "DeligneWeightsAndPurityPartII"
+   ],
+   "outside": true
+  }
+ }
+}
