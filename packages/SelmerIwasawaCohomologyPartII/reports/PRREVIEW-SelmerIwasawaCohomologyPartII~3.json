@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SelmerIwasawaCohomologyPartII~3",
+  "head": "6175fcf7ed0815591bd0f81f6cad42ab1ac14086",
+  "pr": 1403,
+  "folder": "SelmerIwasawaCohomologyPartII",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 6175fcf; checked the pull request's title and description against the head (two P3 findings, both in the description: it says the Lean states definitions and theorems although Suggested.lean declares nothing, and it puts Π₀ on GL(n) where the README indexes by parity); folder unchanged, no seeded-sample target in a changed passage; gate rerun OK (worker's gate build=0), depcheck 0 problems, Suggested.lean elaborates at the pins with exit 0 and no output; two remarks on untouched text (the §IG.7.2 citation prefix, and PotentialAutomorphyInfrastructurePartII §§10.2–10.3 planning the theorems of gaps rigid-r-equals-t and eventual-rigidity)",
+  "text": "5af7ad0b6ea92f12",
+  "carried": {
+   "from": "6175fcf7ed0815591bd0f81f6cad42ab1ac14086",
+   "head": "4f2c89a56fe78a461673dcb9fab9fd4dbb3c50ca",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
