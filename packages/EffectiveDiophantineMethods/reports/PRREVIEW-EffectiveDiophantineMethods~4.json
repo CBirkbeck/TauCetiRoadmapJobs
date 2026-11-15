@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EffectiveDiophantineMethods~4",
+  "head": "c3224c8656c2aef7188d4b6c7bfe8bd09c8ab390",
+  "pr": 1046,
+  "folder": "EffectiveDiophantineMethods",
+  "date": "2026-11-15",
+  "findings": 8,
+  "blocking": 1,
+  "notes": "Full review. Gate passes at c3224c8 (all counters 0, build 0); Suggested.lean elaborates with twelve sorry warnings only; one-tactic probe leaves all twelve theorems open; depcheck 245 roadmaps, 2240 edges, 0 problems. The four findings of the previous review are repaired. Seeded sample (1.1, 1.5, 2.7, 2.29, 3.7, 3.10, 3.16, 4.13, 4.22, 4.24, 4.25, 6.1, 6.19, 6.20, 6.34) and all headline statements checked with computed values: 545/514 S-unit solutions up to 10^11, 72 Thue-Mahler tuples, 22 integral points, both quartic Thue lists, field data of the three number fields, Poonen's alpha = 68 mod 81. 52 source locators checked in 14 sources. R01 (P2): sections 4.8, 4.9, 4.11, 4.12 plan again what AnabelianGeometryAndNonabelianChabauty 5.6, 5.10, 5.11 own. R02-R03 (P3): the new Tau Ceti pin has PowerSeries.evalAt and Strassmann's theorem. R04-R08 (P3): undefined descent notation in 3.10-3.11, slug cross-references, broken code spans, duplicated statement paragraphs, extraction residue in locators. Not verifiable: Matveev 2000 (host timed out), Yu's displayed formula, Bruin-Stoll version-of-record pages.",
+  "text": "19bdf9fb6a51d73a"
+ }
+}
