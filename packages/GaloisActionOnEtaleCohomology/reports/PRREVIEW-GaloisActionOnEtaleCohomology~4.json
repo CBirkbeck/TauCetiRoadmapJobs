@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GaloisActionOnEtaleCohomology~4",
+  "head": "97717c2641bc13bf81c3bc641392f5c655550f1d",
+  "pr": 2271,
+  "folder": "GaloisActionOnEtaleCohomology",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 8 changed lines since 1947660: the new README section on existing formalizations outside Tau Ceti. Checked every claim about AxiomMath/Weil (27cdb20) and AxiomMath/Stacks (012108f) against 11 files at the cited commits (declaration names, paths, hypotheses, direction of the closure-change isomorphism, Frobenius normalisation, left-action convention, licence, pins, the negative claims by text search); the internal references (Conventions, sections 0.3, 1.3 (f), 1.4, 2.5, 2.6, 3.1, 3.3) and supplier sections on main (SchemeAndStackFoundations 0.23a, 2.15; EtaleCohomologyFoundations F.0.4, F.10.2); stacks03N1 Tag 03QW re-read. Previous review had no findings. Gate rerun: all checks 0, OK; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning; no file changed outside the folder; pull request text not contradicted. One licence note for the human reviewers.",
+  "text": "110bd3eb4569cd92"
+ }
+}
