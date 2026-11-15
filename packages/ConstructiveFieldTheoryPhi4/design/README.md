@@ -733,7 +733,7 @@ Layers 1, 3 (through 3.2) and 6; RelativisticQuantumFieldTheory §7.1; Mathlib `
 - **ConstructiveFieldTheoryPhi4PartII** also owns the application of reachable-field Schwinger functions to Osterwalder–Schrader reconstruction, consuming the covariance comparison of 7.4 and the reconstruction theorem of RelativisticQuantumFieldTheory.
 - **Ising-type statistical mechanics** (phase transitions by the infrared bound and the Peierls argument, Lee–Yang theory beyond the theorem of 2.1, sharpness of the phase transition), which no roadmap owns, would build on Layers 1, 3, 4 and 5.
 
-The base completion ends at Layer 7, including Gaussian-field reachability. The following sourced statements describe the downstream goals and retain identifiers 8.1 and 8.2 for their mathematical content; they are not theorem targets or acceptance statements of this roadmap.
+This roadmap ends with Layer 7. The two statements below, numbered 8.1 and 8.2, are the goals of ConstructiveFieldTheoryPhi4PartII, stated with their sources so that the hypotheses Layers 0, 2, 6 and 7 must serve are visible; they are not targets of this roadmap.
 
 ### 8.1 Gaussianity of reachable φ⁴ and Ising fields in d ≥ 4
 

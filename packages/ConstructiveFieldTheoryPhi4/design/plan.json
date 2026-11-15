@@ -28,6 +28,7 @@
       "mathlib:ProbabilityTheory.integrableExpSet",
       "mathlib:MeasureTheory.Measure.IsNegInvariant",
       "mathlib:MeasureTheory.Measure.pi",
+      "mathlib:MeasureTheory.Measure.map",
       "mathlib:MeasureTheory.Integrable.mono'"
      ],
      "api": [
@@ -111,6 +112,7 @@
      "prerequisites": [
       "mathlib:integral_gaussian",
       "mathlib:Real.Gamma",
+      "mathlib:MeasureTheory.ProbabilityMeasure",
       "target:0.1"
      ],
      "api": [
@@ -1977,7 +1979,7 @@
    "name": "marginalTriviality",
    "statement": "Owned and proved by ConstructiveFieldTheoryPhi4PartII: For d >= 4 and C = {rho_{lambda,b} : lambda > 0, b real} union {rho_I}: every C-reachable random field with a two-point Schwinger function satisfying (1.10) is a generalised Gaussian process (IsGaussianProcess).",
    "hypotheses": [
-    "Downstream ownership: ConstructiveFieldTheoryPhi4PartII; not a base acceptance target.",
+    "Downstream ownership: ConstructiveFieldTheoryPhi4PartII; not a target of this roadmap.",
     "d >= 4",
     "Phi C-reachable",
     "S_2 exists and satisfies (1.10)"
@@ -2018,7 +2020,7 @@
    "name": "marginalTriviality_griffithsSimon",
    "statement": "Owned and proved by ConstructiveFieldTheoryPhi4PartII: For d >= 4 and C the Griffiths-Simon class of 2.2: every C-reachable random field with a two-point Schwinger function satisfying (1.10) is a generalised Gaussian process.",
    "hypotheses": [
-    "Downstream ownership: ConstructiveFieldTheoryPhi4PartII; not a base acceptance target.",
+    "Downstream ownership: ConstructiveFieldTheoryPhi4PartII; not a target of this roadmap.",
     "d >= 4",
     "Phi reachable from the Griffiths-Simon class",
     "S_2 exists and satisfies (1.10)"
