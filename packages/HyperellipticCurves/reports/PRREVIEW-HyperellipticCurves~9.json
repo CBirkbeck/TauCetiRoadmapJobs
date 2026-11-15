@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HyperellipticCurves~9",
+  "head": "b238f61e6845e5845171cd6df351416d30e046e8",
+  "pr": 1707,
+  "folder": "HyperellipticCurves",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since b238f61; this round checked the pull request's title and description against the head. Two P3 findings, both in the description (not in the folder): the summary block says the roadmap supplies the heights and effective Diophantine roadmaps, which are its suppliers; the prose says 'local solvability of the Jacobian' where section 5.5 is local solvability of the curve. Gate rerun: every check 0, OK (worker build=0). Depcheck: 241 roadmaps, 2247 edges, 0 problems. Elaboration: 16 sorry warnings, nothing else. No change outside the folder; overlaps none; the seeded sample falls in no changed passage.",
+  "text": "9a748d477dbf4ce6",
+  "carried": {
+   "from": "b238f61e6845e5845171cd6df351416d30e046e8",
+   "head": "ea85c217f3fb1617d770ad73efec430c49c1181f",
+   "findings": 2,
+   "lines": 9,
+   "folders": [
+    "HyperellipticCurves"
+   ]
+  }
+ }
+}
