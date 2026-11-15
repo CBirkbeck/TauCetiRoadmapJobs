@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HodgeTateAndCanonicalSubgroups~4",
+  "head": "a3bff2cb5ed45f35c18304dd8524f3070b755208",
+  "pr": 1084,
+  "folder": "HodgeTateAndCanonicalSubgroups",
+  "date": "2026-11-15",
+  "findings": 6,
+  "blocking": 0,
+  "notes": "Full re-review; lines 1-1310 and the sampled targets read in full, the other targets of Layers 4-7 checked by scans and the diff against a8b6690. Previous R01 (759 undeclared names) and R02 (AI-assistance sentence) repaired. Six P3 findings: two leftover Lean identifiers in prose, Checks citing absent item numbers, garbled code spans, repeated Checks and Needs items, three locators, missing per-layer Examples/Dependencies headings. Seeded sample of 15 targets checked against FAR11, SCH15, BHW, AIPH, BP26, DLLZ-adic, DLLZ-RH at the locators (33 locators in 10 sources). Gate passes (all counters 0, build 0); depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe fails on the headline; all pinned declarations of the supplier contracts found at Mathlib 1b1ccf4 and Tau Ceti 2fd255d. Not read this round: HALO author copy, OGU18, Stacks 031T, ZIE v2.",
+  "text": "76528f0f8b7cd3cb"
+ }
+}
