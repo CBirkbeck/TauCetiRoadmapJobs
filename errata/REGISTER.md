@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13443 mistakes recorded on the board: 7715 misprints, 3506 errors, 1751 gaps, 471 unparsed bullets.
+13449 mistakes recorded on the board: 7720 misprints, 3506 errors, 1752 gaps, 471 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -4301,6 +4301,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Introduction, printed p. 1: the source says the normalised Nash blowup is the pair with the map η followed after ν; it should be ν applied after the normalisation map η; affects nothing. Found by NashBlowups (#13795 at 63c2853, 2026-11-11, claude fable).
 - **Misprint** at Introduction, printed p. 1: the source says the normalised Nash blowup is the pair with the map η followed by ν written as η∘ν; it should be ν∘η; affects nothing. Found by NashBlowups (#13795 at b70f2a2, 2026-11-15, claude fable).
+- **Misprint** at Introduction, printed p. 1: the source says the normalised Nash blowup is the pair with the composite written as η∘ν; it should be ν∘η; affects nothing. Found by NashBlowups (#13795 at 523aa05, 2026-11-15, claude fable).
 
 ## CBK22
 
@@ -5321,6 +5322,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at equation (2.5), printed page 5: the source says the supremum formula integrates `div φ − x·φ` against the probability measure `γ_n`, which is `(2π)^{−1/2}` times the perimeter `H^{n−1}_γ(∂^M E)` of (2.4); it should be carry the factor `√(2π)`; affects nothing; (only lower semicontinuity is drawn from it). Found by GaussianIsoperimetryAndClusters (#6596 at 9be68dd, 2026-11-05, claude fable).
 - **Misprint** at equation (2.5), printed page 5 (cvgmt preprint): the source says its surface-normalized perimeter equals the probability-weighted divergence supremum; it should be multiply that supremum by √(2π); affects nothing. Found by GaussianIsoperimetryAndClusters (#13761 at 002ce12, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at equation (2.5), printed page 5 (cvgmt preprint): the source says its surface-normalized perimeter equals the supremum taken against the probability measure; it should be carry the factor √(2π); affects nothing. Found by GaussianIsoperimetryAndClusters (#13761 at cd437fb, 2026-11-13, claude fable).
+- **Misprint** at equation (2.5), printed page 5 (cvgmt preprint): the source says its surface-normalized perimeter equals a supremum taken against the probability measure; it should be carry the factor √(2π); affects nothing. Found by GaussianIsoperimetryAndClusters (#13761 at 418e940, 2026-11-15, claude fable).
 
 ## CiF4
 
@@ -8571,11 +8573,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Theorem 5, line 948–952 (p. 20): the source says the constant depends only on `n, k, q, ω_X, χ, ‖e^{nF_t}‖_{L^q}` and `c_t^n/V_t`; it should be also list the structural constant `γ`, through which Theorem 2 enters; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "ab4bd342e7249697e7a7b3ae02d48a650f423698", "job": "REV-DESIGN-ComplexHessianEquations", "model": "fable", "worker": "chris-x17"} -->. Found by ComplexHessianEquations (#6536 at ab4bd34, 2026-11-05, claude fable).
 - **Error** at the examples after Lemma 4, arXiv v1 p.17: the source says the quotient plus `cσ_p^{1/p}` on `Γ_k` for every `p`; it should be use `Γ_{max(k,p)}`, where `σ_p` is positive; affects a stated result. Found by ComplexHessianEquations (#13754 at 489bcbf, 2026-11-13, claude fable).
 - **Misprint** at the examples after Lemma 4, arXiv v1 p.17: the source says the source allows `k = ℓ` in the exponent `1/(k − ℓ)`; it should be require `ℓ < k`; affects a stated result. Found by ComplexHessianEquations (#13754 at 489bcbf, 2026-11-13, claude fable).
+- **Misprint** at the proof of Lemma 1, arXiv v1 p.7: the source says the source bounds the determinant of the linearization of `log f` below by `γ` times `f^n`; it should be `γ` times `f^{−n}`, as its own preceding equality gives; affects nothing. Found by ComplexHessianEquations (#13754 at 8e67ddb, 2026-11-15, claude fable).
 - **Gap** at the proof of Lemma 1, line 217–218 (arXiv v1, p. 6): the source says the auxiliary equation (2.3) has a unique smooth solution by Yau's theorem although its right-hand side `τ_k(−φ_t − s)·e^{nF_t}` is only as regular as the `C²` solution `φ_t`; it should be approximate the right-hand side by smooth positive functions and pass to the limit, or cite an existence theorem for `C^{2}` data; affects the proof. Found by ComplexHessianEquations (#6536 at ab4bd34, 2026-11-05, claude fable).
 - **Gap** at the proof of Lemma 6, arXiv v1 p.18: the source says the source assumes `χ ≤ ω_X` without loss of generality; it should be take `a_0` with `χ ≤ (a_0 − 1)ω_X`, as in its Lemma 1, the constant then depending on `χ`; affects the proof. Found by ComplexHessianEquations (#13754 at b17d842, 2026-11-15, claude fable).
 - **Gap** at the proof of Theorem 2, arXiv v1 p.9: the source says the source calls the closed-sublevel mass function continuous; it should be use strict sublevels, which give right-continuity when a level set has positive measure; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "489bcbf571a6b505b5b4eea3fe5da0a7ff3b0762", "job": "REV-DESIGN-ComplexHessianEquations~4", "model": "fable", "worker": "chris-x25"} -->. Found by ComplexHessianEquations (#13754 at 489bcbf, 2026-11-13, claude fable).
 - **Gap** at the proof of Theorem 2, line 407 (p. 9): the source says the sublevel function `s ↦ (c_t^n/V_t)∫_{{φ_t ≤ −s}} e^{nF_t}` is clearly continuous; it is only left-continuous when a level set of `φ_t` has positive measure, and Lemma 2 needs right-continuity; it should be use the strict sublevel sets, on which `A_s` and the Hölder step are unchanged; affects the proof. Found by ComplexHessianEquations (#6536 at ab4bd34, 2026-11-05, claude fable).
 - **Gap** at the proof of Theorem 3(c), arXiv v1 p.16: the source says the source bounds the signed moment of `F` by the entropy alone; it should be add a constant, since `|F| ≤ 1 + |F|^p` is what holds; affects the proof; <!-- tauceti-roadmap-review {"agent": "claude", "head": "b2c8cf4c5499914bb4ea04032421b9be60d6cc9e", "job": "REV-DESIGN-ComplexHessianEquations~5", "model": "fable", "worker": "chris-x52"} -->. Found by ComplexHessianEquations (#13754 at b2c8cf4, 2026-11-13, claude fable).
+- **Gap** at the proof of Theorem 5, arXiv v1 p.20: the source says the source applies its Lemma 8, stated for the background `ω_X`, to `ω_t`-admissible functions; it should be rescale by `a_0` with `ω_t ≤ a_0ω_X` and use monotonicity of the cone; affects the proof. Found by ComplexHessianEquations (#13754 at 8e67ddb, 2026-11-15, claude fable).
 
 ## GR
 
@@ -12793,6 +12797,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## nashModificationNotes2024
 
+- **Misprint** at Propositions 2.2 and 2.3, printed p. 5: the source says the same proposition and its introductory sentences twice under two numbers; it should be stated once; affects nothing. Found by NashBlowups (#13795 at 523aa05, 2026-11-15, claude fable).
 - **Misprint** at Section 1, printed p. 3: the source says the closure of the graph is taken in the Grassmannian; it should be in the product of X with the Grassmannian; affects nothing. Found by NashBlowups (#13795 at 63c2853, 2026-11-11, claude fable).
 - **Error** at Section 2, printed p. 4 (lines 157–160) and Section 3, p. 6 (lines 226–229): the source says the universal property is asserted for every morphism `h : Z → X` carrying a rank-`d` locally free quotient of `h*Ω`; it should be require `Z` reduced with `h⁻¹(U)` dense (a closed point of the cusp with the quotient `[0:1]` does not factor); affects a stated result. Found by NashBlowups (#7586 at df807c1, 2026-11-07, claude fable).
 - **Gap** at Section 3, printed p. 6: the source says every morphism with a rank-d quotient factors through the closure; it should be require a reduced source with dense preimage of the open; affects a stated result. Found by NashBlowups (#13795 at 63c2853, 2026-11-11, claude fable).
@@ -12875,6 +12880,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## Nikulin, Finite automorphism groups of Kähler K3 surfaces
 
 - **Error** at §5, equation (5.2) and its case list, pp. 108–110 of the Russian original: the source says the solutions of t_pq(p+1)(q+1)=24 without (p,q)=(2,7), t=1, that is order 14; it should be a list including that solution, which is then disposed of separately; affects the proof. Found by  (#563 at , 2026-10-23, backfill from earlier reviews (claude opus)).
+
+## nobile1975
+
+- **Misprint** at Example 1, printed p. 300: the source says the Jacobian-ideal description comes from Remark 1, which only fixes notation; it should be Remark 2; affects nothing. Found by NashBlowups (#13795 at 523aa05, 2026-11-15, claude fable).
 
 ## ns18
 
