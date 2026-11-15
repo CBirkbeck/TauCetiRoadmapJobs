@@ -503,6 +503,7 @@
       "where": "lines 1219–1227 (pre-image of post-collisional configurations)"
      },
      "prerequisites": [
+      "target:1.1",
       "target:2.1",
       "target:3.2"
      ],
@@ -1181,6 +1182,7 @@
       "where": "lines 875–887"
      },
      "prerequisites": [
+      "target:3.1",
       "target:4.4",
       "target:4.5",
       "target:5.1",
@@ -1274,6 +1276,7 @@
       "where": "Proposition 4.1.1, lines 862–863, proof lines 875–910; BGSS2023 lines 132–139; DengHaniMa2024 Proposition 1.2 lines 182–188; Alexander1976 Proposition 4.3, pp. 217–232 (reference [2] of GST2013, line 855, bibliography lines 5439–5440)"
      },
      "prerequisites": [
+      "target:3.3",
       "target:5.2",
       "target:5.3",
       "target:5.5",
@@ -1469,6 +1472,7 @@
       "where": "(4.3.5) lines 1138–1140 (the solution operator f ↦ f(Ψ(−t, ·)) only); DengHaniMa2024 (1.5) lines 175–178 (the flow operator only); the isometry and strong continuity on Lp are proved here and stated in neither source"
      },
      "prerequisites": [
+      "target:3.1",
       "target:7.1",
       "target:7.2",
       "mathlib:MeasureTheory.Lp.compMeasurePreserving",
@@ -1651,6 +1655,7 @@
       "target:3.3",
       "target:3.4",
       "target:3.5",
+      "target:6.4",
       "target:7.1",
       "target:8.1",
       "mathlib:intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le"
@@ -1687,6 +1692,11 @@
        "name": "collision_time_derivative",
        "kind": "non-example",
        "statement": "Head-on witness, φ = χ(t)θ(H)ψ(⟨x_1 − x_2, e_1⟩) with θ smooth, compactly supported, equal to 1 near H = 1/2, and ψ bounded smooth with bounded derivative and the identity on [−10, 10]: admissible, and t ↦ φ(t, T_t Z) is χ(t)(2 − t) for 0 ≤ t < 1 and χ(t) t for 1 ≤ t ≤ 10, continuous at 1 with one-sided derivatives χ'(1) ∓ χ(1); the derivative is used only on the open pieces. Without θ, Lφ(1, Z) = M at x_1 − x_2 = e_1, v_1 = M e_1, v_2 = 0, χ(1) = 1, χ'(1) = 0: unbounded."
+      },
+      {
+       "name": "identity_off_goodSet",
+       "kind": "non-example",
+       "statement": "The pointwise identity ∫_0^∞ Lφ(t, T_t Z) dt = −φ(0, Z) of the route holds on G only: at the grazing state of 7.1 (ε = 1, x_1 = (2, 1), x_2 = 0, v_1 = (−1, 0), v_2 = 0, energy 1/2), in 𝒟̄ ∖ G and fixed by the flow, φ = χ(t)θ(H)ψ(⟨x_1 − x_2, e_1⟩) of collision_time_derivative with χ ≥ 0 and χ = 1 on [0, 3] has Lφ(t, Z) = 2χ'(t) − χ(t), so the left side is −2χ(0) − ∫_0^∞ χ ≤ −5 against −φ(0, Z) = −2; the theorem needs 𝒟̄ ∖ G null (6.4)."
       }
      ]
     },
@@ -1708,6 +1718,7 @@
       "where": "(4.2.2)–(4.2.3) lines 929–938"
      },
      "prerequisites": [
+      "target:1.1",
       "target:3.1",
       "target:3.2",
       "target:3.3"

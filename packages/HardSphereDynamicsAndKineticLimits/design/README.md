@@ -34,7 +34,7 @@ Uniqueness of weak solutions of the Liouville equation with specular reflection 
 
 ### From Mathlib
 
-Every declaration below was read at the pinned Mathlib.
+The declarations below are cited as they stand at the pinned Mathlib.
 
 - `EuclideanSpace` (`Mathlib/Analysis/InnerProductSpace/PiL2.lean`) and `EuclideanSpace.volume_ball` (`Mathlib/MeasureTheory/Measure/Lebesgue/VolumeOfBalls.lean`): the volume of `B(x, r)` is `r^d · π^{d/2}/Γ(d/2 + 1)`.
 - `QuotientAddGroup.instNormedAddCommGroup` and `QuotientAddGroup.norm_mk` (`Mathlib/Analysis/Normed/Group/Quotient.lean`): for a closed subgroup `S`, `E ⧸ S` is a normed group with `‖mk x‖ = infDist x S`. Closedness is a hypothesis of the instance.
@@ -63,7 +63,7 @@ Every declaration below was read at the pinned Mathlib.
 
 ### From Tau Ceti
 
-Every declaration below was read at the pinned Tau Ceti.
+The declarations below are cited as they stand at the pinned Tau Ceti.
 
 - `TauCeti.Probability.multivariateGaussianPDFReal` and `TauCeti.Probability.multivariateGaussian_eq_withDensity` (`TauCeti/Probability/Distributions/Gaussian/Density.lean`): the density `(2π)^{−d/2} (det S)^{−1/2} exp(−⟨x − m, S⁻¹(x − m)⟩/2)`, which is the density of `multivariateGaussian m S` for positive definite `S`.
 - `TauCeti.Semigroups.StronglyContinuousGroup` (`TauCeti/Analysis/Semigroups/Group/Basic.lean`): a family `U : ℝ → X →L[ℝ] X` with `U 0 = id`, `U (s + t) = U s ∘ U t` for all real `s, t`, and strong continuity at `0`.
@@ -252,7 +252,7 @@ Define the contact scattering `σ_M(X, V)` that applies `σ_{ν_ij}` to `(v_i, v
 
 API:
 
-- `σ_M` and `ℛ` are involutions of `𝒟̄`, commute with relabelling, and preserve `λ_N`; `ℛ` agrees with `(X, V) ↦ (X, −V)` outside a null set.
+- `σ_M` and `ℛ` are involutions of `𝒟̄`, commute with relabelling, and preserve `λ_N`; `ℛ` agrees with `(X, V) ↦ (X, −V)` outside a null set, since `σ_M` moves velocities only at configurations with a contact pair, which lie in the finite union of the sets `{‖x_i − x_j‖ = ε}`, null by Fubini because spheres of radius `ε < ρ` are null (§1.1).
 - `σ_M` exchanges `∂^+(i, j)` and `∂^−(i, j)`; `ℛ` maps `∂^+(i, j)` to itself.
 
 **Checks.**
@@ -261,7 +261,7 @@ API:
 - With no contact, `ℛ(X, V) = (X, −V)`.
 - Non-example: `(X, V) ↦ (X, −V)` sends the outgoing state above to the incoming state `((−1, 0), 0)`, which is not a state of any right-continuous trajectory.
 
-*Needs:* §2.1, §3.2.
+*Needs:* §1.1, §2.1, §3.2.
 
 ### 3.4 Free transport
 
@@ -482,7 +482,7 @@ Prove: let `0 < ε`, `η > 0` with `ε + η < ρ`, `R > 0`, `K ⊆ X` measurable
 
 ### 6.2 Short time steps
 
-For `R > 0` and `0 < δ` with `ε + 4Rδ < ρ`, call a pair of particles at distance at most `ε + 2Rδ` a near pair (no other pair can come into contact within time δ, since relative speeds are at most `2R`), and let `S_{δ,R}` be the set of `Z ∈ 𝒟̄` with `|V| ≤ R`, no particle within `ε + 2Rδ` of two others, no contact state that is incoming or grazing, and no grazing collision in `[0, δ]` between near pairs. Prove: the near pairs form a matching; on `[0, δ]` each near pair collides at most once and no other pair comes into contact; the step map `Φ_δ` gives the trajectory on `[0, δ]`; and `Φ_δ` is injective on `S_{δ,R}` and measure preserving from `λ_N` restricted to `S_{δ,R}` onto `λ_N` restricted to `Φ_δ(S_{δ,R})`. Here `Φ_δ` is defined block by block: on the Borel piece of `S_{δ,R}` where the near pairs form a given matching `M` (finitely many pieces), it acts on the block `(z_i, z_j)` of each `{i, j} ∈ M` by the pair map `P^{ij}_δ` of §4.5 (a near pair has `ε ≤ ‖x_i − x_j‖`, `‖x_i − x_j‖ + 2Rδ ≤ ε + 4Rδ < ρ` and speeds at most `R`, so it lies in the domain of `P^{ij}_δ`) and on each particle `k` in no near pair by the one-particle free step `z_k ↦ (x_k + π(δ v_k), v_k)`. The blocks are disjoint, so these maps commute and each coordinate is moved exactly once; on each piece `Φ_δ` is a product of measure-preserving block maps, and the images of distinct pieces are disjoint because `Φ_δ` is the time-δ map of trajectories and two trajectories on `[0, δ]` that agree at time δ agree at time 0 (§5.2). The complement of `S_{δ,R}` in `𝒟̄ ∩ {|V| ≤ R}` is `I` of §6.1 with `η = 2Rδ` (admissible there, since `ε + 2Rδ < ρ`) together with a null set (GST2013 lines 875–887).
+For `R > 0` and `0 < δ` with `ε + 4Rδ < ρ`, call a pair of particles at distance at most `ε + 2Rδ` a near pair (no other pair can come into contact within time δ, since relative speeds are at most `2R`), and let `S_{δ,R}` be the set of `Z ∈ 𝒟̄` with `|V| ≤ R`, no particle within `ε + 2Rδ` of two others, no contact state that is incoming or grazing, and no grazing collision in `[0, δ]` between near pairs. Prove: the near pairs form a matching; on `[0, δ]` each near pair collides at most once and no other pair comes into contact; the step map `Φ_δ` gives the trajectory on `[0, δ]`; and `Φ_δ` is injective on `S_{δ,R}` and measure preserving from `λ_N` restricted to `S_{δ,R}` onto `λ_N` restricted to `Φ_δ(S_{δ,R})`. Here `Φ_δ` is defined block by block: on the Borel piece of `S_{δ,R}` where the near pairs form a given matching `M` (finitely many pieces), it acts on the block `(z_i, z_j)` of each `{i, j} ∈ M` by the pair map `P^{ij}_δ` of §4.5 (a near pair has `ε ≤ ‖x_i − x_j‖`, `‖x_i − x_j‖ + 2Rδ ≤ ε + 4Rδ < ρ` and speeds at most `R`, so it lies in the domain of `P^{ij}_δ`) and on each particle `k` in no near pair by the one-particle free step `z_k ↦ (x_k + π(δ v_k), v_k)`. The blocks are disjoint, so these maps commute and each coordinate is moved exactly once; on each piece `Φ_δ` is a product of measure-preserving block maps, and the images of distinct pieces are disjoint because `Φ_δ` is the time-δ map of trajectories and two trajectories on `[0, δ]` that agree at time δ agree at time 0 (§5.2). The complement of `S_{δ,R}` in `𝒟̄ ∩ {|V| ≤ R}` is `I` of §6.1 with `η = 2Rδ` (admissible there, since `ε + 2Rδ < ρ`) together with a null set: the incoming and grazing contact states lie in `𝒟̄ ∖ 𝒟`, null by §3.1, and the states with a grazing collision in `[0, δ]` between near pairs have grazing relative data, null by §4.4 in the pair coordinates of §4.5 (GST2013 lines 875–887).
 
 **Checks.**
 
@@ -492,7 +492,7 @@ For `R > 0` and `0 < δ` with `ε + 4Rδ < ρ`, call a pair of particles at dist
 - Without the three-particle exclusion the step map is not the dynamics: particle 1 can meet particle 2 and then particle 3 within the step.
 - Block composition: on `E` with d = 1 (ρ = ∞), ε = R = δ = 1, positions `0, 2, 20, 22` and all velocities `0.1` give `|V| = 0.2 ≤ R`, near pairs `{1, 2}` and `{3, 4}` (distance 2 ≤ ε + 2Rδ = 3, all other distances at least 18) and no collision, so the configuration is in `S_{1,1}` and `Φ_1` gives positions `0.1, 2.1, 20.1, 22.1`, the trajectory at time 1. Composing two `N`-particle maps that each also free-transport the particles outside their pair would move every particle by `0.2`.
 
-*Needs:* §4.4, §4.5, §5.1, §5.2, §6.1.
+*Needs:* §3.1, §4.4, §4.5, §5.1, §5.2, §6.1.
 
 ### 6.3 Iteration
 
@@ -509,7 +509,7 @@ Prove, for `t > 0`, `R > 0`, a bounded `K ⊆ X` and every `δ > 0` with `ε + 4
 
 ### 6.4 Alexander's theorem
 
-Prove `HardSphere.volume_hardCoreSet_diff_goodSet`: for `0 < ε < ρ`, `λ_N(𝒟̄^ε_N ∖ G) = 0`. Route: a configuration that passes all steps of size δ on `[0, t]` has a trajectory on `[0, t]`, obtained by gluing the step trajectories (§5.2, §6.2); by §6.3, for fixed `t, R, K` the configurations with positions in `K` and `|V| ≤ R` that have no trajectory on `[0, t]` fail some step for every δ, so their set has measure at most `C δ` for every δ with `ε + 4Rδ < ρ` and is null; take the countable union over `t, R` and an exhaustion of `X` by bounded sets, and apply the reversal ℛ for negative times. Also prove that `G` is a Borel set and that `(t, Z) ↦ Z(t)` is Borel measurable on `ℝ × G`: the configurations with a trajectory on `[0, t]` are exactly the union over `m` and `R` of those passing all `m` steps of size `t/m` with velocity bound `R`, a finite intersection of preimages of the Borel sets `S_{t/m,R}` under the Borel step compositions, and on each such set the trajectory map is a finite composition of Borel maps (GST2013 Proposition 4.1.1, lines 862–863, proof lines 875–910; BGSS2023 lines 132–139; DengHaniMa2024 Proposition 1.2, lines 182–188; Alexander1976 Proposition 4.3, pp. 217–232, cited as reference [2] in GST2013 line 855, identified in its bibliography at lines 5439–5440).
+Prove `HardSphere.volume_hardCoreSet_diff_goodSet`: for `0 < ε < ρ`, `λ_N(𝒟̄^ε_N ∖ G) = 0`. Route: a configuration that passes all steps of size δ on `[0, t]` has a trajectory on `[0, t]`, obtained by gluing the step trajectories (§5.2, §6.2); by §6.3, for fixed `t, R, K` the configurations with positions in `K` and `|V| ≤ R` that have no trajectory on `[0, t]` fail some step for every δ, so their set has measure at most `C δ` for every δ with `ε + 4Rδ < ρ` and is null; take the countable union over `t, R` and an exhaustion of `X` by bounded sets, and apply the reversal ℛ for negative times: by §5.3 a configuration has a trajectory on `[−t, 0]` exactly when its image under ℛ has one on `[0, t]`, and ℛ is an involution of `𝒟̄` preserving `λ_N` (§3.3), so the configurations of `𝒟̄` with no trajectory on `[−t, 0]` form the image under ℛ of a null set, and are null. Also prove that `G` is a Borel set and that `(t, Z) ↦ Z(t)` is Borel measurable on `ℝ × G`: the configurations with a trajectory on `[0, t]` are exactly the union over `m` and `R` of those passing all `m` steps of size `t/m` with velocity bound `R`, a finite intersection of preimages of the Borel sets `S_{t/m,R}` under the Borel step compositions, and on each such set the trajectory map is a finite composition of Borel maps (GST2013 Proposition 4.1.1, lines 862–863, proof lines 875–910; BGSS2023 lines 132–139; DengHaniMa2024 Proposition 1.2, lines 182–188; Alexander1976 Proposition 4.3, pp. 217–232, cited as reference [2] in GST2013 line 855, identified in its bibliography at lines 5439–5440).
 
 **Checks.**
 
@@ -517,7 +517,7 @@ Prove `HardSphere.volume_hardCoreSet_diff_goodSet`: for `0 < ε < ρ`, `λ_N(�
 - `N = 2` on `E`: the exceptional set is the union of §5.5, null because the cylinder `D = 0` and the contact set are null.
 - On the unit torus the exhaustion is trivial (`K = X`), and only `t` and `R` vary.
 
-*Needs:* §5.2, §5.3, §5.5, §6.2, §6.3.
+*Needs:* §3.3, §5.2, §5.3, §5.5, §6.2, §6.3.
 
 ### Examples
 
@@ -570,7 +570,7 @@ Prove `HardSphere.flow_reversal` (`T_t ∘ ℛ = ℛ ∘ T_{−t}`), equivarianc
 
 ### 7.4 The Koopman group
 
-For `1 ≤ p < ∞` define the Koopman group `U_t f = f ∘ T_{−t}` on `Lp ℝ p (λ_N` restricted to `𝒟̄)` and prove that it is a `TauCeti.Semigroups.StronglyContinuousGroup` of isometries. Route: isometry and the group law from §7.1–7.2 and `MeasureTheory.Lp.compMeasurePreserving`; strong continuity at 0 first for continuous compactly supported `f`, using that `T_t Z → Z` as `t → 0` for every `Z ∈ G` without contact (all but a null set), dominated convergence for `⟨U_t f, f⟩` and `‖U_t f − f‖² = 2‖f‖² − 2⟨U_t f, f⟩` for `p = 2` and comparison of norms on a set of finite measure for other `p`, then density (`MeasureTheory.MemLp.exists_hasCompactSupport_eLpNorm_sub_le`). The operator `f ↦ f ∘ T_{−t}` is the solution operator of GST2013 (4.3.5), lines 1138–1140, and the flow operator of DengHaniMa2024 (1.5), lines 175–178; its isometry and strong continuity on `Lp` are proved here and are stated in neither source.
+For `1 ≤ p < ∞` define the Koopman group `U_t f = f ∘ T_{−t}` on `Lp ℝ p (λ_N` restricted to `𝒟̄)` and prove that it is a `TauCeti.Semigroups.StronglyContinuousGroup` of isometries. Route: isometry and the group law from §7.1–7.2 and `MeasureTheory.Lp.compMeasurePreserving`; strong continuity at 0 first for continuous compactly supported `f`, using that `T_t Z → Z` as `t → 0` for every `Z ∈ G` without contact (all but a null set: `G` is conull for `λ_N|𝒟̄` by §7.2, and the contact states `𝒟̄ ∖ 𝒟` are null by §3.1), dominated convergence for `⟨U_t f, f⟩` and `‖U_t f − f‖² = 2‖f‖² − 2⟨U_t f, f⟩` for `p = 2` and comparison of norms on a set of finite measure for other `p`, then density (`MeasureTheory.MemLp.exists_hasCompactSupport_eLpNorm_sub_le`). The operator `f ↦ f ∘ T_{−t}` is the solution operator of GST2013 (4.3.5), lines 1138–1140, and the flow operator of DengHaniMa2024 (1.5), lines 175–178; its isometry and strong continuity on `Lp` are proved here and are stated in neither source.
 
 **Checks.**
 
@@ -579,7 +579,7 @@ For `1 ≤ p < ∞` define the Koopman group `U_t f = f ∘ T_{−t}` on `Lp ℝ
 - Empty and null position sectors give phase mass 0, not ∞: on the unit torus with d = 2, ε = 0.4 and `N = 8` the hard-core set is empty (§3.1, by the packing bound of §1.4), `q_8 = 0`, the phase measure is 0, `Lp` is the zero space and `U` is the trivial group on it; on the unit circle with ε = 1/3 and `N = 3` the admissible positions are the equally spaced triples, a nonempty set of dimension 1, so again `q_3 = 0` and the phase measure is 0. The mass is infinite exactly when `N ≥ 1` and `q_N > 0`.
 - Non-example: `p = ∞` is excluded. On `X = E`, for `N = 1`, the indicator `f` of `{x_1 ∈ B(0, 1)} × {|v_1 − e_1| < 1/2}` satisfies `‖U_t f − f‖_∞ = 1` for all small `t ≠ 0`, since free transport moves the position cutoff. The position cutoff must be one that transport moves: on the unit circle the ball `B(0, 1)` is all of `X` (every norm there is at most 1/2), so the same indicator depends on the velocity only, is invariant, and gives `‖U_t f − f‖_∞ = 0`.
 
-*Needs:* §7.1, §7.2, Mathlib `MeasureTheory.Lp.compMeasurePreserving`, `MeasureTheory.MemLp.exists_hasCompactSupport_eLpNorm_sub_le`, Tau Ceti `TauCeti.Semigroups.StronglyContinuousGroup`.
+*Needs:* §3.1, §7.1, §7.2, Mathlib `MeasureTheory.Lp.compMeasurePreserving`, `MeasureTheory.MemLp.exists_hasCompactSupport_eLpNorm_sub_le`, Tau Ceti `TauCeti.Semigroups.StronglyContinuousGroup`.
 
 ### 7.5 The grand canonical phase space
 
@@ -599,7 +599,7 @@ The flow preserves the σ-finite measure `λ_N|𝒟̄`. For `N ≥ 1` its total 
 
 ### Dependencies
 
-Layers 5–6; Mathlib (`MeasureTheory.MeasurePreserving`, composition operators on `Lp`, density of compactly supported continuous functions, measures on sigma types); Tau Ceti `TauCeti.Semigroups.StronglyContinuousGroup` (§7.4); ClassicalErgodicTheory §3.5 (items 1 and 3).
+Layers 3 and 5–6; Mathlib (`MeasureTheory.MeasurePreserving`, composition operators on `Lp`, density of compactly supported continuous functions, measures on sigma types); Tau Ceti `TauCeti.Semigroups.StronglyContinuousGroup` (§7.4); ClassicalErgodicTheory §3.5 (items 1 and 3).
 
 ## Layer 8: Densities, the Liouville equation and marginals
 
@@ -618,7 +618,7 @@ For a measurable `W⁰ : (Fin N → X × E) → ℝ` vanishing off `𝒟̄`, def
 
 ### 8.2 The weak Liouville equation with specular reflection
 
-Call `φ : ℝ × (Fin N → X × E) → ℝ` an admissible test function when it is bounded and measurable, vanishes for `t` outside a bounded interval, has a material derivative `Lφ(t, Z) = d/dr φ(t + r, S_r Z)|_{r=0}` at every point that is bounded and measurable, and satisfies the specular condition `φ(t, X, V) = φ(t, X, σ_M V)` whenever the contacts of `X` form a nonempty matching `M`. Prove `HardSphere.weak_liouville`: for `W⁰ ∈ L¹(λ_N)` vanishing off `𝒟̄` and admissible `φ`, `∫_0^∞ ∫ W(t) Lφ(t) dλ dt + ∫ W⁰ φ(0) dλ = 0` (GST2013 (4.2.1) and (4.3.1), lines 911–918 and 941–958; BGSS2023 (1.1.3)–(1.1.4), lines 145–157). Route: for `Z ∈ G`, `t ↦ φ(t, T_t Z)` is continuous (the specular condition matches the values before and after each collision) and differentiable off the finitely many collision times in each bounded interval with derivative `Lφ(t, T_t Z)` (the one-sided derivatives at a collision time differ in general), so `intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le` on each closed piece `[t_k, t_{k+1}]` between consecutive collision times (continuity on the closed piece, the derivative on its interior, interval integrability of the bounded measurable `Lφ`) gives `∫_0^∞ Lφ(t, T_t Z) dt = −φ(0, Z)`; integrate against `W⁰`, use Fubini and §8.1.
+Call `φ : ℝ × (Fin N → X × E) → ℝ` an admissible test function when it is bounded and measurable, vanishes for `t` outside a bounded interval, has a material derivative `Lφ(t, Z) = d/dr φ(t + r, S_r Z)|_{r=0}` at every point that is bounded and measurable, and satisfies the specular condition `φ(t, X, V) = φ(t, X, σ_M V)` whenever the contacts of `X` form a nonempty matching `M`. Prove `HardSphere.weak_liouville`: for `W⁰ ∈ L¹(λ_N)` vanishing off `𝒟̄` and admissible `φ`, `∫_0^∞ ∫ W(t) Lφ(t) dλ dt + ∫ W⁰ φ(0) dλ = 0` (GST2013 (4.2.1) and (4.3.1), lines 911–918 and 941–958; BGSS2023 (1.1.3)–(1.1.4), lines 145–157). Route: for `Z ∈ G`, `t ↦ φ(t, T_t Z)` is continuous (the specular condition matches the values before and after each collision) and differentiable off the finitely many collision times in each bounded interval with derivative `Lφ(t, T_t Z)` (the one-sided derivatives at a collision time differ in general), so `intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le` on each closed piece `[t_k, t_{k+1}]` between consecutive collision times (continuity on the closed piece, the derivative on its interior, interval integrability of the bounded measurable `Lφ`) gives `∫_0^∞ Lφ(t, T_t Z) dt = −φ(0, Z)`; by §8.1 and Fubini the first term of the theorem is `∫ W⁰(Z) ∫_0^∞ Lφ(t, T_t Z) dt dλ`, and the pointwise identity holds at `λ_N`-almost every point where `W⁰ ≠ 0`, since `W⁰` vanishes off `𝒟̄` and `𝒟̄ ∖ G` is null (§6.4); off `G` the flow is the identity and the pointwise identity fails in general (last Check).
 
 API of the test-function class:
 
@@ -631,12 +631,13 @@ API of the test-function class:
 - On `E` with `N = 1` the identity is the weak form of free transport `∂_t W + ⟨v, ∇_x W⟩ = 0`.
 - The derivative at a collision time need not exist, which is why the fundamental theorem of calculus is applied with the derivative only on the open pieces: for the head-on witness and `φ(t, Z) = χ(t) θ(H(V)) ψ(⟨x_1 − x_2, e_1⟩)` with ψ bounded and smooth with bounded derivative and equal to the identity on `[−10, 10]`, and θ smooth with compact support and equal to 1 near `1/2`, the energy of the witness, the function is admissible (it is bounded; `Lφ = θ(H)(χ'(t) ψ(⟨x_1 − x_2, e_1⟩) + χ(t) ψ'(⟨x_1 − x_2, e_1⟩) ⟨v_1 − v_2, e_1⟩)` is bounded because `|v_1 − v_2|` is bounded where `θ(H) ≠ 0`; σ_M moves no position and preserves `H`), and `t ↦ φ(t, T_t Z)` is `χ(t)(2 − t)` for `0 ≤ t < 1` and `χ(t) t` for `1 ≤ t ≤ 10`: continuous at `t = 1`, with left derivative `χ'(1) − χ(1)` and right derivative `χ'(1) + χ(1)`. The energy cutoff is needed: without θ, at `χ(1) = 1`, `χ'(1) = 0`, `x_1 − x_2 = e_1`, `v_1 = M e_1`, `v_2 = 0` one gets `Lφ(1, Z) = M`, unbounded in `M`.
 - Non-example: `φ = χ(t) θ(H(V)) ⟨v_1, e_1⟩`, with χ and θ smooth with compact support, is bounded with bounded material derivative `χ'(t) θ(H) ⟨v_1, e_1⟩` but violates the specular condition, and the identity fails for it. For `Z ∈ G` whose trajectory has exactly one collision on `[0, ∞)`, at a time `τ(Z) > 0`, the computation of the route gives `∫_0^∞ Lφ(t, T_t Z) dt + φ(0, Z) = χ(τ(Z)) θ(H)(⟨v_1, e_1⟩ − ⟨v_1', e_1⟩)` with `v_1'` the velocity of particle 1 after the collision, so the left side is the integral of this jump against `W⁰`, with a collision time that varies with `Z` (the data colliding at one fixed time form a null set, which carries no mass of an `L¹` density). Explicitly, on `E` with d = 1, `N = 2`, ε = 1, let `W⁰` be the uniform probability density on the box `x_2 ∈ (0, 0.01)`, `x_1 − x_2 ∈ (1.99, 2.01)`, `v_1 ∈ (−1.02, −0.98)`, `v_2 ∈ (−0.02, 0.02)`, and take χ = 1 on `[0.9, 1.1]` and θ = 1 on `[0.47, 0.53]`. Each trajectory has one collision, which exchanges `v_1` and `v_2`, at `τ = (x_1 − x_2 − 1)/(v_2 − v_1) ∈ (0.9519, 1.0521)`, and `H ∈ (0.4802, 0.5204)`, so the left side is `∫ W⁰ (v_1 − v_2) = −1 ≠ 0`.
+- The pointwise identity of the route holds on `G` only: the grazing state of §7.1 (ε = 1, `x_1 = (2, 1)`, `x_2 = 0`, `v_1 = (−1, 0)`, `v_2 = 0`, of energy `1/2`) lies in `𝒟̄ ∖ G` and is fixed by the flow, and for the test function `χ(t) θ(H(V)) ψ(⟨x_1 − x_2, e_1⟩)` of the third Check with χ nonnegative and equal to 1 on `[0, 3]` one has `Lφ(t, Z) = 2χ'(t) − χ(t)`, so `∫_0^∞ Lφ(t, T_t Z) dt = −2χ(0) − ∫_0^∞ χ ≤ −5`, while `−φ(0, Z) = −2`. The theorem is unaffected because `𝒟̄ ∖ G` is null (§6.4) and carries no mass of an `L¹` density.
 
-*Needs:* §1.2, §3.3–3.5, §7.1, §8.1, Mathlib `intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le`.
+*Needs:* §1.2, §3.3–3.5, §6.4, §7.1, §8.1, Mathlib `intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le`.
 
 ### 8.3 Marginals
 
-For a symmetric `W_N ≥ 0` vanishing off `𝒟̄_N` and `s ≤ N`, define the marginal `W^{(s)}_N(Z_s) = ∫ W_N(Z_s, z_{s+1}, …, z_N) dz_{s+1} ⋯ dz_N` (GST2013 (4.2.2), lines 929–932). Prove that it is symmetric, vanishes off `𝒟̄_s`, satisfies `W^{(s)}_N = ∫ W^{(s+1)}_N dz_{s+1}` for `s < N` (GST2013 (4.2.3), lines 934–937; at `s = N` there is no level `N + 1`), has `W^{(N)}_N = W_N` and `W^{(0)}_N = ∫ W_N`, commutes with relabelling the first `s` particles, and inherits the specular condition `W(X, V) = W(X, σ_M V)`, with `σ_M` the contact scattering of §3.3: if `W_N` satisfies it at every configuration of `𝒟̄_N` whose contacts form a nonempty matching `M`, then `W^{(s)}_N` satisfies it at every such configuration of `𝒟̄_s` (GST2013 line 938).
+For a symmetric `W_N ≥ 0` vanishing off `𝒟̄_N` and `s ≤ N`, define the marginal `W^{(s)}_N(Z_s) = ∫ W_N(Z_s, z_{s+1}, …, z_N) dz_{s+1} ⋯ dz_N` (GST2013 (4.2.2), lines 929–932). Prove that it is symmetric, vanishes off `𝒟̄_s`, satisfies `W^{(s)}_N = ∫ W^{(s+1)}_N dz_{s+1}` for `s < N` (GST2013 (4.2.3), lines 934–937; at `s = N` there is no level `N + 1`), has `W^{(N)}_N = W_N` and `W^{(0)}_N = ∫ W_N`, commutes with relabelling the first `s` particles, and inherits the specular condition `W(X, V) = W(X, σ_M V)`, with `σ_M` the contact scattering of §3.3: if `W_N` satisfies it at every configuration of `𝒟̄_N` whose contacts form a nonempty matching `M`, then `W^{(s)}_N` satisfies it at every such configuration of `𝒟̄_s` (GST2013 line 938). Route for the inheritance: for fixed `Z_s`, the added positions `x_{s+1}, …, x_N` at which some added particle is in contact with another particle form a null set (spheres of radius `ε < ρ` are null, §1.1, and Fubini); off it the contacts of the full configuration are those of `Z_s`, so its contact scattering moves only the first `s` velocities and the condition on `W_N` passes under the integral, and where the full configuration leaves `𝒟̄_N` both integrands vanish.
 
 **Checks.**
 
@@ -645,7 +646,7 @@ For a symmetric `W_N ≥ 0` vanishing off `𝒟̄_N` and `s ≤ N`, define the m
 - Non-example: dropping the indicator gives the first marginal `g(z_1) ∫ g̃` in the same situation, too large by the factor `1/(1 − ω_d ε^d)`; and the second marginal of the hard-core density vanishes at `x_1 = x_2`, while the product does not.
 - The specular inheritance needs the specular condition on `W_N`; symmetry, positivity and support do not give it. On `E` with d = 2, ε = 1 and `s = N = 2`, the density `W = e^{−|v_1|² − |v_2|²} 1_{|v_1| ≤ 1} 1_{|v_2| ≤ 1} 1_{𝒟̄_2}` is symmetric, nonnegative and vanishes off `𝒟̄_2`, and its marginal of order 2 is `W` itself; at a contact with `ν_12 = e_1` and velocities `(0, 0.9)`, `(0.9, 0)` it equals `e^{−1.62} ≈ 0.19790`, while at the scattered velocities `(0.9, 0.9)`, `0` it is 0, since `|(0.9, 0.9)| ≈ 1.2728 > 1`. The Gaussian density `e^{−|v_1|² − |v_2|²} 1_{𝒟̄_2}` satisfies the condition and takes the value `e^{−1.62}` at both states.
 
-*Needs:* §3.1–3.3.
+*Needs:* §1.1, §3.1–3.3.
 
 ### 8.4 Symmetric expectations
 
@@ -667,7 +668,7 @@ For the canonical measure of §9.2 every marginal is constant in time; for a pro
 
 ### Dependencies
 
-Layers 1, 3 and 7; Mathlib (the fundamental theorem of calculus, `Nat.descFactorial`, relabelling of product measures); ClassicalErgodicTheory §3.5 (item 4).
+Layers 1, 3, 6 and 7; Mathlib (the fundamental theorem of calculus, `Nat.descFactorial`, relabelling of product measures); ClassicalErgodicTheory §3.5 (item 4).
 
 ## Layer 9: Equilibria and grand canonical ensembles
 
