@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArcTopologyAndDescent~7",
+  "head": "dfd2dd1c5cae79641691f075647ff4e89dde222d",
+  "pr": 1755,
+  "folder": "ArcTopologyAndDescent",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since dfd2dd1; previous repair retained; PR title and description checked against head/base delta; BM21 locators and computed witnesses checked for description findings; seeded sample has no changed passages; gate, dependency check, targeted build and standalone elaboration passed. Three P3 description corrections; roadmap files unchanged.",
+  "text": "6eaa290813360732",
+  "carried": {
+   "from": "dfd2dd1c5cae79641691f075647ff4e89dde222d",
+   "head": "dfd2dd1c5cae79641691f075647ff4e89dde222d",
+   "findings": 3,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
