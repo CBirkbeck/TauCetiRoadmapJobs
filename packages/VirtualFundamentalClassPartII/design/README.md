@@ -158,9 +158,12 @@ GromovWittenTheory and ImplicitAtlases.
    of codimension `d`* if, étale locally on source and target, it is a regular closed immersion of
    codimension `d`. Vistoli calls these local embeddings and regular local embeddings (vistoli1989
    (1.19)–(1.20), lines 485–505). A *local embedding* is a chart pair: an étale morphism `U → X` from
-   an affine scheme with a closed immersion of `U` into a smooth affine scheme (behrend-fantechi1997
-   Definition 3.7, lines 906–915; VirtualFundamentalClass §§3.4, 5.1). "Representable" without
-   qualification means representable by algebraic spaces (SchemeAndStackFoundations §1.19).
+   an affine scheme of finite type over `k` with a closed immersion of `U` into a smooth affine scheme
+   of finite type over `k` (VirtualFundamentalClass §§3.4, 5.1, 9.1). behrend-fantechi1997 Definition
+   3.7 (lines 906–917) asks only that `U → M` be a local immersion (its fourth condition, line 916);
+   the closed ones cover `X`, since an affine scheme of finite type is a closed subscheme of some `𝔸^n`,
+   and they are the charts of VirtualFundamentalClass §§3.4, 5.1, 9.1 and of 8.2 here. "Representable"
+   without qualification means representable by algebraic spaces (SchemeAndStackFoundations §1.19).
 
 3. **Proper covers.** A *proper cover* of a stack `ℳ` is a scheme `X` of finite type over `k` with a
    proper surjective morphism `X → ℳ` (1.1). Every stack has one, indeed a finite one (1.1, from
@@ -611,8 +614,10 @@ the length of the local ring of `𝒵 ×_ℳ U` at the generic point of a compon
 `U → ℳ` from a scheme meeting `𝒱` (vistoli1989 (3.5), lines 967–971). Prove that `m_𝒱` does not depend
 on `U` or on the component (stacks-chow-spaces Lemma 4.3, line 169, and Lemma 10.3, line 516, for
 étale invariance of lengths), and étale descent of cycles: for an étale surjection `U → ℳ` from a
-scheme, pullback `Z_i(ℳ) → Z_i(U)`, `[𝒱] ↦ [𝒱 ×_ℳ U]`, is injective with image the cycles whose two
-pullbacks to `U ×_ℳ U` agree (vistoli1989 lines 953–957). No separatedness is assumed, and no
+scheme `U` of finite type over `k` (one exists, `ℳ` being of finite type over `k`), pullback
+`Z_i(ℳ) → Z_i(U)`, `[𝒱] ↦ [𝒱 ×_ℳ U]`, is injective with image the cycles whose two pullbacks to the
+scheme `U ×_ℳ U` agree; it is of finite type over `k`, the diagonal of `ℳ` being representable by
+schemes and quasi-compact (vistoli1989 lines 887 and 953–957). No separatedness is assumed, and no
 proper cover is used. *Needs:* gap:closed-substacks-of-stacks; VirtualFundamentalClass §0.2; Tau Ceti
 `TauCeti.AlgebraicGeometry.Chow.cyclesOfDimension`.
 
@@ -631,6 +636,11 @@ proper cover is used. *Needs:* gap:closed-substacks-of-stacks; VirtualFundamenta
 - For a scheme `X` of finite type over `k`, `Z_i(X)` is Tau Ceti's `cyclesOfDimension X i`: the
   integral closed subschemes of dimension `i` are those whose generic points have height `i`, and the
   locally finite sums there are finite because `X` is quasi-compact.
+- Étale descent needs an atlas of finite type: for `ℳ = Spec k` and the étale surjection
+  `U = ⊔_{n ∈ ℕ} Spec k → Spec k`, the pullback of `[Spec k]` would be the sum of the infinitely many
+  points of `U`, which is no element of a free abelian group; `U` is not quasi-compact, so it is not a
+  stack of Convention 1 and `Z_0(U)` is not defined. For `U` of finite type, `𝒱 ×_ℳ U` is reduced and
+  has finitely many components, each of dimension `dim 𝒱`, so `[𝒱 ×_ℳ U]` is a finite sum.
 
 ### 2.2 Rational equivalence and the Chow groups
 
@@ -643,8 +653,9 @@ is the generic point of a component of `𝒲 ×_𝒱 U` (a point of coheight one
 `A_i(ℳ) := Z_i(ℳ)/∂W_i(ℳ)` with `A_*(ℳ) := ⊕_i A_i(ℳ)` and `A_i(ℳ)_ℚ := A_i(ℳ) ⊗ ℚ` (vistoli1989
 (3.2)–(3.4), lines 901–966; gillet1984 §4). Prove that `ord_𝒲(φ)` does not depend on the choices
 (stacks-chow-spaces Lemma 13.2, line 667; vistoli1989 Lemma 3.3, lines 940–948), is additive in `φ`,
-and is nonzero for finitely many `𝒲`; equivalently `∂` is the morphism of étale sheaves
-`W_* → Z_*` of vistoli1989 lines 953–959 on global sections. No separatedness is assumed, and no
+and is nonzero for finitely many `𝒲`; equivalently `∂` is the morphism of sheaves `W_* → Z_*` on
+the étale site of `ℳ` formed by schemes of finite type over `k` (vistoli1989 lines 887 and 953–959),
+on global sections. No separatedness is assumed, and no
 proper cover is used. *Needs:* 1.2, 2.1; Mathlib `AlgebraicGeometry.Scheme.ord`.
 
 **API.**
@@ -729,8 +740,8 @@ separatedness. *Needs:* Layer 2; SchemeAndStackFoundations §§1.20, 5.2.
   3.3.
 - For every closed substack `𝒵 ⊆ 𝒢`, integral or not, `f^*[𝒵] = [𝒵 ×_𝒢 ℱ]` with the cycles of closed
   substacks of 2.1.
-- For an étale surjection `U → ℳ` from a scheme, flat pullback on cycles is the descent injection of
-  2.1, and on schemes flat pullback is SchemeAndStackFoundations §5.2's.
+- For an étale surjection `U → ℳ` from a scheme `U` of finite type over `k`, flat pullback on cycles is
+  the descent injection of 2.1, and on schemes flat pullback is SchemeAndStackFoundations §5.2's.
 
 **Checks.**
 
@@ -1326,9 +1337,12 @@ stack has a proper cover (1.1), the condition behrend-fantechi1997 allows in pla
 - For the theory of 6.1 on `ℙ¹`, `0^!_{F_1}[C(F•)] = c_1(O(4)) ∩ [ℙ¹]`, of degree `4`; through `P`, the cone is
   the subbundle `O(2) ⊆ O(3) ⊕ O(3)` and `0^!_P` of it is `c_1(O(3)^{⊕2}/O(2)) ∩ [ℙ¹] = c_1(O(4)) ∩ [ℙ¹]`,
   again of degree `4`.
-- On the non-separated line `L` with a doubled origin, let `𝓛_n` be the line bundle glued by `t^n` on the
-  overlap. `E = [𝓛_n^∨ --0--> Ω_L]` is a perfect obstruction theory of rank `0` with `Ob = 𝓛_n`, and
-  `[L, E]^vir = c_1(𝓛_n) ∩ [L] = n·[0₂]`, nonzero in `A_0(L)_ℚ = ℚ` for `n ≠ 0`; VirtualFundamentalClass,
+- On the non-separated line `L` with a doubled origin, covered by the charts `U_1 ∋ 0₁` and `U_2 ∋ 0₂`
+  (each `Spec k[t]`), let `𝓛_n` be the line bundle with frames `e_1` on `U_1` and `e_2` on `U_2` glued by
+  `e_1 = t^n·e_2` on the overlap. The section equal to `e_1` on `U_1` and to `t^n·e_2` on `U_2` has divisor
+  `n·[0₂]`. `E = [𝓛_n^∨ --0--> Ω_L]` is a perfect obstruction theory of rank `0` with `Ob = 𝓛_n`, and
+  `[L, E]^vir = c_1(𝓛_n) ∩ [L] = n·[0₂]`, nonzero in `A_0(L)_ℚ = ℚ` for `n ≠ 0`; the opposite gluing
+  `e_2 = t^n·e_1` gives `n·[0₁] = −n·[0₂]`, since `[0₁] + [0₂] = div(t) = 0` (2.3). VirtualFundamentalClass,
   whose stacks are separated, has no such class.
 - If `d + r < 0` the class is `0`, since `A_{d+r}(X) = 0`.
 

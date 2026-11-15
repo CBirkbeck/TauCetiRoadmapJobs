@@ -209,13 +209,13 @@
      "id": "2.1",
      "kind": "definition",
      "name": "StackChow.Cycles",
-     "statement": "Z_i(M) is the free abelian group on integral closed substacks of dimension i; the cycle of a closed substack Z is sum m_V [V] with m_V the length at a generic point on an etale atlas, independent of choices; pullback to an etale atlas U identifies Z_i(M) with the cycles on U with equal pullbacks to U x_M U. No separatedness or proper cover is assumed.",
+     "statement": "Z_i(M) is the free abelian group on integral closed substacks of dimension i; the cycle of a closed substack Z is sum m_V [V] with m_V the length at a generic point on an etale atlas, independent of choices; pullback to an etale atlas U of finite type over k (one exists, M being of finite type) identifies Z_i(M) with the cycles on U with equal pullbacks to the scheme U x_M U, of finite type over k. No separatedness or proper cover is assumed.",
      "hypotheses": [
       "M a stack (Convention 1)"
      ],
      "locator": {
       "source": "vistoli1989",
-      "where": "(3.1), lines 891-894; (3.5), lines 967-971; lines 953-957"
+      "where": "(3.1), lines 891-894; (3.5), lines 967-971; lines 887, 953-957"
      },
      "prerequisites": [
       "gap:closed-substacks-of-stacks",
@@ -249,6 +249,11 @@
        "name": "scheme_agreement",
        "kind": "compatibility",
        "statement": "For a scheme of finite type, Z_i(X) is Tau Ceti's cyclesOfDimension X i with finite sums."
+      },
+      {
+       "name": "infiniteAtlas_excluded",
+       "kind": "non-example",
+       "statement": "For U = disjoint union over N of Spec k -> Spec k, the pullback of [Spec k] is an infinite sum, no element of a free abelian group; U is not quasi-compact, not a stack of Convention 1. For U of finite type the pullback of [V] is a finite sum."
       }
      ]
     },
@@ -386,7 +391,7 @@
       {
        "name": "flatPullback.descent",
        "role": "lemma",
-       "statement": "Along an etale surjection from a scheme, flat pullback on cycles is the descent injection of 2.1; on schemes it is SchemeAndStackFoundations §5.2's flat pullback."
+       "statement": "Along an etale surjection from a scheme of finite type over k, flat pullback on cycles is the descent injection of 2.1; on schemes it is SchemeAndStackFoundations §5.2's flat pullback."
       }
      ],
      "tests": [
@@ -1263,7 +1268,7 @@
       {
        "name": "doubledOrigin_class",
        "kind": "computation",
-       "statement": "On the line L with doubled origin, E = [L_n^v -0-> Omega_L] gives n[0_2], nonzero for n != 0."
+       "statement": "On the line L with doubled origin, charts U_1 containing 0_1 and U_2 containing 0_2, L_n glued by e_1 = t^n e_2 on the overlap (the section e_1 has divisor n[0_2]): E = [L_n^v -0-> Omega_L] gives n[0_2], nonzero for n != 0; the opposite gluing e_2 = t^n e_1 gives n[0_1] = -n[0_2]."
       },
       {
        "name": "negativeDimension",
