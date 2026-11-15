@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GlobalGaloisDeformations~3",
+  "head": "c3a764e0d1f6d7c857e630f1117ecf598d6c9364",
+  "pr": 920,
+  "folder": "GlobalGaloisDeformations",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since c3a764e; previous R01 verified unrepaired (65 dead fragments, 18 valid section numbers); PR title, summary and description checked against head and base; no seeded source target in changed passages; bounded matrix witness computed; gate, dependency check, targeted build, direct Lean elaboration and all three signature probes pass.",
+  "text": "60117e12e626e21e",
+  "carried": {
+   "from": "c3a764e0d1f6d7c857e630f1117ecf598d6c9364",
+   "head": "373d2c574deb17c467afcb045dda75ee35d8a77a",
+   "findings": 1,
+   "lines": 102,
+   "folders": [
+    "GlobalGaloisDeformations"
+   ],
+   "outside": true
+  }
+ }
+}
