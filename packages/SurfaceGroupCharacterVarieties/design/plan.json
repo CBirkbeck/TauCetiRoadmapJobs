@@ -1562,7 +1562,7 @@
      "id": "7.5",
      "kind": "example",
      "name": "CharacterVariety.examples",
-     "statement": "Computed examples: Γ trivial gives a point; F_m with compact G^ℝ gives (G^ℝ)^m/G^ℝ; 𝒳(ℤ, GL₁(ℝ)) = ℝ^×; 𝒳(ℤ, PSL₂(ℝ)) is the elliptic and hyperbolic classes with the identity; 𝒳(π₁(Σ₁), GL₁(ℂ)) = (ℂ^×)²; 𝒳(π₁(Σ_{0,3}), SL₂(ℂ)) ≅ ℂ³ through the trace coordinates of NonabelianLevelStructures §5.1, with Out(F₂) acting by the polynomial automorphisms of NonabelianLevelStructures §5.2, preserving the Fricke commutator trace.",
+     "statement": "Computed examples: Γ trivial gives a point; F_m with compact G^ℝ gives (G^ℝ)^m/G^ℝ; 𝒳(ℤ, GL₁(ℝ)) = ℝ^×; 𝒳(ℤ, PSL₂(ℝ)) is the elliptic and hyperbolic classes with the identity; 𝒳(π₁(Σ₁), GL₁(ℂ)) = (ℂ^×)²; 𝒳(π₁(Σ_{0,3}), SL₂(ℂ)) ≅ ℂ³ through the trace coordinates of NonabelianLevelStructures §5.1, with Out(F₂) acting by polynomial automorphisms, [φ] by the automorphism that NonabelianLevelStructures §5.2's right action ρ ↦ ρ ∘ φ assigns to φ⁻¹ (7.4's left action), preserving the Fricke commutator trace.",
      "hypotheses": [],
      "locator": {
       "source": "Sikora2012",
@@ -1591,7 +1591,7 @@
       {
        "name": "pants_SL2C",
        "kind": "computation",
-       "statement": "𝒳(π₁(Σ_{0,3}), SL₂(ℂ)) ≅ ℂ³ through (tr ρ(a), tr ρ(b), tr ρ(ab)); the class of (a, b) ↦ (a⁻¹, b) acts by the Vieta move (x, y, x y − z) and the class of (a, b) ↦ (a⁻¹, b⁻¹) trivially, so the action is not faithful; at (2, 2, 3), from A = [[1,1],[0,1]], B = [[1,0],[1,1]], the commutator trace x² + y² + z² − x y z − 2 is 3, and it is again 3 at the Vieta image (2, 2, 1)."
+       "statement": "𝒳(π₁(Σ_{0,3}), SL₂(ℂ)) ≅ ℂ³ through (tr ρ(a), tr ρ(b), tr ρ(ab)); the class of (a, b) ↦ (a⁻¹, b) acts by the Vieta move (x, y, x y − z) and the class of (a, b) ↦ (a⁻¹, b⁻¹) trivially, so the action is not faithful; at (2, 2, 3), from A = [[1,1],[0,1]], B = [[1,0],[1,1]], the commutator trace x² + y² + z² − x y z − 2 is 3, and it is again 3 at the Vieta image (2, 2, 1). The direction matters off the involutions: for ρ = (A, B) and φ : (a, b) ↦ (a, a⁻¹ b), ρ ∘ φ⁻¹ = (A, A B) and 7.4's [φ] acts by (x, y, z) ↦ (x, z, x z − y), since tr(A² B) = tr A · tr AB − tr B, while §5.2's move of φ, read on ρ ∘ φ = (A, A⁻¹ B), is (x, x y − z, y); at (2, 2, 3) these give (2, 3, 4) and (2, 1, 2), both of commutator trace 3."
       }
      ]
     }
@@ -1654,7 +1654,7 @@
     "§5.1",
     "§5.2"
    ],
-   "what": "Used only in 7.5, with R = ℂ: the integral rank-two character scheme of F₂, R[x, y, z] ≅ O(SL₂ × SL₂)^(GL₂) through (tr A, tr B, tr AB) for every commutative ring R (integral_trace_coordinates, §5.1), which over a field is the case Γ = F₂, G = SL₂ of 7.2; the polynomial action of Aut(F₂) on 𝔸³ through Out(F₂), with (a, b) ↦ (a⁻¹, b⁻¹) acting trivially (§5.2)."
+   "what": "§5.1 used only in tests of 7.2 and 7.5, and §5.2 only in 7.5, with R = ℂ: the integral rank-two character scheme of F₂, R[x, y, z] ≅ O(SL₂ × SL₂)^(GL₂) through (tr A, tr B, tr AB) for every commutative ring R (integral_trace_coordinates, §5.1), which over a field is the case Γ = F₂, G = SL₂ of 7.2; the polynomial action of Aut(F₂) on 𝔸³ through Out(F₂), with (a, b) ↦ (a⁻¹, b⁻¹) acting trivially (§5.2); §5.2's map is the right action ρ ↦ ρ ∘ φ, an anti-homomorphism, and 7.4's left action of [φ] is §5.2's automorphism of φ⁻¹, the same on the involutions (a⁻¹, b), (b, a), (a⁻¹, a b) and (a⁻¹, b⁻¹)."
   },
   {
    "roadmap": "FreeGroupsAndLimitGroups",

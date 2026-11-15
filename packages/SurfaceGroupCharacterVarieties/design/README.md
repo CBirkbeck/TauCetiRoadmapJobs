@@ -163,7 +163,8 @@ scheme of `F₂` of NonabelianLevelStructures §5.1, `Spec` of the `GL₂`-conju
 coaction invariants of `SL₂` and of `GL₂` agree, both conjugation actions factoring through the
 faithfully flat quotient maps onto `PGL₂`. It is stated there over every commutative ring, with the
 explicit trace coordinates `(tr A, tr B, tr AB)` that §7.2 does not give, and NonabelianLevelStructures
-§5.2 gives the action of `Aut(F₂)` in these coordinates; both are used here only in §7.5.
+§5.2 gives the right action `ρ ↦ ρ ∘ φ` of `Aut(F₂)` in these coordinates; §5.1 is used here only in
+Checks of §§7.2 and 7.5, and §5.2 only in §7.5.
 
 Not owned and not planned here: the smooth model `Diff⁺(Σ, P)/smooth isotopy` of the punctured
 mapping class group and the Dehn–Nielsen–Baer theorem for punctured surfaces, which extend
@@ -403,9 +404,11 @@ sending `x, y, z` to `tr A`, `tr B`, `tr AB` is an isomorphism onto the invarian
 coaction by simultaneous conjugation, compatibly with every base change `R → S`), §5.2 (over every
 commutative ring, precomposition by `Aut(F₂)` acts on `𝔸³` by polynomial automorphisms through
 `Out(F₂)`: `(a, b) ↦ (a⁻¹, b)`, `(b, a)` and `(a⁻¹, a b)` act by `(x, y, z) ↦ (x, y, x y − z)`,
-`(y, x, z)` and `(x, z, y)`, and `(a, b) ↦ (a⁻¹, b⁻¹)` acts trivially). Used only in §7.5, with
-`R = ℂ`. Assumed: over a field the `GL₂`-invariants of §5.1 are the `SL₂`-invariants of §7.2, as the
-Scope explains.
+`(y, x, z)` and `(x, z, y)`, and `(a, b) ↦ (a⁻¹, b⁻¹)` acts trivially). §5.2's map is the right
+action `ρ ↦ ρ ∘ φ`, an anti-homomorphism; §7.4's left action of `[φ]` is §5.2's automorphism of
+`φ⁻¹`. The four automorphisms listed are involutions, so their moves are the same in both. §5.1 is
+used only in Checks of §§7.2 and 7.5, and §5.2 only in §7.5, with `R = ℂ`. Assumed: over a field
+the `GL₂`-invariants of §5.1 are the `SL₂`-invariants of §7.2, as the Scope explains.
 
 ### From TauCetiRoadmap.FreeGroupsAndLimitGroups
 
@@ -1829,7 +1832,13 @@ value (Sikora2012 lines 844–845, Example 48).
   `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two`): under the Vieta move
   `z² − x y z` becomes `(x y − z)² − x y (x y − z) = z² − x y z`. At `(2, 2, 3)`, the triple of
   `A = [[1,1],[0,1]]`, `B = [[1,0],[1,1]]`, the commutator trace is `4 + 4 + 9 − 12 − 2 = 3`, and the
-  Vieta move gives `(2, 2, 1)`, again of commutator trace `4 + 4 + 1 − 4 − 2 = 3`.
+  Vieta move gives `(2, 2, 1)`, again of commutator trace `4 + 4 + 1 − 4 − 2 = 3`. The direction
+  matters off the involutions: for `ρ = (A, B)` and `φ : (a, b) ↦ (a, a⁻¹ b)`, `ρ ∘ φ⁻¹ = (A, A B)`
+  and §7.4's `[φ]` acts by `(x, y, z) ↦ (x, z, x z − y)`, since `tr(A² B) = tr A · tr AB − tr B`,
+  while §5.2's move of `φ`, read on `ρ ∘ φ = (A, A⁻¹ B)`, is `(x, x y − z, y)`. At `(2, 2, 3)` these
+  give `(2, 3, 4)`, the triple of `(A, A B)` with `A · A B = [[3,2],[1,1]]`, and `(2, 1, 2)`, the
+  triple of `(A, A⁻¹ B)` with `A⁻¹ B = [[0,−1],[1,1]]`; both have commutator trace `3`
+  (`4 + 9 + 16 − 24 − 2` and `4 + 1 + 4 − 4 − 2`).
 
 *Needs:* §7.1; §7.2; §7.4; NonabelianLevelStructures §5.1; NonabelianLevelStructures §5.2; Tau Ceti
 `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two`.
@@ -1837,9 +1846,9 @@ value (Sikora2012 lines 844–845, Example 48).
 ### Examples
 
 - The Fuchsian locus of §7.4 for genus two; the character variety `𝒳(F₂, SL₂(ℂ)) ≅ ℂ³`
-  (NonabelianLevelStructures §5.1) with `Out(F₂)` acting by polynomial automorphisms
-  (NonabelianLevelStructures §5.2), the class of `(a, b) ↦ (a⁻¹, b⁻¹)` trivially, preserving
-  `x² + y² + z² − xyz − 2 = tr ρ([a, b])` for `[a, b] = a b a⁻¹ b⁻¹` (the Fricke identity, Tau Ceti
+  (NonabelianLevelStructures §5.1) with `Out(F₂)` acting by polynomial automorphisms, `[φ]` by
+  NonabelianLevelStructures §5.2's automorphism of `φ⁻¹` (§7.4's left action), the class of
+  `(a, b) ↦ (a⁻¹, b⁻¹)` trivially, preserving `x² + y² + z² − xyz − 2 = tr ρ([a, b])` for `[a, b] = a b a⁻¹ b⁻¹` (the Fricke identity, Tau Ceti
   `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two`; the commutator `a⁻¹ b⁻¹ a b` is
   conjugate to it and has the same trace) (§7.5).
 
@@ -1847,7 +1856,7 @@ value (Sikora2012 lines 844–845, Example 48).
 
 Layers 1–6; LanglandsParameterStacks §2.2; ArithmeticGaloisRepresentations §1.11; ReductiveGroups
 Layers 1, 3A, 6; ComplexComparisonPartII §C-1.1; TeichmullerGeometry §§4.2, 4.5, 6.1;
-NonabelianLevelStructures §§5.1–5.2 and Tau Ceti
+NonabelianLevelStructures §§5.1–5.2 (Checks of §§7.2 and 7.5); Tau Ceti
 `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two` (§7.5);
 SymplecticGeometry/HamiltonianReduction R5 (a Check of §7.1); Tau Ceti's linearly reductive
 comodules; Mathlib's proper actions.
