@@ -609,7 +609,7 @@
      "id": "2.3",
      "kind": "theorem",
      "name": "quotient_concave_and_tangent",
-     "statement": "For 0 ≤ l < k ≤ n, (σ_k/σ_l)^{1/(k−l)} is concave on Γ_k with positive partials; for g concave and positively 1-homogeneous on an open convex cone Γ and differentiable at λ ∈ Γ, g(μ) ≤ Σ μ_i ∂_i g(λ) for every μ ∈ Γ (supporting hyperplane at λ plus Euler's identity); in particular Σ μ_i σ_{k−1;i}(λ) ≥ k σ_k(μ)^{1/k} σ_k(λ)^{(k−1)/k} for λ, μ ∈ Γ_k, and by continuity for μ ∈ Γ̄_k.",
+     "statement": "For 0 ≤ l < k ≤ n, (σ_k/σ_l)^{1/(k−l)} is concave on Γ_k with positive partials; for g concave and positively 1-homogeneous on an open convex cone Γ and differentiable at λ ∈ Γ, g(μ) ≤ Σ μ_i ∂_i g(λ) for every μ ∈ Γ (supporting hyperplane at λ plus Euler's identity); in particular Σ μ_i σ_{k−1;i}(λ) ≥ k σ_k(μ)^{1/k} σ_k(λ)^{(k−1)/k} for λ, μ ∈ Γ_k, and by continuity for μ ∈ Γ̄_k. The geometric-mean step of the quotient concavity (spruck2005 Lemma 2.12) is the superadditivity of the weighted geometric mean, pinned as Tau Ceti Real.prod_rpow_add_prod_rpow_le_prod_add_rpow at the weights 1/N.",
      "hypotheses": [
       "0 ≤ l < k ≤ n",
       "g differentiable at λ for the tangent inequality",
@@ -621,7 +621,8 @@
      },
      "prerequisites": [
       "target:2.1",
-      "target:2.2.3"
+      "target:2.2.3",
+      "tauceti:Real.prod_rpow_add_prod_rpow_le_prod_add_rpow"
      ],
      "tests": [
       {
@@ -820,7 +821,7 @@
      "id": "2.4.4",
      "kind": "theorem",
      "name": "structuralCondition_of_concave_lowerBound",
-     "statement": "A concave admissible pair with f(μ) ≥ nγ^{1/n} (∏ μ_j)^{1/n} on Γ_n satisfies the structural condition with constant γ; the structural condition is equivalent to det ∇F_f ≥ γ on Sym_Γ; positive combinations satisfy it with constant (aγ_1^{1/n} + bγ_2^{1/n})^n.",
+     "statement": "A concave admissible pair with f(μ) ≥ nγ^{1/n} (∏ μ_j)^{1/n} on Γ_n satisfies the structural condition with constant γ; the structural condition is equivalent to det ∇F_f ≥ γ on Sym_Γ; positive combinations satisfy it with constant (aγ_1^{1/n} + bγ_2^{1/n})^n, by the superadditivity of the geometric mean (Tau Ceti Real.prod_rpow_add_prod_rpow_le_prod_add_rpow at the weights 1/n) applied to a∂_jf_1 and b∂_jf_2.",
      "hypotheses": [
       "concave admissible pair",
       "γ > 0",
@@ -833,7 +834,8 @@
      "prerequisites": [
       "target:1.5",
       "target:2.3",
-      "target:2.4.3"
+      "target:2.4.3",
+      "tauceti:Real.prod_rpow_add_prod_rpow_le_prod_add_rpow"
      ]
     },
     {
@@ -965,7 +967,7 @@
      "id": "3.1.2",
      "kind": "definition",
      "name": "iddbar",
-     "statement": "For u ∈ C²(X), the continuous real (1,1)-form i∂∂̄u given in holomorphic charts by (i∂∂̄u)(v,w) = (1/2)(D²u(Jv,w) − D²u(v,Jw)), and the complex Laplacian Δ_ω u = Σ_j λ_j[i∂∂̄u].",
+     "statement": "For u ∈ C²(X) (on the underlying real manifold), the real (1,1)-form i∂∂̄u with H_{i∂∂̄u}(x) = 2·L_u(x) and (i∂∂̄u)(x)(v,w) = Im H_{i∂∂̄u}(x)(v,w), where L_u(x) is the pinned Levi form TauCeti.manifoldLeviForm of u at x; in holomorphic charts (i∂∂̄u)(v,w) = (1/2)(D²u(Jv,w) − D²u(v,Jw)) = i Σ u_{jk̄} dz^j ∧ dz̄^k. Targets: x ↦ i∂∂̄u(x) is a continuous section, and i∂∂̄u agrees with ComplexKahlerGeometry K2's i∂∂̄ on smooth functions. The complex Laplacian is Δ_ω u = Σ_j λ_j[i∂∂̄u]. Chart independence, Hermitian symmetry, the sum, composition and pullback rules and the sign H_{i∂∂̄u}(x_0) ≤ 0 at a local maximum are the pinned Tau Ceti Levi-form declarations, consumed and not re-proved.",
      "hypotheses": [
       "X complex manifold",
       "u ∈ C²"
@@ -976,13 +978,17 @@
      },
      "prerequisites": [
       "roadmap:ComplexKahlerGeometry K2",
-      "target:3.1.1"
+      "target:3.1.1",
+      "tauceti:TauCeti.manifoldLeviForm",
+      "tauceti:TauCeti.isSymm_manifoldLeviForm",
+      "tauceti:TauCeti.leviForm_comp_symm_apply_of_mem_maximalAtlas",
+      "tauceti:TauCeti.toMatrix₂_leviForm"
      ],
      "api": [
       {
-       "name": "iddbar_chart_independent",
-       "role": "characterisation",
-       "statement": "independent of the holomorphic chart"
+       "name": "iddbar_continuous",
+       "role": "structure",
+       "statement": "x ↦ i∂∂̄u(x) is a continuous section, so i∂∂̄u is a continuous real (1,1)-form, for u ∈ C²"
       },
       {
        "name": "iddbar_eq_K2",
@@ -990,19 +996,14 @@
        "statement": "agrees with ComplexKahlerGeometry K2's i∂∂̄ on smooth functions"
       },
       {
-       "name": "iddbar_add",
-       "role": "structure",
-       "statement": "additive, vanishing on constants"
+       "name": "iddbar_const",
+       "role": "evaluation",
+       "statement": "i∂∂̄c = 0 for constants c"
       },
       {
-       "name": "iddbar_comp",
-       "role": "structure",
-       "statement": "i∂∂̄(γ∘u) = γ'(u) i∂∂̄u + γ''(u) i∂u ∧ ∂̄u"
-      },
-      {
-       "name": "iddbar_pullback",
-       "role": "invariance",
-       "statement": "commutes with pullback by holomorphic maps"
+       "name": "laplacian_eq_half_euclidean",
+       "role": "compatibility",
+       "statement": "Δ_ω u = tr_ω(i∂∂̄u) = 2 tr_h L_u; on ℂⁿ with the standard metric Δ_ω u = (1/2) Σ_j (∂²u/∂x_j² + ∂²u/∂y_j²)"
       }
      ],
      "tests": [
@@ -1014,47 +1015,22 @@
       {
        "name": "iddbar_pluriharmonic",
        "kind": "degenerate",
-       "statement": "i∂∂̄(Re z_1²) = 0"
+       "statement": "i∂∂̄(Re z_1²) = 0, since L_{Re z_1²} = 0 (TauCeti.leviForm_re_eq_zero)"
       },
       {
        "name": "laplacian_norm_sq",
        "kind": "compatibility",
        "statement": "Δ_ω|z|² = 2n while the Euclidean Laplacian is 4n"
-      }
-     ]
-    },
-    {
-     "id": "3.1.3",
-     "kind": "theorem",
-     "name": "iddbar_nonpos_of_isLocalMax",
-     "statement": "If x_0 is a local maximum of u ∈ C²(X) then H_{i∂∂̄u}(x_0) ≤ 0.",
-     "hypotheses": [
-      "u ∈ C²(X)",
-      "x_0 local maximum"
-     ],
-     "locator": {
-      "source": "gpt2023",
-      "where": "line 236 (i∂∂̄Φ(x_0) ≤ 0 at a maximum)"
-     },
-     "prerequisites": [
-      "target:3.1.2",
-      "mathlib:IsLocalMax"
-     ],
-     "tests": [
-      {
-       "name": "max_neg_norm_sq",
-       "kind": "computation",
-       "statement": "u = −|z|²: H = −2h at 0"
       },
       {
-       "name": "saddle_no_converse",
+       "name": "iddbar_factor_two",
+       "kind": "compatibility",
+       "statement": "TauCeti.leviForm_norm_sq gives L_{|z|²} = h, so H_{i∂∂̄|z|²} = 2h, λ = 2e and Δ_ω|z|² = 2n, matching i∂∂̄|z|² = 2ω; H = L without the factor 2 would give λ = e, Δ_ω|z|² = n and i∂∂̄(x_1²) = (1/2)dx_1 ∧ dy_1"
+      },
+      {
+       "name": "iddbar_sign_at_max",
        "kind": "non-example",
-       "statement": "u = x_1² − y_1² has H = 0 at 0 but no maximum"
-      },
-      {
-       "name": "constant_max",
-       "kind": "degenerate",
-       "statement": "constants have H = 0 everywhere"
+       "statement": "u = −|z|² has a maximum at 0 with H_{i∂∂̄u} = −2h ≤ 0; the saddle x_1² − y_1² has H = 0 at 0 without a maximum, so the sign condition has no converse"
       }
      ]
     },
@@ -1312,8 +1288,11 @@
      "prerequisites": [
       "tauceti:LinearMap.IsSymmetric.eigenvalue_mono",
       "target:1.4",
-      "target:3.1.3",
-      "target:3.3.1"
+      "target:3.3.1",
+      "target:3.1.2",
+      "tauceti:TauCeti.manifoldLeviForm_add",
+      "tauceti:TauCeti.manifoldLeviForm_neg",
+      "tauceti:TauCeti.re_leviForm_nonpos_of_isLocalMax"
      ],
      "tests": [
       {
@@ -1503,7 +1482,7 @@
      ],
      "locator": {
       "source": "guedj-zeriahi2005",
-      "where": "Proposition 1.7, line 255–274"
+      "where": "Proposition 1.7, line 255–274, for a closed form with continuous local potentials on a compact Kähler manifold (line 138–141); the route needs neither closedness of ω̂ nor the Kähler condition"
      },
      "prerequisites": [
       "target:3.1.2",
@@ -1703,7 +1682,8 @@
      "prerequisites": [
       "target:3.1.2",
       "target:6.1",
-      "target:6.2"
+      "target:6.2",
+      "tauceti:TauCeti.re_leviForm_nonpos_of_isLocalMax"
      ],
      "tests": [
       {
@@ -1738,7 +1718,8 @@
      },
      "prerequisites": [
       "target:6.1",
-      "target:6.3"
+      "target:6.3",
+      "tauceti:TauCeti.re_leviForm_nonpos_of_isLocalMax"
      ],
      "tests": [
       {
@@ -1905,7 +1886,8 @@
      "prerequisites": [
       "target:3.1.2",
       "target:7.1.1",
-      "tauceti:TauCeti.le_setAverage_ball_of_laplacian_nonneg"
+      "tauceti:TauCeti.le_setAverage_ball_of_laplacian_nonneg",
+      "tauceti:TauCeti.leviForm_apply_self"
      ],
      "tests": [
       {
@@ -1941,7 +1923,7 @@
      ],
      "locator": {
       "source": "pss2012",
-      "where": "Theorem 31, line 2946–2955; gpt2023 line 283–289 (global form attributed to tian1987)"
+      "where": "Theorem 31, line 2946–2955; gpt2023 line 283–289 (global form attributed to tian1987); both for a Kähler form on a compact Kähler manifold, while the route needs neither closedness of ω̂ nor the Kähler condition"
      },
      "prerequisites": [
       "target:5.4.1",
@@ -1990,10 +1972,11 @@
      "prerequisites": [
       "target:1.5",
       "target:2.4.3",
-      "target:3.1.3",
       "target:3.4.1",
       "target:6.6",
-      "target:7.2"
+      "target:7.2",
+      "target:3.1.2",
+      "tauceti:TauCeti.re_leviForm_nonpos_of_isLocalMax"
      ],
      "tests": [
       {
