@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GeometricFreyMazur~7",
+  "head": "50d33893e61e037dea7af9d6cb810168cf5175fe",
+  "pr": 2130,
+  "folder": "GeometricFreyMazur",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 50d3389; this round checked the pull request's title and description against the head. One P3: the roadmap-summary block attributes a gonality interface to Tau Ceti, but the pinned Tau Ceti has none (gonality is CanonicalModelsAndGonality's). All other sentences of the description match the head (endpoints, Suggested.lean contents, the seven open suppliers and their PR numbers, merge-order positions, CanonicalModelsAndGonality sections at ed90937). Gate rerun: all checks 0, OK; depcheck 244 roadmaps, 0 problems; lake env lean exits 0 with two sorry warnings only. Adversarial table: 4 rows with computed values for the statements the description cites. No sampled target falls in a changed passage. Folder files need no change; nine declared supplier gaps unchanged.",
+  "text": "a3710fb207d6c9c0",
+  "carried": {
+   "from": "50d33893e61e037dea7af9d6cb810168cf5175fe",
+   "head": "50d33893e61e037dea7af9d6cb810168cf5175fe",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
