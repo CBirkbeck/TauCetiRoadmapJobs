@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuantumFoundations~9",
+  "head": "05c97bca39fd83e801c30797110b59482bc66727",
+  "pr": 1771,
+  "folder": "QuantumFoundations",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 24 changed lines since 824bab8. R01-R04 of the previous review all repaired: vacuum cyclicity and the permutation unitaries/projections now consumed from OperatorAlgebraDynamics D8 (resolved on main at 1a19c9f, lines 163, 3468-3483, 3672-3676, 3697-3702, 4136-4146), no P.6 citation left, description counts and supplier sentence corrected. Adversarial rows computed for the §6.4 norm-continuity route, Fock irreducibility and the §6.2 sector projections. Of the seeded sample only §6.4 falls in a changed passage (no source locator in the changed sentences). Gate rerun: all checks 0, OK; depcheck 0 problems; Suggested.lean elaborates with six sorry warnings only; no change outside the folder. Description read against the head: no contradiction.",
+  "text": "ab804abc50d159c6"
+ }
+}
