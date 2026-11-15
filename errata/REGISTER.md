@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13580 mistakes recorded on the board: 7782 misprints, 3545 errors, 1780 gaps, 473 unparsed bullets.
+13584 mistakes recorded on the board: 7784 misprints, 3547 errors, 1780 gaps, 473 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -6617,9 +6617,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## dittmann_pop
 
 - **Misprint** at Lemma 5.3, Claim, p. 17: the source says a tuple avoiding the polynomial zero set has root-of-unity coordinates; it should be first choose that tuple in the residue torus; affects the proof. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at 1688a41, 2026-11-11, codex gpt-6-astra).
+- **Misprint** at Notations/Remarks 4.1(2) and proof of Theorem 4.2, p. 14: the source says the divisor set is taken over `k_a`; it should be over `k_t`; affects nothing. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at f532021, 2026-11-15, claude fable).
 - **Misprint** at Proposition 3.10, Claim 1, p. 12: the source says the divided slot has a positive epsilon term; it should be have a negative epsilon term because a=u²−u−ε; affects the proof. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at 1688a41, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at Proposition 5.1, Case 2, p. 16: the source says arithmetic composites are indexed by rank-one W_T; it should be use full geometric flags ending in a number field; affects a stated result. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at 1688a41, 2026-11-11, codex gpt-6-astra).
 - **Misprint** at Proposition 5.1, Case 2, p. 16: the source says the arithmetic composites are indexed by rank-one W_T; it should be use full geometric flags ending in a number field; affects a stated result. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at b6a9bce, 2026-11-11, codex gpt-6-astra).
+- **Misprint** at Proposition 5.1, Case 2, p. 16: the source says the composites `v ∘ w` are indexed by the rank-one family; it should be index them by the full geometric flags just defined; affects a stated result. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at f532021, 2026-11-15, claude fable).
 
 ## DKV16
 
@@ -13786,9 +13788,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Lemma 4.8, p. 9: the source says K-valued sums of the chosen z-coordinates detect L; it should be use extension-valued coordinates and test the corrected form over K_u; affects a stated result. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at 1688a41, 2026-11-11, codex gpt-6-astra).
 - **Error** at Lemma 4.8, p. 9: the source says K-valued sums of chosen z-coordinates detect L; it should be use extension-valued coordinates and test the corrected form over K_u; affects a stated result. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at 9d484c9, 2026-11-11, codex gpt-6-astra).
 - **Error** at Lemma 4.8, p. 9: the source says K-valued sums of selected elliptic coordinates detect the subfield; it should be use extension-valued coordinates and test the form over K_u; affects a stated result. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at b6a9bce, 2026-11-11, codex gpt-6-astra).
+- **Error** at Lemma 4.8, p. 9: the source says sums of the coordinate function taken in `K` detect the subfield; it should be take them in the quadratic extension `K_u` and test the form there; affects a stated result. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at f532021, 2026-11-15, claude fable).
 - **Error** at proof of Lemma 4.8, p. 10: the source says x composed with the separable endomorphism has a simple pole; it should be use z=y/x, since x has a double pole; affects the proof. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at 1688a41, 2026-11-11, codex gpt-6-astra).
 - **Error** at proof of Lemma 4.8, p. 10: the source says x composed with the separable endomorphism supplies a simple pole; it should be use z=y/x because x has a double pole; affects the proof. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at 9d484c9, 2026-11-11, codex gpt-6-astra).
 - **Error** at proof of Lemma 4.8, p. 10: the source says composing x with the separable endomorphism gives a simple pole; it should be use z=y/x since x has a double pole; affects the proof. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at b6a9bce, 2026-11-11, codex gpt-6-astra).
+- **Error** at proof of Lemma 4.8, p. 10: the source says `x` composed with a separable endomorphism has a simple pole at the point; it should be use `z = y/x`, since `x` has a double pole; affects the proof. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at f532021, 2026-11-15, claude fable).
 - **Gap** at proof of Lemma A.5, p. 14: the source says the Laurent-series passage preserves the coefficient setup at any smooth closed point; it should be justify inseparable residues using successive DVRs along a regular local flag; affects the proof. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at 9d484c9, 2026-11-11, codex gpt-6-astra).
 - **Gap** at proof of Lemma A.5, p. 14: the source says the Laurent-series passage retains coefficients at any smooth closed point; it should be justify inseparable residues through successive DVRs along a regular local flag; affects the proof. Found by LogicAndDefinabilityInNumberTheoryPartII (#13165 at b6a9bce, 2026-11-11, codex gpt-6-astra).
 
