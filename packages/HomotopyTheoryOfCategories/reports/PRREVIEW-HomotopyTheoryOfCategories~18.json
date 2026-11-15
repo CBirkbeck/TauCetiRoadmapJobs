@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HomotopyTheoryOfCategories~18",
+  "head": "8fbebd072d3cf122cabb15c4aedf24f3a8847f4d",
+  "pr": 1521,
+  "folder": "HomotopyTheoryOfCategories",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 16 changed lines since a61ddd4. Checked the new Provenance section and its References entry against LeanPool at f8b9b72 (README, NOTICE, lean-toolchain, lake-manifest, WhiteheadTheorem/Basic.lean, FactorizationSystems/Examples.lean, tree listing): versions, licences, the Whitehead statement and the 'nothing there treats' claim hold. Two P3 findings: the FactorizationSystems clause links to no target (R01), and the reuse rule names LeanPool's maintainers instead of the code's authors (R02). The previous review raised no finding. Seeded sample: none in the changed passages. Description checked against the head: true. Worker gate 0 on every check, build=0; re-run 0 on text scanners, depcheck NOT IN ORDER only against the public order; candidate-order depcheck 0 problems; lake env lean exit 0, 52 sorry warnings only; nothing changed outside the folder.",
+  "text": "433bf5ca44778f62"
+ }
+}
