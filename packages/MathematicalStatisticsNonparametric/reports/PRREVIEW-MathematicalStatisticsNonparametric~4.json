@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsNonparametric~4",
+  "head": "af2f0d770db8a3b7f0bade6f5be2a6db87b7c98d",
+  "pr": 2368,
+  "folder": "MathematicalStatisticsNonparametric",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "Full re-review of a repaired head. Previous R01-R05 all repaired. Gate: every check passed; elaboration exit 0 with 204 sorry warnings only; depcheck 245 roadmaps, 2232 edges, 0 problems. README and Suggested.lean read in full, every Check recomputed (33-row adversarial table). One P2: 5.3 attributes the L1 approximate identity for a general integrable kernel to a pinned lemma stated only for ContDiffBump mollifiers. Three P3: 8.6 does not cite main's OperatorTheory/SpectralSubspacePerturbation SSP-C16 for the eigenvector bound; limsup_power_le_envelope is also a headline name of MathematicalStatisticsAsymptotic 8.2; rank_comp_strictMono closes with one simp (padding, with rank_comp_perm). One-tactic probe: generic closes none of 204, 1 of 27 targeted. Seeded sample: all 15 sections recomputed; their locators point into commercial books the sources service could not read legally (listed under Not verifiable); 9 locators checked against Johnstone17 and KimSamworth16, all as cited. Citations into Foundations, Asymptotic, StochasticCalculus, RandomMatrices and OperatorTheory resolved at their heads or on main. Ownership against the two board packages not checked.",
+  "text": "8c41f13b05145d96"
+ }
+}
