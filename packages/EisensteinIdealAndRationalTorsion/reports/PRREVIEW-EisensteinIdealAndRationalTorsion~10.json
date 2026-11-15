@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EisensteinIdealAndRationalTorsion~10",
+  "head": "e49787cc1028f9274f69691955e0284d176eb26c",
+  "pr": 1264,
+  "folder": "EisensteinIdealAndRationalTorsion",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since e49787c. Checked the pull request's title and description (12 sentences of summary block and prose) against the head: none contradicted; previous R01 (description called the level-13 descent conditional) is repaired. Gate rerun: all scanners zero, OK (worker's run has build=0). Depcheck: 245 roadmaps, 2241 edges, 0 problems. Suggested.lean elaborates with seven sorry warnings only. Adversarial table: 6 rows with computed values (Minkowski bound 306.4158; n = 1,1,1,1,5,1,4,3 for P = 2,3,5,7,11,13,17,37). Seeded sample: no target falls in a changed passage. Overlap check and source-independence lines given; no file changed outside the folder.",
+  "text": "4253bb385a959075"
+ }
+}
