@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GanGrossPrasadUnitaryGroups~9",
+  "head": "a73dc0c9944eb48bf00e10874c994a0c3bb29891",
+  "pr": 1404,
+  "folder": "GanGrossPrasadUnitaryGroups",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since a73dc0c; this round checked the pull request's title and description against the head. Two P3 findings, both in the description only: it says the Lean states real-bodied definitions and sorried theorems (Suggested.lean has 0 declarations, 0 sorry, 0 warnings since d603998), and its summary block calls the whole split archimedean case conjectural (README 3.11 proves r=0). The folder's files need no change. Gate passes with every counter 0 and build=0; elaboration exit 0 with no diagnostics; depcheck 242 roadmaps, 2246 edges, 0 problems; resolver 0 unresolved; no overlap. No passage changed, so the seeded source sample was not re-read; the 34 declared gaps are untouched.",
+  "text": "814ffc1f49134149",
+  "carried": {
+   "from": "a73dc0c9944eb48bf00e10874c994a0c3bb29891",
+   "head": "a73dc0c9944eb48bf00e10874c994a0c3bb29891",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
