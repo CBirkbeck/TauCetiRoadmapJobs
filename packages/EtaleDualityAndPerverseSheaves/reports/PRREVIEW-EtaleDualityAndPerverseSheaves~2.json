@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EtaleDualityAndPerverseSheaves~2",
+  "head": "d1318fe7be7c14925857b24310d57c34f94ca5a0",
+  "pr": 1040,
+  "folder": "EtaleDualityAndPerverseSheaves",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 102 changed lines since d1fab8f. Previous R02 (AL.3.10.10 citation) and R03 (BBD pages, 1.4.14 parameters) repaired; R01 (backticked Lean names on 428 API bullets and Checks, none declared in Suggested.lean) not repaired and raised again as P3. The four reworded passages of sections 6.1 and 6.5 were compared with Varshavsky-LV-2007 (1.1.1-1.1.3, 2.1.1, 2.1.3, 2.2.1-2.2.2, 2.3.2-2.3.3): content unchanged, wording independent, instances computed. Title and description checked against the head: two sentences of the Validation paragraph are contradicted (P3). Gate rerun: all scanners 0, OK; depcheck 247 roadmaps, 0 problems; Suggested.lean elaborates with sorry as the only warning.",
+  "text": "19e2ff43798e1083"
+ }
+}
