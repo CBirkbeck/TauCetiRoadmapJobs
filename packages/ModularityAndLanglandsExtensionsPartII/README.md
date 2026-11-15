@@ -1432,8 +1432,8 @@ continuous character `μ : F^× \ 𝔸_F^× → ℂ^×` whose restriction to `�
 character of `F/F⁺` and whose restriction to `F_w^×` is unramified at every place `w` of `F` inert over
 `F⁺`; it fixes the `L`-embeddings (nt21 §1, the data fixed under the standard assumptions, p. 9). Prove that this gives isomorphisms `ι_v : G_n(F⁺_v) ≅ U_n(F⁺_v)` at finite places
 and the canonical `ι_w : G_n(F⁺_v) ≅ GL_n(F_w)` at split `v = w w^c`, compatible with base change to
-a totally real `L⁺/F⁺` (nt21, Notation, pp. 8–9; §1, standard assumptions and the pure inner twist,
-pp. 9–10).
+a totally real `L⁺/F⁺` (nt21, Notation, pp. 7–8; §1, standard assumptions and the pure inner twist,
+pp. 8–10).
 
 *Proof sketch.* `U_n`, its pinning and the Levi description are block-diagonal computations. The
 class of `u` is trivial in `H¹(F⁺_v, U_n)` at finite places (Hilbert 90 and the computation of the
@@ -3125,7 +3125,7 @@ relative dimension `3`, and `φ_l` a Frobenius lift. Let `I_l ⊂ R_l` be the pr
 by the discriminant of the characteristic polynomial of `Sym^{n−1} r_l^{univ}(φ_l)` (Mathlib
 `Polynomial.discr`). Prove that a `ℚ̄_p`-point `f` of `R_l` has eigenvalues `α_l`, `β_l` of
 `ρ_f(φ_l)` with `(α_l/β_l)^i = 1` for some `1 ≤ i ≤ n − 1` exactly when `f(I_l) = 0`, and that
-`dim R_l/I_l < dim R_l` (nt21 Lemma 8.4 and proof, p. 95).
+`dim R_l/I_l < dim R_l` (nt21 Lemma 8.4 and proof, pp. 95–96).
 
 *Proof sketch.* The discriminant of the characteristic polynomial of `Sym^{n−1}` vanishes exactly
 when two monomials `α^a β^b` (`a + b = n − 1`) coincide, that is when `(α/β)^i = 1` for some
@@ -4932,10 +4932,20 @@ the absolute Galois group of the CM extension (th24 proof of Theorem 7.6, pp. 46
   (`11/2 < p < 11`), so the choice of `p` does not avoid this case.
 - The cyclotomic hypothesis of gap:auxiliary-place-reducible-lifting holds in this application:
   `r̄(G_{F(ζ_p)})` has index at most `p − 1 < 2p` in `r̄(G_F)`, so it contains a conjugate of
-  `SL_2(𝔽_{p^a})` and lies between `SL_2(𝔽_{p^b})` and `k^× SL_2(𝔽_{p^b})` for some `b ≥ a`
-  (ArithmeticGaloisRepresentations §§4.4, 7.9; th24 Lemma 7.3(3) and proof, pp. 42–43). A quotient of
-  `p`-power order kills the perfect group `SL_2(𝔽_{p^b})` and is then a quotient of a subgroup of
-  `k^×/{±1}`, of order prime to `p`, hence trivial. The image of `(Sym^{p+r−1} r̄)^{ss}` on
+  `SL_2(𝔽_{p^a})`; after conjugation its projective image is `PSL_2(𝔽_{p^b})` or `PGL_2(𝔽_{p^b})` for
+  some `b ≥ a`, and it lies between `SL_2(𝔽_{p^b})` and `k^× GL_2(𝔽_{p^b})` for a finite field
+  `k ⊇ 𝔽_{p^b}` (ArithmeticGaloisRepresentations §§4.4, 7.9; th24 Lemma 7.3(3) and proof, pp. 42–43,
+  whose proof writes the upper bound as `k^× SL_2(𝔽_{p^b})`, valid only in the `PSL_2` case). The
+  `PGL_2` case occurs: in the setting of the preceding Check with `det r̄ = ε̄^{−1}χ̄`, `χ̄` quadratic
+  and non-trivial on `G_{F(ζ_7)}`, the group `r̄(G_{F(ζ_7)})` is `{g ∈ GL_2(𝔽_{7^a}) : det g = ±1}`, of
+  projective image `PGL_2(𝔽_{7^a})` of order `q(q² − 1)`, `q = 7^a`; a copy of `SL_2(𝔽_{7^b})` inside it
+  forces `b ≤ a`, and the projective image of `k^× SL_2(𝔽_{7^b})` has order
+  `7^b(7^{2b} − 1)/2 < q(q² − 1)`, so no sandwich with `k^× SL_2` exists. A quotient of `p`-power order
+  kills the perfect group `SL_2(𝔽_{p^b})` and is then a quotient of a subgroup of
+  `k^× GL_2(𝔽_{p^b})/SL_2(𝔽_{p^b})`, an abelian group (a quotient of
+  `k^× × GL_2(𝔽_{p^b})/SL_2(𝔽_{p^b}) ≅ k^× × 𝔽_{p^b}^×`) of order dividing `(|k| − 1)(p^b − 1)`, prime
+  to `p`, hence trivial; in the `PGL_2` instance above the quotient by `SL_2(𝔽_{7^a})` is `{±1}`, of
+  order `2`, prime to `7`. The image of `(Sym^{p+r−1} r̄)^{ss}` on
   `G_{F(ζ_p)}` is a quotient of this group, and a twist by a character changes the image only by
   scalars, so the argument applies unchanged over the CM extension.
 
