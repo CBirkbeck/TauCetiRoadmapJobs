@@ -2,7 +2,7 @@
  "roadmap": "SurfaceGroupCharacterVarieties",
  "title": "Surface group character varieties",
  "parent": null,
- "summary": "The action of TeichmullerGeometry's outer automorphism group on conjugacy classes of homomorphisms; the punctured-surface mapping class group completed by the marked-point comparison, the pure group and the pure Birman sequence; the outer action Psi of Mod_{g,n} on pi_1; representation schemes of finitely generated groups; real reductive data, the real-form bridge and the real Kempf-Ness theorem; the six characterizations of reductive representations; and the character variety X(Gamma, G^R) of a finitely generated group, Hausdorff, locally compact and second countable, homeomorphic to minimal vectors modulo K, equal for complex groups to the complex points of Hom(Gamma,G)//G, with Out(Gamma) and Mod_{g,n} acting by homeomorphisms.",
+ "summary": "The action of TeichmullerGeometry's outer automorphism group on conjugacy classes of homomorphisms; the punctured-surface mapping class group completed by ambient isotopy classes of an arbitrary space, the marked-point comparison, the permutation of the punctures underlying MappingClassGroupsAndCanonicalRepresentations' pure group and the standard model of a closed surface; the outer action Psi of Mod_{g,n} on pi_1; representation schemes of finitely generated groups; real reductive data, the real-form bridge and the real Kempf-Ness theorem; the six characterizations of reductive representations; and the character variety X(Gamma, G^R) of a finitely generated group, Hausdorff, locally compact and second countable, homeomorphic to minimal vectors modulo K, equal for complex groups to the complex points of Hom(Gamma,G)//G, with Out(Gamma) and Mod_{g,n} acting by homeomorphisms.",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -168,7 +168,7 @@
      "name": "Homeomorph.isotopyClasses",
      "statement": "Homeo₀(X) := {Φ.finalHomeomorph | Φ : TauCeti.AmbientIsotopy X} is a normal subgroup of X ≃ₜ X; Mod^±(X) := (X ≃ₜ X) ⧸ Homeo₀(X), differing from TeichmullerGeometry §0.0h's MappingClassGroupFull X by requiring the level-preserving total map of an isotopy to be a homeomorphism; the identity of X ≃ₜ X induces a surjection Mod^±(X) → MappingClassGroupFull X, an isomorphism for X compact, connected, Hausdorff and charted on a finite-dimensional real normed space, and for a closed surface Σ_g, composed with TeichmullerGeometry §0.0h's forgetful isomorphism, an identification with GeometricTopology Layer 1.7.2's Mod(F) for a smooth structure F on Σ_g; for X a topological manifold without boundary charted on a finite-dimensional real normed space, every homotopy through homeomorphisms from the identity is an ambient isotopy (invariance of domain); for locally compact Hausdorff X, with the topology induced by f ↦ (f, f⁻¹) into C(X,X)² (compact-open), X ≃ₜ X is a topological group and Homeo₀(X) is the identity path component.",
      "hypotheses": [
-      "X a topological space; locally compact Hausdorff for the path-component clause; compact, connected, Hausdorff and charted on a finite-dimensional real normed space for the isomorphism with MappingClassGroupFull X; a topological manifold without boundary charted on a finite-dimensional real normed space for the homotopy-to-ambient-isotopy clause"
+      "X a topological space; locally compact Hausdorff for the path-component clause; compact, connected, Hausdorff and charted on a finite-dimensional real normed space for the isomorphism with MappingClassGroupFull X; a topological manifold without boundary charted on a finite-dimensional real normed space for the homotopy-to-ambient-isotopy clause; a connected oriented surface for the index-two clause"
      ],
      "locator": {
       "source": "FarbMargalit2012",
@@ -234,6 +234,11 @@
        "name": "Homeomorph.isotopyClasses.toMappingClassGroupFull",
        "role": "compatibility",
        "statement": "The identity of X ≃ₜ X induces a surjective homomorphism Mod^±(X) → MappingClassGroupFull X (TauCeti.AmbientIsotopic.isotopic), bijective for compact connected Hausdorff X charted on a finite-dimensional real normed space (TauCeti.isotopic_iff_ambientIsotopic), in particular for closed surfaces charted on the boundaryless model by SurfaceGroup.closedSurface_boundarylessChart. Composed with TeichmullerGeometry §0.0h's forgetful isomorphism it identifies Mod^±(Σ_g) with GeometricTopology Layer 1.7.2's Mod(F) for that smooth structure F on Σ_g, the owner of the mapping class groups of compact surfaces."
+      },
+      {
+       "name": "Homeomorph.isotopyClasses.orientationPreserving_index_le_two",
+       "role": "compatibility",
+       "statement": "For a connected oriented surface X, the orientation-preserving homeomorphisms contain Homeo₀(X) and their image Mod(X) has index at most two in Mod^±(X)."
       }
      ],
      "tests": [
@@ -251,6 +256,11 @@
        "name": "mod_circle",
        "kind": "computation",
        "statement": "Mod^±(S¹) has two elements (degree is an isotopy invariant, rotations are isotopic to id)."
+      },
+      {
+       "name": "mod_disjoint_spheres",
+       "kind": "non-example",
+       "statement": "Connectedness is needed for the index-two bullet: for X = S² ⊔ S², Mod^±(X) = (Mod^±(S²) × Mod^±(S²)) ⋊ ℤ/2 has order 8 and its orientation-preserving classes (identity, swap) have index 4; for S² the index is 2."
       }
      ]
     },
@@ -302,8 +312,8 @@
     {
      "id": "2.3",
      "kind": "theorem",
-     "name": "MappingClass.permutation_surjective",
-     "statement": "σ : Mod_{g,n} → Sym(P) is a well-defined surjective homomorphism; PMod_{g,n} := ker σ has index n!.",
+     "name": "MappingClass.puncturePermutation",
+     "statement": "[h] ↦ h̄|_P, with h̄ the extension of 2.2, is a well-defined homomorphism σ : Mod_{g,n} → Sym(P) (h̄ preserves P, extension is multiplicative by uniqueness, extended ambient isotopies fix P pointwise), and σ is the permutation action on the punctures defining MappingClassGroupsAndCanonicalRepresentations §0.2's PMod(g, 0, n): h carries U ∖ {p} onto h̄(U) ∖ {h̄(p)}, sending the end at p to the end at h̄(p). Hence PMod_{g,n} = ker σ, the classes whose extensions fix P pointwise; surjectivity of σ and the index n! are MappingClassGroupsAndCanonicalRepresentations §0.2.",
      "hypotheses": [
       "Σ_g closed connected oriented surface",
       "P ⊆ Σ_g finite, |P| = n",
@@ -316,29 +326,29 @@
      "prerequisites": [
       "target:2.2",
       "roadmap:MordellLawrenceVenkatesh §5.9",
-      "roadmap:MordellLawrenceVenkatesh §5.17"
+      "roadmap:MappingClassGroupsAndCanonicalRepresentations §0.2"
      ],
      "api": [],
      "tests": [
       {
        "name": "index_small_n",
        "kind": "degenerate",
-       "statement": "n = 0 and n = 1 give index 1."
+       "statement": "n = 0: Sym(∅) trivial, PMod_{g,0} = Mod_{g,0}, index 1 = 0!; n = 1: Sym(P) trivial, index 1 = 1!."
       },
       {
        "name": "pants",
        "kind": "computation",
-       "statement": "(0,3): Mod ≅ S₃, PMod trivial, index 6 = 3!."
+       "statement": "(0,3): Mod ≅ S₃ and PMod trivial (MordellLawrenceVenkatesh §5.9), so σ is an isomorphism onto Sym(P), index 6 = 3!; identifying Mod with PMod contradicts the index."
       },
       {
        "name": "annulus",
        "kind": "computation",
-       "statement": "(0,2): Mod has order 2, PMod trivial, index 2 = 2!."
+       "statement": "(0,2): the end-swapping map (θ, s) ↦ (−θ, −s) extends to the rotation by π exchanging N and S, so σ sends its class to the transposition of P; Mod has order 2, σ is an isomorphism, PMod trivial, index 2 = 2!."
       }
      ]
     },
     {
-     "id": "2.4a",
+     "id": "2.4",
      "kind": "theorem",
      "name": "SurfaceGroup.homeomorphStandardModel",
      "statement": "For every g ≥ 0, Σ_g (with its half-plane atlas of empty boundary) is homeomorphic to TeichmullerGeometry §0.0f's StandardSurface.model of StandardSurface.orientable g 0, the realization schemaRealization of its canonical word; hence Surface.IsOrientable Σ_g and Surface.genus Σ_g = g, so the genus of MordellLawrenceVenkatesh §5.4 and that of TeichmullerGeometry §0.0f agree on Σ_g. Route: classification_of_surfaces gives one standard model S; on the cell structure of the realization (one open disc, one edge per class of sides, one vertex per vertex class) the cellular boundary of the disc is the sum of the letters with their exponents, so H₂(S; ℤ) = 0 unless S = orientable g' 0, which has H₂ = ℤ and H₁ = ℤ^{2g'}; MordellLawrenceVenkatesh §§5.5–5.6 give H₂(Σ_g; ℤ) = ℤ[Σ_g] and H₁(Σ_g; ℤ) = ℤ^{2g}, so S = orientable g 0; StandardSurface.isSurface_model, invariance of orientability and StandardSurface.homeomorph_unique give the predicates.",
@@ -385,89 +395,7 @@
      ]
     },
     {
-     "id": "2.4",
-     "kind": "theorem",
-     "name": "SurfaceGroup.fundamentalGroupEquiv",
-     "statement": "For g, n ≥ 0 and an enumeration of P there is S⁺(g,n) ≃* π₁(Σ_g ∖ P, x) carrying p_j to a based loop around the j-th puncture with the induced orientation; for n ≥ 1 the group is free of rank 2g + n − 1.",
-     "hypotheses": [
-      "Σ_g closed connected oriented surface",
-      "P ⊆ Σ_g finite with |P| = n",
-      "x ∈ Σ_g ∖ P"
-     ],
-     "locator": {
-      "source": "FarbMargalit2012",
-      "where": "Ch. 1, §1.1"
-     },
-     "prerequisites": [
-      "target:2.4a",
-      "roadmap:MordellLawrenceVenkatesh §5.17",
-      "roadmap:MordellLawrenceVenkatesh §5.23",
-      "roadmap:FreeGroupsAndLimitGroups §6.1",
-      "roadmap:FreeGroupsAndLimitGroups §6.2",
-      "roadmap:AlgebraicTopology Stage 1",
-      "roadmap:TeichmullerGeometry §0.0f",
-      "roadmap:TeichmullerGeometry §4.3"
-     ],
-     "api": [],
-     "tests": [
-      {
-       "name": "torus",
-       "kind": "computation",
-       "statement": "(1,0): ℤ²."
-      },
-      {
-       "name": "pants_free",
-       "kind": "computation",
-       "statement": "(0,3): free on p₁, p₂ with p₃ = (p₁p₂)⁻¹; three distinct peripheral classes."
-      },
-      {
-       "name": "sphere_disc",
-       "kind": "degenerate",
-       "statement": "(0,0) and (0,1): trivial groups; dropping peripheral generators would give ℤ² instead of F₂ for (1,1)."
-      }
-     ]
-    },
-    {
      "id": "2.5",
-     "kind": "theorem",
-     "name": "MappingClass.pureBirman_exact",
-     "statement": "1 → π₁(Σ_{g,n}, x) → PMod(Σ_g, P ∪ {x}) → PMod(Σ_g, P) → 1 is exact, with Push and the forgetful map.",
-     "hypotheses": [
-      "2g − 2 + n > 0",
-      "x ∈ Σ_g ∖ P"
-     ],
-     "locator": {
-      "source": "LandesmanLitt2024",
-      "where": "lines 503–515, Lemma 2.0.1 (bottom row)"
-     },
-     "prerequisites": [
-      "target:2.2",
-      "target:2.3",
-      "roadmap:MordellLawrenceVenkatesh §5.9",
-      "roadmap:MordellLawrenceVenkatesh §5.19",
-      "roadmap:MordellLawrenceVenkatesh §5.20"
-     ],
-     "api": [],
-     "tests": [
-      {
-       "name": "pants",
-       "kind": "computation",
-       "statement": "(0,3): PMod_{0,4} ≅ F₂."
-      },
-      {
-       "name": "punctured_torus",
-       "kind": "computation",
-       "statement": "(1,1): 1 → F₂ → PMod_{1,2} → SL₂(ℤ) → 1."
-      },
-      {
-       "name": "euler_zero",
-       "kind": "non-example",
-       "statement": "(1,0) and (0,2): injectivity fails (Push trivial on the torus; π₁ = ℤ for the annulus with PMod_{0,3} trivial)."
-      }
-     ]
-    },
-    {
-     "id": "2.6",
      "kind": "theorem",
      "name": "MappingClass.congrOfPair",
      "statement": "An orientation-preserving homeomorphism of pairs e : (Σ_g,P) → (Σ'_g,P') induces Mod_{g,n} ≃* Mod'_{g,n}, [f] ↦ [efe⁻¹], intertwining permutation maps; isotopic e induce the same isomorphism and different e differ by an inner automorphism; any two such pairs are related by some e (Σ_g ∖ P and Σ'_g ∖ P' have the same type (g, 0, n), so MordellLawrenceVenkatesh §5.4 gives an orientation-preserving homeomorphism, extended over the punctures as in 2.2).",
@@ -675,7 +603,7 @@
      "id": "3.4",
      "kind": "theorem",
      "name": "MappingClass.outerAction_closed",
-     "statement": "For Σ = Σ_g closed connected oriented of genus g ≥ 1 and x ∈ Σ, Ψ_x corresponds under 2.1's isomorphism Mod^±(Σ) ≃* MappingClassGroupFull Σ to TeichmullerGeometry §5.4's dehn_nielsen_baer, hence is an isomorphism Mod^±(Σ) ≃* Out(π₁(Σ,x)); for g = 0 it is the map from the group of order two (TeichmullerGeometry §5.4a) to the trivial group. For g ≥ 1, Out(π₁(Σ,x)) acts on H₂(π₁(Σ,x); ℤ) (groupHomology of the trivial module, inner automorphisms acting trivially), H₂(π₁(Σ,x); ℤ) ≅ H₂(Σ; ℤ) ≅ ℤ by asphericity, and Ψ_x maps Mod(Σ) onto the index-two subgroup acting trivially on it, which, transported along TeichmullerGeometry §4.2's ι, is the group TeichmullerGeometry §5.4 writes Out⁺(Π), described here by the action on H₂; for g = 0 Out(π₁) and the image of Mod(Σ) are trivial. Sign step: f_*[Σ] = ε[Σ] and î(f_* u, f_* v) = ε î(u, v); invariance of î (MordellLawrenceVenkatesh §5.5) and its perfectness on H₁(Σ; ℤ) ≅ ℤ^{2g} ≠ 0 (MordellLawrenceVenkatesh §§5.5–5.6) give ε = 1 for orientation-preserving f; the reflection r induced by z ↦ e^{2πi/g} z̄ on the realization of the canonical word (2.4a) has ε = −1. The hypotheses Surface.IsOrientable Σ and 1 ≤ Surface.genus Σ of dehn_nielsen_baer come from 2.4a.",
+     "statement": "For Σ = Σ_g closed connected oriented of genus g ≥ 1 and x ∈ Σ, Ψ_x corresponds under 2.1's isomorphism Mod^±(Σ) ≃* MappingClassGroupFull Σ to TeichmullerGeometry §5.4's dehn_nielsen_baer, hence is an isomorphism Mod^±(Σ) ≃* Out(π₁(Σ,x)); for g = 0 it is the map from the group of order two (TeichmullerGeometry §5.4a) to the trivial group. For g ≥ 1, Out(π₁(Σ,x)) acts on H₂(π₁(Σ,x); ℤ) (groupHomology of the trivial module, inner automorphisms acting trivially), H₂(π₁(Σ,x); ℤ) ≅ H₂(Σ; ℤ) ≅ ℤ by asphericity, and Ψ_x maps Mod(Σ) onto the index-two subgroup acting trivially on it, which, transported along TeichmullerGeometry §4.2's ι, is the group TeichmullerGeometry §5.4 writes Out⁺(Π), described here by the action on H₂; for g = 0 Out(π₁) and the image of Mod(Σ) are trivial. Sign step: f_*[Σ] = ε[Σ] and î(f_* u, f_* v) = ε î(u, v); invariance of î (MordellLawrenceVenkatesh §5.5) and its perfectness on H₁(Σ; ℤ) ≅ ℤ^{2g} ≠ 0 (MordellLawrenceVenkatesh §§5.5–5.6) give ε = 1 for orientation-preserving f; the reflection r induced by z ↦ e^{2πi/g} z̄ on the realization of the canonical word (2.4) has ε = −1. The hypotheses Surface.IsOrientable Σ and 1 ≤ Surface.genus Σ of dehn_nielsen_baer come from 2.4.",
      "hypotheses": [
       "Σ = Σ_g a closed connected oriented surface",
       "g ≥ 1 for the isomorphism and the H₂ clause"
@@ -686,7 +614,7 @@
      },
      "prerequisites": [
       "target:2.1",
-      "target:2.4a",
+      "target:2.4",
       "target:3.2",
       "target:3.3",
       "roadmap:TeichmullerGeometry §0.0b",
@@ -733,7 +661,7 @@
      "id": "3.5",
      "kind": "theorem",
      "name": "MappingClass.actionHomConj",
-     "statement": "For every group H, the action of Mod^±_{g,n} on Rep(π₁(Σ_{g,n},x), H) is defined as Ψ_x followed by 1.3, [f]·[ρ] = [ρ ∘ Ψ_x[f]⁻¹]; for H = Sym(d), on transitive classes and on Mod_{g,n}, it is MordellLawrenceVenkatesh §5.9's action [p] ↦ [f ∘ p] on isomorphism classes of connected d-fold coverings under the monodromy correspondence (TauCeti.ConnectedCoveringSpace.monodromyEquivalence); it is compatible with basepoint change and H →* H'; orbits are finite under a finite-index subgroup (e.g. PMod_{g,n}) iff under Mod^±_{g,n}. Non-descent: for 2g − 2 + n > 0 and S = Σ_{g,n} marked at x, the based action [f]·ρ = ρ ∘ (f_const)⁻¹ of Mod(S*) on Hom(π₁(S,x), H) makes Hom(π₁(S,x), H) → Rep(π₁(S,x), H) equivariant for Mod(S*) acting on Rep through Forget, and it factors through Forget iff every homomorphism π₁(S,x) → H has commutative image (ker Forget = Push(π₁(S,x)), Push(α) acting by ρ ↦ MulAut.conj (ρ[α])⁻¹ ∘ ρ by 1.3 and MordellLawrenceVenkatesh §5.19).",
+     "statement": "For every group H, the action of Mod^±_{g,n} on Rep(π₁(Σ_{g,n},x), H) is defined as Ψ_x followed by 1.3, [f]·[ρ] = [ρ ∘ Ψ_x[f]⁻¹]; for H = Sym(d), on transitive classes and on Mod_{g,n}, it is MordellLawrenceVenkatesh §5.9's action [p] ↦ [f ∘ p] on isomorphism classes of connected d-fold coverings under the monodromy correspondence (TauCeti.ConnectedCoveringSpace.monodromyEquivalence); it is compatible with basepoint change and H →* H'; orbits are finite under a finite-index subgroup (e.g. PMod_{g,n}, of index n! by MappingClassGroupsAndCanonicalRepresentations §0.2 and 2.3) iff under Mod^±_{g,n}. Non-descent: for 2g − 2 + n > 0 and S = Σ_{g,n} marked at x, the based action [f]·ρ = ρ ∘ (f_const)⁻¹ of Mod(S*) on Hom(π₁(S,x), H) makes Hom(π₁(S,x), H) → Rep(π₁(S,x), H) equivariant for Mod(S*) acting on Rep through Forget, and it factors through Forget iff every homomorphism π₁(S,x) → H has commutative image (ker Forget = Push(π₁(S,x)), Push(α) acting by ρ ↦ MulAut.conj (ρ[α])⁻¹ ∘ ρ by 1.3 and MordellLawrenceVenkatesh §5.19).",
      "hypotheses": [
       "H an arbitrary group",
       "2g − 2 + n > 0 for the non-descent clause"
@@ -745,6 +673,7 @@
      "prerequisites": [
       "target:1.3",
       "target:2.3",
+      "roadmap:MappingClassGroupsAndCanonicalRepresentations §0.2",
       "target:3.1",
       "target:3.3",
       "roadmap:MordellLawrenceVenkatesh §5.9",
@@ -902,7 +831,7 @@
      "id": "4.3",
      "kind": "theorem",
      "name": "RepresentationScheme.surfaceGroupEquiv",
-     "statement": "Hom(π₁(Σ_g,x), G) ≅ {(A_i,B_i) ∈ G^{2g} : ∏[A_i,B_i] = 1} and, for n ≥ 1, Hom(π₁(Σ_{g,n},x), G) ≅ G^{2g+n−1}, equivariantly for conjugation, with peripheral evaluations from the relator.",
+     "statement": "Through S⁺(g, n) ≃* π₁(Σ_g ∖ P, x), given by MappingClassGroupsAndCanonicalRepresentations §0.1 with b = 0 and the inversion of the handle generators, Hom(π₁(Σ_g,x), G) ≅ {(A_i,B_i) ∈ G^{2g} : ∏[A_i,B_i] = 1} and, for n ≥ 1, Hom(π₁(Σ_{g,n},x), G) ≅ G^{2g+n−1}, equivariantly for conjugation, with peripheral evaluations from the relator.",
      "hypotheses": [
       "g, n ≥ 0"
      ],
@@ -911,7 +840,7 @@
       "where": "lines 2706–2708"
      },
      "prerequisites": [
-      "target:2.4",
+      "roadmap:MappingClassGroupsAndCanonicalRepresentations §0.1",
       "target:4.1",
       "roadmap:FreeGroupsAndLimitGroups §6.1",
       "roadmap:FreeGroupsAndLimitGroups §6.2"
@@ -1496,10 +1425,10 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "CharacterVariety.affineQuotient",
-     "statement": "Over a field of characteristic zero, Hom(Γ,G)//G := Spec O(Hom(Γ,G))^G is a closed subscheme of G^S//G, of finite type, with the universal property; over an algebraically closed field points are closed orbits and points have the same image iff orbit closures meet. For k = ℂ, 𝒳(Γ,G(ℂ)) ≅ (Hom(Γ,G)//G)(ℂ) for the classical topology, and the quotient map is the universal Hausdorff quotient of Hom(Γ,G(ℂ))/G(ℂ).",
+     "statement": "For a field k, connected reductive G over k and Γ with finite generating family s : S → Γ, Hom(Γ,G)//G := Spec O(Hom(Γ,G))^G (coaction invariants). By LanglandsParameterStacks §2.2 (affine schemes of finite type, reducible and nonreduced included) it is of finite type, invariant closed subsets have closed and separated images, and each geometric fibre has a unique closed orbit. Invariant morphisms to affine k-schemes factor uniquely; over algebraically closed k the quotient map is surjective on k-points, k-points ↔ closed G(k)-orbits, and two points have the same image iff orbit closures meet. In characteristic zero O(G^S)^G → O(Hom(Γ,G))^G is surjective, so Hom(Γ,G)//G → G^S//G is a closed immersion. For k = ℂ, 𝒳(Γ,G(ℂ)) ≅ (Hom(Γ,G)//G)(ℂ) for the classical topology, and the quotient map is the universal Hausdorff quotient of Hom(Γ,G(ℂ))/G(ℂ).",
      "hypotheses": [
-      "characteristic zero",
-      "G connected reductive",
+      "k a field; characteristic zero for the closed-immersion clause; k = ℂ for the complex comparison",
+      "G connected reductive over k",
       "Γ finitely generated"
      ],
      "locator": {
@@ -1513,7 +1442,9 @@
       "target:5.4",
       "target:6.7",
       "target:7.1",
+      "roadmap:LanglandsParameterStacks §2.2",
       "roadmap:ArithmeticGaloisRepresentations §1.11",
+      "roadmap:ReductiveGroups Layer 3A",
       "roadmap:ReductiveGroups Layer 6",
       "tauceti:TauCeti.Coalgebra.IsLinearlyReductive",
       "tauceti:TauCeti.Comodule.Hom.fixedMap_surjective_of_isLinearlyReductive",
@@ -1532,9 +1463,14 @@
        "statement": "Γ = F₂, G = SL₂: (Hom//G)(ℂ) ≅ ℂ³ via (tr a, tr b, tr ab)."
       },
       {
-       "name": "char_p",
+       "name": "nonreduced_char_two",
+       "kind": "computation",
+       "statement": "Γ = ℤ/2, G = 𝔾_m over 𝔽₂: Hom = Spec 𝔽₂[t]/((t − 1)²), conjugation trivial, Hom//G = Hom, finite type with one closed orbit (LanglandsParameterStacks §2.2; AGR §1.11's integral case does not apply); 𝔽₂[t^{±1}] → 𝔽₂[t]/((t − 1)²) is surjective, 𝔾_m being linearly reductive."
+      },
+      {
+       "name": "char_p_linear_reductivity",
        "kind": "non-example",
-       "statement": "In characteristic p invariants of a closed invariant subscheme need not lift (ArithmeticGaloisRepresentations §1.11's C₂ example)."
+       "statement": "The closed-immersion clause uses linear reductivity: C₂ over 𝔽₂ swapping the coordinates of 𝔸² has invariants 𝔽₂[x + y, xy], restricting to 𝔽₂[x²] on the invariant line Y = {x = y}, while O(Y)^{C₂} = 𝔽₂[x]; over ℚ averaging gives invariant lifts."
       }
      ]
     },
@@ -1666,10 +1602,9 @@
     "§5.17",
     "§5.19",
     "§5.20",
-    "§5.22",
-    "§5.23"
+    "§5.22"
    ],
-   "what": "Surfaces with punctures, classification by type (g, b, n) and the genus, the fundamental class, duality and the invariant intersection form, H₁ of a surface of given type, Mod(S) and its action through Out(pi_1 S) on isomorphism classes of finite coverings, [p] ↦ [f ∘ p], Mod(S*), Forget, asphericity, the evaluation fibration of Homeo⁺(S, ∂S) with the compact-open topology (its paths are the isotopies of §5.9), Push, the Birman exact sequence, surjectivity of the symplectic representation for g >= 1, the once-punctured free basis for g >= 1."
+   "what": "Surfaces with punctures, classification by type (g, b, n) and the genus, the fundamental class, duality and the invariant intersection form, H₁ of a surface of given type, Mod(S) and its action through Out(pi_1 S) on isomorphism classes of finite coverings, [p] ↦ [f ∘ p], Mod(S*), Forget, asphericity, the evaluation fibration of Homeo⁺(S, ∂S) with the compact-open topology (its paths are the isotopies of §5.9), Push, the Birman exact sequence, surjectivity of the symplectic representation for g >= 1."
   },
   {
    "roadmap": "TeichmullerGeometry",
@@ -1696,6 +1631,15 @@
    "what": "The mapping class group Mod(F) of a compact smooth surface, its single owner; for closed F identified with MappingClassGroupFull F by TeichmullerGeometry §0.0h."
   },
   {
+   "roadmap": "MappingClassGroupsAndCanonicalRepresentations",
+   "sections": [
+    "§0.1",
+    "§0.2",
+    "§0.3"
+   ],
+   "what": "Used with b = 0: the isomorphism surfaceGroup g (b + p) ≃* π₁(Σ_{g,b,p}, x) with peripheral loops around the punctures, surfaceGroup g n being FreeGroupsAndLimitGroups' S⁺(g, n) transported along the inversion of the handle generators, and freeness for b + p ≥ 1 (§0.1); PMod(g, b, p), the kernel of the permutation action on the punctures, of index p! with every permutation realized, and the outer action of PMod(g, b, p) (§0.2); the pure Birman exact sequence for χ < 0 (§0.3)."
+  },
+  {
    "roadmap": "FreeGroupsAndLimitGroups",
    "sections": [
     "§6.1",
@@ -1706,12 +1650,10 @@
   {
    "roadmap": "AlgebraicTopology",
    "sections": [
-    "Stage 1 item 4",
-    "Stage 1 item 5",
     "Stage 4 item 2",
     "Stage 4 item 3"
    ],
-   "what": "Based van Kampen and the free fundamental group of a wedge of circles; the cellular differential and the natural comparison of cellular with singular homology."
+   "what": "The cellular differential and the natural comparison of cellular with singular homology."
   },
   {
    "roadmap": "ClassifyingSpaces",
@@ -1759,6 +1701,13 @@
    "what": "Scalar extension of semisimplicity over perfect fields; affine reductive quotients of integral affine varieties; G-complete reducibility, the GL(V) comparison, the closed-tuple criterion and the cocharacter limit into the closed orbit."
   },
   {
+   "roadmap": "LanglandsParameterStacks",
+   "sections": [
+    "§2.2"
+   ],
+   "what": "Reductive quotients of arbitrary affine schemes of finite type over a field by a connected reductive group, reducible and nonreduced ones included: finitely generated invariants, closed and separated images of invariant closed subsets, a unique closed orbit in every geometric fibre, universal submersiveness; used for Hom(Γ, G)//G (7.2)."
+  },
+  {
    "roadmap": "ArithmeticLocallySymmetricSpaces",
    "sections": [
     "§ALS.F.1",
@@ -1793,10 +1742,6 @@
   }
  ],
  "consumers": [
-  {
-   "roadmap": "MappingClassGroupsAndCanonicalRepresentations",
-   "what": "The Mod_{g,n}-action on conjugacy classes and PMod/Mod finiteness (3.5), the pure group and pure Birman sequence (2.3, 2.5), free bases of punctured surface groups (2.4), semisimple classes as points of X(pi_1, GL_r(C)) and Hom//GL_r (7.2, 7.4)."
-  },
   {
    "roadmap": "GeometricTopologyPartII",
    "what": "A GeometricTopology Part II on Culler-Shalen theory consumes the representation scheme (4.1) and the affine quotient (7.2) for 3-manifold groups."

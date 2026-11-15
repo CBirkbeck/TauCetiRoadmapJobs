@@ -122,7 +122,7 @@ url = "https://doi.org/10.1016/0001-8708(84)90040-9"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["References: background for the space Hom(π, G)/G; no target rests on it"]
+cited_for = ["7.1: background for the topology of Hom(π, G)/G for a surface group π; no proof step rests on it"]
 
 [[source]]
 id = "BohmLafuente2021"
