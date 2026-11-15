@@ -1,0 +1,30 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MixedHodgeModulesAndIrregularHodgeTheory~5",
+  "head": "55c249b8c9988c4faf3547a13151e3a320fe10c3",
+  "pr": 2279,
+  "folder": "MixedHodgeModulesAndIrregularHodgeTheory",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 58 changed lines since f23e693. Checked: every changed README passage (Summary, Scope, Conventions, gap:regular-holonomic-stability, 1.5, 2.3, 2.4, 4.1, 4.3, 4.6, 5.1, 6.1, 6.3, 7.4, References) and the two added docstring bullets of Suggested.lean; 11 source locators against Sab10, KS, Sai88, Sai90, Kash84, MT; seeded sample where it falls in the change (2.3, 2.4, 4.3, Scope on 1.2/1.3); new citations FormalConnectionsOpers F6.2, EtaleDualityAndPerverseSheaves 3.5 and 5.9, SpringerResolutionAndCharacteristicCycles 9.1 and 9.2 resolved at their open heads; library claims on associated graded rings checked at the pins. Gate passes (all scanners 0), depcheck 0 problems, Suggested.lean elaborates with the single sorry warning. One P3 finding: the pull request description still says Hodge modules live on smooth quasi-projective varieties, which this head contradicts. D01 stands (deferred). No previous finding to carry.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The declared gaps and the README's supplier contracts disagree",
+    "where": "board plan.json `gaps` list must declare two README gaps and narrow one",
+    "raised": "PRREVIEW-MixedHodgeModulesAndIrregularHodgeTheory~1"
+   }
+  ],
+  "text": "18369e2a34ff3bec",
+  "carried": {
+   "from": "55c249b8c9988c4faf3547a13151e3a320fe10c3",
+   "head": "55c249b8c9988c4faf3547a13151e3a320fe10c3",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
