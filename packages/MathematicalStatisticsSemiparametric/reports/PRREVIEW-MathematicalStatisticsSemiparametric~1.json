@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsSemiparametric~1",
+  "head": "b1cb157a0b4a6b5429f637a40bddeb692bafdd33",
+  "pr": 2378,
+  "folder": "MathematicalStatisticsSemiparametric",
+  "date": "2026-11-15",
+  "findings": 12,
+  "blocking": 3,
+  "notes": "Full review. Gate passed (all checks 0, build OK); depcheck 245 roadmaps, 2229 edges, 0 problems. Suggested.lean elaborates with 52 sorry warnings only. Adversarial pass computed over all 52 theorems and the definitions (27 table rows); no false statement found. Blocking: variance_bind is proved at the pinned Tau Ceti (Kernel.variance_comp, Moments/Mixture.lean:137); 2.3 re-plans the LAN theorem of MathematicalStatisticsAsymptotic 7.3; two statable headlines (Bayesian ignorability 6.2, missing-mean efficient influence function 6.4) absent from Suggested.lean and the docstring names none. P3: free-operator headlines in 7.4, padding (mem_meanZeroL2_iff, measurable_observe), a narrowed location score-sum statement, uncited information matrix overlap, Check counts, missing Examples subsections, process residue, unused contract entries, Lean labels. Seeded sample of 15 targets: mathematics checked; none of the source locators could be verified, since none of the four books (van der Vaart, Bickel-Klaassen-Ritov-Wellner, Kosorok, Little-Rubin) is readable through the sources service. Supplier citations (Foundations 8.2-8.6, Asymptotic 1.1, 1.2, 7.1-7.6) resolved at the open heads; local copies equal the owners' definitions.",
+  "text": "4336e9c85d7205fb"
+ }
+}
