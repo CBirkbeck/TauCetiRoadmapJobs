@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EffectiveClassNumbers~8",
+  "head": "471be8d0d6db635d9d691a79accc9bbaebb6ea85",
+  "pr": 1406,
+  "folder": "EffectiveClassNumbers",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 9553391: the folder is byte-identical and nothing changed outside it; the previous report had no finding. The pull request's title and description were read sentence by sentence against the head (14 rows): none is contradicted, and the suppliers not on main are all named. Adversarial rows computed for the statements the description cites (the sixteen discriminants each have 3 reduced primitive forms; 7000/55 at d = 907; kappa(1/2) = 2^-302; 37*139^2 = 714877). The seeded sample falls in no changed passage. Worker's gate passes; the dependency check with --movable shows 0 problems (the board order's UPWARD line to ExplicitPrimeCounting is the exempt merge-order move); Suggested.lean elaborates with sorry as the only warning. One note for the human reviewers: the unpublished preprint LS26 behind sections 4.8-4.9.",
+  "text": "59e320383ac3caff"
+ }
+}
