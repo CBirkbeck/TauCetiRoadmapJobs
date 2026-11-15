@@ -345,6 +345,7 @@ PadicHodgeRegulators
 HabiroNumberFields
 HabiroRings
 RefinedTraceMethods
+HochschildHomologyAndHKR
 RefinedTraceMethodsPartII
 AnalyticStacks
 StableHomotopyKTheoryPartII
