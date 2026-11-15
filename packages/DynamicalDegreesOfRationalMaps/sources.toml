@@ -207,7 +207,7 @@ authors = "The Stacks Project Authors"
 title = "The Stacks Project, chapter Varieties"
 year = 2026
 locator_scheme = "tag"
-locator = "Lemma 8.6 (054Q); Lemmas 45.2, 45.5, 45.6 (0BEN, 0BER, 0BES); §45 (0BEL)"
+locator = "Lemma 8.6 (054Q); Lemma 45.1 (0BEM); Lemmas 45.2, 45.5, 45.6 (0BEN, 0BER, 0BES); Definition 45.3 (0BEP); §45 (0BEL)"
 url = "https://stacks.math.columbia.edu/download/varieties.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/varieties.pdf"
 fetched_at = "2026-11-05T12:03:17Z"
@@ -215,7 +215,7 @@ sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["§2.1", "§2.3", "§2.4"]
+cited_for = ["Conventions", "§2.1", "§2.3", "§2.4"]
 
 [[source]]
 id = "stacks-chow"
@@ -241,7 +241,7 @@ authors = "The Stacks Project Authors"
 title = "The Stacks Project, chapter Morphisms of Schemes"
 year = 2026
 locator_scheme = "tag"
-locator = "Lemma 6.7 (056B); Lemma 26.16 (081I); Lemma 38.7 (0892); Definition 52.8 (02NY)"
+locator = "Lemma 6.7 (056B); Lemma 6.8 (0CNG); Lemma 26.16 (081I); Lemma 38.7 (0892); Definition 52.8 (02NY)"
 url = "https://stacks.math.columbia.edu/download/morphisms.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf"
 fetched_at = "2026-11-05T12:14:41Z"
