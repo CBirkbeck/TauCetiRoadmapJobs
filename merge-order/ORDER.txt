@@ -41,6 +41,7 @@ SchemeKTheoryOperations
 SchemeKTheoryOperationsPartII
 PolylogarithmFunctions
 ComplexComparisonPartII
+ComplexHessianEquations
 FormalConnectionsOpers
 AbelianSchemesAndArithmeticModuli
 EtaleCohomologyFoundations
