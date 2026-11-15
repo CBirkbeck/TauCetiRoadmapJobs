@@ -42,7 +42,7 @@ For a finite continuous character χ:Γ⁻→ℚ̄_p×, its conductor exponent i
 
 Agboola–Howard index characters by the parity of their order and place the trivial character in their minus family (AHII05 §2, p.613, and Remark 3.2, p.614): their set of sign s is Ξ^(−s) here. Their point spaces, signed local conditions and signed Selmer groups of label s kill their character set of sign −s, which is Ξ^s here, so these objects carry the same label in both papers. Only character-set labels are translated; the label of X_(−ε) is not.
 
-The derivatives δ and δ_χ on V∞* are those of AnticyclotomicLocalUnits §§1.2–1.4, with δ_χ(r·x)=r(χ⁻¹)δ_χ(x) for r∈Λ_O and δ_1=(1+p⁻¹)δ. They extend R-linearly to V∞*⊗_O R with values in ℂ_p through ι_p. The Pontryagin dual of a discrete module carries the contragredient action (γf)(x)=f(γ⁻¹x) and (rf)(x)=f(rx) (SelmerIwasawaCohomology §2.10), so the χ-part of a discrete module corresponds to the χ⁻¹-part of its dual. For f∈Λ_R and a finite character ρ with values in a finite extension L_ρ/L, ord_ρ f is the order of vanishing of f(T) at T=ρ(γ)−1 in the open unit disc of ℂ_p, equivalently the multiplicity of the height-one prime P_ρ=ker(ρ:Λ_R→L_ρ) in (f).
+The derivatives δ and δ_χ on V∞* are those of AnticyclotomicLocalUnits §§1.2–1.4, with δ_χ(r·x)=r(χ⁻¹)δ_χ(x) for r∈Λ_O and δ_1=(1+p⁻¹)δ. They extend R-linearly to V∞*⊗_O R with values in ℂ_p through ι_p. The Pontryagin dual of a discrete module carries the contragredient action (γf)(x)=f(γ⁻¹x) and (rf)(x)=f(rx) (SelmerIwasawaCohomology §2.10): a coefficient scalar acts on a functional through its argument, never on its value in ℚ_p/ℤ_p, which is only a ℤ_p-module. So, when R contains the values of a finite character χ, the dual of the χ-eigen-submodule of a discrete module is the χ⁻¹-specialisation of its dual, and the dual of its χ-eigenquotient is the χ⁻¹-eigen-submodule of its dual (§1.5). For f∈Λ_R and a finite character ρ with values in a finite extension L_ρ/L, ord_ρ f is the order of vanishing of f(T) at T=ρ(γ)−1 in the open unit disc of ℂ_p, equivalently the multiplicity of the height-one prime P_ρ=ker(ρ:Λ_R→L_ρ) in (f).
 
 The finite-level rank and control statements of Layers 5–6 make one further assumption, displayed at each target: E is defined over K, and V_T is the CM component of V_pE in the fixed embedding. Then End_K(E)=O_K forces K(j(E))=H to equal K, so h_K=1, H=K, φ is the Hecke character of E/K and R=O may be taken. Character values lie in a finite extension L_χ/L and every dimension is over L_χ. The main-conjecture statements of Layers 0–4 do not assume this.
 
@@ -291,22 +291,22 @@ Its API consists of the following facts on these carriers and with these hypothe
 
 ### 1.5 Infinite Selmer duals and compact Selmer modules
 
-For a∈{str,+,−,ord,rel} put X_a=Hom_(ℤ_p,cts)(Sel_a(K∞,W),ℚ_p/ℤ_p), compact, with (γf)(x)=f(γ⁻¹x) and (rf)(x)=f(rx) for r∈R, so that X_a is a Λ_R-module. For s∈{+,−} let S_s=lim_cor Sel_s(K_n,T′), where Sel_s(K_n,T′) uses L_n^(s,⊥) at 𝔭 and the full group H¹((K_n)_v,T′) at every finite v∤p, the annihilator of the discrete condition 0. Let S_str and S_rel use 0 and all of H¹((K_n)_𝔭,T′) at 𝔭 respectively, with the same full condition away from p; thus compact strict is dual to discrete relaxed and compact relaxed to discrete strict. Let H=lim_cor H¹((K_n)_𝔭,T′) and H^s=lim_cor L_n^(s,⊥) (AHII05 §2, p.612–613, and §3, p.615, before Proposition 3.3).
+For a∈{str,+,−,ord,rel} put X_a=Hom_(ℤ_p,cts)(Sel_a(K∞,W),ℚ_p/ℤ_p), compact, with (γf)(x)=f(γ⁻¹x) and (rf)(x)=f(rx) for r∈R, so that X_a is a Λ_R-module. For s∈{+,−} let S_s=lim_cor Sel_s(K_n,T′), where Sel_s(K_n,T′) uses L_n^(s,⊥) at 𝔭 and the full group H¹((K_n)_v,T′) at every finite v∤p, the annihilator of the discrete condition 0. Let S_str and S_rel use 0 and all of H¹((K_n)_𝔭,T′) at 𝔭 respectively, with the same full condition away from p; thus compact strict is dual to discrete relaxed and compact relaxed to discrete strict. Let H=lim_cor H¹((K_n)_𝔭,T′) and H^s=lim_cor L_n^(s,⊥) (AHII05 §2, p.612–613, and §3, p.615, before Proposition 3.3). Finite generation over Λ_R is not part of these definitions (§3.4).
 
 A route is as follows. Use the direct and inverse limit interfaces of SelmerIwasawaCohomology §§2.10 and 3.1, keeping every finite local condition and the trace-dual comparison of §0.4 in the limit. The localisation maps induced by the pairings are Λ_R-linear with the involution on the dual side.
 
 Its API consists of the following facts on these carriers and with these hypotheses.
 
 - X_a is the continuous ℤ_p-dual of Sel_a(K∞,W) with the displayed actions, which satisfy (γf)(x)=f(γ⁻¹x) and (rf)(x)=f(rx).
-- Duality identifies X_a/(γ^(pⁿ)−1)X_a with the dual of Sel_a(K∞,W)^(Γ_n), without asserting a comparison with Sel_a(K_n,W).
+- Duality identifies X_a/(γ^(pⁿ)−1)X_a with the dual of Sel_a(K∞,W)^(Γ_n), without asserting a comparison with Sel_a(K_n,W). When R contains the values of a finite character χ, it identifies X_a/(γ−χ(γ)⁻¹)X_a with the dual of the χ-eigen-submodule of Sel_a(K∞,W).
 - S_a is the corestriction limit of the compact Selmer groups over T′, and H and H^s are the corresponding local limits.
 - Under finite free coefficient extension the trace and inverse-different comparison of §0.4 transports X_a and S_a; the ℤ_p-dual is not identified with Hom_R(−,L/R) without that comparison.
 
 **Checks.**
 
-- For a χ-eigenvector x of Sel_a(K∞,W) and f∈X_a, (γf)(x)=f(γ⁻¹x)=χ(γ)⁻¹f(x), so the χ-part of the discrete module pairs with the χ⁻¹-part of X_a; with (γf)(x)=f(γx) the evaluation pairing fails to be equivariant for the inverse action.
+- A coefficient scalar moves onto the functional, not onto its value. When R contains the values of χ and γx=χ(γ)x, (γf)(x)=f(γ⁻¹x)=f(χ(γ)⁻¹x)=(χ(γ)⁻¹·f)(x). The dual of multiplication by γ−χ(γ) is −χ(γ)γ⁻¹(γ−χ(γ)⁻¹) on X_a, which gives the χ⁻¹-specialisation of the API. Model at p=5: L=Φ(ζ₅), of degree 8 over ℚ₅, R its integers, M=L/R with γ acting by ζ₅, and f=Tr_(L/ℚ₅) modulo ℤ₅, well defined because the trace is integral on R. For x the class of (ζ₅−ζ₅²)/25, f(x)=(−2−(−2))/25=0, but f(γ⁻¹x)=Tr((1−ζ₅)/25)=(8+2)/25=2/5≠0 in ℚ₅/ℤ₅. A scalar on the value would give χ(γ)⁻¹f(x)=0, whereas (ζ₅⁻¹·f)(x)=2/5. Under the trace M^∨ is the inverse different of R, γ acts on it by ζ₅⁻¹, and its χ⁻¹-specialisation is all of M^∨. With (γf)(x)=f(γx), γ would act by ζ₅ and that specialisation would be M^∨/(ζ₅−ζ₅⁻¹)M^∨≃R/(ζ₅−1)R=𝔽₂₅.
 - A finite control kernel is retained in X_a integrally and disappears after tensoring with L; X_a is not defined modulo finite modules.
-- The definition asserts no finite generation: finite generation of X_a and S_a is proved in §3.4.
+- The limits run in opposite directions on the two sides. For R=O, W≃Φ/O is the increasing union of W[π^k]≃D_k=π^(−k)O/O along inclusions. The trace pairing (y,x)↦Tr_(Φ/ℚ_p)(yx) modulo ℤ_p is perfect because O is unramified over ℤ_p (§0.4), and it identifies D_k^∨ with O/π^kO, which has 25 and 625 elements for k=1,2 at p=5. The dual of D_1⊂D_2 is reduction O/π²O→O/πO, sending the class of 1 to the class of 1 and the class of π to 0. So the dual of the direct limit is the inverse limit of the duals, W^∨≃lim O/π^kO=O, compact and torsion-free. The direct limit of the same finite groups along the injections O/π^kO→O/π^(k+1)O given by multiplication by π is Φ/O, which is π-power torsion. Accordingly X_a is the inverse limit of the duals of the Sel_a(K_n,W) along the duals of restriction, and S_a is the inverse limit along corestriction.
 
 *Needs:* §1.4; §0.4; SelmerIwasawaCohomology §§2.10, 2.13, 3.1; `TauCeti.completedGroupAlgebra`.
 
@@ -468,7 +468,7 @@ A route is as follows. Use AnticyclotomicLocalUnits §2.4's duality D≃Hom_(O,c
 **Checks.**
 
 - The comparison is integral over R: a rational isomorphism of H with V_R⊗L would allow H^s to be replaced by π·H^s, which has quotient H^s/πH^s≃Λ_R/π≠0.
-- The pairing formula pairs a χ-eigenvector of the discrete side with a χ⁻¹-eigenvector of H; with χ in place of χ⁻¹ the pairing is not Γ-invariant for nontrivial χ.
+- H is free over the domain Λ_R, so it has no nonzero γ-eigenvectors, and the pairing matches characters through specialisations. When R contains the values of χ, it identifies H/(γ−χ(γ)⁻¹)H with the dual of the χ-eigen-submodule of lim_res H¹((K_n)_𝔭,W), as in §1.5. With the action (γf)(x)=f(γx) that eigen-submodule would be dual to H/(γ−χ(γ))H instead. For nontrivial χ the two specialisations differ: χ(γ)≠χ(γ)⁻¹ because χ has odd order, so the height-one primes (γ−χ(γ)) and (γ−χ(γ)⁻¹) are distinct.
 - At the base layer, H¹(Φ,T′) has R-rank [Φ:ℚ_p]=2 by the local Euler characteristic, matching the rank two of H and the coinvariant ranks 1+1 of H⁺ and H⁻.
 
 *Needs:* §1.5; §3.2; §0.5; AnticyclotomicLocalUnits §§2.4, 3.6; ArithmeticGaloisDuality §R02.4.2.
