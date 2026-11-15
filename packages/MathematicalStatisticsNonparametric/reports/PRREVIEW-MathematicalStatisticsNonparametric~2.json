@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsNonparametric~2",
+  "head": "a23a79f3889e768c3c3bea6901caf99cecc9f1f1",
+  "pr": 2368,
+  "folder": "MathematicalStatisticsNonparametric",
+  "date": "2026-11-15",
+  "findings": 6,
+  "blocking": 3,
+  "notes": "Full re-review. Gate fails on set_option=7 (R01, repair tested: named instance hypotheses, copy elaborates with 103 sorry warnings only, text gate set_option=0 and statement-hygiene=0); targeted build passes; depcheck 0 problems. Previous findings: R01, R02, R06-R09, R12 repaired; R03 not repaired (R02 here, Kim-Samworth Theorem 1 gives c_d); R04, R10, R11, R13 partly (R03, R06, R05). Seeded sample of 15 targets recomputed with values in the table; source locators checked in Devroye-Gyorfi-Lugosi (3), Johnstone (7), Kim-Samworth (1); Tsybakov, van der Vaart, Samworth-Shah, Hsing-Eubank and the other books and five journal papers could not be read. One-tactic probe closes none of the 103 theorems. Cross-roadmap citations resolved at the open heads of Foundations and Asymptotic and on main; one object handed here by Asymptotic is unowned (R04).",
+  "text": "91a0d25a48a7c301"
+ }
+}
