@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LorentzianGeometry~6",
+  "head": "fc070ae89fe81d601d3161f4dbf5c5ca11a67503",
+  "pr": 2232,
+  "folder": "LorentzianGeometry",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since fc070ae; this round checked the pull request's title and description against the head. One P3: the description lists seven sorry theorems and omits the eighth, IsLorentzian.neg_of_neg_of_neg (Suggested.lean line 151, used by TimelikeVectorField.setoid). Checked: every sentence of the description against README and Suggested.lean (48 targets, layer ranges, section numbers, nine suppliers against main and the supplier contracts, stated and not-statable headline lists); RelativisticQuantumFieldTheory 1.1 resolved at its open head; adversarial rows computed for 6.2 (b) and the 8.3 Minkowski comparison; worker's gate OK; depcheck rerun 0 problems; elaboration 0 errors, 8 sorry warnings. No folder passage changed, so no sampled locator was re-read.",
+  "text": "a9f555be4e8e21a2",
+  "carried": {
+   "from": "fc070ae89fe81d601d3161f4dbf5c5ca11a67503",
+   "head": "fc070ae89fe81d601d3161f4dbf5c5ca11a67503",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
