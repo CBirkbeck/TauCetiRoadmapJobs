@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticDynamicsPartII~3",
+  "head": "7dd79a5d4638b88fb8ac387dcb00815aef5b7cd0",
+  "pr": 1686,
+  "folder": "ArithmeticDynamicsPartII",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 6 changed lines since 16dd84b. Previous R01 (primary sources DKS13, BS02 cited) and R02 (nonzero-constant F_i clause) repaired. Checked the changed README passages (lines 320, 334, 1085, 1086) against DKS13 Theorem 0.2 (arXiv:1103.4561, lines 164-188) and BS02 section 4.1 Theorem and Remark 3 (author-page preprint, lines 306-313, 449-457), both fetched legally through the sources service into a scratch manifest; the title and description against the head (no finding); gate rerun FAIL on statement-hygiene=2 ([Fintype K] beside [Field K] at Suggested.lean lines 243 and 255; repair to [Finite K]/Nat.card elaborates in a scratch copy); depcheck 243 roadmaps 2235 edges 0 problems; lake env lean 23 sorry warnings only; oriented orbit congruence recomputed at (q,t)=(5,1),(7,3),(11,4),(5,0). Three P3 findings: the two gate hits and the DKS13 reference line writing h_l/d_l where the theorem has the maximum height h.",
+  "text": "029bc2099803b6a9",
+  "carried": {
+   "from": "7dd79a5d4638b88fb8ac387dcb00815aef5b7cd0",
+   "head": "f35733fb219a5efc16b5877e336714c1e635ea0b",
+   "findings": 3,
+   "lines": 14,
+   "folders": [
+    "ArithmeticDynamicsPartII"
+   ],
+   "outside": true
+  }
+ }
+}
