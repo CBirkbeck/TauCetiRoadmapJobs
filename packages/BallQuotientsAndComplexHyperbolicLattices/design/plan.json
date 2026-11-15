@@ -3005,8 +3005,8 @@
         "9.5",
         "10.4"
       ],
-      "detail": "For a variety X over ℂ: X normal iff X^an normal, X smooth if X^an is a complex manifold, and the analytification of the normalization is the analytic normalization, compatibly with structure maps; the converse smooth direction (X smooth ⇒ X^an a manifold) is §C−1.1's smooth-chart comparison, not part of the gap.",
-      "needs": "For a variety X over ℂ, normality of X and of X^an are equivalent, a complex-manifold X^an forces X smooth, and the analytification of the normalization of X is the analytic normalization of X^an, compatibly with the structure maps.",
+      "detail": "One theorem on local rings with three consequences, delivered together: for a variety X over ℂ and a complex point x, the algebraic and analytic local rings at x (and their common completion) are simultaneously normal and simultaneously regular; hence X normal iff X^an normal, X smooth if X^an is a complex manifold, and the analytification of the normalization is the analytic normalization, compatibly with structure maps. §9.4 uses all three consequences, §9.5 normality and smoothness, §10.4 (a) smoothness, §10.4 (b) normality. The converse smooth direction (X smooth ⇒ X^an a manifold) is §C−1.1's smooth-chart comparison, not part of the gap.",
+      "needs": "For a variety X over ℂ and every complex point x, the local ring of X at x and the analytic local ring of X^an at x are simultaneously normal and simultaneously regular, delivered together with its three consequences: X is normal if and only if X^an is normal, X is smooth if X^an is a complex manifold, and the analytification of the normalization of X is the analytic normalization of X^an, compatibly with the structure maps.",
       "supplier": "ComplexComparisonPartII",
       "section": "§C−1.2 (after completedAnalyticStalkComparison, using §C0.6)"
     },
@@ -3018,8 +3018,8 @@
         "9.5",
         "10.5"
       ],
-      "detail": "On a normal complex analytic space, a continuous function holomorphic outside a nowhere-dense analytic subset is holomorphic; hence continuous maps between normal spaces holomorphic off such a subset are holomorphic.",
-      "needs": "The Riemann extension theorem for continuous functions on normal complex analytic spaces.",
+      "detail": "On a normal complex analytic space, a continuous function on an open subset that is holomorphic outside a nowhere-dense analytic subset is holomorphic; hence a continuous map from a normal complex analytic space to any complex analytic space that is holomorphic off such a subset is holomorphic (extend the coordinate functions of a local embedding of the target).",
+      "needs": "On a normal complex analytic space Y, a continuous function on an open subset U that is holomorphic outside a nowhere-dense analytic subset of U is holomorphic on U; consequently a continuous map from a normal complex analytic space to a complex analytic space that is holomorphic outside a nowhere-dense analytic subset of its source is holomorphic.",
       "supplier": "ComplexComparisonPartII",
       "section": "§C0.6"
     }

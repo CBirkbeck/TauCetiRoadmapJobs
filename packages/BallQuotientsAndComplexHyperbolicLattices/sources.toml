@@ -98,12 +98,12 @@ year = 1972
 venue = "Ergebnisse der Mathematik und ihrer Grenzgebiete 68, Springer"
 doi = "10.1007/978-3-642-86426-1"
 locator_scheme = "chapter"
-locator = "Ch. VIII (Zassenhaus neighbourhoods, Auslander's theorem); Ch. XIII (fundamental domains for lattices in real rank one)"
+locator = "Ch. VI, Theorem 6.11 (p. 93), as cited at WitteMorris2015 line 3445 for the form of Remark 4.8.5(2,3); Ch. VIII (Zassenhaus neighbourhoods, Auslander's theorem); Ch. XIII (fundamental domains for lattices in real rank one)"
 url = "https://doi.org/10.1007/978-3-642-86426-1"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["4.4", "4.5", "6.1", "6.2"]
+cited_for = ["4.4", "4.5", "6.1", "6.2", "6.3"]
 
 [[source]]
 id = "Mostow1980"
@@ -113,7 +113,7 @@ year = 1980
 venue = "Pacific Journal of Mathematics 86 (1980), no. 1, 171-276"
 doi = "10.2140/pjm.1980.86.171"
 locator_scheme = "section"
-locator = "Theorem A (§17.3), Theorem 17.3"
+locator = "Theorem A (§17.3) with the remark on non-cocompact lattices (p. 173); Theorem 17.3 with the same remark"
 url = "https://msp.org/pjm/1980/86-1/pjm-v86-n1-p11-s.pdf"
 fetched_from = "https://msp.org/pjm/1980/86-1/pjm-v86-n1-p11-s.pdf"
 fetched_at = "2026-11-04T13:59:25Z"
@@ -149,10 +149,10 @@ title = "Introduction aux groupes arithmétiques"
 year = 1969
 venue = "Publications de l'Institut de Mathématique de l'Université de Strasbourg XV, Actualités Scientifiques et Industrielles 1341, Hermann, Paris"
 locator_scheme = "section"
-locator = "§17, Corollary 17.7 (p. 119): finitely generated linear groups in characteristic 0 have finite-index subgroups whose elements have no nontrivial root of unity among their eigenvalues"
+locator = "§17, Corollary 17.7 (p. 119): finitely generated linear groups in characteristic 0 have finite-index subgroups in which the eigenvalues of each element generate a group without nontrivial roots of unity"
 licence_class = "none"
 status = "uncertified"
-version_note = "Printed book, not available in an open repository; cited by its locator without the text, as WitteMorris2015 line 3445 cites it for the eigenvalue form of Theorem 4.8.4 (Remark 4.8.5(2,3)); the text was not requested."
+version_note = "Printed book, not available in an open repository; cited by its locator without the text, as WitteMorris2015 line 3445 cites it for the stronger forms of Theorem 4.8.2 in Remark 4.8.5(2,3); the text was not requested."
 cited_for = ["6.3"]
 
 [[source]]
