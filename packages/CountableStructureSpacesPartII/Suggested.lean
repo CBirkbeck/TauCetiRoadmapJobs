@@ -19,8 +19,8 @@ reducibility `Setoid.BorelReducible`:
 * the Becker–Kechris universality theorem for `S∞` (Layer 4);
 * four characterisations of Borel completeness (Layer 5);
 * the back-and-forth equivalence of ordinal multiples, and the consequences of Borel completeness:
-  the isomorphism relation is not Borel, lies above `E₀`, has continuum many classes and is not
-  smooth, the class has unbounded Scott height, and the Friedman–Stanley obstruction (Layer 6).
+  the isomorphism relation is not Borel, lies above `E₀` and has continuum many classes, the class
+  has unbounded Scott height, and the Friedman–Stanley obstruction (Layer 6).
 
 The only definitions are those the statements need: isomorphism restricted to a class, Borel
 completeness, the three classes of graphs, linear orders and trees, the σ-algebra of `S∞` (which
@@ -36,7 +36,7 @@ open scoped Ordinal Cardinal
 
 universe u v w
 
-/-! ## Layer 0: Isomorphism relations of classes -/
+/-! ## Layer 0: Isomorphism relations of classes and two reducibilities -/
 
 /-- Isomorphism restricted to a class: for a relational language `L`, any carrier `α` and a set
 `K` of codes on `α`, the pullback of Tau Ceti's `isoSetoid L α` along the inclusion of `K`; the
@@ -136,20 +136,20 @@ theorem exists_equivariant_measurableEmbedding_universal
 
 /-- **Borel completeness is receiving the graphs** (Camerlo–Gao, §1; Gao, §13.1). -/
 theorem borelComplete_iff_graphClass {L : FirstOrder.Language.{u, v}} [L.IsRelational]
-    [∀ n, Countable (L.Relations n)] (K : Set (RelationalConfiguration L ℕ)) :
+    (K : Set (RelationalConfiguration L ℕ)) :
     BorelComplete K ↔ Setoid.BorelReducible (classIso graphClass) (classIso K) := by
   sorry
 
 /-- **Borel completeness is receiving every whole space of structures** (Camerlo–Gao, §1). -/
 theorem borelComplete_iff_forall_structureSpace {L : FirstOrder.Language.{u, v}} [L.IsRelational]
-    [∀ n, Countable (L.Relations n)] (K : Set (RelationalConfiguration L ℕ)) :
+    (K : Set (RelationalConfiguration L ℕ)) :
     BorelComplete K ↔ ∀ (L' : FirstOrder.Language.{0, 0}) [L'.IsRelational]
       [∀ n, Countable (L'.Relations n)], Setoid.BorelReducible (isoSetoid L' ℕ) (classIso K) := by
   sorry
 
 /-- **Borel completeness is receiving every Borel class, invariant or not** (Camerlo–Gao, §1). -/
 theorem borelComplete_iff_forall_measurableSet {L : FirstOrder.Language.{u, v}} [L.IsRelational]
-    [∀ n, Countable (L.Relations n)] (K : Set (RelationalConfiguration L ℕ)) :
+    (K : Set (RelationalConfiguration L ℕ)) :
     BorelComplete K ↔ ∀ (L' : FirstOrder.Language.{0, 0}) [L'.IsRelational]
       [∀ n, Countable (L'.Relations n)] (B : Set (RelationalConfiguration L' ℕ)),
         MeasurableSet B → Setoid.BorelReducible (classIso B) (classIso K) := by
@@ -158,7 +158,7 @@ theorem borelComplete_iff_forall_measurableSet {L : FirstOrder.Language.{u, v}} 
 /-- **Borel completeness is receiving the orbit relation of every Borel `S∞`-space** in a fixed
 universe (Becker–Kechris 1996, §2.7; Camerlo–Gao, §1). -/
 theorem borelComplete_iff_forall_permSpace {L : FirstOrder.Language.{u, v}} [L.IsRelational]
-    [∀ n, Countable (L.Relations n)] (K : Set (RelationalConfiguration L ℕ)) :
+    (K : Set (RelationalConfiguration L ℕ)) :
     BorelComplete K ↔ ∀ (X : Type w) [MeasurableSpace X] [StandardBorelSpace X]
       [MulAction (Equiv.Perm ℕ) X] [MeasurableSMul₂ (Equiv.Perm ℕ) X],
         Setoid.BorelReducible (MulAction.orbitRel (Equiv.Perm ℕ) X) (classIso K) := by
@@ -180,13 +180,13 @@ theorem bfEquiv_omega0_opow_mul (γ δ ε : Ordinal.{w}) (hδ : δ ≠ 0) (hε :
 §13.1): the set of pairs in `K × K` with isomorphic entries is not measurable for the product of
 the subtype σ-algebras. -/
 theorem not_measurableSet_classIso_of_borelComplete {L : FirstOrder.Language.{u, v}}
-    [L.IsRelational] [∀ n, Countable (L.Relations n)] {K : Set (RelationalConfiguration L ℕ)}
+    [L.IsRelational] {K : Set (RelationalConfiguration L ℕ)}
     (hK : BorelComplete K) :
     ¬ MeasurableSet {p : K × K | classIso K p.1 p.2} := by
   sorry
 
-/-- **A Borel complete class has unbounded Scott height**: below every countable ordinal some code
-of the class has a larger Scott height. -/
+/-- **A Borel complete class has unbounded Scott height**: for every countable ordinal `β` some code
+of the class has Scott height greater than `β`. -/
 theorem exists_lt_scottHeight_of_borelComplete {L : FirstOrder.Language.{u, v}} [L.IsRelational]
     [∀ n, Countable (L.Relations n)] {K : Set (RelationalConfiguration L ℕ)}
     (hK : BorelComplete K) {β : Ordinal.{0}} (hβ : β < ω₁) :
@@ -195,7 +195,7 @@ theorem exists_lt_scottHeight_of_borelComplete {L : FirstOrder.Language.{u, v}} 
 
 /-- **`E₀` reduces to every Borel complete isomorphism relation** (Camerlo–Gao, §1, for `E₀`). -/
 theorem borelReducible_eZero_of_borelComplete {L : FirstOrder.Language.{u, v}} [L.IsRelational]
-    [∀ n, Countable (L.Relations n)] {K : Set (RelationalConfiguration L ℕ)}
+    {K : Set (RelationalConfiguration L ℕ)}
     (hK : BorelComplete K) :
     Setoid.BorelReducible eZero (classIso K) := by
   sorry
@@ -205,13 +205,6 @@ theorem mk_quotient_classIso_of_borelComplete {L : FirstOrder.Language.{u, v}} [
     [∀ n, Countable (L.Relations n)] {K : Set (RelationalConfiguration L ℕ)}
     (hK : BorelComplete K) :
     Cardinal.mk (Quotient (classIso K)) = 𝔠 := by
-  sorry
-
-/-- **A Borel complete isomorphism relation is not smooth.** -/
-theorem not_isSmooth_of_borelComplete {L : FirstOrder.Language.{u, v}} [L.IsRelational]
-    [∀ n, Countable (L.Relations n)] {K : Set (RelationalConfiguration L ℕ)}
-    (hK : BorelComplete K) :
-    ¬ Setoid.IsSmooth (classIso K) := by
   sorry
 
 /-- **The Friedman–Stanley obstruction** (Friedman–Stanley, §4; Hjorth–Kechris, §4–§5): a Borel
