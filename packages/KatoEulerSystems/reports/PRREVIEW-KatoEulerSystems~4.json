@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KatoEulerSystems~4",
+  "head": "903763bbb68ab755e73de5a53e57e67940b43930",
+  "pr": 1804,
+  "folder": "KatoEulerSystems",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 903763b; this round checked the pull request's title and description against the head: one P3 (the summary block's 'Every prime is covered, 2 included' is contradicted by the admissibility hypothesis of 5.1-5.4 and the odd-prime hypotheses of 7.4, 7.6-7.8, 7.9(3)); the folder's files need no change. Gate rerun OK (all checks 0), depcheck 0 problems, Suggested.lean elaborates with sorry as the only warning; seeded sample not rechecked (empty diff).",
+  "text": "07ee42317ff01255",
+  "carried": {
+   "from": "903763bbb68ab755e73de5a53e57e67940b43930",
+   "head": "7a6112ea9c57338168dc296706a6953e553fc5a8",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
