@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PurityOfBranchLocus~62",
+  "head": "89357f3db20befdba093e50d06c54017c710a524",
+  "pr": 1807,
+  "folder": "PurityOfBranchLocus",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 51 changed lines since d1900d4: the change is PROGRESS.md and STATUS.md merged from main, byte-identical to main's; README.md, Suggested.lean and the pins are unchanged. The previous review had no finding. Checked: the worker's gate passes (my run shows only outside-folder hits in the pull request's own folders); depcheck 0 problems; Suggested.lean elaborates with six sorry warnings only; seeded sample 2.1 against stacks-0BMB lines 2524-2533 and 2.2, 2.3 against sga1 lines 8355-8364; adversarial rows with computed values for 2.2 and the locus equality; the description's PurityOfBranchLocus sentences against the head; LocalPurity 2.1 resolved; overlaps unchanged.",
+  "text": "5fa575d43a504403"
+ }
+}
