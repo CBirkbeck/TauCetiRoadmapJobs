@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NeronModelsAndSemistableAbelianVarieties~13",
+  "head": "861f8cec5b7c6f4fc45c14a03cd8b0d960193770",
+  "pr": 852,
+  "folder": "NeronModelsAndSemistableAbelianVarieties",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 861f8ce; both previous description findings repaired; title, summary and prose checked against head and base-to-head scope; computed residue-characteristic-2 elliptic comparison; 0 of 15 seeded targets in changed text; supplier claim and overlap boundaries checked; gate, dependency check, targeted build, direct elaboration and all 5 signature checks pass.",
+  "text": "27d7185fe7be4086"
+ }
+}
