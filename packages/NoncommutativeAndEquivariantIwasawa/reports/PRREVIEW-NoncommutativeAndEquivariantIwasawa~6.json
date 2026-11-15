@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NoncommutativeAndEquivariantIwasawa~6",
+  "head": "6f7588deed1cb4fbaa008cd96e4eb51499df388a",
+  "pr": 1307,
+  "folder": "NoncommutativeAndEquivariantIwasawa",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 34 changed lines since e311e48, and of the pull request's title and description. Checked: the regrouped section 6.3 (R01 P3: one Needs line and one locator line now cover four theorems with different needs); the description against the head (R02 P3: a stale sentence on red-team passes); the four Kakde locators of the merged line against arXiv v3; ClassicalArithmeticCompletion 7.63 and 7.86 on main; internal anchors; the gate rerun (all counters 0), the dependency check (0 problems, no UPWARD or CYCLE) and the elaboration of Suggested.lean (sorry the only warning). None of the fifteen seeded targets lies in a changed passage. The previous review had no finding.",
+  "text": "20967952d5aa7a82",
+  "carried": {
+   "from": "6f7588deed1cb4fbaa008cd96e4eb51499df388a",
+   "head": "a63812186774a0e8e0613431a58443eb45ae3c44",
+   "findings": 2,
+   "lines": 50,
+   "folders": [
+    "NoncommutativeAndEquivariantIwasawa"
+   ],
+   "outside": true
+  }
+ }
+}
