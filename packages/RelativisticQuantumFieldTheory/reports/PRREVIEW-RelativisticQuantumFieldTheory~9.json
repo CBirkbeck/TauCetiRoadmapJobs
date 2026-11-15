@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RelativisticQuantumFieldTheory~9",
+  "head": "4d888333aca7a905bb44955eebc9ccc1389e5018",
+  "pr": 1772,
+  "folder": "RelativisticQuantumFieldTheory",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 4d88833; this round checked the pull request's title and description against the head: two P3 findings, both in the description (it counts six Lean companions and 23 admitted theorems; the head has one Suggested.lean with 14). Folder unchanged and no finding in it. Gate rerun: all checks 0, OK. lake env lean Suggested.lean: exit 0, 14 sorry warnings only. Depcheck: 244 roadmaps, 2229 edges, 0 problems. Five adversarial rows with computed values for the statements the description cites (OS growth s=6, null sector, Shale Hilbert-Schmidt, scaling-degree extension, file and sorry counts).",
+  "text": "3fbde70eb23aea54",
+  "carried": {
+   "from": "4d888333aca7a905bb44955eebc9ccc1389e5018",
+   "head": "4395f3539f49e08cfd2eb6179f190cdc0062503b",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
