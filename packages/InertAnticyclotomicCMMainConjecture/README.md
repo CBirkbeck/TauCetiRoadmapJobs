@@ -300,7 +300,7 @@ Its API consists of the following facts on these carriers and with these hypothe
 
 ### 1.5 Infinite Selmer duals and compact Selmer modules
 
-For a∈{str,+,−,ord,rel} put X_a=Hom_(ℤ_p,cts)(Sel_a(K∞,W),ℚ_p/ℤ_p), compact, with (γf)(x)=f(γ⁻¹x) and (rf)(x)=f(rx) for r∈R, so that X_a is a Λ_R-module. For s∈{+,−} let S_s=lim_cor Sel_s(K_n,T′), where Sel_s(K_n,T′) uses L_n^(s,⊥) at 𝔭 and the full group H¹((K_n)_v,T′) at every finite v∤p, the annihilator of the discrete condition 0. Let S_str and S_rel use 0 and all of H¹((K_n)_𝔭,T′) at 𝔭 respectively, with the same full condition away from p; thus compact strict is dual to discrete relaxed and compact relaxed to discrete strict. Let H=lim_cor H¹((K_n)_𝔭,T′) and H^s=lim_cor L_n^(s,⊥) (AHII05 §2, pp.612–613, and §3, p.615, before Proposition 3.3). Finite generation over Λ_R is not part of these definitions (§3.4).
+For a∈{str,+,−,ord,rel} put X_a=Hom_(ℤ_p,cts)(Sel_a(K∞,W),ℚ_p/ℤ_p), compact, with (γf)(x)=f(γ⁻¹x) and (rf)(x)=f(rx) for r∈R, so that X_a is a Λ_R-module. For s∈{+,−} let S_s=lim_cor Sel_s(K_n,T′), where Sel_s(K_n,T′) uses L_n^(s,⊥) at 𝔭 and the full group H¹((K_n)_v,T′) at every finite v∤p, the annihilator of the discrete condition 0. Let S_str and S_rel use 0 and all of H¹((K_n)_𝔭,T′) at 𝔭 respectively, with the same full condition away from p; thus compact strict is dual to discrete relaxed and compact relaxed to discrete strict. Let H=lim_cor H¹((K_n)_𝔭,T′) and H^s=lim_cor L_n^(s,⊥) (AHII05 §2, pp.612–613, for the Selmer groups and their limits; §3, p.614, before Proposition 3.1, for H and H^s; §3, p.615, before Proposition 3.3, for X_a). Finite generation over Λ_R is not part of these definitions (§3.4).
 
 A route is as follows. Use the direct and inverse limit interfaces of SelmerIwasawaCohomology §§2.10 and 3.1, keeping every finite local condition and the trace-dual comparison of §0.4 in the limit. The localisation maps induced by the pairings are Λ_R-linear with the involution on the dual side.
 
@@ -335,12 +335,12 @@ Use the R-extended signed decomposition of §0.5 and the supplied projected CM c
 
 Define ξ=ξ(E,Ω)∈V_R as the image in V_R=V∞*⊗_O R of the norm-compatible family of normalised elliptic-unit classes of moduli f p^(n+1), n≥0, with no auxiliary prime (NonordinaryCMSpecialValues NCM.1/normalized-zeta-class), under the composite of the arrows of AnticyclotomicLocalUnits §4.2 with its auxiliary ring class field L_r replaced by K, so that no character evaluation occurs: the CM coefficient untwist, corestriction to H(E[p^(n+1)]), localisation at the primes above p, augmentation of R[Gal(H/K)], projection to Δ-invariants and the Kummer comparison. This is the trivial-auxiliary-character member of the family of projected classes, which AnticyclotomicLocalUnits §4.2 states for nontrivial ν only; it is defined here for every inert CM datum of the Conventions. Retain the norm-compatible global class whose localisation it is (BKO21 §3.0.2, pp.952–953, the composite defining ξ_ν read with ν trivial, Proposition 3.3, p.953, and §6.0.1, p.961).
 
-A route is as follows. Each modulus f p^(n+1) is admissible for NonordinaryCMSpecialValues NCM.1/normalized-zeta-class, whose moduli are supported on f, p and at most one auxiliary split prime. Apply the arrows of AnticyclotomicLocalUnits §4.2 in order with L_r=K, so that the group-ring identification and the evaluation arrow are identities, with coefficients R by that section's compatibility with coefficient extension; the composite is Gal(Φ∞/Φ₀)-equivariant for the identification of §0.2. Keep the global elliptic-unit class and its local projection in the comparison diagram of §3.1.
+A route is as follows. Each modulus f p^(n+1) is admissible for NonordinaryCMSpecialValues NCM.1/normalized-zeta-class, whose moduli are supported on f, p and at most one auxiliary split prime. Apply the arrows of AnticyclotomicLocalUnits §4.2 in order with L_r=K, so that the group-ring identification and the evaluation arrow are identities, with coefficients R by that section's compatibility with coefficient extension; the composite is Gal(Φ∞/Φ₀)-equivariant for the identification of §0.2. Keep the global family together with its local projection; §4.5 compares it with the module C of §3.1.
 
 Its API consists of the following facts on these carriers and with these hypotheses.
 
 - ξ is the image of the normalised classes of moduli f p^(n+1) under the composite above, with the true conductor f and coefficients R; corestriction in the p-tower corresponds to the norm of the unit coordinates, so ξ lies in the inverse limit V_R.
-- ξ is the localisation, under §§0.2 and 3.3, of a specified element of the global module C of §3.1.
+- ξ is the image of a specified norm-compatible global family, the normalised classes of moduli f p^(n+1), which is retained with ξ; its relation to the global module C is §4.5.
 - Coefficient extension R→R′ sends ξ for R to ξ for R′.
 - Replacing (ω,Ω) by (vω,vΩ) with v a unit at 𝔭 multiplies ξ by the unit recorded in NonordinaryCMSpecialValues NCM.1/period-change, leaving the ideal Λ_Rξ unchanged.
 
@@ -348,7 +348,7 @@ Its API consists of the following facts on these carriers and with these hypothe
 
 - The moduli f p^(n+1) carry no auxiliary prime and the ring class field is H, so the class has conductor f. Once p divides the modulus, raising its exponent by one only shifts the cofinal indexing and leaves ξ and δ(ξ) unchanged: corestriction at fixed prime support carries the class of modulus f p^(n+2) to that of modulus f p^(n+1) with no Euler factor (NonordinaryCMSpecialValues NCM.1/normalized-zeta-class), so dropping the first term of the family and recovering it by corestriction gives the same family. The factor 1+p⁻¹, which is 6/5 at p=5, relates the two derivatives δ_1(ξ)=(1+p⁻¹)δ(ξ) of this one class; it is not a change of class.
 - ξ may lie in πV_R^ε: primitivity refers to the conductor of the L-function, not to indivisibility in the Λ_R-lattice.
-- A local vector with the expected derivatives is not by itself the localisation of an element of C; the global class is part of the data.
+- A local vector with the expected derivatives is not by itself the localisation of a global class; the global family is part of the data.
 - With L_r=K the group ring R[Gal(L_r/K)] is R and the evaluation arrow is the identity; building the composite instead from moduli f l p^(n+1) containing an auxiliary split prime l=λλ̄ prime to 6pf, and augmenting over Gal(L_r/K), gives a class whose δ is, by NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity at the ray level K(f l p^(n+1)), L(φ̄,1)/Ω times the Euler factors (1−φ̄(λ)/Nλ)(1−φ̄(λ̄)/Nλ̄); these are nonzero since |φ̄(λ)|=√Nλ, and the class is not ξ.
 
 *Needs:* §0.1; §0.2; §0.5; AnticyclotomicLocalUnits §4.2; NonordinaryCMSpecialValues NCM.1/normalized-zeta-class, NCM.1/period-change.
@@ -430,21 +430,20 @@ The subsection *Needs:* lines give the internal dependencies. External inputs: A
 
 ## Layer 3: Global elliptic units and the strict comparison
 
-Use the compact modules of §1.5 and the primitive class of §2.1. The global module C is the span of the complete auxiliary family; it is never replaced by a chosen rank-one class.
+Use the compact modules of §1.5, the supplied elliptic units and the special values of the primitive class (§§2.2–2.3). The global module C is the span of the complete auxiliary family; it is never replaced by a chosen rank-one class.
 
 ### 3.1 The all-auxiliary global elliptic-unit module
 
-Define C⊂S_rel as the closed Λ_R-submodule generated by the classes c_a, for every ideal a of O_K prime to 6pf, where c_a is obtained from the standard elliptic units _az_(fpⁿ), n≥1, of auxiliary ideal a: twist the norm-compatible family of their Kummer classes in lim_cor H¹(K(fpⁿ),ℤ_p(1)) by the module T_0 of the supplier contract with NonordinaryCMSpecialValues, the inverse avatar with the trace-dual coefficient lattice, to a class in lim_cor H¹(K(fpⁿ),T′), corestrict to the layers K_n of K∞⊂K(fp^∞) and take the corestriction limit. The localisation of C lies in H^ε (AHII05 §3, p.614, before Proposition 3.1, and Proposition 3.1).
+Define C⊂S_rel as the closed Λ_R-submodule generated by the classes c_a, for every ideal a of O_K prime to 6pf, where c_a is obtained from the standard elliptic units _az_(fpⁿ), n≥1, of auxiliary ideal a: twist the norm-compatible family of their Kummer classes in lim_cor H¹(K(fpⁿ),ℤ_p(1)) by the module T_0 of the supplier contract with NonordinaryCMSpecialValues, the inverse avatar with the trace-dual coefficient lattice, to a class in lim_cor H¹(K(fpⁿ),T′), corestrict to the layers K_n of K∞⊂K(fp^∞) and take the corestriction limit (AHII05 §3, p.614, before Proposition 3.1).
 
-A route is as follows. Take the standard elliptic units and their norm compatibility along the p-tower from NonordinaryCMSpecialValues §2.2, the integral smoothed classes from §2.3, the twist of their Kummer classes from §2.9, applied on K(fp^∞), through whose Galois group φ_p factors, and the norm relations at the primes not dividing p from the supplier contract (gap:elliptic-unit-euler-system); this is the twist of AHII05 by the inverse cyclotomic character times the avatar. Under the twist the factor 1−Frob_𝔮⁻¹ becomes 1−φ(𝔮)⁻¹Frob_𝔮⁻¹, the Euler factor of T′ at 𝔮, and the smoothing factor N(a)−σ_a becomes N(a)−φ(a)σ_a (NonordinaryCMSpecialValues §2.6). Let 𝒦_a be the union of the fields K(fgp^∞) over the ideals g prime to 6pa, and define the class at a finite subextension of 𝒦_a as the corestriction of the twisted class over the least field K(fgpⁿ), g prime to 6pa and n≥1, that contains it; the two cases of the supplied norm relation give the corestriction relations of an Euler system for (T′,𝒦_a,6pfa) in the sense of EulerSystemsAndKolyvaginSystems §2.2. Localisation of each c_a lies in H^ε because its derivatives at χ∈Ξ^(−ε) are multiples of the forced central zeros of §2.3 (NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity, NCM.3/forced-central-zero).
+A route is as follows. Take the standard elliptic units and their norm compatibility along the p-tower from NonordinaryCMSpecialValues §2.2, the integral smoothed classes from §2.3, the twist of their Kummer classes from §2.9, applied on K(fp^∞), through whose Galois group φ_p factors, and the norm relations at the primes not dividing p from the supplier contract (gap:elliptic-unit-euler-system); this is the twist of AHII05 by the inverse cyclotomic character times the avatar. Under the twist the factor 1−Frob_𝔮⁻¹ becomes 1−φ(𝔮)⁻¹Frob_𝔮⁻¹, the Euler factor of T′ at 𝔮, and the smoothing factor N(a)−σ_a becomes N(a)−φ(a)σ_a (NonordinaryCMSpecialValues §2.6). Let 𝒦_a be the union of the fields K(fgp^∞) over the ideals g prime to 6pa, and define the class at a finite subextension of 𝒦_a as the corestriction of the twisted class over the least field K(fgpⁿ), g prime to 6pa and n≥1, that contains it; the two cases of the supplied norm relation give the corestriction relations of an Euler system for (T′,𝒦_a,6pfa) in the sense of EulerSystemsAndKolyvaginSystems §2.2.
 
 Its API consists of the following facts on these carriers and with these hypotheses.
 
 - C is the closed Λ_R-span of the full family {c_a} over all admissible a.
-- Every c_a belongs to C and localises to the corresponding local elliptic-unit class under §§0.2 and 3.3.
+- Every c_a belongs to C.
 - For each a, the classes defined at the finite subextensions of 𝒦_a form an Euler system for (T′,𝒦_a,6pfa) in the sense of EulerSystemsAndKolyvaginSystems §2.2, with Euler factor 1−φ(𝔮)⁻¹Frob_𝔮⁻¹ at every prime 𝔮∤6pfa; along the p-tower they are corestriction-compatible, and c_a is their limit over the layers K_n.
 - The specialisation from the two-variable tower maps the two-variable family onto the anticyclotomic family, with every Tor term retained in the quotient comparisons of §3.5.
-- The localisation of C lies in H^ε for the same-label dictionary of §0.3.
 
 **Checks.**
 
@@ -453,7 +452,7 @@ Its API consists of the following facts on these carriers and with these hypothe
 - A local vector with the central values of §2.2 does not supply a global class: the localisation map from S_rel to H is not surjective in general (§4.1), so membership in C is a global statement.
 - The Euler factor after the twist is that of T′, not of ℤ_p(1). For K=ℚ(i), p=7, f=(2+2i) and 𝔮=(α) with α=−1+2i, α−1=i(2+2i), so α≡1 modulo f and φ(𝔮)=α, of norm 5. At the trivial character of Gal(K(fgpⁿ)/K) the factor 1−φ(𝔮)⁻¹Frob_𝔮⁻¹ is 1−ᾱ/5=(6+2i)/5≠0, whereas 1−Frob_𝔮⁻¹ is 0 there; keeping the untwisted factor would not give an Euler system for T′.
 
-*Needs:* §0.4; §1.5; §2.1; §2.3; NonordinaryCMSpecialValues §§2.1–2.3, 2.6, 2.9, NCM.1/elliptic-reciprocity, NCM.3/forced-central-zero (gap:elliptic-unit-euler-system); EulerSystemsAndKolyvaginSystems §2.2.
+*Needs:* §0.4; §1.5; NonordinaryCMSpecialValues §§2.1–2.3, 2.6, 2.9 (gap:elliptic-unit-euler-system); EulerSystemsAndKolyvaginSystems §2.2.
 
 ### 3.2 Descent from the Gross datum over H
 
@@ -476,23 +475,24 @@ A route is as follows. [K₀:H]=p²−1 because G_H acts on E[p]≃O/pO through 
 
 ### 3.3 Compact local cohomology and signed local units
 
-There is a Λ_R-linear isomorphism H≃V_R, compatible with localisation, with the Cartier-dual trace pairing of §0.4 and with the Γ-actions, the pairing pairing χ with χ⁻¹. It carries H^s onto V_R^s, with the same label s, and the localisation of each c_a onto its local elliptic-unit projection. Hence H=H⁺⊕H⁻ is free of rank two over Λ_R and H^s and H/H^s are free of rank one (AHII05 Proposition 3.4 and (3.2), p.615; BKO21 Theorem 2.1, p.949, and §§6.0.1–6.0.2, pp.961–962).
+There is a Λ_R-linear isomorphism H≃V_R, compatible with localisation, with the Cartier-dual trace pairing of §0.4 and with the Γ-actions, the pairing pairing χ with χ⁻¹. It carries H^s onto V_R^s, with the same label s, and the localisation of each c_a onto its local elliptic-unit projection. Hence H=H⁺⊕H⁻ is free of rank two over Λ_R and H^s and H/H^s are free of rank one (AHII05 Proposition 3.4 and (3.2), p.615; BKO21 Theorem 2.1, p.949, and §§6.0.1–6.0.2, pp.961–962). Consequently the localisation of C lies in H^ε, so that C⊂S_ε, and it is nonzero: loc(c_a)≠0 for every a≠O_K (AHII05 Proposition 3.1, p.614).
 
-A route is as follows. Use AnticyclotomicLocalUnits §2.4's duality D≃Hom_(O,cts)(V∞*,Φ/O) and the identification of H with the dual of lim_res H¹((K_n)_𝔭,W) through local duality, retaining the H⁰ and lim¹ terms until they are shown to vanish. Here H⁰(Ψ∞,W)=0: G_Φ acts on W[π]≃F[π]⊗R through Gal(Φ(F[π])/Φ), cyclic of order p²−1 and without nonzero fixed vectors, and this group meets the pro-p group Gal(Ψ∞/Φ) trivially, so G_(Ψ∞) still acts through all of it. Use AnticyclotomicLocalUnits §3.6 to identify the annihilator of L_∞^s with V∞*,s, matching labels through §0.3, then base change to R by §0.5.
+A route is as follows. Use AnticyclotomicLocalUnits §2.4's duality D≃Hom_(O,cts)(V∞*,Φ/O) and the identification of H with the dual of lim_res H¹((K_n)_𝔭,W) through local duality, retaining the H⁰ and lim¹ terms until they are shown to vanish. Here H⁰(Ψ∞,W)=0: G_Φ acts on W[π]≃F[π]⊗R through Gal(Φ(F[π])/Φ), cyclic of order p²−1 and without nonzero fixed vectors, and this group meets the pro-p group Gal(Ψ∞/Φ) trivially, so G_(Ψ∞) still acts through all of it. Use AnticyclotomicLocalUnits §3.6 to identify the annihilator of L_∞^s with V∞*,s, matching labels through §0.3, then base change to R by §0.5. For the elliptic-unit classes, let y_a∈V_R be the image of loc(c_a) and d_a=N(a)−φ(a)γ_a∈Λ_R the twisted smoothing factor, γ_a the image of σ_a in Γ⁻. The standard units of auxiliary ideal a are the smoothing factor N(a)−σ_a applied to a zeta element independent of a, which becomes N(a)−φ(a)σ_a after the twist (NonordinaryCMSpecialValues §§2.3, 2.6), so explicit reciprocity (AnticyclotomicLocalUnits §4.3; NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity), applied as in §2.2, gives δ_χ(y_a)=c·d_a(χ⁻¹)·δ_χ(ξ) for every finite χ, where c is a nonzero constant independent of χ and a, fixed by the period and trace normalisations of §§0.1 and 0.4. At χ∈Ξ^(−ε), δ_χ(ξ)=0 by §2.3, so y_a∈V_R^ε by §0.5. For a≠O_K, d_a(χ⁻¹)=N(a)−φ(a)χ(γ_a)⁻¹ is nonzero at every χ because its two terms have complex absolute values N(a) and √N(a), and δ_χ(ξ)≠0 for all but finitely many χ∈Ξ^ε by §2.3, so y_a≠0.
 
 **Checks.**
 
 - The comparison is integral over R: a rational isomorphism of H with V_R⊗L would allow H^s to be replaced by π·H^s, which has quotient H^s/πH^s≃Λ_R/π≠0.
 - H is free over the domain Λ_R, so it has no nonzero γ-eigenvectors, and the pairing matches characters through specialisations. When R contains the values of χ, it identifies H/(γ−χ(γ)⁻¹)H with the dual of the χ-eigen-submodule of lim_res H¹((K_n)_𝔭,W), as in §1.5. With the action (γf)(x)=f(γx) that eigen-submodule would be dual to H/(γ−χ(γ))H instead. For nontrivial χ the two specialisations differ: χ(γ)≠χ(γ)⁻¹ because χ has odd order, so the height-one primes (γ−χ(γ)) and (γ−χ(γ)⁻¹) are distinct.
 - At the base layer, H¹(Φ,T′) has R-rank [Φ:ℚ_p]=2 by the local Euler characteristic, matching the rank two of H and the coinvariant ranks 1+1 of H⁺ and H⁻.
+- The zeros of y_a are those of ξ, not of the smoothing factor. For K=ℚ(i), p=7, f=(2+2i) and a=(α), α=−1+2i≡1 modulo f, N(a)=5 and d_a(1)=5−α=6−2i, of norm 40; at any χ the term αχ(γ_a)⁻¹ has absolute value √5≠5, so d_a(χ⁻¹)≠0. For a=O_K, σ_a=1 and d_a=1−1=0, so c_(O_K)=0, which is why the nonvanishing is stated for a≠O_K. With ε=+, a character of exact order p² lies in Ξ⁻ and gives δ_χ(y_a)=0, while one of exact order p lies in Ξ⁺; a label swap putting loc(C) into H⁻ would force δ_χ(y_a)=0 on all of Ξ⁺, whereas δ_χ(y_a)≠0 for all but finitely many χ∈Ξ⁺.
 
-*Needs:* §1.5; §3.2; §0.5; AnticyclotomicLocalUnits §§2.4, 3.6; ArithmeticGaloisDuality §R02.4.2.
+*Needs:* §1.5; §0.1; §0.3; §0.4; §0.5; §2.2; §2.3; §3.1; §3.2; AnticyclotomicLocalUnits §§2.4, 3.6, 4.3; NonordinaryCMSpecialValues §§2.3, 2.6, NCM.1/elliptic-reciprocity; ArithmeticGaloisDuality §R02.4.2.
 
 ### 3.4 Relaxed and strict global ranks
 
 S_rel is a finitely generated torsion-free Λ_R-module of rank one, C has rank one, X_rel has rank one and X_str is a finitely generated torsion Λ_R-module. The two-variable relaxed Selmer dual over Λ_(2) has rank one, and its specialisation along γ⁺−1 is X_rel up to the errors of SelmerIwasawaCohomology §3.3 (AHII05 Proposition 3.3(i), p.615, and the proof of Theorem 4.1, p.616; AHI06 Lemma 1.1.9, pp.1009–1010).
 
-A route is as follows. Nonzero localisation of an elliptic-unit class (§2.3 with §3.3) gives rank at least one for C and S_rel. Torsion of X_str and the upper bound on the rank follow from the elliptic-unit Euler system through weak Leopoldt (EulerSystemsAndKolyvaginSystems §8.25), applied over the ℤ_p²-extension, which is admissible, or on the anticyclotomic tower with Rubin's condition (*) of §8.11, followed by descent (SelmerIwasawaCohomology §3.3). Torsion-freeness of S_rel follows from H⁰(K∞,W)=0 and the corestriction-limit description (SelmerIwasawaCohomology §3.1), following the argument of AHI06 Lemma 1.1.9, whose ordinary hypothesis is not used. Finite generation follows from SelmerIwasawaCohomology §3.1 and the local rank calculation, with the specialisation H² and Tor terms of §3.16 retained.
+A route is as follows. Nonzero localisation of an elliptic-unit class (§3.3) gives rank at least one for C and S_rel. Torsion of X_str and the upper bound on the rank follow from the elliptic-unit Euler system through weak Leopoldt (EulerSystemsAndKolyvaginSystems §8.25), applied over the ℤ_p²-extension, which is admissible, or on the anticyclotomic tower with Rubin's condition (*) of §8.11, followed by descent (SelmerIwasawaCohomology §3.3). Torsion-freeness of S_rel follows from H⁰(K∞,W)=0 and the corestriction-limit description (SelmerIwasawaCohomology §3.1), following the argument of AHI06 Lemma 1.1.9, whose ordinary hypothesis is not used. Finite generation follows from SelmerIwasawaCohomology §3.1 and the local rank calculation, with the specialisation H² and Tor terms of §3.16 retained.
 
 **Checks.**
 
@@ -500,7 +500,7 @@ A route is as follows. Nonzero localisation of an elliptic-unit class (§2.3 wit
 - By the global Euler characteristic, the rank of lim H¹ of the rank-one avatar over K∞ minus that of H² equals the number of complex places of K times the rank, 1·1=1, so S_rel has rank one exactly when weak Leopoldt holds, which the Euler system supplies.
 - A module of rank one need not be free: Λ_R-ideals such as (π,T) are torsion-free of rank one and not free, so freeness of S_rel is not asserted.
 
-*Needs:* §3.1; §3.2; §3.3; §2.3; EulerSystemsAndKolyvaginSystems §§8.11, 8.25; SelmerIwasawaCohomology §§3.0, 3.1, 3.3, 3.16; PadicMeasuresIwasawaAlgebras §4.6.
+*Needs:* §3.1; §3.2; §3.3; EulerSystemsAndKolyvaginSystems §§8.11, 8.25; SelmerIwasawaCohomology §§3.0, 3.1, 3.3, 3.16; PadicMeasuresIwasawaAlgebras §4.6.
 
 ### 3.5 The elliptic-unit comparison for the strict dual
 
@@ -522,7 +522,7 @@ For K=ℚ(√−23) and p=5, K₀=H(E[5]) has degree 3·24=72 over K, prime to 5
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: NonordinaryCMSpecialValues §§2.1–2.3, 2.6, 2.9, NCM.1/elliptic-reciprocity, NCM.3/forced-central-zero (gap:elliptic-unit-euler-system, gap:inert-two-variable-main-conjecture); EulerSystemsAndKolyvaginSystems §§2.2, 8.11, 8.25; SelmerIwasawaCohomology §§2.19, 3.0, 3.1, 3.3, 3.10, 3.12, 3.16; ArithmeticGaloisDuality §§R02.2.2, R02.2.3, R02.4.2, R02.4.3; AnticyclotomicLocalUnits §§2.4, 3.6; PadicMeasuresIwasawaAlgebras §4.6; `TauCeti.Iwasawa.charIdeal_eq_mul_of_exact`.
+The subsection *Needs:* lines give the internal dependencies. External inputs: NonordinaryCMSpecialValues §§2.1–2.3, 2.6, 2.9, NCM.1/elliptic-reciprocity (gap:elliptic-unit-euler-system, gap:inert-two-variable-main-conjecture); EulerSystemsAndKolyvaginSystems §§2.2, 8.11, 8.25; SelmerIwasawaCohomology §§2.19, 3.0, 3.1, 3.3, 3.10, 3.12, 3.16; ArithmeticGaloisDuality §§R02.2.2, R02.2.3, R02.4.2, R02.4.3; AnticyclotomicLocalUnits §§2.4, 3.6, 4.3; PadicMeasuresIwasawaAlgebras §4.6; `TauCeti.Iwasawa.charIdeal_eq_mul_of_exact`.
 
 ## Layer 4: Global duality and the integral main conjecture
 
@@ -552,7 +552,7 @@ A route is as follows. Apply Poitou–Tate for Selmer groups (SelmerIwasawaCohom
 
 S_ε has rank one, S_(−ε)=S_str=0, X_ε has rank one and X_(−ε) is a finitely generated torsion Λ_R-module. Moreover S_ε=S_rel. The vanishing assertions are equalities of compact modules (AHII05 Theorem 3.6, p.616, and the proof of Theorem 4.2, p.617; BKO21 Theorem 2.1, p.949).
 
-A route is as follows. C⊂S_ε is nonzero (§§2.3, 3.1), so S_ε has rank one inside the rank-one S_rel. If S_(−ε) also had rank one then S_+∩S_− would have rank one, and it lies in S_str because H^+∩H^−=0 (§3.3); then S_rel/S_str would be torsion and inject into the torsion-free H, forcing S_rel=S_str and zero localisation, contradicting §3.1. So S_(−ε) and S_str have rank zero and vanish in the torsion-free S_rel. The ranks of X_s follow from §4.1. Finally S_rel/S_ε is torsion and injects into H/H^ε, free of rank one by §3.3, so it vanishes.
+A route is as follows. C⊂S_ε is nonzero (§3.3), so S_ε has rank one inside the rank-one S_rel. If S_(−ε) also had rank one then S_+∩S_− would have rank one, and it lies in S_str because H^+∩H^−=0 (§3.3); then S_rel/S_str would be torsion and inject into the torsion-free H, forcing S_rel=S_str and zero localisation, contradicting §3.3. So S_(−ε) and S_str have rank zero and vanish in the torsion-free S_rel. The ranks of X_s follow from §4.1. Finally S_rel/S_ε is torsion and injects into H/H^ε, free of rank one by §3.3, so it vanishes.
 
 **Checks.**
 
@@ -560,7 +560,7 @@ A route is as follows. C⊂S_ε is nonzero (§§2.3, 3.1), so S_ε has rank one 
 - The sign is that of the primitive class: for ε=+ the torsion dual is X_−, and for ε=− it is X_+; interchanging them contradicts the rank one of X_ε given by §4.1.
 - Without the integral splitting of §3.3 one only knows that S_rel/S_ε injects into H/H^ε, which need not be torsion-free, so S_ε=S_rel would not follow.
 
-*Needs:* §4.1; §3.4; §3.3; §3.1; §2.3.
+*Needs:* §4.1; §3.4; §3.3; §3.1.
 
 ### 4.3 Torsion in the relaxed dual
 
@@ -601,7 +601,7 @@ A route is as follows. For the second identity, which is the one the main conjec
 
 ### 4.5 The localised global lattice and the primitive class
 
-Under H^ε≃V_R^ε of §3.3, char(H^ε/loc(C))=(L_p(φ,Ω,v_ε)); equivalently, the coordinates of loc(C) in the basis v_ε generate the ideal (L_p). The comparison accounts for every auxiliary ideal, for the primitive and imprimitive normalisations, for the CM period and the trace-dual bases, and for the inversion of characters; an equality after tensoring with L is not sufficient (AHII05 Theorem 4.3 and the paragraph after it, p.617; BKO21 §6.0.1, p.961, and the proof of Theorem 6.1, p.962).
+Under H^ε≃V_R^ε of §3.3, char(H^ε/loc(C))=(L_p(φ,Ω,v_ε)); equivalently, the coordinates of loc(C) in the basis v_ε generate the ideal (L_p). The comparison accounts for every auxiliary ideal, for the primitive and imprimitive normalisations, for the CM period and the trace-dual bases, and for the inversion of characters; an equality after tensoring with L is not sufficient (AHII05 Theorem 4.3 and the paragraph after it, p.617; BKO21 §6.0.1, p.961, and the proof of Theorem 6.1, p.962). In particular, for a=(α) with α≡1 modulo 6f and α≡2 modulo p, the twisted smoothing factor N(a)−φ(a)γ_a, γ_a the image of the Artin symbol σ_a in Γ⁻, is a unit of Λ_R, and ξ is, up to the period and trace units of §§0.1 and 0.4, the image under §3.3 of loc((N(a)−φ(a)γ_a)⁻¹·c_a), the localisation of an element of C.
 
 A route is as follows. Transport the localised classes loc(c_a) through §3.3 and compute their coordinates by explicit reciprocity (AnticyclotomicLocalUnits §4.3; NonordinaryCMSpecialValues NCM.1/elliptic-reciprocity): each is L_p times the image of the distribution factor of a, up to the period and trace units of §§0.1, 0.4. These distribution factors generate the unit ideal of Λ_R. The factor of a is the twisted smoothing factor N(a)−φ(a)σ_a (NonordinaryCMSpecialValues §2.6), whose image in Λ_R is N(a)−φ(a)γ_a with γ_a the image of σ_a in Γ⁻; since γ_a−1 lies in the maximal ideal (ϖ_R,γ−1), it is congruent to N(a)−φ(a) modulo that ideal. Take a=(α) with α≡1 modulo 6f and α≡2 modulo p, which exists by the Chinese remainder theorem because p∤6f. Then a is prime to 6pf, φ(a)=α, and N(a)−φ(a)=α(ᾱ−1)≡2·(2−1)=2 modulo p, a unit of R because p≥5; so that factor is a unit of Λ_R. Compare the primitive ν=1 normalisation of §2.1 without dividing by a nonunit. Translate Agboola–Howard's direct-character formula to the inverse-character convention of §2.5. Only after this integral lattice comparison may infinitely many matching characters be used, since an equality in the fraction field could hide a power of π.
 
@@ -612,7 +612,7 @@ A route is as follows. Transport the localised classes loc(c_a) through §3.3 an
 - Restriction of scalars from Λ_R to Λ_O multiplies degrees: for R/O of degree d and f with coefficients in O, the Λ_O-characteristic ideal of Λ_R/(f) is (f^d), not (f).
 - Agboola–Howard's interpolation pairs χ with δ_χ(v_ε), the one used here pairs χ with δ_(χ⁻¹)(v_ε); for a character of order 5 these evaluate the generator at ζ and at ζ⁴, which differ unless the generator is invariant under the involution.
 
-*Needs:* §3.3; §3.1; §2.5; §2.4; §2.2; AnticyclotomicLocalUnits §4.3; NonordinaryCMSpecialValues §2.6, NCM.1/elliptic-reciprocity, NCM.1/period-change; `TauCeti.Iwasawa.charIdeal_quotient_span_singleton`; `LinearEquiv.charIdeal_eq_comap`.
+*Needs:* §3.3; §3.1; §2.5; §2.4; §2.2; §2.1; AnticyclotomicLocalUnits §4.3; NonordinaryCMSpecialValues §2.6, NCM.1/elliptic-reciprocity, NCM.1/period-change; `TauCeti.Iwasawa.charIdeal_quotient_span_singleton`; `LinearEquiv.charIdeal_eq_comap`.
 
 ### 4.6 The inert anticyclotomic CM main conjecture
 
