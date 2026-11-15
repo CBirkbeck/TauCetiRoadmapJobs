@@ -98,7 +98,7 @@ The baseline is Mathlib `1b1ccf4b088b32fa3f23f2de1127433254a81e1e` and Tau Ceti 
 
 ### From TauCetiRoadmap.LieGroups
 
-- Layers 0–3: `lieExp`, `oneParameterSubgroup`, `Ad`, the identity `Ad(lieExp X) = exp(ad X)` (`conj_lieExp` and the Layer 1 conjugation formulas), `lieSubalgebraOfSubgroup`, `isEmbeddedLieSubgroup_of_isClosed`, `lieMap`; exponential naturality and faithfulness are the native Tau Ceti declarations above. Layer 4: `exists_monoidHom_of_lieHom`, used to integrate `𝔰𝔩(2, ℝ)`-triples. Layer 6, for a compact connected group with a maximal torus `T`: conjugacy of maximal tori (`isConj_of_isMaximalTorus`), `Lie(T)` maximal abelian, and `weylGroup T = N(T)/T` acting on `Lie(T)` as the Weyl group of the roots of `(Lie(G)_ℂ, Lie(T)_ℂ)`, transitively and freely on chambers; §2.5 uses them for axiom (v). Layer 7: the complexification `𝔤 ⊗_ℝ ℂ`.
+- Layers 0–3: `lieExp`, `oneParameterSubgroup`, `Ad`, the conjugation law `g·lieExp X·g⁻¹ = lieExp(Ad g X)` (native as `TauCeti.Lie.conj_lieExp`), the identity `Ad(lieExp X) = exp(ad X)` (native on the tangent carrier as `TauCeti.Lie.tangentAd_mulInvariantExp_apply`, transported to `𝔤` in Layer 1), the matrix shadows (on `GL (Fin n) ℝ`, `lieExp` is the matrix exponential and `Ad g` is conjugation by `g`), `lieSubalgebraOfSubgroup`, `isEmbeddedLieSubgroup_of_isClosed`, `lieMap`; exponential naturality and faithfulness are the native Tau Ceti declarations above. Layer 4: `exists_monoidHom_of_lieHom`, used to integrate `𝔰𝔩(2, ℝ)`-triples. Layer 6, for a compact connected group with a maximal torus `T`: conjugacy of maximal tori (`isConj_of_isMaximalTorus`), `Lie(T)` maximal abelian, and `weylGroup T = N(T)/T` acting on `Lie(T)` as the Weyl group of the roots of `(Lie(G)_ℂ, Lie(T)_ℂ)`, transitively and freely on chambers; §2.5 uses them for axiom (v). Layer 7: the complexification `𝔤 ⊗_ℝ ℂ`.
 - Layer 9: the structures `CartanInvolution`, `IsRealReductive` and `IwasawaData`, and the theorems `iwasawaDecomposition` and `kakDecomposition`. Layer 9 also supplies the restricted root system: the eigenvalues of `ad 𝔞` are real, `𝔤 = 𝔤_0 ⊕ ⨁_{β ∈ Σ} 𝔤^β` with `𝔤_0 = 𝔪 ⊕ 𝔞`, `dθ 𝔤^β = 𝔤^{−β}`, `⁅𝔤^β, 𝔤^γ⁆ ⊆ 𝔤^{β+γ}`, and `Σ` is a possibly non-reduced finite crystallographic root system in the span of `Σ` inside `𝔞*`. It also supplies the restricted Weyl group `W_G = N_K(𝔞)/Z_K(𝔞)`, the actual normalizer quotient acting faithfully on `𝔞` by `Ad`; for each `β ∈ Σ`, an element of `N_K(𝔞)` acting on `𝔞` as the reflection `s_β`; and chamber coverage: every `Ad(N_K(𝔞))`-orbit in `𝔞` meets the closed positive chamber, walls and the zero-root case included. These statements, and `Ad(K)𝔞 = 𝔭`, concern a maximal abelian `𝔞 ⊆ 𝔭` of a `CartanInvolution` (with a positive system, for the chamber); no `IwasawaData` is presupposed, so §2.3 uses the coverage to prove the field `chamber_normalizer_cover`. Nothing there places the reflection representatives in `K⁰` or compares `W_G` with `W(Σ)`; that is §2.4.
 - Layer 9: `CartanInvolution` retains `global_model : FiniteCartanMatrixModel G θ`: a finite central covering onto a closed transpose-stable matrix subgroup with finitely many components, compatible with transpose-inverse, fixing the entire compact preimage pointwise. It also requires compact fixed group and the centre/semisimple-derived splitting. Its `cartan_polar_decomposition` and README polar diffeomorphism, compactness/maximality and central periods are consumed directly. Layer 9 proves `Ad(K)𝔞 = 𝔭`; §2.2 proves the form under `K⁰`, the conjugacy of two maximal abelian subspaces and the factorizations `K = N_K(𝔞)·K⁰`, `G = N_K(𝔞)·G⁰`, without consuming it. The nontrivial involution of `SU(2)` and inversion of the circle fail this base datum already.
 - `IwasawaData` includes exact nonzero restricted roots and their simultaneous eigenspaces, positive-root sign and addition laws, closed connected exponential `N`, injectivity on `𝔞`, the Lie complement, a separate closed connected root-generated `Nplus`, and the closed chamber defined by positive-root inequalities, spanning `𝔞`, covered by the compact normalizer action and containing the full split centre as lineality. Section 2.3 sets `N = Nplus`.
@@ -137,7 +137,7 @@ Layer 1 adds the compatible form to the full base Cartan datum, restricts it to 
 
 ### 1.1 Reductive Cartan data
 
-Define a **reductive Cartan datum** on `G` as a full LieGroups `CartanInvolution I G`, denoted `C`, together with a bilinear form `B` on `𝔤`. Retain every field of `C`, including its finite central matrix-cover model; write `θ = C.θ`. Require `B` symmetric, nondegenerate, invariant under `Ad(g)` for every `g ∈ G` and under `dθ`, negative definite on `𝔨` and positive definite on `𝔭`, with `𝔨 ⊥ 𝔭`. This adds the compatible form to the base carrier; it gives Knapp's axioms (i)–(iv), without requiring axiom (v), `Ad(G) ⊆ Int(𝔤_ℂ)` (Knapp 2002, Ch. VII §2). Use the base polar diffeomorphism `K × 𝔭 → G`, `(k, X) ↦ k·lieExp X`, and its compactness and component conclusions. *Needs:* LieGroups Layer 9 (`CartanInvolution`, `FiniteCartanMatrixModel`, `cartan_polar_decomposition`); Mathlib `LinearMap.BilinForm`.
+Define a **reductive Cartan datum** on `G` as a full LieGroups `CartanInvolution I G`, denoted `C`, together with a bilinear form `B` on `𝔤`. Retain every field of `C`, including its finite central matrix-cover model; write `θ = C.θ`. Require `B` symmetric, nondegenerate, invariant under `Ad(g)` for every `g ∈ G` and under `dθ`, negative definite on `𝔨` and positive definite on `𝔭`, with `𝔨 ⊥ 𝔭`. This adds the compatible form to the base carrier; it gives Knapp's axioms (i)–(iv), without requiring axiom (v), `Ad(G) ⊆ Int(𝔤_ℂ)` (Knapp 2002, Ch. VII §2). Use the base polar diffeomorphism `K × 𝔭 → G`, `(k, X) ↦ k·lieExp X`, and its compactness and component conclusions. *Needs:* LieGroups Layer 1 (`Ad(lieExp X) = exp(ad X)`, differentiated at `0` to turn the `Ad(G)`-invariance of `B` into the `ad`-invariance behind the `B_θ`-symmetry and skewness of `ad X`; `g·lieExp X·g⁻¹ = lieExp(Ad g X)`, for the polar map of a transported datum), Layer 9 (`CartanInvolution`, `FiniteCartanMatrixModel`, `cartan_polar_decomposition`); Mathlib `LinearMap.BilinForm`.
 
 API:
 
@@ -177,7 +177,7 @@ Proof sketch:
 3. Averaging over the finite group `K/K⁰` gives `Z ∈ 𝔷_𝔭` with `Y(k) = Ad(k⁻¹)Z − Z`. Conjugation by `lieExp(Z)` fixes `dθ` and carries `K` onto `K'`.
 4. Both global involutions satisfy `θ(k exp X) = k exp(−X)`, so they agree.
 
-*Needs:* this roadmap §1.1; RealSemisimpleLieGroups §0.2; LieGroups Layer 1 (`Ad(lieExp X) = exp(ad X)`); Tau Ceti `map_lieExp` and `lieMap_injective`, applied to the restrictions on the preconnected finite-dimensional Lie group `G⁰`.
+*Needs:* this roadmap §1.1; RealSemisimpleLieGroups §0.2; LieGroups Layer 1 (`Ad(lieExp X) = exp(ad X)`, and `g·lieExp X·g⁻¹ = lieExp(Ad g X)` for the cocycle of steps 2–3); Tau Ceti `map_lieExp` and `lieMap_injective`, applied to the restrictions on the preconnected finite-dimensional Lie group `G⁰`.
 
 **Checks.**
 
@@ -196,7 +196,7 @@ Proof sketch:
 
 ### Dependencies
 
-LieGroups Layer 0 (`lieExp`), Layer 1 (`Ad`), Layer 2 (`isEmbeddedLieSubgroup_of_isClosed`), Layer 3 (`lieMap`), Layer 9 (`CartanInvolution`); RealSemisimpleLieGroups §0.2; Mathlib `LinearMap.BilinForm`, `LieAlgebra.IsSemisimple`, `NormedSpace.exp`.
+LieGroups Layer 0 (`lieExp`), Layer 1 (`Ad`, `Ad(lieExp X) = exp(ad X)`, `g·lieExp X·g⁻¹ = lieExp(Ad g X)`), Layer 2 (`isEmbeddedLieSubgroup_of_isClosed`), Layer 3 (`lieMap`), Layer 9 (`CartanInvolution`); RealSemisimpleLieGroups §0.2; Tau Ceti `map_lieExp`, `lieMap_injective`; Mathlib `LinearMap.BilinForm`, `LieAlgebra.IsSemisimple`, `NormedSpace.exp`.
 
 ## Layer 2: Restricted roots, positive systems and the two Weyl groups
 
@@ -289,7 +289,7 @@ Proof sketch:
 - For normality: for `n ∈ N_K(𝔞)`, `Ad(n)` carries `𝔤^β` onto `𝔤^{β ∘ Ad(n)⁻¹}`, so `n s_β n⁻¹ = s_{β ∘ Ad(n)⁻¹}`.
 - For `N_G(𝔞)`: write `g = k·lieExp X`. Then `θ(g)` also normalizes `𝔞`, so `e^{−2 ad X}` preserves `𝔞`. Hence `ad X` preserves `𝔞`, `⁅X, 𝔞⁆ ⊆ 𝔞 ∩ 𝔨 = 0` and `X ∈ 𝔞`.
 
-*Needs:* §§1.1, 2.1–2.2, 2.3 (for `G⁰`); RealSemisimpleLieGroups §2.3; LieGroups Layer 1 (`Ad(lieExp X) = exp(ad X)`), Layer 4 (`exists_monoidHom_of_lieHom`), Layer 9 (the restricted Weyl group `N_K(𝔞)/Z_K(𝔞)`, root spaces, polar decomposition).
+*Needs:* §§1.1, 2.1–2.2, 2.3 (for `G⁰`); RealSemisimpleLieGroups §2.3; LieGroups Layer 1 (`Ad(lieExp X) = exp(ad X)`), Layer 4 (`exists_monoidHom_of_lieHom`), Layer 9 (the restricted Weyl group `N_K(𝔞)/Z_K(𝔞)`, root spaces, polar decomposition); Tau Ceti `map_lieExp` (applied to `θ`, so that `lieExp 𝔨 ⊆ K` and `g⁻¹θ(g) = lieExp(−2X)` for `g = k·lieExp X`).
 
 **Checks.**
 
@@ -315,7 +315,7 @@ Proof sketch for axiom (v). By the equivalences it suffices that every `n ∈ N_
 3. Let `𝔱` be maximal abelian in `𝔪`; the closure of `lieExp 𝔱` is a maximal torus of the compact connected group `M⁰` with Lie algebra `𝔱`. `Ad(n)` preserves `𝔪 = Z_𝔨(𝔞)`, so `Ad(n)𝔱` is again maximal abelian in `𝔪`; by conjugacy of maximal tori and the transitivity of the Weyl group on positive systems (LieGroups Layer 6, for `M⁰`) there is `m ∈ M⁰` such that `n' = mn` preserves `𝔱` and a fixed positive system `Δ_𝔪⁺` of the roots of `(𝔪_ℂ, 𝔱_ℂ)`. Then `𝔱_𝔲 = (𝔱 ∩ 𝔰) ⊕ i(𝔞 ∩ 𝔰)` is maximal abelian in `𝔲` (an element of `𝔲` commuting with it has its `𝔨`-part in `𝔪 ∩ 𝔰` commuting with `𝔱 ⊇ 𝔷 ∩ 𝔨`, hence in `𝔱`, and its `i𝔭`-part in `i(Z_𝔭(𝔞) ∩ 𝔰) = i(𝔞 ∩ 𝔰)`), so it is the Lie algebra of a maximal torus `T_𝔲` of `Int(𝔲)`, which `Ad(n')` normalizes.
 4. The roots of `(𝔰_ℂ, (𝔱_𝔲)_ℂ)` are those of `(𝔤_ℂ, (𝔱 ⊕ 𝔞)_ℂ)`; a root not vanishing on `𝔞` restricts to an element of `Σ`, and a root vanishing on `𝔞` is a root of `(𝔪_ℂ, 𝔱_ℂ)`, since `Z_𝔤(𝔞) = 𝔪 ⊕ 𝔞`. Call a root positive if its restriction to `𝔞` lies in `Σ⁺`, or if it vanishes on `𝔞` and lies in `Δ_𝔪⁺`; this is the positive system cut out by `H₀ + εT₀`, for `H₀` in the open chamber of `Σ⁺`, `T₀ ∈ i𝔱` with `Δ_𝔪⁺ = {α : α(T₀) > 0}` and small `ε > 0`, the roots being real on `𝔞 ⊕ i𝔱`. `Ad(n')` preserves it, because `n` fixes `Σ⁺`, `m` is trivial on `𝔞` and `n'` preserves `Δ_𝔪⁺`. LieGroups Layer 6 identifies `N(T_𝔲)/T_𝔲`, acting on `𝔱_𝔲`, with the root Weyl group, which acts freely on chambers; so `Ad(n')` is trivial on `𝔱_𝔲`, in particular on `𝔞 ∩ 𝔰`, and on `𝔷_𝔭` by step 2. Hence `n' ∈ M` and `n = m⁻¹n' ∈ M`.
 
-*Needs:* §§1.1, 2.2, 2.4; RealSemisimpleLieGroups §§1.2, 2.3; LieGroups Layer 6 (`isConj_of_isMaximalTorus`, and `weylGroup` acting on the torus Lie algebra as the root Weyl group, transitively and freely on chambers), Layer 7 (the complexification `𝔤 ⊗_ℝ ℂ`), Layer 9 (`cartan_polar_decomposition`, for the connected semisimple group `Int(𝔰_ℂ)` with trivial centre).
+*Needs:* §§1.1, 2.2, 2.4; RealSemisimpleLieGroups §§1.2, 2.3; LieGroups Layer 1 (`g·lieExp X·g⁻¹ = lieExp(Ad g X)`, so that `n` carries the maximal torus of `M⁰` with Lie algebra `𝔱` to the one with Lie algebra `Ad(n)𝔱`, and an element of `M⁰` conjugating the latter onto the former carries `Ad(n)𝔱` onto `𝔱`), Layer 6 (`isConj_of_isMaximalTorus`, and `weylGroup` acting on the torus Lie algebra as the root Weyl group, transitively and freely on chambers), Layer 7 (the complexification `𝔤 ⊗_ℝ ℂ`), Layer 9 (`cartan_polar_decomposition`, for the connected semisimple group `Int(𝔰_ℂ)` with trivial centre).
 
 **Checks.**
 
@@ -360,7 +360,7 @@ Proof sketch:
 1. For `l = k·lieExp X ∈ L`, `θ(l)⁻¹ l = lieExp(2X) ∈ L`. So `e^{2 ad X}` fixes `𝔰`, which forces `⁅X, 𝔰⁆ = 0`.
 2. For the component condition: an element of `K⁰ ∩ L` can be moved into `N_{K⁰}(𝔞)` by `(K ∩ L)⁰` (§2.2 for `L`). It then acts on `𝔞` by an element of `W(Σ)` fixing `𝔰` pointwise. That element is generated by reflections `s_β` with `β|_𝔰 = 0` (§2.1), which are realized in `(K ∩ L)⁰` (§2.4).
 
-*Needs:* §§1.1 (the reductivity criterion), 2.1–2.2, 2.4–2.5; LieGroups Layer 2 (`isEmbeddedLieSubgroup_of_isClosed`), Layer 9 (`FiniteCartanMatrixModel`, the root decomposition, the polar decomposition).
+*Needs:* §§1.1 (the reductivity criterion), 2.1–2.2, 2.4–2.5; LieGroups Layer 1 (`Ad(lieExp X) = exp(ad X)`, for step 1 and for `Lie(L) = Z_𝔤(𝔰)`; `g·lieExp X·g⁻¹ = lieExp(Ad g X)`, which with `map_lieExp` gives `dπ ∘ Ad(g) = Ad(π(g)) ∘ dπ`; `Ad` on `GL (Fin n) ℝ` is conjugation), Layer 2 (`isEmbeddedLieSubgroup_of_isClosed`, `lieSubalgebraOfSubgroup`), Layer 3 (`lieMap`, for `dπ`), Layer 9 (`FiniteCartanMatrixModel`, the root decomposition, the polar decomposition); Tau Ceti `map_lieExp` (applied to `θ`, so that `θ(l)⁻¹l = lieExp(2X)` in step 1, and to `π`).
 
 **Checks.**
 
@@ -376,7 +376,7 @@ For an Iwasawa triple define:
 - `N = lieExp 𝔫`, the subgroup of §2.3;
 - the **minimal parabolic subgroup** `P = M·A·N`.
 
-RealSemisimpleLieGroups §3.1 states these objects and the facts below for connected groups with semisimple Lie algebra and finite centre, and AutomorphicFormsOnReductiveGroups §2.3a for its real-algebraic class; here they are stated for every Iwasawa triple of a reductive Cartan datum (Knapp 2002, Ch. VI §4; Ch. VII §7). *Needs:* §1.1 (polar coordinates, for `Z(G) ⊆ MA`), §2.3 (`N = Nplus = lieExp 𝔫`), §2.4 (`Z_G(𝔞) = M·A`, `M ∩ A = 1`); LieGroups Layer 0 (`lieExp`), Layer 2 (`isEmbeddedLieSubgroup_of_isClosed`, `lieSubalgebraOfSubgroup`), Layer 9 (compactness of `K`, closedness and connectedness of `N`, injectivity of `lieExp` on `𝔞`, `iwasawaDecomposition`); Mathlib `Subgroup.centralizer`.
+RealSemisimpleLieGroups §3.1 states these objects and the facts below for connected groups with semisimple Lie algebra and finite centre, and AutomorphicFormsOnReductiveGroups §2.3a for its real-algebraic class; here they are stated for every Iwasawa triple of a reductive Cartan datum (Knapp 2002, Ch. VI §4; Ch. VII §7). *Needs:* §1.1 (polar coordinates, for `Z(G) ⊆ MA`), §2.3 (`N = Nplus = lieExp 𝔫`), §2.4 (`Z_G(𝔞) = M·A`, `M ∩ A = 1`); LieGroups Layer 0 (`lieExp`), Layer 1 (`g·lieExp X·g⁻¹ = lieExp(Ad g X)` and `Ad(lieExp X) = exp(ad X)`: `M = Z_K(A)`, `M` and `A` commute, and `M` and `A` normalize `N`), Layer 2 (`isEmbeddedLieSubgroup_of_isClosed`, `lieSubalgebraOfSubgroup`), Layer 9 (compactness of `K`, closedness and connectedness of `N`, injectivity of `lieExp` on `𝔞`, `iwasawaDecomposition`); Mathlib `Subgroup.centralizer`.
 
 API:
 
@@ -412,7 +412,7 @@ Proof sketch:
 - For (d): `G = KAN` is §2.3 with base `iwasawaDecomposition`. `K ∩ MAN = M` follows from its uniqueness.
 - For (f): if `k ∈ K` normalizes `𝔫`, it normalizes `dθ𝔫` and `(𝔫 ⊕ dθ𝔫)^⊥ = 𝔪 ⊕ 𝔞`. Since `𝔭 ∩ (𝔪 ⊕ 𝔞) = 𝔞`, `k ∈ N_K(𝔞)` fixes `Σ⁺`, so `k ∈ M` (§2.5). For `N_G(P)`: it normalizes `Lie(P)` and hence its `B`-orthogonal `𝔫`.
 
-*Needs:* §§2.3–2.6, 3.1–3.2; LieGroups Layer 2 (`isEmbeddedLieSubgroup_of_isClosed`), Layer 9 (`iwasawaDecomposition`).
+*Needs:* §§2.3–2.6, 3.1–3.2; LieGroups Layer 1 (`Ad(lieExp X) = exp(ad X)` and `g·lieExp X·g⁻¹ = lieExp(Ad g X)`, for the `lieExp(−tH₀)`-conjugates in (c)), Layer 2 (`isEmbeddedLieSubgroup_of_isClosed`), Layer 9 (`iwasawaDecomposition`).
 
 **Checks.**
 
@@ -423,7 +423,7 @@ Proof sketch:
 
 ### 3.4 Minimal parabolic subgroups form one conjugacy class
 
-Call a subgroup a **minimal parabolic subgroup** of `(G, D)` if it is `P(D', 𝔞, Σ⁺)` for some Iwasawa triple whose datum `D'` has the same split central part as `D`. Prove that these form a single `G⁰`-conjugacy class. For a fixed `D`, prove that they form a single `K⁰`-conjugacy class (Knapp 2002, Ch. VI §5; Ch. VII §7). *Needs:* §§2.6, 3.2.
+Call a subgroup a **minimal parabolic subgroup** of `(G, D)` if it is `P(D', 𝔞, Σ⁺)` for some Iwasawa triple whose datum `D'` has the same split central part as `D`. Prove that these form a single `G⁰`-conjugacy class. For a fixed `D`, prove that they form a single `K⁰`-conjugacy class (Knapp 2002, Ch. VI §5; Ch. VII §7). *Needs:* §§2.6, 3.2; LieGroups Layer 1 (`g·lieExp X·g⁻¹ = lieExp(Ad g X)`, so that `gPg⁻¹` is the minimal parabolic subgroup of the triple transported by `g`; `Ad(lieExp X) = exp(ad X)`, so that `Ad(G⁰)` fixes `𝔷` and transport by `G⁰` keeps the split central part).
 
 **Checks.**
 
@@ -453,7 +453,7 @@ The equality `P ∩ G⁰ = Z_{K⁰}(𝔞)·A·N` holds because `A` and `N` are c
 
 ### Dependencies
 
-Layers 1–2; RealSemisimpleLieGroups §3.1; LieGroups Layers 0, 2, 9; Mathlib `Subgroup.normalizer`, `Subgroup.centralizer`.
+Layers 1–2; RealSemisimpleLieGroups §3.1; LieGroups Layers 0, 1, 2, 3, 9; Tau Ceti `map_lieExp`; Mathlib `Subgroup.normalizer`, `Subgroup.centralizer`.
 
 ## Layer 4: The Bruhat decomposition over the restricted Weyl group
 
@@ -465,7 +465,7 @@ For an Iwasawa triple, prove the following:
 - Consequently, for `g = kp` (§3.3(d)), `Ad(g)(𝔪 ⊕ 𝔞 ⊕ 𝔫) ⊇ 𝔞` iff `k ∈ N_K(𝔞)`. So the minimal parabolic subalgebras containing `𝔞` are `𝔪 ⊕ 𝔞 ⊕ ⨁_{β ∈ Σ'⁺} 𝔤^β` for the positive systems `Σ'⁺`, permuted simply transitively by `W(Σ)`.
 - For `H₀` regular, the fixed points of `t ↦ lieExp(tH₀)` on `G/P` are the `kP` with `k ∈ N_K(𝔞)`. These are the `|W_G|` distinct points `n_w P`, `w ∈ W_G`, because `n_w P = n_{w'} P` iff `n_w⁻¹n_{w'} ∈ K ∩ P = M` (§3.3(d)). Under the component condition they are the `|W|` points indexed by `W(Σ)`.
 
-(Knapp 2002, Ch. VII §4.) *Needs:* §§2.4–2.5, 3.3; RealSemisimpleLieGroups §1.2 (simple transitivity on positive systems).
+(Knapp 2002, Ch. VII §4.) *Needs:* §§2.4–2.5, 3.3; RealSemisimpleLieGroups §1.2 (simple transitivity on positive systems); LieGroups Layer 1 (`g·lieExp X·g⁻¹ = lieExp(Ad g X)`: `lieExp(tH₀)` fixes `gP` iff `lieExp(t·Ad(g⁻¹)H₀) ∈ P`), Layer 2 (`lieSubalgebraOfSubgroup`: for the closed `P`, `lieExp(tY) ∈ P` for all real `t` iff `Y ∈ Lie(P)`).
 
 **Checks.**
 
@@ -489,7 +489,7 @@ Proof sketch (reduction to the identity component):
 2. For `G⁰`, RealSemisimpleLieGroups §3.3 gives `G⁰ = ⨆_{w ∈ W(Σ)} (P ∩ G⁰) n_w (P ∩ G⁰)` with `n_w ∈ N_{K⁰}(𝔞)` (§2.4), each cell an embedded submanifold with `N_w n_w (P ∩ G⁰)/(P ∩ G⁰) ≅ N_w`.
 3. Back in `G`: for `g₀ ∈ G⁰` and `s ∈ S`, `g₀ s ∈ (P ∩ G⁰) n_w (P ∩ G⁰) s ⊆ P n_w s P` because `s` normalizes `P`; so `G = G⁰·S ⊆ ⋃_{n ∈ N_K(𝔞)} P n P`. Moreover `P n P = N_n n P` for `n ∈ N_K(𝔞)`, because `n` normalizes `MA` and `N = N_n·(N ∩ nNn⁻¹)`. Every point of `N_n n P/P` converges to `nP` as `t → −∞` under `a_t = lieExp(tH₀)`, since `a_t u a_{−t} → 1` for `u ∈ N` and `n` normalizes `A`; so two cells `P n P`, `P n' P` meet only if `nP = n'P`, that is, `n⁻¹n' ∈ M` (§3.3(d)). The `N_n`-coordinate is unique because `N̄ ∩ P = 1` (§3.3(c)), and the `N̄MAN` chart is open because `𝔤 = 𝔫̄ ⊕ 𝔪 ⊕ 𝔞 ⊕ 𝔫`.
 
-*Needs:* §§2.2, 2.4–2.5, 3.3, 3.5, 4.1; RealSemisimpleLieGroups §§1.2, 3.2–3.3; LieGroups Layer 1 (`Ad(lieExp X) = exp(ad X)`); Tau Ceti `TauCeti.TitsSystem`, `TauCeti.TitsSystem.bruhatCell`; Mathlib `DoubleCoset.doubleCoset`.
+*Needs:* §§2.2, 2.4–2.5, 3.3, 3.5, 4.1; RealSemisimpleLieGroups §§1.2, 3.2–3.3; LieGroups Layer 1 (`Ad(lieExp X) = exp(ad X)`, and `g·lieExp X·g⁻¹ = lieExp(Ad g X)` for `a_t u a_{−t} → 1`); Tau Ceti `TauCeti.TitsSystem`, `TauCeti.TitsSystem.bruhatCell`; Mathlib `DoubleCoset.doubleCoset`.
 
 **Checks.**
 
@@ -507,7 +507,7 @@ Proof sketch (reduction to the identity component):
 
 ### Dependencies
 
-Layers 2–3; RealSemisimpleLieGroups §§1.2, 3.2–3.3; LieGroups Layers 1, 9; Tau Ceti `TauCeti.TitsSystem`, `TauCeti.TitsSystem.bruhatCell`, `TauCeti.glTitsSystem`; Mathlib `DoubleCoset.doubleCoset`.
+Layers 2–3; RealSemisimpleLieGroups §§1.2, 3.2–3.3; LieGroups Layers 1, 2, 9; Tau Ceti `TauCeti.TitsSystem`, `TauCeti.TitsSystem.bruhatCell`, `TauCeti.glTitsSystem`; Mathlib `DoubleCoset.doubleCoset`.
 
 ## Layer 5: The group ⁰L and the split component
 
@@ -598,7 +598,7 @@ Let `(D, 𝔞, Σ⁺)` be an Iwasawa triple on `G`, with no component condition,
 - A subalgebra `𝔮 ⊇ 𝔷` equals `𝔷 ⊕ (𝔮 ∩ [𝔤, 𝔤])`, and `(𝔮 ∩ [𝔤, 𝔤]) ⊗ ℂ = 𝔮 ⊗ ℂ ∩ [𝔤, 𝔤]_ℂ`.
 - So `𝔮` is parabolic iff `𝔮 ⊇ 𝔷` and `𝔮 ∩ [𝔤, 𝔤]` is an `Int([𝔤, 𝔤])`-conjugate of some `𝔮'_{Π'}`, a parabolic subalgebra for the connected group `Int([𝔤, 𝔤])`, which has semisimple Lie algebra, trivial centre and the adjoint datum of RealSemisimpleLieGroups §0.2, so that its §3.1 supplies the minimal parabolic datum. The criterion of RealSemisimpleLieGroups §4.4 for `Int([𝔤, 𝔤])` finishes.
 
-*Needs:* §§1.1, 2.2, 2.4; RealSemisimpleLieGroups §§0.2, 1.2, 3.1, 4.1, 4.4; LieGroups Layer 7 (complexification); Tau Ceti `TauCeti.borelSubalgebra`.
+*Needs:* §§1.1, 2.2, 2.4; RealSemisimpleLieGroups §§0.2, 1.2, 3.1, 4.1, 4.4; LieGroups Layer 1 (`Ad(lieExp X) = exp(ad X)`: `Ad(G⁰)` is trivial on `𝔷` and acts on `[𝔤, 𝔤]` through `Int([𝔤, 𝔤])`), Layer 7 (complexification); Tau Ceti `TauCeti.borelSubalgebra`.
 
 **Checks.**
 
@@ -623,7 +623,7 @@ All statements of this layer are about a subgroup `G` of `GL (Fin n) ℝ`, with 
 
 ### 7.1 Self-adjoint linear groups
 
-Define `IsSelfAdjointLinearGroup G`: `G` is closed in `GL (Fin n) ℝ`, `G` is stable under transposition, and `G` has finitely many connected components. Define `linearLieAlgebra G = {X : ∀ t : ℝ, NormedSpace.exp (t • X) is the matrix of an element of G}`. Use LieGroups Layer 9 with the identity covering to obtain the involution `θ(g) = (gᵀ)⁻¹`, the global model, the compact fixed group `K = G ∩ unitarySubgroup` (closed in the compact `O(n)`) and the polar structure of a self-adjoint linear group. Own the adapter identifying its intrinsic tangent Lie algebra with `linearLieAlgebra G` through the matrix inclusion, intertwining `lieExp` with `NormedSpace.exp` and `Ad` with matrix conjugation. Under this identification prove that `linearLieAlgebra G` is transpose-stable and `B(X,Y) = tr(XY)` supplies the compatible form of §1.1, with `𝔨` skew and `𝔭` symmetric. Prove the two reductivity fields of the base datum: on the transpose-stable `linearLieAlgebra G`, `(ad X)ᵀ = ad(Xᵀ)` for `⟨X, Y⟩ = tr(XYᵀ)`, so the reductivity criterion of §1.1 makes it the direct sum of its centre and its semisimple derived algebra. This is the form and tangent adapter, not a second polar construction (Wallach 1988, Ch. 2 §2.1; Knapp 2002, Ch. VII §2). *Needs:* §1.1 (the reductivity criterion); LieGroups Layer 2 (closed-subgroup Lie structure) and Layer 9 (identity-cover Cartan and polar theorem); Mathlib `Matrix.exp_transpose`.
+Define `IsSelfAdjointLinearGroup G`: `G` is closed in `GL (Fin n) ℝ`, `G` is stable under transposition, and `G` has finitely many connected components. Define `linearLieAlgebra G = {X : ∀ t : ℝ, NormedSpace.exp (t • X) is the matrix of an element of G}`. Use LieGroups Layer 9 with the identity covering to obtain the involution `θ(g) = (gᵀ)⁻¹`, the global model, the compact fixed group `K = G ∩ unitarySubgroup` (closed in the compact `O(n)`) and the polar structure of a self-adjoint linear group. Own the adapter identifying its intrinsic tangent Lie algebra with `linearLieAlgebra G` through the matrix inclusion, intertwining `lieExp` with `NormedSpace.exp` and `Ad` with matrix conjugation. Under this identification prove that `linearLieAlgebra G` is transpose-stable and `B(X,Y) = tr(XY)` supplies the compatible form of §1.1, with `𝔨` skew and `𝔭` symmetric. Prove the two reductivity fields of the base datum: on the transpose-stable `linearLieAlgebra G`, `(ad X)ᵀ = ad(Xᵀ)` for `⟨X, Y⟩ = tr(XYᵀ)`, so the reductivity criterion of §1.1 makes it the direct sum of its centre and its semisimple derived algebra. This is the form and tangent adapter, not a second polar construction (Wallach 1988, Ch. 2 §2.1; Knapp 2002, Ch. VII §2). *Needs:* §1.1 (the reductivity criterion); LieGroups Layers 0–1 (the matrix shadows: on `GL (Fin n) ℝ`, `lieExp` is the matrix exponential and `Ad g` is conjugation by `g`), Layer 2 (closed-subgroup Lie structure) and Layer 9 (identity-cover Cartan and polar theorem); Tau Ceti `map_lieExp` (for the inclusion of `G` in `GL (Fin n) ℝ`); Mathlib `Matrix.exp_transpose`.
 
 API:
 
@@ -705,7 +705,7 @@ These are the matrix forms of Knapp 2002, Ch. VII §§2, 4–5, 7, and Bourbaki,
 
 ### Dependencies
 
-Layers 1–6; RealSemisimpleLieGroups §§3.3, 4.1, 4.2, 4.4; LieGroups Layer 2 (`isEmbeddedLieSubgroup_of_isClosed`) and Layer 9 (identity-cover polar theorem); Mathlib `Matrix.GeneralLinearGroup`, `unitarySubgroup`, `NormedSpace.exp`, `Matrix.exp_transpose`, `Matrix.exp_conj`, `ConnectedComponents`, `connectedComponentIn`, `Filter.Tendsto`, `DoubleCoset.doubleCoset`.
+Layers 1–6; RealSemisimpleLieGroups §§3.3, 4.1, 4.2, 4.4; LieGroups Layers 0–1 (the matrix shadows of `lieExp` and `Ad`), Layer 2 (`isEmbeddedLieSubgroup_of_isClosed`) and Layer 9 (identity-cover polar theorem); Tau Ceti `map_lieExp`, `TauCeti.TitsSystem`; Mathlib `Matrix.GeneralLinearGroup`, `unitarySubgroup`, `NormedSpace.exp`, `Matrix.exp_transpose`, `Matrix.exp_conj`, `ConnectedComponents`, `connectedComponentIn`, `Filter.Tendsto`, `DoubleCoset.doubleCoset`, `Module.End.eigenspace`.
 
 ## Layer 8: Real points of connected reductive groups over ℝ
 

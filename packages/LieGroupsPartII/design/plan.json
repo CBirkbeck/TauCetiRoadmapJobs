@@ -32,7 +32,8 @@
       "mathlib:LinearMap.BilinForm",
       "mathlib:LieAlgebra.IsSemisimple",
       "mathlib:LieAlgebra.center",
-      "mathlib:LieAlgebra.derivedSeries"
+      "mathlib:LieAlgebra.derivedSeries",
+      "roadmap:LieGroups Layer 1"
      ],
      "api": [
       {
@@ -349,7 +350,8 @@
       "roadmap:RealSemisimpleLieGroups 2.3",
       "roadmap:LieGroups Layer 9",
       "roadmap:LieGroups Layer 1",
-      "roadmap:LieGroups Layer 4"
+      "roadmap:LieGroups Layer 4",
+      "tauceti:map_lieExp"
      ],
      "api": [
       {
@@ -413,7 +415,8 @@
       "roadmap:RealSemisimpleLieGroups 2.3",
       "target:1.1",
       "roadmap:LieGroups Layer 6",
-      "roadmap:LieGroups Layer 7"
+      "roadmap:LieGroups Layer 7",
+      "roadmap:LieGroups Layer 1"
      ],
      "api": [
       {
@@ -539,7 +542,10 @@
       "roadmap:LieGroups Layer 9",
       "target:2.4",
       "target:2.5",
-      "roadmap:LieGroups Layer 2"
+      "roadmap:LieGroups Layer 2",
+      "roadmap:LieGroups Layer 1",
+      "roadmap:LieGroups Layer 3",
+      "tauceti:map_lieExp"
      ],
      "api": [],
      "tests": [
@@ -581,7 +587,8 @@
       "mathlib:Subgroup.centralizer",
       "target:1.1",
       "target:2.4",
-      "roadmap:LieGroups Layer 9"
+      "roadmap:LieGroups Layer 9",
+      "roadmap:LieGroups Layer 1"
      ],
      "api": [
       {
@@ -655,7 +662,8 @@
       "target:3.1",
       "target:3.2",
       "roadmap:LieGroups Layer 2",
-      "roadmap:LieGroups Layer 9"
+      "roadmap:LieGroups Layer 9",
+      "roadmap:LieGroups Layer 1"
      ],
      "api": [],
      "tests": [
@@ -696,7 +704,8 @@
      },
      "prerequisites": [
       "target:2.6",
-      "target:3.2"
+      "target:3.2",
+      "roadmap:LieGroups Layer 1"
      ],
      "api": [],
      "tests": [
@@ -790,7 +799,9 @@
       "target:2.4",
       "target:2.5",
       "target:3.3",
-      "roadmap:RealSemisimpleLieGroups 1.2"
+      "roadmap:RealSemisimpleLieGroups 1.2",
+      "roadmap:LieGroups Layer 1",
+      "roadmap:LieGroups Layer 2"
      ],
      "api": [],
      "tests": [
@@ -1071,7 +1082,8 @@
       "roadmap:RealSemisimpleLieGroups 4.1",
       "roadmap:RealSemisimpleLieGroups 4.4",
       "roadmap:LieGroups Layer 7",
-      "tauceti:TauCeti.borelSubalgebra"
+      "tauceti:TauCeti.borelSubalgebra",
+      "roadmap:LieGroups Layer 1"
      ],
      "api": [],
      "tests": [
@@ -1245,7 +1257,10 @@
       "roadmap:LieGroups Layer 2",
       "mathlib:unitarySubgroup",
       "mathlib:Matrix.exp_transpose",
-      "roadmap:LieGroups Layer 9"
+      "roadmap:LieGroups Layer 9",
+      "roadmap:LieGroups Layer 0",
+      "roadmap:LieGroups Layer 1",
+      "tauceti:map_lieExp"
      ],
      "api": [],
      "tests": [
@@ -1635,7 +1650,9 @@
      "statement": "Same hypotheses as 7.3b: every subgroup Q with P ≤ Q ≤ G equals dynamicParabolic G X for some X ∈ 𝔞; for X, Y ∈ 𝔞 with P contained in both dynamic parabolics, the two are equal iff X and Y have the same centralizer in linearLieAlgebra G. Route: RealSemisimpleLieGroups 4.2 (overgroups of P are the Q_{Π'}) and 4.4 (dynamicalParabolic X = Q_{Π'}) for the datum of 3.5, with the comparison of 7.2.",
      "hypotheses": [
       "G : Subgroup (GL (Fin n) ℝ) with IsSelfAdjointLinearGroup G (target 7.1)",
-      "𝔞, H₀, LinearComponentCondition as in 6.2b"
+      "𝔞 maximal abelian in the symmetric part of linearLieAlgebra G (as in 7.3b)",
+      "H₀ ∈ 𝔞 regular (as in 7.3b)",
+      "LinearComponentCondition G 𝔞"
      ],
      "locator": {
       "source": "knapp2002",
@@ -1706,10 +1723,12 @@
      "id": "7.3g",
      "kind": "theorem",
      "name": "exists_titsSystem_linear",
-     "statement": "For a self-adjoint linear group G, 𝔞, H₀, M, N, P as in 6.2b, and LinearComponentCondition G 𝔞: there is T : TauCeti.TitsSystem G with T.subgroupB = P and T.subgroupN = N_G(𝔞) = {g ∈ G : g𝔞g⁻¹ = 𝔞}. It is RealSemisimpleLieGroups 3.3 for the datum of 3.5 (via 4.2); RealSemisimpleLieGroups' exists_titsSystem is the connected, semisimple, finite-centre case, and this statement allows disconnected linear groups with reductive Lie algebra.",
+     "statement": "For a self-adjoint linear group G, 𝔞, H₀, M, N, P as in 7.3b, and LinearComponentCondition G 𝔞: there is T : TauCeti.TitsSystem G with T.subgroupB = P and T.subgroupN = N_G(𝔞) = {g ∈ G : g𝔞g⁻¹ = 𝔞}. It is RealSemisimpleLieGroups 3.3 for the datum of 3.5 (via 4.2); RealSemisimpleLieGroups' exists_titsSystem is the connected, semisimple, finite-centre case, and this statement allows disconnected linear groups with reductive Lie algebra.",
      "hypotheses": [
       "G : Subgroup (GL (Fin n) ℝ) with IsSelfAdjointLinearGroup G (target 7.1)",
-      "𝔞, H₀, LinearComponentCondition as in 6.2b"
+      "𝔞 maximal abelian in the symmetric part of linearLieAlgebra G (as in 7.3b)",
+      "H₀ ∈ 𝔞 regular (as in 7.3b)",
+      "LinearComponentCondition G 𝔞"
      ],
      "locator": {
       "source": "knapp2002",
@@ -1809,7 +1828,7 @@
     "Layer 7",
     "Layer 9"
    ],
-   "what": "Full CartanInvolution with finite central matrix-cover model, polar diffeomorphism and compact maximal K, exact IwasawaData, iwasawaDecomposition, kakDecomposition, restricted roots, and the restricted Weyl group N_K(𝔞)/Z_K(𝔞) with normalizer representatives of the restricted reflections and chamber coverage; LieGroups Layers 0–4,7 for Lie foundations and complexification; Layer 6 (conjugacy of maximal tori, Weyl group acting as the root Weyl group, freely on chambers) for the axiom (v) clause of 2.5. Native map_lieExp and lieMap_injective supply naturality and faithfulness."
+   "what": "Full CartanInvolution with finite central matrix-cover model, polar diffeomorphism and compact maximal K, exact IwasawaData, iwasawaDecomposition, kakDecomposition, restricted roots, and the restricted Weyl group N_K(𝔞)/Z_K(𝔞) with normalizer representatives of the restricted reflections and chamber coverage; LieGroups Layers 0–4,7 for Lie foundations (among them the conjugation law g·lieExp X·g⁻¹ = lieExp(Ad g X), the identity Ad(lieExp X) = exp(ad X) and the matrix shadows of lieExp and Ad) and complexification; Layer 6 (conjugacy of maximal tori, Weyl group acting as the root Weyl group, freely on chambers) for the axiom (v) clause of 2.5. Native map_lieExp and lieMap_injective supply naturality and faithfulness."
   },
   {
    "roadmap": "RealSemisimpleLieGroups",
