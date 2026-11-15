@@ -1,0 +1,264 @@
+module
+
+import Mathlib
+import TauCeti.Algebra.Module.PseudoCoherent.Basic
+import TauCeti.Algebra.Module.PseudoCoherent.FiniteProjectiveDimension
+import TauCeti.Data.ENat.LeastBound
+import TauCeti.AlgebraicTopology.EilenbergMacLane.Basic
+import TauCeti.Algebra.Homology.TotallyAcyclic.Abelian
+
+/-!
+# Finiteness and duality of groups: target signatures
+
+This file is not the roadmap. The roadmap is `README.md`; this file states the roadmap's headline
+theorems against the pinned Mathlib and Tau Ceti, each with `sorry`, together with the few
+definitions their statements need. The README's other targets, API lists, Checks and worked
+examples stay in the README.
+
+Headline theorems stated here:
+
+* the finiteness criterion 1.5, in its directed-colimit form (`isOfTypeFPn_iff_colimit`) and its
+  product form (`isOfTypeFPn_iff_piComparison`);
+* Serre's theorem 3.2 (`cohomologicalDim_eq_of_finiteIndex`);
+* the Eilenberg–Ganea theorem 5.3 (`geometricDim_le_max`);
+* Swan's theorem 7.3(b), rational form (`exists_linearEquiv_tensorRat`);
+* the Euler characteristic 8.4: independence of the subgroup (`groupEulerChar_eq_div_index`) and
+  multiplicativity on subgroups of finite index (`groupEulerChar_subgroup`);
+* multiplicativity in extensions 8.6 (`isVirtuallyOfTypeFP_and_groupEulerChar_eq_mul`);
+* the equivariant formula 8.7 for amalgams (`groupEulerChar_pushoutI`) and HNN extensions
+  (`groupEulerChar_hnnExtension`);
+* Brown's denominator theorem 8.9, in both of its forms (`exists_int_eq_mul_groupEulerChar`,
+  `exists_subgroup_card_eq_of_dvd_den`);
+* the existence of complete resolutions 9.2, as Gorenstein projectivity of high syzygies
+  (`isGorensteinProjective_opcycles`).
+
+Headline theorems not statable at the pins:
+
+* the duality criterion 6.3, the Bieri–Eckmann characterization 6.4(b) of Poincaré duality
+  groups by abstract isomorphisms, and the Poincaré duality of the fundamental group of a closed
+  aspherical manifold 6.6: a duality group is defined through the cap product
+  `Hᵏ(G, M) ⊗ Hₙ(G, N) → Hₙ₋ₖ(G, M ⊗ N)` on Mathlib's group cohomology and homology, which is not
+  at the pins (CohomologyOfGroups §4.6 plans it); 6.6 also needs the orientation character of a
+  manifold (AlgebraicTopology §6.3), not at the pins;
+* the comparison 9.4 of Farrell cohomology with ordinary cohomology above the virtual
+  cohomological dimension: Farrell cohomology is the cohomology of `Hom` from a chosen complete
+  resolution of the trivial representation, data whose existence is the theorem 9.2, and neither
+  that functor nor its comparison map from `groupCohomology` is a pinned carrier;
+* the general equivariant formula 8.7 for a resolution whose terms are sums of monomial
+  representations `Ind_{G_σ}^G(ℤ_σ)`, and its case of an action on an acyclic simplicial complex
+  with finitely many orbits of simplices: no pinned carrier bundles a group action on a simplicial
+  complex with its orbit representatives and stabilizers, or a monomial complex
+  (CohomologyOfGroups §3.2); its amalgam and HNN-extension cases are stated;
+* Swan's theorem 7.3(a), the vanishing of the Hattori–Stallings rank of a projective `ℤG`-module
+  off the identity class: the Hattori–Stallings trace of a finitely generated projective module
+  over a noncommutative ring (EtaleCohomologyFoundations §F.10.3) is not at the pins.
+-/
+
+open CategoryTheory Limits
+open scoped TensorProduct
+
+namespace TauCetiRoadmap.FinitenessAndDualityOfGroups
+
+universe u
+
+/-! ## Layer 1: finiteness types of groups -/
+
+/-- `G` is *of type `FP_n` over `R`* (README 1.2): the trivial module `R` is `n`-pseudocoherent
+over the group ring `R[G]`, that is, it has a resolution by finitely generated free modules that is
+exact in degrees `≤ n`. Type `FP_∞` is `n = ⊤`. (Bieri–Eckmann 1974, §3.3; Brown 1974, §3.) -/
+def IsOfTypeFPn (R G : Type u) [CommRing R] [Group G] (n : ℕ∞) : Prop :=
+  TauCeti.Huber.IsPseudoCoherentOver (MonoidAlgebra R G) (Representation.trivial R G R).asModule n
+
+/-- `G` is *of type `FP` over `R`* (README 1.2): the trivial module `R` has a resolution of finite
+length by finitely generated projective `R[G]`-modules. (Bieri–Eckmann 1973, §4.1.) -/
+def IsOfTypeFP (R G : Type u) [CommRing R] [Group G] : Prop :=
+  ∃ m : ℕ, TauCeti.Module.IsFPD (MonoidAlgebra R G) (Representation.trivial R G R).asModule m
+
+/-- **The finiteness criterion, directed colimits** (README 1.5, (a) ⇔ (b)). For `n : ℕ`, `G` is of
+type `FP_n` over `R` if and only if, for every directed system `F` of representations, the
+canonical map `colim_i Hᵏ(G, F i) → Hᵏ(G, colim_i F i)` is bijective for `k < n` and injective for
+`k = n`. (Brown 1975, Theorem 2; Bieri–Eckmann 1974, Proposition 1.2.) -/
+theorem isOfTypeFPn_iff_colimit (R G : Type u) [CommRing R] [Group G] (n : ℕ) :
+    IsOfTypeFPn R G n ↔
+      ∀ (I : Type u) [Preorder I] [IsDirected I (· ≤ ·)] [Nonempty I] (F : I ⥤ Rep.{u} R G),
+        (∀ k < n, IsIso (colimit.post F (groupCohomology.functor R G k))) ∧
+          Mono (colimit.post F (groupCohomology.functor R G n)) := by
+  sorry
+
+/-- **The finiteness criterion, products** (README 1.5, (a) ⇔ (d)). For `n : ℕ`, `G` is of type
+`FP_n` over `R` if and only if, for every family `N` of representations, the canonical map
+`Hₖ(G, ∏ⱼ N j) → ∏ⱼ Hₖ(G, N j)` is bijective for `k < n` and surjective for `k = n`.
+(Bieri–Eckmann 1974, Lemma 1.1 and Proposition 1.2; Brown 1975, Theorem 2.) -/
+theorem isOfTypeFPn_iff_piComparison (R G : Type u) [CommRing R] [Group G] (n : ℕ) :
+    IsOfTypeFPn R G n ↔
+      ∀ (J : Type u) (N : J → Rep.{u} R G),
+        (∀ k < n, IsIso (piComparison (groupHomology.functor R G k) N)) ∧
+          Epi (piComparison (groupHomology.functor R G n) N) := by
+  sorry
+
+/-! ## Layer 2: cohomological dimension -/
+
+/-- The *cohomological dimension* `cd_R G` (README 2.1): the least `n ∈ ℕ∞` such that
+`Hᵏ(G, M) = 0` for every representation `M` of `G` over `R` and every `k > n`; it is `⊤` when no
+such `n : ℕ` exists. This is the invariant of a discrete group, not Tau Ceti's profinite
+`TauCeti.cohomologicalDimension`. (Serre 1971, Bourbaki n° 1.1.) -/
+noncomputable def cohomologicalDim (R G : Type u) [CommRing R] [Group G] : ℕ∞ :=
+  TauCeti.leastENatBound fun n =>
+    ∀ (M : Rep.{u} R G) (k : ℕ), n < k → IsZero (groupCohomology M k)
+
+/-! ## Layer 3: tensor induction of complexes and Serre's theorem -/
+
+/-- **Serre's theorem** (README 3.2). A torsion-free group has the integral cohomological
+dimension of each of its subgroups of finite index. (Serre, *Prospects in Mathematics*, n° 1.7,
+Théorème 1.) -/
+theorem cohomologicalDim_eq_of_finiteIndex {G : Type} [Group G] [IsMulTorsionFree G]
+    (H : Subgroup G) [H.FiniteIndex] : cohomologicalDim ℤ H = cohomologicalDim ℤ G := by
+  sorry
+
+/-! ## Layer 4: virtual cohomological dimension and virtual finiteness -/
+
+/-- The *virtual cohomological dimension* `vcd G` (README 4.1): the infimum of `cd_ℤ H` over the
+subgroups `H` of finite index. (Serre 1971, Bourbaki §1, the paragraph after n° 1.6; Brown 1974,
+§3.) -/
+noncomputable def virtualCohomologicalDim (G : Type) [Group G] : ℕ∞ :=
+  ⨅ (H : Subgroup G) (_ : H.FiniteIndex), cohomologicalDim ℤ H
+
+/-- `G` *has finite homological type* (README 4.4): `vcd G < ⊤`, and every torsion-free subgroup
+of finite index has finitely generated integral homology in every degree. (Brown 1974, §3,
+Definition.) -/
+def HasFiniteHomologicalType (G : Type) [Group G] : Prop :=
+  virtualCohomologicalDim G < ⊤ ∧
+    ∀ H : Subgroup G, H.FiniteIndex → IsMulTorsionFree H →
+      ∀ i : ℕ, Module.Finite ℤ (groupHomology (Rep.trivial ℤ H ℤ) i)
+
+/-- `G` is *virtually of type `FP`* (README 4.4): some subgroup of finite index is of type `FP`
+over `ℤ`. -/
+def IsVirtuallyOfTypeFP (G : Type) [Group G] : Prop :=
+  ∃ H : Subgroup G, H.FiniteIndex ∧ IsOfTypeFP ℤ H
+
+/-! ## Layer 5: geometric dimension and the Eilenberg–Ganea theorem -/
+
+/-- The *geometric dimension* `gd G` (README 5.1): the least `n ∈ ℕ∞` such that some Hausdorff
+space `X : Type u` with a CW structure on the whole space and no cells of dimension above `n` is a
+`K(G, 1)`. -/
+noncomputable def geometricDim (G : Type u) [Group G] : ℕ∞ :=
+  TauCeti.leastENatBound fun n =>
+    ∃ (X : Type u) (_ : TopologicalSpace X) (_ : T2Space X)
+      (_ : Topology.CWComplex (Set.univ : Set X)) (x : X),
+      (∀ m : ℕ, n < m → IsEmpty (Topology.CWComplex.cell (Set.univ : Set X) m)) ∧
+        TauCeti.IsEilenbergMacLaneSpaceOne G X x
+
+/-- **The Eilenberg–Ganea theorem** (README 5.3): `gd G ≤ max(3, cd_ℤ G)`. (Eilenberg–Ganea
+1957; Brown, *Cohomology of Groups*, VIII.7.) -/
+theorem geometricDim_le_max (G : Type) [Group G] :
+    geometricDim G ≤ max 3 (cohomologicalDim ℤ G) := by
+  sorry
+
+/-! ## Layer 7: projective modules over group rings and Swan's theorem -/
+
+/-- **Swan's theorem, rational form** (README 7.3(b)). For a finite group `G` and a finitely
+generated projective `ℤ[G]`-module `P`, the rationalization of `P` is free over `ℚ[G]` of rank
+`m = rank_ℤ P / |G|`: there is an `m` with `m · |G| = rank_ℤ P` and a `ℤ[G]`-linear isomorphism
+`P ⊗ ℚ ≅ ℤ[G]^m ⊗ ℚ`. (Brown 1974, §1, citing Swan.) -/
+theorem exists_linearEquiv_tensorRat {G : Type} [Group G] [Finite G] (P : Type) [AddCommGroup P]
+    [Module (MonoidAlgebra ℤ G) P] [Module.Finite (MonoidAlgebra ℤ G) P]
+    [Module.Projective (MonoidAlgebra ℤ G) P] :
+    ∃ m : ℕ, m * Nat.card G = Module.finrank ℤ P ∧
+      Nonempty ((P ⊗[ℤ] ℚ) ≃ₗ[MonoidAlgebra ℤ G] ((Fin m → MonoidAlgebra ℤ G) ⊗[ℤ] ℚ)) := by
+  sorry
+
+/-! ## Layer 8: Euler characteristics -/
+
+/-- The *rational Euler characteristic* `χ_ℚ(G) = Σᵢ (−1)ⁱ dim_ℚ Hᵢ(G, ℚ)` (README 8.3). It is the
+Euler characteristic of the rational homology when that homology has finite total dimension;
+otherwise the finite sum is `0` by convention. -/
+noncomputable def rationalEulerChar (G : Type) [Group G] : ℤ :=
+  ∑ᶠ i : ℕ, (-1) ^ i * (Module.finrank ℚ (groupHomology (Rep.trivial ℚ G ℚ) i) : ℤ)
+
+open scoped Classical in
+/-- The *Euler characteristic* `χ(G)` (README 8.4): the common value of `χ_ℚ(H) / [G : H]` over the
+torsion-free subgroups `H` of finite index. No subgroup is chosen: the set of these values is a
+singleton exactly when they agree, and the finite sum over a singleton is its element. The value is
+`0` when `G` has no torsion-free subgroup of finite index or when two of them give different
+values. For a group of finite homological type the values agree (`groupEulerChar_eq_div_index`).
+(Brown 1974, §4.) -/
+noncomputable def groupEulerChar (G : Type) [Group G] : ℚ :=
+  let values : Set ℚ := {q | ∃ H : Subgroup G, H.FiniteIndex ∧ IsMulTorsionFree H ∧
+    q = (rationalEulerChar H : ℚ) / H.index}
+  if values.Subsingleton then ∑ᶠ q ∈ values, q else 0
+
+/-- **The Euler characteristic is well defined** (README 8.4(b)). For `G` of finite homological
+type and every torsion-free subgroup `H` of finite index, `χ(G) = χ_ℚ(H) / [G : H]`.
+(Brown 1974, §4, Theorem 3 and the definition after it.) -/
+theorem groupEulerChar_eq_div_index {G : Type} [Group G] (hG : HasFiniteHomologicalType G)
+    (H : Subgroup G) [H.FiniteIndex] [IsMulTorsionFree H] :
+    groupEulerChar G = rationalEulerChar H / H.index := by
+  sorry
+
+/-- **Multiplicativity on subgroups of finite index** (README 8.4(c)): for `G` of finite
+homological type and `H` of finite index, `χ(H) = [G : H] · χ(G)`. (Brown 1974, §4.) -/
+theorem groupEulerChar_subgroup {G : Type} [Group G] (hG : HasFiniteHomologicalType G)
+    (H : Subgroup G) [H.FiniteIndex] : groupEulerChar H = H.index * groupEulerChar G := by
+  sorry
+
+/-- **Multiplicativity in extensions** (README 8.6). If `N ◁ G`, `N` and `G ⧸ N` are virtually of
+type `FP` and `G` is virtually torsion-free, then `G` is virtually of type `FP` and
+`χ(G) = χ(N) · χ(G ⧸ N)`. (Brown 1974, §4, Corollary 2.) -/
+theorem isVirtuallyOfTypeFP_and_groupEulerChar_eq_mul {G : Type} [Group G] (N : Subgroup G) [N.Normal]
+    (hN : IsVirtuallyOfTypeFP N) (hQ : IsVirtuallyOfTypeFP (G ⧸ N))
+    (hG : ∃ H : Subgroup G, H.FiniteIndex ∧ IsMulTorsionFree H) :
+    IsVirtuallyOfTypeFP G ∧ groupEulerChar G = groupEulerChar N * groupEulerChar (G ⧸ N) := by
+  sorry
+
+/-- **The Euler characteristic of an amalgam** (README 8.7). For injective homomorphisms
+`φ i : C →* A i`, `i : Bool`, if the amalgam `A true ∗_C A false` (Mathlib's `Monoid.PushoutI`),
+both factors and `C` have finite homological type, then
+`χ(A true ∗_C A false) = χ(A true) + χ(A false) − χ(C)`. (Serre, *Prospects in Mathematics*,
+n° 1.8, Proposition 14(b); Brown 1974, §5.) -/
+theorem groupEulerChar_pushoutI {C : Type} [Group C] {A : Bool → Type} [∀ i, Group (A i)]
+    (φ : ∀ i, C →* A i) (hφ : ∀ i, Function.Injective (φ i))
+    (hP : HasFiniteHomologicalType (Monoid.PushoutI φ))
+    (hA : ∀ i, HasFiniteHomologicalType (A i)) (hC : HasFiniteHomologicalType C) :
+    groupEulerChar (Monoid.PushoutI φ) = groupEulerChar (A true) + groupEulerChar (A false) - groupEulerChar C := by
+  sorry
+
+/-- **The Euler characteristic of an HNN extension** (README 8.7). For subgroups `A, B ≤ H` and
+`φ : A ≃* B`, if `HNNExtension H A B φ`, `H` and `A` have finite homological type, then
+`χ(HNNExtension H A B φ) = χ(H) − χ(A)`. -/
+theorem groupEulerChar_hnnExtension {H : Type} [Group H] (A B : Subgroup H) (φ : A ≃* B)
+    (hE : HasFiniteHomologicalType (HNNExtension H A B φ))
+    (hH : HasFiniteHomologicalType H) (hA : HasFiniteHomologicalType A) :
+    groupEulerChar (HNNExtension H A B φ) = groupEulerChar H - groupEulerChar A := by
+  sorry
+
+/-- **Brown's denominator theorem** (README 8.9). If `G` has finite homological type and `m` is a
+common multiple of the orders of the finite subgroups of `G`, then `m · χ(G)` is an integer; the
+least such `m` is the least common multiple of those orders. (Brown 1974, §6, Corollary 1 of
+Theorem 5.) -/
+theorem exists_int_eq_mul_groupEulerChar {G : Type} [Group G] (hG : HasFiniteHomologicalType G)
+    (m : ℕ) (hm : ∀ K : Subgroup G, Finite K → Nat.card K ∣ m) :
+    ∃ z : ℤ, (m : ℚ) * groupEulerChar G = z := by
+  sorry
+
+/-- **Brown's denominator theorem, prime-power form** (README 8.9). If `G` has finite homological
+type and a prime power `p ^ k` divides the denominator of `χ(G)`, then `G` has a subgroup of order
+`p ^ k`. (Brown 1974, §6, Corollary 1 of Theorem 5.) -/
+theorem exists_subgroup_card_eq_of_dvd_den {G : Type} [Group G]
+    (hG : HasFiniteHomologicalType G) {p k : ℕ} (hp : p.Prime)
+    (hdvd : p ^ k ∣ (groupEulerChar G).den) : ∃ K : Subgroup G, Nat.card K = p ^ k := by
+  sorry
+
+/-! ## Layer 9: complete resolutions and Farrell cohomology -/
+
+/-- **Existence of complete resolutions** (README 9.2). If `G` has a subgroup `H` of finite index
+with `cd_R H ≤ n`, then for every projective resolution `P` of the trivial representation `R` the
+`n`-th syzygy, the cokernel of `P (n + 1) → P n`, is Gorenstein projective in `Rep R G`: it is the
+degree-zero cycles of a totally acyclic complex of projectives, which spliced with `P` above
+degree `n` is a complete resolution. (Farrell 1977; Brown, *Cohomology of Groups*, X.2.) -/
+theorem isGorensteinProjective_opcycles {R G : Type u} [CommRing R] [Group G]
+    (P : ProjectiveResolution (Rep.trivial R G R)) (H : Subgroup G) [H.FiniteIndex] (n : ℕ)
+    (hH : cohomologicalDim R H ≤ n) :
+    isGorensteinProjective (Rep.{u} R G) (P.complex.opcycles n) := by
+  sorry
+
+end TauCetiRoadmap.FinitenessAndDualityOfGroups
