@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RelativeJacobiansAndIntegralCurveModels~5",
+  "head": "2af2fd0f6b5b397344a090228c4eb7543c1b3cbd",
+  "pr": 1232,
+  "folder": "RelativeJacobiansAndIntegralCurveModels",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 5 changed lines since f6d3602. Previous findings R01 (letI in the signature of globalFunctions_constants), R02 and R03 (two stale sentences of the description) are all repaired. Checked: the changed statement is definitionally the former one (Iff.rfl on a scratch copy) and was recomputed on P^1_Z, Spec R, a finite field extension and the non-normal control Z[sqrt(-3)]; one-tactic probe (simp, rfl, exact) does not close it; README section 0.4 agrees with the Lean. Gate rerun: every counter 0, OK (worker's build=0); lake env lean: seven sorry warnings only; depcheck 0 problems, no UPWARD or CYCLE. Title and description read sentence by sentence against the head: none contradicted. Overlap listing: no shared roadmap, dropped id, second copy or conflicting head; scope of the eight closest roadmaps read, nothing shared. Seeded sample falls outside the changed passage; BLR remains unreadable (paywalled) and is reported to the human reviewers.",
+  "text": "38dabe91de94a575"
+ }
+}
