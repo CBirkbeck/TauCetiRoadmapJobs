@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GrothendieckUniverses~12",
+  "head": "397982312bd4b2e07c195cdd3eb2269a783c9e15",
+  "pr": 1783,
+  "folder": "GrothendieckUniverses",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 16 changed lines since 7282328. Checked: the new Krömer 2006 sentence, locator (§6, pp. 148–149) and page range (119–162) against the Numdam text (7 locators); the removal of the Archives Bourbaki entry leaves no residue; one P3: the year 1958 of the draft is not in the cited pages. Gate passes (own run and worker's, build=0); depcheck 0 problems; Suggested.lean elaborates with 8 sorry warnings only; one adversarial row for 2.1 with 5 proved probe values; pull request text consistent with the head; no file changed outside the folder; previous review had no findings; the human-reviewer bullet on unpublished typescripts is dropped because the change removed them.",
+  "text": "c1b9e3fbdbeb0731"
+ }
+}
