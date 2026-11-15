@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PadicHodgeParametersInLocallyAnalyticRepresentations~2",
+  "head": "c1ff1677b1822024faac916b0a3d98ff798c7f85",
+  "pr": 2257,
+  "folder": "PadicHodgeParametersInLocallyAnalyticRepresentations",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since c1ff167. Checked: the pull request's title and description against the head (R01 and R02 of the previous review are repaired; summary block, supplier list, the ten DING25 theorem locators it names at lines 2084-2619, the eight docstring groups, the diffstat); the 39 cited section ids of LocallyAnalyticRepresentationsOfLocalGroups at its open head with the dimensions of 8.12, 8.14 and the sign of 9.7; SR.3.2 on main (complex coefficients) against the declared gap principal-series-bernstein-completion, on which acceptance is conditional; adversarial rows with computed values for the kernel dimension (c_n = 0,0,1,5; 17-15 = 2 at n=3, d_K=2). Gate re-run: every check passed; depcheck 238 roadmaps, 2254 edges, 0 problems; lake env lean on Suggested.lean exit 0 with no output (no declarations). One remark on untouched text (README line 226 cites supplier 7.3 (iv), which is 7.2 (iv) at the supplier's open head), no change requested.",
+  "text": "73c4661088926690"
+ }
+}
