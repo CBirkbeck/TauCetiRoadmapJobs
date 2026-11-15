@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StratifiedSpacesAndTameTopology~21",
+  "head": "96086c5a7bfe3b00448b3a115558bccb8aea5d37",
+  "pr": 1519,
+  "folder": "StratifiedSpacesAndTameTopology",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 8bb72e2. The folder, lake-manifest.json and lean-toolchain are unchanged, and nothing outside the folder differs from origin/main. R01 and R02 (both description findings) are repaired: the supplier bullets now match README 179-220 and 610. The whole description was re-read against the head. Adversarial rows (4) cover the repaired bullets: compact 4.3 implies A4.1, R2.1 implies bounded 4.3, the 3.4b-only consumption, and exists_triangulation_semialgebraic on S^1. Citations re-resolved (21): ShimuraVarieties and AlgebraicTopologyPartII at their open heads; RealAnalyticGeometry, AffineMorseLefschetz, GeometricTopology, DifferentialGeometry and AlgebraicTopology on main 1a19c9f; Tau Ceti declarations at the pin. The seeded sample falls in no changed passage. Gate: the worker's gate is all 0 with build=0; locally, with the public order, only depcheck NOT IN ORDER, which is not a defect. depcheck: 0 problems, no UPWARD/CYCLE. lake env lean: exit 0, four sorry warnings only. Two remarks on untouched text: the pin's AbstractBoundary, and the downstream consumers paragraph.",
+  "text": "15d528d75ef9f80d"
+ }
+}
