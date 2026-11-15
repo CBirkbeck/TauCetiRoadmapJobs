@@ -1673,22 +1673,23 @@
      "id": "9.1",
      "kind": "definition",
      "name": "ObstructionTheory.RelativeSpaceOfMaps",
-     "statement": "For B an algebraic stack locally of finite type and quasi-separated over k, of pure dimension b, C -> B representable and etale locally on the base a prestable family (for every scheme T -> B an etale covering T_i -> T with C_{T_i} a scheme prestable over T_i), X a smooth quasi-projective k-scheme, M a stack with M -> B of Deligne-Mumford type and F : C_M -> X, (M, F) is a relative space of maps if for every square-zero extension T -> Tbar over B with Tbar affine and g : T -> M over B, the map gbar -> F o C_gbar, with C_gbar : C_Tbar -> C_M the base change of gbar (formed with the 2-isomorphism of the extension over B), is a bijection from extensions of g (7.1) onto extensions of F o C_g to C_Tbar.",
+     "statement": "For B an algebraic stack locally of finite type and quasi-separated over k, of pure dimension b, C -> B representable and etale locally on the base a prestable family (for every scheme T -> B an etale covering T_i -> T with C_{T_i} a scheme prestable over T_i), X a scheme smooth over k (not necessarily separated, quasi-compact or quasi-projective), M a stack with M -> B of Deligne-Mumford type and F : C_M -> X, (M, F) is a relative space of maps if for every square-zero extension T -> Tbar over B with Tbar affine and g : T -> M over B, the map gbar -> F o C_gbar, with C_gbar : C_Tbar -> C_M the base change of gbar (formed with the 2-isomorphism of the extension over B), is a bijection from extensions of g (7.1) onto extensions of F o C_g to C_Tbar.",
      "hypotheses": [
       "B algebraic stack locally of finite type and quasi-separated over k (Convention 7), pure dimension b",
       "C -> B representable, a prestable family etale locally on every scheme over B",
-      "X smooth quasi-projective",
+      "X a scheme smooth over k; no separatedness, quasi-compactness or quasi-projectivity",
       "M -> B of Deligne-Mumford type"
      ],
      "locator": {
       "source": "behrend1997",
-      "where": "Proposition 4, lines 139-141; behrend-fantechi1997 Proposition 6.2, lines 1602-1614"
+      "where": "lines 129-138 and Proposition 4, lines 139-141; behrend-fantechi1997 Proposition 6.2, lines 1602-1614"
      },
      "prerequisites": [
       "target:7.1",
       "tauceti:TauCeti.AlgebraicGeometry.PrestableFamily",
       "roadmap:StableReduction Layer 3",
-      "roadmap:SchemeAndStackFoundations §1.19"
+      "roadmap:SchemeAndStackFoundations §1.19",
+      "roadmap:SchemeAndStackFoundations §4.14"
      ],
      "api": [
       {
@@ -1699,7 +1700,7 @@
       {
        "name": "RelativeSpaceOfMaps.fixedCurve",
        "role": "compatibility",
-       "statement": "For B = Spec k and fixed C, open subschemes of Mor(C, X) qualify."
+       "statement": "For B = Spec k, a fixed projective curve C and X open in a projective k-scheme Xbar, every open subscheme of finite type of Mor(C, X) qualifies, Mor(C, X) being the open subscheme of Mor(C, Xbar) (SchemeAndStackFoundations §4.14) of maps missing Xbar - X, open as C is proper."
       }
      ],
      "tests": [
@@ -1825,6 +1826,11 @@
        "name": "ellipticTranslations",
        "kind": "computation",
        "statement": "For C elliptic and X = C near an isomorphism, Ob = H^1(O) (x) O_M trivial, vd = 0, dim M = 1, class 0."
+      },
+      {
+       "name": "doubledOriginTarget",
+       "kind": "degenerate",
+       "statement": "B = Spec k, C = P^1, X = M = L the line with a doubled origin, F = pr_2: extensions of g and of g o pr_2 are both torsors under H^0(T, g^*T_L (x) J) and gbar -> gbar o pr_2 is equivariant, so (L, pr_2) is a relative space of maps; R pi_* F^*T_L = T_L, phi = id_{Omega_L}, Ob = 0, class [L] of dimension 0 + 0 + 1(1 - 0) = 1 = dim L. A separatedness or quasi-projectivity hypothesis on X would exclude it."
       }
      ]
     },
@@ -1870,7 +1876,7 @@
      "id": "9.5",
      "kind": "theorem",
      "name": "ObstructionTheory.maps_virtualDimension",
-     "statement": "Where the fibres have arithmetic genus g, F^*T_X has fibre degree delta and rank l (the dimension of the component of X receiving F_t), rk E = delta + l (1 - g), so the virtual dimension is b + delta + l (1 - g), equal to b + delta + dim X (1 - g) for X of pure dimension; for X of pure dimension, B the stack of prestable n-pointed genus-g curves (dimension 3g - 3 + n) and delta = c_1(T_X).beta this is (1 - g)(dim X - 3) + n + c_1(T_X).beta.",
+     "statement": "Where the fibres have arithmetic genus g, F^*T_X has fibre degree delta and rank l (the dimension of the component of X receiving F_t), rk E = delta + l (1 - g), so the virtual dimension is b + delta + l (1 - g), equal to b + delta + dim X (1 - g) for X of pure dimension; for X projective of pure dimension, F_t is proper with curve class beta = F_t*[C_t] and delta = c_1(T_X).beta by the projection formula, and for B the stack of prestable n-pointed genus-g curves (dimension 3g - 3 + n) this is (1 - g)(dim X - 3) + n + c_1(T_X).beta; for X not separated F_t need not be proper and only the fibre degree delta is defined.",
      "hypotheses": [
       "the setting of 9.1",
       "constant genus g, fibre degree delta and rank l of F^*T_X"
@@ -1884,7 +1890,10 @@
       "target:9.4",
       "roadmap:SchemeAndStackFoundations §3.3",
       "roadmap:StableReduction Layer 2",
-      "tauceti:TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.FixedRank.vectorBundleDegree"
+      "tauceti:TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.FixedRank.vectorBundleDegree",
+      "roadmap:SchemeAndStackFoundations §5.2",
+      "roadmap:SchemeAndStackFoundations §5.3",
+      "roadmap:SchemeAndStackFoundations §5.4"
      ],
      "api": [],
      "tests": [
@@ -1907,6 +1916,11 @@
        "name": "nonPureTarget_rank",
        "kind": "non-example",
        "statement": "X = Spec k + P^1, C = P^1, F constant onto the point: F^*T_X = 0, rk E = 0 = delta + l(1 - g) with l = 0, while dim X (1 - g) = 1."
+      },
+      {
+       "name": "doubledPointTarget_noCurveClass",
+       "kind": "non-example",
+       "statement": "P = P^1 with a doubled point, C = P^1, F the inclusion of a chart: F is not proper (its image is dense, not closed), so F_*[P^1] is undefined, while F^*T_P = O(2) gives delta = 2, l = 1 and virtual dimension 3 = h^0(O(2)), the dimension of the degree-one maps (two copies of PGL_2)."
       }
      ]
     }
@@ -1988,6 +2002,7 @@
     "§2.20",
     "§3.3",
     "§4.1",
+    "§4.14",
     "§5.1",
     "§5.2",
     "§5.3",
@@ -1995,7 +2010,7 @@
     "§5.5",
     "§5.6"
    ],
-   "what": "Algebraic spaces and stacks, inertia, points, separated and proper stacks, quotient stacks, coarse spaces and Keel–Mori, quasi-coherent cohomology and its topology comparison, derived categories, the upper shriek functor and relative dualising complexes, Riemann–Roch on curves, lifting for smooth morphisms, and the Chow theory of schemes."
+   "what": "Algebraic spaces and stacks, inertia, points, separated and proper stacks, quotient stacks, coarse spaces and Keel–Mori, quasi-coherent cohomology and its topology comparison, derived categories, the upper shriek functor and relative dualising complexes, Riemann–Roch on curves, lifting for smooth morphisms, Hom schemes of projective schemes, and the Chow theory of schemes."
   },
   {
    "roadmap": "StableReductionPartII",

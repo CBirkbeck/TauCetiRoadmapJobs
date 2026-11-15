@@ -26,7 +26,7 @@ relative tangent directions on ambients that need be neither smooth nor reduced,
 regular-immersion pullback and functoriality over bases of pure dimension, deformation
 invariance of virtual counts in families over a curve, and the perfect relative obstruction
 theory `(Rπ_* F^*T_X)^∨ → L_{M/𝔅}` of every relative space of maps from a family of prestable
-curves over a pure-dimensional algebraic stack to a smooth quasi-projective variety, with its
+curves over a pure-dimensional algebraic stack to a smooth `k`-scheme, separated or not, with its
 global resolutions and virtual dimension `b + δ + dim X · (1 − g)` for a target of pure
 dimension (Layers 6–9).
 
@@ -65,7 +65,7 @@ This roadmap owns:
   virtual counts (Layer 8);
 - derived pushforward and Grothendieck duality along prestable families over Deligne–Mumford
   stacks, the Kodaira–Spencer morphism, the perfect relative obstruction theory of every relative
-  space of maps from a family of prestable curves to a smooth quasi-projective variety, its global
+  space of maps from a family of prestable curves to a smooth `k`-scheme, its global
   resolutions and its virtual dimension (Layer 9).
 
 Imported, not restated:
@@ -99,9 +99,9 @@ Imported, not restated:
   and its agreement in the Zariski, étale and fppf topologies (§§2.6, 2.10), used in 6.1 to split
   extensions on affine charts, derived categories of quasi-coherent complexes, the upper shriek
   functor and relative dualising complexes (§§2.18–2.20), Riemann–Roch on curves (§3.3), the
-  lifting criterion and torsors of lifts for smooth morphisms (§4.1), and the intersection theory of
-  schemes (§§5.1–5.6). Every stack-level statement here restricts on schemes to those sections and
-  is not restated for schemes.
+  lifting criterion and torsors of lifts for smooth morphisms (§4.1), Hom schemes of projective
+  schemes (§4.14), and the intersection theory of schemes (§§5.1–5.6). Every stack-level statement
+  here restricts on schemes to those sections and is not restated for schemes.
 - **StableReductionPartII** §5.15 owns the Edidin–Graham comparison of groups
   `A_{i−g}([X/G])_ℚ ≅ A^G_i(X) ⊗ ℚ` for a Deligne–Mumford quotient stack, with its compatibility
   with Chern classes and proper pushforward; 5.3 here adds only its compatibility with products.
@@ -112,7 +112,7 @@ Imported, not restated:
   the cotangent complex of ring maps and square-zero lifting for ring maps.
 - **AlgebraicGromovWittenTheory** owns the prestable-curve stack, the stack of stable maps, its
   properness and its virtual class. Layer 9 states the obstruction theory of a relative space of
-  maps for every base and every smooth quasi-projective target; it builds no moduli stack.
+  maps for every base and every smooth target scheme; it builds no moduli stack.
 
 Not part of this roadmap: Chow groups of Artin stacks in the sense of Kresch and the virtual class
 without a global resolution (kresch1999 Theorem 6.2.1), virtual pullbacks, torus and cosection
@@ -365,7 +365,10 @@ being étale and separated), has `U → V` the identity, so the cone has rank eq
   local complete intersection formula), §2.20 (relative dualising complexes of flat finitely
   presented morphisms and their base change).
 - §3.3 (degrees of vector bundles and Riemann–Roch on proper curves), §4.1 (thickenings, formal
-  smoothness, the lifting criterion and torsors of lifts for smooth morphisms).
+  smoothness, the lifting criterion and torsors of lifts for smooth morphisms), §4.14 (over a
+  Noetherian base, `Hom_S(X, Y)` for projective `X`, `Y` flat over `S` is an open subscheme of a
+  Hilbert scheme of `X ×_S Y`, with its universal family), used in 9.1 for the scheme of morphisms
+  from a fixed curve.
 - §§5.1–5.6: Chow groups of schemes locally of finite type over `k`, proper pushforward, flat
   pullback, `localization_exact`, `chow_affine_bundle`, the first Chern class, projective bundles
   and Chern classes with the splitting principle, normal cones, `deformationToNormalCone`, refined
@@ -606,8 +609,8 @@ No separatedness of `ℱ` or `𝒢` is assumed. *Needs:* 1.2; SchemeAndStackFoun
 ### Dependencies
 
 gap:closed-substacks-of-stacks; SchemeAndStackFoundations §§1.19–1.20; VirtualFundamentalClass §0.2;
-deligne-mumford1969 Theorem 4.12 and rydh2015 Theorem B for 1.1. Within the layer, 1.1 and 1.2
-precede 1.3.
+deligne-mumford1969 Theorem 4.12 and rydh2015 Theorem B for 1.1. Within the layer, 1.2 precedes
+1.3, and 1.1 uses neither.
 
 ## Layer 2: integral cycles and Chow groups
 
@@ -1816,24 +1819,33 @@ scheme `T → 𝔅` there is an étale covering `{T_i → T}` such that each `�
 `𝒞_{T_i} → T_i` is a prestable family (`TauCeti.AlgebraicGeometry.PrestableFamily`, a class on morphisms of
 schemes; StableReduction Layer 3). The étale-local form, rather than representability by schemes, is
 what 9.2–9.4 use, since they work on étale charts of `M`; it contains the case of `𝒞 → 𝔅`
-representable by schemes. Let `X` be a smooth
-quasi-projective `k`-scheme, `M` a stack (Convention 1) with a morphism `M → 𝔅` of Deligne–Mumford type,
+representable by schemes. Let `X` be a scheme smooth over `k`, not necessarily separated, quasi-compact
+or quasi-projective: 9.1–9.5 use that `X` is a scheme (here), that it is smooth over `k` (9.3), and the
+rank and fibre degree of `F^*T_X` (9.5), whose form through a curve class is stated for projective `X`.
+Let `M` be a stack (Convention 1) with a morphism `M → 𝔅` of Deligne–Mumford type,
 `π : 𝒞_M := 𝒞 ×_𝔅 M → M` the base change and `F : 𝒞_M → X` a morphism. Define *RelativeSpaceOfMaps*:
 `(M, F)` is a relative space of maps from `𝒞` to `X` if for every square-zero extension `T → T̄` over `𝔅`
 (7.1) with `T̄` affine and every `g : T → M` over `𝔅`, the map `ḡ ↦ F ∘ 𝒞_ḡ` is a bijection from the
 extensions of `g` to `T̄` (7.1) onto the extensions of `F ∘ 𝒞_g : 𝒞_T → X` to `𝒞_{T̄}`. Here
 `𝒞_ḡ : 𝒞_{T̄} → 𝒞_M` is the base change of `ḡ`, formed with the extension's 2-isomorphism over `𝔅`, and
 `F ∘ 𝒞_ḡ` restricts to `F ∘ 𝒞_g` on `𝒞_T` because 2-isomorphic morphisms to the scheme `X` are equal.
-Every open substack of a stack of morphisms `Mor_𝔅(𝒞, X)` that is a stack in the sense of Convention 1
-is one, by its universal property, and the stack of stable maps is such an open substack over the
-prestable-curve stack (behrend1997 Proposition 4, lines 139–141). *Needs:* 7.1; Tau Ceti `TauCeti.AlgebraicGeometry.PrestableFamily`;
-StableReduction Layer 3; SchemeAndStackFoundations §1.19.
+Where a stack of morphisms `Mor_𝔅(𝒞, X)` exists, every open substack of it that is a stack in the
+sense of Convention 1 is one, by its universal property; for `X` smooth and projective over `k` and
+`𝔅` a stack of prestable curves it exists, is algebraic and is representable over `𝔅`, and the stack
+of stable maps is such an open substack (behrend1997 lines 129–138 and Proposition 4, lines 139–141).
+*Needs:* 7.1; Tau Ceti `TauCeti.AlgebraicGeometry.PrestableFamily`; StableReduction Layer 3;
+SchemeAndStackFoundations §1.19; for the second API statement, also SchemeAndStackFoundations §4.14.
 
 **API.**
 
 - The condition is stable under restriction to open substacks of `M` and under étale morphisms `M′ → M`.
-- For `𝔅 = Spec k` and a fixed curve `C`, an open subscheme of the scheme of morphisms `Mor(C, X)` with its
-  universal map satisfies it.
+- For `𝔅 = Spec k`, a fixed projective curve `C` and `X` an open subscheme of a projective `k`-scheme `X̄`,
+  every open subscheme of finite type of the scheme of morphisms `Mor(C, X)`, with its universal map,
+  satisfies it. Here `Mor(C, X̄)` is the open subscheme of a Hilbert scheme of `C × X̄` of
+  SchemeAndStackFoundations §4.14 (behrend-fantechi1997 lines 1583–1584 for projective `X`), and
+  `Mor(C, X)` is its open subscheme of maps whose image misses `X̄ ∖ X`: the complement is the image of
+  the closed set `ev^{−1}(X̄ ∖ X)`, for the evaluation `ev : C × Mor(C, X̄) → X̄`, under the projection
+  `C × Mor(C, X̄) → Mor(C, X̄)`, which is closed because `C` is proper.
 
 **Checks.**
 
@@ -1908,8 +1920,8 @@ the algebraic space `𝒞_{T̄}`, the local obstructions and torsors glued as in
 base change (9.2) identify `Ext^i_{𝒞_T}(F_T^*Ω_X, π^*J) = H^i(𝒞_T, F_T^*T_X ⊗ π^*J)` with
 `H^i(T, Rπ_*(F_T^*T_X) ⊗ J) = Ext^i_T(g^*E, J)` in the same degree, the right side over `O_T` (where
 behrend-fantechi1997 line 1609 writes `O_C`), compatibly with `φ^*ω(g)`; the hypothesis of 9.1 transports
-these to extensions of `g`. This states for every base `𝔅` of pure dimension, every smooth quasi-projective
-target and every field the obstruction theory of AlgebraicGromovWittenTheory §4.1. *Needs:* 7.1–7.2,
+these to extensions of `g`. This states for every base `𝔅` of pure dimension, every smooth target scheme,
+separated or not, and every field the obstruction theory of AlgebraicGromovWittenTheory §4.1. *Needs:* 7.1–7.2,
 9.1–9.2; VirtualFundamentalClass §§3.3, 6.4, 9.2; DerivedModuleAlgebra §0.12; SchemeAndStackFoundations
 §4.1.
 
@@ -1929,6 +1941,14 @@ target and every field the obstruction theory of AlgebraicGromovWittenTheory §4
 - `𝔅 = Spec k`, `C` an elliptic curve and `X = C`, near an isomorphism `F`: `F^*T_X = O`, so `H⁰(E)^∨ = k` and
   `Ob = H¹(C, O) ⊗ O_M` is trivial on the one-dimensional family of translates; the virtual dimension is
   `0`, `M` is smooth of dimension `1`, and the class is `c_1(Ob) ∩ [M] = 0` (6.3).
+- A target that is neither separated nor quasi-projective: `𝔅 = Spec k`, `C = ℙ¹`, `X = M = L` the line with
+  a doubled origin and `F = pr₂ : ℙ¹ × L → L`. For `g : T → L` the extensions of `g` to `T̄` form a torsor
+  under `H⁰(T, g^*T_L ⊗ J)` (nonempty, `L` being smooth and `T̄` affine), those of `g ∘ pr₂ : ℙ¹_T → L` to `ℙ¹_{T̄}` a torsor under
+  `H⁰(ℙ¹_T, pr₂^*(g^*T_L ⊗ J)) = H⁰(T, g^*T_L ⊗ J)` (as `π_*O = O`), and `ḡ ↦ ḡ ∘ pr₂` is equivariant, so
+  `(L, pr₂)` is a relative space of maps. Then `Rπ_*F^*T_L = T_L`, `E = Ω_L = L_{L/k}`, `φ = id_{Ω_L}` (the
+  trace `R¹π_*ω_π → O_L` being an isomorphism), `Ob = 0`, and the class is `[L]` (6.3), of dimension
+  `0 + 0 + 1 · (1 − 0) = 1 = dim L` (9.5); a separatedness or quasi-projectivity hypothesis on `X` would
+  exclude this case.
 
 ### 9.4 Global resolutions
 
@@ -1962,10 +1982,16 @@ of dimension `ℓ`), `rk E = χ(C_t, F_t^*T_X) = δ + ℓ · (1 − g)`, by Riem
 (SchemeAndStackFoundations §3.3, with `χ(O_{C_t}) = 1 − g` from StableReduction Layer 2), so that the
 virtual dimension there is `b + δ + ℓ · (1 − g)`; when `X` has pure dimension, `ℓ = dim X` everywhere
 and the virtual dimension is `b + δ + dim X · (1 − g)` (behrend1997 lines 157–161 and 193–197;
-li-tian1998 Theorem 4.3 (1), lines 1585–1586). For `X` of pure dimension, `𝔅` the stack of prestable
-`n`-pointed curves of genus `g`, of dimension `3g − 3 + n`, and `δ = c_1(T_X) · β`, this is
-`(1 − g)(dim X − 3) + n + c_1(T_X) · β`, the virtual dimension of AlgebraicGromovWittenTheory §4.3.
-*Needs:* 9.3–9.4; SchemeAndStackFoundations §3.3; StableReduction Layer 2; Tau Ceti `TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.FixedRank.vectorBundleDegree`.
+li-tian1998 Theorem 4.3 (1), lines 1585–1586). For `X` projective of pure dimension, as in
+AlgebraicGromovWittenTheory §4.3, each `F_t : C_t → X_{κ(t)}` is proper with curve class
+`β := F_{t*}[C_t] ∈ A_1(X_{κ(t)})`, and `δ = deg(c_1(F_t^*T_X) ∩ [C_t]) = deg(c_1(T_X) ∩ β) =: c_1(T_X) · β` by
+the degree on proper curves and the projection formula (SchemeAndStackFoundations §§3.3, 5.2–5.4); for
+`𝔅` the stack of prestable `n`-pointed curves of genus `g`, of dimension `3g − 3 + n`, the virtual
+dimension is then `(1 − g)(dim X − 3) + n + c_1(T_X) · β`, that of AlgebraicGromovWittenTheory §4.3. For
+`X` not separated, `F_t` need not be proper, no curve class is defined, and `δ` is the fibre degree
+alone. *Needs:* 9.3–9.4; SchemeAndStackFoundations §3.3; StableReduction Layer 2; Tau Ceti
+`TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.FixedRank.vectorBundleDegree`; for the curve class,
+also SchemeAndStackFoundations §§5.2–5.4.
 
 **Checks.**
 
@@ -1976,6 +2002,13 @@ li-tian1998 Theorem 4.3 (1), lines 1585–1586). For `X` of pure dimension, `�
 - The rank is that of `F^*T_X`, not `dim X`, when `X` is not of pure dimension: for `X = Spec k ⊔ ℙ¹`,
   `𝔅 = Spec k`, `C = ℙ¹` and `F` constant onto the point `Spec k`, `F^*T_X = 0`, so `ℓ = 0`, `δ = 0` and
   `rk E = χ(0) = 0 = δ + ℓ · (1 − 0)`, while `δ + dim X · (1 − g) = 1`.
+- A target that is not separated, where only the fibre degree is defined: let `P` be `ℙ¹` with a doubled
+  point, `𝔅 = Spec k`, `C = ℙ¹` and `F : ℙ¹ → P` the inclusion of one chart. Its image is that chart, dense
+  and not closed in the irreducible `P`, so `F` is not proper and `F_*[ℙ¹]` is not defined, while
+  `F^*T_P = T_{ℙ¹} = O(2)` gives `δ = 2`, `ℓ = 1` and virtual dimension `0 + 2 + 1 · (1 − 0) = 3`. This is
+  `h⁰(ℙ¹, O(2)) = 3`, the dimension of the maps `ℙ¹ → P` whose composite with the collapse `P → ℙ¹` is an
+  isomorphism (each an automorphism of `ℙ¹` followed by one of the two chart inclusions: two copies of
+  `PGL₂`), with `H¹(ℙ¹, O(2)) = 0`.
 
 ### Examples
 
@@ -1986,9 +2019,9 @@ li-tian1998 Theorem 4.3 (1), lines 1585–1586). For `X` of pure dimension, `�
 
 ### Dependencies
 
-Layers 6–7; StableReduction Layers 2–3; SchemeAndStackFoundations §§1.10, 1.19, 2.18–2.20, 3.3, 4.1;
-EnhancedDerivedSheaves §0.3, E1.4, E1.8; DerivedModuleAlgebra §0.12; VirtualFundamentalClass §§3.1, 3.3,
-6.4, 9.2; Tau Ceti `TauCeti.AlgebraicGeometry.PrestableFamily`,
+Layers 6–7; StableReduction Layers 2–3; SchemeAndStackFoundations §§1.10, 1.19, 2.18–2.20, 3.3, 4.1,
+4.14, 5.2–5.4; EnhancedDerivedSheaves §0.3, E1.4, E1.8; DerivedModuleAlgebra §0.12;
+VirtualFundamentalClass §§3.1, 3.3, 6.4, 9.2; Tau Ceti `TauCeti.AlgebraicGeometry.PrestableFamily`,
 `TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.FixedRank.vectorBundleDegree`. Within the layer,
 9.1 → 9.2 → 9.3 → 9.4 → 9.5.
 
