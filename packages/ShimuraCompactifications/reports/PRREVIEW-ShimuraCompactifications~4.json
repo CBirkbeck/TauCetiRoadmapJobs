@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ShimuraCompactifications~4",
+  "head": "35c6b801ed9c73a423a4e84ab25a70cde025ea00",
+  "pr": 1053,
+  "folder": "ShimuraCompactifications",
+  "date": "2026-11-15",
+  "findings": 11,
+  "blocking": 0,
+  "notes": "Full review. Previous R01-R04 repaired. Gate at 35c6b80: every check 0, OK (build=0 from the worker's run); depcheck 245 roadmaps, 2246 edges, 0 problems. Seeded sample: all 15 targets read at their locators in Lan (author revision), Pink, Dimitrov, Pilloni, Boxer-Pilloni, Rapoport (Numdam) and the Stacks project; 42 locators checked. Suggested.lean elaborates with sorry the only warning; #check of both theorems matches the README; one-tactic probe closes neither; no duplicate at the pins. about 145 cross-roadmap section ids resolved in 23 roadmaps. Eleven P3 findings: ComplexComparisonPartII cited by section numbers it lacks (R01); eight ArakelovGeometryAndAbelianHeights declaration names that exist nowhere (R02); missing locator Pink 12.4(b) in 4.2 (R03); Pilloni 3.4 page range (R04); undefined coefficient ring O and uniformizer in 7.22, 7.23, 4.10 (R05); undefined term decoupage in 8.23 (R06); Layers 3 and 5 without Examples (R07); two sentences saying a layer follows a source (R08); two consumed supplier sections absent from the contracts (R09); references list EGA IV2 for a citation of EGA III (R10); module docstring title (R11). Faltings-Chai paywalled, not verifiable.",
+  "text": "64ad0738108d7af3",
+  "carried": {
+   "from": "35c6b801ed9c73a423a4e84ab25a70cde025ea00",
+   "head": "4e3083c45745a9560ae84b19b49aadf04ffc81f1",
+   "findings": 11,
+   "lines": 142,
+   "folders": [
+    "ShimuraCompactifications"
+   ]
+  }
+ }
+}
