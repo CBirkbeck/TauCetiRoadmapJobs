@@ -42,7 +42,7 @@ authors = "Konstantin Ardakov and Simon Wadsley"
 title = "On irreducible representations of compact p-adic analytic groups"
 year = 2013
 locator_scheme = "section"
-locator = "Sections 10.2–10.4; Sections 10.12–10.13, pp. 77–78"
+locator = "Section 2.5, Definition, p. 9; Sections 10.2–10.4; Sections 10.12–10.13, pp. 77–78"
 url = "https://people.maths.ox.ac.uk/ardakov/Smith.pdf"
 fetched_from = "https://people.maths.ox.ac.uk/ardakov/Smith.pdf"
 fetched_at = "2026-10-25T13:11:34Z"
@@ -51,7 +51,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Author preprint; all §10 locators use its pp. 70–78, including Lemma 10.13 on p. 77, rather than journal pagination."
-cited_for = ["ArithmeticLocallySymmetricSpacesPartII:WM.2/canonical-dimension-zero (§2.7)", "gap:canonical-dimension-zero"]
+cited_for = ["ArithmeticLocallySymmetricSpacesPartII:WM.2/canonical-dimension-zero (§2.7)", "gap:canonical-dimension-zero (grade and canonical dimension, §2.5; Lemma 10.13)"]
 
 [[source]]
 id = "marshall12"
@@ -104,4 +104,4 @@ sha256 = "7f048d9e38961ee8a082d6c5fc994e61112f809d9b1ade5d6c33d3c79cc8e947"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["ArithmeticLocallySymmetricSpacesPartII:WM.5/finite-type-dimension (§5.3): the amalgam SL₂(ℤ)≅ℤ/4∗_{ℤ/2}ℤ/6 and the cohomology exact sequence of an amalgam"]
+cited_for = ["ArithmeticLocallySymmetricSpacesPartII:WM.5/finite-type-dimension (§5.3): the amalgam SL₂(ℤ)≅ℤ/4∗_{ℤ/2}ℤ/6 and the low-degree cohomology exact sequence of an amalgam, both proved in §5.3"]

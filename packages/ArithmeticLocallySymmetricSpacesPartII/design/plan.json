@@ -1938,15 +1938,17 @@
     {
       "slug": "canonical-dimension-zero",
       "supplier": "NoncommutativeAndEquivariantIwasawa",
-      "section": "§F.1",
-      "needs": "For a nonzero finitely generated rational Iwasawa module in the semisimple congruence-kernel setting of aw13 §10.12, including deformation index zero, canonical dimension zero is equivalent to finite dimension over the coefficient field.",
+      "section": "§0.12",
+      "needs": "For p odd, m≥1, G=∏_{i=1}^m ker(SL₂(ℤ_p)→SL₂(𝔽_p)), of dimension 3m, and A=ℚ_p⊗_{ℤ_p}ℤ_p[[G]], Auslander regular of global dimension 3m by §0.12, define the grade j_A(M) of a nonzero finitely generated left A-module M as the least i with Ext^i_A(M,A)≠0 and its canonical dimension as 3m−j_A(M), and prove that the canonical dimension of M is 0 if and only if dim_{ℚ_p} M is finite.",
       "neededBy": [
         "ArithmeticLocallySymmetricSpacesPartII:WM.2/canonical-dimension-zero"
       ],
-      "source": "aw13, Lemma 10.13, p. 77",
+      "source": "aw13, §2.5, Definition, p. 9, for grade and canonical dimension; Lemma 10.13, p. 77, for the equivalence",
       "checks": [
-        "For M=W_k, canonical dimension is 0 and coefficient-field dimension is D(k+1), not necessarily 1.",
-        "For M=A, canonical dimension is 3m>0 and coefficient-field dimension is infinite; rank_A A=1 is a different invariant.",
+        "For M=W_k, j_A(W_k)=3m, so the canonical dimension is 0, and dim_{ℚ_p}W_k=D(k+1), not necessarily 1.",
+        "For M=A, Hom_A(A,A)=A≠0 gives j_A(A)=0 and canonical dimension 3m>0, and A is infinite dimensional; rank_A A=1 is a different invariant.",
+        "For M=A/Aδ with δ a nonzero non-unit, right multiplication by δ gives the resolution 0→A→A→M→0; as A is a domain Hom_A(M,A)=0, and Ext¹_A(M,A)=A/δA≠0, so j_A(M)=1, the canonical dimension is 3m−1≥2 and M is infinite dimensional.",
+        "For the lattice W_k⁰ over ℤ_p[[G]], of global dimension 3m+1 (§0.11), the grade is that of the finite module W_k⁰/p over 𝔽_p[[G]] (§F.1), namely 3m, so the integral canonical dimension of §0.11 is (3m+1)−3m=1, while the rational value for W_k is 3m−3m=0: the criterion is the rational normalisation, and the integral one would never return 0 for a nonzero lattice.",
         "The zero module has all multiplicities zero and is excluded from the nonzero canonical-dimension equivalence."
       ]
     }
