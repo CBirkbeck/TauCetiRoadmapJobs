@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PurityForFlatCohomology~14",
+  "head": "160e354a0bb87e161687f8198a3e7e07253c4b8f",
+  "pr": 1840,
+  "folder": "PurityForFlatCohomology",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 9 changed lines since d3f15fd: the reworded passage of README §5.7 checked against CS24 Lemma 2.2.4 (pp. 19-20) for content and wording, with its dependents §§5.8-5.9; no sampled target falls in it. Gate rerun: all counters 0, OK; depcheck 0 problems; Suggested.lean elaborates with 15 sorry warnings and no error. Title and description checked against the head: one P3 finding, the description's list of what Suggested.lean states names 7 of its 15 theorems. The previous review had no finding.",
+  "text": "b4ccf1655574bec1",
+  "carried": {
+   "from": "160e354a0bb87e161687f8198a3e7e07253c4b8f",
+   "head": "160e354a0bb87e161687f8198a3e7e07253c4b8f",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
