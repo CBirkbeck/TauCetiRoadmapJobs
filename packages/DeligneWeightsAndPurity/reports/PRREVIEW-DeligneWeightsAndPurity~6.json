@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DeligneWeightsAndPurity~6",
+  "head": "5f2fd53485eb7c110e4a17854f9f4c8a70080cd8",
+  "pr": 929,
+  "folder": "DeligneWeightsAndPurity",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 138 changed lines since 5930b27 (rewording of 2.7, 2.8, 3.4, 3.8, 3.9, 7.3-7.5 and regrouping of Layers 2, 3, 7 under group headings), plus the first check of the title and description against this head. Findings: R01 renamed headings leave 'Theorem 3.2' (README 1114, 1126, 1133, 1169, 1176) and 'Lemma 3.5' (1150) pointing at the roadmap's own 3.2/3.5; R02 reworded 7.4 keeps the catalogue id DWP.7/devissage-in-the-sheaf-and-the-source; R03 description names 2 of the 6 suppliers not on main (omits AbelianSchemesAndArithmeticModuli, ArithmeticGaloisRepresentations, ArithmeticGaloisDuality, ModularCurvesPartII); R04 description AI attribution omits the Claude Opus 5.5 / Fable 5.1 co-authors of 9 of 18 folder commits. Checked: each reworded statement against WI (3.5), (3.6), (6.6), (6.7), (6.8) (Numdam, scratch-manifest fetch) and WII (3.3.1) a)-f) p. 204 (rendered) and the proof p. 205, with computed instances and negative controls; the six group-intro 'uses' claims (14 of 14 hold); 251 headings with 0 unresolved anchor links and 0 label/group mismatches; no external anchor links into this README; sampled 7.7 and 8.4 (Needs lines changed) re-verified against WII pp. 205, 243; other sampled targets outside the changed passages, carried from 5930b27. Gate rerun OK (all scanners zero; worker's run build=0); depcheck 245 roadmaps, 2221 edges, 0 problems, no UPWARD/CYCLE/moved line; lake env lean: five sorry warnings, no error; Suggested.lean unchanged; nothing changed outside the folder. Previous review raised no finding.",
+  "text": "1295448632eefdc4",
+  "carried": {
+   "from": "5f2fd53485eb7c110e4a17854f9f4c8a70080cd8",
+   "head": "fae1b73766888d889fc8c32402b3a13be5af3cfd",
+   "findings": 4,
+   "lines": 46,
+   "folders": [
+    "DeligneWeightsAndPurity"
+   ]
+  }
+ }
+}
