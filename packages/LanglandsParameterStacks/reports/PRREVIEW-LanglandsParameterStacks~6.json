@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LanglandsParameterStacks~6",
+  "head": "04801e3e01a735f36f1d655acb3179d8de855512",
+  "pr": 1202,
+  "folder": "LanglandsParameterStacks",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 8 changed lines since 1e9f8e8. Checked the three new opening paragraphs of Layers 1, 2 and 4 and the changed Downstream consumers bullet: 59 asserted Needs edges (25, 19, 15), all present; the hypotheses restated for 1.9, 1.18, 2.2-2.4, 4.2-4.3, 4.8-4.10, 4.12-4.18 and 4.19-4.21 agree with the targets and with Fargues-Scholze VIII.2.11, VIII.5.14, VIII.5.15, VIII.5.19-VIII.5.21 re-read at their printed pages; the consumer bullet matches ModularityAndLanglandsExtensions README:3378 at its open head. Seeded sample: 14 of the 15 targets are named in the changed paragraphs and were checked there; 6.2 is untouched. Previous R01 (sources.toml in the folder) is not repaired and not carried: a manifest in the folder fails the gate's stray-files rule. Pull request title and description agree with the head. Gate OK on my run (worker's gate adds build=0); depcheck 245 roadmaps, 2237 edges, 0 problems; lake env lean exits 0 with no output; Suggested.lean unchanged with 0 declarations; no file outside the folder changes against origin/main. Source independence: changed passages only, none shared. One FS misprint recorded (exponents for degrees in VIII.2.11).",
+  "text": "91dd4e8715ecc485"
+ }
+}
