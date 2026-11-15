@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalGaloisDeformationRings~4",
+  "head": "e8e7f63ffbbfd738d9b299eefee2c241b5a028ef",
+  "pr": 923,
+  "folder": "LocalGaloisDeformationRings",
+  "date": "2026-11-15",
+  "findings": 10,
+  "blocking": 0,
+  "notes": "Full re-review. Previous findings: R01-R03 repaired, R04-R05 partly (description, now R10). Gate passes (all counters zero, build), depcheck 0 problems, Suggested.lean elaborates with three sorry warnings only; one-tactic probes close nothing; #check signatures compared. Seeded sample of 15 targets: 12 verified against the texts (BIP23, CG18 arXiv v2, BellovinGee cached, LTXZZ, KisinPST published, LLHLM20, BCGP25, FKP22, KW209), 3 not verifiable (KisinFlat 4.11, Kisin2adic 5.2, CT17 6.10: texts unreadable). 44 locators in 12 sources checked, 24 library declarations at the pins, 45 supplier citations resolved. Ten P3 findings: unresolved consumer ids, unstated hypotheses of one case in 2.19, a wrong reason in a Check, source equation labels, one page locator, a supplier without section, undefined letter l, style, Lean section order, description text. 76 numbered sections read in full; the rest covered by scanners and searches only.",
+  "text": "002a201595b4b0f7",
+  "carried": {
+   "from": "e8e7f63ffbbfd738d9b299eefee2c241b5a028ef",
+   "head": "e41a82cf051c14e33b8fdbd4c22df9c29c1b5e2b",
+   "findings": 10,
+   "lines": 145,
+   "folders": [
+    "LocalGaloisDeformationRings"
+   ]
+  }
+ }
+}
