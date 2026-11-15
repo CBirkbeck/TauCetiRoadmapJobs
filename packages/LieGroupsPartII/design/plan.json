@@ -902,7 +902,13 @@
       "target:1.1",
       "roadmap:LieGroups Layer 3",
       "roadmap:LieGroups Layer 9",
-      "roadmap:RealSemisimpleLieGroups 4.3"
+      "roadmap:RealSemisimpleLieGroups 4.3",
+      "target:2.2",
+      "target:2.5",
+      "target:3.1",
+      "target:3.5",
+      "roadmap:LieGroups Layer 1",
+      "roadmap:RealSemisimpleLieGroups 4.1"
      ],
      "api": [],
      "tests": [
@@ -953,7 +959,7 @@
      "id": "6.1",
      "kind": "theorem",
      "name": "TauCeti.TitsSystem.mem_standardParabolic_of_conj_le",
-     "statement": "For a TauCeti.TitsSystem with subgroup B and J, J' ⊆ S: g B g⁻¹ ⊆ P_J implies g ∈ P_J; g P_J g⁻¹ = P_{J'} implies J = J' and g ∈ P_J; g P_J g⁻¹ ⊆ P_{J'} implies J ⊆ J' and g ∈ P_{J'}.",
+     "statement": "For a TauCeti.TitsSystem with subgroup B and J, J' ⊆ S: g B g⁻¹ ⊆ P_J implies g ∈ P_J; g P_J g⁻¹ = P_{J'} implies J = J' and g ∈ P_J; g P_J g⁻¹ ⊆ P_{J'} implies J ⊆ J' and g ∈ P_{J'}. RealSemisimpleLieGroups 4.4 states the uniqueness of the type of a parabolic subgroup, which with the self-normalization of its 4.2 is the second clause for the Tits system (P, N_G(𝔞)) of a minimal parabolic datum whose M meets every component; here the Tits system is arbitrary, with no topology, field or finiteness, and the first and third clauses (conjugation into a larger standard parabolic) are not stated there.",
      "hypotheses": [
       "T : TauCeti.TitsSystem G for an arbitrary group G",
       "J, J' sets of simple reflections"
@@ -978,6 +984,11 @@
        "name": "empty_S",
        "kind": "degenerate",
        "statement": "S = ∅, B = G: statements trivial"
+      },
+      {
+       "name": "SL3_comparison",
+       "kind": "computation",
+       "statement": "SL_3(ℝ) with the Tits system (P, N_G(𝔞)) of RealSemisimpleLieGroups 3.3: the second clause, like the uniqueness of type of RealSemisimpleLieGroups 4.4, makes Q_{α₁} = {g₃₁ = g₃₂ = 0} and Q_{α₂} = {g₂₁ = g₃₁ = 0} non-conjugate; the first clause puts the lower triangular group n_{w₀}Pn_{w₀}⁻¹ in no proper standard parabolic (a lower triangular matrix with g₂₁ ≠ 0, g₃₂ ≠ 0 lies in neither), a containment form 4.4 there does not state"
       }
      ]
     },
@@ -1837,19 +1848,15 @@
  "consumers": [
   {
    "roadmap": "AutomorphicSpectralTheoryPartII",
-   "what": "archimedean minimal parabolic P = MAN for finite central covers and disconnected real points (3.3, 3.5); standard Levi subgroups through RealSemisimpleLieGroups 4.3 applied to that datum"
-  },
-  {
-   "roadmap": "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups",
-   "what": "the minimal parabolic datum of the real place (3.5), on which RealSemisimpleLieGroups 4.2 builds the standard parabolics"
+   "what": "the minimal parabolic P = MAN of 3.3 and 3.5, finite central covers and disconnected real points included, from which principal series are induced; for the real-algebraic class of AutomorphicFormsOnReductiveGroups 2.3a it is the subgroup defined there by the same recipe, from which AutomorphicSpectralTheoryPartII 1.5 induces, taking it from AutomorphicFormsOnReductiveGroups 2.1–2.4"
   },
   {
    "roadmap": "KleinianGroups",
-   "what": "minimal parabolic of SO₀(n,1), n≥2 and PU(1,n) (Layer 3)"
+   "what": "for SO₀(n,1), n ≥ 2, among them SO₀(3,1) ≅ PSL_2(ℂ), the minimal parabolic P of 3.3 is the stabilizer of a point of the boundary sphere K/M, and every parabolic element lies in a conjugate of P"
   },
   {
    "roadmap": "FuchsianOrbifoldsPartII",
-   "what": "minimal parabolic of SL_2(ℝ) (Layer 3)"
+   "what": "for SL_2(ℝ) the minimal parabolic P of 3.3 is the upper triangular group, the stabilizer of ∞ ∈ ℙ¹(ℝ), and every parabolic element lies in a conjugate of P"
   }
  ],
  "gaps": []

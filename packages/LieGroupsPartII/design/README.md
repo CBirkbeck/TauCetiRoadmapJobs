@@ -19,7 +19,7 @@ This roadmap owns the following material on a real reductive group:
 - the tangent and invariant-form adapters for self-adjoint matrix groups, and the matrix forms of the results above;
 - the identification of the real points of a connected reductive `ℝ`-group in a transpose-stable embedding as a self-adjoint matrix group satisfying the component condition.
 
-It also owns one abstract statement about Tits systems that Tau Ceti lacks: an element conjugating `B` into a standard parabolic `P_J` lies in `P_J`, so conjugate standard parabolics are equal.
+It also owns one abstract statement about Tits systems that Tau Ceti lacks: an element conjugating `B` into a standard parabolic `P_J` lies in `P_J`, so conjugate standard parabolics are equal. For the Tits system of a real minimal parabolic datum whose `M` meets every component, the equality is the uniqueness of type of RealSemisimpleLieGroups §4.4.
 
 The following are already in the library or stated by other roadmaps, and are imported:
 
@@ -115,7 +115,7 @@ The carrier there is LieGroups Layer 9's `CartanInvolution` and `IwasawaData`, t
 - §4.1: for a minimal parabolic datum, `𝔮_{Π'}` is a subalgebra, `Π' ↦ 𝔮_{Π'}` is an inclusion-preserving bijection onto the subalgebras containing `𝔮_∅`, `𝔮_{Π'} = 𝔩_{Π'} ⊕ 𝔫_{Π'}` with `𝔩_{Π'} = Z_𝔤(𝔞_{Π'}) = 𝔮_{Π'} ∩ dθ𝔮_{Π'}`, and for `X` in the closed positive chamber with `{α ∈ Π : α(X) = 0} = Π'`, `𝔮_{Π'}` is `nonnegEigenSubmodule X`, the sum of the eigenspaces of `ad X` with nonnegative eigenvalue. Consumed in Conventions and §§6.2, 6.3 and 7.3, through the restriction to `G⁰` where no component condition is assumed.
 - §4.2: `Q_{Π'}`, the `standardParabolic` of the Tits system for the reflections in `Π'`; `Π' ↦ Q_{Π'}` is an inclusion-preserving bijection onto the subgroups containing `P`; `Q_{Π'} = N_G(𝔮_{Π'})` is closed and self-normalizing with Lie algebra `𝔮_{Π'}`. Consumed in §§6.2 and 7.3.
 - §4.3: `L_{Π'} = Z_G(𝔞_{Π'}) = Q_{Π'} ∩ θ(Q_{Π'})`, `M_{Π'} × A_{Π'} ≅ L_{Π'}`, `Q_{Π'} = L_{Π'} ⋉ N_{Π'}` and the Langlands decomposition `M_{Π'} × A_{Π'} × N_{Π'} ≅ Q_{Π'}`. Consumed in §§5.1, 6.2 and 7.2.
-- §4.4: `dynamicalParabolic X = Q_{Π'}` for `X` in the closed positive chamber with `{α ∈ Π : α(X) = 0} = Π'`; parabolic subalgebras as the `Ad(G)`-conjugates of the `𝔮_{Π'}`, and the criterion that a real subalgebra is parabolic iff its complexification contains a `TauCeti.borelSubalgebra`. Consumed in §§6.2, 6.3 and 7.3.
+- §4.4: `dynamicalParabolic X = Q_{Π'}` for `X` in the closed positive chamber with `{α ∈ Π : α(X) = 0} = Π'`; parabolic subalgebras as the `Ad(G)`-conjugates of the `𝔮_{Π'}`, and the criterion that a real subalgebra is parabolic iff its complexification contains a `TauCeti.borelSubalgebra`. Consumed in §§6.2, 6.3 and 7.3. Its uniqueness of the type of a parabolic subgroup is the second statement of §6.1 for that Tits system; §6.1 is stated for an arbitrary Tits system and does not consume it.
 
 ### From TauCetiRoadmap.RootSystems
 
@@ -524,7 +524,7 @@ For a group `L` with a reductive Cartan datum `(C_L, B_L)`, define `⁰L = {l �
 
 RealSemisimpleLieGroups §4.3 proves `M_{Π'} × A_{Π'} ≅ L_{Π'}` for the Levi subgroups of a minimal parabolic datum with the component condition, where `M_{Π'}`, the joint kernel of the `|χ|` for continuous `χ : L_{Π'} → ℝ^×`, is `⁰L_{Π'}`; for `L = L_{Π'}`, which carries a reductive Cartan datum with the component condition (§3.1) and whose `𝔷(𝔩_{Π'}) ∩ 𝔭` is `𝔞_{Π'}`, that is the last bullet. This section treats an arbitrary reductive Cartan datum, whose components may move the split centre.
 
-Proof route: average the finite component action over `L/L⁰`, whose cardinality is a positive integer, to obtain the orthogonal projection `pr_F : V → F`. For polar coordinates `l = k exp X`, project the central part of `X` in `𝔭_L = (𝔭_L ∩ [𝔩,𝔩]) ⊕ V` by `pr_F`. This defines a continuous homomorphism `h : L → (F,+)`, with `h(k) = 0` and `h(exp v) = pr_F(v)`. To prove additivity, first use the central/derived splitting on `L⁰`; compact central periods project to zero, so the central logarithm descends. Invariance under components then extends it over `L = K_L L⁰`. Every positive character kills `K_L` and the derived algebra, and its differential on `V` is component invariant; thus it is exactly `exp ∘ ℓ ∘ h` for a unique `ℓ ∈ F*`. Consequently `ker h = ⁰L`, while `h(exp f) = f` for `f ∈ F`, giving the asserted product. No centrality of `A_L` in disconnected `L` is presumed. *Needs:* §1.1; LieGroups Layers 3, 9 (Lie map, central periods and polar coordinates).
+Proof route: average the finite component action over `L/L⁰`, whose cardinality is a positive integer, to obtain the orthogonal projection `pr_F : V → F`. For polar coordinates `l = k exp X`, project the central part of `X` in `𝔭_L = (𝔭_L ∩ [𝔩,𝔩]) ⊕ V` by `pr_F`. This defines a continuous homomorphism `h : L → (F,+)`, with `h(k) = 0` and `h(exp v) = pr_F(v)`. To prove additivity, first use the central/derived splitting on `L⁰`; compact central periods project to zero, so the central logarithm descends. Invariance under components then extends it over `L = K_L L⁰`. Every positive character kills `K_L` and the derived algebra, and its differential on `V` is component invariant; thus it is exactly `exp ∘ ℓ ∘ h` for a unique `ℓ ∈ F*`. Consequently `ker h = ⁰L`, while `h(exp f) = f` for `f ∈ F`, giving the asserted product. No centrality of `A_L` in disconnected `L` is presumed. *Needs:* §1.1; LieGroups Layer 1 (`g·lieExp X·g⁻¹ = lieExp(Ad g X)` and `Ad(lieExp X) = exp(ad X)`: `L⁰` acts trivially on `𝔷(𝔩)` and `lieExp F` is central), Layers 3, 9 (Lie map, central periods and polar coordinates); for the component-condition clause, §2.2(d) (`V ⊆ 𝔞_L`) and §2.5 (the condition); for the comparison with RealSemisimpleLieGroups §§4.1, 4.3, §3.1 (the datum and the condition on `L_{Π'}`) and §3.5 (the minimal parabolic datum to which RealSemisimpleLieGroups §4.3 is applied).
 
 **Checks.**
 
@@ -542,7 +542,7 @@ Proof route: average the finite component action over `L/L⁰`, whose cardinalit
 
 ### Dependencies
 
-Layer 1; RealSemisimpleLieGroups §4.3 (comparison only); LieGroups Layers 3, 9.
+Layers 1–3 (Layers 2–3 for the component-condition clause and the comparison only); RealSemisimpleLieGroups §§4.1, 4.3 (comparison only); LieGroups Layers 1, 3, 9.
 
 ## Layer 6: Parabolic subgroups and subalgebras in general
 
@@ -554,12 +554,13 @@ For an arbitrary `TauCeti.TitsSystem` with subgroup `B` and `J, J' ⊆ S`:
 - if `g P_J g⁻¹ = P_{J'}`, then `J = J'` and `g ∈ P_J`;
 - if `g P_J g⁻¹ ⊆ P_{J'}`, then `J ⊆ J'` and `g ∈ P_{J'}`.
 
-(Bourbaki, Ch. IV §2 nos. 5–6; Borel–Tits 1965, Corollaire 5.18 (ii), p. 101.) Proof sketch: write `g ∈ BwB`. Then `w B w⁻¹ ⊆ P_J`, and the multiplication axiom applied along a reduced word for `w` shows `w ∈ W_J`. *Needs:* Tau Ceti `TauCeti.TitsSystem.standardParabolic`, `TauCeti.TitsSystem.mem_standardParabolic_iff`, `TauCeti.TitsSystem.coxeterSystem`.
+(Bourbaki, Ch. IV §2 nos. 5–6; Borel–Tits 1965, Corollaire 5.18 (ii), p. 101.) RealSemisimpleLieGroups §4.4 states the uniqueness of the type of a parabolic subgroup, which with the self-normalization of its §4.2 is the second statement for the Tits system `(P, N_G(𝔞))` of a minimal parabolic datum whose `M` meets every component; this section states all three for an arbitrary Tits system, with no topology, field or finiteness, and the first and third statements, about conjugation into a larger standard parabolic, are not stated there. Proof sketch: write `g ∈ BwB`. Then `w B w⁻¹ ⊆ P_J`, and the multiplication axiom applied along a reduced word for `w` shows `w ∈ W_J`. *Needs:* Tau Ceti `TauCeti.TitsSystem.standardParabolic`, `TauCeti.TitsSystem.mem_standardParabolic_iff`, `TauCeti.TitsSystem.coxeterSystem`.
 
 **Checks.**
 
 - In `TauCeti.glTitsSystem` for `GL_3(k)`: the two maximal standard parabolics, with blocks `(2, 1)` and `(1, 2)`, are not conjugate; they stabilize a plane and a line respectively. A permutation matrix outside `W_J` conjugates `B` out of `P_J`.
 - With `S = ∅` (`B = G`) the statements are trivial.
+- `SL_3(ℝ)` with the Tits system `(P, N_G(𝔞))` of RealSemisimpleLieGroups §3.3: the second statement, like the uniqueness of type of RealSemisimpleLieGroups §4.4, says that `Q_{{α₁}} = {g : g₃₁ = g₃₂ = 0}` and `Q_{{α₂}} = {g : g₂₁ = g₃₁ = 0}` are not conjugate. The first statement, for a representative `n_{w₀}` of the longest element, says that the lower triangular group `n_{w₀}Pn_{w₀}⁻¹` lies in no proper standard parabolic, since `w₀ ∉ W_{Π'}` for `Π' ≠ Π`; directly, a lower triangular matrix with `g₂₁ ≠ 0` and `g₃₂ ≠ 0` lies in neither `Q_{{α₁}}` nor `Q_{{α₂}}`. RealSemisimpleLieGroups §4.4 does not state this containment form.
 
 ### 6.2 The dynamical description
 
@@ -736,9 +737,8 @@ Layers 2, 7; RealSemisimpleLieGroups §2.3; ALS.F.1, ALS.0.1–ALS.0.2.
 
 ## Downstream consumers
 
-- **AutomorphicSpectralTheoryPartII.** It uses the archimedean minimal parabolic `P = MAN` of real reductive groups, finite central covers and disconnected real points included (§§3.3, 3.5); the standard Levi subgroups at infinity are RealSemisimpleLieGroups §4.3 applied to that datum.
-- **QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups.** It uses the minimal parabolic datum of the real place (§3.5), on which RealSemisimpleLieGroups §4.2 builds the standard parabolics.
-- **Rank-one geometry.** KleinianGroups and FuchsianOrbifoldsPartII use the minimal parabolic of `SO₀(n, 1)`, `SL_2(ℝ)` and `PU(1, n)` (§3.3).
+- **Archimedean representation theory.** The minimal parabolic `P = MAN` of §§3.3 and 3.5, finite central covers and disconnected real points included, is the subgroup from which principal series are induced. For the real-algebraic class of AutomorphicFormsOnReductiveGroups §2.3a it is the subgroup defined there by the same recipe `M = Z_K(𝔞)`, `A = lieExp 𝔞`, `N = lieExp 𝔫`; AutomorphicSpectralTheoryPartII §1.5 induces from that subgroup, taken from AutomorphicFormsOnReductiveGroups §§2.1–2.4.
+- **Rank-one geometry.** For `SO₀(n, 1)` with `n ≥ 2` (among them `SO₀(3, 1) ≅ PSL_2(ℂ)`), `SL_2(ℝ)` and `PU(1, n)` with `n ≥ 1`, the group `P` of §3.3 is the stabilizer of a point of the boundary sphere `K/M` of the symmetric space, and a parabolic element, having exactly one fixed point on that sphere, lies in a conjugate of `P`. These are the groups that contain the parabolic elements of Kleinian and Fuchsian groups, as in KleinianGroups and FuchsianOrbifoldsPartII.
 - **Future roadmaps.** Higgs bundles for real groups (the parabolics `P_Θ` of real forms in Bradlow–Collier–García-Prada–Gothen–Oliveira 2024, Introduction), homogeneous dynamics and Zimmer's programme (Brown–Fisher–Hurtado 2022, Brown–Rodriguez Hertz–Wang 2022), harmonic analysis on `G`, and Cartan subgroups.
 
 ## Worked examples
