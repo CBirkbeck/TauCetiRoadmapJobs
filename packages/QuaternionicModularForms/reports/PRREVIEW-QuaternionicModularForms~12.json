@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuaternionicModularForms~12",
+  "head": "252a01b7a43ee99272f752db78bf88bf577f940d",
+  "pr": 934,
+  "folder": "QuaternionicModularForms",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 34 changed lines since e40ec42 (Suggested.lean docstring), plus the pin bump from merging main (Tau Ceti a91d3aaf -> 2fd255d9, Mathlib 6b7abb3c -> 1b1ccf4b). Previous R01-R05 (description) all repaired. Three P3 findings: README section 1.2 states as targets the weighted substitution that Tau Ceti now proves (restrictedWeightedSubstCLM, _comp, _one_X, matrixCoeff_weightedSubstCLM, isRowCompact_weightedSubstCLM); the From Tau Ceti contract and section 4.1 omit ContinuousLinearMap.charPowerSeries, IsPrCompact and TauCeti.HasPr, which the docstring names; the description's roadmap-summary block credits Tau Ceti with adelic class sets. Checked: the 13 Tau Ceti declarations the docstring and README rely on, at the pin and absent at the old pin; buzzard-eigen section 8, Lemmas 8.1(b), 12.2 and 13.1; 13 cross-roadmap citations on main and at open heads; every sentence of the title and description against the head; adversarial table of 14 rows. Gate rerun on 252a01b: all checks 0, OK (worker build=0); lake env lean Suggested.lean exit 0 with no output; depcheck 0 problems; no change outside the folder.",
+  "text": "0e9def0d6c1b1845",
+  "carried": {
+   "from": "252a01b7a43ee99272f752db78bf88bf577f940d",
+   "head": "bed3af745b4b09645e5164c6f73fea0803da70b3",
+   "findings": 3,
+   "lines": 130,
+   "folders": [
+    "QuaternionicModularForms"
+   ]
+  }
+ }
+}
