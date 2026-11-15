@@ -39,7 +39,12 @@
       {
        "name": "theta_preservesColimits",
        "role": "structure",
-       "statement": "theta preserves small colimits, in particular pushouts and finite products."
+       "statement": "theta preserves small colimits, in particular pushouts."
+      },
+      {
+       "name": "theta_preservesFiniteProducts",
+       "role": "structure",
+       "statement": "theta preserves finite products, which are limits and do not follow from colimit preservation: theta commutes with the forgetful functors of AnRing and CAlg^cn to D(Z)_{>=0}, which are conservative and preserve limits, and finite products of test rings are computed on underlying objects."
       },
       {
        "name": "iota_fullyFaithful",
@@ -72,6 +77,11 @@
        "name": "theta_not_equivalence",
        "kind": "non-example",
        "statement": "theta(Z[x]) is discrete, whereas the free object of CAlg^cn on Z[0] has the summand (Z (x)^L Z)_{h Sigma_2} with pi_1 = H_1(B Sigma_2; Z) = Z/2."
+      },
+      {
+       "name": "products_not_colimits",
+       "kind": "non-example",
+       "statement": "theta(iota(Z x Z)) is discrete with pi_0 = Z^2, the product of theta(iota Z) with itself in CAlg^cn, whereas the coproduct of theta(iota Z) with itself is Z (x)^L_Z Z = Z; colimit preservation alone says nothing about the product."
       }
      ]
     },
@@ -584,7 +594,7 @@
       {
        "name": "representables",
        "role": "evaluation",
-       "statement": "u_! Spec A = Spec u(A) and u_! preserves colimits."
+       "statement": "u_! Spec A = Spec u(A) and u_! preserves colimits, hence the empty prestack; it preserves the final prestack Spec Z because u_! Spec Z = Spec u(Z) and u preserves the initial test ring, not because of colimit preservation."
       },
       {
        "name": "not_fibreProducts",
@@ -1370,7 +1380,8 @@
       "roadmap:SchemeAndStackFoundations §2.18",
       "roadmap:StableInfinityCategories §11.1.1",
       "target:6.1",
-      "roadmap:EnhancedDerivedSheaves E5:presentability.2"
+      "roadmap:EnhancedDerivedSheaves E5:presentability.2",
+      "target:4.1"
      ],
      "api": [
       {
@@ -1426,7 +1437,7 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "Prestack.QCoh.perf",
-     "statement": "For every prestack X: perfect = dualizable, invertible = pointwise invertible, connective dualizable in QCoh(X)^cn = locally free of finite rank, X |-> Perf(X) is the right Kan extension of A |-> Perf(A) and satisfies fpqc hyperdescent; for qcqs schemes Perf(h_X) = PerfectDerived(X). Classically the first two are PrismaticCohomologyPartII 4.0 isDualizable_iff_perfect and isInvertible_iff (Perf = QCohPrestack.Perf); animated Cech descent of Perf is LanglandsParameterStacks 1.7; on the lattice quotient of 7.3 perfect and locally free objects are those of HabiroCohomologyFoundations 1.28.",
+     "statement": "For every prestack X: perfect = dualizable, invertible = pointwise invertible, connective dualizable in QCoh(X)^cn = locally free of finite rank, X |-> Perf(X) is the right Kan extension of A |-> Perf(A) and satisfies fpqc hyperdescent; for qcqs schemes Perf(h_X) = PerfectDerived(X). Classically the first two are PrismaticCohomologyPartII 4.0 isDualizable_iff_perfect and isInvertible_iff (Perf = QCohPrestack.Perf); animated Cech descent of Perf is LanglandsParameterStacks 1.7; on the lattice quotient of 7.3 perfect and locally free objects are those of HabiroCohomologyFoundations 1.28. On the derived parameter stacks of LanglandsParameterStacks 1.8, Perf is its chartwise dualizable category: an object of the limit over the bar construction is dualizable exactly when its pullback to the chart is (1.5).",
      "hypotheses": [
       "X any prestack; qcqs for the scheme comparison"
      ],
@@ -1444,7 +1455,8 @@
       "roadmap:DerivedModuleAlgebra §1.E.0",
       "roadmap:PrismaticCohomologyPartII §4.0",
       "roadmap:LanglandsParameterStacks §1.7",
-      "roadmap:HabiroCohomologyFoundations §1.28"
+      "roadmap:HabiroCohomologyFoundations §1.28",
+      "roadmap:LanglandsParameterStacks §1.8"
      ],
      "api": [
       {
@@ -1581,7 +1593,8 @@
       "roadmap:InfinityTopoi §3.3.2",
       "roadmap:InfinityTopoi §3.5.1",
       "target:3.2",
-      "target:3.3"
+      "target:3.3",
+      "target:4.1"
      ],
      "api": [
       {
@@ -1627,7 +1640,7 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "Prestack.QCoh.realizationEquiv",
-     "statement": "For a group prestack G over a prestack S acting on X over S: QCoh(|G^{x_S .} x_S X|) = lim_Delta QCoh(G^{x_S n} x_S X) symmetric monoidally (G-equivariant objects); pullback to X is forgetful; QCoh([X/G]) = QCoh(|G^{x_S .} x_S X|) with no hypothesis on G.",
+     "statement": "For a group prestack G over a prestack S acting on X over S: QCoh(|G^{x_S .} x_S X|) = lim_Delta QCoh(G^{x_S n} x_S X) symmetric monoidally (G-equivariant objects); pullback to X is forgetful; QCoh([X/G]) = QCoh(|G^{x_S .} x_S X|) with no hypothesis on G. For the action of the dual group on the framed derived cocycle functor in the animated context the limit is the enhanced QCoh of LanglandsParameterStacks 1.8 (the same bar construction), which this extends to every action of a group prestack.",
      "hypotheses": [
       "S a prestack; G a group prestack over S acting on X over S"
      ],
@@ -1638,7 +1651,8 @@
      "prerequisites": [
       "target:2.3",
       "target:3.3",
-      "target:7.1"
+      "target:7.1",
+      "roadmap:LanglandsParameterStacks §1.8"
      ],
      "api": [
       {
@@ -1667,6 +1681,11 @@
        "name": "BGm",
        "kind": "computation",
        "statement": "For G_m over Z the totalization is Z[t,t^-1]-comodules, heart graded abelian groups."
+      },
+      {
+       "name": "parameter_stacks_agreement",
+       "kind": "compatibility",
+       "statement": "Agreement with LanglandsParameterStacks 1.8 on its own Checks: for H-hat over S = Spec Lambda acting on itself by translation the limit is QCoh(S) = Mod_Lambda; for B H-hat = [S/H-hat] it is O(H-hat)-comodules in Mod_Lambda, so a Lambda-module without coherent coaction data is not an object; dropping the nerve would give Mod_Lambda in both cases."
       }
      ]
     },
@@ -1745,7 +1764,9 @@
       "roadmap:SchemeAndStackFoundations §1.22",
       "roadmap:EnhancedDerivedSheaves E1.3",
       "roadmap:DerivedInfinityCategories §5.5.2",
-      "target:7.1"
+      "target:7.1",
+      "target:4.1",
+      "target:4.2"
      ],
      "api": [
       {
@@ -1860,7 +1881,8 @@
       "roadmap:EnhancedDerivedSheaves E5:presentability.1",
       "roadmap:EnhancedDerivedSheaves E5:abstract.4",
       "roadmap:EnhancedDerivedSheaves E3.2",
-      "roadmap:EnhancedDerivedSheaves E3.3"
+      "roadmap:EnhancedDerivedSheaves E3.3",
+      "target:4.1"
      ],
      "api": [
       {
@@ -2009,7 +2031,11 @@
       "gap:chevalley-quasiprojective-quotient",
       "target:6.3",
       "target:8.2",
-      "roadmap:EnhancedDerivedSheaves E5:presentability.1"
+      "roadmap:EnhancedDerivedSheaves E5:presentability.1",
+      "target:2.5",
+      "tauceti:TauCeti.AffineGroupSchemeCat.exists_isClosedImmersion_generalLinear",
+      "roadmap:SchemeAndStackFoundations §1.16",
+      "gap:twist-quasiprojective"
      ],
      "api": [
       {
@@ -2020,7 +2046,12 @@
       {
        "name": "BG",
        "role": "structure",
-       "statement": "BG is perfect through G -> GL_n and quasi-projectivity of GL_n/G."
+       "statement": "BG is perfect through a closed immersion G -> GL_n (Tau Ceti exists_isClosedImmersion_generalLinear) and quasi-projectivity of GL_n/G (gap chevalley-quasiprojective-quotient), the GL_n-torsors being Zariski-locally trivial."
+      },
+      {
+       "name": "quotient_over_BG",
+       "role": "structure",
+       "statement": "[X/G] -> BG is flat and representable by qcqs schemes with L ample on every base change: the base change along a G-torsor P over R is the contracted product P x^G X (SchemeAndStackFoundations 1.16), a scheme flat and quasi-projective over R with the descended L ample (gap twist-quasiprojective); P need not be Zariski-locally trivial. So 8.3(b) applies with a one-element family."
       }
      ],
      "tests": [
@@ -2043,6 +2074,16 @@
        "name": "shifted_unit_BGL1",
        "kind": "non-example",
        "statement": "On BGL_1 = BG_m over Q, O[1] is invertible with inverse O[-1] and atlas pullback pi_1 = Q, pi_0 = 0, so compact dualizable objects are not only representations in degree zero; Map(Q, O[1]) = K(Q,1) has pi_0 = 0 = Hom(Q, pi_0 O[1]) and pi_1 = Q."
+      },
+      {
+       "name": "twist_not_product",
+       "kind": "non-example",
+       "statement": "k = Q, G = Z/2, X = G with translation and L = O, so [X/G] = Spec Q; along the torsor P = Spec Q(i) over Q the base change is P x^G G = Spec Q(i), with no Q-point, whereas X x Spec Q = Spec Q + Spec Q has two: Zariski gluing would give the wrong scheme."
+      },
+      {
+       "name": "twist_descent_datum",
+       "kind": "computation",
+       "statement": "Same G and P, X = P^1_Q with G acting through diag(1,-1) on Q^2 and L = O(1): the descent datum on Q(i)^2 is conjugation composed with diag(1,-1), invariants Q e1 + Q i e2, so P x^G X = P(Q e1 + Q i e2) = P^1_Q with O(1) ample; conjugation alone would fix Q^2 and forget the torsor."
       }
      ]
     },
@@ -2154,12 +2195,13 @@
    "sections": [
     "§1.1",
     "§1.13",
+    "§1.16",
     "§1.18",
     "§1.21",
     "§1.22",
     "§2.18"
    ],
-   "what": "Abelian fpqc descent, group spaces and actions, stacks in groupoids, quotient stacks, abelian quasi-coherent modules on stacks, DQCoh with its derived functors, perfect generator and Tor-independent base change."
+   "what": "Abelian fpqc descent, group spaces and actions, contracted products of torsors, stacks in groupoids, quotient stacks, abelian quasi-coherent modules on stacks, DQCoh with its derived functors, perfect generator and Tor-independent base change."
   },
   {
    "roadmap": "DerivedModuleAlgebra",
@@ -2175,7 +2217,7 @@
     "Layer 1",
     "Layer 6"
    ],
-   "what": "Faithful representations of affine group schemes; complete reducibility in characteristic zero."
+   "what": "Representations of affine group schemes over a field as comodules, each the union of its finite-dimensional subcomodules; complete reducibility in characteristic zero. The embedding into GL_n is the Tau Ceti declaration TauCeti.AffineGroupSchemeCat.exists_isClosedImmersion_generalLinear."
   },
   {
    "roadmap": "PrismaticCohomologyPartII",
@@ -2187,9 +2229,10 @@
   {
    "roadmap": "LanglandsParameterStacks",
    "sections": [
-    "§1.7"
+    "§1.7",
+    "§1.8"
    ],
-   "what": "Faithfully flat Cech descent of module categories and perfect modules over animated rings: the animated Cech case of 3.2 and 6.3."
+   "what": "Faithfully flat Cech descent of module categories and perfect modules over animated rings: the animated Cech case of 3.2 and 6.3; QCoh and Perf of its derived parameter stacks as totalizations over action-groupoid nerves: the case of 7.2 and 6.3 for those stacks."
   },
   {
    "roadmap": "HabiroCohomologyFoundations",
@@ -2290,6 +2333,17 @@
    "needs": "A statement that the fppf quotient of GL_n by a closed subgroup scheme of finite type over a field is a quasi-projective scheme with a GL_n-equivariant immersion into the projectivization of a finite-dimensional representation.",
    "supplier": "ReductiveGroups",
    "section": "Layer 3 (subgroups, quotients, components)"
+  },
+  {
+   "slug": "twist-quasiprojective",
+   "title": "Contracted products of quasi-projective schemes with a linearized ample bundle are quasi-projective schemes",
+   "neededBy": [
+    "8.4"
+   ],
+   "detail": "For a field k, an affine group scheme G of finite type over k, a quasi-projective k-scheme X with a G-action and a G-linearized ample invertible module L, and a G-torsor P over an affine k-scheme Spec R, the contracted product of SchemeAndStackFoundations 1.16 is represented by a scheme, flat and quasi-projective over R, with the descended L ample. One route: trivialize P over a faithfully flat finitely presented R -> R', where the twist is X_R' with the relatively ample pullback of L and the linearization gives a compatible descent datum; descent of quasi-compact schemes with a compatible relatively ample invertible module along a faithfully flat quasi-compact map is effective with the descended module relatively ample (SGA1, Expose VIII, Proposition 7.8, p. 174). Needed by 8.4 because G-torsors need not be Zariski-locally trivial (Z/2 over Q, P = Spec Q(i)).",
+   "needs": "A statement that for a field k, an affine group scheme G of finite type over k, a quasi-projective k-scheme X with a G-action and a G-linearized ample invertible module L, and a G-torsor P over an affine k-scheme Spec R, the contracted product P x^G X is represented by a scheme, flat and quasi-projective over R, on which the module descended from L is ample.",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "§1.16 (contracted products and twisting)"
   }
  ]
 }

@@ -143,3 +143,22 @@ status = "certified"
 accessed = "2026-11-07"
 version_note = "Author PDF of 9 April 2017; PDF pages run 18 ahead of the printed pages, and locators give PDF pages."
 cited_for = ["1.5", "2.3", "2.5", "3.1", "3.2", "3.4", "7.1"]
+
+[[source]]
+id = "SGA1"
+authors = "Alexandre Grothendieck, Michèle Raynaud"
+title = "Revêtements étales et groupe fondamental (SGA 1)"
+year = 1971
+venue = "Lecture Notes in Math. 224 (1971); retyped edition, Documents Mathématiques 3, Société Mathématique de France (2003)"
+arxiv = "math/0206203v2"
+locator_scheme = "theorem"
+locator = "Exposé VIII, Proposition 7.8, p. 174"
+url = "https://arxiv.org/abs/math/0206203v2"
+fetched_from = "https://arxiv.org/pdf/math/0206203v2"
+fetched_at = "2026-11-15T14:10:40Z"
+sha256 = "8e64218d356456c534eebf996940f0f957e43b54f1a080241debe12cbaf60d3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2, the retyped edition; printed page = PDF page minus 16 (Proposition 7.8 is on PDF page 190, printed page 174); the original Lecture Notes pagination is in the margin."
+cited_for = ["8.4"]
