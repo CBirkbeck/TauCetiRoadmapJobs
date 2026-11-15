@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GlaubermanZStar~8",
+  "head": "d642d3efd0671f8556fd7fdcfb06f18032cea6d6",
+  "pr": 1778,
+  "folder": "GlaubermanZStar",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 135 changed lines since 581115c. Both previous findings (R01 uncitable supplier, R02 validation sentence) are repaired. Checked: the repointed contracts against ModularCharactersAndBlocks §0.3 (head 8379fba) and CohomologyOfGroups §8.2 (head 6447a96); five Mathlib declarations at the pin (ker_transferSylow_isComplement', IsCyclic.isComplement', IsCyclic.normalizer_le_centralizer, CommGroup.equiv_prod_multiplicative_zmod_of_finite, Abelianization.commutator_le_ker); the new §2.2 route and bridge target and §1.3 step 3 on computed instances (F20, S3, C3, trivial group, C4xC2, Q8, Q16, D8, C6); waldecker2013 Theorem 2.19, Lemma 4.2, Lemma 4.4 for the sampled §1.3 and §2.5; the pull request's title and description against the head. Worker's gate passes (all counts 0, build 0); depcheck with the candidate order: 0 problems, no UPWARD or CYCLE; elaboration: four sorry warnings only. Generated depends-on/merge-order blocks of the description are stale (still list #1634, omit #2338): reported to the human reviewers.",
+  "text": "47dc5eb0101d3c23"
+ }
+}
