@@ -203,6 +203,10 @@ The pin is `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`; every declaration below w
 - `AlgebraicGeometry.LocallyOfFiniteType.jacobsonSpace` (`Morphisms/FiniteType.lean:112`) with
   `JacobsonSpace` (`Mathlib/Topology/JacobsonSpace.lean:70`): a scheme locally of finite type over a
   Jacobson base is Jacobson; it gives the scheme Checks of 1.1–1.2.
+- `finite_of_finite_type_of_isJacobsonRing` (`Mathlib/RingTheory/Jacobson/Ring.lean:691`):
+  Zariski's lemma, a field finitely generated as an algebra over a Jacobson ring `R` is a finite
+  `R`-module; a field is a Jacobson ring through the instance for Artinian rings (same file, line
+  102). It gives the finiteness of `k` over `κ(x)` in 5.5.
 - `AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType`
   (`Mathlib/AlgebraicGeometry/Noetherian.lean:271`): over a locally Noetherian target a morphism
   of schemes is locally of finite presentation iff it is locally of finite type. With the
@@ -299,8 +303,8 @@ The pin is `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   their properties, algebraic and Deligne–Mumford stacks (with an étale atlas).
 - §1.20 (`inertia`, `inertia.representable`, `automorphismGroup`, `setoid_criterion`, `SmoothLocal`,
   `SmoothLocal.atlas_independent`, `Stacks.points` with `.map`, `.pullbackSurjective`,
-  `.atlasOpenSurjective`, `.ofSpace`, `QuasiCompactStack`, `IsSeparatedStack`, the locally Noetherian
-  stacks, `stack_presentation`): everything of Convention 2–3.
+  `.baseChangeImage`, `.atlasOpenSurjective`, `.ofSpace`, `QuasiCompactStack`, `IsSeparatedStack`,
+  the locally Noetherian stacks, `stack_presentation`): everything of Convention 2–3.
 - §1.21 (`Stack.quotient`, `quotientStack`, `quotientStack.π`, `actionQuotient`,
   `actionQuotient.torsorEquiv`, `quotientStack_algebraic`): quotient stacks of groupoids in fppf
   sheaves (`Stack.quotient`) and of actions, with `BG = [S/G]` for the trivial action, and `[U/R]`
@@ -478,7 +482,7 @@ gerbe the spectrum of a field. Layer 6 computes residual gerbes from representat
 them with classifying stacks at rational points. Layer 7 uses Layers 0–4 and 6 at a closed rational
 point to define the normal space and compare it with the tangent space. Layers 1 and 2 each use
 Layer 0 only and are independent of each other; Layer 3 uses 0 and 2; Layer 4 uses 0–3; Layer 5
-uses 0 and 2–4; Layer 6 uses 0–5; Layer 7 uses 0.3, 0.4, 1.3, 2.2, 2.3, 3.4, 4.5 and 6.4.
+uses 0 and 2–4; Layer 6 uses 0–5; Layer 7 uses 0.2, 0.3, 0.4, 1.3, 2.2, 2.3, 3.4, 4.5 and 6.4.
 
 ## Layer 0: monomorphisms, immersions and reduced substacks
 
@@ -1585,7 +1589,8 @@ of the scheme of 5.1's fourth Check, whose diagonal is not quasi-compact.
 
 ### Dependencies
 
-Layers 0 and 2–4; Mathlib `AlgebraicGeometry.Scheme.residueField`, `finite_of_finite_type_of_isJacobsonRing`;
+Layers 0 and 2–4; SchemeAndStackFoundations §§1.19–1.20; Mathlib
+`AlgebraicGeometry.Scheme.residueField`, `finite_of_finite_type_of_isJacobsonRing`;
 gap:decent-algebraic-spaces, gap:decent-space-schematic-locus,
 gap:reduced-scheme-residue-field-factorisation, gap:stack-morphism-permanence,
 gap:stack-separation-axioms.
@@ -1632,10 +1637,11 @@ The API consists of the following facts.
 Prove that for every representative `x : Spec k → 𝒳` of a point whose residual gerbe exists, with
 base `𝒵_x^♭`, there is a canonical equivalence `𝒵_x ×_{𝒵_x^♭} Spec k ≃ BG_x` over `Spec k` sending
 the object `(x, id)` to the trivial torsor; when `𝒳` is decent this reads
-`𝒵_x ×_{Spec κ(x)} Spec k ≃ BG_x` (alper-moduli lines 16541–16549, Exercise 7.4.40 (1), for
-Noetherian stacks) (*Stacks.residualGerbeBaseChange*). For the proof, the base change is a gerbe over
-`Spec k` (2.1) with the section `(x, id)`, and its automorphism group at that section is `G_x`
-because `𝒵_x^♭` and `Spec k` are sheaves and `𝒵_x → 𝒳` is fully faithful; apply 2.2. *Needs:* 0.2
+`𝒵_x ×_{Spec κ(x)} Spec k ≃ BG_x` (alper-moduli lines 16541–16549, Exercise 7.4.40 (1), for a
+finite type point of a Noetherian stack; neither hypothesis is used: the route is 2.1, 2.2 and full
+faithfulness of `𝒵_x → 𝒳`) (*Stacks.residualGerbeBaseChange*). For the proof, the base change is a
+gerbe over `Spec k` (2.1) with the section `(x, id)`, and its automorphism group at that section
+is `G_x` because `𝒵_x^♭` and `Spec k` are sheaves and `𝒵_x → 𝒳` is fully faithful; apply 2.2. *Needs:* 0.2
 (a monomorphism is fully faithful), 2.1, 2.2, 3.4, 5.3; SchemeAndStackFoundations §1.20 (`inertia`).
 
 **Checks.**
@@ -1652,6 +1658,16 @@ because `𝒵_x^♭` and `Spec k` are sheaves and `𝒵_x → 𝒳` is fully fai
   `G = μ_p` in characteristic `p` the third is one point of length `p`, and for `G = 1` all three
   are `Spec k`.
 - For `𝒳 = Spec κ` and a finite `k/κ`, `𝒵_x ×_κ k = Spec k = B1`.
+- The finite type hypothesis of the source is not needed: at the generic point `η` of `𝔸¹_k`, which
+  is not a finite type point (1.1), with any representative `Spec K → 𝔸¹_k`, `K ⊇ k(t)`, the
+  residual gerbe `𝒵_η = Spec k(t)` (3.3) is its own base, and `𝒵_η ×_{k(t)} Spec K = Spec K = B1 =
+  BG_x`, `G_x` being trivial; both sides are `Spec K` for `K = k(t)` and for `K` of infinite
+  transcendence degree over `k` alike.
+- The Noetherian hypothesis of the source is not needed: `X = Spec ℚ(t)/ℤ` of 3.4 is not
+  quasi-separated, hence not Noetherian, and its point is a finite type point, the quotient map
+  `x : Spec ℚ(t) → X` being étale. The residual gerbe is `X` with base `X`, and
+  `X ×_X Spec ℚ(t) = Spec ℚ(t) = BG_x`, the inertia of an algebraic space being trivial. `X` is not
+  decent (5.1), so only the first form of the statement applies.
 
 ### 6.3 Neutral residual gerbes and `BG_x`
 
@@ -1664,9 +1680,11 @@ representative has `Spec k → 𝒵_x^♭` an isomorphism, `𝒵_x` is neutral. 
 `x : Spec k → 𝒳` has `κ(x) → k` an isomorphism, and then `𝒵_x ≃ BG_x` for that representative; iff
 some representative `Spec κ(x) → 𝒳` induces the identity `κ(x) → κ(x)`, that is, comes from a
 section of `𝒵_x → Spec κ(x)` (stacks-06QB lines 2664–2695; alper-moduli lines 6998–6999 and
-16539–16540). An object of `𝒵_x` over `Spec κ(x)` is a section only when its field homomorphism
-`κ(x) → κ(x)` is the identity; pullback along a non-surjective endomorphism of `κ(x)` can make a
-non-neutral gerbe neutral (Checks). For the forward
+16539–16540, for a rational point with smooth affine stabiliser of a Noetherian stack of finite
+type over a field, respectively for a rational point of a quasi-separated stack of finite type over
+a field; 6.4 treats rational points without these hypotheses). An object of `𝒵_x` over
+`Spec κ(x)` is a section only when its field homomorphism `κ(x) → κ(x)` is the identity; pullback
+along a non-surjective endomorphism of `κ(x)` can make a non-neutral gerbe neutral (Checks). For the forward
 direction of the first statement, if `BG_x → 𝒵_x` is an equivalence then `BG_x → 𝒵_x → 𝒵_x^♭` is a
 gerbe (2.1, invariance under equivalences), and the uniqueness of the base (2.1) gives an
 isomorphism `Spec k = (BG_x)^♭ ≅ 𝒵_x^♭` under `BG_x`; it is the given `Spec k → 𝒵_x^♭`, since
@@ -1816,9 +1834,14 @@ alper-moduli lines 6859–6881 and 6948–6951, Definition 4.5.7 and Exercise 4.
 *comparison map* `θ_x : T_{𝒳,x} → N_x` (*Stacks.tangentToNormal*): a framed deformation `(τ, α)`
 factors through `𝒳^{[1]}_x` (7.1); `τ^* ℐ → O_{k[ε]}` lands in `εk ≅ k` and kills `τ^* ℐ²`, giving,
 through `α`, a linear form on `x^*(ℐ/ℐ²)`. Prove that `θ_x` is `k`-linear, `G_x(k)`-equivariant and
-surjective, with kernel the image of `T_{BG_x}` under `i`; that `T_{BG_x} = 0` iff `G_x` is smooth;
-hence `θ_x` is an isomorphism iff `G_x` is smooth (ahr2020 lines 482–484 state the isomorphism for
-smooth `G_x`) (*Stacks.tangentToNormal_bijective_iff*). For the proof, after a finite separable
+surjective; that the differential `di : T_{BG_x} → T_{𝒳,x}` (composition of framed deformations
+with `i`) is injective with image the kernel of `θ_x`, so that `0 → T_{BG_x} → T_{𝒳,x} → N_x → 0` is
+exact; that `T_{BG_x} = 0` iff `G_x` is smooth; hence `θ_x` is an isomorphism iff `G_x` is smooth
+(ahr2020 lines 482–484 state the isomorphism for smooth `G_x`) (*Stacks.tangentToNormal_bijective_iff*).
+Injectivity of `di` holds because the closed immersion `i` is a monomorphism (0.3), hence fully
+faithful on fibre categories (0.2): an isomorphism `i∘τ ≅ i∘τ'` compatible with the framings is
+the image of a unique isomorphism `τ ≅ τ'`, which is compatible with the framings by faithfulness.
+For the rest of the proof, after a finite separable
 extension of `k` (both sides commute with it) choose a smooth `(U, u) → (𝒳, x)` with `u ∈ U(k)`, and
 put `W = U ×_𝒳 BG_x` and `U_x = U ×_𝒳 Spec k`. Since `BG_x → Spec k` is smooth for every flat
 `G_x` (2.3) and `W → BG_x` is smooth, `W` is smooth over `k`, so on an affine neighbourhood `Spec P` of `u` with `W = Spec P/J` the map
@@ -1841,9 +1864,9 @@ The sequence of AlgebraicModuliForArithmeticGeometry §8.3 for `q` at `ē = π(e
 `T_{GLₙ,e} → T_{Q,ē} → T_{BG_x} → 0`, and the kernel of `dπ_e` is the tangent space at `e` of the
 fibre `π⁻¹(ē) = G_x`, that is `Lie(G_x)`. Hence
 `dim T_{BG_x} = (n² − dim G_x) − (n² − dim Lie(G_x)) = dim Lie(G_x) − dim G_x`, which vanishes iff
-`G_x` is smooth (Tau Ceti `TauCeti.HopfAlgebra.smooth_iff_finrank_lie_eq_ringKrullDim`). *Needs:* 0.4,
-1.3, 2.2, 2.3, 4.5, 6.4, 7.1, 7.2; AlgebraicModuliForArithmeticGeometry §§8.1, 8.3 (deformation functor,
-stabiliser action, framed tangent sequences); SchemeAndStackFoundations §1.21
+`G_x` is smooth (Tau Ceti `TauCeti.HopfAlgebra.smooth_iff_finrank_lie_eq_ringKrullDim`). *Needs:* 0.2,
+0.3 (injectivity of `di`), 0.4, 1.3, 2.2, 2.3, 4.5, 6.4, 7.1, 7.2; AlgebraicModuliForArithmeticGeometry
+§§8.1, 8.3 (deformation functor, stabiliser action, framed tangent sequences); SchemeAndStackFoundations §1.21
 (`actionQuotient.torsorEquiv`: the morphism `q`); Tau Ceti
 `TauCeti.AffineGroupSchemeCat.exists_isClosedImmersion_generalLinear` (`G_x ⊆ GLₙ`),
 `CommHopfAlgCat.fppfHomogeneousQuotient` and `CommHopfAlgCat.isPullback_fppfHomogeneousQuotientTorsor`
@@ -1860,6 +1883,13 @@ gap:stack-morphism-permanence (smoothness of `W` and of `q`); gap:algebraic-stac
 - On `Bμ_p` over `𝔽_p`, `N_x = 0` while `T_{𝒳,x} ≅ k`: the framed deformations are the `μ_p`-torsors
   over `k[ε]` trivial over `k`, the kernel `{1 + aε}` of `k[ε]^×/(k[ε]^×)^p → k^×/(k^×)^p`;
   `μ_p` is not smooth and `θ_x` is not injective.
+- On `[𝔸¹/μ_p]` at `0` over a field `k` of characteristic `p`, with `μ_p` scaling `𝔸¹`, both ends of
+  the sequence are nonzero. A framed deformation is a torsor `Spec k[ε][z]/(z^p − 1 − aε)` with the
+  equivariant map `t ↦ bεz`, and the framed isomorphisms `z ↦ (1 + cε)z` fix `(a, b)`, so
+  `T_{𝒳,0} ≅ k²`. The image of `di` is the line `b = 0`, which is `T_{BG_x} = T_{Bμ_p} ≅ k`
+  (`dim Lie − dim G = 1 − 0`), embedded injectively. `N_0` is the dual of `ℐ/ℐ² = k·t`, and
+  `θ_0(a, b) = b`, so `2 = 1 + 1`. The flat, non-smooth atlas `𝔸¹ → [𝔸¹/μ_p]` gives only the line
+  `a = 0`: the chart of the proof must be smooth.
 - At the cusp `Spec k[x, y]/(y² − x³)`, with trivial `G_x`, `T` and `N` are both 2-dimensional and
   `θ` is the identity of `(𝔪/𝔪²)^∨`; smoothness of `𝒳` is not required.
 - With the right action `(τ, α ∘ g)` the tangent line of `[𝔸¹/𝔾_m]` at `0` would have weight `−1` and

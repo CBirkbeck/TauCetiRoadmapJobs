@@ -1746,7 +1746,7 @@
      ],
      "locator": {
       "source": "alper-moduli",
-      "where": "Exercise 7.4.40 (1), lines 16541-16549"
+      "where": "Exercise 7.4.40 (1), lines 16541-16549, for a finite type point of a Noetherian stack; neither hypothesis is used (the route is 2.1, 2.2 and full faithfulness of Z_x -> X)"
      },
      "prerequisites": [
       "target:0.2",
@@ -1772,6 +1772,16 @@
        "name": "finite_ext",
        "kind": "degenerate",
        "statement": "For Spec kappa and finite k, Z_x x_kappa k = Spec k = B1."
+      },
+      {
+       "name": "non_finite_type_point",
+       "kind": "degenerate",
+       "statement": "At the generic point eta of A^1_k (not a finite type point) and any representative Spec K -> A^1_k, K containing k(t): Z_eta = Spec k(t) is its own base and Z_eta x_{k(t)} Spec K = Spec K = B1 = BG_x, G_x trivial."
+      },
+      {
+       "name": "non_noetherian",
+       "kind": "degenerate",
+       "statement": "X = Spec Q(t)/Z (not quasi-separated, so not Noetherian) at its finite type point x : Spec Q(t) -> X (etale): Z_x = X with base X, and X x_X Spec Q(t) = Spec Q(t) = BG_x, G_x trivial; X is not decent, so only the first form applies."
       }
      ]
     },
@@ -1786,7 +1796,7 @@
      ],
      "locator": {
       "source": "stacks-06QB",
-      "where": "Lemma 101.28.6, lines 2664-2695; alper-moduli lines 6998-6999 and 16539-16540"
+      "where": "Lemma 101.28.6, lines 2664-2695; alper-moduli lines 6998-6999 and 16539-16540 (for a rational point with smooth affine stabiliser of a Noetherian stack of finite type over a field, respectively for a rational point of a quasi-separated stack of finite type over a field; 6.4 treats rational points without these hypotheses)"
      },
      "prerequisites": [
       "target:2.1",
@@ -2024,7 +2034,7 @@
      "id": "7.3",
      "kind": "construction",
      "name": "Stacks.tangentToNormal",
-     "statement": "The comparison theta_x : T_{X,x} -> N_x, (tau, alpha) |-> the linear form on x^*(I/I^2) induced by tau^* I -> eps k, is k-linear, G_x(k)-equivariant and surjective with kernel the image of T_{BG_x}; T_{BG_x} = 0 iff G_x is smooth; so theta_x is an isomorphism iff G_x is smooth.",
+     "statement": "The comparison theta_x : T_{X,x} -> N_x, (tau, alpha) |-> the linear form on x^*(I/I^2) induced by tau^* I -> eps k, is k-linear, G_x(k)-equivariant and surjective; the differential di : T_{BG_x} -> T_{X,x} is injective (i is a closed immersion, hence a monomorphism, hence fully faithful on framed deformations) with image the kernel of theta_x, so 0 -> T_{BG_x} -> T_{X,x} -> N_x -> 0 is exact; T_{BG_x} = 0 iff G_x is smooth; so theta_x is an isomorphism iff G_x is smooth.",
      "hypotheses": [
       "setting of 7.2",
       "T_{X,x} from AlgebraicModuliForArithmeticGeometry §8.1 at k[eps]"
@@ -2034,6 +2044,8 @@
       "where": "§3.1, lines 480-484 (the standing quasi-separatedness of X, lines 475-476, is not used); alper-moduli Definition 4.5.7, Exercise 4.5.11, lines 6859-6881 and 6948-6951"
      },
      "prerequisites": [
+      "target:0.2",
+      "target:0.3",
       "target:0.4",
       "target:1.3",
       "target:2.2",
@@ -2083,6 +2095,11 @@
        "name": "Bmup",
        "kind": "non-example",
        "statement": "On B mu_p over F_p, N = 0 and T = k: theta is not injective; mu_p not smooth."
+      },
+      {
+       "name": "A1mup",
+       "kind": "computation",
+       "statement": "On [A^1/mu_p] at 0 in characteristic p: framed deformations (z^p = 1 + a eps, t |-> b eps z) give T = k^2; di has image the line b = 0, equal to T_{B mu_p} = k and injective; N_0 = (k t)^dual and theta_0(a, b) = b. The flat non-smooth atlas A^1 gives only the line a = 0."
       },
       {
        "name": "cusp",
