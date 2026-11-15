@@ -1078,6 +1078,8 @@
       "tauceti:TauCeti.Wkp.translateLIE",
       "tauceti:TauCeti.Wkp.lowerOrder_translate",
       "tauceti:TauCeti.Wkp.iteratedGradient_translate",
+      "tauceti:TauCeti.W1p.eLpNorm_value_comp_add_sub_value_le_mul_enorm_gradient",
+      "tauceti:TauCeti.w1p0Submodule_top_eq_top",
       "mathlib:MeasureTheory.norm_integral_le_integral_norm"
      ],
      "api": [
@@ -1089,7 +1091,7 @@
       {
        "name": "gain_loss",
        "role": "structure",
-       "statement": "for every ε > 0, ‖J_εu‖_{Hᵏ⁺¹} ≤ C(1 + ε^{−1})‖u‖_{Hᵏ}, hence ≤ 2Cε^{−1}‖u‖_{Hᵏ} for 0 < ε ≤ 1; for k ≥ 1 and every ε > 0, ‖J_εu − u‖_{Hᵏ⁻¹} ≤ Cε‖u‖_{Hᵏ}; the order k + 1 derivatives ∂ᵢJ_ε∂^αu = ∫∂ᵢφ_ε(z)τ_z∂^αu dz by ‖∫k(z)τ_z w dz‖ ≤ ‖k‖_{L¹}‖w‖ with ‖∂ᵢφ_ε‖_{L¹} = ε^{−1}‖∂ᵢφ‖_{L¹}"
+       "statement": "for every ε > 0, ‖J_εu‖_{Hᵏ⁺¹} ≤ C(1 + ε^{−1})‖u‖_{Hᵏ}, hence ≤ 2Cε^{−1}‖u‖_{Hᵏ} for 0 < ε ≤ 1; for k ≥ 1 and every ε > 0, ‖J_εu − u‖_{Hᵏ⁻¹} ≤ Cε‖u‖_{Hᵏ}; the order k + 1 derivatives ∂ᵢJ_ε∂^αu = ∫∂ᵢφ_ε(z)τ_z∂^αu dz by ‖∫k(z)τ_z w dz‖ ≤ ‖k‖_{L¹}‖w‖ with ‖∂ᵢφ_ε‖_{L¹} = ε^{−1}‖∂ᵢφ‖_{L¹}; the loss bound from J_εw − w = ∫φ(y)(τ_{−εy}w − w)dy for w = ∂^αu, |α| ≤ k − 1, and, for Λ = 0, the translation estimate ‖τ_hw − w‖_{L²} ≤ |h|‖∇w‖_{L²} (TauCeti.W1p.eLpNorm_value_comp_add_sub_value_le_mul_enorm_gradient, on all of H¹(E) by TauCeti.w1p0Submodule_top_eq_top), giving C = √n∫|y|φ; for Λ ≠ 0 through the localisation of §4.1"
       },
       {
        "name": "friedrichs_lemma",

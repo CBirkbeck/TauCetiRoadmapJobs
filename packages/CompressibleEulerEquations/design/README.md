@@ -286,6 +286,15 @@ on `E`, no Lorentzian quadratic form with a time orientation and no causal curve
   (`TauCeti/Analysis/Sobolev/Wkp/Translation.lean:104,137,130,182,193,229`): translation of
   `W^{k,p}(ℝⁿ)` acts on the value and every weak derivative, is a linear isometric equivalence,
   and for finite `p` is continuous in the translation vector for each fixed element.
+- `TauCeti.W1p.eLpNorm_value_comp_add_sub_value_le_mul_enorm_gradient`
+  (`TauCeti/Analysis/Sobolev/Translation.lean:133`): for `1 ≤ p ≤ ∞`, an additive Haar measure
+  `μ` on `E` and `u` in `TauCeti.w1p0Submodule μ ⊤ p`, the closure of the test functions in
+  `W^{1,p}(E)`, the translation estimate `‖u(· + h) − u‖_p ≤ |h|‖∇u‖_p`; with
+  `TauCeti.w1p0Submodule_top_eq_top` (`TauCeti/Analysis/Sobolev/W1p/Density.lean:299`), by
+  which that closure is all of `W^{1,p}(E)` for `p < ∞`, it holds for every element of
+  `TauCeti.W1p volume ⊤ 2`, which is `TauCeti.Wkp volume ⊤ 2 1`. With
+  `MeasureTheory.norm_integral_le_integral_norm` it gives the loss bound of §4.4 for `Λ = 0`,
+  and the localisation of §4.1 carries it to every `Λ`.
 - `TauCeti.HasWeakLineDerivOn.contDiffOn_smul`, `TauCeti.HasWeakFDerivOn.contDiffOn_smul` and
   `TauCeti.HasWeakLineDerivOn.lipschitzOnWith_smul`
   (`TauCeti/Analysis/Sobolev/Leibniz.lean:112,168,317`): the Leibniz rule for the weak derivative
@@ -403,9 +412,10 @@ The headline theorems, which the acceptance test states, are the local well-pose
 compressible Euler (§7.2), uniqueness on lens-shaped domains (§6.1), the uniqueness and
 existence theorems for developments (§8.2–§8.3) and the nullity of the regular boundary of a
 maximal development (§8.4); the definitions they need are the equation of state, the Euler
-system, the sound-cone causal curve and the future domain of dependence (in the
-time-parametrised form that LorentzianGeometry §12.6 reduces its notions to) and the
-development.
+system, the quasilinear symmetric hyperbolic system with its symbol (§2.1), the space `Hᵏ_Λ`
+(§4.1), the lens function and its spacelike condition (§6.1), the sound-cone causal curve and
+the future domain of dependence (in the time-parametrised form that LorentzianGeometry §12.6
+reduces its notions to), and the initial data set and the development with its order (§8.1).
 
 ## Layer 1: equations of state and the Euler systems
 
@@ -1119,7 +1129,14 @@ at most `2φ(y)‖u‖` and tends to `0` for each `y`, by dominated convergence.
 route runs in `Hᵏ_Λ`, with the translation isometries of §4.1 and their continuity in the
 translation vector obtained through the localisation of §4.1. On a normalised bump the route
 recovers the cited Tau Ceti statements. Proved here as well are the `ε^{−1}` gain and `ε` loss
-bounds, the `L²_Λ` symmetry and Friedrichs' lemma.
+bounds, the `L²_Λ` symmetry and Friedrichs' lemma. The loss bound: for `|α| ≤ k − 1` the function
+`w = ∂^αu` lies in `H¹_Λ`, `J_εw − w = ∫ φ(y)(τ_{−εy}w − w) dy` because `∫ φ = 1`, and for
+`Λ = 0` the translation estimate `‖τ_hw − w‖_{L²} ≤ |h|‖∇w‖_{L²}`
+(`TauCeti.W1p.eLpNorm_value_comp_add_sub_value_le_mul_enorm_gradient`, on all of `H¹(E)` by
+`TauCeti.w1p0Submodule_top_eq_top`) gives `‖J_εw − w‖_{L²} ≤ ε(∫ |y|φ(y) dy)‖∇w‖_{L²}`; summing
+over `α`, each derivative of order between `1` and `k` occurs at most `n` times as some `∂ᵢ∂^α`,
+so `C = √n ∫ |y|φ(y) dy` serves. For `Λ ≠ 0` the localisation of §4.1 gives
+`‖τ_hw − w‖_{L²_Λ} ≤ C′|h|‖w‖_{H¹_Λ}` with `C′` depending on `Λ` and `χ_Λ`, which is enough.
 
 **Checks.**
 
@@ -1157,7 +1174,8 @@ bounds, the `L²_Λ` symmetry and Friedrichs' lemma.
 `MeasureTheory.norm_integral_le_integral_norm`, and dominated convergence; Tau Ceti `TauCeti.Wkp.translate`,
 `TauCeti.Wkp.continuous_translate`, `TauCeti.Wkp.norm_translate`, `TauCeti.Wkp.translateLIE`,
 `TauCeti.Wkp.lowerOrder_translate` and `TauCeti.Wkp.iteratedGradient_translate` for the
-general kernel; `TauCeti.Wkp.normedBumpL`, `TauCeti.Wkp.norm_normedBumpL_le_one`,
+general kernel; `TauCeti.W1p.eLpNorm_value_comp_add_sub_value_le_mul_enorm_gradient` and
+`TauCeti.w1p0Submodule_top_eq_top` for the loss bound; `TauCeti.Wkp.normedBumpL`, `TauCeti.Wkp.norm_normedBumpL_le_one`,
 `TauCeti.Wkp.lowerOrder_normedBumpL`, `TauCeti.Wkp.iteratedGradient_normedBumpL`,
 `TauCeti.Wkp.tendsto_normedBumpL` for the normalised-bump case, and
 `TauCeti.Wkp.dense_contDiff_representatives`.
