@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HabiroCohomologyFoundations~5",
+  "head": "4aebbac802c228e20f72104f86b15162f0686f11",
+  "pr": 1428,
+  "folder": "HabiroCohomologyFoundations",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 4aebbac; this round checked the pull request's title and description against the head. One P3 finding (R01): the description's Dependencies paragraph says everything not on main or in the merge order is a consumer, while README line 237 declares seven supplier gaps on which targets are conditional; the repair is a replacement text for the description, no file of the folder changes. Checked: title, summary block and prose against README lines 3-20, 99-100, 147, 237-253, 556, 2488-2506; the change against the base (new roadmap, 3 files, nothing outside the folder); the gate rerun (all checks 0, OK); depcheck (244 roadmaps, 2229 edges, 0 problems); elaboration of Suggested.lean (sorry the only warning, 3 theorems); adversarial rows with computed values for the 3 Lean theorems (p=2,3,5; q=1,-1; d=0; zero ring) and the pinned TauCeti.torusCharacter; overlap check against 5 open roadmaps and EnhancedDerivedSheaves on main (nothing shared). The previous review had no numbered finding. The seeded source sample was not reopened (no changed passage).",
+  "text": "f9252efc7821b24e",
+  "carried": {
+   "from": "4aebbac802c228e20f72104f86b15162f0686f11",
+   "head": "410d53676adb928bad2c1a07113d5b0c65d13197",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "HabiroCohomologyFoundations"
+   ],
+   "outside": true
+  }
+ }
+}
