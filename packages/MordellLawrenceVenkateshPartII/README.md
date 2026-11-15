@@ -38,8 +38,10 @@ This roadmap owns:
    abelian varieties, the inversion pairing of those whose hypersurface is inversion-symmetric up to
    translation, and rationality of their Frobenius polynomials.
 3. **Semilinear groups and tensor filtrations** (Layer 2): the semilinear coefficient normalizer
-   and its Frobenius centralizer bound, semisimplification in disconnected groups with reductive
-   identity component, tensor G-structures and G-filtrations, crystalline inner forms, adjoint
+   and its Frobenius centralizer bound, the descent of semisimplification to a field of
+   characteristic zero in groups with reductive identity component (rational representatives,
+   finiteness of rational classes over p-adic fields, continuity), tensor G-structures and
+   G-filtrations, crystalline inner forms, adjoint
    Hodge profiles and their top-weight sums, uniform filtrations, finiteness of global
    coefficient-group types, finiteness of semisimplification geometries and finiteness of local
    nonabelian Galois cohomology.
@@ -82,7 +84,16 @@ It uses, and does not redevelop:
 - **ReductiveGroups** owns algebraic groups, their tori (Layer 4), unipotent radicals (Layer 5),
   characteristic-zero Levi complements (Layer 6A), root, Weyl, parabolic and Bruhat theory
   (Layer 7) and algebraic parabolics with Levi intersections (Layer 7b). The coefficient-normalizer
-  specializations and the disconnected-group statements of Layer 2 are owned here.
+  specializations and the remaining disconnected-group statements of Layer 2 (rational
+  semisimplification, semisimplification geometries) are owned here.
+- **ArithmeticGaloisRepresentations** §1.11, *Complete reducibility and closed tuples*, owns
+  G-complete reducibility, the closed-tuple criterion and Levi semisimplification for connected
+  reductive groups, and **LanglandsParameterStacks** §§2.3–2.4 extend them to groups with
+  reductive identity component and finite étale component group, testing all R-parabolics and
+  R-Levis, with Levi semisimplification unique up to `G°(k̄)`-conjugacy over an algebraically
+  closed field `k̄`. §2.3 here differs in owning only the descent to a field of characteristic zero
+  (parabolics and Levis defined over that field and a rational representative of the geometric
+  class), the finiteness of rational classes over p-adic fields and continuity.
 - **ReductiveGroupsPartII** §RG2.0.2 owns the analytic manifold structure on the points of a smooth
   group over a characteristic-zero local field; Layer 9 uses it for the Zariski density of open
   subgroups of `SO(E)(ℚ_ℓ)`.
@@ -313,7 +324,7 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 - §2.18 (Eulerian numbers, `A(n, q)` counting permutations of `Fin n` with `q` descents), §2.39
   (the factorial sum, symmetry, recurrence and Worpitzky's identity) and §2.56 (unimodality of the
   rows); consumed in Layer 8.
-- What ClassicalArithmeticCompletion must provide (gap:eulerian-log-concavity-and-variance): log-concavity of every row `q ↦ A(n, q)` on its contiguous support `0 ≤ q < n`, preservation of log-concavity on contiguous support under convolution and reflection of finite sequences, and the variance `(n + 1)/12` of the descent number of a uniformly random permutation of `Fin n` for `n ≥ 2`.
+- What ClassicalArithmeticCompletion must provide (gap:eulerian-log-concavity-and-variance): log-concavity of every row `q ↦ A(n, q)` on its contiguous support, which is `0 ≤ q < n` for `n ≥ 1` and `{0}` for `n = 0` (the empty permutation gives `A(0, 0) = 1`), preservation of log-concavity on contiguous support under convolution and reflection of finite sequences, and the variance `(n + 1)/12` of the descent number of a uniformly random permutation of `Fin n` for `n ≥ 2`.
 - What ClassicalArithmeticCompletion must provide (gap:eulerian-central-limit): the central limit theorem for descents: for a uniformly random permutation of `Fin n`, `(des − (n − 1)/2)/√n` converges in law to the centred normal law of variance `1/12` as `n → ∞`, together with the uniform bound on its second moments that gives convergence of first absolute moments.
 
 ### From TauCetiRoadmap.ReductiveGroups
@@ -322,8 +333,9 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   unipotent radical), Layer 6A (characteristic-zero Levi complements for general affine groups),
   Layer 7 (Borel and parabolic subgroups, roots, Weyl group and Bruhat decomposition) and Layer 7b
   (algebraic parabolics and Levi intersections), all over a field of characteristic zero. Consumed
-  in Layers 2, 4 and 5. Connected root theory is used only on identity components; the statements
-  for disconnected groups are targets here.
+  in Layers 2, 4 and 5. Connected root theory is used only on identity components; complete
+  reducibility for disconnected groups is imported from LanglandsParameterStacks §§2.3–2.4, and the
+  other disconnected-group statements are targets here.
 
 ### From TauCetiRoadmap.ReductiveGroupsPartII
 
@@ -331,6 +343,26 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   nondiscrete locally compact field `K` of characteristic zero, `G(K)` is an analytic manifold of
   dimension `dim G` whose tangent space at the identity is the Lie algebra; used only to see that an open
   subgroup of `SO(E)(ℚ_ℓ)` has full Lie algebra and is Zariski-dense in `SO(E)`. Consumed in §9.2.
+
+### From TauCetiRoadmap.ArithmeticGaloisRepresentations and TauCetiRoadmap.LanglandsParameterStacks
+
+- ArithmeticGaloisRepresentations §1.11, *Complete reducibility and closed tuples*: for a connected
+  reductive group over an algebraically closed field, G-complete reducibility of a closed subgroup
+  (every parabolic containing it has a Levi containing it), applied to a homomorphism through the
+  Zariski closure of its image and over a general field after extension to an algebraic closure;
+  conjugacy invariance; equivalence with semisimplicity for `GL(V)`; the closed-tuple criterion; and
+  Levi semisimplification from a minimal parabolic, independent of the choices up to conjugacy and a
+  cocharacter limit in the unique closed orbit. Consumed in §2.3 through LanglandsParameterStacks.
+- LanglandsParameterStacks §2.3: for a group `G` whose identity component is reductive and whose
+  component group is finite étale, the R-parabolics `P_λ = {g : lim_(t→0) λ(t) g λ(t)⁻¹ exists}` and
+  R-Levis `L_λ = Z_G(λ)` of the cocharacters `λ` of `G°`, and G-complete reducibility tested against all
+  of them, whether or not they surject onto the component group. §2.4: over an algebraically closed
+  field, the closed-tuple criterion for such `G` under `G°`-conjugation, Levi semisimplification
+  from a minimal containing R-parabolic, G-completely reducible and unique up to `G°(k̄)`-conjugacy,
+  and the equality of dimension and component count of all minimal containing R-parabolics. In
+  characteristic zero every finite component group is étale, so these apply to every group of
+  Conventions with reductive identity component. Consumed in §2.3, and through it in §§2.5,
+  2.9–2.10, 5.2, 5.5, 5.7 and 7.2.
 
 ### From TauCetiRoadmap.RestrictedPowerSeries and TauCetiRoadmap.ComplexKahlerGeometry
 
@@ -1140,45 +1172,81 @@ component. `Z_G(φ)` and `Z_B(φ)` differ by a finite component quotient.
 
 ### 2.3 Semisimplification in groups with reductive identity component
 
-Let `G` be an algebraic group over a field of characteristic zero with reductive identity component,
-and `Γ ⊂ G` a subgroup. For a cocharacter `λ` of `G` the **Richardson parabolic** is the dynamic
-parabolic `P_λ = {g : lim_(t→0) λ(t) g λ(t)⁻¹ exists}`, with Levi `L_λ = Z_G(λ)` and unipotent radical.
-Call `Γ` **G-completely reducible** when every `P_λ` containing `Γ` has a Levi containing `Γ`. Prove
-that projecting `Γ` from a minimal Richardson parabolic containing it to its Levi gives a
-G-completely reducible subgroup, unique up to `G(k̄)`-conjugacy. Over a field `k` of characteristic zero
-the construction with `k`-parabolics and `k`-Levis applied to a `k`-rational `Γ` yields a `k`-rational
-subgroup. Complete reducibility and the Levi image depend only on the Zariski closure of `Γ`, so the
-subgroups may be taken closed. For `k` a finite extension of ℚ_p, the closed `k`-subgroups inside one
-geometric conjugacy class form finitely many `G(k)`-classes (§2.11 with the normalizer), and the
-semisimplifications `G(k̄)`-conjugate to that of a given continuous representation `ρ` of a
-profinite group into `G(k)` form finitely many `G(k)`-classes of homomorphisms (§2.11 with the centralizer of the image).
-For `Γ` the image of a representation this is its **G-semisimplification** (LS, Definitions 5.34–5.36
-and Lemma 5.37, pp. 55–56; LV, Lemmas 2.4–2.5, pp. 905–906).
+Let `G` be an algebraic group over a field `k` of characteristic zero with reductive identity
+component. A **Richardson parabolic** of `G` is an R-parabolic `P_λ = {g : lim_(t→0) λ(t) g λ(t)⁻¹ exists}`
+of LanglandsParameterStacks §2.3, for a cocharacter `λ` of `G°`, with R-Levi `L_λ = Z_G(λ)`,
+unipotent radical `U_λ` and limit projection `c_λ : P_λ → L_λ`; it is **defined over `k`** when `λ`
+is. G-complete reducibility (every Richardson parabolic containing the subgroup has an R-Levi
+containing it, all R-parabolics tested) and, over `k̄`, the **Levi semisimplification** (the image
+under `c_λ` for a minimal Richardson parabolic containing the subgroup, G-completely reducible and
+unique up to `G°(k̄)`-conjugacy) are LanglandsParameterStacks §§2.3–2.4, extending
+ArithmeticGaloisRepresentations §1.11, *Complete reducibility and closed tuples*; a subgroup or
+homomorphism is tested through the Zariski closure of its image, and over `k` after extension to
+`k̄`.
 
-The dynamic parabolic is `TauCeti.Cocharacter.parabolic`; Levi decompositions and closed-orbit
-uniqueness are the connected theory of ReductiveGroups Layers 6A and 7b, applied to the identity
-component with the finite component action tracked separately. An element and its Levi image have
-conjugate semisimple parts, and tori in `P` are unipotently conjugate into a Levi.
+Prove the rational form. For a subgroup `Γ ⊂ G(k)`, let `P_λ` be a Richardson parabolic defined
+over `k` and minimal among those defined over `k` that contain `Γ`. Then `c_λ(Γ) ⊂ L_λ(k)` is a
+`k`-rational subgroup whose Zariski closure is G-completely reducible over `k̄`, it is
+`G°(k̄)`-conjugate to the Levi semisimplification of `Γ`, and two choices of `λ` give
+`G°(k̄)`-conjugate images. For `Γ` the image of a representation `ρ` into `G(k)`, the homomorphism
+`ρ^ss = c_λ ∘ ρ` is its **G-semisimplification** (LV, §2.4 and Lemmas 2.4–2.5, pp. 905–906; LS,
+Definitions 5.34–5.36 and Lemma 5.37, pp. 55–56). For `k` a finite extension of ℚ_p, the closed
+`k`-subgroups inside one `G(k̄)`-conjugacy class form finitely many `G(k)`-classes (§2.11 with the
+normalizer), and the homomorphisms of a profinite group into `G(k)` that are `G(k̄)`-conjugate to a
+given `ρ^ss` form finitely many `G(k)`-classes (§2.11 with the centralizer of the image).
+
+A route: if `c_λ(Γ)` lay in a proper Richardson parabolic of `L_λ` defined over `k`, its preimage
+under `c_λ` would be a smaller Richardson parabolic of `G` defined over `k` containing `Γ`; so
+`c_λ(Γ)` is irreducible in `L_λ` over `k`, hence completely reducible in `L_λ` and in `G` over `k`,
+and over a field of characteristic zero complete reducibility over `k` and over `k̄` agree (the
+passage recorded in LV, footnote 1, p. 905). The image is a cocharacter limit of `Γ`, so the
+closed-orbit uniqueness of LanglandsParameterStacks §2.4 places it in the class of the Levi
+semisimplification. The dynamic
+parabolic is `TauCeti.Cocharacter.parabolic`; the characteristic-zero Levi complements of
+ReductiveGroups Layer 6A are the `U_λ`-conjugates of `L_λ`, so a reductive subgroup of `P_λ` (the
+Zariski closure of a semisimple element, a torus) is unipotently conjugate into `L_λ`.
 
 API:
 
-- A minimal Richardson parabolic containing a given image exists.
-- Its completely reducible Levi images form one geometric `G`-conjugacy class.
-- Levi projection preserves the `G`-conjugacy class of the semisimple part of every element.
+- Over `k`, a Richardson parabolic defined over `k` and minimal among those containing a given
+  `k`-rational subgroup exists, since closed subgroups satisfy the descending chain condition.
+- The Levi images of two minimal Richardson parabolics defined over `k` are `G°(k̄)`-conjugate and
+  G-completely reducible over `k̄`.
+- Levi projection preserves the `G(k̄)`-conjugacy class of the semisimple part of every element, and
+  a `k`-torus in `P_λ` is `U_λ(k)`-conjugate to its projection to `L_λ`.
 - The semisimplification of a continuous representation into `G(k)`, for `k` a finite extension of ℚ_p,
-  is continuous: the Levi projection `P → L` is a morphism of algebraic groups, so `P(k) → L(k)` is
-  continuous.
+  is continuous: the Levi projection `P_λ → L_λ` is a morphism of algebraic groups defined over `k`,
+  so `P_λ(k) → L_λ(k)` is continuous.
 
 **Checks.**
 
-- A split extension of two distinct characters of `GL₂` has the same semisimplification as their
-  direct sum.
-- A nontrivial upper-unipotent representation is not equal to its trivial semisimplification.
-- For `(GL₂)² ⋊ C₂`, two cocharacters with the same parabolic in the identity component give different
-  full parabolics according to whether the swap preserves their weights.
-- For `G = GL(V)` the construction is the ordinary semisimplification of a representation.
+- Over `ℚ`, the rotation `w = ((0, −1), (1, 0))` of order 4 in `GL₂` has eigenvalues `±i`, so it lies in
+  no Borel defined over `ℚ`: the minimal Richardson parabolic over `ℚ` is `GL₂` and `⟨w⟩` is its own
+  semisimplification. Over `ℚ̄` the minimal ones are the two Borels of its eigenlines, neither
+  defined over `ℚ`, and the Levi of the eigenbasis contains `w` (as `diag(i, −i)`): both give the same
+  geometric class, and the minimal parabolic over `k` need not be minimal over `k̄`.
+- In `SL₂` over `ℚ`, the cocharacter `λ(t) = diag(t, t⁻¹)` conjugates `U = ((1, 1), (0, 1))` to
+  `((1, t²), (0, 1))`, with limit `I`: the semisimplification of `⟨U⟩` is trivial, with the same
+  characteristic polynomial `(t − 1)²` (trace `2`), although `⟨U⟩` is not trivial; the semisimple part
+  of `U` is `I`, as Levi projection requires.
+- In `J = SL₂² ⋊ C₂` over `ℚ` (the swap), the subgroup generated by `(U, D)` and `(1, W)`, with
+  `D = diag(2, 1/2)` and `W = ((0, −1), (1, 0))`, lies in `P_λ = B × SL₂` for the `ℚ`-cocharacter
+  `λ = (diag(t, t⁻¹), 1)`, which contains no element of the swap component; its image is
+  `⟨(1, D), (1, W)⟩`, completely reducible since `D` and `W` share no eigenline. A test restricted to
+  Richardson parabolics surjecting onto the component group sees only `J` and would leave the subgroup
+  unchanged.
+- In the split orthogonal group `O₂ = O(xy)` over `ℚ₃`, the reflections `r_b(x, y) = (b y, b⁻¹ x)` are
+  `O₂(ℚ̄₃)`-conjugate to `r_1`, and conjugation by `diag(a, a⁻¹)` and by `r_c` sends `r_b` to `r_(a²b)`
+  and `r_(c²/b)`; so the homomorphisms `ℤ/2 → O₂(ℚ₃)` sending the generator to a reflection, each its own
+  semisimplification, form four `O₂(ℚ₃)`-classes, one per class of `b` in `ℚ₃^×/ℚ₃^(×2)`, while all
+  four are conjugate in `GL₂(ℚ₃)`: finite, but finer than the `GL`-classes.
+- For `G = GL(V)` the construction over `k` is the semisimplification of the `k`-representation,
+  the graded pieces of a maximal `Γ`-stable flag of `k`-subspaces, in agreement with the `GL(V)`
+  comparison of ArithmeticGaloisRepresentations §1.11.
 
-*Needs:* §2.1; `TauCeti.Cocharacter.parabolic`; ReductiveGroups Layers 6A, 7, 7b.
+*Needs:* LanglandsParameterStacks §§2.3–2.4; ArithmeticGaloisRepresentations §1.11, *Complete
+reducibility and closed tuples*; §2.11; `TauCeti.Cocharacter.parabolic`; ReductiveGroups Layers 6A,
+7, 7b.
 
 ### 2.4 Tensor G-structures
 
@@ -1433,7 +1501,9 @@ parabolic `𝔾_m` and give different chains even with the indices forgotten.
 
 ### Dependencies
 
-Layers 0–1; ReductiveGroups Layers 3–7b; `TauCeti.Cocharacter.parabolic`;
+Layers 0–1; ReductiveGroups Layers 3–7b; LanglandsParameterStacks §§2.3–2.4;
+ArithmeticGaloisRepresentations §1.11, *Complete reducibility and closed tuples*;
+`TauCeti.Cocharacter.parabolic`;
 `TauCeti.Tannaka.fgPointTensorIsoEquiv`; MotivesAndAlgebraicCycles §§6.2, 6.8; PadicHodgeTheory
 §§3.3–3.6, 5.5; AbelianSchemesAndArithmeticModuli §§A6.30–A6.31; MordellLawrenceVenkatesh §§0.3–0.4,
 1.2; ArithmeticGaloisDuality §R02.3.1.
@@ -1949,7 +2019,13 @@ kernel.
   `u = −v − v` gives `v = −u/2`.
 - In characteristic `p` with `U = 𝔾_a`, `ψ = id` and `r = p`, the norm relation `p·u = 0` holds for every
   `u` but `ψ(v) − v = 0`; characteristic zero is needed.
-- The finite-order condition on `ψ` is essential (see §5.7).
+- Finite order of `ψ` is needed for the statement to apply directly to all of `U`, not for its
+  conclusion. If `N = u·ψ(u)⋯ψ^(r−1)(u) = 1` then `ψ(N) = u⁻¹·N·ψ^r(u)` gives `ψ^r(u) = u`, so `u` lies in
+  the closed ψ-stable subgroup `U^(ψ^r)`, unipotent as a closed subgroup of `U`, on which `ψ` has order
+  dividing `r`; the statement there gives `v ∈ U^(ψ^r)`. On `U = 𝔾_a²` over `ℚ` with `ψ(x, y) = (−x, 2y)`, of
+  infinite order, and `r = 2`, the element `u = (2, 0)` satisfies `u + ψ(u) = 0` and equals `ψ(v) − v`
+  for `v = (−1, 0)`, inside `U^(ψ²) = {(x, 0)}` (since `4y = y` forces `y = 0`). This is the restriction
+  to `Z_U(φ^r)` made in §5.7.
 
 *Needs:* ReductiveGroups Layer 5.
 
@@ -1965,7 +2041,8 @@ in Source corrections; LS line 3668).
 **Checks.**
 
 - Conjugation by `diag(2, 1)` acts on the upper root group of `GL₂` by multiplication by 2, of infinite
-  order; §5.6 does not apply on all of `U`.
+  order; §5.6 does not apply directly on all of `U`. There the norm equation `(2^r − 1)·u = 0` forces
+  `u = 0`, and `Z_U(φ^r) = 0`, in agreement with the reduction to the fixed subgroup in the Checks of §5.6.
 - For `φ` central the chosen Levi is already φ-stable.
 - For `φ` regular semisimple in a Borel `P` of `GL₂`, the φ-stable Levi is the maximal torus containing
   `φ`, a unipotent conjugate of the diagonal torus.

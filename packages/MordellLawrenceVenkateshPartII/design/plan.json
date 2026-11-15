@@ -4603,7 +4603,7 @@
   "gaps": [
     {
       "slug": "eulerian-log-concavity-and-variance",
-      "needs": "log-concavity of every row `q ↦ A(n, q)` on its contiguous support `0 ≤ q < n`, preservation of log-concavity on contiguous support under convolution and reflection of finite sequences, and the variance `(n + 1)/12` of the descent number of a uniformly random permutation of `Fin n` for `n ≥ 2`.",
+      "needs": "log-concavity of every row `q ↦ A(n, q)` on its contiguous support, which is `0 ≤ q < n` for `n ≥ 1` and `{0}` for `n = 0` (the empty permutation gives `A(0, 0) = 1`), preservation of log-concavity on contiguous support under convolution and reflection of finite sequences, and the variance `(n + 1)/12` of the descent number of a uniformly random permutation of `Fin n` for `n ≥ 2`.",
       "supplier": "ClassicalArithmeticCompletion",
       "section": "§2.56"
     },
