@@ -42,9 +42,10 @@ decomposition realised by the spectral types (README §1.2), the structure of th
 continuous spectrum and the interval criterion (§1.4, §1.5), the min–max principle below the
 essential spectrum (§1.6), Pearson's theorem and the Kato–Rosenblum theorem (§1.9), the lower bound
 and cores of the Kato–Rellich theorem (§2.3), the essential self-adjointness of the Laplacian of a
-complete Riemannian manifold and its `L²` kernel (§3.6, §3.7), the threshold `[1/4, ∞) ⊆ σ_ess`
-forced by a cusp end (§3.10), and the Schrödinger operators `−Δ + V` with bounded real potentials
-(§4.4).
+complete Riemannian manifold and its `L²` kernel (§3.6, §3.7), the Schrödinger operators `Δ + V`
+with bounded real potentials on a complete Riemannian manifold (§3.9), the threshold
+`[1/4, ∞) ⊆ σ_ess` forced by a cusp end (§3.10), and the Schrödinger operators `−Δ + V` with bounded
+real potentials on `ℝ^d` (§4.4).
 
 Three clauses of the README Summary are not statable at the pins, and nothing is stated in their
 place. The form-domain clause of §3.6 (`H¹₀(X) = H¹(X)`, with `Δ_X` the operator of the energy
@@ -284,6 +285,41 @@ theorem exists_mem_domain_closure_eq_zero_iff {E : Type*} [NormedAddCommGroup E]
     (u : Lp ℂ 2 (TauCeti.riemannianVolume I M)) :
     (∃ h : u ∈ T.closure.domain, T.closure ⟨u, h⟩ = 0) ↔
       ∃ f : M → ℂ, IsLocallyConstant f ∧ (u : M → ℂ) =ᵐ[TauCeti.riemannianVolume I M] f := by
+  sorry
+
+/-- Bounded potentials on a complete Riemannian manifold (README §3.9). For a real essentially
+bounded `V`, the operator `Δ + V` on compactly supported smooth complex functions, `Δ = −div grad`,
+is essentially self-adjoint in `L²(M, vol_g)`; the domain of its closure is the domain of the
+self-adjoint Laplacian `Δ_M` (the `u ∈ L²` whose distributional Laplacian is in `L²`), so that the
+closure is `Δ_M + V`; and the closure is bounded below by `ess inf V` (Teschl, Theorem 6.4 with
+relative bound `0`, applied to the Laplacian of README §3.6). Here `T` is `Δ + V` on test
+functions: its domain is the set of classes of compactly supported smooth functions and it acts by
+`f ↦ Δf + V f`. -/
+theorem laplacian_add_potential_isSelfAdjoint_closure {E : Type*} [NormedAddCommGroup E]
+    [NormedSpace ℝ E] [FiniteDimensional ℝ E] {HM : Type*} [TopologicalSpace HM]
+    {I : ModelWithCorners ℝ E HM} [I.Boundaryless] {M : Type*} [EMetricSpace M]
+    [ChartedSpace HM M] [IsManifold I ∞ M] [RiemannianBundle (fun x : M ↦ TangentSpace I x)]
+    [IsContMDiffRiemannianBundle I ∞ E (fun x : M ↦ TangentSpace I x)]
+    [IsContinuousRiemannianBundle E (fun x : M ↦ TangentSpace I x)] [IsRiemannianManifold I M]
+    [CompleteSpace M] [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M]
+    (V : M → ℝ) (hV : MemLp V ⊤ (TauCeti.riemannianVolume I M))
+    (T : Lp ℂ 2 (TauCeti.riemannianVolume I M) →ₗ.[ℂ] Lp ℂ 2 (TauCeti.riemannianVolume I M))
+    (hdom : ∀ u, u ∈ T.domain ↔ ∃ f : M → ℂ, ContMDiff I 𝓘(ℝ, ℂ) ∞ f ∧ HasCompactSupport f ∧
+      (u : M → ℂ) =ᵐ[TauCeti.riemannianVolume I M] f)
+    (hact : ∀ (u : T.domain) (f : M → ℂ), ContMDiff I 𝓘(ℝ, ℂ) ∞ f → HasCompactSupport f →
+      ((u : Lp ℂ 2 (TauCeti.riemannianVolume I M)) : M → ℂ) =ᵐ[TauCeti.riemannianVolume I M] f →
+      (T u : M → ℂ) =ᵐ[TauCeti.riemannianVolume I M]
+        fun x => complexLaplacian I f x + (V x : ℂ) * f x) :
+    IsSelfAdjoint T.closure ∧
+      (∀ u : Lp ℂ 2 (TauCeti.riemannianVolume I M), u ∈ T.closure.domain ↔
+        ∃ w : Lp ℂ 2 (TauCeti.riemannianVolume I M), ∀ φ : M → ℂ,
+          ContMDiff I 𝓘(ℝ, ℂ) ∞ φ → HasCompactSupport φ →
+            ∫ x, conj (complexLaplacian I φ x) * u x ∂TauCeti.riemannianVolume I M =
+              ∫ x, conj (φ x) * w x ∂TauCeti.riemannianVolume I M) ∧
+      ∀ x : T.closure.domain,
+        essInf V (TauCeti.riemannianVolume I M) *
+            ‖(x : Lp ℂ 2 (TauCeti.riemannianVolume I M))‖ ^ 2 ≤
+          (⟪(x : Lp ℂ 2 (TauCeti.riemannianVolume I M)), T.closure x⟫_ℂ).re := by
   sorry
 
 /-- The part `{y > a}` of the upper half-plane `ℍ = TauCeti.UpperHalfSpace ℝ`, an open
