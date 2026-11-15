@@ -5,9 +5,9 @@ of a smooth Riemannian manifold (M, g), in the generality of Allard's theory as 
 Chapter 8 of Simon's lectures: a varifold is an arbitrary Radon measure on the Grassmann bundle of
 unoriented k-planes, and the analysis is carried out for varifolds of locally bounded first
 variation. It starts from Mathlib's Radon measures, Riesz–Markov–Kakutani theorem, Hausdorff
-measure, norm determinants and Levi-Civita connection, Tau Ceti's flows of compactly supported
-vector fields, signed Riesz representation, mass measures of functionals on test functions,
-Prokhorov theorem, Riemannian volume, divergence theorem and countably rectifiable sets, and the
+measure, norm determinants and Levi-Civita connection, Tau Ceti's finite Grassmannians, flows of
+compactly supported vector fields, signed Riesz representation, mass measures of functionals on
+test functions, Prokhorov theorem, Riemannian volume, divergence theorem and countably rectifiable sets, and the
 approximate tangent plane, area formula and Grassmann-bundle material of
 GeometricMeasureTheory and GeometricCurrents. Its end theorems are: the Riesz decomposition of
 the first variation into generalised mean curvature, generalised boundary measure and outward
@@ -25,8 +25,11 @@ Euclidean space E is the case of the flat metric, and no isometric embedding the
 Owned here:
 
 - the projection presentation of the Grassmann bundle G_k(W) (each k-plane recorded by its
-  g-orthogonal projection), its comparison with GeometricCurrents G6's unoriented Grassmann
-  bundle, the varifold carrier, weight, mass, support, restriction, varifold convergence;
+  g-orthogonal projection; it is kept beside Tau Ceti's `TauCeti.finiteGrassmannian` because the
+  tangential trace tr(P ∘ A) and the operator-norm distance are stated on P, and its fibre is
+  homeomorphic to `TauCeti.finiteGrassmannian ℝ k N` by 1.1), its comparison with
+  GeometricCurrents G6's unoriented Grassmann bundle, the varifold carrier, weight, mass, support,
+  restriction, varifold convergence;
 - approximate tangent spaces of Radon measures on a manifold and the rectifiability criterion for
   measures; rectifiable and integral varifolds v(Γ, θ); the multiplicity-one varifold [Σ] of a C¹
   embedded submanifold and the identification of its weight with the Riemannian volume of Σ
@@ -55,6 +58,9 @@ Owned here:
 
 Owned elsewhere and cited:
 
+- The k-dimensional subspaces of ℝ^N with the quotient topology of the span map on frames, their
+  compactness and Hausdorff property, and the continuity of the orthogonal projection onto them
+  are already in Tau Ceti (`TauCeti.finiteGrassmannian`); 1.1 compares them with G(E, k).
 - Approximate tangent planes of rectifiable sets, tangential differentiation and the area formula:
   GeometricMeasureTheory G2. Countable k-rectifiability and its closure API, on any extended metric
   space and so on (M, d_g), are already in Tau Ceti (`TauCeti.CountablyRectifiable`), and the
@@ -149,7 +155,9 @@ here only as tests of the definitions.
 - Projections: `IsStarProjection` (`Mathlib/Algebra/Star/StarProjection.lean`),
   `Submodule.starProjection` (`Mathlib/Analysis/InnerProductSpace/Projection/Basic.lean`),
   `isStarProjection_starProjection` and `isStarProjection_iff_eq_starProjection_range`
-  (`Mathlib/Analysis/InnerProductSpace/Adjoint.lean`); the adjoint as star on `E →L[ℝ] E`.
+  (`Mathlib/Analysis/InnerProductSpace/Adjoint.lean`); the adjoint as star on `E →L[ℝ] E`;
+  `Continuous.homeoOfEquivCompactToT2` (`Mathlib/Topology/Homeomorph/Lemmas.lean`: a continuous
+  bijection from a compact space onto a Hausdorff space is a homeomorphism).
 - Measures: `IsFiniteMeasureOnCompacts`, `Measure.map`, `Measure.restrict`,
   `Regular.of_sigmaCompactSpace_of_isLocallyFiniteMeasure` (`Mathlib/MeasureTheory/Measure/Regular.lean`),
   `RealRMK.rieszMeasure` and `RealRMK.integral_rieszMeasure`
@@ -186,6 +194,16 @@ here only as tests of the definitions.
 
 ### From Tau Ceti
 
+- `TauCeti.finiteGrassmannian` (`TauCeti/Topology/Grassmannian/Basic.lean`: the r-dimensional
+  subspaces of the coordinate space `Fin N → 𝕜`, with the quotient topology of the span map on
+  linearly independent r-frames), its `CompactSpace` instance for `RCLike 𝕜`
+  (`TauCeti/Topology/Grassmannian/Orthonormal.lean`) and its `T2Space` instance
+  (`TauCeti/Topology/Grassmannian/Plucker.lean`), and `TauCeti.finiteGrassmannian.toEuclidean`,
+  `TauCeti.finiteGrassmannian.toEuclidean_injective` and
+  `TauCeti.finiteGrassmannian.continuous_starProjection_toEuclidean`
+  (`TauCeti/Topology/Grassmannian/Tautological.lean`: a point V read as a subspace of
+  `EuclideanSpace 𝕜 (Fin N)`, injectively, and the continuity of V ↦ the orthogonal projection
+  onto it). The carrier has no metric; the operator-norm distance of 1.1 is this roadmap's.
 - `TauCeti.globalFlow`, `TauCeti.contMDiff_globalFlow_uncurry`, `TauCeti.globalFlowDiffeomorph`
   (`TauCeti/Geometry/Manifold/IntegralCurve/GlobalFlow.lean`: the flow of a complete C¹ vector
   field on a Hausdorff boundaryless manifold, jointly C^n for a C^n field) and
@@ -326,6 +344,21 @@ trace of an endomorphism A of E along P is tr(P ∘ A).
   With Q = L ∘ P and Q* its adjoint, A = Q*Q + 1 − P preserves range P and ker P, is the identity on
   ker P and is invertible exactly when L is injective on range P (⟨Q*Qv, v⟩ = |Lv|² for v ∈ range P),
   and the projection is Q A⁻¹ Q*.
+- Comparison with Tau Ceti's finite Grassmannian. Let N = dim E and let
+  e : E → `EuclideanSpace ℝ (Fin N)` be a surjective linear isometry (the coordinates of an
+  orthonormal basis of E). For V in `TauCeti.finiteGrassmannian ℝ k N` let P_V be the orthogonal
+  projection of `EuclideanSpace ℝ (Fin N)` onto V read through the coordinate identification
+  (`TauCeti.finiteGrassmannian.toEuclidean`). Then V ↦ e⁻¹ P_V e is a homeomorphism of
+  `TauCeti.finiteGrassmannian ℝ k N` onto G(E, k), whose inverse sends P to the subspace e(range P)
+  read in coordinates; replacing e by O ∘ e, for an orthogonal map O of `EuclideanSpace ℝ (Fin N)`,
+  precomposes it with V ↦ O⁻¹(V). Route: e⁻¹ P_V e is a self-adjoint idempotent with the
+  k-dimensional range e⁻¹(V); the map is continuous
+  (`TauCeti.finiteGrassmannian.continuous_starProjection_toEuclidean`, and conjugation by e is
+  continuous), injective (P_V has range V, and `TauCeti.finiteGrassmannian.toEuclidean_injective`)
+  and onto (for P ∈ G(E, k), e P e⁻¹ is the orthogonal projection onto its k-dimensional range,
+  `isStarProjection_iff_eq_starProjection_range`); a continuous bijection from the compact space
+  `TauCeti.finiteGrassmannian ℝ k N` onto the metric space G(E, k) is a homeomorphism
+  (`Continuous.homeoOfEquivCompactToT2`).
 
 **Checks.**
 
@@ -346,9 +379,20 @@ trace of an endomorphism A of E along P is tr(P ∘ A).
   continuous extension to (diag(1, 0), P_{ℓ_{π/2}}), where L kills the line. At (diag(1, 0), P_{ℓ_0})
   the map is not injective on ℝ² but is injective on ℓ_0: the pair lies in the open set, A = 1 and
   Q A⁻¹ Q* = P_{ℓ_0}, so a hypothesis "L injective on E" would exclude a pair that 3.1 uses.
+- The comparison with `TauCeti.finiteGrassmannian ℝ 1 2`, for E = `EuclideanSpace ℝ (Fin 2)` and
+  e = id: the span of the frame (cos θ, sin θ) goes to the matrix with rows (cos²θ, cos θ sin θ) and
+  (cos θ sin θ, sin²θ), which is P_{ℓ_θ}, so both carriers are the same circle of lines; with e the
+  rotation by φ the same span goes to P_{ℓ_{θ−φ}}. The span of the frame (1, 1) goes to
+  ½[[1, 1], [1, 1]] = P_{ℓ_{π/4}}, whereas the frame's own outer product [[1, 1], [1, 1]] squares to
+  twice itself: a model sending a frame F to F F* without normalising depends on the frame and
+  leaves G(ℝ², 1). For k = 0 and k = N both sides are one point, {0} against the zero subspace and
+  {1} against the whole space.
 
 (Simon1983 line 7295–7305.) *Needs:* Mathlib `IsStarProjection`, `Submodule.starProjection`,
-`isStarProjection_iff_eq_starProjection_range`.
+`isStarProjection_iff_eq_starProjection_range`, `Continuous.homeoOfEquivCompactToT2`; Tau Ceti
+`TauCeti.finiteGrassmannian` with its `CompactSpace` instance,
+`TauCeti.finiteGrassmannian.toEuclidean`, `TauCeti.finiteGrassmannian.toEuclidean_injective` and
+`TauCeti.finiteGrassmannian.continuous_starProjection_toEuclidean` (the comparison only).
 
 ### 1.2 The Grassmann bundle of a Riemannian manifold
 
@@ -448,12 +492,14 @@ diagonal argument.
 
 ### Examples
 
-The circle of lines of ℝ² as G(ℝ², 1); the bundle G_1(S²); a weight shared by two varifolds; a
-sequence losing its mass at infinity.
+The circle of lines of ℝ² as G(ℝ², 1) and as `TauCeti.finiteGrassmannian ℝ 1 2`; the bundle
+G_1(S²); a weight shared by two varifolds; a sequence losing its mass at infinity.
 
 ### Dependencies
 
-Mathlib, GeometricCurrents G6; nothing earlier in this roadmap.
+Mathlib; Tau Ceti finite Grassmannians (`TauCeti.finiteGrassmannian`, 1.1) and
+`TauCeti.isCompact_closure_of_isTightMeasureSet_of_mass_le` (1.4); GeometricCurrents G6; nothing
+earlier in this roadmap.
 
 ## Layer 2: rectifiable and integral varifolds
 
@@ -603,7 +649,11 @@ frames) (Simon1983 line 7443–7454, 39.1; AgnolettoCorreaHoyosDaSilvaNardulli20
   5.2), J_S f = 1 and f_#V is the measure push-forward along (x, P) ↦ (f(x), df_x P df_x*) (1.1).
 - ‖f_#V‖(A) ≤ (sup_{f⁻¹(A) ∩ spt‖V‖} ‖df‖)^k ‖V‖(f⁻¹(A)).
 - If f is proper on a closed set F containing spt‖V_j‖ for all j and spt‖V‖, then V_j → V implies
-  f_#V_j → f_#V (the integrand J_S f · (φ ∘ F) extends continuously by 0 to {J = 0}).
+  f_#V_j → f_#V. For φ compactly supported and continuous on G_k(W'), the integrand
+  (x, S) ↦ J_S f(x) φ(f(x), df_x(S)) is continuous where J_S f(x) ≠ 0 and extends continuously by 0
+  to {J = 0}; on G_k(F) it vanishes outside the compact set G_k(f⁻¹(π(spt φ)) ∩ F), so its product
+  with χ ∘ π, for χ compactly supported and continuous on W and equal to 1 on f⁻¹(π(spt φ)) ∩ F, is
+  a test function with the same integral against every V_j and V (each is carried by G_k(F), 1.3).
 - Rectifiable varifolds: f_#v(Γ, θ) = v(f(Γ⁺), θ_f), where Γ⁺ = {x ∈ Γ : J_{T_xΓ} f(x) > 0} and
   θ_f(y) = Σ_{x ∈ Γ⁺ ∩ f⁻¹(y)} θ(x), locally Hᵏ-integrable on f(Γ⁺); integral varifolds go to
   integral varifolds; for injective f, θ_f = θ ∘ f⁻¹; f_#[Σ] = [f(Σ)] for a C¹ embedding f proper
@@ -1393,9 +1443,12 @@ and the first variation; 7.3 for rectifiability.
   would not apply to this sequence.
 - Zigzag graphs over [0, 1] with slopes ±1 and amplitude 1/i (i segments of horizontal length 1/i)
   are integral with Θ = 1 and H = 0 on the segments, but ‖δV_i‖ has an atom of mass √2 at each of
-  the i − 1 interior corners (the two unit co-normals (1, ±1)/√2 there add up to a vector of length
-  √2) and an atom of mass 1 at each endpoint, so ‖δV_i‖(ℝ²) = √2(i − 1) + 2 → ∞; for i = 2, the
-  graph through (0, 0), (1/2, 1/2), (1, 0), it is √2 + 2. Their limit has weight
+  the i − 1 interior corners (at a peak the outward unit co-normals of the two segments are
+  (1, 1)/√2 and (−1, 1)/√2, with sum (0, √2); at a trough they are (1, −1)/√2 and (−1, −1)/√2, with
+  sum (0, −√2); the unit tangents (1, ±1)/√2 would add up to the horizontal (√2, 0), the wrong
+  direction for the atom) and an atom of mass 1 at each endpoint, so
+  ‖δV_i‖(ℝ²) = √2(i − 1) + 2 → ∞; for i = 2, the graph through (0, 0), (1/2, 1/2), (1, 0), it is
+  √2 + 2. Their limit has weight
   √2 H¹⌞([0, 1] × {0}) and fibre measure ½δ_{P_+} + ½δ_{P_−} for the lines P_± at ±45°, so it is not
   rectifiable: the first variation bound is necessary.
 - Circles of radius 1/i about 0: masses 2π/i → 0, ‖δV_i‖ = 2π, the limit is 0, which is rectifiable.

@@ -28,7 +28,12 @@
      "prerequisites": [
       "mathlib:IsStarProjection",
       "mathlib:Submodule.starProjection",
-      "mathlib:isStarProjection_iff_eq_starProjection_range"
+      "mathlib:isStarProjection_iff_eq_starProjection_range",
+      "mathlib:Continuous.homeoOfEquivCompactToT2",
+      "tauceti:TauCeti.finiteGrassmannian",
+      "tauceti:TauCeti.finiteGrassmannian.toEuclidean",
+      "tauceti:TauCeti.finiteGrassmannian.toEuclidean_injective",
+      "tauceti:TauCeti.finiteGrassmannian.continuous_starProjection_toEuclidean"
      ],
      "api": [
       {
@@ -55,6 +60,11 @@
        "name": "image plane",
        "role": "continuity",
        "statement": "for finite-dimensional inner product spaces E, F, the pairs (L,P) with L: E -> F linear and injective on range P form an open set, on which the projection onto L(range P) in G(F,k) depends continuously on (L,P); with Q = L P it is Q (Q*Q + 1 - P)^{-1} Q*. L need not be injective on E."
+      },
+      {
+       "name": "finite Grassmannian comparison",
+       "role": "compatibility",
+       "statement": "for N = dim E and a surjective linear isometry e: E -> EuclideanSpace R (Fin N), V -> e^{-1} P_V e (P_V the orthogonal projection onto V read through TauCeti.finiteGrassmannian.toEuclidean) is a homeomorphism of TauCeti.finiteGrassmannian R k N onto G(E,k), with inverse P -> e(range P); replacing e by O e (O orthogonal) precomposes with V -> O^{-1} V. Route: continuous by TauCeti.finiteGrassmannian.continuous_starProjection_toEuclidean, injective by toEuclidean_injective, onto by isStarProjection_iff_eq_starProjection_range, homeomorphism by compactness of the source and Continuous.homeoOfEquivCompactToT2."
       }
      ],
      "tests": [
@@ -87,6 +97,11 @@
        "name": "isometric inclusion",
        "kind": "non-example",
        "statement": "the inclusion t -> (t,0) of R into R^2 is a non-surjective linear isometry: G(R,1) = {1} goes to diag(1,0) only, P_{l_{pi/2}} = diag(0,1) is missed and U^{-1} does not exist; a rotation of R^2 conjugates l_theta to l_{theta+phi} and reaches every line. For k = 0 the same U maps G(R,0) = {0} onto G(R^2,0) = {0}: the image is everything though U is not surjective."
+      },
+      {
+       "name": "finite Grassmannian comparison",
+       "kind": "compatibility",
+       "statement": "for E = EuclideanSpace R (Fin 2), e = id, k = 1: span(cos theta, sin theta) goes to P_{l_theta}; with e the rotation by phi it goes to P_{l_{theta - phi}}; span(1,1) goes to (1/2)[[1,1],[1,1]] = P_{l_{pi/4}}, while the unnormalised outer product [[1,1],[1,1]] squares to twice itself; k = 0 and k = N give one point on both sides."
       }
      ]
     },
@@ -540,7 +555,7 @@
       {
        "name": "continuity",
        "role": "continuity",
-       "statement": "f_# preserves convergence on sets where f is uniformly proper."
+       "statement": "if f is proper on a closed set F containing spt||V_j|| for all j and spt||V||, then V_j -> V implies f_#V_j -> f_#V: for phi in C_c(G_k(W')), the integrand (x,S) -> J_S f(x) phi(f x, df_x S) extends continuously by 0 to {J = 0} and on G_k(F) vanishes outside the compact set G_k(f^{-1}(pi(spt phi)) cap F), so a cutoff chi o pi makes it a test function with the same integrals."
       },
       {
        "name": "rectifiable",
