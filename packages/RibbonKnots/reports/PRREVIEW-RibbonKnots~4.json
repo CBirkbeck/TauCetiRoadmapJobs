@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RibbonKnots~4",
+  "head": "6c2523cc5b3b22a8889d83de6ac3913ff14a011f",
+  "pr": 2339,
+  "folder": "RibbonKnots",
+  "date": "2026-11-15",
+  "findings": 8,
+  "blocking": 5,
+  "notes": "Full re-review. Previous findings: R01, R03, R05-R14 repaired; R02 repaired as proposed but the gap is too narrow (new R04); R04 partly. Seeded sample 0.1, 1.1-1.5, 2.1 checked against Agol2022, Zemke2019, Lisca2007, Livingston2005, DLVW2022, FriedlPowell2020, DunfieldGong2025 (28 locators); Gordon1981 and Hempel1987 paywalled, checked through restatements. Gate: worker run all 0 including build; rerun text checks 0, depcheck NOT IN ORDER only (expected); dependency check 247 roadmaps, 2236 edges, 0 problems. Suggested.lean elaborates at the pins with 8 sorry warnings; #check @ on all 17 declarations; one-tactic probes close none. Tau Ceti IsSmoothSliceDisc is neat (Mathlib ImmersionAtProp chart normal form), so the open-disc ribbon condition matches Livingston's. Blocking: unowned inputs of Gordon's lemma and the extension target (Gerstenhaber-Rothaus, handle structure), of Agol's route (Waldhausen covering theorem, isotopy bridges), of residual finiteness, of Zemke's proof (link Floer TQFT), and of Lisca's route (plumbing P(p,q)).",
+  "text": "58fd6d32cddce727"
+ }
+}
