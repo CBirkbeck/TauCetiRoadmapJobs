@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BunGAndNewtonStrata~4",
+  "head": "c7d05557e0f9f4dbc81ded209b309acd3ad32a9e",
+  "pr": 1241,
+  "folder": "BunGAndNewtonStrata",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 4 changed lines since 27690bf. Previous R01 (pin hashes) repaired: README lines 48 and 53 equal lake-manifest.json and the installed package heads; previous R02 (sources.toml in the folder) withdrawn, since the gate's stray-files rule takes the README's references as the sources. Gate rerun at c7d0555: FAIL on statement-hygiene only (letI in the signature of wittGL_isocrystal_classes, Suggested.lean line 105; R01, P3, replacement tested on a scratch copy, same elaborated type). Depcheck 246 roadmaps, 2253 edges, 0 problems. lake env lean on Suggested.lean: two sorry warnings only. Four pinned declarations opened. No seeded target falls in the changed passage. Pull request title and description read against the head: one prose paragraph attributes the bundle stack, full automorphisms, charts and unitary flag applications to this roadmap, against README line 15 (R02, P3). No file changed outside the folder.",
+  "text": "b75903f7a8c698ed",
+  "carried": {
+   "from": "c7d05557e0f9f4dbc81ded209b309acd3ad32a9e",
+   "head": "65fe201204341f8f8c97f988f4209063efd3e6d0",
+   "findings": 2,
+   "lines": 36,
+   "folders": [
+    "BunGAndNewtonStrata"
+   ],
+   "outside": true
+  }
+ }
+}
