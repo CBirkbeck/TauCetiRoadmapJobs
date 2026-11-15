@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ShimuraVarieties~17",
+  "head": "314489c275933349752a42633b39b6e60544cdc1",
+  "pr": 933,
+  "folder": "ShimuraVarieties",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 314489c; this round checked the pull request's title and description against the head. One P3: the description's list of suppliers on main omits AdelicAlgebraicGroups, ReductiveGroupsPartII, SmoothRepresentationsOfLocalGroups, RepresentationTheory/LieGroups and Completed/RestrictedProducts, which the README consumes. Every other sentence of the description agrees with the head. Gate passes (all counters 0, worker build=0); depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 27 sorry warnings only; nothing changed outside the folder; overlaps none, and the newly closest roadmap LogicAndDefinabilityInNumberTheory cites this one as owner of the o-minimal sections. The seeded sample fell in no changed passage and was not re-read against the sources.",
+  "text": "4b9b68c980ebff4f",
+  "carried": {
+   "from": "314489c275933349752a42633b39b6e60544cdc1",
+   "head": "314489c275933349752a42633b39b6e60544cdc1",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
