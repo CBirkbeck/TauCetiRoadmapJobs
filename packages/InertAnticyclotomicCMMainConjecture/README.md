@@ -10,7 +10,7 @@ This roadmap owns the following arithmetic of the inert CM datum:
 - the transported signed Kummer conditions on the anticyclotomic tower, their independence of the local CM comparison, rational vanishing away from p, the four global Selmer conditions and their infinite compact and discrete Selmer modules (Layer 1);
 - the primitive elliptic-unit class at trivial auxiliary character, its special values, sign and nonvanishing, Rubin's integral p-adic L-function as a signed coordinate over Λ_R, and its interpolation formula (Layer 2);
 - the all-auxiliary global elliptic-unit module over Λ_R, the descent from the Gross datum over H, the identification of compact local cohomology with the signed local-unit module, the relaxed and strict global ranks, and the elliptic-unit comparison for the strict Selmer dual (Layer 3);
-- the signed global-duality sequence, opposite signed torsion, the relaxed-dual characteristic comparison, the opposite signed characteristic formula, the comparison of the localised global lattice with the primitive class, and the main conjecture (Layer 4);
+- the two signed global-duality sequences, opposite signed torsion, the relaxed-dual characteristic comparison, the opposite signed characteristic formula, the comparison of the localised global lattice with the primitive class, and the main conjecture (Layer 4);
 - the signed control elements, signed local and global control, the finite-level decomposition into signed pieces, the specialisation-length inequality and the strict specialisation inequality (Layer 5);
 - the strict divisor containment, the one-dimensional CM local correction, the matching-parity bound and the finite-character rank bounds (Layer 6).
 
@@ -20,7 +20,7 @@ The general objects below have these owners; the targets here are their applicat
 - The early CM theory is NonordinaryCMSpecialValues: NCM.0's integral CM period and dual-Tate dictionary, NCM.1's normalised elliptic-unit classes, reciprocity and period change, NCM.2's inert Frobenius, semilocal splitting and CM–Lubin–Tate comparison, NCM.3's twisted root numbers and forced central zeros, and NCM.5's correct-sign central nonvanishing. ComplexMultiplicationAndExplicitReciprocity §4.1 supplies the CM Hecke character and its one-dimensional Tate components with their Frobenius identities, and §4.3 the canonical Gross characters, their attachment to CM curves over H and good reduction away from the discriminant. The elliptic-unit Euler system over the two-variable tower and Rubin's two-variable theorem at a non-split prime are stated by none of the roadmaps this one may consume. They are requested from NonordinaryCMSpecialValues below as supplier gaps, because that roadmap already owns the normalised elliptic-unit classes they extend.
 - Selmer data, propagation of local conditions, Pontryagin duals with the contragredient action, dual Selmer structures, Poitou–Tate for Selmer groups, Iwasawa cohomology, descent, classical restriction control, Iwasawa duality with the involution and degree-one specialisation are SelmerIwasawaCohomology §§2.1–2.6, 2.10, 2.13, 2.19, 3.0, 3.1, 3.3 and 3.10–3.12. Their underlying Selmer kernel is already in Tau Ceti, for every topological coefficient module with continuous action, discrete, compact or rational: a Selmer structure with its localisation maps, local conditions and Selmer group (`TauCeti.ContCohomology.SelmerStructure`, `TauCeti.ContCohomology.SelmerStructure.localization`, `TauCeti.ContCohomology.SelmerStructure.selmerGroup`, `TauCeti.ContCohomology.SelmerStructure.mem_selmerGroup_iff`), and with it the m-Selmer group of an elliptic curve for every m and its Kummer injection (`WeierstrassCurve.selmerGroup`, `WeierstrassCurve.kummerSelmerMap`, `WeierstrassCurve.kummerSelmerMap_injective`), as is the Mordell–Weil theorem over a number field (`WeierstrassCurve.Affine.fg_point_of_numberField`). The Selmer groups of §1.4 instantiate that carrier; the signed CM local conditions are not in Tau Ceti and are constructed here. Field-level Leopoldt for finite abelian extensions of an imaginary quadratic field is requested from IntegralIwasawaTheory §4.4 below, because that roadmap owns the field-level Leopoldt defect (§2.2), the p-adic Baker–Brumer theorem (§§4.1e–4.2) and Leopoldt for abelian extensions of ℚ (§4.4). Continuous cochains, descent along open subgroups, local and global duality, Poitou–Tate and the Euler characteristic are ArithmeticGaloisDuality §§R02.2.2–R02.2.3, R02.4.2–R02.4.4 and D7.7.1–D7.7.2. The module of Euler systems and weak Leopoldt from an Euler system are EulerSystemsAndKolyvaginSystems §§2.2, 8.11 and 8.25.
 - Characteristic ideals and divisors, with their multiplicativity in short exact sequences, invariance under pseudo-isomorphism, semilinear transport along ring isomorphisms and the cyclic-quotient formula, are already in Tau Ceti (`TauCeti.Iwasawa.charIdeal`, `TauCeti.Iwasawa.charDivisor`, `TauCeti.Iwasawa.charIdeal_eq_mul_of_exact`, `TauCeti.Iwasawa.IsPseudoIsomorphism.charIdeal_eq`, `LinearEquiv.charIdeal_eq_comap`, `TauCeti.Iwasawa.charIdeal_quotient_span_singleton`). Their base change along finite extensions of coefficient rings and restriction of scalars to ℤ_p⟦T⟧ are PadicMeasuresIwasawaAlgebras §4.6; Weierstrass preparation and the cyclotomic elements are §4.3, the Iwasawa coordinate §4.5, and completed group algebras with coefficient extension §1.7. The completed group algebra and its compact-module action are already in Tau Ceti (`TauCeti.completedGroupAlgebra`, `TauCeti.IsCompactModule.completedGroupAlgebraModule`). Module length and its behaviour under surjections and residue-field restriction are already in Mathlib (`Module.length`, `Module.length_le_of_surjective`, `IsLocalRing.length_restrictScalars`, `Module.length_eq_finrank`), as are cyclotomic polynomials (`Polynomial.cyclotomic`, `Polynomial.cyclotomic_prime_pow_mul_X_pow_sub_one`).
-- Lubin–Tate formal modules, their division towers and the local anticyclotomic fields Ψ_n are LubinTateFormalModulesAndQuasiCanonicalLifts LT.0–LT.2 and LT.8, as used by AnticyclotomicLocalUnits. Formal groups, invariant differentials, finite-field Frobenius and reduction are TauCetiRoadmap.EllipticCurves Layers 1, 3 and 4. Local and global reciprocity, existence and ray class fields are TauCetiRoadmap.ClassFieldTheory Layers 6 and 11–13.
+- Lubin–Tate formal modules, their division towers and the local anticyclotomic fields Ψ_n are LubinTateFormalModulesAndQuasiCanonicalLifts Layers 0–2 and 8, as used by AnticyclotomicLocalUnits. Formal groups, invariant differentials, finite-field Frobenius and reduction are TauCetiRoadmap.EllipticCurves Layers 1, 3 and 4. Local and global reciprocity, existence and ray class fields are TauCetiRoadmap.ClassFieldTheory Layers 6 and 11–13.
 
 ## Conventions
 
@@ -110,7 +110,7 @@ Use Layer 1 for the invariant differential and the formal group of the good mode
 
 ### From TauCetiRoadmap.ClassFieldTheory and TauCetiRoadmap.LubinTateFormalModulesAndQuasiCanonicalLifts
 
-ClassFieldTheory Layer 6 supplies finite local reciprocity with the arithmetic Frobenius normalisation, Layer 11 the global Artin map and its compatibility with local reciprocity, Layer 12 global existence and Layer 13 ray class fields. LubinTateFormalModulesAndQuasiCanonicalLifts LT.2 supplies the Lubin–Tate character and the local Artin comparison κ(Art_Φ(u))=u⁻¹ on O×, and LT.8 the fields Ψ_n with [Ψ_n:Φ]=pⁿ, their conductor filtration and the action of conjugation on the anticyclotomic direction.
+ClassFieldTheory Layer 6 supplies finite local reciprocity with the arithmetic Frobenius normalisation, Layer 11 the global Artin map and its compatibility with local reciprocity, Layer 12 global existence and Layer 13 ray class fields. LubinTateFormalModulesAndQuasiCanonicalLifts §2.4 supplies the Lubin–Tate character κ with Gal(Φ(F[π^∞])/Φ)≃O×, §2.5 the local Artin comparison κ(Art_Φ(u))=u⁻¹ for u∈O× and the norm groups π^ℤ·U(Φ,m) of the division fields, §8.2 the action of conjugation by a lift of the nontrivial automorphism of Φ/ℚ_p on the cyclotomic and anticyclotomic directions, and §8.3 the fields Ψ_n with [Ψ_n:Φ]=pⁿ, with Ψ∞/ℚ_p Galois and conjugation acting on Gal(Ψ∞/Φ) by inversion. The conductor exponents of anticyclotomic characters are AnticyclotomicLocalUnits §0.1.
 
 ## How to read the build
 
@@ -153,7 +153,7 @@ A route is as follows. Because (p) is principal, p splits completely in H, so H_
 - [Ψ_1:Φ]=p, which is 5 at p=5, while the first tame degree [Φ(F[π]):Φ]=p²−1 is 24; an identification of K_1 with the π-division field would compare fields of different degree.
 - Complex conjugation c satisfies cuc⁻¹=u⁻¹ on Γ⁻ and fixes Γ⁺; at a generator γ, cγc⁻¹γ=1, whereas a comparison that sent c to the identity of Gal(Ψ∞/Φ) would give γ², which is nontrivial.
 
-*Needs:* §0.1; AnticyclotomicLocalUnits §0.1; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2, LT.8; TauCetiRoadmap.ClassFieldTheory Layers 6, 11, 12, 13; NonordinaryCMSpecialValues NCM.2/semilocal-splitting.
+*Needs:* §0.1; AnticyclotomicLocalUnits §0.1; LubinTateFormalModulesAndQuasiCanonicalLifts §§2.4–2.5, 8.2–8.3; TauCetiRoadmap.ClassFieldTheory Layers 6, 11, 12, 13; NonordinaryCMSpecialValues NCM.2/semilocal-splitting.
 
 ### 0.3 Conductor and sign dictionary
 
@@ -209,7 +209,7 @@ At p=5 and K=ℚ(√−23), H is a cubic extension in which 5 splits completely,
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: NonordinaryCMSpecialValues NCM.0/cm-period, NCM.2/inert-frobenius, NCM.2/semilocal-splitting, NCM.2/cm-lubin-tate; ComplexMultiplicationAndExplicitReciprocity §§4.1, 4.3; TauCetiRoadmap.EllipticCurves Layer 1; AnticyclotomicLocalUnits §§0.1, 1.3, 1.5, 3.2, 8.2, 8.4; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2, LT.8; TauCetiRoadmap.ClassFieldTheory Layers 6, 11, 12, 13; ArithmeticGaloisDuality §§R02.4.2, D7.7.1–D7.7.2; SelmerIwasawaCohomology §2.13; PadicMeasuresIwasawaAlgebras §§1.7, 4.3.
+The subsection *Needs:* lines give the internal dependencies. External inputs: NonordinaryCMSpecialValues NCM.0/cm-period, NCM.2/inert-frobenius, NCM.2/semilocal-splitting, NCM.2/cm-lubin-tate; ComplexMultiplicationAndExplicitReciprocity §§4.1, 4.3; TauCetiRoadmap.EllipticCurves Layer 1; AnticyclotomicLocalUnits §§0.1, 1.3, 1.5, 3.2, 8.2, 8.4; LubinTateFormalModulesAndQuasiCanonicalLifts §§2.4–2.5, 8.2–8.3; TauCetiRoadmap.ClassFieldTheory Layers 6, 11, 12, 13; ArithmeticGaloisDuality §§R02.4.2, D7.7.1–D7.7.2; SelmerIwasawaCohomology §2.13; PadicMeasuresIwasawaAlgebras §§1.7, 4.3.
 
 ## Layer 1: Signed Kummer images and global Selmer kernels
 
@@ -248,7 +248,7 @@ A route is as follows. Two such isomorphisms differ by an R[G_Φ]-automorphism o
 - Multiplication by π is not an automorphism of F[π^∞]⊗R: it has kernel F[π]⊗R of order p² when R=O, so it is not a comparison and the statement does not cover it.
 - The conjugate CM embedding is not covered, and it is not a semilinear self-map of R. It replaces the O-algebra structure of R by its composite with the conjugation c of Φ, so it compares W with F[π^∞]⊗_(O,c)R (R viewed as an O-algebra through c), on which G_Φ acts by c composed with the Lubin–Tate character. Equivalently, an extension c̃ of c to ℚ̄_p carries R to the conjugate ring c̃(R), which need not be R. At p=5 let a∈O be the Teichmüller lift of a generator of 𝔽₂₅×, so c(a)=a⁵, and let L=Φ(β) with β³=aπ, totally ramified of degree 3 over Φ because X³−aπ is Eisenstein. This L is an admitted coefficient field, for instance for K=ℚ(√−2), where 5 is inert, h_K=1 and φ_p takes values in O. An automorphism of L extending c would send β to a cube root of a⁵π, and the quotient would be a cube root of a⁴ in L. The cubes in μ_24 form μ_8, which does not contain a⁴, so such a cube root has order 18. But the roots of unity of order prime to 5 in L lie in μ_24, because L has residue field 𝔽₂₅. So c does not extend to L.
 
-*Needs:* §1.1; §0.4; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2.
+*Needs:* §1.1; §0.4; LubinTateFormalModulesAndQuasiCanonicalLifts §2.4.
 
 ### 1.3 Rational local vanishing away from p
 
@@ -291,7 +291,7 @@ Its API consists of the following facts on these carriers and with these hypothe
 
 ### 1.5 Infinite Selmer duals and compact Selmer modules
 
-For a∈{str,+,−,ord,rel} put X_a=Hom_(ℤ_p,cts)(Sel_a(K∞,W),ℚ_p/ℤ_p), compact, with (γf)(x)=f(γ⁻¹x) and (rf)(x)=f(rx) for r∈R, so that X_a is a Λ_R-module. For s∈{+,−} let S_s=lim_cor Sel_s(K_n,T′), where Sel_s(K_n,T′) uses L_n^(s,⊥) at 𝔭 and the full group H¹((K_n)_v,T′) at every finite v∤p, the annihilator of the discrete condition 0. Let S_str and S_rel use 0 and all of H¹((K_n)_𝔭,T′) at 𝔭 respectively, with the same full condition away from p; thus compact strict is dual to discrete relaxed and compact relaxed to discrete strict. Let H=lim_cor H¹((K_n)_𝔭,T′) and H^s=lim_cor L_n^(s,⊥) (AHII05 §2, p.612–613, and §3, p.615, before Proposition 3.3). Finite generation over Λ_R is not part of these definitions (§3.4).
+For a∈{str,+,−,ord,rel} put X_a=Hom_(ℤ_p,cts)(Sel_a(K∞,W),ℚ_p/ℤ_p), compact, with (γf)(x)=f(γ⁻¹x) and (rf)(x)=f(rx) for r∈R, so that X_a is a Λ_R-module. For s∈{+,−} let S_s=lim_cor Sel_s(K_n,T′), where Sel_s(K_n,T′) uses L_n^(s,⊥) at 𝔭 and the full group H¹((K_n)_v,T′) at every finite v∤p, the annihilator of the discrete condition 0. Let S_str and S_rel use 0 and all of H¹((K_n)_𝔭,T′) at 𝔭 respectively, with the same full condition away from p; thus compact strict is dual to discrete relaxed and compact relaxed to discrete strict. Let H=lim_cor H¹((K_n)_𝔭,T′) and H^s=lim_cor L_n^(s,⊥) (AHII05 §2, pp.612–613, and §3, p.615, before Proposition 3.3). Finite generation over Λ_R is not part of these definitions (§3.4).
 
 A route is as follows. Use the direct and inverse limit interfaces of SelmerIwasawaCohomology §§2.10 and 3.1, keeping every finite local condition and the trace-dual comparison of §0.4 in the limit. The localisation maps induced by the pairings are Λ_R-linear with the involution on the dual side.
 
@@ -316,7 +316,7 @@ At n=0 and R=O, the strict, minus-signed, ordinary and relaxed conditions at �
 
 ### Dependencies
 
-The subsection *Needs:* lines give the internal dependencies. External inputs: AnticyclotomicLocalUnits §§3.2, 8.5; SelmerIwasawaCohomology §§2.1–2.4, 2.10, 2.13, 3.1; ArithmeticGaloisDuality §§D7.7.1, R02.2.3, R02.4.2, R02.4.4; LubinTateFormalModulesAndQuasiCanonicalLifts LT.2; ComplexMultiplicationAndExplicitReciprocity §4.1; TauCetiRoadmap.EllipticCurves Layers 3, 4; `TauCeti.ContCohomology.SelmerStructure`; `TauCeti.ContCohomology.SelmerStructure.selmerGroup`; `TauCeti.ContCohomology.SelmerStructure.mem_selmerGroup_iff`.
+The subsection *Needs:* lines give the internal dependencies. External inputs: AnticyclotomicLocalUnits §§3.2, 8.5; SelmerIwasawaCohomology §§2.1–2.4, 2.10, 2.13, 3.1; ArithmeticGaloisDuality §§D7.7.1, R02.2.3, R02.4.2, R02.4.4; LubinTateFormalModulesAndQuasiCanonicalLifts §2.4; ComplexMultiplicationAndExplicitReciprocity §4.1; TauCetiRoadmap.EllipticCurves Layers 3, 4; `TauCeti.ContCohomology.SelmerStructure`; `TauCeti.ContCohomology.SelmerStructure.selmerGroup`; `TauCeti.ContCohomology.SelmerStructure.mem_selmerGroup_iff`; `TauCeti.completedGroupAlgebra`.
 
 ## Layer 2: The primitive class and Rubin's integral p-adic L-function
 
@@ -513,23 +513,25 @@ The subsection *Needs:* lines give the internal dependencies. External inputs: N
 
 Use the compact and discrete modules of §1.5, the local identification of §3.3, the ranks of §3.4 and the strict comparison of §3.5. Every characteristic ideal is over Λ_R and integral.
 
-### 4.1 The signed global-duality sequence
+### 4.1 The signed global-duality sequences
 
-For s∈{+,−} there is an exact sequence of Λ_R-modules
+For s∈{+,−} there are two exact sequences of Λ_R-modules
 
     0 → S_s → S_rel → H/H^s → X_s → X_str → 0,
+    0 → S_str → S_s → H^s → X_rel → X_s → 0.
 
-whose middle map is localisation at 𝔭 followed by the quotient by H^s and whose last map is dual to the inclusion Sel_str(K∞,W)⊂Sel_s(K∞,W). The maps are those induced by the Cartier-dual local conditions of §1.1 and the contragredient action (AHII05 equation (3.3) and the proof of Theorem 3.6, p.616).
+In the first, the middle map is localisation at 𝔭 followed by the quotient by H^s, and the last map is dual to the inclusion Sel_str(K∞,W)⊂Sel_s(K∞,W). In the second, the map S_s→H^s is localisation at 𝔭, which lands in H^s because the classes of S_s satisfy the condition L_∞^(s,⊥) at 𝔭; the map H^s→X_rel is dual to the localisation Sel_rel(K∞,W)→lim_res H¹((K_n)_𝔭,W)/L_∞^s, H^s being the Pontryagin dual of that quotient by the local duality of §0.4; and the last map is dual to the inclusion Sel_s(K∞,W)⊂Sel_rel(K∞,W). The maps are those induced by the Cartier-dual local conditions of §1.1 and the contragredient action (AHII05 equation (3.3) and the proof of Theorem 3.6, p.616, for the first sequence; AHII05 equation (4.3) in the proof of Theorem 4.2, p.617, where it is written with S_str=0, for the second).
 
-A route is as follows. Apply Poitou–Tate for Selmer groups (SelmerIwasawaCohomology §2.19, from ArithmeticGaloisDuality §R02.4.3) at each finite level to the pair of Selmer structures that differ only at 𝔭, using the exact annihilators of §1.1. Pass to the corestriction and restriction limits; the finite-level groups are finite or of finite type, so the inverse limits are exact on compact modules, and H⁰ terms vanish because H⁰(K∞,W)⊆H⁰(Ψ∞,W)=0 (§3.3). Do not assume localisation surjective.
+A route is as follows. Apply Poitou–Tate for Selmer groups (SelmerIwasawaCohomology §2.19, from ArithmeticGaloisDuality §R02.4.3) at each finite level to two pairs of Selmer structures on T′ that differ only at 𝔭, using the exact annihilators of §1.1. For the first sequence the pair is (signed, relaxed), whose dual conditions on W are (signed, strict), and the local term H¹((K_n)_𝔭,T′)/L_n^(s,⊥) is dual to L_n^s. For the second the pair is (strict, signed), whose dual conditions on W are (relaxed, signed), and the local term L_n^(s,⊥) is dual to H¹((K_n)_𝔭,W)/L_n^s; this is the Pontryagin dual of §2.19 for the pair (signed, relaxed) on W, the roles of W and T′ being exchanged. Pass to the corestriction and restriction limits; the finite-level groups are finite or of finite type, so the inverse limits are exact on compact modules, and H⁰ terms vanish because H⁰(K∞,W)⊆H⁰(Ψ∞,W)=0 (§3.3). Do not assume localisation surjective.
 
 **Checks.**
 
-- The localisation S_rel→H/H^s need not be surjective; its cokernel is the kernel of X_s→X_str. For s=−ε, where H/H^(−ε)≃H^ε by §3.3, the cokernel is H^ε/loc(S_rel), which may be zero or nonzero: in the lattice model loc(S_rel)=H^ε it is 0, and in the model loc(S_rel)=T·H^ε it is Λ_R/(T). The sequence identifies the cokernel; it does not force it to be nonzero.
-- For s=ε the sequence specialises at the base layer and R=O to the finite-level sequence of SelmerIwasawaCohomology §2.19 with Σ−Σ_0 the place 𝔭; at n=0 the plus local condition is 0 and the strict and plus Selmer groups coincide, so the first and last terms of the finite-level sequence agree.
-- The final map is induced by inclusion of discrete Selmer groups and is surjective because the inclusion is injective and Pontryagin duality is exact; a map in the other direction would have the wrong variance.
+- The localisation S_rel→H/H^s of the first sequence need not be surjective; its cokernel is the kernel of X_s→X_str. For s=−ε, where H/H^(−ε)≃H^ε by §3.3, the cokernel is H^ε/loc(S_rel), which may be zero or nonzero: in the lattice model loc(S_rel)=H^ε it is 0, and in the model loc(S_rel)=T·H^ε it is Λ_R/(T). The sequence identifies the cokernel; it does not force it to be nonzero.
+- At the base layer n=0 with R=O and s=+, the finite-level sequences from which the limits are taken are instances of SelmerIwasawaCohomology §2.19 with Σ−Σ_0 the place 𝔭, the second with the roles of W and T′ exchanged. There L_0⁺=0, so L_0^(+,⊥) is all of H¹(Φ,T′), Sel_+(K,T′)=Sel_rel(K,T′) and Sel_+(K,W)=Sel_str(K,W). The first sequence has local term 0 and consists of two identities. The second has local term H¹(Φ,T′), of R-rank 2 (§3.3), and is the strict–relaxed sequence 0→Sel_str(K,T′)→Sel_rel(K,T′)→H¹(Φ,T′)→Sel_rel(K,W)^∨→Sel_str(K,W)^∨→0. So the second sequence is not an instance of the first.
+- The final maps are induced by inclusions of discrete Selmer groups and are surjective because the inclusions are injective and Pontryagin duality is exact; a map in the other direction would have the wrong variance.
+- The two sequences differ in their third terms and in the maps into them. In the model of §4.4, with H^ε=Λ_R, S_ε=S_rel=(T) and S_str=0, at s=ε the first sequence sends S_rel to H/H^ε by the zero map, because every class of S_ε localises into H^ε, and gives 0→H/H^ε→X_ε→X_str→0 with H/H^ε free of rank one. The second sends S_ε injectively into H^ε with cokernel Λ_R/(T), a torsion submodule of X_rel, and gives 0→Λ_R/(T)→X_rel→X_ε→0. With H/H^ε in place of H^ε the map out of S_ε would be zero, which is not exact at S_ε since S_str=0, and the torsion term Λ_R/(T) would be lost.
 
-*Needs:* §3.3; §3.4; §1.5; SelmerIwasawaCohomology §§2.19, 3.1, 3.11; ArithmeticGaloisDuality §R02.4.3.
+*Needs:* §3.3; §3.4; §1.5; §1.1; §0.4; SelmerIwasawaCohomology §§2.19, 3.1, 3.11; ArithmeticGaloisDuality §R02.4.3.
 
 ### 4.2 Opposite signed torsion
 
@@ -572,7 +574,7 @@ The following two identities hold over Λ_R.
 
 (AHII05 Theorem 4.2 with (4.1)–(4.4), pp.616–617.)
 
-A route is as follows. For the second identity, which is the one the main conjecture uses, §4.1 with s=−ε, S_(−ε)=0, S_ε=S_rel and H/H^(−ε)≃H^ε (§§3.3, 4.2) gives 0→H^ε/S_ε→X_(−ε)→X_str→0, and there is an exact sequence 0→S_ε/C→H^ε/loc(C)→H^ε/S_ε→0. Multiplicativity of characteristic ideals and §3.5 give char(X_(−ε))=char(H^ε/S_ε)·char(S_rel/C)=char(H^ε/loc(C)); every module here is torsion. For the first identity, §4.1 with s=ε and S_str=0 gives 0→S_ε→H^ε→X_rel→X_ε→0; since H^ε/S_ε is torsion, it yields 0→H^ε/S_ε→(X_rel)_tors→(X_ε)_tors→0, and §§4.3 and 3.5 conclude.
+A route is as follows. For the second identity, which is the one the main conjecture uses, the first sequence of §4.1 with s=−ε, S_(−ε)=0, S_ε=S_rel and H/H^(−ε)≃H^ε (§§3.3, 4.2) gives 0→H^ε/S_ε→X_(−ε)→X_str→0, and there is an exact sequence 0→S_ε/C→H^ε/loc(C)→H^ε/S_ε→0. Multiplicativity of characteristic ideals and §3.5 give char(X_(−ε))=char(H^ε/S_ε)·char(S_rel/C)=char(H^ε/loc(C)); every module here is torsion. For the first identity, the second sequence of §4.1 with s=ε and S_str=0 (§4.2) gives 0→S_ε→H^ε→X_rel→X_ε→0; since H^ε/S_ε is torsion, it yields 0→H^ε/S_ε→(X_rel)_tors→(X_ε)_tors→0, and §§4.3 and 3.5 conclude.
 
 **Checks.**
 
@@ -580,7 +582,7 @@ A route is as follows. For the second identity, which is the one the main conjec
 - Every height-one prime is counted, including the vertical prime (ϖ_R): with C=πS_ε the factor char(S_ε/C)=(π)=(ϖ_R)^e appears in char(X_(−ε)), with multiplicity e at (ϖ_R), and is lost by any identity proved after inverting p.
 - The second identity uses §3.5 and not §4.3; the first uses both. A route through §4.3 is not needed for the main conjecture.
 
-*Needs:* §4.2; §3.5; §3.3; `TauCeti.Iwasawa.charIdeal_eq_mul_of_exact`; for identity 1 also §4.3.
+*Needs:* §4.1; §4.2; §3.5; §3.3; `TauCeti.Iwasawa.charIdeal_eq_mul_of_exact`; for identity 1 also §4.3.
 
 ### 4.5 The localised global lattice and the primitive class
 
@@ -649,7 +651,7 @@ Its API consists of the following facts on these carriers and with these hypothe
 
 ### 5.2 Signed local control
 
-Assume E is defined over K. For s∈{+,−} and n≥0 the restriction map L_n^s→L_∞^s[ω_n^s] is an isomorphism. All statements use the Kummer images of §1.1 and the coefficient ring R (AHII05 Lemma 5.1 and its proof, pp.618–619, which give injectivity and, under Rubin's conjecture in the form of AHII05 Conjecture 3.5, p.615, a finite cokernel; that conjecture is the integral splitting H=H⁺⊕H⁻ of §3.3).
+Assume E is defined over K. For s∈{+,−} and n≥0 the restriction map L_n^s→L_∞^s[ω_n^s] is an isomorphism. All statements use the Kummer images of §1.1 and the coefficient ring R (AHII05 Lemma 5.1 and its proof, p.618, which give injectivity and, under Rubin's conjecture in the form of AHII05 Conjecture 3.5, p.615, a finite cokernel; that conjecture is the integral splitting H=H⁺⊕H⁻ of §3.3).
 
 A route is as follows. H⁰(Ψ∞,W)=0 by the tame argument of §3.3; coefficient extension creates no invariants. Inflation–restriction gives injectivity. The R-corank of L_n^s is the R-rank of Λ_R/ω_n^s, by the logarithm and the normal basis theorem (`IsGalois.normalBasis`) applied to F(Ψ_n)⊗Φ≃Φ[Gal(Ψ_n/Φ)]. The Pontryagin dual of L_∞^s is H/H^s, free of rank one by §3.3, so the dual of L_∞^s[ω_n^s] is Λ_R/(ι(ω_n^s)); here ι(ω_n^s) is a unit multiple of ω_n^s, because Φ_(p^k)(γ⁻¹)=γ^(−φ(p^k))Φ_(p^k)(γ) and γ⁻¹−1=−γ⁻¹(γ−1). As ω_n^s(1+T) is a distinguished polynomial, Weierstrass division (PadicMeasuresIwasawaAlgebras §4.3) makes Λ_R/(ω_n^s) free over R of rank deg ω_n^s. Hence L_∞^s[ω_n^s] is R-cofree of the same corank as L_n^s, and in particular divisible. Equal coranks and injectivity make the cokernel finite; it is a quotient of a divisible module, hence divisible, and a finite divisible module is zero.
 
@@ -664,7 +666,7 @@ A route is as follows. H⁰(Ψ∞,W)=0 by the tame argument of §3.3; coefficien
 
 ### 5.3 Signed Selmer control
 
-Assume E is defined over K. For s∈{+,−} and n≥0, let X_(n,s) be the Pontryagin dual of Sel_s(K_n,W) with the trace convention of §0.4. The restriction map induces a surjection X_s/ω_n^sX_s→X_(n,s)/ω_n^sX_(n,s) with finite kernel; equivalently, restriction Sel_s(K_n,W)[ω_n^s]→Sel_s(K∞,W)[ω_n^s] is injective with finite cokernel. After tensoring with L_χ and projecting to a character χ with χ(ω_n^s)=0, it identifies the χ⁻¹-specialisation of X_s with the χ-part of the rational signed Selmer group over K_n (AHII05 Theorem 5.2 and its proof, pp.619–620).
+Assume E is defined over K. For s∈{+,−} and n≥0, let X_(n,s) be the Pontryagin dual of Sel_s(K_n,W) with the trace convention of §0.4. The restriction map induces a surjection X_s/ω_n^sX_s→X_(n,s)/ω_n^sX_(n,s) with finite kernel; equivalently, restriction Sel_s(K_n,W)[ω_n^s]→Sel_s(K∞,W)[ω_n^s] is injective with finite cokernel. After tensoring with L_χ and projecting to a character χ with χ(ω_n^s)=0, it identifies X_s⊗_(Λ_R,χ⁻¹)L_χ, the χ⁻¹-specialisation of X_s, with the L_χ-linear dual of the χ-part of the rational signed Selmer group over K_n, through the coefficient trace of §0.4 and the duality of §1.5; in particular the two have the same L_χ-dimension (AHII05 Theorem 5.2 and its proof, pp.619–620).
 
 A route is as follows. Compare global localisation kernels by inflation–restriction and the snake lemma (SelmerIwasawaCohomology §3.11), using the image of localisation rather than assuming it surjective. At 𝔭 use §5.2. Away from p only places above f matter, since the comparison is in cohomology unramified outside fp; at w|v|f the kernel of restriction is a quotient of W^(G_(K∞,w)), which lies in W^(I_v), a proper R-submodule of W≃L/R because φ is ramified at v, hence finite. Global injectivity uses H⁰(K∞,W)=0 from §5.2. Dualise with the involution to obtain the stated direction.
 
@@ -674,7 +676,7 @@ A route is as follows. Compare global localisation kernels by inflation–restri
 - At a place v|f the local error W^(I_v) is finite because every proper R-submodule of L/R is ϖ_R^(−k)R/R for some k≥0; rational vanishing of H¹ away from p (§1.3) is a different fact and does not bound these integral errors.
 - At n=0 and s=+, ω_0⁺=1, so both sides are zero; at n=0 and s=−, ω_0⁻=γ−1 and the statement compares the Γ⁻-coinvariants of X_− with the dual of Sel_−(K,W)=Sel(K,W).
 
-*Needs:* §5.2; §1.4; §1.5; SelmerIwasawaCohomology §§3.3, 3.11.
+*Needs:* §5.2; §1.4; §1.5; §0.4; SelmerIwasawaCohomology §§3.3, 3.11.
 
 ### 5.4 Finite-level decomposition into the two signed pieces
 
@@ -736,9 +738,9 @@ Sections 6.2–6.4 assume in addition that E is defined over K and that V_T is t
 
 ### 6.1 The strict characteristic divisor contains L_p
 
-The surjection X_(−ε)→X_str of §4.1 has torsion kernel H^ε/S_ε, so char(X_(−ε))=char(H^ε/S_ε)·char(X_str); hence (L_p)⊆char(X_str) and ord_ρ char(X_str)≤ord_ρ L_p at every finite character ρ. When R=O, ξ and a generator of V∞*,ε are O-integral, so (L_p) is extended from Λ_O and ord_(χ⁻¹)L_p=ord_χ L_p; for a general inert CM datum the two orders are kept apart (BKO21 proof of Theorem 6.2, pp.962–963).
+The surjection X_(−ε)→X_str of the first sequence of §4.1 has torsion kernel H^ε/S_ε, so char(X_(−ε))=char(H^ε/S_ε)·char(X_str); hence (L_p)⊆char(X_str) and ord_ρ char(X_str)≤ord_ρ L_p at every finite character ρ. When R=O, ξ and a generator of V∞*,ε are O-integral, so (L_p) is extended from Λ_O and ord_(χ⁻¹)L_p=ord_χ L_p; for a general inert CM datum the two orders are kept apart (BKO21 proof of Theorem 6.2, pp.962–963).
 
-A route is as follows. Use §4.1 with s=−ε and the torsion of X_(−ε) (§4.2), multiplicativity of characteristic ideals and §4.6. Translate the product of integral ideals into containment and then into orders at height-one primes; apply §5.5 for the comparison of ρ and ρ⁻¹.
+A route is as follows. Use the first sequence of §4.1 with s=−ε and the torsion of X_(−ε) (§4.2), multiplicativity of characteristic ideals and §4.6. Translate the product of integral ideals into containment and then into orders at height-one primes; apply §5.5 for the comparison of ρ and ρ⁻¹.
 
 **Checks.**
 
@@ -766,7 +768,7 @@ A route is as follows. Localisation at 𝔭 on the ordinary Selmer group has ker
 
 Assume E is defined over K. If χ∈Ξ^ε factors through Gal(K_n/K), then dim Sel(K_n,V_pE)^χ=dim Sel_(−ε)(K_n,V_pE)^χ≤ord_χ L_p. The trivial character is covered exactly when ε=+ (BKO21 Theorem 6.2 and the last paragraph of its proof, pp.962–963; AHII05 Theorem 5.2 and Proposition 5.3, pp.619–620).
 
-A route is as follows. Since χ∈Ξ^ε, χ(ω_n^(−ε))=0 by §5.1. Signed control for the sign −ε at χ (§5.3) identifies Sel_(−ε)(K_n,V_pE)^χ with the χ⁻¹-specialisation of X_(−ε), whose dimension is at most ord_(χ⁻¹)char(X_(−ε))=ord_(χ⁻¹)L_p by §§5.5 and 4.6, and this equals ord_χ L_p because R=O (§6.1). The equality with the ordinary χ-part is §5.4.
+A route is as follows. Since χ∈Ξ^ε, χ(ω_n^(−ε))=0 by §5.1. Signed control for the sign −ε at χ (§5.3) gives dim Sel_(−ε)(K_n,V_pE)^χ=dim_(L_χ)(X_(−ε)⊗_(Λ_R,χ⁻¹)L_χ), the χ⁻¹-specialisation of X_(−ε) being the dual of that χ-part, and this dimension is at most ord_(χ⁻¹)char(X_(−ε))=ord_(χ⁻¹)L_p by §§5.5 and 4.6, which equals ord_χ L_p because R=O (§6.1). The equality with the ordinary χ-part is §5.4.
 
 **Checks.**
 
@@ -805,7 +807,7 @@ The subsection *Needs:* lines give the internal dependencies. External inputs: `
 
 ## Downstream consumers
 
-ModularIwasawaMainConjecturesPartII imports Layers 0–6: the inert CM datum and tower dictionary, the signed Kummer conditions and Selmer modules, Rubin's integral p-adic L-function with its interpolation, the global elliptic-unit module and strict comparison, the duality sequence and main conjecture, and the control and rank bounds. Consumers of the main conjecture use the integral ideal over Λ_R with its p-primary part at (ϖ_R); consumers of the rank bounds use the additional hypothesis that E is defined over K.
+ModularIwasawaMainConjecturesPartII and CMRankZeroConverse cite this roadmap without consuming a target of it. The first names it as the owner of the inert anticyclotomic main conjecture and the rank bounds of BKO21 Theorems 6.1–6.2, with Rubin's signed p-adic L-function, the signed Selmer groups and their control, and restates none of it; the second distinguishes the anticyclotomic main-conjecture statement here from the rational cyclotomic CM equality it uses. Consumers of the main conjecture use the integral ideal over Λ_R with its p-primary part at (ϖ_R); consumers of the rank bounds use the additional hypothesis that E is defined over K.
 
 ## Worked examples
 
