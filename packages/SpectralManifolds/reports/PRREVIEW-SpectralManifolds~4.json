@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpectralManifolds~4",
+  "head": "b1e8fb7214022bf8dc30d6c2c1a8641beb94d393",
+  "pr": 1158,
+  "folder": "SpectralManifolds",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since b1e8fb7; checked previous R01, PR title/summary/description against head and base diff, supplier anchor and targets, current overlap scopes, adversarial values, and both elaborated signatures. No changed source-sample targets. Gate, dependency check, targeted build and standalone elaboration pass; two P3 findings remain.",
+  "text": "cf5da31962fd5982",
+  "carried": {
+   "from": "b1e8fb7214022bf8dc30d6c2c1a8641beb94d393",
+   "head": "5295e0e8671b38e76e5e42f8d9e27b01a89ebb48",
+   "findings": 2,
+   "lines": 4,
+   "folders": [
+    "SpectralManifolds"
+   ],
+   "outside": true
+  }
+ }
+}
