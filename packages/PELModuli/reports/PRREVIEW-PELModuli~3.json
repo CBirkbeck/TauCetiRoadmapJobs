@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PELModuli~3",
+  "head": "697b514ee4bf5b847c9db06128a084cdd7f11589",
+  "pr": 966,
+  "folder": "PELModuli",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 7 changed lines since 04e8720. Both previous findings repaired (two Bijakowski pages checked against the arXiv text at lines 1077 and 1370; the M1.3 sentence now names O_F/p). Two P3 findings: the M1.3 separating element must be nonzero at a degree-one prime (Z[i], p = 5, a = 5 gives T^2 for both types), and the description's summary block says the roadmap follows Lan and Kottwitz. Gate passes with every counter zero; depcheck 247 roadmaps, 2245 edges, 0 problems; Suggested.lean elaborates with sorry the only warning; title and description read against the head sentence by sentence; overlap check of the five closest open roadmaps: nothing shared; source independence on changed passages only.",
+  "text": "3aa03ec20821b6c9",
+  "carried": {
+   "from": "697b514ee4bf5b847c9db06128a084cdd7f11589",
+   "head": "ba3718550711d4d3504cc1e0582eee08e1179721",
+   "findings": 2,
+   "lines": 15,
+   "folders": [
+    "PELModuli"
+   ],
+   "outside": true
+  }
+ }
+}
