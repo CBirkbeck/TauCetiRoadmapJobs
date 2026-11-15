@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsLegendre~6",
+  "head": "ba0e38a00474b95d3ec5588e8fd1d75335e82e31",
+  "pr": 2121,
+  "folder": "SpecialFunctionsLegendre",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since ba0e38a. The previous review had no findings. The title and description were checked sentence by sentence against this head, the pins and main. Two P3 findings on the description: R01, its list of corrected DLMF statements omits the section 14.2(iii)/14.21(ii) recessiveness correction stated in README 5.1 (checked against the DLMF 14.2 text; nu=0, mu=i gives a ratio of modulus 1); R02, it says neither library has a spherical harmonic, but Tau Ceti has MvPolynomial.harmonicSphereRestriction (Sphere.lean:115). All else holds: 11 layers, Beyond list, three suppliers on main (Hypergeometric Downstream, EiLiErf 4.1, RiemannianGeometry R8.2), imports, 42 theorems, pins equal to main's, CI build including the topics check green, the eight corrections (14.17.7 and 14.7.21 recomputed). Eleven library declarations were opened at the pins. Gate rerun: every check 0, OK; depcheck 245 roadmaps, 0 problems; lake env lean: 42 sorry warnings only. Overlap: the eight closest roadmaps plus QuantumFoundations 9.3; nothing shared.",
+  "text": "00135bb1e70802b5"
+ }
+}
