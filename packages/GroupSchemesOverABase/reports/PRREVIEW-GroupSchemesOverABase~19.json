@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GroupSchemesOverABase~19",
+  "head": "2e1e5e7b6b699fa054593fac8e794365605fa063",
+  "pr": 1522,
+  "folder": "GroupSchemesOverABase",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 2e1e5e7; this round read the pull request's title and description against the head and main 3cf7342. Three P3 findings: R01 the description's 'Depends on' paragraph is stale (ReductiveGroups 8.1, 8.2 and Layer 9D are on main; #1676 and #1332 merged); R02 the description's source list omits Exp. VII_A and three references; R03 README lines 1431-1433 and 1447-1448 cite a GS7 mention that FlagVarieties on main no longer has. Gate rerun with the candidate order: all counters 0, OK; depcheck 0 problems; lake env lean on Suggested.lean exit 0 with 25 sorry warnings only. Consumer citations resolved again at #1491, #1017, #1840, #1828, #2131. Seeded sample not reread (no changed passage).",
+  "text": "5b9ef7d097418729"
+ }
+}
