@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OrthogonalTamagawaAndLatticeMass~23",
+  "head": "d4f1571fa0d5cdd3af86679ad8e2a6888581b813",
+  "pr": 1222,
+  "folder": "OrthogonalTamagawaAndLatticeMass",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since d4f1571; this round read the pull request's title and description against the head. Previous R01 (description called AdelicAlgebraicGroups an open pull request) is repaired. Every sentence of the description checked against README, Suggested.lean, the pins (Tau Ceti 2fd255d9, Mathlib 1b1ccf4b, same on main 2248bbb), IntegralLattices and OrthogonalSpinGroups on main, and the status of 16 cited roadmaps (13 on main, 3 open and earlier in the merge order). Adversarial table: 6 rows with recomputed values (I3 mass 1/48, 2R2 = 2/pi, bernoulliFullMass at 0, 2, 4, 8, rank-16 reciprocal sum = M16, 2M32 = 80618465.87, 2M40 = 8.786e51, Weyl orders 192, 51840, 2903040). Gate rerun: OK, all counters 0; depcheck 0 problems; lake env lean of Suggested.lean: eight sorry warnings only. Seeded source sample not re-read: no changed passage. O'Meara remains uncertified.",
+  "text": "8b3fd7be1918b355"
+ }
+}
