@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartIV~4",
+  "head": "058901cb6178ca51c4b6040ba9e446d90cf082ff",
+  "pr": 1172,
+  "folder": "ArithmeticStatisticsPartIV",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 62 changed lines since 87e4cd8. Previous R01 (Finite fields with Nat.card), R02 (fkGoodPlaneOf and the bijection as Set.BijOn) and R03 (description's AI-assistance sentence) are repaired. Adversarial table with computed values for the six changed declarations (matrix_rank_count, matrixKernelLaw via the Koymans-Pagano identity at m=1, symmetricKernelLaw, macwilliams_symmetric_rank_count at q=2 s=2, fkGoodPlaneOf and fk_good_subspace_bijection at k=0,1,2 with the wrong model F+F excluded). Finite.one_lt_card confirmed at the Mathlib pin (SetTheory/Cardinal/NatCard.lean line 78). Seeded sample met the change in sections 3.9 and 3.10; the change adds no source locator. Gate run at this head: every check passes; depcheck 0 problems, no UPWARD or CYCLE; no file changed outside the folder. Elaboration: 16 sorry warnings and nothing else; one-tactic probe on fk_good_subspace_bijection does not close. Title and description read against the head: nothing contradicted or unstated. Fouvry-Kluners Lemma 26 not reread (no text in the sources cache; locator unchanged since the full review).",
+  "text": "beb00758651bae6f"
+ }
+}
