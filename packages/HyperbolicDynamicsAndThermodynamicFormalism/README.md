@@ -667,12 +667,12 @@ Prove that for a hyperbolic set Λ of a C^r flow g (r ≥ 1) there are r₀ > 0,
 
 ### 8.4 Local product structure of locally maximal hyperbolic sets of diffeomorphisms
 
-Call a hyperbolic set Λ of f locally maximal (`IsLocallyMaximal`) when there is an open U ⊇ Λ, an isolating neighbourhood, such that every point whose whole orbit lies in U lies in Λ; as Λ is invariant, this says that Λ is the intersection of f^n(U) over n ∈ ℤ, which is the set of points whose whole orbit lies in U.
+Call a set Λ locally maximal for a homeomorphism f (`IsLocallyMaximal`) when there is an open U ⊇ Λ, an isolating neighbourhood, such that every point whose whole orbit lies in U lies in Λ; for an invariant Λ, such as a hyperbolic set of f, this says that Λ is the intersection of f^n(U) over n ∈ ℤ, which is the set of points whose whole orbit lies in U. The condition is topological; it is used here for hyperbolic sets.
 
 Its API:
 
 - Λ is locally maximal with isolating neighbourhood U iff every f-invariant subset of U is contained in Λ, the orbit of a point being invariant.
-- If Λ is locally maximal for f, it is locally maximal for f⁻¹ with the same U, and for f^k, k ≥ 1, with the isolating neighbourhood U ∩ f(U) ∩ ⋯ ∩ f^(k−1)(U); a C¹ diffeomorphism h carries it to a locally maximal hyperbolic set h(Λ) of h∘f∘h⁻¹ with isolating neighbourhood h(U).
+- If Λ is locally maximal for f, it is locally maximal for f⁻¹ with the same U, and for f^k, k ≥ 1, with the isolating neighbourhood U ∩ f(U) ∩ ⋯ ∩ f^(k−1)(U); a C¹ diffeomorphism h carries a locally maximal hyperbolic set Λ to a locally maximal hyperbolic set h(Λ) of h∘f∘h⁻¹ with isolating neighbourhood h(U).
 - Local maximality does not depend on the metric, and it is what places the bracket of the theorem below in Λ.
 
 **Checks.**
@@ -694,7 +694,21 @@ Prove (`hasHyperbolicLocalProductStructure_of_isLocallyMaximal`) that f restrict
 
 ### 8.5 Local product structure of locally maximal hyperbolic sets of flows
 
-Prove (`hasFlowHyperbolicLocalProductStructure_of_isFlowLocallyMaximal`) that a C¹ flow g restricted to a locally maximal hyperbolic set Λ (`IsFlowLocallyMaximal`: an open U ⊇ Λ such that every point whose whole orbit lies in U lies in Λ, equivalently, Λ being invariant, Λ is the intersection of g^t(U) over t ∈ ℝ) has hyperbolic local product structure in the sense of §6.5 (BowenRuelle1975, lines 25–34 and 96–108; FH2019, Part II). Given δ > 0 and r = min(r₀, δ/K), the bracket of nearby x, z ∈ Λ is the single transverse intersection point of the interior of the weak stable plaque 𝒲^cs_r(x) with the strong unstable plaque 𝒲^u_r(z) of §8.3; it has the form g^v y with |v| ≤ r and y in the strong stable plaque at x, its orbit stays within δ of Λ, and it lies in Λ by local maximality. (F3) is §8.3's contraction on the strong plaques, through W^s_(δ*)(x) ⊆ 𝒲^s_r₀(x) for δ* = r₀/K.
+Call a set Λ locally maximal for a flow g (`IsFlowLocallyMaximal`) when there is an open U ⊇ Λ, an isolating neighbourhood, such that every point whose whole orbit lies in U lies in Λ; for an invariant Λ, such as a hyperbolic set of §7.2, this says that Λ is the intersection of g^t(U) over t ∈ ℝ, which is the set of points whose whole orbit lies in U (BowenRuelle1975, line 29, condition (d) of a basic hyperbolic set). The condition is topological; it is used here for hyperbolic sets.
+
+Its API:
+
+- Λ is locally maximal for g with isolating neighbourhood U iff every g-invariant subset of U is contained in Λ, the orbit of a point being invariant.
+- Local maximality depends only on the orbits as sets: Λ is locally maximal with the same U for the reversed flow t ↦ g^(−t) and for every rescaled flow t ↦ g^(at), a > 0; a homeomorphism h carries it to the locally maximal set h(Λ) of the conjugate flow t ↦ h ∘ g^t ∘ h⁻¹, with isolating neighbourhood h(U), and when h is a C¹ diffeomorphism and Λ a hyperbolic set, h(Λ) is a locally maximal hyperbolic set (§7.2). In particular local maximality does not depend on the metric, and it is what places the bracket of the theorem below in Λ.
+- For an invariant Λ and t > 0, the set U_t of points x with g^s x ∈ U for every s ∈ [0, t] is open, its complement being the projection to M of the closed set of (s, x) ∈ [0, t] × M with g^s x ∉ U, along the compact factor [0, t]; it contains Λ; and a point whose g^t-orbit lies in U_t has its whole g-orbit in U (write each time as nt + s with n ∈ ℤ and 0 ≤ s < t), so it lies in Λ. Hence Λ is locally maximal for the homeomorphism g^t in the sense of §8.4, with isolating neighbourhood U_t. A nonempty Λ is not a hyperbolic set of the diffeomorphism g^t, since Dg^(nt) X(x) = X(g^(nt) x) stays bounded above and below for n ∈ ℤ (§7.2) while a hyperbolic splitting sends every nonzero vector either to 0 or to infinity in forward time; so the theorem of §8.4 does not apply to g^t.
+
+**Checks.**
+
+- In the constant-roof suspension of the cat map A = (2 1; 1 1), with points [s, w] (s ∈ ℝ, w ∈ 𝕋²), [s, w] = [s − 1, Aw] and g^t[s, w] = [s + t, w], the periodic orbit γ₀ of [0, 0] is locally maximal, isolated by every open U ⊇ γ₀ contained in the set W of points [s, w] with 0 ≤ s < 1 and w within flat distance 1/4 of 0 (W contains a neighbourhood of γ₀). If the whole orbit of [s, w] lies in W, then [n, w] = [0, Aⁿw] lies in W for every n ∈ ℤ, so every Aⁿw is within 1/4 of 0. Let ỹₙ be the lift of Aⁿw in the open disc of radius 1/4 of ℝ². Then Aỹₙ − ỹₙ₊₁ is an integer vector of length below ((3 + √5)/2)/4 + 1/4 = (5 + √5)/8 ≈ 0.905 < 1, the operator norm of A being (3 + √5)/2, hence 0; so ỹₙ = Aⁿỹ₀ for every n ∈ ℤ, a bounded two-sided orbit of the linear map A, whose eigenvalues are (3 ± √5)/2, which forces ỹ₀ = 0 and w = 0.
+- The shrinking to U_t in the third item is needed. In the same suspension, c = (4/5, 3/5) has Ac ≡ (1/5, 2/5) and A²c = c, and both points lie at flat distance √5/5 ≈ 0.447 > 1/4 from 0, so the orbit of [0, c] is a periodic orbit of period 2 that does not meet W. Let B be an open ball around [0, c], small enough to be disjoint from W and from its own image g^(1/2)(B). Then U ∪ B still isolates γ₀ for the flow: an orbit is connected, so a whole orbit in U ∪ B lies in U or in B, and none lies in B. But the time-2 map fixes [0, c] ∈ B outside γ₀, so U ∪ B does not isolate γ₀ for g²; the set (U ∪ B)_2 omits [0, c], because g^(1/2)[0, c] = [1/2, c] lies neither in W nor in B.
+- Let f be a C^∞ diffeomorphism of a compact manifold with a horseshoe, a hyperbolic fixed point p and a transverse homoclinic orbit O of p, as in the fourth Check of §8.4. In the constant-roof suspension of f, the set of points [s, x] with x ∈ {p} ∪ O is compact, invariant and hyperbolic (as in the second Check of §7.2), but not locally maximal. An open set containing it contains, by compactness of [0, 1], all [s, x] with 0 ≤ s ≤ 1 and x in some open V ⊇ {p} ∪ O. Since {p} ∪ O is not locally maximal for f, V contains the whole f-orbit of a horseshoe point q outside {p} ∪ O, and the flow orbit of [0, q] then lies in the open set without meeting the set.
+
+Prove (`hasFlowHyperbolicLocalProductStructure_of_isFlowLocallyMaximal`) that a C¹ flow g restricted to a locally maximal hyperbolic set Λ has hyperbolic local product structure in the sense of §6.5 (BowenRuelle1975, lines 25–34 and 96–108; FH2019, Part II). Given δ > 0 and r = min(r₀, δ/K), the bracket of nearby x, z ∈ Λ is the single transverse intersection point of the interior of the weak stable plaque 𝒲^cs_r(x) with the strong unstable plaque 𝒲^u_r(z) of §8.3; it has the form g^v y with |v| ≤ r and y in the strong stable plaque at x, its orbit stays within δ of Λ, and it lies in Λ by local maximality. (F3) is §8.3's contraction on the strong plaques, through W^s_(δ*)(x) ⊆ 𝒲^s_r₀(x) for δ* = r₀/K.
 
 **Checks.**
 
@@ -702,7 +716,7 @@ Prove (`hasFlowHyperbolicLocalProductStructure_of_isFlowLocallyMaximal`) that a 
 - For the constant-roof suspension of a hyperbolic toral automorphism, the bracket is the toral bracket at matched heights and v is the height difference.
 - The flow on a hyperbolic periodic orbit is locally maximal and satisfies (F2) with W^s_δ(x) = W^u_δ(x) = {x} within the orbit.
 
-*Needs:* Layers 6.5, 7.2, 8.3.
+*Needs:* Mathlib `Flow`; Layers 6.5, 7.2, 8.3; Layer 8.4 (`IsLocallyMaximal`) for the time-t item of the API.
 
 ### 8.6 Nontriviality of the stable and unstable bundles
 
@@ -745,13 +759,13 @@ Layer 6 (the axioms verified in §§8.4–8.5) and Layer 7; Tau Ceti's existence
 
 ### 9.1 Hyperbolic toral automorphisms
 
-Construct, for an integer n × n matrix A with det A = ±1 and no complex eigenvalue of modulus 1, the map f_A of the torus 𝕋^n = (ℝ/ℤ)^n (`UnitAddTorus (Fin n)` with the product structure `TauCeti.instIsManifoldPi` of Tau Ceti's analytic circles `AddCircle.instIsManifold`) induced by x ↦ Ax, the smooth form of ClassicalErgodicTheory's `toralEndomorphism` A (§0.3). Prove that f_A is an analytic diffeomorphism and that it is Anosov for the flat metric with E^s and E^u the (constant, in the flat trivialisation) images of the sums of the real generalised eigenspaces of A for eigenvalues of modulus less than and greater than 1 (Smale1967, Part I, Section 1.3, lines 381–473). The ergodic theory of f_A is ClassicalErgodicTheory's: no eigenvalue is a root of unity, so Haar measure is strongly mixing (ClassicalErgodicTheory §1.4), and having full support it makes f_A topologically mixing; h_top(f_A) is the sum of log |λ| over the eigenvalues λ of A of modulus greater than 1, counted with algebraic multiplicity, and Haar measure has this entropy (ClassicalErgodicTheory §§5.2, 6.4; BowenGroupEndomorphisms1971, Theorem 15, lines 313–316, and Corollary 16, lines 332–336, for Bowen's formula for endomorphisms of Lie groups; BowenPeriodicPoints1971, Proposition 7.1, line 667, for Haar measure as Bowen's measure).
+Construct, for an integer n × n matrix A with det A = ±1 and no complex eigenvalue of modulus 1, the map f_A of the torus 𝕋^n = (ℝ/ℤ)^n (`UnitAddTorus (Fin n)` with the product structure `TauCeti.instIsManifoldPi` of Tau Ceti's analytic circles `AddCircle.instIsManifold`) induced by x ↦ Ax, the smooth form of ClassicalErgodicTheory's `toralEndomorphism` A (§0.3). Prove that f_A is an analytic diffeomorphism and that it is Anosov for the flat metric with E^s and E^u the (constant, in the flat trivialisation) images of the sums of the real generalised eigenspaces of A for eigenvalues of modulus less than and greater than 1 (Smale1967, Part I, Section 1.3, lines 381–473). The ergodic theory of f_A is ClassicalErgodicTheory's: no eigenvalue is a root of unity, so Haar measure is strongly mixing (ClassicalErgodicTheory §1.4), and having full support it makes f_A topologically mixing; h_top(f_A) is the sum of log |λ| over the eigenvalues λ of A of modulus greater than 1, counted with algebraic multiplicity, and Haar measure has this entropy (ClassicalErgodicTheory §§5.2, 6.4; BowenGroupEndomorphisms1971, Theorem 15, lines 313–316, and Corollary 16, lines 332–336, for Bowen's formula for endomorphisms of Lie groups).
 
 Its API:
 
 - The lift of f_A to ℝ^n is A, and Df_A is A in the flat trivialisation of T𝕋^n; f_(AB) = f_A ∘ f_B and f_(A⁻¹) = f_A⁻¹.
 - For small ε and the flat metric, the local stable set W^s_ε(x) is the image of x + {v ∈ E^s : |A^k v| ≤ ε for all k ≥ 0}, a compact convex neighbourhood of 0 in E^s translated to x, and the plaques of §8.2 may be taken to be translates of closed balls of an adapted norm on E^s; symmetrically for E^u. For the cat matrix both are ε-segments of the eigenlines. The bracket is linear in a chart.
-- Haar measure is invariant, ergodic and a measure of maximal entropy (ClassicalErgodicTheory §§1.4, 6.4, 8.1); by §10.2 it is the only one.
+- Haar measure is invariant, ergodic and a measure of maximal entropy (ClassicalErgodicTheory §§1.4, 6.4, 8.1).
 
 **Checks.**
 
