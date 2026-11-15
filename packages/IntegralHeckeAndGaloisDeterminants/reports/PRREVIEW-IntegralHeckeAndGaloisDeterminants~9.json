@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IntegralHeckeAndGaloisDeterminants~9",
+  "head": "cb053663a64f3c6c08954c16565258588c79be91",
+  "pr": 1689,
+  "folder": "IntegralHeckeAndGaloisDeterminants",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 8 changed lines since b6df7e6; checked Cayley–Hamilton wording and dependent examples against Chenevier §1.17, Example 1.20 and Lemma 1.21, inherited repairs, computed adversarial instances, ownership and source independence, and PR title/summary/prose against the base diff and head; gate and dependency check pass; direct Lean elaboration and targeted build pass.",
+  "text": "b211552ad505efaa"
+ }
+}
