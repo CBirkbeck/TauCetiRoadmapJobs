@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AdicSpacesPartV~5",
+  "head": "28193cdcf674a386d8f2a65b51775d58d3fdb11e",
+  "pr": 2133,
+  "folder": "AdicSpacesPartV",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since a70c9f5. Checked: the reworded §1.2 statement against CONRAD99 line 459 (Theorem 2.1.2, pp. 10-11) and lines 463 and 469, for hypotheses, page and wording (longest shared run 4 words), with three adversarial rows (cusp, node, axis, extra point, the K<T>/(T^2) control). The title and description were read claim by claim against the head: one P3, the description says DiamondsAndVStacks is not on main, but it merged on 2026-11-13. Gate rerun: all scanners 0 OK, worker build=0. Depcheck: 244 roadmaps, 2206 edges, 0 problems. Elaboration: sorry the only warning (3). Outside-folder diff empty. No previous findings to carry.",
+  "text": "1c20ca7405a1b627",
+  "carried": {
+   "from": "28193cdcf674a386d8f2a65b51775d58d3fdb11e",
+   "head": "28193cdcf674a386d8f2a65b51775d58d3fdb11e",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
