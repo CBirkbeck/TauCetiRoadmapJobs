@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeometricTopology~87",
+  "head": "5cb54fcd572e73cbbeacc816e906f2f804e735d2",
+  "pr": 1797,
+  "folder": "GeometricTopology",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 77 changed lines since ff51f30. Changed: the reworded route of the 6.4 reduction (README lines 8289-8298), checked against levine2016 lines 110-126 for mathematics (n = 0, core pattern, Euler characteristics 1, 2, 0, 1, rational versus integral homology), locator and wording; PROGRESS.md and STATUS.md are main's generated files from the merge. Suggested.lean and pins unchanged. No seeded-sample target falls in a changed passage. Supplier citations resolved again against main 1a19c9f (AlgebraicTopology Stage-to-Layer map, DifferentialGeometry 5.5 to 5.5a/5.5b, ReductiveGroups 11A). Gate re-run: all checks 0, OK; depcheck 246 roadmaps, 0 problems; elaboration exit 0 with 34 sorry warnings for 34 theorems; #check audit and one-tactic probe clean. Overlap check read RibbonKnots (new neighbour), nothing shared. Description matches the head. Two misprints of levine2016 recorded under Source issues.",
+  "text": "5076c9df5bba1374"
+ }
+}
