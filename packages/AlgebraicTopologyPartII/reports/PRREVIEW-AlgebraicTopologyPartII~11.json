@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicTopologyPartII~11",
+  "head": "ed88288b34f679b64c46196408febcaebc672700",
+  "pr": 1694,
+  "folder": "AlgebraicTopologyPartII",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since ed88288; the previous review raised no finding. Checked the pull request title and description against the head: three P3 findings (summary and prose omit the Layer 16 stratification strand of 17 declarations added after the port and consumed by StratifiedSpacesAndTameTopology; the semialgebraic specialization is credited to this roadmap instead of MotivesAndAlgebraicCycles 7.6a-7.6b; the dependency paragraph has no list, a false consumer sentence and omits the 14 declared supplier gaps). Gate rerun on this head: all checks 0, OK (worker's gate build=0). Depcheck: 246 roadmaps, 2235 edges, 0 problems. lake env lean: 14 sorry warnings only. Sample: 16.1e locators checked against MATHER lines 887 and 969; adversarial rows computed for configurationTraceFormula, stableConfigurationDiagonal, doubleLoopBetti, firstIsotopyLemma, exists_controlData_isCompatible, 6.1 support values and the line-22 Witt distinction. Folder files otherwise stand as accepted at ed88288, conditional on the 14 declared supplier gaps.",
+  "text": "5a8ecb8fb28764a6",
+  "carried": {
+   "from": "ed88288b34f679b64c46196408febcaebc672700",
+   "head": "ccdd821b0aa04b5ef1c682f75d51e145ea90d03e",
+   "findings": 3,
+   "lines": 2,
+   "folders": [
+    "AlgebraicTopologyPartII"
+   ]
+  }
+ }
+}
