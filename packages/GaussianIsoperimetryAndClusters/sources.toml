@@ -19,7 +19,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v3 read; section, theorem, equation and line locators refer to that version"
-cited_for = ["Conventions", "1.1", "1.3", "2.1", "2.2", "2.3", "2.4", "2.5", "2.7", "3.1", "3.2", "3.3", "3.4", "3.5", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "7.3", "7.4", "Motivation for a future roadmap"]
+cited_for = ["Conventions", "1.1", "1.3", "2.1", "2.2", "2.3", "2.4", "2.5", "2.7", "3.1", "3.2", "3.3", "3.4", "3.5", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "7.3", "7.4", "Scope and ownership"]
 
 [[source]]
 id = "CianchiFuscoMaggiPratelli2011"
@@ -146,21 +146,6 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 cited_for = ["1.1", "1.2", "7.3", "8.1", "8.2", "8.3", "8.4", "8.5"]
-
-[[source]]
-id = "Ledoux1996"
-authors = "Michel Ledoux"
-title = "Isoperimetry and Gaussian analysis"
-year = 1996
-venue = "Lectures on Probability Theory and Statistics (Saint-Flour 1994), Lecture Notes in Mathematics 1648 (1996), 165–294"
-doi = "10.1007/BFb0095676"
-locator_scheme = "chapter"
-locator = "Chapter 1"
-url = "https://doi.org/10.1007/BFb0095676"
-licence_class = "none"
-status = "uncertified"
-version_note = "paywalled; the author's page could not be reached on 2026-11-04; cited by its locator without the text"
-cited_for = ["References"]
 
 [[source]]
 id = "CarlenKerce2001"
