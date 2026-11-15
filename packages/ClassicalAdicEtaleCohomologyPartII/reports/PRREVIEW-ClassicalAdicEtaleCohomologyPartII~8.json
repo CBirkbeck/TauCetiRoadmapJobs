@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassicalAdicEtaleCohomologyPartII~8",
+  "head": "3cf97a576f3b0e379e9b2a8ee522494db65a02aa",
+  "pr": 1549,
+  "folder": "ClassicalAdicEtaleCohomologyPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 10 changed lines since 03b098b: the new provenance section (README lines 1342-1350) checked claim by claim against AxiomMath/Weil at commit 27cdb20 (licence, toolchain, file counts 283 and 37, the three linked Lean files, the Poincare duality hypotheses) and against EtaleCohomologyFoundations sections F.0.1, 0.8, F.3 on main and ClassicalAdicEtaleCohomology sections 9.7, 1.5(c) at its open head; no previous finding to carry; pull request text read against the head; gate OK (all counts 0, build 0); elaboration: sorry the only warning; depcheck 0 problems; adversarial table with two computed rows; seeded sample has no target in the changed passage",
+  "text": "090255124147f323"
+ }
+}
