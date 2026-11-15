@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-InverseGaloisAndArithmeticFundamentalGroups~14",
+  "head": "94326716a824f9d512bcad5d8bd0bd0eca234bba",
+  "pr": 850,
+  "folder": "InverseGaloisAndArithmeticFundamentalGroups",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 9432671; checked prior repair, PR title/prose/roadmap-summary against base-to-head addition, supplied overlaps and closest scopes, a computed IG.6.4 specialization witness; 15-target seeded evidence retained from prior review. Gate and targeted build pass with supplied moved order; dependency check has 0 problems; direct elaboration passes with 18 sorry warnings. Two P3 PR-description findings.",
+  "text": "8a60215fc5216a43",
+  "carried": {
+   "from": "94326716a824f9d512bcad5d8bd0bd0eca234bba",
+   "head": "94326716a824f9d512bcad5d8bd0bd0eca234bba",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
