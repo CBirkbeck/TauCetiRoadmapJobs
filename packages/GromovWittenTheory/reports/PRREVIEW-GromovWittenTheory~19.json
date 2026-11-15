@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GromovWittenTheory~19",
+  "head": "c3c6033fcf98bcbd4d5239edee9ab765e8e6ead1",
+  "pr": 990,
+  "folder": "GromovWittenTheory",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since c3c6033; this round checked the pull request's title and description against the head. Three P3 findings, all in the description and none in the folder: the validation paragraph speaks of an eight-declaration prototype while Suggested.lean declares nothing; the dependency sentence names an HF contract the README lacks and omits PseudoholomorphicCurveAnalysis; the folder-name paragraph says #1998 shares the folder, but #1998 is now AlgebraicGromovWittenTheory. Gate rerun: all counters 0, OK. Dependency check: 244 roadmaps, 2229 edges, 0 problems. Suggested.lean elaborates with no output. ImplicitAtlases citations re-resolved at its new head 8352e53 (14 sections), AnalyticStableMaps at 41557ba (21 sections). Adversarial table: 5 recomputed rows for statements the description cites. Seeded source sample lies in unchanged text and was not re-read.",
+  "text": "e260e07907e1d915",
+  "carried": {
+   "from": "c3c6033fcf98bcbd4d5239edee9ab765e8e6ead1",
+   "head": "c3c6033fcf98bcbd4d5239edee9ab765e8e6ead1",
+   "findings": 3,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
