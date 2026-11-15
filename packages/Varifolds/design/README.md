@@ -824,8 +824,10 @@ AgnolettoCorreaHoyosDaSilvaNardulli2025 line 179–187; Scharrer2022 line 87–9
 - (x, S) ↦ div_S X(x) is continuous with compact support in G_k(spt X), so δV(X) is finite;
   δV is linear in X, additive and positively homogeneous in V, and
   |δV(X)| ≤ k ‖V‖(K) sup_K |∇X| for spt X ⊆ K.
-- Locality: δV(X) = 0 when X vanishes on an open set containing spt‖V‖ ∩ spt X; for open W' ⊆ W
-  and spt X ⊆ W', the restriction of V to W' has first variation δV(X).
+- Locality: V is carried by G_k(spt‖V‖) (the open set W ∖ spt‖V‖ is ‖V‖-null, W being second
+  countable) and div_S X(x) depends only on ∇X(x), so δV(X) depends only on ∇X along spt‖V‖:
+  δV(X) = 0 when ∇X(x) = 0 for every x ∈ spt‖V‖, in particular when spt X ∩ spt‖V‖ = ∅.
+  For open W' ⊆ W and spt X ⊆ W', the restriction of V to W' has first variation δV(X).
 - Continuity: V_j → V implies δV_j(X) → δV(X) for every such X.
 - Degenerate dimensions: for k = 0, δV = 0; for k = N, G(T_xM, N) = {1} and δV(X) = ∫ div X d‖V‖
   with div X = tr(∇X) the Riemannian divergence `TauCeti.Manifold.divergence`.
@@ -849,6 +851,10 @@ L_X g, with (L_X g)(u, v) = g(∇_u X, v) + g(u, ∇_v X) for the Levi-Civita co
   (Tau Ceti `TauCeti.Manifold.integral_divergence_eq_zero`, applied on M to X extended by 0).
 - δV(X) is not determined by X on spt‖V‖ in general: for the vertical lift V of H¹⌞(x-axis) and
   X = ψ(y)y_2 e_2, X vanishes on spt‖V‖ while div_S X = ψ on the axis, so δV(X) = ∫ψ(t, 0) dt ≠ 0.
+- Locality reaches beyond disjoint supports: for V = v(L, 1), L the x-axis of ℝ², and
+  X = ψ(y)y_2² e_1 with ψ ∈ C¹_c(ℝ²) not identically 0 on L, spt X meets L, while
+  DX = y_2² e_1 ⊗ Dψ + 2ψ y_2 e_1 ⊗ e_2 vanishes on L; directly, div_L X = ∂_1(ψ y_2²) = 0 on L, so
+  δV(X) = 0, as the locality law says.
 
 (Simon1983 line 7455–7473, 1860–1956.) *Needs:* Layer 1.3, Layer 3.1; Mathlib
 `CovariantDerivative.leviCivitaConnection`; Tau Ceti `TauCeti.globalFlow`,
@@ -1372,7 +1378,7 @@ needed; the great circle on S².
 
 ### Dependencies
 
-Layers 1–5; RiemannianGeometry R4 item 1; HopfRinow Layer 2; GeometricCurrents G1; Mathlib
+Layers 1–4; RiemannianGeometry R4 item 1; HopfRinow Layer 2; GeometricCurrents G1; Mathlib
 Besicovitch differentiation and Radon–Nikodym derivatives.
 
 ## Layer 7: varifold tangents, rectifiability and compactness
@@ -1682,7 +1688,7 @@ triple junction as a rectifiable stationary varifold with a singular point.
 
 ### Dependencies
 
-Layers 1–6; Mathlib Besicovitch and Vitali coverings,
+Layers 1–4 and 6; Mathlib Besicovitch and Vitali coverings,
 `MeasureTheory.Measure.ext_of_integral_eq_on_compactlySupported` and
 `LipschitzWith.hausdorffMeasure_image_le`.
 
@@ -1770,10 +1776,11 @@ Layer 3.1, Layer 6.4.
 
 ### 9.2 Locality and isometry invariance
 
-Every notion of Layers 1–8 commutes with restriction to an open W' ⊆ W: weight, mass, support,
-convergence, rectifiability and integrality, tangent spaces and fibre measures, δV, ‖δV‖, H_V, σ_V,
-η_V, stationarity and locally bounded first variation, densities, VarTan(V, x) for x ∈ W', and
-reg^r, sing^r. Every notion commutes with push-forward by a smooth isometry f of an open subset of
+Every notion of Layers 1–4, 6 and 7 and of 9.1 commutes with restriction to an open W' ⊆ W:
+weight, mass, support, convergence, rectifiability and integrality, tangent spaces and fibre
+measures, δV, ‖δV‖, H_V, σ_V, η_V, stationarity and locally bounded first variation, densities,
+VarTan(V, x) for x ∈ W', and reg^r, sing^r.
+Every notion commutes with push-forward by a smooth isometry f of an open subset of
 a Riemannian manifold onto an open subset of another (1.2 with f smooth), with H, η transported by
 df (4.4) and VarTan(f_#V, f(x)) = {(df_x)_#C : C ∈ VarTan(V, x)}: f ∘ exp_x = exp_{f(x)} ∘ df_x on
 a normal ball of x (Tau Ceti `TauCeti.RiemannianIsometry.riemannianExp_mfderiv` for f as a
@@ -1793,7 +1800,7 @@ H_V, ‖δV‖ and σ_V as in 4.4 (this roadmap; Simon1983 line 7443–7454).
   and no boundary measure inside the open set.
 - The dilation by λ⁻¹ of the circle of radius R has H of length λ/R and the same density 1.
 
-*Needs:* Layers 1–8; HopfRinow Layer 1 (uniqueness of geodesics); Tau Ceti
+*Needs:* Layers 1–4, 6 and 7, Layer 9.1; HopfRinow Layer 1 (uniqueness of geodesics); Tau Ceti
 `TauCeti.RiemannianIsometry.riemannianExp_mfderiv`,
 `Bundle.ContMDiffRiemannianMetric.restrictOpenTangentSpace`.
 
@@ -1872,7 +1879,7 @@ current of a plane with multiplicity and the cancelling sum of two currents.
 
 ### Dependencies
 
-Layers 1–8; GeometricCurrents G1, G2, G5, G6; HopfRinow Layer 1; Tau Ceti
+Layers 1–4 and 6–8; GeometricCurrents G1, G2, G5, G6; HopfRinow Layer 1; Tau Ceti
 `TauCeti.RiemannianIsometry.riemannianExp_mfderiv` and
 `Bundle.ContMDiffRiemannianMetric.restrictOpenTangentSpace`.
 

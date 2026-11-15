@@ -759,7 +759,7 @@
       {
        "name": "locality",
        "role": "structure",
-       "statement": "deltaV(X) = 0 if X vanishes on an open set containing spt||V|| cap spt X; restriction to open sets."
+       "statement": "V is carried by G_k(spt||V||) and div_S X(x) depends only on nabla X(x), so deltaV(X) = 0 when nabla X vanishes at every point of spt||V||, in particular when spt X cap spt||V|| is empty; restriction to open sets."
       },
       {
        "name": "continuity",
@@ -797,6 +797,11 @@
        "name": "support dependence",
        "kind": "non-example",
        "statement": "the vertical lift of H^1 on an axis has deltaV(X) != 0 for some X vanishing on the support."
+      },
+      {
+       "name": "one-jet locality",
+       "kind": "computation",
+       "statement": "V = v(L,1), L the x-axis of R^2, X = psi(y) y_2^2 e_1: spt X meets L but DX = 0 on L, and div_L X = d_1(psi y_2^2) = 0 on L, so deltaV(X) = 0."
       }
      ]
     },
@@ -1824,7 +1829,7 @@
      "id": "9.2",
      "kind": "theorem",
      "name": "Varifolds.locality_isometry_invariance",
-     "statement": "Every notion of Layers 1-8 commutes with restriction to open subsets and with push-forward by smooth isometries of open sets onto open sets (H, eta transported by df, VarTan(f_#V, f x) = (df_x)_# VarTan(V, x), since f o exp_x = exp_{f x} o df_x); Euclidean dilations preserve stationarity, rectifiability, integrality, regular sets, densities and varifold tangents and scale H, ||deltaV||, sigma.",
+     "statement": "Every notion of Layers 1-4, 6 and 7 and of 9.1 commutes with restriction to open subsets and with push-forward by smooth isometries of open sets onto open sets (H, eta transported by df, VarTan(f_#V, f x) = (df_x)_# VarTan(V, x), since f o exp_x = exp_{f x} o df_x); Euclidean dilations preserve stationarity, rectifiability, integrality, regular sets, densities and varifold tangents and scale H, ||deltaV||, sigma.",
      "hypotheses": [
       "W' open in W",
       "f smooth isometry of an open set onto an open set (f*g' = g); smoothness of a C^1 isometry (Myers-Steenrod) is not used"
