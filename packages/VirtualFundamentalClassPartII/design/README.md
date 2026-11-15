@@ -332,7 +332,8 @@ a local immersion `X → Y` of algebraic stacks locally of finite type over `k`,
 `C_{X/Y}`, obtained by descent from charts `U → V` that are closed immersions of schemes, with
 `V → Y` and `U → X` smooth and surjective and `U → X ×_Y V` étale (kresch1999b Lemma 2.2 and the
 paragraph after it, lines 218–237; vistoli1989 Lemma 1.19 and lines 508–526), equal to §1.5's cone
-when `X → Y` is a closed immersion; for a morphism `Y′ → Y` and `X′ := X ×_Y Y′`, a closed embedding
+when `X → Y` is a closed immersion; for a morphism `Y′ → Y` of algebraic stacks locally of finite type
+over `k` and `X′ := X ×_Y Y′`, a closed embedding
 `C_{X′/Y′} ⊆ C_{X/Y} ×_X X′` (vistoli1989 lines 529–535), an isomorphism when `Y′ → Y` is flat (on the
 charts `U → V`, the flat base change of normal cones of closed immersions of VirtualFundamentalClass
 §1.5, descended; vistoli1989 Lemma 3.14, lines 1126–1131, for local embeddings of schemes); the
@@ -1047,7 +1048,8 @@ VirtualFundamentalClass §§1.5, 2.5; gap:normal-cones-of-local-immersions.
 - `f^!` commutes with proper pushforward and with pullback along flat representable morphisms
   `𝒢″ → 𝒢′` of stacks over `𝒢` (vistoli1989 Lemma 5.3, lines 1621–1657); in particular with restriction
   to open substacks.
-- For a flat morphism `𝒢_1 → 𝒢` and the base change `f_1 : ℱ ×_𝒢 𝒢_1 → 𝒢_1` of `f`, `f_1^! = f^!` on
+- For a flat morphism `𝒢_1 → 𝒢` of algebraic stacks locally of finite type over `k` and the base change
+  `f_1 : ℱ ×_𝒢 𝒢_1 → 𝒢_1` of `f`, `f_1^! = f^!` on
   `A_*(𝒢′)_ℚ` for every stack `𝒢′ → 𝒢_1`: both are formed through the same proper coverings `Y → 𝒱`, on
   which 3.5's flat-base-change bullet gives the same classes on `ℱ ×_𝒢 Y`, pushed by the same `r`. In
   particular, for a proper `p : 𝒢″ → 𝒢′` of stacks over `𝒢` with `𝒢″ → 𝒢` factoring through `𝒢_1`,
@@ -1224,8 +1226,10 @@ gap:closed-substacks-of-stacks.
 
 **API.**
 
-- For a morphism of algebraic spaces `M′ → M`, `M′` is a moduli space for `ℳ ×_M M′` (vistoli1989 Lemma 2.2,
-  lines 561–563).
+- For a morphism `M′ → M` of quasi-separated algebraic spaces of finite type over `k`, `M′` is a moduli
+  space for `ℳ ×_M M′` (vistoli1989 Lemma 2.2, lines 561–563, for schemes in its Noetherian setting, line
+  539): `ℳ ×_M M′` is a stack of Convention 1, its diagonal being a base change of the diagonal of `ℳ`
+  over `M` followed by a base change of the diagonal of `M′`, and it is proper over `M′`, of finite type.
 - `ℳ` is irreducible, or connected, exactly when `M` is (vistoli1989 Lemma 2.3, lines 566–568).
 
 **Checks.**
@@ -1236,6 +1240,10 @@ gap:closed-substacks-of-stacks.
 - In characteristic `p`, the `ℤ/p`-quotient of 1.3: `p_*[𝒱] = 1·[p(𝒱)]` although `e(𝒱) = p`; the value
   `1/e(𝒱)` is wrong because `k(p(𝒱)) = k(y^p)` is not perfect.
 - In characteristic `0` every `k(p(𝒱))` is perfect, so `deg(𝒱/p(𝒱)) = 1/e(𝒱)` for every `𝒱`.
+- Base change: for `[𝔸¹/μ₂] → 𝔸¹` and `M′ = {0}`, `ℳ ×_M M′ = [Spec k[x]/(x²)/μ₂]` is proper over `Spec k` with
+  one geometric point, and its fundamental cycle `2·[Bμ₂]` is pushed to `2·(1/2)·[Spec k] = [Spec k]`; for
+  `ℳ = BG → M = Spec k` and `M′ = ⊔_ℕ Spec k`, which is not of finite type, `ℳ ×_M M′ = ⊔_ℕ BG` is not
+  quasi-compact, so it is not a stack of Convention 1 and the base-change statement does not apply.
 
 ### 5.3 Products on Deligne–Mumford quotient stacks
 
@@ -1768,8 +1776,9 @@ VirtualFundamentalClass §1.6 and gap:normal-cones-of-local-immersions.
 
 ### 8.4 Deformation invariance of virtual counts
 
-Let `B` be a smooth connected curve over `k`, separated or not: a connected `k`-scheme of finite type,
-smooth of dimension one, hence a stack of Convention 1. Let `𝔐` be an algebraic stack locally of finite type
+Let `B` be a regular connected curve over `k`, separated or not: a connected regular `k`-scheme of
+finite type and of dimension one (over a perfect `k`, the same as a smooth one), hence integral and a
+stack of Convention 1. Let `𝔐` be an algebraic stack locally of finite type
 and quasi-separated over `k` (Convention 7), of pure dimension `m`, reduced or not (`𝔐 = Spec k`
 allowed), `X → 𝔐 × B` of Deligne–Mumford type with `X` proper over `B`, and `E` a perfect relative
 obstruction theory for `X/𝔐 × B` of rank `r` with a global resolution and `m + r = 0`. For a
@@ -1782,12 +1791,15 @@ with `η_b^!` the Gysin map of 4.2 and `[X]^vir ∈ A_1(X)_ℚ`. Since `B` does 
 `𝔐 × B` does not apply to `X → B`, and the comparison goes through `i_b`: `η_b^! = i_b^!` on Chow groups
 of stacks over `𝔐 × B`, by 4.2 for the flat projection `𝔐 × B → B`. Pushing forward along the proper
 `X → B` (4.1) gives `n·[B] ∈ A_1(B)_ℚ = ℚ·[B]`, and compatibility of `i_b^!` with this pushforward
-(4.2), with `i_b^![B] = [{b}]`, gives `deg_{κ(b)}[X_b]^vir = n` (li-tian1998 Theorem 4.2, lines 1472–1474, whose proof, lines 1486–1552, reduces it by conservation
+(4.2), with `i_b^![B] = [{b}]`, gives `deg_{κ(b)}[X_b]^vir = n` (li-tian1998 Theorem 4.2, lines 1472–1474, there over an irreducible smooth
+curve, whose proof, lines 1486–1552, reduces it by conservation
 of number to the identity `η^![M_{X_T/T}]^vir = [M_{X_t}]^vir` (lines 1501–1503), and lines
 1565–1566, which draw its componentwise form `[V_t]^vir = η_t^![V]^vir` from that proof; fulton1998
-Proposition 10.2). The `k`-degree is `n·[κ(b) : k]`. No step uses separatedness of `B`: `{b}` is a closed
-point of the regular scheme `B`, 4.1, 4.2 and 8.2 are stated for stacks of Conventions 1 and 7, separated
-or not, and 5.4's degree is taken on `X_b`, which is proper over `κ(b)`. *Needs:* 4.1–4.2, 5.4, 6.2, 8.2.
+Proposition 10.2). The `k`-degree is `n·[κ(b) : k]`. No step uses separatedness or smoothness of `B`: `{b}` is
+a closed point of the regular one-dimensional scheme `B`, whose local ring there is a discrete valuation
+ring, so `i_b` is a regular immersion of codimension one; `𝔐 × B → 𝔐` is flat with fibres `B_K`, over
+the field-valued points `Spec K → 𝔐`, of pure dimension one, so `𝔐 × B` is of pure dimension `m + 1`; 4.1, 4.2 and 8.2 are stated for stacks of
+Conventions 1 and 7, separated or not; and 5.4's degree is taken on `X_b`, which is proper over `κ(b)`. *Needs:* 4.1–4.2, 5.4, 6.2, 8.2.
 
 **Checks.**
 
@@ -1810,6 +1822,15 @@ or not, and 5.4's degree is taken on `X_b`, which is proper over `κ(b)`. *Needs
 - Connectedness is needed: for `B = 𝔸¹ ⊔ 𝔸¹`, `𝔐 = Spec k` and `X` the first copy, `X → B` an open and closed
   immersion with `E = L_{X/B} = 0`, the count is `1` at the points of the first copy and `0` at those of
   the second.
+- A regular base that is not smooth (`p` odd): over `k = 𝔽_p(a)`, the curve `B = Spec k[x, y]/(y² − x^p + a)`
+  is integral, and at the closed point `b₀ = (y, x^p − a)`, with `κ(b₀) = k(a^{1/p})` of degree `p` over `k`,
+  the maximal ideal is `(y)` because `x^p − a = y²` on `B`, so `B` is regular at `b₀`; both partial
+  derivatives `p·x^{p−1} = 0` and `2y` vanish at `b₀`, so `B` is not smooth there, and it is smooth at every
+  other closed point. With `𝔐 = Spec k`, `X = B` and `E = L_{X/B} = 0`: `[X]^vir = [B]`,
+  `(X → B)_*[B] = 1·[B]`, `i_{b₀}^![B] = [b₀]`, and the count is `1` at `b₀` (of `k`-degree `p`) and at every other
+  closed point; a smoothness hypothesis on `B` would exclude this base. Regularity is what the route uses:
+  at the node of `Spec k[x, y]/(xy)` the maximal ideal `(x, y)` of the singular point needs two
+  generators, so that point is not a regular immersion of codimension one and `i_b^!` is not defined there.
 
 ### Examples
 

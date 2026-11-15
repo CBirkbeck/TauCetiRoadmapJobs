@@ -635,7 +635,7 @@
       {
        "name": "refinedGysin.flatBaseChange",
        "role": "lemma",
-       "statement": "For a flat G_1 -> G, the base change f_1 : F x_G G_1 -> G_1 is a regular local immersion of codimension c with normal bundle the pullback of N_{F/G} (gap normal-cones-of-local-immersions, flat case), and f_1^! = f^! on Z_i(Y) and A_i(Y) for every Y -> G_1: the fibre products U, the cones C_{U/T} and the bundles N|_U are the same; on schemes, excess_intersection of SchemeAndStackFoundations §5.5 with excess bundle 0."
+       "statement": "For a flat G_1 -> G of algebraic stacks locally of finite type over k, the base change f_1 : F x_G G_1 -> G_1 is a regular local immersion of codimension c with normal bundle the pullback of N_{F/G} (gap normal-cones-of-local-immersions, flat case), and f_1^! = f^! on Z_i(Y) and A_i(Y) for every Y -> G_1: the fibre products U, the cones C_{U/T} and the bundles N|_U are the same; on schemes, excess_intersection of SchemeAndStackFoundations §5.5 with excess bundle 0."
       },
       {
        "name": "refinedGysin.schemes",
@@ -783,7 +783,7 @@
       {
        "name": "stackGysin.flatBaseChange",
        "role": "lemma",
-       "statement": "For a flat G_1 -> G and the base change f_1 : F x_G G_1 -> G_1, f_1^! = f^! on A_*(G')_Q for every stack G' -> G_1 (same proper coverings, 3.5's flat base change on them); so for a proper p : G'' -> G' over G with G'' -> G through G_1, f^! p_* = p'_* f_1^! although G' need not map to G_1."
+       "statement": "For a flat G_1 -> G of algebraic stacks locally of finite type over k and the base change f_1 : F x_G G_1 -> G_1, f_1^! = f^! on A_*(G')_Q for every stack G' -> G_1 (same proper coverings, 3.5's flat base change on them); so for a proper p : G'' -> G' over G with G'' -> G through G_1, f^! p_* = p'_* f_1^! although G' need not map to G_1."
       },
       {
        "name": "stackGysin.fundamentalClass",
@@ -1031,7 +1031,7 @@
       {
        "name": "moduliSpace.baseChange",
        "role": "lemma",
-       "statement": "For M0' -> M0, M0' is a moduli space for M x_{M0} M0'."
+       "statement": "For a morphism M0' -> M0 of quasi-separated algebraic spaces of finite type over k, M0' is a moduli space for M x_{M0} M0', which is a stack of Convention 1 proper over M0' (vistoli1989 Lemma 2.2, for schemes)."
       },
       {
        "name": "moduliSpace.irreducible",
@@ -1064,6 +1064,11 @@
        "name": "charZero",
        "kind": "compatibility",
        "statement": "In characteristic 0 every deg(V/p(V)) = 1/e(V)."
+      },
+      {
+       "name": "baseChange_finiteType",
+       "kind": "non-example",
+       "statement": "For [A^1/mu_2] -> A^1 and M0' = {0}, [Spec k[x]/(x^2)/mu_2] -> Spec k is proper with one geometric point and pushes 2[B mu_2] to [Spec k]; for BG -> Spec k and M0' = the disjoint union of countably many Spec k, the fibre product is not quasi-compact and the statement does not apply."
       }
      ]
     },
@@ -1626,9 +1631,9 @@
      "id": "8.4",
      "kind": "theorem",
      "name": "VirtualFundamentalClass.deformationInvariance",
-     "statement": "Let B be a smooth connected curve over k, separated or not (a connected k-scheme of finite type, smooth of dimension one), M an algebraic stack locally of finite type and quasi-separated over k, of pure dimension m, reduced or not, X -> M x B of Deligne-Mumford type with X proper over B, and E a perfect relative obstruction theory of rank r with a global resolution and m + r = 0. Then deg_{kappa(b)} [X_b/M_{kappa(b)}]^vir is independent of the closed point b in B.",
+     "statement": "Let B be a regular connected curve over k, separated or not (a connected regular k-scheme of finite type and of dimension one, hence integral; over a perfect k the same as a smooth one), M an algebraic stack locally of finite type and quasi-separated over k, of pure dimension m, reduced or not, X -> M x B of Deligne-Mumford type with X proper over B, and E a perfect relative obstruction theory of rank r with a global resolution and m + r = 0. Then deg_{kappa(b)} [X_b/M_{kappa(b)}]^vir is independent of the closed point b in B.",
      "hypotheses": [
-      "B a smooth connected curve over k (connected k-scheme of finite type, smooth of dimension one), separated or not",
+      "B a regular connected curve over k (connected regular k-scheme of finite type and of dimension one; smooth when k is perfect), separated or not",
       "M an algebraic stack locally of finite type and quasi-separated over k, of pure dimension m",
       "X proper over B",
       "m + r = 0"
@@ -1670,6 +1675,11 @@
        "name": "connectedNeeded",
        "kind": "non-example",
        "statement": "For B = A^1 + A^1 and X the first copy with E = 0, the count is 1 on the first copy and 0 on the second."
+      },
+      {
+       "name": "regularNonSmoothBase",
+       "kind": "computation",
+       "statement": "For p odd, k = F_p(a) and B = Spec k[x,y]/(y^2 - x^p + a), regular (at b0 = (y, x^p - a), of degree p over k, the maximal ideal is (y)) but not smooth at b0; with M = Spec k, X = B and E = 0 the count is 1 at b0 and at every other closed point; at the node of Spec k[x,y]/(xy) the point is not a regular immersion, so regularity is what the route uses."
       }
      ]
     }
@@ -2102,7 +2112,7 @@
     "8.1",
     "8.3"
    ],
-   "detail": "VirtualFundamentalClass §1.5 forms normal cones of representable closed immersions only; its §2.4 and 3.5, 4.2, 8.1 and 8.3 here use the normal cone of a local immersion (representable, unramified, of finite type) that need not be closed, such as Spec k -> BG or the diagonal BG -> BG x BG for a finite etale G with |G| > 1. Needed: the normal cone C_{X/Y} of a local immersion X -> Y of algebraic stacks locally of finite type over k, by descent from charts U -> V that are closed immersions of schemes with V -> Y and U -> X smooth surjective and U -> X x_Y V etale (kresch1999b Lemma 2.2 and the paragraph after it, lines 218-237; vistoli1989 Lemma 1.19 and lines 508-526), equal to §1.5's cone for closed immersions; for Y' -> Y, a closed embedding C_{X'/Y'} in C_{X/Y} x_X X' (vistoli1989 lines 529-535), an isomorphism for flat Y' -> Y (on the charts U -> V, the flat base change of normal cones of closed immersions of VirtualFundamentalClass §1.5, descended; vistoli1989 Lemma 3.14, lines 1126-1131, for local embeddings of schemes); the closed embedding in the normal sheaf; and, for a regular local immersion of codimension d, the equality with the normal bundle N_{X/Y} of rank d (vistoli1989 lines 527-528; kresch1999b lines 236-237).",
+   "detail": "VirtualFundamentalClass §1.5 forms normal cones of representable closed immersions only; its §2.4 and 3.5, 4.2, 8.1 and 8.3 here use the normal cone of a local immersion (representable, unramified, of finite type) that need not be closed, such as Spec k -> BG or the diagonal BG -> BG x BG for a finite etale G with |G| > 1. Needed: the normal cone C_{X/Y} of a local immersion X -> Y of algebraic stacks locally of finite type over k, by descent from charts U -> V that are closed immersions of schemes with V -> Y and U -> X smooth surjective and U -> X x_Y V etale (kresch1999b Lemma 2.2 and the paragraph after it, lines 218-237; vistoli1989 Lemma 1.19 and lines 508-526), equal to §1.5's cone for closed immersions; for a morphism Y' -> Y of algebraic stacks locally of finite type over k, a closed embedding C_{X'/Y'} in C_{X/Y} x_X X' (vistoli1989 lines 529-535), an isomorphism for flat Y' -> Y (on the charts U -> V, the flat base change of normal cones of closed immersions of VirtualFundamentalClass §1.5, descended; vistoli1989 Lemma 3.14, lines 1126-1131, for local embeddings of schemes); the closed embedding in the normal sheaf; and, for a regular local immersion of codimension d, the equality with the normal bundle N_{X/Y} of rank d (vistoli1989 lines 527-528; kresch1999b lines 236-237).",
    "needs": "VirtualFundamentalClass §1.5 must state the normal cone C_{X/Y} of a local immersion X -> Y of algebraic stacks locally of finite type over k, obtained by descent from charts on which it is a closed immersion of schemes, with its closed embedding under base change (an isomorphism under flat base change), its closed embedding in the normal sheaf, and the normal bundle of a regular local immersion.",
    "supplier": "VirtualFundamentalClass",
    "section": "§1.5"
