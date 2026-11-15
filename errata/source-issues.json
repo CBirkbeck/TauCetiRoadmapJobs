@@ -214843,10 +214843,42 @@
    "reported": "2026-11-15",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15391#issuecomment-6889172438"
+  },
+  {
+   "kind": "misprint",
+   "source": "BieriEckmann1974",
+   "locator": "Theorem 3.4 proof, printed page 82 (BieriEckmann1974 line 334)",
+   "says": "the cited earlier paper's Theorem 4.6 supplies the duality criterion",
+   "should": "Theorem 4.5, which is the criterion, while 4.6 asserts finite generation",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "FinitenessAndDualityOfGroups",
+   "job": "RT-FinitenessAndDualityOfGroups~1a",
+   "board_pr": 15391,
+   "head": "4505272",
+   "reported": "2026-11-15",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15391#issuecomment-6889267076"
+  },
+  {
+   "kind": "misprint",
+   "source": "BieriEckmann1973",
+   "locator": "Proposition 5.1, printed page 119 (BieriEckmann1973 line 646–649)",
+   "says": "all finitely generated free groups have duality dimension one",
+   "should": "all nontrivial finitely generated free groups, as the following proof already assumes",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "FinitenessAndDualityOfGroups",
+   "job": "RT-FinitenessAndDualityOfGroups~1a",
+   "board_pr": 15391,
+   "head": "4505272",
+   "reported": "2026-11-15",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15391#issuecomment-6889267076"
   }
  ],
- "scanned_to": "2026-11-15T04:29:04Z",
- "updated": "2026-11-15T04:38:20Z",
+ "scanned_to": "2026-11-15T04:38:42Z",
+ "updated": "2026-11-15T04:46:34Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
