@@ -1368,7 +1368,7 @@
      "id": "8.3",
      "kind": "theorem",
      "name": "Flow.IsHyperbolicSet.localStrongStableManifold",
-     "statement": "For a hyperbolic set of a C^r flow: strong stable plaques (C^r discs tangent to E^s, contraction C' e^{-kappa' t}, sandwiching the strong stable sets W^s_{r/K} in plaque in W^s_{Kr}); weak stable plaques, the images of [-r,r] x strong plaque under (v,y) -> g^v y, whose interiors are C^r submanifolds tangent to E^s + RX (the closed weak plaque has corners); unstable analogues; continuous in x. Charts straightening the weak plaques: for small eps and x in Lambda a C^r chart phi_x from the eps-ball of T_xM with phi_x(0) = x, derivative the identity at 0, carrying the eps-ball of E^s_x + RX(x) into the weak stable plaque and that of E^u_x + RX(x) into the weak unstable plaque, with C^1 bounds on phi_x and its inverse uniform in x.",
+     "statement": "For a hyperbolic set of a C^r flow: strong stable plaques (C^r discs tangent to E^s, contraction C' e^{-kappa' t}, sandwiching the strong stable sets W^s_{r/K} in plaque in W^s_{Kr}); weak stable plaques, the images of [-r,r] x strong plaque under (v,y) -> g^v y, whose interiors are C^r submanifolds tangent to E^s + RX (the closed weak plaque has corners); unstable analogues; continuous in x. Charts straightening the weak plaques: for small eps and x in Lambda a C^r chart phi_x from the eps-ball of T_xM (for the inner product making E^s_x, RX(x), E^u_x orthogonal, equal to the adapted metric of 7.6 on E^s_x and E^u_x, with |X(x)| = 1) with phi_x(0) = x, derivative the identity at 0, carrying the eps-ball of E^s_x + RX(x) into the weak stable plaque and that of E^u_x + RX(x) into the weak unstable plaque, with C^1 bounds on phi_x and its inverse uniform in x.",
      "hypotheses": [
       "g C^r flow, r >= 1",
       "Lambda hyperbolic"
@@ -1393,7 +1393,7 @@
       {
        "name": "weakPlaqueChart",
        "role": "constructor",
-       "statement": "For small eps > 0 and x in Lambda, a C^r chart phi_x from the closed eps-ball of T_xM (E^s_x, RX(x), E^u_x orthogonal) to M, a diffeomorphism onto its image, with phi_x(0) = x and D phi_x(0) = id, carrying the eps-ball of E^s_x + RX(x) into W^cs_{r0}(x) and that of E^u_x + RX(x) into W^cu_{r0}(x), C^1 norms of phi_x and its inverse bounded uniformly in x; phi_{g^t x}^{-1} o g^t o phi_x has derivative Dg^t_x at 0. Built from the layer's chart at x and the two shears straightening the weak stable and then the weak unstable plaque."
+       "statement": "For small eps > 0 and x in Lambda, a C^r chart phi_x from the closed eps-ball of T_xM (E^s_x, RX(x), E^u_x orthogonal, the adapted metric of 7.6 on E^s_x and E^u_x, |X(x)| = 1) to M, a diffeomorphism onto its image, with phi_x(0) = x and D phi_x(0) = id, carrying the eps-ball of E^s_x + RX(x) into W^cs_{r0}(x) and that of E^u_x + RX(x) into W^cu_{r0}(x), C^1 norms of phi_x and its inverse bounded uniformly in x; phi_{g^t x}^{-1} o g^t o phi_x has derivative Dg^t_x at 0. Built from the layer's chart at x and the two shears straightening the weak stable and then the weak unstable plaque."
       }
      ],
      "tests": [
@@ -1421,6 +1421,11 @@
        "name": "curved_weak_plaque",
        "kind": "non-example",
        "statement": "Flow theta' = 1, u' = u, v' = -v + u^2 on R/Z x R^2: solutions u = u0 e^t, v = u0^2 e^{2t}/3 + c e^{-t}; the periodic orbit u = v = 0 has weak stable manifold {u = 0} and weak unstable manifold {v = u^2/3}. The coordinate chart carries E^u + RX onto {v = 0}, which meets {v = u^2/3} only along u = 0; phi_x(sigma,a,b) = (theta0 + sigma, a, b + a^2/3) straightens both and has derivative the identity at 0."
+      },
+      {
+       "name": "neutral_normalisation",
+       "kind": "non-example",
+       "statement": "Time change h(s) d/ds of the cat suspension (h <= 1, period 1, falling from 1 to e^{-3a} over length 0.05, then constant for 0.1): E^s, E^u the eigenline directions, kappa < a since a period-p orbit takes time p int ds/h > p, so 7.6 gives mu = e^{kappa'} < e^a; a point crossing the drop in time 1 has |Dg^1 X|/|X| = e^{-3a} when |d/ds| = 1, so the neutral block of Dg^-1 has norm e^{3a} > mu and 8.1 fails; with |X| = 1 the neutral block is an isometry, lambda = 1 < mu."
       }
      ]
     },
@@ -1593,6 +1598,11 @@
        "name": "toral_constant",
        "kind": "computation",
        "statement": "Toral automorphisms: constant bundles."
+      },
+      {
+       "name": "lipschitz_constant_convention",
+       "kind": "computation",
+       "statement": "Cat map, flat metric: A and A^-1 have operator norm (3+sqrt5)/2 = 1/lambda, so L = 1/lambda and alpha = 1 give theta = 1/2 in the route theta = alpha log(1/lambda)/(alpha log L + log(1/lambda)), L > 1 a common Lipschitz constant of f and f^-1; reading L as a Lipschitz constant of the constant Df would allow L = lambda and a zero denominator."
       },
       {
        "name": "horocyclic_smooth",
@@ -2060,7 +2070,7 @@
       {
        "name": "cat_suspension",
        "kind": "computation",
-       "statement": "Suspension of the cat map with the metric ds^2 + e^{2as} du^2 + e^{-2as} dv^2 (a = log((3+sqrt5)/2), u, v eigen-coordinates; descends to the mapping torus, not flat, volume ds du dv): lambda_t = e^{at}, phi^u = -a, P(phi^u) = 0."
+       "statement": "Suspension of the cat map with the metric ds^2 + e^{2as} du^2 + e^{-2as} dv^2 (a = log((3+sqrt5)/2), u, v eigen-coordinates; a^-2 times the pull-back of Tau Ceti's Sol metric e^{2z} dx^2 + e^{-2z} dy^2 + dz^2 (TauCeti.Sol.riemannianMetric) under (x,y,z) = (au, av, as); descends to the mapping torus, not flat, volume ds du dv): lambda_t = e^{at}, phi^u = -a, P(phi^u) = 0."
       },
       {
        "name": "sign_convention",
