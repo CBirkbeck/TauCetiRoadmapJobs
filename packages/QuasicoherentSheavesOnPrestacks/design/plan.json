@@ -704,7 +704,7 @@
      ],
      "locator": {
       "source": "SAG",
-      "where": "Remark D.6.1.1 and Definition D.6.1.4, pp. 2173-2174; Proposition 1.3.1.7, p. 117"
+      "where": "Remark D.6.1.1 and Definition D.6.1.4, pp. 2173-2174; Proposition 1.3.1.7, p. 117; Proposition A.3.2.1, pp. 1764-1765"
      },
      "prerequisites": [
       "target:1.1",
@@ -716,7 +716,19 @@
       "roadmap:PresheavesAndCompletions §1.4.3",
       "roadmap:PresentableInfinityCategories §4.4.2",
       "mathlib:AlgebraicGeometry.Scheme.fpqcPrecoverage",
-      "mathlib:Module.FaithfullyFlat"
+      "mathlib:Module.FaithfullyFlat",
+      "roadmap:PresentableInfinityCategories §6.2.3",
+      "roadmap:InfinityTopoi §7.3.4",
+      "roadmap:InfinityTopoi §7.4.1",
+      "roadmap:InfinityTopoi §7.4.2",
+      "roadmap:InfinityTopoi §7.5.1",
+      "roadmap:InfinityTopoi §7.6.1",
+      "roadmap:InfinityTopoi §8.4.1",
+      "roadmap:InfinityTopoi §9.1.1",
+      "roadmap:InfinityTopoi §9.2.3",
+      "roadmap:InfinityTopoi §14.1.1",
+      "roadmap:HypercompletenessAndCoherence §1.2.1",
+      "roadmap:HypercompletenessAndCoherence §6.1.1"
      ],
      "api": [
       {
@@ -738,6 +750,16 @@
        "name": "universal_property",
        "role": "universal property",
        "statement": "A functor on PreStk^op preserving (u+1)-small limits, to an infinity-category with (u+1)-small limits, inverts L-equivalences iff its restriction to T^op is a (hypercomplete) sheaf."
+      },
+      {
+       "name": "hypercomplete_topos",
+       "role": "structure",
+       "statement": "Hypercomplete fpqc sheaves form an infinity-topos, a left exact localization of fpqc sheaves (HypercompletenessAndCoherence 1.2.1); hypersheafification is sheafification followed by it."
+      },
+      {
+       "name": "local_lifting",
+       "role": "characterisation",
+       "statement": "A sieve covers iff it contains an fpqc cover (SAG A.3.2.1). For a map u : F' -> F of prestacks, L u is an effective epimorphism of fpqc sheaves iff every point Spec R -> F lifts to F' after an fpqc cover; the same for hypersheafification and hypercomplete fpqc sheaves; in particular points of L F lift to F after a cover. Route: only if, pull back along the point (InfinityTopoi 7.5.1), the image in PreStk_T of the pullback is the sieve of local lifts (7.6.1, 7.3.4, 7.4.2, 9.1.1), L preserves image factorizations (7.4.1, 7.3.4) so it inverts that sieve, which covers (8.4.1); if, the unit case and the local-lifting step of 9.2.3; hypercomplete case, the hypercompletion commutes with 0-truncation (PresentableInfinityCategories 6.2.3) and fixes 0-truncated objects (HypercompletenessAndCoherence 6.1.1), and 14.1.1 detects effective epimorphisms on 0-truncations."
       }
      ],
      "tests": [
@@ -755,6 +777,11 @@
        "name": "non_covers",
        "kind": "non-example",
        "statement": "Z -> F_p (not flat) and Z -> Q (not faithfully flat) are not covers."
+      },
+      {
+       "name": "local_lifting",
+       "kind": "non-example",
+       "statement": "Classical: L(empty -> Spec 0) is an effective epimorphism (the point at the zero ring lifts after the empty cover). Spec F_p + Spec Z[1/p] -> Spec Z is surjective on primes but L of it is not an effective epimorphism: along a cover {Z -> R_i} on which the identity lifts, nonzero F_p-algebras are not flat, so all nonzero R_i are Z[1/p]-algebras and F_p (x) prod R_i = 0, not faithfully flat."
       }
      ]
     },
@@ -861,7 +888,9 @@
       "target:3.1",
       "target:3.2",
       "roadmap:EnhancedDerivedSheaves E2.7",
-      "roadmap:PrismaticCohomologyPartII §4.0"
+      "roadmap:PrismaticCohomologyPartII §4.0",
+      "roadmap:InfinityTopoi §7.3.1",
+      "roadmap:InfinityTopoi §7.3.4"
      ],
      "api": [
       {
@@ -915,7 +944,8 @@
       "roadmap:EnhancedDerivedSheaves E2.7",
       "roadmap:HypercompletenessAndCoherence §2.4.1",
       "roadmap:HypercompletenessAndCoherence §2.5.1",
-      "roadmap:HypercompletenessAndCoherence §2.5.2"
+      "roadmap:HypercompletenessAndCoherence §2.5.2",
+      "roadmap:InfinityTopoi §7.3.4"
      ],
      "api": [
       {
@@ -971,7 +1001,8 @@
       "where": "Section 6.3.2, pp. 501-503"
      },
      "prerequisites": [
-      "target:2.1"
+      "target:2.1",
+      "roadmap:InfinityTopoi §3.3.2"
      ],
      "api": [
       {
@@ -982,7 +1013,7 @@
       {
        "name": "colimit_presentation",
        "role": "structure",
-       "statement": "For f affine, Y = colim Spec f_eta over Pts(X)^op."
+       "statement": "For f affine, Y = colim Spec f_eta over Pts(X)^op: X is the colimit of its points (2.1) and colimits in PreStk_T are universal (InfinityTopoi 3.3.2, in the universe u+1)."
       }
      ],
      "tests": [
@@ -1316,7 +1347,7 @@
      ],
      "locator": {
       "source": "SAG",
-      "where": "Definition 6.2.5.3, Remarks 6.2.5.4 and 6.2.5.6, Examples 6.2.5.5 and 6.2.5.7, p. 495; Proposition 2.8.4.2, p. 275"
+      "where": "Definition 6.2.5.3, Remarks 6.2.5.4 and 6.2.5.6, Examples 6.2.5.5 and 6.2.5.7 (6.2.5.7 for colimits and extensions), p. 495; the paragraph preceding Proposition 6.2.6.3 (unit, tensor products, symmetric monoidal structure), p. 497; Proposition 2.8.4.2, p. 275"
      },
      "prerequisites": [
       "target:1.4",
@@ -1384,7 +1415,9 @@
       "roadmap:StableInfinityCategories §11.1.1",
       "target:6.1",
       "roadmap:EnhancedDerivedSheaves E5:presentability.2",
-      "target:4.1"
+      "target:4.1",
+      "target:3.1",
+      "roadmap:InfinityTopoi §7.6.1"
      ],
      "api": [
       {
@@ -1405,7 +1438,7 @@
       {
        "name": "connective_presentable",
        "role": "structure",
-       "statement": "Under (a), QCoh(X)^cn = lim_j QCoh(X_j)^cn over the colimit presentation (connectivity is detected on the X_j, fpqc-locally in sheaves), a u-small limit of presentable categories along colimit-preserving functors, hence presentable."
+       "statement": "Under (a), QCoh(X)^cn = lim_j QCoh(X_j)^cn over the colimit presentation (connectivity is detected on the X_j; in hypercomplete sheaves, fpqc-locally, the coproduct of the X_j mapping onto X by an effective epimorphism (InfinityTopoi 7.6.1) and points lifting locally (3.1, local lifting)), a u-small limit of presentable categories along colimit-preserving functors, hence presentable."
       }
      ],
      "tests": [
@@ -1602,7 +1635,9 @@
       "target:3.3",
       "target:4.1",
       "target:6.1",
-      "target:6.2"
+      "target:6.2",
+      "roadmap:InfinityTopoi §7.1.1",
+      "roadmap:InfinityTopoi §7.4.1"
      ],
      "api": [
       {
@@ -1613,7 +1648,7 @@
       {
        "name": "geometric_quotient",
        "role": "structure",
-       "statement": "If S is affine, G affine over S and X affine, [X/G] has affine diagonal and the atlas X -> [X/G] is affine (4.1). For every such G the atlas is an fpqc surjection: it is L of the effective epimorphism X -> |G^{x_S .} x_S X|, so every point Spec R -> [X/G] lifts to X after an fpqc cover {R -> R_i}, along which the base change of the atlas is G x_S Spec R_i -> Spec R_i, a base change of G -> S split by the unit. If moreover G is flat over S, the atlas is flat (its base change along a point becomes flat after R -> prod R_i, and flatness descends along faithfully flat maps, 6.1), so [X/G] is geometric (6.2); flatness of G gives the flatness of the atlas, not its surjectivity."
+       "statement": "If S is affine, G affine over S and X affine, [X/G] has affine diagonal and the atlas X -> [X/G] is affine (4.1). For every such G the atlas is an fpqc surjection: X -> |G^{x_S .} x_S X| is an effective epimorphism of PreStk_T (its Cech nerve is the effective action groupoid, InfinityTopoi 7.1.1), its hypersheafification is one of hypercomplete fpqc sheaves (InfinityTopoi 7.4.1), so every point Spec R -> [X/G] lifts to X after an fpqc cover {R -> R_i} (3.1, local lifting), along which the base change of the atlas is G x_S Spec R_i -> Spec R_i, a base change of G -> S split by the unit. If moreover G is flat over S, the atlas is flat (its base change along a point becomes flat after R -> prod R_i, and flatness descends along faithfully flat maps, 6.1), so [X/G] is geometric (6.2); flatness of G gives the flatness of the atlas, not its surjectivity."
       },
       {
        "name": "trivial",
@@ -2295,9 +2330,10 @@
   {
    "roadmap": "PresentableInfinityCategories",
    "sections": [
-    "§4.4.2"
+    "§4.4.2",
+    "§6.2.3"
    ],
-   "what": "Universal property of localization at a small set (HTT 5.5.4.20), for 3.1 in the universe u+1."
+   "what": "Universal property of localization at a small set (HTT 5.5.4.20), for 3.1 in the universe u+1; left exact colimit-preserving functors commute with truncation (HTT 5.5.6.28), for the hypercomplete case of the local lifting criterion of 3.1."
   },
   {
    "roadmap": "DerivedInfinityCategories",
@@ -2320,19 +2356,31 @@
     "§3.1.2",
     "§3.3.2",
     "§3.5.1",
-    "§4.4.1"
+    "§4.4.1",
+    "§7.1.1",
+    "§7.3.1",
+    "§7.3.4",
+    "§7.4.1",
+    "§7.4.2",
+    "§7.5.1",
+    "§7.6.1",
+    "§8.4.1",
+    "§9.1.1",
+    "§9.2.3",
+    "§14.1.1"
    ],
-   "what": "Infinity-topoi, descent and effective groupoid objects, Giraud's theorem (HTT 6.1.0.6, 6.1.3.10, 6.1.3.19), applied in the universe u+1 to PreStk_T and its slices, for 7.1."
+   "what": "Infinity-topoi, universal colimits, descent and effective groupoid objects, Giraud's theorem (HTT 6.1.0.6, 6.1.3.10, 6.1.3.19); effective epimorphisms: definition, images of Cech nerves, image factorization, preservation by left exact left adjoints, composition, pullback stability, coproduct covers, detection on 0-truncations (HTT 5.2.8.16, 6.2.3.4, 6.2.3.7, 6.2.3.12, 6.2.3.13, 6.2.3.15, 7.2.1.14); sheafification inverts exactly the covering sieves, sieves as images, local lifting (HTT 6.2.2.16, 6.2.3.18, 6.2.4.5). Applied in the universe u+1 to PreStk_T, its slices and (hypercomplete) fpqc sheaves on T^op, for the local lifting criterion of 3.1 and for 3.3, 3.4, 4.1, 6.2 and 7.1."
   },
   {
    "roadmap": "HypercompletenessAndCoherence",
    "sections": [
+    "§1.2.1",
     "§2.4.1",
     "§2.5.1",
     "§2.5.2",
     "§6.1.1"
    ],
-   "what": "Truncated objects are hypercomplete (HTT 6.5.2.9); realizations of hypercoverings and hypercompletion (HTT 6.5.3.11-6.5.3.13); applied in the universe u+1 to fpqc sheaves on T^op, for 3.2 and 3.4."
+   "what": "Hypercomplete objects form a left exact localization, an infinity-topos (HTT 6.5.2.8); truncated objects are hypercomplete (HTT 6.5.2.9); realizations of hypercoverings and hypercompletion (HTT 6.5.3.11-6.5.3.13); applied in the universe u+1 to fpqc sheaves on T^op, for 3.1, 3.2 and 3.4."
   }
  ],
  "consumers": [
