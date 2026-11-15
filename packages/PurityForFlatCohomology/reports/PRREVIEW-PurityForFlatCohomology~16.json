@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PurityForFlatCohomology~16",
+  "head": "a825987a7981aa0f299fba09af1295f62805a6df",
+  "pr": 1840,
+  "folder": "PurityForFlatCohomology",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 103 changed lines since 160e354. Checked: the previous finding R01 (not repaired: the description still says the étale-depth bound needs no perfectoid input; the README was scoped instead); the changed passages (Layer 1 bound scoped to invertible order against CS24 Theorem 3.2.4 at CS24 lines 1381-1384; ReductiveGroups Layer 9D and Layer 4 citations resolved on main, seven attributed facts found at README lines 5035-5073; removal of the ReductiveGroups consumer bullet leaves no cycle); four adversarial rows with computed values; no seeded sample target in a changed passage; Suggested.lean unchanged, elaborates with 15 sorry warnings and 0 errors; gate rerun OK with every counter 0; depcheck 0 problems; outside-folder diff empty; overlaps none. One fact for the human reviewers: GroupSchemesOverABase (#1522) owns the same objects as sections 7.12a-7.12e.",
+  "text": "970ed0316c15c7e0",
+  "carried": {
+   "from": "a825987a7981aa0f299fba09af1295f62805a6df",
+   "head": "a825987a7981aa0f299fba09af1295f62805a6df",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
