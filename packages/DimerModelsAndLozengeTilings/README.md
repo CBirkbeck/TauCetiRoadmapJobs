@@ -97,7 +97,9 @@ It does not own, and does not restate:
   two positive weights, with its measure preservation, ergodicity and the null fixed-point sets of
   its non-identity elements, which VonNeumannAlgebras owns (Layer 8, target
   V8.BernoulliArbitraryDiscrete), and its extension to a general nontrivial standard base for a
-  countably infinite `Γ`, which FactorRigidity §8.3 builds;
+  countably infinite `Γ`, which FactorRigidity §8.3 builds, and the Bernoulli action of a
+  countable discrete group `G` on `G → α` for any measurable `α` and probability law, with its
+  mixing for infinite `G`, which ClassicalErgodicTheory §0.3 (item 2) and §1.4 (item 2) build;
   4.3 is a kept variant that differs in taking a countable `Γ` acting properly on any countable
   index set `I` (the edges of the hexagonal graph under `ℤ²` among them), any measurable alphabet
   and any law `ν`, point masses included, and in proving tail triviality by Kolmogorov's zero-one
@@ -627,8 +629,8 @@ For `ε ∈ {0,1}^ℤ` define the row tiling `M_ε = {((x,y),1) : ε_x = 1} ∪ 
 the column `x` of the plane is filled with the type-1 lozenges `W(x,y) ∪ B(x,y−1)` when `ε_x = 1`
 and with the unit squares `W(x,y) ∪ B(x,y)` when `ε_x = 0`, so `ε` is read along any row. Write
 `σ` for the shift `(σε)_x = ε_{x−1}` of `{0,1}^ℤ`. These are the tilings whose laws realise the
-slopes on the edge `t = 0` of the slope triangle (kenyon2009 Exercise 13, line 891; gorin2021
-lines 4638–4642). *Needs:* 1.4.
+slopes on the edge `t = 0` of the slope triangle, all of them extreme slopes in the sense of
+gorin2021 lines 4638–4642 (kenyon2009 Exercise 13, line 891). *Needs:* 1.4.
 
 API:
 
@@ -1430,8 +1432,10 @@ a vertex with an edge of `F`, `F` included), the cylinders of `ω` and `ω'` on 
 lozenge instance of 5.3 is: `lozengeGibbsInvariant` is a face, `IsExtreme ℝ≥0∞`, of the
 translation-invariant probability measures on `TriEdge → Bool`
 (`lozengeGibbsInvariant_isExtreme`), and an element of it is extreme in it iff it is
-`ErgodicVAdd (ℤ × ℤ)` (`lozengeGibbs_extreme_iff_ergodic`) (gorin2021 Definition 13.6 and
-Lemma 13.7, lines 4556–4582; kenyon2009 lines 825–835). Route: transport 5.3 for `hexGraph`
+`ErgodicVAdd (ℤ × ℤ)` (`lozengeGibbs_extreme_iff_ergodic`) (sheffield2005 Lemma 3.2.2, lines
+1367–1371, for the face property and the equivalence; georgii2011 Theorem 14.15; gorin2021
+Definition 13.6 and Lemma 13.7, lines 4556–4582, and kenyon2009 lines 825–835, for the two notions
+of ergodicity). Route: transport 5.3 for `hexGraph`
 through the inclusion of `𝔛(hexGraph)`, the ambient face being the invariant probability measures
 concentrated on `𝔈(𝕋)`, itself a face of all invariant probability measures by Tau Ceti's
 `TauCeti.MeasureTheory.isExtreme_setOf_measure_eq_zero`; Tau Ceti's multiplicative statements are
@@ -1505,9 +1509,9 @@ API:
 ### 6.2 The corners
 
 For μ ∈ `𝔓_inv(𝕋)`: `slope μ = (1,0)` iff `μ = δ_{M₁}`; `(0,1)` iff `δ_{M₂}`; `(0,0)` iff
-`δ_{M₃}`. Each of these point masses is an ergodic Gibbs measure (gorin2021 lines 4638–4642;
-kenyon2009 Exercise 13, line 891). Route: slope `(1,0)` puts every direction-1 edge in `M` almost
-surely, and `M₁` is the only plane tiling containing them all. *Needs:* 6.1.
+`δ_{M₃}`. Each of these point masses is an ergodic Gibbs measure (gorin2021 Exercises 13.3 and
+13.9, lines 4520–4526 and 4583–4585; kenyon2009 Exercise 13, line 891). Route: slope `(1,0)` puts
+every direction-1 edge in `M` almost surely, and `M₁` is the only plane tiling containing them all. *Needs:* 6.1.
 
 **Checks.**
 
@@ -1537,8 +1541,9 @@ phase-randomised block measure `β_s = (β + σ_*β)/2` (where `β` makes the pa
 independent, equal to `(1,1)` with probability `s` and `(0,0)` otherwise) are distinct ergodic
 shift-invariant measures of density `s`; so there are at least two ergodic Gibbs measures of slope
 `(s,0)`, and by `ρ` the same holds at the non-corner points of the edges `s = 0` and `s + t = 1`
-(`two_ergodicGibbs_of_slopeEdge`, stated on the three open edges; sheffield2005 Theorem 9.5.1, lines
-6195–6198; gorin2021 lines 4638–4642; kenyon2009 Exercise 13, line 891). Route for the ergodicity of
+(`two_ergodicGibbs_of_slopeEdge`, stated on the three open edges, whose points are extreme slopes
+in the sense of gorin2021 lines 4638–4642; sheffield2005 Theorem 9.5.1, lines 6195–6198; kenyon2009
+Exercise 13, line 891). Route for the ergodicity of
 `β_s`: `β` is a Bernoulli measure for the square of the shift (4.3), and a shift-invariant event `A`
 has `β_s(A) = β(A) ∈ {0,1}`. *Needs:* 1.6, 2.5, 4.3, 5.3, 5.4, 6.1; Mathlib
 `MeasureTheory.MeasurePreserving`, `Ergodic`, `ErgodicVAdd`.

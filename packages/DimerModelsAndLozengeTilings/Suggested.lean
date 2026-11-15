@@ -257,7 +257,8 @@ theorem lozenge_correlation_eq_det (R : Finset TriFace)
 
 /-- A subshift: a closed set of configurations `I → S` invariant under the action
 `(g • ω) i = ω (g⁻¹ • i)` of `Γ` induced by an action on the index set `I`. Mathlib's
-`SymbolicDynamics.FullShift.Subshift` is the case `I = Γ`; here `I` may have several orbits. -/
+`SymbolicDynamics.FullShift.MulSubshift` (additively `SymbolicDynamics.FullShift.Subshift`) is the
+case `I = Γ`; here `I` may have several orbits. -/
 structure Subshift (Γ I S : Type*) [Group Γ] [MulAction Γ I] [TopologicalSpace S] where
   /-- The configurations. -/
   carrier : Set (I → S)
@@ -368,9 +369,9 @@ def IsLozengeGibbs (μ : Measure (TriEdge → Bool)) : Prop :=
 def lozengeGibbsInvariant : Set (Measure (TriEdge → Bool)) :=
   {μ | IsLozengeGibbs μ ∧ VAddInvariantMeasure (ℤ × ℤ) (TriEdge → Bool) μ}
 
-/-- **The face property for lozenge tilings** (README 5.4, the lozenge instance of 5.3; gorin2021
-Lemma 13.7, lines 4561–4582): the invariant lozenge Gibbs measures form a face of the
-translation-invariant probability measures on configurations. -/
+/-- **The face property for lozenge tilings** (README 5.4, the lozenge instance of 5.3;
+sheffield2005 Lemma 3.2.2, lines 1367–1371; georgii2011 Theorem 14.15): the invariant lozenge Gibbs
+measures form a face of the translation-invariant probability measures on configurations. -/
 theorem lozengeGibbsInvariant_isExtreme :
     IsExtreme ℝ≥0∞
       {μ : Measure (TriEdge → Bool) |
@@ -378,8 +379,9 @@ theorem lozengeGibbsInvariant_isExtreme :
       lozengeGibbsInvariant := by
   sorry
 
-/-- **Ergodic lozenge Gibbs measures are the extreme ones** (README 5.4; gorin2021 Definition 13.6
-and Lemma 13.7, lines 4556–4582; kenyon2009 lines 825–835): an invariant lozenge Gibbs measure is
+/-- **Ergodic lozenge Gibbs measures are the extreme ones** (README 5.4; sheffield2005 Lemma 3.2.2,
+lines 1367–1369; gorin2021 Definition 13.6 and Lemma 13.7, lines 4556–4582; kenyon2009 lines
+825–835): an invariant lozenge Gibbs measure is
 an extreme point of the invariant lozenge Gibbs measures iff it is ergodic under the
 translations. -/
 theorem lozengeGibbs_extreme_iff_ergodic {μ : Measure (TriEdge → Bool)}
