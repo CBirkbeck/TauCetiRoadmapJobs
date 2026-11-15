@@ -679,7 +679,7 @@
       {
        "name": "twisted_dual_numbers",
        "kind": "computation",
-       "statement": "For nonzero k, A=k[x]/(x²), M=k with x acting by 0, f(x,x)=1: t=(x,0) has t²=(0,1)≠0, t³=0, A⊕_f M ≅ k[t]/(t³), and no algebra section exists; over the zero ring everything is 0 and the extension splits uniquely."
+       "statement": "For nonzero k, A=k[x]/(x²), M=k with x acting by 0, f(x,x)=1: t=(x,0) has t²=(0,1)≠0, t³=0, A⊕_f M ≅ k[t]/(t³), and no algebra section exists (a section sends x to (x,c)=t+ct², whose square is t²≠0 while x²=0); over the zero ring everything is 0 and the extension splits uniquely."
       },
       {
        "name": "twisted_nonassociative",

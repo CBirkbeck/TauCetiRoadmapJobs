@@ -1125,7 +1125,8 @@ Weibel94 §9.3).
 - For nonzero `k`, `A = k[x]/(x²)`, `M = k` with `x` acting by `0` on both sides, and the 2-cochain
   with `f(x,x) = 1` and `f = 0` on the other pairs of basis elements `1, x`, the cocycle identity
   holds and `t = (x,0)` satisfies `t² = (0,1) ≠ 0` and `t³ = 0`, so `A ⊕_f M ≅ k[t]/(t³)`. An algebra
-  section would send `x` to some `x + c t²` with square `t² ≠ 0`, so this extension does not split.
+  section would send `x` to some `(x,c) = t + c t²` with `c ∈ k`, whose square is `t² ≠ 0` although
+  `x² = 0`, so this extension does not split.
   Over the zero ring every term is `0` and the extension splits uniquely.
 - For nonzero `k`, `A = k[x]`, `M = k` with `x` acting by `0`, and `f(x, x²) = 1`, `f = 0` on the
   other pairs of monomials, `δf(x,x,x) = 1`, and indeed `((x,0)(x,0))(x,0) = (x³,0)` while
