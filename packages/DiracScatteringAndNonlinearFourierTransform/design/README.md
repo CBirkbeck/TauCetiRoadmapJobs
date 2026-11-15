@@ -115,15 +115,17 @@ The headline theorem of Layer 9 is stated for real potentials, the generality of
 Theorem 1 (line 579–581), and at resonance-free points (§9.4): it proves convergence at almost every
 point `s` such that, for every `C > 0`, the box `Q(s, C/t)` contains no zero of `E(t, ·)` or of `Ẽ(t, ·)`
 for large `t`. The statement that almost every point is resonance-free for every real square-integrable
-potential, which together with §9.6 gives poltoratski2024 Theorem 1, is not claimed by this roadmap. Its
-published proof has an error, reported in mnatsakanyan2022 (line 9–13, 135–137). The argument that
-replaces it in §9 of arXiv version 14 of poltoratski2024 (line 1482–1533) compares the moduli at `s` of
-the transforms of `f` and of potentials with inserted zero intervals on three subintervals; these moduli
-are pseudo-hyperbolic distances that the insertion does not change (§9.4, fourth Check), so they cannot
-exclude a resonance. denisov2026 states the almost-everywhere convergence of `b(T, ·)/a(T, ·)` for
-square-integrable potentials on `ℝ` as an open question (line 211–212) and proves that for some
-square-integrable potential `a(T, ·)` and `b(T, ·)` themselves diverge at every real point (Theorem 1.4,
-line 215–216); of `a` and `b` themselves, §9.5 and §9.6 assert only that the moduli converge. Layers 1–6 are stated for complex potentials `q = f + ig` (the
+potential, which together with §9.6 gives poltoratski2024 Theorem 1, is not claimed by this roadmap. An
+error in the proof of Lemma 11 of an earlier arXiv version of poltoratski2024, which mnatsakanyan2022 cites
+as the e-print arXiv:2103.13349 of 2021, is reported there (line 9–13, 135–137, 1812–1813). Version 14 has
+no Lemma 11; its §9 (line 1482–1533) compares the moduli at `s` of the transforms of `f` and of potentials
+with inserted zero intervals on three subintervals; these moduli are pseudo-hyperbolic distances that the
+insertion does not change (§9.4, fourth Check), so they cannot exclude a resonance. denisov2026 poses as a
+question (Q2R, line 211–212) whether, for a square-integrable potential on `ℝ` truncated to `(−T, T)`, the
+quotient `b/a#` of its scattering coefficients (in its normalisation, line 165–195) converges almost
+everywhere as `T → ∞`, and proves that for some square-integrable potential its coefficients `a` and `b`
+themselves diverge at every real point (Theorem 1.4, line 215–216); of `a` and `b` themselves, §9.5 and
+§9.6 assert only that the moduli converge. Layers 1–6 are stated for complex potentials `q = f + ig` (the
 system with `Q_q = [[g, f], [f, −g]]`), and Layers 7–9 for real `f`.
 
 ## Conventions
@@ -2037,19 +2039,44 @@ determinant identity (2.2) at two points fixes `2|β|²w(s) = (1 + o(1)) sinh(2t
 Prove (poltoratski2024 Corollary 3 line 1002–1012 and the argument of line 918–996; mauth2022
 Corollary 6 line 1397–1408): (1) for almost every `s` there are `C(t) → ∞` and `z(t) = x(t) − iy(t) ∈ ℂ₋`
 with `sup_{z ∈ Q(s, C(t)/t)} |E(t, z) − α(s, t) γ(t y(t)) sin(t(z − z(t)))/√w(s)| → 0` as `t → ∞` in
-`T₁(s, C)`, `|α| = 1`, where `z(t)` is a zero of `E(t, ·)` when `t ∈ T₀(s, C)`; (2) if this holds and
+`T₁(s, C)`, `|α| = 1`, where `z(t)` is a zero of `E(t, ·)` when `t ∈ T₀(s, C)`, and the same function `C(t)`
+gives the approximation of `Ẽ(t, ·)` of this form, with `w̃(s)`, `T̃₀(s, C)` and `T̃₁(s, C)` in place of `w(s)`,
+`T₀(s, C)` and `T₁(s, C)`; (2) if the approximation of `E` in (1) holds at `s` for a function `C(t) → ∞` and
 `t ∉ T₀(s, C(t))` for all large `t`, then for every `D > 0`,
-`sup_{z ∈ Q(s, D/t)} |E(t, z) + iα(s, t) e^{−itz}/√w(s)| → 0`. Route: §8.5 with two values of the second
-argument shows that `(A(t, x), C(t, x))` has modulus bounded below and rotates on `ℝ ∩ Q(s, C/t)`;
-choosing its zero crossings gives `E ≈ −cos(t(z − x₂))/(c₂w) − i sin(t(z − x₀))/(c₁w)`; if `t(x₂ − x₀)` were
+`sup_{z ∈ Q(s, D/t)} |E(t, z) + iα(s, t) e^{−itz}/√w(s)| → 0`; (3) for almost every `s`: if `T₀(s, K)` is
+bounded for every `K > 0`, then for every `D > 0` there are unimodular `α(s, t)` with
+`sup_{z ∈ Q(s, D/t)} |E(t, z) + iα(s, t) e^{−itz}/√w(s)| → 0` as `t → ∞`. Route: §8.5 with two values of the
+second argument shows that `(A(t, x), C(t, x))` has modulus bounded below and rotates on `ℝ ∩ Q(s, C/t)`;
+choosing `x₀`, `x₁` with `C(t, x₀) = 0 < A(t, x₀) = c₁` and `A(t, x₁) = 0 < C(t, x₁) = c₂`, and
+`x₂ = x₁ − π/(2t)`, gives `C(t, z) ≈ sin(t(z − x₀))/(c₁w)`, `A(t, z) ≈ cos(t(z − x₂))/(c₂w)`, so
+`E ≈ cos(t(z − x₂))/(c₂w) − i sin(t(z − x₀))/(c₁w)`, with `c₁c₂w = cos(t(x₂ − x₀)) + o(1)`; if `t(x₂ − x₀)` were
 not `o(1)` modulo `2π`, or `c₁ − c₂` not `o(1)`, the phase derivative of `E` would vary by a factor
-`1 + ε` on an interval of length `8π/t`, and §7.2 would give a zero in `Q(s, C/t)`.
+`1 + ε` on an interval of length `8π/t`, and §7.2 would give a zero in `Q(s, C/t)`. For `Ẽ = B − iD` the same
+argument runs with `B`, `D`, `μ̃` and `w̃` in place of `A`, `C`, `μ` and `w`; one function serves `E` and `Ẽ`
+because the functions of §8.5 and §8.6 come from diagonal arguments over constant box sizes (poltoratski2024
+line 832–833, 879 and 907–909), which can be run for the two at once. Route of (3), with constant
+boxes: at an `s` where §8.5 holds and `w(s) > 0`, fix `δ > 0`, let `ε > 0` be such that every two-term form
+allowed by the route (`c₁`, `c₂` within the bounds it gives and `c₁c₂w = cos(t(x₂ − x₀))`, so that
+`cos(t(x₂ − x₀))` is bounded below by a positive constant) whose parameters are `δ`-far from
+`t(x₂ − x₀) ∈ 2πℤ`, `c₁ = c₂` has phase derivative varying by a factor more than `1 + 2ε` on
+`J_t = (s − 4π/t, s + 4π/t)`, and take `K ≥ max(D, 4π + 24π/ε)`. For large `t` the box `Q(s, K/t)`
+contains no zero of `E(t, ·)` and §8.5 on it gives the two-term form there; a phase derivative of `E` varying by
+the factor `1 + ε` on `J_t` would give, by §7.2, a zero within `24π/(εt)` of `J_t`, hence in `Q(s, K/t)`. So
+the parameters are `δ`-close, `E` is within `O(δe^D) + o(1)` of `e^{itx₀} e^{−itz}/√w(s)` on `Q(s, D/t)`, and
+`δ` is arbitrary: `α = ie^{itx₀}`.
 
 *Needs:* §7.2, §8.5, §8.6.
 
 **Checks.**
 
-- Free case: `E = e^{−itz}` and `w = 1`, so (2) holds exactly with `α = i`: `e^{−itz} + i·i·e^{−itz} = 0`.
+- Free case: `E = e^{−itz}` and `w = 1`, so (2) and (3) hold exactly with `α = i`:
+  `e^{−itz} + i·i·e^{−itz} = 0`; in the route `x₀ = x₂ = 0`, `x₁ = π/(2t)` and `c₁ = c₂ = 1`, and the two-term
+  form is `cos tz − i sin tz = e^{−itz}` (with `−cos` in its first term it would be `−e^{itz}` instead).
+- (3) is not a consequence of the statements (1) and (2): they allow the function `C(t) = √t` in (1) together
+  with zeros of `E(t, ·)` at `s + (log t)/t − i/(2t)`. These satisfy the hypothesis of (3), since they leave
+  `Q(s, K/t)` for `t > e^K`, but they lie in `Q(s, √t/t)` above the height `−1/t` (`log t < √t`), so no large
+  `t` is in `T₁(s, C)`: (1) gives no approximation and the hypothesis of (2) fails. The route of (3) reaches
+  its contradiction inside `Q(s, K/t)` with `K` constant, whatever the function of (1) is.
 - With `A = t(z − x)` and `p = t y`, `γ(p) sin(A + ip) = i e^{−iA}(1 + O(e^{2|Im A| − 2p}))`, and
   `|Im A| ≤ D` on `Q(s, D/t)`; so (1) passes into (2), with `α` replaced by a unimodular multiple, when
   `t y(t) → ∞`.
@@ -2063,9 +2090,9 @@ are `z(t) = u(t) − ip(t)`, `z̃(t) = ũ(t) − ip(t)` with `p(t) > 0` and a un
 `sup_{Q(s, C(t)/t)} |E(t, z) − α γ(tp) sin(t(z − z(t)))/√w(s)| → 0`,
 `sup_{Q(s, C(t)/t)} |Ẽ(t, z) − α γ(tp) cos(t(z − z̃(t)))/√w̃(s)| → 0`, `p(t) > C(t)/t` for `t ∉ T₀(s, C)`,
 `p(t) ≤ C(t)/t` for `t ∈ T₀(s, C)`, and `cos(t(ũ(t) − u(t))) = √(w(s) w̃(s))` (poltoratski2024 Lemma 7
-line 1028–1097, (8.1); mauth2022 Lemma 43 line 3140). Route: §8.7 for `E` and `Ẽ`; inserting the two
-approximants into the determinant identity (2.2) on `ℝ ∩ Q(s, D/t)` forces equal imaginary parts and the
-cosine relation. The relation needs `√(w w̃) ≤ 1`, which is §6.5.
+line 1028–1097, (8.1); mauth2022 Lemma 43 line 3140). Route: §8.7(1) for `E` and `Ẽ`, with their common
+function `C(t)`; inserting the two approximants into the determinant identity (2.2) on `ℝ ∩ Q(s, D/t)` forces
+equal imaginary parts and the cosine relation. The relation needs `√(w w̃) ≤ 1`, which is §6.5.
 
 *Needs:* §3.2, §6.5, §8.7.
 
@@ -2127,8 +2154,10 @@ application, §3.2 and §6.8.
 ### Examples
 
 - For `f = c 1_{[0,T]}`, `E(t, ·) = e^{−i(t−T)z} E(T, ·)` for `t ≥ T` (the free equation), so the resonances
-  are the fixed zeros of `E(T, ·)`, all at positive distance from `ℝ`; hence `T₀(s, C)` is bounded for every
-  `s` and `C`, and §8.7(2) holds with `w = |E(T, ·)|^{−2}`.
+  are the fixed zeros of `E(T, ·)`. The compact box `Q(s, C/T)`, which contains `Q(s, C/t)` for `t ≥ T`, holds
+  at most finitely many of them, all at positive distance from `ℝ`; hence `T₀(s, C)` is bounded for every `s` and `C`,
+  and the conclusion of §8.7(3) holds at every `s`, with `w = |E(T, ·)|^{−2}` (§6.5): on `Q(s, D/t)`,
+  `E(t, z) = e^{−itz} e^{iTz} E(T, z)` and `e^{iTz} E(T, z) = e^{iTs} E(T, s) + O(1/t)`.
 
 ### Dependencies
 
@@ -2227,10 +2256,11 @@ property from which Theorem 1 is deduced; mauth2022 line 1893–1894, whose exce
   is `A_{−f} = D_f`, `C_{−f} = −B_f`, `B_{−f} = −C_f`, `D_{−f} = A_f`. Hence `Ẽ_f(t, ·) = −i E_{−f}(t, ·)` and
   `Ẽ_{−f}(t, ·) = −i E_f(t, ·)`, so `R(f) = R(−f)`; the Weyl function of `−f` is `−1/m_f`, so the density
   `w_{−f}` of §6.5 is the Dirichlet density `w̃_f`.
-- If `f` vanishes on `[T₀, ∞)`, then `R(f) = ℝ`: for `t ≥ T₀`, `E(t, ·) = e^{−i(t−T₀)z} E(T₀, ·)` and
-  `Ẽ(t, ·) = e^{−i(t−T₀)z} Ẽ(T₀, ·)` (the free equation), whose zeros are the fixed zeros of `E(T₀, ·)` and
-  `Ẽ(T₀, ·)`, all in the open lower half-plane (§3.3); the finitely many with `|Re ζ − s| ≤ C/T₀` lie at a
-  distance `δ > 0` from `ℝ`, so `Q(s, C/t)` contains none of them for `t > max(T₀, C/δ)`.
+- If `f` vanishes on `[T₀, ∞)` for some `T₀ > 0`, then `R(f) = ℝ`: for `t ≥ T₀`,
+  `E(t, ·) = e^{−i(t−T₀)z} E(T₀, ·)` and `Ẽ(t, ·) = e^{−i(t−T₀)z} Ẽ(T₀, ·)` (the free equation), whose zeros are
+  the fixed zeros of `E(T₀, ·)` and `Ẽ(T₀, ·)`, all in the open lower half-plane (§3.3); the finitely many in
+  the compact box `Q(s, C/T₀)`, which contains `Q(s, C/t)` for `t ≥ T₀`, lie at a distance at least some
+  `δ > 0` from `ℝ`, so `Q(s, C/t)`, where `|Im z| ≤ C/t`, contains none of them for `t > max(T₀, C/δ)`.
 
 *Needs:* §3.1, §3.3, §6.4, §6.5, §8.1.
 
@@ -2268,12 +2298,11 @@ Prove that for every real square-integrable `f` there is a Lebesgue-null set `N_
 `sup_{Q(s,D/t)} |Ẽ(t, z) + iβ(s) α(s, t) e^{−itz}/√w̃(s)| → 0`; consequently `|E(t, s)| → 1/√w(s)`,
 `|Ẽ(t, s)| → 1/√w̃(s)`, `|a(t, s)|² → (1/w + 1/w̃ + 2)/4` and `|b(t, s)|² → (1/w + 1/w̃ − 2)/4` at `s`
 (poltoratski2024 (9.9)–(9.10) line 1538–1574; mauth2022 line 3855–3875). Route: `N_f` is the union of the
-exceptional null sets of §8.7(1) for `f` and for `−f` and of `{w w̃ = 0}` (§6.8). At `s ∈ R(f) ∖ N_f`, take the
-function `C(t)` of §8.7(1) at most the function of §9.4 (the route of §8.7 works on every smaller box size
-tending to infinity, as §8.5 does), so that `t ∉ T₀(s, C(t))` for all large `t`; then §8.7(2) gives the
-approximation of `E`, and §8.7 for `−f`, with `E_{−f} = iẼ_f` and `w_{−f} = w̃_f` (§9.4), gives that of `Ẽ`.
-The determinant identity (2.2) on `ℝ` gives `(conj β − β)/√(w w̃) = 2i`, and continuity of
-`Ẽ(t, s)/E(t, s)` in `t` makes `β` constant.
+exceptional null sets of §8.7(3) for `f` and for `−f` and of `{w w̃ = 0}` (§6.8). At `s ∈ R(f) ∖ N_f` the sets
+`T₀(s, K)` are bounded for every `K > 0` (§9.4), so §8.7(3) gives the approximation of `E`; and §8.7(3) for
+`−f`, whose sets `T₀(s, K)` are the sets `T̃₀(s, K)` of `f` because `E_{−f} = iẼ_f`, with `w_{−f} = w̃_f`
+(§9.4), gives that of `Ẽ`. The determinant identity (2.2) on `ℝ` gives `(conj β − β)/√(w w̃) = 2i`, and
+continuity of `Ẽ(t, s)/E(t, s)` in `t` makes `β` constant.
 
 *Needs:* §3.2, §4.1, §6.5, §6.8, §8.7, §9.4.
 
@@ -2345,9 +2374,10 @@ Layer 3, Layer 4, Layer 5 (§5.2, §5.5, §5.6), Layer 6 (§6.4, §6.5, §6.8), 
 - **poltoratski2024** — A. Poltoratski, *Pointwise convergence of the non-linear Fourier transform*, Ann.
   of Math. 199 (2024), 741–793; arXiv:2103.13349 version 14, to which the locators refer. In version 14,
   §9 argues the absence of resonances through the subinterval calculus, the insertion of zero intervals and
-  Lemma 10, in place of the argument through Lemma 11 of the published version, in which mnatsakanyan2022
-  (abstract and line 135–137 of its version 4) reports an error; the moduli that argument compares do not
-  determine the motion of a resonance (§9.4, fourth Check). This roadmap uses §9 for the subinterval
+  Lemma 10. Version 14 has no Lemma 11, the lemma of an earlier arXiv version (cited by mnatsakanyan2022 as
+  the e-print of 2021) in whose proof mnatsakanyan2022 (abstract and line 135–137 of its version 4) reports
+  an error; the moduli that §9 of version 14 compares do not determine the motion of a resonance (§9.4,
+  fourth Check). This roadmap uses §9 for the subinterval
   calculus, Lemma 9 and the deduction (9.9)–(9.10), and states the theorem at resonance-free points.
 - **mauth2022** — L. Mauth, *On pointwise convergence of the non-linear Fourier transform*, arXiv:2210.12286
   v1; the detailed account of poltoratski2024's earlier version, used for Layers 2, 3, 6 and 8 (§§2, 3.1–3.2,

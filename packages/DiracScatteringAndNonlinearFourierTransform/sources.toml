@@ -67,7 +67,7 @@ sha256 = "3e2115456571cc7b950c00ee4d93e62ab53949b188e22746d821cce6cc94e83b"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v14 read (OCR text of an image-only scan); all locators are to v14. Its §9 (subinterval calculus, insertion of zero intervals, Lemma 10) differs from the published version, whose Lemma 11 mnatsakanyan2022 v4 reports to be in error; formulas garbled by OCR are cross-checked against mauth2022 and recomputed in the design"
+version_note = "arXiv v14 read (OCR text of an image-only scan); all locators are to v14, which has Lemmas 1–10 and no Lemma 11. Its §9 (subinterval calculus, insertion of zero intervals, Lemma 10) differs from the argument through Lemma 11 of an earlier arXiv version, which mnatsakanyan2022 v4 cites as the 2021 e-print (its line 1812–1813) and in whose proof it reports an error; formulas garbled by OCR are cross-checked against mauth2022 and recomputed in the design"
 cited_for = ["Scope", "Conventions", "2.8", "3.1", "3.2", "3.3", "4.1", "4.3", "4.4", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "6.1", "6.2", "6.3", "6.5", "6.6", "6.8", "7.1", "7.2", "7.3", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9", "9.1", "9.2", "9.3", "9.4", "9.5", "9.6"]
 
 [[source]]
@@ -184,7 +184,7 @@ title = "Some quantitative estimates for the nonlinear Fourier Transform"
 year = 2022
 arxiv = "2210.00309v4"
 locator_scheme = "section"
-locator = "abstract and §1 (line 9–13, 135–139 of the v4 text)"
+locator = "abstract and §1 (line 9–13, 135–139 of the v4 text); bibliography entry [Pol21] (line 1812–1813)"
 url = "https://arxiv.org/abs/2210.00309v4"
 fetched_from = "https://arxiv.org/pdf/2210.00309v4"
 fetched_at = "2026-11-06T18:20:50Z"
@@ -193,7 +193,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v4"
-cited_for = ["Scope", "References (the error it reports in the published proof of poltoratski2024)"]
+cited_for = ["Scope", "References (the error it reports in the proof of Lemma 11 of an earlier arXiv version of poltoratski2024)"]
 
 [[source]]
 id = "denisov2026"
@@ -202,7 +202,7 @@ title = "Pointwise behavior of SU(1,1) nonlinear Fourier transform"
 year = 2026
 arxiv = "2605.25108v2"
 locator_scheme = "section"
-locator = "§1.2: questions Q1R and Q2R (line 204–212), Theorem 1.4 (line 215–216)"
+locator = "§1.2: setting and normalisation (line 165–195), questions Q1R and Q2R (line 204–212), Theorem 1.4 (line 215–216)"
 url = "https://arxiv.org/abs/2605.25108v2"
 fetched_from = "https://arxiv.org/pdf/2605.25108v2"
 fetched_at = "2026-11-15T19:03:56Z"
