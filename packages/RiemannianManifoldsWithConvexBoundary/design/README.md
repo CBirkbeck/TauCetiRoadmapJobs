@@ -1064,9 +1064,13 @@ With `ε` and `E := E_{∂M}` from 4.3 for `f = ρ`, prove (Stefanov–Uhlmann�
   (tube lemma on `{q} × [−s, s]`), and a partition of unity on `∂M` (second countable because `N`
   is, as for the tube of 4.3) gives a smooth `0 < η < m`, a constant when `∂M` is compact. On the
   rest of the half-tube `r` is still the normal coordinate, but need not be the distance to `∂M`.
-- On `{|r| < ε(q)}`, `(E* g)((u, a), (u', a')) = a a' + h_r(u, u')` with `(h_r)` a smooth family of
-  Riemannian metrics on `∂M` and `h_0 = h`.
-- `II = −½ ∂_r h_r |_{r=0}`.
+- On `{|r| < ε(q)}`, `(E* g)((u, a), (u', a')) = a a' + h_r(u, u')` for `u, u' ∈ T_q∂M`, where
+  `h_r(u, u') := g(dE_{(q, r)}(u, 0), dE_{(q, r)}(u', 0))`, defined for `|r| < ε(q)`, is an inner
+  product on `T_q∂M` (positive definite because `dE_{(q, r)}` is injective) depending smoothly on
+  `(q, r)` in the tube; for each `r` it is a Riemannian metric on the open set
+  `{q ∈ ∂M : ε(q) > |r|}`, which is all of `∂M` when `ε` is constant and `|r| < ε`; and `h_0 = h`
+  on all of `∂M`.
+- `II = −½ ∂_r h_r |_{r=0}` at every `q ∈ ∂M`, the derivative taken in `r ∈ (−ε(q), ε(q))`.
 
 **Checks.**
 
@@ -1091,7 +1095,10 @@ With `ε` and `E := E_{∂M}` from 4.3 for `f = ρ`, prove (Stefanov–Uhlmann�
   vector orthogonal to `e₂`. At `(0.8, 0)` the normal coordinate is `0.8`, but the segment to
   `(1, 0)` lies in `M` and gives `d_M((0.8, 0), ∂M) = 0.2`. With `η = 0.4` on `{x = 0}` and
   `η = 0.005` on `{x = 1}` the distance is `min(x, 1 − x) = r` on the smaller half-tube, which
-  does not contain `(0.8, 0)`.
+  does not contain `(0.8, 0)`. Here `dE(∂_y) = e₂` on both lines, so `h_r = dy²` wherever it is
+  defined, and `−½ ∂_r h_r|₀ = 0 = II`; but for `0.01 ≤ |r| < 0.9`, such as `r = 0.5`, the set
+  `{q : ε(q) > |r|}` is `{0} × ℝ`, so `h_r` is a metric on that component only, not on all of
+  `∂M`.
 
 *Needs:* 1.4, 4.3; GeometricTopology 1.1 (smooth collars); Mathlib `SmoothPartitionOfUnity`.
 

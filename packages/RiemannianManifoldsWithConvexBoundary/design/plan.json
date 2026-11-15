@@ -1282,7 +1282,7 @@
      "id": "4.4",
      "kind": "theorem",
      "name": "boundaryNormalCoordinates",
-     "statement": "E = E_{∂M} restricted to {0 ≤ r < ε(q)} is a diffeomorphism onto the open neighbourhood W ∩ M of ∂M in M (a smooth collar after r = ε(q)s); there is a smooth η : ∂M → (0, ∞) with η ≤ ε, constant when ∂M is compact, such that E({|r| < η(q)}) ⊆ W' (the distance neighbourhood of 4.3.1/4.3.3), hence r = d_M(·, ∂M) on E({0 ≤ r < η(q)}) (route: the largest admissible half-width m(q) ≤ ε(q) is positive and lower semicontinuous by the tube lemma, and a partition of unity gives smooth 0 < η < m); on {|r| < ε(q)}, (E*g)((u, a), (u', a')) = a a' + h_r(u, u') with (h_r) a smooth family of metrics on ∂M, h_0 = h; II = −½ ∂_r h_r|_{r=0}.",
+     "statement": "E = E_{∂M} restricted to {0 ≤ r < ε(q)} is a diffeomorphism onto the open neighbourhood W ∩ M of ∂M in M (a smooth collar after r = ε(q)s); there is a smooth η : ∂M → (0, ∞) with η ≤ ε, constant when ∂M is compact, such that E({|r| < η(q)}) ⊆ W' (the distance neighbourhood of 4.3.1/4.3.3), hence r = d_M(·, ∂M) on E({0 ≤ r < η(q)}) (route: the largest admissible half-width m(q) ≤ ε(q) is positive and lower semicontinuous by the tube lemma, and a partition of unity gives smooth 0 < η < m); on {|r| < ε(q)}, (E*g)((u, a), (u', a')) = a a' + h_r(u, u') for u, u' ∈ T_q∂M, where h_r(u, u') := g(dE_{(q, r)}(u, 0), dE_{(q, r)}(u', 0)), defined for |r| < ε(q), is an inner product on T_q∂M (positive definite as dE_{(q, r)} is injective) depending smoothly on (q, r) in the tube; for each r it is a Riemannian metric on the open set {q ∈ ∂M : ε(q) > |r|}, which is all of ∂M when ε is constant and |r| < ε; h_0 = h on all of ∂M; II = −½ ∂_r h_r|_{r=0} at every q ∈ ∂M, the derivative taken in r ∈ (−ε(q), ε(q)).",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
@@ -1324,7 +1324,7 @@
       {
        "name": "unequal_strips",
        "kind": "non-example",
-       "statement": "ℝ², ρ = x(1 − x), M = [0, 1] × ℝ: radii ε = 0.9 on {x = 0} and 0.01 on {x = 1} satisfy the tube, sign and Gauss conclusions of 4.3.2 (disjoint strips (−0.9, 0.9) × ℝ and (0.99, 1.01) × ℝ), but at (0.8, 0) the normal coordinate is 0.8 while d_M(·, ∂M) = 0.2; with η = 0.4 and 0.005 the distance equals r on the smaller half-tube, which omits (0.8, 0)."
+       "statement": "ℝ², ρ = x(1 − x), M = [0, 1] × ℝ: radii ε = 0.9 on {x = 0} and 0.01 on {x = 1} satisfy the tube, sign and Gauss conclusions of 4.3.2 (disjoint strips (−0.9, 0.9) × ℝ and (0.99, 1.01) × ℝ), but at (0.8, 0) the normal coordinate is 0.8 while d_M(·, ∂M) = 0.2; with η = 0.4 and 0.005 the distance equals r on the smaller half-tube, which omits (0.8, 0); h_r = dy² wherever defined and −½∂_r h_r|₀ = 0 = II, but for 0.01 ≤ |r| < 0.9 (e.g. r = 0.5) {q : ε(q) > |r|} = {0} × ℝ, so h_r is a metric on that component only."
       }
      ]
     },
