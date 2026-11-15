@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LefschetzStructures~13",
+  "head": "2886ce354409967f7eac40badcbe532dcb73e2d8",
+  "pr": 1061,
+  "folder": "LefschetzStructures",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 9f3f7c1. Folder byte-identical; the new commit merges main and changes nothing else. Previous R01 (P3, pull-request description describes an earlier Layer 2 and does not say the PR adds a roadmap) is not repaired and is raised again. Gate: worker's gate passes (build=0); dependency check on the candidate order 0 problems, no UPWARD or CYCLE. Elaboration: exit 0, 12 sorry warnings only. Cross-roadmap citations re-resolved at current heads (MotivesAndAlgebraicCycles 4cfd9b7, DeligneWeightsAndPurity fae1b73, EtaleDualityAndPerverseSheaves 54256cd, main 2248bbb). Adversarial rows: description against README; Lefschetz inverse on Q[xi]/(xi^3), n=2. No sources fetched (no changed passages).",
+  "text": "56e2705980cfcda9"
+ }
+}
