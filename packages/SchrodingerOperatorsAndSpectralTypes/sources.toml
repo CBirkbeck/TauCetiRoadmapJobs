@@ -8,7 +8,7 @@ title = "Mathematical Methods in Quantum Mechanics, with Applications to Schröd
 year = 2009
 venue = "Graduate Studies in Mathematics 99, American Mathematical Society"
 locator_scheme = "section"
-locator = "§2.3 (Theorems 2.12–2.13, (2.68)), Lemma 2.24, §3.3 (Lemmas 3.14–3.16, 3.19, (3.83)–(3.85)), Corollary 4.6, Theorem 4.10, Corollary 4.11, Lemma 6.3, Theorem 6.4, Lemma 6.17, the remark before Lemma 6.22, Theorem 7.8, Lemmas 7.9 and 7.11, (7.26), Theorem 10.2 (decaying potentials), §12.1 (Lemma 12.1, Theorem 12.2)"
+locator = "§1.2 (the standing separability assumption), §2.3 (Theorems 2.12–2.13), §2.4 ((2.68)), Lemma 2.24, Theorem 3.7 (uniqueness of the spectral measure), §3.2 ((3.79), Lemma 3.15), §3.3 (Lemmas 3.16, 3.19, (3.83)–(3.85)), Corollary 4.6, Theorem 4.10, Corollary 4.11, Theorem 4.12(i), Lemma 6.3, Theorem 6.4, Lemma 6.17, the remark before Lemma 6.22, Theorem 7.8, Lemmas 7.9 and 7.11, (7.26), Theorem 10.2 (decaying potentials), §12.1 ((12.3), (12.6), Lemma 12.1, Theorem 12.2)"
 url = "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
 fetched_from = "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
 fetched_at = "2026-11-05T00:43:56Z"
@@ -17,7 +17,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "Author-hosted online edition (GSM 99, 2009); the theorem numbers and line locators are those of the fetched text. The printed lower bound in Theorem 6.4 (6.3) has the denominator a − 1 where the resolvent argument of its proof gives 1 − a; the roadmap states the corrected form."
-cited_for = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "2.1", "2.2", "2.3", "3.4", "3.9", "3.10", "4.1", "4.2", "4.3", "4.4"]
+cited_for = ["Conventions", "1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "2.1", "2.2", "2.3", "3.4", "3.9", "3.10", "4.1", "4.2", "4.3", "4.4"]
 
 [[source]]
 id = "bms02"
@@ -202,11 +202,11 @@ title = "Methods of Modern Mathematical Physics III: Scattering Theory"
 year = 1979
 venue = "Academic Press"
 locator_scheme = "theorem"
-locator = "§XI.3, Theorems XI.7 (Pearson) and XI.8 (Kato–Rosenblum)"
+locator = "§XI.3: the chain rule for wave operators, Theorems XI.7 (Pearson) and XI.8 (Kato–Rosenblum)"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["1.9"]
+cited_for = ["1.7", "1.9"]
 
 [[source]]
 id = "grigoryan09"
@@ -215,10 +215,10 @@ title = "Heat Kernel and Analysis on Manifolds"
 year = 2009
 venue = "AMS/IP Studies in Advanced Mathematics 47"
 locator_scheme = "chapter"
-locator = "Ch. 3–4 (the Laplacian, Green formula, minimal and maximal operators, H¹ and the Dirichlet Laplacian), Ch. 11 (essential self-adjointness on complete manifolds)"
+locator = "Ch. 3 (the Laplace–Beltrami operator of a Riemannian manifold, divergence theorem, Green formula), Ch. 4 (§§4.1–4.2: distributions, Sobolev spaces, H¹ and the Dirichlet Laplacian), Ch. 11 (§§11.2–11.3: Lipschitz functions, essential self-adjointness on complete manifolds)"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled; cited by its locator without the text"
+version_note = "paywalled; cited by its locator without the text; chapter and section numbers checked against the table of contents and preface on the author's page"
 cited_for = ["3.1", "3.4", "3.5", "3.6"]
 
 [[source]]
