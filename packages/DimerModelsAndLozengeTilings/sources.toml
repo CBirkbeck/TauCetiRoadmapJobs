@@ -17,7 +17,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v4"
-cited_for = ["1.1-1.5 lattice, lozenge types and tilings", "1.3 Aggarwal's induced-subgraph domains", "2.1, 2.4 simple connectivity of domains", "2.5-2.7 height functions and boundary heights", "4.4, 5.4, 6.1 Gibbs measures, translation invariance, slope", "9.6-9.7 complex slope, incomplete beta kernel, equation (1.2)", "10.1-10.3 local-statistics convergence and Theorem 1.5"]
+cited_for = ["Conventions: lattice, lozenge types, heights, translations, slope, complex slope, type-1 positions, incomplete beta kernel", "1.1, 1.4, 1.5 lattice, lozenge types and tilings", "1.3 Aggarwal's induced-subgraph domains", "2.1, 2.4 simple connectivity of domains", "2.5-2.7 height functions and boundary heights", "4.4, 5.3, 5.4, 6.1 Gibbs measures, translation invariance, slope", "9.6-9.7 complex slope, incomplete beta kernel, equation (1.2)", "10.1-10.3 local-statistics convergence and Theorem 1.5"]
 
 [[source]]
 id = "sheffield2005"
@@ -36,7 +36,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v3"
-cited_for = ["4.1 tail sigma-algebra", "4.2, 4.3, 4.6, 5.4 invariant events, ergodicity, face property", "4.5 specifications and Gibbs measures", "6.3 ergodic Gibbs measures on the boundary of the slope triangle"]
+cited_for = ["4.1 tail sigma-algebra", "4.2, 4.3, 4.6, 5.3, 5.4 invariant events, ergodicity, face property", "4.5 specifications and Gibbs measures", "6.3 ergodic Gibbs measures on the boundary of the slope triangle"]
 
 [[source]]
 id = "kos2006"
@@ -54,7 +54,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1"
-cited_for = ["2.10 gauge and magnetic invariance", "5.2-5.3 dimer Gibbs measures", "6.1 slope", "7.1-7.3 height change and torus measures", "8.4-8.5 torus correlations and Fourier form", "9.1-9.5 infinite inverse Kasteleyn kernel, subsequential torus limits, decay, existence"]
+cited_for = ["2.1, 2.10 the flow form of the height function; gauge and magnetic invariance", "4.6, 5.2-5.3 dimer Gibbs measures", "6.1 slope", "7.1-7.3 height change and torus measures", "8.3-8.5 the torus partition function, torus correlations and Fourier form", "9.1-9.5 infinite inverse Kasteleyn kernel, subsequential torus limits, decay, existence"]
 
 [[source]]
 id = "kenyon2009"
@@ -72,7 +72,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1"
-cited_for = ["1.2, 1.5 dimer coverings", "2.3, 2.5 heights and flows", "2.8, 3.2 flips and Kasteleyn's theorem on the honeycomb", "3.3 local statistics and the Jacobi lemma it uses", "5.1-5.4 Gibbs measures and the lozenge instance", "6.2-6.4 corners, edges, the fibre argument corrected in 6.4", "7.1, 8.2-8.5 torus counts, signs, eigenvalues", "9.1-9.5 inverse Kasteleyn matrix and angles"]
+cited_for = ["1.2, 1.5, 1.6 dimer coverings; the boundary slopes of Exercise 13", "2.3, 2.5, 2.10 heights and flows; type weights depend on the height change only and leave planar Boltzmann measures unchanged", "2.8, 3.1, 3.2 Boltzmann measures, flips and Kasteleyn's theorem on the honeycomb", "3.3 local statistics and the Jacobi lemma it uses", "4.6, 5.1-5.4 Gibbs measures and the lozenge instance", "6.1-6.4 slope, corners, edges, the fibre argument corrected in 6.4", "7.1-7.3, 8.2, 8.3, 8.5 torus counts, torus measures and their limits, signs, eigenvalues", "9.1-9.5 inverse Kasteleyn matrix and angles", "10.1-10.2 Gibbs measures as limits of Boltzmann measures on growing graphs", "Downstream consumers: Gaussian free field fluctuations (Section 6.3)"]
 
 [[source]]
 id = "okounkov-reshetikhin2003"
@@ -90,7 +90,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v3"
-cited_for = ["9.6 incomplete beta kernel", "9.7 determinantal formula and residue identity"]
+cited_for = ["Conventions, 9.6 incomplete beta kernel", "9.7 determinantal formula and residue identity"]
 
 [[source]]
 id = "cohn-kenyon-propp2001"
@@ -145,7 +145,7 @@ sha256 = "03583d9a62340174fe2ff8840a20ed27a80d83e47e98c3a61a840ffefbcd123e"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-04"
-cited_for = ["1.1-1.5 the six lattice directions, dual hexagonal graph and tilings", "1.6 extreme slopes, for the row tilings", "2.1-2.9 heights, flips, Thurston's criterion", "3.1-3.3 Kasteleyn theory on simply connected regions", "4.4, 4.6, 5.2-5.4 correlation functions, Gibbs and ergodic measures, the lozenge cylinder form and the two notions of ergodicity", "6.1-6.3 slope, extreme slopes, the frozen measures of Exercises 13.3 and 13.9", "7.1, 7.3 torus tilings and their height changes; the weighted torus computation read as a local limit (Section 13.4)", "8.1-8.5 torus Kasteleyn theory and Fourier diagonalisation", "9.1-9.7 asymptotics, angles, correlations of ergodic Gibbs measures, discrete sine kernel", "10.1-10.2 local limits of uniform tilings of growing regions"]
+cited_for = ["Conventions: the height convention and the torus Kasteleyn convention (Definition 3.9)", "1.1, 1.2, 1.4, 1.5 the six lattice directions, dual hexagonal graph and tilings", "1.6 extreme slopes, for the row tilings", "2.1, 2.2, 2.5-2.9 heights, flips, Thurston's criterion", "3.1-3.3 Kasteleyn theory on simply connected regions", "4.4, 4.6, 5.1-5.4 configuration space, correlation functions, Gibbs and ergodic measures, the lozenge cylinder form and the two notions of ergodicity", "6.1-6.3 slope, extreme slopes, the frozen measures of Exercises 13.3 and 13.9", "7.1, 7.3 torus tilings and their height changes; the weighted torus computation read as a local limit (Section 13.4)", "8.1-8.5 torus Kasteleyn theory and Fourier diagonalisation", "9.1-9.3, 9.5, 9.7 asymptotics, angles, correlations of ergodic Gibbs measures, discrete sine kernel", "10.1-10.2 local limits of uniform tilings of growing regions", "Downstream consumers: Gaussian free field fluctuations (Lectures 11-12)"]
 
 [[source]]
 id = "thurston1990"
