@@ -28,8 +28,8 @@ The headline theorems, with what each lacks:
 * Explicit motivic K-theory (README §7.6): on a nondiscrete algebraically closed nonarchimedean
   field `C` of residue-characteristic exponent `p`, `Kmot(C) ≃ cofib(K(C_{<1}) → K(C))[1/p]`.
   Lacks nonunital K-theory spectra and `Kmot`.
-* Torsion and tilting comparisons (README §§4.8, 4.9, 8.3). Lacks `Deff_mot`, `Dmot` and the
-  étale derived ∞-category.
+* Torsion and tilting comparisons (README §§4.8, 4.9, 8.3). Lacks `Dfin`, its étale subcategory
+  `Det` (README §1.8), `Deff_mot` and `Dmot`.
 * Six operations and proper base change (README §§8.5, 9.4). Lacks `Dmot` and six-functor
   formalisms.
 * Rigidity (README §§9.1, 9.6): `Dmot(C)` is compactly generated with compact objects the
@@ -42,7 +42,7 @@ The headline theorems, with what each lacks:
   `N : A → A ⊗ ℚ(−1)` locally nilpotent. Lacks `Dmot` and the motivic Galois stacks.
 * Overconvergent comparison (README §12.3): prime-to-`p` torsion motives on `a′^* X` are the
   overconvergent étale sheaves on a small v-stack `X`. Lacks small v-stacks, their étale derived
-  ∞-categories and `Dmot`.
+  ∞-categories `D_ét`, and `Det` and `Dmot` of arc-stacks.
 -/
 
 namespace TauCetiRoadmap.MotivesAndAlgebraicCyclesPartII
