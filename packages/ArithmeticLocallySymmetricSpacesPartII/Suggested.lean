@@ -30,7 +30,10 @@ Headline theorems of the README that are not statable at the pins:
   this homology.
 * The sharp bound for cusp forms, `dim S_κ(K_f) ≤ C Δ(κ) / min_v κ_v` at an arbitrary compact
   open `K_f ⊂ SL₂(𝔸_F^∞)` (README §4.2), and its parallel-weight and Bianchi corollaries
-  (§§4.3–4.4). The adelic space of cusp forms of archimedean weight `κ` does not exist at the pins.
+  (§§4.3–4.4). Its carrier `S_κ(K_f)` (README §4.1), the multiplicity space of the archimedean
+  type that is holomorphic at every real place in the `K_f`-invariant cuspidal spectrum of
+  `SL₂(F)\SL₂(𝔸_F)`, does not exist at the pins: neither the cuspidal spectrum nor the discrete
+  series and principal series of `SL₂(ℝ)` and `SL₂(ℂ)` do.
 * The cuspidal, interior and compact-support forms of the Bianchi two-sided bound (README §5.8).
   The Borel–Serre quotient, its compactly supported cohomology, the interior image and the
   cuspidal subspace do not exist at the pins.

@@ -1920,70 +1920,10 @@
   ],
   "gaps": [
     {
-      "slug": "flat-microlocalisation",
-      "supplier": "NoncommutativeAndEquivariantIwasawa",
-      "section": "Layer 0, after §0.15",
-      "needs": "For odd p and G the product of m≥1 first-congruence SL₂(ℤ_p) groups, construct the rationalized p-adic completed enveloping algebra Û of sl₂(ℤ_p)^m and its natural algebra map A→Û, flat as a right A-module.",
-      "neededBy": [
-        "ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound"
-      ],
-      "source": "fu24, (17)–(18), p. 14; aw13, §§10.2–10.4",
-      "checks": [
-        "For g=1+pe in one factor, its image is exp(pe), which acts on Sym¹ by the same matrix 1+pe.",
-        "For M=A, Û⊗_A M=Û; for M=0 it is zero, so the extension is unital and respects the zero module.",
-        "For a ramified coefficient extension of index e≥2, p∈𝔪² and 0∈p+𝔪²; the displayed denominator set is used over ℤ_p, then extended by flat scalar change."
-      ]
-    },
-    {
-      "slug": "algebraic-quotient-comparison",
-      "supplier": "NoncommutativeAndEquivariantIwasawa",
-      "section": "Layer 0, after §0.15",
-      "needs": "For finitely generated left A-module M and W_k, the natural map M/Ann_A(W_k)M→(Û⊗_A M)/Ann_Û(W_k)(Û⊗_A M) is an isomorphism, natural in M.",
-      "neededBy": [
-        "ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound"
-      ],
-      "source": "fu24, Theorem 4.3, p. 15",
-      "checks": [
-        "For M=A and k=(1,2), both quotients are End(W_k) of dimension 36, by Layer 0’s rational action quotient.",
-        "For M=0 both quotients have dimension zero; for M=W_k both have dimension D(k+1).",
-        "For M=A/Aδ the comparison identifies the two Hom multiplicities into W_k; δ=1 gives zero on both sides."
-      ]
-    },
-    {
-      "slug": "integral-central-faithfulness",
-      "supplier": "NoncommutativeAndEquivariantIwasawa",
-      "section": "Layer 0, after §0.15",
-      "needs": "For every λ∈ℤ_p^m the composite A→Û→Û/(Δ_i−λ_i)_i is injective, using Δ_i=½h_i²−h_i+2e_if_i and a finite coefficient extension followed by descent when needed.",
-      "neededBy": [
-        "ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound"
-      ],
-      "source": "aw14, Theorems 4.6 and 5.4, pp. 11, 16",
-      "checks": [
-        "For p=3 and λ=1, the equation ½μ(μ+2)=λ has μ=−1±√3 after a finite extension; 1+2λ=3 is not a square in ℚ₃.",
-        "For k=0 and k=1 the algebraic Casimir values are 0 and 3/2; reversing ef to fe without the compensating linear term changes the latter value.",
-        "For a nonzero element a∈A, faithful scalar extension sends a to a nonzero element; injectivity after a finite extension therefore descends to ℚ_p."
-      ]
-    },
-    {
-      "slug": "generic-cyclic-growth",
-      "supplier": "NoncommutativeAndEquivariantIwasawa",
-      "section": "Layer 0, after §0.15",
-      "needs": "For δ∈Û whose image is nonzero in every integral central reduction, there is α∈ℕ^m with α_i≥1 such that dim Hom_Û(Û/Ûδ,W_k)≤2Σ_iα_i∏_{j≠i}(k_j+1) for every k∈ℕ^m.",
-      "neededBy": [
-        "ArithmeticLocallySymmetricSpacesPartII:WM.1/cyclic-torsion-bound"
-      ],
-      "source": "fu24, Lemma 3.3, Proposition 3.4 and Theorem 3.2, pp. 8–11",
-      "checks": [
-        "In the PBW rectangle at d=(1,2), the central-reduction rank is (1+1)²(2+1)²=36; at d=0 it is 1.",
-        "For α=(3,3) and k=(1,t), the small-coordinate strip has dim Hom≤2(t+1), while the stated bound is 6(t+1)+12.",
-        "For m=1 and k≥α, ((k+1)²−(k−α+1)²)/(k+1)=2α−α²/(k+1)≤2α; δ=0 fails genericity and would give k+1."
-      ]
-    },
-    {
       "slug": "skew-rank",
       "supplier": "NoncommutativeAndEquivariantIwasawa",
       "section": "§F.1",
-      "needs": "For a two-sided noetherian domain R, construct its classical Ore division ring Q(R) and the finite skew rank dim_{Q(R)}(Q(R)⊗_R M) on finitely generated left R-modules, additive on exact sequences, zero exactly for torsion modules and equal to a on R^a.",
+      "needs": "For a left noetherian domain R, with Mathlib's left Ore set R⁰, classical division ring Q(R)=R[R⁰⁻¹] and localised modules M[R⁰⁻¹], define the skew rank rank_R M=dim_{Q(R)} M[R⁰⁻¹] of a finitely generated left R-module M and prove that it is finite, additive on short exact sequences (by the exactness of §1.12), zero exactly when every element of M is killed by a nonzero element of R, and equal to a on R^a.",
       "neededBy": [
         "ArithmeticLocallySymmetricSpacesPartII:WM.1/torsion-filtration",
         "ArithmeticLocallySymmetricSpacesPartII:WM.2/free-approximation"
@@ -1998,15 +1938,17 @@
     {
       "slug": "canonical-dimension-zero",
       "supplier": "NoncommutativeAndEquivariantIwasawa",
-      "section": "§F.1",
-      "needs": "For a nonzero finitely generated rational Iwasawa module in the semisimple congruence-kernel setting of aw13 §10.12, including deformation index zero, canonical dimension zero is equivalent to finite dimension over the coefficient field.",
+      "section": "§0.12",
+      "needs": "For p odd, m≥1, G=∏_{i=1}^m ker(SL₂(ℤ_p)→SL₂(𝔽_p)), of dimension 3m, and A=ℚ_p⊗_{ℤ_p}ℤ_p[[G]], Auslander regular of global dimension 3m by §0.12, define the grade j_A(M) of a nonzero finitely generated left A-module M as the least i with Ext^i_A(M,A)≠0 and its canonical dimension as 3m−j_A(M), and prove that the canonical dimension of M is 0 if and only if dim_{ℚ_p} M is finite.",
       "neededBy": [
         "ArithmeticLocallySymmetricSpacesPartII:WM.2/canonical-dimension-zero"
       ],
-      "source": "aw13, Lemma 10.13, p. 77",
+      "source": "aw13, §2.5, Definition, p. 9, for grade and canonical dimension; Lemma 10.13, p. 77, for the equivalence",
       "checks": [
-        "For M=W_k, canonical dimension is 0 and coefficient-field dimension is D(k+1), not necessarily 1.",
-        "For M=A, canonical dimension is 3m>0 and coefficient-field dimension is infinite; rank_A A=1 is a different invariant.",
+        "For M=W_k, j_A(W_k)=3m, so the canonical dimension is 0, and dim_{ℚ_p}W_k=D(k+1), not necessarily 1.",
+        "For M=A, Hom_A(A,A)=A≠0 gives j_A(A)=0 and canonical dimension 3m>0, and A is infinite dimensional; rank_A A=1 is a different invariant.",
+        "For M=A/Aδ with δ a nonzero non-unit, right multiplication by δ gives the resolution 0→A→A→M→0; as A is a domain Hom_A(M,A)=0, and Ext¹_A(M,A)=A/δA≠0, so j_A(M)=1, the canonical dimension is 3m−1≥2 and M is infinite dimensional.",
+        "For the lattice W_k⁰ over ℤ_p[[G]], of global dimension 3m+1 (§0.11), the grade is that of the finite module W_k⁰/p over 𝔽_p[[G]] (§F.1), namely 3m, so the integral canonical dimension of §0.11 is (3m+1)−3m=1, while the rational value for W_k is 3m−3m=0: the criterion is the rational normalisation, and the integral one would never return 0 for a nonzero lattice.",
         "The zero module has all multiplicities zero and is excluded from the nonzero canonical-dimension equivalence."
       ]
     }
