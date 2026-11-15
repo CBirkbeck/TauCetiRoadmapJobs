@@ -21,10 +21,11 @@ place.
   and the descent of the weight-four cobracket: the pins have no carrier for the
   Goncharov–Rudenko group `L₄(F)`, the quotient of single and double symbols by the heptagon
   relation and its iterated one-parameter specializations, nor for the rational pre-Bloch group.
-* The realization of the combinatorial Lie coalgebra by motivic correlators, base-point change,
-  depth reduction and the period of every explicit cycle in the motivic Lie coalgebra: the pins
-  have no mixed Tate motives over a number field, no motivic fundamental groupoid of a punctured
-  line and no framed mixed Hodge–Tate structures.
+* The realization of the combinatorial Lie coalgebra by motivic correlators over a number field
+  and by Hodge correlator variations over a smooth complex variety, base-point change, depth
+  reduction and the period of every explicit cycle in the motivic Lie coalgebra: the pins have no
+  mixed Tate motives over a number field, no motivic fundamental groupoid of a punctured line, no
+  framed mixed Hodge–Tate structures and no variations of mixed Hodge structures.
 * Collision continuity of Hodge correlators: the pins have no Hodge correlator integrals over
   plane trivalent trees.
 * The Grassmannian configuration chain map and the generic polylogarithmic Chern cocycle: the pins
