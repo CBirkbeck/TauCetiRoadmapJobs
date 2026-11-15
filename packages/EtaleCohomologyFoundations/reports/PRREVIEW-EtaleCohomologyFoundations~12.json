@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EtaleCohomologyFoundations~12",
+  "head": "0cefadf5294f1ede02d311710867f2c5bdce5126",
+  "pr": 1891,
+  "folder": "EtaleCohomologyFoundations",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 0cefadf; prior closures verified; PR title and description compared with base-to-head changes, retained signatures and supplier changes; seeded sample unchanged; computed Artin-vanishing, Frobenius, Euler-characteristic and trace witnesses; gate, dependency check, targeted build and direct Lean elaboration passed. Three P3 findings concern PR description only.",
+  "text": "b127790fb6b4ac55",
+  "carried": {
+   "from": "0cefadf5294f1ede02d311710867f2c5bdce5126",
+   "head": "0cefadf5294f1ede02d311710867f2c5bdce5126",
+   "findings": 3,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
