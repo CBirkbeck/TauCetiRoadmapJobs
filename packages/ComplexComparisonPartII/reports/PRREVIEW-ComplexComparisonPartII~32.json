@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComplexComparisonPartII~32",
+  "head": "a021e44d9bebb9e766285215c49d7a14fc28ce8c",
+  "pr": 848,
+  "folder": "ComplexComparisonPartII",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 2,
+  "notes": "incremental re-review of 9 changed lines since fcf31bc (net of c7c7c50b; db79c469 and a021e44d cancel). Previous review had no finding. Changed passages: ReductiveGroups contract (README 785-788) and C-1.1 sentence (1066-1069). R01 (P2): deferral scoped to smooth affine G while ReductiveGroups on main (single owner since 2026-11-10, 1781, 6231) owns 3A.5c-3A.5e for every locally finite-type X, smooth X and finite-type G; elliptic curve witness. R02 (P2): C5.4 single-owner claim (149, 93-96, 3998-4006, 5297-5301) duplicates ComplexKahlerGeometry K4.P on main (1271-1275, merged 2026-11-10 after the fcf31bc review); conventions agree on P1. R03 (P3): C-1.1 Needs, Layer C-1 Dependencies and Scope lack ReductiveGroups. Description (step 8): R04 (P3) names GlobalHolomorphicFunctions, PadicMeasuresIwasawaAlgebras, RigidAnalyticGeometry (0 README hits) and AdicSpacesPartII (excluded scope only), omits the added ReductiveGroups supplier; R05 (P3) ownership paragraph contradicted by main ComplexKahlerGeometry K4.P. Gate (own run) all 0, OK; depcheck 245 roadmaps, 2217 edges, 0 problems, no UPWARD/CYCLE/moved; lake env lean exit 0, four sorry warnings, Suggested.lean unchanged since fcf31bc; nothing outside the folder. Seeded sample: none in the changed passages; verification at fcf31bc stands. Source independence: changed passages only, 2 passages vs sga1 XII 1 and ReductiveGroups 3A.5, none shared.",
+  "text": "04f31d8dd703a2f3"
+ }
+}
