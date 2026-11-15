@@ -2796,12 +2796,6 @@
       "section": "§§0.4–0.5 and 3.7"
     },
     {
-      "slug": "galois-period-hom-vanishing",
-      "needs": "Provide the continuous G_L-equivariant vanishing Hom(C,B_dR)=0 and Hom(tʲB_dR⁺/tᵏB_dR⁺,B_dR)=0 for integers j<k and finite extensions L/K, with compatible topologies, density and Tate twists, as in CN25 Proposition 2.14(iv), for every complete discretely valued K of characteristic zero with perfect countable residue field.",
-      "supplier": "PadicHodgeTheory",
-      "section": "§§0.1–0.3 and 3.7"
-    },
-    {
       "slug": "period-lattice-gluing",
       "needs": "Provide effective gluing of a finite projective B_e-module to a full B_dR⁺ lattice over their identified B_dR realization, compatibly with tensor, dual and cohomology, and identify the bounded simultaneous period eigenspace for every finite (φ,N)-module of slopes in [0,r] with the sections of its nonnegative-slope modification.",
       "supplier": "VectorBundlesAndIsocrystals",
