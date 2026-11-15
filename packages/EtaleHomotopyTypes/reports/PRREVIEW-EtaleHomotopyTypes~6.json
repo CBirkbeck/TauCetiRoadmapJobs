@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EtaleHomotopyTypes~6",
+  "head": "eb2290ed9facf0a351aa3077cba3b413cd5b32be",
+  "pr": 1806,
+  "folder": "EtaleHomotopyTypes",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "incremental re-review of 130 changed lines since 62169a7. Previous R01 and R02 (description) repaired. Checked: the new section 3.0b, the Lean definition and the two product-formula theorems (degenerate instances computed, one-tactic probe: neither closes), 48 library locators at the pins, 4 source locators (SGA1, SS; seeded sample 3.9a), title and description against the head, elaboration (two sorry warnings only), gate OK, depcheck 0 problems. One finding (P2): the induced homomorphism of finite etale fundamental groups of section 3.0b is also stated by the open revision of EtaleCohomologyFoundations F.0.2, the owner on main.",
+  "text": "ed95d4f1f094674d"
+ }
+}
