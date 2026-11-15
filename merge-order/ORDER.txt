@@ -157,6 +157,7 @@ LieGroupoidsPoisson
 GeometricQuantization
 AbelianSchemesAndArithmeticModuliPartII
 NoncompactQuantumSymmetry
+CountableStructureSpacesPartII
 CongruenceSpectralGap
 MaassForms
 CharacterSumsOverFiniteFields
