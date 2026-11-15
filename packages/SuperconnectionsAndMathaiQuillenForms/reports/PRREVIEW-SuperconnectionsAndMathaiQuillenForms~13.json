@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SuperconnectionsAndMathaiQuillenForms~13",
+  "head": "907c8303433e950c5df554995248b3172bee1ca4",
+  "pr": 2297,
+  "folder": "SuperconnectionsAndMathaiQuillenForms",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Incremental re-review of 0 changed lines since ef75c28; the head only merges main, the pins are unchanged and nothing outside the folder differs from main. The description was checked against the head (step 8). One P3 finding: the description says the targets cite Quillen 1988 only through its zbMATH review and that its section and page are not given, but README.md:1062 and 1113-1115 give section 2 p. 214, Prop. 2.1 p. 215, (5.1) and Prop. 5.2 p. 222, and Prop. 5.5 pp. 222-223. The rest of the description agrees with the head: files, imports, 16 sorried theorems, 49 declarations, the supplier list, GeneralizedCohomology G4.0b on main 276e711, and 24 library names at the pins. 5 Garcia2018 and Wu2006 locators named in the description were checked against the texts. Adversarial rows computed for 6.1 (T = 2, g = -1) and for the 6.2 factor 2^(2k+1) and the CP^1 case. Gate: worker run all 0, OK; a rerun against the public order reports only NOT IN ORDER (a new roadmap). depcheck: 0 problems, no UPWARD or CYCLE. lake env lean: 16 sorry warnings and nothing else. Overlap check: nothing shared.",
+  "text": "aaf036ef5ff5d66a"
+ }
+}
