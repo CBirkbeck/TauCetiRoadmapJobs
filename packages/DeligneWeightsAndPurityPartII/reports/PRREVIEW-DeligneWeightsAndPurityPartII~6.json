@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DeligneWeightsAndPurityPartII~6",
+  "head": "71dd6697eaf843f64991129e83376a0691bccf09",
+  "pr": 1760,
+  "folder": "DeligneWeightsAndPurityPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 22 changed lines since f44c08c; both previous findings (R01 projectivity notion, R02 description sentence) repaired; changed passages checked against the pinned Tau Ceti (IsProjectiveOver, SymmetricAlgebra grading, Fan.projectiveSpace, projectiveSpaceToProj) and SCH12 lines 239, 2373, 2386, 2589; seeded target 4.7 checked, the other fourteen untouched; title and description agree with the head; gate passes (all counters 0, build 0), depcheck 0 problems, Suggested.lean elaborates with no output; adversarial table has six rows with computed values",
+  "text": "614dbaade76c9541"
+ }
+}
