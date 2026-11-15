@@ -297,7 +297,7 @@ For `N = 1` everything reduces to free transport; for `N = 2` on `E` the contact
 
 ### Dependencies
 
-Layers 1–2.
+Layers 1–2; Mathlib (relabelling of product measures, null spheres, `Flow`, `MeasureTheory.MeasurePreserving`); Tau Ceti `TauCeti.flowOfLipschitz` (§3.4).
 
 ## Layer 4: The two-body problem
 
@@ -379,7 +379,7 @@ The two-body problem in relative coordinates is the billiard outside the ball of
 
 ### Dependencies
 
-Layers 1–3.
+Layers 1–3; Mathlib (Euclidean space, block determinants, the Lebesgue change of variables, null spheres and proper subspaces).
 
 ## Layer 5: Hard-sphere trajectories
 
@@ -594,7 +594,7 @@ The flow preserves the σ-finite measure `λ_N|𝒟̄`. For `N ≥ 1` its total 
 
 ### Dependencies
 
-Layers 5–6.
+Layers 5–6; Mathlib (composition operators on `Lp`, density of compactly supported continuous functions, measures on sigma types); Tau Ceti `TauCeti.Semigroups.StronglyContinuousGroup` (§7.4); ClassicalErgodicTheory §3.5 (items 1 and 3).
 
 ## Layer 8: Densities, the Liouville equation and marginals
 
@@ -662,7 +662,7 @@ For the canonical measure of §9.2 every marginal is constant in time; for a pro
 
 ### Dependencies
 
-Layer 7.
+Layer 7; Mathlib (the fundamental theorem of calculus, `Nat.descFactorial`, relabelling of product measures); ClassicalErgodicTheory §3.5 (item 4).
 
 ## Layer 9: Equilibria and grand canonical ensembles
 
@@ -755,7 +755,7 @@ On the unit torus, the Maxwellian grand canonical measure is the hard-sphere gas
 
 ### Dependencies
 
-Layers 7–8.
+Layers 7–8; Mathlib (Gaussian integrals and laws, `Nat.descFactorial`, `ProbabilityTheory.poissonMeasure`); Tau Ceti `TauCeti.Probability.multivariateGaussianPDFReal` and `TauCeti.Probability.multivariateGaussian_eq_withDensity` (§9.1); ClassicalErgodicTheory §3.5 (item 3).
 
 ## Layer 10: The Boltzmann–Grad limit
 
@@ -838,7 +838,7 @@ In dimension `d ≥ 2` the stationary Maxwellian gas on the unit torus satisfies
 
 ### Dependencies
 
-Layers 7–9.
+Layers 7–9; Mathlib (the sphere measure, Gaussian integrals, Chebyshev's inequality); Tau Ceti `TauCeti.Probability.empiricalMeasureOfFintype` (§10.1).
 
 ## Downstream consumers
 
