@@ -222,6 +222,7 @@ QuantumFoundations
 SchrodingerOperatorsAndSpectralTypes
 StochasticCalculus
 RelativisticQuantumFieldTheory
+ConstructiveFieldTheoryPhi4
 RicciFlow
 QuaternionicAnalysis
 ImplicitAtlases
