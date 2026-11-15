@@ -1374,21 +1374,26 @@ over `k` (so smooth of relative dimension `d`, §0.3), then `X^{(i)} ≅ X ≅ Y
 
 ### 7.2 Open subschemes propagate
 
-Prove *iterate_openSubscheme*: for `Y` in the Setting, an open `U ⊆ Y` and a `k`-isomorphism `U ≅ Z`, the `i`-th
-Nash iterate of `Y` contains an open subscheme `k`-isomorphic to the `i`-th Nash iterate of `Z`, for every `i`; the
-same holds for the normalised iterates. Consequently, if `Y_m` contains an open subscheme `k`-isomorphic to `X` for
-some `m ≥ 1`, then `Y_{m+i}` contains an open subscheme isomorphic to `Y_i` for all `i`, and `Y_{jm}` contains one
-isomorphic to `X` for all `j ≥ 1`; likewise for the `X^{(i)}` (castilloDuarteLeytonLiendo2026, Theorem, lines
-58–67: the consequence drawn there from items (i)–(iii) uses this propagation without stating it). Route: §2.6 and
-§6.3 (locality), and the transport of Nash blowups along `k`-isomorphisms (§2.4 uniqueness).
+Prove *iterate_openSubscheme*: for `W` in the Setting, an open `U ⊆ W` and a `k`-isomorphism `U ≅ Z`, the `i`-th
+Nash iterate of `W` contains an open subscheme `k`-isomorphic to the `i`-th Nash iterate of `Z` (both taken with the
+`d` of the Setting), for every `i`; the same holds for the normalised iterates. Consequently, for `X` in the Setting
+with normalised iterates `Y_i` (§7.1), if `Y_m` contains an open subscheme `k`-isomorphic to `X` for some `m ≥ 1`,
+then `Y_{m+i}` contains an open subscheme `k`-isomorphic to `Y_i` for all `i`, and `Y_{jm}` contains one
+`k`-isomorphic to `X` for all `j ≥ 1`; likewise for the Nash iterates `X^{(i)}` (§2.7) when `X^{(m)}` contains an
+open subscheme `k`-isomorphic to `X` (castilloDuarteLeytonLiendo2026, Theorem, lines 58–67: the consequence drawn
+there from items (i)–(iii) uses this propagation without stating it). Route: §2.6 and §6.3 (locality), and the
+transport of Nash blowups along `k`-isomorphisms (§2.4 uniqueness); for the consequence, take `W = Y_m` (in the
+Setting by §7.1) and `Z = X`, use that the `i`-th normalised iterate of `Y_m` is `Y_{m+i}` (§7.1), and induct on
+`j`, an open subscheme of an open subscheme being open.
 
 **Checks.**
 
-- For `U = Y`, the statement is the identity.
+- For `U = W` and `Z = W`, the statement is the identity.
 - For the cusp in characteristic `2`, `X^{(1)} ≅ X`, and the conclusion `X^{(j)} ⊇ X` holds for all `j`.
-- For `U = Y_sm`, the iterates of `U` are `U` itself, consistent with `ν⁻¹(Y_sm) ≅ Y_sm`.
+- For `U = Z = W_sm`, the iterates of `U` are `U` itself (§7.1, `U` being smooth and in the Setting), consistent with
+  `ν⁻¹(W_sm) ≅ W_sm`.
 
-*Needs:* §§2.4, 2.6, 6.3, 7.1.
+*Needs:* §§2.4, 2.6, 2.7, 6.3, 7.1.
 
 ### 7.3 The never-resolves principle
 
@@ -1428,8 +1433,7 @@ A toric roadmap computing Nash blowups of normal toric varieties through logarit
 (castilloDuarteLeytonLiendo2026, Section 1; nashModificationNotes2024, Section 6) consumes §1.2, §§2.1–2.6, §3.2,
 Layer 6 and §7.3, and proves the existence of the dimension-four examples. A Part II on higher-order Nash blowups and on
 the normalised Nash transformation of surfaces consumes §§1.2–1.5, Layer 2 and Layer 6. Roadmaps on polar varieties and
-Whitney conditions consume the Nash cotangent bundle of §2.1 and the Gauss map of §3.1. ResolutionOfSingularitiesCharacteristicZero
-is earlier in the merge order and is not a consumer.
+Whitney conditions consume the Nash cotangent bundle of §2.1 and the Gauss map of §3.1.
 
 ## References
 

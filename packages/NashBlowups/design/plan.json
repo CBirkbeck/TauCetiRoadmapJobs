@@ -1624,11 +1624,12 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "AlgebraicGeometry.iterate_openSubscheme",
-     "statement": "For Y in the Setting, U ⊆ Y open and a k-isomorphism U ≅ Z, the i-th (normalised) Nash iterate of Y contains an open subscheme k-isomorphic to that of Z; so if Y_m ⊇ U ≅ X with m ≥ 1, then Y_{m+i} contains a copy of Y_i and Y_{jm} a copy of X for all j ≥ 1, and likewise for X^{(i)}.",
+     "statement": "For W in the Setting, U ⊆ W open and a k-isomorphism U ≅ Z, the i-th (normalised) Nash iterate of W contains an open subscheme k-isomorphic to that of Z, both with the d of the Setting; consequently, for X in the Setting with normalised iterates Y_i (7.1), if Y_m contains an open subscheme k-isomorphic to X for some m ≥ 1, then Y_{m+i} contains one k-isomorphic to Y_i for all i and Y_{jm} one k-isomorphic to X for all j ≥ 1, and likewise for the Nash iterates X^{(i)} (2.7) when X^{(m)} contains one k-isomorphic to X.",
      "hypotheses": [
-      "Y in the Setting",
-      "U ⊆ Y open",
-      "U ≅ Z over k"
+      "W in the Setting",
+      "U ⊆ W open",
+      "U ≅ Z over k",
+      "for the consequence: X in the Setting, m ≥ 1, and an open subscheme of Y_m (resp. X^{(m)}) k-isomorphic to X"
      ],
      "locator": {
       "source": "castilloDuarteLeytonLiendo2026",
@@ -1637,6 +1638,7 @@
      "prerequisites": [
       "target:2.4",
       "target:2.6",
+      "target:2.7",
       "target:6.3",
       "target:7.1"
      ],
@@ -1644,7 +1646,7 @@
       {
        "name": "open_self",
        "kind": "degenerate",
-       "statement": "U = Y: identity"
+       "statement": "U = Z = W: identity"
       },
       {
        "name": "cusp_char2_copies",
@@ -1654,7 +1656,7 @@
       {
        "name": "smoothLocus_iterates",
        "kind": "compatibility",
-       "statement": "U = Y_sm: the iterates of U are U"
+       "statement": "U = Z = W_sm: the iterates of U are U (7.1), consistent with ν⁻¹(W_sm) ≅ W_sm"
       }
      ]
     },
