@@ -586,14 +586,19 @@ through a maximal spectral measure, and (1) and (2), which assume none, are dedu
 
 Route: (1) by 1.3, `λ ∈ σ(A_ac)` iff `P_A(I_ε) P_ac ≠ 0` for every interval `I_ε` around `λ`, iff
 some `f` has `μ_{P_ac f}(I_ε) > 0`, and 1.2 rewrites `μ_{P_ac f}`; a single `f` is obtained by
-choosing, for `ε = 1/n`, vectors `P_A(J_m) f_n` supported on disjoint annuli
-`J_m = I_{1/m} ∖ I_{1/(m+1)}` (absolute continuity gives `μ_{f_n}({λ}) = 0`, so some annulus is
-charged) and summing them with nonzero square-summable weights, using spectral orthogonality.
-(2) an isolated `λ` would force `P_A(I_ε) P_ac = P_A({λ}) P_ac`, and `μ_{P_ac f}({λ}) = 0` for all
-`f`. (3) from (1) and `μ_{P_ac f} ≪ μ_{P_ac ψ}`. (4) from the countable orthogonal cyclic
-decomposition of SA-B85 (its nondegenerate `C₀(ℝ)` case, applied to the bounded calculus
-`f ↦ ∫ f dP_A` of SA-B44) with weights `ε_j ≠ 0`, `Σ |ε_j|² = 1` (teschl line 4354–4366). *Needs:*
-1.1–1.3; SelfAdjointSpectralTheory SA-B85, SA-D12; UnboundedOperators UO-C01, UO-C03.
+choosing, for `ε = 1/n`, vectors `P_A(J_m) P_ac f_n` supported on the annuli
+`J_m = I_{1/m} ∖ I_{1/(m+1)}` (absolute continuity gives `μ_{P_ac f_n}({λ}) = 0`, so some annulus
+`J_m` with `m ≥ n` is charged; taking each new `n` beyond the previous `m` makes the annuli
+distinct) and summing them with nonzero square-summable weights, using spectral orthogonality.
+For `σ_sc` the same argument applies to `P_sc f_n`, its measure being atomless. For `σ_pp`: if
+`P_A({λ}) ≠ 0`, a nonzero `f ∈ ran P_A({λ})` has `μ_f = ‖f‖²δ_λ`, its own atomic part, which
+charges every interval around `λ`; otherwise `μ_{P_pp f_n}({λ}) = ‖P_A({λ}) P_pp f_n‖² = 0` and
+the annulus argument applies to `P_pp f_n`. (2) an isolated `λ` would force
+`P_A(I_ε) P_ac = P_A({λ}) P_ac`, and `μ_{P_ac f}({λ}) = 0` for all `f`. (3) from (1) and
+`μ_{P_ac f} ≪ μ_{P_ac ψ}`. (4) from the countable orthogonal cyclic decomposition of SA-B85
+(its nondegenerate `C₀(ℝ)` case, applied to the bounded calculus `f ↦ ∫ f dP_A` of SA-B44)
+with weights `ε_j ≠ 0`, `Σ |ε_j|² = 1` (teschl line 4354–4366). *Needs:* 1.1–1.3;
+SelfAdjointSpectralTheory SA-B85, SA-D12; UnboundedOperators UO-C01, UO-C03.
 
 **Checks.**
 
@@ -654,15 +659,35 @@ most the infimum of `q_A ≤ q_B` over `Q(B)`; teschl line 5056–5057 states th
 `B − A ≥ 0`); and for every
 `λ < inf σ_ess(A)`, `dim ran P_A((−∞, λ)) = #{n : μ_n(A) < λ}` (a consequence of the min–max
 theorem, teschl line 5044–5052; the lower bound `≥ k` from `k` trial vectors is teschl line
-5063–5069, Theorem 4.12(i)). Route:
-Glazman's lemma, the spectral projections `P_A((−∞, λ))` (finite rank below `inf σ_ess` by UO-C02)
-and SA-E11–SA-E13. *Needs:* 1.3; SelfAdjointSpectralTheory SA-E11–SA-E13, SA-C39; UnboundedOperators
-UO-C02, UO-D06.
+5063–5069, Theorem 4.12(i)). Route: the variational count, known as Glazman's lemma and proved
+here: for a self-adjoint `A` and real `λ`, `dim ran P_A((−∞, λ))` (in `ℕ ∪ {∞}`) is the supremum
+of `dim L` over finite-dimensional subspaces `L ⊆ dom A` with `⟪ψ, Aψ⟫ < λ‖ψ‖²` for every nonzero
+`ψ ∈ L`. The bound `≥` is teschl line 5063–5069 (Theorem 4.12(i), stated there for trial vectors
+in the form domain, which contains `dom A`): `P_A((−∞, λ))` is injective on such an `L`, since a
+nonzero `ψ ∈ L ∩ ran P_A([λ, ∞))` would satisfy `λ‖ψ‖² ≤ ⟪ψ, Aψ⟫` by SA-E11 applied to the reduced
+restriction of `A` to `ran P_A([λ, ∞))` (1.3), whose spectral measure vanishes on `(−∞, λ)`. The
+bound `≤`: the ranges of `P_A([λ − m, λ − 1/m])`, `m ≥ 1`, lie in `dom A` (by UO-A01–UO-A02,
+`A = id[P_A]` and a vector whose spectral measure is carried by a bounded set has finite second
+moment), increase, and have dense union in `ran P_A((−∞, λ))` by countable additivity, so their
+dimensions tend to `dim ran P_A((−∞, λ))`, and on each SA-E13 bounds the form by
+`(λ − 1/m)‖ψ‖² < λ‖ψ‖²`. The count
+follows by comparing these subspaces with the obstacles of `μ_n`: a `k`-dimensional admissible `L`
+contains a unit vector orthogonal to any `k − 1` obstacles, whose form is at most the maximum
+`c < λ` of the form on the unit sphere of `L`, so `μ_k(A) ≤ c < λ`; and when
+`ran P_A((−∞, λ))` has finite dimension `d` (always for `λ < inf σ_ess(A)`, by UO-C02), `d`
+obstacles spanning it leave only vectors of `ran P_A([λ, ∞))`, of form at least `λ` by SA-E11 as
+above, so `μ_{d+1}(A) ≥ λ`. *Needs:* 1.3; SelfAdjointSpectralTheory SA-E11–SA-E13, SA-C39;
+UnboundedOperators UO-A01–UO-A02, UO-C02, UO-D06.
 
 **Checks.**
 
 - `A = diag(1, 3, 5)` on `ℂ³`: `μ₁ = 1`, `μ₂ = 3`, `μ₃ = 5`, `μ₄ = +∞` (three obstacles span `ℂ³`,
   the admissible set is empty); a real-valued junk convention would report `0`.
+- Variational count of the route, same `A`: at `λ = 4`, `span(e₁, e₂)` has
+  `⟪ψ, Aψ⟫ ≤ 3‖ψ‖² < 4‖ψ‖²`, and the only three-dimensional subspace `ℂ³` contains `e₃`, of form
+  `5 ≥ 4`, so the supremum is `2 = dim ran P_A((−∞, 4)) = #{n : μ_n < 4}`. At `λ = 3` the strict
+  inequality excludes `e₂` and gives `1 = dim ran P_A((−∞, 3))`; a non-strict bound `≤ λ‖ψ‖²` would
+  admit `span(e₁, e₂)` and report `2`.
 - `A = M_x` on `L²[0,1]`: no eigenvalues below `inf σ_ess = 0`, and `μ_n = 0` for every `n`.
 - `A = −1 ⊕ H₀` on `ℂ ⊕ L²(ℝ)` with `H₀` of Layer 4.2: `μ₁ = −1` and `μ_n = 0` for `n ≥ 2`.
 - Form order: `A = diag(1, 3) ≤ B = diag(2, 4)` on `ℂ²` gives `μ₁ = 1 ≤ 2` and `μ₂ = 3 ≤ 4`. The
@@ -1586,12 +1611,13 @@ SA-C54, SA-E47; OperatorIdeals OI-C14; Tau Ceti resolvent identity and Hilbert�
 
 ## Downstream consumers
 
-- **RelativisticQuantumFieldTheory**: spectral types and Kato–Rosenblum.
-- **SpectralManifolds**, **PositiveMass**, **RicciFlow**: the Laplacian of a complete noncompact
-  manifold (3.6, 3.7, 3.9).
+- Roadmaps on the scattering theory of Schrödinger operators: spectral types, wave operators,
+  Pearson's theorem and Kato–Rosenblum (Layer 1).
+- Roadmaps on the spectral geometry and heat kernels of complete noncompact manifolds: the
+  self-adjoint Laplacian, its kernel, bottom of the spectrum and bounded potentials (3.6, 3.7, 3.9).
 - Future roadmaps on multidimensional quasi-periodic operators and the Bethe–Sommerfeld property
-  (kps26), random covers and spectral gaps of hyperbolic surfaces (hm23), scattering theory of
-  Schrödinger operators, heat kernels on complete manifolds, and finite-area hyperbolic surfaces.
+  (kps26), random covers and spectral gaps of hyperbolic surfaces (hm23), and finite-area
+  hyperbolic surfaces.
 
 ## Worked examples
 
