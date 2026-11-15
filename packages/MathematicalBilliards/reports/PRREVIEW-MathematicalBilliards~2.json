@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalBilliards~2",
+  "head": "5b627bb1cf389506c3ac51c0bd0e8d7efb30acf4",
+  "pr": 2255,
+  "folder": "MathematicalBilliards",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 5b627bb; this round read the pull request's title and description against the head. Previous R01 repaired (the sentence is gone). One new P3: the summary block attributes 'symplectic billiards' to Tau Ceti, while the README excludes symplectic billiards and takes the smooth billiard map from the roadmap SymplecticGeometry/CotangentLagrangian C3.1 (pinned Tau Ceti has no billiard file). Gate rerun: every check 0, OK; depcheck 244 roadmaps, 2206 edges, 0 problems; Suggested.lean elaborates with nine sorry warnings only; ClassicalErgodicTheory's citation of §§12.1-12.5 and Layers 7-8 resolved at its open head; no change outside the folder.",
+  "text": "e112eb58e5f739f1",
+  "carried": {
+   "from": "5b627bb1cf389506c3ac51c0bd0e8d7efb30acf4",
+   "head": "5b627bb1cf389506c3ac51c0bd0e8d7efb30acf4",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
