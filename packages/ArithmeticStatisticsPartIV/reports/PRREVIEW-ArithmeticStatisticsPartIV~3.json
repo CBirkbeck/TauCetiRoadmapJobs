@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartIV~3",
+  "head": "87e4cd886cafe962236fdea1a26005e462b07e8c",
+  "pr": 1172,
+  "folder": "ArithmeticStatisticsPartIV",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since 56759b5. Checked: the changed Stanley locator sentence of §3.2 against the text (EC1 (1.67), p. 62) and recomputed both recursions at t=2; previous R01 repaired, previous R02 asked nothing of this folder. Gate at 87e4cd8 FAILS on statement-hygiene=5 (four [Fintype F] beside [Field F], one Nonempty-equivalence conclusion), all P3; repairs tested by elaborating a scratch copy (16 sorry warnings only). Dependency check: 0 problems, no UPWARD or CYCLE. lake env lean on Suggested.lean: 16 sorry warnings only. Title and description checked against the head: one out-of-date sentence (red-team passes 'to follow'), P3.",
+  "text": "4e74a70d3090449f",
+  "carried": {
+   "from": "87e4cd886cafe962236fdea1a26005e462b07e8c",
+   "head": "058901cb6178ca51c4b6040ba9e446d90cf082ff",
+   "findings": 3,
+   "lines": 62,
+   "folders": [
+    "ArithmeticStatisticsPartIV"
+   ],
+   "outside": true
+  }
+ }
+}
