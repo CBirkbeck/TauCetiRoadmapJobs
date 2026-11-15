@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SatoTateGroups~5",
+  "head": "434744bc3886feb0f4d2fb80e97e82b65a611c47",
+  "pr": 1725,
+  "folder": "SatoTateGroups",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 434744b. The three P3 findings of the previous review (Milne locator in 8.1, Frobenius semisimplicity in 9.2/9.6, forward reference from 9.2 to 9.5) were re-verified against Milne (III Prop. 1.13, p. 90) and ArithmeticGaloisRepresentations 7.6 and are not repaired, the folder being unchanged. The pull request's title and description were checked against the head: one P3 (the prose says fifty-five groups with certificate and degree 6 as checked data; the head has fifty-seven groups and a degree-6 classification target); the 11 layers / 76 milestones count, the summary block and the consumers agree with the head. Worker gate passes at this head; depcheck with --movable: 238 roadmaps, 2253 edges, 0 problems; lake env lean of Suggested.lean exits 0 with 37 sorry warnings only. Adversarial table has computed values for every statement a finding touches. No source passage compared (changed passages only: none).",
+  "text": "684266fb0ab633be",
+  "carried": {
+   "from": "434744bc3886feb0f4d2fb80e97e82b65a611c47",
+   "head": "1cfaabae8fed4b16a5e25b32769bfa7a9ed24e8c",
+   "findings": 4,
+   "lines": 50,
+   "folders": [
+    "SatoTateGroups"
+   ],
+   "outside": true
+  }
+ }
+}
