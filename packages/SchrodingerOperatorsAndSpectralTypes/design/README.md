@@ -140,7 +140,11 @@ owned elsewhere and consumed by section.
   Kato class outside the three-dimensional `L² + L^∞` case of UO-E06, heat kernels, scattering
   theory beyond the abstract wave operators and
   Kato–Rosenblum, and the complete spectral description of finite-area hyperbolic surfaces (the
-  closing section explains what that future roadmap needs).
+  closing section explains what that future roadmap needs). The splitting of a finite-area
+  hyperbolic surface into a compact part and cusp neighbourhoods is FuchsianOrbifolds Layer 3's
+  (items 1 and 3, for `Γ\ℍ` with `Γ` cofinite) and ComplexCurveModuli D6's (item 2, the cusp and
+  collar coordinates); 3.10 takes a standard cusp end as a hypothesis on a given surface and
+  constructs none.
 
 ## Conventions
 
@@ -686,9 +690,14 @@ For self-adjoint `H₁, H₂` on `ℋ` and a sign `±`, let `D_±(H₂, H₁)` b
 
 Say the wave operators **exist on `ℋ_ac(H₁)`** when `ℋ_ac(H₁) ⊆ D_±`, and are **complete** when
 moreover `Ω_±(ℋ_ac(H₁)) = ℋ_ac(H₂)`. If they exist on `ℋ_ac(H₁)`, then
-`Ω_±(ℋ_ac(H₁)) ⊆ ℋ_ac(H₂)` (the intertwined part of `H₂` is unitarily equivalent to the
-absolutely continuous part of `H₁`, by 1.1's transport law). *Needs:* 1.1; SelfAdjointSpectralTheory SA-E26–SA-E30;
-UnboundedOperators UO-C03.
+`Ω_±(ℋ_ac(H₁)) ⊆ ℋ_ac(H₂)`. Route: `ℋ_ac(H₁)` reduces `H₁` (UO-C03), so by the intertwining
+`W := Ω_±(ℋ_ac(H₁))` is a closed subspace invariant under every `e^{−isH₂}` and reduces `H₂`, as
+`Ω_±(D_±)` does in the second item; `Ω_±` maps `ℋ_ac(H₁)` unitarily onto `W` and conjugates the
+reduced restriction `A` of `H₁` into the reduced restriction `A′` of `H₂` (`Ω_± A Ω_±⁻¹ ⊆ A′` by the
+intertwining on `dom H₁`, with equality since both are self-adjoint). For `x ∈ ℋ_ac(H₁)`, 1.1's
+transport law gives `μ^{A′}_{Ω_± x} = μ^A_x`, and 1.3 identifies the two sides with
+`μ^{H₂}_{Ω_± x}` and `μ^{H₁}_x`; the latter is absolutely continuous, so `Ω_± x ∈ ℋ_ac(H₂)`.
+*Needs:* 1.1, 1.3; SelfAdjointSpectralTheory SA-E26–SA-E30; UnboundedOperators UO-C03.
 
 **Checks.**
 
@@ -1591,7 +1600,11 @@ description is `σ_ess(Δ_X) = [1/4, ∞)`, finitely many eigenvalues of finite 
 `[1/4, ∞)` on the orthogonal complement of its eigenfunctions (lp80 Theorem 2.1 and Corollary 2.2,
 line 297–301, and §§4–7; lp76 Ch. 1 and 8; iwaniec02 Ch. 4, 7 and 11). It needs the thick–thin
 decomposition of a finite-area surface into a compact core and finitely many standard cusp ends
-(through RiemannianGeometry R4's Killing–Hopf classification and FuchsianOrbifolds), the
+(GeometricTopology §7.1 presents a complete hyperbolic surface as `Γ\ℍ`, the curvature `−1`
+case that RiemannianGeometry R4 leaves to it; FuchsianOrbifolds Layer 3, items 1 and 3, gives a
+cofinite `Γ` finitely many cusp orbits and disjoint horodisc neighbourhoods whose removal leaves a
+compact part; ComplexCurveModuli D6, item 2, owns the cusp and collar coordinates of finite-area
+hyperbolic surfaces), the
 decomposition principle for the essential spectrum, separation of variables in each cusp, and the
 Eisenstein series with their meromorphic continuation; CongruenceSpectralGap §0.6 proves the
 congruence case, from AutomorphicSpectralTheory §§4.1–4.4. Layers 1 and 3 supply its vocabulary
@@ -1601,7 +1614,7 @@ and 3.10 its lower inclusion.
 
 - `teschl`: G. Teschl, *Mathematical Methods in Quantum Mechanics, with Applications to Schrödinger
   Operators*, GSM 99, AMS (2009), author's online edition: §1.2 (the standing separability
-  assumption), §2.3 (Theorems 2.12–2.13, (2.68)), Theorem 3.7, §3.2 ((3.79), Lemma 3.15), §3.3
+  assumption), §2.3 (Theorems 2.12–2.13), §2.4 ((2.68)), Theorem 3.7, §3.2 ((3.79), Lemma 3.15), §3.3
   (Lemmas 3.16, 3.19, (3.83)–(3.85)), Lemma 2.24, Corollary 4.6, Theorem 4.10, Corollary 4.11, Theorem 4.12(i), Lemma
   6.3, Theorem 6.4, Lemma 6.17, the remark before Lemma 6.22, Theorem 7.8, Lemmas 7.9 and 7.11,
   (7.26), Theorem 10.2, §12.1 ((12.3), (12.6), Lemma 12.1, Theorem 12.2).
