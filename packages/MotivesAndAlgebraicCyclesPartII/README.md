@@ -6,7 +6,7 @@ The base roadmap MotivesAndAlgebraicCycles stops at Nisnevich motives over field
 
 ## Scope and ownership
 
-This roadmap owns: the arc-topology on Banach rings, small arc-stacks and their strictly totally disconnected basis (Layer 0); finitary derived arc-sheaves, finitary maps, open immersions, cohomological dimension and finitary proper base change (Layer 1); effective motivic sheaves, the ball localization, free motivic sheaves and their left adjoints (Layer 2); one-units, the reduced multiplicative group, the Tate object and its compactness (Layer 3); Banach presheaves with transfers, the curve and line-domain lemmas, the explicit free motive, the torsion and tilting comparisons and the integral homotopy t-structure (Layer 4); cancellation and projective cells (Layer 5); motivic K-theory and its Adams decomposition (Layer 6); the one-unit K-cofibre and its identifications (Layer 7); stable motives, projective-line duality and six operations (Layer 8); rigidity, quasi-pro-étale monadicity, weak Künneth and pointwise Artin–Tate motives (Layer 9); integral étale motives over a field, their rigidity with and without transfers, and their comparison with Berkovich motives over algebraically closed discrete fields (Layer 10); nearby cycles, the motivic Galois stacks over `𝔽̄_p` and the monodromy equivalence (Layer 11); and the comparison of arc-stacks with partially proper v-stacks and of torsion motives with overconvergent étale sheaves (Layer 12).
+This roadmap owns: the arc-topology on Banach rings, small arc-stacks and their strictly totally disconnected basis, and the arc-stacks of affine and projective spaces, of schemes locally of finite presentation over Banach rings and of nonarchimedean analytic spaces (Layer 0); finitary derived arc-sheaves, finitary maps, open immersions, cohomological dimension and finitary proper base change (Layer 1); effective motivic sheaves, the ball localization, free motivic sheaves of open subsets of affine space and of general arc-stacks, their left adjoints, and maps smooth without boundary (Layer 2); one-units, the reduced multiplicative group, the Tate object and its compactness (Layer 3); Banach presheaves with transfers, the curve and line-domain lemmas, the explicit free motive, the torsion and tilting comparisons and the integral homotopy t-structure (Layer 4); cancellation and projective cells (Layer 5); motivic K-theory and its Adams decomposition (Layer 6); the one-unit K-cofibre and its identifications (Layer 7); stable motives, projective-line duality and six operations (Layer 8); rigidity, quasi-pro-étale monadicity, weak Künneth and pointwise Artin–Tate motives (Layer 9); integral étale motives over a field, their rigidity with and without transfers, and their comparison with Berkovich motives over algebraically closed discrete fields (Layer 10); nearby cycles, the motivic Galois stacks over `𝔽̄_p` and the monodromy equivalence (Layer 11); and the comparison of arc-stacks with partially proper v-stacks and of torsion motives with overconvergent étale sheaves (Layer 12).
 
 It leaves to named roadmaps:
 
@@ -25,7 +25,7 @@ The comparison of `Dmot(X)` with Ayoub's rigid-analytic motives is not a stateme
 
 All rings are commutative and unital. A seminormed ring is a ring with a submultiplicative seminorm satisfying the triangle inequality, `|0| = 0` and `|−1| ≤ 1`; maps are contractive ring maps; a Banach ring is a complete one (Scholze, Definitions 2.1–2.2, p. 7). Completed tensor products are the pushouts and completed filtered colimits the filtered colimits in the category of Banach rings, as in TropicalAndBerkovichArithmetic §0.16. `M(A)` is the Berkovich spectrum (TropicalAndBerkovichArithmetic §0.1) and `K(x)` the completed residue field at `x ∈ M(A)` (TropicalAndBerkovichArithmetic §0.15). A Banach field is a Banach ring whose underlying ring is a field and whose norm is multiplicative; it is discrete when its norm takes only the values 0 and 1. A geometric Banach point is a nondiscrete algebraically closed Banach field. A Banach ring is *analytic* when finitely many topologically nilpotent elements generate the unit ideal, and *uniform* when its Gelfand transform is an isometric embedding (Scholze, Definition 2.20, p. 12).
 
-Fix a universe and, for every construction on large sites, an uncountable cutoff cardinal κ in the sense of DiamondsAndVStacks §D0.23; constructions are compatible with enlarging κ, and "small" means κ-small for some κ. `Marc(A)` is the arc-sheafification of the representable functor of `A`; the arc-site of all Banach rings is not subcanonical, so `Marc(A)(B)` is not the set of maps `A → B`. "Strict" abbreviates "strictly totally disconnected" (§0.4).
+Fix a universe and, for every construction on large sites, an uncountable cutoff cardinal κ in the sense of DiamondsAndVStacks §D0.23; constructions are compatible with enlarging κ, and "small" means κ-small for some κ. `Marc(A)` is the arc-sheafification of the representable functor of `A`; the arc-site of all Banach rings is not subcanonical, so `Marc(A)(B)` is not the set of maps `A → B`. "Strict" abbreviates "strictly totally disconnected" (§0.4). Affine spaces `Aⁿ_X`, the multiplicative group `G_m`, projective spaces and the arc-stacks `Y^arc` of schemes and of nonarchimedean analytic spaces are those of §0.8; an analytic curve or scheme `U` is regarded as the arc-sheaf `U^arc` wherever arc-sheaves are formed from it (`ℕ[U]`, `ℤmot[U]`), and free motives `ℤmot[Y]` of arc-stacks are those of §2.7.
 
 Categories of sheaves and of complexes are ∞-categories in the sense of EnhancedDerivedSheaves: `D(ℤ)` is the stable ∞-category of complexes of abelian groups and `D(X_arc, ℤ)` the enhanced derived category of abelian arc-sheaves on `X`. Every equivalence, adjunction and tensor product in this roadmap is one of ∞-categories; a homotopy category appears only where a statement says so. Shifts are cohomological: an abelian group `M` placed in degree zero gives `M[−1]` in degree one, and for a mapping spectrum `π_i Map(A, B) = Hom(A[i], B)`.
 
@@ -37,20 +37,21 @@ The rational mapping formula over a discrete algebraically closed field is norma
 
 ### From Mathlib
 
-Mathlib at the pin supplies the categorical sites used as carriers of topologies: `CategoryTheory.GrothendieckTopology` (Mathlib/CategoryTheory/Sites/Grothendieck.lean), with its top, pullback and transitivity axioms, is the structure of the arc-topology on the opposite category of Banach rings (§0.2); its sheaf categories are ordinary, and every ∞-categorical sheaf category comes from EnhancedDerivedSheaves. `NormedField` (Mathlib/Analysis/Normed/Field/Basic.lean) and `IsUltrametricDist` (Mathlib/Topology/MetricSpace/Ultra/Basic.lean) are the carriers for valued fields in the one-unit calculations of §3.1. `SSet.Quasicategory` (Mathlib/AlgebraicTopology/Quasicategory/Basic.lean) is the model of ∞-categories through EnhancedDerivedSheaves. `continuousCohomology` (Mathlib/RepresentationTheory/Homological/ContCohomology/Basic.lean) is the continuous cohomology of a topological group with coefficients in a topological representation, used for the Galois descent of §1.3. `PowerSeries.IsRestricted.subring c` (Mathlib/RingTheory/PowerSeries/Restricted.lean) is the ring of one-variable power series over an ultrametric normed ring whose coefficients satisfy `‖a_n‖ cⁿ → 0`; for `c = 1` over a complete nonarchimedean field `K` it is the Tate algebra `K⟨T⟩` of the closed unit disc. Mathlib at the pin has no Berkovich spectrum, no Banach-ring site, no stable or presentable ∞-category of sheaves and no algebraic K-theory spectrum.
+Mathlib at the pin supplies the categorical sites used as carriers of topologies: `CategoryTheory.GrothendieckTopology` (Mathlib/CategoryTheory/Sites/Grothendieck.lean), with its top, pullback and transitivity axioms, is the structure of the arc-topology on the opposite category of Banach rings (§0.2); its sheaf categories are ordinary, and every ∞-categorical sheaf category comes from EnhancedDerivedSheaves. `NormedField` (Mathlib/Analysis/Normed/Field/Basic.lean) and `IsUltrametricDist` (Mathlib/Topology/MetricSpace/Ultra/Basic.lean) are the carriers for valued fields in the one-unit calculations of §3.1. `SSet.Quasicategory` (Mathlib/AlgebraicTopology/Quasicategory/Basic.lean) is the model of ∞-categories through EnhancedDerivedSheaves. `continuousCohomology` (Mathlib/RepresentationTheory/Homological/ContCohomology/Basic.lean) is the continuous cohomology of a topological group with coefficients in a topological representation, used for the Galois descent of §1.3. `PowerSeries.IsRestricted.subring c` (Mathlib/RingTheory/PowerSeries/Restricted.lean) is the ring of one-variable power series over an ultrametric normed ring whose coefficients satisfy `‖a_n‖ cⁿ → 0`; for `c = 1` over a complete nonarchimedean field `K` it is the Tate algebra `K⟨T⟩` of the closed unit disc. `AlgebraicGeometry.Scheme` (Mathlib/AlgebraicGeometry/Scheme.lean), with the morphism classes `AlgebraicGeometry.LocallyOfFinitePresentation`, `AlgebraicGeometry.Etale` and `AlgebraicGeometry.Smooth` (Mathlib/AlgebraicGeometry/Morphisms/FinitePresentation.lean, Etale.lean, Smooth.lean) and the affine space `AlgebraicGeometry.AffineSpace` (Mathlib/AlgebraicGeometry/AffineSpace.lean), are the schemes whose arc-stacks §0.8 constructs; Mathlib at the pin has no projective-space scheme, so §0.8 glues `ℙⁿ` from affine charts. Mathlib at the pin has no Berkovich spectrum, no Banach-ring site, no stable or presentable ∞-category of sheaves and no algebraic K-theory spectrum.
 
 ### From Tau Ceti
 
-Tau Ceti at the pin contributes no Banach-ring site, motivic or K-theoretic carrier. Its comodule categories and Hopf-algebra modules enter only through AnalyticStacks §1.5. It supplies the following, assumed with exactly the hypotheses stated:
+Tau Ceti at the pin has no Banach-ring site, no motivic category and no K-theory spectrum. Its low-degree K-theoretic carriers, the exact Grothendieck group `TauCeti.ExactK0` (TauCeti/CategoryTheory/GrothendieckGroup/Exact.lean), through which GeneralAlgebraicKTheory identifies `π₀` of the K-theory spectrum, and the stable general linear group `TauCeti.StableGeneralLinearGroup` with algebraic `K₁` as its abelianization `TauCeti.AlgebraicK1` (TauCeti/LinearAlgebra/Matrix/GeneralLinearGroup/Stable.lean), are not consumed directly: the K-groups used here are the homotopy groups of the spectra of GeneralAlgebraicKTheory. Its comodule categories and Hopf-algebra modules enter only through AnalyticStacks §1.5. It supplies the following, assumed with exactly the hypotheses stated:
 
 - `TauCeti.unitBallIdeal R` and `TauCeti.mem_unitBallIdeal` (TauCeti/Analysis/Normed/Ring/UnitBall.lean): for a seminormed ring `R` with `IsUltrametricDist R` and `NormOneClass R`, the ideal of the closed unit ball `Subring.unitClosedBall R` (TauCeti/Analysis/Normed/Ring/Ultra.lean, a subring under the same hypotheses) consisting of the elements of norm less than one. It is the ideal `A_{<1}` of §3.1.
 - `TauCeti.norm_inverse_one_sub`, `TauCeti.norm_inverse_one_sub_sub_one` and `TauCeti.isUnit_unitClosedBall_of_norm_sub_one_lt` (same file): for a normed ring with `NormOneClass`, `HasSummableGeomSeries` (for instance a complete one) and an ultrametric norm, `‖x‖ < 1` gives `‖(1 − x)⁻¹‖ = 1` and `‖(1 − x)⁻¹ − 1‖ = ‖x‖`, and an element of the closed unit ball within distance less than one of `1` is a unit of the closed unit ball. These are the group laws of one-units in §3.1.
 - `TauCeti.PowerSeries.isPrincipalIdealRing_isRestricted_subring` (TauCeti/RingTheory/PowerSeries/Weierstrass/Ideal.lean): for a normed field `K` with `IsUltrametricDist K` and `CompleteSpace K` and every radius `c > 0`, `PowerSeries.IsRestricted.subring c` is a principal ideal ring; being a subring of `K⟦T⟧` it is a domain. At `c = 1` this is the principal-ideal property of `K⟨T⟩` used in §3.3, with no condition on the valuation of `K`.
 - `TauCeti.cohomologicalDimensionAt`, `TauCeti.strictCohomologicalDimensionAt` (TauCeti/RepresentationTheory/Homological/ContCohomology/CohomologicalDimension/Basic.lean), `TauCeti.cohomologicalDimensionAt_le_of_isClosed` (TauCeti/RepresentationTheory/Homological/ContCohomology/CohomologicalDimension/ClosedSubgroup.lean: `cd_p U ≤ cd_p G` for a closed subgroup `U` of a compact totally disconnected group `G`) and `TauCeti.strictCohomologicalDimensionAt_le_cohomologicalDimensionAt_add_one` (TauCeti/RepresentationTheory/Homological/ContCohomology/CohomologicalDimension/Strict.lean: `scd_p G ≤ cd_p G + 1` in `ℕ∞` for a compact group `G`). These are the dimension bounds of §§1.5 and 2.1; their theory is ProfiniteCohomology, Layer 11.
+- `AlgebraicGeometry.Smooth.exists_etale_affineSpace` (TauCeti/AlgebraicGeometry/Morphisms/Smooth/EtaleCoordinates.lean): for a smooth morphism of schemes `f : X → S` (Mathlib `AlgebraicGeometry.Smooth`), every point of `X` has an affine open neighbourhood `V` with an étale morphism `V → 𝔸(Fin n; S)` over `S` for some `n`. These are the étale coordinates through which §2.7 shows that arc-stacks of smooth schemes are smooth without boundary.
 
 ### From TauCetiRoadmap.TropicalAndBerkovichArithmetic
 
-Layer 0: §0.1 (Berkovich spectrum `Spectrum`), §0.7 (compactness), §0.8 (Hausdorffness), §0.12 (seminormed Banach rings and separated completion), §0.13 (nonemptiness for `|1| = 1`), §0.14 (units, spectral radius and spectral uniformization), §0.15 (completed residue fields), §0.16 (contractive colimits and completed tensor products, with the spectrum of a pushout surjecting onto the fibre product and the spectrum of a filtered colimit the inverse limit), §0.17 (affinoid algebras), §0.20 (affinoid structure sheaf and acyclicity for finite modules), §0.21–0.22 (analytic spaces and analytification), §0.24 (uniform Gelfand representation), §0.25 (idempotents and clopen subsets of `M(A)`), §0.26 (archimedean Banach fields are `ℝ` or `ℂ` with a power of the absolute value), §0.27 (uniform units), §0.32 (surjectivity detected by residue fields). Layer 1: §1.1 (Gauss points, discs and the Berkovich projective line), §1.2 (the four types of points), §1.3 (paths and hyperbolic metric), §1.6 (integral slopes of analytic units on annuli); §2.16 (triangulations of separated quasi-smooth analytic curves: closed discrete sets of type-II and type-III points, of type II only for strict curves over a nontrivially valued field, containing any prescribed closed discrete set of such points and cutting the curve into relatively compact virtual discs and virtual annuli, which over an algebraically closed field are open discs and open annuli); §3.7 (slope formula and harmonicity). These are assumed with the hypotheses stated there.
+Layer 0: §0.1 (Berkovich spectrum `Spectrum`), §0.7 (compactness), §0.8 (Hausdorffness), §0.12 (seminormed Banach rings and separated completion), §0.13 (nonemptiness for `|1| = 1`), §0.14 (units, spectral radius and spectral uniformization), §0.15 (completed residue fields), §0.16 (contractive colimits and completed tensor products, with the spectrum of a pushout surjecting onto the fibre product and the spectrum of a filtered colimit the inverse limit), §0.17 (affinoid algebras), §0.19 (rational and affinoid domains and their universal property), §0.20 (affinoid structure sheaf and acyclicity for finite modules), §0.21–0.22 (analytic spaces and analytification), §0.24 (uniform Gelfand representation), §0.25 (idempotents and clopen subsets of `M(A)`), §0.26 (archimedean Banach fields are `ℝ` or `ℂ` with a power of the absolute value), §0.27 (uniform units), §0.28 and §0.30 (rank-one points of `Spa(A, A°)` and the strict Berkovich–adic comparison), §0.32 (surjectivity detected by residue fields). Layer 1: §1.1 (Gauss points, discs and the Berkovich projective line), §1.2 (the four types of points), §1.3 (paths and hyperbolic metric), §1.6 (integral slopes of analytic units on annuli); §2.16 (triangulations of separated quasi-smooth analytic curves: closed discrete sets of type-II and type-III points, of type II only for strict curves over a nontrivially valued field, containing any prescribed closed discrete set of such points and cutting the curve into relatively compact virtual discs and virtual annuli, which over an algebraically closed field are open discs and open annuli); §3.7 (slope formula and harmonicity). These are assumed with the hypotheses stated there.
 
 What TropicalAndBerkovichArithmetic must provide (gap:affinoid-line-bundles): finite projective modules over a strictly affinoid algebra over a complete nonarchimedean field satisfy effective descent along finite affinoid coverings, so that analytic line bundles on an affinoid space are the finite projective rank-one modules over its algebra (§§0.17, 0.20). With the principal-ideal property of `K⟨T⟩` at the pin (Tau Ceti `TauCeti.PowerSeries.isPrincipalIdealRing_isRestricted_subring`), this makes analytic line bundles on the closed unit disc trivial.
 
@@ -100,11 +101,11 @@ MotivesAndAlgebraicCycles §4.1 (`FiniteCor`), §4.2 (`PST`), §4.3 (`ShNisTr`),
 
 ## How to read the build
 
-Layer 0 constructs the arc-site and its strict basis, Layer 1 the finitary sheaves and their proper base change, Layer 2 the effective motivic category with its ball localization and free motives, and Layer 3 the reduced multiplicative group and the Tate object. Layer 4 develops transfers and uses them to compute free motives explicitly; it gives the torsion and tilting comparisons. Layer 5 proves cancellation and computes projective cells, and Layer 6 builds motivic K-theory and its rational Adams decomposition. From there two branches run in parallel: Layer 7 identifies motivic K-theory through the one-unit cofibre, and Layer 8 inverts the Tate twist and constructs the six operations. Layer 9 proves rigidity at geometric points and over analytic bases. Layer 10 combines rigidity with Layer 7 to compare with algebraic étale motives over discrete algebraically closed fields; Layer 11 builds nearby cycles and the monodromy equivalence on top of Layer 10; Layer 12 branches from Layers 4 and 9 to the v-stack comparison. Each target's *Needs:* line lists what its statement and proof route use, item by item.
+Layer 0 constructs the arc-site, its strict basis and the arc-stacks of affine spaces, schemes and analytic spaces, Layer 1 the finitary sheaves and their proper base change, Layer 2 the effective motivic category with its ball localization and free motives, and Layer 3 the reduced multiplicative group and the Tate object. Layer 4 develops transfers and uses them to compute free motives explicitly; it gives the torsion and tilting comparisons. Layer 5 proves cancellation and computes projective cells, and Layer 6 builds motivic K-theory and its rational Adams decomposition. From there two branches run in parallel: Layer 7 identifies motivic K-theory through the one-unit cofibre, and Layer 8 inverts the Tate twist and constructs the six operations. Layer 9 proves rigidity at geometric points and over analytic bases. Layer 10 combines rigidity with Layer 7 to compare with algebraic étale motives over discrete algebraically closed fields; Layer 11 builds nearby cycles and the monodromy equivalence on top of Layer 10; Layer 12 branches from Layers 4 and 9 to the v-stack comparison. Each target's *Needs:* line lists what its statement and proof route use, item by item.
 
 ## Layer 0: The Banach arc-site
 
-This layer constructs the arc-topology on Banach rings, small arc-stacks, the strictly totally disconnected basis and quasi-pro-étale maps, and proves repleteness of the arc-topos together with the compact assembly of seminormed rings that the finitary theory uses.
+This layer constructs the arc-topology on Banach rings, small arc-stacks, the strictly totally disconnected basis and quasi-pro-étale maps, and proves repleteness of the arc-topos together with the compact assembly of seminormed rings that the finitary theory uses; it ends with the arc-stacks of affine spaces, schemes and nonarchimedean analytic spaces on which the later layers evaluate.
 
 ### 0.1 Compact assembly of seminormed rings
 
@@ -220,13 +221,41 @@ Route: by the finite-subfamily criterion of §0.2, an epimorphism is detected af
 
 *Needs:* §§0.2, 0.5; EnhancedDerivedSheaves §§E2.1, E2.3, E2.7 and the replete Postnikov theorem (gap:replete-postnikov).
 
+### 0.8 Affine spaces, schemes and analytic spaces as arc-stacks
+
+For `n ≥ 0` and an integer `r ≥ 1` let `ℤ⟨T₁, …, T_n⟩_r` be the completion of `ℤ[T₁, …, T_n]` for the norm `|Σ_ν a_ν T^ν| = Σ_ν |a_ν| r^{|ν|}`, where `|a_ν|` is the archimedean absolute value. It is the free Banach ring on `n` elements of norm at most `r`: a contractive map from it to a Banach ring `B` is the same as an `n`-tuple of elements of `B` of norm at most `r`, because `|m · 1_B| ≤ |m|` for every integer `m` (TropicalAndBerkovichArithmetic §0.16, where `ℤ` with its absolute value is the initial Banach ring, so that `Marc(ℤ)` is the terminal arc-sheaf). For a small arc-stack `X` define the *affine space* `Aⁿ_X = X × colim_r Marc(ℤ⟨T₁, …, T_n⟩_r)`, the increasing union over `r` of the closed polydiscs of radius `r` over `X`.
+
+Let `A` be a Banach ring and `Y` a scheme locally of finite presentation over the underlying ring of `A` (Mathlib `AlgebraicGeometry.LocallyOfFinitePresentation`). For affine `Y = Spec A[T₁, …, T_n]/(f₁, …, f_m)` let `Y^arc → Marc(A)` be the union over `r` of the `Marc(B_r)`, where `B_r` is the quotient of `A ⊗̂ ℤ⟨T₁, …, T_n⟩_r` by the closure of the ideal `(f₁, …, f_m)`, with the quotient norm; it is the closed arc-subsheaf `{f₁ = ⋯ = f_m = 0}` of `Aⁿ_{Marc(A)}`. For general `Y`, let `Y^arc` be the colimit, in arc-sheaves of sets, of `V ↦ V^arc` over the affine opens `V ⊂ Y` and their inclusions. The *multiplicative group* `G_m ⊂ A¹_X` is `X × (Spec ℤ[T, T⁻¹])^arc`, the union of the closed annuli `{|T| ≤ r, |T⁻¹| ≤ r}`. The *projective space* `ℙⁿ_X`, `A²_X ∖ {0}`, `GL_{n,X}` and `GL_n/G_m^n` over `X` are the products with `X` of the arc-stacks of the corresponding schemes over `ℤ`, the last being the affine scheme of ordered decompositions of the trivial rank-`n` bundle into `n` line bundles. For a group arc-sheaf `G` over `X`, `∗/G` is the geometric realization of the bar construction `[k] ↦ G^k` in arc-stacks over `X`, and `BG_m = ∗/G_m`.
+
+For a complete nonarchimedean field `K`, trivially valued or not, and a `K`-analytic space `U` (TropicalAndBerkovichArithmetic §0.21), let `U^arc → Marc(K)` be the colimit, in arc-sheaves of sets, of `V ↦ Marc(A_V)` over the affinoid domains `V ⊂ U` and their inclusions (TropicalAndBerkovichArithmetic §0.19). The affinoid algebra `A_V` may carry any of its equivalent Banach norms: `Marc(A_V) ≃ Marc(A_V^u)` (§0.3), and bounded maps of affinoid algebras are contractive for the spectral seminorms. Scholze's statements about affine spaces, projective lines and analytic spaces concern these arc-stacks (Scholze, §1, p. 4; Example 4.26, p. 26; Lemma 5.11, p. 30; Corollary 9.6, p. 52).
+
+API:
+
+- On strict rings: for a strictly totally disconnected Banach `A`-algebra `B`, `Y^arc(B)` is the set of `A`-morphisms `Spec B → Y`. In particular, for every Banach ring `A′`, `Marc(A′)(B)` is the set of contractive maps `A′ → B`; `Aⁿ_X(B) = X(B) × Bⁿ`, `G_m(B) = X(B) × B^×` and `ℙⁿ_X(B) = X(B) × ℙⁿ(B)`; and `Y^arc` does not depend on the chosen presentations.
+- `Y ↦ Y^arc` is a functor to arc-stacks over `Marc(A)` that preserves finite limits, commutes with base change along every contractive map `A → A′`, `(Y ×_{Spec A} Spec A′)^arc = Y^arc ×_{Marc(A)} Marc(A′)`, and sees only the reduced scheme, `Y^arc = (Y_red)^arc`.
+- An open immersion `V ⊂ Y` gives an arc-subsheaf `V^arc ⊂ Y^arc` whose pullback along every map `Marc(B) → Y^arc` is given by an open subset of `M(B)`; an open cover of `Y` gives a cover of `Y^arc`, so that `Y^arc` is the colimit of the Čech nerve formed by the arc-stacks of the members of the cover and of their finite intersections.
+- `ℙⁿ_X` is covered by the `n + 1` closed unit polydiscs `{|x_j/x_i| ≤ 1 for all j}`, `0 ≤ i ≤ n`, which are affine over `X`; the arc-stack of a closed subscheme of `ℙⁿ` over `A` is covered by the `n + 1` closed affine pieces in which it meets them, and their finite intersections are again affine.
+- For `K` and `U` as above: `M(A)^arc = Marc(A)` for an affinoid space `M(A)`; an affinoid domain `V ⊂ U` gives a monomorphism `Marc(A_V) → U^arc`, and an open subset of `U` an arc-subsheaf as in the third bullet; for a geometric Banach point `C` over `K`, `U^arc(C)` is the set of pairs of a point `x ∈ U` and an isometric `K`-embedding of its completed residue field `H(x) → C`; and for `Y` locally of finite type over `K`, `(Y^an)^arc ≃ Y^arc` with `Y^an` the analytification of TropicalAndBerkovichArithmetic §0.22, compatibly with open immersions.
+
+Route: arc-covers of strict rings are isometric, because the norms are spectral and the covers are surjective on spectra, and a strict ring is the equalizer of its two maps to the uniform completed tensor square of a strict cover (§0.5); so contractive maps into strict rings form an arc-sheaf on the strict basis, and arc-sheaves are determined by their restriction to it, every Banach ring having a strict cover (§0.5). A morphism `Spec B → Y` from a strict `B` factors through affine opens on the pieces of a finite clopen partition of `M(B)`: the kernel of each `x ∈ M(B)` is a maximal ideal, `B → K(x)` being surjective (§0.4), the locus where a function does not vanish is open, `M(B)` is profinite, and an element vanishing nowhere on a clopen piece is a unit of the corresponding factor (TropicalAndBerkovichArithmetic §§0.14, 0.25). The same nonvanishing loci show that open immersions give open subsets of spectra, every maximal ideal of a Banach ring being the kernel of a point (TropicalAndBerkovichArithmetic §§0.13–0.14). Reducedness holds because a strict ring is uniform, so that `b² = 0` gives `|b|² = |b²| = 0`. On `ℙⁿ`, at each point of `M(B)` some homogeneous coordinate has maximal absolute value, and the resulting closed loci give finitely many rational localizations of `B` that together cover `M(B)`, hence an arc-cover. For analytic spaces, a finite cover of an affinoid domain by affinoid domains is an arc-cover, being a finite family surjective on spectra, and the universal property of affinoid domains on affinoid test spaces (TropicalAndBerkovichArithmetic §0.19) extends to strict rings through their spectral norms; for `Y^an` use its bounded-radius affinoid charts `{|T_i| ≤ r}`, whose contractive maps into strict rings are those of the `B_r`.
+
+**Checks.**
+
+- `(Spec A)^arc = Marc(A)`, `A⁰_X = X`, and the empty scheme gives the empty arc-sheaf. For strict `B`, `A¹_{Marc(ℤ)}(B) = B`: an element `b` lies in the stage `r` exactly when `|b| ≤ r`, and every element has finite norm.
+- Let `k` be algebraically closed with the trivial norm. `A¹_{Marc(k)}` contains the closed disc `{|T| ≤ ρ}` of every radius `ρ > 0`, for `ρ < 1` the arc-stack `Marc(k[[T]])` with the norm `ρ^{ord_T}`, although `|k^×| = {1}`; its value at a geometric Banach point `C` over `k` is `C`, not `k`. A carrier built from `k`-points, or from discs whose radii lie in `|k^×|`, sees only `k` and the unit disc.
+- Nonreduced structure is invisible: `(Spec K[ε]/(ε²))^arc = Marc(K)` for every Banach field `K`, since on a strict ring `ε² = 0` forces `ε = 0`. So `Y ↦ Y^arc` is not faithful on nonreduced schemes: the endomorphisms `ε ↦ 0` and `ε ↦ ε` of `K[ε]/(ε²)` give the same map.
+- At the complex point `Marc(ℂ ⊗̂ ℤ⟨T⟩_r)` is the compact disc `{|z| ≤ r}` regarded as a condensed set (§0.3), so `A¹_{Marc(ℂ)}`, `G_m` and `ℙ¹_{Marc(ℂ)}` are the plane, the punctured plane and the Riemann sphere. The sum norm cannot be replaced by the supremum `max_ν |a_ν| r^{|ν|}`, which is not submultiplicative over `ℤ` with its absolute value: for `r = 1`, `1 + T` has supremum `1` and `(1 + T)² = 1 + 2T + T²` has supremum `2`.
+- Separation is not built in. For the line with doubled origin over a nonarchimedean geometric point `C`, glued from two copies of `A¹_C` along `G_m`, the fibre product of the two charts in its arc-stack is `G_m`, embedded in `A¹_C × A¹_C` as `{T₁ = T₂ ≠ 0}`; this locus is not closed in the spectrum of the closed bidisc, since it contains the points `T₁ = T₂ = ϖⁿ`, `0 < |ϖ| < 1`, and not their limit `T₁ = T₂ = 0`. The separation hypotheses of §§4.2 and 4.5 are conditions on the curve, not consequences of the construction.
+
+*Needs:* §§0.2–0.5; TropicalAndBerkovichArithmetic §§0.13, 0.14, 0.16, 0.19, 0.21, 0.22, 0.25; Mathlib `AlgebraicGeometry.Scheme`, `AlgebraicGeometry.LocallyOfFinitePresentation`.
+
 ### Examples
 
 Let `A = ℂ × ℂ` with the maximum norm. Its spectrum consists of two points, and the two projections `A → ℂ` together form an arc-cover; either projection alone misses a point and does not cover. Both factors are strictly totally disconnected and so is the product. Replacing the finite product by a bounded product over an infinite set `I` introduces the ultrafilter points of `βI`; checking only the principal points then fails to describe the spectrum. The zero ring is covered by the empty family because its spectrum is empty.
 
 ### Dependencies
 
-TropicalAndBerkovichArithmetic Layers 0–1; EnhancedDerivedSheaves §§E2.1–E2.7, E3.4, E5:presentability.4; PerfectoidSpaces §P2.13; DiamondsAndVStacks §§D0.23, D2.7; Mathlib `CategoryTheory.GrothendieckTopology`.
+TropicalAndBerkovichArithmetic Layers 0–1; EnhancedDerivedSheaves §§E2.1–E2.7, E3.4, E5:presentability.4; PerfectoidSpaces §P2.13; DiamondsAndVStacks §§D0.23, D2.7; Mathlib `CategoryTheory.GrothendieckTopology`, `AlgebraicGeometry.Scheme`, `AlgebraicGeometry.LocallyOfFinitePresentation`.
 
 ## Layer 1: Finitary sheaves and proper base change
 
@@ -238,7 +267,7 @@ Prove: every functor from strictly totally disconnected Banach rings to spaces t
 
 Route: extend `n`-truncated functors along quasi-pro-étale maps, which are filtered colimits of finite clopen decompositions (Lemma 4.7). Prove the splitting lemma: an arc-cover of a strict ring is a completed filtered colimit of split maps; by the compact assembly of seminormed rings (§0.1) reduce to finitely many approximate relations, and split a surjective open subset of affine space over a strict ring by algebraic closedness of residue fields and clopen patching. For each `n`, commute the finite descent limits of `n`-truncated functors through the filtered colimit of split maps, then pass to the Postnikov limit; infinite totalizations are exchanged with filtered colimits only after truncation.
 
-*Needs:* §§0.1, 0.5, 0.6; EnhancedDerivedSheaves §§E2.6–E2.7 (hypercovers, sheaves of spaces) and §E3.2 (Kan extension along the basis).
+*Needs:* §§0.1, 0.5, 0.6, 0.8 (affine space over a strict ring, for the splitting lemma); EnhancedDerivedSheaves §§E2.6–E2.7 (hypercovers, sheaves of spaces) and §E3.2 (Kan extension along the basis).
 
 ### 1.2 Finitary derived arc-sheaves
 
@@ -329,7 +358,7 @@ Layer 0; EnhancedDerivedSheaves §§E0.4, E1.3, E2.2–E2.7, E3.2, E3.4, E5:abst
 
 ## Layer 2: Effective motives and ball localization
 
-This layer constructs integral effective motivic sheaves, the ball localization, free motivic sheaves of open subsets of affine space and their left adjoints, and proves rational truncation stability and the forward torsion criterion.
+This layer constructs integral effective motivic sheaves, the ball localization, free motivic sheaves of open subsets of affine space and their left adjoints, and proves rational truncation stability and the forward torsion criterion; it ends with free motives of general arc-stacks and the maps smooth without boundary for which they exist.
 
 ### 2.1 Effective motivic sheaves
 
@@ -383,7 +412,7 @@ Prove: if `n ≥ 1`, `|n| ≥ 1` everywhere on `X`, and `M ∈ Dfin(X, ℤ/n)` i
 
 ### 2.5 Free motivic sheaves of open subsets of affine space
 
-For `U ⊂ Aⁿ_X` open, with `n` finite, define `ℤmot[U]` as the ball localization of the free derived abelian arc-sheaf on `U`. Prove that it is finitary, that `Map(ℤmot[U], M) ≃ M(U)` naturally in effective `M`, that it commutes with base change, that `ℤmot[U ×_X V] ≃ ℤmot[U] ⊗_mot ℤmot[V]`, and that for `X` analytic affine of finite cohomological dimension these objects generate `Deff_mot(X)` under colimits (Scholze, Lemma 5.11, Propositions 5.12–5.13, pp. 30–32). Finitarity of `L_B^pre ℤ[U]` is a theorem, not an assumption on `U`.
+For `U ⊂ Aⁿ_X` open, with `n` finite, define `ℤmot[U]` as the ball localization of the free derived abelian arc-sheaf on `U`. Prove that it is finitary, that `Map(ℤmot[U], M) ≃ M(U)` naturally in effective `M`, that it commutes with base change, that `ℤmot[U ×_X V] ≃ ℤmot[U] ⊗_mot ℤmot[V]`, and that for `X` analytic affine of finite cohomological dimension these objects generate `Deff_mot(X)` under colimits (Scholze, Lemma 5.11, Propositions 5.12–5.13, pp. 30–32). Finitarity of `L_B^pre ℤ[U]` is a theorem, not an assumption on `U`. Here `Aⁿ_X` is the affine space of §0.8; free motives of more general arc-stacks are §2.7.
 
 API:
 
@@ -399,7 +428,7 @@ API:
 
 Route: in the nonarchimedean case exhaust `U` by subsets invariant under small additive balls; in general use uniform approximation to prove finitarity of the singular construction; generation uses bounded closed subsets and continuity at fields of finite topological transcendence degree, then at all geometric fields, with dimensions uniformly bounded before passing to limits.
 
-*Needs:* §§1.3, 1.4, 2.2; TropicalAndBerkovichArithmetic §§0.21–0.22.
+*Needs:* §§0.8, 1.3, 1.4, 2.2; TropicalAndBerkovichArithmetic §§0.21–0.22.
 
 ### 2.6 Effective left adjoints
 
@@ -407,13 +436,47 @@ Prove: if `f : Y → X` factors as a finitary map `Y → Aⁿ_X` followed by the
 
 *Needs:* §§1.6, 2.1, 2.5; EnhancedDerivedSheaves §E3.2.
 
+### 2.7 Free motives of arc-stacks and maps smooth without boundary
+
+For a map `f : Y → X` of small arc-stacks, the *free motive* `ℤmot[Y/X]`, written `ℤmot[Y]` when `X` is clear, is an object of `Deff_mot(X)` corepresenting the functor `M ↦ Γ(Y, f^* M)` on `Deff_mot(X)`, when one exists; it is then unique up to a contractible space of choices. Prove that it exists in the following cases (Scholze, §1, p. 4, and Theorem 5.14, p. 32):
+
+1. `Y ⊂ Aⁿ_X` open, where it is the object of §2.5;
+2. `f` the composite of a finitary map `Y → Aⁿ_X` and the projection, where it is `f_♯ ℤ` of §2.6; for `n = 0`, that is for finitary `f`, it is `L_B f_♯ ℤ` with the finitary left adjoint of §1.6;
+3. `Y = colim_i Y_i` a small colimit of arc-stacks over `X` for which every `ℤmot[Y_i/X]` exists, where it is `colim_i ℤmot[Y_i/X]`.
+
+Call a map `g : Y → X` of small arc-stacks *étale* when it is finitary (§1.4) and its pullback to every geometric Banach point `Marc(C) → X` is a finite disjoint union of copies of `Marc(C)`, and *smooth without boundary* when `Y` is covered by open substacks `Y_i` such that each `Y_i → X` is an étale map `Y_i → A^{n_i}_X` followed by the projection (Scholze, Proposition 9.5 and proof of Corollary 9.6, p. 52). Prove:
+
+- (a) for a Banach ring `A` and a smooth `A`-scheme `Y` (Mathlib `AlgebraicGeometry.Smooth`), `Y^arc → Marc(A)` is smooth without boundary, and an étale morphism of schemes locally of finite presentation over `A` (Mathlib `AlgebraicGeometry.Etale`) induces an étale map of arc-stacks;
+- (b) for a complete nonarchimedean field `K` and a `K`-analytic space `U` that is smooth in Berkovich's sense, every point having an open neighbourhood with an étale morphism to an affine space over `K`, where an étale morphism is, locally on the source, finite étale onto an open subset of the target, `U^arc → Marc(K)` is smooth without boundary;
+- (c) for a Banach field `K` and a projective `K`-scheme `Y`, `Y^arc → Marc(K)` is proper of finite cohomological dimension (§1.5).
+
+Consequently `ℤmot[Y/X]` exists whenever `Y → X` is smooth without boundary, by cases 2 and 3 applied to the Čech nerve of the cover `{Y_i}`, whose terms are disjoint unions of finite intersections `Y_{i₀} ∩ ⋯ ∩ Y_{i_k}`, each open in `Y_{i₀}` and so finitary over `A^{n_{i₀}}_X`; and it exists for `∗/G` whenever the group arc-sheaf `G` is smooth without boundary over `X`, through the bar construction. This covers `ℙⁿ_X`, `GL_n/G_m^n`, `∗/GL_n`, `BG_m`, the arc-stacks of smooth schemes over Banach rings and those of smooth analytic spaces.
+
+API:
+
+- `Map(ℤmot[Y/X], M) ≃ Γ(Y, f^* M)` naturally in effective `M`, and a map `Y → Y′` over `X` induces `ℤmot[Y/X] → ℤmot[Y′/X]` when both exist.
+- In cases 1–3, pullback along `X′ → X` carries `ℤmot[Y/X]` to `ℤmot[Y ×_X X′/X′]`.
+- If `Y` and `Y′` are smooth without boundary over `X`, then so is `Y ×_X Y′`, and `ℤmot[Y ×_X Y′] ≃ ℤmot[Y] ⊗_mot ℤmot[Y′]`.
+
+Route: in case 3, `Γ(−, f^* M)` turns colimits of arc-stacks into limits, being the mapping space out of the free sheaf, which preserves colimits. For (a), on strict rings an étale morphism is standard étale on the pieces of a finite clopen partition of the spectrum (§0.8), and over a geometric point `C` a finite étale `C`-algebra is a finite product of copies of `C`; for finitarity, given a completed filtered colimit `B = colim B_i` of strict rings and a root `b ∈ B` of a standard étale presentation `h` with `h′(b)` a unit, approximate `b` from a stage, observe that `h′` of the approximation is a unit with bounded inverse at a later stage, because `M(B) = lim M(B_i)` (TropicalAndBerkovichArithmetic §0.16) and the spectra are compact, and apply Newton's iteration in that stage; roots at which `h′` is a unit are isolated, which gives uniqueness. Étale coordinates on smooth schemes are Tau Ceti `AlgebraicGeometry.Smooth.exists_etale_affineSpace`. For (b), open immersions give open arc-subsheaves (§0.8), and finite étale maps of affinoid algebras give étale maps as in (a) (Scholze, proof of Corollary 9.6, p. 52). For (c), `Y^arc` is a sheaf of sets; for `Y ⊂ ℙ^N` it is quasi-compact and quasi-separated, being covered by finitely many closed pieces of the polydisc charts of `ℙ^N` whose intersections are affine (§0.8). At a geometric point `C`, the projection of the closed unit polydisc `D^N_C` to `D^{N−1}_C` is proper with closed unit discs as geometric fibres, of cohomological dimension at most `3` (§2.1), so §1.7 gives `d(D^N_C) ≤ d(D^{N−1}_C) + 3` and hence `d(D^N_C) ≤ 3N`; a closed immersion has geometric fibres a point or empty, hence `d = 0`, so each closed piece and each of their intersections has `d ≤ 3N`, and the finite Čech complex of the cover by `N + 1` closed pieces gives `d(Y_C^arc) ≤ 4N`. The product formula is §2.5 for opens of affine space and the projection formula with base change of §2.6, extended through colimits.
+
+**Checks.**
+
+- `ℤmot[ℙ¹_X] = ℤ ⊕ ℤ(1)[2]`. `ℙ¹_X` is the pushout of two copies of `A¹_X` along `G_m`, the second inclusion being `T ↦ T⁻¹`, so case 3 gives `cofib(ℤmot[G_m] → ℤmot[A¹_X] ⊕ ℤmot[A¹_X])`. Here `ℤmot[A¹_X] = ℤ`, because `(x, t) ↦ tx` is a homotopy parametrized by the unit ball from the zero map to the identity, and `ℤmot[G_m] = ℤ ⊕ ℤ(1)[1]`, split by the unit section (§3.4); the map is `(1, −1)` on `ℤ` and zero on the reduced summand `ℤ(1)[1]`, whose image lies in the vanishing reduced part of `ℤmot[A¹_X]`. The cofibre is `ℤ ⊕ ℤ(1)[2]`, as in §§5.4 and 10.6. Case 1 alone does not reach `ℙ¹_X`: at the complex point it is the compact Riemann sphere (§0.8), which is no open subset of any `ℂⁿ`.
+- Degenerate cases: `ℤmot[∅/X] = 0`, `ℤmot[X/X] = ℤ` and `ℤmot[X ⨿ X/X] = ℤ ⊕ ℤ`. At the complex point `ℤmot[G_m]` is the chain complex `ℤ ⊕ ℤ[1]` of the circle, and the bar construction gives `ℤmot[BG_m] = ⊕_{n≥0} ℤ[2n]`, the chains of `ℂℙ^∞`, in accordance with §5.4.
+- Existence can fail. Let `X = Marc(Cont([0,1], ℂ))` and `Y = {0}`. Every finitary sheaf over `X` is ball-invariant, since ball invariance is tested at geometric points (§2.1), which are all complex here, and the complex closed disc is contractible; so `Deff_mot(X)` is the left-completed derived category of sheaves on `[0,1]` (§1.3), and `Γ(Y, M)` is the stalk at `0`. For the skyscraper sheaves `F_n` with value `ℤ` at `1/n`, the stalk at `0` of `∏_n F_n` is the group of germs `∏_n ℤ / ⊕_n ℤ ≠ 0`, while `∏_n (F_n)_0 = 0`. The stalk does not preserve products, so it is not corepresentable and `ℤmot[Y/X]` does not exist; consistently, `{0} → X` is a monomorphism that is not open, hence not finitary (§1.4, Checks).
+- The open unit disc over a nonarchimedean geometric point `C` is smooth without boundary, being open in `A¹_C`; the closed unit disc `Marc(C⟨T⟩₁)` is not, since a cover as in the definition would make it cohomologically smooth by §8.5, which the Check there excludes, and its inclusion into `A¹_C` is a monomorphism that is not open, hence not étale. Conversely `(Spec K[ε]/(ε²))^arc = Marc(K)` is smooth without boundary although the scheme is not smooth over `K` (§0.8), so (a) has no converse.
+- The bound of (c) is not sharp but finite: for `Y = ℙ¹_ℂ`, `N = 1`, the arc-stack is the Riemann sphere, of cohomological dimension `2 ≤ 4`.
+
+*Needs:* §§0.8, 1.4–1.7, 2.1, 2.5, 2.6; TropicalAndBerkovichArithmetic §§0.16, 0.19, 0.21; Tau Ceti `AlgebraicGeometry.Smooth.exists_etale_affineSpace`; Mathlib `AlgebraicGeometry.Smooth`, `AlgebraicGeometry.Etale`.
+
 ### Examples
 
 Over the complex point the closed unit ball `B` contracts to a point through `(s, t) ↦ st`; hence for every effective `M` the restriction `M(∗) → M(B)` is an equivalence, and `ℤmot[B] ≃ ℤmot[∗] = ℤ`. In the explicit localization the two maps `Δ⁰ → Δ¹ = B` become equal after realization. The empty subset gives the zero object. These computations distinguish ball localization from replacing every free sheaf by a copy of the unit.
 
 ### Dependencies
 
-Layers 0–1; EnhancedDerivedSheaves §§E3.2, E5:abstract.3, E5:abstract.4; TropicalAndBerkovichArithmetic §§0.17, 0.21–0.22, 1.1–1.3; SchemeAndStackFoundations §2.16; Tau Ceti `TauCeti.cohomologicalDimensionAt_le_of_isClosed`, `TauCeti.strictCohomologicalDimensionAt_le_cohomologicalDimensionAt_add_one`; ProfiniteCohomology Layer 11; DiamondEtaleCohomology §C6.1.
+Layers 0–1; EnhancedDerivedSheaves §§E3.2, E5:abstract.3, E5:abstract.4; TropicalAndBerkovichArithmetic §§0.16, 0.17, 0.19, 0.21–0.22, 1.1–1.3; SchemeAndStackFoundations §2.16; Tau Ceti `TauCeti.cohomologicalDimensionAt_le_of_isClosed`, `TauCeti.strictCohomologicalDimensionAt_le_cohomologicalDimensionAt_add_one`, `AlgebraicGeometry.Smooth.exists_etale_affineSpace`; Mathlib `AlgebraicGeometry.Smooth`, `AlgebraicGeometry.Etale`; ProfiniteCohomology Layer 11; DiamondEtaleCohomology §C6.1.
 
 ## Layer 3: Reduced units and the Tate object
 
@@ -454,7 +517,7 @@ API:
 - A pseudouniformizer `π`, `0 < |π| < 1`, has nontrivial class: one-units have norm 1, and `|π| ≠ 1`.
 - A unit of norm 1 whose residue class is not 1 has nontrivial class; so `Ḡ_m(C)` is an extension of the value group `|C^×|` by the residue units `k^×`, and retains more than the value group.
 
-*Needs:* §§1.2, 3.1; EnhancedDerivedSheaves §E1.3.
+*Needs:* §§0.8 (`G_m`), 1.2, 3.1; EnhancedDerivedSheaves §E1.3.
 
 ### 3.3 Ball invariance and the reduced free motive of `G_m`
 
@@ -506,7 +569,7 @@ For the annulus criterion take `C = ℂ₂`, `r₁ = 1/4`, `r₂ = 4`, `n = 2` a
 
 ### Dependencies
 
-Layers 1–2; TropicalAndBerkovichArithmetic §§0.24, 0.27, 1.1–1.3, 1.6, 3.7; EnhancedDerivedSheaves §E1.3; Tau Ceti `TauCeti.unitBallIdeal`, `TauCeti.norm_inverse_one_sub_sub_one`, `TauCeti.isUnit_unitClosedBall_of_norm_sub_one_lt`, `TauCeti.PowerSeries.isPrincipalIdealRing_isRestricted_subring`; gaps affinoid-line-bundles and animated-group-completion.
+Layers 0–2; TropicalAndBerkovichArithmetic §§0.24, 0.27, 1.1–1.3, 1.6, 3.7; EnhancedDerivedSheaves §E1.3; Tau Ceti `TauCeti.unitBallIdeal`, `TauCeti.norm_inverse_one_sub_sub_one`, `TauCeti.isUnit_unitClosedBall_of_norm_sub_one_lt`, `TauCeti.PowerSeries.isPrincipalIdealRing_isRestricted_subring`; gaps affinoid-line-bundles and animated-group-completion.
 
 ## Layer 4: Transfers and geometric-point comparisons
 
@@ -582,7 +645,7 @@ Prove: for a separated smooth connected analytic curve `U` over a nondiscrete al
 
 Route: shrink and compactify by §4.2, choose a `C`-point in each boundary disc, and divide `O(x − x′)` by `ℓ` in the marked Jacobian of §4.3. Choose a divisor of the root line bundle supported away from the boundary discs, with a rational section equal to 1 at each mark and with no zero or pole on any boundary disc (Riemann–Roch on `X̄`, then approximation on the discs); write its positive and negative parts as sums of `C`-points. Interpolate the two tautological sections by `t s₁ + (1 − t) s₂`; their ratio is a one-unit on each boundary disc, so the section never vanishes there and the interpolating effective divisors stay in `U`.
 
-*Needs:* §§3.1, 4.1–4.3; JacobianChallenge Layers A–B (divisors, rational sections, Riemann–Roch); TropicalAndBerkovichArithmetic §§0.21–0.22.
+*Needs:* §§0.8 (the arc-sheaf `U^arc` underlying `ℕ[U]`), 3.1, 4.1–4.3; JacobianChallenge Layers A–B (divisors, rational sections, Riemann–Roch); TropicalAndBerkovichArithmetic §§0.21–0.22.
 
 ### 4.6 Ball-invariant sheafification of presheaves with transfers
 
@@ -595,7 +658,7 @@ Route: compute sheafification through the strict basis and quasi-pro-étale shea
 - The closed unit disc `Marc(C⟨T⟩₁) ⊂ A¹_C` is an affine subset and not an open one, so it is covered by the conclusion but by no statement about open domains; for the free ball-invariant presheaf with transfers on the point, its rational value there is `ℚ` before arc-sheafification and `ℚmot(C⟨T⟩₁) = ℚmot(C) = ℚ` after it.
 - The primes with `|ℓ| < 1` must be inverted. Over a geometric point `C` of characteristic `ℓ`, let `F(B) = Hom(ℤ[Marc(B)], ℤ/ℓ)`, the sections over `Marc(B)` of the constant abelian arc-sheaf `ℤ/ℓ`, that is the locally constant functions `M(B) → ℤ/ℓ`; a map of monoid sheaves `ℕ[Marc(A)] → ℕ[Marc(B)]` acts by precomposition with the induced map of free abelian sheaves `ℤ[Marc(A)] → ℤ[Marc(B)]`. This is additive, so `F(0) = 0`, `F(C) = ℤ/ℓ` and `F(C × C) = (ℤ/ℓ)²`, and a multiset whose degree varies over the components of `M(B)` acts componentwise by that degree. The constant presheaf with value `ℤ/ℓ` on every algebra is not a presheaf with transfers: in §4.1 `ℕ[Marc(0)] = 0`, so the identity of the zero ring equals the zero map and an additive functor vanishes there, and it would give `ℤ/ℓ` instead of `(ℤ/ℓ)²` on `C × C`. `F` is finitary, because the spectrum of a completed filtered colimit is the inverse limit of the spectra (TropicalAndBerkovichArithmetic §0.16) and every clopen subset of a cofiltered limit of compact Hausdorff spaces comes from a finite stage; it is ball-invariant in degree zero, because `M(B⟨T⟩₁) → M(B)` has the section `T ↦ 0` and connected fibres, closed discs over the residue fields, so every locally constant function on the ball is pulled back from `M(B)`. Its derived arc-sheafification, the constant sheaf `ℤ/ℓ` as a complex, is not ball-invariant. The Artin–Schreier sequence `0 → ℤ/ℓ → O → O → 0`, `x ↦ x^ℓ − x`, is exact arc-locally, so `H¹` of the sheafification on `Marc(B)` contains the cokernel of `x ↦ x^ℓ − x` on the uniform perfection of `B`. That cokernel is `0` for `B = C`, which is algebraically closed, and contains the class of `T` for `B = C⟨T⟩₁`: a solution `x` has Gauss norm at most `1` and would reduce modulo the elements of norm less than one to `x̄ ∈ k[T^{1/ℓ^∞}]` with `x̄^ℓ − x̄ = T`, which forces nonzero coefficients at every `T^{1/ℓ^m}`, `m ≥ 1`, impossible for a polynomial.
 
-*Needs:* §§1.1, 4.1, 4.4, 4.5; TropicalAndBerkovichArithmetic §0.22 (separation of the curve models).
+*Needs:* §§0.8 (arc-stacks of the curve models and their open subsets), 1.1, 4.1, 4.4, 4.5; TropicalAndBerkovichArithmetic §0.22 (separation of the curve models).
 
 ### 4.7 Explicit free motivic sheaves
 
@@ -685,7 +748,7 @@ Route: by the annulus model and proper base change, compare internal Homs with a
 
 ### 5.4 Symmetric powers and projective cells
 
-Prove: for `n ≥ 0`, `Symⁿ(ℚ(1)) ≃ ℚ(n)`; for `n ≥ 1` the cofibre of `ℤmot[ℙ^{n−1}] → ℤmot[ℙⁿ]` is `ℤ(n)[2n]`; and there is a canonical decomposition `ℚmot[BG_m] ≃ ⊕_{n≥0} ℚ(n)[2n]`, with `ℙⁿ` mapping onto the summands `0 ≤ i ≤ n` through the class of `O(1)` (Scholze, Corollaries 8.1–8.2 and proof, p. 44). The cell cofibre is integral; the splitting is rational. Free motives of `BG_m` are defined by left Kan extension from smooth charts.
+Prove: for `n ≥ 0`, `Symⁿ(ℚ(1)) ≃ ℚ(n)`; for `n ≥ 1` the cofibre of `ℤmot[ℙ^{n−1}] → ℤmot[ℙⁿ]` is `ℤ(n)[2n]`; and there is a canonical decomposition `ℚmot[BG_m] ≃ ⊕_{n≥0} ℚ(n)[2n]`, with `ℙⁿ` mapping onto the summands `0 ≤ i ≤ n` through the class of `O(1)` (Scholze, Corollaries 8.1–8.2 and proof, p. 44). The cell cofibre is integral; the splitting is rational. The free motives of `ℙⁿ` and of `BG_m = ∗/G_m` are those of §2.7, computed through the affine charts and the bar construction.
 
 Route: coherent Tate symmetry after cancellation identifies rational symmetric powers. The cell cofibres come from the affine chart and the `A¹`-bundle over `ℙ^{n−1}`. Animate the augmentation-ideal filtration on the group algebra of the 1-connective `BG_m`; its graded pieces have increasing connectivity, and the projective cells split the filtration and give convergence to the direct sum.
 
@@ -695,7 +758,7 @@ Route: coherent Tate symmetry after cancellation identifies rational symmetric p
 - `ℤmot[ℙ¹] = ℤ ⊕ ℤ(1)[2]`.
 - No finite stage suffices: at the complex point `ℚmot[BG_m]` is the rational homology of `ℂℙ^∞`, one `ℚ` in each degree `−2n`, `n ≥ 0`, while the image of `ℚmot[ℙ¹]` is the summands `n = 0, 1` (degrees `0` and `−2`); in degree `−4` the stage `ℙ¹` gives `0` and `BG_m` gives `ℚ`, supplied by `ℙ²`. At the complex point this family does not separate the sum from the product: each degree contains exactly one nonzero `ℚ[2n]`, so `⊕_n ℚ[2n] → ∏_n ℚ[2n]` is an equivalence in `D(ℚ)`.
 
-*Needs:* §§2.5, 3.4, 5.1, 5.3; the animated group completion and augmentation filtration (gap:animated-group-completion).
+*Needs:* §§0.8, 2.5, 2.7, 3.4, 5.1, 5.3; the animated group completion and augmentation filtration (gap:animated-group-completion).
 
 ### Examples
 
@@ -703,7 +766,7 @@ Apply the rational inverse of §5.2 to an element represented on a closed annulu
 
 ### Dependencies
 
-Layers 1–4; TropicalAndBerkovichArithmetic §1.1; gap animated-group-completion.
+Layers 0–4; TropicalAndBerkovichArithmetic §1.1; gap animated-group-completion.
 
 ## Layer 6: Motivic K-theory and Adams weights
 
@@ -727,7 +790,7 @@ API:
 
 Route: take the group-completion model of connective K-theory of GeneralAlgebraicKTheoryPartII §1.2 with the E∞-ring structure of RefinedTraceMethods §4.10; resolve the sheafified group completion of `⨿_n ∗/GL_n` by classifying spaces of products of `GL_n` through a Breen–Deligne resolution, and these by `GL_n`-charts, whose free ball-invariant sheaves are finitary by §2.5; apply symmetric monoidal spectral localization.
 
-*Needs:* §§2.2, 2.5; GeneralAlgebraicKTheoryPartII §1.2 and RefinedTraceMethods §4.10; GeneralAlgebraicKTheory §3.2; EnhancedDerivedSheaves §E5:presentability.2 (`spectra`, stabilization) and §E5:abstract.3; the Breen–Deligne resolution (gap:animated-group-completion).
+*Needs:* §§0.8 (`GL_n` and `∗/GL_n`), 2.2, 2.5, 2.7; GeneralAlgebraicKTheoryPartII §1.2 and RefinedTraceMethods §4.10; GeneralAlgebraicKTheory §3.2; EnhancedDerivedSheaves §E5:presentability.2 (`spectra`, stabilization) and §E5:abstract.3; the Breen–Deligne resolution (gap:animated-group-completion).
 
 ### 6.2 Rational flag invariants
 
@@ -741,7 +804,7 @@ Route: induct on `n`; the `Σ_{n−1}`-invariants identify with `ℚmot[ℙ^{n�
 - For `n = 2`, `ℚmot[ℙ¹] = ℚ ⊕ ℚ(1)[2]` and the transposition acts on the complex realization `H*(ℙ¹; ℚ)` by `+1` on `H⁰` and `−1` on `H²` (it is the antipodal map of the sphere `U(2)/T ≅ S²`, of degree `−1`), so the invariants are `ℚ[0]`.
 - A claim that arbitrary realizations are conservative is not used: only the computation of rational diagonal entries.
 
-*Needs:* §§1.3, 2.6, 5.3, 5.4; RepresentationTheory (LieGroups) Layer 8 (Bruhat decomposition and the cohomology of the flag manifold); CharacteristicClasses §C5 (the Euler characteristic of `G/T` equals `|W|`); MorseNovikov (the Lefschetz fixed-point formula).
+*Needs:* §§0.8, 1.3, 2.6, 2.7 (the free motive of `GL_n/G_m^n`), 5.3, 5.4; RepresentationTheory (LieGroups) Layer 8 (Bruhat decomposition and the cohomology of the flag manifold); CharacteristicClasses §C5 (the Euler characteristic of `G/T` equals `|W|`); MorseNovikov (the Lefschetz fixed-point formula).
 
 ### 6.3 The canonical rational splitting of motivic K-theory
 
@@ -757,7 +820,7 @@ The rational motive of `ℙ²` is `ℚ ⊕ ℚ(1)[2] ⊕ ℚ(2)[4]`, and the cor
 
 ### Dependencies
 
-Layers 1–5; GeneralAlgebraicKTheory §3.2; GeneralAlgebraicKTheoryPartII §1.2; RefinedTraceMethods §4.10; SchemeKTheoryOperations §§6.4, 6.8; EnhancedDerivedSheaves §§E5:abstract.3, E5:presentability.2; RepresentationTheory (LieGroups) Layer 8; CharacteristicClasses §C5; MorseNovikov; gap animated-group-completion.
+Layers 0–5; GeneralAlgebraicKTheory §3.2; GeneralAlgebraicKTheoryPartII §1.2; RefinedTraceMethods §4.10; SchemeKTheoryOperations §§6.4, 6.8; EnhancedDerivedSheaves §§E5:abstract.3, E5:presentability.2; RepresentationTheory (LieGroups) Layer 8; CharacteristicClasses §C5; MorseNovikov; gap animated-group-completion.
 
 ## Layer 7: The K-theory of one-units
 
@@ -891,7 +954,7 @@ Prove: for `f : ℙ¹_X → X`, `f_♯ ≃ f_* ⊗ ℤ(1)[2]` as functors `Dmot(
 
 Route: construct the unit from the `G_m`-torsor of `O(Δ)` on `ℙ¹_X ×_X ℙ¹_X`, trivialized off the diagonal, which gives `Δ_* ℤ → ℤ(1)[2]`. Construct the counit from the reduced cohomology of `ℙ¹`. By ball invariance, applied to the two affine charts of `ℙ¹_X`, which meet in `G_m` (§5.4), the reduced free motive `cofib(ℤmot[∗] → ℤmot[ℙ¹]) = ℤ(1)[2]` is the reduced free motive `cofib(ℤmot[∗] → ℤmot[G_m]) = ℤ(1)[1]` of §3.4 shifted by `[1]`. So over every base the reduced cohomology of `ℙ¹` with coefficients `M` is that of `G_m` shifted by `[−1]`, namely `Hom(ℤ(1)[1], M)[−1] = Hom(ℤ(1)[2], M)`, and tensoring it with the invertible object `ℤ(1)[2]` returns `M`. The cofibre `ℤ(1)[1]` is `Ḡ_m` only on the nonarchimedean locus (§3.3); at the complex point it is `ℤ[1]`, and the reduced cohomologies of `ℙ¹` and of `G_m` with coefficients `ℤ` are `ℤ[−2]` and `ℤ[−1]`. Check the triangle identities on objects `j_! M` for the affine chart `j : A¹_X → ℙ¹_X` and on geometric fibres, reducing to the unit.
 
-*Needs:* §§1.6, 2.6, 3.4, 5.4, 8.1.
+*Needs:* §§0.8 (`ℙ¹_X` and its charts), 1.6, 2.6, 2.7, 3.4, 5.4, 8.1.
 
 ### 8.3 Stable motivic tilting
 
@@ -909,7 +972,7 @@ Route: apply §1.7 levelwise in the sequence model of §8.1; reduce the projecti
 
 ### 8.5 Six operations on small arc-stacks
 
-Prove: the assignment `X ↦ Dmot(X)` extends to a six-functor formalism on small arc-stacks for the class of `!`-able maps produced by the extension theorem from the class `P_B` of maps of affine arc-sheaves generated under composition and base change by the maps `f : Marc(B) → Marc(A)` of finite cohomological dimension that, arc-locally on the target, embed `Marc(B)` into a finite-dimensional closed ball over the target (with `f_! = f_*` on `P_B`); §9.4 enlarges the class to all proper 0-truncated maps of locally finite cohomological dimension; open immersions are `!`-able with `j_!` left adjoint to `j^*`; étale maps, meaning finitary maps with finite geometric fibres, are `!`-able and cohomologically étale; and for a Banach field `K`, every smooth `K`-analytic space without boundary is cohomologically smooth (Scholze, Propositions 9.4–9.5 and Corollary 9.6, p. 52, and the construction before them). Not every map is `!`-able, and smoothness requires the absence of boundary: the closed disc `f : Marc(C⟨T⟩₁) → Marc(C)` over a nonarchimedean geometric point is proper with `f_* ℤ = ℤ` by ball invariance, whereas a proper cohomologically smooth map of dimension one would have `f_* f^! ℤ = f_* ℤ(1)[2] = ℤ(1)[2]` equal to the dual `(f_* ℤ)^∨ = ℤ`, which fails since `ℤ(1)[2] ⊗ ℚ = (Ḡ_m ⊗ ℚ)[1] ≠ ℚ`.
+Prove: the assignment `X ↦ Dmot(X)` extends to a six-functor formalism on small arc-stacks for the class of `!`-able maps produced by the extension theorem from the class `P_B` of maps of affine arc-sheaves generated under composition and base change by the maps `f : Marc(B) → Marc(A)` of finite cohomological dimension that, arc-locally on the target, embed `Marc(B)` into a finite-dimensional closed ball over the target (with `f_! = f_*` on `P_B`); §9.4 enlarges the class to all proper 0-truncated maps of locally finite cohomological dimension; open immersions are `!`-able with `j_!` left adjoint to `j^*`; étale maps, meaning finitary maps with finite geometric fibres (§2.7), are `!`-able and cohomologically étale; and every map of small arc-stacks that is smooth without boundary in the sense of §2.7 is cohomologically smooth, in particular, for a Banach field `K`, the arc-stack of a smooth `K`-scheme and, for nonarchimedean `K`, the arc-stack of a `K`-analytic space smooth in Berkovich's sense (§§0.8, 2.7) (Scholze, Propositions 9.4–9.5 and Corollary 9.6, p. 52, and the construction before them; §1, p. 6). Not every map is `!`-able, and smoothness requires the absence of boundary: the closed disc `f : Marc(C⟨T⟩₁) → Marc(C)` over a nonarchimedean geometric point is proper with `f_* ℤ = ℤ` by ball invariance, whereas a proper cohomologically smooth map of dimension one would have `f_* f^! ℤ = f_* ℤ(1)[2] = ℤ(1)[2]` equal to the dual `(f_* ℤ)^∨ = ℤ`, which fails since `ℤ(1)[2] ⊗ ℚ = (Ḡ_m ⊗ ℚ)[1] ≠ ℚ`.
 
 Route: apply the construction principle of AnalyticStacks §0.5 on the category of affine arc-sheaves `Marc(A)` with `I` the open immersions and `P = P_B`. The class `P_B` contains the identities and is stable under composition and base change by construction; it is right cancellative because for `g ∘ f ∈ P_B` with `g` in `P_B`, `f` is the graph `Y → Y ×_X Z`, a closed immersion into a ball of dimension zero, followed by the base change of `g ∘ f` along `g`; and `I ∩ P_B` consists of monomorphisms. Base change and projection formulas for `P_B` are those of §8.4 (with §1.6 for `I`), and both pass to composites. The construction cannot start from all affine maps of finite cohomological dimension, because §8.4 does not give their projection formula and the general proper projection formula of §9.4 is proved through §9.1, which uses this section (Corrections to the source, E7). Extend to small arc-stacks by §0.6 there, on the subcanonical site of small arc-stacks with the arc-topology. Compute `j_!` for `{|a| < 1}` as the colimit over the affine pieces `{|a| ≤ c}`, `c < 1`; reduce étale maps to finite fibres and open immersions, and smooth maps to affine space and `ℙ¹`-duality on charts.
 
@@ -919,7 +982,7 @@ Route: apply the construction principle of AnalyticStacks §0.5 on the category 
 - For the profinite set `βℕ`, `Marc(Cont(βℕ, ℂ)) → Marc(ℂ)` has cohomological dimension `0`, but after any arc-cover of the target its geometric fibres are copies of `βℕ`, which is not metrizable and so embeds into no finite-dimensional closed complex ball. It is outside `P_B`; it becomes `!`-able in §9.4.
 - The graph of a map of affine arc-sheaves over `X` lies in `P_B` with ball dimension `0` and cohomological dimension `0`; this is the input of right cancellation.
 
-*Needs:* §§1.4, 1.6, 8.2, 8.4; AnalyticStacks §§0.4–0.6, 0.9–0.10; TropicalAndBerkovichArithmetic §§0.21–0.22.
+*Needs:* §§0.8, 1.4, 1.6, 2.7 (étale maps and maps smooth without boundary), 8.2, 8.4; AnalyticStacks §§0.4–0.6, 0.9–0.10; TropicalAndBerkovichArithmetic §§0.21–0.22.
 
 ### Examples
 
@@ -927,7 +990,7 @@ At the complex point `ℤ(1) = ℤ`, so `ℤmot[ℙ¹] = ℤ ⊕ ℤ[2]`, and `f
 
 ### Dependencies
 
-Layers 1–5; EnhancedDerivedSheaves §E5:presentability.2; AnalyticStacks §§0.4–0.6, 0.9–0.10; TropicalAndBerkovichArithmetic §§0.21–0.22.
+Layers 0–5; EnhancedDerivedSheaves §E5:presentability.2; AnalyticStacks §§0.4–0.6, 0.9–0.10; TropicalAndBerkovichArithmetic §§0.21–0.22.
 
 ## Layer 9: Rigidity and mixed Tate sheaves
 
@@ -939,7 +1002,7 @@ Prove: for a nondiscrete algebraically closed Banach field `C`, `Dmot(C)` is com
 
 Route: by §8.3 reduce to equal characteristic. Pushforward along smooth proper maps preserves dualizables, and the unit is compact, so the displayed objects are compact. To show they generate, detect a vanishing object by induction on the topological transcendence degree of geometric field extensions: type 4 points reduce to balls, type 3 points to annuli and Tate twists, and the residually transcendental case to smooth finite-type models, compactified with normal-crossing boundary after an alteration, with trace descent and localization reducing the dimension. Torsion objects are detected by the unit (§4.8) before the rational induction. Alterations, not resolution of singularities, are used.
 
-*Needs:* §§2.5, 3.5, 4.8, 8.3, 8.5; AdicCoefficientsAndComparisons Layer L5 (`smoothAlterationPair`); EnhancedDerivedSheaves §E5:presentability.4 (`IsRigid`); TropicalAndBerkovichArithmetic §§1.1–1.2.
+*Needs:* §§0.8, 2.5, 2.7 (free motives of `X_C`, smooth without boundary and proper of finite cohomological dimension), 3.5, 4.8, 8.3, 8.5; AdicCoefficientsAndComparisons Layer L5 (`smoothAlterationPair`); EnhancedDerivedSheaves §E5:presentability.4 (`IsRigid`); TropicalAndBerkovichArithmetic §§1.1–1.2.
 
 ### 9.2 Compact morphisms between free motives
 
@@ -991,9 +1054,9 @@ API:
 
 - Every `ℤ(n)` lies in `DMT(X)`, for `n` positive, zero and negative.
 - An object that becomes a sum of Tate objects after a finite étale cover lies in `DMT(X)` even if it is not globally a sum of Tate objects (an Artin motive).
-- At a geometric point `DMT(C)` is the localizing Tate subcategory, not all of `Dmot(C)`; a definition of `DMT` as all of `Dmot` is wrong. Let `C` be the completed algebraic closure of `𝔽̄_p((T))` and `E` an elliptic curve over `𝔽̄_p`. If `ℤmot[E_C]` were in `DMT(C)`, then `Ψ(ℤmot[E_C]) = ℤmot[E]` would lie in `DMT(𝔽̄_p)` (§11.1), so `ℚmot[E] ≅ ⊕ ℚ(i)[m]^{n_{i,m}}` with `n_{i,m} = dim Hom(ℚ(i)[m], ℚmot[E]) = dim Hom(ℚmot[E], ℚ(i)[m])`, since rational Tate objects over `𝔽̄_p` are mutually orthogonal (§11.4). The dual of `ℚmot[E]` is `ℚmot[E](−1)[−2]` (§§8.2, 8.5: `E` is smooth and proper without boundary over the Banach field `𝔽̄_p`, so `ℤmot[E] = f_* ℤ(1)[2]` is the dual of `f_* ℤ`), so `Hom(ℚ(i)[m], ℚmot[E]) = Hom(ℚmot[E], ℚ(1−i)[2−m])`, and §10.5 identifies the two dimensions with those of `K_{m−2i}(E)^{(1−i)}_ℚ` and of `K_{2i−m}(E)^{(i)}_ℚ`. The negative K-groups of the regular scheme `E` vanish (SchemeKTheoryOperations §2.6), so `n_{i,m} = 0` unless `m = 2i`, and `n_{i,2i} = dim CH^i(E)_ℚ` (MotivicEtaleKTheory §2.2) is `1` for `i = 0`, `1` for `i = 1` (`Pic⁰(E)(𝔽̄_p) = E(𝔽̄_p)` is torsion) and `0` otherwise. Hence `ℚmot[E] ≅ ℚ ⊕ ℚ(1)[2]` and `End(ℚmot[E]) = ℚ × ℚ` has dimension `2`. But `End(ℚmot[E]) = Hom(ℚmot[E] ⊗ ℚmot[E](−1)[−2], ℚ) = Hom(ℚmot[E × E], ℚ(1)[2]) = CH¹(E × E)_ℚ` (`ℚmot[E × E] = ℚmot[E] ⊗ ℚmot[E]` by §§10.1, 10.6, then §10.5 and MotivicEtaleKTheory §2.2), and the classes of `E × {0}`, `{0} × E` and the diagonal are linearly independent there: each has self-intersection `0` by the adjunction formula, as `K_{E × E} = 0` and each curve has genus one, and any two meet transversally in the single point `(0, 0)`, so their intersection matrix has rows `(0, 1, 1)`, `(1, 0, 1)`, `(1, 1, 0)` and determinant `2` (Vakil, Exercise 20.2.A, the bilinear intersection form (20.2.4.1) and Exercise 20.2.B(a), pp. 580–582). So `dim End(ℚmot[E]) ≥ 3`, a contradiction; thus `ℤmot[E_C] ∉ DMT(C)`.
+- At a geometric point `DMT(C)` is the localizing Tate subcategory, not all of `Dmot(C)`; a definition of `DMT` as all of `Dmot` is wrong. Let `C` be the completed algebraic closure of `𝔽̄_p((T))` and `E` an elliptic curve over `𝔽̄_p`. If `ℤmot[E_C]` were in `DMT(C)`, then `Ψ(ℤmot[E_C]) = ℤmot[E]` would lie in `DMT(𝔽̄_p)` (§11.1), so `ℚmot[E] ≅ ⊕ ℚ(i)[m]^{n_{i,m}}` with `n_{i,m} = dim Hom(ℚ(i)[m], ℚmot[E]) = dim Hom(ℚmot[E], ℚ(i)[m])`, since rational Tate objects over `𝔽̄_p` are mutually orthogonal (§11.4). The dual of `ℚmot[E]` is `ℚmot[E](−1)[−2]` (§§2.7, 8.2, 8.5: `E^arc` is smooth without boundary and proper of finite cohomological dimension over the Banach field `𝔽̄_p`, so `ℤmot[E] = f_* ℤ(1)[2]` is the dual of `f_* ℤ`), so `Hom(ℚ(i)[m], ℚmot[E]) = Hom(ℚmot[E], ℚ(1−i)[2−m])`, and §10.5 identifies the two dimensions with those of `K_{m−2i}(E)^{(1−i)}_ℚ` and of `K_{2i−m}(E)^{(i)}_ℚ`. The negative K-groups of the regular scheme `E` vanish (SchemeKTheoryOperations §2.6), so `n_{i,m} = 0` unless `m = 2i`, and `n_{i,2i} = dim CH^i(E)_ℚ` (MotivicEtaleKTheory §2.2) is `1` for `i = 0`, `1` for `i = 1` (`Pic⁰(E)(𝔽̄_p) = E(𝔽̄_p)` is torsion) and `0` otherwise. Hence `ℚmot[E] ≅ ℚ ⊕ ℚ(1)[2]` and `End(ℚmot[E]) = ℚ × ℚ` has dimension `2`. But `End(ℚmot[E]) = Hom(ℚmot[E] ⊗ ℚmot[E](−1)[−2], ℚ) = Hom(ℚmot[E × E], ℚ(1)[2]) = CH¹(E × E)_ℚ` (`ℚmot[E × E] = ℚmot[E] ⊗ ℚmot[E]` by §§10.1, 10.6, then §10.5 and MotivicEtaleKTheory §2.2), and the classes of `E × {0}`, `{0} × E` and the diagonal are linearly independent there: each has self-intersection `0` by the adjunction formula, as `K_{E × E} = 0` and each curve has genus one, and any two meet transversally in the single point `(0, 0)`, so their intersection matrix has rows `(0, 1, 1)`, `(1, 0, 1)`, `(1, 1, 0)` and determinant `2` (Vakil, Exercise 20.2.A, the bilinear intersection form (20.2.4.1) and Exercise 20.2.B(a), pp. 580–582). So `dim End(ℚmot[E]) ≥ 3`, a contradiction; thus `ℤmot[E_C] ∉ DMT(C)`.
 
-*Needs:* §§8.1, 9.1; EnhancedDerivedSheaves §E5:presentability.2.
+*Needs:* §§2.7, 8.1, 9.1; EnhancedDerivedSheaves §E5:presentability.2.
 
 ### 9.6 Rigidity over analytic bases
 
@@ -1037,7 +1100,7 @@ Let `X` be the disjoint union of two complex points. Then `Dmot(X) = D(ℤ) × D
 
 ### Dependencies
 
-Layers 1–8; AdicCoefficientsAndComparisons Layer L5; AnalyticStacks §§0.5–0.6; EnhancedDerivedSheaves §§E5:abstract.5, E5:presentability.2, E5:presentability.4; TropicalAndBerkovichArithmetic §§1.1–1.2; SchemeKTheoryOperations §2.6 and MotivicEtaleKTheory §2.2 (the negative control of §9.5).
+Layers 0–8; AdicCoefficientsAndComparisons Layer L5; AnalyticStacks §§0.5–0.6; EnhancedDerivedSheaves §§E5:abstract.5, E5:presentability.2, E5:presentability.4; TropicalAndBerkovichArithmetic §§1.1–1.2; SchemeKTheoryOperations §2.6 and MotivicEtaleKTheory §2.2 (the negative control of §9.5).
 
 ## Layer 10: Integral étale motives over a field
 
@@ -1104,7 +1167,7 @@ Prove: for an algebraically closed field `k` with the trivial norm, `Dmot(k)` is
 
 Route: let `K = k((T))` with `|T| = 1/2` and `f : Marc(K) → Marc(k)`. Annulus continuity (§3.5) identifies `f_* ℤ` with `g_* ℤ` for `g : G_{m,k} → Marc(k)`, through the pullback `g_* ℤ → f_* ℤ` along the map `Marc(K) → G_{m,k}` given by `T`, and `f_* ℤ ≃ ℤ ⊕ ℤ(−1)[−1]`, which is dualizable. Its dual represents `M ↦ Hom(1_K, f^* M)` on `M ∈ Dmot(k)`: `Hom((f_* 1_K)^∨, M) ≃ Hom(1_k, M ⊗ f_* 1_K) ≃ Hom(1_k, f_* f^* M) ≃ Hom(1_K, f^* M)`, by dualizability, the projection formula of §8.4 (`Marc(K)` is the closed subset `{|T| = 1/2}` of the closed unit ball over `Marc(k)`, and `f` has finite cohomological dimension) and the adjunction `f^* ⊣ f_*`. So `f_♯` exists on the unit with `f_♯ ℤ = (f_* ℤ)^∨ ≃ ℤ ⊕ ℤ(1)[1]` compact, and `ℤ` is a compact retract of it. The functor `M ↦ Hom(1, f_* M)` has domain `Dmot(K)` and is not represented by an object of `Dmot(k)`. By §9.1 over the completed algebraic closure of `K`, descended through finite extensions of `K` (again Laurent-series fields over `k`) together with Artin motives, `f_♯` exists in general; as `f^*` is conservative, the objects `f_♯ f^* ℤmot[X](−j) = ℤmot[X](−j) ⊗ f_♯ ℤ` generate, and the splitting of `f_♯ ℤ` gives the claim.
 
-*Needs:* §§2.6, 3.5, 8.1, 8.4, 9.1, 9.4.
+*Needs:* §§2.6, 2.7, 3.5, 8.1, 8.4, 9.1, 9.4.
 
 ### 10.4 Mapping formulas for algebraic étale motives
 
@@ -1125,11 +1188,11 @@ Prove: for an algebraically closed field `k` with the trivial norm, smooth proje
 
 Route: let `C` be the completed algebraic closure of `k((T))`. By §7.5, `Kmot(X_C)_ℚ = cofib(K(X^m_C) → K(X_C))_ℚ`, with `K(X^m_C) = fib(K(X_{O_C}) → K(X))`, which is the cofibre of `K(X_{O_C} on X)_ℚ → K(X)_ℚ`. Writing `O_C` as a completed filtered colimit of finite extensions of `k[[T]]` and using excision on regular schemes, `K(X_{O_C} on X)_ℚ ≃ K(X)_ℚ` with Adams weights shifted by one (the weight shift for a Cartier divisor with trivial conormal bundle). By induction on weight this extra piece matches the second summand of `f_♯ ℤ = ℤ ⊕ ℤ(1)[1]` of §10.3. The torsion formula follows from §4.8 and inverse limits over finite coefficients.
 
-*Needs:* §§4.8, 6.3, 7.5, 10.3; SchemeKTheoryOperations §§3.8, 6.8, 6.11; EnhancedDerivedSheaves §§E2.2–E2.3.
+*Needs:* §§2.7, 4.8, 6.3, 7.5, 10.3; SchemeKTheoryOperations §§3.8, 6.8, 6.11; EnhancedDerivedSheaves §§E2.2–E2.3.
 
 ### 10.6 Berkovich and algebraic étale motives
 
-Prove: for an algebraically closed field `k` with the trivial norm, the symmetric monoidal functor `DM_et(k, ℤ) → Dmot(k)` sending a smooth `k`-scheme to its Berkovich motive is an equivalence, carrying `M(X)` to `ℤmot[X]` and `ℤ(1)` to `ℤ(1)` (Scholze, Remark 11.2 and Theorem 11.1, pp. 57–58; Proposition 1.13, p. 7). A comparison over non-closed fields would need a separate choice between descent and hyperdescent and is not asserted.
+Prove: for an algebraically closed field `k` with the trivial norm, the symmetric monoidal functor `DM_et(k, ℤ) → Dmot(k)` sending the motive `M(X)` of a smooth `k`-scheme `X` to the free motive `ℤmot[X^arc]` of its arc-stack (§§0.8, 2.7) is an equivalence, carrying `ℤ(1)` to `ℤ(1)` (Scholze, Remark 11.2 and Theorem 11.1, pp. 57–58; Proposition 1.13, p. 7). A comparison over non-closed fields would need a separate choice between descent and hyperdescent and is not asserted.
 
 Route: the Berkovich functor satisfies étale descent, `A¹`-invariance and `G_m`-stability, so it factors through `DM_et(k, ℤ)` by §10.1. Both sides are generated by the compact dualizable objects attached to smooth projective `X` and `j ∈ ℤ` (§§10.3, 10.4); on these the maps agree rationally (§§10.4, 10.5) and after completion away from `p`, and `p` is invertible on both sides (§§4.8, 10.2); a map of spectra that is an equivalence rationally and modulo every prime is an equivalence, which gives full faithfulness, and generation gives essential surjectivity.
 
@@ -1139,7 +1202,7 @@ Route: the Berkovich functor satisfies étale descent, `A¹`-invariance and `G_m
 - For `k = 𝔽̄_p`, `Map(ℤ(−j), ℤ)_ℚ` is `ℚ[0]` for `j = 0` and `0` otherwise on both sides, because `K(𝔽̄_p)_ℚ = ℚ[0]`.
 - With coefficients `ℤ/ℓ`, `ℓ ≠ p`, both sides are `D(ℤ/ℓ)`.
 
-*Needs:* §§4.8, 10.1–10.5.
+*Needs:* §§0.8, 2.7, 4.8, 10.1–10.5.
 
 ### Examples
 
@@ -1147,7 +1210,7 @@ Put `k = 𝔽̄_p` with the trivial norm and `X = Spec k`. Filtered continuity f
 
 ### Dependencies
 
-Layers 3–9; MotivesAndAlgebraicCycles §§4.1–4.6, 4.9, 4.11, 4.15–4.18; MotivicEtaleKTheory §2.2; SchemeKTheoryOperations §§3.8, 6.8, 6.11; GeneralAlgebraicKTheory §13.8c; KTheoryFiniteLocalFields §1.6; AdicCoefficientsAndComparisons Layer L5; EtaleCohomologyFoundations §§F.2.1, F.2.3, F.3.0; EnhancedDerivedSheaves §§E1.3, E2.2–E2.3, E3.2, E5:abstract.3, E5:presentability.2.
+Layers 0–9; MotivesAndAlgebraicCycles §§4.1–4.6, 4.9, 4.11, 4.15–4.18; MotivicEtaleKTheory §2.2; SchemeKTheoryOperations §§3.8, 6.8, 6.11; GeneralAlgebraicKTheory §13.8c; KTheoryFiniteLocalFields §1.6; AdicCoefficientsAndComparisons Layer L5; EtaleCohomologyFoundations §§F.2.1, F.2.3, F.3.0; EnhancedDerivedSheaves §§E1.3, E2.2–E2.3, E3.2, E5:abstract.3, E5:presentability.2.
 
 ## Layer 11: Nearby cycles and motivic monodromy
 
@@ -1172,7 +1235,7 @@ API:
 
 Route: both `f_* ℤ` and `g_* ℤ` receive the unit with cofibre `ℚ(−1)[−1]` (finite levels and annulus limits), and the pullback `g_* ℤ → f_* ℤ` is compatible with these units, so it induces an endomorphism of `ℚ(−1)[−1]`. Such an endomorphism is multiplication by a rational number, as `End(ℚ(−1)) = K₀(k)_ℚ^{(0)} = ℚ` (§10.5); comparison with a finite level, the map `Marc(C) → G_{m,k}` given by the unit `π^{1/n}`, shows that it is nonzero, hence an isomorphism.
 
-*Needs:* §§3.5, 8.1, 9.4, 10.3, 10.5; EnhancedDerivedSheaves §E5:abstract.5 (`barrBeckLurie`) and §E5:presentability.2 (`categoricalModuleBaseChange`).
+*Needs:* §§0.8 (the pro-torus `G̃_{m,k}` as a limit of arc-stacks of tori), 2.7, 3.5, 8.1, 9.4, 10.3, 10.5; EnhancedDerivedSheaves §E5:abstract.5 (`barrBeckLurie`) and §E5:presentability.2 (`categoricalModuleBaseChange`).
 
 ### 11.2 Descendability of nearby cycles
 
@@ -1283,7 +1346,7 @@ Over `k = 𝔽̄_p` take the rational object `A = ℚ ⊕ ℚ(1)` and let `N : A
 
 ### Dependencies
 
-Layers 3–10; AnalyticStacks §§1.1–1.5; EnhancedDerivedSheaves §§E5:abstract.5, E5:presentability.2, E5:descent; GeneralAlgebraicKTheory §13.8c; KTheoryFiniteLocalFields §1.6.
+Layers 0–10; AnalyticStacks §§1.1–1.5; EnhancedDerivedSheaves §§E5:abstract.5, E5:presentability.2, E5:descent; GeneralAlgebraicKTheory §13.8c; KTheoryFiniteLocalFields §1.6.
 
 ## Layer 12: The v-stack and overconvergent comparison
 
