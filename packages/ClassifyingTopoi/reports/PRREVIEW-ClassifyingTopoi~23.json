@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassifyingTopoi~23",
+  "head": "373af3beb30d93de9af23e4ba44298a89f10ad48",
+  "pr": 1997,
+  "folder": "ClassifyingTopoi",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 08e6c9a. The folder and files outside it are unchanged; 373af3b edits only the description. Previous R01 is repaired: the description's sentence now names IsClassifyingSite.exists_interp_eq_of_subobject, with the commit sentence after it. The description was checked against the head: 28 theorems, module form, the unstated parts, universes, Shrink and WellPowered in the contract, the Tau Ceti names for 4.2, SetModel.forget. Adversarial rows for 2.4 definability and the converse of 2.5 were computed on the object classifier. The GrothendieckTopoi ids were resolved at 46fa6f3, LocallyPresentableCategories 1.5 at a051ce9 and InfinitaryModelExistence 5.1 on main. Overlap: nothing shared. The seeded sample does not meet the change. Gate rerun: all checks 0, OK (worker build=0). Depcheck: 246 roadmaps, 2241 edges, 0 problems. lake env lean: 28 sorry warnings, nothing else.",
+  "text": "d44a553d36511e30"
+ }
+}
