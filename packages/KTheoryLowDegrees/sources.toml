@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "KTheoryLowDegrees"
+
+[[source]]
+id = "weibel-kbook"
+authors = ["Charles Weibel"]
+title = "The K-book: an introduction to algebraic K-theory"
+year = 2013
+locator_scheme = "theorem"
+locator = "I.3, Proposition 3.4, pp. 19–20"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.pdf"
+fetched_at = "2026-11-15T03:10:13Z"
+sha256 = "a04f53c9393b20672fab2a6818279b2f9996dbc7cf74735789ed13804b058845"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["5.1"]
