@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArakelovGeometryAndAbelianHeightsPartII~6",
+  "head": "e2a7179235b19023945e971bb6c182b4842ee119",
+  "pr": 1833,
+  "folder": "ArakelovGeometryAndAbelianHeightsPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 7 changed lines since 581cf9f: the new README section on AxiomMath/Mordell checked against that repository at the cited commit (7 named declarations, licence, toolchain, carriers, file list), the internal sections and HeightsRationalPointsAndObstructions 0.18-0.20 it cites resolved, six adversarial rows with computed values; previous report had no finding; description read against the head; gate re-run OK (build=0 from the worker's gate), depcheck 0 problems, Suggested.lean elaborates with no output; seeded sample falls outside the changed passage.",
+  "text": "be196375554448ee"
+ }
+}
