@@ -174,3 +174,21 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-03"
 cited_for = ["3.3", "6.2"]
+
+[[source]]
+id = "Tanisaki2016"
+authors = "Toshiyuki Tanisaki"
+title = "Characters of integrable highest weight modules over a quantum group"
+year = 2015
+arxiv = "1506.00826v3"
+locator_scheme = "theorem"
+locator = "Theorem 5.4"
+url = "https://arxiv.org/abs/1506.00826v3"
+fetched_from = "https://arxiv.org/pdf/1506.00826v3"
+fetched_at = "2026-11-15T10:13:21Z"
+sha256 = "fddc1fbd4fd27b8f42d1c8fc88b800b73ad77822cdbd334d95e0f8640eb5c578"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["1.3a"]
