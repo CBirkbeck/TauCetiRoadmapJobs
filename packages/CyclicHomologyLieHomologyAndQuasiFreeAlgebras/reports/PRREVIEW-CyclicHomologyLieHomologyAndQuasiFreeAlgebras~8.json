@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CyclicHomologyLieHomologyAndQuasiFreeAlgebras~8",
+  "head": "1a9242bd94441b1b04741a0efcb8e41f1aa10eed",
+  "pr": 2037,
+  "folder": "CyclicHomologyLieHomologyAndQuasiFreeAlgebras",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 90d8ff4. The folder is byte-identical; the head adds only a merge of main, and lake-manifest.json is unchanged. The previous review raised no finding. Title and description read against this head (41 claims: layer summaries, scope deferrals, five headlines and two definitions, import, Loday-Quillen and other locators, review questions): all agree, no finding. Supplier citations re-resolved after the merge (17 ids), including AlgebraicKTheory 3.4, NoncommutativeGeometry N1.Cyclic and SmoothRepresentationsOfLocalGroups SR.1.3, all newly on or rewritten on main. The worker gate passes with build=0. My gate run differs only by NOT IN ORDER against the public order; the candidate order has the roadmap at line 340, after RefinedTraceMethods. depcheck: 246 roadmaps, 2245 edges, 0 problems. lake env lean: no error, 5 sorry warnings. Overlap check: no new owner. The adversarial table has 7 rows with computed values, for the statements the merged suppliers and the description touch. One fact goes to the human reviewers: SR on main assigns left xst rings to 5.4, which this README puts out of scope. The seeded sample lies in text unchanged since 90d8ff4.",
+  "text": "124a98b395c234f2"
+ }
+}
