@@ -281,7 +281,7 @@
      ],
      "locator": {
       "source": "Ginz05",
-      "where": "§4.5, lines 894–931 (reduced bar complex, over a field); Loday98 §1.1 for general k"
+      "where": "§4.5, lines 894–931 (reduced bar complex, over an algebraically closed field of characteristic zero); Loday98 §1.1 for general k"
      },
      "prerequisites": [
       "target:1.1",
@@ -289,7 +289,14 @@
       "mathlib:AlgebraicTopology.DoldKan.QInfty",
       "mathlib:AlgebraicTopology.DoldKan.degeneraciesVanish_iff_QInfty_f_comp",
       "mathlib:AlgebraicTopology.DoldKan.homotopyEquivNormalizedMooreComplexAlternatingFaceMapComplex",
-      "mathlib:HomotopyEquiv"
+      "mathlib:HomotopyEquiv",
+      "mathlib:TensorPower.mulEquiv",
+      "mathlib:TensorPower.cast",
+      "mathlib:PiTensorProduct.subsingletonEquiv",
+      "tauceti:TauCeti.degenerateHochschildChains",
+      "tauceti:TauCeti.normalizedHochschildChains",
+      "tauceti:TauCeti.normalizedHochschildChains.b_tensor",
+      "tauceti:TauCeti.normalizedHochschildChains.chainComplex"
      ],
      "api": [
       {
@@ -306,6 +313,11 @@
        "name": "HochschildHKR.normalizedChainComplex_mk_eq_zero",
        "role": "evaluation",
        "statement": "The class of m⊗a₁⊗…⊗a_n vanishes when some a_i ∈ k·1."
+      },
+      {
+       "name": "HochschildHKR.normalizedChainComplex_isoTauCeti",
+       "role": "compatibility",
+       "statement": "For M=A, the isomorphism A⊗[k]A^{⊗n} ≅ ⨂[k]^{n+1} A, a₀⊗(a₁⊗…⊗a_n) ↦ a₀⊗a₁⊗…⊗a_n (coefficient in slot 0), carries D_n onto TauCeti.degenerateHochschildChains k A n (the image of s_j is spanned by the tensors with 1 in slot j+1) and b to the alternating sum of the pinned faces (TauCeti.normalizedHochschildChains.b_tensor, same signs, last face a_{n+1}a₀), so it induces an isomorphism of chain complexes N_•(A,A) ≅ TauCeti.normalizedHochschildChains.chainComplex k A, in degree n N_n(A,A) ≅ TauCeti.normalizedHochschildChains k A n."
       }
      ],
      "tests": [
@@ -323,6 +335,11 @@
        "name": "normalized_nonunit",
        "kind": "non-example",
        "statement": "For nonzero k, the span of tensors with a₁ ∈ k·x in C₂(k[x],k[x]) is not a subcomplex: b(1⊗x⊗x)=2x⊗x−1⊗x²."
+      },
+      {
+       "name": "normalized_pinned_comparison",
+       "kind": "compatibility",
+       "statement": "A=M=k[x], k nonzero: D₁ is spanned by the m⊗1 and the pinned degenerate tensors are the a₀⊗1, the same span; both boundaries send a₀⊗a₁ to a₀a₁−a₁a₀. Putting the coefficient in the last slot would send x⊗1 ∈ D₁ to 1⊗x, nonzero in the pinned (A⊗A)/(A⊗1) ≅ A⊗Ā."
       }
      ]
     },
@@ -339,7 +356,7 @@
      ],
      "locator": {
       "source": "Ginz05",
-      "where": "§5.7, lines 1120–1128 (over a field); Loday98 §1.5 for general k"
+      "where": "§5.7, lines 1120–1128 (over an algebraically closed field of characteristic zero); Loday98 §1.5 for general k"
      },
      "prerequisites": [
       "target:1.2",
@@ -1253,7 +1270,11 @@
       "target:6.3",
       "roadmap:RefinedTraceMethods §1.9",
       "gap:smooth-hkr-antisymmetrisation",
-      "mathlib:Algebra.Smooth.flat"
+      "mathlib:Algebra.Smooth.flat",
+      "mathlib:exteriorPower.alternatingMapLinearEquiv",
+      "mathlib:KaehlerDifferential.linearMapEquivDerivation",
+      "mathlib:exteriorPower.ιMulti",
+      "mathlib:KaehlerDifferential.D"
      ],
      "api": [
       {
@@ -1538,7 +1559,8 @@
       "target:7.1",
       "target:7.4",
       "mathlib:Matrix.det",
-      "mathlib:Derivation"
+      "mathlib:Derivation",
+      "mathlib:exteriorPower.alternatingMapLinearEquiv"
      ],
      "api": [
       {
@@ -1632,7 +1654,7 @@
       {
        "name": "hkr_field",
        "kind": "compatibility",
-       "statement": "For k a field and R smooth of finite type, k-projectivity is automatic: Ginz05 Theorem 9.1.3, and HKR62 Theorem 5.2 for k perfect."
+       "statement": "For k a field, Module.Projective k R holds automatically; the theorem is then HKR62 Theorem 5.2 when k is perfect and Ginz05 Theorem 9.1.3 when k is algebraically closed of characteristic zero (Ginz05 lines 96–97 fix that ground field throughout): for k=𝔽₂, R=𝔽₂[x,y] only HKR62 applies; for k=ℂ both do."
       },
       {
        "name": "hkr_F2xy",
@@ -1706,7 +1728,7 @@
      "id": "8.2",
      "kind": "construction",
      "name": "HochschildHKR.koszulBimoduleResolution",
-     "statement": "The Koszul complex (DerivedModuleAlgebra §0.K.1) of (t₁,…,t_m) in Rᵉ, augmented by multiplication, is a projective resolution of R=MvPolynomial (Fin m) k in ModuleCat Rᵉ of length m with K_j=⋀^j (Rᵉ)^m free of rank C(m,j), for every k; R⊗_{Rᵉ}K and Hom_{Rᵉ}(K,R) have zero differential.",
+     "statement": "The Koszul complex (DerivedModuleAlgebra §0.K.1) of (t₁,…,t_m) in Rᵉ, augmented by multiplication, is a projective resolution of R=MvPolynomial (Fin m) k in ModuleCat Rᵉ of length m with K_j=⋀^j (Rᵉ)^m free with basis the wedges e_I=e_{i₁}∧…∧e_{i_j} over the j-element subsets I={i₁<…<i_j} of {1,…,m}, for every k; R⊗_{Rᵉ}K and Hom_{Rᵉ}(K,R) have zero differential.",
      "hypotheses": [
       "k a commutative ring",
       "m : ℕ"
@@ -1728,7 +1750,9 @@
       "tauceti:TauCeti.koszulComplex.exactAt_of_isWeaklyRegular",
       "tauceti:TauCeti.zeroEquiv_koszulDifferential_zero",
       "tauceti:TauCeti.oneEquiv_koszulDifferential_one",
-      "tauceti:CategoryTheory.ProjectiveResolution.extLinearEquiv"
+      "tauceti:CategoryTheory.ProjectiveResolution.extLinearEquiv",
+      "mathlib:exteriorPower.instFree",
+      "mathlib:Module.Basis.exteriorPower"
      ],
      "api": [
       {
@@ -1762,6 +1786,11 @@
        "name": "koszul_dual_numbers",
        "kind": "non-example",
        "statement": "For nonzero k, the same complex for k[x]/(x²) is not exact in degree one."
+      },
+      {
+       "name": "koszul_basis",
+       "kind": "degenerate",
+       "statement": "m=2: K₁ has basis e₁,e₂ (C(2,1)=2 subsets) and K₂ the single wedge e₁∧e₂; over k=0, Rᵉ=0, the wedges still form a basis of the zero module, whose Mathlib rank over the zero ring is 1 (rank_subsingleton), not 2: the statement names the basis."
       }
      ]
     },
@@ -1783,7 +1812,9 @@
       "target:8.2",
       "mathlib:CategoryTheory.ProjectiveResolution",
       "mathlib:CategoryTheory.ProjectiveResolution.homotopyEquiv",
-      "mathlib:CategoryTheory.ProjectiveResolution.liftHomotopy"
+      "mathlib:CategoryTheory.ProjectiveResolution.liftHomotopy",
+      "mathlib:Module.Basis.exteriorPower",
+      "mathlib:Module.Basis.constr"
      ],
      "api": [
       {
@@ -1848,7 +1879,9 @@
       "mathlib:CategoryTheory.ProjectiveResolution.isoLeftDerivedObj",
       "mathlib:CategoryTheory.Functor.mapHomotopyEquiv",
       "mathlib:Homotopy.op",
-      "mathlib:HomotopyEquiv.toHomologyIso"
+      "mathlib:HomotopyEquiv.toHomologyIso",
+      "mathlib:KaehlerDifferential.mvPolynomialBasis",
+      "mathlib:Module.Basis.exteriorPower"
      ],
      "api": [],
      "tests": []
