@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GroupActionsOnRiemannSurfaces~4",
+  "head": "bb14724abc38b8d5e1530ee6566207aa54cdc777",
+  "pr": 1728,
+  "folder": "GroupActionsOnRiemannSurfaces",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "incremental re-review of 0 changed lines since bb14724. Gate rerun: FAIL on dropped=7 (SurfaceTopology cited as supplier at README lines 104, 339, 751, 752, 816, 913, 974; R01, P2, repair repoints to TeichmullerGeometry 0.0f/0.0h, GeometricTopology 1.7.2, AlgebraicTopology Layer 1, each resolved). Depcheck with candidate order: 0 problems. Suggested.lean elaborates with nine sorry warnings only. Title and description read against the head: one sentence names two consumers as suppliers (R02, P3); layer and milestone counts, metadata and summary block agree with the head. No seeded-sample passage changed.",
+  "text": "b4850dbd44a4066d"
+ }
+}
