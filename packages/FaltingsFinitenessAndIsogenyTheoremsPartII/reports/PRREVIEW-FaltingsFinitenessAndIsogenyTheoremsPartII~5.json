@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FaltingsFinitenessAndIsogenyTheoremsPartII~5",
+  "head": "f49680f139066a42f70b1b8466e7c70622cea51d",
+  "pr": 1738,
+  "folder": "FaltingsFinitenessAndIsogenyTheoremsPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 61 changed lines since 5b87710. Previous R01-R03 all repaired (nine gap slugs restored; AutomorphicBundles 12.2 / HodgeLineFJ locator; mz20 D>=2 attribution). One new P3: README line 136 says Cartier's theorem is proved in EllipticCurveModularityPartII 6.0f, which consumes it from GroupSchemesOverABase 4.5. Checked: changed passages of the scope paragraph, supplier contracts, 2.1, 2.2 and 2.4 Checks, 6.1 locator, with computed values; 8 source locators (gr14, bost95, mw94-preprint, mz20), seeded target 2.4 included; supplier sections at open heads; gate passes (all checks 0), depcheck 0 problems, Suggested.lean elaborates with two sorry warnings only; pull request text consistent with the head.",
+  "text": "5c327f5b17792b0c",
+  "carried": {
+   "from": "f49680f139066a42f70b1b8466e7c70622cea51d",
+   "head": "84ba045a2e1a269158961c2c325e0d4f6383dc90",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "FaltingsFinitenessAndIsogenyTheoremsPartII"
+   ],
+   "outside": true
+  }
+ }
+}
