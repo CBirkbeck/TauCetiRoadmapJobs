@@ -91,9 +91,17 @@ It leaves to named owners:
   to OperatorTheory/ToeplitzOperators, Layers 2–5; harmonic Hardy spaces on Euclidean balls and the
   circle maximal function of a finite measure to StochasticCalculus S6.5; none of these is consumed,
   since Layer 2 works on the half-plane with Lebesgue measure and the maximal function of a density;
-- the self-adjoint Dirac operator in `L²(ℝ₊; ℂ²)`, its domain and its spectral theorem to a
-  later operator-theoretic roadmap: Layer 6 builds the spectral measures from Weyl functions and
-  Herglotz representations and needs no unbounded operator;
+- the minimal and maximal operators of the Dirac expression in `L²(ℝ₊; ℂ²)`, Green's formula, Weyl's
+  limit-point/limit-circle alternative with its independence of the spectral parameter, and the
+  self-adjoint realisations by boundary conditions to OperatorTheory/UnboundedOperators §4.8 (UO-D07),
+  whose expression `Ju′ + Vu = λu` with `J = [[0, −1], [1, 0]]` and locally integrable Hermitian `V` is
+  the Dirac system here under `J = −Ω`, `V = −Q_q`, `λ = −z` (Conventions). §6.4 consumes the alternative
+  and adds that `∞` is a limit-point endpoint for every potential, the Weyl discs and the Weyl function.
+  §1.2 is the integral-equation theorem with values in a Banach space, an inhomogeneous term and explicit
+  bounds; its case `E = ℂ²` at a fixed parameter is the local integral-equation existence and uniqueness
+  stated there. The eigenfunction expansion of a self-adjoint Dirac operator, its unitary equivalence with
+  multiplication by `x` in `L²(μ_q)`, is outside this roadmap: Layer 6 builds the spectral measures from
+  Weyl functions and Herglotz representations and needs no unbounded operator;
 - inverse scattering, the Riemann–Hilbert approach, the `ℓ^p` and `L^p` theory of Christ and Kiselev,
   the discrete SU(1,1) model, the Schrödinger reduction and integrable systems to later roadmaps
   that consume Layers 3–6.
@@ -113,6 +121,11 @@ Theorem 1 (line 579–581). Layers 1–6 are stated for complex potentials `q = 
   and Denisov's `D = J d/dr + Q` with `J = Ω` (denisov2006 line 4245–4258) up to the sign of `Q`.
   Sign witness: for the real constant potential `f = c` at `z = 0` the Neumann solution is
   `(e^{ct}, 0)`, so `A(t, 0) = e^{ct}`; the opposite sign `ΩX′ = zX + QX` gives `e^{−ct}`.
+  OperatorTheory/UnboundedOperators §4.8 writes the expression as `Ju′ + Vu = λu` with
+  `J = [[0, −1], [1, 0]] = −Ω`; since `J⁻¹ = Ω`, this is `u′ = Ω(λ − V)u`, the present system for
+  `V = −Q_q` and `λ = −z`, so `z ∈ ℂ₊` corresponds to `λ ∈ ℂ₋`. Dictionary witness: for `V = 0`, `λ = −z`
+  the solution from `(1, 0)` is `(cos tz, sin tz) = Θ(t, z)` of the free system; reading `λ = z` gives
+  `(cos tz, −sin tz) = Θ(t, −z)`.
 - **Fundamental matrix.** `M(t, z) = [[A, B], [C, D]]` with `M(0, z) = 1`; its first column
   `Θ = (A, C)ᵀ` is the Neumann solution and its second column `Φ = (B, D)ᵀ` the Dirichlet solution.
   Free case `q = 0`: `A = D = cos tz`, `C = −B = sin tz` (poltoratski2024 line 192–195).
@@ -280,6 +293,11 @@ All at the pinned Mathlib; paths under `Mathlib/`.
   62), `MeasureTheory.lintegral_liminf_le` (`MeasureTheory/Integral/Lebesgue/Add.lean` line 237, Fatou's
   lemma for measurable `ℝ≥0∞`-valued functions) and `MeasureTheory.lintegral_lintegral_swap`
   (`MeasureTheory/Measure/Prod.lean` line 1102, Tonelli for s-finite measures).
+- For the isometric chain in §6.3: `MeasureTheory.intervalIntegral_integral_swap`
+  (`MeasureTheory/Integral/Prod.lean` line 486: for an s-finite measure `μ` and `f : ℝ → α → E` integrable
+  for the product of Lebesgue measure on the interval between `a` and `b` with `μ`,
+  `∫_a^b ∫ f(x, y) dμ(y) dx = ∫ ∫_a^b f(x, y) dx dμ(y)`), with `LipschitzWith.comp_absolutelyContinuousOnInterval`
+  and `AbsolutelyContinuousOnInterval.integral_deriv_eq_sub` above.
 - For the half-plane Poisson kernel in §2.1: `Complex.orthonormalBasisOneI`
   (`Analysis/InnerProductSpace/PiL2.lean` line 853, the orthonormal basis `1, i` of `ℂ` over `ℝ`, whose
   coordinate map `ℂ ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 2)` is `z ↦ (Re z, Im z)`),
@@ -310,6 +328,12 @@ All at the pinned Tau Ceti; paths under `TauCeti/`.
 - `TauCeti.le_mul_exp_of_le_add_mul_integral` (`Analysis/ODE/Gronwall.lean` line 59): Grönwall for
   continuous `φ` with `φ(t) ≤ c + K∫ₐᵗ φ`, `K ≥ 0` constant. Layer 1 states the integrable-kernel
   form; the constant kernel is a Check.
+- `MeasureTheory.AEStronglyMeasurable.apply_of_forall_of_continuous`
+  (`MeasureTheory/Function/StronglyMeasurable/Caratheodory.lean` line 41): for a measure `μ`, a topological
+  space `X` and a pseudo-metrizable space `G`, if `g : α → X → G` has almost everywhere strongly measurable
+  sections `t ↦ g t x` for every `x` and `g t` is continuous for every `t`, then `t ↦ g t (u t)` is almost
+  everywhere strongly measurable for every almost everywhere strongly measurable `u : α → X`; no
+  separability of `X` is asked. §1.7 applies it with `X = E` or a closed ball of `E`.
 - `TauCeti.dysonSeriesLeft` and `TauCeti.hasDerivAt_dysonSeriesLeft`
   (`Analysis/ODE/DysonSeries.lean` lines 165, 281): the time-ordered exponential of a
   **continuous** path in a Banach algebra; compatibility Check for the propagator.
@@ -414,6 +438,17 @@ All at the pinned Tau Ceti; paths under `TauCeti/`.
   §2.2 consumes it for a holomorphic `F` with `Im F = u`, and §6.5 for the Weyl function `m`, whose triple is
   `(Re m(i), β, μ_q/π)`.
 
+### From TauCetiRoadmap.OperatorTheory.UnboundedOperators
+
+- §4.8 (UO-D07), the endpoint classification of the two-component expression `Ju′ + Vu` on an interval,
+  with `J = [[0, −1], [1, 0]]` and `V` locally integrable and Hermitian, built from its first-order integral
+  system: at each endpoint, either every solution of `Ju′ + Vu = λu` is square-integrable near it for every
+  complex `λ` (limit circle), or for every nonreal `λ` the solutions square-integrable near it form a line
+  (limit point), and which case holds does not depend on `λ`. This is the analogue for `Ju′ + Vu` of the
+  alternative that §4.8 states for Sturm–Liouville expressions. Under the dictionary of the Conventions
+  (`J = −Ω`, `V = −Q_q`, `λ = −z`), `V` is real symmetric and integrable on every `[0, t]`, and the endpoint
+  is `∞`. §6.4 consumes it.
+
 ## How to read the build
 
 Layer 1 is the analytic engine: integrable-coefficient linear systems, their propagators and their
@@ -484,6 +519,11 @@ iteration in `C([a, b], E)`, where the `n`-th iterate moves two curves at time `
   `TauCeti.exists_continuousOn_eq_forall_mem_Icc_eq_picard` does not apply while the theorem does.
 - Agreement with Tau Ceti: for `𝕜 = ℝ` and essentially bounded `P`, the solution is the one of
   `TauCeti.exists_continuousOn_eq_forall_mem_Icc_eq_picard`, by `TauCeti.eqOn_of_forall_mem_Icc_eq_picard`.
+- Fixed parameter on `ℂ²`: for `E = EuclideanSpace ℂ (Fin 2)`, `F = 0` and `P(t) = Ω(λ − V(t))` with `V`
+  Hermitian and integrable on `[a, b]`, the theorem is the local integral-equation existence and uniqueness
+  of OperatorTheory/UnboundedOperators §4.8 for `Ju′ + Vu = λu`. For `V = 0`, `λ = −z` and `t₀ = 0` the
+  solutions from `(1, 0)` and `(0, 1)` are the columns of `[[cos tz, −sin tz], [sin tz, cos tz]]`, the free
+  fundamental matrix of §3.1; the sign `λ = z` gives the transpose `[[cos tz, sin tz], [−sin tz, cos tz]]`.
 - Integrability is necessary: `P(t) = 1/t` on `(0, 1]` is not integrable at `0`; from `t₀ = 0` every
   `Y(t) = ct` solves `Y′ = Y/t` with `Y(0) = 0`, so uniqueness fails, and no solution has
   `Y(0) = y₀ ≠ 0`.
@@ -618,11 +658,14 @@ the integral equation for `t ∈ [t₀, t₀ + τ]`. Then there is a solution on
 `B`, and any two solutions with values in `B` agree on `[t₀, t₀ + τ]`. If the inequality is strict,
 every solution on `[t₀, t₀ + τ]` has values in `B`, so any two solutions agree there: a solution leaving
 `B` meets the sphere `‖x − x₀‖ = r` at a first time `t*`, and 1.1 on `[t₀, t*]` bounds `‖Y(t*) − x₀‖`
-by `(∫_{t₀}^{t₀+τ} m) exp(∫_{t₀}^{t₀+τ} L) < r`. The composite `s ↦ F(s, Y(s))` is strongly measurable
-for `Y` continuous with values where `F` is Lipschitz in `x`, because `Y` is a uniform limit of step
-functions (coddingtonlevinson1955, Ch. 2 §1, waived).
+by `(∫_{t₀}^{t₀+τ} m) exp(∫_{t₀}^{t₀+τ} L) < r`. The composite `s ↦ F(s, Y(s))` is almost everywhere
+strongly measurable for every continuous `Y`, and in the local form for every continuous `Y` with values
+in `B`: after `F(t, ·)` is replaced by `0` for the `t` of a null set outside which the Lipschitz bound
+holds, every `F(t, ·)` is continuous on `E` (on `B` in the local form) and every section `t ↦ F(t, x)` is
+unchanged almost everywhere, so Tau Ceti `MeasureTheory.AEStronglyMeasurable.apply_of_forall_of_continuous`
+applies with the parameter space `E` (the ball `B`) (coddingtonlevinson1955, Ch. 2 §1, waived).
 
-*Needs:* §1.1, §1.2's Picard scheme; Mathlib `StronglyMeasurable` limits.
+*Needs:* §1.1, §1.2's Picard scheme; Tau Ceti `MeasureTheory.AEStronglyMeasurable.apply_of_forall_of_continuous`.
 
 **Checks.**
 
@@ -654,9 +697,11 @@ functions (coddingtonlevinson1955, Ch. 2 §1, waived).
 
 Mathlib (Bochner integration, absolutely continuous functions, Lebesgue differentiation, the contraction
 mapping principle, parametric integrals, locally uniform limits of holomorphic functions, determinants and
-traces of matrices, the chain rule along a curve, the coordinate equivalence of `EuclideanSpace`, limits of
-strongly measurable functions); Tau Ceti Jacobi's formula (`Analysis/Calculus/FDeriv/Det.lean`) for §1.4,
-and Tau Ceti `Analysis/ODE` and `Matrix.det_exp` for the compatibility Checks.
+traces of matrices, the chain rule along a curve, the coordinate equivalence of `EuclideanSpace`); Tau Ceti
+Jacobi's formula (`Analysis/Calculus/FDeriv/Det.lean`) for §1.4, Tau Ceti's measurability of Carathéodory
+compositions (`MeasureTheory/Function/StronglyMeasurable/Caratheodory.lean`) for §1.7, and Tau Ceti
+`Analysis/ODE` and `Matrix.det_exp` for the compatibility Checks; OperatorTheory/UnboundedOperators §4.8 for
+the fixed-parameter Check of §1.2.
 
 ## Layer 2: Function theory of the upper half-plane
 
@@ -1475,17 +1520,29 @@ identity divided by `π`.
 
 Prove that for `0 < s ≤ t` and `F ∈ PW_s`, `‖F‖_{B(E(t,·))} = ‖F‖_{B(E(s,·))}`, and the same for `Ẽ`
 (poltoratski2024 line 255–262; romanov2014 §8 Theorem 16 line 2283 by an operator-theoretic route).
-Route: on `ℝ`, `∂ₜ |E(t, x)|^{−2} = −2 Re(q(t)/E(t, x)²)` almost everywhere (§3.2), so
-`∂ₜ ∫ |F|² |E(t, ·)|^{−2} = −2 Re(q(t) ∫ (F/E(t, ·))(F#/E(t, ·)) dx)`, and the integral vanishes by the
-product law of §2.6, since `F/E(t, ·)` and `F#/E(t, ·)` lie in `H²(ℂ₊)` for `t ≥ s` (§6.2);
-differentiation under the integral is dominated because `|F|²` is integrable and
-`|q(t)||E(t, x)|^{−2} ≤ |q(t)| e^{2∫₀ᵗ|q|}`.
+Route: fix `x ∈ ℝ`. The map `r ↦ E(r, x)` is absolutely continuous on `[s, t]` (§1.2, applied to
+`Θ(·, x)` and followed by the linear map `(u, v) ↦ u − iv`), and `|E(r, x)| ≥ c = e^{−∫₀ᵗ|q|}` there (§3.2).
+So `r ↦ |E(r, x)|^{−2}`, which is `E(·, x)` followed by the Lipschitz map `w ↦ max(|w|, c)^{−2}`, is
+absolutely continuous on `[s, t]` (Mathlib `LipschitzWith.comp_absolutelyContinuousOnInterval`), with
+derivative `−2 Re(q(r)/E(r, x)²)` at almost every `r` (§3.2). Mathlib
+`AbsolutelyContinuousOnInterval.integral_deriv_eq_sub` gives, for every `x`,
+`|E(t, x)|^{−2} − |E(s, x)|^{−2} = −2∫_s^t Re(q(r)/E(r, x)²) dr`. Multiply by `|F(x)|² = F(x)F#(x)` and
+integrate over `ℝ`. The integrand is bounded by `2|F(x)|²|q(r)| e^{2∫₀ʳ|q|}`, which is integrable on
+`[s, t] × ℝ`, so the two integrals may be exchanged (Mathlib `MeasureTheory.intervalIntegral_integral_swap`):
+`‖F‖²_{B(E(t,·))} − ‖F‖²_{B(E(s,·))} = −2∫_s^t Re(q(r) ∫ (F/E(r, ·))(F#/E(r, ·)) dx) dr`. For every
+`r ∈ [s, t]`, `F ∈ PW_s ⊆ PW_r`, so `F/E(r, ·)` and `F#/E(r, ·)` lie in `H²(ℂ₊)` (§6.2) and the inner
+integral vanishes by the product law of §2.6. The same argument with `Ẽ`, which satisfies the same
+equation and the same bounds (§3.2), gives the identity for `Ẽ`.
 
-*Needs:* §2.6, §3.2, §6.2; Mathlib `hasFDerivAt_integral_of_dominated_of_fderiv_le` (in its
-almost-everywhere-in-time absolutely continuous form via §1.2).
+*Needs:* §1.2, §2.6, §3.2, §6.2; Mathlib `LipschitzWith.comp_absolutelyContinuousOnInterval`,
+`AbsolutelyContinuousOnInterval.integral_deriv_eq_sub`, `MeasureTheory.intervalIntegral_integral_swap`.
 
 **Checks.**
 
+- The time derivative of the norm cannot be taken under the integral at every `t`: for `q = 1_{[0,1]}` and
+  `x = 0`, `|E(t, 0)|^{−2} = e^{−2 min(t, 1)}` has one-sided derivatives `−2e^{−2}` and `0` at `t = 1`. The
+  integrated identity holds there: `e^{−2t} − e^{−2s} = −2∫_s^t e^{−2r} dr` for `0 ≤ s ≤ t ≤ 1`, and both
+  sides are constant in `t` beyond `1`, where `q = 0`.
 - For real constant `f = c` and `x = 0` the weights differ: `|E(t, 0)|^{−2} = e^{−2ct} ≠ e^{−2cs}`; only the
   integrals against `|F|²`, `F ∈ PW_s`, agree.
 - For `q = 0` on `(s, t)` the weights coincide, since `∂ₜ log|E(t, x)| = 0` there.
@@ -1522,15 +1579,22 @@ Ch. 2, waived). Its API:
   `Im(conj u · v) = (|u − iv|² − |u + iv|²)/4` gives the second description, a disc because
   `|E(t, z)| > |E#(t, z)|` (§3.3); `u − iv` vanishes at `w = −Ẽ/E`, where `u + iv ≠ 0` because
   `(u, v) ≠ 0`, so that point lies inside the disc. Limit point: if `Θ(·, z₀) ∈ L²` for some `z₀ ∈ ℂ₊`,
-  every solution is square-integrable at `z₀` and then, by variation of constants and §1.1, at every `z`;
-  at `z = 0`, `det[Θ, Φ] = 1` gives `1 ≤ |Θ||Φ|`, which is not integrable on `[0, ∞)`.
+  then `Φ(·, z₀) ∈ L²` as well, since `Φ + wΘ` is square-integrable for `w` in the nonempty `⋂_t D_t(z₀)`.
+  So at `λ₀ = −z₀` the square-integrable solutions do not form a line, `∞` is a limit-circle endpoint by
+  the alternative of OperatorTheory/UnboundedOperators §4.8 (dictionary of the Conventions), and every
+  solution is square-integrable at every `z`, in particular at `z = 0`; there `det[Θ, Φ] = 1` gives
+  `1 ≤ |Θ||Φ|`, which is not integrable on `[0, ∞)`.
 
-*Needs:* §1.1, §1.3, §3.1, §3.2, §3.3.
+*Needs:* §3.1, §3.2, §3.3; OperatorTheory/UnboundedOperators §4.8 (Weyl's alternative for `Ju′ + Vu` and
+its independence of the spectral parameter); Mathlib `TendstoLocallyUniformlyOn.differentiableOn`.
 
 **Checks.**
 
 - Free case: `−Ẽ/E = i` for every `t`, `m = i`, and `Φ + iΘ = (i e^{itz}, e^{itz})` is square-integrable on
-  `ℝ₊` for `z ∈ ℂ₊`; the radius is `1/sinh(2t Im z) → 0`.
+  `ℝ₊` for `z ∈ ℂ₊`; the radius is `1/sinh(2t Im z) → 0`. Under the dictionary of the Conventions this is
+  the limit-point case of OperatorTheory/UnboundedOperators §4.8 at `λ = −z ∈ ℂ₋`: the square-integrable
+  solutions are the multiples of `(i e^{itz}, e^{itz})`, while `Φ − iΘ = (−i e^{−itz}, e^{−itz})` grows like
+  `e^{t Im z}`.
 - `−Ẽ/E` is interior, not a boundary point. Free case, `t = 1.7`, `z = 0.6 + 0.25i`: at `w = −Ẽ/E = i`,
   `Im z ∫₀ᵗ |Φ + iΘ|² = 1 − e^{−2t Im z} = 1 − e^{−0.85} ≈ 0.5726 < 1 = Im i`; the disc is
   `|w − i| ≤ e^{−2t Im z} |w + i|`, with centre `i coth(0.85) ≈ 1.4470i` and radius `1/sinh(0.85) ≈ 1.0459`,
@@ -1714,12 +1778,13 @@ The measures `ν_T` converge weakly to `ν` and `ν_T(X) → ν(X)` (truncation 
 
 ### Dependencies
 
-Layer 1 (§1.1–§1.3), Layer 2 (§2.1, §2.2, §2.4–§2.7), Layer 3, Layer 4 (§4.1–§4.4);
-AutomorphicSpectralTheory §0.5 for §6.5; Tau Ceti (the Herglotz transform on the circle and its Cayley
-identity, the boundary Cayley map and the Cayley pushforward, the relative entropy and its lower
-semicontinuity); Mathlib (differentiation under the integral, the Lebesgue decomposition, relative entropy,
-Fourier density on the circle, weak convergence of finite measures, characteristic functions of finite
-measures).
+Layer 1 (§1.2 for §6.3), Layer 2 (§2.1, §2.2, §2.4–§2.7), Layer 3, Layer 4 (§4.1–§4.4);
+OperatorTheory/UnboundedOperators §4.8 for §6.4; AutomorphicSpectralTheory §0.5 for §6.5; Tau Ceti (the
+Herglotz transform on the circle and its Cayley identity, the boundary Cayley map and the Cayley
+pushforward, the relative entropy and its lower semicontinuity); Mathlib (absolutely continuous functions
+and their fundamental theorem of calculus, the exchange of an interval integral with an integral, locally
+uniform limits of holomorphic functions, the Lebesgue decomposition, relative entropy, Fourier density on
+the circle, weak convergence of finite measures, characteristic functions of finite measures).
 
 ## Layer 7: Meromorphic inner functions and resonances
 
@@ -2256,8 +2321,6 @@ Taylor's theorem with the Lagrange remainder, smoothness of `sinh`).
   (fundamental matrices entire in the spectral parameter for `L¹_loc` coefficients), §3.3 (Hermite–Biehler
   property), §6.4–§6.6 (Weyl functions and spectral measures) and §6.8 (the Szegő condition, the Dirac form
   of Deift–Killip-type statements).
-- Operator-theoretic roadmaps realising `Ju′ + Vu` in `L²` (UnboundedOperators): §1.2 at a
-  fixed parameter and §1.6 for the parameter dependence of the solutions used in Weyl's alternative.
 - PDE §6.2 (Galerkin systems with coefficients integrable in time) and StochasticCalculus (comparison
   arguments for linear systems): §1.1, §1.2 and §1.7.
 - A canonical-systems and de Branges-spaces roadmap (inverse spectral theory, Krein's exponential-type

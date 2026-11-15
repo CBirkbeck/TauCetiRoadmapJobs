@@ -97,6 +97,11 @@
        "statement": "Agreement with Tau Ceti: for `𝕜 = ℝ` and essentially bounded `P`, the solution is the one of `TauCeti.exists_continuousOn_eq_forall_mem_Icc_eq_picard`, by `TauCeti.eqOn_of_forall_mem_Icc_eq_picard`."
       },
       {
+       "name": "fixedParameterOnC2",
+       "kind": "compatibility",
+       "statement": "Fixed parameter on `ℂ²`: for `E = EuclideanSpace ℂ (Fin 2)`, `F = 0` and `P(t) = Ω(λ − V(t))` with `V` Hermitian and integrable on `[a, b]`, the theorem is the local integral-equation existence and uniqueness of OperatorTheory/UnboundedOperators §4.8 for `Ju′ + Vu = λu`. For `V = 0`, `λ = −z` and `t₀ = 0` the solutions from `(1, 0)` and `(0, 1)` are the columns of `[[cos tz, −sin tz], [sin tz, cos tz]]`, the free fundamental matrix of §3.1; the sign `λ = z` gives the transpose `[[cos tz, sin tz], [−sin tz, cos tz]]`."
+      },
+      {
        "name": "integrabilityIsNecessaryOn",
        "kind": "non-example",
        "statement": "Integrability is necessary: `P(t) = 1/t` on `(0, 1]` is not integrable at `0`; from `t₀ = 0` every `Y(t) = ct` solves `Y′ = Y/t` with `Y(0) = 0`, so uniqueness fails, and no solution has `Y(0) = y₀ ≠ 0`."
@@ -317,7 +322,7 @@
      "id": "1.7",
      "kind": "theorem",
      "name": "existsUnique_caratheodory",
-     "statement": "Let `t₀ ∈ I`, `x₀ ∈ E` and `F : ℝ × E → E` with `t ↦ F(t, x)` strongly measurable on `I` for each `x`, `‖F(t, x) − F(t, y)‖ ≤ L(t)‖x − y‖` and `‖F(t, x₀)‖ ≤ m(t)` for almost every `t ∈ I` and all `x, y`, where `L, m ≥ 0` are integrable on compact subintervals of `I`. Prove that there is a `Y : ℝ → E`, continuous on `I`, with `Y(t) = x₀ + ∫_{t₀}^{t} F(s, Y(s)) ds` for `t ∈ I`, and that any two such functions agree on `I`; that every such `Y` is absolutely continuous on compact subintervals of `I` with `‖Y(t) − x₀‖ ≤ |∫_{t₀}^{t} m| exp|∫_{t₀}^{t} L|`; and that two initial values give solutions at distance at most `‖x₀ − x₀′‖ exp|∫_{t₀}^{t} L|` at every `t ∈ I`. Prove the local form. Let `B` be the closed ball of radius `r` about `x₀`, suppose the two bounds hold only for `x, y ∈ B` and almost every `t ∈ [t₀, t₀ + δ] ⊆ I`, and let `τ ≤ δ` satisfy `(∫_{t₀}^{t₀+τ} m) exp(∫_{t₀}^{t₀+τ} L) ≤ r`. Call a solution on `[t₀, t₀ + τ]` a `Y` continuous there with `s ↦ F(s, Y(s))` integrable on `[t₀, t₀ + τ]` and the integral equation for `t ∈ [t₀, t₀ + τ]`. Then there is a solution on `[t₀, t₀ + τ]` with values in `B`, and any two solutions with values in `B` agree on `[t₀, t₀ + τ]`. If the inequality is strict, every solution on `[t₀, t₀ + τ]` has values in `B`, so any two solutions agree there: a solution leaving `B` meets the sphere `‖x − x₀‖ = r` at a first time `t*`, and 1.1 on `[t₀, t*]` bounds `‖Y(t*) − x₀‖` by `(∫_{t₀}^{t₀+τ} m) exp(∫_{t₀}^{t₀+τ} L) < r`. The composite `s ↦ F(s, Y(s))` is strongly measurable for `Y` continuous with values where `F` is Lipschitz in `x`, because `Y` is a uniform limit of step functions (coddingtonlevinson1955, Ch. 2 §1, waived).",
+     "statement": "Let `t₀ ∈ I`, `x₀ ∈ E` and `F : ℝ × E → E` with `t ↦ F(t, x)` strongly measurable on `I` for each `x`, `‖F(t, x) − F(t, y)‖ ≤ L(t)‖x − y‖` and `‖F(t, x₀)‖ ≤ m(t)` for almost every `t ∈ I` and all `x, y`, where `L, m ≥ 0` are integrable on compact subintervals of `I`. Prove that there is a `Y : ℝ → E`, continuous on `I`, with `Y(t) = x₀ + ∫_{t₀}^{t} F(s, Y(s)) ds` for `t ∈ I`, and that any two such functions agree on `I`; that every such `Y` is absolutely continuous on compact subintervals of `I` with `‖Y(t) − x₀‖ ≤ |∫_{t₀}^{t} m| exp|∫_{t₀}^{t} L|`; and that two initial values give solutions at distance at most `‖x₀ − x₀′‖ exp|∫_{t₀}^{t} L|` at every `t ∈ I`. Prove the local form. Let `B` be the closed ball of radius `r` about `x₀`, suppose the two bounds hold only for `x, y ∈ B` and almost every `t ∈ [t₀, t₀ + δ] ⊆ I`, and let `τ ≤ δ` satisfy `(∫_{t₀}^{t₀+τ} m) exp(∫_{t₀}^{t₀+τ} L) ≤ r`. Call a solution on `[t₀, t₀ + τ]` a `Y` continuous there with `s ↦ F(s, Y(s))` integrable on `[t₀, t₀ + τ]` and the integral equation for `t ∈ [t₀, t₀ + τ]`. Then there is a solution on `[t₀, t₀ + τ]` with values in `B`, and any two solutions with values in `B` agree on `[t₀, t₀ + τ]`. If the inequality is strict, every solution on `[t₀, t₀ + τ]` has values in `B`, so any two solutions agree there: a solution leaving `B` meets the sphere `‖x − x₀‖ = r` at a first time `t*`, and 1.1 on `[t₀, t*]` bounds `‖Y(t*) − x₀‖` by `(∫_{t₀}^{t₀+τ} m) exp(∫_{t₀}^{t₀+τ} L) < r`. The composite `s ↦ F(s, Y(s))` is almost everywhere strongly measurable for every continuous `Y`, and in the local form for every continuous `Y` with values in `B`: after `F(t, ·)` is replaced by `0` for the `t` of a null set outside which the Lipschitz bound holds, every `F(t, ·)` is continuous on `E` (on `B` in the local form) and every section `t ↦ F(t, x)` is unchanged almost everywhere, so Tau Ceti `MeasureTheory.AEStronglyMeasurable.apply_of_forall_of_continuous` applies with the parameter space `E` (the ball `B`) (coddingtonlevinson1955, Ch. 2 §1, waived).",
      "hypotheses": [
       "t₀ ∈ I, x₀ ∈ E",
       "t ↦ F(t,x) strongly measurable",
@@ -332,7 +337,7 @@
      "prerequisites": [
       "target:1.1",
       "target:1.2",
-      "mathlib:StronglyMeasurable",
+      "tauceti:MeasureTheory.AEStronglyMeasurable.apply_of_forall_of_continuous",
       "mathlib:IsPicardLindelof",
       "mathlib:ODE_solution_unique_of_mem_Ioo"
      ],
@@ -1756,7 +1761,7 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "norm_deBrangesSpace_diracE_eq",
-     "statement": "Prove that for `0 < s ≤ t` and `F ∈ PW_s`, `‖F‖_{B(E(t,·))} = ‖F‖_{B(E(s,·))}`, and the same for `Ẽ` (poltoratski2024 line 255–262; romanov2014 §8 Theorem 16 line 2283 by an operator-theoretic route). Route: on `ℝ`, `∂ₜ |E(t, x)|^{−2} = −2 Re(q(t)/E(t, x)²)` almost everywhere (§3.2), so `∂ₜ ∫ |F|² |E(t, ·)|^{−2} = −2 Re(q(t) ∫ (F/E(t, ·))(F#/E(t, ·)) dx)`, and the integral vanishes by the product law of §2.6, since `F/E(t, ·)` and `F#/E(t, ·)` lie in `H²(ℂ₊)` for `t ≥ s` (§6.2); differentiation under the integral is dominated because `|F|²` is integrable and `|q(t)||E(t, x)|^{−2} ≤ |q(t)| e^{2∫₀ᵗ|q|}`.",
+     "statement": "Prove that for `0 < s ≤ t` and `F ∈ PW_s`, `‖F‖_{B(E(t,·))} = ‖F‖_{B(E(s,·))}`, and the same for `Ẽ` (poltoratski2024 line 255–262; romanov2014 §8 Theorem 16 line 2283 by an operator-theoretic route). Route: fix `x ∈ ℝ`. The map `r ↦ E(r, x)` is absolutely continuous on `[s, t]` (§1.2, applied to `Θ(·, x)` and followed by the linear map `(u, v) ↦ u − iv`), and `|E(r, x)| ≥ c = e^{−∫₀ᵗ|q|}` there (§3.2). So `r ↦ |E(r, x)|^{−2}`, which is `E(·, x)` followed by the Lipschitz map `w ↦ max(|w|, c)^{−2}`, is absolutely continuous on `[s, t]` (Mathlib `LipschitzWith.comp_absolutelyContinuousOnInterval`), with derivative `−2 Re(q(r)/E(r, x)²)` at almost every `r` (§3.2). Mathlib `AbsolutelyContinuousOnInterval.integral_deriv_eq_sub` gives, for every `x`, `|E(t, x)|^{−2} − |E(s, x)|^{−2} = −2∫_s^t Re(q(r)/E(r, x)²) dr`. Multiply by `|F(x)|² = F(x)F#(x)` and integrate over `ℝ`. The integrand is bounded by `2|F(x)|²|q(r)| e^{2∫₀ʳ|q|}`, which is integrable on `[s, t] × ℝ`, so the two integrals may be exchanged (Mathlib `MeasureTheory.intervalIntegral_integral_swap`): `‖F‖²_{B(E(t,·))} − ‖F‖²_{B(E(s,·))} = −2∫_s^t Re(q(r) ∫ (F/E(r, ·))(F#/E(r, ·)) dx) dr`. For every `r ∈ [s, t]`, `F ∈ PW_s ⊆ PW_r`, so `F/E(r, ·)` and `F#/E(r, ·)` lie in `H²(ℂ₊)` (§6.2) and the inner integral vanishes by the product law of §2.6. The same argument with `Ẽ`, which satisfies the same equation and the same bounds (§3.2), gives the identity for `Ẽ`.",
      "hypotheses": [
       "q integrable on every [0,t]",
       "0 < s ≤ t, F ∈ PW_s"
@@ -1770,10 +1775,17 @@
       "target:2.6",
       "target:3.2",
       "target:6.2",
-      "mathlib:hasFDerivAt_integral_of_dominated_of_fderiv_le"
+      "mathlib:LipschitzWith.comp_absolutelyContinuousOnInterval",
+      "mathlib:AbsolutelyContinuousOnInterval.integral_deriv_eq_sub",
+      "mathlib:MeasureTheory.intervalIntegral_integral_swap"
      ],
      "api": [],
      "tests": [
+      {
+       "name": "pointwiseTimeDerivativeFails",
+       "kind": "non-example",
+       "statement": "The time derivative of the norm cannot be taken under the integral at every `t`: for `q = 1_{[0,1]}` and `x = 0`, `|E(t, 0)|^{−2} = e^{−2 min(t, 1)}` has one-sided derivatives `−2e^{−2}` and `0` at `t = 1`. The integrated identity holds there: `e^{−2t} − e^{−2s} = −2∫_s^t e^{−2r} dr` for `0 ≤ s ≤ t ≤ 1`, and both sides are constant in `t` beyond `1`, where `q = 0`."
+      },
       {
        "name": "forRealConstantAnd",
        "kind": "compatibility",
@@ -1805,11 +1817,11 @@
       "where": "§8 Theorem 15 line 2217–2261, Lemma 23 line 2370; remling2018 Ch. 2 (waived)"
      },
      "prerequisites": [
-      "target:1.1",
-      "target:1.3",
       "target:3.1",
       "target:3.2",
-      "target:3.3"
+      "target:3.3",
+      "roadmap:OperatorTheory/UnboundedOperators §4.8",
+      "mathlib:TendstoLocallyUniformlyOn.differentiableOn"
      ],
      "api": [
       {
@@ -1845,14 +1857,14 @@
       {
        "name": "routeOfAtTime",
        "role": "lemma",
-       "statement": "Route: `Im(conj u · v)` of `Φ + wΘ` at time `t` is `−Im w + Im z ∫₀ᵗ|Φ + wΘ|²` by the Christoffel–Darboux identity; nesting is monotonicity in `t`; since `A, B, C, D` are real entire (§3.1), `(u − iv)(t) = Ẽ(t, z) + wE(t, z)` and `(u + iv)(t) = Ẽ#(t, z) + wE#(t, z)`, and `Im(conj u · v) = (|u − iv|² − |u + iv|²)/4` gives the second description, a disc because `|E(t, z)| > |E#(t, z)|` (§3.3); `u − iv` vanishes at `w = −Ẽ/E`, where `u + iv ≠ 0` because `(u, v) ≠ 0`, so that point lies inside the disc. Limit point: if `Θ(·, z₀) ∈ L²` for some `z₀ ∈ ℂ₊`, every solution is square-integrable at `z₀` and then, by variation of constants and §1.1, at every `z`; at `z = 0`, `det[Θ, Φ] = 1` gives `1 ≤ |Θ||Φ|`, which is not integrable on `[0, ∞)`."
+       "statement": "Route: `Im(conj u · v)` of `Φ + wΘ` at time `t` is `−Im w + Im z ∫₀ᵗ|Φ + wΘ|²` by the Christoffel–Darboux identity; nesting is monotonicity in `t`; since `A, B, C, D` are real entire (§3.1), `(u − iv)(t) = Ẽ(t, z) + wE(t, z)` and `(u + iv)(t) = Ẽ#(t, z) + wE#(t, z)`, and `Im(conj u · v) = (|u − iv|² − |u + iv|²)/4` gives the second description, a disc because `|E(t, z)| > |E#(t, z)|` (§3.3); `u − iv` vanishes at `w = −Ẽ/E`, where `u + iv ≠ 0` because `(u, v) ≠ 0`, so that point lies inside the disc. Limit point: if `Θ(·, z₀) ∈ L²` for some `z₀ ∈ ℂ₊`, then `Φ(·, z₀) ∈ L²` as well, since `Φ + wΘ` is square-integrable for `w` in the nonempty `⋂_t D_t(z₀)`. So at `λ₀ = −z₀` the square-integrable solutions do not form a line, `∞` is a limit-circle endpoint by the alternative of OperatorTheory/UnboundedOperators §4.8 (dictionary of the Conventions), and every solution is square-integrable at every `z`, in particular at `z = 0`; there `det[Θ, Φ] = 1` gives `1 ≤ |Θ||Φ|`, which is not integrable on `[0, ∞)`."
       }
      ],
      "tests": [
       {
        "name": "freeCaseForEvery",
        "kind": "degenerate",
-       "statement": "Free case: `−Ẽ/E = i` for every `t`, `m = i`, and `Φ + iΘ = (i e^{itz}, e^{itz})` is square-integrable on `ℝ₊` for `z ∈ ℂ₊`; the radius is `1/sinh(2t Im z) → 0`."
+       "statement": "Free case: `−Ẽ/E = i` for every `t`, `m = i`, and `Φ + iΘ = (i e^{itz}, e^{itz})` is square-integrable on `ℝ₊` for `z ∈ ℂ₊`; the radius is `1/sinh(2t Im z) → 0`. Under the dictionary of the Conventions this is the limit-point case of OperatorTheory/UnboundedOperators §4.8 at `λ = −z ∈ ℂ₋`: the square-integrable solutions are the multiples of `(i e^{itz}, e^{itz})`, while `Φ − iΘ = (−i e^{−itz}, e^{−itz})` grows like `e^{t Im z}`."
       },
       {
        "name": "weylPointIsInterior",
@@ -3005,13 +3017,16 @@
     "§0.5"
    ],
    "what": "Subtracted-kernel Herglotz representation of holomorphic functions with nonnegative imaginary part on the upper half-plane, with its unique triple; consumed for nonnegative harmonic functions (2.2) and for Weyl functions (6.5)."
+  },
+  {
+   "roadmap": "OperatorTheory/UnboundedOperators",
+   "sections": [
+    "§4.8"
+   ],
+   "what": "Weyl's limit-point/limit-circle alternative for the two-component expression Ju′ + Vu with its independence of the spectral parameter, read through J = −Ω, V = −Q_q, λ = −z; consumed in 6.4 for the limit-point property at ∞."
   }
  ],
  "consumers": [
-  {
-   "roadmap": "UnboundedOperators",
-   "what": "§1.2 at a fixed parameter and §1.6 for Weyl's alternative in the L² realisation of Ju′ + Vu."
-  },
   {
    "roadmap": "PDE",
    "what": "§1.1, §1.2, §1.7 for Galerkin systems with time-integrable coefficients (§6.2 there)."
