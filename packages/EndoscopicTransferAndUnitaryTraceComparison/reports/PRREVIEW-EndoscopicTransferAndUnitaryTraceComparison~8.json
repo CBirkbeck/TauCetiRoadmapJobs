@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EndoscopicTransferAndUnitaryTraceComparison~8",
+  "head": "1af544e9da14e16169633bdd9ae0c85473ad9628",
+  "pr": 999,
+  "folder": "EndoscopicTransferAndUnitaryTraceComparison",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since f99f5d8. Checked: previous R01 (description's account of Suggested.lean) is repaired; title and description read sentence by sentence against the head and the folder's change, no contradiction and no unstated change; diff outside the folder against the base is empty; gate rerun, every counter 0, OK; depcheck 245 roadmaps, 2258 edges, 0 problems; lake env lean on Suggested.lean exit 0 with no output (no declarations); adversarial rows computed for README 10.23 (covariance F N = q^-1 N F at k=2, q=2, wrong-Frobenius model excluded, k=0,1) and for the description's two factual claims; overlaps: none. No seeded-sample target falls in a changed passage.",
+  "text": "decd756c0e22f9f9"
+ }
+}
