@@ -324,7 +324,8 @@ canonical map, and the determinant map is identified as `n!` times it.
 - **Tensor algebra.** `TensorProduct`, `PiTensorProduct` with `PiTensorProduct.lift` and
   `PiTensorProduct.subsingletonEquiv` (`⨂` over a one-element index type is the factor),
   `TensorPower.mulEquiv` (`⨂[R]^i M ⊗[R] ⨂[R]^j M ≅ ⨂[R]^(i + j) M`, the first factor in the first
-  `i` slots), `TensorPower.cast` (reindexing along `i = j`), `MultilinearMap`,
+  `i` slots), `TensorPower.algebraMap₀` (`R ≅ ⨂[R]^0 M`), `TensorPower.cast` (reindexing along
+  `i = j`), `MultilinearMap`,
   `Algebra.TensorProduct`, `MulOpposite`,
   `TensorProduct.Algebra.module` (a `Module (A ⊗[R] B) M` from commuting actions; not an instance),
   `instModuleTensorProductMop` (`Mathlib/Algebra/Azumaya/Defs.lean`: that structure on `A` itself,
@@ -332,10 +333,17 @@ canonical map, and the determinant map is identified as `n!` times it.
   instance) with `AlgHom.mulLeftRight_apply` (`a ⊗ op b` acts on `A` by `x ↦ a x b`, the convention
   of §4.1),
   `Module.Projective.tensorProduct` (`Mathlib/Algebra/Module/Projective.lean`: `M ⊗[R₀] N` is
-  `R`-projective for `M` projective over `R` and `N` projective over `R₀`), `Module.Flat` (for a
+  `R`-projective for `M` projective over `R` and `N` projective over `R₀`, `R` any semiring),
+  `Module.Projective.of_free`, `Module.Projective.of_equiv'` (transport along a linear
+  equivalence), `Module.projective_lifting_property` (a map out of a projective module lifts along
+  a surjection), `Module.Flat` (for a
   commutative ring of scalars only) with `Module.Flat.rTensor_preserves_injective_linearMap`
   (`Mathlib/RingTheory/Flat/Basic.lean`: `− ⊗[R] X` sends injective maps to injective maps for
-  flat `X`) and the flatness of a tensor product of flat modules (same file).
+  flat `X`), `Module.Flat.self`, `Module.Flat.of_linearEquiv` and the flatness of a tensor product
+  of flat modules, `Module.Flat.instTensorProduct` (same file); `rTensor_exact` and
+  `LinearMap.rTensor_surjective` (`Mathlib/LinearAlgebra/TensorProduct/RightExactness.lean`: for
+  every `Q`, `− ⊗[R] Q` keeps an exact pair `f, g` with `g` onto exact, and keeps a surjection
+  onto).
 - **Ext, Tor and derived functors.** `CategoryTheory.ProjectiveResolution`,
   `CategoryTheory.Abelian.Ext` with `CategoryTheory.Abelian.Ext.comp` (the Yoneda product), the
   instance `HasExt.{v} (ModuleCat.{v} R)` of `Mathlib/Algebra/Category/ModuleCat/Ext/HasExt.lean`
@@ -832,7 +840,28 @@ Chapter IX). The connecting maps are natural in morphisms of short exact sequenc
 
 *Needs:* §1.3; Mathlib `CategoryTheory.ShortComplex.ShortExact.δ`,
 `CategoryTheory.ShortComplex.ShortExact.homology_exact₁`, `homology_exact₂`, `homology_exact₃`,
-`Module.Flat`, `Module.Projective`.
+`Module.Flat`, `Module.Projective`, `TensorPower.algebraMap₀`, `TensorPower.mulEquiv`,
+`PiTensorProduct.subsingletonEquiv`, `PiTensorProduct.lift`, `Module.Flat.self`,
+`Module.Flat.instTensorProduct` (`Mathlib/RingTheory/Flat/Basic.lean`: `M ⊗[R] N` is flat for flat
+`M` and `N`), `Module.Flat.of_linearEquiv`, `Module.Projective.of_free`,
+`Module.Projective.tensorProduct`, `Module.Projective.of_equiv'`,
+`Module.Flat.rTensor_preserves_injective_linearMap`, `rTensor_exact`,
+`LinearMap.rTensor_surjective`, `Module.projective_lifting_property`.
+
+- For every `n`, `A^{⊗n}` is a flat `k`-module when `A` is flat, and a projective `k`-module when
+  `A` is projective. By induction on `n`: `A^{⊗0} ≅ k` (`TensorPower.algebraMap₀`) is free over
+  itself, hence flat and projective, whatever `A` is; and `A^{⊗(n+1)} ≅ A^{⊗n} ⊗[k] A`, by
+  `TensorPower.mulEquiv` with `PiTensorProduct.subsingletonEquiv` on the one-slot factor, is flat by
+  `Module.Flat.instTensorProduct` and projective by `Module.Projective.tensorProduct`, carried
+  along the equivalences by `Module.Flat.of_linearEquiv` and `Module.Projective.of_equiv'`.
+- Exactness in each degree `n`. For flat `A`, `M' ⊗[k] A^{⊗n} → M ⊗[k] A^{⊗n}` is injective
+  (`Module.Flat.rTensor_preserves_injective_linearMap` with the first bullet), and
+  `− ⊗[k] A^{⊗n}` keeps the rest of the sequence exact (`rTensor_exact`,
+  `LinearMap.rTensor_surjective`). For projective `A`, through `PiTensorProduct.lift`, a cochain in
+  `C^n(A,M'')` is a `k`-linear map `A^{⊗n} → M''`, which lifts along `M → M''`
+  (`Module.projective_lifting_property` with the first bullet), and `Hom_k(A^{⊗n}, −)` is left
+  exact. A `k`-linear splitting of the sequence splits it again after `− ⊗[k] A^{⊗n}` or
+  `Hom_k(A^{⊗n}, −)` is applied, whatever `A` is.
 
 ### 1.5 Commutative algebras
 
@@ -872,8 +901,9 @@ wrap-around face. For `k[x]` the degree-one chains are all cycles.
 
 ### Dependencies
 
-Mathlib's simplicial objects, alternating (co)face complexes, tensor powers, multilinear maps and
-homology sequences; Tau Ceti's bimodule cofaces and coboundary
+Mathlib's simplicial objects, alternating (co)face complexes, tensor powers, multilinear maps,
+homology sequences, and flat and projective modules with their tensor products and the right
+exactness of `− ⊗[k] Q` (§1.4); Tau Ceti's bimodule cofaces and coboundary
 (`TauCeti.hochschildBimoduleCoface`, `TauCeti.hochschildBimoduleCoboundary`). No roadmap supplier
 is used in this layer.
 
@@ -1277,11 +1307,12 @@ quasi-isomorphism of complexes of `Aᵉ`-modules over every `k`; that `B_n(A) �
 `Aᵉ`-module and `B_•(A)` is a projective resolution of `A` in `ModuleCat Aᵉ` (Ginz05 §4.2,
 lines 747–782; HKR62 lines 414–447; Weibel94 §9.1; Loday98 §1.1).
 
-*Needs:* §4.1; Mathlib `CategoryTheory.SimplicialObject.Augmented.ExtraDegeneracy`,
+*Needs:* §§1.4, 4.1; Mathlib `CategoryTheory.SimplicialObject.Augmented.ExtraDegeneracy`,
 `CategoryTheory.ProjectiveResolution`, `Module.Projective.tensorProduct`, `TensorPower.mulEquiv`.
 
-- `A^{⊗n}` is a projective `k`-module when `A` is, by induction with `TensorPower.mulEquiv` and
-  `Module.Projective.tensorProduct`; likewise flat when `A` is flat.
+- For `k`-projective `A`, `B_n(A) ≅ Aᵉ ⊗[k] A^{⊗n}` is a projective `Aᵉ`-module by
+  `Module.Projective.tensorProduct`, since `Aᵉ` is free over itself and `A^{⊗n}` is `k`-projective
+  (§1.4, first bullet).
 - `μ ∘ h = id` on `A`, `b′ ∘ h + h ∘ μ = id` on `B₀(A)`, and `b′ ∘ h + h ∘ b′ = id` on `B_n(A)` for `n ≥ 1`.
 - `B_•(A)` is natural in algebra homomorphisms, and the homotopy `h` is right `A`-linear.
 
@@ -1340,12 +1371,12 @@ does not apply to `Aᵉ`. Prove that `M ⊗_{Aᵉ} B_n(A) ≅ M ⊗[k] A^{⊗n}`
 `m ⊗ (a₀ ⊗ a₁ ⊗ ⋯ ⊗ a_n ⊗ a_{n+1}) ↦ a_{n+1} m a₀ ⊗ a₁ ⊗ ⋯ ⊗ a_n`, compatibly with `b`, and that for
 `A` flat as a `k`-module `HH_n(A,M) ≅ Tor_n^{Aᵉ}(M,A)`, naturally in `M` (Ginz05 §5.1,
 lines 944–976; Weibel94 §9.1; Loday98 §1.1). One route: for `k`-flat `A` every `A^{⊗n}` is
-`k`-flat (§4.2), so `B_n(A) ≅ Aᵉ ⊗[k] A^{⊗n}` is a flat `Aᵉ`-module (fifth bullet below); the
+`k`-flat (§1.4), so `B_n(A) ≅ Aᵉ ⊗[k] A^{⊗n}` is a flat `Aᵉ`-module (fifth bullet below); the
 augmentation `B_•(A) → A` is a resolution over every `k` (§4.2), so the sixth bullet below
 identifies `Tor_n^{Aᵉ}(M,A)` with the homology of `M ⊗_{Aᵉ} B_•(A) ≅ C_•(A,M)`. Projectivity of `A`
 over `k` is used for `Ext` (§4.4), not here.
 
-*Needs:* §§1.1, 4.1–4.2; Mathlib `CategoryTheory.Functor.leftDerived`,
+*Needs:* §§1.1, 1.4, 4.1–4.2; Mathlib `CategoryTheory.Functor.leftDerived`,
 `CategoryTheory.Functor.leftDerivedZeroIsoSelf`,
 `CategoryTheory.ProjectiveResolution.isoLeftDerivedObj`, `CategoryTheory.ProjectiveResolution`,
 `Module.Flat`, `Module.Flat.rTensor_preserves_injective_linearMap`,
@@ -1807,7 +1838,7 @@ evaluation pairing `h_n : HH^n(R,M) → Hom_R(HH_n(R,R), M)` as this isomorphism
 ### 7.2 The evaluation pairing below the first non-projective Hochschild homology
 
 Let `R` be a commutative `k`-algebra such that every `C_j(R,R) = R ⊗[k] R^{⊗j}` is a projective
-`R`-module for the structure of §1.5 (for instance `R` projective as a `k`-module, by
+`R`-module for the structure of §1.5 (for instance `R` projective as a `k`-module, by §1.4 and
 `Module.Projective.tensorProduct`), and let `n ∈ ℕ` be such that `HH_j(R,R)` is a projective
 `R`-module for every `j < n`. Prove that for every `R`-module `M` and every `i ≤ n` the evaluation
 pairing `h_i : HH^i(R,M) → Hom_R(HH_i(R,R), M)` of §7.1 is bijective; in particular every `h_i` is
@@ -1819,7 +1850,7 @@ objects by `ModuleCat.projective_of_categoryTheory_projective`, and Tau Ceti's
 `TauCeti.ChainComplex.kronecker_bijective_of_projective_homology_lt` in degree `i` applies, since
 `j < i ≤ n` gives `j < n`.
 
-*Needs:* §§1.5, 7.1; Tau Ceti `TauCeti.ChainComplex.kronecker_bijective_of_projective_homology_lt`,
+*Needs:* §§1.4, 1.5, 7.1; Tau Ceti `TauCeti.ChainComplex.kronecker_bijective_of_projective_homology_lt`,
 `TauCeti.ChainComplex.kronecker_bijective_of_projective_homology`; Mathlib
 `ModuleCat.projective_of_categoryTheory_projective`, `Module.Projective.tensorProduct`.
 
@@ -1964,7 +1995,7 @@ Let `k` be a commutative ring and `R` a commutative `k`-algebra with `Algebra.Sm
 deduction of lines 528–546 leading to Theorem 5.2, line 548; Loday98 §3.4, Theorem 3.4.4;
 Weibel94 §9.4, Theorem 9.4.7; AV20 Proposition 1.2, line 70; Ginz05 Theorem 9.1.3, line 2086, over
 an algebraically closed field of characteristic zero.)
-One route: `C_n(R,R) = R ⊗_k R^{⊗n}` is a projective `R`-module (§4.2 and
+One route: `C_n(R,R) = R ⊗_k R^{⊗n}` is a projective `R`-module (§1.4 and
 `Module.Projective.tensorProduct`); `HH_n(R,R) ≅ Ω^n_{R/k}` through `ε^cl_n` (§6.4(d)) is finite
 projective (`exteriorPower.instFinite`, `exteriorPower.instProjective`); §7.2, that is Tau Ceti's
 `TauCeti.ChainComplex.kronecker_bijective_of_projective_homology` transported through §7.1, makes
@@ -1972,7 +2003,7 @@ projective (`exteriorPower.instFinite`, `exteriorPower.instProjective`); §7.2, 
 formulas of §7.5 identify the composite with `Ψ_n` and give (3); multiplicativity of `Ψ` is
 associativity of `∪`; (5) follows from §7.4.
 
-*Needs:* §§1.5, 4.2, 5.2, 6.4, 7.1–7.5; gap smooth-hkr-antisymmetrisation (through §6.4(d));
+*Needs:* §§1.4, 1.5, 5.2, 6.4, 7.1–7.5; gap smooth-hkr-antisymmetrisation (through §6.4(d));
 Mathlib `Algebra.Smooth`, `Algebra.Smooth.flat`, `Module.Projective.tensorProduct`,
 `Module.FinitePresentation`, `Algebra.FormallySmooth.projective_kaehlerDifferential`,
 `exteriorPower.instFinite`; Tau Ceti `exteriorPower.instProjective`,

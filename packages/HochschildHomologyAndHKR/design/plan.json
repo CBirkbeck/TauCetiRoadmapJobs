@@ -202,9 +202,34 @@
       "mathlib:CategoryTheory.ShortComplex.ShortExact.homology_exact₂",
       "mathlib:CategoryTheory.ShortComplex.ShortExact.homology_exact₃",
       "mathlib:Module.Flat",
-      "mathlib:Module.Projective"
+      "mathlib:Module.Projective",
+      "mathlib:TensorPower.algebraMap₀",
+      "mathlib:TensorPower.mulEquiv",
+      "mathlib:PiTensorProduct.subsingletonEquiv",
+      "mathlib:PiTensorProduct.lift",
+      "mathlib:Module.Flat.self",
+      "mathlib:Module.Flat.instTensorProduct",
+      "mathlib:Module.Flat.of_linearEquiv",
+      "mathlib:Module.Projective.of_free",
+      "mathlib:Module.Projective.tensorProduct",
+      "mathlib:Module.Projective.of_equiv'",
+      "mathlib:Module.Flat.rTensor_preserves_injective_linearMap",
+      "mathlib:rTensor_exact",
+      "mathlib:LinearMap.rTensor_surjective",
+      "mathlib:Module.projective_lifting_property"
      ],
-     "api": [],
+     "api": [
+      {
+       "name": "HochschildHKR.tensorPower_projective",
+       "role": "structure",
+       "statement": "For every n, A^{⊗n} is k-flat when A is k-flat and k-projective when A is k-projective: induction on n from A^{⊗0} ≅ k (TensorPower.algebraMap₀, free over itself) and A^{⊗(n+1)} ≅ A^{⊗n}⊗[k]A (TensorPower.mulEquiv with PiTensorProduct.subsingletonEquiv), with Module.Flat.instTensorProduct and Module.Projective.tensorProduct, transported by Module.Flat.of_linearEquiv and Module.Projective.of_equiv'."
+      },
+      {
+       "name": "HochschildHKR.coefficients_shortExact_degreewise",
+       "role": "structure",
+       "statement": "In each degree n: for k-flat A, 0→M'⊗A^{⊗n}→M⊗A^{⊗n}→M''⊗A^{⊗n}→0 is exact (Module.Flat.rTensor_preserves_injective_linearMap with tensorPower_projective, rTensor_exact, LinearMap.rTensor_surjective); for k-projective A, 0→C^n(A,M')→C^n(A,M)→C^n(A,M'')→0 is exact (through PiTensorProduct.lift, Module.projective_lifting_property with tensorPower_projective, and left exactness of Hom_k(A^{⊗n},−)); a k-linear splitting of the sequence gives a splitting in every degree with no hypothesis on A."
+      }
+     ],
      "tests": []
     },
     {
@@ -838,6 +863,7 @@
       "where": "§4.2, lines 747–782; HKR62 lines 414–447"
      },
      "prerequisites": [
+      "target:1.4",
       "target:4.1",
       "mathlib:CategoryTheory.SimplicialObject.Augmented.ExtraDegeneracy",
       "mathlib:CategoryTheory.ProjectiveResolution",
@@ -846,9 +872,9 @@
      ],
      "api": [
       {
-       "name": "HochschildHKR.tensorPower_projective",
+       "name": "HochschildHKR.barResolution_term_projective",
        "role": "structure",
-       "statement": "A^{⊗n} is k-projective (resp. flat) when A is."
+       "statement": "For k-projective A, B_n(A) ≅ Aᵉ⊗[k]A^{⊗n} is a projective Aᵉ-module (Module.Projective.tensorProduct, Aᵉ free over itself, A^{⊗n} k-projective by tensorPower_projective of 1.4)."
       },
       {
        "name": "HochschildHKR.barResolution_homotopy",
@@ -952,6 +978,7 @@
      },
      "prerequisites": [
       "target:1.1",
+      "target:1.4",
       "target:4.1",
       "target:4.2",
       "mathlib:CategoryTheory.Functor.leftDerived",
@@ -1499,6 +1526,7 @@
       "where": "Lemma 4.1, lines 301–330"
      },
      "prerequisites": [
+      "target:1.4",
       "target:1.5",
       "target:7.1",
       "tauceti:TauCeti.ChainComplex.kronecker_bijective_of_projective_homology_lt",
@@ -1725,8 +1753,8 @@
       "where": "Theorem 5.1, line 522; Lemma 4.1, line 301; line 495; lines 528–546; Theorem 5.2, line 548"
      },
      "prerequisites": [
+      "target:1.4",
       "target:1.5",
-      "target:4.2",
       "target:5.2",
       "target:6.4",
       "target:7.1",
