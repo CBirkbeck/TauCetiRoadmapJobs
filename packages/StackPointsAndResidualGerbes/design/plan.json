@@ -252,7 +252,7 @@
       {
        "name": "closedSubstackEquivIdeal",
        "role": "construction",
-       "statement": "Z |-> ker(O_X -> i_* O_Z), the kernel taken in the abelian category Stacks.QCoh X (on a presentation [U/R] the R-invariant ideal of U x_X Z), and I |-> V(I) are inverse bijections; the kernel among all fppf O_X-modules is not quasi-coherent."
+       "statement": "Z |-> ker(O_X -> i_* O_Z), the kernel taken in the abelian category Stacks.QCoh X (on a presentation [U/R] the R-invariant ideal of U x_X Z), and I |-> V(I) are inverse bijections. The inclusion of QCoh into all fppf O_X-modules is right exact, not exact in general, so the kernel among all modules need not be quasi-coherent (it is not at the origin of A^1) and then differs from the QCoh kernel; when the unit is split in QCoh, as for an open and closed immersion, the two kernels agree."
       },
       {
        "name": "factor_iff",
@@ -274,7 +274,7 @@
       {
        "name": "A1_origin",
        "kind": "computation",
-       "statement": "For A^1_k and the origin, X^[n] = Spec k[t]/(t^{n+1}) of length n+1."
+       "statement": "For A^1_k and the origin, X^[n] = Spec k[t]/(t^{n+1}) of length n+1 (lengths 1, 2, 3 for n = 0, 1, 2); the indexing V(I^n) would give lengths 0, 1, 2 with V(I^0) = V(O_X) = empty in place of Z."
       },
       {
        "name": "dualNumbers",
@@ -295,6 +295,11 @@
        "name": "kernel_in_QCoh",
        "kind": "non-example",
        "statement": "For A^1_k and the origin, the fppf-module kernel of O_X -> i_* O_Z is (t) over A^1 and 0 over Spec k at the origin, while (t) pulls back to k t there: not quasi-coherent; the QCoh kernel is the module of (t), whose value k t over the origin maps to 0 in k."
+      },
+      {
+       "name": "split_component",
+       "kind": "characterisation",
+       "statement": "For Spec(k x k) and its first component Spec k (closed and open), the unit (a,b) |-> a is split and the kernel among all modules has sections O(T_2) over T = T_1 ⊔ T_2, the value of the quasi-coherent ideal 0 x k: the two kernels agree; for the identity immersion both are 0."
       }
      ]
     },
@@ -1343,18 +1348,19 @@
      "id": "5.1",
      "kind": "definition",
      "name": "Stacks.IsDecent",
-     "statement": "A point is quasi-compact if some (equivalently every) representative is quasi-compact; X is decent if all points are. Quasi-compact diagonal implies decent; decency passes along quasi-separated morphisms representable by algebraic spaces into decent stacks, to targets of quasi-compact surjections, and to bases of gerbes.",
+     "statement": "A point is quasi-compact if some (equivalently every) representative is quasi-compact; X is decent if all points are. Quasi-compact diagonal implies decent; decency passes to X along f : X -> Y into a decent Y when f is representable by schemes or representable by algebraic spaces and quasi-separated, to targets of quasi-compact surjections, and to bases of gerbes.",
      "hypotheses": [
       "X an algebraic stack"
      ],
      "locator": {
       "source": "stacks-06RD",
-      "where": "Definition 101.48.1, Lemmas 101.48.2-101.48.5, lines 4686-4735; stacks-04XE Lemma 100.14.1 lines 1453-1461"
+      "where": "Definition 101.48.1, Lemmas 101.48.2-101.48.5, lines 4686-4735; stacks-04XE Lemma 100.14.1 lines 1453-1461; stacks-algebraic-stacks Section 94.6, lines 106-112 (morphisms representable by schemes)"
      },
      "prerequisites": [
       "target:0.2",
       "target:0.3",
       "target:2.5",
+      "roadmap:SchemeAndStackFoundations §1.19",
       "roadmap:SchemeAndStackFoundations §1.20",
       "gap:stack-morphism-permanence",
       "gap:stack-separation-axioms",
@@ -1369,7 +1375,7 @@
       {
        "name": "of_representable",
        "role": "lemma",
-       "statement": "Representable by algebraic spaces and quasi-separated into decent gives decent (monomorphisms, immersions)."
+       "statement": "If Y is decent and f : X -> Y is representable by schemes (every T x_Y X with T a scheme is a scheme), or representable by algebraic spaces and quasi-separated (monomorphisms, immersions), then X is decent."
       },
       {
        "name": "of_surjective",
@@ -1402,6 +1408,11 @@
        "name": "QtZ",
        "kind": "non-example",
        "statement": "Spec Q(t)/Z is not decent: Spec Q(t) x_X Spec Q(t) = ⊔_Z Spec Q(t) is not quasi-compact."
+      },
+      {
+       "name": "nonQuasiSeparatedScheme",
+       "kind": "characterisation",
+       "statement": "For X two copies of Spec k[x_1, x_2, ...] glued along the non-quasi-compact union of the D(x_i), X -> Spec k and X x BG_k -> BG_k (G affine) are representable by schemes and not quasi-separated; the first alternative gives X x BG_k decent. A^1_Q/Z -> Spec Q is representable by algebraic spaces, not quasi-separated, with decent target and non-decent source: neither alternative weakens to representability by algebraic spaces."
       }
      ]
     },
@@ -1643,9 +1654,11 @@
      },
      "prerequisites": [
       "target:0.2",
+      "target:2.4",
       "target:3.2",
       "target:3.4",
       "target:4.1",
+      "target:5.3",
       "roadmap:SchemeAndStackFoundations §1.14",
       "roadmap:SchemeAndStackFoundations §1.21",
       "gap:flat-groupoid-quotients"
@@ -1716,7 +1729,7 @@
       {
        "name": "base_vs_fibre",
        "kind": "characterisation",
-       "statement": "For BG_k: Z_x x_k k = BG, but Z_x x_X Spec k = G."
+       "statement": "For BG_k at the trivial torsor (Z_x -> X the identity): Z_x x_{Spec k} Spec k = BG, Z_x x_X Spec k = Spec k (for every representative: a monomorphism with a section), Spec k x_X Spec k = R_x = G; for G = Z/2 over an algebraically closed k these are one point with automorphism group Z/2, one point, two points."
       },
       {
        "name": "finite_ext",
@@ -2153,7 +2166,7 @@
   },
   {
    "roadmap": "VirtualFundamentalClasses",
-   "what": "residual gerbes of closed points of DM stacks with their residue fields and automorphism groups, for degrees of zero-cycles (1.3, 4.2, 4.5, 5.3)"
+   "what": "closed substacks with their description on a presentation, quasi-coherent ideals, reduced induced closed substacks and the reduced-source factorisation, for Deligne-Mumford stacks of finite type over a field, in its §1.2 (0.3, 0.4, 0.5); it builds integral closed substacks and cycles on them"
   },
   {
    "roadmap": "EquivariantIntersectionTheory",
@@ -2369,8 +2382,8 @@
    "neededBy": [
     "7.3"
    ],
-   "detail": "Stacks, Artin's Axioms, Lemma 98.5.2 and Section 98.8. AlgebraicModuliForArithmeticGeometry §8.1 makes framed tangent spaces vector spaces under (RS) and states that algebraic stacks satisfy it without a target.",
-   "needs": "AlgebraicModuliForArithmeticGeometry §8.1 must prove that an algebraic stack over a locally Noetherian base satisfies the Rim-Schlessinger condition and that framed tangent spaces commute with finite separable extensions of the residue field.",
+   "detail": "Stacks, Artin's Axioms, Lemma 98.5.2 (RS), Section 98.8 (tangent spaces), Lemma 98.6.1 and Remark 98.6.2 (deformation category, S2), Lemma 98.7.1 (change of residue field); Formal Deformation Theory, Lemma 90.29.3 (tangent space of a change of residue field). AlgebraicModuliForArithmeticGeometry §8.1 makes framed tangent spaces vector spaces under (RS) and states that algebraic stacks satisfy it without a target.",
+   "needs": "AlgebraicModuliForArithmeticGeometry §8.1 must prove that an algebraic stack over a locally Noetherian base satisfies the Rim-Schlessinger condition and that framed tangent spaces commute with finite extensions of the residue field.",
    "supplier": "AlgebraicModuliForArithmeticGeometry",
    "section": "§8.1"
   },

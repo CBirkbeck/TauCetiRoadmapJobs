@@ -47,7 +47,12 @@ closed-immersion criterion at closed points (4.5), and the exact sequence
 - the infinitesimal neighbourhoods of a closed point, the normal space `N_x`, and the comparison map
   from the tangent space to the normal space (Layer 7).
 
-No other roadmap states any of these objects.
+Closed substacks, their description on a presentation, their quasi-coherent ideals, the reduced
+induced closed substack and the factorisation of morphisms from reduced stacks are owned here for
+every algebraic stack (0.3–0.5). VirtualFundamentalClasses §1.2 consumes them for Deligne–Mumford
+stacks of finite type over a field and owns what it builds on them: intersections and reduced
+unions, integral closed substacks, irreducible components, dimension and cycles. No other roadmap
+states any of the objects above.
 SchemeAndStackFoundations stops at the topological space `|𝒳|`, inertia, `SmoothLocal` morphism
 properties, locally Noetherian and separated stacks, presentations and quotient stacks (§§1.19–1.22);
 AlgebraicModuliForArithmeticGeometry states gerbes only on a site (§4.1) and uses closed substacks of
@@ -413,10 +418,15 @@ smooth morphisms to a locally Noetherian scheme is Mathlib's
 
 What AlgebraicModuliForArithmeticGeometry must provide (gap:algebraic-stacks-satisfy-rs): §8.1 must
 prove that an algebraic stack over a locally Noetherian base satisfies the Rim–Schlessinger condition
-(Stacks, Artin's Axioms, Lemma 98.5.2), so that its framed tangent spaces are `k`-vector spaces, and
-that for a finite separable extension `k'/k` the framed tangent space at the induced `k'`-point is
-the base change to `k'` of the tangent space at the `k`-point (Artin's Axioms, Section 98.8); its
-deformation-category clause and change-of-residue-field API state these without a target.
+(Stacks, Artin's Axioms, Lemma 98.5.2, stacks-artin lines 292–294), so that its framed tangent
+spaces, defined in Section 98.8 (lines 393–415), are `k`-vector spaces, and that for a finite
+extension `k'/k` (7.3 uses finite separable ones) the framed tangent space at the induced `k'`-point
+is the base change to `k'` of the tangent space at the `k`-point: under (RS) the deformation
+category over `k'` is the change of residue field of the one over `k` (Artin's Axioms, Lemma 98.7.1,
+lines 354–392), it satisfies Schlessinger's (S2) (Lemma 98.6.1 and Remark 98.6.2, lines 323–348),
+and the tangent space of a change of residue field is the base change of the tangent space (Formal
+Deformation Theory, Lemma 90.29.3, stacks-formal-defos lines 3512–3528); its deformation-category
+clause and change-of-residue-field API state these without a target.
 
 ### From TauCetiRoadmap.ReductiveGroups
 
@@ -600,15 +610,18 @@ Here, for the closed immersion `i : 𝒵 → 𝒳` (quasi-compact and quasi-sepa
 `O_𝒳 → i_* O_𝒵` (Sheaves on Stacks, Lemma 96.15.1 (1)–(3), stacks-sheaves-on-stacks lines
 1068–1073); under *QCoh.presentationEquiv* for a smooth presentation `[U/R] ≃ 𝒳` it is the
 `R`-invariant ideal sheaf of the closed subscheme `U ×_𝒳 𝒵` of `U`, kernels in the category of
-modules with descent data being computed on `U` because `s` and `t` are flat. The kernel of the same
-map among all `O_𝒳`-modules on the fppf site is a different sheaf, which is not quasi-coherent, and
-`ℐ_𝒵 → O_𝒳` is a monomorphism in `Stacks.QCoh 𝒳` that need not be injective on the sections over a
-test scheme (Lemma 96.15.1 (3): the inclusion of quasi-coherent modules into all modules is not
-exact). Images and powers of ideals are taken in `Stacks.QCoh` as well: `ℐ^{n+1}` is the image of
-`ℐ^{⊗(n+1)} → O_𝒳`. A morphism `x : T → 𝒳` from a scheme factors through `V(ℐ)` iff the map
-`x^* ℐ → O_T` of quasi-coherent `O_T`-modules is zero, and for every morphism `f : 𝒴 → 𝒳` of
-algebraic stacks `V(ℐ) ×_𝒳 𝒴 = V(ℐ·O_𝒴)`, where `ℐ·O_𝒴` is the image of `f^* ℐ → O_𝒴` in
-`Stacks.QCoh 𝒴`. For the proof combine the presentation correspondence of 0.3 for a smooth atlas
+modules with descent data being computed on `U` because `s` and `t` are flat. The inclusion of
+quasi-coherent modules into all `O_𝒳`-modules on the fppf site is right exact and not exact in
+general (Lemma 96.15.1 (3), stacks-sheaves-on-stacks line 1072), so the kernel of the same map
+among all modules need not be quasi-coherent; when it is not, it differs from `ℐ_𝒵`, and
+`ℐ_𝒵 → O_𝒳` is a monomorphism in `Stacks.QCoh 𝒳` that is not injective on the sections over some
+test scheme (Checks: the origin of `𝔸¹`). When the unit `O_𝒳 → i_* O_𝒵` is split in
+`Stacks.QCoh 𝒳`, as for a closed immersion that is also open, the two kernels agree, a split exact
+sequence staying exact among all modules (Checks). Images and powers of ideals are taken in
+`Stacks.QCoh` as well: `ℐ^{n+1}` is the image of `ℐ^{⊗(n+1)} → O_𝒳`. A morphism `x : T → 𝒳`
+from a scheme factors through `V(ℐ)` iff the map `x^* ℐ → O_T` of quasi-coherent `O_T`-modules is
+zero, and for every morphism `f : 𝒴 → 𝒳` of algebraic stacks `V(ℐ) ×_𝒳 𝒴 = V(ℐ·O_𝒴)`, where
+`ℐ·O_𝒴` is the image of `f^* ℐ → O_𝒴` in `Stacks.QCoh 𝒴`. For the proof combine the presentation correspondence of 0.3 for a smooth atlas
 `U → 𝒳` from a scheme (closed substacks are `R`-invariant closed subspaces of `U`) with the
 description of quasi-coherent modules on `[U/R]` as modules on `U` with descent data (stacks-04XE
 lines 872–888, Lemma 100.9.11; stacks-sheaves-on-stacks lines 953–955, Proposition 96.14.3) and the
@@ -633,8 +646,9 @@ The API consists of the following facts.
 
 **Checks.**
 
-- For `𝒳 = 𝔸¹_k` and `𝒵` the origin, `𝒳^{[n]}_𝒵 = Spec k[t]/(t^{n+1})`, of length `n + 1`; an
-  indexing by `ℐ^n` would give length `n` and `𝒳^{[0]} = 𝒳`.
+- For `𝒳 = 𝔸¹_k` and `𝒵` the origin, `𝒳^{[n]}_𝒵 = Spec k[t]/(t^{n+1})`, of length `n + 1`, so
+  lengths `1, 2, 3` for `n = 0, 1, 2`; an indexing by `ℐ^n` would give lengths `0, 1, 2`, its zeroth
+  term being `V(ℐ⁰) = V(O_𝒳) = ∅` rather than `𝒵` (the whole of `𝒳` is `V(0)`).
 - For `𝒳 = Spec k[ε]` and `𝒵` its reduced point, `ℐ = (ε)` and `ℐ² = 0`, so `𝒳^{[n]}_𝒵 = 𝒳` for every
   `n ≥ 1` while `𝒳^{[0]}_𝒵 = Spec k`.
 - For `B𝔾_m ⊆ [𝔸¹/𝔾_m]`, `𝒳^{[n]} = [Spec k[t]/(t^{n+1}) / 𝔾_m]`, computed on the atlas `𝔸¹` through
@@ -647,6 +661,11 @@ The API consists of the following facts.
   one-dimensional, so that sheaf is not quasi-coherent. The kernel in `Stacks.QCoh 𝒳` is the module of
   `(t)`, whose value `k·t` over the origin maps to `0` in `k`, as the factorisation criterion requires
   of a point of `V(ℐ)`.
+- The two kernels can agree: for `𝒳 = Spec(k × k)` and `𝒵 = Spec k` its first component, a closed
+  immersion that is also open, the unit is the split surjection `(a, b) ↦ a`, and over a test scheme
+  `T = T₁ ⊔ T₂` (the preimages of the two components) the kernel among all modules has sections
+  `O(T₂)`, the value of the quasi-coherent ideal `0 × k`; for the identity immersion both kernels are
+  `0`. A warning that the kernel among all modules is never quasi-coherent would be refuted here.
 
 ### 0.5 The reduced induced closed substack
 
@@ -1310,14 +1329,19 @@ Say that `x ∈ |𝒳|` is *quasi-compact* when some, equivalently every, repres
 quasi-compact (stacks-04XE lines 1453–1461, Lemma 100.14.1), and that `𝒳` is *decent*
 (*Stacks.IsDecent*) when every point is quasi-compact (stacks-06RD lines 4686–4691, Definition
 101.48.1). Prove that a stack with quasi-compact diagonal, in particular a quasi-separated one, is
-decent (stacks-06RD lines 4692–4698, Lemma 101.48.2); that if `f : 𝒳 → 𝒴` is representable by
-algebraic spaces and quasi-separated (for example a monomorphism or an immersion) and `𝒴` is decent,
-then `𝒳` is decent (lines 4699–4721, Lemma 101.48.3); that if `f` is quasi-compact and surjective and
+decent (stacks-06RD lines 4692–4698, Lemma 101.48.2); that if `𝒴` is decent and `f : 𝒳 → 𝒴` is
+either representable by schemes (`T ×_𝒴 𝒳` is a scheme for every morphism `T → 𝒴` from a scheme;
+Algebraic Stacks, Section 94.6, stacks-algebraic-stacks lines 106–112) or representable by
+algebraic spaces and quasi-separated (for example a monomorphism or an immersion), then `𝒳` is
+decent (lines 4699–4721, Lemma 101.48.3: the fibre of `f` over a representative of the image point
+is a scheme, respectively a quasi-separated and hence decent algebraic space, and a representative
+of a point of it is quasi-compact); that if `f` is quasi-compact and surjective and
 `𝒳` is decent then `𝒴` is decent (lines 4722–4731, Lemma 101.48.4); and that the base of a decent
 gerbe is decent (lines 4732–4735, Lemma 101.48.5). *Needs:* 0.2, 0.3, 2.5;
-SchemeAndStackFoundations §1.20 (`QuasiCompactStack`); gap:stack-morphism-permanence;
-gap:stack-separation-axioms; gap:decent-algebraic-spaces (for an algebraic space this is decency of
-Decent Spaces, Definition 68.6.1, stacks-decent-spaces lines 567–573).
+SchemeAndStackFoundations §1.19 (`IsRepresentableBySpaces`, for both alternatives of Lemma
+101.48.3), §1.20 (`QuasiCompactStack`); gap:stack-morphism-permanence (base change and composition of
+quasi-compact morphisms); gap:stack-separation-axioms; gap:decent-algebraic-spaces (for an algebraic
+space this is decency of Decent Spaces, Definition 68.6.1, stacks-decent-spaces lines 567–573).
 
 **Checks.**
 
@@ -1326,6 +1350,15 @@ Decent Spaces, Definition 68.6.1, stacks-decent-spaces lines 567–573).
 - `Spec ℚ(t)/ℤ` is not decent: its point `Spec ℚ(t) → X` has `Spec ℚ(t) ×_X Spec ℚ(t) = ⊔_ℤ Spec ℚ(t)`,
   which is not quasi-compact. Likewise `X = U/G` of Example 100.11.6 is not decent, the group being
   infinite.
+- The two alternatives of Lemma 101.48.3 are both needed. Let `A = k[x₁, x₂, …]`, let
+  `U = ⋃ᵢ D(xᵢ) ⊂ Spec A` (not quasi-compact: `D(x_{i₁}) ∪ … ∪ D(x_{iₙ})` misses the prime
+  `(x_{i₁}, …, x_{iₙ})`, which lies in `U`), and let `X` be two copies of `Spec A` glued along
+  `U`. The scheme `X` is not quasi-separated, so `X → Spec k` and `X × BG_k → BG_k` (`G` affine;
+  pulling back along `Spec k → BG_k` recovers the diagonal of `X`) are representable by schemes and
+  not quasi-separated; the first alternative makes `X × BG_k` decent, the second does not reach it.
+  Neither alternative can be weakened to representability by algebraic spaces alone:
+  `𝔸¹_ℚ/ℤ → Spec ℚ` is representable by algebraic spaces and not quasi-separated (its diagonal pulls
+  back to `⊔_ℤ 𝔸¹_ℚ` over `𝔸¹_ℚ × 𝔸¹_ℚ`), `Spec ℚ` is decent and `𝔸¹_ℚ/ℤ` is not.
 
 ### 5.2 Factorisation through the residual gerbe
 
@@ -1477,7 +1510,8 @@ finite type (so that `x` represents a finite type point), the projections `R_x �
 locally of finite presentation, `Spec k → 𝒵_x` is surjective, flat and locally of finite presentation,
 `Spec k ×_{𝒵_x} Spec k = R_x`, and `𝒵_x ≃ [Spec k / R_x]` (stacks-06RD lines 1617–1665, proof of Lemma
 101.18.7; stacks-06ML lines 1214–1237 and 1364–1368, proofs of Lemmas 100.11.5 and 100.11.14).
-*Needs:* 0.2, 3.2, 3.4, 4.1; SchemeAndStackFoundations §1.14 (`stabilizer`), §1.21;
+*Needs:* 0.2, 3.2, 3.4, 4.1; 2.4 and 5.3 (for the last API bullet: Lemma 101.28.10 (3) for the
+gerbe `𝒵_x → Spec κ(x)` of a decent stack); SchemeAndStackFoundations §1.14 (`stabilizer`), §1.21;
 gap:flat-groupoid-quotients.
 
 The API consists of the following facts.
@@ -1513,8 +1547,15 @@ SchemeAndStackFoundations §1.20 (`inertia`).
 
 - For the non-neutral `[Spec ℂ/(ℤ/4)]` over `ℝ` and its representative over `ℂ`,
   `𝒵 ×_ℝ ℂ ≃ B(ℤ/2)_ℂ`.
-- Base change over the base is not the fibre over the stack: for `𝒳 = BG_k` and the trivial torsor,
-  `𝒵_x ×_{Spec k} Spec k = BG`, while `𝒵_x ×_𝒳 Spec k = Spec k ×_{BG} Spec k = G`.
+- Base change over the base is neither the fibre over the stack nor the self-product of the
+  representative: for `𝒳 = BG_k` and the trivial torsor `x`, where `𝒵_x → 𝒳` is the identity, the
+  three products are `𝒵_x ×_{Spec k} Spec k ≃ BG` (the statement), `𝒵_x ×_𝒳 Spec k ≃ Spec k` and
+  `Spec k ×_𝒳 Spec k = R_x = G` (6.1). The second is `Spec k` for every representative of every
+  point: its projection to `Spec k` is a monomorphism (0.2, base change) with a section, since `x`
+  factors through `𝒵_x`, hence an isomorphism. For `G = ℤ/2` over an algebraically closed `k` the
+  three are a one-point stack with automorphism group of order 2, one point and two points; for
+  `G = μ_p` in characteristic `p` the third is one point of length `p`, and for `G = 1` all three
+  are `Spec k`.
 - For `𝒳 = Spec κ` and a finite `k/κ`, `𝒵_x ×_κ k = Spec k = B1`.
 
 ### 6.3 Neutral residual gerbes and `BG_x`
@@ -1776,9 +1817,12 @@ gap:inertia-of-presentations, gap:homogeneous-quotient-scheme, gap:algebraic-sta
   quasi-compact diagonal hypothesis that `Bℤ` shows to be necessary.
 - **MotivicStructuresInModuliOfCurves**: stabilisers of quotient stacks and residual gerbes at
   points of moduli of curves, through 1.3, 6.4 and 7.4.
-- **VirtualFundamentalClasses**: residual gerbes as the zero-dimensional integral substacks of a
-  Deligne–Mumford stack, with their residue fields and automorphism groups, for the degree of the
-  zero-cycle of a closed point, through 1.3, 4.2, 4.5 and 5.3.
+- **VirtualFundamentalClasses**: its §1.2 consumes the closed substacks of 0.3 with their
+  description on a presentation, the quasi-coherent ideals of 0.4 and the reduced induced closed
+  substacks and reduced-source factorisation of 0.5, for Deligne–Mumford stacks of finite type over
+  a field, and builds its integral closed substacks and cycles on them. Its zero-dimensional
+  integral closed substacks are the residual gerbes at closed points (3.3, 4.5), an identification
+  that roadmap does not use.
 - **EquivariantIntersectionTheory** and **GroupSchemesOverABase**: stabilisers and `BG_x` at closed
   points of quotient stacks, through 1.3, 6.4 and 7.4.
 - A roadmap on the étale slice theorems of Alper–Hall–Rydh: Layer 7 is its vocabulary.
@@ -1821,6 +1865,14 @@ over `Spec ℝ` with no real object, with `𝒳 ×_ℝ ℂ ≃ B(ℤ/2)_ℂ` at 
   (Chapter 97): Sections 97.17–97.18.
 - [stacks-sheaves-on-stacks] The Stacks Project Authors, *The Stacks Project*, Sheaves on Algebraic
   Stacks (Chapter 96): Sections 96.14–96.15.
+- [stacks-algebraic-stacks] The Stacks Project Authors, *The Stacks Project*, Algebraic Stacks
+  (Chapter 94): Section 94.6 (morphisms representable by schemes, 5.1), Lemma 94.16.1 and Remark
+  94.16.3, cited in gap:flat-groupoid-quotients.
+- [stacks-artin] The Stacks Project Authors, *The Stacks Project*, Artin's Axioms (Chapter 98):
+  Lemmas 98.5.2, 98.6.1 and 98.7.1, Remark 98.6.2 and Section 98.8, cited in
+  gap:algebraic-stacks-satisfy-rs.
+- [stacks-formal-defos] The Stacks Project Authors, *The Stacks Project*, Formal Deformation Theory
+  (Chapter 90): Lemma 90.29.3, cited in gap:algebraic-stacks-satisfy-rs.
 - [stacks-descent] The Stacks Project Authors, *The Stacks Project*, Descent (Chapter 35): Sections
   35.18–35.19, cited in gap:reduced-regular-smooth-local.
 - [stacks-spaces-descent] The Stacks Project Authors, *The Stacks Project*, Descent and Algebraic
@@ -1828,6 +1880,17 @@ over `Spec ℝ` with no real object, with `𝒳 ×_ℝ ℂ ≃ B(ℤ/2)_ℂ` at 
 - [stacks-spaces-over-fields] The Stacks Project Authors, *The Stacks Project*, Algebraic Spaces over
   Fields (Chapter 72, "Spaces over Fields"): Section 72.16, cited in
   gap:reduced-regular-smooth-local.
+- [stacks-properties-spaces] The Stacks Project Authors, *The Stacks Project*, Properties of
+  Algebraic Spaces (Chapter 66): Proposition 66.13.3, cited in
+  gap:quasi-separated-space-schematic-locus.
+- [stacks-morphisms-spaces] The Stacks Project Authors, *The Stacks Project*, Morphisms of Algebraic
+  Spaces (Chapter 67): Lemma 67.10.8 (0.2) and Proposition 67.32.1, cited in
+  gap:generic-flatness-spaces.
+- [stacks-groupoids-spaces] The Stacks Project Authors, *The Stacks Project*, Groupoids in Algebraic
+  Spaces (Chapter 78): Lemmas 78.25.1 and 78.27.1–78.27.2, cited in gap:flat-groupoid-quotients.
+- [stacks-more-groupoids-spaces] The Stacks Project Authors, *The Stacks Project*, More on Groupoids
+  in Spaces (Chapter 79): Lemma 79.9.4 and Proposition 79.10.3, cited in
+  gap:group-spaces-over-fields.
 - [ahr2020] J. Alper, J. Hall, D. Rydh, *A Luna étale slice theorem for algebraic stacks*, Ann. of
   Math. 191 (2020), read as arXiv:1504.06467v3: Theorems 1.1–1.2, §1.5, §3.1.
 - [alper-moduli] J. Alper, *Stacks and Moduli*, author's draft of 5 January 2026: §§4.5.2–4.5.3
