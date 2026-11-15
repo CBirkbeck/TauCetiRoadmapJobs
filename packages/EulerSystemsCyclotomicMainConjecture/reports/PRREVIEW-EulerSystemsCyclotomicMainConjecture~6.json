@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EulerSystemsCyclotomicMainConjecture~6",
+  "head": "e6971b4b94ed1f2abfa0b723534c162c5b660218",
+  "pr": 1311,
+  "folder": "EulerSystemsCyclotomicMainConjecture",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 10 changed lines since 8eeb3ed. Previous R01 (cyclic Sylow in the 4.20 introduction), R02 (4.3 consumers and Needs links) and R03 (AI-assistance sentence) are repaired. One new P3: the edited Needs lines of 4.8 and 4.10 omit 4.6 (Corollary 2.12) and IntegralIwasawaTheory 1.7. Checked: the 4.20 introduction against GREITHER-1992 p. 482 and against relativeClassGroup_lowerBound, with computed instances Q(sqrt-15) at 2 and Q(sqrt-23) at 3; the consumer lists of the 4.2 and 4.4 groups against every Needs line; 197 section links resolved; the sampled 4.2 and 4.12 locators at GREITHER-1992 pp. 455-456, 468 and 471; IntegralIwasawaTheory sections at 72d834e. Gate OK, depcheck 0 problems, lake env lean only sorry warnings, description re-read against the head.",
+  "text": "5e23cf05d837c72b",
+  "carried": {
+   "from": "e6971b4b94ed1f2abfa0b723534c162c5b660218",
+   "head": "3c32836f84e6831422549a81a85dff96095994c3",
+   "findings": 1,
+   "lines": 43,
+   "folders": [
+    "EulerSystemsCyclotomicMainConjecture"
+   ]
+  }
+ }
+}
