@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArtinRepresentations~6",
+  "head": "3595fc91f7a2f8de597194b7e9a50be5030bfaa5",
+  "pr": 1711,
+  "folder": "ArtinRepresentations",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 79 changed lines since 67a9da9. The five previous findings (R01-R05) are repaired. Checked: the two rewritten definitions finiteLocalPolynomial and finiteNPlus (values computed on the S3 conductor-23 representation, chi_-4, trivial and totally real cases); the new section 8.2 route against GL2AutomorphicRepresentationsAndTransfer R16.6.6, R17.5.5, R16.6.2, ModularityAndLanglandsExtensions 1.2 and AutomorphicGaloisRepresentations 2.10 at their open heads; the newly cited Tau Ceti declarations toEigenform and L_eulerProduct_tprod at the pin; the pull request's title and description against the head. One P3 finding: the ramified local factor of pi_f is cited to R16.6.6, which does not state it (R16.6.2 does, for k >= 2). Gate at 3595fc9 passes (worker's run, all scanners 0, build 0); depcheck with the candidate order: 0 problems; Suggested.lean elaborates with sorry the only warning (eleven). The seeded sample falls in unchanged text; no source locator changed.",
+  "text": "d56c5fb1e0e20dde",
+  "carried": {
+   "from": "3595fc91f7a2f8de597194b7e9a50be5030bfaa5",
+   "head": "9054814adfe98205062c112dd39f90922804ffbf",
+   "findings": 1,
+   "lines": 26,
+   "folders": [
+    "ArtinRepresentations"
+   ]
+  }
+ }
+}
