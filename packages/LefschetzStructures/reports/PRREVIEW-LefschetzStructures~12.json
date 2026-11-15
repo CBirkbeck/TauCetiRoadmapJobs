@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LefschetzStructures~12",
+  "head": "9f3f7c105cebf6385d81325eae0fcfd19360ffb8",
+  "pr": 1061,
+  "folder": "LefschetzStructures",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since abf1d6c; the only new commit merges main (8ad4192c), nothing changes outside the folder and the pins are unchanged. Checked: the pull-request title and description against this head, with one P3 finding (R01: the opening sentence and the Layer 2 sentence describe an earlier head's transport layer, not the dictionary of 2.4, and the text never says the pull request adds a roadmap); the previous review raised no finding; the gate with --build and the candidate order passes (depcheck: 245 roadmaps, 2234 edges, 0 problems); lake env lean gives 12 sorry warnings and nothing else; supplier citations re-resolved at MotivesAndAlgebraicCycles 4cfd9b7, DeligneWeightsAndPurity fae1b73, EtaleDualityAndPerverseSheaves 763a08d and main f973c75. Two remarks on untouched text: gradedLefschetz_vectorSpace_compat no longer exists at EtaleDualityAndPerverseSheaves' head, and LieHighestWeight Layer 0 resolves through main's former-numbering table. The seeded sample falls in no changed passage.",
+  "text": "56e2705980cfcda9"
+ }
+}
