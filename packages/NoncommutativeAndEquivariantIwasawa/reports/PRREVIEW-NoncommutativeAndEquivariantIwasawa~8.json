@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NoncommutativeAndEquivariantIwasawa~8",
+  "head": "77cb9a8cc712d47414abd4d1a33182f365ff8631",
+  "pr": 1307,
+  "folder": "NoncommutativeAndEquivariantIwasawa",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "incremental re-review of 20 changed lines since a638121. Previous R01-R03 all repaired. New: R01 (P2) the rewritten §7.15 step 3 and its Needs cite ClassicalArithmeticCompletion §7.12b, whose local constants are for complex Weil representations and complex psi, for the Qbar_p-valued epsilon of D_pst(V) with p-adic psi_p; no layer or supplier states the coefficient transfer (LVZ §2.3 lines 141, 197 against CAC main README:14111). R02 (P3) two of the four extended Needs lines still omit inputs: §5.5 lacks artinLValue_induction and §3.14 for its passage to F'; §6.4 lacks Brauer induction (step 3). Checked: use-sentence README:127 and the description's list against every Needs line naming CAC §7.12x or a comparison; CAC §§7.12a-7.12c, 7.13, 7.30 at main 3cf7342; SR.5.2 and ArithmeticGaloisRepresentations §2.7 (both no p-adic constants); LVZ §§2.3-2.4 and CPT II Lemmas 2.1-2.2 against the fetched arXiv texts; Tau Ceti Brauer induction at the 2fd255d9 pin; PR title, summary and prose against the head (consistent). Seeded sample: no sampled target lies in a changed passage. Gate rerun: every counter 0, OK; depcheck 245 roadmaps, 2220 edges, 0 problems; elaboration: seven sorry warnings only (Suggested.lean unchanged since a638121).",
+  "text": "cdbe68e141fc7be7"
+ }
+}
