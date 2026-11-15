@@ -912,7 +912,8 @@
       "tauceti:TauCeti.Wkp.toZeroAtInfty",
       "tauceti:TemperedDistribution.MemSobolev.exists_zeroAtInftyContinuousMap_ae_eq",
       "tauceti:TauCeti.exists_norm_le_hasWeakLineDerivOn_of_frequently_eLpNorm_inv_mul_sub_le",
-      "mathlib:MeasureTheory.Lp.fourierTransformₗᵢ"
+      "mathlib:MeasureTheory.Lp.fourierTransformₗᵢ",
+      "tauceti:TauCeti.Wkp.norm_iteratedGradient_lowerOrder_le"
      ],
      "tests": [
       {
@@ -929,6 +930,11 @@
        "name": "interpolation_exponents",
        "kind": "computation",
        "statement": "j=1, k=2, e^{−x²}: ‖u‖²_{H¹} = 2√(π/2) ≤ √5·√(π/2); exponents (2/3,1/3) refuted by dilation (λ^{1/2} versus λ^{1/6})"
+      },
+      {
+       "name": "pinned_additive_interpolation",
+       "kind": "computation",
+       "statement": "TauCeti.Wkp.norm_iteratedGradient_lowerOrder_le at p = 2, n = 1, u = e^{−x²}: inf_ε (ε‖u″‖₂ + ‖u‖₂/ε) = 2‖u‖₂^{1/2}‖u″‖₂^{1/2} = 2·3^{1/4}(π/2)^{1/4} ≈ 2.947 ≥ ‖u′‖₂ = (π/2)^{1/4} ≈ 1.120; the exponent pair (3/4, 1/4) fails under u(λx): λ^{1/2} against λ^0"
       }
      ]
     },
@@ -980,7 +986,11 @@
       "where": "Ch. 2, §2.1 (Moser product and commutator estimates); the product bound is derived here from 4.3, the Leibniz rule and Hölder's inequality"
      },
      "prerequisites": [
-      "target:4.3"
+      "target:4.3",
+      "target:4.4",
+      "tauceti:TauCeti.W1p.mul",
+      "tauceti:TauCeti.W1p.norm_mul_le",
+      "tauceti:TauCeti.W1p.mulL"
      ],
      "tests": [
       {
@@ -1007,7 +1017,14 @@
      },
      "prerequisites": [
       "target:4.3",
-      "target:4.3.1"
+      "target:4.3.1",
+      "target:4.4",
+      "tauceti:TauCeti.HasWeakFDerivOn",
+      "tauceti:TauCeti.hasWeakFDerivOn_gradient_of_contDiffOn",
+      "mathlib:HasFDerivAt.comp",
+      "mathlib:HasFTaylorSeriesUpToOn.comp",
+      "tauceti:TauCeti.W1p.hasWeakFDerivOn_comp",
+      "tauceti:TauCeti.W1p.contDiffComp"
      ],
      "tests": [
       {
@@ -1393,13 +1410,21 @@
      "prerequisites": [
       "target:6.1",
       "target:5.2",
-      "target:2.1.1"
+      "target:2.1.1",
+      "target:5.1",
+      "mathlib:MeasureTheory.convolution",
+      "mathlib:ContDiffBump"
      ],
      "tests": [
       {
        "name": "nonperiodic_solutions",
        "kind": "non-example",
        "statement": "Λ = ℤ, φ = 1 − t on [0,2] × ℝ (spacelike for every solution); the system A⁰ = I, A¹(u,z) = diag(z², 0) has solutions (0, x) and (g(t + 1/x)·1_{x<0}, x), g supported in (1/2,1), equal at t = 0 and different at (0.9, −1/0.3); neither is ℤ-periodic"
+      },
+      {
+       "name": "cutoff_coefficients",
+       "kind": "non-example",
+       "statement": "the linearised operator is made an operator of 5.1 by θA⁰(U₁) + (1 − θ)λI, θAⁱ(U₁), B = 0, θ smooth Λ-periodic in [0,1], 1 near the closure of L_φ, supported in a closed δ-neighbourhood N_δ ⊆ domain, λ a lower bound of A⁰ on the values K of U₁, U₂ on N_δ; Burgers A⁰ = 1, A¹(u) = u: coefficients 1, θU₁ on all of [t₁,t₂] × ℝ; the cutoff θA⁰(U₁) = θ without (1 − θ)λI vanishes outside the compact N_δ and has no λ₀ > 0; A⁰ = 2, λ = 1: 1 + θ = 1.5 ≥ 1 at θ = 1/2"
       }
      ]
     },

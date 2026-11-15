@@ -65,16 +65,19 @@ Boundaries:
 
 - **Mathlib and Tau Ceti** supply everything below this roadmap. The whole-space identification
   `Hᵏ = Wᵏ'²` and the embedding `Hᵏ(ℝⁿ) ⊆ C₀(ℝⁿ)` for `2k > n`, which the PDE roadmap on main
-  lists among its §1.3–§1.4 material, are already pinned Tau Ceti declarations and are cited
-  from Tau Ceti directly; nothing else of the PDE roadmap is consumed. Every statement of the
-  PDE roadmap is scalar (elliptic, parabolic and dispersive theory, with the dyadic analysis of
-  its Layer 7); it plans no hyperbolic system and no Moser estimate in `Hᵏ` (the product bounds
-  of its §7.3 are paraproduct estimates in the Hölder–Zygmund spaces `𝒞^s`). Its §7.1–§7.2 plan
-  the periodic Besov spaces on `𝕋^d = ℝ^d/ℤ^d` by Fourier series; their case `p = q = 2`,
-  integer `s = k`, is `Hᵏ_Λ` for a full-rank `Λ` after a linear change of variable (`y = x/2π`
-  for `Λ = (2πℤ)^n`), up to norm equivalence. The spaces `Hᵏ_Λ` here are for discrete period
-  groups of every rank, nothing here uses the full-rank case, and the norm comparison is a Check
-  of §4.1.
+  lists among its §1.3–§1.4 material, are already pinned Tau Ceti declarations and are cited from
+  Tau Ceti directly; nothing else of the PDE roadmap is consumed. Tau Ceti also has three special
+  cases of Layer 4: the product on `W^{1,p}(ℝⁿ)` for `p > n` (at `p = 2`, the case `n = k = 1`,
+  `Λ = 0` of the algebra property), the scalar weak chain rule for a `C¹` function with bounded
+  derivative, and the additive interpolation inequality on `W^{2,p}(E)`; §§4.2–4.3 state the
+  general forms, and the supplier contracts say how each differs. Every statement of the PDE
+  roadmap is scalar (elliptic, parabolic and dispersive theory, with the dyadic analysis of its
+  Layer 7); it plans no hyperbolic system and no Moser estimate in `Hᵏ` (the product bounds of its
+  §7.3 are paraproduct estimates in the Hölder–Zygmund spaces `𝒞^s`). Its §7.1–§7.2 plan the
+  periodic Besov spaces on `𝕋^d = ℝ^d/ℤ^d` by Fourier series; their case `p = q = 2`, integer
+  `s = k`, is `Hᵏ_Λ` for a full-rank `Λ` after a linear change of variable (`y = x/2π` for
+  `Λ = (2πℤ)^n`), up to norm equivalence. The spaces `Hᵏ_Λ` here are for discrete period groups of
+  every rank, nothing here uses the full-rank case, and the norm comparison is a Check of §4.1.
 - **Lorentzian geometry** is LorentzianGeometry's, and this roadmap imports what it uses of it.
   LorentzianGeometry §7.3 owns the acoustical form on `ℝ × Σ` (the form, its inverse, the
   material vector `B`, causal vectors, its Lorentzian character and the time orientation `[B]`),
@@ -225,6 +228,12 @@ condition `1 ≥ 1` holds and the symbol is `1 − 3 = −2`).
 - `Real.young_inequality` (`Mathlib/Analysis/MeanInequalities.lean:547`):
   `ab ≤ |a|ᵖ/p + |b|^q/q` for Hölder conjugate exponents `p`, `q`, the last step of the product
   estimate of §4.3.
+- The chain rule `HasFDerivAt.comp` (`Mathlib/Analysis/Calculus/FDeriv/Comp.lean:103`) and the
+  Faà di Bruno formula `HasFTaylorSeriesUpToOn.comp`
+  (`Mathlib/Analysis/Calculus/ContDiff/FaaDiBruno.lean:1051`: if `g` and `f` have Taylor series
+  `q` and `p` up to order `m`, then `g ∘ f` has the Taylor series `q.taylorComp p`): the
+  classical derivatives of `Φ ∘ u` up to order `k` for smooth `u` in the composition estimate
+  of §4.3.
 - `MeasureTheory.convolution`, `ContDiffBump`, the Bochner integral, `Lp`, Hölder's and
   Minkowski's inequalities, dominated convergence and the Lebesgue differentiation theorem.
 
@@ -277,6 +286,30 @@ on `E`, no Lorentzian quadratic form with a time orientation and no causal curve
   (`TauCeti/Analysis/Sobolev/Leibniz.lean:112,168,317`): the Leibniz rule for the weak derivative
   of `ψu` with `ψ` smooth, or Lipschitz, on the open set and `u` weakly differentiable; the
   product rule of §4.3 for two Sobolev factors is obtained from it by density.
+- `TauCeti.W1p.mul`, `TauCeti.W1p.norm_mul_le` and `TauCeti.W1p.mulL`
+  (`TauCeti/Analysis/Sobolev/W1p/SupercriticalMultiplication.lean:320,500,515`): for `p > n`
+  the product of the Morrey representatives of `u, v ∈ W^{1,p}(ℝⁿ)` lies in `W^{1,p}(ℝⁿ)` with
+  `‖uv‖ ≤ 3‖ι‖‖u‖‖v‖`, `ι` Morrey's embedding, and is a bounded bilinear map. At `p = 2` the
+  hypothesis `n < 2` leaves `n = 1`, where the `W1p` norm is the `H¹` norm: this is the case
+  `Λ = 0`, `n = 1`, `k = 1` of the algebra property of §4.3, which is stated for every `Λ` and
+  every `n`, `k` with `2k > n`, together with the product bound with `L^∞` factors.
+- `TauCeti.W1p.hasWeakFDerivOn_comp` and `TauCeti.W1p.contDiffComp`
+  (`TauCeti/Analysis/Sobolev/W1p/ChainRule.lean:375,385`): for `1 ≤ p < ∞`, a real
+  `u ∈ W^{1,p}(Ω)` on an open `Ω` and a `C¹` function `F : ℝ → ℝ` with bounded derivative,
+  `F ∘ u` has the weak gradient `F′(u)∇u` on `Ω`, and lies in `W^{1,p}(Ω)` when `F(0) = 0`. This
+  is the scalar chain rule, the case `N = 1`, `k = 1` of the composition estimate of §4.3 for a
+  `Φ` with bounded derivative on all of `ℝ`; §4.3 states vector-valued `u`, every order `k`, and
+  `Φ` smooth only on an open `G` containing the values.
+- `TauCeti.hasWeakFDerivOn_gradient_of_contDiffOn`
+  (`TauCeti/Analysis/Sobolev/WeakDeriv/Basic.lean:789`): a real function of class `C¹` on an
+  open set has its classical gradient as weak derivative there; applied componentwise to
+  `Φ ∘ u` for the smooth approximants `u` of §4.3.
+- `TauCeti.Wkp.norm_iteratedGradient_lowerOrder_le`
+  (`TauCeti/Analysis/Sobolev/Wkp/Interpolation.lean:335`): for `1 ≤ p < ∞`, `ε > 0` and
+  `u ∈ W^{2,p}(E)`, `‖∇u‖_p ≤ ε‖D²u‖_p + (n²/ε)‖u‖_p`. At `p = 2` the infimum over `ε` gives
+  `‖∇u‖₂ ≤ 2n‖u‖₂^{1/2}‖D²u‖₂^{1/2}`, the case `j = 1`, `k = 2`, `Λ = 0` of the interpolation
+  inequality of §4.2 in additive form; §4.2 states every `0 ≤ j ≤ k` and every `Λ`, by
+  Plancherel.
 - `TauCeti.CircleSobolev s E` (`TauCeti/Analysis/Sobolev/Circle/Basic.lean:197`), the
   Fourier-side Sobolev space of the circle with norm squared `Σ_m (1 + |m|)^{2s}‖c_m‖²`
   (`TauCeti.CircleSobolev.norm_sq_eq_tsum`, line 375), identified at `s = 0` with
@@ -927,11 +960,19 @@ embedding is LukNotes line 1210, Theorem 5.5, for `Λ = 0`.
   `‖u″‖₂² = 3√(π/2)`, so `‖u‖²_{H¹} = 2√(π/2) ≤ ‖u‖₂‖u‖_{H²} = √(π/2)·√5`. The wrong exponent
   pair `‖u‖_{L²}^{2/3}‖u‖_{H²}^{1/3}` is refuted by the dilations `u(λx)`, `λ → ∞`: the left side
   grows like `λ^{1/2}`, the right side like `λ^{1/6}`.
+- Agreement with Tau Ceti's additive form `TauCeti.Wkp.norm_iteratedGradient_lowerOrder_le` at
+  `p = 2`, `n = 1`, `u = e^{−x²}`: the infimum over `ε` of `ε‖u″‖₂ + ‖u‖₂/ε` is
+  `2‖u‖₂^{1/2}‖u″‖₂^{1/2} = 2·3^{1/4}(π/2)^{1/4} ≈ 2.947`, and the left side is
+  `‖u′‖₂ = (π/2)^{1/4} ≈ 1.120`. The exponent pair `(3/4, 1/4)` in place of `(1/2, 1/2)` fails
+  under `u(λx)`: `‖u′‖₂` scales as `λ^{1/2}`, `‖u‖₂^{1/2}‖u″‖₂^{1/2}` as `λ^{1/2}`, but
+  `‖u‖₂^{3/4}‖u″‖₂^{1/4}` as `λ^{0}`, so the ratio grows like `λ^{1/2}` as `λ → ∞`.
 
 *Needs:* §4.1; Tau Ceti `TauCeti.Wkp.toZeroAtInfty`,
 `TemperedDistribution.MemSobolev.exists_zeroAtInftyContinuousMap_ae_eq`,
 `TauCeti.exists_norm_le_hasWeakLineDerivOn_of_frequently_eLpNorm_inv_mul_sub_le`; Mathlib
-Plancherel, `MeasureTheory.Lp.fourierTransformₗᵢ`, for the interpolation inequality on `E`.
+Plancherel, `MeasureTheory.Lp.fourierTransformₗᵢ`, for the interpolation inequality on `E`
+(Tau Ceti `TauCeti.Wkp.norm_iteratedGradient_lowerOrder_le` is its case `j = 1`, `k = 2`,
+`Λ = 0`).
 
 ### 4.3 Gagliardo–Nirenberg interpolation and Moser estimates
 
@@ -1001,8 +1042,15 @@ segment from `Ū` leaves `G`. Every constant is independent of `u`, `f`, `g`.
 Tau Ceti's Leibniz rule
 `TauCeti.HasWeakLineDerivOn.contDiffOn_smul`, `TauCeti.HasWeakFDerivOn.contDiffOn_smul` and
 `TauCeti.HasWeakLineDerivOn.lipschitzOnWith_smul` (smooth or Lipschitz factor; two Sobolev
-factors by density through §4.4), `TauCeti.HasWeakFDerivOn` and the chain rule for
-`C^∞ ∘ (C¹ ∩ W^{1,2}_loc)`.
+factors by density through §4.4), `TauCeti.HasWeakFDerivOn`; for the composition,
+`TauCeti.hasWeakFDerivOn_gradient_of_contDiffOn` applied componentwise to `Φ ∘ u` for smooth
+`u`, whose classical derivatives up to order `k` are given by Mathlib's chain rule
+`HasFDerivAt.comp` and Faà di Bruno formula `HasFTaylorSeriesUpToOn.comp`, and density through
+§4.4 (in the scalar case `N = 1`, `k = 1`, Tau Ceti `TauCeti.W1p.hasWeakFDerivOn_comp`, applied
+on bounded open sets to `u − Ū` and to `s ↦ χ(Ū + s)Φ(Ū + s)` with `χ` smooth, equal to `1` on
+the `δ/2`-neighbourhood of `K` and supported in `K_δ`, gives the weak chain rule directly). Tau
+Ceti `TauCeti.W1p.mul`, `TauCeti.W1p.norm_mul_le` and `TauCeti.W1p.mulL` are the case
+`Λ = 0`, `n = k = 1` of the algebra property.
 
 ### 4.4 Friedrichs mollifiers
 
@@ -1161,9 +1209,10 @@ is negative semidefinite at almost every point of `{χ > 0}`. Prove that then
 whenever `|LW| ≤ C₁|W|` on `{χ > 0}`, with `C` depending on `λ₀`, the bounds of the coefficients
 and of their first derivatives on the closure of `{χ > 0}`, and `C₁`; in particular `W = 0` on
 `{χ(0, ·) > 0}` forces `W = 0` on `{χ > 0}`. For a quasilinear system linearised at `U₁`
-(§2.1, difference bound) the condition reads `σ(U₁; dχ) ≤ 0`, and for the Euler systems
-`∂_tχ + v₁·∇χ + c₁|∇χ| ≤ 0` almost everywhere on `{χ > 0}` (LukNotes line 724, Proposition 4.4,
-the localised energy of the wave equation on backward cones; Majda1984, Ch. 2, §2.3).
+(§2.1, difference bound; §6.1 makes the linearised operator an operator of §5.1 by a cutoff
+equal to `1` near the closure of `{χ > 0}`) the condition reads `σ(U₁; dχ) ≤ 0`, and for the
+Euler systems `∂_tχ + v₁·∇χ + c₁|∇χ| ≤ 0` almost everywhere on `{χ > 0}` (LukNotes line 724,
+Proposition 4.4, the localised energy of the wave equation on backward cones; Majda1984, Ch. 2, §2.3).
 
 This extends SymmetricHyperbolicSystems §2.2, which is the case `Λ = 0`, `w = 0` (a static cone
 of a single speed), with a smoothed weight and `LW = 0` on the cone, to Lipschitz
@@ -1364,9 +1413,22 @@ cones of `U₁` enter. (Majda1984, Ch. 2, §2.3; LukNotes line 724, Proposition 
 equation; EperonReallSbierski2019 line 1178, Proposition 4.63, which quotes the standard local
 uniqueness; BarGinouxPfaffle2007 lines 3664–3668, Theorem 3.2.11, the linear wave analogue.)
 The proof applies §5.2 to `W = U₁ − U₂` with the weight `χ = φ₊`, using the difference bound
-of §2.1: `W` is Λ-periodic and `C¹` near the closure of `L_φ`, which is compact modulo `Λ`, so
-`U₁`, `U₂` take values in a compact `K ⊆ G` and `|∂U₂|` is bounded there, as §5.2 and the
-difference bound require.
+of §2.1. Let `𝒩` be the common domain of `U₁`, `U₂` and `L̄` the closure of `L_φ`. Since `L̄`
+is compact modulo `Λ` and `𝒩` is Λ-invariant and relatively open, some `δ > 0` makes the closed
+`δ`-neighbourhood `N_δ` of `L̄` in `[t₁, t₂] × E` a subset of `𝒩`; `N_δ` is compact modulo `Λ`, so
+`U₁`, `U₂` take values in a compact `K ⊆ G` on `N_δ`, and `|∂U₁|`, `|∂U₂|` are bounded there. The
+linearised operator `A⁰(U₁)∂_t + Σᵢ Aⁱ(U₁)∂ᵢ` has coefficients only on `𝒩`; it is made an
+operator of §5.1 by a cutoff. Let `θ` be the convolution of the indicator of the open
+`δ/2`-neighbourhood of `L̄` in `ℝ × E` with a smooth nonnegative bump of integral `1` supported
+in the ball of radius `δ/4`: it is smooth, Λ-periodic, `0 ≤ θ ≤ 1`, with bounded derivatives,
+equal to `1` on the `δ/4`-neighbourhood of `L̄` and supported in `N_δ`. Take the coefficients
+`θA⁰(U₁) + (1 − θ)λI`, `θAⁱ(U₁)` and `B = 0`, with `λ > 0` such that `A⁰(U) ≥ λI` for `U ∈ K`
+(it exists because `A⁰` is continuous and positive definite and `K` is compact), extended by
+`λI`, `0` where `θ = 0`. They are symmetric, Λ-periodic, bounded with bounded first
+derivatives on `[t₁, t₂] × E`, and `θA⁰(U₁) + (1 − θ)λI = λI + θ(A⁰(U₁) − λI) ≥ λI`, so they form
+an operator of §5.1 with `λ₀ = λ`. On `{χ > 0} = L_φ` they equal `A⁰(U₁)`, `Aⁱ(U₁)`, so there
+the symbol at `dχ` is `σ(U₁; dφ)`, negative semidefinite almost everywhere because `φ` is
+spacelike for `U₁`, and the difference bound gives `|LW| ≤ C₁|W|`, as §5.2 requires.
 
 **Moving cones.** For `x₀ ∈ E`, `R > 0`, `w ∈ E` and `M > 0`, the *periodised moving cone*
 `φ(t, x) = max_{λ∈Λ} (R − |x − λ − x₀ − (t − t₁)w| − M(t − t₁))` (a maximum over a locally finite
@@ -1410,8 +1472,16 @@ the period group of the data in §8.4.
   at `t = 0` (there `t + 1/x < 0`), yet at `t = 0.9`, `x = −1/0.3` the second has `u = g(0.6)`,
   which is nonzero for suitable `g`. Neither is `ℤ`-periodic; the characteristics `x = 1/(c − t)`
   enter from `x = −∞` at time `c`.
+- The cutoff of the linearised operator: for Burgers, `n = N = 1`, `Λ = 0`, `A⁰ = 1`,
+  `A¹(u) = u`, with `U₁` given only on a neighbourhood of `L̄`, and `λ = 1`, the cut-off
+  coefficients are `1` and `θU₁`, defined on all of `[t₁, t₂] × ℝ`. The plausible cutoff
+  `θA⁰(U₁) = θ`, without the term `(1 − θ)λI`, vanishes outside the compact set `N_δ`, so it
+  satisfies `A⁰ ≥ λ₀I` for no `λ₀ > 0` and is not an operator of §5.1. For a system with
+  `A⁰ = 2` and `λ = 1` the cut-off `A⁰` is `1 + θ`, which is `1.5 ≥ 1` at `θ = 1/2`.
 
-*Needs:* §2.1 (difference bound), §2.2 (dominance for Euler), §5.2.
+*Needs:* §2.1 (difference bound), §2.2 (dominance for Euler), §5.1 (the operator class the
+cut-off coefficients belong to), §5.2; Mathlib `MeasureTheory.convolution` and `ContDiffBump`
+for the cutoff `θ`.
 
 ### 6.2 Uniqueness on domains of dependence
 
