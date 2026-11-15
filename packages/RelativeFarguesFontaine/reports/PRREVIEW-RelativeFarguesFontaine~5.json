@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RelativeFarguesFontaine~5",
+  "head": "d58cce9dac9e00e79f2d577cf4c6673bde037fa1",
+  "pr": 1209,
+  "folder": "RelativeFarguesFontaine",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since d58cce9; the folder is unchanged and the previous report had no finding. Checked the pull request's title and description against the head: two P3 findings (the dependency paragraph names one of six suppliers not on main; 'red-team passes to follow' is stale). Gate rerun passes with every counter zero; depcheck 245 roadmaps, 0 problems; Suggested.lean elaborates with 14 sorry warnings only; one fresh adversarial row for ramifiedDworkCriterion plus three rows for description claims. Seeded sample and source locators not rechecked (no changed passage).",
+  "text": "7d6f69b30200496c",
+  "carried": {
+   "from": "d58cce9dac9e00e79f2d577cf4c6673bde037fa1",
+   "head": "068d2afc2e7cf4bdc77216a42eff0d90f5523b58",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
