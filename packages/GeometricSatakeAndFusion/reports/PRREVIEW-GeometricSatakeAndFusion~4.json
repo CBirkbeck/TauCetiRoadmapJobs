@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeometricSatakeAndFusion~4",
+  "head": "392d28ee5b14629578575d590e1171cfdda86b9f",
+  "pr": 1235,
+  "folder": "GeometricSatakeAndFusion",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 16 changed lines since 140b5a7. All five previous findings repaired: the §0.15 filtration API (rank formula recomputed on GL1, GL2 with mu=(1,0), 0, (2,0); equivariance and tensor filtration computed; agrees with CS Proposition 3.4.3 proof), the FS page note (PDF has 356 pages, PDF page = printed page, checked on 10 pages; the earlier offset was an extraction artefact), and the three description sentences. Changed FS locators in §§4.16, 4.19, 4.24, 4.25 verified on pages 190, 235, 321, 334. Title and description checked against the head: 12 open suppliers by section and 9 roadmaps on main all match the README; Suggested.lean declares nothing, as the description says. No seeded-sample target lies in a changed passage. Gate: every counter 0 including build and depcheck (245 roadmaps, 2244 edges, 0 problems); Suggested.lean elaborates with exit 0 and no warning; no file changed outside the folder. Overlap check: nothing shared. Source independence: changed passages only, none shared.",
+  "text": "c35ca804f9b46e32"
+ }
+}
