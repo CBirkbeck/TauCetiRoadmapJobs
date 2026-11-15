@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LanglandsParameterStacks~5",
+  "head": "04801e3e01a735f36f1d655acb3179d8de855512",
+  "pr": 1202,
+  "folder": "LanglandsParameterStacks",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 141 changed lines since 032037c. All six previous findings are repaired: R01 restores 83 ### k.n target headings and the 12 titles; R02 names ModularityAndLanglandsExtensions as the consumer, matching its README:3378; R03 adds the |pi0 G| hypothesis; R04-R06 fix the description. Checked the three new layer-opening paragraphs: all 58 asserted Needs edges are present, and the hypotheses restated for 1.18, 4.2-4.3, 4.6-4.10, 4.12-4.18 and 4.19-4.21 agree with the targets and with FS. Sampled targets in changed passages were checked against FS at the locator: 1.2, 1.18, 4.2, 4.12, 4.16, 4.20, plus 6.2 for the description. PR title and description were checked against the head: the suppliers not on main e6f6358, IHG consumers, Lean and validation sentences, end theorems. Gate passes (worker build=0); depcheck 245 roadmaps, 2216 edges, 0 problems; lake env lean exits 0 with no output; Suggested.lean is unchanged with 0 declarations. No file outside the folder changed against origin/main. Source independence: changed passages only. Recorded one FS misprint ('exponents' for degrees in VIII.2.11).",
+  "text": "91dd4e8715ecc485"
+ }
+}
