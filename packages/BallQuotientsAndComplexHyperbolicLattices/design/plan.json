@@ -523,7 +523,7 @@
           "id": "2.3",
           "kind": "theorem",
           "name": "BallQuotient.invariantKahler_unique",
-          "statement": "Every G-invariant Kähler form on B is cω with c > 0 (the supplier's uniqueness of invariant metrics, read on Kähler forms); the Ricci form of ω is −(n+1)ω, the curvature −i∂∂̄ log det h of the canonical bundle with the metric of ω^n, matching the supplier's Ricci tensor −½B, i.e. Ric(g_𝔹) = −(n+1)g_𝔹; holomorphic sectional curvature ≡ −2 and sectional curvatures in [−2, −1/2], from the supplier's curvature R(Y,Z)W = −[[Y,Z],W] rescaled by Killing = 2(n+1)g_𝔹.",
+          "statement": "Every G-invariant Kähler form on B is cω with c > 0 (the supplier's uniqueness of invariant metrics, read on Kähler forms); the Ricci form of ω is −(n+1)ω = −i∂∂̄ log det h, the Chern curvature iΘ(K_B⁻¹) of the anticanonical bundle (frame ∂/∂w₁∧…∧∂/∂wₙ of squared norm det h; ComplexKahlerGeometry K4's iΘ = −i∂∂̄ log ‖e‖²), so the canonical bundle K_B with the metric of ω^n (frame dw₁∧…∧dwₙ of squared norm (det h)⁻¹) has iΘ(K_B) = (n+1)ω and iΘ(K_B^m) = m(n+1)ω for every integer m, the form Layer 9 uses; Ric matches the supplier's Ricci tensor −½B, i.e. Ric(g_𝔹) = −(n+1)g_𝔹; holomorphic sectional curvature ≡ −2 and sectional curvatures in [−2, −1/2], from the supplier's curvature R(Y,Z)W = −[[Y,Z],W] rescaled by Killing = 2(n+1)g_𝔹.",
           "hypotheses": [
             "n ≥ 1"
           ],
@@ -547,6 +547,11 @@
               "statement": "For n = 1, Gaussian curvature −2 and Ric = −2ω."
             },
             {
+              "name": "canonical_vs_anticanonical",
+              "kind": "computation",
+              "statement": "n = 1: ‖dw‖² = (1−|w|²)² gives iΘ(K_B) = +2ω, ‖∂/∂w‖² = (1−|w|²)⁻² gives iΘ(K_B⁻¹) = −2ω = Ric(ω); at ℓ = 2 Layer 9's input iΘ(K_B^{ℓ−1}) = +2ω > 0, whereas reading Ric as the curvature of K_B would give −2ω."
+            },
+            {
               "name": "scaling",
               "kind": "degenerate",
               "statement": "−2 log(1−|w|²) gives 2ω, also invariant: c is not determined."
@@ -562,7 +567,7 @@
               "statement": "n = 2: Killing curvatures −1/3 (complex lines) and −1/12 (totally real planes) times 2(n+1) = 6 give −2 and −1/2 for g_𝔹; forgetting the factor gives −1/3."
             }
           ],
-          "proofSketch": "An invariant Kähler form ω′ gives the invariant metric ω′(·,i·) = c·g_𝔹 (supplier), so ω′ = cω; Ric = −i∂∂̄ log det h; curvature from the supplier's formula on 𝔭 ≅ ℂⁿ and the factor 2(n+1)."
+          "proofSketch": "An invariant Kähler form ω′ gives the invariant metric ω′(·,i·) = c·g_𝔹 (supplier), so ω′ = cω; Ric = −i∂∂̄ log det h = iΘ(K_B⁻¹), and iΘ(K_B) = i∂∂̄ log det h = (n+1)ω since dw₁∧…∧dwₙ has squared norm (det h)⁻¹; curvature from the supplier's formula on 𝔭 ≅ ℂⁿ and the factor 2(n+1)."
         },
         {
           "id": "2.4",
@@ -1084,7 +1089,7 @@
             {
               "name": "cyclic_parabolic_not",
               "kind": "non-example",
-              "statement": "⟨T_1⟩ is discrete and not a lattice; for n = 1 it has infinite index in the lattice PSL(2,ℤ), so lattice_in_discrete needs the smaller group to be a lattice."
+              "statement": "⟨T_1⟩ is discrete and not a lattice: for n = 1 the strip {0 ≤ x < 1, y > 0} is a fundamental domain whose part ε < y < 1 has ω-area (ε⁻¹−1)/2 → ∞, while its horoball part y > Y has finite area 1/(2Y); for n ≥ 2 the slab {0 ≤ Re v < 1} already has infinite volume inside a horoball (u ∈ ℂ^{n−1}). For n = 1 it has infinite index in the lattice PSL(2,ℤ), so lattice_in_discrete needs the smaller group to be a lattice."
             }
           ]
         },
@@ -1925,6 +1930,7 @@
             "target:9.3",
             "mathlib:AlgebraicGeometry.Scheme.Hom.normalization",
             "roadmap:AlgebraicModuliForArithmeticGeometry §5.4",
+            "roadmap:ComplexComparisonPartII §C−1.1",
             "roadmap:ComplexComparisonPartII §C4.4",
             "gap:normality-analytification",
             "gap:normal-riemann-extension"
@@ -2142,7 +2148,7 @@
           ],
           "locator": {
             "source": "MilneSVI",
-            "where": "Theorem 3.14 line 1742 to line 1744; line 1764 to line 1769; line 1775 to line 1780; Deng2020 Theorem A line 87 to line 90"
+            "where": "Theorem 3.14 line 1742 to line 1744, its proof line 1764 to line 1769 and minimality line 1775 to line 1780 (torsion-free arithmetic case); the general argument is deduced here from 10.2 and ComplexComparisonPartII §C4.4; Deng2020 Theorem A line 87 to line 90 is a different criterion, assuming a C-PVHS whose period map has zero-dimensional fibres, not used here"
           },
           "prerequisites": [
             "target:10.2",
@@ -2179,7 +2185,7 @@
           ],
           "locator": {
             "source": "MilneSVI",
-            "where": "Corollary 3.16 line 1770 to line 1774; BaldiUllmo2023 Theorem 3.1.12 line 455 to line 465, line 102 to line 104, Definition 3.1.8 line 431"
+            "where": "Corollary 3.16 line 1770 to line 1774 (arithmetic case); BaldiUllmo2023 Theorem 3.1.12 line 455 to line 465, line 102 to line 104, Definition 3.1.8 line 431"
           },
           "prerequisites": [
             "target:9.5",
@@ -2212,11 +2218,11 @@
           "id": "10.5",
           "kind": "theorem",
           "name": "BallQuotient.unique_finite_compactification",
-          "statement": "For every lattice Γ and compact normal complex space Y ⊃ X_Γ open dense with finite complement, id_{X_Γ} extends uniquely to Y ≅ (S*_Γ)^an, algebraic when Y is the analytification of a normal projective variety.",
+          "statement": "For every lattice Γ and compact Hausdorff normal complex analytic space Y ⊃ X_Γ open dense with finite complement, id_{X_Γ} extends uniquely to Y ≅ (S*_Γ)^an, algebraic when Y is the analytification of a normal projective variety.",
           "hypotheses": [
             "Γ lattice",
-            "Y compact normal",
-            "Y ∖ X_Γ finite"
+            "Y a compact Hausdorff normal complex analytic space (ComplexComparisonPartII's ComplexAnalyticSpace has no global Hausdorff axiom)",
+            "X_Γ open dense in Y, Y ∖ X_Γ finite"
           ],
           "locator": {
             "source": "MilneSVI",
@@ -2226,6 +2232,7 @@
             "target:9.4",
             "target:9.5",
             "roadmap:ComplexKahlerGeometry K3",
+            "roadmap:ComplexComparisonPartII §C−1.1",
             "roadmap:ComplexComparisonPartII §C0.6",
             "roadmap:ComplexComparisonPartII §C4.4",
             "gap:normal-riemann-extension"
@@ -2235,19 +2242,30 @@
             {
               "name": "cstar",
               "kind": "computation",
-              "statement": "ℙ¹ is the only normal finite-point compactification of ℂ*."
+              "statement": "ℙ¹ is the only compact Hausdorff normal finite-point compactification of ℂ*: each of its two ends receives one point."
+            },
+            {
+              "name": "doubled_cusps",
+              "kind": "non-example",
+              "statement": "Two copies of ℙ¹ glued along X_Γ = ℙ¹ ∖ {0,1,∞} (image of Γ(2)) by §C−1.1 open gluing: compact, locally smooth, X_Γ open dense, six boundary points against three for (S*_Γ)^an = ℙ¹; the doubled cusp points have no disjoint neighbourhoods, so only the Hausdorff hypothesis excludes it."
+            },
+            {
+              "name": "cocompact",
+              "kind": "degenerate",
+              "statement": "Γ cocompact: X_Γ compact, hence closed in the Hausdorff Y, so Y = X_Γ = (S*_Γ)^an; without Hausdorffness a disc glued along a punctured disc around x ∈ X_Γ doubles x and gives a compact normal Y with one boundary point."
             },
             {
               "name": "nodal",
               "kind": "non-example",
-              "statement": "The nodal cubic compactifies ℂ* by one non-normal point."
+              "statement": "The nodal cubic compactifies ℂ* by one point and is compact Hausdorff but not normal (two local branches at the node)."
             },
             {
               "name": "toroidal",
               "kind": "non-example",
               "statement": "X^M has divisorial boundary: finiteness is needed."
             }
-          ]
+          ],
+          "proofSketch": "S = (S*_Γ)^an is compact Hausdorff (projective, §C−1.1) and each p ∈ ∂ has neighbourhoods V with V ∖ {p} a connected horoball-quotient image (9.4–9.5). Extend id to f: Y → S: compact subsets of X_Γ are closed in the Hausdorff Y, and the normal, hence irreducible n-dimensional, germ at y ∈ Y ∖ X_Γ has connected punctured neighbourhoods lying in one cusp end, which defines f(y); f is continuous and surjective; injective since disjoint neighbourhoods U, U′ of y ≠ y′ with f(y) = f(y′) = p would split the connected V ∖ {p} ⊂ f⁻¹(V) ⊂ U ∪ U′; so f is a homeomorphism, biholomorphic by gap:normal-riemann-extension, unique by density, algebraic by §C4.4."
         },
         {
           "id": "10.6",
@@ -2371,7 +2389,7 @@
             {
               "name": "identity_isogeny",
               "kind": "degenerate",
-              "statement": "φ = id with the standard representation of SL₂ and its conjugate by diag(2,1): SL₂(ℤ) and {[[a,2b],[c/2,d]]} meet in Γ⁰(2), index 3 in each; commensurable, not equal."
+              "statement": "φ = id with the standard representation of SL₂ and ρ′(g) = A⁻¹gA, A = diag(2,1): the integral groups SL₂(ℤ) and ρ′⁻¹(GL₂(ℤ)) = A·SL₂(ℤ)·A⁻¹ = {[[a,2b],[c/2,d]]} meet in Γ⁰(2), index 3 in each ([[1,1],[0,1]] ↦ [[1,1/2],[0,1]] not integral, [[1,0],[1,1]] ↦ [[1,0],[2,1]] integral); g ↦ AgA⁻¹ would give Γ₀(2) instead; commensurable, not equal."
             },
             {
               "name": "not_over_Q",
@@ -2502,7 +2520,7 @@
           "id": "11.4",
           "kind": "theorem",
           "name": "BallQuotient.minimal_eq_bailyBorel",
-          "statement": "For every component group Γ_a^eff of 11.3, acting on X⁺ ≅ B, id extends to a unique S*_{Γ_a^eff} ≅ Baily–Borel component (ShimuraVarieties §2.7), restricting to the algebraization of ShimuraVarieties §§1.2, 3.3, 3.5; arbitrary arithmetic Γ are related through S*_{Γ∩Γ_c}. Both compactifications add finitely many points: S* by 9.5; Baily–Borel because the boundary components of the ball are points (a holomorphic disc in the closed ball through a boundary point is constant), so the rational boundary components (ShimuraVarieties §2.1) are points, finitely many modulo Γ_a^eff (ShimuraVarieties §2.2).",
+          "statement": "For every component group Γ_a^eff of 11.3, acting on X⁺ ≅ B, id extends to a unique S*_{Γ_a^eff} ≅ Baily–Borel component (ShimuraVarieties §2.7), restricting to the algebraization of ShimuraVarieties §§1.2, 3.3, 3.5; arbitrary arithmetic Γ are related through S*_{Γ∩Γ_c}. Both compactifications are normal projective, so their analytifications are compact Hausdorff (ComplexComparisonPartII §C−1.1), as 10.5 requires, and both add finitely many points: S* by 9.5; Baily–Borel because the boundary components of the ball are points (a holomorphic disc in the closed ball through a boundary point is constant), so the rational boundary components (ShimuraVarieties §2.1) are points, finitely many modulo Γ_a^eff (ShimuraVarieties §2.2).",
           "hypotheses": [
             "Γ arithmetic"
           ],
@@ -2520,7 +2538,8 @@
             "roadmap:ShimuraVarieties §2.2",
             "roadmap:ShimuraVarieties §2.7",
             "roadmap:ShimuraVarieties §3.3",
-            "roadmap:ShimuraVarieties §3.5"
+            "roadmap:ShimuraVarieties §3.5",
+            "roadmap:ComplexComparisonPartII §C−1.1"
           ],
           "api": [],
           "tests": [
@@ -2856,7 +2875,7 @@
         "§C4.2",
         "§C4.4"
       ],
-      "what": "Complex analytic spaces, analytification with its smooth-chart comparison (a smooth variety has a complex manifold as analytification), completed stalks, analytic set geometry and normalization, weighted L² estimate, Montel and finiteness, GAGA, Remmert, Chow, algebraicity of maps out of proper schemes."
+      "what": "Complex analytic spaces (no global Hausdorff axiom), analytification (Hausdorff for separated schemes) with its smooth-chart comparison (a smooth variety has a complex manifold as analytification), completed stalks, analytic set geometry and normalization, weighted L² estimate, Montel and finiteness, GAGA, Remmert, Chow, algebraicity of maps out of proper schemes."
     },
     {
       "roadmap": "ShimuraVarieties",
