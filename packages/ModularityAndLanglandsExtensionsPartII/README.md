@@ -43,7 +43,7 @@ newform of weight at least `2`, the statements this roadmap's Lean file records.
 | 11 | The untwisted tensor | Newton–Thorne 2026 Theorem 3.2 |
 | 12 | Tensor functoriality lifting | Newton–Thorne 2026 Theorem 4.1 |
 | 13 | Residual twisted tensors and the induction | Theorems 5.5 and 5.9, Proposition 6.3, Thorne's induction step, `SP_n` for all `n` |
-| 14 | Endpoints over `ℚ` | Theorems A, B, E for every rank, Newton–Thorne II Theorem A, holomorphy of `L(s, Sym^n f)` in level one |
+| 14 | Endpoints over `ℚ` | Theorems A, B, E for every rank, Newton–Thorne II Theorem A, holomorphy of `L(s, Sym^n f)` in level one and, away from the level, for non-CM newforms of weight at least `2` |
 
 ## Scope and ownership
 
@@ -780,8 +780,14 @@ hence in `𝒵`; Zariski density and closedness give the containment of an affin
   non-critical slope condition.
 - If `H¹_f(F⁺, ad r_{π_n,ι}) ≠ 0` the tangent bound fails and the argument gives nothing; the
   vanishing enters through ModularityAndLanglandsExtensions §4.1.
-- Taking `𝒞` to be the component itself and `z_2` any of its classical points recovers hypothesis
-  (2) at that point; the content is the passage to non-classical points.
+- At `z_2` itself the conclusion is weaker than hypothesis (2): it says only that
+  `(σ_n ∘ i_2)(z_2)` lies in `i_n(ℰ_n(τ̄_n)_{ℂ_p})`, while (2) makes that point a classical `z_n`. At
+  another classical point `z′_2` of `𝒞` the conclusion gives only a point of `ℰ_n(τ̄_n)_{ℂ_p}` whose
+  Galois pseudocharacter is `Sym^{n−1}` of that of `z′_2`; that this point is classical, hence
+  attached to a refined automorphic `(π′_n, χ′_n)`, is not part of the statement and needs the
+  further hypotheses of §1.4 on `z′_2` (`n`-regularity of `χ′_2`, non-criticality of every
+  triangulation and the local Zariski-closure condition). For `n = 3`, a classical `z′_2` with
+  Frobenius ratio `−1` is not covered.
 
 *Needs:* ModularityAndLanglandsExtensions §§1.1, 4.1, 4.3; PotentialAutomorphyInfrastructurePartII
 Layer 9 ("Generic Galois representations"; "Bloch–Kato local conditions at generic places"); PadicFamilies §2a.14; §0.1; §0.4.
@@ -899,10 +905,12 @@ forms"); AdicSpacesPartV Layer 1 (gap:components-under-field-extension).
 
 ### Examples
 
-- For a non-CM refined `(π_2, χ_2)` with `n`-regular non-critical refinement and automorphic
-  `Sym^{n−1}`, §1.4 makes `Sym^{n−1}` automorphic at every classical point of its component whose
-  refinement is `n`-regular and non-critical.
-- At `n = 3` the excluded points are those with Frobenius ratio `±1`.
+- For a refined `(π_2, χ_2)` with numerically non-critical `n`-regular refinement, local images at
+  `S_p` whose Zariski closures contain `SL_2`, and automorphic `Sym^{n−1}`, §1.4 makes `Sym^{n−1}`
+  automorphic at every classical point `z′_2` of its component whose refinement is `n`-regular, all
+  of whose triangulations at `S_p` are non-critical, and whose local images at `S_p` have Zariski
+  closures containing `SL_2`.
+- At `n = 3`, `n`-regularity of `χ′_2` excludes exactly the points with Frobenius ratio `±1`.
 
 ### Dependencies
 
@@ -2244,7 +2252,11 @@ of a subgroup of the discrete quotient extends to the whole quotient because `�
   quadratic character of `E/ℚ`.
 - Compatibility at a real place: for `x ∈ ℝ^× ⊂ ℂ^×`, `x/|x| = sign(x) = ε_{E/F,∞}(x)`; the formal
   expression `(x/x̄)^{1/2} = 1` with the principal branch would contradict the restriction condition.
-- `μ^2` restricted to `𝔸_F^×` is trivial, and `μ μ^c = 1` on `𝔸_E^×` is not required.
+- `μ^2` restricted to `𝔸_F^×` is trivial, and `μ μ^c = 1` on `𝔸_E^×` follows from the statement:
+  `μ(x) μ(c x) = μ(N_{E/F} x) = ε_{E/F}(N_{E/F} x) = 1`, since `ε_{E/F}` is trivial on norms; at a
+  complex place `(z/|z|)(z̄/|z|) = 1`. A character with `μ|_{𝔸_F^×} = 1` instead (conjugate-orthogonal)
+  also satisfies `μ μ^c = 1`, so that identity does not distinguish the two signs; the restriction to
+  `𝔸_F^×` does.
 
 *Needs:* ClassFieldTheory Layer 11; PotentialAutomorphyInfrastructurePartII Layer 0 ("Algebraic
 characters with prescribed conjugate norm and local behaviour").
@@ -3244,7 +3256,7 @@ which the conclusion of §9.8 descends, one may assume: (6) `[F : ℚ]` even; (7
 `det r_{π,ι} = det r_{π′,ι} = ε^{−1}`; (8) `π`, `π′` unramified at `p`; (9) Iwahori-spherical away
 from `p` with an even number of ramified places; (10) `r̄` trivial on `S = S_p ∪ Σ`, with
 `q_v ≡ 1` modulo `p` and `π_v`, `π′_v` Steinberg on `Σ`; (11) an everywhere unramified CM quadratic
-`K/F` in which `S` splits (nt21b §2, setting and Theorem 2.1, p. 5; reductions (6)–(11), pp. 5–6).
+`K/F` in which `S` splits (nt21b §2, setting and Theorem 2.1, p. 5; reductions (6)–(11), p. 6).
 One then works with `Π = π_K` and the pseudodeformation ring `P` of `Sym^{n−1} r̄|_{G_K}`.
 
 *Proof sketch.* Soluble base change and descent (PotentialAutomorphyInfrastructurePartII Layer 0;
@@ -3446,7 +3458,7 @@ the maximal abelian pro-`2` extension of `F` unramified outside `Q` and `(S ∪ 
 `δ : Sp R′_∞ → Ĝ_m^γ` (`Ĝ_m^γ` acting on itself by the square), `δ^{−1}(1) = Sp R_∞`, the action of
 `Ĝ_m^γ[2](𝒪)` on `R_∞` lifting to `H_{D,∞}`, and an action of `Ĝ_m^γ[2]` on `Sp P_∞` making
 `Sp R_∞ → Sp P_∞` equivariant and lifting to `H_{G,∞}` (nt21b Proposition 2.8, p. 17; Lemma 2.9, p. 18;
-proof, pp. 17–19).
+proof, pp. 18–19).
 
 *Proof sketch.* Lemma 2.9: the dyadic Taylor–Wiles sets (GlobalGaloisDeformations §§5.3–5.4) with the
 stronger distinctness condition (GlobalGaloisDeformations Layer G7, supplier contracts). Patch as in
@@ -3493,7 +3505,7 @@ faithful; since the localisation `P_{(p′)}` is its residue field `E`, `P_∞` 
 `𝒪`-points act transitively on components; a translate of the automorphic point on a component
 containing the target point lies in the support by equivariance, regularity transfers to it, and the
 unique-component argument puts `p_∞` in the support (nt21b proof of Theorem 2.1 for `p > 2`,
-pp. 12–13; for `p = 2`, pp. 17–19). No assertion that `R_∞` is a domain is made for `p = 2`.
+pp. 12–13; for `p = 2`, pp. 17–18). No assertion that `R_∞` is a domain is made for `p = 2`.
 
 *Proof sketch.* `P_{(p′)} = E` because the adjoint Bloch–Kato Selmer group of `Π′_n` vanishes
 (ModularityAndLanglandsExtensions §4.1; PotentialAutomorphyInfrastructurePartII §9.7); counting dimensions lifts this to regularity of
@@ -4512,7 +4524,7 @@ specialising to `H_G`, `H_D`, and `P_∞ → R_∞` compatible with `P → R`; a
 with `q ≥ |S ∪ S_∞|` and `γ = 2 − |S ∪ S_∞| + q`, the same with `R^{loc}[[X_1, …, X_g]] → R′_∞ → R_∞`
 (`g = 2q + 1`), a free action of `Ĝ_m^γ` on `Sp R′_∞` with an equivariant `δ : Sp R′_∞ → Ĝ_m^γ` for the
 square action and `δ^{−1}(1) = Sp R_∞`, and compatible actions of `Ĝ_m^γ[2]` lifting to `H_{D,∞}` and
-`H_{G,∞}` (nt26 Proposition 4.8, p. 34; Proposition 4.9, p. 35). For odd `p`, `q ≥ 0` is the common
+`H_{G,∞}` (nt26 Proposition 4.8, p. 34; Proposition 4.9, pp. 35–36). For odd `p`, `q ≥ 0` is the common
 size of the Taylor–Wiles sets of §12.3 used in the patching, as in §9.5 (nt26 Proposition 4.8 asks
 only for an integer `q ≥ 0`).
 
@@ -4544,7 +4556,7 @@ potentially crystalline if `p = 2`; (5) at each `v ∤ p`, `π_v` a twist of Ste
 is; (6) a perfect subgroup of `(r̄_{π,ι} ⊗ r̄_{σ,ι})^{ss}(G_F)` containing an element with `2r` distinct
 eigenvalues; (7) `HT_τ(r_{σ,ι}) = {0, 2, …, 2r − 2}` for every `τ`; (8) `r_{π,ι} ⊗ r_{σ,ι}` automorphic
 and strongly irreducible; (9) `r_{π′,ι} ⊗ r_{σ,ι}` irreducible. Prove that `r_{π′,ι} ⊗ r_{σ,ι}` is
-automorphic (nt26 Theorem 4.1, pp. 25–26; proof and component argument, pp. 34–37). This proves the first
+automorphic (nt26 Theorem 4.1, pp. 25–26; proof and component argument, pp. 34–36). This proves the first
 paragraph of ModularityAndLanglandsExtensions §4.23, including the case where `σ` is ramified at
 places where `π` is not.
 
