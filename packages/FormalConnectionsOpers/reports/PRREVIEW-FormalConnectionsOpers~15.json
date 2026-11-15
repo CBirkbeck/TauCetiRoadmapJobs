@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FormalConnectionsOpers~15",
+  "head": "4b3f57b0212124b73d2908b191cf03686f193550",
+  "pr": 1056,
+  "folder": "FormalConnectionsOpers",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 4b3f57b. This round checked the PR title, the roadmap-summary block and all prose of the description against the head. The five previous description findings (R01-R05) are all repaired. One new P3: the supplier sentence names four suppliers for all algebraic-group inputs and omits ReductiveGroupsPartII (loop decompositions, dual group), LieHighestWeight (Chevalley restriction) and eight other suppliers. Cross-roadmap claims were resolved on main (AffineLieAlgebras, NilpotentOrbits, SchubertGeometry, ReductiveGroups 3A.5e, KacMoody 8.1/8.4, ReductiveGroupsPartII RG2.1/2.3/2.4/2.5.1) and at open heads (ComplexComparisonPartII C5.1, CrystallineCohomology CR.1.3). The inventory sentence matches: 6 defs, 1 local instance, 3 theorems, 3 sorry warnings. Gate: all checks 0, OK. Targeted build exit 0 (18586 jobs), direct elaboration exit 0 with 3 sorry warnings. Depcheck 0 problems, no UPWARD/CYCLE. The adversarial rows were recomputed for the three Suggested.lean theorems and the 3A.5 Cartan decomposition. Seeded sample unchanged.",
+  "text": "aca17e4e7b31b11a",
+  "carried": {
+   "from": "4b3f57b0212124b73d2908b191cf03686f193550",
+   "head": "4b3f57b0212124b73d2908b191cf03686f193550",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
