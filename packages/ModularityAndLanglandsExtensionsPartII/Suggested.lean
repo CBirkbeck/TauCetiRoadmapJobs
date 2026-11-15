@@ -87,7 +87,8 @@ def HasQuadraticSelfTwist {N : ℕ} [NeZero N] {k : ℤ} (f : Newform N k) : Pro
         (UpperHalfPlane.qExpansion 1 f.toCuspForm).coeff p
 
 /-- **Holomorphy of symmetric power `L`-functions in level one** (README §14.4; Newton–Thorne I,
-Theorem A and its consequence for `Δ`, nt21 p. 2). Let `f` be a normalised Hecke eigenform of
+Theorem A, nt21 p. 2; the entire continuation follows by Godement–Jacquet, as nt21 Corollary C,
+p. 2, records for semistable elliptic curves). Let `f` be a normalised Hecke eigenform of
 level one and weight `k`, with Satake parameters `{α_p, β_p}` at every prime `p`, and let
 `n ≥ 1`. Then the Euler product `∏_p symPowerEulerFactor n α_p β_p (p^{−s})⁻¹` converges for
 `Re s > n(k − 1)/2 + 1` to a function which extends to an entire function on `ℂ`. The route:
