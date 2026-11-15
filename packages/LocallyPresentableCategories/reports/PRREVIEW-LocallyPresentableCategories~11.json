@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocallyPresentableCategories~11",
+  "head": "7c83474147761158ad3aecaf6891f84f1339819a",
+  "pr": 1926,
+  "folder": "LocallyPresentableCategories",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 7c83474. Title and description checked against the head: R02 (Review paragraph still names a left-adjoint half of Adamek-Rosicky Thm 1.66 that the head cites to the special adjoint functor theorem) and R03 (Sources list omits Kelly 3.5 pp. 44-45 and p. 120, Wilson 1, Makkai-Pare ch. 5). R01: README Scope (lines 83, 85) and Downstream consumers (line 986), and the description, defer to HigherToposTheory, whose pull request closed on 2026-11-13; new owners are ModelCategories (1.2-1.5, 5.1, Layer 6) and PresentableInfinityCategories/AccessibleInfinityCategories. The repair was tested with depcheck on a scratch copy: 0 problems. Gate rerun: every check 0, OK; worker gate build=0. lake env lean: 27 sorry warnings, exit 0. Probe copy: autoImplicit false elaborates, all 27 theorems resist rfl/infer_instance/simp, no sorryAx in the 21 definitions. depcheck 245 roadmaps, 0 problems. Kelly 3.5 pp. 44-45 read for 5.5. Adversarial rows: 1.4 (both halves, 3 instances each) and 5.5 with Kelly's transfinite stages. Overlap check: ModelCategories, PresentableInfinityCategories, AccessibleInfinityCategories, PresheavesAndCompletions, ClassifyingTopoi (0e6bf1d, consumers line matches), ToposTheoreticBridges, OrthogonalFactorization; nothing shared.",
+  "text": "754e71921bdeda24"
+ }
+}
