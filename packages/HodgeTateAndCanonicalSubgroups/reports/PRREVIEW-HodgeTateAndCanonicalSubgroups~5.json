@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HodgeTateAndCanonicalSubgroups~5",
+  "head": "333737c597858e8a3438fd44d38b41385b4b1a72",
+  "pr": 1084,
+  "folder": "HodgeTateAndCanonicalSubgroups",
+  "date": "2026-11-15",
+  "findings": 7,
+  "blocking": 1,
+  "notes": "Full review of README lines 1-3195 and Suggested.lean. Previous findings: R01, R02, R05, R06 repaired; R03, R04 partly. Seeded sample (0.3, 0.6, 0.19, 0.23, 0.28, 2.8, 2.10, 3.2, 5.2, 5.5, 5.12, 6.12, 6.36, 6.37, 7.21) read at the locators: 47 locators in 12 sources. One P2: the cokernel bound at p = 2 is asserted in 0.5 and the Lean headline on sources that assume p != 2 or only restate it, while 5.5 and the scope decline the same estimate at p = 2. Six P3: orphan target 3.2; consumer section labels that do not exist; locators of 6.12, 6.36, 6.37 and repeated entries; undefined notation; bare section references and text defects; three constructions with fewer than three Checks. Gate at 333737c: every counter 0, build=0. depcheck: 245 roadmaps, 2250 edges, 0 problem(s). Elaboration: sorry the only warning; six one-tactic probes fail on the headline. HALO, ZIE, OGU18 and the original of FAR11 Thm. 2 were not readable or not read.",
+  "text": "76528f0f8b7cd3cb"
+ }
+}
