@@ -254,7 +254,9 @@ through Taylor–Wiles selection (CN23 line 4404); Layer 4 replaces that step.
 - **PotentialAutomorphyInfrastructure** §2.1 (`genericity_normal_closure_restriction`), §2.3
   (`soluble_base_change_and_descent`, over CM or totally real fields, with all-place local
   compatibility), §2.5 (`auxiliary_cm_extension_prescriptions`, CM refinement of prescribed
-  completions).
+  completions; over any number field, for every `N ≥ 1`, a cyclic extension of degree `N`, disjoint
+  from a given finite Galois extension, in which a given finite set of places, real places included,
+  splits completely: §6.1 uses it over `ℚ` for the totally real degree step).
 - **AutomorphicGaloisRepresentationsPartII** AG2.0 (algebraic characters and reciprocity), AG2.5
   (local comparison away from the coefficient prime), AG2.7 (`IsDecomposedGenericPrime`,
   `IsDecomposedGeneric`).
@@ -1055,15 +1057,25 @@ is a finite solvable Galois CM extension `F'/F`, linearly disjoint over `F` from
 of `P ∪ P^c` above two has ramification index dividing four, such that `F'`, `S' = S'₅ ⊔ R' ⊔ P'` with
 `P'` the places above `P`, the base change `π_{F'}` and `ρ|G_{F'}` satisfy §5.1 and the hypotheses of
 §5.4. The route is the preparation of CrystallineLocalGlobalCompatibilityCM §9.11 (choice of test
-places, prescribed completions over `F⁺` through GL2ModularityLifting §1.7 and
-PotentialAutomorphyInfrastructure §2.5, the three imaginary quadratic composita, the degree inflation
-at five), whose construction does not use clause (15), with three additions at `P`: trivial prescribed
-completions at the places of `F⁺` below `P`, which split in `F` because `v^c ≠ v`; these places in the
-split set of the degree inflation; and the odd rational primes below `P` among the primes required to
-split in each of the three imaginary quadratic fields `E_a`, `E_b = ℚ(√−d_b)`, `E_c = ℚ(√−d_c)` (ACC23
-already requires it in `E_b`, `ρ` being ramified at `P`). Two splits in `E_a` but never in `E_b` (third
-Check), so at a place `v` of `P ∪ P^c` above two the composita give `F'_w = F_v(√−d_b, √−d_c)`, of degree
-dividing four over `F_v`. Since `ζ₅ ∈ F` no auxiliary smooth places are added. Linear disjointness and
+places; prescribed completions over `F⁺` through GL2ModularityLifting §1.7 and
+PotentialAutomorphyInfrastructure §2.5; the five-adic degree condition; then the three imaginary
+quadratic composita), whose construction does not use clause (15). The degree condition comes from a
+composite with a totally real Galois extension `E/ℚ` of degree eight with solvable group, linearly
+disjoint from the Galois closure of the fields already used, in which five and the rational primes below
+the test places split completely (PotentialAutomorphyInfrastructure §2.5 applied over `ℚ` with the real
+place split gives a cyclic one; CaptainSude26 lines 582–588 uses a multiquadratic one). The five-adic
+completions of the maximal totally real subfield are then unchanged while its degree over `ℚ` is
+multiplied by eight, so each of its five-adic local degrees is at most one eighth of that degree; no
+later extension raises this ratio, a local degree growing by at most the global degree; and omitting
+any two five-adic places leaves at least three quarters of the degree, more than the half that
+condition (ii) of §5.1 asks (its residue fields come from the prescribed completions). Since `E` comes
+before the composita, the primes ramified in `E` are among those ACC23 requires to split in `E_b`. The
+route makes three additions at `P`: trivial prescribed completions at the places of `F⁺` below `P`,
+which split in `F` because `v^c ≠ v`; the rational primes below `P` among those split completely in `E`;
+and the odd rational primes below `P` among the primes required to split in each of the three imaginary
+quadratic fields `E_a`, `E_b = ℚ(√−d_b)`, `E_c = ℚ(√−d_c)` (ACC23 already requires it in `E_b`, `ρ` being
+ramified at `P`). Two splits in `E_a` but never in `E_b` (third Check), so at a place `v` of `P ∪ P^c`
+above two the composita give `F'_w = F_v(√−d_b, √−d_c)`, of degree dividing four over `F_v`. Since `ζ₅ ∈ F` no auxiliary smooth places are added. Linear disjointness and
 perfectness of `SL₂(𝔽₅)` preserve `ρ̄(G_{F'}) = ρ̄(G_F)`; decomposed genericity is preserved by
 PotentialAutomorphyInfrastructure §2.1 or a split witness. At a place of `P'` the completion is that of
 `P` or, above two, an extension of ramification index dividing four, which is prime to five: protection
@@ -1104,8 +1116,20 @@ PotentialAutomorphyInfrastructure §§2.1, 2.3, 2.5; PotentialModularityAndCompa
 - For `q = 11` below `P` the added congruences are compatible with ACC23's: `p_b = 109` and `p_c = 2617`
   are primes with `109 ≡ 1 mod 4`, `2617 ≡ 1 mod 436` and `109 ≡ 2617 ≡ −1 mod 11` (`11 ∤ 436`). Then
   `−4·109 ≡ −4·2617 ≡ 4 mod 11` is a nonzero square, so `11` splits in `E_b` and `E_c`, and `109` splits
-  in `E_c` (`−2617 ≡ −1`, a square modulo `109 ≡ 1 mod 4`). With `E_a` split at `2, 5, 11`, every
-  completion of `F'` above a place of `P ∪ P^c` over `11` is that of `F`.
+  in `E_c` (`−2617 ≡ −1`, a square modulo `109 ≡ 1 mod 4`). With `E_a` split at `2, 5, 11` and `11`
+  split completely in the totally real field `E`, every completion of `F'` above a place of `P ∪ P^c`
+  over `11` is that of `F`.
+- The degree step for `F = ℚ(ζ₅)` and `q = 11` below `P`. Here `F⁺ = ℚ(√5)` has one five-adic place, of
+  local degree `2 = [F⁺:ℚ]`, so condition (ii) of §5.1 fails (there is no second five-adic place). Take
+  `E = ℚ(√31, √59, √71)`: the three primes are distinct, so `E` is totally real of degree eight with
+  group `(ℤ/2)³`, and `31 ≡ 1`, `59 ≡ 4`, `71 ≡ 1 mod 5` and `31 ≡ 9`, `59 ≡ 4`, `71 ≡ 5 mod 11` are
+  nonzero squares, so five and eleven split completely in `E`. No quadratic subfield of `E` is
+  `ℚ(√5)`, so `F⁺E` has degree `16` and eight five-adic places of local degree `2`; omitting two leaves
+  `12 > 8`. The residue fields there are still `𝔽₅`, so the residue half of (ii) needs the prescribed
+  completions. Since `31 ≡ 59 ≡ 71 ≡ 3 mod 4`, two ramifies in `E`: this `E` serves only when no place of
+  `P` lies above two (primes `≡ 1 mod 8` would split two), and `31, 59, 71` must then split in `E_b`. A
+  field in which five does not split does nothing: `ℚ(√5, √2)` (`2` is not a square modulo five) has a
+  single five-adic place, of local degree `4`, its whole degree.
 - For `F = ℚ(ζ₅)`, which has no imaginary quadratic subfield, the imaginary quadratic composita are
   required to reach condition (i) of §5.1.
 
