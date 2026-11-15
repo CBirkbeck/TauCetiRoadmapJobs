@@ -625,7 +625,7 @@
      "id": "2.5",
      "kind": "construction",
      "name": "Prestack.ofScheme",
-     "statement": "The classical prestack h_X of a Mathlib scheme X, R |-> Hom(Spec R, X), and the classical prestack X^natural of a SchemeAndStackFoundations stack in groupoids, by straightening the nerve of its Grothendieck construction over affines; h is fully faithful; compatibility with 2-fibre products and with stackification versus sheafification.",
+     "statement": "The classical prestack h_X of a Mathlib scheme X, R |-> Hom(Spec R, X), and the classical prestack X^natural of a SchemeAndStackFoundations stack in groupoids, by straightening the nerve of its Grothendieck construction over affines; the fppf topology on CRing^op (finite families with faithfully flat and finitely presented product), fppf sheaves and L_fppf, identified with Mathlib's fppf topology on affine schemes; h is fully faithful; compatibility with 2-fibre products and of stackification with L_fppf.",
      "hypotheses": [
       "X a Mathlib scheme, or a StackInGroupoids of SchemeAndStackFoundations section 1.18"
      ],
@@ -646,9 +646,27 @@
       "roadmap:EnhancedDerivedSheaves E2.7",
       "roadmap:CartesianFibrations §2.1.1",
       "roadmap:CartesianFibrations §2.2.1",
-      "roadmap:InfinityCategoryFoundations §5.1.1"
+      "roadmap:InfinityCategoryFoundations §5.1.1",
+      "roadmap:HypercompletenessAndCoherence §9.3.2",
+      "roadmap:HypercompletenessAndCoherence §9.4.1",
+      "mathlib:Module.FaithfullyFlat",
+      "mathlib:RingHom.FinitePresentation",
+      "mathlib:AlgebraicGeometry.Scheme.fppfPrecoverage",
+      "mathlib:AlgebraicGeometry.Scheme.fppfTopology",
+      "mathlib:AlgebraicGeometry.Scheme.fppfPrecoverage_le_fpqcPrecoverage",
+      "mathlib:CategoryTheory.Precoverage.mem_toGrothendieck_iff_of_isStableUnderComposition"
      ],
      "api": [
+      {
+       "name": "fppf_topology",
+       "role": "definition",
+       "statement": "An fppf cover of R is a finite family {R -> S_i} with R -> prod S_i faithfully flat and finitely presented; Phi' is the class of Spec S -> Spec R with R -> S faithfully flat and finitely presented. Phi' contains the isomorphisms and is stable under composition, base change and finite products (finite presentation being Zariski-local on Spec(R x R')); finite coproducts of CRing^op are universal and disjoint; so HypercompletenessAndCoherence 9.3.2 gives the topology whose covering sieves contain an fppf cover, and its sheaves are the fppf sheaves, the functors CRing -> S-hat preserving finite products with Cech descent along Phi' (9.4.1, SAG A.3.2.1, A.3.3.1). L_fppf is the left adjoint of their inclusion, the accessible localization of EnhancedDerivedSheaves E2.7 in the universe u+1."
+      },
+      {
+       "name": "fppf_mathlib_comparison",
+       "role": "compatibility",
+       "statement": "The covering sieves of Mathlib's fppfTopology are those containing an fppfPrecoverage covering family (Precoverage.mem_toGrothendieck_iff_of_isStableUnderComposition). An fppf cover is such a family; conversely a covering family {X_i -> Spec R} of fppfPrecoverage is quasi-compact (fppfPrecoverage_le_fpqcPrecoverage), so finitely many affine opens Spec S_j of the X_i cover Spec R and {R -> S_j} is an fppf cover refining it."
+      },
       {
        "name": "h_fullyFaithful",
        "role": "structure",
@@ -667,7 +685,7 @@
       {
        "name": "stackification",
        "role": "compatibility",
-       "statement": "(-)^natural carries fppf stackification to fppf sheafification of 1-truncated prestacks."
+       "statement": "(-)^natural carries fppf stackification (SchemeAndStackFoundations 1.18 Stack.stackification) to L_fppf of the corresponding 1-truncated prestack."
       }
      ],
      "tests": [
@@ -685,6 +703,16 @@
        "name": "pi0_loses",
        "kind": "non-example",
        "statement": "Replacing groupoids by isomorphism classes gives a point on strictly henselian local rings and loses pi_1 = G(R)."
+      },
+      {
+       "name": "Zp_not_fppf",
+       "kind": "non-example",
+       "statement": "Z -> Z[1/p] x Z_p is faithfully flat but not an fppf cover: finitely generated Z-algebras are countable and its quotient Z_p is not; so Phi' is strictly smaller than the faithfully flat maps."
+      },
+      {
+       "name": "infinite_mathlib_family",
+       "kind": "compatibility",
+       "statement": "{Spec Z[1/n] -> Spec Z : n >= 2} is an infinite fppfPrecoverage covering family; its subfamily n = 2, 3 is an fppf cover refining it (Z[1/2] x Z[1/3] faithfully flat and finitely presented), while n = 2 alone misses (2)."
       }
      ]
     }
@@ -710,6 +738,7 @@
       "target:1.1",
       "target:1.3",
       "target:2.1",
+      "target:2.5",
       "roadmap:EnhancedDerivedSheaves E2.7",
       "roadmap:EnhancedDerivedSheaves E3.2",
       "roadmap:EnhancedDerivedSheaves E0.5",
@@ -757,6 +786,11 @@
        "name": "sheafification",
        "role": "structure",
        "statement": "L is left exact and preserves colimits."
+      },
+      {
+       "name": "fppf_to_fpqc",
+       "role": "compatibility",
+       "statement": "In CRing, Phi' (2.5) is contained in Phi, so every (hypercomplete) fpqc sheaf on CRing^op is an fppf sheaf and every map of classical prestacks inverted by L_fppf is inverted by L and by the hypersheafification (Map(f, F) = Map(L_fppf f, F) for an fpqc sheaf F); the affine form of Mathlib's fppfTopology_le_fpqcTopology. Z -> Z[1/p] x Z_p is in Phi and not in Phi'."
       },
       {
        "name": "universal_property",
@@ -905,6 +939,7 @@
      },
      "prerequisites": [
       "target:2.3",
+      "target:2.5",
       "target:3.1",
       "target:3.2",
       "roadmap:EnhancedDerivedSheaves E2.7",
@@ -938,7 +973,7 @@
       {
        "name": "BGamma_torsors",
        "kind": "compatibility",
-       "statement": "For finite Gamma the constant prestack B Gamma x Spec k and the stack of Gamma-torsors have QCoh = Fun(B Gamma, Mod_k)."
+       "statement": "For finite Gamma the constant prestack B Gamma x Spec k and the stack of Gamma-torsors have QCoh = Fun(B Gamma, Mod_k): the map between them is inverted by L_fppf (2.5; Gamma(R) is constant on a finite Zariski cover), hence by L (3.1)."
       }
      ]
     },
@@ -1818,7 +1853,7 @@
      "id": "7.4",
      "kind": "theorem",
      "name": "Prestack.QCoh.quotientStack",
-     "statement": "For G flat affine over k acting on a k-scheme X and [X/G] = actionQuotient: (a) G is a group prestack over Spec k through h (7.1), and QCoh([X/G]^natural) = lim Dqc(G^{x_k n} x_k X) for the relative bar construction; (b) heart = Stacks.QCoh([X/G]) = G-equivariant quasi-coherent sheaves; (c) for X = Spec k, O(G)-comodules; (d) if [X/G] is quasi-compact with affine diagonal, D^+(heart) -> QCoh^+ is an equivalence.",
+     "statement": "For G flat affine over k acting on a k-scheme X and [X/G] = actionQuotient: (a) G is a group prestack over Spec k through h (7.1), [X/G]^natural is L_fppf of the relative realization (2.5), the map from the realization is inverted by the fpqc hypersheafification (3.1), and QCoh([X/G]^natural) = lim Dqc(G^{x_k n} x_k X) (3.3(a), 7.2, 5.3); (b) heart = Stacks.QCoh([X/G]) = G-equivariant quasi-coherent sheaves; (c) for X = Spec k, O(G)-comodules; (d) if [X/G] is quasi-compact with affine diagonal, D^+(heart) -> QCoh^+ is an equivalence.",
      "hypotheses": [
       "k a commutative ring",
       "G flat affine group scheme over k",
@@ -1830,6 +1865,8 @@
      },
      "prerequisites": [
       "target:2.5",
+      "target:3.1",
+      "target:3.3",
       "target:5.3",
       "target:6.2",
       "target:7.2",
@@ -1846,7 +1883,7 @@
       {
        "name": "presentation",
        "role": "evaluation",
-       "statement": "QCoh([X/G]^natural) = lim Dqc(G^{x_k n} x_k X), the realization being taken over Spec k."
+       "statement": "[X/G]^natural = L_fppf of the realization over Spec k (2.5); the realization map is inverted by the hypersheafification (3.1), so QCoh([X/G]^natural) = lim Dqc(G^{x_k n} x_k X) by 3.3(a), 7.2 and 5.3."
       },
       {
        "name": "heart",
@@ -2407,7 +2444,7 @@
     "§11.5.2",
     "§11.5.3"
    ],
-   "what": "Hypercomplete objects form a left exact localization, an infinity-topos (HTT 6.5.2.8); truncated objects are hypercomplete (HTT 6.5.2.9); realizations of hypercoverings and hypercompletion (HTT 6.5.3.11-6.5.3.13); C-valued sheaves on a site and on its infinity-topos agree (SAG 1.3.1.7); a class Phi of morphisms satisfying (a)-(d) generates a topology whose covering sieves contain a finite family with coproduct map in Phi (SAG A.3.2.1); with disjoint coproducts (e), sheaves are the finite-product-preserving functors with Cech descent along Phi (SAG A.3.3.1), and hypercomplete sheaves those with descent along Phi-hypercoverings (SAG A.5.7.1, A.5.7.2). Applied in the universe u+1 to T^op with Phi the faithfully flat maps and to fpqc sheaves on T^op, for 3.1, 3.2 and 3.4."
+   "what": "Hypercomplete objects form a left exact localization, an infinity-topos (HTT 6.5.2.8); truncated objects are hypercomplete (HTT 6.5.2.9); realizations of hypercoverings and hypercompletion (HTT 6.5.3.11-6.5.3.13); C-valued sheaves on a site and on its infinity-topos agree (SAG 1.3.1.7); a class Phi of morphisms satisfying (a)-(d) generates a topology whose covering sieves contain a finite family with coproduct map in Phi (SAG A.3.2.1); with disjoint coproducts (e), sheaves are the finite-product-preserving functors with Cech descent along Phi (SAG A.3.3.1), and hypercomplete sheaves those with descent along Phi-hypercoverings (SAG A.5.7.1, A.5.7.2). Applied in the universe u+1 to T^op with Phi the faithfully flat maps and to fpqc sheaves on T^op, for 3.1, 3.2 and 3.4, and to CRing^op with Phi' the faithfully flat maps of finite presentation, for the fppf sheaves of 2.5."
   }
  ],
  "consumers": [
