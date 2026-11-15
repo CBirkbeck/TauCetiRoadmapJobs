@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GlobalGaloisDeformationsPartII~13",
+  "head": "df03de26b20045c9e2457f922812fcfb28f4b5db",
+  "pr": 1837,
+  "folder": "GlobalGaloisDeformationsPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 79 changed lines since d2150fc: the regrouping of Layers 7-9 (group headings, bold run-in titles, 7 introductory paragraphs) checked against every Needs line, the section 3.2 hypothesis of each statement and Downstream consumers, no finding; seeded target 8.1 checked against FKP22 p.35 and p.2; gate rerun OK (all checks 0), depcheck 0 problems, Suggested.lean elaborates with sorry the only warning. Pull request title and description checked against the head: one P3 finding, the description says one headline (degree one) is stated in Suggested.lean while the head states two (uniformTorsion_H1 and uniformTorsion).",
+  "text": "ee26f34ba0da1192",
+  "carried": {
+   "from": "df03de26b20045c9e2457f922812fcfb28f4b5db",
+   "head": "222567a4ca7f9c5f9fc679371fd218d6c6dfc60b",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
