@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HabiroCohomologyFoundationsPartII~6",
+  "head": "5732822358408b7943ab4c024f3115079f7ba3f7",
+  "pr": 1466,
+  "folder": "HabiroCohomologyFoundationsPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 5732822; this round checked the pull request's title and description against the head. One P3: the description says the Lean states real-bodied definitions and theorems and builds with sorry as the only warning, while Suggested.lean declares nothing (no headline is statable at the pins) and elaborates with no warning. The rest of the description matches the README (summary, scope, sections 0.1, 1.1, 1.2, consumers; 16 roadmap names resolved). Gate re-run: all counters 0, OK. Depcheck: 245 roadmaps, 2241 edges, 0 problems. lake env lean on Suggested.lean: exit 0, no diagnostics. KU 4.26-4.27 locator opened (KU lines 2133, 2143, p.50). Four adversarial rows with computed values for statements the description cites. Folder unchanged; nothing outside the folder.",
+  "text": "d0e71d0c166ba5c3",
+  "carried": {
+   "from": "5732822358408b7943ab4c024f3115079f7ba3f7",
+   "head": "fefa1f2b46182e3ca058f17dca0881e815dc00be",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "HabiroCohomologyFoundationsPartII"
+   ],
+   "outside": true
+  }
+ }
+}
