@@ -306,7 +306,7 @@
      ],
      "locator": {
       "source": "aizenman-duminilcopin-2021",
-      "where": "(1.17), line 230; sokal-1982 lines 405-409"
+      "where": "finite-volume state (1.11)-(1.12), lines 139-145, for phi^4 fields and (1.17), line 230, for Ising spins (the invariances by change of variables); sokal-1982 property (b), lines 406-409, states them for the infinite-volume state of 4.2"
      },
      "prerequisites": [
       "target:0.1",
@@ -695,7 +695,7 @@
      ],
      "locator": {
       "source": "peled-spinka-2017",
-      "where": "Theorems 2.1 and 2.3, lines 334 and 515; Lemma 2.4, line 535; sokal-1982 (2.19)-(2.20), p. 327, lines 414-415; glimm-jaffe-1987 Ch. 4"
+      "where": "Theorems 2.1 and 2.3, lines 334 and 515; Lemma 2.4, line 535; sokal-1982 (2.19)-(2.20), p. 327, lines 414-415, for the infinite-volume phi^4 state; glimm-jaffe-1987 Ch. 4"
      },
      "prerequisites": [
       "target:0.1",
@@ -775,7 +775,7 @@
      ],
      "locator": {
       "source": "sokal-1982",
-      "where": "(2.25), line 423; glimm-jaffe-1987 Ch. 4"
+      "where": "(2.25), line 423, for the infinite-volume phi^4 state; glimm-jaffe-1987 Ch. 4"
      },
      "prerequisites": [
       "target:0.1",
@@ -886,7 +886,7 @@
      ],
      "locator": {
       "source": "aizenman-duminilcopin-2021",
-      "where": "(3.11), line 520; Lemma 5.7, line 1314; footnote 5, line 1342; lines 1996-2002; sokal-1982 (2.23)-(2.24) lines 419-422"
+      "where": "(3.11), line 520; Lemma 5.7, line 1314; footnote 5, line 1342; lines 1996-2002; sokal-1982 (2.23)-(2.24) lines 419-422, for the infinite-volume phi^4 state"
      },
      "prerequisites": [
       "target:1.1",
@@ -962,6 +962,11 @@
        "name": "site_reflection",
        "kind": "computation",
        "statement": "{-1,0,1}, R(x) = -x: <s1^2> = 1 >= tanh^2 J."
+      },
+      {
+       "name": "evenness_needed",
+       "kind": "non-example",
+       "statement": "{-1,0,1}, R(x) = -x, J = 0, non-even rho = (2 delta_{-1} + delta_1)/3 (mean -1/3, second moment 1), A = 1_{1}, B = 1_{0,1}, R(B) = 1_{-1,0}: <phi_1^2 phi_0> = -1/3 < -1/27 = <phi_1 phi_{-1} phi_0>; rho_I gives 0 = 0. The flip phi -> -phi turns the inequality for rho with |A| + |B| odd into the reverse inequality for the flipped measure (here (delta_{-1} + 2 delta_1)/3: 1/3 > 1/27)."
       }
      ]
     },
@@ -977,7 +982,7 @@
      ],
      "locator": {
       "source": "sokal-1982",
-      "where": "Section 3.1, (3.4)-(3.5), p. 342 (lines 846-853); Section 2.2, property (j), (2.27), p. 328 (lines 434-435)"
+      "where": "Section 3.1, (3.4)-(3.5), p. 342 (lines 846-853); Section 2.2, property (j), (2.27), p. 328 (lines 434-435), for the infinite-volume phi^4 state"
      },
      "prerequisites": [
       "target:0.2",
