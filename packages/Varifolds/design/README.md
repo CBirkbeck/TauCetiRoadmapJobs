@@ -53,8 +53,8 @@ Owned here:
   sequences of metrics converging in C² on compact sets;
 - varifold tangents, rectifiable tangent cones and integral tangent cones, Euclidean and in
   normal coordinates;
-- regular and singular sets, locality and isometry invariance of every notion, and the comparison
-  theorem with GeometricCurrents G6.
+- regular and singular sets, locality of every notion and its invariance under smooth isometries,
+  and the comparison theorem with GeometricCurrents G6.
 
 Owned elsewhere and cited:
 
@@ -195,8 +195,11 @@ here only as tests of the definitions.
 - Riemannian structure: `IsRiemannianManifold` (`Mathlib/Geometry/Manifold/Riemannian/Basic.lean`),
   `CovariantDerivative.leviCivitaConnection`
   (`Mathlib/Geometry/Manifold/VectorBundle/CovariantDerivative/LeviCivita.lean`, for a C² manifold
-  with a C¹ metric). `Module.Grassmannian` (`Mathlib/RingTheory/Grassmannian.lean`) is the
-  algebraic quotient functor and is not a supplier.
+  with a C¹ metric), `ContMDiff.mpullback_vectorField`
+  (`Mathlib/Geometry/Manifold/VectorField/Pullback.lean`: the pull-back x ↦ (df_x)⁻¹ Y(f(x)) of a
+  C^m vector field Y by a C^n map f with invertible differentials is C^m when m + 1 ≤ n).
+  `Module.Grassmannian` (`Mathlib/RingTheory/Grassmannian.lean`) is the algebraic quotient functor
+  and is not a supplier.
 
 ### From Tau Ceti
 
@@ -245,6 +248,22 @@ here only as tests of the definitions.
   (`TauCeti/Geometry/Manifold/Riemannian/DivergenceTheorem.lean`: on a smooth, Hausdorff,
   σ-compact manifold with boundaryless model and a C¹ metric, the divergence of a compactly
   supported C¹ field has integral 0 against `TauCeti.riemannianVolume`).
+- `TauCeti.IsLocalRiemannianIsometry` (`TauCeti/Geometry/Manifold/Riemannian/Isometry/Local.lean`:
+  a smooth map between Riemannian manifolds whose differential at every point is invertible and
+  preserves the inner products) and
+  `TauCeti.IsLocalRiemannianIsometry.mfderiv_leviCivitaConnection_mpullback`
+  (`TauCeti/Geometry/Manifold/Riemannian/Isometry/LeviCivita.lean`: on C² manifolds with
+  finite-dimensional models and C¹ metrics, df_x(∇_v f^*Y) = ∇'_{df_x v} Y for every vector field Y
+  differentiable at f(x), f^*Y the pull-back), applied to open subsets with the restricted metrics
+  (`Bundle.ContMDiffRiemannianMetric.restrictOpenTangentSpace`,
+  `TauCeti/Geometry/Manifold/Riemannian/Restriction.lean`). `TauCeti.RiemannianIsometry`
+  (`TauCeti/Geometry/Manifold/Riemannian/Isometry/Basic.lean`: a smooth diffeomorphism whose
+  differentials preserve the inner products) and `TauCeti.RiemannianIsometry.riemannianExp_mfderiv`
+  (`TauCeti/Geometry/Manifold/Riemannian/Isometry/Exponential.lean`: on finite-dimensional smooth,
+  Hausdorff, boundaryless manifolds with smooth metrics, Φ(exp_p v) = exp_{Φ(p)}(dΦ_p v) for every
+  tangent vector v; HopfRinow Layer 4's transport across smooth Riemannian isometries). Only smooth
+  maps are covered: nothing at the pin transports the connection by a C¹ isometry or shows that
+  such an isometry is smooth.
 - `TauCeti.CountablyRectifiable` (`TauCeti/Geometry/MeasureTheory/Rectifiable/Basic.lean`: a subset
   of an extended metric space is countably k-rectifiable when countably many Lipschitz maps from
   subsets of ℝ^k cover it up to a set that is null for the k-dimensional
@@ -294,8 +313,9 @@ version on rectifiable sets, agreement with classical tangent spaces and Jacobia
 
 ### From HopfRinow (Completed)
 
-Layer 0 (the reconciled Riemannian distance and native `IsRiemannianManifold`), Layer 1 (the
-exponential map on its natural domain) and Layer 2 (normal balls and the local logarithm, the
+Layer 0 (the reconciled Riemannian distance and native `IsRiemannianManifold`), Layer 1 (local
+existence and uniqueness of geodesics with given initial data, and the exponential map on its
+natural domain) and Layer 2 (normal balls and the local logarithm, the
 Gauss lemma, and the local distance identity d_g(x, exp_x v) = |v| on a normal ball).
 
 No supplier contract is missing: every input above is stated by its owner.
@@ -315,10 +335,11 @@ ambient one. Layer 6 proves monotonicity, the density theorems, the constancy th
 convex hull property. Layer 7 builds varifold tangents and proves the semicontinuity of lower
 density bounds, Allard's
 rectifiability theorem and the two compactness theorems, for metrics varying in C². Layer 8 shows
-that varifold tangents are rectifiable or integral cones. Layer 9 defines regular and singular sets, records locality
-and isometry invariance, identifies GeometricCurrents' auxiliary varifold, and states two theorems of
-the literature in the language of the roadmap. Proof sketches name a route and its inputs; an
-implementer who proves a target another way is not bound to the route.
+that varifold tangents are rectifiable or integral cones. Layer 9 defines regular and singular
+sets, records locality and invariance under smooth isometries, identifies GeometricCurrents'
+auxiliary varifold, and states two theorems of the literature in the language of the roadmap.
+Proof sketches name a route and its inputs; an implementer who proves a target another way is not
+bound to the route.
 
 ## Layer 1: the Grassmann bundle and the varifold carrier
 
@@ -640,8 +661,11 @@ non-rectifiable lift of Lebesgue measure.
 
 ### Dependencies
 
-Layer 1; GeometricMeasureTheory G2; GeometricCurrents G2; Tau Ceti `TauCeti.CountablyRectifiable`;
-HopfRinow Layer 2.
+Layer 1; GeometricMeasureTheory G2; GeometricCurrents G2; Tau Ceti `TauCeti.CountablyRectifiable`,
+`TauCeti.riemannianVolume` and `TauCeti.eq_riemannianVolume_iff`; Mathlib Besicovitch
+differentiation (`Besicovitch.ae_tendsto_rnDeriv`), the Vitali covering lemma
+(`Vitali.exists_disjoint_subfamily_covering_enlargement`) and `LinearMap.normDet_comp`; HopfRinow
+Layer 2.
 
 ## Layer 3: push-forward, blow-ups and tangent spaces
 
@@ -782,7 +806,10 @@ of a great circle on S²; two crossing lines without a tangent space at the cros
 
 ### Dependencies
 
-Layers 1–2; GeometricMeasureTheory G2; GeometricCurrents G2; HopfRinow Layers 1–2.
+Layers 1–2; GeometricMeasureTheory G2; GeometricCurrents G2; HopfRinow Layers 1–2; Mathlib
+`LinearMap.normDet`, `MeasureTheory.Measure.condKernel`, and the Besicovitch and Vitali families
+with their differentiation theorems (`Besicovitch.vitaliFamily`, `Vitali.vitaliFamily`,
+`VitaliFamily.ae_tendsto_average`, `Besicovitch.ae_tendsto_measure_inter_div_of_measurableSet`).
 
 ## Layer 4: the first variation
 
@@ -911,10 +938,19 @@ is unique, η_V is unique σ_V-a.e. H_V is the generalised mean curvature, Z_V a
 - V is stationary in W if and only if H_V = 0 ‖V‖-a.e. and σ_V = 0.
 - |H_V| ≤ Λ ‖V‖-a.e. and σ_V = 0 hold if and only if |δV(X)| ≤ Λ ∫ |X| d‖V‖ for all X; then
   ‖δV‖ ≤ Λ‖V‖.
-- Isometries: for an isometry f of W onto an open W' (1.2), H_{f_#V}(f(x)) = df_x(H_V(x)),
-  σ_{f_#V} = f_*σ_V and η is transported by df. For an isometric embedding into a space of higher
-  dimension this fails (the volume V of M = S¹ has H_V = 0, while its image in ℝ² is the unit circle
-  with H = −x), and 5.2's formula, with its term in B_M, replaces it.
+- Isometries: let f be a smooth isometry of W onto an open W' ⊆ M' (1.2 with f smooth; with the
+  restricted metrics, f is a `TauCeti.IsLocalRiemannianIsometry`). For a C¹ field Y with compact
+  support in W', f^*Y = df⁻¹(Y ∘ f) is C¹ with compact support in W
+  (`ContMDiff.mpullback_vectorField`), and f carries the Levi-Civita connection of g to that of g'
+  (`TauCeti.IsLocalRiemannianIsometry.mfderiv_leviCivitaConnection_mpullback`), so
+  div_{df_x S} Y(f(x)) = div_S(f^*Y)(x) and δ(f_#V)(Y) = δV(f^*Y) for every varifold V on W. Hence
+  f_#V has locally bounded first variation exactly when V has, and then ‖δ(f_#V)‖ = f_*‖δV‖,
+  H_{f_#V}(f(x)) = df_x(H_V(x)), σ_{f_#V} = f_*σ_V and η is transported by df. The class of f
+  matters for this route: for f only C¹, f^*Y is only continuous and div_S(f^*Y) is not defined;
+  that a C¹ isometry is smooth is the Myers–Steenrod theorem, which this roadmap does not use. For
+  an isometric embedding into a space of higher dimension the law fails (the volume V of M = S¹
+  has H_V = 0, while its image in ℝ² is the unit circle with H = −x), and 5.2's formula, with its
+  term in B_M, replaces it.
 - Dilations in E: δ(V_{x,λ})(Y) = λ^{1−k} δV(Y ∘ η_{x,λ}), ‖δV_{x,λ}‖(A) = λ^{1−k}‖δV‖(x + λA),
   H_{V_{x,λ}}(η_{x,λ}(y)) = λ H_V(y), σ_{V_{x,λ}}(A) = λ^{1−k} σ_V(x + λA), and η is unchanged.
 
@@ -932,9 +968,14 @@ put H_V = −f η and η_V = η on Z_V.
   non-constant multiplicity need not be normal.
 - For the unit sphere S^k ⊆ ℝ^{k+1}, H_{[S^k]} = −k x and σ = 0; for the circle of radius R/λ
   obtained by dilating the circle of radius R, |H| = λ/R, as the dilation law predicts.
+- Direction of the isometry law: for the rotation f = R of ℝ² by the angle π/2 and V = [C], C the
+  unit circle, f_#V = [C] and at f(e_1) = e_2 the mean curvature is −e_2 = R(−e_1) = df(H_V(e_1)); a
+  law without df, H_{f_#V}(f(x)) = H_V(x), would give −e_1 at e_2, which is tangent to C there.
 
 (Simon1983 line 7486–7509; Allard1972 Section 4.) *Needs:* Layer 4.2, Layer 4.3; Mathlib `Measure.rnDeriv`,
-`Measure.singularPart`.
+`Measure.singularPart`, `ContMDiff.mpullback_vectorField`; Tau Ceti
+`TauCeti.IsLocalRiemannianIsometry.mfderiv_leviCivitaConnection_mpullback` and
+`Bundle.ContMDiffRiemannianMetric.restrictOpenTangentSpace` (the isometry law).
 
 ### 4.5 First variations for two metrics, and blow-ups in normal coordinates
 
@@ -953,8 +994,9 @@ preservation of locally bounded first variation under a chart is asserted withou
 
 Blow-up form. For x ∈ W, identify a normal ball B_r(x) with the ball B_r(0) of (T_xM, g_x) by
 exp_x, let g̃ = exp_x^*g and g̃_λ(y) = g̃(λy) on B_{r/λ}(0). Then V_{x,λ} = (Ṽ_λ)^{g_x}, where Ṽ_λ is
-the varifold for g̃_λ obtained from λ^{−k}V by the isometry y ↦ λ⁻¹ exp_x⁻¹(y) from (B_r(x), λ^{−2}g)
-onto (B_{r/λ}(0), g̃_λ); for R > 0 and λ < r/R:
+the varifold for g̃_λ obtained from λ^{−k}V by the smooth isometry y ↦ λ⁻¹ exp_x⁻¹(y) from
+(B_r(x), λ^{−2}g) onto (B_{r/λ}(0), g̃_λ), to which 4.4's isometry law applies; for R > 0 and
+λ < r/R:
 
 - ‖g̃_λ − g_x‖_{C¹(B_R(0))} ≤ C_R λ, with C_R depending on R and on g̃ near 0;
 - ‖Ṽ_λ‖(B_R(0)) = λ^{−k}‖V‖(B_{λR}(x)) and ‖δ_{g̃_λ} Ṽ_λ‖(B_R(0)) = λ^{1−k}‖δV‖(B_{λR}(x)) (geodesic
@@ -981,8 +1023,9 @@ onto (B_{r/λ}(0), g̃_λ); for R > 0 and λ < r/R:
   varifold of a diameter for g̃_λ, and δ_{g_x}V_{x,λ} = 0 because the blow-up is a line, consistent
   with the bound C'_R λ (sup|Y| + sup|DY|)·2R.
 
-(This roadmap; Simon1983 line 7336–7338 for the dilations.) *Needs:* Layer 3.1–3.2, Layer 4.1;
-HopfRinow Layer 2; Mathlib `CovariantDerivative.leviCivitaConnection`.
+(This roadmap; Simon1983 line 7336–7338 for the dilations.) *Needs:* Layer 3.1–3.2, Layer 4.1,
+Layer 4.3–4.4 (total first variation; the isometry law); HopfRinow Layer 2; Mathlib
+`CovariantDerivative.leviCivitaConnection`.
 
 ### Examples
 
@@ -992,9 +1035,14 @@ showing that first variations under two metrics differ by a derivative term.
 
 ### Dependencies
 
-Layers 1–3; Tau Ceti flows, signed Riesz representation, mass measures of test functionals
-(`Distribution.massMeasure`), `TauCeti.Manifold.divergence` and
-`TauCeti.Manifold.integral_divergence_eq_zero`; HopfRinow Layer 2.
+Layers 1–3; Mathlib `CovariantDerivative.leviCivitaConnection`, `ContMDiff.mpullback_vectorField`,
+`RealRMK.rieszMeasure`, Radon–Nikodym derivatives and the Lebesgue decomposition
+(`Measure.rnDeriv`, `Measure.singularPart`); Tau Ceti flows, signed Riesz representation, mass
+measures of test functionals (`Distribution.massMeasure`), `TauCeti.Manifold.divergence`,
+`TauCeti.Manifold.integral_divergence_eq_zero`, the restricted metric on open sets
+(`Bundle.ContMDiffRiemannianMetric.restrictOpenTangentSpace`) and the transport of the
+Levi-Civita connection by smooth isometries
+(`TauCeti.IsLocalRiemannianIsometry.mfderiv_leviCivitaConnection_mpullback`); HopfRinow Layer 2.
 
 ## Layer 5: smooth submanifolds and embedded ambient manifolds
 
@@ -1086,8 +1134,8 @@ a test case of 5.2.
 
 ### Dependencies
 
-Layers 2–4; RiemannianGeometry R5a, R5a.2; Tau Ceti `TauCeti.Manifold.integral_divergence_eq_zero`;
-GeometricCurrents G2.
+Layers 2–4; RiemannianGeometry R5a, R5a.2; Tau Ceti `TauCeti.Manifold.integral_divergence_eq_zero`
+and `MeasureTheory.integral_divergence_eq_zero`; GeometricCurrents G2.
 
 ## Layer 6: monotonicity, densities and constancy
 
@@ -1516,9 +1564,23 @@ p(Z) ∩ B_1(0) (outer regularity of Lebesgue measure). The projection of R itse
 (the disc Check below). (ii) At the points off R the identity and the
 weighted identity of 6.1, with weights f(|q(z − y)|), f = 1 on [0, τ] and f = 0 on [2τ, ∞), bound
 the masses of the slabs U^τ_σ(y) = B_σ(y) ∩ {|q(z − y)| < τ} with errors cεσ/τ (line 8052–8083).
-(iii) An induction on the number of points of a fibre off R, at slab scale τ comparable to δ² times
-the least vertical separation of the points, with the centres of each stage chosen among those
-points, concludes (line 8084–8151). For h ≠ e, steps (ii)–(iii)
+(iii) An induction on the number n of points of a fibre off R, at slab scale τ comparable to δ²
+times the least vertical separation of the points, with the centres of each stage chosen among
+those points, proves the bound for any n such points with a threshold ε_n depending on n (line
+8084–8151; it also lowers δ below a threshold depending on n, which is harmless because the
+conclusion for a smaller δ implies it for a larger one, line 8010–8011). So the number of points
+that count is bounded first (line 8001–8011, 42.10, which uses a lower density bound at these
+points). At y ∈ (spt‖V‖ ∩ B_2(0)) ∖ R the ratio bound and the monotonicity of 6.1–6.2 give
+‖V‖(B_ρ(y)) ≤ CΛρ^k, so ρ^{1−k}‖δ_hV‖(B_ρ(y)) ≤ CΛερ → 0, and Θ^k(‖V‖, y) exists (6.3, whose
+route needs the ratio bound only on chart balls, here Euclidean balls); thus 7.2 applies at y.
+Each C ∈ VarTan(V, y) is stationary, has Θ^k(‖C‖, ·) ≥ 1 ‖C‖-a.e. by 7.1 applied to
+the rescaled varifolds of 4.5 (V is integral, so Θ^k(‖V‖, ·) ≥ 1 ‖V‖-a.e., 2.1), and so
+Θ^k(‖C‖, ·) ≥ 1 at every point of spt‖C‖ by 6.3's upper semicontinuity. If Θ^k(‖V‖, y) > 0, then
+‖C‖(B_ρ(0)) = Θ^k(‖V‖, y)ω_kρ^k > 0 for every ρ, so 0 ∈ spt‖C‖ and
+Θ^k(‖V‖, y) = Θ^k(‖C‖, 0) ≥ 1. Every density off R is therefore 0 or at least 1. Let n_0 be the
+integer part of (1 + δ)Λ(ω_k 2^k)⁻¹ + δ; since ‖V‖(B_2(x)) ≤ Λ, the bound for n_0 + 1 points
+excludes n_0 + 1 points of positive density in a fibre off R, and ε is taken at most the least of
+ε_1, …, ε_{n_0+1}. For h ≠ e, steps (ii)–(iii)
 are run at each centre y in linear coordinates that make h(y) Euclidean (a linear map within Cε²
 of the identity). On B_ρ(y) the metric then differs from the constant metric h(y) by at most Cε²ρ
 in C⁰ and Cε² in C¹, so by 4.5 the first variation of each test field used (|X| ≤ ρ,
@@ -1531,7 +1593,15 @@ slabs, projections, balls and densities by factors 1 + O(ε²), which shrinking 
 
 - V = m v(ℝ^k × {0}, 1)⌞B_3(0) with integer m ≥ 1 and Λ ≥ m ω_k 3^k, h = e: tilt 0, δV = 0 in B_3(0),
   ‖V‖(B_2(x)) = m ω_k 2^k, each fibre has the single point x with density m, and the bound
-  m ≤ (1 + δ)m + δ holds with Z = A = ∅ (no point fails the ratio bounds of step (i)).
+  m ≤ (1 + δ)m + δ holds with Z = A = ∅ (no point fails the ratio bounds of step (i)); the count
+  of step (iii) allows n_0 ≥ m ≥ 1 points of positive density, because
+  (1 + δ)Λ(ω_k 2^k)⁻¹ ≥ m(3/2)^k ≥ m, and there is one.
+- The dichotomy of step (iii) holds only off R. For k = 2, N = 3, h = e and V = v(D, 1), D the
+  horizontal disc of radius r about 0 with 2πr < ε², the tilt is 0, ‖δV‖ = H¹⌞∂D has mass
+  2πr < ε², and a point y ∈ ∂D has Θ²(‖V‖, y) = ½. For ρ ≤ r the arc ∂D ∩ B_ρ(y) has length at
+  least 2ρ and D ∩ B_ρ(y) lies in a half-disc of area πρ²/2, so the ratio ‖δV‖(B_ρ(y))/‖V‖(B_ρ(y))
+  is at least 4/(πρ) > ε: y lies in R, and in Z because its density is positive, so the density ½
+  is never counted.
 - Two parallel planes ℝ^k × {±ε/2} with multiplicity 1: fibre sum 2 and mass ratio about 2.
 - A plane through 0 tilted by angle α has tilt excess |sin α| ‖V‖(B_3(0)) (the operator-norm
   distance of 1.1), so the hypotheses fail once |sin α| ‖V‖(B_3(0)) ≥ ε²; the tilted plane through 0
@@ -1560,8 +1630,8 @@ slabs, projections, balls and densities by factors 1 + O(ε²), which shrinking 
   whole unit disc, of measure π. The points of positive upper density lie in ⋃_j D_j up to an
   H²-null set (2.2), so p(Z) has measure at most Σ_j πr_j² < ε², and every fibre sum off Z is 0.
 
-(Simon1983 line 7986–8151.) *Needs:* Layer 2.1–2.2, Layer 4.5, Layer 6.1–6.3; Mathlib
-`HasBesicovitchCovering`, `LipschitzWith.hausdorffMeasure_image_le`.
+(Simon1983 line 7986–8151.) *Needs:* Layer 2.1–2.2, Layer 4.5, Layer 6.1–6.3, Layer 7.1–7.2;
+Mathlib `HasBesicovitchCovering`, `LipschitzWith.hausdorffMeasure_image_le`.
 
 ### 7.6 Integral compactness
 
@@ -1612,7 +1682,9 @@ triple junction as a rectifiable stationary varifold with a singular point.
 
 ### Dependencies
 
-Layers 1–6; Mathlib Besicovitch and Vitali coverings.
+Layers 1–6; Mathlib Besicovitch and Vitali coverings,
+`MeasureTheory.Measure.ext_of_integral_eq_on_compactlySupported` and
+`LipschitzWith.hausdorffMeasure_image_le`.
 
 ## Layer 8: tangent cones
 
@@ -1701,12 +1773,18 @@ Layer 3.1, Layer 6.4.
 Every notion of Layers 1–8 commutes with restriction to an open W' ⊆ W: weight, mass, support,
 convergence, rectifiability and integrality, tangent spaces and fibre measures, δV, ‖δV‖, H_V, σ_V,
 η_V, stationarity and locally bounded first variation, densities, VarTan(V, x) for x ∈ W', and
-reg^r, sing^r. Every notion commutes with push-forward by an isometry f of an open subset of a
-Riemannian manifold onto an open subset of another (1.2), with H, η transported by df; it is
-independent of charts because no chart
-enters the definitions. Euclidean dilations preserve stationarity, rectifiability, integrality,
-reg^r and sing^r, satisfy Θ^k(‖V_{x,λ}‖, η_{x,λ}(y)) = Θ^k(‖V‖, y) and VarTan(V_{x,λ}, η_{x,λ}(y)) =
-VarTan(V, y), and scale H_V, ‖δV‖ and σ_V as in 4.4 (this roadmap; Simon1983 line 7443–7454).
+reg^r, sing^r. Every notion commutes with push-forward by a smooth isometry f of an open subset of
+a Riemannian manifold onto an open subset of another (1.2 with f smooth), with H, η transported by
+df (4.4) and VarTan(f_#V, f(x)) = {(df_x)_#C : C ∈ VarTan(V, x)}: f ∘ exp_x = exp_{f(x)} ∘ df_x on
+a normal ball of x (Tau Ceti `TauCeti.RiemannianIsometry.riemannianExp_mfderiv` for f as a
+Riemannian isometry of W onto W' with the restricted metrics, whose short geodesics are those of M
+and M' by uniqueness of geodesics), so (f_#V)_{f(x),λ} = (df_x)_#V_{x,λ} by 3.1's chain rule. For an isometry that is only C¹, 1.2 and 3.1
+still give the bundle homeomorphism and J_S f = 1, but the first variation and this route need f
+smooth; that a C¹ isometry is smooth is the Myers–Steenrod theorem, which this roadmap does not use.
+Every notion is independent of charts because no chart enters the definitions. Euclidean dilations
+preserve stationarity, rectifiability, integrality, reg^r and sing^r, satisfy
+Θ^k(‖V_{x,λ}‖, η_{x,λ}(y)) = Θ^k(‖V‖, y) and VarTan(V_{x,λ}, η_{x,λ}(y)) = VarTan(V, y), and scale
+H_V, ‖δV‖ and σ_V as in 4.4 (this roadmap; Simon1983 line 7443–7454).
 
 **Checks.**
 
@@ -1715,7 +1793,9 @@ VarTan(V, y), and scale H_V, ‖δV‖ and σ_V as in 4.4 (this roadmap; Simon19
   and no boundary measure inside the open set.
 - The dilation by λ⁻¹ of the circle of radius R has H of length λ/R and the same density 1.
 
-*Needs:* Layers 1–8.
+*Needs:* Layers 1–8; HopfRinow Layer 1 (uniqueness of geodesics); Tau Ceti
+`TauCeti.RiemannianIsometry.riemannianExp_mfderiv`,
+`Bundle.ContMDiffRiemannianMetric.restrictOpenTangentSpace`.
 
 ### 9.3 Comparison with GeometricCurrents G6
 
@@ -1792,7 +1872,9 @@ current of a plane with multiplicity and the cancelling sum of two currents.
 
 ### Dependencies
 
-Layers 1–8; GeometricCurrents G1, G2, G5, G6.
+Layers 1–8; GeometricCurrents G1, G2, G5, G6; HopfRinow Layer 1; Tau Ceti
+`TauCeti.RiemannianIsometry.riemannianExp_mfderiv` and
+`Bundle.ContMDiffRiemannianMetric.restrictOpenTangentSpace`.
 
 ## Downstream consumers
 
