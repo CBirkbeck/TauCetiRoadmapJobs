@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CohomologyComparisons~3",
+  "head": "fff3df01cfa01955085ef7ee2cfc10e91c736cb0",
+  "pr": 1064,
+  "folder": "CohomologyComparisons",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 84 changed lines since bee1248. Previous R01 (AI.2.2) and R02 (Guo-Reinecke Construction 3.9 p.31) repaired; previous R03 (Suggested.lean docstring) not repaired and raised again. New P3 findings: the AInf.* and Semistable.* names cited from AInfCohomology no longer exist at its open head (sections and statements do; mapping to the target titles given); eight Needs lines quote Layer 2 headings the regrouping renamed; the pull request description says the Lean states definitions and theorems with sorry while the file declares nothing, and does not say the roadmap is new. Checked: the five new opening paragraphs of Layer 2 against every Needs line that cites sections 2.1-2.17; the reworded section 2.18 weak-finality passage against Guo-Reinecke Remark 10.2 and Lemma 10.3 (mathematics and wording); PrismaticCohomologyPartIII and AInfCohomology citations at their heads; title and description against the head. None of the fifteen sampled targets lies in a changed passage. Gate at this head OK (every scanner 0); depcheck 0 problems; lake env lean exit 0 with no output; no diff outside the folder. Adversarial table: 10 rows with computed values for the changed passages; rows for untouched statements stand as in the review of bee1248.",
+  "text": "8507780818106ab8",
+  "carried": {
+   "from": "fff3df01cfa01955085ef7ee2cfc10e91c736cb0",
+   "head": "830e42424ba1ddd3da983473fd83429464184dbe",
+   "findings": 4,
+   "lines": 80,
+   "folders": [
+    "CohomologyComparisons"
+   ],
+   "outside": true
+  }
+ }
+}
