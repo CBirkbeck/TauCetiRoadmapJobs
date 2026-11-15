@@ -1600,7 +1600,9 @@
       "roadmap:InfinityTopoi §3.5.1",
       "target:3.2",
       "target:3.3",
-      "target:4.1"
+      "target:4.1",
+      "target:6.1",
+      "target:6.2"
      ],
      "api": [
       {
@@ -1611,7 +1613,7 @@
       {
        "name": "geometric_quotient",
        "role": "structure",
-       "statement": "If S is affine, G affine over S and X affine, [X/G] has affine diagonal; with G flat over S, X -> [X/G] is an fpqc surjection, so [X/G] is geometric."
+       "statement": "If S is affine, G affine over S and X affine, [X/G] has affine diagonal and the atlas X -> [X/G] is affine (4.1). For every such G the atlas is an fpqc surjection: it is L of the effective epimorphism X -> |G^{x_S .} x_S X|, so every point Spec R -> [X/G] lifts to X after an fpqc cover {R -> R_i}, along which the base change of the atlas is G x_S Spec R_i -> Spec R_i, a base change of G -> S split by the unit. If moreover G is flat over S, the atlas is flat (its base change along a point becomes flat after R -> prod R_i, and flatness descends along faithfully flat maps, 6.1), so [X/G] is geometric (6.2); flatness of G gives the flatness of the atlas, not its surjectivity."
       },
       {
        "name": "trivial",
@@ -1639,6 +1641,11 @@
        "name": "constant_BGamma",
        "kind": "computation",
        "statement": "The realization of Gamma acting on the final prestack is the constant prestack B Gamma."
+      },
+      {
+       "name": "nonflat_atlas",
+       "kind": "non-example",
+       "statement": "Classical, S = Spec Z, a prime l, G the closed subgroup scheme of the constant group Z/2 with O(G) = Z x F_l (R-points: idempotents e with l e = 0, closed under e + e' - 2ee'), affine and not flat over Z. The atlas S -> BG is affine and an fpqc surjection, its base change along itself being G -> S split by the unit, but that base change is not flat, so this atlas does not make BG geometric. For G = G_m the base change Spec Z[t, t^-1] -> Spec Z is free and BG_m is geometric."
       }
      ]
     },
@@ -2276,7 +2283,7 @@
    "sections": [
     "§1.4.3"
    ],
-   "what": "Presheaf infinity-categories as free cocompletions (HTT 5.1.5.6), for 2.3 and 3.1."
+   "what": "Presheaf infinity-categories as free cocompletions (HTT 5.1.5.6), stated for u-small simplicial sets and applied in the universe u+1 to T^op, for 2.3 and 3.1."
   },
   {
    "roadmap": "LimitsAndKanExtensions",
@@ -2315,7 +2322,7 @@
     "§3.5.1",
     "§4.4.1"
    ],
-   "what": "Infinity-topoi, descent and effective groupoid objects, Giraud's theorem (HTT 6.1.0.6, 6.1.3.10, 6.1.3.19), for 7.1."
+   "what": "Infinity-topoi, descent and effective groupoid objects, Giraud's theorem (HTT 6.1.0.6, 6.1.3.10, 6.1.3.19), applied in the universe u+1 to PreStk_T and its slices, for 7.1."
   },
   {
    "roadmap": "HypercompletenessAndCoherence",
@@ -2325,7 +2332,7 @@
     "§2.5.2",
     "§6.1.1"
    ],
-   "what": "Truncated objects are hypercomplete (HTT 6.5.2.9); realizations of hypercoverings and hypercompletion (HTT 6.5.3.11-6.5.3.13); for 3.2, 3.4 and 7.1."
+   "what": "Truncated objects are hypercomplete (HTT 6.5.2.9); realizations of hypercoverings and hypercompletion (HTT 6.5.3.11-6.5.3.13); applied in the universe u+1 to fpqc sheaves on T^op, for 3.2 and 3.4."
   }
  ],
  "consumers": [
