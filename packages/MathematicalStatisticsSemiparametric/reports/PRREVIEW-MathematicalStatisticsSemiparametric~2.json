@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsSemiparametric~2",
+  "head": "b2960a74d7083469b0a2f8495751b661e4e3a4c5",
+  "pr": 2378,
+  "folder": "MathematicalStatisticsSemiparametric",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full re-review. Previous findings R01-R09, R11, R12 repaired; R10 partly (now R03). Gate passed; depcheck 0 problems; Suggested.lean elaborates with 82 sorry warnings only; #check on all 124 declarations; one-tactic probe closed 2 declarations (R02). Adversarial pass over every statement with computed values (26 table rows, including all 15 sampled targets). Supplier citations resolved at the open heads of MathematicalStatisticsFoundations and MathematicalStatisticsAsymptotic (R01: varying-space forms are Asymptotic 1.1). Source locators: 0 of 72 verified, no legal copy of the four books readable; listed under Not verifiable. Pull request text agrees with the head.",
+  "text": "c637756ca788623c"
+ }
+}
