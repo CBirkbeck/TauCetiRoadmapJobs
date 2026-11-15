@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SmoothBanachRepresentations~22",
+  "head": "18e94ffebf04aa11971d9bd3b41f9c72bdffd995",
+  "pr": 1145,
+  "folder": "RepresentationTheory/SmoothBanachRepresentations",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 18e94ff. Checked: the rewritten title and description sentence by sentence against the head and the folder's change (all five previous findings R01-R05 repaired, no contradiction, nothing left unstated); gate rerun with the candidate merge order and build: OK; depcheck 244 roadmaps, 0 problems; elaboration of Suggested.lean: 9 sorry warnings only; adversarial rows with computed values for the finite-order criterion, scalar parametrix sign, resolvent integral and function factorization; supplier status on main and at open heads. Source sample not redone: no passage changed.",
+  "text": "30803fe7b1b8891c"
+ }
+}
