@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GeometricQuantization~14",
+  "head": "49fe13a249603bf55f2f65337dd99f1b039b66eb",
+  "pr": 1186,
+  "folder": "GeometricQuantization",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 49fe13a; previous findings accounted for, title and description checked against head and base diff, computed witnesses recorded; seeded sample has no changed locators; gate, dependency check, targeted build, direct elaboration and actual declaration signature probe pass. Five P3 findings concern PR description only.",
+  "text": "758c6f9c093d7d4d",
+  "carried": {
+   "from": "49fe13a249603bf55f2f65337dd99f1b039b66eb",
+   "head": "07080839b797ecf9229225283cb008c31f6fe84a",
+   "findings": 5,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
