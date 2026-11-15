@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiamondEtaleCohomology~4",
+  "head": "9e9df998250538ed3c5b19072cbc82ad247deeaa",
+  "pr": 922,
+  "folder": "DiamondEtaleCohomology",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 64 changed lines since e465c50. Both previous findings (R01 undeclared backticked names, R02 stale re-export wording) are repaired. Checked: the reworded C4.15 against ECD Corollary 18.8 (all seven clauses, own wording); the notation changes trdeg.mod, dim.trg, cd_l(y) in C8.10-C8.48 and C9.14 with computed instances (adversarial table in the report); ECD Definitions 21.5 and 21.7; no other roadmap cites the retired names. The seeded sample (Perfectoid field-test reduction) lies outside the diff and stands as verified at e465c50. Gate rerun: all counters 0, OK; depcheck 0 problems; lake env lean on Suggested.lean exit 0 with six sorry warnings only; Suggested.lean unchanged. Pull request text consistent with the head.",
+  "text": "a16fd4bcb9c6a1ad"
+ }
+}
