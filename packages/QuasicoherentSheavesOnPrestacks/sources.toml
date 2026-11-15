@@ -59,7 +59,7 @@ title = "One positive and two negative results for derived categories of algebra
 year = 2014
 arxiv = "1405.1888v2"
 locator_scheme = "theorem"
-locator = "Theorem 1.1; Theorem C.1"
+locator = "Theorem 1.1 (pp. 1-2); Section 4 (poorly stabilized stacks, p. 9); Theorem C.1"
 url = "https://arxiv.org/abs/1405.1888v2"
 fetched_from = "https://arxiv.org/pdf/1405.1888v2"
 fetched_at = "2026-11-06T16:58:27Z"
@@ -115,7 +115,7 @@ authors = "The Stacks Project Authors"
 title = "The Stacks Project"
 year = 2026
 locator_scheme = "tag"
-locator = "Morphisms of Schemes: 0FXR (Definition 29.12.1), 0FXS (Lemma 29.12.2), 0FXT (Remark 29.12.3), 02JR (Lemma 29.13.6); Descent: 023Q (Lemma 35.13.7); Derived Categories of Schemes: 0A0J (Lemma 36.3.2), 08D3 (Lemma 36.3.3), 06Z0 (Lemma 36.3.5), 08DZ (Lemma 36.4.5), 08E8 (Lemma 36.10.3), 09IS (Theorem 36.15.3), 0BQR (Lemma 36.16.1), 09M1 (Proposition 36.17.1), 08EU (Lemma 36.22.1), 08IB (Lemma 36.22.5); Sheaves on Algebraic Stacks: 06WG (Definition 96.11.1), 06WT (Proposition 96.14.3)"
+locator = "Morphisms of Schemes: 0FXR (Definition 29.12.1), 0FXS (Lemma 29.12.2), 0FXT (Remark 29.12.3), 02JR (Lemma 29.13.6); Descent: 023Q (Lemma 35.13.7), 0245 (Lemma 35.37.1); Derived Categories of Schemes: 0A0J (Lemma 36.3.2), 08D3 (Lemma 36.3.3), 06Z0 (Lemma 36.3.5), 08DZ (Lemma 36.4.5), 08E8 (Lemma 36.10.3), 09IS (Theorem 36.15.3), 0BQR (Lemma 36.16.1), 09M1 (Proposition 36.17.1), 08EU (Lemma 36.22.1), 08IB (Lemma 36.22.5); Sheaves on Algebraic Stacks: 06WG (Definition 96.11.1), 06WT (Proposition 96.14.3)"
 url = "https://stacks.math.columbia.edu/download/perfect.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/perfect.pdf"
 fetched_at = "2026-11-07T02:57:43Z"
@@ -124,7 +124,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
 version_note = "Online project. The recorded file is the chapter Derived Categories of Schemes; the chapters Sheaves on Algebraic Stacks (https://stacks.math.columbia.edu/download/stacks-sheaves.pdf), Morphisms of Schemes (https://stacks.math.columbia.edu/download/morphisms.pdf) and Descent (https://stacks.math.columbia.edu/download/descent.pdf) were also read through the sources service. Results are cited by tag."
-cited_for = ["3.4", "5.1", "5.2", "5.4", "6.2", "6.4", "7.4", "8.1", "8.3"]
+cited_for = ["3.4", "4.1", "5.1", "5.2", "5.4", "6.2", "6.4", "7.4", "8.1", "8.3"]
 
 [[source]]
 id = "HTT"
