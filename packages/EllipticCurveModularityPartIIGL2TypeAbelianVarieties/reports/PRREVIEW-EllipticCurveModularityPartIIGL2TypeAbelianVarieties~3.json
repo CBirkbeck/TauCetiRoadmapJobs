@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularityPartIIGL2TypeAbelianVarieties~3",
+  "head": "983a1f7a710ff0c8e04a0e13780fb149acf55e05",
+  "pr": 1036,
+  "folder": "EllipticCurveModularityPartIIGL2TypeAbelianVarieties",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 67 changed lines since bf5759f. Previous R01 (locators of 6.2) repaired, previous R02 (docstrings of Qbar, GQ, AVQ) not repaired and raised again. Four P3 findings: the missing docstrings, the Lean Layer 5 section comment left at the old title, group headings sharing a number with their first target, and the description's stale AI-assistance sentence. Checked: 14 ribet92 locators at the changed passages, the five group sentences against every Needs line, 7 adversarial rows with values, title and description against the head. Gate passes (all counters 0, build OK); depcheck 246 roadmaps, 2257 edges, 0 problems; Suggested.lean elaborates with three sorry warnings only. No worktree change.",
+  "text": "687f8a50032d8e6e",
+  "carried": {
+   "from": "983a1f7a710ff0c8e04a0e13780fb149acf55e05",
+   "head": "e1441845dd8c913ac29b3b26558a60ea8637b5d4",
+   "findings": 4,
+   "lines": 14,
+   "folders": [
+    "EllipticCurveModularityPartIIGL2TypeAbelianVarieties"
+   ],
+   "outside": true
+  }
+ }
+}
