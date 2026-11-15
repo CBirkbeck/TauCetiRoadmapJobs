@@ -144,7 +144,7 @@
      ],
      "locator": {
       "source": "paolini-shelah-tfab",
-      "where": "Definition 1.4, line 83; camerlo-gao-boolean lines 106–110 for classes"
+      "where": "Fact 1.1, lines 56–58, and lines 65–68 (induced Borel structure on a class, relations on it as subsets of its square); Definition 1.6, lines 95–96 (the isomorphism relation on a class); camerlo-gao-boolean lines 106–110 for classes"
      },
      "prerequisites": [
       "tauceti:TauCeti.RelationalConfiguration.isoSetoid",
@@ -1043,9 +1043,9 @@
      "id": "3.4",
      "kind": "theorem",
      "name": "unravel_iso_iff",
-     "statement": "For c, d ∈ graphClass the following are equivalent: (i) c ≅ d; (ii) some order automorphism Φ of List ℚ has χ_d ∘ Φ = χ_c; (iii) some bijection Ψ of List ℚ preserving the parent relation (both ways) has χ_d ∘ Ψ = χ_c.",
+     "statement": "For all codes c, d : RelationalConfiguration Language.graph ℕ, simple graphs or not, the following are equivalent: (i) c ≅ d; (ii) some order automorphism Φ of List ℚ has χ_d ∘ Φ = χ_c; (iii) some bijection Ψ of List ℚ preserving the parent relation (both ways) has χ_d ∘ Ψ = χ_c. The case c, d ∈ graphClass is the one 3.7 and 3.11 use; no step uses symmetry or irreflexivity: (i) ⇒ (ii) writes d = σ • c and applies π from 3.2 entrywise, so a(Φ x) = σ ∘ a(x) and d.eval (adjAtom (σ u) (σ v)) = c.eval (adjAtom u v).",
      "hypotheses": [
-      "c, d ∈ graphClass",
+      "c, d : RelationalConfiguration Language.graph ℕ arbitrary codes (not necessarily symmetric or irreflexive)",
       "List ℚ with Mathlib's lexicographic order"
      ],
      "locator": {
@@ -1058,7 +1058,9 @@
       "tauceti:TauCeti.IsTupleBFSystem",
       "tauceti:TauCeti.potentialIso_iff_exists_isTupleBFSystem",
       "tauceti:TauCeti.countable_potentialIso_iff_iso",
-      "mathlib:List.IsPrefix"
+      "mathlib:List.IsPrefix",
+      "tauceti:TauCeti.RelationalConfiguration.isoSetoid_iff_exists_perm_smul_eq",
+      "tauceti:TauCeti.RelationalConfiguration.eval_perm_smul"
      ],
      "api": [],
      "tests": [
@@ -1071,6 +1073,11 @@
        "name": "parent_definable",
        "kind": "characterisation",
        "statement": "The parent of [1/2, 3] is [1/2]: the unique node of length 1 below it with no node of length < 2 strictly between."
+      },
+      {
+       "name": "directed_codes",
+       "kind": "non-example",
+       "statement": "Off graphClass: c with the single true atom adjAtom 0 1, d with the single true atom adjAtom 1 0, τ = (0 1), d = τ • c; Φ entrywise π_τ sends [1/2, 1] (a = (1, 0) for c) to a node with a = (0, 1), where the bits at the index pair (1, 0) are c.eval (adjAtom 0 1) = d.eval (adjAtom 1 0) = true and at (0, 1) both false, so (i)–(iii) hold. The loop code (adjAtom 0 0 only) against the empty graph: the colour of [1] (length 1, diagonal bit true) occurs at no node of the empty graph, so (ii) and (iii) fail, as non-isomorphism requires."
       }
      ]
     },
@@ -1148,12 +1155,17 @@
       {
        "name": "blockOrder_continuous",
        "role": "compatibility",
-       "statement": "Each comparison depends on two colours, each reading finitely many coordinates of c, so the map is continuous on the whole of RelationalConfiguration Language.graph ℕ."
+       "statement": "Each comparison depends on at most one colour, that of the common block (points of distinct blocks compare by their List ℚ coordinates alone, two points of the block of x through χ_c(x), which reads finitely many coordinates of c), so the map is continuous on the whole of RelationalConfiguration Language.graph ℕ."
       },
       {
        "name": "finite_condensation_classes",
        "role": "characterisation",
        "statement": "The maximal sets in which any two points bound a finite interval and that are finite are exactly the final finite parts of the blocks, of size χ_c(x)+2."
+      },
+      {
+       "name": "blockOrder_iso_iff",
+       "role": "characterisation",
+       "statement": "For all codes c, d of Language.graph, simple graphs or not, c ≅ d iff their images are isomorphic: the map is a continuous reduction of isoSetoid Language.graph ℕ to isoSetoid Language.order ℕ with values in linearOrderClass (finite condensation classes and 3.4)."
       }
      ],
      "tests": [
@@ -1183,7 +1195,7 @@
      "id": "3.7",
      "kind": "theorem",
      "name": "exists_continuous_reduction_graphClass_linearOrderClass",
-     "statement": "There is a continuous f : RelationalConfiguration Language.graph ℕ → RelationalConfiguration Language.order ℕ with f '' graphClass ⊆ linearOrderClass and, for c d ∈ graphClass, c ≅ d ↔ f c ≅ f d.",
+     "statement": "There is a continuous f : RelationalConfiguration Language.graph ℕ → RelationalConfiguration Language.order ℕ with f '' graphClass ⊆ linearOrderClass and, for c d ∈ graphClass, c ≅ d ↔ f c ≅ f d: the restriction to graphClass of the blockOrder map of 3.6, which reflects and preserves isomorphism for all codes.",
      "hypotheses": [],
      "locator": {
       "source": "friedman-stanley-1989",
@@ -1298,7 +1310,12 @@
       {
        "name": "tagTree_continuous",
        "role": "compatibility",
-       "statement": "A comparison of two tag nodes of x depends on χ_c(x) alone and a comparison involving an original node on no coordinate of c, so the map is continuous on the whole of RelationalConfiguration Language.graph ℕ."
+       "statement": "A comparison of two tag nodes of the same x depends on χ_c(x) alone, two tag nodes of distinct x, y are incomparable, and a comparison involving an original node depends on no coordinate of c, so the map is continuous on the whole of RelationalConfiguration Language.graph ℕ."
+      },
+      {
+       "name": "tagTree_iso_iff",
+       "role": "characterisation",
+       "statement": "For all codes c, d of Language.graph, simple graphs or not, c ≅ d iff their tagged trees are isomorphic: the map is a continuous reduction of isoSetoid Language.graph ℕ to isoSetoid Language.order ℕ with values in treeClass (a tree isomorphism restricts to a parent- and colour-preserving bijection of List ℚ, then 3.4 (iii); conversely 3.4 (ii) extends to tags)."
       }
      ],
      "tests": [
@@ -1328,7 +1345,7 @@
      "id": "3.11",
      "kind": "theorem",
      "name": "borelComplete_treeClass",
-     "statement": "BorelComplete treeClass, through a map continuous on the whole of RelationalConfiguration Language.graph ℕ that lands in treeClass for every code and, for c d ∈ graphClass, has c ≅ d ↔ f c ≅ f d.",
+     "statement": "BorelComplete treeClass, through a map continuous on the whole of RelationalConfiguration Language.graph ℕ that lands in treeClass for every code and has c ≅ d ↔ f c ≅ f d for all codes c d (3.10); its restriction to graphClass reduces classIso graphClass to classIso treeClass, and 2.5 concludes.",
      "hypotheses": [],
      "locator": {
       "source": "friedman-stanley-1989",

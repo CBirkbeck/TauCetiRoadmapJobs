@@ -104,7 +104,9 @@ Layer 5 and Layer 6.4; nothing below depends on them.
    `isomorphismInvariant_iff_isInvariantBlock`). For relational `L` and every carrier `α`,
    `classIso K` is Tau Ceti's `isoSetoid L α` pulled back to the subtype `K`, written ≅_K; `K`
    carries the subtype σ-algebra. A Borel reduction between classes is
-   `Setoid.BorelReducible (classIso K') (classIso K)`.
+   `Setoid.BorelReducible (classIso K') (classIso K)`, Borel reducibility of equivalence relations
+   on measurable spaces (paolini-shelah-tfab Definition 1.4, lines 83–87, on standard Borel
+   spaces).
 3. **Continuity.** The structure-to-graph coding of Layer 2.3 is continuous on the whole of
    `RelationalConfiguration L' ℕ`, and the graph-to-order and graph-to-tree codings of Layers 3.3
    and 3.4 are continuous on the whole of `RelationalConfiguration Language.graph ℕ`, simple graph
@@ -317,8 +319,10 @@ For a relational language `L` (`[L.IsRelational]`; no countability is needed) an
 `α`, define `classIso K : Setoid K` for `K : Set (RelationalConfiguration L α)` as
 `Setoid.comap Subtype.val (isoSetoid L α)`, the pullback of Tau Ceti's `isoSetoid L α` along the
 inclusion `K → RelationalConfiguration L α`, with `K` carrying the subtype σ-algebra
-(paolini-shelah-tfab Definition 1.4, line 83; camerlo-gao-boolean lines 106–110, where the
-carrier is ℕ; the other carriers are used for relabelling in Layer 1.1). API:
+(paolini-shelah-tfab Fact 1.1, lines 56–58, and lines 65–68 for the induced Borel structure on a
+class and relations on it as subsets of its square; paolini-shelah-tfab Definition 1.6,
+lines 95–96, and camerlo-gao-boolean lines 106–110 for the isomorphism relation on a class, where
+the carrier is ℕ; the other carriers are used for relabelling in Layer 1.1). API:
 
 - Unfolding: for `x y : K`, `classIso K x y` holds exactly when the decoded structures of `x` and
   `y` are isomorphic (`isoSetoid_apply`), and exactly when `x` and `y` lie in one orbit of the
@@ -748,23 +752,28 @@ the bit `c.eval (adjAtom u v)`). For `c ∈ graphClass`, the code of a simple gr
 - `(List ℚ, <)` is a dense linear order whose least element is `[]`; the parent of a nonempty `x`
   (its prefix of length one less) is definable from the order and the lengths: it is the unique
   `p` of length `|x| - 1` with `p < x` such that every `z` with `p < z < x` has length at least `|x|`.
-- Unravelling lemma: for `c, d ∈ graphClass`, the following are equivalent: (i) `c` and `d` are
-  isomorphic; (ii) some order automorphism `Φ` of `List ℚ` satisfies `χ_d ∘ Φ = χ_c`; (iii) some
-  bijection `Ψ` of `List ℚ` preserving the parent relation satisfies `χ_d ∘ Ψ = χ_c`. For (i) ⇒ (ii)
-  and (iii), take `π` from 3.1 for the isomorphism `σ` and apply it entrywise. For (ii) ⇒ (iii) use
-  definability of the parent. For (iii) ⇒ (i), the set of pairs `(a(x), a(Ψ x))` is a tuple
-  back-and-forth system (`IsTupleBFSystem`): it contains the empty pair because `Ψ` fixes the
-  root, atomic types agree because colours do, and forth and back hold because every node has,
-  for every vertex `m`, a child ending in a rational of colour `m`, and `Ψ` maps children to
-  children; then `potentialIso_iff_exists_isTupleBFSystem` and `countable_potentialIso_iff_iso`
-  give an isomorphism (montalban-cst1 Lemma VI.18, lines 4205–4285, which proves the same
-  steps with a category argument in place of back-and-forth systems).
+- Unravelling lemma: for all codes `c, d : RelationalConfiguration Language.graph ℕ`, simple graphs
+  or not, the following are equivalent: (i) `c` and `d` are isomorphic; (ii) some order
+  automorphism `Φ` of `List ℚ` satisfies `χ_d ∘ Φ = χ_c`; (iii) some bijection `Ψ` of `List ℚ`
+  preserving the parent relation satisfies `χ_d ∘ Ψ = χ_c`. The case `c, d ∈ graphClass` is the
+  one Layers 3.3 and 3.4 use for Borel completeness; no step of the proof uses symmetry or
+  irreflexivity. For (i) ⇒ (ii) and (iii), write `d = σ • c` (`isoSetoid_iff_exists_perm_smul_eq`),
+  take `π` from 3.1 for `σ` and apply it entrywise: then `a(Φ x) = σ ∘ a(x)`, and
+  `d.eval (adjAtom (σ u) (σ v)) = c.eval (adjAtom u v)` (`eval_perm_smul`), so the colours agree.
+  For (ii) ⇒ (iii) use definability of the parent. For (iii) ⇒ (i), the set of pairs
+  `(a(x), a(Ψ x))` is a tuple back-and-forth system (`IsTupleBFSystem`): it contains the empty pair
+  because `Ψ` fixes the root, atomic types agree because colours do, and forth and back hold
+  because every node has, for every vertex `m`, a child ending in a rational of colour `m`, and
+  `Ψ` maps children to children; then `potentialIso_iff_exists_isTupleBFSystem` and
+  `countable_potentialIso_iff_iso` give an isomorphism (montalban-cst1 Lemma VI.18,
+  lines 4205–4285, which proves the same steps for an arbitrary structure, with a category
+  argument in place of back-and-forth systems).
 
 *Needs:* 3.1; Tau Ceti `adjAtom`, `toStructure_relMap`,
 `SimpleGraph.eval_toRelationalConfiguration_adjAtom`, `SimpleGraph.range_toRelationalConfiguration`,
 `SameAtomicType`, `IsTupleBFSystem`, `potentialIso_iff_exists_isTupleBFSystem`,
-`countable_potentialIso_iff_iso` and `isoSetoid_iff_exists_perm_smul_eq`; Mathlib lexicographic
-`LinearOrder (List ℚ)`, `List.IsPrefix`.
+`countable_potentialIso_iff_iso`, `isoSetoid_iff_exists_perm_smul_eq` and `eval_perm_smul`; Mathlib
+lexicographic `LinearOrder (List ℚ)`, `List.IsPrefix`.
 
 **Checks.**
 
@@ -783,6 +792,14 @@ the bit `c.eval (adjAtom u v)`). For `c ∈ graphClass`, the code of a simple gr
   false, and the node `[1, 1/2]` (`a = (0, 1)`) the reverse, so the two colours differ; a colour
   recording only the unordered adjacency would identify them, and for the symmetric code of the
   edge `{0, 1}` the two colours agree.
+- The lemma holds off `graphClass`: let `c` have the single true atom `adjAtom 0 1` and `d` the
+  single true atom `adjAtom 1 0`, and `τ` the transposition of `0` and `1`, so `d = τ • c`. With `π`
+  from 3.1 for `τ` and `Φ` entrywise `π`, the node `[1/2, 1]` (`a = (1, 0)` for `c`) goes to a node
+  with `a = (0, 1)`; at the index pair `(1, 0)` the bits are `c.eval (adjAtom 0 1)` and
+  `d.eval (adjAtom 1 0)`, both true, at `(0, 1)` both false, so the colours agree and (i)–(iii)
+  hold. For the code whose only true atom is the loop `adjAtom 0 0` against the empty graph, the
+  colour of `[1]` (length 1, diagonal bit true) occurs at no node of the empty graph, so (ii) and
+  (iii) fail, as they must, the first code having a loop and the second none.
 - The identity is a colour-preserving automorphism from the order of `c` to that of `d` exactly
   when `c = d`; the one-edge graphs on `{0, 1}` and `{0, 2}` are isomorphic but differ at the node
   `[1, 1/2]`, so `Φ` must move nodes.
@@ -808,12 +825,18 @@ For every code `c : RelationalConfiguration Language.graph ℕ`, with the colour
 for every such code), order the set `List ℚ × ℕ` lexicographically, first by the `List ℚ` coordinate
 and then, inside the block of `x`, by the order of type `ω + (χ_c(x) + 2)` on ℕ that puts the
 indices `≥ χ_c(x) + 2` first in increasing order and then the indices `< χ_c(x) + 2` in increasing
-order; relabel along a fixed bijection of `List ℚ × ℕ` with ℕ. Prove
-`exists_continuous_reduction_graphClass_linearOrderClass`: this map is continuous from
-`RelationalConfiguration Language.graph ℕ` to `RelationalConfiguration Language.order ℕ` (each
-comparison depends on two colours, each a function of finitely many coordinates of `c`), lands in
-`linearOrderClass` for every code (a lexicographic sum of linear orders is linear, whatever the
-colours), and for `c, d ∈ graphClass` the images are isomorphic exactly when `c` and `d` are. Proof:
+order; relabel along a fixed bijection of `List ℚ × ℕ` with ℕ. Prove that this map is continuous
+from `RelationalConfiguration Language.graph ℕ` to `RelationalConfiguration Language.order ℕ` (each
+comparison depends on at most one colour, that of the common block: points of distinct blocks
+compare by their `List ℚ` coordinates alone, two points of the block of `x` through `χ_c(x)`, a
+function of finitely many coordinates of `c`), lands in `linearOrderClass` for every code (a
+lexicographic sum of linear orders is linear, whatever the colours), and for all codes `c, d`,
+simple graphs or not, the images are isomorphic exactly when `c` and `d` are: it is a continuous
+reduction of `isoSetoid Language.graph ℕ` to `isoSetoid Language.order ℕ` with values in
+`linearOrderClass`. Its restriction to `graphClass` gives
+`exists_continuous_reduction_graphClass_linearOrderClass`: a continuous map sending `graphClass`
+into `linearOrderClass` such that, for `c, d ∈ graphClass`, `c` and `d` are isomorphic exactly when
+their images are. Proof:
 the condensation classes of the image (maximal sets any two of whose points bound a finite interval)
 are the `ω`-parts of the blocks, which are infinite, and the final finite parts of the blocks, of
 size `χ_c(x) + 2`, because the order of `List ℚ` is dense and each block begins with a copy of ω; so
@@ -866,17 +889,21 @@ the tagged tree on `List ℚ × Option ℕ`: original nodes `(x, none)`, ordered
 for each `x`, tag nodes `(x, some m)` lying above `(x, none)` and above every original node below
 it, with `(x, some 0)` below every other tag node of `x`, and `(x, some m) ≤ (x, some m')` for `0 <
 m ≤ m' ≤ χ_c(x) + 1`; the tag nodes with `m > χ_c(x) + 1` are leaves directly above `(x, some 0)`.
-Relabel to ℕ. Prove `borelComplete_treeClass`, that is `BorelComplete treeClass`: the map is
-continuous on the whole of `RelationalConfiguration Language.graph ℕ` (a comparison of two tag nodes
-of `x` depends on `χ_c(x)` alone, a comparison involving an original node on no coordinate of `c`)
-and lands in `treeClass` for every code (every principal down-set is a finite chain of prefixes
-followed by at most `χ_c(x) + 2` tag nodes); for `c, d ∈ graphClass` the images are isomorphic
-exactly when `c` and `d` are. A node is original exactly when an infinite chain starts at it; `(x,
-some 0)` is the unique child of `(x, none)` that is not original, and the subtree above it has
-height `χ_c(x) + 2`; so a tree isomorphism restricts to a parent-preserving, colour-preserving
-bijection of `List ℚ`, and 3.2 (iii) applies; conversely 3.2 (ii) extends to tags
-(friedman-stanley-1989 §2; montalban-cst1 Lemma VI.18, lines 4205–4245). *Needs:* 3.2, Layer 2.3,
-Layer 1.1, Layer 1.2, Layer 0.1.
+Relabel to ℕ. Prove that the map is continuous on the whole of
+`RelationalConfiguration Language.graph ℕ` (a comparison of two tag nodes of the same `x` depends
+on `χ_c(x)` alone; two tag nodes of distinct `x`, `y` are incomparable, and a comparison involving
+an original node depends on no coordinate of `c`), lands in `treeClass` for every code (every
+principal down-set is a finite chain of prefixes followed by at most `χ_c(x) + 2` tag nodes), and
+for all codes `c, d`, simple graphs or not, the images are isomorphic exactly when `c` and `d`
+are: it is a continuous reduction of `isoSetoid Language.graph ℕ` to `isoSetoid Language.order ℕ`
+with values in `treeClass`. A node is original exactly when an infinite chain starts at it;
+`(x, some 0)` is the unique child of `(x, none)` that is not original, and the subtree above it
+has height `χ_c(x) + 2`; so a tree isomorphism restricts to a parent-preserving, colour-preserving
+bijection of `List ℚ`, and 3.2 (iii) applies; conversely 3.2 (ii) extends to tags. Restricted to
+`graphClass`, the map reduces `classIso graphClass` to `classIso treeClass`, and with 2.3 this
+gives `borelComplete_treeClass`, that is `BorelComplete treeClass` (friedman-stanley-1989 §2;
+montalban-cst1 Lemma VI.18, lines 4205–4245). *Needs:* 3.2, Layer 2.3, Layer 1.1, Layer 1.2,
+Layer 0.1.
 
 **Checks.**
 

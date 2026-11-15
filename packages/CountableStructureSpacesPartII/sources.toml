@@ -10,7 +10,7 @@ venue = "Ann. of Math. (2) 199 (2024), no. 3, 1177-1224"
 doi = "10.4007/annals.2024.199.3.4"
 arxiv = "2102.12371v6"
 locator_scheme = "theorem"
-locator = "Definition 1.2 (lines 70-73), Definition 1.4 (line 83), Remark 1.5 (lines 88-91), Definition 1.6 (lines 95-101), Fact 1.7 (lines 103-106), Notation 1.8 and Convention 1.9 (lines 110-121), Main Theorem (lines 169-171)"
+locator = "Fact 1.1 (lines 56-58), classes as standard Borel spaces and relations on them (lines 65-68), Definition 1.2 (lines 70-73), Definition 1.4 (lines 83-87), Remark 1.5 (lines 88-91), Definition 1.6 (lines 95-101), Fact 1.7 (lines 103-106), Notation 1.8 and Convention 1.9 (lines 110-121), Main Theorem (lines 169-171)"
 url = "https://arxiv.org/abs/2102.12371v6"
 fetched_from = "https://arxiv.org/pdf/2102.12371v6"
 fetched_at = "2026-11-04T16:58:42Z"
@@ -19,7 +19,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v6; numbering of the introduction (Definitions 1.2-1.6, Main Theorem, Theorem 1.10) read from the arXiv text, to be checked against the Annals version"
-cited_for = ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "1.2", "1.4", "1.6", "2.4", "3.5", "3.8", "5.3", "6.3", "Scope and ownership: torsion-free abelian groups"]
+cited_for = ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "1.2", "1.4", "1.6", "2.4", "3.5", "3.8", "5.3", "6.3", "Conventions: Borel reduction between classes", "Scope and ownership: torsion-free abelian groups"]
 
 [[source]]
 id = "becker-kechris-bams"
