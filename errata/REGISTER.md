@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13584 mistakes recorded on the board: 7784 misprints, 3547 errors, 1780 gaps, 473 unparsed bullets.
+13585 mistakes recorded on the board: 7784 misprints, 3548 errors, 1780 gaps, 473 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -12734,6 +12734,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Error** at Lemma VI.18 proof, printed page 91 (line 4254): the source says finite rational sequences in lexicographic order form a copy of ℚ; it should be retain their least element under the prefix-first convention; affects a stated result. Found by CountableStructureSpacesPartII (#13739 at 4f171c3, 2026-11-11, codex gpt-6-astra).
 - **Error** at the proof of Lemma VI.18, printed page 91: the source says finite sequences of rationals in lexicographic order form a copy of ℚ; it should be a dense order with least element the empty sequence; affects the proof. Found by CountableStructureSpacesPartII (#13739 at 8b24069, 2026-11-13, claude fable).
 - **Error** at the proof of Lemma VI.18, printed page 91: the source says finite sequences of rationals in lexicographic order form a copy of the rationals; it should be a dense order whose least element is the empty sequence; affects the proof. Found by CountableStructureSpacesPartII (#13739 at 0282936, 2026-11-15, claude fable).
+- **Error** at the proof of Lemma VI.18, printed page 91: the source says the finite sequences of rationals in the lexicographic order form a copy of the rationals; it should be a dense order with an endpoint, the empty sequence; affects the proof. Found by CountableStructureSpacesPartII (#16877 at 0e52b90, 2026-11-15, claude fable).
 
 ## montalban-cst2
 
