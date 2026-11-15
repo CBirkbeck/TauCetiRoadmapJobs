@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CanonicalModelsAndGonality~9",
+  "head": "ed909376f779b9799948e0ba645175bd259c676b",
+  "pr": 1726,
+  "folder": "CanonicalModelsAndGonality",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 11 changed lines since b184835. Previous R01 (9.3 locator) repaired: checked against derickx-van-hoeij-2014 lines 16-25 and poonen-2007 Prop. A.1. Title and description read against the head and the folder's change: no contradiction, nothing unstated (9 layers, 61 milestones, BelyiMaps 9.2-9.4 on main, metadata, Suggested.lean contents). Worker's gate passes (build=0); depcheck with the candidate order: 244 roadmaps, 2231 edges, 0 problems. Suggested.lean elaborates, exit 0, 51 sorry warnings only. Adversarial rows computed for 9.3. D01 stands (deferred, outside this folder).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "GroupActionsOnRiemannSurfaces and this roadmap each name the other as consumer, and both prove trigonal uniqueness",
+    "where": "GroupActionsOnRiemannSurfaces README §6.4 and its Downstream consumers",
+    "raised": "PRREVIEW-CanonicalModelsAndGonality~7"
+   }
+  ],
+  "text": "4b7a216fecfeb98c"
+ }
+}
