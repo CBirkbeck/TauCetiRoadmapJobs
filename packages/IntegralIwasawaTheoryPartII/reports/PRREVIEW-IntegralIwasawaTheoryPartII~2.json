@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IntegralIwasawaTheoryPartII~2",
+  "head": "ca0b79d2f4a37d258bb4c203c7bd4419f7413522",
+  "pr": 2267,
+  "folder": "IntegralIwasawaTheoryPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 132 changed lines since f3022f4. R01-R05 of the previous review are all repaired (locators checked at DKV16 lines 56-66, 75-76, 126-130, 158 and CD14 lines 224-228; the Needs lines of 2.2 and 2.5a checked for acyclicity). The regrouping keeps every former section id as a bold-labelled target; the 38 consumer claims of the ten new section openings were checked against the Needs lines and routes; citations of the merged ids resolved in the README, in the docstring of Suggested.lean and in the open CohomologyOfGroups. Title and description read against this head: nothing contradicted, nothing unstated. Gate passes; depcheck 245 roadmaps, 2241 edges, 0 problems; Suggested.lean elaborates with sorry as the only warning. Adversarial table: 7 rows with computed values; untouched statements stand as in the review of f3022f4. Accepted conditional on the eight declared supplier gaps.",
+  "text": "95acefd634012ca4"
+ }
+}
