@@ -239,7 +239,7 @@ The API consists of the following facts.
 - Block-spin representation: for a finite set V, a ferromagnetic coupling J on V and ρ = ρ_{N,K,q}, the Gibbs measure `μ_{V,J,ρ}` is the image of the Ising Gibbs measure `μ_{V×Fin N, J̃, ρ_I}` under σ ↦ (Σ_n q_n σ_{x,n})_x, where `J̃_{(x,n),(y,m)} = K_{nm}` for x = y and `J_{xy} q_n q_m` for x ≠ y; J̃ is ferromagnetic (Aizenman–Duminil-Copin, lines 392–410 and 2023–2027).
 - Lee–Yang property: the Laplace transform `E(h) = ∫ e^{hφ} dρ_{N,K,q}(φ)` is an entire function of h ∈ ℂ with `|E(h)| ≤ e^{|h| Σ_n q_n}`, and E(h) ≠ 0 whenever Re h ≠ 0 (Aizenman–Duminil-Copin, lines 387–388). Consequently there are numbers a_j > 0, finitely or countably many and repeated according to multiplicity, with `Σ_j a_j⁻² = ½ ∫ φ² dρ_{N,K,q}` and `E(h) = Π_j (1 + h²/a_j²)` for every h ∈ ℂ. In particular `E(h) ≤ exp(½h² ∫ φ² dρ_{N,K,q})` for real h, and the fourth cumulant `∫ φ⁴ dρ_{N,K,q} − 3(∫ φ² dρ_{N,K,q})²` equals `−12 Σ_j a_j⁻⁴ ≤ 0` (an instance of Newman's Lee–Yang inequalities, Sokal, item (i), lines 428–433). A proof route: `E(h) = Z^I_{Fin N,K}(hq)/Z^I_{Fin N,K}(0)`, so the Lee–Yang theorem gives E(h) ≠ 0 for Re h > 0 when every q_n > 0, and E(−h) = E(h) covers Re h < 0. If some q_n vanish, the transforms for the weights q + ε, all positive, converge to E locally uniformly on ℂ as ε ↓ 0; a zero h₀ of E with Re h₀ > 0 is isolated because E(0) = 1, and the maximum modulus principle (`Complex.norm_le_of_forall_mem_frontier_norm_le`) applied to the reciprocals of the approximating transforms on a small closed disc around h₀ inside the right half-plane, on whose boundary E does not vanish, gives a contradiction (Hurwitz's argument). The product formula is ZerosOfLFunctions §5.5 applied to E, which has order at most 1 and E(0) = 1: E(0) = 1 makes the constant factor 1, evenness of E makes the linear term of the exponent vanish and pairs the factors at ±ia_j into `1 + h²/a_j²`, and the mass identity and the fourth cumulant compare the coefficients of h² and h⁴ in E and in log E.
 
-*Needs:* 0.2; 1.1; 1.2; Mathlib `Complex.norm_le_of_forall_mem_frontier_norm_le`; ZerosOfLFunctions §5.5.
+*Needs:* 0.1; 0.2; 1.1; Mathlib `MeasureTheory.Measure.map`; for the evenness of the block measures and for the Lee–Yang property, 1.2; for the Lee–Yang property only, also Mathlib `Complex.norm_le_of_forall_mem_frontier_norm_le` and ZerosOfLFunctions §5.5.
 
 **Checks.**
 
@@ -264,7 +264,7 @@ The API consists of the following facts.
 - Tail control: if Ising-block measures η_k converge weakly to a probability measure ρ with `∫ exp(|φ|^α) dρ < ∞` for some α > 2, then `sup_k ∫ e^{cφ²} dη_k < ∞` for every real c. A proof route, writing `E_k(h) = Π_j (1 + h² x_{k,j})` with `x_{k,j} = a_{k,j}⁻²` and `σ_k² = ∫ φ² dη_k = 2 Σ_j x_{k,j}` by the Lee–Yang property of 2.1: (a) σ_k² is bounded, because `∫ φ⁴ dη_k ≤ 3σ_k⁴` (2.1) and the Paley–Zygmund inequality (the Cauchy–Schwarz inequality for `φ² · 1[φ² ≥ σ_k²/2]`, whose integral is at least σ_k²/2) give `η_k(φ² ≥ σ_k²/2) ≥ 1/12`, which the tightness of a convergent sequence (`MeasureTheory.isTightMeasureSet_of_isCompact_closure`) forbids along σ_k → ∞; put `S = sup_k σ_k²`. (b) `E_k(h) ≤ e^{h²S/2}` for real h, so `e^{hφ}` is uniformly integrable along the sequence and `E_k(h) → ∫ e^{hφ} dρ`. (c) Young's inequality (`Real.young_inequality`) gives `|hφ| ≤ |φ|^α + |h|^{α′}` with `α′ = α/(α − 1) < 2`, hence `∫ e^{hφ} dρ ≤ C e^{|h|^{α′}}` with `C = ∫ exp(|φ|^α) dρ ≥ 1`. (d) Since `log(1 + u)/u` decreases on (0, 1], the sum `s_k(θ)` of those x_{k,j} that are at most θ satisfies `s_k(θ) log 2 ≤ θ log E_k(θ^{−1/2})`, so (b) and (c) give `limsup_k s_k(θ) ≤ (θ log C + θ^{1−α′/2})/log 2`, which tends to 0 as θ ↓ 0. (e) At most S/(2θ) of the x_{k,j} exceed θ and each is at most S/2, so `E_k(h) ≤ (1 + h²S/2)^{S/(2θ)} e^{h² s_k(θ)}` for real h. (f) For c > 0 and a standard normal g, `∫ e^{cφ²} dη_k = E[E_k(√(2c) g)]` by Tonelli's theorem and `ProbabilityTheory.mgf_id_gaussianReal`; choosing θ with `limsup_k s_k(θ) < 1/(8c)` bounds this, for all large k, by `E[(1 + cSg²)^{S/(2θ)} e^{g²/4}] < ∞`, and each of the finitely many remaining η_k has bounded support. For c ≤ 0 the integrals are at most 1.
 - Finite-volume transfer: for every ρ in the class, every sequence of Ising-block measures η_k converging weakly to ρ, every finite set V, every coupling J on V and every continuous F : ℝ^V → ℝ with `|F(φ)| ≤ C(1 + Σ_x φ_x²)^m`, `Z_{V,J}(η_k) → Z_{V,J}(ρ)`, `⟨F⟩_{V,J,η_k} → ⟨F⟩_{V,J,ρ}` and `μ_{V,J,η_k} → μ_{V,J,ρ}` weakly. The tail control supplies the uniform quadratic exponential moments that 1.4 assumes, and 1.4 gives the conclusion. This is the passage from Ising blocks to the class that Aizenman–Duminil-Copin assert by continuity (lines 1982–1985 and 2019–2022).
 
-*Needs:* 0.1; 1.1; 1.2; 1.4; 2.1 (the Lee–Yang property); Mathlib `MeasureTheory.isTightMeasureSet_of_isCompact_closure`, `Real.young_inequality`, `ProbabilityTheory.mgf_id_gaussianReal`.
+*Needs:* 0.1; 2.1 (the Ising-block measures); for the tail control, 2.1 (the Lee–Yang property) and Mathlib `MeasureTheory.isTightMeasureSet_of_isCompact_closure`, `Real.young_inequality`, `ProbabilityTheory.mgf_id_gaussianReal`; for the finite-volume transfer, 1.1, 1.2, 1.4 and the tail control.
 
 **Checks.**
 
@@ -293,7 +293,7 @@ Prove that for λ > 0 and b ∈ ℝ the φ⁴ measure `ρ_{λ,b}` belongs to the
 
 ### Dependencies
 
-Layers 0 and 1; ZerosOfLFunctions §5.5; Mathlib `Complex.norm_le_of_forall_mem_frontier_norm_le`, `MeasureTheory.isTightMeasureSet_of_isCompact_closure`, `Real.young_inequality`, `ProbabilityTheory.mgf_id_gaussianReal`. Griffiths–Simon 1973 is cited by locator.
+Layers 0 and 1; ZerosOfLFunctions §5.5; Mathlib `MeasureTheory.Measure.map`, `Complex.norm_le_of_forall_mem_frontier_norm_le`, `MeasureTheory.isTightMeasureSet_of_isCompact_closure`, `Real.young_inequality`, `ProbabilityTheory.mgf_id_gaussianReal`. Griffiths–Simon 1973 is cited by locator.
 
 ## Layer 3: Correlation inequalities in finite volume
 
@@ -364,7 +364,7 @@ Prove, for a finite set V and a ferromagnetic coupling J, with Ising spins: (i) 
 
 A proof route: use the unnormalised switching identity throughout (or use source-conditioned laws only after verifying their positive normalizers, with zero-normalizer cases treated by the unnormalised identity). For (i), apply the switching lemma with A′ = {x₁, x_j}, B′ the remaining sources and the indicator of `𝓕_{A′}`, and use that in a current with sources {x₁, …, x_{2n}} the source x₁ is joined by a path to some other source x_j; (ii) follows from (i) by induction on n with Griffiths I, reducing repeated sites by σ_x² = 1; (iii) follows from the switching lemma by conditioning a current with sources {0, y} on the cluster of 0 in its restriction to the pairs inside Λ, which a path to y must leave through some pair {u, v} with u ∈ Λ and v ∉ Λ (Aizenman–Duminil-Copin, footnote 5). For the Griffiths–Simon class, an Ising-block single-site measure with nonnegative weights q reduces each inequality to the Ising inequality on V × Fin N through 2.1, by expanding φ_x = Σ_n q_n σ_{x,n} with nonnegative coefficients; the inequalities pass to the full weak-limit class by the finite-volume moment-transfer theorem of 2.2.
 
-*Needs:* 1.1; 1.4; 2.1; 2.2; 3.1; 3.4.
+*Needs:* 1.1; 3.1; 3.4; for the Griffiths–Simon class and the corollaries, also 1.4, 2.1 (the block-spin representation) and 2.2 (the finite-volume transfer).
 
 **Checks.**
 
@@ -380,7 +380,7 @@ Prove the Messager–Miracle-Solé inequality: let V be finite, ρ even and admi
 
 Prove that the hypotheses hold for the nearest-neighbour coupling on every finite R-invariant V ⊂ ℤ^d when R is a reflection of ℤ^d in a coordinate hyperplane `x_i = a` with a ∈ ½ℤ, or in a diagonal hyperplane `x_i ± x_j = a` with a ∈ ℤ.
 
-*Needs:* 0.1; 1.1; 1.2; 3.1 (the expansion technique).
+*Needs:* for the reflection inequality, 0.1; 1.1; 1.2; 3.1 (the expansion technique); the verification of its hypotheses for nearest-neighbour couplings needs only the Conventions.
 
 **Checks.**
 
@@ -392,7 +392,7 @@ Prove that the hypotheses hold for the nearest-neighbour coupling on every finit
 
 Prove the integration-by-parts identity for φ⁴ measures: for λ > 0, b ∈ ℝ, a finite set V, any coupling J and x ∈ V, `4λ⟨φ_x⁴⟩ = 1 + 2b⟨φ_x²⟩ + Σ_{y≠x} J_{xy}⟨φ_xφ_y⟩` under `μ_{V,J,ρ_{λ,b}}`, and more generally `⟨∂_xF⟩ = ⟨F · (4λφ_x³ − 2bφ_x − Σ_{y≠x}J_{xy}φ_y)⟩` for every continuously differentiable F : ℝ^V → ℝ with `|F(φ)| + |∂_xF(φ)| ≤ C(1 + Σ_y φ_y²)^k` for some C and k; the diagonal entry `J_{xx}` enters neither side (Sokal, Section 3.1, lines 846–853). Prove the uniform bound `max_{x∈V} ⟨φ_x²⟩ ≤ M(λ, b, ‖J‖) = [(2b₊ + ‖J‖) + √((2b₊ + ‖J‖)² + 16λ)]/(8λ)`, independent of V, from the identity, Jensen's inequality `⟨φ_x⁴⟩ ≥ ⟨φ_x²⟩²` and the Cauchy–Schwarz inequality, evaluated at a site where `⟨φ_x²⟩` is maximal. Prove Newman's exponential bound: for ρ in the Griffiths–Simon class, a ferromagnetic J and t ∈ [0, ∞)^V, `⟨exp(Σ_x t_xφ_x)⟩ ≤ exp(½⟨(Σ_x t_xφ_x)²⟩)`, hence `⟨e^{a|φ_x|}⟩ ≤ 2e^{a²⟨φ_x²⟩/2}` for real a (Sokal, item (j), lines 434–435), by summing the Gaussian inequality of 3.5 against `1/(2n)!`.
 
-*Needs:* 0.2; 1.1; 1.2; 2.3; 3.5.
+*Needs:* 0.2; 1.1; 1.2; for Newman's bound only, 2.2 and 3.5.
 
 **Checks.**
 
@@ -426,7 +426,7 @@ The API consists of the following facts.
 - Monotonicity in J: for ferromagnetic J ≤ J′ (both translation invariant and finite range), `⟨φ_A⟩_{J,ρ} ≤ ⟨φ_A⟩_{J′,ρ}`.
 - Finiteness: if `sup_R max_{x∈V_R} ⟨φ_x^{2k}⟩_{V_R,J,ρ} < ∞` for every k, all limits are finite (Hölder).
 
-*Needs:* 1.2; 3.1; 3.2; 3.5.
+*Needs:* 1.2; 3.1; 3.2; for the Lebowitz, Gaussian and Simon–Lieb inequalities of the limits, 3.5.
 
 **Checks.**
 
@@ -444,7 +444,7 @@ The API consists of the following facts.
 - `μ_{J,ρ}` is invariant under the translations of ℤ^d, under the elements of W_d preserving J and under φ ↦ −φ.
 - Griffiths I and II and the FKG inequality hold for `μ_{J,ρ}` (for continuous, polynomially bounded, coordinatewise non-decreasing functions of finitely many coordinates), and for ρ in the Griffiths–Simon class also the Lebowitz and Gaussian inequalities and Newman's exponential bound.
 
-*Needs:* 3.3 (finite-volume FKG and uniform-integrability passage for continuous polynomially bounded cylinder functions); 3.7; 4.1; Mathlib `isCompact_closure_of_isTightMeasureSet`, `MeasureTheory.Measure.ext_of_charFun`, `ProbabilityTheory.tendstoInDistribution_iff_tendstoInDistribution_inner`, `MeasureTheory.IsProjectiveMeasureFamily`; Tau Ceti `TauCeti.Measure.exists_isProjectiveLimit_of_countable`, `TauCeti.Measure.ext_of_forall_integral_pow_eq_of_exists_integrable_exp`.
+*Needs:* 4.1; Mathlib `isCompact_closure_of_isTightMeasureSet`, `MeasureTheory.Measure.ext_of_charFun`, `ProbabilityTheory.tendstoInDistribution_iff_tendstoInDistribution_inner`, `MeasureTheory.IsProjectiveMeasureFamily`; Tau Ceti `TauCeti.Measure.exists_isProjectiveLimit_of_countable`, `TauCeti.Measure.ext_of_forall_integral_pow_eq_of_exists_integrable_exp`; for the sufficient conditions for φ⁴ measures and for the Griffiths–Simon class and for Newman's bound of the limit, 3.7, and for φ⁴ measures also 2.3; for the FKG inequality of the limit, 3.3 (finite-volume FKG and uniform-integrability passage for continuous polynomially bounded cylinder functions).
 
 **Checks.**
 
@@ -463,7 +463,7 @@ The API consists of the following facts.
 - For ρ in the Griffiths–Simon class and Λ ∋ 0 finite, the Simon–Lieb inequality gives `S(y) ≤ Σ_{u∈Λ, v∉Λ} ⟨φ_0φ_u⟩_Λ J_{uv} S(y − v)` for y ∉ Λ.
 - The truncated susceptibility `χ_L = Σ_{x∈Λ_L} S(x)` (Aizenman–Duminil-Copin (5.23)) is finite whenever the moments are.
 
-*Needs:* 3.5; 4.1.
+*Needs:* 4.1; for the Simon–Lieb bound, 3.5.
 
 **Checks.**
 
@@ -490,7 +490,7 @@ The one-dimensional Ising chain is the complete worked example of this layer: co
 
 ### Dependencies
 
-Layers 1 and 3 (and Layer 2 through 3.5 and 3.7); Mathlib `isCompact_closure_of_isTightMeasureSet`, `MeasureTheory.Measure.ext_of_charFun`, `ProbabilityTheory.tendstoInDistribution_iff_tendstoInDistribution_inner`, `MeasureTheory.IsProjectiveMeasureFamily`, `MeasureTheory.Measure.infinitePi`; Tau Ceti `TauCeti.Measure.exists_isProjectiveLimit_of_countable`, `TauCeti.Measure.ext_of_forall_integral_pow_eq_of_exists_integrable_exp`.
+Layers 1 and 3, and Layer 2 (through 3.5 and 3.7, and 2.3 for the φ⁴ case of 4.2); Mathlib `isCompact_closure_of_isTightMeasureSet`, `MeasureTheory.Measure.ext_of_charFun`, `ProbabilityTheory.tendstoInDistribution_iff_tendstoInDistribution_inner`, `MeasureTheory.IsProjectiveMeasureFamily`, `MeasureTheory.Measure.infinitePi`; Tau Ceti `TauCeti.Measure.exists_isProjectiveLimit_of_countable`, `TauCeti.Measure.ext_of_forall_integral_pow_eq_of_exists_integrable_exp`.
 
 ## Layer 5: Reflection positivity and the infrared bound on the torus
 
@@ -542,7 +542,7 @@ Prove that for every h ∈ ℝ^{T_L}, `Z(h) ≤ Z(0)`, where `Z(h) = ∫ exp(−
 
 Prove the infrared bound `E(p) Ŝ_L(p) ≤ 1/J` for every p ∈ Λ*_L ∖ {0}, and its quadratic-form version `J⟨(φ, −Δh)²⟩^{per} ≤ (h, −Δh)` for all real h on T_L (Aizenman–Duminil-Copin (5.8)–(5.9), lines 1080–1087, with the constant corrected as in the Conventions; Peled–Spinka (49)–(52), lines 1686–1741; Simon, Twelve Tales (5.17) and (5.22), lines 1518 and 1551–1556; Fröhlich–Simon–Spencer 1976, Theorem 1). The first-order term vanishes by translation invariance, since Σ_x(Δh)_x = 0, so evenness of ρ is not needed. Prove the sum rule `⟨φ_0²⟩^{per} = |T_L|⁻¹ Σ_{p∈Λ*_L} Ŝ_L(p)` (5.10, line 1091), and for d ≥ 3 the Riemann-sum limit `|T_L|⁻¹ Σ_{p∈Λ*_L∖{0}} 1/E(p) → I_d = (2π)^{−d} ∫_{[−π,π]^d} dp/E(p) < ∞`.
 
-*Needs:* 5.1; 5.3.
+*Needs:* 5.1; for the infrared bound and its quadratic-form version, 5.3.
 
 **Checks.**
 
@@ -582,7 +582,7 @@ The API consists of the following facts.
 - Realisation: a family of probability measures ν_F on ℝ^F, F ⊆ C_c(ℝ^d) finite, that is projective and linear (each ν_F is carried by the subspace `{v : v_h = av_f + bv_g}` whenever f, g, h = af + bg ∈ F) is the family of finite-dimensional laws of a random field, unique up to finite-dimensional distributions; the canonical field is the coordinate family on ℝ^{C_c(ℝ^d)} under the projective limit given by StochasticCalculus §1.1.
 - Transport: for a linear map ℓ of C_c(ℝ^d), `(T_{ℓf})_f` is a random field; in particular for g ∈ W_d, for translations and for dilations of ℝ^d, `f ↦ T_{f∘g}` is a random field. Negatives, scalar multiples and sums of independent random fields are random fields.
 
-*Needs:* StochasticCalculus §1.1; Mathlib `CompactlySupportedContinuousMap`, `ProbabilityTheory.map_eq_iff_forall_finset_map_restrict_eq`, `MeasureTheory.IsProjectiveMeasureFamily`, `MeasureTheory.IsProjectiveLimit.unique`.
+*Needs:* Mathlib `CompactlySupportedContinuousMap`, `ProbabilityTheory.map_eq_iff_forall_finset_map_restrict_eq`; for the realisation, StochasticCalculus §1.1 and Mathlib `MeasureTheory.IsProjectiveMeasureFamily`, `MeasureTheory.IsProjectiveLimit.unique`.
 
 **Checks.**
 
@@ -661,7 +661,7 @@ The API consists of the following facts.
 - Under the same moment hypothesis, for R ≥ L and Σ = Σ^{(R)}_L > 0, the field of the indicator of Q has second moment 1: `⟨T_{1_Q,L,Σ}²⟩_{V_R} = 1`.
 - For even admissible ρ and ferromagnetic J, `Σ^{(R)}_L` is non-decreasing in R (3.2) and is zero only for ρ = δ₀.
 
-*Needs:* 1.1; 1.2; 3.2.
+*Needs:* 1.1; 1.2; for the monotonicity of the block second moment in R, 3.2.
 
 **Checks.**
 
@@ -680,7 +680,7 @@ The API consists of the following facts.
 - Reachability is monotone in 𝒞.
 - For admissible members of 𝒞 both stability and coordinate-square integrability are automatic (1.1–1.2); for the Gaussian measures γ_b both follow from the positive-definiteness condition of 1.5, which for `b ≤ −d·J_n` holds on every box.
 
-*Needs:* 1.1; 1.2 (admissible moments); 1.5; 6.1; 7.1; Mathlib `MeasureTheory.ProbabilityMeasure`.
+*Needs:* 1.1; 6.1; 7.1; Mathlib `MeasureTheory.ProbabilityMeasure`; for the automatic stability and integrability, 1.2 (admissible moments) and 1.5 (Gaussian measures).
 
 **Checks.**
 
@@ -711,7 +711,7 @@ Define, for m ≥ 0, the covariance `C_m(f, g) = ∫ conj(𝓕f(ξ)) 𝓕g(ξ)/(
 
 Prove that for d ≥ 1 and m > 0, and for d ≥ 3 and m = 0, the Gaussian free field of mass m is reachable from the Gaussian class {γ_b : b < 0}, with `J_n = 1`, `b_n = −(d + m²/(2L_n²))`, and arbitrary L_n → ∞ and R_{n,m} → ∞ (Sokal, Section 2.3 and Lemma 2.2, lines 620–721; Fröhlich, lines 266–269; Simon, Twelve Tales, lines 960–975; Glimm–Jaffe, Chapter 6). A proof route: the laws of `(T^{n,m}_f)_f` are centred Gaussian (1.5); as R → ∞ their covariances converge to `Σ_L⁻¹ Σ_{x,y} f(x/L)g(y/L) G_{m/L}(x − y)`, with `G_μ` of 1.5 and `Σ_L = Σ_{x,y∈Λ_L} G_{m/L}(x − y)` the limit of the non-decreasing block variances; after the substitution p = q/L, `L^{−(d+2)} Σ_{x,y} f(x/L) g(y/L) G_{m/L}(x − y) = (2π)^{−d} ∫_{[−πL,πL]^d} conj(F_L(q)) H_L(q) / (L²E(q/L) + m²) dq`, with `F_L(q) = L^{−d}Σ_x f(x/L)e^{−iq·x/L}` and H_L likewise for g, converging to `C_m(f, g)` by dominated convergence (`L²E(q/L) ≥ (4/π²)|q|²` on the domain, Parseval for F_L and H_L); the same holds for `1_Q`, whose transforms are products of Dirichlet kernels; convergence of covariances gives convergence of the Gaussian laws.
 
-*Needs:* 1.5; 6.3; 7.2; 7.3; RelativisticQuantumFieldTheory §7.1 (analytic continuum Green kernels, Fourier agreement and decay); Mathlib `Real.fourier_eq`, `ProbabilityTheory.charFun_multivariateGaussian`, `MeasureTheory.ProbabilityMeasure.tendsto_iff_tendsto_charFun`.
+*Needs:* 6.3; Mathlib `Real.fourier_eq`; for the kernel representation, RelativisticQuantumFieldTheory §7.1 (analytic continuum Green kernels, Fourier agreement and decay); for the reachability, 1.5, 7.2, 7.3 and Mathlib `ProbabilityTheory.charFun_multivariateGaussian`, `MeasureTheory.ProbabilityMeasure.tendsto_iff_tendsto_charFun`.
 
 **Checks.**
 

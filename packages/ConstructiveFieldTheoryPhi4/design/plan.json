@@ -470,8 +470,10 @@
       "where": "Definition 2.1(1), lines 363-373; Figure 1, lines 377-382; weights nonnegative as used at line 2031; Lee-Yang property of block constructions, lines 387-388; Lee-Yang theorem: lebowitz-ruelle-speer-2012 Section 1, lines 62-69, and Lemma 2.4, lines 217-222; cumulant sign: sokal-1982 item (i), lines 428-433"
      },
      "prerequisites": [
+      "target:0.1",
       "target:0.2.1",
       "target:1.1",
+      "target:1.2",
       "mathlib:MeasureTheory.Measure.map",
       "mathlib:Complex.norm_le_of_forall_mem_frontier_norm_le",
       "roadmap:ZerosOfLFunctions §5.5"
@@ -979,7 +981,7 @@
       "target:0.2",
       "target:1.1",
       "target:1.2",
-      "target:2.3",
+      "target:2.2",
       "target:3.5"
      ],
      "api": [],
@@ -1094,6 +1096,7 @@
       "where": "(a)-(b), lines 405-409; duminilcopin-2017-lectures Corollary 1.9, line 549"
      },
      "prerequisites": [
+      "target:2.3",
       "target:3.3",
       "target:3.7",
       "target:4.1",
