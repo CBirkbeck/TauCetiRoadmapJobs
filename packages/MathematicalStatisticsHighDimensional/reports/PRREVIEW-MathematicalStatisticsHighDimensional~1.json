@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsHighDimensional~1",
+  "head": "5eade1955f232043c75b99a444cd1ce4cf2c6d6f",
+  "pr": 2396,
+  "folder": "MathematicalStatisticsHighDimensional",
+  "date": "2026-11-15",
+  "findings": 8,
+  "blocking": 2,
+  "notes": "Full review. Gate FAIL (empty-sections=1, Suggested.lean line 1284); depcheck 0 problems; elaboration exit 0 with 82 sorry warnings only; #check of all 130 declarations and 7 one-tactic probes on a scratch copy (1 closed). Adversarial table: 29 rows with computed values over the 15 sampled targets and the headlines. Sources: Johnstone2017 read (6 locators confirmed), CandesPlan2011 and BickelLevina2008 read (3 locators supplied); Wainwright, Giraud, Foucart-Rauhut, van de Geer, Dickhaus, Boucheron-Lugosi-Massart, Massart, Yao-Zheng-Bai, Vershynin, Akaike not readable legally (listed under Not verifiable). 13 cross-roadmap citations resolved at main or the open heads. P2: 8.1 restates, with a worse constant and no citation, the residual sin-theta theorem at the pin (owner OperatorTheory/SpectralSubspacePerturbation); the expected maximum of 1.1 is also owned by MathematicalStatisticsAsymptotic 3.3. P3: gate failure, README/Lean mismatch in 3.7, six non-headline declarations, three missing locators, an incomplete Needs line in 8.2, an uncovered case in the route of 7.3.",
+  "text": "bc2faa5a3c3fb00a"
+ }
+}
