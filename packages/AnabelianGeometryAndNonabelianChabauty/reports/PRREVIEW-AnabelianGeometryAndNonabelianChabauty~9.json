@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnabelianGeometryAndNonabelianChabauty~9",
+  "head": "c71ec32dc38dfe440499094cd76e5f2da0e1e06b",
+  "pr": 1021,
+  "folder": "AnabelianGeometryAndNonabelianChabauty",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 49 changed lines since 4a7e05e. Both previous findings repaired (R01 named finiteEtale property and instance, gate statement-hygiene=0; R02 Layer 7 dependency paragraph names KTheoryFiniteLocalFields 1.8). Checked: Suggested.lean elaborated from the worktree (sorry the only warning), elaborated type of anabelian_isom compared with the previous head, one probe showing the named instance is required; 33 added supplier citations resolved on main or at the suppliers' open heads and against in-layer uses; pinned Mathlib and Tau Ceti searched for an existing finite etale morphism property (none named); dependency check 0 problems; gate re-run, every counter 0; no change outside the folder; title and description read against the head, nothing contradicted. The seeded sample does not fall in the changed passages. Huber-Wildeshaus remains unread (human-reviewer note).",
+  "text": "b3cbbb8fcc512bd8"
+ }
+}
