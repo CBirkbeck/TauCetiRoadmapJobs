@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PrismaticCohomologyPartIV~3",
+  "head": "32d1a4e86de70b031a0dd53d6357777b1360c7c7",
+  "pr": 1080,
+  "folder": "PrismaticCohomologyPartIV",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 132 changed lines since 385c7a4. Previous R01-R03 all repaired. Checked: the seven reworded passages against K1 and KY at their locators (statement, hypotheses, wording); the eight new consumer sentences against every *Needs:* line (seven exact, the one at README line 419 omits four consumers: R03, P3); the regrouped headings (every section id kept); the pull request's title and description against the head (two sentences contradicted: the Lean file declares nothing and the build emits no sorry warning: R01, R02, P3); CohomologyComparisons 4.6 and 6.1 at its open head. Gate: every check 0. Depcheck: 247 roadmaps, 2246 edges, 0 problems. Suggested.lean elaborates with exit 0 and no output. No change outside the folder.",
+  "text": "b2af27c16b0a5445",
+  "carried": {
+   "from": "32d1a4e86de70b031a0dd53d6357777b1360c7c7",
+   "head": "57f0c7ae26e6e1c704fb48f47a72bf4f31daf96b",
+   "findings": 3,
+   "lines": 2,
+   "folders": [
+    "PrismaticCohomologyPartIV"
+   ],
+   "outside": true
+  }
+ }
+}
