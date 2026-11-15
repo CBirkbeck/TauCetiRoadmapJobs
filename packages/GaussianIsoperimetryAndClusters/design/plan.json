@@ -30,9 +30,12 @@
       "tauceti:TauCeti.Probability.strictMono_cdf_gaussianReal",
       "tauceti:TauCeti.Probability.cdf_gaussianReal_pos",
       "tauceti:TauCeti.Probability.cdf_gaussianReal_lt_one",
+      "tauceti:TauCeti.Probability.hasDerivAt_cdf_gaussianReal",
       "tauceti:MeasureTheory.Measure.quantile",
       "tauceti:MeasureTheory.Measure.cdf_quantile",
-      "tauceti:MeasureTheory.Measure.quantile_cdf"
+      "tauceti:MeasureTheory.Measure.quantile_cdf",
+      "tauceti:TauCeti.Probability.quantile_gaussianReal_zero_one",
+      "tauceti:Real.hasDerivAt_erfInv"
      ],
      "api": [
       {
@@ -90,7 +93,8 @@
       "where": "Lemma 3.4, inequality (3.2), line 295–299 (their normalization, for the first bound); Ledoux1999 inequality (1.6), line 225–226 (the tail bound e^{−r²/2} without the factor ½; the ½ form is proved here)"
      },
      "prerequisites": [
-      "target:1.1"
+      "target:1.1",
+      "tauceti:TauCeti.Probability.hasDerivAt_cdf_gaussianReal"
      ],
      "api": [],
      "tests": [
@@ -586,6 +590,7 @@
       "where": "Lemma 3.4, line 892–905"
      },
      "prerequisites": [
+      "target:2.1",
       "target:3.2",
       "tauceti:TauCeti.setLIntegral_enorm_sub_setAverage_le_mul_totalVariationOn_of_eq_ball"
      ],
@@ -1076,7 +1081,8 @@
       "where": "Definition 3.2 and Lemma 3.3, line 226–232"
      },
      "prerequisites": [
-      "target:1.1"
+      "target:1.1",
+      "tauceti:TauCeti.Probability.hasDerivAt_cdf_gaussianReal"
      ],
      "api": [],
      "tests": [
@@ -1419,6 +1425,9 @@
      "prerequisites": [
       "target:3.5",
       "target:5.3",
+      "target:6.1",
+      "target:6.2",
+      "target:6.4",
       "target:6.6"
      ],
      "api": [],
@@ -1464,6 +1473,11 @@
        "name": "null_addition",
        "kind": "degenerate",
        "statement": "H = {x_1 < 0} ∪ ℚ²: H^(1) = {x_1 < 0}."
+      },
+      {
+       "name": "strips_density_one",
+       "kind": "non-example",
+       "statement": "U = ℝ² minus the vertical strips |x_1 − 2^{−k}| < 4^{−k}, k ≥ 2: every point of the x_2-axis has density one (the strips meet ball(x, ρ) in area ≤ (256/27)ρ³), yet over (−ρ, ρ) with ρ = 2^{−m} the empty vertical sections fill the proportion (5/6)ρ (0.208333 at ρ = 1/4): positive for every ρ, tending to 0, so density one gives a proportion bound on the sections that miss U, not almost every nearby section meeting U."
       }
      ]
     },

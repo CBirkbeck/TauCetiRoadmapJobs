@@ -58,9 +58,10 @@ Gaussian laws and quantiles.
 
 - `TauCeti.Probability.stdGaussian_eq_withDensity_norm` (TauCeti/Probability/Distributions/Gaussian/Density.lean:178): on every finite-dimensional real inner product space `E` with its Borel σ-algebra, `stdGaussian E` is `volume` with density `(2π)^{−dim E/2} exp(−‖x‖²/2)`, which is `e^{−W}` for the `W` of the Conventions.
 - `Submodule.map_orthogonalProjectionOnto_stdGaussian` (TauCeti/Probability/Distributions/Gaussian/Projection.lean:47): the orthogonal projection onto a subspace `K` carries `stdGaussian E` to `stdGaussian K`. `TauCeti.Probability.map_orthogonalProjectionOnto_stdGaussian_pi` (same file, line 94): for a finite family of pairwise orthogonal subspaces `K_i`, the joint law of the projections `x ↦ (P_{K_i} x)_i` is `Measure.pi (i ↦ stdGaussian (K i))`. Neither states the addition map `F × F^⊥ → E` or a binary product measure, which §1.3 derives.
-- `TauCeti.Probability.cdf_gaussianReal_zero_one` (TauCeti/Probability/Distributions/Gaussian/Cdf.lean:148): `Φ(x) = (1 + erf(x/√2))/2`, with `TauCeti.Real.continuous_erf` (TauCeti/Analysis/SpecialFunctions/Erf.lean:115). `TauCeti.Probability.strictMono_cdf_gaussianReal` (Cdf.lean:219), `TauCeti.Probability.cdf_gaussianReal_pos` (line 205) and `TauCeti.Probability.cdf_gaussianReal_lt_one` (line 212), for nonzero variance: `Φ` is strictly increasing with values in `(0, 1)`.
+- `TauCeti.Probability.cdf_gaussianReal_zero_one` (TauCeti/Probability/Distributions/Gaussian/Cdf.lean:148): `Φ(x) = (1 + erf(x/√2))/2`, with `TauCeti.Real.continuous_erf` (TauCeti/Analysis/SpecialFunctions/Erf.lean:115). `TauCeti.Probability.strictMono_cdf_gaussianReal` (Cdf.lean:219), `TauCeti.Probability.cdf_gaussianReal_pos` (line 205) and `TauCeti.Probability.cdf_gaussianReal_lt_one` (line 212), for nonzero variance: `Φ` is strictly increasing with values in `(0, 1)`. `TauCeti.Probability.hasDerivAt_cdf_gaussianReal` (Cdf.lean:226): for nonzero variance the distribution function has the Gaussian density as its derivative at every point, so `Φ′ = φ`.
 - `MeasureTheory.Measure.quantile` (TauCeti/Probability/Quantile.lean:164): the infimum of the points where the distribution function reaches a level `t`. Its value is the junk `0` for `t ≤ 0` (`MeasureTheory.Measure.quantile_of_nonpos`, line 209) and for `t > 1` (`MeasureTheory.Measure.quantile_of_one_lt`, line 216). At `t = 1` it is the least point of full cumulative mass when there is one and `0` otherwise: `2` for the Dirac mass at `2`, whose level-one set is `[2, ∞)`, and `0` for `gaussianReal 0 1`, whose distribution function stays below `1`. Hence `I` is defined separately at `0` and `1`, and no statement below evaluates `Φ⁻¹` at `0` or `1`.
 - `MeasureTheory.Measure.cdf_quantile` (Quantile.lean:340): if the distribution function of `μ` is continuous and `0 < t < 1`, it takes the value `t` at the quantile. `MeasureTheory.Measure.quantile_cdf` (line 359): if the distribution function is strictly increasing on the points where its value lies in `(0, 1)`, and its value at `x` lies in `(0, 1)`, the quantile at that value is `x`. For `gaussianReal 0 1` they give `Φ(Φ⁻¹(v)) = v` for `0 < v < 1` and `Φ⁻¹(Φ(s)) = s` for every real `s`.
+- `TauCeti.Probability.quantile_gaussianReal_zero_one` (TauCeti/Probability/Distributions/Gaussian/Quantile.lean:72): for `0 < u < 1` the quantile of `gaussianReal 0 1` is `√2 erfInv(2u − 1)`, where `Real.erfInv` (TauCeti/Analysis/SpecialFunctions/Erf.lean:250) inverts the error function on `(−1, 1)` and is `0` outside it; `Real.hasDerivAt_erfInv` (same file, line 376): at every `y ∈ (−1, 1)` the inverse error function has derivative `(√π/2) e^{erfInv(y)²}`. Together they make `Φ⁻¹` differentiable on `(0, 1)`.
 
 Euclidean variation and perimeter.
 
@@ -106,7 +107,7 @@ Define the Gaussian isoperimetric function `I : ℝ → ℝ` by `I(v) = φ(Φ⁻
 - `I` is continuous on `[0, 1]`, strictly positive on `(0, 1)`, zero at `0` and `1`, and attains its maximum `φ(0) = (2π)^{−1/2}` only at `1/2`.
 - `I` is `C^∞` on `(0, 1)` with `I′(v) = −Φ⁻¹(v)` and `I″(v) = −1/I(v)`; hence `I` is strictly concave on `[0, 1]` and locally Lipschitz on `(0, 1)` (MilmanNeeman2022 equation (1.1), line 186–187).
 
-A route: `Φ` is continuous by the error-function formula and strictly increasing with values in `(0, 1)`, so `MeasureTheory.Measure.cdf_quantile` and `MeasureTheory.Measure.quantile_cdf`, applied to `gaussianReal 0 1`, make the quantile the two-sided inverse of `Φ` on `(0, 1)` (`Φ(Φ⁻¹(v)) = v` for `0 < v < 1`, `Φ⁻¹(Φ(s)) = s` for real `s`), which gives `I(Φ(s)) = φ(s)`; differentiate the inverse and use `φ′(t) = −t φ(t)`. *Needs:* Mathlib `ProbabilityTheory.gaussianPDFReal`, `ProbabilityTheory.cdf`; Tau Ceti `TauCeti.Probability.cdf_gaussianReal_zero_one`, `TauCeti.Real.continuous_erf`, `TauCeti.Probability.strictMono_cdf_gaussianReal`, `TauCeti.Probability.cdf_gaussianReal_pos`, `TauCeti.Probability.cdf_gaussianReal_lt_one`, `MeasureTheory.Measure.quantile`, `MeasureTheory.Measure.cdf_quantile`, `MeasureTheory.Measure.quantile_cdf`.
+A route: `Φ` is continuous by the error-function formula and strictly increasing with values in `(0, 1)`, so `MeasureTheory.Measure.cdf_quantile` and `MeasureTheory.Measure.quantile_cdf`, applied to `gaussianReal 0 1`, make the quantile the two-sided inverse of `Φ` on `(0, 1)` (`Φ(Φ⁻¹(v)) = v` for `0 < v < 1`, `Φ⁻¹(Φ(s)) = s` for real `s`), which gives `I(Φ(s)) = φ(s)`. For the derivatives, the closed form `Φ⁻¹(v) = √2 erfInv(2v − 1)` makes `Φ⁻¹` differentiable on `(0, 1)`, and the chain rule applied to `Φ(Φ⁻¹(v)) = v` with `Φ′ = φ` gives `(Φ⁻¹)′ = 1/φ(Φ⁻¹) = 1/I`; with `φ′(t) = −t φ(t)` this gives `I′ = −Φ⁻¹` and `I″ = −1/I`. *Needs:* Mathlib `ProbabilityTheory.gaussianPDFReal`, `ProbabilityTheory.cdf`; Tau Ceti `TauCeti.Probability.cdf_gaussianReal_zero_one`, `TauCeti.Real.continuous_erf`, `TauCeti.Probability.strictMono_cdf_gaussianReal`, `TauCeti.Probability.cdf_gaussianReal_pos`, `TauCeti.Probability.cdf_gaussianReal_lt_one`, `TauCeti.Probability.hasDerivAt_cdf_gaussianReal`, `MeasureTheory.Measure.quantile`, `MeasureTheory.Measure.cdf_quantile`, `MeasureTheory.Measure.quantile_cdf`, `TauCeti.Probability.quantile_gaussianReal_zero_one`, `Real.hasDerivAt_erfInv`.
 
 **Checks.**
 
@@ -116,7 +117,7 @@ A route: `Φ` is continuous by the error-function formula and strictly increasin
 
 ### 1.2 Gaussian tails
 
-Prove that `1 − Φ(r) < φ(r)/r` for every `r > 0` (CianchiFuscoMaggiPratelli2011 Lemma 3.4, inequality (3.2), line 295–299, in their normalization) and `1 − Φ(r) ≤ ½ e^{−r²/2}` for every `r ≥ 0`, with equality in the second only at `r = 0`; the second sharpens by the factor `½` the tail bound `1 − Φ(r) ≤ e^{−r²/2}` of Ledoux1999 inequality (1.6), line 225–226, and is proved here. A route: the first follows from `∫_r^∞ φ < ∫_r^∞ (t/r) φ(t) dt = φ(r)/r`; for the second, `r ↦ e^{r²/2}(1 − Φ(r))` has derivative `e^{r²/2}(r(1 − Φ(r)) − φ(r)) < 0` by the first and value `1/2` at `0`. *Needs:* §1.1.
+Prove that `1 − Φ(r) < φ(r)/r` for every `r > 0` (CianchiFuscoMaggiPratelli2011 Lemma 3.4, inequality (3.2), line 295–299, in their normalization) and `1 − Φ(r) ≤ ½ e^{−r²/2}` for every `r ≥ 0`, with equality in the second only at `r = 0`; the second sharpens by the factor `½` the tail bound `1 − Φ(r) ≤ e^{−r²/2}` of Ledoux1999 inequality (1.6), line 225–226, and is proved here. A route: the first follows from `∫_r^∞ φ < ∫_r^∞ (t/r) φ(t) dt = φ(r)/r`; for the second, `r ↦ e^{r²/2}(1 − Φ(r))` has derivative `e^{r²/2}(r(1 − Φ(r)) − φ(r)) < 0` by the first and value `1/2` at `0`. *Needs:* §1.1; Tau Ceti `TauCeti.Probability.hasDerivAt_cdf_gaussianReal` (`Φ′ = φ`).
 
 **Checks.**
 
@@ -139,7 +140,7 @@ The half-space `{x_1 < 0}` in any `E` has measure `1/2`, and the half-space `{x_
 
 ### Dependencies
 
-Mathlib Gaussian laws and product measures; Tau Ceti's Gaussian density, projection laws, error function, quantile and its inverse laws.
+Mathlib Gaussian laws and product measures; Tau Ceti's Gaussian density, projection laws, error function and its inverse, the derivative of the Gaussian distribution function, the quantile with its inverse laws and its closed form.
 
 ## Layer 2: weighted variation and perimeter
 
@@ -266,7 +267,7 @@ For a `q`-cluster `Ω` and `i ≠ j`, the interface is `Σ_ij = ∂*Ω_i ∩ ∂
 
 ### 3.3 The interface quadratic form
 
-Prove that if `μ(E) = 1` and `μ(Ω) ∈ int Δ^{(q−1)}`, the graph on `{1, …, q}` with an edge `{i, j}` whenever `A_ij > 0` is connected, and `L_A` is positive definite on `E^{(q−1)}` (MilmanNeeman2022 Lemma 3.4, line 892–905). A route: a component `S` of the graph would give `U = ⋃_{i ∈ S} Ω_i` with `0 < μ(U) < 1` and `P_μ(U) = 0` by §3.2; zero perimeter makes `χ_U` locally of zero variation, hence constant on every ball by the BV Poincaré inequality, hence `U` null or conull. Milman–Neeman use the Gaussian isoperimetric inequality instead; this route holds for every weight. *Needs:* §3.2; Tau Ceti `TauCeti.setLIntegral_enorm_sub_setAverage_le_mul_totalVariationOn_of_eq_ball` (BV Poincaré on balls).
+Prove that if `μ(E) = 1` and `μ(Ω) ∈ int Δ^{(q−1)}`, the graph on `{1, …, q}` with an edge `{i, j}` whenever `A_ij > 0` is connected, and `L_A` is positive definite on `E^{(q−1)}` (MilmanNeeman2022 Lemma 3.4, line 892–905). A route: a component `S` of the graph would give `U = ⋃_{i ∈ S} Ω_i` with `0 < μ(U) < 1` and `P_μ(U) = 0` by §3.2; zero perimeter makes `χ_U` locally of zero variation, hence constant on every ball by the BV Poincaré inequality, hence `U` null or conull. Milman–Neeman use the Gaussian isoperimetric inequality instead; this route holds for every weight. *Needs:* §2.1 (comparison of weighted and Euclidean variation on relatively compact open sets), §3.2; Tau Ceti `TauCeti.setLIntegral_enorm_sub_setAverage_le_mul_totalVariationOn_of_eq_ball` (BV Poincaré on balls).
 
 **Checks.**
 
@@ -423,7 +424,7 @@ Prove that if `J ⊆ ℝ` is an open interval and `U ⊆ ℝ` is Lebesgue measur
 
 ### 5.2 Shifting intervals
 
-Prove that for `−∞ < a < b < ∞` with `a + b ≥ 0` and every `a < a′ < b′ ≤ ∞` with `γ¹((a′, b′)) = γ¹((a, b))`, `φ(a′) + φ(b′) < φ(a) + φ(b)`, with `φ(∞) = 0`; symmetrically for `a + b ≤ 0` and left shifts (CianchiFuscoMaggiPratelli2011 Definition 3.2 and Lemma 3.3, line 226–232). A route: along the shift `b′` is a function of `a′` with `db′/da′ = φ(a′)/φ(b′)`, so `d(φ(a′) + φ(b′))/da′ = −φ(a′)(a′ + b′) < 0` because `a′ + b′ > a + b ≥ 0`. *Needs:* §1.1.
+Prove that for `−∞ < a < b < ∞` with `a + b ≥ 0` and every `a < a′ < b′ ≤ ∞` with `γ¹((a′, b′)) = γ¹((a, b))`, `φ(a′) + φ(b′) < φ(a) + φ(b)`, with `φ(∞) = 0`; symmetrically for `a + b ≤ 0` and left shifts (CianchiFuscoMaggiPratelli2011 Definition 3.2 and Lemma 3.3, line 226–232). A route: along the shift `b′` is a function of `a′` with `db′/da′ = φ(a′)/φ(b′)`, so `d(φ(a′) + φ(b′))/da′ = −φ(a′)(a′ + b′) < 0` because `a′ + b′ > a + b ≥ 0`. *Needs:* §1.1; Tau Ceti `TauCeti.Probability.hasDerivAt_cdf_gaussianReal` (`Φ′ = φ`).
 
 **Checks.**
 
@@ -446,7 +447,7 @@ The intervals `(0, 1)`, `(−1, 1)` and `(−∞, s)` have perimeters `0.640913`
 
 ### Dependencies
 
-Layers 1–2; Tau Ceti's one-dimensional variation bound and essential boundary; Mathlib's Lebesgue density theorem.
+Layers 1–2; Tau Ceti's one-dimensional variation bound, essential boundary and derivative of the Gaussian distribution function; Mathlib's Lebesgue density theorem.
 
 ## Layer 6: Gaussian symmetrisation of sets of finite Gaussian perimeter
 
@@ -529,7 +530,7 @@ Layers 1, 2 and 5; Tau Ceti's Gaussian density, its cut-by-ball perimeter estima
 
 ### 7.1 Minimizers have half-line sections
 
-Let `n ≥ 2`, `0 < r < 1` and `H` a Lebesgue-measurable set with `γ(H) = r` and `P_γ(H) = I^{(1)}(r, 1 − r)`, which exists by §3.5. Prove that for every unit vector `e` and a.e. `z ∈ e^⊥`, the section `H_z` is null, conull, or agrees a.e. with a half-line `(−∞, c)` or `(c, ∞)` (CianchiFuscoMaggiPratelli2011 Section 4.2, Steps I–II, line 889–912). A route: minimality and §6.6 give `P_γ(H; B ⊕ ℝ e) = P_γ(S_e(H); B ⊕ ℝ e)` for every Borel `B`; on good points the chain of §6.6 is then an equality, so `p_H = I(v_H)` almost everywhere, and the equality case of §5.3 applies. *Needs:* §3.5, §5.3, §6.6.
+Let `n ≥ 2`, `0 < r < 1` and `H` a Lebesgue-measurable set with `γ(H) = r` and `P_γ(H) = I^{(1)}(r, 1 − r)`, which exists by §3.5. Prove that for every unit vector `e` and a.e. `z ∈ e^⊥`, the section `H_z` is null, conull, or agrees a.e. with a half-line `(−∞, c)` or `(c, ∞)` (CianchiFuscoMaggiPratelli2011 Section 4.2, Steps I–II, line 889–912). A route: minimality and §6.6 give `P_γ(H; B ⊕ ℝ e) = P_γ(S_e(H); B ⊕ ℝ e)` for every Borel `B`; on good points the chain of §6.6 is then an equality, so `p_H = I(v_H)` almost everywhere, and the equality case of §5.3 applies. *Needs:* §3.5, §5.3, §6.1 (`γ(S_e(H)) = γ(H)`, so that `S_e(H)` is a competitor), §6.2 (good points), §6.4 (the lower bound by sections and its equality case), §6.6.
 
 **Checks.**
 
@@ -538,12 +539,13 @@ Let `n ≥ 2`, `0 < r < 1` and `H` a Lebesgue-measurable set with `γ(H) = r` an
 
 ### 7.2 Minimizers are convex
 
-For `H` as in §7.1, prove that the set `H^{(1)} = TauCeti.essentialInterior volume H` of points of density one of `H` is open and convex, and that the same holds for `E ∖ H` (CianchiFuscoMaggiPratelli2011 Section 4.2, Steps III–IV, line 913–966). A route: given `x_1, x_2 ∈ H^{(1)}`, take `e` along `x_2 − x_1`; density one at both points makes almost every nearby section in direction `e` meet `H` near both points, and these sections are half-lines by §7.1, hence contain the segment between; this gives density one along `[x_1, x_2]`, cylinders aligned with `e` being comparable with balls. A convex set all of whose points have density one is open. `E ∖ H` is a minimizer for `1 − r` by complement invariance. *Needs:* §2.1, §7.1; Tau Ceti `TauCeti.essentialInterior`; Mathlib `Besicovitch.ae_tendsto_measure_inter_div` (Mathlib/MeasureTheory/Covering/Besicovitch.lean:1104).
+For `H` as in §7.1, prove that the set `H^{(1)} = TauCeti.essentialInterior volume H` of points of density one of `H` is open and convex, and that the same holds for `E ∖ H` (CianchiFuscoMaggiPratelli2011 Section 4.2, Steps III–IV, line 913–966). A route: given `x_1 ≠ x_2` in `H^{(1)}`, let `e` be the unit vector along `x_2 − x_1` and, for `ρ > 0`, let `C_ρ(x)` be the cylinder of points `x + z + te` with `z ∈ e^⊥`, `‖z‖ < ρ` and `|t| < ρ`, which contains `ball(x, ρ)` and lies in `ball(x, √2 ρ)`. Given `ε > 0`, density one gives `|C_ρ(x_i) ∖ H| ≤ ε |C_ρ(x_i)|` for `i = 1, 2` and all small `ρ`. By Fubini, the base points in the `(n − 1)`-ball of radius `ρ` about the common projection of `x_1` and `x_2` to `e^⊥` whose section in direction `e` meets `H` in a null set inside `C_ρ(x_1)` or inside `C_ρ(x_2)` fill a proportion at most `2ε` of that ball. Every other section meets `H` in positive length inside both cylinders; by §7.1 it is, up to a null set, a half-line or the whole line, so it contains the stretch between the two cylinders up to a null set. Hence for each point `y` of the open segment between `x_1` and `x_2` and every small `ρ` at most half the distance from `y` to each endpoint, `|C_ρ(y) ∖ H| ≤ 2ε |C_ρ(y)|`; as `ε` is arbitrary and cylinders are comparable with balls, `y ∈ H^{(1)}`. Density one at a point does not make almost every nearby section meet `H` (Checks), so the argument uses only this proportion bound. A convex set all of whose points have density one is open. `E ∖ H` is a minimizer for `1 − r` by complement invariance. *Needs:* §2.1, §7.1; Tau Ceti `TauCeti.essentialInterior`; Mathlib `Besicovitch.ae_tendsto_measure_inter_div` (Mathlib/MeasureTheory/Covering/Besicovitch.lean:1104).
 
 **Checks.**
 
 - For `H = {x_1 < s}`, `H^{(1)} = H` and `(E ∖ H)^{(1)} = {x_1 > s}`, two disjoint open convex sets whose union has full measure.
 - For `H = {x_1 < 0} ∪ ℚ²`, `H^{(1)} = {x_1 < 0}`: the density-one representative removes null additions, which `H` itself does not.
+- Negative control for the route: in `ℝ²` let `U` be the complement of the disjoint vertical strips `{|x_1 − 2^{−k}| < 4^{−k}}`, `k ≥ 2`. They meet `ball(x, ρ)` in area at most `(256/27) ρ³` for every `x` on the `x_2`-axis (a fraction `0.032981` of the ball at `ρ = 1/16`), so every such point has density one in `U`; yet over the base interval `(−ρ, ρ)` with `ρ = 2^{−m}`, `m ≥ 2`, the vertical sections that miss `U` entirely fill the proportion `(5/6) ρ`, `0.208333` at `ρ = 1/4` and `0.052083` at `ρ = 1/16`. This is positive for every `ρ`, so density one on the axis does not make almost every nearby vertical section meet `U`, and it tends to `0`, as the proportion bound of the route allows.
 
 ### 7.3 The theorem with equality
 
