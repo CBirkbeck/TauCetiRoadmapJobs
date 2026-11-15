@@ -1032,7 +1032,7 @@
      ],
      "locator": {
       "source": "Simon1983",
-      "where": "9.6 line 2005-2016; 16.4 line 2954-2971; 41.2(3) line 7675-7682"
+      "where": "9.6 line 2005-2016; 16.4 line 2954-2971 (rectifiable case); 41.2(3) line 7675-7682"
      },
      "prerequisites": [
       "target:3.1",
@@ -1078,7 +1078,7 @@
      ],
      "locator": {
       "source": "Simon1983",
-      "where": "17.2-17.6 line 3016-3076; 40.1-40.4 line 7513-7547"
+      "where": "17.2-17.6 line 3016-3076 (rectifiable case); 40.1-40.4 line 7513-7547"
      },
      "prerequisites": [
       "target:4.4"
@@ -1151,7 +1151,7 @@
      ],
      "locator": {
       "source": "Simon1983",
-      "where": "17.8-17.9 line 3119-3152; 40.5 line 7550-7565"
+      "where": "17.8-17.9 line 3119-3152 (rectifiable case); 40.5 line 7550-7565"
      },
      "prerequisites": [
       "target:1.4",
@@ -1241,6 +1241,8 @@
       "target:3.3",
       "target:4.3",
       "target:6.3",
+      "mathlib:Besicovitch.ae_tendsto_rnDeriv",
+      "mathlib:MeasureTheory.Measure.setLIntegral_rnDeriv_le",
       "roadmap:GeometricCurrents G1"
      ],
      "api": [],
@@ -1269,6 +1271,11 @@
        "name": "nonconstant volume density",
        "kind": "non-example",
        "statement": "on R with g = e^{2t}dt^2, V = [R] is stationary (deltaV(X) = integral of (e^t X)' dt = 0) with coordinate multiplicity 1, while 1 times the volume density e^t is not constant: constancy concerns the coordinate multiplicity."
+      },
+      {
+       "name": "atom on a line",
+       "kind": "non-example",
+       "statement": "V' = v(L,1) + delta_{(0,L)} on R^2 has weight H^1 on L plus delta_0, carried by L but not absolutely continuous with respect to H^1 on L; its density at 0 is infinite, the ratio of dt(closed ball r) to the chart image of the weight at 0 is 2r/(2r+1) -> 0, and deltaV'(psi y_1 e_1) = 0 + 1 = 1, so V' is not stationary: finite density is what the absolute continuity step uses."
       }
      ]
     },
@@ -1284,7 +1291,7 @@
      ],
      "locator": {
       "source": "Simon1983",
-      "where": "19.1-19.2 line 3373-3400"
+      "where": "19.1-19.2 line 3371-3400 (rectifiable case; the general case is this roadmap's, by the same test field)"
      },
      "prerequisites": [
       "target:4.4"
@@ -1304,7 +1311,7 @@
       {
        "name": "Dirac",
        "kind": "degenerate",
-       "statement": "delta_{(0,P)} is stationary off {0} and lies in {0}."
+       "statement": "delta_{(0,P)} is stationary off {0} and lies in {0}; for k >= 1 it is not rectifiable, so the rectifiable case of the source does not cover it."
       }
      ]
     }
@@ -1369,7 +1376,7 @@
      ],
      "locator": {
       "source": "Simon1983",
-      "where": "42.1-42.3 line 7733-7774; 19.3 line 3414-3481"
+      "where": "42.1-42.3 line 7733-7774; 19.3 line 3414-3481 (rectifiable case)"
      },
      "prerequisites": [
       "target:1.4",

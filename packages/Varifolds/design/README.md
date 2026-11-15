@@ -156,7 +156,11 @@ here only as tests of the definitions.
   (`Mathlib/MeasureTheory/Integral/RieszMarkovKakutani/Real.lean`, positive functionals on
   `C_c(X, ℝ)` of a locally compact Hausdorff X), `MeasureTheory.Measure.ext_of_integral_eq_on_compactlySupported`
   (same file, for two regular measures), `Measure.rnDeriv` and `Measure.singularPart`
-  (`Mathlib/MeasureTheory/Measure/Decomposition/Lebesgue.lean`), `MeasureTheory.Measure.condKernel`
+  (`Mathlib/MeasureTheory/Measure/Decomposition/Lebesgue.lean`),
+  `MeasureTheory.Measure.setLIntegral_rnDeriv_le`
+  (`Mathlib/MeasureTheory/Measure/Decomposition/RadonNikodym.lean`: for any two measures μ, ν and
+  any set s, the lower integral over s of the Radon–Nikodym derivative of μ with respect to ν,
+  against ν, is at most μ(s); no σ-finiteness is assumed), `MeasureTheory.Measure.condKernel`
   (`Mathlib/Probability/Kernel/Disintegration/StandardBorel.lean`, finite measures on a product with
   standard Borel second factor).
 - Differentiation of measures: `HasBesicovitchCovering` and its finite-dimensional instance
@@ -983,8 +987,8 @@ its image. For a varifold V on W and every C¹ vector field X with compact suppo
 `δ(ι_#V)(X) = δV(X^⊤) − ∫ ⟨X(x), tr_S B_M(x)⟩ dV(x, S)`,
 
 where X^⊤ = P_{TM}X restricted to W, a C¹ field with compact support in W, and tr_S B_M = Σ_i
-B_M(τ_i, τ_i) for an orthonormal basis of S (Simon1983 line 2005–2016, 9.6; 2954–2971, 16.4; 7675–7682,
-41.2(3)). Consequences:
+B_M(τ_i, τ_i) for an orthonormal basis of S (Simon1983 line 2005–2016, 9.6; 2954–2971, 16.4,
+rectifiable case; 7675–7682, 41.2(3)). Consequences:
 
 - V has locally bounded first variation in W if and only if ι_#V has locally bounded first
   variation in U; then ‖δV‖ ≤ ‖δ(ι_#V)‖ on W and ‖δ(ι_#V)‖ ≤ ι_*(‖δV‖ + k|B_M| ‖V‖), with |B_M(x)| the
@@ -1032,7 +1036,7 @@ fields by 4.4. For 0 < σ < ρ < ρ_0 the monotonicity identity holds:
 
 `ρ^{−k}‖V‖(B_ρ(x)) − σ^{−k}‖V‖(B_σ(x)) = ∫_{G_k({σ ≤ r < ρ})} r^{−k−2}|P_{S^⊥}(y − x)|² dV(y, S) − ∫_σ^ρ t^{−k−1} δV(1_{B_t(x)}(y)(y − x)) dt`
 
-(Simon1983 line 3016–3076, 17.2–17.5; 7513–7540, 40.1–40.3). Consequences and companions:
+(Simon1983 line 3016–3076, 17.2–17.5, rectifiable case; 7513–7540, 40.1–40.3). Consequences and companions:
 
 - If ‖δV‖(B_ρ(x)) ≤ Λ‖V‖(B_ρ(x)) for 0 < ρ < ρ_0, then for 0 < σ < ρ < ρ_0,
   `e^{Λσ}σ^{−k}‖V‖(B_σ(x)) ≤ e^{Λρ}ρ^{−k}‖V‖(B_ρ(x)) − ∫_{G_k({σ ≤ r < ρ})} r^{−k−2}|P_{S^⊥}(y − x)|² dV`,
@@ -1044,7 +1048,7 @@ fields by 4.4. For 0 < σ < ρ < ρ_0 the monotonicity identity holds:
 - Weighted identity: for nonnegative C¹ h on W and φ a C¹ cut-off profile with φ' ≤ 0, φ = 1 on
   (−∞, 1/2] and φ = 0 on [1, ∞), put I(ρ) = ∫ φ(r/ρ) h d‖V‖ and X_ρ(y) = φ(r/ρ) h(y)(y − x); then
   `d/dρ (ρ^{−k} I(ρ)) = ρ^{−k} d/dρ ∫ φ(r/ρ) h |P_{S^⊥}(y − x)|² r^{−2} dV + ρ^{−k−1} ( ∫ φ(r/ρ) (y − x)·P_S ∇h dV − δV(X_ρ) )`
-  (Simon1983 line 7541–7547, 40.4, and 3205–3221, 18.1).
+  (Simon1983 line 7541–7547, 40.4, and 3205–3221, 18.1, rectifiable case).
 
 **Checks.**
 
@@ -1103,8 +1107,8 @@ Let V have locally bounded first variation in W ⊆ M.
   1680, Theorem 2.30).
 - Θ^k(‖V‖, ·) is ‖V‖-measurable (Simon1983 line 7556–7565).
 - Upper semicontinuity in x: if ‖δV‖ ≤ Λ‖V‖ on an open set U, then Θ^k(‖V‖, x) ≥ lim sup_{y→x}
-  Θ^k(‖V‖, y) for x ∈ U (Simon1983 line 3119–3144, 17.8; AgnolettoCorreaHoyosDaSilvaNardulli2025 line
-  1448–1546, Corollary 2.27 and Remark 2.28).
+  Θ^k(‖V‖, y) for x ∈ U (Simon1983 line 3119–3144, 17.8, rectifiable case;
+  AgnolettoCorreaHoyosDaSilvaNardulli2025 line 1448–1546, Corollary 2.27 and Remark 2.28).
 - Upper semicontinuity under convergence: if V_j → V, ‖δV_j‖ ≤ Λ‖V_j‖ on U for all j, and x_j → x ∈ U,
   then ‖δV‖ ≤ Λ‖V‖ on U and Θ^k(‖V‖, x) ≥ lim sup_j Θ^k(‖V_j‖, x_j) (this roadmap, by the argument of
   Simon1983 17.8 with 1.4's upper semicontinuity on compact sets).
@@ -1155,10 +1159,22 @@ either V = 0, or Σ is closed in W, Hᵏ(Σ ∩ K) < ∞ for every compact K ⊆
 
 Route: for a C² function f vanishing on Σ, div_S(f∇f) = |P_S ∇f|² on spt V, so stationarity forces
 P_S ∇f = 0 on spt V; with local defining functions whose gradients span the normal spaces, S = T_xΣ
-on spt V. The density exists everywhere (6.3) and equals 1 for Hᵏ⌞Σ, so V = v(Σ, θ) with
-θ = Θ^k(‖V‖, ·). In a C² chart t = (t_1, …, t_k) of Σ, let w = √det(g_Σ) be the coordinate
-density of the induced metric g_Σ (a positive C¹ function) and θ̃ the multiplicity θ in these
-coordinates, so that ‖V‖ = θ̃ w dt there. For X tangent to Σ with components X^i, div_{T_xΣ} X is the
+on spt V. In a C² chart t = (t_1, …, t_k) of Σ on an open U ⊆ ℝ^k, let w = √det(g_Σ) be the
+coordinate density of the induced metric g_Σ (a positive C¹ function), so that Hᵏ⌞Σ is w dt in the
+chart (2.3). Being carried by Σ does not make ‖V‖ absolutely continuous with respect to Hᵏ⌞Σ (an
+atom on Σ is carried by Σ); finiteness of the density does. V is stationary, so Θ^k(‖V‖, ·) exists
+and is finite at every point of W (6.3). Let ν be the image in the chart of ‖V‖ restricted to the
+image of an open U' with compact closure in U. The chart is Lipschitz, with some constant L, from
+the Euclidean distance to d_g near each t ∈ U', so, with x_t the image of t,
+ν(B̄_r(t)) ≤ ‖V‖(B̄_{Lr}(x_t)) ≤ c_t r^k for small r, where c_t = (Θ^k(‖V‖, x_t) + 1) ω_k L^k.
+`Besicovitch.ae_tendsto_rnDeriv`, applied to Lebesgue measure dt against ν, gives at ν-a.e. t a
+limit of the ratio of dt(B̄_r(t)) to ν(B̄_r(t)) as r ↓ 0, equal to the Radon–Nikodym derivative D
+of dt with respect to ν at t; the bound
+gives D(t) ≥ ω_k/c_t > 0. A Borel set A with dt(A) = 0 has ∫_A D dν ≤ dt(A) = 0
+(`MeasureTheory.Measure.setLIntegral_rnDeriv_le`), so ν(A) = 0. Hence ν ≪ dt, and since w > 0,
+‖V‖ ≪ Hᵏ⌞Σ: ‖V‖ = θ Hᵏ⌞Σ for the Radon–Nikodym derivative θ ≥ 0 of ‖V‖ with respect to Hᵏ⌞Σ,
+a locally Hᵏ-integrable function on Σ, and V = v({θ > 0}, θ) by the first step. Let θ̃ be θ in the
+chart coordinates, so that ‖V‖ = θ̃ w dt there. For X tangent to Σ with components X^i, div_{T_xΣ} X is the
 divergence of X along (Σ, g_Σ) (the normal part of ∇X does not enter the trace), that is
 w⁻¹ Σ_i ∂_i(w X^i), so stationarity gives ∫ θ̃ Σ_i ∂_i(w X^i) dt = 0. The choice
 X^i = φ/w, the other components 0, for φ ∈ C¹_c of the chart domain (extended to a compactly
@@ -1189,17 +1205,31 @@ measure, so Σ has locally finite area, and the closure of Σ in W is spt‖V‖
   not closed (its closure contains {0} × [−1, 1]). V = 0 is stationary with support in Σ and takes
   the first alternative, and the theorem says it is the only such V; a conclusion "V = θ_0 [Σ] in
   every case" would use [Σ], which 2.3 does not define for this Σ.
+- Finite density is what makes the weight absolutely continuous: on ℝ² with L the x-axis,
+  V' = v(L, 1) + δ_{(0, L)} has ‖V'‖ = H¹⌞L + δ_0, carried by L and not of the form θH¹⌞L. Its
+  density at 0 is lim (2ρ + 1)/(2ρ) = ∞; in the chart t ↦ (t, 0) the ratio of dt(B̄_r(0)) to the
+  image of ‖V'‖ is 2r/(2r + 1) → 0 on the set {0} of ‖V'‖-measure 1, so the criterion of the route
+  fails there, while for v(L, θ) with θ > 0 continuous the ratio tends to 1/θ(t) > 0. V' is not
+  stationary: for X = ψ(y) y_1 e_1 with ψ ∈ C¹_c equal to 1 near 0, the line contributes
+  ∫ ∂_t(ψ(t, 0) t) dt = 0 and the atom contributes div_L X(0) = 1, so δV'(X) = 1.
 
-(Simon1983 line 7664–7732.) *Needs:* Layer 2.3, Layer 3.3, Layer 4.3, Layer 6.3; GeometricCurrents G1
-(constancy criterion).
+(Simon1983 line 7664–7732.) *Needs:* Layer 2.3, Layer 3.3, Layer 4.3, Layer 6.3; Mathlib
+`Besicovitch.ae_tendsto_rnDeriv`, `MeasureTheory.Measure.setLIntegral_rnDeriv_le`; GeometricCurrents
+G1 (constancy criterion).
 
 ### 6.5 The convex hull property
 
 Let V be a varifold on E with spt‖V‖ compact, stationary in E ∖ K for a compact K ⊆ E. Then
-spt‖V‖ is contained in the convex hull of K; for K = ∅, V = 0 (Simon1983 line 3373–3400, 19.1–19.2).
+spt‖V‖ is contained in the convex hull of K; for K = ∅, V = 0 (Simon1983 line 3371–3400,
+19.1–19.2, for rectifiable V with generalised mean curvature; the general case is this roadmap's, by
+the same test field).
 
-Route: for a closed ball B̄_R(ξ) ⊇ K and γ ≥ 0 non-decreasing, vanishing on [0, R + ε], test δV with
-ψ(y)γ(|y − ξ|)(y − ξ), ψ = 1 near spt‖V‖; then div_S ≥ kγ and ∫ γ d‖V‖ = 0.
+Route: for a closed ball B̄_R(ξ) ⊇ K, ε > 0 and a C¹ function γ ≥ 0, non-decreasing, vanishing on
+[0, R + ε] and positive on (R + ε, ∞), test δV with X(y) = ψ(y)γ(r)(y − ξ), r = |y − ξ|, ψ ∈ C¹_c
+equal to 1 near spt‖V‖; X has compact support in E ∖ K. Where ψ = 1,
+div_S X = kγ(r) + γ'(r)|P_S(y − ξ)|²/r ≥ kγ(r) for every k-plane S, with no rectifiability used, so
+0 = δV(X) ≥ k∫ γ d‖V‖ and ∫ γ d‖V‖ = 0 (k ≥ 1): spt‖V‖ ⊆ B̄_{R+ε}(ξ). The convex hull of K is the
+intersection of the closed balls containing it; for K = ∅ two disjoint balls give spt‖V‖ = ∅.
 
 **Checks.**
 
@@ -1208,9 +1238,11 @@ Route: for a closed ball B̄_R(ξ) ⊇ K and γ ≥ 0 non-decreasing, vanishing 
 - For K the closed unit disc of ℝ², the unit circle is stationary in E ∖ K (its support misses
   E ∖ K) and lies in K; for K = {0} it is not stationary in E ∖ K (H = −y ≠ 0 on the circle), and the
   conclusion spt ⊆ {0} indeed fails.
-- δ_{(0,P)} is stationary in E ∖ {0} and its support {0} is the hull of K = {0}.
+- δ_{(0,P)} is stationary in E ∖ {0} and its support {0} is the hull of K = {0}; for k ≥ 1 it is
+  not rectifiable (its weight δ_0 charges the Hᵏ-null set {0}), so the rectifiable case does not
+  cover it.
 
-(Simon1983 line 3373–3400.) *Needs:* Layer 4.1–4.4.
+(Simon1983 line 3371–3400, rectifiable case.) *Needs:* Layer 4.1–4.4.
 
 ### Examples
 
@@ -1220,7 +1252,8 @@ needed; the great circle on S².
 
 ### Dependencies
 
-Layers 1–5; RiemannianGeometry R4 item 1; HopfRinow Layer 2; GeometricCurrents G1.
+Layers 1–5; RiemannianGeometry R4 item 1; HopfRinow Layer 2; GeometricCurrents G1; Mathlib
+Besicovitch differentiation and Radon–Nikodym derivatives.
 
 ## Layer 7: varifold tangents, rectifiability and compactness
 
@@ -1272,7 +1305,8 @@ every sequence λ_j ↓ 0 has a subsequence along which V_{x,λ_j} converges, as
 varifold C that is stationary in (T_xM, g_x), whose weight is dilation invariant,
 ‖C‖(λA) = λ^k‖C‖(A) for λ > 0, and with ‖C‖(B_ρ(0)) = Θ^k(‖V‖, x) ω_k ρ^k for all ρ > 0, so that
 Θ^k(‖C‖, 0) = Θ^k(‖V‖, x). The set VarTan(V, x) of such limits is nonempty and compact; in E it
-consists of the limits of (η_{x,λ_j})_#V (Simon1983 line 7733–7774, 42.1–42.3; 3414–3430, 19.3).
+consists of the limits of (η_{x,λ_j})_#V (Simon1983 line 7733–7774, 42.1–42.3; 3414–3430, 19.3,
+rectifiable case).
 
 Route: 3.2 and 6.3 bound ‖V_{x,λ}‖(B_R(0)) uniformly; 1.4 gives subsequential limits; 4.5's blow-up form
 and the hypothesis on ‖δV‖ give δ_{g_x}C = 0; the mass of C on balls about 0 is the limit of the
