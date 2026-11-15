@@ -2084,7 +2084,7 @@
       {
        "name": "degenerating_right_continuity",
        "kind": "non-example",
-       "statement": "φ_t = −ε ρ with ρ a bump equal to 1 exactly on a closed set with interior U: s ↦ vol{φ_t ≤ −s} is ≥ vol(U) at s = ε and 0 for s > ε, not right-continuous; s ↦ vol{φ_t < −s} is 0 at and after ε"
+       "statement": "Monge–Ampère pair, φ_t = −ε ρ with ρ a smooth bump equal to 1 exactly on a closed set with interior U and ε small: e^{nF_t} = c_t^{−n} ω_{t,φ_t}^n/ω_X^n with c_t^n = V_t/V is smooth and normalized; s ↦ vol{φ_t ≤ −s} is ≥ vol(U) at s = ε and 0 for s > ε, not right-continuous; s ↦ vol{φ_t < −s} is 0 at and after ε"
       }
      ]
     },
