@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KTheoryLowDegrees~6",
+  "head": "11269aa6eb9b65584884fb1b13853552ee2f6143",
+  "pr": 1248,
+  "folder": "KTheoryLowDegrees",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "Incremental re-review of 6 changed lines since 4d2f327. Previous R01 (the nonempty_ rename) is repaired. The main merge moved the pins (Mathlib 6b7abb3 to 1b1ccf4, Tau Ceti a91d3aa to 2fd255d9), which gives three P3 findings. R01: finiteElementaryGroup now restates TauCeti.elementarySubgroup; the equality was proved in a scratch file. R02: the module docstring calls stable K1 absent although TauCeti.AlgebraicK1 exists; the circle headline restated on it elaborates. R03: the README pin hashes are stale. R04 (P3): the description says the roadmap fixes lambda-specialness and the K2 Steinberg presentation, which README:15 and README:1582 assign to suppliers. Checked: the title, the description prose and the roadmap-summary block against the head. Three weibel-kbook locators (I.3 Prop. 3.4 p. 19, III.1.2 p. 180, III.1.5.4 p. 185). None of the seeded targets falls in the changed passages except 6.2, through R01. The gate rerun is all 0, OK, and depcheck reports 0 problems. lake env lean exits 0 with 13 sorry warnings only; CI build SUCCESS at head. The repaired scratch copy elaborates, with #check @ on the 5 touched declarations.",
+  "text": "8faba8ff9cdbfeef",
+  "carried": {
+   "from": "11269aa6eb9b65584884fb1b13853552ee2f6143",
+   "head": "101144fded792a2383814740fcf6dfedda9d64bc",
+   "findings": 4,
+   "lines": 72,
+   "folders": [
+    "KTheoryLowDegrees"
+   ]
+  }
+ }
+}
