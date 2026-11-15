@@ -1,0 +1,38 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ModularityAndLanglandsExtensions"
+
+[[source]]
+id = "bcgnt-2025"
+authors = "George Boxer, Frank Calegari, Toby Gee, James Newton, Jack A. Thorne"
+title = "The Ramanujan and Sato-Tate Conjectures for Bianchi modular forms"
+year = 2023
+arxiv = "2309.15880v3"
+locator_scheme = "theorem"
+locator = "Proposition 6.2.3"
+url = "https://arxiv.org/abs/2309.15880v3"
+fetched_from = "https://arxiv.org/pdf/2309.15880v3"
+fetched_at = "2026-11-15T21:23:17Z"
+sha256 = "0ad015dfe35d40489a2b8b462ac93d5dd715dbbae7d3fbf18377beaed654579d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["2.24"]
+
+[[source]]
+id = "newton-thorne-hilbert"
+authors = "James Newton, Jack A. Thorne"
+title = "Symmetric power functoriality for Hilbert modular forms"
+year = 2022
+arxiv = "2212.03595v2"
+locator_scheme = "theorem"
+locator = "Proposition 6.1"
+url = "https://arxiv.org/abs/2212.03595v2"
+fetched_from = "https://arxiv.org/pdf/2212.03595v2"
+fetched_at = "2026-11-15T21:23:55Z"
+sha256 = "6a156f7a5567226e0bd2209d5b237cbbc150dc10cfbd9ffd060a3245328cb82c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["4.22"]
