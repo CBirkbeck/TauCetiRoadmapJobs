@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PrismaticCohomologyPartIV~4",
+  "head": "57f0c7ae26e6e1c704fb48f47a72bf4f31daf96b",
+  "pr": 1080,
+  "folder": "PrismaticCohomologyPartIV",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since 32d1a4e. Previous R01-R03 all repaired. Checked: the consumer sentence at README line 419 against every *Needs:* line citing 8.7-8.10 (12 consumers computed, the sentence lists the same 12); the pull request's title and description against the head (the Suggested.lean and validation sentences now true; summary, ownership, library names and folder contents agree; no unstated removal or supplier change); TauCeti.IsProP at the pin. Gate re-run: every check 0. Depcheck: 245 roadmaps, 2242 edges, 0 problems, no UPWARD/CYCLE/moved line. Suggested.lean elaborates with exit 0 and no output (it declares nothing). Nothing changed outside the folder against origin/main. Seeded sample does not fall in the changed line.",
+  "text": "8c476c0e4aa20aaa"
+ }
+}
