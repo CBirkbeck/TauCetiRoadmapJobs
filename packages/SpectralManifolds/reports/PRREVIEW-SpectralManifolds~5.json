@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpectralManifolds~5",
+  "head": "5295e0e8671b38e76e5e42f8d9e27b01a89ebb48",
+  "pr": 1158,
+  "folder": "SpectralManifolds",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 4 changed lines since b1e8fb7. R01 (supplier heading fragment) and R02 (validation paragraph) of the previous review are both repaired: README lines 33 and 236 link the heading that exists at the head of CompactQuantumMetricSpaces (README line 823), and the description states two admitted F-space theorems with import Mathlib only. Title, summary block and description prose read against the head and the base diff (3 files added, 344 insertions, nothing outside the folder): no sentence contradicted. Supplier sections 3.1 and 3.6 reopened at the open head; adversarial table has computed rows for both cited supplier statements, both Lean statements and the description's counts. Seeded source sample: no target falls in the changed lines. Gate passes every check; depcheck 246 roadmaps, 2235 edges, 0 problems; citation resolver finds nothing missing; standalone elaboration exits 0 with exactly 2 sorry warnings. Source texts carried as not verifiable from earlier rounds are reported to the human reviewers.",
+  "text": "a22008f52f84867d"
+ }
+}
