@@ -1,0 +1,143 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EllipticCurveModularity"
+
+[[source]]
+id = "serre"
+authors = "J.-P. Serre"
+title = "Sur les représentations modulaires de degré 2 de Gal(Q̄/Q)"
+year = 1987
+venue = "Duke Math. J. 54 (1987), 179–230"
+locator_scheme = "theorem"
+locator = "Théorème 4, §4.6"
+url = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL5835292064138487263_Serre_Repr.modulaires_Galois.pdf"
+fetched_from = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL5835292064138487263_Serre_Repr.modulaires_Galois.pdf"
+fetched_at = "2026-11-15T16:49:53Z"
+sha256 = "8048919db24dcb972435aaaa2a74d1168d0fe533af3aa26c6c809b12ddaee038"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["R29.1", "R29.2", "R29.6"]
+
+[[source]]
+id = "milne"
+authors = "J. S. Milne"
+title = "Abelian varieties"
+year = 1986
+venue = "Arithmetic Geometry (Storrs, 1984), Springer (1986), 103–150"
+version_note = "scan of the printed chapter; pages are the printed pages 103–150"
+locator_scheme = "theorem"
+locator = "Proposition 12.1"
+url = "https://www.jmilne.org/math/articles/1986b.pdf"
+fetched_from = "https://www.jmilne.org/math/articles/1986b.pdf"
+fetched_at = "2026-11-15T16:51:42Z"
+sha256 = "86259344a576e4ef75a9d81e9bf43143f872a72b14cf8fcc2703f3aea6349136"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["R29.6"]
+
+[[source]]
+id = "ribet-stein"
+authors = "K. A. Ribet, W. A. Stein"
+title = "Lectures on Serre's conjectures"
+year = 2001
+doi = "10.1090/pcms/009/04"
+venue = "Arithmetic Algebraic Geometry (Park City, 1999), IAS/Park City Math. Ser. 9, AMS (2001), 143–232"
+version_note = "authors' revised version of 23 November 2010; the README cites its pagination"
+locator_scheme = "theorem"
+locator = "Theorem 5.14"
+url = "https://wstein.org/papers/serre/ribet-stein.pdf"
+fetched_from = "https://wstein.org/papers/serre/ribet-stein.pdf"
+fetched_at = "2026-11-15T16:51:43Z"
+sha256 = "e1bf2b5cd14de064bcb48c4ca843251198db74dd8bcfaad63c26f6773f63f604"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["R29.6"]
+
+[[source]]
+id = "barrios"
+authors = "Alexander J. Barrios"
+title = "Explicit classification of isogeny graphs of rational elliptic curves"
+year = 2022
+doi = "10.1142/S179304212350046X"
+arxiv = "2208.05603v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.3"
+url = "https://arxiv.org/abs/2208.05603v1"
+fetched_from = "https://arxiv.org/pdf/2208.05603v1"
+fetched_at = "2026-11-15T16:51:47Z"
+sha256 = "2516424995338fd490a579c9b8d2eb67e11502886a95513a86b786f8f350c1d0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["R29.1"]
+
+[[source]]
+id = "ddt"
+authors = "H. Darmon, F. Diamond, R. Taylor"
+title = "Fermat's Last Theorem"
+year = 2007
+venue = "revised version (2007) of Current Developments in Mathematics 1995"
+version_note = "2007 revision on the author's page; the README cites its pagination"
+locator_scheme = "theorem"
+locator = "Theorem 3.48"
+url = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_from = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_at = "2026-11-15T16:51:59Z"
+sha256 = "254f6e29957f95219eff046c29478f5ee584615bee12c8aa8357f499c8cbe8b3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["R29.1", "R29.4"]
+
+[[source]]
+id = "gonzalez-jimenez-lario"
+authors = "E. González-Jiménez, J.-C. Lario"
+title = "Faltings elliptic curves in twisted Q-isogeny classes: supplementary tables"
+year = 2023
+locator_scheme = "section"
+locator = "§19.1"
+url = "https://web.mat.upc.edu/joan.carles.lario/types.pdf"
+fetched_from = "https://web.mat.upc.edu/joan.carles.lario/types.pdf"
+fetched_at = "2026-11-15T16:52:01Z"
+sha256 = "c4ebbbda16219f157103c9b0c5fa19d137801ae8ede5e0b8b1a80ec15fe92814"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["R29.1"]
+
+[[source]]
+id = "serre1970"
+authors = "J.-P. Serre"
+title = "Facteurs locaux des fonctions zêta des variétés algébriques (définitions et conjectures)"
+year = 1970
+venue = "Séminaire Delange–Pisot–Poitou, Théorie des nombres 11 (1969/70), exposé 19"
+locator_scheme = "section"
+locator = "n° 2.4"
+url = "https://www.numdam.org/item/SDPP_1969-1970__11_2_A4_0.pdf"
+fetched_from = "https://www.numdam.org/item/SDPP_1969-1970__11_2_A4_0.pdf"
+fetched_at = "2026-11-15T16:52:02Z"
+sha256 = "7ed71db99ff8cf5e24d2c45056048dadfc29ce4b2e3a387061ccfb7baa875754"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["R29.4"]
+
+[[source]]
+id = "brumer-kramer"
+authors = "A. Brumer, K. Kramer"
+title = "The conductor of an abelian variety"
+year = 1994
+venue = "Compositio Math. 92 (1994), 227–248"
+locator_scheme = "equation"
+locator = "(6.1)"
+url = "https://www.numdam.org/item/CM_1994__92_2_227_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1994__92_2_227_0.pdf"
+fetched_at = "2026-11-15T16:52:03Z"
+sha256 = "fb60a47d07f45d2066fa80d7a307fc8fbe6de1ad04446bcef8bed9d84a898971"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["R29.4"]
