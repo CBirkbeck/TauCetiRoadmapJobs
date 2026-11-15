@@ -142,11 +142,11 @@ API:
 
 ### 1.4 Shells and packings
 
-Prove, for a flat position space with `0 ≤ r₁ ≤ r₂ < ρ` and `x ∈ X`: the shell `{y : r₁ ≤ ‖y − x‖ ≤ r₂}` has measure `ω_d (r₂^d − r₁^d)`, which is at most `d ω_d r₂^{d−1} (r₂ − r₁)`. Prove the packing bound: if `0 < ε ≤ 2ρ` and `x_1, …, x_N ∈ X` satisfy `‖x_i − x_j‖ ≥ ε` for `i ≠ j`, then `N ω_d (ε/2)^d ≤ μ_X(X)`. In particular, on a flat torus the closed hard-core set of §3.1 is empty for `N > covolume(L)/(ω_d (ε/2)^d)` (GST2013 line 873; BGSS2023 line 165).
+Prove, for a flat position space with `0 ≤ r₁ ≤ r₂ < ρ` and `x ∈ X`: the shell `{y : r₁ ≤ ‖y − x‖ ≤ r₂}` has measure `ω_d (r₂^d − r₁^d)`, which is at most `d ω_d r₂^{d−1} (r₂ − r₁)`. Prove the packing bound: if `0 < ε ≤ 2ρ` and `x_1, …, x_N ∈ X` satisfy `‖x_i − x_j‖ ≥ ε` for `i ≠ j`, then `N ω_d (ε/2)^d ≤ μ_X(X)`. In particular, on a flat torus no `N` points have pairwise distances at least ε when `N > covolume(L)/(ω_d (ε/2)^d)` (GST2013 line 873; BGSS2023 line 165).
 
 **Checks.**
 
-- Unit torus, d = 2, ε = 0.4: `ω_2 (0.2)² = 0.04π ≈ 0.12566`, so at most 7 particles fit and the hard-core set is empty for `N ≥ 8`.
+- Unit torus, d = 2, ε = 0.4: `ω_2 (0.2)² = 0.04π ≈ 0.12566`, so at most 7 points with pairwise distances at least 0.4 fit, and no 8 points do.
 - On `E` the shell `1 ≤ |y| ≤ 1.1` in d = 2 has area `π(1.21 − 1) ≈ 0.65973`.
 - The hypothesis `r₂ < ρ` is needed: on the unit torus in d = 1 (ρ = 1/2, `ω_1 = 2`) the shell `0.4 ≤ ‖y‖ ≤ 0.6` is the set `0.4 ≤ ‖y‖ ≤ 0.5`, of measure 0.2, while the formula would give `2(0.6 − 0.4) = 0.4`.
 
@@ -214,6 +214,7 @@ API:
 - `𝒟̄` is closed, `𝒟` is open, both are invariant under relabelling and under translation of all positions by a common vector, and both are products of a position set with all of `E^N`.
 - For `N ≤ 1` both are the whole space; for `0 < ε < ρ` the difference `𝒟̄ ∖ 𝒟` is null.
 - Restriction: if `Z ∈ 𝒟̄_N` then every subconfiguration lies in `𝒟̄_s`.
+- Packing: on a flat torus `FlatTorus L` with `0 < ε ≤ 2ρ`, `𝒟̄^ε_N` is empty for `N > covolume(L)/(ω_d (ε/2)^d)`, by the packing bound of §1.4 (BGSS2023 line 165).
 - Relabelling by a permutation preserves `λ_N` (`MeasureTheory.measurePreserving_piCongrLeft`).
 
 **Checks.**
@@ -221,8 +222,9 @@ API:
 - On `E`, d = 2, ε = 1: positions `0`, `(1, 0)` lie in `𝒟̄_2` but not `𝒟_2`; positions `0`, `(0.5, 0)` lie in neither.
 - Unit torus, ε = 0.4: positions `π(0.05, 0)`, `π(0.95, 0)` are at torus distance 0.1, so the configuration is not in `𝒟̄_2`; measuring the distance of the representatives (0.9) would wrongly accept it.
 - `N = 1`: `𝒟̄_1` is everything, since there are no pairs.
+- The packing statement needs `ε ≤ 2ρ`: on the unit circle (d = 1, ρ = 1/2, `ω_1 = 2`) with ε = 1.5 the threshold is `1/(2 · 0.75) = 2/3`, and `N = 1 > 2/3`, yet `𝒟̄_1` is everything; at ε = 1 = 2ρ the threshold is 1, and `𝒟̄_2` is indeed empty, the largest torus distance being 1/2.
 
-*Needs:* §1.1, Mathlib `MeasureTheory.measurePreserving_piCongrLeft`.
+*Needs:* §1.1, §1.4, Mathlib `MeasureTheory.measurePreserving_piCongrLeft`.
 
 ### 3.2 Contacts, contact normals and boundary pieces
 
@@ -241,7 +243,7 @@ API:
 - The configuration with `x_i = (1, 0)`, `x_j = 0`, `v_i = (1, 0)`, `v_j = 0` is in `∂^+(i, j)`; with `v_i = (−1, 0)` it is in `∂^−(i, j)`; with `v_i = (0, 1)` it is grazing and in neither.
 - The order of the pair does not matter: on `E` with ε = 1, `x_1 = (1, 0)`, `x_2 = 0`, `v_1 = (1, 0)`, `v_2 = 0`, one has `⟨v_1 − v_2, ν_12⟩ = ⟨(1, 0), (1, 0)⟩ = 1` and `⟨v_2 − v_1, ν_21⟩ = ⟨(−1, 0), (−1, 0)⟩ = 1`, so the state lies in `∂^+(1, 2)` and in `∂^+(2, 1)`, which are one piece, and in neither `∂^−(1, 2)` nor `∂^−(2, 1)`. Indexing the pieces by ordered pairs and declaring all of them pairwise disjoint would be refuted by this state.
 
-*Needs:* §1.1, §3.1, Mathlib `MeasureTheory.Measure.addHaar_sphere`.
+*Needs:* §1.1, §1.2, §3.1, Mathlib `MeasureTheory.Measure.addHaar_sphere`.
 
 ### 3.3 Contact scattering and time reversal
 
@@ -249,7 +251,7 @@ Define the contact scattering `σ_M(X, V)` that applies `σ_{ν_ij}` to `(v_i, v
 
 API:
 
-- `σ_M` and `ℛ` are involutions of `𝒟̄`, preserve total momentum and kinetic energy (`ℛ` reverses the momentum), commute with relabelling, and preserve `λ_N`; `ℛ` agrees with `(X, V) ↦ (X, −V)` outside a null set.
+- `σ_M` and `ℛ` are involutions of `𝒟̄`, commute with relabelling, and preserve `λ_N`; `ℛ` agrees with `(X, V) ↦ (X, −V)` outside a null set.
 - `σ_M` exchanges `∂^+(i, j)` and `∂^−(i, j)`; `ℛ` maps `∂^+(i, j)` to itself.
 
 **Checks.**
@@ -278,17 +280,18 @@ API:
 - Non-example for `𝒟̄`: on `E`, positions `(2, 0)`, `0` with velocities `(−1, 0)`, `0` and ε = 1 leave `𝒟̄_2` at time `t = 1.5`, where the distance is 0.5.
 - The boost needs the position correction: one particle on `E` with `d = 1`, `x = v = 0`, `t = c = 1` gives `S_1 B_1(0, 0) = (1, 1)` but `B_1 S_1(0, 0) = (0, 1)`; the corrected right side `A_1 B_1 S_1(0, 0) = (1, 1)` agrees.
 
-*Needs:* §1.1, Mathlib `Flow`, `MeasureTheory.MeasurePreserving`, Tau Ceti `TauCeti.flowOfLipschitz`.
+*Needs:* §1.1, §1.2, §3.1, Mathlib `Flow`, `MeasureTheory.MeasurePreserving`, Tau Ceti `TauCeti.flowOfLipschitz`.
 
 ### 3.5 Collision invariants of configurations
 
-Define total momentum `P(V) = Σ_i v_i` and kinetic energy `H(V) = ½ Σ_i |v_i|²`. Prove that `σ_M` and `S_t` preserve both, and that the velocity ball `{|V|² ≤ R²}` is preserved by `σ_M` (GST2013 (2.1.3), lines 396–399).
+Define total momentum `P(V) = Σ_i v_i` and kinetic energy `H(V) = ½ Σ_i |v_i|²`. Prove that `σ_M` and `S_t` preserve both, that the reversal `ℛ` of §3.3 preserves `H` and reverses `P` (`P(−σ_M V) = −P(V)`), and that the velocity ball `{|V|² ≤ R²}` is preserved by `σ_M` (GST2013 (2.1.3), lines 396–399).
 
 **Checks.**
 
 - At the witness of §2.1 the momentum `(0.9, 0.9)` and energy `0.81` are unchanged.
 - The free flow changes positions but not `P` or `H`.
 - Non-example: the separate reflection of §2.1 preserves `H` but not `P`.
+- Reversal: at the outgoing contact state of §3.3 (ε = 1, `x_1 = (1, 0)`, `x_2 = 0`, `V = ((1, 0), 0)`), `P = (1, 0)` and `H = ½`; the reversed velocities `(0, (−1, 0))` have `P = (−1, 0)` and `H = ½`. The map `(X, V) ↦ (X, σ_M V)` without the sign keeps `P = (1, 0)` there (`σ_M V = (0, (1, 0))`), so the sign in `ℛ` is what reverses the momentum.
 
 *Needs:* §2.1, §3.3, §3.4.
 
@@ -401,7 +404,7 @@ API:
 - Non-example: free motion through the contact (`x_1(t) = (2 − t, 0)` for all `t`) leaves `𝒟̄_2` after time 1.
 - Non-example: the same path with left-continuous velocities (`V(1) = ((−1, 0), 0)`) violates the outgoing condition at time 1.
 
-*Needs:* §3.1–3.4.
+*Needs:* §3.1–3.5.
 
 ### 5.2 Uniqueness and gluing
 
@@ -440,7 +443,7 @@ For a trajectory `Z` on `J` write `M(t)` for the contact matching of `X(t)` and 
 - Only the values on `J` count: for `N = 1`, d = 2, `J = [0, 1]`, the path with `x(t) = 0` for all `t`, `V(t) = 0` for `t ≥ 0` and `V(t) = e_1` for `t < 0` is a trajectory on `J`; at `t = 0` the incoming state has velocity `σ_M V(0) = 0`, while the left limit of the path from outside `J` is `e_1`; at every `t ∈ (0, 1]` the velocity `σ_M V(t)` and the left limit within `J` are both 0.
 - The initial datum of DengHaniMa2024 Definition 1.1 is the incoming state: for ε = 1 the outgoing contact state `x_1 = (1, 0)`, `x_2 = 0`, `v_1 = 0`, `v_2 = (−1, 0)` of a trajectory at time 0 corresponds to the datum `v_1 = (−1, 0)`, `v_2 = 0`, which that definition scatters at `0+` back to `0`, `(−1, 0)`; started from the outgoing state itself, that definition would scatter it at `0+` into `(−1, 0)`, `0`, and the spheres would overlap at every small `t > 0`, at distance `1 − t`.
 
-*Needs:* §3.3, §5.1.
+*Needs:* §1.2, §3.3, §5.1.
 
 ### 5.5 Good configurations
 
@@ -449,7 +452,7 @@ Define `HardSphere.goodSet ε N` as the set `G` of `Z ∈ 𝒟̄^ε_N` such that
 **Checks.**
 
 - `N = 2` on `E`: `𝒟̄_2 ∖ G` is the union of `{u ≠ 0, D(a, u) = 0}` (the line of relative motion is tangent to the sphere at some time) and of the contact states with `⟨a, u⟩ ≤ 0`.
-- The incoming contact state of §5.2 is not in `G`; the outgoing one is.
+- At ε = 1, the incoming contact state `x_1 = (1, 0)`, `x_2 = 0`, `v_1 = (−1, 0)`, `v_2 = 0` (the Scattering witness of the Conventions, `⟨v_1 − v_2, ν_12⟩ = −1`) is not in `G`, since no trajectory has an incoming contact; its scattered state, the outgoing contact state `v_1 = 0`, `v_2 = (−1, 0)` of §5.2 at the same positions (`⟨v_1 − v_2, ν_12⟩ = 1`), is in `G`: it is the time-1 state of the head-on witness of the Conventions, whose trajectory is defined on ℝ.
 - A configuration with a triple contact (three spheres pairwise touching in d = 2, positions forming an equilateral triangle of side ε) is not in `G`.
 
 *Needs:* §4.1, §5.1–5.3.
@@ -460,7 +463,7 @@ For `N = 2` the trajectory through a good configuration is explicit: the centre 
 
 ### Dependencies
 
-Layers 2–4.
+Layers 1–4.
 
 ## Layer 6: Alexander's theorem
 
@@ -499,7 +502,7 @@ Prove, for `t > 0`, `R > 0`, a bounded `K ⊆ X` and every `δ > 0` with `ε + 4
 - On the unit torus with `K = X` every neighbourhood `K_j` is `X`, of mass 1, and the constant does not grow with `j`; for `K = {0}` the neighbourhood `K_0 = {0}` has mass 0 while `X` has mass 1, so the neighbourhoods are those of `K`, not all of `X`.
 - The step-`j` bound is an inequality, not an equality: on `E` with d = 1, `N = 3`, ε = R = 1, δ = 2, `t = 3` and `K = {0}`, no configuration of `𝒟̄_3` has all positions in `K`, so `F_1 = ∅` and `λ_N(F_1) = 0`, while the configurations of `𝒟̄_3 ∩ {|V| ≤ 1}` with positions near `(−1.1, 0, 1.1)` lie in `K_1 = [−2, 2]` and in `I` (the middle particle is within `ε + 2Rδ = 5` of both others), a set of positive measure.
 - On `E` with `K = B(0, r)` the neighbourhoods are `B(0, r + jRδ)`, contributing `(r + jRδ)^{d(N−2)}` as in GST2013 line 896.
-- For `N = 2` the bound is 0 apart from the grazing null set.
+- For `N = 2` the set `F` is null but not empty, and the bound is not sharp. Null: there is no triple of distinct indices, so `I = ∅` and only the null remainder of §6.2 fails a step. Not empty: on `E` with d = 2, ε = R = δ = 1, `t = 3` and `K = B(0, 3)`, the state `x_1 = (2, 1)`, `x_2 = 0`, `v_1 = (−1, 0)`, `v_2 = 0` has relative data `a = (2, 1)`, `u = (−1, 0)` with `D = 4 − 4 = 0`, a grazing contact at time 2; it passes step 0 (the near pair grazes only at time 2 > δ) and fails step 1, where the pair, now at relative position `(1, 1)`, grazes at time 1 ≤ δ. The constant does not vanish: the factor `μ_X(K_t)^{N−2}` is 1, so `C ≥ (t + 1) C₁` with `C₁ = 8 (2R d ω_d (ε + 2R)^{d−1})² vol(B^{2d}_R)`, which is `8 (12π)² (π²/2) = 576π⁴ ≈ 56108` at d = 2, ε = R = 1: the inequality `λ_N(F) = 0 ≤ C δ` holds with a positive right side.
 
 *Needs:* §6.1, §6.2.
 
@@ -572,7 +575,7 @@ For `1 ≤ p < ∞` define the Koopman group `U_t f = f ∘ T_{−t}` on `Lp ℝ
 
 - `N = 1` on `E`: `U_t f(x, v) = f(x − t v, v)`, the free transport group.
 - For `N ≥ 1` the phase measure `λ_N|𝒟̄` is σ-finite of total mass `q_N · ∞` (with `0 · ∞ = 0`), where `q_N = μ_X^{⊗N}({X : ‖x_i − x_j‖ ≥ ε for i ≠ j})` is the measure of the admissible positions (the normaliser `Z^{can}` of §9.2); for `N = 0` it is the unit mass at the empty configuration. It can be infinite even on a torus, because velocities range over `E`: for `N = d = 1` on the unit circle there is no exclusion, `q_1 = 1`, `𝒟̄_1 = X × E` has measure `1 · ∞ = ∞`, and the constant 1 is in no `Lp`, `p < ∞`. The energy cutoff `f = 1_{H ≤ R²/2}` is: for `N = d = 1`, `R = 1`, its `p`-th power integrates to `μ_X(X) · vol([−1, 1]) = 2`, and `U_t f = f` exactly since `H ∘ T_{−t} = H`.
-- Empty and null position sectors give phase mass 0, not ∞: on the unit torus with d = 2, ε = 0.4 and `N = 8` the hard-core set is empty (§1.4), `q_8 = 0`, the phase measure is 0, `Lp` is the zero space and `U` is the trivial group on it; on the unit circle with ε = 1/3 and `N = 3` the admissible positions are the equally spaced triples, a nonempty set of dimension 1, so again `q_3 = 0` and the phase measure is 0. The mass is infinite exactly when `N ≥ 1` and `q_N > 0`.
+- Empty and null position sectors give phase mass 0, not ∞: on the unit torus with d = 2, ε = 0.4 and `N = 8` the hard-core set is empty (§3.1, by the packing bound of §1.4), `q_8 = 0`, the phase measure is 0, `Lp` is the zero space and `U` is the trivial group on it; on the unit circle with ε = 1/3 and `N = 3` the admissible positions are the equally spaced triples, a nonempty set of dimension 1, so again `q_3 = 0` and the phase measure is 0. The mass is infinite exactly when `N ≥ 1` and `q_N > 0`.
 - Non-example: `p = ∞` is excluded. On `X = E`, for `N = 1`, the indicator `f` of `{x_1 ∈ B(0, 1)} × {|v_1 − e_1| < 1/2}` satisfies `‖U_t f − f‖_∞ = 1` for all small `t ≠ 0`, since free transport moves the position cutoff. The position cutoff must be one that transport moves: on the unit circle the ball `B(0, 1)` is all of `X` (every norm there is at most 1/2), so the same indicator depends on the velocity only, is invariant, and gives `‖U_t f − f‖_∞ = 0`.
 
 *Needs:* §7.1, §7.2, Mathlib `MeasureTheory.Lp.compMeasurePreserving`, `MeasureTheory.MemLp.exists_hasCompactSupport_eLpNorm_sub_le`, Tau Ceti `TauCeti.Semigroups.StronglyContinuousGroup`.
@@ -610,7 +613,7 @@ For a measurable `W⁰ : (Fin N → X × E) → ℝ` vanishing off `𝒟̄`, def
 - A density that is a function of `H` and `P` times the indicator of `𝒟̄` is constant in time.
 - Non-example: `W⁰ ∘ T_t` (the wrong sign) moves mass in the direction `−v` for `N = 1`.
 
-*Needs:* §7.1, §7.2, §7.4, ClassicalErgodicTheory §3.5 (item 4).
+*Needs:* §7.1–7.4, ClassicalErgodicTheory §3.5 (item 4).
 
 ### 8.2 The weak Liouville equation with specular reflection
 
@@ -628,11 +631,11 @@ API of the test-function class:
 - The derivative at a collision time need not exist, which is why the fundamental theorem of calculus is applied with the derivative only on the open pieces: for the head-on witness and `φ(t, Z) = χ(t) θ(H(V)) ψ(⟨x_1 − x_2, e_1⟩)` with ψ bounded and smooth with bounded derivative and equal to the identity on `[−10, 10]`, and θ smooth with compact support and equal to 1 near `1/2`, the energy of the witness, the function is admissible (it is bounded; `Lφ = θ(H)(χ'(t) ψ(⟨x_1 − x_2, e_1⟩) + χ(t) ψ'(⟨x_1 − x_2, e_1⟩) ⟨v_1 − v_2, e_1⟩)` is bounded because `|v_1 − v_2|` is bounded where `θ(H) ≠ 0`; σ_M moves no position and preserves `H`), and `t ↦ φ(t, T_t Z)` is `χ(t)(2 − t)` for `0 ≤ t < 1` and `χ(t) t` for `1 ≤ t ≤ 10`: continuous at `t = 1`, with left derivative `χ'(1) − χ(1)` and right derivative `χ'(1) + χ(1)`. The energy cutoff is needed: without θ, at `χ(1) = 1`, `χ'(1) = 0`, `x_1 − x_2 = e_1`, `v_1 = M e_1`, `v_2 = 0` one gets `Lφ(1, Z) = M`, unbounded in `M`.
 - Non-example: `φ = χ(t) θ(H(V)) ⟨v_1, e_1⟩`, with χ and θ smooth with compact support, is bounded with bounded material derivative `χ'(t) θ(H) ⟨v_1, e_1⟩` but violates the specular condition, and the identity fails for it. For `Z ∈ G` whose trajectory has exactly one collision on `[0, ∞)`, at a time `τ(Z) > 0`, the computation of the route gives `∫_0^∞ Lφ(t, T_t Z) dt + φ(0, Z) = χ(τ(Z)) θ(H)(⟨v_1, e_1⟩ − ⟨v_1', e_1⟩)` with `v_1'` the velocity of particle 1 after the collision, so the left side is the integral of this jump against `W⁰`, with a collision time that varies with `Z` (the data colliding at one fixed time form a null set, which carries no mass of an `L¹` density). Explicitly, on `E` with d = 1, `N = 2`, ε = 1, let `W⁰` be the uniform probability density on the box `x_2 ∈ (0, 0.01)`, `x_1 − x_2 ∈ (1.99, 2.01)`, `v_1 ∈ (−1.02, −0.98)`, `v_2 ∈ (−0.02, 0.02)`, and take χ = 1 on `[0.9, 1.1]` and θ = 1 on `[0.47, 0.53]`. Each trajectory has one collision, which exchanges `v_1` and `v_2`, at `τ = (x_1 − x_2 − 1)/(v_2 − v_1) ∈ (0.9519, 1.0521)`, and `H ∈ (0.4802, 0.5204)`, so the left side is `∫ W⁰ (v_1 − v_2) = −1 ≠ 0`.
 
-*Needs:* §3.3, §3.4, §7.1, §8.1, Mathlib `intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le`.
+*Needs:* §1.2, §3.3–3.5, §7.1, §8.1, Mathlib `intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le`.
 
 ### 8.3 Marginals
 
-For a symmetric `W_N ≥ 0` vanishing off `𝒟̄_N` and `s ≤ N`, define the marginal `W^{(s)}_N(Z_s) = ∫ W_N(Z_s, z_{s+1}, …, z_N) dz_{s+1} ⋯ dz_N` (GST2013 (4.2.2), lines 929–932). Prove that it is symmetric, vanishes off `𝒟̄_s`, satisfies `W^{(s)}_N = ∫ W^{(s+1)}_N dz_{s+1}` for `s < N` (GST2013 (4.2.3), lines 934–937; at `s = N` there is no level `N + 1`), has `W^{(N)}_N = W_N` and `W^{(0)}_N = ∫ W_N`, commutes with relabelling the first `s` particles, and inherits the specular condition at every contact configuration of `𝒟̄_s` whose contacts form a matching when `W_N` satisfies it at all such configurations of `𝒟̄_N` (GST2013 line 938).
+For a symmetric `W_N ≥ 0` vanishing off `𝒟̄_N` and `s ≤ N`, define the marginal `W^{(s)}_N(Z_s) = ∫ W_N(Z_s, z_{s+1}, …, z_N) dz_{s+1} ⋯ dz_N` (GST2013 (4.2.2), lines 929–932). Prove that it is symmetric, vanishes off `𝒟̄_s`, satisfies `W^{(s)}_N = ∫ W^{(s+1)}_N dz_{s+1}` for `s < N` (GST2013 (4.2.3), lines 934–937; at `s = N` there is no level `N + 1`), has `W^{(N)}_N = W_N` and `W^{(0)}_N = ∫ W_N`, commutes with relabelling the first `s` particles, and inherits the specular condition `W(X, V) = W(X, σ_M V)`, with `σ_M` the contact scattering of §3.3: if `W_N` satisfies it at every configuration of `𝒟̄_N` whose contacts form a nonempty matching `M`, then `W^{(s)}_N` satisfies it at every such configuration of `𝒟̄_s` (GST2013 line 938).
 
 **Checks.**
 
@@ -641,7 +644,7 @@ For a symmetric `W_N ≥ 0` vanishing off `𝒟̄_N` and `s ≤ N`, define the m
 - Non-example: dropping the indicator gives the first marginal `g(z_1) ∫ g̃` in the same situation, too large by the factor `1/(1 − ω_d ε^d)`; and the second marginal of the hard-core density vanishes at `x_1 = x_2`, while the product does not.
 - The specular inheritance needs the specular condition on `W_N`; symmetry, positivity and support do not give it. On `E` with d = 2, ε = 1 and `s = N = 2`, the density `W = e^{−|v_1|² − |v_2|²} 1_{|v_1| ≤ 1} 1_{|v_2| ≤ 1} 1_{𝒟̄_2}` is symmetric, nonnegative and vanishes off `𝒟̄_2`, and its marginal of order 2 is `W` itself; at a contact with `ν_12 = e_1` and velocities `(0, 0.9)`, `(0.9, 0)` it equals `e^{−1.62} ≈ 0.19790`, while at the scattered velocities `(0.9, 0.9)`, `0` it is 0, since `|(0.9, 0.9)| ≈ 1.2728 > 1`. The Gaussian density `e^{−|v_1|² − |v_2|²} 1_{𝒟̄_2}` satisfies the condition and takes the value `e^{−1.62}` at both states.
 
-*Needs:* §3.1, §3.2.
+*Needs:* §3.1–3.3.
 
 ### 8.4 Symmetric expectations
 
@@ -663,7 +666,7 @@ For the canonical measure of §9.2 every marginal is constant in time; for a pro
 
 ### Dependencies
 
-Layers 3 and 7; Mathlib (the fundamental theorem of calculus, `Nat.descFactorial`, relabelling of product measures); ClassicalErgodicTheory §3.5 (item 4).
+Layers 1, 3 and 7; Mathlib (the fundamental theorem of calculus, `Nat.descFactorial`, relabelling of product measures); ClassicalErgodicTheory §3.5 (item 4).
 
 ## Layer 9: Equilibria and grand canonical ensembles
 
@@ -736,7 +739,7 @@ For the grand canonical measure and its transport, define `HardSphere.correlatio
 - `Nat.descFactorial 1 2 = 0` (a one-particle state has no ordered pair of distinct particles and contributes nothing to `∫ F_2`), whereas `1!/(1 − 2)!` with truncated subtraction is 1; `Nat.descFactorial 3 2 = 6`.
 - The volume factor in the integrated bound: on the unit circle (d = 1) with ε = 0.1, μ = C₀ = β₀ = 1, `f⁰(x, v) = exp(−v²/2)`, `n = m = 1`, `t = 0` and `v_1 = 0`, the integrated density is `∫ W_2(0)(z_1, z_2) dz_2 = (1 − 0.2)√(2π)/Z ≈ 2.0053/Z`; it exceeds the value `1/Z` of `μ² C₀² exp(−β₀|v_1|²/2)/Z` without the volume factor and lies below the bound `K/Z = √(2π)/Z ≈ 2.5066/Z`.
 
-*Needs:* §7.5, §8.1, §8.4, §9.3, Mathlib `Nat.descFactorial`, `GaussianFourier.integral_rexp_neg_mul_sq_norm`.
+*Needs:* §7.3, §7.5, §8.1, §8.4, §9.3, Mathlib `Nat.descFactorial`, `GaussianFourier.integral_rexp_neg_mul_sq_norm`.
 
 ### 9.6 Initial chaos and the Boltzmann–Grad scaling
 
@@ -810,7 +813,6 @@ Define `HardSphere.LanfordStatement d : Prop` on the unit torus `𝕋^d`, `d ≥
 API:
 
 - At `t = 0` every conclusion holds, by §9.6.
-- The proposition implies the law of large numbers of §10.5.
 
 **Checks.**
 

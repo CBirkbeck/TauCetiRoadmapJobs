@@ -370,10 +370,11 @@
      ],
      "locator": {
       "source": "GST2013",
-      "where": "lines 839–841; BGSS2023 lines 137–142; DengHaniMa2024 (1.1) lines 150–153"
+      "where": "lines 839–841; BGSS2023 lines 137–142; DengHaniMa2024 (1.1) lines 150–153; BGSS2023 line 165 (emptiness for large N)"
      },
      "prerequisites": [
       "target:1.1",
+      "target:1.4",
       "mathlib:MeasureTheory.measurePreserving_piCongrLeft"
      ],
      "api": [
@@ -391,6 +392,11 @@
        "name": "volume_frontier",
        "role": "measure",
        "statement": "For 0 < ε < ρ, 𝒟̄ ∖ 𝒟 is null."
+      },
+      {
+       "name": "hardCoreSet_eq_empty_of_packing",
+       "role": "packing",
+       "statement": "On FlatTorus L with 0 < ε ≤ 2ρ, 𝒟̄^ε_N = ∅ for N > covolume(L)/(ω_d (ε/2)^d), by the packing bound of 1.4 (BGSS2023 line 165)."
       },
       {
        "name": "restrict",
@@ -413,6 +419,11 @@
        "name": "one_particle",
        "kind": "degenerate",
        "statement": "𝒟̄_1 is everything."
+      },
+      {
+       "name": "packing_radius_needed",
+       "kind": "non-example",
+       "statement": "Unit circle (d = 1, ρ = 1/2, ω_1 = 2), ε = 1.5: threshold 1/(2 · 0.75) = 2/3 < 1 = N, yet 𝒟̄_1 is everything, so ε ≤ 2ρ is needed; at ε = 1 = 2ρ the threshold is 1 and 𝒟̄_2 = ∅ (largest torus distance 1/2)."
       }
      ]
     },
@@ -430,6 +441,7 @@
      },
      "prerequisites": [
       "target:1.1",
+      "target:1.2",
       "target:3.1",
       "mathlib:MeasureTheory.Measure.addHaar_sphere"
      ],
@@ -496,11 +508,6 @@
        "statement": "σ_M and ℛ are involutions of 𝒟̄, commute with relabelling, preserve λ_N; ℛ = (X, −V) off a null set."
       },
       {
-       "name": "reversal_conserves",
-       "role": "conservation",
-       "statement": "σ_M preserves P and H; ℛ preserves H and reverses P."
-      },
-      {
        "name": "reversal_boundary",
        "role": "characterisation",
        "statement": "σ_M exchanges ∂^+(i,j) and ∂^−(i,j); ℛ preserves ∂^+(i,j)."
@@ -536,6 +543,8 @@
      },
      "prerequisites": [
       "target:1.1",
+      "target:1.2",
+      "target:3.1",
       "mathlib:Flow",
       "mathlib:MeasureTheory.MeasurePreserving",
       "tauceti:TauCeti.flowOfLipschitz"
@@ -584,7 +593,7 @@
      "id": "3.5",
      "kind": "definition",
      "name": "HardSphere.kineticEnergy",
-     "statement": "P(V) = Σ_i v_i and H(V) = ½ Σ_i |v_i|²; σ_M and S_t preserve both.",
+     "statement": "P(V) = Σ_i v_i and H(V) = ½ Σ_i |v_i|²; σ_M and S_t preserve both; the reversal ℛ of 3.3 preserves H and reverses P.",
      "hypotheses": [],
      "locator": {
       "source": "GST2013",
@@ -599,7 +608,7 @@
       {
        "name": "conserved",
        "role": "conservation",
-       "statement": "P ∘ σ_M = P, H ∘ σ_M = H, P and H invariant under S_t; σ_M preserves {|V| ≤ R}."
+       "statement": "P ∘ σ_M = P, H ∘ σ_M = H, P and H invariant under S_t; H ∘ ℛ = H and P ∘ ℛ = −P; σ_M preserves {|V| ≤ R}."
       }
      ],
      "tests": [
@@ -617,6 +626,11 @@
        "name": "separate_reflection",
        "kind": "non-example",
        "statement": "Separate reflection preserves H but not P."
+      },
+      {
+       "name": "reversal_momentum",
+       "kind": "computation",
+       "statement": "At the outgoing contact state of 3.3 (ε = 1, x_1 = (1, 0), x_2 = 0, V = ((1, 0), 0)): P = (1, 0), H = ½; the reversed velocities (0, (−1, 0)) have P = (−1, 0), H = ½; the unsigned map V ↦ σ_M V = (0, (1, 0)) keeps P = (1, 0)."
       }
      ]
     }
@@ -885,7 +899,8 @@
       "target:3.1",
       "target:3.2",
       "target:3.3",
-      "target:3.4"
+      "target:3.4",
+      "target:3.5"
      ],
      "api": [
       {
@@ -1014,6 +1029,7 @@
       "where": "Definition 1.1, lines 140–172, on the Euclidean domain of lines 150–153"
      },
      "prerequisites": [
+      "target:1.2",
       "target:3.3",
       "target:5.1"
      ],
@@ -1085,7 +1101,7 @@
       {
        "name": "incoming_excluded",
        "kind": "non-example",
-       "statement": "The incoming contact state is not in G; the outgoing one is."
+       "statement": "ε = 1: the incoming contact state x_1 = (1, 0), x_2 = 0, v_1 = (−1, 0), v_2 = 0 (Scattering witness of the Conventions, ⟨v_1 − v_2, ν_12⟩ = −1) is not in G, since no trajectory has an incoming contact; its scattered state v_1 = 0, v_2 = (−1, 0) at the same positions (the outgoing contact state of 5.2, ⟨v_1 − v_2, ν_12⟩ = 1) is in G, being the time-1 state of the head-on witness, a trajectory on ℝ."
       },
       {
        "name": "triple_contact",
@@ -1225,7 +1241,7 @@
       {
        "name": "two_body",
        "kind": "degenerate",
-       "statement": "N = 2: the bound is 0 apart from the grazing null set."
+       "statement": "N = 2: F is null but not empty and the bound is not sharp. Null: no triple of distinct indices, so I = ∅ and only the null remainder of 6.2 fails a step. Not empty: on E, d = 2, ε = R = δ = 1, t = 3, K = B(0, 3), the state x_1 = (2, 1), x_2 = 0, v_1 = (−1, 0), v_2 = 0 (a = (2, 1), u = (−1, 0), D = 0, grazing at time 2) passes step 0 and fails step 1 (relative position (1, 1), grazing at time 1 ≤ δ). Constant: μ_X(K_t)^{N−2} = 1, C ≥ (t + 1) C₁ with C₁ = 8 (2R d ω_d (ε + 2R)^{d−1})² vol(B^{2d}_R) = 576π⁴ ≈ 56108 at d = 2, ε = R = 1; so λ_N(F) = 0 ≤ C δ with C δ > 0."
       },
       {
        "name": "first_failure_inequality",
@@ -1560,6 +1576,7 @@
      "prerequisites": [
       "target:7.1",
       "target:7.2",
+      "target:7.3",
       "target:7.4",
       "roadmap:ClassicalErgodicTheory §3.5"
      ],
@@ -1619,8 +1636,10 @@
       "where": "(4.2.1) lines 911–918 and (4.3.1) lines 941–958; BGSS2023 (1.1.3)–(1.1.4) lines 145–157"
      },
      "prerequisites": [
+      "target:1.2",
       "target:3.3",
       "target:3.4",
+      "target:3.5",
       "target:7.1",
       "target:8.1",
       "mathlib:intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le"
@@ -1664,7 +1683,7 @@
      "id": "8.3",
      "kind": "definition",
      "name": "HardSphere.marginal",
-     "statement": "For symmetric W_N ≥ 0 vanishing off 𝒟̄_N and s ≤ N, W^{(s)}_N(Z_s) = ∫ W_N(Z_s, z_{s+1}, …, z_N) dz_{s+1} ⋯ dz_N: symmetric, vanishing off 𝒟̄_s, consistent (W^{(s)} = ∫ W^{(s+1)} dz_{s+1} for s < N), W^{(N)} = W_N, W^{(0)} = ∫ W_N, commuting with relabelling of the first s particles; and when W_N satisfies the specular condition W_N(X, V) = W_N(X, σ_M V) at every configuration of 𝒟̄_N whose contacts form a nonempty matching M, W^{(s)}_N satisfies it at every such configuration of 𝒟̄_s.",
+     "statement": "For symmetric W_N ≥ 0 vanishing off 𝒟̄_N and s ≤ N, W^{(s)}_N(Z_s) = ∫ W_N(Z_s, z_{s+1}, …, z_N) dz_{s+1} ⋯ dz_N: symmetric, vanishing off 𝒟̄_s, consistent (W^{(s)} = ∫ W^{(s+1)} dz_{s+1} for s < N), W^{(N)} = W_N, W^{(0)} = ∫ W_N, commuting with relabelling of the first s particles; and when W_N satisfies the specular condition W_N(X, V) = W_N(X, σ_M V), with σ_M the contact scattering of 3.3, at every configuration of 𝒟̄_N whose contacts form a nonempty matching M, W^{(s)}_N satisfies it at every such configuration of 𝒟̄_s.",
      "hypotheses": [
       "W_N symmetric",
       "W_N ≥ 0",
@@ -1679,7 +1698,8 @@
      },
      "prerequisites": [
       "target:3.1",
-      "target:3.2"
+      "target:3.2",
+      "target:3.3"
      ],
      "api": [
       {
@@ -2005,6 +2025,7 @@
       "where": "(1.1.9)–(1.1.11) lines 218–288; DengHaniMa2024 (1.11) lines 235–244"
      },
      "prerequisites": [
+      "target:7.3",
       "target:7.5",
       "target:8.1",
       "target:8.4",
@@ -2306,11 +2327,6 @@
        "name": "lanfordStatement_zero",
        "role": "initial time",
        "statement": "At t = 0 every conclusion holds by §9.6."
-      },
-      {
-       "name": "lanfordStatement_lln",
-       "role": "consequence",
-       "statement": "The proposition implies the law of large numbers of §10.5."
       }
      ],
      "tests": [
