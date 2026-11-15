@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EnhancedDerivedSheaves~26",
+  "head": "0514180906fd196b8c53163d24feb7fd07e8f7df",
+  "pr": 1630,
+  "folder": "EnhancedDerivedSheaves",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 0514180; checked previous resolution, PR title and description against base diff and head, removed Lean declarations, four supporting source locators, three computed instances, overlap scopes and import claim; seeded sample 0.1–0.4 unchanged, previous checks stand; gate, dependency check, targeted build and direct Lean elaboration passed.",
+  "text": "882eafe7748aded8",
+  "carried": {
+   "from": "0514180906fd196b8c53163d24feb7fd07e8f7df",
+   "head": "0514180906fd196b8c53163d24feb7fd07e8f7df",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
