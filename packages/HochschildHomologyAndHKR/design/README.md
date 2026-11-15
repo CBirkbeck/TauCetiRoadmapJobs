@@ -76,8 +76,8 @@ It leaves to other roadmaps, by section:
 - **DerivedModuleAlgebra** §0.K.1: the Koszul complex of a finite sequence in a commutative ring
   and its acyclicity for weakly regular sequences. §0.5: square-zero extensions of a commutative
   algebra by a module through commutative rings, their isomorphism classes `Exal` with the Baer
-  sum, the vanishing of the class exactly for split extensions, and the bijection between
-  derivations and sections of the trivial extension.
+  sum, the split trivial extension, and the bijection between derivations and sections of the
+  trivial extension.
 - **EulerSystemsAndKolyvaginSystems** §6.1: the theorem that the exterior-bidual evaluation
   `⋀^r_R X → Hom_R(⋀^r_R Hom_R(X,R), R)` is an isomorphism for every finite projective module `X`
   over a commutative ring `R`; its carrier, the exterior bidual and its evaluation, is
@@ -104,11 +104,11 @@ objects, `TrivSqZeroExt`, the lifts along a square-zero ideal of a commutative r
 correspondence with derivations (`derivationToSquareZeroEquivLift`), the algebra `A` as a module
 over `A ⊗[k] Aᵐᵒᵖ` (`instModuleTensorProductMop`); Tau Ceti's commutative square-zero extensions
 `TauCeti.SquareZeroExtension` with their morphisms `TauCeti.SquareZeroExtension.Hom`, splittings
-`TauCeti.SquareZeroExtension.Splitting`, isomorphism classes `TauCeti.Exal` and the criterion
-`TauCeti.SquareZeroExtension.extensionClass_eq_zero_iff` (the objects of DerivedModuleAlgebra
-§0.5), its weak regularity of distinct polynomial variables over every commutative ring
-(`MvPolynomial.isWeaklyRegular_map_X`), its Koszul complex
-`TauCeti.koszulComplex` (the formalisation of DerivedModuleAlgebra §0.K.1) with the zeroth
+`TauCeti.SquareZeroExtension.Splitting` and isomorphism classes `TauCeti.Exal` (the objects of
+DerivedModuleAlgebra §0.5), with the criterion that the class vanishes exactly for split extensions
+(`TauCeti.SquareZeroExtension.extensionClass_eq_zero_iff`), its weak regularity of distinct
+polynomial variables over every commutative ring (`MvPolynomial.isWeaklyRegular_map_X`), its Koszul
+complex `TauCeti.koszulComplex` (the formalisation of DerivedModuleAlgebra §0.K.1) with the zeroth
 homology of a finite sequence (`TauCeti.koszulComplex.homologyZeroEquivSpan`) and acyclicity for
 weakly regular sequences (`TauCeti.koszulComplex.exactAt_of_isWeaklyRegular`),
 `TauCeti.BalancedTensorProduct`, the restrictions of a module over `A ⊗[k] B` to its two factors
@@ -152,7 +152,9 @@ Variants kept here, each differing in one stated respect from an existing object
   `TauCeti.hochschildBimoduleCoboundary` by being a cosimplicial object of `ModuleCat k` with
   codegeneracies, which the normalisation of Layer 2 needs, and from
   `TauCeti.hochschildCochainComplex`, whose degree-`n` cochains take `n + 1` arguments with values
-  in a `k`-module `M` and compute `HH^n(A, Hom_k(A,M))`
+  in a `k`-module `M` and whose cohomology `TauCeti.hochschildCohomology` (with the cocycles
+  `TauCeti.hochschildCocycles`, the coboundaries `TauCeti.hochschildCoboundaries` and the class map
+  `TauCeti.hochschildCohomology.mk`) is `HH^n(A, Hom_k(A,M))`
   (`TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary`), not `HH^n(A,M)`;
 - the normalised chains of §2.1 differ from `TauCeti.normalizedHochschildChains` by allowing an
   arbitrary bimodule of coefficients and by their comparison with the unnormalised complex; for
@@ -179,7 +181,8 @@ Variants kept here, each differing in one stated respect from an existing object
   Layer 6 classifies bounded extensions of Banach algebras; DerivedModuleAlgebra §0.5, which
   Tau Ceti has at the pin as `TauCeti.SquareZeroExtension k R M` and `TauCeti.Exal k R M`, takes
   the extensions of a commutative `R` by an `R`-module through commutative rings, with no
-  `k`-linear section required, and keeps them with the criterion that the class vanishes exactly
+  `k`-linear section required, and keeps them; Tau Ceti's
+  `TauCeti.SquareZeroExtension.extensionClass_eq_zero_iff` proves that the class vanishes exactly
   for split extensions; §3.6 allows noncommutative `A` and `E` and an arbitrary bimodule and requires a
   `k`-linear section, and the two meet in the commutative `k`-split extensions of a commutative `R`
   by a symmetric bimodule, which up to isomorphism are the `R ⊕_f M` for symmetric cocycles `f`,
@@ -482,7 +485,12 @@ canonical map, and the determinant map is identified as `n!` times it.
   terms and `b`. The coefficients are `A` itself, and the pinned file compares these chains neither
   with the unnormalised complex nor with `A ⊗ Ā^{⊗n}`; §2.1 does both over every `k`
   (NoncommutativeGeometry N1.Cyclic states the second comparison for unital complex algebras).
-- `TauCeti.hochschildCochainComplex` (`TauCeti/RingTheory/HochschildCohomology/Complex.lean`) with
+- `TauCeti.hochschildCochainComplex`, its cocycles `TauCeti.hochschildCocycles`, coboundaries
+  `TauCeti.hochschildCoboundaries` and cohomology `TauCeti.hochschildCohomology`, the class map
+  `TauCeti.hochschildCohomology.mk` with `TauCeti.hochschildCohomology.mk_surjective`,
+  `TauCeti.hochschildCohomology.mk_eq_zero_iff` and `TauCeti.hochschildCohomology.desc`, and
+  `TauCeti.mem_hochschildCocycles_zero_iff`
+  (`TauCeti/RingTheory/HochschildCohomology/Complex.lean`), with
   `TauCeti.normalizedHochschildCochains`, `TauCeti.normalizedHochschildCochains_zero`,
   `TauCeti.normalizedHochschildCochainComplex` and `TauCeti.normalizedHochschildCochainComplexι`
   (`TauCeti/RingTheory/CyclicCohomology/Normalized/Basic.lean`): for a commutative ring `k`, a ring
@@ -490,6 +498,10 @@ canonical map, and the determinant map is identified as `n!` times it.
   complex in `CochainComplex (ModuleCat k) ℕ` with degree-`n` term
   `MultilinearMap k (fun _ : Fin (n + 1) ↦ A) N` and differential
   `bφ(a₀,…,a_{n+1}) = Σ_{i=0}^{n} (−1)^i φ(a₀,…,a_i a_{i+1},…,a_{n+1}) + (−1)^{n+1} φ(a_{n+1}a₀, a₁,…,a_n)`;
+  the kernel of `b` and its image (`0` in degree zero), the cohomology of the complex in
+  `ModuleCat k` with the class map from the cocycles, which is surjective with kernel the
+  coboundaries, and the map out of the cohomology induced by a linear map on cocycles vanishing on
+  coboundaries; the degree-zero cocycles are the traces, the `φ` with `φ(xy) = φ(yx)`;
   the submodule of cochains that vanish whenever some argument other than the zeroth is `1` (no
   condition in degree zero), the subcomplex they form, and its inclusion into the full complex.
   The pin has coefficients in a `k`-module only, and proves neither that the inclusion is a
@@ -522,12 +534,12 @@ canonical map, and the determinant map is identified as `n!` times it.
   carries `algebraMap A B a • m` to `a • ι(m)`; morphisms are `A`-algebra maps compatible with `π`
   and `ι`; a splitting is an `A`-algebra section of `π`; `TauCeti.Exal A B M` is the set of
   isomorphism classes of extensions whose ring lies in the universe of `B` and `M`. Under the further
-  hypotheses `Module Bᵐᵒᵖ M`, `IsCentralScalar B M`, `Module A M` and `IsScalarTower A B M` (the
-  symmetric bimodule over `A`), `TauCeti.Exal A B M` has the class of `TrivSqZeroExt B M` as its `0`
-  and an extension has class `0` exactly when it has a splitting; with no further hypothesis,
-  `TauCeti.Exal A A M` has at most one element (every extension of `A` itself splits). The ring
-  `E` is commutative and `ι` is only additive. §3.6 compares its twisted extensions with these;
-  nothing else is assumed of them.
+  hypotheses `Module Bᵐᵒᵖ M`, `IsCentralScalar B M`, `Module A M`, `IsScalarTower A B M` and
+  `IsScalarTower A Bᵐᵒᵖ M` (the symmetric bimodule over `A`), `TauCeti.Exal A B M` has the class of
+  `TrivSqZeroExt B M` as its `0` and an extension has class `0` exactly when it has a splitting;
+  with no further hypothesis, `TauCeti.Exal A A M` has at most one element (every extension of `A`
+  itself splits). The ring `E` is commutative and `ι` is only additive. §3.6 compares its twisted
+  extensions with these; nothing else is assumed of them.
 - `TauCeti.AInfinityAlgebra`, `TauCeti.AInfinity.IsSuspension`, `TauCeti.IsDGAlgebra` and
   `TauCeti.IsNonUnitalDGAlgebra.toAInfinityAlgebra` (`TauCeti/Algebra/Homology/AInfinity/`): the
   suspended bar convention of DGAInfinity, which fixes the sign of `Θ` in the conventions. The
@@ -913,8 +925,10 @@ degeneracies becomes the intersection of the kernels of the codegeneracies.
 
 *Needs:* §1.2; the Mathlib declarations of §2.1; the abelian structure of the opposite category
 (`Mathlib/CategoryTheory/Abelian/Opposite.lean`); Tau Ceti `TauCeti.hochschildCochainComplex`,
-`TauCeti.normalizedHochschildCochains`, `TauCeti.normalizedHochschildCochains_zero`,
-`TauCeti.normalizedHochschildCochainComplex`, `TauCeti.normalizedHochschildCochainComplexι`,
+`TauCeti.hochschildCocycles`, `TauCeti.hochschildCoboundaries`, `TauCeti.hochschildCohomology`,
+`TauCeti.hochschildCohomology.mk`, `TauCeti.normalizedHochschildCochains`,
+`TauCeti.normalizedHochschildCochains_zero`, `TauCeti.normalizedHochschildCochainComplex`,
+`TauCeti.normalizedHochschildCochainComplexι`,
 `TauCeti.multilinearCurryFirstEquiv`, `TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary`,
 `TauCeti.DualBimodule.instModule`, `TauCeti.DualBimodule.instModuleOp` (for the comparison only).
 
@@ -926,7 +940,11 @@ degeneracies becomes the intersection of the kernels of the codegeneracies.
   currying the first argument, `φ ↦ ((a₁,…,a_n) ↦ (x ↦ φ(x, a₁,…,a_n)))`
   (`TauCeti.multilinearCurryFirstEquiv`), is an isomorphism of cochain complexes
   `TauCeti.hochschildCochainComplex k A N ≅ C^•(A, A →ₗ[k] N)`, since it carries the pinned `b` to
-  `δ` (`TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary`). The pinned condition concerns
+  `δ` (`TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary`). Hence it carries
+  `TauCeti.hochschildCocycles k A N n` onto `Z^n(A, A →ₗ[k] N)` and
+  `TauCeti.hochschildCoboundaries k A N n` onto `B^n(A, A →ₗ[k] N)` (both `0` in degree zero), and
+  induces `TauCeti.hochschildCohomology k A N n ≅ HH^n(A, A →ₗ[k] N)` in every degree, carrying
+  `TauCeti.hochschildCohomology.mk` to the class map `Z^n → HH^n`. The pinned condition concerns
   the arguments in slots `1,…,n`, which are `a₁,…,a_n` after currying, so it restricts to an
   isomorphism of `TauCeti.normalizedHochschildCochains k A N n` onto `N^n(A, A →ₗ[k] N)` in every
   degree (both are everything in degree zero), hence of complexes
@@ -948,6 +966,17 @@ degeneracies becomes the intersection of the kernels of the codegeneracies.
   be: `ψ(ab)(y) = (y a ∂b)(0) + (y b ∂a)(0) = (a · ψ(b))(y) + (ψ(a) · b)(y)`. Currying the last
   argument instead, `ψ′(a)(y) = φ(a,y)`, gives `ψ′(1)(x) = φ(1,x) = 1 ≠ 0`: that choice of slot does
   not carry normalised cochains to normalised ones.
+- Comparison of cohomology classes in the same example: since `A = k[x]` is commutative, the pinned
+  coboundaries of degree one are `0` (`bχ(a₀,a₁) = χ(a₀a₁) − χ(a₁a₀) = 0`) and so are the inner
+  derivations into `A →ₗ[k] k` (`(a · g)(y) = g(ya) = g(ay) = (g · a)(y)`), so the pinned class
+  `TauCeti.hochschildCohomology.mk` of `φ` is nonzero, as is the class of `ψ` in
+  `HH¹(A, A →ₗ[k] k)` (`ψ(x)(1) = φ(1,x) = 1`). In degree zero the pinned cocycles are the traces,
+  the `χ : A → N` with `χ(ab) = χ(ba)` (`TauCeti.mem_hochschildCocycles_zero_iff`), and
+  `HH⁰(A, A →ₗ[k] N) = Z⁰` is the set of `g` with `a · g = g · a`, that is `g(ya) = g(ay)`: the same
+  set, for every `A`. The pinned cohomology is not `HH^n(A,N)` for a bimodule structure on `N`:
+  for `N = k` with `x` acting by `0` on both sides, `HH⁰(k[x], k) = k`, while the pinned
+  degree-zero cohomology is all of `Hom_k(k[x], k)` (on a commutative algebra every functional is a
+  trace), which surjects onto `k²` by `χ ↦ (χ(1), χ(x))`, and `k` does not for nonzero `k`.
 
 ### Examples
 
@@ -959,8 +988,9 @@ unit (§3.5).
 
 Layer 1; Mathlib's Dold–Kan normalisation and tensor powers; Tau Ceti's normalised chains of an
 algebra with coefficients in itself (`TauCeti.normalizedHochschildChains`), for the comparison of
-§2.1, and its normalised cochains with values in a `k`-module with the currying comparison to the
-dual bimodule (`TauCeti.normalizedHochschildCochainComplex`,
+§2.1, and its cochains and normalised cochains with values in a `k`-module, their cohomology, and
+the currying comparison to the dual bimodule (`TauCeti.hochschildCohomology`,
+`TauCeti.normalizedHochschildCochainComplex`,
 `TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary`), for the comparison of §2.2. No roadmap
 supplier is used; NoncommutativeGeometry N1.Cyclic also states the complex cases of the comparison
 of §2.1 with `A ⊗ Ā^{⊗n}` and of the comparison of §2.2 between normalised and full scalar

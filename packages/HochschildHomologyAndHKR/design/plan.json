@@ -364,6 +364,10 @@
       "mathlib:AlgebraicTopology.DoldKan.homotopyEquivNormalizedMooreComplexAlternatingFaceMapComplex",
       "mathlib:AlgebraicTopology.DoldKan.degeneraciesVanish_iff_QInfty_f_comp",
       "tauceti:TauCeti.hochschildCochainComplex",
+      "tauceti:TauCeti.hochschildCocycles",
+      "tauceti:TauCeti.hochschildCoboundaries",
+      "tauceti:TauCeti.hochschildCohomology",
+      "tauceti:TauCeti.hochschildCohomology.mk",
       "tauceti:TauCeti.normalizedHochschildCochains",
       "tauceti:TauCeti.normalizedHochschildCochains_zero",
       "tauceti:TauCeti.normalizedHochschildCochainComplex",
@@ -392,7 +396,7 @@
       {
        "name": "HochschildHKR.normalizedCochainComplex_isoTauCeti",
        "role": "compatibility",
-       "statement": "For a k-module N and M = A →ₗ[k] N with the dual bimodule structure (a·g)(x)=g(xa), (g·a)(x)=g(ax) (scoped instances of TauCeti.DualBimodule), currying the first argument φ ↦ ((a₁,…,a_n) ↦ (x ↦ φ(x,a₁,…,a_n))) (TauCeti.multilinearCurryFirstEquiv) is an isomorphism of cochain complexes TauCeti.hochschildCochainComplex k A N ≅ C^•(A, A →ₗ[k] N) (TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary); it restricts in every degree to TauCeti.normalizedHochschildCochains k A N n ≅ N^n(A, A →ₗ[k] N) (the pinned condition concerns slots 1,…,n; both are everything in degree zero), hence TauCeti.normalizedHochschildCochainComplex k A N ≅ N^•(A, A →ₗ[k] N), commuting with TauCeti.normalizedHochschildCochainComplexι and the inclusion N^• → C^•."
+       "statement": "For a k-module N and M = A →ₗ[k] N with the dual bimodule structure (a·g)(x)=g(xa), (g·a)(x)=g(ax) (scoped instances of TauCeti.DualBimodule), currying the first argument φ ↦ ((a₁,…,a_n) ↦ (x ↦ φ(x,a₁,…,a_n))) (TauCeti.multilinearCurryFirstEquiv) is an isomorphism of cochain complexes TauCeti.hochschildCochainComplex k A N ≅ C^•(A, A →ₗ[k] N) (TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary), carrying TauCeti.hochschildCocycles k A N n onto Z^n(A, A →ₗ[k] N) and TauCeti.hochschildCoboundaries k A N n onto B^n(A, A →ₗ[k] N), hence TauCeti.hochschildCohomology k A N n ≅ HH^n(A, A →ₗ[k] N) carrying TauCeti.hochschildCohomology.mk to the class map; it restricts in every degree to TauCeti.normalizedHochschildCochains k A N n ≅ N^n(A, A →ₗ[k] N) (the pinned condition concerns slots 1,…,n; both are everything in degree zero), hence TauCeti.normalizedHochschildCochainComplex k A N ≅ N^•(A, A →ₗ[k] N), commuting with TauCeti.normalizedHochschildCochainComplexι and the inclusion N^• → C^•."
       }
      ],
      "tests": [
@@ -415,6 +419,11 @@
        "name": "normalized_cochains_pinned_comparison",
        "kind": "compatibility",
        "statement": "A=k[x], N=k, k nonzero, ∂=∂_x: the pinned φ(a₀,a₁)=(a₀∂a₁)(0) has φ(a₀,1)=0 and bφ=0; its curried form ψ(a₁)(y)=φ(y,a₁) has ψ(1)=0, so ψ ∈ N¹(A, A →ₗ[k] k), and ψ(ab)(y)=(ya∂b)(0)+(yb∂a)(0)=(a·ψ(b))(y)+(ψ(a)·b)(y) is a derivation into the dual bimodule. Currying the last argument, ψ′(a)(y)=φ(a,y), gives ψ′(1)(x)=φ(1,x)=1≠0: the wrong slot does not preserve normalisation."
+      },
+      {
+       "name": "normalized_cochains_pinned_cohomology",
+       "kind": "compatibility",
+       "statement": "A=k[x], N=k, k nonzero: pinned degree-one coboundaries and inner derivations into A →ₗ[k] k vanish (A commutative), so TauCeti.hochschildCohomology.mk φ ≠ 0 for φ(a₀,a₁)=(a₀∂a₁)(0), matching [ψ] ≠ 0 (ψ(x)(1)=1); in degree zero the pinned cocycles are the traces (TauCeti.mem_hochschildCocycles_zero_iff), equal to Z⁰(A, A →ₗ[k] N) = {g | g(ya)=g(ay)}. Not HH^n(A,N): for N=k with x acting by 0, HH⁰(k[x],k)=k while the pinned degree-zero cohomology Hom_k(k[x],k) surjects onto k²."
       }
      ]
     }
