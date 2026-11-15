@@ -114,8 +114,11 @@ rounds = 2
 # The passes of one round: two different agents, so that the reviews are independent. When Codex
 # is out of usage credit the operator may run the first pass on Claude as well
 # (`{ agent = "claude", model = "fable" }` twice) until it answers again.
+# Codex is out of usage credit until 2026-11-20 10:55 UTC: both passes run on Fable until it answers again
+# (owner, 2026-11-15: Astra's work goes to the other workers). Then the first pass goes back to
+# `{ agent = "codex", model = "gpt-6-astra" }`.
 passes = [
-  { agent = "codex", model = "gpt-6-astra" },
+  { agent = "claude", model = "fable" },
   { agent = "claude", model = "fable" },
 ]
 # Add section-sharded passes: after its whole-document pass, every red-team job runs one more pass
