@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AnalyticStableMaps~8",
+  "head": "41557bae83789a2e39fcd4fff2e2a1177cee62b8",
+  "pr": 987,
+  "folder": "AnalyticStableMaps",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 41557ba; this round checked the pull request's title and description against the head. Three P3 findings, all in the description (written for head 9045e48): it names a superseded head and calls the change README-only though Suggested.lean was rewritten; it cites labels M0.1, M2.5, M2.6, M3.1 that the README does not have (now §0.5, §2.18–§2.22, §2.23, §3.8); its supplier paragraph omits PseudoholomorphicCurveAnalysis and FuchsianOrbifolds, lists TopologicalSheafCohomology which the README says is not consumed directly, and presents suppliers now on main as open proposals. No folder file needs to change. Gate passes (all checks 0); depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with three sorry warnings only; nothing changed outside the folder. Previous review had no findings. Adversarial rows computed for finite_isotropy_iff, §0.5, §2.22, §2.23, §3.8; seeded sample not re-read since no passage changed.",
+  "text": "96c75b845b7f6b07",
+  "carried": {
+   "from": "41557bae83789a2e39fcd4fff2e2a1177cee62b8",
+   "head": "41557bae83789a2e39fcd4fff2e2a1177cee62b8",
+   "findings": 3,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
