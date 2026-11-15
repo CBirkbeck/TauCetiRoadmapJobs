@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GrothendieckTopoi~23",
+  "head": "6b3158d01c735511198bd0fc75c4e05060652afa",
+  "pr": 1520,
+  "folder": "GrothendieckTopoi",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 6b3158d. One description-only P3: the AI-assistance line names only Claude Opus 5.5, but 4 branch commits (incl. 8f4181f0, which adds 6.6) carry a Claude Sonnet 5.5 co-author trailer. Title and description checked against the head: scope vs 43 k.n headings; Needs/Checks counted 43/43; quoted Lean names; supplier list vs Exact supplier contracts (DiamondEtaleCohomology section resolved at 9e9df99); Sources vs References. Gate at 6b3158d passes (build included); depcheck 0 problems; lake env lean exit 0 with 44 sorry warnings only (all on theorems). Previous review raised no findings. Adversarial row: 6.6(d) on three sites. Seeded sample: no sampled target falls in a changed passage (diff empty).",
+  "text": "e911b853ac85d403"
+ }
+}
