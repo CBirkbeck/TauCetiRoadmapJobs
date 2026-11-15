@@ -211,7 +211,7 @@ Every contract below is a recorded prerequisite gap, consumed only through the c
 
 **`gestalten-transmutation` — No owner.** For a six-functor formalism D on a small category with finite limits in which every map is !-able, the transmutation functor X ↦ [X]_D from D-sheaves to Gestalten, commuting with countable colimits and finite limits and recovering pullback and tensor product through 1-sheaves. Supply: Gest Proposition 9.5 (p. 81, Gest line 3082) and Corollary 9.8 (p. 83, Gest line 3166), stated there for κ = ℵ₁ and used by ALRS Construction 2.1.2 (ALRS line 704) for the fixed cardinal κ of the Conventions, applied to affinoid Gelfand stacks, all of whose maps are !-able with f_! = f_*. Needed by §§2.2.
 
-**`proetale-v-comparison` — From TauCetiRoadmap.DiamondsAndVStacks §D6.5.** For a rigid space X over a nonarchimedean field over ℚ_p, the identification RΓ_proét(X, ℚ̂_p) ≃ RΓ_v(X^⋄, ℚ_p) of pro-étale cohomology with coefficients Ẑ_p[1/p] and v-cohomology of the topological ℚ_p on the diamond. Supply, for a rigid space X over a complete nonarchimedean field K ⊇ ℚ_p with pro-étale site X_proét of AdicEtaleGeometry §A1.12 and diamond X^⋄ of DiamondsAndVStacks §D6.4, a natural equivalence RΓ_proét(X, Ẑ_p) ≃ RΓ_v(X^⋄, ℤ_p) compatible with restriction, and after inverting p for qcqs X the equivalence RΓ_proét(X, ℚ̂_p) ≃ RΓ_v(X^⋄, ℚ_p), ℚ_p carrying its p-adic topology; this extends the étale-site comparison of DiamondsAndVStacks §D6.5 to pro-étale cohomology with p-adic coefficients. Needed by §§11.7.
+**`proetale-v-comparison` — From TauCetiRoadmap.DiamondsAndVStacks §D6.5.** For a rigid space X over a nonarchimedean field over ℚ_p, the identification RΓ_proét(X, ℚ̂_p) ≃ RΓ_v(X^⋄, ℚ_p) of pro-étale cohomology with coefficients Ẑ_p[1/p] and v-cohomology of the topological ℚ_p on the diamond. Supply, for a rigid space X over a complete nonarchimedean field K ⊇ ℚ_p with pro-étale site X_proét of AdicEtaleGeometry §A1.12 and diamond X^⋄ of DiamondsAndVStacks §D6.4, a natural equivalence RΓ_proét(X, Ẑ_p) ≃ RΓ_v(X^⋄, ℤ_p) compatible with restriction, and, for every such X, the equivalence RΓ_proét(X, ℚ̂_p) ≃ RΓ_v(X^⋄, ℚ_p) for the sheaf ℚ̂_p = Ẑ_p[1/p] on X_proét, ℚ_p carrying its p-adic topology, obtained for qcqs X by inverting p and in general by descent along the affinoid opens of X, both sides being hypersheaves on the analytic site of X and the comparison being compatible with restriction; this extends the étale-site comparison of DiamondsAndVStacks §D6.5 to pro-étale cohomology with p-adic coefficients. Needed by §§11.7.
 
 ## How to read the build
 
@@ -1207,9 +1207,9 @@ The API has the following laws.
 
 ### 8.2 The prismatization, the p-adic twistor stack and the Hodge–Tate stack
 
-For a Gelfand stack X define the rational analytic prismatization X^Δ as the realization of X_Δ, equivalently the sheafification of the functor sending a nilperfectoid A over Q_p^Δ = GSpec(ℚ_p)^Δ to Map(D, X), D ⊆ 𝒳_{GSpec A} the classified degree-one divisor; the rational perfect analytic prismatization X^{Div¹~} = lim_φ X^Δ; and the p-adic twistor stack X^{Div¹} = X^{Div¹~}/φ^ℤ, with Div¹~ = (Q_p^Δ)^{Div¹~} and Div¹ = Div¹~/φ (ALRS Definition 4.1.1(5)–(7), p. 57, ALRS line 2965). Construct the natural map X^Δ → A¹/G_m from the divisor {0} × T ⊂ ℕ × T → 𝒳_T and the analytic Hodge–Tate stack X^HT = X^Δ ×_{A¹/G_m} BG_m (ALRS Definition 4.1.4, p. 58, ALRS line 3010). Prove that X ↦ X_Δ is right adjoint to the colimit-preserving functor (S, 𝒳, D) ↦ D and commutes with fibre products (ALRS Remark 4.1.2(2), p. 57, ALRS line 2980), that the perfect prismatic site gives a perfect δ-stack with (X^{Div¹~})^real → X^{Div¹~} an equivalence for †-cohesive X (ALRS Remark 4.1.2(4), p. 57, ALRS line 2993), and construct the maps 𝒳 → D^Δ → Q_p^Δ attached to a prism (ALRS Remark 4.1.6, p. 58, ALRS line 3017) and the relative prismatization Y^{Δ/𝒳} = Y^Δ ×_{D^Δ} 𝒳 and relative Hodge–Tate stack Y^{HT/D} = Y^{Δ/𝒳} ×_𝒳 D over a prism (ALRS Definition 4.1.8, p. 59, ALRS line 3048).
+For a Gelfand stack X define the rational analytic prismatization X^Δ as the realization of X_Δ, equivalently the sheafification of the functor sending a nilperfectoid A over Q_p^Δ = GSpec(ℚ_p)^Δ to Map(D, X), D ⊆ 𝒳_{GSpec A} the classified degree-one divisor; the rational perfect analytic prismatization X^{Div¹~} = lim_φ X^Δ; and the p-adic twistor stack X^{Div¹} = X^{Div¹~}/φ^ℤ, with Div¹~ = (Q_p^Δ)^{Div¹~} and Div¹ = Div¹~/φ (ALRS Definition 4.1.1(5)–(7), p. 57, ALRS line 2965). Construct the natural map X^Δ → A¹/G_m from the divisor {0} × T ⊂ ℕ × T → 𝒳_T and the analytic Hodge–Tate stack X^HT = X^Δ ×_{A¹/G_m} BG_m (ALRS Definition 4.1.4, p. 58, ALRS line 3010). Prove that X ↦ X_Δ is right adjoint to the colimit-preserving functor (S, 𝒳, D) ↦ D and commutes with fibre products (ALRS Remark 4.1.2(2), p. 57, ALRS line 2980), that the perfect prismatic site gives a perfect δ-stack with (X^{Div¹~})^real → X^{Div¹~} an equivalence for †-cohesive X (ALRS Remark 4.1.2(4), p. 57, ALRS line 2993), and construct the maps 𝒳 → D^Δ → Q_p^Δ attached to a prism (ALRS Remark 4.1.6, p. 58, ALRS line 3017) and the relative prismatization Y^{Δ/𝒳} = Y^Δ ×_{D^Δ} 𝒳 and relative Hodge–Tate stack Y^{HT/D} = Y^{Δ/𝒳} ×_𝒳 D over a prism (ALRS Definition 4.1.8, p. 59, ALRS line 3048). For a perfect analytic prism (S, 𝒳, D), one whose δ-space (S, 𝒳) is perfect, the map 𝒳 → D^Δ factors through a φ-equivariant map 𝒳 → D^{Div¹~} (ALRS Remark 4.1.6, p. 58, ALRS line 3024); for Y over D define the relative perfect prismatization Y^{Div¹~/𝒳} = Y^{Div¹~} ×_{D^{Div¹~}} 𝒳 and the relative p-adic twistor stack Y^{Div¹/𝒳} = Y^{Div¹~/𝒳}/φ^ℤ, φ acting through the Frobenius of Y^{Div¹~} and the automorphism φ_𝒳 (ALRS Definition 4.1.8(1), p. 59, ALRS line 3052). A perfectoid space D over ℚ_p is a perfect prism (D♭, D^×_{FF,D♭}, D) through its untilt divisor (7.2), with 𝒳/φ^ℤ = FF_D; over it Y^{Div¹/𝒳} is written Y^{Div¹/FF_D}.
 
-*Needs:* §8.1; §7.3; §7.2; §3.6; §4.4.
+*Needs:* §8.1; §7.3; §7.2; §7.1; §3.6; §4.4.
 
 The API has the following laws.
 
@@ -1217,12 +1217,17 @@ The API has the following laws.
 - X^Δ carries a Frobenius φ over the Frobenius of Q_p^Δ; X^{Div¹~} is its perfection and X^{Div¹} the quotient by φ^ℤ.
 - The map X^Δ → A¹/G_m is the pullback of the classified divisor along {0} × T → 𝒳_T; the resulting divisor X^HT ⊆ X^Δ is the Hodge–Tate divisor.
 - A prism (S, 𝒳, D) gives maps 𝒳 → D^Δ → Q_p^Δ sending D to D^HT → Q_p^HT.
+- For a perfect prism (S, 𝒳, D) and Y over D, Y^{Div¹/𝒳} = Y^{Div¹} ×_{D^{Div¹}} 𝒳/φ^ℤ, and the pullback of Y^{Div¹/𝒳} along 𝒳 → 𝒳/φ^ℤ is Y^{Div¹~/𝒳}, because quotients by compatible actions of φ^ℤ commute with fibre products.
+- For a perfect prism, Y^{HT/D} = Y^{Div¹/𝒳} ×_{𝒳/φ^ℤ} D, so Y^{HT/D} maps to Y^{Div¹/𝒳}: the map D → 𝒳 → D^{Div¹~} lands in the Hodge–Tate locus, over which the projection Y^{Div¹~} → Y^Δ is an isomorphism, a Hodge–Tate divisor D_0 ⊆ 𝒳_T having the unique Frobenius-compatible system of divisors D_n = φ^n(D_0); this is the Hodge–Tate case of the fibre product of ALRS Definition 4.5.1(2) (ALRS line 3611).
 
 **Checks.**
 
 - ∅^Δ = ∅ and GSpec(ℚ_p)^Δ = Q_p^Δ.
 - The cyclotomic prism gives a cartesian square GSpec(ℚ_p(μ_{p^∞})) = X_cyc ×_{Q_p^Δ} Q_p^HT (ALRS Example 4.1.7(1)).
 - The map {0} × T → 𝒳_T is not itself a Cartier divisor; for D ∈ Q_p^HT(A) the map T → D is a derived thickening with fibre sequence Nil†(A)[1] → O_D → A (ALRS Remark 4.1.5), so X^HT must be defined through A¹/G_m.
+- For Y = D over a perfect prism (S, 𝒳, D), D^{Div¹~/𝒳} = 𝒳 and D^{Div¹/𝒳} = D^{Div¹} ×_{D^{Div¹}} 𝒳/φ^ℤ = 𝒳/φ^ℤ, base changes of identities; for perfectoid D this is FF_D, whereas the absolute twistor stack D^{Div¹} is not FF_D (8.3), so the relative and the absolute twistor stack of D differ.
+- For a nilperfectoid A that is not perfectoid, such as C_p[ε]/ε², the Frobenius of the δ-space 𝒳_T of 7.2 shifts the copies {n} × T to {n + 1} × T and misses the 0-th copy of T, so 𝒳_T is not perfect: over a prism with underlying δ-space 𝒳_T only Y^{Δ/𝒳_T} and Y^{HT/D} are defined, not 𝒳_T/φ^ℤ or a relative twistor stack.
+- For S = ∅ the only prism is (∅, ∅, ∅) (7.1), and Y^{Div¹~/𝒳} = Y^{Div¹/𝒳} = ∅ for every Y.
 
 ### 8.3 de Rham stacks of the prismatization, perfectoids and étale descent
 
@@ -1331,15 +1336,21 @@ A proof route: Base change ALRS Proposition 4.3.1 (8.6) along BG_m → A¹/G_m a
 
 ### 9.2 Relative twistor and Hodge–Tate stacks over a perfect prism
 
-Let (S, 𝒳, D) be a perfect analytic prism and X → D a †-cohesive map of Gelfand stacks. Prove that the squares relating X^{Div¹/𝒳}, X^{HK/𝒳}, X^HK, X^{cone/(D,𝒳/φ^ℤ)} and its relative and absolute de Rham stacks are cartesian, and that if X admits a cotangent complex then X^{HT/D} = X ×_{(T_{X/D}{1}[2])^†} X along 0 and the derivation d̃_X, so that for X → D formally smooth with T_{X/D} a vector bundle, T^†_{X/D} its overconvergent neighbourhood of the zero section, X^{HT/D} → X is a gerbe banded by T^†_{X/D}{1}, {1} being the twist by the ideal of D ⊆ 𝒳 (ALRS Proposition 4.4.4, p. 68, ALRS line 3535). For X → D formally smooth with T_{X/D} a vector bundle prove that the pushout of X^{HT/D} along BT^†_{X/D}{1} → BT_{X/D}{1} is the stack of square-zero lifts of X to the first infinitesimal neighbourhood D(1) (ALRS Remark 4.4.5, p. 68, ALRS line 3552).
+Let (S, 𝒳, D) be a perfect analytic prism and X → D a †-cohesive map of Gelfand stacks, and define the relative Hyodo–Kato stack X^{HK/𝒳} = (X^{Div¹/𝒳})^{dR/(𝒳/φ^ℤ)} as the relative de Rham stack over 𝒳/φ^ℤ of the relative p-adic twistor stack X^{Div¹/𝒳} of 8.2 (ALRS p. 7, ALRS line 350). Prove that in the diagram X^{Div¹/𝒳} → X^{HK/𝒳} → X^HK over X^{cone/(D,𝒳/φ^ℤ)} → (X^{cone/(D,𝒳/φ^ℤ)})^{dR/(𝒳/φ^ℤ)} → (X^{cone/(D,𝒳/φ^ℤ)})^dR both squares are cartesian, and that if X admits a cotangent complex then X^{HT/D} = X ×_{(T_{X/D}{1}[2])^†} X along 0 and the derivation d̃_X, so that for X → D formally smooth with T_{X/D} a vector bundle, T^†_{X/D} its overconvergent neighbourhood of the zero section, X^{HT/D} → X is a gerbe banded by T^†_{X/D}{1}, {1} being the twist by the ideal of D ⊆ 𝒳 (ALRS Proposition 4.4.4, p. 68, ALRS line 3535). For X → D formally smooth with T_{X/D} a vector bundle prove that the pushout of X^{HT/D} along BT^†_{X/D}{1} → BT_{X/D}{1} is the stack of square-zero lifts of X to the first infinitesimal neighbourhood D(1) (ALRS Remark 4.4.5, p. 68, ALRS line 3552).
 
 A proof route: Identical to 9.1, using the relative cone over (D, 𝒳/φ^ℤ) of ALRS Definition 2.8.9 and ALRS Proposition 2.8.15 (5.2).
 
-*Needs:* §9.1; §5.2; §8.2.
+*Needs:* §9.1; §5.2; §8.2; §8.6; §7.1; §3.1.
+
+The API has the following laws.
+
+- X^{HK/𝒳} = X^HK ×_{D^HK} 𝒳/φ^ℤ, because de Rham stacks commute with fibre products, (X^{Div¹})^dR = X^HK (ALRS p. 6, ALRS line 308) and (𝒳/φ^ℤ)^dR = D^HK, both being the de Rham stack of FF^⋄_S (7.1, D^⋄ being an untilt of S).
+- X^{HK/𝒳} → 𝒳/φ^ℤ is †-formally étale, as every relative de Rham stack is (4.1), and X^{Div¹/𝒳} → X^{HK/𝒳} is the unit of the relative de Rham stack.
 
 **Checks.**
 
 - For X = D, T_{X/D} = 0 and X^{HT/D} = D.
+- For X = D every corner of the diagram is computed: D^{Div¹/𝒳} = 𝒳/φ^ℤ (8.2), D^{HK/𝒳} = 𝒳/φ^ℤ ×_{(𝒳/φ^ℤ)^dR} (𝒳/φ^ℤ)^dR = 𝒳/φ^ℤ, D^{cone/(D,𝒳/φ^ℤ)} = D^cone ×_{D^cone} 𝒳/φ^ℤ = 𝒳/φ^ℤ with relative de Rham stack 𝒳/φ^ℤ and absolute one (𝒳/φ^ℤ)^dR, and D^HK = (𝒳/φ^ℤ)^dR; the left square consists of identities and the right square is cartesian. So the relative Hyodo–Kato stack D^{HK/𝒳} is the thickened curve 𝒳/φ^ℤ itself, whereas the absolute D^HK is its de Rham stack: the two differ already for X = D.
 - For a smooth curve X over a perfectoid field C with prism given by FF_{C♭} and the untilt C, X^{HT/C} is a gerbe banded by T^†_X{1}, and its pushout to T_X{1} is the gerbe of lifts of X to B⁺_dR(C)/ξ².
 - The relative Hodge–Tate gerbe need not split, in contrast with the archimedean Hodge stack (ALRS Remark 1.14); the two are distinguished by the twist {1}.
 - For X = D × BG_a the map X → D is formally smooth, L_{X/D} = O[−1] being dual to the connective perfect complex O[1], but T_{X/D} = O[1] is not a vector bundle. The cartesian square gives X^{HT/D} = X ×_{(O{1}[3])^†} X, a torsor under the loop object (O{1}[2])^† = B²G_a^†{1}, not a gerbe banded by a group; the vector-bundle hypothesis excludes it.
@@ -1360,11 +1371,11 @@ A proof route: A point GSpec(G_a^HT(A)) → X with G_a^HT(A) = A ×_{A ⊕ Nil�
 
 ### 9.4 Formal and overconvergent Hodge–Tate stacks
 
-Define the overconvergent and formal Hodge–Tate stacks X^{†-HT} = X^{Div¹} ×_{A¹/G_m} A^{1,†}/G_m and X^{HT^} = X^{Div¹} ×_{A¹/G_m} Â¹/G_m, and their relative versions over a perfect prism (ALRS Definition 4.5.1, p. 69, ALRS line 3602). Prove that for †-cohesive X the squares relating X^{HT^}, X^{†-HT}, X^dR, X^{cone^}, X^{†-cone} and (X^cone_s)^dR are cartesian, and that for formally smooth X with a cotangent complex X^dR → (X^cone_s)^dR = (X/T_X(−1) ⋊ G_m)^dR is a (T_X(−1) ⋊ G_m)^dR-torsor, hence so are X^{HT^} → X^{cone^} and X^{†-HT} → X^{†-cone} (ALRS Proposition 4.5.2, p. 69, ALRS line 3614); prove the relative version over a perfect prism, with a T_{X/D}{1}^dR-torsor (ALRS Proposition 4.5.3, p. 69, ALRS line 3630).
+Define the overconvergent and formal Hodge–Tate stacks X^{†-HT} = X^{Div¹} ×_{A¹/G_m} A^{1,†}/G_m and X^{HT^} = X^{Div¹} ×_{A¹/G_m} Â¹/G_m, and, for a perfect prism (S, 𝒳, D) with D^∧ ⊆ D^† ⊆ 𝒳 the formal completion and the overconvergent neighbourhood 𝒳^†_D of D and for X over D, the relative versions X^{†-HT/D^†} = X^{Div¹/𝒳} ×_{𝒳/φ^ℤ} D^† and X^{HT^/D^∧} = X^{Div¹/𝒳} ×_{𝒳/φ^ℤ} D^∧ (ALRS Definition 4.5.1, p. 69, ALRS line 3602). Prove that for †-cohesive X the squares relating X^{HT^}, X^{†-HT}, X^dR, X^{cone^}, X^{†-cone} and (X^cone_s)^dR are cartesian, and that for formally smooth X with a cotangent complex X^dR → (X^cone_s)^dR = (X/T_X(−1) ⋊ G_m)^dR is a (T_X(−1) ⋊ G_m)^dR-torsor, hence so are X^{HT^} → X^{cone^} and X^{†-HT} → X^{†-cone} (ALRS Proposition 4.5.2, p. 69, ALRS line 3614); prove the relative version over a perfect prism, with a T_{X/D}{1}^dR-torsor (ALRS Proposition 4.5.3, p. 69, ALRS line 3630).
 
 A proof route: Base change 9.1 along Â¹/G_m → A^{1,†}/G_m → A¹/G_m, using (Â¹/G_m)^dR = (A^{1,†}/G_m)^dR = BG_m^dR; for the relative torsor, the perfectoidization of the special fibre of the relative cone is a trivial BT_{X/D}{1}^⋄-torsor through the first infinitesimal neighbourhood of X^⋄ → FF_{X^⋄} (ALRS Proposition 2.8.15, ALRS line 1805; 5.2).
 
-*Needs:* §9.1; §9.2; §5.1.
+*Needs:* §9.1; §9.2; §8.2; §5.1; §3.1.
 
 The API has the following laws.
 
@@ -1377,6 +1388,7 @@ The API has the following laws.
 - For X = GSpec(ℚ_p), Q_p^{HT^} = Spf(K_∞[[t]])/ℤ_p^{×,la} with K_∞ = ℚ_p(μ_{p^∞}), because (B⁺_dR(ℚ_p^cyc)/t^n)^la = K_∞[t]/t^n (ALRS §6.7, line 9169).
 - The formal and overconvergent Hodge–Tate stacks differ: the formal one sees only nilpotent thickenings of the divisor, the overconvergent one its †-neighbourhood; for non-Berkovich X only the formal statement of 9.6 holds.
 - For X = ∅ all stacks are empty.
+- For X = D over a perfect prism the relative versions are D^{†-HT/D^†} = 𝒳/φ^ℤ ×_{𝒳/φ^ℤ} D^† = D^† and D^{HT^/D^∧} = D^∧, since D^{Div¹/𝒳} = 𝒳/φ^ℤ (8.2); restricting further to D gives D^{HT/D} = D, as in 9.2.
 
 ### 9.5 Faltings' extension through the cone and its agreement with the classical extension
 
@@ -1765,11 +1777,11 @@ Let D be a perfectoid space over ℚ_p and X → D a rigid smooth morphism of Be
 
 A proof route: The statements are local on the target, so D = GSpec(A) affinoid over ℚ_p^cyc; by descent along †-formally étale covers (8.7) localize X in the rigid étale topology to X étale over G^d_{m,A}, and by base change and Künneth to d = 1; after passing to ℤ-covers the map is G̃^u_{m,D^×_{FF,A}}/Γ^cont → G̃_{m,D^×_{FF,A}}/Γ^la with Γ = ℤ_p(1) by ALRS Theorem 4.10.13 (9.9), and 10.12 with the geometric case of 10.10 concludes.
 
-*Needs:* §11.3; §10.12; §10.10; §8.7; §9.9.
+*Needs:* §11.3; §10.12; §10.10; §8.7; §8.2; §9.9.
 
 **Checks.**
 
-- For X = D, X^{Div¹/FF_D} = X^{Div¹} ×_{D^{Div¹}} FF_D = FF_D since D^{Div¹} = FF_D for perfectoid D (8.3), and α_{X/D} is the identity of FF_D.
+- For X = D, X^{Div¹/FF_D} = D^{Div¹} ×_{D^{Div¹}} FF_D = FF_D, the base change of an identity (8.2), and α_{D/D} is the identity of FF_D; the value does not come from an identification of D^{Div¹} with FF_D, which fails for perfectoid D (8.3).
 - For X = G_{m,D}, Γ = ℤ_p(1) acts on G̃_m by [T♭]^r ↦ [ε]^r[T♭]^r for r ∈ ℤ[1/p].
 - The localization in the proof uses rigid étale maps and not †-rational localizations of X, because the latter are completed on X^⋄ (ALRS footnote 51, p. 146); accordingly the statement is made for Berkovich-étale U.
 
@@ -1922,7 +1934,7 @@ A proof route: (1): Div^{1,dR} = ((1 + D̃^{<1,dR}) ∖ {1})/ℚ_p^{×,sm}; coho
 
 Let d ≥ 0 and let f: Y → X be a map of Berkovich spaces, rigid smooth and of pure relative dimension d. Prove: (1) f^{Div¹}: Y^{Div¹} → X^{Div¹} is cohomologically smooth; (2) for the base change f^{Div¹/FF_{X^⋄}}: Y^{Div¹} ×_{X^{Div¹}} FF_{X^⋄} → FF_{X^⋄}, its dualizing complex is f^{Div¹/FF_{X^⋄},!}O ≅ O{d}[2d]; (3) if X is a smooth partially proper rigid space over ℚ_p then f^{Div¹,!}O_{X^{Div¹}} ≅ O_{Y^{Div¹}}{d}[2d] (ALRS Theorem 6.5.8, p. 164, ALRS line 8875). Partial properness in (3) enters only through 11.6 (ALRS Remark 6.5.9, p. 165, ALRS line 8932).
 
-A proof route: Cohomological smoothness is local on the source by 8.7, reducing to Y = G_{m,X} and then X = GSpec(ℚ_p), Y = G_m; there α_X is an epimorphism (11.1) and FF_{Y^⋄} → FF_{X^⋄} is cohomologically smooth (6.4(1)); since a: FF_{Y^⋄} → Y^{Div¹/FF} is 0-proper, hence prim with trivial codualizing complex, with a_*O = O (11.4, 11.6), HM Lemma 4.4.9(ii) gives g^!O ≅ a_*(O ⊗ ℚ_p(d)[2d]) ≅ O{d}[2d], the Tate twist pulling back to the Breuil–Kisin twist (9.8). For (3) apply suave base change and the projection formula along h_X: FF_{X^⋄} → X^{Div¹}, 0-proper with h_{X,*}O = O (11.6).
+A proof route: Cohomological smoothness is local on the source by 8.7, reducing to Y = G_{m,X} and then X = GSpec(ℚ_p), Y = G_m; there α_X is an epimorphism (11.1) and FF_{Y^⋄} → FF_{X^⋄} is cohomologically smooth (6.4(1)); since a: FF_{Y^⋄} → Y^{Div¹/FF_{X^⋄}} is 0-proper, hence prim with trivial codualizing complex, with a_*O = O (11.4, 11.6), HM Lemma 4.4.9(ii) gives g^!O ≅ a_*(O ⊗ ℚ_p(d)[2d]) ≅ O{d}[2d], the Tate twist pulling back to the Breuil–Kisin twist (9.8). For (3) apply suave base change and the projection formula along h_X: FF_{X^⋄} → X^{Div¹}, 0-proper with h_{X,*}O = O (11.6).
 
 *Needs:* §12.1; §12.2; §11.4; §11.6; §6.4; §8.7; §9.8.
 
