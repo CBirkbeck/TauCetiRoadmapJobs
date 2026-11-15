@@ -234,7 +234,7 @@ For a finite chain ring with invariants (p, e, f, n) put `j = ⌈n/e⌉`, `[j]_p
 - The additive exponent of R is `p^j`, not j. Since `p = uϖ^e` with u a unit, `p^jR = 0` exactly when ej ≥ n, so `⌈n/e⌉` is the least such j and the additive exponent is `p^j`. For ℤ/4, j = 2 and 2·1 ≠ 0 = 4·1, so the exponent is 4; for 𝔽_2 (n = 1), j = 1 and the exponent is 2. For `ℤ_2[√2]/(√2)³` (e = 2, n = 3), j = 2: `2 = (√2)²` is nonzero while `4 = (√2)⁴` vanishes, so the exponent is 4 = 2^j, whereas the unramified reading j = n would give 8.
 - For ℤ/4 (p = 2, e = 1, n = 2): j = 2, [2]_2 = 3 and B = 2·(2·3 − 4·0) = 12. The even vanishing theorem therefore applies from i = 13.
 - For 𝔽_2[z]/z³, viewed as `O_K/ϖ³` with e = 3: j = 1 and B = 4·3/3 = 4, so i ≥ 5. As e → ∞ the threshold tends to 0. The weaker bound p²(p^j − 1)/(p − 1)² = 4 does not tend to 0.
-- For i = 2 and n = 2, the indices 1 ≤ j′ ≤ 3 not divisible by 2 are {1,3}, so the count is 2 = 2·1. For n = 1 every j′ is divisible by n and the count is 0 = i·0. This is consistent with `|K_{2i−1}(𝔽_q)|/|K_{2i−2}(𝔽_q)| = q^i − 1` being prime to p.
+- For i = 2 and n = 2, the indices 1 ≤ j′ ≤ 3 not divisible by 2 are {1,3}, so the count is 2 = 2·1. For n = 1 every j′ is divisible by n and the count is 0 = i·0 for every i ≥ 1. This is consistent with the finite field having no p-primary torsion in positive degrees: for i ≥ 2, `|K_{2i−1}(𝔽_q)|/|K_{2i−2}(𝔽_q)| = (q^i − 1)/1` is prime to p, and for i = 1 the group `K_1(𝔽_q) = 𝔽_q^×` has order q − 1, prime to p; the order of `K_0(𝔽_q) = ℤ` is never divided by. For q = 2: i = 2 gives 3/1 = 3, and i = 1 gives `|K_1(𝔽_2)| = 1`.
 
 ### Examples
 
@@ -619,7 +619,7 @@ Prove that for every perfect 𝔽_p-algebra k and coprime a, b ≥ 2, `K_j(k[x,y
 **Checks.**
 
 - r = 0 and k a perfect field: `K_0(A,(x,y))` has length `(a−1)(b−1)/2` over W(k), the δ-invariant of the cusp (hn-cusp line 37). For (a,b) = (2,3) and a perfect field k this is `W_{{1}}(k) = k`, the unipotent Picard group `(k[t]/t²)^×/k^× ≅ k` of the conductor square.
-- For a perfect field k and every r, the length is `½(2r+1)(a−1)(b−1)` by Sylvester's count (§1.1). For (2,5) and r = 0 this is 2, and `T(2,5,0) = {1,3}`. For k = 𝔽_3 this gives `W_{{1,3}}(𝔽_3) = W_2(𝔽_3) = ℤ/9`, cyclic, while a componentwise reading would give `𝔽_3²`. The length formula needs a field: for k = 𝔽_3 × 𝔽_3 the theorem gives `ℤ/9 × ℤ/9`, of length 4 over `W(k) = ℤ_3 × ℤ_3`, and for the perfection of `𝔽_3[t]` already `K_0 = W_{{1}}(k) = k` has infinite length.
+- For a perfect field k and every r, the length is `½(2r+1)(a−1)(b−1)` by Sylvester's count (§1.1). For (2,5) and r = 0 this is 2, and `T(2,5,0) = {1,3}`. For k = 𝔽_3 this gives `W_{{1,3}}(𝔽_3) = W_2(𝔽_3) = ℤ/9`, cyclic, while a componentwise reading would give `𝔽_3²`. The length formula needs a field: for k = 𝔽_3 × 𝔽_3 the theorem gives `ℤ/9 × ℤ/9`, of length 4 over `W(k) = ℤ_3 × ℤ_3`, and for k the perfection of `𝔽_3[t]` the same cusp gives `K_0 = W_{{1,3}}(k) = W_2(k)`, of infinite length: restriction maps it W(k)-linearly onto `W_1(k) = k`, whose ideals `(t) ⊋ (t²) ⊋ ⋯` are W(k)-submodules.
 - Negative degrees: `K_{−1}(A,(x,y)) = 0` for every perfect field, because F has no negative homotopy (§6.1) and `NK_{−1}(k) = 0`. The theorem therefore excludes negative K-groups, which a nonconnective statement over a singular base k would have to track.
 
 ### Examples
