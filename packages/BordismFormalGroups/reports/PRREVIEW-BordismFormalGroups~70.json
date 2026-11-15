@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BordismFormalGroups~70",
+  "head": "89357f3db20befdba093e50d06c54017c710a524",
+  "pr": 1807,
+  "folder": "BordismFormalGroups",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 2,
+  "notes": "Full review of README.md (3811 lines) and Suggested.lean at 89357f3. The five findings of the review of 7fa7fe9 are repaired. New: R01 (P2) F6.2 cites GeneralizedCohomology G2.9 for a loop/bar comparison it does not state, so the weak equivalence U→ΩBU has no owner; R02 (P2) the HF_p-nilpotent completion comparison is owned by both F2.2 and G3.9 with different hypotheses; R03 (P3) G3.8 cited for the telescope Milnor sequence that G3.4 states; R04 (P3) X(r), Tel(α;R) and the Morava stabilizer groups have no Checks; R05 (P3) the description omits the added suppliers CharacteristicClasses and TopologicalKTheory. Sample: all 15 seeded sections; 80 source locators read at the text in 10 cached sources (ravenel-green, ravenel-orange, hatcher-at, miller-cobordism, hovey-comodules, quillen-fgl-bulletin, lubin-tate-1966, guillou-weibel, bokstedt-neeman, lawson-bousfield), all agreeing with the README; uncertified sources cited by locator only. Gate: the worker's gate passes; rerun differs only in outside-folder=24 (the 12 sibling folders of this pull request). Dependency check: 245 roadmaps, 2250 edges, 0 problems. Lean: three sorry warnings only; simp, aesop and infer_instance probes close no theorem; signatures agree with the README. Wording scan of the README body and docstrings against 17 cached sources found no shared passage; arrangement independent of ravenel-green.",
+  "text": "5fa575d43a504403",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The comparison of the HF_p-nilpotent completion with derived p-completion has two owners, with different hypotheses",
+    "where": "GeneralizedCohomology G3.9, its sentence on the HF_p nilpotent/Adams completion",
+    "raised": "PRREVIEW-BordismFormalGroups~70"
+   }
+  ]
+ }
+}
