@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HyperellipticCurves~10",
+  "head": "ea85c217f3fb1617d770ad73efec430c49c1181f",
+  "pr": 1707,
+  "folder": "HyperellipticCurves",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 9 changed lines since b238f61 (the Downstream consumers paragraph of the README) and of the pull request's title and description against this head. R01 and R02 of the previous review (both in the description) are repaired. The three consumer claims were resolved against the open heads of GroupActionsOnRiemannSurfaces, AbelianVarietiesOverFiniteFields and AdelicImagesAndModularCurves; sections 0.4, 0.6 and 1.4 contain what the paragraph attributes to them; adversarial rows computed for the involution criterion of 1.4, the predicate of 0.4 and the Weierstrass points of 0.6. Description read sentence by sentence against the head: no contradiction, nothing removed to state. Gate passes (my run all zero; worker's build=0); depcheck 237 roadmaps, 2250 edges, 0 problems; Suggested.lean elaborates with 16 sorry warnings only; no change outside the folder; overlaps none. Seeded source sample not re-read: none falls in the changed passage.",
+  "text": "1263fa193cfa5752"
+ }
+}
