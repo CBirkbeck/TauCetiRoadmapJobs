@@ -1,0 +1,70 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FarguesFontaineDiamonds"
+
+[[source]]
+id = "FS"
+authors = "Laurent Fargues; Peter Scholze"
+title = "Geometrization of the local Langlands correspondence"
+year = 2021
+locator_scheme = "theorem"
+locator = "II.1.1–4, pp.47–50; II.1.15–18, pp.54–55; Definition II.1.19 and following paragraph, p.56 (author edition, SHA-256 9ab9efbd0df251bfa3b610d1d1d88a8dfb1bdf7c397bd04f4c277280d98ae905)"
+url = "https://people.mpim-bonn.mpg.de/scholze/Geometrization.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Geometrization.pdf"
+fetched_at = "2026-11-15T06:32:21Z"
+sha256 = "9ab9efbd0df251bfa3b610d1d1d88a8dfb1bdf7c397bd04f4c277280d98ae905"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["F0–F4"]
+
+[[source]]
+id = "SW"
+authors = "Peter Scholze; Jared Weinstein"
+title = "Berkeley Lectures on p-adic Geometry"
+year = 2020
+locator_scheme = "theorem"
+locator = "Author draft 27 March 2020: Definitions 5.3.2, 5.3.7, Proposition 5.3.8, Remark 5.3.9, pp.38–40; Proposition 11.3.1 and proof, pp.94–95; Proposition 13.1.1 and proof, pp.108–109; Definition 13.5.1, p.112"
+url = "https://people.mpim-bonn.mpg.de/scholze/Berkeley.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Berkeley.pdf"
+fetched_at = "2026-11-15T06:32:44Z"
+sha256 = "225505171ef809aa0070c023c881ff1da844923775f2d631474c0b42eea4bffc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["F0", "F4"]
+
+[[source]]
+id = "ECD"
+authors = "Peter Scholze"
+title = "Etale cohomology of diamonds"
+year = 2017
+arxiv = "1709.07343v4"
+locator_scheme = "theorem"
+locator = "arXiv:1709.07343v4 (April 2026): Proposition 9.7, pp.47–48; Proposition 10.11(iii), pp.52–53; Definition 14.13, Remark 14.14, Proposition 14.15, p.88; Definition 15.5, Lemma 15.6, pp.91–92; Lemma 17.5, p.98; Lemma 17.7, p.100; Definition 26.1, Proposition 26.2, Remark 26.3, pp.161–162"
+url = "https://arxiv.org/abs/1709.07343v4"
+fetched_from = "https://arxiv.org/pdf/1709.07343v4"
+fetched_at = "2026-11-15T06:33:13Z"
+sha256 = "78ca42bba46f1d43c894b0dbfdfb41105efab4959ba5ba6e32e1e5cf7ef33efc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v4"
+cited_for = ["Conventions; F0–F3; F5"]
+
+[[source]]
+id = "KL"
+authors = "Kiran S. Kedlaya, Ruochuan Liu"
+title = "Relative p-adic Hodge theory: Foundations"
+year = 2013
+arxiv = "1301.0792v5"
+locator_scheme = "theorem"
+locator = "arXiv:1301.0792v5 (2 May 2015): Definitions 8.2.16 and 8.2.19, Lemma 8.2.17, Remark 8.2.18, pp.162–163"
+url = "https://arxiv.org/abs/1301.0792v5"
+fetched_from = "https://arxiv.org/pdf/1301.0792v5"
+fetched_at = "2026-11-15T06:33:55Z"
+sha256 = "a6a117423db62aec072442bb15b70e3175bcc3b631bdcd6d74f740e3c6cfd942"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v5"
+cited_for = ["Conventions; F3"]
