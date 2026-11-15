@@ -399,6 +399,11 @@ All at the pinned Tau Ceti; paths under `TauCeti/`.
 - `TauCeti.PhragmenLindelof.upper_half_plane_of_isBounded` (`Analysis/Complex/PhragmenLindelof.lean`
   line 33): a bounded holomorphic function on `ℂ₊`, continuous on the closed half-plane, is bounded
   by its bound on `ℝ`.
+- `TauCeti.rouche_exists_eq_zero_iff` (`Analysis/Complex/Conformal/Rouche.lean` line 359): Rouché's theorem
+  as a zero-detection principle; for `f`, `g` holomorphic on a neighbourhood of the closed disc
+  `closedBall c R`, `R > 0`, with `‖f z − g z‖ < ‖f z‖` on the bounding circle, `f` has a zero in the open disc
+  if and only if `g` has one. §8.7 applies it on discs of radius `1/(2t)` to a two-term trigonometric form and
+  `E(t, ·)`.
 - The half-space Poisson kernel, in `Analysis/PDE/GreenFunction/HalfSpace.lean`: for a unit inward
   normal `v` of `EuclideanSpace ℝ (Fin n)`, `TauCeti.halfSpacePoissonKernel n v x y`
   (line 122) is `2⟨v, x⟩/(n ωₙ ‖y − x‖ⁿ)`, with pole `x`, point `y` and `ωₙ` the volume of the unit
@@ -2008,10 +2013,11 @@ argument over `C = 1, 2, …` gives `C(t)`.
 ### 8.6 Approximation near a resonance
 
 Prove that for almost every `s` and every `D > 1` with `T₀(s, D)` unbounded there is `C(t) > D`,
-`C(t) → ∞`, such that: if `z(t) = x(t) − iy(t)` is a continuous choice of zeros of `E(t, ·)` in
-`Q(s, C(t)/t)` for `t ∈ T₀(s, C)`, then there is a continuous unimodular `α(s, t)` with
-`sup_{z ∈ Q(s, C(t)/t)} |E(t, z) − α(s, t) γ(t y(t)) sin(t(z − z(t)))/√w(s)| → 0` as `t → ∞` in
-`T₀(s, C) ∩ {t y(t) > 1}`, and with error `o(γ(t y(t)))` without the restriction `t y(t) > 1`; and,
+`C(t) → ∞`, such that: if `z(t) = x(t) − iy(t)` is a choice of zeros of `E(t, ·)` in
+`Q(s, C(t)/t)` for `t ∈ T₀(s, C)`, then there are unimodular `α(s, t)`, continuous in `t` where the choice
+is, with `sup_{z ∈ Q(s, C(t)/t)} |E(t, z) − α(s, t) γ(t y(t)) sin(t(z − z(t)))/√w(s)| → 0` as `t → ∞` in
+`T₀(s, C) ∩ {t y(t) > 1}`, uniformly in the choice of the zeros, and with error `o(γ(t y(t)))` without the
+restriction `t y(t) > 1`; and,
 equivalently for the Dirac inner function on `Q₊(s, C(t)/t) = Q(s, C(t)/t) ∩ ℂ₊`,
 `sup |θ(t, z) − conj(α)² sin(t(z − conj z(t)))/sin(t(z − z(t)))| → 0`, with the derivative relation at the
 zero `conj z(t)` of `θ(t, ·)`: `α² ∂_zθ(t, conj z(t)) = (1 + o(1)) t/sin(2it y(t))` (poltoratski2024 Lemma 6
@@ -2019,7 +2025,9 @@ and Corollary 2, line 850–917,
 Remark 3 line 863; mauth2022 Lemma 23 line 1258 and Lemma 32 line 1765). Route: `E(t, z(t)) = 0` gives
 `A(t, z(t)) = iC(t, z(t)) = β`, so `D(t, ·, z(t)) = iβE(t, ·)`, since
 `D(t, λ, z(t)) = βC(t, λ) + iβA(t, λ)`, and §8.5 makes `iβE` close to `sin(t(· − z(t)))/w(s)`; the
-determinant identity (2.2) at two points fixes `2|β|²w(s) = (1 + o(1)) sinh(2t y(t))`.
+determinant identity (2.2) at two points fixes `2|β|²w(s) = (1 + o(1)) sinh(2t y(t))`. The error of §8.5 is a
+supremum over the box, and `sinh(2t y(t)) > sinh 2` when `t y(t) > 1`, so no estimate depends on which zero is
+chosen; continuity enters only through `β`, hence `α`.
 
 *Needs:* §3.2, §7.3, §8.5.
 
@@ -2039,25 +2047,49 @@ determinant identity (2.2) at two points fixes `2|β|²w(s) = (1 + o(1)) sinh(2t
 Prove (poltoratski2024 Corollary 3 line 1002–1012 and the argument of line 918–996; mauth2022
 Corollary 6 line 1397–1408): (1) for almost every `s` there are `C(t) → ∞` and `z(t) = x(t) − iy(t) ∈ ℂ₋`
 with `sup_{z ∈ Q(s, C(t)/t)} |E(t, z) − α(s, t) γ(t y(t)) sin(t(z − z(t)))/√w(s)| → 0` as `t → ∞` in
-`T₁(s, C)`, `|α| = 1`, where `z(t)` is a zero of `E(t, ·)` when `t ∈ T₀(s, C)`, and the same function `C(t)`
-gives the approximation of `Ẽ(t, ·)` of this form, with `w̃(s)`, `T̃₀(s, C)` and `T̃₁(s, C)` in place of `w(s)`,
-`T₀(s, C)` and `T₁(s, C)`; (2) if the approximation of `E` in (1) holds at `s` for a function `C(t) → ∞` and
-`t ∉ T₀(s, C(t))` for all large `t`, then for every `D > 0`,
+`T₁(s, C)`, `|α| = 1`, where for `t ∈ T₀(s, C)` the point `z(t)` can be any zero of `E(t, ·)` in
+`Q(s, C(t)/t)`, uniformly in the choice, and for `t ∉ T₀(s, C)` one can take `t y(t) = 2C(t)`; the same
+function `C(t)` gives the approximation of `Ẽ(t, ·)` of this form, with `w̃(s)`, `T̃₀(s, C)` and `T̃₁(s, C)` in
+place of `w(s)`, `T₀(s, C)` and `T₁(s, C)`, and so does every smaller function tending to infinity; (2) if
+the approximation of `E` in (1) holds at `s` for a function `C(t) → ∞` and `t ∉ T₀(s, C(t))` for all large `t`,
+then for every `D > 0`,
 `sup_{z ∈ Q(s, D/t)} |E(t, z) + iα(s, t) e^{−itz}/√w(s)| → 0`; (3) for almost every `s`: if `T₀(s, K)` is
 bounded for every `K > 0`, then for every `D > 0` there are unimodular `α(s, t)` with
-`sup_{z ∈ Q(s, D/t)} |E(t, z) + iα(s, t) e^{−itz}/√w(s)| → 0` as `t → ∞`. Route: §8.5 with two values of the
-second argument shows that `(A(t, x), C(t, x))` has modulus bounded below and rotates on `ℝ ∩ Q(s, C/t)`;
-choosing `x₀`, `x₁` with `C(t, x₀) = 0 < A(t, x₀) = c₁` and `A(t, x₁) = 0 < C(t, x₁) = c₂`, and
-`x₂ = x₁ − π/(2t)`, gives `C(t, z) ≈ sin(t(z − x₀))/(c₁w)`, `A(t, z) ≈ cos(t(z − x₂))/(c₂w)`, so
-`E ≈ cos(t(z − x₂))/(c₂w) − i sin(t(z − x₀))/(c₁w)`, with `c₁c₂w = cos(t(x₂ − x₀)) + o(1)`; if `t(x₂ − x₀)` were
-not `o(1)` modulo `2π`, or `c₁ − c₂` not `o(1)`, the phase derivative of `E` would vary by a factor
-`1 + ε` on an interval of length `8π/t`, and §7.2 would give a zero in `Q(s, C/t)`. For `Ẽ = B − iD` the same
-argument runs with `B`, `D`, `μ̃` and `w̃` in place of `A`, `C`, `μ` and `w`; one function serves `E` and `Ẽ`
-because the functions of §8.5 and §8.6 come from diagonal arguments over constant box sizes (poltoratski2024
-line 832–833, 879 and 907–909), which can be run for the two at once. Route of (3), with constant
-boxes: at an `s` where §8.5 holds and `w(s) > 0`, fix `δ > 0`, let `ε > 0` be such that every two-term form
-allowed by the route (`c₁`, `c₂` within the bounds it gives and `c₁c₂w = cos(t(x₂ − x₀))`, so that
-`cos(t(x₂ − x₀))` is bounded below by a positive constant) whose parameters are `δ`-far from
+`sup_{z ∈ Q(s, D/t)} |E(t, z) + iα(s, t) e^{−itz}/√w(s)| → 0` as `t → ∞`.
+
+Route, the two-term form. Fix `s` where §8.5 holds and `w(s) > 0`, write `η_C(t)` for the error of §8.5 on
+`Q(s, C/t)`, and let `C ≥ 3`. Two values `ω₁`, `ω₂ = ω₁ + π/(2t)` of the second argument in `ℝ ∩ Q(s, C/t)`
+define a real matrix `M = M(t)` by `(A(t, ω_j), C(t, ω_j)) = M(cos tω_j, sin tω_j)/√w(s)`, and §8.5 gives
+`det M = 1 + O(η_C)` and `(A(t, z), C(t, z)) = M(cos tz, sin tz)/√w(s) + O(‖M‖e^{C}η_C)` on `Q(s, C/t)`, where
+`|cos tz|, |sin tz| ≤ e^{C}`. So `E(t, ·)` is within `O(‖M‖e^{C}η_C)` of `T(z) = a e^{−itz} + b e^{itz}` with
+`|a| = (σ₁ + σ₂)/(2√w(s))` and `|b| = (σ₁ − σ₂)/(2√w(s))` for the singular values `σ₁ ≥ σ₂` of `M`; in particular
+`|a|² − |b|² = det M/w(s)` and `‖M‖ ≤ 2√w(s)|a|`. §8.5 alone does not bound `M` (last Check); a box free of
+zeros does. If `b ≠ 0`, the zeros `ζ` of `T` lie at the height `P/t`, `e^{2P} = |a|/|b|`, spaced `π/t` apart,
+and `T(z) = −2i a e^{−itζ} sin(t(z − ζ))`, so `|T| ≥ 2 sin(1/2)|a|e^{−P}` on the circle of radius `1/(2t)` about
+`ζ` (`sin(1/2) = 0.4794` is the minimum of `|sin|` on `|τ| = 1/2`). If `P ≤ C − 1/2`, one of these circles lies
+in `Q(s, C/t)`, and once `e^{2C}η_C` is small Rouché's theorem gives a zero of `E(t, ·)` inside it. Hence, if
+`Q(s, C/t)` holds no zero of `E(t, ·)` and `e^{2C}η_C` is small: `P > C − 1/2` (with `P = ∞` when `b = 0`), so
+`σ₂/σ₁ ≥ (1 − e^{1−2C})/(1 + e^{1−2C})` and `M` is within `O(e^{1−2C} + η_C)` of a rotation;
+`|a|²w(s) = 1 + O(η_C + e^{2−4C})`; and `|E(t, z) − a e^{−itz}| = O(e^{C}η_C + e^{1−C})` on `Q(s, C/t)`. On such
+a box `(A(t, x), C(t, x))` has modulus in `[1/(2√w), 2/√w]` and rotates on `ℝ ∩ Q(s, C/t)`; choosing `x₀`, `x₁`
+there with `C(t, x₀) = 0 < A(t, x₀) = c₁` and `A(t, x₁) = 0 < C(t, x₁) = c₂`, and `x₂ = x₁ − π/(2t)`, §8.5 gives
+`C(t, z) ≈ sin(t(z − x₀))/(c₁w)` and `A(t, z) ≈ cos(t(z − x₂))/(c₂w)`, so
+`E ≈ cos(t(z − x₂))/(c₂w) − i sin(t(z − x₀))/(c₁w)`, with `c₁c₂w = cos(t(x₂ − x₀)) + o(1)`.
+
+Route of (1). Take `C(t) → ∞` no larger than the function of §8.6 and with `e^{2C(t)}η_{C(t)}(t) → 0`, by a
+diagonal argument over constant box sizes (`η_K(t) → 0` for each constant `K`, §8.5); where `T₀(s, D)` is
+bounded for every constant `D`, so that §8.6 does not apply, let `C(t)` grow so slowly that `T₀(s, C)` is
+bounded. Every smaller function tending to infinity keeps these properties, so the minimum of the
+functions for `E` and for `Ẽ` serves both. For `t ∈ T₀(s, C) ∩ T₁(s, C)` every zero of `E(t, ·)` in `Q(s, C/t)`
+lies in the box of §8.6 below the height `−1/t`, and §8.6 gives the approximation with it, uniformly in the
+choice. For `t ∉ T₀(s, C)` the two-term form gives `E(t, ·)` within `o(1)` of `(a/|a|) e^{−itz}/√w(s)` on all of
+`Q(s, C/t)`, and `γ(2C) sin(t(z − u) + 2iC) = i e^{−it(z − u)} + O(e^{−3C})` there, so (1) holds with
+`z(t) = u − 2iC(t)/t` for any real `u` and `α = −i e^{−itu} a/|a|`. For `Ẽ = B − iD` the same argument runs with
+`B`, `D`, `μ̃` and `w̃` in place of `A`, `C`, `μ` and `w`.
+
+Route of (3), with constant boxes: at an `s` where §8.5 holds and `w(s) > 0`, fix `δ > 0`, let `ε > 0` be
+such that every two-term form allowed by the route (`c₁`, `c₂` within the bounds it gives and
+`c₁c₂w = cos(t(x₂ − x₀))`, so that `cos(t(x₂ − x₀))` is bounded below by a positive constant) whose parameters are `δ`-far from
 `t(x₂ − x₀) ∈ 2πℤ`, `c₁ = c₂` has phase derivative varying by a factor more than `1 + 2ε` on
 `J_t = (s − 4π/t, s + 4π/t)`, and take `K ≥ max(D, 4π + 24π/ε)`. For large `t` the box `Q(s, K/t)`
 contains no zero of `E(t, ·)` and §8.5 on it gives the two-term form there; a phase derivative of `E` varying by
@@ -2065,13 +2097,14 @@ the factor `1 + ε` on `J_t` would give, by §7.2, a zero within `24π/(εt)` of
 the parameters are `δ`-close, `E` is within `O(δe^D) + o(1)` of `e^{itx₀} e^{−itz}/√w(s)` on `Q(s, D/t)`, and
 `δ` is arbitrary: `α = ie^{itx₀}`.
 
-*Needs:* §7.2, §8.5, §8.6.
+*Needs:* §7.2, §8.5, §8.6; Tau Ceti `TauCeti.rouche_exists_eq_zero_iff` (Rouché's theorem).
 
 **Checks.**
 
 - Free case: `E = e^{−itz}` and `w = 1`, so (2) and (3) hold exactly with `α = i`:
-  `e^{−itz} + i·i·e^{−itz} = 0`; in the route `x₀ = x₂ = 0`, `x₁ = π/(2t)` and `c₁ = c₂ = 1`, and the two-term
-  form is `cos tz − i sin tz = e^{−itz}` (with `−cos` in its first term it would be `−e^{itz}` instead).
+  `e^{−itz} + i·i·e^{−itz} = 0`; in the route `M` is the identity, `a = 1`, `b = 0`, `x₀ = x₂ = 0`,
+  `x₁ = π/(2t)` and `c₁ = c₂ = 1`, and the two-term form is `cos tz − i sin tz = e^{−itz}` (with `−cos` in its
+  first term it would be `−e^{itz}` instead).
 - (3) is not a consequence of the statements (1) and (2): they allow the function `C(t) = √t` in (1) together
   with zeros of `E(t, ·)` at `s + (log t)/t − i/(2t)`. These satisfy the hypothesis of (3), since they leave
   `Q(s, K/t)` for `t > e^K`, but they lie in `Q(s, √t/t)` above the height `−1/t` (`log t < √t`), so no large
@@ -2082,17 +2115,27 @@ the parameters are `δ`-close, `E` is within `O(δe^D) + o(1)` of `e^{itx₀} e^
   `t y(t) → ∞`.
 - At a point `s` with `w(s) = 0` the normalisation `1/√w(s)` is undefined; for square-integrable `f` such
   points form a null set (§6.8), which is why the statement holds almost everywhere and not everywhere.
+- §8.5 does not fix the two-term form. With `w(s) = 1`,
+  `E(z) = 2 cos tz − (i/2) sin tz = 1.25 e^{−itz} + 0.75 e^{itz}` (`M = diag(2, 1/2)`, `|a|² − |b|² = 1`) satisfies the relation of §8.5 exactly, `D(t, λ, z) = sin(t(λ − z))`.
+  Its zeros are `((k + 1/2)π − 0.2554 i)/t` with `0.2554 = ½ log(5/3)`, and the minimum of `|E|` on the circle of
+  radius `1/(2t)` about `(π/2 − 0.2554 i)/t` is `0.9284 = 2 sin(1/2) · 1.25 · e^{−0.2554}`, the bound of the route.
+  At that zero it differs by `e^{−0.2554} = 0.7746` from every `κ e^{−itz}` with `|κ| = 1`. For `C ≥ 2` the zero lies
+  in `Q(0, C/t)` above the height `−1/t`, so every `t` is in `T₀(0, C)` and not in `T₁(0, C)`, and (1) claims
+  nothing: it is the absence of zeros, through Rouché's theorem, that brings `M` close to a rotation.
 
 ### 8.8 Joint approximation of `E` and `Ẽ`
 
 Prove that for almost every `s` there is `C(t) → ∞` such that for every `t ∈ T₁(s, C) ∩ T̃₁(s, C)` there
-are `z(t) = u(t) − ip(t)`, `z̃(t) = ũ(t) − ip(t)` with `p(t) > 0` and a unimodular `α(t)` with
+are `z(t) = u(t) − ip(t)`, `z̃(t) = ũ(t) − ip(t)` with `p(t) > 0`, where for `t ∈ T₀(s, C)` the point `z(t)` can
+be any zero of `E(t, ·)` in `Q(s, C(t)/t)`, and a unimodular `α(t)` with
 `sup_{Q(s, C(t)/t)} |E(t, z) − α γ(tp) sin(t(z − z(t)))/√w(s)| → 0`,
-`sup_{Q(s, C(t)/t)} |Ẽ(t, z) − α γ(tp) cos(t(z − z̃(t)))/√w̃(s)| → 0`, `p(t) > C(t)/t` for `t ∉ T₀(s, C)`,
-`p(t) ≤ C(t)/t` for `t ∈ T₀(s, C)`, and `cos(t(ũ(t) − u(t))) = √(w(s) w̃(s))` (poltoratski2024 Lemma 7
-line 1028–1097, (8.1); mauth2022 Lemma 43 line 3140). Route: §8.7(1) for `E` and `Ẽ`, with their common
-function `C(t)`; inserting the two approximants into the determinant identity (2.2) on `ℝ ∩ Q(s, D/t)` forces
-equal imaginary parts and the cosine relation. The relation needs `√(w w̃) ≤ 1`, which is §6.5.
+`sup_{Q(s, C(t)/t)} |Ẽ(t, z) − α γ(tp) cos(t(z − z̃(t)))/√w̃(s)| → 0`, uniformly in the choice of that zero,
+`p(t) > C(t)/t` for `t ∉ T₀(s, C)`, `p(t) ≤ C(t)/t` for `t ∈ T₀(s, C)`, and `cos(t(ũ(t) − u(t))) = √(w(s) w̃(s))`
+(poltoratski2024 Lemma 7 line 1028–1097, (8.1); mauth2022 Lemma 43 line 3140). Route: §8.7(1) for `E` and `Ẽ`,
+with their common function `C(t)` and, for `t ∈ T₀(s, C)`, the chosen zero `z(t)`; inserting the two
+approximants into the determinant identity (2.2) on `ℝ ∩ Q(s, D/t)` forces equal imaginary parts, so that the
+height of the approximant of `Ẽ` moves to `p(t)`, and the cosine relation. The relation needs `√(w w̃) ≤ 1`,
+which is §6.5.
 
 *Needs:* §3.2, §6.5, §8.7.
 
@@ -2162,7 +2205,7 @@ application, §3.2 and §6.8.
 ### Dependencies
 
 Layer 2 (§2.1, §2.3, §2.4, §2.6–§2.8), Layer 3, Layer 6, Layer 7; Mathlib (the quantitative inverse function
-theorem, the mean value inequality).
+theorem, the mean value inequality); Tau Ceti (Rouché's theorem).
 
 ## Layer 9: Pointwise convergence of the non-linear Fourier transform
 
@@ -2214,28 +2257,39 @@ analogous identity for `b`), and `γ(p)γ(p′) = 2/(sinh 2p sinh 2p′)^{1/2}`.
 
 ### 9.3 Resonances near a point occupy little time
 
-Prove that for almost every `s` and every `C > 0`, if `Iₙ(s)` is the longest subinterval of `[2ⁿ, 2ⁿ⁺¹]` such
-that `Q(s, C/t)` contains a zero of `E(t, ·)` for every `t ∈ Iₙ(s)`, then `|Iₙ(s)|/2ⁿ → 0` (poltoratski2024
-Lemma 9 line 1350–1377; mauth2022 §3.3 Corollary 7 line 1525 for the analogous half-line statement).
-Route: if the set of `s` with `lim sup |Iₙ(s)|/2ⁿ > 2/m` had positive measure, then for infinitely many `n` a
-set `Sₙ` of measure `≳ |Zₙ|/m`, `Zₙ = {s : |Iₙ(s)| > 2ⁿ/m}`, shares a time `t₁` in the middle thirds of the
+Prove that for almost every `s` and every `C > 0`, with `K(t)` the function `C(t)` of §8.8 at `s`: if `ℓₙ(s)` is
+the supremum of the lengths of the intervals `I ⊆ [2ⁿ, 2ⁿ⁺¹] ∩ T₁(s, K) ∩ T̃₁(s, K)` such that `E(t, ·)` has a
+zero in `Q(s, C/t)` at every `t ∈ I` (and `0` when there is no such interval), then `ℓₙ(s)/2ⁿ → 0`
+(poltoratski2024 Lemma 9 line 1350–1377, whose statement has no restriction to `T₁(s, K) ∩ T̃₁(s, K)`; its proof
+uses (9.2), which rests on Lemma 7 and on Lemma 8, and Lemma 8 asks `1 < ty` at line 1127; mauth2022 §3.3
+Corollary 7 line 1525 for the analogous half-line statement). For `C ≤ 1` and large `n` there is no such
+interval: a zero in `Q(s, C/t)` then lies in `Q(s, K(t)/t)` at height at most `1/t`. Route: for large `t` we have
+`K(t) ≥ 4C`, so for a time `t` of such an
+interval the zero of `E(t, ·)` in `Q(s, C/t)` lies in `Q(s, K(t)/t)` below the height `−1/t`; taken as the zero
+`z(t)` of §8.8 it gives `1 < tp(t) ≤ C`, the range of §8.9, and the approximations of §8.8 hold on the boxes
+`Q(p, 3C/t) ⊆ Q(s, K(t)/t)`, `p ∈ ℝ ∩ Q(s, C/t)`. If the set of `s` with `lim sup ℓₙ(s)/2ⁿ > 2/m` had positive
+measure, then for infinitely many `n`, with `Zₙ = {s : ℓₙ(s) > 2ⁿ/m}` and for `s ∈ Zₙ` such an interval `Iₙ(s)`
+of length `> 2ⁿ/m`, a set `Sₙ ⊆ Zₙ` of measure `≳ |Zₙ|/m` shares a time `t₁` in the middle thirds of the
 `Iₙ(s)`; put `t₂ = t₁ + 2ⁿ/(3m)` and `J(s) = ℝ ∩ Q(s, C/2ⁿ⁺¹)`, an interval of length `C/2ⁿ`, for `s ∈ Sₙ`.
-§8.8, with §8.9 applied at each `p ∈ J(s)` to the numbers `w(s)`, `w̃(s)`, puts the data at `p` in the form of
-§9.2 with increment `e(p) = e(s) + (t₂ − t₁)(p − s) + o(1)`, whose real part sweeps an interval of length
-`C/(3m)` as `p` runs over `J(s)`. There `|a_{t₁→t₂}(p)|² = 1 + (sin² Re e(p) + sinh² Im e(p))/N²`, with `N`
-bounded in terms of `C` because the resonances at `t₁` and `t₂` lie in their boxes; so
-`∫_{J(s)} log|a_{t₁→t₂}| ≥ c_{m,C} |J(s)|` with `c_{m,C} > 0`, although the integrand vanishes where
-`e(p) = 0`. Since `log|a_{t₁→t₂}| ≥ 0` on `ℝ` (§4.3), a cover of `Sₙ` of index two by the `J(s)` and §9.1's
-Plancherel identity give `|Zₙ| ≲_{m,C} ‖f‖²_{L²(2ⁿ, 2ⁿ⁺¹)}`, which is summable, and Borel–Cantelli concludes.
+§8.8 at `t₁` and `t₂`, with §8.9 applied at each `p ∈ J(s)` to the numbers `w(s)`, `w̃(s)`, puts the data at `p`
+in the form of §9.2 with increment `e(p) = e(s) + (t₂ − t₁)(p − s) + o(1)`, whose real part sweeps an interval of
+length `C/(3m)` as `p` runs over `J(s)`. There `|a_{t₁→t₂}(p)|² = 1 + (sin² Re e(p) + sinh² Im e(p))/N²`, with
+`N` bounded in terms of `C` because `t₁y₁` and `t₂y₂` lie in `(1, C]` and §8.9 moves them by `O(ε)`; so `∫_{J(s)} log|a_{t₁→t₂}| ≥ c_{m,C} |J(s)|` with
+`c_{m,C} > 0`, although the integrand vanishes where `e(p) = 0`. Since `log|a_{t₁→t₂}| ≥ 0` on `ℝ` (§4.3), a
+cover of `Sₙ` of index two by the `J(s)` and §9.1's Plancherel identity give
+`|Zₙ| ≲_{m,C} ‖f‖²_{L²(2ⁿ, 2ⁿ⁺¹)}`, which is summable, and Borel–Cantelli concludes.
 
 *Needs:* §4.3, §6.8, §8.8, §8.9, §9.1, §9.2; Mathlib Borel–Cantelli (`MeasureTheory.measure_limsup_atTop_eq_zero`).
 
 **Checks.**
 
-- Compact support: the resonances are fixed (§8 Examples), so `Iₙ(s) = ∅` for large `n`.
+- Compact support: the resonances are fixed (§8 Examples), so `ℓₙ(s) = 0` for large `n`.
 - Summability input: `Σₙ ‖f‖²_{L²(2ⁿ, 2ⁿ⁺¹)} = ‖f‖²_{L²(1, ∞)} < ∞`.
 - A resonance at fixed distance `δ` from `s` lies in `Q(s, C/t)` only for `t ≤ C/δ`, so it contributes to
-  `Iₙ(s)` only for `2ⁿ ≤ C/δ`.
+  `ℓₙ(s)` only for `2ⁿ ≤ C/δ`.
+- The restriction to `T₁(s, K)` is needed by the route: a zero at `s − 0.3i/t` for every `t ∈ [2ⁿ, 2ⁿ⁺¹]` lies in
+  `Q(s, K(t)/t)` above the height `−1/t` once `K(t) ≥ 0.3`, so no such `t` is in `T₁(s, K)` and the zero does not
+  count towards `ℓₙ(s)`; §8.9 asks `1 < ty`, and here `ty = 0.3`.
 - The lower bound is for the integral only. With `υ = 1`, `Im e = 0` and `e(s) = 0`, the formula of §9.2 gives
   `log|a_{t₁→t₂}| = ½ log(1 + sin²(Re e)/sinh² 2)`: `0` at `p = s` and `≈ 0.000379` at the shift `Re e = 0.1`,
   with mean `≈ 0.000126 > 0` over shifts in `[−0.1, 0.1]`. A pointwise bound `log|a_{t₁→t₂}| ≥ c > 0` on
