@@ -74,7 +74,10 @@ It leaves to other roadmaps, by section:
   `ε₁`; the identity `B ∘ ε_n = ε_{n+1} ∘ d` with Connes' operator. §1.10: the derived HKR
   filtration and Hochschild homology over non-flat bases.
 - **DerivedModuleAlgebra** §0.K.1: the Koszul complex of a finite sequence in a commutative ring
-  and its acyclicity for weakly regular sequences.
+  and its acyclicity for weakly regular sequences. §0.5: square-zero extensions of a commutative
+  algebra by a module through commutative rings, their isomorphism classes `Exal` with the Baer
+  sum, the vanishing of the class exactly for split extensions, and the bijection between
+  derivations and sections of the trivial extension.
 - **EulerSystemsAndKolyvaginSystems** §6.1: the theorem that the exterior-bidual evaluation
   `⋀^r_R X → Hom_R(⋀^r_R Hom_R(X,R), R)` is an isomorphism for every finite projective module `X`
   over a commutative ring `R`; its carrier, the exterior bidual and its evaluation, is
@@ -97,9 +100,14 @@ commutative algebras), `KaehlerDifferential` with `KaehlerDifferential.linearMap
 `ExteriorAlgebra.exteriorPower` with `exteriorPower.pairingDual` and its bijectivity for finite
 free modules, `exteriorPower.instFinite`, `Algebra.Smooth`, `Abelian.Ext` with its computation
 from projective resolutions, `Functor.leftDerived`, the Dold–Kan normalisation of simplicial
-objects, `TrivSqZeroExt`, the algebra `A` as a module over `A ⊗[k] Aᵐᵒᵖ`
-(`instModuleTensorProductMop`); Tau Ceti's weak regularity of distinct polynomial variables over
-every commutative ring (`MvPolynomial.isWeaklyRegular_map_X`), its Koszul complex
+objects, `TrivSqZeroExt`, the lifts along a square-zero ideal of a commutative ring and their
+correspondence with derivations (`derivationToSquareZeroEquivLift`), the algebra `A` as a module
+over `A ⊗[k] Aᵐᵒᵖ` (`instModuleTensorProductMop`); Tau Ceti's commutative square-zero extensions
+`TauCeti.SquareZeroExtension` with their morphisms `TauCeti.SquareZeroExtension.Hom`, splittings
+`TauCeti.SquareZeroExtension.Splitting`, isomorphism classes `TauCeti.Exal` and the criterion
+`TauCeti.SquareZeroExtension.extensionClass_eq_zero_iff` (the objects of DerivedModuleAlgebra
+§0.5), its weak regularity of distinct polynomial variables over every commutative ring
+(`MvPolynomial.isWeaklyRegular_map_X`), its Koszul complex
 `TauCeti.koszulComplex` (the formalisation of DerivedModuleAlgebra §0.K.1) with the zeroth
 homology of a finite sequence (`TauCeti.koszulComplex.homologyZeroEquivSpan`) and acyclicity for
 weakly regular sequences (`TauCeti.koszulComplex.exactAt_of_isWeaklyRegular`),
@@ -168,7 +176,18 @@ Variants kept here, each differing in one stated respect from an existing object
   in the algebra;
 - the `HH²` classification of §3.6 is for an arbitrary bimodule without a deformation parameter,
   where DGAInfinity Layer 8 reads `HH²(A,A)` as infinitesimal deformations and BanachAlgebras
-  Layer 6 classifies bounded extensions of Banach algebras;
+  Layer 6 classifies bounded extensions of Banach algebras; DerivedModuleAlgebra §0.5, which
+  Tau Ceti has at the pin as `TauCeti.SquareZeroExtension k R M` and `TauCeti.Exal k R M`, takes
+  the extensions of a commutative `R` by an `R`-module through commutative rings, with no
+  `k`-linear section required, and keeps them with the criterion that the class vanishes exactly
+  for split extensions; §3.6 allows noncommutative `A` and `E` and an arbitrary bimodule and requires a
+  `k`-linear section, and the two meet in the commutative `k`-split extensions of a commutative `R`
+  by a symmetric bimodule, which up to isomorphism are the `R ⊕_f M` for symmetric cocycles `f`,
+  their splittings being the algebra sections of §3.6(d);
+- the correspondence of §3.3 between derivations and sections of `TrivSqZeroExt A M` is for
+  bimodule derivations of an arbitrary `A`; its commutative case is DerivedModuleAlgebra §0.5's
+  bijection between derivations and sections of the trivial extension, kept there, and Mathlib's
+  `derivationToSquareZeroEquivLift` states it for a square-zero ideal of a commutative ring;
 - the equivalence of §4.1 between bimodules and `ModuleCat Aᵉ` differs from Tau Ceti's restrictions
   of an `A ⊗[k] B`-module to its factors (`TauCeti.Algebra.TensorProduct.moduleLeft`,
   `TauCeti.Algebra.TensorProduct.moduleRight`) and its linearity criterion
@@ -336,7 +355,11 @@ canonical map, and the determinant map is identified as `n!` times it.
   noncommutative `Aᵉ`.
 - **Square-zero extensions.** `TrivSqZeroExt` for a bimodule (`Module R M`, `Module Rᵐᵒᵖ M`), with
   `TrivSqZeroExt.algebra'`, `TrivSqZeroExt.fstHom`, `TrivSqZeroExt.inl` and `TrivSqZeroExt.inr`;
-  `Subalgebra.center`.
+  `Subalgebra.center`. `derivationToSquareZeroEquivLift`
+  (`Mathlib/RingTheory/Derivation/ToSquareZero.lean`: for commutative `A` and `B` over `R` with
+  `Algebra A B`, `IsScalarTower R A B` and an ideal `I` of `B` with `I² = 0`, the `R`-derivations
+  `A → I` are in bijection with the `R`-algebra maps `A → B` lifting the structure map `A → B/I`) is
+  cited for the commutative case of §3.3 and not consumed.
 - **Differentials and derivations.** `Derivation` (which requires a commutative algebra),
   `KaehlerDifferential`, `KaehlerDifferential.D`, `KaehlerDifferential.span_range_derivation`,
   `KaehlerDifferential.linearMapEquivDerivation` (`(Ω[S⁄R] →ₗ[S] M) ≃ₗ[S] Derivation R S M`), the
@@ -488,6 +511,23 @@ canonical map, and the determinant map is identified as `n!` times it.
   `TauCeti.innerDerivation` (`z ↦ ⁅z, −⁆`, that is `a ↦ z a − a z`) and
   `TauCeti.derivationEquivDerivationLieAlgebra` (agreement with Mathlib's `Derivation R A A` for
   commutative `A`).
+- `TauCeti.SquareZeroExtension`, `TauCeti.SquareZeroExtension.Hom`,
+  `TauCeti.SquareZeroExtension.Splitting`, `TauCeti.SquareZeroExtension.ι_algebraMap_smul`,
+  `TauCeti.Exal`, `TauCeti.SquareZeroExtension.extensionClass`,
+  `TauCeti.SquareZeroExtension.extensionClass_eq_zero_iff` and `TauCeti.Exal.subsingleton_self`
+  (`TauCeti/RingTheory/Extension/SquareZero/Basic.lean`): for commutative rings `A` and `B` with
+  `Algebra A B` and an additive group `M` with `Module B M`, a square-zero extension of `B` by `M`
+  over `A` is a commutative ring `E` with `Algebra A E`, a surjective `A`-algebra map `π : E → B` and
+  an injective additive map `ι : M → E` with range `ker π` and `x · ι(m) = ι(π(x) • m)`; its `ι`
+  carries `algebraMap A B a • m` to `a • ι(m)`; morphisms are `A`-algebra maps compatible with `π`
+  and `ι`; a splitting is an `A`-algebra section of `π`; `TauCeti.Exal A B M` is the set of
+  isomorphism classes of extensions whose ring lies in the universe of `B` and `M`. Under the further
+  hypotheses `Module Bᵐᵒᵖ M`, `IsCentralScalar B M`, `Module A M` and `IsScalarTower A B M` (the
+  symmetric bimodule over `A`), `TauCeti.Exal A B M` has the class of `TrivSqZeroExt B M` as its `0`
+  and an extension has class `0` exactly when it has a splitting; with no further hypothesis,
+  `TauCeti.Exal A A M` has at most one element (every extension of `A` itself splits). The ring
+  `E` is commutative and `ι` is only additive. §3.6 compares its twisted extensions with these;
+  nothing else is assumed of them.
 - `TauCeti.AInfinityAlgebra`, `TauCeti.AInfinity.IsSuspension`, `TauCeti.IsDGAlgebra` and
   `TauCeti.IsNonUnitalDGAlgebra.toAInfinityAlgebra` (`TauCeti/Algebra/Homology/AInfinity/`): the
   suspended bar convention of DGAInfinity, which fixes the sign of `Θ` in the conventions. The
@@ -982,7 +1022,10 @@ Weibel94 §9.2; CE56 Chapter IX).
 
 - A `k`-linear `D : A → M` is a derivation if and only if `a ↦ (a, D a)` is a `k`-algebra
   homomorphism `A → TrivSqZeroExt A M` whose composite with `TrivSqZeroExt.fstHom` is the identity;
-  every such section arises from a unique derivation.
+  every such section arises from a unique derivation. For commutative `A` and a symmetric `M` this
+  is the bijection of DerivedModuleAlgebra §0.5, and Mathlib's `derivationToSquareZeroEquivLift`
+  applied to the square-zero ideal `0 × M` of `TrivSqZeroExt A M`; the statement here allows a
+  noncommutative `A`.
 - For commutative `R` and an `R`-module `M`, `Der_k(R,M)` is the image of Mathlib's
   `Derivation k R M`, as `k`-modules and as `R`-modules (§1.5).
 - For `M = A`, `Der_k(A,A)` is the underlying submodule of `TauCeti.derivationLieAlgebra k A`, and
@@ -1075,7 +1118,24 @@ if `f − f′ ∈ B²(A,M)`; (d) the projection of `A ⊕_f M` has a `k`-algebr
 `0` corresponding to `TrivSqZeroExt A M` (Ginz05 §5.5, lines 1088–1111, and Remark 5.5.1;
 Weibel94 §9.3).
 
-*Needs:* §3.5; Mathlib `TrivSqZeroExt`, `TrivSqZeroExt.fstHom`.
+*Needs:* §3.5; Mathlib `TrivSqZeroExt`, `TrivSqZeroExt.fstHom`; for the comparison below, Tau Ceti
+`TauCeti.SquareZeroExtension`, `TauCeti.SquareZeroExtension.Splitting`,
+`TauCeti.SquareZeroExtension.ι_algebraMap_smul`, `TauCeti.Exal`,
+`TauCeti.SquareZeroExtension.extensionClass_eq_zero_iff`.
+
+- For commutative `R`, an `R`-module `M` regarded as the symmetric bimodule, and a 2-cocycle
+  `f ∈ C²(R,M)`, the ring `R ⊕_f M` is commutative if and only if `f(a,b) = f(b,a)` for all `a, b`
+  (the commutator of `(a,m)` and `(b,m′)` is `(0, f(a,b) − f(b,a))`). For symmetric `f`, the first
+  projection and `m ↦ (0,m)` make `R ⊕_f M` a `TauCeti.SquareZeroExtension k R M`, whose splittings
+  (`TauCeti.SquareZeroExtension.Splitting`) are exactly the `k`-algebra sections of (d); hence its
+  class in `TauCeti.Exal k R M` is `0` (`TauCeti.SquareZeroExtension.extensionClass_eq_zero_iff`) if
+  and only if `[f] = 0` in `HH²(R,M)`. Conversely a `TauCeti.SquareZeroExtension k R M` with a
+  `k`-linear section of its projection is a `k`-split extension in the sense above (its `ι` is
+  `k`-linear by `TauCeti.SquareZeroExtension.ι_algebraMap_smul`), and its cocycles `f_s` of (a) are
+  symmetric. Every coboundary `δg(a,b) = a g(b) − g(ab) + b g(a)` is symmetric, so a class that
+  contains a symmetric cocycle consists of symmetric cocycles, and (a)–(c) identify the isomorphism
+  classes of commutative `k`-split square-zero extensions of `R` by `M` with these classes of
+  `HH²(R,M)`.
 
 **Checks.**
 
@@ -1084,9 +1144,23 @@ Weibel94 §9.3).
   It is not `ℤ`-split, so the `k`-splitting hypothesis cannot be dropped.
 - `HH²(k, M) = 0` for every `k`-module `M` (the computation of §1.2 Checks with `M` in place of the
   coefficients `k`), and indeed
-  `k[ε]/ε² → k` splits through the structure map.
+  `k[ε]/ε² → k` splits through the structure map; for commutative extensions this is Tau Ceti's
+  `TauCeti.Exal.subsingleton_self`.
 - For nonzero `k`, the extension `k[t]/(t³) → k[x]/(x²)` by `k·t²` is `k`-split and does not split
   as algebras (§3.5 Checks), so its class in `HH²(k[x]/(x²), k)` is nonzero.
+- The comparison with `TauCeti.SquareZeroExtension` separates three cases. For nonzero `k`,
+  `R = k[x]/(x²)`, `M = k` and the symmetric cocycle `f(x,x) = 1` of §3.5 Checks, `R ⊕_f M ≅ k[t]/(t³)`
+  is commutative and is a `TauCeti.SquareZeroExtension k R k` with no splitting (a section sends `x`
+  to some `t + c t²`, whose square is `t² ≠ 0`), so its class is nonzero both in `TauCeti.Exal k R k`
+  and in `HH²(R,k)`. For `k = ℤ` and `R = M = 𝔽₂`, `ℤ/4 → 𝔽₂` with `ι(1) = 2` is a
+  `TauCeti.SquareZeroExtension ℤ 𝔽₂ 𝔽₂` with no splitting, so its class in `TauCeti.Exal ℤ 𝔽₂ 𝔽₂` is
+  nonzero, while it has no `ℤ`-linear section (a `ℤ`-linear map `𝔽₂ → ℤ/4` takes values in `{0, 2}`)
+  and `HH²(𝔽₂,𝔽₂) = 0`: it lies outside §3.6. For nonzero `k`, `R = M = k[x,y]` and the cocycle
+  `f(a,b) = ∂_x a · ∂_y b` (that is `∂_x ∪ ∂_y`), `f(x,y) = 1 ≠ 0 = f(y,x)`, so
+  `(x,0)(y,0) = (xy,1) ≠ (xy,0) = (y,0)(x,0)`: `R ⊕_f M` is not commutative and is no
+  `TauCeti.SquareZeroExtension`, and since coboundaries are symmetric, `f` is cohomologous to no
+  symmetric cocycle and `[f] ≠ 0` in `HH²(k[x,y],k[x,y])`. A comparison that ignored commutativity
+  would misplace the third extension, and one that dropped the `k`-splitting the second.
 
 ### Examples
 
@@ -1098,9 +1172,13 @@ extension `k[t]/(t³) → k[x]/(x²)` represents a nonzero class of `HH²(k[x]/(
 ### Dependencies
 
 Layers 1–2; Mathlib's `TrivSqZeroExt`, Kähler differentials and centre; Tau Ceti's bimodule
-derivations, the low-degree cocycle characterisations of its bimodule coboundary, and its
-derivation Lie algebra. No roadmap supplier is used. DGAInfinity Layer 8's reading of `HH²(A,A)`
-as first-order deformations is the special case `M = A` over `k[ε]/ε²` and is not restated.
+derivations, the low-degree cocycle characterisations of its bimodule coboundary, its derivation
+Lie algebra, and its commutative square-zero extensions
+(`TauCeti/RingTheory/Extension/SquareZero/Basic.lean`) for the comparison of §3.6. No roadmap
+supplier is used: DerivedModuleAlgebra §0.5, the owner of the commutative extensions and of the
+derivation–section bijection, is cited, and the comparison of §3.6 uses only their pinned form.
+DGAInfinity Layer 8's reading of `HH²(A,A)` as first-order deformations is the special case `M = A`
+over `k[ε]/ε²` and is not restated.
 
 ## Layer 4: The bar resolution, Ext and Tor
 

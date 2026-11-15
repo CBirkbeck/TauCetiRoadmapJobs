@@ -528,7 +528,7 @@
       {
        "name": "HochschildHKR.mem_bimodDerivations_iff_section",
        "role": "characterisation",
-       "statement": "D is a derivation iff a↦(a,D a) is a k-algebra homomorphism A→TrivSqZeroExt A M over TrivSqZeroExt.fstHom; every such section arises from a unique derivation."
+       "statement": "D is a derivation iff a↦(a,D a) is a k-algebra homomorphism A→TrivSqZeroExt A M over TrivSqZeroExt.fstHom; every such section arises from a unique derivation. For commutative A and symmetric M this is the derivation–section bijection of DerivedModuleAlgebra §0.5 and Mathlib's derivationToSquareZeroEquivLift for the square-zero ideal 0 × M of TrivSqZeroExt A M; here A may be noncommutative."
       },
       {
        "name": "HochschildHKR.bimodDerivations_eq_derivation",
@@ -702,13 +702,23 @@
      "prerequisites": [
       "target:3.5",
       "mathlib:TrivSqZeroExt",
-      "mathlib:TrivSqZeroExt.fstHom"
+      "mathlib:TrivSqZeroExt.fstHom",
+      "tauceti:TauCeti.SquareZeroExtension",
+      "tauceti:TauCeti.SquareZeroExtension.Splitting",
+      "tauceti:TauCeti.SquareZeroExtension.ι_algebraMap_smul",
+      "tauceti:TauCeti.Exal",
+      "tauceti:TauCeti.SquareZeroExtension.extensionClass_eq_zero_iff"
      ],
      "api": [
       {
        "name": "HochschildHKR.SplitSqZeroExtension",
        "role": "definition",
        "statement": "The structure of a k-split square-zero extension of A by M, with morphisms commuting with p and i."
+      },
+      {
+       "name": "HochschildHKR.cohomologyTwoClassification_squareZeroExtension",
+       "role": "compatibility",
+       "statement": "For commutative R, an R-module M as the symmetric bimodule and a 2-cocycle f, R⊕_f M is commutative iff f(a,b)=f(b,a) (the commutator of (a,m),(b,m') is (0,f(a,b)−f(b,a))); for symmetric f, the projection and m↦(0,m) make it a TauCeti.SquareZeroExtension k R M whose splittings are the algebra sections of (d), so its class in TauCeti.Exal k R M is 0 (TauCeti.SquareZeroExtension.extensionClass_eq_zero_iff) iff [f]=0 in HH²(R,M). Conversely a TauCeti.SquareZeroExtension k R M with a k-linear section is k-split (ι is k-linear by TauCeti.SquareZeroExtension.ι_algebraMap_smul) with symmetric f_s; coboundaries are symmetric, and (a)–(c) identify the isomorphism classes of commutative k-split extensions with the classes of HH²(R,M) containing a symmetric cocycle. DerivedModuleAlgebra §0.5 owns the commutative extensions without k-splitting."
       }
      ],
      "tests": [
@@ -720,12 +730,17 @@
       {
        "name": "hh2_k",
        "kind": "degenerate",
-       "statement": "HH²(k,M)=0 and k[ε]/ε²→k splits."
+       "statement": "HH²(k,M)=0 and k[ε]/ε²→k splits; for commutative extensions this is TauCeti.Exal.subsingleton_self."
       },
       {
        "name": "hh2_dual_numbers",
        "kind": "computation",
        "statement": "For nonzero k, k[t]/(t³)→k[x]/(x²) is k-split and non-split, so its class in HH²(k[x]/(x²),k) is nonzero."
+      },
+      {
+       "name": "hh2_tauceti_comparison",
+       "kind": "compatibility",
+       "statement": "Three cases. Nonzero k, R=k[x]/(x²), M=k, symmetric f(x,x)=1: R⊕_f M ≅ k[t]/(t³) is a commutative TauCeti.SquareZeroExtension k R k with no splitting (s(x)=t+ct² has square t²≠0), nonzero in TauCeti.Exal k R k and in HH²(R,k). k=ℤ, R=M=𝔽₂: ℤ/4→𝔽₂ with ι(1)=2 is a TauCeti.SquareZeroExtension with no splitting, nonzero in TauCeti.Exal ℤ 𝔽₂ 𝔽₂, but has no ℤ-linear section (values in {0,2}) and HH²(𝔽₂,𝔽₂)=0: outside 3.6. Nonzero k, R=M=k[x,y], f(a,b)=∂_x a·∂_y b: f(x,y)=1≠0=f(y,x), (x,0)(y,0)=(xy,1)≠(xy,0)=(y,0)(x,0), so not commutative and no TauCeti.SquareZeroExtension; coboundaries are symmetric, so [f]≠0. Ignoring commutativity misplaces the third, dropping k-splitting the second."
       }
      ]
     }
