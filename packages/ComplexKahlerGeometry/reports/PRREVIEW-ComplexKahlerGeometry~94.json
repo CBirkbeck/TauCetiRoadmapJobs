@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComplexKahlerGeometry~94",
+  "head": "89357f3db20befdba093e50d06c54017c710a524",
+  "pr": 1807,
+  "folder": "ComplexKahlerGeometry",
+  "date": "2026-11-15",
+  "findings": 10,
+  "blocking": 2,
+  "notes": "Full review at 89357f3. Previous 13 findings: 9 repaired, 4 partly (carried as R03, R05, R06, R09). Blocking: the finite-rank Runge operator (2.2) and planar two-form exactness (5.6) are also owned by GlobalHolomorphicFunctions on main (Layers 2.5, 7.2), which names K2 and K5a as consumers; this README never cites it. P3: redundant IsDomain binder in uniqueFactorizationMonoid_holomorphicStalk (probe elaborates without it), DifferentialGeometry 6.2 cited for a pinned Tau Ceti lemma, forward needs (8.2 on 8.3, 2.1 on 2.3-2.4, 8.1 Needs line), Demailly II (4.31) locator, missing locator for H0(O(k)), four 'Follow <source>' sentences, missing invariance Check for IsKahler, one stale sentence of the description. Checked: seeded sample of 15 sections against the cached sources (demailly-agbook, rainer, angella, sakane, lojasiewicz, ballmann, berwick-evans-tripathy, hormann-steinbauer); adversarial table with computed values for every sampled target and all 27 headline theorems; pinned declarations opened in Mathlib and Tau Ceti; cross-roadmap citations resolved on main and at this head; depcheck 245 roadmaps, 2263 edges, 0 problems; worker's gate passes (build=0); lake env lean on Suggested.lean gives 27 sorry warnings only; one-tactic probe closes none of the 27 theorems. Not verifiable: the uncertified sources (webster-nn, hormander-alpdo1, griffiths-harris, raghunathan, koszul-malgrange, nomizu).",
+  "text": "5fa575d43a504403"
+ }
+}
