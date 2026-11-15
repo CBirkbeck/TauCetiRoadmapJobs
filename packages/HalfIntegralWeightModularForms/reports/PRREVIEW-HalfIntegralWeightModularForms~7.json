@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HalfIntegralWeightModularForms~7",
+  "head": "a6d185b5753b4fca1c8011a41d4a5b08258926fa",
+  "pr": 1721,
+  "folder": "HalfIntegralWeightModularForms",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since a6d185b; this round read the pull request's title and description against the head: one P3 (the description says Kohnen-Zagier, Waldspurger and Shintani are 'stated', the head makes them proof targets). Worker's gate passes (build=0 OK); depcheck against the candidate order 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean exit 0 with 17 sorry warnings only; no change outside the folder; no seeded target falls in a changed passage, no source fetched. Remark, not a finding: ModularForms on main (README 24-34) claims Dedekind sums and the eta closed forms that section 3.3 here also owns.",
+  "text": "caf51f2e331219dd"
+ }
+}
