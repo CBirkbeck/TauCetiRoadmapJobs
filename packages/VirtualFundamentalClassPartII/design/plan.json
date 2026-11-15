@@ -1626,9 +1626,9 @@
      "id": "8.4",
      "kind": "theorem",
      "name": "VirtualFundamentalClass.deformationInvariance",
-     "statement": "Let B be a smooth connected separated curve, M an algebraic stack locally of finite type and quasi-separated over k, of pure dimension m, reduced or not, X -> M x B of Deligne-Mumford type with X proper over B, and E a perfect relative obstruction theory of rank r with a global resolution and m + r = 0. Then deg_{kappa(b)} [X_b/M_{kappa(b)}]^vir is independent of the closed point b in B.",
+     "statement": "Let B be a smooth connected curve over k, separated or not (a connected k-scheme of finite type, smooth of dimension one), M an algebraic stack locally of finite type and quasi-separated over k, of pure dimension m, reduced or not, X -> M x B of Deligne-Mumford type with X proper over B, and E a perfect relative obstruction theory of rank r with a global resolution and m + r = 0. Then deg_{kappa(b)} [X_b/M_{kappa(b)}]^vir is independent of the closed point b in B.",
      "hypotheses": [
-      "B smooth connected separated curve over k",
+      "B a smooth connected curve over k (connected k-scheme of finite type, smooth of dimension one), separated or not",
       "M an algebraic stack locally of finite type and quasi-separated over k, of pure dimension m",
       "X proper over B",
       "m + r = 0"
@@ -1660,6 +1660,16 @@
        "name": "dimensionNeeded",
        "kind": "non-example",
        "statement": "For P^1 x B with E = Omega_{X/B}, m + r = 1 and the fibre class [P^1] has no degree."
+      },
+      {
+       "name": "nonSeparatedBase",
+       "kind": "computation",
+       "statement": "For B = L (line with a doubled origin, coordinate t, char != 2) and X = Z(x^2 - t y^2) in P^1 x L with E = L_{X/L}, the count is 2 at both origins (fibre Spec k[x]/(x^2)) and at every t != 0; (X -> L)_*[X]^vir = 2[L] and i_{0_j}^!(2[L]) = 2[0_j]."
+      },
+      {
+       "name": "connectedNeeded",
+       "kind": "non-example",
+       "statement": "For B = A^1 + A^1 and X the first copy with E = 0, the count is 1 on the first copy and 0 on the second."
       }
      ]
     }
@@ -1876,7 +1886,7 @@
      "id": "9.5",
      "kind": "theorem",
      "name": "ObstructionTheory.maps_virtualDimension",
-     "statement": "Where the fibres have arithmetic genus g, F^*T_X has fibre degree delta and rank l (the dimension of the component of X receiving F_t), rk E = delta + l (1 - g), so the virtual dimension is b + delta + l (1 - g), equal to b + delta + dim X (1 - g) for X of pure dimension; for X projective of pure dimension, F_t is proper with curve class beta = F_t*[C_t] and delta = c_1(T_X).beta by the projection formula, and for B the stack of prestable n-pointed genus-g curves (dimension 3g - 3 + n) this is (1 - g)(dim X - 3) + n + c_1(T_X).beta; for X not separated F_t need not be proper and only the fibre degree delta is defined.",
+     "statement": "Where the fibres have arithmetic genus g, F^*T_X has fibre degree delta and rank l (the dimension of the component of X receiving F_t), rk E = delta + l (1 - g), so the virtual dimension is b + delta + l (1 - g), equal to b + delta + dim X (1 - g) for X of pure dimension; for X proper of pure dimension (projective in AlgebraicGromovWittenTheory §4.3), F_t is proper with curve class beta = F_t*[C_t] and delta = c_1(T_X).beta by the projection formula, and for B the stack of prestable n-pointed genus-g curves (dimension 3g - 3 + n) this is (1 - g)(dim X - 3) + n + c_1(T_X).beta; for X not separated F_t need not be proper, and for X separated and not proper A_0(X) has no degree, so only the fibre degree delta is defined.",
      "hypotheses": [
       "the setting of 9.1",
       "constant genus g, fibre degree delta and rank l of F^*T_X"
@@ -1921,6 +1931,11 @@
        "name": "doubledPointTarget_noCurveClass",
        "kind": "non-example",
        "statement": "P = P^1 with a doubled point, C = P^1, F the inclusion of a chart: F is not proper (its image is dense, not closed), so F_*[P^1] is undefined, while F^*T_P = O(2) gives delta = 2, l = 1 and virtual dimension 3 = h^0(O(2)), the dimension of the degree-one maps (two copies of PGL_2)."
+      },
+      {
+       "name": "separatedNonProperTarget_noDegree",
+       "kind": "non-example",
+       "statement": "X = P^1 x A^1, C = P^1, F the inclusion of P^1 x 0: F is proper, delta = 2, l = 2, virtual dimension 4 = dim PGL_2 x A^1, but beta = [P^1 x 0] = div(t) = 0 and A_0(X) = 0, so no degree returns delta from c_1(T_X) cap beta."
       }
      ]
     }

@@ -1768,7 +1768,8 @@ VirtualFundamentalClass §1.6 and gap:normal-cones-of-local-immersions.
 
 ### 8.4 Deformation invariance of virtual counts
 
-Let `B` be a smooth connected separated curve over `k`, `𝔐` an algebraic stack locally of finite type
+Let `B` be a smooth connected curve over `k`, separated or not: a connected `k`-scheme of finite type,
+smooth of dimension one, hence a stack of Convention 1. Let `𝔐` be an algebraic stack locally of finite type
 and quasi-separated over `k` (Convention 7), of pure dimension `m`, reduced or not (`𝔐 = Spec k`
 allowed), `X → 𝔐 × B` of Deligne–Mumford type with `X` proper over `B`, and `E` a perfect relative
 obstruction theory for `X/𝔐 × B` of rank `r` with a global resolution and `m + r = 0`. For a
@@ -1784,7 +1785,9 @@ of stacks over `𝔐 × B`, by 4.2 for the flat projection `𝔐 × B → B`. Pu
 (4.2), with `i_b^![B] = [{b}]`, gives `deg_{κ(b)}[X_b]^vir = n` (li-tian1998 Theorem 4.2, lines 1472–1474, whose proof, lines 1486–1552, reduces it by conservation
 of number to the identity `η^![M_{X_T/T}]^vir = [M_{X_t}]^vir` (lines 1501–1503), and lines
 1565–1566, which draw its componentwise form `[V_t]^vir = η_t^![V]^vir` from that proof; fulton1998
-Proposition 10.2). The `k`-degree is `n·[κ(b) : k]`. *Needs:* 4.1–4.2, 5.4, 6.2, 8.2.
+Proposition 10.2). The `k`-degree is `n·[κ(b) : k]`. No step uses separatedness of `B`: `{b}` is a closed
+point of the regular scheme `B`, 4.1, 4.2 and 8.2 are stated for stacks of Conventions 1 and 7, separated
+or not, and 5.4's degree is taken on `X_b`, which is proper over `κ(b)`. *Needs:* 4.1–4.2, 5.4, 6.2, 8.2.
 
 **Checks.**
 
@@ -1796,6 +1799,17 @@ Proposition 10.2). The `k`-degree is `n·[κ(b) : k]`. *Needs:* 4.1–4.2, 5.4, 
   `1` for `b ≠ 0` and `0` for `b = 0`.
 - Without `m + r = 0` the fibre classes lie in `A_{m+r}(X_b)` and have no degree: for `X = ℙ¹ × B` with
   `E = Ω_{X/B}`, `m + r = 1` and the fibre class is `[ℙ¹]`.
+- A base that is not separated (`char k ≠ 2`): for `B = L`, the line with a doubled origin and coordinate
+  `t`, `𝔐 = Spec k` and the Cartier divisor `X = Z(x² − t·y²) ⊆ ℙ¹ × L` with
+  `E = [O(−2)|_X → Ω_{ℙ¹×L/L}|_X] = L_{X/L}` (rank `0`), `X → L` is finite and flat of degree `2` and `E`
+  restricts on each fibre to its cotangent complex. Over each origin the fibre is `Spec k[x]/(x²)`, of
+  class `2·[pt]` (VirtualFundamentalClass §7.6), and over a closed point with `t ≠ 0` it is finite étale of
+  degree `2` over `κ(b)`: the count is `2` at `0₁`, at `0₂` and at every `t ≠ 0`. In the route, `n = 2`,
+  `(X → L)_*[X]^vir = 2·[L]`, `i_{0₁}^!(2·[L]) = 2·[0₁]` and `i_{0₂}^!(2·[L]) = 2·[0₂]`; a separatedness
+  hypothesis on `B` would exclude this family.
+- Connectedness is needed: for `B = 𝔸¹ ⊔ 𝔸¹`, `𝔐 = Spec k` and `X` the first copy, `X → B` an open and closed
+  immersion with `E = L_{X/B} = 0`, the count is `1` at the points of the first copy and `0` at those of
+  the second.
 
 ### Examples
 
@@ -1821,7 +1835,7 @@ schemes; StableReduction Layer 3). The étale-local form, rather than representa
 what 9.2–9.4 use, since they work on étale charts of `M`; it contains the case of `𝒞 → 𝔅`
 representable by schemes. Let `X` be a scheme smooth over `k`, not necessarily separated, quasi-compact
 or quasi-projective: 9.1–9.5 use that `X` is a scheme (here), that it is smooth over `k` (9.3), and the
-rank and fibre degree of `F^*T_X` (9.5), whose form through a curve class is stated for projective `X`.
+rank and fibre degree of `F^*T_X` (9.5), whose form through a curve class is stated for proper `X`.
 Let `M` be a stack (Convention 1) with a morphism `M → 𝔅` of Deligne–Mumford type,
 `π : 𝒞_M := 𝒞 ×_𝔅 M → M` the base change and `F : 𝒞_M → X` a morphism. Define *RelativeSpaceOfMaps*:
 `(M, F)` is a relative space of maps from `𝒞` to `X` if for every square-zero extension `T → T̄` over `𝔅`
@@ -1982,14 +1996,17 @@ of dimension `ℓ`), `rk E = χ(C_t, F_t^*T_X) = δ + ℓ · (1 − g)`, by Riem
 (SchemeAndStackFoundations §3.3, with `χ(O_{C_t}) = 1 − g` from StableReduction Layer 2), so that the
 virtual dimension there is `b + δ + ℓ · (1 − g)`; when `X` has pure dimension, `ℓ = dim X` everywhere
 and the virtual dimension is `b + δ + dim X · (1 − g)` (behrend1997 lines 157–161 and 193–197;
-li-tian1998 Theorem 4.3 (1), lines 1585–1586). For `X` projective of pure dimension, as in
-AlgebraicGromovWittenTheory §4.3, each `F_t : C_t → X_{κ(t)}` is proper with curve class
+li-tian1998 Theorem 4.3 (1), lines 1585–1586). For `X` proper of pure dimension (projective in
+AlgebraicGromovWittenTheory §4.3), each `F_t : C_t → X_{κ(t)}` is proper, `C_t` being proper and `X`
+separated, with curve class
 `β := F_{t*}[C_t] ∈ A_1(X_{κ(t)})`, and `δ = deg(c_1(F_t^*T_X) ∩ [C_t]) = deg(c_1(T_X) ∩ β) =: c_1(T_X) · β` by
-the degree on proper curves and the projection formula (SchemeAndStackFoundations §§3.3, 5.2–5.4); for
+the degree on proper curves, the degree of zero-cycles on the proper `X_{κ(t)}` and the projection formula
+(SchemeAndStackFoundations §§3.3, 5.2–5.4); for
 `𝔅` the stack of prestable `n`-pointed curves of genus `g`, of dimension `3g − 3 + n`, the virtual
-dimension is then `(1 − g)(dim X − 3) + n + c_1(T_X) · β`, that of AlgebraicGromovWittenTheory §4.3. For
-`X` not separated, `F_t` need not be proper, no curve class is defined, and `δ` is the fibre degree
-alone. *Needs:* 9.3–9.4; SchemeAndStackFoundations §3.3; StableReduction Layer 2; Tau Ceti
+dimension is then `(1 − g)(dim X − 3) + n + c_1(T_X) · β`, the formula of AlgebraicGromovWittenTheory §4.3. For
+`X` not separated, `F_t` need not be proper and no curve class is defined; for `X` separated and not
+proper, `β` is defined but `A_0(X_{κ(t)})` has no degree; in both cases `δ` is the fibre degree alone.
+*Needs:* 9.3–9.4; SchemeAndStackFoundations §3.3; StableReduction Layer 2; Tau Ceti
 `TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.FixedRank.vectorBundleDegree`; for the curve class,
 also SchemeAndStackFoundations §§5.2–5.4.
 
@@ -2009,6 +2026,11 @@ also SchemeAndStackFoundations §§5.2–5.4.
   `h⁰(ℙ¹, O(2)) = 3`, the dimension of the maps `ℙ¹ → P` whose composite with the collapse `P → ℙ¹` is an
   isomorphism (each an automorphism of `ℙ¹` followed by one of the two chart inclusions: two copies of
   `PGL₂`), with `H¹(ℙ¹, O(2)) = 0`.
+- A target that is separated and not proper, where the curve class carries no degree: `X = ℙ¹ × 𝔸¹`,
+  `𝔅 = Spec k`, `C = ℙ¹` and `F` the inclusion of `ℙ¹ × 0`. `F` is proper and `F^*T_X = O(2) ⊕ O`, so `δ = 2`,
+  `ℓ = 2` and the virtual dimension is `0 + 2 + 2 · (1 − 0) = 4`, the dimension of `PGL₂ × 𝔸¹`. But
+  `β = [ℙ¹ × 0] = div(t) = 0` in `A_1(X)` (`t` the coordinate of `𝔸¹`), and `A_0(X) ≅ A_{−1}(ℙ¹) = 0` by
+  homotopy invariance, so no degree on `A_0(X)` returns `δ = 2` from `c_1(T_X) ∩ β`.
 
 ### Examples
 
