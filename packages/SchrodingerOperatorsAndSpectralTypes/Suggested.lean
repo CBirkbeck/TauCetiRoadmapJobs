@@ -37,7 +37,7 @@ so that `−Δ ≥ 0`. An operator given on test functions is stated, as in Unbo
 through a partial operator whose domain is the set of classes of compactly supported smooth
 functions and whose action is prescribed almost everywhere.
 
-Every headline theorem of the roadmap is statable at the pins and is stated below: the Lebesgue
+Every headline theorem of the roadmap that is statable at the pins is stated below: the Lebesgue
 decomposition realised by the spectral types (README §1.2), the structure of the absolutely
 continuous spectrum and the interval criterion (§1.4, §1.5), the min–max principle below the
 essential spectrum (§1.6), Pearson's theorem and the Kato–Rosenblum theorem (§1.9), the lower bound
@@ -45,6 +45,16 @@ and cores of the Kato–Rellich theorem (§2.3), the essential self-adjointness 
 complete Riemannian manifold and its `L²` kernel (§3.6, §3.7), the threshold `[1/4, ∞) ⊆ σ_ess`
 forced by a cusp end (§3.10), and the Schrödinger operators `−Δ + V` with bounded real potentials
 (§4.4).
+
+Three clauses of the README Summary are not statable at the pins, and nothing is stated in their
+place. The form-domain clause of §3.6 (`H¹₀(X) = H¹(X)`, with `Δ_X` the operator of the energy
+form `‖du‖²` on `H¹(X)`) needs the Sobolev space `H¹` of a Riemannian manifold, built on the
+distributional differential of ComplexKahlerGeometry K5a, and the form domain of a nonnegative
+self-adjoint operator (UnboundedOperators UO-D06); the pins have neither. The form-domain
+clause of §4.2 (the form domain of `H₀` is `H¹(ℝ^d)`) needs the same form domain. The
+identification of §3.8 of `Δ_X` on a compact manifold with RiemannianGeometry R5c's closed
+realisation of `Δ⁺` and with K5a's `H²` realisation needs those operators, neither of which is a
+declaration at the pins.
 -/
 
 open Bundle MeasureTheory Filter Topology
@@ -255,8 +265,9 @@ theorem gaffney_isSelfAdjoint_closure {E : Type*} [NormedAddCommGroup E] [Normed
 /-- The `L²` kernel of the Laplacian of a complete Riemannian manifold (README §3.7): an element
 of `L²(M, vol_g)` lies in the domain of the self-adjoint Laplacian `Δ_M` with `Δ_M u = 0` exactly
 when it is almost everywhere equal to a locally constant function. Hence on a connected `M` the
-eigenvalue `0` occurs exactly when the volume is finite, with the constants as eigenspace (Yau's
-`L²` Liouville theorem; Hide–Magee state the finite-area hyperbolic case). -/
+eigenvalue `0` occurs exactly when the volume is finite, with the constants as eigenspace
+(Hide–Magee state the finite-area hyperbolic case; the general case is the kernel route of README
+§3.7). -/
 theorem exists_mem_domain_closure_eq_zero_iff {E : Type*} [NormedAddCommGroup E]
     [NormedSpace ℝ E] [FiniteDimensional ℝ E] {HM : Type*} [TopologicalSpace HM]
     {I : ModelWithCorners ℝ E HM} [I.Boundaryless] {M : Type*} [EMetricSpace M]

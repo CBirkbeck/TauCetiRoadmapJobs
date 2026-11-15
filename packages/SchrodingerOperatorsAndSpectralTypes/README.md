@@ -1311,13 +1311,15 @@ identifications are UO-D06's for the form `𝔞` on `H¹₀ = H¹`. *Needs:* 3.2
 
 Let `X` be complete. Prove:
 
-- `ker Δ_X = {u ∈ L²(X) : u is locally constant almost everywhere}`; its dimension (a cardinal) is
-  the number of connected components of finite volume; on a connected `X`, `0` is an eigenvalue iff
-  `vol_g(X) < ∞`, and then it is simple with eigenvector the constant `1` (hm23 line 41–43 states
-  the finite-area hyperbolic surface case; the general case is the kernel route below). The
-  description of `ker Δ_X` is `exists_mem_domain_closure_eq_zero_iff` in `Suggested.lean`: an
-  element of `L²(X)` lies in `dom Δ_X` with `Δ_X u = 0` iff it is almost everywhere equal to a
-  locally constant function.
+- `ker Δ_X = {u ∈ L²(X) : u is locally constant almost everywhere}`; its Hilbert dimension (the
+  cardinality of an orthonormal basis, which is the vector-space dimension when finite) is the
+  number of connected components of finite volume, since the normalised indicators
+  `vol_g(X_j)^{−1/2} 1_{X_j}` of the components `X_j` of finite volume form an orthonormal basis;
+  on a connected `X`, `0` is an eigenvalue iff `vol_g(X) < ∞`, and then it is simple with
+  eigenvector the constant `1` (hm23 line 41–43 states the finite-area hyperbolic surface case;
+  the general case is the kernel route below). The description of `ker Δ_X` is
+  `exists_mem_domain_closure_eq_zero_iff` in `Suggested.lean`: an element of `L²(X)` lies in
+  `dom Δ_X` with `Δ_X u = 0` iff it is almost everywhere equal to a locally constant function.
 - With `λ₀(X) := λ₀(Δ_X)` (2.1, for `X ≠ ∅`):
   `λ₀(X) = inf {∫ ⟨du, du⟩_g / ∫ |u|² : u ∈ C_c^∞(X; ℂ), u ≠ 0} ≥ 0`.
 - The ordered eigenvalues `λ_k(X) := μ_{k+1}(Δ_X)`, `k ≥ 0`, of 1.6, computed on `C_c^∞(X; ℂ)` or on
@@ -1344,6 +1346,13 @@ constant. *Needs:* 1.6, 2.1, 3.6; UnboundedOperators UO-C02; K5a.
   positive.
 - `X` a point: `L² = ℂ`, `σ = {0}`, `λ₁⁺(X) = λ₁(X) = +∞` by the extended convention; the flat torus
   `ℝ²/ℤ²` has `λ₁ = ⋯ = λ₄ = 4π²`.
+- `X = ⊔_{j∈ℕ} S¹_j`, countably many circles of length `2π` (complete, as in 3.5):
+  `ker Δ_X = {Σ_j c_j 1_{S¹_j} : Σ_j |c_j|² < ∞} ≅ ℓ²(ℕ)`, with orthonormal basis
+  `(2π)^{−1/2} 1_{S¹_j}`, `j ∈ ℕ`, of cardinality `ℵ₀`, the number of finite-volume components; its
+  vector-space dimension is `2^ℵ₀` (an infinite-dimensional Banach space has no countable Hamel
+  basis), so reading the dimension as the algebraic rank gives the wrong cardinal. Since `0` has
+  infinite multiplicity, `0 ∈ σ_ess(Δ_X)`, every `λ_k(X)` is `0`, and `λ₁⁺(X) = 1 ≠ λ₁(X)`: the last
+  item needs `X` connected of finite volume.
 
 ### 3.8 Compact manifolds
 
