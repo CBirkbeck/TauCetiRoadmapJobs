@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ExplicitNumberFields~13",
+  "head": "43f46f25bb588e7bd22ddbfdf086312140074a38",
+  "pr": 1944,
+  "folder": "ExplicitNumberFields",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 127 changed lines since 1af1d0f. The folder has no finding: the 13 new group paragraphs agree with the Needs lines they summarise, all 17 section numbers that lost a ### heading survive as bold labels, the external citations of 4.6 and 1.1a resolve, the gate passes (all counters 0, build=0 from the worker), depcheck reports 0 problems, Suggested.lean elaborates with 16 sorry warnings only (one docstring changed, no signature). Seeded sample: 2.4, 3.1, 4.5, 5.3, 6.1 fall in changed lines and were checked; 7 adversarial rows recomputed. One P3 finding on the pull request description: its 'Approach and generality' paragraph says every bound is for a general number field and that the cited results are instances of general theorems, which the head contradicts (2.7, 5.2, 5.4, 5.5-5.7, Layer 6); replacement text given.",
+  "text": "961178dcaafbc562",
+  "carried": {
+   "from": "43f46f25bb588e7bd22ddbfdf086312140074a38",
+   "head": "5deaeb7c383c664a8cac31ff3ac90acc3aec4c89",
+   "findings": 1,
+   "lines": 8,
+   "folders": [
+    "ExplicitNumberFields"
+   ]
+  }
+ }
+}
