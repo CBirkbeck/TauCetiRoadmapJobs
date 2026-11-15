@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeometricFreyMazur~8",
+  "head": "50d33893e61e037dea7af9d6cb810168cf5175fe",
+  "pr": 2130,
+  "folder": "GeometricFreyMazur",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 50d3389. Checked: previous R01 (description attributed gonality to Tau Ceti) is repaired; the title and description read sentence by sentence against the head, 0 contradicted; the seven open suppliers and nine pull-request numbers resolved against the README, main, the open index and the merge order; CanonicalModelsAndGonality §§1.1-1.7, 8.1-8.7, 9.1 resolved at head ed90937; pinned TauCeti.TriangleGroup, ModularGroup.triangleGroupEquiv and Isogeny opened; gate rerun OK (all checks 0), depcheck 0 problems with no UPWARD/CYCLE/moved line, lake env lean on Suggested.lean exits 0 with two sorry warnings only; adversarial table of 4 rows with computed values. No sampled target falls in a changed passage (folder unchanged). Accepted conditional on the nine declared supplier gaps (SchemeAndStackFoundations x3, AlgebraicCurves, FuchsianOrbifolds, ComplexKahlerGeometry x3, ComplexComparisonPartII).",
+  "text": "1d6b6d087cf63c35"
+ }
+}
