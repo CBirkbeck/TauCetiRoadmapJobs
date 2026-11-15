@@ -2415,7 +2415,7 @@
     },
     {
       "slug": "pontryagin-bockstein-cap",
-      "needs": "Provide finite-type integral ℤ_p and finite-coefficient Pontryagin/Künneth products, cap and fundamental classes with natural coefficient Bocksteins and mixed Tor representative β_d(xy).",
+      "needs": "Provide the singular-homology coefficient Bockstein β_r:H_j(X;ℤ/p^r)→H_(j−1)(X;ℤ_p), the connecting map of 0→ℤ_p→ℤ_p→ℤ/p^r→0 with first map multiplication by p^r, natural in X, and show for X,Y with finitely generated integral homology that if u,v generate cyclic summands ℤ/p^r,ℤ/p^s of H_*(X;ℤ_p),H_*(Y;ℤ_p), d=min(r,s), and β_d(x)=p^(r−d)u, β_d(y)=p^(s−d)v, then β_d(x×y) maps under the Künneth Tor map to a generator of Tor₁(⟨u⟩,⟨v⟩)≅ℤ/p^d.",
       "supplier": "AlgebraicTopology",
       "section": "Stage 6"
     },

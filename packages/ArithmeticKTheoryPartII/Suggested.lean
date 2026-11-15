@@ -23,12 +23,15 @@ The following headlines are not statable at the pins:
 * Triviality of the arithmetic action in degree 4k-1 lacks KSp and that action.
 * The Vandiver criterion for conjugation-fixed primes lacks the compatible
   p-Hilbert class-field prime torsors at all cyclotomic levels.
-* The integral indecomposable product and low-range Hurewicz theorems lack the
-  spectral and Pontryagin-homology/Bockstein quotient carriers.
+* The integral indecomposable product and low-range Hurewicz theorems lack a
+  coefficient Bockstein on singular homology, hence the integral indecomposable
+  quotient; the Hurewicz theorem also lacks spectra. The pinned Pontryagin product
+  covers strict monoid objects of TopCat, not H-spaces.
 * The stable symplectic and rational Hodge comparisons lack the stable arithmetic
   symplectic realization and its Hodge characteristic classes.
 * Bernoulli divisibility of Hodge characteristic numbers lacks principally
-  polarized abelian schemes with the required Hodge/cap-product realization.
+  polarized abelian schemes and the Chern characters of their Hodge bundles; the
+  pinned cap product and integral fundamental class do not supply them.
 
 The cyclotomic split-prime and CM ideal-product realization theorems are statable
 on native number fields and fractional ideals. The latter uses native semilinear

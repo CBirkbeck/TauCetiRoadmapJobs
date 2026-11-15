@@ -14,7 +14,7 @@ GeometryOfNumbersAndQuadraticArithmetic §§6.5–6.8a, 6.10a–6.11 own higher 
 
 ClassFieldTheory Layers 11–13 and Chebotarev Layer 10 own Artin reciprocity, full and narrow class fields and prime existence. ArithmeticGaloisDuality R02.1, R02.2, R02.4 owns compact coefficients, Hochschild–Serre and arithmetic duality. EtaleHomotopyTypes Layers 5–6 own Betti/étale realization and its automorphism comparison. BorelRegulators §2.1 concerns the number-field SL regulator and supplies no symplectic stability theorem. The stable symplectic integral calculation and rational Hodge generators belong to §§8.4–8.5 here, together with their arithmetic action. ArithmeticLocallySymmetricSpaces §§ALS.1.5–ALS.1.6, ALS.2.3–ALS.2.4 supplies the finite arithmetic quotient models used for integral finite generation. IntegralIwasawaTheory §§7.4, 12.3 owns Vandiver propagation and arithmetic-weight specialization. GeneralAlgebraicKTheory §§13.8b–13.8c owns the finite-field K-group calculation; KTheoryFiniteLocalFields §§1.1–1.2 owns its finite-coefficient and Bott refinements. SymplecticGeometry, CotangentLagrangian §§C2.0–C2.1 owns the symplectic polar decomposition and unitary deformation retract. None of these theories is reconstructed here.
 
-Mathlib’s representations, invertible modules, Picard group, number fields, CM conjugation, absolute group homology and undercategories are already in the library. Tau Ceti’s finite-dimensional compatible symplectic structure and arithmetic ideal Artin map are already in the library. Their exact interfaces are listed below; no alternative carriers for them are introduced. The universe of each categorical construction is fixed by an essentially small model, and changing that model induces an equivalence.
+Mathlib’s representations, invertible modules, Picard group, number fields, CM conjugation, absolute group homology and undercategories are already in the library. Tau Ceti’s finite-dimensional compatible symplectic structure, arithmetic ideal Artin map, and singular-homology cross, Pontryagin and cap products, Künneth sequence and integral fundamental class are already in the library. Their exact interfaces are listed below; no alternative carriers for them are introduced. The universe of each categorical construction is fixed by an essentially small model, and changing that model induces an equivalence.
 
 ## Conventions
 
@@ -41,6 +41,8 @@ For the split-prime headline use `NumberField.maximalRealSubfield`, `NumberField
 ### From Tau Ceti
 
 Use `TauCeti.SymplecticForm.exists_compatible` in `TauCeti/Geometry/Symplectic/ExistsCompatible.lean` for finite-dimensional real symplectic spaces. The compatible structure requires ω(v,Jv) > 0 for v ≠ 0, so the CM sign conversion above is required. This existence theorem supplies neither contractibility of the space of choices nor the topological K-theory equivalence. Use `TauCeti.NumberFieldArithmetic.artinHomAway` and its arithmetic-Frobenius characterization from `TauCeti/NumberTheory/NumberField/Ideal/ArtinMap.lean`; ClassFieldTheory Layer 11 compares its global map to this ideal-theoretic map.
+
+For singular homology use the cross product `TopCat.singularHomologyCross` in `TauCeti/AlgebraicTopology/Singular/CrossProduct.lean`, H_a(X;R)⊗H_b(Y;S)→H_(a+b)(X×Y;R⊗S), natural in both spaces and in the coefficients. With coefficients in a commutative ring k, the Pontryagin product of an H-space with multiplication μ is this cross product, followed by k⊗k≅k and μ_*. For a monoid object of `TopCat` that composite is `TopCat.pontryaginMul` in `TauCeti/AlgebraicTopology/Singular/Pontryagin/Basic.lean`, over any commutative coefficient ring and natural in monoid morphisms. A multiplication that is associative or unital only up to homotopy has no pinned product other than the composite. Use the Künneth short exact sequence `TopCat.singularHomologyKunnethUnitShortComplex_shortExact` with its Tor map `TopCat.singularHomologyToTor` in `TauCeti/AlgebraicTopology/Singular/Kunneth/Sequence.lean`. It holds over a coefficient ring all of whose modules have projective dimension at most one: ℤ, ℤ_p and ℤ/p qualify, while ℤ/p^r for r≥2 does not, since its ideal (p) is not projective. Use the cap product `TopCat.singularCap` in `TauCeti/AlgebraicTopology/Cohomology/Cap/Basic.lean` and the integral fundamental class `TauCeti.HomologicalOrientation.fundamentalClass` of a compact oriented manifold in `TauCeti/AlgebraicTopology/Singular/LocalHomology/FundamentalClass.lean`; its ℤ_p class is the image under ℤ→ℤ_p. The pinned coefficient Bocksteins, among them `TopCat.singularCohomologyBockstein` in `TauCeti/AlgebraicTopology/Cohomology/Bockstein.lean`, are cohomological; no Bockstein on singular homology is supplied.
 
 ### From TauCetiRoadmap.ArithmeticKTheory
 
@@ -158,9 +160,9 @@ ArithmeticLocallySymmetricSpaces §§ALS.0.8, ALS.1.5–ALS.1.6, ALS.2.3–ALS.2
 
 ### From TauCetiRoadmap.AlgebraicTopology
 
-AlgebraicTopology Stage 6 (cohomology products and manifold duality). Consume singular products, Künneth, orientations, fundamental classes and cap products with their graded signs and map naturality. All finite and integral coefficient operations used in the indecomposable quotient and in the family argument use the extension below.
+AlgebraicTopology Stage 6 (cohomology products and manifold duality). Consume singular products, Künneth, orientations, fundamental classes and cap products with their graded signs and map naturality. The cross, Pontryagin and cap products, the Künneth sequence and the integral fundamental class themselves are Tau Ceti's (above); the homology coefficient Bockstein and its Künneth Tor identification are the extension below.
 
-What AlgebraicTopology must provide (gap:pontryagin-bockstein-cap): Provide finite-type integral ℤ_p and finite-coefficient Pontryagin/Künneth products, cap and fundamental classes with natural coefficient Bocksteins and mixed Tor representative β_d(xy).
+What AlgebraicTopology must provide (gap:pontryagin-bockstein-cap): Provide the singular-homology coefficient Bockstein β_r:H_j(X;ℤ/p^r)→H_(j−1)(X;ℤ_p), the connecting map of 0→ℤ_p→ℤ_p→ℤ/p^r→0 with first map multiplication by p^r, natural in X, and show for X,Y with finitely generated integral homology that if u,v generate cyclic summands ℤ/p^r,ℤ/p^s of H_*(X;ℤ_p),H_*(Y;ℤ_p), d=min(r,s), and β_d(x)=p^(r−d)u, β_d(y)=p^(s−d)v, then β_d(x×y) maps under the Künneth Tor map to a generator of Tor₁(⟨u⟩,⟨v⟩)≅ℤ/p^d.
 
 ## How to read the build
 
@@ -209,7 +211,7 @@ One proof route is as follows. Use the existing invertible-module carrier and it
 
 - For a field F, π₀ is trivial and π₁=F×, so the groupoid is not replaced by its component set.
 - Over ℤ, the class of the tensor unit maps to 1∈K₀(ℤ); sending every object to additive zero fails.
-- For R=ℤ, the fractional ideals 2Z and 3Z are isomorphic by multiplication by 3/2; restricting morphisms to ℤ× incorrectly removes that arrow.
+- For R=ℤ, the fractional ideals 2ℤ and 3ℤ are isomorphic by multiplication by 3/2; restricting morphisms to ℤ× incorrectly removes that arrow.
 - Check that a representative decomposition by Pic(R) is natural as a module comparison only after choices, without asserting a canonical product decomposition of ring spectra.
 
 *Needs:* `CommRing.Pic`; `Module.Invertible`; StableHomotopyKTheory §§4.26, 5.19; GeneralAlgebraicKTheory §§7.1–7.7; GeneralizedCohomology G2.1–G2.8 and StableHomotopyKTheory §§5.1–5.19; StableHomotopyKTheory §§4.21–4.27 and GeneralizedCohomology G2.8.
@@ -459,7 +461,7 @@ One proof route is as follows. Use μ_q→Aut(L,b) to obtain the cyclic stable s
 **Checks.**
 
 - At k=1 the output lies in degree two; replacing β²ᵏ⁻¹ by β^k fails for k=2.
-- At q=5, the types {1,2} and {−1,2} give Hodge scalars 3 and 1 in F₅ for k=1.
+- At q=5, the types {1,2} and {−1,2} give Hodge scalars 3 and 1 in 𝔽₅ for k=1.
 - For two CM lines of the same type Φ their Hodge images agree. Their Betti difference is tr(β²ᵏ⁻¹([L₁]−[L₂])); a nonzero transfer therefore gives distinct classes with equal Hodge images.
 - The construction keeps the degree-zero component rather than replacing the stable nerve by reduced homology.
 
@@ -607,7 +609,7 @@ One proof route is as follows. Import polarized complex uniformization and contr
 **Checks.**
 
 - For g=0 the analytic component is a point; for g=1 its homotopy type retains SL₂(ℤ) isotropy. The degree-two class with c_H-image bott=−β_Top pairs to +1 with ch₁(Lie A), and to −1 with ch₁(Lie A∨), as in the Gaussian sign convention.
-- A special Γ-space has Ω-equivalences in levels n≥1. Its zeroth replacement is group completion: N→ℤ on genus components, not an equivalence before completion.
+- A special Γ-space has Ω-equivalences in levels n≥1. Its zeroth replacement is group completion: ℕ→ℤ on genus components, not an equivalence before completion.
 
 *Needs:* §4.2; §1.1 (KSp(ℤ)≃ℤ×BSp∞(ℤ)⁺); GeneralizedCohomology G2.8; AbelianSchemesAndArithmeticModuli §§A5.5, A5.8; EtaleHomotopyTypes §§5.2, 5.3a (Betti realization and smooth descent); PELModuli §§M2.3–M2.4, M2.8–M2.9, M3.9; GeneralizedCohomology G2.1–G2.8 and StableHomotopyKTheory §§5.1–5.19; StableHomotopyKTheory §§4.21–4.27 and GeneralizedCohomology G2.8.
 
@@ -627,7 +629,7 @@ One proof route is as follows. Check finite-dimensional mod-p cohomology separat
 **Checks.**
 
 - Check the inverse in the structure-map formula by composing σ then τ. The discrete groupoid A_g(ℂ) has many isomorphism-class components, while its analytic realization is connected for fixed g; those models must not be identified.
-- For the coproduct ∐_N Spec ℂ the construction preserves the discrete N grading; ungraded profinite completion of components fails.
+- For the coproduct ∐_ℕ Spec ℂ the construction preserves the discrete ℕ grading; ungraded profinite completion of components fails.
 - At p=3, the genus-one H₁ obstruction prevents direct use of the H¹=0 comparison. Moore smashing must precede it.
 - All q-level actions commute with reduction, so the p-adic action is defined on the spectrum, not merely separately on groups.
 
@@ -756,7 +758,7 @@ One proof route is as follows. Compute Galois transport on the spanning CM Bott 
 
 **Checks.**
 
-- For σ in Gal(C/H_q), every CM generator is fixed in V_q although its geometric ppav representative need not be fixed.
+- For σ in Aut(ℂ) fixing H_q pointwise, every CM generator is fixed in V_q although its geometric ppav representative need not be fixed.
 - Under the abelian-group coordinates T_q⊕M_q the action may have a nonzero off-diagonal cocycle; it is not declared diagonal.
 - At q = 5, conjugation has eigenvalues +1 on T_q and −1 on M_q. Thus (1−c)/2 selects the section and (1+c)/2 selects the kernel.
 
@@ -941,7 +943,7 @@ The interface has the following laws.
 - An integral primitive cohomology class that also kills the Bockstein products pairs through Qᶦⁿᵗ.
 - The ordinary Hurewicz map π_i(X)⊗ℤ_p→H_i(X;ℤ_p) composes with the quotient for i≥1.
 
-One proof route is as follows. Import the Pontryagin product and coefficient Bockstein with their naturality. Form the positive augmentation ideal, the products in each coefficient ring, and the sum of their Bockstein images. Take a quotient of graded ℤ_p-modules. Do not apply this convention to arbitrary discrete p-complete homotopy groups without a coefficient comparison. (FGV line 2272, with the stated supplier contracts.)
+One proof route is as follows. Take the Pontryagin product of X to be the cross product followed by μ_*, and import the homology coefficient Bockstein with its naturality. Form the positive augmentation ideal, the products in each coefficient ring, and the sum of their Bockstein images. Take a quotient of graded ℤ_p-modules. Do not apply this convention to arbitrary discrete p-complete homotopy groups without a coefficient comparison. (FGV line 2272, with the stated supplier contracts.)
 
 **Checks.**
 
@@ -950,7 +952,7 @@ One proof route is as follows. Import the Pontryagin product and coefficient Boc
 - For X=RP∞ and p=2, Qᶦⁿᵗ_i is ℤ/2 precisely in degrees 2^a−1, a≥1, and zero in other positive degrees; quotienting only by I² incorrectly leaves every odd degree.
 - Retain the finite-type hypotheses used by the product and Hurewicz comparisons.
 
-*Needs:* StableHomotopyKTheory §§7.3–7.4; AlgebraicTopology Stage 6 (cohomology products and manifold duality).
+*Needs:* Tau Ceti `TopCat.singularHomologyCross` and `TopCat.pontryaginMul`; StableHomotopyKTheory §§7.3–7.4; AlgebraicTopology Stage 6 (cohomology products and manifold duality) and its homology-Bockstein contract.
 
 ### 8.2 Product formula for integral indecomposables
 
@@ -963,8 +965,9 @@ One proof route is as follows. Use inclusions and projections to obtain a split 
 - The product of two K(ℤ/p,1) factors has mixed Tor classes before quotienting; their images must vanish after taking Qᶦⁿᵗ.
 - For S¹ × S¹ the degree-one quotient is ℤ_p ⊕ ℤ_p and the mixed degree-two generator is 0 in the quotient.
 - For two K(ℤ/p,1) factors the mixed Tor group in degree 3 is ℤ/p. Its Bockstein representative maps to 0 in the enlarged denominator, whereas quotienting tensor products alone can retain it.
+- For K(ℤ/p²,1)×K(ℤ/p,1), with u generating H₁ = ℤ/p², the degree-three Tor group is Tor₁(ℤ/p²,ℤ/p) = ℤ/p, so d = 1. It is represented by β₁(x×y) with β₁(x) = pu, since no mod-p class has Bockstein u, which has order p²; taking d = max(r,s) = 2 would predict a group of order p².
 
-*Needs:* §8.1; AlgebraicTopology Stage 6 (cohomology products and manifold duality); StableHomotopyKTheory §§7.3–7.4.
+*Needs:* §8.1; Tau Ceti `TopCat.singularHomologyCross`, `TopCat.singularHomologyKunnethUnitShortComplex_shortExact` and `TopCat.singularHomologyToTor`; AlgebraicTopology Stage 6 (cohomology products and manifold duality) and its homology-Bockstein contract; StableHomotopyKTheory §§7.3–7.4.
 
 ### 8.3 Low-range integral Hurewicz theorem
 
@@ -1029,7 +1032,7 @@ One proof route is as follows. The algebraic classifying map and fundamental cla
 - A partition containing the part p falls outside the theorem even if a different Bernoulli factor is divisible by p. At p=3, ch₃(L)=c₁(L)³/6 has denominator with 3-adic valuation 1, so the factorial is not a unit and no integral cap product is inferred.
 - For d = 0 the only partition is the empty one, and s is the degree of the zero-cycle X(ℂ), its number of points: 1 for X = Spec ℚ and 2 for X = Spec ℚ(i). Reading X(ℂ) as connected, which gives s = 1 for every zero-dimensional X, is wrong for Spec ℚ(i). There is no Bernoulli factor, so the antecedent is false and divisibility is not asserted. Both values are units at every odd p, so the Bernoulli hypothesis cannot be dropped.
 
-*Needs:* §8.4; §7.4; IntegralIwasawaTheory §12.3 (specialization at arithmetic weights); ArithmeticKTheory §§7.1–7.5; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; AlgebraicTopology Stage 6 (cohomology products and manifold duality); PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9.
+*Needs:* §8.4; §7.4; IntegralIwasawaTheory §12.3 (specialization at arithmetic weights); ArithmeticKTheory §§7.1–7.5; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; Tau Ceti `TopCat.singularCap` and `TauCeti.HomologicalOrientation.fundamentalClass`; AlgebraicTopology Stage 6 (cohomology products and manifold duality); PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9.
 
 ### Examples
 
@@ -1037,7 +1040,7 @@ For S¹×S¹ the positive degree-one indecomposables are ℤ_p² and the degree-
 
 ### Dependencies
 
-ArithmeticLocallySymmetricSpaces §§ALS.0.8, ALS.1.5–ALS.1.6, ALS.2.3–ALS.2.4; StableHomotopyKTheory §§3.20, 3.34–3.37, 7.3–7.4; GeneralizedCohomology G3.8; ArithmeticKTheory §3.5; GeometryOfNumbersAndQuadraticArithmetic §6.8a; AlgebraicTopology Stage 6 (cohomology products and manifold duality); §3.4; §4.3; §4.4; §1.1; GeneralizedCohomology G5.4–G5.6 and its topological-symplectic-Hodge contract; TopologicalKTheory T4–T5, T7; §7.4; IntegralIwasawaTheory §12.3 (specialization at arithmetic weights); ArithmeticKTheory §§7.1–7.5; PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9. The integral finite-type hypotheses and odd partition parts n_j<p put every characteristic-number application degree 2n_j at most 2p−4; the endpoint 2p−2 and the equality p=max n_j are outside these theorem statements.
+ArithmeticLocallySymmetricSpaces §§ALS.0.8, ALS.1.5–ALS.1.6, ALS.2.3–ALS.2.4; StableHomotopyKTheory §§3.20, 3.34–3.37, 7.3–7.4; GeneralizedCohomology G3.8; ArithmeticKTheory §3.5; GeometryOfNumbersAndQuadraticArithmetic §6.8a; Tau Ceti `TopCat.singularHomologyCross`, `TopCat.pontryaginMul`, `TopCat.singularHomologyKunnethUnitShortComplex_shortExact`, `TopCat.singularHomologyToTor`, `TopCat.singularCap` and `TauCeti.HomologicalOrientation.fundamentalClass`; AlgebraicTopology Stage 6 (cohomology products and manifold duality) and its homology-Bockstein contract; §3.4; §4.3; §4.4; §1.1; GeneralizedCohomology G5.4–G5.6 and its topological-symplectic-Hodge contract; TopologicalKTheory T4–T5, T7; §7.4; IntegralIwasawaTheory §12.3 (specialization at arithmetic weights); ArithmeticKTheory §§7.1–7.5; PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9. The integral finite-type hypotheses and odd partition parts n_j<p put every characteristic-number application degree 2n_j at most 2p−4; the endpoint 2p−2 and the equality p=max n_j are outside these theorem statements.
 
 ## Downstream consumers
 
