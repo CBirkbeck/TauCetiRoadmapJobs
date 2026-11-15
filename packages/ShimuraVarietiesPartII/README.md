@@ -34,7 +34,7 @@ Conj(G) denotes the affine conjugacy quotient Spec O(G)^G of ArithmeticGaloisRep
 
 - On an elliptic H¹, μ_h(z) acts by z⁻¹ on H^(1,0) and by 1 on H^(0,1); on H₁ the weights are z and 1. Its inverse induces Fil¹=H^(1,0) on the contravariant module. In D the ordinary slopes are (0,1) and the supersingular slopes (1/2,1/2), both of determinant valuation 1. Intrinsically for the GL₂ tower, μ_h⁻¹ has determinant exponent −1, ordinary slopes (0,−1) and basic slopes (−1/2,−1/2); the Kottwitz invariant is −1 for both. Evaluating in V∨ reverses the signs.
 - For E: y²=x³+x over F₅, the affine point counts at x=0,1,2,3,4 are 1,0,1,1,0; with the point at infinity #E(F₅)=4 and the trace is 2. The H¹ polynomial is T²−2T+5. Inverting the two roots gives the tower polynomial T²−(2/5)T+1/5; twisting by c⁻¹ multiplies the roots by 5 and restores T²−2T+5. The H₁ and H¹ multipliers are 1/5 and 5.
-- For a Teichmüller unit ζ of order 24 in W(F₂₅), δ=ζ has δσ(δ)=ζ·ζ⁵=ζ⁶, whereas δ²=ζ². Here G=G_m, whose frames exist over Q₂₅ by Hilbert 90, so the framing degree is 1 and the length-2 norm ζ⁶ is the crystalline linear F₂₅-Frobenius. Over F₂₅ the elliptic H¹ polynomial above becomes T²+6T+25 (trace 2²−2·5=−6) and the tower polynomial T²+(6/25)T+1/25.
+- For a Teichmüller unit ζ of order 24 in W(F₂₅) and G=G_m acting on V by the identity character, the standard element δ=ζ has length-2 group norm δσ(δ)=ζ·ζ⁵=ζ⁶, whereas δ²=ζ². Frames exist over Q₂₅ by Hilbert 90, so the framing degree is 1. In the dual frame F_D=ρ∨(δ)σ=ζ⁻¹σ, so the crystalline linear F₂₅-Frobenius is F_D²=ρ∨(ζ⁶)=ζ⁻⁶=ζ¹⁸: it realizes π_x on D, while the standard norm ζ⁶ realizes γ_x=π_x⁻¹ on V. The two differ by ζ¹²=−1, so the group norm is not the crystalline matrix. This agrees with the Check of §4.9 applied to the crystalline matrix δ_D=ρ∨(δ)=ζ⁻¹. Over F₂₅ the elliptic H¹ polynomial above becomes T²+6T+25 (trace 2²−2·5=−6) and the tower polynomial T²+(6/25)T+1/25.
 - For the elliptic point over F₅ above, a dual frame chosen over Q₂₅ (framing degree 2) makes the norm of length 2 realize γ_x², with trace (2/5)²−2/5=−6/25 and determinant 1/25, and its dual realize π_x², with trace −6 and determinant 25. Reading that norm as the F₅-Frobenius would replace the tower coordinates (2/5,1/5) by (−6/25,1/25). Since H¹(Q₅,GL₂)=1, a frame over Q₅ also exists, and its length-1 norm gives (2/5,1/5).
 - In SL₂(R), rotations through ±π/2 both have trace 0. A conjugator interchanging them anticommutes with the complex structure and has negative determinant, so they are geometrically conjugate but not SL₂(R)-conjugate; the rational quotient forgets that distinction.
 
@@ -588,7 +588,7 @@ For the hyperspecial modular curve, dim GL₂=4, dim S=dim P¹=1 and dim S̃=5; 
 
 ### Examples
 
-For split GU(1,1), Z_G^c≅G_m locally and G_der≅SL₂. For GSp_(2g), Z_G^c=μ₂ is not a torus, so that group does not satisfy the stated strongly acceptable centre condition without an auxiliary cover.
+For split GU(1,1), Z_G^c≅G_m locally and G_der≅SL₂. For GSp_(2g), g≥1, Z_G^c=μ₂ is not a torus, so that group does not satisfy the stated strongly acceptable centre condition without an auxiliary cover.
 
 ### Dependencies
 
@@ -828,7 +828,7 @@ For an Iwahori I in GL₂(Q_p), j=diag(p,1) sends [[a,b],[c,d]] to [[a,pb],[c/p,
 
 **Checks.**
 
-- An ordinary elliptic fibre has Newton slopes {0,1} in the standard contravariant realization.
+- An ordinary elliptic fibre has Newton slopes {0,1} on the contravariant module D, whose Frobenius is ρ∨(b_x)σ, and hence slopes {0,−1} for b_x in the standard representation.
 - A supersingular elliptic fibre has slopes {1/2,1/2}, distinct from the ordinary class.
 - For a torus, the class has the Kottwitz invariant of μ_h⁻¹, not that of μ_h.
 
@@ -975,7 +975,7 @@ For an Iwahori I in GL₂(Q_p), j=diag(p,1) sends [[a,b],[c,d]] to [[a,pb],[c/p,
 **Checks.**
 
 - For the rank-one contravariant realization with crystalline matrix δ_D=ζ of order 24 over F₂₅ (a G_m-frame over Q₂₅ exists by Hilbert 90, so m₀=1), crystalline q-Frobenius is ζσ(ζ)=ζ⁶ while the standard tower scalar is ζ⁻⁶. The expression δ_D²=ζ² gives neither; both the norm and the duality translation are required.
-- For the norm-one torus T=ker(N:Res_(Q₂₅/Q₅)G_m→G_m), the T-torsor N(z)=5 has no Q₅-point, since norms from the unramified quadratic extension have even valuation while v₅(5)=1; over Q₂₅ it becomes uv=5, with the point (5,1). A torsor that is trivial over the unramified closure need not be trivial over the base field, so the framing degree cannot be taken to be 1 in general. For GL_n and GSp_(2g), π₁ is Z with trivial Galois action, so H¹(Q_q,G)=1 and m₀=1.
+- For the norm-one torus T=ker(N:Res_(Q₂₅/Q₅)G_m→G_m), the T-torsor N(z)=5 has no Q₅-point, since norms from the unramified quadratic extension have even valuation while v₅(5)=1; over Q₂₅ it becomes uv=5, with the point (5,1). A torsor that is trivial over the unramified closure need not be trivial over the base field, so the framing degree cannot be taken to be 1 in general. For GL_n with n≥1 and GSp_(2g) with g≥1, π₁ is Z with trivial Galois action, so H¹(Q_q,G)=1 and m₀=1. For GL₀=1 the cocharacter and coroot lattices are both 0, so π₁=0 rather than Z; H¹(Q_q,G) is still trivial and m₀=1.
 - Passing from F_q to F_(q²) squares γ_x; it does not leave the Frobenius element unchanged.
 - For E: y²=x³+x over F₅ and ℓ≠5, γ_ℓ has eigenvalues (1∓2i)/5; since 1+2i and 1−2i are non-associate primes of Z[i], these generate a free abelian group of rank 2, so the cyclic closure is the two-dimensional torus of Q(i)^× in GL₂, e=1, and Z_(GL₂)(γ_ℓ^m) is that torus, of dimension 2, for every m≥1. The exponent m=0, divisible by e, gives γ_ℓ^0=1 and centralizer GL₂ of dimension 4: the stable centralizer needs a positive exponent.
 - For the supersingular E: y²=x³−x over F₃ (four points, trace 0, π_x²=−3), the cyclic closure of γ_ℓ has two components (e=2) and identity component the scalars. Z(γ_ℓ) is the torus of Q(√−3)^×, of dimension 2, while Z(γ_ℓ²)=GL₂ has dimension 4: m=1 is positive but not divisible by e, and its centralizer is not yet the stable one.
