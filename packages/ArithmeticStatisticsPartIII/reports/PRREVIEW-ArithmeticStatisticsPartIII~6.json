@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartIII~6",
+  "head": "b20a75da06b0e5a96caa339ada29592a11b66768",
+  "pr": 1174,
+  "folder": "ArithmeticStatisticsPartIII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 21 changed lines since a9cc8cd. Checked: the removal of the QuadraticFormsOverABase supplier (no residual mention; the ternary determinant laws restated in section 2.8 under ArithmeticStatisticsPartII section 1.3, resolved at its open head; QuadraticFormsOverABase at its head names no consumer); seven adversarial rows with computed values for ternaryDet4, its three laws and the resolvent variable change; the pull request's title and description against the head (14 claims, none contradicted; suppliers named are on main or in the dependency block); gate run at this head passes (all counters 0, worker build=0); depcheck 247 roadmaps, 2248 edges, 0 problems; lake env lean on Suggested.lean gives 12 sorry warnings only; elaborated types of ternaryDet4 and pairResolvent unchanged. The previous report had no findings. The seeded sample falls in the change only at section 2.8, whose changed passages carry no source locator.",
+  "text": "f3aa3adb2a402088"
+ }
+}
