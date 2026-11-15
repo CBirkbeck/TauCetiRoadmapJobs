@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GeometryOfNumbersAndQuadraticArithmetic~17",
+  "head": "3b084ef8dd5a6e7d979c66c9e1723632889db2b0",
+  "pr": 851,
+  "folder": "GeometryOfNumbersAndQuadraticArithmetic",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 3b084ef; this round checked the pull request's title and description against the head. Five P3 findings, all in the description (written for an earlier head): successive minima and Minkowski's theorems said to be owned here (consumed from SuccessiveMinima and Tau Ceti); Henk, Davenport and Howe-Moore listed as built (imported from SieveMethodsAndPrimePatterns 0.11a and ProbabilisticAndMetricNumberTheory 4.9a); supplier list names OrthogonalSpinGroups and a nonexistent GrothendieckEulerCharacteristic and omits eight suppliers; PointProcesses, HomotopySpheres and AlgebraicTopology named though the README names none; 'Local restatement' and no-supplier-ordering sentences have nothing behind them. No finding on README.md or Suggested.lean. Worker's gate passes (build=0 OK); depcheck with the moved order: 0 problems; a rerun of the plain gate shows 3 UPWARD lines against the unmoved order (the moved case, not a finding). Suggested.lean elaborates with 21 sorry warnings only. Adversarial rows computed for the pinned Minkowski upper bound and lll_short_vector_factor. No seeded-sample target falls in the (empty) change.",
+  "text": "43d2a486c3e8ba52",
+  "carried": {
+   "from": "3b084ef8dd5a6e7d979c66c9e1723632889db2b0",
+   "head": "3b084ef8dd5a6e7d979c66c9e1723632889db2b0",
+   "findings": 5,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
