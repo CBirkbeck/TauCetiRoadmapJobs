@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MarketImpact~3",
+  "head": "1f4eaabd087f27e3655403ae3968a63654c947a4",
+  "pr": 1655,
+  "folder": "FinancialMathematics/MarketImpact",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 1f4eaab. Checked the pull request's title and description against the head: three P3 findings (the description counts five admitted theorems where the head has 17, announces numerical/statistical methods and experiments the head excludes, and names lecture notes as the source where the head cites only the article). Re-resolved every cross-roadmap citation on main: PDE no longer uses the label 'Lane F' (F27.1-F27.6 are now tags of its sections 6.4-6.9), P3. The previous review's R01 (two redundant hypotheses) is not repaired and is carried as P3. The worker's gate passes every check; depcheck with the candidate order reports 0 problems; Suggested.lean elaborates with 17 sorry warnings only. Adversarial rows with computed values for global_clearing, strikeSmoothedCall_gamma, call_fit_cutoff_limit and the PDE contract. No source text was opened this round (no passage changed).",
+  "text": "f7d6c62198cda938",
+  "carried": {
+   "from": "1f4eaabd087f27e3655403ae3968a63654c947a4",
+   "head": "a4186018cb2fc5394ac445aae39619a663d5a73d",
+   "findings": 5,
+   "lines": 55,
+   "folders": [
+    "FinancialMathematics/MarketImpact"
+   ],
+   "outside": true
+  }
+ }
+}

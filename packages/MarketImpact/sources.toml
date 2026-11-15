@@ -1,0 +1,19 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MarketImpact"
+
+[[source]]
+id = "sircar-papanicolaou"
+authors = ["K. Ronnie Sircar", "George Papanicolaou"]
+title = "General Black-Scholes models accounting for increased market volatility from hedging strategies"
+year = 1997
+version_note = "Author preprint, June 1996, revised April 1997, 35 pages; the README's page numbers refer to this version."
+locator_scheme = "page"
+locator = "pp. 7-33"
+url = "https://math.stanford.edu/~papanico/pubftp/feedback.pdf"
+fetched_from = "https://math.stanford.edu/~papanico/pubftp/feedback.pdf"
+fetched_at = "2026-11-15T01:06:40Z"
+sha256 = "d5954d51ed5d9bc74ea2c1ddbc0f2d76972f86ab4b7221fc0650903db22aeaf8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["1.1", "1.2", "1.3", "2.1", "2.2", "2.3", "3.1", "3.2", "3.3", "3.4", "4.1", "5.1", "5.2", "5.3"]
