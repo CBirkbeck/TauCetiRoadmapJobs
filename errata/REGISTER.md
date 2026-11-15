@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13910 mistakes recorded on the board: 7940 misprints, 3635 errors, 1854 gaps, 481 unparsed bullets.
+13917 mistakes recorded on the board: 7945 misprints, 3636 errors, 1855 gaps, 481 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -1620,6 +1620,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §1, p. 295, the explanation of cospectral vertices (Bachman-et-al line 120): the source says cospectral vertices have isomorphic vertex-deleted graphs; it should be vertex-deleted graphs with identical adjacency characteristic polynomials; isomorphism is a stronger condition; affects a stated result. Found by EquitableOperatorReduction (ERRATA-EquitableOperatorReduction at 62d083f, 2026-10-23, codex gpt-6-astra).
 - **Gap** at §1, pp. 294–295, the reduction from equation (3) to (6) (Bachman-et-al line 65; Bachman-et-al line 92): the source says unit-modulus single-excitation transfer suffices for exact transfer of an arbitrary qubit superposition; it should be include a receiver phase correction: for K₂ at π/2, the superposition with equal coefficients acquires relative phase −i, violating (3); affects the proof. Found by EquitableOperatorReduction (ERRATA-EquitableOperatorReduction at 62d083f, 2026-10-23, codex gpt-6-astra).
 - **Misprint** at §5, p. 304, equation (27), and Lemma 3, p. 306 (Bachman-et-al line 644; Bachman-et-al line 736): the source says the symmetrizer sums Pα while its permutation index is σ and α is undefined; it should be Pσ in both occurrences; affects nothing. Found by EquitableOperatorReduction (ERRATA-EquitableOperatorReduction at 62d083f, 2026-10-23, codex gpt-6-astra).
+
+## Bachmann
+
+- **Misprint** at §1, p. 2: the source says the étale variant changes step (2), the `A¹`-localization; it should be step (1), the localization at coverings; affects nothing. Found by MotivesAndAlgebraicCyclesPartII (#13026 at 9651e2c, 2026-11-15, claude fable).
 
 ## Baez
 
@@ -3335,6 +3339,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## BowenRuelle1975
 
 - **Error** at the proof of Theorem 5.1, printed page 192: the source says the ball of radius 2ε about x contains the ε-ball about z once the two ε-balls meet; it should be radius 3ε, by the triangle inequality; affects the proof. Found by HyperbolicDynamicsAndThermodynamicFormalism (#13791 at b832c29, 2026-11-15, claude fable).
+- **Error** at the proof of Theorem 5.1, printed page 192: the source says the source covers the deviating points by balls of radius 2ε about the chosen centres; it should be radius 3ε, by the triangle inequality through two intermediate points; affects the proof. Found by HyperbolicDynamicsAndThermodynamicFormalism (#17485 at 8d3a18d, 2026-11-15, claude fable).
 
 ## Boxer–Calegari–Gee, Cuspidal cohomology classes for GL_n(ℤ) (2025)
 
@@ -5505,11 +5510,13 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Theorem 11.1, arXiv v1 printed page 40 (lines 1822–1840): the source says the maps f_n are given for n ≤ 0 and then asks for a unique family W⁺_n indexed by all integers n ∈ ℤ; it should be index the maps and the family by the same set; affects nothing; <!-- tauceti-roadmap-review {"agent": "claude", "head": "3c26d7ebae78746e7a123838a712771006a98e46", "job": "REV-DESIGN-HyperbolicDynamicsAndThermodynamicFormalism", "model": "fable", "worker": "chris-x17"} -->. Found by HyperbolicDynamicsAndThermodynamicFormalism (#6936 at 3c26d7e, 2026-11-06, claude fable).
 - **Misprint** at Theorem 11.1, p. 40: the source says the maps for n ≤ 0, indexes the invariant family by all integers and bounds the derivatives over n ≤ 0 again; it should be one index set throughout; affects a stated result. Found by HyperbolicDynamicsAndThermodynamicFormalism (#13791 at 563dec1, 2026-11-13, claude fable).
 - **Misprint** at Theorem 11.1, page 40 of arXiv v1: the source says the maps f_n are given for n ≤ 0 and then indexes the family of graphs by all integers n; it should be use one index set; affects nothing. Found by HyperbolicDynamicsAndThermodynamicFormalism (#13791 at e9f6124, 2026-11-15, claude fable).
+- **Gap** at Theorem 11.1, printed page 40: the source says maps only for nonpositive indices yet indexes the family by all integers, and clause (iii) uses inverse maps not assumed to exist; it should be index consistently and use backward sequences; affects a stated result. Found by HyperbolicDynamicsAndThermodynamicFormalism (#17485 at 8d3a18d, 2026-11-15, claude fable).
 - **Gap** at the derivation of Theorem 11.1, page 40 of arXiv v1: the source says γ₀ need only satisfy λ(1 + γ₀) < μ; it should be also satisfy γ₀ < μ − 1, without which no δ₀ meets its own condition (μ = 1.1, λ = 0.1, γ = 0.9); affects the proof. Found by HyperbolicDynamicsAndThermodynamicFormalism (#13791 at b832c29, 2026-11-15, claude fable).
 
 ## ClimenhagaThompson2016
 
 - **Misprint** at Section 2.5, after (2.12), p. 8 (arXiv v2): the source says the two-sided set as the intersection of the time-t images of closed 2t-balls centred at x; it should be centre them at the time −t image of x; affects nothing. Found by HyperbolicDynamicsAndThermodynamicFormalism (#13791 at da53238, 2026-11-15, claude fable).
+- **Misprint** at §2.5, the sentence after (2.12), printed page 8: the source says the two-sided set as an intersection of flow images of Bowen balls of order 2t centred at x; it should be centred at the point f_(−t)x; affects nothing. Found by HyperbolicDynamicsAndThermodynamicFormalism (#17485 at 8d3a18d, 2026-11-15, claude fable).
 
 ## clm
 
@@ -14958,6 +14965,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Proposition 2.21, p.13, Scholze line 521: the source says the spectral radius is a norm before separated completion; it should be a seminorm, since a nonzero square-zero element has spectral radius zero; affects nothing. Found by MotivesAndAlgebraicCyclesPartII (#13026 at 0366dd7, 2026-11-11, codex gpt-6-astra).
 - **Error** at Proposition 3.11(i), p. 17: the source says a bounded product of nondiscrete Banach fields is totally disconnected; it should be require topologically nilpotent units of norms uniformly away from 0 and 1 (it fails for `ℚ_p` with the norms `|·|_p^i`); affects a stated result. Found by MotivesAndAlgebraicCyclesPartII (#13026 at c12cad9, 2026-11-15, claude fable).
 - **Gap** at Remark 11.2, p. 57: the source says étale descent without saying whether Čech nerves or hypercovers are inverted; it should be which, since the literature it compares with uses hypercovers; affects nothing; Of the README's corrections, E5, E6, E8 and E9 were recomputed in this round (the rows of §§3.5, 10.4, 11.1 and 0.4 above) and hold; E1–E4 and E7 were not rechecked and are not repeated. Found by MotivesAndAlgebraicCyclesPartII (#13026 at c12cad9, 2026-11-15, claude fable).
+- **Misprint** at Remark 11.2, p. 57: the source says Voevodsky's étale motives form the free presentable stable category on smooth schemes with three relations; it should be the free `ℤ`-linear one; affects nothing. Found by MotivesAndAlgebraicCyclesPartII (#13026 at 9651e2c, 2026-11-15, claude fable).
 - **Gap** at Theorem 11.1, p. 57: the source says the rational mapping object is the weight-`j` Adams piece of `K(X)`; it should be include the shift `[−2j]`, as `X = Spec k`, `j = 1` shows; affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "d21e043c4f1c12ae8ae39a8f195b5aff331efbef", "job": "REV-PKG-MotivesAndAlgebraicCyclesPartII", "model": "fable", "worker": "chris-x19"} -->. Found by MotivesAndAlgebraicCyclesPartII (#2291 at d21e043, 2026-11-05, claude fable).
 - **Error** at Theorem 11.1, p. 57 (Scholze line 2399): the source says the rational mapping spectrum is the weight-`j` Adams piece of K-theory; it should be carry the shift `[−2j]`, as CD formula (5.2.2.a) requires; affects a stated result. Found by MotivesAndAlgebraicCyclesPartII (#13026 at 0a001c2, 2026-11-15, claude fable).
 - **Error** at Theorem 11.1, p. 57, Scholze line 2399: the source says the rational mapping spectrum is the weight-j K-summand; it should be include the shift [−2j]; affects a stated result. Found by MotivesAndAlgebraicCyclesPartII (#13026 at 035f418, 2026-11-11, codex gpt-6-astra).
@@ -14992,7 +15000,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at six-operation construction after Proposition 9.3, p.52, Scholze line 2183: the source says start from all finite-dimensional affine maps with their proper pushforward; it should be first justify projection or start with the bounded-ball class and enlarge after rigidity; affects the proof. Found by MotivesAndAlgebraicCyclesPartII (#13026 at 0366dd7, 2026-11-11, codex gpt-6-astra).
 - **Gap** at six-operation construction after Proposition 9.3, p.52, Scholze lines 2181–2186: the source says start with all finite-cohomological-dimension affine maps; it should be first justify their projection formula or start with the bounded-ball class and enlarge after rigidity; affects the proof. Found by MotivesAndAlgebraicCyclesPartII (#13026 at dfc9dde, 2026-11-10, codex gpt-6-astra).
 - **Misprint** at the construction before Definition 11.3, p. 58 (Scholze line 2453): the source says the induced map runs from `f_* ℤ` to `g_* ℤ`; it should be run from `g_* ℤ` to `f_* ℤ`, by adjunction; affects the proof. Found by MotivesAndAlgebraicCyclesPartII (#13026 at 0a001c2, 2026-11-15, claude fable).
+- **Misprint** at the proof of Proposition 5.19, p. 35: the source says the coefficients satisfy a bound by the maximum of two quantities; it should be their minimum (`T² + T/2 + 4` over `ℂ₂`); affects the proof. Found by MotivesAndAlgebraicCyclesPartII (#13026 at 9651e2c, 2026-11-15, claude fable).
 - **Misprint** at the proof of Theorem 11.1, p. 57: the source says the dual of `f_* ℤ` represents `M ↦ Hom(1, f_* M)`; it should be `Hom(1, f^* M)`, for `M` over the residue field; affects nothing. Found by MotivesAndAlgebraicCyclesPartII (#13026 at c12cad9, 2026-11-15, claude fable).
+- **Misprint** at the proof of Theorem 11.1, p. 57: the source says the dual of the pushed-forward unit represents maps from the unit into `f_* M`; it should be into `f^* M`, for `M` over the residue field; affects nothing. Found by MotivesAndAlgebraicCyclesPartII (#13026 at 9651e2c, 2026-11-15, claude fable).
 - **Gap** at §1, p. 4, Lemma 5.11, p. 30, and Corollary 9.6, p. 52: the source says affine spaces, projective lines and analytic spaces are arc-stacks with free motives, without constructing them; it should be define the arc-stack of a scheme or analytic space; affects nothing. Found by MotivesAndAlgebraicCyclesPartII (#13026 at ee4760c, 2026-11-15, claude fable).
 
 ## Scholze (the 2015 work cited as [Sch15] in Étale cohomology of diamonds)
