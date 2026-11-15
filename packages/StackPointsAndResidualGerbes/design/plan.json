@@ -2,7 +2,7 @@
  "roadmap": "StackPointsAndResidualGerbes",
  "title": "Points of algebraic stacks, stabilisers and residual gerbes",
  "parent": null,
- "summary": "Monomorphisms, immersions, closed substacks and reductions of algebraic stacks; finite type points and automorphism group spaces; gerbes of algebraic stacks and the dense open gerbe; reduced one-point stacks and residual gerbes with their characterisation, uniqueness, regularity, functoriality and existence (finite type points, flat quasi-finite presentations, gerbes, quasi-compact inertia, locally Noetherian stacks); decent stacks, residue fields, algebraicity of points with quasi-compact diagonal and the fppf image of a representative; residual gerbes at representatives and BG_x at rational points; infinitesimal neighbourhoods, the normal space and the exact sequence 0 -> T_{BG_x} -> T_{X,x} -> N_x -> 0.",
+ "summary": "Monomorphisms, immersions, closed substacks and reductions of algebraic stacks; finite type points and automorphism group spaces; gerbes of algebraic stacks and the dense open gerbe; reduced one-point stacks and residual gerbes with their characterisation, uniqueness, regularity, functoriality and existence (finite type points, flat quasi-finite presentations, gerbes, quasi-compact inertia, locally Noetherian stacks); decent stacks, residue fields, algebraicity of points on decent stacks with quasi-compact inertia and on stacks with quasi-compact diagonal and the fppf image of a representative; residual gerbes at representatives and BG_x at rational points; infinitesimal neighbourhoods, the normal space and the exact sequence 0 -> T_{BG_x} -> T_{X,x} -> N_x -> 0.",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -26,6 +26,7 @@
       "where": "Lemma 100.7.1, Definition 100.7.2, Remark 100.7.3; stacks-04XE lines 625-665"
      },
      "prerequisites": [
+      "target:0.3",
       "roadmap:SchemeAndStackFoundations §1.19",
       "roadmap:SchemeAndStackFoundations §1.20",
       "tauceti:TauCeti.AlgebraicGeometry.IsRegular",
@@ -33,7 +34,8 @@
       "tauceti:TauCeti.AlgebraicGeometry.IsRegular.of_flat_of_surjective",
       "mathlib:AlgebraicGeometry.IsReduced",
       "mathlib:AlgebraicGeometry.IsLocallyNoetherian",
-      "gap:reduced-regular-smooth-local"
+      "gap:reduced-regular-smooth-local",
+      "gap:stack-morphism-permanence"
      ],
      "api": [
       {
@@ -245,6 +247,7 @@
       "target:0.3",
       "roadmap:SchemeAndStackFoundations §1.20",
       "roadmap:SchemeAndStackFoundations §1.22",
+      "roadmap:SchemeAndStackFoundations §4.8",
       "mathlib:AlgebraicGeometry.Scheme.IdealSheafData.subscheme",
       "mathlib:AlgebraicGeometry.Scheme.IdealSheafData.subschemeι"
      ],
@@ -268,6 +271,11 @@
        "name": "neighbourhood_baseChange",
        "role": "lemma",
        "statement": "X^[n]_Z x_X Y = Y^[n]_{Z x_X Y} for every Y -> X."
+      },
+      {
+       "name": "neighbourhood_scheme",
+       "role": "compatibility",
+       "statement": "For a scheme X and I : X.IdealSheafData, X^[n]_{V(I)} is the level-n term toScheme n : V(I^{n+1}) -> X of SchemeAndStackFoundations §4.8 Scheme.formalCompletion; both indexings give V(I) at n = 0."
       }
      ],
      "tests": [
@@ -1481,14 +1489,15 @@
       "where": "Lemma 68.13.7 with Lemma 68.11.1, lines 1214-1227 and 1542-1552; alper-moduli lines 6962-6965 and 16528-16537 (Proposition 7.4.39); rydh2011 lines 1268-1277 (Theorem B.2)"
      },
      "prerequisites": [
+      "target:0.2",
       "target:2.1",
       "target:2.5",
       "target:3.4",
-      "target:5.1",
       "target:3.5",
       "target:4.1",
       "target:4.3",
       "target:4.4",
+      "target:5.1",
       "mathlib:AlgebraicGeometry.Scheme.residueField",
       "gap:decent-algebraic-spaces",
       "gap:stack-separation-axioms"
@@ -1537,25 +1546,32 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "Stacks.algebraicityOfPoints",
-     "statement": "If X has quasi-compact diagonal and xi in |X|, there is a quasi-compact immersion Z -> X through xi with flat lfp inertia, Z a gerbe over an integral affine scheme with generic point the image of xi; Z_xi is the generic fibre and Z_xi -> X is quasi-affine.",
+     "statement": "If X is decent with I_X -> X quasi-compact and xi in |X|, the reduced closed substack X' on the closure of xi has an open substack 𝒵 through xi which is a gerbe over an integral affine scheme Z with generic point the image of xi; 𝒵 -> X is an immersion, kappa(xi) is the function field of Z and Z_xi = 𝒵 x_Z Spec kappa(xi). If X has quasi-compact diagonal, 𝒵 -> X can be taken a quasi-compact immersion with flat lfp inertia, and Z_xi -> X is quasi-affine.",
      "hypotheses": [
-      "X with quasi-compact diagonal",
-      "xi in |X|"
+      "xi in |X|",
+      "for the first statement: X decent with I_X -> X quasi-compact",
+      "for the second statement: X with quasi-compact diagonal"
      ],
      "locator": {
-      "source": "rydh2011",
-      "where": "Theorem B.2, lines 1268-1305"
+      "source": "stacks-06RD",
+      "where": "Definition 101.50.1 and Lemma 101.50.2 (2), lines 4786-4807; rydh2011 Theorem B.2, lines 1268-1305"
      },
      "prerequisites": [
+      "target:0.1",
       "target:0.2",
       "target:0.3",
       "target:0.5",
+      "target:2.1",
+      "target:2.3",
+      "target:2.4",
       "target:2.5",
       "target:2.6",
+      "target:3.3",
       "target:3.4",
       "target:5.1",
       "target:5.3",
-      "gap:quasi-separated-space-schematic-locus",
+      "gap:decent-space-schematic-locus",
+      "gap:stack-separation-axioms",
       "gap:stack-morphism-permanence"
      ],
      "api": [],
@@ -1563,7 +1579,7 @@
       {
        "name": "A1Gm",
        "kind": "computation",
-       "statement": "At 0 take B G_m over Spec k; at 1 take Spec k."
+       "statement": "At 0 take B G_m over Spec k; at 1 take Spec k; both statements give these, with Z_0 = B G_m and Z_1 = Spec k."
       },
       {
        "name": "A1_generic",
@@ -1571,9 +1587,14 @@
        "statement": "At the generic point of A^1_k, Spec k(t) -> A^1 is affine and not an immersion."
       },
       {
-       "name": "needs_qc_diagonal",
+       "name": "nonQuasiSeparated_generic",
+       "kind": "computation",
+       "statement": "For the scheme X of 5.1 (two copies of Spec A, A = k[x_1, x_2, ...], glued along the union of the D(x_i)) at its generic point: decent with trivial inertia and non-quasi-compact diagonal, so only the first statement applies, with 𝒵 = Z = Spec A (either copy) and Z_xi = Spec k(x_1, x_2, ...); for this choice 𝒵 -> X is not quasi-compact, the preimage of the other copy being the union of the D(x_i)."
+      },
+      {
+       "name": "needs_hypotheses",
        "kind": "non-example",
-       "statement": "A^1_Q/Z has non-qc diagonal and its generic residual space is not a gerbe over a field."
+       "statement": "A^1_Q/Z has trivial (quasi-compact) inertia, is reduced and irreducible, and is neither decent nor of quasi-compact diagonal; its only nonempty open subspace is itself (no finite nonempty set of closed points of A^1_Q is Z-stable), not a scheme, and its generic residual space is not a gerbe over a field."
       }
      ]
     },
@@ -1654,6 +1675,7 @@
      },
      "prerequisites": [
       "target:0.2",
+      "target:1.3",
       "target:2.4",
       "target:3.2",
       "target:3.4",
@@ -1661,7 +1683,9 @@
       "target:5.3",
       "roadmap:SchemeAndStackFoundations §1.14",
       "roadmap:SchemeAndStackFoundations §1.21",
-      "gap:flat-groupoid-quotients"
+      "mathlib:AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType",
+      "gap:flat-groupoid-quotients",
+      "gap:stack-morphism-permanence"
      ],
      "api": [
       {
@@ -1713,6 +1737,7 @@
       "where": "Exercise 7.4.40 (1), lines 16541-16549"
      },
      "prerequisites": [
+      "target:0.2",
       "target:2.1",
       "target:2.2",
       "target:3.4",
@@ -1875,7 +1900,8 @@
      "prerequisites": [
       "target:0.4",
       "target:3.4",
-      "target:4.5"
+      "target:4.5",
+      "roadmap:SchemeAndStackFoundations §4.8"
      ],
      "api": [
       {
@@ -1891,7 +1917,7 @@
       {
        "name": "scheme",
        "role": "compatibility",
-       "statement": "For a scheme X^[n]_x = Spec O_{X,x}/m^{n+1}."
+       "statement": "For a scheme X with closed point x, X^[n]_x = Spec O_{X,x}/m^{n+1}, the level-n term of SchemeAndStackFoundations §4.8 Scheme.formalCompletion along the ideal of x."
       }
      ],
      "tests": [
@@ -1929,11 +1955,12 @@
      },
      "prerequisites": [
       "target:0.4",
+      "target:1.3",
       "target:4.5",
       "target:6.4",
       "roadmap:SchemeAndStackFoundations §1.22",
-      "tauceti:TauCeti.Comodule",
       "roadmap:ReductiveGroups Layer 1",
+      "tauceti:TauCeti.Comodule",
       "gap:stack-morphism-permanence"
      ],
      "api": [
@@ -2073,13 +2100,16 @@
      },
      "prerequisites": [
       "target:0.3",
+      "target:1.3",
+      "target:2.3",
       "target:4.5",
       "target:6.4",
       "target:7.2",
       "target:7.3",
       "roadmap:SchemeAndStackFoundations §1.20",
       "roadmap:SchemeAndStackFoundations §1.21",
-      "mathlib:AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal"
+      "mathlib:AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal",
+      "gap:stack-morphism-permanence"
      ],
      "api": [],
      "tests": [
@@ -2128,10 +2158,11 @@
     "§1.21",
     "§1.22",
     "§1.23",
+    "§4.8",
     "§4.12",
     "§4.13"
    ],
-   "what": "Algebraic spaces and their points, group spaces, groupoids, stabilizers, torsors, Artin's bootstrap, stacks in groupoids, algebraic and DM stacks, inertia, SmoothLocal properties, |X|, quotient stacks, quasi-coherent modules and their description on a presentation (QCoh(BG) as comodules through QCoh.presentationEquiv), the moduli functor, generic flatness, and (through gap:reduced-regular-smooth-local) the smooth locality of reducedness and of regularity of algebraic spaces; regular schemes themselves are Tau Ceti's."
+   "what": "Algebraic spaces and their points, group spaces, groupoids, stabilizers, torsors, Artin's bootstrap, stacks in groupoids, algebraic and DM stacks, inertia, SmoothLocal properties, |X|, quotient stacks, quasi-coherent modules and their description on a presentation (QCoh(BG) as comodules through QCoh.presentationEquiv), the moduli functor, the infinitesimal neighbourhoods V(I^{n+1}) of a closed subscheme (formal completion levels), generic flatness, and (through gap:reduced-regular-smooth-local) the smooth locality of reducedness and of regularity of algebraic spaces; regular schemes themselves are Tau Ceti's."
   },
   {
    "roadmap": "AlgebraicModuliForArithmeticGeometry",
@@ -2162,19 +2193,11 @@
   },
   {
    "roadmap": "MotivicStructuresInModuliOfCurves",
-   "what": "stabilisers and residual gerbes of quotient stacks (1.3, 6.4, 7.4)"
+   "what": "stabilisers at points of its quotient stacks: the central mu_2 stabilisers of its §7.3 and the quadric stabilisers of the orbit counts of its §§8.4 and 8.6 (1.3, 7.4)"
   },
   {
    "roadmap": "VirtualFundamentalClasses",
    "what": "closed substacks with their description on a presentation, quasi-coherent ideals, reduced induced closed substacks and the reduced-source factorisation, for Deligne-Mumford stacks of finite type over a field, in its §1.2 (0.3, 0.4, 0.5); it builds integral closed substacks and cycles on them"
-  },
-  {
-   "roadmap": "EquivariantIntersectionTheory",
-   "what": "BG_x at closed points of quotient stacks (1.3, 6.4, 7.4)"
-  },
-  {
-   "roadmap": "GroupSchemesOverABase",
-   "what": "stabilisers of quotient stacks (1.3, 7.4)"
   }
  ],
  "gaps": [
@@ -2182,6 +2205,7 @@
    "slug": "stack-morphism-permanence",
    "title": "Permanence of morphism properties of algebraic stacks",
    "neededBy": [
+    "0.1",
     "0.2",
     "0.3",
     "0.5",
@@ -2203,9 +2227,11 @@
     "5.2",
     "5.4",
     "5.5",
+    "6.1",
     "6.4",
     "7.2",
-    "7.3"
+    "7.3",
+    "7.4"
    ],
    "detail": "Stacks, Properties of Stacks, Lemmas 100.3.1-100.3.3, 100.5.2-100.5.5 (stacks-04XE lines 111-245, 577-590); Morphisms of Stacks, Lemmas 101.7.3-101.7.7, 101.7.10, 101.17.2-101.17.8, 101.25.2-101.25.5, 101.27.2-101.27.14, 101.27.16, 101.33.2-101.33.5 (stacks-06RD lines 801-889, 1478-1540, 2328-2357, 2438-2577, 3294-3308). SchemeAndStackFoundations §1.20 defines SmoothLocal and QuasiCompactStack with atlas independence only.",
    "needs": "SchemeAndStackFoundations §1.20 must prove, for its SmoothLocal properties (flat, lfp, lft, smooth), surjectivity and QuasiCompactStack, composition, base change, descent along surjective flat lfp base change, agreement with RepresentableProperty, the implications smooth => lfp => lft, cancellation for lft and lfp, and fppf-local essential surjectivity of surjective flat lfp morphisms; that representability by algebraic spaces and RepresentableProperty P, for P stable under base change and fppf local on the target, hold once they hold after one surjective flat lfp base change from an algebraic space (Lemmas 100.3.1, 100.3.3); and that an algebraic stack locally of finite type over a locally Noetherian algebraic stack is locally Noetherian (Lemma 101.17.5).",
@@ -2245,7 +2271,8 @@
     "1.4",
     "3.4",
     "5.1",
-    "5.3"
+    "5.3",
+    "5.4"
    ],
    "detail": "Stacks, Morphisms of Stacks, Definitions 101.4.1-101.4.2, Lemmas 101.4.3, 101.4.4, 101.4.10, 101.4.11, 101.6.1 (stacks-06RD lines 216-345, 637-657). DM stacks are SchemeAndStackFoundations §1.19's IsDeligneMumford with .iff_unramified_diagonal.",
    "needs": "SchemeAndStackFoundations §1.20 must define DM, quasi-DM and quasi-separated morphisms and quasi-DM and quasi-separated stacks by the diagonal (DM stacks being §1.19's IsDeligneMumford), with their implications, base change, composition, Lemma 101.4.11 and the diagonal-inertia comparison Lemma 101.6.1.",
@@ -2297,15 +2324,15 @@
    "section": "§1.7"
   },
   {
-   "slug": "quasi-separated-space-schematic-locus",
-   "title": "A quasi-separated algebraic space has a dense open subscheme",
+   "slug": "decent-space-schematic-locus",
+   "title": "A decent algebraic space has a dense open subscheme",
    "neededBy": [
     "5.4"
    ],
-   "detail": "Stacks, Properties of Spaces, Proposition 66.13.3 (cited at stacks-decent-spaces line 1019).",
-   "needs": "SchemeAndStackFoundations §1.9 must prove that a quasi-separated algebraic space has a dense open subspace which is a scheme.",
+   "detail": "Stacks, Decent Spaces, Theorem 68.10.2 (stacks-decent-spaces lines 1094-1096); the quasi-separated case is Properties of Spaces, Proposition 66.13.3.",
+   "needs": "SchemeAndStackFoundations §1.7 must prove that a decent algebraic space has a dense open subspace which is a scheme.",
    "supplier": "SchemeAndStackFoundations",
-   "section": "§1.9"
+   "section": "§1.7"
   },
   {
    "slug": "reduced-scheme-residue-field-factorisation",

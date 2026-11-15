@@ -63,7 +63,7 @@ sha256 = "ba3fb2d5c613e4fee0fdc5ee640581d9bf3bf9241760f9f502efab7dca3a8865"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["separation axioms, inertia, finite type points, automorphism groups, smooth quotients, existence of residual gerbes, decent stacks and residual gerbes at closed points (§§101.4-101.5, 101.18-101.19, 101.31, 101.33, 101.48, 101.51): targets 0.2, 0.5, 1.1-1.4, 2.3, 3.4, 4.1-4.5, 5.1, 5.2, 5.4, 6.1; an immersion is locally of finite type, a stack locally of finite type over a locally Noetherian one is locally Noetherian, and cancellation of local finite type (Lemmas 101.17.4, 101.17.5, 101.17.8): targets 0.5, 1.1, 5.2, 6.4, 7.2 and gap stack-morphism-permanence"]
+cited_for = ["separation axioms, inertia, finite type points, automorphism groups, smooth quotients, existence of residual gerbes, decent stacks and residual gerbes at closed points (§§101.4-101.5, 101.18-101.19, 101.31, 101.33, 101.48, 101.51): targets 0.2, 0.5, 1.1-1.4, 2.3, 3.4, 4.1-4.5, 5.1, 5.2, 5.4, 6.1; integral algebraic stacks and the open substack which is a gerbe over an integral scheme (§101.50, Definition 101.50.1, Lemma 101.50.2): target 5.4; an immersion is locally of finite type, a stack locally of finite type over a locally Noetherian one is locally Noetherian, base change and cancellation of local finite type (Lemmas 101.17.3, 101.17.4, 101.17.5, 101.17.8): targets 0.5, 1.1, 5.2, 6.1, 6.4, 7.2 and gap stack-morphism-permanence"]
 
 [[source]]
 id = "ahr2020"
@@ -177,7 +177,7 @@ authors = "The Stacks Project Authors"
 title = "The Stacks Project, Decent Algebraic Spaces"
 year = 2026
 locator_scheme = "section"
-locator = "Sections 68.6, 68.12-68.14"
+locator = "Sections 68.6, 68.10, 68.12-68.14"
 url = "https://stacks.math.columbia.edu/download/decent-spaces.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/decent-spaces.pdf"
 fetched_at = "2026-11-07T01:39:07Z"
@@ -185,7 +185,7 @@ sha256 = "2e29935b33d7a90b4fcdfa1ce801af37406a0f0dc6d9103d54ffd2263122a3e6"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
-cited_for = ["decent algebraic spaces, residue fields and residual spaces (Definitions 68.6.1, 68.11.2, 68.13.6, Lemmas 68.11.1, 68.13.5-68.13.10, Example 68.13.11): targets 3.4, 4.2, 5.1-5.3 and gap decent-algebraic-spaces"]
+cited_for = ["decent algebraic spaces, residue fields and residual spaces (Definitions 68.6.1, 68.11.2, 68.13.6, Lemmas 68.11.1, 68.13.5-68.13.10, Example 68.13.11): targets 3.4, 4.2, 5.1-5.3 and gap decent-algebraic-spaces; a decent algebraic space has a dense open subspace which is a scheme (Theorem 68.10.2): gap decent-space-schematic-locus of target 5.4"]
 
 [[source]]
 id = "stacks-criteria"
@@ -330,7 +330,7 @@ sha256 = "7f71f8371bd2040b4cd3ec6171420ef6a1ce14f7a0a334d32c6d04821e1741bc"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
-cited_for = ["gap:quasi-separated-space-schematic-locus"]
+cited_for = ["the quasi-separated case (Proposition 66.13.3) of gap:decent-space-schematic-locus"]
 
 [[source]]
 id = "stacks-groupoids-spaces"
