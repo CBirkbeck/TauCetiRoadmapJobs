@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArakelovGeometryAndAbelianHeights~7",
+  "head": "5fc305b1337f3dfae1b1646cba7d80006b8c274c",
+  "pr": 1000,
+  "folder": "ArakelovGeometryAndAbelianHeights",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 5fc305b (same head; this round checks the pull request's title and description). One finding. R01 (P3): the description says the Lean 'states only real-bodied definitions and theorems' and the build has 'sorry as the only warning', but Suggested.lean declares nothing (empty namespace at lines 38-40; the docstring says no headline is statable) and lake env lean exits 0 with no output; replacement text given. The rest of the summary block and the prose was checked against the head and matches: Layers 1-6, the consumers at lines 1823-1827, the section 1.14 Height.logHeight identity (Mathlib Height/Basic.lean:268; computed log 2 and log 4 for (1,2) over Q and Q(i)), the three normalizations (shift (g/2) log pi), the section 6.5 bound (-0.749 >= -0.919), the Spec Z compactifications (h(1/3) = log 3, all at p = 3) and the suppliers (2 on main plus the 8 in the chain). Previous review: no findings. Gate: the worker's run and my own run are all 0 and OK; nothing changed outside the folder. lake env lean exits 0 silently. depcheck --movable: 247 roadmaps, 0 problems. The 4 citation leads resolve at the suppliers' heads; overlaps are clean. Faltings 1983 is now readable by OCR: pp. 350-351 Bemerkungen a), b) support the Hodge-line locator at line 136. Faltings-Chai is paywalled and cited by locator only.",
+  "text": "dee8c295f80afbbd",
+  "carried": {
+   "from": "5fc305b1337f3dfae1b1646cba7d80006b8c274c",
+   "head": "5fc305b1337f3dfae1b1646cba7d80006b8c274c",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
