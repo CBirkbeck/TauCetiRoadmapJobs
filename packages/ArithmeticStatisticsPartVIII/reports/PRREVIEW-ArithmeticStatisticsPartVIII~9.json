@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartVIII~9",
+  "head": "e4005e8d41950b7ccce32c2ce1afd4cee1f6937b",
+  "pr": 1179,
+  "folder": "ArithmeticStatisticsPartVIII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 12 changed lines since a91c9b8. Previous R01 (DGAInfinity Layer 5 contract) and R02 (stray accented symbol) repaired; previous R03 (item (i) of the Tor spectral sequences restates the double-complex spectral sequence of DerivedModuleAlgebra S.1 on main) not repaired and raised again as R01 (P3). Changed passages at README lines 27, 108, 891, 903, 912, 924 read against DGAInfinity, DGFloer and DerivedModuleAlgebra on main and recomputed on R = k[x] and k[x]/(x^2). Title and description checked against the head: no finding. Gate rerun: every check zero; depcheck 0 problems; Suggested.lean elaborates with five sorry warnings only.",
+  "text": "5a4838ea2c65ed67",
+  "carried": {
+   "from": "e4005e8d41950b7ccce32c2ce1afd4cee1f6937b",
+   "head": "882274e896b150f730f9652c6480a417d77c4871",
+   "findings": 1,
+   "lines": 16,
+   "folders": [
+    "ArithmeticStatisticsPartVIII"
+   ],
+   "outside": true
+  }
+ }
+}
