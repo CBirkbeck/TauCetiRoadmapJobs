@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PseudolineArrangementsAndOrientedMatroids~22",
+  "head": "d37350b018609a840b0302152d6626695e02ddab",
+  "pr": 1523,
+  "folder": "PseudolineArrangementsAndOrientedMatroids",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since d37350b. The previous review raised no finding of its own. Title and description read against the head: R01 (P3), the 'Grothendieck's skeleton question' sentence describes an earlier head; R02 (P3), the description never says it adds a new roadmap. Gate: worker 0 on every counter; my run differs only by depcheck NOT IN ORDER against the default order, and the candidate order lists the roadmap at line 412. Depcheck: 0 problems. Elaboration: 51 sorry warnings, exit 0. Axioms probe: 0 of 48 definitions depend on sorryAx. One-tactic probe: 51 of 51 fail. Citations resolved on main 9573ec4 and at the pins. No seeded target lies in changed text.",
+  "text": "030909647651b3a0"
+ }
+}
