@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassifyingTopoi~20",
+  "head": "5edce8cae0767efb7265f608f3636d745b517fe7",
+  "pr": 1997,
+  "folder": "ClassifyingTopoi",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Full review. Previous R01-R03 repaired. One P3: the new route of 2.4 (definability on every classifying site) restates well-poweredness instead of citing GrothendieckTopoi 1.2, its Needs line and the Layer 2 Dependencies omit GrothendieckTopoi 1.2 and 1.4, and Shrink is not in the Mathlib contract. Gate rerun: every check 0; depcheck 245 roadmaps, 2229 edges, 0 problems; nothing outside the folder. lake env lean on Suggested.lean: 28 sorry warnings only; one-tactic probe on all 28 theorems: 0 closed; #check of six signatures agrees with the README. Sources: 27 locators checked in Car09, Car12a, Car08, Car14, BD86, Stacks 00QO (all 15 seeded targets covered where an open text exists); Elephant, Mac Lane-Moerdijk, Makkai-Reyes and Hakim are paywalled and not verifiable. 22 cross-roadmap citations resolved at the heads of GrothendieckTopoi, LocallyPresentableCategories, ToposTheoreticBridges and on main (InfinitaryModelExistence); 16 pinned declarations opened. The 2.4 route was checked by hand and found sound. Pull-request text agrees with the head.",
+  "text": "17b74a3c4745f441"
+ }
+}
