@@ -1,0 +1,53 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HodgeTateAndCanonicalSubgroups"
+
+[[source]]
+id = "DLLZ-adic"
+authors = "Hansheng Diao, Kai-Wen Lan, Ruochuan Liu, Xinwen Zhu"
+title = "Logarithmic adic spaces: some foundational results"
+year = 2022
+arxiv = "1912.09836"
+locator_scheme = "theorem"
+locator = "Def. 3.2.2"
+url = "https://www.kwlan.org/articles/log-adic.pdf"
+fetched_from = "https://www.kwlan.org/articles/log-adic.pdf"
+fetched_at = "2026-11-15T15:04:00Z"
+sha256 = "209e59836048eabbbf9735012a38c7c393fb2a30f69ce50ffac7e83b37ee1105"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["6.8"]
+
+[[source]]
+id = "BHW"
+authors = "Christopher Birkbeck, Ben Heuer, Chris Williams"
+title = "Overconvergent Hilbert modular forms via perfectoid modular varieties"
+year = 2019
+arxiv = "1902.03985v4"
+locator_scheme = "theorem"
+locator = "Def. 7.1(1)"
+url = "https://arxiv.org/abs/1902.03985v4"
+fetched_from = "https://arxiv.org/pdf/1902.03985v4"
+fetched_at = "2026-11-15T15:04:05Z"
+sha256 = "8ee48970dc500f60a6409cca0e6d9feeb693071da00a8b37174776717b708dac"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v4"
+cited_for = ["3.10"]
+
+[[source]]
+id = "SW20"
+authors = "Peter Scholze, Jared Weinstein"
+title = "Berkeley Lectures on p-adic Geometry"
+year = 2020
+locator_scheme = "theorem"
+locator = "Thm. 10.5.1"
+url = "https://people.mpim-bonn.mpg.de/scholze/Berkeley.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Berkeley.pdf"
+fetched_at = "2026-11-15T15:04:08Z"
+sha256 = "225505171ef809aa0070c023c881ff1da844923775f2d631474c0b42eea4bffc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["7.6"]
