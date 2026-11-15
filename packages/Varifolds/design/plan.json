@@ -215,7 +215,7 @@
       {
        "name": "restriction",
        "role": "functoriality",
-       "statement": "restriction to open sets is transitive, local and commutes with weights."
+       "statement": "restriction to open sets is transitive, local and commutes with weights; for open W' the restriction has support spt||V|| cap W', taken in W'."
       }
      ],
      "tests": [
@@ -233,6 +233,11 @@
        "name": "degenerate",
        "kind": "degenerate",
        "statement": "V restricted to the empty set is 0; spt of a Dirac varifold at x is {x}."
+      },
+      {
+       "name": "support of a restriction",
+       "kind": "computation",
+       "statement": "the horizontal lift of H^1 on [0,1] x {0} restricted to the open disc of radius 1/2 about 0 has support [0,1/2) x {0} = spt cap W', closed in W' but not in R^2."
       }
      ]
     },
@@ -1783,6 +1788,7 @@
      "prerequisites": [
       "target:1.3",
       "target:3.1",
+      "target:4.1",
       "target:6.4"
      ],
      "api": [

@@ -476,7 +476,9 @@ G_k(A); for an open W' ⊆ W the restriction of V to G_k(W') is a varifold on W'
 - ∫ φ d‖V‖ = ∫ φ ∘ π dV for every nonnegative Borel φ on W; ‖V⌞A‖ = ‖V‖⌞A.
 - V is carried by G_k(spt‖V‖): V(G_k(W ∖ spt‖V‖)) = 0.
 - Restriction to open sets is transitive and commutes with sums, with ⌞A, and with weights; a
-  varifold is determined by its restrictions to the sets of an open cover.
+  varifold is determined by its restrictions to the sets of an open cover. For open W' ⊆ W the
+  weight of the restriction V' of V to G_k(W') is ‖V‖ restricted to W', so spt‖V'‖ = spt‖V‖ ∩ W',
+  the support being taken in W'.
 
 **Checks.**
 
@@ -485,6 +487,9 @@ G_k(A); for an open W' ⊆ W the restriction of V to G_k(W') is a varifold on W'
   test function χ(x)·tr(P ∘ diag(1, 0)) integrates to ∫χ dH¹ for the first and to 0 for the second.
 - The horizontal lift of H¹⌞(x-axis) has mass 2 on the open unit disc.
 - spt‖δ_{(x,P)}‖ = {x}; V⌞∅ = 0 and V⌞W = V.
+- The horizontal lift of H¹⌞([0, 1] × {0}) restricted to the open disc W' of radius ½ about 0 has
+  support [0, ½) × {0} = spt‖V‖ ∩ W', closed in W' but not in ℝ²: the support of a restriction is
+  relative to W', and its closure in ℝ² would add the point (½, 0) outside W'.
 
 (Simon1983 line 7308–7317; Allard1972 Section 3.) *Needs:* Layer 1.2; Mathlib `Measure.map`,
 `MeasureTheory.Measure.ext_of_integral_eq_on_compactlySupported`,
@@ -1773,8 +1778,9 @@ embedded k-submanifold of U; reg^r V is the set of such points and sing^r V = sp
 - For open W' ⊆ W, reg^r of the restriction of V to W' is reg^r V ∩ W'.
 - If V is stationary and x ∈ reg^2 V, then for every open U ∋ x such that spt‖V‖ ∩ U is a
   connected C² embedded k-submanifold of U, the restriction of V to U is θ_0 [spt‖V‖ ∩ U] for a
-  constant θ_0 > 0 (6.4 in U, where the restriction is stationary, since a field with compact
-  support in U extends by 0 to W, has support spt‖V‖ ∩ U, and is nonzero because x ∈ spt‖V‖).
+  constant θ_0 > 0 (6.4 applied in U to the restriction V' of V: V' is stationary in U, because a
+  field with compact support in U extends by 0 to W (4.1); spt‖V'‖ = spt‖V‖ ∩ U (1.3); and V' ≠ 0
+  because x ∈ spt‖V‖).
   Such U exist: the domain of a slice chart at x, with a cube as image, of the submanifold that
   regularity provides. Hence the multiplicity is locally constant on reg^2 V.
 
@@ -1791,7 +1797,7 @@ embedded k-submanifold of U; reg^r V is the set of such points and sing^r V = sp
   spt‖V‖ ∩ U alone does not give a constant multiple. A ball about x missing L_2 gives θ_0 = 1.
 
 (AgnolettoCorreaHoyosDaSilvaNardulli2025 line 89–101; Simon2023 line 73–83.) *Needs:* Layer 1.3,
-Layer 3.1, Layer 6.4.
+Layer 3.1, Layer 4.1, Layer 6.4.
 
 ### 9.2 Locality and isometry invariance
 
