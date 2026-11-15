@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllipticLegendreCharacterInterfaces~2",
+  "head": "2b50d7a93d23152ea096f32ac7e0a7a09b1a9a5a",
+  "pr": 1545,
+  "folder": "EllipticLegendreCharacterInterfaces",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 2b50d7a. Gate re-run: FAIL on statement-hygiene=3 ([Fintype F] beside [Field F] at Suggested.lean lines 80, 90, 98; R01-R03, P3), all other counters 0; depcheck 0 problems; outside-folder diff empty. Title and description checked against the head: one sentence contradicted (R04, P3: ErdosProgressionPowers also keeps the character-sum inequalities). Adversarial rows computed for the three touched theorems (point counts over F_5..F_37, 3026 twist-trace instances). Pinned pointCount, frobeniusTrace, quadraticTwistOf, quadraticChar read at the pins. Elaboration not available on this worker (pinned package directory absent); repairs checked by reading the pins. No previous numbered findings.",
+  "text": "9681d6d88dd6a425",
+  "carried": {
+   "from": "2b50d7a93d23152ea096f32ac7e0a7a09b1a9a5a",
+   "head": "df72341447126f5c60a5d9fd9fea7ede9f4b9a05",
+   "findings": 4,
+   "lines": 25,
+   "folders": [
+    "EllipticLegendreCharacterInterfaces"
+   ],
+   "outside": true
+  }
+ }
+}
