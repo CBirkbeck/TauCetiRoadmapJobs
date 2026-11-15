@@ -27,7 +27,9 @@
      "prerequisites": [
       "mathlib:ProbabilityTheory.integrableExpSet",
       "mathlib:MeasureTheory.Measure.IsNegInvariant",
-      "mathlib:MeasureTheory.Measure.pi"
+      "mathlib:MeasureTheory.Measure.pi",
+      "mathlib:MeasureTheory.Measure.map",
+      "mathlib:MeasureTheory.Integrable.mono'"
      ],
      "api": [
       {
@@ -38,7 +40,7 @@
       {
        "name": "integrable_exp_quadratic",
        "role": "lemma",
-       "statement": "Admissible rho integrates exp(c phi^2 + h phi) for all real c, h, hence every polynomial."
+       "statement": "Admissible rho integrates exp(c phi^2 + h phi) for all real c, h, hence every polynomial; every rho-a.e. measurable F : R -> R with |F(phi)| <= C exp(c phi^2) for rho-a.e. phi, for some C >= 0 and real c, is rho-integrable (domination alone does not give measurability)."
       },
       {
        "name": "closure",
@@ -86,6 +88,11 @@
        "name": "biased_ising_not_even",
        "kind": "non-example",
        "statement": "(2 delta_{-1} + delta_1)/3 is admissible but not even (mean -1/3)."
+      },
+      {
+       "name": "measurability_needed",
+       "kind": "non-example",
+       "statement": "rho uniform on [0,1] (admissible): F = indicator of [0,1/2] has |F| <= 1 and integral 1/2; the indicator of a Vitali subset of [0,1] has the same bound but is not rho-a.e. measurable, hence not integrable."
       }
      ]
     },
@@ -105,6 +112,7 @@
      "prerequisites": [
       "mathlib:integral_gaussian",
       "mathlib:Real.Gamma",
+      "mathlib:MeasureTheory.ProbabilityMeasure",
       "target:0.1"
      ],
      "api": [
@@ -216,7 +224,7 @@
      "id": "1.1",
      "kind": "definition",
      "name": "gibbsMeasure",
-     "statement": "For a finite type V, a symmetric J : V -> V -> R and a probability measure rho on R, H_{V,J}(phi) = -(1/2) sum_{x != y} J_{xy} phi_x phi_y, Z_{V,J}(rho) = integral of exp(-H) d rho^{tensor V} in (0, infinity], the triple is stable if Z < infinity, and mu_{V,J,rho} = Z^{-1} exp(-H) rho^{tensor V}.",
+     "statement": "For a finite type V, a symmetric J : V -> V -> R and a probability measure rho on R, H_{V,J}(phi) = -sum over unordered pairs {x,y} of distinct sites of J_{xy} phi_x phi_y = -(1/2) sum_{x != y} J_{xy} phi_x phi_y, Z_{V,J}(rho) = integral of exp(-H) d rho^{tensor V} in (0, infinity], the triple is stable if Z < infinity, and mu_{V,J,rho} = Z^{-1} exp(-H) rho^{tensor V}.",
      "hypotheses": [
       "V finite",
       "J symmetric (diagonal ignored)",
@@ -267,7 +275,7 @@
       {
        "name": "two_site_ising",
        "kind": "computation",
-       "statement": "Two Ising sites: Z = cosh J and <sigma_x sigma_y> = tanh J (ordered-pair convention would give tanh 2J)."
+       "statement": "Two Ising sites: H(1,1) = -J, Z = cosh J and <sigma_x sigma_y> = tanh J (2/sqrt 3 and 1/2 at J = (log 3)/2); omitting the factor 1/2 from the ordered-pair sum would give cosh 2J and tanh 2J (4/5)."
       },
       {
        "name": "three_site_ising",
@@ -298,7 +306,7 @@
      ],
      "locator": {
       "source": "aizenman-duminilcopin-2021",
-      "where": "(1.17), line 230; sokal-1982 lines 405-409"
+      "where": "finite-volume state (1.11)-(1.12), lines 139-145, for phi^4 fields and (1.17), line 230, for Ising spins (the invariances by change of variables); sokal-1982 property (b), lines 406-409, states them for the infinite-volume state of 4.2"
      },
      "prerequisites": [
       "target:0.1",
@@ -412,7 +420,7 @@
      ],
      "locator": {
       "source": "frohlich-1982",
-      "where": "lines 266-269; simon-2020-twelve-tales (3.8) lines 960-975; sokal-1982 footnote lines 394-396"
+      "where": "lines 266-269; simon-2020-twelve-tales Section 3 lines 954-975 (free lattice field as Gaussian ferromagnet, formal, other mass normalisation; not the limit); sokal-1982 footnote lines 394-396"
      },
      "prerequisites": [
       "target:0.2.1",
@@ -461,14 +469,23 @@
      ],
      "locator": {
       "source": "aizenman-duminilcopin-2021",
-      "where": "Definition 2.1(1), lines 363-373; Figure 1, lines 377-382; weights nonnegative as used at line 2031"
+      "where": "Definition 2.1(1), lines 363-373; Figure 1, lines 377-382; weights nonnegative as used at line 2031; Lee-Yang property of block constructions, lines 387-388; Lee-Yang theorem: lebowitz-ruelle-speer-2012 Section 1, lines 62-69, and Lemma 2.4, lines 217-222; cumulant sign: sokal-1982 item (i), lines 428-433"
      },
      "prerequisites": [
+      "target:0.1",
       "target:0.2.1",
       "target:1.1",
-      "mathlib:MeasureTheory.Measure.map"
+      "target:1.2",
+      "mathlib:MeasureTheory.Measure.map",
+      "mathlib:Complex.norm_le_of_forall_mem_frontier_norm_le",
+      "roadmap:ZerosOfLFunctions §5.5"
      ],
      "api": [
+      {
+       "name": "leeYang_partitionFunction_ne_zero",
+       "role": "theorem",
+       "statement": "Lee-Yang theorem: for finite V, ferromagnetic J on V and h in C^V with Re h_x > 0 for every x, Z^I_{V,J}(h) = integral of exp(-H_{V,J}(sigma) + sum_x h_x sigma_x) d rho_I^{tensor V} is nonzero. Route: z_x = exp(-2 h_x), a_xy = exp(-2 J_xy) in (0,1]; Z^I is a nonzero multiple of the multi-affine P(z) = sum_A prod_{x in A} z_x prod_{x in A, y notin A} a_xy; each pair polynomial 1 + a z1 + a z2 + z1 z2 is zero-free on the open unit bidisc since |1 + a z1|^2 - |a + z1|^2 = (1-a^2)(1-|z1|^2) >= 0; Asano contraction of the copies of each site preserves zero-freeness on the open polydisc (lebowitz-ruelle-speer-2012 Lemma 2.4)."
+      },
       {
        "name": "isNegInvariant / finite support / isAdmissible",
        "role": "lemma",
@@ -488,6 +505,11 @@
        "name": "blockSpin_representation",
        "role": "theorem",
        "statement": "For finite V, ferromagnetic J and rho = rho_{N,K,q}, mu_{V,J,rho} is the image of mu_{V x Fin N, Jtilde, rho_I} under sigma -> (sum_n q_n sigma_{x,n})_x with Jtilde = K within blocks and J_{xy} q_n q_m between blocks."
+      },
+      {
+       "name": "leeYang_property",
+       "role": "theorem",
+       "statement": "For rho = rho_{N,K,q} (K ferromagnetic, q >= 0), E(h) = integral of exp(h phi) d rho is entire with |E(h)| <= exp(|h| sum q), and E(h) != 0 for Re h != 0. Hence E(h) = prod_j (1 + h^2/a_j^2) on C with a_j > 0 (with multiplicity), sum_j a_j^{-2} = (1/2) integral phi^2 d rho, E(h) <= exp(h^2 integral phi^2 / 2) for real h, and integral phi^4 - 3 (integral phi^2)^2 = -12 sum_j a_j^{-4} <= 0. Route: E(h) = Z^I(hq)/Z^I(0) and the Lee-Yang theorem for q > 0, evenness for Re h < 0; zero weights by q + eps and Hurwitz's argument with the maximum modulus principle; product from ZerosOfLFunctions §5.5 (order <= 1, E(0) = 1, evenness kills the linear term and pairs +-i a_j)."
       }
      ],
      "tests": [
@@ -497,9 +519,14 @@
        "statement": "N = 2, q = (1/2,1/2), K12 = (ln 2)/2 gives the uniform measure on {-1,0,1}."
       },
       {
+       "name": "mixed_signs_K0",
+       "kind": "degenerate",
+       "statement": "q = (1,-1), K = 0: eps = 1/2, law delta_0/2 + (delta_2 + delta_{-2})/4, equal to the nonnegative-weight block q = (1,1), K = 0, hence in the class; for 0 <= K <= (ln 2)/2, eps >= 1/3 and the Lebowitz test excludes nothing. A mixed-sign representation alone does not exclude membership."
+      },
+      {
        "name": "mixed_signs",
        "kind": "non-example",
-       "statement": "q = (1,-1), coupling K: law (1-eps) delta_0 + (eps/2)(delta_2 + delta_{-2}) with eps = 1/(1+e^{2K}); for K > (ln 2)/2, eps < 1/3 and the single-site Lebowitz inequality fails."
+       "statement": "q = (1,-1), ferromagnetic coupling K >= 0: law (1-eps) delta_0 + (eps/2)(delta_2 + delta_{-2}) with eps = 1/(1+e^{2K}) in (0,1/2]; for K > (ln 2)/2, 0 < eps < 1/3 and the single-site Lebowitz inequality fails (K = (ln 3)/2: eps = 1/4, 4 > 3)."
       },
       {
        "name": "block_two_site",
@@ -510,6 +537,26 @@
        "name": "trivial_block",
        "kind": "degenerate",
        "statement": "q = 0 gives delta_0."
+      },
+      {
+       "name": "leeYang_small_systems",
+       "kind": "non-example",
+       "statement": "One site: Z^I = cosh h, zeros i pi (k + 1/2), purely imaginary; cosh(i pi/2) = 0, so Re h > 0 cannot be weakened to Re h >= 0. Two sites, equal fields: Z^I = (e^J cosh 2h + e^{-J})/2; for J >= 0 zeros need cosh 2h = -e^{-2J} in [-1,0), forcing Re h = 0; antiferromagnetic J = -(ln 2)/2 has zeros h = +-(1/2) ln(2 + sqrt 3) + i pi/2 ~ +-0.658 + 1.571i."
+      },
+      {
+       "name": "leeYang_ising_product",
+       "kind": "computation",
+       "statement": "rho_I: E = cosh h = prod_{k>=0} (1 + h^2/((k+1/2) pi)^2); sum ((k+1/2) pi)^{-2} = 1/2 = (1/2) integral phi^2; fourth cumulant 1 - 3 = -2 = -12 * (1/6)."
+      },
+      {
+       "name": "leeYang_uniform_three_point",
+       "kind": "computation",
+       "statement": "Uniform on {-1,0,1}: E = (1 + 2 cosh h)/3, zeros h = i(+-2 pi/3 + 2 pi k); sum a_j^{-2} = (2 pi)^{-2} sum_{n in Z} (n + 1/3)^{-2} = (2 pi)^{-2} pi^2/sin^2(pi/3) = 1/3 = (1/2)(2/3)."
+      },
+      {
+       "name": "leeYang_mixed_signs",
+       "kind": "non-example",
+       "statement": "q = (1,-1), K = (ln 3)/2: law (3/4) delta_0 + (1/8)(delta_2 + delta_{-2}), E = (3 + cosh 2h)/4, zeros at cosh 2h = -3, h = +-(1/2) ln(3 + 2 sqrt 2) + i pi/2 ~ +-0.881 + 1.571i; fourth cumulant 4 - 3 = 1 > 0."
       }
      ]
     },
@@ -521,14 +568,17 @@
      "hypotheses": [],
      "locator": {
       "source": "aizenman-duminilcopin-2021",
-      "where": "Definition 2.1(2) and (2.2), lines 374-386; full-class continuity, lines 1982-1985 and 2019-2022; nonnegative weights as in 2.1"
+      "where": "Definition 2.1(2) and (2.2), lines 374-386; passage to the class asserted by continuity, lines 1982-1985 and 2019-2022; nonnegative weights as in 2.1"
      },
      "prerequisites": [
       "target:0.1",
       "target:1.1",
       "target:1.2",
       "target:1.4",
-      "target:2.1"
+      "target:2.1",
+      "mathlib:MeasureTheory.isTightMeasureSet_of_isCompact_closure",
+      "mathlib:Real.young_inequality",
+      "mathlib:ProbabilityTheory.mgf_id_gaussianReal"
      ],
      "api": [
       {
@@ -547,21 +597,26 @@
        "statement": "Closed under phi -> s phi, allowing a smaller exponent between 2 and alpha, and under weak limits of members with sup_j integral exp(|phi|^alpha) d rho_j < infinity for a common alpha > 2."
       },
       {
+       "name": "tail_control",
+       "role": "theorem",
+       "statement": "If Ising-block measures eta_k converge weakly to a probability measure rho with integral exp(|phi|^alpha) d rho < infinity for some alpha > 2, then sup_k integral exp(c phi^2) d eta_k < infinity for every real c. Route via the factorisation E_k(h) = prod_j (1 + h^2 x_{k,j}) of 2.1: (a) sigma_k^2 bounded (fourth moment <= 3 sigma_k^4, Paley-Zygmund, tightness); (b) E_k(h) <= exp(h^2 S/2), so E_k(h) -> E_rho(h); (c) Young: E_rho(h) <= C exp(|h|^{alpha'}), alpha' = alpha/(alpha-1) < 2; (d) s_k(theta) = sum of x_{k,j} <= theta satisfies s_k(theta) log 2 <= theta log E_k(theta^{-1/2}), so limsup_k s_k(theta) <= (theta log C + theta^{1-alpha'/2})/log 2 -> 0; (e) E_k(h) <= (1 + h^2 S/2)^{S/(2 theta)} exp(h^2 s_k(theta)); (f) integral exp(c phi^2) d eta_k = E[E_k(sqrt(2c) g)] for standard normal g, bounded once limsup s_k(theta) < 1/(8c)."
+      },
+      {
        "name": "gibbs_limit",
        "role": "theorem",
-       "statement": "For every member rho, finite V and ferromagnetic J there exists an Ising-block sequence eta_k -> rho weakly such that mu_{V,J,eta_k} -> mu_{V,J,rho} weakly and expectations of every continuous polynomially bounded F converge. This full-class finite-volume transfer includes choice/tail control of approximants; it does not assume uniform superquadratic moments of arbitrary weak approximants (lines 1982-1985, 2019-2022). One sequence must serve any prescribed finite collection of finite ferromagnetic systems simultaneously, including V and its subregions."
+       "statement": "Finite-volume transfer: for every member rho, EVERY sequence of Ising-block measures eta_k -> rho weakly, every finite V, every coupling J on V and every continuous F with |F| <= C(1 + sum phi_x^2)^m: Z_{V,J}(eta_k) -> Z_{V,J}(rho), <F>_{V,J,eta_k} -> <F>_{V,J,rho}, mu_{V,J,eta_k} -> mu_{V,J,rho} weakly. Route: tail_control gives the uniform quadratic exponential moments assumed by 1.4."
       }
      ],
      "tests": [
       {
        "name": "gaussian_excluded",
        "kind": "non-example",
-       "statement": "N(0,1) is a weak limit of Ising-block measures (CLT) but integral exp(|phi|^alpha) dN(0,1) = infinity for alpha > 2."
+       "statement": "N(0,1) is a weak limit of Ising-block measures (CLT, q_n = N^{-1/2}) but integral exp(|phi|^alpha) dN(0,1) = infinity for alpha > 2. Without the growth condition tail control fails: integral exp(phi^2/2) d eta_N -> infinity by Fatou; all x_{N,j} = ((k+1/2) pi)^{-2}/N <= 4/(pi^2 N), so s_N(theta) = 1/2 for N >= 4/(pi^2 theta), the Gaussian factor of the limit."
       },
       {
        "name": "lebowitz_test",
        "kind": "non-example",
-       "statement": "(1-eps) delta_0 + (eps/2)(delta_1 + delta_{-1}) with eps < 1/3 is even admissible but not in the class (fails integral phi^4 <= 3 (integral phi^2)^2)."
+       "statement": "(1-eps) delta_0 + (eps/2)(delta_1 + delta_{-1}) with 0 < eps < 1/3 is even admissible but not in the class (fails integral phi^4 <= 3 (integral phi^2)^2: eps > 3 eps^2; at eps = 1/4, 1/4 > 3/16). At eps = 0 it is delta_0, a member (0 = 0); at eps = 1/3 both sides are 1/3 and the test decides nothing."
       },
       {
        "name": "phi4_member",
@@ -569,14 +624,19 @@
        "statement": "Every phi^4 measure is a member (2.3); gamma_b is not."
       },
       {
-       "name": "bad_approximation_of_zero",
-       "kind": "non-example",
-       "statement": "Independent X_N = sum sigma_i/(sqrt(N) log N), N >= 3, have variance 1/log(N)^2 -> 0 but exponential alpha-moments >= 2^(1-N) exp(N^(alpha/2)/log(N)^alpha) -> infinity for every alpha > 2. Constant delta_0 approximants have those moments 1."
+       "name": "shrinking_blocks_transfer",
+       "kind": "computation",
+       "statement": "Independent X_N = sum sigma_i/(sqrt(N) log N), N >= 3, variance 1/log(N)^2 -> 0, converge to delta_0. Exponential alpha-moments >= 2^(1-N) exp(N^(alpha/2)/log(N)^alpha) -> infinity for alpha > 2 (growth cannot be asked of approximants), but quadratic ones are controlled: integral exp(h phi) d eta_N = cosh(h/(sqrt(N) log N))^N <= exp(h^2/(2 log^2 N)), so integral exp(c phi^2) d eta_N <= (1 - 2c/log^2 N)^(-1/2) (about 1.022 at c = 1, N = 1000) -> 1; two sites, J >= 0: 1 <= Z(eta_N) <= (1 - J/log^2 N)^(-1) -> 1 = Z(delta_0). Zeros +-i(k+1/2) pi sqrt(N) log N with multiplicity N give sum a^{-2} = 1/(2 log^2 N) = sigma_N^2/2."
       },
       {
        "name": "finite_volume_transfer",
        "kind": "computation",
-       "statement": "The same sequence on one and two sites gives the one-site second moment s^2 and two-site moment s^2 tanh(J s^2); at s=0 these moments are 0 and the zeroth moment is 1. The phi^4 approximants of 2.3 satisfy 1.4 by their uniform tails."
+       "statement": "Every sequence transfers: blocks (delta_{-s_k} + delta_{s_k})/2 with s_k -> s >= 0 give one-site second moment s_k^2 -> s^2 and two-site <phi_x phi_y> = s_k^2 tanh(J s_k^2) -> s^2 tanh(J s^2); at s = 0 both tend to 0 (delta_0) and the zeroth moment is 1. The Curie-Weiss sequence of 2.3 satisfies the tail-control bound directly by its quartic tails."
+      },
+      {
+       "name": "block_structure_needed",
+       "kind": "non-example",
+       "statement": "Mixtures (1 - 1/k) rho_I + (1/k) N(0,1) -> rho_I (a member) satisfy integral phi^{2n} = 1 - 1/k + (2n-1)!!/k <= (2n-1)!! with variance 1, but two sites with J >= 1 give Z = infinity: neither tail control nor transfer holds; their Laplace transforms (1 - 1/k) cosh h + (1/k) exp(h^2/2) have order 2."
       }
      ]
     },
@@ -635,7 +695,7 @@
      ],
      "locator": {
       "source": "peled-spinka-2017",
-      "where": "Theorems 2.1 and 2.3, lines 334 and 515; Lemma 2.4, line 535; sokal-1982 (2.20)-(2.21) lines 414-415; glimm-jaffe-1987 Ch. 4"
+      "where": "Theorems 2.1 and 2.3, lines 334 and 515; Lemma 2.4, line 535; sokal-1982 (2.19)-(2.20), p. 327, lines 414-415, for the infinite-volume phi^4 state; glimm-jaffe-1987 Ch. 4"
      },
      "prerequisites": [
       "target:0.1",
@@ -708,14 +768,14 @@
      "id": "3.3",
      "kind": "theorem",
      "name": "fkg_gibbs",
-     "statement": "For finite V, ferromagnetic J, admissible rho and bounded measurable coordinatewise non-decreasing F, G: <FG> >= <F><G>; also for polynomially bounded non-decreasing F, G.",
+     "statement": "For finite V, ferromagnetic J, admissible rho and bounded measurable coordinatewise non-decreasing F, G: <FG> >= <F><G>; also for measurable polynomially bounded non-decreasing F, G.",
      "hypotheses": [
       "J >= 0",
       "rho admissible"
      ],
      "locator": {
       "source": "sokal-1982",
-      "where": "(2.25), line 423; glimm-jaffe-1987 Ch. 4"
+      "where": "(2.25), line 423, for the infinite-volume phi^4 state; glimm-jaffe-1987 Ch. 4"
      },
      "prerequisites": [
       "target:0.1",
@@ -826,7 +886,7 @@
      ],
      "locator": {
       "source": "aizenman-duminilcopin-2021",
-      "where": "(3.11), line 520; Lemma 5.7, line 1314; footnote 5, line 1342; lines 1996-2002; sokal-1982 (2.23)-(2.24) lines 419-422"
+      "where": "(3.11), line 520; Lemma 5.7, line 1314; footnote 5, line 1342; lines 1996-2002; sokal-1982 (2.23)-(2.24) lines 419-422, for the infinite-volume phi^4 state"
      },
      "prerequisites": [
       "target:1.1",
@@ -902,6 +962,11 @@
        "name": "site_reflection",
        "kind": "computation",
        "statement": "{-1,0,1}, R(x) = -x: <s1^2> = 1 >= tanh^2 J."
+      },
+      {
+       "name": "evenness_needed",
+       "kind": "non-example",
+       "statement": "{-1,0,1}, R(x) = -x, J = 0, non-even rho = (2 delta_{-1} + delta_1)/3 (mean -1/3, second moment 1), A = 1_{1}, B = 1_{0,1}, R(B) = 1_{-1,0}: <phi_1^2 phi_0> = -1/3 < -1/27 = <phi_1 phi_{-1} phi_0>; rho_I gives 0 = 0. The flip phi -> -phi turns the inequality for rho with |A| + |B| odd into the reverse inequality for the flipped measure (here (delta_{-1} + 2 delta_1)/3: 1/3 > 1/27)."
       }
      ]
     },
@@ -909,20 +974,22 @@
      "id": "3.7",
      "kind": "theorem",
      "name": "phi4_ibp_and_uniform_bounds",
-     "statement": "(a) For lambda > 0, b real, finite V, coupling J, x in V: 4 lambda <phi_x^4> = 1 + 2b <phi_x^2> + sum_{y != x} J_xy <phi_x phi_y> under mu_{V,J,rho_{lambda,b}}, and <d_x F> = <F (4 lambda phi_x^3 - 2b phi_x - sum_y J_xy phi_y)>. (b) max_x <phi_x^2> <= M = [(2b_+ + ||J||) + sqrt((2b_+ + ||J||)^2 + 16 lambda)]/(8 lambda), uniformly in V. (c) For rho in the Griffiths-Simon class, ferromagnetic J and t >= 0: <exp(sum t_x phi_x)> <= exp(<(sum t_x phi_x)^2>/2), and <exp(a|phi_x|)> <= 2 exp(a^2 <phi_x^2>/2).",
+     "statement": "(a) For lambda > 0, b real, finite V, coupling J, x in V: 4 lambda <phi_x^4> = 1 + 2b <phi_x^2> + sum_{y != x} J_xy <phi_x phi_y> under mu_{V,J,rho_{lambda,b}}, and, for every continuously differentiable F : R^V -> R with |F(phi)| + |d_x F(phi)| <= C (1 + sum_y phi_y^2)^k for some C, k, <d_x F> = <F (4 lambda phi_x^3 - 2b phi_x - sum_{y != x} J_xy phi_y)>; the diagonal J_xx does not enter. (b) max_x <phi_x^2> <= M = [(2b_+ + ||J||) + sqrt((2b_+ + ||J||)^2 + 16 lambda)]/(8 lambda), uniformly in V. (c) For rho in the Griffiths-Simon class, ferromagnetic J and complex z in C^V: |<exp(sum_x z_x phi_x)>| <= exp(<(sum_x |Re z_x| phi_x)^2>/2) = exp((1/2) sum_{x,y} |Re z_x| |Re z_y| <phi_x phi_y>), and <exp(a|phi_x|)> <= 2 exp(a^2 <phi_x^2>/2) for real a; route: |e^w| = e^{Re w}, Griffiths I (3.1) to pass from Re z_x to |Re z_x|, then the Gaussian inequality of 3.5 summed against 1/(2n)!.",
      "hypotheses": [
-      "lambda > 0 for (a)-(b)",
-      "rho in the Griffiths-Simon class and J >= 0 for (c)"
+      "lambda > 0, b real, J any symmetric coupling (diagonal arbitrary and ignored) for (a)-(b)",
+      "for the general identity in (a): F continuously differentiable with F and d_x F bounded by C (1 + sum_y phi_y^2)^k",
+      "rho in the Griffiths-Simon class, J >= 0 and z in C^V (arbitrary complex coefficients) for (c)"
      ],
      "locator": {
       "source": "sokal-1982",
-      "where": "Section 3.1, lines 846-853; item (j), lines 434-435"
+      "where": "Section 3.1, (3.4)-(3.5), p. 342 (lines 846-853); Section 2.2, property (j), (2.27), p. 328 (lines 434-435), for the infinite-volume phi^4 state"
      },
      "prerequisites": [
       "target:0.2",
       "target:1.1",
       "target:1.2",
-      "target:2.3",
+      "target:2.2",
+      "target:3.1",
       "target:3.5"
      ],
      "api": [],
@@ -933,6 +1000,16 @@
        "statement": "One site, J = 0, b = 0: <phi^4> = 1/(4 lambda), matching 0.2."
       },
       {
+       "name": "ibp_diagonal_ignored",
+       "kind": "non-example",
+       "statement": "One site, lambda = 1, b = 0, J_xx = 1, F = phi: the sum over y != x is empty and both sides equal 1 = 4<phi^4>; a sum including the diagonal would give 4<phi^4> - <phi^2> = 1 - Gamma(3/4)/Gamma(1/4) = 0.66201."
+      },
+      {
+       "name": "ibp_derivative_growth_needed",
+       "kind": "non-example",
+       "statement": "One site, lambda = 1, b = 0, J = 0, F(phi) = phi + sin(exp(phi^4)): F is smooth and polynomially bounded, but |d F| times the density has infinite integral (substitute t = exp(phi^4): integral of |cos t|/t over [1, infinity)), so <dF> is not a Lebesgue expectation, while the right side is 4<phi^4> + 4<phi^3 sin(exp(phi^4))> = 1 + 0; the derivative-growth hypothesis excludes F."
+      },
+      {
        "name": "bound_value",
        "kind": "computation",
        "statement": "M(lambda,0,0) = 1/(2 sqrt lambda) >= 0.338/sqrt lambda."
@@ -941,6 +1018,11 @@
        "name": "newman_fails_outside",
        "kind": "non-example",
        "statement": "(3/4) delta_0 + (1/8)(delta_1 + delta_{-1}): at a = 2, 1.691 > e^{1/2} = 1.649; for Ising cosh a <= e^{a^2/2}."
+      },
+      {
+       "name": "newman_signed_fails",
+       "kind": "non-example",
+       "statement": "Two Ising sites, J = 1, z = (1, -1): <e^{sigma_x - sigma_y}> = (e + e^{-1} cosh 2)/(e + e^{-1}) = 1.32926, above the signed form exp(<(sigma_x - sigma_y)^2>/2) = e^{1 - tanh 1} = 1.26922 and below the stated right side e^{1 + tanh 1} = 5.82171; for rho_I on one site and z = iy the bound is |cos y| <= 1, sharper than a right side built from |z_x| (e^{y^2/2} = 7.389 at y = 2)."
       }
      ]
     }
@@ -1027,6 +1109,7 @@
       "where": "(a)-(b), lines 405-409; duminilcopin-2017-lectures Corollary 1.9, line 549"
      },
      "prerequisites": [
+      "target:2.3",
       "target:3.3",
       "target:3.7",
       "target:4.1",
@@ -1098,7 +1181,7 @@
       {
        "name": "basic",
        "role": "lemma",
-       "statement": "S >= 0, S(-x) = S(x), S(x) <= S(0) when finite, S positive definite."
+       "statement": "S >= 0, S(-x) = S(x), S(x) <= S(0) (Cauchy-Schwarz in V_R and translation invariance when S(0) is finite, trivially otherwise); when S(0) < infinity every S(x) is finite and S is positive definite: sum_{x,y} c_x c_y S(x - y) = lim_R <(sum_x c_x phi_x)^2>_{V_R} >= 0 for finitely supported real c."
       },
       {
        "name": "monotone_beta",
@@ -1128,9 +1211,19 @@
        "statement": "rho = delta_0: chi = 0, beta_c = infinity; J = 0: chi = integral phi^2."
       },
       {
+       "name": "positive_definite",
+       "kind": "non-example",
+       "statement": "c = delta_0 - delta_1 + delta_2 on Z: the d = 1 Ising two-point function t^{|x|} gives 3 - 4t + 2t^2 = 2(1-t)^2 + 1 > 0, while the function equal to 1 at 0, 4/5 at +-1 and 0 elsewhere (nonnegative, even, bounded by its value at 0) gives 3 - 16/5 = -1/5: positive definiteness is not implied by the other properties."
+      },
+      {
        "name": "high_temperature",
        "kind": "computation",
-       "statement": "Ising Z^d: Simon-Lieb with Lambda = {0} gives chi <= 1/(1 - 2dJ), so beta_c >= 1/(2dJ)."
+       "statement": "Ising Z^d, nearest-neighbour coupling J with 0 <= 2dJ < 1: Simon-Lieb with Lambda = {0}, applied in V_R to max_v sum_y <s_v s_y>_{V_R}, gives chi(rho_I, J) <= 1/(1 - 2dJ); at d = 1, J = 1/4 this reads e^{1/2} = 1.6487 <= 2. For J > 0, applying the estimate to beta J with 2d beta J < 1 gives beta_c(rho_I, J) >= 1/(2dJ); for J = 0, beta_c = infinity."
+      },
+      {
+       "name": "high_temperature_domain",
+       "kind": "non-example",
+       "statement": "d = 1, J = 1: chi(rho_I, 1) = e^2 = 7.389 while 1/(1 - 2dJ) = -1, and at J = 1/2 the denominator vanishes; the susceptibility estimate is asserted only for 2dJ < 1, while beta_c(rho_I, J) >= 1/(2dJ) holds for every J > 0."
       }
      ]
     },
@@ -1184,7 +1277,7 @@
      "statement": "On T_L = (Z/2LZ)^d, L >= 1: J^per_xy = J #{(j,+-) : y = x +- e_j}; mu^per_{L,J,rho} = mu_{T_L, J^per, rho}; S^_L(p) = sum_x e^{ip.x} <phi_0 phi_x>^per for p in (pi/L)Z^d cap (-pi,pi]^d.",
      "hypotheses": [
       "L >= 1",
-      "J > 0",
+      "J >= 0",
       "rho admissible"
      ],
      "locator": {
@@ -1303,7 +1396,7 @@
       {
        "name": "constant_h",
        "kind": "degenerate",
-       "statement": "h constant: Z(h) = Z(0)."
+       "statement": "h constant: Z(h) = Z(0). J = 0: rho~ = rho and Z(h) = 1 = Z(0) for every h."
       }
      ]
     },
@@ -1311,10 +1404,11 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "infraredBound",
-     "statement": "For p in Lambda*_L minus {0}: E(p) S^_L(p) <= 1/J; J <(phi, -Delta h)^2> <= (h, -Delta h) for real h; sum rule <phi_0^2> = |T_L|^{-1} sum_p S^_L(p); for d >= 3, |T_L|^{-1} sum_{p != 0} 1/E(p) -> I_d = (2 pi)^{-d} integral dp/E(p).",
+     "statement": "For J > 0 and p in Lambda*_L minus {0}: E(p) S^_L(p) <= 1/J; for J >= 0, J <(phi, -Delta h)^2> <= (h, -Delta h) = sum_x sum_j (h_x - h_{x+e_j})^2 for real h; sum rule <phi_0^2> = |T_L|^{-1} sum_p S^_L(p); for d >= 3, |T_L|^{-1} sum_{p != 0} 1/E(p) -> I_d = (2 pi)^{-d} integral dp/E(p).",
      "hypotheses": [
       "rho admissible (not necessarily even)",
-      "J > 0"
+      "J >= 0",
+      "J > 0 for the bound E(p) S^_L(p) <= 1/J"
      ],
      "locator": {
       "source": "peled-spinka-2017",
@@ -1340,6 +1434,11 @@
        "name": "sum_rule_two_site",
        "kind": "computation",
        "statement": "(1/2)((1+t) + (1-t)) = 1 = <s0^2>."
+      },
+      {
+       "name": "zero_coupling",
+       "kind": "degenerate",
+       "statement": "J = 0: the quadratic form reads 0 <= (h, -Delta h) (positive semidefiniteness of -Delta) and E(p) S^_L(p) <= 1/J is not asserted. L = 1, d = 1, h = (1, -1): (h, -Delta h) = 8 = 2(h_0 - h_1)^2; for J > 0, Ising, (phi, -Delta h) = 4(s_0 - s_1) and the form reads 32J(1 - tanh 2J) <= 8, the two_site_ir test."
       }
      ]
     },
@@ -1347,7 +1446,7 @@
      "id": "5.5",
      "kind": "theorem",
      "name": "longRangeOrder_ising",
-     "statement": "For d >= 3, Ising, J > 0: liminf_L <(|T_L|^{-1} sum_x sigma_x)^2>^per >= 1 - I_d/J; for admissible rho, liminf_L (|T_L|^{-1} S^_L(0) - <phi_0^2>^per_L) >= -I_d/J.",
+     "statement": "For d >= 3, Ising, J > 0: liminf_L <(|T_L|^{-1} sum_x sigma_x)^2>^per >= 1 - I_d/J; for admissible rho and J > 0, liminf_L (|T_L|^{-1} S^_L(0) - <phi_0^2>^per_L) >= -I_d/J.",
      "hypotheses": [
       "d >= 3",
       "J > 0"
@@ -1645,7 +1744,12 @@
       {
        "name": "independent_spins",
        "kind": "computation",
-       "statement": "J = 0, Ising: Sigma = (2L+1)^d and <T_f^2> -> 2^{-d} integral f^2."
+       "statement": "J = 0, Ising, f in C_c(R^d): Sigma = (2L+1)^d and <T_f^2>_{V_R} = sum_{x in V_R} f(x/L)^2/(2L+1)^d -> 2^{-d} integral f^2 as L -> infinity with R = R(L) >= L such that V_{R(L)} eventually contains every x with x/L in supp f (e.g. R(L)/L -> infinity); the volume-first limit of 7.2 gives the same value."
+      },
+      {
+       "name": "independent_spins_volume_needed",
+       "kind": "non-example",
+       "statement": "d = 1, J = 0, Ising, R = L, f(u) = max(0, 1 - |u - 3|): every sampled f(x/L) with |x| <= L is 0, so <T_f^2> = 0 for every L, whereas (1/2) integral f^2 = 1/3; with R = 4L the normalised second moment is (2L^2+1)/(3L(2L+1)) -> 1/3."
       },
       {
        "name": "chain_block_variance",
@@ -1668,7 +1772,7 @@
      "id": "7.2",
      "kind": "definition",
      "name": "IsReachable",
-     "statement": "A reachability scheme: rho_n in C, J_n >= 0, L_n -> infinity, R_{n,m} >= L_n with R_{n,m} -> infinity in m, each nearest-neighbour triple stable with every coordinate square integrable, so 0 <= Sigma_{n,m} < infinity; Sigma=0 gives T=0; it converges if for every finite F subset C_c(R^d) the laws of (T^{n,m}_f)_{f in F} converge weakly in m to nu^n_F and nu^n_F -> nu_F in n; a random field is C-reachable if its fdd laws are the nu_F of a convergent scheme.",
+     "statement": "A reachability scheme: rho_n in C, J_n >= 0, L_n -> infinity, R_{n,k} >= L_n with R_{n,k} -> infinity in k, each nearest-neighbour triple stable with every coordinate square integrable, so 0 <= Sigma_{n,k} < infinity; Sigma=0 gives T=0; it converges if for every finite F subset C_c(R^d) the laws of (T^{n,k}_f)_{f in F} converge weakly in k to nu^n_F and nu^n_F -> nu_F in n; a random field is C-reachable if its fdd laws are the nu_F of a convergent scheme.",
      "hypotheses": [
       "C a set of probability measures on R",
       "d >= 1"
@@ -1724,7 +1828,7 @@
      "id": "7.3",
      "kind": "theorem",
      "name": "reachable_structure",
-     "statement": "Every convergent scheme has a reachable field, unique up to fdd (limits projective and linear); if C consists of even measures, Phi and -Phi have the same law and existing odd moments vanish; reachable fields are W_d-invariant; E[T_f(Phi)^2] <= liminf_n liminf_m <(T^{n,m}_f)^2>.",
+     "statement": "Every convergent scheme has a reachable field, unique up to fdd (limits projective and linear); if C consists of even measures, Phi and -Phi have the same law and existing odd moments vanish; reachable fields are W_d-invariant; E[T_f(Phi)^2] <= liminf_n liminf_k <(T^{n,k}_f)^2>.",
      "hypotheses": [
       "convergent reachability scheme"
      ],
@@ -1814,13 +1918,13 @@
      "id": "7.4.1",
      "kind": "theorem",
      "name": "gff_reachable",
-     "statement": "For d >= 1 and m > 0, and for d >= 3 and m = 0, the Gaussian free field of mass m is reachable from {gamma_b : b < 0} with J_n = 1, b_n = -(d + m^2/(2 L_n^2)), arbitrary L_n -> infinity and R_{n,m} -> infinity.",
+     "statement": "For d >= 1 and m > 0, and for d >= 3 and m = 0, the Gaussian free field of mass m is reachable from {gamma_b : b < 0} with J_n = 1, b_n = -(d + m^2/(2 L_n^2)), arbitrary L_n -> infinity and R_{n,k} -> infinity as k -> infinity.",
      "hypotheses": [
       "m > 0, or m = 0 and d >= 3"
      ],
      "locator": {
       "source": "sokal-1982",
-      "where": "Section 2.3 and Lemma 2.2, lines 620-721; frohlich-1982 lines 266-269; simon-2020-twelve-tales lines 960-975"
+      "where": "Section 2.3 and Lemma 2.2, lines 620-721; frohlich-1982 lines 266-269; simon-2020-twelve-tales Section 3 lines 954-975 (free lattice field as Gaussian ferromagnet, formal, other mass normalisation)"
      },
      "prerequisites": [
       "target:1.5",
@@ -1836,7 +1940,7 @@
       {
        "name": "lattice_normalisation",
        "kind": "computation",
-       "statement": "<(T^{n,m}_{1_Q})^2> = 1 for all n, m."
+       "statement": "<(T^{n,k}_{1_Q})^2> = 1 for all n, k."
       },
       {
        "name": "dirichlet_kernel",
@@ -1874,6 +1978,13 @@
     "§7.1"
    ],
    "what": "Analytic Green kernels of -Delta+m^2: heat integral, Fourier multiplier with 4 pi^2 normalization, local integrability and exponential exterior decay for m>0,d>=1; decaying radial massless kernel and Fourier agreement for m=0,d>=3. Probability law, block normalization and lattice reachability remain here."
+  },
+  {
+   "roadmap": "ZerosOfLFunctions",
+   "sections": [
+    "§5.5"
+   ],
+   "what": "Hadamard factorisation at order at most one (hadamard_of_orderLE_one): an entire f with OrderLE f 1 and f 0 != 0 is exp(a + b s) times the product of (1 - s/rho) exp(s/rho) over its zeros with multiplicity; applied to Laplace transforms of Ising-block measures in 2.1."
   }
  ],
  "consumers": [
@@ -1888,19 +1999,21 @@
    "id": "8.1",
    "kind": "downstream goal",
    "name": "marginalTriviality",
-   "statement": "Owned and proved by ConstructiveFieldTheoryPhi4PartII: For d >= 4 and C = {rho_{lambda,b} : lambda > 0, b real} union {rho_I}: every C-reachable random field with a two-point Schwinger function satisfying (1.10) is a generalised Gaussian process (IsGaussianProcess).",
+   "statement": "Owned and proved by ConstructiveFieldTheoryPhi4PartII: For d >= 4 and C = {rho_{lambda,b} : lambda > 0, b real} union {rho_I}: every random field reachable from C by a convergent scheme of 7.2 with J_n <= beta_c(rho_n, J^nn) for every n (4.3), and with a two-point Schwinger function satisfying (1.10), is a generalised Gaussian process (IsGaussianProcess). Schemes with couplings above the critical point are not part of the statement.",
    "hypotheses": [
-    "Downstream ownership: ConstructiveFieldTheoryPhi4PartII; not a base acceptance target.",
+    "Downstream ownership: ConstructiveFieldTheoryPhi4PartII; not a target of this roadmap.",
     "d >= 4",
-    "Phi C-reachable",
+    "Phi reachable from C by a convergent scheme of 7.2",
+    "J_n <= beta_c(rho_n, J^nn) for every n, J^nn the nearest-neighbour coupling of strength 1 on Z^d (4.3)",
     "S_2 exists and satisfies (1.10)"
    ],
    "locator": {
     "source": "aizenman-duminilcopin-2021",
-    "where": "Theorem 1.2, line 190, with (1.10), line 126 (d = 4); lines 122-128 citing aizenman-1982 and frohlich-1982 lines 112-115 (d >= 5)"
+    "where": "Theorem 1.2, line 190, with (1.10), line 126 (d = 4); estimates Proposition 1.4, lines 323-326, and Proposition 7.2, lines 2014-2017, for beta <= beta_c and L <= xi(beta) ((1.19), line 247); lines 122-128 citing aizenman-1982 and frohlich-1982 lines 84-85 and 112-115 (d >= 5, beta <= beta_c, vanishing long-range order)"
    },
    "prerequisites": [
     "target:0.2",
+    "target:4.3",
     "target:6.2",
     "target:6.3",
     "target:7.2"
@@ -1910,17 +2023,22 @@
     {
      "name": "telegraph_d1",
      "kind": "non-example",
-     "statement": "d = 1: the telegraph field is {rho_I}-reachable with S_2 = e^{-c|u-v|}/kappa satisfying (1.10) and is bounded, hence not Gaussian: d >= 4 cannot be dropped."
+     "statement": "d = 1: the telegraph field is reached from {rho_I} with couplings below beta_c(rho_I, J^nn) = infinity (4.3), has S_2 = e^{-c|u-v|}/kappa satisfying (1.10) and is bounded, hence not Gaussian: d >= 4 cannot be dropped."
     },
     {
      "name": "white_noise_excluded",
      "kind": "degenerate",
-     "statement": "White noise (J_n = 0) has no S_2, so the hypothesis is a genuine restriction; it is Gaussian anyway."
+     "statement": "White noise (J_n = 0 <= beta_c) has no S_2, so the hypothesis is a genuine restriction; it is Gaussian anyway."
+    },
+    {
+     "name": "critical_schemes_included",
+     "kind": "non-example",
+     "statement": "The inequality is not strict: critical schemes J_n = beta_c(rho_n, J^nn) are included (aizenman-duminilcopin-2021 lines 259-260; for Ising xi(beta_c) = infinity, lines 250-252); schemes with some J_n > beta_c(rho_n, J^nn) are outside the statement."
     },
     {
      "name": "gff_consistent",
      "kind": "compatibility",
-     "statement": "The d = 4 GFF satisfies the field hypotheses with single-site measures outside C and is Gaussian."
+     "statement": "The d = 4 GFF has single-site measures gamma_{b_n} outside C and is Gaussian; 4.3 does not apply to gamma_b, but the Gaussian lattice susceptibility 1/(2(|b_n| - d beta)) is finite exactly for beta < |b_n|/d = 1 + m^2/(2d L_n^2) and equals L_n^2/m^2 at J_n = 1, so J_n = 1 is below the Gaussian critical coupling for m > 0 and at it for m = 0."
     }
    ],
    "owner": "ConstructiveFieldTheoryPhi4PartII"
@@ -1929,19 +2047,21 @@
    "id": "8.2",
    "kind": "downstream goal",
    "name": "marginalTriviality_griffithsSimon",
-   "statement": "Owned and proved by ConstructiveFieldTheoryPhi4PartII: For d >= 4 and C the Griffiths-Simon class of 2.2: every C-reachable random field with a two-point Schwinger function satisfying (1.10) is a generalised Gaussian process.",
+   "statement": "Owned and proved by ConstructiveFieldTheoryPhi4PartII: For d >= 4 and C the Griffiths-Simon class of 2.2: every random field reachable from C by a convergent scheme of 7.2 with J_n <= beta_c(rho_n, J^nn) for every n (4.3), and with a two-point Schwinger function satisfying (1.10), is a generalised Gaussian process. Schemes with couplings above the critical point are not part of the statement.",
    "hypotheses": [
-    "Downstream ownership: ConstructiveFieldTheoryPhi4PartII; not a base acceptance target.",
+    "Downstream ownership: ConstructiveFieldTheoryPhi4PartII; not a target of this roadmap.",
     "d >= 4",
-    "Phi reachable from the Griffiths-Simon class",
+    "Phi reachable from the Griffiths-Simon class by a convergent scheme of 7.2",
+    "J_n <= beta_c(rho_n, J^nn) for every n, J^nn the nearest-neighbour coupling of strength 1 on Z^d (4.3)",
     "S_2 exists and satisfies (1.10)"
    ],
    "locator": {
     "source": "aizenman-duminilcopin-2021",
-    "where": "Section 7, lines 1979-1985; Theorem 7.1, line 2006; Proposition 7.2, lines 2014-2017 (d = 4); aizenman-1982 (d >= 5)"
+    "where": "Section 7, lines 1979-1985; Theorem 7.1, lines 2006-2007; Proposition 7.2, lines 2014-2017, for beta <= beta_c(rho) and L <= xi(rho, beta) (d = 4); aizenman-1982 (d >= 5)"
    },
    "prerequisites": [
     "target:2.2",
+    "target:4.3",
     "target:6.2",
     "target:6.3",
     "target:7.2"
@@ -1951,12 +2071,17 @@
     {
      "name": "implies_8_1",
      "kind": "compatibility",
-     "statement": "8.2 implies 8.1 since rho_I and phi^4 measures are in the class and reachability is monotone in C."
+     "statement": "8.2 implies 8.1: rho_I and phi^4 measures are in the class, and a scheme with single-site measures in the smaller class and J_n <= beta_c(rho_n, J^nn) is such a scheme for the larger class (the coupling condition involves only rho_n and J_n; reachability is monotone in C)."
     },
     {
      "name": "telegraph",
      "kind": "non-example",
-     "statement": "The d = 1 telegraph field shows d >= 4 is needed, as rho_I is in the class."
+     "statement": "The d = 1 telegraph field shows d >= 4 is needed, as rho_I is in the class and beta_c(rho_I, J^nn) = infinity in d = 1."
+    },
+    {
+     "name": "dirac_zero_field",
+     "kind": "degenerate",
+     "statement": "delta_0 is in the class with beta_c(delta_0, J^nn) = infinity; its only reachable field is the zero field, with S_2 = 0 satisfying (1.10) and Dirac (variance 0 Gaussian) finite-dimensional laws, consistent with the statement."
     },
     {
      "name": "gaussian_outside",
