@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13300 mistakes recorded on the board: 7636 misprints, 3472 errors, 1724 gaps, 468 unparsed bullets.
+13301 mistakes recorded on the board: 7636 misprints, 3473 errors, 1724 gaps, 468 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2688,6 +2688,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Proposition 5.1, p.119, line 646: the source says the source characterizes dimension-one duality groups as all finitely generated free groups; it should be exclude the trivial free group, as the proof at line 648 does; affects a stated result. Found by FinitenessAndDualityOfGroups (#15391 at 4505272, 2026-11-15, codex gpt-6-astra).
 - **Misprint** at Proposition 5.1, printed p. 119: the source says all finitely generated free groups are precisely the dimension-one duality groups; it should be all nontrivial finitely generated free groups, as the proof immediately specifies; affects a stated result. Found by FinitenessAndDualityOfGroups (#15109 at e13a441, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Proposition 5.1, printed p. 119: the source says all finitely generated free groups are the dimension-one duality groups; it should be all nontrivial finitely generated free groups, as its proof specifies; affects a stated result. Found by FinitenessAndDualityOfGroups (#15109 at 56bb703, 2026-11-15, codex gpt-6-astra).
+- **Error** at Proposition 5.1, printed page 119: the source says the duality groups of dimension one are exactly all finitely generated free groups; it should be the nontrivial ones, the trivial group having dimension zero, as its proof assumes; affects nothing. Found by FinitenessAndDualityOfGroups (#15391 at 4505272, 2026-11-15, claude fable).
 
 ## BieriEckmann1974
 
