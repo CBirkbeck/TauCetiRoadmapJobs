@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GeometricSatakeAndFusion~3",
+  "head": "140b5a7ef0911741962fc87bc1f5b32c7e372e0d",
+  "pr": 1235,
+  "folder": "GeometricSatakeAndFusion",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "incremental re-review of 25 changed lines since 623fd52. Checked: the five previous findings (R03, R05 repaired; R01, R04 partly; R02 withdrawn, since a manifest in the folder would be a stray file); the new Checks of 0.15, 0.34, 0.38 recomputed; the changed CS and FS locators and the seeded target 4.19 against the texts; the VS1.5 citation at the supplier's head; the pull request's title and description against the head (three stale sentences). Gate passes (all counters 0, depcheck 0 problems), Suggested.lean elaborates with no warning and declares nothing. Five P3 findings: missing API list in 0.15, false FS page note, three description sentences.",
+  "text": "2efc4dd9b94d1afe",
+  "carried": {
+   "from": "140b5a7ef0911741962fc87bc1f5b32c7e372e0d",
+   "head": "392d28ee5b14629578575d590e1171cfdda86b9f",
+   "findings": 5,
+   "lines": 16,
+   "folders": [
+    "GeometricSatakeAndFusion"
+   ],
+   "outside": true
+  }
+ }
+}

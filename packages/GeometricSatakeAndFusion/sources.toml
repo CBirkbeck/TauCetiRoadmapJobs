@@ -1,0 +1,258 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GeometricSatakeAndFusion"
+
+[[source]]
+id = "FS"
+authors = "Laurent Fargues, Peter Scholze"
+title = "Geometrization of the local Langlands correspondence"
+year = 2021
+locator_scheme = "theorem"
+locator = "Theorem VI.0.2; Propositions VI.1.13, VI.9.2, IV.7.3; §IX.2; Definition IX.7.1"
+url = "https://people.mpim-bonn.mpg.de/scholze/Geometrization.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Geometrization.pdf"
+fetched_at = "2026-11-15T11:49:53Z"
+sha256 = "9ab9efbd0df251bfa3b610d1d1d88a8dfb1bdf7c397bd04f4c277280d98ae905"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "Author-hosted PDF of 356 pages; PDF page = printed page. The extracted text has more page markers than the PDF has pages, because form-feed characters inside displayed formulas split pages; locators use the printed page numbers."
+cited_for = ["GS0", "GS1", "GS2", "GS3", "GS4"]
+
+[[source]]
+id = "CS"
+authors = "Ana Caraiani, Peter Scholze"
+title = "On the generic part of the cohomology of compact unitary Shimura varieties"
+year = 2015
+venue = "Ann. of Math. 186 (2017) 649–766"
+doi = "10.4007/annals.2017.186.3.1"
+arxiv = "1511.02418v1"
+locator_scheme = "theorem"
+locator = "Proposition 3.4.3 and its proof; Lemma 3.4.4–Corollary 3.4.6"
+url = "https://arxiv.org/abs/1511.02418v1"
+fetched_from = "https://arxiv.org/pdf/1511.02418v1"
+fetched_at = "2026-11-15T11:51:36Z"
+sha256 = "aa93df3947e57ab78b070a82d638e70c25ae2ae15aeb60346575e74fdf85b349"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1 read; Proposition 3.4.3, Lemma 3.4.4, Theorem 3.4.5 and Lemma 3.4.6 carry the numbers the README cites. The README's pages 684–686 are printed pages of the published Annals version, which was not read here."
+cited_for = ["0.15"]
+
+[[source]]
+id = "BS"
+authors = "Bhargav Bhatt, Peter Scholze"
+title = "Projectivity of the Witt vector affine Grassmannian"
+year = 2015
+arxiv = "1507.06490v3"
+locator_scheme = "theorem"
+locator = "Theorem 4.1; Proposition 6.1; Theorems 6.8, 6.13; 7.1–7.14; 8.1–8.11; 9.4–9.5; 10.1–10.6"
+url = "https://arxiv.org/abs/1507.06490v3"
+fetched_from = "https://arxiv.org/pdf/1507.06490v3"
+fetched_at = "2026-11-15T11:53:16Z"
+sha256 = "b4d5a4e0a6591971c6b8521d790e5db6e61112f1350a0e4a05a8d98b6e0b961e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["0.16", "0.17", "0.20", "0.21", "0.22", "0.23", "0.24", "0.25", "0.26", "0.27", "0.35", "0.36"]
+
+[[source]]
+id = "SW"
+authors = "Peter Scholze, Jared Weinstein"
+title = "Berkeley Lectures on p-adic Geometry"
+year = 2020
+locator_scheme = "theorem"
+locator = "Lemma 19.1.5; §§20.3–20.5; 21.1.1–21.1.4; 21.2.1–21.2.3; 21.4.3; 21.5.1"
+url = "https://www.math.uni-bonn.de/people/scholze/Berkeley.pdf"
+fetched_from = "https://www.math.uni-bonn.de/people/scholze/Berkeley.pdf"
+fetched_at = "2026-11-15T11:53:31Z"
+sha256 = "225505171ef809aa0070c023c881ff1da844923775f2d631474c0b42eea4bffc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "Author-hosted PDF dated March 27, 2020; PDF page = printed page + 10."
+cited_for = ["0.3", "0.4", "0.28", "0.29", "0.30", "0.31", "0.32"]
+
+[[source]]
+id = "Zhu"
+authors = "Xinwen Zhu"
+title = "Affine Grassmannians and the geometric Satake in mixed characteristic"
+year = 2014
+venue = "Ann. of Math. 185 (2017) 403–492"
+doi = "10.4007/annals.2017.185.2.2"
+arxiv = "1407.8519v3"
+locator_scheme = "theorem"
+locator = "Theorem 0.3; 1.9–1.20; 2.1–2.36; A.29–A.31; B.4–B.11"
+url = "https://arxiv.org/abs/1407.8519v3"
+fetched_from = "https://arxiv.org/pdf/1407.8519v3"
+fetched_at = "2026-11-15T11:53:36Z"
+sha256 = "2c23e397d21e84812daec2c637e2a763eec54ef0d784748eb74e3b2093de1e5b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3 read; Theorem 0.3, Lemmas 1.18, 2.1, 2.11, B.10–B.11, Propositions 2.2, 2.3, 2.36, Remark 2.4 and Corollary 2.22 carry the numbers the README cites. The README's pages are printed pages of the published Annals version, which was not read here."
+cited_for = ["0.18", "0.19", "0.21", "0.29", "0.33", "0.34", "1.3", "1.5", "1.14", "1.15", "1.16", "1.17", "2.6", "2.11", "3.7", "4.5", "4.6", "4.7", "4.8", "4.10", "4.11", "4.15", "4.26", "4.27", "4.28", "4.29"]
+
+[[source]]
+id = "PR"
+authors = "Georgios Pappas, Michael Rapoport"
+title = "Twisted loop groups and their affine flag varieties"
+year = 2008
+locator_scheme = "theorem"
+locator = "Theorem 1.4; §§8.b–8.c, Proposition 8.8"
+url = "https://www.math.uni-bonn.de/people/rapoport/myalggeom/preprints/twistedloop.pdf"
+fetched_from = "https://www.math.uni-bonn.de/people/rapoport/myalggeom/preprints/twistedloop.pdf"
+fetched_at = "2026-11-15T11:53:45Z"
+sha256 = "44d4ede738041bea8ea1441a8058ee333023ba7ef5f796b8e8b352fa3204812a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "Author preprint dated August 17, 2006, 72 pages; printed and PDF pages agree. Published in Adv. Math. 219 (2008)."
+cited_for = ["0.29", "1.15"]
+
+[[source]]
+id = "AGLR"
+authors = "Johannes Anschütz, Ian Gleason, João Lourenço, Timo Richarz"
+title = "On the $p$-adic theory of local models"
+year = 2022
+arxiv = "2201.01234v1"
+locator_scheme = "theorem"
+locator = "Definitions 3.6, 3.11, 4.11; Example 4.12; Proposition 4.16; Propositions 6.7, 6.13"
+url = "https://arxiv.org/abs/2201.01234v1"
+fetched_from = "https://arxiv.org/pdf/2201.01234v1"
+fetched_at = "2026-11-15T11:53:51Z"
+sha256 = "6101b6c3de069ff67b2a416d79670aae68b3287ca1a25ae6dcd0be031d6ebf0b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["0.37", "4.17", "4.18"]
+
+[[source]]
+id = "DH"
+authors = "Stephen Doty, Anne Henke"
+title = "Decomposition of tensor products of modular irreducibles for $\\SL_2$"
+year = 2002
+arxiv = "math/0205186v1"
+locator_scheme = "theorem"
+locator = "Lemmas 1.1, 1.4; §5"
+url = "https://arxiv.org/abs/math/0205186v1"
+fetched_from = "https://arxiv.org/pdf/math/0205186v1"
+fetched_at = "2026-11-15T11:53:55Z"
+sha256 = "8fb52434afec7149a85783fbc791f17cb2f7c539312bc3aec94a14ada10f4d6f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["4.10"]
+
+[[source]]
+id = "DM"
+authors = "Pierre Deligne, James S. Milne"
+title = "Tannakian categories"
+year = 1982
+locator_scheme = "theorem"
+locator = "Theorem 2.11; Proposition 2.20; Corollary 2.22; Proposition 2.23"
+url = "https://www.jmilne.org/math/xnotes/tc.pdf"
+fetched_from = "https://www.jmilne.org/math/xnotes/tc.pdf"
+fetched_at = "2026-11-15T11:53:57Z"
+sha256 = "48f8af5249081217fc4a806414a764d9d69d66eff9092ddd8e2cf0ea078579e8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "Revised notes dated August 15, 2012; locators are to this revision."
+cited_for = ["4.1", "4.6"]
+
+[[source]]
+id = "Gross"
+authors = "Benedict H. Gross"
+title = "On the Satake isomorphism"
+year = 1998
+locator_scheme = "section"
+locator = "§§2–3, (3.3)–(3.6), Proposition 3.6, (3.13); §8"
+url = "https://people.math.harvard.edu/~gross/preprints/sat.pdf"
+fetched_from = "https://people.math.harvard.edu/~gross/preprints/sat.pdf"
+fetched_at = "2026-11-15T11:53:59Z"
+sha256 = "9bd0077b2057edd32885e46fd38872f423a4d45fef6bec0aa181af32dee062b3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "Author preprint, 17 pages; printed and PDF pages agree."
+cited_for = ["4.26", "4.27", "4.28", "4.29"]
+
+[[source]]
+id = "He"
+authors = "Xuhua He"
+title = "Cordial elements and dimensions of affine Deligne–Lusztig varieties"
+year = 2021
+venue = "Forum Math. Pi 9 (2021) e9"
+doi = "10.1017/fmp.2021.10"
+arxiv = "2001.03325"
+locator_scheme = "theorem"
+locator = "5.3–5.6"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/5A27DBF48CAEF6DA56A313061848574C/S205050862100010Xa.pdf/cordial-elements-and-dimensions-of-affine-delignelusztig-varieties.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/5A27DBF48CAEF6DA56A313061848574C/S205050862100010Xa.pdf/cordial-elements-and-dimensions-of-affine-delignelusztig-varieties.pdf"
+fetched_at = "2026-11-15T11:55:24Z"
+sha256 = "d53843f0c8875cf1e14173ad271e025bd30f177fe319a7d83926629d454683dd"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "Published open-access version (CC BY); its text layer is unusable and the text was recognised by OCR. PDF page = printed page."
+cited_for = ["0.38", "0.39"]
+
+[[source]]
+id = "vH"
+authors = "Pol van Hoften"
+title = "Mod p points on Shimura varieties of parahoric level"
+year = 2024
+venue = "Forum Math. Pi 12 (2024) e20"
+doi = "10.1017/fmp.2024.22"
+locator_scheme = "section"
+locator = "§§2.2.14–2.2.15"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EC6F7AD8C8B489FEB8FC4D64485ABE1D/S2050508624000222a.pdf/mod_p_points_on_shimura_varieties_of_parahoric_level.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/EC6F7AD8C8B489FEB8FC4D64485ABE1D/S2050508624000222a.pdf/mod_p_points_on_shimura_varieties_of_parahoric_level.pdf"
+fetched_at = "2026-11-15T11:55:26Z"
+sha256 = "d86da9a0e35c93d22df291979be37a5acf1ddc44fbd762e11f2a5f6c92961be0"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "Published open-access version (CC BY 4.0); PDF pages used as locators."
+cited_for = ["0.37"]
+
+[[source]]
+id = "GLX"
+authors = "Ian Gleason, Dong Gyu Lim, Yujie Xu"
+title = "The connected components of affine Deligne--Lusztig varieties"
+year = 2022
+venue = "Inventiones mathematicae (2026)"
+doi = "10.1007/s00222-025-01386-1"
+arxiv = "2208.07195v3"
+locator_scheme = "theorem"
+locator = "§§3.2–3.3, Lemmas 3.3–3.4"
+url = "https://arxiv.org/abs/2208.07195v3"
+fetched_from = "https://arxiv.org/pdf/2208.07195v3"
+fetched_at = "2026-11-15T11:56:20Z"
+sha256 = "d2249ddbe1ae2f4728000d27846d396adffc97b2f8b7b1c82c5d2701153fcb12"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3 read; §§3.2–3.3 and Lemmas 3.3–3.4 carry the numbers the README cites. The published Inventiones edition is paywalled and was not read; the README's pp. 822–823 are its printed pages, cited by locator."
+cited_for = ["4.18"]
+
+[[source]]
+id = "PY"
+authors = "Gopal Prasad, Jiu-Kang Yu"
+title = "On quasi-reductive group schemes"
+year = 2004
+arxiv = "math/0405381v1"
+locator_scheme = "theorem"
+locator = "Corollary 1.3; proof in §5.4"
+url = "https://arxiv.org/abs/math/0405381v1"
+fetched_from = "https://arxiv.org/pdf/math/0405381v1"
+fetched_at = "2026-11-15T11:56:26Z"
+sha256 = "96d18638f804ff780e126aa4462fae155d935dd535589d89c4e7c84a16f45561"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1 read; Corollary 1.3 and its proof in §5.4 carry the numbers the README cites, with §5.4 on pp. 11–12 of v1. Published in J. Algebraic Geom. 15 (2006)."
+cited_for = ["4.13"]
