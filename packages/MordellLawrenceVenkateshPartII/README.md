@@ -46,8 +46,8 @@ This roadmap owns:
    coefficient-group types, finiteness of semisimplification geometries and finiteness of local
    nonabelian Galois cohomology.
 4. **Period orbits and transcendence transfer** (Layer 3): period maps in one monodromy orbit,
-   parabolic stabilizers, the codimension consequence of Ax–Schanuel and its transfer to p-adic
-   non-density over an arbitrary number field.
+   parabolic stabilizers, the codimension consequence of Ax–Schanuel (§3.3; Lawrence–Sawin,
+   Lemma 6.3) and its transfer to p-adic non-density over an arbitrary number field.
 5. **Balanced monodromy and balanced filtrations** (Layers 4–5): index classes of subdirect
    products, strong balance, torsion-orbit balance, semisimple orbit codimension, central weights,
    induced Levi filtrations, balance and semibalance, global purity over ℚ, bifiltered Frobenius
@@ -81,8 +81,9 @@ It uses, and does not redevelop:
 - **ClassicalArithmeticCompletion** §§2.18, 2.39 and 2.56 own Eulerian numbers, their basic
   identities and unimodality; `eulerian` in `Suggested.lean` restates §2.18's definition only so
   that the Layer 8 headline can be stated.
-- **ReductiveGroups** owns algebraic groups, their tori (Layer 4), unipotent radicals (Layer 5),
-  characteristic-zero Levi complements (Layer 6A), root, Weyl, parabolic and Bruhat theory
+- **ReductiveGroups** owns algebraic groups, their closed subgroups, quotients and component groups
+  (Layer 3), their tori (Layer 4), unipotent radicals (Layer 5), characteristic-zero Levi
+  complements (Layer 6A), root, Weyl, parabolic and Bruhat theory
   (Layer 7) and algebraic parabolics with Levi intersections (Layer 7b). The coefficient-normalizer
   specializations and the remaining disconnected-group statements of Layer 2 (rational
   semisimplification, semisimplification geometries) are owned here.
@@ -109,13 +110,16 @@ It uses, and does not redevelop:
   affine faithfully flat torsor of tensor isomorphisms between two fibre functors; PadicHodgeTheory
   §5.5 specializes that torsor to finite-type groups.
 - **PadicHodgeTheory** owns period rings, Fontaine's functors and their tensor exactness
-  (§§3.3–3.6), the Sen operator (§4.4), the rational Fontaine–Laffaille comparison (§6.1), the proper
+  (§§3.3–3.6), the Sen operator (§4.4), the local torsor theorem for connected reductive groups over
+  finite extensions of `ℚ_p` (§5.5), the rational Fontaine–Laffaille comparison (§6.1), the proper
   smooth pushforward of de Rham local systems with its Gauss–Manin connection (§7.3) and the
   rational comparison for proper smooth varieties with its functoriality (§§8.1–8.2);
   CrystallineCohomology §CR.7.3 owns relative crystalline cohomology with its Gauss–Manin
   connection.
 - **DeligneWeightsAndPurity** owns Weil numbers, weights and their linear algebra (§§0.1–0.2,
-  0.7, 0.9–0.10, 0.16) and purity for smooth projective varieties (§§4.3–4.4);
+  0.7, 0.9–0.10, 0.16), Zariski density of open subgroups of `Sp(V)(ℚ_ℓ)` (§2.2), purity for smooth
+  projective varieties (§§4.3–4.4) and the orthogonality of invariant and vanishing cohomology of a
+  hyperplane section (§9.12);
   PadicDifferentialEquationsAndRigidCohomology §RD.7.7 owns the Katz–Messing agreement of
   crystalline and ℓ-adic Weil factors; InverseGaloisAndArithmeticFundamentalGroups §IG.0.T4 owns the
   constant-sheaf point-count trace formula; WeilConjectures Layer WC.5 and
@@ -139,7 +143,8 @@ It uses, and does not redevelop:
   Hilbert families (§2.1) and the characteristic-zero resolution preserving the regular locus (§9.4).
 - **AbelianSchemesAndArithmeticModuli** owns abelian schemes (§A0.1), rigidity (§A1.2), extension
   of sections over Dedekind bases (§A1.8), ample cohomology and degrees (§A2.4), the Néron–Severi
-  group (§A2.10), quotients by finite subgroups (§A3.3), theta groups and polarized descent
+  group (§A2.10), multiplication maps and prime-to-characteristic torsion (§A3.2), quotients by
+  finite subgroups (§A3.3), theta groups and polarized descent
   (§A3.6), finite rank of Hom (§A6.7), Rosati positivity (§A6.14) and Weil restriction
   (§§A6.30–A6.32). Tau Ceti supplies abelian varieties over a field as
   `TauCeti.AlgebraicGeometry.AbelianVariety`. **JacobianChallenge** Layer F owns the Abel–Jacobi map
@@ -329,13 +334,16 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 
 ### From TauCetiRoadmap.ReductiveGroups
 
-- Layer 4 (Jordan decomposition, diagonalizable groups and tori), Layer 5 (unipotent groups and the
-  unipotent radical), Layer 6A (characteristic-zero Levi complements for general affine groups),
-  Layer 7 (Borel and parabolic subgroups, roots, Weyl group and Bruhat decomposition) and Layer 7b
-  (algebraic parabolics and Levi intersections), all over a field of characteristic zero. Consumed
-  in Layers 2, 4 and 5. Connected root theory is used only on identity components; complete
-  reducibility for disconnected groups is imported from LanglandsParameterStacks §§2.3–2.4, and the
-  other disconnected-group statements are targets here.
+- Layer 3 (closed subgroup schemes and kernels, normal subgroups and their fppf quotients, the
+  identity component and its finite étale component group), Layer 4 (Jordan decomposition,
+  diagonalizable groups and tori), Layer 5 (unipotent groups and the unipotent radical), Layer 6A
+  (characteristic-zero Levi complements for general affine groups), Layer 7 (Borel and parabolic
+  subgroups, roots, Weyl group and Bruhat decomposition) and Layer 7b (algebraic parabolics and Levi
+  intersections), all over a field of characteristic zero. Layer 3 is consumed in §2.1, for the
+  normalizer as a group scheme and the exactness of `1 → B → G → Aut_(E₀)(E) → 1`; the layers
+  together are consumed in Layers 2, 3, 4 and 5. Connected root theory is used only on identity
+  components; complete reducibility for disconnected groups is imported from LanglandsParameterStacks
+  §§2.3–2.4, and the other disconnected-group statements are targets here.
 
 ### From TauCetiRoadmap.ReductiveGroupsPartII
 
@@ -388,11 +396,14 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 
 ### From TauCetiRoadmap.ShimuraData
 
-- §3.1 (variations of Hodge structure), §3.3 (polarized rational variations), §3.4 (polarized
-  integral variations), §3.5 (flat-bundle local comparison: local flat frames turn a variation into
-  a holomorphic flag map), §3.6 (Griffiths transversality as a tangent condition on that flag map),
-  §3.7 (the parabolic of a Hodge filtration) and §1.2 (Mumford–Tate groups). Consumed in Layers 0
-  and 3.
+- §3.1 (variations of Hodge structure), §3.2 (morphisms of variations, with kernels and images as
+  subvariations whose Hodge ranks are locally constant), §3.3 (polarized rational variations), §3.4
+  (polarized integral variations), §3.5 (flat-bundle local comparison: local flat frames turn a
+  variation into a holomorphic flag map), §3.6 (Griffiths transversality as a tangent condition on
+  that flag map), §3.7 (the parabolic of a Hodge filtration), §1.2 (Mumford–Tate groups), §1.3 (the
+  Mumford–Tate group of a rational pure Hodge structure is connected) and §1.4 (that of a polarizable
+  one is reductive). §3.2 is consumed in §0.3 and §§1.3–1.4 in §3.1; all of them are consumed in
+  Layers 0 and 3.
 - What ShimuraData must provide (gap:andre-monodromy-normality): for a polarized integral variation of Hodge structure on a connected smooth complex algebraic variety, the identity component of the Zariski closure of its monodromy group is a normal subgroup of the derived group of its generic Mumford–Tate group (Deligne–André).
 
 ### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuliPartII
@@ -421,8 +432,14 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 
 - §§3.3–3.6: Fontaine's functors, admissibility, the crystalline and semistable classification and
   group-valued filtered data; `D_cris` and `D_dR` are exact faithful tensor functors on crystalline
-  representations. Consumed in §§0.3, 1.2, 2.6 and 7.1.
-- §5.5: the finite-type specialization of the tensor-isomorphism torsor. Consumed in §7.1.
+  representations. Consumed in §§0.3, 1.2, 2.6, 7.1 and 7.5.
+- §4.4: the Sen operator on `C ⊗ V` of a finite-dimensional continuous `ℚ_p`-representation `V` of
+  `G_K`, whose eigenvalues are the generalized Hodge–Tate weights, with its tensor and dual formulas.
+  Consumed in §7.2, together with gap:hodge-tate-image-cocharacter.
+- §5.5: the finite-type specialization of the tensor-isomorphism torsor, and the local torsor
+  theorem: for a finite extension `F/ℚ_p` and a connected reductive group `G` over `F`, a pointed
+  bijection `H¹(F, G) ≃ (π₁(G)_(Γ_F))_tors`, natural in `G` (Kottwitz), so that `H¹(F, G)` is finite.
+  The torsor is consumed in §§2.6 and 7.1 and the local torsor theorem in §2.11.
 - §6.1: the rational Fontaine–Laffaille comparison with its signs. Consumed in §7.3.
 - §7.3: for a proper smooth morphism `f` of smooth rigid spaces and a de Rham local system `L` whose
   higher direct images `Rⁱf_*L` are lisse in every degree used, including every degree entering a
@@ -439,14 +456,14 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   crystalline cohomology of the special fibre with its Frobenius and, over `K`, de Rham cohomology
   with its Hodge filtration; the comparisons commute with pullback, cup product and Tate twists,
   and a cohomological projector restricts them when it is given geometrically on both sides.
-  Consumed in §§0.5, 0.7 and 1.2.
+  Consumed in §§0.5, 0.7, 1.2 and 7.5.
 - What PadicHodgeTheory must provide (gap:relative-crystalline-comparison): for a smooth projective morphism `f : 𝒴 → 𝒳` of smooth `W(k)`-schemes with `k` finite and `p` unramified, the fibrewise crystalline comparisons of §8.1 at the points of a residue disk of `𝒳`, which are horizontal for the Gauss–Manin connection on `R^i f_* Ω^•` by the proper smooth pushforward of de Rham local systems of §7.3 applied to the constant coefficient `ℤ_p`, whose higher direct images are lisse, are compatible with the Frobenius of the convergent F-isocrystal `R^i f_crys,*` of CrystallineCohomology §CR.7.3, so that `R^i f_*ℚ_p` and that filtered F-isocrystal are associated in the sense of Faltings.
 - What PadicHodgeTheory must provide (gap:hodge-tate-image-cocharacter): for a crystalline representation `ρ : G_K → GL(V)` of a finite unramified `K/ℚ_p` preserving a family of tensors, the Zariski closure of `ρ(G_K)` contains a torus that is conjugate over `ℚ̄_p`, inside the group fixing those tensors, to the image of the Hodge cocharacter of `D_dR(V)` (Sen; Wintenberger's tensor-compatible splitting).
 
 ### From TauCetiRoadmap.CrystallineCohomology
 
 - §CR.7.3: relative crystalline cohomology of a proper smooth morphism, its base change and its
-  Gauss–Manin connection. Consumed in §0.7.
+  Gauss–Manin connection. Consumed in §§0.5 and 0.7.
 
 ### From TauCetiRoadmap.EtaleCohomologyFoundations and ClassicalAdicEtaleCohomology
 
@@ -468,10 +485,13 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   (eigenvalues under a Frobenius-equivariant perfect pairing), §4.3 (the Weil theorem for smooth
   projective varieties), §4.4 (integral degree factors from distinct weights) and §9.12 (invariant
   and vanishing cohomology of a hyperplane section are orthogonal complements). Consumed in Layers
-  0, 1 and 7.
+  0, 1, 7 and 9; §9.12 in §9.1.
+- DeligneWeightsAndPurity §2.2: for a nondegenerate alternating form on a finite-dimensional
+  `ℚ_ℓ`-vector space `V`, every subgroup of `Sp(V)(ℚ_ℓ)` open for the ℓ-adic topology is Zariski dense
+  in `Sp(V)`. Consumed in §9.2.
 - WeilConjectures Layer WC.3 (separating integral factors by weight) and Layer WC.5, "Complete
   intersections" (`|#X(k_r) − #ℙ^m(k_r)| ≤ b·q^(m·r/2)` with the primitive middle part the only
-  error term). Consumed in §§0.5, 1.9 and 7.8.
+  error term). Layer WC.3 is consumed in §0.5 and Layer WC.5 in §7.8.
 - PadicDifferentialEquationsAndRigidCohomology §RD.7.7 (Katz–Messing): for smooth projective `X`
   over `𝔽_q` and `ℓ ≠ p`, `det(1 − tφ^f | H^i_crys ⊗ K₀) = det(1 − t·Frob_q | H^i(X_F̄_q, ℚ_ℓ))` in
   `1 + tℤ[t]`. Consumed in §7.3.
@@ -497,25 +517,29 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 
 - SchemeAndStackFoundations §§0.8–0.9 (spreading out over Dedekind bases and Noetherian
   approximation) and §4.14 (`hilbert_quot_schemes`: Hilbert and Quot schemes of a projective
-  morphism with a relatively very ample bundle). Consumed in Layers 9 and 10.
+  morphism with a relatively very ample bundle). Consumed in Layers 7, 9 and 10.
 - SchemeAndStackFoundations §1.16 (contracted products and twisting: a torsor under the automorphism
   group of `X` contracts to a form of `X`). Consumed in §1.9, for the twisted forms of a fibre of a
   finite multiplication cover defined by a deck element composed with Frobenius.
 - AlgebraicModuliForArithmeticGeometry §2.1 (Hilbert families as Quot functors, fixed Hilbert
   polynomial subfunctors) and §9.4 (the characteristic-zero projective birational resolution with
   smooth source preserving the entire regular locus, imported there from
-  ResolutionOfSingularitiesCharacteristicZero). Consumed in §§10.2 and 10.4.
+  ResolutionOfSingularitiesCharacteristicZero). §2.1 is consumed in §§9.1 and 10.2, §9.4 in §§7.7
+  and 10.4.
 
 ### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuli
 
 - §A0.1 (abelian schemes), §A1.2 (rigidity over arbitrary bases: a morphism of abelian schemes is a
   translation followed by a homomorphism), §A1.8 (Weil extension over a connected Dedekind base),
-  §A2.4 (ample cohomology, Riemann–Roch and `deg φ_L`), §A2.10 (the Néron–Severi group), §A3.3
+  §A2.4 (ample cohomology, Riemann–Roch and `deg φ_L`), §A2.10 (the Néron–Severi group), §A3.2 (for
+  `r ≠ 0` the multiplication `[r]` is finite locally free of rank `r^(2g)`, and `[r]` and `A[r]` are
+  finite étale over the locus where `r` is invertible, compatibly with base change), §A3.3
   (quotients by finite locally free subgroups), §A3.6 (theta groups and polarized descent), §A6.7
   (Hom is free of finite rank), §A6.14 (positivity of the Rosati involution) and §§A6.30–A6.32
   (Weil restriction, its geometric splitting along separable extensions and Weil restriction of
-  abelian schemes along finite étale maps). Consumed in Layers 2 and 10. §A1.2 applies only to
-  morphisms between abelian schemes; it is not used for a curve mapping to an abelian variety.
+  abelian schemes along finite étale maps). Consumed in Layers 1, 2 and 10; §A3.2 in §1.6. §A1.2
+  applies only to morphisms between abelian schemes; it is not used for a curve mapping to an abelian
+  variety.
 
 ### From TauCetiRoadmap.JacobianChallenge
 
@@ -703,7 +727,9 @@ API:
 - `O_ℚ` is the tensor unit of §0.3.
 - The `H⁰` system of a nonsplit finite étale `K`-algebra is constant on `X` but has a nontrivial
   permutation action of `Gal(K̄/K)`.
-- A nonisotrivial polarized variation has nontrivial geometric monodromy and so is not constant.
+- `H¹` of the Legendre family `y² = x(x − 1)(x − λ)` over `ℙ¹ ∖ {0, 1, ∞}` is a nonisotrivial
+  polarized integral variation. Its local monodromy at `λ = 0` is a nontrivial unipotent, conjugate to
+  `[[1, 2], [0, 1]]`, so it is not constant.
 
 *Needs:* §0.3.
 
@@ -1189,7 +1215,7 @@ over `k` and minimal among those defined over `k` that contain `Γ`. Then `c_λ(
 `k`-rational subgroup whose Zariski closure is G-completely reducible over `k̄`, it is
 `G°(k̄)`-conjugate to the Levi semisimplification of `Γ`, and two choices of `λ` give
 `G°(k̄)`-conjugate images. For `Γ` the image of a representation `ρ` into `G(k)`, the homomorphism
-`ρ^ss = c_λ ∘ ρ` is its **G-semisimplification** (LV, §2.4 and Lemmas 2.4–2.5, pp. 905–906; LS,
+`ρ^ss = c_λ ∘ ρ` is its **G-semisimplification** (LV, §2.3 and Lemmas 2.4–2.5, pp. 905–906; LS,
 Definitions 5.34–5.36 and Lemma 5.37, pp. 55–56). For `k` a finite extension of ℚ_p, the closed
 `k`-subgroups inside one `G(k̄)`-conjugacy class form finitely many `G(k)`-classes (§2.11 with the
 normalizer), and the homomorphisms of a profinite group into `G(k)` that are `G(k̄)`-conjugate to a
@@ -1575,9 +1601,11 @@ gap:polarized-fixed-part; ReductiveGroups Layer 4.
 
 ### 3.2 Parabolic stabilizers of period orbits
 
-For a polarized pure variation, prove that the stabilizer in the identity component of `G_mon` of a
-Hodge filtration is a parabolic subgroup, so the orbit `D_mon` is projective. The route uses normality
-of the connected monodromy group in the derived generic Mumford–Tate group and the Hodge cocharacter:
+For a polarized integral Hodge–Deligne system on `X` (§0.2) with differential monodromy group `G_mon`
+(§0.6) and connected monodromy period orbit `D_mon` (§3.1), prove that the stabilizer in the identity
+component `G_mon°` of a Hodge filtration in `D_mon` is a parabolic subgroup, so `D_mon` is projective;
+a polarized system is pure of one weight (§0.2). The route uses normality of the connected monodromy
+group in the derived generic Mumford–Tate group and the Hodge cocharacter:
 after a positive power the inner action of the Hodge cocharacter on connected monodromy lifts to a
 cocharacter of it, whose dynamic parabolic is the stabilizer; finite components do not change the
 connected orbit (LS, Lemma 6.2, p. 64).
@@ -1589,8 +1617,16 @@ connected orbit (LS, Lemma 6.2, p. 64).
   torus of `SL₂` on `ℙ¹` has the open orbit `𝔾_m`), so the hypothesis is needed.
 - The statement is for the connected monodromy orbit, not for every orbit of a reductive group on a flag
   space.
+- Integrality is a hypothesis, because the normality input is stated for polarized integral
+  variations. A rank-two rational variation of weight 0 and type `(0, 0)` on `𝔾_m`, polarized by
+  `x² + y²`, can have monodromy the rotation `[[3/5, −4/5], [4/5, 3/5]]`. Its eigenvalues `(3 ± 4i)/5`
+  are not algebraic integers, so there is no stable ℤ-lattice. The rotation has infinite order, so the
+  connected monodromy group is `SO(2)`. The Mumford–Tate group of a type `(0, 0)` structure is trivial,
+  so `SO(2)` does not lie in the derived Mumford–Tate group. Here the stabilizer of `F⁰ = V` is all of
+  `SO(2)`, so the conclusion still holds, but the route does not apply. No nonintegral extension is
+  claimed (as in §3.3).
 
-*Needs:* §3.1; ShimuraData §§1.2, 3.4, 3.7 with gap:andre-monodromy-normality;
+*Needs:* §§0.2, 0.6, 3.1; ShimuraData §§1.2, 3.4, 3.7 with gap:andre-monodromy-normality;
 `TauCeti.Cocharacter.parabolic`.
 
 ### 3.3 Algebraic degeneracy from period codimension
@@ -1602,7 +1638,7 @@ Prove that if an algebraic subset `Z ⊂ D_mon` has codimension at least `d` in 
 positive-dimensional irreducible analytic component of the inverse image of `Z` under a local lift of the
 period map is contained in a proper algebraic subvariety of `X`; zero-dimensional components are points
 and are also proper. The statement is componentwise: it does not say that infinitely many components
-share one proper algebraic closure (LS, Lemma 6.3, pp. 64–65; LV, Corollary 9.2, pp. 963–965).
+share one proper algebraic closure (LS, Lemma 6.3, pp. 64–65; LV, Corollary 9.2, p. 964).
 
 A route: apply the pure Ax–Schanuel theorem in the monodromy-orbit form, with all codimensions taken in
 `X × D_mon` (LS line 2965 takes the monodromy orbit as the compact dual), to `W = X × Z` and the graph of
@@ -1862,7 +1898,7 @@ gives the canonical inclusion `ι_(GM) : a_G → a_M` (LS line 3391), while rest
 `X^*(G°) → X^*(M°)` gives, dually, the projection `pr_(MG) : a_M → a_G`; they split one another,
 `pr_(MG) ∘ ι_(GM) = id`, and `w_G(μ) = pr_(MG)(w_M(μ))` for a cocharacter `μ` of `M`. The **modular
 character** of a parabolic `P` is `γ_P = det(Ad | Lie P)⁻¹`, paired additively with cocharacters (LS,
-Definition 8.4, pp. 74–75; LV, §§11.1–11.2, pp. 985–986).
+Definition 8.4, pp. 74–75; LV, §§11.1–11.2, pp. 984–986).
 
 API:
 
@@ -2035,7 +2071,7 @@ If a semisimple element `φ` of an algebraic group with reductive identity compo
 zero normalizes a connected parabolic `P`, prove that some `U`-conjugate of a chosen Levi of `P` is
 φ-stable, where `U` is the unipotent radical. The cocycle of the argument lies in `Z_U(φ^r)` for `r`
 killing the induced finite component action, and conjugation by `φ` has order dividing `r` there; it is
-not assumed to have finite order on all of `U` (LS, Lemma 8.14, pp. 80–81, with the correction listed
+not assumed to have finite order on all of `U` (LS, Lemma 8.14, p. 80, with the correction listed
 in Source corrections; LS line 3668).
 
 **Checks.**
@@ -2128,7 +2164,7 @@ Fix a semisimple `φ` in the coefficient normalizer. Prove that the pairs `(P, F
 prescribed conjugacy class of quotient filtered Frobenius data form finitely many orbits of `Z_G(φ)`, so
 their dimension is at most `dim Z_G(φ)`; for arbitrary `φ`, replacing `φ` by its semisimple part `φ^ss`
 and using §5.7 gives the bound `dim Z_G(φ^ss)`, and cyclewise §2.2 bounds the cost by `dim H` (LS, Lemma
-8.15, pp. 81–82; LV, §11.6, pp. 993–995).
+8.15, p. 81; LV, §11.6, pp. 993–994).
 
 **Checks.**
 
@@ -2311,7 +2347,7 @@ nonzero graded object to have average descending de Rham degree `r/2`, and let `
 `B > T(z + e) + T(h⁰/2 + z + e)`, with arguments in `[0, dim GAut]`, then the self-dual Hodge filtrations
 admitting such a flag have codimension at least `e` in their flag variety. Self-dual middle pieces keep
 their pairing tensor (LV, Proposition 10.6, printed pp. 981–982, with the conclusion in §11.6, printed
-pp. 993–995).
+pp. 993–994).
 
 A route: reduce to semisimple `φ`, which only enlarges the incidence locus; stratify by the finitely many
 conjugacy types of self-dual flags; graded pairs vary at cost at most `z` (§5.11); apply the connected
@@ -2574,7 +2610,7 @@ A route: `(h⁰ − rank H)/2 < A` gives `T((h⁰ − rank H)/2) < T(A) = B`, si
 For a smooth hypersurface of degree `d ≥ 2` in `ℙⁿ_ℂ`, `n ≥ 2`, prove that the primitive middle Hodge
 number `h^(p, n−1−p)_prim` is the coefficient of `t^((p+1)d−n−1)` in `(1 + t + … + t^(d−2))^(n+1)`, for
 `0 ≤ p < n` (Batyrev–Cox, Theorems 10.6 and 10.13 and Remark 10.14, PDF pp. 30–34, specialized to
-projective space; this justifies LV (10.6), printed pp. 971–972).
+projective space; this justifies LV (10.6), printed pp. 970–971).
 
 A route: Griffiths's residue description identifies the graded piece of degree `(p+1)d − n − 1` of the
 Jacobian ring `ℂ[x₀, …, x_n]/(∂F/∂x_i)` with `gr_F^(n−1−p) H^(n−1)_prim = H^(n−1−p, p)_prim`, the
@@ -2984,7 +3020,7 @@ component, boundary included. There are finitely many components.
 - For `n = 3`, `d = 8855` is excluded; `d = 2·8855` is allowed here (only equality with `D_j` is excluded
   for primitive divisors).
 
-*Needs:* §§10.2, 10.4–10.5.
+*Needs:* §§10.2, 10.4–10.5; SheafConvolutionOnAbelianVarieties §5.3.
 
 ### 10.7 Finite stabilizers and primitive isogeny quotients
 
@@ -3103,6 +3139,13 @@ application needs SheafConvolutionOnAbelianVarieties' arbitrarily many independe
 the all-points theorem of §6.1. Any later roadmap on integral points of higher-dimensional moduli (for
 instance through iterating §7.6 on the Zariski closure of integral points, or through monodromy along
 subvarieties as in §7.7) consumes Layers 3–7 as stated here.
+
+LogicAndDefinabilityInNumberTheory §7.6 states the complex period codimension consequence of §3.3
+with the Ax–Schanuel theorem of Bakker and Tsimerman carried as a named hypothesis. Here §3.3 is a
+target whose Ax–Schanuel input is a supplier theorem (AbelianSchemesAndArithmeticModuliPartII,
+gap:period-map-ax-schanuel), and the objects that statement names are owned here: Hodge–Deligne
+systems and their integral and polarized forms (§§0.1–0.2), the differential monodromy group (§0.6),
+the monodromy period orbit (§3.1) and its parabolic stabilizer (§3.2).
 
 ## Worked examples
 
