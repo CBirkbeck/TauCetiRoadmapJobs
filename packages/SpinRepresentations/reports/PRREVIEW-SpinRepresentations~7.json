@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpinRepresentations~7",
+  "head": "690944dc8fe777fce8a6eaae6174ab16eccd849a",
+  "pr": 1207,
+  "folder": "RepresentationTheory/SpinRepresentations",
+  "date": "2026-11-15",
+  "findings": 7,
+  "blocking": 1,
+  "notes": "Full review. Previous R01-R10, R12-R14 repaired, R11 partly (now R03). Sample: all 15 seeded sections; 13 locators read in 7 texts (Gallier, Panyushev, Kirillov, Conrad, Baez, Bazlov, Shlyakhtenko); Lawson-Michelsohn and the settled uncertified books not verifiable. Every Check of Layers 0, 2, 7, 8, 9 recomputed. 420 backticked names checked at the pins: TauCeti.D4Tripled.pointsMulEquiv/pointsFunctorNatIso do not exist (R01, P2). Gate passes at 690944d; depcheck 244 roadmaps, 2210 edges, 0 problems; Suggested.lean elaborates with 8 sorry warnings only; 8 one-tactic padding probes fail to close; 9 signatures compared with the README. P3: native rank-six exterior-square API not consumed, API/Checks missing in seven sections, stale internal pointers, LieGroups Layer 9 missing from the contract, locators, summary block of the description.",
+  "text": "af7b8acee9c4f0fa"
+ }
+}
