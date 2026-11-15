@@ -248,4 +248,4 @@ sha256 = "4d95d2bbe08ede1b0fa94ff6dcf4d653e0942fbfdfd1195541a7082b820d7bd5"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-07"
-cited_for = ["§0.4 proof of Theorem 1.4.5 (lines 2985-3007, printed pp. 61-62) with Remark 1.1.4(1) (line 2283): a surjection gives a closed immersion of Quot/Grassmannian functors cut out by the vanishing of the kernel; the proof and Exercise 0.3.21 (line 1202) assume S Noetherian and work on projective space over S, which the step used does not need"]
+cited_for = ["§0.4 proof of Theorem 1.4.5 (lines 2985-3007, printed p. 62) with Remark 1.1.4(1) (line 2283): a surjection gives a closed immersion of Quot/Grassmannian functors cut out by the vanishing of the kernel; the proof and Exercise 0.3.21 (line 1202) assume S Noetherian and work on projective space over S, which the step used does not need"]

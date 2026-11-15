@@ -26,7 +26,7 @@ locally free quotient of rank `d` (`HasLocallyFreeQuotientOfDifferentials`,
 ## Scope and ownership
 
 **This roadmap owns** the Nash modification of a quasi-coherent sheaf of finite type along a dense
-open on which it is locally free (§1.2, after Oneto–Zatini as presented in Nobile's notes), its
+open on which it is locally free (§1.2; nashModificationNotes2024, Section 3), its
 universal property and its Plücker form; the Nash blowup of a `k`-scheme, its Nash cotangent bundle,
 its iterates and the predicate that the iteration resolves `X`; the normalised Nash blowup, its
 iterates and the corresponding predicate; the Gauss-map description, the blowup description and the
@@ -154,7 +154,9 @@ this roadmap.
   `isIso_of_isClosedImmersion_of_surjective` (a surjective closed immersion into a reduced scheme is an
   isomorphism; `Mathlib/AlgebraicGeometry/Morphisms/ClosedImmersion.lean`);
   `ext_of_isDominant_of_isSeparated` (morphisms from a reduced scheme into a separated one agreeing
-  after a dominant map are equal; `Mathlib/AlgebraicGeometry/Morphisms/Separated.lean`).
+  after a dominant map are equal) and `IsClosedImmersion.comp_iff` (for a closed immersion `g`, the
+  composite `f ≫ g` is a closed immersion iff `f` is), both in
+  `Mathlib/AlgebraicGeometry/Morphisms/Separated.lean`.
 - `AlgebraicGeometry.Scheme.Hom.normalization` and `Scheme.Hom.normalizationPullback` with its
   instance that the comparison is an isomorphism along a smooth base change, and
   `Scheme.Hom.normalizationDesc` (for a quasi-compact quasi-separated `f : X → Y` factored as `f = f₁ ≫ f₂`
@@ -466,7 +468,7 @@ scheme `S`, a surjection `p : E' → E` with kernel `K`, and `r ≥ 0`, there is
 `Gr_r(E) → Gr_r(E')` over `S` whose functor of points sends a quotient `h*E → Q` to `h*E' → h*E → Q`,
 and whose image represents the quotients `h*E' → Q` killing the image of `h*K`; the universal quotient of
 `Gr_r(E')` restricts to the universal quotient of `Gr_r(E)` composed with `p` (alperModuli, proof of
-Theorem 1.4.5, lines 2985–3007, printed pp. 61–62, applied to the Grassmannian as the Quot scheme over
+Theorem 1.4.5, lines 2985–3007, printed p. 62, applied to the Grassmannian as the Quot scheme over
 `ℙ⁰`, Remark 1.1.4(1), line 2283). The proof there assumes `S` Noetherian and works with coherent sheaves on
 `ℙⁿ_S`, and so does the exercise it cites for the vanishing locus (alperModuli, Exercise 0.3.21, line 1202);
 the step used here, that the locus where a map from a quasi-coherent sheaf to a locally free sheaf of finite
@@ -821,7 +823,10 @@ gonzalezSprinberg1982, §1.2, line 94). On every irreducible component `ν` is b
 
 - For the cusp in characteristic `0`, `ν` is finite and birational but not an isomorphism.
 - For the surface `y² = x²z` over a field of characteristic `≠ 2` (nobile1975, Example 4, lines 314–324),
-  `ν⁻¹(0) ≅ ℙ¹`: `ν` is proper but not finite.
+  `X* ≅ Bl_0 𝔸²_{u,v}` with `ν` the blowup followed by the normalisation `(u, v) ↦ (u, uv, v²)`, and the
+  reduced fibre `ν⁻¹(0)_red ≅ ℙ¹`: `ν` is proper but not finite. The scheme-theoretic fibre is not `ℙ¹`: it
+  is cut out by `(u, v²)`, which in the chart `u = vw` is `(vw, v²)`, with the nonzero nilpotent `v` at
+  `v = w = 0` (an embedded point), and in the chart `v = us` is the reduced line `(u)`.
 - For `X` smooth the witness is `X` itself and `ν` is the identity.
 
 *Needs:* §§1.2, 1.4, 2.1; SchemeAndStackFoundations §4.11; AlgebraicModuliForArithmeticGeometry §1.3.
@@ -850,13 +855,20 @@ of `X*` are the closures of those of `ν⁻¹(X_sm) ≅ X_sm`, of dimension `d` 
 Prove *nashBlowup.lift*: for `X` in the Setting, a reduced scheme `Z`, a morphism `h : Z → X` with
 `h⁻¹(X_sm)` dense in `Z`, and a locally free quotient `h*Ω_{X/k} → M` of rank `d`, there is a unique
 `q : Z → X*` with `ν ∘ q = h` and `q*L = M` as quotients of `h*Ω_{X/k}`, and `M` is the only such quotient
-(nashModificationNotes2024, Section 2, lines 153–162, Teissier's formulation; §1.3). Consequently
+(nashModificationNotes2024, Section 2, lines 153–162; §1.3). Consequently
 `(X*, ν, L)` is unique up to unique isomorphism over `X` among the triples with this property.
 
-Prove *nashBlowup.isIso_lift_iff*: for a surjective `π : X₁ → X` with `X₁` reduced, `π⁻¹(X_sm)` dense and a
-locally free rank-`d` quotient of `π*Ω_{X/k}`, the lift `X₁ → X*` is an isomorphism iff the classifying map
-`X₁ → Gr_d(Ω_{X/k})` is a closed immersion. Surjectivity is needed: for `X = 𝔸¹ ⊔ 𝔸¹` and `X₁` one of the two
-lines, the classifying map is a closed immersion and the lift is not an isomorphism.
+Prove *nashBlowup.isIso_lift_iff*: for `X` in the Setting, a surjective `π : X₁ → X` with `X₁` reduced,
+`π⁻¹(X_sm)` dense and a locally free rank-`d` quotient of `π*Ω_{X/k}`, the lift `X₁ → X*` is an isomorphism iff
+the classifying map `X₁ → Gr_d(Ω_{X/k})` is a closed immersion. Surjectivity is needed: for `X = 𝔸¹ ⊔ 𝔸¹` and
+`X₁` one of the two lines, the classifying map is a closed immersion and the lift is not an isomorphism. Route
+(the statement is this roadmap's own): by the construction of the lift in §1.3 the classifying map is the lift
+`q` followed by the closed immersion `X* → Gr_d(Ω_{X/k})` of §1.2, so it is a closed immersion iff `q` is
+(Mathlib `IsClosedImmersion.comp_iff`). If `q` is a closed immersion, its closed image contains `ν⁻¹(X_sm)`:
+for `z` there pick `y` with `π(y) = ν(z)`, which exists as `π` is surjective; then `ν(q(y)) = π(y) = ν(z)` lies
+in `X_sm`, and `ν` is injective on `ν⁻¹(X_sm)` (§2.1), so `q(y) = z`. As `ν⁻¹(X_sm)` is dense (§2.2) and `X*`
+is reduced (§1.2), `q` is a surjective closed immersion onto a reduced scheme, hence an isomorphism (Mathlib
+`isIso_of_isClosedImmersion_of_surjective`).
 
 **Checks.**
 
@@ -867,7 +879,8 @@ lines, the classifying map is a closed immersion and the lift is not an isomorph
   classifying map is the closed immersion `t ↦ (t², t³, [1 : 3t/2])`.
 - `Z = Spec k` mapping to the cusp point with any quotient has `h⁻¹(X_sm) = ∅` and is excluded.
 
-*Needs:* §§1.3, 2.1; Mathlib `IsClosedImmersion`.
+*Needs:* §§1.2, 1.3, 2.1, 2.2; Mathlib `IsClosedImmersion`, `IsClosedImmersion.comp_iff`,
+`isIso_of_isClosedImmersion_of_surjective`.
 
 ### 2.5 When the Nash blowup is trivial
 
@@ -949,7 +962,8 @@ Define *nashIterate*: `X^{(0)} = X` and `X^{(i+1)} = (X^{(i)})*` (with the same 
 
 The cusp `y² = x³`: in characteristic `0` or `≥ 5`, `X* = 𝔸¹` with `ν*Ω = L ⊕ k[t]/(t³)`; in characteristics
 `2` and `3`, `X* ≅ X`. The node, in every characteristic: `X* = 𝔸¹ ⊔ 𝔸¹`. The Whitney-type surface `y² = x²z`
-in characteristic `≠ 2`: `ν⁻¹(0) ≅ ℙ¹` (nobile1975, Example 4).
+in characteristic `≠ 2`: `X* ≅ Bl_0 𝔸²_{u,v}` and the reduced fibre `ν⁻¹(0)_red ≅ ℙ¹` (nobile1975, Example 4,
+lines 319–324); the scheme-theoretic fibre, cut out by `(u, v²)`, has an embedded point.
 
 ### Dependencies
 
