@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-Polylogarithms~6",
+  "head": "bd1c355d4b1911dc824d5a7305ea474d2fefc316",
+  "pr": 1424,
+  "folder": "Polylogarithms",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 36 changed lines since 1cf0554, plus the pull request's title and description against this head. Previous R01-R04 repaired (padding theorem deleted, supplier names resolved at main and open heads, heading 4.4, G95 locator); R05 partly repaired: the description's list of direct suppliers on main omits StableHomotopyKTheory (P3, the only finding; the folder's files need no change). Seeded sample checked where it falls in the changed passages (4.7, 5.8, 6.2); 4 source locators and 6 cross-roadmap citations opened; adversarial rows with computed values for the cited statements. Gate passes on bd1c355; depcheck 0 problems; elaboration exit 0 with eight sorry warnings only; outside-folder diff empty.",
+  "text": "b5a6cbf29dd882ce",
+  "carried": {
+   "from": "bd1c355d4b1911dc824d5a7305ea474d2fefc316",
+   "head": "bd1c355d4b1911dc824d5a7305ea474d2fefc316",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
