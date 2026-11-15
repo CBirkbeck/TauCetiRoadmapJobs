@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RibbonKnots~5",
+  "head": "d65240b31e8092763b0afd86a6eec6e163861efc",
+  "pr": 2339,
+  "folder": "RibbonKnots",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 2,
+  "notes": "Full review. The eight findings of the previous review are repaired. Seeded sample 0.1, 1.1, 1.2, 1.3, 1.4, 1.5, 2.1 checked against Agol 2022, Zemke 2019, Lisca 2007, Livingston 2005, Daemi-Lidman-Vela-Vick-Wong 2022 and Friedl-Powell 2020 (37 locators); Gordon 1981, Hempel 1987 and Gerstenhaber-Rothaus 1962 not readable legally. Worker's gate passes with every check at 0; depcheck 0 problems (no UPWARD, no CYCLE); Suggested.lean elaborates with 6 sorry warnings; one-tactic probe closes nothing. Findings: R01 (P2) ribbon-immersed disc undefined and not connected to IsRibbon; R02 (P2) Lisca's set R undefined and Theorem 1.2 not a target; R03 (P3) research-context overclaim; R04 (P3) Ozsvath-Szabo locator without a reference.",
+  "text": "0e93b30be3b60c5c"
+ }
+}
