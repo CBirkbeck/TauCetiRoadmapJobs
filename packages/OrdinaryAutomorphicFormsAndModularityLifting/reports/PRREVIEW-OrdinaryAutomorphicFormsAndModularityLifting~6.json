@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-OrdinaryAutomorphicFormsAndModularityLifting~6",
+  "head": "e2406a3410a445eefee58814e4956aacdfd93019",
+  "pr": 1066,
+  "folder": "OrdinaryAutomorphicFormsAndModularityLifting",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 4 changed lines since d7f95e2 (README §2.1 first paragraph reworded; §2.12 excluded-pairs Check), plus the first check of the pull request's title and description against the head. Previous R01 repaired (regularised series now carries its non-holomorphic term; recomputed for general 𝔞, 𝔞 = (2), 𝔞 = (6)). §2.1 rewording re-read against sw99 lines 925–941: same mathematics, no shared wording. Two P3 findings, both in the description: the opening prose paragraph still describes the pre-cde3e6f roadmap (Skinner–Wiles routes, permissible ideals, pro-modularity, which README 7 says this roadmap does not plan); the summary block says Tau Ceti already has the factorial-powers idempotent, which README 15 attributes to the roadmap IntegralHeckeAndGaloisDeterminants Layer 2 and the pinned library lacks. Gate rerun OK (every check 0); depcheck 245 roadmaps, 2251 edges, 0 problems, no UPWARD/CYCLE/moved; outside-folder diff empty. Suggested.lean unchanged since cde3e6f; scratch elaboration: four sorry warnings only. Sampled target 2.1 checked; the other fourteen lie outside the changed passages.",
+  "text": "14b02c23785c00f7",
+  "carried": {
+   "from": "e2406a3410a445eefee58814e4956aacdfd93019",
+   "head": "e9064128ace433fe5be1724c3ef88a2b1584ef7c",
+   "findings": 2,
+   "lines": 27,
+   "folders": [
+    "OrdinaryAutomorphicFormsAndModularityLifting"
+   ],
+   "outside": true
+  }
+ }
+}
