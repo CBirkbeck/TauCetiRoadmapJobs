@@ -16,25 +16,21 @@
      "id": "1.1",
      "kind": "theorem",
      "name": "isCMField_of_intermediate_cyclotomic",
-     "statement": "Let K be a CM number field and L/K a finite extension with IsCyclotomicExtension S K L. Every intermediate field K ⊆ E ⊆ L is a CM field; in particular L is CM.",
+     "statement": "(a) Let K be a CM number field and L/K a finite extension with IsCyclotomicExtension S K L; then L is CM. (b) Let K ⊆ L be CM number fields; then every intermediate field K ⊆ K' ⊆ L is CM. Both are instances of the criterion of MordellLawrenceVenkatesh §1.3 (totally real or CM iff every product of two complex conjugations fixes the field), the CM base excluding the totally real alternative.",
      "hypotheses": [
-      "K is a number field with NumberField.IsCMField K",
-      "L/K finite",
-      "IsCyclotomicExtension S K L",
-      "K ⊆ E ⊆ L"
+      "(a) K a number field with NumberField.IsCMField K; L/K finite; IsCyclotomicExtension S K L",
+      "(b) K ⊆ L number fields, both CM; K ⊆ K' ⊆ L"
      ],
      "locator": {
       "source": "MilneCM",
-      "where": "Proposition 1.4(b) with the uniqueness of complex conjugation noted after it, and Corollary 1.5, p. 10 (lines 273-295)"
+      "where": "Corollary 1.5 and Remark 1.6, p. 10 (lines 292-300), with Proposition 1.4 (lines 273-287)"
      },
      "prerequisites": [
       "mathlib:NumberField.IsCMField",
-      "mathlib:NumberField.IsCMField.ofCMExtension",
-      "mathlib:NumberField.IsCMField.complexConj",
-      "mathlib:NumberField.IsCMField.isConj_complexConj",
       "mathlib:IsCyclotomicExtension",
       "mathlib:IsCyclotomicExtension.Rat.isCMField",
-      "mathlib:NumberField.isTotallyComplex_of_algebra"
+      "mathlib:NumberField.isTotallyComplex_of_algebra",
+      "roadmap:MordellLawrenceVenkatesh §1.3"
      ],
      "api": [],
      "tests": [
@@ -44,19 +40,29 @@
        "statement": "For K = Q(i), L = Q(zeta_20), the intermediate field Q(i, sqrt 5) is CM with maximal real subfield Q(sqrt 5)."
       },
       {
+       "name": "cm_intermediate_noncyclotomic",
+       "kind": "computation",
+       "statement": "For K = Q(i) ⊂ K' = Q(i, sqrt 5) ⊂ L = Q(i, sqrt 3, sqrt 5), L is CM of degree 8 with roots of unity mu_12, so L ≠ K(mu_S) for every S; K' is CM with maximal real subfield Q(sqrt 5): (b) does not need L/K cyclotomic."
+      },
+      {
        "name": "cm_intermediate_trivial",
        "kind": "degenerate",
-       "statement": "For S = {1, 2}, L = K and the statement is that K is CM."
+       "statement": "For S = {1, 2}, L = K and (a) is that K is CM."
       },
       {
        "name": "cm_intermediate_real_subfield",
        "kind": "non-example",
-       "statement": "Q(sqrt 5) inside Q(zeta_20) is totally real and not CM: the statement needs E to contain K."
+       "statement": "Q(sqrt 5) inside Q(zeta_20) is totally real and not CM: (b) needs K' to contain K."
+      },
+      {
+       "name": "cm_cyclotomic_noncm_base",
+       "kind": "non-example",
+       "statement": "For K = Q(2^(1/3)), K(zeta_3) is the splitting field of X^3 - 2 with Galois group S_3; complex conjugations are transpositions, a product of two can be a 3-cycle moving 2^(1/3), and K(zeta_3) is not CM: (a) needs K CM."
       },
       {
        "name": "cm_intermediate_abelian",
        "kind": "compatibility",
-       "statement": "For K = Q(sqrt -3), S = {4}, L = Q(zeta_12) and the conclusion agrees with NumberField.IsCMField.of_isAbelianGalois."
+       "statement": "For K = Q(sqrt -3), S = {4}, L = Q(zeta_12) and (a) agrees with NumberField.IsCMField.of_isAbelianGalois."
       }
      ]
     },
@@ -75,7 +81,7 @@
      },
      "prerequisites": [
       "roadmap:AutomorphicGaloisRepresentationsPartII AG2.7",
-      "roadmap:ArithmeticGaloisRepresentations Layer 1"
+      "roadmap:ArithmeticGaloisRepresentations §2.1"
      ],
      "api": [],
      "tests": [
@@ -134,7 +140,7 @@
      "id": "2.1",
      "kind": "theorem",
      "name": "cm_seed_before_base_change",
-     "statement": "With ζ5 ∉ K and t a switch parameter: (a) the mod-5 residual representation of H¹(A_t) is decomposed generic over K and absolutely irreducible on G_{K(ζ5)}, and A_t is geometrically non-CM; (b) A_t is modular over K by a cuspidal weight-zero π_A of PGL₂(𝔸_K) realizing H¹(A_t) at every (ℓ, ι); (c) F/K is finite abelian, F is CM, and the base change π_{A,F} is cuspidal weight zero with r_ι(π_{A,F}) ≅ V_η.",
+     "statement": "With ζ5 ∉ K and t a switch parameter: (a) A_t is geometrically non-CM, and the mod-5 residual representation of H¹(A_t) is absolutely irreducible on G_{K(ζ5)} and decomposed generic over K; (b) A_t is modular over K by a cuspidal weight-zero π_A of PGL₂(𝔸_K) realizing H¹(A_t) at every (ℓ, ι); (c) F/K is finite abelian, F is CM, and the base change π_{A,F} is cuspidal weight zero with r_ι(π_{A,F}) ≅ V_η.",
      "hypotheses": [
       "K is a CM field",
       "E/K is geometrically non-CM, y² = h(x)",
@@ -253,7 +259,7 @@
       {
        "name": "local_factor_degrees",
        "kind": "computation",
-       "statement": "Split multiplicative: degree 1 with N of rank 1; potentially good with nontrivial inertia: factor 1; good: degree 2."
+       "statement": "Split multiplicative: degree 1 with N of rank 1; potentially good with nontrivial inertia: factor 1; good: degree 2. The first two already differ in the Weil part (unramified versus ramified); with N forgotten the split multiplicative parameter (eigenvalues 1, q_v) would have factor ((1 − T)(1 − q_v T))⁻¹ of degree 2, against (1 − T)⁻¹ with N; at q_v = 4, ((1 − T)(1 − 4T))⁻¹ and (1 − T)⁻¹."
       },
       {
        "name": "complex_parameter_i",
@@ -263,7 +269,7 @@
       {
        "name": "unitary_shift",
        "kind": "computation",
-       "statement": "q = 4, a = 4: polynomial T² − 4T + 4, unitary roots 1, 1, fixing the shift s − 1/2."
+       "statement": "q_v = 4, a = 4: polynomial T² − 4T + 4, unitary roots 1, 1, fixing the shift s − 1/2."
       }
      ]
     },
@@ -363,7 +369,7 @@
      ],
      "locator": {
       "source": "CaptainSude26",
-      "where": "Lemma 3.1, line 187"
+      "where": "Lemma 3.1 and its proof, lines 187-192 (basis e, h, f and the action of Ad(U)); proof of Lemma 3.2, line 224 (trace form); proof of Lemma 3.3, line 234 (vanishing of invariants over F5)"
      },
      "prerequisites": [
       "roadmap:ArithmeticGaloisRepresentations §7.2",
@@ -471,12 +477,12 @@
       {
        "name": "protected_tate",
        "kind": "computation",
-       "statement": "A split Tate curve with p ∤ v(q) has E_q[p] protected, inertia acting by [[1, v(q)t_p],[0,1]]."
+       "statement": "A split Tate curve E/F_v with Tate parameter q_E and p ∤ v(q_E) has E[p] protected, inertia acting by [[1, v(q_E)t_p],[0,1]]."
       },
       {
        "name": "protected_tate_divisible",
        "kind": "non-example",
-       "statement": "If p | v(q), E_q[p] is unramified and not protected (q = ϖ⁵, p = 5)."
+       "statement": "If p | v(q_E), E[p] is unramified and not protected (q_E = ϖ_v⁵, p = 5)."
       },
       {
        "name": "protected_semisimple_inertia",
@@ -573,12 +579,12 @@
       {
        "name": "tangent_cocycles",
        "kind": "computation",
-       "statement": "Cocycles (c(τ), c(φ)) with c(φ) ∈ ke: dim Z¹ = 4, dim B¹ = 2, dim H¹ = 2."
+       "statement": "Cocycles (ξ(τ), ξ(φ)) with ξ(φ) ∈ ke: dim Z¹ = 4, dim B¹ = 2, dim H¹ = 2."
       },
       {
        "name": "tangent_ramified_class",
        "kind": "non-example",
-       "statement": "(f,0) is not in L_v and pairs nontrivially with (0,e)."
+       "statement": "(f,0) is not in L_v and pairs nontrivially with (0,e); as L_v^⊥ = L_v = k[(0,e)], a(f,0) + b(0,e) lies in L_v^⊥ only for a = 0, i.e. only with zero image in H¹(I_v, M)."
       }
      ]
     }
@@ -662,7 +668,7 @@
       {
        "name": "tw_framed_P_fails",
        "kind": "non-example",
-       "statement": "Framing a protected place drops its dual condition; the inflated exceptional class is locally trivial at every Taylor-Wiles prime and survives."
+       "statement": "Framing every protected place leaves no dual condition at P; the inflated exceptional class is then locally trivial at every Taylor-Wiles prime and lies in every H_Q. With one protected place left unframed it is ramified there (4.1) and excluded."
       },
       {
        "name": "tw_padding",
@@ -702,7 +708,7 @@
       {
        "name": "presentation_cyclotomic_five",
        "kind": "computation",
-       "statement": "F = Q(ζ5): d = 2, t = 1, r = 6 (least with g ≥ 0) gives g = 0, as the count q − 3[F⁺:Q] − 1 + |S| of CrystallineLocalGlobalCompatibilityCM §9.3 at (6, 2, 1); d = 1 has no μ5."
+       "statement": "F = Q(ζ5): d = 2, t = 1, r = 6 (least with g ≥ 0) gives g = 0, the value of the count of CrystallineLocalGlobalCompatibilityCM §9.3 (Taylor-Wiles primes − 3[F⁺:Q] − 1 + framed places) at six primes, [F⁺:Q] = 2 and one framed place, compared as a formula only since Q(ζ5) has no imaginary quadratic subfield; d = 1 has no μ5."
       },
       {
        "name": "presentation_dims",
@@ -790,10 +796,11 @@
      "id": "5.2",
      "kind": "definition",
      "name": "protectedDeformationProblem",
-     "statement": "For a protected prepared datum, χ = (χ_v)_{v∈R} trivial mod ϖ and a Taylor-Wiles datum Q: 𝒮^P_χ is CrystallineLocalGlobalCompatibilityCM §9.5's 𝒮_χ on S5 ∪ R plus the unipotent-inertia condition of 3.4 at P, framed at T = S5 ⊔ R; 𝒮^P_{χ,Q} adds unrestricted fixed-determinant rings at Q with the O[Δ_Q]-structure.",
+     "statement": "For a protected prepared datum, χ = (χ_v)_{v∈R} trivial mod ϖ and a Taylor-Wiles datum Q of 4.2 with Q ∩ (S ∪ S^c) = ∅ (forbidden set B ⊇ S^c): 𝒮^P_χ is CrystallineLocalGlobalCompatibilityCM §9.5's 𝒮_χ on S5 ∪ R plus the unipotent-inertia condition of 3.4 at P, framed at T = S5 ⊔ R; 𝒮^P_{χ,Q} adds unrestricted fixed-determinant rings at Q with the O[Δ_Q]-structure.",
      "hypotheses": [
       "protected prepared datum",
-      "χ_v ≡ 1 mod ϖ"
+      "χ_v ≡ 1 mod ϖ",
+      "Q from 4.2 with Q ∩ (S ∪ S^c) = ∅"
      ],
      "locator": {
       "source": "CaptainSude26",
@@ -855,7 +862,7 @@
      "hypotheses": [
       "protected prepared datum",
       "χ as in 5.2",
-      "Q from 4.2"
+      "Q from 4.2 with Q ∩ (S ∪ S^c) = ∅ (forbidden set B ⊇ S^c), so P^c ∩ (S ∪ Q) = ∅ and the level is hyperspecial on P^c"
      ],
      "locator": {
       "source": "CaptainSude26",
@@ -877,7 +884,7 @@
       {
        "name": "hecke_torus_poly",
        "kind": "computation",
-       "statement": "At full Iwahori level with trivial character the torus polynomial at P is (X−1)²; with character χ_v it would be (X−χ_v(u))(X−χ_v(u)⁻¹)."
+       "statement": "On Iw_v at v ∈ P with trivial coefficients, diag(u,1) and diag(1,u) act as 1 and P_{v,σ} = (X−1)²; with the R-type character χ_v⁻¹(a/d) they would act by χ_v(u)⁻¹, χ_v(u), giving (X−χ_v(u))(X−χ_v(u)⁻¹)."
       },
       {
        "name": "hecke_pro_v_level",
@@ -888,6 +895,11 @@
        "name": "hecke_Q_empty",
        "kind": "degenerate",
        "statement": "For Q = ∅, Δ_∅ = 1 and the maps are the first construction."
+      },
+      {
+       "name": "hecke_Q_meets_Pc",
+       "kind": "non-example",
+       "statement": "w = v^c with v ∈ P, q_w = 11, ρbar(Frob_w) = diag(2,3) over F5 meets the Taylor-Wiles conditions (11 ≡ 1 mod 5, det 6 ≡ 1, distinct eigenvalues); putting w into Q gives level Iw_w of index q_w + 1 = 12 in PGL₂(O_{F_w}) and diamond kernel of index 60, not hyperspecial; over F5[ε]/(ε²) the inertia image diag(1+ε, 1−ε) has det 1, commutes with diag(2,3) and equals its 11th power, a lift ramified at a place of P^c."
       }
      ]
     },
@@ -948,13 +960,13 @@
   },
   {
    "key": "6",
-   "title": "The Steinberg-protected lifting theorem",
+   "title": "The lifting theorem at five with a protected place",
    "targets": [
     {
      "id": "6.1",
      "kind": "theorem",
      "name": "protected_solvable_preparation",
-     "statement": "F CM with ζ5 ∈ F, ρ, π satisfying CN23 Theorem 5.2 (1)-(3),(5) at p = 5 with ρbar(G_F) ≅ SL₂(F5), P nonempty with: ρbar protected, ρ(I_v) unipotent, π_v^{Iw} ≠ 0, ρ and π unramified at v^c. There is a finite solvable Galois CM F'/F, disjoint from the field of ρbar, with P ∪ P^c split completely, such that the base-changed data satisfy 5.1 and the hypotheses of 5.4.",
+     "statement": "F CM with ζ5 ∈ F, ρ, π satisfying CN23 Theorem 5.2 (1)-(3),(5) at p = 5 with ρbar(G_F) ≅ SL₂(F5), P nonempty with: ρbar protected, ρ(I_v) unipotent, π_v^{Iw} ≠ 0, ρ and π unramified at v^c. There is a finite solvable Galois CM F'/F, disjoint from the field of ρbar, in which every place of P ∪ P^c of odd residue characteristic splits completely and every place of P ∪ P^c above 2 has ramification index dividing 4, such that the base-changed data satisfy 5.1 and the hypotheses of 5.4. Route: the preparation of CrystallineLocalGlobalCompatibilityCM §9.11, whose 5-adic degree condition comes from the composite F₁E of the CM field F₁ reached before this step with a totally real Galois E/Q of degree 8 with solvable group, linearly disjoint from a finite Galois extension of Q containing F₁ and the field of ρbar, in which 5 and every rational prime under a test place split completely (PotentialAutomorphyInfrastructure §2.5 over Q, or the multiquadratic field of CaptainSude26), taken before the three imaginary quadratic composita. Then [F₁⁺E:Q] = 8[F₁⁺:Q] and every 5-adic completion of F₁⁺E equals one of F₁⁺, so has degree ≤ [F₁⁺E:Q]/8; as F₁⁺E ⊆ F'⁺ and [F'⁺_{w'}:(F₁⁺E)_w] ≤ [F'⁺:F₁⁺E], every 5-adic local degree of F'⁺ is ≤ [F'⁺:Q]/8, so F'⁺ has at least eight 5-adic places and removing any two leaves a sum ≥ (3/4)[F'⁺:Q] > [F'⁺:Q]/2, the degree half of (ii) of 5.1. Additions at P: trivial prescribed completions below P, the rational primes below P split completely in E, and the odd primes below P required to split in each of the three imaginary quadratic fields of ACC23 §6.5.12.",
      "hypotheses": [
       "F CM, ζ5 ∈ F",
       "image SL₂(F5)",
@@ -962,7 +974,7 @@
      ],
      "locator": {
       "source": "CN23",
-      "where": "end of proof of Theorem 5.2, lines 4433-4509; CaptainSude26 proof of Prop. 5.2 lines 543-603"
+      "where": "end of proof of Theorem 5.2, lines 4433-4509; CaptainSude26 proof of Prop. 5.2 lines 543-603; ACC23 §6.5.12, p. 178, lines 7163-7187 (the three imaginary quadratic fields)"
      },
      "prerequisites": [
       "target:3.3",
@@ -980,12 +992,27 @@
       {
        "name": "prep_index_five",
        "kind": "non-example",
-       "statement": "A completion of ramification index 5 above P makes residual inertia U⁵ = 1."
+       "statement": "A completion of ramification index 5 above P makes residual inertia U⁵ = 1; the preparation keeps places above P of odd residue characteristic split and gives ramification index dividing 4 above 2."
       },
       {
        "name": "prep_conjugate_ramified",
        "kind": "non-example",
-       "statement": "If v and v^c are both ramified, completions above v and v^c are isomorphic in every CM extension and P'^c ∩ S' = ∅ cannot be reached."
+       "statement": "If ρ(I_{v^c}) is infinite or of order divisible by 5 (e.g. ρbar also protected at v^c), complex conjugation of any CM F' matches places above v^c and v with equal ramification index, so making ρ unramified above v^c is impossible or forces 5 | e above v, where residual inertia is generated by a power of U⁵ = 1 and is trivial: P'^c ∩ S' = ∅ cannot be reached with P' protected. If ρ(I_{v^c}) has order 3, a ramification-index-3 completion at the place of F⁺ below v makes ρ unramified above v^c and keeps protection above v. The preparation here prescribes trivial completions at P ∪ P^c and adds only the 2-adic ramification of the imaginary quadratic composita, so it needs ρ, π unramified at v^c."
+      },
+      {
+       "name": "prep_two_adic",
+       "kind": "non-example",
+       "statement": "Under ACC23 §6.5.12 (5 unramified; an odd prime ≠ 5 ramified in one of E_b = Q(sqrt -d_b), E_c = Q(sqrt -d_c) splits in the other), 2 never splits in E_b: if -d_b were a 2-adic square, the Hilbert symbols (-d_b, -d_c)_l would be 1 at every prime and -1 at infinity. For p_b ≡ 1 mod 4, p_c ≡ 1 mod 4p_b the completion at 2 is Q_2(sqrt -p_b, sqrt -p_c), ramification index 2, prime to 5: protection above 2 survives."
+      },
+      {
+       "name": "prep_odd_split",
+       "kind": "computation",
+       "statement": "For q = 11 below P: p_b = 109, p_c = 2617 are primes with 109 ≡ 1 mod 4, 2617 ≡ 1 mod 436, 109 ≡ 2617 ≡ -1 mod 11; -4·109 ≡ -4·2617 ≡ 4 mod 11, so 11 splits in E_b and E_c, and 109 splits in E_c since -2617 ≡ -1 is a square mod 109."
+      },
+      {
+       "name": "prep_degree_step",
+       "kind": "computation",
+       "statement": "F = Q(ζ5), with F₁ = F: F₁⁺ = Q(√5) has one 5-adic place, of local degree 2 = [F₁⁺:Q], so (ii) of 5.1 fails. E = Q(√31, √59, √71) is totally real of degree 8; 31 ≡ 1, 59 ≡ 4, 71 ≡ 1 mod 5 and 31 ≡ 9, 59 ≡ 4, 71 ≡ 5 mod 11 are nonzero squares, so 5 and 11 split completely in E; F₁⁺E has degree 16 and eight 5-adic places of local degree 2 = 16/8, and omitting two leaves 12 = (3/4)·16 > 8; residue fields stay F5, so the residue half of (ii) needs the prescribed completions. 2 ramifies in E (31 ≡ 59 ≡ 71 ≡ 3 mod 4), so this E serves only when no place of P lies above 2, and 31, 59, 71 must split in E_b. Non-example: Q(√5, √2) has a single 5-adic place, of local degree 4."
       },
       {
        "name": "prep_Qzeta5",
@@ -997,7 +1024,7 @@
     {
      "id": "6.2",
      "kind": "theorem",
-     "name": "steinberg_protected_lifting",
+     "name": "protected_lifting_at_five",
      "statement": "F CM, ρ : G_F → GL₂(Q̄5) satisfying CN23 Theorem 5.2 (1),(2),(3),(5) at p = 5. If either (4) holds, or ζ5 ∈ F and there is a nonempty finite set P of places v ∤ 5 with ρbar(I_v) nontrivial unipotent, ρ(I_v) unipotent, π_v^{Iw} ≠ 0, and ρ, π unramified at v^c, then ρ ≅ r_ι(Π) for a cuspidal regular algebraic weight-zero Π of PGL₂(𝔸_F).",
      "hypotheses": [
       "F CM",
@@ -1020,7 +1047,7 @@
       {
        "name": "lifting_det_order_two",
        "kind": "computation",
-       "statement": "ζ5 ∉ F, det of order 2, ρbar(G_{F(ζ5)}) ≅ SL₂(F5): with GL₂(F5)-coefficients det(2g) = 4·(−1) = 1, the projective image of G_F is PSL₂(F5) (kernel indices 60 vs 120) and (4) holds; over F25 with μ² = 2, h = diag(1,2), ⟨SL₂(F5), μh⟩ has order 240, det(μh) = −1, tr(μh) = 3μ ∉ F5, projective image PGL₂(F5) (both kernel indices 120), so (4) fails although ζ5 ∉ F: ζ5 ∈ F is a genuine hypothesis of the protected alternative."
+       "statement": "ζ5 ∉ F, det of order 2, ρbar(G_{F(ζ5)}) ≅ SL₂(F5): with GL₂(F5)-coefficients det(2g) = 4·(−1) = 1, the projective image of G_F is PSL₂(F5) (kernel indices 60 vs 120) and (4) holds; over F25 with μ² = 2, γ = diag(1,2), ⟨SL₂(F5), μγ⟩ has order 240, det(μγ) = −1, tr(μγ) = 3μ ∉ F5, projective image PGL₂(F5) (both kernel indices 120), so (4) fails although ζ5 ∉ F: ζ5 ∈ F is a genuine hypothesis of the protected alternative."
       },
       {
        "name": "lifting_det_order_four",
@@ -1049,9 +1076,9 @@
      "id": "7.1",
      "kind": "theorem",
      "name": "width_three_degeneration",
-     "statement": "For R_* of exact order 2n with [n]R_* = a/2: (a) the image of (O,1) is a k-point of D_t, so D_t ≅ A_t; (b) w fixes exactly one of the three nodes of the m = 3 nodal model, acting by −1 on both branches, and exchanges the other two; (c) the quotient has an A1 point uv = s² and a node of thickness one, and after resolution is a cycle of three rational curves (type I3); (d) 1/j(A_t) has a zero of order 3 in s and the Tate parameter is c s³ h(s), c ≠ 0, h(0) = 1.",
+     "statement": "For R_* of exact order 2n with [n]R_* = a/2: (a) the image of (O,1) is a K-point of D_t, so D_t ≅ A_t; (b) w fixes exactly one of the three nodes of the m = 3 nodal model, acting by −1 on both branches, and exchanges the other two; (c) the quotient has an A1 point z₁z₂ = s² and a node of thickness one, and after resolution is a cycle of three rational curves (type I3); (d) 1/j(A_t) has a zero of order 3 in s and the Tate parameter q_A of A_t is s³λ(s) with λ a power series, λ(0) ≠ 0.",
      "hypotheses": [
-      "k a number field",
+      "K a number field (CM not used)",
       "p > 3 prime, n = 3p",
       "R_* as in the parent's §2.1"
      ],
@@ -1091,7 +1118,7 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "auxiliary_prime_opens",
-     "statement": "There is a finite set Σ0 of rational primes such that for q ∉ Σ0, q ≥ 7, q ≠ p, split completely in the field of the data of 7.1(b) and in the normal closure of K, and each place v | q: (a) a nonempty open Ω_v ⊂ U(K_v) on which A_t is split multiplicative with v(Δ_min) = 3k_v, 5 ∤ k_v; (b) for every other v' | q a nonempty open on which A_t has good reduction.",
+     "statement": "There is a finite set Σ0 of rational primes such that for q ∉ Σ0, q ≥ 7, q ≠ p, split completely in the field of the data of 7.1(b) and in the normal closure of K, and each place v | q: (a) a nonempty open Ω_v ⊂ U(K_v) on which A_t is split multiplicative with v(Δ_min) = 3m_v, 5 ∤ m_v; (b) for every other v' | q a nonempty open on which A_t has good reduction.",
      "hypotheses": [
       "K a number field",
       "q as stated"
@@ -1134,7 +1161,7 @@
      "id": "7.3",
      "kind": "theorem",
      "name": "tate_curve_protected",
-     "statement": "For K_v finite over Q_ℓ, ℓ ≠ 5, μ5 ⊂ K_v and A/K_v split multiplicative with 5 ∤ v(Δ_min): A[5] and the residual H¹ are protected, residual Frobenius has diagonal 1 and becomes trivial after a tame-lift change, inertia acts unipotently on H¹(A, Q̄5), and for modular non-CM A the local component is Steinberg. If 5 | v(Δ_min), A[5] is unramified.",
+     "statement": "For K_v finite over Q_ℓ, ℓ ≠ 5, μ5 ⊂ K_v and A/K_v split multiplicative with 5 ∤ v(Δ_min): A[5] and the residual H¹ are protected, a Frobenius lift acts residually by a unipotent upper triangular matrix, trivial after multiplying the lift by a power of τ, inertia acts unipotently on H¹(A, Q̄5), and for modular non-CM A the local component is Steinberg. If 5 | v(Δ_min), A[5] is unramified.",
      "hypotheses": [
       "ℓ ≠ 5",
       "μ5 ⊂ K_v",
@@ -1156,12 +1183,12 @@
       {
        "name": "tate_v3",
        "kind": "computation",
-       "statement": "v(q) = 3: residual inertia [[1,3],[0,1]]; v(q) = 15: trivial."
+       "statement": "v(q_A) = 3: residual inertia [[1,3],[0,1]]; v(q_A) = 15: trivial."
       },
       {
        "name": "tate_nonsplit",
        "kind": "compatibility",
-       "statement": "Non-split multiplicative: residual Frobenius diagonal −1, still protected, component the unramified quadratic twist of Steinberg."
+       "statement": "Non-split multiplicative: inertia acts as for the split twist, so still protected; residual Frobenius is −1 times a unipotent; component the unramified quadratic twist of Steinberg."
       },
       {
        "name": "tate_good",
@@ -1276,13 +1303,17 @@
       "where": "Theorem 1.1, line 26, proof line 671; LeHung26 Remark 1.3.1 line 125"
      },
      "prerequisites": [
+      "target:1.1",
       "target:2.1",
       "target:2.2",
       "target:2.3",
       "target:2.4",
       "target:2.5",
       "target:7.5",
-      "roadmap:PotentialAutomorphyInfrastructure §2.3"
+      "roadmap:EllipticCurveModularityImaginaryQuadratic §4.2",
+      "roadmap:PotentialAutomorphyInfrastructure §2.3",
+      "roadmap:FaltingsFinitenessAndIsogenyTheorems R28.6.2",
+      "roadmap:FaltingsFinitenessAndIsogenyTheorems R28.6.3"
      ],
      "api": [],
      "tests": [
@@ -1372,6 +1403,13 @@
     "§2.5"
    ],
    "what": "Genericity under restriction, soluble base change and descent over CM fields with all-place compatibility, CM prescribed completions."
+  },
+  {
+   "roadmap": "MordellLawrenceVenkatesh",
+   "sections": [
+    "§1.3"
+   ],
+   "what": "A number field inside Q-bar is totally real or CM exactly when every product of two complex conjugations fixes it pointwise; used by Theorem 1.1."
   },
   {
    "roadmap": "AutomorphicGaloisRepresentationsPartII",
@@ -1473,14 +1511,14 @@
   {
    "roadmap": "ArithmeticGaloisRepresentations",
    "sections": [
-    "Layer 1",
+    "§2.1",
     "§4.3",
     "§6.3",
     "§7.2",
     "§7.7",
     "§7.9"
    ],
-   "what": "Decomposition groups, subgroups of PSL₂ and perfectness, the Tate curve, the trace-zero adjoint with its trace pairing, splitting and base change (ContinuousRep.adZero, ResidualImage.adZeroRep), finite-group cohomology of SL₂ with adjoint coefficients (H⁰ = H¹ = 0 for SL₂(F), F finite of odd characteristic with #F ≠ 5; H¹(SL₂(F5), ad⁰) one-dimensional; coefficient change)."
+   "what": "Decomposition groups, subgroups of PSL₂ and perfectness, the Tate curve, the trace-zero adjoint with its trace pairing, splitting and base change (ContinuousRep.adZero, ResidualImage.adZeroRep), finite-group cohomology of SL₂ with adjoint coefficients (H⁰ = H¹ = 0 for SL₂(k), k finite of odd characteristic with #k ≠ 5; H¹(SL₂(F5), ad⁰) one-dimensional; coefficient change)."
   },
   {
    "roadmap": "FaltingsFinitenessAndIsogenyTheorems",
@@ -1548,7 +1586,7 @@
    "neededBy": [
     "5.3"
    ],
-   "detail": "Theorem 5.3 needs ACC Theorem 3.1.1 for GL_2 in the setting of ACC23 §3.1: F CM containing an imaginary quadratic field with every p-adic place of F⁺ split in F; a good level; a finite conjugation-stable S containing the p-adic places with ACC's conditions outside S; R ⊆ S prime to p with residue characteristics split in imaginary quadratic subfields, Iw_{v,1} ⊆ K_v ⊆ Iw_v on R and K_v hyperspecial on R^c ∖ R; a non-Eisenstein maximal ideal. Conclusion: N depending only on the rank and [F:Q], an ideal I_R with I_R^N = 0 in the Hecke algebra with torus operators at R, and a representation of G_{F,S∖(R^c∖R)} over the quotient with Hecke Frobenius polynomials and characteristic polynomial P_{v,σ} at every σ ∈ W_{F_v}, v ∈ R. PotentialAutomorphyInfrastructure and CrystallineLocalGlobalCompatibilityCM §9.7 (and §9.9 through it) cite this as AutomorphicGaloisRepresentationsPartII AG2.5, whose text states characteristic-zero comparisons only.",
+   "detail": "Theorem 5.3 needs ACC Theorem 3.1.1 for GL_2 in the setting of ACC23 §3.1: F CM containing an imaginary quadratic field with every p-adic place of F⁺ split in F; a good level; a dominant weight λ (λ = 0 for 5.3); a finite conjugation-stable S containing the p-adic places with ACC's conditions outside S; R ⊆ S prime to p with residue characteristics split in imaginary quadratic subfields, Iw_{v,1} ⊆ K_v ⊆ Iw_v on R and K_v hyperspecial on R^c ∖ R; a non-Eisenstein maximal ideal. Conclusion: N depending only on the rank and [F:Q], an ideal I_R with I_R^N = 0 in the Hecke algebra of weight λ with torus operators at R, and a representation of G_{F,S∖(R^c∖R)} over the quotient with Hecke Frobenius polynomials and characteristic polynomial P_{v,σ} at every σ ∈ W_{F_v}, v ∈ R. PotentialAutomorphyInfrastructure and CrystallineLocalGlobalCompatibilityCM §9.7 (and §9.9 through it) cite this as AutomorphicGaloisRepresentationsPartII AG2.5, whose text states characteristic-zero comparisons only.",
    "needs": "A statement of ACC Theorem 3.1.1 (torsion local-global compatibility at Iwahori places away from p) in AutomorphicGaloisRepresentationsPartII.",
    "supplier": "AutomorphicGaloisRepresentationsPartII",
    "section": "AG2.5"
