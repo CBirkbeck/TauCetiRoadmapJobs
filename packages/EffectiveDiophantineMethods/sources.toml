@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EffectiveDiophantineMethods"
+
+[[source]]
+id = "morton1992"
+authors = ["Patrick Morton"]
+title = "Arithmetic properties of periodic points of quadratic maps"
+year = 1992
+locator_scheme = "page"
+locator = "§1, equation (5) and the paragraph after Theorem 1, p. 345; §3, Lemma 6, p. 363"
+url = "https://matwbn.icm.edu.pl/ksiazki/aa/aa62/aa6243.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa62/aa6243.pdf"
+fetched_at = "2026-11-15T13:02:21Z"
+sha256 = "ae8322fcbd7d8e1faa98163c5587d8884d527b233803c2f809fd8ee821c0b7af"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["3.26"]
