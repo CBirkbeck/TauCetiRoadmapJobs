@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SmoothBanachRepresentations~21",
+  "head": "18e94ffebf04aa11971d9bd3b41f9c72bdffd995",
+  "pr": 1145,
+  "folder": "RepresentationTheory/SmoothBanachRepresentations",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 18e94ff. The folder is unchanged and the previous review raised no finding. Checked the PR title and description against this head: 5 P3 findings. The title and opening sentence frame the PR as a revision, but it adds the roadmap. The torus seminorm paragraph describes content the head gives to NoncommutativeGeometry N6. The ownership paragraph contradicts README:9/:78/:84/:13 (G-finite gap from CompactGroups, scalar maps owned by §7.2a, no Layer 8 -> N6 edge). The build paragraph reports head a1c513cc with 8 admissions, but this head has 9 sorry theorems. The companion sentence calls NoncommutativeGeometry #1143 pending, but it has merged into main as d770acc7. The summary block is consistent. Gate rerun with the candidate order and --build: OK. Depcheck: 244 roadmaps, 2210 edges, 0 problems. lake env lean on Suggested.lean: 9 sorry warnings only. Adversarial rows computed for the statements the findings touch (torus claim, §7.2a balancing and complexification maps, gap:banach-gfinite-density, smooth_lift, smooth_inverse, dixmierMalliavin, admission count).",
+  "text": "5b2efa9d5ee85df8",
+  "carried": {
+   "from": "18e94ffebf04aa11971d9bd3b41f9c72bdffd995",
+   "head": "18e94ffebf04aa11971d9bd3b41f9c72bdffd995",
+   "findings": 5,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
