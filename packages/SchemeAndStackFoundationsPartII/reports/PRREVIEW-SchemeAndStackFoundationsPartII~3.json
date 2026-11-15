@@ -1,0 +1,30 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundationsPartII~3",
+  "head": "f517dd797a0e6c964e0e5270c9b71c351d01df97",
+  "pr": 2272,
+  "folder": "SchemeAndStackFoundationsPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since f517dd7; this round checked the pull request's title and description against the head: 1 P3 (the roadmap-summary block attributes derived completion to Tau Ceti, while the README imports it from DerivedModuleAlgebra and the pin has none). Previous R01 is deferred as D01 (stands). Gate passed with every counter 0; depcheck 244 roadmaps, 2231 edges, 0 problems; Suggested.lean elaborates with sorry as the only warning; 0 outside-folder paths. No source locator rechecked: no passage changed.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "Register the revised comparison contract in the plan",
+    "where": "packages/SchemeAndStackFoundationsPartII/design/plan.json gap registration",
+    "raised": "PRREVIEW-SchemeAndStackFoundationsPartII~2"
+   }
+  ],
+  "text": "a4850cc0e6e8fa89",
+  "carried": {
+   "from": "f517dd797a0e6c964e0e5270c9b71c351d01df97",
+   "head": "f517dd797a0e6c964e0e5270c9b71c351d01df97",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
