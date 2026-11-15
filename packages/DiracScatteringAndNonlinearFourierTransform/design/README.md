@@ -2311,7 +2311,12 @@ in terms of `C` because `t₁y₁` and `t₂y₂` lie in `(1, C]` and §8.9 move
 Since `log|a_{t₁→t₂}| ≥ 0` on `ℝ` (§4.3), a cover of `Sₙ` of index two by the `J(s)` and §9.1's Plancherel
 identity give `|Zₙ ∩ G_N| ≲_{m,C} ‖f‖²_{L²(2ⁿ, 2ⁿ⁺¹)}` for `n ≥ N`, which is summable in `n`. Borel–Cantelli,
 which needs no measurability, gives for each `N` that almost every `s ∈ G_N` lies in finitely many `Zₙ`, so
-`lim sup ℓₙ(s)/2ⁿ ≤ 1/m` at almost every `s`, for every `m`.
+`lim sup ℓₙ(s)/2ⁿ ≤ 1/m` at almost every `s`, for every `m`; off the union of these null sets over
+`m = 1, 2, …`, `ℓₙ(s)/2ⁿ → 0`. That null set depends on `C`, through `G_N`, `ε₁(s)` and `c_{m,C}`, and the
+`C > 0` are uncountably many. The length `ℓₙ(s)` is nondecreasing in `C`: `Q(s, C/t) ⊆ Q(s, C′/t)` for
+`C ≤ C′`, while `K`, `T₁(s, K)` and `T̃₁(s, K)` do not involve `C`, so every interval counted for `C` is
+counted for `C′`. Hence the statement for `C = 1, 2, 3, …`, off the union of the corresponding null sets,
+gives it for every `C > 0`, by comparison with `C′ = ⌈C⌉`.
 
 *Needs:* §3.1, §3.2, §4.3, §6.8, §8.8, §8.9, §9.1, §9.2; Mathlib Borel–Cantelli
 (`MeasureTheory.measure_limsup_atTop_eq_zero`, stated for outer measures).
@@ -2329,6 +2334,11 @@ which needs no measurability, gives for each `N` that almost every `s ∈ G_N` l
   `log|a_{t₁→t₂}| = ½ log(1 + sin²(Re e)/sinh² 2)`: `0` at `p = s` and `≈ 0.000379` at the shift `Re e = 0.1`,
   with mean `≈ 0.000126 > 0` over shifts in `[−0.1, 0.1]`. A pointwise bound `log|a_{t₁→t₂}| ≥ c > 0` on
   `J(s)` fails at `p = s`.
+- Monotonicity in `C`, used to pass from integer `C` to every `C > 0`: if for one `n` with `K ≥ 2.7` on `[2ⁿ, 2ⁿ⁺¹]`
+  and every `t` there the only zero of `E(t, ·)` in `Q(s, K(t)/t)` is `s + 2.7/t − 2i/t` and `Ẽ(t, ·)` has none
+  there, then every such `t` is in `T₁(s, K) ∩ T̃₁(s, K)` (height `−2/t < −1/t`), and the zero lies in `Q(s, 3/t)`
+  (`2.7 ≤ 3`, `2 ≤ 3`) but not in `Q(s, 2.5/t)` (`2.7 > 2.5`): `ℓₙ(s)` is `2ⁿ` for `C = 3` and `0` for `C = 2.5`
+  and for `C = 2`. So `ℓₙ(s)` does depend on `C`, and the comparison must round `C` up, never down.
 
 ### 9.4 Resonance-free points
 
