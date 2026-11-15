@@ -1,0 +1,22 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "NoncommutativeAndEquivariantIwasawa"
+
+[[source]]
+id = "lvz"
+authors = "David Loeffler, Sarah Livia Zerbes, Otmar Venjakob"
+title = "Local epsilon isomorphisms"
+year = 2013
+venue = "Kyoto J. Math. 55, no. 1 (2015), 63-127"
+doi = "10.1215/21562261-2848124"
+arxiv = "1303.1785v1"
+locator_scheme = "theorem"
+locator = "§2.3, pp. 3–5 (Propositions 2.3.2–2.3.3); §2.4, pp. 5–6"
+url = "https://arxiv.org/abs/1303.1785v1"
+fetched_from = "https://arxiv.org/pdf/1303.1785v1"
+fetched_at = "2026-11-15T04:58:34Z"
+sha256 = "69803b555d6bed7d935efd0748e7ea7b3920bf204f67eaa4b0eb11bd68f6b2b8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["7.15"]
