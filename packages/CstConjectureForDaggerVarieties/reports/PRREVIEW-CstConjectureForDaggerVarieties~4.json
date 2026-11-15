@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CstConjectureForDaggerVarieties~4",
+  "head": "af57e66db65149ce38372e8bfd20b6d85224f598",
+  "pr": 1759,
+  "folder": "CstConjectureForDaggerVarieties",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 20 changed lines since cb613f0, and a check of the pull request's title and description as they stand now. Checked: the 12 library file-and-line locators of README lines 48-56 at the pinned Mathlib and Tau Ceti (all land on the named declarations); the new §3.4 Needs item (§2.7) against the proof route and CN25 lines 2462-2527 (seeded sample target 3.4); the six retitled docstring bullets against the first targets of README §§2.5, 2.8, 3.4, 4.4, 5.1, 5.4 (34 bullets, no theorem named twice); the description sentence by sentence against the head (34 headlines, no declaration, build with no warning, seven open suppliers, hypotheses on K, review-round counts). Previous R01 and R02 repaired; D01 (board plan.json suppliers of gaps qbc-pairs and natural-period-hom) stands, deferred. Gate rerun OK; depcheck 244 roadmaps, 2229 edges, 0 problems, no UPWARD/CYCLE; lake env lean exit 0 with no output (no declarations); outside-folder diff empty. Adversarial table: 3 rows with computed values for the statements the changed text cites. Accepted conditional on the declared supplier gaps.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "R01: in `packages/CstConjectureForDaggerVarieties/design/plan.json` the gap entries `qbc-pairs` and `natural-period-hom` must name VectorBundlesAndIsocrystalsPartII as supplier, with the needs the REA",
+    "where": "board plan.json, supplier and needs of gaps qbc-pairs and natural-period-hom",
+    "raised": "PRREVIEW-CstConjectureForDaggerVarieties~3"
+   }
+  ],
+  "text": "8a156860301a3243"
+ }
+}
