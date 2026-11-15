@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DiamondEtaleCohomology"
+
+[[source]]
+id = "ECD"
+authors = "Peter Scholze"
+title = "Etale cohomology of diamonds"
+year = 2017
+arxiv = "1709.07343v4"
+locator_scheme = "theorem"
+locator = "Proposition 18.7"
+url = "https://arxiv.org/abs/1709.07343v4"
+fetched_from = "https://arxiv.org/pdf/1709.07343v4"
+fetched_at = "2026-11-15T15:22:33Z"
+sha256 = "78ca42bba46f1d43c894b0dbfdfb41105efab4959ba5ba6e32e1e5cf7ef33efc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v4"
+cited_for = ["C4.15"]
