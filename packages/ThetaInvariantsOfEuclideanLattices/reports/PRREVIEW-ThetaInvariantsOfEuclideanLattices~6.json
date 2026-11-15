@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ThetaInvariantsOfEuclideanLattices~6",
+  "head": "056f5b180f22043adc7f93aca86b241275d93786",
+  "pr": 2038,
+  "folder": "ThetaInvariantsOfEuclideanLattices",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 97aa248; this round read the pull request's title and description against the head. Two P3 findings, both in the description: it places the roadmap after GeometryOfNumbersAndQuadraticArithmetic although the last supplier is ArakelovGeometryAndAbelianHeights (depcheck probe: 2 UPWARD lines at that placement), and its supplier lists omit GeometryOfNumbers 4.4.4, 4.4.8, 4.4.13, 0.2.2 and the Tau Ceti elliptic-integral and jacobiTheta-limit declarations. No change asked of README.md or Suggested.lean. Gate: worker's gate passes (build=0); my run with the default order stops only at NOT IN ORDER. Depcheck with the candidate order: 0 problems. Elaboration: 21 sorry warnings only. Adversarial rows computed for 4.3 over Q(i), 1.8, 1.7 and 1.2. Seeded sample: no sampled target in a changed passage. Remark: open roadmap SpecialFunctionsTheta 5.2 states the same K-theta3 relation as 1.7; this roadmap is earlier and owns it.",
+  "text": "8ea2a6bb63a0dd62"
+ }
+}
