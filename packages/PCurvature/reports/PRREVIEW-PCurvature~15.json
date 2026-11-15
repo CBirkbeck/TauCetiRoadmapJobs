@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PCurvature~15",
+  "head": "85511397c1206acf1f5ff9cd5430100c7f03d85a",
+  "pr": 1747,
+  "folder": "PCurvature",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 58 changed lines since 774be2e (README only). Checked: the previous report had no finding; the new Kronecker citation in 4.1 against Bostan-Caruso-Roques Theorem 3.7 (sound); the new Research-context paragraph against Fuernsinn-Pannier arXiv v3 Theorems 1.2 and 1.3 (R01, P3: Theorem 1.3 cited for all u in Q(x), but its list decides only for c = 1; witness c/(x^2+1)); the reference entry and DOI; no dangling reference after the two deletions; title and description against the head (no contradiction); nothing changed outside the folder. Gate with the candidate order: every check 0, OK. Depcheck: 245 roadmaps, 2235 edges, 0 problems. Elaboration: exit 0, 11 sorry warnings only. Adversarial table: 5 rows with computed values. One source erratum recorded.",
+  "text": "86683ea0e2cd5856"
+ }
+}
