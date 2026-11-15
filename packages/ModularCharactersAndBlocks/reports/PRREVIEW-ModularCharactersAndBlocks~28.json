@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularCharactersAndBlocks~28",
+  "head": "8379fbab8b8991aba117b742b8f590f0869d1bcd",
+  "pr": 1775,
+  "folder": "RepresentationTheory/ModularCharactersAndBlocks",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 8379fba; this round checked the pull request's title and description against the head (30 sentences, none contradicted, no unstated change: the roadmap is added, 13 theorems and 5 definitions, suppliers all named). Gate passes at 8379fba; depcheck 246 roadmaps, 2235 edges, 0 problems; Suggested.lean elaborates with 13 sorry warnings only. Supplier sections resolved at the open heads and on main. Adversarial rows recomputed for the kernel theorem and Brauer's count on S3, C2, C3, the trivial group; other rows stand as in the review of 8379fba. No seeded sample target lies in a changed passage. Remarks only: #1220 named as open in the description has merged; OddOrderTheorem's open head still defines the pi-cores owned by section 0.3.",
+  "text": "431b568137b26bec"
+ }
+}
