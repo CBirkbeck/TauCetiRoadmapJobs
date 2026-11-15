@@ -1977,19 +1977,21 @@
    "id": "8.1",
    "kind": "downstream goal",
    "name": "marginalTriviality",
-   "statement": "Owned and proved by ConstructiveFieldTheoryPhi4PartII: For d >= 4 and C = {rho_{lambda,b} : lambda > 0, b real} union {rho_I}: every C-reachable random field with a two-point Schwinger function satisfying (1.10) is a generalised Gaussian process (IsGaussianProcess).",
+   "statement": "Owned and proved by ConstructiveFieldTheoryPhi4PartII: For d >= 4 and C = {rho_{lambda,b} : lambda > 0, b real} union {rho_I}: every random field reachable from C by a convergent scheme of 7.2 with J_n <= beta_c(rho_n, J^nn) for every n (4.3), and with a two-point Schwinger function satisfying (1.10), is a generalised Gaussian process (IsGaussianProcess). Schemes with couplings above the critical point are not part of the statement.",
    "hypotheses": [
     "Downstream ownership: ConstructiveFieldTheoryPhi4PartII; not a target of this roadmap.",
     "d >= 4",
-    "Phi C-reachable",
+    "Phi reachable from C by a convergent scheme of 7.2",
+    "J_n <= beta_c(rho_n, J^nn) for every n, J^nn the nearest-neighbour coupling of strength 1 on Z^d (4.3)",
     "S_2 exists and satisfies (1.10)"
    ],
    "locator": {
     "source": "aizenman-duminilcopin-2021",
-    "where": "Theorem 1.2, line 190, with (1.10), line 126 (d = 4); lines 122-128 citing aizenman-1982 and frohlich-1982 lines 112-115 (d >= 5)"
+    "where": "Theorem 1.2, line 190, with (1.10), line 126 (d = 4); estimates Proposition 1.4, lines 323-326, and Proposition 7.2, lines 2014-2017, for beta <= beta_c and L <= xi(beta) ((1.19), line 247); lines 122-128 citing aizenman-1982 and frohlich-1982 lines 84-85 and 112-115 (d >= 5, beta <= beta_c, vanishing long-range order)"
    },
    "prerequisites": [
     "target:0.2",
+    "target:4.3",
     "target:6.2",
     "target:6.3",
     "target:7.2"
@@ -1999,17 +2001,22 @@
     {
      "name": "telegraph_d1",
      "kind": "non-example",
-     "statement": "d = 1: the telegraph field is {rho_I}-reachable with S_2 = e^{-c|u-v|}/kappa satisfying (1.10) and is bounded, hence not Gaussian: d >= 4 cannot be dropped."
+     "statement": "d = 1: the telegraph field is reached from {rho_I} with couplings below beta_c(rho_I, J^nn) = infinity (4.3), has S_2 = e^{-c|u-v|}/kappa satisfying (1.10) and is bounded, hence not Gaussian: d >= 4 cannot be dropped."
     },
     {
      "name": "white_noise_excluded",
      "kind": "degenerate",
-     "statement": "White noise (J_n = 0) has no S_2, so the hypothesis is a genuine restriction; it is Gaussian anyway."
+     "statement": "White noise (J_n = 0 <= beta_c) has no S_2, so the hypothesis is a genuine restriction; it is Gaussian anyway."
+    },
+    {
+     "name": "critical_schemes_included",
+     "kind": "non-example",
+     "statement": "The inequality is not strict: critical schemes J_n = beta_c(rho_n, J^nn) are included (aizenman-duminilcopin-2021 lines 259-260; for Ising xi(beta_c) = infinity, lines 250-252); schemes with some J_n > beta_c(rho_n, J^nn) are outside the statement."
     },
     {
      "name": "gff_consistent",
      "kind": "compatibility",
-     "statement": "The d = 4 GFF satisfies the field hypotheses with single-site measures outside C and is Gaussian."
+     "statement": "The d = 4 GFF has single-site measures gamma_{b_n} outside C and is Gaussian; 4.3 does not apply to gamma_b, but the Gaussian lattice susceptibility 1/(2(|b_n| - d beta)) is finite exactly for beta < |b_n|/d = 1 + m^2/(2d L_n^2) and equals L_n^2/m^2 at J_n = 1, so J_n = 1 is below the Gaussian critical coupling for m > 0 and at it for m = 0."
     }
    ],
    "owner": "ConstructiveFieldTheoryPhi4PartII"
@@ -2018,19 +2025,21 @@
    "id": "8.2",
    "kind": "downstream goal",
    "name": "marginalTriviality_griffithsSimon",
-   "statement": "Owned and proved by ConstructiveFieldTheoryPhi4PartII: For d >= 4 and C the Griffiths-Simon class of 2.2: every C-reachable random field with a two-point Schwinger function satisfying (1.10) is a generalised Gaussian process.",
+   "statement": "Owned and proved by ConstructiveFieldTheoryPhi4PartII: For d >= 4 and C the Griffiths-Simon class of 2.2: every random field reachable from C by a convergent scheme of 7.2 with J_n <= beta_c(rho_n, J^nn) for every n (4.3), and with a two-point Schwinger function satisfying (1.10), is a generalised Gaussian process. Schemes with couplings above the critical point are not part of the statement.",
    "hypotheses": [
     "Downstream ownership: ConstructiveFieldTheoryPhi4PartII; not a target of this roadmap.",
     "d >= 4",
-    "Phi reachable from the Griffiths-Simon class",
+    "Phi reachable from the Griffiths-Simon class by a convergent scheme of 7.2",
+    "J_n <= beta_c(rho_n, J^nn) for every n, J^nn the nearest-neighbour coupling of strength 1 on Z^d (4.3)",
     "S_2 exists and satisfies (1.10)"
    ],
    "locator": {
     "source": "aizenman-duminilcopin-2021",
-    "where": "Section 7, lines 1979-1985; Theorem 7.1, line 2006; Proposition 7.2, lines 2014-2017 (d = 4); aizenman-1982 (d >= 5)"
+    "where": "Section 7, lines 1979-1985; Theorem 7.1, lines 2006-2007; Proposition 7.2, lines 2014-2017, for beta <= beta_c(rho) and L <= xi(rho, beta) (d = 4); aizenman-1982 (d >= 5)"
    },
    "prerequisites": [
     "target:2.2",
+    "target:4.3",
     "target:6.2",
     "target:6.3",
     "target:7.2"
@@ -2040,12 +2049,17 @@
     {
      "name": "implies_8_1",
      "kind": "compatibility",
-     "statement": "8.2 implies 8.1 since rho_I and phi^4 measures are in the class and reachability is monotone in C."
+     "statement": "8.2 implies 8.1: rho_I and phi^4 measures are in the class, and a scheme with single-site measures in the smaller class and J_n <= beta_c(rho_n, J^nn) is such a scheme for the larger class (the coupling condition involves only rho_n and J_n; reachability is monotone in C)."
     },
     {
      "name": "telegraph",
      "kind": "non-example",
-     "statement": "The d = 1 telegraph field shows d >= 4 is needed, as rho_I is in the class."
+     "statement": "The d = 1 telegraph field shows d >= 4 is needed, as rho_I is in the class and beta_c(rho_I, J^nn) = infinity in d = 1."
+    },
+    {
+     "name": "dirac_zero_field",
+     "kind": "degenerate",
+     "statement": "delta_0 is in the class with beta_c(delta_0, J^nn) = infinity; its only reachable field is the zero field, with S_2 = 0 satisfying (1.10) and Dirac (variance 0 Gaussian) finite-dimensional laws, consistent with the statement."
     },
     {
      "name": "gaussian_outside",
