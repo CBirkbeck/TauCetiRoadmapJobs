@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GrothendieckTopoi~26",
+  "head": "a0bf5761d0fd400783a5414f562b618ef48b16a1",
+  "pr": 1520,
+  "folder": "GrothendieckTopoi",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 36 changed lines since 46fa6f3 (a new Provenance section and reference to AxiomMath, The Stacks Project in Lean, at c496df0). Checked every claim of the section against the external repository at that commit (21 files opened, the full Sites tree of 3946 files, lean-toolchain, lakefile, LICENSE, README) and 12 Stacks Project tags. Found 3 P3s: the Stacks tags 00XC/00XA are attached to the wrong content and file, and the morphism-of-sites construction belongs to 2.4 rather than 2.1-2.2 (R01); the claim 'records it as unreviewed by humans' contradicts the repository's README (R02); the description's Provenance paragraph has the same tag pairing as R01 (R03). Previous review raised no finding. Gate: the worker's gate passes every check including the build; depcheck on the candidate order with --movable reports 0 problems (no UPWARD or CYCLE line). lake env lean on Suggested.lean (unchanged since 46fa6f3) exits 0 with 44 sorry warnings and nothing else. Seeded sample: no sampled target falls in the changed passage; the section names them only by number. Source independence checked on changed passages only.",
+  "text": "0204393b4a8d19af"
+ }
+}
