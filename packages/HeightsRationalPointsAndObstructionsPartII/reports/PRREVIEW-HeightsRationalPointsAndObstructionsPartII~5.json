@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsRationalPointsAndObstructionsPartII~5",
+  "head": "653f2ec2047ceffe1228f210a33aab9a4f2b194d",
+  "pr": 1821,
+  "folder": "HeightsRationalPointsAndObstructionsPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 21 changed lines since 4a579da. Previous R01 (Layer 12 section structure) repaired: 12.2 and 12.3 are sections again, the introduction sits under the layer heading and its citations of 3.5 and 3.6 resolve. The new Provenance section was checked against AxiomMath/Mordell at commit 82a30cb (licence, toolchain v4.35.0, Mathlib revision, Stacks dependency, the Height and NeronTate directories, the five linked files and their statements) and against this roadmap's 5.1, 5.4, 5.5, 5.8 and Conventions; the twice-theta normalisation was recomputed (diagonal 2q = 2 h-hat). Citations of Mathlib Projectivization.logHeight and of HeightsRationalPointsAndObstructions Layer 0, 5.10, 5.11 resolved. Seeded sample: no target in the changed passages. Gate rerun at 653f2ec: all counters 0, OK; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning (3). Pull request title and description read against the head: nothing contradicted. One licence note for the human reviewers.",
+  "text": "c30c3bd93df696c3"
+ }
+}
