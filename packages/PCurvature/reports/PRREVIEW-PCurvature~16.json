@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PCurvature~16",
+  "head": "3fad9f28a6f4fc9932b28fe6dc09fddeb4930946",
+  "pr": 1747,
+  "folder": "PCurvature",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 21 changed lines since 8551139 (README lines 718-729, Research context only). R01 of the previous report repaired: Theorem 1.3 of Fuernsinn-Pannier is now cited for c = 1 with a, b primitive, and the witness c/(x^2+1) was recomputed (zero p-curvature at every listed prime, residues irrational, outside the restricted statement). 5 locators checked in arXiv:2510.00892v3; no seeded-sample target falls in the changed passage; title and description not contradicted; nothing changed outside the folder against main. Gate: every check 0, OK. Depcheck: 0 problems. Elaboration: exit 0, 11 sorry warnings only. Not read: Katz 1982 section 9, the Math. Comp. version.",
+  "text": "86683ea0e2cd5856"
+ }
+}
