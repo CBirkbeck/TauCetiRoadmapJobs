@@ -409,7 +409,7 @@
       {
        "name": "rescale_pressure",
        "kind": "computation",
-       "statement": "For g'(t) = g(2t), P_{g'}(2F) = 2 P_g(F); using F instead gives 2 P_g(F/2), different for nonconstant F."
+       "statement": "For g'(t) = g(2t), P_{g'}(2F) = 2 P_g(F); using F instead gives P_{g'}(F) = 2 P_g(F/2), which differs from 2 P_g(F) exactly when P_g(F/2) != P_g(F): for F = c != 0 the values are 2 h_top(g) + c and 2 h_top(g) + 2c (2 log 2 + 1 against 2 log 2 + 2 for F = 1 on the roof-one suspension of the full two-shift); a coboundary F = L_g psi gives 2 h_top(g) both ways and does not detect the error."
       },
       {
        "name": "coboundary_integral",
@@ -851,7 +851,7 @@
       {
        "name": "suspension_weak_spec",
        "kind": "computation",
-       "statement": "The suspension has weak specification with gaps in [0, tau0 + 1] but integer periods."
+       "statement": "The roof-one suspension of the full two-shift has weak specification with gaps in [0, tau0 + 1] but no strong specification: the height s mod 1 advances at unit speed and, for delta small, points delta-close have heights within 1/8 mod 1; the segments ([0,a], 0), ([0,b], 1) force a common gluing time tau within 1/4 of Z and the segments ([0,a], 1/2), ([0,b], 1) force it within 1/4 of 1/2 + Z; the two distances add up to 1/2, so no tau does both."
       },
       {
        "name": "periodic_orbit",
@@ -1277,7 +1277,7 @@
      "id": "8.1",
      "kind": "theorem",
      "name": "Manifold.hadamardPerron",
-     "statement": "Uniform Hadamard-Perron for sequences (f_n)_{n in Z}, f_n = (A_n x + g_n, B_n y + h_n) on the box B^u(r0) x B^s(r0), with |A_n^{-1}| <= mu^{-1}, |B_n| <= lambda, mu > max(1,lambda), g_n(0) = h_n(0) = 0, small C^1 nonlinearities: unique family (W^+_n)_{n in Z} of C^1 graphs over E^u with (i) f_n(W^+_n) cap box = W^+_{n+1}, (ii) expansion by more than mu' on W^+_n, (iii) if z has points z_L (L >= 0) of the box with z_0 = z, f_{n-L}(z_L) = z_{L-1} and |z_L| < C nu^{-L} |z| for some C > 0 and lambda' < nu < mu', then z in W^+_n (no inverse needed; for invertible f_n these are the backward images of the source). Stable family only under further hypotheses: lambda < 1 and each f_n the restriction of a C^1 diffeomorphism F_n of R^d fixing 0 whose inverse has linear parts B_n^{-1}, A_n^{-1} (B_n invertible) and small C^1 nonlinear parts; then graphs over E^s with F_n^{-1}(W^-_{n+1}) cap box = W^-_n.",
+     "statement": "Uniform Hadamard-Perron for sequences (f_n)_{n in Z}, f_n = (A_n x + g_n, B_n y + h_n) on the box B^u(r0) x B^s(r0), with |A_n^{-1}| <= mu^{-1}, |B_n| <= lambda, mu > max(1,lambda), g_n(0) = h_n(0) = 0, small C^1 nonlinearities: unique family (W^+_n)_{n in Z} of C^1 graphs over E^u with (i) f_n(W^+_n) cap box = W^+_{n+1}, (ii) expansion by more than mu' on W^+_n, (iii) if z has points z_L (L >= 0) of the box with z_0 = z, f_{n-L}(z_L) = z_{L-1} and |z_L| < C nu^{-L} |z| for some C > 0 and lambda' < nu < mu', then z in W^+_n (no inverse needed; for invertible f_n these are the backward images of the source); (iv) unstable cones are invariant with expansion: if two points of the box differ by (dx, dy) with |dy| <= gamma |dx|, their images under f_n differ by (dx', dy') with |dy'| <= gamma |dx'| and |dx'| >= (mu - (1 + gamma) delta) |dx|, where mu - (1 + gamma) delta > 1 (mean value inequality, under the source's choice of delta0). Stable family only under further hypotheses: lambda < 1 and each f_n the restriction of a C^1 diffeomorphism F_n of R^d fixing 0 whose inverse has linear parts B_n^{-1}, A_n^{-1} (B_n invertible) and small C^1 nonlinear parts; then graphs over E^s with F_n^{-1}(W^-_{n+1}) cap box = W^-_n.",
      "hypotheses": [
       "n ranges over Z",
       "mu > max(1, lambda)",
@@ -1286,7 +1286,7 @@
      ],
      "locator": {
       "source": "ClimenhagaPesin2016",
-      "where": "Theorem 11.1, lines 1822-1840 (stated for n <= 0, with inverses in (iii)); line 1854 (lambda' = lambda + (1 + 1/gamma) delta); Remark 11.2, lines 1841-1843 (stable family via inverses); KatokHasselblatt1995 Theorem 6.2.8"
+      "where": "Theorem 11.1, lines 1822-1840 (stated for n <= 0, with inverses in (iii)); lines 1847-1855 (delta0, lambda' = lambda + (1 + 1/gamma) delta, mu' = (mu - delta(1 + gamma))/(1 + gamma); the cone step (iv)); Remark 11.2, lines 1841-1843 (stable family via inverses); KatokHasselblatt1995 Theorem 6.2.8"
      },
      "prerequisites": [
       "mathlib:ContractingWith",
@@ -1368,7 +1368,7 @@
      "id": "8.3",
      "kind": "theorem",
      "name": "Flow.IsHyperbolicSet.localStrongStableManifold",
-     "statement": "For a hyperbolic set of a C^r flow: strong stable plaques (C^r discs tangent to E^s, contraction C' e^{-kappa' t}, sandwiching the strong stable sets W^s_{r/K} in plaque in W^s_{Kr}); weak stable plaques, the images of [-r,r] x strong plaque under (v,y) -> g^v y, whose interiors are C^r submanifolds tangent to E^s + RX (the closed weak plaque has corners); unstable analogues; continuous in x. Charts straightening the weak plaques: for small eps and x in Lambda a C^r chart phi_x from the eps-ball of T_xM (for the inner product making E^s_x, RX(x), E^u_x orthogonal, equal to the adapted metric of 7.6 on E^s_x and E^u_x, with |X(x)| = 1) with phi_x(0) = x, derivative the identity at 0, carrying the eps-ball of E^s_x + RX(x) into the weak stable plaque and that of E^u_x + RX(x) into the weak unstable plaque, with C^1 bounds on phi_x and its inverse uniform in x.",
+     "statement": "For a hyperbolic set of a C^r flow: strong stable plaques (C^r discs tangent to E^s, contraction C' e^{-kappa' t}, sandwiching the strong stable sets W^s_{r/K} in plaque in W^s_{Kr}; the first inclusion by the cone step 8.1(iv) for the time-one maps, which puts a point of W^s_{r/K}(x) on the weak plaque as g^v y' with y' in the strong plaque, and v = 0 because g^v then fixes a limit point of the orbit of x and periods in Lambda are bounded below by some tau_Lambda > r0, X having no zero on Lambda; 8.1(iii) does not apply to the time -1 maps, whose lambda' exceeds 1); weak stable plaques, the images of [-r,r] x strong plaque under (v,y) -> g^v y, whose interiors are C^r submanifolds tangent to E^s + RX (the closed weak plaque has corners); unstable analogues; continuous in x. Charts straightening the weak plaques: for small eps and x in Lambda a C^r chart phi_x from the eps-ball of T_xM (for the inner product making E^s_x, RX(x), E^u_x orthogonal, equal to the adapted metric of 7.6 on E^s_x and E^u_x, with |X(x)| = 1) with phi_x(0) = x, derivative the identity at 0, carrying the eps-ball of E^s_x + RX(x) into the weak stable plaque and that of E^u_x + RX(x) into the weak unstable plaque, with C^1 bounds on phi_x and its inverse uniform in x.",
      "hypotheses": [
       "g C^r flow, r >= 1",
       "Lambda hyperbolic"
@@ -1426,6 +1426,11 @@
        "name": "neutral_normalisation",
        "kind": "non-example",
        "statement": "Time change h(s) d/ds of the cat suspension (h <= 1, period 1, falling from 1 to e^{-3a} over length 0.05, then constant for 0.1): E^s, E^u the eigenline directions, kappa < a since a period-p orbit takes time p int ds/h > p, so 7.6 gives mu = e^{kappa'} < e^a; a point crossing the drop in time 1 has |Dg^1 X|/|X| = e^{-3a} when |d/ds| = 1, so the neutral block of Dg^-1 has norm e^{3a} > mu and 8.1 fails; with |X| = 1 the neutral block is an isometry, lambda = 1 < mu."
+      },
+      {
+       "name": "first_inclusion_no_rate",
+       "kind": "non-example",
+       "statement": "Cat suspension, 0 < |c| < 1: y = g^c x is on the weak stable plaque with v = c; in the charts phi_{g^n x} its forward images have coordinates (c, 0, 0) for all n, bounded and off the strong stable line, so a rate-one form of 8.1(iii) would put it on the strong plaque; it is not in W^s_eps(x), since g^c fixes no point and d(g^t y, g^t x) stays above the positive minimum of d(g^c z, z); tau_Lambda = 1."
       }
      ]
     },
@@ -1693,10 +1698,11 @@
      "id": "9.2",
      "kind": "theorem",
      "name": "Manifold.IsAnosov.suspension_isAnosov",
-     "statement": "(a) Suspensions of C^r Anosov diffeomorphisms on the smooth mapping torus are C^r Anosov flows, not mixing; (b) for an Anosov flow with C^r generator X and positive C^r h, the flow of hX is Anosov with C^r generator; (c) for a C^{r+1} Anosov diffeomorphism phi and a positive C^r roof R, with 0 < c < min R and a smooth bump rho >= 0 supported in (0,1) of integral 1, h([s,x]) = 1/(c + (R(x) - c) rho(s)) is positive C^r on the mapping torus, and the suspension with roof R, defined as the flow of h d_t, is Anosov with first return map phi and return time R.",
+     "statement": "(a) Suspensions of C^infinity Anosov diffeomorphisms on the smooth mapping torus are C^infinity Anosov flows, not mixing; (b) for an Anosov flow with C^r generator X and positive C^r h, the flow of hX is Anosov with C^r generator; (c) for a C^infinity Anosov diffeomorphism phi and a positive C^r roof R (r >= 1), with 0 < c < min R and a smooth bump rho >= 0 supported in (0,1) of integral 1, h([s,x]) = 1/(c + (R(x) - c) rho(s)) is positive C^r on the mapping torus and d_t is C^infinity there, so h d_t is C^r, and the suspension with roof R, defined as the flow of h d_t, is Anosov with first return map phi and return time R. For phi of finite class C^r the quotient atlas of the mapping torus is a C^r atlas only, outside the smooth manifolds of the Conventions.",
      "hypotheses": [
-      "phi C^r Anosov diffeomorphism of a nonempty compact N (C^{r+1} for (c))",
-      "h positive C^r; R positive C^r with 0 < c < min R"
+      "phi C^infinity Anosov diffeomorphism of a nonempty compact N (for (a) and (c))",
+      "g Anosov with C^r generator X, h positive C^r (for (b))",
+      "R positive C^r with 0 < c < min R (for (c))"
      ],
      "locator": {
       "source": "FH2019",
@@ -1730,7 +1736,7 @@
       {
        "name": "integer_periods",
        "kind": "non-example",
-       "statement": "Constant roof 1: integer periods, not mixing; by (c) a roof with R(p) = 1, R(q) = sqrt 2 at fixed points p, q gives periods 1 and sqrt 2."
+       "statement": "Constant roof 1: not mixing (flow boxes, 2.1) and integer periods; by (c) a roof with R(p) = 1, R(q) = sqrt 2 at fixed points p, q gives periods 1 and sqrt 2."
       },
       {
        "name": "empty_suspension",
@@ -1993,7 +1999,11 @@
      },
      "prerequisites": [
       "target:6.3",
+      "target:6.6",
+      "target:8.4",
+      "target:8.5",
       "target:9.1",
+      "target:10.1",
       "target:10.2",
       "target:10.3"
      ],
@@ -2284,7 +2294,8 @@
       "roadmap:ClassicalErgodicTheory §3.4",
       "target:10.1",
       "target:10.3",
-      "target:11.5",
+      "target:11.1",
+      "target:11.4",
       "target:11.5",
       "roadmap:ClassicalErgodicTheory §8.2"
      ],
