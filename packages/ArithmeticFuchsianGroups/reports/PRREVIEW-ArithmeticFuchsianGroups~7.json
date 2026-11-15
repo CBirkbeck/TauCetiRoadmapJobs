@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticFuchsianGroups~7",
+  "head": "a0992d0a9ceffe25ebc34bf471af363c090caf39",
+  "pr": 2026,
+  "folder": "ArithmeticFuchsianGroups",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 5fdb26d; the folder is unchanged and the previous review had no finding. This round read the pull request's title and description against the head: four P3 findings, all in the description (a proof method the README does not contain; TeichmullerGeometry's consumption misstated; the L-function roadmaps said to consume FuchsianOrbifolds; the supplier sentence omits the four suppliers not on main). Gate re-run: all counters 0, OK (worker's build=0). Depcheck: 0 problems. Suggested.lean elaborates with 17 sorry warnings only. Adversarial rows computed for the statements the description cites (covolume pi/3 at M2(Z); Odlyzko (5) at Q; the totally real bound at n=2 and row n0=32). The seeded sample falls in no changed passage.",
+  "text": "9280f7dae4d21e14",
+  "carried": {
+   "from": "a0992d0a9ceffe25ebc34bf471af363c090caf39",
+   "head": "a0992d0a9ceffe25ebc34bf471af363c090caf39",
+   "findings": 4,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
