@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StratifiedSpacesAndTameTopology~20",
+  "head": "8bb72e2709e343be6b551f54cee9c32e9fab6220",
+  "pr": 1519,
+  "folder": "StratifiedSpacesAndTameTopology",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since bd1eb6b. The folder and lake-manifest.json are identical to bd1eb6b; nothing outside the folder differs from origin/main. Both previous findings (R01, R02, P3, in the pull request's description: ShimuraVarieties §3.5a and the R2.1/A4.1 triangulation theorems listed as consumed) are not repaired, since the description is unchanged; no change to the folder is asked for. Gate: all checks 0 with the candidate order (public order: only 'NOT IN ORDER', not a defect); depcheck 245 roadmaps, 2232 edges, 0 problems, no UPWARD or CYCLE; lake env lean exits 0 with 4 sorry warnings only. 14 cross-roadmap citations re-resolved at the open heads of ShimuraVarieties and AlgebraicTopologyPartII and on main; adversarial rows computed for 4.3 (compact, bounded, unbounded, n = 0) and the Needs lines behind R01. The seeded sample falls in no changed passage.",
+  "text": "91c3871af0246b94"
+ }
+}
