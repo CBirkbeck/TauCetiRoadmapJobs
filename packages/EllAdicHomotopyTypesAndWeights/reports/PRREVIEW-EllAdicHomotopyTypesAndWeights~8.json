@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllAdicHomotopyTypesAndWeights~8",
+  "head": "88b06c918a5f04aaa6a9275e045a7c5341fd8027",
+  "pr": 1644,
+  "folder": "EllAdicHomotopyTypesAndWeights",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since 284a816: the reworded opening paragraph of §6.5 checked against weil-II lines 3883-3894 (p. 240), its six laws and Checks, with computed instances (even-sphere model, Jordan block, a non-Galois-invariant v over Q as negative control); wording compared with the source, none shared. Previous R01 (description's dependency paragraph) repaired. Title and description checked against the head: 9 suppliers on main, 8 open, 7 gap contracts, 21 docstring headlines, 0 declarations, all agree. Citations of DeligneWeightsAndPurity §§0.1-0.3, 0.7-0.18 and RationalHomotopyModels sections resolved at their open heads. Gate rerun OK (worker build=0), depcheck 0 problems, Suggested.lean elaborates with no output.",
+  "text": "df2783d685ad3c21"
+ }
+}
