@@ -3,7 +3,8 @@
 **Summary.** Build the theory of one-dimensional Dirac systems on the half-line and of the SU(1,1)
 non-linear Fourier transform, from Mathlib's Bochner integration, absolutely continuous functions
 and complex analysis and from Tau Ceti's Carathéodory, Grönwall, maximal-function, Phragmén–Lindelöf
-and Nevanlinna–Pick modules, up to Poltoratski's non-linear Carleson theorem. The roadmap first
+and Nevanlinna–Pick modules, up to the pointwise convergence of the non-linear Fourier transform at
+resonance-free points, the conditional form of Poltoratski's non-linear Carleson theorem. The roadmap first
 extends Carathéodory's theory of linear differential equations to integrable coefficients
 depending holomorphically on a parameter. It then develops the function theory of the upper
 half-plane that the scattering theory consumes: Poisson integrals, Fatou's theorem, bounded
@@ -20,7 +21,9 @@ measures with the isometric embeddings `B(E(t,·)) → L²(μ)`, and the Szegő 
 `log w ∈ L¹(Π)` for square-integrable potentials. For real potentials the last three layers develop
 meromorphic inner functions and resonances, universality of reproducing kernels and the
 approximation of `E` by sines and exponentials near almost every real point, and prove the pointwise
-convergence `q⌃_T(s) → q⌃(s)` for almost every `s ∈ ℝ`.
+convergence `q⌃_T(s) → q⌃(s)` at almost every resonance-free point `s ∈ ℝ`: a point such that, for every
+`C > 0`, neither `E(t, ·)` nor `Ẽ(t, ·)` has a zero in the square of side `2C/t` centred at `s` once `t` is
+large.
 
 ## Scope and ownership
 
@@ -52,8 +55,10 @@ This roadmap owns, by layer:
   functions with their Riccati equation and the motion of resonances;
 - Layer 8: universality of reproducing kernels at almost every real point and the
   approximation of the Hermite–Biehler functions near a real point;
-- Layer 9: scattering data of subintervals, the resonance lemmas and the non-linear Carleson
-  theorem with its strong form and the boundedness of generalised eigenfunctions.
+- Layer 9: scattering data of subintervals, the lemma that resonances near a point occupy little
+  time, resonance-free points, and the pointwise convergence of the non-linear Fourier transform at
+  almost every resonance-free point, with its strong form and the boundedness of generalised
+  eigenfunctions there.
 
 It leaves to named owners:
 
@@ -107,8 +112,19 @@ It leaves to named owners:
   that consume Layers 3–6.
 
 The headline theorem of Layer 9 is stated for real potentials, the generality of poltoratski2024
-Theorem 1 (line 579–581). Layers 1–6 are stated for complex potentials `q = f + ig` (the system with
-`Q_q = [[g, f], [f, −g]]`), and Layers 7–9 for real `f`.
+Theorem 1 (line 579–581), and at resonance-free points (§9.4): it proves convergence at almost every
+point `s` such that, for every `C > 0`, the box `Q(s, C/t)` contains no zero of `E(t, ·)` or of `Ẽ(t, ·)`
+for large `t`. The statement that almost every point is resonance-free for every real square-integrable
+potential, which together with §9.6 gives poltoratski2024 Theorem 1, is not claimed by this roadmap. Its
+published proof has an error, reported in mnatsakanyan2022 (line 9–13, 135–137). The argument that
+replaces it in §9 of arXiv version 14 of poltoratski2024 (line 1482–1533) compares the moduli at `s` of
+the transforms of `f` and of potentials with inserted zero intervals on three subintervals; these moduli
+are pseudo-hyperbolic distances that the insertion does not change (§9.4, fourth Check), so they cannot
+exclude a resonance. denisov2026 states the almost-everywhere convergence of `b(T, ·)/a(T, ·)` for
+square-integrable potentials on `ℝ` as an open question (line 211–212) and proves that for some
+square-integrable potential `a(T, ·)` and `b(T, ·)` themselves diverge at every real point (Theorem 1.4,
+line 215–216); of `a` and `b` themselves, §9.5 and §9.6 assert only that the moduli converge. Layers 1–6 are stated for complex potentials `q = f + ig` (the
+system with `Q_q = [[g, f], [f, −g]]`), and Layers 7–9 for real `f`.
 
 ## Conventions
 
@@ -247,10 +263,6 @@ All at the pinned Mathlib; paths under `Mathlib/`.
   `g′(s) ≠ 0` on `ℂ`; and `Convex.norm_image_sub_le_of_norm_fderiv_le'` (`Analysis/Calculus/MeanValue.lean`
   line 550: on a convex set where `f` is differentiable with `‖Df(x) − φ‖ ≤ C`,
   `‖f y − f x − φ(y − x)‖ ≤ C‖y − x‖`), which gives the hypothesis on a disc whose radius is explicit.
-- For the expansion in §9.5: `taylor_mean_remainder_lagrange` (`Analysis/Calculus/Taylor.lean` line 330:
-  for `f : ℝ → ℝ` of class `Cⁿ` on `[x₀, x]` whose `n`-th derivative is differentiable inside, the remainder of
-  the Taylor polynomial of degree `n` is `f^{(n+1)}(x′)(x − x₀)^{n+1}/(n + 1)!` at some interior `x′`) and
-  `Real.contDiff_sinh` (`Analysis/SpecialFunctions/Trigonometric/DerivHyp.lean` line 317).
 - `Matrix.det_fin_two` (`LinearAlgebra/Matrix/Determinant/Basic.lean` line 815), `NormedSpace.exp`
   for the constant-coefficient Check, `UpperHalfPlane.upperHalfPlaneSet`.
 - For the entropy in §6.7 and §6.8: `InformationTheory.klDiv` (`InformationTheory/KullbackLeibler/Basic.lean`
@@ -459,9 +471,10 @@ functions `a`, `b` and proves, on a finite interval, the SU(1,1) structure, the 
 half-plane bounds, outerness of `a` and the non-linear Plancherel identity. Layer 5 takes the limit
 `t → ∞` for square-integrable potentials, defines the non-linear Fourier transform and proves its
 boundary theory. Layer 6 is the spectral theory: de Branges spaces, Weyl functions, spectral measures
-and the Szegő condition. Layers 7–9 carry out the proof of the non-linear Carleson theorem for real
-potentials: Layer 7 the meromorphic-inner-function tools, Layer 8 the universality and
-approximation results, Layer 9 the resonance argument and the conclusion. Every layer uses only
+and the Szegő condition. Layers 7–9 prove, for real potentials, the pointwise convergence of the
+non-linear Fourier transform at almost every resonance-free point: Layer 7 the meromorphic-inner-function
+tools, Layer 8 the universality and approximation results, Layer 9 the subinterval calculus, the bound on
+the time resonances spend near a point, and the conclusion. Every layer uses only
 earlier layers and the suppliers above. Layers 3–5 do not use Layer 6, and Layer 6 does not use Layer 5:
 the Szegő condition needs only the finite Plancherel identity of §4.4 and the truncations of §6.5.
 
@@ -1434,7 +1447,8 @@ statement follows from convergence in measure and convergence of the integrals (
 - Compact support `q = q_T₀`: for `T ≥ T₀` the bound is `0` and `(q_T)⌃* = q⌃*`.
 - `q(s) = (1 + s)^{−1}` (square-integrable, not integrable): `‖q‖²_{L²(T,∞)} = 1/(1 + T)`, so
   `‖q⌃* − (q_T)⌃*‖²_{L²} ≤ 4π/(1 + T)`.
-- Convergence in `L²(ℝ)` does not give convergence at a given point; the pointwise statement is §9.7.
+- Convergence in `L²(ℝ)` does not give convergence at a given point; the pointwise statement, at almost
+  every resonance-free point, is §9.6.
 
 ### 5.6 Elementary rules of the non-linear Fourier transform
 
@@ -2001,8 +2015,9 @@ equivalently for the Dirac inner function on `Q₊(s, C(t)/t) = Q(s, C(t)/t) ∩
 zero `conj z(t)` of `θ(t, ·)`: `α² ∂_zθ(t, conj z(t)) = (1 + o(1)) t/sin(2it y(t))` (poltoratski2024 Lemma 6
 and Corollary 2, line 850–917,
 Remark 3 line 863; mauth2022 Lemma 23 line 1258 and Lemma 32 line 1765). Route: `E(t, z(t)) = 0` gives
-`A(t, z(t)) = iC(t, z(t)) = β`, so `D(t, z(t), ·) = iβE(t, ·)`, and §8.5 makes `iβE` close to
-`sin(t(· − z(t)))/w(s)`; the determinant identity (2.2) at two points fixes `2|β|²w(s) = (1 + o(1)) sinh(2t y(t))`.
+`A(t, z(t)) = iC(t, z(t)) = β`, so `D(t, ·, z(t)) = iβE(t, ·)`, since
+`D(t, λ, z(t)) = βC(t, λ) + iβA(t, λ)`, and §8.5 makes `iβE` close to `sin(t(· − z(t)))/w(s)`; the
+determinant identity (2.2) at two points fixes `2|β|²w(s) = (1 + o(1)) sinh(2t y(t))`.
 
 *Needs:* §3.2, §7.3, §8.5.
 
@@ -2074,10 +2089,10 @@ and some unimodular `α`, both `sup_{z ∈ Q(s, 3C/t)} |E(z) − α γ(ty) sin(t
 unimodular `α′` with `|tx′ − tx| + |tx̃′ − tx̃| + |ty′ − ty| + |α′ − α| < Dε`, `x̃′ − x′ = x̃ − x`, and exactly
 `E(s) = α′ γ(ty′) sin(t(s − (x′ − iy′)))/√w` and `Ẽ(s) = α′ γ(ty′) cos(t(s − (x̃′ − iy′)))/√w̃`
 (poltoratski2024 Lemma 8 line 1116–1172 and mauth2022 Lemma 45 line 3251–3298, which print the factor
-`γ(ty)` in (8.5) and (58); the third Check shows that (2.2) forces `γ(ty′)`). §9.3 and §9.6 apply it to
-`E = E(t, ·)` and `Ẽ = Ẽ(t, ·)`, which satisfy (2.2) on `ℝ` (§3.2), with `w = w(s)` and `w̃ = w̃(s)` for the
-points `s` where `w(s) w̃(s) > 0`, which are almost all `s` by §6.8: §9.6 at `s` itself, §9.3 also at the points
-`p` of `ℝ ∩ Q(s, C/2ⁿ⁺¹)`, keeping the numbers `w(s)`, `w̃(s)`. Route: the quotient
+`γ(ty)` in (8.5) and (58); the third Check shows that (2.2) forces `γ(ty′)`). §9.3 applies it to
+`E = E(t, ·)` and `Ẽ = Ẽ(t, ·)`, which satisfy (2.2) on `ℝ` (§3.2), at the points `p` of `ℝ ∩ Q(s, C/2ⁿ⁺¹)`,
+keeping the numbers `w = w(s)` and `w̃ = w̃(s)`, for the points `s` where `w(s) w̃(s) > 0`, which are almost
+all `s` by §6.8. Route: the quotient
 `g(z) = sin(t(z − (x − iy)))/cos(t(z − (x̃ − iy)))` has `g′(z) = t cos(t(x̃ − x))/cos²(t(z − (x̃ − iy)))`, of
 modulus at least `t √(w w̃)/cosh²(5C)` on `Q(s, 3C/t)`, so it attains the value `√(w/w̃) E(s)/Ẽ(s)` at a point
 `a` with `|a − s| ≤ D₂ε/t` (on the disc of radius `c/t` about `s`, with `c` depending only on `C`, `w`, `w̃`,
@@ -2197,127 +2212,116 @@ Plancherel identity give `|Zₙ| ≲_{m,C} ‖f‖²_{L²(2ⁿ, 2ⁿ⁺¹)}`, wh
   with mean `≈ 0.000126 > 0` over shifts in `[−0.1, 0.1]`. A pointwise bound `log|a_{t₁→t₂}| ≥ c > 0` on
   `J(s)` fails at `p = s`.
 
-### 9.4 Inserting a zero interval
+### 9.4 Resonance-free points
 
-For `t₁ ≥ 0` and `β ≥ 0` define `f^{t₁,β}` as `f` on `[0, t₁)`, `0` on `[t₁, t₁ + β)` and `f(· − β)` on
-`[t₁ + β, ∞)`, and write `*` for its data (poltoratski2024 line 1380–1388). Its API:
+Call `s ∈ ℝ` a resonance-free point of the real potential `f` when, for every `C > 0`, the sets of times
+`T₀(s, C)` and `T̃₀(s, C)` of §8.1 are bounded: there is `T(s, C)` such that `Q(s, C/t)` contains no zero of
+`E(t, ·)` and no zero of `Ẽ(t, ·)` for `t > T(s, C)`. Write `R(f)` for the set of resonance-free points
+(poltoratski2024 line 97–101 and 1173–1176, where the condition for `E` at almost every point is the
+property from which Theorem 1 is deduced; mauth2022 line 1893–1894, whose exceptional set
+`{s : T₀(s, C) is unbounded}` is the complement of the condition for `E` at one `C`). Its API:
 
-- For `t ≥ t₁`, `M*(t + β, z) = M_{t₁→t}(z) M₀(β, z) M(t₁, z)` with `M₀` the free fundamental matrix; in
-  particular `E*(t₁ + β, z) = e^{−iβz} E(t₁, z)` and `Ẽ*(t₁ + β, z) = e^{−iβz} Ẽ(t₁, z)`.
-- The subinterval data of `f^{t₁,β}` on `(t₁ + β, t₂ + β)` equal those of `f` on `(t₁, t₂)`, and
-  `‖f^{t₁,β}‖ = ‖f‖`.
-- Exact increment relation: in the setting of §9.2, if `E*(t₂ + β, s)` and `Ẽ*(t₂ + β, s)` have the forms of
-  §9.2 with the same `w, w̃, Φ`, then the forms at `t₁ + β` hold with `υ* = υ` and `α₁* = e^{−iβs} α₁`, and
-  `sin e*/sin(e* + 2iυ) = e^{2iβs} sin e/sin(e + 2iυ)` (poltoratski2024 (9.5)–(9.8) line 1400–1481).
-- Route: the chain rule; `E′ = −izE` on the inserted interval; the translation rule (§5.6) for the segment's
-  transform, and §9.2 on both sides.
+- For `s ∈ R(f)` there is `C(t) → ∞` such that `Q(s, C(t)/t)` contains no zero of `E(t, ·)` or of `Ẽ(t, ·)`
+  for all large `t`: with `T_k = max(k, T(s, 1), …, T(s, k))`, put `C(t) = k` for `T_k < t ≤ T_{k+1}`.
+- Conjugating the system by `Ω` changes the sign of the potential: `M_{−f}(t, z) = Ω M_f(t, z) Ω⁻¹`, that
+  is `A_{−f} = D_f`, `C_{−f} = −B_f`, `B_{−f} = −C_f`, `D_{−f} = A_f`. Hence `Ẽ_f(t, ·) = −i E_{−f}(t, ·)` and
+  `Ẽ_{−f}(t, ·) = −i E_f(t, ·)`, so `R(f) = R(−f)`; the Weyl function of `−f` is `−1/m_f`, so the density
+  `w_{−f}` of §6.5 is the Dirichlet density `w̃_f`.
+- If `f` vanishes on `[T₀, ∞)`, then `R(f) = ℝ`: for `t ≥ T₀`, `E(t, ·) = e^{−i(t−T₀)z} E(T₀, ·)` and
+  `Ẽ(t, ·) = e^{−i(t−T₀)z} Ẽ(T₀, ·)` (the free equation), whose zeros are the fixed zeros of `E(T₀, ·)` and
+  `Ẽ(T₀, ·)`, all in the open lower half-plane (§3.3); the finitely many with `|Re ζ − s| ≤ C/T₀` lie at a
+  distance `δ > 0` from `ℝ`, so `Q(s, C/t)` contains none of them for `t > max(T₀, C/δ)`.
 
-*Needs:* §3.1, §5.6, §9.1, §9.2.
-
-**Checks.**
-
-- `β = 0`: `f^{t₁,0} = f`, `e* = e`, and the identity is trivial.
-- Choice of `β`: as `β` runs over an interval of length `π/|s|` (`s ≠ 0`), `e^{2iβs}` runs once around the unit
-  circle, which is how the argument of `e*` is adjusted (poltoratski2024 line 1479–1481, 1518–1520).
-- `‖f^{t₁,β}‖_{L²(t₁+β, t₂+β)} = ‖f‖_{L²(t₁, t₂)}`, so §9.1's Plancherel identity is the same for both segments.
-
-### 9.5 An elementary inequality
-
-For `υ > 0` put `F_υ(x) = sinh x/sinh(υ + x)`. Prove that there are `c(υ) > 0` and `Δ₀(υ) > 0` such that for
-`0 < Δ < Δ₀` and `Δ₁, Δ₂ ∈ (0, 3Δ)` with
-`|F_υ(Δ₁) − sinh Δ/sinh(υ − Δ)| ≤ c(υ)Δ³/8` and `|F_{υ+Δ₁}(Δ₂) − sinh Δ/sinh(υ − 2Δ)| ≤ c(υ)Δ³/8`, one has
-`|sinh 2Δ/sinh(υ − 2Δ) − sinh(Δ₁ + Δ₂)/sinh(υ + Δ₁ + Δ₂)| ≥ c(υ)Δ²` (poltoratski2024 Lemma 10 line 1584–1663).
-Route: expand `F_υ(x) = x/S − Cx²/S² + O(x³)` with `S = sinh υ`, `C = cosh υ`; then
-`Δ₁ = Δ + 2CΔ²/S + O(Δ³)`, `Δ₂ = Δ + 4CΔ²/S + O(Δ³)`, and the difference is `2CΔ²/S² + O(Δ³)`.
-
-*Needs:* Mathlib `taylor_mean_remainder_lagrange` (Taylor's theorem with the Lagrange remainder, at order two),
-`Real.contDiff_sinh`.
+*Needs:* §3.1, §3.3, §6.4, §6.5, §8.1.
 
 **Checks.**
 
-- With exact hypotheses, the ratio of the difference to `Δ²` at `υ = 1` is `2.4204`, `2.3250`, `2.2792` for
-  `Δ = 0.02, 0.01, 0.005`, tending to `2 cosh 1/sinh² 1 ≈ 2.2346`; at `υ = 0.5` it tends to `8.305`, at `υ = 2`
-  to `0.572`.
-- `Δ₁ = 0.010270` at `υ = 1`, `Δ = 0.01`, against the expansion `0.010263`.
-- The lower bound fails without the quadratic term: the first-order terms cancel (`2Δ/S` on both sides).
+- Free case: `E(t, ·) = e^{−itz}` and `Ẽ(t, ·) = −i e^{−itz}` have no zeros, so `R(0) = ℝ`.
+- `f = c 1_{[0,T₀]}`: `E(t, ·)` has infinitely many zeros for every `t ≥ T₀` (§7 Examples), and still
+  `R(f) = ℝ` by the third bullet; the condition concerns boxes of size `C/t` about `s`, not the absence of
+  zeros.
+- `f ≡ c > 0` (not square-integrable). With `κ = √(c² − z²)`, `E(t, z) = cosh κt + (c − iz) sinh κt/κ` and
+  `Ẽ(t, z) = −i(cosh κt − (c + iz) sinh κt/κ)`; a zero of `E(t, ·)` needs
+  `e^{2κt} = (c − iz − κ)/(c − iz + κ)` and a zero of `Ẽ(t, ·)` needs `e^{2κt} = (c + iz + κ)/(c + iz − κ)`. For
+  `0 < |s| < c` both right sides stay bounded on `Q(s, C/t)` while `|e^{2κt}|` grows like `e^{2√(c² − s²)t}`, so
+  `s ∈ R(f)`. At `s = 0` the second denominator vanishes and `Ẽ(t, ·)` has a zero near `−2ic e^{−2ct}`
+  (for `c = 1`, `t = 5`: `−9.0808·10⁻⁵ i`, against `−9.0800·10⁻⁵ i`), so `0 ∉ R(f)`, while `E(t, ·)` has no
+  zero near `0`: a definition through `E` alone would admit `0`. At `s = 1/2` (`c = 1`) the point is
+  resonance-free while `|E(10, 1/2)| ≈ 6434` grows like `e^{(√3/2)t}`, so resonance-freeness alone does not
+  give the conclusions of §9.5, which also need square integrability.
+- Membership in `R(f)` is not decided by the moduli at `s` of the transforms of `f` on subintervals. For data
+  in the forms of §9.2 at times `t_j < t_k`, `|(f 1_{(t_j,t_k)})⌃(s)| = |sin(θ_k − θ_j)/sin(θ_k − conj θ_j)|`,
+  which is the pseudo-hyperbolic distance `|ζ_k − ζ_j|/|1 − conj ζ_j ζ_k|` of the points `ζ_k = e^{2iθ_k}` of
+  the unit disc and is unchanged by every automorphism of the disc; inserting a zero interval of length `β`
+  after `t₁` replaces the restriction of `f` to each subinterval by a translate, whose transform has the same
+  modulus at `s` (§5.6). With `θ_k = i h_k`, the heights `1, 0.99, 0.98` (a resonance moving towards `ℝ`) and
+  `1, 1.0102119, 1.0208659` (its image under the half-turn of the disc about `ζ₁`, a resonance moving away)
+  give the same moduli `d₁₂ = 0.0027860`, `d₂₃ = 0.0028445`, `d₁₃ = 0.0056305` on `(t₁, t₂)`, `(t₂, t₃)`,
+  `(t₁, t₃)`, and in both cases `d₁₃ = (d₁₂ + d₂₃)/(1 + d₁₂ d₂₃)`, the addition law of pseudo-hyperbolic
+  distances along a geodesic.
 
-### 9.6 Absence of resonances near almost every point
+### 9.5 Asymptotics at resonance-free points
 
-Prove that for almost every `s ∈ ℝ` and every `C > 0` there is `T(s, C)` such that `Q(s, C/t)` contains no
-zero of `E(t, ·)` for `t > T(s, C)`; hence there is `C(t) → ∞` with `Q(s, C(t)/t)` free of zeros for large `t`
-(poltoratski2024 §9 line 1173–1539: "Special case", "General case" and "Final step"). Route: if not, by
-§9.3 a resonance near `s` enters and leaves the box `Q(s, 2C/t)` infinitely often and moves by a hyperbolic
-distance comparable to a fixed small `Δ`; for three times `t₁ < t₂ < t₃` with purely vertical increments
-`e = τ = iΔ` (the special case), inserting zero intervals (§9.4) makes the modified increments purely
-imaginary, `e* = −iΔ₁`, `τ* = −iΔ₂`, and comparing moduli on `(t₁, t₂)`, `(t₂, t₃)` and `(t₁, t₃)` gives the
-three relations of §9.5, whose conclusion contradicts the third relation; the general case is reduced to the
-special one by two insertions with `β₁`, `β₂` chosen through §9.4 and a continuity argument in `t₂`; the errors
-of §8.8–§8.9 are taken `≪ Δ⁴`.
-
-*Needs:* §6.8, §8.6–§8.9, §9.2–§9.5.
-
-**Checks.**
-
-- Compact support: the resonances are fixed zeros of `E(T, ·)` at positive distance from `ℝ`, so the
-  conclusion holds for every `s`.
-- Free case: no zeros at all.
-- `f ≡ c` (not square-integrable): for `s ∈ (−c, c)`, `|E(t, s)|` grows like `e^{√(c² − s²) t}`, and the
-  conclusion of §9.7, which follows from this one, fails there; the almost-everywhere statement needs
-  `f ∈ L²`.
-
-### 9.7 Asymptotics at almost every point
-
-Prove that for almost every `s` and every `D > 0` there are unimodular `α(s, t)` and a constant `β(s)` with
+Prove that for every real square-integrable `f` there is a Lebesgue-null set `N_f` such that for every
+`s ∈ R(f) ∖ N_f` and every `D > 0` there are unimodular `α(s, t)` and a constant `β(s)` with
 `Im β(s) = −√(w(s) w̃(s))`, `|β(s)| = 1`, such that `sup_{Q(s,D/t)} |E(t, z) + iα(s, t) e^{−itz}/√w(s)| → 0` and
 `sup_{Q(s,D/t)} |Ẽ(t, z) + iβ(s) α(s, t) e^{−itz}/√w̃(s)| → 0`; consequently `|E(t, s)| → 1/√w(s)`,
 `|Ẽ(t, s)| → 1/√w̃(s)`, `|a(t, s)|² → (1/w + 1/w̃ + 2)/4` and `|b(t, s)|² → (1/w + 1/w̃ − 2)/4` at `s`
-(poltoratski2024 (9.9)–(9.10) line 1538–1574). Route: §9.6 and §8.7(2) for `E` and for `Ẽ`; (2.2) on `ℝ` gives
-`(conj β − β)/√(w w̃) = 2i`.
+(poltoratski2024 (9.9)–(9.10) line 1538–1574; mauth2022 line 3855–3875). Route: `N_f` is the union of the
+exceptional null sets of §8.7(1) for `f` and for `−f` and of `{w w̃ = 0}` (§6.8). At `s ∈ R(f) ∖ N_f`, take the
+function `C(t)` of §8.7(1) at most the function of §9.4 (the route of §8.7 works on every smaller box size
+tending to infinity, as §8.5 does), so that `t ∉ T₀(s, C(t))` for all large `t`; then §8.7(2) gives the
+approximation of `E`, and §8.7 for `−f`, with `E_{−f} = iẼ_f` and `w_{−f} = w̃_f` (§9.4), gives that of `Ẽ`.
+The determinant identity (2.2) on `ℝ` gives `(conj β − β)/√(w w̃) = 2i`, and continuity of
+`Ẽ(t, s)/E(t, s)` in `t` makes `β` constant.
 
-*Needs:* §3.2, §4.1, §8.7, §9.6.
+*Needs:* §3.2, §4.1, §6.5, §6.8, §8.7, §9.4.
 
 **Checks.**
 
 - Free case: `w = w̃ = 1`, `α = i`, `β = −i`: `E = e^{−itz}`, `Ẽ = −i e^{−itz}`, `|a|² → 1`, `|b|² → 0`.
 - `|b|² ≥ 0` in the limit: `1/w + 1/w̃ ≥ 2/√(w w̃) ≥ 2` by the arithmetic–geometric mean inequality and
   `w w̃ ≤ 1` (§6.5); and `|a|² − |b|² → 1`.
-- Compact support at `x = 0` for `f = c 1_{[0,T]}`: `w(0) = e^{−2cT}`, `w̃(0) = e^{2cT}`, and the limit
-  `|a|² = (e^{2cT} + e^{−2cT} + 2)/4 = cosh² cT` is the exact value `a(T, 0) = cosh cT`.
+- Compact support at `x = 0` for `f = c 1_{[0,T]}`, where `R(f) = ℝ` (§9.4): `w(0) = e^{−2cT}`,
+  `w̃(0) = e^{2cT}`, and the limit `|a|² = (e^{2cT} + e^{−2cT} + 2)/4 = cosh² cT` is the exact value
+  `a(T, 0) = cosh cT`.
 
-### 9.8 The non-linear Carleson theorem
+### 9.6 Pointwise convergence at resonance-free points
 
-Prove that for every real square-integrable `f`, `b(T, s)/a(T, s) = (f_T)⌃*(s) → f⌃*(s)` as `T → ∞` for almost
-every `s ∈ ℝ`; the strong form: for almost every `s` and every `C > 0`,
-`sup_{|z − s| < C/T} |(f_T)⌃(z) − f⌃*(s)| → 0`, where `(f_T)⌃ = b(T, ·)/a(T, ·)` is holomorphic on the disc for
-large `T`; and the corollaries: `a(T, s)`, `b(T, s)` have convergent moduli, and the generalised
-eigenfunctions `t ↦ M(t, s)` are bounded on `[0, ∞)` for almost every `s` (poltoratski2024 Theorem 1
-line 578–586 and line 54–57; mauth2022 Theorem 2 line 216, and Theorem 5 line 3820 with the proof at line
-3851–3862 for the reduction to the absence of resonances). Route: §9.7 makes `b/a = (E − iẼ)/(E + iẼ)` uniformly close on `Q(s, D/T)` to the
-constant `(1/√w − iβ/√w̃)/(1/√w + iβ/√w̃)`, so the pointwise limit exists almost everywhere; §5.5 gives
-`(f_T)⌃* → f⌃*` in `Π`-measure, so along a subsequence almost everywhere, and the two limits agree almost
-everywhere.
+Prove that for every real square-integrable `f` there is a Lebesgue-null set `N′_f` containing the set `N_f` of
+§9.5 such that for every `s ∈ R(f) ∖ N′_f`: `b(T, s)/a(T, s) = (f_T)⌃*(s) → f⌃*(s)` as `T → ∞`; the strong form
+holds, `sup_{|z − s| < C/T} |(f_T)⌃(z) − f⌃*(s)| → 0` for every `C > 0`, where `(f_T)⌃ = b(T, ·)/a(T, ·)` is
+holomorphic on the disc for large `T`; the moduli `|a(T, s)|` and `|b(T, s)|` converge; and the generalised
+eigenfunction `t ↦ M(t, s)` is bounded on `[0, ∞)` (poltoratski2024 Theorem 1 line 578–586, line 54–57 and the deduction (9.9)–(9.10) line
+1538–1582; mauth2022 Theorem 2 line 216 and its deduction at line 3851–3862; both deduce the theorem from the
+resonance-free condition at almost every point). Route: §9.5 makes `b/a = (E − iẼ)/(E + iẼ)` uniformly close on
+`Q(s, D/T)` to the constant `(1/√w − iβ/√w̃)/(1/√w + iβ/√w̃)`, whose denominator has squared modulus
+`1/w + 1/w̃ + 2 > 0`, so the limit exists at every `s ∈ R(f) ∖ N_f`; §5.5 gives `(f_T)⌃* → f⌃*` in `Π`-measure,
+so along a sequence `T_k → ∞` almost everywhere, and `N′_f` adds to `N_f` the null set where this fails;
+`|A|, |C| ≤ |E|` and `|B|, |D| ≤ |Ẽ|` on `ℝ` bound `M(t, s)`.
 
-*Needs:* §5.2, §5.5, §9.7.
+*Needs:* §3.2, §5.2, §5.5, §9.4, §9.5.
 
 **Checks.**
 
-- `f` integrable: the convergence is uniform on `ℝ` (§5.2), with no exceptional set.
-- Compact support: `(f_T)⌃* = f⌃*` for `T ≥ T₀`.
-- Bounded eigenfunctions fail without square-integrability: `f ≡ c` at `s ∈ (−c, c)` has `M(t, s)` growing like
-  `e^{√(c² − s²) t}`.
-- Free case: `f⌃ = 0` and `b(T, ·) = 0` for every `T`.
+- `f` integrable: by §5.2 the convergence holds uniformly on `ℝ`, at every point, resonance-free or not; on
+  `R(f) ∖ N′_f` the two statements agree.
+- Compact support: `R(f) = ℝ` (§9.4) and `(f_T)⌃* = f⌃*` for `T ≥ T₀`, so the convergence holds at every `s`.
+- Square integrability cannot be dropped at resonance-free points: for `f ≡ c > 0` the point `s = 1/2`
+  (`c = 1`) lies in `R(f)` (§9.4), while `M(t, s)` grows like `e^{(√3/2)t}`.
+- Free case: `f⌃ = 0`, `b(T, ·) = 0` for every `T`, and `R(0) = ℝ`.
 
 ### Examples
 
-- For `f = c 1_{[0,T₀]}` every statement of the layer holds with the exceptional set empty: the resonances
-  are fixed, `E(t, ·) = e^{−i(t−T₀)z}E(T₀, ·)` for `t ≥ T₀`, and `(f_T)⌃* = f⌃*` for `T ≥ T₀`.
-- For `f(s) = (1 + s)^{−1}` (square-integrable, not integrable) the theorem gives convergence almost
-  everywhere, which §5.5 alone (`L²(ℝ)` convergence at rate `(1 + T)^{−1/2}`) does not.
+- For `f = c 1_{[0,T₀]}` every statement of the layer holds with the exceptional set empty: `R(f) = ℝ`, the
+  resonances are fixed, `E(t, ·) = e^{−i(t−T₀)z}E(T₀, ·)` for `t ≥ T₀`, and `(f_T)⌃* = f⌃*` for `T ≥ T₀`.
+- For `f(s) = (1 + s)^{−1}` (square-integrable, not integrable) §9.6 gives convergence at almost every
+  resonance-free point, which §5.5 alone (`L²(ℝ)` convergence at rate `(1 + T)^{−1/2}`) does not give at any
+  prescribed point.
 
 ### Dependencies
 
-Layer 3, Layer 4, Layer 5 (§5.2, §5.5, §5.6), Layer 6 (§6.5, §6.8), Layer 7, Layer 8; Mathlib (Borel–Cantelli,
-Taylor's theorem with the Lagrange remainder, smoothness of `sinh`).
+Layer 3, Layer 4, Layer 5 (§5.2, §5.5, §5.6), Layer 6 (§6.4, §6.5, §6.8), Layer 8; Mathlib (Borel–Cantelli).
 
 ## Downstream consumers
 
@@ -2333,14 +2337,18 @@ Taylor's theorem with the Lagrange remainder, smoothness of `sinh`).
   the Paley–Wiener theorem in several forms): Layer 2.
 - Non-linear Fourier analysis (maximal non-linear Carleson operators, the `ℓ²(ℤ)` model, AKNS and
   Zakharov–Shabat scattering) and inverse scattering: Layers 4, 5 and 9.
+- A proof that almost every point is resonance-free for every real square-integrable potential, which with
+  §9.6 gives convergence almost everywhere (poltoratski2024 Theorem 1): §9.1–§9.4, with Layers 7 and 8.
 
 ## References
 
 - **poltoratski2024** — A. Poltoratski, *Pointwise convergence of the non-linear Fourier transform*, Ann.
-  of Math. 199 (2024), 741–793; arXiv:2103.13349 version 14, to which the locators refer. In version 14
-  the absence of resonances is proved in §9 by the subinterval calculus, the insertion of zero intervals
-  and Lemma 10, in place of the argument through Lemma 11 of the published version, in which
-  mnatsakanyan2022 (abstract and line 135–137 of its version 4) reports an error.
+  of Math. 199 (2024), 741–793; arXiv:2103.13349 version 14, to which the locators refer. In version 14,
+  §9 argues the absence of resonances through the subinterval calculus, the insertion of zero intervals and
+  Lemma 10, in place of the argument through Lemma 11 of the published version, in which mnatsakanyan2022
+  (abstract and line 135–137 of its version 4) reports an error; the moduli that argument compares do not
+  determine the motion of a resonance (§9.4, fourth Check). This roadmap uses §9 for the subinterval
+  calculus, Lemma 9 and the deduction (9.9)–(9.10), and states the theorem at resonance-free points.
 - **mauth2022** — L. Mauth, *On pointwise convergence of the non-linear Fourier transform*, arXiv:2210.12286
   v1; the detailed account of poltoratski2024's earlier version, used for Layers 2, 3, 6 and 8 (§§2, 3.1–3.2,
   3.7), whose dictionary (line 65–87) matches the numbering.
@@ -2354,6 +2362,9 @@ Taylor's theorem with the Lagrange remainder, smoothness of `sinh`).
 - **killipsimon2003** — R. Killip, B. Simon, *Sum rules for Jacobi matrices and their applications to
   spectral theory*, Ann. of Math. 158 (2003); arXiv:math-ph/0112008 v2 (§5, (5.9), Lemma 5.1, Theorem 5.2,
   Corollary 5.3).
+- **denisov2026** — S. A. Denisov, *Pointwise behavior of SU(1,1) nonlinear Fourier transform*,
+  arXiv:2605.25108 v2 (§1.2, questions Q1R and Q2R and Theorem 1.4), for the status of pointwise convergence
+  for square-integrable potentials.
 - **mnatsakanyan2022** — G. Mnatsakanyan, *Some quantitative estimates for the nonlinear Fourier transform*,
   arXiv:2210.00309 v4 (abstract and §1).
 - **garnett2007** — J. B. Garnett, *Bounded analytic functions*, GTM 236, Springer 2007 (Ch. I §§3–5, Ch. II
