@@ -45,10 +45,16 @@ It leaves the following to the named roadmaps and does not state them again.
   The operator `L` of §1.3 is the conjugate-linear analogue in degree `(2,2)`: for `σ = id` and a
   symmetric bijective form it is the inverse of `exteriorPower.hodgeStar`, and §1.4 then specialises
   to the degree-`(2,2)` case of the identity `Δ • ⋆(⋆x) = (−1)^{kl} x` that the module documentation of
-  `Mathlib/LinearAlgebra/ExteriorPower/HodgeStar.lean` states without proof. The determinant action on the top exterior
-  power is Tau Ceti's `LinearMap.map_exteriorPower_finrank_eq_det_smul`, and a basis trivializes the
-  top power through Tau Ceti's `Module.Basis.exteriorPowerTopEquiv` and Mathlib's
-  `Module.Basis.topVector`.
+  `Mathlib/LinearAlgebra/ExteriorPower/HodgeStar.lean` states without proof. Tau Ceti's conjugate
+  Hodge star `Orientation.barHodgeStar`, with its square `Orientation.barHodgeStar_barHodgeStar`, is
+  the case `E = ℂ`, `U = ℂ ⊗_ℝ V` for an oriented four-dimensional real inner product space `V` and
+  `H` the sesquilinear extension of its inner product: under `⋀²_ℂ(ℂ ⊗_ℝ V) ≅ ℂ ⊗_ℝ ⋀²V`, `L` is
+  that star when `d_U` is the volume form of the orientation and its negative for the opposite
+  sign. Sections 1.3–1.4 differ in allowing any field with a ring endomorphism `σ` and any
+  sesquilinear form, indefinite or degenerate, with the volume as the square. The determinant
+  action on the top exterior power is Tau Ceti's `LinearMap.map_exteriorPower_finrank_eq_det_smul`,
+  and a basis trivializes the top power through Tau Ceti's `Module.Basis.exteriorPowerTopEquiv` and
+  Mathlib's `Module.Basis.topVector`.
 - Quaternion algebras, their norm-rescaling isomorphisms `TauCeti.QuaternionAlgebra.normMulEquiv`
   and `TauCeti.QuaternionAlgebra.rescaleJEquiv`, the common-slot tensor isomorphism
   `TauCeti.QuaternionAlgebra.tensorAlgEquivTensorMatrix` and the Brauer identity
@@ -95,8 +101,11 @@ It leaves the following to the named roadmaps and does not state them again.
   their tensor, dual and Hecke compatibilities are AutomorphicBundles §§0.1–0.2, 3.4, 3.5, 3.7 and
   3.8; the quotient `Gᶜ` is ShimuraData §4.9.
 - Weak approximation, ray class groups, finite ideles and Hecke characters are GlobalNumberFields
-  Layers 1, 2, 4, 6, 9 and 10. Dual groups and `L`-groups are ReductiveGroupsPartII §§RG2.5.1–RG2.5.2,
-  with the unitary similitude dual group of EndoscopicTransferAndUnitaryTraceComparison §1.8.
+  Layers 1, 2, 4, 6, 9 and 10. Dual groups and `L`-groups, including the `L`-group of a Weil
+  restriction, are ReductiveGroupsPartII §§RG2.5.1–RG2.5.2; the dual group of `GU_E(V)` over `F` and
+  of its restriction of scalars to `ℚ` is computed from them in §9.1.
+  EndoscopicTransferAndUnitaryTraceComparison §1.8 treats a different group, the similitudes over `ℚ`
+  with rational multiplier, of codimension `[F : ℚ] − 1` in `Res_{F/ℚ}GU_E(V)`.
   Algebraic group quotients and identity components are ReductiveGroups Layers 3 and 6.
 - Proper and smooth base change are EtaleCohomologyFoundations §§F.2.1–F.2.2 and F.3; Artin's
   comparison for constructible coefficients is ComplexComparisonPartII C6. De Rham representations
@@ -184,7 +193,9 @@ unless named geometric, the cyclotomic character `ε_ℓ` has Hodge–Tate weigh
   `LinearMap.BilinForm.exteriorPower` (`Mathlib/LinearAlgebra/ExteriorPower/BilinForm.lean`); and the bilinear Hodge
   star `exteriorPower.hodgeStar` (`Mathlib/LinearAlgebra/ExteriorPower/HodgeStar.lean`). The wedge pairing needs a
   trivialization of the top power and `k + l = finrank`; the Hodge star needs a bijective bilinear
-  form. Neither accepts a conjugate-linear form: that is the content of §§1.3–1.4.
+  form. Neither accepts a conjugate-linear form, and Tau Ceti's `Orientation.barHodgeStar` covers
+  only the positive definite form of a complexified real space: the general case is the content of
+  §§1.3–1.4.
 - `Module.Basis.topVector` and `exteriorPower.isUnit_apply_topVector`
   (`Mathlib/LinearAlgebra/ExteriorPower/WedgePairing.lean`): for a basis `b` of a finite free module
   over a nontrivial ring, the wedge of all its vectors in increasing order, an element of
@@ -220,6 +231,13 @@ unless named geometric, the cyclotomic character `ε_ℓ` has Hodge–Tate weigh
   (`TauCeti/Algebra/Quaternion/BrauerClass.lean`): the common-slot identity
   `[(a,bc)] = [(a,b)]·[(a,c)]`.
 - `TauCeti.symPowerRep`, the symmetric-power representations used for `τ_k`.
+- `Orientation.barHodgeStar` and `Orientation.barHodgeStar_barHodgeStar`
+  (`TauCeti/Analysis/InnerProductSpace/HodgeStar/Complex.lean`): for an oriented finite-dimensional
+  real inner product space `V`, the conjugate-linear Hodge star `β ↦ ⋆(β̄)` from `ℂ ⊗_ℝ ⋀^k V` to
+  `ℂ ⊗_ℝ ⋀^l V` (`k + l = dim V`), whose wedge with `α` is the Hermitian Gram product `h(β, α)` times
+  the volume, with square `(−1)^{kl}`. The operator `L` of §1.3 differs in allowing any field with a
+  ring endomorphism and any sesquilinear form, indefinite or degenerate, with the volume as the
+  square; it is used only as a comparison (§1.3, Checks).
 
 ### From TauCetiRoadmap.MotivesAndAlgebraicCycles
 
@@ -461,12 +479,14 @@ the finite-idele description of the class group; Layer 6 `IdeleClassGroup`; Laye
 `HeckeCharacter.IsFiniteOrder` and local components; Layer 10 `HeckeCharacter.infinityType` and
 algebraic Hecke characters.
 
-### From TauCetiRoadmap.ReductiveGroups, ReductiveGroupsPartII and EndoscopicTransferAndUnitaryTraceComparison
+### From TauCetiRoadmap.ReductiveGroups and ReductiveGroupsPartII
 
 ReductiveGroups Layer 3 (closed subgroups, quotients, identity components) and Layer 6 (central
-isogenies). ReductiveGroupsPartII §RG2.5.1 (dual group with Galois action) and §RG2.5.2 (the
-`L`-group and its functoriality). EndoscopicTransferAndUnitaryTraceComparison §1.8: the dual group
-`GL₄(ℂ) × ℂ^×` of a unitary similitude group with its Galois action.
+isogenies). ReductiveGroupsPartII §RG2.5.1 (*dual-based-root-datum*: the dual based root datum with
+its Galois action, the action on cocharacters being the transpose-inverse of the action on
+characters) and §RG2.5.2 (the `L`-group and its functoriality, with *dual-of-weil-restriction*: for
+`H = Res_{K′/K}G′`, `Ĥ = ∏_τ Ĝ′` over the `K`-embeddings `τ` of `K′`, with `Γ_K` permuting the factors
+and acting inside them through the Galois action on `Ĝ′`).
 
 ### From TauCetiRoadmap.RepresentationTheory (SchurWeyl, SpinRepresentations)
 
@@ -1015,6 +1035,11 @@ before taking `⋀²`, and uses that the wedge pairing is perfect.
 - Replacing `d_U` by `−d_U` negates `L` and leaves `L∘L` unchanged.
 - The six basis images, recomputed from the defining identity with the signs of `e_K ∧ e_J` in
   `⋀⁴`, agree with the list above.
+- For `E = ℂ` with `σ` complex conjugation, `U = ℂ ⊗_ℝ ℝ⁴` with the sesquilinear extension of the
+  standard inner product and `d_U(e₁₂₃₄) = 1`, `L` is Tau Ceti's conjugate Hodge star:
+  `L(e₁₂) = e₃₄ = ⋆e₁₂` and `L(i·e₁₂) = −i·e₃₄`, where a complex-linear star would give `i·e₃₄`. With
+  `d_U(e₁₂₃₄) = −1` it is the negative of that star (`L(e₁₂) = −e₃₄`, the first Check); in both cases
+  `L∘L = 1 = (−1)^{2·2}`.
 
 *Needs:* §1.1; Mathlib `exteriorPower.wedgePairing`, `exteriorPower.instIsPerfPairWedgePairing`,
 `exteriorPower.pairingDual`, `exteriorPower.ιMulti`.
@@ -1032,8 +1057,15 @@ for degenerate `H`. For a diagonal form with `d_U(e₁₂₃₄) = −1`, every 
 - For `diag(1, −J₁, 1, −J₂)` the square is `J₁J₂`.
 - For random non-diagonal Hermitian `4 × 4` matrices over `ℚ(i)` and random `d_U`, `L∘L` equals the
   volume on all six basis vectors and on non-real multiples of them.
-- For `σ = id` and a non-symmetric bilinear form the identity fails: the Hermitian hypothesis is
-  necessary.
+- Some symmetry of `H` is needed: for `σ = id`, `d_U(e₁₂₃₄) = −1` and the bilinear form with Gram
+  matrix `1 + E₁₂` (`H(e₁, e₂) = 1`, `H(e₂, e₁) = 0`, `H(e_i, e_i) = 1`, all other entries `0`), the
+  volume is `1` but `L(L(e₁₃)) = e₂₃` and `L(L(e₂₃)) = −e₁₃ + e₂₃`.
+- Symmetry up to sign suffices for the identity itself. For `σ = id`, `c = d_U(e₁₂₃₄)` and an
+  invertible Gram matrix `A = [H(e_i, e_j)]`, `L∘L = (det A / c²)·⋀²(A⁻¹Aᵀ)`, which is `det A / c²`
+  when `Aᵀ = ±A` because `⋀²(−1) = 1`: for the standard alternating form
+  (`H(e₁, e₂) = −H(e₂, e₁) = H(e₃, e₄) = −H(e₄, e₃) = 1`, other entries `0`) and `c = −1`,
+  `L∘L = 1 = det A`, and for the alternating Gram matrix with rows `(0,1,2,3)`, `(−1,0,4,5)`,
+  `(−2,−4,0,6)`, `(−3,−5,−6,0)` and `c = −1`, `L∘L = 64 = det A`.
 
 *Needs:* §§1.1, 1.3.
 
@@ -1870,7 +1902,7 @@ the spaces and groups of §2.8. Define the *global theta data* to consist of: `H
 Schwartz form `φ′_{2,ℓ_v}` of §4.3 and at real `v ∉ Σ` the form `φ′_{ℓ_v}`, `ℓ_v = k_v − 2`, with a
 pure-tensor finite Schwartz vector; and an irreducible unitary automorphic `τ` of `H_N^+` with central
 character `ξ_E`, of antiholomorphic minimal type of weight `k_v + 1` at `Σ` and holomorphic type
-outside `Σ` (IP23, §§10.1–10.3, pp. 65–68; §12.2.4, p. 96). The exterior isometry group is
+outside `Σ` (IP23, §§10.1–10.4, pp. 65–68; §12.2.4, p. 96). The exterior isometry group is
 `F`-anisotropic because some real localization is `O(0,6)`, so its adelic quotient modulo the centre is
 compact (AdelicAlgebraicGroups §3.4) and every automorphic form on it is cuspidal
 (AutomorphicFormsOnReductiveGroups §4.2).
@@ -2299,13 +2331,27 @@ trivial semisimplification to triviality.
 
 ### 9.1 The Kottwitz representation
 
-For the unitary similitude group of §8 the dual group is `GL₄(ℂ) × ℂ^×`, with the nontrivial element of
-`Gal(E/F)` acting by `θ̂(g, ν) = (θ₄(g), ν·det g)` (EndoscopicTransferAndUnitaryTraceComparison §1.8;
-ReductiveGroupsPartII §RG2.5.2). Define `r` as the contragredient of `⋀²ℂ⁴` with `ν` acting by scalars,
-extended to the `L`-group by the unique automorphism `A` with `r(θ̂(g)) ∘ A = A ∘ r(g)` fixing a highest
-weight vector; and for `Res_{F/ℚ}` define `r₀ = r^{⊗Σ}` on `V₀ = V^{⊗d}`, extended to `Ĝ₀ ⋊ Γ_{F_Σ}` by
-permuting tensor factors with the prescribed local intertwiners. `r₀` is the irreducible representation
-of extreme weight `−μ` for the Shimura cocharacter `μ` (IP23, §11.5, pp. 91–93).
+Prove that the dual group of the unitary similitude group `G = GU_E(V)` of §8, a group over `F` with
+`F`-valued multiplier, is `Ĝ = GL₄(ℂ) × ℂ^×` with `Γ_E` acting trivially and the nontrivial element of
+`Gal(E/F)` acting by `θ̂(g, ν) = (θ₄(g), ν·det g)`, where `θ₄(g) = J₄ ᵗg⁻¹ J₄⁻¹` for the antidiagonal
+`J₄` with entries `1, −1, 1, −1` from the top row down, the outer automorphism of `GL₄` fixing the
+standard pinning; and that the dual group `Ĝ₀` of `G̃ = Res_{F/ℚ}G` is `Ĝ^{Σ_∞}`, one factor
+`GL₄(ℂ) × ℂ^×` for each real place, with `Γ_ℚ` permuting the factors through its action on
+`Σ_∞ = Γ_ℚ/Γ_F` and acting inside them through `θ̂` (IP23, §11.5, p. 91; `θ₄` is defined in §11.1,
+p. 79). *Proof route:* over `E`, `(g, ν) ↦ (g|_{V ⊗_E E}, ν)` identifies `G_E` with `GL₄ × 𝔾_m`, the
+component of `g` on `V ⊗_{E,σ} E` being `ν` times the adjoint inverse. Inner forms have the same based
+Galois action (their actions differ by inner automorphisms, which fix the based root datum), so it may
+be computed for the Hermitian form with antidiagonal Gram matrix `(δ_{i,5−j})`; there the nontrivial
+element of `Gal(E/F)` acts on the characters `e₁, …, e₄, e₀ = ν` of the diagonal torus by
+`e_i ↦ e₀ − e_{5−i}`, `e₀ ↦ e₀`, which preserves the upper triangular base, so on the dual torus
+`X^*(T) ⊗ ℂ^×` it sends `(s₁, s₂, s₃, s₄; ν̂)` to `(s₄⁻¹, s₃⁻¹, s₂⁻¹, s₁⁻¹; ν̂·s₁s₂s₃s₄)`, the
+restriction of `θ̂` (ReductiveGroupsPartII §RG2.5.1, *dual-based-root-datum*); the restriction of
+scalars is ReductiveGroupsPartII §RG2.5.2, *dual-of-weil-restriction*. Define `r` as the contragredient
+of `⋀²ℂ⁴` with `ν` acting by scalars, extended to the `L`-group by the unique automorphism `A` with
+`r(θ̂(g)) ∘ A = A ∘ r(g)` fixing a highest weight vector; and for `Res_{F/ℚ}` define `r₀ = r^{⊗Σ}` on
+`V₀ = V^{⊗d}`, extended to `Ĝ₀ ⋊ Γ_{F_Σ}` by permuting tensor factors with the prescribed local
+intertwiners. `r₀` is the irreducible representation of extreme weight `−μ` for the Shimura cocharacter
+`μ` (IP23, §11.5, pp. 91–93).
 
 - The central coordinate `ν` acts on `V` by `ν⁻¹`.
 - `Γ_{F_Σ}` permutes the factors indexed by `Σ`, with the local intertwiners `A`.
@@ -2318,9 +2364,16 @@ of extreme weight `−μ` for the Shimura cocharacter `μ` (IP23, §11.5, pp. 91
 - Interchanging two one-dimensional extreme-weight factors acts by `+1`: the tensor factors are
   not graded and no Koszul sign enters.
 - `r` is `(⋀²std ⊗ ν)^∨`, not `⋀²std`; on the centre `ν` they differ by `ν ↦ ν⁻¹`.
+- The similitude coordinate is one per real place: for `F = ℚ(√2)` the dual group of `G̃` is
+  `(GL₄(ℂ) × ℂ^×)²`, of dimension `34`, while the unitary similitude group over `ℚ` with rational
+  multiplier, a subgroup of `G̃` of codimension one, has dual group `ℂ^× × GL₄(ℂ)²`, of dimension `33`.
+- The factor `det g` in `θ̂` carries a positive sign. The conjugation sends the character `det` of
+  `G_E` to `4ν − det`, which is the identity `N_{E/F}(det g) = ν(g)⁴` of §1.2; dually
+  `θ̂(z·1₄, 1) = (z⁻¹·1₄, z⁴)`. The model `(θ₄(g), ν·det g⁻¹)`, also an involution, gives
+  `(z⁻¹·1₄, z⁻⁴)`, that is `N(det g) = ν⁻⁴`, which fails for a scalar similitude `g = α` with
+  `N(α) = 2` (`α = 1 + i` when `E = F(i)`): `N(det α) = N(α)⁴ = 16 = ν⁴`, while `ν⁻⁴ = 1/16`.
 
-*Needs:* §5.1; ReductiveGroupsPartII §§RG2.5.1–RG2.5.2; EndoscopicTransferAndUnitaryTraceComparison §1.8;
-Mathlib `exteriorPower.map`.
+*Needs:* §5.1; ReductiveGroupsPartII §§RG2.5.1–RG2.5.2; Mathlib `exteriorPower.map`.
 
 ### 9.2 The degree-`2d` Kottwitz hypothesis and its lowest line
 
@@ -2422,7 +2475,7 @@ predicts that `H²[Π^S](1)` has trivial semisimplification.
 
 ### Dependencies
 
-Layers 0, 5, 8; ReductiveGroupsPartII §§RG2.5.1–RG2.5.2; EndoscopicTransferAndUnitaryTraceComparison §1.8;
+Layers 0, 5, 8; ReductiveGroupsPartII §§RG2.5.1–RG2.5.2;
 ClassFieldTheory Layers 6–8, 11; GlobalNumberFields Layers 2, 4, 10; PadicPeriodRings §1.4;
 PadicHodgeTheory §3.3; SelmerIwasawaCohomology §§2.7, 4.9.
 
@@ -2439,7 +2492,7 @@ Prove that the representation `τ` produced by §7.10 comes from a cohomological
 of `GL₂(𝔸_F)` attached to a holomorphic Hilbert modular form of weights `k_v + 1` and odd algebraic norm
 weight `w`, with finite central character `ξ_E`: after the unitary norm twist and Jacquet–Langlands
 transfer to `B^×`, its restriction first to `H_∞^+` and then to `H_N^+` contains `τ`, antiholomorphic
-above `Σ` and holomorphic outside `Σ` (IP23, §12.2.4, pp. 96–97; §10.2, pp. 65–66). The algebraic weight
+above `Σ` and holomorphic outside `Σ` (IP23, §12.2.4, pp. 96–97; §10.4, p. 68). The algebraic weight
 convention is GL2AutomorphicRepresentationsAndTransfer §R16.6.3, with `k_τ + 2m_τ = w`.
 
 - The weights `k_v + 1` are odd and admit a common odd `w`.
