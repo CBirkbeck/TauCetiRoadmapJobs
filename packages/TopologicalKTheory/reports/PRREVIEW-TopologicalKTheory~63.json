@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TopologicalKTheory~63",
+  "head": "374816598a78cfbbd46de54046e05af609f2a671",
+  "pr": 1807,
+  "folder": "TopologicalKTheory",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full review of 3748165 (folder unchanged since 89357f3). Three P3 findings: R01 T3.2 names 'the source' with no antecedent and no locator (line 1281); R02 the CompactGroups gap is located in AutomorphicFormsOnReductiveGroups §2.1, a roadmap not on main, whose declaration is in its supplier contracts (lines 204-205, 1558-1559); R03 the headline theorems T4, T5.3 and T6.7 carry no locator at the claim (Hatcher Theorem 2.2 p. 41 and Segal Proposition (3.2) p. 140 verified). Seeded sample: T2.0 verified against hatcher-vbkt lines 1505-1549; T7.0 recomputed (shear, basepoint tracks), its source sibson-1969 uncertified. Every Check and the T7.1 coefficient computation recomputed; the Lean headline tested on eight stable and two unstable instances. Gate: worker gate OK with build=0; re-run with --base origin/main has only outside-folder=24, the PR's own 12 folders. Depcheck: 240 roadmaps, 2267 edges, 0 problems. Suggested.lean elaborates with only sorry; one-tactic probe fails; no binder lost. 14 source locators, 34 pinned declarations and 19 cross-roadmap citations checked. Atiyah 1966 (K-theory and reality) not readable legally and absent from the manifest. The board's deferred D01 and D02 stand unchanged and are outside this folder.",
+  "text": "65e3dd1e040903b8",
+  "carried": {
+   "from": "374816598a78cfbbd46de54046e05af609f2a671",
+   "head": "f58ded6a9aeea6977f264231bcc75a47973a0788",
+   "findings": 3,
+   "lines": 58,
+   "folders": [
+    "TopologicalKTheory"
+   ]
+  }
+ }
+}
