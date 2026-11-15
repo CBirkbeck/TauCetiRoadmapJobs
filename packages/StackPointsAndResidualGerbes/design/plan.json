@@ -26,7 +26,6 @@
       "where": "Lemma 100.7.1, Definition 100.7.2, Remark 100.7.3; stacks-04XE lines 625-665"
      },
      "prerequisites": [
-      "target:0.3",
       "roadmap:SchemeAndStackFoundations §1.19",
       "roadmap:SchemeAndStackFoundations §1.20",
       "tauceti:TauCeti.AlgebraicGeometry.IsRegular",
@@ -57,11 +56,6 @@
        "name": "regular_reduced",
        "role": "lemma",
        "statement": "A regular algebraic stack is reduced and locally Noetherian."
-      },
-      {
-       "name": "open",
-       "role": "lemma",
-       "statement": "Open substacks inherit P."
       }
      ],
      "tests": [
@@ -171,9 +165,10 @@
      ],
      "locator": {
       "source": "stacks-04XE",
-      "where": "Definitions 100.9.1, 100.9.9; Lemmas 100.9.2-100.9.8, 100.9.10-100.9.12; lines 765-894"
+      "where": "Definitions 100.9.1, 100.9.9; Lemmas 100.9.2-100.9.8, 100.9.10-100.9.12; lines 765-894; open immersions smooth: stacks-06RD Lemma 101.35.4, lines 3551-3556"
      },
      "prerequisites": [
+      "target:0.1",
       "target:0.2",
       "roadmap:SchemeAndStackFoundations §1.7",
       "roadmap:SchemeAndStackFoundations §1.14",
@@ -207,6 +202,11 @@
        "name": "opensEquiv",
        "role": "lemma",
        "statement": "Open substacks correspond to open subsets of |X|, compatibly with SchemeAndStackFoundations §1.7 opensEquiv."
+      },
+      {
+       "name": "openSubstack_hasSmoothLocalProperty",
+       "role": "lemma",
+       "statement": "An open substack of an algebraic stack with a smooth-local property P (0.1) has P: the open immersion is smooth (its base changes along schemes are open immersions of algebraic spaces) and P passes along smooth morphisms."
       }
      ],
      "tests": [
@@ -229,6 +229,11 @@
        "name": "space_opens",
        "kind": "compatibility",
        "statement": "For an algebraic space the open substacks are §1.7's open subspaces."
+      },
+      {
+       "name": "open_inherits_closed_not",
+       "kind": "non-example",
+       "statement": "The open substack Spec k = [G_m/G_m] of [A^1/G_m] is reduced, regular and locally Noetherian (atlas G_m); the closed substack [Spec k[t]/(t^2) / G_m] of the regular [A^1/G_m] is neither reduced nor regular, so the bullet does not extend to all immersions."
       }
      ]
     },
@@ -1113,7 +1118,7 @@
       {
        "name": "pointToBG",
        "kind": "non-example",
-       "statement": "Spec k -> BG gives Spec k -> BG, not an isomorphism; Spec k x_BG Spec k = G."
+       "statement": "For G != 1, Spec k -> BG gives Spec k -> BG, not an isomorphism; Spec k x_BG Spec k = G differs from Spec k x_{Spec k} Spec k = Spec k."
       },
       {
        "name": "openImmersion",
@@ -1123,7 +1128,7 @@
       {
        "name": "BG_to_point",
        "kind": "non-example",
-       "statement": "BG -> Spec k induces BG -> Spec k, not an isomorphism."
+       "statement": "For G != 1, BG -> Spec k induces BG -> Spec k, not an isomorphism, and the criterion fails: Spec k x_BG Spec k = G while Spec k x_{Spec k} Spec k = Spec k (two points against one for Z/2; length p against 1 for mu_p in characteristic p). For G = 1 the map is the identity."
       }
      ]
     }
@@ -2095,15 +2100,15 @@
      "id": "7.4",
      "kind": "theorem",
      "name": "Stacks.normalSpace_quotient",
-     "statement": "For G smooth affine acting on V locally of finite type over k and x in V(k) with closed orbit, x is closed in [V/G], G_x = Stab_G(x), Z_x = [G x / G] and N_x = T_{V,x}/T_{G x, x} as G_x-representations.",
+     "statement": "For G a smooth group scheme acting on V locally of finite type over k and x in V(k) with affine stabiliser and closed orbit, x is closed in [V/G], G_x = Stab_G(x), Z_x = [G x / G] and N_x = T_{V,x}/T_{G x, x} as G_x-representations; G itself need not be affine.",
      "hypotheses": [
-      "G smooth affine group scheme over k",
+      "G smooth group scheme over k",
       "V locally of finite type over k with a G-action",
-      "x in V(k) with closed orbit"
+      "x in V(k) with affine stabiliser Stab_G(x) (standing hypothesis of Layer 7) and closed orbit"
      ],
      "locator": {
       "source": "ahr2020",
-      "where": "§3.1, lines 484-486"
+      "where": "§3.1, lines 484-486, under the affine stabilisers of line 476"
      },
      "prerequisites": [
       "target:0.3",
@@ -2134,6 +2139,11 @@
        "name": "SL2_quadratic",
        "kind": "computation",
        "statement": "SL_2 on binary quadratic forms at uv (char != 2): stabiliser the diagonal torus, N_x one-dimensional trivial."
+      },
+      {
+       "name": "nonaffine_group",
+       "kind": "computation",
+       "statement": "G = E x G_m (E an elliptic curve) on V = E x A^1 at x = (0_E, 0): Stab = G_m affine, orbit E x {0} closed, [V/G] = [A^1/G_m], x maps to 0, Z_x = B G_m, N_x = k d/dt of weight one as in 7.2; E acting trivially on Spec k has non-affine G_x = E and is excluded by the stabiliser hypothesis."
       },
       {
        "name": "luna_vocabulary",

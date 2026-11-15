@@ -452,8 +452,8 @@ Layer 1 (representations of affine group schemes of finite type over a field as 
 finite-dimensional comodule category). Nothing about reductivity is assumed. Layer 3A's orbit
 geometry is stated over an algebraically closed field and is not an input: 7.4 defines the orbit
 `G·x` over `k` itself, as the reduced image of the orbit map, and under 7.4's hypotheses `G·x` is
-smooth over `k`, so its base change to `k̄` is reduced and is the orbit of Layer 3A for the induced
-`k̄`-point. Layer 3 takes the quotient `G/H` first as an fppf sheaf and makes its
+smooth over `k`, so its base change to `k̄` is reduced and, when `G` and `V` have quasi-compact
+underlying spaces (Layer 3A's finiteness), is the orbit of Layer 3A for the induced `k̄`-point. Layer 3 takes the quotient `G/H` first as an fppf sheaf and makes its
 representability a theorem with hypotheses; 7.3 needs that theorem for `GLₙ/G_x`.
 
 What ReductiveGroups must provide (gap:homogeneous-quotient-scheme): Layer 3 must prove that for a
@@ -497,8 +497,9 @@ atlas), §1.20 (locally Noetherian stacks, `SmoothLocal`); Tau Ceti
 `TauCeti.AlgebraicGeometry.IsRegular`, `TauCeti.AlgebraicGeometry.IsRegular.of_smooth`,
 `TauCeti.AlgebraicGeometry.IsRegular.of_flat_of_surjective` (regularity of schemes is smooth local);
 Mathlib `AlgebraicGeometry.IsReduced`, `AlgebraicGeometry.IsLocallyNoetherian`;
-gap:reduced-regular-smooth-local (reducedness over an arbitrary base, and algebraic spaces); 0.3 and
-gap:stack-morphism-permanence (for the last API bullet: an open immersion is smooth).
+gap:reduced-regular-smooth-local (reducedness over an arbitrary base, and algebraic spaces);
+gap:stack-morphism-permanence (for the second API bullet: smooth morphisms, and smooth surjective
+morphisms, of algebraic stacks are stable under composition).
 
 The API consists of the following facts.
 
@@ -510,7 +511,6 @@ The API consists of the following facts.
   stack; for a scheme it is Mathlib's `IsReduced`, `IsLocallyNoetherian` and Tau Ceti's
   `TauCeti.AlgebraicGeometry.IsRegular`.
 - A regular algebraic stack is reduced and locally Noetherian.
-- Open substacks (0.3) of a stack with `P` have `P`.
 
 **Checks.**
 
@@ -608,12 +608,17 @@ a closed immersion, an immersion (stacks-04XE lines 765–776 and 853–859, Def
   Lemmas 100.9.7, 100.9.8, 100.9.11);
 - `𝒰 ↦ |𝒰|` is an inclusion-preserving bijection from open substacks of `𝒳` to open subsets of
   `|𝒳|` (stacks-04XE lines 889–894, Lemma 100.9.12), agreeing with SchemeAndStackFoundations §1.7's
-  `opensEquiv` on algebraic spaces.
+  `opensEquiv` on algebraic spaces;
+- an open substack `𝒰` of an algebraic stack `𝒳` with a smooth-local property `P` (0.1) has `P`: the
+  open immersion `𝒰 → 𝒳` is smooth, its base change along a scheme being an open immersion of
+  algebraic spaces (compare stacks-06RD lines 3551–3556, Lemma 101.35.4, where it is shown étale),
+  and 0.1's API passes `P` along smooth morphisms.
 
-*Needs:* 0.2; SchemeAndStackFoundations §1.19 (`RepresentableProperty`), §1.20 (`Stacks.points`,
-`stack_presentation`), §1.14 (`Groupoid.restrict`), §1.7 (`opensEquiv`); gap:flat-groupoid-quotients
-(restriction of a groupoid gives a fully faithful functor of quotients);
-gap:stack-morphism-permanence (fppf-locality on the target, Lemmas 100.3.1 and 100.3.3).
+*Needs:* 0.1 (the open-substack bullet), 0.2; SchemeAndStackFoundations §1.19
+(`RepresentableProperty`), §1.20 (`Stacks.points`, `stack_presentation`), §1.14 (`Groupoid.restrict`),
+§1.7 (`opensEquiv`); gap:flat-groupoid-quotients (restriction of a groupoid gives a fully faithful
+functor of quotients); gap:stack-morphism-permanence (fppf-locality on the target, Lemmas 100.3.1 and
+100.3.3; agreement of smoothness with `RepresentableProperty`, so that an open immersion is smooth).
 
 **Checks.**
 
@@ -627,6 +632,11 @@ gap:stack-morphism-permanence (fppf-locality on the target, Lemmas 100.3.1 and 1
   through the equivalent substack `∅ ⊔ Spec k`.
 - For `𝒳` an algebraic space, the open substacks are the open subspaces of SchemeAndStackFoundations
   §1.7, under `opensEquiv`.
+- Open substacks inherit a smooth-local property and closed ones need not: the open substack
+  `Spec k = [𝔾_m/𝔾_m]` of `[𝔸¹/𝔾_m]` has the atlas `𝔾_m ⊆ 𝔸¹`, reduced, regular and locally
+  Noetherian as `𝔸¹` is, while the closed substack `[Spec k[t]/(t²) / 𝔾_m]` of the regular
+  `[𝔸¹/𝔾_m]` has the atlas `Spec k[t]/(t²)` and is neither reduced nor regular (0.1's second
+  Check); the bullet cannot be stated for all immersions.
 
 ### 0.4 Closed substacks, quasi-coherent ideals and infinitesimal neighbourhoods
 
@@ -1210,8 +1220,10 @@ canonical `[U/R] → 𝒳` is fully faithful).
 - For `Spec k → BG` with `G ≠ 1`, the induced `𝒵_x = Spec k → 𝒵_y = BG` is not an isomorphism, and
   indeed `Spec k ×_{Spec k} Spec k = Spec k` differs from `Spec k ×_{BG} Spec k = G`.
 - For an open immersion `𝒰 → 𝒳` the induced map of residual gerbes is an isomorphism.
-- For `BG → Spec k` the induced `BG → Spec k` is not an isomorphism, and the criterion fails:
-  `Spec k ×_{BG} Spec k = G`.
+- For `G ≠ 1` and `BG → Spec k`, the induced `BG → Spec k` is not an isomorphism, and the criterion
+  fails: `Spec k ×_{BG} Spec k = G`, while `Spec k ×_{Spec k} Spec k = Spec k`; for `G = ℤ/2` the two
+  sides have two points and one point, for `G = μ_p` in characteristic `p` lengths `p` and `1`. For
+  `G = 1`, `BG = Spec k` and the induced map is the identity, as the criterion predicts.
 
 ### Examples
 
@@ -1410,7 +1422,7 @@ three reductions, each keeping the hypotheses.
    hence separated). It is locally Noetherian when `𝒳` is (0.5's API, Lemma 101.17.5). Its inertia
    `I_{𝒳'} = I_𝒳 ×_𝒳 𝒳'` (0.2's API, Lemma 101.5.6) is quasi-compact over `𝒳'` as a base change.
 2. The dense open gerbe `𝒰 ⊆ 𝒳'` of 2.6 contains `x`, the generic point of `|𝒳'|`, so `f` factors
-   through `𝒰` (0.3). `𝒰` is decent (5.1) or locally Noetherian (0.1's API, open substacks) when
+   through `𝒰` (0.3). `𝒰` is decent (5.1) or locally Noetherian (0.3's API, open substacks) when
    `𝒳'` is. A residual gerbe of `𝒰` at `x` is one of `𝒳`, a composite of monomorphisms being a
    monomorphism (0.2).
 3. Let `π : 𝒰 → U` exhibit `𝒰` as a gerbe over the algebraic space `U`, and let `u = π(x)`. `U` is
@@ -1492,7 +1504,8 @@ For the first statement: `𝒳'` is reduced with `|𝒳'|` irreducible, decent (
 closed immersion being a monomorphism) and has quasi-compact inertia `I_𝒳 ×_𝒳 𝒳'` (0.2's API, Lemma
 101.5.6). Its dense open gerbe `𝒰` (2.6) is a nonempty open subset of the irreducible `|𝒳'|`, so it
 contains the generic point `ξ`. Let `π : 𝒰 → U` exhibit `𝒰` as a gerbe over an algebraic space. `U` is
-decent (5.1, Lemma 101.48.5), reduced (0.1's API, `π` being smooth and surjective by 2.3) and
+decent (5.1, Lemma 101.48.5), reduced (`𝒰` is reduced as an open substack of `𝒳'`, 0.3's API, and
+reducedness descends along `π`, smooth and surjective by 2.3, 0.1's API) and
 irreducible with generic point `π(ξ)` (`|𝒰| ≅ |U|` by 2.5), so it has a dense open subspace which is a
 scheme (gap:decent-space-schematic-locus); a nonempty affine open `Z` of that subscheme contains
 `π(ξ)` and is reduced and irreducible, hence integral, and `𝒵 = π⁻¹(Z)` is an open substack of `𝒳'`
@@ -1847,10 +1860,13 @@ gap:stack-morphism-permanence (smoothness of `W` and of `q`); gap:algebraic-stac
 
 ### 7.4 Quotient stacks
 
-Prove that for a smooth affine group scheme `G` over `k` acting on a scheme `V` locally of finite type
-over `k`, and `x ∈ V(k)` whose orbit `G·x` (the reduced image of the orbit map) is closed in `V`, the
-image of `x` is a closed point of `[V/G]`, `G_x` is the stabiliser `Stab_G(x)`, `𝒵_x = [G·x/G]`, and
-`N_x ≅ T_{V,x}/T_{G·x,x}` as `G_x`-representations (ahr2020 lines 484–486). For the proof apply the
+Prove that for a smooth group scheme `G` over `k` acting on a scheme `V` locally of finite type over
+`k`, and `x ∈ V(k)` with affine stabiliser `Stab_G(x)` (the standing hypothesis of this layer) whose
+orbit `G·x` (the reduced image of the orbit map) is closed in `V`, the image of `x` is a closed point
+of `[V/G]`, `G_x` is the stabiliser `Stab_G(x)`, `𝒵_x = [G·x/G]`, and `N_x ≅ T_{V,x}/T_{G·x,x}` as
+`G_x`-representations (ahr2020 lines 484–486, under the affine stabilisers of line 476). `G` itself
+need not be affine: the route below uses only that `V → [V/G]` is a smooth atlas, and affineness
+enters through `G_x` alone, in 7.3's embedding `G_x ⊆ GLₙ`. For the proof apply the
 chart computation of 7.3 to the smooth atlas `V → [V/G]`: the base change of `x : Spec k → [V/G]`
 along `V → [V/G]` is the orbit map `G → V`, so the preimage of the image of `x` in `|V|` is the image
 of the orbit map, and the point is closed exactly when the orbit is (the map `|V| → |[V/G]|` being
@@ -1873,6 +1889,13 @@ gap:stack-morphism-permanence (base change and composition of smooth morphisms).
   diagonal torus (an element exchanging `u` and `v` sends `uv` to `−uv`); and `N_x` is the
   one-dimensional trivial representation, identified with `k` by the differential of the invariant
   discriminant, which is nonzero at `x`.
+- `G` need not be affine: for an elliptic curve `E` over `k`, let `G = E × 𝔾_m` act on
+  `V = E × 𝔸¹` by translation on `E` and scaling on `𝔸¹`, and take `x = (0_E, 0)`. Then
+  `Stab_G(x) = 1 × 𝔾_m` is affine, the orbit `E × {0}` is closed, `[V/G] ≅ [E/E] × [𝔸¹/𝔾_m] ≅ [𝔸¹/𝔾_m]`
+  with `x` going to the closed point `0`, `𝒵_x = [E × {0}/G] ≅ B𝔾_m`, and
+  `T_{V,x}/T_{G·x,x} = (T_{E,0} ⊕ k·∂_t)/T_{E,0} = k·∂_t` is the weight-one character, which is `N_0`
+  of `[𝔸¹/𝔾_m]` in 7.2's first Check. A statement for affine `G` only would exclude this action; the
+  stabiliser hypothesis is what excludes `E` acting trivially on `Spec k`, with `G_x = E` not affine.
 - Luna vocabulary: for `k` algebraically closed, `𝒳` quasi-separated with affine stabilisers and
   `x` smooth with linearly reductive `G_x` (Tau Ceti `TauCeti.linearlyReductiveAffineGroupSchemeProperty`),
   the slice theorem (ahr2020 lines 55–60, Theorem 1.2) compares `𝒳` étale-locally with `[N_x/G_x]`;

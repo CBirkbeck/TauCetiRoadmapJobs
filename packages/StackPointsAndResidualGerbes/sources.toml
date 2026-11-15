@@ -63,7 +63,7 @@ sha256 = "ba3fb2d5c613e4fee0fdc5ee640581d9bf3bf9241760f9f502efab7dca3a8865"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["separation axioms, inertia, finite type points, automorphism groups, smooth quotients, existence of residual gerbes, decent stacks and residual gerbes at closed points (§§101.4-101.5, 101.18-101.19, 101.31, 101.33, 101.48, 101.51): targets 0.2, 0.5, 1.1-1.4, 2.3, 3.4, 4.1-4.5, 5.1, 5.2, 5.4, 6.1; integral algebraic stacks and the open substack which is a gerbe over an integral scheme (§101.50, Definition 101.50.1, Lemma 101.50.2): target 5.4; an immersion is locally of finite type, a stack locally of finite type over a locally Noetherian one is locally Noetherian, base change and cancellation of local finite type (Lemmas 101.17.3, 101.17.4, 101.17.5, 101.17.8): targets 0.5, 1.1, 5.2, 6.1, 6.4, 7.2 and gap stack-morphism-permanence"]
+cited_for = ["separation axioms, inertia, finite type points, automorphism groups, smooth quotients, existence of residual gerbes, decent stacks and residual gerbes at closed points (§§101.4-101.5, 101.18-101.19, 101.31, 101.33, 101.48, 101.51): targets 0.2, 0.5, 1.1-1.4, 2.3, 3.4, 4.1-4.5, 5.1, 5.2, 5.4, 6.1; integral algebraic stacks and the open substack which is a gerbe over an integral scheme (§101.50, Definition 101.50.1, Lemma 101.50.2): target 5.4; an immersion is locally of finite type, a stack locally of finite type over a locally Noetherian one is locally Noetherian, base change and cancellation of local finite type (Lemmas 101.17.3, 101.17.4, 101.17.5, 101.17.8): targets 0.5, 1.1, 5.2, 6.1, 6.4, 7.2 and gap stack-morphism-permanence; an open immersion is étale (§101.35, Lemma 101.35.4): target 0.3"]
 
 [[source]]
 id = "ahr2020"
