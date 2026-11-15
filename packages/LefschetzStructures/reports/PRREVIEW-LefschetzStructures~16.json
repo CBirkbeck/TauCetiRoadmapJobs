@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LefschetzStructures~16",
+  "head": "ad5de98db89cb79142bf517ad08f14217357fd0e",
+  "pr": 1061,
+  "folder": "LefschetzStructures",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 10 changed lines since 8bf2164. Previous R01 (description), R02 (1.3 source) and R03 (1.2 Check) repaired; the new 1.3 source clause says Beilinson's cut is that of lambdaAlgebraic_of_charpoly, contradicted by Beilinson2012 lines 288-294 and README 534 (new R01, P3). Checked: 1.2/1.3 changed passages against Beilinson2012 lines 178, 201, 212, 286-297 (Kleiman 1994 not legally readable); adversarial rows on Q[xi]/(xi^3) for exists_inverse_L_pow_of_charpoly, lambdaAlgebraic_of_charpoly and 1.2's first Check; PR title and description against the head (sound); 17 cross-roadmap citations resolved; worker gate OK, depcheck 0 problems with the candidate order; lake env lean exit 0 with 12 sorry warnings only; Suggested.lean unchanged; no change outside the folder.",
+  "text": "acbdc480d7239277"
+ }
+}
