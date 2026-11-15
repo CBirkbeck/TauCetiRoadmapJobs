@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsSemiparametric~3",
+  "head": "c096627474394e8ae6902dd36bf57e24a46a9815",
+  "pr": 2378,
+  "folder": "MathematicalStatisticsSemiparametric",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 82 changed lines since b2960a7. Previous R01, R02, R03 repaired; one new P3 the repair introduced (Foundations 8.2 still named in the scope, 8.4 in the contract with no consumer, and the description's Foundations item). Checked: the changed supplier contract against MathematicalStatisticsAsymptotic 1.1 and MathematicalStatisticsFoundations Layer 8 at their open heads; Matrix.posDef_gram_iff_linearIndependent at the pin; gate passes; depcheck 0 problems; Suggested.lean elaborates with 80 sorry warnings only; pull request text against the head. No source text readable (sample locators in changed sections listed as not verifiable).",
+  "text": "1cd3662624dc2bc1"
+ }
+}
