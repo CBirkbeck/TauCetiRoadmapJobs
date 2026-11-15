@@ -137,13 +137,14 @@
      "id": "0.1",
      "kind": "definition",
      "name": "classIso",
-     "statement": "For K : Set (RelationalConfiguration L ℕ), classIso K : Setoid K is Setoid.comap of Tau Ceti's isoSetoid L ℕ along the inclusion K → RelationalConfiguration L ℕ; K carries the subtype σ-algebra.",
+     "statement": "For any carrier α and K : Set (RelationalConfiguration L α), classIso K : Setoid K := Setoid.comap Subtype.val (isoSetoid L α), the pullback of Tau Ceti's isoSetoid L α along the inclusion K → RelationalConfiguration L α; K carries the subtype σ-algebra. BorelComplete (1.2) uses it on ℕ; relabelling (1.1) uses it on arbitrary carriers.",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) (no countability needed for the definition)"
+      "L is a relational first-order language ([L.IsRelational]) (no countability needed for the definition)",
+      "α : Type w an arbitrary carrier (finite, empty or infinite)"
      ],
      "locator": {
       "source": "paolini-shelah-tfab",
-      "where": "Definition 1.4, line 83; camerlo-gao-boolean lines 106–110 for classes"
+      "where": "Fact 1.1, lines 56–58, and lines 65–68 (induced Borel structure on a class, relations on it as subsets of its square); Definition 1.6, lines 95–96 (the isomorphism relation on a class); camerlo-gao-boolean lines 106–110 for classes"
      },
      "prerequisites": [
       "tauceti:TauCeti.RelationalConfiguration.isoSetoid",
@@ -155,12 +156,12 @@
       {
        "name": "classIso_iff",
        "role": "unfolding",
-       "statement": "For x y : K, classIso K x y holds iff the decoded structures of x and y are isomorphic (isoSetoid_apply), iff x and y lie in one orbit of the logic action (isoSetoid_eq_orbitRel)."
+       "statement": "For x y : K, classIso K x y holds iff the decoded structures of x and y are isomorphic (isoSetoid_apply), iff x and y lie in one orbit of the logic action of Equiv.Perm α (isoSetoid_eq_orbitRel)."
       },
       {
        "name": "borelReducible_classIso_univ",
        "role": "compatibility",
-       "statement": "classIso Set.univ and isoSetoid L ℕ are Borel reducible to each other, the inclusion of univ being a measurable equivalence."
+       "statement": "On every carrier α, classIso (Set.univ : Set (RelationalConfiguration L α)) and isoSetoid L α are Borel reducible to each other, the inclusion of univ being a measurable equivalence."
       },
       {
        "name": "quotient_injection",
@@ -188,6 +189,11 @@
        "name": "noninvariant_subclass",
        "kind": "compatibility",
        "statement": "For A the single code P = {0} inside the class |P| = 1, the inclusion reduces classIso A to classIso K; both have one class."
+      },
+      {
+       "name": "finite_carrier",
+       "kind": "computation",
+       "statement": "On the carrier Fin 2 with one unary predicate, classIso univ has three classes on four codes (|P| = 0, 1, 2): P = {0} and P = {1} are related (not equality on codes), P = ∅ and P = {0} are not (not the trivial relation)."
       }
      ]
     },
@@ -195,10 +201,10 @@
      "id": "0.2",
      "kind": "theorem",
      "name": "borelReducible_classIso_of_subset",
-     "statement": "If A ⊆ K then classIso A is Borel reducible to classIso K; hence if classIso K' is Borel reducible to classIso K and A ⊆ K', then classIso A is Borel reducible to classIso K. Route: classIso A is Setoid.comap of classIso K along the measurable inclusion A → K, and Tau Ceti's Setoid.borelReducible_comap applies.",
+     "statement": "For sets A ⊆ K of codes on one carrier α, classIso A is Borel reducible to classIso K; hence if classIso K' is Borel reducible to classIso K and A ⊆ K', then classIso A is Borel reducible to classIso K. Route: classIso A is Setoid.comap of classIso K along the measurable inclusion A → K, and Tau Ceti's Setoid.borelReducible_comap applies.",
      "hypotheses": [
       "L is a relational first-order language ([L.IsRelational])",
-      "A, K, K' arbitrary sets of codes (no Borelness needed)"
+      "A, K, K' arbitrary sets of codes of relational languages on arbitrary carriers (no Borelness needed); the two sides of each inclusion are codes of one language on one carrier"
      ],
      "locator": {
       "source": "paolini-shelah-tfab",
@@ -224,10 +230,11 @@
      "id": "0.3",
      "kind": "theorem",
      "name": "borelReducible_classIso_of_measurable",
-     "statement": "If f : RelationalConfiguration L' ℕ → RelationalConfiguration L ℕ is measurable, maps K' into K, and for all x y ∈ K' the codes x, y are isomorphic iff f x, f y are, then classIso K' is Borel reducible to classIso K. Route: the corestriction K' → K of f is measurable and Tau Ceti's Setoid.borelReducible_iff_exists_eq_comap applies.",
+     "statement": "For carriers β and α, if f : RelationalConfiguration L' β → RelationalConfiguration L α is measurable, maps K' : Set (RelationalConfiguration L' β) into K : Set (RelationalConfiguration L α), and for all x y ∈ K' the codes x, y are isomorphic iff f x, f y are, then classIso K' is Borel reducible to classIso K. Route: the corestriction K' → K of f is measurable and Tau Ceti's Setoid.borelReducible_iff_exists_eq_comap applies.",
      "hypotheses": [
-      "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])",
+      "L is a relational first-order language ([L.IsRelational]) (no countability needed)",
       "L' relational",
+      "α, β arbitrary carriers",
       "f measurable"
      ],
      "locator": {
@@ -366,14 +373,16 @@
      "name": "relabelHomeomorph",
      "statement": "For any language L and e : α ≃ β, relabelling along e is Tau Ceti's RelationalConfiguration.restrict e.symm : RelationalConfiguration L α → RelationalConfiguration L β (value c.eval (atom R (e.symm ∘ w)) at atom R w). Bundle it as a homeomorphism and measurable equivalence with inverse restrict e. The library has the unbundled map with restrict_id, restrict_comp, measurable_restrict and continuous_restrict, and identifies relabelling with transport of the decoded structure only for permutations (perm_smul_eq_encodeVia); the bundled equivalence and the identification for an arbitrary bijection are new.",
      "hypotheses": [
-      "any language L",
-      "e : α ≃ β"
+      "any language L (relational, [L.IsRelational], for the decoding, isomorphism and classIso statements)",
+      "e : α ≃ β for arbitrary carriers α, β"
      ],
      "locator": {
       "source": "becker-kechris-bams",
       "where": "lines 159–164 (the logic action as relabelling of structures on ℕ)"
      },
      "prerequisites": [
+      "target:0.1",
+      "target:0.3",
       "tauceti:TauCeti.RelationalConfiguration.restrict",
       "tauceti:TauCeti.RelationalConfiguration.restrict_comp",
       "tauceti:TauCeti.RelationalConfiguration.continuous_restrict",
@@ -399,7 +408,7 @@
       {
        "name": "relabelHomeomorph_iso_iff",
        "role": "characterisation",
-       "statement": "Two codes on α are isomorphic iff their relabellings are (Equiv.isoSetoid_encodeVia_iff); invariant Borel classes map to invariant Borel classes, and classIso of a class and of its image are Borel reducible to each other."
+       "statement": "For relational L, two codes on α are isomorphic iff their relabellings are (Equiv.isoSetoid_encodeVia_iff). For any K : Set (RelationalConfiguration L α) with image K₂ : Set (RelationalConfiguration L β): K invariant Borel implies K₂ invariant Borel; classIso K and classIso K₂ (0.1 on the carriers α and β) are Borel reducible to each other, by the corestriction law 0.3 applied to relabelling along e and along e.symm, which restrict to mutually inverse measurable bijections K ≃ K₂."
       }
      ],
      "tests": [
@@ -411,7 +420,12 @@
       {
        "name": "fin_zero",
        "kind": "degenerate",
-       "statement": "On Fin 0 the coding space of a language without nullary symbols is one point and relabelling is the identity; with one nullary symbol, two fixed points."
+       "statement": "On Fin 0 the coding space of a language without nullary symbols is one point and relabelling is the identity; with one nullary symbol, two fixed points. For K the whole coding space on Fin 0, classIso K has one class, respectively two (the nullary symbol separates the two codes), and the identity reduces it to itself both ways."
+      },
+      {
+       "name": "fin_three_direction",
+       "kind": "computation",
+       "statement": "One unary predicate on Fin 3, e the 3-cycle 0 ↦ 1 ↦ 2 ↦ 0: the class {P = {0}} relabels to {P = {1}} (new predicate e(P)); the reverse convention restrict e would give {P = {2}}. Both have one classIso class. The class of all eight codes is invariant, its own image, and classIso of it has four classes (|P| = 0, 1, 2, 3), each mapped onto itself."
       },
       {
        "name": "three_cycle_twice",
@@ -965,10 +979,8 @@
      "id": "3.3",
      "kind": "construction",
      "name": "unravelColour",
-     "statement": "For c ∈ graphClass with graph G and x : List ℚ, a(x) = x.map ν and χ_c(x) ∈ ℕ an injective encoding of (|x|, atomic diagram of a(x) in G: equalities and adjacencies of entries).",
-     "hypotheses": [
-      "c ∈ graphClass"
-     ],
+     "statement": "For every code c : RelationalConfiguration Language.graph ℕ (any binary relation on ℕ, not necessarily symmetric or irreflexive) and x : List ℚ, a(x) = x.map ν and χ_c(x) ∈ ℕ an injective encoding of |x| together with, for all ordered pairs (i, j) below |x| (the diagonal included), whether a_i = a_j and the bit c.eval (adjAtom a_i a_j). For c ∈ graphClass, the code of a simple graph G, the bit is G.Adj a_i a_j (SimpleGraph.eval_toRelationalConfiguration_adjAtom) and the diagonal bits are false.",
+     "hypotheses": [],
      "locator": {
       "source": "montalban-cst1",
       "where": "Lemma VI.18, lines 4205–4211 and 4262–4265 (labels coding atomic diagrams and lengths)"
@@ -976,7 +988,11 @@
      "prerequisites": [
       "target:3.1",
       "mathlib:Encodable",
-      "mathlib:List.map"
+      "mathlib:List.map",
+      "tauceti:TauCeti.RelationalConfiguration.adjAtom",
+      "tauceti:TauCeti.RelationalConfiguration.toStructure_relMap",
+      "tauceti:SimpleGraph.eval_toRelationalConfiguration_adjAtom",
+      "tauceti:TauCeti.SameAtomicType"
      ],
      "api": [
       {
@@ -987,12 +1003,12 @@
       {
        "name": "unravelColour_eq_iff",
        "role": "characterisation",
-       "statement": "χ_c x = χ_d y iff |x| = |y| and a(x), a(y) have the same atomic type in the two graphs (SameAtomicType)."
+       "statement": "For all codes c, d of Language.graph: χ_c x = χ_d y iff |x| = |y| and a(x), a(y) have the same atomic type (SameAtomicType) in the decoded structures of c and d (toStructure_relMap)."
       },
       {
        "name": "unravelColour_continuous",
        "role": "compatibility",
-       "statement": "For fixed x, χ_c x depends on finitely many coordinates of c."
+       "statement": "For fixed x, χ_c x depends on finitely many coordinates of c, for every code c."
       }
      ],
      "tests": [
@@ -1004,12 +1020,22 @@
       {
        "name": "short_nodes",
        "kind": "degenerate",
-       "statement": "χ of [] and of every node of length 1 is the same for all graphs."
+       "statement": "χ of [] is the same for every code; on graphClass every node of length 1 also has one colour (diagonal bit false)."
       },
       {
        "name": "identity_fails",
        "kind": "non-example",
        "statement": "The one-edge graphs on {0,1} and {0,2} are isomorphic but differ at [1,1/2], so the identity is not colour-preserving between them."
+      },
+      {
+       "name": "loop_at_length_one",
+       "kind": "non-example",
+       "statement": "Outside graphClass the colour is defined and length-1 nodes can differ: at [1] the constant-true code records (length 1, equal, diagonal bit true), the empty graph (length 1, equal, diagonal bit false)."
+      },
+      {
+       "name": "ordered_bits",
+       "kind": "computation",
+       "statement": "For the code whose only true atom is adjAtom 0 1, the nodes [1/2, 1] (a = (1, 0)) and [1, 1/2] (a = (0, 1)) have different colours (at the index pairs (1,0) and (0,1) the bits are true, false at the first node and false, true at the second); for the symmetric code of the edge {0, 1} the two colours agree."
       }
      ]
     },
@@ -1017,9 +1043,9 @@
      "id": "3.4",
      "kind": "theorem",
      "name": "unravel_iso_iff",
-     "statement": "For c, d ∈ graphClass the following are equivalent: (i) c ≅ d; (ii) some order automorphism Φ of List ℚ has χ_d ∘ Φ = χ_c; (iii) some bijection Ψ of List ℚ preserving the parent relation (both ways) has χ_d ∘ Ψ = χ_c.",
+     "statement": "For all codes c, d : RelationalConfiguration Language.graph ℕ, simple graphs or not, the following are equivalent: (i) c ≅ d; (ii) some order automorphism Φ of List ℚ has χ_d ∘ Φ = χ_c; (iii) some bijection Ψ of List ℚ preserving the parent relation (both ways) has χ_d ∘ Ψ = χ_c. The case c, d ∈ graphClass is the one 3.7 and 3.11 use; no step uses symmetry or irreflexivity: (i) ⇒ (ii) writes d = σ • c and applies π from 3.2 entrywise, so a(Φ x) = σ ∘ a(x) and d.eval (adjAtom (σ u) (σ v)) = c.eval (adjAtom u v).",
      "hypotheses": [
-      "c, d ∈ graphClass",
+      "c, d : RelationalConfiguration Language.graph ℕ arbitrary codes (not necessarily symmetric or irreflexive)",
       "List ℚ with Mathlib's lexicographic order"
      ],
      "locator": {
@@ -1032,7 +1058,9 @@
       "tauceti:TauCeti.IsTupleBFSystem",
       "tauceti:TauCeti.potentialIso_iff_exists_isTupleBFSystem",
       "tauceti:TauCeti.countable_potentialIso_iff_iso",
-      "mathlib:List.IsPrefix"
+      "mathlib:List.IsPrefix",
+      "tauceti:TauCeti.RelationalConfiguration.isoSetoid_iff_exists_perm_smul_eq",
+      "tauceti:TauCeti.RelationalConfiguration.eval_perm_smul"
      ],
      "api": [],
      "tests": [
@@ -1045,6 +1073,11 @@
        "name": "parent_definable",
        "kind": "characterisation",
        "statement": "The parent of [1/2, 3] is [1/2]: the unique node of length 1 below it with no node of length < 2 strictly between."
+      },
+      {
+       "name": "directed_codes",
+       "kind": "non-example",
+       "statement": "Off graphClass: c with the single true atom adjAtom 0 1, d with the single true atom adjAtom 1 0, τ = (0 1), d = τ • c; Φ entrywise π_τ sends [1/2, 1] (a = (1, 0) for c) to a node with a = (0, 1), where the bits at the index pair (1, 0) are c.eval (adjAtom 0 1) = d.eval (adjAtom 1 0) = true and at (0, 1) both false, so (i)–(iii) hold. The loop code (adjAtom 0 0 only) against the empty graph: the colour of [1] (length 1, diagonal bit true) occurs at no node of the empty graph, so (ii) and (iii) fail, as non-isomorphism requires."
       }
      ]
     },
@@ -1102,10 +1135,8 @@
      "id": "3.6",
      "kind": "construction",
      "name": "blockOrder",
-     "statement": "For a graph code c, the linear order on List ℚ × ℕ: lexicographic, first by List ℚ, then inside the block of x by the order of type ω + (χ_c(x) + 2) putting indices ≥ χ_c(x)+2 first; relabelled to ℕ along a fixed bijection.",
-     "hypotheses": [
-      "c a graph code"
-     ],
+     "statement": "For every code c : RelationalConfiguration Language.graph ℕ, with the colour χ_c of 3.3, the linear order on List ℚ × ℕ: lexicographic, first by List ℚ, then inside the block of x by the order of type ω + (χ_c(x) + 2) putting indices ≥ χ_c(x)+2 first; relabelled to ℕ along a fixed bijection.",
+     "hypotheses": [],
      "locator": {
       "source": "montalban-cst1",
       "where": "Lemma VI.18, lines 4286–4288 (replace a labelled point by a finite order with label + 2 elements)"
@@ -1124,12 +1155,17 @@
       {
        "name": "blockOrder_continuous",
        "role": "compatibility",
-       "statement": "Each comparison depends on two colours, so the map is continuous."
+       "statement": "Each comparison depends on at most one colour, that of the common block (points of distinct blocks compare by their List ℚ coordinates alone, two points of the block of x through χ_c(x), which reads finitely many coordinates of c), so the map is continuous on the whole of RelationalConfiguration Language.graph ℕ."
       },
       {
        "name": "finite_condensation_classes",
        "role": "characterisation",
        "statement": "The maximal sets in which any two points bound a finite interval and that are finite are exactly the final finite parts of the blocks, of size χ_c(x)+2."
+      },
+      {
+       "name": "blockOrder_iso_iff",
+       "role": "characterisation",
+       "statement": "For all codes c, d of Language.graph, simple graphs or not, c ≅ d iff their images are isomorphic: the map is a continuous reduction of isoSetoid Language.graph ℕ to isoSetoid Language.order ℕ with values in linearOrderClass (finite condensation classes and 3.4)."
       }
      ],
      "tests": [
@@ -1147,6 +1183,11 @@
        "name": "empty_vs_complete",
        "kind": "non-example",
        "statement": "The images of the empty graph and the complete graph on ℕ are not isomorphic: the colour of [1, 1/2] for the empty graph (vertices (0, 1), distinct and not adjacent) occurs at no node for the complete graph. The colourings differ exactly at nodes having two entries with distinct ν-values; at [1, 2] both entries have ν-value 0, both record the vertices (0, 0), and the colours agree."
+      },
+      {
+       "name": "non_graph_code",
+       "kind": "non-example",
+       "statement": "For the constant-true code (outside graphClass) the image is in linearOrderClass, and the block of [1] has a finite condensation class of a size χ + 2 (χ encoding length 1 with a true diagonal bit) that occurs for no simple graph, so the image is isomorphic to no image of graphClass."
       }
      ]
     },
@@ -1154,7 +1195,7 @@
      "id": "3.7",
      "kind": "theorem",
      "name": "exists_continuous_reduction_graphClass_linearOrderClass",
-     "statement": "There is a continuous f : RelationalConfiguration Language.graph ℕ → RelationalConfiguration Language.order ℕ with f '' graphClass ⊆ linearOrderClass and, for c d ∈ graphClass, c ≅ d ↔ f c ≅ f d.",
+     "statement": "There is a continuous f : RelationalConfiguration Language.graph ℕ → RelationalConfiguration Language.order ℕ with f '' graphClass ⊆ linearOrderClass and, for c d ∈ graphClass, c ≅ d ↔ f c ≅ f d: the restriction to graphClass of the blockOrder map of 3.6, which reflects and preserves isomorphism for all codes.",
      "hypotheses": [],
      "locator": {
       "source": "friedman-stanley-1989",
@@ -1240,10 +1281,8 @@
      "id": "3.10",
      "kind": "construction",
      "name": "tagTree",
-     "statement": "For a graph code c, the order on List ℚ × Option ℕ: (x, none) ordered by prefix; tag nodes (x, some m) above (x, none) and its ancestors; (x, some 0) below the other tags of x; (x, some m) ≤ (x, some m') for 0 < m ≤ m' ≤ χ_c(x)+1; tags with m > χ_c(x)+1 are leaves above (x, some 0); relabelled to ℕ.",
-     "hypotheses": [
-      "c a graph code"
-     ],
+     "statement": "For every code c : RelationalConfiguration Language.graph ℕ, with the colour χ_c of 3.3, the order on List ℚ × Option ℕ: (x, none) ordered by prefix; tag nodes (x, some m) above (x, none) and its ancestors; (x, some 0) below the other tags of x; (x, some m) ≤ (x, some m') for 0 < m ≤ m' ≤ χ_c(x)+1; tags with m > χ_c(x)+1 are leaves above (x, some 0); relabelled to ℕ.",
+     "hypotheses": [],
      "locator": {
       "source": "montalban-cst1",
       "where": "Lemma VI.18, lines 4205–4245 (labelled trees of tuples, infinitely repeated)"
@@ -1256,7 +1295,7 @@
       {
        "name": "tagTree_mem_treeClass",
        "role": "structure",
-       "statement": "The relabelled code is in treeClass."
+       "statement": "The relabelled code is in treeClass for every code c."
       },
       {
        "name": "original_iff_infinite_chain",
@@ -1267,6 +1306,16 @@
        "name": "tag_height",
        "role": "evaluation",
        "statement": "The subtree above (x, some 0) has height χ_c(x)+2, the unique non-original child of (x, none)."
+      },
+      {
+       "name": "tagTree_continuous",
+       "role": "compatibility",
+       "statement": "A comparison of two tag nodes of the same x depends on χ_c(x) alone, two tag nodes of distinct x, y are incomparable, and a comparison involving an original node depends on no coordinate of c, so the map is continuous on the whole of RelationalConfiguration Language.graph ℕ."
+      },
+      {
+       "name": "tagTree_iso_iff",
+       "role": "characterisation",
+       "statement": "For all codes c, d of Language.graph, simple graphs or not, c ≅ d iff their tagged trees are isomorphic: the map is a continuous reduction of isoSetoid Language.graph ℕ to isoSetoid Language.order ℕ with values in treeClass (a tree isomorphism restricts to a parent- and colour-preserving bijection of List ℚ, then 3.4 (iii); conversely 3.4 (ii) extends to tags)."
       }
      ],
      "tests": [
@@ -1284,6 +1333,11 @@
        "name": "untagged",
        "kind": "non-example",
        "statement": "Without tags the original nodes form the same tree for every c."
+      },
+      {
+       "name": "non_graph_code",
+       "kind": "non-example",
+       "statement": "For the constant-true code the tagged tree is in treeClass, with height χ + 2 above ([1], some 0) (χ encoding length 1 with a true diagonal bit), a height above a tag root that no simple graph's tagged tree has."
       }
      ]
     },
@@ -1291,7 +1345,7 @@
      "id": "3.11",
      "kind": "theorem",
      "name": "borelComplete_treeClass",
-     "statement": "BorelComplete treeClass, through a continuous reduction from graphClass.",
+     "statement": "BorelComplete treeClass, through a map continuous on the whole of RelationalConfiguration Language.graph ℕ that lands in treeClass for every code and has c ≅ d ↔ f c ≅ f d for all codes c d (3.10); its restriction to graphClass reduces classIso graphClass to classIso treeClass, and 2.5 concludes.",
      "hypotheses": [],
      "locator": {
       "source": "friedman-stanley-1989",
@@ -1339,7 +1393,7 @@
      "id": "3.13",
      "kind": "theorem",
      "name": "borelComplete_rootedGraphTree",
-     "statement": "In the relational language with one binary and one unary symbol, the class of codes of connected acyclic graphs with exactly one marked vertex is invariant Borel and Borel complete, by the Borel (not continuous) reduction from treeClass sending an order to its cover graph with the least element marked.",
+     "statement": "In the relational language with one binary and one unary symbol, the class of codes of connected acyclic graphs with exactly one marked vertex is invariant Borel and Borel complete, by the Borel reduction from treeClass sending an order to its cover graph with the least element marked; each output coordinate is the indicator of a closed set, and the map is not continuous, even on treeClass.",
      "hypotheses": [],
      "locator": {
       "source": "friedman-stanley-1989",
@@ -1361,6 +1415,11 @@
        "name": "star",
        "kind": "computation",
        "statement": "The star gives a star with its centre marked."
+      },
+      {
+       "name": "not_continuous",
+       "kind": "non-example",
+       "statement": "T the star on ℕ with root 0, T_n (n ≥ 2) with n inserted between 0 and 1: T_n → T coordinatewise (they agree off n), but 0 and 1 are adjacent in the cover graph of T and of no T_n."
       }
      ]
     }
@@ -1392,7 +1451,7 @@
       {
        "name": "measurableSMul₂_relationalConfiguration",
        "role": "constructor",
-       "statement": "The logic action on RelationalConfiguration L ℕ (countable relational L) is a Borel S∞-space: it is continuous (CountableStructureSpaces continuousSMul_relationalConfiguration) and ContinuousSMul.measurableSMul₂ applies; its orbit relation is isoSetoid L ℕ (isoSetoid_eq_orbitRel)."
+       "statement": "The logic action on RelationalConfiguration L ℕ (countable relational L) is a Borel S∞-space: it is jointly continuous (CountableStructureSpaces Layer 1.2, the ContinuousSMul (Equiv.Perm ℕ) (RelationalConfiguration L ℕ) instance from continuous_uncurry_restrict and Equiv.Perm.continuous_inv_apply) and ContinuousSMul.measurableSMul₂ applies; its orbit relation is isoSetoid L ℕ (isoSetoid_eq_orbitRel)."
       },
       {
        "name": "measurableSMul₂_subtype",
@@ -1537,7 +1596,7 @@
       {
        "name": "unpairCode_injective",
        "role": "characterisation",
-       "statement": "The (k,n)-th symbol at a is recovered at m = Nat.pair n k on any extension of a."
+       "statement": "The (k,n)-th symbol at a : Fin k → ℕ is recovered at m = Nat.pair n k ≥ k (Nat.right_le_pair) on any b : Fin m → ℕ whose first k entries are a."
       },
       {
        "name": "unpairCode_smul",
@@ -1549,17 +1608,17 @@
       {
        "name": "pair_zero",
        "kind": "computation",
-       "statement": "Nat.unpair 0 = (0,0): the arity-0 symbol of universalLanguage reads the (0,0)-th symbol."
+       "statement": "Nat.unpair 0 = (0,0): the nullary symbol of universalLanguage reads the nullary symbol (0,0); Nat.unpair 1 = (0,1): the unary symbol reads the unary symbol (1,0) on its entry (the reversed reading would give the nullary symbol (0,1))."
       },
       {
        "name": "padding_irrelevant",
        "kind": "degenerate",
-       "statement": "The value at m does not depend on the entries of b beyond k."
+       "statement": "Nat.unpair 2 = (1,0) (Nat.pair 1 0 = 2): the binary symbol of universalLanguage reads the nullary symbol (k,n) = (0,1), so its value at every pair (b₀, b₁) is the same bit, whatever the entries."
       },
       {
        "name": "not_surjective",
        "kind": "non-example",
-       "statement": "The map is not surjective: its image consists of codes whose arity-m relation depends only on the first k entries."
+       "statement": "A code of universalLanguage whose binary relation holds at (0,0) and fails at (1,0) is not in the image: every image code has a constant binary relation."
       }
      ]
     },
@@ -1942,11 +2001,11 @@
      "id": "6.8",
      "kind": "theorem",
      "name": "not_borelComplete_of_rank_bounded",
-     "statement": "Let K ⊆ RelationalConfiguration L ℕ be measurable and ρ : RelationalConfiguration L ℕ → Ordinal.{0}. If for every α < ω₁ isomorphism restricted to K ∩ {ρ ≤ α} is measurable in the square, and every analytic subset of K has ρ bounded below ω₁, then ¬ BorelComplete K.",
+     "statement": "Let K ⊆ RelationalConfiguration L ℕ be measurable, ρ : RelationalConfiguration L ℕ → Ordinal.{0}, and K_α = K ∩ {c | ρ c ≤ α} (not necessarily measurable). If for every α < ω₁ the set of isomorphic pairs of K_α × K_α is measurable for the product of the subtype σ-algebras (classIso K_α has measurable graph), and every analytic subset of K has ρ bounded below ω₁, then ¬ BorelComplete K.",
      "hypotheses": [
       "L is a relational first-order language ([L.IsRelational]) with countably many relation symbols ([∀ n, Countable (L.Relations n)])",
       "MeasurableSet K",
-      "(a) Borel isomorphism on each stratum",
+      "(a) for every α < ω₁, classIso K_α has measurable graph in K_α × K_α for the product of the subtype σ-algebras",
       "(b) ρ bounded on analytic subsets of K"
      ],
      "locator": {
@@ -1956,14 +2015,21 @@
      "prerequisites": [
       "target:6.3",
       "target:2.5",
-      "mathlib:MeasurableSet.analyticSet_image"
+      "mathlib:MeasurableSet.analyticSet_image",
+      "target:0.1",
+      "mathlib:Measurable.subtype_mk"
      ],
      "api": [],
      "tests": [
       {
        "name": "rho_zero",
        "kind": "degenerate",
-       "statement": "ρ = 0 gives the contrapositive of 6.3."
+       "statement": "ρ = 0 gives K_α = K, (a) is the negation of the conclusion of 6.3 and the lemma is its contrapositive."
+      },
+      {
+       "name": "two_readings",
+       "kind": "non-example",
+       "statement": "For K = graphClass and ρ = 0 exactly on the image A of a non-measurable subset of Cantor space under an injective reduction of equality, K_0 = A and the diagonal of A is measurable in A × A for the subtype σ-algebras but not in the ambient square."
       },
       {
        "name": "unary",
@@ -2032,7 +2098,7 @@
     "§6.2",
     "Worked example 2"
    ],
-   "what": "the targets the pinned Tau Ceti does not implement: closedness of the simple-graph codes, continuousSMul_relationalConfiguration, analytic_treeHeight_bounded, measurableSet_iso_inter_of_scottHeight_le, exists_uniform_bfSeparation, lopez_escobar, wellOrderClass with exists_mem_wellOrderClass_type_eq, analyticSet_compl_wellOrderClass and not_measurableSet_wellOrderClass, and the one-unary-predicate worked example"
+   "what": "the targets the pinned Tau Ceti does not implement: closedness of the simple-graph codes, joint continuity of the logic action (the ContinuousSMul instance from continuous_uncurry_restrict and Equiv.Perm.continuous_inv_apply), analytic_treeHeight_bounded, measurableSet_iso_inter_of_scottHeight_le, exists_uniform_bfSeparation, lopez_escobar, wellOrderClass with exists_mem_wellOrderClass_type_eq, analyticSet_compl_wellOrderClass and not_measurableSet_wellOrderClass, and the one-unary-predicate worked example"
   },
   {
    "roadmap": "NoncompactQuantumSymmetry",
