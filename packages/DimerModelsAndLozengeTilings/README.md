@@ -1859,9 +1859,9 @@ API:
   `1_{[0,2π]²}/P̂_w` on `ℝ²`).
 - Angles: `w₁G_w(−e₂) = θ₁/π`, `w₂G_w(e₁) = θ₂/π`, `w₃G_w(0) = θ₃/π`, where `θ_k` is the angle
   opposite the side `w_k` in the triangle with sides `w₁, w₂, w₃` (gorin2021 Theorem 6.1, lines
-  2256–2279: the density of a lozenge is the angle opposite the side of its weight; kenyon2009
-  lines 976–1007). Along a row, `w₁G_w((m,−1)) = (−1)^m sin(θ₁m)/(πm)` for `m ≠ 0`, obtained by
-  integrating `φ` by residues over the arc `|w₃ + w₂e^{iθ}| < w₁`, of half-width `θ₁` about `π`.
+  2256–2279; kenyon2009 lines 976–1007). Along a row, `w₁G_w((m,−1)) = (−1)^m sin(θ₁m)/(πm)` for
+  `m ≠ 0`, obtained by integrating `φ` by residues over the arc `|w₃ + w₂e^{iθ}| < w₁`, of
+  half-width `θ₁` about `π`.
 
 **Checks.**
 
