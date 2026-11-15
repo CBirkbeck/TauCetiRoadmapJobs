@@ -1291,7 +1291,7 @@
      ],
      "locator": {
       "source": "tosatti-weinkove2010",
-      "where": "line 38–47"
+      "where": "Corollary 1, line 38–47 (states the uniqueness this step yields; the comparison is not stated in the source)"
      },
      "prerequisites": [
       "tauceti:LinearMap.IsSymmetric.eigenvalue_mono",
@@ -1757,6 +1757,7 @@
      "statement": "If sup_X φ = 0: ‖φ‖_{C^{2,α}} ≤ C(X, ω, α, ‖F‖_{C³}) for α < 1, and ‖φ‖_{C^{k+2,α}} ≤ C_k(X, ω, α, ‖F‖_{C^{m,α}}) with m = max(3, k+1) for every k ≥ 0; a solution normalized by ∫ φ ω^n = 0 differs from φ − sup φ by sup φ ∈ [0, osc φ], so the bounds hold for it with the bound for osc φ added. The C⁰ bound osc φ comes from 6.2 for n ≥ 2; for n = 1 the equation is Δ_ω φ = e^F − 1 and 5.2 bounds φ − mean(φ) in C^{k+2,α} by C‖e^F − 1‖_{C^{k,α}}. With no normalization, a C^{2,α} solution with smooth F and ω_φ > 0 is smooth.",
      "hypotheses": [
       "dω = 0",
+      "φ smooth solution of ω_φ^n = e^F ω^n with ω_φ > 0, F smooth (a C^{2,α} solution for the regularity clause)",
       "0 < α < 1",
       "sup_X φ = 0 for the two quantitative bounds"
      ],
@@ -2092,10 +2093,13 @@
      "id": "8.4",
      "kind": "theorem",
      "name": "gpt_mongeAmpere",
-     "statement": "For the Monge–Ampère pair in the degenerating setting: c_t^n/V_t = 1/V, E_t(φ_t) ≤ C(n, ω_X, χ, Ent_1(F_t)) (by 7.2 with background a_0ω_X, χ ≤ (a_0 − 1)ω_X), and if Ent_q(F_t) is bounded uniformly in t for some q > n then ‖φ_t‖_{L^∞} is bounded uniformly in t.",
+     "statement": "For φ_t ∈ C², t ∈ (0,1], solving the degenerating equation of 3.4.1 for the Monge–Ampère pair (sup φ_t = 0, ω_{t,φ_t} > 0) with constants c_t > 0 and normalized smooth F_t: c_t^n/V_t = 1/V, E_t(φ_t) ≤ C(n, ω_X, χ, Ent_1(F_t)) (by 7.2 with background a_0ω_X, χ ≤ (a_0 − 1)ω_X), and if Ent_q(F_t) is bounded uniformly in t for some q > n then ‖φ_t‖_{L^∞} is bounded uniformly in t.",
      "hypotheses": [
       "dω_X = 0",
       "χ smooth closed ≥ 0",
+      "t ∈ (0,1]",
+      "φ_t ∈ C² solves the degenerating equation of 3.4.1 for the Monge–Ampère pair, sup φ_t = 0",
+      "F_t smooth normalized",
       "q > n"
      ],
      "locator": {
@@ -2130,6 +2134,11 @@
        "name": "MA_energy_background",
        "kind": "non-example",
        "statement": "χ = 3ω_X, t = 1: ω_t = 4ω_X; i∂∂̄φ_t = −2.5ω_X at a point is ω_t-admissible (4 − 2.5 > 0) but not 2ω_X-quasi-plurisubharmonic (2 − 2.5 < 0); the background a_0ω_X with χ ≤ (a_0 − 1)ω_X, a_0 = 4, works"
+      },
+      {
+       "name": "MA_normalization_needed",
+       "kind": "non-example",
+       "statement": "χ = 0, t = 1, F_1 = 0, φ_1 = −M (M > 0): ω_{1,φ_1}^n = c_1^n e^{nF_1} ω_X^n with c_1 = 1, V_1 = V, Ent_q(F_1) = 0, but E_1(−M) = M and ‖φ_1‖_{L^∞} = M are unbounded in M; sup φ_1 = −M ≠ 0 excludes it, and M = 0 gives 0"
       }
      ]
     },
@@ -2220,10 +2229,13 @@
      "id": "8.7",
      "kind": "theorem",
      "name": "gpt_hessian",
-     "statement": "Hölder bound for the energy (gpt2023 Lemma 7): E_t(φ_t) ≤ (c_t^n/V_t) ‖e^{nF_t}‖_{L^q} ‖φ_t‖_{L^{q'}}. L^{p'} bound for Γ_k-admissible functions (gpt2023 Lemma 8): for 1 ≤ k < n and 0 < p' < n/(n−k), ‖u‖_{L^{p'}} ≤ C(n,k,p',ω_X) for u ∈ C² with sup u = 0 and λ[ω_X + i∂∂̄u] ∈ Γ_k. Hessian estimate (gpt2023 Theorem 5): for fixed k with 1 ≤ k ≤ n, if λ[ω_{t,φ_t}] ∈ Γ_k and q > n/k then ‖φ_t‖_{L^∞} ≤ C(n,k,q,γ,ω_X,χ,‖e^{nF_t}‖_{L^q}, c_t^n/V_t); route: 8.3, with E_t bounded by the Hölder bound at q' = q/(q−1) and Ent_p(F_t) ≤ (p/(en))^p + (p/(en(q−1)))^p V⁻¹‖e^{nF_t}‖_{L^q}^q for fixed p > n; ‖φ_t‖_{L^{q'}} by the L^{p'} bound with background a_0ω_X for k < n, and by 7.2 with ω̂ = a_0ω_X for k = n, where χ ≤ (a_0 − 1)ω_X.",
+     "statement": "Hölder bound for the energy (gpt2023 Lemma 7): for t ∈ (0,1] and φ_t ∈ C² with f(λ[ω_{t,φ_t}]) = c_t e^{F_t}, λ[ω_{t,φ_t}] ∈ Γ, c_t > 0, F_t continuous (neither sup φ_t = 0 nor the normalization of F_t is used), E_t(φ_t) ≤ (c_t^n/V_t) ‖e^{nF_t}‖_{L^q} ‖φ_t‖_{L^{q'}}. L^{p'} bound for Γ_k-admissible functions (gpt2023 Lemma 8): for 1 ≤ k < n and 0 < p' < n/(n−k), ‖u‖_{L^{p'}} ≤ C(n,k,p',ω_X) for u ∈ C² with sup u = 0 and λ[ω_X + i∂∂̄u] ∈ Γ_k. Hessian estimate (gpt2023 Theorem 5): for φ_t ∈ C², t ∈ (0,1], solving the degenerating equation of 3.4.1 (sup φ_t = 0) with constants c_t > 0 and normalized smooth F_t, and fixed k with 1 ≤ k ≤ n, if λ[ω_{t,φ_t}] ∈ Γ_k and q > n/k then ‖φ_t‖_{L^∞} ≤ C(n,k,q,γ,ω_X,χ,‖e^{nF_t}‖_{L^q}, c_t^n/V_t); route: 8.3, with E_t bounded by the Hölder bound at q' = q/(q−1) and Ent_p(F_t) ≤ (p/(en))^p + (p/(en(q−1)))^p V⁻¹‖e^{nF_t}‖_{L^q}^q for fixed p > n; ‖φ_t‖_{L^{q'}} by the L^{p'} bound with background a_0ω_X for k < n, and by 7.2 with ω̂ = a_0ω_X for k = n, where χ ≤ (a_0 − 1)ω_X.",
      "hypotheses": [
       "dω_X = 0",
       "χ smooth closed ≥ 0",
+      "t ∈ (0,1]",
+      "φ_t ∈ C² with f(λ[ω_{t,φ_t}]) = c_t e^{F_t}, λ ∈ Γ, c_t > 0 for the Hölder bound",
+      "φ_t ∈ C² solves the degenerating equation of 3.4.1, sup φ_t = 0, F_t smooth normalized, for the Hessian estimate",
       "1 ≤ k < n for the L^{p'} bound",
       "1 ≤ k ≤ n for the Hessian estimate",
       "q > n/k"
@@ -2264,6 +2276,11 @@
        "name": "hessian_entropy_from_Lq",
        "kind": "computation",
        "statement": "n = 1, V = 1, p = q = 2: F = 1/2 and log(2 − e^{1/2}) on halves gives Ent_2 ≈ 0.398 ≤ 1.310; F = −2 on 9/10 and log(10 − 9e^{−2}) on 1/10 gives Ent_2 ≈ 4.633 > 4.184 = (2/e)² V⁻¹‖e^F‖_{L²}², so the term (p/(en))^p is needed, and ≤ 4.725 with it"
+      },
+      {
+       "name": "hessian_normalization_needed",
+       "kind": "non-example",
+       "statement": "n = k = 1, (σ_1, Γ_1), χ = 0, t = 1, F_1 = 0, c_1 = 1, φ_1 = −M (M > 0): λ = 1 ∈ Γ_1, E_1(−M) = M equals the Hölder bound V⁻¹·V^{1/q}·M·V^{1/q'} = M, while ‖φ_1‖_{L^∞} = M is not bounded independently of M; sup φ_1 = −M ≠ 0 excludes it from the Hessian estimate"
       }
      ]
     }
