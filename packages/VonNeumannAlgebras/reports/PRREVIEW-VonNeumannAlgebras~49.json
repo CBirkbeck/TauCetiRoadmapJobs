@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-VonNeumannAlgebras~49",
+  "head": "a494e8ea94670a18ef30e1a4b1af04a284b07c8d",
+  "pr": 2242,
+  "folder": "VonNeumannAlgebras",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since a494e8e. This round checked the pull request's title and description against the head and the 321-line change from the base: no sentence contradicted, no unstated change (0 headings added or removed, 1 Lean declaration added, none removed or restated, no roadmap supplier added or dropped). Checked 20 Jones 2015 locators against the text, 5 Mathlib declarations at the pin, PolarDecomposition PD-A36-A45 and PD-B23-B36 on main over R and C, and the BanachSpaceTheory anchor mapping at the open SelfAdjointSpectralTheory revision. Gate: every counter 0, OK (worker's build=0); depcheck 245 roadmaps, 2209 edges, 0 problems; lake env lean on Suggested.lean exits 0 with 33 sorry warnings only. Adversarial row for exists_conj_commutant_eq_of_isCyclic_of_isSeparating computed on M=C, H=C and H=0. Previous report had no findings.",
+  "text": "4c404903ce784a52"
+ }
+}
