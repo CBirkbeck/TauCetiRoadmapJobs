@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicFormsOnReductiveGroups~12",
+  "head": "4a031773749fbd197dc504006d9ae9f910ea1d84",
+  "pr": 1037,
+  "folder": "AutomorphicFormsOnReductiveGroups",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 4a03177. Checked the pull request's title and description against the head (step 8): two P3 findings in the summary block (QuaternionicModularForms named as a consumer though the README no longer names it; density of smooth vectors credited to the headline though README 2.7 keeps it a separate target). Gate rerun: all checks 0, OK; Suggested.lean elaborates with sorry the only warning; depcheck 0 problems; no change outside the folder. The previous report had no findings; no seeded-sample target lies in a changed passage.",
+  "text": "bf8b12c85cbb1bab",
+  "carried": {
+   "from": "4a031773749fbd197dc504006d9ae9f910ea1d84",
+   "head": "4a031773749fbd197dc504006d9ae9f910ea1d84",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
