@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GromovWittenTheory~20",
+  "head": "c3c6033fcf98bcbd4d5239edee9ab765e8e6ead1",
+  "pr": 990,
+  "folder": "GromovWittenTheory",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since c3c6033. Checked the pull request's title and description against the head: the three previous findings (R01 validation paragraph, R02 supplier sentence, R03 folder-name paragraph) are repaired, and every remaining sentence matches the README, Suggested.lean, metadata.toml, the heads of ImplicitAtlases and AlgebraicGromovWittenTheory, and HamiltonianFloerOperations and MorseNovikov on main. Gate rerun: all counters 0, OK. Dependency check: 244 roadmaps, 2229 edges, 0 problems. Suggested.lean elaborates with no output and declares nothing (four headlines, none statable at the pins, each named in the docstring). Adversarial table: four rows with computed values for statements the description cites. Seeded source sample lies in unchanged text and was not re-read; source independence: changed passages only, 0 passages.",
+  "text": "b8484761ca5017f0"
+ }
+}
