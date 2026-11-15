@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EulerSystemsCyclotomicMainConjecture~5",
+  "head": "8eeb3edb2598f3ffbed0c5fbab33f94f7d068b78",
+  "pr": 1311,
+  "folder": "EulerSystemsCyclotomicMainConjecture",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "incremental re-review of 114 changed lines since c386732: the Lemma 4.4 and Proposition 4.7 rewordings (sections 4.16 and 4.17), and the Layer 4 regrouping into seven consumer-named groups with bold sub-labels. Previous review: no findings. New findings: R01 (P2), the 4.20 group introduction drops the cyclic 2-Sylow hypothesis at p=2 (GREITHER-1992 p.482; section 4.20 line 3182; Suggested.lean hcyclic). R02 (P3), the 4.2 group introduction omits consumers 4.10 and 4.12, which use section 4.3. R03 (P3), the description's AI-assistance sentence says red-team passes are 'to follow' (nine red-team repair commits exist) and omits the Claude co-authors. Checked: gate rerun, every check 0, OK (the worker's run records build=0); lake env lean gives only the five sorry warnings; depcheck reports 245 roadmaps, 2216 edges, 0 problems; nothing changed outside the folder. 105 headings, every anchor resolves, and all 194 section links target the group holding their label; all 27 Layer 4 sections keep a locator line, and every Greither number removed from a heading is still named; no other roadmap cites this one's sections. GREITHER-1992 read from Numdam at pp.452, 468, 482, 486 and 488; the rewordings share at most 5 words, formula-forced. Seeded sample: 4.12 and 4.14 (the headings changed) verified against Theorems 3.1 and 3.2. Supplier citations in the changed lines resolved: ColemanPowerSeries f9fecdf (16 sections), IntegralIwasawaTheory 72d834e (22 sections, 9 names). The adversarial table has 12 rows with computed values; rows for untouched statements stand as of c386732.",
+  "text": "3af1cec229e7fc24"
+ }
+}
