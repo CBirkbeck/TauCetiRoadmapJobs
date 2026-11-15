@@ -1,0 +1,19 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LanglandsParameterStacks"
+
+[[source]]
+id = "FS"
+authors = "Laurent Fargues, Peter Scholze"
+title = "Geometrization of the local Langlands correspondence"
+year = 2021
+version_note = "author-hosted version; the README cites its printed pagination, which in Chapter VIII is the PDF page minus 22"
+locator_scheme = "theorem"
+locator = "Propositions VIII.3.2, VIII.3.8, VIII.5.11–VIII.5.13; Theorems VIII.4.1, VIII.5.1"
+url = "https://people.mpim-bonn.mpg.de/scholze/Geometrization.pdf"
+fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Geometrization.pdf"
+fetched_at = "2026-11-15T04:40:58Z"
+sha256 = "9ab9efbd0df251bfa3b610d1d1d88a8dfb1bdf7c397bd04f4c277280d98ae905"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["0.1", "1.1", "2.6", "2.15", "3.6", "4.8", "5.1", "6.2", "6.3"]
