@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QWittVectors~6",
+  "head": "a42588c90dcdba586f62cf361176bf49cae91c73",
+  "pr": 1351,
+  "folder": "QWittVectors",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 4 changed lines since 9d7d86f, and first check of the pull request's title and description against the head. Previous R01 (P3, implicit coordinate compatibility in the naturality bullet of section 8.2a) is repaired and the repair introduces no problem: naturality recomputed on Z[X][[h]] -> Z[X,Y][[h]] and compared with PrismaticCohomologyPartII section 5.0 at its open head. One P3 finding, in the description only: its sentence that everything else named in the README is a consumer is contradicted by the declared gap suppliers DerivedModuleAlgebra Part II and DGAInfinity Part II, and the seven declared gaps are unstated. Gate: all scanners 0, OK; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning (2). No seeded sample target lies in the changed lines; wagner section 4.8 locator re-read. Folder files have no finding.",
+  "text": "bc12d948ec594ab2",
+  "carried": {
+   "from": "a42588c90dcdba586f62cf361176bf49cae91c73",
+   "head": "4728b2a213521cae485d6f0cd902490fc5176190",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "QWittVectors"
+   ],
+   "outside": true
+  }
+ }
+}
