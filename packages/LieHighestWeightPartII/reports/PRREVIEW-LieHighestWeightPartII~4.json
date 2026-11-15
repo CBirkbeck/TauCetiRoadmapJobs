@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LieHighestWeightPartII~4",
+  "head": "72812a6310001f8d93d80744783ef448c28da0b6",
+  "pr": 2277,
+  "folder": "LieHighestWeightPartII",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 106 changed lines since 26297a5. Checked: the two new Lean theorems (instances computed, signatures against README, one-tactic probes fail, no duplicate at the pins or in other roadmaps); the recomputed G2/F4/E8 root-profile Checks against CH Tables 2-4; 9 source locators (DG, SOM, CH) in the changed passages of the seeded sample (0.3, 3.3, 3.5, 5.4); 9 newly cited pinned Tau Ceti declarations; MotivesAndAlgebraicCycles 6.2-6.3 and GlobalShtukasAndFunctionFieldLanglandsPartII 8.0 at their open heads. Gate OK, depcheck 0 problems, elaboration 11 sorry warnings and no error. Findings (all P3): the new LieHighestWeight 5.1 citation is dropped by the open revision #1797; the description still says nine headline theorems (head has eleven); the description omits the new supplier MotivesAndAlgebraicCycles.",
+  "text": "30a54efd9a3ddd48",
+  "carried": {
+   "from": "72812a6310001f8d93d80744783ef448c28da0b6",
+   "head": "c3043117dfa4f8006778ee9382c577d27d67c991",
+   "findings": 3,
+   "lines": 4,
+   "folders": [
+    "LieHighestWeightPartII"
+   ]
+  }
+ }
+}
