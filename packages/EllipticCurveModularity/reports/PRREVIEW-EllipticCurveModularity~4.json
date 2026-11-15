@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularity~4",
+  "head": "3593d3b275ffcea8ab208c3b907f4414e324aaf8",
+  "pr": 1018,
+  "folder": "EllipticCurveModularity",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 1,
+  "notes": "Full review. The three findings of the previous review are repaired. Seeded sample (Hauptmodul relations, 15-isogeny boundary, R29.1, curve-level residual attachment, conductor specialization, exhaustive Gamma0 decomposition, elliptic coefficient summability) checked against serre, barrios, ddt, gonzalez-jimenez-lario, serre1970, brumer-kramer, milne, ribet-stein (17 locators); Cremona, Silverman and five other works not readable (not in the cache, no network). Gate passes with every counter 0; depcheck 246 roadmaps, 0 problems; Suggested.lean elaborates with 13 sorry warnings only; one-tactic probe closes none of the 13 theorems. Findings: R01 (P2) R29.4 conductor comparison restates NeronModelsAndSemistableAbelianVarieties 5.3a/5.3g and EllipticCurves Layer 8; R02 (P3) cross-level strong multiplicity one exists at the Tau Ceti pin and is not cited; R03 (P3) rationalEndomorphisms_eq_int carrier bridge missing from Needs; R04 (P3) targets titled Checks; R05 (P3) status wording.",
+  "text": "b865c48c83b2e276"
+ }
+}
