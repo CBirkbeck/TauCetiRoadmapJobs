@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EtaleDualityAndPerverseSheaves~6",
+  "head": "40031fa75081e3c414e27a91aa3960f1ba6f5ee0",
+  "pr": 1040,
+  "folder": "EtaleDualityAndPerverseSheaves",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 1,
+  "notes": "Full review. Previous R01-R04 all repaired. Gate passes at 40031fa (all scanners 0, build OK); depcheck 0 problems; lake env lean gives seven sorry warnings only; one-tactic probe closes none of the seven theorems; elaborated signatures agree with the README. Sample: sections 0.3, 0.4, 0.6, 0.7, 1.2, 1.3, 2.4, 2.9, 2.11, 3.8, 4.5, 5.6, 5.8, 7.1, 7.3 read in full with Layers 0, 1, 7, 8; about 100 source locators checked in SGA 4 XVII/XVIII, BBD, Milne LEC, Weil I/II, SGA 4 1/2, Varshavsky (2007, 2023 arXiv v3), de Cataldo-Migliorini, Zhu, Yu, Yun-Zhang, Stacks; none wrong. Findings: R01 (P2) section 1.2 states Chern classes on every scheme while EtaleCohomologyFoundations 0.9 gives the projective-bundle formula on qcqs schemes; R02-R05 (P3) unnamed Part II deferrals, words inside code spans, three Checks that compute nothing, a redundant smoothness hypothesis in 7.5(b). Not verifiable: Huber 1996, Fulton, Serre, Jantzen; journal pages of Varshavsky 2023 and of Liu-Tian-Xiao-Zhang-Zhu. Three source issues recorded (one error, two misprints).",
+  "text": "59d15fd8d669d0a9"
+ }
+}
