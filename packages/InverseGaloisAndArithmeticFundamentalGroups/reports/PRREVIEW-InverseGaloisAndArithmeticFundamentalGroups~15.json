@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-InverseGaloisAndArithmeticFundamentalGroups~15",
+  "head": "94326716a824f9d512bcad5d8bd0bd0eca234bba",
+  "pr": 850,
+  "folder": "InverseGaloisAndArithmeticFundamentalGroups",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 9432671. Previous R01 (consumer pointer) and R02 (new-roadmap statement) in the PR description are repaired. The title, summary block and prose were checked against the head; two P3 description findings remain. R01: the Dependencies paragraph names PadicMeasuresIwasawaAlgebras, AdicSpacesPartII and RigidAnalyticGeometry, none cited in the README. R02: the summary credits the path groupoid and arithmetic sequence to IG.0-IG.1, but they come from EtaleCohomologyFoundations F.0/F.0.A2. Gate with the supplied moved order --movable --build: all counters 0, build OK. The configured order gives 3 UPWARD edges, which clear with the supplied order. depcheck: 0 problems. lake env lean: exit 0, 18 sorry warnings only. The seeded sample was not rechecked because no locator changed; the previous evidence stands. Adversarial rows computed for inverseGaloisProblem_of_regular, HasRegularRealization, complement conjugacy and the Schur multiplier carrier.",
+  "text": "43d3cb264d500579",
+  "carried": {
+   "from": "94326716a824f9d512bcad5d8bd0bd0eca234bba",
+   "head": "2b715c76179e22f6ab4de7aea2d215a540079bdd",
+   "findings": 2,
+   "lines": 9,
+   "folders": [
+    "InverseGaloisAndArithmeticFundamentalGroups"
+   ]
+  }
+ }
+}
