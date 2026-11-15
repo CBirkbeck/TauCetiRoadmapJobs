@@ -5811,6 +5811,12 @@
       "needs": "beyond Layer 9, the finite-group inputs of Newton–Thorne I §1.8 (nt21 pp. 15–18): Deligne–Lusztig induction `R_T^G θ` for finite reductive groups with irreducibility of `±R_T^G θ` for `θ` in general position and its transitivity, Lusztig's cuspidal unipotent representation of `U_3(𝔽_q)`, the modular irreducibility of cuspidal unipotent characters in non-defining characteristic (Dudas–Malle, dm18 Theorem 1), and the decomposition of the reduction of `R_C^{U_3}θ` modulo `p` when `q` has order 6 modulo `p` (Geck's decomposition numbers for `U_3`, as used in nt21 Proposition 1.15, pp. 17–18).",
       "supplier": "RepresentationTheory/CharacterTheory",
       "section": "Layer 9"
+    },
+    {
+      "slug": "auxiliary-place-reducible-lifting",
+      "needs": "beside §8.16 (Layer 8), the lifting form of its auxiliary-place variant (Thorne 2024 Theorem 7.5, th24 p. 44, proof p. 45): under the hypotheses of ModularityAndLanglandsExtensions §4.2 with its clause `F(ζ_l) ⊄ F̄^{ker ad(ρ̄^{ss})}` replaced by a place `w ∤ l` of `F` at which `ρ̄^{ss}` is unramified and `H⁰(G_{F_w}, ad ρ̄^{ss}(1)) = 0`, with weak primitivity tested over `k̄` and with `ρ̄^{ss}(G_{F(ζ_l)})` without nontrivial quotient of `l`-power order (the added hypothesis of §8.16), `ρ` is the Galois representation of an ι-ordinary RACSDC automorphic representation of `GL_n(𝔸_F)`; the finiteness of §8.16 and the route of ModularityAndLanglandsExtensions §4.2 are its inputs, and only this lifting conclusion is requested.",
+      "supplier": "PotentialAutomorphyInfrastructurePartII",
+      "section": "§8.16 (Layer 8)"
     }
   ],
   "sourceIssues": [
