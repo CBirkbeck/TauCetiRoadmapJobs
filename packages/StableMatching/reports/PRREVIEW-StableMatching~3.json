@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StableMatching~3",
+  "head": "64671cd2575276e6bf2a4d570ed4c11d8bbc91cf",
+  "pr": 2346,
+  "folder": "StableMatching",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 22 changed lines since efeb540. Previous R01 and R02 repaired, R03 (description) not repaired. New P3: the role-swap Check's last sentence names the definition itself as the wrong model. Checked: the role-swap equivalence and the women-proposing outcome on 6,000 random markets and the 2 x 2 Check by enumeration; PEquiv.symm, eq_some_iff, symm_symm at the pin; the 4 changed passages against Roth2008 (NBER text); gate OK (all checks 0), depcheck 0 problems, Suggested.lean elaborates with 10 sorry warnings only.",
+  "text": "691dab728518709f"
+ }
+}
