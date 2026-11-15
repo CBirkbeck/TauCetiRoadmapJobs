@@ -319,7 +319,7 @@ The targets of the base that the pin does not implement, by the base's names and
 - Layer 6.2: `wellOrderClass`, `exists_mem_wellOrderClass_type_eq`,
   `analyticSet_compl_wellOrderClass`, `not_measurableSet_wellOrderClass` and
   `analytic_type_bounded` (an analytic class of coded well-orders has order types bounded below
-  `ω₁`), used in Checks of Layers 3.3 and 6.4.
+  `ω₁`), used in Checks of Layers 0.2, 3.3 and 6.4.
 - Worked example 2: the codes of one unary predicate have Scott height at most `ω` and countably
   many orbits, each Borel.
 
@@ -1010,7 +1010,7 @@ space (`BorelSpace`, by definition) and a standard Borel space (`Equiv.Perm.inst
 Borel S∞-space is a type `X` with `[MeasurableSpace X] [StandardBorelSpace X]`,
 `[MulAction (Equiv.Perm ℕ) X]` and
 `[MeasurableSMul₂ (Equiv.Perm ℕ) X]`; its orbit equivalence relation is `MulAction.orbitRel`
-(becker-kechris-bams lines 126–131). API:
+(becker-kechris-bams lines 72–73). API:
 
 - The logic action on `RelationalConfiguration L ℕ` (countable relational `L`) is a Borel
   S∞-space: it is jointly continuous (base Layer 1.2, the instance
@@ -1020,8 +1020,8 @@ Borel S∞-space is a type `X` with `[MeasurableSpace X] [StandardBorelSpace X]`
   (`isoSetoid_eq_orbitRel`).
 - An invariant Borel subset of a Borel S∞-space is one, with the restricted action.
 - An equivariant measurable injection between Borel S∞-spaces has an invariant Borel image
-  (Lusin–Souslin, `MeasurableSet.image_of_measurable_injOn`) and is a Borel reduction of the
-  orbit relations.
+  (Lusin–Souslin, `MeasurableSet.image_of_measurable_injOn`; becker-kechris-bams lines 126–128)
+  and is a Borel reduction of the orbit relations.
 
 *Needs:* Tau Ceti `Equiv.Perm.instTopologicalSpace`, `Equiv.Perm.instPolishSpace`, the Polish and
 Borel instances of the coding space and `isoSetoid_eq_orbitRel`; CountableStructureSpaces
