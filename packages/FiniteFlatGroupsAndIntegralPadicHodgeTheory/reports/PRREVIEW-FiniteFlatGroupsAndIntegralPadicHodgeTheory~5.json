@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FiniteFlatGroupsAndIntegralPadicHodgeTheory~5",
+  "head": "74989e99ad0a0c94d8bf69c69c47662dc9345bfa",
+  "pr": 879,
+  "folder": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
+  "date": "2026-11-15",
+  "findings": 7,
+  "blocking": 1,
+  "notes": "Full review. Previous R01-R03 and R05-R08 repaired, R04 partly (12 labelled bullets remain). Gate at this head passes every scanner and the build; depcheck 245 roadmaps, 2221 edges, 0 problems. Suggested.lean elaborates with sorry the only warning (7); one-tactic probe closes 0 of 7. All 15 seeded sample targets recomputed and checked against 16 sources (67 locators); Kisin 2006-2009b, Faltings 1999 and Serre 1987 not readable. One P2: perfect-residue ramification is attributed to PadicPeriodRings 0.3 and ArithmeticGaloisRepresentations 3.0, which only consume RamificationOfCompleteDiscretelyValuedFields (on main), never cited. Six P3: supplier names absent at the suppliers' heads, labelled API bullets, Lean names missing from the README, headings named by source theorem numbers, a summary-table layer with no heading, one page range.",
+  "text": "bc7f53a265a4cad7"
+ }
+}
