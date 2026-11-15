@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CongruenceSpectralGap~7",
+  "head": "1f44022c596766c9c875d3e04c64c94013633bdc",
+  "pr": 1504,
+  "folder": "CongruenceSpectralGap",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 86faacb. Checked: the pull request's title and description sentence by sentence against the head (0 contradicted; previous R01-R03, all in the description, repaired); outside-folder diff against origin/main empty; gate rerun, every counter 0, OK (worker's gate build=0); depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean gives only the three sorry warnings; 4 elaborated signatures compared with the README; adversarial rows with computed values for hyperKloosterman_bound, gauss_power_even_average_bound, the parameter bound with congruence_eigenvalue_bound, and the forced zero; consumer and supplier claims of the description resolved at open heads. Seeded sample and declared gaps stand as in the earlier reviews (no passage changed). Accepted conditional on the seven declared supplier gaps. lrs95 uncertified, not read.",
+  "text": "0ab6184dfe09afa9"
+ }
+}
