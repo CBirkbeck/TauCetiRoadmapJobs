@@ -80,45 +80,47 @@ It leaves to named roadmaps, and consumes from them by section:
   Hilbert–Schmidt pairing (V4.Core), the completed Hilbert tensor product `H ⊗̂ L` of two Hilbert
   spaces (V2), the tensor identification `L²(μ) ⊗̂ L²(ν) ≅ L²(μ ⊗ ν)` (V2.RectangularL2) and the
   Hilbert-space ultraproduct of a sequence of Hilbert spaces (V13b).
-- **NoncommutativeIntegration** owns the identification of `Lᵖ(B(H), Tr)` with `S_p` (§1.5),
-  density of finite-trace-support elements (§1.3), Hölder's inequality (§1.4), `Lᵖ`–`L^q` duality
-  and cyclicity of the trace pairing (§2.1), the complex method with its regularisation (§2.3),
-  the interpolation of semifinite `Lᵖ` couples (§2.5), noncommutative Riesz–Thorin (§2.6) and the
-  Bochner identification `Lᵖ(Ω; Lᵖ(N)) = Lᵖ(L^∞(Ω) ⊗̄ N)` (§4.4). The semifinite martingale BMO
-  space and its interpolation inequality with the sharp order `O(p)` are requested of
-  NoncommutativeIntegration, Part II (gap `semifinite-martingale-bmo-interpolation`).
+- **NoncommutativeIntegration** owns the identification of `Lᵖ(B(H), Tr)` with `S_p` (its §1.5),
+  density of finite-trace-support elements (its §1.3), Hölder's inequality (its §1.4), `Lᵖ`–`L^q`
+  duality and cyclicity of the trace pairing (its §2.1), the complex method with regularisation
+  (its §2.3), the interpolation of semifinite `Lᵖ` couples (its §2.5), noncommutative Riesz–Thorin
+  (its §2.6) and the Bochner identification `Lᵖ(Ω; Lᵖ(N)) = Lᵖ(L^∞(Ω) ⊗̄ N)` (its §4.4). The
+  semifinite martingale BMO space and its interpolation inequality with the sharp order `O(p)` are
+  requested of NoncommutativeIntegration, Part II (gap `semifinite-martingale-bmo-interpolation`).
 - **AutomorphicSpectralTheory** owns the kernel operator `T_k` of an `L²` kernel with
-  `kernel_apply`, `kernel_unique` and `kernel_norm` (§0.8), and states for the trace of
+  `kernel_apply`, `kernel_unique` and `kernel_norm` (its §0.8), and states for the trace of
   VonNeumannAlgebras V4.Core the basis formula `Tr(BC) = Σ_j ⟨B* e_j, C e_j⟩` for
-  Hilbert–Schmidt `B`, `C` (§0.9); every trace in this roadmap, whether reached through V4.Core
-  or through §0.9, is therefore the one functional of V4.Core. Its §0.8 is stated for standard Borel
-  spaces; the arbitrary σ-finite version that Layers 2, 5 and 7 need (sub-σ-algebras of a
-  standard Borel space are not standard Borel) is requested of AutomorphicSpectralTheory §0.8
+  Hilbert–Schmidt `B`, `C` (AutomorphicSpectralTheory §0.9); every trace in this roadmap, whether
+  reached through V4.Core or through AutomorphicSpectralTheory §0.9, is therefore the one
+  functional of V4.Core. Its §0.8 is stated for standard Borel spaces; the arbitrary σ-finite
+  version that Layers 2, 5 and 7 need (sub-σ-algebras of a standard Borel space are not standard
+  Borel) is requested of AutomorphicSpectralTheory §0.8
   (gap `sigma-finite-hilbert-schmidt-kernels`). Its trace formula
-  `Tr(T₁T₂) = ∫∫ K₁(x, y)K₂(y, x)` (§0.10) is stated on one space at the generality of its §0.8;
-  §2.2 proves it for two arbitrary σ-finite spaces from the kernel isometry and the adjoint
-  kernel.
+  `Tr(T₁T₂) = ∫∫ K₁(x, y)K₂(y, x)` (its §0.10) is stated on one space at the generality of its
+  §0.8; §2.2 here proves it for two arbitrary σ-finite spaces from the kernel isometry and the
+  adjoint kernel.
 - **CStarAlgebras** owns the C*-algebra of compact operators (C1.6) and completely bounded maps of
   operator spaces with Smith's lemma (C3.2); Layer 1 compares its amplification norm at `p = ∞`
   with C3.2.
 - **BanachSpaceTheory** owns the Bochner density, for a finite measure, of a vector measure of
   finite variation, absolutely continuous to it, with values in a reflexive Banach space (B4.0),
-  which gives the Radon–Nikodým representation of bounded maps `L¹(μ) → K` used in §6.4.
+  which gives the Radon–Nikodým representation of bounded maps `L¹(μ) → K` used here in §6.4.
 - **OperatorTheory/UnboundedOperators** treats integral operators with measurable kernels on
   `L²(ℝ)`, with their maximal and absolute-pairing domains, conjugate-transpose adjoints and
-  composition (§5.1, UO-E01). Layer 2 here is a different statement and consumes nothing of it:
+  composition (its §5.1, UO-E01). Layer 2 here is a different statement and consumes nothing of it:
   bounded operators with square-integrable kernels between arbitrary σ-finite measure spaces.
 - **BochnerSpaces** owns the scalar conditional expectation on `L^∞` for a measure whose trim to
   the sub-σ-algebra is σ-finite, defined as the adjoint of the `L¹` projection `E₁`, with its
   adjoint formula, its contractivity and its agreement with `MeasureTheory.condExpL2` on
   `L^∞ ∩ L²`, together with the positivity, idempotence, tower law and agreement with
-  `MeasureTheory.condExp` of `E₁` (§7.4), the divisibility of atomless finite measures (§7.5),
-  and the Fubini isometry `Lᵖ(μ ⊗ ν; X) ≅ Lᵖ(μ; Lᵖ(ν; X))` for σ-finite `μ`, `ν` (§4.2). §2.5
-  proves the further properties of that expectation which Layers 5–7 use, among them the
-  `𝒜`-measurability of its values, its positivity and its tower law, carried over from `E₁` by the
-  adjoint formula; §7.1 applies §7.5 to the restriction of an atomless measure to a set of finite
-  measure; §11.3 uses §4.2 at `p = 2`. Mathlib's `MeasureTheory.condExp` is `0` on
-  every non-integrable function and gives this expectation only on integrable functions; the
+  `MeasureTheory.condExp` of `E₁` (its §7.4), the divisibility of atomless finite measures (its
+  §7.5), and the Fubini isometry `Lᵖ(μ ⊗ ν; X) ≅ Lᵖ(μ; Lᵖ(ν; X))` for σ-finite `μ`, `ν` (its §4.2).
+  Here §2.5 proves the further properties of that expectation which Layers 5–7 use, among them
+  the `𝒜`-measurability of its values, its positivity and its tower law, carried over from `E₁` by
+  the adjoint formula; §7.1 applies BochnerSpaces §7.5 to the restriction of an atomless measure
+  to a set of finite measure; §11.3 uses BochnerSpaces §4.2 at `p = 2`. Mathlib's
+  `MeasureTheory.condExp` is `0` on every non-integrable function and gives this expectation only
+  on integrable functions; the
   normal expectation of NoncommutativeIntegration §4.3 lives on that roadmap's own `Lᵖ` carriers
   of von Neumann algebras.
 
@@ -193,6 +195,12 @@ differences, which belong to SchattenClassesAndSchurMultipliers, Part II (Downst
   Radon measure is a σ-finite measure with `MeasureTheory.IsFiniteMeasureOnCompacts` and
   `MeasureTheory.Measure.InnerRegularCompactLTTop`; its support is
   `MeasureTheory.Measure.support`.
+- **Section references.** A bare section number such as §2.3 is a section of this roadmap. A
+  section of another roadmap is written with that roadmap's name (NoncommutativeIntegration §2.3,
+  or "its §2.3" directly after the name); the one exception is the key of a bullet under a
+  heading "From TauCetiRoadmap.X" of the supplier contracts, which is a section of X. Witness:
+  §2.3 is transposition, while NoncommutativeIntegration §2.3 is the complex method that §1.3
+  applies.
 - **The statements of `Suggested.lean`.** An exponent is `p : ℝ≥0∞` with `Fact (1 ≤ p)`, as for
   Tau Ceti's `TauCeti.UnitarilyInvariantSeminorm.schatten`, and conjugate exponents are
   `ENNReal.HolderConjugate`. A symbol is a function `M : Ω × Ω → ℂ` with
@@ -481,20 +489,21 @@ inequality between them and `L²(𝓜)` with an absolute constant of order `p`, 
   linear embedding of `L²(X × Y)` into the bounded operators, isometric for the Hilbert–Schmidt
   norm) and `kernel_norm`
   (`‖T_K‖_{HS} = ‖K‖₂`).
-- §0.9: for the trace `Tr` of VonNeumannAlgebras V4.Core (§0.9 defines no second trace), the
-  absolutely convergent basis formula `Tr(BC) = Σ_j ⟨B* e_j, C e_j⟩` for every Hilbert basis
-  `(e_j)` and `‖BC‖₁ ≤ ‖B‖_HS ‖C‖_HS` for Hilbert–Schmidt `B, C`, on arbitrary complex Hilbert
-  spaces.
+- §0.9: for the trace `Tr` of VonNeumannAlgebras V4.Core (AutomorphicSpectralTheory §0.9
+  defines no second trace), the absolutely convergent basis formula
+  `Tr(BC) = Σ_j ⟨B* e_j, C e_j⟩` for every Hilbert basis `(e_j)` and `‖BC‖₁ ≤ ‖B‖_HS ‖C‖_HS` for
+  Hilbert–Schmidt `B, C`, on arbitrary complex Hilbert spaces.
 
 What AutomorphicSpectralTheory must provide (gap:sigma-finite-hilbert-schmidt-kernels): its §0.8
 for arbitrary σ-finite measure spaces `(X, μ)` and `(Y, ν)`, with no standard Borel or
 separability hypothesis on the measurable spaces or on `L²`: the integral operator
 `T_K : L²(Y, ν) → L²(X, μ)` of every `K ∈ L²(μ ⊗ ν)` with `kernel_apply`, and `K ↦ T_K` a linear
 embedding into the bounded operators with `‖T_K‖_HS = ‖K‖₂` (`kernel_unique`, `kernel_norm`).
-The trace formula is not part of the request: §2.2 derives it from §0.8, §0.9 and the adjoint
-kernel. A route that needs no countable orthonormal basis is the composite of VonNeumannAlgebras
-V2.RectangularL2 with the unitary `S₂(L²(ν), L²(μ)) ≅ L²(μ) ⊗̂ conj(L²(ν))` of V4.Core, identified
-with the integral formula on rank-one kernels and extended by continuity.
+The trace formula is not part of the request: §2.2 here derives it from AutomorphicSpectralTheory
+§0.8, §0.9 and the adjoint kernel. A route that needs no countable orthonormal basis is the
+composite of VonNeumannAlgebras V2.RectangularL2 with the unitary
+`S₂(L²(ν), L²(μ)) ≅ L²(μ) ⊗̂ conj(L²(ν))` of V4.Core, identified with the integral formula on
+rank-one kernels and extended by continuity.
 
 ### From TauCetiRoadmap.CStarAlgebras
 
@@ -669,9 +678,10 @@ finite-rank `A` (lafforgue-delasalle-2011 lines 246–252; cgpt-2023 line 486 fo
 two extensions agree on `S_{p₀} ∩ S_{p₁}`, where finite-rank operators are dense for the maximum
 of the two norms (spectral truncation), so `T` is defined on `S_{p₀} + S_{p₁}`. When both
 exponents are finite apply NoncommutativeIntegration §2.6. When `p₁ = ∞`, the closure of
-`S_{p₀}` in `B(H)` is `S_∞(H)`, so the regularisation of §2.3 identifies
-`[S_{p₀}, S_∞]_θ = [L^{p₀}(B(H)), B(H)]_θ = S_{p_θ}` (§2.5 with §1.5), and the operator estimate of
-§2.3 applies to the regular couple `(S_{p₀}, S_∞)`.
+`S_{p₀}` in `B(H)` is `S_∞(H)`, so the regularisation of NoncommutativeIntegration §2.3
+identifies `[S_{p₀}, S_∞]_θ = [L^{p₀}(B(H)), B(H)]_θ = S_{p_θ}` (NoncommutativeIntegration §2.5
+with its §1.5), and the operator estimate of NoncommutativeIntegration §2.3 applies to the regular
+couple `(S_{p₀}, S_∞)`.
 
 On `M_n` the map `T(A) = Tr(A) E₁₁` has `C₀ = 1` at `p₀ = 1` and `C₁ = n` at `p₁ = ∞`, attained at
 the identity. With `1/p_θ = 1 − θ` the bound is `n^θ = n^{1 − 1/p_θ}`, which is the norm of `T` on
@@ -1295,8 +1305,8 @@ compact operators would send the identity of `ℓ²(ℕ)` to `0` in both cases.
 
 ### Dependencies
 
-Layers 1–3; VonNeumannAlgebras V4.Core; CStarAlgebras C3.2; NoncommutativeIntegration §2.3,
-§2.5, §2.6 through §1.3.
+Layers 1–3; VonNeumannAlgebras V4.Core; CStarAlgebras C3.2; through §1.3 of Layer 1,
+NoncommutativeIntegration §1.5, §2.3, §2.5 and §2.6.
 
 ## Layer 5: conditional expectations of symbols
 
@@ -1860,8 +1870,11 @@ Theorem 5.1, line 529, and Theorem 5.2, line 543, for `G = ℝⁿ`):
   `g ∈ L¹ ∩ L^∞`: at `p = ∞` from `‖T_g‖ ≤ ‖g‖_∞`; at `p = 1` by writing `g = u v` with
   `|u|² = |v|² = |g|` (polar decomposition for matrices), so `Λ_F(g)` is a product of two
   Hilbert–Schmidt operators of norms `|F|^{1/2} ‖u‖₂` and `|F|^{1/2} ‖v‖₂`; in between by
-  NoncommutativeIntegration §2.6 for the couples `(L¹, L^∞)(ℝⁿ; F_k)` (through §1.5) and
-  `(S₁, B)(L²(F)^k)`. For general `g ∈ L² ∩ Lᵖ` (at `p = ∞`, `g ∈ L² ∩ L^∞`) the truncations
+  NoncommutativeIntegration §2.6 for the couple `(L¹, L^∞)(ℝⁿ; F_k)` of the semifinite algebra
+  `L^∞(ℝⁿ) ⊗̄ F_k` with the trace `g ↦ ∫ Tr g(ξ) dξ`, whose `Lᵖ` norm on bounded `g` is
+  `‖g‖_{Lᵖ(S_p^k)}` because `|g|^p` is computed pointwise (NoncommutativeIntegration §1.5 at
+  `k = 1`), and for the couple `(S₁, B)(L²(F)^k)` (NoncommutativeIntegration §1.5 for `B(H)`). For
+  general `g ∈ L² ∩ Lᵖ` (at `p = ∞`, `g ∈ L² ∩ L^∞`) the truncations
   `g_j = g · 1_{‖g‖ ≤ j} · 1_{|ξ| ≤ j}` lie in `L¹ ∩ L^∞` with `‖g_j‖_{Lᵖ(S_p^k)} ≤ ‖g‖_{Lᵖ(S_p^k)}`
   and `g_j → g` in `L²` (dominated convergence); since
   `‖Λ_F(h)‖₂² = ∫ ‖ȟ(u)‖₂² |F ∩ (F + u)| du ≤ |F| ‖h‖₂²` for every `h ∈ L²` (Plancherel),
