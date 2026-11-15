@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TopologicalMirrorSymmetryForHitchinSystems~3",
+  "head": "12073e74ce647e96359a9acc50640f2634deddd4",
+  "pr": 1814,
+  "folder": "TopologicalMirrorSymmetryForHitchinSystems",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 132 changed lines since 447001d, plus the check of the pull request's title and description against this head. The folder's change (twenty headings turned into run-in labels, ten headings retitled as groups with one sentence each, six docstring pointers) is sound: 38 'uses' claims of the new group sentences checked against the Needs lines, 6 sampled locators in changed passages (2.4, 2.7, 3.1, 3.6, 4.1, 5.5) checked against GWZ20 arXiv v3, the 4.2 degree computation recomputed. Worker's gate passes every check; depcheck 0 problems, no UPWARD or CYCLE; lake env lean exits 0 with no output; no change outside the folder. One P3 finding, in the description only: two sentences imply stated sorried theorems while Suggested.lean declares nothing and names all 32 headlines as not statable; replacement text given. The previous review (of 447001d) had no finding to carry.",
+  "text": "3b38ad75a1582e7d",
+  "carried": {
+   "from": "12073e74ce647e96359a9acc50640f2634deddd4",
+   "head": "cd94b28c13e99e2581ed292fe4f4b96d2f3fb830",
+   "findings": 1,
+   "lines": 18,
+   "folders": [
+    "TopologicalMirrorSymmetryForHitchinSystems"
+   ],
+   "outside": true
+  }
+ }
+}
