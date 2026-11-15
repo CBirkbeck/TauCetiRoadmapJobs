@@ -612,7 +612,7 @@ closed subsets of `|ℳ|` of dimension `i`, with `Z_*(ℳ) := ⊕_i Z_i(ℳ)`. F
 define *cycleOfSubstack* `[𝒵] := Σ m_𝒱[𝒱]`, over the irreducible components `𝒱` of `𝒵`, where `m_𝒱` is
 the length of the local ring of `𝒵 ×_ℳ U` at the generic point of a component of `𝒱 ×_ℳ U` for any étale
 `U → ℳ` from a scheme meeting `𝒱` (vistoli1989 (3.5), lines 967–971). Prove that `m_𝒱` does not depend
-on `U` or on the component (stacks-chow-spaces Lemma 4.3, line 169, and Lemma 10.3, line 516, for
+on `U` or on the component (stacks-chow-spaces Lemma 4.1, lines 151–158, and Lemma 10.3, line 516, for
 étale invariance of lengths), and étale descent of cycles: for an étale surjection `U → ℳ` from a
 scheme `U` of finite type over `k` (one exists, `ℳ` being of finite type over `k`), pullback
 `Z_i(ℳ) → Z_i(U)`, `[𝒱] ↦ [𝒱 ×_ℳ U]`, is injective with image the cycles whose two pullbacks to the
