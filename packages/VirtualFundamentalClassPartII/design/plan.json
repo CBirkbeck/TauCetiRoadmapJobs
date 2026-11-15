@@ -404,6 +404,11 @@
        "name": "coarseFibre_nonreduced",
        "kind": "computation",
        "statement": "The flat coarse map [A^1/mu_2] -> A^1 pulls [0] back to 2[B mu_2], not [B mu_2]."
+      },
+      {
+       "name": "etaleIsogeny_notInjective",
+       "kind": "non-example",
+       "statement": "For an etale isogeny pi : E' -> E of degree 2 of elliptic curves (char k != 2) and P != O the k-point of the kernel of the dual isogeny, pi^*([P] - [O]) has group-law sum 2Q = pihat(P) = O, so it is 0 in A_0(E') while [P] - [O] != 0 in A_0(E): etale pullback is injective on cycles, not on integral Chow groups."
       }
      ]
     },
@@ -571,14 +576,14 @@
      "id": "3.5",
      "kind": "construction",
      "name": "StackChow.refinedGysin",
-     "statement": "For a regular local immersion f : F -> G of codimension c of algebraic stacks locally of finite type and Y -> G from a quasi-separated algebraic space of finite type, f^![T] := (U -> X)_* s^*[C_{U/T}] defines f^! : A_i(Y) -> A_{i-c}(F x_G Y) integrally, compatible with proper pushforward and flat pullback along Y' -> Y, commuting for two regular local immersions, equal to s^*[C_{X/Y}] for equidimensional Y, and equal to SchemeAndStackFoundations §5.5's refined Gysin map for regular immersions of schemes.",
+     "statement": "For a regular local immersion f : F -> G of codimension c of algebraic stacks locally of finite type and Y -> G from a quasi-separated algebraic space of finite type, f^![T] := (U -> X)_* s^*[C_{U/T}] defines f^! : A_i(Y) -> A_{i-c}(F x_G Y) integrally, compatible with proper pushforward and flat pullback along Y' -> Y, commuting for two regular local immersions, unchanged by flat base change of f, equal to s^*[C_{X/Y}] for equidimensional Y, and equal to SchemeAndStackFoundations §5.5's refined Gysin map for regular immersions of schemes.",
      "hypotheses": [
       "f representable, unramified, of finite type, etale locally a regular closed immersion of codimension c",
       "Y a quasi-separated algebraic space of finite type over k"
      ],
      "locator": {
       "source": "vistoli1989",
-      "where": "(3.10)-(3.13), lines 1081-1123; Lemma 3.19, lines 1197-1202; behrend-fantechi1997 lines 1634-1641"
+      "where": "(3.10)-(3.13), lines 1081-1123; Lemma 3.19, lines 1197-1202; Lemma 3.14, lines 1126-1131; Lemma 4.6 (ii), lines 1458-1462, and the proof of Lemma 3.16, lines 1507-1545, for descent of the rational equivalence to algebraic-space sources; behrend-fantechi1997 lines 1634-1641"
      },
      "prerequisites": [
       "target:2.2",
@@ -611,6 +616,11 @@
        "statement": "For Y equidimensional, f^![Y] = s^*[C_{X/Y}] (vistoli1989 Lemma 3.19)."
       },
       {
+       "name": "refinedGysin.flatBaseChange",
+       "role": "lemma",
+       "statement": "For a flat G_1 -> G, the base change f_1 : F x_G G_1 -> G_1 is a regular local immersion of codimension c with normal bundle the pullback of N_{F/G} (gap normal-cones-of-local-immersions, flat case), and f_1^! = f^! on Z_i(Y) and A_i(Y) for every Y -> G_1: the fibre products U, the cones C_{U/T} and the bundles N|_U are the same; on schemes, excess_intersection of SchemeAndStackFoundations §5.5 with excess bundle 0."
+      },
+      {
        "name": "refinedGysin.schemes",
        "role": "lemma",
        "statement": "For a regular immersion of schemes and Y a scheme, f^! is SchemeAndStackFoundations §5.5's refined Gysin map."
@@ -631,6 +641,11 @@
        "name": "codimZero_BG",
        "kind": "computation",
        "statement": "For Spec k -> BG and Y = Spec k, f^![Spec k] = [G], pushing forward to |G|[Spec k]."
+      },
+      {
+       "name": "flatBaseChange_needsFlat",
+       "kind": "non-example",
+       "statement": "For f : {0} -> A^1: along the flat projection A^2 -> A^1, f_1 = {x = 0} and Y = A^1 via t -> (t^2, t) gives 2[pt] for f_1^! and for f^!; along the non-flat {0} -> A^1 the base change is id_{0} of codimension 0, with id^![pt] = [pt], while f^![pt] = c_1(O) cap [pt] = 0 in A_{-1}(pt)."
       }
      ]
     }
@@ -709,7 +724,7 @@
      "id": "4.2",
      "kind": "construction",
      "name": "StackChow.stackGysin",
-     "statement": "For a regular local immersion f : F -> G of codimension c of algebraic stacks and any G' -> G from a stack, f^![V] := deg(Y/V)^{-1} r_*(f^![Y]) over proper coverings Y -> V, with f^![Y] 3.5's class on the algebraic space F x_G Y, defines f^! : A_i(G')_Q -> A_{i-c}(F x_G G')_Q, independent of coverings and compatible with rational equivalence; compatible with proper pushforward and flat representable pullback, equal to 3.5 (x) Q on algebraic spaces, commuting for two regular local immersions, with f^![G] = [F] for equidimensional G; flat pullback acts compatibly.",
+     "statement": "For a regular local immersion f : F -> G of codimension c of algebraic stacks and any G' -> G from a stack, f^![V] := deg(Y/V)^{-1} r_*(f^![Y]) over proper coverings Y -> V, with f^![Y] 3.5's class on the algebraic space F x_G Y, defines f^! : A_i(G')_Q -> A_{i-c}(F x_G G')_Q, independent of coverings and compatible with rational equivalence; compatible with proper pushforward and flat representable pullback, equal to 3.5 (x) Q on algebraic spaces, commuting for two regular local immersions, unchanged by flat base change of f, with f^![G] = [F] for equidimensional G; flat pullback acts compatibly.",
      "hypotheses": [
       "f a representable regular local immersion of codimension c",
       "G' a stack (Convention 1)"
@@ -731,12 +746,17 @@
       {
        "name": "stackGysin.properPushforward",
        "role": "lemma",
-       "statement": "Commutes with proper pushforward."
+       "statement": "Commutes with proper pushforward along proper morphisms of stacks over G."
       },
       {
        "name": "stackGysin.flatPullback",
        "role": "lemma",
        "statement": "Commutes with flat representable pullback."
+      },
+      {
+       "name": "stackGysin.flatBaseChange",
+       "role": "lemma",
+       "statement": "For a flat G_1 -> G and the base change f_1 : F x_G G_1 -> G_1, f_1^! = f^! on A_*(G')_Q for every stack G' -> G_1 (same proper coverings, 3.5's flat base change on them); so for a proper p : G'' -> G' over G with G'' -> G through G_1, f^! p_* = p'_* f_1^! although G' need not map to G_1."
       },
       {
        "name": "stackGysin.fundamentalClass",
@@ -1188,7 +1208,7 @@
      "name": "VirtualFundamentalClass.virtualClass",
      "statement": "For X -> Y of Deligne-Mumford type over Y of pure dimension d, X a stack (Convention 1), separated or not, and a perfect relative obstruction theory E of rank r with a global resolution F, [X/Y, E]^vir := 0^!_{F_1}[C(F)] in A_{d+r}(X)_Q, C(F) := c_{X/Y} x_E F_1 (pure of dimension d + rk F_0 where rk F_0 is constant); independent of F (through 6.1 and 4.3), of the isomorphism class of (E, phi) and of X up to equivalence; equal to the absolute class for Y = Spec k and to VirtualFundamentalClass §§7.4, 9.2's class when X is separated with the resolution property.",
      "hypotheses": [
-      "Y algebraic stack locally of finite type, pure dimension d",
+      "Y algebraic stack locally of finite type and quasi-separated over k, pure dimension d (Convention 7)",
       "X -> Y of Deligne-Mumford type, X a stack (Convention 1)",
       "E perfect relative obstruction theory of constant rank r with a global resolution"
      ],
@@ -1417,9 +1437,9 @@
      "id": "8.1",
      "kind": "theorem",
      "name": "StackChow.canonicalRationalEquivalence_relativeInvariance",
-     "statement": "For an algebraic stack Y locally of finite type over k (neither reduced nor pure-dimensional), X -> Y a local immersion and Y' -> Y a regular local immersion, the canonical rational equivalence beta(Y', X) in W_*(N x_Y C), with boundary [C_{u^*C/C}] - [j^*N x_{X'} C_{X'/Y'}], the negative of the rational equivalence built from the double deformation space in kresch1999b Proposition 2.3 with Corollary 1.10 applied to each dominating irreducible component (reduced structure) and summed with multiplicities, is defined and commutes with smooth base change and with smooth factorisations; if Y -> B is smooth of Deligne-Mumford type and Y' = Y x_B B', beta is invariant under T_{Y/B}|_{X'}; for a regular local immersion Y' -> Y of stacks smooth over any M, beta is invariant under T_{Y'/M}|_{X'}.",
+     "statement": "For an algebraic stack Y locally of finite type and quasi-separated over k (neither reduced nor pure-dimensional), X -> Y a local immersion and Y' -> Y a regular local immersion, the canonical rational equivalence beta(Y', X) in W_*(N x_Y C), with boundary [C_{u^*C/C}] - [j^*N x_{X'} C_{X'/Y'}], the negative of the rational equivalence built from the double deformation space in kresch1999b Proposition 2.3 with Corollary 1.10 applied to each dominating irreducible component (reduced structure) and summed with multiplicities, is defined and commutes with smooth base change and with smooth factorisations; if Y -> B is smooth of Deligne-Mumford type and Y' = Y x_B B', beta is invariant under T_{Y/B}|_{X'}; for a regular local immersion Y' -> Y of stacks smooth over any M, beta is invariant under T_{Y'/M}|_{X'}.",
      "hypotheses": [
-      "Y an algebraic stack locally of finite type over k",
+      "Y an algebraic stack locally of finite type and quasi-separated over k (Convention 1); B and M likewise",
       "i : X -> Y a local immersion, v : Y' -> Y a regular local immersion",
       "for invariance: Y' pulled back from a base B along a smooth morphism Y -> B of Deligne-Mumford type"
      ],
@@ -1576,10 +1596,10 @@
      "id": "8.4",
      "kind": "theorem",
      "name": "VirtualFundamentalClass.deformationInvariance",
-     "statement": "Let B be a smooth connected separated curve, M an algebraic stack of pure dimension m, reduced or not, X -> M x B of Deligne-Mumford type with X proper over B, and E a perfect relative obstruction theory of rank r with a global resolution and m + r = 0. Then deg_{kappa(b)} [X_b/M_{kappa(b)}]^vir is independent of the closed point b in B.",
+     "statement": "Let B be a smooth connected separated curve, M an algebraic stack locally of finite type and quasi-separated over k, of pure dimension m, reduced or not, X -> M x B of Deligne-Mumford type with X proper over B, and E a perfect relative obstruction theory of rank r with a global resolution and m + r = 0. Then deg_{kappa(b)} [X_b/M_{kappa(b)}]^vir is independent of the closed point b in B.",
      "hypotheses": [
       "B smooth connected separated curve over k",
-      "M of pure dimension m",
+      "M an algebraic stack locally of finite type and quasi-separated over k, of pure dimension m",
       "X proper over B",
       "m + r = 0"
      ],
@@ -1623,9 +1643,9 @@
      "id": "9.1",
      "kind": "definition",
      "name": "ObstructionTheory.RelativeSpaceOfMaps",
-     "statement": "For B an algebraic stack of pure dimension b, C -> B representable and etale locally on the base a prestable family (for every scheme T -> B an etale covering T_i -> T with C_{T_i} a scheme prestable over T_i), X a smooth quasi-projective k-scheme, M a stack with M -> B of Deligne-Mumford type and F : C_M -> X, (M, F) is a relative space of maps if for every square-zero extension T -> Tbar over B with Tbar affine and g : T -> M over B, restriction is a bijection from extensions of g onto extensions of F o C_g to C_Tbar.",
+     "statement": "For B an algebraic stack locally of finite type and quasi-separated over k, of pure dimension b, C -> B representable and etale locally on the base a prestable family (for every scheme T -> B an etale covering T_i -> T with C_{T_i} a scheme prestable over T_i), X a smooth quasi-projective k-scheme, M a stack with M -> B of Deligne-Mumford type and F : C_M -> X, (M, F) is a relative space of maps if for every square-zero extension T -> Tbar over B with Tbar affine and g : T -> M over B, restriction is a bijection from extensions of g onto extensions of F o C_g to C_Tbar.",
      "hypotheses": [
-      "B algebraic stack locally of finite type, pure dimension b",
+      "B algebraic stack locally of finite type and quasi-separated over k (Convention 7), pure dimension b",
       "C -> B representable, a prestable family etale locally on every scheme over B",
       "X smooth quasi-projective",
       "M -> B of Deligne-Mumford type"
@@ -2021,7 +2041,7 @@
     "8.1",
     "8.3"
    ],
-   "detail": "VirtualFundamentalClass §1.5 forms normal cones of representable closed immersions only; its §2.4 and 3.5, 4.2, 8.1 and 8.3 here use the normal cone of a local immersion (representable, unramified, of finite type) that need not be closed, such as Spec k -> BG or the diagonal BG -> BG x BG for a finite etale G with |G| > 1. Needed: the normal cone C_{X/Y} of a local immersion X -> Y of algebraic stacks locally of finite type over k, by descent from charts U -> V that are closed immersions of schemes with V -> Y and U -> X smooth surjective and U -> X x_Y V etale (kresch1999b Lemma 2.2 and the paragraph after it, lines 218-237; vistoli1989 Lemma 1.19 and lines 508-526), equal to §1.5's cone for closed immersions; for Y' -> Y, a closed embedding C_{X'/Y'} in C_{X/Y} x_X X', an isomorphism for flat Y' -> Y (vistoli1989 lines 529-535); the closed embedding in the normal sheaf; and, for a regular local immersion of codimension d, the equality with the normal bundle N_{X/Y} of rank d (vistoli1989 lines 527-528; kresch1999b lines 236-237).",
+   "detail": "VirtualFundamentalClass §1.5 forms normal cones of representable closed immersions only; its §2.4 and 3.5, 4.2, 8.1 and 8.3 here use the normal cone of a local immersion (representable, unramified, of finite type) that need not be closed, such as Spec k -> BG or the diagonal BG -> BG x BG for a finite etale G with |G| > 1. Needed: the normal cone C_{X/Y} of a local immersion X -> Y of algebraic stacks locally of finite type over k, by descent from charts U -> V that are closed immersions of schemes with V -> Y and U -> X smooth surjective and U -> X x_Y V etale (kresch1999b Lemma 2.2 and the paragraph after it, lines 218-237; vistoli1989 Lemma 1.19 and lines 508-526), equal to §1.5's cone for closed immersions; for Y' -> Y, a closed embedding C_{X'/Y'} in C_{X/Y} x_X X' (vistoli1989 lines 529-535), an isomorphism for flat Y' -> Y (on the charts U -> V, the flat base change of normal cones of closed immersions of VirtualFundamentalClass §1.5, descended; vistoli1989 Lemma 3.14, lines 1126-1131, for local embeddings of schemes); the closed embedding in the normal sheaf; and, for a regular local immersion of codimension d, the equality with the normal bundle N_{X/Y} of rank d (vistoli1989 lines 527-528; kresch1999b lines 236-237).",
    "needs": "VirtualFundamentalClass §1.5 must state the normal cone C_{X/Y} of a local immersion X -> Y of algebraic stacks locally of finite type over k, obtained by descent from charts on which it is a closed immersion of schemes, with its closed embedding under base change (an isomorphism under flat base change), its closed embedding in the normal sheaf, and the normal bundle of a regular local immersion.",
    "supplier": "VirtualFundamentalClass",
    "section": "§1.5"
