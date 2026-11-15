@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeometryOfNumbersAndQuadraticArithmetic~18",
+  "head": "3b084ef8dd5a6e7d979c66c9e1723632889db2b0",
+  "pr": 851,
+  "folder": "GeometryOfNumbersAndQuadraticArithmetic",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 3b084ef; this round checked the pull request's title and description against the head: the five findings of the previous report (all on the description) are repaired, and every supplier and section the description names has a contract in the README. Seeded sample: no changed passage, nothing sampled. Adversarial rows computed for sqSuccessiveMin_eq_sq_successiveMin and finiteArfInvariant_eq_zero_iff_exists_lagrangian. Gate: the worker's run passes (build=0 OK); dependency check with the moved order 0 problems; Suggested.lean elaborates with 21 sorry warnings only.",
+  "text": "e11900951ae8eaba"
+ }
+}
