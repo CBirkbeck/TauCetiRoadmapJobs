@@ -928,7 +928,7 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "RealReductiveDatum.ofAntiholomorphicInvolution",
-     "statement": "For H connected reductive over ℂ and τ an antiholomorphic involutive automorphism of H(ℂ) (a group automorphism, antiholomorphic, τ² = 1), RealSemisimpleLieGroups §2.5 supplies an ℝ-form (𝐆_τ, φ_τ : (𝐆_τ)_ℂ ≅ H) with conjugation φ_τ ∘ c ∘ φ_τ⁻¹ = τ, 𝐆_τ connected reductive, 𝐆_τ(ℝ) = H(ℂ)^τ, Cartan involutions for τ the complexifications of ArithmeticLocallySymmetricSpaces §ALS.0.1's Cartan involutions of 𝐆_τ, and K = H(ℂ)^τ ∩ H(ℂ)^σ maximal compact; so (𝐆_τ, 𝐆_τ(ℝ)) and (𝐆_τ, 𝐆_τ(ℝ)°) are real reductive data. Owned here: (uniqueness) two ℝ-forms (𝐆₁, φ₁), (𝐆₂, φ₂) of H with the same conjugation are isomorphic by exactly one ℝ-isomorphism α with φ₂ ∘ α_ℂ = φ₁; (converse) the conjugation of every ℝ-form of H is an antiholomorphic involutive automorphism of H(ℂ). Hence τ ↦ (𝐆_τ, φ_τ) is a bijection onto isomorphism classes of ℝ-forms over the identity of H. Route: φᵢ^* carries O(𝐆ᵢ) ⊗ 1 onto the fixed space of f ↦ conj ∘ f ∘ τ on O(H).",
+     "statement": "For H connected reductive over ℂ and τ an antiholomorphic involutive automorphism of H(ℂ) (a group automorphism, antiholomorphic, τ² = 1), RealSemisimpleLieGroups §2.5 supplies an ℝ-form (𝐆_τ, φ_τ : (𝐆_τ)_ℂ ≅ H) with conjugation φ_τ ∘ c ∘ φ_τ⁻¹ = τ, 𝐆_τ connected reductive, 𝐆_τ(ℝ) = H(ℂ)^τ, Cartan involutions for τ the complexifications of ArithmeticLocallySymmetricSpaces §ALS.0.1's Cartan involutions of 𝐆_τ, and K = H(ℂ)^τ ∩ H(ℂ)^σ maximal compact; so (𝐆_τ, 𝐆_τ(ℝ)) and (𝐆_τ, 𝐆_τ(ℝ)°) are real reductive data. Owned here: (uniqueness) two ℝ-forms (𝐆₁, φ₁), (𝐆₂, φ₂) of H with the same conjugation are isomorphic by exactly one ℝ-isomorphism α with φ₂ ∘ α_ℂ = φ₁; (converse) the conjugation of every ℝ-form of H is an antiholomorphic involutive automorphism of H(ℂ). Hence τ ↦ (𝐆_τ, φ_τ) is a bijection onto isomorphism classes of ℝ-forms over the identity of H. Route: the pullback φᵢ^* : O(H) → O(𝐆ᵢ) ⊗_ℝ ℂ is an isomorphism whose inverse carries O(𝐆ᵢ) ⊗ 1 onto the fixed space F of f ↦ conj ∘ f ∘ τ on O(H), and φ₁^* ∘ (φ₂^*)⁻¹ restricts to O(𝐆₂) ≅ O(𝐆₁), the pullback of α.",
      "hypotheses": [
       "H connected reductive over ℂ",
       "τ an antiholomorphic involutive automorphism of the complex Lie group H(ℂ)",
@@ -1467,7 +1467,7 @@
       {
        "name": "free_SL2",
        "kind": "computation",
-       "statement": "Γ = F₂, G = SL₂: (Hom//G)(ℂ) ≅ ℂ³ via (tr a, tr b, tr ab)."
+       "statement": "Γ = F₂, G = SL₂: (Hom//G)(ℂ) ≅ ℂ³ via (tr a, tr b, tr ab) (Sikora2012 Example 48; NonabelianLevelStructures §5.1, which proves the isomorphism over every commutative ring)."
       },
       {
        "name": "nonreduced_char_two",
@@ -1562,7 +1562,7 @@
      "id": "7.5",
      "kind": "example",
      "name": "CharacterVariety.examples",
-     "statement": "Computed examples: Γ trivial gives a point; F_m with compact G^ℝ gives (G^ℝ)^m/G^ℝ; 𝒳(ℤ, GL₁(ℝ)) = ℝ^×; 𝒳(ℤ, PSL₂(ℝ)) is the elliptic and hyperbolic classes with the identity; 𝒳(π₁(Σ₁), GL₁(ℂ)) = (ℂ^×)²; 𝒳(π₁(Σ_{0,3}), SL₂(ℂ)) ≅ ℂ³.",
+     "statement": "Computed examples: Γ trivial gives a point; F_m with compact G^ℝ gives (G^ℝ)^m/G^ℝ; 𝒳(ℤ, GL₁(ℝ)) = ℝ^×; 𝒳(ℤ, PSL₂(ℝ)) is the elliptic and hyperbolic classes with the identity; 𝒳(π₁(Σ₁), GL₁(ℂ)) = (ℂ^×)²; 𝒳(π₁(Σ_{0,3}), SL₂(ℂ)) ≅ ℂ³ through the trace coordinates of NonabelianLevelStructures §5.1, with Out(F₂) acting by the polynomial automorphisms of NonabelianLevelStructures §5.2, preserving the Fricke commutator trace.",
      "hypotheses": [],
      "locator": {
       "source": "Sikora2012",
@@ -1571,7 +1571,10 @@
      "prerequisites": [
       "target:7.1",
       "target:7.2",
-      "target:7.4"
+      "target:7.4",
+      "roadmap:NonabelianLevelStructures §5.1",
+      "roadmap:NonabelianLevelStructures §5.2",
+      "tauceti:Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two"
      ],
      "api": [],
      "tests": [
@@ -1588,7 +1591,7 @@
       {
        "name": "pants_SL2C",
        "kind": "computation",
-       "statement": "𝒳(π₁(Σ_{0,3}), SL₂(ℂ)) ≅ ℂ³."
+       "statement": "𝒳(π₁(Σ_{0,3}), SL₂(ℂ)) ≅ ℂ³ through (tr ρ(a), tr ρ(b), tr ρ(ab)); the class of (a, b) ↦ (a⁻¹, b) acts by the Vieta move (x, y, x y − z) and the class of (a, b) ↦ (a⁻¹, b⁻¹) trivially, so the action is not faithful; at (2, 2, 3), from A = [[1,1],[0,1]], B = [[1,0],[1,1]], the commutator trace x² + y² + z² − x y z − 2 is 3, and it is again 3 at the Vieta image (2, 2, 1)."
       }
      ]
     }
@@ -1644,6 +1647,14 @@
     "§0.3"
    ],
    "what": "Used with b = 0: the isomorphism surfaceGroup g (b + p) ≃* π₁(Σ_{g,b,p}, x) with peripheral loops around the punctures, surfaceGroup g n being FreeGroupsAndLimitGroups' S⁺(g, n) transported along the inversion of the handle generators, and freeness for b + p ≥ 1 (§0.1); PMod(g, b, p), the kernel of the permutation action on the punctures, of index p! with every permutation realized, and the outer action of PMod(g, b, p) (§0.2); the pure Birman exact sequence for χ < 0 (§0.3)."
+  },
+  {
+   "roadmap": "NonabelianLevelStructures",
+   "sections": [
+    "§5.1",
+    "§5.2"
+   ],
+   "what": "Used only in 7.5, with R = ℂ: the integral rank-two character scheme of F₂, R[x, y, z] ≅ O(SL₂ × SL₂)^(GL₂) through (tr A, tr B, tr AB) for every commutative ring R (integral_trace_coordinates, §5.1), which over a field is the case Γ = F₂, G = SL₂ of 7.2; the polynomial action of Aut(F₂) on 𝔸³ through Out(F₂), with (a, b) ↦ (a⁻¹, b⁻¹) acting trivially (§5.2)."
   },
   {
    "roadmap": "FreeGroupsAndLimitGroups",

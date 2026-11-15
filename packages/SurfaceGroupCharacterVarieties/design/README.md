@@ -157,7 +157,13 @@ space `X`; its §2.1 MCG-finiteness of `ρ : π₁(Σ_{g,n}, x) → GL_r(ℂ)` i
 `[ρ]` under §3.5's action for `H = GL_r(ℂ)`, which is stated for every group `H`; and its §1.4
 `R_r(Γ)` and `M_r(Γ)` of a finitely presented `Γ` are the case `G = GL_r`, `k = ℂ` of §4.1's
 representation scheme and §7.2's affine quotient, which are stated for every affine group scheme
-over a commutative ring and every connected reductive group over a field.
+over a commutative ring and every connected reductive group over a field. The rank-two character
+scheme of `F₂` of NonabelianLevelStructures §5.1, `Spec` of the `GL₂`-conjugation invariants of
+`O(SL₂ × SL₂)`, is over a field `k` the case `Γ = F₂`, `G = SL₂` of §7.2's affine quotient: the
+coaction invariants of `SL₂` and of `GL₂` agree, both conjugation actions factoring through the
+faithfully flat quotient maps onto `PGL₂`. It is stated there over every commutative ring, with the
+explicit trace coordinates `(tr A, tr B, tr AB)` that §7.2 does not give, and NonabelianLevelStructures
+§5.2 gives the action of `Aut(F₂)` in these coordinates; both are used here only in §7.5.
 
 Not owned and not planned here: the smooth model `Diff⁺(Σ, P)/smooth isotopy` of the punctured
 mapping class group and the Dehn–Nielsen–Baer theorem for punctured surfaces, which extend
@@ -298,8 +304,11 @@ reverse inclusion is preconnected); `TauCeti.PointTopology.topology` (the point 
 `TauCeti.Comodule.Hom.fixedMap_surjective_of_isLinearlyReductive` (a surjective comodule map over a
 linearly reductive coalgebra is surjective on invariants, without finiteness);
 `ContRepresentation.IsUnitary.isSemisimpleRepresentation` (a finite-dimensional unitary
-continuous representation of any group is semisimple). Assumed: these declarations have the
-signatures displayed in their files at the pin.
+continuous representation of any group is semisimple);
+`Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two` (the Fricke identity: for `A, B` in
+`SL(2, R)` over a commutative ring `R`,
+`tr(A B A⁻¹ B⁻¹) = (tr A)² + (tr B)² + (tr AB)² − tr A · tr B · tr AB − 2`). Assumed: these
+declarations have the signatures displayed in their files at the pin.
 
 ### From TauCetiRoadmap.MordellLawrenceVenkatesh
 
@@ -386,6 +395,17 @@ with `b = 0`, where `Σ_{g,0,n} = Σ_g ∖ P` and `Mod(Σ_{g,0,n}) = Mod_{g,n}`.
 action of §0.2 is the action on the punctures of homeomorphisms of `Σ_g ∖ P`, read on the ends of
 `Σ_g ∖ P` or on `P` through homeomorphisms of `Σ_g` preserving `P`; §§2.2–2.3 show that the two
 readings agree.
+
+### From TauCetiRoadmap.NonabelianLevelStructures
+
+§5.1 (`integral_trace_coordinates`: for every commutative ring `R`, the map `R[x, y, z] → O(SL₂ × SL₂)`
+sending `x, y, z` to `tr A`, `tr B`, `tr AB` is an isomorphism onto the invariants of the `GL₂`-scheme
+coaction by simultaneous conjugation, compatibly with every base change `R → S`), §5.2 (over every
+commutative ring, precomposition by `Aut(F₂)` acts on `𝔸³` by polynomial automorphisms through
+`Out(F₂)`: `(a, b) ↦ (a⁻¹, b)`, `(b, a)` and `(a⁻¹, a b)` act by `(x, y, z) ↦ (x, y, x y − z)`,
+`(y, x, z)` and `(x, z, y)`, and `(a, b) ↦ (a⁻¹, b⁻¹)` acts trivially). Used only in §7.5, with
+`R = ℂ`. Assumed: over a field the `GL₂`-invariants of §5.1 are the `SL₂`-invariants of §7.2, as the
+Scope explains.
 
 ### From TauCetiRoadmap.FreeGroupsAndLimitGroups
 
@@ -1249,15 +1269,17 @@ isomorphism `α` over the identity is defined over `ℝ`, so `α_ℂ` commutes w
 the two forms have the same conjugation, and every form is `(𝐆_τ, φ_τ)` for its own conjugation `τ`
 by the converse and uniqueness.
 
-*Proof sketch.* The pullback `φᵢ^*` identifies `O(𝐆ᵢ) ⊗_ℝ ℂ` with `O(H)`, and it carries `O(𝐆ᵢ) ⊗ 1`
-onto the fixed space `F = {f ∈ O(H) : f = f^τ}` of the antilinear involution
-`f ↦ f^τ = conj ∘ f ∘ τ`; functions on `H` are determined by their values at `ℂ`-points, `H` being reduced
-and of finite type over `ℂ`. A function defined over `ℝ` takes conjugate values at conjugate points,
-so `W = φᵢ^*(O(𝐆ᵢ) ⊗ 1)` lies in `F`. Conversely `O(H) = F ⊕ iF`, since `f` is the sum of
-`(f + f^τ)/2 ∈ F` and `i · (f − f^τ)/(2i)` with `(f − f^τ)/(2i) ∈ F`; for `f ∈ F` write
-`f = w₁ + i w₂` with `wⱼ ∈ W ⊆ F`, so that `f − w₁ = i w₂ ∈ F ∩ iF = 0` and `f ∈ W`. Hence
-`φ₁^*(O(𝐆₁) ⊗ 1) = F = φ₂^*(O(𝐆₂) ⊗ 1)`, and the isomorphism of complex Hopf algebras
-`φ₁^* ∘ (φ₂^*)⁻¹` restricts to an isomorphism of real Hopf algebras `O(𝐆₂) ≅ O(𝐆₁)`, which is `α`.
+*Proof sketch.* The pullback `φᵢ^* : O(H) → O(𝐆ᵢ) ⊗_ℝ ℂ` is an isomorphism of complex Hopf
+algebras, and its inverse carries `O(𝐆ᵢ) ⊗ 1` onto the fixed space `F = {f ∈ O(H) : f = f^τ}` of
+the antilinear involution `f ↦ f^τ = conj ∘ f ∘ τ`; functions on `H` are determined by their values
+at `ℂ`-points, `H` being reduced and of finite type over `ℂ`. A function defined over `ℝ` takes
+conjugate values at conjugate points, so `W = (φᵢ^*)⁻¹(O(𝐆ᵢ) ⊗ 1)` lies in `F`. Conversely
+`O(H) = F ⊕ iF`, since `f` is the sum of `(f + f^τ)/2 ∈ F` and `i · (f − f^τ)/(2i)` with
+`(f − f^τ)/(2i) ∈ F`; for `f ∈ F` write `f = w₁ + i w₂` with `wⱼ ∈ W ⊆ F` (`O(H) = W + iW`, the
+inverse of `φᵢ^*` being `ℂ`-linear), so that `f − w₁ = i w₂ ∈ F ∩ iF = 0` and `f ∈ W`. Hence
+`(φ₁^*)⁻¹(O(𝐆₁) ⊗ 1) = F = (φ₂^*)⁻¹(O(𝐆₂) ⊗ 1)`, and the isomorphism of complex Hopf algebras
+`φ₁^* ∘ (φ₂^*)⁻¹ : O(𝐆₂) ⊗_ℝ ℂ → O(𝐆₁) ⊗_ℝ ℂ` carries `O(𝐆₂) ⊗ 1` through `F` onto `O(𝐆₁) ⊗ 1`, so
+it restricts to an isomorphism of real Hopf algebras `O(𝐆₂) ≅ O(𝐆₁)`, the pullback of `α`.
 It is the only one: `α_ℂ = φ₂⁻¹ ∘ φ₁` is forced, and `α` is determined by `α_ℂ` because
 `O(𝐆ᵢ) → O(𝐆ᵢ) ⊗_ℝ ℂ` is injective. For the converse, `c` is the map on points induced by the
 `ℝ`-algebra automorphism `conj` of `ℂ`, so it is a group automorphism of `𝐆₀(ℂ)` with `c² = 1`; in a
@@ -1712,7 +1734,8 @@ since every point of a fibre has the closed orbit in its closure, so it factors 
   `𝒳(ℤ, GL_n(ℂ))` is the set of semisimple classes, matching ArithmeticGaloisRepresentations §1.11's
   `Conj_{GL_n}`.
 - `Γ = F₂`, `G = SL₂`: `(Hom//G)(ℂ) ≅ ℂ³` through `(tr ρ(a), tr ρ(b), tr ρ(ab))` (Sikora2012 lines
-  844–845, Example 48).
+  844–845, Example 48; NonabelianLevelStructures §5.1, which proves the isomorphism over every
+  commutative ring).
 - A nonreduced representation scheme in positive characteristic: for `Γ = ℤ/2` and `G = 𝔾_m` over
   `𝔽₂`, `Hom(Γ, G) = Spec 𝔽₂[t]/((t − 1)²)` (§4.1's Check) and conjugation is trivial, `𝔾_m` being
   commutative, so `Hom//G = Hom`, of finite type with the single closed orbit `{t = 1}`, as
@@ -1795,22 +1818,39 @@ value (Sikora2012 lines 844–845, Example 48).
 - `𝒳(Γ, G^ℝ)` for `Γ` trivial is a point; for `Γ = F_m` and compact `G^ℝ` it is `(G^ℝ)^m/G^ℝ`.
 - `𝒳(ℤ, GL₁(ℝ)) = ℝ^×` (two points of `π₀`), `𝒳(ℤ, PSL₂(ℝ))` is the set of elliptic and hyperbolic
   classes together with the identity, with the parabolic classes absent.
-- `𝒳(π₁(Σ₁), GL₁(ℂ)) = (ℂ^×)²` and `𝒳(π₁(Σ_{0,3}), SL₂(ℂ)) ≅ ℂ³` (§7.2).
+- `𝒳(π₁(Σ₁), GL₁(ℂ)) = (ℂ^×)²` and `𝒳(π₁(Σ_{0,3}), SL₂(ℂ)) ≅ ℂ³` (§7.2; NonabelianLevelStructures
+  §5.1, which proves the isomorphism over every commutative ring), through
+  `(tr ρ(a), tr ρ(b), tr ρ(ab))` for a free basis `a, b` of `π₁(Σ_{0,3}) ≅ F₂`. On it §7.4's action
+  of `Out(F₂)` is by polynomial automorphisms (NonabelianLevelStructures §5.2): the class of the
+  involution `(a, b) ↦ (a⁻¹, b)` acts by the Vieta move `(x, y, z) ↦ (x, y, x y − z)`, since
+  `tr(A⁻¹B) = tr A · tr B − tr AB` for `A ∈ SL₂`, and the class of `(a, b) ↦ (a⁻¹, b⁻¹)` acts
+  trivially, since `tr A⁻¹ = tr A` and `tr(A⁻¹B⁻¹) = tr(BA) = tr(AB)`, so the action is not
+  faithful. Both moves preserve the commutator trace `x² + y² + z² − x y z − 2` (Tau Ceti
+  `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two`): under the Vieta move
+  `z² − x y z` becomes `(x y − z)² − x y (x y − z) = z² − x y z`. At `(2, 2, 3)`, the triple of
+  `A = [[1,1],[0,1]]`, `B = [[1,0],[1,1]]`, the commutator trace is `4 + 4 + 9 − 12 − 2 = 3`, and the
+  Vieta move gives `(2, 2, 1)`, again of commutator trace `4 + 4 + 1 − 4 − 2 = 3`.
 
-*Needs:* §7.1; §7.2; §7.4.
+*Needs:* §7.1; §7.2; §7.4; NonabelianLevelStructures §5.1; NonabelianLevelStructures §5.2; Tau Ceti
+`Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two`.
 
 ### Examples
 
-- The Fuchsian locus of §7.4 for genus two; the character variety `𝒳(F₂, SL₂(ℂ)) ≅ ℂ³` with
-  `Out(F₂) ≅ GL₂(ℤ)` acting by polynomial automorphisms preserving
-  `x² + y² + z² − xyz − 2 = tr ρ([a, b])`.
+- The Fuchsian locus of §7.4 for genus two; the character variety `𝒳(F₂, SL₂(ℂ)) ≅ ℂ³`
+  (NonabelianLevelStructures §5.1) with `Out(F₂)` acting by polynomial automorphisms
+  (NonabelianLevelStructures §5.2), the class of `(a, b) ↦ (a⁻¹, b⁻¹)` trivially, preserving
+  `x² + y² + z² − xyz − 2 = tr ρ([a, b])` for `[a, b] = a b a⁻¹ b⁻¹` (the Fricke identity, Tau Ceti
+  `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two`; the commutator `a⁻¹ b⁻¹ a b` is
+  conjugate to it and has the same trace) (§7.5).
 
 ### Dependencies
 
 Layers 1–6; LanglandsParameterStacks §2.2; ArithmeticGaloisRepresentations §1.11; ReductiveGroups
-Layers 1, 3A, 6; ComplexComparisonPartII
-§C-1.1; TeichmullerGeometry §§4.2, 4.5, 6.1; Tau Ceti's linearly reductive comodules; Mathlib's proper
-actions.
+Layers 1, 3A, 6; ComplexComparisonPartII §C-1.1; TeichmullerGeometry §§4.2, 4.5, 6.1;
+NonabelianLevelStructures §§5.1–5.2 and Tau Ceti
+`Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two` (§7.5);
+SymplecticGeometry/HamiltonianReduction R5 (a Check of §7.1); Tau Ceti's linearly reductive
+comodules; Mathlib's proper actions.
 
 ## Downstream consumers
 
