@@ -467,14 +467,21 @@
      ],
      "locator": {
       "source": "aizenman-duminilcopin-2021",
-      "where": "Definition 2.1(1), lines 363-373; Figure 1, lines 377-382; weights nonnegative as used at line 2031"
+      "where": "Definition 2.1(1), lines 363-373; Figure 1, lines 377-382; weights nonnegative as used at line 2031; Lee-Yang property of block constructions, lines 387-388; Lee-Yang theorem: lebowitz-ruelle-speer-2012 Section 1, lines 62-69, and Lemma 2.4, lines 217-222; cumulant sign: sokal-1982 item (i), lines 428-433"
      },
      "prerequisites": [
       "target:0.2.1",
       "target:1.1",
-      "mathlib:MeasureTheory.Measure.map"
+      "mathlib:MeasureTheory.Measure.map",
+      "mathlib:Complex.norm_le_of_forall_mem_frontier_norm_le",
+      "roadmap:ZerosOfLFunctions §5.5"
      ],
      "api": [
+      {
+       "name": "leeYang_partitionFunction_ne_zero",
+       "role": "theorem",
+       "statement": "Lee-Yang theorem: for finite V, ferromagnetic J on V and h in C^V with Re h_x > 0 for every x, Z^I_{V,J}(h) = integral of exp(-H_{V,J}(sigma) + sum_x h_x sigma_x) d rho_I^{tensor V} is nonzero. Route: z_x = exp(-2 h_x), a_xy = exp(-2 J_xy) in (0,1]; Z^I is a nonzero multiple of the multi-affine P(z) = sum_A prod_{x in A} z_x prod_{x in A, y notin A} a_xy; each pair polynomial 1 + a z1 + a z2 + z1 z2 is zero-free on the open unit bidisc since |1 + a z1|^2 - |a + z1|^2 = (1-a^2)(1-|z1|^2) >= 0; Asano contraction of the copies of each site preserves zero-freeness on the open polydisc (lebowitz-ruelle-speer-2012 Lemma 2.4)."
+      },
       {
        "name": "isNegInvariant / finite support / isAdmissible",
        "role": "lemma",
@@ -494,6 +501,11 @@
        "name": "blockSpin_representation",
        "role": "theorem",
        "statement": "For finite V, ferromagnetic J and rho = rho_{N,K,q}, mu_{V,J,rho} is the image of mu_{V x Fin N, Jtilde, rho_I} under sigma -> (sum_n q_n sigma_{x,n})_x with Jtilde = K within blocks and J_{xy} q_n q_m between blocks."
+      },
+      {
+       "name": "leeYang_property",
+       "role": "theorem",
+       "statement": "For rho = rho_{N,K,q} (K ferromagnetic, q >= 0), E(h) = integral of exp(h phi) d rho is entire with |E(h)| <= exp(|h| sum q), and E(h) != 0 for Re h != 0. Hence E(h) = prod_j (1 + h^2/a_j^2) on C with a_j > 0 (with multiplicity), sum_j a_j^{-2} = (1/2) integral phi^2 d rho, E(h) <= exp(h^2 integral phi^2 / 2) for real h, and integral phi^4 - 3 (integral phi^2)^2 = -12 sum_j a_j^{-4} <= 0. Route: E(h) = Z^I(hq)/Z^I(0) and the Lee-Yang theorem for q > 0, evenness for Re h < 0; zero weights by q + eps and Hurwitz's argument with the maximum modulus principle; product from ZerosOfLFunctions §5.5 (order <= 1, E(0) = 1, evenness kills the linear term and pairs +-i a_j)."
       }
      ],
      "tests": [
@@ -521,6 +533,26 @@
        "name": "trivial_block",
        "kind": "degenerate",
        "statement": "q = 0 gives delta_0."
+      },
+      {
+       "name": "leeYang_small_systems",
+       "kind": "non-example",
+       "statement": "One site: Z^I = cosh h, zeros i pi (k + 1/2), purely imaginary; cosh(i pi/2) = 0, so Re h > 0 cannot be weakened to Re h >= 0. Two sites, equal fields: Z^I = (e^J cosh 2h + e^{-J})/2; for J >= 0 zeros need cosh 2h = -e^{-2J} in [-1,0), forcing Re h = 0; antiferromagnetic J = -(ln 2)/2 has zeros h = +-(1/2) ln(2 + sqrt 3) + i pi/2 ~ +-0.658 + 1.571i."
+      },
+      {
+       "name": "leeYang_ising_product",
+       "kind": "computation",
+       "statement": "rho_I: E = cosh h = prod_{k>=0} (1 + h^2/((k+1/2) pi)^2); sum ((k+1/2) pi)^{-2} = 1/2 = (1/2) integral phi^2; fourth cumulant 1 - 3 = -2 = -12 * (1/6)."
+      },
+      {
+       "name": "leeYang_uniform_three_point",
+       "kind": "computation",
+       "statement": "Uniform on {-1,0,1}: E = (1 + 2 cosh h)/3, zeros h = i(+-2 pi/3 + 2 pi k); sum a_j^{-2} = (2 pi)^{-2} sum_{n in Z} (n + 1/3)^{-2} = (2 pi)^{-2} pi^2/sin^2(pi/3) = 1/3 = (1/2)(2/3)."
+      },
+      {
+       "name": "leeYang_mixed_signs",
+       "kind": "non-example",
+       "statement": "q = (1,-1), K = (ln 3)/2: law (3/4) delta_0 + (1/8)(delta_2 + delta_{-2}), E = (3 + cosh 2h)/4, zeros at cosh 2h = -3, h = +-(1/2) ln(3 + 2 sqrt 2) + i pi/2 ~ +-0.881 + 1.571i; fourth cumulant 4 - 3 = 1 > 0."
       }
      ]
     },
@@ -532,14 +564,17 @@
      "hypotheses": [],
      "locator": {
       "source": "aizenman-duminilcopin-2021",
-      "where": "Definition 2.1(2) and (2.2), lines 374-386; full-class continuity, lines 1982-1985 and 2019-2022; nonnegative weights as in 2.1"
+      "where": "Definition 2.1(2) and (2.2), lines 374-386; passage to the class asserted by continuity, lines 1982-1985 and 2019-2022; nonnegative weights as in 2.1"
      },
      "prerequisites": [
       "target:0.1",
       "target:1.1",
       "target:1.2",
       "target:1.4",
-      "target:2.1"
+      "target:2.1",
+      "mathlib:MeasureTheory.isTightMeasureSet_of_isCompact_closure",
+      "mathlib:Real.young_inequality",
+      "mathlib:ProbabilityTheory.mgf_id_gaussianReal"
      ],
      "api": [
       {
@@ -558,16 +593,21 @@
        "statement": "Closed under phi -> s phi, allowing a smaller exponent between 2 and alpha, and under weak limits of members with sup_j integral exp(|phi|^alpha) d rho_j < infinity for a common alpha > 2."
       },
       {
+       "name": "tail_control",
+       "role": "theorem",
+       "statement": "If Ising-block measures eta_k converge weakly to a probability measure rho with integral exp(|phi|^alpha) d rho < infinity for some alpha > 2, then sup_k integral exp(c phi^2) d eta_k < infinity for every real c. Route via the factorisation E_k(h) = prod_j (1 + h^2 x_{k,j}) of 2.1: (a) sigma_k^2 bounded (fourth moment <= 3 sigma_k^4, Paley-Zygmund, tightness); (b) E_k(h) <= exp(h^2 S/2), so E_k(h) -> E_rho(h); (c) Young: E_rho(h) <= C exp(|h|^{alpha'}), alpha' = alpha/(alpha-1) < 2; (d) s_k(theta) = sum of x_{k,j} <= theta satisfies s_k(theta) log 2 <= theta log E_k(theta^{-1/2}), so limsup_k s_k(theta) <= (theta log C + theta^{1-alpha'/2})/log 2 -> 0; (e) E_k(h) <= (1 + h^2 S/2)^{S/(2 theta)} exp(h^2 s_k(theta)); (f) integral exp(c phi^2) d eta_k = E[E_k(sqrt(2c) g)] for standard normal g, bounded once limsup s_k(theta) < 1/(8c)."
+      },
+      {
        "name": "gibbs_limit",
        "role": "theorem",
-       "statement": "For every member rho, finite V and ferromagnetic J there exists an Ising-block sequence eta_k -> rho weakly such that mu_{V,J,eta_k} -> mu_{V,J,rho} weakly and expectations of every continuous polynomially bounded F converge. This full-class finite-volume transfer includes choice/tail control of approximants; it does not assume uniform superquadratic moments of arbitrary weak approximants (lines 1982-1985, 2019-2022). One sequence must serve any prescribed finite collection of finite ferromagnetic systems simultaneously, including V and its subregions."
+       "statement": "Finite-volume transfer: for every member rho, EVERY sequence of Ising-block measures eta_k -> rho weakly, every finite V, every coupling J on V and every continuous F with |F| <= C(1 + sum phi_x^2)^m: Z_{V,J}(eta_k) -> Z_{V,J}(rho), <F>_{V,J,eta_k} -> <F>_{V,J,rho}, mu_{V,J,eta_k} -> mu_{V,J,rho} weakly. Route: tail_control gives the uniform quadratic exponential moments assumed by 1.4."
       }
      ],
      "tests": [
       {
        "name": "gaussian_excluded",
        "kind": "non-example",
-       "statement": "N(0,1) is a weak limit of Ising-block measures (CLT) but integral exp(|phi|^alpha) dN(0,1) = infinity for alpha > 2."
+       "statement": "N(0,1) is a weak limit of Ising-block measures (CLT, q_n = N^{-1/2}) but integral exp(|phi|^alpha) dN(0,1) = infinity for alpha > 2. Without the growth condition tail control fails: integral exp(phi^2/2) d eta_N -> infinity by Fatou; all x_{N,j} = ((k+1/2) pi)^{-2}/N <= 4/(pi^2 N), so s_N(theta) = 1/2 for N >= 4/(pi^2 theta), the Gaussian factor of the limit."
       },
       {
        "name": "lebowitz_test",
@@ -580,14 +620,19 @@
        "statement": "Every phi^4 measure is a member (2.3); gamma_b is not."
       },
       {
-       "name": "bad_approximation_of_zero",
-       "kind": "non-example",
-       "statement": "Independent X_N = sum sigma_i/(sqrt(N) log N), N >= 3, have variance 1/log(N)^2 -> 0 but exponential alpha-moments >= 2^(1-N) exp(N^(alpha/2)/log(N)^alpha) -> infinity for every alpha > 2. Constant delta_0 approximants have those moments 1."
+       "name": "shrinking_blocks_transfer",
+       "kind": "computation",
+       "statement": "Independent X_N = sum sigma_i/(sqrt(N) log N), N >= 3, variance 1/log(N)^2 -> 0, converge to delta_0. Exponential alpha-moments >= 2^(1-N) exp(N^(alpha/2)/log(N)^alpha) -> infinity for alpha > 2 (growth cannot be asked of approximants), but quadratic ones are controlled: integral exp(h phi) d eta_N = cosh(h/(sqrt(N) log N))^N <= exp(h^2/(2 log^2 N)), so integral exp(c phi^2) d eta_N <= (1 - 2c/log^2 N)^(-1/2) (about 1.022 at c = 1, N = 1000) -> 1; two sites, J >= 0: 1 <= Z(eta_N) <= (1 - J/log^2 N)^(-1) -> 1 = Z(delta_0). Zeros +-i(k+1/2) pi sqrt(N) log N with multiplicity N give sum a^{-2} = 1/(2 log^2 N) = sigma_N^2/2."
       },
       {
        "name": "finite_volume_transfer",
        "kind": "computation",
-       "statement": "The same sequence on one and two sites gives the one-site second moment s^2 and two-site moment s^2 tanh(J s^2); at s=0 these moments are 0 and the zeroth moment is 1. The phi^4 approximants of 2.3 satisfy 1.4 by their uniform tails."
+       "statement": "Every sequence transfers: blocks (delta_{-s_k} + delta_{s_k})/2 with s_k -> s >= 0 give one-site second moment s_k^2 -> s^2 and two-site <phi_x phi_y> = s_k^2 tanh(J s_k^2) -> s^2 tanh(J s^2); at s = 0 both tend to 0 (delta_0) and the zeroth moment is 1. The Curie-Weiss sequence of 2.3 satisfies the tail-control bound directly by its quartic tails."
+      },
+      {
+       "name": "block_structure_needed",
+       "kind": "non-example",
+       "statement": "Mixtures (1 - 1/k) rho_I + (1/k) N(0,1) -> rho_I (a member) satisfy integral phi^{2n} = 1 - 1/k + (2n-1)!!/k <= (2n-1)!! with variance 1, but two sites with J >= 1 give Z = infinity: neither tail control nor transfer holds; their Laplace transforms (1 - 1/k) cosh h + (1/k) exp(h^2/2) have order 2."
       }
      ]
     },
@@ -1906,6 +1951,13 @@
     "§7.1"
    ],
    "what": "Analytic Green kernels of -Delta+m^2: heat integral, Fourier multiplier with 4 pi^2 normalization, local integrability and exponential exterior decay for m>0,d>=1; decaying radial massless kernel and Fourier agreement for m=0,d>=3. Probability law, block normalization and lattice reachability remain here."
+  },
+  {
+   "roadmap": "ZerosOfLFunctions",
+   "sections": [
+    "§5.5"
+   ],
+   "what": "Hadamard factorisation at order at most one (hadamard_of_orderLE_one): an entire f with OrderLE f 1 and f 0 != 0 is exp(a + b s) times the product of (1 - s/rho) exp(s/rho) over its zeros with multiplicity; applied to Laplace transforms of Ising-block measures in 2.1."
   }
  ],
  "consumers": [
