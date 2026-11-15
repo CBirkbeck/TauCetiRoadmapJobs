@@ -36,7 +36,9 @@ change of a normal scheme along a separable extension of the ground field (§0.6
 roadmap states and which §6.3 needs).
 
 **Supplied elsewhere and cited.** The Grassmannian of locally free rank-`r` quotients of a
-quasi-coherent sheaf of finite type, its universal quotient, classifying maps, base change, properness
+quasi-coherent sheaf of finite type on an arbitrary base scheme (over an affine base and for the sheaf of a
+module, the pinned Tau Ceti has the scheme, listed below), its universal quotient, classifying maps, base
+change, properness
 over an affine base and the Plücker closed immersion are AlgebraicModuliForArithmeticGeometry §1.3
 (`coherentGrassmannian`, `plucker`); the normalisation of a reduced scheme (as the scheme case of the
 normalisation of a locally Noetherian Deligne–Mumford stack), its universal property, its finiteness
@@ -49,10 +51,7 @@ homeomorphisms, normal schemes and their codimension-one stalks, modifications, 
 schemes and Serre's normality criterion are in the pinned Tau Ceti (Exact supplier contracts, From Tau
 Ceti); SchemeAndStackFoundations §§0.7, 0.17, 0.23, 0.30, 4.11 and 4.13 record them, and this roadmap cites
 those sections for them. The converse of Kunz's theorem (`isRegular_of_frobenius_flat`) is
-EnhancedDerivedSheaves §E1.6. F-finiteness (the absolute Frobenius makes the ring a finite module over
-itself: a field `k` is F-finite exactly when `[k : k^p] < ∞`, and the
-property passes to finite-type algebras and to localisations), hence the finiteness of the Frobenius of an
-algebra essentially of finite type over a perfect field, is DeformationAndDerivedPatchingAlgebra §3.14. The
+EnhancedDerivedSheaves §E1.6. The
 theory of `p`-bases of fields (a family is a `p`-basis exactly when its differentials form a basis of `Ω¹`) is
 DerivedDeRhamCohomology §0.23. The Lie derivative on the one-forms of a field over a subfield of
 characteristic zero is DiophantineApproximationAndTranscendence §5.6 (`lieDerivativeOneForm`, the unique
@@ -65,8 +64,11 @@ property, exterior powers of sheaves of modules, the reduced-source factorisatio
 vanishing ideal, the recognition criterion for a relative normalisation and the bijectivity of the
 conormal map `I/I² → S ⊗_P Ω_{P/R}` of a surjection `P → S` onto a formally étale algebra (hence the
 identification of the cotangent space `m/m²` of a local `k`-algebra, Noetherian or not, whose residue
-field `κ` is separable algebraic over `k` with `κ ⊗_R Ω_{R/k}`, used in §§4.1 and 4.4) are in the pinned Tau Ceti;
-the smooth locus, relative normalisation, scheme-theoretic images, the module Grassmannian functor,
+field `κ` is separable algebraic over `k` with `κ ⊗_R Ω_{R/k}`, used in §§4.1 and 4.4), the finiteness of the
+`p`-th power map of an algebra of finite type over a perfect ring (used in §5.3), and the Grassmannian scheme of
+rank-`r` quotients of a module over an affine base, with its points on affine schemes, separatedness and
+properness for a finite module, are in the pinned Tau Ceti; the smooth locus, relative normalisation,
+scheme-theoretic images, the module Grassmannian functor,
 Kähler differentials of algebras and separability of field extensions that need not be algebraic are in
 the pinned Mathlib.
 
@@ -233,6 +235,25 @@ planned.
   whose kernel is `m` (`IsLocalRing.ker_residue`), with `κ` formally étale over `k` by
   `Algebra.FormallyEtale.of_isSeparable`: the map `m/m² → κ ⊗_R Ω_{R/k}`, `a ↦ 1 ⊗ da`, is bijective, and the
   `κ`-linear equivalence used in §§4.1 and 4.4 is this map bundled with its bijectivity.
+- `TauCeti.powRingHom` and `TauCeti.powRingHom_finite` (`TauCeti/Algebra/CharP/Frobenius/PowRingHom.lean`,
+  `TauCeti/Algebra/CharP/Frobenius/Finite.lean`): for a prime `p` and a commutative semiring `A` with `p = 0` in
+  `A`, the `p`-th power map `a ↦ a^p` as a ring endomorphism of `A`, equal to Mathlib's `frobenius` when `A` has
+  exponential characteristic `p` (`TauCeti.powRingHom_eq_frobenius`); for a ring map `R → A` of finite type of
+  commutative rings with `R` perfect of characteristic `p`, this map is finite, so `A` is a finite module over its
+  subring of `p`-th powers. Nothing is assumed for `A` of infinite type over a perfect ring or for an imperfect
+  `R`: the `p`-th power map of the field `𝔽_p(t_1, t_2, …)` of rational functions in infinitely many variables is
+  not finite. Used in §5.3 for `A` the ring of an affine open of a scheme of finite type over a perfect field `k`.
+- `Module.Grassmannian.scheme R M r` with `Module.Grassmannian.toSpec`
+  (`TauCeti/AlgebraicGeometry/Grassmannian/Basic.lean`), `Module.Grassmannian.schemeHomEquiv`
+  (`…/Grassmannian/Points.lean`) and the instances `Module.Grassmannian.isSeparated_toSpec` and
+  `Module.Grassmannian.isProper_toSpec` (`…/Grassmannian/Proper.lean`): for a commutative ring `R` and an
+  `R`-module `M` in the universe of `R`, the scheme over `Spec R` glued from the standard charts, whose morphisms
+  `Spec A → Gr` over `Spec R`, for an `R`-algebra `A`, are the points of Mathlib's `G(r, A ⊗_R M; A)` (submodules
+  with locally free rank-`r` quotient, the quotient convention), naturally in `A`; it is separated over `Spec R`
+  for every `M` and proper for finite `M`. No sheaf on a non-affine base is assumed. Over an affine open
+  `Spec A ⊆ X` with `F|_{Spec A}` the sheaf of the `A`-module `M`, AlgebraicModuliForArithmeticGeometry §1.3's
+  `Gr_r(F|_{Spec A})` and `Module.Grassmannian.scheme A M r` have the same points on affine `A`-schemes (the
+  affine-points bullet of that section and `schemeHomEquiv`).
 
 ### From TauCetiRoadmap.AlgebraicModuliForArithmeticGeometry
 
@@ -276,14 +297,6 @@ planned.
   `DerivedDeRham.IsPBasis`); the converse half, from a basis of differentials to a `p`-basis, is stated in
   the prose of §0.23 and is the half §5.2 uses.
 
-### From TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra
-
-- §3.14, F-finiteness: a ring of characteristic `p` is F-finite when its absolute Frobenius makes it a finite
-  module over itself; a field `k` is F-finite exactly when `[k : k^p] < ∞`; F-finiteness passes to quotients,
-  to localisations and to finite-type algebras. Used in §5.3 for the localisations `R_Q` of `R = O_{X,x}`, `X`
-  of finite type over a perfect field `k` (so `[k : k^p] = 1`): `R_Q` is a localisation of a finitely generated
-  `k`-algebra.
-
 ### From TauCetiRoadmap.DiophantineApproximationAndTranscendence
 
 - §5.6, the algebraic Cartan and Lie-derivative adapter (`exists_lieDerivativeOneForm`,
@@ -303,8 +316,8 @@ Nash modification of a sheaf of finite type along a dense open where it is local
 property, Plücker form, locality and flat base change. Layer 2 specialises it to `Ω_{X/k}`: the Nash blowup, its
 modification property, its universal property, the triviality criterion, locality, field base change and the
 iteration. Layer 3 gives the embedded (Gauss map) and blowup descriptions. Layers 4 and 5 prove the smoothness
-criteria, in characteristic zero and for normal schemes over perfect fields of characteristic `p` (Layer 5 takes
-the finiteness of the Frobenius from DeformationAndDerivedPatchingAlgebra §3.14); both start from §4.1. Layer 6
+criteria, in characteristic zero and for normal schemes over perfect fields of characteristic `p`; both start
+from §4.1. Layer 6
 builds the normalised Nash blowup and its isomorphism criteria, and Layer 7 the iterations and the never-resolves
 principle. Layers 4 and 5 are independent of Layers 3, 6 and 7.
 
@@ -1131,10 +1144,13 @@ nashModificationNotes2024, Section 5, lines 408–439). Route:
 1. `ψ` is injective: `φ_γ` (§5.1) applied to `Σ r_α^p x^α` returns `r_γ^p`, and `R` is reduced.
 2. At the zero prime, `ψ ⊗ K` is bijective by §5.2 applied to `K = Frac R`, where `dx_1, …, dx_d` is a basis of
    `Ω_{K/k}` (generic smoothness, §1.1 and §0.3).
-3. At a height-one prime `Q`, `R_Q` is a discrete valuation ring (SchemeAndStackFoundations §0.30), `F_*R_Q` is
-   finite because `R_Q` is F-finite (DeformationAndDerivedPatchingAlgebra §3.14: `k` is F-finite as
-   `[k : k^p] = 1`, and `R_Q` is a localisation of a finitely generated `k`-algebra; nashModificationNotes2024,
-   Section 5, lines 418–420) and torsion-free, hence free of rank `p^d` (step 2), and `R_Q → F_*R_Q` splits (its
+3. At a height-one prime `Q`, `R_Q` is a discrete valuation ring (SchemeAndStackFoundations §0.30). `F_*R_Q` is
+   finite: `R_Q` is the localisation `A_P` of the finitely generated `k`-algebra `A` of an affine open containing
+   `x` at a prime `P`; the `p`-th power map of `A` is finite by Tau Ceti's `TauCeti.powRingHom_finite` (`k` is
+   perfect), so `A = Σ_i A^p g_i` for finitely many `g_i`; and the same `g_i` generate `F_*A_P`, since
+   `a/s = a·s^{p−1}/s^p = Σ_i (c_i/s)^p g_i` when `a·s^{p−1} = Σ_i c_i^p g_i` (nashModificationNotes2024, Section 5,
+   lines 418–420, for the finiteness). `F_*R_Q` is also torsion-free, hence free of rank `p^d` (step 2), and
+   `R_Q → F_*R_Q` splits (its
    cokernel `R_Q^{1/p}/R_Q` is torsion-free: if `s·f ∈ R_Q` with `s ≠ 0`, then `f ∈ Frac R` and `f^p ∈ R_Q`, so `f`
    is integral over the integrally closed `R_Q`). With a splitting `σ_Q`, the map
    `ρ_Q(f) = Σ_γ σ_Q(φ_γ(f)) e_γ` is a surjection of free modules of rank `p^d` with `ρ_Q ∘ ψ_Q = id`, so `ψ_Q` is
@@ -1158,9 +1174,10 @@ nashModificationNotes2024, Section 5, lines 408–439). Route:
   so `x_1 = s` and `d = 1`. The function field `K = k(s)` has `dim_K Ω_{K/k} = 1` but `[K : K^p] = p²` (with
   `K^p`-basis `t^i s^j`, `0 ≤ i, j < p`), so `F_*R` has rank `p²` while `ψ` has rank `p`, and `t ∈ F_*R` is not of
   the form `Σ r_α^p s^α`: `ψ` is not surjective although `R` is regular. The perfectness of `k` enters through the
-  rank count of steps 2 and 3, not through finiteness: `R` is still F-finite, as `[k : k^p] = p` is finite.
+  rank count of steps 2 and 3, not through finiteness: `F_*R` is still a finite `R`-module, free on the
+  `t^i s^j`, although `k` is not perfect.
 
-*Needs:* §§0.3, 1.1, 4.1, 5.1, 5.2; DeformationAndDerivedPatchingAlgebra §3.14; SchemeAndStackFoundations §§0.17,
+*Needs:* §§0.3, 1.1, 4.1, 5.1, 5.2; Tau Ceti `TauCeti.powRingHom_finite`; SchemeAndStackFoundations §§0.17,
 0.30, 4.13 (Tau Ceti `LinearMap.bijective_of_depth`, `IsNormalScheme.isDiscreteValuationRing_stalk` and Serre's
 criterion); EnhancedDerivedSheaves §E1.6.
 
@@ -1190,7 +1207,7 @@ The imperfect-field curve `x^p + y² + t = 0` over `𝔽_p(t)`; the cusp in smal
 ### Dependencies
 
 Layers 0–2 and §4.1; SchemeAndStackFoundations §§0.17, 0.30, 4.13; EnhancedDerivedSheaves §E1.6;
-DerivedDeRhamCohomology §0.23; DeformationAndDerivedPatchingAlgebra §3.14.
+DerivedDeRhamCohomology §0.23; Tau Ceti `TauCeti.powRingHom_finite`.
 
 ## Layer 6: the normalised Nash blowup
 
@@ -1319,8 +1336,9 @@ isomorphisms.
 
 ### Dependencies
 
-Layers 2, 4, 5 and §0.6; AlgebraicModuliForArithmeticGeometry §5.4; Mathlib relative normalisation; Tau Ceti
-`Scheme.Hom.isIso_normalizationDesc_iff`.
+Layers 2, 4, 5 and §0.6; AlgebraicModuliForArithmeticGeometry §5.4; SchemeAndStackFoundations §0.30 (Tau Ceti
+`IsNormalScheme`); Mathlib relative normalisation, `isIso_of_isClosedImmersion_of_surjective` and
+`Algebra.IsTranscendentalSeparable`; Tau Ceti `Scheme.Hom.isIso_normalizationDesc_iff`.
 
 ## Layer 7: iteration and the never-resolves principle
 

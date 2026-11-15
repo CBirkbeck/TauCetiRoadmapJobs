@@ -1279,7 +1279,7 @@
      "id": "5.3",
      "kind": "theorem",
      "name": "frobeniusPushforward_free_of_kaehler_surjection",
-     "statement": "For k perfect of characteristic p, X normal, of finite type, pure of dimension d, x closed, R = O_{X,x} and q : Ω_{R/k} → R^d surjective, ψ : ⊕_α R e_α → F_*R ≅ R^{1/p}, e_α ↦ x^α, is an isomorphism; hence Frobenius is flat and R is regular. F_*R_Q is finite at height-one primes because R_Q is F-finite (DeformationAndDerivedPatchingAlgebra §3.14).",
+     "statement": "For k perfect of characteristic p, X normal, of finite type, pure of dimension d, x closed, R = O_{X,x} and q : Ω_{R/k} → R^d surjective, ψ : ⊕_α R e_α → F_*R ≅ R^{1/p}, e_α ↦ x^α, is an isomorphism; hence Frobenius is flat and R is regular. F_*R_Q is finite at height-one primes: R_Q is a localisation A_P of the finitely generated k-algebra A of an affine open, the p-th power map of A is finite (Tau Ceti TauCeti.powRingHom_finite, k perfect), and generators g_i of F_*A generate F_*A_P since a/s = a s^{p−1}/s^p = Σ (c_i/s)^p g_i when a s^{p−1} = Σ c_i^p g_i.",
      "hypotheses": [
       "k perfect of characteristic p",
       "X normal, finite type, pure of dimension d",
@@ -1296,7 +1296,7 @@
       "target:4.1",
       "target:5.1",
       "target:5.2",
-      "roadmap:DeformationAndDerivedPatchingAlgebra §3.14",
+      "tauceti:TauCeti.powRingHom_finite",
       "tauceti:LinearMap.bijective_of_depth",
       "tauceti:TauCeti.AlgebraicGeometry.IsNormalScheme.isDiscreteValuationRing_stalk",
       "tauceti:TauCeti.forall_isDomain_and_isIntegrallyClosed_iff_satisfiesSerreR_one_and_satisfiesSerreS_two",
@@ -1324,7 +1324,7 @@
       {
        "name": "psi_rank_imperfect",
        "kind": "non-example",
-       "statement": "over k = 𝔽_p(t), R = k[s]_{(s)} with q(ds) = 1: [K : K^p] = p² for K = k(s), so ψ (rank p) misses t although R is regular; the rank p^d needs k perfect, while R is still F-finite ([k : k^p] = p)"
+       "statement": "over k = 𝔽_p(t), R = k[s]_{(s)} with q(ds) = 1: [K : K^p] = p² for K = k(s), so ψ (rank p) misses t although R is regular; the rank p^d needs k perfect, while F_*R is still a finite R-module, free on the t^i s^j"
       }
      ]
     },
@@ -1733,13 +1733,6 @@
     "§0.23"
    ],
    "what": "p-bases of fields: a family is a p-basis exactly when its differentials form a basis of Ω¹_{K/𝔽_p}; the forward half is DerivedDeRham.pBasis_kaehler_basis, the converse half (used by §5.2) is stated in the prose of §0.23."
-  },
-  {
-   "roadmap": "DeformationAndDerivedPatchingAlgebra",
-   "sections": [
-    "§3.14"
-   ],
-   "what": "F-finiteness: a ring of characteristic p is F-finite when its absolute Frobenius makes it a finite module over itself; a field k is F-finite iff [k : k^p] < ∞; F-finiteness passes to quotients, localisations and finite-type algebras. Used in §5.3 for the localisations R_Q of R = O_{X,x}, X of finite type over a perfect field."
   },
   {
    "roadmap": "DiophantineApproximationAndTranscendence",
