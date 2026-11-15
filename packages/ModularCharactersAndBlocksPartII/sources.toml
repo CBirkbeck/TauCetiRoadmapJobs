@@ -163,7 +163,7 @@ title = "Blocks of Finite Groups and Their Invariants"
 year = 2014
 venue = "Lecture Notes in Mathematics 2127, Springer"
 locator_scheme = "chapter"
-locator = "Chapter 1: central characters of blocks, Theorem 1.18 (extended first main theorem), Theorem 1.19 (Fong–Reynolds)"
+locator = "Chapter 1: the p-modular system (line 312); Brauer homomorphism and defect groups, Definitions 1.3–1.4 (lines 341–351); covering, Definition 1.16 (line 483); central characters of blocks; Theorem 1.18 (extended first main theorem, line 499); Theorem 1.19 (Fong–Reynolds, line 509)"
 url = "https://benjaminsambale.github.io/pdfs/lnm.pdf"
 fetched_from = "https://benjaminsambale.github.io/pdfs/lnm.pdf"
 fetched_at = "2026-11-05T02:45:27Z"
@@ -172,7 +172,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "the same text the base roadmap ModularCharactersAndBlocks cites under this key"
-cited_for = ["§6.1", "§7.4", "§7.6"]
+cited_for = ["Conventions", "§6.1", "§7.4", "§7.6"]
 
 [[source]]
 id = "spath-vallejo"
