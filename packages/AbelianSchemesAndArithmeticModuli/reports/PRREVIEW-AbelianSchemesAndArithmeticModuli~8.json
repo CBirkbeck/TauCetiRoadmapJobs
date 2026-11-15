@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AbelianSchemesAndArithmeticModuli~8",
+  "head": "4ed5f325e85e9cb71e5f6963c1446071d94b429b",
+  "pr": 849,
+  "folder": "AbelianSchemesAndArithmeticModuli",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 4ed5f32; this round read the pull request's title and description against the head. Two P3 findings, both in the description: it names three roadmaps (PadicMeasuresIwasawaAlgebras, AdicSpacesPartII, RigidAnalyticGeometry) the README does not cite and points to the merge-order block for consumers it does not list; it does not say the pull request adds a new roadmap folder. The folder itself has no finding. Checked: title against the README heading, every sentence of the summary block and prose against the README and Suggested.lean, the imports, the suppliers' status on main and in the merge order; the full gate passes (worker's build=0), lake env lean prints 21 sorry warnings only, depcheck 0 problems; adversarial rows with computed values for the statements the description names; overlap check against JacobianChallengePartII, PELModuli, FaltingsFinitenessAndIsogenyTheorems, JacobianChallenge, ModularCurves, SchemeAndStackFoundations: nothing shared.",
+  "text": "06cd50f95f8e0049",
+  "carried": {
+   "from": "4ed5f325e85e9cb71e5f6963c1446071d94b429b",
+   "head": "4ed5f325e85e9cb71e5f6963c1446071d94b429b",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
