@@ -1,29 +1,30 @@
 # Roadmap: Riemannian manifolds with convex boundary
 
-**Summary.** This roadmap develops the geometry of the boundary of a smooth Riemannian manifold
-with boundary `(M, g)`, modelled on Mathlib's half-space `𝓡∂ (n+1)`, as a Riemannian hypersurface,
-and the convexity theory of that boundary that geometric inverse problems, boundary and lens
-rigidity, and comparison geometry on domains assume. From Mathlib's Levi-Civita connection (which
-is defined at boundary points), Tau Ceti's boundary manifold, induced boundary metric, Hessian,
-regular sublevel domains, normal exponential and sphere bundles, it builds boundary defining
-functions, the scalar second fundamental form `II` of `∂M` with its Weingarten map and mean
-curvature, the conformal change law, the notions of strictly convex, convex and strictly concave
-boundary with their Hessian characterisations and stability, the realisation of every `(M, g)` as
-a regular domain `{ρ ≥ 0}` in a boundaryless Riemannian manifold (GeometricTopology's collar
-extension and, for compact `M`, double, with the Seeley extension of functions and metrics), the behaviour of
-geodesics at the boundary (tangent geodesics leave a strictly convex boundary to second order),
-the signed distance to a hypersurface and boundary normal coordinates `g = dr² + h_r`, the
-convexity functions with strictly concave level sets of Uhlmann–Vasy and Stefanov–Uhlmann–Vasy,
-and, on compact non-trapping manifolds with strictly convex boundary, the unit sphere bundle
-strata `∂±SM`, `∂₀SM`, the exit time `τ` with its regularity at the glancing set, the odd
-extension `τ̃`, the identity `Xσ = −2` for `σ(x, v) = τ(x, v) − τ(x, −v)`, the characterisation of non-trapping by the geodesic
-vector field, the scattering relation `α` and the boundary lens data. Its end theorems are the
-Hessian characterisation of strict convexity, the realisation theorem, the second-order leaving
-of tangent geodesics, the existence of convexity functions near a strictly convex boundary point,
-the regularity of the exit time (Paternain–Salo–Uhlmann, Lemmas 3.2.3–3.2.11), Proposition 3.3.1
-of the same book, and the involution and fixed-point theorem for `α`; the acceptance examples are
-balls, spherical caps, hyperbolic domains, small geodesic balls, half-spaces, ball exteriors and a
-conformal metric that turns the boundary of the unit disc strictly concave.
+**Summary.** This roadmap develops the geometry of the boundary of a smooth Riemannian manifold with
+boundary `(M, g)`, modelled on Mathlib's half-space `𝓡∂ (n+1)`, as a Riemannian hypersurface, and
+the convexity theory of that boundary that geometric inverse problems, boundary and lens rigidity,
+and comparison geometry on domains assume. From Mathlib's Levi-Civita connection (which is defined
+at boundary points), Tau Ceti's boundary manifold, induced boundary metric, Hessian, regular
+sublevel domains, normal exponential and sphere bundles, it builds boundary defining functions, the
+scalar second fundamental form `II` of `∂M` with its Weingarten map and mean curvature, the
+conformal change law, the notions of strictly convex, convex and strictly concave boundary with
+their Hessian characterisations and stability, the realisation of every Hausdorff second-countable
+`(M, g)` as a regular domain `{ρ ≥ 0}` in a boundaryless Riemannian manifold (GeometricTopology's
+collar extension and, for compact `M`, double, with the Seeley extension of functions and metrics),
+the behaviour of geodesics at the boundary (tangent geodesics leave a strictly convex boundary to
+second order), the signed distance to a hypersurface and boundary normal coordinates `g = dr² +
+h_r`, the convexity functions with strictly concave level sets of Uhlmann–Vasy and
+Stefanov–Uhlmann–Vasy, and, on compact non-trapping manifolds with strictly convex boundary, the
+unit sphere bundle strata `∂±SM`, `∂₀SM`, the exit time `τ` with its regularity at the glancing set,
+the odd extension `τ̃`, the identity `Xσ = −2` for `σ(x, v) = τ(x, v) − τ(x, −v)`, the
+characterisation of non-trapping by the geodesic vector field, the scattering relation `α` and the
+boundary lens data. Its end theorems are the Hessian characterisation of strict convexity, the
+realisation theorem, the second-order leaving of tangent geodesics, the existence of convexity
+functions near a strictly convex boundary point, the regularity of the exit time
+(Paternain–Salo–Uhlmann, Lemmas 3.2.3–3.2.11), Proposition 3.3.1 of the same book, and the
+involution and fixed-point theorem for `α`; the acceptance examples are balls, spherical caps,
+hyperbolic domains, small geodesic balls, half-spaces, ball exteriors and a conformal metric that
+turns the boundary of the unit disc strictly concave.
 
 ## Scope and ownership
 
@@ -265,13 +266,14 @@ connection and Tau Ceti's Hessian make sense at boundary points, and delivers `I
 map, mean curvature and the conformal law. Layer 2 turns `II` into the convexity predicates and
 proves their Hessian characterisation and stability. Layer 3 connects the abstract setting with
 domains `{ρ ≥ 0}` of a boundaryless manifold, where the library's geodesics live, and proves that
-every `(M, g)` is such a domain; it also identifies `II` with R5a's `B`. Layer 4 studies geodesics
-of a domain at its boundary: second-order contact, the normal exponential and signed distance,
-boundary normal coordinates, convexity functions and enlargements. Layer 5 builds the unit sphere
-bundle strata, the exit time and the scattering relation on compact non-trapping manifolds with
-strictly convex boundary. Layer 6 computes the acceptance examples. Layers 4–6 are stated for a
-regular domain `M = {ρ ≥ 0}` of a boundaryless `(N, g)`; by the realisation theorem of Layer 3 and
-the intrinsic definitions of `II`, `τ` and `α`, nothing in them depends on the choice of `N`.
+every Hausdorff second-countable `(M, g)` is such a domain; it also identifies `II` with R5a's `B`.
+Layer 4 studies geodesics of a domain at its boundary: second-order contact, the normal exponential
+and signed distance, boundary normal coordinates, convexity functions and enlargements. Layer 5
+builds the unit sphere bundle strata, the exit time and the scattering relation on compact
+non-trapping manifolds with strictly convex boundary. Layer 6 computes the acceptance examples.
+Layers 4–6 are stated for a regular domain `M = {ρ ≥ 0}` of a boundaryless `(N, g)`; by the
+realisation theorem of Layer 3 and the intrinsic definitions of `II`, `τ` and `α`, nothing in them
+depends on the choice of `N`.
 
 ## Layer 1: The boundary as a Riemannian hypersurface
 
@@ -302,11 +304,12 @@ map `∂M → TM`; uniqueness at each point and smoothness are part of that supp
 are not restated. Set `ν_in := −ν_out`. Prove the rest of its Riemannian hypersurface API
 (Paternain–Salo–Uhlmann, lines 2687–2689; Lee, *Introduction to Riemannian Manifolds*, Ch. 8):
 
-- Without second countability: DifferentialGeometry 12.5 assumes `M` second countable. For a
-  Hausdorff `M` that is not, every chart source of `M` is an open submanifold with boundary that
-  is second countable (it is homeomorphic to an open subset of the half-space); the normals that
-  12.5 gives on two chart sources agree on the overlap by the pointwise uniqueness, so `ν_out`
-  exists, with the three laws and smoothness, on every `M` of the Conventions.
+- Without the Hausdorff property or second countability: DifferentialGeometry 12.5 assumes `M`
+  Hausdorff, second countable and σ-compact, with its Borel σ-algebra. For any `M` of the
+  Conventions, every chart source of `M` is an open submanifold with boundary that is Hausdorff,
+  second countable and σ-compact (it is homeomorphic to an open subset of the half-space); the
+  normals that 12.5 gives on two chart sources agree on the overlap by the pointwise uniqueness,
+  so `ν_out` exists, with the three laws and smoothness, on every `M` of the Conventions.
 - Chart formula: `ν_in(q) = grad x⁰(q)/|grad x⁰(q)|` for the normal coordinate `x⁰` of any
   half-space chart at `q`.
 - Sign test: `v ∈ T_qM` is inward iff `⟨v, ν_in(q)⟩ > 0`, tangent iff `= 0`, outward iff `< 0`;
@@ -752,6 +755,10 @@ structure when `∂M = ∅`), then 3.4 for `g̃`.
 - `[0, 1]` with `g = (1 + x)² dx²` is realised in the circle `D[0, 1]` with an extended metric; its
   length `∫₀¹ (1 + x) dx = 3/2` is the same in every realisation.
 - A compact manifold without boundary is its own realisation with `ρ̃ ≡ 1`.
+- The Hausdorff hypothesis cannot be dropped: the half-line `[0, ∞)` with the point `1` doubled
+  is a manifold over `𝓡∂ 1` with the metric `dx²` on both copies, but the two copies of `1` have
+  no disjoint neighbourhoods, so it is homeomorphic to no subspace of a Hausdorff `M̃` and is no
+  regular domain.
 
 *Needs:* 3.1, 3.3, 3.4; GeometricTopology 1.1 and 1.3.
 
@@ -793,10 +800,10 @@ ComplexKahlerGeometry K5a and DifferentialGeometry 12.1; 3.5 uses 3.3–3.4 and 
 
 ## Layer 4: Geodesics at the boundary
 
-Throughout, `(N, g)` is a Hausdorff boundaryless Riemannian manifold as in 3.1 and
-`M = {ρ ≥ 0}` a regular domain; by 3.5 every `(M, g)` is one. In 4.3, 4.4 and 4.6, which use Tau
-Ceti's tube theorems (stated for a second-countable ambient manifold) and partitions of unity, `N`
-is moreover second countable; 4.1, 4.2 and 4.5 are local and do not assume it.
+Throughout, `(N, g)` is a Hausdorff boundaryless Riemannian manifold as in 3.1 and `M = {ρ ≥ 0}` a
+regular domain; by 3.5 every Hausdorff second-countable `(M, g)` is one. In 4.3, 4.4 and 4.6, which
+use Tau Ceti's tube theorems (stated for a second-countable ambient manifold) and partitions of
+unity, `N` is moreover second countable; 4.1, 4.2 and 4.5 are local and do not assume it.
 
 ### 4.1 Geodesics of a regular domain
 
@@ -1055,15 +1062,29 @@ manifold of dimension `2n + 1` with projection `π`; `SM := π⁻¹(M)`, `∂SM 
   and `∂SM` is a closed embedded boundaryless submanifold of `SN`, compact if `M` is.
 - `∂₊SM ∪ ∂₋SM = ∂SM` and `∂₀SM = {μ = 0}` is the set of unit vectors tangent to `∂M`; for `n ≥ 1`,
   `0` is a regular value of `μ` on `∂SM`, so `∂₀SM` is a closed hypersurface of `∂SM`.
-- The geodesic flow of `N` preserves `SN` and is a smooth local flow on it (global if `N` is compact);
-  its generator `X` is a smooth vector field on `SN`, and on the regular domain `SM` it acts on
-  smooth functions by `Xu(z) = d/dt u(φ_t z)|_{t=0}` (Paternain–Salo–Uhlmann, lines 3063–3079).
+- The geodesic flow `φ_t` of `N` preserves `SN` and is a smooth local flow on it (global if `N` is
+  compact); its generator `X` is a smooth vector field on `SN`, acting on `ũ ∈ C^∞(SN)` by
+  `Xũ(z) = d/dt ũ(φ_t z)|_{t=0}` (Paternain–Salo–Uhlmann, lines 3063–3079).
+- `X` restricts to `SM`: for `z ∈ SM`, `X(z) ∈ T_z SN = dj(T_z SM)`, where `j : SM → SN` is the
+  inclusion (the first item of 3.1, which uses no metric, for the regular domain `SM` of `SN`), so
+  `X` is a smooth vector field on the manifold with boundary `SM`, and `Xu := du(X)` for
+  `u ∈ C^∞(SM)`. For `z ∈ SM`, `Xu(z) = d/dt ũ(φ_t z)|_{t=0}` for every smooth `ũ` on an open
+  neighbourhood of `z` in `SN` that agrees with `u` on `SM`, and `Xu(z)` is the one-sided
+  derivative at `0` of `t ↦ u(φ_t z)` whenever `φ_t z ∈ SM` for all `t` in `[0, δ)` or in `(−δ, 0]`
+  for some `δ > 0` (chain rule within the half-space). At a glancing point `φ_t z` can leave `SM`
+  for every `t ≠ 0`, so `Xu` is not the derivative of `u` along the flow inside `SM` there.
 
 **Checks.**
 
 - Closed unit disc: `∂SM` is a torus, `∂₀SM` is two circles (the two unit tangents at each boundary
   point), `∂₊SM` is a closed annulus; at `x = (0, −1)`, `(0, 1) ∈ ∂₊SM` and `(1, 0) ∈ ∂₀SM`.
 - Dimension one, `M = [a, b]`: `∂SM` has four points, `μ = ±1` on them, and `∂₀SM = ∅`.
+- The generator at a glancing point of the closed unit disc in `N = ℝ²`,
+  `z = ((0, −1), (1, 0)) ∈ ∂₀SM`: `φ_t z = ((t, −1), (1, 0))` and `|(t, −1)|² = 1 + t² > 1` for
+  `t ≠ 0`, so `φ_t z ∉ SM` for every `t ≠ 0` and `t ↦ u(φ_t z)` is defined only at `t = 0`. For
+  `u = σ` of 5.4, which 6.1's exit time gives as `−2⟨x, v⟩` on `SM`, the extension
+  `σ̃(x, v) = −2⟨x, v⟩` to `SN` has `σ̃(φ_t z) = −2t`, so `Xσ(z) = −2`, as 5.4 states; a definition
+  of `Xu` as a derivative of `u` along the flow inside `SM` gives no value at this `z`.
 - Stefanov–Uhlmann–Vasy label the vectors pointing outside `∂₊SM` (line 151): they lie in this
   roadmap's `∂₋SM`, and their scattering relation `L : ∂₋SM → ∂₊SM` (line 153), from inward to
   outward vectors, is the restriction of `α` (5.6) to this roadmap's `∂₊SM`.
@@ -1163,7 +1184,10 @@ lines 3110–3113):
 - `σ := τ(x, v) − τ(x, −v)` and `T := τ(x, v) τ(x, −v)` are smooth on the manifold with boundary
   `SM`, `σ = τ̃` on `∂SM`, and `τ = (σ + √(σ² + 4T))/2`, the nonnegative root of
   `τ² − σ τ − T = 0`.
-- `Xσ = −2` on `SM`.
+- `Xσ = −2` on `SM`, with `X` acting on `C^∞(SM)` as in 5.1. Route: for `z ∈ int SM`,
+  `τ(z) > 0` and `σ(φ_t z) = σ(z) − 2t` for `0 ≤ t ≤ τ(z)` by the flow identities of 5.2, so
+  `Xσ(z) = −2`; `Xσ` is continuous on `SM` and `int SM` is dense in `SM`, so `Xσ = −2` at the
+  boundary points too, glancing ones included.
 
 **Checks.**
 

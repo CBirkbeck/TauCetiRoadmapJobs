@@ -2,7 +2,7 @@
  "roadmap": "RiemannianManifoldsWithConvexBoundary",
  "title": "Riemannian manifolds with convex boundary",
  "parent": null,
- "summary": "Boundary geometry of smooth Riemannian manifolds with boundary over Mathlib's half-space model: boundary defining functions, the second fundamental form, Weingarten map and mean curvature, conformal change, strict convexity/convexity/strict concavity with Hessian characterisations and stability, regular domains and the realisation of every (M, g) in a boundaryless manifold (defining functions on GeometricTopology's collar extension and double, Seeley extension of metrics), geodesics at the boundary, signed distance and boundary normal coordinates, convexity functions with strictly concave level sets, unit sphere bundle strata, exit time and its regularity, non-trapping criteria (Paternain–Salo–Uhlmann Prop. 3.3.1), scattering relation and lens data, and acceptance examples (balls, caps, hyperbolic domains, small geodesic balls, half-spaces, exteriors, a conformal disc made strictly concave).",
+ "summary": "Boundary geometry of smooth Riemannian manifolds with boundary over Mathlib's half-space model: boundary defining functions, the second fundamental form, Weingarten map and mean curvature, conformal change, strict convexity/convexity/strict concavity with Hessian characterisations and stability, regular domains and the realisation of every Hausdorff second-countable (M, g) in a boundaryless manifold (defining functions on GeometricTopology's collar extension and double, Seeley extension of metrics), geodesics at the boundary, signed distance and boundary normal coordinates, convexity functions with strictly concave level sets, unit sphere bundle strata, exit time and its regularity, non-trapping criteria (Paternain–Salo–Uhlmann Prop. 3.3.1), scattering relation and lens data, and acceptance examples (balls, caps, hyperbolic domains, small geodesic balls, half-spaces, exteriors, a conformal disc made strictly concave).",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -955,6 +955,11 @@
        "name": "closed_manifold",
        "kind": "degenerate",
        "statement": "A compact manifold without boundary is its own realisation with ρ̃ ≡ 1."
+      },
+      {
+       "name": "doubled_half_line",
+       "kind": "non-example",
+       "statement": "[0, ∞) with the point 1 doubled is a manifold over 𝓡∂ 1 with dx² on both copies but is not Hausdorff, so it is no subspace of a Hausdorff M̃ and no regular domain: the Hausdorff hypothesis cannot be dropped."
       }
      ]
     },
@@ -1400,7 +1405,7 @@
      "id": "5.1",
      "kind": "construction",
      "name": "unitSphereBundleStrata",
-     "statement": "SN = {|v| = 1} ⊆ TN with Tau Ceti's sphere-bundle structure (radius 1), π its projection; SM = π⁻¹(M), ∂SM = π⁻¹(∂M), ∂±SM = {±⟨v, ν_in⟩ ≥ 0}, ∂₀SM = ∂₊SM ∩ ∂₋SM, μ = ⟨v, ν_in⟩ on ∂SM; 0 is a regular value of ρ∘π on SN, SM is a regular domain of SN with boundary ∂SM, ∂SM a closed boundaryless submanifold, ∂₀SM = {μ = 0} the unit vectors tangent to ∂M (a hypersurface of ∂SM for n ≥ 1); the geodesic flow preserves SN with generator X, a smooth vector field acting on C^∞(SM).",
+     "statement": "SN = {|v| = 1} ⊆ TN with Tau Ceti's sphere-bundle structure (radius 1), π its projection; SM = π⁻¹(M), ∂SM = π⁻¹(∂M), ∂±SM = {±⟨v, ν_in⟩ ≥ 0}, ∂₀SM = ∂₊SM ∩ ∂₋SM, μ = ⟨v, ν_in⟩ on ∂SM; 0 is a regular value of ρ∘π on SN, SM is a regular domain of SN with boundary ∂SM, ∂SM a closed boundaryless submanifold, ∂₀SM = {μ = 0} the unit vectors tangent to ∂M (a hypersurface of ∂SM for n ≥ 1); the geodesic flow φ_t preserves SN with generator X, a smooth vector field on SN with Xũ = d/dt ũ(φ_t)|₀ on C^∞(SN); X(z) ∈ T_zSN = dj(T_zSM) for z ∈ SM, so X is a smooth vector field on the manifold with boundary SM acting on C^∞(SM) by Xu := du(X).",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
@@ -1437,7 +1442,7 @@
       {
        "name": "geodesicVectorField_unitSphereBundle",
        "role": "structure",
-       "statement": "The geodesic flow preserves SN; its generator X acts on C^∞(SM) by Xu = d/dt u(φ_t)|₀."
+       "statement": "The geodesic flow φ_t preserves SN and its generator X is a smooth vector field on SN; for z ∈ SM, X(z) ∈ T_zSN = dj(T_zSM) (j : SM → SN the inclusion, 3.1), so X is a smooth vector field on the manifold with boundary SM and Xu := du(X) for u ∈ C^∞(SM); Xu(z) = d/dt ũ(φ_t z)|₀ for every smooth ũ on an open neighbourhood of z in SN agreeing with u on SM, and Xu(z) is the one-sided derivative at 0 of t ↦ u(φ_t z) whenever φ_t z stays in SM for t in [0, δ) or (−δ, 0]."
       }
      ],
      "tests": [
@@ -1450,6 +1455,11 @@
        "name": "interval",
        "kind": "degenerate",
        "statement": "[a, b]: ∂SM has four points, μ = ±1, ∂₀SM = ∅."
+      },
+      {
+       "name": "disc_glancing_generator",
+       "kind": "computation",
+       "statement": "Closed disc in ℝ², z = ((0, −1), (1, 0)) ∈ ∂₀SM: φ_t z = ((t, −1), (1, 0)) ∉ SM for t ≠ 0 since 1 + t² > 1, so u(φ_t z) exists only at t = 0; with σ̃(x, v) = −2⟨x, v⟩ extending σ, σ̃(φ_t z) = −2t and Xσ(z) = −2 (5.4)."
       },
       {
        "name": "suv_labels",
@@ -1744,7 +1754,7 @@
      "id": "5.4.5",
      "kind": "theorem",
      "name": "exitTime_sum_prod_smooth",
-     "statement": "σ := τ(x, v) − τ(x, −v) and T := τ(x, v)τ(x, −v) are smooth on the manifold with boundary SM, σ = τ̃ on ∂SM, and τ = (σ + √(σ² + 4T))/2; Xσ = −2 on SM.",
+     "statement": "σ := τ(x, v) − τ(x, −v) and T := τ(x, v)τ(x, −v) are smooth on the manifold with boundary SM, σ = τ̃ on ∂SM, and τ = (σ + √(σ² + 4T))/2; Xσ = −2 on SM, X acting on C^∞(SM) by du(X) (5.1): on int SM from σ(φ_t z) = σ(z) − 2t (5.2), at boundary points (glancing ones included) by continuity of Xσ and density of int SM.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
@@ -1760,7 +1770,8 @@
       "target:5.3.2",
       "target:5.4.4",
       "target:5.4.1",
-      "target:5.1"
+      "target:5.1",
+      "target:5.2"
      ],
      "api": [],
      "tests": [
