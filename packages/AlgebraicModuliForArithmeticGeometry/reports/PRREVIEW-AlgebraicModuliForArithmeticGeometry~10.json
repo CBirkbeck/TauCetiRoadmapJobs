@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicModuliForArithmeticGeometry~10",
+  "head": "e5f9c4c7b4ed6c861c956af6459053f84e9ad679",
+  "pr": 853,
+  "folder": "AlgebraicModuliForArithmeticGeometry",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since e5f9c4c. The folder is unchanged and stays as accepted; the previous review had no findings. The pull request's title and description were checked sentence by sentence against this head. Five P3 findings, all in the description: it says the README cites no ComplexComparisonPartII section (README lines 144-147, 1138, 1147 and 9190 do); it says ComplexComparisonPartII C5.5 consumes this roadmap (both consume CrystallineCohomology CR.5); it lists scheme fpqc descent and resolution/SNC compactification as built here (README 1159, 112, 289: supplied); it names PadicMeasuresIwasawaAlgebras and RigidAnalyticGeometry as cited (0 occurrences); it says consumers are in the merge-order block (the block lists none). Gate OK with every counter zero; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with five sorry warnings only. Library names in the description were checked at the pins; the Stacks locators of sampled section 2.3 were checked (01YF p.29, 01YI p.31, 01YM pp.32-33), with one new source error (Lemma 30.12.8 fails on Spec k without P(0)). Adversarial rows cover the statements the findings touch; the rows for untouched statements stand from the review of e5f9c4c.",
+  "text": "8926b26a95d61133",
+  "carried": {
+   "from": "e5f9c4c7b4ed6c861c956af6459053f84e9ad679",
+   "head": "e5f9c4c7b4ed6c861c956af6459053f84e9ad679",
+   "findings": 5,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
