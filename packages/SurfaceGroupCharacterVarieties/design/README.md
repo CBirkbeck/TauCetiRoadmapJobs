@@ -1170,10 +1170,12 @@ The representation scheme has the following API.
 Prove that for `k = ℂ` and `G` of finite type, the point topology (`TauCeti.PointTopology.topology`,
 ReductiveGroupsPartII §RG2.0.1) on `Hom(Γ, G)(ℂ) = Hom(Γ, G(ℂ))` equals the classical topology of
 ComplexComparisonPartII §C-1.1 and the topology of pointwise convergence; `Hom(Γ, G(ℂ))` is closed in
-`G(ℂ)^S`, Hausdorff and locally compact. For a real reductive datum `(𝐆, G^ℝ)`, prove that
-`Hom(Γ, 𝐆(ℝ)) = Hom(Γ, 𝐆)(ℝ)` is the fixed set of complex conjugation on `Hom(Γ, 𝐆)(ℂ)`, that
-`Hom(Γ, G^ℝ)` is an open and closed subset of it, and that `G^ℝ` acts continuously by conjugation
-(BCGGO2024 lines 2706–2708).
+`G(ℂ)^S`, Hausdorff and locally compact. For an affine group scheme `𝐆` of finite type over `ℝ` and
+an open subgroup `G^ℝ ⊆ 𝐆(ℝ)` (in particular for every real reductive datum `(𝐆, G^ℝ)` of the
+Conventions), prove that `Hom(Γ, 𝐆(ℝ)) = Hom(Γ, 𝐆)(ℝ)` is the fixed set of complex conjugation on
+`Hom(Γ, 𝐆)(ℂ)`, that `Hom(Γ, G^ℝ)` is an open and closed subset of it, being the finite intersection
+over `s ∈ S` of the preimages of the open and closed subgroup `G^ℝ` under `ρ ↦ ρ(s)`, and that `G^ℝ`
+acts continuously by conjugation (BCGGO2024 lines 2706–2708).
 
 **Checks.**
 
@@ -1181,6 +1183,11 @@ ComplexComparisonPartII §C-1.1 and the topology of pointwise convergence; `Hom(
 - `Hom(ℤ/2, SO(2)) = {±1}` is discrete, while `Hom(ℤ, SO(2)) = SO(2)` is a circle.
 - For `Γ = F₂`, the pointwise topology on `Hom(F₂, G(ℂ))` is the product topology of `G(ℂ)²`; a
   discrete topology on `Hom` would make every orbit closed.
+- The real clause uses neither reductivity nor connectedness: for the unipotent `𝐆 = 𝔾_a`,
+  `G^ℝ = ℝ` and `Γ = ℤ/2`, `Hom(ℤ/2, 𝔾_a) = Spec ℝ[t]/(2t)` is the single point `0`, fixed by
+  conjugation and equal to `Hom(ℤ/2, ℝ) = {0}`; for the disconnected `𝐆 = μ₂` and `Γ = ℤ`,
+  `Hom(ℤ, μ₂)(ℂ) = {±1}` is fixed pointwise by conjugation and equals `Hom(ℤ, μ₂(ℝ))`, and the open
+  subgroup `G^ℝ = {1}` gives the open and closed point `{1}`.
 
 *Needs:* §4.1; ReductiveGroupsPartII §RG2.0.1; ComplexComparisonPartII §C-1.1; Tau Ceti
 `TauCeti.PointTopology.topology`.
@@ -1357,12 +1364,13 @@ Let `G ⊆ GL(V)` be a closed subgroup of a real finite-dimensional inner produc
 `M = {v : ⟨A v, v⟩ = 0 for all A ∈ 𝔭}` of minimal vectors is a closed cone and is exactly the set of
 `v` with `‖v‖ ≤ ‖g v‖` for all `g ∈ G`; (ii) an orbit `G v` is closed if and only if it meets `M`, and
 then `G v ∩ M = K w` for any `w ∈ G v ∩ M`; (iii) if `G v` is not closed there is `α ∈ 𝔭` such that
-`lim_{t→∞} exp(tα) v` exists and lies outside `G v`; (iv) the closure of every orbit contains exactly
-one closed orbit, and it contains the norm minimizers of that closure; (v) for a maximal abelian
-`𝔱 ⊆ 𝔭` and `T = exp(𝔱)`, any two disjoint closed `T`-invariant subsets of `V` are separated by a
-continuous `T`-invariant function `V → [0, 1]` (BohmLafuente2021 Theorem 1.1, lines 77–88; Lemma 5.1,
-line 417; Corollary 5.5, line 445; Lemma 6.3, line 518; Corollary 6.4, line 562; Lemma 6.5, line 568;
-§4 of RichardsonSlodowy1990). The decomposition `G = K T K` used throughout is LieGroups Layer 9,
+`w = lim_{t→∞} exp(tα) v` exists and `G w` is closed, so that `w ∉ G v`; (iv) the closure of every
+orbit contains exactly one closed orbit, and it contains the norm minimizers of that closure; (v) for
+a maximal abelian `𝔱 ⊆ 𝔭` and `T = exp(𝔱)`, any two disjoint closed `T`-invariant subsets of `V` are
+separated by a continuous `T`-invariant function `V → [0, 1]` (BohmLafuente2021 Theorem 1.1, lines
+77–88, with the proof of its clause (ii) at lines 580–583; Lemma 5.1, line 417; Corollary 5.5, line
+445; Lemma 6.2, line 504; Lemma 6.3, line 518; Corollary 6.4, line 562; Lemma 6.5, line 568; §4 of
+RichardsonSlodowy1990). The decomposition `G = K T K` used throughout is LieGroups Layer 9,
 **Restricted roots and KAK**: `Ad(K)𝔱 = 𝔭`, and `G = K exp(𝔱₊) K` for the closed positive chamber
 `𝔱₊ ⊆ 𝔱` (`kakDecomposition`), so `G = K T K` (BohmLafuente2021 Corollary A.2, line 1050).
 
@@ -1374,10 +1382,13 @@ Layer 9 with covering `π = id`: it is closed in `GL(V)`, transpose-stable becau
 `K × 𝔭` with `K = G ∩ O(V)` compact and `𝔭` connected; its Cartan involution `g ↦ (gᵀ)⁻¹` has fixed
 group `K` and `−1`-eigenspace `𝔭` on `𝔤`, which is how Layer 9 gives `G = K T K`. For an abelian `T`
 the orbits are coordinate tori and closed orbits are separated by explicit monomial invariants, which
-gives (v). A non-closed orbit has a closed invariant subset of its closure disjoint from it;
-separating it from the `T`-orbits of `K v` and using
-compactness of `K` produces `α` in (iii). Convexity then shows that a minimal vector cannot have a
-non-closed orbit, which is (ii), and the same separation gives the uniqueness in (iv).
+gives (v). A non-closed orbit `G v` has a closed invariant subset `Y` of its closure disjoint from
+it; separating `Y` from the `T`-orbits of `K v` and using compactness of `K` produces `α ∈ 𝔭` such
+that `lim_{t→∞} exp(tα) v` exists and lies in `Y`, hence outside `G v`. Convexity then shows that a
+minimal vector cannot have a non-closed orbit, which is (ii). For (iii) the same argument is run with
+`Y = G v̄` for a norm minimizer `v̄` of the closure of `G v`: the closure is invariant, so `v̄` is
+minimal in its own orbit and `G v̄` is closed by (ii), and `G v̄` is disjoint from `G v` because `G v`
+is not closed. The same separation gives the uniqueness in (iv).
 
 **Checks.**
 
@@ -1391,6 +1402,12 @@ non-closed orbit, which is (ii), and the same separation gives the uniqueness in
   closed, with `α = −1` giving `lim exp(−t) v = 0` as in (iii), and `{0}` is the unique closed orbit
   in each orbit closure as in (iv). For compact `G` (`𝔭 = 0`) instead `M = V` and every orbit is
   closed.
+- `(ℝ_{>0})²` acting diagonally on `ℝ²` (`K = 1`, `𝔭` the diagonal matrices, `M = {0}`), `v = (1, 1)`:
+  the orbit is the open quadrant, not closed. `α = diag(−1, 0)` gives the limit `(0, 1)`, outside the
+  orbit but with the non-closed orbit `{0} × ℝ_{>0}`; `α = diag(−1, −1)` gives `0`, whose orbit is
+  closed, as (iii) asks; `diag(a, b)` gives a limit exactly when `a, b ≤ 0`, with closed orbit exactly
+  when `a, b < 0`. `{0}` is the only closed orbit in the closed quadrant, as (iv) says. A clause asking
+  only for a limit outside the orbit would accept `diag(−1, 0)`.
 
 *Needs:* Mathlib inner product spaces, `Matrix.orthogonalGroup`, compactness; LieGroups Layer 9,
 **Restricted roots and KAK**.

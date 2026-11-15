@@ -794,10 +794,11 @@
      "id": "4.2",
      "kind": "theorem",
      "name": "RepresentationScheme.topology",
-     "statement": "Over ℂ the point topology on Hom(Γ,G(ℂ)) equals the classical topology and the pointwise topology; Hom(Γ,G(ℂ)) is closed in G(ℂ)^S, Hausdorff, locally compact. For a real reductive datum, Hom(Γ,𝐆(ℝ)) is the fixed set of complex conjugation on Hom(Γ,𝐆)(ℂ), Hom(Γ,G^ℝ) is open and closed in it, and G^ℝ acts continuously.",
+     "statement": "Over ℂ the point topology on Hom(Γ,G(ℂ)) equals the classical topology and the pointwise topology; Hom(Γ,G(ℂ)) is closed in G(ℂ)^S, Hausdorff, locally compact. For an affine group scheme 𝐆 of finite type over ℝ and an open subgroup G^ℝ ⊆ 𝐆(ℝ) (in particular for every real reductive datum of the Conventions), Hom(Γ,𝐆(ℝ)) is the fixed set of complex conjugation on Hom(Γ,𝐆)(ℂ), Hom(Γ,G^ℝ) = ⋂_{s∈S} {ρ : ρ(s) ∈ G^ℝ} is open and closed in it, and G^ℝ acts continuously.",
      "hypotheses": [
       "G of finite type",
-      "Γ finitely generated"
+      "Γ finitely generated, with a finite generating family s : S → Γ",
+      "real clause: 𝐆 an affine group scheme of finite type over ℝ, G^ℝ ⊆ 𝐆(ℝ) an open subgroup"
      ],
      "locator": {
       "source": "BCGGO2024",
@@ -825,6 +826,11 @@
        "name": "free_product_topology",
        "kind": "compatibility",
        "statement": "Hom(F₂, G(ℂ)) has the product topology of G(ℂ)²."
+      },
+      {
+       "name": "nonreductive_disconnected",
+       "kind": "non-example",
+       "statement": "The real clause needs neither reductivity nor connectedness: 𝐆 = 𝔾_a, G^ℝ = ℝ, Γ = ℤ/2: Hom = Spec ℝ[t]/(2t) = {0}, fixed by conjugation, equal to Hom(ℤ/2, ℝ); 𝐆 = μ₂, Γ = ℤ: Hom(ℤ, μ₂)(ℂ) = {±1} fixed pointwise, and G^ℝ = {1} gives the open and closed point {1}."
       }
      ]
     },
@@ -1010,7 +1016,7 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "RealReductiveLinear.kempfNess",
-     "statement": "For G ⊆ GL(V) closed with G = K exp(𝔭): (i) M = {v : ⟨Av,v⟩ = 0 ∀A ∈ 𝔭} is a closed cone equal to the norm minimizers of each orbit; (ii) Gv closed iff Gv ∩ M ≠ ∅, then Gv ∩ M = Kw; (iii) a non-closed orbit has α ∈ 𝔭 with lim exp(tα)v outside Gv; (iv) each orbit closure contains exactly one closed orbit, containing the norm minimizers of the closure; (v) for T = exp(𝔱), 𝔱 ⊆ 𝔭 maximal abelian, disjoint closed T-invariant sets are separated by continuous T-invariant functions. G = KTK is LieGroups Layer 9, Restricted roots and KAK (Ad(K)𝔱 = 𝔭, kakDecomposition): G is a global matrix model of that layer with π = id, closed, transpose-stable ((k exp X)ᵀ = exp(X) k⁻¹) and with finitely many components (image of K × 𝔭, K compact).",
+     "statement": "For G ⊆ GL(V) closed with G = K exp(𝔭): (i) M = {v : ⟨Av,v⟩ = 0 ∀A ∈ 𝔭} is a closed cone equal to the norm minimizers of each orbit; (ii) Gv closed iff Gv ∩ M ≠ ∅, then Gv ∩ M = Kw; (iii) if Gv is not closed there is α ∈ 𝔭 such that w = lim_{t→∞} exp(tα)v exists and Gw is closed, so that w ∉ Gv; (iv) each orbit closure contains exactly one closed orbit, containing the norm minimizers of the closure; (v) for T = exp(𝔱), 𝔱 ⊆ 𝔭 maximal abelian, disjoint closed T-invariant sets are separated by continuous T-invariant functions. G = KTK is LieGroups Layer 9, Restricted roots and KAK (Ad(K)𝔱 = 𝔭, kakDecomposition): G is a global matrix model of that layer with π = id, closed, transpose-stable ((k exp X)ᵀ = exp(X) k⁻¹) and with finitely many components (image of K × 𝔭, K compact).",
      "hypotheses": [
       "V a finite-dimensional real inner product space",
       "G ⊆ GL(V) closed",
@@ -1018,7 +1024,7 @@
      ],
      "locator": {
       "source": "BohmLafuente2021",
-      "where": "Theorem 1.1 (lines 77–88); Lemma 5.1; Corollary 5.5; Lemma 6.3; Corollary 6.4; Lemma 6.5; Corollary A.2"
+      "where": "Theorem 1.1 (lines 77–88; proof of clause (ii), lines 580–583); Lemma 5.1; Corollary 5.5; Lemma 6.2; Lemma 6.3; Corollary 6.4; Lemma 6.5; Corollary A.2"
      },
      "prerequisites": [
       "mathlib:Matrix.orthogonalGroup",
@@ -1040,6 +1046,11 @@
        "name": "scaling",
        "kind": "degenerate",
        "statement": "ℝ_{>0} on ℝ by scaling: M = {0}; nonzero orbits are not closed; compact G: M = V."
+      },
+      {
+       "name": "quadrant_limit",
+       "kind": "non-example",
+       "statement": "(ℝ_{>0})² diagonal on ℝ², v = (1,1): α = diag(−1,0) gives the limit (0,1), outside the orbit with the non-closed orbit {0} × ℝ_{>0}, so it does not witness (iii); α = diag(−1,−1) gives 0, whose orbit is closed; {0} is the unique closed orbit of the closed quadrant."
       }
      ]
     }
