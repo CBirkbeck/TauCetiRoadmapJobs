@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DGFloer~33",
+  "head": "b1d5c485ce1fb9408b540e1dbf719490a15987c1",
+  "pr": 1798,
+  "folder": "DGFloer",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "incremental re-review of 62 changed lines since 594f234. Previous findings: R01-R05 and R07 repaired, R06 partly repaired (the definition added to 5.5 drops the source's orientability hypothesis and its third Check is false for the double cover S^2 -> RP^2; raised as R01, P2, with replacement text). Checked: the 15 AlgebraicTopology citations against section 4.10 at the head of #1807; the restored headings 8.1-8.5 and their Needs lines; 16 locators of bdho-cotangent for the seeded targets 5.5, 8.1, 8.3, 8.5; the description against this head (holds). Gate rerun: every check 0, OK (worker's build=0); depcheck 244 roadmaps, 2210 edges, 0 problems; Suggested.lean elaborates with seven sorry warnings only; no change outside the folder.",
+  "text": "debfe238045644e5"
+ }
+}
