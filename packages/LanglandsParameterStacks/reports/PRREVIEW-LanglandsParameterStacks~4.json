@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LanglandsParameterStacks~4",
+  "head": "032037ca13691c2d748f470fc6400534453b8ed8",
+  "pr": 1202,
+  "folder": "LanglandsParameterStacks",
+  "date": "2026-11-15",
+  "findings": 6,
+  "blocking": 0,
+  "notes": "incremental re-review of 135 changed lines since 1e9f8e8. Checked: the 12 new group paragraphs (55 asserted Needs edges, all present; 1.16 names a non-consumer, R02; 4.6 drops the |pi0 G| hypothesis, R03); the demotion of 29 parts to bold, which the board's target reader no longer sees (83 -> 54 targets, R01; repair tested on a scratch copy, 83 targets); the pull request's title and description against this head (R04-R06); previous R01 (sources.toml) not repaired and not carried because a manifest in the folder fails the stray-files rule. Seeded sample: 1.3, 1.7, 2.2 and 4.2 fall in the changed passages; 9 Fargues-Scholze locators re-read at printed pages; the other sampled targets are unchanged. Gate OK (worker's gate incl. build=0); depcheck 245 roadmaps, 2216 edges, 0 problems; lake env lean on Suggested.lean exit 0 with no warnings (0 declarations). Source independence: changed passages only, independent.",
+  "text": "200ba8d49317ec23",
+  "carried": {
+   "from": "032037ca13691c2d748f470fc6400534453b8ed8",
+   "head": "04801e3e01a735f36f1d655acb3179d8de855512",
+   "findings": 6,
+   "lines": 141,
+   "folders": [
+    "LanglandsParameterStacks"
+   ],
+   "outside": true
+  }
+ }
+}
