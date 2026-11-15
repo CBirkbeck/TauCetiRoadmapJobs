@@ -118,6 +118,7 @@ ArithmeticStatisticsPartIII
 ArithmeticStatisticsPartIV
 PELModuli
 ShimuraData
+BallQuotientsAndComplexHyperbolicLattices
 FarguesFontaineDiamonds
 ModularSymbolsPadicLFunctions
 SmallRamificationAndAbelianVarietyBaseCases
