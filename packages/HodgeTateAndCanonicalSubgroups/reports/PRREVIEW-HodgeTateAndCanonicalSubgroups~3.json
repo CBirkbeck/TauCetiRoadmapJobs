@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HodgeTateAndCanonicalSubgroups~3",
+  "head": "a8b6690150c1881f0cb03dc8651226dd55c99e2a",
+  "pr": 1084,
+  "folder": "HodgeTateAndCanonicalSubgroups",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 42 changed lines since 06ce518. Checked: the five previous findings (R02-R05 repaired, R01 not repaired: 759 backticked roadmap-own Lean names remain, carried as R01 P3); the reworded passages 0.15, 3.2, 3.7, 3.8 against SCH15 and recomputed; 9 changed locators against FAR11, DLLZ-adic, SW20, CON14 (OGU18 paywalled, not read); changed supplier citations resolved at the heads of AutomorphicBundles, ClassicalAdicEtaleCohomology, CohomologyComparisons; title and description against the head (R02 P3: stale AI-assistance sentence). None of the seeded sample falls in a changed passage. Gate passes (all counters 0), depcheck 0 problems, Suggested.lean elaborates with sorry the only warning, one-tactic probe fails.",
+  "text": "f87282ef87ca046a"
+ }
+}
