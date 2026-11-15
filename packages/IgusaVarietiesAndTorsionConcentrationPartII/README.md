@@ -13,7 +13,7 @@ Several variants are kept on purpose. The parent's §§0.4, 5.1, 5.2 and 5.4 sta
 Several objects are stated elsewhere and only cited here. Mathlib provides CM fields (`NumberField.IsCMField`, `NumberField.maximalRealSubfield`), the double-coset Hecke ring `HeckeRing`, arithmetic Frobenius elements (`IsArithFrobAt`), localization and free modules. Tau Ceti provides the ring structure on the Hecke ring (`HeckeCosetModule.instRingHeckeRing`) and the anti-involution formalism (`HeckeAntiInvolution.ofAmbient`, `HeckeAntiInvolution.onHeckeCoset`). The other roadmaps supply the following.
 
 - IgusaVarietiesAndTorsionConcentration: the local PEL data, Mantovan Igusa varieties and their cohomology, the compact fibre theorem, compact minimal-stratum concentration and the splitting of generic local lifts, by the sections listed in the supplier contracts.
-- EndoscopicTransferAndUnitaryTraceComparison: elliptic endoscopic data of unitary similitude groups of every rank, Shin's stable trace formula for Igusa varieties of PEL type, and the stable–twisted identity for every rank and archimedean signature. It also supplies the archimedean Lefschetz functions, the twisted spectral side, the Newton reduction with its trace duality, the Frobenius-twist argument and Badulescu's principal-series nontransfer.
+- EndoscopicTransferAndUnitaryTraceComparison: elliptic endoscopic data of unitary similitude groups of every rank, Shin's stable trace formula for Igusa varieties of PEL type, and the stable–twisted identity for every rank and archimedean signature. It also supplies the archimedean Lefschetz functions, the twisted spectral side, the Newton reduction with its trace duality, the Frobenius-twist argument, the semisimple local Langlands parameter of `GL_m` with its identification with the classical correspondence, and Badulescu's principal-series nontransfer.
 - AutomorphicGaloisRepresentationsPartII: Galois representations of conjugate self-dual automorphic representations, the Caraiani–Scholze discrete normalization of [CS17] Corollary 5.5.5, local–global compatibility, the dual-twist comparison and Galois-type maximal ideals. The local comparison of [CS17] Remark 5.5.6 for the labelled discrete parameters is a gap (below).
 - BunGAndNewtonStrata: `J_b`, products and unramified restriction of scalars in `B(G)`, the ordinary class, and [CS17] Lemma 5.5.8.
 - PELModuli, ShimuraCompactifications and PerfectoidShimuraVarieties: PEL moduli problems, toroidal compactifications, perfectoid Shimura varieties and the Hodge–Tate period map. The perfectoid tower, the period map, and the Shimura-datum and canonical-model statements of PELModuli assume the axiom SV3; they are applied only to data satisfying it (§8.1).
@@ -80,6 +80,7 @@ Library declarations are cited at the pinned Mathlib and Tau Ceti. A `gap:` cont
 - §§6.15, 6.18 and 6.21–6.23, 6.25. These are: no proper cuspidal subsets when `[F⁺:ℚ] ≥ 2`; Kottwitz's stabilization of elliptic terms; the simple twisted geometric and spectral sides; the simple trace formula for division-algebra unitary groups; and the stable–twisted identity. The stable–twisted identity holds for every rank, both parities and `G_ℝ` of arbitrary signature.
 - §§7.5 and 7.10: decent representatives, Newton Levi and `J_b`, and rational Igusa cohomology.
 - §§8.1, 8.11 and 8.21: acceptable functions, the Frobenius-twist separation of virtual characters ([Shin09] Lemma 6.4, author p. 20, Shin09 line 879), and Shin's stable trace formula for Igusa varieties of PEL type (A)/(C) with all mass factors.
+- §§10.20, 10.21, 10.26 and 10.30: the semisimple parameter `σ_ss` of irreducible representations of `GL_m` over a `p`-adic field. It is geometric reciprocity in rank one, and the parameter of every constituent of a normalized induction is the sum of the parameters of the inducing blocks (§10.20). It is a bijection from supercuspidals of `GL_m` onto irreducible `m`-dimensional Weil representations with finite inertia image (§10.21). It is the semisimple Weil part of the trace-defined Weil–Deligne parameter (§10.26), which equals the classical correspondence `rec` (§10.30).
 - §10.32: principal-series nontransfer. The Langlands–Jacquet map to a non-quasi-split inner form kills every irreducible generic principal series.
 - §§14.2–14.3: the normalized Newton reduction `Red^b_n⃗` and its duality with test transfer ([CS17] Lemma 5.4.2).
 - What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:auxiliary-character-finite-avoidance): in the Case 2 setting of §8.1, where every rational prime ramified in `F` lies in `Spl_{F/F⁺}` and in `S`, for every finite set `D` of rational primes disjoint from `S`, a choice of the Hecke character `ϖ` of §6.3 extending the quadratic character of `𝒦/ℚ`, with the archimedean type of §1.8, `Ram_ℚ(ϖ) ⊂ Spl_{F/F⁺}` and `Ram_ℚ(ϖ) ∩ D = ∅`. [Shin11] Lemma 7.1, p. 1722 (Shin11 line 3470), gives `Ram_ℚ(ϖ) ⊂ Spl_{F/F⁺}` without avoidance. The ramification hypothesis cannot be dropped: `ϖ` restricts to the quadratic character of `𝒦/ℚ`, which is nontrivial on the local units at every prime ramified in `𝒦`, so `Ram_ℚ(ϖ)` contains those primes. For `𝒦 = ℚ(i)` and `F⁺ = ℚ(√5)` the prime `2` ramifies in `𝒦`, is inert in `F⁺` and ramifies in `F`, so `2 ∉ Spl_{F/F⁺}` and no such `ϖ` exists. It is needed with `D = ∅` by Layer 9 and by §11.4 in Case 2, where `S′_fin ⊂ Spl_{F/F⁺}` is used, and with `D ≠ ∅` by §§11.5–11.8, to eliminate `Ram(ϖ)` from the bad set of `ρ_𝔪` in Case 2.
@@ -123,7 +124,7 @@ Library declarations are cited at the pinned Mathlib and Tau Ceti. A `gap:` cont
 
 ### From TauCetiRoadmap.SmoothRepresentationsOfLocalGroups
 
-- SR.1.2: level algebras and the comparison with the double-coset ring. SR.2.2: Jacquet modules of principal series. SR.4.1 and SR.4.3: the Satake isomorphism and the explicit `GL_n` spherical generators. SR.5.2 «Modular generic segments», in characteristic zero: a normalized parabolic product of pairwise unlinked segments is irreducible and generic; for characters, no two differing by `|·|^{±1}`, it is the irreducible generic principal series.
+- SR.1.2: level algebras and the comparison with the double-coset ring. SR.2.2: Jacquet modules of principal series. SR.3.1 «Cuspidal support»: every irreducible complex representation is a constituent of the normalized induction of a cuspidal datum, unique up to conjugacy. SR.4.1 and SR.4.3: the Satake isomorphism and the explicit `GL_n` spherical generators. SR.5.2 «Modular generic segments», in characteristic zero: a normalized parabolic product of pairwise unlinked segments is irreducible and generic; for characters, no two differing by `|·|^{±1}`, it is the irreducible generic principal series.
 
 ### From TauCetiRoadmap.ArithmeticGaloisRepresentations
 
@@ -247,7 +248,7 @@ The API:
 - For `S_i` with a single nontrivial `τ`, `B(G_i, μ_i⁻¹) ≅ B(GL_n/F_{𝔭_i}, μ_{i,τ}⁻¹)` through Shapiro and the translation by `p^{c_i}`.
 - If `S_i` has no `τ` with `p_τq_τ ≠ 0` then `B(G_i, μ_i⁻¹)` is a singleton.
 
-*Needs:* PELModuli §M0.27; IgusaVarietiesAndTorsionConcentration §0.11; BunGAndNewtonStrata §§1.13, 1.23, 1.30; this roadmap §8.1.
+*Needs:* PELModuli §M0.27; IgusaVarietiesAndTorsionConcentration §0.11; BunGAndNewtonStrata §§1.13, 1.23, 1.25, 1.26, 1.30; this roadmap §8.1.
 
 **Checks.**
 
@@ -383,7 +384,7 @@ The API:
 - At `p ∉ S` split in `𝒦` with `K_p` hyperspecial, `B(G, μ⁻¹) = {b₀}`, with `b₀` `μ`-ordinary, `d_{b₀} = 0` and `J_{b₀} ≅ G_{ℚ_p}`; the finite-level Igusa varieties of `b₀` are finite sets.
 - There is a `𝕋^{S∪{p}}`-equivariant injection of `H^0(S_{K,Ē}, 𝔽_ℓ)` into a finite direct sum of copies of `H^0(Ig^{b₀}, 𝔽_ℓ)`, one for each central leaf of the special fibre.
 
-*Needs:* PELModuli §§M3.3, M3.4; IgusaVarietiesAndTorsionConcentration §§0.12, 0.24, 1.1, 1.2, 1.3, 1.4, 1.4a, 1.6; IntegralHeckeAndGaloisDeterminants §§2.1–2.2; ArithmeticLocallySymmetricSpaces ALS.4.9; Mathlib `Module.Free`; this roadmap §§8.1, 8.2, 8.3, 8.4.
+*Needs:* PELModuli §§M3.3, M3.4; IgusaVarietiesAndTorsionConcentration §§0.12, 0.24, 1.1, 1.2, 1.3, 1.4, 1.4a, 1.6; BunGAndNewtonStrata §§1.25, 1.26; IntegralHeckeAndGaloisDeterminants §§2.1–2.2; ArithmeticLocallySymmetricSpaces ALS.4.9; Mathlib `Module.Free`; this roadmap §§8.1, 8.2, 8.3, 8.4.
 
 **Checks.**
 
@@ -406,7 +407,7 @@ The other theorems of the layer have these degenerate and boundary cases.
 
 ### Dependencies
 
-PELModuli §§M0.2, M0.6, M0.7, M0.12, M0.13, M0.16, M0.27, M1.9, M1.13, M2.8, M2.10, M2.11, M3.1, M3.3, M3.4, M4.3, M5.5, M6.1; ShimuraCompactifications §§1.4, 7.3, 7.5, 7.18; IgusaVarietiesAndTorsionConcentration §§0.11, 0.12, 0.24, 1.1, 1.2, 1.3, 1.4, 1.4a, 1.6, 1.7, 5.1, 5.2; BunGAndNewtonStrata §§1.13, 1.23, 1.30; SmoothRepresentationsOfLocalGroups SR.1.2, SR.4.1, SR.4.3; IntegralHeckeAndGaloisDeterminants §§2.1–2.2, 3b.1; AutomorphicGaloisRepresentationsPartII AG2.0, AG2.7; ArithmeticGaloisRepresentations §§1.8, 5.1, 5.9; EtaleDualityAndPerverseSheaves §0.5; ArithmeticLocallySymmetricSpaces ALS.4.9, ALS.5a.2, ALS.5a.4; Mathlib `NumberField.IsCMField`, `HeckeRing`, `IsArithFrobAt`, `Module.Free`; Tau Ceti `HeckeCosetModule.instRingHeckeRing`, `HeckeAntiInvolution.ofAmbient`.
+PELModuli §§M0.2, M0.6, M0.7, M0.12, M0.13, M0.16, M0.27, M1.9, M1.13, M2.8, M2.10, M2.11, M3.1, M3.3, M3.4, M4.3, M5.5, M6.1; ShimuraCompactifications §§1.4, 7.3, 7.5, 7.18; IgusaVarietiesAndTorsionConcentration §§0.11, 0.12, 0.24, 1.1, 1.2, 1.3, 1.4, 1.4a, 1.6, 1.7, 5.1, 5.2; BunGAndNewtonStrata §§1.13, 1.23, 1.25, 1.26, 1.30; SmoothRepresentationsOfLocalGroups SR.1.2, SR.4.1, SR.4.3; IntegralHeckeAndGaloisDeterminants §§2.1–2.2, 3b.1; AutomorphicGaloisRepresentationsPartII AG2.0, AG2.7; ArithmeticGaloisRepresentations §§1.8, 5.1, 5.9; EtaleDualityAndPerverseSheaves §0.5; ArithmeticLocallySymmetricSpaces ALS.4.9, ALS.5a.2, ALS.5a.4; Mathlib `NumberField.IsCMField`, `HeckeRing`, `IsArithFrobAt`, `Module.Free`; Tau Ceti `HeckeCosetModule.instRingHeckeRing`, `HeckeAntiInvolution.ofAmbient`.
 
 ## Layer 9: Generic principal series and the μ-ordinary obstruction for the quasi-split datum
 
@@ -478,9 +479,9 @@ The maximal element of the product `B(G, μ⁻¹) = ∏_i B(G_i, μ_i⁻¹)` is 
 
 Fix `ι_p` compatible with `𝔭 | p` and let `r : Gal(F̄/F) → GL_n(ℚ̄_ℓ)` be continuous and semisimple, unramified outside the places above `S′ ∪ {ℓ}`. Assume (i) each `S_i` contains at most one `τ` with `p_τq_τ ≠ 0`. Assume (ii) for each `i` such that `S_i` contains such a `τ`, `r|_{Gal(F̄_{𝔭_i}/F_{𝔭_i})} ≅ χ_{i,1} ⊕ ⋯ ⊕ χ_{i,n}` with `χ_{i,a}χ_{i,b}⁻¹` not the cyclotomic character for all `a ≠ b`. Prove that `BC^{S′}([H_c(I^b_Mant, ℚ̄_ℓ)]^{S′-ur})_r = 0` for every `b ∈ B(G, μ⁻¹)` that is not `μ`-ordinary ([CS17] §5.5, Theorem 5.5.7 and proof, pp. 747–748, CS17 lines 3978–4036).
 
-Suppose the `r`-part is nonzero for a non-`μ`-ordinary `b`. By §9.3(2) there is a `θ`-stable isobaric `Π^n⃗` with nonzero total contribution and `r_{ζ̃_*(Π^n⃗)^{S′},ℓ} ≅ r`, and `π^n⃗_p` is its base-change preimage. Local–global compatibility at `𝔭_i` ([CS17] Remark 5.5.6; AutomorphicGaloisRepresentationsPartII gap:unitary-discrete-local-comparison) and hypothesis (ii) make the transfer `Π⁰_{𝔭_i}` of `π^n⃗_{𝔭_i}` to `GL_n(F_{𝔭_i})` a generic principal series at every nontrivial `i`. Only the semisimplification of the comparison is used: the semisimple parameter of `Π⁰_{𝔭_i}|det|^{(1−n)/2}` is `⊕_a χ_{i,a}` through local class field theory, no two of these characters differ by `|·|^{±1}`, and the representation induced from them is therefore irreducible and generic (SmoothRepresentationsOfLocalGroups SR.5.2 «Modular generic segments», in characteristic zero). By §9.5 some nontrivial `i` has `J_{b_i}` not quasi-split. By §9.2, `Red^b_n⃗(π^n⃗_p) = 0`. Every term of the expansion attached to `Π^n⃗` then vanishes for every `φ_p`, which is a contradiction.
+Suppose the `r`-part is nonzero for a non-`μ`-ordinary `b`. By §9.3(2) there is a `θ`-stable isobaric `Π^n⃗` with nonzero total contribution and `r_{ζ̃_*(Π^n⃗)^{S′},ℓ} ≅ r`, and `π^n⃗_p` is its base-change preimage. Local–global compatibility at `𝔭_i` ([CS17] Remark 5.5.6; AutomorphicGaloisRepresentationsPartII gap:unitary-discrete-local-comparison) and hypothesis (ii) make the transfer `Π⁰_{𝔭_i}` of `π^n⃗_{𝔭_i}` to `GL_n(F_{𝔭_i})` a generic principal series at every nontrivial `i`. Only the semisimplification of the comparison is used, as follows. Put `π = Π⁰_{𝔭_i}|det|^{(1−n)/2}`. Through `ι_ℓ`, forgetting the monodromy of `rec(π)` and semisimplifying gives `⊕_a χ_{i,a}`, and this is the semisimple parameter `σ_ss(π)` (EndoscopicTransferAndUnitaryTraceComparison §10.30, which identifies the classical correspondence with the trace-defined parameter of §10.26 there, whose semisimple Weil part is `σ_ss`). Let `(ρ_1, …, ρ_k)` be the supercuspidal support of `π`, so that `π` is a constituent of the normalized induction `ρ_1 × ⋯ × ρ_k` (SmoothRepresentationsOfLocalGroups SR.3.1 «Cuspidal support»). Then `σ_ss(π) = ⊕_j σ_ss(ρ_j)` (EndoscopicTransferAndUnitaryTraceComparison §10.20, the constituent sum), and `σ_ss` of a supercuspidal of `GL_m(F_{𝔭_i})` is irreducible of dimension `m` (§10.21 there). Since `σ_ss(π)` is a sum of characters, every `ρ_j` is a character `ψ_j` of `F_{𝔭_i}^×`, and after renumbering `ψ_a` corresponds to `χ_{i,a}` under rank-one geometric reciprocity (§10.20 there). That reciprocity matches the cyclotomic character with `|·|`, so by (ii) no two `ψ_a` differ by `|·|^{±1}`. The product `ψ_1 × ⋯ × ψ_n` is therefore irreducible and generic (SmoothRepresentationsOfLocalGroups SR.5.2 «Modular generic segments», in characteristic zero), and `π` equals it. So `Π⁰_{𝔭_i}` is the generic principal series induced from the characters `ψ_a|·|^{(n−1)/2}`. By §9.5 some nontrivial `i` has `J_{b_i}` not quasi-split. By §9.2, `Red^b_n⃗(π^n⃗_p) = 0`. Every term of the expansion attached to `Π^n⃗` then vanishes for every `φ_p`, which is a contradiction.
 
-*Needs:* this roadmap §§8.3, 9.2, 9.3, 9.4, 9.5; AutomorphicGaloisRepresentationsPartII AG2.7 (gap:unitary-discrete-local-comparison); SmoothRepresentationsOfLocalGroups SR.5.2 «Modular generic segments».
+*Needs:* this roadmap §§8.3, 9.2, 9.3, 9.4, 9.5; AutomorphicGaloisRepresentationsPartII AG2.7 (gap:unitary-discrete-local-comparison); EndoscopicTransferAndUnitaryTraceComparison §§10.20, 10.21, 10.26, 10.30; SmoothRepresentationsOfLocalGroups SR.3.1 «Cuspidal support», SR.5.2 «Modular generic segments».
 
 ### Examples
 
@@ -490,7 +491,7 @@ Degenerate cases: with `φ_p = 0` both sides of §9.1 vanish, and so does every 
 
 ### Dependencies
 
-Layer 8; EndoscopicTransferAndUnitaryTraceComparison §§1.8, 5.1, 6.1, 6.6–6.10, 6.15, 6.21, 6.22, 6.25, 7.5, 7.10, 8.1, 8.11, 8.21, 10.32, 14.2, 14.3; EndoscopicTransferAndUnitaryTraceComparison §6.3 (gap:auxiliary-character-finite-avoidance); AutomorphicGaloisRepresentationsPartII AG2.2, AG2.7 (gap:unitary-discrete-local-comparison); AutomorphicLFunctionsAndLocalFactors AL.3; BunGAndNewtonStrata §§1.13, 1.25, 1.26, 1.30, 1.32; SmoothRepresentationsOfLocalGroups SR.2.2, SR.5.2; ArithmeticGaloisRepresentations §§1.8, 5.9; IgusaVarietiesAndTorsionConcentration §1.8.
+Layer 8; EndoscopicTransferAndUnitaryTraceComparison §§1.8, 5.1, 6.1, 6.6–6.10, 6.15, 6.21, 6.22, 6.25, 7.5, 7.10, 8.1, 8.11, 8.21, 10.20, 10.21, 10.26, 10.30, 10.32, 14.2, 14.3; EndoscopicTransferAndUnitaryTraceComparison §6.3 (gap:auxiliary-character-finite-avoidance); AutomorphicGaloisRepresentationsPartII AG2.2, AG2.7 (gap:unitary-discrete-local-comparison); AutomorphicLFunctionsAndLocalFactors AL.3; BunGAndNewtonStrata §§1.13, 1.25, 1.26, 1.30, 1.32; SmoothRepresentationsOfLocalGroups SR.2.2, SR.3.1, SR.5.2; ArithmeticGaloisRepresentations §§1.8, 5.9; IgusaVarietiesAndTorsionConcentration §1.8.
 
 ## Layer 10: Kottwitz's simple Shimura varieties
 
@@ -569,9 +570,9 @@ The API:
 
 With `ι_p` compatible with `𝔭 | p`, let `r : Gal(F̄/F) → GL_n(ℚ̄_ℓ)` be continuous and semisimple. Assume each `S_i` contains at most one `τ` with `p_τq_τ ≠ 0`. Assume also that for each `i` such that `S_i` contains such a `τ`, `r|_{Gal(F̄_{𝔭_i}/F_{𝔭_i})}` is a sum of characters `χ_{i,1} ⊕ ⋯ ⊕ χ_{i,n}` with `χ_{i,a}χ_{i,b}⁻¹` not the cyclotomic character for `a ≠ b`. Prove that `[H_c(I^b_Mant, ℚ̄_ℓ)]_r = 0` for every non-`μ`-ordinary `b ∈ B(G, μ⁻¹)` ([CS17] §5.6, Corollary 5.6.3, p. 750, CS17 lines 4102–4111).
 
-For `π_f` in the `r`-part, local–global compatibility at `𝔭_i` (§10.4; `B` splits above `p`) and the hypothesis make `π_{𝔭_i}` a generic principal series at every nontrivial `i`. For non-`μ`-ordinary `b`, §9.5 gives a nontrivial `i` with `J_{b_i}` not quasi-split. §9.2 for the trivial datum `n⃗ = (n)` then gives `Red^b_n(π_p) = 0`, so every term of the `r`-part vanishes.
+For `π_f` in the `r`-part, local–global compatibility at `𝔭_i` (§10.4; `B` splits above `p`) and the hypothesis make `π_{𝔭_i}` a generic principal series at every nontrivial `i`, by the argument of §9.6 applied to the component `Π⁰_{𝔭_i} ≅ π_{𝔭_i}` of the base change of §10.4 (EndoscopicTransferAndUnitaryTraceComparison §§10.20, 10.21, 10.26, 10.30; SmoothRepresentationsOfLocalGroups SR.3.1 «Cuspidal support», SR.5.2 «Modular generic segments»). For non-`μ`-ordinary `b`, §9.5 gives a nontrivial `i` with `J_{b_i}` not quasi-split. §9.2 for the trivial datum `n⃗ = (n)` then gives `Red^b_n(π_p) = 0`, so every term of the `r`-part vanishes.
 
-*Needs:* this roadmap §§8.3, 9.2, 9.5, 10.4, 10.5.
+*Needs:* this roadmap §§8.3, 9.2, 9.5, 10.4, 10.5; EndoscopicTransferAndUnitaryTraceComparison §§10.20, 10.21, 10.26, 10.30; SmoothRepresentationsOfLocalGroups SR.3.1 «Cuspidal support», SR.5.2 «Modular generic segments».
 
 ### Examples
 
@@ -583,7 +584,7 @@ With `φ_p = 0` both sides of §10.1 vanish. One-dimensional automorphic represe
 
 ### Dependencies
 
-Layer 8; §§9.2 and 9.5; EndoscopicTransferAndUnitaryTraceComparison §§1.8, 1.16, 6.7, 6.8, 6.10, 6.18, 6.23, 6.25, 7.10, 8.1, 8.11, 8.21, 14.2, 14.3; AutomorphicSpectralTheory §§4.7, 5.10, 5.12, 5.14, 6.17, 6.19, 6.20; ArithmeticLocallySymmetricSpaces ALS.0.4, ALS.5b.4; ComplexComparisonPartII §§C6.3–C6.4; PELModuli §M3.4; AutomorphicGaloisRepresentationsPartII AG2.2 (gap:division-algebra-unitary-base-change), AG2.3, AG2.5; ArithmeticGaloisRepresentations §§1.8, 5.9; IgusaVarietiesAndTorsionConcentration §1.8.
+Layer 8; §§9.2 and 9.5; EndoscopicTransferAndUnitaryTraceComparison §§1.8, 1.16, 6.7, 6.8, 6.10, 6.18, 6.23, 6.25, 7.10, 8.1, 8.11, 8.21, 10.20, 10.21, 10.26, 10.30, 14.2, 14.3; SmoothRepresentationsOfLocalGroups SR.3.1, SR.5.2; AutomorphicSpectralTheory §§4.7, 5.10, 5.12, 5.14, 6.17, 6.19, 6.20; ArithmeticLocallySymmetricSpaces ALS.0.4, ALS.5b.4; ComplexComparisonPartII §§C6.3–C6.4; PELModuli §M3.4; AutomorphicGaloisRepresentationsPartII AG2.2 (gap:division-algebra-unitary-base-change), AG2.3, AG2.5; ArithmeticGaloisRepresentations §§1.8, 5.9; IgusaVarietiesAndTorsionConcentration §1.8.
 
 ## Layer 11: Torsion concentration for compact unitary Shimura varieties
 
@@ -661,7 +662,7 @@ The route runs as follows.
 3. At each nontrivial `𝔭_i`, `ρ_{𝔪^∨}` is decomposed generic. By the splitting of generic lifts over `F_{𝔭_i}` (IgusaVarietiesAndTorsionConcentration §5.5; [CS17] Lemma 6.2.2), `r|_{Gal(F̄_{𝔭_i}/F_{𝔭_i})}` is a sum of characters with non-cyclotomic ratios. §9.6 (Case 2) or §10.6 (Case 1) forces `b` to be `μ`-ordinary, so `d_b = d`.
 4. Since `d_{b′} ≤ d` with equality only for the `μ`-ordinary class, minimality forces every `b′` with `RΓ(Ig^{b′})_{𝔪′} ≠ 0` to be `μ`-ordinary. Its cohomology is concentrated in degree `d` by §11.4(1). So `H^i(Ig^{b′}, 𝔽_ℓ)_{𝔪′} = 0` for `i < d` and all `b′`, and §11.3(b) concludes.
 
-*Needs:* this roadmap §§8.5, 8.6, 8.7, 8.9, 9.6, 10.6, 11.1–11.5; IgusaVarietiesAndTorsionConcentration §§4.5, 5.5.
+*Needs:* this roadmap §§8.5, 8.6, 8.7, 8.9, 9.6, 10.6, 11.1–11.5; IgusaVarietiesAndTorsionConcentration §§4.5, 5.5; ArithmeticGaloisRepresentations §§1.8, 5.9; BunGAndNewtonStrata §§1.25, 1.26.
 
 ### 11.7 Caraiani–Scholze's theorem for compact unitary Shimura varieties
 
@@ -708,7 +709,7 @@ Further boundary cases for the layer:
 
 ### Dependencies
 
-Layers 8–10; IgusaVarietiesAndTorsionConcentration §§1.4, 1.6, 1.7, 1.8, 3.14, 3.17, 4.5, 5.5; PerfectoidShimuraVarieties §§2.2, 3.5; DiamondEtaleCohomology C0.1, C0.18; ClassicalAdicEtaleCohomology §§1.3, 1.4, 8.2; SchemeAndStackFoundations §§2.2, 2.15; ArithmeticGaloisDuality R02.2.1; AlgebraicModularFormsAndSerreWeights R15.5, §5.10; ArithmeticGaloisRepresentations §§1.8, 5.9; IntegralHeckeAndGaloisDeterminants §§1.2, 2.1–2.2; ArithmeticLocallySymmetricSpaces ALS.4.9; AutomorphicGaloisRepresentationsPartII AG2.2, AG2.7; EndoscopicTransferAndUnitaryTraceComparison §6.3 (gap:auxiliary-character-finite-avoidance); EtaleDualityAndPerverseSheaves §0.5; PELModuli §§M0.12, M3.4; Mathlib `Localization.AtPrime`, `IsLocalization`, `Module.Free`.
+Layers 8–10; IgusaVarietiesAndTorsionConcentration §§1.4, 1.6, 1.7, 1.8, 3.14, 3.17, 4.5, 5.5; PerfectoidShimuraVarieties §§2.2, 3.5; DiamondEtaleCohomology C0.1, C0.18; ClassicalAdicEtaleCohomology §§1.3, 1.4, 8.2; SchemeAndStackFoundations §§2.2, 2.15; ArithmeticGaloisDuality R02.2.1; AlgebraicModularFormsAndSerreWeights R15.5, §5.10; ArithmeticGaloisRepresentations §§1.8, 5.9; IntegralHeckeAndGaloisDeterminants §§1.2, 2.1–2.2; ArithmeticLocallySymmetricSpaces ALS.4.9; AutomorphicGaloisRepresentationsPartII AG2.2, AG2.7; EndoscopicTransferAndUnitaryTraceComparison §6.3 (gap:auxiliary-character-finite-avoidance); BunGAndNewtonStrata §§1.25, 1.26; EtaleDualityAndPerverseSheaves §0.5; PELModuli §§M0.12, M3.4; Mathlib `Localization.AtPrime`, `IsLocalization`, `Module.Free`.
 
 ## Downstream consumers
 
