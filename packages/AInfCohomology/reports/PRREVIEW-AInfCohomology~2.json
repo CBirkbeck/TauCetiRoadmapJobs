@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AInfCohomology~2",
+  "head": "52bf0f632c231756eea2e1c1c21d7364c3e007e4",
+  "pr": 1044,
+  "folder": "AInfCohomology",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 32 changed lines since b47987b. Previous findings: R02 (CR.4.1 titles), R03 (DerivedDeRhamCohomology PD.6-PD.7), R04 (CAEC 4.7 Bloch-Kato-Hyodo step) and R05 (frobeniusRingHom; the old name FractionRing.frobenius also exists at Isocrystal.lean:79, so R05's witness was wrong) are repaired; R01 (680 backticked own names, 135 Check labels, none declared in Suggested.lean; the readme-ids-missing scanner does not flag them) is not repaired and is carried as P3. The two reworded proof sketches (CK Theorem 4.2; CK 6.5 map) were checked against ck lines 984-996, 1024-1045 and 2807-2903, Stacks 0944 and 07GM, and GR arXiv v3 Claim 7.3.14; longest shared run is 7 words. The seeded sample falling in or depending on changed text was checked: Derived completeness and sheaf property of AOmega (CK Remark 4.5, Cor 4.6) and Cycles of principal decalage / Boundaries after division (BMS1 Lemma 6.4 proof p.50). PR text, three P3 findings: the description says theta_r is constructed here (it is supplied by PerfectoidQuotients 0.2); the Validation sentence claims zero README identifiers absent from Lean and zero Check labels; the AI-assistance sentence predates the red-team passes and the Claude commits. Gate: my run passes every scanner and depcheck (245 roadmaps, 2218 edges, 0 problems); the worker's gate with the targeted build passes; lake env lean gives only six sorry warnings; nothing changed outside the folder.",
+  "text": "72a20e5dae0ef23f"
+ }
+}
