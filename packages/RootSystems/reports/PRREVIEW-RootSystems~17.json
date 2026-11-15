@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RootSystems~17",
+  "head": "6b701114610cfce3574929585057a33d22fbd81b",
+  "pr": 2212,
+  "folder": "RepresentationTheory/RootSystems",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 46cd680. Checked the pull request's title and description sentence by sentence against the head and the folder's change against main (three sections and nine declarations added, none removed, suppliers unchanged): no contradiction, nothing unstated. Adversarial rows with computed values for the four statements the description cites (finiteness criterion, type D convention, I m validity, noncrystallographic types). Six cited library declarations opened at the unchanged pins. Gate OK with every counter 0; depcheck 0 problems; Suggested.lean elaborates with 15 sorry warnings only. No change of this pull request outside the folder (three-dot diff); no overlap with open pull requests. Source independence: changed passages only, none changed.",
+  "text": "74e86e44441e8cbc"
+ }
+}
