@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SchubertGeometry~19",
+  "head": "a9b73a3e1c3f17842893e8e37f35248be8241bc1",
+  "pr": 1224,
+  "folder": "SchubertGeometry",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since a9b73a3; this round checked the pull request's title and description against the head and the base-to-head change. The six previous findings (all about the description) are repaired. Two P3 omissions remain in the description: the added suppliers ComplexKahlerGeometry K3-K4 and RealAnalyticGeometry R3.2 (R01), and the removed FormalConnectionsOpers F2.4 smooth-carrier comparison with the transfer of the S9.5 type-A carrier comparison to TensorProductCombinatorics 8.3 (R02). No seeded sample target falls in a changed passage. Gate: every check 0, OK; Suggested.lean elaborates with exactly 5 sorry warnings; depcheck 244 roadmaps, 2210 edges, 0 problems; adversarial table has computed rows for the statements the description cites (S3.6 stage dimensions, word ii, S4.4 adjoint comparison, orbit count).",
+  "text": "20d22a35f8440ddc",
+  "carried": {
+   "from": "a9b73a3e1c3f17842893e8e37f35248be8241bc1",
+   "head": "a9b73a3e1c3f17842893e8e37f35248be8241bc1",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
