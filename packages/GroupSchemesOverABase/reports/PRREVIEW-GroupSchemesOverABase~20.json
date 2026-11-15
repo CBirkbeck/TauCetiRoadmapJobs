@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GroupSchemesOverABase~20",
+  "head": "4a23b2387124d2df1918861da01581d653c5530e",
+  "pr": 1522,
+  "folder": "GroupSchemesOverABase",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 2e1e5e7: the head merges main and the folder is unchanged. Previous R01 and R02 (description) repaired; previous R03 (README lines 1431-1433 and 1447-1448 cite a GS7 identifier that FlagVarieties on main does not have) not repaired, raised again as R01 (P3). Gate rerun: every counter 0, OK; dependency check 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean exit 0 with 25 sorry warnings only. Description read against the head and main 8ad4192; 5 cross-roadmap citations resolved again; overlaps: none. Seeded sample not reread (no changed passage).",
+  "text": "d13b71c7972f4319"
+ }
+}
