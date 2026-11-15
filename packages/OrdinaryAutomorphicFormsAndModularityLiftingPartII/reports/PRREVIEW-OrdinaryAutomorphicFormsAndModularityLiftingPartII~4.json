@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-OrdinaryAutomorphicFormsAndModularityLiftingPartII~4",
+  "head": "9210046742721ed29366788b6f63ee42cfeec9bc",
+  "pr": 2268,
+  "folder": "OrdinaryAutomorphicFormsAndModularityLiftingPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 9210046; this round read the pull request's title and description against the head. One P3 finding, in the description only: the summary block says 'a weight-two seed', while README 5.4 (and BCGP25 Hypothesis 6.3.1 with the note after it) allows a regular algebraic seed and puts the weight-2 condition on the residual representation above p. Every other sentence of the title and description agrees with the head (seven headlines named and none stated, 12 suppliers, 5.2 ownership, 6.3 needs, the build warning). Gate: every check 0, OK; targeted build exit 0; lake env lean exit 0 with no output; depcheck 236 roadmaps, 2241 edges, 0 problems; no file changed outside the folder. No seeded target lies in a changed passage; folder statements stand as reviewed at 9210046.",
+  "text": "80d4304146ede20b",
+  "carried": {
+   "from": "9210046742721ed29366788b6f63ee42cfeec9bc",
+   "head": "1c1996f0a1a27be14e0a833dc43b51396d7f5456",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "OrdinaryAutomorphicFormsAndModularityLiftingPartII"
+   ]
+  }
+ }
+}
