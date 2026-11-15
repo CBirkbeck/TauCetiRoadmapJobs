@@ -162,7 +162,9 @@ of Layer 3 are proved by explicit computations recorded in their Checks.
   residue field `k`; `CNL_O` is the category of complete Noetherian local `O`-algebras with residue
   field `k`. In Layer 7, which uses no coefficient ring, `O` is, as in the parent, the origin of `E` and of
   its quadratic twists `B_t`. In Layer 5 and in the supplier obligations, `K`, `K_v` and `K^P` are
-  levels (compact open subgroups), as in the sources; the number field there is `F`.
+  levels (compact open subgroups), as in the sources; the number field there is `F`. In the supplier
+  obligations `λ` is the dominant weight of the coefficients, as in ACC23; in §§7.1–7.2 `λ` is the unit
+  power series of the Tate parameter.
 
 ## Exact supplier contracts
 
@@ -303,18 +305,19 @@ What AutomorphicGaloisRepresentationsPartII must provide (gap:acc-torsion-inerti
 statement in its Layer AG2.5 of ACC Theorem 3.1.1, the torsion local–global compatibility for
 `GL_m` at Iwahori places away from `p`. The setting is that of ACC23 §3.1 (lines 2309–2345): a CM
 field `F` containing an imaginary quadratic field, with every `p`-adic place of `F⁺` split in `F`; a
-good level `K`; a finite conjugation-stable set `S` of finite places containing those above `p`,
-with the conditions there on residue characteristics outside `S`; a subset `R ⊆ S` of places prime
-to `p`, each with residue characteristic split in an imaginary quadratic subfield, such that
-`Iw_{v,1} ⊆ K_v ⊆ Iw_v` for `v ∈ R` and `K_v = GL_m(O_{F_v})` for `v ∈ R^c ∖ R`; and a non-Eisenstein
-maximal ideal `𝔪`. The statement gives an integer `N` depending only on `m` and `[F:ℚ]`, an ideal
-`I_R` with `I_R^N = 0` in the localized Hecke algebra generated together with the torus operators
-`t_{v,i}(σ)` at `R`, and a continuous representation of `G_{F, S ∖ (R^c ∖ R)}` over the quotient
-whose Frobenius characteristic polynomials outside `S ∖ (R^c ∖ R)` are the Hecke polynomials `P_v`
-and whose characteristic polynomial at every `σ ∈ W_{F_v}`, `v ∈ R`, is the torus polynomial
-`P_{v,σ}` (ACC23, Theorem 3.1.1, lines 2346–2355). Theorem 5.3 needs it with `m = 2`.
-PotentialAutomorphyInfrastructure and CrystallineLocalGlobalCompatibilityCM §9.7 (and §9.9 through it)
-consume the same statement as AG2.5, whose text states characteristic-zero comparisons only.
+good level `K`; a dominant weight `λ` (Theorem 5.3 uses `λ = 0`); a finite conjugation-stable set `S`
+of finite places containing those above `p`, with the conditions there on residue characteristics
+outside `S`; a subset `R ⊆ S` of places prime to `p`, each with residue characteristic split in an
+imaginary quadratic subfield, such that `Iw_{v,1} ⊆ K_v ⊆ Iw_v` for `v ∈ R` and `K_v = GL_m(O_{F_v})`
+for `v ∈ R^c ∖ R`; and a non-Eisenstein maximal ideal `𝔪`. The statement gives an integer `N`
+depending only on `m` and `[F:ℚ]`, an ideal `I_R` with `I_R^N = 0` in the localized Hecke algebra of
+level `K` and weight `λ`, generated together with the torus operators `t_{v,i}(σ)` at `R`, and a
+continuous representation of `G_{F, S ∖ (R^c ∖ R)}` over the quotient whose Frobenius characteristic
+polynomials outside `S ∖ (R^c ∖ R)` are the Hecke polynomials `P_v` and whose characteristic
+polynomial at every `σ ∈ W_{F_v}`, `v ∈ R`, is the torus polynomial `P_{v,σ}` (ACC23, Theorem 3.1.1,
+lines 2346–2355). Theorem 5.3 needs it with `m = 2`. PotentialAutomorphyInfrastructure and
+CrystallineLocalGlobalCompatibilityCM §9.7 (and §9.9 through it) consume the same statement as AG2.5,
+whose text states characteristic-zero comparisons only.
 
 ## How to read the build
 
@@ -1182,14 +1185,15 @@ of `K` above `q` there is a nonempty open `Ω_v' ⊂ U(K_v')` on which `A_t` has
 For (a): let `K₁ ⊇ K` be the field of definition of the data of §7.1(b), over which §7.1(c)–(d) hold;
 the model of §7.1(c) and its coordinate `s` are defined over `O_{K₁}[1/n₀]` for some integer `n₀ ≥ 1`.
 Let `Σ₀` contain the prime factors of `n₀`, the residue characteristics of the places of bad
-reduction of `E`, and the finitely many primes modulo which the reduced family is no longer a cycle
-of type `I₃` with nodes of thicknesses two and one before resolution, or the coefficient of `s³` in
-`1/j(A_t)` is not a unit. For `q` as in the statement and `v | q`, `K₁` embeds in `K_v` and
-§7.1(c)–(d) hold over `O_{K_v}`, with `q_A = s³λ(s)` and `λ(0) ∈ O_{K_v}^×`. Fix an integer `m_v > 0`
-with `5 ∤ m_v`, large enough that `λ` converges to a unit where `v(s) ≥ m_v`, and let `Ω_v` be the set
-of `t ∈ U(K_v)` near the degeneration point with `v(s) = m_v`: it is open, nonempty because `s` is a
-unit multiple of a local coordinate of the `t`-line there (§7.1(d)), and on it `A_t` is split
-multiplicative, the branches being defined over `K_v`, with `v(Δ_min(A_t)) = v(q_A) = 3m_v`. For (b):
+reduction of `E`, and the finitely many primes modulo which the reduced family is no longer two
+rational curves meeting in two nodes of thicknesses two and one (type `I₃` once the thickness-two node
+is resolved), or the coefficient of `s³` in `1/j(A_t)` is not a unit. For `q` as in the statement and
+`v | q`, `K₁` embeds in `K_v` and §7.1(c)–(d) hold over `O_{K_v}`, with `q_A = s³λ(s)` and
+`λ(0) ∈ O_{K_v}^×`. Fix an integer `m_v > 0` with `5 ∤ m_v`, large enough that `λ` converges to a
+unit where `v(s) ≥ m_v`, and let `Ω_v` be the set of `t ∈ U(K_v)` near the degeneration point with
+`v(s) = m_v`: it is open, nonempty because `s` is a unit multiple of a local coordinate of the `t`-line
+there (§7.1(d)), and on it `A_t` is split multiplicative, the branches being defined over `K_v`, with
+`v(Δ_min(A_t)) = v(q_A) = 3m_v`. For (b):
 near the compact-type boundary point `O` the Jacobian family is an abelian scheme with fiber `E³` (the
 parent's §2.2); by the parent's §6.1 the `d`-torsion is locally constant for an integer `d ≥ 3` prime
 to `q` (`d = 3` will do, as `q ≥ 7`), hence unramified, so nearby fibers are semistable
@@ -1378,14 +1382,15 @@ versions below, with printed pages where given.
 
 - **LeHung26.** Bao V. Le Hung, *A geometric prime switch for elliptic curves over totally real and CM
   fields* (discussion draft), Hexagon preprint 2610.00156v1, 7 October 2026, CC BY 4.0. Theorem 1.1,
-  p. 2 (line 86); Remark 1.3.1 (line 125); §4.1–§4.6, pp. 7–9 (lines 272–355); Remark 4.2 (line 352);
-  Lemma 5.1, p. 9 (line 357). Unrefereed.
+  p. 2 (line 86); Remark 1.3.1, p. 3 (line 125); §4.1–§4.6, pp. 7–9 (lines 272–355); Remark 4.2, p. 9
+  (line 352); §5, p. 9: Lemma 5.1 (line 357) and the CM case (lines 364–366). Unrefereed.
 - **CaptainSude26.** CaptainSude (pseudonymous), *Every elliptic curve over a CM number field is
   modular*, GitHub release v1.0.0, 7 October 2026, 15 pages. Theorem 1.1, p. 1 (line 26);
   Proposition 2.3, p. 3 (line 120); Lemmas 3.1–3.4, pp. 4–6 (lines 177–263); §4 setting, p. 6
   (lines 264–289); Lemma 4.1, p. 6 (line 291); Theorem 4.2, p. 9 (line 410); Lemma 5.1, p. 10
-  (line 503); Proposition 5.2, p. 11 (line 538); Corollary 5.3, p. 12 (line 604); Proposition 6.2, p. 13
-  (line 634). Unrefereed; no licence is stated, so it is cited by locator only.
+  (line 503) and the paragraph after it, p. 11 (lines 533–536); Proposition 5.2, p. 11 (line 538);
+  Corollary 5.3, p. 12 (line 604); Proposition 6.2, p. 13 (line 634); proof of Theorem 1.1, p. 14
+  (lines 671–683). Unrefereed; no licence is stated, so it is cited by locator only.
 - **OpenAI26.** OpenAI, *Modularity of elliptic curves over imaginary quadratic fields*, 4 October 2026,
   revision `adc7f1241b42e322a6451854ab7e4b4c146bf78a`. Proposition 9.3 and Lemma 9.4, pp. 26–27; §9.4,
   pp. 27–28. The parent's source.
