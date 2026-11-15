@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicGaloisRepresentationsPartII~3",
+  "head": "902b7068bc38090c011e756fbb5f3763bc6e1f02",
+  "pr": 1006,
+  "folder": "AutomorphicGaloisRepresentationsPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 8 changed lines since 8ea8284. Previous R01 (AHTW page convention and three page ranges) repaired, each range checked at the AHTW arXiv v1 page markers (section 3.3 and Theorem 3.3.6 on PDF pp.33-35, Theorem 5.4.13 on pp.98-99, folio shift from p.25). Seeded sample: the AHTW range of 'P-ordinary arithmetic block comparison' falls in the diff and is right; 'Bounded boundary comparison and degree shifting' is untouched, its pp.74-78 re-read. Title and description read sentence by sentence against the head: nothing contradicted, nothing removed or renumbered. Gate rerun: all checks 0, OK (worker's build=0); depcheck 245 roadmaps, 2266 edges, 0 problems; Suggested.lean elaborates with sorry as the only warning. Adversarial row computed for Theorem 5.4.13 weights at n=1 and n=2. Two one-line remarks on untouched text, no change requested.",
+  "text": "91b62b2c8eda923b"
+ }
+}
