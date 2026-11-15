@@ -170,7 +170,7 @@ Q₃(x₁,…,x₆) = Cyc₆( D₂₁(s(x₁,x₂,x₃,x₄), s(x₄,x₅,x₆,x
               − 4·S₃(Z(x₁,…,x₆))
 ```
 
-for every six distinct points of `ℙ¹(F)`, and by every specialization of these relations along a one-parameter family of six-point configurations over `F(t)`, iterated: specializations of specialized families are included (Goncharov–Rudenko [GR], §1.2, item 1, Definition 1.10 and (28), p. 11; (29) and (19), p. 12). The relation submodule is the smallest family of submodules, indexed by all infinite fields, that contains the generic relations and is closed under `Sp` from `K(t)` to `K` for every field `K` in the family. *Needs:* §§1.1–1.2; Mathlib `Submodule.span`, `Submodule.Quotient.mk`.
+for every six distinct points of `ℙ¹(F)`, and by every specialization of these relations along a one-parameter family of six-point configurations over `F(t)`, iterated: specializations of specialized families are included (Goncharov–Rudenko [GR], §1.2, item 1, Definition 1.10 and (28), p. 11; (29), p. 12, GR line 494; the further specialization of (29) to the relations (19) of p. 9, GR line 336, is stated on p. 12, GR line 504). The relation submodule is the smallest family of submodules, indexed by all infinite fields, that contains the generic relations and is closed under `Sp` from `K(t)` to `K` for every field `K` in the family. *Needs:* §§1.1–1.2; Mathlib `Submodule.span`, `Submodule.Quotient.mk`.
 
 The quotient has the following API.
 
@@ -445,6 +445,12 @@ The coalgebra has the following API.
 ### 3.5 Special derivations
 
 For the punctured line with tangential base point at `a`, let `𝔤_S` be the free graded Lie algebra on the `X_s` modulo `Σ_s X_s = 0`, built from Mathlib `FreeLieAlgebra`. A special derivation is a `LieDerivation` `D` with `D(X_a) = 0` and `D(X_s) = [X_s, u_s]` for `s ≠ a`, where `X_a = −Σ_{s≠a} X_s`. Prove that the graded dual of `CLie_S` in positive weight is canonically isomorphic to the positive graded Lie algebra of special derivations, with the commutator of derivations dual to the cut cobracket (Goncharov–Rudenko [GR], §2, item 2, Theorem 2.1 with (62)–(63), pp. 26–27; Goncharov [G08], §8.2, Lemma 8.1 and Propositions 8.2–8.4, pp. 84–85). The source statements identify the shuffle quotient of all cyclic words without removing pure words; in length two that map has the kernel spanned by `⟨X_s,X_s⟩`, whose derivation is `X_s ↦ [X_s, 2X_s] = 0`, so the identification holds on the reduced coalgebra, in every weight at least two unchanged. *Needs:* §3.4; Mathlib `FreeLieAlgebra`, `LieDerivation`.
+
+The special derivations have the following API.
+
+- `𝔤_S` is free on `X_{s₁},…,X_{s_n}` and graded by bracket length. A special derivation raising the degree by `m` is given by elements `u_s` of degree `m`, `s ≠ a`, with `Σ_{s≠a}[X_s,u_s] = 0`, which is the condition `D(X_a) = 0`; since the centralizer of `X_s` in the free Lie algebra is `ℚX_s`, the derivation determines each `u_s` up to a multiple of `X_s`, and uniquely when `m ≥ 2`.
+- If `D, D′` are special with elements `u_s, u′_s`, the commutator `[D,D′]` is special with elements `[u_s,u′_s] + D(u′_s) − D′(u_s)`, by the Jacobi identity; so the special derivations form a positively graded Lie subalgebra of the derivations of `𝔤_S`.
+- In every weight `m ≥ 1` the dual of the weight-`m` part of `CLie_S` is the space of special derivations raising the degree by `m`, and the commutator is dual to the cut cobracket.
 
 **Checks.**
 
@@ -833,6 +839,13 @@ The diagram has the following API.
 
 On the diagram of §5.3 the forms of the ordinary real period `R` of §§3.7 and 5.1, composed on each stratum `Y` with the realization in families `r_Y` of §3.13 of the function field `k(Y) = ℂ(Y)`, are locally integrable and define currents. For each codimension-`q` stratum take `(πi)^q` times the pushforward of its period current; together with the logarithmic holomorphic components `(−1)^{n−1}2^{1−n}dlog f₁∧…∧dlog fₙ` of §3.7 on the exterior column, `−(1/8)dlog f₁∧…∧dlog f₄` in weight four, they define a map to the weight-four real Deligne complex of `X`. Prove the current identity `dR − Rδ = πi Σ_Y i_{Y*}R res_Y` with the incidence signs of §5.3 (Goncharov–Rudenko [GR], §8.2, Proposition 8.4 and Lemma 8.5, pp. 78–79; Theorem 8.6(ii), (205), p. 80; §8.4, Theorem 8.11 with (216)–(218), Proposition 8.12 and Lemma 8.13, pp. 83–85). The constant is `πi` for the normalization of `R` by Goncharov's `ω_n`: the part of `dω_n(log|t|, φ₂,…,φₙ)` supported on `t = 0` is `πi·δ_{t=0}∧ω_{n−1}(φ₂,…,φₙ)`, because `d(∂log|t|) = πi·δ_{t=0}` and `d(∂̄log|t|) = −πi·δ_{t=0}` as currents; the components of §5.1 with a symbol factor and the holomorphic components give the same constant, the latter through `d(dlog t) = 2πi·δ_{t=0}` and the factor `−1/2` between consecutive weights. The source's `2πi` belongs to its unnormalized forms (192). For the simplicial varieties of §5.8 apply this levelwise and use the functoriality of the logarithmic Deligne complex for every morphism of smooth varieties, with §3.13(2) for the realizations. *Needs:* §§3.13, 5.1, 5.3; Polylogarithms §§5.1–5.2, 5.5 and 5.9; MotivicEtaleKTheory §§3.3–3.4.
 
+The current regulator has the following API.
+
+- On every stratum `Y` the forms of `R∘r_Y` are locally integrable on `Y`, and their pushforwards along the inclusion `i_Y: Y → X` are currents on `X`.
+- The component on a stratum of codimension `q` is `(πi)^q` times the pushed-forward period current; on the exterior column the holomorphic component `(−1)^{n−1}2^{1−n}dlog f₁∧…∧dlog fₙ` is added, which is `−(1/8)dlog f₁∧…∧dlog f₄` in weight four.
+- The identity `dR − Rδ = πi Σ_Y i_{Y*}R res_Y` holds with the incidence signs of §5.3, so the total map is a map of complexes from the totalized diagram of §5.3 to the weight-four real Deligne complex of `X`.
+- Applied levelwise to a simplicial smooth variety, the map commutes with the face maps, by the functoriality of the logarithmic Deligne complex and §3.13(2).
+
 **Checks.**
 
 - A function on a divisor becomes a current of ordinary degree two, hence a Deligne term of degree three.
@@ -869,6 +882,13 @@ The groups have the following API.
 ### 5.6 The scissors-to-trilogarithm map
 
 Define Goncharov's map `a₃: A₃(F) → B₃(F)` by `a₃ = (1/6)a′₃ − (1/3)a″₃`, where `a′₃` is the alternating double sum over omitted vertices `(i,j)` of `r₃(lᵢ | L ∖ lᵢ; M ∖ m_j)` with `r₃ = (1/15)Alt₆[T]₃ = T₃/3`, and `a″₃` is the same sum of `μ₃(lᵢ, m_j | L ∖ lᵢ; M ∖ m_j)` with `μ₃(x₁,x₂,x₃;y₁,y₂,y₃) = (1/2)Alt_{S₃×S₃}[r(x₁,y₂,x₂,y₁)]₃`; block alternations are signed sums. Prove that `a₃` kills the scissors relations, that `δ₃∘a₃ = (a₂∧a₁)∘ν`, and the collinear degeneration `r₃ = −2μ₃` (Goncharov [G00], §3, item 2, (7), PDF p. 9; §3, item 3, PDF p. 11; Theorem 3.2, Theorem 3.3, Proposition 3.4, Lemma 3.5, Proposition 3.6 and Lemma 3.7, PDF pp. 12–16; Goncharov–Rudenko [GR], §9.2, Lemma 9.3 with (235)–(236), pp. 89–90; §9.3, item 1 with footnotes 24–25, pp. 91–92). Written with the class `T₃` normalized by (167), `a′₃` is three times Goncharov's, and the same map is `(1/18)a′₃ − (1/3)a″₃`; the coefficient `1/2` printed in [GR] §9.3 with footnote 24 is inconsistent with (236) and with G00 Theorem 3.2, and is not used. *Needs:* §§4.6, 5.5; Polylogarithms §3.1; K3BlochGroups §3.4.
+
+The map has the following API.
+
+- `r₃` is alternating in its six points and `μ₃` in each of its two triples; `a′₃` and `a″₃` are the signed double sums over the omitted vertices `(i,j)`.
+- `a₃ = (1/6)a′₃ − (1/3)a″₃` kills the scissors relations, so it is defined on `A₃(F)`, and an odd permutation of either simplex negates it.
+- `δ₃∘a₃ = (a₂∧a₁)∘ν` on `A⁰₃(F)`, with `ν = (ν_{2,1}, ν_{1,2})` and `a₂∧a₁` as in §5.5.
+- When three projected points become collinear, `r₃` has the limit `−2μ₃`.
 
 **Checks.**
 
@@ -917,13 +937,30 @@ In characteristic zero a candidate for `ℓ` is a rational multiple of `Alt₈` 
 
 ### 5.8 The generic polylogarithmic Chern cocycle
 
-For `N ≥ 4` and every infinite field `F`, compose the signed map `t` of §4.3, duality, §4.8 and the combinatorial lift `𝓛₄` of §5.7 to obtain a map from the generic decorated-flag complex of `GL_N(F)` to the weight-four Chevalley–Eilenberg complex of `L(F)`; it is a map of complexes because `δ∘𝓛₄ = δ_{G₄}` and `𝓛₄` kills both nine-term relations in `L₄(F)` (§5.7). Applied to the function fields of the terms of the simplicial variety of generic decorated flags for `GL_N`, over `ℚ` or over `ℂ`, it is an `L₄`-valued weight-four cocycle on that simplicial variety, because `𝓛₄` commutes with the field embeddings induced by the dominant face maps (§5.7(ii)). By §5.7(d) its values are regular at every point where the eight-point configurations entering `𝓛₄` are generic, and by §5.7(e) their point evaluation (§3.14(4)) at an `F`-point is the map for `F`. Remove its `Λ²B₂` component by subtracting the coboundary of the double-symbol cochain `h = −(3/28)·Alt₈ D₃₁(r(3,4|2,5,6,7), r(6,7|1,3,4,5))`, whose `δ₂₂` is exactly the `Λ²B₂` term `−(3/28)Alt₈([r(3,4|2,5,6,7)]₂∧[r(6,7|1,3,4,5)]₂)`, and use §3.3 to factor the degree-one term through `B₄(F)`. The result has values in `Γ(F,4)` (Goncharov–Rudenko [GR], §9.1, items 2–3, (224)–(228), pp. 86–87; §9.3, item 2 with Lemma 9.6, p. 93). The correcting element printed on p. 93 omits the coefficient `−3/28`; by (38) the `Λ²B₂` component of `δD₃₁(x,y)` has coefficient one, so the coefficient is needed. *Needs:* §§3.1, 3.3, 3.14, 4.3–4.4, 4.8 and the combinatorial lift of §5.7.
+For `N ≥ 4` and every infinite field `F`, compose the signed map `t` of §4.3, duality, §4.8 and the combinatorial lift `𝓛₄` of §5.7 to obtain a map `f` from the generic decorated-flag complex of `GL_N(F)` to the weight-four Chevalley–Eilenberg complex of `L(F)`; it is a map of complexes because `δ∘𝓛₄ = δ_{G₄}` and `𝓛₄` kills both nine-term relations in `L₄(F)` (§5.7). Applied to the function fields of the terms of the simplicial variety of generic decorated flags for `GL_N`, over `ℚ` or over `ℂ`, it is an `L₄`-valued weight-four cocycle on that simplicial variety, because `𝓛₄` commutes with the field embeddings induced by the dominant face maps (§5.7(ii)). By §5.7(d) its values are regular at every point where the eight-point configurations entering `𝓛₄` are generic, and by §5.7(e) their point evaluation (§3.14(4)) at an `F`-point is the map for `F`.
+
+The `Λ²B₂` components of `f` sit in degree two, on the seven-vector rows of the dual complex: the wedge term of `R₇³` on `C₇(3)` and the whole of `R₇²` on `C₇(2)`. A chain homotopy cancels both. Let `h` be the `L₄(F)`-valued cochain on the seven-vector rows obtained from the wedges of §4.6 by writing the double symbol `D₃₁(x,y)` for `[x]₂∧[y]₂`:
+
+```text
+h = −(3/28)·Alt₇ D₃₁(r(1|2,5,6,7), r(2|1,3,4,5))   on C₇(3),
+h = −(1/84)·Alt₇ D₃₁(r(1,2,3,4), r(1,5,6,7))       on C₇(2),
+h = 0                                             on C₇(1) and on every row of another degree.
+```
+
+Since `δ₂₂D₃₁(x,y) = [x]₂∧[y]₂` (§3.3), `δ₂₂h` is the wedge term of `R₇³` on `C₇(3)` and is `R₇²` on `C₇(2)`. Put `f′ = f − (δ∘h + h∘D)`, a map of complexes chain homotopic to `f`. Its degree-two components are `R₇³ − δh` on `C₇(3)` and `R₇² − δh` on `C₇(2)`; their `Λ²B₂` parts vanish, so they take values in `L₃(F)⊗U(F) = B₃(F)⊗U(F)` (§1.5). Its degree-one components are `𝓛₄∘R₈⁴ − h∘p` on `C₈(4)`, `−h∘(∂ + p)` on `C₈(3)` and `−h∘∂` on `C₈(2)`. Their `δ₂₂` vanishes: since `f′` is a map of complexes, the `Λ²B₂` part of `δ` of a degree-one component is the `Λ²B₂` part of the degree-two components composed with `D`, which is zero; termwise this is §5.7(i) on `C₈(4)` and the identities `R₇³∂ + R₇²p = 0` and `R₇²∂ = 0` of §4.8 on `C₈(3)` and `C₈(2)`. By §3.3 the degree-one components therefore lie in `B₄(F)`. The components in degrees three and four are those of `f`, and `h` commutes with field embeddings, its arguments being cross-ratios, so `f′` is again a cocycle on the simplicial variety. Thus `f′` is a map of complexes with values in `Γ(F,4)`, chain homotopic to `f` in the Chevalley–Eilenberg complex (Goncharov–Rudenko [GR], §9.1, items 2–3, (224)–(228), pp. 86–87; §9.3, item 2 with Lemma 9.6, p. 93, GR lines 4244–4249; Theorem 1.14(c) and Corollary 1.15, p. 16, GR lines 676 and 701). On `C₈(4)`, `h∘p = (3/28)·Alt₈ D₃₁(r(8,1|2,5,6,7), r(8,2|1,3,4,5))`, by the rule `(Alt₇ g)∘p = −Alt₈ g(8|·)` of §4.8 (Checks), where `g(8|·)` is `g` applied to the other seven vectors projected from the eighth; written on the configuration of `BC₈^{(4)}` whose Gale dual is the argument, its arguments are `r(3,4|2,5,6,7)` and `r(6,7|1,3,4,5)`. Up to the factor `3/28`, which the source omits, this is the element printed on p. 93 (GR line 4247); the source has no counterpart on `C₇(2)`. For `N ≥ 5` the row `C₇(2)` is reached: the terms `t_a` of §4.3 with `|a| = N − 5` are configurations of seven vectors in dimension five, Gale dual to `C₇(2)`; for `N = 4` only the row `C₇(3)` occurs. *Needs:* §§1.5, 3.1, 3.3, 3.14, 4.3–4.4, 4.6, 4.8 and the combinatorial lift of §5.7.
+
+The cocycle has the following API.
+
+- For `N ≥ 4` and every infinite field `F`, `f` is a map of complexes from the generic decorated-flag complex of `GL_N(F)` to the weight-four Chevalley–Eilenberg complex of `L(F)`, commuting with the maps induced by field embeddings.
+- `f′ = f − (δ∘h + h∘D)` is chain homotopic to `f`; its degree-two components have zero `Λ²B₂` part and its degree-one components lie in `B₄(F)`, so it has values in `Γ(F,4)`; its components in degrees three and four are those of §4.8 composed with `t` and duality.
+- On the simplicial variety of generic decorated flags the values of `f` and `f′` are regular wherever the configurations entering `𝓛₄` and `h` are generic, and point evaluation at an `F`-point gives the maps for `F`.
 
 **Checks.**
 
-- `δ₂₂` of `D₃₁(x,y)` is `[x]₂∧[y]₂` with coefficient one, so `δ₂₂h` equals the `Λ²B₂` term exactly.
-- Taking the correcting coefficient `1` leaves the formal wedge `(1 + 3/28)·Alt₈(…)`, which is nonzero.
-- After correction the `Λ²B₂` component is zero and the first term lies in `B₄(F)`.
+- `δ₂₂D₃₁(x,y)` is `[x]₂∧[y]₂` with coefficient one, so `δ₂₂h` is the wedge term of `R₇³` on `C₇(3)` and `R₇²` on `C₇(2)`, with the coefficients `−3/28` and `−1/84`; the coefficient `1` on `C₇(3)` would leave `−(1 + 3/28)` times the wedge `Alt₇([r(1|2,5,6,7)]₂∧[r(2|1,3,4,5)]₂)` in degree two.
+- Both rows of `h` are needed. `R₇²` is not zero, since `R₇²∘p = −(3/28)X` on `C₈(3)` with `X ≠ 0` (§4.8, Checks). For `N = 5` the first decorations of seven flags form a configuration in `C₇(5)`, Gale dual to `C₇(2)`, where the map is `R₇²`; a correction on `C₇(3)` alone leaves it, and `Γ(F,4)` has no `Λ²B₂` term in degree two.
+- The eight-point element carries `+3/28`: `h∘p = −(3/28)·(−Alt₈ D₃₁(…)) = (3/28)·Alt₈ D₃₁(r(8,1|2,5,6,7), r(8,2|1,3,4,5))`, and the `Λ²B₂` part of `R₇³∘p` is `(3/28)·Alt₈([r(8,1|2,5,6,7)]₂∧[r(8,2|1,3,4,5)]₂)`, so `δ₂₂(𝓛₄∘R₈⁴ − h∘p) = (3/28 − 3/28)·Alt₈(…) = 0`; subtracting the element with `−3/28` instead leaves `(3/28 + 3/28)·Alt₈(…) ≠ 0`. On `C₈(3)` the new degree-one term `−h∘(∂ + p)` has `δ₂₂ = −((3/28)X − (3/28)X) = 0`, with `X` as in §4.8.
+- The Gale-dual labelling, for the matrix `(I | B)` with `B` the `4×4` Pascal matrix (rows `(1,1,1,1)`, `(1,2,3,4)`, `(1,3,6,10)`, `(1,4,10,20)`), whose maximal minors are all nonzero, and its dual `(−Bᵀ | I)` in the normalization of Polylogarithms §3.6: `r(8,1|2,5,6,7)` of the dual and `r(3,4|2,5,6,7)` of the original are both `2`, and `r(8,2|1,3,4,5)` of the dual and `r(6,7|1,3,4,5)` of the original are both `9`; reading the labels unchanged on the original gives `3/2` and `19` instead.
 - A lift cochain by cochain is not a cocycle: in the model `L⁰ = ℚe ⊕ ℚc`, `L¹ = ℚb` with `de = b`, `dc = 0`, and `M⁰ = ℚe`, `M¹ = 0`, with `ρ` killing `c` and `b`, a generator `g` of a source with zero differential mapping to `e` has the preimages `e + ac`, all with boundary `b ≠ 0`. The cocycle condition here comes from §5.7(i) and the relations of `G₄(F)` in `L₄(F)`, not from preimages under §3.13.
 
 ### 5.9 Extension across residues
