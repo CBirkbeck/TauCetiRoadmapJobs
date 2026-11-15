@@ -1,13 +1,13 @@
 # Roadmap: minimal parabolic subgroups, the Bruhat decomposition and the self-adjoint matrix model of real reductive groups
 
-**Summary.** This is the second part of [LieGroups](../RepresentationTheory/LieGroups/README.md). Its Layer 9 stops after the Cartan, Iwasawa and KAK decompositions, the restricted root system and the restricted Weyl group `N_K(𝔞)/Z_K(𝔞)` of a real reductive group. This part continues the structure theory on the same carrier, LieGroups' `CartanInvolution` with its finite central matrix-cover model, for groups that need not be connected, semisimple, linear or of finite centre. It equips the datum with a compatible invariant form and proves conjugacy of the underlying involutions and Iwasawa choices with a common split centre, by an element of the identity component, without identifying invariant forms or matrix models. It compares `W_G = N_K(𝔞)/Z_K(𝔞)` with the Weyl group of `Σ` and characterizes their equality, the component condition. It builds the minimal parabolic subgroup `P = MAN` with its Langlands decomposition for every such datum, and so supplies the minimal parabolic datum on which RealSemisimpleLieGroups builds its Tits system, its standard and general parabolic subgroups with their Langlands decompositions, its dynamical description and its algebraic comparison; those are consumed, not rebuilt. Beyond the component condition this part proves the Bruhat decomposition `G = ⨆_{w ∈ W_G} P n_w P` with its cell coordinates for every Iwasawa triple, the group `⁰L` and the split component of a datum whose components move its split centre, and the dynamical description of a regular one-parameter subgroup over `W_G`. It proves the complexification criterion for parabolic subalgebras of a reductive Lie algebra with centre, without the component condition. The self-adjoint matrix groups carry all of this structure; that matrix model is the statement form pinned in Lean, and real points of connected reductive groups over `ℝ` are among them. The abstract Tits-system theory is Tau Ceti's and is consumed; one abstract statement that Tau Ceti lacks, the equality of conjugate standard parabolics, is proved here.
+**Summary.** This is the second part of [LieGroups](../RepresentationTheory/LieGroups/README.md). Its Layer 9 stops after the Cartan, Iwasawa and KAK decompositions, the restricted root system and the restricted Weyl group `N_K(𝔞)/Z_K(𝔞)` of a real reductive group. This part continues the structure theory on the same carrier, LieGroups' `CartanInvolution` with its finite central matrix-cover model, for groups that need not be connected, semisimple, linear or of finite centre. It equips the datum with a compatible invariant form and proves conjugacy of the underlying involutions and of Iwasawa triples with a common split centre, by an element of the identity component, without identifying invariant forms or matrix models. It compares `W_G = N_K(𝔞)/Z_K(𝔞)` with the Weyl group of `Σ` and characterizes their equality, the component condition. It builds the minimal parabolic subgroup `P = MAN` with its Langlands decomposition for every such datum, and so supplies the minimal parabolic datum on which RealSemisimpleLieGroups builds its Tits system, its standard and general parabolic subgroups with their Langlands decompositions, its dynamical description and its algebraic comparison; those are consumed, not rebuilt. Beyond the component condition this part proves the Bruhat decomposition `G = ⨆_{w ∈ W_G} P n_w P` with its cell coordinates for every Iwasawa triple, the group `⁰L` and the split component of a datum whose components move its split centre, and the dynamical description of a regular one-parameter subgroup over `W_G`. It proves the complexification criterion for parabolic subalgebras of a reductive Lie algebra with centre, without the component condition. The self-adjoint matrix groups carry all of this structure; that matrix model is the statement form pinned in Lean, and real points of connected reductive groups over `ℝ` are among them. The abstract Tits-system theory is Tau Ceti's and is consumed; one abstract statement that Tau Ceti lacks, the equality of conjugate standard parabolics, is proved here.
 
 ## Scope and ownership
 
 This roadmap owns the following material on a real reductive group:
 
 - the reductive Cartan datum: LieGroups' `CartanInvolution`, retaining its global matrix model, equipped with a compatible invariant form, and its restriction to the identity component;
-- conjugacy of the underlying Cartan involutions and Iwasawa choices of reductive data with a common split centre, by an element of `G⁰`, for disconnected groups and finite central covers;
+- conjugacy of the underlying Cartan involutions and of the Iwasawa triples of reductive data with a common split centre, by an element of `G⁰`, for disconnected groups and finite central covers;
 - the simple-root subsystems `Σ_{Π'}` of a possibly non-reduced restricted root system and the reflection generation of chamber stabilizers;
 - conjugacy of maximal abelian subspaces of `𝔭` under the identity component `K⁰` of `K`, and the factorizations `K = N_K(𝔞)·K⁰` and `G = N_K(𝔞)·G⁰`;
 - the comparison of `N_K(𝔞)/Z_K(𝔞)` with the Weyl group of `Σ` without the component condition, and the component condition with its equivalent forms;
@@ -47,7 +47,7 @@ AutomorphicFormsOnReductiveGroups §2.3a owns the minimal parabolic subgroup, it
 
 **The datum.** A reductive Cartan datum `D = (C, B)` (§1.1), where `C` is the full base Cartan datum with involution `θ` and chosen finite central matrix-cover model, has fixed group `K = G^θ`, with `𝔨` and `𝔭` the `+1` and `−1` eigenspaces of `dθ = lieMap θ`. The inner product is `B_θ(X, Y) = −B(X, dθ Y)`. The centre is `𝔷 = 𝔷(𝔤)`, and its split central part is `𝔷_𝔭 = 𝔷 ∩ 𝔭`.
 
-**Iwasawa triples.** An Iwasawa triple `(D, 𝔞, Σ⁺)` consists of a maximal abelian subspace `𝔞 ⊆ 𝔭` and a positive system `Σ⁺` of the restricted roots `Σ = Σ(𝔤, 𝔞)`. The root space of `β ∈ 𝔞*` is `𝔤^β = {X ∈ 𝔤 : ⁅H, X⁆ = β(H) X for all H ∈ 𝔞}`. A **positive system** is a set `Σ⁺ = {β ∈ Σ : β(H₀) > 0}` for some `H₀ ∈ 𝔞` with `β(H₀) ≠ 0` for all `β ∈ Σ`; its **simple roots** are the elements of `Σ⁺` that are not sums of two elements of `Σ⁺`. RealSemisimpleLieGroups §1.2 identifies the simple roots with a base of the indivisible subsystem `Σ_ind = {β ∈ Σ : β/2 ∉ Σ}`. Further notation:
+**Iwasawa triples.** An Iwasawa triple `(D, 𝔞, Σ⁺)` consists of a maximal abelian subspace `𝔞 ⊆ 𝔭` and a positive system `Σ⁺` of the restricted roots `Σ = Σ(𝔤, 𝔞)`. An **Iwasawa pair** `(D, 𝔞)` is a reductive Cartan datum with a maximal abelian subspace `𝔞 ⊆ 𝔭`, that is, an Iwasawa triple without its positive system. `Σ`, `W(Σ)`, `M`, `W_G` and the component condition (§2.5) depend on the pair only. Every pair extends to a triple, since `Σ` is finite and an `H₀` off the kernels of its roots exists. The Iwasawa triples here are not LieGroups' `IsIwasawaTriple K A N`, which says that three subgroups are the `K`, `A`, `N` of some `IwasawaData`; by §2.3 the subgroups `(K, lieExp 𝔞, lieExp 𝔫)` of an Iwasawa triple satisfy it. The root space of `β ∈ 𝔞*` is `𝔤^β = {X ∈ 𝔤 : ⁅H, X⁆ = β(H) X for all H ∈ 𝔞}`. A **positive system** is a set `Σ⁺ = {β ∈ Σ : β(H₀) > 0}` for some `H₀ ∈ 𝔞` with `β(H₀) ≠ 0` for all `β ∈ Σ`; its **simple roots** are the elements of `Σ⁺` that are not sums of two elements of `Σ⁺`. RealSemisimpleLieGroups §1.2 identifies the simple roots with a base of the indivisible subsystem `Σ_ind = {β ∈ Σ : β/2 ∉ Σ}`. Further notation:
 
 - `𝔪 = Z_𝔨(𝔞)` and `M = Z_K(𝔞)`;
 - `𝔫 = ⨁_{β ∈ Σ⁺} 𝔤^β`, `𝔫̄ = dθ 𝔫`, `A = lieExp 𝔞`, `N = lieExp 𝔫`, `N̄ = θ(N)`;
@@ -188,7 +188,7 @@ Proof sketch:
 
 **Checks (forms).**
 
-- On `ℝ^×`, `B(x,y) = xy` and `B'(x,y) = 2xy` give the same inversion, split centre and Iwasawa choices. Conjugation is trivial, so transport leaves `B(1,1) = 1`, whereas `B'(1,1) = 2`. The involutions agree with `g = 1`; whole-datum equality does not follow. Scaling an admissible form by `2` has the same obstruction on a nonzero semisimple group.
+- On `ℝ^×`, `B(x,y) = xy` and `B'(x,y) = 2xy` give the same inversion, split centre, `𝔞 = ℝ` and `Σ⁺ = ∅`. Conjugation is trivial, so transport leaves `B(1,1) = 1`, whereas `B'(1,1) = 2`. The involutions agree with `g = 1`; whole-datum equality does not follow. Scaling an admissible form by `2` has the same obstruction on a nonzero semisimple group.
 
 ### Examples
 
@@ -202,7 +202,7 @@ LieGroups Layer 0 (`lieExp`), Layer 1 (`Ad`), Layer 2 (`isEmbeddedLieSubgroup_of
 
 ### 2.1 Simple-root subsystems and chamber stabilizers
 
-Let `Σ` be the restricted root system of an Iwasawa datum, a possibly non-reduced finite crystallographic root system (LieGroups Layer 9), with a positive system `Σ⁺`, its simple roots `Π` and its indivisible subsystem `Σ_ind` (Conventions). RealSemisimpleLieGroups §1.2 proves that `Σ_ind` is reduced with the same reflections, Weyl group and chambers, that `Σ⁺ ↦ Σ⁺ ∩ Σ_ind` matches positive systems of `Σ` with bases of `Σ_ind` (`Π` being the base, of indivisible roots), that `W(Σ)` acts simply transitively on positive systems, and that every root is an integer combination of `Π` with coefficients all `≥ 0` or all `≤ 0`. Prove in addition (Bourbaki, Ch. VI §1):
+Let `(D, 𝔞, Σ⁺)` be an Iwasawa triple and `Σ = Σ(𝔤, 𝔞)` its restricted root system, a possibly non-reduced finite crystallographic root system (LieGroups Layer 9), with the positive system `Σ⁺`, its simple roots `Π` and its indivisible subsystem `Σ_ind` (Conventions). RealSemisimpleLieGroups §1.2 proves that `Σ_ind` is reduced with the same reflections, Weyl group and chambers, that `Σ⁺ ↦ Σ⁺ ∩ Σ_ind` matches positive systems of `Σ` with bases of `Σ_ind` (`Π` being the base, of indivisible roots), that `W(Σ)` acts simply transitively on positive systems, and that every root is an integer combination of `Π` with coefficients all `≥ 0` or all `≤ 0`. Prove in addition (Bourbaki, Ch. VI §1):
 
 - For `Π' ⊆ Π`, `Σ_{Π'} = Σ ∩ span(Π')` is closed under negation, and it is a root system in `span(Π')` with positive system `Σ⁺ ∩ Σ_{Π'}`, simple roots `Π'` and Weyl group `W_{Π'}`.
 - The stabilizer in `W(Σ)` of a point of the closed positive chamber, or of a subspace of `𝔞` pointwise, is generated by the reflections it contains, by `TauCeti.stabilizer_eq_closure_wallReflections` applied to `Σ_ind` in its span.
@@ -245,7 +245,7 @@ Proof sketch:
 - `O(1,1)`: `K⁰ = {1}` and `𝔭 = 𝔞 = ℝY`, `Y = ((0, 1), (1, 0))`, so (a) and (b) hold with `k = 1`. All four elements of `K = {diag(±1, ±1)}` normalize `𝔞` (`diag(1, −1)` acts by `−1`), so (c) reads `K = K·{1}`, and `G = K·G⁰` has four components.
 - For `ℝ^×`, `𝔞 = 𝔭 = ℝ` is the only choice. For compact `G`, `𝔭 = 0` and `𝔞 = 0`, and (c) reads `K = K·K⁰`.
 
-### 2.3 The base Iwasawa datum of an Iwasawa triple
+### 2.3 The base `IwasawaData` of an Iwasawa triple
 
 For an Iwasawa triple construct the base structure `IwasawaData I G` with:
 
@@ -299,7 +299,7 @@ Proof sketch:
 
 ### 2.5 The component condition
 
-Say that an Iwasawa datum `(D, 𝔞)` satisfies the **component condition** if every connected component of `G` meets `M = Z_K(𝔞)`, that is, `G = M·G⁰`. RealSemisimpleLieGroups §2.3 proves that it implies `W_G = W(Σ)`. Prove (Knapp 2002, Ch. VII §5):
+Say that an Iwasawa pair `(D, 𝔞)` satisfies the **component condition** if every connected component of `G` meets `M = Z_K(𝔞)`, that is, `G = M·G⁰`; an Iwasawa triple satisfies it when its pair does. RealSemisimpleLieGroups §2.3 proves that it implies `W_G = W(Σ)`. Prove (Knapp 2002, Ch. VII §§2, 5):
 
 - Conversely, `W_G = W(Σ)` implies the component condition, and both are equivalent to `N_K(𝔞) = M·N_{K⁰}(𝔞)` and to: the stabilizer of one (equivalently every) positive system in `N_K(𝔞)` is `M`.
 - The condition does not depend on the choice of `𝔞`, because any two choices are `K⁰`-conjugate (§2.2) and `M` moves with them.
@@ -348,7 +348,7 @@ Layer 1; RealSemisimpleLieGroups §§1.2, 2.3; LieGroups Layers 1, 4, 6, 7, 9; T
 
 ### 3.1 Centralizers of subspaces of 𝔞
 
-Let `(D, 𝔞)` be an Iwasawa datum and `𝔰 ⊆ 𝔞` a subspace. Prove the following (Knapp 2002, Ch. VII §2):
+Let `(D, 𝔞)` be an Iwasawa pair and `𝔰 ⊆ 𝔞` a subspace. Prove the following (Knapp 2002, Ch. VII §2):
 
 - `L = Z_G(𝔰)` is a closed `θ`-stable subgroup with Lie algebra `𝔩 = Z_𝔤(𝔰) = 𝔪 ⊕ 𝔞 ⊕ ⨁_{β|_𝔰 = 0} 𝔤^β`.
 - `(θ|_L, B|_𝔩)` is a reductive Cartan datum on `L` with fixed group `K ∩ L` and polar decomposition `L = (K ∩ L)·lieExp(𝔩 ∩ 𝔭)`. Its global model is the restriction of the covering `π : G → H` of `C` to `L = π⁻¹(Z_H(dπ 𝔰))`: `π(g)` centralizes the matrices `dπ 𝔰` iff `Ad(g)` fixes `𝔰`, since `dπ ∘ Ad(g) = Ad(π(g)) ∘ dπ` and `dπ` is injective. `Z_H(dπ 𝔰)` is closed; it is transpose-stable because `dπ 𝔰 ⊆ dπ 𝔭` consists of symmetric matrices; and it has finitely many components, because the polar decomposition of `H` restricts to it (the argument of step 1, in `H`) with compact first factor `K_H ∩ Z_H(dπ 𝔰)`. The kernel of `π` is central, so it lies in `L`, and `L → Z_H(dπ 𝔰)` is a finite central covering compatible with transpose-inverse, fixing the compact preimage. `𝔩` is `dθ`-stable, and the reductivity criterion of §1.1 for `B_θ` gives its reductivity fields.
