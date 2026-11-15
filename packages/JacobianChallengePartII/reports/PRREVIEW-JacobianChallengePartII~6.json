@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-JacobianChallengePartII~6",
+  "head": "2354d712410964d9da8266bc3c75742623d97a16",
+  "pr": 1225,
+  "folder": "JacobianChallengePartII",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 2354d71; the previous review raised no finding. This round checked the pull request's title and description against the head and found two P3 findings: R01, the summary block gives the polarization as minus the inverse of the Esteves-Gagne-Kleiman autoduality, but the head (README 292-294, egk lines 35-37) makes it the inverse; R02, the AI-assistance sentence omits Claude Fable 5.1 and Claude Opus 5.5, which co-authored four commits. Gate rerun at this head passes with every field 0. Dependency check: 0 problems, no UPWARD or CYCLE line. Suggested.lean elaborates with nine sorry warnings only, and all 14 #check lines print. The 13 roadmap names in the README resolve to 6 suppliers on main, the 4 open suppliers of the depends-on list, and 3 consumers. Overlap with the closest open roadmaps was read: each cites this roadmap as the owner.",
+  "text": "b3eea9d8664f98b4",
+  "carried": {
+   "from": "2354d712410964d9da8266bc3c75742623d97a16",
+   "head": "2354d712410964d9da8266bc3c75742623d97a16",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
