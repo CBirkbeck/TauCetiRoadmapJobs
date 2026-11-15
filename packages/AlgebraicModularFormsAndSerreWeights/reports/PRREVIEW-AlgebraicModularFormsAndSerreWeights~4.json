@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicModularFormsAndSerreWeights~4",
+  "head": "364af8101836f85a3544a7359e652f2ee5cc1274",
+  "pr": 928,
+  "folder": "AlgebraicModularFormsAndSerreWeights",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 20 changed lines since 7e28cb1. Previous R01-R04: R02 and R04 repaired; R01 (layer order) not repaired, carried as R03; R03 repaired as asked but that request misread the OCR: the Edixhoven scan, journal p. 589, shows the morphism F_D -> F_D^D, so the new 4.7 clause is wrong (R02). Sample targets in changed passages (2.8, 4.7, 7.5) checked against deligne-serre (pp. 508-522), edixhoven1992 (pp. 588-590, page image) and Khare-Wintenberger section 1. Gate FAIL: statement-hygiene=1 (letI at Suggested.lean:81, R01); repair elaborated on a scratch copy (exit 0, 7 sorry warnings, no letI). Depcheck 0 problems. lake env lean on Suggested.lean exit 0 with seven sorry warnings; #check @ for all seven declarations keeps every hypothesis. PR description: dependency paragraph omits AutomorphicFormsOnReductiveGroups and other cited suppliers (R04). Overlap check: consumers only.",
+  "text": "fd72aceae6b425b7",
+  "carried": {
+   "from": "364af8101836f85a3544a7359e652f2ee5cc1274",
+   "head": "8ff864cb37ed261650d54bbed0a3662d0a770537",
+   "findings": 4,
+   "lines": 91,
+   "folders": [
+    "AlgebraicModularFormsAndSerreWeights"
+   ],
+   "outside": true
+  }
+ }
+}
