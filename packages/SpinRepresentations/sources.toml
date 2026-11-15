@@ -97,3 +97,91 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Layer 9"]
+
+[[source]]
+id = "conrad-rgs"
+authors = "Brian Conrad"
+title = "Reductive Group Schemes"
+year = 2014
+locator_scheme = "theorem"
+locator = "Theorem 6.1.17, p. 197"
+url = "https://math.stanford.edu/~conrad/papers/luminysga3.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/luminysga3.pdf"
+fetched_at = "2026-11-15T01:57:30Z"
+sha256 = "1a63a17e4ccb7e23263d65f05d93a6651262861e978e9eb0c1c53a01fd59140a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "kirillov2008"
+authors = "Alexander Kirillov, Jr."
+title = "Introduction to Lie Groups and Lie Algebras"
+year = 2008
+version_note = "Author notes: integration is Theorem 3.41 on p. 40, rather than Theorem 3.38 in the published numbering."
+locator_scheme = "theorem"
+locator = "Theorem 3.41, p. 40 (author notes)"
+url = "https://www.math.stonybrook.edu/~kirillov/liegroups/liegroups.pdf"
+fetched_from = "https://www.math.stonybrook.edu/~kirillov/liegroups/liegroups.pdf"
+fetched_at = "2026-11-15T01:57:43Z"
+sha256 = "0d67678c971b449045524c6c5572a7c10f40a330edea15af79fc1361b6a71351"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "gallier2008"
+authors = "Jean Gallier"
+title = "Clifford Algebras, Clifford Groups, and a Generalization of the Quaternions"
+year = 2008
+arxiv = "0805.0311v3"
+locator_scheme = "section"
+locator = "Definition 1.3, p. 14; Theorem 1.4, p. 18"
+url = "https://arxiv.org/abs/0805.0311v3"
+fetched_from = "https://arxiv.org/pdf/0805.0311v3"
+fetched_at = "2026-11-15T01:57:44Z"
+sha256 = "9006f9c74fee9645db84aba820ed15f5872717c52027f5fd41b606a757975e9e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["Layer 0"]
+
+[[source]]
+id = "bazlov2008"
+authors = "Yuri Bazlov"
+title = "The Harish-Chandra isomorphism for Clifford algebras"
+year = 2008
+arxiv = "0812.2059v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.1 and sections 3.2-3.5, pp. 9-11"
+url = "https://arxiv.org/abs/0812.2059v2"
+fetched_from = "https://arxiv.org/pdf/0812.2059v2"
+fetched_at = "2026-11-15T01:59:56Z"
+sha256 = "6c27c5bfb634f5bb321184201bb48a9ee74e3471b874d2691f05301ceb50dbf8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["Layer 9"]
+
+[[source]]
+id = "baez2002"
+authors = "John C. Baez"
+title = "The Octonions"
+year = 2001
+venue = "Bull.Am.Math.Soc.39:145-205,2002"
+arxiv = "math/0105155v4"
+locator_scheme = "section"
+locator = "Section 2.4, pp. 15-17 (arXiv v4)"
+url = "https://arxiv.org/abs/math/0105155v4"
+fetched_from = "https://arxiv.org/pdf/math/0105155v4"
+fetched_at = "2026-11-15T02:03:01Z"
+sha256 = "f8087fb91b10cdbee2157e8eec8c33ac6b918b0de2c8c1fd16b4d8183f0868cc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v4"
+cited_for = ["Layer 8"]
