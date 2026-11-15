@@ -320,9 +320,10 @@ action laws; a definition, not an instance), `FixedPoints.subgroup` (the element
 (for a normal subgroup `N` with `Nat.Coprime (Nat.card N) N.index`, a subgroup `H` with
 `Subgroup.IsComplement' N H` exists; existence only: the file
 `Mathlib/GroupTheory/SchurZassenhaus.lean` proves no conjugacy of complements beyond the abelian
-case), `Subgroup.IsComplement'`, `MulAction.stabilizer`; `Sylow`, `IsPGroup`, `IsSolvable`,
-`IsCyclic`, `ConjClasses`, `MulAut.conj`, `Subgroup.index`, `QuotientGroup`; `Representation`,
-`Representation.character`, `Representation.IsIrreducible`, `Representation.isIntegral_character`
+case), `Subgroup.IsComplement'`, `MulAction.stabilizer`; `Sylow`, `IsPGroup`,
+`Group.IsSolvable`, `IsCyclic`, `ConjClasses`, `MulAut.conj`, `Subgroup.index`, `QuotientGroup`;
+`Representation`, `Representation.character`, `Representation.IsIrreducible`,
+`Representation.isIntegral_character`
 (`Mathlib/RepresentationTheory/Character.lean`: for a finite group and a finite-dimensional
 representation over a field, the character values are integral over `ℤ`), `LinearMap.det`,
 `FDRep`, `Rep.indResAdjunction` (`Mathlib/RepresentationTheory/Induced.lean`: for a commutative
@@ -646,8 +647,9 @@ giving permutation matrices with `P X = X Q`; `X` is invertible by column orthog
 
 ### Dependencies
 
-Mathlib actions, fixed points and semidirect products; Tau Ceti characters, conjugation, inertia
-and the character table; Mathlib `Subgroup.exists_right_complement'_of_coprime` and
+Mathlib actions, fixed points, semidirect products and conjugacy classes; Tau Ceti characters,
+conjugation, inertia and the character table; Mathlib
+`Subgroup.exists_right_complement'_of_coprime`, `Subgroup.IsComplement'` and
 `MulAction.stabilizer`; InverseGaloisAndArithmeticFundamentalGroups IG.3.4; CharacterTheory §3.5;
 InductionRestriction Layer 1.
 
@@ -776,9 +778,10 @@ characters of `C₃` are the three two-dimensional irreducible characters.
 
 ### Dependencies
 
-Layer 1; Tau Ceti degree divisibility, character recognition, Galois action, field of values and
-tensor factorisation; Mathlib cyclotomic fields and Galois theory; CharacterTheory §4.4;
-InductionRestriction Layer 7.
+Layer 1; Tau Ceti degree divisibility, character recognition, inertia, Galois action, field of
+values and tensor factorisation; Mathlib semidirect products, determinants, cyclotomic fields,
+Galois theory and the integrality of character values; CharacterTheory §4.4; InductionRestriction
+Layer 7.
 
 ## Layer 3: the cyclic case
 
@@ -856,33 +859,48 @@ Let `A` be cyclic and coprime to `Γ`, `B < A` such that `C_Γ(a) = C` for every
 `A` with `θ₀² = 1` such that: (a) `χ̂(a t) = ε' θ₀(a) λ(t)` for `a ∈ A ∖ B`, `t ∈ C`; (b) if
 `χ|_C = ε' λ` then `ε' = 1` and `Γ = C · ker χ`, and otherwise `|A : B|⁻¹ (χ|_C − ε' λ)` is a
 character of `C` (glauberman line 375, Corollary 5 (a)–(b), and line 454, Corollary 6 (c) for
-`B = 1`). For a generator `a`, `ε' θ₀(a) = ε(χ)`; when `|A|` is odd, `θ₀ = 1` and `ε' = ε(χ)`,
-while for `|A| = 2` the sign `ε'` may differ from `ε(χ)` by `θ₀(a) = −1`. Route: for a faithful
-linear character `ξ` of `A/B`, inflated to `Γ ⋊ A`, the virtual character `χ̂ − χ̂ ξ` vanishes on
-`Γ ⋊ B` and has norm `2`, its two terms being distinct (their determinants on `inr(A)` are `1` and
-`ξ^{χ(1)} ≠ 1`). For `a ∈ A ∖ B` the fixed points of `⟨a⟩` are `C`, so §3.1 for `⟨a⟩` makes the
-sum of `|χ̂ − χ̂ ξ|²` over the coset `a Γ` equal to `|Γ : C|` times its sum over `a C`; hence the
-restriction to `A × C = inr(A) · inl(C)` also has norm `2` and is the difference of two distinct
-irreducible characters of `A × C`, each a linear character of `A` times an irreducible character
-of `C` (CharacterTheory §3.6). Vanishing on `C` gives the two the same factor on `C`, which is `λ`
-by §3.3 at the elements of `A ∖ B` and §3.2 at a generator; comparing the factors on `A` there
-shows that their product is `ξ` and that at least one of them squares to `1`; such a factor is a
-`θ₀` for (a), with `ε' = 1` when it belongs to the term with sign `+` and `ε' = −1` otherwise.
-For (b), by (a) the class function `χ̂|_{A × C} − ε' θ₀ λ` vanishes off `B × C`, so it is
+`B = 1`). For a generator `a`, `ε' θ₀(a) = ε(χ)`. When `|A|` is odd, `θ₀² = 1` forces `θ₀ = 1`
+and `ε' = ε(χ)`. When `|A|` is even, `θ₀` is trivial or the unique linear character of `A` of
+order `2`, which is `−1` at every generator, and in the second case `ε' = −ε(χ)`: for `|A| = 2`
+and `B = 1` both choices satisfy (a) and (b), and for `|A| = 4` the second can be forced (Checks).
+Route: for a faithful linear character `ξ` of `A/B`, inflated to `Γ ⋊ A`, the virtual character
+`χ̂ − χ̂ ξ` vanishes on `Γ ⋊ B` and has norm `2`, its two terms being distinct (their determinants
+on `inr(A)` are `1` and `ξ^{χ(1)} ≠ 1`). For `a ∈ A ∖ B` the fixed points of `⟨a⟩` are `C`, so §3.1
+for `⟨a⟩` makes the sum of `|χ̂ − χ̂ ξ|²` over the coset `a Γ` equal to `|Γ : C|` times its sum over
+`a C`; hence the restriction to `A × C = inr(A) · inl(C)` also has norm `2` and is the difference of
+two distinct irreducible characters of `A × C`, each a linear character of `A` times an irreducible
+character of `C` (CharacterTheory §3.6). Vanishing on `C` gives the two the same factor on `C`,
+which is `λ` by §3.3 at the elements of `A ∖ B` and §3.2 at a generator; comparing the factors on
+`A` there shows that their product is `ξ` and that at least one of them squares to `1`; such a
+factor is a `θ₀` for (a), with `ε' = 1` when it belongs to the term with sign `+` and `ε' = −1`
+otherwise. For (b), by (a) the class function `χ̂|_{A × C} − ε' θ₀ λ` vanishes off `B × C`, so it is
 unchanged by multiplication by `ξ`; its restriction `χ|_C − ε' λ` to `C` is therefore `|A : B|`
 times a virtual character `Δ`, whose multiplicities away from `λ` are those of `χ|_C` divided by
 `|A : B|`, while `[χ|_C, λ] = ε' + |A : B| [Δ, λ] ≥ 0` with `|A : B| ≥ 2` excludes `[Δ, λ] < 0`. If
 `χ|_C = ε' λ`, then `ε' = 1` and `χ̂(a) = θ₀(a) χ(1)` for a generator `a`, so `inr a` acts by a
 scalar in a representation affording `χ̂` (CharacterTheory §4.1); hence `a` fixes every coset of
-`ker χ`, and the coset statement of §1.2 gives `Γ = C · ker χ`. *Needs:* §§1.2, 2.2, 3.1, 3.2,
-3.3; CharacterTheory §§3.6, 4.1.
+`ker χ`, and the coset statement of §1.2 gives `Γ = C · ker χ`. *Needs:* §§1.2, 2.2, 3.1, 3.2, 3.3;
+CharacterTheory §§3.6, 4.1.
 
 **Checks.**
 - `SL(2,3)`, `B = 1`: `ε' = ε = −1`, `χ₂|_C = 2 sgn ≠ −sgn` and `(2 sgn + sgn)/3 = sgn` is a
   character.
 - `χ = 1`: `χ|_C = 1 = ε' λ` with `ε' = 1`, and `Γ = C · Γ`.
-- The extraspecial group `3^{1+2}_+` with the involution of §4.2, `B = 1`: `χ|_C = 3 ω`, and
-  `(3 ω − ω)/2 = ω` is a character.
+- The extraspecial group `3^{1+2}_+` with the involution `a` of §4.2, `B = 1`, and a faithful `χ`
+  of degree `3`: `χ|_C = 3 ω`; the eigenvalues of `inr a` are `±1` with product `1` and
+  `|χ̂(a)| = χ*_cyc(1) = 1`, so they are `−1, −1, 1`, `χ̂(a) = −1`, `ε(χ) = −1` and `λ = ω`. The
+  choice `ε' = 1` with `θ₀` the nontrivial character of `A` gives `(3 ω − ω)/2 = ω`, and the
+  choice `ε' = −1`, `θ₀ = 1` gives `(3 ω + ω)/2 = 2 ω`, both characters.
+- `|A| = 4` can force the nontrivial `θ₀`: `A = ⟨a⟩ ≅ C₄` acting on `Γ = 3^{1+2}_+`, with
+  multiplication `(x, y, z)(x', y', z') = (x + x', y + y', z + z' + x y')`, by
+  `a · (x, y, z) = (−y, x, z − x y)`, an automorphism whose square is the involution of §4.2;
+  every `a^j ≠ 1` has fixed points `C = Z(Γ)`, so `B = 1` qualifies. For a faithful `χ` of degree
+  `3`, `χ|_C = 3 ω`. By §2.2 the canonical extension restricts on `Γ ⋊ ⟨a²⟩` to that of the
+  previous Check, so `χ̂(a²) = −1`; the eigenvalues of `inr a` square to `−1, −1, 1`, their product
+  is `1` and their sum `χ̂(a)` is an integer (§2.3), so they are `i, −i, 1`, `χ̂(a) = 1`,
+  `ε(χ) = 1` and `λ = ω`. Then (a) at `a²`, where `θ₀(a²) = 1`, gives `ε' = −1`, and (a) at `a`
+  gives `θ₀(a) = −1`, so `ε' = −ε(χ)`; (b) reads `(3 ω + ω)/4 = ω`, whereas `ε' = 1` would give
+  `ω/2`.
 - `C₂` inverting the `C₅` factor of `Γ = C₃ × C₅`, `B = 1`, `χ = ψ × 1`: `χ|_C = ψ = λ`, and
   `Γ = C · ker χ = C₃ · C₅`.
 
@@ -893,7 +911,8 @@ for a suitable sign `ε'`; for `SL(2,3)` it is `3 sgn`.
 
 ### Dependencies
 
-Layers 1–2; InverseGaloisAndArithmeticFundamentalGroups IG.3.4; CharacterTheory §§3.6, 4.1, 4.4.
+Layers 1–2; Mathlib semidirect products and cyclic groups; Tau Ceti Galois action on characters;
+InverseGaloisAndArithmeticFundamentalGroups IG.3.4; CharacterTheory §§3.6, 4.1, 4.4.
 
 ## Layer 4: the solvable case
 
@@ -911,7 +930,7 @@ the inverse of the cyclic correspondence for `S_{i−1}/S_i` acting on `C_Γ(S_i
 `Λ_C(λ) = λ_m` (glauberman line 503, Definition (a)). When every `S_i` is normal in `S`, prove
 that each `λ_i` is `S`-invariant and that the inverse construction is defined on `Irr_S(Γ)` and
 inverts `Λ_C` (glauberman line 524, Lemma 5). *Needs:* §§2.2, 3.2; Mathlib
-`MulDistribMulAction (G ⧸ H) (FixedPoints.subgroup H α)`, `IsSolvable`.
+`MulDistribMulAction (G ⧸ H) (FixedPoints.subgroup H α)`, `Group.IsSolvable`.
 
 - The identification `C_{C_Γ(T)}(S/T) = C_Γ(S)` is an equality of subgroups of `Γ`.
 - `Λ_C` for a series of length one is the inverse of the cyclic correspondence.
@@ -934,9 +953,21 @@ inverts `Λ_C` (glauberman line 524, Lemma 5). *Needs:* §§2.2, 3.2; Mathlib
 
 Let `S` be a `p`-group coprime to `Γ` and `C` a composition series. Prove that for every
 `λ ∈ Irr(C_Γ(S))` there is a sign `ε` such that `(Λ_C(λ)|_C − ε λ)/p` is zero or a character of
-`C` (glauberman line 540, Theorem 4 (a)). Route: induction on `|S|`, the last step being §3.4 (b)
-for the prime-order group `S_{m−1}`, with the transitivity of the congruence through
-`C ≤ C_Γ(S_{m−1})`. *Needs:* §§3.4, 4.1.
+`C` (glauberman line 540, Theorem 4 (a)). Route: induction on `|S|` through the first term `S₁`,
+which is normal in `S` of index `p`. The last term `S_{m−1}` need not be normal in `S`, and then
+`S` does not act on `C_Γ(S_{m−1})`: for the monomial `D₈ ≤ GL₂(3)` acting on `𝔽₃²` and the series
+`D₈ ⊵ V₄ ⊵ ⟨diag(1, −1)⟩ ⊵ 1`, the swap carries `C_Γ(⟨diag(1, −1)⟩) = 𝔽₃ × 0` to `0 × 𝔽₃`. Let
+`λ₁ ∈ Irr(C_Γ(S₁))` be the first step of the construction of `Λ_C(λ)`: `λ` is the cyclic
+correspondent of `λ₁` for `S/S₁` acting on `C_Γ(S₁)`, whose fixed subgroup is `C`, and `Λ_C(λ)`
+is the image of `λ₁` along the series `S₁ ⊵ ⋯ ⊵ S_m` of `S₁`. The induction hypothesis for `S₁`
+acting on `Γ` gives a sign `ε₁` with `Λ_C(λ)|_{C_Γ(S₁)} − ε₁ λ₁ = p X`, and §3.4 (b) with `B = 1`
+for `S/S₁` gives a sign `ε₀` with `λ₁|_C − ε₀ λ = p Y`, where `X` and `Y` are zero or characters.
+Restricting the first identity to `C` and adding `ε₁` times the second,
+`Λ_C(λ)|_C − ε₁ ε₀ λ = p (X|_C + ε₁ Y)`, so the quotient by `p` is a virtual character of `C`. Its
+multiplicities away from `λ` are those of `Λ_C(λ)|_C` divided by `p`, hence nonnegative, and its
+multiplicity at `λ` is the integer `([Λ_C(λ)|_C, λ] − ε₁ ε₀)/p`, nonnegative because
+`[Λ_C(λ)|_C, λ] ≥ 0` is congruent to `ε₁ ε₀ = ±1` modulo `p`; so `ε = ε₁ ε₀` works. *Needs:*
+§§3.4, 4.1.
 
 **Checks.**
 - `SL(2,3)`: `Λ(sgn)|_C = χ₂|_C = 2 sgn`, `ε = −1`, `(2 sgn + sgn)/3 = sgn`.
@@ -1069,8 +1100,8 @@ with the same central character.
 
 ### Dependencies
 
-Layers 1–3; Mathlib quotient actions on fixed points; Tau Ceti Galois action and fields of values;
-CharacterTheory §4.4.
+Layers 1–3; Mathlib quotient actions on fixed points and solvable groups; Tau Ceti character
+counts, Galois action and fields of values; CharacterTheory §4.4.
 
 ## Layer 5: degree relations
 
@@ -1356,9 +1387,10 @@ base §§4.3, 6.2, 7.1.
 
 Base Conventions and §§1.1, 1.3, 2.1–2.4, 3.1, 4.1–4.3, 6.1–6.2, 7.1, 8.2 (§§7.1 and 8.2 for the
 changes of system and of level only); CharacterTheory §§4.3, 4.4, 4.5 (§4.5 for the change of
-system); Tau Ceti central characters and degrees; Mathlib `Ideal.exists_smul_eq_of_isGaloisGroup`
-for the change of place, and `IsDedekindDomain.HeightOneSpectrum.adicCompletion` with
-`UniformSpace.Completion.extension` for the change of system.
+system); Tau Ceti central characters and degrees; Mathlib `padicValNat`; Mathlib
+`Ideal.exists_smul_eq_of_isGaloisGroup` for the change of place, and
+`IsDedekindDomain.HeightOneSpectrum.adicCompletion` with `UniformSpace.Completion.extension` for
+the change of system.
 
 ## Layer 7: blocks and normal subgroups
 
@@ -1548,6 +1580,17 @@ defect group of `b` (martinez line 2161, Proposition 9.1, and line 2222, Theorem
 - `S₃`, `N = C₃`, `p = 2`: `B₀` has `λ_{B₀}(𝒞⁺_t) = 3 ≡ 1 ≠ 0` at the transpositions, so it is not
   regular with respect to `C₃`; the defect-zero block has `λ = 0` there and is regular, equal to
   `{λ}^G`.
+- `S₄`, `p = 2`, `N = V₄`: as `C_G(V₄) = V₄` and every block covers the single block `b` of the
+  `2`-group `V₄`, the third statement above for `Q = V₄` makes the principal block `B₀` the only
+  block, with defect group `D₈`, and `λ_{B₀}(𝒞⁺)` is `|𝒞|` modulo `2`. The classes outside
+  `V₄`, of the transpositions, the `3`-cycles and the `4`-cycles, have sizes `6, 8, 6`, so `B₀` is
+  regular with respect to `V₄`, as `C_G(D₈) = Z(D₈) ≤ V₄` predicts, and it is `b^G`. With respect
+  to `N = 1` it is not regular: the double transpositions form a class outside `1` of size `3`,
+  where `λ_{B₀} = 1`.
+- `G = C₂ = ⟨t⟩`, `p = 2`, `N = 1`: the single block has `λ(t) = 1 ≠ 0` on the class `{t} ⊄ 1`,
+  so it is not regular; accordingly `b^G` is not defined for the block `b` of `1`, since the
+  candidate `z ↦` (the coefficient of `z` at `1`) sends `t` to `0` and `t · t = 1` to `1`, and is
+  not multiplicative.
 - `Q = O_p(G)` with `Q C_G(Q) = G`: `b^G = b`.
 - `S₃`, `p = 3`, `N = C₃`, `b` the block of `N`: the covering block has defect group `P = C₃`,
   `|G : P N| = 2` is prime to `3`, and `P ∩ N = C₃` is the defect group of `b`.
@@ -1582,7 +1625,8 @@ correspondence is the identity on `B₀`.
 ### Dependencies
 
 Layer 6; base §§0.2, 1.2, 1.3, 2.1, 2.4, 3.1, 4.1, 4.2, 6.1–6.2, 7.1, 8.2; InductionRestriction
-Layers 2 and 5; Tau Ceti Clifford theory; Mathlib `Rep.indResAdjunction`.
+Layers 2 and 5; Tau Ceti Clifford theory and induced class functions; Mathlib
+`Rep.indResAdjunction`.
 
 ## Layer 8: blocks with a normal defect group
 
