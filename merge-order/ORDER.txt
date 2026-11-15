@@ -316,6 +316,7 @@ GeometricFreyMazur
 ModularCurvesPartIII
 IntegralIwasawaTheoryPartII
 CohomologyOfGroups
+FinitenessAndDualityOfGroups
 HopfologicalAlgebra
 McKaySkewGroup
 LocalLanglandsCorrespondenceForG2
