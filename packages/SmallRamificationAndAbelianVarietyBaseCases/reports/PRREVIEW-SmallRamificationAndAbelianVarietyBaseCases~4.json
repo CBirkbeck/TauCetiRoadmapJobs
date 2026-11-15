@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SmallRamificationAndAbelianVarietyBaseCases~4",
+  "head": "62c25a3c71112296608ce170df83694b68dab3c5",
+  "pr": 970,
+  "folder": "SmallRamificationAndAbelianVarietyBaseCases",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 37 changed lines since 92d13bb. Previous R01 ([Finite F]) and R02 (description states Fontaine over the four fields) repaired. Changed passages checked: PadicExtensionFamilies sections 2.3, 3.3, 7.1-7.3 resolved on main and recomputed (Q_3(cube root of 3): 5/3 against 11/6; tame jump sum 1-1/e; root discriminants sqrt 3 and 3^(4/3)); special or supercuspidal local component agrees with 5.0c. Title and description agree with the head. Gate: every check 0, build OK; depcheck 0 problems; elaboration: 13 sorry warnings only; no change outside the folder. No seeded target falls in a changed passage.",
+  "text": "b8619162ff92c05f"
+ }
+}
