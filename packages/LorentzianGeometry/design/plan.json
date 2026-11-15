@@ -61,12 +61,12 @@
       {
        "name": "IsLorentzian.not_isOrtho_of_isTimelike",
        "role": "structure",
-       "statement": "An orthogonal family of timelike vectors has at most one member."
+       "statement": "For Lorentzian b, an orthogonal family of timelike vectors has at most one member."
       },
       {
        "name": "IsLorentzian.restrict_iff",
        "role": "structure",
-       "statement": "The restriction to a subspace W is Lorentzian iff it is nondegenerate and W contains a timelike vector."
+       "statement": "For Lorentzian b, the restriction to a subspace W is Lorentzian iff it is nondegenerate and W contains a timelike vector (1 ≤ sigNeg(b|_W) ≤ sigNeg b = 1); by 1.3 the nondegeneracy is automatic."
       }
      ],
      "tests": [
@@ -83,7 +83,7 @@
       {
        "name": "index_two_rejected",
        "kind": "non-example",
-       "statement": "diag(−1, −1, 1) on ℝ³ has sigNeg = 2, not Lorentzian."
+       "statement": "diag(−1, −1, 1) on ℝ³ has sigNeg = 2, not Lorentzian; its restriction to W = ℝ³ is nondegenerate with the timelike e₀, and e₀, e₁ are orthogonal timelike vectors, so the restriction criterion and the orthogonal-family bound need b Lorentzian."
       },
       {
        "name": "sign_flip",
@@ -99,6 +99,11 @@
        "name": "clifford_three_one",
        "kind": "compatibility",
        "statement": "For Q = TauCeti.realCliffordForm 3 1, QuadraticMap.associated Q (half the polar form) has Gram matrix diag(1, 1, 1, −1) and is Lorentzian with timelike e₃ and value Q(e₃) = −1 at (e₃, e₃); the polar form QuadraticMap.polar Q has Gram matrix diag(2, 2, 2, −2), value −2 at (e₃, e₃)."
+      },
+      {
+       "name": "restriction_criterion",
+       "kind": "computation",
+       "statement": "For η₃ = diag(−1, 1, 1): ⟨e₀, e₁⟩ restricts to η (Lorentzian); ⟨e₁, e₂⟩ is Euclidean (nondegenerate, no timelike vector); ⟨e₀ + e₁, e₂⟩ has Gram matrix [[0, 0], [0, 1]] (degenerate, no timelike vector). For the non-Lorentzian diag(−1, −1, 1), W = ℝ³ is nondegenerate with timelike e₀ but not Lorentzian, and e₀ ⊥ e₁ are both timelike."
       }
      ]
     },
@@ -123,7 +128,7 @@
       {
        "name": "dualForm_toDual_toDual",
        "role": "compatibility",
-       "statement": "b♭ is an isometry from b to b⁻¹: b⁻¹(b♭u, b♭w) = b(u, w); so b⁻¹ has the signature of b and is Lorentzian iff b is."
+       "statement": "b♭ is an isometry from b to b⁻¹: b⁻¹(b♭u, b♭w) = b(u, w); so b⁻¹ is nondegenerate, is symmetric iff b is, has the signature of b, and is Lorentzian iff b is."
       },
       {
        "name": "apply_toDual_symm",
@@ -133,7 +138,7 @@
       {
        "name": "dualForm_smul",
        "role": "structure",
-       "statement": "(c • b)⁻¹ = c⁻¹ • b⁻¹ for c ≠ 0; the Gram matrix of b⁻¹ in a dual basis is the inverse Gram matrix."
+       "statement": "(c • b)⁻¹ = c⁻¹ • b⁻¹ for c ≠ 0; the Gram matrix of b⁻¹ in a dual basis is the inverse of the transpose of the Gram matrix of b, hence the inverse Gram matrix for symmetric b."
       }
      ],
      "tests": [
@@ -151,6 +156,11 @@
        "name": "double_null_inverse",
        "kind": "computation",
        "statement": "For Gram matrix [[0, −2], [−2, 0]]: b⁻¹(e⁰, e¹) = −½ and b⁻¹(e⁰, e⁰) = 0; for 4η, b⁻¹(dt, dt) = −¼."
+      },
+      {
+       "name": "nonsymmetric_inverse",
+       "kind": "non-example",
+       "statement": "For b(u, w) = u⁰w¹ − u¹w⁰ on ℝ² (Gram matrix G = [[0, 1], [−1, 0]]): b⁻¹(e⁰, e¹) = 1, b⁻¹(e¹, e⁰) = −1, so b⁻¹ is not symmetric and its Gram matrix is (Gᵀ)⁻¹ = [[0, 1], [−1, 0]], not G⁻¹ = [[0, −1], [1, 0]]."
       }
      ]
     },
@@ -186,17 +196,17 @@
       {
        "name": "IsLorentzian.orthogonal_posDef",
        "role": "structure",
-       "statement": "For Lorentzian b and timelike v, v^⊥ is positive definite and V = ℝv ⊕ v^⊥."
+       "statement": "For Lorentzian b and timelike v, v^⊥ is positive definite and V = ℝv ⊕ v^⊥; hence a subspace W containing a timelike v is nondegenerate (W = ℝv ⊕ (W ∩ v^⊥)), and b|_W is Lorentzian iff W contains a timelike vector."
       },
       {
        "name": "IsLorentzian.not_isOrtho",
        "role": "structure",
-       "statement": "A timelike and a nonzero causal vector are never orthogonal; two null vectors are orthogonal iff proportional."
+       "statement": "For Lorentzian b, a timelike and a nonzero causal vector are never orthogonal; two null vectors are orthogonal iff proportional."
       },
       {
        "name": "IsLorentzian.exists_isNull_iff",
        "role": "characterisation",
-       "statement": "Null vectors exist iff finrank V ≥ 2."
+       "statement": "For Lorentzian b, null vectors exist iff finrank V ≥ 2."
       }
      ],
      "tests": [
@@ -219,6 +229,11 @@
        "name": "null_orthogonality",
        "kind": "computation",
        "statement": "η(e₀+e₁, e₀−e₁) = −2 ≠ 0 for non-proportional null vectors; e₀+e₁ ⊥ 2e₀+2e₁."
+      },
+      {
+       "name": "euclidean_no_null",
+       "kind": "non-example",
+       "statement": "The Euclidean form on ℝ² has finrank 2 and b(v, v) > 0 for v ≠ 0, so no null vector: the null-existence criterion needs b Lorentzian."
       }
      ]
     },
@@ -702,10 +717,11 @@
      "id": "2.5",
      "kind": "construction",
      "name": "TauCeti.Manifold.LorentzianMetric.pullback",
-     "statement": "Restriction to open subsets; pullback along smooth local diffeomorphisms; conformal rescaling e^{2φ}g; metrics from continuous coframes; the acoustical metric −c²dt² + Σ(dx^i − v^i dt)² for functions t, x^i with independent differentials (corners allowed), with B = ∂_t + v·∇ timelike, g(B,B) = −c², g⁻¹(dt,dt) = −c⁻², slices spacelike; the double null metric −2Ω²(du⊗dv + dv⊗du) + γ for a function Ω > 0 and coefficient functions γ_{AB} of class ℛ with g⁻¹(du,du) = 0, g⁻¹(du,dv) = −(2Ω²)⁻¹; and g = h − 2h(·,X)h(·,X)/h(X,X) from a Riemannian h and nowhere-vanishing X; each of the class of its data.",
+     "statement": "Restriction to open subsets; pullback along smooth local diffeomorphisms; conformal rescaling e^{2φ}g; metrics from continuous coframes; the acoustical metric −c²dt² + Σ(dx^i − v^i dt)² for functions t, x^i with independent differentials (corners allowed), with B = ∂_t + v·∇ timelike, g(B,B) = −c², g⁻¹(dt,dt) = −c⁻², slices spacelike; the double null metric −2Ω²(du⊗dv + dv⊗du) + γ on an open set of ℝ_u × ℝ_v × ℝ^{n−1}, n ≥ 1, for a function Ω > 0 and coefficient functions γ_{AB} of class ℛ with g⁻¹(du,du) = 0, g⁻¹(du,dv) = −(2Ω²)⁻¹; and g = h − 2h(·,X)h(·,X)/h(X,X) from a Riemannian h and nowhere-vanishing X; each of the class of its data.",
      "hypotheses": [
       "data of class ℛ (functions, vector fields, one-forms and bilinear fields in the sense of 2.3)",
-      "c > 0, Ω > 0, γ positive definite, X nowhere vanishing"
+      "c > 0, Ω > 0, γ positive definite, X nowhere vanishing",
+      "n ≥ 1 for the double null metric (dimension n + 1)"
      ],
      "locator": {
       "source": "sbierski2018",
@@ -830,7 +846,7 @@
      ],
      "locator": {
       "source": "oneill1983",
-      "where": "Ch. 3 (Levi-Civita connection); chrusciel2011 §2.2, (2.2.1)–(2.2.3), lines 186–193, p. 5"
+      "where": "Ch. 3 (Levi-Civita connection); barzenleymann2026 §7.1, Definitions 41–42 and (51), lines 1778–1809, pp. 38–39 (smooth pseudo-Riemannian)"
      },
      "prerequisites": [
       "mathlib:CovariantDerivative",
@@ -901,7 +917,7 @@
      ],
      "locator": {
       "source": "oneill1983",
-      "where": "Ch. 3 (fundamental theorem); chrusciel2011 §2.2, (2.2.1)–(2.2.3), lines 186–193, p. 5"
+      "where": "Ch. 3 (fundamental theorem); barzenleymann2026 §7.1, Theorem 6, lines 1810–1814, p. 39 (smooth pseudo-Riemannian)"
      },
      "prerequisites": [
       "target:3.1",
@@ -932,7 +948,7 @@
      ],
      "locator": {
       "source": "chrusciel2011",
-      "where": "§2.2, (2.2.2)–(2.2.3), lines 186–193, p. 5, and lines 201–203, p. 6; oneill1983 Ch. 3"
+      "where": "§2.2, (2.2.2)–(2.2.3), lines 187–193, p. 5, and lines 201–203, p. 6; oneill1983 Ch. 3"
      },
      "prerequisites": [
       "target:2.1",
@@ -962,7 +978,7 @@
      ],
      "locator": {
       "source": "oneill1983",
-      "where": "Ch. 3 (curvature); chrusciel2011 §2.2, (2.2.2)–(2.2.3), lines 186–193, p. 5"
+      "where": "Ch. 3 (curvature); barzenleymann2026 §7.3, Definition 43 with (53) and Lemma 24 with (54), lines 1896–1948, pp. 41–42, §7.6, Definition 48, lines 2228–2254, p. 48, and Definition 50, lines 2289–2291, p. 49 (smooth pseudo-Riemannian); chrusciel2011 §2.2, (2.2.2)–(2.2.3), lines 187–193, p. 5 (Christoffel symbols in the chart formula)"
      },
      "prerequisites": [
       "target:2.3",
