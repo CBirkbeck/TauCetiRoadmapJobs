@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PDE~9",
+  "head": "f019834452df4d5e467bcead845417ed0ede9f9e",
+  "pr": 1614,
+  "folder": "PDE",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since f019834; this round reads the pull request's title and description against the head. Previous R01 (P3) not repaired, the head being the same: the Poincaré bullet's W^{1,p}_Γ and Poincaré–Wirtinger clauses say bounded and connected without Lipschitz (rooms-and-passages witness recomputed). New R02 (P3): the description states neither the rewrite of main's Poincaré-normalization bullet nor the Suggested.lean additions (one import, two declarations); no sentence of it is contradicted by the head. Gate run again: every check 0, OK. Dependency check: 245 roadmaps, 2219 edges, 0 problems. Suggested.lean elaborates at the pins with only the sorry at 270:8; one-tactic probe (rfl, simp, exact?) fails on the theorem. Seeded sample (Fredholm alternative, Carleson project, Lane A comes first) lies in main's unchanged text; the Fredholm theorems confirmed at the Mathlib pin. Nothing changed outside the folder.",
+  "text": "4b41d21eef82cf77"
+ }
+}
