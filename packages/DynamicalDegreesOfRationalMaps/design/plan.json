@@ -700,7 +700,7 @@
      "id": "3.3",
      "kind": "theorem",
      "name": "siu_inequality",
-     "statement": "V integral projective of dimension r ≥ 1, A, B nef line bundles with (A^r) > 0, C_1..C_{r-1} nef: (A^r)(B·C) ≤ r (A^{r-1}·B)(A·C); a nef A with (A^r) > 0 is big; the inequality holds for nef real classes A, B, C_j with (A^r) > 0, by the ample approximation of §3.1 (both sides homogeneous of degree r in A, 1 in B and in each C_j).",
+     "statement": "V integral projective of dimension r ≥ 1, A, B nef line bundles with (A^r) > 0, C_1..C_{r-1} nef: (A^r)(B·C) ≤ r (A^{r-1}·B)(A·C); the inequality holds for nef real classes A, B, C_j with (A^r) > 0, by the ample approximation of §3.1 (both sides homogeneous of degree r in A, 1 in B and in each C_j).",
      "hypotheses": [
       "V integral projective over K",
       "A, B, C_i nef line bundles or nef real classes",
@@ -1419,6 +1419,11 @@
        "name": "dominant_morphism_then_cremona",
        "kind": "computation",
        "statement": "f = [x_0^2 : x_1^2 : x_2^2], g = σ: G(F) = (x_1^2x_2^2, x_0^2x_2^2, x_0^2x_1^2) without common factor, degree 4 = 2·2; f = g = σ: h = x_0x_1x_2, degree 1 < 4"
+      },
+      {
+       "name": "point_projective_space",
+       "kind": "non-example",
+       "statement": "d = 0: P^0 = Proj K[x_0] = Spec K; the identity [x_0] has reduced form (1) of degree 0 and is dominant, so a degree-0 morphism can be dominant and deg(id^0) = 0 ≠ 0^0 = 1; Frobenius [x_0^p] = [1] has degree 0; excluded by d ≥ 1"
       }
      ]
     },
@@ -1428,6 +1433,7 @@
      "name": "projectiveSpace_degree_formulas",
      "statement": "For f given by reduced forms of degree a ≥ 1, dominant: deg_{1,H}(f) = a; deg_{k+1,H} ≤ a·deg_{k,H} for 0 ≤ k ≤ d-1, so deg_{k,H} ≤ a^k for 0 ≤ k ≤ d; equality for morphisms; for morphisms deg_{k,H}(f^n) = a^{nk}, λ_k = a^k, e = a^d; λ_1(f) = lim (deg f^n)^{1/n}; deg_{1,H}(g∘f) ≤ deg_{1,H}(f)deg_{1,H}(g).",
      "hypotheses": [
+      "d ≥ 1",
       "f dominant self-map of P^d given by reduced forms of degree a ≥ 1",
       "0 ≤ k ≤ d-1 for the recursion (it compares (A^{d-k-1}B^k·(aA - B)) on Γ_f); 0 ≤ k ≤ d for the bounds"
      ],
@@ -1477,6 +1483,7 @@
      "name": "projectiveSpace_standard_examples",
      "statement": "Cremona σ on P^d, d ≥ 2: σ∘σ = id, deg_{1,H}(σ) = d, deg_{1,H}(σ^2) = 1 < d^2, e = 1, λ_k = 1, h_alg = 0. Fibonacci map [yz : xy : z^2]: f^0 = id; for n ≥ 1, f^n = [x^{fib(n-1)}y^{fib n}z^{fib n} : x^{fib n}y^{fib(n+1)} : z^{fib(n+2)}] (reduced forms of degree fib(n+2)); deg_{1,H}(f^n) = fib(n+2) for every n ≥ 0 (n = 0: the identity, degree 1 = fib 2), λ_1 = golden ratio, λ_2 = 1, h_alg = log golden ratio. Frobenius: λ_k = p^k, λ_d = e = p^d.",
      "hypotheses": [
+      "d ≥ 1 (on P^0 = Spec K the Frobenius [x_0^p] = [1] has degree 0, not p)",
       "d ≥ 2 for the Cremona involution",
       "n ≥ 1 for the coordinate formula of the Fibonacci iterate f^n (Mathlib's Nat.fib with natural subtraction); f^0 = id separately",
       "characteristic p for Frobenius"
@@ -1527,6 +1534,7 @@
      "name": "affineSpace_polynomialMap",
      "statement": "For F : A^d -> A^d dominant with a = max deg F_i: the extension [x_0^a : x_0^a F_i(x/x_0)] has reduced forms of degree a, restricts to F on A^d; deg_{1,H}(f) = a; λ_d(f) = e(f) = [K(x) : K(F)]; extensions of dominant polynomial maps compose, the inner map first; proper F is finite and surjective.",
      "hypotheses": [
+      "d ≥ 1 (for d = 0 the tuple F is empty and a = max ∅ has the junk value 0)",
       "F_1..F_d algebraically independent over K"
      ],
      "locator": {
@@ -1562,6 +1570,11 @@
        "name": "not_proper",
        "kind": "non-example",
        "statement": "(x, xy): empty fibre over (0, 1), not proper"
+      },
+      {
+       "name": "empty_tuple",
+       "kind": "non-example",
+       "statement": "d = 0: F is empty on A^0 = Spec K, a = max ∅ has the junk value 0 in N, contradicting a ≥ 1; excluded by d ≥ 1"
       }
      ]
     }

@@ -9,7 +9,7 @@ This roadmap owns the following.
 - The pullback of function fields along a dominant rational map, the topological degree and its multiplicativity (§1.1). Mathlib has the bijection between rational maps and morphisms from the spectrum of the function field. Tau Ceti has the function-field map of a dominant morphism (`AlgebraicGeometry.Scheme.Hom.functionFieldMap`, `AlgebraicGeometry.Scheme.Hom.functionFieldAlgHom`) and, for integral sources whose local rings are valuation rings, the morphism attached to a map of function fields (TauCeti/AlgebraicGeometry/Birational/AlgHom.lean). Neither library has the pullback along a dominant rational map or its degree; §1.1 builds them on the morphism case. Tau Ceti's `TauCeti.Isogeny.fieldPullback` (TauCeti/AlgebraicGeometry/EllipticCurve/Isogeny/FunctionField.lean:167) covers only isogenies of Weierstrass elliptic curves, on their algebraic function fields.
 - The graph of a rational map between projective varieties, its projections as a modification and an alteration, the correspondence attached to a composite, and the normalization and field-extension behaviour of graphs (§§1.2–1.4).
 - The component formula for Euler-characteristic intersection numbers, their comparison with Chow-theoretic degrees, their real multilinear extension, and the reduction of homogeneous inequalities to integral varieties over algebraically closed fields (Layer 2).
-- Over an arbitrary field: the reading of the imported nefness and Kleiman nonnegativity in Euler-characteristic intersection numbers, on arbitrary closed subschemes and for all nef real classes, with the approximation of nef real classes on a projective scheme by positive rational multiples of ample line bundles (§§3.1–3.2); Siu's inequality in intersection form, the Hodge inequality on possibly singular projective surfaces, the Khovanskii–Teissier inequalities and Siu's inequality for products (§§3.3–3.6).
+- Over an arbitrary field: the reading of the imported nefness and Kleiman nonnegativity in Euler-characteristic intersection numbers, on arbitrary closed subschemes and for all nef real classes, with the approximation of nef real classes on a projective scheme by positive rational multiples of ample line bundles (§§3.1–3.2); Siu's inequality in intersection form, the Hodge inequality on possibly singular projective surfaces, the Khovanskii–Teissier inequalities and Siu's inequality for products (§§3.3–3.6). AlgebraicModuliForArithmeticGeometry §9.10 proves the log-concavity of `p ↦ (H^p · L^{n−p})` for an ample `L` and a nef `H` on a smooth projective geometrically integral variety over a field of characteristic zero, as a step towards its bound on mixed intersections. §3.5 is the statement for integral projective varieties over every field and for all nef real classes, with the mixed factors `C_j`. It does not use §9.10.
 - Degrees of dominant rational maps, their basic values and invariances, sub-multiplicativity, comparison of polarizations and birational conjugacy (Layer 4); dynamical degrees and algebraic entropy (Layer 5); the projective-space and affine-space theory of Layer 6.
 
 The following are imported, not planned again.
@@ -28,7 +28,7 @@ What is left out, as motivation for later roadmaps:
 - The topological-entropy bound of Dinh and Sibony over `ℂ` (dinhsibony2005 Théorème 1), which uses positive currents.
 - Dang and Favre's b-classes, Picard–Manin spaces and spectral gap, with their Theorems 1–2 (dangfavre2021 lines 148–180). They consume the degrees and dynamical degrees built here.
 - Arithmetic degrees and canonical heights of rational self-maps of `ℙ^N` (silverman2014 §§4–5).
-- Correspondences and resolution of singularities. No statement here uses either.
+- The dynamics of correspondences, and resolution of singularities. A dominant correspondence from `X` to `Y` is a multivalued map. It is given by a cycle on `X ×_K Y` whose components have dimension `dim X` and project dominantly onto both factors (truong2020 lines 77–89). Its dynamical degrees are those of truong2020 Theorem 1.1, lines 143–145. A dominant rational map is the case of a single component, of multiplicity one, that maps birationally onto `X`, and only this case is composed and iterated here. §1.3 calls the subvariety `W_{f,g}` the correspondence of a composite. It is a variety with proper surjective morphisms onto three graphs of rational maps: birational onto `Γ_f` and `Γ_{g∘f}`, and generically finite of degree `e(f)` onto `Γ_g`. No statement uses resolution of singularities: §3.4 uses alterations, and §2.4 uses normalization.
 
 ## Conventions
 
@@ -362,9 +362,9 @@ Let `V` be an integral projective variety of dimension `r ≥ 1`, `A` and `B` ne
 (A^r)·(B · C_1 ⋯ C_{r−1}) ≤ r·(A^{r−1} · B)·(A · C_1 ⋯ C_{r−1}).
 ```
 
-Prove also that a nef line bundle `A` with `(A^r) > 0` is big. The inequality holds as well when `A`, `B` and the `C_j` are nef real classes with `(A^r) > 0` (dang2020 Proposition 3.4.1 and Remark 3.4.3, lines 840–869; lazarsfeld2004 Theorem 2.2.15; dangfavre2021 Theorem 1.2, line 434, for `k = 1` with constant `d`).
+The inequality holds as well when `A`, `B` and the `C_j` are nef real classes with `(A^r) > 0` (dang2020 Proposition 3.4.1 and Remark 3.4.3, lines 840–869; lazarsfeld2004 Theorem 2.2.15; dangfavre2021 Theorem 1.2, line 434, for `k = 1` with constant `d`). A nef line bundle `A` with `(A^r) > 0` is big, with `vol(A) = (A^r)`, by ArakelovGeometryAndAbelianHeightsPartII §0.3 (1′) read through §2.2. This is imported, not a target, and the route below does not use it.
 
-*Route.* Bigness is ArakelovGeometryAndAbelianHeightsPartII §0.3 (1′), read through §2.2. For nef line bundles: for integers `p, q > 0` with `p(A^r) > r q (A^{r−1}·B)`, §0.3 (2′) gives `vol(pA − qB) ≥ p^{r−1}(p(A^r) − rq(A^{r−1}·B)) > 0`. So some `m(pA − qB)` has a nonzero section. On the integral `V` it is a regular section, and its zero scheme is an effective Cartier divisor `D` (Tau Ceti's `AlgebraicGeometry.Scheme.IdealSheafData.IsEffectiveCartier`) with `O(D) ≅ m(pA − qB)`. The Cartier restriction formula and §3.2 on `D` give `m(p(A · C) − q(B · C)) = (C_1 ⋯ C_{r−1} · D) ≥ 0`. Let `p/q` decrease to `r(A^{r−1}·B)/(A^r)`. For nef real classes: both sides are homogeneous of degree `r` in `A` and of degree one in `B` and in each `C_j`, and the inequality holds for ample line bundles by the case just proved, so the ample approximation of §3.1 extends it to all nef real classes on `V`.
+*Route.* For nef line bundles: for integers `p, q > 0` with `p(A^r) > r q (A^{r−1}·B)`, ArakelovGeometryAndAbelianHeightsPartII §0.3 (2′), read through §2.2, gives `vol(pA − qB) ≥ p^{r−1}(p(A^r) − rq(A^{r−1}·B)) > 0`. So some `m(pA − qB)` has a nonzero section. On the integral `V` it is a regular section, and its zero scheme is an effective Cartier divisor `D` (Tau Ceti's `AlgebraicGeometry.Scheme.IdealSheafData.IsEffectiveCartier`) with `O(D) ≅ m(pA − qB)`. The Cartier restriction formula and §3.2 on `D` give `m(p(A · C) − q(B · C)) = (C_1 ⋯ C_{r−1} · D) ≥ 0`. Let `p/q` decrease to `r(A^{r−1}·B)/(A^r)`. For nef real classes: both sides are homogeneous of degree `r` in `A` and of degree one in `B` and in each `C_j`, and the inequality holds for ample line bundles by the case just proved, so the ample approximation of §3.1 extends it to all nef real classes on `V`.
 
 *Needs:* §§2.2, 2.3, 3.1, 3.2; ArakelovGeometryAndAbelianHeightsPartII §0.3; CyclotomicClassGroupsAndStickelberger §4.3 (Cartier restriction); Tau Ceti `AlgebraicGeometry.Scheme.IdealSheafData.IsEffectiveCartier`.
 
@@ -650,6 +650,8 @@ Layers 1, 3 and 4; Mathlib `Subadditive` and its lemmas, `Scheme.RationalMap.com
 
 ## Layer 6: Projective space and affine space
 
+Throughout, `d ≥ 1`. On `ℙ⁰ = Spec K` the identity has the reduced form `(1)`, of degree `0` (§6.1, Checks).
+
 ### 6.1 Rational self-maps of projective space given by forms
 
 Prove:
@@ -670,6 +672,7 @@ Prove:
 - Non-example: the forms `(x_0², x_0x_1, x_0x_2)` have common factor `x_0` and define the identity, of degree `1`, not `2`.
 - Non-example for composition: the constant morphism `f = [0 : 0 : 1]`, by the forms `(0, 0, 1)` of degree `0`, followed by the Cremona involution `σ = [x_1x_2 : x_0x_2 : x_0x_1]`. Substitution gives `G(F) = (0·1, 0·1, 0·0) = (0, 0, 0)`, because `[0 : 0 : 1]` is a base point of `σ`; there is no composite rational map, as the dominance hypothesis predicts. As a morphism `f` has iterates `f^n = f` for `n ≥ 1`, of degree `0`.
 - For the dominant morphism `f = [x_0² : x_1² : x_2²]` and `g = σ`, `G(F) = (x_1²x_2², x_0²x_2², x_0²x_1²)` has no common factor, so `σ ∘ f` has degree `4 = 2·2`, the equality case for a morphism `f`. For `f = g = σ` the substitution has `h = x_0x_1x_2` and degree `1 < 4`.
+- Non-example for `d = 0`: `ℙ⁰ = Proj K[x_0] = Spec K`. The identity `[x_0]` has the common factor `x_0`, so its reduced form is `(1)`, of degree `0`, and it is dominant. The iterates item would fail there twice: this morphism of degree `0` is dominant, and `deg(f^0) = deg(id) = 0 ≠ 1 = 0^0`. The Frobenius `[x_0^p] = [1]` also has degree `0`, not `p`. The statements of this layer need `d ≥ 1`.
 
 ### 6.2 Degrees on projective space
 
@@ -727,6 +730,7 @@ Let `F = (F_1, …, F_d)` with `F_i ∈ K[x_1, …, x_d]`, `F : 𝔸^d → 𝔸^
 - The Hénon map `F = (y, x + y²)` is an automorphism with `F^{∘n}` of degree `2^n`. So `λ_1 = 2`, `λ_2 = 1` and `λ_1² > λ_2`, the hypothesis of Dang–Favre's Theorem 2.
 - Silverman's `F = (y, z, x + yz)` on `𝔸³` has iterates of degrees `2, 3, 5 = fib(n + 2)`, so `λ_1 = Real.goldenRatio` and, as an automorphism, `λ_3 = 1`.
 - Non-example: `F = (x, xy)` is dominant and birational but not proper (the fibre over `(0, 1)` is empty), so the finiteness item does not apply.
+- Non-example for `d = 0`: the tuple `F` is empty and `𝔸⁰ = Spec K`, so `a` is a maximum over the empty set. Its junk value `0` in `ℕ` contradicts `a ≥ 1`, which is why the layer assumes `d ≥ 1`.
 
 ### Examples
 
