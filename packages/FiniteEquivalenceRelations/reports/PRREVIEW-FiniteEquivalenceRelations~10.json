@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FiniteEquivalenceRelations~10",
+  "head": "2209712e14e95801ac7d46addbdb63bb87d19c9f",
+  "pr": 1929,
+  "folder": "FiniteEquivalenceRelations",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 139 changed lines since 027ef49 (the folder reverts to 22fb4a2). Previous R01-R05 repaired by the revert; R06 (description omits Layer 4) not repaired (R01); new R02: the description omits the restored 3.2/3.3 headlines (non-effective relation on a finite local scheme, F3 obstruction). Computed the restriction of Raicu's relation to Z at all 168 primes < 1000 and 5 large primes: Hilbert function 1,2,3,4,3,2 (16 in char 2), only gap in degree 5 (52 > 51), cocycle not in J(B(Z)); exponent table over F3 and the lengths 3-4 search partly reproduced. Sample locators checked in the changed passages: fga3 p. 212-04/212-05, kollar2012 para 50 and Theorem 51, raicu2010 Definition, Theorems 3.1 and 4.1. Gate rerun OK; depcheck 0 problems; lake env lean exit 0, 22 sorry warnings only; one-tactic probe closes neither restored theorem; nothing outside the folder.",
+  "text": "ff1af056ab17173d"
+ }
+}
