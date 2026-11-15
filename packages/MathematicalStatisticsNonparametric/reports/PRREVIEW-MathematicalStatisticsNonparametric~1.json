@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsNonparametric~1",
+  "head": "5e9de0b3e8862e5d6d2dff1a830a0f82149c00ac",
+  "pr": 2368,
+  "folder": "MathematicalStatisticsNonparametric",
+  "date": "2026-11-15",
+  "findings": 13,
+  "blocking": 5,
+  "notes": "Full review. Gate fails (sorry-data 1, statement-hygiene 2); targeted build passes; lake env lean exits 0 with 94 sorry warnings only; depcheck 0 problems. Two Lean statements are false by integral-binder precedence (chernoffSavage, integral_mise_eq), confirmed at the pin by rfl and by numerical instances; repairs elaborated on a scratch copy. Seeded sample of 15 targets recomputed (adversarial table, 30 rows); of the sampled sources only Johnstone (author page, 7 locators, all as cited) and Kim-Samworth (arXiv, 1 locator, constant depends on d) were readable; van der Vaart, Tsybakov, Samworth-Shah, Hsing-Eubank, Fan-Gijbels, Wand-Jones, Hollander-Wolfe-Chicken, Robertson-Wright-Dykstra, Groeneboom-Jongbloed are listed as not verifiable. Supplier sections of MathematicalStatisticsFoundations, MathematicalStatisticsAsymptotic (open heads) and StochasticCalculus (main) resolved; one-tactic probe run on all 94 admitted declarations (none closes; two padding declarations found by targeted probes).",
+  "text": "655266e3a69da790"
+ }
+}
