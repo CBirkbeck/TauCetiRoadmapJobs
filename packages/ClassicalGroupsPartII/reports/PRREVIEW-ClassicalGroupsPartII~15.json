@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassicalGroupsPartII~15",
+  "head": "a8badcd06b16a3a125b84a9a0b00ce9eae81eef3",
+  "pr": 1492,
+  "folder": "ClassicalGroupsPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since a8badcd. Previous R01 (description listed merged #1192 as an open supplier) is repaired. Title, summary block and prose of the description checked sentence by sentence against the head: no contradiction, no unstated change. Open suppliers #856 §7.3 and #966 §§M0.5–M0.8 resolved at their heads; ClassicalGroups §3A and ReductiveGroups on main. Adversarial rows recomputed for g=1,2,3 (invariance and augmentations of F_k, cone values, triangular change of generators). Gate OK with every counter 0; depcheck 0 problems, no UPWARD/CYCLE; elaboration exits 0 with only three sorry warnings. Seeded sample falls on no changed passage; sources not re-read. Accepted conditional on the three declared ReductiveGroups gaps.",
+  "text": "f102372e7a20dd60"
+ }
+}
