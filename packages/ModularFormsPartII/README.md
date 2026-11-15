@@ -4,7 +4,7 @@
 
 ## Scope and ownership
 
-This roadmap owns: the cusp-germ characterization of weak forms on finite-index subgroups (Layer 1), bounded denominators of a Laurent germ, signed cusp widths and the geometric level, Wohlfahrt's theorem with its sign hypothesis; the modular λ function, its covering theorem, the level-two function ring, the integral λ reparametrization and Kummer coordinate, and Jacobi's hypergeometric identity with its character (Layer 2); the fields `M₂N` and `R₂N`, their holonomy embedding and rank bounds (Layer 3); the nonabelian Ihara lemma, triple surjectivity and the generation identity (Layer 4); leveraging and degree doubling (Layer 5); the unbounded denominators theorem, its rational and algebraic-integer forms, Galois conjugation of weak forms with algebraic coefficients, and the root tests (Layer 6); the vector-valued and differential-equation applications (Layer 7); weakly holomorphic quasimodular forms and deficient places (Layer 8); and the cuspidal smooth model of `X(N)` with its finite-cover criterion and fundamental group (Layer 9). The modular λ covering `ℍ/Γ(2) ≅ ℂ ∖ {0, 1}` is assigned to the ModularForms family by ConformalMapping's relationship specification and by BelyiMaps' boundary section; ModularForms itself does not build it, and it is built here, in Layer 2.
+This roadmap owns: the cusp-germ characterization of weak forms on finite-index subgroups (Layer 1), bounded denominators of a Laurent germ, signed cusp widths and the geometric level, Wohlfahrt's theorem with its sign hypothesis; the modular λ function, its covering theorem, the integral λ reparametrization, the level-two function ring, the Kummer coordinate, and Jacobi's hypergeometric identity with its character (Layer 2); the fields `M₂N` and `R₂N`, their holonomy embedding and rank bounds (Layer 3); the nonabelian Ihara lemma, triple surjectivity and the generation identity (Layer 4); leveraging and degree doubling (Layer 5); the unbounded denominators theorem, its rational and algebraic-integer forms, Galois conjugation of weak forms with algebraic coefficients, and the root tests (Layer 6); the vector-valued and differential-equation applications (Layer 7); weakly holomorphic quasimodular forms and deficient places (Layer 8); and the cuspidal smooth model of `X(N)` with its finite-cover criterion and fundamental group (Layer 9). The modular λ covering `ℍ/Γ(2) ≅ ℂ ∖ {0, 1}` is assigned to the ModularForms family by ConformalMapping's relationship specification and by BelyiMaps' boundary section; ModularForms itself does not build it, and it is built here, in Layer 2.
 
 The following are imported and are not planned again.
 
@@ -26,7 +26,7 @@ The cohomological content of CDT §4.5 (and Lemma 4.5.12, whose statement the le
 
 - `E = {±I}`, `T = [[1, 1], [0, 1]]`, `S = [[0, −1], [1, 0]]`, `Γ(N) = ker(SL₂(ℤ) → SL₂(ℤ/N))` (Mathlib `CongruenceSubgroup.Gamma`), `Γ₀(p)` the lower-left entry divisible by p, `Γ₁(p)` additionally the diagonal entries `≡ 1 mod p`. For a subgroup G, `±G = ⟨G, E⟩`. A subgroup is congruence when it contains some `Γ(N)` with `N ≥ 1` (Mathlib `CongruenceSubgroup.IsCongruenceSubgroup`); it need not contain `E`.
 - The slash action is Mathlib's: for `γ = [[a, b], [c, d]] ∈ SL₂(ℤ)`, `(f ∣[k] γ)(τ) = (cτ + d)^(−k) f(γτ)`. Witness: `f ∣[k] (−I) = (−1)^k f`, so a nonzero form of odd weight is never invariant under `−I`.
-- `q = exp(πiτ)` as in CDT, `Q = q² = exp(2πiτ)`, and for `N ≥ 1`, `t = q^(1/N) = exp(2πiτ/(2N))`. Mathlib's `UpperHalfPlane.qExpansion h f` uses `exp(2πiτ/h)`; the parameter `t` is the case `h = 2N`. The Lean statements quantify over every period `h ≥ 1`.
+- `q = exp(πiτ)` as in CDT, `Q = q² = exp(2πiτ)`, and for `N ≥ 1`, `t = q^(1/N) = exp(2πiτ/(2N))`. Mathlib's `UpperHalfPlane.qExpansion h f` uses `exp(2πiτ/h)`; the parameter `t` is the case `h = 2N`. The Lean statements quantify over every period `h ≥ 1`. Laurent expansions at `∞` are Tau Ceti's `TauCeti.UpperHalfPlane.laurentQExpansion h f`, in the same variable; for an h-periodic f bounded at `∞` it is `UpperHalfPlane.qExpansion h f`, and for `f = Δ⁻¹`, `h = 1` it begins with `Q⁻¹` where `UpperHalfPlane.qExpansion 1` has no negative term.
 - `x = λ/16`. Then `λ = 16q − 128q² + ⋯`, `x = q − 8q² + 44q³ − ⋯` and `Δ = Q + ⋯ = q² + ⋯`.
 - Derivatives: `θ_q = q d/dq = (1/πi) d/dτ` and `D = Q d/dQ = (1/2πi) d/dτ` (Mathlib `Derivative.normalizedDerivOfComplex`), so `θ_q = 2D`; `DΔ = E₂Δ` and `θ_qΔ = 2E₂Δ`.
 - Bounded denominators means one nonzero scalar clears every coefficient; it is stronger than coefficients in a ring with finitely many primes inverted.
@@ -50,13 +50,17 @@ The cohomological content of CDT §4.5 (and Lemma 4.5.12, whose statement the le
 - `EisensteinSeries.E2` (`EisensteinSeries/E2/Defs.lean`), `Derivative.normalizedDerivOfComplex`, `Derivative.serreDerivative`, `Derivative.serreDerivativeMF` (`Derivative.lean`), `Derivative.normalizedDerivOfComplex_E₂` (`RamanujanFormula.lean`): `D E₂ = (E₂² − E₄)/12`, and the Serre derivative maps `ModularForm Γ k` to weight `k + 2`.
 - `Subgroup.normalCore` (`Algebra/Group/Subgroup/Basic.lean`); `Subgroup.goursat_surjective` (`GroupTheory/Goursat.lean`).
 - `Chebyshev.theta_ge`, `Chebyshev.theta_le_log4_mul_x`, `Chebyshev.pi_ge` (`NumberTheory/Chebyshev.lean`): `θ(n) ≥ n log 2 − log(n + 1) − 2√n log n`, `θ(x) ≤ x log 4`.
-- `IsCoveringMapOn` (`Topology/Covering/Basic.lean`), `MeromorphicAt` (`Analysis/Meromorphic/Basic.lean`), `Module.End.IsSemisimple` (`LinearAlgebra/Semisimple.lean`), `IsIntegral`, `NumberField.RingOfIntegers`.
+- `IsCoveringMapOn` (`Topology/Covering/Basic.lean`), `MeromorphicAt` (`Analysis/Meromorphic/Basic.lean`), `Module.End.IsSemisimple` (`LinearAlgebra/Semisimple.lean`), `IsIntegral`, `IsAlgebraic`, `NumberField.RingOfIntegers`.
+- `CongruenceSubgroup.Gamma_zero_bot` (`CongruenceSubgroups.lean`): `Γ(0)` is the trivial subgroup, since `ℤ/0 = ℤ`.
+- `LaurentSeries` (`RingTheory/LaurentSeries.lean`), a field over a field; `Subfield.closure` and the algebra structure of a subfield over which a field is a module (`Algebra/Field/Subfield/Basic.lean`); `Algebra.adjoin` and `Subalgebra`; `IntermediateField` with `FiniteDimensional ℚ K` for number fields inside `ℂ`.
+- `NumberField.FinitePlace` (`NumberTheory/NumberField/Completion/FinitePlace.lean`) and `NumberField.InfinitePlace` (`NumberTheory/NumberField/InfinitePlace/Basic.lean`): the finite places of a number field K as absolute values `K → ℝ`, and the infinite places, with `InfinitePlace.mk φ x = ‖φ x‖`, the usual modulus at a complex embedding φ, not its square.
 
 ### From Tau Ceti
 
 - `TauCeti.Subgroup.integerCuspWidth` and `TauCeti.Subgroup.integerCuspWidth_pos` (`TauCeti/NumberTheory/ModularForms/Cusps/Basic.lean`): the least `n > 0` with `T^n` in the group, a strict width at `∞`; §1.3 distinguishes it from the signed width.
 - `CongruenceSubgroup.Gamma_le_Gamma_of_dvd` (`TauCeti/NumberTheory/ModularForms/CongruenceSubgroups/Basic.lean`): `M ∣ N` gives `Γ(N) ≤ Γ(M)`.
 - `TauCeti.char_neg_one_of_modFormCharSpace_ne_bot` (`TauCeti/NumberTheory/ModularForms/Parity.lean`): a nonzero character space forces `χ(−1) = (−1)^k`.
+- `TauCeti.UpperHalfPlane.laurentQExpansion`, `TauCeti.UpperHalfPlane.laurentQExpansion_of_analyticAt`, `TauCeti.UpperHalfPlane.laurentQExpansion_mul`, `TauCeti.UpperHalfPlane.laurentQExpansion_inv`, `TauCeti.UpperHalfPlane.orderTop_laurentQExpansion`, `TauCeti.UpperHalfPlane.laurentQExpansion_eq_laurentQExpansion_iff` (`TauCeti/NumberTheory/ModularForms/QExpansion/Laurent.lean`): for `h > 0` and f whose cusp function in `exp(2πiτ/h)` is meromorphic at `0`, the Laurent series `TauCeti.UpperHalfPlane.laurentQExpansion h f` in that variable, equal to `UpperHalfPlane.qExpansion h f` when the cusp function is analytic at `0`, multiplicative and compatible with inverses, of order the order at `0` of the cusp function, and determining an h-periodic f near `∞`. Assumed: it is applied only to h-periodic functions meromorphic at `∞`, which for weak forms on finite-index subgroups is §1.1; on other functions its value is not a Laurent expansion.
 
 ### From TauCetiRoadmap.ModularForms
 
@@ -224,23 +228,24 @@ For finite-index `G ≤ SL₂(ℤ)` containing `−I`, the normal core `Subgroup
 
 Let H have finite index, contain `−I`, and have `L(H) = N`. For a prime p and `A = diag(p, 1)`, put `H_A = A⁻¹HA ∩ SL₂(ℤ)`, the conjugation taken in `GL₂(ℚ)`. Then `H_A` has finite index, contains `−I`, and `L(H_A)` divides `Np` (CDT, Notation 4.1.5 and Lemma 4.1.7, pp.653–655).
 
-*Proof sketch.* Represent a cusp by a primitive integral column `(a, c)` and split according to whether p divides c. Compute the conjugated parabolic in each case. In the second case CDT p.654 prints the correcting diagonal as `diag(p, 1/p)`, for which the displayed matrix does not have determinant 1; the correct factor is `diag(1/p, p)`, giving `(a/p, b; c, pd)` and translation exponent `Np`.
+*Proof sketch.* A cusp of H is `B∞` for some `B = [[a, b], [c, d]] ∈ SL₂(ℤ)`, its stabilizer in H is generated up to sign by `γ = BT^nB⁻¹` with `n ∣ N`, and the stabilizer of the corresponding cusp of `H_A` is generated up to sign by the least power of `A⁻¹γA = (A⁻¹BA)[[1, n/p], [0, 1]](A⁻¹BA)⁻¹` that is integral, where `A⁻¹BA = [[a, b/p], [cp, d]]`. Split according to whether p divides a. If `p ∤ a`, then `(a, pc) = 1`; choose integers r, s with `as − rpc = 1` and put `C = [[a, r], [pc, s]] ∈ SL₂(ℤ)` and `t = bs − dpr`. Then `A⁻¹BA = C[[1, t/p], [0, 1]]`, so `A⁻¹γA = C[[1, n/p], [0, 1]]C⁻¹`, whose p-th power `CT^nC⁻¹` is integral: the width is n or n/p. If `p ∣ a`, then `p ∤ c`, and `C = A⁻¹BA · diag(1/p, p) = [[a/p, b], [c, pd]]` lies in `SL₂(ℤ)`; then `A⁻¹γA = CT^(np)C⁻¹` and the width is np. Every width divides `Np`. CDT p.654 splits on a in the same way; in the second case it prints the correcting diagonal as `diag(p, 1/p)` and the lower row of C as `(cp, d)`, which does not give a matrix of determinant 1, and the correct factor is `diag(1/p, p)`. The Examples below separate the two cases at `p = 2`.
 
 *Needs:* §1.3.
 
 ### 1.8 Wohlfahrt's theorem with signs
 
-If G is a congruence subgroup containing `−I`, then `Γ(L(G)) ≤ G`. For an arbitrary congruence subgroup G, `Γ(L(G)) ≤ ±G`. Hence a congruence subgroup containing `−I` and every `SL₂(ℤ)`-conjugate of `T^N` contains `Γ(N)` (Wohlfahrt's Theorem 2, as used in CDT, proof of Lemma 4.4.1, p.659; KSV10, §3, Lemma 7, Proposition 3 and Remark 8, pp.4–6, for the proof with signs).
+`wohlfahrt_Gamma_le`: a congruence subgroup G containing `−I` and every `SL₂(ℤ)`-conjugate of `T^N` contains `Γ(N)`, for every `N ≥ 0` (at `N = 0` trivially, `Γ(0)` being the trivial group). With `−I ∈ G` the hypothesis on the conjugates says `L(G) ∣ N` (§1.3), so the theorem is equivalent to `Γ(L(G)) ≤ G` for every congruence subgroup G containing `−I`. Applied to `±G`, which is congruence and has the same level, it gives `Γ(L(G)) ≤ ±G` for an arbitrary congruence subgroup G (Wohlfahrt's Theorem 2, as used in CDT, proof of Lemma 4.4.1, p.659; KSV10, §3, Lemma 7, Proposition 3 and Remark 8, pp.4–6, for the proof with signs).
 
 *Proof sketch.* Let G contain `Γ(ν)` and let `N = L(G)`. Given `γ ∈ Γ(N)`, multiply by elementary transvections `gT^N g⁻¹ ∈ G` to make the lower-right entry prime to ν; the Chinese remainder theorem, avoiding one residue for each prime dividing ν, replaces Dirichlet's theorem. Clear the off-diagonal entries modulo ν with KSV10 equation (1), `M = (T^(1−d))ᵗ L T^(d−1)` with `L = [[a, a − 1], [1 − a, 2 − a]]`. Its factorization is `L = (Tᵗ)⁻¹ T^(a−1) Tᵗ`; the line after equation (1) on KSV10 p.6 prints the two conjugating factors in the opposite order, which fails already at `a = 2` (the printed product is `[[0, 1], [−1, 2]]`, the intended L is `[[2, 1], [−1, 0]]`). What remains lies in `Γ(ν) ≤ G`.
 
-*Needs:* §1.3; Mathlib `CongruenceSubgroup.IsCongruenceSubgroup`, `CongruenceSubgroup.Gamma`; Tau Ceti `CongruenceSubgroup.Gamma_le_Gamma_of_dvd`.
+*Needs:* §1.3; Mathlib `CongruenceSubgroup.IsCongruenceSubgroup`, `CongruenceSubgroup.Gamma`, `CongruenceSubgroup.Gamma_zero_bot`; Tau Ceti `CongruenceSubgroup.Gamma_le_Gamma_of_dvd`.
 
 ### Examples
 
 - `H′ = {γ ∈ Γ(2) : d_γ ≡ 1 mod 4}` has `L(H′) = 2`, excludes `−I` and contains `Γ(4)`. It satisfies the signed conclusion `Γ(2) ≤ ±H′ = Γ(2)` and refutes the unsigned one `Γ(2) ≤ H′`, since `−I ∈ Γ(2)`.
 - `L(Γ₀(p) ∩ Γ(2))` for an odd prime p is `2p`: the cusp `∞` has width 2 and the cusp `0` width `2p`.
 - `Δ⁻¹ · Δ = 1` clears the pole of `Δ⁻¹` with `m = 1`.
+- The case split of §1.7 is on a, not on c. At `p = 2` the cusps with first columns `(1, 1)` and `(2, 1)` both have c odd. For `B = [[1, 0], [1, 1]]`, `p ∤ a`; with `r = 0`, `s = 1` the matrix is `C = [[1, 0], [2, 1]]`, and the width-2 parabolic `BT²B⁻¹ = [[−1, 2], [−2, 3]]` becomes `A⁻¹(BT²B⁻¹)A = CTC⁻¹ = [[−1, 1], [−4, 3]]`, of width 1. For `B = [[2, 1], [1, 1]]`, `p ∣ a`; then `C = [[1, 1], [1, 2]]`, of determinant 1, and `BT²B⁻¹ = [[−3, 8], [−2, 5]]` becomes `CT⁴C⁻¹ = [[−3, 4], [−4, 5]]`, of width 4. A split on c would treat both alike and, for the first, use the entry `a/p = 1/2`.
 
 ### Dependencies
 
@@ -248,7 +253,7 @@ QSeriesPartitionsAndMockModularForms §8.1; FuchsianOrbifolds Layer 3; Mathlib's
 
 ## Layer 2: The modular λ coordinate
 
-This layer builds λ from the Dedekind η function, proves that it is the universal covering of `ℂ ∖ {0, 1}` with deck group `Γ(2)/±I`, identifies the level-two function ring, and proves the arithmetic of the coordinate `x = λ/16`: its integral inverse, the normalized Kummer roots, and Jacobi's hypergeometric identity with its character.
+This layer builds λ from the Dedekind η function, proves that it is the universal covering of `ℂ ∖ {0, 1}` with deck group `Γ(2)/±I`, proves that the coordinate `x = λ/16` has an integral inverse, identifies the level-two function ring, constructs the normalized Kummer roots of x, and proves Jacobi's hypergeometric identity with its character.
 
 ### 2.1 The modular λ function
 
@@ -279,15 +284,7 @@ API:
 
 *Needs:* §2.1; ConformalMapping L4; UniversalCovers Stage 2; FuchsianOrbifolds Layers 4–5; BelyiMaps Layer 6; Mathlib `IsCoveringMapOn`.
 
-### 2.3 The level-two function ring
-
-The ring of weight-zero weak forms on `Γ(2)` is `ℂ[λ, λ⁻¹, (1 − λ)⁻¹]`. Its subring of functions with rational expansion at `∞` is `ℚ[λ, λ⁻¹, (1 − λ)⁻¹]`, with fraction field `ℚ(λ)` (CDT, §4.2, p.655; (1.0.2), p.628).
-
-*Proof sketch.* By §2.2 a weight-zero weak form on `Γ(2)` is a meromorphic function on `ℙ¹` with poles only at `0, 1, ∞` in the coordinate λ. If its expansion is rational, write it as a reduced rational function of λ and use the integral inverse of §2.4 to read its coefficients from the expansion; uniqueness of the reduced form forces them into `ℚ`.
-
-*Needs:* §§1.1, 2.2, 2.4.
-
-### 2.4 Integral λ reparametrization
+### 2.3 Integral λ reparametrization
 
 The formal series `x(q) = λ/16 ∈ q + q²ℤ[[q]]` has a unique compositional inverse `q(x) ∈ x + x²ℤ[[x]]`; substitution gives mutually inverse ring isomorphisms `ℤ[[q]] ≅ ℤ[[x]]`, and the same over every coefficient ring. Its first terms are `q = x + 8x² + 84x³ + 992x⁴ + 12514x⁵ + O(x⁶)` (CDT, §1.1.3, p.631; (3.0.2), p.650).
 
@@ -295,13 +292,21 @@ The formal series `x(q) = λ/16 ∈ q + q²ℤ[[q]]` has a unique compositional 
 
 *Needs:* §2.1.
 
+### 2.4 The level-two function ring
+
+The ring of weight-zero weak forms on `Γ(2)` is `ℂ[λ, λ⁻¹, (1 − λ)⁻¹]`. Its subring of functions with rational expansion at `∞` is `ℚ[λ, λ⁻¹, (1 − λ)⁻¹]`, with fraction field `ℚ(λ)` (CDT, §4.2, p.655; (1.0.2), p.628).
+
+*Proof sketch.* By §2.2 a weight-zero weak form on `Γ(2)` is a meromorphic function on `ℙ¹` with poles only at `0, 1, ∞` in the coordinate λ. If its expansion is rational, write it as a reduced rational function of λ and use the integral inverse of §2.3 to read its coefficients from the expansion; uniqueness of the reduced form forces them into `ℚ`.
+
+*Needs:* §§1.1, 2.2, 2.3.
+
 ### 2.5 The normalized Kummer coordinate
 
 For `N ≥ 1` and `t = q^(1/N)` there is a unique `x_N(t) ∈ t + t²ℚ[[t]]` with `x_N(t)^N = x(t^N)`. It lies in `t + t²ℤ[1/N][[t]]`, and `x_N^N` is integral; `x_N` itself need not be. The inverse image of `{0, 1/16, ∞}` under `u ↦ u^N` is `{0} ∪ 16^(−1/N)μ_N ∪ {∞}`, so an operator in x with singularities in `{0, 1/16, ∞}` pulls back to one with singularities in that set (CDT, (3.0.2) and proof of Proposition 3.0.1, p.650). The substitution alone does not remove `u = 0`: that needs the signed-width hypothesis of §3.4.
 
 *Proof sketch.* `x(t^N) = t^N · v(t)` with `v ∈ 1 + tℤ[[t]]`; the binomial series for `v^(1/N)` has coefficients in `ℤ[1/N]`. The singular fibre `x = 1/16` of the hypergeometric equation pulls back to `16^(−1/N)μ_N`, the point `x = 0` to `u = 0` and `∞` to `∞`. A logarithmic solution at `x = 0` stays logarithmic: `log x = N log u`, and a nonidentity unipotent monodromy `U = I + B` with `B² = 0` pulls back to `U^N = I + NB ≠ I`.
 
-*Needs:* §§1.3, 2.4.
+*Needs:* §§1.3, 2.3.
 
 ### 2.6 Jacobi's hypergeometric identity with its character
 
@@ -336,20 +341,39 @@ Layer 1; Mathlib η, θ and covering-map API; GeometryOfNumbersAndQuadraticArith
 
 This layer defines the two `ℚ(λ)`-spans `M₂N ⊆ R₂N` inside one Laurent field, proves that both are fields of finite degree over `ℚ(λ)`, constructs a normal stabilizer of exact level `2N`, and bounds `[R₂N : ℚ(λ)]` by `C N³ log(2N)` through the holonomic rank bound of DiophantineApproximationAndTranscendencePartII.
 
-Throughout, `N ≥ 1`, `t = q^(1/N) = exp(2πiτ/(2N))`, and every span lies in the Laurent field `ℚ((t))`, with `ℚ(λ)` embedded through the integral series `λ(t^N) = 16t^N − 128t^(2N) + ⋯`. A weak modular function whose stabilizer contains `±T^(2N)` and whose expansion at `∞` in t is rational is identified with that expansion; the expansion map is injective on such functions.
+Throughout, `N ≥ 1` and `t = q^(1/N) = exp(2πiτ/(2N))`. The expansion at `∞` in t is Tau Ceti's Laurent expansion `TauCeti.UpperHalfPlane.laurentQExpansion (2N)`, and the spans of this layer are subspaces of the field `ℂ((t))` (Mathlib `LaurentSeries ℂ`) over its subfield `ℚ(λ)`, generated by the integral series `λ(t^N) = 16t^N − 128t^(2N) + ⋯`. Their generators have rational coefficients, so every span lies in `ℚ((t))`. A weak modular function whose stabilizer contains `±T^(2N)` is identified with its expansion; the expansion map is injective on such functions, by the identity theorem and `TauCeti.UpperHalfPlane.laurentQExpansion_eq_laurentQExpansion_iff`.
+
+### 3.0 The field ℚ(λ) at level 2N
+
+Define `lambdaField N` as the subfield of `ℂ((t))` generated by the Laurent expansion `λ(t^N) = 16t^N − 128t^(2N) + ⋯` of λ in `t = exp(2πiτ/(2N))` (CDT, §4.2, p.655). It contains `ℚ`; the series is nonconstant, hence transcendental over `ℂ`, so `lambdaField N` is the rational function field over `ℚ` in that series.
+
+*Needs:* §2.1; Tau Ceti `TauCeti.UpperHalfPlane.laurentQExpansion`; Mathlib `LaurentSeries`, `Subfield.closure`.
+
+API:
+
+- `lambdaField N` is the smallest subfield of `ℂ((t))` containing the expansion of λ; its elements are the rational functions with rational coefficients in that expansion.
+- A constant series in `lambdaField N` is a rational constant.
+- If `N ∣ M`, the substitution `t_N ↦ t_M^(M/N)` maps `lambdaField N` isomorphically onto `lambdaField M`.
+
+**Checks.**
+
+- At `N = 1`, `t = q = exp(πiτ)` and the generator is `16q − 128q² + 704q³ − ⋯`; the constant `1/2` and `λ⁻¹ = (1/16)q⁻¹ + ⋯` lie in `lambdaField 1`.
+- The constant series `√2` is not in `lambdaField N`, since a rational function of a transcendental series with rational coefficients that is constant has a rational value. A definition as the subfield generated over `ℂ` would contain it.
+- The variable must have period `2N`, not N: λ has period 2 and not 1 (`λ(τ + 1) = λ/(λ − 1)`), so an expansion in `exp(2πiτ/N)` does not describe λ at `N = 1`.
+- `λ⁻¹` lies in `lambdaField N` but not in the ring `ℚ[λ]`; a definition by polynomials would not be a field and would miss the generator `λ⁻¹` of `M₂`.
 
 ### 3.1 The field M₂N
 
-Define `M₂N` as the `ℚ(λ)`-linear span in `ℚ((t))` of the expansions at `∞` of weight-zero weak forms on `Γ(2N)` with rational expansion coefficients (CDT, Definition 4.2.1(1), p.655). Each generator is holomorphic on `Y(2N)`; poles at cusps are allowed. The field structure is a theorem (§3.6), not part of the definition.
+Define `congruenceSpan N`, written `M₂N`, as the `lambdaField N`-linear span in `ℂ((t))` of the Laurent expansions at `∞` in t of the weight-zero weak forms on `Γ(2N)` whose Laurent coefficients are rational (CDT, Definition 4.2.1(1), p.655). Each generator is holomorphic on `Y(2N)`; poles at cusps are allowed. The field structure is a theorem (§3.6), not part of the definition.
 
-*Needs:* §§1.1, 2.3, 2.4; Mathlib `CongruenceSubgroup.Gamma`.
+*Needs:* §§1.1, 2.3, 2.4, 3.0; Mathlib `CongruenceSubgroup.Gamma`; Tau Ceti `TauCeti.UpperHalfPlane.laurentQExpansion`.
 
 API:
 
 - A weight-zero weak form on `Γ(2N)` with rational expansion at `∞` lies in `M₂N`.
-- `M₂ = ℚ(λ)`, by §2.3.
+- `M₂ = ℚ(λ)`, by §2.4.
 - If `N ∣ M`, the substitution `t_N ↦ t_M^(M/N)` embeds `M₂N` into `M₂M`.
-- The expansion map from weight-zero weak forms on `Γ(2N)` with rational coefficients to `ℚ((t))` is injective and, after multiplying by a power of λ that clears the pole at `∞`, agrees with Mathlib's `UpperHalfPlane.qExpansion (2N)`.
+- The Laurent expansion map from weight-zero weak forms on `Γ(2N)` with rational coefficients to `ℚ((t))` is injective, multiplicative, and on forms bounded at `∞` agrees with Mathlib's `UpperHalfPlane.qExpansion (2N)` (Tau Ceti `TauCeti.UpperHalfPlane.laurentQExpansion_of_analyticAt`).
 
 **Checks.**
 
@@ -360,9 +384,9 @@ API:
 
 ### 3.2 The field R₂N
 
-Define `R₂N` as the `ℚ(λ)`-linear span in `ℚ((t))` of the expansions at `∞` of weight-zero weak forms f with rational coefficients and bounded denominators that are invariant under some finite-index subgroup H containing `−I` with `L(H) ∣ 2N` (CDT, Definition 4.2.1(2), p.655; Proposition 3.0.1, p.650). The subgroup H may depend on f. A generator has finitely many negative exponents; multiplying it by a power of λ makes it holomorphic at `∞` without changing the span. General elements of the span can have interior poles, coming from rational functions of λ.
+Define `boundedDenominatorSpan N`, written `R₂N`, as the `lambdaField N`-linear span in `ℂ((t))` of the Laurent expansions at `∞` in t of the weight-zero weak forms f whose expansion becomes integral after multiplication by one integer `D ≥ 1` (rational coefficients with bounded denominators) and that are weak forms on some finite-index subgroup H containing `−I` and every `SL₂(ℤ)`-conjugate of `T^(2N)`; since `−I ∈ H`, the last condition is `L(H) ∣ 2N` (§1.3) (CDT, Definition 4.2.1(2), p.655; Proposition 3.0.1, p.650). The subgroup H may depend on f. A generator has finitely many negative exponents; multiplying it by a power of λ makes it holomorphic at `∞` without changing the span. General elements of the span can have interior poles, coming from rational functions of λ.
 
-*Needs:* §§1.1–1.3, 2.3.
+*Needs:* §§1.1–1.3, 2.4, 3.0; Tau Ceti `TauCeti.UpperHalfPlane.laurentQExpansion`.
 
 API:
 
@@ -377,12 +401,13 @@ API:
 - A series is not admitted merely because it lies in `ℤ[1/2]((t))`; one denominator for all coefficients is required.
 - Every rational weak modular function on `Γ(4)` lies in `R₄`, by the all-prime bounded denominators of AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2).
 - An element of the span such as `(λ − 1/2)⁻¹` has an interior pole at `τ = i`; requiring every span element to be holomorphic on `ℍ` would change the definition.
+- Asking only for `T^(2N) ∈ H`, the width at `∞`, instead of every conjugate would admit `H = Γ₀(3)` at `N = 1`: it contains `T` and `−I` but has width 3 at the cusp `0`. Its Hauptmodul `(η(τ)/η(3τ))¹² = Q⁻¹ ∏ (1 − Qⁿ)¹²/(1 − Q^(3n))¹²` has integral coefficients in `t = q`, and it is not in `ℚ(λ)`: a function invariant under `Γ₀(3)` and `Γ(2)` is invariant under `⟨T, [[1, 0], [1, 1]]⟩ = SL₂(ℤ)`, and the Hauptmodul has degree 1 on `X₀(3)`, a degree-4 cover of `X(1)`. With that definition `R₂ ≠ M₂`.
 
 ### 3.3 Congruence functions have bounded denominators
 
 For every `N ≥ 1`, `M₂N ⊆ R₂N` (CDT, Lemma 4.2.2, p.655).
 
-*Proof sketch.* A generator of `M₂N` is a rational weight-zero weak form on `±Γ(2N)`, whose level is `2N`. AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2) gives it one denominator at every prime, including the primes dividing `2N`, by clearing its cusp poles with `Δ^m` (§1.4) and dividing by the integral Laurent series `Δ^(−m) = q^(−2m) ∏ (1 − q^(2n))^(−24m)`.
+*Proof sketch.* A generator of `M₂N` is a rational weight-zero weak form on `±Γ(2N)`, whose level is `2N`. Clearing its cusp poles with `Δ^m` (§1.4) gives a holomorphic congruence form `fΔ^m` with rational coefficients, to which AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2) gives one denominator at every prime, including the primes dividing `2N`. Multiplying by the integral Laurent series `Δ^(−m) = q^(−2m) ∏ (1 − q^(2n))^(−24m)` recovers f with the same denominator; for `f = Δ⁻¹` and `m = 1` the cleared form is 1, and `1 · Δ⁻¹` has `q`-order −2 as f does, while dividing by `Δ⁻¹` would give Δ, of order 2.
 
 *Needs:* §§1.4, 3.1, 3.2; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2).
 
@@ -437,7 +462,7 @@ Let `F_N : 𝔻 → ℂ ∖ μ_N` be the normalized coverings of ConformalMappin
 
 ### Dependencies
 
-Layers 1–2; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); BelyiMaps Layer 9; DiophantineApproximationAndTranscendencePartII §§4.1–4.5, 4.8; ConformalMappingPartII §§0.5, 1.4, 1.8, 5.5, 5.8.
+Layers 1–2; Tau Ceti Laurent `q`-expansions (`TauCeti.UpperHalfPlane.laurentQExpansion`); AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); BelyiMaps Layer 9; DiophantineApproximationAndTranscendencePartII §§4.1–4.5, 4.8; ConformalMappingPartII §§0.5, 1.4, 1.8, 5.5, 5.8.
 
 ## Layer 4: The nonabelian Ihara lemma and the generation identity
 
@@ -488,9 +513,9 @@ This layer proves that p-scaling a noncongruence element of `R₂N` produces an 
 
 For a prime `p ∤ 2N`, `R₂N ∩ M₂Np = M₂N` and `[R₂N M₂Np : M₂Np] = [R₂N : M₂N]`, all fields embedded in `ℚ((q^(1/(Np))))` (CDT, proof of Theorem 4.3.2, pp.656–657; Lemma 4.2.3, p.656). The second statement is a linear-disjointness assertion and does not follow from the first for arbitrary extensions.
 
-*Proof sketch.* An element of `R₂N ∩ M₂Np` is invariant under `G₂N` (§3.7) and under `Γ(2Np)`; its stabilizer is congruence, contains `−I` and has level dividing `2N`, so §1.8 gives invariance under `Γ(2N)`. Over `ℂ`, for `m ≥ 2`, ModularCurvesPartII §5.14 and §6.4, with the rational cusp below at the full level `2m ≥ 4`, identify `ℂM₂m` with the function field of `X(2m)`; for `m = 1`, `ℂM₂ = ℂ(λ)` is the function field of `X(2)` by §§2.2–2.3. `ℚ((t))` and `ℂ` are linearly disjoint over `ℚ` inside `ℂ((t))` (compare coefficients), so for finite extensions `K ⊆ L` of subfields of `ℚ((t))`, `[ℂL : ℂK] = [L : K]`. `ℂM₂Np` is Galois over `ℂM₂N` with group a quotient of `±Γ(2N)/±Γ(2Np)`, and `ℂR₂N ∩ ℂM₂Np = ℂM₂N` by the first step over `ℂ`; a Galois extension is linearly disjoint from any extension meeting it only in the base.
+*Proof sketch.* An element of `R₂N ∩ M₂Np` is invariant under `G₂N` (§3.7) and under `Γ(2Np)`; its stabilizer is congruence, contains `−I` and has level dividing `2N`, so §1.8 gives invariance under `Γ(2N)`. Over `ℂ`, for `m ≥ 2`, ModularCurvesPartII §5.14 and §6.4, with the rational cusp below at the full level `2m ≥ 4`, identify `ℂM₂m` with the function field of `X(2m)`; for `m = 1`, `ℂM₂ = ℂ(λ)` is the function field of `X(2)` by §§2.2, 2.4. `ℚ((t))` and `ℂ` are linearly disjoint over `ℚ` inside `ℂ((t))` (compare coefficients), so for finite extensions `K ⊆ L` of subfields of `ℚ((t))`, `[ℂL : ℂK] = [L : K]`. `ℂM₂Np` is Galois over `ℂM₂N` with group a quotient of `±Γ(2N)/±Γ(2Np)`, and `ℂR₂N ∩ ℂM₂Np = ℂM₂N` by the first step over `ℂ`; a Galois extension is linearly disjoint from any extension meeting it only in the base.
 
-*Needs:* §§1.8, 2.2, 2.3, 3.6, 3.7; ModularCurvesPartII §§5.14, 6.4, 6.5, 8.1 and gap:udc-rational-cusp-of-twisted-full-level; FuchsianOrbifolds Layer 5.
+*Needs:* §§1.8, 2.2, 2.4, 3.6, 3.7; ModularCurvesPartII §§5.14, 6.4, 6.5, 8.1 and gap:udc-rational-cusp-of-twisted-full-level; FuchsianOrbifolds Layer 5.
 
 ### 5.2 p-scaling separates a noncongruence function
 
@@ -540,11 +565,11 @@ This layer assembles `R₂N = M₂N`, reduces arbitrary integral weight to weigh
 
 ### 6.1 Equality of the bounded and congruence fields
 
-For every `N ≥ 1`, `R₂N = M₂N` as subfields of `ℚ((t))` (CDT, §6.3, pp.685–686, assembling Proposition 3.0.1 with Theorems 5.1.4 and 6.0.1).
+`boundedDenominatorSpan_eq_congruenceSpan`: for every `N ≥ 1`, `R₂N = M₂N` as `ℚ(λ)`-subspaces of `ℂ((t))`, hence as subfields of `ℚ((t))` (CDT, §6.3, pp.685–686, assembling Proposition 3.0.1 with Theorems 5.1.4 and 6.0.1). The proof establishes the holonomy rank bound unconditionally, `boundedDenominatorSpan_finrank_le`: there is an absolute constant C such that for every `N ≥ 1` the span `R₂N` is finite-dimensional over `ℚ(λ)` and `[R₂N : ℚ(λ)] ≤ C N³ log(2N)`. Finite-dimensionality is part of that statement; at `N = 1` the bound needs `C ≥ 1/log 2`, since `[R₂ : ℚ(λ)] = 1`.
 
 *Proof sketch.* ConformalMappingPartII §§5.5 and 5.8 give `|F_N′(0)| = γ_N ≥ 16^(1/N)(1 + ζ(3)/(2N³))` for every `N ≥ 2`, since the remaining terms of the expansion are positive; this is the first hypothesis of §3.8 with `A = ζ(3)/2`. ConformalMappingPartII §9.19 with `p(x) = x^N` and `r = 1 − B/N³` bounds `∫ log⁺|F_N^N|` by `C log(N⁴/B)`; dividing by N gives the second hypothesis. Then §3.8 gives `[R₂N : ℚ(λ)] ≤ C N³ log(2N)` for all N, and §5.5 gives `R₂N = M₂N`.
 
-*Needs:* §§3.8, 5.5; ConformalMappingPartII §§5.5, 5.8, 9.19.
+*Needs:* §§3.0–3.2, 3.8, 5.5; ConformalMappingPartII §§5.5, 5.8, 9.19.
 
 ### 6.2 Integral reduction to weight zero
 
@@ -577,11 +602,11 @@ Let f be a weak form of weight k on a finite-index Γ with period `h ≥ 1` whos
 
 ### 6.5 Galois conjugates of weak forms with algebraic coefficients
 
-Let f be a weak form of weight k on a finite-index Γ with period `h ≥ 1` whose Laurent expansion at `∞` in `exp(2πiτ/h)` has algebraic coefficients. Then all its coefficients lie in one number field K, and for every `σ ∈ Aut(ℂ/ℚ)` the coefficientwise conjugate series `f^σ` is the expansion at `∞`, with the same period h, of a weak form of weight k on a finite-index subgroup `Γ^σ` (CDT, Remark 6.3.2, p.686, where this fact is used). A power series with algebraic coefficients that is not the germ of a weak form need not have its coefficients in a number field; the modular hypothesis is essential.
+`weakForm_galois_conjugate`: let f be a weak form of weight k on a finite-index Γ with period `h ≥ 1` whose Laurent expansion at `∞` in `exp(2πiτ/h)`, `TauCeti.UpperHalfPlane.laurentQExpansion h f`, has algebraic coefficients. Then all its coefficients lie in one number field `K ⊆ ℂ`, and for every `σ ∈ Aut(ℂ/ℚ)` the coefficientwise conjugate series `f^σ` is the Laurent expansion at `∞`, with the same period h, of an h-periodic weak form of weight k on a finite-index subgroup `Γ^σ` (CDT, Remark 6.3.2, p.686, where this fact is used). Every field automorphism σ of `ℂ` is allowed, continuous or not. A power series with algebraic coefficients that is not the germ of a weak form need not have its coefficients in a number field; the modular hypothesis is essential.
 
 *Proof sketch.* By §6.2 reduce to weight 0; `h₀` has rational coefficients and is fixed by σ. A weight-zero weak form on Γ is algebraic over `ℂ(j)`, of degree at most `[PSL₂(ℤ) : ±Γ]`, and integral over `ℂ[j]` because it has no poles on `ℍ`. Since `ℚ̄((t))` and `ℂ` are linearly disjoint over `ℚ̄`, its minimal polynomial P can be taken monic with coefficients in `K₀[j]` for a number field `K₀`. The automorphisms in `Aut(ℂ/K₀)` permute the finitely many Puiseux roots of P at `j = ∞`, so the coefficients of f lie in a finite extension K of `K₀`. For any σ, `f^σ` is a convergent Puiseux root of the monic polynomial `P^σ`; the branch locus of `P^σ` over the j-line lies in `{0, 1728, ∞}`, which σ fixes, with the same ramification indices (dividing 2 over 1728 and 3 over 0). So the cover defined by `P^σ` corresponds to a finite-index subgroup `Γ^σ` of `PSL₂(ℤ) = ⟨S, R | S² = R³ = 1⟩` (FuchsianOrbifolds Layer 2 item 5 and Layer 6 item 1; BelyiMaps Layers 6 and 9), the branch `f^σ` lifts to a holomorphic `Γ^σ`-invariant function on `ℍ`, integral over `ℂ[j]` and hence without poles on `ℍ`, and algebraic, hence meromorphic, at the cusps.
 
-*Needs:* §§1.1, 6.2; FuchsianOrbifolds Layers 2, 5, 6; BelyiMaps Layers 6, 9.
+*Needs:* §§1.1, 6.2; Tau Ceti `TauCeti.UpperHalfPlane.laurentQExpansion`; Mathlib `IsAlgebraic`, `IntermediateField`; FuchsianOrbifolds Layers 2, 5, 6; BelyiMaps Layers 6, 9.
 
 ### 6.6 Algebraic-integer Fourier coefficients
 
@@ -617,18 +642,19 @@ For `n ≥ 1`, the Fermat cover `uⁿ + vⁿ = 1` over the λ-line with `λ = u�
 
 *Proof sketch.* For an odd prime p dividing n, the p-adic valuations of the coefficients of `(1 − 16x)^(1/n)` tend to `−∞`. For `n = 2^a` with `a ≥ 1`, the coefficient of `x^m` has 2-adic valuation `(4 − a)m − v₂(m!)`, bounded below exactly when `a ≤ 3`. For `n ∣ 8`, `u = λ^(1/n) = 16^(1/n) q^(1/n) ∏ ((1 + q^(2n))/(1 + q^(2n−1)))^(8/n)` is a scalar times an integral series, and both u and v are congruence by §6.4. For other n, v has unbounded denominators, so it is not congruence (AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2)), and neither is the cover.
 
-*Needs:* §§2.2, 2.4, 6.4; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2).
+*Needs:* §§2.2, 2.3, 6.4; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2).
 
 ### Examples
 
 - `u^(1/5) = 1 − (24/5)q + (348/25)q² − (4544/125)q³ + (52854/625)q⁴ − ⋯`: denominators `5, 25, 125, 625`. `u^(1/24) = ∏_{m odd}(1 + q^m)^(−1) = 1 − q + q² − 2q³ + 2q⁴ − 3q⁵ + ⋯` is integral.
 - 2-adic valuations of the first coefficients of `(1 − 16x)^(1/n)`: for `n = 8`, `1, 1, 2, 1, 2, 2, 3, 1, 2` (bounded); for `n = 16`, `0, −1, −1, −3, −3, −4, −4, −7, −7` (unbounded). For `n = 3` the 3-adic valuations are `−1, −2, −4, −5, −6, −8, …`.
 - `j^(1/3)` has `Q`-exponent `−1/3`, not `q`-exponent; in `q = Q^(1/2)` the leading term is `q^(−2/3)`.
+- §6.5 for `f = √2 Δ⁻¹`, of weight −12 on `SL₂(ℤ)`, with `h = 1`: the Laurent coefficients are `√2` times those of `Δ⁻¹ = Q⁻¹ + 24 + 324Q + ⋯`, so they lie in `ℚ(√2)`, and the conjugate under `√2 ↦ −√2` is the expansion of the weak form `−√2 Δ⁻¹`. Mathlib's `UpperHalfPlane.qExpansion 1` cannot carry this test, since the expansion has the pole term `√2 Q⁻¹`.
 - A noncongruence subgroup carries congruence forms (any congruence form restricted to it); §6.4 concerns the form, not the group.
 
 ### Dependencies
 
-Layers 1–5; ConformalMappingPartII §§5.5, 5.8, 9.19; QSeriesPartitionsAndMockModularForms §5.2; AlgebraicModularFormsAndSerreWeights §§1.5, 2.9 (Layers R15.1–R15.2); FuchsianOrbifolds Layers 2, 5, 6; BelyiMaps Layers 6, 9; ModularForms, Worked examples.
+Layers 1–5; Tau Ceti `TauCeti.UpperHalfPlane.laurentQExpansion`; ConformalMappingPartII §§5.5, 5.8, 9.19; QSeriesPartitionsAndMockModularForms §5.2; AlgebraicModularFormsAndSerreWeights §§1.5, 2.9 (Layers R15.1–R15.2); FuchsianOrbifolds Layers 2, 5, 6; BelyiMaps Layers 6, 9; ModularForms, Worked examples.
 
 ## Layer 7: Differential equations and vector-valued forms
 
@@ -646,9 +672,9 @@ Let `f ∈ ℤ[[x]]` be annihilated by a nonzero linear differential operator L 
 
 Under §7.1, the function `f(λ(τ)/16)` on `ℍ` is invariant under `Γ(M)` for some `M ≥ 1`. If f has apparent poles on `ℍ`, it is a meromorphic congruence modular function; otherwise it is a weak modular function (CDT, Theorem 7.2.1, pp.687–688).
 
-*Proof sketch.* The algebraic germ has finitely many branches, so its stabilizer in `Γ(2)` has finite index (§2.2). Multiply by an integral polynomial in λ clearing the apparent interior poles and by a power of λ clearing the principal part; the expansion stays integral by §2.4. Apply §6.3 and divide back.
+*Proof sketch.* The algebraic germ has finitely many branches, so its stabilizer in `Γ(2)` has finite index (§2.2). Multiply by an integral polynomial in λ clearing the apparent interior poles and by a power of λ clearing the principal part; the expansion stays integral by §2.3. Apply §6.3 and divide back.
 
-*Needs:* §§2.2, 2.4, 6.3, 7.1.
+*Needs:* §§2.2, 2.3, 6.3, 7.1.
 
 ### 7.3 Vector-valued modular forms
 
@@ -734,7 +760,7 @@ If the weight-zero component has an integral x-expansion `f ∈ ℤ[[x]]`, then 
 
 *Proof sketch.* For `σ ∈ Aut(ℂ/ℚ)`, applying σ to the coefficients of `L_j` gives a monic operator of the same order annihilating the rational series f; by minimality it is `L_j`, so the coefficients lie in `ℚ(x)`. The series f converges near `0` and has integer coefficients, so it is a G-function (DiophantineApproximationAndTranscendence §5.2), and so are its derivatives. By minimality `f, f′, …, f^(m−1)` are `ℚ̄(x)`-independent solutions of the companion system, which therefore satisfies Galochkin's condition (§5.3 there). The Bombieri–André and Katz theorems (gap:udc-bombieri-andre-katz) give global nilpotence and quasi-unipotent local monodromy.
 
-*Needs:* §§2.4, 7.8; DiophantineApproximationAndTranscendence §§5.2–5.3 and gap:udc-bombieri-andre-katz.
+*Needs:* §§2.3, 7.8; DiophantineApproximationAndTranscendence §§5.2–5.3 and gap:udc-bombieri-andre-katz.
 
 ### 7.10 Weight normalization of a vector-valued component
 
@@ -748,9 +774,9 @@ For a nonzero vector-valued form of even weight k, choose a nonzero scalar congr
 
 `vectorValued_component_congruence`: let F be a vector-valued form of weight k for ρ, let j be an index and `c ≠ 0` a complex number such that `cF_j` has a period `h ≥ 1`, is bounded as `Im τ → ∞`, and has integer coefficients in `UpperHalfPlane.qExpansion h (cF_j)`. Then `F_j` is a weak form of weight k on `Γ(M)` for some `M ≥ 1`. Nothing is asserted about the other components or about ρ (CDT, Theorem 7.3.3, pp.690–691, stated there for `c = 1` and `h = 2`).
 
-*Proof sketch.* Replace F by `cF(hτ/2)` when h is even, or by `cF(hτ)`, induced back to `SL₂(ℤ)` (§7.3), to reach an integral expansion in `q = exp(πiτ)`. Normalize the weight (§7.10) and use §2.4 to get an integral x-series. §7.9 gives finite local monodromy at `0`, §7.2 gives congruence, and dividing by the normalizing factor recovers `F_j`.
+*Proof sketch.* Replace F by `cF(hτ/2)` when h is even, or by `cF(hτ)`, induced back to `SL₂(ℤ)` (§7.3), to reach an integral expansion in `q = exp(πiτ)`. Normalize the weight (§7.10) and use §2.3 to get an integral x-series. §7.9 gives finite local monodromy at `0`, §7.2 gives congruence, and dividing by the normalizing factor recovers `F_j`.
 
-*Needs:* §§2.4, 6.6, 7.1, 7.2, 7.3, 7.8, 7.9, 7.10.
+*Needs:* §§2.3, 6.6, 7.1, 7.2, 7.3, 7.8, 7.9, 7.10.
 
 API:
 
@@ -778,11 +804,11 @@ Let σ be the representation of `PSL₂(ℤ) = ⟨S, R | S² = R³ = 1⟩` (Fuch
 
 ### 7.14 Positive-weight forms and infinite monodromy
 
-Let h be a nonzero congruence form of weight `k ≥ 1` on `Γ′`, put `G = Γ′ ∩ Γ(2)`, and view h as a germ in `x = λ/16` on the finite étale cover `Y(G) = Y(±G) → Y(2)` (§2.2 for `±G`). Its continuation space is spanned by `τ^i h` for `0 ≤ i ≤ k`, so its minimal operator has order `k + 1`, and the monodromy is `Sym^k` of the standard representation of G, of infinite image. At a cusp `g∞` (`g ∈ SL₂(ℤ)`), let w be its signed width for G and `ε ∈ {±1}` a sign with `εgT^w g⁻¹ ∈ G`. The local monodromy there is conjugate to `ε^k Sym^k(T^w)`: it has infinite order and is quasi-unipotent, its square is unipotent and nontrivial, and it is unipotent exactly when `ε^k = 1`, so always for even k but not at an irregular cusp in odd weight. The apparent singularities on `ℍ` are exactly the zeros of h. If h has an integral expansion in q, §2.4 gives an integral x-series; for a fractional expansion only the Puiseux germ is retained (CDT, Remark 7.2.3, p.688, citing Stiller and Zagier).
+Let h be a nonzero congruence form of weight `k ≥ 1` on `Γ′`, put `G = Γ′ ∩ Γ(2)`, and view h as a germ in `x = λ/16` on the finite étale cover `Y(G) = Y(±G) → Y(2)` (§2.2 for `±G`). Its continuation space is spanned by `τ^i h` for `0 ≤ i ≤ k`, so its minimal operator has order `k + 1`, and the monodromy is `Sym^k` of the standard representation of G, of infinite image. At a cusp `g∞` (`g ∈ SL₂(ℤ)`), let w be its signed width for G and `ε ∈ {±1}` a sign with `εgT^w g⁻¹ ∈ G`. The local monodromy there is conjugate to `ε^k Sym^k(T^w)`: it has infinite order and is quasi-unipotent, its square is unipotent and nontrivial, and it is unipotent exactly when `ε^k = 1`, so always for even k but not at an irregular cusp in odd weight. The apparent singularities on `ℍ` are exactly the zeros of h. If h has an integral expansion in q, §2.3 gives an integral x-series; for a fractional expansion only the Puiseux germ is retained (CDT, Remark 7.2.3, p.688, citing Stiller and Zagier).
 
 *Proof sketch.* Continuation along a loop representing `γ = [[a, b], [c, d]] ∈ Γ′` replaces h by `(cτ + d)^k h`; Zariski density of `Γ′` in `SL₂` makes these span `{P(τ)h : deg P ≤ k}`. The Wronskian of `h, τh, …, τ^k h` in x is a nonzero constant times `h^(k+1)(dτ/dx)^(k(k+1)/2)`, and `dτ/dx` has no zeros or poles on `ℍ`. On polynomials in τ of degree at most k, `−I` acts by `(−1)^k` and `gT^w g⁻¹` by g-conjugation of the unipotent shift `P(τ) ↦ P(τ + w)`, which is nontrivial for `k ≥ 1`; so `εgT^w g⁻¹` acts by `ε^k` times a nontrivial unipotent, whose square is `Sym^k(T^(2w))` up to conjugation.
 
-*Needs:* §§2.2, 2.4, 7.7.
+*Needs:* §§2.2, 2.3, 7.7.
 
 ### Examples
 
@@ -809,11 +835,23 @@ This layer defines weakly holomorphic quasimodular forms by adjoining `E₂` and
 
 ### 8.1 Weakly holomorphic quasimodular forms
 
-For a finite-index `Γ ≤ SL₂(ℤ)`, let `M(Γ) = ⊕_k ModularForm Γ k` be Mathlib's graded commutative ring of integral-weight modular forms on the image of Γ in `GL₂(ℝ)` (`ModularForm.instGCommRing`; its hypothesis `HasDetPlusMinusOne` holds for the image of every subgroup of `SL₂(ℤ)`), with the parity convention of ModularForms Layer 0 (if `−I ∈ Γ`, only even weights occur). Define `M̃(Γ) = M(Γ)[E₂]` and `M̃^!(Γ) = M̃(Γ)[Δ⁻¹]`, subrings of the holomorphic functions on `ℍ`, graded by weight and filtered by depth (the degree in `E₂`); equivalently `M̃^!(Γ) = M^!(Γ)[E₂]` with `M^!(Γ)` the weak forms of §1.1 (CDT, Definition 7.4.3, p.692; Lemma 7.4.4, pp.692–693). `E₂` is Mathlib's `EisensteinSeries.E2`.
+For a finite-index `Γ ≤ SL₂(ℤ)`, let `M(Γ) = ⊕_k ModularForm Γ k` be Mathlib's graded commutative ring of integral-weight modular forms on the image of Γ in `GL₂(ℝ)` (`ModularForm.instGCommRing`; its hypothesis `HasDetPlusMinusOne` holds for the image of every subgroup of `SL₂(ℤ)`), with the parity convention of ModularForms Layer 0 (if `−I ∈ Γ`, only even weights occur). Define `M̃(Γ) = M(Γ)[E₂]` and `M̃^!(Γ) = M̃(Γ)[Δ⁻¹]`, subrings of the holomorphic functions on `ℍ`, graded by weight and filtered by depth (the degree in `E₂`); equivalently `M̃^!(Γ) = M^!(Γ)[E₂]` with `M^!(Γ)` the weak forms of §1.1 (CDT, Definition 7.4.3, p.692; Lemma 7.4.4, pp.692–693). `E₂` is Mathlib's `EisensteinSeries.E2`. Formally, define `weakFormAlgebra Γ`, the ring `M^!(Γ)`, as the `ℂ`-subalgebra of the functions on `ℍ` generated by the weak forms on Γ of every integral weight, and `quasiModularWeakAlgebra Γ`, the ring `M̃^!(Γ)`, as the subalgebra generated by `weakFormAlgebra Γ` and `E₂`; for finite-index Γ the latter is `M̃(Γ)[Δ⁻¹]`.
 
-*Needs:* §§1.1, 1.4; Mathlib `ModularForm.instGCommRing`, `ModularForm.discriminant`, `ModularForm.logDeriv_eta_eq_E2`, `EisensteinSeries.E2`; ModularForms Layer 0 (parity only).
+*Needs:* §§1.1, 1.4; Mathlib `ModularForm.instGCommRing`, `ModularForm.discriminant`, `ModularForm.logDeriv_eta_eq_E2`, `EisensteinSeries.E2`, `Algebra.adjoin`; ModularForms Layer 0 (parity only).
 
-API:
+API of `weakFormAlgebra`:
+
+- For finite-index Γ, every element of `weakFormAlgebra Γ` is a finite sum of weak forms of distinct weights, and the summands are unique: slashing by an element of Γ with nonzero lower-left entry separates the weights.
+- `weakFormAlgebra Γ` contains the functions of `M(Γ)` and `Δ⁻¹`, and `Γ ≤ Γ′` gives `weakFormAlgebra Γ′ ≤ weakFormAlgebra Γ`.
+- If `−I ∈ Γ`, the odd-weight summands vanish.
+
+**Checks** of `weakFormAlgebra`.
+
+- `Δ`, `Δ⁻¹` and `E₄` lie in `weakFormAlgebra SL₂(ℤ)`; a definition using weight-zero functions only would contain none of them.
+- `E₂` is not in `weakFormAlgebra SL₂(ℤ)`. If `E₂ = Σ_k f_k` with `f_k` of weight k, then `E₂(τ) + 6/(πiτ) = (E₂ ∣[2] S)(τ) = Σ_k τ^(k−2) f_k(τ)`; replacing τ by `τ + n` and letting the integer n grow forces `f_k = 0` for `k > 2` and `f_2 = E₂`, which is not invariant under S.
+- `weakFormAlgebra SL₂(ℤ)` is not closed under D: `DΔ = E₂Δ`, and `E₂Δ` in it would put `E₂ = (E₂Δ)Δ⁻¹` in it. This is the difference between the two definitions that §8.2 measures.
+
+API of `quasiModularWeakAlgebra`:
 
 - Every weak form on Γ lies in `M̃^!(Γ)` with depth zero, in its own weight.
 - `E₂` lies in `M̃^!(Γ)` with weight 2 and depth 1.
@@ -829,11 +867,11 @@ API:
 
 ### 8.2 The differential ring generated by weak forms
 
-With `θ_q = q d/dq = (1/πi) d/dτ`, `M̃^!(Γ)` is the smallest `ℂ`-subalgebra of the holomorphic functions on `ℍ` that contains `M^!(Γ)` and is closed under `θ_q`. In this normalization `θ_qΔ = 2E₂Δ`, so `E₂ = θ_qΔ/(2Δ)`; for `D = (1/2πi) d/dτ`, `DΔ = E₂Δ` (CDT, Lemma 7.4.4, pp.692–693). CDT combines `θ = (1/πi)d/dτ` with `θΔ = E₂Δ`; with `q = exp(πiτ)` the factor 2 is required, and the lemma's conclusion is unaffected.
+`quasiModularWeakAlgebra_differential_closure`: for finite-index Γ, `M̃^!(Γ)` is closed under `D = (1/2πi) d/dτ` (Mathlib `Derivative.normalizedDerivOfComplex`), and it lies in every `ℂ`-subalgebra of the functions on `ℍ` that contains `M^!(Γ)` and is closed under D. A `ℂ`-subalgebra is closed under `θ_q = q d/dq = (1/πi) d/dτ = 2D` exactly when it is closed under D, so `M̃^!(Γ)` is the smallest `ℂ`-subalgebra of the holomorphic functions on `ℍ` that contains `M^!(Γ)` and is closed under `θ_q`. In this normalization `θ_qΔ = 2E₂Δ`, so `E₂ = θ_qΔ/(2Δ)`; for `D = (1/2πi) d/dτ`, `DΔ = E₂Δ` (CDT, Lemma 7.4.4, pp.692–693). CDT combines `θ = (1/πi)d/dτ` with `θΔ = E₂Δ`; with `q = exp(πiτ)` the factor 2 is required, and the lemma's conclusion is unaffected.
 
 *Proof sketch.* Mathlib's `Derivative.serreDerivativeMF` and `Derivative.normalizedDerivOfComplex_E₂` give closure of `M(Γ)[E₂]` under D, and the quotient rule extends it to `Δ^(−m)h`. Conversely closure under `θ_q` and `Δ⁻¹ ∈ M^!(Γ)` give `E₂ = θ_qΔ/(2Δ)`.
 
-*Needs:* §§1.4, 8.1; Mathlib `ModularForm.logDeriv_eta_eq_E2`, `ModularForm.discriminant_ne_zero`, `Derivative.serreDerivativeMF`, `Derivative.normalizedDerivOfComplex_E₂`, `EisensteinSeries.E2`.
+*Needs:* §§1.4, 8.1; Mathlib `ModularForm.logDeriv_eta_eq_E2`, `ModularForm.discriminant_ne_zero`, `Derivative.normalizedDerivOfComplex`, `Derivative.serreDerivativeMF`, `Derivative.normalizedDerivOfComplex_E₂`, `EisensteinSeries.E2`.
 
 ### 8.3 The elliptic integral of the second kind
 
@@ -853,11 +891,25 @@ The series `I₁(x) = Σ C(2n, n)² x^(n+1)/(n + 1)` and `I₂(x) = Σ C_n² x^(
 
 ### 8.5 Deficient places
 
-Fix a number field `K ⊆ ℂ` and a representation ρ as in §7.3. Let `S_k(ρ; K)` be the K-space of vector-valued forms of weight k for ρ whose components all have expansions in `tK[[t]]` with `t = q^(1/N)` for a common N. A place v of K is deficient for ρ if for some k some component `Σ_{m≥1} a_m t^m` of an element of `S_k(ρ; K)` has `|a_m|_v` unbounded (v finite), or `|a_m|_v/m^((k−1)/2+ε)` unbounded for some `ε > 0` (v archimedean, with the usual modulus, not its square) (CDT, §7.4.8, pp.694–695). CDT takes `K = ℚ`.
+Fix a number field K with an embedding `ι : K → ℂ` and a representation ρ as in §7.3. Define `HasCuspidalExpansionOver ι F h a`, for `F : ℍ → ℂⁿ`, a period h and sequences `a_j : ℕ → K`, to hold when `h ≥ 1` and every component `F_j` is h-periodic, bounded as `Im τ → ∞`, and has expansion `Σ_{m≥1} ι(a_{j,m}) exp(2πimτ/h)` in Mathlib's `UpperHalfPlane.qExpansion h`, with no constant term. Let `S_k(ρ; K)` be the K-space of vector-valued forms F of weight k for ρ for which this holds for some h and a. For `h = 2N` the variable is CDT's `t = q^(1/N)`, and an odd h becomes 2h by inserting zeros. A place v of K is deficient for ρ if for some k some component `Σ_{m≥1} a_m t^m` of an element of `S_k(ρ; K)` has `|a_m|_v` unbounded (v finite), or `|a_m|_v/m^((k−1)/2+ε)` unbounded for some `ε > 0` (v archimedean, with the usual modulus, not its square) (CDT, §7.4.8, pp.694–695). CDT takes `K = ℚ`.
 
-*Needs:* §§1.2, 7.3; QSeriesPartitionsAndMockModularForms §8.4a.
+*Needs:* §§1.2, 7.3; QSeriesPartitionsAndMockModularForms §8.4a; Mathlib `UpperHalfPlane.qExpansion`, `UpperHalfPlane.IsBoundedAtImInfty`, `NumberField.FinitePlace`, `NumberField.InfinitePlace`.
 
-API:
+API of `HasCuspidalExpansionOver`:
+
+- For given F and h the sequences a are unique, since ι is injective and the expansion determines its coefficients.
+- If it holds with period h, it holds with period rh for every `r ≥ 1`, with `a_{j,rm}` the old `a_{j,m}` and zeros elsewhere.
+- If F and G satisfy it for the same k and ρ with periods h and h′, then `ι(c)F + ι(d)G` satisfies it with period `lcm(h, h′)` for all `c, d ∈ K`.
+- For a vector-valued form it makes every component vanish at every cusp: `F_j ∣[k] g = Σ_l ρ(g)_{jl} F_l` tends to `0` as `Im τ → ∞`.
+
+**Checks** of `HasCuspidalExpansionOver`.
+
+- `F = Δ`, `n = 1`, `ρ = 1`, `k = 12`, `K = ℚ`, `h = 1` and `a_m = τ(m)`, Ramanujan's function, satisfy it.
+- `E₄` fails, since its constant term is 1. Without the constant-term condition §8.6 would fail at the archimedean place: the coefficients `240σ₃(m) ≥ 240m³` of `E₄` exceed `m^(3/2+ε)` for `ε < 3/2`.
+- `Δ⁻¹` fails: it is unbounded as `Im τ → ∞`, and `UpperHalfPlane.qExpansion 1` is not its expansion.
+- `√2 Δ` fails for `K = ℚ`, since its first coefficient is not in `ι(ℚ)`, and satisfies it for `K = ℚ(√2)`: K-rationality is read through ι.
+
+API of deficiency:
 
 - v is deficient exactly when some weight, some element of `S_k(ρ; K)`, some component and the stated unbounded sequence witness it.
 - Replacing t by `t^r` (inserting zeros) preserves boundedness and the exponent threshold, changing only constants.
@@ -873,15 +925,15 @@ API:
 
 ### 8.6 Congruence kernels have no deficient places
 
-If `ker ρ` contains a principal congruence subgroup, then ρ has no deficient place over any K. At finite places one denominator bounds the coefficients; at archimedean places the coefficients of a weight-k cuspidal component satisfy `|a_m| ≪_ε m^((k−1)/2+ε)` for every `ε > 0` (CDT, §7.4.8, p.695).
+`congruenceKernel_no_deficient_place`: if `ker ρ` is a congruence subgroup, then for every number field K with embedding ι, every F in `S_k(ρ; K)` with sequences a and every component j, the sequence `a_j` is bounded at every finite place of K and satisfies `v(a_{j,m}) ≤ C_ε m^((k−1)/2+ε)` for `m ≥ 1`, every `ε > 0` and every infinite place v. So ρ has no deficient place over any K. At finite places one denominator bounds the coefficients; at archimedean places the coefficients of a weight-k cuspidal component satisfy `|a_m| ≪_ε m^((k−1)/2+ε)` for every `ε > 0` (CDT, §7.4.8, p.695).
 
-*Proof sketch.* Each component is a cusp form on a common `Γ(M)`. Its K-coefficient space is the scalar extension of the rational structure, so AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2) gives one denominator. For the archimedean bound decompose into newforms and oldforms (ModularForms Layer 4), apply Deligne's bound in the form of AutomorphicGaloisRepresentations §4.2, including the tempered bound at bad primes, and the divisor bound. Nonzero cusp forms here have even weight at least 2.
+*Proof sketch.* Each component is a cusp form on a common `Γ(M)`, by the last API item of §8.5. Its K-coefficient space is the scalar extension of the rational structure, so AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2) gives one denominator. For the archimedean bound decompose into newforms and oldforms (ModularForms Layer 4), apply Deligne's bound in the form of AutomorphicGaloisRepresentations §4.2, including the tempered bound at bad primes, and the divisor bound. At the infinite place of an embedding φ of K the coefficients `φ(a_{j,m})` are those of the conjugate form, again a cusp form on `Γ(M)` because the rational structure is stable under conjugation. Nonzero cusp forms here have even weight at least 2.
 
 *Needs:* §8.5; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); AutomorphicGaloisRepresentations §4.2; ModularForms Layers 0 and 4.
 
 ### 8.7 A finite deficient place from an arithmetic witness
 
-Let f be a component of an element of `S_k(ρ; K)` that is not a weak form on any congruence subgroup. If the denominators of its coefficients are supported on a finite set S of finite places of K, then some `v ∈ S` is deficient (CDT, §7.4.8, p.695). Noncongruence of ρ alone gives no witness: for `ρ = 1 ⊕ σ` of §7.13, every element of `S_k(ρ; K)` has zero σ-part, because its σ-part g satisfies `(σ(T)^(2N) − 1)g = 0` and `σ(T)` has no root of unity as eigenvalue; so no place is deficient although `ker ρ` is not congruence. The converse printed on CDT p.695, a finite deficient place from noncongruence of ρ alone, is therefore false.
+`exists_deficient_finite_place`: let `f = F_j` be a component of an element F of `S_k(ρ; K)`, with sequences a, that is not a weak form on any congruence subgroup. If `a_{j,m}` is integral at every finite place outside a finite set S of finite places of K, then some `v ∈ S` has `v(a_{j,m})` unbounded in m, so v is deficient with f itself as the witness (CDT, §7.4.8, p.695). Noncongruence of ρ alone gives no witness: for `ρ = 1 ⊕ σ` of §7.13, every element of `S_k(ρ; K)` has zero σ-part, because its σ-part g, of period h, satisfies `(σ(T)^h − 1)g = 0` and `σ(T)` has no root of unity as eigenvalue; so no place is deficient although `ker ρ` is not congruence. The converse printed on CDT p.695, a finite deficient place from noncongruence of ρ alone, is therefore false.
 
 *Proof sketch.* If every `v ∈ S` were bounded, one element of `𝓞_K` would clear the finitely many local bounds, and the places outside S are already integral, so f would have integral coefficients after a scalar. The `𝓞_K` form of §7.11 then makes f congruence, a contradiction.
 
@@ -896,7 +948,7 @@ Let f be a component of an element of `S_k(ρ; K)` that is not a weak form on an
 
 ### Dependencies
 
-Layers 1, 2, 6 and 7; QSeriesPartitionsAndMockModularForms §8.4a; ModularForms Layers 0 and 4; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); AutomorphicGaloisRepresentations §4.2; GeometryOfNumbersAndQuadraticArithmetic §4.3; Mathlib derivative and Eisenstein API.
+Layers 1, 2, 6 and 7; QSeriesPartitionsAndMockModularForms §8.4a; ModularForms Layers 0 and 4; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); AutomorphicGaloisRepresentations §4.2; GeometryOfNumbersAndQuadraticArithmetic §4.3; Mathlib derivative and Eisenstein API, `Algebra.adjoin`, `NumberField.FinitePlace` and `NumberField.InfinitePlace`.
 
 ## Layer 9: The arithmetic fundamental group of the cuspidal model
 

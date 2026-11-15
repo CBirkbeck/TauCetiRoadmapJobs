@@ -1,40 +1,50 @@
 import Mathlib
+import TauCeti.NumberTheory.ModularForms.QExpansion.Laurent
 
 /-!
 # Modular forms, Part II — noncongruence subgroups and unbounded denominators: target signatures
 
 This file is not the roadmap. The roadmap is `README.md`; this file states, against the pinned
 Mathlib and Tau Ceti, the headline theorems the finished roadmap proves, each with `sorry`, and
-the three definitions those statements need.
+the definitions those statements need.
 
 Stated here:
 
+* Wohlfahrt's theorem: a congruence subgroup containing `−I` and every `SL₂(ℤ)`-conjugate of
+  `T^N` contains `Γ(N)` (README §1.8);
 * the modular λ function is a covering of `ℂ ∖ {0, 1}` whose fibres are the `Γ(2)`-orbits
   (README §2.2);
 * the nonabelian Ihara lemma for a normal finite-index subgroup `G` containing every
   `SL₂(ℤ)`-conjugate of `T^N` (README §4.1); this containment implies that the geometric level of
   `G`, which only asks for these conjugates to lie in `±G`, divides `N`, and is equivalent to it
   when `−I ∈ G` but not in general;
-* the unbounded denominators theorem of Calegari–Dimitrov–Tang (README §6.3) and its form for
-  algebraic-integer Fourier coefficients (README §6.6);
+* the equality `R₂N = M₂N` of the bounded-denominator and congruence `ℚ(λ)`-spans inside the
+  Laurent series in `exp(2πiτ/(2N))` (README §6.1), and the unconditional holonomy rank bound
+  `[R₂N : ℚ(λ)] ≤ C N³ log(2N)` obtained in its proof from README §3.8; the spans are formed
+  with Tau Ceti's Laurent `q`-expansion `TauCeti.UpperHalfPlane.laurentQExpansion`;
+* the unbounded denominators theorem of Calegari–Dimitrov–Tang (README §6.3), Galois conjugation
+  of weak forms with algebraic Laurent coefficients (README §6.5) and the unbounded denominators
+  theorem for algebraic-integer Fourier coefficients (README §6.6);
 * congruence of a component of a vector-valued modular form with an integral Fourier expansion
-  (README §7.11) and the effective-span form of Mason's conjecture (README §7.12).
+  (README §7.11) and the effective-span form of Mason's conjecture (README §7.12);
+* the weakly holomorphic quasimodular forms as the differential closure of the weak forms
+  (README §8.2), and the two deficient-place theorems: no deficient place when the kernel is
+  congruence (README §8.6), and a finite deficient place from an arithmetic noncongruence
+  component (README §8.7).
 
-Headline theorems that are not statable at the pins:
+Headline theorems that are not stated:
 
-* the equality `R₂N = M₂N` of the bounded-denominator and congruence modular-function fields
-  (README §6.1), degree doubling (README §5.3) and the holonomy rank bound
-  `[R₂N : ℚ(λ)] ≤ C N³ log(2N)` (README §3.8): the pinned libraries have no Laurent
-  `q`-expansion of a weakly holomorphic form at a cusp, hence no embedding of weak modular
-  functions into `ℚ((q^(1/N)))` over which these `ℚ(λ)`-spans are formed, and no integral
-  holonomic ring (supplied by DiophantineApproximationAndTranscendencePartII Layer 4);
+* degree doubling (README §5.3) and the leveraging contradiction (README §5.5) are the steps of
+  the proof by contradiction of `R₂N = M₂N`: the first assumes `R₂N ≠ M₂N`, which
+  `boundedDenominatorSpan_eq_congruenceSpan` refutes, and the second concludes that equality, so
+  over these carriers both would follow from it and test nothing;
 * algebraicity and congruence of integral solutions of three-point differential equations with
-  finite local monodromy at `0` (README §§7.1–7.2): the pinned libraries have no analytic
-  continuation of solutions of a linear differential operator and no local monodromy, nor the
-  meromorphic-basis condition at a singular point;
-* the arithmetic fundamental-group theorem for the cuspidal smooth model of `X(N)` (README §9.3):
-  the pinned libraries have neither the minimal regular model of `X(N)` over `𝓞_K` nor its cusp
-  section.
+  finite local monodromy at `0` (README §§7.1–7.2) are not statable at the pins: the pinned
+  libraries have no analytic continuation of solutions of a linear differential operator and no
+  local monodromy, nor the meromorphic-basis condition at a singular point;
+* the arithmetic fundamental-group theorem for the cuspidal smooth model of `X(N)` (README §9.3)
+  is not statable at the pins: the pinned libraries have neither the minimal regular model of
+  `X(N)` over `𝓞_K` nor its cusp section.
 -/
 
 namespace TauCetiRoadmap.ModularFormsPartII
@@ -57,6 +67,17 @@ def IsWeakForm (Γ : Subgroup SL(2, ℤ)) (k : ℤ) (f : ℍ → ℂ) : Prop :=
     ∀ g : SL(2, ℤ), ∃ C : ℝ,
       (f ∣[k] g) =O[atImInfty] fun τ : ℍ => Real.exp (C * τ.im)
 
+/-- Wohlfahrt's theorem (README §1.8; Wohlfahrt's Theorem 2 as used in CDT, proof of
+Lemma 4.4.1, and KSV10, Lemma 7, Proposition 3 and Remark 8). A congruence subgroup `G` of
+`SL₂(ℤ)` that contains `−I` and every `SL₂(ℤ)`-conjugate of `T^N` contains `Γ(N)`. With `−I ∈ G`
+the containment of the conjugates says that the geometric level `L(G)` divides `N` (README §1.3),
+so `Γ(L(G)) ≤ G`; applied to `±G` it gives `Γ(L(G)) ≤ ±G` for every congruence subgroup. -/
+theorem wohlfahrt_Gamma_le (G : Subgroup SL(2, ℤ)) (hG : IsCongruenceSubgroup G)
+    (hneg : (-1 : SL(2, ℤ)) ∈ G) (N : ℕ)
+    (hlevel : ∀ g : SL(2, ℤ), g * ModularGroup.T ^ N * g⁻¹ ∈ G) :
+    Gamma N ≤ G := by
+  sorry
+
 /-! ## Layer 2: The modular λ coordinate -/
 
 /-- The modular λ function (README §2.1): `λ(τ) = 16 (η(τ/2) η(2τ)² / η(τ)³)⁸`, built from the
@@ -75,6 +96,39 @@ theorem modularLambda_covering :
       IsCoveringMapOn (fun τ : ℍ => modularLambda τ) {z : ℂ | z ≠ 0 ∧ z ≠ 1} ∧
       ∀ τ τ' : ℍ, modularLambda τ = modularLambda τ' ↔ ∃ γ ∈ Gamma 2, γ • τ = τ' := by
   sorry
+
+/-! ## Layer 3: Bounded-denominator fields and holonomy rank -/
+
+/-- The field `ℚ(λ)` at level `2N` (README §3.0): the subfield of the Laurent series in
+`t = exp(2πiτ/(2N))` generated by the Laurent expansion `λ = 16tᴺ − 128t²ᴺ + ⋯` of the modular λ
+function. It contains `ℚ`, and since λ is transcendental over `ℚ` it is a rational function field
+in that expansion. -/
+def lambdaField (N : ℕ) : Subfield (LaurentSeries ℂ) :=
+  Subfield.closure
+    {TauCeti.UpperHalfPlane.laurentQExpansion (2 * N) fun τ : ℍ => modularLambda τ}
+
+/-- The congruence span `M₂N` (README §3.1; CDT Definition 4.2.1(1)): the `ℚ(λ)`-span, inside the
+Laurent series in `t = exp(2πiτ/(2N))`, of the Laurent expansions at `∞` of the weight-zero weak
+forms on `Γ(2N)` whose expansion has rational coefficients. Poles at the cusps are allowed. -/
+def congruenceSpan (N : ℕ) : Submodule (lambdaField N) (LaurentSeries ℂ) :=
+  Submodule.span (lambdaField N)
+    {s | ∃ f : ℍ → ℂ, IsWeakForm (Gamma (2 * N)) 0 f ∧
+      (∀ n : ℤ, ∃ r : ℚ, (TauCeti.UpperHalfPlane.laurentQExpansion (2 * N) f).coeff n = r) ∧
+      TauCeti.UpperHalfPlane.laurentQExpansion (2 * N) f = s}
+
+/-- The bounded-denominator span `R₂N` (README §3.2; CDT Definition 4.2.1(2) and
+Proposition 3.0.1): the `ℚ(λ)`-span, inside the Laurent series in `t = exp(2πiτ/(2N))`, of the
+Laurent expansions at `∞` of the weight-zero weak forms `f` for which some finite-index subgroup `H`
+containing `−I` and every `SL₂(ℤ)`-conjugate of `T^(2N)` (so of geometric level dividing `2N`)
+leaves `f` invariant, and whose expansion becomes integral after multiplication by one positive
+integer `D`. The subgroup `H` and the integer `D` depend on `f`. -/
+def boundedDenominatorSpan (N : ℕ) : Submodule (lambdaField N) (LaurentSeries ℂ) :=
+  Submodule.span (lambdaField N)
+    {s | ∃ f : ℍ → ℂ, ∃ H : Subgroup SL(2, ℤ), H.FiniteIndex ∧ (-1 : SL(2, ℤ)) ∈ H ∧
+      (∀ g : SL(2, ℤ), g * ModularGroup.T ^ (2 * N) * g⁻¹ ∈ H) ∧ IsWeakForm H 0 f ∧
+      (∃ D : ℕ, 0 < D ∧ ∀ n : ℤ, ∃ z : ℤ,
+        (D : ℂ) * (TauCeti.UpperHalfPlane.laurentQExpansion (2 * N) f).coeff n = z) ∧
+      TauCeti.UpperHalfPlane.laurentQExpansion (2 * N) f = s}
 
 /-! ## Layer 4: The nonabelian Ihara lemma -/
 
@@ -100,6 +154,23 @@ theorem nonabelian_ihara (N p : ℕ) (hN : 3 ≤ N) (hp : p.Prime) (hpN : ¬ p �
 
 /-! ## Layer 6: The unbounded denominators theorem -/
 
+/-- Equality of the bounded-denominator and congruence fields (README §6.1; CDT §6.3, assembling
+Proposition 3.0.1 with Theorems 5.1.4 and 6.0.1). For every `N ≥ 1`, the `ℚ(λ)`-span `R₂N` of the
+weight-zero weak forms with rational bounded-denominator expansions and geometric level dividing
+`2N` equals the `ℚ(λ)`-span `M₂N` of the rational weight-zero weak forms on `Γ(2N)`. -/
+theorem boundedDenominatorSpan_eq_congruenceSpan (N : ℕ) (hN : 0 < N) :
+    boundedDenominatorSpan N = congruenceSpan N := by
+  sorry
+
+/-- The holonomy rank bound in its unconditional form (README §6.1, from README §3.8; CDT
+Proposition 3.0.1 and §6.3). There is an absolute constant `C` such that for every `N ≥ 1` the
+span `R₂N` is finite-dimensional over `ℚ(λ)` and `[R₂N : ℚ(λ)] ≤ C N³ log(2N)`. -/
+theorem boundedDenominatorSpan_finrank_le : ∃ C : ℝ, ∀ N : ℕ, 0 < N →
+    FiniteDimensional (lambdaField N) (boundedDenominatorSpan N) ∧
+      (Module.finrank (lambdaField N) (boundedDenominatorSpan N) : ℝ) ≤
+        C * (N : ℝ) ^ 3 * Real.log (2 * N) := by
+  sorry
+
 /-- The unbounded denominators theorem (README §6.3; CDT Theorem 1.0.1). Let `Γ ≤ SL₂(ℤ)` have
 finite index and let `f` be a weak form of integral weight `k` for `Γ`. If `f` has period `h ≥ 1`,
 is bounded as `Im τ → ∞`, and every coefficient of its expansion in `exp(2πiτ/h)` is an integer,
@@ -110,6 +181,24 @@ theorem unbounded_denominators (Γ : Subgroup SL(2, ℤ)) [Γ.FiniteIndex] (k : 
     (hbdd : UpperHalfPlane.IsBoundedAtImInfty f)
     (hint : ∀ n : ℕ, ∃ a : ℤ, (UpperHalfPlane.qExpansion h f).coeff n = a) :
     ∃ Γ' : Subgroup SL(2, ℤ), IsCongruenceSubgroup Γ' ∧ IsWeakForm Γ' k f := by
+  sorry
+
+/-- Galois conjugates of weak forms with algebraic coefficients (README §6.5; used in CDT
+Remark 6.3.2). Let `f` be a weak form of weight `k` for a finite-index `Γ ≤ SL₂(ℤ)` with period
+`h ≥ 1` whose Laurent expansion at `∞` in `exp(2πiτ/h)` has algebraic coefficients. Then all these
+coefficients lie in one number field, and for every automorphism `σ` of `ℂ` the coefficientwise
+conjugate series is the Laurent expansion at `∞`, with the same period `h`, of a weak form of
+weight `k` for some finite-index subgroup. -/
+theorem weakForm_galois_conjugate (Γ : Subgroup SL(2, ℤ)) [Γ.FiniteIndex] (k : ℤ) (f : ℍ → ℂ)
+    (hf : IsWeakForm Γ k f) (h : ℕ) (hh : 0 < h)
+    (hper : Function.Periodic (f ∘ UpperHalfPlane.ofComplex) h)
+    (halg : ∀ n : ℤ, IsAlgebraic ℚ ((TauCeti.UpperHalfPlane.laurentQExpansion h f).coeff n)) :
+    (∃ K : IntermediateField ℚ ℂ, FiniteDimensional ℚ K ∧
+      ∀ n : ℤ, (TauCeti.UpperHalfPlane.laurentQExpansion h f).coeff n ∈ K) ∧
+    ∀ σ : ℂ ≃ₐ[ℚ] ℂ, ∃ Γ' : Subgroup SL(2, ℤ), Γ'.FiniteIndex ∧ ∃ f' : ℍ → ℂ,
+      IsWeakForm Γ' k f' ∧ Function.Periodic (f' ∘ UpperHalfPlane.ofComplex) h ∧
+      ∀ n : ℤ, (TauCeti.UpperHalfPlane.laurentQExpansion h f').coeff n =
+        σ ((TauCeti.UpperHalfPlane.laurentQExpansion h f).coeff n) := by
   sorry
 
 /-- Unbounded denominators with algebraic-integer coefficients (README §6.6; CDT
@@ -169,6 +258,74 @@ theorem vectorValued_effective_mason {n : ℕ} (k : ℤ) (ρ : SL(2, ℤ) →* G
       UpperHalfPlane.IsBoundedAtImInfty (fun τ : ℍ => c * F τ j) ∧
       ∀ m : ℕ, ∃ a : ℤ, (UpperHalfPlane.qExpansion h fun τ : ℍ => c * F τ j).coeff m = a) :
     ∃ M : ℕ, 0 < M ∧ ∀ γ ∈ Gamma M, ∀ τ : ℍ, (ρ γ : Matrix (Fin n) (Fin n) ℂ) *ᵥ F τ = F τ := by
+  sorry
+
+/-! ## Layer 8: Quasimodular forms and arithmetic growth -/
+
+/-- The ring `M^!(Γ)` of weak forms (README §8.1): the `ℂ`-subalgebra of the functions on the
+upper half-plane generated by the weak forms of every integral weight for `Γ`. For finite-index
+`Γ` it is the sum over `k` of the weight-`k` weak forms. -/
+def weakFormAlgebra (Γ : Subgroup SL(2, ℤ)) : Subalgebra ℂ (ℍ → ℂ) :=
+  Algebra.adjoin ℂ {f | ∃ k : ℤ, IsWeakForm Γ k f}
+
+/-- The ring `M̃^!(Γ) = M^!(Γ)[E₂]` of weakly holomorphic quasimodular forms (README §8.1; CDT
+Definition 7.4.3): the `ℂ`-subalgebra generated by the weak forms for `Γ` and Mathlib's weight-two
+Eisenstein series `E₂`. -/
+def quasiModularWeakAlgebra (Γ : Subgroup SL(2, ℤ)) : Subalgebra ℂ (ℍ → ℂ) :=
+  Algebra.adjoin ℂ (insert EisensteinSeries.E2 (weakFormAlgebra Γ : Set (ℍ → ℂ)))
+
+/-- Weakly holomorphic quasimodular forms are the differential closure of the weak forms
+(README §8.2; CDT Lemma 7.4.4). For finite-index `Γ`, the algebra `M̃^!(Γ)` is closed under
+`D = (1/2πi) d/dτ`, and it is contained in every `ℂ`-subalgebra of functions on the upper
+half-plane that contains the weak forms for `Γ` and is closed under `D`. Since `θ_q = 2D` with
+`q = exp(πiτ)`, the same holds for `θ_q`. -/
+theorem quasiModularWeakAlgebra_differential_closure (Γ : Subgroup SL(2, ℤ)) [Γ.FiniteIndex] :
+    (∀ f ∈ quasiModularWeakAlgebra Γ,
+      Derivative.normalizedDerivOfComplex f ∈ quasiModularWeakAlgebra Γ) ∧
+    ∀ A : Subalgebra ℂ (ℍ → ℂ), weakFormAlgebra Γ ≤ A →
+      (∀ f ∈ A, Derivative.normalizedDerivOfComplex f ∈ A) → quasiModularWeakAlgebra Γ ≤ A := by
+  sorry
+
+/-- Cuspidal `K`-rational expansions of a vector-valued form (README §8.5). For a field `K`
+embedded in `ℂ` by `ι`, `F : ℍ → ℂⁿ`, a period `h ≥ 1` and sequences `a j : ℕ → K`, every component
+`F_j` is `h`-periodic and bounded as `Im τ → ∞`, and its expansion in `exp(2πiτ/h)` is
+`Σ_{m ≥ 1} ι(a j m) exp(2πimτ/h)`, with no constant term. For a vector-valued form `F` this says
+that `F` lies in `S_k(ρ; K)` with coefficient sequences `a`. -/
+def HasCuspidalExpansionOver {K : Type*} [Field K] (ι : K →+* ℂ) {n : ℕ}
+    (F : ℍ → Fin n → ℂ) (h : ℕ) (a : Fin n → ℕ → K) : Prop :=
+  0 < h ∧ ∀ j : Fin n,
+    Function.Periodic ((fun τ : ℍ => F τ j) ∘ UpperHalfPlane.ofComplex) h ∧
+    UpperHalfPlane.IsBoundedAtImInfty (fun τ : ℍ => F τ j) ∧ a j 0 = 0 ∧
+    ∀ m : ℕ, (UpperHalfPlane.qExpansion h fun τ : ℍ => F τ j).coeff m = ι (a j m)
+
+/-- Congruence kernels have no deficient places (README §8.6; CDT §7.4.8). Let `K` be a number
+field embedded in `ℂ` by `ι`, and let `F` be a vector-valued form of weight `k` for `ρ` with
+cuspidal `K`-rational expansions `a`. If `ker ρ` is a congruence subgroup, then every coefficient
+sequence `a j` is bounded at every finite place of `K`, and at every infinite place `v` of `K`
+satisfies `v(a j m) ≤ C_ε m^((k−1)/2 + ε)` for every `ε > 0`. -/
+theorem congruenceKernel_no_deficient_place {K : Type*} [Field K] [NumberField K]
+    (ι : K →+* ℂ) {n : ℕ} (k : ℤ) (ρ : SL(2, ℤ) →* GL (Fin n) ℂ)
+    (F : ℍ → Fin n → ℂ) (hF : IsVectorValuedForm k ρ F)
+    (h : ℕ) (a : Fin n → ℕ → K) (ha : HasCuspidalExpansionOver ι F h a)
+    (hcong : IsCongruenceSubgroup ρ.ker) (j : Fin n) :
+    (∀ v : NumberField.FinitePlace K, ∃ C : ℝ, ∀ m : ℕ, v (a j m) ≤ C) ∧
+    ∀ v : NumberField.InfinitePlace K, ∀ ε : ℝ, 0 < ε →
+      ∃ C : ℝ, ∀ m : ℕ, 0 < m → v (a j m) ≤ C * (m : ℝ) ^ (((k : ℝ) - 1) / 2 + ε) := by
+  sorry
+
+/-- A finite deficient place from an arithmetic noncongruence component (README §8.7; CDT §7.4.8,
+corrected). Let `F` be a vector-valued form of weight `k` for `ρ` with cuspidal `K`-rational
+expansions `a`, and let the component `F_j` be a weak form for no congruence subgroup. If the
+coefficients `a j m` are integral at every finite place outside a finite set `S`, then some
+`v ∈ S` is deficient, witnessed by `F_j` itself: `m ↦ v(a j m)` is unbounded. -/
+theorem exists_deficient_finite_place {K : Type*} [Field K] [NumberField K]
+    (ι : K →+* ℂ) {n : ℕ} (k : ℤ) (ρ : SL(2, ℤ) →* GL (Fin n) ℂ)
+    (F : ℍ → Fin n → ℂ) (hF : IsVectorValuedForm k ρ F)
+    (h : ℕ) (a : Fin n → ℕ → K) (ha : HasCuspidalExpansionOver ι F h a) (j : Fin n)
+    (hnon : ¬ ∃ Γ' : Subgroup SL(2, ℤ), IsCongruenceSubgroup Γ' ∧ IsWeakForm Γ' k fun τ => F τ j)
+    (S : Finset (NumberField.FinitePlace K))
+    (hS : ∀ v : NumberField.FinitePlace K, v ∉ S → ∀ m : ℕ, v (a j m) ≤ 1) :
+    ∃ v ∈ S, ¬ ∃ C : ℝ, ∀ m : ℕ, v (a j m) ≤ C := by
   sorry
 
 end
