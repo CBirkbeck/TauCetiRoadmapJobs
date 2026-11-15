@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-WeilConjectures~6",
+  "head": "95876016ed0eccb38b7837e734921af7fdf4142b",
+  "pr": 1208,
+  "folder": "WeilConjectures",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 9587601; this round read the pull request's title and description against the head. Two P3 findings, both in the description only: the summary block says the moment lemmas hold over any normed field although README 5.5-5.6 need characteristic zero (R01), and AnalyticToricGeometryPartII is said to be named only as a consumer although the scope section also names its 6.1 (R02). Checked: title, folder contents, the ten open suppliers and their numbers against roadmaps list, the on-main suppliers, the pinned-library paragraph, sections 5.19 and 7.4-7.6, the validation paragraph (targeted build succeeds, six sorry warnings and Lake's module notice). Gate passes on this head; depcheck 0 problems; lake env lean gives six sorry warnings only. No seeded-sample target lies in a changed passage; no source text was compared this round.",
+  "text": "e3304463d7fc832b",
+  "carried": {
+   "from": "95876016ed0eccb38b7837e734921af7fdf4142b",
+   "head": "95876016ed0eccb38b7837e734921af7fdf4142b",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
