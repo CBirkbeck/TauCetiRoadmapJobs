@@ -17,15 +17,16 @@ reducibility `Setoid.BorelReducible`:
 * the Friedman–Stanley theorem: countable graphs, linear orders and trees are Borel complete, the
   linear orders through one continuous reduction of all codes of `Language.graph` (Layers 2, 3);
 * the Becker–Kechris universality theorem for `S∞` (Layer 4);
-* four characterisations of Borel completeness (Layer 5);
+* the characterisations of Borel completeness by the graphs and by the Borel `S∞`-spaces
+  (Layer 5);
 * the back-and-forth equivalence of ordinal multiples, and the consequences of Borel completeness:
   the isomorphism relation is not Borel, lies above `E₀` and has continuum many classes, the class
   has unbounded Scott height, and the Friedman–Stanley obstruction (Layer 6).
 
 The only definitions are those the statements need: isomorphism restricted to a class, Borel
-completeness, the three classes of graphs, linear orders and trees, the σ-algebra of `S∞` (which
-neither pin provides; it is the Borel σ-algebra of Tau Ceti's topology on `Equiv.Perm ℕ`) and the
-universal language. Every headline theorem of the roadmap is statable at the pins and is stated
+completeness, the three classes of graphs, linear orders and trees, the σ-algebra of a permutation
+group, that of `S∞` among them (which neither pin provides; it is the Borel σ-algebra of Tau Ceti's
+topology on `Equiv.Perm α`) and the universal language. Every headline theorem of the roadmap is statable at the pins and is stated
 below.
 -/
 
@@ -109,11 +110,13 @@ theorem borelComplete_treeClass : BorelComplete treeClass := by
 
 /-! ## Layer 4: Borel S∞-spaces and the universal embedding -/
 
-/-- The σ-algebra of `S∞`: the Borel σ-algebra of Tau Ceti's topology
-`Equiv.Perm.instTopologicalSpace` (pointwise convergence of a permutation and its inverse) on
-`Equiv.Perm ℕ`. Neither pin puts a σ-algebra on `Equiv.Perm ℕ`. -/
-instance instMeasurableSpacePerm : MeasurableSpace (Equiv.Perm ℕ) :=
-  borel (Equiv.Perm ℕ)
+/-- The σ-algebra of a permutation group: for a topological space `α`, the Borel σ-algebra of Tau
+Ceti's topology `Equiv.Perm.instTopologicalSpace` (pointwise convergence of a permutation and its
+inverse) on `Equiv.Perm α`. For `α = ℕ` it is the σ-algebra of `S∞`; for a finite discrete `α` it
+is the power set. Neither pin puts a σ-algebra instance on `Equiv.Perm α`. -/
+instance instMeasurableSpacePerm {α : Type*} [TopologicalSpace α] :
+    MeasurableSpace (Equiv.Perm α) :=
+  borel (Equiv.Perm α)
 
 /-- The universal language: relational, with exactly one relation symbol of each arity
 (Becker–Kechris 1993, §2). -/
@@ -140,21 +143,6 @@ theorem borelComplete_iff_graphClass {L : FirstOrder.Language.{u, v}} [L.IsRelat
     BorelComplete K ↔ Setoid.BorelReducible (classIso graphClass) (classIso K) := by
   sorry
 
-/-- **Borel completeness is receiving every whole space of structures** (Camerlo–Gao, §1). -/
-theorem borelComplete_iff_forall_structureSpace {L : FirstOrder.Language.{u, v}} [L.IsRelational]
-    (K : Set (RelationalConfiguration L ℕ)) :
-    BorelComplete K ↔ ∀ (L' : FirstOrder.Language.{0, 0}) [L'.IsRelational]
-      [∀ n, Countable (L'.Relations n)], Setoid.BorelReducible (isoSetoid L' ℕ) (classIso K) := by
-  sorry
-
-/-- **Borel completeness is receiving every Borel class, invariant or not** (Camerlo–Gao, §1). -/
-theorem borelComplete_iff_forall_measurableSet {L : FirstOrder.Language.{u, v}} [L.IsRelational]
-    (K : Set (RelationalConfiguration L ℕ)) :
-    BorelComplete K ↔ ∀ (L' : FirstOrder.Language.{0, 0}) [L'.IsRelational]
-      [∀ n, Countable (L'.Relations n)] (B : Set (RelationalConfiguration L' ℕ)),
-        MeasurableSet B → Setoid.BorelReducible (classIso B) (classIso K) := by
-  sorry
-
 /-- **Borel completeness is receiving the orbit relation of every Borel `S∞`-space** in a fixed
 universe (Becker–Kechris 1996, §2.7; Camerlo–Gao, §1). -/
 theorem borelComplete_iff_forall_permSpace {L : FirstOrder.Language.{u, v}} [L.IsRelational]
@@ -166,10 +154,13 @@ theorem borelComplete_iff_forall_permSpace {L : FirstOrder.Language.{u, v}} [L.I
 
 /-! ## Layer 6: Consequences of Borel completeness -/
 
-/-- **Ordinal multiples are back-and-forth equivalent** (Montalbán, Part 2, Lemma II.38 and
-Corollary II.39, in the one-step convention of `TauCeti.BFEquiv`): for nonzero `δ` and `ε` the
-well-orders of types `ω ^ γ * δ` and `ω ^ γ * ε`, as structures of `Language.order`, have
-back-and-forth equivalent empty tuples at level `γ`. -/
+/-- **Ordinal multiples are back-and-forth equivalent**: for nonzero `δ` and `ε` the well-orders of
+types `ω ^ γ * δ` and `ω ^ γ * ε`, as structures of `Language.order`, have back-and-forth
+equivalent empty tuples at level `γ` of the one-step relation `TauCeti.BFEquiv`. In the one-sided
+relations `≤_α` of Montalbán, Part 2, Definition II.32, Lemma II.38 there gives the relation at the
+odd level `2γ + 1` with the factor of larger size on the left (with the sizes reversed it can fail,
+Corollary II.39); by Observation II.35 there this gives both one-sided relations at level `2γ`,
+which imply the statement here by induction on `γ`. -/
 theorem bfEquiv_omega0_opow_mul (γ δ ε : Ordinal.{w}) (hδ : δ ≠ 0) (hε : ε ≠ 0) :
     @BFEquiv Language.order _ (ω ^ γ * δ).ToType (ω ^ γ * ε).ToType
       (Language.orderStructure (ω ^ γ * δ).ToType) (Language.orderStructure (ω ^ γ * ε).ToType)

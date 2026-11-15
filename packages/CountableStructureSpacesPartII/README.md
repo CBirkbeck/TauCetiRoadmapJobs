@@ -26,9 +26,8 @@ libraries, with the definitions they need (`classIso`, `BorelComplete`, `graphCl
 `linearOrderClass`, `treeClass`, `instMeasurableSpacePerm`, `universalLanguage`):
 `borelComplete_graphClass`, `exists_continuous_reduction_linearOrderClass`,
 `borelComplete_linearOrderClass`, `borelComplete_treeClass`,
-`exists_equivariant_measurableEmbedding_universal`, the four characterisations
-`borelComplete_iff_graphClass`, `borelComplete_iff_forall_structureSpace`,
-`borelComplete_iff_forall_measurableSet`, `borelComplete_iff_forall_permSpace`, and
+`exists_equivariant_measurableEmbedding_universal`, the characterisations
+`borelComplete_iff_graphClass` and `borelComplete_iff_forall_permSpace`, and
 `bfEquiv_omega0_opow_mul`, `not_measurableSet_classIso_of_borelComplete`,
 `exists_lt_scottHeight_of_borelComplete`, `borelReducible_eZero_of_borelComplete`,
 `mk_quotient_classIso_of_borelComplete` and `not_borelComplete_of_rank_bounded`. Every other
@@ -53,8 +52,8 @@ outside its scope. This Part II owns:
 - the dense colouring of ℚ, the unravelling of a graph into a coloured tree and a coloured linear
   order on finite sequences of rationals, the colour-elimination codings, and the Borel
   completeness of linear orders and trees, with the two presentations of trees (Layer 3);
-- the σ-algebra of `Equiv.Perm ℕ`, Borel S∞-spaces and the universal embedding into the logic
-  action of the universal language (Layer 4);
+- the σ-algebra of `Equiv.Perm α` for a topological space `α` (for `α = ℕ`, that of S∞), Borel
+  S∞-spaces and the universal embedding into the logic action of the universal language (Layer 4);
 - the characterisations of Borel completeness (Layer 5);
 - the interval lemma and the back-and-forth computation for ordinal multiples, the
   non-Borelness of Borel complete isomorphism relations, unbounded Scott height, the reduction of
@@ -302,7 +301,11 @@ CountableModelCounting; they are consumed here directly.
   relation symbol), `graphExpansion L M`, `graphAxioms` with `model_graphAxioms_iff`,
   `reconstructStructure` and `reconstructStructure_graphExpansion`.
 
-Neither pin puts a σ-algebra on `Equiv.Perm ℕ`; Layer 4.1 supplies it (`instMeasurableSpacePerm`).
+Neither pin puts a σ-algebra instance on `Equiv.Perm α`; Layer 4.1 supplies it for every
+topological `α` (`instMeasurableSpacePerm`). Tau Ceti's
+`Probability/Distributions/Uniform/Permutation.lean` takes a σ-algebra with measurable singletons on
+`Equiv.Perm α`, for finite `α`, as a parameter; for a finite discrete `α` the instance of Layer 4.1
+is the power set and meets that hypothesis.
 
 ### From TauCetiRoadmap.CountableStructureSpaces
 
@@ -1004,14 +1007,21 @@ CountableStructureSpaces Layer 6.2 (a Check of 3.3); Mathlib.
 
 ### 4.1 Borel S∞-spaces
 
-Define `instMeasurableSpacePerm`, the σ-algebra on `Equiv.Perm ℕ`, as the Borel σ-algebra
-`borel` of Tau Ceti's topology `Equiv.Perm.instTopologicalSpace`; it makes `Equiv.Perm ℕ` a Borel
-space (`BorelSpace`, by definition) and a standard Borel space (`Equiv.Perm.instPolishSpace`). A
+For every topological space `α`, define `instMeasurableSpacePerm`, the σ-algebra on
+`Equiv.Perm α`, as the Borel σ-algebra `borel` of Tau Ceti's topology
+`Equiv.Perm.instTopologicalSpace`; it makes `Equiv.Perm α` a Borel space (`BorelSpace`, by
+definition), and for a countable discrete `α`, in particular for `α = ℕ`, a standard Borel space
+(`Equiv.Perm.instPolishSpace`, which needs `[DiscreteTopology α] [Countable α]`). A
 Borel S∞-space is a type `X` with `[MeasurableSpace X] [StandardBorelSpace X]`,
 `[MulAction (Equiv.Perm ℕ) X]` and
 `[MeasurableSMul₂ (Equiv.Perm ℕ) X]`; its orbit equivalence relation is `MulAction.orbitRel`
 (becker-kechris-bams lines 72–73). API:
 
+- For every topological `α` the evaluations `σ ↦ σ a` and `σ ↦ σ⁻¹ a` are measurable into `α`
+  with its Borel σ-algebra, being continuous (Tau Ceti `Equiv.Perm.continuous_apply`,
+  `Equiv.Perm.continuous_inv_apply`); for a finite discrete `α` the topology on `Equiv.Perm α` is
+  discrete (Tau Ceti `Equiv.Perm.instDiscreteTopology`), so the σ-algebra is the power set
+  (`borel_eq_top_of_discrete`).
 - The logic action on `RelationalConfiguration L ℕ` (countable relational `L`) is a Borel
   S∞-space: it is jointly continuous (base Layer 1.2, the instance
   `ContinuousSMul (Equiv.Perm ℕ) (RelationalConfiguration L ℕ)`), both spaces are
@@ -1023,14 +1033,23 @@ Borel S∞-space is a type `X` with `[MeasurableSpace X] [StandardBorelSpace X]`
   (Lusin–Souslin, `MeasurableSet.image_of_measurable_injOn`; becker-kechris-bams lines 126–128)
   and is a Borel reduction of the orbit relations.
 
-*Needs:* Tau Ceti `Equiv.Perm.instTopologicalSpace`, `Equiv.Perm.instPolishSpace`, the Polish and
-Borel instances of the coding space and `isoSetoid_eq_orbitRel`; CountableStructureSpaces
+*Needs:* Tau Ceti `Equiv.Perm.instTopologicalSpace`, `Equiv.Perm.instPolishSpace`,
+`Equiv.Perm.continuous_apply`, `Equiv.Perm.instDiscreteTopology`, the Polish and Borel instances of
+the coding space and `isoSetoid_eq_orbitRel`; Mathlib `borel`, `borel_eq_top_of_discrete`; CountableStructureSpaces
 Layer 1.2 (joint continuity of the logic action, from Tau Ceti `continuous_uncurry_restrict` and
 `Equiv.Perm.continuous_inv_apply`); Mathlib `MeasurableSMul₂`,
 `ContinuousSMul.measurableSMul₂`, `MeasurableSet.image_of_measurable_injOn`.
 
 **Checks.**
 
+- On `Equiv.Perm ℕ` the stabilizer `{σ | σ 0 = 0}` and the set `{σ | σ 0 = 1}` are measurable,
+  being clopen (preimages of points of the discrete ℕ under the continuous evaluation at `0`); the
+  trivial σ-algebra, a plausible wrong choice, contains neither, as each is a proper nonempty
+  subset (the identity lies in the first, the transposition of `0` and `1` in the second).
+- On `Equiv.Perm (Fin 3)`, a discrete group of order 6, all `2 ^ 6 = 64` subsets are measurable,
+  singletons included; the σ-algebra generated by the evaluation at `0` alone has the three atoms
+  `{σ | σ 0 = j}` of two permutations each, 8 measurable sets, and does not separate the identity
+  from the transposition of `1` and `2`.
 - `ℕ` with `Equiv.Perm.applyMulAction` is a Borel S∞-space with a single orbit.
 - A standard Borel space with the trivial action is one, and its orbit relation is equality.
 - For a language with uncountably many unary symbols the coding space is a product of uncountably
@@ -1119,10 +1138,9 @@ becker-kechris-1996 §2.7 and §3.4):
 1. `BorelComplete K`;
 2. `classIso graphClass` is Borel reducible to `classIso K` (`borelComplete_iff_graphClass`);
 3. for every countable relational `L' : Language.{0, 0}`, `isoSetoid L' ℕ` is Borel
-   reducible to `classIso K` (`borelComplete_iff_forall_structureSpace`);
+   reducible to `classIso K`;
 4. for every such `L'` and every Borel, not necessarily invariant,
-   `B ⊆ RelationalConfiguration L' ℕ`, `classIso B` is Borel reducible to `classIso K`
-   (`borelComplete_iff_forall_measurableSet`);
+   `B ⊆ RelationalConfiguration L' ℕ`, `classIso B` is Borel reducible to `classIso K`;
 5. for every Borel S∞-space `X` in a fixed universe, the orbit relation of `X` is Borel reducible
    to `classIso K` (`borelComplete_iff_forall_permSpace`).
 
@@ -1188,8 +1206,15 @@ below `ω ^ (γ + 1)` is absorbed on the left); choose `m'` in `N` with initial 
 `ω ^ γ · μ' + ρ`, where `μ' = 1` if `μ ≠ 0` and `μ' = 0` otherwise, which exists because `N` has
 type at least `ω ^ (γ + 1)`; the initial segments are `BFEquiv γ` by the induction hypothesis and
 the sum form of the interval lemma, the final segments by the induction hypothesis, so
-`BFEquiv γ 1 (m) (m')` by the interval lemma; back is symmetric (montalban-cst2 Lemma II.38 and
-Corollary II.39, lines 2337–2425, which compute the sharper one-sided levels `≤_{2α+1}`). *Needs:*
+`BFEquiv γ 1 (m) (m')` by the interval lemma; back is symmetric. The theorem also follows from
+the one-sided relations `≤_α` of montalban-cst2 Definition II.32 (lines 2202–2208): Lemma II.38
+(lines 2337–2339; nonzero ordinals have the first element it asks for) gives
+`ω^γ·δ ≤_{2γ+1} ω^γ·ε` when `δ` has at least as many elements as `ε` (all infinite sizes counted
+as one), Observation II.35 (lines 2219–2222) turns this into both one-sided
+relations at level `2γ`, and these imply `BFEquiv γ` by induction on `γ` (a forth or back step of
+`BFEquiv (γ + 1)` is a one-element extension at level `2γ + 1`, which by Observation II.35 gives
+both relations at level `2γ`). The one-sided level `2γ + 1` itself can fail in the other direction
+(Corollary II.39, lines 2424–2425: for `δ = 1` and `ε = 2`). *Needs:*
 Tau Ceti `BFEquiv`, `BFEquiv.zero`, `BFEquiv.add_one`, `BFEquiv.limit`, `BFEquiv.mono`,
 `SameAtomicType`, `sameAtomicType_order_iff`, `FirstOrder.Language.Equiv.bfEquiv`; Mathlib
 `orderStructure`, `Ordinal.type`, `Ordinal.ToType`, ordinal division and left subtraction.
