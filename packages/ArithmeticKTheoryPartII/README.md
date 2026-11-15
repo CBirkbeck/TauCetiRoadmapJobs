@@ -136,7 +136,7 @@ What ArithmeticGaloisDuality must provide (gap:compact-relative-cocycles): Provi
 
 ### From TauCetiRoadmap.EtaleCohomologyFoundations
 
-EtaleCohomologyFoundations §§F.0.3, F.4. Consume integral/finite Tate twists and lisse coefficient categories with pullback. The local formulation uses the arithmetic representation/sheaf comparison below on Spec ℤ[1/p], not a KSp-valued sheaf on arbitrary bases.
+EtaleCohomologyFoundations §§F.0.2–F.0.3, F.4. Consume the finite étale Galois category and fundamental groupoid of Spec ℤ[1/p] (§F.0.2), integral/finite Tate twists (§F.0.3) and lisse coefficient categories with pullback (§F.4). The local formulation uses the arithmetic representation/sheaf comparison below on Spec ℤ[1/p], not a KSp-valued sheaf on arbitrary bases.
 
 What EtaleCohomologyFoundations must provide (gap:lisse-integral-extension): Provide the equivalence between finite-type compact continuous ℤ_p-representations of Gal(ℚ(p)/ℚ) and lisse integral coefficient sheaves on Spec ℤ[1/p], compatible with kernels and restriction to Spec ℚ_p.
 
@@ -266,7 +266,7 @@ At q=5, the character a=2 sends β to 2β. The trivial ideal has [O_q]−1=0, he
 
 ### Dependencies
 
-StableHomotopyKTheory §7.1; StableHomotopyKTheory §§7.3–7.4; StableHomotopyKTheory §7.28; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; `CommRing.Pic`; `Module.Invertible`; StableHomotopyKTheory §§4.26, 5.19; GeneralAlgebraicKTheory §§7.1–7.7; GeneralizedCohomology G2.1–G2.8 and StableHomotopyKTheory §§5.1–5.19; StableHomotopyKTheory §§4.21–4.27 and GeneralizedCohomology G2.8; KTheoryFiniteLocalFields §§1.1–1.2; ArithmeticKTheory §§6.11, 6.15–6.16; ArithmeticKTheory §§5.2, 6.15–6.16; SchemeKTheoryOperations §§6.1, 6.9–6.11; ArithmeticKTheory’s full-cyclotomic-cover descent contract; ClassFieldTheory Layer 11; ClassFieldTheory Layer 13; `groupHomology`.
+StableHomotopyKTheory §7.1; StableHomotopyKTheory §§7.3–7.4; StableHomotopyKTheory §7.28; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; `CommRing.Pic`; `Module.Invertible`; StableHomotopyKTheory §§4.26, 5.19; GeneralAlgebraicKTheory §§7.1–7.7; GeneralizedCohomology G2.1–G2.8 and StableHomotopyKTheory §§5.1–5.19; StableHomotopyKTheory §§4.21–4.27 and GeneralizedCohomology G2.8; KTheoryFiniteLocalFields §§1.1–1.2; ArithmeticKTheory §§6.11, 6.15–6.16; ArithmeticKTheory §§5.2, 6.15–6.16; SchemeKTheoryOperations §§6.1, 6.9–6.11; ArithmeticKTheory’s full-cyclotomic-cover descent contract; ClassFieldTheory Layer 11; ClassFieldTheory Layer 13; `groupHomology`; ArithmeticGaloisDuality R02.2 (Hochschild–Serre and transgression).
 
 ## Layer 1: Betti, Hodge and periodic symplectic K-theory
 
@@ -750,7 +750,7 @@ ComplexMultiplicationAndExplicitReciprocity §§2.1–2.2; ComplexMultiplication
 
 Assume p is an odd prime, n≥1 and q=p^n; coefficients Λ_q=ℤ/q. ζ_q=exp(2πi/q); twists M(j)=μ_q(ℂ)^(⊗j) carry the left action χ_cyc^j; negative powers mean dual tensor powers.
 
-For q odd and k≥1, the spectrum action on V_q=KSp_(4k−2)(ℤ;ℤ/q) factors through G_q=Gal(H_q/ℚ). The Hodge map gives an exact G_q-sequence 0→T_q→V_q→M_q→0 with M_q=μ_q^(⊗(2k−1)), trivial action on T_q, and T_q≅K_(4k−2)(ℤ;ℤ/q). The restriction c_H:ker c_B→M_q is an isomorphism and its inverse is the unique ⟨c⟩-equivariant splitting. The Hodge map has weight 2k−1; the Betti map is only conjugation-invariant on V_q. (FGV, Lemma 7.7 and its proof, author copy pp. 39–40; FGV line 1805.)
+For q odd and k≥1, the spectrum action on V_q=KSp_(4k−2)(ℤ;ℤ/q) factors through G_q=Gal(H_q/ℚ). The Hodge map gives an exact G_q-sequence 0→T_q→V_q→M_q→0 with M_q=μ_q^(⊗(2k−1)), trivial action on T_q, and T_q≅K_(4k−2)(ℤ;ℤ/q). The restriction c_H:ker c_B→M_q is an isomorphism and its inverse is the unique ⟨c⟩-equivariant splitting. The Hodge map has weight 2k−1; the Betti map is only conjugation-invariant on V_q. (FGV, Lemma 7.7 and its proof, author copy pp. 39–41; FGV line 1805.)
 
 One proof route is as follows. Compute Galois transport on the spanning CM Bott classes using reciprocity and the type character formula. If σ fixes H_q then its CM type is fixed and its Hermitian tensor line has zero p-primary ideal class. Its ideal class therefore vanishes modulo q, so both detection differences vanish; the full ideal class need not be principal. Differences between classes of a fixed CM type give fixed arithmetic-kernel generators. Complex conjugation gives the unique splitting because it is −1 on M_q and +1 on T_q. (FGV line 1805, with the stated supplier contracts.)
 
@@ -766,7 +766,7 @@ One proof route is as follows. Compute Galois transport on the spanning CM Bott 
 
 Assume p is an odd prime, n≥1 and q=p^n; coefficients Λ_q=ℤ/q. ζ_q=exp(2πi/q); twists M(j)=μ_q(ℂ)^(⊗j) carry the left action χ_cyc^j; negative powers mean dual tensor powers.
 
-Give the extension V_q the ⟨c⟩-section s=(c_H|ker c_B)⁻¹. Its cocycle α(σ,m)=σs(m)−s(σm) defines H₁(G_q,⟨c⟩;M_q)→T_q. Under the Artin–Bott transfer isomorphism of Layer 0 this map is the identity. Explicitly a CM type Φ supplies the coefficient (Σ_(a∈Φ)a²ᵏ⁻¹) and reciprocity supplies the product of lift differences; their relative-bar class is [σ] times that coefficient. Equality is in homology modulo boundaries and the ⟨c⟩-chains. (FGV, §§7.2–7.3, equations (7.12)–(7.19), author copy pp. 40–42; FGV line 1874.)
+Give the extension V_q the ⟨c⟩-section s=(c_H|ker c_B)⁻¹. Its cocycle α(σ,m)=σs(m)−s(σm) defines H₁(G_q,⟨c⟩;M_q)→T_q. Under the Artin–Bott transfer isomorphism of Layer 0 this map is the identity. Explicitly a CM type Φ supplies the coefficient (Σ_(a∈Φ)a²ᵏ⁻¹) and reciprocity supplies the product of lift differences; their relative-bar class is [σ] times that coefficient. Equality is in homology modulo boundaries and the ⟨c⟩-chains. (FGV, §§7.2–7.3, equations (7.12)–(7.19), author copy pp. 39–42; FGV line 1874.)
 
 One proof route is as follows. Write the projection V_q→T_q along the conjugation section as the appropriately normalized (1+c) operator. Use reciprocity to express the CM Galois difference as the transfer of β²ᵏ⁻¹([X]−1), retaining that exponent. Apply the cocycle relation to the chosen w_τ and pair conjugate embeddings; the correction terms cancel as relative boundaries, not as raw bar generators. A type-sum unit combination identifies the induced homomorphism on every m∈M_q. (FGV line 1874, with the stated supplier contracts.)
 
@@ -782,7 +782,7 @@ One proof route is as follows. Write the projection V_q→T_q along the conjugat
 
 Assume p is an odd prime, n≥1 and q=p^n; coefficients Λ_q=ℤ/q. ζ_q=exp(2πi/q); twists M(j)=μ_q(ℂ)^(⊗j) carry the left action χ_cyc^j; negative powers mean dual tensor powers.
 
-For odd p, q=p^n and k≥1, the arithmetic sequence 0→K_(4k−2)(ℤ;ℤ/q)→KSp_(4k−2)(ℤ;ℤ/q)→μ_q^(⊗(2k−1))→0 is initial in C_(ℤ/q)(G_q,⟨c⟩;μ_q^(⊗(2k−1))) and in the unsectioned category C_(ℤ/q)(G_q;μ_q^(⊗(2k−1))). Its kernel is canonically H₁(G_q,⟨c⟩;μ_q^(⊗(2k−1))) through Artin–Bott transfer. The inclusion of the arithmetic K group is the inverse of c_B on the Hodge kernel; relative to the standard hyperbolic H on this positive summand it is (1/2)H. (FGV, Theorem 7.1, Remark 7.2 and §7.3, author copy pp. 37, 41–42; FGV line 1668.)
+For odd p, q=p^n and k≥1, the arithmetic sequence 0→K_(4k−2)(ℤ;ℤ/q)→KSp_(4k−2)(ℤ;ℤ/q)→μ_q^(⊗(2k−1))→0 is initial in C_(ℤ/q)(G_q,⟨c⟩;μ_q^(⊗(2k−1))) and in the unsectioned category C_(ℤ/q)(G_q;μ_q^(⊗(2k−1))). Its kernel is canonically H₁(G_q,⟨c⟩;μ_q^(⊗(2k−1))) through Artin–Bott transfer. The inclusion of the arithmetic K group is the inverse of c_B on the Hodge kernel; relative to the standard hyperbolic H on this positive summand it is (1/2)H. (FGV, Theorem 7.1, Remark 7.2 and §7.3, author copy pp. 36–37, 41–42; FGV line 1668.)
 
 One proof route is as follows. Use the explicit cocycle identification to compare the universal relative extension with the KSp extension. The resulting kernel map is an isomorphism and so is the map of extensions. Forget the uniquely determined conjugation section using vanishing for the sign module. (FGV line 1668, with the stated supplier contracts.)
 
@@ -926,7 +926,7 @@ For p=3,k=1, the arithmetic K₂ kernel is 0 and c_H identifies KSp₂(ℤ;ℤ�
 
 ### Dependencies
 
-§5.4; ArithmeticGaloisDuality R02.1 (compact coefficients and limits); ArithmeticGaloisDuality R02.2 (Hochschild–Serre and transgression); StableHomotopyKTheory §§7.1–7.17, 7.28; BordismFormalGroups F6.3; GeneralAlgebraicKTheoryPartII §§4.1–4.3; §6.3; StableHomotopyKTheory §§7.9–7.13; ArithmeticKTheory §§3.1–3.5; §4.4; ArithmeticKTheory §§7.1–7.5; §6.1; §5.3; ClassFieldTheory Layer 13; §3.6; §3.4; GeneralAlgebraicKTheory §§13.8b–13.8c; KTheoryFiniteLocalFields §§1.1–1.2; ArithmeticKTheory §§3.1–3.5, 6.15–6.16; Chebotarev Layer 10; IntegralIwasawaTheory §§3.1, 7.4.
+§5.4; ArithmeticGaloisDuality R02.1 (compact coefficients and limits); ArithmeticGaloisDuality R02.2 (Hochschild–Serre and transgression); StableHomotopyKTheory §§7.1–7.17, 7.28; BordismFormalGroups F6.3; GeneralAlgebraicKTheoryPartII §§4.1–4.3; §6.3; StableHomotopyKTheory §§7.9–7.13; ArithmeticKTheory §§3.1–3.5; §4.4; ArithmeticKTheory §§7.1–7.5; §6.1; §5.3; ClassFieldTheory Layer 13; §3.6; §3.4; GeneralAlgebraicKTheory §§13.8b–13.8c; KTheoryFiniteLocalFields §§1.1–1.2; ArithmeticKTheory §§3.1–3.5, 6.15–6.16; Chebotarev Layer 10; IntegralIwasawaTheory §§3.1, 7.4; EtaleCohomologyFoundations §§F.0.2, F.4.1–F.4.6 (lisse integral coefficients and restriction).
 
 ## Layer 8: Integral indecomposables and Hodge characteristic numbers
 
@@ -1037,7 +1037,7 @@ For S¹×S¹ the positive degree-one indecomposables are ℤ_p² and the degree-
 
 ### Dependencies
 
-ArithmeticLocallySymmetricSpaces §§ALS.0.8, ALS.1.5–ALS.1.6, ALS.2.3–ALS.2.4; StableHomotopyKTheory §§3.20, 3.34–3.37, 7.3–7.4; GeneralizedCohomology G3.8; ArithmeticKTheory §3.5; GeometryOfNumbersAndQuadraticArithmetic §6.8a; AlgebraicTopology Stage 6 (cohomology products and manifold duality); §3.4; §4.4; §1.1; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; §7.4; IntegralIwasawaTheory §12.3 (specialization at arithmetic weights); ArithmeticKTheory §§7.1–7.5; PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9. The integral finite-type hypotheses and odd partition parts n_j<p put every characteristic-number application degree 2n_j at most 2p−4; the endpoint 2p−2 and the equality p=max n_j are outside these theorem statements.
+ArithmeticLocallySymmetricSpaces §§ALS.0.8, ALS.1.5–ALS.1.6, ALS.2.3–ALS.2.4; StableHomotopyKTheory §§3.20, 3.34–3.37, 7.3–7.4; GeneralizedCohomology G3.8; ArithmeticKTheory §3.5; GeometryOfNumbersAndQuadraticArithmetic §6.8a; AlgebraicTopology Stage 6 (cohomology products and manifold duality); §3.4; §4.3; §4.4; §1.1; GeneralizedCohomology G5.4–G5.6 and TopologicalKTheory T4–T5, T7; §7.4; IntegralIwasawaTheory §12.3 (specialization at arithmetic weights); ArithmeticKTheory §§7.1–7.5; PELModuli §§M1.5, M1.12, M6.2–M6.3, M6.9. The integral finite-type hypotheses and odd partition parts n_j<p put every characteristic-number application degree 2n_j at most 2p−4; the endpoint 2p−2 and the equality p=max n_j are outside these theorem statements.
 
 ## Downstream consumers
 
