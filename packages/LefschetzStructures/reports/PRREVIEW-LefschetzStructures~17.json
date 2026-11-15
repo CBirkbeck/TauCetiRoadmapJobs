@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LefschetzStructures~17",
+  "head": "d3b9c22825cb8dc954dc938cdf3f40e6f27af467",
+  "pr": 1061,
+  "folder": "LefschetzStructures",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 8 changed lines since ad5de98. R01 (1.3 source line) is repaired: checked against Beilinson2012 lines 242-252 and 286-297 (arXiv:1006.1116v2) at n = 2, i = 0 and i = 1, and against the cross-reference to the Research context of 2.4 (README 528-540). The seeded sample was checked where it falls in the change (1.3). The title and description were checked against this head. Gate re-run with --build against the candidate order: every check 0, build=0, OK. Against the default order only 'NOT IN ORDER' fails, which is not a finding (the candidate order has the roadmap at line 95). depcheck: 245 roadmaps, 0 problems. lake env lean exits 0 with 12 sorry warnings; Suggested.lean is unchanged. Overlap check: MotivesAndAlgebraicCycles and DeligneWeightsAndPurity, owners unchanged. One source gap recorded (Beilinson2012 §2.3 (b): the cut needs c' of pure codimension).",
+  "text": "acbdc480d7239277"
+ }
+}
