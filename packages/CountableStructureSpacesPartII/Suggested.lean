@@ -207,13 +207,16 @@ theorem mk_quotient_classIso_of_borelComplete {L : FirstOrder.Language.{u, v}} [
     Cardinal.mk (Quotient (classIso K)) = 𝔠 := by
   sorry
 
-/-- **The Friedman–Stanley obstruction** (Friedman–Stanley, §4; Hjorth–Kechris, §4–§5): a Borel
-class `K` with a rank `ρ` into the countable ordinals such that isomorphism has measurable graph on
-each stratum `K ∩ {c | ρ c ≤ α}`, `α < ω₁` (for the product of the subtype σ-algebras), and `ρ` is
-bounded below `ω₁` on every analytic subset of `K`, is not Borel complete. -/
+/-- **The Friedman–Stanley obstruction** (Friedman–Stanley, §4; Hjorth–Kechris, §4–§5): a class
+`K` of codes, not assumed Borel, with a rank `ρ` into the ordinals such that isomorphism has
+measurable graph on each stratum `K ∩ {c | ρ c ≤ α}`, `α < ω₁` (for the product of the subtype
+σ-algebras), and `ρ` is bounded below `ω₁` on every analytic subset of `K`, is not Borel complete.
+For an analytic `K` the second hypothesis bounds `ρ` on `K` and the statement is the contrapositive
+of `not_measurableSet_classIso_of_borelComplete`; its content is for classes that are not analytic,
+such as the coanalytic class of coded well-orders stratified by order type. -/
 theorem not_borelComplete_of_rank_bounded {L : FirstOrder.Language.{u, v}} [L.IsRelational]
     [∀ n, Countable (L.Relations n)] {K : Set (RelationalConfiguration L ℕ)}
-    (hK : MeasurableSet K) (ρ : RelationalConfiguration L ℕ → Ordinal.{0})
+    (ρ : RelationalConfiguration L ℕ → Ordinal.{0})
     (hiso : ∀ α < ω₁, MeasurableSet
       {p : ↥(K ∩ {c | ρ c ≤ α}) × ↥(K ∩ {c | ρ c ≤ α}) | classIso (K ∩ {c | ρ c ≤ α}) p.1 p.2})
     (hbdd : ∀ A ⊆ K, AnalyticSet A → ∃ α < ω₁, ∀ c ∈ A, ρ c ≤ α) :

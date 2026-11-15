@@ -11,13 +11,15 @@ countable relational language reduces to it), extends the notion to languages wi
 symbols, and proves the Friedman–Stanley theorem: countable graphs, countable trees and countable
 linear orders are Borel complete, through explicit continuous codings. It proves the
 Becker–Kechris universality theorem for S∞ (every Borel S∞-space embeds equivariantly into the
-logic action of the language with one `n`-ary relation symbol for each `n`) and the five standard
-characterisations of Borel completeness. It ends with the consequences of Borel completeness: the
-isomorphism relation is not Borel (through an explicit back-and-forth computation on ordinal
-multiples and the base's uniform separation theorem), lies above E₀, has continuum many classes
-and is not smooth, the class has unbounded Scott height, and the Friedman–Stanley obstruction
-shows that a class stratified into Borel pieces by a rank bounded on analytic sets is not Borel
-complete.
+logic action of the language with one `n`-ary relation symbol for each `n`) and the equivalence
+of Borel completeness with four standard reformulations. It ends with the consequences of Borel
+completeness: the isomorphism relation is not Borel (through an explicit back-and-forth
+computation on ordinal multiples and the base's uniform separation theorem), lies above E₀, has
+continuum many classes and is not smooth, the class has unbounded Scott height, and the
+Friedman–Stanley obstruction shows that a class, Borel or not, stratified into pieces with Borel
+isomorphism relation by a rank bounded on its analytic subsets is not Borel complete; for an
+analytic class this is the non-Borelness theorem again, and the obstruction has content for
+classes that are not analytic, such as the coded well-orders.
 
 `Suggested.lean` is the acceptance test: it states the headline theorems against the pinned
 libraries, with the definitions they need (`classIso`, `BorelComplete`, `graphClass`,
@@ -69,8 +71,8 @@ It leaves to named roadmaps, and does not restate:
   isomorphism invariance, model classes and the graph coding (CountableStructureSpaces Layers 0–2
   and 4.1, implemented in Tau Ceti at the pin); and the targets of CountableStructureSpaces that
   the pin does not implement: joint continuity of the logic action (Layer 1.2), closedness of the
-  set of simple-graph codes (Layer 0), the boundedness theorem for tree heights (Layer 3), uniform
-  back-and-forth separation (Layer 4.4) and the well-order class (Layer 6.2);
+  set of simple-graph codes (Layer 0), uniform back-and-forth separation (Layer 4.4) and the
+  well-order class with the boundedness of its order types on analytic sets (Layer 6.2);
 - back-and-forth equivalence, tuple back-and-forth systems, the countable back-and-forth theorem
   (InfinitaryLogic, Layer 1), the back-and-forth levels of codes with their Borel graphs below
   `ω₁` (CountableStructureSpaces Layer 4.1) and the external Scott height with its isomorphism
@@ -97,10 +99,15 @@ fields of a fixed characteristic: friedman-stanley-1989 §3; torsion-free abelia
 paolini-shelah-tfab Main Theorem, lines 169–171), the complete analyticity of Borel complete
 isomorphism relations (paolini-shelah-tfab Fact 1.7, lines 103–106; the classical routes go
 through reduced and divisible abelian `p`-groups or through the Harrison ordering,
-montalban-cst2 Lemma XI.2, lines 8946–8980) and the torsion abelian group case of the obstruction
-(friedman-stanley-1989 §4; hjorth-kechris-1996 §4–§5; it needs Ulm's theorem) belong to a
-roadmap on the Borel completeness of algebraic classes, which consumes `BorelComplete`, Layer 1.3,
-Layer 5 and Layer 6.4; nothing below depends on them.
+montalban-cst2 Lemma XI.2, lines 8946–8980) and the theorem that countable torsion abelian groups
+are not Borel complete, with its proof (friedman-stanley-1989 §4; hjorth-kechris-1996 §4–§5; it
+needs Ulm's theorem, and it is not an instance of Layer 6.4, which for a Borel class says no more
+than 6.2, the isomorphism relation of torsion abelian groups not being Borel) belong to a roadmap
+on the Borel completeness of algebraic classes; nothing below depends on them. That roadmap
+consumes `BorelComplete`, Layer 1.3, Layer 5 and Layer 6.4, the last for classes on whose analytic
+subsets the rank is bounded, such as the coanalytic class of reduced abelian `p`-groups stratified
+by Ulm length (Ulm's theorem gives hypothesis (a) of 6.4, and the boundedness of the Ulm length on
+analytic sets of reduced groups gives (b)).
 
 ## Conventions
 
@@ -307,12 +314,12 @@ The targets of the base that the pin does not implement, by the base's names and
   `α`, the `ContinuousSMul (Equiv.Perm α) (RelationalConfiguration L α)` instance, obtained from
   Tau Ceti `continuous_uncurry_restrict` composed with `Equiv.Perm.continuous_inv_apply`; the pin
   states the two ingredients and not the instance.
-- Layer 3: `analytic_treeHeight_bounded` (an analytic family of well-founded trees with closed node
-  sets has heights bounded below `ω₁`), used in a Check of Layer 6.4.
 - Layer 4.4: `exists_uniform_bfSeparation` (an analytic set of non-isomorphic pairs of codes is
   separated at one level `β < ω₁`).
 - Layer 6.2: `wellOrderClass`, `exists_mem_wellOrderClass_type_eq`,
-  `analyticSet_compl_wellOrderClass` and `not_measurableSet_wellOrderClass`, used in Checks.
+  `analyticSet_compl_wellOrderClass`, `not_measurableSet_wellOrderClass` and
+  `analytic_type_bounded` (an analytic class of coded well-orders has order types bounded below
+  `ω₁`), used in Checks of Layers 3.3 and 6.4.
 - Worked example 2: the codes of one unary predicate have Scott height at most `ω` and countably
   many orbits, each Borel.
 
@@ -1141,8 +1148,8 @@ for (1) ⇔ (5), also Layers 4.1 and 4.2; for the form of (3) with function symb
 
 ### Examples
 
-`graphClass`, for which all five characterisations hold; the empty class and the class of codes
-of one unary predicate, for which all five fail.
+`graphClass`, for which all five conditions hold; the empty class and the class of codes of one
+unary predicate, for which all five fail.
 
 ### Dependencies
 
@@ -1288,28 +1295,33 @@ reduction of `eZero`). *Needs:* Layers 1.1, 5; Tau Ceti `eZero`, `eZero_iff_fini
 
 ### 6.4 The Friedman–Stanley obstruction
 
-Prove `not_borelComplete_of_rank_bounded`: let `K ⊆ RelationalConfiguration L ℕ` be Borel and
-`ρ : RelationalConfiguration L ℕ → Ordinal.{0}`, and write `K_α = K ∩ {c | ρ c ≤ α}` (a set that
-need not be measurable, `ρ` being arbitrary); assume (a) for every `α < ω₁`, the set of pairs of
-`K_α × K_α` with isomorphic entries is measurable for the product of the subtype σ-algebras, that
-is, `classIso K_α` has measurable graph; (b) every analytic subset of `K` has `ρ` bounded by some
-`α < ω₁`. Then `¬ BorelComplete K` (friedman-stanley-1989 §4;
-hjorth-kechris-1996 §4–§5). Proof: a reduction `f` of `classIso graphClass` to `classIso K` has
-analytic image in the coding space (`graphClass` is nonempty, so `K` is, and the inclusion of `f`
-extends to a measurable map on the whole coding space of `Language.graph`, constant off the
-measurable set `graphClass`; apply `MeasurableSet.analyticSet_image` to `graphClass`), contained
-in some `K_α` by (b); `f` corestricts to a measurable map `f' : graphClass → K_α`
-(`Measurable.subtype_mk`), the graph of `classIso graphClass` is the preimage of the graph of
-`classIso K_α` under `f' × f'`, and so it is measurable by (a), against 6.2. Read in the ambient
+Prove `not_borelComplete_of_rank_bounded`: let `K ⊆ RelationalConfiguration L ℕ` be any set of
+codes, not assumed Borel or invariant, and `ρ : RelationalConfiguration L ℕ → Ordinal.{0}`, and
+write `K_α = K ∩ {c | ρ c ≤ α}` (a set that need not be measurable, `ρ` being arbitrary); assume
+(a) for every `α < ω₁`, the set of pairs of `K_α × K_α` with isomorphic entries is measurable for
+the product of the subtype σ-algebras, that is, `classIso K_α` has measurable graph; (b) every
+analytic subset of `K` has `ρ` bounded by some `α < ω₁`. Then `¬ BorelComplete K`
+(friedman-stanley-1989 §4; hjorth-kechris-1996 §4–§5). Proof: a reduction `f` of
+`classIso graphClass` to `classIso K` has analytic image in the coding space (`graphClass` is
+nonempty, so `K` is, and the inclusion of `f` extends to a measurable map on the whole coding
+space of `Language.graph`, constant off the measurable set `graphClass`; apply
+`MeasurableSet.analyticSet_image` to `graphClass`, the coding space of `L` being second countable
+because `L` is countable), contained in `K` and so, by (b), in some `K_α`; `f` corestricts to a
+measurable map `f' : graphClass → K_α` (`Measurable.subtype_mk`), the graph of
+`classIso graphClass` is the preimage of the graph of `classIso K_α` under `f' × f'`, and so it is
+measurable by (a), against 6.2 for `graphClass`, Borel complete by Layer 2.3. Read in the ambient
 square instead, (a) would be a stronger hypothesis whenever `K_α` is not measurable, and the proof
 does not use it. *Needs:* 6.2, Layer 2.3, Layer 0.1; Mathlib `MeasurableSet.analyticSet_image`,
 `Measurable.subtype_mk`.
 
 **Checks.**
 
-- With `ρ = 0`, `K_α = K` for every `α`, hypothesis (a) says that `classIso K` has measurable
-  graph in `K × K` for the product of the subtype σ-algebras, which is the negation of the
-  conclusion of 6.2, (b) holds with `α = 0`, and the lemma is the contrapositive of 6.2.
+- For an analytic `K`, in particular a Borel one, `K` is an analytic subset of itself, so (b)
+  gives `α < ω₁` with `K_α = K`; (a) at `α` says that `classIso K` has measurable graph in `K × K`
+  for the product of the subtype σ-algebras, which is the negation of the conclusion of 6.2, and
+  the lemma is the contrapositive of 6.2 whatever `ρ` is (with `ρ = 0`, `K_α = K` for every `α`).
+  The lemma has content only for classes that are not analytic. For `K = graphClass`, Borel and
+  Borel complete by Layer 2, no `ρ` satisfies both hypotheses.
 - The two readings of (a) differ. A Borel reduction `g` of equality on Cantor space to
   `classIso graphClass` (6.3, `graphClass` being Borel complete by Layer 2) is injective, so for
   a non-measurable subset `B` of Cantor space the set `A = g '' B ⊆ graphClass` is not measurable
@@ -1320,10 +1332,20 @@ does not use it. *Needs:* 6.2, Layer 2.3, Layer 0.1; Mathlib `MeasurableSet.anal
   preimage under `c ↦ (c, c)` is `A`).
 - For the codes of one unary predicate and `ρ = 0`, (a) and (b) hold and the conclusion is the
   Check of 1.2.
-- For `K = graphClass` no `ρ` satisfies both hypotheses; when `ρ` restricted to `K` is the height
-  of a family of well-founded trees with closed node sets, (b) is the base's
-  `analytic_treeHeight_bounded`, so in such a stratification of `graphClass` hypothesis (a) must
-  fail at some `α`.
+- A class that is not analytic. In a language whose only symbol is a binary `lt`, let
+  `K = wellOrderClass lt` (base Layer 6.2: coanalytic, `analyticSet_compl_wellOrderClass`, and not
+  Borel, `not_measurableSet_wellOrderClass`), and let `ρ c` be the order type of the strict
+  well-order coded by `c` for `c ∈ K` and `0` otherwise. (b) is the base's `analytic_type_bounded`.
+  For (a): every code of `K` has order type `β` with `ω ≤ β < ω₁`, so `K_α` is the union of the
+  orbits of the codes of types `β` with `ω ≤ β ≤ α`, countably many, and each orbit is Borel (for
+  a code `c` of Scott height `γ`, `γ < ω₁` by `scottHeight_lt_omega_one`, the orbit of `c` is the
+  section at `c` of the Borel graph of `bfEquivSetoid L ℕ γ` (`measurableSet_setOf_bfEquivSetoid`),
+  by `isoSetoid_le_bfEquivSetoid` and `nonempty_equiv_of_bfEquiv_of_scottHeight_le`); the
+  isomorphic pairs of `K_α × K_α` are the preimages of the squares of these orbits, a countable
+  union, measurable for the product of the subtype σ-algebras. `ρ` is unbounded on `K`
+  (`exists_mem_wellOrderClass_type_eq`), so `K_α ≠ K` for every `α < ω₁`, and the lemma proves
+  that the coded well-orders are not Borel complete. The count of 6.3 decides this only when
+  `ℵ₁ < 𝔠`: the coded well-orders have `ℵ₁` isomorphism types.
 
 ### 6.5 The lower part of the reducibility order
 
@@ -1359,13 +1381,16 @@ Ordinal multiples in 6.1; the three Borel complete classes in 6.2; the copies of
 
 Layers 0–5; Tau Ceti (back-and-forth relation and its levels on codes, isomorphism and transport
 of codes, Borel reducibility, smoothness, E₀, Scott height and its isomorphism criterion);
-CountableStructureSpaces Layers 3 (a Check of 6.4) and 4.4 and worked example 2; Mathlib.
+CountableStructureSpaces Layers 4.4 and 6.2 (a Check of 6.4) and worked example 2; Mathlib.
 
 ## Downstream consumers
 
 - A roadmap on the Borel completeness of algebraic classes consumes `BorelComplete`, the
   functional coding space of Layer 1.3, the characterisations of Layer 5 and the obstruction lemma
-  of Layer 6.4.
+  of Layer 6.4, the last for classes on whose analytic subsets the rank is bounded, such as the
+  coanalytic class of reduced abelian `p`-groups with the Ulm length; the theorem that countable
+  torsion abelian groups are not Borel complete is not an instance of 6.4 and belongs, with its
+  proof, to that roadmap.
 - Any roadmap that needs a benchmark for the classification problem of a class of countable
   structures consumes `borelComplete_graphClass`, `borelComplete_linearOrderClass`,
   `borelComplete_treeClass` and Layer 6.
