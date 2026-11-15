@@ -71,7 +71,7 @@
       {
        "name": "BG_nonseparatedGroup_finiteCover",
        "kind": "computation",
-       "statement": "For G the etale group over A^1 obtained from Z/2 by deleting the non-identity point over 0, the two charts Q = A^1 + A^1 -> L of the doubled-origin line form a G_L-torsor (Q x_L Q = Q + Q|_{t!=0} = Q x_{A^1} G), so L -> B_{A^1}G is finite etale of degree 2 = (e(BG)/e(L))[k(t):k(t)]: a proper cover of a non-separated stack with non-finite inertia. No separated scheme is a proper cover (the torsor would be finite etale of degree 2 over t != 0 and 1 over 0), so requiring X separated would exclude it."
+       "statement": "For G the etale group over A^1 obtained from Z/2 by deleting the non-identity point over 0, the two charts Q = A^1 + A^1 -> L of the doubled-origin line form a G_L-torsor (Q x_L Q = Q + Q|_{t!=0} = Q x_{A^1} G), so L -> B_{A^1}G is finite etale of degree 2, the rank of Q -> A^1: a proper cover of a non-separated stack with non-finite inertia. No separated scheme is a proper cover (the torsor would be finite etale of degree 2 over t != 0 and 1 over 0), so requiring X separated would exclude it."
       }
      ]
     },
@@ -102,11 +102,6 @@
        "name": "functionField.quotient",
        "role": "compatibility",
        "statement": "For a finite etale group G acting on an integral scheme X, k([X/G]) = k(X)^G."
-      },
-      {
-       "name": "genericStabiliserOrder.eq_sum_deg_inertia",
-       "role": "lemma",
-       "statement": "e(V) is the sum of deg(I/V) (1.3) over the irreducible components I of (I_V)_red dominating V; e is unchanged on dense open substacks."
       }
      ],
      "tests": [
@@ -124,11 +119,6 @@
        "name": "nonseparatedGroup_genericLarger",
        "kind": "computation",
        "statement": "For B_{A^1}G of 1.1, e = 2 though the stabiliser at 0 is trivial."
-      },
-      {
-       "name": "inertia_sumOfDegrees",
-       "kind": "computation",
-       "statement": "I_{BG} = BG + BG for G = Z/2 (1+1 = 2); for S_3 the components B Z(c) have degrees 1, 3, 2 (sum 6); over Q, I_{B mu_3} has components of degrees 1 and (3/3)[Q(zeta_3):Q] = 2 (sum 3, two components); on [A^1/mu_2] the non-identity component lies over 0, does not dominate, and the sum is 1."
       },
       {
        "name": "realGerbe",
@@ -164,6 +154,11 @@
        "name": "stackDegree.representable_int",
        "role": "lemma",
        "statement": "For representable proper f and integral V in F, deg(V/f(V)) is an integer (used by 3.2)."
+      },
+      {
+       "name": "genericStabiliserOrder.eq_sum_deg_inertia",
+       "role": "lemma",
+       "statement": "e(V) is the sum of deg(I/V) over the irreducible components I of (I_V)_red dominating V (I_V -> V representable and separated); e is unchanged on dense open substacks."
       }
      ],
      "tests": [
@@ -195,7 +190,12 @@
       {
        "name": "separatedMorphism_notStacks",
        "kind": "non-example",
-       "statement": "A chart A^1 -> L of the line L with a doubled origin is an open immersion, separated, of degree 1 = e(L)[k(t):k(t)] although L is not separated; the etale surjection L -> A^1 is not separated, so deg(L/A^1) is outside the definition and the formula, which would give 1, does not apply."
+       "statement": "A chart A^1 -> L of the line L with a doubled origin is an open immersion, separated, of degree 1 = e(L)[k(t):k(t)] although L is not separated; the etale surjection L -> A^1 is not separated, so deg(L/A^1) is outside the definition and the formula, which would give 1, does not apply. The finite etale cover L -> B_{A^1}G of 1.1, separated and representable between non-separated stacks, has degree (e(B_{A^1}G)/e(L))[k(t):k(t)] = (2/1)1 = 2, the rank of Q -> A^1; without the stabiliser ratio the formula gives 1."
+      },
+      {
+       "name": "inertia_sumOfDegrees",
+       "kind": "computation",
+       "statement": "I_{BG} = BG + BG for G = Z/2 (1+1 = 2); for S_3 the components B Z(c) have degrees 1, 3, 2 (sum 6); over Q, I_{B mu_3} has components of degrees 1 and (3/3)[Q(zeta_3):Q] = 2 (sum 3, two components); on [A^1/mu_2] the non-identity component lies over 0, does not dominate, and the sum is 1."
       }
      ]
     }
@@ -1705,7 +1705,7 @@
      ],
      "locator": {
       "source": "behrend-fantechi1997",
-      "where": "lines 1583-1599 (duality along a Gorenstein curve family)"
+      "where": "lines 1592-1597 (duality for a product family C x M -> M with a dualising complex on C; flat proper Gorenstein families by SchemeAndStackFoundations §§2.19-2.20)"
      },
      "prerequisites": [
       "roadmap:VirtualFundamentalClass §3.1",

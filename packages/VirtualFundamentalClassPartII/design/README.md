@@ -486,8 +486,8 @@ lines 299–328). Prove:
   `G`, separated and quasi-compact) and is not separated. The two charts `Q = 𝔸¹ ⊔ 𝔸¹ → L` of the
   line with a doubled origin form a `G_L`-torsor, `G` exchanging the copies over `t ≠ 0`
   (`Q ×_L Q = Q ⊔ Q|_{t≠0} ≅ Q ×_{𝔸¹} G`), so they define `L → B_{𝔸¹}G`, whose base change along the
-  atlas `𝔸¹ → B_{𝔸¹}G` is `Q → 𝔸¹`. Hence `L → B_{𝔸¹}G` is finite étale of degree
-  `2 = (e(B_{𝔸¹}G)/e(L)) · [k(t) : k(t)]` (1.3), a proper cover. No separated scheme `X` is one: the
+  atlas `𝔸¹ → B_{𝔸¹}G` is `Q → 𝔸¹`. Hence `L → B_{𝔸¹}G` is finite étale of degree `2`, the rank of
+  `Q → 𝔸¹`, a proper cover. No separated scheme `X` is one: the
   torsor `P := X ×_{BG} 𝔸¹ → X` would be finite étale (proper over `𝔸¹` and étale over the separated
   `X`), of degree `2` over points above `t ≠ 0` and `1` over points above `0`, while a component of
   `X` dominating `𝔸¹` meets both fibres; so a definition asking for a separated `X` would exclude
@@ -514,9 +514,6 @@ algebraic space (vistoli1989 lines 424–425; SchemeAndStackFoundations `setoid_
   functorial in `f`; an open immersion induces an isomorphism.
 - For a finite étale group `G` acting on an integral scheme `X`, `k([X/G]) = k(X)^G` (vistoli1989
   lines 351–353).
-- `e(𝒱)` is the sum of the degrees `deg(ℐ/𝒱)` of 1.3 over the irreducible components `ℐ` of
-  `(I_𝒱)_red` that dominate `𝒱` (each with its reduced, integral structure; `I_𝒱 → 𝒱` is
-  representable and separated), and `e` is unchanged by passing to a dense open substack.
 
 **Checks.**
 
@@ -526,13 +523,6 @@ algebraic space (vistoli1989 lines 424–425; SchemeAndStackFoundations `setoid_
 - For `B_{𝔸¹}G` of 1.1, `e = 2` although the stabiliser at the closed point `0` is trivial: the
   generic stabiliser can be larger than a special one when the inertia is quasi-finite and not
   finite.
-- The inertia formula counts degrees, not components. For `G = ℤ/2` constant, `I_{BG} = BG ⊔ BG`,
-  and `1 + 1 = 2 = e(BG)`. For `G = S₃` constant, `I_{BG}` is the disjoint union of the `B Z(c)` over
-  the conjugacy classes, of degrees `[S₃ : Z(c)] = 1, 3, 2`, with sum `6`. Over `k = ℚ`,
-  `I_{Bμ₃} = Bμ₃ ⊔ (Spec ℚ(ζ₃) ×_ℚ Bμ₃)`, two components of degrees `1` and
-  `(3/3) · [ℚ(ζ₃) : ℚ] = 2`, with sum `3 = e(Bμ₃)`, while the number of components is `2`. On
-  `[𝔸¹/μ₂]` the component of `I` carrying the non-identity element lies over the origin and does not
-  dominate, and the sum is `1 = e`.
 - Over `ℝ`, let `ℤ/4` act on `Spec ℂ` through `ℤ/4 → ℤ/2 = Gal(ℂ/ℝ)`. The gerbe
   `𝒢 = [Spec ℂ/(ℤ/4)]` is integral with `k(𝒢) = ℂ^{ℤ/4} = ℝ` and `e(𝒢) = 2`, the order of the kernel;
   a definition by the order of the acting group gives `4`.
@@ -564,6 +554,9 @@ No separatedness of `ℱ` or `𝒢` is assumed. *Needs:* 1.2; SchemeAndStackFoun
   map, a base change of the diagonal of `𝒱`, is separated, so the first, the diagonal of `U → 𝒱`, is a
   closed immersion.
 - For a proper representable `f` and integral `𝒱 ⊆ ℱ`, `deg(𝒱/f(𝒱))` is the integer used by 3.2.
+- `e(𝒱)` is the sum of the degrees `deg(ℐ/𝒱)` over the irreducible components `ℐ` of
+  `(I_𝒱)_red` that dominate `𝒱` (each with its reduced, integral structure; `I_𝒱 → 𝒱` is
+  representable and separated), and `e` is unchanged by passing to a dense open substack.
 
 **Checks.**
 
@@ -585,7 +578,17 @@ No separatedness of `ℱ` or `𝒢` is assumed. *Needs:* 1.2; SchemeAndStackFoun
   doubled origin is an open immersion, hence separated, of degree `1 = e(L) · [k(t) : k(t)]`, although
   `L` is not separated. The étale surjection `L → 𝔸¹` is not separated (the two origins are not
   separated over `𝔸¹`), so `deg(L/𝔸¹)` is outside the definition and the API formula, which would
-  return `1`, does not apply to it.
+  return `1`, does not apply to it. The finite étale cover `L → B_{𝔸¹}G` of 1.1 is separated and
+  representable between two non-separated stacks, of degree
+  `(e(B_{𝔸¹}G)/e(L)) · [k(t) : k(t)] = (2/1) · 1 = 2`, the rank of its base change `Q → 𝔸¹` along the
+  atlas; the formula without the stabiliser ratio would give `1`.
+- The inertia formula counts degrees, not components. For `G = ℤ/2` constant, `I_{BG} = BG ⊔ BG`,
+  and `1 + 1 = 2 = e(BG)`. For `G = S₃` constant, `I_{BG}` is the disjoint union of the `B Z(c)` over
+  the conjugacy classes, of degrees `[S₃ : Z(c)] = 1, 3, 2`, with sum `6`. Over `k = ℚ`,
+  `I_{Bμ₃} = Bμ₃ ⊔ (Spec ℚ(ζ₃) ×_ℚ Bμ₃)`, two components of degrees `1` and
+  `(3/3) · [ℚ(ζ₃) : ℚ] = 2`, with sum `3 = e(Bμ₃)`, while the number of components is `2`. On
+  `[𝔸¹/μ₂]` the component of `I` carrying the non-identity element lies over the origin and does not
+  dominate, and the sum is `1 = e`.
 
 ### Examples
 
@@ -1789,7 +1792,10 @@ Define *prestableUpperShriek* `π^! := Lπ^*(−) ⊗ ω_π[1]`. Prove: the proj
 `Rπ_*RHom(L, π^!K) ≅ RHom(Rπ_*L, K)` for `L` with quasi-coherent cohomology and `K` with quasi-coherent
 cohomology bounded below, induced by `tr`, compatibly with étale base change on `M`, hence the adjunction
 `Hom(Rπ_*L, K) ≅ Hom(L, π^!K)` on these; and Serre duality `(Rπ_*V)^∨ ≅ Rπ_*(V^∨ ⊗ ω_π)[1]` for `V` locally
-free, compatible with base change. Route: on an affine étale chart `U → M`, `𝒞_U → U` is a flat proper
+free, compatible with base change (behrend-fantechi1997 lines 1592–1597, for a product family
+`C × M → M` with `C` a projective curve with a dualising complex, which for Gorenstein `C` is the
+complex written `ω_C[1]` here; the statements for flat proper Gorenstein families of curves are those
+of SchemeAndStackFoundations §§2.19–2.20). Route: on an affine étale chart `U → M`, `𝒞_U → U` is a flat proper
 morphism of Noetherian schemes with Gorenstein fibres of dimension one, and SchemeAndStackFoundations
 §2.19 (`pushforwardRightAdjoint_adj`, `globalDuality`, `upperShriek_proper`, `upperShriek_lci`) and §2.20
 give these statements there, the charts being chosen fine enough that `𝒞_U` is a scheme (9.1); the
