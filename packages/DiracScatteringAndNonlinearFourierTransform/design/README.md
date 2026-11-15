@@ -45,7 +45,8 @@ This roadmap owns, by layer:
   its elementary rules;
 - Layer 6: de Branges spaces of Hermite–Biehler functions, the de Branges spaces of a Dirac
   system, the isometric chain, Weyl functions, the Neumann and Dirichlet spectral measures, the
-  relative entropy of measures and the Szegő condition for square-integrable potentials;
+  entropy of the Poisson measure relative to a spectral measure and the Szegő condition for
+  square-integrable potentials;
 - Layer 7: meromorphic inner functions, the phase-derivative representation of a Hermite–Biehler
   function of exponential type, Poltoratski's zero-localisation lemma, and the Dirac inner
   functions with their Riccati equation and the motion of resonances;
@@ -59,8 +60,9 @@ It leaves to named owners:
 
 - Picard–Lindelöf with continuous time, `ODE_solution_unique_of_mem_Ioo`, absolutely continuous
   functions, the Lebesgue differentiation theorem, the `L²` Fourier transform, the Poisson kernel
-  and the Poisson formula of a disc, and Phragmén–Lindelöf in a half-plane to Mathlib, consumed as
-  listed in the supplier contracts;
+  and the Poisson formula of a disc, Phragmén–Lindelöf in a half-plane, and the relative entropy
+  of finite measures (`InformationTheory.klDiv`) with its lower bound by the total masses to
+  Mathlib, consumed as listed in the supplier contracts;
 - the essentially-bounded Carathéodory theorem, the constant-kernel integral Grönwall inequality,
   the Dyson series of a continuous path, Jacobi's formula for the derivative of the determinant,
   the identity `det(exp A) = exp(tr A)`, Young's inequality for an integrable kernel, the duality
@@ -69,17 +71,21 @@ It leaves to named owners:
   the half-plane, the half-plane Phragmén–Lindelöf principle for bounded functions, the
   half-space Poisson kernel with its mass, positivity, harmonicity in the pole and kernel
   comparison, the half-space Poisson integral of bounded data with its harmonicity and boundary
-  values, the converse mean-value theorem for harmonic functions and the F. and M. Riesz uniqueness
-  theorem on discs to Tau Ceti; Layer 1 states the integrable-coefficient generalisations and
-  records the pinned essentially-bounded, continuous and constant-coefficient cases as Checks, and
-  Layer 2 states the Poisson integral of a Poisson-finite measure and records the pinned
-  bounded-data case as a Check;
+  values, the converse mean-value theorem for harmonic functions, the F. and M. Riesz uniqueness
+  theorem on discs, and the variational formula of the relative entropy of finite measures with its
+  joint weak lower semicontinuity to Tau Ceti; Layer 1 states the integrable-coefficient
+  generalisations and records the pinned essentially-bounded, continuous and constant-coefficient
+  cases as Checks, Layer 2 states the Poisson integral of a Poisson-finite measure and records the
+  pinned bounded-data case as a Check, and §6.7 computes the relative entropy of the Poisson measure
+  with respect to a spectral measure;
 - finite-order Hadamard factorization to AnalyticNumberTheoryPartI §0.23, consumed in Layer 7
   for entire functions of order at most one;
-- the disc Hardy space `H²(𝔻)` and its Toeplitz operators to OperatorTheory (ToeplitzOperators T1);
-  harmonic Hardy spaces on Euclidean balls and the circle maximal function of a finite measure to
-  StochasticCalculus S6.5; neither is consumed, since Layer 2 works on the half-plane with
-  Lebesgue measure and the maximal function of a density;
+- the disc Hardy space `H²(𝔻)` to Tau Ceti (`TauCeti.HardySpace`, `Analysis/Fourier/Hardy/Basic.lean`
+  line 43, with its disc functions, reproducing kernel, boundary uniqueness and the Toeplitz operators
+  of bounded symbols in `Analysis/Fourier/Hardy/`), and the further theory of those Toeplitz operators
+  to OperatorTheory/ToeplitzOperators, Layers 2–5; harmonic Hardy spaces on Euclidean balls and the
+  circle maximal function of a finite measure to StochasticCalculus S6.5; none of these is consumed,
+  since Layer 2 works on the half-plane with Lebesgue measure and the maximal function of a density;
 - the self-adjoint Dirac operator in `L²(ℝ₊; ℂ²)`, its domain and its spectral theorem to a
   later operator-theoretic roadmap: Layer 6 builds the spectral measures from Weyl functions and
   Herglotz representations and needs no unbounded operator;
@@ -212,6 +218,16 @@ All at the pinned Mathlib; paths under `Mathlib/`.
   §9.3.
 - `Matrix.det_fin_two` (`LinearAlgebra/Matrix/Determinant/Basic.lean` line 815), `NormedSpace.exp`
   for the constant-coefficient Check, `UpperHalfPlane.upperHalfPlaneSet`.
+- For the entropy in §6.7 and §6.8: `InformationTheory.klDiv` (`InformationTheory/KullbackLeibler/Basic.lean`
+  line 56), the relative entropy of measures with values in `ℝ≥0∞`. For `σ ≪ ν` with the log-likelihood
+  ratio `MeasureTheory.llr σ ν = log (dσ/dν)` (`MeasureTheory/Measure/LogLikelihoodRatio.lean` line 37)
+  integrable against `σ` it is `ENNReal.ofReal (∫ llr σ ν dσ + ν(X) − σ(X))`, and it is `∞` otherwise. For
+  finite measures the real expression is already nonnegative
+  (`InformationTheory.integral_llr_add_sub_measure_univ_nonneg`, line 147), so `ENNReal.ofReal` truncates
+  nothing. `InformationTheory.mul_log_le_klDiv` (line 355): for finite `σ`, `ν`,
+  `σ(X) log(σ(X)/ν(X)) + ν(X) − σ(X) ≤ klDiv σ ν`, the left side read through `ENNReal.ofReal`. The circle
+  carries Mathlib's Borel structure (`MeasureTheory/Group/Circle.lean` lines 32, 34) and is a compact
+  metric space.
 - For Liouville's formula in §1.4: `Matrix.det_apply` (`LinearAlgebra/Matrix/Determinant/Basic.lean`
   line 66, the Leibniz expansion of `det` as a signed sum over permutations of products of entries),
   `Matrix.trace_mul_comm` (`LinearAlgebra/Matrix/Trace.lean` line 156, `tr(AB) = tr(BA)`),
@@ -302,6 +318,13 @@ All at the pinned Tau Ceti; paths under `TauCeti/`.
   restriction of `ν` to the punctured circle carried to `ℝ` by the inverse of the boundary Cayley map
   `TauCeti.boundaryCayley`, `x ↦ (x − i)/(x + i)`. §6.6 uses it to read weak convergence of the Cayley
   images of the measures `μ_T` on the circle as convergence of integrals over `ℝ` plus the atoms at `1`.
+- The relative entropy, in `InformationTheory/KullbackLeibler/Variational.lean`.
+  `TauCeti.klDiv_eq_iSup_boundedContinuousFunction_integral_sub_integral_exp_sub_one` (line 457): on a
+  normal Borel space, for finite `σ`, `ν` with `σ + ν` weakly regular, `klDiv σ ν` is the supremum of
+  `∫ f dσ − ∫ (e^f − 1) dν` over bounded continuous real `f`. `TauCeti.lowerSemicontinuous_klDiv_finiteMeasure`
+  (line 499): on a pseudometrizable Borel space, `(σ, ν) ↦ klDiv σ ν` is jointly lower semicontinuous on
+  pairs of finite measures with the topology of weak convergence (Mathlib's `MeasureTheory.FiniteMeasure`).
+  §6.7 and §6.8 apply them on the circle.
 - `TauCeti.PhragmenLindelof.upper_half_plane_of_isBounded` (`Analysis/Complex/PhragmenLindelof.lean`
   line 33): a bounded holomorphic function on `ℂ₊`, continuous on the closed half-plane, is bounded
   by its bound on `ℝ`.
@@ -609,10 +632,10 @@ define the Schwarz integral `S[ν](z) = (1/(πi)) ∫ (1/(x − z) − x/(1 + x�
 - `∫ P(z, x) dx = 1` (Tau Ceti `TauCeti.integral_halfSpacePoissonKernel`; the hyperplane carries the
   Lebesgue measure of `ℝ` by Mathlib `LinearIsometryEquiv.measurePreserving`), and `P(z, x) ≤ C(z)/(1 + x²)`
   with `C(z) = 2(1 + (Re z)²) max(Im z, 1/Im z)/π`, so `P[ν]` is finite on `ℂ₊` for Poisson-finite `ν`.
-- `P[ν]` is harmonic on `ℂ₊`, nonnegative, and `P[ν] = Re S[ν]`; `S[ν]` is holomorphic on `ℂ₊` and
-  real at `z = i`; `S⁰[h] − S[h]` is the imaginary constant `−(i/π) ∫ x h(x)/(1 + x²) dx`. Route: on a
-  compact subset of `ℂ₊` the `z`-derivative `(x − z)^{−2}` of the Schwarz integrand is bounded by a
-  constant times `1/(1 + x²)`, so `S[ν]` is holomorphic (Mathlib `hasFDerivAt_integral_of_dominated_of_fderiv_le`),
+- `P[ν]` is harmonic on `ℂ₊` (mauth2022 Lemma 3 line 390–392), nonnegative, and `P[ν] = Re S[ν]`;
+  `S[ν]` is holomorphic on `ℂ₊` and real at `z = i`; `S⁰[h] − S[h]` is the imaginary constant
+  `−(i/π) ∫ x h(x)/(1 + x²) dx`. Route: on a compact subset of `ℂ₊` the `z`-derivative `(x − z)^{−2}` of
+  the Schwarz integrand is bounded by a constant times `1/(1 + x²)`, so `S[ν]` is holomorphic (Mathlib `hasFDerivAt_integral_of_dominated_of_fderiv_le`),
   hence analytic (Mathlib `DifferentiableOn.analyticAt`). Its real part `P[ν]` is then harmonic (Mathlib
   `AnalyticAt.harmonicAt_re`). It is nonnegative because the kernel is positive (Tau Ceti
   `TauCeti.halfSpacePoissonKernel_pos`).
@@ -655,7 +678,7 @@ define the Schwarz integral `S[ν](z) = (1/(πi)) ∫ (1/(x − z) − x/(1 + x�
 
 Prove that a nonnegative harmonic `u` on `ℂ₊` is `u(z) = c Im z + P[ν](z)` for a unique `c ≥ 0` and a
 unique Poisson-finite `ν`, and that `πy u(iy) − πc y² = ∫ y²/(x² + y²) dν(x)` increases to `ν(ℝ)` as
-`y → ∞` (mauth2022 Lemma 3 line 390; garnett2007, Ch. I §3, uncertified). Route: `u = Im F` with `F`
+`y → ∞` (garnett2007, Ch. I §3, uncertified). Route: `u = Im F` with `F`
 holomorphic on `ℂ₊`, `F′` being the conjugate complex partial of `u`, which is holomorphic by
 Mathlib's `HarmonicAt.differentiableAt_complex_partial` and has a primitive by Tau Ceti
 `DifferentiableOn.hasDerivAt_wedgeIntegral_upperHalfPlane`; then Tau Ceti
@@ -1310,8 +1333,8 @@ for real potentials `q⌃(−conj z) = conj q⌃(z)` and `q⌃*(−x) = conj q�
 first-order approximation: for `q` integrable on `[0, ∞)` with `L = ∫₀^∞ |q|`,
 `|q⌃(z) − ∫₀^∞ q(s) e^{2izs} ds| ≤ sinh L − L + L(cosh L − 1)` on the closed half-plane, where at real
 `x` the linear term is `𝓕(q · 1_{[0,∞)})(−x/π)` with Mathlib's `𝓕` (poltoratski2024 line 561–567;
-taothiele2012 line 687–688 for the discrete model). Route: §4.1's rules pass to the limit; the
-first-order bound combines §4.2 with `|1/a − 1| ≤ |a − 1|` from §4.3.
+taothiele2012 Lecture 1 Lemma 1 (5), (7) line 225–240 and line 210–220 for the discrete model). Route:
+§4.1's rules pass to the limit; the first-order bound combines §4.2 with `|1/a − 1| ≤ |a − 1|` from §4.3.
 
 *Needs:* §4.1, §4.2, §4.3, §5.1, §5.2; Mathlib `fourier_real_eq`.
 
@@ -1500,33 +1523,61 @@ applied to `e^{iax}k_ε` and `k_ε`.
 - Compact support `q = q_T`: for `t ≥ T` the identity is the definition of `μ`, and for `t < T` it is §6.3.
 - `2 dx` fails the identity in the free case (`∫ |F|² 2dx = 2‖F‖²`), so the normalisation of `μ` is forced.
 
-### 6.7 Relative entropy and its semicontinuity
+### 6.7 The entropy of the Poisson measure relative to a spectral measure
 
-For finite Borel measures `σ`, `ν` on a compact metric space `X` define the relative entropy
-`S(σ | ν) = −∫ log(dσ/dν) dσ` when `σ ≪ ν` and `−∞` otherwise (killipsimon2003 (5.9) line 1812–1819). Its
-API:
+Write `X` for Mathlib's `Circle`, `C = TauCeti.boundaryCayley` for the boundary Cayley map
+`x ↦ (x − i)/(x + i)`, and `σ = C_*(Π/π)`, which is normalised arc length `dθ/2π`. For a Poisson-finite
+measure `μ` on `ℝ` with Lebesgue decomposition `μ = w dx + μ_s` (Mathlib `Measure.rnDeriv` and
+`Measure.singularPart` with respect to Lebesgue measure) and `β ≥ 0`, let
+`ν_{μ,β} = C_*(μ/(π(1 + x²))) + β δ₁`, a finite measure on `X` of mass `β + (1/π)∫ dμ/(1 + x²)`. The entropy
+of `σ` relative to `ν` in the sense of killipsimon2003 ((5.9) line 1812–1819, (5.10) line 1831–1834) is, in
+Mathlib's terms, `S(σ | ν) = ν(X) − σ(X) − klDiv σ ν`, read as `−∞` when `klDiv σ ν = ∞`
+(Mathlib `InformationTheory.klDiv`). The facts the source proves about it are in the pinned libraries:
+the bound `S(σ | ν) ≤ log ν(X)` for a probability measure `σ` (killipsimon2003 Lemma 5.1 line 1836) is Mathlib
+`InformationTheory.mul_log_le_klDiv` at `σ(X) = 1`; the variational formula (Theorem 5.2 line 1864) is Tau
+Ceti `TauCeti.klDiv_eq_iSup_boundedContinuousFunction_integral_sub_integral_exp_sub_one` with `F = e^f`;
+and the joint weak upper semicontinuity of `S` (Corollary 5.3 line 1960) is
+`TauCeti.lowerSemicontinuous_klDiv_finiteMeasure` together with the continuity of the total mass under
+weak convergence.
 
-- `S(σ | ν) ≤ log ν(X)` for a probability measure `σ`, with equality for `σ = ν` (Lemma 5.1 line 1836).
-- Variational formula: `S(σ | ν) = inf {∫ F dν − ∫ (1 + log F) dσ : F continuous, min F > 0}` (Theorem 5.2
-  line 1864).
-- Joint weak upper semicontinuity: `σₙ → σ` and `νₙ → ν` weakly imply `S(σ | ν) ≥ lim sup S(σₙ | νₙ)`
-  (Corollary 5.3 line 1960).
-- Transport to the line: for a Poisson-finite `μ = w dx + μ_s` on `ℝ`, with `σ` the Cayley image of `Π/π`
-  and `ν` the Cayley image of `μ/(π(1 + x²))` together with any atom at `1`, `S(σ | ν) = (1/π) ∫ log w dΠ`.
+Prove that `klDiv σ ν_{μ,β} = ν_{μ,β}(X) − 1 − (1/π) ∫ log w dΠ` when `w > 0` almost everywhere and
+`log w ∈ L¹(Π)`, and that `klDiv σ ν_{μ,β} = ∞` otherwise; equivalently `S(σ | ν_{μ,β}) = (1/π) ∫ log w dΠ`
+in `[−∞, ∞)`. Route: `log⁺ w ≤ w` and `∫ w dΠ ≤ ∫ dμ/(1 + x²) < ∞`, so the positive part of `log w` is
+always `Π`-integrable; `σ` has no atoms and is equivalent to arc length, while `C_*(μ_s)` and the atom are
+singular to arc length, so `σ ≪ ν_{μ,β}` exactly when `w > 0` almost everywhere, and then `dσ/dν_{μ,β}`
+is `1/w` carried by `C`, `σ`-almost everywhere; changing variables along `C` gives
+`∫ llr σ ν_{μ,β} dσ = −(1/π) ∫ log w dΠ`, which is finite exactly when `log w ∈ L¹(Π)`.
 
-*Needs:* Mathlib weak convergence of finite measures on a compact space, `Measure.rnDeriv`; Tau Ceti
-`TauCeti.boundaryCayley`.
+*Needs:* §2.1 (Poisson-finite measures and `Π`); Mathlib `InformationTheory.klDiv`, `MeasureTheory.llr`,
+`Measure.rnDeriv`, `Measure.singularPart`; Tau Ceti `TauCeti.boundaryCayley`.
 
 **Checks.**
 
-- Let `σ = dθ/2π` be the Cayley image of `Π/π`: the `σ` of the transport bullet, a non-atomic probability
-  measure. Then `ν = σ` gives `S = 0`, and `ν = 2σ` gives `S = log 2 = log ν(X)`. For the point mass
-  `ν = δ₁`, the set `X ∖ {1}` has `ν`-measure `0` and `σ`-measure `1`. So `σ` is not absolutely continuous
-  with respect to `ν`, and `S = −∞`. Two equal point masses, by contrast, give `S(δ₁ | δ₁) = 0`, so this
-  case needs a non-atomic first argument.
-- Semicontinuity is not continuity: `νₙ = (1 + sin nθ) dθ/2π → σ` weakly while
-  `S(σ | νₙ) = (1/2π)∫₀^{2π} log(1 + sin θ) dθ = −log 2 < 0 = S(σ | σ)`.
-- Free spectral measure `μ = dx`: `S(σ | ν) = (1/π)∫ log 1 dΠ = 0`.
+- `σ` is arc length: the averages of `Re ζᵏ` against `C_*(Π/π)` are `1, 0, 0, 0` for `k = 0, 1, 2, 3`
+  (numerically to `10⁻¹²`), as for `dθ/2π`. Free spectral measure `μ = dx`, `β = 0`: `ν = σ`, so
+  `klDiv σ σ = 0` (Mathlib `InformationTheory.klDiv_self`), and the formula gives `1 − 1 − (1/π)∫ log 1 dΠ = 0`.
+- `μ = 2 dx`, `β = 0`: `ν = 2σ`, `klDiv σ (2σ) = log(1/2) + 2 − 1 = 1 − log 2 ≈ 0.306853`, which the formula
+  reproduces, and `S = log 2 = log ν(X)`: the equality case of the bound `klDiv σ ν ≥ ν(X) − 1 − log ν(X)`
+  from `InformationTheory.mul_log_le_klDiv`. Reading `S` as `−klDiv σ ν`, without the mass correction,
+  would give `log 2 − 1 ≈ −0.306853` instead.
+- Point mass `μ = 0`, `β = 1`: `ν = δ₁` and `w = 0`. The set `X ∖ {1}` has `ν`-measure `0` and `σ`-measure
+  `1`, so `σ` is not absolutely continuous with respect to `ν` and `klDiv σ δ₁ = ∞`
+  (Mathlib `InformationTheory.klDiv_of_not_ac`), `S = −∞`. Two equal point masses, by contrast, give
+  `klDiv δ₁ δ₁ = 0`, so this case needs the non-atomic first argument `σ`.
+- Junk value of the logarithm: for `μ = w dx` with `w = 0` on `[0, 1]` and `w = 1` elsewhere, Mathlib's
+  `Real.log 0 = 0` makes `log w` identically `0`, integrable with integral `0`, yet `σ` is not absolutely
+  continuous with respect to `ν_{μ,0}` and `klDiv σ ν_{μ,0} = ∞`. The hypothesis `w > 0` almost everywhere
+  is what separates the two cases.
+- Rectangular barrier `f = 0.7` on `[0, 1.3]`, the potential of §6.5's Checks, with `μ = dx/|E(T, x)|²`,
+  `T = 1.3` and `β = 0`: `ν(X) = (1/π)∫ w dΠ = Im m(i) = 0.537539` (quadrature `0.537539`). Since
+  `e^{iTz}E(T, z) = a(1 + ρ)` with `a` outer (§4.4) and `|ρ| < 1` (§4.3), `log|E(T, z)| − T Im z` is the
+  Poisson integral of `log|E(T, ·)|`, so `(1/π)∫ log w dΠ = 2T − 2 log|E(T, i)| = −0.918466` (quadrature
+  `−0.918467`). Hence `klDiv σ ν = 0.537539 − 1 + 0.918466 = 0.456005`, above the bound
+  `ν(X) − 1 − log ν(X) = 0.158293`; a sign error in the transport would make it negative.
+- Semicontinuity is not continuity: `νₙ = (1 + sin nθ) dθ/2π = ν_{μₙ,0}` for `μₙ = (1 + sin(n arg C(x))) dx`
+  converges weakly to `σ`, while `klDiv σ νₙ = −(1/2π)∫₀^{2π} log(1 + sin nθ) dθ = log 2 > 0 = klDiv σ σ`
+  (numerically `0.693144` at `n = 3`), and the formula gives `1 − 1 − (−log 2)`. So the pinned lower
+  semicontinuity cannot be improved to continuity.
 
 ### 6.8 The Szegő condition for square-integrable potentials
 
@@ -1534,11 +1585,15 @@ Let `q` be square-integrable. Prove that `∫ log w dΠ ≥ −2π log 2 − π�
 `log w, log w̃ ∈ L¹(Π)` and `w, w̃ > 0` almost everywhere (poltoratski2024 line 263–268; mauth2022
 Theorem 3 line 702–707; denisov2006 Theorem 11.1 line 3246 with the dictionary of §13). Route: for the
 truncation `q_T`, `w_T = |E(T, ·)|^{−2}` and `|E(T, x)| = |a(T, x) + b(T, x)| ≤ 2|a(T, x)|`, so
-`∫ log w_T dΠ ≥ −2π log 2 − 2∫ log|a(T, x)| dx = −2π log 2 − π‖q‖²_{L²(0,T)}` by §4.4; the measures converge
-as in §6.6, and §6.7 transfers the bound to `μ`; `log⁺ w ≤ w` is `Π`-integrable because `μ` is
-Poisson-finite.
+`∫ log w_T dΠ ≥ −2π log 2 − 2∫ log|a(T, x)| dx = −2π log 2 − π‖q‖²_{L²(0,T)}` by §4.4. With `σ`,
+`ν_T = ν_{μ_T,0}` and `ν = ν_{μ_q,β}` as in §6.7, §6.7 gives `klDiv σ ν_T ≤ ν_T(X) − 1 + 2 log 2 + ‖q‖²`.
+The measures `ν_T` converge weakly to `ν` (§6.6), so `ν_T(X) → ν(X)`, and Tau Ceti
+`TauCeti.lowerSemicontinuous_klDiv_finiteMeasure`, with `σ` fixed, gives
+`klDiv σ ν ≤ ν(X) − 1 + 2 log 2 + ‖q‖² < ∞`. By §6.7, `w > 0` almost everywhere, `log w ∈ L¹(Π)` and
+`(1/π)∫ log w dΠ = ν(X) − 1 − klDiv σ ν ≥ −2 log 2 − ‖q‖²`. The Dirichlet side is the same with
+`|Ẽ(T, x)| = |a(T, x) − b(T, x)| ≤ 2|a(T, x)|`.
 
-*Needs:* §4.4, §6.5, §6.6, §6.7.
+*Needs:* §4.4, §6.5, §6.6, §6.7; Tau Ceti `TauCeti.lowerSemicontinuous_klDiv_finiteMeasure`.
 
 **Checks.**
 
@@ -2022,8 +2077,8 @@ every `s ∈ ℝ`; the strong form: for almost every `s` and every `C > 0`,
 `sup_{|z − s| < C/T} |(f_T)⌃(z) − f⌃*(s)| → 0`, where `(f_T)⌃ = b(T, ·)/a(T, ·)` is holomorphic on the disc for
 large `T`; and the corollaries: `a(T, s)`, `b(T, s)` have convergent moduli, and the generalised
 eigenfunctions `t ↦ M(t, s)` are bounded on `[0, ∞)` for almost every `s` (poltoratski2024 Theorem 1
-line 578–586 and line 54–57; mauth2022 Theorem 2 line 216 and Theorem 6 line 4121 for the equivalence with
-the absence of resonances). Route: §9.7 makes `b/a = (E − iẼ)/(E + iẼ)` uniformly close on `Q(s, D/T)` to the
+line 578–586 and line 54–57; mauth2022 Theorem 2 line 216, and Theorem 5 line 3820 with the proof at line
+3851–3862 for the reduction to the absence of resonances). Route: §9.7 makes `b/a = (E − iẼ)/(E + iẼ)` uniformly close on `Q(s, D/T)` to the
 constant `(1/√w − iβ/√w̃)/(1/√w + iβ/√w̃)`, so the pointwise limit exists almost everywhere; §5.5 gives
 `(f_T)⌃* → f⌃*` in `Π`-measure, so along a subsequence almost everywhere, and the two limits agree almost
 everywhere.
@@ -2081,8 +2136,8 @@ Layer 3, Layer 4, Layer 5 (§5.2, §5.5, §5.6), Layer 6 (§6.5, §6.8), Layer 7
   11.1, (194); §13).
 - **romanov2014** — R. Romanov, *Canonical systems and de Branges spaces*, arXiv:1408.6022 v1 (§0, §1 Example
   1, §3 Proposition 4 and Theorem 5, §8 Theorems 15–16).
-- **taothiele2012** — T. Tao, C. Thiele, *Nonlinear Fourier analysis*, arXiv:1201.5129 v1 (Lecture 1 Lemma 3,
-  Lecture 1 §3 Lemma 5, Lecture 2 Lemma 6), for the discrete SU(1,1) model.
+- **taothiele2012** — T. Tao, C. Thiele, *Nonlinear Fourier analysis*, arXiv:1201.5129 v1 (Lecture 1 Lemmas 1
+  and 3, Lecture 1 §3 Lemma 5, Lecture 2 Lemma 6), for the discrete SU(1,1) model.
 - **killipsimon2003** — R. Killip, B. Simon, *Sum rules for Jacobi matrices and their applications to
   spectral theory*, Ann. of Math. 158 (2003); arXiv:math-ph/0112008 v2 (§5, (5.9), Lemma 5.1, Theorem 5.2,
   Corollary 5.3).
