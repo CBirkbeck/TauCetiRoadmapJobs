@@ -12,7 +12,7 @@ This roadmap owns:
 - the comparison principle and the uniqueness theorem on compact connected Hermitian manifolds (Layer 4).
 - the linear analysis on compact Kähler manifolds that the continuity method and the estimates consume (Layer 5), Yau's theorem (Layer 6), the uniform exponential integrability of quasi-plurisubharmonic functions (Layer 7), and the Guo–Phong–Tong `L^∞` estimates (Layer 8).
 
-No roadmap on the content repository and no board package owns any of these objects. The eigenvalue inequalities that Layer 1 rests on are already in Tau Ceti, where the OperatorTheory targets PolarDecomposition PD-A51–A53 (Courant–Fischer min–max, Loewner monotonicity and Weyl's bound for sorted eigenvalues), PrincipalAngles PA-B32 (von Neumann's trace inequality) and Majorization MAJ-A27 (Ky Fan's maximum principle) are implemented; so are the sub-mean-value inequality for `C²` functions with nonnegative Laplacian, the Sobolev inequality for `C¹` functions on a compact boundaryless Riemannian manifold, the superadditivity of the weighted geometric mean, and the Levi form of a real `C²` function on a complex manifold that AffineMorseLefschetz §1.1 plans, with its chart independence, its sum, composition and pullback rules and its sign at a local maximum. They are consumed as the pinned declarations of the Tau Ceti supplier contract, and nothing of them is re-proved here. K3Surfaces §2.1 states and proves, for a complex K3 surface, the equation `(ω + i∂∂̄φ)² = c·V` with `V` a positive volume form, by its own continuity method and estimates. That is the case `n = 2`, `F = log(V/ω²)` of §6.6, where `e^b = c`, after the normalization `sup φ = 0` is replaced by `∫ φ ω² = 0`. Section 6.6 differs in holding in every dimension `n ≥ 1` on every compact connected Kähler manifold, which Layer 8 needs; it does not import K3Surfaces. ComplexComparisonPartII Layer C5.4 owns positive currents and the regularization of plurisubharmonic functions, which are pluripotential objects this roadmap does not build. OptimalTransport Layer 6 owns the real Monge–Ampère equation of transport.
+No roadmap on the content repository and no board package owns any of these objects. The Poincaré inequality on a closed connected Riemannian manifold, which §5.3 records for the metric of `ω` and §6.2 applies to smooth functions, is RiemannianGeometry R5c (item 4), consumed from it and not re-proved. The eigenvalue inequalities that Layer 1 rests on are already in Tau Ceti, where the OperatorTheory targets PolarDecomposition PD-A51–A53 (Courant–Fischer min–max, Loewner monotonicity and Weyl's bound for sorted eigenvalues), PrincipalAngles PA-B32 (von Neumann's trace inequality) and Majorization MAJ-A27 (Ky Fan's maximum principle) are implemented; so are the sub-mean-value inequality for `C²` functions with nonnegative Laplacian, the Sobolev inequality for `C¹` functions on a compact boundaryless Riemannian manifold, the superadditivity of the weighted geometric mean, and the Levi form of a real `C²` function on a complex manifold that AffineMorseLefschetz §1.1 plans, with its chart independence, its sum, composition and pullback rules and its sign at a local maximum. They are consumed as the pinned declarations of the Tau Ceti supplier contract, and nothing of them is re-proved here. K3Surfaces §2.1 states and proves, for a complex K3 surface, the equation `(ω + i∂∂̄φ)² = c·V` with `V` a positive volume form, by its own continuity method and estimates. That is the case `n = 2`, `F = log(V/ω²)` of §6.6, where `e^b = c`, after the normalization `sup φ = 0` is replaced by `∫ φ ω² = 0`. Section 6.6 differs in holding in every dimension `n ≥ 1` on every compact connected Kähler manifold, which Layer 8 needs; it does not import K3Surfaces. ComplexComparisonPartII Layer C5.4 owns positive currents and the regularization of plurisubharmonic functions, which are pluripotential objects this roadmap does not build. OptimalTransport Layer 6 owns the real Monge–Ampère equation of transport.
 
 NumberFieldEnumeration §1.1 proves, for nonnegative reals, the case `S_k ≤ S_1^k` of Maclaurin's inequality, by smoothing pairs of coordinates towards their average on a simplex of fixed sum. Section 2.1 differs in comparing every pair `1 ≤ k ≤ l` on the cone `Γ_l`, which contains vectors with negative entries, and on its closure, which contains the closed orthant, and in its Newton and generalized Newton–Maclaurin forms; it does not import NumberFieldEnumeration.
 
@@ -20,9 +20,10 @@ This roadmap leaves:
 
 - to ComplexHessianEquations Part II, two theorems. The first is the existence theorem for the complex Monge–Ampère equation on compact Hermitian manifolds (Tosatti–Weinkove). Its proof uses Cherrier's second- and third-order estimates with torsion, Gauduchon's theorem and the Tosatti–Weinkove `L^∞` argument, none of which the Kähler theory uses. The second is the `L^∞` estimate on compact Hermitian manifolds (Guo–Phong), which compares with the local Dirichlet problem of Caffarelli, Kohn, Nirenberg and Spruck. That Part II also owns the higher differentiability of spectral functions, which no target here uses, and the complex Evans–Krylov estimate. Its introduction states that this roadmap stops at Yau's theorem and the Kähler `L^∞` estimates.
 - to PDE, as named supplier contracts below: the interior Schauder estimate for non-divergence equations, the strong maximum principle with variable coefficients, the weak Harnack inequality for supersolutions and the Aleksandrov–Bakelman–Pucci maximum principle.
+- to RiemannianGeometry, R5c (item 4): the first positive eigenvalue of the Laplace–Beltrami operator on a closed connected Riemannian manifold, its Rayleigh characterization and the Poincaré inequality for smooth functions, consumed as stated in the supplier contracts.
 - to ComplexKahlerGeometry, PseudodifferentialOperators and DifferentialGeometry: the type calculus, Chern connections, Kähler identities, `L²` and Hölder elliptic theory and integration, consumed as stated in the supplier contracts.
 
-Pluripotential theory (Bedford–Taylor products, capacities, weak solutions), viscosity solutions, subsolution theory, Kähler–Einstein metrics and the Kähler–Ricci flow are outside this roadmap.
+Pluripotential theory (Bedford–Taylor products, capacities, weak solutions), viscosity solutions, subsolution theory, Kähler–Einstein metrics and the Kähler–Ricci flow are outside this roadmap. The existence and uniqueness of the Kähler–Einstein metric on a smooth projective variety with ample canonical bundle is ShimuraVarieties §7.0g.
 
 ## Conventions
 
@@ -74,7 +75,7 @@ Milestones 1 and 2: real restriction of scalars, atlas transport and the canonic
 - K1: the type decomposition, conjugation and the complex scalar action on the generic form carrier, and the metric conventions above.
 - K2: `∂`, `∂̄` on smooth forms with `∂̄² = 0` and the Leibniz rules; the form `i∂∂̄u` of a `C²` function, built here from Tau Ceti's Levi form, is proved to agree with K2's `i∂∂̄` on smooth functions (§3.1).
 - K4: the Chern connection of a Hermitian holomorphic bundle, its curvature of type (1,1) and the local formula `A = h⁻¹∂h`, applied to `T^{1,0}X` and to `K_X^{-1}` for the Ricci form.
-- K5a: the Laplace-type elliptic theory on compact boundaryless manifolds. This covers the self-adjoint realization of a formally self-adjoint nonnegative Laplace-type operator, its smooth spectral decomposition, the finite-dimensional smooth kernel and `H^s` regularity.
+- K5a: the Laplace-type elliptic theory on compact boundaryless manifolds. This covers the self-adjoint realization of a formally self-adjoint nonnegative Laplace-type operator, the finite-dimensional smooth kernel and `H^s` regularity, used for the Kähler Laplacian in §5.2.
 - K6.0: Kähler metrics as closed fundamental forms, holomorphic coordinates with `h_{ij} = δ_{ij} + O(|z|²)` at a point, and `Δ_d = 2Δ_∂̄`.
 
 ### From TauCetiRoadmap.PseudodifferentialOperators
@@ -85,6 +86,10 @@ Milestones 1 and 2: real restriction of scalars, atlas transport and the canonic
 ### From TauCetiRoadmap.DifferentialGeometry
 
 Layers 0–1 (forms, wedge, `d`), Layer 5 (integration of top forms and Stokes' theorem on boundaryless compact oriented manifolds, `integralTopForm_mextDeriv_eq_zero`), and Layer 12 (`laplaceBeltrami`, `riemannianVolumeForm`, `integral_mul_laplaceBeltrami`).
+
+### From TauCetiRoadmap.RiemannianGeometry
+
+R5c, item 4, with its headline `exists_pos_laplaceBeltrami_eigenvalue_isLeast`: on a closed connected Riemannian manifold `M` of positive dimension with a smooth metric, the nonnegative operator `Δ⁺ = −div grad`, the negative of `TauCeti.Manifold.laplaceBeltrami`, has a least positive eigenvalue `λ_1(Δ⁺) > 0` with a smooth eigenfunction, and `λ_1(Δ⁺)·∫ f² ≤ ∫ |∇f|²` for every smooth `f` with `∫ f = 0`, the integrals taken for `TauCeti.riemannianVolume`. Applied to `f = u − ū`, which has mean zero and the gradient of `u`, it is the Poincaré inequality `∫ (u − ū)² ≤ λ_1(Δ⁺)⁻¹ ∫ |∇u|²` for smooth `u`, where `ū` is the mean of `u`. It is consumed on the real manifold underlying `X` (ComplexManifolds Milestone 1), of dimension `2n ≥ 2`, with the metric `g` of `ω`, and only for smooth functions (§§5.3, 6.2).
 
 ### From TauCetiRoadmap.PDE
 
@@ -161,7 +166,7 @@ API:
 
 ### 1.4 Convexity of spectral domains, concavity and ellipticity
 
-Prove, for an open convex symmetric `Γ ⊆ ℝⁿ` and a symmetric `C¹` function `f : Γ → ℝ` (spruck2005 Theorem 1.4 and its proof, line 11066–11100):
+Prove, for an open convex symmetric `Γ ⊆ ℝⁿ` and a symmetric `C¹` function `f : Γ → ℝ` (spruck2005 Theorem 1.4 and its proof, line 11066–11100, stated there for a smooth concave `f` with positive partial derivatives on an open convex symmetric cone with vertex at the origin, and for real symmetric matrices; the routes below need neither the cone, nor more than `C¹`, nor `𝕜 = ℝ`, nor positive partial derivatives for the concavity clause):
 
 - `Sym_Γ(E)` is convex. Route: an open convex symmetric set is the intersection of open half-spaces `{μ : ⟨y, μ⟩ > s}` together with their permuted copies. Then `μ ∈ Γ` if and only if `⟨y↑, μ↓⟩ > s` for each such `(y, s)`, and by the lower trace bound of §1.2, `⟨y↑, λ(T)⟩ = min_U Re tr(U diag(y) U^* T)` over unitary `U` is concave in `T`, so each set `{T : ⟨y↑, λ(T)⟩ > s}` is convex.
 - If `f` is concave, then `F_f` is concave on `Sym_Γ(E)`. Route: for symmetric concave `f`, comparing `f(μ)` with `f` at the transposition of two coordinates shows that `∂_i f(μ) ≤ ∂_j f(μ)` whenever `μ_i > μ_j`, so the eigenvalues `∂_i f(λ(S))` of `∇F_f(S)` are nondecreasing in `i` when `λ(S)` is nonincreasing (spruck2005 line 11095–11097). The lower trace bound of §1.2 applied to `∇F_f(S)` and `T` then gives `Re tr(∇F_f(S)·T) ≥ Σ_i ∂_i f(λ(S))·λ_i(T)`, and since `∇F_f(S)` is diagonal in an eigenbasis of `S`, `Re tr(∇F_f(S)·S) = Σ_i ∂_i f(λ(S))·λ_i(S)`; with the concavity of `f`, `dF_f(S)(T − S) ≥ f(λ(T)) − f(λ(S)) = F_f(T) − F_f(S)` (spruck2005 line 11092–11100).
@@ -177,6 +182,7 @@ Prove, for an open convex symmetric `Γ ⊆ ℝⁿ` and a symmetric `C¹` functi
 - `Γ = Γ_1`, `f = σ_1`: `Sym_Γ = {tr T > 0}`, `∇F = Id` is positive definite, and monotonicity is `tr S ≤ tr T` for `S ≤ T`.
 - Ellipticity is needed for monotonicity: `Γ = Γ_1 ⊂ ℝ²`, `f = −σ_1` (symmetric, `C¹`, concave, with `∂_i f = −1`), `S = diag(1, 0) ≤ T = diag(2, 0)`: `F_f(S) = −1 > −2 = F_f(T)`. For the strictness clause `∂_i f > 0` is needed: `f ≡ 0` has `∂_i f = 0 ≥ 0` and `F_f(S) = F_f(T)` with `S ≠ T`.
 - The gradient ordering of the concavity route: `f = σ_2^{1/2}` on `Γ_2 ⊂ ℝ²` at `μ = (4, 1)` has `∂_1 f = (1/2)·μ_2/√(μ_1μ_2) = 1/4` and `∂_2 f = 1`, nondecreasing in the index as `μ` is nonincreasing.
+- Outside the cone setting: `Γ = {μ ∈ ℝ² : μ_1 > −1, μ_2 > −1}` is open, convex and symmetric but not a cone (`(−1/2, −1/2) ∈ Γ`, `(−2, −2) ∉ Γ`). With `f(μ) = log(1 + μ_1) + log(1 + μ_2)` and `𝕜 = ℂ`, `F_f(T) = log det(Id + T)` on `Sym_Γ(E) = {T > −Id}`, and `∇F_f(T) = (Id + T)⁻¹` is positive definite. For `A = diag(−1/2, 1)` and `B = diag(1, −1/2)`, `F_f(A) = F_f(B) = log 1 = 0` and `F_f((A + B)/2) = 2·log(5/4) > 0`, as concavity requires.
 
 ### 1.5 Determinant, Euler and trace inequalities
 
@@ -266,7 +272,7 @@ Prove:
 
 - `f > 0` on `Γ_n`, by the Euler identity `Σ_j λ_j ∂_j f = f`.
 - The structural condition with constant `γ` holds if and only if `det ∇F_f(T) ≥ γ` for every `T ∈ Sym_Γ(E)`, the form gpt2023 (1.4) (line 84–86). This follows from §1.5.
-- gpt2023 Lemma 4 (line 744–769): a concave admissible pair with `f(μ) ≥ nγ^{1/n}(∏_j μ_j)^{1/n}` on `Γ_n` satisfies the structural condition with constant `γ`. The proof combines the tangent inequality of §2.3 with AM–GM over `μ ∈ Γ_n`, `∏μ_j = 1`.
+- The structural constant from a lower bound on `Γ_n` (gpt2023 Lemma 4, line 744–769): a concave admissible pair with `f(μ) ≥ nγ^{1/n}(∏_j μ_j)^{1/n}` on `Γ_n` satisfies the structural condition with constant `γ`. The proof combines the tangent inequality of §2.3 with AM–GM over `μ ∈ Γ_n`, `∏μ_j = 1`.
 - Positive combinations. If `(f_1, Γ_1')` and `(f_2, Γ_2')` are admissible pairs with structural constants `γ_1, γ_2` and `a, b > 0`, then `(af_1 + bf_2, Γ_1' ∩ Γ_2')` is an admissible pair with structural constant `(aγ_1^{1/n} + bγ_2^{1/n})^n`, and it is concave when both are (guo-phong2024 line 103–104). The constant comes from the superadditivity `∏(x_j + y_j)^{1/n} ≥ ∏x_j^{1/n} + ∏y_j^{1/n}` for positive `x, y` (Tau Ceti `Real.prod_rpow_add_prod_rpow_le_prod_add_rpow` at the weights `1/n`; spruck2005 line 11314), applied to `x_j = a∂_jf_1`, `y_j = b∂_jf_2`.
 
 *Needs:* §§1.3–1.5, 2.2–2.3; Tau Ceti `Real.prod_rpow_add_prod_rpow_le_prod_add_rpow`.
@@ -380,7 +386,7 @@ API:
 
 ### 3.4 Degenerating backgrounds, energy and entropy
 
-Define, on a compact Kähler manifold `(X, ω_X)` with a smooth closed real (1,1)-form `χ ≥ 0`, the background family `ω_t = χ + tω_X` for `t ∈ (0, 1]`, its volumes `V_t = ∫ ω_t^n`, the equations `f(λ_{ω_X}[ω_{t,φ_t}]) = c_t e^{F_t}`, `sup φ_t = 0`, `λ ∈ Γ` with normalized `F_t`, the energy `E_t(φ) = V_t⁻¹ ∫ (−φ) f(λ[ω_{t,φ}])^n ω_X^n` of a `(ω_t, Γ)`-admissible `φ`, and the entropy `Ent_p(F)` (gpt2023 line 101–119 and 82–83). Eigenvalues are always taken relative to `ω_X`.
+Define, on a compact Kähler manifold `(X, ω_X)` with a smooth closed real (1,1)-form `χ ≥ 0`, the background family `ω_t = χ + tω_X` for `t ∈ (0, 1]`, its volumes `V_t = ∫ ω_t^n`, the equations `f(λ_{ω_X}[ω_{t,φ_t}]) = c_t e^{F_t}`, `sup φ_t = 0`, `λ ∈ Γ` with normalized `F_t`, the energy `E_t(φ) = V_t⁻¹ ∫ (−φ) f(λ[ω_{t,φ}])^n ω_X^n` of a `(ω_t, Γ)`-admissible `φ`, and the entropy `Ent_p(F)` (gpt2023 line 101–119 and 82–83). Eigenvalues are always taken relative to `ω_X`. *Needs:* §§3.2–3.3; Layer 2 §2.4.
 
 API:
 
@@ -460,11 +466,12 @@ Prove, for a smooth Kähler metric `ω'` on compact connected `X`, `k ≥ 0` and
 
 ### 5.3 Poincaré and Sobolev inequalities
 
-Prove the Poincaré inequality `‖u − ū‖_{L²} ≤ C ‖du‖_{L²}` for `u ∈ H¹(X)` on a compact connected Riemannian manifold, where `ū` is the `g`-mean. The proof uses ComplexKahlerGeometry K5a's spectral decomposition of the scalar Laplacian, whose kernel is the constants by connectedness, with `C = λ_1^{−1/2}` for the first positive eigenvalue `λ_1`. Record the Sobolev inequality `‖u‖_{L^{2n/(n−1)}} ≤ C(‖du‖_{L²} + ‖u‖_{L²})` for every `C¹` function `u` on `X` of complex dimension `n ≥ 2`, norms for the Riemannian volume of `g` (`|du|_g = |∇u|_g` pointwise): it is `TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add` at real dimension `2n`, with exponent `2·2n/(2n − 2) = 2n/(n−1)` (pss2012 line 278–288). *Needs:* ComplexKahlerGeometry K5a; Tau Ceti `TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add`.
+Record, on compact connected `X` with a Hermitian metric `ω` and its Riemannian metric `g`, the two inequalities that §6.2 consumes, with norms for the Riemannian volume of `g` (`|du|_g = |∇u|_g` pointwise); since `ω^n = n!·dvol_g`, means for `ω^n` and for the Riemannian volume agree. The Poincaré inequality `‖u − ū‖_{L²} ≤ λ_1(Δ⁺)^{−1/2}‖du‖_{L²}` for smooth `u`, where `ū` is the mean of `u` and `λ_1(Δ⁺)` the first positive eigenvalue of the nonnegative Laplace–Beltrami operator `Δ⁺ = −div grad` of `g`, which is `−2Δ_ω` when `dω = 0` (§5.1), is RiemannianGeometry R5c (item 4) applied to `u − ū`; it is consumed, not re-proved, and is used only for smooth functions (pss2012 line 299–303). The Sobolev inequality `‖u‖_{L^{2n/(n−1)}} ≤ C(‖du‖_{L²} + ‖u‖_{L²})` for every `C¹` function `u` on `X` of complex dimension `n ≥ 2` is `TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add` at real dimension `2n`, with exponent `2·2n/(2n − 2) = 2n/(n−1)` (pss2012 line 278–288). *Needs:* RiemannianGeometry R5c; Tau Ceti `TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add`; §5.1 for the identification `Δ⁺ = −2Δ_ω`.
 
 **Checks.**
 
-- On the circle of length `2π`, `λ_1 = 1` and `u = sin` gives equality in Poincaré.
+- On the circle of length `2π`, `λ_1(Δ⁺) = 1` and `u = sin` gives equality in Poincaré: `∫ sin² = π = 1⁻¹·∫ cos²`.
+- The factor in `Δ⁺ = −2Δ_ω`: on the torus `ℂ/(ℤ + iℤ)` with the standard metric, `u = cos 2πx` has `Δ_ω u = −2π²u` (§5.2) and `Δ⁺u = 4π²u`, and `λ_1(Δ⁺) = 4π²`. With `∫ u² = 1/2` and `∫ |du|² = 2π²` the inequality is the equality `1/2 = 2π²/4π²`. Reading `Δ⁺` as `−4Δ_ω` would give `λ_1 = 8π²` and the false `1/2 ≤ 1/4`.
 - On two components, the function `1` on one and `−1` on the other has `du = 0` and nonzero `u − ū`, so Poincaré fails.
 - `n = 2`: the exponent is `4`, consistent with `2m/(m − 2)` at `m = 4`, and the dimension hypothesis of the Tau Ceti statement reads `2 < 4`. At `n = 1` it reads `2 < 2` and fails, matching the exclusion of `n = 1` in §6.2.
 
@@ -489,7 +496,7 @@ The flat torus (explicit Fourier modes) and `ℂP¹` (explicit quasi-plurisubhar
 
 ### Dependencies
 
-Layers 3–4; ComplexKahlerGeometry K5a, K6.0; PseudodifferentialOperators §§5.4, 6.2; DifferentialGeometry Layer 12; Tau Ceti `TauCeti.le_setAverage_ball_of_laplacian_nonneg` and `TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add`; PDE §3.2 (C13) and §5.6 (E25); `gap:weak-harnack-supersolutions` (PDE §5.4, E23).
+Layer 3; ComplexKahlerGeometry K5a, K6.0; RiemannianGeometry R5c (§5.3); PseudodifferentialOperators §§5.4, 6.2; DifferentialGeometry Layer 12; Tau Ceti `TauCeti.le_setAverage_ball_of_laplacian_nonneg` and `TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add`; PDE §3.2 (C13) and §5.6 (E25); `gap:weak-harnack-supersolutions` (PDE §5.4, E23).
 
 ## Layer 6: Yau's theorem
 
@@ -520,17 +527,17 @@ Each identity holds for every pair of Kähler metrics. Under the simultaneous re
 
 ### 6.2 The `C⁰` estimate
 
-Prove, for `n ≥ 2`, that `osc_X φ ≤ C(n, sup_X F, ω)` (pss2012 Theorem 3, line 245–308; yau1978 §2). The route is Moser iteration on `sup φ − φ + 1`, using `(e^F − 1)ω^n = i∂∂̄φ ∧ Σ_j ω_φ^{n−1−j} ∧ ω^j` integrated by parts, the Sobolev inequality, and the Poincaré inequality for the starting `L²` bound (pss2012 line 299–303). The Sobolev inequality is applied only to powers of the smooth positive function `sup φ − φ + 1`, which are `C¹`. The dependence on `sup F` alone, not on `inf F`, is the Kähler case of tosatti-weinkove2010 line 104–106. *Needs:* §§3.2, 5.3; DifferentialGeometry Layer 5; Tau Ceti `TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add`.
+Prove, for `n ≥ 2`, that `osc_X φ ≤ C(n, sup_X F, ω)` (pss2012 Theorem 3, line 245–308; yau1978 §2). The route is Moser iteration on `sup φ − φ + 1`, using `(e^F − 1)ω^n = i∂∂̄φ ∧ Σ_j ω_φ^{n−1−j} ∧ ω^j` integrated by parts, the Sobolev inequality, and the Poincaré inequality for the starting `L²` bound (pss2012 line 299–303). The Sobolev inequality is applied only to powers of the smooth positive function `sup φ − φ + 1`, which are `C¹`. The dependence on `sup F` alone, not on `inf F`, is the Kähler case of tosatti-weinkove2010 line 104–106. *Needs:* §§3.2, 5.3; RiemannianGeometry R5c for the Poincaré inequality; DifferentialGeometry Layer 5; Tau Ceti `TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add`.
 
 **Checks.**
 
 - `F = 0`: `φ` is constant, by uniqueness, so `osc = 0`.
 - On the torus `ℂ²/ℤ⁴` with the standard metric and `φ = ε·cos(2πx_1)`, `0 < ε < 1/(2π²)`: `i∂∂̄φ = −2π²ε cos(2πx_1)·dx_1 ∧ dy_1`, so, with `q = 1 − 2π²ε cos 2πx_1`, the relative eigenvalues of `ω_φ` are `q` and `1`, the decreasingly sorted vector is `λ[ω_φ] = (max(q, 1), min(q, 1))`, and `φ` solves the equation exactly with `e^F = q`. At `ε = 1/(4π²)` the vector is `(1, 1/2)` at `x_1 = 0` and `(3/2, 1)` at `x_1 = 1/2`. Then `∫ e^F ω² = ∫ ω²`, `sup F = log(1 + 2π²ε)` and `osc φ = 2ε`.
-- For `n = 1` no Sobolev embedding into `L^{2n/(n−1)}` exists; the case `n = 1` is handled linearly in §6.6.
+- For `n = 1` no Sobolev embedding into `L^{2n/(n−1)}` exists; the case `n = 1` is handled linearly by §5.2, in §§6.3, 6.5 and 6.6.
 
 ### 6.3 The `C²` estimate
 
-Prove the Aubin–Yau estimate `0 < tr_ω ω_φ ≤ C·exp(A(φ − inf φ))`, with `A` and `C` depending only on `sup F`, a lower bound for `Δ_ω F`, the constant `Λ(ω)` and an upper bound for the scalar curvature `s_ω` of §6.1 (pss2012 Theorem 8, line 981–990, proof line 994–1031). Combined with §6.2 and the equation it gives `C⁻¹ω ≤ ω_φ ≤ Cω`, with `C` depending on `‖F‖_{C²}` and `ω`. The route applies the maximum principle to `log tr h − Aφ` using the logarithmic form of §6.1 with `Y ≥ 0`, `K/tr h ≥ −Λ(ω)·tr h⁻¹` and `(tr h)⁻¹ ≤ tr h⁻¹`, which give `Δ_{ω_φ} log tr h ≥ −(C_1 + Λ(ω))·tr h⁻¹ − C_2`, with the lower bound from `λ_i ≥ e^F/∏_{j≠i} λ_j`. *Needs:* §§3.1, 6.1–6.2; Tau Ceti `TauCeti.re_leviForm_nonpos_of_isLocalMax` for the sign at the maximum.
+Prove the Aubin–Yau estimate `0 < tr_ω ω_φ ≤ C·exp(A(φ − inf φ))`, with `A` and `C` depending only on `sup F`, a lower bound for `Δ_ω F`, the constant `Λ(ω)` and an upper bound for the scalar curvature `s_ω` of §6.1 (pss2012 Theorem 8, line 981–990, proof line 994–1031). Combined with §6.2 for `n ≥ 2` and the equation it gives `C⁻¹ω ≤ ω_φ ≤ Cω`, with `C` depending on `‖F‖_{C²}` and `ω`; for `n = 1` the equation itself is `ω_φ = e^F ω`, so `e^{−‖F‖_{C⁰}}ω ≤ ω_φ ≤ e^{‖F‖_{C⁰}}ω` and `tr_ω ω_φ = e^F`. The route applies the maximum principle to `log tr h − Aφ` using the logarithmic form of §6.1 with `Y ≥ 0`, `K/tr h ≥ −Λ(ω)·tr h⁻¹` and `(tr h)⁻¹ ≤ tr h⁻¹`, which give `Δ_{ω_φ} log tr h ≥ −(C_1 + Λ(ω))·tr h⁻¹ − C_2`, with the lower bound from `λ_i ≥ e^F/∏_{j≠i} λ_j`. *Needs:* §§3.1, 6.1–6.2; Tau Ceti `TauCeti.re_leviForm_nonpos_of_isLocalMax` for the sign at the maximum.
 
 **Checks.**
 
@@ -549,13 +556,13 @@ Prove Calabi's estimate: `S = |∇'h h⁻¹|²_{ω_φ}`, equal to `|∇_ω i∂�
 
 ### 6.5 Higher-order estimates and regularity
 
-Prove three statements. First, if `sup_X φ = 0`, then `‖φ‖_{C^{2,α}} ≤ C(X, ω, α, ‖F‖_{C³})` for each `α < 1`: §6.4 bounds the first derivatives of the mixed second derivatives `∂_j∂_k̄φ`, so `Δ_ω φ` is Lipschitz, the global Schauder estimate of §5.2 for `Δ_ω` bounds `‖φ‖_{C^{2,α}}` by `C(‖Δ_ω φ‖_{C^{0,α}} + ‖φ‖_{C⁰})`, and `‖φ‖_{C⁰} = osc_X φ` is bounded by §6.2. Second, if `sup_X φ = 0`, then for each `k ≥ 0`, `‖φ‖_{C^{k+2,α}} ≤ C_k(X, ω, α, ‖F‖_{C^{m,α}})` with `m = max(3, k + 1)`, by differentiating the equation in coordinates and applying the interior Schauder estimate, inductively in `k`, to the linear equation `Δ_{ω_φ}(∂φ) = ∂F + (lower order)`, whose coefficients have the regularity of `i∂∂̄φ`; the constants of §§6.2–6.4 enter through `‖F‖_{C³}`, which is why `m ≥ 3` even for `k = 0, 1` (twwy2015 line 134–136 records that this route uses three derivatives of the right-hand side). Third, with no normalization, a `C^{2,α}` solution with smooth `F` and `ω_φ > 0` is smooth. The route is difference quotients with the interior Schauder estimate (tosatti-weinkove2010 line 93–99, "standard elliptic theory"; gilbarg-trudinger2001 Lemma 17.16). A solution normalized instead by `∫ φ ω^n = 0`, as on the continuity path of §6.6, differs from `φ − sup φ` by the constant `sup φ`, and `0 ≤ sup φ ≤ osc φ`; so the first two bounds hold for it with the bound of §6.2 added to the constant. *Needs:* §§5.2, 6.2–6.4; PDE §5.6 (E25).
+Prove three statements. First, if `sup_X φ = 0`, then `‖φ‖_{C^{2,α}} ≤ C(X, ω, α, ‖F‖_{C³})` for each `α < 1`: §6.4 bounds the first derivatives of the mixed second derivatives `∂_j∂_k̄φ`, so `Δ_ω φ` is Lipschitz, the global Schauder estimate of §5.2 for `Δ_ω` bounds `‖φ‖_{C^{2,α}}` by `C(‖Δ_ω φ‖_{C^{0,α}} + ‖φ‖_{C⁰})`, and `‖φ‖_{C⁰} = osc_X φ` is bounded by §6.2 for `n ≥ 2`. For `n = 1` the equation is `Δ_ω φ = e^F − 1`, whose right-hand side has mean zero, and §5.2 bounds `φ − mean(φ)` in `C^{k+2,α}` by `C‖e^F − 1‖_{C^{k,α}}` for every `k ≥ 0`, hence `osc_X φ` and both quantitative bounds of this section directly, `|mean(φ)| ≤ osc_X φ` when `sup φ = 0`. Second, if `sup_X φ = 0`, then for each `k ≥ 0`, `‖φ‖_{C^{k+2,α}} ≤ C_k(X, ω, α, ‖F‖_{C^{m,α}})` with `m = max(3, k + 1)`, by differentiating the equation in coordinates and applying the interior Schauder estimate, inductively in `k`, to the linear equation `Δ_{ω_φ}(∂φ) = ∂F + (lower order)`, whose coefficients have the regularity of `i∂∂̄φ`; the constants of §§6.2–6.4 enter through `‖F‖_{C³}`, which is why `m ≥ 3` even for `k = 0, 1` (twwy2015 line 134–136 records that this route uses three derivatives of the right-hand side). Third, with no normalization, a `C^{2,α}` solution with smooth `F` and `ω_φ > 0` is smooth. The route is difference quotients with the interior Schauder estimate (tosatti-weinkove2010 line 93–99, "standard elliptic theory"; gilbarg-trudinger2001 Lemma 17.16). A solution normalized instead by `∫ φ ω^n = 0`, as on the continuity path of §6.6, differs from `φ − sup φ` by the constant `sup φ`, and `0 ≤ sup φ ≤ osc φ`; so the first two bounds hold for it with the bound for `osc φ` (§6.2, or §5.2 when `n = 1`) added to the constant. *Needs:* §§5.2, 6.2–6.4; PDE §5.6 (E25).
 
 **Checks.**
 
 - With `sup φ = 0`, `F = 0` gives `φ = 0` (§4.2) and every norm `0`.
 - The normalization is needed for the quantitative bounds: on a flat torus with `F = 0`, `φ = M` constant solves the equation with `ω_φ = ω` and `osc φ = 0`, while `‖φ‖_{C^{k,α}} ≥ |M|` for every `M`. The smoothness statement needs no normalization.
-- The linear case `n = 1`: `Δ_ω φ = e^F − 1` with `F ∈ C^{k,α}` gives `φ ∈ C^{k+2,α}`, the Schauder gain of exactly two derivatives.
+- The linear case `n = 1`, where §6.2 says nothing: on the torus `ℂ/(ℤ + iℤ)` with `e^F = 1 − a cos 2πx`, `0 < a < 1`, the solution with `sup φ = 0` is `φ = (a/2π²)(cos 2πx − 1)`, with `osc φ = a/π²`, the bound that §5.2 gives through `Δ_ω⁻¹ cos 2πx = −cos(2πx)/(2π²)`. In general `Δ_ω φ = e^F − 1` with `F ∈ C^{k,α}` gives `φ ∈ C^{k+2,α}`, the Schauder gain of exactly two derivatives.
 - For `F ∈ C^{0,α}` only, the bootstrap starts but the `C²` estimate of §6.3 needs `Δ_ω F` bounded below, which a `C^{0,α}` function need not have. The hypothesis `F ∈ C^∞` is used.
 
 ### 6.6 Yau's theorem
@@ -579,7 +586,7 @@ Flat tori (explicit linearized solutions), `ℂP^n` with Fubini–Study (`F = 0`
 
 ### Dependencies
 
-Layers 3–5; ComplexKahlerGeometry K4, K6.0; DifferentialGeometry Layer 5; Tau Ceti `TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add` (§6.2) and `TauCeti.re_leviForm_nonpos_of_isLocalMax` (§§6.3–6.4); Mathlib inverse function theorem.
+Layers 3–5; ComplexKahlerGeometry K4, K6.0; RiemannianGeometry R5c (§6.2); DifferentialGeometry Layer 5; Tau Ceti `TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add` (§6.2) and `TauCeti.re_leviForm_nonpos_of_isLocalMax` (§§6.3–6.4); Mathlib inverse function theorem.
 
 ## Layer 7: Exponential integrability of quasi-plurisubharmonic functions
 
@@ -658,12 +665,13 @@ Prove the Guo–Phong–Tong estimate on degenerating backgrounds (gpt2023 Theor
 
 ### 8.4 The Monge–Ampère case
 
-Prove (gpt2023 Theorem 4 with Lemmas 5–6, line 785–850): for the Monge–Ampère pair, `c_t^n/V_t = 1/V`, `E_t(φ_t) ≤ C(n, ω_X, χ, Ent_1(F_t))`, and if `Ent_q(F_t)` is bounded uniformly in `t` for some `q > n`, then `‖φ_t‖_{L^∞}` is bounded uniformly in `t`. The fixed background `χ = 0`, `t = 1` is a special case. The energy bound uses §7.2 for the `2ω_X`-quasi-plurisubharmonic `φ_t` (taking `χ ≤ ω_X`) and Jensen's inequality for the probability measure `V_t⁻¹ω_{t,φ_t}^n`; the signed moment it produces, `n·(c_t^n/V_t)·∫ F_t e^{nF_t} ω_X^n`, is at most `n·Ent_1(F_t)` by `c_t^n/V_t = 1/V`. *Needs:* §§3.2, 3.4, 7.2, 8.3; Mathlib `ConvexOn.map_integral_le`.
+Prove (gpt2023 Theorem 4 with Lemmas 5–6, line 785–850): for the Monge–Ampère pair, `c_t^n/V_t = 1/V`, `E_t(φ_t) ≤ C(n, ω_X, χ, Ent_1(F_t))`, and if `Ent_q(F_t)` is bounded uniformly in `t` for some `q > n`, then `‖φ_t‖_{L^∞}` is bounded uniformly in `t`. The fixed background `χ = 0`, `t = 1` is a special case. The energy bound uses §7.2 with `ω̂ = a_0ω_X`, where `χ ≤ (a_0 − 1)ω_X` as in §8.1, so that `ω_t ≤ a_0ω_X` for `t ≤ 1` and `a_0ω_X + i∂∂̄φ_t ≥ ω_{t,φ_t} > 0`, and Jensen's inequality for the probability measure `V_t⁻¹ω_{t,φ_t}^n`; the signed moment it produces, `n·(c_t^n/V_t)·∫ F_t e^{nF_t} ω_X^n`, is at most `n·Ent_1(F_t)` by `c_t^n/V_t = 1/V`. *Needs:* §§3.2, 3.4, 7.2, 8.3; Mathlib `ConvexOn.map_integral_le`.
 
 **Checks.**
 
 - `χ = ω_X`, `F_t = 0`: `V_t = (1 + t)^n V` and `c_t^n = (1 + t)^n`.
-- `Ent_q(F_t)` bounded for `q > n` implies `Ent_1(F_t) ≤ 1 + Ent_q(F_t)`, so Lemma 6 applies.
+- `Ent_q(F_t)` bounded for `q > n` implies `Ent_1(F_t) ≤ 1 + Ent_q(F_t)`, so the energy bound of this section applies.
+- The background of the energy bound: `χ = 3ω_X`, `t = 1` gives `ω_t = 4ω_X`. A function with `i∂∂̄φ_t = −2.5·ω_X` at a point is `ω_t`-admissible there (`4 − 2.5 > 0`) but not `2ω_X`-quasi-plurisubharmonic (`2 − 2.5 < 0`), so `2ω_X` is not a valid background; `a_0 = 4`, the least value with `χ ≤ (a_0 − 1)ω_X`, gives `4 − 2.5 > 0`.
 - This recovers Kołodziej's bound (kolodziej1998 §1) for the fixed background. A right-hand side with `Ent_q = ∞` for all `q > n` is outside the statement, though it may still have bounded solutions.
 
 ### 8.5 Energy and Trudinger estimates on a fixed background
@@ -697,17 +705,17 @@ Prove the Guo–Phong–Tong estimate on a fixed background (gpt2023 Theorem 1, 
 
 Prove (gpt2023 Theorem 5 with Lemmas 7–8, line 861–952):
 
-- Lemma 7: `E_t(φ_t) ≤ (c_t^n/V_t)·‖e^{nF_t}‖_{L^q}·‖φ_t‖_{L^{q'}}` for conjugate exponents `q, q' > 1`.
-- Lemma 8: for `1 ≤ k < n` and `0 < p' < n/(n − k)`, every `u ∈ C²` with `sup u = 0` and `λ[ω_X + i∂∂̄u] ∈ Γ_k` satisfies `‖u‖_{L^{p'}(ω_X^n)} ≤ C(n, k, p', ω_X)`. Route: compare with the Monge–Ampère solutions `v_j` with right-hand sides `η_j` bounded in `L^{1+ε}` (§§6.6, 8.4). Integrate by parts against `(ω_X + i∂∂̄v_j)^{k−1} ∧ ω_X^{n−k}`, using §3.2's Gårding mixed inequality and Maclaurin form inequality and the `L¹` bound of §5.4, then apply Fatou.
-- Theorem 5: if `λ[ω_{t,φ_t}] ∈ Γ_k` for all `t` and `q > n/k`, then `‖φ_t‖_{L^∞} ≤ C(n, k, q, γ, ω_X, χ, ‖e^{nF_t}‖_{L^q}, c_t^n/V_t)`. Lemma 8 is applied with background `a_0ω_X`: since `a_0ω_X ≥ ω_t`, the function `φ_t` is `(a_0ω_X, Γ_k)`-admissible by §1.4. This step is implicit in gpt2023.
+- The Hölder bound for the energy (gpt2023 Lemma 7): `E_t(φ_t) ≤ (c_t^n/V_t)·‖e^{nF_t}‖_{L^q}·‖φ_t‖_{L^{q'}}` for conjugate exponents `q, q' > 1`.
+- The `L^{p'}` bound for `Γ_k`-admissible functions (gpt2023 Lemma 8): for `1 ≤ k < n` and `0 < p' < n/(n − k)`, every `u ∈ C²` with `sup u = 0` and `λ[ω_X + i∂∂̄u] ∈ Γ_k` satisfies `‖u‖_{L^{p'}(ω_X^n)} ≤ C(n, k, p', ω_X)`. Route: compare with the Monge–Ampère solutions `v_j` with right-hand sides `η_j` bounded in `L^{1+ε}` (§§6.6, 8.4). Integrate by parts against `(ω_X + i∂∂̄v_j)^{k−1} ∧ ω_X^{n−k}`, using §3.2's Gårding mixed inequality and Maclaurin form inequality and the `L¹` bound of §5.4, then apply Fatou.
+- The Hessian estimate (gpt2023 Theorem 5): if `λ[ω_{t,φ_t}] ∈ Γ_k` for all `t` and `q > n/k`, then `‖φ_t‖_{L^∞} ≤ C(n, k, q, γ, ω_X, χ, ‖e^{nF_t}‖_{L^q}, c_t^n/V_t)`. The `L^{p'}` bound is applied with background `a_0ω_X`: since `a_0ω_X ≥ ω_t`, the function `φ_t` is `(a_0ω_X, Γ_k)`-admissible by §1.4. This step is implicit in gpt2023.
 
 *Needs:* §§1.4, 3.2, 5.4, 6.6, 8.3–8.4; `gap:weak-harnack-supersolutions` (through §5.4).
 
 **Checks.**
 
-- `k = n` is excluded from Lemma 8, where `n/(n − k)` is infinite. There §7.2 gives every `p'`.
+- `k = n` is excluded from the `L^{p'}` bound, where `n/(n − k)` is infinite. There §7.2 gives every `p'`.
 - `q > n/k` is the conjugate of `q' < n/(n − k)`: `1/q + 1/q' = 1` with `q' = n/(n − k)` gives `q = n/k`.
-- Hessian pair, `n = 2`, `k = 1` (Laplace): Lemma 8 gives `‖u‖_{L^{p'}}` for `p' < 2`. In real dimension 4, Green-function singularities `|x|^{−2}` are in `L^{p'}` exactly for `p' < 2`.
+- Hessian pair, `n = 2`, `k = 1` (Laplace): the `L^{p'}` bound gives `‖u‖_{L^{p'}}` for `p' < 2`. In real dimension 4, Green-function singularities `|x|^{−2}` are in `L^{p'}` exactly for `p' < 2`.
 
 ### Examples
 
@@ -720,7 +728,7 @@ Layers 1–7; Tau Ceti `TauCeti.re_leviForm_nonpos_of_isLocalMax` (§8.1); Mathl
 ## Downstream consumers
 
 - K3Surfaces §2.1 constructs the Ricci-flat Kähler form on a K3 surface by solving `(ω + i∂∂̄φ)² = c·V`, with its own continuity method and estimates. That equation is the case `n = 2`, `F = log(V/ω²)` of §6.6, where `e^b = c`, up to the change from `sup φ = 0` to `∫ φ ω² = 0` (Scope and ownership); §6.6 can replace those steps.
-- ComplexHessianEquations Part II consumes Layers 1–5 for the Tosatti–Weinkove and Guo–Phong theorems on compact Hermitian manifolds. Further Part II directions are subsolution theory, Hessian-equation existence and the Kähler–Einstein (Aubin–Yau) equation `(ω + i∂∂̄φ)^n = e^{φ+F}ω^n`, whose right-hand side depends on `φ`; that equation uses Layer 4's comparison principle and Layer 6's estimates.
+- ComplexHessianEquations Part II consumes Layers 1–5 for the Tosatti–Weinkove and Guo–Phong theorems on compact Hermitian manifolds. Further Part II directions are subsolution theory, Hessian-equation existence and the Kähler–Einstein (Aubin–Yau) equation `(ω + i∂∂̄φ)^n = e^{φ+F}ω^n`, whose right-hand side depends on `φ`; that equation uses Layer 4's comparison principle and Layer 6's estimates. ShimuraVarieties §7.0g owns the existence and uniqueness of the Kähler–Einstein metric for an ample canonical bundle; a Part II that treats the Aubin–Yau equation cites that target and states only what it adds.
 - A real Hessian-equation extension of OptimalTransport Layer 6 can consume the real symmetric case of Layer 1 (`𝕜 = ℝ`), the cone `Γ_n` and §1.5's determinant identities.
 
 ## References

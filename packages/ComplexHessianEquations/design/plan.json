@@ -277,7 +277,7 @@
      ],
      "locator": {
       "source": "spruck2005",
-      "where": "Theorem 1.4, line 11066–11100"
+      "where": "Theorem 1.4 and its proof, line 11066–11100, stated there for a smooth concave f with positive partial derivatives on an open convex symmetric cone with vertex at the origin and for real symmetric matrices; the routes need neither the cone, nor more than C¹, nor 𝕜 = ℝ, nor positive partial derivatives for the concavity clause"
      },
      "prerequisites": [
       "target:1.2",
@@ -311,6 +311,11 @@
        "name": "gradient_ordering",
        "kind": "computation",
        "statement": "f = σ_2^{1/2} at μ = (4,1): ∂_1 f = 1/4 ≤ ∂_2 f = 1, the ordering used in the concavity route"
+      },
+      {
+       "name": "non_cone_domain",
+       "kind": "computation",
+       "statement": "Γ = {μ_1, μ_2 > −1} (convex, symmetric, not a cone), f = log(1+μ_1) + log(1+μ_2), 𝕜 = ℂ: F_f = log det(Id + T) on T > −Id, ∇F_f = (Id + T)⁻¹; A = diag(−1/2, 1), B = diag(1, −1/2): F_f(A) = F_f(B) = 0 < 2 log(5/4) = F_f((A+B)/2)"
       }
      ]
     },
@@ -1173,6 +1178,7 @@
       "where": "line 101–119"
      },
      "prerequisites": [
+      "target:3.2",
       "target:3.3.1"
      ],
      "api": [
@@ -1440,24 +1446,26 @@
      "id": "5.3",
      "kind": "theorem",
      "name": "poincare_sobolev",
-     "statement": "On a compact connected Riemannian manifold ‖u − ū‖_{L²} ≤ λ_1^{−1/2} ‖du‖_{L²} for u ∈ H¹; on X of complex dimension n ≥ 2, ‖u‖_{L^{2n/(n−1)}} ≤ C(‖du‖_{L²} + ‖u‖_{L²}) for every C¹ function u, norms for the Riemannian volume (the pinned Tau Ceti Sobolev inequality at real dimension 2n > 2).",
+     "statement": "On compact connected X with a Hermitian metric ω and its Riemannian metric g, norms for the Riemannian volume (whose means agree with those for ω^n): the Poincaré inequality ‖u − ū‖_{L²} ≤ λ_1(Δ⁺)^{−1/2} ‖du‖_{L²} for smooth u, Δ⁺ = −div grad of g (= −2Δ_ω when dω = 0), is RiemannianGeometry R5c (item 4) applied to u − ū, consumed and not re-proved; on X of complex dimension n ≥ 2, ‖u‖_{L^{2n/(n−1)}} ≤ C(‖du‖_{L²} + ‖u‖_{L²}) for every C¹ function u (the pinned Tau Ceti Sobolev inequality at real dimension 2n > 2).",
      "hypotheses": [
       "X compact connected",
+      "u smooth for Poincaré",
       "n ≥ 2 and u ∈ C¹ for Sobolev"
      ],
      "locator": {
       "source": "pss2012",
-      "where": "line 278–288"
+      "where": "line 278–288 and 299–303"
      },
      "prerequisites": [
-      "roadmap:ComplexKahlerGeometry K5a",
+      "target:5.1",
+      "roadmap:RiemannianGeometry R5c",
       "tauceti:TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add"
      ],
      "tests": [
       {
        "name": "poincare_circle",
        "kind": "computation",
-       "statement": "circle of length 2π, u = sin: equality with λ_1 = 1"
+       "statement": "circle of length 2π, u = sin: λ_1(Δ⁺) = 1 and ∫ sin² = π = ∫ cos², equality"
       },
       {
        "name": "poincare_two_components",
@@ -1468,6 +1476,11 @@
        "name": "sobolev_exponent",
        "kind": "computation",
        "statement": "n = 2: exponent 4 = 2m/(m−2) at m = 4"
+      },
+      {
+       "name": "poincare_factor_torus",
+       "kind": "computation",
+       "statement": "ℂ/(ℤ + iℤ), u = cos 2πx: Δ_ω u = −2π²u, Δ⁺u = 4π²u = λ_1(Δ⁺)u, ∫u² = 1/2 = 2π²/4π²; reading Δ⁺ as −4Δ_ω gives the false 1/2 ≤ 1/4"
       }
      ]
     },
@@ -1645,6 +1658,7 @@
      "prerequisites": [
       "target:3.2",
       "target:5.3",
+      "roadmap:RiemannianGeometry R5c",
       "roadmap:DifferentialGeometry Layer 5",
       "tauceti:TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add"
      ],
@@ -1670,7 +1684,7 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "c2_estimate",
-     "statement": "0 < tr_ω ω_φ ≤ C exp(A(φ − inf φ)) with A, C depending on sup F, a lower bound of Δ_ω F, Λ(ω) and an upper bound of s_ω (6.1), by the maximum principle for log tr h − Aφ with the logarithmic trace identity of 6.1; hence C⁻¹ω ≤ ω_φ ≤ Cω with C depending on ‖F‖_{C²} and ω.",
+     "statement": "0 < tr_ω ω_φ ≤ C exp(A(φ − inf φ)) with A, C depending on sup F, a lower bound of Δ_ω F, Λ(ω) and an upper bound of s_ω (6.1), by the maximum principle for log tr h − Aφ with the logarithmic trace identity of 6.1; with 6.2 for n ≥ 2, hence C⁻¹ω ≤ ω_φ ≤ Cω with C depending on ‖F‖_{C²} and ω; for n = 1 the equation is ω_φ = e^F ω, so e^{−‖F‖_{C⁰}}ω ≤ ω_φ ≤ e^{‖F‖_{C⁰}}ω directly.",
      "hypotheses": [
       "dω = 0",
       "φ smooth solution"
@@ -1738,7 +1752,7 @@
      "id": "6.5",
      "kind": "theorem",
      "name": "higher_regularity",
-     "statement": "If sup_X φ = 0: ‖φ‖_{C^{2,α}} ≤ C(X, ω, α, ‖F‖_{C³}) for α < 1, and ‖φ‖_{C^{k+2,α}} ≤ C_k(X, ω, α, ‖F‖_{C^{m,α}}) with m = max(3, k+1) for every k ≥ 0; a solution normalized by ∫ φ ω^n = 0 differs from φ − sup φ by sup φ ∈ [0, osc φ], so the bounds hold for it with the bound of 6.2 added. With no normalization, a C^{2,α} solution with smooth F and ω_φ > 0 is smooth.",
+     "statement": "If sup_X φ = 0: ‖φ‖_{C^{2,α}} ≤ C(X, ω, α, ‖F‖_{C³}) for α < 1, and ‖φ‖_{C^{k+2,α}} ≤ C_k(X, ω, α, ‖F‖_{C^{m,α}}) with m = max(3, k+1) for every k ≥ 0; a solution normalized by ∫ φ ω^n = 0 differs from φ − sup φ by sup φ ∈ [0, osc φ], so the bounds hold for it with the bound for osc φ added. The C⁰ bound osc φ comes from 6.2 for n ≥ 2; for n = 1 the equation is Δ_ω φ = e^F − 1 and 5.2 bounds φ − mean(φ) in C^{k+2,α} by C‖e^F − 1‖_{C^{k,α}}. With no normalization, a C^{2,α} solution with smooth F and ω_φ > 0 is smooth.",
      "hypotheses": [
       "dω = 0",
       "0 < α < 1",
@@ -1769,7 +1783,7 @@
       {
        "name": "regularity_linear",
        "kind": "computation",
-       "statement": "n = 1: Δ_ω φ = e^F − 1 gains exactly two derivatives"
+       "statement": "n = 1: Δ_ω φ = e^F − 1 gains exactly two derivatives; on ℂ/(ℤ + iℤ) with e^F = 1 − a cos 2πx, φ = (a/2π²)(cos 2πx − 1), osc φ = a/π², from 5.2 alone"
       },
       {
        "name": "regularity_holder_F",
@@ -2076,7 +2090,7 @@
      "id": "8.4",
      "kind": "theorem",
      "name": "gpt_mongeAmpere",
-     "statement": "For the Monge–Ampère pair in the degenerating setting: c_t^n/V_t = 1/V, E_t(φ_t) ≤ C(n, ω_X, χ, Ent_1(F_t)), and if Ent_q(F_t) is bounded uniformly in t for some q > n then ‖φ_t‖_{L^∞} is bounded uniformly in t.",
+     "statement": "For the Monge–Ampère pair in the degenerating setting: c_t^n/V_t = 1/V, E_t(φ_t) ≤ C(n, ω_X, χ, Ent_1(F_t)) (by 7.2 with background a_0ω_X, χ ≤ (a_0 − 1)ω_X), and if Ent_q(F_t) is bounded uniformly in t for some q > n then ‖φ_t‖_{L^∞} is bounded uniformly in t.",
      "hypotheses": [
       "dω_X = 0",
       "χ smooth closed ≥ 0",
@@ -2103,12 +2117,17 @@
       {
        "name": "MA_entropy_mono",
        "kind": "degenerate",
-       "statement": "Ent_1 ≤ 1 + Ent_q"
+       "statement": "Ent_1 ≤ 1 + Ent_q, so the energy bound applies"
       },
       {
        "name": "MA_kolodziej",
        "kind": "compatibility",
        "statement": "fixed background recovers kolodziej1998 §1"
+      },
+      {
+       "name": "MA_energy_background",
+       "kind": "non-example",
+       "statement": "χ = 3ω_X, t = 1: ω_t = 4ω_X; i∂∂̄φ_t = −2.5ω_X at a point is ω_t-admissible (4 − 2.5 > 0) but not 2ω_X-quasi-plurisubharmonic (2 − 2.5 < 0); the background a_0ω_X with χ ≤ (a_0 − 1)ω_X, a_0 = 4, works"
       }
      ]
     },
@@ -2199,11 +2218,11 @@
      "id": "8.7",
      "kind": "theorem",
      "name": "gpt_hessian",
-     "statement": "Lemma 7: E_t(φ_t) ≤ (c_t^n/V_t) ‖e^{nF_t}‖_{L^q} ‖φ_t‖_{L^{q'}}. Lemma 8: for 1 ≤ k < n and 0 < p' < n/(n−k), ‖u‖_{L^{p'}} ≤ C(n,k,p',ω_X) for u ∈ C² with sup u = 0 and λ[ω_X + i∂∂̄u] ∈ Γ_k. Theorem 5: if λ[ω_{t,φ_t}] ∈ Γ_k and q > n/k then ‖φ_t‖_{L^∞} ≤ C(n,k,q,γ,ω_X,χ,‖e^{nF_t}‖_{L^q}, c_t^n/V_t).",
+     "statement": "Hölder bound for the energy (gpt2023 Lemma 7): E_t(φ_t) ≤ (c_t^n/V_t) ‖e^{nF_t}‖_{L^q} ‖φ_t‖_{L^{q'}}. L^{p'} bound for Γ_k-admissible functions (gpt2023 Lemma 8): for 1 ≤ k < n and 0 < p' < n/(n−k), ‖u‖_{L^{p'}} ≤ C(n,k,p',ω_X) for u ∈ C² with sup u = 0 and λ[ω_X + i∂∂̄u] ∈ Γ_k. Hessian estimate (gpt2023 Theorem 5): if λ[ω_{t,φ_t}] ∈ Γ_k and q > n/k then ‖φ_t‖_{L^∞} ≤ C(n,k,q,γ,ω_X,χ,‖e^{nF_t}‖_{L^q}, c_t^n/V_t).",
      "hypotheses": [
       "dω_X = 0",
       "χ smooth closed ≥ 0",
-      "1 ≤ k < n for Lemma 8",
+      "1 ≤ k < n for the L^{p'} bound",
       "q > n/k"
      ],
      "locator": {
@@ -2223,7 +2242,7 @@
       {
        "name": "hessian_k_eq_n",
        "kind": "degenerate",
-       "statement": "k = n excluded from Lemma 8; 7.2 gives all p'"
+       "statement": "k = n excluded from the L^{p'} bound; 7.2 gives all p'"
       },
       {
        "name": "hessian_conjugate",
@@ -2250,7 +2269,7 @@
     "K5a",
     "K6.0"
    ],
-   "what": "type calculus and metric conventions, ∂ and ∂̄ on smooth forms, Chern connections and curvature, Laplace-type L² elliptic theory and spectral decomposition, Kähler metrics, normal coordinates and Δ_d = 2Δ_∂̄"
+   "what": "type calculus and metric conventions, ∂ and ∂̄ on smooth forms, Chern connections and curvature, Laplace-type L² elliptic theory, Kähler metrics, normal coordinates and Δ_d = 2Δ_∂̄"
   },
   {
    "roadmap": "PseudodifferentialOperators",
@@ -2280,6 +2299,13 @@
    "what": "forms, d, integration and Stokes, laplaceBeltrami and Riemannian volume"
   },
   {
+   "roadmap": "RiemannianGeometry",
+   "sections": [
+    "R5c"
+   ],
+   "what": "item 4: the first positive eigenvalue λ_1(Δ⁺) of Δ⁺ = −div grad on a closed connected Riemannian manifold and λ_1(Δ⁺)∫f² ≤ ∫|∇f|² for smooth f of mean zero, the Poincaré inequality, applied to smooth functions only (5.3, 6.2)"
+  },
+  {
    "roadmap": "ComplexManifolds",
    "sections": [
     "Milestone 1",
@@ -2295,7 +2321,7 @@
   },
   {
    "roadmap": "ComplexHessianEquationsPartII",
-   "what": "Tosatti–Weinkove existence and Guo–Phong L^∞ estimates on compact Hermitian manifolds, consuming Layers 1–5; also subsolution theory, Hessian existence and the Aubin–Yau equation"
+   "what": "Tosatti–Weinkove existence and Guo–Phong L^∞ estimates on compact Hermitian manifolds, consuming Layers 1–5; also subsolution theory, Hessian existence and the Aubin–Yau equation; the Kähler–Einstein metric for an ample canonical bundle is ShimuraVarieties §7.0g, which that Part II cites"
   },
   {
    "roadmap": "OptimalTransport",
