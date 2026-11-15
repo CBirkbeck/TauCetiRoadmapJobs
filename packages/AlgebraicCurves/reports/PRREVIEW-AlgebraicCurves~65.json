@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicCurves~65",
+  "head": "89357f3db20befdba093e50d06c54017c710a524",
+  "pr": 1807,
+  "folder": "AlgebraicCurves",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 130 changed lines since c8821a4. The previous review raised no findings; its remark on the char-2 case of the first Check of 6.4 is repaired. Checked the changed README passages (scope bullets on SchemeAndStackFoundations and AlgebraicVectorBundles, 6.4 Check, 9.3 chain rule and trace residues, 10.6 pinned Kummer data, 11.2 and 11.5 Checks, consumer list); PROGRESS.md and STATUS.md are main's generated files. Ten adversarial rows with computed values. Five newly cited Tau Ceti declarations opened at the pin (Differential/Independence.lean 199, 253, 275, 386; Different/Radical.lean 259, 269) and their hypotheses match the README. Cross-roadmap sentences resolved against main (SchemeAndStackFoundations 140-143, 5751-5863, 7054; AlgebraicVectorBundles 156-157; DiophantineApproximationAndTranscendence 96, 3920). Seeded targets 6.4, 10.6, 11.2, 11.5 fall in changed passages; their Stichtenoth2009 locators are uncertified and not read. Gate: the worker's gate passes every check including build=0; a standalone rerun reports only outside-folder=24, all in the twelve sibling folders this pull request owns. Depcheck: 245 roadmaps, 2266 edges, 0 problems. Elaboration: only the sorry warnings at lines 80 and 104; Suggested.lean and the pins unchanged. The pull request text holds against this head. Overlap check repeated with the closest roadmaps; #1808 ordered after this pull request.",
+  "text": "5fa575d43a504403"
+ }
+}
