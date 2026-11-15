@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EtaleDualityAndPerverseSheaves~4",
+  "head": "54256cd72c381a05b85b8ff4d9435cb8d5522e4d",
+  "pr": 1040,
+  "folder": "EtaleDualityAndPerverseSheaves",
+  "date": "2026-11-15",
+  "findings": 7,
+  "blocking": 0,
+  "notes": "Full review. Previous findings R01-R04, R07-R09 repaired, R05-R06 partly (carried in R04). Seven P3: a supplier named as consumer; five supplier declaration names found nowhere; a Check claiming a Lean counterpart; broken code spans and repeated Checks; the letter n used for both the invertible integer and the coefficient exponent; one BBD page range; the description (consumer clause, open supplier #2132 missing from its order). Sample: the fifteen seeded sections read against BBD-1982, SGA4-XVIII, Weil I and II, Milne-LEC, both Varshavsky papers, ECD-2026, SGA 4 1/2, Raynaud, Yu, Milne-AG (71 locators, one off by a page); every other statement and Check read and computed. Gate passes (all scanners 0, build 0); depcheck 245 roadmaps, 2244 edges, 0 problems; lake env lean gives seven sorry warnings only; one-tactic probe closes none of the seven theorems; eleven elaborated types match the README. Not verifiable: Jantzen-2003 (no legal copy), journal pagination of Varshavsky 2023, five paywalled books and articles.",
+  "text": "21e277b408fd25c7"
+ }
+}
