@@ -19,7 +19,7 @@ The following are imported and are not planned again.
 - DiophantineApproximationAndTranscendence §§5.2–5.3 owns G-functions, Galochkin's condition and Chudnovsky's theorem.
 - FuchsianOrbifolds owns Poincaré's polygon theorem (Layer 2 item 3), the presentation of `PSL₂(ℤ)` (Layer 2 item 5 applied to the level-one group of Layer 6 item 1), cusps and `q`-coordinates (Layer 3), compactified quotients (Layer 4), degree theory (Layer 5) and the level-one quotient with `j` (Layer 6). BelyiMaps owns finite covers of the thrice-punctured sphere (Layer 6) and their algebraization (Layer 9). UniversalCovers (Completed) owns lifting and the Galois correspondence (Stage 2).
 - GeometryOfNumbersAndQuadraticArithmetic §4.3 owns the analytic `q`-Pochhammer product and the Jacobi triple product.
-- SpecialFunctionsTheta owns the theta constants `θ₂, θ₃, θ₄` and the modular function λ: the theta-constant products (§2.2), Jacobi's quartic identity `θ₃⁴ = θ₂⁴ + θ₄⁴` (§4.1); `λ = k² = (θ₂/θ₃)⁴` and `1 − λ = (θ₄/θ₃)⁴` with holomorphy, `λ ∉ {0, 1}`, `λ(τ + 2) = λ(τ)`, `λ(τ + 1) = λ(τ)/(λ(τ) − 1)`, `λ(−1/τ) = 1 − λ(τ)` and the behaviour of `λ(it)` for `t > 0` (§5.1); and the bijection of `{|Re τ| < 1, |τ − 1/2| > 1/2, |τ + 1/2| > 1/2}` onto `ℂ ∖ ((−∞, 0] ∪ [1, ∞))` with its boundary and cusp values, and `F(1/2, 1/2; 1; λ(τ)) = θ₃(τ)²` there (§5.3). Kept here, each in one clause: the η-quotient presentation of λ, its integral `q`-product and its identification with that λ (§2.1); `Γ(2)`-invariance, derived from the imported laws (§2.1); the covering theorem with its deck group and the finite étale covers of `Y(2)` (§2.2), which SpecialFunctionsTheta does not state; and the integral series form `K₀(λ/16) = θ₃²` with `K₀ = Σ C(2n, n)² xⁿ`, the character `χ₋₄(d)`, the differential equation and the monodromy (§2.6).
+- SpecialFunctionsTheta owns the theta constants `θ₂, θ₃, θ₄` and the modular function λ: the theta-constant products (§4.2), Jacobi's quartic identity `θ₃⁴ = θ₂⁴ + θ₄⁴` (§2.2); `λ = k² = (θ₂/θ₃)⁴` and `1 − λ = (θ₄/θ₃)⁴` with holomorphy, `λ ∉ {0, 1}`, `λ(τ + 2) = λ(τ)`, `λ(τ + 1) = λ(τ)/(λ(τ) − 1)`, `λ(−1/τ) = 1 − λ(τ)` and the behaviour of `λ(it)` for `t > 0` (§6.1); the bijection of `{τ ∈ ℍ : |Re τ| < 1, |τ − 1/2| > 1/2, |τ + 1/2| > 1/2}` onto `ℂ ∖ ((−∞, 0] ∪ [1, ∞))` with its boundary and cusp values (§6.2); and `F(1/2, 1/2; 1; λ(τ)) = θ₃(τ)²` there (§6.4). Kept here, each in one clause: the η-quotient presentation of λ, its integral `q`-product and its identification with that λ (§2.1); `Γ(2)`-invariance, derived from the imported laws (§2.1); the covering theorem with its deck group and the finite étale covers of `Y(2)` (§2.2), which SpecialFunctionsTheta does not state; and the integral series form `K₀(λ/16) = θ₃²` with `K₀ = Σ C(2n, n)² xⁿ`, the character `χ₋₄(d)`, the differential equation and the monodromy (§2.6).
 
 The cohomological content of CDT §4.5 (and Lemma 4.5.12, whose statement the leveraging argument does not use) belongs to ModularCurvesPartII §15.9. The questions of CDT §7.4 on logarithmic vector-valued forms, archimedean deficient places and finiteness of deficient-place sets are not theorems and are not stated.
 
@@ -94,7 +94,7 @@ FuchsianOrbifolds Layer 2 item 3 (Poincaré's polygon theorem, its fundamental-s
 
 ### From TauCetiRoadmap.SpecialFunctionsTheta
 
-§2.2: the theta-constant products `θ₂ = 2q^(1/4) ∏_{n≥1}(1 − q^(2n))(1 + q^(2n))²`, `θ₃ = ∏_{n≥1}(1 − q^(2n))(1 + q^(2n−1))²` and `θ₄ = ∏_{n≥1}(1 − q^(2n))(1 − q^(2n−1))²`, so that none of them vanishes on `ℍ`. §4.1: Jacobi's quartic identity `θ₃⁴ = θ₂⁴ + θ₄⁴`. §5.1: `λ = k² = (θ₂/θ₃)⁴`, `k′² = (θ₄/θ₃)⁴ = 1 − λ`; λ is holomorphic on `ℍ`, omits `0` and `1`, and satisfies `λ(τ + 2) = λ(τ)`, `λ(τ + 1) = λ(τ)/(λ(τ) − 1)` and `λ(−1/τ) = 1 − λ(τ)`; `t ↦ λ(it)` is real, in `(0, 1)`, continuous on `t > 0`, tends to 0 as `t → ∞` and to 1 as `t → 0+`, and takes each value in `(0, 1)` once (Jacobi's inversion, proved with §5.2 there). §5.3: λ maps `F = {|Re τ| < 1, |τ − 1/2| > 1/2, |τ + 1/2| > 1/2}` bijectively onto `ℂ ∖ ((−∞, 0] ∪ [1, ∞))`; it is real and negative on the lines `Re τ = ±1` and real and greater than 1 on the semicircles `|τ ± 1/2| = 1/2`; it tends to 0, 1 and ∞ at the cusps `∞`, `0` and `±1`; and `F(1/2, 1/2; 1; λ(τ)) = θ₃(τ)²` on F with the principal branch of Gauss's function. Assumed: the theta constants are that roadmap's `θⱼ(0|τ)` with the nome `q = exp(πiτ)` and `q^α = exp(πiατ)`, the q of this roadmap (the Check of §2.1 at `τ = 0.3 + 0.8i` pins it), and its statements for complex τ with `Im τ > 0` are statements on `ℍ`.
+§4.2: the theta-constant products `θ₂ = 2q^(1/4) ∏_{n≥1}(1 − q^(2n))(1 + q^(2n))²`, `θ₃ = ∏_{n≥1}(1 − q^(2n))(1 + q^(2n−1))²` and `θ₄ = ∏_{n≥1}(1 − q^(2n))(1 − q^(2n−1))²`, so that none of them vanishes on `ℍ`. §2.2: Jacobi's quartic identity `θ₃⁴ = θ₂⁴ + θ₄⁴`. §6.1: `λ = k² = (θ₂/θ₃)⁴`, `k′² = (θ₄/θ₃)⁴ = 1 − λ`; λ is holomorphic on `ℍ`, omits `0` and `1`, and satisfies `λ(τ + 2) = λ(τ)`, `λ(τ + 1) = λ(τ)/(λ(τ) − 1)` and `λ(−1/τ) = 1 − λ(τ)`; `t ↦ λ(it)` is real, in `(0, 1)`, continuous on `t > 0`, tends to 0 as `t → ∞` and to 1 as `t → 0+`, and takes each value in `(0, 1)` once (Jacobi's inversion, also §6.1 there, stated for the modulus `k`, which is positive on the imaginary axis). §6.2: λ maps `F = {τ ∈ ℍ : |Re τ| < 1, |τ − 1/2| > 1/2, |τ + 1/2| > 1/2}` bijectively onto `ℂ ∖ ((−∞, 0] ∪ [1, ∞))`; it is real and negative on the lines `Re τ = ±1` and real and greater than 1 on the semicircles `|τ ± 1/2| = 1/2`; it tends to 0, 1 and ∞ at the cusps `∞`, `0` and `±1`. §6.4: `F(1/2, 1/2; 1; λ(τ)) = θ₃(τ)²` on F with the principal branch of Gauss's function. Assumed: the theta constants are that roadmap's `θⱼ(0|τ)` with the nome `q = exp(πiτ)` and `q^α = exp(πiατ)`, the q of this roadmap (the Check of §2.1 at `τ = 0.3 + 0.8i` pins it), and its statements for complex τ with `Im τ > 0` are statements on `ℍ`.
 
 ### From TauCetiRoadmap.ModularCurvesPartII
 
@@ -267,7 +267,7 @@ Let H have finite index, contain `−I`, and have `L(H) = N`. For a prime p and 
 
 ### Dependencies
 
-QSeriesPartitionsAndMockModularForms §8.1; FuchsianOrbifolds Layer 3; Mathlib's modular-form, `q`-expansion and congruence-subgroup API; Tau Ceti cusp widths; KSV10 for §1.8.
+QSeriesPartitionsAndMockModularForms §8.1; FuchsianOrbifolds Layer 3; Mathlib's modular-form, Δ, `q`-expansion and congruence-subgroup API, `MeromorphicAt`, `NumberField.RingOfIntegers` and `Subgroup.normalCore`; Tau Ceti cusp widths and `CongruenceSubgroup.Gamma_le_Gamma_of_dvd`; KSV10 for §1.8.
 
 ## Layer 2: The modular λ coordinate
 
@@ -275,16 +275,16 @@ This layer presents λ as a quotient of Dedekind η functions and identifies it 
 
 ### 2.1 The modular λ function
 
-Define `modularLambda τ = 16 (η(τ/2) η(2τ)² / η(τ)³)⁸` from Mathlib's `ModularForm.eta` (CDT, (1.0.2), p.628; §1.1.3, p.631; §7.4.2, p.693). On `ℍ` the denominator does not vanish (`ModularForm.eta_ne_zero`). Prove the product formula `x = λ/16 = q ∏_{n≥1} ((1 + q^(2n))/(1 + q^(2n−1)))⁸`, by separating even and odd factors of the η products and applying Euler's identity `∏_{n≥1}(1 + qⁿ) · ∏_{n≥1}(1 − q^(2n−1)) = 1`. Prove that on `ℍ` this η quotient is the modular function `λ = (θ₂/θ₃)⁴` of SpecialFunctionsTheta §5.1, where `θ₃(τ) = Σ q^(n²)`, `θ₄(τ) = θ₃(τ + 1)` and `θ₂(τ) = Σ q^((n+1/2)²)` are that roadmap's theta constants: by its theta-constant products (§2.2 there), `(θ₂/θ₃)⁴/16` is the product above. Through this identification λ is holomorphic on `ℍ`, omits `0` and `1` there, satisfies `1 − λ = (θ₄/θ₃)⁴`, `λ(τ + 2) = λ(τ)`, `λ(τ + 1) = λ(τ)/(λ(τ) − 1)` and `λ(−1/τ) = 1 − λ(τ)` (SpecialFunctionsTheta §§4.1, 5.1), and tends to `0, 1, ∞` at the cusps `∞, 0, 1` of `Γ(2)` (SpecialFunctionsTheta §5.3). Prove invariance under `Γ(2)`. The group is generated by `−I`, `T²` and `[[1, 0], [2, 1]] = ST⁻²S⁻¹`: left multiplication by powers of `T²` and of `[[1, 0], [2, 1]]` changes the first column `(a, c)`, with a odd and c even, to `(a + 2kc, c)` and `(a, c + 2ka)`, and division with least remainder lowers `max(|a|, |c|)` until `c = 0`, leaving `±T^(2m)`. The law `λ(τ + 2) = λ(τ)` gives invariance under `T²`, and `λ(−1/τ) = 1 − λ(τ)` gives `λ(ST⁻²S⁻¹τ) = 1 − λ(T⁻²S⁻¹τ) = 1 − λ(S⁻¹τ) = λ(τ)`.
+Define `modularLambda τ = 16 (η(τ/2) η(2τ)² / η(τ)³)⁸` from Mathlib's `ModularForm.eta` (CDT, (1.0.2), p.628; §1.1.3, p.631; §7.4.2, p.693). On `ℍ` the denominator does not vanish (`ModularForm.eta_ne_zero`). Prove the product formula `x = λ/16 = q ∏_{n≥1} ((1 + q^(2n))/(1 + q^(2n−1)))⁸`, by separating even and odd factors of the η products and applying Euler's identity `∏_{n≥1}(1 + qⁿ) · ∏_{n≥1}(1 − q^(2n−1)) = 1`. Prove that on `ℍ` this η quotient is the modular function `λ = (θ₂/θ₃)⁴` of SpecialFunctionsTheta §6.1, where `θ₃(τ) = Σ q^(n²)`, `θ₄(τ) = θ₃(τ + 1)` and `θ₂(τ) = Σ q^((n+1/2)²)` are that roadmap's theta constants: by its theta-constant products (§4.2 there), `(θ₂/θ₃)⁴/16` is the product above. Through this identification λ is holomorphic on `ℍ`, omits `0` and `1` there, satisfies `1 − λ = (θ₄/θ₃)⁴`, `λ(τ + 2) = λ(τ)`, `λ(τ + 1) = λ(τ)/(λ(τ) − 1)` and `λ(−1/τ) = 1 − λ(τ)` (SpecialFunctionsTheta §§2.2, 6.1), and tends to `0, 1, ∞` at the cusps `∞, 0, 1` of `Γ(2)` (SpecialFunctionsTheta §6.2). Prove invariance under `Γ(2)`. The group is generated by `−I`, `T²` and `[[1, 0], [2, 1]] = ST⁻²S⁻¹`: left multiplication by powers of `T²` and of `[[1, 0], [2, 1]]` changes the first column `(a, c)`, with a odd and c even, to `(a + 2kc, c)` and `(a, c + 2ka)`, and division with least remainder lowers `max(|a|, |c|)` until `c = 0`, leaving `±T^(2m)`. The law `λ(τ + 2) = λ(τ)` gives invariance under `T²`, and `λ(−1/τ) = 1 − λ(τ)` gives `λ(ST⁻²S⁻¹τ) = 1 − λ(T⁻²S⁻¹τ) = 1 − λ(S⁻¹τ) = λ(τ)`.
 
-*Needs:* Mathlib `ModularForm.eta`, `ModularForm.eta_ne_zero`, `jacobiTheta`, `jacobiTheta₂`, `CongruenceSubgroup.Gamma`; Tau Ceti `TauCeti.tprod_one_add_pow_mul_tprod_one_sub_pow_odd`; SpecialFunctionsTheta §§2.2, 4.1, 5.1, 5.3.
+*Needs:* Mathlib `ModularForm.eta`, `ModularForm.eta_ne_zero`, `jacobiTheta`, `jacobiTheta₂`, `CongruenceSubgroup.Gamma`; Tau Ceti `TauCeti.tprod_one_add_pow_mul_tprod_one_sub_pow_odd`; SpecialFunctionsTheta §§2.2, 4.2, 6.1, 6.2.
 
 API:
 
 - `modularLambda` is 16 times the eighth power of the displayed η quotient, and it is holomorphic on `ℍ`.
-- On `ℍ`, `modularLambda` is the λ of SpecialFunctionsTheta §5.1; hence `λ = (θ₂/θ₃)⁴` and `1 − λ = (θ₄/θ₃)⁴`.
-- `λ(γτ) = λ(τ)` for `γ ∈ Γ(2)`, proved here; `λ(τ + 1) = λ(τ)/(λ(τ) − 1)` and `λ(−1/τ) = 1 − λ(τ)`, imported from SpecialFunctionsTheta §5.1.
-- λ takes no value in `{0, 1}` on `ℍ` (SpecialFunctionsTheta §5.1).
+- On `ℍ`, `modularLambda` is the λ of SpecialFunctionsTheta §6.1; hence `λ = (θ₂/θ₃)⁴` and `1 − λ = (θ₄/θ₃)⁴`.
+- `λ(γτ) = λ(τ)` for `γ ∈ Γ(2)`, proved here; `λ(τ + 1) = λ(τ)/(λ(τ) − 1)` and `λ(−1/τ) = 1 − λ(τ)`, imported from SpecialFunctionsTheta §6.1.
+- λ takes no value in `{0, 1}` on `ℍ` (SpecialFunctionsTheta §6.1).
 - The expansion of `x = λ/16` in `q = exp(πiτ)` is the integral product above, and `UpperHalfPlane.qExpansion 2 x` is that product's coefficient sequence.
 
 **Checks.**
@@ -293,15 +293,15 @@ API:
 - `x = q − 8q² + 44q³ − 192q⁴ + 718q⁵ + O(q⁶)`; a normalization by `16q` would have linear coefficient 16, which `x` does not.
 - `λ(τ + 1) = λ/(λ − 1)`, not `λ`: λ is not `SL₂(ℤ)`-invariant, so it is not a function of j alone. To second order, `λ(τ + 1) = −16q − 128q² + ⋯`, matching `λ/(λ − 1) = −λ − λ² + ⋯`.
 - `UpperHalfPlane.qExpansion 2` of x has coefficient 1 at `n = 1`; that of λ has 16.
-- At `τ = 0.3 + 0.8i` the η quotient is `0.7660029 + 0.4097863i`, the value SpecialFunctionsTheta §5.1 records for its λ, and at `τ = 1.3 + 0.8i` it is `−0.0508248 − 1.8402518i = λ/(λ − 1)`. With the nome `exp(2πiτ)` in place of `exp(πiτ)`, its λ at τ would be the η quotient at `2τ`, here `λ(0.6 + 1.6i) ≈ −0.0278242 + 0.1029613i`, which differs: the two roadmaps share the nome `q = exp(πiτ)`.
+- At `τ = 0.3 + 0.8i` the η quotient is `0.7660029 + 0.4097863i`, the value SpecialFunctionsTheta §6.1 records for its λ, and at `τ = 1.3 + 0.8i` it is `−0.0508248 − 1.8402518i = λ/(λ − 1)`. With the nome `exp(2πiτ)` in place of `exp(πiτ)`, its λ at τ would be the η quotient at `2τ`, here `λ(0.6 + 1.6i) ≈ −0.0278242 + 0.1029613i`, which differs: the two roadmaps share the nome `q = exp(πiτ)`.
 
 ### 2.2 The λ covering and its cusp values
 
 `modularLambda_covering`: λ maps `ℍ` onto `ℂ ∖ {0, 1}`, it is a covering map onto that set, and `λ(τ) = λ(τ′)` exactly when `τ′ = γτ` for some `γ ∈ Γ(2)`. Hence λ is a holomorphic universal covering with deck group `Γ(2)/±I`, and it extends to a biholomorphism `X(2) ≅ ℙ¹` sending the cusps `∞, 0, 1` to `0, 1, ∞`. For every finite-index `H ≤ Γ(2)` containing `−I`, the map `Y(H) → Y(2) ≅ ℂ ∖ {0, 1}` is finite étale and the compactified map is branched only above `0, 1, ∞` (CDT, p.628, and proof of Proposition 3.0.1, p.650).
 
-*Proof sketch.* Let `F = {|Re τ| < 1, |τ − 1/2| > 1/2, |τ + 1/2| > 1/2}`. SpecialFunctionsTheta §5.3 maps F bijectively onto `ℂ ∖ ((−∞, 0] ∪ [1, ∞))`. By SpecialFunctionsTheta §5.1, `t ↦ λ(it)` is a bijection of `(0, ∞)` onto `(0, 1)`, so the laws of §2.1 map the line `Re τ = 1` bijectively onto `(−∞, 0)`, by `λ(1 + it) = u/(u − 1)` with `u = λ(it)`, and the semicircle `|τ − 1/2| = 1/2`, the image of the line `Re τ = −1` under S, bijectively onto `(1, ∞)`. The closure of F is an ideal quadrilateral with vertices `−1, 0, 1, ∞`, side-paired by `T²` and `[[1, 0], [2, 1]]`, whose vertex cycles are parabolic; by Poincaré's polygon theorem (FuchsianOrbifolds Layer 2 item 3) it is a fundamental domain of the group these generate, which is `Γ(2)/±I` (§2.1). So the set D formed by F, the line `Re τ = 1` and the semicircle `|τ − 1/2| = 1/2` meets every `Γ(2)`-orbit in `ℍ` exactly once, and λ maps D bijectively onto `ℂ ∖ {0, 1}`; with the `Γ(2)`-invariance of §2.1 this gives the range and the fibre statement. The induced map `X(2) → ℙ¹` has degree one, hence is biholomorphic (FuchsianOrbifolds Layer 5). `Γ(2)/±I` acts freely on `ℍ` because `Γ(2)` has no elliptic elements, so `ℍ → Y(2)` is a covering, and `ℍ` is simply connected (UniversalCovers Stage 2). Finite covers of `ℂ ∖ {0, 1}` correspond to finite-index subgroups (BelyiMaps Layer 6).
+*Proof sketch.* Let `F = {τ ∈ ℍ : |Re τ| < 1, |τ − 1/2| > 1/2, |τ + 1/2| > 1/2}`. By SpecialFunctionsTheta §6.2, λ maps F bijectively onto `ℂ ∖ ((−∞, 0] ∪ [1, ∞))`. By SpecialFunctionsTheta §6.1, `t ↦ λ(it)` is a bijection of `(0, ∞)` onto `(0, 1)`, so the laws of §2.1 map the line `Re τ = 1` bijectively onto `(−∞, 0)`, by `λ(1 + it) = u/(u − 1)` with `u = λ(it)`, and the semicircle `|τ − 1/2| = 1/2`, the image of the line `Re τ = −1` under S, bijectively onto `(1, ∞)`. The closure of F is an ideal quadrilateral with vertices `−1, 0, 1, ∞`, side-paired by `T²` and `[[1, 0], [2, 1]]`, whose vertex cycles are parabolic; by Poincaré's polygon theorem (FuchsianOrbifolds Layer 2 item 3) it is a fundamental domain of the group these generate, which is `Γ(2)/±I` (§2.1). So the set D formed by F, the line `Re τ = 1` and the semicircle `|τ − 1/2| = 1/2` meets every `Γ(2)`-orbit in `ℍ` exactly once, and λ maps D bijectively onto `ℂ ∖ {0, 1}`; with the `Γ(2)`-invariance of §2.1 this gives the range and the fibre statement. The induced map `X(2) → ℙ¹` has degree one, hence is biholomorphic (FuchsianOrbifolds Layer 5). `Γ(2)/±I` acts freely on `ℍ` because `Γ(2)` has no elliptic elements, so `ℍ → Y(2)` is a covering, and `ℍ` is simply connected (UniversalCovers Stage 2). Finite covers of `ℂ ∖ {0, 1}` correspond to finite-index subgroups (BelyiMaps Layer 6).
 
-*Needs:* §2.1; SpecialFunctionsTheta §§5.1, 5.3; FuchsianOrbifolds Layer 2 item 3, Layers 4–5; UniversalCovers Stage 2; BelyiMaps Layer 6; Mathlib `IsCoveringMapOn`.
+*Needs:* §2.1; SpecialFunctionsTheta §§6.1, 6.2; FuchsianOrbifolds Layer 2 item 3, Layers 4–5; UniversalCovers Stage 2; BelyiMaps Layer 6; Mathlib `IsCoveringMapOn`.
 
 ### 2.3 Integral λ reparametrization
 
@@ -329,19 +329,19 @@ For `N ≥ 1` and `t = q^(1/N)` there is a unique `x_N(t) ∈ t + t²ℚ[[t]]` w
 
 ### 2.6 Jacobi's hypergeometric identity with its character
 
-Let `K₀(x) = Σ_{n≥0} C(2n, n)² xⁿ = ₂F₁(1/2, 1/2; 1; 16x)`, the series of Gauss's function written with `(1/2)_n²/(n!)² = C(2n, n)²/16ⁿ`. Then `K₀(x(τ)) = θ₃(τ)²` as power series in q, hence as functions for `Im τ` large; this is the identity `F(1/2, 1/2; 1; λ(τ)) = θ₃(τ)²` of SpecialFunctionsTheta §5.3 written in the integral variable `x = λ/16`. It holds near the cusp `∞` only, not wherever `|λ(τ)| < 1`: λ is `Γ(2)`-invariant and `θ₃²` is not. The function `θ₃²` has weight 1 on `Γ(2)` with the character `χ(γ) = χ₋₄(d_γ)` and is a trivial-character form on `H′ = {γ ∈ Γ(2) : d_γ ≡ 1 mod 4}`. The series `K₀` is integral, is transcendental over `ℚ(x)`, and solves `x(1 − 16x)y″ + (1 − 32x)y′ − 4y = 0`, whose local monodromy at `0` is unipotent and nontrivial (CDT, (1.1.4)–(1.1.5), p.631; Remark 7.2.3 and (7.2.4), p.688). CDT treats `θ₃²` as a weight-one form with trivial character on `Γ(2)`; since `−I ∈ Γ(2)`, no nonzero odd-weight form has trivial character there, and the character `χ₋₄(d)` is required.
+Let `K₀(x) = Σ_{n≥0} C(2n, n)² xⁿ = ₂F₁(1/2, 1/2; 1; 16x)`, the series of Gauss's function written with `(1/2)_n²/(n!)² = C(2n, n)²/16ⁿ`. Then `K₀(x(τ)) = θ₃(τ)²` as power series in q, hence as functions for `Im τ` large; this is the identity `F(1/2, 1/2; 1; λ(τ)) = θ₃(τ)²` of SpecialFunctionsTheta §6.4 written in the integral variable `x = λ/16`. It holds near the cusp `∞` only, not wherever `|λ(τ)| < 1`: λ is `Γ(2)`-invariant and `θ₃²` is not. The function `θ₃²` has weight 1 on `Γ(2)` with the character `χ(γ) = χ₋₄(d_γ)` and is a trivial-character form on `H′ = {γ ∈ Γ(2) : d_γ ≡ 1 mod 4}`. The series `K₀` is integral, is transcendental over `ℚ(x)`, and solves `x(1 − 16x)y″ + (1 − 32x)y′ − 4y = 0`, whose local monodromy at `0` is unipotent and nontrivial (CDT, (1.1.4)–(1.1.5), p.631; Remark 7.2.3 and (7.2.4), p.688). CDT treats `θ₃²` as a weight-one form with trivial character on `Γ(2)`; since `−I ∈ Γ(2)`, no nonzero odd-weight form has trivial character there, and the character `χ₋₄(d)` is required.
 
-*Proof sketch.* At points of the region of SpecialFunctionsTheta §5.3 with `Im τ` large, `|λ(τ)| < 1` and the principal branch of `F(1/2, 1/2; 1; ·)` is its power series, so SpecialFunctionsTheta §5.3 gives `K₀(x(τ)) = θ₃(τ)²` there; both sides are holomorphic functions of q near `0`, so the identity holds coefficientwise. Square the `S` and `T²` laws of `θ₃` (Mathlib `jacobiTheta_S_smul`, `jacobiTheta_T_sq_smul`), keeping `χ₋₄(d)`. The coefficient recurrence `(n + 1)² a_{n+1} = 4(2n + 1)² a_n` is the differential equation; its second solution has a logarithmic term at `0`, which gives infinite monodromy.
+*Proof sketch.* At points of the fundamental region of `Γ(2)` in SpecialFunctionsTheta §6.2 with `Im τ` large, `|λ(τ)| < 1` and the principal branch of `F(1/2, 1/2; 1; ·)` is its power series, so SpecialFunctionsTheta §6.4 gives `K₀(x(τ)) = θ₃(τ)²` there; both sides are holomorphic functions of q near `0`, so the identity holds coefficientwise. Square the `S` and `T²` laws of `θ₃` (Mathlib `jacobiTheta_S_smul`, `jacobiTheta_T_sq_smul`), keeping `χ₋₄(d)`. The coefficient recurrence `(n + 1)² a_{n+1} = 4(2n + 1)² a_n` is the differential equation; its second solution has a logarithmic term at `0`, which gives infinite monodromy.
 
-*Needs:* §§2.1–2.2; SpecialFunctionsTheta §5.3; Mathlib `jacobiTheta`, `jacobiTheta_S_smul`, `jacobiTheta_T_sq_smul`; Tau Ceti `TauCeti.char_neg_one_of_modFormCharSpace_ne_bot`.
+*Needs:* §§2.1–2.2; SpecialFunctionsTheta §§6.2, 6.4; Mathlib `jacobiTheta`, `jacobiTheta_S_smul`, `jacobiTheta_T_sq_smul`; Tau Ceti `TauCeti.char_neg_one_of_modFormCharSpace_ne_bot`.
 
 ### 2.7 Two modular uniformizations
 
 With ConformalMappingPartII's Cayley coordinate C, the function `F₂(z) = 1 − 2λ(C(z))` is a pointed universal covering `𝔻 → ℂ ∖ {±1}` with `F₂(0) = 0`, `F₂′(0) > 0` and cusp limit 1 at `z → 1`; hence it is the normalized covering `F_2` of ConformalMappingPartII §1.8, and `|F₂′(0)| = γ₂ = Γ(1/4)⁴/(4π²)` by ConformalMappingPartII §5.5. The η quotient of CDT Example 5.1.22 at `N = 3` agrees with the normalized covering `F_3` after a rotation of the disc. Among `N ≥ 2`, `ℂ ∖ μ_N` is biholomorphic to `Y(N)` only for `N = 2, 3` (CDT, Example 5.1.22, p.673; Theorem 5.1.4, p.668).
 
-*Proof sketch.* Compose λ with C and the affine map `u ↦ 1 − 2u`. On the imaginary axis λ is real and decreases from 1 to 0 (SpecialFunctionsTheta §§5.1–5.2: `t ↦ λ(it)` is continuous and injective with limit 1 at `0+` and 0 at `∞`), and `λ′(i) ≠ 0` because λ is a covering (§2.2), so `λ′(i) = ic` with `c > 0`, and `F₂′(0) = −2λ′(i)C′(0) = −2(ic)(2i) = 4c > 0`. For the last assertion compare punctures and genus: `ℂ ∖ μ_N` is a sphere minus `N + 1` points, `Y(2)` and `Y(3)` are spheres minus 3 and 4 points with matching cross-ratio, `Y(4)` and `Y(5)` have 6 and 12 cusps, and `Y(N)` has positive genus for `N ≥ 6`.
+*Proof sketch.* Compose λ with C and the affine map `u ↦ 1 − 2u`. On the imaginary axis λ is real and decreases from 1 to 0 (SpecialFunctionsTheta §6.1: `t ↦ λ(it)` is continuous and injective with limit 1 at `0+` and 0 at `∞`), and `λ′(i) ≠ 0` because λ is a covering (§2.2), so `λ′(i) = ic` with `c > 0`, and `F₂′(0) = −2λ′(i)C′(0) = −2(ic)(2i) = 4c > 0`. For the last assertion compare punctures and genus: `ℂ ∖ μ_N` is a sphere minus `N + 1` points, `Y(2)` and `Y(3)` are spheres minus 3 and 4 points with matching cross-ratio, `Y(4)` and `Y(5)` have 6 and 12 cusps, and `Y(N)` has positive genus for `N ≥ 6`.
 
-*Needs:* §§2.1–2.2; SpecialFunctionsTheta §§5.1–5.2; ConformalMappingPartII §§1.8, 5.5; FuchsianOrbifolds Layer 5.
+*Needs:* §§2.1–2.2; SpecialFunctionsTheta §6.1; ConformalMappingPartII §§1.8, 5.5; FuchsianOrbifolds Layer 5.
 
 ### Examples
 
@@ -356,7 +356,7 @@ With ConformalMappingPartII's Cayley coordinate C, the function `F₂(z) = 1 −
 
 ### Dependencies
 
-Layer 1; Mathlib η, θ and covering-map API; Tau Ceti Euler's identity (`TauCeti.tprod_one_add_pow_mul_tprod_one_sub_pow_odd`); SpecialFunctionsTheta §§2.2, 4.1, 5.1–5.3; UniversalCovers Stage 2; FuchsianOrbifolds Layer 2 item 3, Layers 4–5; BelyiMaps Layer 6; ConformalMappingPartII §§1.8, 5.5.
+Layer 1; Mathlib η, θ, congruence-subgroup and covering-map API; Tau Ceti Euler's identity (`TauCeti.tprod_one_add_pow_mul_tprod_one_sub_pow_odd`) and parity (`TauCeti.char_neg_one_of_modFormCharSpace_ne_bot`); SpecialFunctionsTheta §§2.2, 4.2, 6.1, 6.2, 6.4; UniversalCovers Stage 2; FuchsianOrbifolds Layer 2 item 3, Layers 4–5; BelyiMaps Layer 6; ConformalMappingPartII §§1.8, 5.5.
 
 ## Layer 3: Bounded-denominator fields and holonomy rank
 
@@ -483,7 +483,7 @@ Let `F_N : 𝔻 → ℂ ∖ μ_N` be the normalized coverings of ConformalMappin
 
 ### Dependencies
 
-Layers 1–2; Tau Ceti Laurent `q`-expansions (`TauCeti.UpperHalfPlane.laurentQExpansion`); AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); BelyiMaps Layer 9; DiophantineApproximationAndTranscendencePartII §§4.1–4.5, 4.8; ConformalMappingPartII §§0.5, 1.4, 1.8, 5.5, 5.8.
+Layers 1–2; Tau Ceti Laurent `q`-expansions (`TauCeti.UpperHalfPlane.laurentQExpansion`); AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); BelyiMaps Layer 9; DiophantineApproximationAndTranscendencePartII §§4.1–4.5, 4.8; ConformalMappingPartII §§0.5, 1.4, 1.8, 5.5, 5.8; Mathlib `LaurentSeries`, `Subfield.closure` and `CongruenceSubgroup.Gamma`.
 
 ## Layer 4: The nonabelian Ihara lemma and the generation identity
 
@@ -578,7 +578,7 @@ If there is a constant C with `[R₂N : ℚ(λ)] ≤ C N³ log(2N)` for every `N
 
 ### Dependencies
 
-Layers 1–4; ModularCurvesPartII §§5.14, 6.4, 6.5, 8.1; FuchsianOrbifolds Layer 5; Mathlib Chebyshev bounds and `CongruenceSubgroup.Gamma0`.
+Layers 1–4; ModularCurvesPartII §§5.14, 6.4, 6.5, 8.1 and gap:udc-rational-cusp-of-twisted-full-level; FuchsianOrbifolds Layer 5; Mathlib Chebyshev bounds and `CongruenceSubgroup.Gamma0`.
 
 ## Layer 6: The unbounded denominators theorem
 
@@ -667,7 +667,7 @@ For `n ≥ 1`, the Fermat cover `uⁿ + vⁿ = 1` over the λ-line with `λ = u�
 
 ### Examples
 
-- `u^(1/5) = 1 − (24/5)q + (348/25)q² − (4544/125)q³ + (52854/625)q⁴ − ⋯`: denominators `5, 25, 125, 625`. `u^(1/24) = ∏_{m odd}(1 + q^m)^(−1) = 1 − q + q² − 2q³ + 2q⁴ − 3q⁵ + ⋯` is integral.
+- With `u = ∏_{m odd}(1 + q^m)^(−24)` as in §6.8 (not the Fermat coordinate of §6.9), `u^(1/5) = 1 − (24/5)q + (348/25)q² − (4544/125)q³ + (52854/625)q⁴ − ⋯`: denominators `5, 25, 125, 625`. `u^(1/24) = ∏_{m odd}(1 + q^m)^(−1) = 1 − q + q² − 2q³ + 2q⁴ − 3q⁵ + ⋯` is integral.
 - 2-adic valuations of the first coefficients of `(1 − 16x)^(1/n)`: for `n = 8`, `1, 1, 2, 1, 2, 2, 3, 1, 2` (bounded); for `n = 16`, `0, −1, −1, −3, −3, −4, −4, −7, −7` (unbounded). For `n = 3` the 3-adic valuations are `−1, −2, −4, −5, −6, −8, …`.
 - `j^(1/3)` has `Q`-exponent `−1/3`, not `q`-exponent; in `q = Q^(1/2)` the leading term is `q^(−2/3)`.
 - §6.5 for `f = √2 Δ⁻¹`, of weight −12 on `SL₂(ℤ)`, with `h = 1`: the Laurent coefficients are `√2` times those of `Δ⁻¹ = Q⁻¹ + 24 + 324Q + ⋯`, so they lie in `ℚ(√2)`, and the conjugate under `√2 ↦ −√2` is the expansion of the weak form `−√2 Δ⁻¹`. Mathlib's `UpperHalfPlane.qExpansion 1` cannot carry this test, since the expansion has the pole term `√2 Q⁻¹`.
@@ -675,7 +675,7 @@ For `n ≥ 1`, the Fermat cover `uⁿ + vⁿ = 1` over the λ-line with `λ = u�
 
 ### Dependencies
 
-Layers 1–5; Tau Ceti `TauCeti.UpperHalfPlane.laurentQExpansion`; ConformalMappingPartII §§5.5, 5.8, 9.19; QSeriesPartitionsAndMockModularForms §5.2; AlgebraicModularFormsAndSerreWeights §§1.5, 2.9 (Layers R15.1–R15.2); FuchsianOrbifolds Layers 2, 5, 6; BelyiMaps Layers 6, 9; ModularForms, Worked examples.
+Layers 1–5; Tau Ceti `TauCeti.UpperHalfPlane.laurentQExpansion`; ConformalMappingPartII §§5.5, 5.8, 9.19; QSeriesPartitionsAndMockModularForms §5.2; AlgebraicModularFormsAndSerreWeights §§1.5, 2.9 (Layers R15.1–R15.2); FuchsianOrbifolds Layers 2, 5, 6; BelyiMaps Layers 6, 9; ModularForms, Worked examples; Mathlib η, Δ, `q`-expansion, boundedness-at-`∞` and congruence-subgroup API, `IsAlgebraic` and `IntermediateField`.
 
 ## Layer 7: Differential equations and vector-valued forms
 
@@ -848,7 +848,7 @@ Let h be a nonzero congruence form of weight `k ≥ 1` on `Γ′`, put `G = Γ�
 
 ### Dependencies
 
-Layers 1–3 and 6; DiophantineApproximationAndTranscendencePartII §§4.1, 4.2, 4.5; DiophantineApproximationAndTranscendence §§5.2–5.3; ConformalMappingPartII §§0.3, 0.5, 1.8, 5.8; QSeriesPartitionsAndMockModularForms §§5.2, 8.1, 8.4a; ModularForms Layer 0; UniversalCovers Stage 2; FuchsianOrbifolds Layers 2, 6.
+Layers 1–3 and 6; DiophantineApproximationAndTranscendencePartII §§4.1, 4.2, 4.5; DiophantineApproximationAndTranscendence §§5.2–5.3 and gap:udc-bombieri-andre-katz; ConformalMappingPartII §§0.3, 0.5, 1.8, 5.8; QSeriesPartitionsAndMockModularForms §§5.2, 8.1, 8.4a; ModularForms Layer 0; UniversalCovers Stage 2; FuchsianOrbifolds Layers 2, 6; Mathlib `Module.End.IsSemisimple`, `ModularForm.discriminant` and `ModularForm.discriminant_ne_zero`; Tau Ceti `TauCeti.char_neg_one_of_modFormCharSpace_ne_bot`.
 
 ## Layer 8: Quasimodular forms and arithmetic growth
 
@@ -969,7 +969,7 @@ API of deficiency:
 
 ### Dependencies
 
-Layers 1, 2, 6 and 7; QSeriesPartitionsAndMockModularForms §8.4a; ModularForms Layers 0 and 4; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); AutomorphicGaloisRepresentations §4.2; GeometryOfNumbersAndQuadraticArithmetic §4.3; Mathlib derivative and Eisenstein API, `Algebra.adjoin`, `NumberField.FinitePlace` and `NumberField.InfinitePlace`.
+Layers 1, 2, 6 and 7; QSeriesPartitionsAndMockModularForms §8.4a; ModularForms Layers 0 and 4; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); AutomorphicGaloisRepresentations §4.2; GeometryOfNumbersAndQuadraticArithmetic §4.3; Mathlib graded ring of modular forms (`ModularForm.instGCommRing`), η, Δ, θ, `q`-expansion, boundedness-at-`∞`, derivative and Eisenstein API, `Algebra.adjoin`, `NumberField.FinitePlace` and `NumberField.InfinitePlace`.
 
 ## Layer 9: The arithmetic fundamental group of the cuspidal model
 
@@ -1019,7 +1019,7 @@ For `N ≥ 1`, a number field `K ⊇ ℚ(μ_N)` and every geometric point η of 
 
 ### Dependencies
 
-Layer 6; ModularCurvesPartII §§5.13, 6.3 and Layer 11; EtaleCohomologyFoundations §F.0.2; BelyiMaps Layer 6.
+Layer 6; ModularCurvesPartII §§5.13, 6.3 and Layer 11, with gap:udc-all-prime-cuspidal-model-of-full-level; EtaleCohomologyFoundations §F.0.2; BelyiMaps Layer 6.
 
 ## Worked examples
 

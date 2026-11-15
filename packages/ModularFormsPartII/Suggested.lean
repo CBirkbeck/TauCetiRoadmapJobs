@@ -84,7 +84,7 @@ theorem wohlfahrt_Gamma_le (G : Subgroup SL(2, ℤ)) (hG : IsCongruenceSubgroup 
 `λ(τ) = 16 (η(τ/2) η(2τ)² / η(τ)³)⁸`, built from the Dedekind η function of Mathlib. With
 `q = exp(πiτ)` it equals `16 q ∏_{n≥1} ((1 + q^(2n)) / (1 + q^(2n−1)))⁸ = 16q − 128q² + ⋯`. On the
 upper half-plane it is the modular function `λ = (θ₂/θ₃)⁴` of the roadmap SpecialFunctionsTheta
-(§5.1, same nome), whose transformation laws `λ(τ + 1) = λ/(λ − 1)`, `λ(−1/τ) = 1 − λ` and
+(§6.1, same nome), whose transformation laws `λ(τ + 1) = λ/(λ − 1)`, `λ(−1/τ) = 1 − λ` and
 omission of `0` and `1` the README imports; it takes the value `1/2` at `τ = i` and tends to
 `0, 1, ∞` at the cusps `∞, 0, 1` of `Γ(2)` (CDT, (1.0.2), p.628). -/
 def modularLambda (τ : ℂ) : ℂ :=
