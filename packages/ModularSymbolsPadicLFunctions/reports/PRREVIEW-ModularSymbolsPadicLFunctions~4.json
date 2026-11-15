@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularSymbolsPadicLFunctions~4",
+  "head": "59250eede07719e3a2aa9cba7b5d4599235017d6",
+  "pr": 968,
+  "folder": "ModularSymbolsPadicLFunctions",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 64 changed lines since 9640032. Previous R01 (pins, build) and R02 (support point of the boundary Dirac distributions in section 3.4) are both repaired. Checked: the transport of the BD action to section 2.2 by f(z) -> f(-z); Psi = Phi - Phi|V_l against BD formulas (29), (39) and Theorem 5.8 at k = -2 (ratio -1/l, U_l = 1/l, U_p = 1, plus sign); the Gamma0(33) stabiliser Check (det 1, points -67/715 and -1/11); the U_l Check (1/l against 2 - 1/l); the untwisted Mellin case against TauCeti.cuspIntegral_mul_pow_zero_infty_eq_L; TauCeti.CoefficientField with char_mem_CoefficientField replacing the removed local definition; CuspForm.twist at the pin; 61 cited library names at the new pins. Gate rerun: all scanners 0, depcheck 0 problems, outside-folder 0; targeted build completes, sorry at the two theorems and the Mathlib module notice the only warnings; lake env lean clean; #check of the changed theorem compared with the README; one-tactic probe closes neither theorem. Pull request text read against the head: no sentence contradicted. Seeded sample checked where it falls in the changed passages (sections 1.2 and 3.4).",
+  "text": "82ad0a728286d3a4"
+ }
+}
