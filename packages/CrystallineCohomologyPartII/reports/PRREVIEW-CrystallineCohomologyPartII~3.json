@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CrystallineCohomologyPartII~3",
+  "head": "f0dfe4d597491b525a3c7cb9b3f5b2b430c700ec",
+  "pr": 2265,
+  "folder": "CrystallineCohomologyPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since f0dfe4d; this round checked the pull request's title and description against the head. Every sentence of the summary and the prose was read against the README sections it describes (1.4, 2.3, 3.6, 5.12, 6.6, 6.9, 6.14, Conventions 4 and 10, Downstream consumers) and against the parent's Not-here sentence at the open CrystallineCohomology head: none contradicted; the pull request adds the folder and removes nothing. The nine open suppliers of the README are the nine of the dependency list; five suppliers are on main. Adversarial rows computed for 6.6 (affine and projective Ax-Katz: 28 zeros over F_4, 2q+1 points, sharpness controls), 1.4 and 5.12. Suggested.lean elaborates with five sorry warnings only; gate passes with every counter 0; depcheck 0 problems; nothing changed outside the folder. D01 deferred, stands. Source independence: changed passages only, none changed.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Two subjects the parent assigns to this Part II are disowned and left without an owner",
+    "where": "CrystallineCohomology, Scope and ownership, the “Not here” sentence naming this Part II",
+    "raised": "PRREVIEW-CrystallineCohomologyPartII~1"
+   }
+  ],
+  "text": "126bade9f0493996"
+ }
+}
