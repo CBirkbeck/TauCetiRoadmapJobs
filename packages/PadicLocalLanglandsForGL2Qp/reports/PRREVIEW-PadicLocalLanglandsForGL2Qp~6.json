@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PadicLocalLanglandsForGL2Qp~6",
+  "head": "84416ad8f7cf72301d99e313cc7883e29df82d78",
+  "pr": 1312,
+  "folder": "PadicLocalLanglandsForGL2Qp",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 84416ad; the previous review had no findings to carry; title and description checked against the head (title, 12 summary-block claims, 5 prose sentences): one P3, the AI-assistance sentence says red-team passes are still to follow, but 19 red-team and 3 review repair commits are on the branch and one has a Claude co-author; description supplier/consumer claims resolved against main, open heads, merge order and the pinned Mathlib (AmiceTransform.lean:76, AlgebraicCycle/Basic.lean:44); 8 adversarial rows for statements the description cites; the 15 seeded targets lie in unchanged text and stand as previously reviewed; gate rerun OK; depcheck 245 roadmaps, 2215 edges, 0 problems; direct elaboration shows only the two sorry warnings; #check of all 4 signatures unchanged; no outside-folder changes.",
+  "text": "0cb42d858da11b7f",
+  "carried": {
+   "from": "84416ad8f7cf72301d99e313cc7883e29df82d78",
+   "head": "90b8808f43587721cd637c083346d70b5527bdcd",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "PadicLocalLanglandsForGL2Qp"
+   ],
+   "outside": true
+  }
+ }
+}
