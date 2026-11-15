@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FaltingsFinitenessAndIsogenyTheorems~4",
+  "head": "19961e7cbb746291133971584d2c26ab6106aa61",
+  "pr": 1004,
+  "folder": "FaltingsFinitenessAndIsogenyTheorems",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 64 changed lines since c882669. Both previous findings (R01 letI in finite_curves_goodReduction, R02 misattributed suppliers of R28.1.9) are repaired. Checked: the seven pinned declarations the changed passages cite (Tau Ceti ramifiedSupport, mem_ramifiedSupport_iff_exists, finite_of_finrank_le_of_ramifiedSupport_subset, Submodule.finrank_eq_finrank, LinearEquiv.extendOfIsLattice; Mathlib Submodule.eq_bot_of_le_smul_of_le_jacobson, OverClass.fromOver) at file and line; adversarial rows with computed values for the changed statement and the changed citations; title and description against this head (no sentence contradicted). The five seeded sample targets lie in untouched text. Gate rerun: all counters 0, OK; lake env lean on Suggested.lean: ten sorry warnings only; depcheck 0 problems, no UPWARD or CYCLE line. Two remarks without requested change (generated depends-on block still lists ArithmeticGaloisDuality; a contract tag at README 318-321).",
+  "text": "5f6bdd9abed0d18d"
+ }
+}
