@@ -1103,7 +1103,7 @@
           ],
           "locator": {
             "source": "WitteMorris2015",
-            "where": "line 2726"
+            "where": "line 18549 to line 18561 (Definitions B1.3, printed pp. 447–448: free action, properly discontinuous action, stabiliser); the precisely invariant neighbourhoods and the description of the free locus are proved here from target 3.4"
           },
           "prerequisites": [
             "target:1.4",
@@ -1367,6 +1367,11 @@
               "name": "n1",
               "kind": "degenerate",
               "statement": "For n = 1 and neat Γ, every Γ_b = ⟨T_τ⟩ and Λ_b = 0."
+            },
+            {
+              "name": "neat_not_adelic_neat",
+              "kind": "non-example",
+              "statement": "n = 2, γ = m·a₂ with m: u ↦ iu, γ(u,v) = (2iu, 4v), lift diag(1/2, i, 2) in Siegel homogeneous coordinates: Ad(γ) has eigenvalues 1 (×3), ±2i, ±i/2, 4, 1/4, no nontrivial root of unity in any power, so ⟨γ⟩ is neat here; but 2i·(i/2) = −1 lies in the group they generate, so Ad(γ) is not neat in the sense of AdelicAlgebraicGroups §4.3 (Neat.IsNeatAut), which implies neatness here and is strictly stronger. For n = 1 the two agree: the Ad eigenvalues λ², 1, 1, λ⁻² generate the cyclic group ⟨λ²⟩."
             }
           ]
         }
@@ -1516,7 +1521,7 @@
           ],
           "locator": {
             "source": "Mok2012",
-            "where": "line 19 to line 26"
+            "where": "line 21 to line 23 (the case n = 1 recalled as classical); the identification is proved here from targets 1.6 and 7.1 and FuchsianOrbifolds Layer 1"
           },
           "prerequisites": [
             "target:1.6",
@@ -1780,7 +1785,7 @@
               "statement": "For |dq|²/|q|² the integral diverges."
             }
           ],
-          "proofSketch": "Split the Poincaré bound into Euclidean and ν parts (ν∧ν = 0) and use finite coordinate projections."
+          "proofSketch": "Split the Poincaré bound into Euclidean part ω_E′ and β = i dwₙ∧dw̄ₙ/(|wₙ|² log²|wₙ|) (β∧β = 0) and use finite coordinate projections."
         }
       ]
     },
@@ -2225,8 +2230,8 @@
             "X_Γ open dense in Y, Y ∖ X_Γ finite"
           ],
           "locator": {
-            "source": "MilneSVI",
-            "where": "line 1690 to line 1694; BaldiUllmo2023 line 513 to line 516"
+            "source": "Mok2012",
+            "where": "line 11 to line 16 (minimality of the Satake–Baily–Borel compactification among normal compactifications, torsion-free arithmetic case); the theorem is proved here from targets 9.4–9.5; MilneSVI line 1690 to line 1694 and BaldiUllmo2023 line 511 to line 516 describe the finite-point compactification, not its uniqueness"
           },
           "prerequisites": [
             "target:9.4",
@@ -2445,7 +2450,7 @@
           "id": "11.3",
           "kind": "construction",
           "name": "BallQuotient.shimuraDatum",
-          "statement": "For arithmetic Γ with ℚ-simple 𝐆: 𝐆^ad(ℝ) = H × C (H the real points of the noncompact ℝ-simple factor, C of the compact ones), 𝐆^ad(ℝ)⁺ = H⁰ × C⁺ with ι: H⁰ ≅ G, p = ι ∘ pr_H ∘ π_ℝ (p and pr_H ∘ π_ℝ have the same kernel, the g with Ad(g) trivial on the noncompact simple ideal 𝔥); h₀(z) = ([diag(1,z/z̄,…,z/z̄)], 1) with diag(1,z/z̄,…,z/z̄) ∈ U(1,n) (the class of diag(z̄,z,…,z) in PGL_{n+1}(ℂ), a matrix in U(1,n) only for |z| = 1); X the full 𝐆^ad(ℝ)-conjugacy class of h₀; (𝐆^ad, X) is a pure Shimura datum (ShimuraVarieties §P.1); the component X⁺ ∋ h₀ is the G-class of h₀ with stabiliser K, so X⁺ ≅ B biholomorphically (ShimuraVarieties §P.2); X = X⁺ for n ≥ 2 and X has two components for n = 1, exchanged by H ∖ G; at every level K_f the component stabilisers Γ_a = 𝐆^ad(ℚ)₊ ∩ aK_f a⁻¹ (ShimuraVarieties §0.1) have arithmetic effective images Γ_a^eff = ι(pr_H(Γ_a)) ⊂ G commensurable with Γ (Γ_a ~ 𝐆^ad(ℤ) ∩ 𝐆^ad(ℝ)⁺ ~ π(𝐆(ℤ) ∩ 𝐆(ℝ)⁰) by 11.1 (c), then apply ι ∘ pr_H and 11.1 (a)), neat for neat K_f, and the level-K_f variety is the finite union of the Γ_a^eff\\X⁺ ≅ Γ_a^eff\\B (ShimuraVarieties §0.5).",
+          "statement": "For arithmetic Γ with ℚ-simple 𝐆: 𝐆^ad(ℝ) = H × C (H the real points of the noncompact ℝ-simple factor, C of the compact ones), 𝐆^ad(ℝ)⁺ = H⁰ × C⁺ with ι: H⁰ ≅ G, p = ι ∘ pr_H ∘ π_ℝ (p and pr_H ∘ π_ℝ have the same kernel, the g with Ad(g) trivial on the noncompact simple ideal 𝔥); h₀(z) = ([diag(1,z/z̄,…,z/z̄)], 1) with diag(1,z/z̄,…,z/z̄) ∈ U(1,n) (the class of diag(z̄,z,…,z) in PGL_{n+1}(ℂ), a matrix in U(1,n) only for |z| = 1); X the full 𝐆^ad(ℝ)-conjugacy class of h₀; (𝐆^ad, X) is a pure Shimura datum (ShimuraVarieties §P.1); the component X⁺ ∋ h₀ is the G-class of h₀ with stabiliser K, so X⁺ ≅ B biholomorphically (ShimuraVarieties §P.2); X = X⁺ for n ≥ 2 and X has two components for n = 1, exchanged by H ∖ G; at every level K_f the component stabilisers Γ_a = 𝐆^ad(ℚ)₊ ∩ aK_f a⁻¹ (ShimuraVarieties §0.1) have arithmetic effective images Γ_a^eff = ι(pr_H(Γ_a)) ⊂ G commensurable with Γ (Γ_a ~ 𝐆^ad(ℤ) ∩ 𝐆^ad(ℝ)⁺ ~ π(𝐆(ℤ) ∩ 𝐆(ℝ)⁰) by 11.1 (c), then apply ι ∘ pr_H and 11.1 (a)), neat in the sense of the Conventions when K_f is neat in the sense of AdelicAlgebraicGroups §4.3 (Neat.IsNeatLevel: eigenvalues of Ad(γ) lie in the torsion-free group generated by those of a faithful representation), and the level-K_f variety is the finite union of the Γ_a^eff\\X⁺ ≅ Γ_a^eff\\B (ShimuraVarieties §0.5).",
           "hypotheses": [
             "Γ arithmetic",
             "𝐆 ℚ-simple"
@@ -2456,6 +2461,7 @@
           },
           "prerequisites": [
             "target:1.1",
+            "target:1.2",
             "target:1.4",
             "target:11.1",
             "roadmap:ShimuraVarieties §P.1",
@@ -2464,7 +2470,8 @@
             "roadmap:ShimuraVarieties §0.4",
             "roadmap:ShimuraVarieties §0.5",
             "roadmap:ShimuraVarieties §1.2",
-            "roadmap:AdelicAlgebraicGroups §3.4"
+            "roadmap:AdelicAlgebraicGroups §3.4",
+            "roadmap:AdelicAlgebraicGroups §4.3"
           ],
           "api": [
             {
@@ -2900,9 +2907,10 @@
       "roadmap": "AdelicAlgebraicGroups",
       "sections": [
         "§1.1",
-        "§3.4"
+        "§3.4",
+        "§4.3"
       ],
-      "what": "Integral models and their integral points, the closure model of a faithful matrix representation having integral points 𝐆(ℚ) ∩ GL_N(ℤ) (§1.1); arithmetic subgroups and model independence, Borel–Harish-Chandra, S-arithmetic subgroups are lattices with the anisotropy criterion, level subgroups, and arithmetic lattices in a real Lie group: the compact-kernel predicate, its invariance and the image-lattice theorem (§3.4)."
+      "what": "Integral models and their integral points, the closure model of a faithful matrix representation having integral points 𝐆(ℚ) ∩ GL_N(ℤ) (§1.1); arithmetic subgroups and model independence, Borel–Harish-Chandra, S-arithmetic subgroups are lattices with the anisotropy criterion, level subgroups, and arithmetic lattices in a real Lie group: the compact-kernel predicate, its invariance and the image-lattice theorem (§3.4); neat elements (Neat.IsNeatAut), neat levels (Neat.IsNeatLevel), stability under subgroups and the eigenvalue bound for algebraic representations by a faithful one (§4.3), used in the Conventions and §11.3."
     },
     {
       "roadmap": "PELModuli",
