@@ -34,6 +34,7 @@ PhiGammaModulesAndIwasawaCohomology
 PadicLocalLanglandsForGL2Qp
 CyclotomicClassGroupsAndStickelberger
 AlgebraicModuliForArithmeticGeometry
+NashBlowups
 GenericDoublePointInterpolation
 SchemeKTheoryOperations
 SchemeKTheoryOperationsPartII
