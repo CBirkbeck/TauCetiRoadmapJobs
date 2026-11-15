@@ -1,0 +1,66 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ShimuraCompactifications"
+
+[[source]]
+id = "Pink"
+authors = ["R. Pink"]
+title = "Arithmetical compactification of mixed Shimura varieties"
+year = 1990
+locator_scheme = "section"
+locator = "6.25, pp. 112-113; 12.4(b), p. 197; 12.5, p. 198"
+url = "https://people.math.ethz.ch/~pink/ftp/phd/PinkDissertation.pdf"
+fetched_from = "https://people.math.ethz.ch/~pink/ftp/phd/PinkDissertation.pdf"
+fetched_at = "2026-11-15T10:46:02Z"
+sha256 = "6f8aa447ccf54368d465a9d45f44bc91f0d35440cba04e20061c576145ca8669"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["4.2"]
+
+[[source]]
+id = "Pilloni20"
+authors = ["V. Pilloni"]
+title = "Higher coherent cohomology and p-adic modular forms of singular weights"
+year = 2020
+locator_scheme = "section"
+locator = "3.4, pp. 14-15 (author copy)"
+url = "https://www.imo.universite-paris-saclay.fr/~pilloni/complexhidatheorygsp4.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/complexhidatheorygsp4.pdf"
+fetched_at = "2026-11-15T10:46:33Z"
+sha256 = "4c05724efeab1dbbb108f980ec9a722127d2a8cd2abf6e8c2a6a2251cf0f9f58"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["4.11"]
+
+[[source]]
+id = "Dimitrov"
+authors = ["M. Dimitrov"]
+title = "Compactifications arithmétiques des variétés de Hilbert et formes modulaires de Hilbert pour Γ₁(c, n)"
+year = 2004
+locator_scheme = "theorem"
+locator = "Lemme 5.8 and Définition 5.10, pp. 539-540"
+url = "https://gitlabpages.univ-lille.fr/dimitrov/articles/Pad15-Di.pdf"
+fetched_from = "https://gitlabpages.univ-lille.fr/dimitrov/articles/Pad15-Di.pdf"
+fetched_at = "2026-11-15T10:46:34Z"
+sha256 = "722986ce0343547cdbc6cd7d39fa524a9c967f3ab42fdd231cc3acd87b006f03"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["8.57"]
+
+[[source]]
+id = "EGA3-1"
+authors = ["A. Grothendieck"]
+title = "Éléments de géométrie algébrique III. Étude cohomologique des faisceaux cohérents, première partie"
+year = 1961
+locator_scheme = "section"
+locator = "§5 (5.4)"
+url = "http://www.numdam.org/item/PMIHES_1961__11__5_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1961__11__5_0.pdf"
+fetched_at = "2026-11-15T10:51:01Z"
+sha256 = "3ed59fe81da07f1ab685ddc54a93128a364419d4ddafbc7affcd8abc8b401605"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["8.57"]
