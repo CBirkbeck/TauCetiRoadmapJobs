@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13274 mistakes recorded on the board: 7618 misprints, 3469 errors, 1719 gaps, 468 unparsed bullets.
+13277 mistakes recorded on the board: 7621 misprints, 3469 errors, 1719 gaps, 468 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2685,6 +2685,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## BieriEckmann1973
 
+- **Misprint** at Proposition 5.1, p.119, line 646: the source says the source characterizes dimension-one duality groups as all finitely generated free groups; it should be exclude the trivial free group, as the proof at line 648 does; affects a stated result. Found by FinitenessAndDualityOfGroups (#15391 at 4505272, 2026-11-15, codex gpt-6-astra).
 - **Misprint** at Proposition 5.1, printed p. 119: the source says all finitely generated free groups are precisely the dimension-one duality groups; it should be all nontrivial finitely generated free groups, as the proof immediately specifies; affects a stated result. Found by FinitenessAndDualityOfGroups (#15109 at e13a441, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Proposition 5.1, printed p. 119: the source says all finitely generated free groups are the dimension-one duality groups; it should be all nontrivial finitely generated free groups, as its proof specifies; affects a stated result. Found by FinitenessAndDualityOfGroups (#15109 at 56bb703, 2026-11-15, codex gpt-6-astra).
 
@@ -2692,6 +2693,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Remark after Theorem 3.4, printed p. 82: the source says the naturality result is compared with Theorem 4.3; it should be Theorem 3.4 of this paper; affects nothing. Found by FinitenessAndDualityOfGroups (#15109 at e13a441, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Theorem 3.4 proof, p.82, line 334: the source says the final duality conclusion follows from BieriEckmann1973 Theorem 4.6; it should be Theorem 4.5, the duality criterion; affects the proof. Found by FinitenessAndDualityOfGroups (#15391 at 8804482, 2026-11-15, codex gpt-6-astra).
+- **Misprint** at Theorem 3.4 proof, p.82, line 334: the source says the source cites the earlier paper's Theorem 4.6 for its duality criterion; it should be cite Theorem 4.5, whose concentration-and-torsion-freeness statement appears at BieriEckmann1973 line 612; affects nothing. Found by FinitenessAndDualityOfGroups (#15391 at 4505272, 2026-11-15, codex gpt-6-astra).
 - **Misprint** at Theorem 3.4 proof, printed p. 82 (line 334): the source says the earlier paper's Theorem 4.6 gives the criterion; it should be Theorem 4.5, the duality criterion; affects the proof. Found by FinitenessAndDualityOfGroups (#15109 at d567d3b, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Theorem 3.4 proof, printed p. 82, line 334: the source says its conclusion follows from Bieri–Eckmann 1973 Theorem 4.6; it should be Theorem 4.5, the duality criterion; affects the proof. Found by FinitenessAndDualityOfGroups (#15109 at 5fca6b3, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Theorem 3.4 proof, printed p. 82, line 334: the source says its group-ring concentration argument uses BieriEckmann1973 Theorem 4.6; it should be Theorem 4.5, the concentration-and-torsion-freeness criterion; affects the proof. Found by FinitenessAndDualityOfGroups (#15109 at 0b15209, 2026-11-14, codex gpt-6-astra).
@@ -2703,6 +2705,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at proof of Theorem 3.4, printed p. 82: the source says the conclusion follows from reference [2], Theorem 4.6 (finite generation); it should be reference [2], Theorem 4.5 (the duality criterion); affects the proof. Found by FinitenessAndDualityOfGroups (#15109 at e6336f4, 2026-11-14, claude fable).
 - **Misprint** at proof of Theorem 3.4, printed p.82 (line 334): the source says the duality conclusion follows from reference [2], Theorem 4.6; it should be reference [2], Theorem 4.5, the duality criterion; affects the proof. Found by FinitenessAndDualityOfGroups (#15109 at 65b46d1, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at remark after Theorem 3.4, printed p.82 (line 337): the source says its comparison is with Theorem 4.3; it should be Theorem 3.4; affects nothing. Found by FinitenessAndDualityOfGroups (#15109 at 65b46d1, 2026-11-14, codex gpt-6-astra).
+- **Misprint** at remark following Theorem 3.4, p.82, line 337: the source says the source refers to Theorem 4.3 in comparing abstract and natural duality; it should be refer to the immediately preceding Theorem 3.4; affects nothing. Found by FinitenessAndDualityOfGroups (#15391 at 4505272, 2026-11-15, codex gpt-6-astra).
 - **Misprint** at the Remark after Theorem 3.4, printed p. 82: the source says the result and "Theorem 4.3" do not imply each other; it should be Theorem 3.4, the paper having no Section 4; affects nothing. Found by FinitenessAndDualityOfGroups (#15109 at e6336f4, 2026-11-14, claude fable).
 - **Misprint** at the Remark after Theorem 3.4, printed p. 82: the source says the naturality result and "Theorem 4.3" do not imply each other, and the paper has no such theorem; it should be Theorem 3.4; affects nothing. Found by FinitenessAndDualityOfGroups (#15109 at 3655203, 2026-11-14, claude fable).
 - **Misprint** at the remark after Theorem 3.4, p.82, line 337: the source says its comparison is with Theorem 4.3; it should be Theorem 3.4; affects nothing. Found by FinitenessAndDualityOfGroups (#15391 at 8804482, 2026-11-15, codex gpt-6-astra).
