@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GroupSchemesOverABase~23",
+  "head": "134ddbfcc24e1b2af2cffa573b77e27c3b0891cc",
+  "pr": 1522,
+  "folder": "GroupSchemesOverABase",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 25 changed lines since 180c164 (the new section 'Provenance: existing formalizations outside Tau Ceti' and its References entry). Checked the section's claims against AxiomMath/Stacks at commit c496df0 (toolchain v4.35.0, Mathlib v4.35.0, Apache-2.0, directory listings, nine files, Stacks Tag 047M): R01 (P3) the map omits 4.5, three of whose targets the cited directory states (Tags 047L, 047N, 047P), claims 4.7-4.8 with no file to show, and says no file treats diagonalizable groups though Examples has G_m and mu_n; R02 (P3) the description names neither the section nor the reference. The previous report had no finding. Worker's gate passes (build=0); depcheck with the candidate order: 0 problems; Suggested.lean unchanged, elaborates with 25 sorry warnings only. Seeded sample: only 4.5 touched (three rows); the others lie in untouched text.",
+  "text": "a5895a97aa10453e"
+ }
+}
