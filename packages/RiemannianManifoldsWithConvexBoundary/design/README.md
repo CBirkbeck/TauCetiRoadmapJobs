@@ -534,7 +534,7 @@ of the unit ball (`II = −h`), the solid cylinder (`H = 1/2`), the constant non
 1.1 uses Tau Ceti's boundary charts and DifferentialGeometry 5.1; 1.2 uses DifferentialGeometry
 12.2 and 12.5 and 1.1; 1.3 uses 1.1–1.2, Tau Ceti's Hadamard factorisation and Mathlib's partitions of
 unity; 1.4 uses 1.1–1.3, Mathlib's Levi-Civita connection and Tau Ceti's Hessian; 1.5 uses 1.4 and
-the induced metric; 1.6 uses 1.4–1.5 and Tau Ceti's conformal formulas.
+the induced metric; 1.6 uses 1.2, 1.4–1.5 and Tau Ceti's conformal formulas.
 
 ## Layer 2: Convexity of the boundary
 
@@ -689,7 +689,7 @@ Uhlmann–Vasy, lines 25–26; Paternain–Salo–Uhlmann, lines 2770–2772). P
   `dφ(−e₀) = 1 > 0`, so `−e₀` is outward, as in the Conventions. Reading the criterion with `ρ` in
   place of `φ = −ρ` would make `x` inward on the sphere and `e₀` outward on the half-space.
 
-*Needs:* Layer 1; RiemannianGeometry R7.9 (smoothness and invertible differential of the inclusion
+*Needs:* 1.1–1.4; RiemannianGeometry R7.9 (smoothness and invertible differential of the inclusion
 of a regular sublevel, the outward criterion); Tau Ceti `TauCeti.IsRegularValue`,
 `TauCeti.scalarRegularSublevelChartedSpace`, `TauCeti.isManifold_scalarRegularSublevel`,
 `TauCeti.boundary_scalarRegularSublevel`, `TauCeti.interior_scalarRegularSublevel`,
@@ -897,13 +897,13 @@ the conformal ball as a domain in `(ℝⁿ⁺¹, e^{2φ} g)`.
 
 ### Dependencies
 
-3.1 uses Layer 1, RiemannianGeometry R7.9 (the inclusion of a regular sublevel and its outward
+3.1 uses 1.1–1.4, RiemannianGeometry R7.9 (the inclusion of a regular sublevel and its outward
 criterion) and Tau Ceti's sublevel atlas and pullback metric; 3.2 uses 1.4, 2.1 and 3.1;
 3.3 uses GeometricTopology 1.1 (collars, the interior) and 1.3 (the collar extension and the
 double as gluings along the boundary), Tau Ceti's sublevel atlas and 3.1; 3.4 uses 3.1,
-ComplexKahlerGeometry K5a and DifferentialGeometry 12.1; 3.5 uses 3.3–3.4, GeometricTopology
+ComplexKahlerGeometry K5a and DifferentialGeometry 12.1; 3.5 uses 3.1, 3.3–3.4, GeometricTopology
 1.1 and 1.3 and, for the comparison of the compact case, RiemannianGeometry R5c; 3.6 uses
-Layer 1, 3.1 and RiemannianGeometry R5a.
+1.4–1.5, 3.1 and RiemannianGeometry R5a.
 
 ## Layer 4: Geodesics at the boundary
 
@@ -1041,7 +1041,7 @@ Ceti `TauCeti.SmoothEmbedding.normalExp` through the trivialisation of the norma
 - In a slanted collar of the half-plane, `(q, r) ↦ q + r(e₀ + e₁)`, the cross term
   `⟨∂_r, ∂_{x₁}⟩ = 1` is nonzero; the normal exponential is the collar with no cross term.
 
-*Needs:* 1.3, 3.1, 4.1; HopfRinow Layers 1–2; RiemannianGeometry R7.9 (the normal collar and the
+*Needs:* 1.3, 3.1; HopfRinow Layers 1–2; RiemannianGeometry R7.9 (the normal collar and the
 defining function in the compact connected case); Tau Ceti `TauCeti.regularLevelChartedSpace`,
 `TauCeti.isSmoothEmbedding_coe_regularLevel`, `TauCeti.SmoothEmbedding.normalExp`,
 `TauCeti.SmoothEmbedding.exists_partialDiffeomorph_normalExp_subset`,
@@ -1168,7 +1168,7 @@ spherical caps in `S^{n+1}`, `n ≥ 1`, for enlargements.
 
 ### Dependencies
 
-4.1 uses 3.1, 3.5 and HopfRinow Layer 1; 4.2 uses Layer 1, 2.1–2.2 and 4.1; 4.3 uses 1.3, 3.1, 4.1,
+4.1 uses 3.1, 3.5 and HopfRinow Layer 1; 4.2 uses Layer 1, 2.1–2.2 and 4.1; 4.3 uses 1.3, 3.1,
 HopfRinow Layers 1–2, RiemannianGeometry R7.9 (the compact connected case) and Tau Ceti's normal
 exponential; 4.4 uses 1.4, 4.3 and Mathlib's partitions
 of unity; 4.5 uses 2.1–2.2 and
@@ -1335,7 +1335,7 @@ lines 3110–3113):
 - Fold form on the closed unit ball (Remark 3.2.13), on `SM`: `a = 4(⟨x, v⟩² + 1 − |x|²)` and
   `Q(r, x, v) = (−2⟨x, v⟩ + r)/2`, so `Q(√a) = τ(x, v)` and `Q(−√a) = −τ(x, −v)`.
 
-*Needs:* 2.1, 2.3, 4.2, 4.3, 5.1, 5.2, 5.3; Mathlib `ContDiffAt.implicitFunction`,
+*Needs:* 1.4, 2.1, 4.2, 5.1, 5.2, 5.3; Mathlib `ContDiffAt.implicitFunction`,
 `ContDiffAt.contDiffAt_implicitFunction`; Tau Ceti `TauCeti.Manifold.contMDiffOn_maximalGeodesic`.
 
 ### 5.5 Non-trapping criteria
@@ -1377,7 +1377,7 @@ Prove (Paternain–Salo–Uhlmann, Proposition 3.3.1, lines 3081–3106):
   `e^{2φ(|x|²)} g_eucl`, `φ(s) = s² − 2s`, `n ≥ 1`, the boundary is strictly convex and the sphere
   `|x| = 1/√2` is totally geodesic, so its great circles are trapped geodesics (6.5).
 
-*Needs:* 3.4, 4.6, 5.1, 5.2, 5.4.
+*Needs:* 3.4, 4.2, 4.6, 5.1, 5.2, 5.4.
 
 ### 5.6 The scattering relation and boundary lens data
 
@@ -1416,8 +1416,8 @@ conformal ball with a totally geodesic inner sphere (trapping).
 ### Dependencies
 
 5.1 uses 1.2, 3.1, HopfRinow Layer 1 and Tau Ceti's sphere bundles; 5.2 uses 4.1–4.2 and 5.1; 5.3
-uses only calculus (Mathlib, Tau Ceti, ComplexKahlerGeometry K5a); 5.4 uses 2.1, 2.3, 4.2–4.3 and
-5.1–5.3; 5.5 uses 3.4, 4.6 and 5.1–5.4; 5.6 uses 1.2, 5.1, 5.2 and 5.4.
+uses only calculus (Mathlib, Tau Ceti, ComplexKahlerGeometry K5a); 5.4 uses 1.4, 2.1, 4.2 and
+5.1–5.3; 5.5 uses 3.4, 4.2, 4.6 and 5.1–5.4; 5.6 uses 1.2, 5.1, 5.2 and 5.4.
 
 ## Layer 6: Examples
 
@@ -1462,7 +1462,7 @@ iff `D²w(0)` is positive definite, iff the principal curvatures at `q` are posi
 - `{y ≥ x³}` is not convex near `0` and has `II < 0` for `x < 0`; the graph form gives
   `w(x) = x³`, `w''(x) = 6x`.
 
-*Needs:* 1.4, 1.5, 2.1, 3.1, 3.2, 4.3, 5.2, 5.4, 5.5, 5.6.
+*Needs:* 1.4, 1.5, 2.1, 3.1, 4.3, 5.2, 5.4, 5.5, 5.6.
 
 ### 6.2 Half-spaces and ball exteriors
 
@@ -1613,10 +1613,10 @@ This layer is the roadmap's acceptance suite: every formula above is evaluated a
 
 ### Dependencies
 
-6.1 uses Layers 1–5; 6.2 uses Layers 1, 2, 4 and 5.2; 6.3 uses 1.4, 2.1, 3.1–3.2, 5.5 and Tau Ceti's
-round sphere and hyperbolic space; 6.4 uses 3.1–3.2, 5.5, HopfRinow Layer 2, Tau Ceti's normal
-coordinate fields and SmoothBundlesConnections B6.0; 6.5 uses 1.6, 2.1, 3.1, 3.6 and
-RiemannianGeometry R5a.
+6.1 uses 1.4–1.5, 2.1, 3.1, 4.3, 5.2 and 5.4–5.6; 6.2 uses 1.4–1.5, 2.1, 4.2 and 5.2; 6.3 uses
+1.4, 2.1, 3.1–3.2, 5.5 and Tau Ceti's round sphere and hyperbolic space; 6.4 uses 3.1–3.2, 5.5,
+HopfRinow Layer 2, Tau Ceti's normal coordinate fields and SmoothBundlesConnections B6.0; 6.5 uses
+1.6, 2.1, 3.1, 3.6 and RiemannianGeometry R5a.
 
 ## Downstream consumers
 
