@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ExponentialCone~5",
+  "head": "a3dce728276a2fd2697fc9a78b73b46d83bda2bb",
+  "pr": 2293,
+  "folder": "ExponentialCone",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since a3dce72; checked the title and description against the head and the branch history (10 claims, 0 contradicted: new folder of 3 files, Mathlib-only suppliers, 9 headlines + 3 defs + 1 abbrev, last-commit summary, toolchain and Mathlib/TauCeti pins, PointedCone.hull/closure at the pin, CI run 43484269162 success on a3dce72, 12 removed corollaries + 3 examples all kept in the README); gate passes on all checks; depcheck 245 roadmaps, 2206 edges, 0 problems; lake env lean on Suggested.lean exits 0 with exactly 9 sorry warnings; adversarial rows for mem_cone_iff, closure_positive, softplus_perspective_iff, weighted_exponential_iff, random_exponential_cone_iff and the declaration count; seeded sample outside changed passages (folder diff empty); overlap check: BoundedConicHulls, ConvexLifting, FiniteAffineBoundTightening, ExactPenalties, nothing shared",
+  "text": "2510a8a4bcfc4070"
+ }
+}
