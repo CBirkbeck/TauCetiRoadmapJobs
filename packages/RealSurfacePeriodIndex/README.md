@@ -264,7 +264,7 @@ The definition has the following API.
 
 char F = 0; β ∈ Br(F) represented by a central simple algebra A of degree d; the extension L/F in the restriction statement may be transcendental.
 
-Let F be a field of characteristic 0 and β ∈ Br(F). For an ordering P, whether β becomes trivial over a real closure at P does not depend on the real closure, and the set Z(β) = {P ∈ X_F : β does not vanish at P} is clopen in X_F. For every field extension ι : F → L, algebraic or not, Z(β_L) is the preimage of Z(β) under restriction X_L → X_F. (B19, §6.4, p. 96, citing Arason 1975, Hilfssatz 2; ARA75, Hilfssatz 2)
+Let F be a field of characteristic 0 and β ∈ Br(F). For an ordering P, whether β becomes trivial over a real closure at P does not depend on the real closure, and the set Z(β) = {P ∈ X_F : β does not vanish at P} is clopen in X_F. For every field extension ι : F → L, algebraic or not, Z(β_L) is the preimage of Z(β) under restriction X_L → X_F. (B19, §6.4, p. 96, citing ARA75, Hilfssatz 2)
 
 A proof can proceed as follows.
 
@@ -919,7 +919,7 @@ A proof can proceed as follows.
 
 d large enough for §2.5. Transport over contractible opens uses ordinary Ehresmann; the compatible lift is transported as the restriction of the family class pulled back from S, so its reduction stays p_x*α̃.
 
-In §2.1, for all sufficiently large d the points b ∈ B_d(ℂ) with p_b*α = 0 ∈ Br(T_b) are dense in B_d(ℂ) for the Euclidean topology. (B19, Proposition 1.2 and its proof, pp. 69, 71; B19, Theorem 1.5, pp. 70–71, citing Voisin 2006)
+In §2.1, for all sufficiently large d the points b ∈ B_d(ℂ) with p_b*α = 0 ∈ Br(T_b) are dense in B_d(ℂ) for the Euclidean topology. (B19, Proposition 1.2 and its proof, pp. 69, 71; B19, Theorem 1.5, pp. 70–71, citing VOI06, Propositions 8 and 9)
 
 A proof can proceed as follows.
 
@@ -1298,7 +1298,7 @@ A proof can proceed as follows.
 1. The resolution T → T̄ has rational singularities away from C, so H²(T, O_T(C)) ≅ H²(T̄, `O_{T̄}(C)`) (Leray; §3.3).
 2. T̄ is a Cartier divisor in X̄, hence Gorenstein with `ω_{T̄}` ≅ p̄*(K_S ⊗ L(R)); by Serre duality it suffices that H⁰(T̄, ω(−C)) = 0.
 3. Push forward by p̄ using §4.3: H⁰(ω(−C)) is the kernel of H⁰(K_S ⊗ L(R)) ⊕ H⁰(K_S) → H⁰(C, K_S ⊗ L(R)), (x, y) ↦ x + rg·y.
-4. Using H⁰(N ⊗ K_S) = 0, injectivity reduces to injectivity of H⁰(K_S) → H¹(S, N ⊗ K_S), cup with ∂(rg) = r ∪ ∂g; ψ : H⁰(C, L) → H¹(S, N(−R)) → H¹(S, N) is onto by H¹(S, L) = H¹(R, N|_R) = 0, so for general g, ψ(g) is general and Assumption 5.2 gives injectivity (connecting maps commute with cup products).
+4. Using H⁰(N ⊗ K_S) = 0, injectivity reduces to injectivity of H⁰(K_S) → H¹(S, N ⊗ K_S), cup with ∂(rg) = r ∪ ∂g; ψ : H⁰(C, L) → H¹(S, N(−R)) → H¹(S, N) is onto by H¹(S, L) = H¹(R, N|_R) = 0, so for general g, ψ(g) is general and Assumption 5.2 gives injectivity (connecting maps commute with cup products: BRE97, Chapter II, Theorem 7.1 (c)).
 
 **Checks.**
 
@@ -1314,7 +1314,7 @@ Let C ⊂ T ⊂ X be smooth projective complex varieties of dimensions 1, 2 and 
 
 A proof can proceed as follows.
 
-1. The Kodaira–Spencer map of the family of hypersurfaces is `T_{B,T}` → H⁰(T, `N_{T/X}`) followed by the boundary of 0 → T_T → T_X|_T → `N_{T/X}` → 0 (Sernesi Proposition 3.2.9 (i)).
+1. The Kodaira–Spencer map of the family of hypersurfaces is `T_{B,T}` → H⁰(T, `N_{T/X}`) followed by the boundary of 0 → T_T → T_X|_T → `N_{T/X}` → 0 (SER06, Proposition 3.2.9 (i)).
 2. The boundary maps of short exact sequences of locally free sheaves are cup products with their extension classes, and the commutative diagram comparing 0 → T_T → T_X|_T → `N_{T/X}` → 0 with 0 → `N_{C/T}` → `N_{C/X}` → `N_{T/X}|_C` → 0 identifies the contraction with λ with the displayed composite (BEN18 Proposition 2.1).
 
 **Checks.**
@@ -1509,7 +1509,7 @@ A proof can proceed as follows.
 1. `β|_{T_V}` and b both lift p*α in the topological Brauer sequence on T_V, so they differ by 2γ₀ + cl(φ₀).
 2. p_*β induces p_*p*α = 2α = 0, so p_*β = 2δ + cl(θ₁).
 3. Push the first identity forward: p_*b = 2η since Tr∘ψ = 0; thus 2(δ|_V − η − p_*γ₀) = cl(p_*φ₀ − θ₁|_V).
-4. The cokernel of cl : Pic(V) → H²_G(V(ℂ), ℤ(1)) is torsion-free (gap:picard-cokernel-torsion-free; Benoist–Wittenberg Proposition 2.9), and Pic(S) → Pic(V) is onto (§1.9, from SchemeAndStackFoundations §3.4), which produces μ.
+4. The cokernel of cl : Pic(V) → H²_G(V(ℂ), ℤ(1)) is torsion-free (gap:picard-cokernel-torsion-free; BW20, Proposition 2.9), and Pic(S) → Pic(V) is onto (§1.9, from SchemeAndStackFoundations §3.4), which produces μ.
 
 **Checks.**
 
@@ -1630,7 +1630,7 @@ If ι : 𝒮 → Ξ satisfies Assumption 6.1, so does every ι′ close enough t
 A proof can proceed as follows.
 
 1. (i)–(iii) are preserved by small isotopies (homology classes are locally constant).
-2. Transversality to R(ℝ) at smooth points and (iv) persist because (ι, id) : 𝒮 ⊔ R̃(ℝ) → Ξ, with R̃ the normalisation of R, is a normal-crossings immersion and these are stable (Golubitsky–Guillemin III.3.11).
+2. Transversality to R(ℝ) at smooth points and (iv) persist because (ι, id) : 𝒮 ⊔ R̃(ℝ) → Ξ, with R̃ the normalisation of R, is a normal-crossings immersion and these are stable (GG73, Chapter III, Theorem 3.11).
 
 **Checks.**
 
@@ -1675,7 +1675,7 @@ Let X be a compact nonsingular affine real algebraic variety of dimension d and 
 
 A proof can proceed as follows.
 
-1. Cited: Bochnak–Coste–Roy, Theorem 12.4.11, via algebraic line bundles realising the class (BCR Theorem 12.4.6) and transversality.
+1. Cited: BCR, Theorem 12.4.11, via algebraic line bundles realising the class (BCR Theorem 12.4.6) and transversality.
 
 **Checks.**
 
@@ -1691,7 +1691,7 @@ On a smooth projective real surface S: (b) if D is a divisor whose Borel–Haefl
 
 A proof can proceed as follows.
 
-1. Cited: Bröcker 1980, Satz a), b).
+1. Cited: BRO80, Satz a), b).
 
 **Checks.**
 
@@ -1823,7 +1823,7 @@ A proof can proceed as follows.
 
 The pair (T, p⁻¹R) is transported by AlgebraicTopologyPartII §16.2; its stratification, properness and submersion hypotheses for this family are §6.11.
 
-Before deforming the fibre T_s in Proposition 6.6, normalise the integral lift β of the pulled-back class so that `(β mod 2)|_{T_{s,U}} = p_s*α̃` (subtract cl(φ̄) for φ̄ ∈ Pic(T_s) extending the difference on `T_{s,U}`), and reapply §5.8 to the normalised lift. Over a small G-stable contractible real parameter neighbourhood Λ(ℝ), transport the pair (T, p⁻¹R) equivariantly so that the restriction to T_U and the pullback of the fixed class α̃ correspond on every fibre: `(β_x mod 2)|_{T_{x,U}} = p_x*α̃` for x ∈ Λ(ℝ). (B19, Proof of Proposition 6.6, pp. 94–95, citing Dimca 1985, Lemma 4; B19, Proposition 1.2 proof, p. 71)
+Before deforming the fibre T_s in Proposition 6.6, normalise the integral lift β of the pulled-back class so that `(β mod 2)|_{T_{s,U}} = p_s*α̃` (subtract cl(φ̄) for φ̄ ∈ Pic(T_s) extending the difference on `T_{s,U}`), and reapply §5.8 to the normalised lift. Over a small G-stable contractible real parameter neighbourhood Λ(ℝ), transport the pair (T, p⁻¹R) equivariantly so that the restriction to T_U and the pullback of the fixed class α̃ correspond on every fibre: `(β_x mod 2)|_{T_{x,U}} = p_x*α̃` for x ∈ Λ(ℝ). (B19, Proof of Proposition 6.6, pp. 94–95, citing DIM85, Lemma 4; B19, Proposition 1.2 proof, p. 71)
 
 A construction can proceed as follows.
 
@@ -1860,7 +1860,7 @@ A proof can proceed as follows.
 2. Choose A very ample, L = A^l ⊗ N(−R) with l large even so that Assumptions 3.1, 5.1 and §6.7 hold; get t with rt negative on Ψ and real locus ι(𝒮). Then M = L(R) = A^l ⊗ N has cl_R(M) = l·cl_R(A) + cl_R(N) = 0.
 3. Take s = a₁s₀ + a₂c (§4.2) with a₁ > 0 small and a₂ near t; then rs < 0 on Ψ, D(ℝ) = ι(𝒮) after moving ι (§6.3), and p satisfies Assumption 4.1 (§6.8).
 4. Since cl_R(M) = 0, the class c_Ψ = ([ã]₀ ∪ cl_R(M))|_Ψ of §5.5 vanishes, so the criteria of §5.5 and §5.8 hold with φ_Ψ = O_S, whatever the evaluation on Ψ. §5.2, §5.5 and §5.8 give a_T ∈ Br(T)[2], an integral lift β normalised as in §6.12, and γ, θ with p_*(β − 2γ) = cl(θ).
-5. Split β − 2γ = (ε₁, ε₂) along p*H²(S) ⊕ H²_van (§6.10). Let H²_G(T(ℂ), ℤ(1))_van be the subgroup of equivariant classes whose component in p*H²(S(ℂ), ℝ(1))^G vanishes. The image of H²_G(T(ℂ), ℤ(1)) in Λ = H²(T(ℂ), ℤ(1))^G has finite index m (AlgebraicTopologyPartII §16.3); for y ∈ Λ in the rational subspace V = ker(p_*) ⊗ ℝ the class my lies in the image of the subgroup _van, so that subgroup maps onto a full lattice of H²(T(ℂ), ℝ(1))^G_van. Apply §6.9 to H = H²_van with the class λ_van = λ − ½·p*p_*λ, λ the class of C: by §6.10 it lies in `H^{1,1}_ℝ(1)^G` ∩ H²_van and ∇(λ_van) = ∇λ is onto H²(T, O_T)_van. The resulting open cone meets ε₂ + 2·(this lattice) (§2.6): choose δ ∈ H²_G(T(ℂ), ℤ(1))_van and ν in the cone with ε₂ = 2δ + ν.
+5. Split β − 2γ = (ε₁, ε₂) along p*H²(S) ⊕ H²_van (§6.10). Let H²_G(T(ℂ), ℤ(1))_van be the subgroup of equivariant classes whose component in p*H²(S(ℂ), ℝ(1))^G vanishes. The image of H²_G(T(ℂ), ℤ(1)) in Γ_T = H²(T(ℂ), ℤ(1))^G has finite index m (AlgebraicTopologyPartII §16.3); for y ∈ Γ_T in the rational subspace V = ker(p_*) ⊗ ℝ the class my lies in the image of the subgroup _van, so that subgroup maps onto a full lattice of H²(T(ℂ), ℝ(1))^G_van. Apply §6.9 to H = H²_van, on a G-stable neighbourhood Λ of s as in §§6.9 and 6.12, with the class λ_van = λ − ½·p*p_*λ, λ the class of C: by §6.10 it lies in `H^{1,1}_ℝ(1)^G` ∩ H²_van and ∇(λ_van) = ∇λ is onto H²(T, O_T)_van. The resulting open cone meets ε₂ + 2·(this lattice) (§2.6): choose δ ∈ H²_G(T(ℂ), ℤ(1))_van and ν in the cone with ε₂ = 2δ + ν.
 6. For some x ∈ Λ(ℝ), ν is of type (1,1) on T_x. Since δ has no constant component, the real class of β − 2γ − 2δ is ε₁ + ν, and ε₁ = ½·p*p_*(β − 2γ) = ½·p*cl(θ) is of type (1,1); so β − 2γ − 2δ is an integral equivariant class of type (1,1) and the real Lefschetz (1,1) theorem (MotivesAndAlgebraicCycles §7.8) writes it as cl(φ) on T_x.
 7. By the transported normalisation, a vanishes on `T_{x,U}` in the Kummer sequence, hence in Br(ℝ(T_x)); replace T by T_x. p(T_x(ℝ)) ⊂ Ξ for x near s.
 
@@ -2130,7 +2130,7 @@ A proof can proceed as follows.
 
 **Checks.**
 
-- When C is the anisotropic conic, this is equivalent to the real integral Hodge conjecture for 1-cycles on degree-4 del Pezzo fibrations over C (Benoist–Wittenberg II, Proposition 8.3).
+- When C is the anisotropic conic, this is equivalent to the real integral Hodge conjecture for 1-cycles on degree-4 del Pezzo fibrations over C (BW20II, Proposition 8.3).
 
 *Needs:* §7.11; §0.11; §7.12.
 
@@ -2455,7 +2455,7 @@ A proof can proceed as follows.
 
 **Checks.**
 
-- Classes of period 4 exist on some real Enriques surfaces (Mangolte–van Hamel).
+- Classes of period 4 exist exactly when S(ℝ) is nonempty and orientable and both halves are nonempty: Br(S) is then `(ℤ/2)^(2s−2) ⊕ ℤ/4`, s the number of components of S(ℝ), and Br(S) is killed by 2 in every other case (MVH98, Theorem 1.3, p. 3 (arXiv v1)).
 
 *Needs:* §9.3; §2.9; §0.12.
 
@@ -2508,7 +2508,7 @@ A proof can proceed as follows.
 
 **Checks.**
 
-- Such surfaces exist (Degtyarev–Itenberg–Kharlamov classification).
+- Such surfaces exist (DIK00, Appendix C, the classification of the real loci of real Enriques surfaces).
 
 *Needs:* §9.5; §9.1; MotivesAndAlgebraicCycles §7.10; §8.10.
 
@@ -2564,7 +2564,7 @@ A proof can proceed as follows.
 **Checks.**
 
 - By §9.8 the criterion is equivalent to: S(ℝ) is nonorientable and both halves are nonempty.
-- Many possible real loci (Degtyarev–Itenberg–Kharlamov) satisfy the condition and many do not.
+- Many possible real loci (DIK00, Appendix C) satisfy the condition and many do not.
 
 *Needs:* §9.6; §9.7; §9.9; §9.8; §9.4.
 
@@ -2623,7 +2623,7 @@ The construction has the following API.
 
 - At t = 0 the double plane is z² = (w² − u² − v²)u²v², reducible branch locus, not a K3 surface.
 - The number of semialgebraic components of S(K) is 4.
-- The four components are not separated by the sign of any rational function on S (BCR Example 15.2.2), unlike real loci of surfaces over ℝ.
+- No f ∈ K(S)ˣ is, outside its zeros and poles, positive on exactly one of the four components and negative on the other three (BCR, Example 15.2.2): for Ξ of §9.13 this is the case f = g of the sign argument of §9.14, and the sign changes of u and v, automorphisms of S, permute the four components. Pairs of components are told apart: on the components where (u/w, v/w) has signs (+, +), (+, −), (−, +), (−, −), the function u/w has signs (+, +, −, −), v/w has (+, −, +, −) and uv/w² has (+, −, −, +), each two against two. Over ℝ every locally constant sign pattern on the real locus of a smooth projective surface is that of a rational function invertible along it (§6.6 (a)).
 - H¹(S(K), 𝔽₂) is computed in the semialgebraic theory of MotivesAndAlgebraicCycles §7.6a.
 - At t = 0 the special fibre is the double cover z² = (w² − u² − v²)u²v², whose normalisation is the quadric z² = w² − u² − v².
 
@@ -2715,8 +2715,8 @@ Each entry records what the source has at the locator (B19, published version, u
 - **E8** (misprint, Proposition 6.7, p. 95). The statement imposes a lift of (n/2)α for every n. *Correction:* State the odd case separately and impose the half-period lift only for even n; the restricted period is exactly n/2 by corestriction (§7.3, §7.2). *Reason:* (n/2)α is undefined for odd n. *Affects:* nothing.
 - **E9** (gap, Proof of Theorem 0.12, p. 95). K is written as the union of all finite extensions of a finitely generated K₀ carrying α. *Correction:* Enlarge K₀ by a transcendence basis of K/ℝ first, so that K/K₀ is algebraic. *Reason:* Otherwise K is not a union of finite extensions of K₀. *Affects:* the proof.
 - **E10** (gap, Proof of Theorem 0.12, lower bound, p. 96). Parameters z₁, z₂ are chosen with neither proportional to w² + 1 in m/m², and y_j = (1 + z_j)² + (w + z_j)² are claimed to be local parameters. *Correction:* Replace w by w′ = (w² − 1)/(2w), so that w′² + 1 ∈ m²; then for any regular parameters z_j the y_j are regular parameters (§7.9). *Reason:* dy_j = a + 2(1 + i)dz_j with a the differential of w² + 1; separate non-proportionality conditions do not make the 2×2 determinant nonzero. *Affects:* the proof.
-- **E11** (misprint, (2.1), p. 72). The source of the Gysin map has coefficient M(−k). *Correction:* M(d′ − d), as in Benoist–Wittenberg (1.22). *Reason:* The twist depends on the codimension, not on the degree k. *Affects:* nothing.
-- **E12** (misprint, (5.7), p. 88). The normal-sequence boundary in the factorisation of φ_λ lands in H⁰(C, `N_{C/T}`). *Correction:* H¹(C, `N_{C/T}`). *Reason:* It is the boundary of 0 → `N_{C/T}` → `N_{C/X}` → `N_{T/X}|_C` → 0 from H⁰ of the last term (Benoist 2018, Proposition 2.1). *Affects:* nothing.
+- **E11** (misprint, (2.1), p. 72). The source of the Gysin map has coefficient M(−k). *Correction:* M(d′ − d), as in BW20, (1.22). *Reason:* The twist depends on the codimension, not on the degree k. *Affects:* nothing.
+- **E12** (misprint, (5.7), p. 88). The normal-sequence boundary in the factorisation of φ_λ lands in H⁰(C, `N_{C/T}`). *Correction:* H¹(C, `N_{C/T}`). *Reason:* It is the boundary of 0 → `N_{C/T}` → `N_{C/X}` → `N_{T/X}|_C` → 0 from H⁰ of the last term (BEN18, Proposition 2.1). *Affects:* nothing.
 - **E13** (gap, Proof of Proposition 0.7, p. 108). Signs of f₀, g₀ are compared at the fixed point [0 : −1 : 1 : 0] and near general points avoiding poles only. *Correction:* On both arcs v/w < 0 and v/w > 0 of D = {u = 0} choose general real points avoiding zeros and poles of the unit parts after factoring the D-orders (§9.14). *Reason:* The fixed point may lie on zeros or poles of f₀, g₀; avoiding poles alone does not make the signs locally constant. *Affects:* the proof.
 - **E14** (misprint, Proof of Proposition 0.7, p. 107). α = (f, g) is written in Br(R(S)). *Correction:* Br(K(S)) for the real Puiseux field K. *Reason:* S is defined over K, not ℝ. *Affects:* nothing.
 - **E15** (misprint, Proof of Theorem 0.6, p. 107). The class δ with [δ]₀ = 0 is called unique. *Correction:* Unique nonzero class, as on p. 106. *Reason:* δ = 0 always satisfies [δ]₀ = 0. *Affects:* nothing.
