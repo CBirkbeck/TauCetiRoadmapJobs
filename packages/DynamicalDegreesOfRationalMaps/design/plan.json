@@ -419,9 +419,9 @@
        "statement": "on P^1×P^1: (O(1,0)·O(0,1)) = 1 and (O(1,0)^2) = 0 from χ(O(n1,n2)) = (n1+1)(n2+1)"
       },
       {
-       "name": "surface_rr",
+       "name": "negative_self_intersection",
        "kind": "compatibility",
-       "statement": "on smooth projective surfaces Riemann-Roch gives D1·D2 as the n1n2 coefficient"
+       "statement": "blow-up S of P^2 at a point, exceptional E with O_E(E) = O(-1): χ(O_S(bE)) = 1 + (b - b^2)/2 (exact sequences, or Riemann-Roch of SchemeAndStackFoundations §5.10 with K_S = -3L + E), so (E^2) = -1, the degree of O_E(E) = c_1(O(E)) ∩ [E]; a point count would give a nonnegative value"
       }
      ]
     },
@@ -747,7 +747,7 @@
      "id": "3.4",
      "kind": "theorem",
      "name": "hodge_inequality_surface",
-     "statement": "S integral projective surface over K, H any line bundle with (H^2) > 0, D any line bundle: (D·H)^2 ≥ (D^2)(H^2). No positivity of H is assumed. The route reduces to a smooth projective surface over an algebraically closed field (§2.4, de Jong) and applies SchemeAndStackFoundations §5.10's Hodge index theorem, which already assumes only H^2 > 0, to D'' = (H'^2)φ^*D − (φ^*D·H')H'; what is added here is the reduction from an integral, possibly singular surface over an arbitrary field.",
+     "statement": "S integral projective surface over K, H any line bundle with (H^2) > 0, D any line bundle: (D·H)^2 ≥ (D^2)(H^2). No positivity of H is assumed. The route reduces to a smooth projective surface over an algebraically closed field (§2.4, de Jong) and applies SchemeAndStackFoundations §5.10's Hodge index theorem, which already assumes only H^2 > 0 and whose pairing is the numerical intersection by SchemeAndStackFoundations §5.9, to D'' = (H'^2)φ^*D − (φ^*D·H')H'; what is added here is the reduction from an integral, possibly singular surface over an arbitrary field.",
      "hypotheses": [
       "S integral projective surface",
       "(H^2) > 0"
@@ -757,11 +757,11 @@
       "where": "Theorem B.27, line 3803; cutkosky2015 lines 994-1003"
      },
      "prerequisites": [
-      "target:2.2",
       "target:2.3",
       "target:2.4",
       "roadmap:SchemeAndStackFoundations §4.13",
       "roadmap:SchemeAndStackFoundations §4.19",
+      "roadmap:SchemeAndStackFoundations §5.9",
       "roadmap:SchemeAndStackFoundations §5.10"
      ],
      "api": [],
@@ -1640,9 +1640,10 @@
     "§5.1",
     "§5.2",
     "§5.3",
+    "§5.9",
     "§5.10"
    ],
-   "what": "Proj and twisting sheaves, dimension theory, field descent, normalization, coherent cohomology and Serre vanishing, curve degrees, modifications, Chow's lemma, regular=smooth, alterations, de Jong, Chow groups and first Chern classes (additive, with projection formula), Hodge index for H^2 > 0 and Riemann-Roch on smooth surfaces"
+   "what": "Proj and twisting sheaves, dimension theory, field descent, normalization, coherent cohomology and Serre vanishing, curve degrees, modifications, Chow's lemma, regular=smooth, alterations, de Jong, Chow groups and first Chern classes (additive, with projection formula), the surface pairing χ(O_S) - χ(-L) - χ(-M) + χ(-L-M) (the n1n2 coefficient on proper surfaces, the Chow degree on smooth projective ones), Hodge index for H^2 > 0 and Riemann-Roch on smooth surfaces for that pairing"
   },
   {
    "roadmap": "StableReduction",
