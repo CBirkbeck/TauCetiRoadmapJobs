@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GaloisSectionsPadicPeriodMaps~2",
+  "head": "aa9c90f1719dc117de108920699811087210e580",
+  "pr": 1739,
+  "folder": "GaloisSectionsPadicPeriodMaps",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 138 changed lines since 0d951ae. Checked: every changed README passage (reworded sections 2.3, 9.4, 9.5; 13 new linking paragraphs, 46 claimed internal edges against the Needs lines and API bullets; renamed layer and section headings and what cites them); bs locators for Lemma 2.15, Theorem A, Theorem B; the pull request's title and description against the head (no contradiction); gate re-run OK, depcheck 0 problems, Suggested.lean elaborates with no output (0 declarations, unchanged). Two P3 findings: the labels 'Theorem A'/'Theorem B' and 'the orbit lemma' lost their referents when the headings were renamed. The previous review had no findings.",
+  "text": "a519d955cd855f91",
+  "carried": {
+   "from": "aa9c90f1719dc117de108920699811087210e580",
+   "head": "7a94d6e21ac7601985594bfdb6a1797f1a2ecb8f",
+   "findings": 2,
+   "lines": 20,
+   "folders": [
+    "GaloisSectionsPadicPeriodMaps"
+   ],
+   "outside": true
+  }
+ }
+}
