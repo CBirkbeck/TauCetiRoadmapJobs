@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuasiregularMaps~8",
+  "head": "a1b21d8e8a2d56c4d853b58e32437c88be5619f4",
+  "pr": 2134,
+  "folder": "QuasiregularMaps",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since a1b21d8; this round read the pull request's title and description against the head (suppliers, six declared gaps, section 7.5 ownership, Suggested.lean contents, summary block): no sentence contradicted, no change unstated. Gate rerun OK; depcheck 244 roadmaps, 2229 edges, 0 problems; Suggested.lean elaborates with five sorry warnings only; 19 cited section ids resolved again (SobolevMapsBetweenManifolds now on main, TeichmullerGeometry 7.4 at its open head); adversarial rows computed for the statements the description cites. Accepted conditional on the six declared SobolevMapsBetweenManifolds gaps; the obsolete orientation-descent entry of the board's plan.json is reported to the human reviewers.",
+  "text": "1dfbf4b495650f60"
+ }
+}
