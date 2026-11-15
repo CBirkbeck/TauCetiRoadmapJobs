@@ -1016,7 +1016,7 @@ Layers 0, 5 and 6; `TauCeti.spinPlus` and companions; AlgebraicModuliForArithmet
 
 ## Layer 8: Hyperelliptic counts and the genus-four quadric sieve
 
-The sieve keeps singular and nonreduced complete intersections until their inverse-zeta contributions cancel. The coefficient tables below are sieve terms, not counts of smooth fibres; the count of smooth fibres is their sum together with the tail of §8.13. Throughout, `p_r = 1 + q + ⋯ + q^r = #ℙ^r(𝔽_q)` and `q¹⁵` denotes `q^{15}`.
+The sieve keeps singular and nonreduced complete intersections until their inverse-zeta contributions cancel. For a family `C → V` of curves over `𝔽_q` the sieve term `S_d(C) = Σ_{v ∈ V(𝔽_q)} s_d((C_v)^{sing})` sums the signed configuration coefficients of the singular loci of the fibres, `S₀(C) = #V(𝔽_q)`, and when the sieve applies (§8.7) the number of smooth fibres is `Σ_{d≥0} S_d(C)`. Sections 8.9–8.11 and 8.14 state the truncated sums `N^•_{n,≤3} = Σ_{d≤3} S_d(C^•_n)` divided by `#Aut(Q^•)`; these are sums of sieve terms, not counts of smooth fibres, and the count of smooth fibres adds the tail of §8.13. Throughout, `p_r = 1 + q + ⋯ + q^r = #ℙ^r(𝔽_q)`, `(x)_n = x(x − 1)⋯(x − n + 1)` is the falling factorial with `(x)_0 = 1`, and `q¹⁵` denotes `q^{15}`.
 
 ### 8.1 The hyperelliptic stack as a quotient of binary forms
 
@@ -1122,51 +1122,59 @@ Prove that the smooth locus `Q_con − {vertex} = 𝔸² ⊔ 𝔸¹` has `Z^{−
 
 ### 8.9 Sieve coefficients on the quadric cone
 
-For `0 ≤ n, d ≤ 3` prove that the sieve term `S_d(C^con_n) = Σ_{v ∈ V^con_n(𝔽_q)} s_d((C^con_{n,v})^{sing})` is the polynomial in the following table, exactly (BFP, Propositions 8.1–8.2, pp. 1341–1343). Route: stratify configurations of singular points by coincidences with marked points and by collinearity; a singularity imposes three linear conditions, a marked point one, a singular marked point two in addition to its marking condition; configurations containing a ruling line contribute multiples of `s₂(𝔸¹) = 0` or `s₃(ℙ¹) = 0`; count the remaining linear equation kernels.
+Let `X = Q_con − {vertex}`, whose inverse zeta function `1 − (q² + q)t + q³t²` (§8.8) gives `s₁(X) = −q² − q`, `s₂(X) = q³` and `s_d(X) = 0` for `d ≥ 3`. For `0 ≤ n ≤ 3`, `d ≤ 3` and every finite field `𝔽_q`, prove that the sieve term `S_d(C^con_n)` is a polynomial in `q` (BFP, Propositions 8.1–8.2, pp. 1341–1343, which compute the sixteen terms one by one). Prove that `S₀(C^con_n) = (q² + q)_n q^{15−n}`, each marked point of `X(𝔽_q)` imposing one affine-linear condition on `V^con ≅ 𝔸¹⁵`. Without markings prove `S₁(C^con_0) = q¹² s₁(X) = −q¹⁴ − q¹³`, a singular point imposing three conditions; `S₂(C^con_0) = q⁹(s₂(X) − (q + 1)s₂(𝔸¹)) = q¹²`, because a fibre singular at two points of one ruling contains that ruling and hence the vertex, so that only the pairs off a common ruling contribute, each imposing six conditions; and `S₃(C^con_0) = 0`. Prove that the truncated sum `N^con_{n,≤3}` is divisible in `ℤ[q]` by `#Aut(Q_con) = q⁴(q − 1)²(q + 1)`, with quotient:
 
-| n | S0 | S1 | S2 | S3 |
-| --- | --- | --- | --- | --- |
-| 0 | q¹⁵ | −q¹⁴−q¹³ | q¹² | 0 |
-| 1 | q¹⁶+q¹⁵ | −q¹⁵−3q¹⁴−q¹³+q¹² | 2q¹³+q¹²−q¹¹ | 0 |
-| 2 | q¹⁷+2q¹⁶−q¹⁴ | −q¹⁶−5q¹⁵−3q¹⁴+3q¹³+2q¹² | 3q¹⁴+4q¹³−3q¹²−3q¹¹+q¹⁰ | −q¹²+q¹¹+q¹⁰−q⁹ |
-| 3 | q¹⁸+3q¹⁷−5q¹⁵−q¹⁴+2q¹³ | −q¹⁷−7q¹⁶−6q¹⁵+12q¹⁴+7q¹³−5q¹² | 4q¹⁵+9q¹⁴−10q¹³−9q¹²+6q¹¹ | −3q¹³+5q¹²−5q¹¹+7q¹⁰+2q⁹−12q⁸+6q⁷ |
+| `n` | `N^con_{n,≤3}/#Aut(Q_con)` |
+| --- | --- |
+| 0 | q⁸ |
+| 1 | q⁹ + q⁸ − q⁷ |
+| 2 | q¹⁰ + 2q⁹ − 2q⁸ − 2q⁷ + q⁶ − q⁵ |
+| 3 | q¹¹ + 3q¹⁰ − 3q⁹ − 8q⁸ + 6q⁷ − 3q⁶ + 2q⁵ − 6q⁴ + 6q³ |
+
+Route: stratify configurations of singular points by coincidences with marked points and by collinearity; a singularity imposes three linear conditions, a marked point one, a singular marked point two in addition to its marking condition; configurations containing a ruling line contribute multiples of `s₂(𝔸¹) = 0` or `s₃(ℙ¹) = 0`; count the remaining linear equation kernels, sum over `d ≤ 3` and divide.
 
 *Needs:* §§8.5, 8.7, 8.8.
 
 **Checks.**
 
-- The unmarked row sums to `q¹⁵ − q¹⁴ − q¹³ + q¹²`, and `(q¹⁵ − q¹⁴ − q¹³ + q¹²)/#Aut(Q_con) = q⁸`.
+- The unmarked terms sum to `q¹⁵ − q¹⁴ − q¹³ + q¹²`, and `(q¹⁵ − q¹⁴ − q¹³ + q¹²)/#Aut(Q_con) = q⁸`.
 - `S₀(C^con_1) = q¹⁴(q² + q)`, since a marked point imposes one condition and `#Q_con^{sm}(𝔽_q) = q² + q`.
 - `S₃(C^con_0) = 0`: three non-collinear singularities give `q⁶ s₃(X) = 0`, and collinear configurations contribute multiples of `s₂(𝔸¹) = 0`.
+- Divisibility tests the four terms together: at `n = 1` they sum to `q¹⁶ − 3q¹⁴ + q¹³ + 2q¹² − q¹¹ = q¹¹(q − 1)²(q + 1)(q² + q − 1)`, and an error of one in a single coefficient adds `±q^k`, which `(q − 1)²(q + 1)` does not divide, so the quotient would not be a polynomial.
 
 ### 8.10 Sieve coefficients on the non-split quadric
 
-For `0 ≤ n, d ≤ 3` prove that `S_d(C^nsp_n)` is given exactly by the following table (BFP, Propositions 8.4–8.5, pp. 1343–1344). Route: as in §8.9; for `d = 3` with a singular hyperplane section through the three singularities, the section is a conjugate pair of lines through a rational point and the residual quadric section is counted separately.
+For `0 ≤ n ≤ 3`, `d ≤ 3` and every finite field `𝔽_q`, prove that `S_d(C^nsp_n)` is a polynomial in `q` (BFP, Propositions 8.4–8.5, pp. 1343–1344, which compute the sixteen terms one by one). Without markings prove `S_d(C^nsp_0) = s_d(Q_nsp)·p_{15−3d}`, that is `p₁₅`, `−(q² + 1)p₁₂`, `0` and `(q⁴ + q²)p₆` for `d = 0, 1, 2, 3`, singularities at `d ≤ 3` points imposing `3d` independent conditions on `V^nsp ≅ ℙ¹⁵`; with markings prove `S₀(C^nsp_n) = (q² + 1)_n p_{15−n}`. With `#Aut(Q_nsp) = 2(q⁶ − q²)`, prove that `N^nsp_{n,≤3}/#Aut(Q_nsp)` equals the entry of the following table up to `o(q^{(9+n)/2})` for `n ≤ 2`, and up to `c q⁶ + o(q⁶)` with `c` a constant for `n = 3`, as `q` runs through prime powers:
 
-| n | S0 | S1 | S2 | S3 |
-| --- | --- | --- | --- | --- |
-| 0 | p₁₅ | (−q²−1)p₁₂ | 0 | (q⁴+q²)p₆ |
-| 1 | (q²+1)p₁₄ | −(q⁴+q²)p₁₁−(q²+1)p₁₂ | q¹³+q¹¹ | (q⁶+q⁴)p₅+(q⁴+q²)p₆ |
-| 2 | (q⁴+q²)p₁₃ | (−q⁶+q²)p₁₀−2(q⁴+q²)p₁₁ | 2q¹⁴+q¹³+q¹²+q¹¹−q¹⁰ | 3q¹¹+3q¹⁰+5q⁹+5q⁸+3q⁷+3q⁶+q⁵+q⁴ |
-| 3 | (q⁶−q²)p₁₂ | (−q⁸+2q⁶+q⁴−2q²)p₉−3(q⁶−q²)p₁₀ | 3(q¹⁵+q¹⁴−q¹³−q¹¹−q¹⁰+q⁹) | −2q¹³+6q¹²+2q¹¹+2q¹⁰+3q⁹−5q⁸−2q⁷−2q⁶−q⁵−q⁴ |
+| `n` | `N^nsp_{n,≤3}/#Aut(Q_nsp)` |
+| --- | --- |
+| 0 | ½(q⁹ − q⁶) |
+| 1 | ½(q¹⁰ − q⁶) |
+| 2 | ½(q¹¹ − q⁹ + q⁸ − q⁷ − q⁶) |
+| 3 | ½(q¹² − 3q¹⁰ + 2q⁹ + 2q⁸ − 6q⁷) |
+
+These are the precisions of §8.13; for `n = 3` the coefficient of `q⁶` merges with the integer `B_nsp` there. Route: as in §8.9; for `d = 3` with a singular hyperplane section through the three singularities, the section is a conjugate pair of lines through a rational point and the residual quadric section is counted separately; expand the quotient in descending powers of `q` through `1/(1 − q⁻⁴)`.
 
 *Needs:* §§8.5, 8.7, 8.8.
 
 **Checks.**
 
 - The unmarked `S₂` vanishes, because `s₂(Q_nsp) = 0` and singularities at two points impose six independent conditions.
-- `S_d(C^nsp_0) = s_d(Q_nsp) p_{15−3d}` for `d ≤ 3`: for `d = 1`, `(−q² − 1)p₁₂`.
+- Without markings the four terms sum to `q¹⁵ − q¹² − q¹¹ + q⁸ + q⁷ + q⁶ + q⁵ + q⁴`, whose quotient by `2(q⁶ − q²)` is `½(q⁹ − q⁶) + ½(q + 1) + O(q⁻¹)`; the part below degree `9/2` lies inside the error of §8.13 and is not part of the statement.
+- The marking factor `(q² + 1)_n` counts ordered tuples of the `q² + 1` rational points of `Q_nsp`. Replacing it by the split factor `((q + 1)²)_n` changes `S₀(C^nsp_1)` by `2q·p₁₄` and the quotient at `n = 1` by `q⁹ + O(q⁸)`, which the stated `½(q¹⁰ − q⁶)` excludes.
 
 ### 8.11 Sieve coefficients on the split quadric
 
-For `0 ≤ n, d ≤ 3` prove that `S_d(C^spl_n)` is given by the following table; the unmarked row and the entries `S₀` are exact, and the remaining marked entries are stated up to `o(q⁶)` as `q` grows through prime powers, lower terms being omitted (BFP, Propositions 8.6–8.7, pp. 1344–1346). Route: as in §8.9, with three collinear singularities on a ruling imposing seven rather than nine conditions and contributing multiples of `s₃(ℙ¹) = 0`; for marked rows, a singular `(1,1)` curve through two marked points imposes ten rather than eleven conditions.
+For `0 ≤ n ≤ 3`, `d ≤ 3` and every finite field `𝔽_q`, prove that `S_d(C^spl_n)` is a polynomial in `q` when `n = 0` or `d = 0`, and that for `1 ≤ n, d ≤ 3` it agrees with a polynomial in `q` up to `o(q⁶)` as `q` runs through prime powers (BFP, Propositions 8.6–8.7, pp. 1344–1346, which compute the sixteen terms one by one, the marked ones to that precision). Without markings prove `S_d(C^spl_0) = s_d(Q_spl)·p_{15−3d}`, that is `p₁₅`, `−(q + 1)²p₁₂`, `2(q³ + q² + q)p₉` and `−(q⁴ + 2q³ + q²)p₆`: two singularities impose six independent conditions, and three impose nine unless they lie on a line of a ruling, where they impose seven and contribute a multiple of `s₃(ℙ¹) = 0`. With markings prove `S₀(C^spl_n) = ((q + 1)²)_n p_{15−n}`. With `#Aut(Q_spl) = 2(q³ − q)²`, prove that `N^spl_{n,≤3}/#Aut(Q_spl)` equals the entry of the following table at the precisions of §8.10:
 
-| n | S0 | S1 | S2 | S3 |
-| --- | --- | --- | --- | --- |
-| 0 | p₁₅ | (−q²−2q−1)p₁₂ | 2(q³+q²+q)p₉ | (−q⁴−2q³−q²)p₆ |
-| 1 | (q+1)²p₁₄ | −(q+1)²((q²+2q)p₁₁+p₁₂) | 3q¹³+12q¹²+21q¹¹+24q¹⁰+24q⁹+24q⁸+24q⁷+24q⁶ | −3q¹¹−10q¹⁰−15q⁹−16q⁸−16q⁷−16q⁶ |
-| 2 | (q+1)²(q²+2q)p₁₃ | −(q+1)²(q²+2q)((q²+2q−1)p₁₀+2p₁₁) | 4q¹⁴+27q¹³+61q¹²+75q¹¹+73q¹⁰+72q⁹+72q⁸+72q⁷+70q⁶ | −10q¹²−31q¹¹−45q¹⁰−49q⁹−49q⁸−47q⁷−41q⁶ |
-| 3 | (q+1)²(q²+2q)(q²+2q−1)p₁₂ | −q¹⁷−12q¹⁶−54q¹⁵−106q¹⁴−117q¹³−102q¹²−96q¹¹−96q¹⁰−96q⁹−96q⁸−95q⁷−87q⁶ | 5q¹⁵+53q¹⁴+151q¹³+190q¹²+153q¹¹+141q¹⁰+147q⁹+142q⁸+128q⁷+90q⁶ | −30q¹³−96q¹²−116q¹¹−94q¹⁰−97q⁹−93q⁸−62q⁷−24q⁶ |
+| `n` | `N^spl_{n,≤3}/#Aut(Q_spl)` |
+| --- | --- |
+| 0 | ½(q⁹ − q⁶) |
+| 1 | ½(q¹⁰ + 2q⁹ − 2q⁷ − q⁶) |
+| 2 | ½(q¹¹ + 4q¹⁰ + 3q⁹ − 5q⁸ − 3q⁷ − q⁶) |
+| 3 | ½(q¹² + 6q¹¹ + 9q¹⁰ − 10q⁹ − 10q⁸ + 2q⁷) |
+
+Route: as in §8.9; with markings, a singular `(1,1)` curve through two marked points imposes ten rather than eleven conditions; expand the quotient through `1/(1 − q⁻²)²`.
 
 *Needs:* §§8.5, 8.7, 8.8.
 
@@ -1174,7 +1182,9 @@ For `0 ≤ n, d ≤ 3` prove that `S_d(C^spl_n)` is given by the following table
 
 - The unmarked `S₂ = 2(q³ + q² + q)p₉` is nonzero, unlike the non-split case.
 - `S₀(C^spl_1) = (q + 1)²p₁₄`, the number of rational points of `ℙ¹ × ℙ¹` times the cubic sections through one point.
-- The marked split table is a statement up to `o(q⁶)`; it is not an exact count of smooth fibres, and the tail of §8.13 is added before any count is concluded.
+- Without markings the split and non-split quotients agree to the stated precision, both `½(q⁹ − q⁶)`, although their terms differ (`S₂ = 2(q³ + q² + q)p₉` against `0`); below it they differ, `½(q⁹ − q⁶) − ½(q + 1) + O(q⁻¹)` against `½(q⁹ − q⁶) + ½(q + 1) + O(q⁻¹)`.
+- With markings the terms are known only up to `o(q⁶)`; dividing by `2(q³ − q)²`, of degree six, leaves the quotient determined up to `o(1)`, inside the precision of §8.13. The quotients are sums of sieve terms, not counts of smooth fibres; the tail of §8.13 is added before any count is concluded.
+- With §§8.3, 8.9 and 8.10, at `n = 1`: `(q⁹ + q⁸ − q⁷) + ½(q¹⁰ − q⁶) + ½(q¹⁰ + 2q⁹ − 2q⁷ − q⁶) + (q + 1)q⁷ = q¹⁰ + 2q⁹ + 2q⁸ − q⁷ − q⁶`, which is the open count of §9.6 in degrees five and above, as §8.6 and the bound `o(q⁵)` of §8.13 require.
 
 ### 8.12 A signed count of four points in general position
 
@@ -1200,39 +1210,24 @@ For each type and `0 ≤ n ≤ 2` prove `Σ_{d≥4} S_d(C^•_n)/#Aut(Q^•) = o
 
 ### 8.14 Sieve coefficients for nontrivial marking twists
 
-For the cycle types `(2)`, `(2,1)` and `(3)` let `C^•_λ → V^•_λ` be the twisted families of §1.1. Prove that `S_d(C^•_λ)` for `d ≤ 3` is given by the following tables, exactly for the cone and up to `o(q⁶)` for the non-split and split quadrics; for the non-split cycle type `(3)` the exact `S₀` is `(q⁶ − q²)p₁₂`, whose part of degree at least six is `q¹⁸ + q¹⁷ + q¹⁶ + q¹⁵`. Prove that the tail bounds of §8.13 hold for these twisted families (BFP, Propositions 11.2–11.4, pp. 1357–1360, and §11.2, p. 1357). Route: enumerate Frobenius orbit types of marked points and singular coincidences in the equation kernels, keeping the ruling involution on the non-split quadric; for cycle type `(3)` three collinear conjugate points need their own incidence count, and `q` is not replaced by `q³` in the untwisted table.
+For the cycle types `λ = (2), (2,1), (3)` let `C^•_λ → V^•_λ` be the twisted families of §1.1, in which geometric Frobenius permutes the markings by `σ(λ)`, and `N^•_{λ,≤3} = Σ_{d≤3} S_d(C^•_λ)`. Prove that the tail bounds of §8.13 hold for these families with `n = |λ|` (BFP, §11.2, p. 1357). Prove that `S₀(C^•_λ) = m^•_λ·e^•_{15−|λ|}`, where `e^con_r = q^r` and `e^nsp_r = e^spl_r = p_r` count the equations through the marked points, and `m^•_λ` counts the ordered marked configurations of type `λ` on the smooth locus: the ordered conjugate pairs `m^•_{(2)} = q⁴ − q`, `q⁴ + q²`, `q⁴ + q² − 2q` for the cone, the non-split and the split quadric; `m^•_{(2,1)} = m^•_{(2)}` times `q² + q`, `q² + 1`, `(q + 1)²` respectively; and the ordered conjugate triples `m^•_{(3)} = q⁶ + q³ − q² − q`, `q⁶ − q²`, `q⁶ + 2q³ − q² − 2q`. Prove that for `1 ≤ d ≤ 3` the term `S_d(C^•_λ)` is a polynomial in `q` for the cone and agrees with one up to `o(q⁶)` for the smooth quadrics (BFP, Propositions 11.2–11.4, pp. 1357–1360, which compute the thirty-six terms one by one), and that `S₂(C^nsp_{(3)}) = 0`: no singularity can be a marked point, the three marked points forming one Frobenius orbit, and two singularities off the marked points impose six conditions wherever they lie, so the term is a multiple of `s₂` of `Q_nsp` minus a closed point of degree three, which equals `s₂(Q_nsp) = 0` because removing that point multiplies the inverse zeta function by `(1 − t³)^{−1}`. Prove that `N^•_{λ,≤3}/#Aut(Q^•)` is given by the following table, exactly for the cone, and for the smooth quadrics up to `o(q^{11/2})` for `λ = (2)` and up to `c q⁶ + o(q⁶)`, `c` a constant, for `λ = (2,1), (3)`:
 
-Quadric cone:
+| Type | `λ = (2)` | `λ = (2,1)` | `λ = (3)` |
+| --- | --- | --- | --- |
+| cone | q¹⁰ − q⁶ + q⁵ | q¹¹ + q¹⁰ − q⁹ − q⁶ + 2q⁵ − 2q⁴ | q¹¹ + q⁸ − q⁵ |
+| non-split | ½(q¹¹ + q⁹ − q⁸ − q⁷ + q⁶) | ½(q¹² + q¹⁰ − 2q⁸ + 2q⁷) | ½(q¹² − q⁹ − q⁸) |
+| split | ½(q¹¹ + q⁹ − 3q⁸ + q⁷ + q⁶) | ½(q¹² + 2q¹¹ + q¹⁰ − 4q⁹ − 2q⁸ + 2q⁷) | ½(q¹² − q⁹ − q⁸ + 2q⁷) |
 
-| Cycle type | S0 | S1 | S2 | S3 |
-| --- | --- | --- | --- | --- |
-| (2) | q¹⁷−q¹⁴ | −q¹⁶−q¹⁵+q¹⁴+q¹³ | q¹⁴−2q¹³+q¹²+q¹¹−q¹⁰ | q¹²−q¹¹−q¹⁰+q⁹ |
-| (2,1) | q¹⁸+q¹⁷−q¹⁵−q¹⁴ | −q¹⁷−3q¹⁶+4q¹⁴+q¹³−q¹² | 2q¹⁵−q¹⁴−4q¹³+3q¹²+2q¹¹−2q¹⁰ | q¹³+q¹²−5q¹¹+q¹⁰+4q⁹−2q⁸ |
-| (3) | q¹⁸+q¹⁵−q¹⁴−q¹³ | −q¹⁷−q¹⁶+q¹³+q¹² | q¹⁵−q¹³ | −q¹²+q¹¹+q¹⁰−q⁹ |
-
-Non-split quadric:
-
-| Cycle type | S0 | S1 | S2 | S3 |
-| --- | --- | --- | --- | --- |
-| (2) | (q⁴+q²)p₁₃ | −(q²+1)(q⁴+q²)p₁₀ | −q¹³−q¹²−q¹¹−q¹⁰ | 4q¹²+3q¹¹+5q¹⁰+5q⁹+3q⁸+3q⁷+3q⁶ |
-| (2,1) | (q²+1)(q⁴+q²)p₁₂ | −(q²+1)(q⁴+q²)p₁₀−(q²+1)(q⁶+q⁴)p₉ | q¹⁵−q¹⁴+q¹³−2q¹²−q¹¹−q¹⁰−q⁹ | 4q¹³+6q¹²+8q¹¹+10q¹⁰+7q⁹+7q⁸+4q⁷+4q⁶ |
-| (3) | q¹⁸+q¹⁷+q¹⁶+q¹⁵ | −q¹⁷−q¹⁶−2q¹⁵−2q¹⁴−q¹³−q¹²+q⁷+q⁶ | 0 | q¹³+2q¹¹+2q¹⁰+q⁸−2q⁷−2q⁶ |
-
-Split quadric:
-
-| Cycle type | S0 | S1 | S2 | S3 |
-| --- | --- | --- | --- | --- |
-| (2) | q¹⁷+q¹⁶+2q¹⁵ | −q¹⁶−3q¹⁵−5q¹⁴−5q¹³−2q¹² | 2q¹⁴+5q¹³+11q¹²+5q¹¹+q¹⁰−2q⁶ | −2q¹²−7q¹¹−7q¹⁰−q⁹+q⁸+q⁷+3q⁶ |
-| (2,1) | q¹⁸+3q¹⁷+5q¹⁶+5q¹⁵+2q¹⁴ | −q¹⁷−6q¹⁶−16q¹⁵−22q¹⁴−15q¹³−4q¹²+q⁷+5q⁶ | 3q¹⁵+17q¹⁴+35q¹³+32q¹²+11q¹¹−q¹⁰−q⁹−2q⁸−8q⁷−18q⁶ | −8q¹³−24q¹²−26q¹¹−10q¹⁰+3q⁹+7q⁸+12q⁷+18q⁶ |
-| (3) | q¹⁸+q¹⁷+q¹⁶+3q¹⁵+2q¹⁴ | −q¹⁷−3q¹⁶−6q¹⁵−10q¹⁴−9q¹³−3q¹²+q⁷+3q⁶ | 2q¹⁵+8q¹⁴+16q¹³+16q¹²+6q¹¹−2q⁸−4q⁷−6q⁶ | −3q¹³−12q¹²−14q¹¹−4q¹⁰+2q⁹+3q⁸+4q⁷+6q⁶ |
+Route: enumerate Frobenius orbit types of marked points and singular coincidences in the equation kernels, keeping the ruling involution on the non-split quadric; for cycle type `(3)` three collinear conjugate points need their own incidence count, and the twisted terms are not the untwisted ones with `q` replaced by `q³`.
 
 *Needs:* §§1.1, 8.5, 8.8, 8.13.
 
 **Checks.**
 
-- A cycle type `(2)` marking has no rational fixed point: `S₀(C^con_{(2)}) = q¹⁷ − q¹⁴ = q¹⁴(q³ − 1)`, the cubic sections through a degree-two orbit of smooth points.
+- A cycle type `(2)` marking has no rational fixed point: `S₀(C^con_{(2)}) = (q⁴ − q)q¹³ = q¹⁴(q³ − 1)`, the cubic sections through a degree-two orbit of smooth points; counting ordered rational pairs instead, `(q² + q)_2 q¹³`, gives the untwisted `S₀(C^con_2)`.
 - The cone `(3)` coefficient `S₂` is `q¹⁵ − q¹³`, whereas the non-split `(3)` coefficient `S₂` is `0`.
-- Evaluating characters: for `n = 2` the trivial and sign multiplicities of the twisted counts are recovered from the counts for `(1,1)` and `(2)` by `(f_{(1,1)} ± f_{(2)})/2`.
+- Evaluating characters: for `n = 2` the trivial and sign multiplicities of the twisted counts are recovered from the counts for `(1,1)` and `(2)` by `(f_{(1,1)} ± f_{(2)})/2`. For the cone, with §8.9, they are `q¹⁰ + q⁹ − q⁸ − q⁷` and `q⁹ − q⁸ − q⁷ + q⁶ − q⁵`; for the non-split quadric, with §8.10, `½(q¹¹ − q⁷)` and `½(−q⁹ + q⁸ − q⁶)` up to `o(q^{11/2})`.
+- With §§9.2 and 9.9, at `λ = (2)`: `(q¹⁰ − q⁶ + q⁵) + ½(q¹¹ + q⁹ − q⁸ − q⁷ + q⁶) + ½(q¹¹ + q⁹ − 3q⁸ + q⁷ + q⁶) + (q⁹ − 1) = q¹¹ + q¹⁰ + 2q⁹ − 2q⁸ + q⁵ − 1`, while the open `S₂`-equivariant count of §9.9 at a transposition, its `s_{(2)}` polynomial minus its `s_{(1,1)}` polynomial, is `q¹¹ + q¹⁰ + 2q⁹ − 2q⁸`: the two agree in degrees six and above, the precision `o(q^{11/2})`.
 
 ### Examples
 
@@ -1389,12 +1384,12 @@ For each partition `λ` with `|λ| ≤ 3` listed below, prove that the alternati
 
 | Highest weight | Alternating compact-support trace |
 | --- | --- |
-| `(1)` | q⁷+q² |
+| `(1)` | q² + q⁷ |
+| `(1,1)` | −q² − q⁷ − q⁸ + q⁹ |
 | `(2)` | 0 |
-| `(1,1)` | q⁹−q⁸−q⁷−q² |
-| `(3)` | q³−2q−1 |
-| `(2,1)` | q⁸−q⁷−q⁴+2q³+1 |
-| `(1,1,1)` | −q¹⁰−q⁹+q⁸+q⁶−q⁴−q² |
+| `(1,1,1)` | −q² − q⁴ + q⁶ + q⁸ − q⁹ − q¹⁰ |
+| `(2,1)` | 1 + 2q³ − q⁴ − q⁷ + q⁸ |
+| `(3)` | −1 − 2q + q³ |
 
 *Needs:* §§3.1, 9.6, 9.9.
 
@@ -1677,14 +1672,15 @@ The final induction uses the finite cusp bases and the oriented weight-fifteen c
 
 ### 12.1 Cusp generation of degree-thirteen homology
 
-For every stable pair prove that the STE generated by `H¹¹(M̄_{1,11})` contains `H^{2d−13}(M̄_{g,n})`, the cohomological form of `H₁₃` (CLP, Theorem 1.6, p. 2; proof, pp. 23–24). Route: genus zero has no odd cohomology. For `g ≥ 1`, §2.3 and §0.4 reduce to the pairs with `13 ≥ 2g, n ≤ 1` or `13 ≥ 2g − 2 + n, n ≥ 2`; all of them except `(2, 11), (1, 11), (1, 12), (1, 13)` have the CKgP (§§5.4, 7.7), so their pure Borel–Moore homology in degree thirteen vanishes by §5.3; `(2, 11)` follows from §11.10 and hard Lefschetz; genus one follows from §3.2 by induction on `n`. In the Künneth decomposition of boundary terms of total degree thirteen exactly one factor is odd, by §9.8, of degree eleven, in `S_ω` by §10.9, or thirteen.
+For every stable pair prove that the STE generated by `H¹¹(M̄_{1,11})` contains `H^{2d−13}(M̄_{g,n})`, the cohomological form of `H₁₃` (CLP, Theorem 1.6, p. 2; proof, pp. 23–24). Route: genus zero has no odd cohomology. For `g ≥ 1`, §2.3 and §0.4 reduce to the pairs with `13 ≥ 2g, n ≤ 1` or `13 ≥ 2g − 2 + n, n ≥ 2`; all of them except `(2, 11), (1, 11), (1, 12), (1, 13)` have the CKgP (§5.4), so their pure Borel–Moore homology in degree thirteen vanishes by §5.3; `(2, 11)` follows from §11.10 and hard Lefschetz; genus one follows from §3.2 by induction on `n`. In the Künneth decomposition of boundary terms of total degree thirteen exactly one factor is odd, by §9.8, of degree eleven, in `S_ω` by §10.9, or thirteen.
 
-*Needs:* §§0.4, 2.3, 3.2, 4.4, 4.12, 5.3, 5.4, 7.7, 9.8, 10.1, 10.9, 11.10; DeligneWeightsAndPurity, gap:dm-stack-hard-lefschetz; MixedHodgeModulesAndIrregularHodgeTheory, gap:dm-stack-mixed-hodge; StableReductionPartII, gap:pointed-coarse-projectivity.
+*Needs:* §§0.4, 2.3, 3.2, 4.4, 4.12, 5.3, 5.4, 9.8, 10.1, 10.9, 11.10; DeligneWeightsAndPurity, gap:dm-stack-hard-lefschetz; MixedHodgeModulesAndIrregularHodgeTheory, gap:dm-stack-mixed-hodge; StableReductionPartII, gap:pointed-coarse-projectivity.
 
 **Checks.**
 
 - The statement concerns `H₁₃`, that is `H^{2d−13}`, not `H¹³`; for `H¹³` itself generation by `S₁₂` is the subject of CLP Remark 7.8.
 - `(2, 11)` is a base case because `2g − 2 + n = 13` and genus two has no CKgP at eleven markings (`c(2) = 10`).
+- No genus-seven pair is a base case: `2g = 14 > 13` for `n ≤ 1`, and `2g − 2 + n ≥ 14 > 13` for `n ≥ 2`. The largest genus is six, with `(6, n ≤ 3)` inside `c(6) = 5`, and the genus-by-genus ranges `(1, ≤ 13)`, `(2, ≤ 11)`, `(3, ≤ 9)`, `(4, ≤ 7)`, `(5, ≤ 5)`, `(6, ≤ 3)` against `c = 10, 10, 11, 11, 7, 5` leave exactly the four exceptions; the genus-seven theorem §7.7 first enters in degree fifteen (§12.2).
 
 ### 12.2 Two-cusp generation of degree-fifteen homology
 
