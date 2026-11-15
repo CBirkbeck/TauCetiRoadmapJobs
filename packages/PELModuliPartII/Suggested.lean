@@ -20,8 +20,8 @@ listed here with the carrier it lacks.
   base with an `O_F`-action, the Kottwitz condition on their Lie algebras, polarizations of a given
   type, and Deligne–Mumford stacks; Tau Ceti's `AbelianVariety` is over a field only.
 * Smoothness, quasi-projectivity and projectivity of the localized, exotic and neat unitary
-  integral models (§§7.2, 7.7, 8.7), their regular semistable reduction at Krämer and almost
-  self-dual places (§§7.8, 7.9, 8.3). They lack the same abelian schemes with PEL structure over a
+  integral models (§§7.6, 7.7, 8.7), their regular semistable reduction at Krämer and almost
+  self-dual places (§§7.8, 7.9, 8.4). They lack the same abelian schemes with PEL structure over a
   base, their moduli functors and the PEL moduli of PELModuli and ShimuraCompactifications.
 * The basic-locus uniformizations (§§9.5–9.10). They lack, besides the above, completions of a
   scheme along a closed subset as formal schemes and quotients of formal schemes by discrete
