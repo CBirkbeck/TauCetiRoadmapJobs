@@ -11,20 +11,29 @@ the file states nothing. For each headline, the missing carriers are:
   reductive group `G` over `ℚ_p`, a decent `b ∈ G(Q̆_p)` with `[b] ∈ B(G, μ)` and a generic point
   `η` of the flag variety `Fl_μ` over a finite extension `K` of `Q̆_p`, every filtered isocrystal
   `(V ⊗ Q̆_p, ρ(b)σ, Fil_η)` is weakly admissible. Tau Ceti has reductivity of affine groups
-  (`TauCeti.reductiveCommHopfAlgProperty`) and their representation categories, and parabolic subgroups
-  only as a predicate. Missing: the set `B(G)` of `σ`-conjugacy classes in `G(Q̆_p)` with its
-  Newton and Kottwitz invariants and acceptable subsets `B(G, μ)`, the flag variety `Fl_μ` as a scheme with its generic point (no
-  represented quotient `G/P`), and filtered isocrystals over finite extensions of `Q̆_p` with
-  their Hodge and Newton numbers (Mathlib's `WittVector.Isocrystal` has neither filtrations nor
-  a Newton degree of a semilinear map).
+  (`TauCeti.reductiveCommHopfAlgProperty`) and their representation categories; parabolic
+  subgroups as a predicate (`TauCeti.HopfIdeal.IsParabolic`) and as the dynamic parabolic of a
+  cocharacter (`TauCeti.Cocharacter.parabolicDefiningHopfIdeal`); and the fppf quotient `G/N` by
+  a closed subgroup (`CommHopfAlgCat.fppfHomogeneousQuotient`), represented by a scheme for
+  reduced `G` of finite type over an algebraically closed field
+  (`TauCeti.HopfIdeal.exists_fppfHomogeneousQuotient_iso_projectiveOrbitPoints`) and, over
+  other fields, only for linearly reductive `N`
+  (`TauCeti.HopfIdeal.fppfHomogeneousQuotientIsoCoinvariantsPoints`), which a proper parabolic
+  is not. Missing: the set `B(G)` of `σ`-conjugacy classes in `G(Q̆_p)` with its Newton and
+  Kottwitz invariants and acceptable subsets `B(G, μ)`, the flag variety `Fl_μ` as a scheme over
+  the reflex field, a `p`-adic field, with its generic point, and filtered isocrystals over
+  finite extensions of `Q̆_p` with their Hodge and Newton numbers (Mathlib's
+  `WittVector.Isocrystal` has neither filtrations nor a Newton degree of a semilinear map).
 * Generic derived monodromy (README §2.4; Gleason–Lim–Xu, Theorem 5.8(2)): if moreover `(b, μ)`
   is Hodge–Newton irreducible, the identity component of the Zariski closure of the image of
   the attached crystalline representation `Γ_K → G(ℚ_p)` contains `G_der`. Missing, in addition:
   crystalline representations with `G`-structure, the Colmez–Fontaine equivalence and the
   crystalline period comparison over `B_cris`.
 * The crystalline period point with open derived image (README §3.2; Gleason–Lim–Xu,
-  Proposition 5.9): some point of the admissible locus `Gr^b_μ` over a finite extension of
-  `Q̆_p` has crystalline representation whose image meets `G_der(ℚ_p)` in an open subgroup.
+  Proposition 5.9): for a connected reductive `G` over `ℚ_p`, a geometric conjugacy class `μ` of
+  cocharacters of `G` and `b ∈ G(Q̆_p)` with `(b, μ)` Hodge–Newton irreducible, some point of
+  the admissible cell `Gr^b_μ` over a finite extension of `Q̆_p` has crystalline representation
+  whose image meets `G_der(ℚ_p)` in an open subgroup.
   The topological group `G(ℚ_p)` and its closed subgroups are pinned (Tau Ceti's point topology,
   `TauCeti.PointTopology.isTopologicalGroup`). Missing, in addition: the `B_dR`-affine
   Grassmannian (Mathlib has the ring `BDeRhamPlus` but no Grassmannian over it), its admissible
@@ -34,8 +43,10 @@ the file states nothing. For each headline, the missing carriers are:
   groups, z-extensions and the lifting of `B(G, μ)`.
 * Components of compact-image period torsors (README §4.1; Gleason–Lim–Xu, proof of
   Lemma 6.12): for a finite extension `K` of `Q̆_p` and any continuous `ξ : Γ_K → G(ℚ_p)` with
-  image `C`, the connected components of the period torsor `T_ξ → Spd K` are indexed
-  `G(ℚ_p)`-equivariantly by `G(ℚ_p)/C`, and the component of `gC` has stabilizer `gCg⁻¹`.
+  image `C`, the connected components of the `G(ℚ_p)`-torsor `T_ξ → Spd K`, obtained from the
+  Galois torsor `Spd Ω → Spd K` (`Ω` the completion of an algebraic closure of `K`) by change of
+  group along `ξ`, are indexed `G(ℚ_p)`-equivariantly by `G(ℚ_p)/C`, and the component of `gC`
+  has stabilizer `gCg⁻¹`.
 * Open derived stabilizers in an ambient target (README §4.2; Gleason–Lim–Xu, Lemma 6.12): if
   `ξ` is the crystalline representation of a period point over `K` whose image meets
   `G_der(ℚ_p)` in an open subgroup of `G_der(ℚ_p)`, as the point of README §3.2 does, then for
