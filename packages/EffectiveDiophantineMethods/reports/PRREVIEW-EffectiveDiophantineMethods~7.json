@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EffectiveDiophantineMethods~7",
+  "head": "a9bb521b7cc9c36e5455ec9278386e3cbaf2f0b7",
+  "pr": 1046,
+  "folder": "EffectiveDiophantineMethods",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "Full review. All six findings of the previous review are repaired. Seeded sample of 15 targets (0.2, 1.5, 2.12, 2.27, 3.2, 3.19, 3.28, 3.29, 4.15, 5.10, 5.14, 5.18, 5.22, 6.13, 6.18): 22 locators checked in 10 sources, all agree; the README flags no locator as unverified. Adversarial table of 24 rows with computed values, including all twelve Lean theorems (brute-force recomputation of the four classical lists; Matveev and Yu statements derived from the supplier's). Gate passes (worker, every counter 0, build 0); lake env lean gives twelve sorry warnings only; one-tactic probe closes none; depcheck 0 problems. Five P3 findings: scaffold-describing API/Check bullets, duplicated Checks, damaged code spans and sentences, suppliers missing from the contracts and layer Dependencies, one wrong internal reference and one Check outside its theorem's hypothesis. Not verified: de Weger Lemma 3.15 sign and the TdW 1992 section 15 table (dropped by the extraction), published page numbers of Bruin-Stoll, matveev2000 and yu1994 texts, numerical tables of sections 6.19-6.31 and 6.35.",
+  "text": "03b5e29282034e64"
+ }
+}
