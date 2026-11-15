@@ -178,7 +178,15 @@ Newton–Thorne II §3.
 - `HasProd`, `Differentiable`, `Complex.cpow`: the analytic carriers of the statements of §§14.4–14.5.
 - `DirichletCharacter` (`Mathlib/NumberTheory/DirichletCharacter/Basic.lean`): `MulChar (ZMod M) ℂ`,
   whose identity `1` is `1` on units and `0` on non-units; modulo `0` it is a character of `ℤ`, which
-  is why §14.5 requires a positive modulus.
+  is why §14.5 requires a positive modulus. Every character vanishes on non-units
+  (`MulChar.map_nonunit`, `Mathlib/NumberTheory/MulChar/Basic.lean`).
+- `DirichletCharacter.changeLevel` (`Mathlib/NumberTheory/DirichletCharacter/Basic.lean`): for
+  `n ∣ m`, the monoid homomorphism from characters modulo `n` to characters modulo `m` that composes
+  with the unit-group map `ZMod.unitsMap` and extends by zero; it is injective for `m ≠ 0`
+  (`DirichletCharacter.changeLevel_injective`, `DirichletCharacter.changeLevel_eq_one_iff`) and
+  agrees with the original character on integers prime to `m`
+  (`DirichletCharacter.changeLevel_eq_cast_of_dvd'`). It is the enlargement of the modulus in the
+  API of §14.5.
 - `UpperHalfPlane.qExpansion` (`Mathlib/NumberTheory/ModularForms/QExpansion.lean`): the
   `q`-expansion of a function on the upper half-plane with a given period, here `1`; its prime
   coefficients are the `a_p` of §14.5.
@@ -403,7 +411,9 @@ What SerreWeightAndLevelOptimisation must provide (gap:level-raising-prescribed-
 behaviour under reduction), §4.4 (Dickson's classification and its consequences for residual
 images), §7.1 (continuous symmetric, exterior and tensor powers), §7.6 (Zariski closures,
 monodromy groups, Goursat), §7.8 (Clebsch–Gordan and Pieri in characteristic `p`), §7.9 (adequate
-subgroups and the threshold `a₀(p)`), §7.10 (enormous images, with its hypothesis that every
+subgroups, the threshold `a₀(p)`, and adequacy of `Sym^{n−1}` of a finite image containing
+`SL_2(𝔽_t)` when `t ≥ 2n + 2`, its symmetric-power clause (3); `t ∣ n` excludes adequacy), §7.10
+(enormous images, with its hypothesis that every
 characteristic polynomial splits over the coefficient field).
 
 ### From TauCetiRoadmap.ArithmeticGaloisDuality
@@ -499,7 +509,9 @@ What CompletedCohomologyAndLocalGlobalCompatibility must provide (gap:drinfeld-s
 
 ### From TauCetiRoadmap.Chebotarev, ClassFieldTheory and RepresentationTheory/CharacterTheory
 
-Chebotarev Layer 10 (Dirichlet-density Chebotarev). ClassFieldTheory Layer 11 (global class
+Chebotarev Layer 10 (Dirichlet-density Chebotarev). ClassFieldTheory Layer 7 (the absolute local
+Artin map `K^× → G_K^{ab}`, the image of the units being that of inertia) and Layer 8 (its
+injectivity in characteristic zero), which describe `G_{ℚ_p}^{ab}` in the Checks of §0.2; Layer 11 (global class
 formation and Artin reciprocity), Layer 12 (global existence and the norm index), Layer 13 (norm
 theorems and class fields), Layer 14 (Hilbert and quadratic reciprocity). CharacterTheory Layer 3
 (character tables and orthogonality) and Layer 9 (the representation theory of `GL₂(𝔽_q)`).
@@ -607,9 +619,18 @@ Azumaya algebra over a Henselian local ring whose fibre is split by `ρ_v`, henc
 **Checks.**
 
 - For `n = 1` and `F_ṽ = ℚ_p` with `p` odd, `𝒳_{ps,v}` is the space of continuous characters of
-  `G_{ℚ_p}^{ab} ≅ ℤ_p^× × ℤ_p` (completed) lifting a fixed residual character; after fixing the
-  restriction to the torsion subgroup it is an open polydisc of dimension `2`, and in general it
-  is a finite union of open polydiscs of dimension `[F_ṽ : ℚ_p] + 1`.
+  `G_{ℚ_p}^{ab}` lifting a fixed residual character `χ̄`. Local reciprocity identifies `G_{ℚ_p}^{ab}`
+  with the profinite completion `ℤ_p^× × ℤ̂` of `ℚ_p^×` (ClassFieldTheory Layer 7, the absolute local
+  Artin map, with the units going onto the image of inertia; Layer 8, its injectivity in
+  characteristic zero). A lift is the Teichmüller lift of `χ̄` times a character with values in
+  `1 + 𝔪`, which factors through the maximal pro-`p` quotient `(1 + pℤ_p) × ℤ_p ≅ ℤ_p²`; so
+  `𝒳_{ps,v}` is an open polydisc of dimension `2`. In general it is a finite union of open polydiscs
+  of dimension `[F_ṽ : ℚ_p] + 1`, one for each character of the `p`-power roots of unity of `F_ṽ`
+  after enlarging `E`.
+- The full group `ℤ_p^× × ℤ̂` and its pro-`p` deformation quotient differ. For `p = 3` the unramified
+  extension of degree `5` gives a continuous surjection `G_{ℚ_3}^{ab} → C_5`: `Hom(ℤ_3^× × ℤ̂, C_5)`
+  has `5` elements, while `Hom(ℤ_3^× × ℤ_3, C_5)` has `1`, since `ℤ_3^× ≅ C_2 × ℤ_3`. Both have the
+  pro-`3` quotient `ℤ_3²`, which is all the deformation space sees, so the dimension `2` is the same.
 - If `τ̄|_{G_{F_ṽ}}` is absolutely irreducible, the whole space `𝒳_{ps,v}` is absolutely
   irreducible: openness of the irreducible locus does not make it a proper subset. An ordinary
   upper-triangular lift is a reducible point even when the extension is non-split.
@@ -1442,9 +1463,13 @@ EndoscopicTransferAndUnitaryTraceComparison §2.8.
 Let `n` be odd and `ℰ = (H, s, η)` an extended endoscopic triple for `G = G_n`. Prove:
 (archimedean) for `v | ∞` and a Langlands parameter `φ_H` with `η ∘ φ_H` the parameter of an
 irreducible `σ_v` of `G(F⁺_v)`, `π` the tempered `θ`-invariant representation of `H(F_ṽ)` of
-parameter `φ_H|_{W_{F_v}}` and `f_v` a coefficient of `σ_v`, there is a sign
-`ϵ(v, ℰ, φ_H) ∈ {±1}` with `π̃(f̃_v^H) = ϵ(v, ℰ, φ_H) σ_v(f_v) = ϵ(v, ℰ, φ_H)` for the
-Whittaker-normalised twisted trace, compatible with totally real base change; (unramified inert)
+parameter `φ_H|_{W_{F_v}}`, there is a sign `ϵ(v, ℰ, φ_H) ∈ {±1}` with
+`π̃(f̃_v^H) = ϵ(v, ℰ, φ_H) σ_v(f_v)` for every matrix coefficient `f_v` of `σ_v` (both sides are linear
+in `f_v`), for the Whittaker-normalised twisted trace, compatible with totally real base change; in
+particular `π̃(f̃_v^H) = ϵ(v, ℰ, φ_H)` when `f_v` is normalised by `σ_v(f_v) = 1`, as is
+`f_v(g) = dim σ_v · c(g)` with `c(g)` the complex conjugate of `⟨σ_v(g)e, e⟩` for a unit vector `e`
+and the Haar measure of total volume `1` on the compact group `G(F⁺_v)` (by Schur orthogonality the
+operator `∫ f_v(g) σ_v(g) dg` is then the orthogonal projection onto `ℂe`, of trace `1`); (unramified inert)
 for `f_v` unramified and an unramified `φ_H`, `π̃(f̃_v^H) = σ_{v,H}(f_v^H) = σ_v(f_v)`, with the
 twisted trace normalised to fix the spherical vector (the `L`-embedding is unramified at `v` because
 `μ` is unramified at the place of `F` above the inert `v`, §4.1); (split) the same identities at split `v` for
@@ -1465,6 +1490,11 @@ to `GL_n` (EndoscopicTransferAndUnitaryTraceComparison §6.4).
   normalisation; exchanging them changes the identities by the scalar by which the normalised
   intertwining operator acts on the spherical vector.
 - For `H = G` (the stable case) the sign is `+1`.
+- The archimedean value `ϵ` needs the normalised coefficient. For `G(F⁺_v) = U_1(ℝ)` with total
+  volume `1` and `σ_v` trivial, the constant `1` is the normalised coefficient, of trace `1`; the
+  constant `2` is also a matrix coefficient, of trace `2`, so for it the right-hand side is `2ϵ`, not
+  `ϵ`. For `σ_v` the character `z ↦ z^m`, the normalised coefficient is `z ↦ z^{−m}`, of trace `1` on
+  `σ_v` and `0` on every character `z ↦ z^{m′}` with `m′ ≠ m`.
 
 *Needs:* §4.1; EndoscopicTransferAndUnitaryTraceComparison §§2.10, 2.14, 4.9–4.10, 6.4, 6.10.
 
@@ -2131,8 +2161,9 @@ Proposition 4.6 and proof, pp. 62–64).
 *Proof sketch.* The stabilised trace formula for `G` gives
 `Σ m(σ_i) σ_i(f) = ½(π̃(f̃) + (π_{n−2} ⊗ (π_2 ⊗ μ^{−1} ∘ det))~(f̃^{U_{n−2} × U_2}))` for test
 functions matching `π` (EndoscopicTransferAndUnitaryTraceComparison §6.29 and the classification of
-ModularityAndLanglandsExtensions §3.16). With `f` built from `τ_g` at `T` and the identities of
-§4.2 elsewhere, the multiplicity is `m(σ) = ½(∏ϵ ∏c_{τ_v} + ∏ϵ ∏d_{v,1})`, using §§4.3, 4.6. If it
+ModularityAndLanglandsExtensions §3.16). With `f` built from `τ_g` at `T`, from the normalised
+archimedean coefficients of §4.2 (trace `1`) at the infinite places, and with the identities of §4.2
+elsewhere, the multiplicity is `m(σ) = ½(∏ϵ ∏c_{τ_v} + ∏ϵ ∏d_{v,1})`, using §§4.3, 4.6. If it
 vanishes over `F⁺`, quadratic base change to `L⁺` squares the local constants and gives
 `m(σ) = ∏c_{τ_v}² ≠ 0`.
 
@@ -2777,8 +2808,15 @@ supplied by CompletedCohomologyAndLocalGlobalCompatibility (supplier contracts).
 
 - For `n_1 = n_2 = 1`, (4) says `ψ_1 ψ_2^{−1} |·|^{−1} ≡ 1` modulo `𝔪` at `ṽ_0`: the classical
   level-raising congruence for `GL_2` in conjugate self-dual form.
-- If `ψ_1 ψ_2^{−1}|·|^{−n/2}` were not congruent to `1`, the residual representation at `ṽ_0` would
-  not be a single `q`-string and no Steinberg lift could exist.
+- Condition (4) is ordered and sufficient, not necessary. Take `n_1 = n_2 = 1`, `ṽ_0` of norm
+  `q_{ṽ_0} = 2`, `p = 5`, and residual values `ψ_1(ϖ) = 2`, `ψ_2(ϖ) = 1` in `𝔽_5`. The value of
+  `ψ_1 ψ_2^{−1}|·|^{−1}` at `ϖ` is `2 · 2 = 4 ≠ 1`, yet `{2, 1}` is a `q_{ṽ_0}`-string; after exchanging
+  `π_1` and `π_2` (the other hypotheses are symmetric in the two blocks) the value is `3 · 2 = 6 = 1`
+  in `𝔽_5`, and the theorem applies.
+- A necessary condition is that the residual Frobenius eigenvalues at `ṽ_0` form a single
+  `q_{ṽ_0}`-string, as those of an unramified twist of `St_n` do; for `n_1 = n_2 = 1` their ratio must
+  be `q_{ṽ_0}` or `q_{ṽ_0}^{−1}` in `k`. For `q_{ṽ_0} = 2` and `k = 𝔽_7`, the pair `{3, 1}` has ratios
+  `3` and `5`, neither of which lies in `{2, 4}`, so no Steinberg lift exists, in either order.
 - The conclusion is residual: `Π` is cuspidal while `π` is an isobaric sum.
 
 *Needs:* §6.2; PotentialAutomorphyInfrastructurePartII Layer 0 ("Algebraic characters with
@@ -3635,14 +3673,20 @@ Fix `n ≥ 3`. Let `π` be regular algebraic cuspidal on `GL_2(𝔸_ℚ)` of wei
 that `π′` is seasoned with respect to `(q, t, r)` and `sc(π′) = sc(π) ∪ {q}`; (2) `Sym^{n−1} π′` exists
 exactly when `Sym^{n−1} π` does (nt21b Proposition 3.9 and proof, pp. 24–25).
 
-*Proof sketch.* Choose `t > max(10, 8n(n − 1), N(π))`, `t ≡ 1 mod 4`, with large `t`-adic image;
+*Proof sketch.* Choose `t > max(10, 8n(n − 1), N(π))`, `t ≡ 1 mod 4`, with
+`Proj r̄_{π,ι_t}(G_ℚ)` conjugate to `PSL_2(𝔽_t)` or `PGL_2(𝔽_t)`, so that `r̄_{π,ι_t}(G_ℚ)` contains a
+conjugate of `SL_2(𝔽_t)`;
 `q ≡ −1` modulo `t` with `Frob_q` conjugate to complex conjugation; `r` and the primes `s` by
 Chebotarev (Chebotarev Layer 10), using the description of `Gal(L_1 L_2/K)` for two finite Galois
 extensions as pairs of automorphisms agreeing on `L_1 ∩ L_2`. Prescribed-type lifts
 (PotentialModularityAndCompatibleSystems §10.10) give `π′` congruent to `π` at `t` with the new local
 components. Potentially diagonalizable automorphy lifting (ModularityAndLanglandsExtensions §2.16) shows `Sym^{n−1} π′` automorphic exactly when `Sym^{n−1} π` is: both are Fontaine–Laffaille
-at `t` (ModularityAndLanglandsExtensions §2.1), and `Sym^{n−1}` of `SL_2(𝔽_t)` is irreducible and adequate for `t > n − 1`
-(ArithmeticGaloisRepresentations §7.9).
+at `t` (ModularityAndLanglandsExtensions §2.1), `Sym^{n−1}` of `SL_2(𝔽_t)` is irreducible because
+`t > n − 1`, and the image of `G_{ℚ(ζ_t)}` under `Sym^{n−1} r̄_{π,ι_t}` is adequate: it contains
+`Sym^{n−1}(SL_2(𝔽_t))`, since the perfect group `SL_2(𝔽_t)` lies in the image of `G_ℚ` and the
+quotient by the image of `G_{ℚ(ζ_t)}` is abelian, and `t > 8n(n − 1) ≥ 2n + 2`
+(ArithmeticGaloisRepresentations §7.9, symmetric powers, clause (3)). Irreducibility alone does not
+give adequacy.
 
 **Checks.**
 
@@ -3650,6 +3694,11 @@ at `t` (ModularityAndLanglandsExtensions §2.1), and `Sym^{n−1}` of `SL_2(𝔽
 - `t > N(π)` makes `t` prime to the conductor, so `π` and `π′` are both crystalline at `t`.
 - `t ≡ 1 mod 4` and `Frob_q` conjugate to complex conjugation give `q ≡ −1` modulo `t` compatibly with
   the dihedral type at `q`.
+- `t > n − 1` gives irreducibility but not adequacy. For `t = n = 13`, `Sym^{12}` of `SL_2(𝔽_{13})`
+  is irreducible of dimension `13`, but the identity `I_{13}` is a non-zero invariant element of
+  trace `13 = 0` in `𝔽_{13}`, so `H⁰(H, ad⁰) ≠ 0` and the image is not adequate. The bound
+  `t > 8n(n − 1)` excludes it (`13 ≤ 1248`); for `n = 3` and `t = 53`, `53 > 48` and `53 ≥ 2n + 2 = 8`,
+  so both the irreducibility and the adequacy criterion apply.
 
 *Needs:* §10.3; PotentialModularityAndCompatibleSystems §10.10; ModularityAndLanglandsExtensions §§2.1, 2.16;
 ArithmeticGaloisRepresentations §7.9; Chebotarev Layer 10.
@@ -3718,7 +3767,9 @@ the new form may have `3 ∈ sc`; the argument here concludes by the case of `2 
 (AutomorphicGaloisRepresentations §7.5), and `q ≡ −1` modulo `t`, `q ≡ 1` modulo `8` and modulo every
 prime `l < t`, `Frob_q` conjugate to complex conjugation; a good-dihedral `π′` at `q`
 (ClassicalSerreModularity Layer R27.1) with `Sym^{n−1} π′` existing exactly when `Sym^{n−1} π` does
-(PotentialModularityAndCompatibleSystems §10.10, ModularityAndLanglandsExtensions §2.16);
+(PotentialModularityAndCompatibleSystems §10.10, ModularityAndLanglandsExtensions §2.16, with
+adequacy of `Sym^{n−1} r̄_{π,ι_t}` on `G_{ℚ(ζ_t)}` as in §10.5, since `t > 4n(n − 1) ≥ 2n + 2` for
+`n ≥ 3`; ArithmeticGaloisRepresentations §7.9);
 the `3`-adic projective image of `r̄_{π′,ι}` is `PSL_2` or `PGL_2` of `𝔽_{3^a}` with `3^a > 2n − 1`;
 §10.2 gives a weight-two `π″` with `2, 3 ∉ sc(π″)`, non-ordinary at `3`; then §10.7 and §9.8
 conclude. If `2 ∈ sc(π)`, run the same argument with `2` and `3` exchanged and conclude by the case
@@ -3735,7 +3786,8 @@ crystalline weight-two form and potentially diagonalizable lifting (ModularityAn
 
 *Needs:* §§10.2, 10.7; §9.8; AutomorphicGaloisRepresentations §7.5; ClassicalSerreModularity Layer
 R27.1; PotentialAutomorphyInfrastructurePartII Layer 1 ("Two-dimensional potentially Barsotti–Tate
-representations are potentially diagonalizable", §1.4, `l > 2`); ModularityAndLanglandsExtensions §2.16; PotentialModularityAndCompatibleSystems §10.10.
+representations are potentially diagonalizable", §1.4, `l > 2`); ModularityAndLanglandsExtensions §2.16; PotentialModularityAndCompatibleSystems §10.10;
+ArithmeticGaloisRepresentations §7.9.
 
 ### Examples
 
@@ -4166,9 +4218,12 @@ enormous image and adjoint Selmer vanishing) transfers automorphy. This proves t
 of ModularityAndLanglandsExtensions §4.23. Throughout `Σ_π` is the ramification set of `π` (and `π′`)
 and `Σ = Σ_π ∪ Σ_σ`; the quaternion algebra is ramified only at `Σ_π` away from `p`, while `S` and the
 unitary level use all of `Σ`. The printed proof takes `S = S_p ∪ Σ_π` only, which does not cover the
-application in §13.4, where `σ = Sym^{r−1} σ′` is ramified where `π` is not; the places of `Σ_σ − Σ_π`
-are added to `S` and to the unitary Iwahori level with unramified rank-two local conditions and split
-quaternion algebra.
+application in §13.4, where `σ = Sym^{r−1} σ′` is ramified where `π` is not. The places of `Σ_σ − Σ_π`
+away from `p` are added to `S` and to the unitary Iwahori level, with unramified rank-two local
+conditions and split quaternion algebra. The places of `Σ_σ` above `p` lie in `S_p` already and are in
+the unitary Iwahori level; there the rank-two local condition is the one `π` determines (crystalline,
+ordinary crystalline, or semistable non-crystalline, with Hodge–Tate weights `{0, 1}`), whatever the
+ramification of `σ`, and the exclusion of `p = 2` concerns `Σ_π ∩ S_p` only.
 
 ### 12.1 Preliminary reductions and the CM set-up for tensor functoriality lifting
 
@@ -4177,7 +4232,9 @@ conclusion descends) one may assume in addition: (10) `det r_π = det r_{π′} 
 even; (12) `π_v`, `π′_v` and `σ_v` Iwahori-spherical at every finite `v`, with an even number of places
 where `π`, `π′` are ramified; (13) with `S = S_p ∪ Σ`, `r̄_{π,ι}|_{G_{F_v}}` trivial for `v ∈ S`, and
 for `v ∈ Σ` away from `p`, `q_v ≡ 1` modulo `p` with `π_v`, `π′_v` Steinberg or unramified as the case
-may be (if `Σ ∩ S_p ≠ ∅` then `p > 2`); (14) an `S`-split everywhere unramified quadratic CM `K/F` with
+may be (if `Σ_π ∩ S_p ≠ ∅` then `p > 2`, since at such a place `π_v` is an unramified twist of
+Steinberg, so `r_{π,ι}|_{G_{F_v}}` is not potentially crystalline and (4) of §12.7 excludes `p = 2`);
+(14) an `S`-split everywhere unramified quadratic CM `K/F` with
 CM type `Φ` and places `S̃`; (15) everywhere unramified type-`A_0` characters `X`, `Y` of `K` with
 `X ∘ N = χ ∘ N` (where `σ ≅ σ^∨ ⊗ χ`), `Y ∘ N = |·|` and prescribed infinity types; (16)
 `(r_π ⊗ r_σ)|_{G_{K(ζ_{p^∞})}}` and `(r_{π′} ⊗ r_σ)|_{G_K}` irreducible. Define `π_K = BC(π)`,
@@ -4216,9 +4273,17 @@ characters).
 **Checks.**
 
 - For `r = 1`, `σ` is a character, `T = π_K ⊗ σ_K`, and the argument is rank-two modularity lifting.
-- At a place of `Σ_σ − Σ_π` the quaternion algebra is split and the rank-two condition is
-  unramified; putting the place into the quaternionic ramification instead would change the rank-two
-  automorphic input.
+- At a place of `Σ_σ − Σ_π` away from `p` the quaternion algebra is split and the rank-two condition
+  is unramified; putting the place into the quaternionic ramification instead would change the
+  rank-two automorphic input.
+- At a place `v | p` of `Σ_σ − Σ_π` the rank-two condition is not the unramified one. Take `p = 2`,
+  `r ≥ 2`, `r_{π,ι}|_{G_{F_v}}` crystalline with Hodge–Tate weights `{0, 1}` and `σ_v` an unramified
+  twist of Steinberg, so that `r_{σ,ι}|_{G_{F_v}}` is semistable with monodromy of rank `r − 1 ≥ 1`
+  while that of `r_{π,ι}|_{G_{F_v}}` is `0`. Then `Σ_π ∩ S_2 = ∅` and `Σ ∩ S_2 ≠ ∅`: hypothesis (4)
+  of §12.7 holds and `p = 2` is allowed, which the implication with `Σ ∩ S_p` in place of `Σ_π ∩ S_p` would wrongly exclude.
+  The rank-two condition at `v` is the crystalline one of weights `{0, 1}`, which contains `r_{π,ι}`;
+  an unramified lift of the trivial residual representation has Hodge–Tate weights `{0, 0}` and
+  misses it.
 - `n = 2r` and `T` has weight `0`, so its Hodge–Tate weights are the `2r` distinct integers
   `{0, …, 2r − 1}` up to a common shift, by (7) of §12.7.
 
@@ -4643,8 +4708,10 @@ are at the original embedding `ι` where the comparison embedding `ι_l` at `l` 
 
 *Proof sketch.* Change the comparison embedding to one inducing `w`; `δ` acts trivially on the residue
 field, so `r̄_{δγπ} ≅ r̄_{γπ}` at the prime above `l`. Apply §12.7 with `σ = Sym^{r−1} σ′` (RAESDC by `SP_r`,
-Steinberg at `v_0` where `γπ` is unramified after base change, the case covered by the repaired set `S`
-of Layer 12), checking its nine hypotheses at `l`: the coefficient inertia gives the residual congruence;
+Steinberg at `v_0` where `γπ` is unramified after base change, a case Layer 12 covers because its set
+`S` and its unitary level contain the ramification of `σ`, with the rank-two condition at `v_0`
+unramified if `v_0 ∤ l` and the one `γπ` determines if `v_0 | l`), checking its nine hypotheses at
+`l`: the coefficient inertia gives the residual congruence;
 the different weights give regularity; the two projective fields give a perfect product, and a regular
 semisimple element `(diag(y, y^{−1}), diag(x, x^{−1}))` is found by choosing `x` of order `> 2r − 2`
 in the symmetric-power slot and `y` in the rank-two slot avoiding the at most `4r − 2` elements `±x^i`,
@@ -5053,9 +5120,13 @@ polynomial in `p^{−s}`, so the product extends to an entire function.
   from the prime-indexed `q`-expansion coefficients and Mathlib's Dirichlet characters, with real
   body: a positive modulus, a non-trivial character of order dividing `2`, and the identity at every
   prime coprime to `NM`.
-- If it holds with `(M, ψ)`, it holds with `(MM′, ψ′)` for every `M′ > 0`, where `ψ′` is `ψ`
-  composed with reduction modulo `M`: `ψ′` is again non-trivial with `ψ′² = 1`, agrees with `ψ` at
-  primes prime to `MM′`, and fewer primes are tested.
+- If it holds with `(M, ψ)`, it holds with `(MM′, ψ′)` for every `M′ > 0`, where
+  `ψ′ = DirichletCharacter.changeLevel h ψ` for `h : M ∣ MM′` (Mathlib): on the units of `ℤ/MM′`
+  it is `ψ` composed with the unit-group map `(ℤ/MM′)^× → (ℤ/M)^×` (`ZMod.unitsMap`), and it
+  vanishes on the non-units. Then `ψ′ ≠ 1` because `changeLevel` is injective for the non-zero
+  modulus `MM′` (`DirichletCharacter.changeLevel_eq_one_iff`), `ψ′² = 1` because `changeLevel` is a
+  monoid homomorphism, `ψ′(p) = ψ(p)` at every prime `p` prime to `MM′`
+  (`DirichletCharacter.changeLevel_eq_cast_of_dvd'`), and fewer primes are tested.
 - For `k ≥ 2`, `π_f` is CM in the sense of GL2AutomorphicRepresentationsAndTransfer §R16.4.6 exactly
   when `HasQuadraticSelfTwist f` holds; the direction "CM implies a quadratic self-twist" is the
   eigenvalue comparison above, and the converse is strong multiplicity one (§R16.4.4, via
@@ -5070,6 +5141,12 @@ polynomial in `p^{−s}`, so the product extends to an entire function.
   modulo `0` with square `1`; without `M > 0` every newform would have a quadratic self-twist.
 - Modulo `1` and modulo `2` every Dirichlet character is trivial, since `(ℤ/1)^×` and `(ℤ/2)^×` are
   trivial; the smallest moduli that can witness a self-twist are `3` and `4`.
+- Enlarging the modulus goes through the unit groups, not through the ring map `ℤ/12 → ℤ/4`. For
+  `ψ = χ_{−4}` (Mathlib `ZMod.χ₄`, values `0, 1, 0, −1`) and `M′ = 3`, the composite with the ring
+  map takes the value `χ_{−4}(3) = −1` at the non-unit `3` of `ℤ/12`, where every Dirichlet
+  character modulo `12` vanishes (`MulChar.map_nonunit`); so it is not a Dirichlet character modulo
+  `12`, and its square is `1` at `3` while the principal character modulo `12` is `0` there.
+  `changeLevel` gives `ψ′(3) = 0` and `ψ′(7) = χ_{−4}(3) = −1`.
 - The newform of level `32` and weight `2` attached to `y² = x³ − x` has `a_p = 0` for `p ≡ 3`
   modulo `4` and `a_5 = −2`; with `ψ = χ_{−4}` modulo `4`, `0 · (−1) = 0` and `(−2) · 1 = −2`, and in
   general `a_p ψ(p) = a_p` at every odd prime, so it has a quadratic self-twist and is excluded. The
@@ -5091,8 +5168,8 @@ polynomial in `p^{−s}`, so the product extends to an entire function.
 
 *Needs:* §14.3; §14.4 (`symPowerEulerFactor`); AutomorphicLFunctionsAndLocalFactors AL.2, AL.3.7.1;
 GL2AutomorphicRepresentationsAndTransfer §§R16.4.4, R16.4.6; Tau Ceti `HeckeRing.GL2.Newform`,
-`HeckeRing.GL2.Newform.satakeParameters`; Mathlib `DirichletCharacter`, `UpperHalfPlane.qExpansion`,
-`HasProd`, `Differentiable`.
+`HeckeRing.GL2.Newform.satakeParameters`; Mathlib `DirichletCharacter`,
+`DirichletCharacter.changeLevel`, `UpperHalfPlane.qExpansion`, `HasProd`, `Differentiable`.
 
 ### Examples
 
