@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SelmerIwasawaCohomology~4",
+  "head": "ebadda32a831de638307972f7dbf3afc46e3b103",
+  "pr": 869,
+  "folder": "SelmerIwasawaCohomology",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 6 changed lines since 3f518a0; previous R01 repaired; checked changed seeded target 3.0 against pinned continuous_map, dependent involution conventions, relevant supplier sections and closest-roadmap scopes, and PR title/description against the base diff and head. Gate fails only statement-hygiene (P3); targeted build, direct elaboration, all 17 signatures and naming-repair probe pass. Dependency check: 245 roadmaps, 2219 edges, 0 problems. Three P3 findings; no blocking findings.",
+  "text": "c48605a49537b266",
+  "carried": {
+   "from": "ebadda32a831de638307972f7dbf3afc46e3b103",
+   "head": "8e1b4ae0e34a2f3e7946037a66e52f62d0331161",
+   "findings": 3,
+   "lines": 6,
+   "folders": [
+    "SelmerIwasawaCohomology"
+   ],
+   "outside": true
+  }
+ }
+}
