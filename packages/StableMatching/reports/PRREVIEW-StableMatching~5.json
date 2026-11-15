@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StableMatching~5",
+  "head": "d7891040f4001c933ce4f4748660552576c0d6e0",
+  "pr": 2346,
+  "folder": "StableMatching",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 9 changed lines since e21e2ba. Both previous findings are repaired. R01: the role-swap Check now names w1 and w2 and gives them their first choices. R02: the description's three sentences agree with the head. The role-swap values were recomputed by brute force (swap DA outcome, the inverse of the men's outcome, the swap's stable matchings). The Scope sentence was checked against the Research context and against Roth2008's definition of strict preferences, and the Roth2008 theorem numbering of the author-page and NBER copies was compared. The description was rechecked sentence by sentence. Gate rerun OK on every check; depcheck: 245 roadmaps, 2229 edges, 0 problems; lake env lean gives 10 sorry warnings only; no change outside the folder; the overlap lists are empty and the grep finds no other owner. The sampled targets were not re-verified: the diff touches none of them.",
+  "text": "15209dc35ddda371"
+ }
+}
