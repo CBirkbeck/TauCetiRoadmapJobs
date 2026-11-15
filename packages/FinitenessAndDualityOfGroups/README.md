@@ -52,8 +52,10 @@ totally acyclic complexes of projectives and Gorenstein-projective objects in an
 (`CochainComplex.IsTotallyAcyclicProjective`, `CategoryTheory.isGorensteinProjective`) with their
 Frobenius exact structure and the comparison theorem for complete resolutions
 (`TauCeti.ExactStructure.CompleteResolution.homotopyEquiv`); the cellular resolution of an
-aspherical CW complex `TauCeti.cellularResolutionOfIsAspherical`; cell attachment, the Hurewicz and
-Whitehead theorems; the vanishing of characters of projective modules at `p`-singular elements
+aspherical CW complex `TauCeti.cellularResolutionOfIsAspherical`; the universal cover
+`TauCeti.UniversalCover` as a quotient covering for the fundamental group, and semilocal simple
+connectivity of locally contractible spaces; cell attachment, the Hurewicz and Whitehead theorems;
+the vanishing of characters of projective modules at `p`-singular elements
 `TauCeti.trace_ofModule'_eq_zero_of_dvd_orderOf`; Swan's theorem for `ℤ_p[G]`,
 `TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat`; the determination of
 finite-dimensional representations of a finite group by their characters in characteristic zero,
@@ -95,10 +97,11 @@ are under Exact supplier contracts.
   only its comparison with the conjugacy-class coordinates of the rank of 7.1.
 - ClassifyingSpaces owns `K(G, 1)` CW complexes, their cellular chains as free resolutions (Stage 4
   item 16) and the identification of their (co)homology with local coefficients with group
-  (co)homology (Stage 4 item 17). AlgebraicTopology owns cellular connectivity (§8.1), the absolute
-  Hurewicz theorem in every universe (§8.3), Whitehead's theorem (§8.5), the finite CW type of
-  compact Hausdorff smooth manifolds (§8.7), twisted Poincaré duality of manifolds (§§6.3–6.4), and
-  the replacement of CW complexes by abstract simplicial complexes (§8.11a).
+  (co)homology (Stage 4 item 17). AlgebraicTopology owns the local contraction of an arbitrary
+  Hausdorff CW complex within each neighbourhood of a point (§4.7), cellular connectivity (§8.1),
+  the absolute Hurewicz theorem in every universe (§8.3), Whitehead's theorem (§8.5), the finite CW
+  type of compact Hausdorff smooth manifolds (§8.7), twisted Poincaré duality of manifolds
+  (§§6.3–6.4), and the replacement of CW complexes by abstract simplicial complexes (§8.11a).
 - ProfiniteCohomology Layer 11 owns the cohomological dimension of profinite groups, carried by Tau
   Ceti's `TauCeti.cohomologicalDimension` (continuous cohomology with discrete torsion
   coefficients). The invariant of this roadmap is the discrete one, under another name, compared
@@ -327,6 +330,15 @@ Pinned at `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
 - `IsCoveringMap.existsUnique_continuousMap_lifts` (`Mathlib/Topology/Homotopy/Lifting.lean`
   line 489): a map from a simply connected, locally path-connected space lifts uniquely along a
   covering map once the lift of one point is fixed.
+- `LocallyContractibleSpace X` (`Mathlib/Topology/Homotopy/LocallyContractible.lean` line 81): every
+  neighbourhood `U` of a point contains a neighbourhood `V` of it whose inclusion `V → U` is
+  null-homotopic (a predicate, not a class); Mathlib does not prove it for CW complexes. The
+  instance making a `DeltaGeneratedSpace` a `LocallyPathConnectedSpace`
+  (`Mathlib/Topology/Compactness/DeltaGeneratedSpace.lean` line 51). Both are used in 5.1.
+- `finite_of_finite_type_of_isJacobsonRing R S` (`Mathlib/RingTheory/Jacobson/Ring.lean` line 691,
+  Zariski's lemma): a field `S` of finite type over a Jacobson ring `R` is a finite `R`-module; and
+  the instance making an Artinian ring a Jacobson ring (same file, line 102). Mathlib does not
+  provide `IsJacobsonRing ℤ`; 7.5 obtains it from Tau Ceti's criterion below.
 - `ChartedSpace.secondCountable_of_sigmaCompact` (`Mathlib/Geometry/Manifold/ChartedSpace.lean`
   line 236): a σ-compact charted space over a second-countable model is second countable. Mathlib's
   `ChartedSpace` (line 141) and `IsManifold` (`Mathlib/Geometry/Manifold/IsManifold/Basic.lean`
@@ -453,6 +465,9 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
   `TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat_of_not_dvd`
   (`TauCeti/NumberTheory/Padics/GroupAlgebra/Rational.lean` line 134), the same conclusion for
   `p ∤ |G|`, used in the Checks of 7.4.
+- `TauCeti.isJacobsonRing_of_quotient_span_singleton` (`TauCeti/RingTheory/Jacobson/Ring.lean` line
+  36): a commutative ring with zero Jacobson radical whose quotients by nonzero principal ideals are
+  Jacobson rings is a Jacobson ring; used in 7.5 for `ℤ`.
 - `FDRep.nonempty_iso_of_character_eq` and `Representation.nonempty_equiv_of_character_eq`
   (`TauCeti/RepresentationTheory/CharacterTable/Determined.lean` line 59): over a field of
   characteristic zero, finite-dimensional representations of a finite group with equal characters
@@ -473,7 +488,20 @@ Pinned at `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
 - `TauCeti.UniversalCover x₀` (`TauCeti/AlgebraicTopology/UniversalCover/Basic.lean` line 70), the
   universal cover by homotopy classes of based paths, with `TauCeti.UniversalCover.isCoveringMap`
   (`.../UniversalCover/Covering.lean` line 58) for locally path-connected, semilocally simply
-  connected spaces.
+  connected spaces; `TauCeti.UniversalCover.simplyConnectedSpace` (`.../Covering.lean` line 183,
+  same hypotheses: the universal cover is simply connected); and
+  `TauCeti.UniversalCover.isQuotientCoveringMap` (`.../UniversalCover/Action.lean` line 162): for
+  `X` locally path-connected, path-connected and semilocally simply connected, the projection is a
+  quotient covering map for the action of `FundamentalGroup X x₀`. The semilocal simple
+  connectivity is supplied by `TauCeti.SemilocallySimplyConnectedSpace.of_locallyContractibleSpace`
+  (`TauCeti/AlgebraicTopology/SemilocallySimplyConnected/Basic.lean` line 131: a space satisfying
+  Mathlib's `LocallyContractibleSpace` is semilocally simply connected) and the local
+  path-connectedness by `TauCeti.instDeltaGeneratedSpaceOfCWComplexUniv`
+  (`TauCeti/Topology/CWComplex/Classical/DeltaGenerated.lean` line 66: a Hausdorff space with a CW
+  structure on `univ` is delta-generated). Neither library states that a general CW complex is
+  locally contractible or semilocally simply connected (AlgebraicTopology §4.7 supplies it); the
+  wedge of circles is, by `TauCeti.WedgeSum.instSemilocallySimplyConnectedSpaceCircle`
+  (`.../SemilocallySimplyConnected/WedgeSum.lean` line 112), used in a Check of 5.1.
 - `AbstractSimplicialComplex.Realization`
   (`TauCeti/AlgebraicTopology/SimplicialComplex/Realization/Basic.lean` line 71), the realization of
   an abstract simplicial complex, used in 5.4.
@@ -590,6 +618,11 @@ These are used with `P` the finite-dimensional `ℚ`-vector spaces and `v` the d
 
 ### From TauCetiRoadmap.AlgebraicTopology
 
+- §4.7: the cell-neighbourhood local contraction of an arbitrary Hausdorff CW complex: for a point
+  `x` in an open set `U` there are an open `V` with `x ∈ V ⊆ U` and a homotopy `V × I → U` from the
+  inclusion to the constant map at `x`. Applied to the interior of a neighbourhood, this says that
+  a Hausdorff space with a CW structure on `univ` satisfies Mathlib's `LocallyContractibleSpace`
+  (Hatcher2002, Appendix, Proposition A.4, p. 522). Used in 5.1.
 - §8.1: the inclusion of the `k`-skeleton of a CW complex induces isomorphisms on `π_i` for `i < k`
   and a surjection on `π_k`.
 - §8.3: the absolute Hurewicz theorem: an `(n − 1)`-connected space has vanishing reduced homology
@@ -604,12 +637,13 @@ These are used with `P` the finite-dimensional `ℚ`-vector spaces and `v` the d
   `EuclideanSpace ℝ (Fin n)`): cap product with the fundamental class is an isomorphism
   `Hᵏ(M; L) ≅ H_{n−k}(M; L ⊗ or_M)` for every local system `L` of modules.
 - §8.11a: every CW complex is homotopy equivalent to the realization of an abstract simplicial
-  complex, by skeletal simplicial approximation and mapping cylinders (Hatcher's Theorem 2C.5, as
-  cited there).
+  complex, by skeletal simplicial approximation and mapping cylinders (Hatcher2002, Theorem 2C.5,
+  p. 182, as cited there).
 
 What AlgebraicTopology must provide (gap:simplicial-replacement-dimension): in §8.11a, the abstract
 simplicial complex replacing a CW complex of dimension at most `N` can be chosen of dimension at
-most `N`, as the skeletal construction gives.
+most `N`, as the skeletal construction gives (Hatcher2002, Theorem 2C.5, p. 182, states the
+replacement with the same dimension).
 
 ## How to read the build
 
@@ -1322,6 +1356,23 @@ finite dimensional. *Needs:* Mathlib `Topology.CWComplex`; Tau Ceti
   group; conversely the point is a `K(1, 1)`.
 - `gd G ≤ n` exactly when a `K(G, 1)` CW complex of dimension at most `n` exists.
 
+Covering-space theory applies to every Hausdorff space `X` with a CW structure on `univ`: to every
+`K(G, 1)` of the definition, to its skeleta, and to the complexes obtained from them by attaching
+cells, which 5.2–5.4 lift to universal covers. Such an `X` is locally path-connected, being
+delta-generated (`TauCeti.instDeltaGeneratedSpaceOfCWComplexUniv` with Mathlib's instance for
+`DeltaGeneratedSpace`), and locally contractible in the sense of Mathlib's
+`LocallyContractibleSpace` (AlgebraicTopology §4.7, the cell-neighbourhood local contraction;
+Hatcher2002, Appendix, Proposition A.4, p. 522), hence semilocally simply connected
+(`TauCeti.SemilocallySimplyConnectedSpace.of_locallyContractibleSpace`). So if `X` is
+path-connected, for every `x ∈ X` the universal cover `TauCeti.UniversalCover x` is simply connected
+(`TauCeti.UniversalCover.simplyConnectedSpace`) and its projection is a quotient covering map for
+the action of `π₁(X, x)` (`TauCeti.UniversalCover.isQuotientCoveringMap`); for a `K(G, 1)` these are
+the hypotheses on `p : E → B` of `TauCeti.cellularResolutionOfIsAspherical`, with `G ≅ π₁(X, x)`.
+*Needs:* AlgebraicTopology §4.7; Mathlib `LocallyContractibleSpace`, `DeltaGeneratedSpace`; Tau Ceti
+`TauCeti.instDeltaGeneratedSpaceOfCWComplexUniv`,
+`TauCeti.SemilocallySimplyConnectedSpace.of_locallyContractibleSpace`,
+`TauCeti.UniversalCover.simplyConnectedSpace`, `TauCeti.UniversalCover.isQuotientCoveringMap`.
+
 **Checks.**
 
 - `gd 1 = 0` (a point) and `gd (FreeGroup S) = 1` for `S` nonempty: the wedge of circles
@@ -1335,6 +1386,15 @@ finite dimensional. *Needs:* Mathlib `Topology.CWComplex`; Tau Ceti
   `H₂(S², ℤ) = ℤ` while a point has `H₂ = 0`; nor is it a `K(1, 1)`, since
   `π₂(S²) ≅ H₂(S², ℤ) = ℤ` by the Hurewicz theorem. The two-point discrete space is zero-dimensional
   but not path-connected, hence no `K(G, 1)`.
+- The CW structure is what makes universal covers available. The shrinking wedge of circles (the
+  union in `ℝ²` of the circles `C_n` of radius `1/n` centred at `(1/n, 0)`) is compact, Hausdorff
+  and path-connected, but not semilocally simply connected at the origin (Hatcher2002, §1.3,
+  p. 63): every neighbourhood of the origin contains some `C_n`, and the retraction onto `C_n`
+  collapsing the other circles (continuous by pasting along two closed sets meeting at the origin)
+  sends the loop around `C_n` to a generator of `π₁(C_n) ≅ ℤ`, so that loop is not null-homotopic.
+  Hence, by the paragraph above, this space admits no CW structure. The wedge of countably many
+  circles, the same set with the weak topology, is a `1`-dimensional CW complex and is semilocally
+  simply connected (`TauCeti.WedgeSum.instSemilocallySimplyConnectedSpaceCircle`).
 
 ### 5.2 Cohomological against geometric dimension, and finite classifying spaces
 
@@ -1342,10 +1402,11 @@ Prove that for `G : Type` and every `R : Type`, `cd_R G ≤ gd G`; that a `K(G, 
 finitely many cells is a witness that `G` is of type `FL` over every `R`; and that one with finitely
 many cells in each dimension `≤ n` makes `G` of type `FP_n` over every `R` (Serre1971Bourbaki 1.2,
 lines 55–58; Brown1975, §3, lines 216–231; BrownGTM87, §VIII.7). Route: the lifted cellular chains
-of the universal cover are a free resolution of `R` with one generator per cell
-(`TauCeti.cellularResolutionOfIsAspherical`, `TauCeti.cellularChainRepIsoFree`; ClassifyingSpaces
-Stage 4 item 16). *Needs:* 5.1, 1.2, 2.1; Tau Ceti `TauCeti.cellularResolutionOfIsAspherical`,
-`TauCeti.cellularChainRepIsoFree`; ClassifyingSpaces Stage 4 item 16.
+of the universal cover, a quotient covering for `π₁ ≅ G` (5.1), are a free resolution of `R` with
+one generator per cell (`TauCeti.cellularResolutionOfIsAspherical`,
+`TauCeti.cellularChainRepIsoFree`; ClassifyingSpaces Stage 4 item 16). *Needs:* 5.1, 1.2, 2.1;
+Tau Ceti `TauCeti.cellularResolutionOfIsAspherical`, `TauCeti.cellularChainRepIsoFree`,
+`TauCeti.UniversalCover.isQuotientCoveringMap`; ClassifyingSpaces Stage 4 item 16.
 
 **Checks.**
 
@@ -1361,21 +1422,22 @@ Prove that `gd G ≤ max(3, cd_ℤ G)` for `G : Type` (`geometricDim_le_max`); h
 whenever `cd_ℤ G ≥ 3` (EilenbergGanea1957, main theorem; BrownGTM87, §VIII.7). Route, for
 `n = max(3, cd_ℤ G)` finite: let `X` be a `K(G, 1)` CW complex and `Y` its `(n − 1)`-skeleton, which
 has fundamental group `G` since `n − 1 ≥ 2` (AlgebraicTopology §8.1). The cellular chains of the
-universal cover `Ỹ` are exact below degree `n − 1`, and
+universal cover `Ỹ` (a quotient covering for `π₁(Y) ≅ G`, 5.1) are exact below degree `n − 1`, and
 `Z = ker(∂ : C_{n−1} → C_{n−2}) = H_{n−1}(Ỹ)` is the `n`-th syzygy of a free resolution of `ℤ`,
 projective because `cd_ℤ G ≤ n` (2.1). Choose `Q` with `Z ⊕ Q` free and put `F = (Z ⊕ Q)^{(ℕ)}`, so
 that `Z ⊕ F ≅ F` (the Eilenberg swindle); wedge `Y` with one `(n − 1)`-sphere for each element of a
 basis of `F` (attaching `(n − 1)`-cells along constant maps, `TauCeti.cellAttachment`), which adds
 `F` to `C_{n−1}` with zero boundary and makes the new cycle module `Z ⊕ F` free. The new universal
-cover is simply connected and `(n − 2)`-connected, so by the Hurewicz theorem `π_{n−1} = H_{n−1}`
-(AlgebraicTopology §8.3; Tau Ceti `HomotopyGroup.bijective_hurewicz`); attach `n`-cells along maps
-representing a basis of this free module (`TauCeti.cellAttachment`). The result is `n`-dimensional,
-has fundamental group `G` (`n ≥ 3`), and its universal cover has acyclic cellular chains, so it is
-contractible by the Hurewicz and Whitehead theorems (AlgebraicTopology §8.5; Tau Ceti
-`TauCeti.contractibleSpace_of_subsingleton_homotopyGroup`). *Needs:* 5.1, 5.2, 2.1;
+cover (again by 5.1) is simply connected and `(n − 2)`-connected, so by the Hurewicz theorem
+`π_{n−1} = H_{n−1}` (AlgebraicTopology §8.3; Tau Ceti `HomotopyGroup.bijective_hurewicz`); attach
+`n`-cells along maps representing a basis of this free module (`TauCeti.cellAttachment`). The
+result is `n`-dimensional, has fundamental group `G` (`n ≥ 3`), and its universal cover has acyclic
+cellular chains, so it is contractible by the Hurewicz and Whitehead theorems (AlgebraicTopology
+§8.5; Tau Ceti `TauCeti.contractibleSpace_of_subsingleton_homotopyGroup`). *Needs:* 5.1, 5.2, 2.1;
 AlgebraicTopology §8.1, §8.3, §8.5; ClassifyingSpaces Stage 4 item 16; Tau Ceti
-`TauCeti.cellAttachment`, `HomotopyGroup.bijective_hurewicz`,
-`TauCeti.contractibleSpace_of_subsingleton_homotopyGroup`, `TauCeti.cwComplexPreimage`,
+`TauCeti.cellAttachment`, `TauCeti.UniversalCover.isQuotientCoveringMap`,
+`HomotopyGroup.bijective_hurewicz`, `TauCeti.contractibleSpace_of_subsingleton_homotopyGroup`,
+`TauCeti.cwComplexPreimage`,
 `TauCeti.isEilenbergMacLaneSpaceOne_cellularClassifyingSpace`.
 
 **Checks.**
@@ -1430,10 +1492,11 @@ it has dimension at most `N`, and its normalized chains are the ordered simplici
 identifies with the cellular chains of `|K|`. The realized simplex of a string is the affine simplex
 of `|K|` through its vertices. Let `W` be the simplicial set whose `k`-simplices are the pairs of a
 `k`-simplex of `K_≤` and a lift of its realized simplex to the universal covering
-`TauCeti.UniversalCover` of `|K|` (a covering map by `TauCeti.UniversalCover.isCoveringMap`, the
-realization being locally path-connected and semilocally simply connected), with faces and
-degeneracies acting on both entries; a lift exists and is determined by the image of one point,
-because the simplex is simply connected (`IsCoveringMap.existsUnique_continuousMap_lifts`). The deck
+`TauCeti.UniversalCover` of `|K|` (a quotient covering map for the action of `π₁(|K|) ≅ Γ` by
+`TauCeti.UniversalCover.isQuotientCoveringMap`, `|K|` being a path-connected Hausdorff CW complex,
+5.1), with faces and degeneracies acting on both entries; a lift exists and is determined by the
+image of one point, because the simplex is simply connected
+(`IsCoveringMap.existsUnique_continuousMap_lifts`). The deck
 group `Γ` acts on the lifts, freely since a deck transformation fixing a lift fixes a point, and
 transitively on the lifts of each simplex. A simplex of `W` is degenerate exactly when its string
 is, so the normalized chains of `W` are in each degree free over `ℤΓ` on the faces of `K`. They are
@@ -1456,12 +1519,13 @@ nondegenerate simplex of a product has dimension at most the sum of the dimensio
 every finite `G_f` trivially, so it permutes the nondegenerate simplices of `Z` freely and the
 normalized chains of `Z`, zero above `[G : Γ] · N`, are free over `ℤΓ'`. For (c), take `Z` of (b)
 with `N = max(3, cd_ℤ Γ) ≤ max(3, n)`; acyclicity says that `SSet.homologyMap` of the map to the
-point is an isomorphism, the point having homology `ℤ` in degree `0` and `0` above. *Needs:* 5.3,
-4.1; AlgebraicTopology §8.11a; gap:simplicial-replacement-dimension; ClassifyingSpaces Stage 4 item
-16; Tau Ceti `AbstractSimplicialComplex.realizationCWComplex`,
+point is an isomorphism, the point having homology `ℤ` in degree `0` and `0` above. *Needs:* 5.1,
+5.3, 4.1; AlgebraicTopology §8.11a; gap:simplicial-replacement-dimension; ClassifyingSpaces Stage 4
+item 16; Tau Ceti `AbstractSimplicialComplex.realizationCWComplex`,
 `TauCeti.orderedSimplicialChainComplex`, `TauCeti.cellularChainComplexRealizationIso`,
-`TauCeti.UniversalCover`, `TauCeti.UniversalCover.isCoveringMap`, `TauCeti.cwComplexPreimage`,
-`TauCeti.cellularResolutionOfIsAspherical`, `TauCeti.cellularChainRepIsoFree`,
+`TauCeti.UniversalCover`, `TauCeti.UniversalCover.isQuotientCoveringMap`,
+`TauCeti.cwComplexPreimage`, `TauCeti.cellularResolutionOfIsAspherical`,
+`TauCeti.cellularChainRepIsoFree`,
 `SSet.eilenbergZilberHomotopyEquiv`; Mathlib `AbstractSimplicialComplex`, `SSet`,
 `SSet.chainComplex`, `SSet.homology`, `SSet.homologyMap`, `SSet.normalizedChainComplex`,
 `SSet.homotopyEquivNormalizedChainComplex`, `SSet.normalizedChainComplexMap`,
@@ -1507,13 +1571,14 @@ on a finite-dimensional acyclic simplicial set (5.4), the input of the denominat
 
 ### Dependencies
 
-Layers 1–2 and 4.1; ClassifyingSpaces Stage 2 item 10 and Stage 4 item 16; AlgebraicTopology §§8.1,
-8.3, 8.5 and 8.11a, with gap:simplicial-replacement-dimension; Tau Ceti's cell attachment, Hurewicz
-and Whitehead theorems, cellular resolution of an aspherical CW complex, lifted CW structures,
-universal covers, Eilenberg–Zilber theorem, product CW structures, wedges of circles, the CW
-structure of the realization of an abstract simplicial complex with its ordered cellular chains;
-Mathlib's simplicial sets with their homology, normalized chains and group actions, and lifting
-along coverings.
+Layers 1–2 and 4.1; ClassifyingSpaces Stage 2 item 10 and Stage 4 item 16; AlgebraicTopology §§4.7,
+8.1, 8.3, 8.5 and 8.11a, with gap:simplicial-replacement-dimension; Tau Ceti's cell attachment,
+Hurewicz and Whitehead theorems, cellular resolution of an aspherical CW complex, lifted CW
+structures, universal covers as quotient coverings, semilocal simple connectivity of locally
+contractible spaces, local path-connectedness of CW complexes, Eilenberg–Zilber theorem, product CW
+structures, wedges of circles, the CW structure of the realization of an abstract simplicial
+complex with its ordered cellular chains; Mathlib's simplicial sets with their homology, normalized
+chains and group actions, local contractibility, and lifting along coverings.
 
 ---
 
@@ -1890,13 +1955,20 @@ Appendix A, Theorem 7, lines 1284–1355). Route, following the three cases ther
 `K ⊗ P` is free over `KΓ` by 7.3 (characteristic zero) or 7.4 (characteristic `p`); for `K` finite,
 the action on `V` factors through a finite quotient and the finite case applies; in general, the
 finitely many matrices of generators lie in a finitely generated subring of `K`, whose residue
-fields at maximal ideals are finite (a field finitely generated as a ring is finite), so `V` has a
-`Γ`-stable lattice `L` over a local ring `A ⊂ K` with finite residue field `k`; `Hom_{ℤΓ'}(P, L)` is
-finitely generated projective over `A[Γ/Γ']` (it is induced from `L` when `P = ℤΓ`, Brown1974
-Appendix A, Lemma 1, lines 1295–1302), its reduction is free of the stated rank by the finite case,
-and a finitely generated projective module over `A[Δ]`, `Δ` finite, whose reduction is free is free
-(lift the isomorphism, Nakayama). *Needs:* 7.3, 7.4; Mathlib `IsLocalRing`, Nakayama's lemma,
-`Module.Projective`.
+fields at maximal ideals are finite (Brown1974 Appendix A, Lemma 2, lines 1303–1310): such a residue
+field `k` is a field of finite type over `ℤ`, hence a finite `ℤ`-module
+(`finite_of_finite_type_of_isJacobsonRing`), `ℤ` being a Jacobson ring by
+`TauCeti.isJacobsonRing_of_quotient_span_singleton` (its Jacobson radical is `0`, and each `ℤ/n`,
+`n ≠ 0`, is finite, so Artinian, so Jacobson); `k` is not of characteristic zero, since a subgroup
+`ℚ` of a finitely generated abelian group would be finitely generated, so `k` is a
+finite-dimensional vector space over some `𝔽_p`. So `V` has a `Γ`-stable lattice `L` over a local
+ring `A ⊂ K`, the localization at a maximal ideal, with finite residue field `k`;
+`Hom_{ℤΓ'}(P, L)` is finitely generated projective over `A[Γ/Γ']` (it is induced from `L` when
+`P = ℤΓ`, Brown1974 Appendix A, Lemma 1, lines 1295–1302), its reduction is free of the stated rank
+by the finite case, and a finitely generated projective module over `A[Δ]`, `Δ` finite, whose
+reduction is free is free (lift the isomorphism, Nakayama). *Needs:* 7.3, 7.4; Mathlib
+`IsLocalRing`, Nakayama's lemma, `Module.Projective`, `finite_of_finite_type_of_isJacobsonRing`;
+Tau Ceti `TauCeti.isJacobsonRing_of_quotient_span_singleton`.
 
 **Checks.**
 
@@ -1915,8 +1987,9 @@ representation is computed by its rank alone.
 ### Dependencies
 
 EtaleCohomologyFoundations §F.10.3 (the Hattori–Stallings trace and the centralizer formula); Tau
-Ceti's projective trace, character vanishing, Swan's theorem for `ℤ_p[G]` and the determination of
-representations by characters.
+Ceti's projective trace, character vanishing, Swan's theorem for `ℤ_p[G]`, the determination of
+representations by characters, and the Jacobson criterion through principal quotients; Mathlib's
+Zariski lemma over a Jacobson ring.
 
 ---
 
@@ -2472,3 +2545,4 @@ CohomologyOfGroups §3.6 for Checks.
   (1961).
 - [Floyd1952] E. E. Floyd, *On periodic maps and the Euler characteristics of associated spaces*,
   Trans. Amer. Math. Soc. 72 (1952), 138–147.
+- [Hatcher2002] A. Hatcher, *Algebraic Topology*, Cambridge University Press, 2002.
