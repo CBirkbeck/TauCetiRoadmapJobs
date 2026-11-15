@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FiniteGroupInvariants~10",
+  "head": "60b9e45fb870208e433985a0b4dc28b81b66b3a1",
+  "pr": 1708,
+  "folder": "FiniteGroupInvariants",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 60b9e45; the folder's files are unchanged and stand as accepted. This round read the pull request's title and description against the head: two P3 findings, both in the description (it counts 64 milestones where the head has 59 numbered sections in 11 layers; it lists Malle invariants as specified here where the head imports them from ArithmeticStatisticsPartV 3.9 and owns elusive groups, d_ind and the division count of b(Q, G)). The rest of the description was checked sentence by sentence against the README and is sound. Gate: every check 0 in the worker's run (build=0 OK); my run of the brief's command gives only NOT IN ORDER against the configured order, which is not a finding. Dependency check against the candidate order: 244 roadmaps, 2231 edges, 0 problems, no UPWARD or CYCLE. Elaboration of Suggested.lean: exit 0, 53 sorry warnings, no error. Adversarial rows computed for 10.5 (Jordan constant), 10.2/10.4 (Minkowski bound 5760), 8.1 and 8.2. No source locator opened: no passage of the folder changed.",
+  "text": "41ece09f00fd4cb4",
+  "carried": {
+   "from": "60b9e45fb870208e433985a0b4dc28b81b66b3a1",
+   "head": "8d408403c48a0522751ea616047dc368b9df16ca",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
