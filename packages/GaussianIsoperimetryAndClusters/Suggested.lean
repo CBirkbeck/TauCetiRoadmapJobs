@@ -53,8 +53,9 @@ open scoped ENNReal NNReal Topology RealInnerProductSpace Distributions Pointwis
 
 /-- The **Gaussian isoperimetric function** `I(v) = φ(Φ⁻¹(v))` for `0 < v < 1`, where `φ` is the
 standard normal density and `Φ⁻¹(v)` the quantile of the standard normal law at level `v`, and
-`I(v) = 0` otherwise (MilmanNeeman2022, equation (1.1); Ledoux1999, (1.4)). The endpoints are
-set apart because the quantile takes the junk value `0` at levels `0` and `1`. -/
+`I(v) = 0` otherwise (MilmanNeeman2022, Section 1.2, the formula `φ ∘ Φ⁻¹` just before
+equation (1.1), which is the equation `I″ = −1/I`; Ledoux1999, (1.4)). The endpoints are set
+apart because the quantile takes the junk value `0` at levels `0` and `1`. -/
 noncomputable def gaussianIsoperimetricProfile (v : ℝ) : ℝ :=
   if 0 < v ∧ v < 1 then gaussianPDFReal 0 1 ((gaussianReal 0 1).quantile v) else 0
 
@@ -407,7 +408,8 @@ theorem bobkov_inequality {f : E → ℝ} (hf : LocallyLipschitz f) (hf01 : ∀ 
 
 /-- **Concentration of Lipschitz functions about a median** (§8.4). For an `L`-Lipschitz
 `f : E → ℝ` and a real `m` with `γ({f ≤ m}) ≥ 1/2`, `γ({f > m + L r}) ≤ 1 − Φ(r)` for every
-`r ≥ 0` (Ledoux1993, inequality (10); Ledoux1999, (1.6)). -/
+`r ≥ 0` (Ledoux1993, inequality (10); Ledoux1999, (1.6), stated there for sets and applied to
+`{f ≤ m}`). -/
 theorem gaussian_concentration_median {L : ℝ≥0} {f : E → ℝ} (hf : LipschitzWith L f) {m : ℝ}
     (hm : 2⁻¹ ≤ stdGaussian E {x | f x ≤ m}) {r : ℝ} (hr : 0 ≤ r) :
     stdGaussian E {x | m + L * r < f x} ≤ ENNReal.ofReal (1 - cdf (gaussianReal 0 1) r) := by
@@ -416,7 +418,8 @@ theorem gaussian_concentration_median {L : ℝ≥0} {f : E → ℝ} (hf : Lipsch
 /-- **Concentration of the maximum of a Gaussian vector about a median** (§8.5). For a nonempty
 finite `ι`, a square matrix `S`, `σ = max_i √(S_ii)` and a real `m` with
 `γ_{0,S}({max_i x_i ≤ m}) ≥ 1/2`, `γ_{0,S}({max_i x_i > m + σ r}) ≤ 1 − Φ(r)` for every `r ≥ 0`
-(Ledoux1999, (1.8)). -/
+(Ledoux1999, the derivation of (1.8) from (1.7) with `a = 0`; (1.8) itself states only the weaker
+tail `e^{−r²/2}`). -/
 theorem gaussian_max_concentration {ι : Type*} [Fintype ι] [DecidableEq ι] [Nonempty ι]
     (S : Matrix ι ι ℝ) {m : ℝ} (hm : 2⁻¹ ≤ multivariateGaussian 0 S {x | ∀ i, x i ≤ m})
     {r : ℝ} (hr : 0 ≤ r) :
