@@ -68,14 +68,27 @@ owned elsewhere and consumed by section.
   Weyl criterion is gap:weyl-criterion below), the decomposition `ℋ = ℋ_pp ⊕ ℋ_ac ⊕ ℋ_sc` into
   reducing subspaces with commuting projections preserving `dom A`, the restrictions `A_pp`,
   `A_ac`, `A_sc`, `σ(A) = σ(A_pp) ∪ σ(A_ac) ∪ σ(A_sc)` and `σ(A_pp) = closure σ_p(A)`, together
-  with the scalar atomic/continuous split of a σ-finite Borel measure (UO-C03), closed forms and
-  the Friedrichs extension (UO-D06), graph cores (UO-E01), relatively compact perturbations and
+  with the scalar atomic/continuous split of a σ-finite Borel measure (UO-C03), closed forms,
+  the Friedrichs extension and the self-adjoint complexification of a real self-adjoint operator
+  (UO-D06), graph cores (UO-E01), relatively compact perturbations and
   the invariance of the essential spectrum (UO-E04), worked cores (UO-E05), and the free Laplacian
   on `H²(ℝ³)` with real potentials in `L²(ℝ³) + L^∞(ℝ³)` (UO-E06). Layer 1 identifies these
   subspaces with the Lebesgue decomposition; it does not construct them again. UO-C03 states the
   self-adjointness of the restrictions when a finite scalar control measure exists; for arbitrary
   `ℋ` it is 1.3 (a closed subspace whose projection commutes with every `P_A(B)` reduces `A`, with
   self-adjoint restriction by SA-C19, Tau Ceti `LinearPMap.IsReducing.isSelfAdjoint_restrict`).
+- **Min–max in the compact and finite-dimensional cases.** TauCetiRoadmap.VariationalMethods 4.4
+  states, for a compact form pair, Courant–Fischer (`CompactFormPair.eigenvalue_eq_rayleighMinMax`),
+  the dual obstacle formula, monotonicity under `q ≤ q′` and the counting function, with
+  eigenvalues `λₙ` indexed from `0` and the junk value `0` once the index reaches the dimension;
+  Tau Ceti's `LinearMap.IsSymmetric.eigenvalues_eq_iSup_iInf_re_inner` is the finite-dimensional
+  case, for Mathlib's eigenvalues sorted in decreasing order. 1.6 is the statement for every
+  self-adjoint operator bounded below, with values in `ℝ ∪ {+∞}` and the essential-spectrum
+  alternative. Over `ℂ`, for the operator of a compact form pair (VariationalMethods 5.1),
+  `μ_{n+1}(A)` is VariationalMethods' `λₙ` while `n` is below the dimension of the form domain,
+  and `+∞` beyond it; for a symmetric `T` on a complex space of finite dimension `d` and `n < d`,
+  `μ_{n+1}(T)` is Mathlib's `LinearMap.IsSymmetric.eigenvalues` at index `d − 1 − n`. No target
+  of 1.6 uses either.
 - **Stated by TauCetiRoadmap.RiemannianGeometry R5c.** On a closed Riemannian manifold of
   dimension `≥ 1`, the self-adjoint realisation of `Δ⁺ + q` for a smooth real `q` (through
   ComplexKahlerGeometry K5a), its spectrum of eigenvalues of finite multiplicity, the ordered
@@ -83,7 +96,8 @@ owned elsewhere and consumed by section.
   Courant–Fischer characterisation (from VariationalMethods 3.1 and 4.1–4.4) and, on a connected
   closed manifold, the first positive eigenvalue `λ₁(Δ⁺) = μ₂(Δ⁺)`. R5c works on real functions. None
   of it is restated here: 3.8 proves that `Δ_X` of 3.6 is the complexification of R5c's operator
-  at `q = 0`, and 3.9 does the same for `Δ_X + V` with smooth `V`. This roadmap keeps what R5c does
+  at `q = 0` (UnboundedOperators UO-D06's complexification, carried to `L²(X; ℂ)`), and 3.9 does
+  the same for `Δ_X + V` with smooth `V`. This roadmap keeps what R5c does
   not state: completeness of compact manifolds, agreement with the closure of 3.6, the
   multiplicity of `0` on several components, dimension `0`, the empty manifold, and bounded
   measurable potentials `V` with their two-sided min–max bound.
@@ -241,6 +255,14 @@ owned elsewhere and consumed by section.
   complete, constant curvature `−1`), used in Checks.
 - `TauCeti.Wkp` and `TauCeti.W1p` in `TauCeti/Analysis/Sobolev/` (real-valued weak-derivative
   spaces on an additive Haar measure).
+- `TauCeti.Complexification` in `TauCeti/Analysis/Normed/Module/Complexification.lean` (pairs
+  `x + i y` with the complex structure `(a + ib)(x + iy) = (ax − by) + i(bx + ay)`) and
+  `WithLp.instComplexificationInnerProductSpace` in
+  `TauCeti/Analysis/InnerProductSpace/Complexification.lean` (the complex inner product
+  `⟪x + iy, u + iv⟫ = ⟪x, u⟫ + ⟪y, v⟫ + i(⟪x, v⟫ − ⟪y, u⟫)` on
+  `WithLp 2 (TauCeti.Complexification H)`, complete for complete `H` by
+  `WithLp.instComplexificationCompleteSpace`), used in 3.8 to identify `L²(X; ℂ)` with the
+  complexification of `L²(X; ℝ)`.
 - `LinearPMap.IsReducing.isSelfAdjoint_restrict` in
   `TauCeti/Analysis/InnerProductSpace/LinearPMap/Reducing.lean` (the reduced part of a self-adjoint
   map along a reducing closed subspace of a complete space is self-adjoint).
@@ -294,7 +316,12 @@ with every `P_A(B)` and preserving `dom A`, the restrictions `A_pp`, `A_ac`, `A_
 formula, `σ(A_pp) = closure σ_p(A)`, and the scalar atomic/continuous split; the restrictions are
 self-adjoint by 1.3 and SA-C19 for arbitrary `ℋ`), UO-D06 (closed semibounded forms, the
 represented self-adjoint operator by its graph characterisation, the real-shift self-adjointness
-criterion, the Friedrichs extension and the square-root domain identification), UO-E01 (graph
+criterion, the Friedrichs extension and the square-root domain identification; and, from its real
+unbounded spectral restriction, the complexification `A_ℂ` of a real densely defined self-adjoint
+`A` on a complete real inner-product space `H`, a partial operator on Tau Ceti's Hilbert
+complexification `WithLp 2 (TauCeti.Complexification H)` with domain `ι(dom A) + i•ι(dom A)`
+for the real inclusion `ι`, action `A_ℂ(ι x + i•ι y) = ι(Ax) + i•ι(Ay)`, densely defined, closed
+and self-adjoint, used in 3.8 and 3.9), UO-E01 (graph
 cores), UO-E04 (Weyl's theorem on compact resolvent differences; `V` is `A`-compact when
 `dom A ⊆ dom V` and `V(A − i)⁻¹` is compact, and a symmetric `A`-compact `V` leaves the essential
 spectrum unchanged), UO-E05 (cores of `−d²/dx²` and of the free Laplacian on `ℝ³`), UO-E06 (the
@@ -369,10 +396,9 @@ coercivity threshold, self-adjoint with domain `H²(M)`; for `M ≠ ∅` its eig
 eigenfunction smooth, a Hilbert basis of eigenfunctions, the Courant–Fischer characterisation
 `μ_k = min_{dim W = k} max_{u ∈ W ∖ 0} Q(u, u)/‖u‖²` over subspaces `W` of `W^{1,2}(M)`, and, for
 `q = 0` on a connected `M`, `μ₁(Δ⁺) = 0` with the constants as eigenspace and
-`λ₁(Δ⁺) = μ₂(Δ⁺) > 0` (item 4 of its scalar principal-eigenfunction part). Used: the
-complexification of `L_D`, the operator `u ↦ L_D(Re u) + i·L_D(Im u)` on
-`{u ∈ L²(M; ℂ) : Re u, Im u ∈ dom L_D}`, is self-adjoint with the same eigenvalues, the complex
-multiplicity of each being its real multiplicity. HopfRinow Layers 0–4 (Riemannian
+`λ₁(Δ⁺) = μ₂(Δ⁺) > 0` (item 4 of its scalar principal-eigenfunction part). R5c states no
+complexified operator: 3.8 takes it from UnboundedOperators UO-D06 and proves the multiplicity
+comparison itself. HopfRinow Layers 0–4 (Riemannian
 distance, the equivalence of completeness with compactness of closed bounded sets on a connected
 manifold).
 
@@ -623,6 +649,13 @@ UO-C02, UO-D06.
   Dirichlet Laplacian `D` (the same form on `H¹₀ ⊊ H¹`, Layer 3.4) satisfy `N ≤ D` in the form
   order, with `μ_n(N) = (n − 1)²π² ≤ n²π² = μ_n(D)`; a model that compares the forms on the
   common domain alone would also conclude `D ≤ N`, yet `μ₁(D) = π² > 0 = μ₁(N)`.
+- Index conventions of the neighbouring statements: for `A = diag(1, 3, 5)` on `ℂ³`, read as the
+  compact form pair `V = H = ℂ³`, `j = id`, `q(u) = ⟪u, Au⟫`, the values `μ₁, μ₂, μ₃ = 1, 3, 5`
+  are VariationalMethods 4.4's `λ₀, λ₁, λ₂` and Mathlib's `LinearMap.IsSymmetric.eigenvalues` at
+  indices `2, 1, 0`; at the fourth index the three conventions part: `μ₄ = +∞`, VariationalMethods'
+  `CompactFormPair.rayleighMinMax ⊤ 3` is its junk value `0` (no `4`-dimensional subspace of
+  `ℂ³`), and Mathlib's family has no index `3`. A comparison that drops the shift by one reports
+  `μ₁ = λ₁ = 3`, and one that reads Mathlib's index `0` as the bottom eigenvalue reports `5`.
 
 ### 1.7 Abstract wave operators
 
@@ -1117,8 +1150,26 @@ the cases R5c leaves out. Prove:
 - `X` is complete, and `Δ_X` is ComplexKahlerGeometry K5a's `H²` realisation of the nonnegative
   scalar Laplacian on complex functions (K5a.ComponentwiseCompact for several components), so
   `dom Δ_X = H²(X)`;
-- if `dim X ≥ 1`, `Δ_X` is the complexification `u ↦ L_D(Re u) + i·L_D(Im u)` of R5c's closed
-  realisation `L_D` of `Δ⁺` (the case `q = 0`) on `L²(X; ℝ)`; consequently, for `X ≠ ∅`,
+- if `dim X ≥ 1`, `Δ_X` is the complexification of R5c's closed realisation `L_D` of `Δ⁺` (the
+  case `q = 0`) on `L²(X; ℝ)`, in the following sense. The map `κ : u ↦ Re u + i•Im u` is a
+  complex-linear isometric equivalence of `L²(X; ℂ)` onto Tau Ceti's Hilbert complexification
+  `H_ℂ := WithLp 2 (TauCeti.Complexification L²(X; ℝ))`, with real inclusion
+  `ι : x ↦ x + i•0`: `κ(iu) = −Im u + i•Re u = i•κ(u)`, and
+  `⟪u, v⟫ = ∫ conj(u) v` has real part `⟪Re u, Re v⟫ + ⟪Im u, Im v⟫` and imaginary part
+  `⟪Re u, Im v⟫ − ⟪Im u, Re v⟫`, the inner product of `WithLp.instComplexificationInnerProductSpace`.
+  UnboundedOperators UO-D06 (real unbounded spectral restriction) supplies the complexification
+  `(L_D)_ℂ`, with domain `ι(dom L_D) + i•ι(dom L_D)` and action
+  `ι x + i•ι y ↦ ι(L_D x) + i•ι(L_D y)`, densely defined, closed and self-adjoint; and
+  `κ Δ_X κ⁻¹ = (L_D)_ℂ`, that is `dom Δ_X = {u : Re u, Im u ∈ dom L_D}` and
+  `Δ_X u = L_D(Re u) + i·L_D(Im u)`. The **eigenspace identity**, owned here for every real
+  self-adjoint `A` on a real Hilbert space `H`, its complexification `A_ℂ` on
+  `H_ℂ = WithLp 2 (TauCeti.Complexification H)` (UO-D06) and real `μ`:
+  `ker(A_ℂ − μ) = ι ker(A − μ) + i•ι ker(A − μ)`, so each eigenspace of `A_ℂ` has complex
+  dimension equal to the real dimension of that of `A`, and `ι` maps an orthonormal basis of `H`
+  to an orthonormal basis of `H_ℂ` (since `μ` is real,
+  `(A_ℂ − μ)(ι x + i•ι y) = ι((A − μ)x) + i•ι((A − μ)y)`, which vanishes iff both parts do;
+  `⟪ι x, ι y⟫ = ⟪x, y⟫`, and the closed complex span of `ι(H)` contains `ι(H) + i•ι(H) = H_ℂ`);
+  consequently, for `X ≠ ∅`,
   `λ_k(X) = μ_{k+1}(Δ⁺)` for every `k ≥ 0` (3.7), and R5c's statements hold for `Δ_X`: its
   spectrum consists of eigenvalues of finite multiplicity without finite accumulation point, so
   `σ(Δ_X) = σ_disc(Δ_X)`; every `λ_k(X)` is finite and `λ_k(X) → ∞`; `L²(X)` has an orthonormal
@@ -1130,14 +1181,17 @@ the cases R5c leaves out. Prove:
   `k < N` and `λ_k(X) = +∞` for `k ≥ N`; if `X = ∅`, `L²(X) = 0`, `σ(Δ_X) = ∅` and every
   `λ_k(X) = +∞`.
 
-Route: `C_c^∞(X; ℂ) = C^∞(X; ℂ)` lies in the domain of K5a's realisation and in that of the
-complexification of `L_D`, on which both act as `Δ`; both operators are self-adjoint, hence
-self-adjoint extensions of `Δ₀`, and `Δ₀` has exactly one, `Δ_X` (3.6). The complexification has
-the eigenvalues of `L_D`, each with complex multiplicity equal to its real multiplicity, so its
+Route: `C_c^∞(X; ℂ) = C^∞(X; ℂ)` lies in the domain of K5a's realisation and in that of
+`κ⁻¹(L_D)_ℂ κ`, on which both act as `Δ`; both operators are self-adjoint (K5a's realisation by
+K5a, `κ⁻¹(L_D)_ℂ κ` by UO-D06 and the unitarity of `κ`), hence self-adjoint extensions of `Δ₀`,
+and `Δ₀` has exactly one, `Δ_X` (3.6). By the eigenspace identity the complexification has the
+eigenvalues of `L_D`, each with complex multiplicity equal to its real multiplicity, so its
 min–max values (1.6) are R5c's `μ_k`. Compact resolvent comes from K5a for `dim X ≥ 1` and from
 `dim L²(X) < ∞` otherwise (Tau Ceti `IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent`
-at one nonreal point). *Needs:* 1.6, 3.6, 3.7; RiemannianGeometry R5c; ComplexKahlerGeometry K5a;
-Tau Ceti `IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent`.
+at one nonreal point). *Needs:* 1.6, 3.6, 3.7; RiemannianGeometry R5c; UnboundedOperators UO-D06
+(complexification of a real self-adjoint operator); ComplexKahlerGeometry K5a; Tau Ceti
+`TauCeti.Complexification`, `WithLp.instComplexificationInnerProductSpace`,
+`IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent`.
 
 **Checks.**
 
@@ -1149,9 +1203,10 @@ Tau Ceti `IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent`.
   finite eigenvalue is `0`, which is why the second item needs `dim X ≥ 1`.
 - The complexification preserves multiplicities: on the circle of length `2π` the real
   eigenspace of `1` is spanned by `cos θ`, `sin θ` and the complex one by `e^{iθ}`, `e^{−iθ}`,
-  both of dimension `2`, so `λ₁(X) = λ₂(X) = 1 = μ₂(Δ⁺) = μ₃(Δ⁺)`. Treating `L²(X; ℂ)` as the
-  real `L²` of the trivial rank-two bundle would double every multiplicity and give
-  `λ₁ = 0`.
+  both of dimension `2`, so `λ₁(X) = λ₂(X) = 1 = μ₂(Δ⁺) = μ₃(Δ⁺)`; this is the eigenspace
+  identity, `span_ℂ(e^{iθ}, e^{−iθ}) = span_ℂ(cos θ, sin θ) = ι ker(L_D − 1) + i•ι ker(L_D − 1)`.
+  Treating `L²(X; ℂ)` as the real `L²` of the trivial rank-two bundle would double every
+  multiplicity and give `λ₁ = 0`.
 - `X = ∅` is compact with `L²(X) = 0` and `σ(Δ_X) = ∅`: there is no eigenvalue `λ₀ = 0`, and
   `λ₀(X) = μ₁(Δ_X) = +∞`; the eigenvalue clause is stated for `X ≠ ∅` only.
 - Two disjoint circles: `0` has multiplicity `2`, one constant per component.
@@ -1172,10 +1227,11 @@ dimension `≥ 1`:
   (`+∞` once `n > dim L²(X)`), and for `X ≠ ∅`
   `λ_{n−1}(X) + ess inf V ≤ μ_n(Δ_X + V) ≤ λ_{n−1}(X) + ess sup V` with `λ_k(X)` of 3.7;
 - if `X ≠ ∅` and `dim X ≥ 1`, every `μ_n(Δ_X + V)` is finite and `μ_n(Δ_X + V) → ∞`;
-- if `V` is moreover smooth, every eigenfunction is smooth: for `dim X ≥ 1`, `Δ_X + V` is the
-  complexification of R5c's closed realisation of `Δ⁺ + V`, whose eigenfunctions are smooth, and
-  `μ_n(Δ_X + V)` is R5c's `μ_n(Δ⁺ + V)` (RiemannianGeometry R5c); for `dim X = 0` every function
-  is smooth.
+- if `V` is moreover smooth, every eigenfunction is smooth: for `dim X ≥ 1`, with `κ` of 3.8,
+  `κ(Δ_X + V)κ⁻¹` is UnboundedOperators UO-D06's complexification of R5c's closed realisation
+  `L_{D,V}` of `Δ⁺ + V`, whose eigenfunctions are smooth, and `μ_n(Δ_X + V)` is R5c's
+  `μ_n(Δ⁺ + V)` (RiemannianGeometry R5c; 3.8's eigenspace identity, which holds for every real
+  self-adjoint operator); for `dim X = 0` every function is smooth.
 
 For discontinuous `V` the eigenfunctions are asserted to lie in `H²(X)` only, and the lowest
 eigenvalue is `μ₁(Δ_X + V) ≥ ess inf V`, not `0`. Route: for `s > ess sup |V|`,
@@ -1193,10 +1249,14 @@ resolvent identity (`LinearPMap.resolvent_sub_resolvent`). For `X ≠ ∅`, `T` 
 eigenvalue `ν ≠ 0` and is an eigenvector of `Δ_X + V` for `is + ν⁻¹`. The two-sided bound is 1.6's form-order corollary applied
 to `Δ_X + ess inf V ≤ Δ_X + V ≤ Δ_X + ess sup V` (common form domain `H¹(X)`, 3.6), with
 `μ_n(Δ_X + c) = λ_{n−1}(X) + c`; finiteness and divergence follow from 3.8. For smooth `V` and
-`dim X ≥ 1`, R5c's realisation of `Δ⁺ + V` is K5a's `H²` realisation of `Δ⁺ + V + c` minus `c`, so
-its complexification and `Δ_X + V` both have domain `H²(X)` (3.8) and act there as `Δ + V`.
+`dim X ≥ 1`, R5c's realisation `L_{D,V}` of `Δ⁺ + V` is K5a's `H²` realisation of `Δ⁺ + V + c`
+minus `c`, with domain `H²(X; ℝ)`, so `κ⁻¹(L_{D,V})_ℂ κ` (UO-D06) has domain
+`{u : Re u, Im u ∈ H²(X; ℝ)} = H²(X)`, the domain of `Δ_X + V` (3.8), and both act there as
+`Δ + V`; the two operators are equal, and the eigenspace identity of 3.8 carries R5c's
+eigenvalues, multiplicities and smooth real eigenbasis to `Δ_X + V`.
 *Needs:* 1.6, 2.2, 3.6, 3.7, 3.8; SelfAdjointSpectralTheory SA-C54, SA-C86; RiemannianGeometry R5c
-(smooth `V`); Mathlib
+(smooth `V`); UnboundedOperators UO-D06 (complexification of a real self-adjoint operator, smooth
+`V`); Mathlib
 `IsCompactOperator.comp_clm`; Tau Ceti `IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent`,
 `IsSelfAdjoint.exists_hilbertBasis_forall_apply_eq_smul_of_hasCompactResolvent`,
 `LinearPMap.resolvent_sub_resolvent`.
@@ -1300,9 +1360,10 @@ AutomorphicSpectralTheory §1.16a treats `Γ₀(N)` in finite-stabilizer orbifol
 Layers 1 and 2; DifferentialGeometry Layer 12; RiemannianGeometry R5c (3.8, 3.9) and R7.8;
 Completed/HopfRinow; HilbertModules H6;
 ComplexKahlerGeometry K5a; PseudodifferentialOperators P1.0; SmoothBundlesConnections B2.2;
-UnboundedOperators UO-C02 (with gap:weyl-criterion), UO-D06;
+UnboundedOperators UO-C02 (with gap:weyl-criterion), UO-D06 (forms, Friedrichs extension, and the
+complexification of a real self-adjoint operator in 3.8 and 3.9);
 SelfAdjointSpectralTheory SA-C54, SA-C86; Tau Ceti Riemannian volume, Laplace–Beltrami and Green
-identity, compact resolvents and their eigenbases.
+identity, Hilbert complexification, compact resolvents and their eigenbases.
 
 ## Layer 4: Schrödinger operators on `L²(ℝ^d)`
 
@@ -1506,7 +1567,7 @@ SA-C54, SA-E47; OperatorIdeals OI-C14; Tau Ceti resolvent identity and Hilbert�
   first positive eigenvalue on a closed connected surface by 3.8 and RiemannianGeometry R5c
   (`λ₁(Δ⁺) = μ₂(Δ⁺) > 0`).
 - **The parabolic cylinder.** For `X = ⟨z ↦ z + 1⟩\ℍ`, 3.6, 3.7 and 3.10 give a self-adjoint
-  `Δ_X ≥ 0` with `0 ∉ σ_p` (infinite area: the funnel `y < 1` has infinite area) and
+  `Δ_X ≥ 0` with `0 ∉ σ_p` (infinite area: the part `y < 1` has area `∫_0^1 dy/y² = ∞`) and
   `[1/4, ∞) ⊆ σ_ess(Δ_X)`.
 
 ## Motivation for a future roadmap: finite-area hyperbolic surfaces

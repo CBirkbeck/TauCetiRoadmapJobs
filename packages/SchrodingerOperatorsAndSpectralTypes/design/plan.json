@@ -424,6 +424,11 @@
        "name": "form_order",
        "kind": "non-example",
        "statement": "diag(1,3) <= diag(2,4): mu_1 = 1 <= 2, mu_2 = 3 <= 4. On (0,1) Neumann N <= Dirichlet D in the form order (H^1_0 subset H^1, same form): mu_n(N) = (n-1)^2 pi^2 <= n^2 pi^2 = mu_n(D); comparing forms on the common domain alone would also give D <= N, yet mu_1(D) = pi^2 > 0 = mu_1(N)."
+      },
+      {
+       "name": "index_conventions",
+       "kind": "computation",
+       "statement": "A = diag(1,3,5) on C^3 as the compact form pair V = H = C^3, j = id, q(u) = <u, Au>: mu_1, mu_2, mu_3 = 1, 3, 5 are VariationalMethods 4.4's lambda_0, lambda_1, lambda_2 and Mathlib's LinearMap.IsSymmetric.eigenvalues at indices 2, 1, 0; at the fourth index mu_4 = +infinity, CompactFormPair.rayleighMinMax top 3 is the junk value 0, and Mathlib's family has no index 3. Dropping the shift gives mu_1 = lambda_1 = 3; reading Mathlib's index 0 as the bottom gives 5."
       }
      ]
     },
@@ -1379,7 +1384,7 @@
      "id": "3.8",
      "kind": "theorem",
      "name": "compact_laplacian_spectrum",
-     "statement": "For compact X: X is complete and Delta_X is K5a's H^2 realisation of the nonnegative scalar Laplacian on complex functions, dom Delta_X = H^2(X); if dim X >= 1, Delta_X is the complexification u -> L_D(Re u) + i L_D(Im u) of RiemannianGeometry R5c's closed realisation L_D of Delta^+ (q = 0), so for X nonempty lambda_k(X) = mu_{k+1}(Delta^+) in R5c's numbering and R5c's statements hold for Delta_X (eigenvalues of finite multiplicity, sigma = sigma_disc, lambda_k finite with lambda_k -> infinity, orthonormal basis of smooth eigenfunctions, Courant-Fischer); Delta_X has compact resolvent and the multiplicity of 0 is the number of components; if dim X = 0 (N points) lambda_k = 0 for k < N and +infinity for k >= N; if X is empty, sigma(Delta_X) is empty and every lambda_k = +infinity.",
+     "statement": "For compact X: X is complete and Delta_X is K5a's H^2 realisation of the nonnegative scalar Laplacian on complex functions, dom Delta_X = H^2(X); if dim X >= 1, the complex-linear isometric equivalence kappa : u -> Re u + i Im u of L^2(X; C) onto Tau Ceti's WithLp 2 (TauCeti.Complexification L^2(X; R)) carries Delta_X to UnboundedOperators UO-D06's self-adjoint complexification of RiemannianGeometry R5c's closed realisation L_D of Delta^+ (q = 0), so Delta_X u = L_D(Re u) + i L_D(Im u) on {u : Re u, Im u in dom L_D}; for every real self-adjoint A and real mu, ker(A_C - mu) = iota ker(A - mu) + i iota ker(A - mu) (complex and real multiplicities agree, owned here); hence for X nonempty lambda_k(X) = mu_{k+1}(Delta^+) in R5c's numbering and R5c's statements hold for Delta_X (eigenvalues of finite multiplicity, sigma = sigma_disc, lambda_k finite with lambda_k -> infinity, orthonormal basis of smooth eigenfunctions, Courant-Fischer); Delta_X has compact resolvent and the multiplicity of 0 is the number of components; if dim X = 0 (N points) lambda_k = 0 for k < N and +infinity for k >= N; if X is empty, sigma(Delta_X) is empty and every lambda_k = +infinity.",
      "hypotheses": [
       "X finite-dimensional real smooth manifold, Hausdorff, second countable, boundaryless",
       "smooth Riemannian metric g",
@@ -1397,8 +1402,11 @@
       "target:3.7a",
       "target:3.7b",
       "roadmap:RiemannianGeometry R5c",
+      "roadmap:OperatorTheory UnboundedOperators UO-D06",
       "roadmap:ComplexKahlerGeometry K5a",
-      "tauceti:IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent"
+      "tauceti:IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent",
+      "tauceti:TauCeti.Complexification",
+      "tauceti:WithLp.instComplexificationInnerProductSpace"
      ],
      "api": [],
      "tests": [
@@ -1433,7 +1441,7 @@
      "id": "3.9",
      "kind": "theorem",
      "name": "laplacian_add_boundedPotential",
-     "statement": "For complete X and real V in L^infinity(X): Delta_X + V is self-adjoint on dom Delta_X, Delta_0 + V is essentially self-adjoint on C_c^infinity with closure Delta_X + V, Delta_X + V >= ess inf V. For compact X: Delta_X + V has compact resolvent, discrete spectrum of eigenvalues of finite multiplicity and an orthonormal eigenbasis in dom Delta_X = H^2(X); its eigenvalues with multiplicity are the min-max values mu_n(Delta_X + V) of 1.6a (+infinity for n > dim L^2(X)) and, for X nonempty, lambda_{n-1}(X) + ess inf V <= mu_n(Delta_X + V) <= lambda_{n-1}(X) + ess sup V; if X is nonempty and dim X >= 1 every mu_n is finite and mu_n -> infinity; if V is smooth the eigenfunctions are smooth (for dim X >= 1, Delta_X + V is the complexification of RiemannianGeometry R5c's closed realisation of Delta^+ + V and mu_n(Delta_X + V) is R5c's mu_n; for dim X = 0 trivially). The compact clause is owned here because V is only bounded measurable and dim X = 0 is allowed. No smoothness is asserted for discontinuous V.",
+     "statement": "For complete X and real V in L^infinity(X): Delta_X + V is self-adjoint on dom Delta_X, Delta_0 + V is essentially self-adjoint on C_c^infinity with closure Delta_X + V, Delta_X + V >= ess inf V. For compact X: Delta_X + V has compact resolvent, discrete spectrum of eigenvalues of finite multiplicity and an orthonormal eigenbasis in dom Delta_X = H^2(X); its eigenvalues with multiplicity are the min-max values mu_n(Delta_X + V) of 1.6a (+infinity for n > dim L^2(X)) and, for X nonempty, lambda_{n-1}(X) + ess inf V <= mu_n(Delta_X + V) <= lambda_{n-1}(X) + ess sup V; if X is nonempty and dim X >= 1 every mu_n is finite and mu_n -> infinity; if V is smooth the eigenfunctions are smooth (for dim X >= 1, kappa of 3.8 carries Delta_X + V to UnboundedOperators UO-D06's complexification of RiemannianGeometry R5c's closed realisation of Delta^+ + V, and mu_n(Delta_X + V) is R5c's mu_n by 3.8's eigenspace identity; for dim X = 0 trivially). The compact clause is owned here because V is only bounded measurable and dim X = 0 is allowed. No smoothness is asserted for discontinuous V.",
      "hypotheses": [
       "X finite-dimensional real smooth manifold, Hausdorff, second countable, boundaryless",
       "smooth Riemannian metric g",
@@ -1459,7 +1467,8 @@
       "tauceti:IsSelfAdjoint.hasCompactResolvent_iff_isCompactOperator_resolvent",
       "tauceti:IsSelfAdjoint.exists_hilbertBasis_forall_apply_eq_smul_of_hasCompactResolvent",
       "tauceti:LinearPMap.resolvent_sub_resolvent",
-      "roadmap:RiemannianGeometry R5c"
+      "roadmap:RiemannianGeometry R5c",
+      "roadmap:OperatorTheory UnboundedOperators UO-D06"
      ],
      "api": [],
      "tests": [
@@ -2007,7 +2016,7 @@
     "UO-E05",
     "UO-E06"
    ],
-   "what": "unbounded spectral integral and multipliers, spectral support, essential spectrum (Weyl criterion requested as gap weyl-criterion), the pp/ac/sc reducing decomposition, closed forms and Friedrichs extension, cores, relatively compact perturbations (V A-compact when V(A - i)^{-1} is compact), real L^2 + L^infinity potentials on R^3 (UO-E06, the d = 3 case of 4.4b)"
+   "what": "unbounded spectral integral and multipliers, spectral support, essential spectrum (Weyl criterion requested as gap weyl-criterion), the pp/ac/sc reducing decomposition, closed forms and Friedrichs extension, the self-adjoint complexification of a real self-adjoint operator (UO-D06, used in 3.8 and 3.9), cores, relatively compact perturbations (V A-compact when V(A - i)^{-1} is compact), real L^2 + L^infinity potentials on R^3 (UO-E06, the d = 3 case of 4.4b)"
   },
   {
    "roadmap": "QuantumFoundations",
