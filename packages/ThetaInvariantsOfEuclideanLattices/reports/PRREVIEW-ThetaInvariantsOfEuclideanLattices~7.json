@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaInvariantsOfEuclideanLattices~7",
+  "head": "043e385515f90175f922081c4481e70d7af8b227",
+  "pr": 2038,
+  "folder": "ThetaInvariantsOfEuclideanLattices",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 056f5b1. Both previous P3 findings, which were in the description, are repaired: it now places the roadmap after ArakelovGeometryAndAbelianHeights, and its supplier lists name GeometryOfNumbers 4.4.4, 4.4.6, 4.4.7, 4.4.8, 4.4.13, 0.2.2 and 0.3.1 and the Tau Ceti elliptic-integral and jacobiTheta-limit declarations. Resolved 11 cross-roadmap citations at their heads or on main and opened 7 Tau Ceti declarations at the pin. The description was read against the head: nothing outside the folder changes (merge base = origin/main), and the declaration count is 24. Gate: the worker's gate passes (build=0); my run with the default order reports only NOT IN ORDER. Depcheck with the candidate order: 245 roadmaps, 2235 edges, 0 problems. Elaboration: 21 sorry warnings only, and the elaborated types of 3.2 and 3.3 match the README. Adversarial rows computed for 3.3 (Z with x=0.3, t=2; Z^2 with x=(1/2,1/2), t=1.5) and 3.2 (1.5Z at radius = lambda1; aZ at t=1.2, 1.5, 2). Seeded sample: no sampled target lies in a changed passage. Remarks only: SpecialFunctionsTheta 5.2 restates 1.7 (this roadmap is earlier and owns it), and the description's Sources list omits DLMF.",
+  "text": "c16b705665925eca"
+ }
+}
