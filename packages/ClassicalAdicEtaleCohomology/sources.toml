@@ -1,0 +1,17 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ClassicalAdicEtaleCohomology"
+
+[[source]]
+id = "Huber1996"
+authors = "Roland Huber"
+title = "Étale Cohomology of Rigid Analytic Varieties and Adic Spaces"
+year = 1996
+venue = "Aspects of Mathematics"
+doi = "10.1007/978-3-663-09991-8"
+locator_scheme = "theorem"
+locator = "Theorem 5.4.3"
+url = "https://doi.org/10.1007/978-3-663-09991-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.3"]
