@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SchemeKTheoryOperationsPartII~2",
+  "head": "8c2407896d123a3b7f1dc40e32e44ef37743110c",
+  "pr": 1741,
+  "folder": "SchemeKTheoryOperationsPartII",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 10 changed lines since 5c00dc6, and the pull request's title and description against this head. Gate at 8c24078: every check 0, build OK; depcheck 244 roadmaps, 2210 edges, 0 problems, no UPWARD/CYCLE/moved; lake env lean on Suggested.lean clean (no declarations); outside-folder diff empty. Previous R01 (gap:<slug> tag) and R03 (noetherian neighbourhood in 4.2, 'formal schemes' in 4.7) repaired, checked with computed instances (4 table rows) and against EGA-III1 lines 4444-4507 and ZHANG21 lines 4576-4583; previous R02 (STACKS manifest records only the algebra chapter) not repaired and raised again as P3. New P3: the description says the Lean states theorems and builds with sorry as the only warning, while Suggested.lean declares nothing and has no sorry. Declared gap proper-formal-coherent-direct-images (AdicSpacesPartIII F0.6) still precise, minimal and declared in plan.json and the README; the review is conditional on it. Seeded sample checked where it falls in the changed passages (through 4.2 only).",
+  "text": "fbb9398222f4150e",
+  "carried": {
+   "from": "8c2407896d123a3b7f1dc40e32e44ef37743110c",
+   "head": "26d3d86a25f7ba1ad1de8bf4ae9faa0918b9ef74",
+   "findings": 2,
+   "lines": 11,
+   "folders": [
+    "SchemeKTheoryOperationsPartII"
+   ],
+   "outside": true
+  }
+ }
+}
