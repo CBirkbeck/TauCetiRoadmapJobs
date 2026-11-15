@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsGamma~7",
+  "head": "b8059085857ab058fa5268459c9a8a9c9328dab1",
+  "pr": 2191,
+  "folder": "SpecialFunctionsGamma",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since b805908; this round checks the pull request's title and description against the head. One P3 finding (R01): the description lists #1167 (AnalyticNumberTheoryPartII 4.3, barnesG) under open pull requests, but that roadmap is on main (its folder's last commit on main is the merge of #1167, and the open index has no #1167); the bullet moves to the 'On main' list. The previous report had no finding to carry. Checked 31 statements of the description: the eight layers and formula ranges, the Mathlib and Tau Ceti inputs, the three conventions, the Beyond list, the dependency sections, the counts (73 theorems, 6 definitions, single Mathlib import, section comments for Layers 1-8). Resolved 15 cross-roadmap citations: ten on main, ExplicitNumberFields 1.1a and ExplicitZetaBounds 1.1-1.3, 2.4-2.5 at their open heads. Computed values for 5.12.10 (three parameter sets, one at a pole of Gamma(b), two radii) and 5.12.11 (one generic set at two radii, a = 1 and a = 2), both sides agreeing to 1e-10 or better. Gate: the worker's run passes every check, the build included; my run differs only by depcheck NOT IN ORDER from the configured order, and the candidate-order depcheck gives 245 roadmaps, 2232 edges, 0 problems. lake env lean: 73 sorry warnings and nothing else. Not verifiable: the description's claims about Tau Ceti main after the pin, and the topics check. Two remarks on untouched text, no change asked.",
+  "text": "6aeadaeafe4b9c8a"
+ }
+}
