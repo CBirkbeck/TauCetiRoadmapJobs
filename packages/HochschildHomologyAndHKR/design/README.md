@@ -149,7 +149,11 @@ Variants kept here, each differing in one stated respect from an existing object
 - the normalised chains of §2.1 differ from `TauCeti.normalizedHochschildChains` by allowing an
   arbitrary bimodule of coefficients and by their comparison with the unnormalised complex; for
   `M = A`, §2.1 identifies the two complexes, terms and boundaries, under
-  `A ⊗[k] A^{⊗n} ≅ ⨂[k]^{n+1} A`;
+  `A ⊗[k] A^{⊗n} ≅ ⨂[k]^{n+1} A`; NoncommutativeGeometry N1.Cyclic constructs, for a unital
+  complex algebra, the normalised form quotient `A ⊗ (A/ℂ·1)^{⊗n}` and its comparison with the
+  pinned normalised chains, the case `k = ℂ`, `M = A` of §2.1's identifications
+  `N_n(A,A) ≅ A ⊗[k] Ā^{⊗n}` and `N_•(A,A) ≅ TauCeti.normalizedHochschildChains.chainComplex k A`,
+  and keeps that statement; §2.1 states both over every commutative `k`;
 - the normalised cochains of §2.2 differ from `TauCeti.normalizedHochschildCochains`, its complex
   `TauCeti.normalizedHochschildCochainComplex` and the inclusion
   `TauCeti.normalizedHochschildCochainComplexι` by allowing an arbitrary bimodule of coefficients
@@ -453,7 +457,8 @@ canonical map, and the determinant map is identified as `n!` times it.
   `i ≤ n`, multiplies `a_i a_{i+1}`, and the last, with sign `(−1)^{n+1}`, is
   `a_{n+1}a₀ ⊗ a₁ ⊗ ⋯ ⊗ a_n`; and the chain complex in `ChainComplex (ModuleCat k) ℕ` with these
   terms and `b`. The coefficients are `A` itself, and the pinned file compares these chains neither
-  with the unnormalised complex nor with `A ⊗ Ā^{⊗n}`; §2.1 does both.
+  with the unnormalised complex nor with `A ⊗ Ā^{⊗n}`; §2.1 does both over every `k`
+  (NoncommutativeGeometry N1.Cyclic states the second comparison for unital complex algebras).
 - `TauCeti.hochschildCochainComplex` (`TauCeti/RingTheory/HochschildCohomology/Complex.lean`) with
   `TauCeti.normalizedHochschildCochains`, `TauCeti.normalizedHochschildCochains_zero`,
   `TauCeti.normalizedHochschildCochainComplex` and `TauCeti.normalizedHochschildCochainComplexι`
@@ -917,7 +922,9 @@ algebra with coefficients in itself (`TauCeti.normalizedHochschildChains`), for 
 §2.1, and its normalised cochains with values in a `k`-module with the currying comparison to the
 dual bimodule (`TauCeti.normalizedHochschildCochainComplex`,
 `TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary`), for the comparison of §2.2. No roadmap
-supplier is used.
+supplier is used; NoncommutativeGeometry N1.Cyclic also states the complex cases of the comparison
+of §2.1 with `A ⊗ Ā^{⊗n}` and of the comparison of §2.2 between normalised and full scalar
+cochains, which this layer states over every `k` (Scope and ownership).
 
 ## Layer 3: Low degrees and square-zero extensions
 
@@ -1453,7 +1460,8 @@ DGAInfinity Layer 8 (the cup product as `m{−,−}` and the arity-zero cochains
 
 - `(p,q) = (1,1)` computed directly: `f ∘ δg + δf ∘ g − δ(f ∘ g) = f ∪ g + g ∪ f`, all other terms
   cancelling. For derivations `f = g = ∂` of `k[x]` this reads `2(∂ ∪ ∂) = −δ(∂²)`, and indeed
-  `−δ(∂²)(a,b) = 2∂a ∂b`; Ginz05 (6.6.3) would give `δ(∂²) = −2∂a∂b` instead.
+  `−δ(∂²)(a,b) = 2∂a ∂b`; Ginz05 (6.6.3) would read `2(∂ ∪ ∂) = δ(∂²)`, that is
+  `2∂a∂b = −2∂a∂b`, which fails at `(a,b) = (x,x)` (`2 = −2`) unless `4 = 0` in `k`.
 - `(p,q) = (1,0)` with `g = y ∈ A`: both sides equal `a ↦ y f(a) − f(a) y`; `(p,q) = (2,0)`: both
   sides equal `(a,b) ↦ y f(a,b) − f(a,b) y`, the other terms on the right cancelling in pairs.
 - `(p,q) = (0,1)` with `f = x ∈ A`: the left side is `g ∪ x − x ∪ g`, and on the right `x ∘ g = 0` and
