@@ -174,10 +174,11 @@ Paternain–Salo–Uhlmann Lemma 3.1.13.
 - **Mean curvature** is the averaged trace `H = tr_h II / n` for `n ≥ 1` (RiemannianGeometry R5a's
   averaged convention, inward normal). Witness: the unit sphere has `H = 1`; the boundary of the
   exterior of the unit ball has `H = −1`.
-- **Level-set concavity.** For `x` smooth with `dx ≠ 0`, the level set through `y` is strictly
-  concave from the superlevel sets at `y` if `Hess x` is positive definite on `ker dx_y`. Witness:
-  `x = |z|²` on `ℝⁿ⁺¹ ∖ {0}`, `Hess x = 2g`; for `c > 0` the sublevel ball `{x ≤ c}` has
-  `II = h/√c > 0` and the superlevel exterior `{x ≥ c}` has `II = −h/√c`.
+- **Level-set concavity.** For `x` smooth near `y` with `dx_y ≠ 0`, the level set through `y` is
+  strictly concave from the superlevel sets at `y` if `Hess x` is positive definite on `ker dx_y`.
+  Witness: `x = |z|²` on `ℝⁿ⁺¹`, `Hess x = 2g`, `dx_y = 2y ≠ 0` for `y ≠ 0`; for `c > 0` the
+  sublevel ball `{x ≤ c}` has `II = h/√c > 0` and the superlevel exterior `{x ≥ c}` has
+  `II = −h/√c`.
 - **Conformal change** is `ĝ = e^{2φ} g` (Tau Ceti `Bundle.ContMDiffRiemannianMetric.rescale` with
   factor `e^{2φ}`). Witness: `φ = log 2` turns the unit ball into a copy of the Euclidean ball of
   radius 2 and doubles `II`.
@@ -698,15 +699,16 @@ of a regular sublevel, the outward criterion); Tau Ceti `TauCeti.IsRegularValue`
 
 ### 3.2 Sublevel sets and level sets concave from the superlevel sets
 
-Define, for an open `U ⊆ N` and `x ∈ C^∞(U)` with `dx ≠ 0` on `U`: the level set of `x` through
-`y ∈ U` is strictly concave from the superlevel sets at `y` if `Hess x(v, v) > 0` for every nonzero
-`v ∈ ker dx_y`; the level sets of `x` are strictly concave from the superlevel sets on `U` if this
-holds at every `y ∈ U` (Stefanov–Uhlmann–Vasy, lines 128–129 and 198–200; Uhlmann–Vasy, lines
-137–140 and 507–509). Prove:
+Define, for an open `U ⊆ N`, `x ∈ C^∞(U)` and `y ∈ U` with `dx_y ≠ 0`: the level set of `x`
+through `y` is strictly concave from the superlevel sets at `y` if `Hess x(v, v) > 0` for every
+nonzero `v ∈ ker dx_y`; the level sets of `x` are strictly concave from the superlevel sets on `U`
+if `dx ≠ 0` on `U` and this holds at every `y ∈ U` (Stefanov–Uhlmann–Vasy, lines 128–129 and
+198–200; Uhlmann–Vasy, lines 137–140 and 507–509). Prove:
 
-- For `c` with `{x ≤ c}` a regular domain of the open submanifold `U` (with defining function
-  `c − x`): `II(v, v) = Hess x(v, v)/|dx|` on `T∂{x ≤ c}`, so its boundary is strictly convex at
-  `y` iff the level set is strictly concave from the superlevel sets at `y`; the superlevel domain
+- For `c` a regular value of `x` (`dx ≠ 0` on `{x = c}`; `dx` may vanish elsewhere in `U`),
+  `{x ≤ c}` is a regular domain of the open submanifold `U` with defining function `c − x` (3.1),
+  and `II(v, v) = Hess x(v, v)/|dx|` on `T∂{x ≤ c}`, so its boundary is strictly convex at `y` iff
+  the level set is strictly concave from the superlevel sets at `y`; the superlevel domain
   `{x ≥ c}` has `II = −Hess x/|dx|` and is strictly concave there.
 - Model: for a regular domain `M = {ρ ≥ 0}` and `q ∈ ∂M`, the level set of `x = −ρ` through `q` is
   strictly concave from the superlevel sets at `q` iff `∂M` is strictly convex at `q`.
@@ -715,13 +717,17 @@ holds at every `y ∈ U` (Stefanov–Uhlmann–Vasy, lines 128–129 and 198–2
 
 **Checks.**
 
-- `x = |z|²` on `ℝⁿ⁺¹ ∖ {0}`: `Hess x = 2g`, level sets strictly concave from the superlevel
-  sets; for `c > 0`, `{x ≤ c}` is the ball with `II = 2h/(2√c) = h/√c`; for `n ≥ 1`, `x = −|z|²`
-  has `Hess x = −2g` and fails.
+- `x = |z|²` on all of `ℝⁿ⁺¹`: `dx = 2z` vanishes only at `0` and `Hess x = 2g`, so the level set
+  through every `y ≠ 0` is strictly concave from the superlevel sets at `y`, and the level sets are
+  strictly concave from the superlevel sets on `ℝⁿ⁺¹ ∖ {0}`, not on `ℝⁿ⁺¹`. Every `c > 0` is a
+  regular value and `{x ≤ c}` is the closed ball, with `|dx| = 2√c` on the sphere and
+  `II = 2h/(2√c) = h/√c`; `c = 0` is a critical value and `{x ≤ 0} = {0}` is no regular domain. On
+  `U = ℝⁿ⁺¹ ∖ {0}` the sublevel set `{x ≤ c}` is the punctured ball, a non-compact regular domain of
+  `U`. For `n ≥ 1`, `x = −|z|²` has `Hess x = −2g` and fails at every `y ≠ 0`.
 - For `n ≥ 1` an affine `x` on `ℝⁿ⁺¹` has `Hess x = 0`: its level sets (hyperplanes) are not
   strictly concave from either side.
-- Dimension one: `ker dx_y = 0`, so the condition holds vacuously for every `x` with `dx ≠ 0`,
-  including the affine `x(t) = t` and `x = −|z|²` on `ℝ ∖ {0}`.
+- Dimension one: `ker dx_y = 0`, so the condition holds vacuously at every `y` with `dx_y ≠ 0`,
+  for every `x`, including the affine `x(t) = t` on `ℝ` and `x = −|z|²` on `ℝ ∖ {0}`.
 - Stefanov–Uhlmann–Vasy's example (lines 203–205): `x(z) = |z − z₀| − sup_M |· − z₀|` on `ℝⁿ⁺¹ ∖ {z₀}`
   has `Hess x = (g − dx ⊗ dx)/|z − z₀|`, positive definite on `ker dx`.
 
@@ -971,7 +977,8 @@ interval and any smooth `f` on `N`, `(f ∘ γ)'' = Hess f(γ', γ')`; in partic
 - `{y ≥ x⁴} ⊆ ℝ²` at the origin: `II = 0` but `ρ(t, 0) = −t⁴ < 0` for `t ≠ 0`; the tangent line
   leaves to fourth order, so leaving does not imply strict convexity.
 
-*Needs:* 1.3, 1.4, 2.1, 2.2, 4.1; HopfRinow Layer 1; Tau Ceti `TauCeti.Manifold.hessian_apply_eq_mvfderiv_sub`.
+*Needs:* 1.3, 1.4, 2.1, 2.2, 3.1, 4.1; HopfRinow Layer 1; Tau Ceti
+`TauCeti.Manifold.hessian_apply_eq_mvfderiv_sub`.
 
 ### 4.3 The normal exponential and signed distance of a hypersurface
 
@@ -1175,7 +1182,7 @@ spherical caps in `S^{n+1}`, `n ≥ 1`, for enlargements.
 
 ### Dependencies
 
-4.1 uses 3.1, 3.5 and HopfRinow Layer 1; 4.2 uses Layer 1, 2.1–2.2 and 4.1; 4.3 uses 1.3, 3.1,
+4.1 uses 3.1, 3.5 and HopfRinow Layer 1; 4.2 uses Layer 1, 2.1–2.2, 3.1 and 4.1; 4.3 uses 1.3, 3.1,
 HopfRinow Layers 1–2, RiemannianGeometry R7.9 (the compact connected case) and Tau Ceti's normal
 exponential; 4.4 uses 1.4, 4.3 and Mathlib's partitions
 of unity; 4.5 uses 2.1–2.2 and
@@ -1496,7 +1503,7 @@ boundary of the ball `{r ≤ R}` and the strictly concave boundary of the exteri
 - Both are non-compact, so 5.4 and 5.6 do not apply; the exterior has `τ = ∞` in every direction
   that does not point at the ball.
 
-*Needs:* 1.4, 1.5, 2.1, 4.2, 5.2.
+*Needs:* 1.4, 1.5, 2.1, 3.1, 4.2, 5.2.
 
 ### 6.3 Spherical caps and hyperbolic domains
 
@@ -1512,9 +1519,11 @@ centred at `p`, `II` is the zero form, and `C_R` is non-trapping for every `0 < 
 
 In Tau Ceti's upper half-space model `TauCeti.UpperHalfSpace` of hyperbolic space with
 `TauCeti.UpperHalfSpace.hyperbolicMetric`, prove that `u(x, y) = (|x|² + y² + 1)/(2y)` satisfies
-`Hess u = u · g` with `u ≥ 1`; hence every compact regular domain is non-trapping (5.5), and the
-closed balls `{u ≤ cosh R}`, `R > 0`, are strictly convex with `II = coth R · h`
-(Paternain–Salo–Uhlmann, Example 3.1.4).
+`Hess u = u · g`, `u ≥ 1` and `|du|² = u² − 1`; hence every compact regular domain is non-trapping
+(5.5), and for `R > 0` the value `cosh R` is a regular value of `u`, with `|du| = sinh R` on
+`{u = cosh R}`, so that by 3.2 on the whole half-space (where `du` vanishes only at the point with
+`u = 1`) the closed balls `{u ≤ cosh R}` are regular domains, strictly convex with
+`II = cosh R · h/sinh R = coth R · h` (Paternain–Salo–Uhlmann, Example 3.1.4).
 
 **Checks.**
 
@@ -1523,7 +1532,11 @@ closed balls `{u ≤ cosh R}`, `R > 0`, are strictly convex with `II = coth R ·
 - Hyperbolic plane (`n = 1`, `g = (dx² + dy²)/y²`): with `Γ^x_{xy} = −1/y`, `Γ^y_{xx} = 1/y`,
   `Γ^y_{yy} = −1/y`, `u_x = x/y`, `u_y = ½ − (x² + 1)/(2y²)`, one gets
   `Hess u_{xx} = 1/(2y) + (x² + 1)/(2y³) = u/y² = u g_{xx}`, `Hess u_{xy} = −x/y² + x/y² = 0` and
-  `Hess u_{yy} = u/y²`.
+  `Hess u_{yy} = u/y²`. Also `|du|² = y²(u_x² + u_y²) = u² − 1`: at `(0, 2)`, `u = 5/4 = cosh(log 2)`
+  and `|du| = 2 · 3/8 = 3/4 = sinh(log 2)`, while at `(0, 1)`, `u = 1` and `du = 0`. So `du`
+  vanishes at a point of every ball `{u ≤ cosh R}`, and 3.2 is applied through the regular value
+  `cosh R`; a version of 3.2 requiring `du ≠ 0` on its whole open set would reach none of these
+  balls (on the half-space minus `(0, 1)` the sublevel set is a punctured ball).
 - At radius `R = 1` the boundary second fundamental forms are `coth 1 · h ≈ 1.313 h` (hyperbolic),
   `h` (Euclidean) and `cot 1 · h ≈ 0.642 h` (spherical): curvature `−1, 0, +1` lowers `II` in this
   order, and for `n ≥ 1` only the spherical value changes sign, at `R = π/2`.
@@ -1554,7 +1567,8 @@ metric coefficients satisfy `g_ij = δ_ij + O(|z|²)`
 Christoffel symbols vanish at `p`
 (`TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self`), so
 `Hess |z|²(∂_i, ∂_j) = 2δ_ij − 2 z_k Γ^k_ij = 2g_ij + O(|z|²)`, positive definite on a small
-ball; apply 3.2 on `U = B(p, r_p)` with `x = d(p, ·)²` and `c = R²`, and 5.5's Hessian criterion
+ball; apply 3.2's sublevel statement on `U = B(p, r_p)` with `x = d(p, ·)²` and the regular value
+`c = R²` (`dx` vanishes at `p ∈ U`, which that statement allows), and 5.5's Hessian criterion
 with `u = d(p, ·)²` on `B(p, r_p)`; uniformity from SmoothBundlesConnections B6.0.
 
 **Checks.**
@@ -1620,7 +1634,7 @@ This layer is the roadmap's acceptance suite: every formula above is evaluated a
 
 ### Dependencies
 
-6.1 uses 1.4–1.5, 2.1, 3.1, 4.3, 5.2 and 5.4–5.6; 6.2 uses 1.4–1.5, 2.1, 4.2 and 5.2; 6.3 uses
+6.1 uses 1.4–1.5, 2.1, 3.1, 4.3, 5.2 and 5.4–5.6; 6.2 uses 1.4–1.5, 2.1, 3.1, 4.2 and 5.2; 6.3 uses
 1.4, 2.1, 3.1–3.2, 5.5 and Tau Ceti's round sphere and hyperbolic space; 6.4 uses 3.1–3.2, 5.5,
 HopfRinow Layer 2, Tau Ceti's normal coordinate fields and SmoothBundlesConnections B6.0; 6.5 uses
 1.6, 2.1, 3.1, 3.6 and RiemannianGeometry R5a.
