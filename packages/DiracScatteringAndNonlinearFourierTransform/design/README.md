@@ -222,6 +222,22 @@ All at the pinned Mathlib; paths under `Mathlib/`.
   §2.4 and §6.7; `MeasureTheory.measure_limsup_atTop_eq_zero`
   (`MeasureTheory/OuterMeasure/BorelCantelli.lean` line 62: if `Σ μ(sᵢ) < ∞` then `limsup sᵢ` is null) in
   §9.3.
+- `Real.tendsto_integral_exp_smul_cocompact` (`Analysis/Fourier/RiemannLebesgueLemma.lean` line 205): the
+  Riemann–Lebesgue lemma on `ℝ`, `∫ e^{−2πivw} f(v) dv → 0` as `|w| → ∞` for `f : ℝ → E` (the Bochner integral
+  of a non-integrable `f` is `0`, so the content is for integrable `f`), in §4.2.
+- For the matching of §8.9: `ApproximatesLinearOn.surjOn_closedBall_of_nonlinearRightInverse`
+  (`Analysis/Calculus/InverseFunctionTheorem/ApproximatesLinearOn.lean` line 143): over a complete space, if
+  `‖f x − f y − f′(x − y)‖ ≤ c‖x − y‖` on a set containing `closedBall b ε`, `ε ≥ 0`, and `f′` has a right
+  inverse bounded by `N`, then `f(closedBall b ε)` contains `closedBall (f b) ((N⁻¹ − c)ε)`;
+  `ContinuousLinearEquiv.toNonlinearRightInverse` (`Analysis/Normed/Operator/Banach.lean` line 66: the inverse of
+  a continuous linear equivalence as such a right inverse, bounded by its norm), applied to multiplication by
+  `g′(s) ≠ 0` on `ℂ`; and `Convex.norm_image_sub_le_of_norm_fderiv_le'` (`Analysis/Calculus/MeanValue.lean`
+  line 550: on a convex set where `f` is differentiable with `‖Df(x) − φ‖ ≤ C`,
+  `‖f y − f x − φ(y − x)‖ ≤ C‖y − x‖`), which gives the hypothesis on a disc whose radius is explicit.
+- For the expansion in §9.5: `taylor_mean_remainder_lagrange` (`Analysis/Calculus/Taylor.lean` line 330:
+  for `f : ℝ → ℝ` of class `Cⁿ` on `[x₀, x]` whose `n`-th derivative is differentiable inside, the remainder of
+  the Taylor polynomial of degree `n` is `f^{(n+1)}(x′)(x − x₀)^{n+1}/(n + 1)!` at some interior `x′`) and
+  `Real.contDiff_sinh` (`Analysis/SpecialFunctions/Trigonometric/DerivHyp.lean` line 317).
 - `Matrix.det_fin_two` (`LinearAlgebra/Matrix/Determinant/Basic.lean` line 815), `NormedSpace.exp`
   for the constant-coefficient Check, `UpperHalfPlane.upperHalfPlaneSet`.
 - For the entropy in §6.7 and §6.8: `InformationTheory.klDiv` (`InformationTheory/KullbackLeibler/Basic.lean`
@@ -411,8 +427,8 @@ boundary theory. Layer 6 is the spectral theory: de Branges spaces, Weyl functio
 and the Szegő condition. Layers 7–9 carry out the proof of the non-linear Carleson theorem for real
 potentials: Layer 7 the meromorphic-inner-function tools, Layer 8 the universality and
 approximation results, Layer 9 the resonance argument and the conclusion. Every layer uses only
-earlier layers and the suppliers above. Layers 3–5 do not use Layer 6, and Layer 6 uses Layer 5
-only for the Szegő condition.
+earlier layers and the suppliers above. Layers 3–5 do not use Layer 6, and Layer 6 does not use Layer 5:
+the Szegő condition needs only the finite Plancherel identity of §4.4 and the truncations of §6.5.
 
 ## Layer 1: Carathéodory linear systems with a holomorphic parameter
 
@@ -636,10 +652,11 @@ functions (coddingtonlevinson1955, Ch. 2 §1, waived).
 
 ### Dependencies
 
-Mathlib (Bochner integration, absolutely continuous functions, Lebesgue differentiation, parametric
-integrals, locally uniform limits of holomorphic functions, determinants and traces of matrices);
-Tau Ceti Jacobi's formula (`Analysis/Calculus/FDeriv/Det.lean`) for §1.4, and Tau Ceti
-`Analysis/ODE` and `Matrix.det_exp` for the compatibility Checks.
+Mathlib (Bochner integration, absolutely continuous functions, Lebesgue differentiation, the contraction
+mapping principle, parametric integrals, locally uniform limits of holomorphic functions, determinants and
+traces of matrices, the chain rule along a curve, the coordinate equivalence of `EuclideanSpace`, limits of
+strongly measurable functions); Tau Ceti Jacobi's formula (`Analysis/Calculus/FDeriv/Det.lean`) for §1.4,
+and Tau Ceti `Analysis/ODE` and `Matrix.det_exp` for the compatibility Checks.
 
 ## Layer 2: Function theory of the upper half-plane
 
@@ -974,11 +991,14 @@ garnett2007, Ch. II §4, p. 64, uncertified). Its API:
 
 ### Dependencies
 
-Mathlib (harmonic functions, the disc Poisson kernel and Poisson formula, Lebesgue differentiation,
-the `L²` Fourier transform, Phragmén–Lindelöf, Banach–Alaoglu, Jensen's inequality, Fatou's lemma,
-Tonelli's theorem); Tau Ceti (the half-space Poisson kernel and Poisson integral, maximal function,
-half-plane primitives, mean-value converse, F. and M. Riesz uniqueness, Cayley transform, the dual of
-`L¹` of a finite measure); AutomorphicSpectralTheory §0.5 (the Herglotz representation) for §2.2.
+Mathlib (Bochner integration, harmonic functions, analyticity of holomorphic functions, the Euclidean
+model of `ℂ` and the area of the disc, differentiation under the integral, the disc Poisson kernel and
+Poisson formula, Lebesgue differentiation and the Lebesgue decomposition, the `L²` Fourier transform,
+convergence in measure, Phragmén–Lindelöf, Banach–Alaoglu, Jensen's inequality, Fatou's lemma, Tonelli's
+theorem); Tau Ceti (the half-space Poisson kernel and Poisson integral, maximal function, half-plane
+primitives, mean-value converse, F. and M. Riesz uniqueness, Jensen's bound for circle averages, Cayley
+transform, the dual of `L¹` of a finite measure); AutomorphicSpectralTheory §0.5 (the Herglotz
+representation) for §2.2.
 
 ## Layer 3: Dirac systems and their Hermite–Biehler functions
 
@@ -1085,7 +1105,8 @@ Call an entire `H` Hermite–Biehler when `|H#(z)| < |H(z)|` for every `z ∈ �
 
 ### Dependencies
 
-Layer 1 (§1.3, §1.4, §1.6).
+Layer 1 (§1.3, §1.4, §1.6); Mathlib (`2 × 2` determinants, matrices as operators on
+`EuclideanSpace ℂ (Fin 2)`).
 
 ## Layer 4: Scattering data on a finite interval
 
@@ -1150,7 +1171,8 @@ compact family `e^{−2σ Im z}`. For the discrete analogue on `ℓ¹`, see taot
 (line 430–433) gives the uniform convergence of truncations, and line 460–465 gives the bound
 `sup arccosh|a| ≤ Σ arccosh((1 − |F_n|²)^{−1/2})` on the circle.
 
-*Needs:* §1.3 (Dyson expansion), §4.1; Mathlib Riemann–Lebesgue lemma.
+*Needs:* §1.3 (Dyson expansion), §4.1; Mathlib `Real.tendsto_integral_exp_smul_cocompact` (the Riemann–Lebesgue
+lemma on `ℝ`).
 
 **Checks.**
 
@@ -1235,7 +1257,8 @@ the two components of a linear system.
 
 ### Dependencies
 
-Layer 1, Layer 2 (§2.2, §2.5, §2.8), Layer 3.
+Layer 1 (§1.3, §1.6), Layer 2 (§2.2, §2.5, §2.8), Layer 3; Tau Ceti (half-plane primitives); Mathlib (the
+Riemann–Lebesgue lemma).
 
 ## Layer 5: The square-integrable scattering limit and the non-linear Fourier transform
 
@@ -1397,7 +1420,8 @@ taothiele2012 Lecture 1 Lemma 1 (5), (7) line 225–240 and line 210–220 for t
 
 ### Dependencies
 
-Layer 2 (§2.2, §2.4, §2.5, §2.8), Layer 4.
+Layer 2 (§2.2, §2.4, §2.5, §2.8), Layer 4; Tau Ceti (Young's inequality); Mathlib (locally uniform limits of
+holomorphic functions, convergence in measure, the Fourier kernel).
 
 ## Layer 6: de Branges spaces, Weyl functions and spectral measures
 
@@ -1483,6 +1507,12 @@ Ch. 2, waived). Its API:
   `D_t(z) = {w : |Ẽ(t, z) + wE(t, z)| ≤ |Ẽ#(t, z) + wE#(t, z)|}`.
 - Limit point: `∫₀^∞ |Θ(s, z)|² ds = ∞` for `z ∈ ℂ₊`, so the intersection is a single point.
 - `m(z)` is the unique `w` with `Φ(·, z) + wΘ(·, z) ∈ L²(ℝ₊; ℂ²)`.
+- Compact support: if `q = 0` almost everywhere on `(T, ∞)` for some `T ≥ 0`, then `m = −Ẽ(T, ·)/E(T, ·)` on
+  `ℂ₊`. Beyond `T` the system is free, so `E(t, z) = e^{−i(t−T)z} E(T, z)` and likewise for `Ẽ` (§3.2), and for
+  `t ≥ T` the solution `(u, v) = Φ + wΘ` has `(u − iv)(t) = e^{−i(t−T)z}(Ẽ(T, z) + wE(T, z))`, of modulus growing
+  like `e^{(t−T) Im z}` unless it vanishes, and `(u + iv)(t) = e^{i(t−T)z}(Ẽ#(T, z) + wE#(T, z))`, which decays.
+  As `|u|² + |v|² = (|u − iv|² + |u + iv|²)/2`, `Φ + wΘ` is square-integrable exactly when
+  `Ẽ(T, z) + wE(T, z) = 0`, and `E(T, z) ≠ 0` on `ℂ₊` (§3.3).
 - `m` is holomorphic on `ℂ₊` with `Im m > 0`, and `−Ẽ(t, ·)/E(t, ·) → m` locally uniformly on `ℂ₊`, with
   error at most twice the radius.
 - The Dirichlet Weyl function is `−1/m = lim E(t, ·)/Ẽ(t, ·)`.
@@ -1511,8 +1541,12 @@ Ch. 2, waived). Its API:
   boundary would force equality in both instances.
 - On `ℝ`, `Im(−Ẽ(t, x)/E(t, x)) = 1/|E(t, x)|²` by `det M = 1`; for the smooth complex potential of §3.1
   at `x = 0.7`, both sides are `0.983136`, and `Im(E/Ẽ) = 1/|Ẽ|² = 0.838119`.
-- Compact support (`q = 0` on `(T, ∞)`): `m = −Ẽ(T, ·)/E(T, ·)` exactly, since beyond `T` the
-  square-integrable free solution has `u − iv = 0`.
+- Compact support, computed: in the free case the formula gives `−Ẽ(T, ·)/E(T, ·) = i = m` for every `T`. For
+  `f = 1` on `[0, 1]`, zero afterwards, at `z = i` it gives `m(i) = i/(1 + √2 tanh √2) ≈ 0.443190i`; with this
+  `w`, `u − iv` vanishes at `t = 1` and `∫₀^∞ |Φ + wΘ|² = Im m(i)/Im z ≈ 0.443190` (`≈ 0.401791` on `[0, 1]` and
+  `|u + iv|²/4 ≈ 0.041399` on the free tail), while `w = m(i) + 0.01` leaves `|u − iv| ≈ 0.0491` at `t = 1`, so
+  the solution grows like `e^{t−1}`. The boundary points `−D(1, i)/C(1, i) ≈ 0.591892i` and
+  `−B(1, i)/A(1, i) ≈ 0.385819i` of `D_1(i)`, the ends of a diameter of length `≈ 0.206073`, are not `m(i)`.
 
 ### 6.5 Spectral measures
 
@@ -1571,9 +1605,9 @@ Its API:
 
 ### 6.6 The isometric embedding and uniqueness of the spectral measure
 
-Prove that for every `t ≥ 0` and `F ∈ PW_t`, `∫ |F|² dμ_q = ‖F‖²_{B(E(t,·))}` and
+Prove that for every `t > 0` and `F ∈ PW_t`, `∫ |F|² dμ_q = ‖F‖²_{B(E(t,·))}` and
 `∫ |F|² dμ̃_q = ‖F‖²_{B(Ẽ(t,·))}`, and that `μ_q` is the only Poisson-finite measure with the first property
-for all `t` (poltoratski2024 line 255–262; romanov2014 §8 Theorem 16 line 2283–2363;
+for all `t > 0` (poltoratski2024 line 255–262; romanov2014 §8 Theorem 16 line 2283–2363;
 debranges1968 §§19–23 and remling2018 Ch. 3, waived). Route: the measures `μ_T = dx/|E(T, ·)|²` of the
 truncations `q_T` (§6.5) have Cayley images `C_*(μ_T/(π(1 + x²)))` that converge weakly on the circle to
 `C_*(μ/(π(1 + x²))) + β δ₁` (truncation bullet of §6.5); for `F ∈ PW_t` with `zF ∈ PW_t`, `(1 + x²)|F(x)|² → 0` at `±∞`, so
@@ -1590,6 +1624,8 @@ applied to `e^{iax}k_ε` and `k_ε`.
 - Free case: Plancherel `∫ |F|² dx = ‖F‖²_{L²}`.
 - Compact support `q = q_T`: for `t ≥ T` the identity is the definition of `μ`, and for `t < T` it is §6.3.
 - `2 dx` fails the identity in the free case (`∫ |F|² 2dx = 2‖F‖²`), so the normalisation of `μ` is forced.
+- `t = 0`: `E(0, ·) = 1` is not Hermite–Biehler, so `B(E(0, ·))` is not defined (§6.1), and `PW_0 = {0}`; the
+  statement is for `t > 0`, as in §6.2 and §6.3, and loses nothing.
 
 ### 6.7 The entropy of the Poisson measure relative to a spectral measure
 
@@ -1678,10 +1714,12 @@ The measures `ν_T` converge weakly to `ν` and `ν_T(X) → ν(X)` (truncation 
 
 ### Dependencies
 
-Layer 2 (§2.1, §2.2, §2.4–§2.7), Layer 3, Layer 4 (§4.1–§4.4), Layer 1 (§1.1, §1.3);
+Layer 1 (§1.1–§1.3), Layer 2 (§2.1, §2.2, §2.4–§2.7), Layer 3, Layer 4 (§4.1–§4.4);
 AutomorphicSpectralTheory §0.5 for §6.5; Tau Ceti (the Herglotz transform on the circle and its Cayley
-identity, the Cayley pushforward, the relative entropy); Mathlib (relative entropy, Fourier density on the
-circle, weak convergence of finite measures).
+identity, the boundary Cayley map and the Cayley pushforward, the relative entropy and its lower
+semicontinuity); Mathlib (differentiation under the integral, the Lebesgue decomposition, relative entropy,
+Fourier density on the circle, weak convergence of finite measures, characteristic functions of finite
+measures).
 
 ## Layer 7: Meromorphic inner functions and resonances
 
@@ -1764,7 +1802,7 @@ of a zero of `θ(t, ·)` (poltoratski2024 §4 line 361–468). Its API:
 
 ### Dependencies
 
-Layer 2 (§2.5), Layer 3, Layer 6 (§6.1); AnalyticNumberTheoryPartI §0.23.
+Layer 1 (§1.6), Layer 2 (§2.5), Layer 3, Layer 6 (§6.1); AnalyticNumberTheoryPartI §0.23.
 
 ## Layer 8: Universality and the approximation of Hermite–Biehler functions
 
@@ -1968,15 +2006,22 @@ unimodular `α′` with `|tx′ − tx| + |tx̃′ − tx̃| + |ty′ − ty| + 
 `E(s) = α′ γ(ty′) sin(t(s − (x′ − iy′)))/√w` and `Ẽ(s) = α′ γ(ty′) cos(t(s − (x̃′ − iy′)))/√w̃`
 (poltoratski2024 Lemma 8 line 1116–1172 and mauth2022 Lemma 45 line 3251–3298, which print the factor
 `γ(ty)` in (8.5) and (58); the third Check shows that (2.2) forces `γ(ty′)`). §9.3 and §9.6 apply it to
-`E = E(t, ·)` and `Ẽ = Ẽ(t, ·)`, which satisfy (2.2) on `ℝ` (§3.2), with `w = w(s)` and `w̃ = w̃(s)` at the
-points `s` where `w(s) w̃(s) > 0`, which are almost all `s` by §6.8. Route: the quotient
+`E = E(t, ·)` and `Ẽ = Ẽ(t, ·)`, which satisfy (2.2) on `ℝ` (§3.2), with `w = w(s)` and `w̃ = w̃(s)` for the
+points `s` where `w(s) w̃(s) > 0`, which are almost all `s` by §6.8: §9.6 at `s` itself, §9.3 also at the points
+`p` of `ℝ ∩ Q(s, C/2ⁿ⁺¹)`, keeping the numbers `w(s)`, `w̃(s)`. Route: the quotient
 `g(z) = sin(t(z − (x − iy)))/cos(t(z − (x̃ − iy)))` has `g′(z) = t cos(t(x̃ − x))/cos²(t(z − (x̃ − iy)))`, of
 modulus at least `t √(w w̃)/cosh²(5C)` on `Q(s, 3C/t)`, so it attains the value `√(w/w̃) E(s)/Ẽ(s)` at a point
-`a` with `|a − s| ≤ D₂ε/t`; put `x′ = x − Re(a − s)`, `x̃′ = x̃ − Re(a − s)` and `y′ = y + Im(a − s)`. Then
+`a` with `|a − s| ≤ D₂ε/t` (on the disc of radius `c/t` about `s`, with `c` depending only on `C`, `w`, `w̃`,
+`|g′ − g′(s)| ≤ |g′(s)|/2` because `|g″| ≲ t²` there, so `g` maps the disc of radius `r ≤ c/t` about `s` onto a
+set containing the disc of radius `|g′(s)| r/2` about `g(s)`, and the value is within `O(ε)` of `g(s)`); put
+`x′ = x − Re(a − s)`, `x̃′ = x̃ − Re(a − s)` and `y′ = y + Im(a − s)`. Then
 `E(s) = κ sin(t(s − (x′ − iy′)))/√w` and `Ẽ(s) = κ cos(t(s − (x̃′ − iy′)))/√w̃` for one `κ ∈ ℂ`, and (2.2) at
 `s` gives `|κ|² sinh(2ty′) = 2`, that is `|κ| = γ(ty′)`.
 
-*Needs:* §8.1; Mathlib inverse function theorem for holomorphic maps; for the application, §3.2 and §6.8.
+*Needs:* §8.1; Mathlib `ApproximatesLinearOn.surjOn_closedBall_of_nonlinearRightInverse` (the quantitative
+inverse function theorem) with `ContinuousLinearEquiv.toNonlinearRightInverse`, and
+`Convex.norm_image_sub_le_of_norm_fderiv_le'` (the mean value inequality) for its hypothesis; for the
+application, §3.2 and §6.8.
 
 **Checks.**
 
@@ -2003,7 +2048,8 @@ modulus at least `t √(w w̃)/cosh²(5C)` on `Q(s, 3C/t)`, so it attains the va
 
 ### Dependencies
 
-Layer 2 (§2.3, §2.4, §2.6–§2.8), Layer 3, Layer 6, Layer 7.
+Layer 2 (§2.1, §2.3, §2.4, §2.6–§2.8), Layer 3, Layer 6, Layer 7; Mathlib (the quantitative inverse function
+theorem, the mean value inequality).
 
 ## Layer 9: Pointwise convergence of the non-linear Fourier transform
 
@@ -2060,11 +2106,16 @@ that `Q(s, C/t)` contains a zero of `E(t, ·)` for every `t ∈ Iₙ(s)`, then `
 Lemma 9 line 1350–1377; mauth2022 §3.3 Corollary 7 line 1525 for the analogous half-line statement).
 Route: if the set of `s` with `lim sup |Iₙ(s)|/2ⁿ > 2/m` had positive measure, then for infinitely many `n` a
 set `Sₙ` of measure `≳ |Zₙ|/m`, `Zₙ = {s : |Iₙ(s)| > 2ⁿ/m}`, shares a time `t₁` in the middle thirds of the
-`Iₙ(s)`; with `t₂ = t₁ + 2ⁿ/(3m)`, §9.2 and §8.8–§8.9 give `log|a_{t₁→t₂}| ≥ c_m > 0` on
-`ℝ ∩ Q(s, C/2ⁿ⁺¹)` for `s ∈ Sₙ`; a cover of index two and §9.1's Plancherel identity give
-`|Zₙ| ≲_{m,C} ‖f‖²_{L²(2ⁿ, 2ⁿ⁺¹)}`, which is summable, and Borel–Cantelli concludes.
+`Iₙ(s)`; put `t₂ = t₁ + 2ⁿ/(3m)` and `J(s) = ℝ ∩ Q(s, C/2ⁿ⁺¹)`, an interval of length `C/2ⁿ`, for `s ∈ Sₙ`.
+§8.8, with §8.9 applied at each `p ∈ J(s)` to the numbers `w(s)`, `w̃(s)`, puts the data at `p` in the form of
+§9.2 with increment `e(p) = e(s) + (t₂ − t₁)(p − s) + o(1)`, whose real part sweeps an interval of length
+`C/(3m)` as `p` runs over `J(s)`. There `|a_{t₁→t₂}(p)|² = 1 + (sin² Re e(p) + sinh² Im e(p))/N²`, with `N`
+bounded in terms of `C` because the resonances at `t₁` and `t₂` lie in their boxes; so
+`∫_{J(s)} log|a_{t₁→t₂}| ≥ c_{m,C} |J(s)|` with `c_{m,C} > 0`, although the integrand vanishes where
+`e(p) = 0`. Since `log|a_{t₁→t₂}| ≥ 0` on `ℝ` (§4.3), a cover of `Sₙ` of index two by the `J(s)` and §9.1's
+Plancherel identity give `|Zₙ| ≲_{m,C} ‖f‖²_{L²(2ⁿ, 2ⁿ⁺¹)}`, which is summable, and Borel–Cantelli concludes.
 
-*Needs:* §6.8, §8.8, §8.9, §9.1, §9.2; Mathlib Borel–Cantelli (`MeasureTheory.measure_limsup_atTop_eq_zero`).
+*Needs:* §4.3, §6.8, §8.8, §8.9, §9.1, §9.2; Mathlib Borel–Cantelli (`MeasureTheory.measure_limsup_atTop_eq_zero`).
 
 **Checks.**
 
@@ -2072,6 +2123,10 @@ set `Sₙ` of measure `≳ |Zₙ|/m`, `Zₙ = {s : |Iₙ(s)| > 2ⁿ/m}`, shares 
 - Summability input: `Σₙ ‖f‖²_{L²(2ⁿ, 2ⁿ⁺¹)} = ‖f‖²_{L²(1, ∞)} < ∞`.
 - A resonance at fixed distance `δ` from `s` lies in `Q(s, C/t)` only for `t ≤ C/δ`, so it contributes to
   `Iₙ(s)` only for `2ⁿ ≤ C/δ`.
+- The lower bound is for the integral only. With `υ = 1`, `Im e = 0` and `e(s) = 0`, the formula of §9.2 gives
+  `log|a_{t₁→t₂}| = ½ log(1 + sin²(Re e)/sinh² 2)`: `0` at `p = s` and `≈ 0.000379` at the shift `Re e = 0.1`,
+  with mean `≈ 0.000126 > 0` over shifts in `[−0.1, 0.1]`. A pointwise bound `log|a_{t₁→t₂}| ≥ c > 0` on
+  `J(s)` fails at `p = s`.
 
 ### 9.4 Inserting a zero interval
 
@@ -2106,7 +2161,8 @@ For `υ > 0` put `F_υ(x) = sinh x/sinh(υ + x)`. Prove that there are `c(υ) > 
 Route: expand `F_υ(x) = x/S − Cx²/S² + O(x³)` with `S = sinh υ`, `C = cosh υ`; then
 `Δ₁ = Δ + 2CΔ²/S + O(Δ³)`, `Δ₂ = Δ + 4CΔ²/S + O(Δ³)`, and the difference is `2CΔ²/S² + O(Δ³)`.
 
-*Needs:* Mathlib Taylor expansions of `Real.sinh`.
+*Needs:* Mathlib `taylor_mean_remainder_lagrange` (Taylor's theorem with the Lagrange remainder, at order two),
+`Real.contDiff_sinh`.
 
 **Checks.**
 
@@ -2191,7 +2247,8 @@ everywhere.
 
 ### Dependencies
 
-Layer 3, Layer 4, Layer 5 (§5.2, §5.5, §5.6), Layer 6 (§6.5, §6.8), Layer 7, Layer 8.
+Layer 3, Layer 4, Layer 5 (§5.2, §5.5, §5.6), Layer 6 (§6.5, §6.8), Layer 7, Layer 8; Mathlib (Borel–Cantelli,
+Taylor's theorem with the Lagrange remainder, smoothness of `sinh`).
 
 ## Downstream consumers
 
