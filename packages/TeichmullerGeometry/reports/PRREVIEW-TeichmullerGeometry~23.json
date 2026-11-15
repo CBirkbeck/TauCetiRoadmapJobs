@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TeichmullerGeometry~23",
+  "head": "417bd2705bd7516ba9dd8a545795dcf327318366",
+  "pr": 1169,
+  "folder": "TeichmullerGeometry",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 417bd27. Checked: the pull request's title and description against the head (the four findings R01-R04 of the previous review, all on the description, are repaired: pins 2fd255d9/1b1ccf4b, 13 TauCeti imports, 21 sorry theorems = 14+2+2+1+1+1, no axiom, no set_option; ArithmeticFuchsianGroups the only supplier not on main, its sections 1.1, 1.4, 3.1 resolved at its open head a0992d0; the ten other suppliers on main; Layer 0 surface topology and the not-statable headlines now named). Gate rerun: exit 0, all counters 0, worker build=0. Depcheck: 244 roadmaps, 2229 edges, 0 problems. Elaboration: 21 sorry warnings only. No change outside the folder. Seeded sample: no target in a changed passage. Adversarial table: six rows with computed values. Two bullets for the human reviewers (course-note scope sentence; overlap of Layer 0 with open #271).",
+  "text": "0e706ae3860ceedc"
+ }
+}
