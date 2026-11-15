@@ -369,6 +369,7 @@
      },
      "prerequisites": [
       "target:2.2",
+      "target:2.3",
       "roadmap:SchemeAndStackFoundations §1.20",
       "roadmap:SchemeAndStackFoundations §5.2"
      ],
@@ -433,6 +434,7 @@
       "target:1.2",
       "target:1.3",
       "target:2.2",
+      "target:2.3",
       "roadmap:SchemeAndStackFoundations §5.2",
       "mathlib:AlgebraicGeometry.AlgebraicCycle.map",
       "gap:closed-substacks-of-stacks"
@@ -592,6 +594,7 @@
      },
      "prerequisites": [
       "target:2.2",
+      "target:2.3",
       "target:3.1",
       "target:3.2",
       "target:3.3",
@@ -1648,7 +1651,7 @@
      "id": "9.1",
      "kind": "definition",
      "name": "ObstructionTheory.RelativeSpaceOfMaps",
-     "statement": "For B an algebraic stack locally of finite type and quasi-separated over k, of pure dimension b, C -> B representable and etale locally on the base a prestable family (for every scheme T -> B an etale covering T_i -> T with C_{T_i} a scheme prestable over T_i), X a smooth quasi-projective k-scheme, M a stack with M -> B of Deligne-Mumford type and F : C_M -> X, (M, F) is a relative space of maps if for every square-zero extension T -> Tbar over B with Tbar affine and g : T -> M over B, restriction is a bijection from extensions of g onto extensions of F o C_g to C_Tbar.",
+     "statement": "For B an algebraic stack locally of finite type and quasi-separated over k, of pure dimension b, C -> B representable and etale locally on the base a prestable family (for every scheme T -> B an etale covering T_i -> T with C_{T_i} a scheme prestable over T_i), X a smooth quasi-projective k-scheme, M a stack with M -> B of Deligne-Mumford type and F : C_M -> X, (M, F) is a relative space of maps if for every square-zero extension T -> Tbar over B with Tbar affine and g : T -> M over B, the map gbar -> F o C_gbar, with C_gbar : C_Tbar -> C_M the base change of gbar (formed with the 2-isomorphism of the extension over B), is a bijection from extensions of g (7.1) onto extensions of F o C_g to C_Tbar.",
      "hypotheses": [
       "B algebraic stack locally of finite type and quasi-separated over k (Convention 7), pure dimension b",
       "C -> B representable, a prestable family etale locally on every scheme over B",
@@ -1708,6 +1711,7 @@
       "where": "lines 1592-1597 (duality for a product family C x M -> M with a dualising complex on C; flat proper Gorenstein families by SchemeAndStackFoundations §§2.19-2.20)"
      },
      "prerequisites": [
+      "target:9.1",
       "roadmap:VirtualFundamentalClass §3.1",
       "roadmap:StableReduction Layer 2",
       "roadmap:SchemeAndStackFoundations §1.10",

@@ -731,7 +731,8 @@ SchemeAndStackFoundations §1.20). Define *flatPullback* `f^* : Z_i(𝒢) → Z_
 `∂W_{i+d}(ℱ)`, through the pullback of rational equivalences built on atlases (vistoli1989 (3.7),
 lines 989–997, and lines 1012–1025), and so induces `f^* : A_i(𝒢) → A_{i+d}(ℱ)`. This extends
 VirtualFundamentalClass §2.2's flat pullback from rational to integral coefficients and drops
-separatedness. *Needs:* Layer 2; SchemeAndStackFoundations §§1.20, 5.2.
+separatedness. *Needs:* 2.2; 2.3 (its statement on schemes, through which SchemeAndStackFoundations
+§5.2 applies); SchemeAndStackFoundations §§1.20, 5.2.
 
 **API.**
 
@@ -779,9 +780,9 @@ the pushforward of rational equivalences is formed on étale atlases; there the 
 an integer because a representable `f` embeds the automorphism group of a geometric generic point
 of `𝒱` into that of its image. The construction is integral and uses no proper cover. This extends
 VirtualFundamentalClass §2.2's proper pushforward, for representable morphisms, to integral
-coefficients and to stacks that are not separated. *Needs:* 1.2–1.3, Layer 2;
-gap:closed-substacks-of-stacks; SchemeAndStackFoundations §5.2; Mathlib
-`AlgebraicGeometry.AlgebraicCycle.map`.
+coefficients and to stacks that are not separated. *Needs:* 1.2–1.3, 2.2; 2.3 (its statement on
+schemes, through which SchemeAndStackFoundations §5.2 applies); gap:closed-substacks-of-stacks;
+SchemeAndStackFoundations §5.2; Mathlib `AlgebraicGeometry.AlgebraicCycle.map`.
 
 **API.**
 
@@ -884,7 +885,8 @@ sheaf `W_*` (2.2), defined over an algebraic space `Y` as over a scheme, while t
 descended from charts and `s^*` is defined on algebraic spaces directly. Descent of classes alone does
 not suffice, since étale pullback is not injective on integral Chow groups (3.1, last Check). This
 extends VirtualFundamentalClass §2.4's refined Gysin maps, for algebraic-space sources, to integral
-coefficients. *Needs:* Layer 2, 3.1–3.3;
+coefficients. *Needs:* 2.2; 2.3 (its statements on algebraic spaces, through which stacks-chow-spaces
+Lemma 27.3 gives `s^*`, and on schemes, through which SchemeAndStackFoundations §5.5 applies); 3.1–3.3;
 VirtualFundamentalClass §1.5; gap:normal-cones-of-local-immersions; SchemeAndStackFoundations §5.5.
 
 **API.**
@@ -947,7 +949,7 @@ with Vistoli's rational degree (vistoli1989 (3.6)(iii), lines 985–987). Prove:
 
 Route: Lemma 3.8 is applied to a proper cover of `ℱ` (1.1), which every stack has. This extends
 VirtualFundamentalClass §2.2's proper pushforward from separated stacks to all stacks of
-Convention 1. *Needs:* 1.1, 1.3, Layer 3.
+Convention 1. *Needs:* 1.1, 1.3, 3.1–3.4.
 
 **API.**
 
@@ -1549,7 +1551,7 @@ its own notation while its proof (lines 390–405) translates along the regularl
 No step uses reducedness or pure dimension of `Y`, `𝔅` or `𝔐`. This extends VirtualFundamentalClass
 §2.5's invariance from smooth ambients over `k` to relative tangent directions, on ambients that need
 be neither smooth nor reduced. *Needs:* VirtualFundamentalClass §§1.5–1.6, 2.5, 9.1;
-gap:normal-cones-of-local-immersions; Layer 2; SchemeAndStackFoundations §5.5.
+gap:normal-cones-of-local-immersions; 2.2; SchemeAndStackFoundations §5.5.
 
 **Checks.**
 
@@ -1756,11 +1758,13 @@ representable by schemes. Let `X` be a smooth
 quasi-projective `k`-scheme, `M` a stack (Convention 1) with a morphism `M → 𝔅` of Deligne–Mumford type,
 `π : 𝒞_M := 𝒞 ×_𝔅 M → M` the base change and `F : 𝒞_M → X` a morphism. Define *RelativeSpaceOfMaps*:
 `(M, F)` is a relative space of maps from `𝒞` to `X` if for every square-zero extension `T → T̄` over `𝔅`
-(7.1) with `T̄` affine and every `g : T → M` over `𝔅`, restriction is a bijection from the extensions of
-`g` to `T̄` onto the extensions of `F ∘ 𝒞_g : 𝒞_T → X` to `𝒞_{T̄}`. Every open substack of a stack of
-morphisms `Mor_𝔅(𝒞, X)` that is a stack in the sense of Convention 1 is one, by its universal property, and
-the stack of stable maps is such an open substack over the prestable-curve stack (behrend1997
-Proposition 4, lines 139–141). *Needs:* 7.1; Tau Ceti `TauCeti.AlgebraicGeometry.PrestableFamily`;
+(7.1) with `T̄` affine and every `g : T → M` over `𝔅`, the map `ḡ ↦ F ∘ 𝒞_ḡ` is a bijection from the
+extensions of `g` to `T̄` (7.1) onto the extensions of `F ∘ 𝒞_g : 𝒞_T → X` to `𝒞_{T̄}`. Here
+`𝒞_ḡ : 𝒞_{T̄} → 𝒞_M` is the base change of `ḡ`, formed with the extension's 2-isomorphism over `𝔅`, and
+`F ∘ 𝒞_ḡ` restricts to `F ∘ 𝒞_g` on `𝒞_T` because 2-isomorphic morphisms to the scheme `X` are equal.
+Every open substack of a stack of morphisms `Mor_𝔅(𝒞, X)` that is a stack in the sense of Convention 1
+is one, by its universal property, and the stack of stable maps is such an open substack over the
+prestable-curve stack (behrend1997 Proposition 4, lines 139–141). *Needs:* 7.1; Tau Ceti `TauCeti.AlgebraicGeometry.PrestableFamily`;
 StableReduction Layer 3; SchemeAndStackFoundations §1.19.
 
 **API.**
@@ -1803,8 +1807,9 @@ chart isomorphisms agree on overlaps by flat base change and glue as isomorphism
 `D(O_M)`. The duality is not used for the unbounded complex `L_{M/𝔅}`: 9.3
 builds its morphism into `L_{M/𝔅}` from the projection formula and `tr`, which are defined for every complex,
 and uses the adjunction only against the bounded complexes `J[1]` of square-zero extensions.
-*Needs:* VirtualFundamentalClass §3.1; StableReduction Layer 2; SchemeAndStackFoundations §§1.10,
-2.18–2.20; EnhancedDerivedSheaves §0.3, E1.4, E1.8.
+*Needs:* 9.1 (its setting: the family `𝒞 → 𝔅`, prestable étale locally on the base, and the base change
+`π : 𝒞_M → M`); VirtualFundamentalClass §3.1; StableReduction Layer 2; SchemeAndStackFoundations
+§§1.10, 2.18–2.20; EnhancedDerivedSheaves §0.3, E1.4, E1.8.
 
 **API.**
 
