@@ -342,7 +342,7 @@ API:
 
 ### 4.3 The collision map and its Jacobian
 
-On the open set `U = {|a| > ε, ⟨a, u⟩ < 0, D > 0}` define the collision map `C(a, u) = (a + τ(u − R_q u), R_q u)`, so that `B_s = S_s ∘ C` on `U ∩ {τ < s}` with `S_s(a, u) = (a + s u, u)`. Prove that `C` is smooth on `U` and that `det DC(a, u) = 1` at every point of `U`. Route: with `w = da + τ du` the differential of `Y + τ U'` (where `(Y, U') = C(a, u)`) is `R_q w`, and the differential of `U'` is `R_q du` plus a term depending only on `w`; in the coordinates `(w, du)` and `(dY + τ dU', dU')`, obtained by shears of determinant 1, the Jacobian is block lower triangular with diagonal blocks `R_q, R_q`, whose determinant is `(det R_q)² = 1` (`Matrix.det_fromBlocks_zero₁₂`). Consequently, for each fixed `s ≥ 0`, the derivative of `(a, u) ↦ B_s(a, u)` with `s` held fixed has determinant 1 on `U ∩ {τ < s}` (statement used in GST2013 line 883; DengHaniMa2024 lines 186–187).
+On the open set `U = {|a| > ε, ⟨a, u⟩ < 0, D > 0}` define the collision map `C(a, u) = (a + τ(u − R_q u), R_q u)`, so that `B_s = S_s ∘ C` on `U ∩ {τ < s}` with `S_s(a, u) = (a + s u, u)`. Prove that `C` is smooth on `U` and that `det DC(a, u) = 1` at every point of `U`. Route: with `w = da + τ du` and `(Y, U') = C(a, u)`, the combination `dY + τ dU'` of the two differentials, with τ held at its value at the point, is `R_q w`: since `Y + τ U' = q` and differentiating `|q|² = ε²` gives `dτ = −⟨q, w⟩/⟨q, u⟩`, one has `dY + τ dU' = w + (u − R_q u) dτ = w − 2⟨q, w⟩q/ε²`; the differential of `U'` is `R_q du` plus a term depending only on `w`; in the coordinates `(w, du)` and `(dY + τ dU', dU')`, obtained by shears of determinant 1, the Jacobian is block lower triangular with diagonal blocks `R_q, R_q`, whose determinant is `(det R_q)² = 1` (`Matrix.det_fromBlocks_zero₁₂`). Consequently, for each fixed `s ≥ 0`, the derivative of `(a, u) ↦ B_s(a, u)` with `s` held fixed has determinant 1 on `U ∩ {τ < s}` (statement used in GST2013 line 883; DengHaniMa2024 lines 186–187).
 
 **Checks.**
 
@@ -553,7 +553,7 @@ Prove `HardSphere.measurePreserving_flow`: for every `t`, `T_t` is measure prese
 - Non-example: replacing specular scattering by the totally inelastic rule of §4.4 gives a map that sends the positive-measure set of colliding configurations to a null set, so the scattering law, not only free transport, carries the measure preservation.
 - The carrier for `λ_N` must contain `𝒟̄ᶜ`: on `E` with d = 2, ε = 1 and `N = 2`, the set `𝒟̄ᶜ = {|x_1 − x_2| < 1}` has infinite measure, so `G` alone is not conull for `λ_N`, although it is conull for `λ_N|𝒟̄`. On the unit torus with d = 2, ε = 0.4 and `N = 8`, `𝒟̄ = G = ∅`, the carrier is the whole phase space with the trivial action, and `T_t` is the identity.
 
-*Needs:* §5.5, §6.2, §6.4, §7.1, ClassicalErgodicTheory §3.5 (item 1).
+*Needs:* §5.5, §6.2, §6.4, §7.1, ClassicalErgodicTheory §3.5 (item 1), Mathlib `MeasureTheory.MeasurePreserving`.
 
 ### 7.3 Symmetries and conservation laws
 
@@ -599,7 +599,7 @@ The flow preserves the σ-finite measure `λ_N|𝒟̄`. For `N ≥ 1` its total 
 
 ### Dependencies
 
-Layers 5–6; Mathlib (composition operators on `Lp`, density of compactly supported continuous functions, measures on sigma types); Tau Ceti `TauCeti.Semigroups.StronglyContinuousGroup` (§7.4); ClassicalErgodicTheory §3.5 (items 1 and 3).
+Layers 5–6; Mathlib (`MeasureTheory.MeasurePreserving`, composition operators on `Lp`, density of compactly supported continuous functions, measures on sigma types); Tau Ceti `TauCeti.Semigroups.StronglyContinuousGroup` (§7.4); ClassicalErgodicTheory §3.5 (items 1 and 3).
 
 ## Layer 8: Densities, the Liouville equation and marginals
 

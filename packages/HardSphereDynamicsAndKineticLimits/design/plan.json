@@ -981,6 +981,11 @@
        "name": "gluing",
        "kind": "computation",
        "statement": "The head-on trajectories on [0,2] and [1,3] glue to [0,3]."
+      },
+      {
+       "name": "grazing_admitted",
+       "kind": "characterisation",
+       "statement": "The uniqueness argument does not use the outgoing condition, which only excludes grazing contacts: it gives uniqueness for the weaker notion admitting grazing contacts (σ fixes grazing pairs). At ε = 1, a = (1, 3), u = (0, −1) of §4.1: D = 9 − 9 = 0, the free path touches the sphere at q = (1, 0) at time 3 with ⟨q, u⟩ = 0 and R_q u = u, and is the unique candidate."
       }
      ]
     },
