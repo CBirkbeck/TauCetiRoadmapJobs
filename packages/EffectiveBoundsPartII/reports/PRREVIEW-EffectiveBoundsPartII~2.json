@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EffectiveBoundsPartII~2",
+  "head": "31c0eb1189ff3d2cb751936c45cf488b4edc4d6e",
+  "pr": 1516,
+  "folder": "EffectiveBoundsPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 31c0eb1; this round checks the pull request's title and description against the head. Gate passes (all checks 0, build OK); depcheck 246 roadmaps, 2235 edges, 0 problems; Suggested.lean elaborates with eight sorry warnings only. Title and 14 description sentences read against the README and Lean; one P3: the description says the point bounds feed the finite-fibre target of ArithmeticStatisticsPartV, but that roadmap (earlier in the merge order) does not cite this one and uses a multiplicity-weighted bound of its own. No seeded source sample fell in changed passages (none changed). Adversarial rows computed for the two point bounds and the discriminant bound the description cites.",
+  "text": "0fefb0b5926ecd57",
+  "carried": {
+   "from": "31c0eb1189ff3d2cb751936c45cf488b4edc4d6e",
+   "head": "0ef98e6faa544c14e0999276ee9ddd435690aab7",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "EffectiveBoundsPartII"
+   ],
+   "outside": true
+  }
+ }
+}
