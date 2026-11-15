@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RibbonKnots~1",
+  "head": "fab3ea6599c86ed3278d8e6ea729521d968e372d",
+  "pr": 2339,
+  "folder": "RibbonKnots",
+  "date": "2026-11-15",
+  "findings": 14,
+  "blocking": 6,
+  "notes": "Gate: worker run build=6 FAIL, other checks 0; elaboration of Suggested.lean reproduces 5 errors (lines 57, 125, 127, 134, 136); a repaired copy elaborates with sorry-only warnings; depcheck 0 problems. Seeded sample 0.1, 1.1-1.5, 2.1 checked against Agol2022, Zemke2019, Lisca2007, Livingston2005 (15 locators); Gordon1981 paywalled, checked through Zemke and Agol. Blocking: failed build; HeegaardFloer 7.6 cited for concordance maps and Zemke's theorem it does not state; missing statable target IsRibbon <-> RibbonLE unknot; 1.4 and 2.1 Needs omit route inputs (general Donaldson theorem unowned); one copied sentence from Livingston2005.",
+  "text": "2defc59a3c0d8922"
+ }
+}
