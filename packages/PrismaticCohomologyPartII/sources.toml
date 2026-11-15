@@ -1,0 +1,193 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PrismaticCohomologyPartII"
+
+[[source]]
+id = "BS22"
+authors = "Bhargav Bhatt, Peter Scholze"
+title = "Prisms and Prismatic Cohomology"
+year = 2019
+arxiv = "1905.08229v4"
+locator_scheme = "theorem"
+locator = "Example 1.9(4), p. 6"
+url = "https://arxiv.org/abs/1905.08229v4"
+fetched_from = "https://arxiv.org/pdf/1905.08229v4"
+fetched_at = "2026-11-15T06:19:15Z"
+sha256 = "1d91a6eb85828feb73f84ab3b27ced17514f0855d61c3bff71ab9d8287891e4a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v4"
+cited_for = ["5.20–5.21"]
+
+[[source]]
+id = "BL22"
+authors = "Bhargav Bhatt, Jacob Lurie"
+title = "Absolute prismatic cohomology"
+year = 2022
+arxiv = "2201.06120v1"
+locator_scheme = "theorem"
+locator = "Definition 3.1.1; Remarks 3.1.2–3.1.3, p. 39"
+url = "https://arxiv.org/abs/2201.06120v1"
+fetched_from = "https://arxiv.org/pdf/2201.06120v1"
+fetched_at = "2026-11-15T06:19:53Z"
+sha256 = "0b1beeb20c29424ed8e330c14a66b36c0edcc84255edf5caa0ff9e235139a269"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["4.2"]
+
+[[source]]
+id = "BS23-FCRYS"
+authors = "Bhargav Bhatt, Peter Scholze"
+title = "Prismatic $F$-crystals and crystalline Galois representations"
+year = 2021
+arxiv = "2106.14735v2"
+locator_scheme = "theorem"
+locator = "Definition 2.3, p. 5"
+url = "https://arxiv.org/abs/2106.14735v2"
+fetched_from = "https://arxiv.org/pdf/2106.14735v2"
+fetched_at = "2026-11-15T06:19:57Z"
+sha256 = "4cbfb297a15347c978f590cfc7b7dab3ab771509c588dc8fd928cff8b067ff59"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["4.1"]
+
+[[source]]
+id = "BMS2"
+authors = "Bhargav Bhatt, Matthew Morrow, Peter Scholze"
+title = "Topological Hochschild homology and integral $p$-adic Hodge theory"
+year = 2018
+arxiv = "1802.03261v2"
+locator_scheme = "theorem"
+locator = "Lemmas 4.4–4.7"
+url = "https://arxiv.org/abs/1802.03261v2"
+fetched_from = "https://arxiv.org/pdf/1802.03261v2"
+fetched_at = "2026-11-15T06:20:05Z"
+sha256 = "b2338ef19714f39aeac2aaaa4e8d6bd708020815016bbe5541a74e4db3594038"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["Exact supplier contracts"]
+
+[[source]]
+id = "ALB23"
+authors = "Johannes Anschütz, Arthur-César Le Bras"
+title = "Prismatic Dieudonné theory"
+year = 2019
+arxiv = "1907.10525v4"
+locator_scheme = "theorem"
+locator = "Remark 3.4.3 and Theorem 3.4.4, p. 25"
+url = "https://arxiv.org/abs/1907.10525v4"
+fetched_from = "https://arxiv.org/pdf/1907.10525v4"
+fetched_at = "2026-11-15T06:20:11Z"
+sha256 = "6eb02c16c525360141b1c5d118ae04db070f3c0e9cb9fff0f1598fc889b50aec"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v4"
+cited_for = ["Layer 3"]
+
+[[source]]
+id = "BMS1"
+authors = "Bhargav Bhatt, Matthew Morrow, Peter Scholze"
+title = "Integral p-adic Hodge theory"
+year = 2016
+arxiv = "1602.03148v3"
+locator_scheme = "theorem"
+locator = "Theorem 9.4(iii), p. 70"
+url = "https://arxiv.org/abs/1602.03148v3"
+fetched_from = "https://arxiv.org/pdf/1602.03148v3"
+fetched_at = "2026-11-15T06:20:19Z"
+sha256 = "285f7d2088607688365ca92222dcf44c0acd6c4788dd872fe6a6191b9c4e072a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["5.22"]
+
+[[source]]
+id = "Lurie"
+authors = "Jacob Lurie"
+title = "Derived Algebraic Geometry XIII: Rational and p-adic Homotopy Theory"
+year = 2011
+locator_scheme = "theorem"
+locator = "Remark 2.2.7, p. 35"
+url = "https://www.math.ias.edu/~lurie/papers/DAG-XIII.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/DAG-XIII.pdf"
+fetched_at = "2026-11-15T06:20:22Z"
+sha256 = "75a4d6d9e5e22c8f1261a09e499c6668ceacb90d6cfaf4a2de4a10e2fe0cd535"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["References"]
+
+[[source]]
+id = "SAG"
+authors = "Jacob Lurie"
+title = "Spectral Algebraic Geometry"
+year = 2018
+locator_scheme = "theorem"
+locator = "Proposition 6.2.3.1, p. 492"
+url = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_at = "2026-11-15T06:21:07Z"
+sha256 = "515109098ae5cd73bf266fa97bf498b4e8c7adb6e936be67e6fa9a86bb69020d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["4.0"]
+
+[[source]]
+id = "HA"
+authors = "Jacob Lurie"
+title = "Higher Algebra"
+year = 2017
+locator_scheme = "theorem"
+locator = "Propositions 4.6.1.11 and 7.2.4.4, pp. 620, 1263"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-11-15T06:21:30Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["References"]
+
+[[source]]
+id = "SQDEF"
+authors = "Peter Scholze"
+title = "Canonical q-deformations in arithmetic geometry"
+year = 2016
+arxiv = "1606.01796v1"
+locator_scheme = "theorem"
+locator = "Sections 3–4"
+url = "https://arxiv.org/abs/1606.01796v1"
+fetched_from = "https://arxiv.org/pdf/1606.01796v1"
+fetched_at = "2026-11-15T06:21:34Z"
+sha256 = "ce060b41e28fef16c011d3d3455c53a8bdc11cd8c98dc4dc6c2be178e1567273"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["References"]
+
+[[source]]
+id = "AC"
+doi = "10.5281/zenodo.23573534"
+authors = "Marco D’Addezio"
+title = "Affine crystalline cohomology and de Rham cohomology in Lean 4"
+year = 2026
+locator_scheme = "section"
+locator = "README, version 1.0.0"
+url = "https://github.com/daddeziomath/affine-crystalline"
+fetched_from = "https://github.com/daddeziomath/affine-crystalline"
+fetched_at = "2026-11-15T06:22:07Z"
+sha256 = "16987a5efae57c74c7b9bad6252ceec977f0baaf14d063490b6efc4cd52adc7c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["5.10"]
