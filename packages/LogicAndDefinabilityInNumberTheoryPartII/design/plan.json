@@ -3539,7 +3539,7 @@
     },
     {
       "slug": "finite-field-divisor-adapted-fibration",
-      "needs": "For a smooth projective geometrically integral surface X over a finite field k and an integral curve C in X: a smooth projective surface X′ with a birational k-morphism X′ → X, a smooth projective geometrically integral k-curve B and a dominant k-morphism X′ → B with smooth geometrically integral generic fibre onto which the strict transform of C maps dominantly, all over k itself and not over a finite extension of k.",
+      "needs": "For a smooth projective geometrically integral surface X over a finite field k and an integral curve C in X: a smooth projective surface X′ with a birational k-morphism X′ → X, a smooth projective geometrically integral k-curve B and a dominant k-morphism X′ → B whose generic fibre is smooth and geometrically integral over k(B) and under which the strict transform of C maps dominantly onto B, all over k itself and not over a finite extension of k.",
       "supplier": "LefschetzPencilsAndVanishingCycles",
       "section": "§3.5"
     }
