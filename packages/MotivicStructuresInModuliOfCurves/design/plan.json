@@ -5779,12 +5779,11 @@
   "gaps": [
     {
       "slug": "stack-rational-chow",
-      "needs": "Rational Chow groups of finite-type algebraic stacks stratified by quotient stacks over a field, with proper (not necessarily representable) pushforward, flat and lci pullback, exterior products natural under product with every such stack, localization, affine-bundle homotopy invariance, projective- and Grassmann-bundle formulas, Chern classes, intersection products on smooth DM stacks with projection and excess formulas, and Grothendieck–Riemann–Roch for the universal curve over M̄_{g,n}.",
+      "needs": "For finite-type algebraic stacks over a field that are stratified by quotient stacks, a class closed under products that contains stacks which are neither Deligne–Mumford nor global quotients (such as the products X × Y with an arbitrary test stack Y), rational Chow groups extending those of Layer 5 on schemes, with flat and lci pullback, pushforward along proper morphisms of Deligne–Mumford type that need not be representable, exterior products natural under product with every such stack, the localization sequence, homotopy invariance for affine bundles, the projective- and Grassmann-bundle formulas, Chern classes of vector bundles, the intersection product on smooth such stacks with the projection formula, and Grothendieck–Riemann–Roch for the universal curve over M̄_{g,n}.",
       "supplier": "SchemeAndStackFoundations",
       "section": "Layer 5 (§§5.1–5.8)",
       "neededBy": [
-        "MotivicStructuresInModuliOfCurves §0.1",
-        "MotivicStructuresInModuliOfCurves §0.2",
+        "MotivicStructuresInModuliOfCurves §0.6",
         "MotivicStructuresInModuliOfCurves §5.1",
         "MotivicStructuresInModuliOfCurves §5.2",
         "MotivicStructuresInModuliOfCurves §5.3",

@@ -11,6 +11,8 @@ Three families of inputs that no roadmap owns are owned here because their only 
 The following are imported, not planned here.
 
 - The stacks `M̄_{g,n}` and `M_{g,n}`, their forgetful morphism and normal-crossings boundary are SchemeAndStackFoundations §4.15, on the stack foundations of §§1.18–1.23. Their realization as pointed moduli groupoids, the universal curve, clutching morphisms, relabelling, the normalized boundary strata with graph automorphisms, the marking cotangent lines with their forgetful correction, and the Hodge bundle are StableReductionPartII §0.4, §2.248, §§3.1–3.3, 3.7, 3.10–3.11, §§5.1, 5.10–5.11 and the export §7.11. Dual graphs of nodal curves and their genus formula are StableReduction, Layer 1.
+- Vistoli's rational Chow groups of separated Deligne–Mumford stacks, with proper pushforward, flat pullback, exterior products, Chern classes and refined Gysin maps, are VirtualFundamentalClass §§2.1–2.4; the tautological rings of §§0.1–0.2 are formed in them, and `ψᵢ = c₁(Lᵢ)` for the cotangent lines of StableReductionPartII §3.3 is the first Chern class of VirtualFundamentalClass §2.3, the Chow theory StableReductionPartII itself consumes. The Edidin–Graham equivariant Chow groups of quotient stacks `[X/G]`, with their operations and `A^*_{GL_n} = ℤ[c₁, …, c_n]`, are EquivariantIntersectionTheory §§2.1–2.3, and their rational comparison with Vistoli's groups on Deligne–Mumford quotient stacks is StableReductionPartII §5.15. Rational Chow groups of finite-type algebraic stacks stratified by quotient stacks, on which Layer 5 defines the Chow–Künneth generation property, are requested from SchemeAndStackFoundations (gap:stack-rational-chow); §0.6 identifies them with the two theories above where these apply.
+- The quotient presentation of the stack of smooth hyperelliptic curves of genus `g ≥ 2` over a field of characteristic not dividing `4(g + 1)` is EquivariantIntersectionTheory §3.3; §8.1 owns only its extension over `ℤ[1/2]`, which covers the odd characteristics dividing `g + 1`, and the point count.
 - Finite groupoid mass, stack point counts and traces, twisted counts, signed Frobenius configurations, inverse zeta functions, termination for proper even cohomology, the Hasse–Weil sieve, exact and approximate polynomial counts, the local cutoff, polynomial counts over all of `Spec ℤ`, equivariant polynomial counts and palindromicity, and smooth proper DM purity are WeilConjectures, WC.1, WC.5 and WC.6. This roadmap applies them to the curve families and moduli stacks; it does not restate them.
 - The ℓ-adic DM-stack cohomology, the rational coarse comparison, smooth proper DM duality and purity, and the weight spectral sequence of a normal crossings compactification, including its specialization to the boundary of `M̄_{g,n}` with orientation characters, are DeligneWeightsAndPurity §8.24. Hard Lefschetz is DeligneWeightsAndPurity §9.6.
 - Parabolic realizations of cusp forms, with their Hodge filtration and λ-adic realizations, are AutomorphicGaloisRepresentations §1.2; level-one cusp-form dimensions are Mathlib's; level-one period polynomials are Tau Ceti's.
@@ -34,7 +36,7 @@ Two statements of CLP are conjectures and are not targets: every even `H^k(M̄_{
 - **Cusp realizations.** `S₁₂ = H¹¹(M̄_{1,11})` and `S₁₆ = W₁₅H¹⁵(M_{1,15})`, each of rank two, of Hodge types `(11,0),(0,11)` and `(15,0),(0,15)`. More generally `S_{k+1}` denotes the parabolic realization of level-one cusp forms of weight `k + 1`, of rank `2 dim S_{k+1}(SL₂(ℤ))`.
 - **Point counts.** A finite-field count of a stack is groupoid mass, the sum of `1/#Aut` over isomorphism classes of rational points (WeilConjectures, WC.1, finite groupoid mass). Polynomial point count means the polynomial-count condition of WeilConjectures, WC.5 (exact polynomial point count): a polynomial `P ∈ ℚ[T]` with `N(q) = P(q)` at every prime power `q`, and no condition at other arguments.
 - **Symmetric groups.** `T_λ` is the irreducible rational representation (Specht module) of `S_n` attached to a partition `λ ⊢ n`; `s_λ` its Schur function; `T_{(n)}` is trivial. `V_λ` denotes a symplectic local system (§3.1), a different object.
-- **Coefficients and characteristic.** Chow groups have rational coefficients, `A^*(X) = CH^*(X) ⊗ ℚ`. Algebraic-cycle constructions of Layers 4–6 are over fields of characteristic zero. The point counts of Layers 7–9 range over all finite fields, including characteristic two.
+- **Coefficients and characteristic.** Chow groups have rational coefficients, `A^*(X) = CH^*(X) ⊗ ℚ`: on schemes those of SchemeAndStackFoundations Layer 5, on separated Deligne–Mumford stacks Vistoli's groups (VirtualFundamentalClass §2.1), in which the tautological rings live, and on stacks stratified by quotient stacks those of gap:stack-rational-chow, identified with the former and with `A^G_*(X) ⊗ ℚ` by §0.6. On a quotient stack `[X/G]` the equivariant group `A^G_i(X)` sits in dimension `i − dim G`. Algebraic-cycle constructions of Layers 4–6 are over fields of characteristic zero. The point counts of Layers 7–9 range over all finite fields, including characteristic two.
 
 ## Exact supplier contracts
 
@@ -58,7 +60,15 @@ Each contract states the output consumed and what is assumed of it. Where a supp
 
 Consumed: §§1.18–1.23 (stacks in groupoids, algebraic and Deligne–Mumford stacks, inertia, quotient stacks, quasi-coherent modules, coarse spaces and Keel–Mori); §4.15 (the moduli stack of stable pointed curves, its forgetful morphism, its properness, and its smoothness over `ℤ` of relative dimension `3g − 3 + n` with normal-crossings boundary); §4.17 (strict normal crossings divisors); Layer 5, §§5.1–5.8 (Chow groups of schemes, proper pushforward, flat pullback, localization, Chern classes, projective bundles, refined Gysin maps, intersection products and Grothendieck–Riemann–Roch for schemes). Assumed: rational coefficients are the separate carrier `CH_k(X)_ℚ`, and projective bundles follow the line convention of §5.
 
-What SchemeAndStackFoundations must provide (gap:stack-rational-chow): rational Chow groups of finite-type algebraic stacks stratified by quotient stacks over a field, with proper (not necessarily representable) pushforward, flat and lci pullback, exterior products natural under product with every such stack, the localization sequence, homotopy invariance for affine bundles, the projective- and Grassmann-bundle formulas, Chern classes of vector bundles, the intersection product on smooth DM stacks with projection and excess formulas, and Grothendieck–Riemann–Roch for the universal curve over `M̄_{g,n}`.
+What SchemeAndStackFoundations must provide (gap:stack-rational-chow): for finite-type algebraic stacks over a field that are stratified by quotient stacks, a class closed under products that contains stacks which are neither Deligne–Mumford nor global quotients (such as the products `X × Y` with an arbitrary test stack `Y` in §5.1), rational Chow groups extending those of Layer 5 on schemes, with flat and lci pullback, pushforward along proper morphisms of Deligne–Mumford type that need not be representable, exterior products natural under product with every such stack, the localization sequence, homotopy invariance for affine bundles, the projective- and Grassmann-bundle formulas, Chern classes of vector bundles, the intersection product on smooth such stacks with the projection formula, and Grothendieck–Riemann–Roch for the universal curve over `M̄_{g,n}`. Vistoli's groups and the equivariant groups are not asked of this supplier: they are VirtualFundamentalClass §2.1 and EquivariantIntersectionTheory §2.1, and their agreement with these groups is §0.6.
+
+### From TauCetiRoadmap.EquivariantIntersectionTheory
+
+Consumed: Layer 2, §§2.1–2.3 (for `G` smooth affine over a field and `X` quasi-projective with a `G`-linearised ample invertible sheaf, its Conventions 1 and 5: the equivariant Chow groups `A^G_*(X)` of Totaro's approximation, independent of the approximation; proper pushforward, flat and lci pullback, the localisation sequence, equivariant Chern classes, the intersection product for smooth `X`, homotopy invariance for equivariant vector and affine bundles, and invariance under change of presentation; `A^*_{GL_n} = ℤ[c₁, …, c_n]`, `A^*_{𝔾_m^r} = ℤ[t₁, …, t_r]` and, for `n` invertible, `A^*_{μ_n} = ℤ[t]/(n t)`); §3.3 (the presentation of the stack of smooth hyperelliptic curves of genus `g ≥ 2` as `[A_sm(1, 2g + 2)/(GL₂/μ_{g+1})]` over a field of characteristic not dividing `4(g + 1)`). Assumed: these groups are integral; this roadmap uses them after `⊗ ℚ`, through §0.6.
+
+### From VirtualFundamentalClass
+
+Consumed: §§2.1–2.4 (Vistoli's dimension-graded rational Chow groups `A_*(X)_ℚ` of separated Deligne–Mumford stacks over a field, with `A^c(X)_ℚ = A_{n−c}(X)_ℚ` for `X` pure of dimension `n` and the stabilizer weights in degrees, the classifying stack of a finite group of order `m` having degree `1/m`; proper pushforward, flat pullback, localization and exterior products; homotopy invariance for vector bundles, Chern classes and the projective-bundle formula; refined Gysin maps along representable regular local immersions, with base change, the excess formula and compatibility with proper pushforward and flat pullback). Assumed: these are the rational Chow groups that StableReductionPartII consumes, so that `ψᵢ = c₁(Lᵢ)` for the lines of its §3.3 is a Chern class of §2.3, and the tautological rings of §0.1 are formed in them.
 
 ### From TauCetiRoadmap.AlgebraicCurves
 
@@ -74,7 +84,7 @@ Consumed: Layer 1 (the dual graph of a proper geometric nodal curve, with compon
 
 ### From StableReductionPartII
 
-Consumed: §0.4 (the stable and smooth pointed moduli groupoids `M̄_{g,n}` and `M_{g,n}` realized on all schemes, morphisms preserving each ordered section); §2.248 (the universal curve over `M̄_{g,n}` identified with `M̄_{g,n+1}`, the old markings being sections); §§3.1–3.2 and 3.7 (separating and nonseparating clutching morphisms, finite and unramified); §3.3 (marking cotangent lines `Lᵢ = sᵢ^*ω` with `ψᵢ = c₁(Lᵢ)`); §§3.5 and 3.10 (stable one-edge boundary types, and the normalization of the boundary as the disjoint union of vertex-product quotient stacks by the constant graph-automorphism groups); §3.11 (the forgetful correction `Lᵢ = π^*Lᵢ ⊗ O(D_{i,n+1})`); §§4.1 and 4.14 (coarse algebraic spaces, proper over `ℤ`, and projectivity of the unpointed coarse space for `g ≥ 2` from a descended power of the determinant line); §§5.1, 5.10 and 5.11 (the Hodge bundle `E = f_*ω` of rank `g`, compatible with base change, its pullback under forgetting a marking and its separating-clutching splitting); §7.11 (the export of the pointed stable stacks, relabelling, forgetful and clutching morphisms and the boundary normalization for tautological operations, which leaves the Chow and cohomological structures to this roadmap). Assumed: the pointed stacks themselves are those of SchemeAndStackFoundations §4.15.
+Consumed: §0.4 (the stable and smooth pointed moduli groupoids `M̄_{g,n}` and `M_{g,n}` realized on all schemes, morphisms preserving each ordered section); §2.248 (the universal curve over `M̄_{g,n}` identified with `M̄_{g,n+1}`, the old markings being sections); §§3.1–3.2 and 3.7 (separating and nonseparating clutching morphisms, finite and unramified); §3.3 (marking cotangent lines `Lᵢ = sᵢ^*ω` with `ψᵢ = c₁(Lᵢ)`); §§3.5 and 3.10 (stable one-edge boundary types, and the normalization of the boundary as the disjoint union of vertex-product quotient stacks by the constant graph-automorphism groups); §3.11 (the forgetful correction `Lᵢ = π^*Lᵢ ⊗ O(D_{i,n+1})`); §§4.1 and 4.14 (coarse algebraic spaces, proper over `ℤ`, and projectivity of the unpointed coarse space for `g ≥ 2` from a descended power of the determinant line); §§5.1, 5.10 and 5.11 (the Hodge bundle `E = f_*ω` of rank `g`, compatible with base change, its pullback under forgetting a marking and its separating-clutching splitting); §5.15 (for a smooth affine group `G` of dimension `d` acting properly on a quasi-projective `X` with a `G`-linearised ample invertible sheaf and `[X/G]` Deligne–Mumford, the isomorphism `A_{i−d}([X/G])_ℚ → A^G_i(X) ⊗ ℚ` from Vistoli's groups to the equivariant groups, by flat pullback to the mixed spaces); §7.11 (the export of the pointed stable stacks, relabelling, forgetful and clutching morphisms and the boundary normalization for tautological operations, which leaves the Chow and cohomological structures to this roadmap). Assumed: the pointed stacks themselves are those of SchemeAndStackFoundations §4.15.
 
 What StableReductionPartII must provide (gap:pointed-coarse-projectivity): for every stable pair `(g, n)`, projectivity over `ℤ` of the coarse space of `M̄_{g,n}`, together with a rational combination of tautological divisor classes (for instance `κ₁ + Σψᵢ`) that is the pullback of an ample class on the coarse space.
 
@@ -136,7 +146,7 @@ Consumed: §2.3 (Teichmüller uniformization of the pointed moduli stack): the c
 
 ## How to read the build
 
-Layer 0 sets up the tautological rings, kappa classes, the stable-pair order, the boundary exact sequences and the cusp realizations. Layer 1 builds the equivariant counting machinery on curve moduli (marking twists, the weight-graded equivariant Euler characteristic, the stable-graph transform and the Getzler–Kapranov formula) and the low-genus polynomial counts. Layer 2 proves the dimension bounds and odd vanishing through degree seven and, for genus at most three, through degree nine. Layer 3 treats genus one, symplectic local systems and the stable range. Layer 4 constructs semi-tautological extensions and proves finite generation. Layer 5 develops the Chow–Künneth generation property, which Layers 6 and 7 establish for `M_{7,n}`, `n ≤ 3`, through its gonality strata. Layers 8 and 9 compute the hyperelliptic and genus-four point counts and prove odd vanishing through degree nine in all genera; they are independent of Layers 4–7. Layer 10 treats even cohomology and homology and, through the oriented boundary complex, proves that `H¹¹` vanishes outside genus one; Layer 11 the exceptional genus-one and genus-two cusp bases, and Layer 12 proves the generation and classification theorems in degrees thirteen to fifteen. Each target's *Needs* line lists the inputs of its statement and of the route given; another route may need less.
+Layer 0 sets up the tautological rings, kappa classes, the stable-pair order, the boundary exact sequences and the cusp realizations, and identifies the rational Chow theories of stacks that the later layers use. Layer 1 builds the equivariant counting machinery on curve moduli (marking twists, the weight-graded equivariant Euler characteristic, the stable-graph transform and the Getzler–Kapranov formula) and the low-genus polynomial counts. Layer 2 proves the dimension bounds and odd vanishing through degree seven and, for genus at most three, through degree nine. Layer 3 treats genus one, symplectic local systems and the stable range. Layer 4 constructs semi-tautological extensions and proves finite generation. Layer 5 develops the Chow–Künneth generation property, which Layers 6 and 7 establish for `M_{7,n}`, `n ≤ 3`, through its gonality strata. Layers 8 and 9 compute the hyperelliptic and genus-four point counts and prove odd vanishing through degree nine in all genera; they are independent of Layers 4–7. Layer 10 treats even cohomology and homology and, through the oriented boundary complex, proves that `H¹¹` vanishes outside genus one; Layer 11 the exceptional genus-one and genus-two cusp bases, and Layer 12 proves the generation and classification theorems in degrees thirteen to fifteen. Each target's *Needs* line lists the inputs of its statement and of the route given; another route may need less.
 
 ## Layer 0: Tautological operations and cusp realizations
 
@@ -146,7 +156,7 @@ This layer adds to the imported moduli stacks the ring operations and realizatio
 
 Define the tautological system as the least collection of unital graded `ℚ`-subalgebras `R^*(M̄_{g,n}) ⊂ A^*(M̄_{g,n})`, one for each stable pair, that is closed under pushforward along forgetful and clutching morphisms, under pullback along forgetful and clutching morphisms, and under relabelling of markings. The full Chow system satisfies these conditions, and an intersection of such systems satisfies them, so the least system exists. Put `R^*(M_{g,n})` for the image of `R^*(M̄_{g,n})` under restriction, and `RH^*` for the image of `R^*` under the cycle class map; cohomological degree is twice Chow codimension. Prove that `R^*(M̄_{g,n})` is spanned by pushforwards from boundary strata of monomials in marking psi classes and vertex kappa classes (the decorated stable-graph description), by the projection formula, the excess intersection formula for clutching pullbacks and the forgetful pullback formulas for psi and kappa classes (CLP, Introduction pp. 1–3 and §2.1 p. 4; the graph description is recalled in CLP §5, pp. 13–22).
 
-*Needs:* StableReductionPartII §§3.1–3.3 and 7.11 (forgetful and clutching morphisms, relabelling, cotangent lines); SchemeAndStackFoundations, gap:stack-rational-chow (proper pushforward, pullback and intersection products on smooth DM stacks); MotivesAndAlgebraicCycles, gap:dm-stack-cycle-class (the cycle class map for `RH^*`).
+*Needs:* StableReductionPartII §§3.1–3.3 and 7.11 (forgetful and clutching morphisms, relabelling, cotangent lines); VirtualFundamentalClass §§2.1–2.4 (Vistoli's rational Chow groups of the separated Deligne–Mumford stacks `M̄_{g,n}`, proper pushforward, flat pullback, exterior products and Chern classes, and refined Gysin maps along representable regular local immersions with the excess formula and compatibility with proper pushforward, which give the intersection product `x · y = Δ^!(x × y)` along the diagonal, pullback along clutching morphisms through their graphs, and the projection formula); MotivesAndAlgebraicCycles, gap:dm-stack-cycle-class (the cycle class map for `RH^*`).
 
 API:
 
@@ -166,7 +176,7 @@ API:
 
 For a stable pair `(g, n)` and the forgetful morphism `π : M̄_{g,n+1} → M̄_{g,n}` define `κ_a = π_*(ψ_{n+1}^{a+1}) ∈ R^a(M̄_{g,n})` for `a ≥ 0`. The marking line and its psi class are StableReductionPartII §3.3; `λ_j = c_j(E)` for the Hodge bundle `E` of StableReductionPartII §5.1; no new Hodge bundle is constructed. Prove the comparison `κ_a = π^*κ_a + ψ_{n+1}^a` on `M̄_{g,n+1}` (CLP, §2.1 p. 4; §§3 and 5, pp. 9–10 and 21–22).
 
-*Needs:* §0.1; StableReductionPartII §§3.3 and 3.11 (cotangent lines and their forgetful correction) and §5.1 (Hodge bundle); SchemeAndStackFoundations, gap:stack-rational-chow (proper pushforward and Chern classes on DM stacks).
+*Needs:* §0.1; StableReductionPartII §§3.3 and 3.11 (cotangent lines and their forgetful correction) and §5.1 (Hodge bundle); VirtualFundamentalClass §§2.2–2.3 (proper pushforward and Chern classes on Deligne–Mumford stacks).
 
 API:
 
@@ -229,13 +239,31 @@ Prove that `H¹¹(M̄_{1,11})` and `W₁₅H¹⁵(M_{1,15})` are, in both realiz
 - `L S₁₂` has pure weight thirteen and Hodge types `(12,1),(1,12)`, not `(11,0),(0,11)`: the twist shifts both Hodge numbers by one.
 - `S_r` has rank `2 dim S_r(SL₂(ℤ))`, not always two: for weight twenty-four the cusp space has dimension two and `S₂₄` has rank four.
 
+### 0.6 Comparison of the rational Chow theories of stacks
+
+Let `k` be a field and `A_*(X)_ℚ` the rational Chow groups of a finite-type algebraic stack `X` over `k` stratified by quotient stacks (gap:stack-rational-chow), with the natural map from cycles sending an integral closed substack to its class. Prove the following (Kresch, Theorem 2.1.12 (ii)–(iii), p. 6, with their proofs on p. 8 and Remark 2.1.17, p. 8; stacks with quasi-finite diagonal are stratified by quotient stacks, Proposition 4.5.7, p. 28; the intersection product agrees with Edidin–Graham's on global quotients, §4.3, p. 24).
+
+- For a separated Deligne–Mumford stack `X` of finite type over `k`, the natural map from Vistoli's rational Chow groups of VirtualFundamentalClass §2.1 to `A_*(X)_ℚ` is an isomorphism in every dimension, compatible with flat pullback, pushforward along projective morphisms, exterior products and Chern classes of vector bundles, and for smooth `X` it is an isomorphism of rings.
+- For `G` smooth affine over `k` and `X` quasi-projective over `k` with a `G`-linearised ample invertible sheaf, the natural map `A^G_i(X) ⊗ ℚ → A_{i − dim G}([X/G])_ℚ` from the equivariant Chow groups of EquivariantIntersectionTheory §2.1, graded so that `[X]` lies in `A^G_{dim X}(X)`, is an isomorphism for every `i`, with the same compatibilities, and for smooth `X` an isomorphism of rings in the codimension grading.
+- When `G` acts properly and `[X/G]` is Deligne–Mumford, the inverse of the second isomorphism composed with the first is the comparison of StableReductionPartII §5.15.
+
+Consequently the tautological rings of §0.1 are subrings of the rational Chow rings of gap:stack-rational-chow, and `A^*(BGL_n)_ℚ = ℚ[c₁, …, c_n]` by EquivariantIntersectionTheory §2.3. Route: a class of the gap's groups is represented, after pullback to the total space of a vector bundle, by a cycle; on a Deligne–Mumford stack pullback to a vector bundle is an isomorphism on Vistoli's rational groups (VirtualFundamentalClass §2.3), and on a quotient stack every vector bundle is dominated by the bundles of representations of `G` acting freely off a closed subset of high codimension, which are the approximations of EquivariantIntersectionTheory §2.1.
+
+*Needs:* SchemeAndStackFoundations, gap:stack-rational-chow; VirtualFundamentalClass §§2.1–2.3; EquivariantIntersectionTheory §§2.1–2.3; StableReductionPartII §5.15.
+
+**Checks.**
+
+- The comparison is rational only. For `k` of characteristic not two, `BC₂ = [Spec k/μ₂]` is Deligne–Mumford and a quotient stack; `A^*_{μ₂} = ℤ[t]/(2t)` (EquivariantIntersectionTheory §2.3) is `ℤ/2` in every positive codimension, while the integral cycles of the zero-dimensional `BC₂` are `ℤ` in dimension zero; after `⊗ ℚ` both sides are `ℚ` in codimension zero and vanish elsewhere.
+- The shift by `dim G` is forced. For `𝔾_m` acting on `X = 𝔸² ∖ 0` with weights `1`, `[X/𝔾_m] = ℙ¹`, and the fundamental class `[X] ∈ A^{𝔾_m}_2(X)` goes to `[ℙ¹] ∈ A_1(ℙ¹)_ℚ = ℚ`; without the shift it would land in `A_2(ℙ¹)_ℚ = 0`.
+- The first item needs the Deligne–Mumford hypothesis. `B𝔾_m` is a quotient stack, and the second item gives `A^*(B𝔾_m)_ℚ = ℚ[t]`, nonzero in every codimension; its only integral closed substack is itself and its rational functions are constant, so its cycles modulo rational equivalence are `ℚ` in dimension `−1` alone.
+
 ### Examples
 
 On `M̄_{0,4} = ℙ¹` the tautological ring is `ℚ[δ]/(δ²)` with `δ` the class of a boundary point; its cohomological realization is all of `H^*(ℙ¹)`. On `M̄_{1,1}`, `κ₀ = 1` and `ψ₁ = δ_irr/12` with the stack normalization of the boundary divisor. The first non-tautological cohomology of any `M̄_{g,n}` is `H¹¹(M̄_{1,11}) = S₁₂`.
 
 ### Dependencies
 
-StableReductionPartII §§0.4, 2.248, 3.1–3.3, 3.10–3.11, 5.1, 7.11; StableReduction, Layer 1; SchemeAndStackFoundations §§1.18–1.23, 4.15 and Layer 5 with gap:stack-rational-chow; DeligneWeightsAndPurity §8.24; MixedHodgeModulesAndIrregularHodgeTheory with gap:dm-stack-mixed-hodge; WeilConjectures with gap:open-dm-stack-duality; MotivesAndAlgebraicCycles with gap:dm-stack-cycle-class; AutomorphicGaloisRepresentations §1.2; Mathlib level-one modular forms; Tau Ceti level-one period polynomials.
+StableReductionPartII §§0.4, 2.248, 3.1–3.3, 3.10–3.11, 5.1, 5.15, 7.11; StableReduction, Layer 1; SchemeAndStackFoundations §§1.18–1.23, 4.15 and Layer 5 with gap:stack-rational-chow; VirtualFundamentalClass §§2.1–2.4; EquivariantIntersectionTheory §§2.1–2.3; DeligneWeightsAndPurity §8.24; MixedHodgeModulesAndIrregularHodgeTheory with gap:dm-stack-mixed-hodge; WeilConjectures with gap:open-dm-stack-duality; MotivesAndAlgebraicCycles with gap:dm-stack-cycle-class; AutomorphicGaloisRepresentations §1.2; Mathlib level-one modular forms; Tau Ceti level-one period polynomials.
 
 ## Layer 1: Equivariant counts and the stable-graph transform
 
@@ -282,7 +310,7 @@ API:
 
 ### 1.3 The stable-graph transform
 
-For a stable collection `V = (V(g, n))` of finite-dimensional graded rational `S_n`-representations, zero when `2g − 2 + n ≤ 0`, define `MV(g, n) = ⊕_Γ (⊗_v V(g_v, n_v))_{Aut Γ}`, the sum over isomorphism classes of connected stable graphs `Γ` of total genus `g` with `n` legs, where `Aut Γ` acts by permuting flags with Koszul signs of the cohomological grading and the sum is finite for each `(g, n)` (GK, §2, the free modular operad; recalled in GK §8 and in BFP, Proposition 9.6, p. 1354). There is no edge-orientation twist in this ordinary transform. In characteristic zero coinvariants equal invariants.
+For a stable collection `V = (V(g, n))` of finite-dimensional graded rational `S_n`-representations, zero when `2g − 2 + n ≤ 0`, define `MV(g, n) = ⊕_Γ (⊗_v V(g_v, n_v))_{Aut Γ}`, the sum over isomorphism classes of connected stable graphs `Γ` of total genus `g` with `n` legs, where `Aut Γ` acts by permuting flags with Koszul signs of the cohomological grading and the sum is finite for each `(g, n)` (GK, §2, the free modular operad; recalled in GK §8 and in BFP, proof of Proposition 9.6, p. 1354). There is no edge-orientation twist in this ordinary transform. In characteristic zero coinvariants equal invariants.
 
 *Needs:* StableReduction, Layer 1 (dual graphs and their genus formula); StableReductionPartII §3.10 (graph automorphisms of boundary strata); §0.3; SchurWeyl, Layer 7.
 
@@ -302,7 +330,7 @@ API:
 
 ### 1.4 The Getzler–Kapranov formula
 
-In the completed ring of SchurWeyl, gap:completed-symmetric-functions, put `Ch(V) = Σ_{g,n} h^{g−1} ch(V(g, n))` and `Δ = Σ_{r≥1} h^r ((r/2) ∂²/∂p_r² + ∂/∂p_{2r})`. Prove `Ch(MV) = Log(exp(Δ) Exp(Ch(V)))`, where `exp(Δ)` is the ordinary exponential of the operator and `Exp`, `Log` are the plethystic exponential and logarithm (GK, Theorem 8.13; BFP, §9, p. 1354, where the theorem is cited as GK Theorem 8.3 and must be read as Theorem 8.13). Route: `Exp` forms unordered collections of vertices, `exp(Δ)` joins pairs of flags (the factor `r/2` counts edges joining two flags in an `r`-cycle and the `p_{2r}` term edges whose endpoints are exchanged), and `Log` selects connected graphs; Euler's formula gives the exponent of `h`. For point counts specialize `ψ_r(q) = q^r`.
+In the completed ring of SchurWeyl, gap:completed-symmetric-functions, put `Ch(V) = Σ_{g,n} h^{g−1} ch(V(g, n))` and `Δ = Σ_{r≥1} h^r ((r/2) ∂²/∂p_r² + ∂/∂p_{2r})`. Prove `Ch(MV) = Log(exp(Δ) Exp(Ch(V)))`, where `exp(Δ)` is the ordinary exponential of the operator and `Exp`, `Log` are the plethystic exponential and logarithm (GK, Theorem 8.13; BFP, proof of Proposition 9.6, p. 1354, which applies it; the opening of BFP §9, p. 1351, cites it as Theorem 8.3). Route: `Exp` forms unordered collections of vertices, `exp(Δ)` joins pairs of flags (the factor `r/2` counts edges joining two flags in an `r`-cycle and the `p_{2r}` term edges whose endpoints are exchanged), and `Log` selects connected graphs; Euler's formula gives the exponent of `h`. For point counts specialize `ψ_r(q) = q^r`.
 
 *Needs:* §1.3; §1.2; SchurWeyl, gap:completed-symmetric-functions; SchemeKTheoryOperations §§6.2.1–6.2.2; HabiroNahmSeries §5.1 with gap:complete-adams-series.
 
@@ -378,7 +406,7 @@ For `g ≥ 1` prove that `H_c^k(M_{g,n}) = 0` if `k < 2g` and `n ∈ {0, 1}`, an
 
 **Checks.**
 
-- At `(g, n) = (4, 1)`, `H_c^k = 0` for `k < 8`; the vanishing does not extend to `k = 8`.
+- At `(g, n) = (4, 1)`, `d = 10` and the threshold is `2g = 8`. Through `H_c^k ≅ H^{20−k}(d)^∨`, the bound `4g − 4 + n = 13` of §2.1 alone gives `H_c^k = 0` only for `k < 20 − 13 = 7`; the case `k = 7` is `H¹³(M_{4,1}) = 0` of §2.2. A route without §2.2 would stop at `k < 7`. No statement is made at `k = 8`.
 - At `(2, 12)` the threshold is `2·2 − 2 + 12 = 14`, which leaves the degree-fifteen calculation of §11.9.
 - Genus zero is excluded: `M_{0,4}` is `ℙ¹` minus three points and has `H_c¹ ≅ ℚ²`.
 
@@ -745,7 +773,7 @@ API:
 
 Within smooth finite-type stacks stratified by quotient stacks prove: the CKgP passes to open substacks; it descends along proper surjective morphisms representable by DM stacks; it holds for a stack with a finite stratification whose strata have it; it is equivalent for the total space and base of an affine bundle; it passes to Grassmann bundles; and `BGL_r`, `BSL_r`, `BPGL_r` have it (CLP, Proposition 4.2, p. 11, citing Canning–Larson §3.1). Route: localization after product with every `Y`; rational surjectivity of proper pushforward via a generically finite multisection; homotopy invariance; the Grassmann bundle formula; finite-dimensional approximations of classifying stacks.
 
-*Needs:* §5.1; SchemeAndStackFoundations, gap:stack-rational-chow.
+*Needs:* §5.1; §0.6; SchemeAndStackFoundations, gap:stack-rational-chow; EquivariantIntersectionTheory §§2.2–2.3 (homotopy invariance for equivariant affine bundles and `A^*_{GL_r} = ℤ[c₁, …, c_r]`).
 
 **Checks.**
 
@@ -756,7 +784,7 @@ Within smooth finite-type stacks stratified by quotient stacks prove: the CKgP p
 
 Let `X` be an open substack of a smooth proper Deligne–Mumford stack `X̄` over `ℂ` of pure dimension `d`, and suppose `X` has the CKgP. Prove that the cycle class map `⊕_i A^i(X) → ⊕_k W_k H^k(X)` is surjective; in particular `W_k H^k(X) = 0` for odd `k` and `W_k H^k(X)` is pure Hodge–Tate for even `k`. The same holds with `ℚ_ℓ`-coefficients over any field of characteristic zero, the closure `X̄` being smooth and proper (CLP, Lemma 4.3, pp. 11–12, and Remark 4.4, p. 12). Route: write the diagonal of `X̄ × X̄` as `Γ + Σ_ℓ Δ_ℓ` with `Γ` supported on `X̄ × (X̄ − X)` and `Δ_ℓ` sums of products `V × W` of codimensions `ℓ, d − ℓ`; for `α` lifting a class of `W_k H^k(X)`, `Δ_ℓ*α` is a cycle class and vanishes unless `k = 2d − 2ℓ`, and `Γ*α` restricts to zero on `X`.
 
-*Needs:* §5.1; §0.4; MotivesAndAlgebraicCycles §0.6 (diagonal decompositions) and gap:dm-stack-cycle-class; SchemeAndStackFoundations, gap:stack-rational-chow.
+*Needs:* §5.1; §§0.4, 0.6; MotivesAndAlgebraicCycles §0.6 (diagonal decompositions) and gap:dm-stack-cycle-class; SchemeAndStackFoundations, gap:stack-rational-chow.
 
 **Checks.**
 
@@ -767,7 +795,7 @@ Let `X` be an open substack of a smooth proper Deligne–Mumford stack `X̄` ove
 
 For `g = 0` and every `n`, and for `g = 1, 2, 3, 4, 5, 6` with `n ≤ 10, 10, 11, 11, 7, 5` respectively, prove that `M_{g,n}` has the CKgP and `A^*(M_{g,n}) = R^*(M_{g,n})`; consequently `W_k H^k(M_{g,n}) = RH^k(M_{g,n})` and, for odd `k`, `W_k H^k(M_{g,n}) = 0` and `Gr^W_k H_c^k(M_{g,n}) = 0` (Canning–Larson, Theorem 1.4; CLP, Table 1 and Proposition 4.5, pp. 12–13). The genus-seven range `n ≤ 3` is §7.7. Route: Hurwitz-space and low-gonality descriptions of `M_{g,n}` stratum by stratum, with §5.2, and §5.3 for the cohomological consequence; by the complementary-degree duality of the Conventions, `Gr^W_k H_c^k(M_{g,n})` is dual to `W_{2d−k} H^{2d−k}(M_{g,n})(d)`, which vanishes because `2d − k` is odd as well.
 
-*Needs:* §§5.2, 5.3; §0.1; WeilConjectures, gap:open-dm-stack-duality; MixedHodgeModulesAndIrregularHodgeTheory, gap:dm-stack-mixed-hodge (the complementary-degree duality in both realizations).
+*Needs:* §§5.2, 5.3; §§0.1, 0.6; WeilConjectures, gap:open-dm-stack-duality; MixedHodgeModulesAndIrregularHodgeTheory, gap:dm-stack-mixed-hodge (the complementary-degree duality in both realizations).
 
 **Checks.**
 
@@ -781,7 +809,7 @@ For `g = 0` and every `n`, and for `g = 1, 2, 3, 4, 5, 6` with `n ≤ 10, 10, 11
 
 ### Dependencies
 
-Layer 0; SchemeAndStackFoundations, gap:stack-rational-chow; MotivesAndAlgebraicCycles §0.6 with gap:dm-stack-cycle-class; WeilConjectures, gap:open-dm-stack-duality.
+Layer 0; SchemeAndStackFoundations, gap:stack-rational-chow; EquivariantIntersectionTheory §§2.2–2.3; MotivesAndAlgebraicCycles §0.6 with gap:dm-stack-cycle-class; WeilConjectures, gap:open-dm-stack-duality.
 
 ## Layer 6: The tetragonal and low-gonality loci in genus seven
 
@@ -811,7 +839,7 @@ API:
 
 For `n ≤ 14` prove that `M^{≤3}_{7,n}` has the CKgP and that every Chow class on `M_{7,n}` supported on `M^{≤3}_{7,n}` is tautological (Canning–Larson, Lemma 9.9; CLP, §5.1, p. 13). The intrinsic Chow ring of the stratum and the classes it supports on `M_{7,n}` are distinguished.
 
-*Needs:* §6.1; §§5.1–5.2; §0.1.
+*Needs:* §6.1; §§5.1–5.2; §§0.1, 0.6.
 
 **Checks.**
 
@@ -861,7 +889,7 @@ API:
 
 For `g ≥ 2`, suppose `x ∈ A^*(H^◇_{4,g,n})` lies in the image of `A^*((ℙE^∨)^n) → A^*(H^◇_{4,g,n})` along the map recording the images of the markings. Prove that `β′_{n*}x` is tautological on `M_{g,n} − M^{≤3}_{g,n}` (CLP, Lemma 5.1, p. 14, quoting Canning–Larson, Lemma 10.5). Route: expand in the hyperplane classes `z_i`, `ζ_i` and the Chern classes of `E`, `F`; push forward along the cover incidence and use Grothendieck–Riemann–Roch to express the results in kappa, psi and lambda classes.
 
-*Needs:* §§6.3, 0.1, 0.2; SchemeAndStackFoundations, gap:stack-rational-chow (proper pushforward and Grothendieck–Riemann–Roch on stacks).
+*Needs:* §§6.3, 0.1, 0.2, 0.6; SchemeAndStackFoundations, gap:stack-rational-chow (proper pushforward and Grothendieck–Riemann–Roch on stacks).
 
 **Checks.**
 
@@ -917,7 +945,7 @@ The half-spin representation is available algebraically (`TauCeti.spinPlus`). Th
 
 For a split nondegenerate quadratic space of dimension ten over a field of characteristic zero, fix one connected component `OG⁺(5, 10)` of its maximal isotropic Grassmannian. Prove that `[OG⁺(5, 10)/SO₁₀] ≅ BP` for the stabilizer `P` of a maximal isotropic subspace, a parabolic subgroup with Levi factor `GL₅` and unipotent radical isomorphic to `𝔾_a^{10}` (skew-symmetric `5 × 5` matrices); that `BGL₅ → BP` is an affine bundle; and hence that `BP` has the CKgP with `A^*(BP) = ℚ[c₁(U), …, c₅(U)]` for the tautological rank-five subbundle `U` (CLP, Lemma 5.8 and Remark 5.9, pp. 18–19). On `BP` the quadratic bundle `V` sits in the exact sequence `0 → U → V → U^∨ → 0`; the printed description `V = U ⊕ U^∨` holds after pullback to `BGL₅` but not `P`-equivariantly, and only the exact sequence is used.
 
-*Needs:* §5.2; `TauCeti.spinPlus` and `TauCeti.finrank_spinPlus` (for the identification of the component with the spinor variety); SchemeAndStackFoundations, gap:stack-rational-chow.
+*Needs:* §§5.2, 0.6; `TauCeti.spinPlus` and `TauCeti.finrank_spinPlus` (for the identification of the component with the spinor variety); SchemeAndStackFoundations, gap:stack-rational-chow; EquivariantIntersectionTheory §§2.2–2.3 (homotopy invariance for the affine bundle `BGL₅ → BP` and `A^*_{GL₅} = ℤ[c₁, …, c₅]`).
 
 **Checks.**
 
@@ -986,7 +1014,7 @@ API:
 
 For `n ≤ 4`, after §7.4, prove: the bundle `U_i` restricted to `M°_{7,n}` sits in `0 → U_i → Sym² f_*(ω(−σ_i)) → f_*(ω(−σ_i)^{⊗2}) → 0`; `c₁(L_i) = −ψ_i` for the descended line of §7.4; and `0 → ⊕_i L_i → E^∨ → E_n → 0` with `E` the Hodge bundle, of ranks `n, 7, 7 − n`. Hence all Chern classes of `U_i`, `L_i` and `E_n` restrict to tautological classes on `M°_{7,n}` (CLP, Lemmas 5.14–5.16, pp. 21–22). Route: the relative quadric-multiplication sequence; the canonical embedding identifies the point line with `σ_i^*ω^∨`; the rank-seven span is the dual Hodge bundle; Grothendieck–Riemann–Roch for the universal curve.
 
-*Needs:* §§7.4–7.5; §0.2; StableReductionPartII §5.1 (Hodge bundle); SchemeAndStackFoundations, gap:stack-rational-chow (Grothendieck–Riemann–Roch on stacks).
+*Needs:* §§7.4–7.5; §§0.2, 0.6; StableReductionPartII §5.1 (Hodge bundle); SchemeAndStackFoundations, gap:stack-rational-chow (Grothendieck–Riemann–Roch on stacks).
 
 **Checks.**
 
@@ -998,7 +1026,7 @@ For `n ≤ 4`, after §7.4, prove: the bundle `U_i` restricted to `M°_{7,n}` si
 
 For `0 ≤ n ≤ 4` prove that `M°_{7,n}` has the CKgP and `A^*(M°_{7,n}) = R^*(M°_{7,n})`; for `0 ≤ n ≤ 3` prove that `M_{7,n}` has the CKgP and `A^*(M_{7,n}) = R^*(M_{7,n})` (CLP, Theorem 1.10, p. 4; Lemmas 5.13 and 5.17, pp. 20–22). Route: for `1 ≤ n ≤ 4`, §§7.4–7.6 and §7.2 give generation by tautological classes on the open subset `I_n` of `G_n`. For `n = 0`, the forgetful map `π : M°_{7,1} → M°_7` is proper and surjective, so §5.2 gives the CKgP, and `π_*(ψ₁ · π^*α) = κ₀ α = 12α` (§0.2) shows that every class is tautological; this avoids the empty fibre product excluded in §7.2. For `n ≤ 3` combine with §§6.2 and 6.8 by localization along the gonality strata.
 
-*Needs:* §§7.2, 7.4–7.6; §§6.2, 6.8; §§5.2, 0.2.
+*Needs:* §§7.2, 7.4–7.6; §§6.2, 6.8; §§5.2, 0.2, 0.6.
 
 **Checks.**
 
@@ -1012,7 +1040,7 @@ At `n = 0` the Chow ring of `M°_7` is generated by `κ` and `λ` classes, being
 
 ### Dependencies
 
-Layers 0, 5 and 6; `TauCeti.spinPlus` and companions; AlgebraicModuliForArithmeticGeometry §§1.3 and 5.1; StableReductionPartII §§0.4 and 5.1; SchemeAndStackFoundations, gap:stack-rational-chow.
+Layers 0, 5 and 6; `TauCeti.spinPlus` and companions; AlgebraicModuliForArithmeticGeometry §§1.3 and 5.1; StableReductionPartII §§0.4 and 5.1; SchemeAndStackFoundations, gap:stack-rational-chow; EquivariantIntersectionTheory §§2.2–2.3.
 
 ## Layer 8: Hyperelliptic counts and the genus-four quadric sieve
 
@@ -1020,19 +1048,20 @@ The sieve keeps singular and nonreduced complete intersections until their inver
 
 ### 8.1 The hyperelliptic stack as a quotient of binary forms
 
-For `g ≥ 2`, over `ℤ[1/2]`, prove that the stack `H_g` of hyperelliptic curves of genus `g` is the quotient of the open subscheme of binary forms of degree `2g + 2` with nonvanishing discriminant by a connected linear algebraic group `G` with `#G(𝔽_q) = (q² − 1)(q² − q)`, and that `#H_g(𝔽_q) = q^{2g−1}` for odd `q` (Arsie–Vistoli, Corollary 4.7; BFP, §5, pp. 1332–1333). Route: Lang's theorem for the connected group `G` gives `#H_g(𝔽_q) = #P_g/#G(𝔽_q)`, where `P_g` is the set of squarefree polynomials of degree `2g + 2` or `2g + 1`; unique factorization as a squarefree part times the square of a monic polynomial gives `#P_g = (q − 1)(q^{2g+2} − q^{2g})`.
+For `g ≥ 2` the presentation of the stack `H_g` of smooth hyperelliptic curves of genus `g` as the quotient of the open subscheme `A_sm(1, 2g + 2)` of binary forms of degree `2g + 2` with nonvanishing discriminant by `G = GL₂/μ_{g+1}`, over a field of characteristic not dividing `4(g + 1)`, is EquivariantIntersectionTheory §3.3. Prove the same presentation over `ℤ[1/2]`, hence over every field of odd characteristic, including the characteristics dividing `g + 1`, agreeing with the supplier's where both apply (Arsie–Vistoli, Corollaries 4.2 and 4.7, which present the stack of smooth uniform cyclic double covers of Brauer–Severi curves with branch divisor of degree `2g + 2` as this quotient over `ℤ`, and Proposition 3.4 with Example 3.5(a), which identify that stack over `ℤ[1/2]` with the hyperelliptic locus of `M_g`); prove that `G` is smooth and connected over `ℤ`, isomorphic to `GL₂` for even `g` and to `𝔾_m × PGL₂` for odd `g` (Arsie–Vistoli, Proposition 4.4), so that `#G(𝔽_q) = (q² − 1)(q² − q)`; and prove `#H_g(𝔽_q) = q^{2g−1}` for odd `q` (BFP, §5, pp. 1332–1333). Route: Lang's theorem for the connected group `G` gives `#H_g(𝔽_q) = #P_g/#G(𝔽_q)`, where `P_g` is the set of squarefree polynomials of degree `2g + 2` or `2g + 1`; unique factorization as a squarefree part times the square of a monic polynomial gives `#P_g = (q − 1)(q^{2g+2} − q^{2g})`.
 
-*Needs:* StableReductionPartII §0.4; WeilConjectures, WC.1 (stack mass, quotients by connected groups via Lang's theorem).
+*Needs:* EquivariantIntersectionTheory §3.3 (the presentation away from the characteristics dividing `4(g + 1)`); StableReductionPartII §0.4; WeilConjectures, WC.1 (stack mass, quotients by connected groups via Lang's theorem).
 
 **Checks.**
 
 - `(q − 1)(q^{2g+2} − q^{2g}) / ((q² − 1)(q² − q)) = q^{2g−1}`: the factor `(q − 1)q^{2g}(q² − 1)` cancels against `(q² − 1)q(q − 1)`.
 - The count is a groupoid mass, not the number of isomorphism classes: every hyperelliptic curve has the hyperelliptic involution, so a curve with no further automorphisms has weight one half, and it and its quadratic twist are distinct classes.
 - The binary-form model requires `q` odd; characteristic two is §8.3.
+- At `g = 4`, `q = 5` the supplier's hypothesis fails (`5` divides `4(g + 1) = 20`, and `μ₅` is not reduced over `𝔽₅`), while §8.3 needs `#H₄(𝔽₅) = 5⁷ = 78125`. Here `G = GL₂/μ₅ ≅ GL₂` is still smooth and connected, `#G(𝔽₅) = 24 · 20 = 480`, and `#P₄ = 4 · (5^{10} − 5⁸) = 37500000 = 480 · 78125`. For odd `g` the group is `𝔾_m × PGL₂`, with `(q − 1) · q(q² − 1) = (q² − 1)(q² − q)` points.
 
 ### 8.2 The first hyperelliptic Frobenius moments
 
-For odd `q` and `g ≥ 2` let `a_C = q + 1 − #C(𝔽_q)`. Prove `Σ_{C ∈ [H_g(𝔽_q)]} a_C^k / #Aut(C)` equals `q^{2g−1}` for `k = 0`, `0` for odd `k`, and `q^{2g} − 1` for `k = 2` (BFP, Lemma 5.2, pp. 1332–1334). Route: twisting by a non-square exchanges `a_C` and `−a_C`, which kills odd moments; for `k = 2` write `a_C = −Σ_{x ∈ ℙ¹(𝔽_q)} χ(f(x))` with `χ` the quadratic character, separate the diagonal terms, which count forms not vanishing at `x`, from the off-diagonal terms, which vanish when summed over all forms of bounded degree by interpolation at two points and give `−#G(𝔽_q)` over squarefree forms by the squarefree–square factorization.
+For odd `q` and `g ≥ 2` let `a_C = q + 1 − #C(𝔽_q)`. Prove `Σ_{C ∈ [H_g(𝔽_q)]} a_C^k / #Aut(C)` equals `q^{2g−1}` for `k = 0`, `0` for odd `k`, and `q^{2g} − 1` for `k = 2` (BFP, Lemma 5.2, pp. 1333–1334). Route: twisting by a non-square exchanges `a_C` and `−a_C`, which kills odd moments; for `k = 2` write `a_C = −Σ_{x ∈ ℙ¹(𝔽_q)} χ(f(x))` with `χ` the quadratic character, separate the diagonal terms, which count forms not vanishing at `x`, from the off-diagonal terms, which vanish when summed over all forms of bounded degree by interpolation at two points and give `−#G(𝔽_q)` over squarefree forms by the squarefree–square factorization.
 
 *Needs:* §8.1; `quadraticChar`, `quadraticChar_sum_zero`.
 
@@ -1235,7 +1264,7 @@ For `n = 0` the three quadric contributions are `q⁸` from the cone and, from t
 
 ### Dependencies
 
-Layers 0 and 1; StableReductionPartII §0.4; SchemeAndStackFoundations Layers 0 and 3; WeilConjectures, WC.1; Mathlib `quadraticChar`, `quadraticChar_sum_zero` and `QuadraticForm`.
+Layers 0 and 1; EquivariantIntersectionTheory §3.3; StableReductionPartII §0.4; SchemeAndStackFoundations Layers 0 and 3; WeilConjectures, WC.1; Mathlib `quadraticChar`, `quadraticChar_sum_zero` and `QuadraticForm`.
 
 ## Layer 9: Genus-four point counts and odd vanishing through degree nine
 
@@ -1481,7 +1510,7 @@ Prove: if the intersection pairing `RH⁶(M̄_{g,n}) × RH^{2d−6}(M̄_{g,n}) �
 
 ### 10.7 The oriented weight-`k` boundary complex
 
-For a stable pair `(g, n)` and `k ≥ 0` let `C^j_k(g, n) = ⊕_{|E(Γ)|=j} (H^k(M̄_Γ) ⊗ det ℚ^{E(Γ)})^{Aut Γ}`, the sum over isomorphism classes of stable graphs `Γ` of type `(g, n)` with `j` edges, `M̄_Γ = ∏_v M̄_{g_v,n_v}`; so `C⁰_k(g, n) = H^k(M̄_{g,n})`, and `C^j_k(g, n) = 0` for `j > d_{g,n}`. Define `d_j : C^j_k → C^{j+1}_k` as the sum, over `(j + 1)`-edge graphs `Γ′` and their edges `e`, of the pullbacks along the clutchings `M̄_{Γ′} → M̄_{Γ′/e}` that glue the two flags of `e`, with the orientation `e ∧ (orientation of Γ′/e)`; write `α = d₀` and `β = d₁`. Prove that `d_{j+1} d_j = 0`, and that `C^•_k(g, n)` is the weight-`k` row of the `E₁` page of the weight spectral sequence for the compactly supported cohomology of `M_{g,n} ⊂ M̄_{g,n}`, which degenerates at `E₂`, so that `ker α = Gr^W_k H_c^k(M_{g,n})` and `ker β / im α = Gr^W_k H_c^{k+1}(M_{g,n})`: in the ℓ-adic realization by DeligneWeightsAndPurity §8.24, and in the Hodge realization by its analogue, gap:dm-stack-mixed-hodge (CLP-H11, §4.1, pp. 10–11; CLP, equations (8.1)–(8.2), pp. 28–29, for `k = 15`). The vertex factors are compact moduli, not open strata.
+For a stable pair `(g, n)` and `k ≥ 0` let `C^j_k(g, n) = ⊕_{|E(Γ)|=j} (H^k(M̄_Γ) ⊗ det ℚ^{E(Γ)})^{Aut Γ}`, the sum over isomorphism classes of stable graphs `Γ` of type `(g, n)` with `j` edges, `M̄_Γ = ∏_v M̄_{g_v,n_v}`; so `C⁰_k(g, n) = H^k(M̄_{g,n})`, and `C^j_k(g, n) = 0` for `j > d_{g,n}`. Define `d_j : C^j_k → C^{j+1}_k` as the sum, over `(j + 1)`-edge graphs `Γ′` and their edges `e`, of the pullbacks along the clutchings `M̄_{Γ′} → M̄_{Γ′/e}` that glue the two flags of `e`, with the orientation `e ∧ (orientation of Γ′/e)`; write `α = d₀` and `β = d₁`. Prove that `d_{j+1} d_j = 0`, and that `C^•_k(g, n)` is the weight-`k` row of the `E₁` page of the weight spectral sequence for the compactly supported cohomology of `M_{g,n} ⊂ M̄_{g,n}`, which degenerates at `E₂`, so that `ker α = Gr^W_k H_c^k(M_{g,n})` and `ker β / im α = Gr^W_k H_c^{k+1}(M_{g,n})`: in the ℓ-adic realization by DeligneWeightsAndPurity §8.24, and in the Hodge realization by its analogue, gap:dm-stack-mixed-hodge (CLP-H11, §4.1, pp. 10–11; CLP, equations (8.1)–(8.2), p. 28, for `k = 15`). The vertex factors are compact moduli, not open strata.
 
 *Needs:* DeligneWeightsAndPurity §8.24; MixedHodgeModulesAndIrregularHodgeTheory, gap:dm-stack-mixed-hodge; StableReduction, Layer 1 (stable graphs); StableReductionPartII §§3.1–3.2 and 3.10 (clutching and the boundary normalization with graph automorphisms); §0.4.
 
@@ -1614,13 +1643,14 @@ Prove `H¹³(M̄_{2,12})^ss ≅ (L S₁₂)^{⊕264}`, by evaluating the Getzler
 
 ### 11.7 The rank of the 891-graph restriction matrix
 
-Let `R` be the `891` two-edge `ω`-decorated graphs of CLP Figure 2 for `H¹⁵(M̄_{2,12})`, in families of sizes `132, 11, 132, 220, 66, 66, 132, 66, 66`, and consider the matrix of selected Künneth components of their pullbacks to boundary divisors. Prove that it has rank `825` and that its relations are spanned by the `66` combinations `M_{ij} = R₁(ij) + (1/24)R₂(ij) + R₃[i, j] + R₃[j, i] − R₄(ij) + (1/12)R₅(ij)`, indexed by unordered pairs `{i, j}` of markings (CLP, Figure 2, p. 25, and proof of Lemma 7.3, p. 27). These are relations among the selected restrictions, not yet among the global classes. Route: family `A₁` is alone in the first column; families `A₂`–`A₄` have independent entries in the second column by §11.4; the remaining blocks are upper triangular; the relations follow from the tautological relations in `H⁴(M̄_{1,3})`, `H²(M̄_{1,2})` and `H²(M̄_{1,1})`, with the excess-intersection signs.
+Let `R` be the `891` two-edge `ω`-decorated graphs of CLP Figure 2 for `H¹⁵(M̄_{2,12})`, in families of sizes `132, 11, 132, 220, 66, 66, 132, 66, 66`, and consider the matrix of selected Künneth components of their pullbacks to boundary divisors. Prove that it has rank `825` and that its relations are spanned by the `66` combinations `M_{ij} = R₁(ij) + (1/24)R₂(ij) + R₃[i, j] + R₃[j, i] − R₄(ij) + (1/12)R₅(ij)`, indexed by unordered pairs `{i, j}` of markings (CLP, Figure 2, p. 25, and proof of Lemma 7.3, pp. 26–27). These are relations among the selected restrictions, not yet among the global classes. Route: family `A₁` is alone in the first column; families `A₂`–`A₄` have independent entries in the second column by §11.4, so the `495` rows of `A₁`–`A₄` are independent of each other and of the rest; the last four families (`66, 132, 66, 66` rows) are block upper triangular, so the rank is at least `495 + 330 = 825`. The `66` relations hold by the tautological relations in `H⁴(M̄_{1,3})`, `H²(M̄_{1,2})` and `H²(M̄_{1,1})`, with the excess-intersection signs, and are linearly independent, the row `R₅(ij)` occurring in `M_{ij}` alone; so the rank is at most `891 − 66 = 825`.
 
 *Needs:* §§11.2, 11.4–11.6, 0.1, 3.3.
 
 **Checks.**
 
 - `132 + 11 + 132 + 220 + 66 + 66 + 132 + 66 + 66 = 891` and `891 − 825 = 66`.
+- The lower bound uses only the first four and the last four families: `132 + 11 + 132 + 220 = 495` and `66 + 132 + 66 + 66 = 330`, sum `825`. Treating the fifth family (`66` rows) as triangular too would give rank `891`, contradicting the `66` relations.
 - The two-edge pullbacks contain negative psi decorations from the self-intersection of the boundary; omitting them changes the coefficients `1/24` and `1/12`.
 
 ### 11.8 The representation spanned by the relation symbols
@@ -1728,7 +1758,7 @@ For every `n`, with `d = 3 + n`, prove that the STE generated by `H¹¹(M̄_{1,1
 
 ### 12.6 The oriented weight-fifteen boundary complex
 
-For a stable pair `(g, n)` let `C^•_{15}(g, n)` be the weight-fifteen row of the oriented boundary complex of §10.7, so that `C⁰_{15}(g, n) = H¹⁵(M̄_{g,n})` and `C^j_{15}(g, n) = ⊕_{|E(Γ)|=j} (H¹⁵(M̄_Γ) ⊗ det ℚ^{E(Γ)})^{Aut Γ}`, with `α = d₀` and `β = d₁` (CLP, equations (8.1)–(8.2), pp. 28–29). Prove that `α` and `β` preserve Hodge types, so that the `(15, 0)` parts form a subcomplex, and that `ker α = Gr^W_{15} H_c^{15}(M_{g,n})`. The vertex factors are compact moduli, not open strata.
+For a stable pair `(g, n)` let `C^•_{15}(g, n)` be the weight-fifteen row of the oriented boundary complex of §10.7, so that `C⁰_{15}(g, n) = H¹⁵(M̄_{g,n})` and `C^j_{15}(g, n) = ⊕_{|E(Γ)|=j} (H¹⁵(M̄_Γ) ⊗ det ℚ^{E(Γ)})^{Aut Γ}`, with `α = d₀` and `β = d₁` (CLP, equations (8.1)–(8.2), p. 28). Prove that `α` and `β` preserve Hodge types, so that the `(15, 0)` parts form a subcomplex, and that `ker α = Gr^W_{15} H_c^{15}(M_{g,n})`. The vertex factors are compact moduli, not open strata.
 
 *Needs:* §10.7; MixedHodgeModulesAndIrregularHodgeTheory, gap:dm-stack-mixed-hodge; §1.3.
 
@@ -1853,6 +1883,7 @@ No roadmap cites this one as a supplier. Its natural consumers are roadmaps on t
 - **[Madsen–Weiss]** Ib Madsen and Michael Weiss, *The stable moduli space of Riemann surfaces: Mumford's conjecture*, Ann. of Math. 165 (2007); arXiv:math/0212321.
 - **[Looijenga]** Eduard Looijenga, *Stable cohomology of the mapping class group with symplectic coefficients and of the universal Abel–Jacobi map*, J. Algebraic Geom. 5 (1996); arXiv:alg-geom/9401005.
 - **[Arsie–Vistoli]** Alessandro Arsie and Angelo Vistoli, *Stacks of cyclic covers of projective spaces*, Compositio Math. 140 (2004), 647–666; arXiv:math/0301008.
+- **[Kresch]** Andrew Kresch, *Cycle groups for Artin stacks*, Invent. Math. 138 (1999), 495–536; arXiv:math/9810166, version 1, whose numbering and pages are cited.
 - **[Bergström]** Jonas Bergström, *Equivariant counts of points of the moduli spaces of pointed hyperelliptic curves*, Doc. Math. 14 (2009), 259–296; arXiv:math/0611813.
 - **[Bergström, genus three]** Jonas Bergström, *Cohomology of moduli spaces of curves of genus three via point counts*, J. reine angew. Math. 622 (2008), 155–187; arXiv:math/0611815.
 - **[Mukai]** Shigeru Mukai, *Curves and symmetric spaces, I*, Amer. J. Math. 117 (1995), 1627–1644; cited by its genus-seven theorem as recalled in CLP §5.3.
