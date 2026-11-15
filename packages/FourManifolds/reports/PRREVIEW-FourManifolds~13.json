@@ -1,0 +1,30 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FourManifolds~13",
+  "head": "4cc477c136adfc356d66e24aa2d8d8a0cbe9acba",
+  "pr": 936,
+  "folder": "FourManifolds",
+  "date": "2026-11-15",
+  "findings": 20,
+  "blocking": 12,
+  "notes": "Full read-only review; reconciled all 11 previous findings; adversarial tests cover the 15 seeded targets and headlines. Five sampled source checks had readable text, three depended on unavailable Gompf–Stipsicz, seven lacked exact locators. Worker gate and targeted build pass; independent Lean elaboration and 12 declaration signature checks pass; six one-tactic probes do not close headlines. Dependency check: 244 roadmaps, 2210 edges, 0 problems. Source and ownership limitations recorded in the report.",
+  "text": "cf9136d5bbf65ff6",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P1",
+    "title": "The missing TOP prerequisites are not declared supplier contracts",
+    "where": "GeometricTopology Part II and packages/FourManifolds/design/plan.json",
+    "raised": "PRREVIEW-FourManifolds~13"
+   },
+   {
+    "id": "D02",
+    "severity": "P2",
+    "title": "Removing a supplier name did not transfer its existing constructions",
+    "where": "HomotopySpheres and an eligible earlier owner",
+    "raised": "PRREVIEW-FourManifolds~13"
+   }
+  ]
+ }
+}

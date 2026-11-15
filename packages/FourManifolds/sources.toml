@@ -1,0 +1,350 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FourManifolds"
+
+[[source]]
+id = "freedmanquinn"
+authors = "Michael H. Freedman; Frank Quinn"
+title = "Topology of 4-Manifolds"
+year = 1990
+locator_scheme = "theorem"
+locator = "Theorems 8.18, 11.5; §10.1 Classification Theorem"
+url = "https://archive.mpim-bonn.mpg.de/4789/2/FreedmanQuinn-TopologyOf4Manifolds-Reformatted2013.pdf"
+fetched_from = "https://archive.mpim-bonn.mpg.de/id/eprint/4789/2/FreedmanQuinn-TopologyOf4Manifolds-Reformatted2013.pdf"
+fetched_at = "2026-11-15T03:22:54Z"
+sha256 = "48a6d8d2cd7181f71fbff0c3ed52ec17a17d86238963cb7a3b47bf4fa0648599"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["§§3.5–3.8"]
+
+[[source]]
+id = "powellrayteichner"
+authors = "Mark Powell, Arunima Ray, Peter Teichner"
+title = "The 4-dimensional disc embedding theorem and dual spheres"
+year = 2020
+venue = "Selecta Math. (N.S.) 31 (2025), no. 4, Paper No. 80, 25 pp"
+arxiv = "2006.05209v3"
+locator_scheme = "section"
+locator = "Sections cited in the roadmap"
+url = "https://arxiv.org/abs/2006.05209v3"
+fetched_from = "https://arxiv.org/pdf/2006.05209v3"
+fetched_at = "2026-11-15T03:23:22Z"
+sha256 = "a0adb2d079426690a37d696c17f26a0b205dbd4991c020e18db2038b91bb0917"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["FourManifolds references"]
+
+[[source]]
+id = "krushkalquinn"
+authors = "Vyacheslav S Krushkal, Frank Quinn"
+title = "Subexponential groups in 4-manifold topology"
+year = 2000
+venue = "Geom. Topol. 4 (2000) 407-430"
+doi = "10.2140/gt.2000.4.407"
+arxiv = "math/0001063v3"
+locator_scheme = "section"
+locator = "Sections cited in the roadmap"
+url = "https://arxiv.org/abs/math/0001063v3"
+fetched_from = "https://arxiv.org/pdf/math/0001063v3"
+fetched_at = "2026-11-15T03:23:28Z"
+sha256 = "bb3eb6baf734a6b7948b0ad0a0947727063ee46afbcbc008f944d0d8d0d7ab89"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["FourManifolds references"]
+
+[[source]]
+id = "feehanleness"
+authors = "Paul M. N. Feehan, Thomas G. Leness"
+title = "Gluing in geometric analysis via maps of Banach manifolds with corners and applications to gauge theory"
+year = 2019
+arxiv = "1910.14580v1"
+locator_scheme = "section"
+locator = "Sections cited in the roadmap"
+url = "https://arxiv.org/abs/1910.14580v1"
+fetched_from = "https://arxiv.org/pdf/1910.14580v1"
+fetched_at = "2026-11-15T03:23:35Z"
+sha256 = "1c264de134e141ebb37c9f05fe25de5c87669cfcffaf73800001c8916062f805"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["FourManifolds references"]
+
+[[source]]
+id = "bastl2024"
+authors = "Stefan Bastl, Rhuaidi Burke, Rima Chatterjee, Subhankar Dey, Alison Durst, Stefan Friedl, Daniel Galvin, Alejandro García Rivas, Tobias Hirsch, Cara Hobohm, Chun-Sheng Hsueh, Marc Kegel, Frieda Kern, Shun Ming Samuel Lee, Clara Löh, Naageswaran Manikandan, Léo Mousseau, Lars Munser, Mark Pencovitch, Patrick Perras, Mark Powell, José Pedro Quintanilha, Lisa Schambeck, David Suchodoll, Martin Tancer, Annika Thiele, Paula Truöl, Matthias Uschold, Simona Veselá, Melvin Weiß, Magdalina von Wunsch-Rolshoven"
+title = "Algorithms in 4-manifold topology"
+year = 2024
+arxiv = "2411.08775v2"
+locator_scheme = "section"
+locator = "Sections cited in the roadmap"
+url = "https://arxiv.org/abs/2411.08775v2"
+fetched_from = "https://arxiv.org/pdf/2411.08775v2"
+fetched_at = "2026-11-15T03:23:39Z"
+sha256 = "4bcc533b2d4963c03f9e8d8ff28adf80c9696ba03749747defe62a0074f9883d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["FourManifolds references"]
+
+[[source]]
+id = "gabai2023"
+authors = "David Gabai, David T. Gay, Daniel Hartman, Vyacheslav Krushkal, Mark Powell"
+title = "Pseudo-isotopies of simply connected 4-manifolds"
+year = 2023
+venue = "Forum Math. Pi 14 (2026), Paper No. e9"
+arxiv = "2311.11196v2"
+locator_scheme = "section"
+locator = "Sections cited in the roadmap"
+url = "https://arxiv.org/abs/2311.11196v2"
+fetched_from = "https://arxiv.org/pdf/2311.11196v2"
+fetched_at = "2026-11-15T03:23:45Z"
+sha256 = "55b72bee911c167306f3256ac1ee4b73ea528690984f8ee0b03c65268742cabf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["FourManifolds references"]
+
+[[source]]
+id = "tancer"
+authors = "Martin Tancer"
+title = "Simpler algorithmically unrecognizable 4-manifolds"
+year = 2023
+arxiv = "2310.07421v2"
+locator_scheme = "section"
+locator = "Sections cited in the roadmap"
+url = "https://arxiv.org/abs/2310.07421v2"
+fetched_from = "https://arxiv.org/pdf/2310.07421v2"
+fetched_at = "2026-11-15T03:23:52Z"
+sha256 = "1e4918c0de825211fbd54c206866e98f3e5d932691a0907795ad99efd279aa71"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["FourManifolds references"]
+
+[[source]]
+id = "hanner1951"
+authors = "Hanner"
+title = "Some theorems on absolute neighborhood retracts"
+year = 1951
+venue = "Arkiv för Matematik 1"
+doi = "10.1007/bf02591376"
+locator_scheme = "section"
+locator = "Sections cited in the roadmap"
+url = "https://doi.org/10.1007/bf02591376"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["FourManifolds references"]
+
+[[source]]
+id = "normalbundles"
+authors = "R. C. Kirby, L. C. Siebenmann"
+title = "Normal bundles for codimension 2 locally flat imbeddings"
+year = 1975
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/bfb0066125"
+locator_scheme = "section"
+locator = "Sections cited in the roadmap"
+url = "https://doi.org/10.1007/bfb0066125"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["FourManifolds references"]
+
+[[source]]
+id = "bassHellerSwan"
+authors = "Hyman Bass, Alex Heller, Richard G. Swan"
+title = "The Whitehead group of a polynomial extension"
+year = 1964
+venue = "Publications Mathématiques de l'IHÉS 22"
+doi = "10.1007/bf02684690"
+locator_scheme = "section"
+locator = "Sections cited in the roadmap"
+url = "https://doi.org/10.1007/bf02684690"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["FourManifolds references"]
+
+[[source]]
+id = "lickorish"
+authors = "Lickorish"
+title = "An Introduction to Knot Theory"
+year = 1997
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-0691-0"
+locator_scheme = "section"
+locator = "Sections cited in the roadmap"
+url = "https://doi.org/10.1007/978-1-4612-0691-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["FourManifolds references"]
+
+[[source]]
+id = "moise"
+authors = "Moise"
+title = "Geometric Topology in Dimensions 2 and 3"
+year = 1977
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-9906-6"
+locator_scheme = "section"
+locator = "Sections cited in the roadmap"
+url = "https://doi.org/10.1007/978-1-4612-9906-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["FourManifolds references"]
+
+[[source]]
+id = "browder1972"
+authors = "Browder"
+title = "Surgery on Simply-Connected Manifolds"
+year = 1972
+doi = "10.1007/978-3-642-50020-6"
+locator_scheme = "section"
+locator = "Sections cited in the roadmap"
+url = "https://doi.org/10.1007/978-3-642-50020-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["FourManifolds references"]
+
+[[source]]
+id = "kirby1989"
+authors = "Kirby"
+title = "The Topology of 4-Manifolds"
+year = 1989
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/bfb0089031"
+locator_scheme = "section"
+locator = "Sections cited in the roadmap"
+url = "https://doi.org/10.1007/bfb0089031"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["FourManifolds references"]
+
+[[source]]
+id = "kirbymelvin"
+authors = "Rob Kirby, Paul Melvin"
+title = "Canonical framings for 3-manifolds"
+year = 1999
+arxiv = "math/9903056v1"
+locator_scheme = "section"
+locator = "Sections cited in the roadmap"
+url = "https://arxiv.org/abs/math/9903056v1"
+fetched_from = "https://arxiv.org/pdf/math/9903056v1"
+fetched_at = "2026-11-15T03:25:38Z"
+sha256 = "6c7c7eba16ad9cf873db63bfb16ce7b12917028d95638466e0fe76e87b76c9de"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["FourManifolds references"]
+
+[[source]]
+id = "gompfnotes2018"
+authors = "George Torres"
+title = "Four Manifold Topology: notes on Bob Gompf’s M392C course"
+year = 2018
+locator_scheme = "section"
+locator = "§1.1, Proposition 1.2, Theorem 1.4; §3.6, Theorem 3.38"
+url = "https://web.ma.utexas.edu/users/gdavtor/notes/4manifolds.pdf"
+fetched_from = "https://web.ma.utexas.edu/users/gdavtor/notes/4manifolds.pdf"
+fetched_at = "2026-11-15T03:31:56Z"
+sha256 = "5f569745adb0e10cacdb0a88619b5404e67342e14243e274f8cb5e77df8fc18b"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["§§1.1, 1.3"]
+
+[[source]]
+id = "hatcher2002"
+authors = "Allen Hatcher"
+title = "Algebraic Topology"
+year = 2002
+locator_scheme = "section"
+locator = "Theorem 3.43; Example 4.52; §4.B; Proposition 4C.3"
+url = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_from = "https://pi.math.cornell.edu/~hatcher/AT/AT.pdf"
+fetched_at = "2026-11-15T03:32:22Z"
+sha256 = "bebb3032bf9021b956da3bd070eb6c67dc662cf849be9cdf6679f677560e5618"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["§§1.5, 2.2"]
+
+[[source]]
+id = "salamon1999"
+authors = "Dietmar Salamon"
+title = "Spin Geometry and Seiberg-Witten Invariants"
+year = 1999
+locator_scheme = "section"
+locator = "§5.2, Theorem 5.8, pp. 157–160"
+url = "https://pagine.dm.unipi.it/~a019210/Salamon_Spin%20geometry%20and%20SW%20invariants.pdf"
+fetched_from = "https://pagine.dm.unipi.it/~a019210/Salamon_Spin%20geometry%20and%20SW%20invariants.pdf"
+fetched_at = "2026-11-15T03:32:30Z"
+sha256 = "14c6991612bd80a45657045a98b5c093f71380b2c859f75f84ce41e6fed93c36"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["§4.1"]
+
+[[source]]
+id = "hamilton2008"
+authors = "Mark Hamilton"
+title = "On symplectic 4-manifolds and contact 5-manifolds"
+year = 2008
+locator_scheme = "section"
+locator = "§II.3.4–§II.3.5, pp. 16–17"
+url = "https://edoc.ub.uni-muenchen.de/8779/1/Hamilton_Mark.pdf"
+fetched_from = "https://edoc.ub.uni-muenchen.de/8779/1/Hamilton_Mark.pdf"
+fetched_at = "2026-11-15T03:32:34Z"
+sha256 = "6b999cb42112a1fe50fb5c566dbce1d9fdb24c0c1f9493f16ccf043f6ea30746"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["§7.2"]
+
+[[source]]
+id = "salepci2014"
+authors = "Nermin Salepci"
+title = "Lefschetz Fibrations and real Lefschetz fibrations"
+year = 2014
+locator_scheme = "section"
+locator = "§1.4.1, Theorem 1.5, p. IV–7"
+url = "https://proceedings.centre-mersenne.org/item/10.5802/wbln.5.pdf"
+fetched_from = "https://proceedings.centre-mersenne.org/item/10.5802/wbln.5.pdf"
+fetched_at = "2026-11-15T03:32:35Z"
+sha256 = "3b15f7d8746d216d20e62836b00d2e07902d954024136d1037b57511844e3702"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["§7.2"]
+
+[[source]]
+id = "dolgachev2014"
+authors = "Igor V. Dolgachev"
+title = "A brief introduction to Enriques surfaces"
+year = 2014
+arxiv = "1412.7744v2"
+locator_scheme = "section"
+locator = "§3, pp. 8–9"
+url = "https://arxiv.org/abs/1412.7744v2"
+fetched_from = "https://arxiv.org/pdf/1412.7744v2"
+fetched_at = "2026-11-15T03:32:41Z"
+sha256 = "cc7c8c8c1655dc62adae515d0680d6d824d24e54573c3b6ebefd1d317f5ca020"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["§7.3"]
