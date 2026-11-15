@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComplexMultiplicationAndExplicitReciprocity~3",
+  "head": "c9fe5ac5fa1c6e3d4ded9e4d8101f0585132bdd2",
+  "pr": 1254,
+  "folder": "ComplexMultiplicationAndExplicitReciprocity",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "incremental re-review of 10 changed lines since 615f9de. Gate FAILS (build=3): Suggested.lean lines 61 and 63 use TauCeti.NumberFieldArithmetic.principalIdealAway, absent at the branch's Tau Ceti pin a91d3aa and present at main's pin 2fd255d (R01, P1; repair: merge main, which merges cleanly). Previous R01 (stale comp_rank name) repaired and the A3.1 citation resolved at the supplier's open head; previous R02 (higher-genus function-field Checks) not repaired and raised again (P3). Title and description checked against the head: two stale phrases (R03, P3). Elaboration run: 2 errors, 2 sorry warnings. Depcheck: 245 roadmaps, 2244 edges, 0 problems. Adversarial rows computed for the changed definition, the dependent headline, the changed citation and the R02 target. Source independence checked on changed passages only. The typing of the changed statement at main's pin was checked by reading, not by elaboration.",
+  "text": "e95a107bbe780f9e"
+ }
+}
