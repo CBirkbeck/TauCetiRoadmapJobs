@@ -29,9 +29,7 @@ measures (10.2).
 
 The README is definitive; `Suggested.lean` is the roadmap's acceptance test and states the
 headline theorems named in this document, each with `sorry`, with the simple definitions they
-need. The face theorem for a general periodic graph (5.3) is stated there through its general
-form 4.6 and its lozenge instance 5.4, since its own statement needs the dimer specification of
-5.2 as a constructed family of kernels. Suggested homes: `TauCeti/Combinatorics/Tiling/Lozenge/`
+need. Suggested homes: `TauCeti/Combinatorics/Tiling/Lozenge/`
 (Layers 1–3, 7–8), `TauCeti/Probability/Gibbs/` (Layers 4–5), `TauCeti/Probability/Dimer/`
 (Layers 6, 9, 10).
 
@@ -161,10 +159,14 @@ All conventions below are fixed.
 - **Regions and tilings.** A region is any set `R` of faces, finite or infinite. A tiling of `R`
   is a set `M` of edges each lying in two faces of `R`, such that every face of `R` contains
   exactly one edge of `M` (`IsTiling R M`, for `R : Set TriFace` and `M : Set TriEdge`); a free
-  tiling drops the first condition and only asks `M` to consist of edges of faces of `R`. A plane
-  tiling is a tiling of the set of all faces, `IsTiling Set.univ M`; `𝔈(𝕋)` is the set of plane
-  tilings and `𝔈(R)` the set of tilings of `R`. A finite region is written `R : Finset TriFace`
-  where matrices indexed by its faces are formed.
+  tiling drops the first condition and only asks `M` to consist of edges of faces of `R`. The
+  lozenges of a free tiling may overlap in a face outside `R` (1.4, Checks). For a region
+  `Faces(V)` of 1.3 they cannot: a face outside it has a vertex outside `V` and hence at most one
+  edge in `E(R)`, so the lozenges are disjoint, each has one or two faces in `R`, and the free
+  tilings are Aggarwal's, tilings of `R` whose lozenges may each stick out of `R` by a single face
+  (aggarwal2023 lines 380–383). A plane tiling is a tiling of the set of all faces,
+  `IsTiling Set.univ M`; `𝔈(𝕋)` is the set of plane tilings and `𝔈(R)` the set of tilings of `R`.
+  A finite region is written `R : Finset TriFace` where matrices indexed by its faces are formed.
 - **Configurations.** A configuration is a function `ω : TriEdge → Bool`, identified with its edge
   set `{e | ω e = true}`; it carries the product topology and the product σ-algebra of the
   discrete `Bool`, and measures on tilings are measures on `TriEdge → Bool`. The cylinder of `ω`
@@ -253,6 +255,12 @@ All conventions below are fixed.
 - **Complex slope and incomplete beta kernel.** For `(s,t) ∈ 𝒯` put
   `ξ(s,t) = e^{πis} sin(πt) / sin(π(1−s−t))`, the apex of the triangle on `[0,1]` with angles
   `πs` at `0` and `πt` at `1`; `(s,t) ↦ ξ` is a bijection `𝒯 → ℍ` (aggarwal2023 lines 505–507).
+  The sine weights of `(s,t) ∈ 𝒯` are the type weights `w(s,t) = (sin πs, sin πt, sin π(1−s−t))`.
+  By the law of sines they are `sin π(1−s−t)` times the sides `|1−ξ|`, `|ξ|`, `1` of the triangle
+  `0, 1, ξ`, opposite its angles `πs`, `πt`, `π(1−s−t)`; so they are positive and liquid (strict
+  triangle inequalities), and the angle `θ_k` of 9.1 opposite `w_k` is `πs`, `πt`, `π(1−s−t)` for
+  `k = 1, 2, 3`. Witness: `w(1/3,1/3) = (√3/2, √3/2, √3/2)`, and `w(0.3,0.45) ≈ (0.8090, 0.9877,
+  0.7071)` with `w₂/w₃ ≈ 1.3968 = |ξ|` and `w₁/w₃ ≈ 1.1441 = |1−ξ|`.
   `X(M) = {v : (v,1) ∈ M}` is the set of type-1 positions (aggarwal2023 Definition 1.2, lines
   463–464: the centre of the type-1 lozenge with inner edge `(v,1)` is `v + (1/2, 0)`). For
   `v_j = (x_j,y_j)`, `K_ξ(v₁;v₂) = (2πi)⁻¹ ∫_{ξ̄}^{ξ} (1−z)^{y₁−y₂} z^{x₂−x₁−1} dz` along a path in
@@ -387,7 +395,11 @@ At the Mathlib revision pinned in `lake-manifest.json`.
   the non-integrable case is vacuous); `intervalIntegral`, `Complex.log`, `Complex.arg`.
 - The carriers of the statements of `Suggested.lean`: `SimpleGraph.fromRel`
   (`Mathlib/Combinatorics/SimpleGraph/Basic.lean`, line 135: `u ~ v` iff `u ≠ v` and the relation
-  holds in one of the two orders), `SimpleGraph.toSubgraph`
+  holds in one of the two orders), `SimpleGraph.edgeSet`; the automorphisms `G ≃g G`, a group by
+  the instance on relation isomorphisms (`Mathlib/Algebra/Order/Group/End.lean`, line 73: the
+  product `f * g` is `g` followed by `f`), and `SimpleGraph.Iso.mapEdgeSet`
+  (`Mathlib/Combinatorics/SimpleGraph/Maps.lean`, line 669: the bijection of edge sets induced by an
+  isomorphism); `SimpleGraph.toSubgraph`
   (`Mathlib/Combinatorics/SimpleGraph/Subgraph.lean`, line 574: a spanning subgraph from a graph
   below `G`), `SimpleGraph.Walk.darts` (`Mathlib/Combinatorics/SimpleGraph/Walk/Basic.lean`, line
   123) and `SimpleGraph.Reachable`; `Set.BijOn` (`Mathlib/Data/Set/Operations.lean`, line 318);
@@ -585,7 +597,8 @@ API:
 ### 1.4 Tilings
 
 Define `IsTiling R M`, free tilings and plane tilings (`IsTiling Set.univ M`) as in the
-conventions (aggarwal2023 lines 342–364 and 380–383; gorin2021 lines 690–702). *Needs:* 1.3.
+conventions (aggarwal2023 lines 342–364, and lines 380–383 for free tilings of the regions
+`Faces(V)`; gorin2021 lines 690–702). *Needs:* 1.3.
 
 API:
 
@@ -602,6 +615,11 @@ API:
 - `{W(0)}` has no tiling and three free tilings, one for each edge of `W(0)`.
 - `M₁`, `M₂`, `M₃` (all edges of one direction) are plane tilings; `M₁ ∪ M₃` is not, since `W(0)`
   contains two of its edges.
+- `R = {W(0), W(−e₁)}` and `M = {(0,3), (0,2)}`: `W(0)` contains only `(0,3)` and `W(−e₁)` only
+  `(0,2)`, so `M` is a free tiling, but its lozenges `W(0) ∪ B(0)` and `W(−e₁) ∪ B(0)` share the
+  face `B(0) ∉ R`. `R` is not of the form `Faces(V)`, since the three vertices of `B(0)` lie in
+  `V(R)`; its height function normalised by `H(0) = 0` is `0` at `0`, `e₁`, `e₃`, `−e₁` and `1` at
+  `e₂`, as 2.6 asserts for the simply connected wedge `R`.
 
 ### 1.5 Tilings are perfect matchings
 
@@ -792,7 +810,8 @@ A height function on `R` is `H : V(R) → ℤ` with `H(v) − H(u) ∈ {0,1}` fo
 oriented edge `u → v` of `E(R)`. For simply connected `R`, `v₀ ∈ V(R)` and `m ∈ ℤ`, free tilings of
 `R` correspond bijectively to height functions on `R` with `H(v₀) = m` (the increments are those of
 the conventions on `E(R)`), and tilings correspond to the height functions whose increment along
-every boundary edge is neutral (aggarwal2023 lines 380–401; gorin2021 lines 511–514). Restricting
+every boundary edge is neutral (aggarwal2023 lines 380–401, for the regions `Faces(V)`; gorin2021
+lines 511–514). Restricting
 a plane tiling commutes with restricting its height function. *Needs:* 1.4, 2.1.
 
 **Checks.**
@@ -1216,7 +1235,7 @@ factor first, so this is `γ_Δ γ_Λ = γ_Δ` in the left-to-right notation for
 `∫ γ_Δ(dω'|ω) γ_Λ(C|ω') = γ_Δ(C|ω)`. A measure μ on `X` satisfies `Specification.IsGibbs γ μ` when
 `μ.bind γ_Λ = μ` for every finite `Λ`, which is `Kernel.Invariant` of `γ_Λ` read as a kernel for
 `𝓕_X`; a Gibbs measure is a probability measure with this property (sheffield2005 Section 1.1.2,
-lines 303–342). The specification is `Γ`-equivariant (`Specification.IsEquivariant`) when
+lines 303–342). The specification is `Γ`-equivariant when
 `γ_{γ'Λ}(γ'C|γ'ω) = γ_Λ(C|ω)`, stated as: the push-forward of `γ_Λ(·|ω)` by `γ'` is
 `γ_{γ'Λ}(·|γ'ω)`, with `γ'Λ` the image `Finset`; it is quasilocal when `ω ↦ γ_Λ(C|ω)` is continuous
 on `X` for every cylinder event `C`. Write `Specification.gibbsInvariant γ` for the invariant Gibbs
@@ -1236,8 +1255,8 @@ API:
   `IsProper.setLIntegral_eq_comp`, `∫_B γ_Λ(C|·) dμ = (μ.bind γ_Λ)(C ∩ B)` for `B ∈ 𝓕_{Λᶜ,X}`, and
   `B = X` gives the converse.
 - The Gibbs measures `𝒢(γ)` form a convex set.
-- For `Γ`-equivariant `γ`, `𝒢(γ)` is `Γ`-invariant; write `𝒢_inv(γ)` for its invariant elements
-  and `𝔓_inv(X)` for the invariant probability measures.
+- For `Γ`-equivariant `γ`, `𝒢(γ)` is `Γ`-invariant. For every `γ`, write `𝒢_inv(γ)` for the
+  invariant elements of `𝒢(γ)` and `𝔓_inv(X)` for the invariant probability measures.
 
 **Checks.**
 
@@ -1271,9 +1290,10 @@ API:
 ### 4.6 The face property and closedness
 
 (a) If μ is Gibbs for `γ` and `ν` is a probability measure with `ν = f·μ` for a `𝓣`-measurable
-`f ≥ 0`, then `ν` is Gibbs. (b) If `γ` is `Γ`-equivariant, `𝒢_inv(γ)` is a face of `𝔓_inv(X)`:
-if a convex combination with positive weights of invariant probability measures is Gibbs, both
-are Gibbs; in Lean, `IsExtreme ℝ≥0∞` of `Specification.gibbsInvariant γ` in Tau Ceti's
+`f ≥ 0`, then `ν` is Gibbs. (b) For every specification `γ`, equivariant or not, `𝒢_inv(γ)` is a
+face of `𝔓_inv(X)`: if a convex combination with positive weights of invariant probability
+measures is Gibbs, both are Gibbs; in Lean, `IsExtreme ℝ≥0∞` of `Specification.gibbsInvariant γ`
+in Tau Ceti's
 `TauCeti.MeasureTheory.invariantMeasuresOfMeasureUnivEq Γ X 1` (`gibbsInvariant_isExtreme`).
 Hence an element of `𝒢_inv(γ)` is extreme in `𝒢_inv(γ)` iff it is extreme in `𝔓_inv(X)` iff it is
 ergodic, `ErgodicSMul Γ X μ` (`gibbsInvariant_extreme_iff_ergodic`), and conditioning an element of
@@ -1288,7 +1308,10 @@ proof, lines 4561–4582; kos2006 lines 195–202; kenyon2009 Section 5.1, lines
 invariant, so each of their level sets is almost equal to an exactly invariant event (Tau Ceti
 `TauCeti.MeasureTheory.exists_smul_invariant_ae_eq`), hence almost surely equal to a tail event by
 4.2; the densities therefore have tail-measurable versions, and (a) applies; the ergodicity
-statement is Tau Ceti's `ErgodicSMul.iff_mem_extremePoints`. *Needs:* 4.2, 4.4, 4.5; Tau Ceti
+statement is Tau Ceti's `ErgodicSMul.iff_mem_extremePoints`. No step uses equivariance of `γ`,
+only the invariance of the two measures and the properness of the action (sheffield2005 works with
+translation-invariant potentials, line 354); equivariance is what makes `𝒢(γ)` itself
+`Γ`-invariant (4.5). *Needs:* 4.2, 4.4, 4.5; Tau Ceti
 `TauCeti.MeasureTheory.exists_smul_invariant_ae_eq`, `ErgodicSMul.iff_mem_extremePoints`,
 `TauCeti.MeasureTheory.invariantMeasuresOfMeasureUnivEq`.
 
@@ -1302,7 +1325,13 @@ statement is Tau Ceti's `ErgodicSMul.iff_mem_extremePoints`. *Needs:* 4.2, 4.4, 
   `ν^{⊗ℤ}` is ergodic (4.3).
 - The tail hypothesis of (a) is needed: for the independent specification with `ν = Bern(1/2)`,
   the density `f(ω) = 2·1_{ω(0)=1}` is not tail-measurable and `f·Bern(1/2)^{⊗ℤ}` (coordinate `0`
-  equal to `1` almost surely) is not Gibbs.
+  equal to `1` almost surely) is not Gibbs. The same example shows that (b) uses the invariance of
+  the two measures: `Bern(1/2)^{⊗ℤ}` is the midpoint of `f·Bern(1/2)^{⊗ℤ}` and
+  `(2 − f)·Bern(1/2)^{⊗ℤ}`, which are neither invariant nor Gibbs.
+- A specification that is not equivariant: for `Γ = I = ℤ` with the shift, `S = {0,1}` and the
+  independent kernels with law `δ₁` at the site `0` and `Bern(1/2)` at every other site, the only
+  Gibbs measure gives `{ω(0) = 1}` mass `1` and `{ω(1) = 1}` mass `1/2`, so it is not invariant,
+  `𝒢_inv(γ) = ∅`, and the empty set is a face of `𝔓_inv(X)`, as (b) asserts.
 
 ### Examples
 
@@ -1328,10 +1357,10 @@ edge weight.
 ### 5.1 The configuration space of perfect matchings
 
 Define `𝔛(G)` as the set of `ω : G.edgeSet → Bool` such that every vertex lies in exactly one edge
-`e` with `ω e = true`; it is the set of indicators of edge sets of perfect matchings (Mathlib
-`SimpleGraph.Subgraph.IsPerfectMatching` of the spanning subgraph with those edges) (kenyon2009
-lines 96–100; gorin2021 lines 4494–4501). *Needs:* 4.4; Mathlib
-`SimpleGraph.Subgraph.IsPerfectMatching`, `SimpleGraph.LocallyFinite`.
+`e` with `ω e = true` (`IsDimerConfiguration G ω`, the dimer configurations); it is the set of
+indicators of edge sets of perfect matchings (Mathlib `SimpleGraph.Subgraph.IsPerfectMatching` of
+the spanning subgraph with those edges) (kenyon2009 lines 96–100; gorin2021 lines 4494–4501).
+*Needs:* 4.4; Mathlib `SimpleGraph.Subgraph.IsPerfectMatching`, `SimpleGraph.LocallyFinite`.
 
 API:
 
@@ -1362,7 +1391,12 @@ API:
 
 For finite `F` define `γ^w_F(·|ω)` on `𝔛(G)` as the probability measure on `Ω_F(ω)` with masses
 proportional to `∏_{e ∈ ω'∩F} w(e)` (kos2006 Section 2.2.1, lines 195–202; kenyon2009 Section 5.1,
-lines 781–809; gorin2021 Definition 13.4, lines 4534–4537). *Needs:* 4.5, 5.1.
+lines 781–809; gorin2021 Definition 13.4, lines 4534–4537). Define `IsDimerGibbs G w μ` for a
+measure μ on `G.edgeSet → Bool`: μ is a probability measure, the configurations outside `𝔛(G)` are
+μ-null, and the cylinder identities of the API below hold, with `w(ω ∩ F)` the product of `w` over
+the edges of `F` of value `true` under `ω`, entering as `ENNReal.ofReal` of that real product (exact
+for positive `w`). It holds iff μ is the push-forward along the inclusion of a Gibbs measure of
+`γ^w`. *Needs:* 4.5, 5.1; Mathlib `SimpleGraph.edgeSet`, `ENNReal.ofReal`.
 
 API:
 
@@ -1389,18 +1423,39 @@ API:
 - A gauge transformation changes the weights of the two matchings of `C₆` by the same factor
   `∏_v g(v)`, so it does not change the Boltzmann measure; weights are not determined by the
   specification.
+- Direction of the weights in `IsDimerGibbs`: on `C₆` with edges `e_i = {i, i+1}`, matchings
+  `M_a = {e₀, e₂, e₄}` and `M_b = {e₁, e₃, e₅}`, `w(e₀) = 2` and `w = 1` elsewhere, the identity
+  with `F = E` the six edges, `ω = M_a` and `ω' = M_b` reads `1 · μ{M_a} = 2 · μ{M_b}`, so
+  `μ{M_a} = 2/3`, the Boltzmann value `w(M_a)/(w(M_a) + w(M_b))`; the reversed reading
+  `w(ω ∩ F) · μ[ω]_E = w(ω' ∩ F) · μ[ω']_E` would give `1/3`.
+- On `ℤ` with nearest-neighbour edges the point mass at the configuration with no edge has mass
+  one and satisfies every cylinder identity (two dimer configurations agreeing off a finite set are
+  equal), but leaves every vertex uncovered: only the null clause of `IsDimerGibbs` excludes it.
 
 ### 5.3 Gibbs, translation-invariant and ergodic dimer measures
 
-For `Γ`-invariant `w`: the Gibbs measures `𝒢`, the invariant measures `𝔓_inv` and the invariant
-Gibbs measures `𝒢_inv` of `γ^w` are weakly closed convex subsets of `𝔓(𝔛(G))`, hence compact;
-`𝒢_inv` is a face of `𝔓_inv`; an element of `𝒢_inv` is ergodic iff it is extreme in `𝒢_inv` iff it
-is extreme in `𝔓_inv`, iff every invariant event has measure `0` or `1`; conditioning on an
-invariant event of positive measure stays in `𝒢_inv` (gorin2021 Definitions 13.4–13.6 and Lemma
-13.7, lines 4534–4582; aggarwal2023 lines 413–420; kos2006 lines 195–202; kenyon2009 lines
-825–835; sheffield2005 Lemmas 3.2.1–3.2.2, lines 1352–1371). This is 4.6 for the subshift
-`𝔛(G)` and the specification `γ^w`, which is equivariant and quasilocal by 5.2; its statement for
-`hexGraph` is 5.4. *Needs:* 4.6, 5.2; Tau Ceti
+For every positive `w`, invariant or not: the Gibbs measures `𝒢`, the invariant measures `𝔓_inv`
+and the invariant Gibbs measures `𝒢_inv` of `γ^w` are weakly closed convex subsets of `𝔓(𝔛(G))`,
+hence compact; `𝒢_inv` is a face of `𝔓_inv`; an element of `𝒢_inv` is ergodic iff it is extreme in
+`𝒢_inv` iff it is extreme in `𝔓_inv`, iff every invariant event has measure `0` or `1`;
+conditioning on an invariant event of positive measure stays in `𝒢_inv` (gorin2021 Definitions
+13.4–13.6 and Lemma 13.7, lines 4534–4582; aggarwal2023 lines 413–420; kos2006 lines 195–202;
+kenyon2009 lines 825–835; sheffield2005 Lemmas 3.2.1–3.2.2, lines 1352–1371). For `Γ`-invariant
+`w`, `𝒢` is moreover `Γ`-invariant (4.5, 5.2). In Lean `Γ` acts through a homomorphism
+`τ : Γ →* (G ≃g G)` into Mathlib's group of graph automorphisms, on edges by
+`SimpleGraph.Iso.mapEdgeSet` and on configurations by `(g • ω)(e) = ω(τ(g⁻¹) e)`, properness being
+the finiteness of `{g : ∃ e ∈ F, τ(g) e ∈ F'}` for all finite edge sets `F`, `F'`; the face
+statement is that the `Γ`-invariant measures μ on `G.edgeSet → Bool` with `IsDimerGibbs G w μ`
+form a face, `IsExtreme ℝ≥0∞`, of the `Γ`-invariant probability measures on `G.edgeSet → Bool`
+(`dimerGibbsInvariant_isExtreme`, for `G` locally finite on a countable vertex type, `Γ` countable
+and infinite, and `w` positive). Route: 4.6(b) for the subshift `𝔛(G)` and the specification
+`γ^w`, transported through the inclusion of `𝔛(G)` by the cylinder identities of 5.2; the
+invariant probability measures concentrated on `𝔛(G)` form a face of all invariant probability
+measures (Tau Ceti `TauCeti.MeasureTheory.isExtreme_setOf_measure_eq_zero`), and a face of a face is
+a face. Closedness is 4.6(c), `γ^w` being quasilocal by 5.2; the ergodicity equivalences follow from
+the face property and Tau Ceti's `ErgodicSMul.iff_mem_extremePoints`. Its statement for
+`hexGraph` is 5.4. *Needs:* 4.6, 5.2; Mathlib `SimpleGraph.Iso.mapEdgeSet`, `IsExtreme`; Tau Ceti
+`TauCeti.MeasureTheory.isExtreme_setOf_measure_eq_zero`,
 `TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant`.
 
 **Checks.**
@@ -1412,6 +1467,10 @@ invariant event of positive measure stays in `𝒢_inv` (gorin2021 Definitions 1
   invariant Gibbs measures with trivial invariant events; 5.3 shows the two agree.
 - Gibbs measures need not be invariant: on `ℤ` with `Γ = ℤ` (translation by one, swapping even and
   odd), `δ_even` is Gibbs and not invariant.
+- The group must be infinite: the trivial group acts properly on the finite cycle `C₆`, the only
+  Gibbs measure for unit weights is `(δ_{M_a} + δ_{M_b})/2` (5.2), and it is the midpoint of the
+  invariant probability measures `δ_{M_a}` and `δ_{M_b}`, which are not Gibbs; so the face
+  statement fails for a finite `Γ`.
 
 ### 5.4 The lozenge instance
 
@@ -1437,13 +1496,14 @@ translation-invariant probability measures on `TriEdge → Bool`
 `ErgodicVAdd (ℤ × ℤ)` (`lozengeGibbs_extreme_iff_ergodic`) (sheffield2005 Lemma 3.2.2, lines
 1367–1371, for the face property and the equivalence; georgii2011 Theorem 14.15; gorin2021
 Definition 13.6 and Lemma 13.7, lines 4556–4582, and kenyon2009 lines 825–835, for the two notions
-of ergodicity). Route: transport 5.3 for `hexGraph`
-through the inclusion of `𝔛(hexGraph)`, the ambient face being the invariant probability measures
-concentrated on `𝔈(𝕋)`, itself a face of all invariant probability measures by Tau Ceti's
-`TauCeti.MeasureTheory.isExtreme_setOf_measure_eq_zero`; Tau Ceti's multiplicative statements are
-applied to `Multiplicative (ℤ × ℤ)`. *Needs:* 1.5, 2.10, 5.2, 5.3; Mathlib
-`VAddInvariantMeasure`, `ErgodicVAdd`, `IsExtreme`; Tau Ceti
-`TauCeti.MeasureTheory.isExtreme_setOf_measure_eq_zero`.
+of ergodicity). Route: apply `dimerGibbsInvariant_isExtreme` (5.3) to `hexGraph`, `w ≡ 1` and
+`Multiplicative (ℤ × ℤ)` acting by translations, and transport it along the bijection of 1.2
+between the edge set of `hexGraph` and `TriEdge`, under which `IsDimerGibbs hexGraph 1` is
+`IsLozengeGibbs` (the edges of `hexGraph` sharing a vertex with the edge that corresponds to `e`
+correspond to the edges of the two faces containing `e`) and invariance under the translations
+`τ` is `VAddInvariantMeasure (ℤ × ℤ)`; Tau Ceti's multiplicative ergodicity statements are applied
+to `Multiplicative (ℤ × ℤ)`. *Needs:* 1.2, 1.5, 2.10, 5.2, 5.3; Mathlib `VAddInvariantMeasure`,
+`ErgodicVAdd`, `IsExtreme`; Tau Ceti `ErgodicSMul.iff_mem_extremePoints`.
 
 API:
 
@@ -1477,8 +1537,10 @@ Matchings of `ℤ` (two configurations, every measure Gibbs); `C₆`; the frozen
 
 ### Dependencies
 
-Layer 4; for 5.4 also 1.2, 1.5 and 2.10, Mathlib `VAddInvariantMeasure`, `ErgodicVAdd`,
-`IsExtreme`, and Tau Ceti `TauCeti.MeasureTheory.isExtreme_setOf_measure_eq_zero`.
+Layer 4; Mathlib `SimpleGraph.Iso.mapEdgeSet` and Tau Ceti
+`TauCeti.MeasureTheory.isExtreme_setOf_measure_eq_zero` (5.3); for 5.4 also 1.2, 1.5 and 2.10,
+Mathlib `VAddInvariantMeasure`, `ErgodicVAdd`, `IsExtreme`, and Tau Ceti
+`ErgodicSMul.iff_mem_extremePoints`.
 
 ## Layer 6: slopes and the boundary of the slope triangle
 
@@ -1940,15 +2002,15 @@ For every `(s,t) ∈ 𝒯̄` there is an ergodic translation-invariant Gibbs mea
 `(s,t)`, a member of `lozengeGibbsInvariant` that is `ErgodicVAdd (ℤ × ℤ)` with `slope μ = (s,t)`
 (`exists_ergodicGibbs_of_slope`; kos2006 Theorem 2.1, existence part, lines 215–220;
 kenyon2009 lines 836–843; gorin2021 Corollary 6.3, lines 2287–2298). Route: the corners by 6.2,
-the edges by 6.3, and interior slopes by `μ^w` with `w(s,t) = (sin πs, sin πt, sin π(1−s−t))`,
-which is liquid by the law of sines and has angles `πs`, `πt`, `π(1−s−t)` opposite its sides
-(9.3, 9.4). *Needs:* 6.2, 6.3, 9.3, 9.4.
+the edges by 6.3, and interior slopes by `μ^w` for the sine weights `w = w(s,t)` of the
+conventions, which are liquid with angles `πs`, `πt`, `π(1−s−t)` opposite their sides, so that
+`μ^w` has slope `(s,t)` (9.3, 9.4). *Needs:* 6.2, 6.3, 9.3, 9.4.
 
 **Checks.**
 
 - `(1/3, 1/3)`: `w = (√3/2, √3/2, √3/2)`, a multiple of the uniform weights, with the same measure.
 - `(1/2, 1/4)`: `w = (1, √2/2, √2/2)` and `1 < √2`, so `w` is liquid.
-- `(1/2, 0)`: `w(s,t) = (1, 0, 1)` is not positive; edge slopes need 6.3.
+- `(1/2, 0)`: the sine formula gives `(1, 0, 1)`, which is not positive; edge slopes need 6.3.
 
 ### 9.6 The complex slope and the incomplete beta kernel
 
@@ -1965,7 +2027,7 @@ API:
 - `ξ` is a bijection from `𝒯` onto the upper half-plane with inverse
   `ξ ↦ (arg ξ / π, −arg(1 − ξ) / π)`: `πs` and `πt` are the angles at `0` and `1` of the triangle
   `0, 1, ξ`, and `|ξ| = sin(πt)/sin(π(1−s−t)) = w₂/w₃`, `|1 − ξ| = sin(πs)/sin(π(1−s−t)) = w₁/w₃`
-  for `w = w(s,t)` of 9.5 is the law of sines.
+  for the sine weights `w = w(s,t)` (Conventions) is the law of sines.
 - `K_ξ(v₁;v₂)` depends only on `v₂ − v₁` and on the side of crossing, and any path in `ℂ ∖ {0,1}`
   from `ξ̄` to `ξ` crossing the real axis once on the prescribed side gives the same value
   (Cauchy's theorem for the single-valued integrand).
@@ -1982,7 +2044,8 @@ API:
 
 ### 9.7 The incomplete beta process
 
-Let `ξ` be in the upper half-plane, `(s,t)` its slope and `w = w(s,t)`. (a) For all
+Let `ξ` be in the upper half-plane, `(s,t)` its slope and `w = w(s,t)` its sine weights
+(Conventions). (a) For all
 `v_i = (x_i,y_i)` and `v_j = (x_j,y_j)` in `ℤ²`,
 `w₁G_w(v_i − v_j − e₂) = (−1)^{(x_i−x_j)+(y_i−y_j)} |ξ|^{x_j−x_i} |1−ξ|^{y_i−y_j} K_ξ(v_j;v_i)`,
 with `|ξ| = w₂/w₃` and `|1−ξ| = w₁/w₃` by the law of sines (9.6); it is obtained by evaluating the

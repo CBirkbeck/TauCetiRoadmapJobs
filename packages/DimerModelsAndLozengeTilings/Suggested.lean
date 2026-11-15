@@ -16,22 +16,20 @@ set of invariant probability measures.
 Stated here: tilings are the perfect matchings of the dual hexagonal graph (Layer 1); plane tilings
 are height functions, flip connectivity and Thurston's criterion (Layer 2); Kasteleyn's theorem and
 the determinantal local statistics on finite simply connected regions (Layer 3); the face property
-and the ergodicity criterion for invariant Gibbs measures of an equivariant specification on a
-finite-alphabet subshift with a proper countable-group action (Layer 4) and for invariant lozenge
-Gibbs measures (Layer 5); the classification of invariant Gibbs measures on the edges of the slope
-triangle with two ergodic ones at every non-corner edge slope (Layer 6); torus limits are invariant
-Gibbs measures of the prescribed slope (Layer 7); the torus partition function as a signed sum of
-four determinants (Layer 8); an ergodic Gibbs measure of every slope and the incomplete beta
-process of every complex slope (Layer 9); local limits of uniform measures on tilings of
-exhausting regions are Gibbs (Layer 10).
+and the ergodicity criterion for invariant Gibbs measures of a specification on a finite-alphabet
+subshift with a proper countable-group action (Layer 4); the face property for invariant dimer
+Gibbs measures of a positive edge weight on a locally finite graph with a proper action of a
+countable infinite group by automorphisms, and the face property and the ergodicity criterion for
+invariant lozenge Gibbs measures (Layer 5); the classification of invariant Gibbs measures on the
+edges of the slope triangle with two ergodic ones at every non-corner edge slope (Layer 6); torus
+limits are invariant Gibbs measures of the prescribed slope (Layer 7); the torus partition function
+as a signed sum of four determinants (Layer 8); an ergodic Gibbs measure of every slope and the
+incomplete beta process of every complex slope (Layer 9); local limits of uniform measures on
+tilings of exhausting regions are Gibbs (Layer 10).
 
-Not stated separately: the face theorem for dimer measures on a general locally finite periodic
-graph (README 5.3). It is 4.6 applied to the weighted dimer specification of README 5.2, a
-constructed family of proper kernels on the closed set of perfect matchings whose construction
-(closedness of that set for a locally finite graph, measurability of each kernel for the exterior
-σ-algebra) is library work; its lozenge instance is stated in Layer 5. Weak limits of measures on
-the compact space `TriEdge → Bool` are expressed through convergence of cylinder probabilities,
-which is weak convergence there (README 4.4).
+Dimer Gibbs measures are stated in the cylinder form of README 5.2, which needs no conditional
+probability. Weak limits of measures on the compact space `TriEdge → Bool` are expressed through
+convergence of cylinder probabilities, which is weak convergence there (README 4.4).
 -/
 
 noncomputable section
@@ -312,13 +310,6 @@ def Specification.IsGibbs {Γ I S : Type*} [Group Γ] [MulAction Γ I] [Topologi
     [MeasurableSpace S] {X : Subshift Γ I S} (γ : Specification X) (μ : Measure X) : Prop :=
   ∀ Λ : Finset I, μ.bind (γ.kernel Λ) = μ
 
-/-- A specification is `Γ`-equivariant when `γ_{gΛ}(· | g ω)` is the push-forward of `γ_Λ(· | ω)`
-by `g`. -/
-def Specification.IsEquivariant {Γ I S : Type*} [Group Γ] [MulAction Γ I] [DecidableEq I]
-    [TopologicalSpace S] [MeasurableSpace S] {X : Subshift Γ I S} (γ : Specification X) : Prop :=
-  ∀ (g : Γ) (Λ : Finset I) (ω : X),
-    (γ.kernel Λ ω).map (g • ·) = γ.kernel (Λ.image (g • ·)) (g • ω)
-
 /-- The invariant Gibbs measures `𝒢_inv(γ)`: the invariant probability measures that are Gibbs. -/
 def Specification.gibbsInvariant {Γ I S : Type*} [Group Γ] [MulAction Γ I] [TopologicalSpace S]
     [MeasurableSpace S] {X : Subshift Γ I S} (γ : Specification X) : Set (Measure X) :=
@@ -326,13 +317,13 @@ def Specification.gibbsInvariant {Γ I S : Type*} [Group Γ] [MulAction Γ I] [T
 
 /-- **The face property** (README 4.6(b); sheffield2005 Lemma 3.2.2, lines 1367–1371;
 georgii2011 Theorem 14.15). For a countable infinite group acting properly on a countable index
-set, a finite discrete alphabet and an equivariant specification on a subshift, the invariant
-Gibbs measures form a face of the invariant probability measures. -/
+set, a finite discrete alphabet and any specification on a subshift, equivariant or not, the
+invariant Gibbs measures form a face of the invariant probability measures. -/
 theorem gibbsInvariant_isExtreme {Γ I S : Type*} [Group Γ] [Countable Γ] [Infinite Γ]
-    [MulAction Γ I] [Countable I] [DecidableEq I] [Finite S] [TopologicalSpace S]
+    [MulAction Γ I] [Countable I] [Finite S] [TopologicalSpace S]
     [DiscreteTopology S] [MeasurableSpace S] [DiscreteMeasurableSpace S]
     (hproper : ∀ F F' : Finset I, {g : Γ | ∃ i ∈ F, g • i ∈ F'}.Finite)
-    (X : Subshift Γ I S) (γ : Specification X) (hγ : γ.IsEquivariant) :
+    (X : Subshift Γ I S) (γ : Specification X) :
     IsExtreme ℝ≥0∞ (TauCeti.MeasureTheory.invariantMeasuresOfMeasureUnivEq Γ X 1)
       γ.gibbsInvariant := by
   sorry
@@ -341,22 +332,59 @@ theorem gibbsInvariant_isExtreme {Γ I S : Type*} [Group Γ] [Countable Γ] [Inf
 Lemmas 3.2.1–3.2.2, lines 1352–1371). Under the hypotheses of `gibbsInvariant_isExtreme`, an
 invariant Gibbs measure is an extreme point of `𝒢_inv(γ)` iff it is ergodic. -/
 theorem gibbsInvariant_extreme_iff_ergodic {Γ I S : Type*} [Group Γ] [Countable Γ] [Infinite Γ]
-    [MulAction Γ I] [Countable I] [DecidableEq I] [Finite S] [TopologicalSpace S]
+    [MulAction Γ I] [Countable I] [Finite S] [TopologicalSpace S]
     [DiscreteTopology S] [MeasurableSpace S] [DiscreteMeasurableSpace S]
     (hproper : ∀ F F' : Finset I, {g : Γ | ∃ i ∈ F, g • i ∈ F'}.Finite)
-    (X : Subshift Γ I S) (γ : Specification X) (hγ : γ.IsEquivariant) {μ : Measure X}
+    (X : Subshift Γ I S) (γ : Specification X) {μ : Measure X}
     (hμ : μ ∈ γ.gibbsInvariant) :
     μ ∈ Set.extremePoints ℝ≥0∞ γ.gibbsInvariant ↔ ErgodicSMul Γ X μ := by
   sorry
 
 /-! ## Layer 5: dimer models on periodic graphs -/
 
+/-- A dimer configuration of a simple graph `G`: a configuration on the edges of `G` in which every
+vertex lies in exactly one edge of value `true`, the indicator of the edge set of a perfect matching
+(README 5.1; kenyon2009 lines 96–100). -/
+def IsDimerConfiguration {V : Type*} (G : SimpleGraph V) (ω : G.edgeSet → Bool) : Prop :=
+  ∀ v : V, ∃! e : G.edgeSet, ω e = true ∧ v ∈ (e : Sym2 V)
+
+/-- **Dimer Gibbs measures** of an edge weight `w` in cylinder form (README 5.2; kos2006 Section
+2.2.1, lines 195–202; gorin2021 Definition 13.4, lines 4534–4537): a probability measure on
+configurations, concentrated on dimer configurations, such that for dimer configurations `ω`, `ω'`
+agreeing off a finite set `F` of edges and every finite `E` containing each edge that shares a
+vertex with an edge of `F`, `w(ω' ∩ F) · μ[ω]_E = w(ω ∩ F) · μ[ω']_E`, where `w(ω ∩ F)` is the
+product of `w` over the edges of `F` of value `true` and `[ω]_E` is the cylinder of `ω` on `E`. -/
+def IsDimerGibbs {V : Type*} (G : SimpleGraph V) (w : G.edgeSet → ℝ)
+    (μ : Measure (G.edgeSet → Bool)) : Prop :=
+  IsProbabilityMeasure μ ∧ μ {ω | ¬ IsDimerConfiguration G ω} = 0 ∧
+    ∀ (F E : Finset G.edgeSet) (ω ω' : G.edgeSet → Bool),
+      IsDimerConfiguration G ω → IsDimerConfiguration G ω' → (∀ e ∉ F, ω e = ω' e) →
+      (∀ e ∈ F, ∀ e' : G.edgeSet, (∃ v, v ∈ (e : Sym2 V) ∧ v ∈ (e' : Sym2 V)) → e' ∈ E) →
+      ENNReal.ofReal (∏ e ∈ F with ω' e = true, w e) * μ {η | ∀ e ∈ E, η e = ω e} =
+        ENNReal.ofReal (∏ e ∈ F with ω e = true, w e) * μ {η | ∀ e ∈ E, η e = ω' e}
+
+/-- **The face property for dimer measures on a periodic graph** (README 5.3; sheffield2005 Lemma
+3.2.2, lines 1367–1371; georgii2011 Theorem 14.15; gorin2021 Lemma 13.7, lines 4561–4582). Let `G`
+be a locally finite graph on a countable vertex type, `τ` an action of a countable infinite group
+`Γ` by automorphisms of `G` that is proper on the edges, and `w` a positive edge weight, invariant
+or not. Then the `Γ`-invariant dimer Gibbs measures of `w` form a face of the `Γ`-invariant
+probability measures on configurations, `Γ` acting by `(g • ω) e = ω (τ(g⁻¹) e)`. -/
+theorem dimerGibbsInvariant_isExtreme {V Γ : Type*} [Countable V] [Group Γ] [Countable Γ]
+    [Infinite Γ] (G : SimpleGraph V) [G.LocallyFinite] (τ : Γ →* (G ≃g G))
+    (hproper : ∀ F F' : Finset G.edgeSet, {g : Γ | ∃ e ∈ F, (τ g).mapEdgeSet e ∈ F'}.Finite)
+    (w : G.edgeSet → ℝ) (hw : ∀ e, 0 < w e) :
+    IsExtreme ℝ≥0∞
+      {μ : Measure (G.edgeSet → Bool) | IsProbabilityMeasure μ ∧
+        ∀ g : Γ, μ.map (fun ω => ω ∘ (τ g⁻¹).mapEdgeSet) = μ}
+      {μ | IsDimerGibbs G w μ ∧ ∀ g : Γ, μ.map (fun ω => ω ∘ (τ g⁻¹).mapEdgeSet) = μ} := by
+  sorry
+
 /-- **Lozenge Gibbs measures** in cylinder form (README 5.4; gorin2021 Definition 13.4, lines
 4534–4537; kenyon2009 lines 781–809): a probability measure on configurations, concentrated on
 plane tilings, such that for plane tilings `ω`, `ω'` agreeing off a finite set `F` of edges and
 every finite `E` containing all edges of the faces meeting `F`, the cylinders of `ω` and `ω'` on
-`E` have equal mass. This is the Gibbs property for the uniform dimer specification on
-`hexGraph`. -/
+`E` have equal mass. This is `IsDimerGibbs hexGraph 1` read along the bijection of README 1.2
+between the edges of `hexGraph` and `TriEdge`. -/
 def IsLozengeGibbs (μ : Measure (TriEdge → Bool)) : Prop :=
   IsProbabilityMeasure μ ∧ μ {ω | ¬ IsTiling Set.univ {e | ω e = true}} = 0 ∧
     ∀ (F E : Finset TriEdge) (ω ω' : TriEdge → Bool),
