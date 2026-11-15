@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RibbonKnots~8",
+  "head": "852bf534fc3353956213a9fdc8287a46a524e0ee",
+  "pr": 2339,
+  "folder": "RibbonKnots",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 43 changed lines since 1b8c671: previous R01 (8.1 knot-group theorem and 8.5.2 named in Scope, contract, route and Needs of 1.4) and R02 (description sources) repaired; one new P3, Layer 1 Dependencies omit GeometricTopology 8.5.2. Checked against GeometricTopology main 8.1/8.3.1/8.5.2 and open revision #1797, Agol2022 Theorem 1.1 (arXiv text, lines 36, 97-106), Tau Ceti singleton_iff at the pin; depcheck 0 problems with the candidate order; worker gate passes (rerun: only NOT IN ORDER against the public order file); Suggested.lean elaborates with 7 sorry warnings, no error.",
+  "text": "9ef5b149438e4d51"
+ }
+}
