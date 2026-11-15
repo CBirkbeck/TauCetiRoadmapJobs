@@ -4680,12 +4680,13 @@
       "slug": "poincare-weak-containment",
       "supplier": "AutomorphicFormsOnReductiveGroups",
       "section": "Layer 4",
-      "needs": "The Sakellaridis–Venkatesh Poincaré-series weak containment (Theorem 16.3.2, Remark 16.4.1) for a finite set S of places, finite or archimedean, in two instances: for quaternion pointwise stabilizers in Aut(O), summands of the untwisted L2(G_D(k_v)\\G(k_v)) are weakly contained, restricted to G(k_S), in the vectors of L2_D spherical outside S and one further finite place; for a split group with a nondegenerate character psi, summands of the twisted Whittaker space L2(N(k_v)\\G(k_v), psi_v) (f(ng) = psi_v(n)f(g)) are weakly contained in the vectors of the psi-generic cuspidal spectrum with fixed supercuspidal sigma at w spherical outside S, w and one further finite place, and outside S and w alone when k has an archimedean place outside S (Ichino–Lapid–Mao, proof of Proposition 4.5).",
+      "needs": "The Sakellaridis–Venkatesh Poincaré-series weak containment (Theorem 16.3.2, Remark 16.4.1) for a finite set S of places, finite or archimedean, in three instances: for quaternion pointwise stabilizers in Aut(O), O totally definite over a totally real k, summands of the untwisted L2(G_D(k_v)\\G(k_v)) are weakly contained, restricted to G(k_S), in the vectors of L2_D spherical outside S and one further finite place, and outside S alone when k has a real place outside S (separation by a test function of small support at that real place, where G is compact); for a split group with a nondegenerate character psi, summands of the twisted Whittaker space L2(N(k_v)\\G(k_v), psi_v) (f(ng) = psi_v(n)f(g)) are weakly contained in the vectors of the psi-generic cuspidal spectrum with fixed supercuspidal sigma at w spherical outside S, w and one further finite place, and outside S and w alone when k has an archimedean place outside S (Ichino–Lapid–Mao, proof of Proposition 4.5); for H = Aut(D), D a central division algebra of degree three over a totally real k, the pointwise stabilizer H_e of a cubic subfield e and S the ramification set of D, summands of L2(H_e(k_v)\\H(k_v)) are weakly contained in the vectors of the cubic-period spectrum L2_e fixed by a maximal compact subgroup at every real place and spherical outside S and one further finite place (GF, proof of Lemma 2.5).",
       "neededBy": [
         "LocalLanglandsCorrespondenceForG2:1.3",
         "LocalLanglandsCorrespondenceForG2:1.4",
         "LocalLanglandsCorrespondenceForG2:1.6",
-        "LocalLanglandsCorrespondenceForG2:2.4"
+        "LocalLanglandsCorrespondenceForG2:2.4",
+        "LocalLanglandsCorrespondenceForG2:3.11"
       ]
     },
     {
@@ -4738,12 +4739,30 @@
       ]
     },
     {
-      "slug": "pgsp6-pgso8-unramified-theta",
-      "supplier": "MetaplecticAutomorphicForms",
-      "section": "Layer 3, §§3.34, 3.41",
-      "needs": "For F nonarchimedean of characteristic zero and every residue characteristic, the similitude theta lift to split PGSO8(F) of every irreducible representation of PGSp6(F) with a nonzero PGSp6(O_F)-fixed vector is nonzero (the unramified case beside the generic case of §3.41; GS, proof of Lemma 12.5, p. 37).",
+      "slug": "cubic-jordan-global-theta",
+      "supplier": "ExceptionalThetaCorrespondencesForG2",
+      "section": "Layer 10 (global exceptional lifts), with Layer 5",
+      "needs": "For a totally real k, a central simple k-algebra D of degree three, H = Aut(D) as a Jordan algebra and split G2, the global theta lift in both directions for the dual pair H × G2 in the E6 attached to D, with local components in the local correspondences of §§5.1 and 5.9 at the finite places; and, for D a division algebra and e ⊂ D a cubic subfield, a cuspidal representation of H spherical at the real places with nonzero H_e-period has nonzero lift to G2, cuspidal when a finite local lift is supercuspidal, then irreducible with the local lifts as components and with nonzero lift back to H (GF, Lemma 2.5 and §2.7(b)).",
       "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:8.1"
+        "LocalLanglandsCorrespondenceForG2:3.11"
+      ]
+    },
+    {
+      "slug": "real-exceptional-theta-parameters",
+      "supplier": "ExceptionalThetaCorrespondencesForG2",
+      "section": "Layer 10, §10.7 (real infinitesimal-character matching)",
+      "needs": "At a real place: the theta lift to PGSp6(R) of the irreducible representation of highest weight lambda of compact G2 is the holomorphic discrete series with standard parameter sgn ⊕ ⨁ Ind((z/z̄)^⟨lambda+rho, alpha∨⟩) over the long positive roots alpha; and for split G2(R), spherical Howe duality for G2 × PGSp6 and (PGL3 ⋊ Z/2) × G2 with the spherical exponent (chi1, chi2, chi3) matched to the standard parameter 1 ⊕ ⨁ chi_i^(±1), respectively chi1 ⊕ chi2 ⊕ chi3; global lifts have these real components (GF, §2.7).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:3.11"
+      ]
+    },
+    {
+      "slug": "cubic-global-jacquet-langlands",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "Layer 4, §4.7a (Jacquet–Langlands correspondence)",
+      "needs": "For a central division algebra D of degree three over a number field, the global Jacquet–Langlands transfer of the discrete automorphic spectrum of D× to that of GL3, with the identity at the split places and the local transfer of §4.7a at the ramified places, its L-functions being products of shifted cuspidal L-functions so that the Rankin–Selberg functional equation applies (GF, §2.7(b)).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:3.11"
       ]
     }
   ],
