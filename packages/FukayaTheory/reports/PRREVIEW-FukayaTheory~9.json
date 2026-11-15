@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FukayaTheory~9",
+  "head": "31de88ad1d568b9d925a2cc7f958cea81f33c8cb",
+  "pr": 1045,
+  "folder": "FukayaTheory",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 31de88a; the folder is unchanged and stands as accepted. This round checked the pull request's title and description against the head: two P3 findings, both in the description only (R01: its supplier sentence names HamiltonianSystems and DGFloer, which the head does not consume, and calls MorseNovikov and HeegaardFloer open proposals though they are on main; R02: its validation paragraph describes finite-matrix proofs, empty elaboration output, a native overlay and Lean 4.35.0-rc3, none true of the head's Suggested.lean, and presents the added roadmap as a revision). Gate rerun: every counter 0, OK. Depcheck: 244 roadmaps, 0 problems. Elaboration: sorry at lines 118 and 151 only. Adversarial rows computed for the statements the description cites (torus pair: four intersections, A=1/(4pi)-1/16=0.0170775; Floer bound on T*S^1: 2>=2). No source fetched: no locator changed.",
+  "text": "85e15aec24291a8a",
+  "carried": {
+   "from": "31de88ad1d568b9d925a2cc7f958cea81f33c8cb",
+   "head": "31de88ad1d568b9d925a2cc7f958cea81f33c8cb",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
