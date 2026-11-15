@@ -420,7 +420,7 @@
      "id": "3.2",
      "kind": "definition",
      "name": "HardSphere.contactNormal",
-     "statement": "Contact pairs {i, j} with ‖x_i − x_j‖ = ε; contact matching when pairwise disjoint; ν_ij = ℓ(x_i − x_j)/ε for ε < ρ; boundary pieces ∂^±(i, j) with {i, j} the only contact pair and ±⟨v_i − v_j, ν_ij⟩ > 0.",
+     "statement": "Contact pairs {i, j} with ‖x_i − x_j‖ = ε; contact matching when pairwise disjoint; ν_ij = ℓ(x_i − x_j)/ε for ε < ρ; for i ≠ j, boundary pieces ∂^±(i, j) of the configurations of 𝒟̄ with {i, j} the only contact pair and ±⟨v_i − v_j, ν_ij⟩ > 0. Since ν_ji = −ν_ij, ∂^±(j, i) = ∂^±(i, j): a piece is determined by the unordered pair and the sign.",
      "hypotheses": [
       "0 < ε < ρ"
      ],
@@ -442,7 +442,7 @@
       {
        "name": "boundary_null",
        "role": "measure",
-       "statement": "Boundary pieces are disjoint from each other and from 𝒟, and null; non-matching contact configurations are null."
+       "statement": "∂^±(j, i) = ∂^±(i, j); pieces with different unordered pairs or opposite signs are disjoint; every piece is disjoint from 𝒟 and null; non-matching contact configurations of 𝒟̄ are null."
       },
       {
        "name": "contact_equivariant",
@@ -465,6 +465,11 @@
        "name": "boundary_signs",
        "kind": "characterisation",
        "statement": "x_i = (1, 0), x_j = 0: v_i = (1, 0) gives ∂^+, v_i = (−1, 0) gives ∂^−, v_i = (0, 1) is grazing and in neither."
+      },
+      {
+       "name": "pair_order",
+       "kind": "non-example",
+       "statement": "E, ε = 1, x_1 = (1, 0), x_2 = 0, v_1 = (1, 0), v_2 = 0: ⟨v_1 − v_2, ν_12⟩ = 1 and ⟨v_2 − v_1, ν_21⟩ = ⟨(−1, 0), (−1, 0)⟩ = 1, so the state lies in ∂^+(1, 2) = ∂^+(2, 1) and in no ∂^−; ordered pieces declared pairwise disjoint would be refuted."
       }
      ]
     },
@@ -868,7 +873,7 @@
      "id": "5.1",
      "kind": "definition",
      "name": "HardSphere.IsTrajectory",
-     "statement": "IsTrajectory ε J Z for an interval J and Z = (X, V) : ℝ → (Fin N → X × E): Z(t) ∈ 𝒟̄ on J; x_i(t) = x_i(s) + π(∫_s^t v_i) for s ≤ t in J; V right-continuous within J (through J ∩ (t, ∞), vacuous at a greatest element), constant off a set of contact times finite in every bounded subinterval; contact pairs of X(t) form a matching and are outgoing for V(t); V(t) = σ_M V(t−) at every t ∈ J other than a least element, V(t−) the left limit within J. Values of Z off J are unconstrained.",
+     "statement": "IsTrajectory ε J Z for an interval J and Z = (X, V) : ℝ → (Fin N → X × E): Z(t) ∈ 𝒟̄ on J; x_i(t) = x_i(s) + π(∫_s^t v_i) for s ≤ t in J; V right-continuous within J (through J ∩ (t, ∞), vacuous at a greatest element); there is 𝒯 ⊆ J, finite in every bounded subinterval of J, with V constant on every subinterval of J disjoint from 𝒯; contact pairs of X(t) form a matching and are outgoing for V(t); V(t) = σ_M V(t−) at every t ∈ J other than a least element, V(t−) the left limit within J. Values of Z off J are unconstrained.",
      "hypotheses": [
       "0 < ε < ρ"
      ],
@@ -908,7 +913,7 @@
       {
        "name": "head_on",
        "kind": "computation",
-       "statement": "The head-on witness is a trajectory on ℝ with one contact at time 1."
+       "statement": "The head-on witness is a trajectory on ℝ with one contact at time 1 and 𝒯 = {1}: V = ((−1, 0), 0) on (−∞, 1) and (0, (−1, 0)) on (1, ∞), two values on ℝ ∖ {1}, so V is constant on each contact-free subinterval, not on the complement of the contact times."
       },
       {
        "name": "pass_through",
@@ -936,7 +941,8 @@
      },
      "prerequisites": [
       "target:5.1",
-      "target:2.1"
+      "target:2.1",
+      "target:3.3"
      ],
      "api": [],
      "tests": [
@@ -998,7 +1004,7 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "HardSphere.IsTrajectory.leftContinuous",
-     "statement": "For a trajectory Z on J, Y(t) = (X(t), σ_{M(t)} V(t)) on J has velocities left-continuous within J and constant off the contact times; σ_{M(t)} V(t) = V(t−), the left limit within J, at every t ∈ J other than a least element; at a least element t₀ the incoming state is defined as Y(t₀) = (X(t₀), σ_{M(t₀)} V(t₀)), no left limit of Z from outside J entering; contacts are incoming for Y(t); the right limit within J of the velocities of Y at every t other than a greatest element is σ_{M(t)} of their value. On ℝ, Y(t) = (X(t), V(t−)) for every t. Conversely such paths (values in 𝒟̄ on J, positions as in 5.1, contacts matchings and incoming, right limits σ_M of the value) give trajectories by the same map. On X = E, d ≥ 2, J = [0, ∞) or [0, T], Y is the dynamics of DengHaniMa2024 Definition 1.1 from the incoming initial state Y(0), and conversely.",
+     "statement": "For a trajectory Z on J, Y(t) = (X(t), σ_{M(t)} V(t)) on J has velocities left-continuous within J and constant on every subinterval of J containing no contact time of Z, the contact times of Z being finite in every bounded subinterval of J; σ_{M(t)} V(t) = V(t−), the left limit within J, at every t ∈ J other than a least element; at a least element t₀ the incoming state is defined as Y(t₀) = (X(t₀), σ_{M(t₀)} V(t₀)), no left limit of Z from outside J entering; contacts are incoming for Y(t); the right limit within J of the velocities of Y at every t other than a greatest element is σ_{M(t)} of their value. On ℝ, Y(t) = (X(t), V(t−)) for every t. Conversely paths with values in 𝒟̄ on J, positions as in 5.1, velocities left-continuous within J and constant on every subinterval of J disjoint from some 𝒯 ⊆ J finite in every bounded subinterval of J, contacts matchings and incoming, and right limits within J equal to σ_M of the value give trajectories by the same map. On X = E, d ≥ 2, J = [0, ∞) or [0, T], Y is the dynamics of DengHaniMa2024 Definition 1.1 from the incoming initial state Y(0), and conversely.",
      "hypotheses": [
       "0 < ε < ρ",
       "for the comparison with DengHaniMa2024 Definition 1.1: X = E, d ≥ 2, J = [0, ∞) or J = [0, T]"
@@ -1016,7 +1022,7 @@
       {
        "name": "head_on_left",
        "kind": "computation",
-       "statement": "Left-continuous state at time 1: v_1 = (−1, 0), v_2 = 0."
+       "statement": "Left-continuous state at time 1: v_1 = (−1, 0), v_2 = 0; the velocities of Y are ((−1, 0), 0) on (−∞, 1] and (0, (−1, 0)) on (1, ∞)."
       },
       {
        "name": "off_contact",
@@ -1244,7 +1250,8 @@
       "target:5.2",
       "target:5.3",
       "target:5.5",
-      "target:6.3"
+      "target:6.3",
+      "target:6.2"
      ],
      "api": [],
      "tests": [
@@ -1394,7 +1401,8 @@
       "target:7.1",
       "target:6.4",
       "target:5.1",
-      "target:5.2"
+      "target:5.2",
+      "target:5.5"
      ],
      "api": [],
      "tests": [
@@ -2290,7 +2298,8 @@
      "prerequisites": [
       "target:1.3",
       "target:9.5",
-      "target:10.3"
+      "target:10.3",
+      "target:9.6"
      ],
      "api": [
       {

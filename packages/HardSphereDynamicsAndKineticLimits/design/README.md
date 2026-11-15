@@ -226,12 +226,12 @@ API:
 
 ### 3.2 Contacts, contact normals and boundary pieces
 
-Define the contact pairs of positions `X` as the pairs `{i, j}` with `‖x_i − x_j‖ = ε`; a contact matching when these pairs are pairwise disjoint; the contact normal `ν_ij = ℓ(x_i − x_j)/ε ∈ S^{d−1}` for `ε < ρ`; and the boundary pieces `∂^±(i, j)` of configurations whose only contact pair is `{i, j}` and with `±⟨v_i − v_j, ν_ij⟩ > 0` (BGSS2023 lines 148–152).
+Define the contact pairs of positions `X` as the pairs `{i, j}` with `‖x_i − x_j‖ = ε`; a contact matching when these pairs are pairwise disjoint; the contact normal `ν_ij = ℓ(x_i − x_j)/ε ∈ S^{d−1}` for `ε < ρ`; and, for `i ≠ j`, the boundary pieces `∂^±(i, j)` of the configurations of `𝒟̄` whose only contact pair is `{i, j}` and with `±⟨v_i − v_j, ν_ij⟩ > 0` (BGSS2023 lines 148–152). Since `ν_ji = −ν_ij`, the number `⟨v_i − v_j, ν_ij⟩` does not change when `i` and `j` are exchanged, so `∂^±(j, i) = ∂^±(i, j)`: a boundary piece is determined by the unordered pair `{i, j}` and the sign.
 
 API:
 
 - `ν_ji = −ν_ij`, `|ν_ij| = 1`, and on `E`, `ν_ij = (x_i − x_j)/ε`.
-- Boundary pieces are pairwise disjoint, disjoint from `𝒟`, and null; the configurations of `𝒟̄` whose contact pairs are not a matching form a null set.
+- `∂^±(j, i) = ∂^±(i, j)`; pieces with different unordered pairs or with opposite signs are disjoint; every piece is disjoint from `𝒟` and null; the configurations of `𝒟̄` whose contact pairs are not a matching form a null set.
 - Contacts, contact normals and boundary pieces are equivariant under relabelling and invariant under common translations.
 
 **Checks.**
@@ -239,6 +239,7 @@ API:
 - Unit torus, ε = 0.3: `x_i = π(0.1, 0)`, `x_j = π(0.8, 0)` are in contact with `ν_ij = (1, 0)`; the difference of representatives `(−0.7, 0)` would give the wrong direction and length.
 - On `E`: three positions `0`, `(1, 0)`, `(−1, 0)` with ε = 1 have contact pairs `{1, 2}` and `{1, 3}`, which share particle 1 and are not a matching.
 - The configuration with `x_i = (1, 0)`, `x_j = 0`, `v_i = (1, 0)`, `v_j = 0` is in `∂^+(i, j)`; with `v_i = (−1, 0)` it is in `∂^−(i, j)`; with `v_i = (0, 1)` it is grazing and in neither.
+- The order of the pair does not matter: on `E` with ε = 1, `x_1 = (1, 0)`, `x_2 = 0`, `v_1 = (1, 0)`, `v_2 = 0`, one has `⟨v_1 − v_2, ν_12⟩ = ⟨(1, 0), (1, 0)⟩ = 1` and `⟨v_2 − v_1, ν_21⟩ = ⟨(−1, 0), (−1, 0)⟩ = 1`, so the state lies in `∂^+(1, 2)` and in `∂^+(2, 1)`, which are one piece, and in neither `∂^−(1, 2)` nor `∂^−(2, 1)`. Indexing the pieces by ordered pairs and declaring all of them pairwise disjoint would be refuted by this state.
 
 *Needs:* §1.1, §3.1, Mathlib `MeasureTheory.Measure.addHaar_sphere`.
 
@@ -385,7 +386,7 @@ Layers 1–3; Mathlib (Euclidean space, block determinants, the Lebesgue change 
 
 ### 5.1 Trajectories
 
-Define `HardSphere.IsTrajectory ε J Z` for an interval `J ⊆ ℝ` and a path `Z = (X, V) : ℝ → (Fin N → X × E)`: for `t ∈ J`, `Z(t) ∈ 𝒟̄^ε_N`; positions satisfy `x_i(t) = x_i(s) + π(∫_s^t v_i)` for `s ≤ t` in `J`; velocities are right-continuous within `J` (at each `t ∈ J`, `V(t') → V(t)` as `t' → t` through `J ∩ (t, ∞)`, a vacuous condition at a greatest element of `J`) and constant off a set of contact times that is finite in every bounded subinterval; at every `t ∈ J` the contact pairs of `X(t)` form a matching and each contact pair is outgoing for `V(t)`; and at every `t ∈ J` other than a least element of `J`, `V(t) = σ_M V(t−)`, where `V(t−)` is the left limit within `J` (through `J ∩ (−∞, t)`). The values of `Z` outside `J` are not constrained (GST2013 lines 836–847; BGSS2023 lines 122–131; DengHaniMa2024 lines 140–172).
+Define `HardSphere.IsTrajectory ε J Z` for an interval `J ⊆ ℝ` and a path `Z = (X, V) : ℝ → (Fin N → X × E)`: for `t ∈ J`, `Z(t) ∈ 𝒟̄^ε_N`; positions satisfy `x_i(t) = x_i(s) + π(∫_s^t v_i)` for `s ≤ t` in `J`; velocities are right-continuous within `J` (at each `t ∈ J`, `V(t') → V(t)` as `t' → t` through `J ∩ (t, ∞)`, a vacuous condition at a greatest element of `J`), and there is a set `𝒯 ⊆ J`, finite in every bounded subinterval of `J`, such that `V` is constant on every subinterval of `J` disjoint from `𝒯`; at every `t ∈ J` the contact pairs of `X(t)` form a matching and each contact pair is outgoing for `V(t)`; and at every `t ∈ J` other than a least element of `J`, `V(t) = σ_M V(t−)`, where `V(t−)` is the left limit within `J` (through `J ∩ (−∞, t)`). The values of `Z` outside `J` are not constrained (GST2013 lines 836–847; BGSS2023 lines 122–131; DengHaniMa2024 lines 140–172).
 
 API:
 
@@ -396,7 +397,7 @@ API:
 **Checks.**
 
 - `N = 1`: `t ↦ S_t Z_0` is a trajectory on ℝ.
-- The head-on witness of the Conventions is a trajectory on ℝ with the single contact time 1.
+- The head-on witness of the Conventions is a trajectory on ℝ with the single contact time 1, and `𝒯 = {1}`: `V` is `((−1, 0), 0)` on `(−∞, 1)` and `(0, (−1, 0))` on `(1, ∞)`. It takes two values on `ℝ ∖ {1}`, so the velocity is constant on each subinterval free of contact times, not on the complement of the contact times; the latter reading would exclude every trajectory with a collision.
 - Non-example: free motion through the contact (`x_1(t) = (2 − t, 0)` for all `t`) leaves `𝒟̄_2` after time 1.
 - Non-example: the same path with left-continuous velocities (`V(1) = ((−1, 0), 0)`) violates the outgoing condition at time 1.
 
@@ -413,7 +414,7 @@ Prove `HardSphere.IsTrajectory.eqOn`: two trajectories on `J` that agree at one 
 - Gluing at the head-on witness: the trajectory on `[0, 2]` and the trajectory on `[1, 3]` from the time-1 state agree on `[1, 2]` and glue to the trajectory on `[0, 3]` ending at `x_1 = (1, 0)`, `x_2 = (−2, 0)`.
 - The proof does not use the outgoing condition, which only excludes grazing contacts: the same argument gives uniqueness for the weaker notion that admits grazing contacts (σ fixes grazing pairs), for instance for the two-body path tangent to the sphere at `q = (1, 0)` in §4.1.
 
-*Needs:* §5.1.
+*Needs:* §2.1, §3.3, §5.1.
 
 ### 5.3 Symmetries of trajectories
 
@@ -429,11 +430,11 @@ Prove that trajectories are carried to trajectories by: time translation `t ↦ 
 
 ### 5.4 The left-continuous convention
 
-For a trajectory `Z` on `J` write `M(t)` for the contact matching of `X(t)` and `Y(t) = (X(t), σ_{M(t)} V(t))` for `t ∈ J`. Prove: the velocities of `Y` are left-continuous within `J` and constant off the contact times of `Z`; at every `t ∈ J` other than a least element of `J`, `σ_{M(t)} V(t) = V(t−)`, the left limit within `J`; at a least element `t₀` of `J` the incoming state is by definition `Y(t₀) = (X(t₀), σ_{M(t₀)} V(t₀))`, and no left limit of the values of `Z` outside `J` enters; the contact pairs of `X(t)` are incoming for the velocities of `Y(t)`; and at every `t ∈ J` other than a greatest element, the right limit within `J` of the velocities of `Y` is `σ_{M(t)}` applied to the velocities of `Y(t)`. For a trajectory on ℝ the identity `Y(t) = (X(t), V(t−))` therefore holds at every `t`. Conversely, a path on `J` with values in `𝒟̄` on `J`, positions as in §5.1, velocities left-continuous within `J` and constant off a set of contact times finite in every bounded subinterval, whose contact pairs at every time form a matching and are incoming for its velocities, and whose velocities have right limit within `J` equal to `σ_{M(t)}` of their value at every `t ∈ J` other than a greatest element, is carried to a trajectory on `J` by the same map, `σ_M` being an involution. On `X = E` with `d ≥ 2` and `J = [0, ∞)` or `J = [0, T]`, the Euclidean setting of DengHaniMa2024 Definition 1.1 (lines 140–172, on the domain of lines 150–153), `Y` is the hard-sphere dynamics of that definition started from the incoming initial state `Y(0) = (X(0), σ_{M(0)} V(0))`, and a dynamics in the sense of that definition with the properties of the converse comes from a trajectory by the same map.
+For a trajectory `Z` on `J` write `M(t)` for the contact matching of `X(t)` and `Y(t) = (X(t), σ_{M(t)} V(t))` for `t ∈ J`. Prove: the contact times of `Z` are finite in every bounded subinterval of `J` (a contact time `t` other than a least element of `J` lies in the set `𝒯` of §5.1, since otherwise `V` is constant near `t`, the contact pair is outgoing for `V(t)`, and the two spheres would overlap just before `t`), and the velocities of `Y` are left-continuous within `J` and constant on every subinterval of `J` that contains no contact time of `Z`; at every `t ∈ J` other than a least element of `J`, `σ_{M(t)} V(t) = V(t−)`, the left limit within `J`; at a least element `t₀` of `J` the incoming state is by definition `Y(t₀) = (X(t₀), σ_{M(t₀)} V(t₀))`, and no left limit of the values of `Z` outside `J` enters; the contact pairs of `X(t)` are incoming for the velocities of `Y(t)`; and at every `t ∈ J` other than a greatest element, the right limit within `J` of the velocities of `Y` is `σ_{M(t)}` applied to the velocities of `Y(t)`. For a trajectory on ℝ the identity `Y(t) = (X(t), V(t−))` therefore holds at every `t`. Conversely, a path on `J` with values in `𝒟̄` on `J`, positions as in §5.1, velocities left-continuous within `J` and constant on every subinterval of `J` disjoint from some set `𝒯 ⊆ J` that is finite in every bounded subinterval of `J`, whose contact pairs at every time form a matching and are incoming for its velocities, and whose velocities have right limit within `J` equal to `σ_{M(t)}` of their value at every `t ∈ J` other than a greatest element, is carried to a trajectory on `J` by the same map, `σ_M` being an involution. On `X = E` with `d ≥ 2` and `J = [0, ∞)` or `J = [0, T]`, the Euclidean setting of DengHaniMa2024 Definition 1.1 (lines 140–172, on the domain of lines 150–153), `Y` is the hard-sphere dynamics of that definition started from the incoming initial state `Y(0) = (X(0), σ_{M(0)} V(0))`, and a dynamics in the sense of that definition with the properties of the converse comes from a trajectory by the same map.
 
 **Checks.**
 
-- At the head-on witness, the left-continuous state at time 1 is `v_1 = (−1, 0)`, `v_2 = 0`.
+- At the head-on witness, the left-continuous state at time 1 is `v_1 = (−1, 0)`, `v_2 = 0`; the velocities of `Y` are `((−1, 0), 0)` on `(−∞, 1]` and `(0, (−1, 0))` on `(1, ∞)`, constant on each subinterval free of the contact time 1 and different on its two sides.
 - Off contact times both conventions agree.
 - Applying the map twice returns the right-continuous path, since `σ_M` is an involution.
 - Only the values on `J` count: for `N = 1`, d = 2, `J = [0, 1]`, the path with `x(t) = 0` for all `t`, `V(t) = 0` for `t ≥ 0` and `V(t) = e_1` for `t < 0` is a trajectory on `J`; at `t = 0` the incoming state has velocity `σ_M V(0) = 0`, while the left limit of the path from outside `J` is `e_1`; at every `t ∈ (0, 1]` the velocity `σ_M V(t)` and the left limit within `J` are both 0.
@@ -459,7 +460,7 @@ For `N = 2` the trajectory through a good configuration is explicit: the centre 
 
 ### Dependencies
 
-Layers 3–4.
+Layers 2–4.
 
 ## Layer 6: Alexander's theorem
 
@@ -512,7 +513,7 @@ Prove `HardSphere.volume_hardCoreSet_diff_goodSet`: for `0 < ε < ρ`, `λ_N(�
 - `N = 2` on `E`: the exceptional set is the union of §5.5, null because the cylinder `D = 0` and the contact set are null.
 - On the unit torus the exhaustion is trivial (`K = X`), and only `t` and `R` vary.
 
-*Needs:* §5.3, §5.5, §6.3.
+*Needs:* §5.2, §5.3, §5.5, §6.2, §6.3.
 
 ### Examples
 
@@ -520,7 +521,7 @@ The theorem holds verbatim on Euclidean space, on every flat torus, and in every
 
 ### Dependencies
 
-Layers 4–5.
+Layers 1 and 3–5.
 
 ## Layer 7: The hard-sphere flow
 
@@ -561,7 +562,7 @@ Prove `HardSphere.flow_reversal` (`T_t ∘ ℛ = ℛ ∘ T_{−t}`), equivarianc
 - Non-example: rotating velocities alone does not commute with the flow: rotating the head-on witness's velocities by a quarter turn gives `v_1 = (0, −1)`, which never meets particle 2, while the rotated time-3 state has `v_2 = (0, −1)` after a collision.
 - Galilean covariance needs `Z ∈ G`: boosting the grazing state of §7.1 (`x_1 = (2, 1)`, `x_2 = 0`, `v_1 = (−1, 0)`, `v_2 = 0`) by `c = (1, 0)` keeps the relative data, so both states lie outside `G`; `T_1` fixes the boosted state, with positions `(2, 1)`, `0`, whereas the covariance formula would give `(3, 1)`, `(1, 0)`.
 
-*Needs:* §5.1–5.3, §6.4, §7.1.
+*Needs:* §5.1–5.3, §5.5, §6.4, §7.1.
 
 ### 7.4 The Koopman group
 
@@ -662,7 +663,7 @@ For the canonical measure of §9.2 every marginal is constant in time; for a pro
 
 ### Dependencies
 
-Layer 7; Mathlib (the fundamental theorem of calculus, `Nat.descFactorial`, relabelling of product measures); ClassicalErgodicTheory §3.5 (item 4).
+Layers 3 and 7; Mathlib (the fundamental theorem of calculus, `Nat.descFactorial`, relabelling of product measures); ClassicalErgodicTheory §3.5 (item 4).
 
 ## Layer 9: Equilibria and grand canonical ensembles
 
@@ -755,7 +756,7 @@ On the unit torus, the Maxwellian grand canonical measure is the hard-sphere gas
 
 ### Dependencies
 
-Layers 7–8; Mathlib (Gaussian integrals and laws, `Nat.descFactorial`, `ProbabilityTheory.poissonMeasure`); Tau Ceti `TauCeti.Probability.multivariateGaussianPDFReal` and `TauCeti.Probability.multivariateGaussian_eq_withDensity` (§9.1); ClassicalErgodicTheory §3.5 (item 3).
+Layers 1–3 and 7–8; Mathlib (Gaussian integrals and laws, `Nat.descFactorial`, `ProbabilityTheory.poissonMeasure`); Tau Ceti `TauCeti.Probability.multivariateGaussianPDFReal` and `TauCeti.Probability.multivariateGaussian_eq_withDensity` (§9.1); ClassicalErgodicTheory §3.5 (item 3).
 
 ## Layer 10: The Boltzmann–Grad limit
 
@@ -817,7 +818,7 @@ API:
 - For a Maxwellian datum `f⁰ = M_{β₀,0}` (admissible when `C₀ ≥ (β₀/2π)^{d/2}`) the solution is `f(t) = f⁰`, the correlation functions are independent of `t` by §9.4–9.5, and every conclusion holds by §9.6; the proposition is consistent at equilibrium.
 - The almost-everywhere conclusion is stated along sequences: along the filter ε → 0⁺ it would depend on the choice of representatives of uncountably many functions.
 
-*Needs:* §1.3, §9.5, §10.3.
+*Needs:* §1.3, §9.5, §9.6, §10.3.
 
 ### 10.5 The law of large numbers
 
@@ -838,7 +839,7 @@ In dimension `d ≥ 2` the stationary Maxwellian gas on the unit torus satisfies
 
 ### Dependencies
 
-Layers 7–9; Mathlib (the sphere measure, Gaussian integrals, Chebyshev's inequality); Tau Ceti `TauCeti.Probability.empiricalMeasureOfFintype` (§10.1).
+Layers 1–2, 7 and 9; Mathlib (the sphere measure, Gaussian integrals, Chebyshev's inequality); Tau Ceti `TauCeti.Probability.empiricalMeasureOfFintype` (§10.1).
 
 ## Downstream consumers
 
