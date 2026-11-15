@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassifyingTopoi~22",
+  "head": "08e6c9a4d78bc6747d3c2ed3319847627ece7a54",
+  "pr": 1997,
+  "folder": "ClassifyingTopoi",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 30 changed lines since 02a2761. Previous R02 is repaired. Previous R01 is partly repaired: the description's new commit sentence sits inside the code span IsClassifyingSite.exists_interp_eq_of_subobject (new R01, P3). Checked that the pullback-stability of epimorphic families needs universal coproducts and universal coequalizers. Resolved the 15 GrothendieckTopoi ids of the reflowed contract at its open head. The seeded sample meets the change only at 2.4's Needs line, which has no source locator. Gate rerun: all checks 0, OK (worker build=0). Depcheck: 245 roadmaps, 2233 edges, 0 problems. lake env lean: 28 sorry warnings, nothing else. Nothing changes outside the folder against origin/main.",
+  "text": "55c828cf2b619265"
+ }
+}
