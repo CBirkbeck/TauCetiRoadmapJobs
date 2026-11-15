@@ -219371,10 +219371,26 @@
    "reported": "2026-11-15",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13165#issuecomment-6898965777"
+  },
+  {
+   "kind": "error",
+   "source": "montalban-cst1",
+   "locator": "the proof of Lemma VI.18, printed page 91",
+   "says": "the finite sequences of rationals in the lexicographic order form a copy of the rationals",
+   "should": "a dense order with an endpoint, the empty sequence",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "CountableStructureSpacesPartII",
+   "job": "REV-PKG-CountableStructureSpacesPartII~2",
+   "board_pr": 16877,
+   "head": "0e52b90",
+   "reported": "2026-11-15",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/16877#issuecomment-6899120112"
   }
  ],
- "scanned_to": "2026-11-15T18:16:54Z",
- "updated": "2026-11-15T18:17:23Z",
+ "scanned_to": "2026-11-15T18:23:19Z",
+ "updated": "2026-11-15T18:23:44Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
