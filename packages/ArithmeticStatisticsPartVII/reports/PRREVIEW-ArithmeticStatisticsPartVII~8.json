@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartVII~8",
+  "head": "ddbc3d04a78fadb359d6ea98c0c5cf7d19dea25b",
+  "pr": 1178,
+  "folder": "ArithmeticStatisticsPartVII",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 10 changed lines since 661d52f. The five reworded README passages (lines 176, 450, 620, 867, 1564) were recomputed and compared with their sources at the locators (PR Prop. 2.6(a) and Thm 5.2, BKLPR Thm 5.10, BKLOS Thm 11.2, LOWW (1.1)): mathematically unchanged and correct, longest shared word run 7; all five fall in the seeded sample (sections 5.2, 5.4, 5.5, 5.7, 5.11). Suggested.lean unchanged; lake env lean exit 0 with nine sorry warnings only. Gate run on this head: every check 0, OK. Depcheck: 245 roadmaps, 2247 edges, 0 problems. No previous findings (661d52f was accepted). The three findings, all P3, are on the pull request's description: it does not state the ownership of the large-sieve inequalities and the Kane estimates (R01), says 'the top layers' where the head has one layer (R02), and does not say the pull request adds a new roadmap (R03). For the humans: SieveMethodsAndPrimePatterns' open head now states the same three inequalities and is earlier in the merge order.",
+  "text": "95218af3d90fa19c",
+  "carried": {
+   "from": "ddbc3d04a78fadb359d6ea98c0c5cf7d19dea25b",
+   "head": "28c3435014e280f675594aa828d0b9b2e0442065",
+   "findings": 3,
+   "lines": 38,
+   "folders": [
+    "ArithmeticStatisticsPartVII"
+   ]
+  }
+ }
+}
