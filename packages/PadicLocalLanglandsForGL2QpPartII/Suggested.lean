@@ -32,7 +32,8 @@ headline theorem, and the carrier it lacks, is listed below; the README states e
 * The realisation for every supercuspidal type in the p-central sector (README §3.3): the strong
   dual of the `M`-multiplicity of the functions on `M^p_n` is `Π_{M,ℒ}^an / π` for every line
   `ℒ`, and the de Rham multiplicity is `M_dR ⊗ π′` with the preimages of the lines the analytic
-  duals. It lacks rigid analytic functions and de Rham cohomology of the tower, locally analytic
+  duals, by the identification compatible with the Hyodo–Kato structure. It lacks rigid analytic
+  functions and de Rham and Hyodo–Kato cohomology of the tower, locally analytic
   representations and the analytic vectors of a Banach representation.
 * The discharge of the global hypotheses of the base comparison (README §3.1). It lacks, besides
   the carriers above, completed cohomology of definite quaternion algebras and the
