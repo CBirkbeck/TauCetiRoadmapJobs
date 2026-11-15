@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuadraticFormInvariantsPartII~8",
+  "head": "b38ee3cc308434e831fd5f08940730a21db508dd",
+  "pr": 1834,
+  "folder": "QuadraticFormInvariantsPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 17 changed lines since 43253eb. Checked: the 4 changed passages (README summary, ownership bullet, build paragraph; Suggested.lean module docstring) against README 1.4/1.5 and the two Layer 1 Lean statements, with computed instances (Q, a0=1/4 singular; a0=0; F2 with a0=0,1); EKM Corollary 9.10 at ekm line 2933; PR title and description against the head. Previous R01 partly repaired: folder text qualified, PR description still states isotropy-hyperbolicity without nonsingularity (R01, P3, PR text only). Gate passes (all scanners 0, worker build=0); direct elaboration exit 0 with 19 sorry warnings only; depcheck 0 problems, no UPWARD or CYCLE; overlaps none.",
+  "text": "96da41f066858d8e",
+  "carried": {
+   "from": "b38ee3cc308434e831fd5f08940730a21db508dd",
+   "head": "b38ee3cc308434e831fd5f08940730a21db508dd",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
