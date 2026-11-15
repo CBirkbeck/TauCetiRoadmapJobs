@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GrothendieckTeichmuller~21",
+  "head": "c77a80f1ff9e301c392c47b01bb812b78ced4eaf",
+  "pr": 1058,
+  "folder": "GrothendieckTeichmuller",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 3 changed lines since 2742151: the diff deletes the remark on Grothendieck's working notes from README 4.3 and nothing else; no dangling reference remains and 4.3 keeps 3 Checks. Previous R01 and R02 (pull-request description) are repaired; the description was read against the head (18 sources, layer clauses, 3 supplier citations, 15 sorries). Adversarial rows computed for 4.3 (c = (-1,1) satisfies (I)-(III), c^2 = 1; (lambda,1) fails (II) at lambda = 3, 5 in the dihedral group of order 6). Gate rerun: all checks 0, OK. Depcheck: 245 roadmaps, 2229 edges, 0 problems. lake env lean on Suggested.lean: exit 0, 15 sorry warnings, 0 errors. Seeded sample: only 4.3 falls in the change. Source independence on changed passages only: none added.",
+  "text": "0d0ab91d08361de9"
+ }
+}
