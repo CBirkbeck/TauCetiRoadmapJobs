@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IgusaVarietiesAndTorsionConcentration~4",
+  "head": "d692c6ffe9fe3282d44b18ac2baaa09750774637",
+  "pr": 1090,
+  "folder": "IgusaVarietiesAndTorsionConcentration",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 92 changed lines since 5447ef6. All seven previous findings (R01-R07) repaired. Checked: the new similitude-surjectivity argument of 2.10 at split and inert places (binary hermitian forms, odd and even valuation, even rank of the slope-1/2 part, p = 2) and 2.16 at every unramified p; the 3.0g/3.6/3.6a build order (no cycle); 0.8a and its three citing Needs lines; 7.9 against SmoothRepresentationsOfLocalGroups SR.5.2 on main; Downstream consumers against BunGAndNewtonStrata at its open head; six sw-berkeley locators against the text (Theorem 24.2.5 p.227, Proposition 24.3.4 p.230, Corollary 24.3.5 p.231, sections 23.4-23.5 pp.220-224); pins against lake-manifest.json; title and description against the head (no contradiction, nothing unstated). Seeded sample: no target in a changed passage. Gate rerun: every check 0, OK; depcheck 0 problems; lake env lean on Suggested.lean exit 0 with no output (the file declares nothing). The worker's citation lead at README line 2109 is a false positive (the line reads Layer 3a).",
+  "text": "91391ca9ce63de48"
+ }
+}

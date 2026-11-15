@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "IgusaVarietiesAndTorsionConcentration"
+
+[[source]]
+id = "sw-berkeley"
+locator_scheme = "theorem"
+locator = "Theorem 24.2.5"
+url = "https://www.math.uni-bonn.de/people/scholze/Berkeley.pdf"
+fetched_from = "https://www.math.uni-bonn.de/people/scholze/Berkeley.pdf"
+fetched_at = "2026-11-15T19:13:34Z"
+sha256 = "225505171ef809aa0070c023c881ff1da844923775f2d631474c0b42eea4bffc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["3.6a"]
