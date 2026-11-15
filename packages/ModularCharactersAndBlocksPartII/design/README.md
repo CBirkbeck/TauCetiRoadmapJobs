@@ -47,7 +47,8 @@ Part II starts where the base stops and owns:
 - the central characters of blocks over the splitting system of the base §1.1 at a place over
   `p`, Osima's formula, the existence and `p`-regularity of the defect classes of the base §6.2,
   Brauer's theorem on heights, heights, defects and height zero characters, and their transport
-  under a change of place (Layer 6);
+  under a change of place and under a change of the cyclotomic level from `ℚ(ζ_{exp H})` to
+  `ℚ(ζ_e)` for `exp(H) ∣ e` (Layer 6);
 - the Min–Max theorem, covering through central characters, domination of the blocks of `G/N` for
   an arbitrary normal subgroup `N` (the base §8.1 states it for normal `p`-subgroups) and defect
   groups under domination, the Fong–Reynolds correspondence, regular blocks, Fong's theorem and the
@@ -179,16 +180,21 @@ defect groups, and Dade's conjectures.
   `𝔭_v = m ∩ O_F` of the ring of integers `O_F` over `p`, which are the ideals `M ∩ O_F` for the
   maximal ideals `M ∋ p` of the algebraic integers, as in base §4.2 (`SameBlock`). This is the
   system for which the base develops its Layers 2–8, the second main theorem of base §7.2 in
-  particular, and it serves every subgroup, centraliser and quotient of `G` (base §1.1). How the
-  blocks at two places compare is §6.3. Witness: for `S₃` and `p = 2`, `F = ℚ(ζ₃)` has one place
-  over `2`, with `K = ℚ₂(ζ₃)` and `k = 𝔽₄`; for `C₇ × C₂` and `p = 2`, `F = ℚ(ζ₇)` has
-  `6/3 = 2` places over `2`, as `2` has order `3` modulo `7`, each with `k = 𝔽₈`. For `S₃` and
-  `p = 2`, a complete discrete valuation ring with residue field `𝔽₄(T)` whose fraction field
-  contains `ζ₃` is a splitting system in the sense of the base's Conventions but is not one of
-  these, and the base does not state its second main theorem for it. `Irr(G)` means the
-  `K`-valued irreducible characters, which the base identifies with the complex ones through
-  `F ⊆ ℂ` and `F → K` (base §§1.1, 4.2). A block `B` is a block of
-  `k[G]` with its unique central lift `e_B ∈ Z(O[G])` (base `existsUnique_blockIdempotent_map_residue`);
+  particular, and it serves every subgroup, centraliser and quotient of `G` (base §1.1). A statement
+  of Layers 6–8 about a subgroup, a quotient or a quotient of a subgroup `H` of `G` (a normaliser
+  `N_G(D)`, the stabiliser of a block, `D C_G(D)`, `G/N`) is read at this system of `G`; it follows
+  from the same statement for `H` at the place of `ℚ(ζ_{exp H})` below `v` by the change of level of
+  §6.3, since `exp(H)` divides `e`. For `S₃` and `p = 2`, the Brauer correspondent of `B₀` is a
+  block of `𝔽₄[C₂]`, while the system of `C₂` itself is `(ℚ₂, ℤ₂, 𝔽₂)`. How the blocks at two places
+  compare is §6.3. Witness: for `S₃` and `p = 2`, `F = ℚ(ζ₃)` has one place over `2`, with
+  `K = ℚ₂(ζ₃)` and `k = 𝔽₄`; for `C₇ × C₂` and `p = 2`, `F = ℚ(ζ₇)` has `6/3 = 2` places over `2`,
+  as `2` has order `3` modulo `7`, each with `k = 𝔽₈`. For `S₃` and `p = 2`, a complete discrete
+  valuation ring with residue field `𝔽₄(T)` whose fraction field contains `ζ₃` is a splitting system
+  in the sense of the base's Conventions but is not one of these, and the base does not state its
+  second main theorem for it. `Irr(G)` means the `K`-valued irreducible characters, which the base
+  identifies with the complex ones through `F ⊆ ℂ` and `F → K` (base §§1.1, 4.2). A block `B` is a
+  block of `k[G]` with its unique central lift `e_B ∈ Z(O[G])`
+  (base `existsUnique_blockIdempotent_map_residue`);
   `χ ∈ Irr(B)` exactly when `e_B e_χ = e_χ` in `K[G]`, where
   `e_χ = χ(1) |G|⁻¹ Σ_g χ(g⁻¹) g` (base §4.2). Defect groups and defect classes are those of base
   §6.2. For a block `B` with defect group `D`, its **Brauer correspondent** is the block `b'` of
@@ -299,10 +305,14 @@ a projective multiplicity representation with factor set `β⁻¹`; this roadmap
 - §1.2: stable lattices, and the compatibility of reduction with restriction and induction.
 - §1.3: `existsUnique_blockIdempotent_map_residue` and surjectivity of `Z(O[G]) → Z(k[G])`.
 - §2.1–2.2: Brauer characters, their induction formula and linear independence of `IBr(G)`.
-- §2.3: the residue field of a splitting system splits `G` and its subgroups, so central
-  characters of simple modules take values in `k`.
-- §2.4: decomposition numbers `χ|_{p-reg} = Σ_φ d_{χφ} φ` and surjectivity of the decomposition
-  map, so every Brauer character is a `ℤ`-combination of restricted ordinary characters.
+- §2.3: a field of characteristic `p` containing a primitive root of unity of order the
+  `p'`-part of the exponent splits `G` and its subgroups, in particular the residue field of a
+  splitting system, so central characters of simple modules take values in `k`; and the radical
+  base change `rad(k'[G]) = k' ⊗_k rad(k[G])` for an extension `k ⊆ k'` of such a field, so that
+  scalar extension is a bijection on simple modules.
+- §2.4: decomposition numbers `χ|_{p-reg} = Σ_φ d_{χφ} φ`, surjectivity of the decomposition
+  map, so every Brauer character is a `ℤ`-combination of restricted ordinary characters, and the
+  compatibility of the decomposition map with a change of splitting modular system.
 - §3.1: projective characters `Φ_φ = Σ_χ d_{χφ} χ`, vanishing on `p`-singular elements, and
   `|G|_p ∣ Φ_φ(1)`.
 - §4.1–4.3: the idempotents `e_χ`; `e_B = Σ_{χ ∈ Irr(B)} e_χ`; the partitions of `Irr(G)` and
@@ -326,7 +336,11 @@ a projective multiplicity representation with factor set `β⁻¹`; this roadmap
   arises from exactly one `B`. This last statement is made over the residue field `k` of the
   system, without an algebraic-closure hypothesis, and defines the Brauer correspondent
   (Conventions). With §3.1 and the block-diagonality of §4.2 the characterisation of defect zero
-  gives `Φ_{χ⁰} = χ`, so a character of defect zero vanishes on `p`-singular elements.
+  gives `Φ_{χ⁰} = χ`, so a character of defect zero vanishes on `p`-singular elements. Finally the
+  scalar extension: for fields `k ⊆ k'` of characteristic `p` with `k` splitting a subgroup `H`,
+  the blocks of `k[H]` are exactly those of `k'[H]`, the central character over `k'` extends
+  `λ_b`, and the defect classes, `Br_P(e_b)`, the defect groups and the principal block are the
+  same over `k` and over `k'`; §6.3 uses it for the change of level.
 - §6.3: Brauer pairs, the order relation, and the maximal `B`-Brauer pairs, whose first components
   are the defect groups.
 - §7.1: block induction `b^G`, defined through the central characters of §6.2 when
@@ -1019,7 +1033,8 @@ Define, for `χ ∈ Irr(B)`, the height `h(χ) = ν(χ(1)) − (a − d)` and th
 `h(χ) = 0 ⟺ d(χ) = d ⟺ ν(χ(1)) = a − d`; `d = max_{χ ∈ Irr(B)} d(χ)` (the numerical defect of
 martinez line 719). *Needs:* §6.2; base `isDefectGroup_conj`; Mathlib `padicValNat`;
 Tau Ceti `TauCeti.Representation.finrank_dvd_card`; for the change of place below, base §§1.1,
-4.2, 6.2, CharacterTheory §4.4 and Mathlib `Ideal.exists_smul_eq_of_isGaloisGroup`.
+4.2, 6.2, CharacterTheory §4.4 and Mathlib `Ideal.exists_smul_eq_of_isGaloisGroup`; for the
+change of level below, base §§1.1, 1.3, 2.1, 2.3, 2.4, 4.1, 4.2, 6.1, 6.2, 7.1, 8.2.
 
 - `h(χ) + d(χ) = d`.
 - Heights are invariant under group isomorphisms and under conjugation of characters.
@@ -1037,6 +1052,32 @@ Tau Ceti `TauCeti.Representation.finrank_dvd_card`; for the change of place belo
   `Ideal.exists_smul_eq_of_isGaloisGroup`, for `O_F` over `ℤ`), so a property of the heights,
   defect groups and Brauer correspondents of all blocks of `G` holds at one place over `p`
   exactly when it holds at every place over `p`.
+- Change of level, that is, of the cyclotomic field `ℚ(ζ_e)` of Conventions: let `H` be a finite
+  group, `e` a positive multiple of `exp(H)`, `v` a place of `ℚ(ζ_e)` over `p`, and `w` the place
+  of `ℚ(ζ_{exp H}) ⊆ ℚ(ζ_e)` below `v`. The closure of `ℚ(ζ_{exp H})` in `K_v` is the completion
+  `K_w`, with `O_w = O_v ∩ K_w`, `m_w = m_v ∩ O_w` and residue fields `k_w ⊆ k_v`; the canonical
+  maps of base §1.1 commute with these inclusions, so complex characters are read in `K_w` and in
+  `K_v` compatibly and the root bijections at `w` and at `v` agree. Let `X` be a subgroup, a
+  quotient or a quotient of a subgroup of `H`. Its exponent divides `exp(H)`, so `k_w` contains a
+  primitive root of unity of order the `p'`-part of `exp(X)` and splits `X` and all its subgroups
+  (base §2.3). Then scalar extension `e_B ↦ 1 ⊗ e_B` is a bijection from the blocks of `k_w[X]`
+  to those of `k_v[X]`; it keeps the coefficients `a_B(𝒞)`, `λ_{1⊗B}` extends `λ_B`, and the
+  defect classes, the Brauer projections `Br_P(e_B)`, the defect groups and the principal block
+  are the same (the scalar extension of base §6.2); it commutes with conjugation by `H`, with
+  block induction (base §7.1, defined through central characters) and with covering for normal
+  subgroups of `X` (base §8.2, through orbit sums of block idempotents). The central lift of
+  `1 ⊗ e_B` is the image of the central lift of `e_B` under `O_w[X] → O_v[X]` (uniqueness of
+  central lifts, base §1.3), and every `e_χ` has its coefficients in `ℚ(ζ_{exp H})` (base §4.1),
+  so `Irr(1 ⊗ B) = Irr(B)`; equivalently, by base
+  `exists_blockIdempotent_iff_centralCharacter_congr`, the differences
+  `|𝒞|(χ(g)/χ(1) − ψ(g)/ψ(1))` are algebraic integers of `ℚ(ζ_{exp H})`, hence in `O_w`, and lie
+  in `m_v` exactly when they lie in `m_w`. The simple `k_w[X]`-modules stay simple over `k_v` and
+  give all simple `k_v[X]`-modules (the radical base change of base §2.3), with the same Brauer
+  characters, so `IBr(1 ⊗ B) = IBr(B)` with the same decomposition numbers (base §2.4, change of
+  splitting modular system). Hence heights, defects and `Irr₀` are the same at `w` and at `v`,
+  and the Brauer correspondent of `1 ⊗ B` is `1 ⊗ b'`. A statement of Layers 6–8 about `H` at its
+  own system at `w` therefore holds at `v`; this is how Conventions reads such statements for
+  subgroups and quotients of `G`.
 
 **Checks.**
 - `SL(2,3)`, `p = 2`, a single block with `D = Q₈`: degrees `1, 1, 1, 2, 2, 2, 3` have heights
@@ -1050,6 +1091,23 @@ Tau Ceti `TauCeti.Representation.finrank_dvd_card`; for the change of place belo
   are `{ψ × 1, ψ × sgn}`, `ψ ∈ Irr(C₇)`, with defect group `1 × C₂` and heights `0`, and `σ` sends
   the block of `ψ` at `v` to the block of `σ ∘ ψ` at `σv`, where `(σ ∘ ψ)(r) = ψ(r)³`; the
   defect group and the heights are unchanged.
+- Change of level, `C₂ ≤ S₃`, `p = 2`, `e = 6`: `ℚ(ζ₆) = ℚ(ζ₃)` has one place `v` over `2`, with
+  `k_v = 𝔽₄` (`2` has order `2` modulo `3`), and `w` is the `2`-adic place of `ℚ(ζ₂) = ℚ`, with
+  `k_w = 𝔽₂`, which splits `C₂`. Each side has one block, with idempotent `1`; for the generator
+  `t`, `ω_1({t}⁺) − ω_sgn({t}⁺) = 1 − (−1) = 2` lies in `m_w = 2ℤ₂` and in `m_v`, so the block holds
+  `{1, sgn}` at both levels, with defect group `C₂` and heights `0 − (1 − 1) = 0`: `|Irr₀(b')| = 2`
+  over `𝔽₄`, the value §6.4 compares with `|Irr₀(B₀(S₃))| = 2`.
+- Change of level, `Q₈ ≤ SL(2,3)` and `A₄ ≤ A₅`, `p = 2`: `exp(Q₈) = 4` and `exp(SL(2,3)) = 12`
+  give `K_w = ℚ₂(i)`, `k_w = 𝔽₂` and `K_v = ℚ₂(ζ₁₂)`, `k_v = 𝔽₄`; `Q₈` has one block on each side,
+  with five characters of heights `0, 0, 0, 0, 1`, which is what §8.3 takes from §8.2. For
+  `exp(A₄) = 6` and `exp(A₅) = 30`, `2` has order `2` modulo `3` and order `4` modulo `15`, so
+  `k_w = 𝔽₄ ⊆ 𝔽₁₆ = k_v`; `A₄` has one block on each side, with heights `0, 0, 0, 0`, the four
+  height zero characters that §9.2 counts for the Brauer correspondent of `B₀(A₅)`.
+- The comparison needs `exp(X)` to divide the lower level: `X = C₃` is not a subquotient of
+  `H = 1`, and at the `2`-adic place of `ℚ(ζ₁) = ℚ` the residue field `𝔽₂` does not split `C₃`;
+  the block `r + r²` of `𝔽₂[C₃]` becomes the sum of the two blocks `1 + α² r + α r²` and
+  `1 + α r + α² r²` of `𝔽₄[C₃]` (`α² + α = 1`, base §6.2), so scalar extension from that level is
+  not a bijection on blocks.
 
 ### 6.4 Heights in special blocks
 
@@ -1060,7 +1118,8 @@ since its defect groups are the Sylow `p`-subgroups (base
 `χ(1)_p = |G|_p` has defect zero (base §6.2); for the Brauer correspondent `b'` of `B` in
 `N_G(D)` (Conventions: `e_{b'} = Br_D(e_B)`, base §6.2), `D` is a defect group of `b'` and
 `Irr₀(b') = {ψ ∈ Irr(b') : ψ(1)_p = |N_G(D) : D|_p}` (martinez line 718, §3.2; martinez line 583,
-Theorem 2.8, for defect zero). *Needs:* §6.3; base §§4.3, 6.2, 7.1.
+Theorem 2.8, for defect zero). *Needs:* §6.3, with its change of level for the blocks of
+`N_G(D)`; base §§4.3, 6.2, 7.1.
 
 **Checks.**
 - `S₃`, `p = 2`: `Irr₀(B₀) = {1, sgn}`, both of odd degree.
@@ -1071,7 +1130,8 @@ Theorem 2.8, for defect zero). *Needs:* §6.3; base §§4.3, 6.2, 7.1.
   `N_G(C₃) = C₆` with three height zero characters.
 - `S₃`, `p = 2`, over the splitting residue field `k = 𝔽₄` of base §1.1, which is not
   algebraically closed: `Br_{⟨t⟩}(1 + r + r²) = 1`, so the Brauer correspondent of `B₀` is the
-  block of `N_G(⟨t⟩) = C₂`, and `|Irr₀(B₀)| = 2 = |Irr₀(b')|`; no algebraic closure enters.
+  block of `N_G(⟨t⟩) = C₂`, and `|Irr₀(B₀)| = 2 = |Irr₀(b')|`, the second read over `𝔽₄` through
+  the change of level of §6.3; no algebraic closure enters.
 
 ### Examples
 
@@ -1081,8 +1141,9 @@ At `p = 3`: blocks `{1, ω, ω²}` (principal), `{χ₂, χ₂ ω, χ₂ ω²}` 
 
 ### Dependencies
 
-Base §§1.1, 1.3, 2.2, 2.4, 3.1, 4.2–4.3, 6.2, 7.1; CharacterTheory §§4.3, 4.4; Tau Ceti central
-characters and degrees; Mathlib `Ideal.exists_smul_eq_of_isGaloisGroup` for the change of place.
+Base §§1.1, 1.3, 2.1–2.4, 3.1, 4.1–4.3, 6.1–6.2, 7.1, 8.2 (§8.2 for the change of level only);
+CharacterTheory §§4.3, 4.4; Tau Ceti central characters and degrees; Mathlib
+`Ideal.exists_smul_eq_of_isGaloisGroup` for the change of place.
 
 ## Layer 7: blocks and normal subgroups
 
@@ -1099,7 +1160,7 @@ supports of distinct classes disjoint; the first because
 the local algebra `Z(k[G]) e_B` the element `𝒞⁺_x e_B` is a unit, so `e_B` lies in that ideal and
 the minimality characterisation of base §6.2 applies; the induced statement from the first
 applied in `H` to a class `ℒ ⊆ 𝒞 ∩ H` with `λ_b(ℒ⁺) ≠ 0`, `𝒞` a defect class of `b^G`. *Needs:*
-§6.1; base §§6.1, 6.2, 7.1.
+§6.1; §6.3 (the change of level, for the blocks of `H`); base §§6.1, 6.2, 7.1.
 
 **Checks.**
 - `S₃`, `p = 2`, `B₀`: at a transposition `λ_{B₀} = 3 ≡ 1` and `D_t = ⟨t⟩` contains a conjugate of
@@ -1141,7 +1202,8 @@ restriction of a simple module to a normal subgroup is semisimple (Tau Ceti
 `Res_N W`, and induction is left adjoint to restriction (Mathlib `Rep.indResAdjunction`), so
 `Hom_G(Ind_N^G V, W) ≅ Hom_N(V, Res_N W) ≠ 0`; base §2.1 identifies the Brauer character of
 `Ind_N^G V` with `φ^G`; for the sixth, the second and `λ_{b^G}(𝒞⁺) = λ_b((𝒞 ∩ N)⁺) = λ_b(𝒞⁺)` for a
-`G`-class `𝒞 ⊆ N`, which is the definition of `b^G` (base §7.1). *Needs:* §6.1; base §§0.2, 2.1,
+`G`-class `𝒞 ⊆ N`, which is the definition of `b^G` (base §7.1). *Needs:* §6.1; §6.3 (the change
+of level, for the blocks of `N`); base §§0.2, 2.1,
 2.4, 3.1, 4.2, 7.1, 8.2; InductionRestriction Layers 2 and 5; Tau Ceti
 `TauCeti.clifford_restrict_character`, `TauCeti.Representation.isSemisimpleRepresentation_comp_subtype`;
 Mathlib `Rep.indResAdjunction`.
@@ -1185,11 +1247,15 @@ base §1.3), and `K[G] → K[G/N]` sends `e_χ` to `e_χ̄` when `N ≤ ker χ` 
 and `π` sends `Tr_D^G(a)` to `|N : N ∩ D| · Tr_{DN/N}^{G/N}(ā)`, `ā` being `DN/N`-invariant;
 `π(e_B) ≠ 0` because it contains `e_{B̄}`, so the factor `|N : N ∩ D|` is a unit, and
 `e_{B̄} = e_{B̄} π(e_B)` lies in the ideal `Tr_{DN/N}^{G/N}(k[G/N]^{DN/N})`; the minimality
-characterisation of base §6.2 in `G/N` applies. *Needs:* base §§0.2, 1.3, 4.1, 4.2, 6.1, 6.2.
+characterisation of base §6.2 in `G/N` applies. *Needs:* base §§0.2, 1.3, 4.1, 4.2, 6.1, 6.2; for
+the last bullet, §6.3 (the change of level).
 
 - `B` dominates `B̄` exactly when `λ_{B̄}(π(e_B)) = 1`, and then `λ_{B̄} ∘ π = λ_B` on `Z(k[G])`
   (martinez line 1924).
 - For `N = 1`, domination is equality of blocks.
+- Domination is compatible with the change of level of §6.3: `π` commutes with the scalar
+  extension `k_w → k_v`, so `B` dominates `B̄` over `k_w` exactly when `1 ⊗ B` dominates `1 ⊗ B̄`
+  over `k_v`.
 
 **Checks.**
 - `S₃`, `N = C₃`, `p = 2` (`N` a `p'`-group): `π(1 + r + r²) = 3 = 1` and `π(r + r²) = 2 = 0` in
@@ -1218,7 +1284,8 @@ are `B` and `B^G` because `ψ^G` is irreducible for `ψ` over `θ ∈ Irr(b)` (`
 `ω_{ψ^G}(𝒞⁺) = Σ ω_ψ(ℒ⁺)` over the `T`-classes `ℒ ⊆ 𝒞` (reynolds line 149, Theorem 2); induction
 from `T` to `G` gives the correspondence of simple modules and of lattices; the defect groups by
 §7.1 and the degree count `min ν(ψ^G(1)) = ν(|G : T|) + min ν(ψ(1))` with §6.2; heights by the same
-count. *Needs:* §§6.2, 6.3, 7.1, 7.2; base §§0.2, 1.2, 2.1, 7.1, 8.2; Tau Ceti
+count. *Needs:* §§6.2, 6.3 (with its change of level, for the blocks of `T` and `N`), 7.1, 7.2;
+base §§0.2, 1.2, 2.1, 7.1, 8.2; Tau Ceti
 `FDRep.cliffordCorrespondence`.
 
 - `B^G` is defined for `B` covering `b`, and covers `b`.
@@ -1243,9 +1310,11 @@ block `b` of `Q C_G(Q)`, `b^G` is the unique block covering `b` (martinez line 2
 Corollary 9.5); and Fong's theorem: for a `G`-invariant block `b` of `N` and a block `B` covering
 `b` of maximal defect among those covering `b`, with defect group `P`, `p ∤ |G : P N|` and
 `P ∩ N` is a defect group of `b` (martinez line 2161, Proposition 9.1, and line 2222,
-Theorem 9.2). *Needs:* §§7.1, 7.2; base §§6.2, 7.1.
+Theorem 9.2). *Needs:* §6.3 (the change of level, for the blocks of `N` and `Q C_G(Q)`); §§7.1,
+7.2; base §§6.2, 7.1.
 
-- Regularity depends only on `λ_B`, not on blocks of `N`.
+- Regularity depends only on `λ_B`, not on blocks of `N`; as `λ_{1⊗B}` extends `λ_B`, it is the
+  same before and after the change of level of §6.3.
 
 **Checks.**
 - `S₃`, `N = C₃`, `p = 2`: `B₀` has `λ_{B₀}(𝒞⁺_t) = 3 ≡ 1 ≠ 0` at the transpositions, so it is not
@@ -1262,7 +1331,8 @@ Let `P` be a `p`-subgroup of `G`. Prove: for a block `B` with defect group `P`, 
 the Brauer correspondent of `B` (martinez line 1985, Theorem 8.8); and for a block `b` of
 `P C_G(P)` with defect group `P` and stabiliser `N_G(P, b)` in `N_G(P)`, `b^G` has defect group `P`
 exactly when `p ∤ |N_G(P, b) : P C_G(P)|` (martinez line 2295, Theorem 9.6; sambale Chapter 1,
-Theorem 1.18). *Needs:* §§7.1, 7.2, 7.4, 7.5; base §§6.2, 7.1.
+Theorem 1.18). *Needs:* §6.3 (the change of level, for the blocks of `P C_G(P)` and `N_G(P)`);
+§§7.1, 7.2, 7.4, 7.5; base §§6.2, 7.1.
 
 - The blocks of `G` with defect group `P` correspond to the `N_G(P)`-orbits of blocks of `P C_G(P)`
   with defect group `P` and inertial index prime to `p`.
@@ -1334,14 +1404,16 @@ vanishes on `P ∖ 1`, so `Σ_χ ξ_χ(1) ξ_χ` is a multiple of the regular ch
 ### 8.3 Heights of blocks with a normal defect group
 
 Let `D ⊴ G` be a defect group of `B`, `N = D C_G(D)`, `b` a block of `N` with `b^G = B` (§7.6) and
-`T` its stabiliser, so that `p ∤ |T : N|` (§7.6) and `N = D C_N(D)` (§8.2 applies to `b`). Prove:
+`T` its stabiliser, so that `p ∤ |T : N|` (§7.6) and `N = D C_N(D)` (§8.2 applies to `b`, read at
+the system of `G` through the change of level of §6.3). Prove:
 for `χ ∈ Irr(B)` lying over `θ_ξ ∈ Irr(b)`, `ξ ∈ Irr(D)`, `h(χ) ≥ ν(ξ(1))`, and every `θ_ξ` lies under
 some `χ ∈ Irr(B)` (§7.2). Route: `χ = ψ^G` with `ψ ∈ Irr(T | θ_ξ)` (Clifford, `G_{θ_ξ} ≤ T`),
 `θ_ξ(1) ∣ ψ(1)`, `ν(|G : D|) = ν(|G : T|) + ν(|N : D|)`. Prove further Reynolds' height formula:
 `h(χ) = ν(ξ(1))` for every irreducible constituent `ξ` of `χ|_D`, so the set of heights of `B` is
 `{ν(ξ(1)) : ξ ∈ Irr(D)}` (reynolds line 531, Theorem 8; martinez line 2131), using
 gap:clifford-multiplicity-dvd-index (applied to `N ⊴ T`) to make `ψ(1)/θ_ξ(1)` prime to `p`.
-*Needs:* §§6.3, 7.2, 7.6, 8.2; Tau Ceti `FDRep.cliffordCorrespondence`,
+*Needs:* §§6.3 (with its change of level, for the blocks of `N` and `T`), 7.2, 7.6, 8.2; Tau Ceti
+`FDRep.cliffordCorrespondence`,
 `FDRep.clifford_restrict_dvd_finrank`; gap:clifford-multiplicity-dvd-index (InductionRestriction
 Layer 7) for the height formula.
 
@@ -1421,7 +1493,8 @@ validity for every block of every finite group `G` (in a fixed universe) at ever
 `ℚ(ζ_{exp G})` over `p`, with the system of Conventions there (ruhstorfer line 16; martinez
 line 2360, Conjecture 9.9). Prove its instances: blocks of defect zero and blocks with a normal
 defect group, where `N_G(D) = G` and `b' = B`. Cited and not planned: the property at `p = 2`
-(ruhstorfer line 20, Theorem A). *Needs:* §§6.3, 6.4; base §§6.2, 7.1 (the Brauer correspondent,
+(ruhstorfer line 20, Theorem A). *Needs:* §§6.3 (with its change of level, for `Irr₀(b')`), 6.4;
+base §§6.2, 7.1 (the Brauer correspondent,
 Conventions).
 
 - For a given `G`, the equality holds for every block at one place over `p` exactly when it holds
