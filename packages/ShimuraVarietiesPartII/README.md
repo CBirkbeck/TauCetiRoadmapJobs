@@ -684,7 +684,7 @@ Assume the corrected Hodge setup of Conventions together with conditions (D) and
 
 Assume the corrected Hodge setup of Conventions together with conditions (D) and (E).
 
-(KP, §4.6.5, Lemmas 4.6.6 and 4.6.9, pp.199–202).
+(KP, §4.6.5, Lemmas 4.6.6 and 4.6.9, pp.199–201).
 
 *Proof sketch.* KP organizes reciprocity on connected components as an extension compatible with central derived covers. Import the generic component torsor, apply the reflex-unit calculation and verify the induced extension maps through the common connected datum.
 
@@ -748,7 +748,7 @@ Assume the corrected Hodge setup of Conventions together with conditions (D) and
 
 **Theorem.** For every abelian-type datum, p>2 and connected parahoric K_2,p°, the corrected auxiliary cover and component gluing produce a normal integral pro-prime-to-p tower over the local reflex ring, with finite étale prime-to-p transitions, the pro-level DVR bijection and étale-local singularities modeled on M_loc(G_2,{μ_h,2}). The cover’s reflex splitting permits descent to the target local reflex field.
 
-(KPZ, Theorem 7.2.21, pp.84–85; Proposition 7.1.14, pp.75–77).
+(KPZ, Theorem 7.2.21, pp.84–85; Proposition 7.1.14, pp.75–76).
 
 *Proof sketch.* KPZ removes the tame restriction by the corrected very-good Hodge cover and integral component descent. Transfer the local-model and extension properties through the free quotient, identify the intrinsic local model, and use the split local reflex composite.
 
@@ -1001,7 +1001,7 @@ For an Iwahori I in GL₂(Q_p), j=diag(p,1) sends [[a,b],[c,d]] to [[a,pb],[c/p,
 
 **Theorem.** For the neat integral Hodge tower, let x be a geometric special-fibre point with abelian variety A_x up to prime-to-p isogeny, and let g₁,g₂∈G(A_f^p). If x·g₁=x·g₂, the unique automorphism of A_x relating the two prime-to-p level structures fixes the canonical prime-to-p étale and crystalline tensors, so g₁ and g₂ have the same image in I_x(Z_(p))\G(A_f^p), where I_x(Z_(p))=I_x(Q)∩Aut(A_x). Thus g↦x·g induces a well-defined surjection from the Hecke orbit x·G(A_f^p) onto I_x(Z_(p))\G(A_f^p). Equality of two points is asserted only in this direction: the converse, that g₁ and g₂ with the same class give the same normalization point, needs the very-good hypotheses of §1.3 and is not used here. This is the prime-to-p statement needed in the rank argument; it is not a classification of all geometric isogeny classes or an ADLV uniformization theorem.
 
-(HT, Lemma 2.1.4, p.22; Proposition 2.1.6, pp.22–23).
+(HT, Lemma 2.1.4, p.22; Proposition 2.1.6, p.23, with its setting §2.1.5, pp.22–23).
 
 *Proof sketch.* HT reads the relating automorphism off the Siegel moduli interpretation of x·g₁=x·g₂; it fixes the prime-to-p étale tensors because it intertwines the two level structures, and it fixes the crystalline tensors because these are independent of the lift (§0.5, HT Proposition 1.3.7).
 
@@ -1013,7 +1013,7 @@ For an Iwahori I in GL₂(Q_p), j=diag(p,1) sends [[a,b],[c,d]] to [[a,pb],[c/p,
 
 **Theorem.** Choose ℓ_0≠p where G splits and the characteristic polynomial of γ_x splits. After taking a sufficiently divisible finite-field power so the stable centralizer is connected, I_x,Qℓ0 identifies with that stable Frobenius centralizer, and rank I_x=rank G. The proof uses finiteness of the relevant finite-field Hecke orbit to make the quotient of local centralizer points compact, the split-group compact-quotient criterion, and Rosati reductivity. It uses no common Frobenius class from §7.6.
 
-(HT, Proposition 2.1.6, pp.22–23; K17 Corollary 2.1.7, p.31).
+(HT, Proposition 2.1.6, p.23, with its setting §2.1.5, pp.22–23; K17 Corollary 2.1.7, p.31).
 
 *Proof sketch.* HT generalizes Kisin’s finite-field orbit argument to the normal integral Hodge model. Use the split auxiliary prime to make the stable centralizer a split Levi; compactness forces the subgroup to contain a Borel. The homogeneous quotient is then proper and affine, so the connected centralizer equals the isogeny group after scalar extension.
 
@@ -1025,7 +1025,7 @@ For an Iwahori I in GL₂(Q_p), j=diag(p,1) sends [[a,b],[c,d]] to [[a,pb],[c/p,
 
 **Theorem.** After the finite-field extension fixing all geometric endomorphisms and stable centralizers, the natural realization maps identify I_x,Qℓ with Z_G(γ_x,ℓ) for every ℓ≠p and I_x,Qp with the finite-period crystalline group I_p. Hence I_x is connected reductive of full rank. The remaining comparison of centralizer dimensions uses Noot’s coarser Conj′ Frobenius comparison and the type-D outer-orbit analysis, not the full Conj(G) independence theorem being proved here.
 
-(HT, Corollary 2.1.9, pp.24–25).
+(HT, Corollary 2.1.9, p.24, with §2.1.8, p.24, for Conj′ and neatness).
 
 *Proof sketch.* HT compares every realization with the split auxiliary prime using its independently established coarser Frobenius conjugacy theorem. Import Noot’s accommodating-embedding comparison and neat-power step. Equal images in Conj′(G) give centralizers of equal dimension: over an algebraically closed field Ω receiving both coefficient fields (Q_ℓ, or W(F_(q^m))[1/p] with m a multiple of the framing degree m₀ chosen in §4.9 when ℓ=p, and Q_ℓ0) the two semisimple points have the same image in Conj′(G)(Ω), so by ReductiveGroupsPartIII §0.7 some φ∈Aut′(G)(Ω) carries one to the other, and φ maps the centralizer of the first isomorphically onto that of the second. Compare dimensions of the realization inclusions; descend connectedness and reductivity from the identified connected centralizer.
 
@@ -1059,7 +1059,7 @@ An ordinary elliptic point has slopes (0,1), p-rank 1; a supersingular point has
 
 **Construction.** Let the auxiliary Hodge cover (G_1,X_1) and strongly acceptable target (G_2,X_2) share the adjoint datum and carry symplectic embeddings with characters c_1,c_2. Define G_3=(G_1×_(G_ad×G_m)G_2)°, matching both the adjoint image and c_1=c_2, with the induced Shimura conjugacy class. Its direct-sum representation on V_1⊕V_2 is symplectic because the multipliers agree. The projection to G_1 is derived-isomorphic in the source’s cover setup; the projection to G_2 is the corresponding central derived cover.
 
-(KZ, §4.3.7–Lemma 4.3.8, pp.40–42; §4.4.6–4.4.7, pp.43–44).
+(KZ, §4.3.7–Lemma 4.3.8, pp.40–41; §4.4.6–4.4.7, pp.43–44).
 
 *Proof sketch.* KZ uses the common-adjoint, common-multiplier fibre product to compare an arbitrary target Hodge embedding with the auxiliary one. Use the fibre-product centre calculation and the multiplier sequences supplied by ShimuraData; check the Hodge homomorphism factors through the identity component. The block direct-sum form has one similitude factor exactly when the two nonzero blocks have the same multiplier.
 
@@ -1083,7 +1083,7 @@ An ordinary elliptic point has slopes (0,1), p-rank 1; a supersingular point has
 
 **Theorem.** For the matched datum of the strongly acceptable setup, the compact-centre exact sequences and torsion-free coinvariants yield the required connected fixer and a good integral lattice embedding. Its projection to G_1 gives the integral map and completed-local-ring comparison of the derived-isomorphism theorem. Its map to G_2 is constructed by neutral-component descent. In this setup both comparison maps induce isomorphisms on completed local rings at corresponding geometric special points, and ordinary classes correspond under the derived maps.
 
-(KZ, Lemma 4.3.8, pp.40–42; proof of Theorem 4.4.6, pp.45–46).
+(KZ, Lemma 4.3.8, pp.40–41, and the proof of Proposition 4.3.6, pp.41–42; proof of Theorem 4.4.6, pp.45–46).
 
 *Proof sketch.* KZ checks the centre of the matched fibre product and uses the resulting integral maps to transport ordinary lifts. Use the very-good lattice-chain embeddings of FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII §§3.13–3.17 and the connected-fixer criterion of ReductiveGroupsPartII §RG2.3. Distinguish the derived-isomorphism projection from the derived-cover projection and apply the appropriate descent comparison.
 
@@ -1283,7 +1283,7 @@ For split-at-p GU(1,1) at hyperspecial level the KR index set has one element wh
 
 **Construction.** For an F_q-point y on the special-fibre Shimura stack, define γ_(y,ℓ)=χ_G(ρ_ℓ(Frob_q,geom))∈Conj(G)(Q_ℓ), where the conjugacy quotient χ_G is imported from ArithmeticGaloisRepresentations §1.11. The point is independent of paths, frames and the chosen neat cover. For every algebraic representation its characteristic polynomial is that of geometric Frobenius on the associated local-system fibre. A Q-rational quotient point is not by definition represented by an element of G(Q).
 
-(KZ, §5.1.2–5.1.3, pp.47–48).
+(KZ, §5.1.2–5.1.3, p.47).
 
 *Proof sketch.* KZ sends the Frobenius of the intrinsic group-valued local system to the conjugacy quotient. Apply the imported quotient universal property and tensor-frame comparison to remove the choices.
 
