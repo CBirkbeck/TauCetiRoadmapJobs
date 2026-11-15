@@ -21,7 +21,8 @@ Headline theorems stated here:
   product form (`isOfTypeFPn_iff_piComparison`);
 * Serre's theorem 3.2 (`cohomologicalDim_eq_of_finiteIndex`);
 * the Eilenberg–Ganea theorem 5.3 (`geometricDim_le_max`);
-* Swan's theorem 7.3(b), rational form (`exists_linearEquiv_tensorRat`);
+* Swan's theorem 7.3(b), rational form (`exists_linearEquiv_tensorRat`), and 7.4, modulo a prime
+  `p` (`exists_linearEquiv_tensorZMod`);
 * the Euler characteristic 8.4: independence of the subgroup (`groupEulerChar_eq_div_index`) and
   multiplicativity on subgroups of finite index (`groupEulerChar_subgroup`);
 * multiplicativity in extensions 8.6 (`isVirtuallyOfTypeFP_and_groupEulerChar_eq_mul`);
@@ -64,8 +65,12 @@ universe u
 /-! ## Layer 1: finiteness types of groups -/
 
 /-- `G` is *of type `FP_n` over `R`* (README 1.2): the trivial module `R` is `n`-pseudocoherent
-over the group ring `R[G]`, that is, it has a resolution by finitely generated free modules that is
-exact in degrees `≤ n`. Type `FP_∞` is `n = ⊤`. (Bieri–Eckmann 1974, §3.3; Brown 1974, §3.) -/
+over the group ring `R[G]`. For `n : ℕ` this says that there is a partial resolution
+`F_n → ⋯ → F_0 → R → 0` by finitely generated free `R[G]`-modules, exact at `R` and at `F_i` for
+`i < n`; so type `FP_0` says only that `R` is a finitely generated `R[G]`-module, which holds for
+every group, and type `FP_1` that it is finitely presented. Type `FP_∞` is `n = ⊤`: a resolution by
+finitely generated free modules that is exact in every degree. (Bieri–Eckmann 1974, §3.3; Brown
+1974, §3.) -/
 def IsOfTypeFPn (R G : Type u) [CommRing R] [Group G] (n : ℕ∞) : Prop :=
   TauCeti.Huber.IsPseudoCoherentOver (MonoidAlgebra R G) (Representation.trivial R G R).asModule n
 
@@ -167,11 +172,29 @@ theorem exists_linearEquiv_tensorRat {G : Type} [Group G] [Finite G] (P : Type) 
       Nonempty ((P ⊗[ℤ] ℚ) ≃ₗ[MonoidAlgebra ℤ G] ((Fin m → MonoidAlgebra ℤ G) ⊗[ℤ] ℚ)) := by
   sorry
 
+/-- **Swan's theorem modulo `p`** (README 7.4, the `𝔽_p` form). For a finite group `G`, a finitely
+generated projective `ℤ[G]`-module `P` and a prime `p`, the reduction of `P` modulo `p` is free over
+`𝔽_p[G]` of rank `m = rank_ℤ P / |G|`: there is an `m` with `m · |G| = rank_ℤ P` and a
+`ℤ[G]`-linear isomorphism `P ⊗ 𝔽_p ≅ ℤ[G]^m ⊗ 𝔽_p`. Both sides are modules over the quotient
+`𝔽_p[G]` of `ℤ[G]`, so a `ℤ[G]`-linear isomorphism is the same as an `𝔽_p[G]`-linear one.
+(Brown 1974, Appendix A, the refinement of Swan's theorem used in the proof of Theorem 7, which
+gives freeness over the localization `ℤ_(p)[G]`; the `𝔽_p` form follows by base change.) -/
+theorem exists_linearEquiv_tensorZMod {G : Type} [Group G] [Finite G] (P : Type) [AddCommGroup P]
+    [Module (MonoidAlgebra ℤ G) P] [Module.Finite (MonoidAlgebra ℤ G) P]
+    [Module.Projective (MonoidAlgebra ℤ G) P] (p : ℕ) [Fact p.Prime] :
+    ∃ m : ℕ, m * Nat.card G = Module.finrank ℤ P ∧
+      Nonempty ((P ⊗[ℤ] ZMod p) ≃ₗ[MonoidAlgebra ℤ G]
+        ((Fin m → MonoidAlgebra ℤ G) ⊗[ℤ] ZMod p)) := by
+  sorry
+
 /-! ## Layer 8: Euler characteristics -/
 
-/-- The *rational Euler characteristic* `χ_ℚ(G) = Σᵢ (−1)ⁱ dim_ℚ Hᵢ(G, ℚ)` (README 8.3). It is the
-Euler characteristic of the rational homology when that homology has finite total dimension;
-otherwise the finite sum is `0` by convention. -/
+/-- The *rational Euler characteristic* `χ_ℚ(G) = Σᵢ (−1)ⁱ dim_ℚ Hᵢ(G, ℚ)` (README 8.3). When the
+rational homology has finite total dimension this is its Euler characteristic. On other groups the
+body follows the conventions of `HomologicalComplex.homologyEulerChar`: `Module.finrank` assigns `0`
+to each infinite-dimensional homology group, and `finsum` assigns `0` when infinitely many terms are
+nonzero. So the free group of countably infinite rank, with `H₀ = ℚ`, `H₁` infinite-dimensional and
+no higher homology, gets the value `1`, not `0`. -/
 noncomputable def rationalEulerChar (G : Type) [Group G] : ℤ :=
   ∑ᶠ i : ℕ, (-1) ^ i * (Module.finrank ℚ (groupHomology (Rep.trivial ℚ G ℚ) i) : ℤ)
 

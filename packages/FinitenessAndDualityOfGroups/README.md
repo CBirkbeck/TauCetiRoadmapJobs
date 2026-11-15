@@ -1877,7 +1877,10 @@ the localization of `ℤ` at the prime ideal `(p)` (`Localization.AtPrime`) and 
 `p`-adic integers. The source states the first form, for the localization of `ℤ` at every prime
 ideal (Brown1974 Appendix A, lines 1311–1320, the refinement used in the proof of Theorem 7; at the
 zero ideal it is 7.3(b)); the other two follow from it by base change along `ℤ_(p) → ℤ_p` and
-`ℤ_(p) → 𝔽_p`. Route: `ℚ_p ⊗_{ℤ_p} (ℤ_p ⊗ P) ≅ ℚ_p ⊗_ℚ (ℚ ⊗ P) ≅ (ℚ_p G)^m` by 7.3, so
+`ℤ_(p) → 𝔽_p`. A `ℤG`-linear isomorphism `P ⊗_ℤ 𝔽_p ≅ (ℤG)^m ⊗_ℤ 𝔽_p` is the same as an
+`𝔽_p G`-linear one, both sides being modules over the quotient `𝔽_p G` of `ℤG`; in that form, with
+`m · |G| = rank_ℤ P`, the `𝔽_p` form is `exists_linearEquiv_tensorZMod`. Route:
+`ℚ_p ⊗_{ℤ_p} (ℤ_p ⊗ P) ≅ ℚ_p ⊗_ℚ (ℚ ⊗ P) ≅ (ℚ_p G)^m` by 7.3, so
 `TauCeti.nonempty_linearEquiv_of_projective_of_tensorRat` gives the `ℤ_p` form, and reduction
 modulo `p` the `𝔽_p` form. For the `ℤ_(p)` form, lift an isomorphism `(𝔽_p G)^m ≅ 𝔽_p ⊗ P` to a map
 `(ℤ_(p) G)^m → ℤ_(p) ⊗ P`; its cokernel, and its kernel (a direct summand, `ℤ_(p) ⊗ P` being
