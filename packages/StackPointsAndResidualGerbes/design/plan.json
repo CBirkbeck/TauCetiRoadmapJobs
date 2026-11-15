@@ -98,13 +98,15 @@
      ],
      "locator": {
       "source": "stacks-04XE",
-      "where": "Definition 100.8.1, Lemmas 100.8.2-100.8.6, lines 707-762; Morphisms of Spaces Lemma 67.10.8 used at stacks-06ML line 1204; stacks-06RD lines 445-451 and 591-608 (Lemmas 101.4.15, 101.5.6)"
+      "where": "Definition 100.8.1, Lemmas 100.8.2-100.8.6, lines 707-762; stacks-morphisms-spaces lines 904-905 (Lemma 67.10.8); stacks-06RD lines 445-451 and 591-608 (Lemmas 101.4.15, 101.5.6)"
      },
      "prerequisites": [
+      "roadmap:SchemeAndStackFoundations §1.7",
       "roadmap:SchemeAndStackFoundations §1.8",
       "roadmap:SchemeAndStackFoundations §1.18",
       "roadmap:SchemeAndStackFoundations §1.19",
       "roadmap:SchemeAndStackFoundations §1.20",
+      "mathlib:CategoryTheory.MorphismProperty.DescendsAlong",
       "gap:stack-morphism-permanence",
       "gap:stack-separation-axioms"
      ],
@@ -1145,6 +1147,7 @@
       "where": "Lemma 101.18.7, lines 1609-1665"
      },
      "prerequisites": [
+      "target:0.2",
       "target:1.1",
       "target:3.2",
       "target:3.3",
@@ -1278,11 +1281,15 @@
       "where": "Lemma 101.31.3, lines 3096-3129"
      },
      "prerequisites": [
+      "target:0.2",
       "target:0.3",
       "target:3.3",
       "target:3.4",
       "roadmap:SchemeAndStackFoundations §1.20",
       "roadmap:SchemeAndStackFoundations §1.21",
+      "roadmap:SchemeAndStackFoundations §1.8",
+      "mathlib:AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType",
+      "mathlib:AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal",
       "gap:flat-groupoid-quotients",
       "gap:stack-morphism-permanence"
      ],
@@ -2330,7 +2337,7 @@
     "5.4"
    ],
    "detail": "Stacks, Decent Spaces, Theorem 68.10.2 (stacks-decent-spaces lines 1094-1096); the quasi-separated case is Properties of Spaces, Proposition 66.13.3.",
-   "needs": "SchemeAndStackFoundations §1.7 must prove that a decent algebraic space has a dense open subspace which is a scheme.",
+   "needs": "SchemeAndStackFoundations §1.7 must prove that every decent algebraic space contains a dense open subspace representable by a scheme.",
    "supplier": "SchemeAndStackFoundations",
    "section": "§1.7"
   },
@@ -2384,7 +2391,7 @@
    "neededBy": [
     "2.6"
    ],
-   "detail": "Stacks, Morphisms of Spaces, Proposition 67.32.1; Morphisms, Proposition 29.28.2 (used at stacks-06QB lines 2929-2932). §4.12 states generic_flatness for schemes over an integral base.",
+   "detail": "Stacks, Morphisms of Spaces, Proposition 67.32.1 (stacks-morphisms-spaces lines 3050-3057); Morphisms, Proposition 29.28.2 (stacks-morphisms-schemes lines 2319-2326); used at stacks-06QB lines 2929-2932. §4.12 states generic_flatness for schemes over an integral base.",
    "needs": "SchemeAndStackFoundations §4.12 must extend generic_flatness to quasi-compact morphisms of algebraic spaces locally of finite type over a reduced base, giving a dense open over which the morphism is flat and locally of finite presentation.",
    "supplier": "SchemeAndStackFoundations",
    "section": "§4.12"

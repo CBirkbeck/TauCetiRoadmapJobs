@@ -225,7 +225,7 @@ authors = "The Stacks Project Authors"
 title = "The Stacks Project, Morphisms of Schemes"
 year = 2026
 locator_scheme = "theorem"
-locator = "Lemmas 29.59.1-29.59.2"
+locator = "Lemmas 29.59.1-29.59.2 and Proposition 29.28.2"
 url = "https://stacks.math.columbia.edu/download/morphisms.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf"
 fetched_at = "2026-11-07T09:46:34Z"
@@ -233,7 +233,7 @@ sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
-cited_for = ["a morphism from a reduced scheme with image in one point, or in a set of points without specialisations of a locally Noetherian scheme, factors through the residue fields (§29.59): the supplier contract gap:reduced-scheme-residue-field-factorisation of target 5.2"]
+cited_for = ["a morphism from a reduced scheme with image in one point, or in a set of points without specialisations of a locally Noetherian scheme, factors through the residue fields (§29.59): the supplier contract gap:reduced-scheme-residue-field-factorisation of target 5.2", "generic flatness over a reduced base (Proposition 29.28.2): the supplier contract gap:generic-flatness-spaces of target 2.6"]
 
 [[source]]
 id = "sga3-vi-a"
@@ -306,7 +306,7 @@ authors = "The Stacks Project Authors"
 title = "The Stacks Project, Morphisms of Algebraic Spaces"
 year = 2026
 locator_scheme = "theorem"
-locator = "Morphisms of Spaces, Lemma 67.10.8 and Proposition 67.32.1"
+locator = "Morphisms of Spaces, Lemma 67.10.8 (lines 904-905) and Proposition 67.32.1 (lines 3050-3057)"
 url = "https://stacks.math.columbia.edu/download/spaces-morphisms.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/spaces-morphisms.pdf"
 fetched_at = "2026-11-11T12:45:19Z"

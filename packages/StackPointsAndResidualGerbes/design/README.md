@@ -207,9 +207,15 @@ The pin is `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`; every declaration below w
   (`Mathlib/AlgebraicGeometry/Noetherian.lean:271`): over a locally Noetherian target a morphism
   of schemes is locally of finite presentation iff it is locally of finite type. With the
   square-independence of SchemeAndStackFoundations §1.8's `Spaces.EtaleLocal` (an étale cover of
-  the spectrum of a field is locally Noetherian) it gives the case used in 3.2, 4.1 and 4.2: a
+  the spectrum of a field is locally Noetherian) it gives the case used in 3.2, 4.1, 4.2, 4.4 and 6.1: a
   morphism of algebraic spaces locally of finite type over a disjoint union of spectra of fields is
   locally of finite presentation.
+- The instance `DescendsAlong @Etale (@Surjective ⊓ @Flat ⊓ @QuasiCompact)`
+  (`Mathlib/AlgebraicGeometry/Morphisms/LocalFlatDescent.lean:48`), for the class
+  `CategoryTheory.MorphismProperty.DescendsAlong`
+  (`Mathlib/CategoryTheory/MorphismProperty/Descent.lean:32`): a morphism of schemes whose base
+  change along a flat, surjective, quasi-compact morphism is étale is étale. It gives the descent
+  step of the rigidity in 0.2, for schemes only.
 - `retractionKerCotangentToTensorEquivSection` (`Mathlib/RingTheory/Smooth/Kaehler.lean:324`): for a
   surjection `P → A` of `R`-algebras with kernel `I`, `P`-linear retractions of
   `I/I² → A ⊗_P Ω[P/R]` correspond to `R`-algebra sections of `P/I² → A`; no smoothness of `P` is
@@ -277,8 +283,10 @@ The pin is `2fd255d997f47c0b5d834ee416c7015d55444ce5`.
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
-- §1.7 (`points`, `opensEquiv`) and §1.8 (`Spaces.EtaleLocal`, fibre products of spaces): points
-  and open subspaces of algebraic spaces, and étale-local properties of morphisms of spaces.
+- §1.7 (`points`, `points_atlas_surjective`, `opensEquiv`) and §1.8 (`Spaces.EtaleLocal`,
+  `spacePresentation`, fibre products of spaces): points and open subspaces of algebraic spaces, the
+  open image of an étale atlas, the presentation of a space as the quotient of an étale atlas by its
+  relation, and étale-local properties of morphisms of spaces.
 - §1.9 (`IsSeparatedSpace`, `QuasiSeparatedSpace`, `LocallySeparatedSpace`, `QuasiCompactSpace`,
   `IsProperSpace`): separation, local separation and quasi-compactness of morphisms of spaces.
 - §1.13 (`Groups.GroupSpace`), §1.14 (`Groupoid`, `Groupoid.restrict`, `stabilizer`, `stabilizerAt`),
@@ -368,9 +376,9 @@ represented by a monomorphism from the spectrum of a field (Lemma 68.11.1), that
 sober (Proposition 68.12.4), the specialisation Lemma 68.7.2 and the stratification Lemma 68.8.3.
 
 What SchemeAndStackFoundations must provide (gap:decent-space-schematic-locus): §1.7 must prove that
-a decent algebraic space has a dense open subspace which is a scheme (Stacks, Decent Spaces, Theorem
-68.10.2, stacks-decent-spaces lines 1094–1096; for a quasi-separated space, Properties of Spaces,
-Proposition 66.13.3).
+every decent algebraic space contains a dense open subspace representable by a scheme (Stacks, Decent
+Spaces, Theorem 68.10.2, stacks-decent-spaces lines 1094–1096; for a quasi-separated space,
+Properties of Spaces, Proposition 66.13.3).
 
 What SchemeAndStackFoundations must provide (gap:reduced-scheme-residue-field-factorisation): §1.7
 must prove that a morphism of schemes `Y → X` with `Y` reduced and image contained in `{x}` factors
@@ -397,7 +405,8 @@ is an isomorphism is an isomorphism (Stacks, Descent on Spaces, Lemma 74.11.15).
 What SchemeAndStackFoundations must provide (gap:generic-flatness-spaces): §4.12 must extend
 `generic_flatness` to a quasi-compact morphism of algebraic spaces locally of finite type over a
 reduced algebraic space, giving a dense open of the base over which it is flat and locally of finite
-presentation (Stacks, Morphisms of Spaces, Proposition 67.32.1; Morphisms, Proposition 29.28.2).
+presentation (stacks-morphisms-spaces lines 3050–3057, Proposition 67.32.1; stacks-morphisms-schemes
+lines 2319–2326, Proposition 29.28.2).
 
 What SchemeAndStackFoundations must provide (gap:reduced-regular-smooth-local): §4.13 must prove that
 reducedness of schemes is local in the smooth topology over an arbitrary base and descends along flat
@@ -466,19 +475,21 @@ to the dense open gerbe. Layer 3 defines the residual gerbe through reduced one-
 proves its properties; Layer 4 proves its existence in each case the Stacks Project treats, and the
 closed-immersion criterion. Layer 5 adds decency, which is exactly what makes the base of a residual
 gerbe the spectrum of a field. Layer 6 computes residual gerbes from representatives and identifies
-them with classifying stacks at rational points. Layer 7 uses Layers 0, 4 and 6 at a closed rational
+them with classifying stacks at rational points. Layer 7 uses Layers 0–4 and 6 at a closed rational
 point to define the normal space and compare it with the tangent space. Layers 0–3 are linear;
-Layers 4 and 5 both use 3; Layer 6 uses 4 and 5; Layer 7 uses 0.4, 4.5 and 6.4.
+Layer 4 uses 3; Layer 5 uses 3 and 4; Layer 6 uses 4 and 5; Layer 7 uses 0.3, 0.4, 1.3, 2.2, 2.3,
+3.4, 4.5 and 6.4.
 
 ## Layer 0: monomorphisms, immersions and reduced substacks
 
 ### 0.1 Reduced and regular algebraic stacks
 
-Let `P` be a property of schemes which is local in the smooth topology. Say that an algebraic stack
-`𝒳` *has `P`* (*Stacks.HasSmoothLocalProperty*) if some scheme `U` with a smooth surjective
-`U → 𝒳` has `P`. Prove that this is equivalent to: every scheme smooth over `𝒳` has `P`; some, and
-every, algebraic space smooth over `𝒳` (surjective in the first case) has `P`; for `𝒳` a scheme or
-an algebraic space it is `P` of `𝒳` (stacks-04XE lines 625–653, Lemma 100.7.1, Definition 100.7.2).
+Fix a smooth-local property `P` of schemes (one that is local in the smooth topology). Say that an
+algebraic stack `𝒳` *has `P`* (*Stacks.HasSmoothLocalProperty*) if some scheme `U` with a smooth
+surjective `U → 𝒳` has `P`. Prove that this is equivalent to: every scheme smooth over `𝒳` has
+`P`; some, and every, algebraic space smooth over `𝒳` (surjective in the first case) has `P`; for `𝒳`
+a scheme or an algebraic space it is `P` of `𝒳` (stacks-04XE lines 625–653, Lemma 100.7.1,
+Definition 100.7.2).
 Apply it to `P` = reduced (Mathlib `AlgebraicGeometry.IsReduced`), regular (Tau Ceti
 `TauCeti.AlgebraicGeometry.IsRegular`) and locally Noetherian, which are smooth local (stacks-04XE
 lines 654–665, Remark 100.7.3). *Needs:* SchemeAndStackFoundations §1.19 (`IsAlgebraicStack`, smooth
@@ -523,13 +534,20 @@ fully faithful on fibre categories; the diagonal `Δ_f : 𝒳 → 𝒳 ×_𝒴 �
 algebraic space `W` and surjective, flat, locally finitely presented `W → 𝒴`, the 2-fibre product
 `W ×_𝒴 𝒳` is an algebraic space and `W ×_𝒴 𝒳 → W` is a monomorphism (stacks-04XE lines 718–744,
 Lemma 100.8.4). Prove the rigidity of monomorphisms into a field: a monomorphism `T → Spec k` from a
-nonempty algebraic space is an isomorphism (Morphisms of Spaces, Lemma 67.10.8, used at stacks-06ML
-line 1204). For the proof take an étale atlas `W → T` with `W` a nonempty affine scheme; since
-`T ×_k T = T`, the relation `W ×_T W` equals `W ×_k W`, so `W → Spec k` is étale by fpqc descent of
-étaleness along `W → Spec k`, and `T` is the quotient of `W` by the full relation `W ×_k W`, which is
-`Spec k`. *Needs:* SchemeAndStackFoundations §1.18 (`twoFiberProduct`), §1.19
-(`IsRepresentableBySpaces`, `RepresentableProperty`), §1.8 (`Spaces.EtaleLocal`), §1.20 (`Stacks.points`
-and `inertia`, for the API's `|f|` and `I_𝒳`); gap:stack-morphism-permanence
+nonempty algebraic space is an isomorphism (stacks-morphisms-spaces lines 904–905, Lemma 67.10.8).
+For the proof take a nonempty affine open `V` of a scheme étale and surjective over `T`, so that
+`V → T` is étale with image an open subspace `T' ⊆ T`; since `T ×_k T = T`, the relation
+`V ×_{T'} V = V ×_T V` equals `V ×_k V`, whose first projection is therefore étale, so `V → Spec k`
+is étale by fpqc descent of étaleness along the flat, surjective, quasi-compact `V → Spec k`; then
+`V` is an étale atlas of both `T'` and `Spec k` with the same relation `V ×_k V`, so `T' ≅ Spec k`
+over `k`, and `T → Spec k` is a monomorphism with the section `Spec k ≅ T' ⊆ T`, hence an
+isomorphism. *Needs:* SchemeAndStackFoundations §1.18 (`twoFiberProduct`), §1.19
+(`IsRepresentableBySpaces`, `RepresentableProperty`), §1.7 (`points_atlas_surjective`, `opensEquiv`:
+the image `T'` is an open subspace), §1.8 (`Spaces.EtaleLocal`, `spacePresentation`: an algebraic
+space is the quotient of an étale atlas by its relation), §1.20 (`Stacks.points` and `inertia`, for
+the API's `|f|` and `I_𝒳`); Mathlib's instance
+`DescendsAlong @Etale (@Surjective ⊓ @Flat ⊓ @QuasiCompact)` (fpqc descent of étaleness, for the
+rigidity); gap:stack-morphism-permanence
 (representability and the monomorphism property are checked after the base change along `W → 𝒴`,
 Lemmas 100.3.1 and 100.3.3); for the last clause of the API gap:stack-separation-axioms.
 
@@ -730,7 +748,8 @@ SchemeAndStackFoundations §§1.7–1.8, 1.14, 1.18–1.20, 1.22, 4.8, 4.13 (thr
 gap:reduced-regular-smooth-local); Tau Ceti `TauCeti.AlgebraicGeometry.IsRegular` with `.of_smooth`
 and `.of_flat_of_surjective`; Mathlib `AlgebraicGeometry.IsReduced`,
 `AlgebraicGeometry.IsLocallyNoetherian`,
-`AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal`, `.subscheme`, `.subschemeι`;
+`AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal`, `.subscheme`, `.subschemeι`, the instance
+`DescendsAlong @Etale (@Surjective ⊓ @Flat ⊓ @QuasiCompact)`;
 gap:stack-morphism-permanence, gap:stack-separation-axioms, gap:flat-groupoid-quotients,
 gap:reduced-regular-smooth-local.
 
@@ -959,15 +978,16 @@ finite presentation; and `x : U → 𝒳` is surjective, flat and locally of fin
 
 ### 2.3 Fppf-local structure, flatness and smoothness
 
-Prove that `𝒳 → 𝒴` is a gerbe iff there are an algebraic space `U`, a group algebraic space `G` flat
-and locally of finite presentation over `U` and a surjective, flat, locally finitely presented
-`U → 𝒴` with `𝒳 ×_𝒴 U ≅ [U/G]` over `U` (stacks-06QB lines 2696–2712, Lemma 101.28.7); that a gerbe
-is surjective, flat and locally of finite presentation (stacks-06QB lines 2713–2721, Lemma 101.28.8);
-that for `X → Y` smooth and `G` flat and locally of finite presentation over `Y` acting on `X` over
-`Y`, `[X/G] → Y` is smooth, even when `G` is not smooth; and that a gerbe is smooth (stacks-06RD lines
-3335–3357, Lemmas 101.33.7–101.33.8). *Needs:* 2.1, 2.2; SchemeAndStackFoundations §1.21
-(`Stack.quotient`); gap:flat-groupoid-quotients (`[U/G]` is algebraic for the group algebraic space
-`G` over the algebraic space `U`, Lemma 97.18.3, and is a gerbe over `U`, Lemmas 78.27.1–78.27.2);
+Prove that `𝒳 → 𝒴` is a gerbe iff it becomes a classifying stack fppf-locally on `𝒴`: for some
+surjective, flat, locally finitely presented `U → 𝒴` from an algebraic space, `𝒳 ×_𝒴 U ≅ [U/G]` over
+`U` with `G` a flat, locally finitely presented group algebraic space over `U` (stacks-06QB lines
+2696–2712, Lemma 101.28.7); that a gerbe is surjective, flat and locally of finite presentation
+(stacks-06QB lines 2713–2721, Lemma 101.28.8); that for `X → Y` smooth and `G` flat and locally of
+finite presentation over `Y` acting on `X` over `Y`, `[X/G] → Y` is smooth, even when `G` is not
+smooth; and that a gerbe is smooth (stacks-06RD lines 3335–3357, Lemmas 101.33.7–101.33.8).
+*Needs:* 2.1, 2.2; SchemeAndStackFoundations §1.21 (`Stack.quotient`); gap:flat-groupoid-quotients
+(`[U/G]` is algebraic for the group algebraic space `G` over the algebraic space `U`, Lemma 97.18.3,
+and is a gerbe over `U`, Lemmas 78.27.1–78.27.2);
 gap:stack-morphism-permanence (descent of smoothness, flatness and local finite presentation).
 
 **Checks.**
@@ -1219,11 +1239,12 @@ finite type over a field, hence flat and locally of finite presentation; the quo
 (SchemeAndStackFoundations §1.21's `Stack.quotient`) of this groupoid in algebraic spaces is
 algebraic (gap:flat-groupoid-quotients, Theorem 97.17.2), maps fully faithfully to `𝒳`, and is the
 residual gerbe by 3.4; local finite type descends along the fppf covering of `𝒵_x ×_𝒳 U` by
-`u ×_𝒳 U`. *Needs:* 1.1, 3.2–3.4; SchemeAndStackFoundations §1.21 (`Stack.quotient`), §1.8
-(`Spaces.EtaleLocal`); Mathlib `AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType`
-(local finite type over a field implies local finite presentation); gap:flat-groupoid-quotients
-(algebraicity of `[u/(u ×_𝒳 u)]`; full faithfulness of `[u/(u ×_𝒳 u)] → 𝒳`);
-gap:stack-morphism-permanence (descent of local finite type).
+`u ×_𝒳 U`. *Needs:* 0.2 (the fully faithful `[u/(u ×_𝒳 u)] → 𝒳` is a monomorphism), 1.1, 3.2–3.4;
+SchemeAndStackFoundations §1.21 (`Stack.quotient`), §1.8 (`Spaces.EtaleLocal`); Mathlib
+`AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType` (local finite type over a
+field implies local finite presentation); gap:flat-groupoid-quotients (algebraicity of
+`[u/(u ×_𝒳 u)]`; full faithfulness of `[u/(u ×_𝒳 u)] → 𝒳`); gap:stack-morphism-permanence (descent
+of local finite type).
 
 **Checks.**
 
@@ -1290,9 +1311,13 @@ Prove that if `𝒳` is locally Noetherian the residual gerbe exists at every po
 Noetherian smooth chart `U` (0.3), choose `u` over `x` whose closure meets the fibre `E` of `x` only in
 `u`, and show that `R' = u ×_𝒳 u` is the closed subspace of the algebraic space `u ×_𝒳 U` over the
 reduced closure of `u`, so that its projections are flat and locally of finite presentation and
-`[u/R']` is the residual gerbe. *Needs:* 0.3, 3.3, 3.4; SchemeAndStackFoundations §1.20
-(`stack_presentation`), §1.21 (`Stack.quotient`); gap:flat-groupoid-quotients (`[u/R']` is algebraic
-for the groupoid in algebraic spaces `R'`, Theorem 97.17.2); gap:stack-morphism-permanence.
+`[u/R']` is the residual gerbe. *Needs:* 0.2 (the fully faithful `[u/R'] → 𝒳` is a monomorphism),
+0.3, 3.3, 3.4; SchemeAndStackFoundations §1.20 (`stack_presentation`), §1.21 (`Stack.quotient`), §1.8
+(`Spaces.EtaleLocal`); Mathlib `AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType`
+(the projections of `R'`, locally of finite type over the field `κ(u)`, are locally of finite
+presentation), `AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal` (the reduced closure of `u`
+in `U`); gap:flat-groupoid-quotients (`[u/R']` is algebraic for the groupoid in algebraic spaces
+`R'`, Theorem 97.17.2); gap:stack-morphism-permanence.
 
 **Checks.**
 
@@ -1329,8 +1354,8 @@ gerbe `Spec k`); `Bμ_p` (quasi-DM); `Bℤ` (a gerbe without quasi-compact inert
 ### Dependencies
 
 Layers 0–3; SchemeAndStackFoundations §§1.8, 1.12, 1.19–1.21; Mathlib
-`AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType`;
-gap:quasi-dm-flat-presentation, gap:flat-groupoid-quotients, gap:quasi-finite-over-fields,
+`AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType`,
+`AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal`; gap:quasi-dm-flat-presentation, gap:flat-groupoid-quotients, gap:quasi-finite-over-fields,
 gap:stack-morphism-permanence.
 
 ## Layer 5: decent stacks and the residue field
@@ -1924,7 +1949,7 @@ over `Spec ℝ` with no real object, with `𝒳 ×_ℝ ℂ ≃ B(ℤ/2)_ℂ` at 
   (Chapter 68): Sections 68.6, 68.10 (Theorem 68.10.2, cited in gap:decent-space-schematic-locus),
   68.11 and 68.13.
 - [stacks-morphisms-schemes] The Stacks Project Authors, *The Stacks Project*, Morphisms of Schemes
-  (Chapter 29): Section 29.59.
+  (Chapter 29): Section 29.59, and Proposition 29.28.2, cited in gap:generic-flatness-spaces.
 - [stacks-criteria] The Stacks Project Authors, *The Stacks Project*, Criteria for Representability
   (Chapter 97): Sections 97.17–97.18.
 - [stacks-sheaves-on-stacks] The Stacks Project Authors, *The Stacks Project*, Sheaves on Algebraic
