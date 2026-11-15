@@ -2031,7 +2031,7 @@
       {
        "name": "position_dependent",
        "kind": "non-example",
-       "statement": "Unit circle (d = 1), f⁰ = ρ(x)M_{1,0}(v) with ρ(x) = 1 + 0.5 cos(2πx): the N = 1 component density (μ/Z)ρ(x)M(v) becomes (μ/Z)ρ(x − tv)M(v); at t = 1/4, x = 0, v = 1 the factor changes from 1.5 to 1, so by continuity on a positive-measure set. ρ = 1 + 1_{x=0} is nonconstant but a.e. 1 and gives the invariant measure."
+       "statement": "Unit circle (d = 1), f⁰ = r(x)M_{1,0}(v) with r(x) = 1 + 0.5 cos(2πx): the N = 1 component density (μ/Z)r(x)M(v) becomes (μ/Z)r(x − tv)M(v); at t = 1/4, x = 0, v = 1 the factor changes from r(0) = 1.5 to r(−1/4) = 1, so by continuity on a positive-measure set. r = 1 + 1_{x=0} is nonconstant but a.e. 1 and gives the invariant measure."
       }
      ]
     },
