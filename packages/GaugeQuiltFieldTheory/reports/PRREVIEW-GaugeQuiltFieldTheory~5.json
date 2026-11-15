@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GaugeQuiltFieldTheory~5",
+  "head": "df970ca20d6d68395c8fbc264f4ef35c88cdb4a3",
+  "pr": 1076,
+  "folder": "GaugeQuiltFieldTheory",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since df970ca; this round checked the pull request's title and description against the head. Two P3 findings, both in the description's Validation paragraph: it says the Lean prototype is unchanged with no admissions (the head has the SU(r) relation model with three sorry theorems), and it presents CI run 39598885877, whose head is 971ef96, as the submitted head's. Folder unchanged and sound: gate rerun OK (all checks 0), Suggested.lean elaborates with three sorry warnings only, depcheck 0 problems, cross-roadmap citations re-resolved at InstantonFloerTheory 0b47a8f, FukayaTheory 31de88a and main 1a19c9f; seeded sample (Rank two odd degree; InstantonFloerTheory) falls in unchanged text and its ownership split was re-resolved.",
+  "text": "579be4889db23056",
+  "carried": {
+   "from": "df970ca20d6d68395c8fbc264f4ef35c88cdb4a3",
+   "head": "df970ca20d6d68395c8fbc264f4ef35c88cdb4a3",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
