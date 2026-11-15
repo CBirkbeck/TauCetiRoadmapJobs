@@ -96,7 +96,7 @@ noncomputable def gaussianPerimeter (U : Set E) : ℝ≥0∞ :=
 /-- **Weighted variation is the weighted variation measure** (§2.2). For a weight `W` of class
 `C¹` and `u` locally integrable on the open set `Ω` with locally finite Euclidean variation there,
 `V_μ(u; Ω) = ∫_Ω e^{−W} d|Du|`, where `|Du|` is Tau Ceti's variation measure (MilmanNeeman2022,
-Section 3; CianchiFuscoMaggiPratelli2011, (2.3)–(2.5)). -/
+Section 3, for `C^∞` weights; CianchiFuscoMaggiPratelli2011, (2.3)–(2.5), for the Gaussian). -/
 theorem weightedVariation_eq_lintegral_variationMeasure {W : E → ℝ} (hW : ContDiff ℝ 1 W)
     {Ω : Opens E} {u : E → ℝ} (hu : LocallyIntegrableOn u Ω volume)
     (hfin : ∀ K, IsCompact K → K ⊆ Ω →
@@ -108,7 +108,8 @@ theorem weightedVariation_eq_lintegral_variationMeasure {W : E → ℝ} (hW : Co
 /-- **Weighted perimeter is the weighted measure of the reduced and of the essential
 boundary** (§2.2). For `n = dim E ≥ 1`, a weight of class `C¹` and a set `U` of locally finite
 perimeter in the open set `Ω`, `P_μ(U; Ω) = μ^{n−1}(∂*U) = μ^{n−1}(∂^M U ∩ Ω)` with
-`μ^{n−1} = e^{−W} μHE[n−1]` (MilmanNeeman2022, Section 3; Maggi2012, Theorem 15.9). -/
+`μ^{n−1} = e^{−W} μHE[n−1]` (MilmanNeeman2022, Section 3, for `C^∞` weights; Maggi2012,
+Theorem 15.9). -/
 theorem weightedPerimeter_eq_lintegral_reducedBoundary (hn : 0 < Module.finrank ℝ E)
     {W : E → ℝ} (hW : ContDiff ℝ 1 W) {Ω : Opens E} {U : Set E}
     (hU : LocallyIntegrableOn (U.indicator (1 : E → ℝ)) Ω volume)
@@ -125,7 +126,7 @@ theorem weightedPerimeter_eq_lintegral_reducedBoundary (hn : 0 < Module.finrank 
 /-- **The weighted Gauss–Green formula** (§2.5). For `n ≥ 1`, a weight of class `C¹`, a set `U`
 of locally finite perimeter in the open set `Ω` and a `C¹` vector field `X` with compact support
 in `Ω`, `∫_U div_μ X dμ = ∫_{∂*U} ⟨X, ν_U⟩ dμ^{n−1}`, with Tau Ceti's outer normal `ν_U`
-(MilmanNeeman2022, equations (3.1) and (3.3)). -/
+(MilmanNeeman2022, equations (3.1) and (3.3), for `C^∞` weights). -/
 theorem integral_weightedDivergence_eq_integral_reducedBoundary (hn : 0 < Module.finrank ℝ E)
     {W : E → ℝ} (hW : ContDiff ℝ 1 W) {Ω : Opens E} {U : Set E}
     (hU : LocallyIntegrableOn (U.indicator (1 : E → ℝ)) Ω volume)
@@ -186,7 +187,8 @@ noncomputable def isoperimetricProfile (W : E → ℝ) (q : ℕ) (v : Fin q → 
 /-- **Existence of isoperimetric minimizing clusters** (§3.5). For `n = dim E ≥ 1`, a weight `W`
 of class `C¹` with `∫ e^{−W} = 1`, every `q` and every `v` in the probability simplex
 `Δ^{(q−1)}`, some `q`-cluster with measure vector `v` attains the isoperimetric profile at `v`
-(MilmanNeeman2022, Theorem 4.1 (i)). -/
+(MilmanNeeman2022, Theorem 4.1 (i), stated there for `W ∈ C^∞` and `q ≥ 2`; its argument needs
+only lower semicontinuity and compactness, which hold for `C¹` weights). -/
 theorem exists_cluster_perimeter_eq_isoperimetricProfile [Nontrivial E] {W : E → ℝ}
     (hW : ContDiff ℝ 1 W) (hμ : IsProbabilityMeasure (weightedMeasure W)) {q : ℕ}
     {v : Fin q → ℝ} (hv : ∀ i, 0 ≤ v i) (hsum : ∑ i, v i = 1) :
@@ -298,11 +300,11 @@ noncomputable def gaussianSymmetral (F : Submodule ℝ E) (u : E) (U : Set E) : 
     (stdGaussian F {y : F | x - F.starProjection x + (y : E) ∈ U}).toReal}
 
 /-- **Ehrhard symmetrisation does not increase Gaussian perimeter** (§6.6). For a unit vector `e`
-and a Lebesgue-measurable `U` of finite Gaussian perimeter, the Ehrhard symmetral of `U` in
-direction `e` has Gaussian perimeter at most that of `U` (CianchiFuscoMaggiPratelli2011,
+and a Lebesgue-measurable `U`, the Ehrhard symmetral of `U` in direction `e` has Gaussian
+perimeter at most that of `U`, trivially when `P_γ(U) = ∞` (CianchiFuscoMaggiPratelli2011,
 Theorem 4.3). -/
 theorem gaussianPerimeter_gaussianSymmetral_le {e : E} (he : ‖e‖ = 1) {U : Set E}
-    (hU : NullMeasurableSet U volume) (hP : gaussianPerimeter U < ⊤) :
+    (hU : NullMeasurableSet U volume) :
     gaussianPerimeter (gaussianSymmetral (ℝ ∙ e) e U) ≤ gaussianPerimeter U := by
   sorry
 
@@ -366,10 +368,11 @@ theorem borell_sudakov_tsirelson_multivariateGaussian {ι : Type*} [Fintype ι] 
         (A + (fun y => r • Matrix.toEuclideanCLM (𝕜 := ℝ) (CFC.sqrt S) y) '' ball 0 1) := by
   sorry
 
-/-- **The Minkowski-content form** (§8.2). For every Borel `A ⊆ E`, the lower Minkowski content of
-`A` for `γ` is at least `I(γ(A))`: `liminf_{r → 0⁺} (γ(A_r) − γ(A))/r ≥ I(γ(A))` with `A_r` the
-closed `r`-thickening (Ledoux1999, (1.3)–(1.4)). -/
-theorem gaussian_minkowskiContent_ge {A : Set E} (hA : MeasurableSet A) :
+/-- **The Minkowski-content form** (§8.2). For every `A ⊆ E` (its Gaussian measure being the outer
+measure), the lower Minkowski content of `A` for `γ` is at least `I(γ(A))`:
+`liminf_{r → 0⁺} (γ(A_r) − γ(A))/r ≥ I(γ(A))` with `A_r` the closed `r`-thickening (Ledoux1999,
+(1.3)–(1.4)). -/
+theorem gaussian_minkowskiContent_ge (A : Set E) :
     ENNReal.ofReal (gaussianIsoperimetricProfile (stdGaussian E A).toReal) ≤
       liminf (fun r : ℝ => (stdGaussian E (cthickening r A) - stdGaussian E A) /
         ENNReal.ofReal r) (𝓝[>] 0) := by
