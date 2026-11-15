@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EulerSystemsCyclotomicMainConjecture~7",
+  "head": "3c32836f84e6831422549a81a85dff96095994c3",
+  "pr": 1311,
+  "folder": "EulerSystemsCyclotomicMainConjecture",
+  "date": "2026-11-15",
+  "findings": 6,
+  "blocking": 0,
+  "notes": "Full review of the README (4004 lines) and Suggested.lean at 3c32836. Previous findings of the review at 9fc63e3: R01 repaired for the names it listed (two further names are the new R02), R02 repaired. Six P3 findings, none blocking: R01 the README's library baseline hashes are not the pins of lake-manifest.json; R02 normResidueSymbol and span_stickelbergerPhi are declared nowhere; R03 the contract says IntegralIwasawaTheory 4.2 takes the disc form of Baker-Brumer from its own supplier, but at 72d834e it proves it in 4.1e; R04 the supplier contracts omit sections and suppliers that Needs lines consume, and EllipticCurves Layer 7 is used by nothing; R05 three passages refer to a node, a denominator of F.10 and a request that a reader cannot find; R06 section 5.1 and mazurWiles_classGroup_eq_unitIndex keep chi(p)!=1 although step 2 of the proof and Rubin IX.1.2 give the equality without it. Checked: all 15 seeded-sample targets against RUBIN-ES, RJW-PADIC-L and GREITHER-1992 (45 locators, plus SINNOTT-1980 p.182); 60 library declarations at the pins by file and line and 20 by name; 127 supplier section citations at the suppliers' heads or main; gate rerun OK with every counter 0 (the worker's run records build=0); depcheck 246 roadmaps, 2247 edges, 0 problems; nothing outside the folder; lake env lean gives only the five sorry warnings; #check on all 14 declarations; the one-tactic probe with nine tactics fails on all five theorems; adversarial table of 22 rows with computed values; overlap read of the six closest roadmaps, nothing with two owners; 11 passages compared for wording, contents compared with RUBIN-ES. Seven source issues recorded. Not verifiable: the real-field display of Sinnott's introduction theorem (lost in OCR) and the consumer SpecialValuesBirchTate (on neither main nor an open pull request).",
+  "text": "5e23cf05d837c72b",
+  "carried": {
+   "from": "3c32836f84e6831422549a81a85dff96095994c3",
+   "head": "860969a04ab008b7155e59dfd4fbbe197b8d5981",
+   "findings": 6,
+   "lines": 92,
+   "folders": [
+    "EulerSystemsCyclotomicMainConjecture"
+   ]
+  }
+ }
+}
