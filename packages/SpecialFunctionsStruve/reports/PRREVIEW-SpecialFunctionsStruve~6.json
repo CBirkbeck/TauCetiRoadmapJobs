@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsStruve~6",
+  "head": "83a3d1d65af0a9a3cf7950477552e6f259bcdaa2",
+  "pr": 2129,
+  "folder": "SpecialFunctionsStruve",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 83a3d1d. Checked the pull request's title and description against the head: layers, suppliers, corrected DLMF formulas, the Beyond list, 26 headlines, imports and local copies all agree. Computed the 11.7.6 last term (nu=1/2, z=e^{2i}: residual 1e-16 with the README form, 0.266 with DLMF's) and the 11.11.8 sector edge at lambda=1/2 (2.9990301). Worker gate OK with build=0; depcheck 0 problems; elaboration exit 0 with 26 sorry warnings only. Supplier sections resolved at SpecialFunctionsBessel's open head; no second owner of the Struve, Lommel or Anger-Weber functions.",
+  "text": "f090772762065e1e"
+ }
+}
