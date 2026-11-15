@@ -790,10 +790,11 @@
      "id": "5.2",
      "kind": "definition",
      "name": "protectedDeformationProblem",
-     "statement": "For a protected prepared datum, χ = (χ_v)_{v∈R} trivial mod ϖ and a Taylor-Wiles datum Q: 𝒮^P_χ is CrystallineLocalGlobalCompatibilityCM §9.5's 𝒮_χ on S5 ∪ R plus the unipotent-inertia condition of 3.4 at P, framed at T = S5 ⊔ R; 𝒮^P_{χ,Q} adds unrestricted fixed-determinant rings at Q with the O[Δ_Q]-structure.",
+     "statement": "For a protected prepared datum, χ = (χ_v)_{v∈R} trivial mod ϖ and a Taylor-Wiles datum Q of 4.2 with Q ∩ (S ∪ S^c) = ∅ (forbidden set B ⊇ S^c): 𝒮^P_χ is CrystallineLocalGlobalCompatibilityCM §9.5's 𝒮_χ on S5 ∪ R plus the unipotent-inertia condition of 3.4 at P, framed at T = S5 ⊔ R; 𝒮^P_{χ,Q} adds unrestricted fixed-determinant rings at Q with the O[Δ_Q]-structure.",
      "hypotheses": [
       "protected prepared datum",
-      "χ_v ≡ 1 mod ϖ"
+      "χ_v ≡ 1 mod ϖ",
+      "Q from 4.2 with Q ∩ (S ∪ S^c) = ∅"
      ],
      "locator": {
       "source": "CaptainSude26",
@@ -855,7 +856,7 @@
      "hypotheses": [
       "protected prepared datum",
       "χ as in 5.2",
-      "Q from 4.2"
+      "Q from 4.2 with Q ∩ (S ∪ S^c) = ∅ (forbidden set B ⊇ S^c), so P^c ∩ (S ∪ Q) = ∅ and the level is hyperspecial on P^c"
      ],
      "locator": {
       "source": "CaptainSude26",
@@ -888,6 +889,11 @@
        "name": "hecke_Q_empty",
        "kind": "degenerate",
        "statement": "For Q = ∅, Δ_∅ = 1 and the maps are the first construction."
+      },
+      {
+       "name": "hecke_Q_meets_Pc",
+       "kind": "non-example",
+       "statement": "w = v^c with v ∈ P, q_w = 11, ρbar(Frob_w) = diag(2,3) over F5 meets the Taylor-Wiles conditions (11 ≡ 1 mod 5, det 6 ≡ 1, distinct eigenvalues); putting w into Q gives level Iw_w of index q_w + 1 = 12 in PGL₂(O_{F_w}) and diamond kernel of index 60, not hyperspecial; over F5[ε]/(ε²) the inertia image diag(1+ε, 1−ε) has det 1, commutes with diag(2,3) and equals its 11th power, a lift ramified at a place of P^c."
       }
      ]
     },

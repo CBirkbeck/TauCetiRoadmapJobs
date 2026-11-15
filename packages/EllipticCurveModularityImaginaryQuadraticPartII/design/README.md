@@ -90,8 +90,10 @@ labelled Hodge–Tate weights. Neither pinned library has any of these carriers.
 finite-group and local statements of Layers 1 and 3 are ingredients of the proofs, not headlines,
 and are specified here as mathematics with their Checks.
 
-**Status of the sources.** Layers 3–7 follow CaptainSude26, an unrefereed pseudonymous manuscript;
-Layer 2 follows LeHung26, a discussion draft; the parent follows OpenAI26. Theorem 2.5 uses as
+**Status of the sources.** CaptainSude26, an unrefereed pseudonymous manuscript, is cited for the
+protected local condition, the detection of the exceptional class, the protected patching and the
+width-three degeneration; LeHung26, a discussion draft, is cited for making the auxiliary curve
+modular before the cyclotomic base change; the parent cites OpenAI26. Theorem 2.5 uses as
 lifting inputs only Caraiani–Newton's Theorems 5.2 and 6.1, through the parent's §§5.2–5.3.
 Theorem 8.1 uses Layers 3–7 only for fields containing `ζ₅`. The local and finite-group statements
 of Layer 3 are proved by explicit computations recorded in their Checks.
@@ -866,7 +868,8 @@ for `v ∈ P`. (CaptainSude26, §4, lines 264–289; CN23, §5.6, lines 4226–4
 ### 5.2 The protected deformation problems
 
 For a protected prepared datum, a tuple `χ = (χ_v)_{v∈R}` of characters `k_v× → O×` trivial modulo `ϖ`
-and a Taylor–Wiles datum `Q` from §4.2, define `𝒮^P_χ` as the problem `𝒮_χ` of
+and a Taylor–Wiles datum `Q` from §4.2 with `Q ∩ (S ∪ S^c) = ∅` (the output of §4.2 for a forbidden
+set `B ⊇ S^c`), define `𝒮^P_χ` as the problem `𝒮_χ` of
 CrystallineLocalGlobalCompatibilityCM §9.5 on `S₅ ∪ R` (fixed-determinant Barsotti–Tate rings at
 `S₅^cr`, the ordinary rings `R^△_v` at `S₅^st`, the character-type rings `R^{ε₅⁻¹, χ_v}_v` at `R`) together
 with the unipotent-inertia condition of §3.4 at every `v ∈ P`, framed at `T = S₅ ⊔ R`; and `𝒮^P_{χ,Q}`
@@ -891,7 +894,8 @@ GlobalGaloisDeformations §5.5. (CaptainSude26, §4, lines 285–289; CN23, §5.
 
 ### 5.3 Hecke-valued representations satisfy the protected problems
 
-For a protected prepared datum, every `χ` and every Taylor–Wiles datum `Q` of §4.2, prove: there are
+For a protected prepared datum, every `χ` and every Taylor–Wiles datum `Q` of §4.2 with
+`Q ∩ (S ∪ S^c) = ∅`, prove: there are
 `N ≥ 1` depending only on `[F:ℚ]`, ideals `J_{χ,Q}` with `J_{χ,Q}^N = 0` and surjective `O[Δ_Q]`-algebra
 maps `R_{𝒮^P_{χ,Q}} → T_{χ,Q}/J_{χ,Q}`, where `T_{χ,Q}` is the derived Hecke image of
 CrystallineLocalGlobalCompatibilityCM §9.9 at the level `K^P(Q)`, matching the characteristic
@@ -903,8 +907,13 @@ every torus operator of a unit acts as `1` and the inertial comparison gives the
 polynomial `(X − 1)²` for every `σ ∈ I_v` on the neat-level Hecke algebra; it descends through the
 non-neat comparison of CrystallineLocalGlobalCompatibilityCM §8.6 and the finitely many nilpotent ideals,
 coefficient by coefficient, and by §3.4 the representation then satisfies the unipotent-inertia
-condition over the possibly nonreduced quotient. The complex conjugate places `P^c` are hyperspecial,
-so the representation is unramified there. (CaptainSude26, Lemma 4.1, lines 291–408; CN23,
+condition over the possibly nonreduced quotient. Since `P^c ∩ S = ∅` and `Q ∩ S^c = ∅`, no place of
+`P^c` lies in `S ∪ Q`, so `K^P(Q)` is hyperspecial on `P^c`. The inertial comparison
+(`gap:acc-torsion-inertial-comparison`) is applied with the conjugation-stable set
+`(S ∪ Q) ∪ (S ∪ Q)^c` and the Iwahori-type set `R ∪ P ∪ Q`; every conjugate of a place of
+`R ∪ P ∪ Q` that is not itself in `R ∪ P ∪ Q` lies outside `S ∪ Q` and has hyperspecial level, so the
+representation is unramified outside `S ∪ Q`, in particular at `P^c` (CaptainSude26, lines 299–314).
+(CaptainSude26, Lemma 4.1, lines 291–408; CN23,
 Propositions 5.6.2–5.6.3, lines 4334–4390; ACC23, Theorem 3.1.1, line 2346.)
 
 *Needs:* §§3.4, 5.1, 5.2; CrystallineLocalGlobalCompatibilityCM §§8.6, 9.4, 9.6, 9.7, 9.9;
@@ -918,6 +927,13 @@ Propositions 5.6.2–5.6.3, lines 4334–4390; ACC23, Theorem 3.1.1, line 2346.)
 - At level `Iw_{v,1}` (pro-`v` Iwahori) the torus operators act through `k_v×` and the polynomial is not
   forced to be `(X − 1)²`; the full Iwahori level at `P` is part of the datum.
 - For `Q = ∅` the maps are those of the first construction, with `Δ_∅ = 1`.
+- The exclusion `Q ∩ S^c = ∅` is needed. A place `w = v^c` with `v ∈ P`, `q_w = 11` and
+  `ρ̄(Frob_w) = diag(2, 3)` over `𝔽₅` meets the Taylor–Wiles conditions (`11 ≡ 1 mod 5`, determinant
+  `6 ≡ 1`, distinct eigenvalues), but putting it into `Q` replaces `PGL₂(O_{F_w})` at `w` by the
+  Iwahori subgroup, of index `q_w + 1 = 12`, and its diamond kernel, of index `12 · 5 = 60`; over
+  `𝔽₅[ε]/(ε²)` the inertia image `diag(1 + ε, 1 − ε)` has determinant `1 − ε² = 1`, commutes with
+  `diag(2, 3)` and equals its eleventh power `diag(1 + 11ε, 1 − 11ε)`, so `𝒮^P_{χ,Q}` would contain a
+  lift ramified at a place of `P^c`.
 
 ### 5.4 The prepared protected lifting theorem
 
@@ -927,9 +943,10 @@ for `v ∈ R ∪ P`, Barsotti–Tate at `S₅^cr` and ordinary there exactly whe
 non-crystalline extension of `ε₅⁻¹` by the trivial character at `S₅^st`. Prove that `ρ ≅ r_ι(Π)` for a
 cuspidal regular algebraic weight-zero `Π` of `PGL₂(𝔸_F)`. The route is the patching proof of
 CrystallineLocalGlobalCompatibilityCM §9.10 with three changes: framing at `T = S₅ ⊔ R` with the
-protected conditions imposed in the global problems, Taylor–Wiles data from §4.2 and presentations from
-§4.3, and Hecke maps from §5.3. Patch the two systems `χ = 1` and `χ` with `χ_v² ≠ 1` (possible since
-`q_v ≡ 1 mod 5` at `R`) by DeformationAndDerivedPatchingAlgebra §§8.1–8.5 with the perfect complexes of
+protected conditions imposed in the global problems, Taylor–Wiles data from §4.2 with forbidden set
+`B = S^c` (so `Q_N ∩ (S ∪ S^c) = ∅`) and presentations from §4.3, and Hecke maps from §5.3. Patch
+the two systems `χ = 1` and `χ` with `χ_v² ≠ 1` (possible since `q_v ≡ 1 mod 5` at `R`) by
+DeformationAndDerivedPatchingAlgebra §§8.1–8.5 with the perfect complexes of
 CrystallineLocalGlobalCompatibilityCM §9.6 at `K^P`. The dimensions `dim R_∞ = r + 4t − d` and
 `dim S_∞ = r + 4t` give deficit `d = l₀`. The components at five are those of LocalGaloisDeformationRings
 §§4.14–4.15 and 6.6, those at `R` those of §2.15; there are no component labels at `P`. Propagation of
