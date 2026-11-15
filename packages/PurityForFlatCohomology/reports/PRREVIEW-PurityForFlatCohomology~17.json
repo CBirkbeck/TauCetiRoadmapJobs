@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PurityForFlatCohomology~17",
+  "head": "a825987a7981aa0f299fba09af1295f62805a6df",
+  "pr": 1840,
+  "folder": "PurityForFlatCohomology",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since a825987; this round checked the pull request's title and description against the head. Previous R01 (description's étale-depth sentence) is repaired. Description compared with the head: the 15 listed theorems against the 25 elaborated signatures, the folder's files, the 19 supplier contracts (8 on main, 11 open, matching the depends-on block), the two consumers, the module docstring's not-statable list; no contradiction and no unstated change. Adversarial table: 3 rows with computed values (étale-depth bound on k[[x,y]]/(xy), Zariski-Nagata on k[[x,y,z]]/(xy), regular-sequence vanishing over a non-Noetherian ring). No seeded target falls in a changed passage (none changed). Gate rerun: every counter 0, OK; depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean: 15 sorry warnings, 0 errors; outside-folder diff empty. One point for the human reviewers: ownership of groups of multiplicative type over an arbitrary base against GroupSchemesOverABase (#1522).",
+  "text": "0a1516b5745008b7"
+ }
+}
