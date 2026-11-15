@@ -66,8 +66,9 @@ Euclidean variation and perimeter.
 
 - `TauCeti.totalVariationOn` (TauCeti/Analysis/BoundedVariation/TotalVariation.lean:100): `|Du|(Ω)`, the supremum of `∫ u div X dμ` over test fields `X ∈ 𝓓(Ω, E)` with `‖X‖ ≤ 1`; `TauCeti.totalVariationOn_le_liminf` (line 375): lower semicontinuity under `L¹_loc(Ω)` convergence.
 - `TauCeti.perimeter` (TauCeti/Analysis/BoundedVariation/Perimeter.lean:64): the total variation of the indicator; `TauCeti.perimeter_congr_ae` (line 83): locality, a null modification inside `Ω` does not change `P(U; Ω)`; `TauCeti.perimeter_compl` (line 109).
-- `TauCeti.variationMeasure` (TauCeti/Analysis/BoundedVariation/VariationMeasure.lean:136): for `u` locally integrable on `Ω` with locally finite variation, the regular Borel measure `|Du|` on `Ω` whose value on every open `U ⊆ Ω` is `TauCeti.totalVariationOn volume U u` (`TauCeti.variationMeasure_preimage_coe`, line 150), and `0` otherwise. `TauCeti.polarDensity` (TauCeti/Analysis/BoundedVariation/PolarDecomposition.lean:260) with `TauCeti.integral_divergenceCLM_mul_eq_neg_integral_inner_polarDensity` (line 284) and `TauCeti.ae_norm_polarDensity_eq_one` (line 303): `Du = σ_u |Du|` with `‖σ_u‖ = 1` `|Du|`-almost everywhere.
-- `TauCeti.reducedBoundary` and `TauCeti.outerNormal` (TauCeti/Analysis/BoundedVariation/ReducedBoundary.lean:95 and 106), with `Dχ_U = −ν_U |Dχ_U|`, the convention of this roadmap; `TauCeti.reducedBoundary_congr_ae` (line 404); `TauCeti.integral_trace_fderiv_mul_indicator_eq_integral_inner_outerNormal` (line 271): for `U` of locally finite perimeter in `Ω` and a `C¹` field `X` with compact support in `Ω`, `∫_U div X = ∫ ⟨X, ν_U⟩ d|Dχ_U|`, the perimeter measure not yet identified with a Hausdorff measure.
+- `TauCeti.ae_perimeter_inter_ball_le` (TauCeti/Analysis/BoundedVariation/CutByBall.lean:228): for an additive Haar measure, a null-measurable `U` and a centre `x_0`, for almost every radius `R`, `P(U ∩ ball(x_0, R)) ≤ P(U; ball(x_0, R)) + m′(R)`, where `m(ρ) = |U ∩ ball(x_0, ρ)|` and `m′(R)` is the real derivative; neither finite perimeter nor finite measure of `U` is assumed.
+- `TauCeti.variationMeasure` (TauCeti/Analysis/BoundedVariation/VariationMeasure.lean:136): for `u` locally integrable on `Ω` with locally finite variation, the regular Borel measure `|Du|` on `Ω` whose value on every open `U ⊆ Ω` is `TauCeti.totalVariationOn volume U u` (`TauCeti.variationMeasure_preimage_coe`, line 150), and `0` otherwise; `TauCeti.variationMeasure_eq_comap_inclusion` (line 230): for an open `V ⊆ Ω` the variation measure on `V` is the pullback of the one on `Ω` along the inclusion. `TauCeti.polarDensity` (TauCeti/Analysis/BoundedVariation/PolarDecomposition.lean:260) with `TauCeti.integral_divergenceCLM_mul_eq_neg_integral_inner_polarDensity` (line 284) and `TauCeti.ae_norm_polarDensity_eq_one` (line 303): `Du = σ_u |Du|` with `‖σ_u‖ = 1` `|Du|`-almost everywhere; `TauCeti.ae_eq_polarDensity` (line 319): a locally integrable field satisfying the same integration-by-parts identity agrees with `σ_u` `|Du|`-almost everywhere.
+- `TauCeti.reducedBoundary` and `TauCeti.outerNormal` (TauCeti/Analysis/BoundedVariation/ReducedBoundary.lean:95 and 106), with `Dχ_U = −ν_U |Dχ_U|`, the convention of this roadmap; `TauCeti.reducedBoundary_congr_ae` (line 404) and `TauCeti.outerNormal_congr_ae` (line 418): sets equal almost everywhere on `Ω` have the same reduced boundary and outer normal in `Ω`; `TauCeti.integral_trace_fderiv_mul_indicator_eq_integral_inner_outerNormal` (line 271): for `U` of locally finite perimeter in `Ω` and a `C¹` field `X` with compact support in `Ω`, `∫_U div X = ∫ ⟨X, ν_U⟩ d|Dχ_U|`, the perimeter measure not yet identified with a Hausdorff measure.
 - `TauCeti.essentialBoundary` and `TauCeti.essentialInterior` (TauCeti/MeasureTheory/Covering/EssentialBoundary.lean:143 and 132): the points where `U` has neither density `0` nor density `1`, written `∂^M U`, and the points of density one; `TauCeti.essentialBoundary_subset_frontier` (line 345).
 - `TauCeti.exists_subseq_tendsto_measure_symmDiff_inter_of_perimeter_le` (TauCeti/Analysis/BoundedVariation/Compactness.lean:223): a sequence of sets with locally bounded perimeter in `Ω` has a subsequence converging locally in measure in `Ω`.
 - `TauCeti.setLIntegral_enorm_sub_setAverage_le_mul_totalVariationOn_of_eq_ball` (TauCeti/Analysis/BoundedVariation/Poincare.lean:251): the BV Poincaré inequality on a ball of radius `R`, with constant `2^{n+1} R`.
@@ -86,7 +87,7 @@ These are the inputs the pinned libraries lack.
 
 ### From TauCetiRoadmap.Isoperimetry
 
-- I4: the finite-perimeter slicing theorem along lines. For `U` of locally finite perimeter in `E`, `n ≥ 2`, and a unit vector `e`, for `volume`-a.e. `z ∈ e^⊥` the section `U_z = {t : z + te ∈ U}` has locally finite perimeter in `ℝ`, its reduced boundary is `{t : z + te ∈ ∂*U}`, and `⟨ν_U(z + te), e⟩ ≠ 0` at each such point. The measure-preserving identification of `e^⊥ × ℝ` with `E` comes with it. Nothing about Gaussian weights is assumed. Tau Ceti's `TauCeti.lintegral_perimeter_lineSection_le` is only the integrated inequality for sets of finite volume.
+- I4: the finite-perimeter slicing theorem along lines, for the standing sets of I4's structural targets. For Lebesgue-measurable `V ⊆ E` with `0 < |V| < ∞` and `P(V) < ∞`, `n ≥ 2`, and a unit vector `e`, for `volume`-a.e. `z ∈ e^⊥` the section `V_z = {t : z + te ∈ V}` has finite perimeter in `ℝ`, its reduced boundary is `{t : z + te ∈ ∂*V}`, and `⟨ν_V(z + te), e⟩ ≠ 0` at each such point. The measure-preserving identification of `e^⊥ × ℝ` with `E` comes with it. Nothing about Gaussian weights is assumed, and nothing is assumed about sets of infinite volume or only locally finite perimeter: §6.2 reaches those by cutting with balls. Tau Ceti's `TauCeti.lintegral_perimeter_lineSection_le` is only the integrated inequality for sets of finite volume.
 
 No supplier contract is missing: every input above is a stated target of its roadmap.
 
@@ -463,18 +464,19 @@ A route: Fubini along the splitting of §1.3, and the identity `γ_F({y : Φ(⟨
 **Checks.**
 
 - `{⟨x, e⟩ < a}` has sections of measure `Φ(a)` and is fixed by `S_e`. The superlevel rule, which replaces a section of measure `v` by the upper half-line of measure `v`, sends it to the reflected half-space `{⟨x, e⟩ > −a}`: a different set of the same measure `Φ(a)`, `0.841345` at `a = 1`, so the rule fails literal fixedness. Keeping the threshold `a` and flipping the side instead gives `{⟨x, e⟩ > a}`, of the wrong measure `1 − Φ(a) = 0.158655` at `a = 1`.
-- For `U = ball(0, 1) ⊂ ℝ²` and `e = e_2`, `v_U(z) = 2Φ(√(1 − z²)) − 1` for `|z| < 1` and `0` otherwise; `γ(S_e(U)) = 0.393469 = γ(U)`, and the section of `S_e(U)` over `z = 0` is `(−∞, 0.475231)`.
+- For `U = ball(0, 1) ⊂ ℝ²` and `e = e_2`, `v_U(z) = 2Φ(√(1 − z²)) − 1` for `|z| < 1` and `0` otherwise; `γ(S_e(U)) = 0.393469 = γ(U)`, and the section of `S_e(U)` over `z = 0` is `(−∞, 0.475233)`.
 - `S_e` of the null set `ℚ e` is `∅`, and of its complement is `E`: every section of `ℚ e` is `γ¹`-null and every section of its complement has full measure.
 - Negative control for literal null images: in `ℝ²` with `F = ℝ e_2` and `u = e_2`, the vertical line `U = ℝ e_2` has `γ(U) = 0`, but `v_U(0) = 1` and `v_U(z) = 0` for `z ≠ 0`, so `S_{F,u}(U) = U ≠ ∅`; its complement is conull and is fixed, `S_{F,u}(E ∖ U) = E ∖ U ≠ E`. Both differences, `S_{F,u}(U) ∖ ∅` and `E ∖ S_{F,u}(E ∖ U)`, are the null line, as the almost-everywhere statement allows.
 
 ### 6.2 Slicing the reduced boundary
 
-Prove that for `U` of locally finite perimeter in `E`, `n ≥ 2`, a unit vector `e` and Borel `g : E → [0, ∞]`, `∫_{∂*U} g |⟨ν_U, e⟩| dμHE[n−1] = ∫_{e^⊥} Σ_{t : z + te ∈ ∂*U} g(z + te) dz`. Combine it with the slicing theorem: for a.e. `z ∈ e^⊥`, `U_z` has locally finite perimeter, `∂*(U_z) = ∂^M(U_z) = {t : z + te ∈ ∂*U}`, and `⟨ν_U, e⟩ ≠ 0` there; the projection of `{x ∈ ∂*U : ⟨ν_U(x), e⟩ = 0}` to `e^⊥` is null. Call `z` good for `U` when these conclusions hold (CianchiFuscoMaggiPratelli2011 Theorem 4.2 and equation (4.1), line 527–542; Maggi2012 Sections 18.2–18.3; AmbrosioFuscoPallara2000 Theorem 3.108, cited by locator). A route: apply the tangential area formula to the orthogonal projection onto `e^⊥` on the countably rectifiable set `∂*U`, whose approximate tangent plane is `ν_U^⊥` almost everywhere; the tangential Jacobian of the projection on `ν^⊥` is `|⟨ν, e⟩|`; use §5.1 for `∂* = ∂^M` on the line. *Needs:* §5.1; GeometricMeasureTheory G2 (tangential area formula), G5 (De Giorgi's theorem); Isoperimetry I4 (slicing theorem); Mathlib `LinearMap.normDet`.
+Prove that for `U` of locally finite perimeter in `E`, `n ≥ 2`, a unit vector `e` and Borel `g : E → [0, ∞]`, `∫_{∂*U} g |⟨ν_U, e⟩| dμHE[n−1] = ∫_{e^⊥} Σ_{t : z + te ∈ ∂*U} g(z + te) dz`. Combine it with the slicing theorem: for a.e. `z ∈ e^⊥`, `U_z` has locally finite perimeter, `∂*(U_z) = ∂^M(U_z) = {t : z + te ∈ ∂*U}`, and `⟨ν_U, e⟩ ≠ 0` there; the projection of `{x ∈ ∂*U : ⟨ν_U(x), e⟩ = 0}` to `e^⊥` is null. Call `z` good for `U` when these conclusions hold (CianchiFuscoMaggiPratelli2011 Theorem 4.2 and equation (4.1), line 527–542; Maggi2012 Sections 18.2–18.3; AmbrosioFuscoPallara2000 Theorem 3.108, cited by locator). A route: apply the tangential area formula to the orthogonal projection onto `e^⊥` on the countably rectifiable set `∂*U`, whose approximate tangent plane is `ν_U^⊥` almost everywhere; the tangential Jacobian of the projection on `ν^⊥` is `|⟨ν, e⟩|`; use §5.1 for `∂* = ∂^M` on the line. Isoperimetry I4 states the slicing theorem only for sets of positive finite volume and finite perimeter, so it is applied to the cut sets `U_R = U ∩ ball(0, R)`. If `|U| = 0`, then `∂*U = ∅` (`TauCeti.reducedBoundary_congr_ae`) and almost every section is null, so the conclusions hold trivially; otherwise `|U_R| > 0` for large `R`, and `|U_R| < ∞` always. For almost every `R`, `P(U_R) ≤ P(U; ball(0, R)) + m′(R) < ∞` by Tau Ceti's `TauCeti.ae_perimeter_inter_ball_le`, the first term being finite because `U` has locally finite perimeter and `closedBall(0, R)` is compact; choose such radii `R_k → ∞`. For an open `B ⊆ E` and a set of locally finite perimeter, the reduced boundary in `E` intersected with `B` is the reduced boundary in `B`, with the same outer normal: the variation measure on `B` is the restriction of the one on `E` (`TauCeti.variationMeasure_eq_comap_inclusion`), the restricted polar density satisfies the identity that characterises the polar density on `B` (`TauCeti.ae_eq_polarDensity`), and small closed balls about a point of `B` lie in `B`. As `U` and `U_{R_k}` agree on `B_k = ball(0, R_k)`, `TauCeti.reducedBoundary_congr_ae` and `TauCeti.outerNormal_congr_ae` give `∂*U ∩ B_k = ∂*U_{R_k} ∩ B_k` with `ν_U = ν_{U_{R_k}}` there. Take `z` outside the countable union of the exceptional sets of I4 for the `U_{R_k}`. For `ρ > 0` and `R_k² > ‖z‖² + ρ²`, the sections `U_z` and `(U_{R_k})_z` agree on `(−ρ, ρ)`, since `‖z + te‖² = ‖z‖² + t²`; the same locality on the line, with `B = (−ρ, ρ)`, shows that `U_z` has finite perimeter in `(−ρ, ρ)`, that its reduced boundary there is `{t : |t| < ρ, z + te ∈ ∂*U}`, and that `⟨ν_U(z + te), e⟩ ≠ 0` at those points; letting `ρ → ∞` gives the conclusions for `U_z` on the whole line. *Needs:* §5.1; GeometricMeasureTheory G2 (tangential area formula), G5 (De Giorgi's theorem); Isoperimetry I4 (slicing theorem); Tau Ceti `TauCeti.ae_perimeter_inter_ball_le`, `TauCeti.variationMeasure_eq_comap_inclusion`, `TauCeti.ae_eq_polarDensity`, `TauCeti.reducedBoundary_congr_ae`, `TauCeti.outerNormal_congr_ae` (cutting by balls); Mathlib `LinearMap.normDet`.
 
 **Checks.**
 
 - `U = {x_2 < m x_1}` in `ℝ²`, `e = e_2`, `g` the indicator of `{0 ≤ x_1 ≤ 1}`: the boundary segment has length `√(1 + m²)` and `|⟨ν_U, e_2⟩| = 1/√(1 + m²)`, so both sides equal `1`. With the reciprocal Jacobian the left side would be `1 + m² = 2` at `m = 1`.
 - A vertical boundary `{x_1 = s}` has `⟨ν_U, e_2⟩ = 0`; the left side vanishes and the boundary projects to a single point of `e^⊥`.
+- Cutting by balls: the half-plane `U = {x_1 < 0}` in `ℝ²` has infinite volume and infinite Euclidean perimeter, so Isoperimetry I4 does not apply to it directly. With `e = e_1` and `z = s e_2`, the cut set `U_R = U ∩ ball(0, R)` has volume `πR²/2` and perimeter `πR + 2R`; for `|s| < R` its section is `(−√(R² − s²), 0)`, with reduced boundary `{−√(R² − s²), 0}`. Only `0` lies in `|t| < √(R² − s²)`, where it is the reduced boundary `{0}` of the section `(−∞, 0)` of `U`, with `⟨ν_U, e_1⟩ = 1`; reading the slicing conclusion of `U_R` on the whole line would add the point `−√(R² − s²)`, which comes from the circle `‖x‖ = R`, not from `∂*U`.
 
 ### 6.3 The section-measure function
 
@@ -521,7 +523,7 @@ For the unit disc in `ℝ²`, symmetrisation along `e_2` keeps the measure `0.39
 
 ### Dependencies
 
-Layers 1, 2 and 5; Tau Ceti's Gaussian density; GeometricMeasureTheory G2, G4, G5; Isoperimetry I4.
+Layers 1, 2 and 5; Tau Ceti's Gaussian density, its cut-by-ball perimeter estimate, and the restriction and locality of its variation measure, polar density, reduced boundary and outer normal; GeometricMeasureTheory G2, G4, G5; Isoperimetry I4.
 
 ## Layer 7: the Gaussian isoperimetric theorem
 
@@ -579,7 +581,7 @@ Prove that for every Borel `A ⊆ E`, every real `a` with `Φ(a) ≤ γ(A)` and 
 **Checks.**
 
 - `A = {x_1 < a}`: `A + r · ball(0, 1) = {x_1 < a + r}` and both sides equal `Φ(a + r)`.
-- `A = ball(0, 1) ⊂ ℝ²`, `r = 1`: `a = Φ⁻¹(0.393469) = −0.270289`, and `γ(ball(0, 2)) = 1 − e^{−2} = 0.864665 ≥ Φ(0.729711) = 0.767217`.
+- `A = ball(0, 1) ⊂ ℝ²`, `r = 1`: `a = Φ⁻¹(1 − e^{−1/2}) = −0.270288`, and `γ(ball(0, 2)) = 1 − e^{−2} = 0.864665 ≥ Φ(0.729712) = 0.767217`.
 - `Metric.thickening 0 A = ∅`, so the open form needs `r > 0`; the closed form at `r = 0` is `γ(closure A) ≥ Φ(a)`.
 - For `S` not positive semidefinite, or `S = 0`, Mathlib's law is `δ_m` and `K = 0`; the statement reduces to `δ_m(A) ≥ Φ(a + r)`, true because `Φ(a) ≤ δ_m(A)` forces `m ∈ A`.
 
@@ -653,7 +655,7 @@ A route: Fatou's lemma on sections gives the semicontinuity; the composition law
 
 **Checks.**
 
-- `C = closedBall(0, 1) ⊂ ℝ²`, `F = ℝ²`: `S̄_{F,u}(C) = {⟨y, u⟩ ≤ −0.270289}`, a closed half-plane of measure `0.393469`; the strict rule gives the open half-plane, which is not closed.
+- `C = closedBall(0, 1) ⊂ ℝ²`, `F = ℝ²`: `S̄_{F,u}(C) = {⟨y, u⟩ ≤ −0.270288}`, a closed half-plane of measure `0.393469`; the strict rule gives the open half-plane, which is not closed.
 - In `ℝ³`, `closedBall(0, 1)` has measure `0.198748`; the composite `S̄_{span(e_2, e_3), e_3} ∘ S̄_{span(e_1, e_3), e_3}` and `S̄_{ℝ³, e_3}` both give `{x_3 ≤ −0.846102}`.
 - The closed half-space `{⟨x, u⟩ ≤ a}` is fixed by `S̄_{F,u}`, while `S̄_{F,−u}` sends it to the different half-space `{⟨x, u⟩ ≥ −a}` of the same measure `Φ(a)`: the direction `u` is part of the data.
 
@@ -663,8 +665,8 @@ Prove that `g(a, b) = Φ⁻¹(Φ(b) − Φ(a))` is concave on `{(a, b) ∈ ℝ²
 
 **Checks.**
 
-- Second differences of `g` at `(−1, 1)`: `∂²_a g = ∂²_b g = −0.459910` and the Hessian determinant is `0.163502 > 0`; at `(0, 2)`, `(−3, −0.5)` and `(0.5, 0.6)` the Hessian is also negative definite (determinants `0.015519`, `0.000142`, `15.273135`).
-- `g(−a, a) = Φ⁻¹(2Φ(a) − 1)`, so `g(−1, 1) = Φ⁻¹(0.682689) = 0.475231`.
+- Second derivatives of `g`, obtained by differentiating `∂_a g = −φ(a)/φ(g)` and `∂_b g = φ(b)/φ(g)` once more, at `(−1, 1)`: `∂²_a g = ∂²_b g = −0.459912` and the Hessian determinant is `0.163502 > 0`; at `(0, 2)`, `(−3, −0.5)` and `(0.5, 0.6)` the Hessian is also negative definite (determinants `0.015519`, `0.000142`, `15.648788`).
+- `g(−a, a) = Φ⁻¹(2Φ(a) − 1)`, so `g(−1, 1) = Φ⁻¹(2Φ(1) − 1) = 0.475233`, where `2Φ(1) − 1 = 0.682689` to six places.
 - `(a, b) ↦ Φ(b) − Φ(a)` itself is not concave (it is convex in `b` for `b < 0`); the transformation by `Φ⁻¹` is what makes concavity hold.
 
 ### 9.3 The planar approximation theorem
@@ -675,7 +677,7 @@ Let `F` be a `2`-dimensional subspace and `u_0, u_1 ∈ F` orthonormal, and let 
 
 - The directions are `u_1` at `90°` from `u_0`, `u_2` at `135°`, `u_3` at `157.5°`, increasing to `180°`; the cones `ℝ_+ u_0 + ℝ_+ u_j` increase to the half-plane `{⟨x, u_1⟩ ≥ 0}`.
 - A half-plane `{⟨x, u_1⟩ ≥ c}` is fixed by every `f_j` and equals its limit.
-- For `C = closedBall(0, 1) ⊂ F = ℝ²` the limit is the closed half-plane `{⟨x, u_1⟩ ≥ 0.270289}`, of measure `0.393469`.
+- For `C = closedBall(0, 1) ⊂ F = ℝ²` the limit is the closed half-plane `{⟨x, u_1⟩ ≥ 0.270288}`, of measure `0.393469`.
 
 ### 9.4 Convexity of closed symmetrals in every dimension
 
@@ -692,10 +694,10 @@ Prove that for nonempty convex `A, B ⊆ E`, `λ ∈ [0, 1]` and reals `a, b` wi
 
 **Checks.**
 
-- In `ℝ`, `A = [−1, 1]`, `B = [−3, 3]`, `λ = 1/2`: `Φ⁻¹(γ([−2, 2])) = 1.690143 ≥ ½(0.475231) + ½(2.782175) = 1.628703`.
+- In `ℝ`, `A = [−1, 1]`, `B = [−3, 3]`, `λ = 1/2`: `Φ⁻¹(γ([−2, 2])) = 1.690143 ≥ ½(0.475233) + ½(2.782175) = 1.628704`.
 - For half-spaces `{x_1 ≤ a}`, `{x_1 ≤ b}` the inequality is an equality.
-- Gaussian Brunn–Minkowski: since `Φ` is log-concave, the theorem implies `γ(λA + (1 − λ)B) ≥ γ(A)^λ γ(B)^{1−λ}`, the bound that Isoperimetry I1's Prékopa–Leindler gives for the log-concave density of `γ`; in the example, `γ([−2, 2]) = 0.954500 ≥ Φ(1.628703) = 0.948312 ≥ (0.682689 · 0.997300)^{1/2} = 0.825134`, so Ehrhard's bound is the stronger one.
-- Writing `A + r · closedBall(0, 1) = λ(A/λ) + (1 − λ)(r/(1 − λ)) · closedBall(0, 1)` and letting `λ → 1` recovers Borell's inequality of §8.1 for convex `A`. In `ℝ` with `A = [−1, 1]`, `r = 1`, `λ = 0.9`, the right side is `0.9 · Φ⁻¹(0.733479) + 0.1 · Φ⁻¹(1 − 1.524 · 10^{−23}) = 0.561033 + 0.993113 = 1.554146`, below `Φ⁻¹(γ([−2, 2])) = 1.690143`, and the limit `λ → 1` is `Φ⁻¹(γ([−1, 1])) + 1 = 1.475231`.
+- Gaussian Brunn–Minkowski: since `Φ` is log-concave, the theorem implies `γ(λA + (1 − λ)B) ≥ γ(A)^λ γ(B)^{1−λ}`, the bound that Isoperimetry I1's Prékopa–Leindler gives for the log-concave density of `γ`; in the example, `γ([−2, 2]) = 0.954500 ≥ Φ(1.628704) = 0.948312 ≥ (0.682689 · 0.997300)^{1/2} = 0.825134`, so Ehrhard's bound is the stronger one.
+- Writing `A + r · closedBall(0, 1) = λ(A/λ) + (1 − λ)(r/(1 − λ)) · closedBall(0, 1)` and letting `λ → 1` recovers Borell's inequality of §8.1 for convex `A`. In `ℝ` with `A = [−1, 1]`, `r = 1`, `λ = 0.9`, the right side is `0.9 · Φ⁻¹(0.733479) + 0.1 · Φ⁻¹(1 − 1.524 · 10^{−23}) = 0.561033 + 0.993113 = 1.554146`, below `Φ⁻¹(γ([−2, 2])) = 1.690143`, and the limit `λ → 1` is `Φ⁻¹(γ([−1, 1])) + 1 = 1.475233`.
 
 ### Examples
 
