@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ProetaleCohomologyOfPAdicCurvesAndTowers~4",
+  "head": "854686f62cbf2506f9f269c4d44955f7b771f8cf",
+  "pr": 2287,
+  "folder": "ProetaleCohomologyOfPAdicCurvesAndTowers",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 4 changed lines since adac797. R01 and R02 of the previous review are repaired: the two AInfCohomology target names of README lines 117 and 835 resolve under AI.6.2 at that roadmap's open head, and the description now counts two stated headlines, matching the four sorried theorems. The new clause on the smooth case (AI.3.2 on the Zariski site, AI.6.2 on the etale site) agrees with the supplier. Adversarial rows computed for section 6.7 (Spf O_C, i = 0, 1) and for the description against Suggested.lean. Title and description read against the head: no contradiction, nothing unstated. Gate passes, build included; depcheck 0 problems, no UPWARD or CYCLE; elaboration gives four sorry warnings only; no change outside the folder. Seeded sample: no sampled target lies in the changed passages; source independence checked on the changed passages only.",
+  "text": "32fad725aa843abe"
+ }
+}
