@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PurityForFlatCohomology~15",
+  "head": "160e354a0bb87e161687f8198a3e7e07253c4b8f",
+  "pr": 1840,
+  "folder": "PurityForFlatCohomology",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 160e354; the pull request's title and description checked against the head: previous R01 (list of stated headlines) repaired; one P3 remains (the description says the étale-depth bound needs no perfectoid input, but §6.3 rests on §6.2 and §5.10). Seeded sample: no target in a changed passage (empty diff). Gate rerun: all counters 0, OK; depcheck 0 problems; Suggested.lean elaborates with 15 sorry warnings and no error; outside-folder diff empty; overlaps none.",
+  "text": "970ed0316c15c7e0"
+ }
+}
