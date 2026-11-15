@@ -452,7 +452,7 @@ Layers 1–2; Tau Ceti's one-dimensional variation bound and essential boundary;
 
 ### 6.1 Gaussian symmetrals
 
-For a subspace `F ⊆ E` of dimension `k ≥ 1`, a unit vector `u ∈ F` and a Lebesgue-measurable `U ⊆ E`, write `U_x = {y ∈ F : x + y ∈ U}` for `x ∈ F^⊥` and `v_U(x) = γ_F(U_x)`, and define the Gaussian symmetral `S_{F,u}(U) = {x + y : x ∈ F^⊥, y ∈ F, Φ(⟨y, u⟩) < v_U(x)}`. For `F = ℝ e` and `u = e` it is the Ehrhard symmetral `S_e(U) = {z + te : z ∈ e^⊥, Φ(t) < v_U(z)}`, with `v_U(z) = γ¹({t : z + te ∈ U})` (CianchiFuscoMaggiPratelli2011 line 543–552, in the mirrored superlevel convention with their upper-tail `Φ`; Ehrhard1983 Definition 1.1, line 117–129).
+For a subspace `F ⊆ E` of dimension `k ≥ 1`, a unit vector `u ∈ F` and a Lebesgue-measurable `U ⊆ E`, write `U_x = {y ∈ F : x + y ∈ U}` for `x ∈ F^⊥` and `v_U(x) = γ_F(U_x)`, and define the Gaussian symmetral `S_{F,u}(U) = {x + y : x ∈ F^⊥, y ∈ F, Φ(⟨y, u⟩) < v_U(x)}`. For `F = ℝ e` and `u = e` it is the Ehrhard symmetral `S_e(U) = {z + te : z ∈ e^⊥, Φ(t) < v_U(z)}`, with `v_U(z) = γ¹({t : z + te ∈ U})` (CianchiFuscoMaggiPratelli2011 line 543–552, in the mirrored superlevel convention with their upper-tail `Φ`; Ehrhard1983 Définition 1.1, line 117–129, for open and closed sets and also in the mirrored superlevel convention: with his `T = F^⊥`, his `S(T, u)` is `S_{F,−u}` on open sets).
 
 - `S_{F,u}(U)` is Lebesgue measurable, `v_{S_{F,u}(U)} = v_U` almost everywhere on `F^⊥`, and `γ(S_{F,u}(U)) = γ(U)`.
 - If `U ⊆ U′` then `S_{F,u}(U) ⊆ S_{F,u}(U′)`; sets equal up to a null set have symmetrals equal up to a null set; `S_{F,u}` is idempotent.
@@ -643,7 +643,7 @@ Layers 1, 2 and 7; GeometricMeasureTheory G2; Mathlib thickenings and monotone d
 
 ### 9.1 Closed symmetrals
 
-For `F` and `u` as in §6.1 and a closed set `C ⊆ E`, define the closed symmetral `S̄_{F,u}(C) = {x + y : x ∈ F^⊥, y ∈ F, Φ(⟨y, u⟩) ≤ v_C(x)}`, with `v_C(x) = γ_F(C_x)` (Ehrhard1983 Définition 1.1, line 117–129, in the mirrored sublevel convention).
+For `F` and `u` as in §6.1 and a closed set `C ⊆ E`, define the closed symmetral `S̄_{F,u}(C) = {x + y : x ∈ F^⊥, y ∈ F, Φ(⟨y, u⟩) ≤ v_C(x)}`, with `v_C(x) = γ_F(C_x)` (Ehrhard1983 Définition 1.1, line 117–129, in the mirrored superlevel convention: his half-space `H(u, a) = {⟨x, u⟩ > a}` (line 64–66) is a superlevel set, so with his `T = F^⊥` his `S(T, u)` is `S̄_{F,−u}` on closed sets).
 
 - For closed `C`, `x ↦ v_C(x)` is upper semicontinuous; for open `O`, `x ↦ v_O(x)` is lower semicontinuous. Hence `S̄_{F,u}(C)` is closed and `S_{F,u}(O)` is open.
 - `γ(S̄_{F,u}(C)) = γ(C)`, and `S_{F,u}(C) ⊆ S̄_{F,u}(C)` with a null difference; `S̄_{F,u}` is monotone.
@@ -657,7 +657,7 @@ A route: Fatou's lemma on sections gives the semicontinuity; the composition law
 
 - `C = closedBall(0, 1) ⊂ ℝ²`, `F = ℝ²`: `S̄_{F,u}(C) = {⟨y, u⟩ ≤ −0.270288}`, a closed half-plane of measure `0.393469`; the strict rule gives the open half-plane, which is not closed.
 - In `ℝ³`, `closedBall(0, 1)` has measure `0.198748`; the composite `S̄_{span(e_2, e_3), e_3} ∘ S̄_{span(e_1, e_3), e_3}` and `S̄_{ℝ³, e_3}` both give `{x_3 ≤ −0.846102}`.
-- The closed half-space `{⟨x, u⟩ ≤ a}` is fixed by `S̄_{F,u}`, while `S̄_{F,−u}` sends it to the different half-space `{⟨x, u⟩ ≥ −a}` of the same measure `Φ(a)`: the direction `u` is part of the data.
+- The closed half-space `{⟨x, u⟩ ≤ a}` is fixed by `S̄_{F,u}`, while `S̄_{F,−u}` sends it to the different half-space `{⟨x, u⟩ ≥ −a}` of the same measure `Φ(a)`, `0.841345` at `a = 1`: the direction `u` is part of the data. Ehrhard's superlevel rule replaces each section, of measure `Φ(a)`, by the closed upper half-line of that measure, which is `{⟨y, u⟩ ≥ −a}`: it gives the same set, so his `S(T, u)` matches `S̄_{F,−u}` and not `S̄_{F,u}`.
 
 ### 9.2 One-dimensional symmetrisation of convex sets
 
