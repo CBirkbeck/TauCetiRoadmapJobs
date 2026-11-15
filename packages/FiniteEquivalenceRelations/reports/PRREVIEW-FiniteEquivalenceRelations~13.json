@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FiniteEquivalenceRelations~13",
+  "head": "34c976711b7802b87179134522fd5a8b3dcf8eab",
+  "pr": 1929,
+  "folder": "FiniteEquivalenceRelations",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 66 changed lines since 2209712. Previous R01 and R02 (pull request description) repaired. Recomputed 3.2's field-uniform route over Z: Smith normal forms of (I+K)_e and of the matrix with the differences a(x)-a(y) added, e<=5, all elementary divisors 1 (ranks 0,2,9,25,52 and 2,3,12,27,52); invariants of O(Z) in degrees 1-5 of dimension 0,2,1,1,2 with basis f1,f2,f3,f1f2,O(Z)_5; dim (J+K)_5 = 51 < 52 = dim (I+K)_5 over every field; 3.3's extension to every field follows. Research-context search reproduced over F_2 and F_3 in lengths 3 and 4 (over F_3, nine of the thirteen W, covering every isomorphism class), no non-effective example. Gate rerun OK; depcheck 0 problems; lake env lean on Suggested.lean exits 0 with 22 sorry warnings only; nothing outside the folder differs from origin/main; pull request text agrees with the head.",
+  "text": "bdb9dbc850583053"
+ }
+}
