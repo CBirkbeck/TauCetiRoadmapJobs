@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CompactGroupsPartII~15",
+  "head": "7fcba97fac984aaa6707819633b879bdf3accee3",
+  "pr": 1047,
+  "folder": "RepresentationTheory/CompactGroupsPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 7fcba97. Checked: the pull request's title and every sentence of its description (summary block and prose) against the head and the diff against main (18 declarations = 3 definitions + 15 theorems; 3 files changed; suppliers LieGroups Layers 0, 2-5, 5A, 6, 7, ConvexityToric T1, BanachSpaceTheory B5 all resolved on main at 8ad4192); the previous report had no finding. Gate passes (all counters 0, build OK); depcheck 246 roadmaps, 2235 edges, 0 problems; Suggested.lean elaborates with exactly 15 sorry warnings. Adversarial table: 8 rows with computed values for the statements the description cites. No seeded sample target lies in a changed passage. Overlaps: none listed; closest roadmaps (including SatoTateGroups) read, nothing shared. Conway1990 remains uncertified.",
+  "text": "5d8f366ebd6be639"
+ }
+}
