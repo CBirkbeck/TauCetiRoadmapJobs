@@ -13,13 +13,13 @@ import TauCeti.MeasureTheory.Measure.Atom
 The roadmap is `README.md`; this file is not the roadmap. It states the roadmap's headline
 theorems against the pinned Mathlib and Tau Ceti, each with `sorry`.
 
-A Schur multiplier is stated through kernels, so that no operator whose construction is itself a
-theorem is defined here: `IsKernelOperator μ k T` says that `T` is the integral operator of the
-kernel `k`, and `schurNorm μ p M` is the supremum of `‖B‖_p` over pairs `(A, B)` of integral
-operators with kernels `k ∈ L²(μ ⊗ μ)` and `M · k` with `‖A‖_p ≤ 1`. Through the kernel theorem of
-README §2.1 (every Hilbert–Schmidt operator is the integral operator of a unique `L²` kernel) this
-is the norm `‖S_M‖_{S_p → S_p}` of README §1.4 and §3.3. The Schatten gauge is the extended
-gauge of README §1.1, whose `p = ∞` endpoint is the compact operators.
+A Schur multiplier is stated through kernels, so that no operator is defined here whose
+construction is itself a theorem: `IsKernelOperator μ k T` says that `T` is the integral
+operator of the kernel `k`, and `schurNorm μ p M` is the supremum of `‖B‖_p` over pairs `(A, B)`
+of integral operators with kernels `k ∈ L²(μ ⊗ μ)` and `M · k` with `‖A‖_p ≤ 1`. Through the
+kernel theorem of README §2.1 (every Hilbert–Schmidt operator is the integral operator of a
+unique `L²` kernel) this is the norm `‖S_M‖_{S_p → S_p}` of README §1.4 and §3.3. The Schatten
+gauge is the extended gauge of README §1.1, whose `p = ∞` endpoint is the compact operators.
 
 Stated here: the isometry of `M ↦ S_M` on `S₂` (README §3.2, §3.5), the invariance of the norms
 under `p ↦ p'` and under transposition of the symbol (§4.1), their log-convexity in `1/p` and
@@ -242,8 +242,9 @@ def fourierMultiplierCbNorm (n : ℕ) (p : ℝ≥0∞) [Fact (1 ≤ p)]
 /-- **Fourier–Schur transference on `ℝⁿ`** (README §9.5): for every `n`, every `m ∈ L^∞(ℝⁿ)` and
 every `1 ≤ p ≤ ∞`, the completely bounded norm of the Schur multiplier with Toeplitz symbol
 `m(x − y)` on `S_p(L²(ℝⁿ))` equals the completely bounded norm of the Fourier multiplier `T_m` on
-`Lᵖ(ℝⁿ)` (cgpt-2023 (FS); caspers-delasalle-2015 Theorem 4.2 and Corollary 5.3); for `n = 0`,
-where `ℝ⁰` is a point of mass `1`, both sides are `|m(0)|`. -/
+`Lᵖ(ℝⁿ)` (cgpt-2023 (FS); caspers-delasalle-2015 Theorem 4.2 and Corollary 5.3 for symbols in
+`M_cbA(ℝⁿ)`, extended to `L^∞` symbols in README §9.5); for `n = 0`, where `ℝ⁰` is a point of
+mass `1`, both sides are `|m(0)|`. -/
 theorem schurCbNorm_toeplitz_eq_fourierMultiplierCbNorm (n : ℕ)
     (m : Lp ℂ ∞ (volume : Measure (EuclideanSpace ℝ (Fin n)))) (p : ℝ≥0∞) [Fact (1 ≤ p)] :
     schurCbNorm (volume : Measure (EuclideanSpace ℝ (Fin n))) p (fun q => m (q.1 - q.2)) =

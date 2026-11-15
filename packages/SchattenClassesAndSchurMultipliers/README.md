@@ -15,8 +15,8 @@ Hilbert–Schmidt operators (Layer 2), to the multiplier `S_M(A) = T_{M·k_A}` o
   for every positive semidefinite `M` and every `1 ≤ p ≤ ∞`;
 - the Grothendieck–Haagerup characterisation: for σ-finite `(Ω, μ)` and `p ∈ {1, ∞}`, the norm and
   the completely bounded norm of `S_M` equal the infimum of `‖ξ‖_∞ ‖η‖_∞` over measurable
-  factorisations `M(x, y) = ⟨ξ(x), η(y)⟩` through `ℓ²(ℕ)`, equivalently through any separable
-  Hilbert space;
+  factorisations `M(x, y) = ⟨ξ(x), η(y)⟩` through `ℓ²(ℕ)`, equivalently over factorisations
+  through all separable Hilbert spaces at once;
 - Lafforgue–de la Salle: on an atomless σ-finite measure space the norm and the completely
   bounded norm of every Schur multiplier on `S_p` agree, for every `1 ≤ p ≤ ∞`; for a continuous
   symbol and a σ-finite Radon measure the norm is the supremum of the norms of the finite matrix
@@ -46,7 +46,8 @@ This roadmap owns:
 - completely bounded maps on Schatten classes defined by matrix amplification, with their
   composition, duality, interpolation and stabilisation laws and their agreement at `p = ∞` with
   the completely bounded maps of CStarAlgebras C3.2 (Layer 1), and completely bounded norms of
-  Fourier multipliers on `Lᵖ(ℝⁿ)` through `Lᵖ(ℝⁿ; S_p^k)` (Layer 9);
+  Fourier multipliers on `Lᵖ(ℝⁿ)` through `Lᵖ(ℝⁿ; S_p^k)`, with the identification of
+  `Lᵖ(ℝⁿ; S_p^k)` as the tracial `Lᵖ` of `L^∞(ℝⁿ) ⊗̄ M_k` for Lebesgue measure (Layer 9);
 - the kernel `k_A ∈ L²(μ ⊗ ν)` of a Hilbert–Schmidt operator `A : L²(ν) → L²(μ)` (surjectivity of
   the kernel map onto `S₂`), the kernel calculus (adjoint, composition, multiplication operators,
   transposition) and the transformation of kernels under change of measure, measure-preserving
@@ -84,9 +85,12 @@ It leaves to named roadmaps, and consumes from them by section:
   density of finite-trace-support elements (its §1.3), Hölder's inequality (its §1.4), `Lᵖ`–`L^q`
   duality and cyclicity of the trace pairing (its §2.1), the complex method with regularisation
   (its §2.3), the interpolation of semifinite `Lᵖ` couples (its §2.5), noncommutative Riesz–Thorin
-  (its §2.6) and the Bochner identification `Lᵖ(Ω; Lᵖ(N)) = Lᵖ(L^∞(Ω) ⊗̄ N)` (its §4.4). The
-  semifinite martingale BMO space and its interpolation inequality with the sharp order `O(p)` are
-  requested of NoncommutativeIntegration, Part II (gap `semifinite-martingale-bmo-interpolation`).
+  (its §2.6), the isometric identification of the tracial `Lᵖ` of a semifinite trace with the
+  Haagerup `Lᵖ` (its §3.5) and the Bochner identification `Lᵖ(Ω; Lᵖ(N)) = Lᵖ(L^∞(Ω) ⊗̄ N)` for a
+  probability space (its §4.4); the case of Lebesgue measure on `ℝⁿ` with a matrix fibre `M_k`,
+  which Layer 9 uses, is §9.2 here. The semifinite martingale BMO space and its interpolation
+  inequality with the sharp order `O(p)` are requested of NoncommutativeIntegration, Part II (gap
+  `semifinite-martingale-bmo-interpolation`).
 - **AutomorphicSpectralTheory** owns the kernel operator `T_k` of an `L²` kernel with
   `kernel_apply`, `kernel_unique` and `kernel_norm` (its §0.8), and states for the trace of
   VonNeumannAlgebras V4.Core the basis formula `Tr(BC) = Σ_j ⟨B* e_j, C e_j⟩` for
@@ -439,8 +443,10 @@ assumed for arbitrary complex Hilbert spaces, as Tau Ceti implements it.
 
 ### From TauCetiRoadmap.NoncommutativeIntegration
 
-- §1.3: density, in `Lᵖ(M, τ)` for finite `p`, of the bounded elements of finite-trace support; on
-  `B(H)` these are the finite-rank operators.
+- §1.3: the tracial `Lᵖ(M, τ)` of a semifinite trace for finite `p`, complete, and the density in it
+  of the bounded elements of finite-trace support; on `B(H)` these are the finite-rank operators,
+  and on the algebra `L^∞(ℝⁿ; F_k)` of §9.2 the bounded functions vanishing off a set of finite
+  measure.
 - §1.4 with §1.5: Hölder's inequality `‖XY‖_r ≤ ‖X‖_p ‖Y‖_q` on `B(H)` with the trace.
 - §1.5: `Lᵖ(B(H), Tr) = S_p(H)` isometrically for `1 ≤ p < ∞`; the commutative identification
   `Lᵖ(L^∞(Ω), ∫) = Lᵖ(Ω)`.
@@ -457,8 +463,15 @@ assumed for arbitrary complex Hilbert spaces, as Tau Ceti implements it.
 - §2.6: noncommutative Riesz–Thorin for a linear map between the sums of two semifinite `Lᵖ`
   couples, the source and target algebras possibly different (used with `L^∞(ℝⁿ)` on one side and
   `B(L²(F))` on the other in §9.3).
+- §3.5: for a semifinite trace `τ` on `M`, the tracial `Lᵖ(M, τ)` of NoncommutativeIntegration
+  §1.3 is the weight-independent Haagerup `Lᵖ(M)` of NoncommutativeIntegration Layer 3,
+  isometrically.
 - §4.4: `Lᵖ(Ω; Lᵖ(N)) = Lᵖ(L^∞(Ω) ⊗̄ N)` for a probability space and `1 ≤ p < ∞`, with the norm
-  `(∫ ‖f(ω)‖_p^p dP)^{1/p}`.
+  `(∫ ‖f(ω)‖_p^p dP)^{1/p}`, stated for the Haagerup spaces and the product weight. Read through
+  NoncommutativeIntegration §3.5 and §1.5, it gives for `N = B(L²(ℝⁿ))` with `Tr` and the Haar
+  probability measure of `𝕋ⁿ` the norm `(∫_{𝕋ⁿ} ‖f(s)‖_p^p ds)^{1/p}` on the tracial `Lᵖ` of
+  `L^∞(𝕋ⁿ) ⊗̄ B(L²(ℝⁿ))` for the trace `∫ ⊗ Tr`, the space in which the martingale contract below
+  is stated (§10.3, §10.4).
 
 What NoncommutativeIntegration must provide (gap:semifinite-martingale-bmo-interpolation): in a
 Part II extending its §7.3 and §8.4 to semifinite operator-valued filtrations, the column, row
@@ -567,8 +580,8 @@ Hörmander–Mikhlin–Schur theorem.
 Layers 1 and 2 can be built at once, except that §2.3 and §2.4 use §1.1 and §1.4. Layer 3 needs
 Layers 1 and 2; Layer 4 needs Layers 1–3; Layer 5 needs Layers 2 and 3. Layer 6 needs Layers 1–5
 (§6.1–6.3 need only Layers 1, 3 and 4). Layer 7 needs Layers 2, 3 and 5. Layer 8 needs
-Layers 1, 3 and 5. Layer 9 needs Layers 1, 3, 4 and 8. Layer 10 needs Layers 1, 2 (§2.1) and 3.
-Layer 11 needs Layers 2, 3, 4, 7 and 10.
+Layers 1, 3 and 5. Layer 9 needs Layers 1, 2 (§2.1, §2.2), 3, 4 and 8. Layer 10 needs Layers 1,
+2 (§2.1) and 3. Layer 11 needs Layers 2, 3, 4, 7 and 10.
 
 ## Layer 1: the Schatten scale with its compact endpoint
 
@@ -931,6 +944,24 @@ The kernel projection is `MeasureTheory.condExpL2`, not `MeasureTheory.condExp`:
 counting measure and `𝒜 = 𝓑`, the kernel `k(i, j) = u_i u_j` with `u_j = 1/(j + 1)` has
 `‖k‖₂ = Σ_j (j + 1)^{−2} = π²/6` but `Σ_{i,j} k(i, j) = ∞`; `condExpL2` returns `k`, so that
 `P(B) = B` as `𝒜 = 𝓑` requires, while `condExp` returns `0`.
+
+**Checks.**
+
+- Sub-σ-algebra, kernel of `P(B)`: on `{1, 2}` with counting measure and `𝒜` trivial,
+  `L²(𝒜) = ℂ e` with `e = (1, 1)/√2`, `ι(a) = (a/2) J` for the scalar `a` (`J` the all-ones matrix)
+  and `P(B) = ⟨e, B e⟩ = (Σ_{i,j} B_{ij})/2`, so `P(ι(a)) = (a/2) · 4/2 = a`. For `B = E₁₁`, `P(B)`
+  is the scalar `1/2`; its kernel for `μ` on `𝒜 ⊗ 𝒜` is the constant `c` with `2c = 1/2`, so
+  `c = 1/4`, the mean of `k_{E₁₁} = 1_{(1,1)}` over the four points, as the projection onto the
+  `𝒜 ⊗ 𝒜`-measurable classes gives. Reading the scalar `1/2` as the kernel would be wrong by the
+  mass `2` of `Ω`.
+- Direction of `C_φ`: on `{1, 2, 3}` with counting measure and the cycle `φ(1) = 2`, `φ(2) = 3`,
+  `φ(3) = 1`, `C_φ δ₁ = δ₁ ∘ φ = δ₃` and `C_φ δ₂ = δ₁`, so `C_φ E₁₂ C_φ* = E₃₁`, and
+  `k_{E₁₂}(φx, φy) = 1` exactly at `(x, y) = (3, 1)`; the formula with `φ⁻¹` in place of `φ` would
+  give `E₂₃`.
+- Change of measure without `μ ≪ ν`: `ν = δ₀ ≪ μ = δ₀ + δ₁` on `{0, 1}` has `h = 1_{{0}}`,
+  `L²(ν) = ℂ` and `U c = (c, 0)`, so `U*U = 1` and `U U* = E₀₀ ≠ 1`: `U` is an isometry and not a
+  unitary, and `A ↦ U A U*` is a complete isometry onto the corner `E₀₀ S_p E₀₀`, not onto
+  `S_p(L²(μ))`.
 
 *Needs:* §1.4, §2.1, §2.2; VonNeumannAlgebras V2.RectangularL2; Mathlib
 `MeasureTheory.Measure.rnDeriv`, `MeasureTheory.MeasurePreserving`, `MeasureTheory.lpMeas`,
@@ -1435,13 +1466,19 @@ For σ-finite `(Ω, μ)` and `M ∈ L^∞(Ω × Ω, μ ⊗ μ)` define
 `‖M‖_H = inf { ‖ξ‖_{L^∞(μ; ℓ²)} ‖η‖_{L^∞(μ; ℓ²)} } ∈ [0, ∞]` (Lean `haagerupNorm`) over almost
 everywhere strongly measurable `ξ, η : Ω → ℓ²(ℕ)` (Mathlib `lp`) with `M(x, y) = ⟨ξ(x), η(y)⟩` for
 `μ ⊗ μ`-almost every `(x, y)`; the infimum of the empty set is `∞` (lafforgue-delasalle-2011
-Theorem 1.7, lines 274–278, where the Hilbert space is any separable one; cgpt-2023 lines 89–93;
-pisier-grothendieck-2012 (3.9), line 656, for finite index sets).
+Theorem 1.7, lines 274–278, where the Hilbert space varies with the factorisation over all
+separable ones; cgpt-2023 lines 89–93; pisier-grothendieck-2012 (3.9), line 656, for finite index
+sets).
 
-- The infimum is unchanged when `ℓ²(ℕ)` is replaced by any separable complex Hilbert space `K`,
-  each of which embeds isometrically into `ℓ²(ℕ)`, and when the maps are required to be strongly
-  measurable: changing `ξ` on a `μ`-null set `N` changes `⟨ξ(x), η(y)⟩` only on the
-  `μ ⊗ μ`-null set `N × Ω`, and leaves `‖ξ‖_∞` unchanged.
+- The infimum is unchanged when the factorisations may take values in any separable complex
+  Hilbert space `K`, the infimum then running over all such `K` and all factorisations through
+  them, and when `ℓ²(ℕ)` is replaced by one fixed infinite-dimensional separable `K`: every
+  separable `K` embeds isometrically into `ℓ²(ℕ)`, and every infinite-dimensional separable `K`
+  is isometrically isomorphic to `ℓ²(ℕ)`. For one fixed `K` of finite dimension `d` the infimum
+  can be larger, since a factorisation through `K` writes `M` as a sum of at most `d` elementary
+  symbols `f(x) g(y)` (for a finite index set, a matrix of rank at most `d`). The infimum is also
+  unchanged when the maps are required to be strongly measurable: changing `ξ` on a `μ`-null set
+  `N` changes `⟨ξ(x), η(y)⟩` only on the `μ ⊗ μ`-null set `N × Ω`, and leaves `‖ξ‖_∞` unchanged.
 - `‖M‖_H` depends only on the class of `M`; `‖M‖_∞ ≤ ‖M‖_H` by Cauchy–Schwarz;
   `‖M + N‖_H ≤ ‖M‖_H + ‖N‖_H` (direct sums of balanced factorisations);
   `‖M N‖_H ≤ ‖M‖_H ‖N‖_H` (tensor products); `‖M^t‖_H = ‖M̄‖_H = ‖M‖_H` (pass to the conjugate
@@ -1454,8 +1491,14 @@ pisier-grothendieck-2012 (3.9), line 656, for finite index sets).
 - `M = [[1, 2], [2, 1]]`: with `v = (1, −1)`, `ξ_j = (√(3/2), v_j/√2)` and
   `η_k = (√(3/2), −v_k/√2)` give `⟨ξ_j, η_k⟩ = 3/2 − v_j v_k/2 = M(j, k)` and `‖ξ_j‖² = ‖η_k‖² = 2`,
   so `‖M‖_H ≤ 2`, and `|M(1, 2)| = 2` gives `‖M‖_H = 2`.
-- The constant symbol `1` on `ℕ` with counting measure has `‖1‖_H = 1` (`K = ℂ`); the variant with
-  `L²` norms of `ξ, η` in place of `L^∞` norms gives `∞` for it, and is not the right constant.
+- The same `M = [[1, 2], [2, 1]]` has no factorisation through the fixed space `K = ℂ`: there
+  `⟨ξ_j, η_k⟩ = conj(ξ_j) η_k` is a matrix of rank at most `1`, while `M` has determinant `−3`,
+  so the infimum over `ℂ`-valued factorisations is `∞`. Through `ℂ²` the value `2` is attained
+  (previous Check), and through `ℓ²(ℕ)` along the embedding `ℂ² ⊆ ℓ²(ℕ)`; a Hilbert space fixed
+  for all symbols at once must be infinite-dimensional.
+- The constant symbol `1` on `ℕ` with counting measure has `‖1‖_H = 1` (`ξ = η = e₀`, through the
+  line `ℂ e₀` of `ℓ²(ℕ)`); the variant with `L²` norms of `ξ, η` in place of `L^∞` norms gives `∞`
+  for it, and is not the right constant.
 - The diagonal symbol `1_{i=j}` on `ℕ`: `ξ_i = η_i = e_i` in `ℓ²(ℕ)` gives `‖·‖_H = 1`.
 
 *Needs:* §3.1; Mathlib `lp`, `MeasureTheory.AEStronglyMeasurable`, `MeasureTheory.eLpNorm`.
@@ -1604,17 +1647,30 @@ have positive measure).
 ### 7.2 Equal-measure refinements
 
 Let `𝒜 ⊆ 𝓑` be finite σ-algebras on `Ω`, `μ` a finite measure on `𝓑`, and assume that every
-minimal nonempty set of `𝒜` is a union of minimal nonempty sets of `𝓑` all of the same measure.
-Prove that for every `𝓑 ⊗ 𝓑`-measurable `φ` and `1 ≤ p ≤ ∞`,
-`‖E[φ | 𝒜 ⊗ 𝒜]‖_{S_p(L²(𝓑))} ≤ ‖φ‖_{S_p(L²(𝓑))}` (lafforgue-delasalle-2011 Lemma 1.17, line 489,
-proof lines 493–501). Route: reduce to a finite weighted set; for independent uniformly random
-permutations `σ, σ'` of the minimal sets of `𝓑` preserving each minimal set of `𝒜`,
-`E[φ | 𝒜 ⊗ 𝒜](x, y)` is the expectation of `φ(σx, σ'y)`; each `φ(σ ·, σ' ·)` has the norm of `φ`
-because the permutation unitaries are measure preserving (equal masses), and the triangle
-inequality concludes.
+minimal nonempty set `A` of `𝒜` is a union of minimal nonempty sets of `𝓑` that all have one
+measure, a value which may depend on `A`. Prove that for every `𝓑 ⊗ 𝓑`-measurable `φ` and
+`1 ≤ p ≤ ∞`, `‖E[φ | 𝒜 ⊗ 𝒜]‖_{S_p(L²(𝓑))} ≤ ‖φ‖_{S_p(L²(𝓑))}` (lafforgue-delasalle-2011
+Lemma 1.17, lines 489–490, proof lines 493–501). Route: reduce to a finite weighted set; for
+independent uniformly random permutations `σ, σ'` of the minimal sets of `𝓑` preserving each
+minimal set of `𝒜`, `E[φ | 𝒜 ⊗ 𝒜](x, y)` is the expectation of `φ(σx, σ'y)`; each `φ(σ ·, σ' ·)`
+has the norm of `φ` because the permutation unitaries are measure preserving (equal masses inside
+each minimal set of `𝒜`), and the triangle inequality concludes.
 
-On `{1, 2}` with counting measure and `𝒜` trivial the conclusion is `|average of φ| ≤ ‖S_φ‖_p`
-for the constant symbol acting on `M₂`, the same numbers as §5.1.
+**Checks.**
+
+- On `{1, 2}` with counting measure and `𝒜` trivial the conclusion is `|average of φ| ≤ ‖S_φ‖_p`
+  for the constant symbol acting on `M₂`, the same numbers as §5.1.
+- The common measure is fixed inside each minimal set of `𝒜` only: on `{1, 2, 3, 4}` with masses
+  `(1, 1, 3, 3)`, `𝓑` the power set and `𝒜` generated by `{1, 2}` and `{3, 4}`, the hypothesis
+  holds with the values `1` and `3`, and the permutations of the route are the four elements of
+  the group generated by the transpositions `(1 2)` and `(3 4)`, each measure preserving. A
+  hypothesis asking one measure for all minimal sets of `𝓑` would exclude this space, while §7.3
+  cuts a minimal set `A` of `𝒜` into pieces of measure `μ(A)/n`, which depends on `A`.
+- With masses `(1, 2, 3, 3)` and the same `𝒜` the hypothesis fails: `(1 2)` exchanges points of
+  masses `1` and `2` and is not measure preserving. The route breaks at the averaging step: on
+  `{1, 2}²` the expectation `E[φ | 𝒜 ⊗ 𝒜]` weights the four values of `φ` by `(1, 2, 2, 4)/9`,
+  while the average of `φ(σx, σ'y)` over independent uniform permutations of `{1, 2}` weights each
+  of them by `1/4`.
 
 *Needs:* §2.5, §3.7, §5.1.
 
@@ -1833,6 +1889,25 @@ and 250–251; caspers-delasalle-2015 lines 26–41; lafforgue-delasalle-2011 (3
 - At `p = 2`: `‖T_m‖_{cb,2} = ‖T_m‖₂ = ‖m‖_∞` (Plancherel, `MeasureTheory.Lp.fourierTransformₗᵢ`,
   and `MeasureTheory.Lp.norm_fourierMultiplierCLM_le` for `≤`; concentration of `𝓕 f` near Lebesgue
   points of `|m|` for `≥`).
+- **The tracial picture of `Lᵖ(ℝⁿ; S_p^k)`.** Let `𝓡_k = L^∞(ℝⁿ; F_k)` be the von Neumann algebra
+  of essentially bounded `F_k`-valued functions acting by multiplication on `L²(ℝⁿ; ℂ^k)` (the
+  algebra `L^∞(ℝⁿ) ⊗̄ M_k`), with `τ_k(g) = ∫ Tr g(ξ) dξ` on its positive elements. Prove that
+  `τ_k` is a normal faithful semifinite trace, that the norm of `𝓡_k` is `ess sup_ξ ‖g(ξ)‖`, the
+  `p = ∞` value of `‖·‖_{Lᵖ(S_p^k)}`, and that for `1 ≤ p < ∞` and every bounded `g`,
+  `τ_k(|g|^p) = ∫ ‖g(ξ)‖_{S_p^k}^p dξ` in `[0, ∞]`; hence the tracial
+  `Lᵖ(𝓡_k, τ_k)` of NoncommutativeIntegration §1.3 is `Lᵖ(ℝⁿ; S_p^k)`, isometrically, through the
+  identity on the bounded functions vanishing off a set of finite measure (cgpt-2023
+  lines 249–252, for the fibre `B(L²(ℝⁿ))`). Route: for bounded `g`, every polynomial in `g* g`
+  is computed pointwise, and the uniform approximation of `t ↦ t^{p/2}` by polynomials on
+  `[0, ‖g‖²]` gives `|g|^p(ξ) = |g(ξ)|^p` almost everywhere; the operator norm of multiplication
+  by `g` is at least `c` whenever `‖g(ξ) v‖ > c` on a set `E` of positive finite measure for one
+  vector `v` of a countable dense subset of the unit sphere of `ℂ^k` (test on `1_E v`); the
+  bounded elements of finite-trace support are the bounded functions vanishing off a set of
+  finite measure, which are dense on both sides (NoncommutativeIntegration §1.3; on the Bochner
+  side the truncations `g · 1_{‖g‖ ≤ j} · 1_{|ξ| ≤ j}` and dominated convergence), and both
+  sides are complete. At `k = 1` this is the commutative identification of
+  NoncommutativeIntegration §1.5; NoncommutativeIntegration §4.4 identifies Bochner spaces with
+  noncommutative `Lᵖ` for probability spaces only, and Lebesgue measure on `ℝⁿ` is infinite.
 - `‖T_m‖_p ≤ ‖T_m‖_{cb,p}`; `k ↦ ‖T_m^{(k)}‖_p` is nondecreasing.
 - Modulation: `T_m(e_s f) = e_s T_{m(·+s)} f`, so symbol translates have the same norms; the
   reflection `R f = f(−·)` is a complete isometry with `R T_m R = T_{m(−·)}`; unitary dilations
@@ -1851,11 +1926,24 @@ and 250–251; caspers-delasalle-2015 lines 26–41; lafforgue-delasalle-2011 (3
 - `m = cos(2π⟨a, ·⟩)`: `T_m = (V_a + V_{−a})/2` has norm at most `1` on every `Lᵖ`, and equal to `1`
   at `p = 1`, since `‖T_m f‖₁ = ‖f‖₁` for nonnegative `f`.
 - `m = 1`: the identity, all norms `1`; `m = 0`: all norms `0`.
+- Tracial picture, a projection of infinite-measure support: `n = 1`, `k = 2`,
+  `g = 1_{[0, 2]} E₁₁` has `|g|^p = g`, so `τ₂(|g|^p) = 2 = ∫_0^2 ‖E₁₁‖_p^p dξ` and both norms are
+  `2^{1/p}`; at `p = ∞` both are `1`. The measure of `ℝ` is infinite, so the probability-space
+  identification of NoncommutativeIntegration §4.4 does not reach this case.
+- Tracial picture, matrix and not entrywise: `g = 1_{[0, 1]} a` with `a = [[1, 1], [0, 0]]` has
+  `|g|² = 1_{[0, 1]} [[1, 1], [1, 1]]` and singular values `√2, 0` at each point of `[0, 1]`, so
+  `‖g‖ = √2` in every `Lᵖ(S_p^2)` and in `𝓡_2`; the entrywise model `(∫ Σ_{i,j} |g_{ij}|^p)^{1/p}`
+  gives `2^{1/p}`, which is `2` at `p = 1`, and the entrywise maximum gives `1` at `p = ∞`.
+- Tracial picture, normalisation of the trace: `g = 1_{[0, 1]} I_k` has `τ_k(|g|^p) = k`, so its
+  norm is `k^{1/p} = ‖I_k‖_{S_p^k}`, the unnormalised Schatten norm of Tau Ceti's
+  `TauCeti.UnitarilyInvariantSeminorm.schatten`; the normalised trace `tr = Tr/k` would give `1`
+  and break the identification. For `n = 1` the function `1_{[0, ∞)} E₁₁` lies in `𝓡_k` with
+  norm `1` and in no `Lᵖ`, `p < ∞`, since both `τ_k(|g|^p)` and `∫ ‖g(ξ)‖_p^p dξ` are `∞`.
 
 *Needs:* Tau Ceti `MeasureTheory.Lp.fourierMultiplierCLM`,
 `MeasureTheory.Lp.norm_fourierMultiplierCLM_le`, `MeasureTheory.Lp.tendsto_fourierMultiplierCLM_apply`,
-`TauCeti.UnitarilyInvariantSeminorm.schatten`; Mathlib `MeasureTheory.Lp.fourierTransformₗᵢ`,
-`MeasureTheory.eLpNorm`.
+`TauCeti.UnitarilyInvariantSeminorm.schatten`; NoncommutativeIntegration §1.3, §1.5; Mathlib
+`MeasureTheory.Lp.fourierTransformₗᵢ`, `MeasureTheory.eLpNorm`.
 
 ### 9.3 Følner compressions of convolution operators
 
@@ -1871,10 +1959,10 @@ Theorem 5.1, line 529, and Theorem 5.2, line 543, for `G = ℝⁿ`):
   `|u|² = |v|² = |g|` (polar decomposition for matrices), so `Λ_F(g)` is a product of two
   Hilbert–Schmidt operators of norms `|F|^{1/2} ‖u‖₂` and `|F|^{1/2} ‖v‖₂`; in between by
   NoncommutativeIntegration §2.6 for the couple `(L¹, L^∞)(ℝⁿ; F_k)` of the semifinite algebra
-  `L^∞(ℝⁿ) ⊗̄ F_k` with the trace `g ↦ ∫ Tr g(ξ) dξ`, whose `Lᵖ` norm on bounded `g` is
-  `‖g‖_{Lᵖ(S_p^k)}` because `|g|^p` is computed pointwise (NoncommutativeIntegration §1.5 at
-  `k = 1`), and for the couple `(S₁, B)(L²(F)^k)` (NoncommutativeIntegration §1.5 for `B(H)`). For
-  general `g ∈ L² ∩ Lᵖ` (at `p = ∞`, `g ∈ L² ∩ L^∞`) the truncations
+  `𝓡_k = L^∞(ℝⁿ; F_k)` with the trace `τ_k(g) = ∫ Tr g(ξ) dξ`, whose `Lᵖ` spaces are the
+  `Lᵖ(ℝⁿ; S_p^k)` with the norm `‖g‖_{Lᵖ(S_p^k)}` (the tracial picture of §9.2), and for the
+  couple `(S₁, B)(L²(F)^k)` (NoncommutativeIntegration §1.5 for `B(H)`). For general
+  `g ∈ L² ∩ Lᵖ` (at `p = ∞`, `g ∈ L² ∩ L^∞`) the truncations
   `g_j = g · 1_{‖g‖ ≤ j} · 1_{|ξ| ≤ j}` lie in `L¹ ∩ L^∞` with `‖g_j‖_{Lᵖ(S_p^k)} ≤ ‖g‖_{Lᵖ(S_p^k)}`
   and `g_j → g` in `L²` (dominated convergence); since
   `‖Λ_F(h)‖₂² = ∫ ‖ȟ(u)‖₂² |F ∩ (F + u)| du ≤ |F| ‖h‖₂²` for every `h ∈ L²` (Plancherel),
@@ -1889,6 +1977,11 @@ Theorem 5.1, line 529, and Theorem 5.2, line 543, for `G = ℝⁿ`):
 - intertwining: `Λ_F(𝓕(m · 𝓕⁻¹ g)) = S_{M_m}(Λ_F(g))`, with the amplified symbol of §3.5 for
   `k > 1`, by comparing kernels.
 
+caspers-delasalle-2015 state Theorem 5.1 for every `1 ≤ p ≤ ∞` (line 530) and Theorem 5.2, the
+asymptotically isometric embedding behind the third bullet, for `1 < p < ∞` only (line 543); the
+third bullet at `p ∈ {1, ∞}` comes from the duality route given there, with the first bound at the
+conjugate exponent.
+
 **Checks.**
 
 - `n = 1`, `g = 1_{[−1/2, 1/2]}`: `𝓕⁻¹ g(u) = sin(πu)/(πu)` and `T_g` is an orthogonal projection,
@@ -1900,8 +1993,9 @@ Theorem 5.1, line 529, and Theorem 5.2, line 543, for `G = ℝⁿ`):
   `e_a(s) [1_F(s) ǧ(s − t) 1_F(t)] conj e_a(t)` and `Λ_F(g(· − a)) = D_{e_a} Λ_F(g) D_{e_a}*`: every
   bound is invariant under translation of the symbol, as `‖g(· − a)‖_p = ‖g‖_p` requires.
 
-*Needs:* §1.1, §1.4, §3.5, §4.1, §9.1; NoncommutativeIntegration §1.4, §1.5, §2.6; Mathlib
-`MeasureTheory.Lp.fourierTransformₗᵢ`.
+*Needs:* §1.1, §1.4, §2.1 (`Λ_F(g)` is defined by its kernel; kernel uniqueness for the
+intertwining), §2.2 (the trace formula for `Tr(Λ_F(g) Λ_F(h))`), §3.1, §3.5, §4.1, §9.1, §9.2;
+NoncommutativeIntegration §1.4, §1.5, §2.6; Mathlib `MeasureTheory.Lp.fourierTransformₗᵢ`.
 
 ### 9.4 Approximate identities on the Fourier side
 
@@ -1932,7 +2026,16 @@ Prove that for every `m ∈ L^∞(ℝⁿ)` and `1 ≤ p ≤ ∞`: `‖S_{M_m}‖
 (`schurCbNorm_toeplitz_eq_fourierMultiplierCbNorm`, which also covers `n = 0`), and moreover
 `‖S_{M_m}‖_p ≤ ‖T_m‖_{cb,p}` and `‖T_m‖_p ≤ ‖S_{M_m}‖_p` (cgpt-2023 (FS), lines 71–72;
 caspers-delasalle-2015 Theorem 4.2, line 485, Theorem 5.2, line 543, and Corollary 5.3, line 626;
-neuwirth-ricard-2011 Theorem 2.7, line 516, for discrete amenable groups). Route. Fourier side: the transferred operator `g ↦ 𝓕(m · 𝓕⁻¹ g)` is
+neuwirth-ricard-2011 Theorem 2.7, line 516, for discrete amenable groups). caspers-delasalle-2015
+state Theorem 4.2 and Corollary 5.3 for symbols in `M_cbA(G)`, the completely bounded Fourier
+multipliers of the group von Neumann algebra (lines 26–33), which are continuous (line 483), and
+Theorem 5.2 for `1 < p < ∞` (line 543); cgpt-2023 states (FS) with no hypothesis on `m`. The
+statement here, for every `m ∈ L^∞(ℝⁿ)`, with values in `[0, ∞]` and including `p ∈ {1, ∞}`, is
+reached by the route below: the Fourier side holds for every `m` and every `p` by §9.3, and the
+Schur side passes from continuous to arbitrary symbols by mollification and the lower
+semicontinuity of §3.3.
+
+Route. Fourier side: the transferred operator `g ↦ 𝓕(m · 𝓕⁻¹ g)` is
 `R T_m R`, with the norms of `T_m`; for `g ∈ L² ∩ Lᵖ`, §9.3 gives
 `‖R T_m R g‖_p ≤ liminf |Q_R|^{−1/p} ‖S_{M_m}(Λ_{Q_R}(g))‖_p ≤ ‖S_{M_m}‖_p ‖g‖_p`, and the same at
 every level `k`. Schur side: by §9.1 and §9.2 replace `m` by `m * ρ_ε` (continuous, with
@@ -1958,6 +2061,11 @@ contributes `0`, so both sides are `|m(0)|`.
   every `p`.
 - `m = 0` and `m = 1`: both sides `0`, respectively `1`; the reflection in `R T_m R` is invisible in
   the norms but visible on `e_a`, where `R T_m R f = f(· − a)`.
+- `n = 1`, `m = sign`, a discontinuous symbol and so outside the class `M_cbA(ℝ)` of
+  caspers-delasalle-2015: at `p = 2` both completely bounded norms are `‖m‖_∞ = 1` (§3.5 for the
+  Schur side, §9.2 for the Fourier side), so the equality holds beyond the symbols of the cited
+  theorems, as the mollification step of the route provides; a statement restricted to
+  continuous `m` would not cover this symbol.
 
 *Needs:* §3.3, §4.2, §8.2, §9.1–§9.4; Mathlib
 `ContDiffBump.ae_convolution_tendsto_right_of_locallyIntegrable`, `volume_euclideanSpace_eq_dirac`.
@@ -1971,8 +2079,9 @@ contributes `0`, so both sides are `|m(0)|`.
 
 ### Dependencies
 
-Layers 1 (§1.1, §1.4), 3, 4 and 8; Tau Ceti `L²` Fourier multipliers; NoncommutativeIntegration
-§1.5, §2.6; Mathlib Plancherel, mollifiers and the volume of `ℝ⁰`.
+Layers 1 (§1.1, §1.4), 2 (§2.1, §2.2), 3, 4 and 8; Tau Ceti `L²` Fourier multipliers;
+NoncommutativeIntegration §1.3, §1.4, §1.5, §2.6; Mathlib Plancherel, mollifiers and the volume of
+`ℝ⁰`.
 
 ## Layer 10: operator-valued and matrix BMO
 
@@ -2076,7 +2185,8 @@ For `k ≥ 0` let `m_k(x) = (⌊8^k x_j⌋)_j ∈ ℤⁿ` and `p_k(x) = 8^{−k}
 `1_{|x − y| ≥ 2^{−k}}` and `J_k^⊥ = id − J_k` (cgpt-2023 lines 348–378). Prove:
 
 - `‖π_k(B)(s)‖_p = ‖B‖_p`, so `‖π_k(B)‖_{Lᵖ(L^∞(𝕋ⁿ) ⊗̄ B(L²(ℝⁿ)))} = ‖B‖_p` for
-  `B ∈ S₂ ∩ S_p` and `1 ≤ p < ∞` (NoncommutativeIntegration §4.4);
+  `B ∈ S₂ ∩ S_p` and `1 ≤ p < ∞`, the left side being the tracial `Lᵖ` for the trace `∫ ⊗ Tr`
+  (NoncommutativeIntegration §4.4, read tracially through its §1.5 and §3.5);
 - `π_k ∘ J_k = J_k ∘ π_k`, and, when `4^k ≥ √n`, `∫_{𝕋ⁿ} π_k(J_k B)(s) ds = 0`: points with
   `m_k(x) = m_k(y)` lie in one cube of side `8^{−k}`, so `|x − y| < √n 8^{−k} ≤ 2^{−k}`;
 - Lemma 1.3: for `4^k ≥ 4√n` and `A ∈ S₂`,
@@ -2103,7 +2213,7 @@ inequality `≤ liminf` is used, as stated here.
 - The dimension `n = 0` is excluded: on `ℝ⁰ × ℝ⁰`, `|x − y| = 0 < 2^{−k}`, so every `J_k` is `0`, and
   `‖A‖_p ≤ liminf_k ‖J_k A‖_p` fails for `A = 1`, where the left side is `1` and the right side `0`.
 
-*Needs:* §1.1, §3.1, §10.1, §10.2; NoncommutativeIntegration §4.4.
+*Needs:* §1.1, §3.1, §10.1, §10.2; NoncommutativeIntegration §1.5, §3.5, §4.4.
 
 ### 10.4 Interpolation between matrix BMO and `S₂`
 
@@ -2150,7 +2260,7 @@ of `S₂` on which `‖·‖_{BMO}` is a norm (§10.2), `‖J_k Ψ(it)‖₂ ≤
   `Ψ(z) = e^{−Rz}·1` on `S₂(ℂ) = ℂ` the inequality would read `‖Ψ(1/2)‖₄ = e^{−R/2} ≤ 4 C_n e^{−R}`,
   since `sup_t ‖Ψ(1 + it)‖₂ = e^{−R}`; this fails for every `R > 2 ln(4 C_n)`.
 
-*Needs:* §10.1–§10.3; NoncommutativeIntegration §4.4 and Part II (gap
+*Needs:* §10.1–§10.3; NoncommutativeIntegration §1.5, §3.5, §4.4 and Part II (gap
 `semifinite-martingale-bmo-interpolation`).
 
 ### Examples
@@ -2163,7 +2273,7 @@ of `S₂` on which `‖·‖_{BMO}` is a norm (§10.2), `‖J_k Ψ(it)‖₂ ≤
 ### Dependencies
 
 Layers 1, 2 (§2.1) and 3; Mathlib Bochner integration, the torus and null sets of product measures;
-NoncommutativeIntegration §4.4 and the Part II contract.
+NoncommutativeIntegration §1.5, §3.5, §4.4 and the Part II contract.
 
 ## Layer 11: Hörmander–Mikhlin–Schur multipliers
 
