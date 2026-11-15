@@ -1,0 +1,32 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PotentialAutomorphyDworkMotivesPartII~4",
+  "head": "fdddbb5a5890b3f1caf86137945c577eda040883",
+  "pr": 2291,
+  "folder": "PotentialAutomorphyDworkMotivesPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Full review of the head (205 changed lines since b4c3b80). Previous R01 repaired (supplier contracts now name the carriers of the §§9.13-9.14 headlines); previous R02 deferred as D01, which stands. One P3 finding: the pull request description still counts seven theorems and twelve declarations, while the head states nine theorems and five definitions (the two §0.11 transvection classifications were added). Seeded sample (§§0.2, 0.3, 0.6, 0.11, 4.3, 5.2, 5.4, 5.6, 5.11, 6.4, 6.7, 7.7, 9.3, 9.6, 9.7): 44 locators checked in QIAN23, BCGNT25, BLGHT11, BH89, BER10, DICKSON01, KANTOR79, WAT69, DK17, all at the stated theorem and page; ZS76, ARTIN55, LEWIS82, KM74, KIS99, KATZ90 uncertified, cited by locator. Adversarial table with computed values for every sampled target and all nine headlines (index sets and stabilisers by brute force, the Gauss-product identity numerically, the N=7, l=43 determinant reductions exactly, point counts over small prime fields, products of order-3 elements of SL2(F5)). Gate passes (build OK); elaboration gives nine sorry warnings only; depcheck 245 roadmaps, 0 problems; one-tactic probe closes no theorem; all 14 signatures agree with the README; no change outside the folder. Overlap check and source-independence lines are in the report; five source errata recorded; five facts listed for the human reviewers.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The new prime-field existence target overlaps Waterhouse's classification",
+    "where": "AbelianVarietiesOverFiniteFields §4.6",
+    "raised": "PRREVIEW-PotentialAutomorphyDworkMotivesPartII~2"
+   }
+  ],
+  "text": "1de8df6437d49bfc",
+  "carried": {
+   "from": "fdddbb5a5890b3f1caf86137945c577eda040883",
+   "head": "860f8e929453f112719a5ec691489927e8317fd8",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "PotentialAutomorphyDworkMotivesPartII"
+   ]
+  }
+ }
+}
