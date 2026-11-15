@@ -323,7 +323,7 @@ theorem gaussian_isoperimetric {U : Set E} (hU : NullMeasurableSet U volume) :
   sorry
 
 /-- **The two-cell profile** (§7.4). For `n ≥ 1` and every `v` in the simplex `Δ^{(1)}`, the
-Gaussian isoperimetric profile of `2`-clusters is `I(v_1)` (MilmanNeeman2022, Theorems 1.1 for
+Gaussian isoperimetric profile of `2`-clusters is `I(v_1)` (MilmanNeeman2022, Theorem 1.1 for
 `q = 2`). -/
 theorem isoperimetricProfile_two_eq [Nontrivial E] {v : Fin 2 → ℝ} (hv : ∀ i, 0 ≤ v i)
     (hsum : v 0 + v 1 = 1) :
