@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartII~9",
+  "head": "c5b15682f1a176afe96b2ec07636407f62eebcfe",
+  "pr": 1173,
+  "folder": "ArithmeticStatisticsPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 8 changed lines since 8e2b31a: the four reworded README passages (index-p subrings proof, projection-quartic proof, integral representatives, two-Selmer parametrization) checked against ref-3, ref-9 and ref-1 at their locators and recomputed (subring counts vs omega_p, disc scaling by p^2, I(F_U)=c4 and J(F_U)=2c6 on 200 cubics, invariant scalings); wording independent of the sources; gate rerun OK, depcheck 0 problems, Suggested.lean elaborates with sorry as the only warning. Title and description read against the head: one P3 finding (R01), the roadmap-summary sentence that a good-prime hypothesis enters only one local uniqueness theorem is contradicted by README lines 2085 and 2137. The folder itself has no finding.",
+  "text": "a98942036d6ded62",
+  "carried": {
+   "from": "c5b15682f1a176afe96b2ec07636407f62eebcfe",
+   "head": "c5b15682f1a176afe96b2ec07636407f62eebcfe",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
