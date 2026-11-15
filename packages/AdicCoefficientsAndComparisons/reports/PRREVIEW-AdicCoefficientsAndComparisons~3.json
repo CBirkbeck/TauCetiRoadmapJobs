@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AdicCoefficientsAndComparisons~3",
+  "head": "000e3d5b4d173bf2c530e716ffbdcafb49334a47",
+  "pr": 965,
+  "folder": "AdicCoefficientsAndComparisons",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 000e3d5; this round checked the pull request's title and description against the head (14 sentences). One P3 finding: the description's Validation sentence says README identifiers absent from Lean and Check labels are zero, while the README has 49 labelled Checks and at least 50 own backticked names that Suggested.lean (5 declarations) does not declare; replacement text given. Folder files need no change. Gate rerun: every check 0, OK. Dependency check: 245 roadmaps, 2215 edges, 0 problems. lake env lean on Suggested.lean: three sorry warnings only. Adversarial table: six rows with computed values for the statements the description cites (coefficient pairs, Spd Z_p, non-dense compactification, degree-l alteration, headline list) and the finding. Sample sections 2.1-2.9 unchanged and reread; no source locator reopened; overlap and source-independence comparisons not repeated (no changed passage).",
+  "text": "69024cdf496f1f6d",
+  "carried": {
+   "from": "000e3d5b4d173bf2c530e716ffbdcafb49334a47",
+   "head": "c8f8961c0d1f78fd3edb1817ea31b3e712376c6f",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "AdicCoefficientsAndComparisons"
+   ],
+   "outside": true
+  }
+ }
+}
