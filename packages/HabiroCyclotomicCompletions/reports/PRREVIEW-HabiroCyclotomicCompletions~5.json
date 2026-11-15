@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HabiroCyclotomicCompletions~5",
+  "head": "3bcc4286ecf727438ad936c34b26943615dfed24",
+  "pr": 1314,
+  "folder": "HabiroCyclotomicCompletions",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 28 changed lines since 5ebc7e3. Previous R01 (letI in the signature of close_root_taylor_reexpansion) is repaired by an explicit WithIdeal binder with an equation fixing the ideal; signature rechecked with #check on a scratch copy and the Z_2 example recomputed. The changed README passages (library pins, coefficient-list contracts, section 2.2 list paragraph) were checked against the pinned Mathlib 1b1ccf4 and Tau Ceti 2fd255d: 7 declarations opened, list convention, Horner identity, divisor and quotient sign computed on explicit lists. Seeded sample: sections 2.2 and 3.3 fall in the change; H lines 208-222 reopened; the unchanged H0 preprint locator at README:859 was not reopened (journal text only). Pull request text agrees with the head; no file changed outside the folder. Gate rerun: all counts 0, OK; depcheck 0 problems, no UPWARD or CYCLE; lake env lean gives 17 sorry warnings only.",
+  "text": "8dbba5bf39ae3ab2"
+ }
+}
