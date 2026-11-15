@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BordismFormalGroups~71",
+  "head": "b591e895652bdb4470c1889acfd91dbac79bf0e9",
+  "pr": 1807,
+  "folder": "BordismFormalGroups",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "Full review of a repaired head. Previous findings: R01, R03, R04 repaired; R02 deferred (D01 stands, this folder's half done); R05 not repaired, raised again as R03. New: R01 (P2) F2.2 claims strong HF_p-Adams convergence for all bounded-below spectra, refuted by the wedge of the Hℤ/p^n, Ravenel Theorem 2.1.1(ii) assumes finite type; R02 (P3) F2.6 Needs line omits G3.4, G4.3, G4.5, G5.3–G5.4; R03 (P3) description omits suppliers added (CharacteristicClasses, TopologicalKTheory) and dropped (DGFloer, GeometricTopology). Checked: the 15 sampled sections and the new ΩBU, X(r), Tel and stabilizer passages; 71 source locators in 9 cached sources; pinned Tau Ceti declarations for the three headlines; cross-roadmap citations to TopologicalKTheory T1.5, T1.6a, T7.1, GeneralizedCohomology G3.2, G3.4, G3.9, G5.4 and AlgebraicTopology 5.5 at this head; worker gate passes; depcheck 0 problems; Suggested.lean elaborates with three sorry warnings only; one-tactic probe closes nothing.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The comparison of the HF_p-nilpotent completion with derived p-completion has two owners, with different hypotheses",
+    "where": "GeneralizedCohomology G3.9, its sentence on the HF_p nilpotent/Adams completion",
+    "raised": "PRREVIEW-BordismFormalGroups~70"
+   }
+  ],
+  "text": "81bc225033324376"
+ }
+}
