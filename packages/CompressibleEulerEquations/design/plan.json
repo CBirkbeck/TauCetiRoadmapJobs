@@ -809,9 +809,11 @@
      "id": "3.3.3",
      "kind": "theorem",
      "name": "AcousticalGeometry.futureDomainOfDependence_slab",
-     "statement": "If D = [t₀,t₁) × E and c, |v| are bounded on [t₀,t₂] × E for every t₂ < t₁, every past causal curve extends to [t₀, t_p], D⁺_D(S) is the set of p all of whose causal curves on [t₀,t_p] start in S, and D⁺_D(Σ_{t₀}) = D. LorentzianGeometry §12.6's slab statement is the slice identity only.",
+     "statement": "If D = [t₀,t₁) × E and c, |v| are bounded on [t₀,t₂] × E for every t₂ < t₁, every past causal curve in D extends to one on [t₀, t_p]; for S ⊆ Σ_{t₀}, D⁺_D(S) is the set of p ∈ D all of whose past causal curves in D on [t₀,t_p] start in S (a curve on [t₀, t_p] has no proper extension in D ⊆ H_{t₀} and meets S ⊆ Σ_{t₀} iff it starts in S); and D⁺_D(Σ_{t₀}) = D. LorentzianGeometry §12.6's slab statement is the slice identity only.",
      "hypotheses": [
-      "c and |v| bounded on [t₀,t₂] × E for each t₂ < t₁"
+      "D = [t₀,t₁) × E",
+      "c and |v| bounded on [t₀,t₂] × E for each t₂ < t₁",
+      "S ⊆ Σ_{t₀} (for the description of D⁺_D(S))"
      ],
      "locator": {
       "source": "BarGinouxPfaffle2007",
@@ -826,6 +828,11 @@
        "name": "unbounded_field",
        "kind": "non-example",
        "statement": "field (1, x²) on [0,1) × ℝ: x(s) = 1/(1/4 − s) through (1/2, −4) escapes as s ↓ 1/4, so D⁺(Σ₀) ≠ D"
+      },
+      {
+       "name": "point_datum_off_slice",
+       "kind": "non-example",
+       "statement": "field (1, 0) on [0,2) × ℝ, S = {(1,0)}: (1,0) ∈ S ∩ D ⊆ D⁺_D(S) although x ≡ 0 on [0,1] starts at (0,0) ∉ S; D⁺_D(S) = S while the set of points all of whose curves start in S is empty, so the description needs S ⊆ Σ_{t₀}"
       }
      ]
     }

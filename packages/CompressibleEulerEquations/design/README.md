@@ -877,13 +877,16 @@ Prove:
   without boundary: here `S` is relatively open in `Σ_{t₀}` and `D` is a relatively open subset
   of the half-space `H_{t₀}`, which has boundary.
 - *Slabs.* If `D = [t₀, t₁) × E` and `c`, `|v|` are bounded on `[t₀, t₂] × E` for every `t₂ < t₁`,
-  then every past causal curve in `D` extends to one defined on `[t₀, t_p]`, `D⁺_D(S)` is the set
-  of `p` all of whose causal curves on `[t₀, t_p]` start in `S`, and `D⁺_D(Σ_{t₀}) = D`. Route:
-  the integral characterisation of §3.2 bounds a causal curve on `(a, t_p]` by
-  `|x(t) − x_p| ≤ (t_p − a) sup(|v| + c)`, so it has a limit at `a` and extends by local existence
-  unless `a = t₀` (proved here; the two-sided analogue is BarGinouxPfaffle2007 line 1006,
-  Definition 1.3.5, the Cauchy development `D(S)`, defined with causal curves inextendible in
-  both directions). LorentzianGeometry §12.6's slab statement is the slice identity only.
+  then every past causal curve in `D` extends to one defined on `[t₀, t_p]`; for `S ⊆ Σ_{t₀}`,
+  `D⁺_D(S)` is the set of `p ∈ D` all of whose past causal curves in `D` on `[t₀, t_p]` start in
+  `S`; and `D⁺_D(Σ_{t₀}) = D`. Route: the integral characterisation of §3.2 bounds a causal curve
+  on `(a, t_p]` by `|x(t) − x_p| ≤ (t_p − a) sup(|v| + c)`, so it has a limit at `a` and extends by
+  local existence unless `a = t₀`. Since `D ⊆ H_{t₀}`, a curve on `[t₀, t_p]` has no proper
+  extension, so the past-inextendible curves ending at `p` are exactly those on `[t₀, t_p]`, and
+  such a curve meets `S ⊆ Σ_{t₀}` iff its starting point lies in `S` (proved here; the two-sided
+  analogue is BarGinouxPfaffle2007 line 1006, Definition 1.3.5, the Cauchy development `D(S)`,
+  defined with causal curves inextendible in both directions). LorentzianGeometry §12.6's slab
+  statement is the slice identity only.
 - *Invariance.* If `D`, `S` are Λ-invariant and the field is Λ-periodic, `D⁺_D(S)` is
   Λ-invariant and `J⁻_D(p + λ) = J⁻_D(p) + λ`; translations and Galilean boosts act likewise.
   The Λ-invariance of `D⁺_D(S)` is also LorentzianGeometry §12.6's covering invariance for the
@@ -905,6 +908,12 @@ Prove:
   which solves `ẋ = x²`, equals `−4` at `s = 1/2`, is causal, and tends to `−∞` as `s ↓ 1/4`. On
   `(1/4, 1/2]` it is past-inextendible in `D` and never meets `Σ₀`, so `(1/2, −4) ∉ D⁺_D(Σ₀)` and
   `D⁺_D(Σ₀) ≠ D`.
+- The description of `D⁺_D(S)` by starting points needs `S ⊆ Σ_{t₀}`: for `n = 1`, the field
+  `(1, 0)`, `D = [0, 2) × ℝ` and the point datum `S = {(1, 0)}`, every curve ending at `(1, 0)`
+  meets `S` there, so `(1, 0) ∈ S ∩ D ⊆ D⁺_D(S)`, although the causal curve `x ≡ 0` on `[0, 1]`
+  starts at `(0, 0) ∉ S`. In fact `D⁺_D(S) = S` (any other point is the end of a curve on
+  `[0, t_p]` with slope `0` or `1/2` that avoids `(1, 0)`), while the set of points all of whose
+  curves start in `S` is empty.
 - Expanding flow, `n = 1`, `p = ρ²/2`, `ρ₀ = 1`, `S = {0} × (−1, 1)`, `D = H₀`: with
   `y = x/(1 + t)` the left-moving boundary characteristic satisfies `ẏ = −(1 + t)^{−3/2}`, so
   `D⁺_D(S) = {(t, x) : |x| < 2√(1 + t) − (1 + t)}`, which closes at `t = 3`; at `t = 1` the half-width
@@ -918,7 +927,8 @@ characterisation).
 ### Examples
 
 Constant fields and the expanding flow give explicit domains of dependence; the Cantor curve,
-the closed domain and the unbounded field are the negative controls.
+the closed domain, the unbounded field and the point datum off the initial slice are the negative
+controls.
 
 ### Dependencies
 
