@@ -448,11 +448,11 @@ For a trajectory `Z` on `J` write `M(t)` for the contact matching of `X(t)` and 
 
 ### 5.5 Good configurations
 
-Define `HardSphere.goodSet ε N` as the set `G` of `Z ∈ 𝒟̄^ε_N` such that some trajectory on ℝ passes through `Z` at time 0. Prove that `G` is invariant under trajectories, relabelling, reversal, common translations and boosts, and that `G` contains `𝒟̄_N` for `N ≤ 1`. Its complement in `𝒟̄` is the set of initial data leading to pathological trajectories (GST2013 lines 851–854).
+Define `HardSphere.goodSet ε N` as the set `G` of `Z ∈ 𝒟̄^ε_N` such that some trajectory on ℝ passes through `Z` at time 0. Prove that `G` is invariant under trajectories, relabelling, reversal, common translations and boosts, and that `G` contains `𝒟̄_N` for `N ≤ 1`. Its complement in `𝒟̄` consists of two kinds of data: the contact states with an incoming pair, which the outgoing condition of §5.1 excludes (the domain of GST2013, line 841, is open and has no contact states); and the data whose motion, forward or backward in time, is pathological in the sense of GST2013 lines 851–854, that is, at some time, time 0 included, it reaches a grazing contact or a contact of one particle with two others, or it has infinitely many contact times in a bounded interval.
 
 **Checks.**
 
-- `N = 2` on `E`: `𝒟̄_2 ∖ G` is the union of `{u ≠ 0, D(a, u) = 0}` (the line of relative motion is tangent to the sphere at some time) and of the contact states with `⟨a, u⟩ ≤ 0`.
+- `N = 2` on `E`: `𝒟̄_2 ∖ G` is the union of `{u ≠ 0, D(a, u) = 0}` (the line of relative motion is tangent to the sphere at some time) and of the contact states with `⟨a, u⟩ ≤ 0`. The tangency may lie in the past: at ε = 1, `a = (−2, 1)`, `u = (−1, 0)` has `⟨a, u⟩ = 2 > 0`, so no contact at any positive time, and `D = 4 − (5 − 1) = 0`, a grazing contact at time `−2` at `a − 2u = (0, 1)`; this state is not in `G` although its forward motion is free, so the pathologies of both time directions count.
 - At ε = 1, the incoming contact state `x_1 = (1, 0)`, `x_2 = 0`, `v_1 = (−1, 0)`, `v_2 = 0` (the Scattering witness of the Conventions, `⟨v_1 − v_2, ν_12⟩ = −1`) is not in `G`, since no trajectory has an incoming contact; its scattered state, the outgoing contact state `v_1 = 0`, `v_2 = (−1, 0)` of §5.2 at the same positions (`⟨v_1 − v_2, ν_12⟩ = 1`), is in `G`: it is the time-1 state of the head-on witness of the Conventions, whose trajectory is defined on ℝ.
 - A configuration with a triple contact (three spheres pairwise touching in d = 2, positions forming an equilateral triangle of side ε) is not in `G`.
 
@@ -521,7 +521,7 @@ Prove `HardSphere.volume_hardCoreSet_diff_goodSet`: for `0 < ε < ρ`, `λ_N(�
 
 ### Examples
 
-The theorem holds verbatim on Euclidean space, on every flat torus, and in every dimension `d ≥ 1`; in dimension 1 a grazing contact is a pair of touching rods with equal velocities, and the exceptional set consists of such contacts and of multiple collisions.
+The theorem holds verbatim on Euclidean space, on every flat torus, and in every dimension `d ≥ 1`; in dimension 1 a grazing contact is a pair of touching rods with equal velocities, and the exceptional set consists of the incoming contact states (touching rods approaching each other, such as `x_1 = 1`, `x_2 = 0`, `v_1 = −1`, `v_2 = 0` at ε = 1, the left limit at time 0 of the trajectory through its scattered state `v_1 = 0`, `v_2 = −1`, which has a single binary collision) and of the data whose motion, forward or backward in time, reaches a grazing contact or a contact of one rod with two others, or has infinitely many collisions in a bounded time interval.
 
 ### Dependencies
 
@@ -825,7 +825,7 @@ API:
 
 ### 10.5 The law of large numbers
 
-Prove `HardSphere.tendsto_empirical_of_correlation`: on a flat position space, let `f⁰ ≥ 0` be integrable, `t ∈ ℝ`, `μ_ε → ∞` as ε → 0⁺, and `f : X × E → ℝ` integrable; write `P_ε = HardSphere.grandCanonical ε μ_ε f⁰` (§9.3), `F^ε_n(t) = HardSphere.correlation ε μ_ε f⁰ n t` (§9.5) and `π^ε_t` for the empirical measure of §10.1 with `μ = μ_ε`. If for every bounded continuous `g` on `X × E` and `g₂` on `(X × E)²`, `∫ F^ε_1(t) g → ∫ f g` and `∫ F^ε_2(t) g₂ → ∫ f ⊗ f g₂`, then for every bounded continuous `h` and every δ > 0, `P_ε(|π^ε_t(h) − ∫ f h| ≥ δ) → 0` (BGSS2023 Corollary 1.2.1, lines 344–349, proof lines 352–371). Route: the variance identity of §10.1 gives `E[(π_t(h) − ∫ f h)²] = μ^{−1}∫F_1 h² + ∫F_2 h⊗h − 2(∫f h)(∫F_1 h) + (∫ f h)² → 0`; conclude with `ProbabilityTheory.meas_ge_le_variance_div_sq`. Prove the corollary `HardSphere.LanfordStatement.tendsto_empirical`: let `d ≥ 2` and assume `HardSphere.LanfordStatement d`; then for all `C₀ ≥ 1` and `β₀ > 0` there is `T₀ > 0` such that for every continuous probability density `f⁰` on `𝕋^d × E` satisfying the two bounds of §10.4 with these constants there is a mild solution `f` on `[0, T₀]` with datum `f⁰` (§10.3) such that, with `μ_ε = ε^{−(d−1)}` and `P_ε`, `π^ε_t` as above, for every `t ∈ [0, T₀]`, every bounded continuous `h` on `𝕋^d × E` and every δ > 0, `P_ε(|π^ε_t(h) − ∫ f(t) h| ≥ δ) → 0` as ε → 0⁺. Route: take the `T₀` and the `f` of §10.4; for `d ≥ 2`, `μ_ε → ∞`; at each `t ∈ [0, T₀]` the weak clause of §10.4 with `n = 1` and `n = 2` gives the two hypotheses of the first theorem for `f(t)`, which is measurable (a section of the jointly measurable `f`) and integrable, being bounded by `C exp(−β|v|²/2)` on a space of mass `μ_X(𝕋^d) = 1` in position.
+Prove `HardSphere.tendsto_empirical_of_correlation`: on a flat position space, let `f⁰ ≥ 0` be integrable, `t ∈ ℝ`, `μ_ε → ∞` as ε → 0⁺, and `f : X × E → ℝ` integrable; write `P_ε = HardSphere.grandCanonical ε μ_ε f⁰` (§9.3), `F^ε_n(t) = HardSphere.correlation ε μ_ε f⁰ n t` (§9.5) and `π^ε_t` for the empirical measure of §10.1 with `μ = μ_ε`. If for every bounded continuous `g` on `X × E` and `g₂` on `(X × E)²`, `∫ F^ε_1(t) g → ∫ f g` and `∫ F^ε_2(t) g₂ → ∫ f ⊗ f g₂`, then for every bounded continuous `h` and every δ > 0, `P_ε(|π^ε_t(h) − ∫ f h| ≥ δ) → 0` (BGSS2023 Corollary 1.2.1, lines 344–349, proof lines 352–371). Route: the variance identity of §10.1 gives `E[(π_t(h) − ∫ f h)²] = μ^{−1}∫F_1 h² + ∫F_2 h⊗h − 2(∫f h)(∫F_1 h) + (∫ f h)² → 0`; conclude with `ProbabilityTheory.meas_ge_le_variance_div_sq`. Prove the corollary `HardSphere.LanfordStatement.tendsto_empirical`: let `d ≥ 2` and assume `HardSphere.LanfordStatement d`; then for all `C₀ ≥ 1` and `β₀ > 0` there is `T₀ > 0` such that for every continuous probability density `f⁰` on `𝕋^d × E` satisfying the two bounds of §10.4 with these constants there is a mild solution `f` on `[0, T₀]` with datum `f⁰` (§10.3) such that, with `μ_ε = ε^{−(d−1)}` and `P_ε`, `π^ε_t` as above, for every `t ∈ [0, T₀]`, every bounded continuous `h` on `𝕋^d × E` and every δ > 0, `P_ε(|π^ε_t(h) − ∫ f(t) h| ≥ δ) → 0` as ε → 0⁺. Route: take the `T₀` and the `f` of §10.4; for `d ≥ 2`, `μ_ε → ∞`; at each `t ∈ [0, T₀]` the weak clause of §10.4 with `n = 1` and `n = 2` gives the two hypotheses of the first theorem for `f(t)`, which is measurable (a section of the jointly measurable `f`) and integrable, being bounded by `C exp(−β|v|²/2)`, whose integral over `E` is `(2π/β)^{d/2}` (`GaussianFourier.integral_rexp_neg_mul_sq_norm` with `b = β/2`), on a space of mass `μ_X(𝕋^d) = 1` in position (§1.3).
 
 **Checks.**
 
@@ -834,7 +834,7 @@ Prove `HardSphere.tendsto_empirical_of_correlation`: on a flat position space, l
 - `ε = 0` (Poisson process with intensity `μ f⁰`): `Var(π(h)) = μ^{−1} ∫ f⁰ h²` exactly, which tends to 0.
 - Non-example: convergence of `F_1` alone does not suffice. If `F^ε_1(t) → f` but `F^ε_2(t) → 2 f ⊗ f`, the variance tends to `0 + 2m² − 2m² + m² = m²` with `m = ∫ f h`, which is positive whenever `m ≠ 0`.
 
-*Needs:* §9.3, §9.5, §10.1, §10.4, Mathlib `ProbabilityTheory.meas_ge_le_variance_div_sq`.
+*Needs:* §1.3, §9.3, §9.5, §10.1, §10.3, §10.4, Mathlib `ProbabilityTheory.meas_ge_le_variance_div_sq`, `GaussianFourier.integral_rexp_neg_mul_sq_norm`.
 
 ### Examples
 

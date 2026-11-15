@@ -1102,7 +1102,7 @@
       {
        "name": "two_body_complement",
        "kind": "characterisation",
-       "statement": "N = 2 on E: 𝒟̄_2 \\ G = {u ≠ 0, D(a, u) = 0} ∪ {contact with ⟨a, u⟩ ≤ 0}."
+       "statement": "N = 2 on E: 𝒟̄_2 \\ G = {u ≠ 0, D(a, u) = 0} ∪ {contact with ⟨a, u⟩ ≤ 0}. The tangency may lie in the past: ε = 1, a = (−2, 1), u = (−1, 0) has ⟨a, u⟩ = 2 > 0 (no contact at positive times) and D = 4 − (5 − 1) = 0, grazing at time −2 at (0, 1); not in G although its forward motion is free."
       },
       {
        "name": "incoming_excluded",
@@ -2371,11 +2371,14 @@
       "where": "Corollary 1.2.1, lines 344–349, proof lines 352–371"
      },
      "prerequisites": [
+      "target:1.3",
       "target:9.3",
       "target:9.5",
       "target:10.1",
+      "target:10.3",
       "target:10.4",
-      "mathlib:ProbabilityTheory.meas_ge_le_variance_div_sq"
+      "mathlib:ProbabilityTheory.meas_ge_le_variance_div_sq",
+      "mathlib:GaussianFourier.integral_rexp_neg_mul_sq_norm"
      ],
      "api": [
       {
