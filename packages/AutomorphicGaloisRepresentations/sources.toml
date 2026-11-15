@@ -137,3 +137,20 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-07"
 cited_for = ["4.5"]
+
+[[source]]
+id = "Jacobs"
+authors = "Daniel Jacobs"
+title = "Slopes of compact Hecke operators"
+year = 2003
+venue = "PhD thesis, University of London (Imperial College), January 2003"
+locator_scheme = "section"
+locator = "§1.5, Definition 1.27 and equation (1.5.13), p. 19; §1.6, pp. 20–21"
+url = "https://www.ma.imperial.ac.uk/~buzzard/maths/research/notes/jacobs_phd.pdf"
+fetched_from = "https://www.ma.imperial.ac.uk/~buzzard/maths/research/notes/jacobs_phd.pdf"
+fetched_at = "2026-11-15T19:50:05Z"
+sha256 = "830b1901b17dcc121e3c24c530e5831728045c9077d327e7b91b126bb962ace1"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["0.2a", "0.2d"]

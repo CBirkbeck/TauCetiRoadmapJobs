@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicGaloisRepresentations~13",
+  "head": "480c64fba6bdd0c9dfac49be8cdd69255a603498",
+  "pr": 1007,
+  "folder": "AutomorphicGaloisRepresentations",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Full review of the whole README (3899 lines) and Suggested.lean. Previous R01 (ordinaryGoodPrimes Checks) repaired at README 3820-3822. One P3 finding: section 5.1 (README 2960, 2972, 2976) writes the nebentypus as epsilon, the roadmap's cyclotomic symbol, and uses the undefined epsilon_1,p and sigma_1; repair text given and tested on 11a1 at 3. Seeded sample: all 15 targets checked, 84 locators against 18 legally read texts (Deligne-Serre, Carayol, DDT, Scholl, Kisin JAMS, Saito 2009 and supplement, DFG arXiv v2, Dimitrov, Buzzard Eigenvarieties, Dasgupta-Kakde, Khare-Wintenberger, Chenevier, Blasius, Skinner Documenta, Skinner-Wiles, Ribet 1985, Skinner arXiv 1405.7294v1); not readable: Jacobs thesis, the printed page of Skinner Annals, Saito Invent. (uncertified). Adversarial table: 21 rows with computed values. 27 pinned declarations opened; 90 cross-roadmap ids opened by hand in 14 roadmaps, none missing; the two names flagged as found nowhere resolve in IntegralHeckeAndGaloisDeterminants. Gate rerun: every check 0, OK; depcheck 246 roadmaps, 2266 edges, 0 problems; nothing outside the folder. lake env lean: exit 0, sorry the only warning; one-tactic probes (simp, rfl, infer_instance, aesop) fail. Pull request text: 21 sentences read, none contradicted. Two source issues recorded. For the humans: QuaternionicModularForms (open) plans sections 0.2a-0.2f a second time with shared wording and may not be cited here; Layer 3 runs in the order of Carayol's sections.",
+  "text": "5074ad813c528070",
+  "carried": {
+   "from": "480c64fba6bdd0c9dfac49be8cdd69255a603498",
+   "head": "9b742e1bada36818e9ca7e4e202fbd9562867df4",
+   "findings": 1,
+   "lines": 14,
+   "folders": [
+    "AutomorphicGaloisRepresentations"
+   ]
+  }
+ }
+}
