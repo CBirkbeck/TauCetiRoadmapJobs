@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CountingBundlesAndHallAlgebrasOfCurves~9",
+  "head": "e22a59e1b5cc1906afe933fe8a6c212cc518b492",
+  "pr": 1547,
+  "folder": "CountingBundlesAndHallAlgebrasOfCurves",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 49 changed lines since fbebf39. R01-R03 of the previous report are repaired: ArtinAlgebras §§0.1, 0.3, 0.4, 0.6 resolved on main; InvertibleSheaf.eulerDegree, fixedRankOneEquiv and fixedRankOneEquiv_inverse_obj_obj opened at the pin, and the rank-one comparison closed by simp in a scratch copy; the docstring's non-statable reasons read against README §§9.1, 9.3, 10.1, 10.3, 10.4. Seeded sample checked where it falls in the change (§1.2 against S16 Lemma 2.3 and Corollary 2.5, p.309). Gate OK with every scanner 0; depcheck 0 problems; Suggested.lean elaborates with sorry the only warning; five signatures compared; one-tactic probes fail on both theorems. Pull request text not contradicted. Remark for humans: main's newer Tau Ceti pin defines FixedRank.vectorBundleDegree with the body of bundleDegree; this branch's pin lacks it.",
+  "text": "45177c7f12e15626"
+ }
+}
