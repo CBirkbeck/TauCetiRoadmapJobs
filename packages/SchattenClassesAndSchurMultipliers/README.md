@@ -112,11 +112,12 @@ It leaves to named roadmaps, and consumes from them by section:
   the sub-σ-algebra is σ-finite, defined as the adjoint of the `L¹` projection `E₁`, with its
   adjoint formula, its contractivity and its agreement with `MeasureTheory.condExpL2` on
   `L^∞ ∩ L²`, together with the positivity, idempotence, tower law and agreement with
-  `MeasureTheory.condExp` of `E₁` (§7.4), and the divisibility of atomless finite measures
-  (§7.5). §2.5 proves the further properties of that expectation which Layers 5–7 use, among
-  them the `𝒜`-measurability of its values, its positivity and its tower law, carried over from
-  `E₁` by the adjoint formula, and §7.1 applies §7.5 to the restriction
-  of an atomless measure to a set of finite measure. Mathlib's `MeasureTheory.condExp` is `0` on
+  `MeasureTheory.condExp` of `E₁` (§7.4), the divisibility of atomless finite measures (§7.5),
+  and the Fubini isometry `Lᵖ(μ ⊗ ν; X) ≅ Lᵖ(μ; Lᵖ(ν; X))` for σ-finite `μ`, `ν` (§4.2). §2.5
+  proves the further properties of that expectation which Layers 5–7 use, among them the
+  `𝒜`-measurability of its values, its positivity and its tower law, carried over from `E₁` by the
+  adjoint formula; §7.1 applies §7.5 to the restriction of an atomless measure to a set of finite
+  measure; §11.3 uses §4.2 at `p = 2`. Mathlib's `MeasureTheory.condExp` is `0` on
   every non-integrable function and gives this expectation only on integrable functions; the
   normal expectation of NoncommutativeIntegration §4.3 lives on that roadmap's own `Lᵖ` carriers
   of von Neumann algebras.
@@ -279,10 +280,18 @@ differences, which belong to SchattenClassesAndSchurMultipliers, Part II (Downst
 - `MeasureTheory.integral_prod` (`Mathlib/MeasureTheory/Integral/Prod.lean`): Fubini's theorem, the
   integral of a `μ.prod ν`-integrable function equals the iterated integral, for s-finite `μ` and
   `ν` (`MeasureTheory.SFinite`, implied by σ-finiteness) (§2.1, §2.2, §6.4).
+  `MeasureTheory.Measure.measure_prod_null` (`Mathlib/MeasureTheory/Measure/Prod.lean`): for
+  s-finite `ν`, a measurable set is `μ.prod ν`-null exactly when `μ`-almost all of its sections are
+  `ν`-null; so the diagonal of `ℝⁿ × ℝⁿ`, whose sections are points, is null for Lebesgue measure
+  when `n ≥ 1` (§10.2).
 - `MeasureTheory.hasSum_integral_of_dominated_convergence`
   (`Mathlib/MeasureTheory/Integral/DominatedConvergence.lean`): dominated convergence for series,
   `Σ_n ∫ F_n = ∫ f` when `Σ_n F_n = f` almost everywhere, each `F_n` is almost everywhere strongly
   measurable and `‖F_n‖ ≤ b_n` with `Σ_n b_n` summable almost everywhere and integrable (§6.4).
+- `ContinuousLinearMap.compLp` (`Mathlib/MeasureTheory/Function/LpSpace/Basic.lean`): the class
+  `x ↦ L(f(x))` of `Lᵖ(μ; F)` for `f ∈ Lᵖ(μ; E)` and a bounded linear `L : E → F`, of norm at most
+  `‖L‖ ‖f‖`; composing with a unitary and with its inverse gives an isometric isomorphism of the
+  `L²` spaces (§11.3).
 - `MeasureTheory.Measure.withDensity` (`Mathlib/MeasureTheory/Measure/WithDensity.lean`): the
   measure `w · μ` with `(w · μ)(A) = ∫⁻_A w dμ` for measurable `A` and `w : Ω → [0, ∞]` (§2.5).
 - `Matrix.toEuclideanCLM` (`Mathlib/Analysis/CStarAlgebra/Matrix.lean`): the star-algebra
@@ -516,6 +525,11 @@ with the integral formula on rank-one kernels and extended by continuity.
   `𝒜`-measurability of its values, its positivity, its tower law and its agreement with
   `MeasureTheory.condExp` on `L^∞ ∩ L¹` are proved in §2.5 from the properties of `E₁` listed
   here.
+- §4.2: for σ-finite `μ`, `ν`, `1 ≤ p < ∞` and a Banach space `X`, the isometric isomorphism
+  `Lᵖ(μ ⊗ ν; X) ≅ Lᵖ(μ; Lᵖ(ν; X))` with its section formula: the image of `F` is a class whose
+  value at `s` has value `F(s, t)` at `t`, for `ν`-almost every `t` and `μ`-almost every `s`. Used at
+  `p = 2`, `X = ℂ` in §11.3, with `μ` Lebesgue measure on `ℝⁿ_z` and `ν` Lebesgue measure on
+  `ℝⁿ_x × ℝⁿ_y`.
 - §7.5: for a finite atomless measure `ν`, a measurable set `A` and `0 ≤ t ≤ 1`, a measurable
   `B ⊆ A` with `ν(B) = t ν(A)`. Atomless is read as: no set is an atom in the sense of Tau Ceti's
   `MeasureTheory.Measure.IsAtom`. It is the only reading under which the statement holds: under
@@ -544,8 +558,8 @@ Hörmander–Mikhlin–Schur theorem.
 Layers 1 and 2 can be built at once, except that §2.3 and §2.4 use §1.1 and §1.4. Layer 3 needs
 Layers 1 and 2; Layer 4 needs Layers 1–3; Layer 5 needs Layers 2 and 3. Layer 6 needs Layers 1–5
 (§6.1–6.3 need only Layers 1, 3 and 4). Layer 7 needs Layers 2, 3 and 5. Layer 8 needs
-Layers 1, 3 and 5. Layer 9 needs Layers 1, 3, 4 and 8. Layer 10 needs Layers 1 and 3. Layer 11 needs
-Layers 2, 3, 4, 7 and 10.
+Layers 1, 3 and 5. Layer 9 needs Layers 1, 3, 4 and 8. Layer 10 needs Layers 1, 2 (§2.1) and 3.
+Layer 11 needs Layers 2, 3, 4, 7 and 10.
 
 ## Layer 1: the Schatten scale with its compact endpoint
 
@@ -675,8 +689,7 @@ Hilbert sum of `m` copies of `H` (`WithLp 2 (Fin m → H)`), so that `S₂(H^m)`
 `‖T‖_p = sup { ‖T A‖_p : A ∈ S₂(H), ‖A‖_p ≤ 1 } ∈ [0, ∞]` and
 `‖T‖_{cb,p} = sup_{m ≥ 1} ‖T^{(m)}‖_p` (lafforgue-delasalle-2011 lines 183–190 and equation (2);
 cgpt-2023 lines 217–219). When `‖T‖_p < ∞`, `T` extends uniquely to a bounded map `S_p → S_p`
-(`S_∞ → S_∞` at `p = ∞`), by the density of §1.1. For a Schur multiplier `T = S_M` these norms
-are `schurNorm` and `schurCbNorm` (§3.3, §3.5).
+(`S_∞ → S_∞` at `p = ∞`), by the density of §1.1.
 
 - `‖T^{(1)}‖_p = ‖T‖_p`, and `m ↦ ‖T^{(m)}‖_p` is nondecreasing (compress to a corner); so
   `‖T‖_p ≤ ‖T‖_{cb,p}`.
@@ -871,7 +884,7 @@ with its dual in lafforgue-delasalle-2011 Remark 1.3, line 244 (used in §4.1).
   `p = ∞` (§1.4).
 - `D_f^T = D_f` while `D_f* = D_{f̄}`: for `f = i`, `D_f^T = i` and `D_f* = −i`.
 
-*Needs:* §1.1, §2.1, §2.2; OperatorIdeals OI-A30; VonNeumannAlgebras V4.Core.
+*Needs:* §1.1, §1.4, §2.1, §2.2; OperatorIdeals OI-A30; VonNeumannAlgebras V4.Core.
 
 ### 2.4 Change of measure, isomorphisms and sub-σ-algebras
 
@@ -1057,9 +1070,7 @@ adjoint of `S_M` for the Hilbert–Schmidt inner product `⟨A, B⟩ = Tr(A* B)`
 `‖S_M‖_{S₂ → S₂} = ‖M‖_∞`; hence `M ↦ S_M` is an isometric unital `*`-homomorphism from
 `L^∞(μ ⊗ μ)`, with pointwise conjugation, into `B(S₂(H))`. Prove also `S_M(A)* = S_{M̃}(A*)` with
 `M̃(x, y) = conj M(y, x)` and `S_M(A)^T = S_{M^t}(A^T)` (lafforgue-delasalle-2011 lines 230–232 and
-267–268; cgpt-2023 lines 224–226). Route: §3.1 and the kernel formulas of §2.2–§2.3. The
-isometry, with its completely bounded form of §3.5, is `schurNorm_two_eq`: for σ-finite `μ` and
-`M ∈ L^∞(μ ⊗ μ)`, `‖S_M‖₂ = ‖S_M‖_{cb,2} = ‖M‖_∞`.
+267–268; cgpt-2023 lines 224–226). Route: §3.1 and the kernel formulas of §2.2–§2.3.
 
 On `{1, 2}` with `M = 1_{(1,2)}`: `S_M(E₁₂) = E₁₂` and the Hilbert-space adjoint of `S_M` is
 `S_M = S_{M̄}`, while `S_{M̃}(E₁₂) = 0`; and `S_M(E₁₂)* = E₂₁ = S_{M̃}(E₂₁)`.
@@ -1113,7 +1124,10 @@ cgpt-2023 lines 217–219). In `Suggested.lean` this is `schurCbNorm`, whose sup
 - Through `L²(Ω × Fin m) = L²(Ω)^m`, `S_{M_m}` is the amplification `(S_M)^{(m)}` of §1.4; so
   `‖S_M‖_{cb,p}` is the completely bounded norm of §1.4 of the map `S_M`.
 - `‖S_M‖_p ≤ ‖S_M‖_{cb,p}`; `m ↦ ‖S_{M_m}‖_p` is nondecreasing.
-- At `p = 2`: `‖S_M‖_{cb,2} = ‖S_M‖_2 = ‖M‖_∞` (lafforgue-delasalle-2011 lines 267–268).
+- At `p = 2`: `‖S_M‖_{cb,2} = ‖S_M‖_2 = ‖M‖_∞` (lafforgue-delasalle-2011 lines 267–268), since
+  `‖S_M‖_2` is the norm `‖S_M‖_{S₂ → S₂} = ‖M‖_∞` of §3.1 and `‖M_m‖_∞ = ‖M‖_∞` for `m ≥ 1`. This
+  is `schurNorm_two_eq`, the isometry of `M ↦ S_M` on `S₂` with its completely bounded form: for
+  σ-finite `μ` and `M ∈ L^∞(μ ⊗ μ)`, `‖S_M‖₂ = ‖S_M‖_{cb,2} = ‖M‖_∞`.
 - `‖S_{MN}‖_{cb,p} ≤ ‖S_M‖_{cb,p} ‖S_N‖_{cb,p}`, and the same for `‖·‖_p`.
 - `‖S_M‖_{cb,p}` is unchanged when `M` is changed on a `μ ⊗ μ`-null set `N`: then `M_m` changes
   only on the null set of the points `((x, i), (y, j))` with `(x, y) ∈ N`, and §3.3 applies at
@@ -1136,7 +1150,7 @@ cgpt-2023 lines 217–219). In `Suggested.lean` this is `schurCbNorm`, whose sup
   level, and `S_M(E₁₂) = 2E₁₂` gives the reverse.
 - For the zero measure all norms are `0`.
 
-*Needs:* §1.4, §2.4, §3.3, §3.4; Mathlib `Matrix.kroneckerMap`; VonNeumannAlgebras
+*Needs:* §1.4, §2.4, §3.1, §3.3, §3.4; Mathlib `Matrix.kroneckerMap`; VonNeumannAlgebras
 V2.RectangularL2 (for `L²(Ω × Fin m)`).
 
 ### 3.6 Stabilisation and comparison of completely bounded norms
@@ -1277,7 +1291,6 @@ compact operators would send the identity of `ℓ²(ℕ)` to `0` in both cases.
 ### Examples
 
 - The triangular truncation on `M₂`: `1` at `p = 2`, `2/√3` at `p = 1` and `p = ∞`.
-- Positive definite symbols (§6.1): all norms equal, for every `p`.
 - Elementary symbols: the weak-* extension is `X ↦ D_f X D_g` on all of `B(H)`.
 
 ### Dependencies
@@ -2008,9 +2021,16 @@ function with kernel `e^{2πi⟨z, x − y⟩} k_A(x, y)`. Define `‖A‖_{BMO_
 - `π` is multiplicative and `*`-preserving, and `‖π(A)(z)‖_p = ‖A‖_p` for every `z` and `p`; hence
   `‖A‖_{BMO_r} = ‖π(A)‖_{BMO^r}`.
 - `‖A‖_{BMO} ≤ ‖A‖` (operator norm), by §10.1.
-- `‖·‖_{BMO}` is a norm on `S₂`: if `‖A‖_{BMO_c} = 0` then `π(A)` is constant, `A` commutes with
-  every `U_z` and hence with the multiplication algebra `L^∞(ℝⁿ)`, so `A` is a multiplication
-  operator, and the only Hilbert–Schmidt multiplication operator on `L²(ℝⁿ)` is `0`.
+- `‖·‖_{BMO}` is a norm on `S₂`. If `‖A‖_{BMO_c} = 0`, then for every cube `Q` and every `h`,
+  `⨍_Q ‖(π(A)(z) − π(A)_Q) h‖² dz = ⟨h, ⨍_Q |π(A) − π(A)_Q|² h⟩ = 0`, so the continuous function
+  `π(A)` equals its mean on every cube; any two points lie in a common cube, so `π(A)` is constant
+  and `U_z A U_z* = π(A)(0) = A` for every `z`. Its kernel is `e^{2πi⟨z, x − y⟩} k_A(x, y)` (§3.1,
+  the elementary symbol `e^{2πi⟨z, x⟩} e^{−2πi⟨z, y⟩}`), so by the uniqueness of the kernel (§2.1)
+  `(e^{2πi⟨z, x − y⟩} − 1) k_A(x, y) = 0` for almost every `(x, y)`, for each `z`. Over the countable
+  set `z ∈ ℚⁿ`, almost every `(x, y)` with `k_A(x, y) ≠ 0` has `⟨z, x − y⟩ ∈ ℤ` for all `z ∈ ℚⁿ`,
+  and this forces `x = y`: if `x_j ≠ y_j`, a rational `t` with `0 < |t (x_j − y_j)| < 1` gives
+  `z = t e_j` with `⟨z, x − y⟩ ∉ ℤ`. The diagonal of `ℝⁿ × ℝⁿ` is null for `n ≥ 1` (its sections are
+  points, Mathlib `MeasureTheory.Measure.measure_prod_null`), so `k_A = 0` and `A = 0` (§2.1).
 - Bimodule and symmetry invariance: `π(D_u A D_v) = D_u π(A) D_v` for multiplication operators,
   so unimodular `u`, `v` do not change `‖A‖_{BMO}`; translations, modulations, unitary dilations
   and the reflection preserve `‖A‖_{BMO}`.
@@ -2026,12 +2046,14 @@ function with kernel `e^{2πi⟨z, x − y⟩} k_A(x, y)`. Define `‖A‖_{BMO_
   (its averages over large cubes tend to `0` strongly), so it reproduces the operator norm and not
   a BMO space; the conjugation is essential.
 - The dimension `n = 0` is excluded: `ℝ⁰` is a point, `L²(ℝ⁰) = ℂ` and `U_z = 1`, so `π(A)` is
-  constant and `‖A‖_{BMO} = 0` for every `A`, while `A = 1` has `‖A‖₂ = 1`; definiteness fails,
-  every `J_k` of §10.3 is `0`, and for `p = 4` and `Ψ(z) = e^{−Rz}` §10.4 would assert
-  `e^{−R/2} ≤ 4 C_n e^{−R}` for every `R > 0`. For `n ≥ 1` the diagonal of `ℝⁿ × ℝⁿ` is null and the
-  only Hilbert–Schmidt multiplication operator is `0`.
+  constant and `‖A‖_{BMO} = 0` for every `A`, while `A = 1` has `‖A‖₂ = 1`; definiteness fails. In
+  the route the factor `e^{2πi⟨z, x − y⟩} − 1` is `e⁰ − 1 = 0` and the diagonal is all of
+  `ℝ⁰ × ℝ⁰`, of mass `1`, so nothing follows. For `n ≥ 1` the diagonal of `ℝⁿ × ℝⁿ` is null.
+- Definiteness in dimension one: for `A = u ⊗ u*` with `u = 1_{[0, 1]}` and `z = 1/2`, the kernel
+  of `U_z A U_z* − A` is `(e^{πi(x − y)} − 1) 1_{[0, 1]²}(x, y)`, nonzero on a set of positive
+  measure, so `π(A)` is not constant and `‖A‖_{BMO_c} > 0`.
 
-*Needs:* §3.1, §10.1; Mathlib `MeasureTheory.Lp`.
+*Needs:* §2.1, §3.1, §10.1; Mathlib `MeasureTheory.Lp`, `MeasureTheory.Measure.measure_prod_null`.
 
 ### 10.3 Periodisation and removal of the diagonal strip
 
@@ -2065,6 +2087,8 @@ inequality `≤ liminf` is used, as stated here.
   since `|x − y| < 1` there.
 - A rank-one `u ⊗ v*` with `u, v` supported in grid cubes with labels `a`, `b` has
   `π_k(u ⊗ v*)(s) = e^{2πi⟨s, a − b⟩} u ⊗ v*`, of mean zero exactly when `a ≠ b`.
+- The dimension `n = 0` is excluded: on `ℝ⁰ × ℝ⁰`, `|x − y| = 0 < 2^{−k}`, so every `J_k` is `0`, and
+  `‖A‖_p ≤ liminf_k ‖J_k A‖_p` fails for `A = 1`, where the left side is `1` and the right side `0`.
 
 *Needs:* §1.1, §3.1, §10.1, §10.2; NoncommutativeIntegration §4.4.
 
@@ -2109,6 +2133,9 @@ of `S₂` on which `‖·‖_{BMO}` is a norm (§10.2), `‖J_k Ψ(it)‖₂ ≤
 - `T = 0` with `C₂ = C_∞ = 0`: the conclusion is `0 ≤ 0`, reached through the constants `ε`; for
   `p > 2` and `C₂ = 0`, `C_∞ = 1` the right side is `0`, and indeed `T A = 0` because
   `‖T A‖₂ ≤ 0`.
+- The dimension `n = 0` is excluded: there `‖·‖_{BMO} = 0` (§10.2), and for `p = 4` and
+  `Ψ(z) = e^{−Rz}·1` on `S₂(ℂ) = ℂ` the inequality would read `‖Ψ(1/2)‖₄ = e^{−R/2} ≤ 4 C_n e^{−R}`,
+  since `sup_t ‖Ψ(1 + it)‖₂ = e^{−R}`; this fails for every `R > 2 ln(4 C_n)`.
 
 *Needs:* §10.1–§10.3; NoncommutativeIntegration §4.4 and Part II (gap
 `semifinite-martingale-bmo-interpolation`).
@@ -2116,12 +2143,14 @@ of `S₂` on which `‖·‖_{BMO}` is a norm (§10.2), `‖J_k Ψ(it)‖₂ ≤
 ### Examples
 
 - Rank-one and finite-rank operators: `π(A)` is a trigonometric family of finite-rank operators.
-- Toeplitz multipliers act on `π(A)` as ordinary Fourier multipliers in `z` (§11.3).
+- Toeplitz symbols `M_m(x, y) = m(x − y)` (Conventions): `π(S_{M_m} A)(z) = S_{M_m}(π(A)(z))`
+  (§10.2), and on the entry `(x, y)` the character `e^{2πi⟨z, x − y⟩}` of `π(A)` is multiplied by
+  `m(x − y)`, the value of `m` at its own frequency.
 
 ### Dependencies
 
-Layers 1 and 3; Mathlib Bochner integration and the torus; NoncommutativeIntegration §4.4 and the
-Part II contract.
+Layers 1, 2 (§2.1) and 3; Mathlib Bochner integration, the torus and null sets of product measures;
+NoncommutativeIntegration §4.4 and the Part II contract.
 
 ## Layer 11: Hörmander–Mikhlin–Schur multipliers
 
@@ -2199,7 +2228,10 @@ symbols smooth off the origin; here the symbol has only `σ_n` derivatives.
 ### 11.3 Twisted Fourier multipliers
 
 For bounded measurable `N : ℝⁿ × ℝⁿ → ℂ` define the column-twisted multiplier `T̃^c_N` on
-`L²(ℝⁿ; S₂(L²(ℝⁿ)))`, identified with `L²(ℝⁿ_z × ℝⁿ_x × ℝⁿ_y)` through §2.1: the Fourier
+`L²(ℝⁿ; S₂(L²(ℝⁿ)))`, identified with `L²(ℝⁿ_z × ℝⁿ_x × ℝⁿ_y)` by applying the kernel unitary
+`S₂(L²(ℝⁿ)) ≅ L²(ℝⁿ_x × ℝⁿ_y)` of §2.1 pointwise in `z` (Mathlib `ContinuousLinearMap.compLp`) and
+then the Fubini isometry `L²(ℝⁿ_z; L²(ℝⁿ_x × ℝⁿ_y)) ≅ L²(ℝⁿ_z × ℝⁿ_x × ℝⁿ_y)` of BochnerSpaces §4.2
+(Lebesgue measures, σ-finite): the Fourier
 multiplier in `z` whose symbol at frequency `ξ` on the entry `(x, y)` is `N(x, ξ)`, i.e. partial
 Fourier transform in `z` (Mathlib `MeasureTheory.Lp.fourierTransformₗᵢ` with values in the Hilbert
 space `S₂`), multiplication by `N(x, ξ)`, inverse transform. Define the row-twisted `T̃^r_N` with
@@ -2231,7 +2263,8 @@ symbol `N(ξ, y)` on the entry `(x, y)`. For a symbol `M` put `M_c(x, ξ) = M(x,
   multiplication by `D_f`, which commutes with right multiplication as the module property states,
   and `S_M(A) = D_f A`.
 
-*Needs:* §2.1, §10.2, §11.2; Mathlib `MeasureTheory.Lp.fourierTransformₗᵢ`.
+*Needs:* §2.1, §3.1, §10.2, §11.1, §11.2; BochnerSpaces §4.2; Mathlib
+`MeasureTheory.Lp.fourierTransformₗᵢ`, `ContinuousLinearMap.compLp`.
 
 ### 11.4 The BMO endpoint
 
@@ -2267,7 +2300,7 @@ module maps (lines 1031–1040).
   `S_M(A) = A D_{sin y₁}` has both seminorms at most `‖A‖` (§10.1, §10.2): neither part of the
   condition is necessary.
 
-*Needs:* §10.1, §10.2, §11.1–§11.3.
+*Needs:* §3.1, §10.1, §10.2, §11.1–§11.3.
 
 ### 11.5 The Hörmander–Mikhlin–Schur theorem
 
@@ -2324,8 +2357,8 @@ for `p > 2` apply the operator form of §10.4 to `T = S_M` with `C₂ = ‖M‖_
 
 ### Dependencies
 
-Layers 2 (§2.1), 3, 4, 7 and 10; Mathlib Plancherel and Fréchet derivatives; Tau Ceti Littlewood–Paley
-pieces and `L²` Fourier multipliers.
+Layers 2 (§2.1), 3, 4, 7 and 10; BochnerSpaces §4.2; Mathlib Plancherel and Fréchet derivatives;
+Tau Ceti Littlewood–Paley pieces and `L²` Fourier multipliers.
 
 ## Downstream consumers
 
