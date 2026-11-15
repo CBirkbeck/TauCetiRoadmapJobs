@@ -72,3 +72,57 @@ status = "certified"
 accessed = "2026-11-09"
 version_note = "arXiv v6"
 cited_for = ["1.2", "2.3", "6.6"]
+
+[[source]]
+id = "KM98"
+authors = "Maxim Kontsevich, Yuri I. Manin"
+title = "Relations between the correlators of the topological sigma-model coupled to gravity"
+year = 1997
+venue = "Commun.Math.Phys. 196 (1998) 385-398"
+doi = "10.1007/s002200050426"
+arxiv = "alg-geom/9708024v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/alg-geom/9708024v1"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9708024v1"
+fetched_at = "2026-11-15T12:27:29Z"
+sha256 = "0f961cb18a010687245c5269799ab68d67adff4ace27c0d799f5a3ad050dc82d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1; page numbers are those of the arXiv version"
+cited_for = ["8.1", "8.3", "8.4", "8.5", "8.6"]
+
+[[source]]
+id = "DM69"
+authors = "P. Deligne, D. Mumford"
+title = "The irreducibility of the space of curves of given genus"
+year = 1969
+venue = "Publ. Math. IHÉS 36 (1969) 75-109"
+locator_scheme = "page"
+locator = "p. 77"
+url = "http://www.numdam.org/item/PMIHES_1969__36__75_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1969__36__75_0.pdf"
+fetched_at = "2026-11-15T12:27:35Z"
+sha256 = "79316edb045ef5540367e9beaa4c057ac954a887eabb8c42a8208304dd8f60c5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["3.2"]
+
+[[source]]
+id = "Kock01"
+authors = "J. Kock"
+title = "Notes on psi classes"
+year = 2001
+version_note = "preliminary version of 6 June 2001, unpublished notes; page numbers are those of the PDF"
+locator_scheme = "theorem"
+locator = "Proposition 5.1.8"
+url = "https://mat.uab.cat/~kock/GW/notes/psi-notes.pdf"
+fetched_from = "https://mat.uab.cat/~kock/GW/notes/psi-notes.pdf"
+fetched_at = "2026-11-15T12:27:44Z"
+sha256 = "ff240e2d48730b1587765317547bdd3fb00f087ca41a44fdb420ffb4cd7326a4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["8.1", "8.2", "8.4", "8.5", "8.6"]
