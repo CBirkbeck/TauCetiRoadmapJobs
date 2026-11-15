@@ -178,7 +178,7 @@ authors = "The Stacks Project Authors"
 title = "Chow Groups of Spaces (The Stacks Project, Tag 0EDQ)"
 year = 2026
 locator_scheme = "tag"
-locator = "Situation 2.1 (0EDT), Definitions 3.1 (0EDZ), 15.1 (0EQ6), 32.1 (0ESG), Lemmas 4.1 (0EE1), 10.3 (0EPY), 13.2 (0EQ2), 15.2 (0EQ7), 27.3 (0ERW)"
+locator = "Situation 2.1 (0EDT), Remark 7.2 (0ENW), Definitions 3.1 (0EDZ), 10.1 (0EP8), 15.1 (0EQ6), 18.1 (0EQJ), 32.1 (0ESG), Lemmas 4.1 (0EE1), 10.3 (0EPY), 13.2 (0EQ2), 15.2 (0EQ7), 20.1 (0EQV), 21.2 (0EQY), 25.1 (0ERG), 27.1 (0ERU), 27.2 (0ERV), 27.3 (0ERW)"
 url = "https://stacks.math.columbia.edu/download/spaces-chow.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/spaces-chow.pdf"
 fetched_at = "2026-11-11T13:40:38Z"
@@ -186,7 +186,7 @@ sha256 = "221ed10e07b99e8260625a16f2a884bc5b130ac176657212c974a06c2e9abfc3"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
-cited_for = ["2.1–2.2 étale invariance of lengths and orders (Lemmas 4.1, 10.3, 13.2, lines 151–158, 516, 667)", "2.3 the integral comparison for algebraic spaces (Situation 2.1, lines 57–61; Definitions 3.1, 15.1, lines 126–133, 797–810)", "3.3 localisation (Lemma 15.2, lines 813–818); 3.5 homotopy invariance on algebraic spaces (Lemma 27.3, lines 1986–1990)", "5.4 degrees of zero-cycles on proper algebraic spaces (Definition 32.1, line 2224)"]
+cited_for = ["2.1–2.2 étale invariance of lengths and orders (Lemmas 4.1, 10.3, 13.2, lines 151–158, 516, 667)", "2.3 the integral comparison for algebraic spaces (Situation 2.1, lines 57–61; Definitions 3.1, 15.1, lines 126–133, 797–810)", "3.3 localisation (Lemma 15.2, lines 813–818); 3.5 homotopy invariance on algebraic spaces (Lemma 27.3, lines 1986–1990, and its proof, lines 1991–2007; flat pullback, Definition 10.1, lines 484–494; dense open subscheme, Remark 7.2, lines 314–315; surjectivity, Lemma 25.1, lines 1766–1801; first Chern class, Definition 18.1, lines 1103–1114, Lemma 20.1, lines 1368–1378, Lemma 21.2, lines 1477–1479; projective-bundle formula, Lemmas 27.1–27.2, lines 1907–1939)", "5.4 degrees of zero-cycles on proper algebraic spaces (Definition 32.1, line 2224)"]
 
 [[source]]
 id = "deligne-mumford1969"

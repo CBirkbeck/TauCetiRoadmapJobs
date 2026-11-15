@@ -43,8 +43,9 @@ This roadmap owns:
   the scheme groups of Tau Ceti, with the Chow groups of algebraic spaces of the Stacks Project
   and with the rational groups of VirtualFundamentalClass §2.1 (Layer 2);
 - integral flat pullback, integral pushforward along proper representable morphisms, the
-  integral push–pull formula and localisation sequence, integral exterior products, and integral
-  refined Gysin maps of regular local immersions with algebraic-space sources (Layer 3);
+  integral push–pull formula and localisation sequence, integral exterior products, integral
+  homotopy invariance for vector bundles on algebraic spaces, and integral refined Gysin maps of
+  regular local immersions with algebraic-space sources (Layer 3);
 - on all such stacks: rational pushforward along every proper morphism, the action of Gysin maps
   of regular local immersions and of flat pullback on Chow groups of stacks, homotopy invariance
   for vector bundles, Chern classes, and their agreement with VirtualFundamentalClass §§2.2–2.5
@@ -183,9 +184,10 @@ GromovWittenTheory and ImplicitAtlases.
    `A^c := A_{n−c}`, and the two gradings are not mixed on a singular stack. A statement is integral
    exactly when it is in Layers 2–3: cycles, rational equivalence, flat pullback, pushforward along
    proper representable morphisms, push–pull for representable morphisms, localisation, exterior
-   products and Gysin maps with algebraic-space sources. Non-representable pushforward, Gysin maps
-   and Chern classes acting on stacks, homotopy invariance on stacks, products on stacks, the
-   comparisons and virtual classes are rational. Witness: `A_0([𝔸¹/μ₂]) ≅ ℤ/2` while
+   products, homotopy invariance on algebraic spaces and Gysin maps with algebraic-space sources.
+   Non-representable pushforward, Gysin maps and Chern classes acting on stacks, homotopy
+   invariance on stacks, products on stacks, the comparisons and virtual classes are rational.
+   Witness: `A_0([𝔸¹/μ₂]) ≅ ℤ/2` while
    `A_0([𝔸¹/μ₂])_ℚ = 0 = A_0(𝔸¹)_ℚ` (2.2, 5.2), so the moduli-space comparison is false integrally.
 
 5. **Degrees and stabilisers.** For an integral stack `𝒱`, `e(𝒱)` is the order of the automorphism
@@ -867,8 +869,30 @@ algebraic space of finite type over `k` with a morphism `Y → 𝒢`, and `X := 
 because `f` is representable. For an integral closed `T ⊆ Y` of dimension `i`, put `U := ℱ ×_𝒢 T`, with
 the normal cone `C_{U/T}` of the local immersion `U → T` inside `N := N_{ℱ/𝒢}|_U`, and
 `(ℱ · T) := s^*[C_{U/T}] ∈ A_{i−c}(U)`, where `s^*` is the inverse of the flat pullback
-`A_{i−c}(U) → A_i(N)`, an isomorphism on algebraic spaces (stacks-chow-spaces Lemma 27.3, lines
-1986–1990). Define *refinedGysin* `f^! : Z_i(Y) → A_{i−c}(X)` by `f^![T] := (U → X)_*(ℱ · T)`
+`A_{i−c}(U) → A_i(N)` of 3.1, an isomorphism by the homotopy invariance proved next. Here `U` is a
+quasi-separated algebraic space of finite type over `k`: `U → T` is a base change of `f`, which is of
+finite type and quasi-separated, its diagonal being quasi-compact because the diagonal of `ℱ` is
+quasi-compact and that of `𝒢` quasi-separated (Convention 1).
+
+Prove homotopy invariance on algebraic spaces: for a vector bundle `p : N → U` of constant rank `c`
+over a quasi-separated algebraic space `U` of finite type over `k`, the flat pullback
+`p^* : A_j(U) → A_{j+c}(N)` of 3.1 is an isomorphism for every `j` (stacks-chow-spaces Lemma 27.3,
+lines 1986–1990, in its Situation 2.1 with `B = Spec k` and `δ = dim`, read through 2.3, under which
+3.1's `p^*` is the flat pullback of its Definition 10.1, lines 484–494); `s^*` is its inverse. On
+schemes it is SchemeAndStackFoundations §5.2's `chow_affine_bundle`. Route, carried out on `A_*`
+through 2.3 as in the proof of stacks-chow-spaces Lemma 27.3 (lines 1991–2007): surjectivity by
+Noetherian induction with the localisation sequence of 3.3, from a dense open subscheme of `U`
+(stacks-chow-spaces Remark 7.2, lines 314–315), over which it is `chow_affine_bundle` (its Lemma
+25.1, lines 1766–1801); injectivity from the projective completion `ℙ(N ⊕ O_U)`, in which `N` is the complement
+of the hyperplane at infinity, the localisation sequence, and the projective-bundle formula on such
+spaces (its Lemmas 27.1–27.2, lines 1907–1939), with the first Chern class of a line bundle acting on
+`A_*` by divisors of rational sections (its Definition 18.1, lines 1103–1114) and passing to rational
+equivalence (its Lemma 21.2, lines 1477–1479). The first Chern class and the projective-bundle formula
+on such spaces are steps of this statement: the first reduces by étale localisation to the scheme case
+(its Lemma 20.1, lines 1368–1378), that of SchemeAndStackFoundations §5.3, and the second, on a dense
+open subscheme, to SchemeAndStackFoundations §5.4's projective bundle theorem.
+
+Define *refinedGysin* `f^! : Z_i(Y) → A_{i−c}(X)` by `f^![T] := (U → X)_*(ℱ · T)`
 (vistoli1989 (3.10), lines 1081–1100). Prove, integrally, that `f^!` passes to rational
 equivalence, giving `f^! : A_i(Y) → A_{i−c}(X)` (vistoli1989 Theorem 3.11, lines 1101–1109), with the
 compatibilities of the API below.
@@ -885,12 +909,17 @@ sheaf `W_*` (2.2), defined over an algebraic space `Y` as over a scheme, while t
 descended from charts and `s^*` is defined on algebraic spaces directly. Descent of classes alone does
 not suffice, since étale pullback is not injective on integral Chow groups (3.1, last Check). This
 extends VirtualFundamentalClass §2.4's refined Gysin maps, for algebraic-space sources, to integral
-coefficients. *Needs:* 2.2; 2.3 (its statements on algebraic spaces, through which stacks-chow-spaces
-Lemma 27.3 gives `s^*`, and on schemes, through which SchemeAndStackFoundations §5.5 applies); 3.1–3.3;
-VirtualFundamentalClass §1.5; gap:normal-cones-of-local-immersions; SchemeAndStackFoundations §5.5.
+coefficients. *Needs:* 2.2; 2.3 (its statements on algebraic spaces, through which homotopy invariance
+is read from stacks-chow-spaces Lemma 27.3, and on schemes, through which SchemeAndStackFoundations
+§§5.2 and 5.5 apply); 3.1–3.3; VirtualFundamentalClass §1.5; gap:normal-cones-of-local-immersions;
+SchemeAndStackFoundations §§5.2–5.5.
 
 **API.**
 
+- Homotopy invariance: for a vector bundle `p : N → U` of constant rank `c` over a quasi-separated
+  algebraic space `U` of finite type over `k`, `p^* : A_j(U) → A_{j+c}(N)` is an isomorphism for every
+  `j`, integrally, with inverse `s^*`; on schemes it is SchemeAndStackFoundations §5.2's
+  `chow_affine_bundle` under 2.3.
 - For a morphism `q : Y′ → Y` of such algebraic spaces and the induced `p : X′ → X`, `f^! q_* = p_* f^!`
   for `q` proper and `f^! q^* = p^* f^!` for `q` flat (vistoli1989 Theorem 3.12, lines 1110–1117, and
   Lemma 3.20, lines 1206–1207); in particular `f^!` commutes with restriction to open subspaces of `Y`.
@@ -909,6 +938,15 @@ VirtualFundamentalClass §1.5; gap:normal-cones-of-local-immersions; SchemeAndSt
 
 **Checks.**
 
+- Homotopy invariance holds on classes, not on cycles: over `U = Spec k` with `N = 𝔸¹`,
+  `p^*[Spec k] = [𝔸¹]` generates `A_1(𝔸¹) = ℤ`, and `A_0(𝔸¹) = 0 = A_{−1}(Spec k)`; the `0`-cycle `[1]` is
+  no pullback, as `Z_{−1}(Spec k) = 0`, but it is `div(x − 1)`.
+- Homotopy invariance on a space that is not a scheme: for the algebraic space `X` of 4.2's last Check
+  and `N = X × 𝔸¹` (`c = 1`, coordinate `s` on `𝔸¹`), `A_0(X) = 0`, since the coordinate `t` from `𝔸¹_ℝ`
+  has `div(t) = [0_X]` (order `1` on the chart `𝔸¹_ℂ`) and every other closed point is the divisor of its
+  minimal polynomial over `ℝ`. Directly, `A_1(N) = 0`: `[0_X × 𝔸¹] = div(t)`, and every other integral
+  curve of `N` is `div(g)` for the irreducible `g ∈ ℝ[t, s]`, `t ∤ g`, cutting it out of `𝔾_{m,ℝ} × 𝔸¹`.
+  In the other degree `A_1(X) = ℤ·[X]` and `A_2(N) = ℤ·[N] = p^*A_1(X)`.
 - For the zero section `s` of a vector bundle `E` of rank `r` over a scheme `M` and `Y = E`, `s^!` is the
   inverse of flat pullback; for `Y = M` mapped to `E` by `s`, `s^![M] = c_r(E) ∩ [M]`, not `[M]` (on `ℙ¹`
   with `E = O(−1)`, `−[pt]`).
@@ -930,7 +968,7 @@ VirtualFundamentalClass §1.5; gap:normal-cones-of-local-immersions; SchemeAndSt
 
 ### Dependencies
 
-Layers 1–2; gap:closed-substacks-of-stacks; SchemeAndStackFoundations §§1.20, 5.2, 5.5;
+Layers 1–2; gap:closed-substacks-of-stacks; SchemeAndStackFoundations §§1.20, 5.2–5.5;
 VirtualFundamentalClass §1.5; gap:normal-cones-of-local-immersions; Mathlib
 `AlgebraicGeometry.AlgebraicCycle.map`. Within the layer, 3.1 and 3.2 precede 3.3; 3.4 and 3.5 use
 3.1–3.3.
@@ -1273,6 +1311,8 @@ The relative setting of Convention 7 is in force: `𝔜` of pure dimension `d`, 
 Deligne–Mumford type, `X` a stack that need not be separated, and `φ : E → L_{X/𝔜}` a perfect relative obstruction
 theory of constant rank `r` (VirtualFundamentalClass §§6.4, 9.2) with `𝔈 := h¹/h⁰(E^∨)` and the
 relative intrinsic normal cone `𝔠_{X/𝔜} ⊆ 𝔈` of pure dimension `d` (VirtualFundamentalClass §9.1).
+The class `[X/𝔜, E]^vir` of 6.2 is formed when `E` has a global resolution, and every statement about
+it assumes one.
 
 ### 6.1 The comparison bundle of two global resolutions
 
@@ -1355,7 +1395,9 @@ stack has a proper cover (1.1), the condition behrend-fantechi1997 allows in pla
 
 ### 6.3 Relative formulas over a base of pure dimension
 
-Assume moreover that `H⁰(E)` is locally free. Prove: if `H^{−1}(E) = 0`, then `X → 𝔜` is smooth and
+Assume moreover that `E` has a global resolution and that `H⁰(E)` is locally free; in the first case
+below the resolution is automatic, since `H^{−1}(E) = 0` makes `E → H⁰(E)` an isomorphism in the derived
+category and `[0 → H⁰(E)]` a global resolution. Prove: if `H^{−1}(E) = 0`, then `X → 𝔜` is smooth and
 `[X/𝔜, E]^vir = [X]`; if `X → 𝔜` is smooth, then `Ob = H¹(E^∨)` is locally free, and with `s := rk Ob`, a
 locally constant function on `X`,
 
@@ -1578,10 +1620,13 @@ gap:normal-cones-of-local-immersions; 2.2; SchemeAndStackFoundations §5.5.
 
 Let `v : 𝔜′ → 𝔜` be a regular local immersion of codimension `c` of algebraic stacks of pure dimensions
 `d` and `d − c`, and `X′ := X ×_𝔜 𝔜′` with `u : X′ → X`, a stack in the sense of Convention 1 because `u`
-is a representable local immersion. No reducedness of `𝔜` is assumed. Prove that `u^*E` is a perfect
-relative obstruction theory for `X′/𝔜′` with a global resolution (VirtualFundamentalClass §6.4) and
-that `v^![X/𝔜, E]^vir = [X′/𝔜′, u^*E]^vir` in `A_{d−c+r}(X′)_ℚ`, with `v^!` the Gysin map of 4.2 (behrend-fantechi1997 Proposition 7.2 (2), lines
-1682–1699, stated for smooth bases at lines 1668–1670). Route: take a relative local embedding of `X`
+is a representable local immersion. No reducedness of `𝔜` is assumed. Let `E` have a global resolution
+`F•`. Prove that `u^*E` is a perfect relative obstruction theory for `X′/𝔜′` with the global resolution
+`u^*F• = [u^*F^{−1} → u^*F^0]`, the derived pullback of `F• ≅ E` (VirtualFundamentalClass §§6.4–6.5;
+behrend-fantechi1997 Proposition 7.2, lines 1682–1685), and that
+`v^![X/𝔜, E]^vir = [X′/𝔜′, u^*E]^vir` in `A_{d−c+r}(X′)_ℚ`, with `v^!` the Gysin map of 4.2
+(behrend-fantechi1997 Proposition 7.2 (2), lines 1682–1699, stated for smooth bases at lines
+1668–1670). Route: take a relative local embedding of `X`
 (Convention 2 and VirtualFundamentalClass §9.1), that is, an étale morphism `U → X` from an affine scheme
 and a closed immersion `U → W` over `𝔜` into a scheme `W` smooth over an atlas of `𝔜`, so that `W → 𝔜` is
 smooth and representable, hence of Deligne–Mumford type; put `W′ := W ×_𝔜 𝔜′`, a regular local immersion
@@ -1593,7 +1638,7 @@ glues over the relative local embeddings and pulls back to `F_1`, giving
 `0^!_{F_1}` and 4.3. This extends VirtualFundamentalClass §9.4's regular base change from smooth bases to
 bases of pure dimension, reduced or not, and from separated stacks with the resolution property to
 all stacks of Convention 1 whose theory has a global resolution.
-*Needs:* 4.2–4.3, 6.2, 8.1; VirtualFundamentalClass §§6.4, 9.1, 9.3.
+*Needs:* 4.2–4.3, 6.2, 8.1; VirtualFundamentalClass §§6.4–6.5, 9.1, 9.3.
 
 **Checks.**
 
@@ -1739,7 +1784,7 @@ Proposition 10.2). The `k`-degree is `n·[κ(b) : k]`. *Needs:* 4.1–4.2, 5.4, 
 
 ### Dependencies
 
-Layers 2–6; VirtualFundamentalClass §§1.5–1.6, 2.5, 5.5, 6.4, 8.1, 9.1, 9.3, 9.5;
+Layers 2–6; VirtualFundamentalClass §§1.5–1.6, 2.5, 5.5, 6.4–6.5, 8.1, 9.1, 9.3, 9.5;
 gap:normal-cones-of-local-immersions; SchemeAndStackFoundations §5.5. Within the layer,
 8.1 → 8.2 → 8.3, and 8.2 → 8.4.
 
