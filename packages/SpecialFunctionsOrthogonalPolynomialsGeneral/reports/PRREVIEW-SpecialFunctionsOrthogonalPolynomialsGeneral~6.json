@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsOrthogonalPolynomialsGeneral~6",
+  "head": "acaee4afe216774debb28090b552504950e2d1a0",
+  "pr": 2192,
+  "folder": "SpecialFunctionsOrthogonalPolynomialsGeneral",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since acaee4a; previous repairs retained; PR title and description checked against the base and head; no changed seeded-sample passages; computed sum_recB at n=0,1; pinned inputs and supplier citations checked; gate, dependency check, targeted build and direct Lean elaboration passed.",
+  "text": "3223a1eb965a7bf1"
+ }
+}
