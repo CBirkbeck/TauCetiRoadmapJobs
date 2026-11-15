@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HilbertModularForms~8",
+  "head": "eda7e599a9b3c27482290c2e48290739640a0f8e",
+  "pr": 1724,
+  "folder": "HilbertModularForms",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "incremental re-review of 99 changed lines since 73285f0. All six previous findings (R01-R06) repaired. One new P2 from the R01 repair: README 10.2 gives the quaternionic weight as n_w = k_w - 2 only, leaving s, the places carrying the coefficients and the determinant convention unstated (witness: Q(sqrt5), k=(2,4), s=0 makes the unit (3+sqrt5)/2 act by 0.1459, so the space is zero; s_w = m_w gives 1 and S_(m) = N(m)^(k0-2)). Checked: gate rerun with the merge-order candidate OK (all checks 0); depcheck 244 roadmaps, 2231 edges, 0 problems; lake env lean on Suggested.lean exits 0 with eleven sorry warnings only; 9 cross-roadmap citations resolved at open heads (GL2AutomorphicRepresentationsAndTransfer R17.3.8a-d, R17.3.9; HilbertModularVarietiesAndShimuraCurves R18.5.16a, R18.5.16c; PadicFamilies Layer 5; OverconvergentAutomorphicForms); 4 dasgupta-kakde locators (lines 721-722, 795, 798, 1280) for the new Shimura 1978 attribution; coeff finsum body evaluated on Q(sqrt5) and Q(sqrt3); 10.3 trace equality of the two Brandt conventions verified; pull request text agrees with the head; no seeded sample target falls in a changed passage; no change outside the folder.",
+  "text": "f346aeefd95b4582"
+ }
+}
