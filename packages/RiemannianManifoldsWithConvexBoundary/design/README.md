@@ -67,10 +67,25 @@ It leaves to other roadmaps, by section:
   `Bundle.ContMDiffRiemannianMetric.restrictBoundaryTangentSpace`;
 - regular sublevel sets and regular level sets as manifolds: already in Tau Ceti
   (`TauCeti.isManifold_scalarRegularSublevel`, `TauCeti.isManifold_regularLevel`);
+- the inclusion of a regular sublevel `{φ ≤ a}` of a boundaryless manifold as a smooth map with
+  invertible differential, with the outward criterion `dφ(dι v) > 0` at its boundary points, and,
+  for a compact connected two-sided hypersurface of a connected manifold, its normal collar
+  `(q, t) ↦ exp_q(t ν(q))` and, when the hypersurface separates, a defining function equal to the
+  collar coordinate near it and to `±1` off the collar, with gradient `ν` on it: RiemannianGeometry
+  R7.9; this roadmap adds the closed-embedding, Levi-Civita and length statements, the inward unit
+  normal and `II` of an arbitrary regular domain (3.1), and the tube and signed distance of a
+  regular level set, with the sign of the function on each side, and the normalised defining
+  function, for a hypersurface that may be non-compact or disconnected in an `N` that may be
+  disconnected (4.3);
 - geodesics, the geodesic flow, the exponential map, normal balls, the Gauss lemma at a point,
   first-variation symmetry and completeness of compact manifolds: HopfRinow Layers 1, 2 and 4;
 - the second fundamental form `B`, shape operator and Gauss–Codazzi–Ricci equations of isometric
-  immersions: RiemannianGeometry R5a; normal-coordinate jets: RiemannianGeometry R1 (item 4);
+  immersions: RiemannianGeometry R5a;
+- the vanishing at the centre of a normal chart of the first derivatives of the metric
+  coefficients and of the Christoffel symbols: already in Tau Ceti
+  (`TauCeti.Manifold.IsNormalDomain.mfderiv_inner_normalCoordinateField_self`,
+  `TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self`), recorded in
+  RiemannianGeometry 2.2 (R1.4);
 - the normal exponential of an embedding and its tubular neighbourhoods: already in Tau Ceti
   (`TauCeti.SmoothEmbedding.normalExp` and the tube theorems);
 - smooth collars and the interior `M ∖ ∂M` as a boundaryless manifold: GeometricTopology 1.1;
@@ -197,7 +212,14 @@ inner product space); regular values `TauCeti.IsRegularValue`,
 `TauCeti.Manifold.geodesicInterval`, `TauCeti.Manifold.maximalGeodesic`,
 `TauCeti.Manifold.riemannianExp`, `TauCeti.Manifold.expDomain`,
 `TauCeti.Manifold.exists_contMDiffAt_localGeodesicFlow`, `TauCeti.Manifold.contMDiffOn_maximalGeodesic`,
-`TauCeti.Manifold.isGeodesicallyCompleteAt_of_compactSpace` (boundaryless, Hausdorff); the normal
+`TauCeti.Manifold.isGeodesicallyCompleteAt_of_compactSpace` (boundaryless, Hausdorff); normal
+coordinates on a boundaryless Hausdorff base: the normal domains `TauCeti.Manifold.IsNormalDomain`,
+the normal coordinate fields `TauCeti.Manifold.normalCoordinateField` (the coordinate fields `∂_i`
+of the normal chart for a basis of `T_pN`),
+`TauCeti.Manifold.IsNormalDomain.mfderiv_inner_normalCoordinateField_self` (the first derivatives
+of the metric coefficients vanish at the centre) and
+`TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self` (the coordinate
+fields are parallel at the centre, so the Christoffel symbols vanish there); the normal
 exponential `TauCeti.SmoothEmbedding.normalExp`,
 `TauCeti.SmoothEmbedding.exists_partialDiffeomorph_normalExp_subset`,
 `TauCeti.SmoothEmbedding.exists_isClosedEmbedding_normalExp_norm_le_subset` (closed embedding
@@ -228,11 +250,22 @@ in both variation directions with `D_s ∂_t = D_t ∂_s`), Layer 4 (compact man
 geodesically complete). All of it under its boundaryless hypotheses; this roadmap applies it to a
 boundaryless `N` containing `M`.
 
-**From TauCetiRoadmap.RiemannianGeometry**: R1 item 4 (in a normal chart at `p` the first
-derivatives of the metric vanish, so the Christoffel symbols vanish at `p`); R5a (for an isometric
-immersion of boundaryless manifolds: `B(X, Y) = (∇^N_X df(Y))^⊥`, `S_η X = −(∇^N_X η)^⊤`,
-`⟨S_η X, Y⟩ = ⟨B(X, Y), η⟩`, averaged mean curvature vector, Gauss equation with the pinned sign,
-sphere normalisation `B = −g · position`).
+**From TauCetiRoadmap.RiemannianGeometry**: R5a (for an isometric immersion of boundaryless
+manifolds: `B(X, Y) = (∇^N_X df(Y))^⊥`, `S_η X = −(∇^N_X η)^⊤`, `⟨S_η X, Y⟩ = ⟨B(X, Y), η⟩`,
+averaged mean curvature vector, Gauss equation with the pinned sign, sphere normalisation
+`B = −g · position`); R7.9, on a Hausdorff second-countable boundaryless Riemannian manifold `N`
+(RiemannianGeometry's standing convention): for smooth `φ : N → ℝ` with regular value `a`, the
+inclusion `ι` of `{φ ≤ a}`, with Tau Ceti's sublevel atlas, is smooth with invertible
+differential, and a vector `v` at a boundary point of `{φ ≤ a}` is outward
+(`TauCeti.IsOutwardPointing`) exactly when `dφ(dι v) > 0`; for `N` connected and a compact
+connected embedded hypersurface `Σ` with a smooth unit normal field `ν`, the normal collar
+`c_ν(q, t) = exp_q(t ν(q))` is, for every sufficiently small `ε > 0`, a diffeomorphism of
+`Σ × (−ε, ε)` onto an open neighbourhood `U` of `Σ`; when moreover `N ∖ Σ` has two components
+`Ω₊ ⊇ c_ν(Σ × (0, ε))` and `Ω₋ ⊇ c_ν(Σ × (−ε, 0))`, there is a smooth `φ` with
+`φ⁻¹(0) = Σ`, `Ω₊ = {φ > 0}`, `Ω₋ = {φ < 0}` and `grad φ = ν` on `Σ`, equal on `U` to `h(t)` for
+the collar coordinate `t` and a smooth nondecreasing `h` with `h(t) = t` near `0` and `h = ±1` for
+`±t ≥ ε/2`, and to `±1` on `Ω± ∖ U`; the outward unit normal of `{φ ≤ 0}` is `ν` and that of
+`{φ ≥ 0}` is `−ν`.
 
 **From TauCetiRoadmap.GeometricTopology**: 1.1 (Lee, *Introduction to Smooth Manifolds*,
 Theorem 9.25): a second-countable `M` has a smooth collar, a smooth embedding
@@ -580,14 +613,21 @@ manifold by `TauCeti.isManifold_scalarRegularSublevel`, boundary `{ρ = 0}` by
 `j : D_ρ → N` (`Bundle.ContMDiffRiemannianMetric.pullback`) (Stefanov–Uhlmann–Vasy, lines 96–97;
 Uhlmann–Vasy, lines 25–26; Paternain–Salo–Uhlmann, lines 2770–2772). Prove:
 
-- `j` is a smooth closed embedding whose differential is invertible at every point, boundary
-  points included, and `D_ρ` is closed in `N` with `∂D_ρ = {ρ = 0}`.
+- `j` is smooth with invertible differential at every point, boundary points included
+  (RiemannianGeometry R7.9 for `φ = −ρ`, `a = 0`, when `N` is second countable; both properties are
+  local, and Tau Ceti's sublevel chart at a point is built from the chart of `N` at that point, so
+  R7.9 applied to `ρ` restricted to a chart domain of `N`, which is second countable, gives them
+  for every Hausdorff `N`), and `j` is a closed embedding: `D_ρ` carries the subspace topology and
+  is closed in `N`, with `∂D_ρ = {ρ = 0}`.
 - Levi-Civita compatibility: for `x ∈ D_ρ`, `X ∈ T_x D_ρ` and a vector field `Y` on `N`
   differentiable at `x`, `dj(∇^D_X Y_D) = ∇^N_{dj X} Y`, where `Y_D` is the pullback of `Y`;
   consequently `Hess^D(f ∘ j) = Hess^N f` and `dj(grad^D(f ∘ j)) = grad^N f` on `D_ρ`, boundary
   points included.
-- `ρ ∘ j` is a global boundary defining function of `D_ρ`, `dj(ν_in) = grad ρ/|grad ρ|` on
-  `{ρ = 0}`, and `II_{D_ρ} = −Hess^N ρ/|dρ|` on `T∂D_ρ`.
+- `ρ ∘ j` is a global boundary defining function of `D_ρ`. A vector `v` at a boundary point is
+  outward iff `dρ(dj v) < 0` (RiemannianGeometry R7.9's outward criterion for `φ = −ρ`, local as
+  in the first item), so `dj(ν_in) = grad ρ/|grad ρ|` on `{ρ = 0}`: it is the unit vector
+  orthogonal to `ker dρ = dj(T∂D_ρ)` on which `dρ` is positive. Moreover
+  `II_{D_ρ} = −Hess^N ρ/|dρ|` on `T∂D_ρ`.
 - Independence of `ρ`: if `ρ, ρ'` have `0` as regular value and `{ρ ≥ 0} = {ρ' ≥ 0}`, the identity
   is a diffeomorphism and an isometry between the two structures.
 - Lengths: for a `C¹` curve in `D_ρ`, its length in `D_ρ` equals the length of its composite with
@@ -608,10 +648,17 @@ Uhlmann–Vasy, lines 25–26; Paternain–Salo–Uhlmann, lines 2770–2772). P
   and the sublevel theorem does not apply, although the set is the ball.
 - `ρ = x₀² − x₁²` on `ℝ²` has a critical point at the origin in `{ρ = 0}`, and `{ρ ≥ 0}` is a double
   cone, not a manifold with boundary there.
+- Outward criterion on the closed unit ball, `ρ = 1 − |x|²`, `φ = −ρ = |x|² − 1`: at `x` on the
+  sphere `dφ(v) = 2⟨x, v⟩`, so `v` is outward iff `⟨x, v⟩ > 0`, `ν_out = x` and
+  `dj(ν_in) = −x = grad ρ/|grad ρ| = −2x/2`. On the half-space `{x⁰ ≥ 0}` with `ρ = x⁰`,
+  `dφ(−e₀) = 1 > 0`, so `−e₀` is outward, as in the Conventions. Reading the criterion with `ρ` in
+  place of `φ = −ρ` would make `x` inward on the sphere and `e₀` outward on the half-space.
 
-*Needs:* Layer 1; Tau Ceti `TauCeti.IsRegularValue`, `TauCeti.scalarRegularSublevelChartedSpace`,
-`TauCeti.isManifold_scalarRegularSublevel`, `TauCeti.boundary_scalarRegularSublevel`,
-`TauCeti.interior_scalarRegularSublevel`, `Bundle.ContMDiffRiemannianMetric.pullback`; Mathlib
+*Needs:* Layer 1; RiemannianGeometry R7.9 (smoothness and invertible differential of the inclusion
+of a regular sublevel, the outward criterion); Tau Ceti `TauCeti.IsRegularValue`,
+`TauCeti.scalarRegularSublevelChartedSpace`, `TauCeti.isManifold_scalarRegularSublevel`,
+`TauCeti.boundary_scalarRegularSublevel`, `TauCeti.interior_scalarRegularSublevel`,
+`Bundle.ContMDiffRiemannianMetric.pullback`; Mathlib
 `CovariantDerivative.IsLeviCivitaConnection.uniqueness`, `Manifold.pathELength`.
 
 ### 3.2 Sublevel sets and level sets concave from the superlevel sets
@@ -792,7 +839,8 @@ the conformal ball as a domain in `(ℝⁿ⁺¹, e^{2φ} g)`.
 
 ### Dependencies
 
-3.1 uses Layer 1 and Tau Ceti's sublevel atlas and pullback metric; 3.2 uses 1.4, 2.1 and 3.1;
+3.1 uses Layer 1, RiemannianGeometry R7.9 (the inclusion of a regular sublevel and its outward
+criterion) and Tau Ceti's sublevel atlas and pullback metric; 3.2 uses 1.4, 2.1 and 3.1;
 3.3 uses GeometricTopology 1.1 (collars, the interior) and 1.3 (the collar extension and the
 double as gluings along the boundary), Tau Ceti's sublevel atlas and 3.1; 3.4 uses 3.1,
 ComplexKahlerGeometry K5a and DifferentialGeometry 12.1; 3.5 uses 3.3–3.4 and GeometricTopology
@@ -877,7 +925,10 @@ Ceti `TauCeti.SmoothEmbedding.normalExp` through the trivialisation of the norma
 
 - Tube: there is a smooth `ε : Σ → (0, ∞)`, constant when `Σ` is compact, such that `E_Σ` is a
   diffeomorphism from `{(q, r) : |r| < ε(q)}` onto an open neighbourhood `W` of `Σ`, with
-  `sign f(E_Σ(q, r)) = sign r`.
+  `sign f(E_Σ(q, r)) = sign r`. For compact connected `Σ` in a connected `N` the diffeomorphism
+  is RiemannianGeometry R7.9's normal collar for `ν = ν_Σ`; the statement here also allows a
+  non-compact or disconnected `Σ` (such as the boundary `{0, 1} × ℝ` of the strip of 4.4), with a
+  variable radius, and adds the sign of `f`.
 - Gauss lemma for hypersurfaces: on `W`, `dE_Σ(∂_r)` is a unit vector orthogonal to
   `dE_Σ(T_qΣ × {0})`.
 - Signed distance: `r_Σ :=` the second coordinate of `E_Σ⁻¹` is smooth on `W` with `|grad r_Σ| = 1`
@@ -897,7 +948,12 @@ Ceti `TauCeti.SmoothEmbedding.normalExp` through the trivialisation of the norma
   `W₁ ∩ W' ∩ M` of `∂M` in `M`), `ρ̂ = 1` on `M ∖ W`, `ρ̂ = −1` on `N ∖ (M ∪ W)`, and `ρ̂` between
   `r_{∂M}` and `1` on `W ∩ M` and between `r_{∂M}` and `−1` on `W ∖ M`. Hence `M = {ρ̂ ≥ 0}`,
   `∂M = {ρ̂ = 0}`, `N ∖ M = {ρ̂ < 0}`, `grad ρ̂ = ν_in` on `∂M`, and for `0 < ε < 1` every point
-  of `{ρ̂ ≥ −ε} ∖ M` lies in `W` with `r_{∂M} ≥ −ε`. Route:
+  of `{ρ̂ ≥ −ε} ∖ M` lies in `W` with `r_{∂M} ≥ −ε`. For a nonempty compact connected `∂M` in a
+  connected `N`, the complement `N ∖ ∂M` is the union of the disjoint nonempty open sets
+  `int M = {ρ > 0}` and `{ρ < 0}`, so it has exactly these two components (R7.9 allows at most
+  two), and RiemannianGeometry R7.9's defining function for `ν = ν_in` has the zero set, the sign
+  sets and the gradient on `∂M` of `ρ̂` and equals the collar coordinate near `∂M`; `ρ̂` is built
+  here for every regular domain, with the comparison with `r_{∂M}` on `W` that 4.6 uses. Route:
   `ρ̂ = ψ r_{∂M} + (1 − ψ) s` with a smooth cutoff `ψ : N → [0, 1]` equal to `1` on the closed
   tube `E_{∂M}({|r| ≤ ε₁(q)})` and to `0` on the closed set `N ∖ W₂`, and a smooth
   `s : N → [−1, 1]` equal to `1` on the closed set `M ∖ W₁` and to `−1` on the closed set
@@ -913,6 +969,8 @@ Ceti `TauCeti.SmoothEmbedding.normalExp` through the trivialisation of the norma
 
 - `Σ = S^n ⊆ ℝⁿ⁺¹`, `f = 1 − |x|²`: `ν_Σ = −x`, `E(q, r) = (1 − r)q`, `r_Σ = 1 − |x|` on
   `0 < |x| < 2`, `|grad r_Σ| = 1`; `ε` cannot exceed `1`, where the normals meet at the centre.
+  After `t = −r` this is RiemannianGeometry R7.9's collar `(1 + t)q` for the normal `x`, injective
+  for the same widths `ε ≤ 1`.
 - The cutoff must vanish near the frontier of `W`: for the closed unit ball, `ρ = 1 − |x|²`, the
   constant `ε = 1` is admissible, `W = {0 < |x| < 2}` and `r_{∂M} = 1 − |x|` is not smooth at the
   centre `0`, a frontier point of `W`. A cutoff that is only required to vanish off `W` may equal
@@ -924,7 +982,8 @@ Ceti `TauCeti.SmoothEmbedding.normalExp` through the trivialisation of the norma
 - In a slanted collar of the half-plane, `(q, r) ↦ q + r(e₀ + e₁)`, the cross term
   `⟨∂_r, ∂_{x₁}⟩ = 1` is nonzero; the normal exponential is the collar with no cross term.
 
-*Needs:* 1.3, 3.1, 4.1; HopfRinow Layers 1–2; Tau Ceti `TauCeti.regularLevelChartedSpace`,
+*Needs:* 1.3, 3.1, 4.1; HopfRinow Layers 1–2; RiemannianGeometry R7.9 (the normal collar and the
+defining function in the compact connected case); Tau Ceti `TauCeti.regularLevelChartedSpace`,
 `TauCeti.isSmoothEmbedding_coe_regularLevel`, `TauCeti.SmoothEmbedding.normalExp`,
 `TauCeti.SmoothEmbedding.exists_partialDiffeomorph_normalExp_subset`,
 `TauCeti.SmoothEmbedding.exists_isClosedEmbedding_normalExp_norm_le_subset`; Mathlib
@@ -1041,7 +1100,8 @@ spherical caps in `S^{n+1}`, `n ≥ 1`, for enlargements.
 ### Dependencies
 
 4.1 uses 3.1, 3.5 and HopfRinow Layer 1; 4.2 uses Layer 1, 2.1–2.2 and 4.1; 4.3 uses 1.3, 3.1, 4.1,
-HopfRinow Layers 1–2 and Tau Ceti's normal exponential; 4.4 uses 1.4, 4.3 and Mathlib's partitions
+HopfRinow Layers 1–2, RiemannianGeometry R7.9 (the compact connected case) and Tau Ceti's normal
+exponential; 4.4 uses 1.4, 4.3 and Mathlib's partitions
 of unity; 4.5 uses 2.1–2.2 and
 3.1–3.2; 4.6 uses 2.3, 3.1–3.2 and 4.3.
 
@@ -1395,8 +1455,13 @@ chosen uniformly (Lee, *Introduction to Riemannian Manifolds*, Ch. 6; the spheri
 Paternain–Salo–Uhlmann, Example 3.1.4, lines 2677–2678). Second countability is the standing
 hypothesis of Layer 5, whose non-trapping criterion 5.5 the route applies, and of
 SmoothBundlesConnections B6.0. Route:
-in normal coordinates `z` at `p`, `d(p, ·) = |z|` (HopfRinow Layer 2), the Christoffel symbols vanish
-at `p` (RiemannianGeometry R1 item 4), so `Hess |z|² = 2g + O(|z|²)`, positive definite on a small
+in normal coordinates `z` at `p`, `d(p, ·) = |z|` (HopfRinow Layer 2); with the coordinate
+fields `∂_i` of an orthonormal basis of `T_pN` (`TauCeti.Manifold.normalCoordinateField`), the
+metric coefficients satisfy `g_ij = δ_ij + O(|z|²)`
+(`TauCeti.Manifold.IsNormalDomain.mfderiv_inner_normalCoordinateField_self`) and the
+Christoffel symbols vanish at `p`
+(`TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self`), so
+`Hess |z|²(∂_i, ∂_j) = 2δ_ij − 2 z_k Γ^k_ij = 2g_ij + O(|z|²)`, positive definite on a small
 ball; apply 3.2 and 5.5; uniformity from SmoothBundlesConnections B6.0.
 
 **Checks.**
@@ -1409,8 +1474,11 @@ ball; apply 3.2 and 5.5; uniformity from SmoothBundlesConnections B6.0.
 - Flat torus `ℝ²/ℤ²`: `d(p, ·)²` is smooth on `B(p, 1/2)` and not beyond, and the balls of radius
   `R < 1/2` are flat discs with `II = h/R`.
 
-*Needs:* 3.1, 3.2, 5.5; HopfRinow Layer 2; RiemannianGeometry R1 (item 4); SmoothBundlesConnections
-B6.0.
+*Needs:* 3.1, 3.2, 5.5; HopfRinow Layer 2; Tau Ceti `TauCeti.Manifold.IsNormalDomain`,
+`TauCeti.Manifold.normalCoordinateField`,
+`TauCeti.Manifold.IsNormalDomain.mfderiv_inner_normalCoordinateField_self`,
+`TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self`;
+SmoothBundlesConnections B6.0.
 
 ### 6.5 Conformal and rotationally symmetric metrics on the ball
 
@@ -1456,8 +1524,9 @@ This layer is the roadmap's acceptance suite: every formula above is evaluated a
 ### Dependencies
 
 6.1 uses Layers 1–5; 6.2 uses Layers 1, 2, 4 and 5.2; 6.3 uses 1.4, 2.1, 3.1–3.2, 5.5 and Tau Ceti's
-round sphere and hyperbolic space; 6.4 uses 3.1–3.2, 5.5, HopfRinow Layer 2, RiemannianGeometry R1
-and SmoothBundlesConnections B6.0; 6.5 uses 1.6, 2.1, 3.1, 3.6 and RiemannianGeometry R5a.
+round sphere and hyperbolic space; 6.4 uses 3.1–3.2, 5.5, HopfRinow Layer 2, Tau Ceti's normal
+coordinate fields and SmoothBundlesConnections B6.0; 6.5 uses 1.6, 2.1, 3.1, 3.6 and
+RiemannianGeometry R5a.
 
 ## Downstream consumers
 

@@ -606,7 +606,7 @@
      "id": "3.1",
      "kind": "construction",
      "name": "regularDomain",
-     "statement": "For (N, g) boundaryless and ρ with 0 regular, D_ρ := {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the metric pulled back along the inclusion j is a Riemannian manifold with boundary {ρ = 0}; j is a smooth closed embedding with invertible differential everywhere; Levi-Civita connections correspond (Hess^D(f∘j) = Hess^N f, grad likewise, boundary points included); ρ∘j is a global defining function, dj(ν_in) = grad ρ/|grad ρ|, II = −Hess^N ρ/|dρ| on T∂D_ρ; the structure depends only on the set {ρ ≥ 0}; lengths of curves agree, so d_D ≥ d_N on D.",
+     "statement": "For (N, g) boundaryless and ρ with 0 regular, D_ρ := {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the metric pulled back along the inclusion j is a Riemannian manifold with boundary {ρ = 0}; j is smooth with invertible differential everywhere (RiemannianGeometry R7.9 for φ = −ρ, a = 0, when N is second countable; local, so for every Hausdorff N by restriction to second-countable chart domains) and a closed embedding; Levi-Civita connections correspond (Hess^D(f∘j) = Hess^N f, grad likewise, boundary points included); ρ∘j is a global defining function, v is outward iff dρ(dj v) < 0 (R7.9's outward criterion), so dj(ν_in) = grad ρ/|grad ρ|, II = −Hess^N ρ/|dρ| on T∂D_ρ; the structure depends only on the set {ρ ≥ 0}; lengths of curves agree, so d_D ≥ d_N on D.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth, 0 a regular value (TauCeti.IsRegularValue)"
@@ -624,6 +624,7 @@
       "tauceti:Bundle.ContMDiffRiemannianMetric.pullback",
       "mathlib:CovariantDerivative.IsLeviCivitaConnection.uniqueness",
       "mathlib:Manifold.pathELength",
+      "roadmap:RiemannianGeometry §R7.9",
       "target:1.3",
       "target:1.4"
      ],
@@ -631,7 +632,7 @@
       {
        "name": "regularDomain_inclusion_embedding",
        "role": "structure",
-       "statement": "j : D_ρ → N is a smooth closed embedding with invertible differential at every point."
+       "statement": "j : D_ρ → N is smooth with invertible differential at every point (RiemannianGeometry R7.9, local) and a closed embedding."
       },
       {
        "name": "regularDomain_leviCivita",
@@ -641,7 +642,7 @@
       {
        "name": "regularDomain_secondFundamentalForm",
        "role": "evaluation",
-       "statement": "II_{D_ρ} = −Hess^N ρ/|dρ| on T∂D_ρ and dj(ν_in) = grad ρ/|grad ρ|."
+       "statement": "v ∈ T_qD_ρ at q ∈ ∂D_ρ is outward iff dρ(dj v) < 0 (RiemannianGeometry R7.9), so dj(ν_in) = grad ρ/|grad ρ|; II_{D_ρ} = −Hess^N ρ/|dρ| on T∂D_ρ."
       },
       {
        "name": "regularDomain_congr",
@@ -674,6 +675,11 @@
        "name": "cone",
        "kind": "non-example",
        "statement": "ρ = x₀² − x₁² on ℝ²: {ρ ≥ 0} is a double cone, not a manifold with boundary at 0."
+      },
+      {
+       "name": "outward_criterion",
+       "kind": "computation",
+       "statement": "Closed unit ball, φ = −ρ = |x|² − 1: dφ(v) = 2⟨x, v⟩ > 0 iff v outward, so ν_out = x and dj(ν_in) = −x = grad ρ/|grad ρ|; half-space ρ = x⁰: dφ(−e₀) = 1 > 0, −e₀ outward. Using ρ in place of φ makes x inward and e₀ outward."
       }
      ]
     },
@@ -1196,7 +1202,7 @@
      "id": "4.3.2",
      "kind": "theorem",
      "name": "hypersurface_tube_gaussLemma",
-     "statement": "There is a smooth ε : Σ → (0, ∞), constant if Σ is compact, such that E_Σ is a diffeomorphism from {(q, r) : |r| < ε(q)} onto an open neighbourhood W of Σ with sign f(E_Σ(q, r)) = sign r, and dE_Σ(∂_r) is a unit vector orthogonal to dE_Σ(T_qΣ × {0}) (Gauss lemma for hypersurfaces).",
+     "statement": "There is a smooth ε : Σ → (0, ∞), constant if Σ is compact, such that E_Σ is a diffeomorphism from {(q, r) : |r| < ε(q)} onto an open neighbourhood W of Σ with sign f(E_Σ(q, r)) = sign r, and dE_Σ(∂_r) is a unit vector orthogonal to dE_Σ(T_qΣ × {0}) (Gauss lemma for hypersurfaces). For compact connected Σ in a connected N this is RiemannianGeometry R7.9's normal collar for ν = ν_Σ; here Σ may be non-compact or disconnected (variable radius), and the sign of f is added.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "f ∈ C^∞(N) with 0 a regular value",
@@ -1210,14 +1216,15 @@
       "target:4.3.1",
       "tauceti:TauCeti.SmoothEmbedding.exists_partialDiffeomorph_normalExp_subset",
       "tauceti:TauCeti.SmoothEmbedding.exists_isClosedEmbedding_normalExp_norm_le_subset",
-      "roadmap:HopfRinow §Layer 2"
+      "roadmap:HopfRinow §Layer 2",
+      "roadmap:RiemannianGeometry §R7.9"
      ],
      "api": [],
      "tests": [
       {
        "name": "sphere_tube",
        "kind": "computation",
-       "statement": "Σ = S^n: E(q, r) = (1 − r)q is a diffeomorphism for |r| < 1, not beyond (centre)."
+       "statement": "Σ = S^n: E(q, r) = (1 − r)q is a diffeomorphism for |r| < 1, not beyond (centre). After t = −r this is R7.9's collar (1 + t)q for the normal x, injective for ε ≤ 1."
       }
      ]
     },
@@ -1225,7 +1232,7 @@
      "id": "4.3.3",
      "kind": "theorem",
      "name": "boundaryDistance_eq_signedDistance",
-     "statement": "For Σ = ∂M (f = ρ): on W' ∩ M, r_{∂M} = d_M(·, ∂M) (intrinsic distance of (M, g_M), Manifold.riemannianEDist); r_{∂M} is a boundary defining function near ∂M with grad = ν_in on ∂M. Normalised defining function: with smooth ε₁ < ε₂ < ε (constant when ∂M is compact) such that the closed tubes E_{∂M}({|r| ≤ ε₁(q)}) and E_{∂M}({|r| ≤ ε₂(q)}) are closed in N (the closed-tube theorem inside W gives ε₂; every smaller positive continuous radius, such as ε₁ = ε₂/2, has a closed tube, the image of a closed subset of the closed ε₂-disc bundle), W := E_{∂M}({|r| < ε(q)}), W₂ := E_{∂M}({|r| < ε₂(q)}) and W₁ := E_{∂M}({|r| < ε₁(q)}), there is ρ̂ ∈ C^∞(N) with ρ̂ = r_{∂M} on W₁, ρ̂ = 1 on M ∖ W, ρ̂ = −1 on N ∖ (M ∪ W), ρ̂ between r_{∂M} and 1 on W ∩ M and between r_{∂M} and −1 on W ∖ M; hence M = {ρ̂ ≥ 0}, ∂M = {ρ̂ = 0}, N ∖ M = {ρ̂ < 0}, grad ρ̂ = ν_in on ∂M, and for 0 < ε < 1 every point of {ρ̂ ≥ −ε} ∖ M lies in W with r_{∂M} ≥ −ε. Route: ρ̂ = ψ r_{∂M} + (1 − ψ) s with ψ : N → [0, 1] a cutoff equal to 1 on the closed ε₁-tube and 0 on the closed set N ∖ W₂, and s : N → [−1, 1] equal to 1 on M ∖ W₁ and −1 on N ∖ (M ∪ W₁) (both closed since ∂M ⊆ W₁), from exists_contMDiff_zero_iff_one_iff_of_isClosed; the support of ψ lies in the closed ε₂-tube, closed in N and contained in W, so ψ r_{∂M} extended by 0 is smooth on the open cover {W, N ∖ closed ε₂-tube} of N.",
+     "statement": "For Σ = ∂M (f = ρ): on W' ∩ M, r_{∂M} = d_M(·, ∂M) (intrinsic distance of (M, g_M), Manifold.riemannianEDist); r_{∂M} is a boundary defining function near ∂M with grad = ν_in on ∂M. Normalised defining function: with smooth ε₁ < ε₂ < ε (constant when ∂M is compact) such that the closed tubes E_{∂M}({|r| ≤ ε₁(q)}) and E_{∂M}({|r| ≤ ε₂(q)}) are closed in N (the closed-tube theorem inside W gives ε₂; every smaller positive continuous radius, such as ε₁ = ε₂/2, has a closed tube, the image of a closed subset of the closed ε₂-disc bundle), W := E_{∂M}({|r| < ε(q)}), W₂ := E_{∂M}({|r| < ε₂(q)}) and W₁ := E_{∂M}({|r| < ε₁(q)}), there is ρ̂ ∈ C^∞(N) with ρ̂ = r_{∂M} on W₁, ρ̂ = 1 on M ∖ W, ρ̂ = −1 on N ∖ (M ∪ W), ρ̂ between r_{∂M} and 1 on W ∩ M and between r_{∂M} and −1 on W ∖ M; hence M = {ρ̂ ≥ 0}, ∂M = {ρ̂ = 0}, N ∖ M = {ρ̂ < 0}, grad ρ̂ = ν_in on ∂M, and for 0 < ε < 1 every point of {ρ̂ ≥ −ε} ∖ M lies in W with r_{∂M} ≥ −ε. For nonempty compact connected ∂M in a connected N, N ∖ ∂M has exactly the two components {ρ > 0} and {ρ < 0}, and RiemannianGeometry R7.9's defining function for ν = ν_in has the zero set, sign sets and gradient of ρ̂ and equals the collar coordinate near ∂M; ρ̂ is built here for every regular domain, with the comparison with r_{∂M} on W used in 4.6. Route: ρ̂ = ψ r_{∂M} + (1 − ψ) s with ψ : N → [0, 1] a cutoff equal to 1 on the closed ε₁-tube and 0 on the closed set N ∖ W₂, and s : N → [−1, 1] equal to 1 on M ∖ W₁ and −1 on N ∖ (M ∪ W₁) (both closed since ∂M ⊆ W₁), from exists_contMDiff_zero_iff_one_iff_of_isClosed; the support of ψ lies in the closed ε₂-tube, closed in N and contained in W, so ψ r_{∂M} extended by 0 is smooth on the open cover {W, N ∖ closed ε₂-tube} of N.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
@@ -1242,7 +1249,8 @@
       "target:3.1",
       "mathlib:Manifold.riemannianEDist",
       "mathlib:exists_contMDiff_zero_iff_one_iff_of_isClosed",
-      "tauceti:TauCeti.SmoothEmbedding.exists_isClosedEmbedding_normalExp_norm_le_subset"
+      "tauceti:TauCeti.SmoothEmbedding.exists_isClosedEmbedding_normalExp_norm_le_subset",
+      "roadmap:RiemannianGeometry §R7.9"
      ],
      "api": [],
      "tests": [
@@ -2188,7 +2196,10 @@
       "target:3.2",
       "target:5.5.1",
       "roadmap:HopfRinow §Layer 2",
-      "roadmap:RiemannianGeometry §R1",
+      "tauceti:TauCeti.Manifold.IsNormalDomain",
+      "tauceti:TauCeti.Manifold.normalCoordinateField",
+      "tauceti:TauCeti.Manifold.IsNormalDomain.mfderiv_inner_normalCoordinateField_self",
+      "tauceti:TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self",
       "roadmap:SmoothBundlesConnections §B6.0"
      ],
      "api": [],
@@ -2281,10 +2292,10 @@
   {
    "roadmap": "RiemannianGeometry",
    "sections": [
-    "§R1",
-    "§R5a"
+    "§R5a",
+    "§R7.9"
    ],
-   "what": "normal-coordinate jets (vanishing Christoffel symbols at the centre); B, S, mean curvature vector and Gauss equation of isometric immersions with pinned signs"
+   "what": "B, S, mean curvature vector and Gauss equation of isometric immersions with pinned signs (R5a); the inclusion of a regular sublevel {φ ≤ a} is smooth with invertible differential and v is outward iff dφ(dι v) > 0, and for a compact connected two-sided hypersurface of a connected manifold the normal collar and, when it separates, a defining function equal to the collar coordinate near it and ±1 off the collar with gradient ν (R7.9)"
   },
   {
    "roadmap": "GeometricTopology",
