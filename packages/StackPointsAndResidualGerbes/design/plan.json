@@ -449,7 +449,7 @@
       {
        "name": "A1_generic_not",
        "kind": "non-example",
-       "statement": "The generic point of A^1_k is not a finite type point though Spec k(t) -> A^1 is flat."
+       "statement": "The generic point eta of A^1_k is not a finite type point: for any representative Spec K -> A^1_k the map k[t] -> K is injective, and were it of finite type K would be a finite k[t]-module by Zariski's lemma (k[t] is Jacobson), so k[t] would be a field; for K = k(t) and K = k(t)(sqrt t), 1/t is not integral over k[t]. Spec k(t) -> A^1 is flat, so 'flat' in place of 'locally of finite type' would accept eta."
       },
       {
        "name": "scheme_closed",
@@ -1173,7 +1173,7 @@
       {
        "name": "generic_not_ft",
        "kind": "non-example",
-       "statement": "At the generic point of A^1_k the residual gerbe Spec k(t) exists and is not locally of finite type over A^1."
+       "statement": "At the generic point of A^1_k, not a finite type point (1.1), the residual gerbe Spec k(t) exists and is not locally of finite type over A^1 (the argument of 1.1 with K = k(t))."
       },
       {
        "name": "Zp_generic",

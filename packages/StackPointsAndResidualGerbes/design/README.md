@@ -206,7 +206,10 @@ The pin is `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`; every declaration below w
 - `finite_of_finite_type_of_isJacobsonRing` (`Mathlib/RingTheory/Jacobson/Ring.lean:691`):
   Zariski's lemma, a field finitely generated as an algebra over a Jacobson ring `R` is a finite
   `R`-module; a field is a Jacobson ring through the instance for Artinian rings (same file, line
-  102). It gives the finiteness of `k` over `κ(x)` in 5.5.
+  102), and so is `k[t]` through the instance for polynomial rings over a Jacobson ring (line 438).
+  It gives the finiteness of `k` over `κ(x)` in 5.5 and, with `isField_of_isIntegral_of_isField`
+  (`Mathlib/RingTheory/IntegralClosure/IsIntegralClosure/Basic.lean:675`: a ring with an injective
+  integral map to a field is a field), the Check of 1.1 on the generic point of `𝔸¹_k`.
 - `AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType`
   (`Mathlib/AlgebraicGeometry/Noetherian.lean:271`): over a locally Noetherian target a morphism
   of schemes is locally of finite presentation iff it is locally of finite type. With the
@@ -804,9 +807,14 @@ The API consists of the following facts.
   cancellation `Spec k(t) → Spec k` would then be.
 - On `[𝔸¹/𝔾_m]` over `k`, the open point `1` is a finite type point and is not closed
   (alper-moduli lines 6985–6987).
-- The generic point of `𝔸¹_k` is not a finite type point: `k(t)` is not a finitely generated
-  `k[t]`-algebra. A definition with "flat" in place of "locally of finite type" would accept it,
-  `Spec k(t) → 𝔸¹_k` being flat.
+- The generic point `η` of `𝔸¹_k` is not a finite type point. For any representative
+  `Spec K → 𝔸¹_k` of `η`, the map `k[t] → K` is injective, its kernel being the prime `0` of `η`;
+  were the representative locally of finite type, `K` would be a finitely generated `k[t]`-algebra,
+  hence a finite `k[t]`-module by Zariski's lemma (`k[t]` is a Jacobson ring), so the field `K` would
+  be integral over its subring `k[t]` and `k[t]` would be a field. For `K = k(t)` and
+  `K = k(t)(√t)` the failure is visible: `1/t ∈ K` is not integral over `k[t]` (an integral equation
+  for `1/t`, multiplied by `tⁿ`, gives `1 ∈ (t)`). A definition with "flat" in place of "locally of
+  finite type" would accept `η`, `Spec k(t) → 𝔸¹_k` being flat.
 - For a scheme `X` locally of finite type over a field, the finite type points are the closed points
   (Mathlib `AlgebraicGeometry.LocallyOfFiniteType.jacobsonSpace`).
 
@@ -1265,8 +1273,9 @@ of local finite type).
 **Checks.**
 
 - On `[𝔸¹/𝔾_m]`, `𝒵_1 = Spec k → [𝔸¹/𝔾_m]` is an open immersion, locally of finite type.
-- Existence alone does not give a finite type point: at the generic point of `𝔸¹_k` the residual
-  gerbe `Spec k(t)` exists and `Spec k(t) → 𝔸¹_k` is not locally of finite type.
+- Existence alone does not give a finite type point: at the generic point of `𝔸¹_k`, which is not a
+  finite type point (1.1), the residual gerbe `Spec k(t)` exists and `Spec k(t) → 𝔸¹_k` is not
+  locally of finite type (the argument of 1.1 with `K = k(t)`).
 - At the generic point of `Spec ℤ_(p)`, a finite type point, `𝒵 = Spec ℚ → Spec ℤ_(p)` is of finite
   type.
 
