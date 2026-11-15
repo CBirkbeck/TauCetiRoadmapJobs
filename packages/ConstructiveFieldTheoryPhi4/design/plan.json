@@ -1272,7 +1272,7 @@
      "statement": "On T_L = (Z/2LZ)^d, L >= 1: J^per_xy = J #{(j,+-) : y = x +- e_j}; mu^per_{L,J,rho} = mu_{T_L, J^per, rho}; S^_L(p) = sum_x e^{ip.x} <phi_0 phi_x>^per for p in (pi/L)Z^d cap (-pi,pi]^d.",
      "hypotheses": [
       "L >= 1",
-      "J > 0",
+      "J >= 0",
       "rho admissible"
      ],
      "locator": {
@@ -1391,7 +1391,7 @@
       {
        "name": "constant_h",
        "kind": "degenerate",
-       "statement": "h constant: Z(h) = Z(0)."
+       "statement": "h constant: Z(h) = Z(0). J = 0: rho~ = rho and Z(h) = 1 = Z(0) for every h."
       }
      ]
     },
@@ -1399,10 +1399,11 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "infraredBound",
-     "statement": "For p in Lambda*_L minus {0}: E(p) S^_L(p) <= 1/J; J <(phi, -Delta h)^2> <= (h, -Delta h) for real h; sum rule <phi_0^2> = |T_L|^{-1} sum_p S^_L(p); for d >= 3, |T_L|^{-1} sum_{p != 0} 1/E(p) -> I_d = (2 pi)^{-d} integral dp/E(p).",
+     "statement": "For J > 0 and p in Lambda*_L minus {0}: E(p) S^_L(p) <= 1/J; for J >= 0, J <(phi, -Delta h)^2> <= (h, -Delta h) = sum_x sum_j (h_x - h_{x+e_j})^2 for real h; sum rule <phi_0^2> = |T_L|^{-1} sum_p S^_L(p); for d >= 3, |T_L|^{-1} sum_{p != 0} 1/E(p) -> I_d = (2 pi)^{-d} integral dp/E(p).",
      "hypotheses": [
       "rho admissible (not necessarily even)",
-      "J > 0"
+      "J >= 0",
+      "J > 0 for the bound E(p) S^_L(p) <= 1/J"
      ],
      "locator": {
       "source": "peled-spinka-2017",
@@ -1428,6 +1429,11 @@
        "name": "sum_rule_two_site",
        "kind": "computation",
        "statement": "(1/2)((1+t) + (1-t)) = 1 = <s0^2>."
+      },
+      {
+       "name": "zero_coupling",
+       "kind": "degenerate",
+       "statement": "J = 0: the quadratic form reads 0 <= (h, -Delta h) (positive semidefiniteness of -Delta) and E(p) S^_L(p) <= 1/J is not asserted. L = 1, d = 1, h = (1, -1): (h, -Delta h) = 8 = 2(h_0 - h_1)^2; for J > 0, Ising, (phi, -Delta h) = 4(s_0 - s_1) and the form reads 32J(1 - tanh 2J) <= 8, the two_site_ir test."
       }
      ]
     },
@@ -1435,7 +1441,7 @@
      "id": "5.5",
      "kind": "theorem",
      "name": "longRangeOrder_ising",
-     "statement": "For d >= 3, Ising, J > 0: liminf_L <(|T_L|^{-1} sum_x sigma_x)^2>^per >= 1 - I_d/J; for admissible rho, liminf_L (|T_L|^{-1} S^_L(0) - <phi_0^2>^per_L) >= -I_d/J.",
+     "statement": "For d >= 3, Ising, J > 0: liminf_L <(|T_L|^{-1} sum_x sigma_x)^2>^per >= 1 - I_d/J; for admissible rho and J > 0, liminf_L (|T_L|^{-1} S^_L(0) - <phi_0^2>^per_L) >= -I_d/J.",
      "hypotheses": [
       "d >= 3",
       "J > 0"

@@ -29,7 +29,7 @@ Left to other roadmaps:
 
 **Expectations and multi-indices.** `⟨·⟩_{V,J,ρ}` is the expectation under the finite-volume Gibbs measure of Layer 1. A multi-index on V is a function A : V → ℕ, `φ_A = Π_x φ_x^{A(x)}` and `|A| = Σ_x A(x)`; for Ising spins and a set A ⊆ V, `σ_A = Π_{x∈A} σ_x`. Truncated quantities such as `⟨F ; G⟩ = ⟨FG⟩ − ⟨F⟩⟨G⟩` are written with a semicolon.
 
-**Torus and Fourier conventions.** For L ≥ 1 the torus is `T_L = (ℤ/2Lℤ)^d`, with `|T_L| = (2L)^d`. Its periodic nearest-neighbour coupling of strength J counts one bond per vertex and direction: the Hamiltonian is `−J Σ_{x∈T_L} Σ_{j=1}^d φ_x φ_{x+e_j}`. For L ≥ 2 this is the nearest-neighbour coupling of the torus graph; for L = 1, where `x + e_j = x − e_j`, each pair of neighbours carries the coupling 2J. The dual torus is `Λ*_L = (π/L)ℤ^d ∩ (−π, π]^d`, lattice Fourier modes are `e^{ip·x}` (no factor 2π), `E(p) = 2 Σ_j (1 − cos p_j)` is the symbol of the lattice Laplacian `−Δ`, and `Ŝ_L(p) = Σ_{x∈T_L} e^{ip·x} ⟨φ_0 φ_x⟩` (Aizenman–Duminil-Copin (5.7)–(5.8)). The infrared bound of Layer 5 reads `E(p) Ŝ_L(p) ≤ 1/J` for p ≠ 0. Witness: for the Gaussian lattice field on the torus with single-site measure γ_b, |b| > dJ, one computes `Ŝ_L(p) = 1/(2(|b| − dJ) + J E(p))`, so the constant 1/J is attained in the limit |b| ↓ dJ; this agrees with Peled–Spinka (52), p. 35, while the constant printed in Aizenman–Duminil-Copin (5.9), `1/(2|J|β)` with `|J| = 2dJ`, is smaller by the factor 4d and is violated by this Gaussian field and by the Ising example of 5.4.
+**Torus and Fourier conventions.** For L ≥ 1 the torus is `T_L = (ℤ/2Lℤ)^d`, with `|T_L| = (2L)^d`. Its periodic nearest-neighbour coupling of strength J counts one bond per vertex and direction: the Hamiltonian is `−J Σ_{x∈T_L} Σ_{j=1}^d φ_x φ_{x+e_j}`. For L ≥ 2 this is the nearest-neighbour coupling of the torus graph; for L = 1, where `x + e_j = x − e_j`, each pair of neighbours carries the coupling 2J. The dual torus is `Λ*_L = (π/L)ℤ^d ∩ (−π, π]^d`, lattice Fourier modes are `e^{ip·x}` (no factor 2π), `E(p) = 2 Σ_j (1 − cos p_j)` is the symbol of the lattice Laplacian `−Δ`, and `Ŝ_L(p) = Σ_{x∈T_L} e^{ip·x} ⟨φ_0 φ_x⟩` (Aizenman–Duminil-Copin (5.7)–(5.8)). The infrared bound of Layer 5 reads `E(p) Ŝ_L(p) ≤ 1/J` for p ≠ 0 and J > 0. Witness: for the Gaussian lattice field on the torus with single-site measure γ_b, |b| > dJ, one computes `Ŝ_L(p) = 1/(2(|b| − dJ) + J E(p))`, so the constant 1/J is attained in the limit |b| ↓ dJ; this agrees with Peled–Spinka (52), p. 35, while the constant printed in Aizenman–Duminil-Copin (5.9), `1/(2|J|β)` with `|J| = 2dJ`, is smaller by the factor 4d and is violated by this Gaussian field and by the Ising example of 5.4.
 
 **Test functions and the continuum Fourier transform.** Aizenman–Duminil-Copin's `C_0(ℝ^d)` is the space of compactly supported continuous functions; here it is Mathlib's `CompactlySupportedContinuousMap` on `EuclideanSpace ℝ (Fin d)` with values in ℝ, written C_c(ℝ^d) (not Mathlib's space of functions vanishing at infinity). The continuum Fourier transform is Mathlib's `𝓕` with kernel `e^{−2πi⟨x,ξ⟩}` (`Real.fourier_eq`); the symbol of `−Δ + m²` is then `4π²|ξ|² + m²`. The Gaussian free field covariance is `C_m(f, g) = ∫ conj(𝓕f(ξ)) 𝓕g(ξ) / (4π²|ξ|² + m²) dξ`. Witness: for d = 1 this is `∫∫ f(x) e^{−m|x−y|}/(2m) g(y) dx dy`, because the Fourier transform of `e^{−m|x|}/(2m)` is `1/(m² + 4π²ξ²)`.
 
@@ -496,7 +496,7 @@ Layers 1 and 3, and Layer 2 (through 3.5 and 3.7, and 2.3 for the φ⁴ case of 
 
 ## Layer 5: Reflection positivity and the infrared bound on the torus
 
-Throughout, ρ is admissible, J > 0, L ≥ 1, and `μ^{per}_{L,J,ρ}` is the Gibbs measure of 1.1 on the torus T_L with the periodic nearest-neighbour coupling of the Conventions.
+Throughout, ρ is admissible, J ≥ 0, L ≥ 1, and `μ^{per}_{L,J,ρ}` is the Gibbs measure of 1.1 on the torus T_L with the periodic nearest-neighbour coupling of the Conventions; the bound `E(p) Ŝ_L(p) ≤ 1/J` of 5.4 and the statements of 5.5 assume J > 0.
 
 ### 5.1 Periodic measures on the discrete torus
 
@@ -538,11 +538,11 @@ Prove that for every h ∈ ℝ^{T_L}, `Z(h) ≤ Z(0)`, where `Z(h) = ∫ exp(−
 
 - L = 1, d = 1, Ising: with u = h₀ − h₁, `Z(h) ∝ 2e^{−Ju²} + e^{−J(2+u)²} + e^{−J(2−u)²}`, whose second derivative at u = 0 is `−4J + e^{−4J}(32J² − 4J) ≤ 0` (the maximum of `e^{−4J}(8J − 1)` is `2e^{−3/2} ≈ 0.45 < 1`), consistent with a maximum at h = 0.
 - As a separate Gaussian-gradient example with Lebesgue measure, pin φ₀ = 0 and integrate over the other coordinates of the connected torus, removing the constant zero mode. Translation by `h − h₀` preserves this pinned space and gives `Z(h) = Z(0) < ∞` for J > 0. For the two-vertex torus with J = 1 this is `Z(u) = ∫ exp(−(x − u)²) dx = √π`; without pinning the common-translation integral is infinite. This example is outside the probability a-priori setting of the theorem (Peled–Spinka, the closing paragraph of Section 2.7.2, p. 33).
-- For h constant, Z(h) = Z(0) exactly.
+- For h constant, Z(h) = Z(0) exactly. For J = 0, `ρ̃ = ρ` and `Z(h) = 1 = Z(0)` for every h, so the inequality is an equality.
 
 ### 5.4 The infrared bound and the sum rule
 
-Prove the infrared bound `E(p) Ŝ_L(p) ≤ 1/J` for every p ∈ Λ*_L ∖ {0}, and its quadratic-form version `J⟨(φ, −Δh)²⟩^{per} ≤ (h, −Δh)` for all real h on T_L (Aizenman–Duminil-Copin (5.8)–(5.9), p. 24, with the constant corrected as in the Conventions; Peled–Spinka (49)–(52), Section 2.7.3, pp. 34–35; Simon, Twelve Tales (5.17) and (5.22), Section 5, pp. 36–37; Fröhlich–Simon–Spencer 1976, Theorem 1). The first-order term vanishes by translation invariance, since Σ_x(Δh)_x = 0, so evenness of ρ is not needed. Prove the sum rule `⟨φ_0²⟩^{per} = |T_L|⁻¹ Σ_{p∈Λ*_L} Ŝ_L(p)` (Aizenman–Duminil-Copin (5.10), p. 24), and for d ≥ 3 the Riemann-sum limit `|T_L|⁻¹ Σ_{p∈Λ*_L∖{0}} 1/E(p) → I_d = (2π)^{−d} ∫_{[−π,π]^d} dp/E(p) < ∞`.
+Prove, for J > 0, the infrared bound `E(p) Ŝ_L(p) ≤ 1/J` for every p ∈ Λ*_L ∖ {0}, and, for J ≥ 0, its quadratic-form version `J⟨(φ, −Δh)²⟩^{per} ≤ (h, −Δh)` for all real h on T_L, where `(h, −Δh) = Σ_x Σ_j (h_x − h_{x+e_j})²` (Aizenman–Duminil-Copin (5.8)–(5.9), p. 24, with the constant corrected as in the Conventions; Peled–Spinka (49)–(52), Section 2.7.3, pp. 34–35; Simon, Twelve Tales (5.17) and (5.22), Section 5, pp. 36–37; Fröhlich–Simon–Spencer 1976, Theorem 1). The first-order term vanishes by translation invariance, since Σ_x(Δh)_x = 0, so evenness of ρ is not needed. Prove the sum rule `⟨φ_0²⟩^{per} = |T_L|⁻¹ Σ_{p∈Λ*_L} Ŝ_L(p)` (Aizenman–Duminil-Copin (5.10), p. 24), and for d ≥ 3 the Riemann-sum limit `|T_L|⁻¹ Σ_{p∈Λ*_L∖{0}} 1/E(p) → I_d = (2π)^{−d} ∫_{[−π,π]^d} dp/E(p) < ∞`.
 
 *Needs:* 5.1; for the infrared bound and its quadratic-form version, 5.3.
 
@@ -551,10 +551,11 @@ Prove the infrared bound `E(p) Ŝ_L(p) ≤ 1/J` for every p ∈ Λ*_L ∖ {0}, a
 - L = 1, d = 1, Ising: `E(π) = 4` and `Ŝ_1(π) = 1 − tanh 2J`, so the bound reads `4J(1 − tanh 2J) ≤ 1`; the left side has maximum ≈ 0.557, attained near 2J ≈ 0.64. The constant `1/(4J)` printed in Aizenman–Duminil-Copin (5.9) would require `4(1 − tanh 2J) ≤ 1/(4J)`, false at J = 0.375 (left 1.46, right 0.67).
 - The Gaussian torus field with |b| > dJ has `E(p)Ŝ_L(p) = E(p)/(2(|b| − dJ) + JE(p)) < 1/J`, approaching 1/J as |b| ↓ dJ: the constant is sharp.
 - Sum rule at L = 1, d = 1, Ising: `½(Ŝ(0) + Ŝ(π)) = ½((1 + t) + (1 − t)) = 1 = ⟨σ_0²⟩` with t = tanh 2J. The excluded mode p = 0 has E(0) = 0 and carries the long-range order.
+- J = 0: the quadratic-form version reads `0 ≤ (h, −Δh)`, the positive semidefiniteness of `−Δ`, and the bound `E(p) Ŝ_L(p) ≤ 1/J` is not asserted. At L = 1, d = 1 and h = (1, −1), `(Δh)_0 = 2h_1 − 2h_0 = −4`, so `(h, −Δh) = 8 = 2(h_0 − h_1)²`; for J > 0 and Ising spins the same h gives `(φ, −Δh) = 4(σ_0 − σ_1)` and the quadratic form reads `32J(1 − tanh 2J) ≤ 8`, the first Check again.
 
 ### 5.5 Long-range order for the Ising model in d ≥ 3
 
-Prove that for d ≥ 3, ρ = ρ_I and J > 0, `liminf_{L→∞} ⟨(|T_L|⁻¹ Σ_{x∈T_L} σ_x)²⟩^{per}_{L,J,ρ_I} ≥ 1 − I_d/J`, which is positive for J > I_d; more generally, for admissible ρ, `liminf_L (|T_L|⁻¹ Ŝ_L(0) − ⟨φ_0²⟩^{per}_L) ≥ −I_d/J` (Peled–Spinka, Theorem 2.13, p. 26, and (53), p. 36; Simon, Twelve Tales (5.15)–(5.18), Section 5, p. 36; Fröhlich–Simon–Spencer 1976).
+Prove that for d ≥ 3, ρ = ρ_I and J > 0, `liminf_{L→∞} ⟨(|T_L|⁻¹ Σ_{x∈T_L} σ_x)²⟩^{per}_{L,J,ρ_I} ≥ 1 − I_d/J`, which is positive for J > I_d; more generally, for admissible ρ and J > 0, `liminf_L (|T_L|⁻¹ Ŝ_L(0) − ⟨φ_0²⟩^{per}_L) ≥ −I_d/J` (Peled–Spinka, Theorem 2.13, p. 26, and (53), p. 36; Simon, Twelve Tales (5.15)–(5.18), Section 5, p. 36; Fröhlich–Simon–Spencer 1976).
 
 *Needs:* 5.4.
 
