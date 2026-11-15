@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DGFloer~35",
+  "head": "62765e61af9185ad959dcc707445839bd7f42f65",
+  "pr": 1798,
+  "folder": "DGFloer",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 25 changed lines since b1d5c48 (README 5.5: the definition of living over the fundamental class and its third Check). Previous R01 repaired: the definition is now for oriented bases or over F2, with the or_B-twisted notion for nonorientable bases over Z; the RP^2 Check recomputed (untwisted kernel Z(1-t), image (1,-1); twisted kernel Z(1+t), image (1,1); H_2(RP^2;or)=Z). Source locators bdho-cotangent lines 1087, 1092-1095, 1105-1108, 1111 checked for the seeded target 5.5. Citers resolved: DGFloerPartII (#1799) Layer 5 item 5 uses an oriented base; AlgebraicTopology 4.10 at #1807. Gate rerun: all checks 0, OK; depcheck 245 roadmaps, 0 problems; Suggested.lean (unchanged) elaborates with seven sorry warnings only. Pull request title and description read against the head: no contradiction. No change outside the folder.",
+  "text": "debfe238045644e5"
+ }
+}
