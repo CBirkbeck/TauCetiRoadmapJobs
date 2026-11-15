@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AbelianVarietiesOverFiniteFields~7",
+  "head": "e411d44c603fcb1d1e0cc58ae312d98c937aafe6",
+  "pr": 1720,
+  "folder": "AbelianVarietiesOverFiniteFields",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since e411d44. Checked the pull request's title and description against the head: two P3 findings, both in the description's prose (it says Suggested.lean pins the isogeny relation, the Frobenius order and Deligne modules, which the file does not declare; it attributes Tate's theorem to AbelianSchemesAndArithmeticModuliPartII where the README consumes it from ArithmeticStatisticsPartI, and names neither DWP.1 nor CurvesOverFiniteFields). The folder needs no change. Gate rerun: every counter 0, OK. Depcheck: 0 problems. lake env lean on Suggested.lean: four sorry warnings only. Citations re-resolved at the moved CurvesOverFiniteFields head 0a47bd8a and at Part II 6684834b. Adversarial rows computed for waterhouse (q = 8, 25) and finite_pic; the previous review listed no finding.",
+  "text": "bb704356f530b3fe",
+  "carried": {
+   "from": "e411d44c603fcb1d1e0cc58ae312d98c937aafe6",
+   "head": "079b61f471c25ee081f7f82c23d79bc26591494e",
+   "findings": 2,
+   "lines": 9,
+   "folders": [
+    "AbelianVarietiesOverFiniteFields"
+   ]
+  }
+ }
+}
