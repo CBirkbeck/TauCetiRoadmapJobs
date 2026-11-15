@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IgusaVarietiesAndTorsionConcentration~3",
+  "head": "5447ef6b47fb2c45160a17837753b1770dc9e38b",
+  "pr": 1090,
+  "folder": "IgusaVarietiesAndTorsionConcentration",
+  "date": "2026-11-15",
+  "findings": 7,
+  "blocking": 0,
+  "notes": "incremental re-review of 12 changed lines since 710c2e5, and of the pull request's title and description. Gate at 5447ef6 all 0 OK; lake env lean on Suggested.lean exit 0 with no output (empty namespace); depcheck 246 roadmaps, 2269 edges, 0 problems; nothing changed outside the folder. Previous findings: R01 (0.18a sign) repaired and recomputed; R04 partly (Scholze Thm 4.3.1 p.1025 confirmed at sch15; HKW sections 5.3-5.4 are pp.49-52, not 49-53); R06 partly (3.0b now cites RelativeFarguesFontaine 6.15, resolved at #1209; 7.9 for D=F unchanged); R02 (3.0g<->3.6 Needs cycle), R03 (owned quotient theorem without target id), R05 (2.16 narrower than csnc Thm 3.3.2) not repaired. New: the Downstream consumers sentence cites BunGAndNewtonStrata 1.29 and 3.17, but at #1241 there is no 3.17 and 1.29 does not use the Mazur converse; the description says the Lean states definitions and theorems and builds with sorry as the only warning, while Suggested.lean declares nothing, and its summary names the Mazur converse as consumed though no roadmap cites 0.18a. Seven P3 findings, none blocking. Seeded sample checked only where it falls in changed passages (7.9b).",
+  "text": "c43f5823d2722fdb",
+  "carried": {
+   "from": "5447ef6b47fb2c45160a17837753b1770dc9e38b",
+   "head": "d692c6ffe9fe3282d44b18ac2baaa09750774637",
+   "findings": 7,
+   "lines": 92,
+   "folders": [
+    "IgusaVarietiesAndTorsionConcentration"
+   ],
+   "outside": true
+  }
+ }
+}
