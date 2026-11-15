@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsConfluent~5",
+  "head": "af5a60bdf971d11cde046c9649b4871f01da286d",
+  "pr": 1995,
+  "folder": "SpecialFunctionsConfluent",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "incremental re-review of 0 changed lines since af5a60b. Checked the pull request's title and description sentence by sentence against the head (layers, scope, corrections to DLMF, imports, pins, 42 sorry warnings) and resolved their supplier citations at the suppliers' present heads: LaguerreJacobi's head has no labels A1 and B3 (the content is in its 1.1 and 2.3), which the README (lines 182, 395-396, 932, 1066) and the description cite (R01, P2). Gate re-run: all counters 0 (NOT IN ORDER without the candidate order, not a finding); depcheck with the candidate order: 0 problems, no UPWARD or CYCLE; lake env lean: 42 sorry warnings, no error. Adversarial rows computed for 13.4.4, 13.16.5, the corrected zero counts 13.9.3, 13.9.4, 13.9.6, 13.6.18 and 13.2.5. The seeded source sample was not re-read (no changed passage).",
+  "text": "da0c862d254ecd0d"
+ }
+}
