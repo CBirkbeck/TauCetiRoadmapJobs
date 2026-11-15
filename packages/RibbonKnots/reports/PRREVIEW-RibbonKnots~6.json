@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RibbonKnots~6",
+  "head": "a68883001f78f601a5af5f702464230cc5db1043",
+  "pr": 2339,
+  "folder": "RibbonKnots",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "Full review. The four findings of the review at d65240b are repaired. New: R01 (P2) the route of 1.4 has no step for the unknot, where GeometricTopology 8.3.1 and the extension theorem of 8.1 exclude the solid-torus exterior; R02 (P3) the clasp Check of 0.1 infers a one-clasp disc from one crossing change (false for 6_2); R03 (P3) the description counts 6 headlines, the head states 7. Seeded sample 0.1, 1.1-1.5, 2.1 and 31 locators checked against Agol2022, Zemke2019, Lisca2007, Livingston2005, DLVW2022, FriedlPowell2020; Gordon1981, Gerstenhaber-Rothaus 1962, Hempel1987 only through the texts restating them. Gate passes with every check at 0; depcheck 0 problems; Suggested.lean elaborates with 7 sorry warnings and no error; the one-tactic probe closes none of the 7 theorems.",
+  "text": "0e93b30be3b60c5c"
+ }
+}
