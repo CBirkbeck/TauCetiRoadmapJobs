@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelmerIwasawaCohomology~5",
+  "head": "8e1b4ae0e34a2f3e7946037a66e52f62d0331161",
+  "pr": 869,
+  "folder": "SelmerIwasawaCohomology",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 6 changed lines since ebadda3. Previous R01-R03 all repaired (Kummer theorem renamed nonempty_padicKummer_equiv with README name mapping; description now states the PR adds a new roadmap and has a corrected dependency paragraph). Checked: the two changed passages, the elaborated signature of the renamed theorem, four computed instances of the Kummer statement (K=R p=2; F_5 p=2; C p=3; negative control F_2(t)), the inbound citation from PadicHodgeTheory, title and description against the head and base diff. Gate OK with all counters 0 (fresh run); lake env lean gives only the 6 sorry warnings; depcheck 0 problems; no file changed outside the folder.",
+  "text": "e933e0835569347a"
+ }
+}
