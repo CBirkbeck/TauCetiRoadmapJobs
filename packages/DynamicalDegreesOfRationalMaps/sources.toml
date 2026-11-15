@@ -18,7 +18,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2 (Dec 2004); numbering of the arXiv version read"
-cited_for = ["§1.1", "§1.2", "§4.1", "§4.4", "§4.5", "§5.1", "§5.3", "§5.4", "Scope"]
+cited_for = ["§1.1", "§1.2", "§4.1", "§4.4", "§4.5", "§5.1", "§5.2", "§5.3", "§5.4", "Scope"]
 
 [[source]]
 id = "dang2020"
@@ -48,7 +48,7 @@ venue = "Journal für die reine und angewandte Mathematik 758 (2020), 139-182"
 doi = "10.1515/crelle-2017-0052"
 arxiv = "1605.05049v2"
 locator_scheme = "theorem"
-locator = "Theorem 1.1; §6.3; §6.4"
+locator = "Introduction, notation for correspondences; Theorem 1.1; Lemma 4.5; Theorem 5.3; §6.3; §6.4"
 url = "https://arxiv.org/abs/1605.05049v2"
 fetched_from = "https://arxiv.org/pdf/1605.05049v2"
 fetched_at = "2026-11-04T18:54:11Z"
@@ -57,7 +57,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2 (May 2016); numbering of the arXiv version read"
-cited_for = ["§1.4", "§4.3", "§4.4", "§5.3", "§6.3", "Scope"]
+cited_for = ["§1.4", "§4.3", "§4.4", "§5.1", "§5.3", "§6.3", "Scope"]
 
 [[source]]
 id = "guedj2010"
@@ -86,7 +86,7 @@ year = 2014
 venue = "Ergodic Theory and Dynamical Systems 34 (2014), 647-678"
 arxiv = "1111.5664v2"
 locator_scheme = "section"
-locator = "Section 3: Definition, Examples 5-6, Proposition 7"
+locator = "Section 1: maps by forms without common factor; Section 3: Definition, Examples 5-6, Proposition 7"
 url = "https://arxiv.org/abs/1111.5664v2"
 fetched_from = "https://arxiv.org/pdf/1111.5664v2"
 fetched_at = "2026-11-04T18:54:23Z"
@@ -106,7 +106,7 @@ venue = "Indiana University Mathematics Journal 46"
 doi = "10.1512/iumj.1997.46.1441"
 arxiv = "math/9604204v1"
 locator_scheme = "section"
-locator = "Section 4: Lemma 4.4, Lemma 4.6, example p. 13"
+locator = "Section 4: Lemma 4.4, Lemma 4.6, example p. 14"
 url = "https://arxiv.org/abs/math/9604204v1"
 fetched_from = "https://arxiv.org/pdf/math/9604204v1"
 fetched_at = "2026-11-04T18:54:38Z"
@@ -162,7 +162,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2 (May 2021); numbering of the arXiv version read"
-cited_for = ["§2.3", "§3.3", "§3.5", "§3.6", "§4.1", "§4.2", "§4.4", "§4.5", "§5.1", "§5.2", "§6.4", "Scope"]
+cited_for = ["§2.3", "§3.3", "§3.5", "§3.6", "§4.1", "§4.2", "§4.4", "§4.5", "§5.1", "§5.2", "§5.3", "§6.4", "Scope"]
 
 [[source]]
 id = "cutkosky2015"
