@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FarguesFontaineDiamonds~4",
+  "head": "389338fea10a6ddbf19060063703f5f7331ebd56",
+  "pr": 964,
+  "folder": "FarguesFontaineDiamonds",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 389338f; checked previous R01, PR title and description against base/head, Frobenius radius and quotient witnesses, downstream locator, source-manifest absence, closest-roadmap scopes, gate, dependency check, Lean elaboration and targeted build. Ten seeded API blocks unchanged; no source sample reopened. Four P3 findings; all gate checks pass.",
+  "text": "6501fc0f461b1eef",
+  "carried": {
+   "from": "389338fea10a6ddbf19060063703f5f7331ebd56",
+   "head": "f96f9b6cb701423b931fe029382e1f80c6906dcf",
+   "findings": 4,
+   "lines": 50,
+   "folders": [
+    "FarguesFontaineDiamonds"
+   ],
+   "outside": true
+  }
+ }
+}
