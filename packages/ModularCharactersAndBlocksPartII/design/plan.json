@@ -776,7 +776,7 @@
      "id": "4.5",
      "kind": "construction",
      "name": "glaubermanCorrespondence",
-     "statement": "There is exactly one assignment of bijections π(Γ, S) : Irr_S(Γ) → Irr(C_Γ(S)), for all finite Γ (fixed universe) and solvable coprime S, such that for p-groups π(Γ,S)(χ) is a constituent of χ|_C of multiplicity prime to p, and π(Γ,S) = π(C_Γ(T), S/T) ∘ π(Γ,T) for T ⊴ S. For p-groups the constituent of multiplicity prime to p is unique, has multiplicity ≡ ±1 mod p, all others ≡ 0. The Glauberman correspondence is θ* = π(Γ,S)(θ).",
+     "statement": "There is exactly one assignment of bijections π(Γ, S) : Irr_S(Γ) → Irr(C_Γ(S)), for all finite Γ (fixed universe) and solvable coprime S, such that for p-groups π(Γ,S)(χ) is a constituent of χ|_C of multiplicity prime to p, and, for every T ⊴ S and χ ∈ Irr_S(Γ), π(Γ,T)(χ) is S/T-invariant (so lies in Irr_{S/T}(C_Γ(T)), the domain of π(C_Γ(T), S/T)) and π(Γ,S)(χ) = π(C_Γ(T), S/T)(π(Γ,T)(χ)); for the constructed family the invariance holds by 4.4. For p-groups the constituent of multiplicity prime to p is unique, has multiplicity ≡ ±1 mod p, all others ≡ 0. The Glauberman correspondence is θ* = π(Γ,S)(θ).",
      "hypotheses": [
       "Γ and S finite groups",
       "MulDistribMulAction S Γ",
@@ -801,12 +801,12 @@
       {
        "name": "glauberman_compat",
        "role": "compatibility",
-       "statement": "π(Γ,S) = π(C_Γ(T), S/T) ∘ π(Γ,T) for T ⊴ S."
+       "statement": "For T ⊴ S and χ ∈ Irr_S(Γ): π(Γ,T)(χ) is S/T-invariant and π(Γ,S)(χ) = π(C_Γ(T), S/T)(π(Γ,T)(χ))."
       },
       {
        "name": "glauberman_family_unique",
        "role": "uniqueness",
-       "statement": "Any family with the p-group property and the compatibility law equals π."
+       "statement": "Any family with the p-group property and the compatibility law (invariance and the composition identity) equals π."
       },
       {
        "name": "glauberman_trivial",
@@ -839,6 +839,11 @@
        "name": "noncoprime",
        "kind": "non-example",
        "statement": "C₂ swapping C₂ × C₂: both invariant characters restrict to the trivial character with multiplicity 1; no injective assignment."
+      },
+      {
+       "name": "law_ends",
+       "kind": "degenerate",
+       "statement": "T = 1: π(Γ,1)(χ) = χ is S-invariant; T = S: π(Γ,S) = π(C,1) ∘ π(Γ,S) with π(C,1) = id (multiplicity 1, prime to every p); S = C₆, T = C₃: π(Γ,C₆) = π(C_Γ(C₃),C₂) ∘ π(Γ,C₃), both factors fixed by the p-group property."
       }
      ]
     },
@@ -1000,7 +1005,7 @@
      "hypotheses": [
       "G a finite group",
       "p a prime",
-      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "(K, O, k) the splitting p-modular system of base §1.1 at a finite place v of F = ℚ(ζ_e), e = exp(G), over p: K = F_v, O its valuation ring (a complete discrete valuation ring with maximal ideal m), k = O/m a finite field of characteristic p, F → K the canonical map; v any place of F over p",
       "B a block of k[G]"
      ],
      "locator": {
@@ -1016,7 +1021,6 @@
       "roadmap:ModularCharactersAndBlocks §4.1",
       "roadmap:ModularCharactersAndBlocks §4.2",
       "roadmap:ModularCharactersAndBlocks §6.2",
-      "roadmap:ModularCharactersAndBlocks §7.1",
       "roadmap:CharacterTheory §4.3",
       "tauceti:TauCeti.Representation.isIntegral_centralCharacter_classSumCenter",
       "tauceti:TauCeti.Representation.centralCharacter",
@@ -1081,7 +1085,7 @@
      "hypotheses": [
       "G a finite group",
       "p a prime",
-      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "(K, O, k) the splitting p-modular system of base §1.1 at a finite place v of F = ℚ(ζ_e), e = exp(G), over p: K = F_v, O its valuation ring (a complete discrete valuation ring with maximal ideal m), k = O/m a finite field of characteristic p, F → K the canonical map; v any place of F over p",
       "B a block with defect group D"
      ],
      "locator": {
@@ -1123,7 +1127,7 @@
      "hypotheses": [
       "G a finite group",
       "p a prime",
-      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "(K, O, k) the splitting p-modular system of base §1.1 at a finite place v of F = ℚ(ζ_e), e = exp(G), over p: K = F_v, O its valuation ring (a complete discrete valuation ring with maximal ideal m), k = O/m a finite field of characteristic p, F → K the canonical map; v any place of F over p",
       "B a block with defect group D"
      ],
      "locator": {
@@ -1134,7 +1138,19 @@
       "target:6.2",
       "roadmap:ModularCharactersAndBlocks §6.2",
       "mathlib:padicValNat",
-      "tauceti:TauCeti.Representation.finrank_dvd_card"
+      "tauceti:TauCeti.Representation.finrank_dvd_card",
+      "roadmap:ModularCharactersAndBlocks §1.1",
+      "roadmap:ModularCharactersAndBlocks §4.2",
+      "roadmap:CharacterTheory §4.4",
+      "mathlib:Ideal.exists_smul_eq_of_isGaloisGroup",
+      "roadmap:ModularCharactersAndBlocks §1.3",
+      "roadmap:ModularCharactersAndBlocks §2.1",
+      "roadmap:ModularCharactersAndBlocks §2.3",
+      "roadmap:ModularCharactersAndBlocks §2.4",
+      "roadmap:ModularCharactersAndBlocks §4.1",
+      "roadmap:ModularCharactersAndBlocks §6.1",
+      "roadmap:ModularCharactersAndBlocks §7.1",
+      "roadmap:ModularCharactersAndBlocks §8.2"
      ],
      "api": [
       {
@@ -1150,12 +1166,22 @@
       {
        "name": "height_conj_invariant",
        "role": "invariance",
-       "statement": "Heights are invariant under isomorphisms, conjugation and change of splitting system."
+       "statement": "Heights are invariant under group isomorphisms and under conjugation of characters."
       },
       {
        "name": "heightZero_nonempty",
        "role": "existence",
        "statement": "Irr₀(B) ≠ ∅."
+      },
+      {
+       "name": "height_changeOfPlace",
+       "role": "invariance",
+       "statement": "For σ ∈ Gal(F/ℚ) and a place v over p, σ extends to an isomorphism F_v → F_{σv} of the systems at v and at σv (σv the place of σ(𝔭_v)); it carries the blocks of k_v[H], H ≤ G, to those of k_{σv}[H] with their central characters, defect classes, Brauer projections and defect groups, and acts on characters by χ ↦ σ ∘ χ, so Irr(σB) = σ ∘ Irr(B), h_{σv}(σ ∘ χ) = h_v(χ), Irr₀(σB) = σ ∘ Irr₀(B) and the Brauer correspondent of σB is the image of that of B. Gal(F/ℚ) is transitive on the places over p, so a property of all blocks of G holds at one place over p exactly when it holds at every place."
+      },
+      {
+       "name": "blocks_changeOfLevel",
+       "role": "invariance",
+       "statement": "For a finite group H, e a positive multiple of exp(H), a place v of ℚ(ζ_e) over p and the place w of ℚ(ζ_{exp H}) ⊆ ℚ(ζ_e) below it: K_w is the closure of ℚ(ζ_{exp H}) in K_v, O_w = O_v ∩ K_w, m_w = m_v ∩ O_w, k_w ⊆ k_v, and the canonical maps of base §1.1 commute. For every subgroup, quotient or quotient of a subgroup X of H (so k_w splits X and its subgroups, base §2.3), scalar extension e_B ↦ 1 ⊗ e_B is a bijection from the blocks of k_w[X] to those of k_v[X], keeping the coefficients a_B(𝒞), extending λ_B, and keeping defect classes, Br_P(e_B), defect groups and the principal block (base §6.2); it commutes with conjugation by H, block induction (base §7.1) and covering (base §8.2). Irr(1 ⊗ B) = Irr(B) (central lifts, base §1.3, and e_χ with coefficients in ℚ(ζ_{exp H}); equivalently the congruence of base §4.2, as m_v ∩ O_w = m_w), IBr(1 ⊗ B) = IBr(B) with the same decomposition numbers (base §§2.3, 2.4), so heights, defects and Irr₀ agree and the Brauer correspondent of 1 ⊗ B is 1 ⊗ b'. Statements of Layers 6–8 about H at its own system therefore hold at v."
       }
      ],
      "tests": [
@@ -1173,6 +1199,26 @@
        "name": "no_truncation",
        "kind": "characterisation",
        "statement": "S₃, p = 2, std: ν = 1 = a, d(std) = 0, h = 0; natural subtraction never truncates."
+      },
+      {
+       "name": "c7c2_change_of_place",
+       "kind": "computation",
+       "statement": "C₇ × C₂, p = 2: two places over 2 with decomposition group {1, 2, 4} ⊆ (ℤ/7)ˣ; σ : ζ₇ ↦ ζ₇³ exchanges them, ζ₇ ↦ ζ₇² fixes each. Blocks {ψ × 1, ψ × sgn} with defect group 1 × C₂ and heights 0 at both places; σ sends the block of ψ at v to that of σ ∘ ψ at σv."
+      },
+      {
+       "name": "c2_in_s3_change_of_level",
+       "kind": "computation",
+       "statement": "C₂ ≤ S₃, p = 2, e = 6: k_w = 𝔽₂ ⊆ 𝔽₄ = k_v, 𝔽₂ splits C₂; one block (idempotent 1) on each side; ω_1({t}⁺) − ω_sgn({t}⁺) = 2 ∈ m_w ⊆ m_v, so Irr(b') = {1, sgn} at both levels, defect group C₂, heights 0, |Irr₀(b')| = 2 as §6.4 uses."
+      },
+      {
+       "name": "q8_a4_change_of_level",
+       "kind": "computation",
+       "statement": "Q₈ ≤ SL(2,3), p = 2: K_w = ℚ₂(i), k_w = 𝔽₂; K_v = ℚ₂(ζ₁₂), k_v = 𝔽₄; one block on each side, heights 0, 0, 0, 0, 1 (what §8.3 takes from §8.2). A₄ ≤ A₅, p = 2: 2 has order 2 mod 3 and 4 mod 15, so k_w = 𝔽₄ ⊆ 𝔽₁₆ = k_v; one block, heights 0, 0, 0, 0 (§9.2)."
+      },
+      {
+       "name": "level_must_contain_exponent",
+       "kind": "non-example",
+       "statement": "C₃ is not a subquotient of H = 1: at the 2-adic place of ℚ the residue field 𝔽₂ does not split C₃, and the block r + r² of 𝔽₂[C₃] becomes the sum of two blocks of 𝔽₄[C₃]; scalar extension from that level is not a bijection on blocks."
       }
      ]
     },
@@ -1184,7 +1230,8 @@
      "hypotheses": [
       "G a finite group",
       "p a prime",
-      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p"
+      "(K, O, k) the splitting p-modular system of base §1.1 at a finite place v of F = ℚ(ζ_e), e = exp(G), over p: K = F_v, O its valuation ring (a complete discrete valuation ring with maximal ideal m), k = O/m a finite field of characteristic p, F → K the canonical map; v any place of F over p",
+      "blocks of subgroups, normalisers, stabilisers and quotients of G are taken over the same k, which agrees with their own systems by the change of level (6.3)"
      ],
      "locator": {
       "source": "martinez",
@@ -1234,9 +1281,10 @@
      "hypotheses": [
       "G a finite group",
       "p a prime",
-      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "(K, O, k) the splitting p-modular system of base §1.1 at a finite place v of F = ℚ(ζ_e), e = exp(G), over p: K = F_v, O its valuation ring (a complete discrete valuation ring with maximal ideal m), k = O/m a finite field of characteristic p, F → K the canonical map; v any place of F over p",
       "B a block with defect group D_B",
-      "x ∈ G, D_x a Sylow p-subgroup of C_G(x)"
+      "x ∈ G, D_x a Sylow p-subgroup of C_G(x)",
+      "blocks of subgroups, normalisers, stabilisers and quotients of G are taken over the same k, which agrees with their own systems by the change of level (6.3)"
      ],
      "locator": {
       "source": "martinez",
@@ -1244,6 +1292,7 @@
      },
      "prerequisites": [
       "target:6.1",
+      "target:6.3",
       "roadmap:ModularCharactersAndBlocks §6.1",
       "roadmap:ModularCharactersAndBlocks §6.2",
       "roadmap:ModularCharactersAndBlocks §7.1"
@@ -1275,8 +1324,9 @@
      "hypotheses": [
       "G a finite group",
       "p a prime",
-      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
-      "N ⊴ G"
+      "(K, O, k) the splitting p-modular system of base §1.1 at a finite place v of F = ℚ(ζ_e), e = exp(G), over p: K = F_v, O its valuation ring (a complete discrete valuation ring with maximal ideal m), k = O/m a finite field of characteristic p, F → K the canonical map; v any place of F over p",
+      "N ⊴ G",
+      "blocks of subgroups, normalisers, stabilisers and quotients of G are taken over the same k, which agrees with their own systems by the change of level (6.3)"
      ],
      "locator": {
       "source": "martinez",
@@ -1284,6 +1334,7 @@
      },
      "prerequisites": [
       "target:6.1",
+      "target:6.3",
       "roadmap:ModularCharactersAndBlocks §0.2",
       "roadmap:ModularCharactersAndBlocks §2.1",
       "roadmap:ModularCharactersAndBlocks §2.4",
@@ -1329,16 +1380,18 @@
      "hypotheses": [
       "G a finite group",
       "p a prime",
-      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "(K, O, k) the splitting p-modular system of base §1.1 at a finite place v of F = ℚ(ζ_e), e = exp(G), over p: K = F_v, O its valuation ring (a complete discrete valuation ring with maximal ideal m), k = O/m a finite field of characteristic p, F → K the canonical map; v any place of F over p",
       "N ⊴ G (arbitrary)",
       "B a block of G, B̄ a block of G/N",
-      "D a defect group of B"
+      "D a defect group of B",
+      "blocks of subgroups, normalisers, stabilisers and quotients of G are taken over the same k, which agrees with their own systems by the change of level (6.3)"
      ],
      "locator": {
       "source": "martinez",
       "where": "Corollary 8.2, line 1895; Definition 8.3, line 1897; Proposition 8.4, line 1907, and line 1909; line 1924; Theorem 8.5 (i), line 1928, and (ii), line 1931"
      },
      "prerequisites": [
+      "target:6.3",
       "roadmap:ModularCharactersAndBlocks §0.2",
       "roadmap:ModularCharactersAndBlocks §1.3",
       "roadmap:ModularCharactersAndBlocks §4.1",
@@ -1371,6 +1424,11 @@
        "name": "inflation_mem_of_dominates",
        "role": "compatibility",
        "statement": "If B dominates B̄, inflation carries Irr(B̄) into Irr(B) and IBr(B̄) into IBr(B)."
+      },
+      {
+       "name": "dominates_changeOfLevel",
+       "role": "compatibility",
+       "statement": "π commutes with the scalar extension k_w → k_v of the change of level (6.3), so B dominates B̄ over k_w exactly when 1 ⊗ B dominates 1 ⊗ B̄ over k_v."
       }
      ],
      "tests": [
@@ -1404,10 +1462,11 @@
      "hypotheses": [
       "G a finite group",
       "p a prime",
-      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "(K, O, k) the splitting p-modular system of base §1.1 at a finite place v of F = ℚ(ζ_e), e = exp(G), over p: K = F_v, O its valuation ring (a complete discrete valuation ring with maximal ideal m), k = O/m a finite field of characteristic p, F → K the canonical map; v any place of F over p",
       "N ⊴ G",
       "b a block of N",
-      "T the stabiliser of b in G"
+      "T the stabiliser of b in G",
+      "blocks of subgroups, normalisers, stabilisers and quotients of G are taken over the same k, which agrees with their own systems by the change of level (6.3)"
      ],
      "locator": {
       "source": "martinez",
@@ -1473,14 +1532,16 @@
      "hypotheses": [
       "G a finite group",
       "p a prime",
-      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
-      "N ⊴ G"
+      "(K, O, k) the splitting p-modular system of base §1.1 at a finite place v of F = ℚ(ζ_e), e = exp(G), over p: K = F_v, O its valuation ring (a complete discrete valuation ring with maximal ideal m), k = O/m a finite field of characteristic p, F → K the canonical map; v any place of F over p",
+      "N ⊴ G",
+      "blocks of subgroups, normalisers, stabilisers and quotients of G are taken over the same k, which agrees with their own systems by the change of level (6.3)"
      ],
      "locator": {
       "source": "martinez",
       "where": "line 2264; Propositions 9.1, 9.3, 9.4, Corollary 9.5, Theorem 9.2, lines 2161-2293"
      },
      "prerequisites": [
+      "target:6.3",
       "target:7.1",
       "target:7.2",
       "roadmap:ModularCharactersAndBlocks §6.2",
@@ -1534,14 +1595,16 @@
      "hypotheses": [
       "G a finite group",
       "p a prime",
-      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
-      "P a p-subgroup of G"
+      "(K, O, k) the splitting p-modular system of base §1.1 at a finite place v of F = ℚ(ζ_e), e = exp(G), over p: K = F_v, O its valuation ring (a complete discrete valuation ring with maximal ideal m), k = O/m a finite field of characteristic p, F → K the canonical map; v any place of F over p",
+      "P a p-subgroup of G",
+      "blocks of subgroups, normalisers, stabilisers and quotients of G are taken over the same k, which agrees with their own systems by the change of level (6.3)"
      ],
      "locator": {
       "source": "martinez",
       "where": "Theorem 8.8, line 1985; Theorem 9.6, line 2295; sambale Chapter 1, Theorem 1.18"
      },
      "prerequisites": [
+      "target:6.3",
       "target:7.1",
       "target:7.2",
       "target:7.4",
@@ -1582,7 +1645,7 @@
      "hypotheses": [
       "G a finite group",
       "p a prime",
-      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "(K, O, k) the splitting p-modular system of base §1.1 at a finite place v of F = ℚ(ζ_e), e = exp(G), over p: K = F_v, O its valuation ring (a complete discrete valuation ring with maximal ideal m), k = O/m a finite field of characteristic p, F → K the canonical map; v any place of F over p",
       "B a block"
      ],
      "locator": {
@@ -1621,7 +1684,7 @@
      "hypotheses": [
       "G a finite group",
       "p a prime",
-      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "(K, O, k) the splitting p-modular system of base §1.1 at a finite place v of F = ℚ(ζ_e), e = exp(G), over p: K = F_v, O its valuation ring (a complete discrete valuation ring with maximal ideal m), k = O/m a finite field of characteristic p, F → K the canonical map; v any place of F over p",
       "P a p-subgroup with G = P C_G(P)",
       "B a block with defect group P"
      ],
@@ -1691,8 +1754,9 @@
      "hypotheses": [
       "G a finite group",
       "p a prime",
-      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
-      "D ⊴ G a defect group of B"
+      "(K, O, k) the splitting p-modular system of base §1.1 at a finite place v of F = ℚ(ζ_e), e = exp(G), over p: K = F_v, O its valuation ring (a complete discrete valuation ring with maximal ideal m), k = O/m a finite field of characteristic p, F → K the canonical map; v any place of F over p",
+      "D ⊴ G a defect group of B",
+      "blocks of subgroups, normalisers, stabilisers and quotients of G are taken over the same k, which agrees with their own systems by the change of level (6.3)"
      ],
      "locator": {
       "source": "reynolds",
@@ -1734,7 +1798,7 @@
      "hypotheses": [
       "G a finite group",
       "p a prime",
-      "(K, O, k) a splitting p-modular system for G (base §1.1): O a complete discrete valuation ring, K its fraction field of characteristic zero containing a primitive exp(G)-th root of unity, k its residue field of characteristic p",
+      "(K, O, k) the splitting p-modular system of base §1.1 at a finite place v of F = ℚ(ζ_e), e = exp(G), over p: K = F_v, O its valuation ring (a complete discrete valuation ring with maximal ideal m), k = O/m a finite field of characteristic p, F → K the canonical map; v any place of F over p",
       "B a block with defect group D",
       "D ⊴ G"
      ],
@@ -1778,7 +1842,7 @@
      "id": "9.1",
      "kind": "definition",
      "name": "BrauerHeightZero",
-     "statement": "For a prime p: for every finite G (fixed universe), every splitting p-modular system and every block B with defect group D, Irr(B) = Irr₀(B) ⟺ D abelian. Proved instances: defect zero, normal defect group. Cited: kessar-malle Thm 1.1, mnst Thm A, ruhstorfer Cor B.",
+     "statement": "For a prime p: for every finite G (fixed universe), every place v of ℚ(ζ_{exp G}) over p with the system of base §1.1 at v, and every block B of k_v[G] with defect group D, Irr(B) = Irr₀(B) ⟺ D abelian. Proved instances: defect zero, normal defect group. Cited: kessar-malle Thm 1.1, mnst Thm A, ruhstorfer Cor B.",
      "hypotheses": [
       "p a prime",
       "a universe of groups"
@@ -1804,9 +1868,9 @@
        "statement": "Blocks with a normal defect group satisfy it (§8.4)."
       },
       {
-       "name": "brauerHeightZero_indep_system",
+       "name": "brauerHeightZero_iff_one_place",
        "role": "invariance",
-       "statement": "Independent of the splitting system."
+       "statement": "For a given G, the equivalence holds for all blocks at one place over p exactly when it holds at every place (change of place, 6.3)."
       }
      ],
      "tests": [
@@ -1824,6 +1888,11 @@
        "name": "trivial_group",
        "kind": "degenerate",
        "statement": "G = 1: one block of defect zero."
+      },
+      {
+       "name": "c7c2_two_places",
+       "kind": "computation",
+       "statement": "C₇ × C₂, p = 2, at each of the two places over 2: defect group 1 × C₂, abelian, all heights 0."
       }
      ]
     },
@@ -1831,7 +1900,7 @@
      "id": "9.2",
      "kind": "definition",
      "name": "AlperinMcKay",
-     "statement": "For a block B with defect group D and Brauer correspondent b' in N_G(D): |Irr₀(B)| = |Irr₀(b')|; the property at p for all blocks of all finite groups. Proved instances: defect zero, normal defect group. Cited: ruhstorfer Theorem A (p = 2).",
+     "statement": "For a block B with defect group D and Brauer correspondent b' in N_G(D): |Irr₀(B)| = |Irr₀(b')|; the property at p for all blocks of all finite groups G (fixed universe) at every place of ℚ(ζ_{exp G}) over p, with the system of base §1.1 there; b' is a block over the same residue field, and Irr₀(b') is read there through the change of level (6.3). Proved instances: defect zero, normal defect group. Cited: ruhstorfer Theorem A (p = 2).",
      "hypotheses": [
       "p a prime",
       "a universe of groups"
@@ -1856,6 +1925,11 @@
        "name": "alperinMcKay_defectZero",
        "role": "instance",
        "statement": "Defect zero blocks satisfy it."
+      },
+      {
+       "name": "alperinMcKay_iff_one_place",
+       "role": "invariance",
+       "statement": "For a given G, the equality holds for all blocks at one place over p exactly when it holds at every place: the change of place of 6.3 carries B, its Brauer correspondent and their height zero characters to σB and its correspondent."
       }
      ],
      "tests": [
@@ -1904,7 +1978,7 @@
     "§8.1",
     "§8.2"
    ],
-   "what": "splitting p-modular systems, block idempotents and their lifts, Brauer characters, decomposition numbers, projective characters, block partitions, generalized decomposition numbers, relative traces and the Brauer map, defect groups and their characterisations including the defect classes, Brauer pairs, block induction, the first main theorem in its Brauer-projection form over the residue field (§6.2) and the second main theorem, domination by normal p-subgroups, and covering for arbitrary normal subgroups"
+   "what": "the splitting p-modular system at a finite place of ℚ(ζ_e) over p (§1.1), for which the base states its Layers 2–8, block idempotents and their lifts, Brauer characters, decomposition numbers, projective characters, block partitions, generalized decomposition numbers, relative traces and the Brauer map, defect groups and their characterisations including the defect classes, Brauer pairs, the central character of a block (§6.2), block induction, the first main theorem in its Brauer-projection form over the residue field (§6.2) and the second main theorem, domination by normal p-subgroups, covering for arbitrary normal subgroups, the scalar extension of blocks along an extension of a splitting residue field (§6.2), the radical base change (§2.3) and the compatibility of the decomposition map with a change of splitting modular system (§2.4)"
   },
   {
    "roadmap": "InverseGaloisAndArithmeticFundamentalGroups",
