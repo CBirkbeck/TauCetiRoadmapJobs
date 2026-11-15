@@ -71,19 +71,22 @@ It leaves the following to the named roadmaps and does not state them again.
   6.10–6.15 and 6.22.
 - Vogan–Zuckerman modules, their relative Lie algebra cohomology and its Hermitian Hodge
   decomposition are AutomorphicFormsOnReductiveGroups §§5.2 and 5.4; fields of rationality and
-  descent are its §5.7; explicit `GL₂(ℝ)` modules are its §2.6. Local systems, Betti complexes,
-  Hecke actions, level pullbacks and traces and the automorphic comparison of locally symmetric
-  spaces are ArithmeticLocallySymmetricSpaces §§ALS.1.1–ALS.1.2, ALS.1.8, ALS.3.3, ALS.3.6 and
-  ALS.5b.1–ALS.5b.4. The spectral decomposition of a compact quotient is AutomorphicSpectralTheory
-  §4.7.
+  descent are its §5.7; explicit `GL₂(ℝ)` modules are its §2.6. Arithmetic locally symmetric
+  spaces `X_K` with their local systems, Hecke actions and automorphic comparison are
+  ArithmeticLocallySymmetricSpaces; `X_K` divides out only the `ℚ`-split central torus (§ALS.0.4), so
+  it is not `Sh_K(ℂ)` when the centre has real-split directions that are not `ℚ`-split, and the
+  analogous theory on the quotient by `K_h = Stab_{G(ℝ)}(h)` is that roadmap's contract
+  gap:shimura-matsushima-comparison. The transfer of a finite covering is AlgebraicTopology §5.3 and
+  the finite étale trace in étale cohomology is EtaleCohomologyFoundations §0.8. The spectral
+  decomposition of a compact quotient is AutomorphicSpectralTheory §4.7.
 - Global Jacquet–Langlands, strong multiplicity one, cohomological rationality, Hilbert algebraic
   weights, base change, the adjoint lift and quadratic automorphic induction are
   GL2AutomorphicRepresentationsAndTransfer §§R16.4.4, R16.4.5, R16.6.3, R17.3.1, R17.3.5–R17.3.8,
   R17.4.2, R17.4.13 and R17.4.16.
-- Finite level maps with their effective quotient actions, canonical models, reflex norms,
-  finite-level reciprocity, functoriality in the datum and zero-dimensional Shimura varieties are
-  ShimuraVarieties §§1.3, 4.2, 4.3, 4.9, 6.7, 8.1, 8.5 and 8.6; neat levels are AdelicAlgebraicGroups
-  §4.3.
+- Finite level maps with their effective quotient actions, holomorphic maps of data, canonical
+  models, reflex norms, finite-level reciprocity, functoriality in the datum and zero-dimensional
+  Shimura varieties are ShimuraVarieties §§1.3, 1.6, 4.2, 4.3, 4.9, 6.7, 8.1, 8.3, 8.5 and 8.6; neat
+  levels are AdelicAlgebraicGroups §4.3.
   Variations of Hodge structure, the rational Hodge structures of SV4 and Kostant representatives are
   ShimuraData §§3.1, 3.3, 3.10 and 4.3.
 - Weak approximation, ray class groups, finite ideles and Hecke characters are GlobalNumberFields
@@ -225,16 +228,37 @@ Poincaré duality, pushforward along projections and the correspondence action. 
 
 ### From TauCetiRoadmap.ArithmeticLocallySymmetricSpaces
 
-§ALS.1.1 local systems from coefficient modules; §ALS.1.2 Betti complexes; §ALS.1.8 pullback along
-level maps; §ALS.3.3 the Hecke action; §ALS.3.6 trace along level maps; §ALS.5b.1 the de Rham and
-relative Lie algebra comparison; §ALS.5b.4 the automorphic comparison map `ι_𝒜`, Hecke-equivariant
-and compatible with level maps, an isomorphism under `FrankeInput`.
+No construction on its spaces `X_K = G(ℚ)∖(G(ℝ)/K_∞A_∞ × G(𝔸_f)/K)` is consumed. They divide out only
+`A_∞`, the identity component of the real points of the maximal `ℚ`-split central torus (§ALS.0.4),
+and their trace along level maps composes with pullback to the index `[K : K′]` (§ALS.3.6). A Shimura
+variety divides out `K_h = Stab_{G(ℝ)}(h)`, which contains all of `Z(ℝ)`: for `Res_{ℚ(√2)/ℚ}𝔾_m` with
+trivial `h` at level `K(3)` the first space is a circle and the second a point (§0.2, Checks).
 
-What ArithmeticLocallySymmetricSpaces must provide (gap:compact-matsushima): for `G` anisotropic
-modulo its centre, prove `FrankeInput(G, K, V)` unconditionally, so that `ι_𝒜` gives the
-Hecke-equivariant Matsushima decomposition `H^*(X_K, V) ≃ ⊕_π m(π) H^*(𝔪_G, K_∞; π_∞ ⊗ V) ⊗ π_f^K`
-over the discrete spectrum, compatible with level maps, by the compact-quotient spectral
-decomposition instead of Eisenstein series (IP23, §2.2.2, p. 16).
+What ArithmeticLocallySymmetricSpaces must provide (gap:shimura-matsushima-comparison): let `G` be
+connected reductive over `ℚ`, `K_h ⊂ G(ℝ)` a closed subgroup containing `Z(ℝ)` with `K_h/Z(ℝ)`
+compact (for a Shimura datum `(G, X)` and `h ∈ X`, `K_h = Stab_{G(ℝ)}(h)`), put
+`S_K = G(ℚ)∖(G(ℝ)/K_h × G(𝔸_f)/K)` for compact open `K ⊂ G(𝔸_f)` (so `S_K = Sh_K(ℂ)` for a Shimura
+datum), and let `V` be a finite-dimensional representation of `G` over a number field `L ⊂ ℂ` on
+which `Z(ℚ) ∩ K` acts trivially for every sufficiently small `K`. For neat `K`, supply: the local
+system `𝕍_K` of `L`-vector spaces on `S_K`, by descent along the action of `G(ℚ)` on
+`G(ℝ)/K_h × G(𝔸_f)/K`, whose stabilizers are then all equal to the central group `Z(ℚ) ∩ K`, acting
+trivially on `V`; the Hecke action of `H(G(𝔸_f), K)` on `H^*(S_K, 𝕍)`, with pullback along level maps
+and right translations; the de Rham and relative Lie algebra comparison
+`H^*(S_K, 𝕍_ℂ) ≃ H^*(𝔤, K_h; C^∞(G(ℚ)∖G(𝔸)/K) ⊗ V_ℂ)`, whose relative complex is built on `𝔤/𝔨_h`
+and so divides out the real central directions `Lie Z(ℝ)`, `K_h`-invariance forcing the functions
+to transform under `Z(ℝ)°` by the inverse of its action on `V`; when `S_K` is compact, the
+Hecke-equivariant Matsushima decomposition
+`H^*(S_K, 𝕍_ℂ) ≃ ⊕_π m(π) H^*(𝔤, K_h; π_∞ ⊗ V_ℂ) ⊗ π_f^K`, the sum over the automorphic
+representations `π` occurring discretely in the functions on `G(ℚ)∖G(𝔸)` with that central
+behaviour and `m(π)` their multiplicity, obtained (after twisting by a positive character that makes
+the central character unitary) from the discrete decomposition of `L²` of the compact quotient
+`G(ℚ)Z(ℝ)°∖G(𝔸)` (AutomorphicSpectralTheory §4.7), not from Eisenstein series and not from `X_K`;
+and the compatibility of these with the covering transfers of the finite level maps
+`S_{K₁} → S_{K₂}`, `K₁ ⊂ K₂`, whose composite with pullback is the effective degree
+`[K₂ : K₁(K₂ ∩ Z(ℚ))]` of §0.3 and whose automorphic counterpart sums right translates over
+`K₂/K₁(K₂ ∩ Z(ℚ))` (IP23, §2.2.2, p. 16; Mil17, Lemma 5.13 and footnote 40, p. 57). It sits beside
+§§ALS.5b.1 and ALS.5b.4, with `K_∞A_∞` replaced by `K_h`; axiom SV5 is not imposed, so `Res_{F/ℚ}B^×`
+is covered for every totally real `F`.
 
 ### From TauCetiRoadmap.ComplexKahlerGeometry
 
@@ -250,7 +274,10 @@ degree (the Hodge decomposition of IP23, §11.3, p. 85).
 ### From TauCetiRoadmap.ShimuraVarieties
 
 §1.3 `TauCeti.Shimura.holomorphic_level_maps` (finite level maps, locally biholomorphic at neat
-target, with the effective image of `K/K′` acting with quotient `Sh_K`); §4.2
+target, with the effective image of `K/K′` acting with quotient `Sh_K`); §1.6 holomorphic maps of
+Shimura varieties induced by morphisms of data and compatible levels; §8.3 finiteness and, at neat
+level, étaleness of the algebraic level maps of canonical models, with the effective quotient action;
+§4.2
 `TauCeti.Shimura.ReflexNorm`; §4.3 `TauCeti.Shimura.reciprocity_finite_action` (the action of
 `r_h(s)` on `T(ℚ)∖T(𝔸_f)/K` factors through `art_E`); §4.9 `TauCeti.Shimura.ReflexNorm.map_full`
 (reflex norms under a torus morphism); §6.7 `TauCeti.Shimura.abelian_canonical`; §8.1 the canonical
@@ -408,9 +435,17 @@ over `ℂ`.
 
 ### From TauCetiRoadmap.EtaleCohomologyFoundations and ComplexComparisonPartII
 
-EtaleCohomologyFoundations §F.2.1 proper base change, §F.2.2 smooth base change and §F.3 finiteness
-and generic acyclicity. ComplexComparisonPartII C6 `artinComparison` for constructible coefficients
-and Betti local systems.
+EtaleCohomologyFoundations §F.2.1 proper base change, §F.2.2 smooth base change, §F.3 finiteness
+and generic acyclicity, and §0.8 the trace of a finite étale map, whose composite with pullback is
+multiplication by its degree. ComplexComparisonPartII C6 `artinComparison` for constructible
+coefficients and Betti local systems.
+
+### From TauCetiRoadmap.AlgebraicTopology
+
+§2.6 local systems and their functoriality; §5.3 the transfer of a finite covering, built on Tau
+Ceti's `IsCoveringMap.singularTransfer`, whose composite with the projection is multiplication by the
+number of points in a fibre when that number is constant, with the permutation local system of a
+finite cover for twisted coefficients.
 
 ### From TauCetiRoadmap.PadicHodgeTheory, PadicPeriodRings and SelmerIwasawaCohomology
 
@@ -504,10 +539,13 @@ split over `ℝ` but has no subtorus split over `ℚ`, and assume that the weigh
 quotient datum; for `G = Res_{F/ℚ}B^×` the weight lands in the centre `Res_{F/ℚ}𝔾_m`, whose
 quotient by `Z_s = ker N_{F/ℚ}` is `𝔾_m`, so this holds). The weight cocharacter is central, so
 `V = ⊕_w V_w` as representations over `L`, where `V_w` is the summand on which `(V, ρ∘h)` has Hodge
-weight `w`. Construct, for every sufficiently small compact open `K ⊂ G(𝔸_f)`:
+weight `w`. For `h ∈ X` let `K_h = Stab_{G(ℝ)}(h)`, the centralizer of `h`; it contains `Z(ℝ)`, and
+`Sh_K(ℂ) = G(ℚ)∖(G(ℝ)/K_h × G(𝔸_f)/K)` (Mil17, footnote 40, p. 57). Construct, for every
+sufficiently small compact open `K ⊂ G(𝔸_f)`:
 
 - the local system `𝕍 = ⊕_w 𝕍_w` of `L`-vector spaces on `Sh_K(ℂ)` attached to `ρ`
-  (ArithmeticLocallySymmetricSpaces §ALS.1.1), each `𝕍_w` underlying a polarizable variation of Hodge
+  (gap:shimura-matsushima-comparison; `Z(ℚ) ∩ K` acts trivially on `V` for `K` small because `ρ`
+  factors through `G/Z_s`), each `𝕍_w` underlying a polarizable variation of Hodge
   structure of weight `w` (ShimuraData §§3.1, 3.3, 4.3), and the `L`-Hodge structure
   `H^i(Sh_K(ℂ), 𝕍) = ⊕_w H^i(Sh_K(ℂ), 𝕍_w)`, whose summand `H^i(Sh_K(ℂ), 𝕍_w)` is pure of weight
   `i + w` (gap:vhs-hodge-decomposition); `H^i(Sh_K(ℂ), 𝕍)` is pure exactly when the nonzero summands
@@ -521,8 +559,9 @@ weight `w`. Construct, for every sufficiently small compact open `K ⊂ G(𝔸_f
   morphisms;
 - for an irreducible cohomological `Π`, the isotypic part
   `H^i(Sh, 𝕍)_Π = Hom_{H(G(𝔸_f),K)}(Π_f^K, H^i(Sh_K, 𝕍))`, independent of `K` small, with the
-  Matsushima description `H^i(Sh_K(ℂ), 𝕍_ℂ)_Π ≃ ⊕_{π_f^K ≃ Π_f^K} m(π) H^i(𝔤, K_∞; π_∞ ⊗ V_ℂ)`
-  (gap:compact-matsushima).
+  Matsushima description `H^i(Sh_K(ℂ), 𝕍_ℂ)_Π ≃ ⊕_{π_f^K ≃ Π_f^K} m(π) H^i(𝔤, K_h; π_∞ ⊗ V_ℂ)`,
+  relative to `K_h` and so with the real central directions divided out
+  (gap:shimura-matsushima-comparison).
 
 (IP23, §2.2.2, pp. 16–17, including the comparison (2.1).) *Proof route:* the étale realizations are
 unramified outside a finite set by spreading out a smooth proper model of the canonical model and
@@ -555,6 +594,13 @@ de Rham, and finite induction (PadicHodgeTheory §3.3) makes `H^i_et(Sh_K ⊗_E 
   weight `r ↦ r⁻¹` lies in the rational subtorus `𝔾_m`; on the finite set `Sh_K`, `H^0` is the sum of
   a summand of type `(0,0)` and a summand of type `(−1,−1)`, weights `0` and `−2`. It is not pure;
   each weight summand is.
+- The real central directions are divided out. For `T = Res_{ℚ(√2)/ℚ}𝔾_m` with trivial `h`, trivial
+  coefficients and the level `K(3)` of §0.3, `K_h = T(ℝ)`, the domain is a point and `Sh_{K(3)}` is one
+  point, so `(dim H⁰, dim H¹) = (1, 0)`. The arithmetic quotient of ArithmeticLocallySymmetricSpaces
+  §ALS.0.6 divides `T(ℝ)` only by `{±1}² · ℝ_{>0}` (diagonal `ℝ_{>0}`), leaving the line
+  `log|a| − log|b|`, on which the unit `−ε⁴ ≡ 1 mod 3`, `ε = 1 + √2`, translates by `8 log ε ≠ 0`; it is
+  a circle with `(dim H⁰, dim H¹) = (1, 1)`. A comparison relative to `K_∞A_∞` instead of `K_h` would
+  give the circle's cohomology.
 - The isotypic part is a multiplicity space, not the whole `Π`-isotypic summand: for
   `dim Π_f^K = r` the summand of `H^i` is `r` copies of it.
 - Replacing `ρ` by its dual exchanges degrees `i` and `2D − i` under Poincaré duality, with the twist
@@ -564,8 +610,8 @@ de Rham, and finite induction (PadicHodgeTheory §3.3) makes `H^i_et(Sh_K ⊗_E 
   be applied to it as a whole; every component `X⁺ × gK` contains a special point, because a special
   `h ∈ X⁺` gives the special point `[h, g]`.
 
-*Needs:* ArithmeticLocallySymmetricSpaces §§ALS.1.1–ALS.1.2, ALS.3.3, ALS.5b.4 and
-gap:compact-matsushima; ShimuraData §§3.1, 3.3, 4.3; ComplexKahlerGeometry §K6.1 and
+*Needs:* ArithmeticLocallySymmetricSpaces gap:shimura-matsushima-comparison; AutomorphicSpectralTheory
+§4.7; ShimuraData §§3.1, 3.3, 4.3; ComplexKahlerGeometry §K6.1 and
 gap:vhs-hodge-decomposition; ShimuraVarieties §§4.3, 6.7, 8.1; ComplexComparisonPartII C6;
 EtaleCohomologyFoundations §§F.2.1–F.2.2, F.3; PadicHodgeTheory §§3.3, 7.2, 8.1 and
 gap:derham-local-system-cohomology; MotivesAndAlgebraicCycles §7.15.
@@ -574,8 +620,9 @@ gap:derham-local-system-cohomology; MotivesAndAlgebraicCycles §7.15.
 
 Let `f : (G, X₁) → (H, X₂)` be a morphism of Shimura data with the same reflex field `E`, and `ρ` a
 representation of `H` as in §0.2, viewed on `G` through `f`. Construct the pullback
-`f^* : H^i(Sh_H, 𝕍) → H^i(Sh_G, 𝕍)` in Betti and `ℓ`-adic realizations as a morphism of `M_E^L`
-(ShimuraVarieties §8.5; ArithmeticLocallySymmetricSpaces §ALS.1.8). If `G → H` is surjective with
+`f^* : H^i(Sh_H, 𝕍) → H^i(Sh_G, 𝕍)` in Betti and `ℓ`-adic realizations as a morphism of `M_E^L`, by
+pulling the local system and the étale sheaf back along the map of Shimura varieties and of their
+canonical models (ShimuraVarieties §§1.6, 8.5; AlgebraicTopology §2.6). If `G → H` is surjective with
 central kernel `Z` and `G(𝔸) → H(𝔸)` is surjective, prove that `f^*` identifies the
 `Π_H`-isotypic part with the `Π_G`-isotypic part for the corresponding automorphic representations on
 which `Z` acts trivially.
@@ -593,16 +640,19 @@ instance volume one) makes every volume rational. Prove the degree formula: for 
 `[x, gk]` with `k ∈ K₂`; an element `q ∈ G(ℚ) ∩ gK₂g⁻¹` fixing `x` has image in `G^ad(ℝ)` both in a
 compact group and in a discrete arithmetic group, so of finite order, so trivial by neatness; hence
 `q ∈ Z(ℚ) ∩ K₂`, and `[x, gk] = [x, gk′]` exactly when `k ∈ k′(K₂ ∩ Z(ℚ))K₁` (Mil17, Lemma 5.13,
-p. 57; ShimuraVarieties §1.3). When `Z(ℚ)` is discrete in `Z(𝔸_f)` (axiom SV5; Mil17, Theorem 5.26
-and Remark 5.27, p. 64) a neat level meets `Z(ℚ)` trivially and the degree is `[K₂ : K₁]`. For
-`Res_{F/ℚ}B^×` with `[F : ℚ] ≥ 2`, `Z(ℚ) = F^×` is not discrete: every compact open level meets it in
+p. 57; ShimuraVarieties §§1.3, 8.3). When `Z(ℚ)` is discrete in `Z(𝔸_f)` (axiom SV5; Mil17,
+Theorem 5.26 and Remark 5.27, p. 64) a neat level meets `Z(ℚ)` trivially and the degree is
+`[K₂ : K₁]`. For `Res_{F/ℚ}B^×` with `[F : ℚ] ≥ 2`, `Z(ℚ) = F^×` is not discrete: every compact open level meets it in
 a subgroup of finite index in `O_F^×`, of rank `[F : ℚ] − 1`, and the degree can be smaller than
 `[K₂ : K₁]`.
 
 If `G → H` is surjective as a morphism of algebraic groups with central kernel, whether or not
 `G(𝔸) → H(𝔸)` is surjective, construct the pushforward `f_*`: for small `K₁, K₂` the map
 `Sh_{G,K₁} → Sh_{H,K₂}` is finite étale onto a union of components, and `f_*` is the covering trace
-onto the image extended by zero, multiplied by `vol(K̄₁)/vol(K̄₂) ∈ ℚ_{>0}` for the fixed rational
+onto the image, that is the transfer of this finite covering (AlgebraicTopology §5.3 in the Betti
+realization, with twisted coefficients through the permutation local system of the cover;
+EtaleCohomologyFoundations §0.8 in the `ℓ`-adic realization), extended by zero and multiplied by
+`vol(K̄₁)/vol(K̄₂) ∈ ℚ_{>0}` for the fixed rational
 Haar measures on the effective groups `Ḡ` and `H̄` (IP23, §2.2.3, pp. 16–17, and Remark 2.2, p. 17,
 whose Haar measures on `G(𝔸_f)` and `H(𝔸_f)` agree with these at neat levels, up to a constant, when
 both centres satisfy SV5). The measures are rational, as Wal85, §I.2, p. 124, takes them for the
@@ -634,6 +684,13 @@ surjective with central kernel only the pullback is constructed.
   index is `72/8 = 9`, and the degree is `3 = [K(3) : K(9)(K(3) ∩ ℚ(√2)^×)]`, the unit `−ε⁴` having
   image of order `3` in `K(3)/K(9)`. Haar volumes on `T(𝔸_f)` would give `f_*f^* = 3/9 = 1/3`; the
   effective volumes give `3·(1/3) = 1`. This `T` is the centre of `Res_{F/ℚ}B^×` for `F = ℚ(√2)`.
+- The trace is that of the finite étale map of Shimura varieties, not a trace on the arithmetic
+  quotients of ArithmeticLocallySymmetricSpaces §ALS.0.6. In the torus instance above those quotients
+  are one circle at level `K(3)` and three circles at level `K(9)`: the units `−ε⁴` and `−ε¹²` fixing
+  the points of `(O/3)^×` and `(O/9)^×` translate the line `log|a| − log|b|` by `8 log ε` and
+  `24 log ε`, so each circle covers with degree `3`. Their trace composed with pullback is
+  `9 = [K(3) : K(9)]` (§ALS.3.6), and with the effective volume ratio it would give `9·(1/3) = 3`;
+  the transfer of three points onto one point gives `3`, normalized to `3·(1/3) = 1`.
 - A component of `Sh_{H,K₂}` outside the image receives zero under `f_*`; the trace is not an
   isomorphism induced by a covering.
 - Shrinking `K₁` to a normal subgroup `K₁′` with `[K̄₁ : K̄₁′] = m` multiplies the covering trace of a
@@ -653,9 +710,11 @@ surjective with central kernel only the pullback is constructed.
   dimension one to dimension two and is not étale onto a union of components. Pullback along it is
   defined; the normalized trace is not.
 
-*Needs:* §0.2; ShimuraVarieties §§1.3, 8.5; AdelicAlgebraicGroups §4.3; ArithmeticLocallySymmetricSpaces
-§§ALS.1.8, ALS.3.6 (the covering trace at neat level, whose composite with pullback is the degree of
-the degree formula); MotivesAndAlgebraicCycles §7.15.
+*Needs:* §0.2; ShimuraVarieties §§1.3, 1.6, 8.3, 8.5 (the finite étale level maps and the maps of
+data, whose covering transfer composed with pullback is the effective degree of the degree formula);
+AdelicAlgebraicGroups §4.3; AlgebraicTopology §§2.6, 5.3; EtaleCohomologyFoundations §0.8;
+ArithmeticLocallySymmetricSpaces gap:shimura-matsushima-comparison (its compatibility with level
+maps and covering transfers, for the isotypic statement); MotivesAndAlgebraicCycles §7.15.
 
 ### 0.4 The division-algebra reduction
 
@@ -773,11 +832,11 @@ in `H¹` of two Shimura curves over `F`, `B` is ramified at `{𝔭, 𝔮}`, and 
 
 GL2AutomorphicRepresentationsAndTransfer §§R16.4.5, R17.3.1, R17.3.5–R17.3.8 and
 gap:quaternionic-rational-model; MotivesAndAlgebraicCycles §§2.2–2.3, 2.6–2.7, 7.1, 7.15;
-ArithmeticLocallySymmetricSpaces §§ALS.1.1–ALS.1.2, ALS.1.8, ALS.3.3, ALS.3.6, ALS.5b.4; ShimuraData
-§§3.1, 3.3, 4.3; ShimuraVarieties §§1.3, 4.3, 6.7, 8.1, 8.5; AdelicAlgebraicGroups §4.3;
-ComplexKahlerGeometry §K6.1; ComplexComparisonPartII C6; EtaleCohomologyFoundations §§F.2.1–
-F.2.2, F.3; PadicHodgeTheory §§3.3, 8.1; ClassFieldTheory Layer 10; AutomorphicFormsOnReductiveGroups
-§§2.6, 5.4; Tau Ceti `TauCeti.Hodge`.
+ArithmeticLocallySymmetricSpaces gap:shimura-matsushima-comparison; AutomorphicSpectralTheory §4.7;
+ShimuraData §§3.1, 3.3, 4.3; ShimuraVarieties §§1.3, 1.6, 4.3, 6.7, 8.1, 8.3, 8.5; AdelicAlgebraicGroups
+§4.3; AlgebraicTopology §§2.6, 5.3; ComplexKahlerGeometry §K6.1; ComplexComparisonPartII C6;
+EtaleCohomologyFoundations §§0.8, F.2.1–F.2.2, F.3; PadicHodgeTheory §§3.3, 8.1; ClassFieldTheory
+Layer 10; AutomorphicFormsOnReductiveGroups §§2.6, 5.4; Tau Ceti `TauCeti.Hodge`.
 
 ## Layer 1: the Hermitian exterior construction
 
@@ -1254,8 +1313,9 @@ characters along §3.3, and prove that `(k₁, k₂, k₃, k₄) ↦ (k₁+k₃,
 
 ### 3.5 Cohomology of the archimedean theta modules
 
-For even `k ≥ 2` let `D_{k+1}` be the holomorphic discrete series of `SL₂(ℝ)` of weight `k + 1` and
-`D_{k+1}^∨` its dual, the antiholomorphic discrete series of weight `−k − 1`. In the convention of
+For every integer `k ≥ 2`, odd as well as even (this local statement is not subject to the global
+even-weight convention), let `D_{k+1}` be the holomorphic discrete series of `SL₂(ℝ)` of weight `k + 1`
+and `D_{k+1}^∨` its dual, the antiholomorphic discrete series of weight `−k − 1`. In the convention of
 this roadmap, where `θ(τ)` is MetaplecticAutomorphicForms' lift of `τ^∨` (Conventions), its §3.35
 gives: the real theta lift of the antiholomorphic `D_{k+1}^∨` to `O(4,2)` restricts to
 `A_{q₁}(k−2, 0, 0)` on `SO(4,2)°` (lowest `K`-type `(k, 0, 0)`), and that of the holomorphic
@@ -1286,8 +1346,16 @@ by the Hermitian bidegree formula of AutomorphicFormsOnReductiveGroups §5.4 wit
 - At `k = 2` and the compact place, the lift of the holomorphic `D₃` to `O(0,6)` has highest weight
   `(0, 0, 0)`, so it is one-dimensional and its relative Lie algebra cohomology is the line `H⁰`;
   the lift of `D₃^∨` is zero.
+- Odd weight `k = 3`: the lift of `D₄^∨` is `A_{q₁}(1, 0, 0)`, with lowest `K`-type
+  `(1, 0, 0) + 2ρ(𝔲₁ ∩ 𝔭) = (3, 0, 0)`; with the harmonic coefficient of degree one, the
+  six-dimensional standard representation of highest weight `(1, 0, 0)`, its cohomology has
+  dimensions `1, 2, 1` in bidegrees `(1,1), (2,2), (3,3)`, the coefficients of `t⁰, t², t⁴` in
+  `(1 + t²)² = 1 + 2t² + t⁴` shifted by `(1,1)`. The lift of `D₄` to `O(0,6)` is that six-dimensional
+  representation, whose coefficient cohomology is the line `H⁰`. Its weight `(1, 0, 0)` has odd
+  coordinate sum and is outside the domain of §3.4, so the projective coefficient constructions
+  (§5.4, Layer 8) use only even `k`; the statement here does not.
 
-*Needs:* §3.4; MetaplecticAutomorphicForms §3.35; AutomorphicFormsOnReductiveGroups §§5.2, 5.4.
+*Needs:* MetaplecticAutomorphicForms §3.35; AutomorphicFormsOnReductiveGroups §§5.2, 5.4.
 
 ### Examples
 
@@ -2052,7 +2120,8 @@ equivalent to `Π^γ` (IP23, §4.4, pp. 24–25; §11.3, pp. 83–86; proof of T
 - A single complex eigenspace with nonrational eigencharacter is not a `ℚ(k)`-subspace.
 - A Hecke ideal with no matching eigencharacter gives the zero space.
 
-*Needs:* §§0.2, 5.4, 7.2; ArithmeticLocallySymmetricSpaces §ALS.3.3; AutomorphicFormsOnReductiveGroups
+*Needs:* §§0.2, 5.4, 7.2; ArithmeticLocallySymmetricSpaces gap:shimura-matsushima-comparison;
+AutomorphicFormsOnReductiveGroups
 §5.7; GL2AutomorphicRepresentationsAndTransfer §§R16.4.5, R17.3.7.
 
 ### 8.5 Degree selection in the theta eigenspace
@@ -2073,7 +2142,7 @@ cochain bidegrees; the actual Hodge types are §8.7.
 - The route does not use a global classification of automorphic representations of `U(2,2)`-forms.
 
 *Needs:* §§0.2, 3.5, 6.5, 8.2, 8.3, 8.4; MetaplecticAutomorphicForms §3.35; ArithmeticLocallySymmetricSpaces
-§ALS.5b.4 and gap:compact-matsushima.
+gap:shimura-matsushima-comparison.
 
 ### 8.6 Hodge types of the coefficient-cohomology summands
 
@@ -2138,7 +2207,8 @@ its `q₁` part in cochain bidegree `(1,1)` has Hodge type `(1,1)`, and the shif
 ### Dependencies
 
 Layers 0–7; AutomorphicFormsOnReductiveGroups §§5.2, 5.4, 5.7; ShimuraData §§3.1, 3.10, 4.3;
-ArithmeticLocallySymmetricSpaces §§ALS.3.3, ALS.5b.4; MetaplecticAutomorphicForms §§3.35, 3.36;
+ArithmeticLocallySymmetricSpaces gap:shimura-matsushima-comparison; MetaplecticAutomorphicForms
+§§3.35, 3.36;
 GL2AutomorphicRepresentationsAndTransfer §§R16.4.5, R17.3.1, R17.3.7, R17.4.2, R17.4.13, R17.4.16;
 AutomorphicLFunctionsAndLocalFactors §AL.3.6.3.
 
@@ -2376,7 +2446,7 @@ every sign; opposite-sign Poincaré duality makes the operator diagonal.
 - The coefficient pairing and the restriction fix the individual signs: off-diagonal entries vanish by
   the `K′`-weights.
 
-*Needs:* §§0.6, 7.10, 10.2, 10.3; ArithmeticLocallySymmetricSpaces §ALS.5b.4 and gap:compact-matsushima.
+*Needs:* §§0.6, 7.10, 10.2, 10.3; ArithmeticLocallySymmetricSpaces gap:shimura-matsushima-comparison.
 
 ### 10.5 Galois-invariant component parameters
 
@@ -2504,7 +2574,7 @@ structures of type `(1,0) + (0,1)`, `ℋ` is the `ℚ`-space `H²(Sh, ℚ)[I]` o
 Layers 0–9; MotivesAndAlgebraicCycles §§2.2–2.3, 2.6–2.7, 7.1, 7.15; ShimuraVarieties §§4.2, 4.3,
 4.9, 8.5, 8.6; GL2AutomorphicRepresentationsAndTransfer §§R16.4.5, R16.6.3, R17.3.1, R17.3.6, R17.3.7
 and gap:quaternionic-rational-model; GlobalNumberFields Layer 1; ClassFieldTheory Layer 10 and §5.4;
-ArithmeticLocallySymmetricSpaces §ALS.5b.4; Mathlib `MvPolynomial.funext`.
+ArithmeticLocallySymmetricSpaces gap:shimura-matsushima-comparison; Mathlib `MvPolynomial.funext`.
 
 ## Downstream consumers
 
@@ -2554,6 +2624,9 @@ surrounding argument.
 - §2.1, p. 14: an `L`-Hodge structure is read as a rational Hodge structure with `L`-action, since
   complex conjugation does not preserve a nonreal embedding of `L`; in the application `L` is totally
   real.
+- §2.2.2, p. 16: the relative Lie algebra cohomology in Matsushima's formula is read relative to the
+  stabilizer `K_h` of `h`, which contains `Z(ℝ)`; dividing `G(ℝ)` only by a maximal compact subgroup
+  and the `ℚ`-split central torus gives a different space as soon as `Z_s ≠ 1` (§0.2, Checks).
 - Remark 2.2, p. 17: the volume factor of the normalized pushforward is read in the effective groups
   `G(𝔸_f)/Z(ℚ)⁻`; with Haar measures on `G(𝔸_f)` itself it depends on the levels as soon as `Z(ℚ)` is
   not discrete in `Z(𝔸_f)`, which is the case for `Res_{F/ℚ}B^×` whenever `[F : ℚ] ≥ 2` (§0.3). The

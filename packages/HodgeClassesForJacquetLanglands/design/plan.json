@@ -3996,10 +3996,10 @@
   ],
   "gaps": [
     {
-      "slug": "compact-matsushima",
-      "needs": "For G anisotropic modulo its centre, prove FrankeInput(G, K, V) unconditionally, so that the automorphic comparison map gives the Hecke-equivariant Matsushima decomposition H^*(X_K, V) ≃ ⊕_π m(π) H^*(𝔪_G, K_∞; π_∞ ⊗ V) ⊗ π_f^K compatible with level maps, by the compact-quotient spectral decomposition instead of Eisenstein series (IP23, §2.2.2, p. 16).",
+      "slug": "shimura-matsushima-comparison",
+      "needs": "For a connected reductive G over ℚ, a closed subgroup K_h ⊂ G(ℝ) containing Z(ℝ) with K_h/Z(ℝ) compact (for a Shimura datum K_h = Stab_{G(ℝ)}(h)), the quotients S_K = G(ℚ)∖(G(ℝ)/K_h × G(𝔸_f)/K) (equal to Sh_K(ℂ) for a Shimura datum) and a finite-dimensional representation V over a number field L on which Z(ℚ) ∩ K acts trivially for small K, construct at neat K the local system on S_K, the Hecke action on H^*(S_K, 𝕍), the de Rham and relative Lie algebra comparison H^*(S_K, 𝕍_ℂ) ≃ H^*(𝔤, K_h; C^∞(G(ℚ)∖G(𝔸)/K) ⊗ V_ℂ) relative to K_h, so with the real central directions Lie Z(ℝ) divided out and the functions transforming under Z(ℝ)° by the inverse of its action on V, and, for compact S_K, the Hecke-equivariant Matsushima decomposition H^*(S_K, 𝕍_ℂ) ≃ ⊕_π m(π) H^*(𝔤, K_h; π_∞ ⊗ V_ℂ) ⊗ π_f^K obtained from the discrete decomposition of L² of the compact quotient G(ℚ)Z(ℝ)°∖G(𝔸) (AutomorphicSpectralTheory §4.7) rather than from Eisenstein series or from the quotients X_K by K_∞A_∞, compatible with level pullbacks, translations and the covering transfers of the finite level maps, whose composite with pullback is the effective degree [K₂ : K₁(K₂ ∩ Z(ℚ))], without imposing axiom SV5 (IP23, §2.2.2, p. 16; Mil17, Lemma 5.13 and footnote 40, p. 57).",
       "supplier": "ArithmeticLocallySymmetricSpaces",
-      "section": "§ALS.5b.4"
+      "section": "§§ALS.5b.1, ALS.5b.4"
     },
     {
       "slug": "vhs-hodge-decomposition",
