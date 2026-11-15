@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticLocallySymmetricSpaces~4",
+  "head": "4f8e95ad500dd84fec00e8fd5a234e7d5db3a719",
+  "pr": 871,
+  "folder": "ArithmeticLocallySymmetricSpaces",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "incremental re-review of 86 changed lines since 215520b. Both previous findings (Rf_! hypotheses, exactness of the inverse image) are repaired. The gate fails on the build: Suggested.lean names the root-namespace CommHopfAlgCat.innerConjugationIso, which exists at main's Tau Ceti pin 2fd255d but not at the branch's pin a91d3aa (R01, P1; repair tested: merging origin/main is conflict-free and the file then elaborates with sorry warnings only). The pull request description still names TopologicalCoefficientInput and a triangulability hypothesis the head no longer has and omits the suppliers EnhancedDerivedSheaves and SchemeAndStackFoundations 2.1, 2.5 (R02, P3). Checked: the reworded ALS.F.4 and ALS.5b.8 against NT16 and ACC+23 at their locators (same mathematics, wording independent), ALS.F.3 (iii) and its Mathlib inputs at the pin, the Rf_! clause against ComplexComparisonPartII C6.1 at its head, the dependency check (0 problems), no change outside the folder.",
+  "text": "a1f1eb5c8078143a"
+ }
+}
