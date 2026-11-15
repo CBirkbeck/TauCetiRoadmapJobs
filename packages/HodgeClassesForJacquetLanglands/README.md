@@ -25,8 +25,9 @@ description and their restriction formulas (Layer 4); the specified Shimura diag
 torus and component character class (Layer 5); the quaternionic theta lifts of IP23 §§9–10 and the
 simultaneous nonvanishing theorem (Layers 6–7); the Hodge-type and degree analysis of the theta
 Hecke eigenspace (Layer 8); the degree-`2d` Galois analysis (Layer 9); and the rational descent and
-end theorems (Layer 10). It also owns the realizations of the cohomology of compact Shimura
-varieties with automorphic coefficient systems, their pullbacks and normalized traces (§§0.2–0.3),
+end theorems (Layer 10). It also owns the cohomology of compact Shimura varieties with automorphic
+coefficient systems as compatible realizations (its Hodge structure, `ℓ`-adic properties, Hecke
+isotypic parts and Matsushima description), with its pullbacks and normalized traces (§§0.2–0.3),
 the Hodge-type criterion for coefficient cohomology of compact unitary similitude Shimura varieties
 (§8.6) and the local fact that de Rham additive characters are unramified (§9.3); no earlier
 roadmap states these, and they are needed here first.
@@ -89,6 +90,10 @@ It leaves the following to the named roadmaps and does not state them again.
   levels are AdelicAlgebraicGroups §4.3.
   Variations of Hodge structure, the rational Hodge structures of SV4 and Kostant representatives are
   ShimuraData §§3.1, 3.3, 3.10 and 4.3.
+- The Betti and `ℓ`-adic local systems on a Shimura variety of a representation of `Gᶜ = G/Z_s`,
+  the condition on the central units of a neat level under which they descend, their comparison and
+  their tensor, dual and Hecke compatibilities are AutomorphicBundles §§0.1–0.2, 3.4, 3.5, 3.7 and
+  3.8; the quotient `Gᶜ` is ShimuraData §4.9.
 - Weak approximation, ray class groups, finite ideles and Hecke characters are GlobalNumberFields
   Layers 1, 2, 4, 6, 9 and 10. Dual groups and `L`-groups are ReductiveGroupsPartII §§RG2.5.1–RG2.5.2,
   with the unitary similitude dual group of EndoscopicTransferAndUnitaryTraceComparison §1.8.
@@ -239,26 +244,38 @@ connected reductive over `ℚ`, `K_h ⊂ G(ℝ)` a closed subgroup containing `Z
 compact (for a Shimura datum `(G, X)` and `h ∈ X`, `K_h = Stab_{G(ℝ)}(h)`), put
 `S_K = G(ℚ)∖(G(ℝ)/K_h × G(𝔸_f)/K)` for compact open `K ⊂ G(𝔸_f)` (so `S_K = Sh_K(ℂ)` for a Shimura
 datum), and let `V` be a finite-dimensional representation of `G` over a number field `L ⊂ ℂ` on
-which `Z(ℚ) ∩ K` acts trivially for every sufficiently small `K`. For neat `K`, supply: the local
-system `𝕍_K` of `L`-vector spaces on `S_K`, by descent along the action of `G(ℚ)` on
-`G(ℝ)/K_h × G(𝔸_f)/K`, whose stabilizers are then all equal to the central group `Z(ℚ) ∩ K`, acting
-trivially on `V`; the Hecke action of `H(G(𝔸_f), K)` on `H^*(S_K, 𝕍)`, with pullback along level maps
-and right translations; the de Rham and relative Lie algebra comparison
+which `Z(ℚ) ∩ K` acts trivially for every sufficiently small `K`. For neat `K`, let `𝕍_K` be the
+local system of `L`-vector spaces on `S_K` obtained by descending the constant sheaf `V` along the
+action of `G(ℚ)` on `G(ℝ)/K_h × G(𝔸_f)/K`, whose stabilizers are then all equal to the central group
+`Z(ℚ) ∩ K`, acting trivially on `V` (the descent that gives the local systems on `X_K`, with
+`K_∞A_∞` replaced by `K_h`). Supply: the Hecke action of `H(G(𝔸_f), K)` on `H^*(S_K, 𝕍)`, with
+pullback along level maps and right translations; the de Rham and relative Lie algebra comparison
 `H^*(S_K, 𝕍_ℂ) ≃ H^*(𝔤, K_h; C^∞(G(ℚ)∖G(𝔸)/K) ⊗ V_ℂ)`, whose relative complex is built on `𝔤/𝔨_h`
-and so divides out the real central directions `Lie Z(ℝ)`, `K_h`-invariance forcing the functions
-to transform under `Z(ℝ)°` by the inverse of its action on `V`; when `S_K` is compact, the
+and so divides out the real central directions `Lie Z(ℝ)`, `K_h`-invariance forcing the functions to
+transform under `Z(ℝ)°` by the inverse of its action on `V`; when `S_K` is compact, the
 Hecke-equivariant Matsushima decomposition
 `H^*(S_K, 𝕍_ℂ) ≃ ⊕_π m(π) H^*(𝔤, K_h; π_∞ ⊗ V_ℂ) ⊗ π_f^K`, the sum over the automorphic
-representations `π` occurring discretely in the functions on `G(ℚ)∖G(𝔸)` with that central
-behaviour and `m(π)` their multiplicity, obtained (after twisting by a positive character that makes
-the central character unitary) from the discrete decomposition of `L²` of the compact quotient
-`G(ℚ)Z(ℝ)°∖G(𝔸)` (AutomorphicSpectralTheory §4.7), not from Eisenstein series and not from `X_K`;
-and the compatibility of these with the covering transfers of the finite level maps
+representations `π` occurring discretely in the functions on `G(ℚ)∖G(𝔸)` with that central behaviour
+and `m(π)` their multiplicity. It is obtained from the discrete decomposition, at each level `K`, of
+`L²` of the compact space `G(ℚ)A_∞∖G(𝔸)/K = ⊔_g Γ_g∖G(ℝ)¹`: here `A_∞` is the identity component of
+the real points of the maximal `ℚ`-split central torus (§ALS.0.4), `G(ℝ)¹ ≃ G(ℝ)/A_∞` is the common
+kernel of the `|χ|` for the rational characters `χ` of `G`, `g` runs over the finite set
+`G(ℚ)∖G(𝔸_f)/K`, and `Γ_g = G(ℚ) ∩ gKg⁻¹` lies in `G(ℝ)¹` by the product formula and is a cocompact
+lattice there, because `G(ℚ)∖G(𝔸)¹` is compact when `S_K` is (AdelicAlgebraicGroups §3.4, `G^der`
+being `ℚ`-anisotropic); AutomorphicSpectralTheory §4.7 applies to each `Γ_g`. It is applied to each
+summand of `V` on which `A_∞` acts by one character `λ`, after multiplying the functions by
+`|χ|^{1/N}`, a positive character of `G(ℚ)∖G(𝔸)` restricting to `λ` on `A_∞` (`χ` rational with
+`χ|_{A_∞} = Nλ`, `N ≥ 1`). The quotient by `G(ℚ)Z(ℝ)°` is not used: `Z(ℚ)Z(ℝ)°` is not closed in
+`Z(𝔸)` when `Z(ℚ)` is not discrete in `Z(𝔸_f)` (§0.2, Checks), and a quotient by `Z(ℝ)°K` at each
+level keeps only functions invariant under `Z(ℝ)°`, losing a central character that is unitary and
+nontrivial on its compact part (§0.2, Checks). The relative Lie algebra cohomology is taken relative
+to `K_h`, not `K_∞A_∞`, so this is not the Matsushima formula of `X_K`, and no Eisenstein series
+enter. Supply also the compatibility of these with the covering transfers of the finite level maps
 `S_{K₁} → S_{K₂}`, `K₁ ⊂ K₂`, whose composite with pullback is the effective degree
 `[K₂ : K₁(K₂ ∩ Z(ℚ))]` of §0.3 and whose automorphic counterpart sums right translates over
 `K₂/K₁(K₂ ∩ Z(ℚ))` (IP23, §2.2.2, p. 16; Mil17, Lemma 5.13 and footnote 40, p. 57). It sits beside
-§§ALS.5b.1 and ALS.5b.4, with `K_∞A_∞` replaced by `K_h`; axiom SV5 is not imposed, so `Res_{F/ℚ}B^×`
-is covered for every totally real `F`.
+§§ALS.5b.1 and ALS.5b.4, with `K_∞A_∞` replaced by `K_h`; axiom SV5 is not imposed, so
+`Res_{F/ℚ}B^×` is covered for every totally real `F`.
 
 ### From TauCetiRoadmap.ComplexKahlerGeometry
 
@@ -291,7 +308,30 @@ connected.
 
 §3.1 variations of Hodge structure and §3.3 rational polarized variations; §3.10 Kostant
 representatives `kostantRepresentatives`; §4.3 `sv4_rationalHodge`: under SV4 every rational
-representation of the Shimura group gives rational Hodge structures `(V, ρ∘h)`.
+representation of the Shimura group gives rational Hodge structures `(V, ρ∘h)`; §4.9 the largest
+central subtorus `Z_s` that is split over `ℝ` and contains no `ℚ`-split subtorus, and the quotient
+`Gᶜ = G/Z_s`.
+
+### From TauCetiRoadmap.AutomorphicBundles
+
+Names are as that roadmap writes them, under its common prefix `AutomorphicBundles`. §0.1
+`centralSplitQuotient` with `centralSplitQuotient_factor_iff`: a representation of `G` factors
+through `Gᶜ` exactly when `Z_s` acts trivially, and when `Z(G)°` splits over a CM field the quotient
+`Z(G)°/Z_s` has equal `ℚ`- and `ℝ`-split ranks. §0.2 `ineffectiveFibreDescent`: a coefficient
+descends along an arithmetic group whose ineffective central kernel acts trivially on the fibres, a
+neat level being allowed to contain central units of infinite order. §3.4
+`bettiCoefficientLocalSystem`: for a rational representation `W` of `Gᶜ` and a neat effective
+arithmetic component `Γ∖X⁺`, the local system `Γ∖(X⁺ × W)` with monodromy `W`, functorial in `W`,
+compatible with tensor products and duals, and, when the projected weight is rational, underlying
+the rational variation of Hodge structure of ShimuraData §§3.1–3.6, weight by weight. §3.5
+`etaleCoefficientLocalSystem`: the `ℓ`-adic local system on the canonical model, from a stable
+lattice through the canonical tower, independent of the lattice after inverting `ℓ`, functorial in
+the representation and compatible with level and Hecke pullbacks. §3.7 `realizationComparison`:
+`W_B ⊗ ℚ_ℓ ≃ W_ℓ|S_ℂ` under the algebraic–analytic comparison, compatible with tensors, duals, Tate
+twists and Hecke pullbacks. §3.8 `coefficientTensorHecke`: coherence of these realizations with
+tensor products, duals, units, coefficient maps and finite-level and Hecke pullbacks. A
+representation over a number field `L` enters through its underlying rational representation, `L`
+acting by endomorphisms through the functoriality of §§3.4–3.5.
 
 ### From TauCetiRoadmap.AutomorphicFormsOnReductiveGroups
 
@@ -404,9 +444,9 @@ missing (IP23, proof of Lemma 9.2, p. 58).
 ### From TauCetiRoadmap.ClassFieldTheory
 
 Layers 6–8 local reciprocity, the local Artin map, units in inertia and local norm subgroups;
-Layer 10 (`brauerSupport`, `sumLocalInv`, `sumLocalInv_eq_zero`, `eq_zero_of_localInv_eq_zero`,
-`exists_br_of_sum_eq_zero`); Layer 11 (`globalArtinMap`); §5.4 quadratic norm symbols
-(`localArtinMap_quadratic_eq_nontrivial_iff_not_norm`).
+Layer 10 (`brauerSupport`, `sumLocalInv`, `sumLocalInv_brLocalization_eq_zero`,
+`brLocalization_injective`, `exists_br_of_sum_eq_zero`); Layer 11 (`globalArtinMap`); §5.4
+quadratic norm symbols (`localArtinMap_quadratic_eq_nontrivial_iff_not_norm`).
 
 What ClassFieldTheory must provide (gap:quaternion-ramification-classification): quaternion algebras
 over a number field are classified by their ramification sets, every finite set of non-complex places
@@ -533,30 +573,41 @@ condition excluding compact `ℚ`-factors of the adjoint group is not imposed in
 
 Let `(G, X)` be a Shimura datum of abelian type whose Shimura varieties are compact, with reflex
 field `E = E(G,X) ⊂ ℂ`, and let `ρ : G → GL(V)` be a finite-dimensional representation over a number
-field `L ⊂ ℂ` that factors through `G/Z_s`, where `Z_s` is the largest subtorus of the centre that is
-split over `ℝ` but has no subtorus split over `ℚ`, and assume that the weight cocharacter of
+field `L ⊂ ℂ` that factors through `G/Z_s`, where `Z_s` is the largest subtorus of the centre that
+is split over `ℝ` but has no subtorus split over `ℚ`, and assume that the weight cocharacter of
 `(G, X)`, composed with `G → G/Z_s`, is defined over `ℚ` (axiom SV4 of ShimuraData §4.3 for the
-quotient datum; for `G = Res_{F/ℚ}B^×` the weight lands in the centre `Res_{F/ℚ}𝔾_m`, whose
-quotient by `Z_s = ker N_{F/ℚ}` is `𝔾_m`, so this holds). The weight cocharacter is central, so
+quotient datum; for `G = Res_{F/ℚ}B^×` the weight lands in the centre `Res_{F/ℚ}𝔾_m`, whose quotient
+by `Z_s = ker N_{F/ℚ}` is `𝔾_m`, so this holds). Assume also that `Z(ℚ) ∩ K` acts trivially on `V`
+for every sufficiently small compact open `K` (the fibre condition of AutomorphicBundles §0.2).
+Factoring through `G/Z_s` does not give this (Checks); it holds when the torus `Z°/Z_s` has the same
+split rank over `ℚ` and over `ℝ`, for then the rational points of `Z/Z_s` are discrete in its finite
+adelic points (Mil17, Theorem 5.26 and Remark 5.27, p. 64), the image of `Z(ℚ) ∩ K` there is finite,
+and a neat `K` makes it trivial. By AutomorphicBundles §0.1 the ranks agree when `Z°` splits over a
+CM field, which holds for every group of this roadmap: their centres are `Res_{F/ℚ}` of `F`-tori
+split by the CM field `E`, so they split over the Galois closure of `E`, again a CM field; for
+`G = Res_{F/ℚ}B^×`, `Z/Z_s = 𝔾_m` through the norm. The weight cocharacter is central, so
 `V = ⊕_w V_w` as representations over `L`, where `V_w` is the summand on which `(V, ρ∘h)` has Hodge
 weight `w`. For `h ∈ X` let `K_h = Stab_{G(ℝ)}(h)`, the centralizer of `h`; it contains `Z(ℝ)`, and
 `Sh_K(ℂ) = G(ℚ)∖(G(ℝ)/K_h × G(𝔸_f)/K)` (Mil17, footnote 40, p. 57). Construct, for every
-sufficiently small compact open `K ⊂ G(𝔸_f)`:
+sufficiently small neat compact open `K ⊂ G(𝔸_f)`:
 
-- the local system `𝕍 = ⊕_w 𝕍_w` of `L`-vector spaces on `Sh_K(ℂ)` attached to `ρ`
-  (gap:shimura-matsushima-comparison; `Z(ℚ) ∩ K` acts trivially on `V` for `K` small because `ρ`
-  factors through `G/Z_s`), each `𝕍_w` underlying a polarizable variation of Hodge
-  structure of weight `w` (ShimuraData §§3.1, 3.3, 4.3), and the `L`-Hodge structure
+- the local system `𝕍 = ⊕_w 𝕍_w` of `L`-vector spaces on `Sh_K(ℂ)` attached to `ρ`: on the component
+  `Γ_g∖X⁺` of `Sh_K(ℂ)`, `Γ_g` the stabilizer of `X⁺ × {gK}` in `G(ℚ)`, it is the local system
+  `Γ_g∖(X⁺ × V)` of AutomorphicBundles §3.4, descended under the fibre condition by its §0.2; this
+  is the descent of the constant sheaf `V` along `G(ℚ)`, which is the local system `𝕍_K` of
+  gap:shimura-matsushima-comparison. Each `𝕍_w` underlies a polarizable variation of Hodge structure
+  of weight `w` (AutomorphicBundles §3.4; ShimuraData §§3.1, 3.3, 4.3), and the `L`-Hodge structure
   `H^i(Sh_K(ℂ), 𝕍) = ⊕_w H^i(Sh_K(ℂ), 𝕍_w)`, whose summand `H^i(Sh_K(ℂ), 𝕍_w)` is pure of weight
   `i + w` (gap:vhs-hodge-decomposition); `H^i(Sh_K(ℂ), 𝕍)` is pure exactly when the nonzero summands
   share one weight, in particular when `ρ` has a single weight;
-- for every prime `ℓ`, the étale sheaf `𝕍_ℓ` of `L ⊗ ℚ_ℓ`-modules on the canonical model of
-  `Sh_K` over `E`, obtained from a `K`-stable lattice through the canonical tower of
-  ShimuraVarieties §8.1;
-- the Hecke-equivariant comparison `H^i(Sh_K(ℂ), 𝕍) ⊗_ℚ ℚ_ℓ ≃ H^i_et(Sh_K ⊗_E ℚ̄, 𝕍_ℓ)`
-  (ComplexComparisonPartII C6), so that `H^i(Sh_K, 𝕍)` with its `ℓ`-adic realizations is an object
-  of `M_E^L` (MotivesAndAlgebraicCycles §7.15) on which the Hecke algebra `H(G(𝔸_f), K)` acts by
-  morphisms;
+- for every prime `ℓ`, the étale sheaf `𝕍_ℓ` of `L ⊗ ℚ_ℓ`-modules on the canonical model of `Sh_K`
+  over `E`, obtained from a `K`-stable lattice through the canonical tower of ShimuraVarieties §8.1
+  (AutomorphicBundles §3.5);
+- the Hecke-equivariant comparison `H^i(Sh_K(ℂ), 𝕍) ⊗_ℚ ℚ_ℓ ≃ H^i_et(Sh_K ⊗_E ℚ̄, 𝕍_ℓ)`, from the
+  comparison of sheaves `𝕍 ⊗ ℚ_ℓ ≃ 𝕍_ℓ|Sh_K(ℂ)` (AutomorphicBundles §3.7) and Artin's comparison for
+  their cohomology (ComplexComparisonPartII C6), so that `H^i(Sh_K, 𝕍)` with its `ℓ`-adic
+  realizations is an object of `M_E^L` (MotivesAndAlgebraicCycles §7.15) on which the Hecke algebra
+  `H(G(𝔸_f), K)` acts by morphisms;
 - for an irreducible cohomological `Π`, the isotypic part
   `H^i(Sh, 𝕍)_Π = Hom_{H(G(𝔸_f),K)}(Π_f^K, H^i(Sh_K, 𝕍))`, independent of `K` small, with the
   Matsushima description `H^i(Sh_K(ℂ), 𝕍_ℂ)_Π ≃ ⊕_{π_f^K ≃ Π_f^K} m(π) H^i(𝔤, K_h; π_∞ ⊗ V_ℂ)`,
@@ -574,8 +625,8 @@ sheaf on each component at each place of `E′` above `ℓ`, the filtered compar
 §7.2, through the algebraic–analytic comparison of its §8.1, makes the cohomology of each component
 de Rham, and finite induction (PadicHodgeTheory §3.3) makes `H^i_et(Sh_K ⊗_E ℚ̄, 𝕍_ℓ)` de Rham.
 
-- The construction is functorial in `ρ`, compatible with tensor products and duals, and with
-  extension of coefficients `L ⊂ L′`.
+- The construction is functorial in `ρ`, compatible with tensor products and duals
+  (AutomorphicBundles §3.8), and with extension of coefficients `L ⊂ L′`.
 - Hecke correspondences act by morphisms of `M_E^L`; the isotypic parts are compatible with
   level changes and independent of the level.
 - The `ℓ`-adic realizations are unramified outside a finite set of places of `E` and de Rham at the
@@ -609,9 +660,36 @@ de Rham, and finite induction (PadicHodgeTheory §3.3) makes `H^i_et(Sh_K ⊗_E 
   `G(ℚ)⁺\G(𝔸_f)/K` and is not geometrically connected in general, so the one-point rigidity cannot
   be applied to it as a whole; every component `X⁺ × gK` contains a special point, because a special
   `h ∈ X⁺` gives the special point `[h, g]`.
+- Factoring through `G/Z_s` does not give the fibre condition. For `F = ℚ(∛2)` and
+  `T = Res¹_{F/ℚ}𝔾_m` with trivial `h`, the character module of `T` is the irreducible
+  two-dimensional rational representation of `S₃`, so `T` has no proper nontrivial `ℚ`-subtorus, and
+  `T(ℝ) ≃ ℂ^×` is not split; hence `Z_s = 1` and every representation factors through `T/Z_s`. The
+  unit `u = ∛2 − 1` (minimal polynomial `x³ + 3x² + 3x − 1`, norm `1`) has infinite order, so some
+  `u^m`, `m ≥ 1`, lies in `T(ℚ) ∩ K` for every compact open `K`, and the character `ρ = σ₁|_T` of the
+  real embedding takes the value `(∛2 − 1)^m ≠ 1` on it. No level satisfies the fibre condition and
+  `𝕍` does not descend; `T` has no rational character while `T(ℝ)` is not compact, so its rational
+  points are not discrete (Mil17, Theorem 5.26), as the rank condition above predicts.
+- The adelic quotient by `G(ℚ)Z(ℝ)°` is not Hausdorff when `Z(ℚ)` is not discrete in `Z(𝔸_f)`. For
+  `T = Res_{ℚ(√2)/ℚ}𝔾_m` and `ε = 1 + √2`, the idele `(1, 1; ε^{2m})`, trivial at both real places,
+  equals `ε^{2m}·(ε^{−2m}, ε′^{−2m})_∞` and so lies in `T(ℚ)T(ℝ)°` for every `m`. The closure of
+  `ε^{2ℤ}` in `Ô^×` is an infinite compact group, hence uncountable, and contains some `u ∉ ε^{2ℤ}`;
+  `(1, 1; u)` is a limit of points of `T(ℚ)T(ℝ)°` and is not in it, since a rational `q` equal to `u`
+  at every finite place and totally positive is a totally positive unit, so `q ∈ ε^{2ℤ}`. The spectral
+  input of gap:shimura-matsushima-comparison divides only by `A_∞`, the diagonal `ℝ_{>0}`: at level
+  `K(3)` it is `Γ∖T(ℝ)¹` with `T(ℝ)¹ = {(a, b) : |ab| = 1}` and `Γ = ⟨−ε⁴⟩` acting by the sign
+  `(−1, −1)` and the translation `8 log ε` of `log|a| − log|b|`, two circles exchanged by `T(ℝ)`; the
+  `T(ℝ)`-invariant functions are the constants, of dimension `1 = dim H⁰(Sh_{K(3)})`.
+- A central character that is unitary but nontrivial on the compact part of `Z(ℝ)°` contributes. For
+  `T = Res_{ℚ(i)/ℚ}𝔾_m` with `h(z) = z`, `L = ℚ(i)`, `ρ = σ₁` the identity embedding and `K` neat,
+  `T(ℚ) ∩ K = 1` and `dim H⁰(Sh_K, 𝕍) = #Sh_K ≥ 1`. In the relative complex the functions transform
+  under `T(ℝ) = ℂ^×` by `z⁻¹`; `A_∞ = ℝ_{>0}` acts on `V` by `r ↦ r`, and multiplying by `|N|^{1/2}`
+  leaves the character `z ↦ |z|/z`, nontrivial on the unit circle. Such functions live on the circles
+  `T(ℚ)A_∞∖T(𝔸)/K`; on the finite set `T(ℚ)∖T(𝔸)/T(ℝ)°K` only `Z(ℝ)°`-invariant functions exist, and
+  a decomposition there would give `0`.
 
-*Needs:* ArithmeticLocallySymmetricSpaces gap:shimura-matsushima-comparison; AutomorphicSpectralTheory
-§4.7; ShimuraData §§3.1, 3.3, 4.3; ComplexKahlerGeometry §K6.1 and
+*Needs:* AutomorphicBundles §§0.1–0.2, 3.4–3.5, 3.7–3.8; ArithmeticLocallySymmetricSpaces
+gap:shimura-matsushima-comparison; AutomorphicSpectralTheory §4.7; AdelicAlgebraicGroups §§3.4, 4.3;
+ShimuraData §§3.1, 3.3, 4.3, 4.9; ComplexKahlerGeometry §K6.1 and
 gap:vhs-hodge-decomposition; ShimuraVarieties §§4.3, 6.7, 8.1; ComplexComparisonPartII C6;
 EtaleCohomologyFoundations §§F.2.1–F.2.2, F.3; PadicHodgeTheory §§3.3, 7.2, 8.1 and
 gap:derham-local-system-cohomology; MotivesAndAlgebraicCycles §7.15.
@@ -832,9 +910,10 @@ in `H¹` of two Shimura curves over `F`, `B` is ramified at `{𝔭, 𝔮}`, and 
 
 GL2AutomorphicRepresentationsAndTransfer §§R16.4.5, R17.3.1, R17.3.5–R17.3.8 and
 gap:quaternionic-rational-model; MotivesAndAlgebraicCycles §§2.2–2.3, 2.6–2.7, 7.1, 7.15;
+AutomorphicBundles §§0.1–0.2, 3.4–3.5, 3.7–3.8;
 ArithmeticLocallySymmetricSpaces gap:shimura-matsushima-comparison; AutomorphicSpectralTheory §4.7;
-ShimuraData §§3.1, 3.3, 4.3; ShimuraVarieties §§1.3, 1.6, 4.3, 6.7, 8.1, 8.3, 8.5; AdelicAlgebraicGroups
-§4.3; AlgebraicTopology §§2.6, 5.3; ComplexKahlerGeometry §K6.1; ComplexComparisonPartII C6;
+ShimuraData §§3.1, 3.3, 4.3, 4.9; ShimuraVarieties §§1.3, 1.6, 4.3, 6.7, 8.1, 8.3, 8.5; AdelicAlgebraicGroups
+§§3.4, 4.3; AlgebraicTopology §§2.6, 5.3; ComplexKahlerGeometry §K6.1; ComplexComparisonPartII C6;
 EtaleCohomologyFoundations §§0.8, F.2.1–F.2.2, F.3; PadicHodgeTheory §§3.3, 8.1; ClassFieldTheory
 Layer 10; AutomorphicFormsOnReductiveGroups §§2.6, 5.4; Tau Ceti `TauCeti.Hodge`.
 
@@ -2581,11 +2660,9 @@ ArithmeticLocallySymmetricSpaces gap:shimura-matsushima-comparison; Mathlib `MvP
 The Hermitian exterior construction of Layers 1–2 and the operator `L` of `IsExteriorStar` are general
 inputs for any treatment of `U(2,2)`-type exceptional isomorphisms and quaternionic theta pairs. The
 realization targets §§0.2–0.3 serve roadmaps on the cohomology of compact Shimura varieties with
-coefficients, in particular HilbertModularVarietiesAndShimuraCurves for quaternionic varieties with an
-arbitrary split set `Σ` and AutomorphicBundles for coefficient realizations; the Hodge-type criterion of
-§8.6 and the local statement of §9.3 serve the same directions. The end theorems §§10.7–10.9 are the
-input for questions about algebraicity of the Jacquet–Langlands class and period relations between
-quaternionic forms.
+coefficients; the Hodge-type criterion of §8.6 and the local statement of §9.3 serve the same
+directions. The end theorems §§10.7–10.9 are the input for questions about algebraicity of the
+Jacquet–Langlands class and period relations between quaternionic forms.
 
 ## Worked examples
 
