@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DGFloer~32",
+  "head": "594f23452a2c4ac534f16b9ae552474a59909bba",
+  "pr": 1798,
+  "folder": "DGFloer",
+  "date": "2026-11-15",
+  "findings": 7,
+  "blocking": 1,
+  "notes": "incremental re-review of 22 changed lines since 46cd96a (titles of 5.5, 8.1, 8.6; new opening paragraph of 8.1; 8.2-8.5 as run-in labels) and of the pull request's title and description. Gate rerun: all checks 0, OK; depcheck 244 roadmaps, 0 problems; Suggested.lean elaborates with seven sorry warnings only. Findings: R01 (P2) the 15 citations of AlgebraicTopology Stage 4.8 for CW approximation name compact generation at the head of #1807 (89357f3) and on main, where CW approximation is section 4.10; R02-R05 (P3) description sentences contradicted (Stage 4.8, #1652 merged, #963 not open, #1854 carries no AlgebraicTopology, TangentialBordism and HomotopySpheres on main); R06 (P3) 5.5 no longer names the notion of Definition 2.3; R07 (P3) heading 8.1 names the group 8.1-8.5 while item 1 is the chain systems. No seeded target falls in the changed passages; 2 source locators and 13 cross-roadmap citations checked.",
+  "text": "96f3d3990501ee40"
+ }
+}
