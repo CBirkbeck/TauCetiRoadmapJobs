@@ -276,8 +276,9 @@ hypotheses; this roadmap applies it to a boundaryless `N` containing `M`.
 Hausdorff, second-countable, boundaryless: for an isometric immersion of such manifolds:
 `B(X, Y) = (∇^N_X df(Y))^⊥`, `S_η X = −(∇^N_X η)^⊤`, `⟨S_η X, Y⟩ = ⟨B(X, Y), η⟩`, averaged
 mean curvature vector, Gauss equation with the pinned sign, sphere normalisation
-`B = −g · position`); R7.9, on a Hausdorff second-countable boundaryless Riemannian manifold `N`
-(RiemannianGeometry's standing convention): for smooth `φ : N → ℝ` with regular value `a`, the
+`B = −g · position`, and `B = 0` exactly when the immersion is totally geodesic); R7.9, on a
+Hausdorff second-countable boundaryless Riemannian manifold `N` (RiemannianGeometry's standing
+convention): for smooth `φ : N → ℝ` with regular value `a`, the
 inclusion `ι` of `{φ ≤ a}`, with Tau Ceti's sublevel atlas, is smooth with invertible
 differential, and a vector `v` at a boundary point of `{φ ≤ a}` is outward
 (`TauCeti.IsOutwardPointing`) exactly when `dφ(dι v) > 0`; for `N` connected and a compact
@@ -511,7 +512,8 @@ Route: on `T∂M`, where `dρ = 0`, Tau Ceti's conformal Hessian formula gives
 `|dρ|_ĝ = e^{−φ}|dρ|_g`; divide as in 1.4.
 
 - The law is local: it uses `φ` only on a neighbourhood of `∂M`, and only `φ|∂M` and `dφ(ν_in)`.
-- If `dφ(ν_in) = 0` along `∂M`, then `II^ĝ = e^{φ} II`, so strict convexity is preserved.
+- If `dφ(ν_in) = 0` along `∂M`, then `II^ĝ = e^{φ} II`, so the sign of `II_q(u, u)` is preserved
+  for every `q ∈ ∂M` and `u ∈ T_q∂M`.
 
 **Checks.**
 
@@ -624,7 +626,7 @@ Prove:
   by 1.6: strictly convex exactly for `s < 1/2`, an open set of parameters, with `II = 0` at
   `s = 1/2`.
 
-*Needs:* 1.4, 1.6, 2.1; Tau Ceti `TauCeti.Manifold.ContMDiffNondegenerateMetricFamily`,
+*Needs:* 1.4, 1.5, 1.6, 2.1; Tau Ceti `TauCeti.Manifold.ContMDiffNondegenerateMetricFamily`,
 `TauCeti.Manifold.ContMDiffNondegenerateMetricFamily.contMDiffAt_christoffelSymbol`.
 
 ### Examples
@@ -635,7 +637,7 @@ family `e^{−2s|x|²} g` (threshold `s = 1/2`).
 
 ### Dependencies
 
-2.1 uses Layer 1; 2.2 uses 1.3–1.4 and 2.1; 2.3 uses 1.4, 1.6, 2.1 and Tau Ceti's metric families.
+2.1 uses Layer 1; 2.2 uses 1.3–1.4 and 2.1; 2.3 uses 1.4–1.6, 2.1 and Tau Ceti's metric families.
 
 ## Layer 3: Regular domains and the extension across the boundary
 
@@ -733,7 +735,7 @@ if `dx ≠ 0` on `U` and this holds at every `y ∈ U` (Stefanov–Uhlmann–Vas
 - Stefanov–Uhlmann–Vasy's example (lines 203–205): `x(z) = |z − z₀| − sup_M |· − z₀|` on `ℝⁿ⁺¹ ∖ {z₀}`
   has `Hess x = (g − dx ⊗ dx)/|z − z₀|`, positive definite on `ker dx`.
 
-*Needs:* 1.4, 2.1, 3.1.
+*Needs:* 1.3, 1.4, 2.1, 3.1.
 
 ### 3.3 Defining functions on the collar extension and the double
 
@@ -908,7 +910,7 @@ the conformal ball as a domain in `(ℝⁿ⁺¹, e^{2φ} g)`.
 ### Dependencies
 
 3.1 uses 1.1–1.4, RiemannianGeometry R7.9 (the inclusion of a regular sublevel and its outward
-criterion) and Tau Ceti's sublevel atlas and pullback metric; 3.2 uses 1.4, 2.1 and 3.1;
+criterion) and Tau Ceti's sublevel atlas and pullback metric; 3.2 uses 1.3–1.4, 2.1 and 3.1;
 3.3 uses GeometricTopology 1.1 (collars, the interior) and 1.3 (the collar extension and the
 double as gluings along the boundary), Tau Ceti's sublevel atlas and 3.1; 3.4 uses 3.1,
 ComplexKahlerGeometry K5a and DifferentialGeometry 12.1; 3.5 uses 3.1, 3.3–3.4, GeometricTopology
@@ -1175,7 +1177,7 @@ compact, and `M ⊆ {ρ̂ > −δ} = int M_δ`.
   unbounded exterior `{|x| ≥ r₂}` with `r₂ > √2`, whose boundary circle has `II = −h/r₂ < 0`, and
   `−e^{−2}` is a critical value: no `δ₀` works for that function.
 
-*Needs:* 2.3, 3.1, 3.2, 4.3.
+*Needs:* 1.3, 1.4, 2.1, 2.3, 3.1, 3.2, 4.3.
 
 ### Examples
 
@@ -1190,7 +1192,7 @@ spherical caps in `S^{n+1}`, `n ≥ 1`, for enlargements.
 HopfRinow Layers 1–2, RiemannianGeometry R7.9 (the compact connected case) and Tau Ceti's normal
 exponential; 4.4 uses 1.4, 4.3 and Mathlib's partitions
 of unity; 4.5 uses 2.1–2.2 and
-3.1–3.2; 4.6 uses 2.3, 3.1–3.2 and 4.3.
+3.1–3.2; 4.6 uses 1.3–1.4, 2.1, 2.3, 3.1–3.2 and 4.3.
 
 ## Layer 5: Exit time and scattering relation
 
@@ -1272,7 +1274,7 @@ with `sup ∅ = 0`; `M` is non-trapping if `τ(x, v) < ∞` for every unit `(x, 
 - The half-space: `τ = ∞` on tangent vectors, which give lines in `∂M`; `M = [a, b]`:
   `τ(x, +1) = b − x`.
 
-*Needs:* 4.1, 4.2, 5.1; Tau Ceti `TauCeti.Manifold.IsGeodesicCurveOnFrom`,
+*Needs:* 2.1, 4.1, 4.2, 5.1; Tau Ceti `TauCeti.Manifold.IsGeodesicCurveOnFrom`,
 `TauCeti.Manifold.geodesicInterval`, `TauCeti.Manifold.maximalGeodesic`.
 
 ### 5.3 Two lemmas of calculus
@@ -1395,7 +1397,7 @@ Prove (Paternain–Salo–Uhlmann, Proposition 3.3.1, lines 3081–3106):
   `e^{2φ(|x|²)} g_eucl`, `φ(s) = s² − 2s`, `n ≥ 1`, the boundary is strictly convex and the sphere
   `|x| = 1/√2` is totally geodesic, so its great circles are trapped geodesics (6.5).
 
-*Needs:* 3.4, 4.2, 4.6, 5.1, 5.2, 5.4.
+*Needs:* 2.1, 3.4, 4.2, 4.6, 5.1, 5.2, 5.4.
 
 ### 5.6 The scattering relation and boundary lens data
 
@@ -1423,7 +1425,7 @@ projection `P(x, v) := v − μ(x, v) ν_in(x) ∈ T_x∂M` on `∂SM`, and the 
 - `M = [a, b]`: `α(a, +1) = (b, +1)` with `τ̃ = b − a`, `α(b, +1) = (a, +1)` with `τ̃ = −(b − a)`, and
   `α` has no fixed points, matching `∂₀SM = ∅`.
 
-*Needs:* 1.2, 5.1, 5.2, 5.4.
+*Needs:* 1.2, 2.1, 4.1, 5.1, 5.2, 5.4.
 
 ### Examples
 
@@ -1433,9 +1435,9 @@ conformal ball with a totally geodesic inner sphere (trapping).
 
 ### Dependencies
 
-5.1 uses 1.2, 3.1, HopfRinow Layer 1 and Tau Ceti's sphere bundles; 5.2 uses 4.1–4.2 and 5.1; 5.3
+5.1 uses 1.2, 3.1, HopfRinow Layer 1 and Tau Ceti's sphere bundles; 5.2 uses 2.1, 4.1–4.2 and 5.1; 5.3
 uses only calculus (Mathlib, Tau Ceti, ComplexKahlerGeometry K5a); 5.4 uses 1.4, 2.1, 4.2 and
-5.1–5.3; 5.5 uses 3.4, 4.2, 4.6 and 5.1–5.4; 5.6 uses 1.2, 5.1, 5.2 and 5.4.
+5.1–5.3; 5.5 uses 2.1, 3.4, 4.2, 4.6 and 5.1–5.4; 5.6 uses 1.2, 2.1, 4.1, 5.1, 5.2 and 5.4.
 
 ## Layer 6: Examples
 
@@ -1480,7 +1482,7 @@ iff `D²w(0)` is positive definite, iff the principal curvatures at `q` are posi
 - `{y ≥ x³}` is not convex near `0` and has `II < 0` for `x < 0`; the graph form gives
   `w(x) = x³`, `w''(x) = 6x`.
 
-*Needs:* 1.4, 1.5, 2.1, 3.1, 4.3, 5.2, 5.4, 5.5, 5.6.
+*Needs:* 1.4, 1.5, 2.1, 3.1, 4.3, 5.1, 5.2, 5.4, 5.5, 5.6.
 
 ### 6.2 Half-spaces and ball exteriors
 
@@ -1507,7 +1509,7 @@ boundary of the ball `{r ≤ R}` and the strictly concave boundary of the exteri
 - Both are non-compact, so 5.4 and 5.6 do not apply; the exterior has `τ = ∞` in every direction
   that does not point at the ball.
 
-*Needs:* 1.4, 1.5, 2.1, 3.1, 4.2, 5.2.
+*Needs:* 1.4, 1.5, 2.1, 3.1, 4.2, 5.1, 5.2.
 
 ### 6.3 Spherical caps and hyperbolic domains
 
@@ -1553,7 +1555,8 @@ In Tau Ceti's upper half-space model `TauCeti.UpperHalfSpace` of hyperbolic spac
 - Dimension one: in `S¹` the arc `C_{3π/4}` has finite exit times `3π/4 ∓ θ ≤ 3π/2` although
   `R ≥ π/2`, so the cut-off `π/2` of the classification is a phenomenon of `n ≥ 1`.
 
-*Needs:* 1.4, 2.1, 3.1, 3.2, 5.5; Tau Ceti `TauCeti.sphereRoundMetric`, `TauCeti.UpperHalfSpace`,
+*Needs:* 1.4, 2.1, 3.1, 3.2, 3.6, 5.2, 5.5; RiemannianGeometry R5a (`B = 0` is equivalent to total
+geodesicity); Tau Ceti `TauCeti.sphereRoundMetric`, `TauCeti.UpperHalfSpace`,
 `TauCeti.UpperHalfSpace.hyperbolicMetric`, `TauCeti.UpperHalfSpace.hasConstantSectionalCurvature`,
 `CovariantDerivative.IsLeviCivitaConnection.inner_apply_eq_inner_mvfderiv`.
 
@@ -1595,7 +1598,7 @@ with `u = d(p, ·)²` on `B(p, r_p)`; uniformity from SmoothBundlesConnections B
   `dρ = −2z ≠ 0` on `|z| = 1/4` and `Hess |z|² = 2g`, so `II = 2h/(2 · 1/4) = 4h = h/R`; 5.5's bound
   with `u = |z|²/2`, `f(z, v) = ⟨z, v⟩`, `Xf = 1` gives `τ ≤ (1/4 − (−1/4))/1 = 1/2`, the diameter.
 
-*Needs:* 3.1, 3.2, 5.5; HopfRinow Layer 2; Tau Ceti `TauCeti.Manifold.IsNormalDomain`,
+*Needs:* 1.3, 2.1, 3.1, 3.2, 5.2, 5.5; HopfRinow Layer 2; Tau Ceti `TauCeti.Manifold.IsNormalDomain`,
 `TauCeti.Manifold.normalCoordinateField`,
 `TauCeti.Manifold.IsNormalDomain.mfderiv_inner_normalCoordinateField_self`,
 `TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self`;
@@ -1636,7 +1639,7 @@ concave for `e^{−2|x|²} g_eucl`.
 - Dimension one: for `n = 0` the boundary `{±1}` is strictly convex for every `φ`, also for
   `φ(s) = −s`, where `b′(1) = −e^{−1} < 0`; the equivalence needs `n ≥ 1`.
 
-*Needs:* 1.6, 2.1, 3.1, 3.6; RiemannianGeometry R5a (`B = 0` is equivalent to total geodesicity).
+*Needs:* 1.4, 1.6, 2.1, 3.1, 3.6; RiemannianGeometry R5a (`B = 0` is equivalent to total geodesicity).
 
 ### Examples
 
@@ -1644,10 +1647,11 @@ This layer is the roadmap's acceptance suite: every formula above is evaluated a
 
 ### Dependencies
 
-6.1 uses 1.4–1.5, 2.1, 3.1, 4.3, 5.2 and 5.4–5.6; 6.2 uses 1.4–1.5, 2.1, 3.1, 4.2 and 5.2; 6.3 uses
-1.4, 2.1, 3.1–3.2, 5.5 and Tau Ceti's round sphere and hyperbolic space; 6.4 uses 3.1–3.2, 5.5,
-HopfRinow Layer 2, Tau Ceti's normal coordinate fields and SmoothBundlesConnections B6.0; 6.5 uses
-1.6, 2.1, 3.1, 3.6 and RiemannianGeometry R5a.
+6.1 uses 1.4–1.5, 2.1, 3.1, 4.3, 5.1–5.2 and 5.4–5.6; 6.2 uses 1.4–1.5, 2.1, 3.1, 4.2 and 5.1–5.2;
+6.3 uses 1.4, 2.1, 3.1–3.2, 3.6, 5.2, 5.5, RiemannianGeometry R5a and Tau Ceti's round sphere and
+hyperbolic space; 6.4 uses 1.3, 2.1, 3.1–3.2, 5.2, 5.5, HopfRinow Layer 2, Tau Ceti's normal
+coordinate fields and SmoothBundlesConnections B6.0; 6.5 uses 1.4, 1.6, 2.1, 3.1, 3.6 and
+RiemannianGeometry R5a.
 
 ## Downstream consumers
 

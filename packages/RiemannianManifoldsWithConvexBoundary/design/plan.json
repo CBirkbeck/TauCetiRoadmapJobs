@@ -531,7 +531,7 @@
      "id": "2.3.2",
      "kind": "theorem",
      "name": "exists_pos_le_boundarySecondFundamentalForm",
-     "statement": "If ∂M is compact and strictly convex there is c > 0 with II_q(u, u) ≥ c h_q(u, u) for all q ∈ ∂M, u ∈ T_q∂M.",
+     "statement": "If ∂M is compact and strictly convex there is c > 0 with II_q(u, u) ≥ c h_q(u, u) for all q ∈ ∂M, u ∈ T_q∂M; equivalently every principal curvature is at least c.",
      "hypotheses": [
       "M Hausdorff topological space with ChartedSpace (EuclideanHalfSpace (n+1)) M and IsManifold (𝓡∂ (n+1)) ∞ M, n ≥ 0",
       "g a smooth Riemannian metric: Bundle.RiemannianBundle on TangentSpace (𝓡∂ (n+1)) with IsContMDiffRiemannianBundle (𝓡∂ (n+1)) ∞",
@@ -545,7 +545,8 @@
      "prerequisites": [
       "target:1.4",
       "target:2.1",
-      "target:2.3.1"
+      "target:2.3.1",
+      "target:1.5"
      ],
      "api": [],
      "tests": [
@@ -627,7 +628,9 @@
       "mathlib:Manifold.pathELength",
       "roadmap:RiemannianGeometry §R7.9",
       "target:1.3",
-      "target:1.4"
+      "target:1.4",
+      "target:1.1",
+      "target:1.2"
      ],
      "api": [
       {
@@ -701,7 +704,8 @@
       "target:1.4",
       "target:2.1",
       "target:3.1",
-      "tauceti:TauCeti.Manifold.hessian"
+      "tauceti:TauCeti.Manifold.hessian",
+      "target:1.3"
      ],
      "api": [
       {
@@ -913,7 +917,8 @@
       "target:3.4.1",
       "roadmap:DifferentialGeometry §12.1",
       "tauceti:TauCeti.nonempty_contMDiffRiemannianMetric",
-      "mathlib:exists_contMDiffSection_forall_mem_convex_of_local"
+      "mathlib:exists_contMDiffSection_forall_mem_convex_of_local",
+      "target:3.1"
      ],
      "api": [],
      "tests": [
@@ -1141,7 +1146,8 @@
      },
      "prerequisites": [
       "target:4.2.2",
-      "target:4.1"
+      "target:4.1",
+      "target:2.1"
      ],
      "api": [],
      "tests": [
@@ -1391,7 +1397,10 @@
       "target:2.3.2",
       "target:3.1",
       "target:3.2",
-      "target:4.3.3"
+      "target:4.3.3",
+      "target:1.3",
+      "target:1.4",
+      "target:2.1"
      ],
      "api": [],
      "tests": [
@@ -1510,7 +1519,8 @@
       "target:5.1",
       "tauceti:TauCeti.Manifold.IsGeodesicCurveOnFrom",
       "tauceti:TauCeti.Manifold.geodesicInterval",
-      "tauceti:TauCeti.Manifold.maximalGeodesic"
+      "tauceti:TauCeti.Manifold.maximalGeodesic",
+      "target:2.1"
      ],
      "api": [
       {
@@ -1642,7 +1652,9 @@
       "target:5.3.1",
       "target:4.2.1",
       "target:5.1",
-      "target:5.2"
+      "target:5.2",
+      "target:1.4",
+      "target:2.1"
      ],
      "api": [],
      "tests": [
@@ -1679,7 +1691,8 @@
       "target:5.2",
       "mathlib:ContDiffAt.implicitFunction",
       "mathlib:ContDiffAt.contDiffAt_implicitFunction",
-      "tauceti:TauCeti.Manifold.contMDiffOn_maximalGeodesic"
+      "tauceti:TauCeti.Manifold.contMDiffOn_maximalGeodesic",
+      "target:2.1"
      ],
      "api": [],
      "tests": [
@@ -1710,7 +1723,9 @@
      "prerequisites": [
       "target:5.2",
       "target:5.3.1",
-      "target:5.4.1"
+      "target:5.4.1",
+      "target:2.1",
+      "target:5.1"
      ],
      "api": [
       {
@@ -1767,7 +1782,10 @@
      "prerequisites": [
       "target:1.4",
       "target:4.2.1",
-      "target:5.4.2"
+      "target:5.4.2",
+      "target:2.1",
+      "target:5.1",
+      "target:5.2"
      ],
      "api": [],
      "tests": [
@@ -1800,7 +1818,8 @@
       "target:5.4.4",
       "target:5.4.1",
       "target:5.1",
-      "target:5.2"
+      "target:5.2",
+      "target:2.1"
      ],
      "api": [],
      "tests": [
@@ -1871,7 +1890,10 @@
       "target:5.4.5",
       "target:4.6",
       "target:3.4.1",
-      "target:5.4.1"
+      "target:5.4.1",
+      "target:2.1",
+      "target:5.1",
+      "target:5.2"
      ],
      "api": [],
      "tests": [
@@ -1917,7 +1939,9 @@
      "prerequisites": [
       "target:5.4.2",
       "target:5.1",
-      "target:5.2"
+      "target:5.2",
+      "target:2.1",
+      "target:4.1"
      ],
      "api": [
       {
@@ -1984,7 +2008,9 @@
      "prerequisites": [
       "target:5.6.1",
       "target:1.2",
-      "target:5.1"
+      "target:5.1",
+      "target:2.1",
+      "target:5.2"
      ],
      "api": [
       {
@@ -2044,7 +2070,8 @@
       "target:4.3.2",
       "target:5.2",
       "target:5.4.5",
-      "target:5.6.1"
+      "target:5.6.1",
+      "target:5.1"
      ],
      "api": [],
      "tests": [
@@ -2084,7 +2111,8 @@
       "target:2.1",
       "target:3.1",
       "target:5.2",
-      "target:5.5.1"
+      "target:5.5.1",
+      "target:5.1"
      ],
      "api": [],
      "tests": [
@@ -2119,7 +2147,8 @@
       "target:2.1",
       "target:3.1",
       "target:4.2.1",
-      "target:5.2"
+      "target:5.2",
+      "target:5.1"
      ],
      "api": [],
      "tests": [
@@ -2159,7 +2188,10 @@
       "target:2.1",
       "target:3.1",
       "target:5.5.1",
-      "tauceti:TauCeti.sphereRoundMetric"
+      "tauceti:TauCeti.sphereRoundMetric",
+      "target:3.6",
+      "target:5.2",
+      "roadmap:RiemannianGeometry §R5a"
      ],
      "api": [],
      "tests": [
@@ -2201,7 +2233,8 @@
       "target:5.5.1",
       "tauceti:TauCeti.UpperHalfSpace",
       "tauceti:TauCeti.UpperHalfSpace.hyperbolicMetric",
-      "tauceti:TauCeti.UpperHalfSpace.hasConstantSectionalCurvature"
+      "tauceti:TauCeti.UpperHalfSpace.hasConstantSectionalCurvature",
+      "target:5.2"
      ],
      "api": [],
      "tests": [
@@ -2240,7 +2273,10 @@
       "tauceti:TauCeti.Manifold.normalCoordinateField",
       "tauceti:TauCeti.Manifold.IsNormalDomain.mfderiv_inner_normalCoordinateField_self",
       "tauceti:TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self",
-      "roadmap:SmoothBundlesConnections §B6.0"
+      "roadmap:SmoothBundlesConnections §B6.0",
+      "target:1.3",
+      "target:2.1",
+      "target:5.2"
      ],
      "api": [],
      "tests": [
@@ -2274,7 +2310,8 @@
       "target:2.1",
       "target:3.1",
       "target:3.6",
-      "roadmap:RiemannianGeometry §R5a"
+      "roadmap:RiemannianGeometry §R5a",
+      "target:1.4"
      ],
      "api": [],
      "tests": [
@@ -2335,7 +2372,7 @@
     "§R5c",
     "§R7.9"
    ],
-   "what": "B, S, mean curvature vector and Gauss equation of isometric immersions of Hausdorff second-countable boundaryless manifolds (RiemannianGeometry's standing setting) with pinned signs (R5a); the inclusion of a regular sublevel {φ ≤ a} is smooth with invertible differential and v is outward iff dφ(dι v) > 0, and for a compact connected two-sided hypersurface of a connected manifold the normal collar and, when it separates, a defining function equal to the collar coordinate near it and ±1 off the collar with gradient ν (R7.9); relatively compact smooth domains (open, compact closure, a chart at each boundary point in which the domain is x_m > 0 on the last coordinate), every compact Riemannian manifold with boundary as the closure of one by a collar glued along the boundary and the Seeley extension of the metric, and a defining function with regular value 0 negative on the domain (R5c, scalar principal eigenfunction, items 1 and 3)"
+   "what": "B, S, mean curvature vector, Gauss equation and the equivalence of B = 0 with total geodesicity for isometric immersions of Hausdorff second-countable boundaryless manifolds (RiemannianGeometry's standing setting) with pinned signs (R5a); the inclusion of a regular sublevel {φ ≤ a} is smooth with invertible differential and v is outward iff dφ(dι v) > 0, and for a compact connected two-sided hypersurface of a connected manifold the normal collar and, when it separates, a defining function equal to the collar coordinate near it and ±1 off the collar with gradient ν (R7.9); relatively compact smooth domains (open, compact closure, a chart at each boundary point in which the domain is x_m > 0 on the last coordinate), every compact Riemannian manifold with boundary as the closure of one by a collar glued along the boundary and the Seeley extension of the metric, and a defining function with regular value 0 negative on the domain (R5c, scalar principal eigenfunction, items 1 and 3)"
   },
   {
    "roadmap": "GeometricTopology",
