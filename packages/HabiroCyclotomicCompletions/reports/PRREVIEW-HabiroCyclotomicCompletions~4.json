@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HabiroCyclotomicCompletions~4",
+  "head": "1def8f91876235e8b245b382b1501495b22e6406",
+  "pr": 1314,
+  "folder": "HabiroCyclotomicCompletions",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Incremental re-review of 18 changed lines since 5ebc7e3. Previous R01 (the letI in close_root_taylor_reexpansion) is repaired: the explicit WithIdeal binder with hI fixes the HasSum topology, checked with #check and explicit instances. Two P3 points come from the Tau Ceti rename brought in by the merge of main: README:143 still states the old pins (Mathlib 6b7abb3, Tau Ceti a91d3aa) while lake-manifest pins 1b1ccf4/2fd255d; and README:850-851 credits the quotient/remainder identities to Mathlib's Polynomial.ofCoeffList (with the line-159 table row). All 59 cited library names #check at the new pins. Synthetic-division values recomputed for the 2-q residuals and the third F^2 digit. Seeded sample: section 3.3 locators reopened (H line 250, H 450-464, G 174, G 207); the other targets lie outside the changed passages. Gate rerun OK; lake env lean gives 17 sorry warnings only; depcheck 0 problems; no outside-folder change against origin/main. Pull request title and description checked against this head: consistent.",
+  "text": "8dbba5bf39ae3ab2",
+  "carried": {
+   "from": "1def8f91876235e8b245b382b1501495b22e6406",
+   "head": "3bcc4286ecf727438ad936c34b26943615dfed24",
+   "findings": 2,
+   "lines": 12,
+   "folders": [
+    "HabiroCyclotomicCompletions"
+   ]
+  }
+ }
+}
