@@ -532,7 +532,7 @@ This layer proves that p-scaling a noncongruence element of `R₂N` produces an 
 
 ### 5.1 Intersection and degree-preserving base change
 
-For a prime `p ∤ 2N`, `R₂N ∩ M₂Np = M₂N` and `[R₂N M₂Np : M₂Np] = [R₂N : M₂N]`, all fields embedded in `ℚ((q^(1/(Np))))` (CDT, proof of Theorem 4.3.2, pp.656–657; Lemma 4.2.3, p.656). The second statement is a linear-disjointness assertion and does not follow from the first for arbitrary extensions.
+For a prime `p ∤ 2N`, `R₂N ∩ M₂Np = M₂N` and `[R₂N M₂Np : M₂Np] = [R₂N : M₂N]`, all fields embedded in `ℚ((q^(1/(Np))))` (CDT, proof of Theorem 4.3.2, pp.656–657; Lemma 4.2.3, pp.655–656). The second statement is a linear-disjointness assertion and does not follow from the first for arbitrary extensions.
 
 *Proof sketch.* An element of `R₂N ∩ M₂Np` is invariant under `G₂N` (§3.7) and under `Γ(2Np)`; its stabilizer is congruence, contains `−I` and has level dividing `2N`, so §1.8 gives invariance under `Γ(2N)`. Over `ℂ`, for `m ≥ 2`, ModularCurvesPartII §5.14 and §6.4, with the rational cusp below at the full level `2m ≥ 4`, identify `ℂM₂m` with the function field of `X(2m)`; for `m = 1`, `ℂM₂ = ℂ(λ)` is the function field of `X(2)` by §§2.2, 2.4. `ℚ((t))` and `ℂ` are linearly disjoint over `ℚ` inside `ℂ((t))` (compare coefficients), so for finite extensions `K ⊆ L` of subfields of `ℚ((t))`, `[ℂL : ℂK] = [L : K]`. `ℂM₂Np` is Galois over `ℂM₂N` with group a quotient of `±Γ(2N)/±Γ(2Np)`, and `ℂR₂N ∩ ℂM₂Np = ℂM₂N` by the first step over `ℂ`; a Galois extension is linearly disjoint from any extension meeting it only in the base.
 
@@ -578,7 +578,7 @@ If there is a constant C with `[R₂N : ℚ(λ)] ≤ C N³ log(2N)` for every `N
 
 ### Dependencies
 
-Layers 1, 3 and 4; ModularCurvesPartII §§5.14, 6.4, 6.5, 8.1; FuchsianOrbifolds Layer 5; Mathlib Chebyshev bounds.
+Layers 1–4; ModularCurvesPartII §§5.14, 6.4, 6.5, 8.1; FuchsianOrbifolds Layer 5; Mathlib Chebyshev bounds and `CongruenceSubgroup.Gamma0`.
 
 ## Layer 6: The unbounded denominators theorem
 
@@ -651,7 +651,7 @@ In the parameter Q, the branch `j^(1/3) = E₄/η⁸ = Q^(−1/3)(1 + 248Q + 412
 
 ### 6.8 The root test for λ(1 − λ)/16
 
-Set `h = λ(1 − λ)/16 = q ∏_{n≥1} ((1 + q^(2n))/(1 + qⁿ))²⁴ = q ∏_{m odd} (1 + q^m)^(−24)`. It is a nowhere-vanishing weak modular function for the theta group `⟨Γ(2), S⟩`, the conjugate of `Γ₀(2)` containing S. For `n ≥ 1`, the branch `h^(1/n)` with leading term `q^(1/n)` has bounded denominators if and only if `n ∣ 24`, and it is a weak modular function on a congruence subgroup if and only if `n ∣ 24` (CDT, (1.0.4) and the following discussion, p.629). CDT describes h as having level `Γ₀(2)`; with `q = exp(πiτ)`, `T ∈ Γ₀(2)` sends `q` to `−q` and changes the sign of `h = q + ⋯`, so the invariance group is the theta group (the abelianization statements are conjugation-invariant and are unaffected).
+Set `h = λ(1 − λ)/16 = q ∏_{m≥1} ((1 + q^(2m))/(1 + q^m))²⁴ = q ∏_{m odd} (1 + q^m)^(−24)`. It is a nowhere-vanishing weak modular function for the theta group `⟨Γ(2), S⟩`, the conjugate of `Γ₀(2)` containing S. For `n ≥ 1`, the branch `h^(1/n)` with leading term `q^(1/n)` has bounded denominators if and only if `n ∣ 24`, and it is a weak modular function on a congruence subgroup if and only if `n ∣ 24` (CDT, (1.0.4) and the following discussion, p.629). CDT describes h as having level `Γ₀(2)`; with `q = exp(πiτ)`, `T ∈ Γ₀(2)` sends `q` to `−q` and changes the sign of `h = q + ⋯`, so the invariance group is the theta group (the abelianization statements are conjugation-invariant and are unaffected).
 
 *Proof sketch.* Write `h = q·u` with `u = ∏_{m odd}(1 + q^m)^(−24) ∈ 1 + qℤ[[q]]`, from `λ = (θ₂/θ₃)⁴` and `1 − λ = (θ₄/θ₃)⁴` (§2.1). If `n ∣ 24`, every factor of `u^(1/n)` has an integral exponent. Conversely, if `u^(1/n)` has bounded denominators, the root property of §1.2 makes it integral, so its `q`-coefficient `−24/n` is an integer. S maps λ to `1 − λ` and fixes h; h has no zeros on `ℍ`, so `h^(1/n)` is a weak modular function on the kernel of a character of the theta group of order dividing n. Bounded denominators give congruence by §6.4, and congruence gives bounded denominators by AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2).
 
@@ -661,7 +661,7 @@ Set `h = λ(1 − λ)/16 = q ∏_{n≥1} ((1 + q^(2n))/(1 + qⁿ))²⁴ = q ∏_
 
 For `n ≥ 1`, the Fermat cover `uⁿ + vⁿ = 1` over the λ-line with `λ = uⁿ` corresponds to a congruence subgroup exactly for `n ∈ {1, 2, 4, 8}`, and the normalized branch `v = (1 − 16x)^(1/n)` with `x = λ/16` has bounded denominators exactly for these n (CDT, p.628; §1.1.3, p.631).
 
-*Proof sketch.* For an odd prime p dividing n, the p-adic valuations of the coefficients of `(1 − 16x)^(1/n)` tend to `−∞`. For `n = 2^a` with `a ≥ 1`, the coefficient of `x^m` has 2-adic valuation `(4 − a)m − v₂(m!)`, bounded below exactly when `a ≤ 3`. For `n ∣ 8`, `u = λ^(1/n) = 16^(1/n) q^(1/n) ∏ ((1 + q^(2n))/(1 + q^(2n−1)))^(8/n)` is a scalar times an integral series, and both u and v are congruence by §6.4. For other n, v has unbounded denominators, so it is not congruence (AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2)), and neither is the cover.
+*Proof sketch.* For an odd prime p dividing n, the p-adic valuations of the coefficients of `(1 − 16x)^(1/n)` tend to `−∞`. For `n = 2^a` with `a ≥ 1`, the coefficient of `x^m` has 2-adic valuation `(4 − a)m − v₂(m!)`, bounded below exactly when `a ≤ 3`. For `n ∣ 8`, `u = λ^(1/n) = 16^(1/n) q^(1/n) ∏_{m≥1} ((1 + q^(2m))/(1 + q^(2m−1)))^(8/n)` is a scalar times an integral series, and both u and v are congruence by §6.4. For other n, v has unbounded denominators, so it is not congruence (AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2)), and neither is the cover.
 
 *Needs:* §§2.2, 2.3, 6.4; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2).
 
@@ -707,7 +707,7 @@ API:
 
 - Every component of a vector-valued form is holomorphic on `ℍ`.
 - Conjugating ρ by `P ∈ GL_n(ℂ)` and replacing F by `PF` gives a vector-valued form.
-- For a finite-index subgroup `Γ′` and `M ≥ 1`, the function `τ ↦ F(Mτ)` is a vector-valued form for `SL₂(ℤ) ∩ diag(M, 1)⁻¹SL₂(ℤ)diag(M, 1)` with the conjugated representation; inducing to `SL₂(ℤ)` gives a vector-valued form for `SL₂(ℤ)` whose `ρ(T)` is semisimple, because every parabolic of `SL₂(ℤ)` is conjugate to `±T^m`.
+- For `M ≥ 1` and `A = diag(M, 1)`, the function `τ ↦ F(Mτ)` satisfies `F(Mγτ) = (cτ + d)^k ρ(AγA⁻¹) F(Mτ)` for every `γ = [[a, b], [c, d]]` in `Γ₀(M) = SL₂(ℤ) ∩ A⁻¹SL₂(ℤ)A`, where `AγA⁻¹ = [[a, Mb], [c/M, d]]`. Inducing from `Γ₀(M)` to `SL₂(ℤ)` as in §7.5, with the representation `γ ↦ ρ(AγA⁻¹)` of `Γ₀(M)` in place of the trivial one, gives a vector-valued form for `SL₂(ℤ)` that has `τ ↦ F(Mτ)` as its block at the identity coset. Its `ρ(T)` is semisimple: its M-th power is block diagonal with blocks `ρ(Aγ_iT^Mγ_i⁻¹A⁻¹)` for the coset representatives `γ_i`, each the image of a parabolic element of `SL₂(ℤ)` of trace 2, which is conjugate to some `T^m`; and an invertible matrix with a semisimple power is semisimple.
 - The span of the values `F(τ)` is ρ-stable.
 - For odd k, every vector-valued form is zero, because `F(τ) = F((−I)τ) = (−1)^k F(τ)`.
 
