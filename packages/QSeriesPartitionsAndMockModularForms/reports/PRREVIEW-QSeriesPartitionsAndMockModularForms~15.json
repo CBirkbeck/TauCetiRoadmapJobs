@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QSeriesPartitionsAndMockModularForms~15",
+  "head": "5fdb342e4d2bdfb841c5952d1b529537ea05e2d5",
+  "pr": 1391,
+  "folder": "QSeriesPartitionsAndMockModularForms",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 5fdb342; this round read the pull request's title and description against the head. Three P3 findings, all in the description (rank equidistribution wrongly extended to modulus 11; 'over arbitrary commutative rings' applied to complex-analytic series; 'everything else is on main or a consumer' omits two open roadmaps and the three declared gaps). Gate run at this head: all counters 0, OK (worker's run: build=0); depcheck 0 problems; Suggested.lean elaborates with 19 sorry warnings only; outside-folder diff empty; rank and crank residue counts recomputed modulo 5, 7, 11. No seeded-sample target lies in a changed passage; no source locator re-read.",
+  "text": "f731d50b580f57ce",
+  "carried": {
+   "from": "5fdb342e4d2bdfb841c5952d1b529537ea05e2d5",
+   "head": "5fdb342e4d2bdfb841c5952d1b529537ea05e2d5",
+   "findings": 3,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
