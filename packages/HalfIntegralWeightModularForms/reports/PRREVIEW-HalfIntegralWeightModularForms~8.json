@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HalfIntegralWeightModularForms~8",
+  "head": "b5d75634227ccbf827337c1de83427973859862d",
+  "pr": 1721,
+  "folder": "HalfIntegralWeightModularForms",
+  "date": "2026-11-15",
+  "findings": 6,
+  "blocking": 1,
+  "notes": "Full review. Previous R01 (description) and the eta/Dedekind ownership remark are repaired. R01 (P2): odd-rank Hecke-Schoeneberg is statable at the pinned Tau Ceti (probe elaborated) but absent, and the docstring says otherwise. R02-R06 (P3): kroneckerSymNat duplicates TauCeti.kroneckerSym; one wrong Tau Ceti name; 'uncertified' in the README; two promised statements unstated; three garbled passages. Gate passes (build OK); depcheck 0 problems; Suggested.lean elaborates with 13 sorry warnings only; one-tactic probe closes none of 13. Sample: all 15 seeded targets recomputed; 11 locators checked against Kohnen-Zagier 1981 and Skoruppa-Zagier 1988 (author-page copies); Shimura, Serre-Stark, Kohnen, Waldspurger, Niwa, Cipra, Shintani and the Eichler-Zagier preprint could not be read.",
+  "text": "679be6d339e7b199"
+ }
+}
