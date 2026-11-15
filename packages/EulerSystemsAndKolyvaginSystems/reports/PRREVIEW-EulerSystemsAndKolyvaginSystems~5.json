@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EulerSystemsAndKolyvaginSystems~5",
+  "head": "a0e5702e0f5b85010330ac6bf1352520ba5429a7",
+  "pr": 1272,
+  "folder": "EulerSystemsAndKolyvaginSystems",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 6 changed lines since ccd7e7a. Checked: the three changed README lines against the pins (renamed IsSemisimpleRing.finiteWedderburnAlgebraPresentation at Presentation.lean:325, pinned revisions equal lake-manifest.json); previous R01 repaired, R02 partly repaired; the pull request's title and description against the head (one P3: the list of cited roadmaps on main omits GlobalNumberFields, README lines 1815 and 2559); gate re-run, all counters 0; depcheck 0 problems; Suggested.lean elaborates with only the two sorry warnings; no change outside the folder against the base. Seeded sample: none in a changed passage, no source locator re-checked.",
+  "text": "541b7b1221b4e75a",
+  "carried": {
+   "from": "a0e5702e0f5b85010330ac6bf1352520ba5429a7",
+   "head": "a0e5702e0f5b85010330ac6bf1352520ba5429a7",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
