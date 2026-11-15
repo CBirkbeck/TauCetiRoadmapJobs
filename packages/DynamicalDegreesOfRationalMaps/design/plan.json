@@ -542,9 +542,9 @@
      "id": "3.1",
      "kind": "theorem",
      "name": "isNef_iff_intersectionNumber_nonneg / isNef_baseChange_iff",
-     "statement": "Nefness is imported from AlgebraicModuliForArithmeticGeometryPartII §1.5 over the base Spec K (nonnegative degree on every integral curve of a proper K-scheme; sums, positive multiples, pullback, preservation under field extension), with ample implies nef from its §1.7. Nef real classes are those of §2.3 (nonnegative degree on every integral curve, i.e. nef image in N^1(X/K)); they can be strictly more than the positive combinations of nef line bundles. This section proves: L is nef iff (L·C) ≥ 0 for every integral closed curve, with the numerical intersection (the coefficient of n in χ(C, nL) is the degree χ(C,L) − χ(C,O_C)); on a projective variety this is ArakelovGeometryAndAbelianHeightsPartII §0.1's nefness; big and nef pulls back to big and nef along generically finite surjective maps of equal dimension with ((p^*L)^d) = deg(p)(L^d); for every projective K-scheme, L nef iff L_{K'} nef (forward direction imported, converse through §2.1 and field-extension compatibility); nefness passes to W of §2.4; pullbacks of nef real classes along K-morphisms of proper K-schemes are nef, and real polarizations pull back along generically finite surjective maps of equal dimension with ((p^*ω)^d) = deg(p)(ω^d); ample approximation: on a proper K-scheme with an ample H, for nef real classes ω_j = Σ_{i=1}^n t_{ji} L_i, an integer m ≥ 1 with mH ± L_i ample, every rational δ > 0 and rationals t'_{ji} with |t'_{ji} - t_{ji}| ≤ δ/(2mn), Σ_i t'_{ji} L_i + δH = N^{-1}A_j with N ≥ 1 and A_j ample line bundles; hence an inequality P ≤ Q between polynomials in intersection numbers, homogeneous of the same degree in each class on both sides, that holds for ample line bundles holds for all nef real classes.",
+     "statement": "Nefness is imported from AlgebraicModuliForArithmeticGeometryPartII §1.5 over the base Spec K (nonnegative degree on every integral curve of a proper K-scheme; sums, positive multiples, pullback, preservation under field extension), with ample implies nef from its §1.7. Nef real classes are those of §2.3 (nonnegative degree on every integral curve, i.e. nef image in N^1(X/K)); they can be strictly more than the positive combinations of nef line bundles. This section proves: L is nef iff (L·C) ≥ 0 for every integral closed curve, with the numerical intersection (the coefficient of n in χ(C, nL) is the degree χ(C,L) − χ(C,O_C)); on a projective variety this is ArakelovGeometryAndAbelianHeightsPartII §0.1's nefness; big and nef pulls back to big and nef along generically finite surjective maps of equal dimension with ((p^*L)^d) = deg(p)(L^d); for every proper K-scheme, L nef iff L_{K'} nef (forward direction imported, converse through §2.1 and field-extension compatibility); nefness passes to W of §2.4; pullbacks of nef real classes along K-morphisms of proper K-schemes are nef, and real polarizations pull back along generically finite surjective maps of equal dimension with ((p^*ω)^d) = deg(p)(ω^d); ample approximation: on a proper K-scheme with an ample H, for nef real classes ω_j = Σ_{i=1}^n t_{ji} L_i, an integer m ≥ 1 with mH ± L_i ample, every rational δ > 0 and rationals t'_{ji} with |t'_{ji} - t_{ji}| ≤ δ/(2mn), Σ_i t'_{ji} L_i + δH = N^{-1}A_j with N ≥ 1 and A_j ample line bundles; hence an inequality P ≤ Q between polynomials in intersection numbers, homogeneous of the same degree in each class on both sides, that holds for ample line bundles holds for all nef real classes.",
      "hypotheses": [
-      "X projective (for the field-extension item) or proper over K",
+      "X proper over K",
       "X with an ample line bundle H for the ample approximation"
      ],
      "locator": {
@@ -578,7 +578,7 @@
       {
        "name": "isNef_baseChange_iff",
        "role": "compatibility",
-       "statement": "for every projective K-scheme, L nef iff L_{K'} nef; the forward direction is the base change of AlgebraicModuliForArithmeticGeometryPartII §1.5 along Spec K' -> Spec K, the converse is proved here through §2.1 and field-extension compatibility"
+       "statement": "for every proper K-scheme, L nef iff L_{K'} nef; the forward direction is the base change of AlgebraicModuliForArithmeticGeometryPartII §1.5 along Spec K' -> Spec K, the converse is proved here through §2.1 and field-extension compatibility"
       },
       {
        "name": "isNef_reduction",
@@ -1074,7 +1074,7 @@
      ],
      "locator": {
       "source": "dang2020",
-      "where": "Theorem 1 (i), lines 27-30; Theorem 5.2.1, lines 1271-1358; dangfavre2021 Theorem 1.3, lines 448-451; truong2020 Theorem 1.1 (1), lines 143-158; dinhsibony2005 Proposition 6, lines 245-247"
+      "where": "Theorem 1 (i), lines 27-30; Theorem 5.2.1, lines 1271-1358; dangfavre2021 Theorem 1.3, lines 448-451; truong2020 Lemma 4.5, lines 999-1003 (smooth projective varieties, algebraically closed field of characteristic zero, line 763), and proof of Theorem 5.3, lines 1104-1106 (iterates of one correspondence); dinhsibony2005 Proposition 6, lines 245-247; silverman2014 (3), line 387, for k = 1 on P^N"
      },
      "prerequisites": [
       "target:1.1",
@@ -1179,7 +1179,7 @@
      ],
      "locator": {
       "source": "dangfavre2021",
-      "where": "lines 461-465; dang2020 lines 42-46; dinhsibony2005 Corollaire 7, lines 256-259; silverman2014 Proposition 7, lines 383-413"
+      "where": "lines 461-465; dang2020 lines 42-46; dinhsibony2005 Corollaire 7, lines 256-259; silverman2014 Proposition 7, lines 383-413; truong2020 Theorem 1.1 (1), lines 143-158, for smooth X over an algebraically closed field and a hyperplane class"
      },
      "prerequisites": [
       "target:4.2",

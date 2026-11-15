@@ -48,7 +48,7 @@ venue = "Journal für die reine und angewandte Mathematik 758 (2020), 139-182"
 doi = "10.1515/crelle-2017-0052"
 arxiv = "1605.05049v2"
 locator_scheme = "theorem"
-locator = "Introduction, notation for correspondences; Theorem 1.1; §6.3; §6.4"
+locator = "Introduction, notation for correspondences; Theorem 1.1; Lemma 4.5; Theorem 5.3; §6.3; §6.4"
 url = "https://arxiv.org/abs/1605.05049v2"
 fetched_from = "https://arxiv.org/pdf/1605.05049v2"
 fetched_at = "2026-11-04T18:54:11Z"
@@ -57,7 +57,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2 (May 2016); numbering of the arXiv version read"
-cited_for = ["§1.4", "§4.3", "§4.4", "§5.3", "§6.3", "Scope"]
+cited_for = ["§1.4", "§4.3", "§4.4", "§5.1", "§5.3", "§6.3", "Scope"]
 
 [[source]]
 id = "guedj2010"
