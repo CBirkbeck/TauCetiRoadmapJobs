@@ -1437,7 +1437,7 @@
       {
        "name": "berkEtale_notRigid",
        "kind": "non-example",
-       "statement": "A †-rational localization onto a closed subdisc is Berkovich-étale but not rigid étale, since its image is not open."
+       "statement": "A †-rational localization onto a closed subdisc is Berkovich-étale but not rigid étale, since its image is not open; in TropicalAndBerkovichArithmetic §0.30 the inclusion of the strict closed subdisc is quasi-étale and not étale, so the two uses of the word differ on this map."
       }
      ]
     },
@@ -3671,7 +3671,7 @@
      "id": "10.4",
      "kind": "theorem",
      "name": "TauCeti.Decompletion.binomialAnalytic",
-     "statement": "Prove that for a uniform pro-p group G with coordinates G ≅ ℤ_p^d and a ℚ_p-Banach space M, a function f: G → M with binomial expansion f(x) = Σ_α c_α binom(x, α) is locally analytic if and only if there is r > 1 with ‖c_α‖ r^{|α|} → 0 (ALRS Theorem 5.2.14, p. 101, ALRS line 5314; Laz65 Chapitre III, (1.3.9) Corollaire, p. 77, Laz65 line 2873). For a uniform Banach ℚ_p-algebra Λ with pseudo-uniformizer ϖ and the spectral norm |−|_ϖ normalized by |ϖ|_ϖ = 1/2 at every point of M(Λ), define for r > 1 the ϖ-complete module C_{r,ϖ}(G, Λ°) of series Σ c_α binom(x, α) with |c_α|_ϖ r^{τ(α)} ≤ 1 and → 0, where τ(α) = Σ_i w(g_i)·α_i for the p-valuation w and the ordered basis g_1, …, g_d defining the coordinates (10.3), the values w(g_i) being made rational by modifying w (ALRS p. 101, ALRS line 5333; ALRS Definition 5.2.15, p. 102, ALRS line 5364), prove that it is a subalgebra of C(G, Λ°) and, for |p|_ϖ ≤ 1/2 and 1 < r < 2, a Hopf Λ°-algebra (ALRS Lemma 5.2.16, p. 102, ALRS line 5379; ALRS Lemma 5.2.17, p. 102, ALRS line 5411), and define the analytic group G^Bin_{r,ϖ} = GSpec(C_{r,ϖ}(G, Λ)) and, for a commutative algebra R in D(BG^Bin_{r,ϖ}), the R-semilinear Bin_{r,ϖ}-analytic representations Mod_R(D(BG^Bin_{r,ϖ})) (ALRS Definition 5.2.18, p. 104, ALRS line 5492). Prove that for 1 < r < 2 and |p|_ϖ ≤ 1/2 the natural map f: BG^la ×_{GSpec ℚ_p} GSpec(Λ) → BG^Bin_{r,ϖ} is 0-proper with f_*Λ = Λ, so that ∗-pullback along f is fully faithful (ALRS Lemma 5.2.21, p. 105, ALRS line 5617).",
+     "statement": "Prove that for a uniform pro-p group G with the ordered coordinates G ≅ ℤ_p^d of NoncommutativeAndEquivariantIwasawa §0.6 and a ℚ_p-Banach space M, a function f: G → M with binomial expansion f(x) = Σ_α c_α binom(x, α) is locally analytic if and only if there is r > 1 with ‖c_α‖ r^{|α|} → 0 (ALRS Theorem 5.2.14, p. 101, ALRS line 5314; Laz65 Chapitre III, (1.3.9) Corollaire, p. 77, Laz65 line 2873). For a uniform Banach ℚ_p-algebra Λ with pseudo-uniformizer ϖ and the spectral norm |−|_ϖ normalized by |ϖ|_ϖ = 1/2 at every point of M(Λ), define for r > 1 the ϖ-complete module C_{r,ϖ}(G, Λ°) of series Σ c_α binom(x, α) with |c_α|_ϖ r^{τ(α)} ≤ 1 and → 0, where τ(α) = Σ_i w(g_i)·α_i for the p-valuation w and the ordered basis g_1, …, g_d defining the coordinates (10.3), the values w(g_i) being made rational by modifying w (ALRS p. 101, ALRS line 5333; ALRS Definition 5.2.15, p. 102, ALRS line 5364), prove that it is a subalgebra of C(G, Λ°) and, for |p|_ϖ ≤ 1/2 and 1 < r < 2, a Hopf Λ°-algebra (ALRS Lemma 5.2.16, p. 102, ALRS line 5379; ALRS Lemma 5.2.17, p. 102, ALRS line 5411), and define the analytic group G^Bin_{r,ϖ} = GSpec(C_{r,ϖ}(G, Λ)) and, for a commutative algebra R in D(BG^Bin_{r,ϖ}), the R-semilinear Bin_{r,ϖ}-analytic representations Mod_R(D(BG^Bin_{r,ϖ})) (ALRS Definition 5.2.18, p. 104, ALRS line 5492). Prove that for 1 < r < 2 and |p|_ϖ ≤ 1/2 the natural map f: BG^la ×_{GSpec ℚ_p} GSpec(Λ) → BG^Bin_{r,ϖ} is 0-proper with f_*Λ = Λ, so that ∗-pullback along f is fully faithful (ALRS Lemma 5.2.21, p. 105, ALRS line 5617).",
      "hypotheses": [
       "G is a uniform pro-p group of dimension d with fixed coordinates given by an ordered basis g_1, …, g_d and a p-valuation w with rational values w(g_i); Λ is a uniform Banach ℚ_p-algebra with pseudo-uniformizer ϖ and |p|_ϖ ≤ 1/2 for the spectral norm normalized by |ϖ|_ϖ = 1/2"
      ],
@@ -3681,8 +3681,10 @@
      },
      "prerequisites": [
       "target:10.3",
+      "roadmap:NoncommutativeAndEquivariantIwasawa §0.6",
       "roadmap:NoncommutativeAndEquivariantIwasawa §0.7",
-      "roadmap:LocallyAnalyticDistributions §0.1"
+      "roadmap:PadicFunctionalAnalysis §4.4",
+      "mathlib:PadicInt.mahlerEquiv"
      ],
      "api": [
       {
@@ -3723,6 +3725,11 @@
        "statement": "A polynomial function on ℤ_p^d has finitely many nonzero c_α and is locally analytic for every r."
       },
       {
+       "name": "lazard_scalarCase",
+       "kind": "compatibility",
+       "statement": "For M = K a complete discretely valued extension of ℚ_p the criterion is the d-variable Amice theorem of LocallyAnalyticDistributionsPartII §1.5, and for d = 1 it is the condition liminf_n v_p(c_n)/n > 0 of PadicFunctionalAnalysis §4.4: for p odd, d = 2 and f(a, b) = (1 + p)^{a+b}, c_{(m,n)} = p^{m+n} and |c_{(m,n)}| r^{m+n} = (r/p)^{m+n} → 0 exactly for r < p. The exponent |α| may be replaced by max_i α_i, since r^{max α} ≤ r^{|α|} ≤ (r^d)^{max α}, but not by α_1: g(a, b) = Σ_k p^k binom(b, p^k) has c_{(0,p^k)} = p^k, so p^{−k} r^{α_1} → 0 for every r, while p^{−k} r^{p^k} → ∞ and g is not locally analytic."
+      },
+      {
        "name": "binomial_normCondition",
        "kind": "non-example",
        "statement": "The condition |p|_ϖ ≤ 1/2 depends on ϖ and is not read in the normalization |p| = p^{−1} of the Conventions, under which it would always hold: with |ϖ|_ϖ = 1/2, Λ = ℚ_p(p^{1/2}) and ϖ = p^{1/2} give |p|_ϖ = 1/4, so the Hopf structure is available, while Λ = ℚ_p and ϖ = p² give |p|_ϖ = 2^{−1/2} > 1/2, outside ALRS Definition 5.2.18."
@@ -3730,7 +3737,7 @@
       {
        "name": "lazard_tauCetiStages",
        "kind": "compatibility",
-       "statement": "For d = 1, G = ℤ_p and M = ℚ_p, the locally analytic functions of the criterion are the image of Tau Ceti's algebraic direct limit of analytic stages under its evaluation into C(ℤ_p, ℚ_p) (Exact supplier contracts, From Tau Ceti), which is injective because ℚ_p has no p-torsion; the criterion identifies this image with the Mahler series Σ c_n binom(x, n) with |c_n| r^n → 0 for some r > 1, Amice's theorem, which the pinned library does not prove. For p odd, f(a) = (1 + p)^a lies in the stage h = 0, its Taylor coefficients log(1 + p)^n/n! having absolute value p^{−n + v_p(n!)} ≤ p^{−n(p−2)/(p−1)} → 0, and its Mahler coefficients p^n satisfy the criterion for 1 < r < p, as the first Check says."
+       "statement": "For d = 1, G = ℤ_p and M = ℚ_p, the locally analytic functions of the criterion are the image of Tau Ceti's algebraic direct limit of analytic stages under its evaluation into C(ℤ_p, ℚ_p) (Exact supplier contracts, From Tau Ceti), which is injective because ℚ_p has no p-torsion; the criterion identifies this image with the Mahler series Σ c_n binom(x, n) with |c_n| r^n → 0 for some r > 1, Amice's theorem (PadicFunctionalAnalysis §4.4), which the pinned library does not prove. For p odd, f(a) = (1 + p)^a lies in the stage h = 0, its Taylor coefficients log(1 + p)^n/n! having absolute value p^{−n + v_p(n!)} ≤ p^{−n(p−2)/(p−1)} → 0, and its Mahler coefficients p^n satisfy the criterion for 1 < r < p, as the first Check says."
       },
       {
        "name": "binomial_tauWeights",
@@ -5137,11 +5144,11 @@
    "what": "Labelled Sen operators with HT(χ_p) = +1 (§R07.P7.2), used to pin the sign of the arithmetic Sen operator."
   },
   {
-   "roadmap": "LocallyAnalyticDistributions",
+   "roadmap": "PadicFunctionalAnalysis",
    "sections": [
-    "§0.1"
+    "§4.4"
    ],
-   "what": "Locally analytic functions on ℤ_p and Mahler/Amice expansions (§0.1)."
+   "what": "Amice's analytic basis (§4.4): for a complete ultrametric module E with bounded ℤ_p-action, the isometry C₀(ℕ, E) ≃ LA_h(E), (c_n) ↦ Σ_n ⌊n/p^h⌋!·binom(x, n)·c_n, onto the stage LA_h(E) of coefficient families of functions analytic on every disc a + p^hℤ_p, and, for a Banach ℚ_p-space E, the characterization of LA_h and of local analyticity of continuous functions ℤ_p → E by their Mahler coefficients; 10.4 applies it with E a Banach space of analytic functions in the remaining variables."
   },
   {
    "roadmap": "NoncommutativeAndEquivariantIwasawa",
@@ -5160,6 +5167,13 @@
     "§3.8"
    ],
    "what": "Checks only. Pan's derived functors R^iLA of locally analytic vectors of Banach representations (§2.3) and the κ-condensed derived locally analytic vectors V^Rla of solid representations (§3.8), compared with Layer 10 in Checks."
+  },
+  {
+   "roadmap": "LocallyAnalyticDistributionsPartII",
+   "sections": [
+    "§1.5"
+   ],
+   "what": "Checks only. Amice's theorem in d variables for functions ℤ_p^d → K, K a complete discretely valued extension of ℚ_p (§1.5), the case M = K of Lazard's criterion in 10.4, compared in a Check."
   },
   {
    "roadmap": "PhiGammaModulesAndIwasawaCohomology",
