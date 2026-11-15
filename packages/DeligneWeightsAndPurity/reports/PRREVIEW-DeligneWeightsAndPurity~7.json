@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DeligneWeightsAndPurity~7",
+  "head": "fae1b73766888d889fc8c32402b3a13be5af3cfd",
+  "pr": 929,
+  "folder": "DeligneWeightsAndPurity",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 46 changed lines since 5f2fd53. R01-R04 of the previous review are repaired: the 23 replaced source numbers and catalogue ids each resolve to the section that defines the object named (1022 internal links, 0 unresolved; 0 catalogue ids left), and the description now names the six suppliers not on main with their sections and the models used. Title and description checked against the head (17 supplier names against main 8ad4192 and the merge order, section lists, summary claims, pinned declarations). Adversarial table with computed values for 8 changed passages and the description. Seeded sample: 8.10 falls in a changed passage and was checked against WII p. 248; (3.3.11) checked for 7.15 (iii). Gate rerun: all scanners zero, worker build=0; depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean: five sorry warnings, no error. No file outside the folder changed.",
+  "text": "5c0da75d75dafdc9"
+ }
+}
