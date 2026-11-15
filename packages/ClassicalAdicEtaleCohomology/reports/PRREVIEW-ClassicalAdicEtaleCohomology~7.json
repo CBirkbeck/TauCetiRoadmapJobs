@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassicalAdicEtaleCohomology~7",
+  "head": "4b7a2994ab30726a018dc859710c1d518585be26",
+  "pr": 875,
+  "folder": "ClassicalAdicEtaleCohomology",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 4 changed lines since fc1c03a. Previous R01-R03 (pull request description) all repaired. The two changed consumer sentences (README 5831, 5833) were checked against DiamondEtaleCohomology, DeligneWeightsAndPurityPartII and VStackSheavesAndLisseCategories at their open heads: one P3 (Section 5.4 is used for general-base nearby cycles, not valuation nearby cycles). Title and description checked against the head: no sentence contradicted. Gate passes (build=0 in the worker's run), depcheck 0 problems, Suggested.lean elaborates with four sorry warnings only. The seeded sample falls in no changed passage; Huber (1996) not readable (uncertified).",
+  "text": "124997aac19a9b8b",
+  "carried": {
+   "from": "4b7a2994ab30726a018dc859710c1d518585be26",
+   "head": "f5f39825ac26bc640cad2001a6a4dccd373a5ed0",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "ClassicalAdicEtaleCohomology"
+   ]
+  }
+ }
+}
