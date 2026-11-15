@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EisensteinIdealAndRationalTorsion~9",
+  "head": "e49787cc1028f9274f69691955e0284d176eb26c",
+  "pr": 1264,
+  "folder": "EisensteinIdealAndRationalTorsion",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since e49787c. The folder is unchanged and settled; this round checked the pull request's title and description against the head: one sentence of the description (level-13 descent 'under explicit modular-curve and class-number hypotheses') contradicts README lines 3 and 1278 and Suggested.lean (R01, P3; repair is to the description only). Gate rerun: all scanners zero, OK (worker's run build=0); depcheck 0 problems; lake env lean on Suggested.lean gives seven sorry warnings only; no file changed outside the folder. No seeded target lies in a changed passage. Previous report had no findings.",
+  "text": "7dd7be3c6f66d6ff",
+  "carried": {
+   "from": "e49787cc1028f9274f69691955e0284d176eb26c",
+   "head": "e49787cc1028f9274f69691955e0284d176eb26c",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
