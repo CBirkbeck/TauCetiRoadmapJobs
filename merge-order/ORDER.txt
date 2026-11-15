@@ -425,3 +425,4 @@ QuasiregularMaps
 MathematicalBilliards
 DimerModelsAndLozengeTilings
 GaussianIsoperimetryAndClusters
+Varifolds
