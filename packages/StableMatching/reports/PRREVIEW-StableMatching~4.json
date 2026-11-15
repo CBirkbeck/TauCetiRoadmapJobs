@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StableMatching~4",
+  "head": "e21e2ba87b87cb8c0ab9f8a39b853d3762458173",
+  "pr": 2346,
+  "folder": "StableMatching",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 5 changed lines since 64671cd. Checked: previous R01 repaired (the new role-swap Check's values recomputed with the transcribed algorithm, consistent with the Conventions witness, 1.2 and 2.1; 6000 random markets confirm the Check discriminates) but its wording calls the swap's men women (R01, P3); previous R02 partly repaired, and the description contradicts the head on weak preferences and Roth 1982 locators (R02, P3). Gate rerun: all checks 0, OK; depcheck 0 problems; lake env lean: 10 sorry warnings only; no file outside the folder; overlap and citation leads empty; changed passage compared with Roth2008 lines 354-365, no wording shared.",
+  "text": "4a0630858e7e101a"
+ }
+}
