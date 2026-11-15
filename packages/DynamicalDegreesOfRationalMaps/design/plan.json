@@ -1381,7 +1381,7 @@
      ],
      "locator": {
       "source": "stacks-constructions",
-      "where": "Lemma 13.1 (tag 01NE), line 1267; silverman2014 lines 350-357; guedj2010 lines 1145-1147"
+      "where": "Lemma 13.1 (tag 01NE), line 1267; silverman2014 lines 43-45 and 350-354; guedj2010 lines 1145-1147"
      },
      "prerequisites": [
       "mathlib:AlgebraicGeometry.Proj",
