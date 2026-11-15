@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NonordinaryCMSpecialValues~4",
+  "head": "401e631d22aad66f9b8fe6dd0b7e578332921444",
+  "pr": 2290,
+  "folder": "NonordinaryCMSpecialValues",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 28 changed lines since 26e27c6. All four previous findings (R01-R04) are repaired. Checked: the rewritten §2.7 (residual character, component-wise smoothing factor, levels prime to p, both Checks recomputed on Q(√−7), p = 5), the passages citing it (§2.8, Layer 2 Examples, Downstream consumers, Scope, Summary, Suggested.lean docstring), the Layer 3 and Layer 5 dependency lines, KATO04 (15.6.3)-(15.6.4) and (15.9.2) and BKO21 §3.0.2 at their locators, the description against the head. Gate passes (rerun), depcheck 0 problems, lake env lean gives 3 sorry warnings only. Two P3 findings: the smoothing ideal in §2.7 must be prime to 6pa rather than 6pf (introduced by the repair), and the description's summary block still says 'integral' BKO class.",
+  "text": "f130f8d35655caf1",
+  "carried": {
+   "from": "401e631d22aad66f9b8fe6dd0b7e578332921444",
+   "head": "36742e667300f14c4af48f880484c0700139fd8e",
+   "findings": 2,
+   "lines": 2,
+   "folders": [
+    "NonordinaryCMSpecialValues"
+   ]
+  }
+ }
+}
