@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ModularityAndLanglandsExtensions~4",
+  "head": "ef0ff5ec7328dea65fe796c3be4c3ee0aca10b9a",
+  "pr": 1180,
+  "folder": "ModularityAndLanglandsExtensions",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 2,
+  "notes": "incremental re-review of 17 changed lines since e3a0748; the three reworded passages (2.24, 4.22, 4.33) compared with BCGNT Prop. 6.2.3 and Thm. 7.2.1 and Newton-Thorne Prop. 6.1 at their arXiv texts: 2.24 now presents hypothesis (6)(b) as a consequence (P2), 4.22 admits any superset of the source's set S (P2), one mis-tagged condition (P3); gate fails on tex=1 at README line 1215 (P3), all other counters 0; depcheck 0 problems; elaboration with sorry as the only warning; no Lean statement changed; seeded sample does not meet the changed passages; title and description checked against the head, one stale sentence (P3).",
+  "text": "94738800cf40675b"
+ }
+}
