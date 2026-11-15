@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FormalConnectionsOpers~14",
+  "head": "4b3f57b0212124b73d2908b191cf03686f193550",
+  "pr": 1056,
+  "folder": "FormalConnectionsOpers",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 4b3f57b; previous repaired finding retained; title, summary and description checked against head and base; five P3 description findings; seeded sample unchanged; gate, dependency check, targeted build and direct Lean elaboration pass; nine supplied signatures compared; adversarial values recorded.",
+  "text": "1c8988808e6ed431",
+  "carried": {
+   "from": "4b3f57b0212124b73d2908b191cf03686f193550",
+   "head": "4b3f57b0212124b73d2908b191cf03686f193550",
+   "findings": 5,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
