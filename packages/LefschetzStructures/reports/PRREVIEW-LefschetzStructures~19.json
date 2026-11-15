@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LefschetzStructures~19",
+  "head": "2394d733f9b91c132e1d7438405d13bd452ef01f",
+  "pr": 1061,
+  "folder": "LefschetzStructures",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 35 changed lines since d3b9c22 (new Provenance section, README 560-586, and two references, 607-614; Suggested.lean unchanged). Checked every claim of the Provenance section against AxiomMath Stacks at c496df0 (README, lean-toolchain, lakefile, ClassicalTheory.lean, Motives/Category.lean, ProjectionFormula/Formula.lean, Concrete/LefschetzMotive.lean, 7 directory listings) and AxiomMath Weil at 27cdb20 (all 11 Duality files, LICENSE, README, toolchain), and Stacks tags 0FGV and 0FGA. R01: the Weil Duality files give an existential Frobenius-compatible perfect pairing over finite fields with Q_l coefficients, not 0.5's L-compatible pairing nor 2.1's cup-product duality (P^2 counter-model computed). R02: the projection formula is in ProjectionFormula/Formula.lean (0FGT), not ClassicalTheory.lean. R03: 'All checked on zbMATH' now false for the two repositories. R04: the description repeats R01. Previous review raised no finding. Gate: worker OK; re-run with --build against the candidate order OK (build=0); depcheck 237 roadmaps, 2244 edges, 0 problems; lake env lean exits 0 with 12 sorry warnings only. Overlap check: MotivesAndAlgebraicCycles, DeligneWeightsAndPurity; nothing new shared.",
+  "text": "989050c8e266b29a"
+ }
+}
