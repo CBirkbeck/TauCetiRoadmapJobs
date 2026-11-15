@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ShimuraData~3",
+  "head": "b4aa1123237497b64270f05e7123a4a416ee2b4e",
+  "pr": 1038,
+  "folder": "ShimuraData",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 6 changed lines since 15b9daf: the three reworded paragraphs of README §4.6 checked against Milne, Shimura varieties and moduli, Proposition 8.8 (milne-svh lines 1867-1898) with six computed rows (weight adjustment, induced-module control, CM splitting); wording independent of the source; none of the seeded sample falls in the change. Gate rerun on this head: every check 0, OK; depcheck 0 problems; Suggested.lean (unchanged) elaborates with sorry as the only warning; no change outside the folder. The folder is sound. Two P3 findings, both in the pull request's description, written for the first head: its sentence on Suggested.lean (now one theorem, no definitions, other headlines not statable) and 'red-team passes to follow' (four are in the branch).",
+  "text": "ddac7b06f05a46c7",
+  "carried": {
+   "from": "b4aa1123237497b64270f05e7123a4a416ee2b4e",
+   "head": "6eee3daeaddb9f5a5b5bc29bbd1bf9cec08547c4",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
