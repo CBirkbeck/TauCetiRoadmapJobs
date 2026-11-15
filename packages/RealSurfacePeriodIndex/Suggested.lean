@@ -85,7 +85,7 @@ theorem index_eq_orderOf_of_isAlgClosed (k : Type u) [Field k] [IsAlgClosed k] [
 
 /-- **Norm bound over a real closed field.** For `R` real closed and `K` a finitely generated
 field extension of `R` of transcendence degree `2`, the index of every central simple
-`K`-algebra divides twice the period of its class (README §2.10; B19 §0.1, p. 63). -/
+`K`-algebra divides twice the period of its class (README §2.10; B19 §0.2, p. 63). -/
 theorem index_dvd_two_mul_orderOf_of_isRealClosed (R : Type u) [Field R] [IsRealClosed R]
     (K : Type u) [Field K] [Algebra R K] [Algebra.EssFiniteType R K]
     (htr : Algebra.trdeg R K = 2) (A : CSA.{u, u} K) :
@@ -107,7 +107,8 @@ theorem index_eq_orderOf_of_not_isSemireal (K : Type u) [Field K] [Algebra ℝ K
 /-- **Theorem 0.4, birational form.** Let `K` be a finitely generated field extension of `ℝ` of
 transcendence degree `2` and `A` a central simple `K`-algebra whose class becomes trivial over
 every real closed field `R` with a `K`-algebra structure. Then the index of `A` equals the period
-of its class (README §7.6; B19 Theorem 0.4, p. 64, and §6.4, p. 95). -/
+of its class (README §§7.5, 7.6; B19 Theorem 0.4, p. 64, its proof in §6.3, p. 95, and the
+passage from real closures to real points in §6.4, p. 96). -/
 theorem index_eq_orderOf_of_forall_isRealClosed (K : Type u) [Field K] [Algebra ℝ K]
     [Algebra.EssFiniteType ℝ K] (htr : Algebra.trdeg ℝ K = 2) (A : CSA.{u, u} K)
     (hA : ∀ (R : Type u) [Field R] [IsRealClosed R] [Algebra K R],
@@ -148,7 +149,8 @@ theorem not_anisotropic_of_not_isSemireal (K : Type u) [Field K] [Algebra ℝ K]
 field `K` of a real curve without real points (finitely generated of transcendence degree `1` over
 `ℝ`, with `-1` a sum of squares), any two quadratic forms on a space of dimension at least `5`
 have a common nonzero zero; in particular every degree-four del Pezzo surface over `K` has a
-rational point (README §7.13; B19 Theorem 0.13, p. 66, and its proof, p. 96). -/
+rational point (README §7.13; B19 Theorem 0.13 and its deduction from Theorem 0.10 by
+Amer–Brumer in §0.5, p. 66). -/
 theorem exists_common_zero_of_not_isSemireal (K : Type u) [Field K] [Algebra ℝ K]
     [Algebra.EssFiniteType ℝ K] (htr : Algebra.trdeg ℝ K = 1) (hK : ¬ IsSemireal K)
     {V : Type v} [AddCommGroup V] [Module K V] [FiniteDimensional K V]

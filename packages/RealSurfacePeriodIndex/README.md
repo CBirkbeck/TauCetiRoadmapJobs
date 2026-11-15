@@ -480,12 +480,13 @@ A proof can proceed as follows.
 
 1. Scaling by e = −x₁x₂x₃ puts φ = ⟨x₁,…,x₆⟩ of trivial discriminant into the normal form eφ ≅ ⟨a, b, −ab, −c, −d, cd⟩ with a = ex₁, b = ex₂, c = −ex₄, d = −ex₅ (then ex₃ ≡ −ab and ex₆ ≡ cd modulo squares, the second because the signed discriminant −x₁⋯x₆ is a square) (diagonal calculus, QuadraticFormInvariants Layer 0); similarity preserves isotropy and the Clifford invariant of an even-dimensional form of trivial discriminant.
 2. For this normal form the even Clifford algebra is A × A with A = (a, b) ⊗ (c, d), so c(φ) = [A] (QuadraticFormInvariants Layer 5, Clifford invariant).
-3. Albert's theorem: ⟨a, b, −ab, −c, −d, cd⟩ is isotropic iff the biquaternion algebra (a, b) ⊗ (c, d) is not a division algebra, that is iff its index is ≤ 2. If the factors are division algebras, a common value e of the pure-quaternion norm forms ⟨a, b, −ab⟩ and ⟨c, d, −cd⟩ is the same as a common quadratic subfield F(√e), so both directions are EKM Theorem 98.19; if a factor is split, the corresponding ternary subform is isotropic and the index is ≤ 2.
+3. Albert's theorem: ⟨a, b, −ab, −c, −d, cd⟩ is isotropic iff the biquaternion algebra (a, b) ⊗ (c, d) is not a division algebra, that is iff its index is ≤ 2. If the factors are division algebras, a common nonzero value e of the forms ⟨a, b, −ab⟩ and ⟨c, d, −cd⟩ is the same as a common quadratic subfield F(√e), so both directions are EKM Theorem 98.19. These ternary forms are the square forms x ↦ x² on the trace-zero quaternions, in the bases i, j, ij. They are the negatives of the pure reduced norm forms ⟨−a, −b, ab⟩ and ⟨−c, −d, cd⟩ of QuadraticFormInvariants Layer 2, because Nrd(x) = −x² for a trace-zero quaternion x (EKM §98, p. 390); if a factor is split, the corresponding ternary subform is isotropic and the index is ≤ 2.
 
 **Checks.**
 
 - The Albert form ⟨a, b, −ab, −c, −d, cd⟩ over ℝ with a = b = c = d = −1 is isotropic, and (−1,−1) ⊗ (−1,−1) ≅ M₄(ℝ) has index 1.
 - Over a field where (a,b) ⊗ (c,d) is a division algebra, the corresponding Albert form is anisotropic.
+- Square form versus pure norm, in Hamilton's quaternions (−1, −1). The trace-zero element i has i² = −1 but Nrd(i) = i·(−i) = 1. So ⟨a, b, −ab⟩ = ⟨−1, −1, −1⟩ takes −1 at (1, 0, 0), while the pure reduced norm ⟨−a, −b, ab⟩ = ⟨1, 1, 1⟩ takes 1. For a = b = c = d = −1 the common square value −1 gives the common quadratic subfield ℝ(√−1) = ℂ of both factors, as (−1,−1) ⊗ (−1,−1) ≅ M₄(ℝ) requires. Taking the norm value 1 as radicand would give ℝ(√1) = ℝ, which is not a quadratic extension.
 
 *Needs:* Mathlib `CliffordAlgebra.even`; Mathlib `QuadraticMap.Anisotropic`; QuadraticFormInvariants Layer 5; §0.12.
 
@@ -683,7 +684,7 @@ A proof can proceed as follows.
 - Over the discrete valuation ring ℝ[t]_(t), with β the constant Hamilton class and A = ℍ ⊗ ℝ(t) (d = 2), the model is ℍ ⊗ ℝ[t]_(t), whose fibre at t = 0 is ℍ, of index 2 = d: the divisibility ind(β(x)) | d is sharp.
 - With the same β and A = M_2(ℍ ⊗ ℝ(t)) (d = 4), the model M_2(ℍ ⊗ ℝ[t]_(t)) has degree 4 and its fibre at t = 0 has index 2: the degree prescribed by A is kept, not replaced by the index of β_K.
 - The class (−1, t) over ℝ(t) has residue at t = 0 the class of −1 in ℝˣ/ℝˣ², which is nonzero (HeightsRationalPointsAndObstructions §2.16b), so it does not come from Br(ℝ[t]_(t)) and has no Azumaya model of any degree over ℝ[t]_(t): the hypothesis on the class cannot be dropped.
-- Over R = ℂ[t]_(t), the order of M_2(ℂ(t)) of matrices with entries in R and lower-left entry in tR has generic fibre M_2(ℂ(t)), but its fibre at t = 0 is the algebra of upper triangular 2 × 2 matrices, which is not simple: an order with generic fibre A need not be Azumaya, and the construction produces End_𝒞(N) (here 𝒞 = R, N = R² and 𝒜 = M_2(R)).
+- Over R = ℂ[t]_(t), the order O of M_2(ℂ(t)) of matrices with entries in R and lower-left entry in tR has generic fibre M_2(ℂ(t)) but is not Azumaya. It is free over R with basis e₁₁, e₁₂, te₂₁, e₂₂, so its fibre O/tO at t = 0 has dimension 4. The classes x of e₁₂ and y of te₂₁ satisfy x² = y² = 0 and xy = yx = 0 (xy = te₁₁ and yx = te₂₂ lie in tO), so they span a two-sided ideal J with J² = 0, the radical of O/tO, and (O/tO)/J ≅ ℂ × ℂ. The fibre is therefore not simple, whereas the fibre M_2(ℂ) of M_2(R) has radical 0. Reducing the entries of O modulo t gives only the three-dimensional algebra of upper triangular matrices, the quotient of O/tO by the line spanned by y, so it is not the fibre. An order with generic fibre A need not be Azumaya, and the construction produces End_𝒞(N) (here 𝒞 = R, N = R² and 𝒜 = M_2(R)).
 
 *Needs:* SchemeAndStackFoundations §2.22 (`mk_opposite`); SchemeAndStackFoundations §2.22 (`mk_eq_zero_iff`); SchemeAndStackFoundations §2.22 (`mk_tensor`); SchemeAndStackFoundations §0.6 (`reflexiveHull`); Tau Ceti `TauCeti.IsRegularLocalRing.free_of_isReflexive`; Mathlib `ModuleCat.matrixEquivalence`; §0.12.
 
@@ -2109,7 +2110,7 @@ A proof can proceed as follows.
 
 A degree-4 del Pezzo surface over a field F is a smooth complete intersection of two quadrics in ℙ⁴_F by §7.12.
 
-Let K be a field finitely generated of transcendence degree 1 over ℝ in which −1 is a sum of squares; for instance K = ℝ(C) for an integral curve C over ℝ with C(ℝ) = ∅. Any two quadratic forms q₁, q₂ on a K-vector space of dimension ≥ 5 have a common nonzero zero (Lean: `exists_common_zero_of_not_isSemireal`). Consequently, for C an integral curve over ℝ with C(ℝ) = ∅, every del Pezzo surface of degree 4 over ℝ(C) has an ℝ(C)-rational point. (B19, Theorem 0.13, p. 66)
+Let K be a field finitely generated of transcendence degree 1 over ℝ in which −1 is a sum of squares; for instance K = ℝ(C) for an integral curve C over ℝ with C(ℝ) = ∅. Any two quadratic forms q₁, q₂ on a K-vector space of dimension ≥ 5 have a common nonzero zero (Lean: `exists_common_zero_of_not_isSemireal`). Consequently, for C an integral curve over ℝ with C(ℝ) = ∅, every del Pezzo surface of degree 4 over ℝ(C) has an ℝ(C)-rational point. (B19, Theorem 0.13 and its deduction from Theorem 0.10 by Amer–Brumer, §0.5, p. 66)
 
 A proof can proceed as follows.
 
