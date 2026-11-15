@@ -204,6 +204,72 @@
      ]
     },
     {
+     "id": "2.2",
+     "kind": "theorem",
+     "name": "ReductiveCartanDatum.exists_conj_maximalAbelian",
+     "statement": "For a reductive Cartan datum D and a maximal abelian subspace 𝔞 ⊆ 𝔭: (a) 𝔭 = ⋃_{k ∈ K⁰} Ad(k)𝔞; (b) every maximal abelian 𝔞' ⊆ 𝔭 is Ad(k)𝔞 for some k ∈ K⁰; (c) K = N_K(𝔞)·K⁰ and G = N_K(𝔞)·G⁰; (d) 𝔷_𝔭 ⊆ 𝔞. LieGroups Layer 9 proves Ad(K)𝔞 = 𝔭 for the 𝔞 of an IwasawaData, and RealSemisimpleLieGroups 1.3 proves (a) and (b) for semisimple 𝔤₀ under K_θ ⊆ Int(𝔤₀); this is the group form under K⁰, for every maximal abelian subspace, with centre and for disconnected G. Route: a regular H ∈ 𝔞 with Z_𝔭(H) = 𝔞 from the joint eigenspaces of the commuting B_θ-symmetric ad 𝔞; a maximizer k₀ of k ↦ B(Ad(k)X, H) on the compact K⁰ gives B(Z, ⁅Ad(k₀)X, H⁆) = 0 for Z ∈ 𝔨, hence Ad(k₀)X ∈ 𝔞; (b) from Z_𝔭(Ad(k)H') = Ad(k)𝔞' and maximality; (c) from (b), normality of K⁰ in K and the polar decomposition.",
+     "hypotheses": [
+      "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E, T2Space G, BoundarylessManifold I G), 𝔤 = LeftInvariantDerivation I G",
+      "D = (C, B), with the full base Cartan datum C (including global model) and involution θ, is a reductive Cartan datum on G (target 1.1)",
+      "𝔞 ⊆ 𝔭 a maximal abelian subspace"
+     ],
+     "locator": {
+      "source": "knapp2002",
+      "where": "Ch. VI §5"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "roadmap:LieGroups Layer 1",
+      "roadmap:LieGroups Layer 9",
+      "tauceti:map_lieExp",
+      "mathlib:LinearMap.IsSymmetric.directSum_isInternal_of_pairwise_commute"
+     ],
+     "api": [
+      {
+       "name": "iUnion_conj_eq",
+       "role": "structure",
+       "statement": "𝔭 = ⋃_{k ∈ K⁰} Ad(k)𝔞"
+      },
+      {
+       "name": "exists_conj",
+       "role": "structure",
+       "statement": "every maximal abelian 𝔞' ⊆ 𝔭 is Ad(k)𝔞 for some k ∈ K⁰"
+      },
+      {
+       "name": "normalizer_mul_identityComponent",
+       "role": "structure",
+       "statement": "K = N_K(𝔞)·K⁰ and G = N_K(𝔞)·G⁰"
+      },
+      {
+       "name": "splitCentre_le",
+       "role": "structure",
+       "statement": "𝔷_𝔭 = 𝔷 ∩ 𝔭 ⊆ 𝔞"
+      }
+     ],
+     "tests": [
+      {
+       "name": "GL2_maximizer",
+       "kind": "computation",
+       "statement": "GL_2(ℝ), 𝔞 diagonal, H = diag(1,−1), S = ((0,1),(1,0)): Ad(R_φ)S = ((−sin 2φ, cos 2φ),(cos 2φ, sin 2φ)), B(Ad(R_φ)S, H) = −2 sin 2φ, maximal at φ = −π/4 with Ad(R_{−π/4})S = diag(1,−1) ∈ 𝔞 and R_{−π/4} ∈ SO(2) = K⁰; Z_𝔭(S) = {((a,b),(b,a))} = ℝ·1 ⊕ ℝS = 𝔞', carried onto 𝔞"
+      },
+      {
+       "name": "GL2_nonregular",
+       "kind": "non-example",
+       "statement": "H = 1 in GL_2(ℝ) is not regular (Z_𝔭(1) = 𝔭); k ↦ B(Ad(k)S, 1) = tr S = 0 is constant, so k₀ = 1 is a maximizer although S ∉ 𝔞"
+      },
+      {
+       "name": "GL2_nonmaximal",
+       "kind": "non-example",
+       "statement": "ℝS ⊆ 𝔭 is abelian but not maximal: it misses 𝔷_𝔭 = ℝ·1 and no Ad(k) carries it onto the two-dimensional 𝔞; Z_𝔭(S) = 𝔞' ⊋ ℝS"
+      },
+      {
+       "name": "O11",
+       "kind": "degenerate",
+       "statement": "O(1,1): K⁰ = 1, 𝔭 = 𝔞 = ℝY, (a), (b) hold with k = 1; every element of K = {diag(±1,±1)} normalizes 𝔞, so (c) reads K = K·1"
+      }
+     ]
+    },
+    {
      "id": "2.3",
      "kind": "theorem",
      "name": "IwasawaTriple.restrictedWeyl_comparison",
@@ -220,6 +286,7 @@
      "prerequisites": [
       "target:1.1",
       "target:2.1",
+      "target:2.2",
       "target:2.6",
       "roadmap:RealSemisimpleLieGroups 2.3",
       "roadmap:LieGroups Layer 9",
@@ -281,6 +348,7 @@
       "where": "Ch. VII §5 (structure of M)"
      },
      "prerequisites": [
+      "target:2.2",
       "roadmap:LieGroups Layer 9",
       "target:2.3",
       "roadmap:RealSemisimpleLieGroups 1.2",
@@ -347,6 +415,7 @@
      },
      "prerequisites": [
       "target:1.2",
+      "target:2.2",
       "target:2.3",
       "target:2.4",
       "roadmap:RealSemisimpleLieGroups 1.2",
@@ -443,6 +512,7 @@
      "prerequisites": [
       "target:1.1",
       "target:2.1",
+      "target:2.2",
       "roadmap:LieGroups Layer 9",
       "target:2.3",
       "target:2.4"
@@ -733,6 +803,7 @@
       "where": "Ch. VII §4; also warner1972 Ch. 1 §1.2; bourbaki-lie4-6 Ch. IV §2 for the Tits-system clause"
      },
      "prerequisites": [
+      "target:2.2",
       "target:2.3",
       "target:2.4",
       "target:3.3",
@@ -944,12 +1015,11 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "isParabolicSubalgebra_iff_borel",
-     "statement": "For a reductive Cartan datum with the component condition and a real Lie subalgebra 𝔮 ⊆ 𝔤 (parabolic = Ad(G)-conjugate of some 𝔮_{Π'}, as in RealSemisimpleLieGroups 4.4): 𝔮 is parabolic iff 𝔷(𝔤) ⊆ 𝔮 and 𝔮 ⊗ ℂ ∩ [𝔤,𝔤]_ℂ contains TauCeti.borelSubalgebra 𝔥 b for some splitting Cartan subalgebra 𝔥 of [𝔤,𝔤]_ℂ and base b. Every parabolic subalgebra contains 𝔷 = (𝔷∩𝔨) ⊕ 𝔷_𝔭 ⊆ 𝔪 ⊕ 𝔞. Route: Ad(G)𝔮_{Π'} = Ad(G⁰)𝔮_{Π'}, 𝔮_{Π'} = 𝔷 ⊕ 𝔮'_{Π'} with 𝔮'_{Π'} standard parabolic of [𝔤,𝔤], and RealSemisimpleLieGroups 4.4's criterion for Int([𝔤,𝔤]) (its 0.2, 3.1). RealSemisimpleLieGroups 4.4 states the criterion with TauCeti.borelSubalgebra of 𝔤 ⊗ ℂ, defined only for Killing (semisimple) algebras; this is the reductive form with the centre condition.",
+     "statement": "For every Iwasawa triple of a reductive Cartan datum, with no component condition, and a real Lie subalgebra 𝔮 ⊆ 𝔤 (parabolic = Ad(G)-conjugate of some 𝔮_{Π'}, as in RealSemisimpleLieGroups 4.4): 𝔮 is parabolic iff 𝔷(𝔤) ⊆ 𝔮 and 𝔮 ⊗ ℂ ∩ [𝔤,𝔤]_ℂ contains TauCeti.borelSubalgebra 𝔥 b for some splitting Cartan subalgebra 𝔥 of [𝔤,𝔤]_ℂ and base b. Every parabolic subalgebra contains 𝔷 = (𝔷∩𝔨) ⊕ 𝔷_𝔭 ⊆ 𝔪 ⊕ 𝔞. Route: every Ad(G)-conjugate of a 𝔮_{Π'} is an Ad(G⁰)-conjugate of some 𝔮_{Π''} (G = G⁰·N_K(𝔞) by 2.2; for n ∈ N_K(𝔞) some n₀ ∈ N_{K⁰}(𝔞) has n₀n·Σ⁺ = Σ⁺ by 2.3 and RealSemisimpleLieGroups 1.2, and Ad(n₀n)𝔮_{Π'} = 𝔮_{n₀n·Π'}); 𝔮_{Π'} = 𝔷 ⊕ 𝔮'_{Π'} with 𝔮'_{Π'} standard parabolic of [𝔤,𝔤]; and RealSemisimpleLieGroups 4.4's criterion for Int([𝔤,𝔤]) (its 0.2, 3.1). RealSemisimpleLieGroups 4.4 states the criterion under the component condition with TauCeti.borelSubalgebra of 𝔤 ⊗ ℂ, defined only for Killing (semisimple) algebras; this is the reductive form with the centre condition, for every Iwasawa triple.",
      "hypotheses": [
       "G is a real finite-dimensional C^infinity Lie group (LieGroup I ∞ G, FiniteDimensional ℝ E, T2Space G, BoundarylessManifold I G), 𝔤 = LeftInvariantDerivation I G",
       "D = (C, B), with the full base Cartan datum C (including global model) and involution θ, is a reductive Cartan datum on G (target 1.1)",
       "(𝔞, Σ⁺) completes D to an Iwasawa triple: 𝔞 ⊆ 𝔭 maximal abelian, Σ⁺ a positive system of Σ(𝔤, 𝔞)",
-      "the component condition holds: G = Z_K(𝔞)·G⁰ (target 2.4)",
       "𝔮 ⊆ 𝔤 a real Lie subalgebra"
      ],
      "locator": {
@@ -958,8 +1028,10 @@
      },
      "prerequisites": [
       "target:1.1",
-      "target:2.4",
+      "target:2.2",
+      "target:2.3",
       "roadmap:RealSemisimpleLieGroups 0.2",
+      "roadmap:RealSemisimpleLieGroups 1.2",
       "roadmap:RealSemisimpleLieGroups 3.1",
       "roadmap:RealSemisimpleLieGroups 4.1",
       "roadmap:RealSemisimpleLieGroups 4.4",
@@ -987,6 +1059,16 @@
        "name": "GL2_tracezero_borel",
        "kind": "non-example",
        "statement": "GL_2(ℝ), 𝔮 = trace-zero upper triangular: 𝔮 ⊗ ℂ ∩ 𝔰𝔩_2(ℂ) is a Borel but 1 ∉ 𝔮 and dim 𝔮 = 2 < 3 = dim 𝔮_∅, so not parabolic; 𝔮 ⊕ ℝ·1 = 𝔮_∅ satisfies both conditions; ℝ·1 contains 𝔷 but no Borel"
+      },
+      {
+       "name": "AutSL3_outer",
+       "kind": "computation",
+       "statement": "Aut(𝔰𝔩_3(ℝ)) (component condition fails): σ(X) = −Xᵀ carries 𝔮_{{α₁}} to {X : X₁₃ = X₂₃ = 0} = Ad(w₀)𝔮_{{α₂}} with Ad(w₀) ∈ Int(𝔰𝔩_3(ℝ)) = G⁰; n₀ = Ad(w₀) restores Σ⁺ and n₀σ carries α₁ to α₂; 𝔷 = 0 and the complexification contains the lower triangular Borel, so both sides hold"
+      },
+      {
+       "name": "O11_abelian",
+       "kind": "degenerate",
+       "statement": "O(1,1) (component condition fails): 𝔤 = 𝔷 = ℝY, 𝔮_∅ = 𝔤, [𝔤,𝔤] = 0 with Borel 0; of the subalgebras 0 and 𝔤 only 𝔤 contains 𝔷 and only 𝔤 is parabolic"
       }
      ]
     }
@@ -1101,6 +1183,11 @@
        "name": "discrete",
        "kind": "degenerate",
        "statement": "a discrete G has linearLieAlgebra = 0"
+      },
+      {
+       "name": "unitriangular",
+       "kind": "non-example",
+       "statement": "G = {((1,t),(0,1))} is closed but not transpose-stable: linearLieAlgebra G = ℝE₁₂ is a Lie subalgebra, but E₁₂ᵀ = E₂₁ ∉ ℝE₁₂, so transposition stability needs a transpose-stable G"
       }
      ]
     },
@@ -1440,6 +1527,7 @@
       "where": "Ch. VII §§2, 7"
      },
      "prerequisites": [
+      "target:2.2",
       "target:3.3",
       "target:3.5",
       "target:6.2",
@@ -1681,7 +1769,7 @@
     "Layer 7",
     "Layer 9"
    ],
-   "what": "Full CartanInvolution with finite central matrix-cover model, polar diffeomorphism and compact maximal K, maximal-abelian conjugacy/exhaustion, exact IwasawaData, iwasawaDecomposition, kakDecomposition, restricted roots, and the restricted Weyl group N_K(𝔞)/Z_K(𝔞) with normalizer representatives of the restricted reflections and chamber coverage; LieGroups Layers 0–4,7 for Lie foundations and complexification. Native map_lieExp and lieMap_injective supply naturality and faithfulness."
+   "what": "Full CartanInvolution with finite central matrix-cover model, polar diffeomorphism and compact maximal K, exact IwasawaData, iwasawaDecomposition, kakDecomposition, restricted roots, and the restricted Weyl group N_K(𝔞)/Z_K(𝔞) with normalizer representatives of the restricted reflections and chamber coverage; LieGroups Layers 0–4,7 for Lie foundations and complexification. Native map_lieExp and lieMap_injective supply naturality and faithfulness."
   },
   {
    "roadmap": "RealSemisimpleLieGroups",
