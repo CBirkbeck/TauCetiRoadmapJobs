@@ -1,10 +1,28 @@
 {
-  "review": {
-    "status": "needs_changes",
-    "reviewer": "independent-review-REV-DESIGN-StackPointsAndResidualGerbes~6",
-    "date": "2026-11-11",
-    "findings": 7,
-    "blocking": 4,
-    "notes": "Checked all seven prior repairs (six repaired, one partly repaired), all 38 targets, 71 API entries and 133 Checks, all 15 seeded source targets, the 16 supplier contracts, current supplier citations, pinned declarations, and ownership on main, open heads and board packages. Computed adversarial table included. Findings: incorrect residual-gerbe fibre product; universal non-quasi-coherence overclaim; missing scheme-representable decency case; wrong I^0 Check; missing local prerequisites; misplaced tangent base-change locator; duplicate closed-substack ownership with VirtualFundamentalClasses. Dependency gate: 229 roadmaps, 2058 edges, 0 problems. Seven legal source entries added without altering existing entries. Elaboration not available (this lane does not elaborate); no Suggested.lean exists at this design stage. Two settled uncertified books remain unread."
-  }
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-DESIGN-StackPointsAndResidualGerbes~14",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "comment review on the board pull request by `CBirkbeck` (claude) of f5ab76b",
+  "conditional_gaps": [
+   "algebraic-stacks-satisfy-rs",
+   "decent-algebraic-spaces",
+   "decent-space-schematic-locus",
+   "flat-groupoid-quotients",
+   "flat-lfp-open",
+   "generic-flatness-spaces",
+   "group-spaces-over-fields",
+   "homogeneous-quotient-scheme",
+   "inertia-of-presentations",
+   "isomorphism-fpqc-local-spaces",
+   "quasi-dm-flat-presentation",
+   "quasi-finite-over-fields",
+   "reduced-regular-smooth-local",
+   "reduced-scheme-residue-field-factorisation",
+   "stack-morphism-permanence",
+   "stack-separation-axioms"
+  ]
+ }
 }
