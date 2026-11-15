@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BianchiModularForms~7",
+  "head": "70ba2119f380e556858a07c9f36ebf911a95b508",
+  "pr": 1719,
+  "folder": "BianchiModularForms",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 70ba211. Checked: the pull request's title and description against the head and the folder's change against the base. Two P3 findings, both in the description's file list and both repaired by editing the description only: '64 milestones' (head has 66 numbered sections; 3.5 and 5.8 were added after the first head b5908b3) and the Suggested.lean bullet 'what can be stated' (head states two headline theorems with eight definitions, import Mathlib only; first head had 19 theorems). Title, summary block and prose paragraph agree with the head. Previous report had no finding. No seeded-sample target falls in a changed passage. Gate rerun: OK, every counter 0 (worker's gate with targeted build: build=0 OK); depcheck 238 roadmaps, 0 problems; lake env lean Suggested.lean exits 0 with only the two sorry warnings; nothing changed outside the folder; overlaps none; adversarial rows recomputed for 9.3 (14 discriminants, d=-4 in, d=-40,-43 out) and 1.2 (Q(i) level one: 0 = 0).",
+  "text": "8fe6caa46a80e62c",
+  "carried": {
+   "from": "70ba2119f380e556858a07c9f36ebf911a95b508",
+   "head": "722ea50326cfdd5c9720d7a29ef64239825a2e8b",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
