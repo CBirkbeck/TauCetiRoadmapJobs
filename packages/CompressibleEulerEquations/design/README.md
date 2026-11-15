@@ -371,8 +371,10 @@ on `E`, no Lorentzian quadratic form with a time orientation and no causal curve
 - §1.2: the structure `LinearSystem n N` (coefficients `A0`, `A`, `B` on `ℝ × E`, valued in real
   `N × N` matrices), its left-hand side `LinearSystem.apply` and the predicate
   `LinearSystem.IsSymmetricHyperbolic` (`A⁰` and every `Aʲ` symmetric in the sense of
-  `Matrix.IsSymm`, and `λ|ξ|² ≤ ξ·A⁰ξ` with `λ > 0`); its notion of a speed `c ≥ 0`,
-  `|ξ·(Σⱼ ωⱼAʲ)ξ| ≤ c ξ·A⁰ξ` for `|ω| ≤ 1`. These are the carrier of §5.1.
+  `Matrix.IsSymm`, and `λ|ξ|² ≤ ξ·A⁰ξ` with `λ > 0`). These are the carrier of §5.1.
+- Conventions, *Propagation speed*: its notion of a speed `c ≥ 0`,
+  `|ξ·(Σⱼ ωⱼAʲ)ξ| ≤ c ξ·A⁰ξ` for all `(t, x)` and `|ω| ≤ 1` (§1.2 gives the existence of one when
+  the `Aʲ` are bounded). Compared in §5.2 with dominating cones, at a point.
 - §2.1: the pointwise energy identity
   `∂_t⟨A⁰u, u⟩ + Σⱼ ∂ⱼ⟨Aʲu, u⟩ = ⟨Ku, u⟩ + 2⟨F, u⟩`, `K = ∂_tA⁰ + Σⱼ ∂ⱼAʲ − B − Bᵀ`, for
   classical solutions of `Lu = F` with `A⁰`, `Aʲ` of class `C¹` and `B` continuous. Used in
@@ -1264,8 +1266,8 @@ This extends SymmetricHyperbolicSystems §2.2, which is the case `Λ = 0`, `w = 
 of a single speed), with a smoothed weight and `LW = 0` on the cone, to Lipschitz
 characteristic-monotone weights, moving cones `(M, w)`, periodic lifts and the hypothesis
 `|LW| ≤ C₁|W|`. The two notions of speed agree: for `c > 0`, `c` is a speed of the system at a
-point in the sense of SymmetricHyperbolicSystems (`|ξ·(Σⱼ ωⱼAʲ)ξ| ≤ c ξ·A⁰ξ` for `|ω| ≤ 1`) iff
-the round cone `(c, 0)` dominates there. Indeed, for `ζ₀ ≥ c|ζ′|` and `ζ′ = |ζ′|ω`,
+point in the sense of SymmetricHyperbolicSystems' Conventions (`|ξ·(Σⱼ ωⱼAʲ)ξ| ≤ c ξ·A⁰ξ` for
+`|ω| ≤ 1`) iff the round cone `(c, 0)` dominates there. Indeed, for `ζ₀ ≥ c|ζ′|` and `ζ′ = |ζ′|ω`,
 `ξ·σ(ζ)ξ ≥ (ζ₀ − c|ζ′|) ξ·A⁰ξ ≥ 0`; conversely the covectors `(c, ±ω)`, `|ω| ≤ 1`, satisfy the
 cone condition and give `∓ξ·(Σⱼ ωⱼAʲ)ξ ≤ c ξ·A⁰ξ`. (A speed `0` forces every `Aʲ = 0` and has no
 round cone, whose opening is positive.)
@@ -1312,8 +1314,9 @@ round cone, whose opening is positive.)
   `∫₀¹ χW² dx = ∫₀¹ (1 − x)^{−1} dx = ∞`, so `E_χ` is not finite; `W` is not `C¹` on a neighbourhood
   of the closure `[0, T] × [−1, 1]`, which the hypothesis demands.
 
-*Needs:* §5.1; §2.1 (difference bound); SymmetricHyperbolicSystems §2.1 (pointwise identity);
-§4.1 (localisation, for `Λ ≠ 0`); Mathlib Rademacher
+*Needs:* §5.1; §2.1 (difference bound); SymmetricHyperbolicSystems §2.1 (pointwise identity)
+and its Conventions (speed, for the comparison with dominating cones); §4.1 (localisation, for
+`Λ ≠ 0`); Mathlib Rademacher
 `LipschitzOnWith.ae_differentiableWithinAt_of_mem` and integration by parts for Lipschitz
 functions `LipschitzWith.integral_lineDeriv_mul_eq`; Tau Ceti
 `TauCeti.le_mul_exp_of_le_add_mul_integral`.
@@ -1607,8 +1610,9 @@ period group `Λ`, `k ∈ ℕ` with `2k > n + 2`, a compact `K ⊆ G` and `M > 0
   `t ↦ U(t) − Ū` is continuous into the bounded continuous functions and each `U(t) − Ū` tends
   to `0` at infinity orthogonally to the span of `Λ`, so the cone field `κ ∘ U` of §6.2 is
   bounded, and slab uniqueness (§6.2) needs the cones of one of the two solutions only;
-- *continuous dependence:* if `U₀^m → U₀` in `Ū + Hᵏ_Λ` with values in `K`, the solutions
-  converge in `C([0, T]; Hᵏ_Λ)`;
+- *continuous dependence:* if `U₀^m → U₀` in `Ū + Hᵏ_Λ`, where each `U₀^m` takes values in `K`
+  and satisfies `‖U₀^m − Ū‖_{Hᵏ_Λ} ≤ M`, the solutions of the `U₀^m`, which exist on `[0, T]` by
+  the existence clause, converge to `U` in `C([0, T]; Hᵏ_Λ)`;
 - *continuation:* the maximal existence time `T*` satisfies: if `T* < ∞`, then
   `∫₀^{T*} ‖∇U(t)‖_∞ dt = ∞` or the closure of `U([0, T*) × E)` is not a compact subset of `G`;
 - *persistence:* if `U₀ − Ū ∈ Hᵏ′_Λ` with `k′ > k`, the solution stays in `Hᵏ′_Λ` on the same
@@ -1644,6 +1648,13 @@ Bona–Smith regularisation of the data; continuation by the tame estimate of §
 - Burgers `∂_tu + u∂_xu = 0` (a symmetric system with `A¹ = u`) with `u₀ = −e^{−x²}`:
   `min u₀′ = −√2 e^{−1/2}` at `x = −1/√2`, so `T* = e^{1/2}/√2 ≈ 1.1658`; the values stay in
   `[−1, 0]` while `∫₀^{T*} ‖u_x‖_∞ = ∞`, the first alternative of the continuation criterion.
+- The existence time depends on the norm bound and not on `K` alone, which is why the continuity
+  clause keeps the approximating data in the ball of radius `M`: for Burgers with
+  `u₀^λ(x) = −e^{−λ²x²}`, `λ > 0`, the values stay in `K = [−1, 0]`, while
+  `min (u₀^λ)′ = −√2 λ e^{−1/2}` at `x = −1/(λ√2)` gives `T* = e^{1/2}/(λ√2)` (`≈ 0.1166` at
+  `λ = 10`) and `‖(u₀^λ)″‖²_{L²} = 3√(π/2) λ³` (`≈ 3760` at `λ = 10`). A time depending on `K`
+  alone would exceed `T*` for large `λ`; and for fixed `M`, the data `u₀^λ` with `λ` large have
+  values in `K` but no solution on `[0, T(M, K)]`, so their norm exceeds `M`.
 - Constant data `U₀ ≡ Ū` give the constant solution with `T* = ∞`.
 
 *Needs:* §§4.2–4.4, §§5.1–5.4, §6.2; Tau Ceti `TauCeti.le_mul_exp_of_le_add_mul_integral`.
@@ -1654,13 +1665,23 @@ Prove, for a barotropic equation of state `(I, p)`, a period group `Λ`, `k` wit
 background `(ρ₀, v₀) ∈ I × E`, and data `(ρ̄, v̄)` with `ρ̄ − ρ₀, v̄ − v₀ ∈ Hᵏ_Λ` and
 `ρ_* ≤ ρ̄ ≤ ρ^*` on `E` for some `[ρ_*, ρ^*] ⊆ I`: there are `T > 0` and a unique classical solution
 `(ρ, v)` on `[t₀, t₀ + T] × E` with `(ρ − ρ₀, v − v₀) ∈ C([t₀, t₀ + T]; Hᵏ_Λ)` and
-`ρ ≥ ρ_*/2`, Λ-periodic, depending continuously on the data; if the maximal time is finite then
-`∫ ‖∇(ρ, v)‖_∞ dt = ∞` or the closure of the range of `ρ` is not a compact subset of `I`. The same
-holds for the full system with `s̄ − s₀ ∈ Hᵏ_Λ` and `(ρ̄, s̄)(E)` contained in a compact subset of
-`𝒪`. (AbbresciaSpeck2022 lines 172–179, the full system on `ℝ × 𝕋²` with non-vacuum `H³` data;
-ChristodoulouMiao2014 lines 866–868; LuoYu2023a lines 82–95; Majda1984, Ch. 2.) Route: §7.1
-applied to the symmetrisers of §2.2, with `F = 0`; the bound `ρ ≥ ρ_*/2` from continuity in
-`C([t₀, t₀ + T]; C_b)` after shrinking `T`.
+`ρ ≥ ρ_*/2`, Λ-periodic. The time `T` depends only on `(I, p)`, `Λ`, `k`, `(ρ₀, v₀)`,
+`[ρ_*, ρ^*]` and a bound `M ≥ ‖(ρ̄ − ρ₀, v̄ − v₀)‖_{Hᵏ_Λ}`, and the solution depends continuously
+on the data within this class: if `(ρ̄^m, v̄^m) → (ρ̄, v̄)` in `(ρ₀, v₀) + Hᵏ_Λ` with
+`‖(ρ̄^m − ρ₀, v̄^m − v₀)‖_{Hᵏ_Λ} ≤ M` and `ρ_* ≤ ρ̄^m ≤ ρ^*`, their solutions, all defined on
+`[t₀, t₀ + T]`, converge to `(ρ, v)` in `C([t₀, t₀ + T]; Hᵏ_Λ)`. If the maximal time is finite
+then `∫ ‖∇(ρ, v)‖_∞ dt = ∞` or the closure of the range of `ρ` is not a compact subset of `I`. The
+same holds for the full system with `s̄ − s₀ ∈ Hᵏ_Λ` and `(ρ̄, s̄)(E)` contained in a compact subset
+`L` of `𝒪`, with `L` in place of `[ρ_*, ρ^*]`, `ρ_*` the least density on `L`, and the range of
+`(ρ, s)` in `𝒪` in place of the range of `ρ` in `I`. (AbbresciaSpeck2022 lines 172–179, the full
+system on `ℝ × 𝕋²` with non-vacuum `H³` data; ChristodoulouMiao2014 lines 866–868; LuoYu2023a
+lines 82–95; Majda1984, Ch. 2.) Route: §7.1 applied to the symmetrisers of §2.2, with `F = 0`,
+`Ū = (ρ₀, v₀)` and the compact `K = [ρ_*, ρ^*] × B̄(v₀, CM) ⊆ G`, where `C` is the constant of
+the embedding `Hᵏ_Λ ⊆ C_b` of §4.2, so that `K` contains the values of every datum of the class
+(for the full system `K = {(ρ, v, s) : (ρ, s) ∈ L, |v − v₀| ≤ CM}`); the bound `ρ ≥ ρ_*/2` by
+shrinking `T` to at most `ρ_*/(2C′)`, where `C′ > 0` bounds
+`‖∂_tρ‖_∞ = ‖v·∇ρ + ρ div v‖_∞` in terms of the bound `R(M, K)` of §7.1, `ρ₀` and `v₀`, by the
+embedding of §4.2 into `C¹_b` (`2k > n + 2`).
 
 - For `Λ = 0` and `Λ = Λ_cyl` these are the Euclidean and cylinder carriers of the Conventions.
 - The solution is Galilean covariant: boosting the data by `w` boosts the solution.
@@ -1677,7 +1698,7 @@ applied to the symmetrisers of §2.2, with `F = 0`; the bound `ρ ≥ ρ_*/2` fr
 - Sobolev threshold for `n = 3`: `k = 3` gives `2k = 6 > 5 = n + 2`, the `H³` setting of
   AbbresciaSpeck2022 line 179; `k = 2` gives `4 < 5` and is excluded.
 
-*Needs:* §2.2, §7.1.
+*Needs:* §2.2, §4.2 (the embeddings into `C_b` and `C¹_b`), §7.1.
 
 ### 7.3 Uniformly local data
 

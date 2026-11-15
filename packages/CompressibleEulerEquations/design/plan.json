@@ -1239,6 +1239,7 @@
       "mathlib:LipschitzOnWith.ae_differentiableWithinAt_of_mem",
       "tauceti:TauCeti.le_mul_exp_of_le_add_mul_integral",
       "roadmap:SymmetricHyperbolicSystems §2.1",
+      "roadmap:SymmetricHyperbolicSystems Conventions",
       "target:4.1",
       "mathlib:LipschitzWith.integral_lineDeriv_mul_eq"
      ],
@@ -1507,7 +1508,7 @@
      "id": "7.1",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.localWellPosedness",
-     "statement": "For a quasilinear symmetric hyperbolic system, Ū ∈ G with F(Ū) = 0, a period group Λ, 2k > n + 2, a compact K ⊆ G and M > 0, there are T(M,K) > 0 and R(M,K) such that every U₀ with U₀ − Ū ∈ Hᵏ_Λ, ‖U₀ − Ū‖ ≤ M and U₀(E) ⊆ K has a unique Λ-periodic classical solution U on [0,T] × E with U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) and ‖U(t) − Ū‖_{Hᵏ_Λ} ≤ R on [0,T]; it is the only classical solution on [0,T) × E with this data (U([0,T] × E) has compact closure in G by 4.2, so κ ∘ U is bounded, and 6.2.1 needs one bounded cone field), depends continuously on the data in C([0,T];Hᵏ_Λ), and persists in Hᵏ′_Λ for k′ > k on the same maximal interval.",
+     "statement": "For a quasilinear symmetric hyperbolic system, Ū ∈ G with F(Ū) = 0, a period group Λ, 2k > n + 2, a compact K ⊆ G and M > 0, there are T(M,K) > 0 and R(M,K) such that every U₀ with U₀ − Ū ∈ Hᵏ_Λ, ‖U₀ − Ū‖ ≤ M and U₀(E) ⊆ K has a unique Λ-periodic classical solution U on [0,T] × E with U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) and ‖U(t) − Ū‖_{Hᵏ_Λ} ≤ R on [0,T]; it is the only classical solution on [0,T) × E with this data (U([0,T] × E) has compact closure in G by 4.2, so κ ∘ U is bounded, and 6.2.1 needs one bounded cone field), depends continuously on the data within this class (if U₀^m → U₀ in Ū + Hᵏ_Λ with ‖U₀^m − Ū‖_{Hᵏ_Λ} ≤ M and U₀^m(E) ⊆ K, the solutions of the U₀^m, which exist on [0,T], converge to U in C([0,T];Hᵏ_Λ)), and persists in Hᵏ′_Λ for k′ > k on the same maximal interval.",
      "hypotheses": [
       "F(Ū) = 0",
       "2k > n + 2",
@@ -1531,6 +1532,11 @@
        "name": "source_at_infinity",
        "kind": "non-example",
        "statement": "F ≡ 1, Ū = 0: u = u₀ + t leaves Ū + L² for t > 0, so F(Ū) = 0 is needed"
+      },
+      {
+       "name": "existence_time_depends_on_norm",
+       "kind": "non-example",
+       "statement": "Burgers u₀^λ = −e^{−λ²x²}: values in K = [−1,0], T* = e^{1/2}/(λ√2) (≈ 0.1166 at λ = 10), ‖(u₀^λ)″‖²_{L²} = 3√(π/2)λ³ (≈ 3760 at λ = 10): no existence time depends on K alone, and data with values in K outside the ball of radius M need not have a solution on [0, T(M,K)]"
       },
       {
        "name": "constant_data",
@@ -1568,11 +1574,12 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "CompressibleEuler.localWellPosedness",
-     "statement": "For a barotropic law (I,p), a period group Λ, 2k > n + 2, a background (ρ₀,v₀) ∈ I × E and data with ρ̄ − ρ₀, v̄ − v₀ ∈ Hᵏ_Λ and ρ_* ≤ ρ̄ ≤ ρ^* for [ρ_*,ρ^*] ⊆ I: there are T > 0 and a unique Λ-periodic classical solution on [t₀, t₀+T] × E with (ρ − ρ₀, v − v₀) ∈ C(Hᵏ_Λ) and ρ ≥ ρ_*/2, depending continuously on the data; if the maximal time is finite then ∫‖∇(ρ,v)‖_∞ = ∞ or the closure of the range of ρ is not compact in I. The full system is analogous with s̄ − s₀ ∈ Hᵏ_Λ and (ρ̄,s̄) in a compact subset of 𝒪.",
+     "statement": "For a barotropic law (I,p), a period group Λ, 2k > n + 2, a background (ρ₀,v₀) ∈ I × E and data with ρ̄ − ρ₀, v̄ − v₀ ∈ Hᵏ_Λ and ρ_* ≤ ρ̄ ≤ ρ^* for [ρ_*,ρ^*] ⊆ I: there are T > 0 and a unique Λ-periodic classical solution on [t₀, t₀+T] × E with (ρ − ρ₀, v − v₀) ∈ C(Hᵏ_Λ) and ρ ≥ ρ_*/2; T depends only on (I,p), Λ, k, (ρ₀,v₀), [ρ_*,ρ^*] and a bound M ≥ ‖(ρ̄ − ρ₀, v̄ − v₀)‖_{Hᵏ_Λ}, and the solution depends continuously on the data within this class (data converging in (ρ₀,v₀) + Hᵏ_Λ with norm ≤ M and ρ_* ≤ ρ̄^m ≤ ρ^* have solutions on [t₀, t₀+T] converging in C([t₀, t₀+T];Hᵏ_Λ)); if the maximal time is finite then ∫‖∇(ρ,v)‖_∞ = ∞ or the closure of the range of ρ is not compact in I. The full system is analogous with s̄ − s₀ ∈ Hᵏ_Λ and (ρ̄,s̄) in a compact subset L of 𝒪 (L in place of [ρ_*,ρ^*], ρ_* = min_L ρ, the range of (ρ,s) in 𝒪 in place of that of ρ in I). Route: 7.1 with Ū = (ρ₀,v₀) and K = [ρ_*,ρ^*] × B̄(v₀, CM), C the embedding constant of 4.2; T shrunk to ≤ ρ_*/(2C′) with C′ > 0, C′ ≥ ‖v·∇ρ + ρ div v‖_∞, bounded in terms of R(M,K), ρ₀, v₀.",
      "hypotheses": [
       "[ρ_*, ρ^*] ⊆ I",
       "2k > n + 2",
-      "ρ̄ − ρ₀, v̄ − v₀ ∈ Hᵏ_Λ"
+      "ρ̄ − ρ₀, v̄ − v₀ ∈ Hᵏ_Λ",
+      "‖(ρ̄ − ρ₀, v̄ − v₀)‖_{Hᵏ_Λ} ≤ M (for the uniform time and the continuity)"
      ],
      "locator": {
       "source": "AbbresciaSpeck2022",
@@ -1583,7 +1590,8 @@
       "target:2.2.1",
       "target:2.2.2",
       "target:7.1",
-      "target:7.1.1"
+      "target:7.1.1",
+      "target:4.2"
      ],
      "tests": [
       {
@@ -2128,10 +2136,11 @@
   {
    "roadmap": "SymmetricHyperbolicSystems",
    "sections": [
+    "Conventions",
     "§1.2",
     "§2.1"
    ],
-   "what": "The linear system carrier LinearSystem, LinearSystem.apply and LinearSystem.IsSymmetricHyperbolic (Matrix.IsSymm, equal to Matrix.IsHermitian over ℝ) and its notion of speed (§1.2), the carrier of 5.1; the pointwise energy identity with K = ∂_tA⁰ + Σ∂ⱼAʲ − B − Bᵀ (§2.1), used locally in 5.2. Its §2.2, §2.3 and §7.3 are classical-solution versions that 5.1, 5.2 and 5.4 extend to other classes, not consumed."
+   "what": "The linear system carrier LinearSystem, LinearSystem.apply and LinearSystem.IsSymmetricHyperbolic (Matrix.IsSymm, equal to Matrix.IsHermitian over ℝ) (§1.2), the carrier of 5.1; its notion of speed (Conventions, Propagation speed; §1.2 gives one for bounded Aʲ), compared with dominating cones in 5.2; the pointwise energy identity with K = ∂_tA⁰ + Σ∂ⱼAʲ − B − Bᵀ (§2.1), used locally in 5.2. Its §2.2, §2.3 and §7.3 are classical-solution versions that 5.1, 5.2 and 5.4 extend to other classes, not consumed."
   }
  ],
  "consumers": [
