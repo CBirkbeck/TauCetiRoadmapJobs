@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PCurvature~17",
+  "head": "d027b395d5e6bdd591e593765cf59b2010edb3d5",
+  "pr": 1747,
+  "folder": "PCurvature",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 25 changed lines since 3fad9f2 (README only: the new Provenance section and its reference entry). Checked: the cited repository at its commit (licence, toolchain v4.35.0, the three directories, six files opened, the file names of the whole tier for the objects of Layers 0-4); the Cartier statement cited against 2.0 on a perfect and two non-perfect bases; the previous report had no finding. One P3 finding: the pull request's description does not state the new Provenance section or its source. No seeded-sample target falls in the changed passages. Gate: every check 0, build 0, OK; depcheck 0 problems; Suggested.lean elaborates with 11 sorry warnings only.",
+  "text": "86683ea0e2cd5856"
+ }
+}
