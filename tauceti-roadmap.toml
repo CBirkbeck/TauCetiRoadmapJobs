@@ -175,6 +175,12 @@ carry_minor = true
 # A finding the repair cannot act on because it lies outside the folder under review is recorded once in the verdict
 # record; later reviews of the folder are told of it and do not raise it again (owner decision 2026-11-11).
 defer_outside = true
+# Passes before the final review (owner decision 2026-11-15): the first rounds of a new roadmap folder of a pull request
+# the pool repairs run on Opus, each ending with its repair. After three, or when one leaves the head where it was, a
+# review on the lane's review model follows, and that review alone decides ai-approved.
+pre_passes = 3
+pre_agent = "claude"
+pre_model = "claude-opus-5-5"
 
 [agents]
 # Default agent for every lane: "codex" or "claude". Operators override per run with --agent.
