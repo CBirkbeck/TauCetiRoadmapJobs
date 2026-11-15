@@ -2357,19 +2357,21 @@
      "id": "10.5",
      "kind": "theorem",
      "name": "HardSphere.tendsto_empirical_of_correlation",
-     "statement": "On a flat position space with f⁰ ≥ 0 integrable, t ∈ ℝ, μ_ε → ∞ as ε → 0⁺ and f integrable: if ∫ F^ε_1(t) g → ∫ f g and ∫ F^ε_2(t) g₂ → ∫ f ⊗ f g₂ for all bounded continuous g, g₂, then P_ε(|π^ε_t(h) − ∫ f h| ≥ δ) → 0 for all bounded continuous h and δ > 0; corollary HardSphere.LanfordStatement.tendsto_empirical for d ≥ 2 under HardSphere.LanfordStatement d.",
+     "statement": "On a flat position space with f⁰ ≥ 0 integrable, t ∈ ℝ, μ_ε → ∞ as ε → 0⁺ and f integrable, with P_ε = HardSphere.grandCanonical ε μ_ε f⁰, F^ε_n(t) = HardSphere.correlation ε μ_ε f⁰ n t and π^ε_t the empirical measure with μ = μ_ε: if ∫ F^ε_1(t) g → ∫ f g and ∫ F^ε_2(t) g₂ → ∫ f ⊗ f g₂ for all bounded continuous g, g₂, then P_ε(|π^ε_t(h) − ∫ f h| ≥ δ) → 0 for all bounded continuous h and δ > 0; corollary HardSphere.LanfordStatement.tendsto_empirical for d ≥ 2 under HardSphere.LanfordStatement d.",
      "hypotheses": [
       "f⁰ ≥ 0 integrable",
       "μ_ε → ∞",
       "f integrable",
       "δ > 0",
-      "h bounded continuous"
+      "h bounded continuous",
+      "corollary: d ≥ 2 and HardSphere.LanfordStatement d"
      ],
      "locator": {
       "source": "BGSS2023",
       "where": "Corollary 1.2.1, lines 344–349, proof lines 352–371"
      },
      "prerequisites": [
+      "target:9.3",
       "target:9.5",
       "target:10.1",
       "target:10.4",
@@ -2379,14 +2381,14 @@
       {
        "name": "HardSphere.LanfordStatement.tendsto_empirical",
        "role": "corollary",
-       "statement": "For d ≥ 2 (so μ_ε = ε^{−(d−1)} → ∞) and under HardSphere.LanfordStatement d, the empirical measure concentrates on the Boltzmann solution for t ∈ [0, T₀]."
+       "statement": "For d ≥ 2 and under HardSphere.LanfordStatement d: for all C₀ ≥ 1 and β₀ > 0 there is T₀ > 0 such that for every continuous probability density f⁰ on 𝕋^d × E with the two bounds of 10.4 for C₀, β₀ there is a mild solution f on [0, T₀] with datum f⁰ such that, with μ_ε = ε^{−(d−1)}, P_ε = HardSphere.grandCanonical ε μ_ε f⁰ and π^ε_t the empirical measure with μ = μ_ε, for every t ∈ [0, T₀], every bounded continuous h on 𝕋^d × E and every δ > 0, P_ε(|π^ε_t(h) − ∫ f(t) h| ≥ δ) → 0 as ε → 0⁺."
       }
      ],
      "tests": [
       {
        "name": "equilibrium",
        "kind": "compatibility",
-       "statement": "At the Maxwellian equilibrium on the unit torus in dimension d ≥ 2 (μ_ε → ∞) the hypotheses hold with f = M by §9.4 and §9.6."
+       "statement": "At the Maxwellian equilibrium on the unit torus in dimension d ≥ 2 (μ_ε → ∞) the hypotheses hold with f = M by §9.4 and §9.6. Corollary at f⁰ = M_{1,0}, β₀ = 1, C₀ = 1 ≥ (2π)^{−d/2} (1/(2π) ≈ 0.15915 for d = 2): the mild solution of 10.4 is M a.e. at each t ∈ [0, T₀], since F^ε_1(t) = F^ε_1(0) → M weakly and integrable functions are determined a.e. by their integrals against bounded continuous functions."
       },
       {
        "name": "poisson_variance",
