@@ -1378,7 +1378,7 @@ gerbe `Spec k`); `Bμ_p` (quasi-DM); `Bℤ` (a gerbe without quasi-compact inert
 
 ### Dependencies
 
-Layers 0–3; SchemeAndStackFoundations §§1.8, 1.12, 1.19–1.21; Mathlib
+Layers 0–3; SchemeAndStackFoundations §§1.7–1.8, 1.12, 1.19–1.21; Mathlib
 `AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType`,
 `AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal`; gap:quasi-dm-flat-presentation, gap:flat-groupoid-quotients, gap:quasi-finite-over-fields,
 gap:stack-morphism-permanence.
