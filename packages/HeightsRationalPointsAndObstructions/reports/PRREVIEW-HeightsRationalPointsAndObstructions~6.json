@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsRationalPointsAndObstructions~6",
+  "head": "3dc9d718ad48a3c8dd6ae9af83af6ac37dfdbfe9",
+  "pr": 1017,
+  "folder": "HeightsRationalPointsAndObstructions",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 3dc9d71; this round read the pull request's title and description against the head: 14 summary claims, the supplier/consumer split (14 open suppliers match the Depends-on block, 5 consumers only) and the validation paragraph, none contradicted; the earlier GroupSchemesOverABase entry is gone from the description. Gate passes (all counters 0); depcheck 247 roadmaps, 2252 edges, 0 problems; Suggested.lean elaborates with 7 sorry warnings only; 4 adversarial rows with computed values for statements the description cites; pinned declarations fg_point_of_numberField, neronTatePairing(_self), Hom.toOverHom opened. No source locator rechecked (no folder change).",
+  "text": "295a6d035e4a5b33"
+ }
+}
