@@ -3875,12 +3875,6 @@
       "section": "§1.1"
     },
     {
-      "slug": "klingen-bgg-normalization",
-      "needs": "In item 4 of §9.6, supply the intertwining of the Klingen relative BGG differential θ : F^(k,w) ⊗ ω^r → F^(−2−k,w) ⊗ ω^(k+r+1) in the form θ ∘ U = p^(k+1) U ∘ θ, so that U on the middle term corresponds to p^(k+1)U on the last term, the normalization from which its slope ranges s<k−2 and s<k+1 follow (AIP15 Proposition 7.2.3; P20 Proposition 13.3.3.1 with the sign of the exponent corrected).",
-      "supplier": "HigherHidaAndColemanTheory",
-      "section": "§9.6"
-    },
-    {
       "slug": "spherical-composite-hecke",
       "needs": "For the paramodular composite C_r of §7.5 acting on RΓ(X, Ω(d,r)) and RΓ(X, Ω(d,r)(−D)) in every cohomological degree, and on their reductions modulo p^n, supply its independence of the toroidal fan and its commutation with the prime-to-p Hecke correspondences, which §7.6 states on global forms.",
       "supplier": "AlgebraicModularFormsAndSerreWeightsPartII",
