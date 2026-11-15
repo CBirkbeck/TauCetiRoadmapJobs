@@ -201,8 +201,8 @@ here only as tests of the definitions.
   (`TauCeti/Topology/Grassmannian/Plucker.lean`), and `TauCeti.finiteGrassmannian.toEuclidean`,
   `TauCeti.finiteGrassmannian.toEuclidean_injective` and
   `TauCeti.finiteGrassmannian.continuous_starProjection_toEuclidean`
-  (`TauCeti/Topology/Grassmannian/Tautological.lean`: a point V read as a subspace of
-  `EuclideanSpace 𝕜 (Fin N)`, injectively, and the continuity of V ↦ the orthogonal projection
+  (`TauCeti/Topology/Grassmannian/Tautological.lean`: a point S read as a subspace of
+  `EuclideanSpace 𝕜 (Fin N)`, injectively, and the continuity of S ↦ the orthogonal projection
   onto it). The carrier has no metric; the operator-norm distance of 1.1 is this roadmap's.
 - `TauCeti.globalFlow`, `TauCeti.contMDiff_globalFlow_uncurry`, `TauCeti.globalFlowDiffeomorph`
   (`TauCeti/Geometry/Manifold/IntegralCurve/GlobalFlow.lean`: the flow of a complete C¹ vector
@@ -346,15 +346,15 @@ trace of an endomorphism A of E along P is tr(P ∘ A).
   and the projection is Q A⁻¹ Q*.
 - Comparison with Tau Ceti's finite Grassmannian. Let N = dim E and let
   e : E → `EuclideanSpace ℝ (Fin N)` be a surjective linear isometry (the coordinates of an
-  orthonormal basis of E). For V in `TauCeti.finiteGrassmannian ℝ k N` let P_V be the orthogonal
-  projection of `EuclideanSpace ℝ (Fin N)` onto V read through the coordinate identification
-  (`TauCeti.finiteGrassmannian.toEuclidean`). Then V ↦ e⁻¹ P_V e is a homeomorphism of
+  orthonormal basis of E). For S in `TauCeti.finiteGrassmannian ℝ k N` let P_S be the orthogonal
+  projection of `EuclideanSpace ℝ (Fin N)` onto S read through the coordinate identification
+  (`TauCeti.finiteGrassmannian.toEuclidean`). Then S ↦ e⁻¹ P_S e is a homeomorphism of
   `TauCeti.finiteGrassmannian ℝ k N` onto G(E, k), whose inverse sends P to the subspace e(range P)
   read in coordinates; replacing e by O ∘ e, for an orthogonal map O of `EuclideanSpace ℝ (Fin N)`,
-  precomposes it with V ↦ O⁻¹(V). Route: e⁻¹ P_V e is a self-adjoint idempotent with the
-  k-dimensional range e⁻¹(V); the map is continuous
+  precomposes it with S ↦ O⁻¹(S). Route: e⁻¹ P_S e is a self-adjoint idempotent with the
+  k-dimensional range e⁻¹(S); the map is continuous
   (`TauCeti.finiteGrassmannian.continuous_starProjection_toEuclidean`, and conjugation by e is
-  continuous), injective (P_V has range V, and `TauCeti.finiteGrassmannian.toEuclidean_injective`)
+  continuous), injective (P_S has range S, and `TauCeti.finiteGrassmannian.toEuclidean_injective`)
   and onto (for P ∈ G(E, k), e P e⁻¹ is the orthogonal projection onto its k-dimensional range,
   `isStarProjection_iff_eq_starProjection_range`); a continuous bijection from the compact space
   `TauCeti.finiteGrassmannian ℝ k N` onto the metric space G(E, k) is a homeomorphism
@@ -433,7 +433,7 @@ compactness); Mathlib `IsRiemannianManifold`.
 ### 1.3 Varifolds, weight, mass, support and restriction
 
 A k-varifold on W is a Radon measure V on G_k(W). Its weight ‖V‖ is the push-forward π_*V, a
-Radon measure on W because π is proper; its mass is M(V) = V(G_k(W)) = ‖V‖(W) ∈ [0, ∞]; spt‖V‖ is
+Radon measure on W because π is proper; its mass is 𝐌(V) = V(G_k(W)) = ‖V‖(W) ∈ [0, ∞]; spt‖V‖ is
 the support of ‖V‖, a closed subset of W. For a Borel set A ⊆ W, V⌞A is the restriction of V to
 G_k(A); for an open W' ⊆ W the restriction of V to G_k(W') is a varifold on W' (Simon1983 line
 7308–7317; AgnolettoCorreaHoyosDaSilvaNardulli2025 line 157–160).
@@ -554,7 +554,7 @@ varifold is rectifiable when it equals some v(Γ, θ), and integral when moreove
 integer-valued Hᵏ-a.e. (Simon1983 line 2861–2897, 7318–7326; AgnolettoCorreaHoyosDaSilvaNardulli2025
 line 166–175).
 
-- ‖v(Γ, θ)‖ = θ Hᵏ⌞Γ and M(v(Γ, θ)) = ∫_Γ θ dHᵏ.
+- ‖v(Γ, θ)‖ = θ Hᵏ⌞Γ and 𝐌(v(Γ, θ)) = ∫_Γ θ dHᵏ.
 - v(Γ, θ) = v(Γ', θ') when Hᵏ(Γ Δ Γ') = 0 and θ = θ' Hᵏ-a.e. on Γ ∩ Γ'; the approximate tangent
   spaces of Γ and Γ' agree Hᵏ-a.e. on Γ ∩ Γ'.
 - v(Γ, θ) + v(Γ', θ') = v(Γ ∪ Γ', θ + θ') with θ, θ' extended by 0; v(Γ, θ)⌞A = v(Γ ∩ A, θ).
@@ -694,7 +694,7 @@ Euclidean space (T_xM, g_x); for every compact set of T_xM it does not depend on
 
 **Checks.**
 
-- For V = v([0, 1] × {0}, 1) in ℝ², V_{0,λ} = v([0, λ⁻¹] × {0}, 1) of mass λ⁻¹ = λ^{−k} M(V) with
+- For V = v([0, 1] × {0}, 1) in ℝ², V_{0,λ} = v([0, λ⁻¹] × {0}, 1) of mass λ⁻¹ = λ^{−k} 𝐌(V) with
   k = 1; the measure push-forward without the factor λ^{−k} would keep mass 1.
 - For a line L through x in E, V_{x,λ} = v(L − x, 1) for all λ.
 - On the unit sphere S² with x the north pole and V the varifold of a great circle through x,
@@ -1163,8 +1163,11 @@ Let V have locally bounded first variation in W ⊆ M.
   then ‖δV‖ ≤ Λ‖V‖ on U and Θ^k(‖V‖, x) ≥ lim sup_j Θ^k(‖V_j‖, x_j) (this roadmap, by the argument of
   Simon1983 17.8 with 1.4's upper semicontinuity on compact sets).
 - Lower bound: if V is rectifiable, Θ^k(‖V‖, ·) ≥ 1 ‖V‖-a.e. (in particular if V is integral), and
-  ‖δV‖ ≤ Λ‖V‖ on U, then Θ^k(‖V‖, x) ≥ 1 for every x ∈ spt‖V‖ ∩ U, and ‖V‖(B̄_ρ(x)) ≥
-  e^{−(Λ + k√κ)ρ} ω_k ρ^k for the ρ admitted in 6.2 (Simon1983 line 3147–3152, 17.9(1)).
+  ‖δV‖ ≤ Λ‖V‖ on an open U ⊆ W, then Θ^k(‖V‖, x) ≥ 1 for every x ∈ spt‖V‖ ∩ U. If moreover
+  x ∈ spt‖V‖ ∩ U, κ ≥ 0 and ρ_0 are as in 6.2 (B_{ρ_0}(x) a normal ball of x with sectional curvature
+  at most κ on it and √κ ρ_0 ≤ π/2) and B_{ρ_0}(x) ⊆ U, then 6.2's ratio bound holds for
+  0 < t < ρ_0, and ‖V‖(B̄_ρ(x)) ≥ e^{−(Λ + k√κ)ρ} ω_k ρ^k for 0 < ρ < ρ_0 (Simon1983 line 3147–3152,
+  17.9(1)).
 
 Route for a.e. existence on M: Besicovitch's differentiation theorem in a chart
 (`Besicovitch.ae_tendsto_rnDeriv`, for Mathlib's finite-dimensional `HasBesicovitchCovering`) gives,
@@ -1191,6 +1194,10 @@ lim sup_{σ↓0} f(σ) ≤ lim inf_{ρ↓0} f(ρ). No geodesic-ball ratio bound 
   Θ(y) = 2 for y > 0.
 - v(L, 1/2) satisfies everything except the hypothesis Θ ≥ 1 of the lower bound, and has
   Θ = 1/2 on L.
+- The ball of the mass lower bound must lie in U. In ℝ² take V = v([−a, a] × {0}, 1) (a > 0),
+  U = B_a(0), Λ = κ = 0 and x = 0. Then ‖δV‖ = δ_{(−a, 0)} + δ_{(a, 0)} vanishes on U and Θ = 1 on
+  spt‖V‖ ∩ U. At ρ = 2a, a radius 6.2 alone allows in W = ℝ², ‖V‖(B̄_{2a}(0)) = 2a < 4a = ω_1·2a.
+  With B_{ρ_0}(0) ⊆ U, every admitted ρ is less than a, and ‖V‖(B̄_ρ(0)) = 2ρ = ω_1 ρ: equality.
 - The ratio bound is an almost-everywhere property, and passing from chart balls to geodesic balls
   needs positive density: V = v(L, θ) on the x-axis of ℝ² with θ(t) = e^{−1/|t|} (t ≠ 0) has
   σ_V = 0 and ‖δV‖ = |θ'| H¹⌞L, so ‖δV‖(B_ρ(0)) = 2∫_0^ρ t^{−2}e^{−1/t} dt = 2e^{−1/ρ}, while
@@ -1244,7 +1251,7 @@ measure, so Σ has locally finite area, and the closure of Σ in W is spt‖V‖
 - For k = N and Σ = W connected, a stationary N-varifold is a constant multiple of the Riemannian
   volume.
 - [half-line] has support in a line Σ but is not a constant multiple of [Σ]; consistently it is not
-  stationary (σ = δ_0 at its endpoint).
+  stationary (σ_V = δ_0 at its endpoint).
 - The coordinate multiplicity, not its product with the volume density, is the constant: on
   W = Σ = ℝ (k = N = 1) with g = e^{2t} dt², the volume density is w = e^t and
   div_g X = e^{−t}(e^t X)', so V = [W] has δV(X) = ∫ (e^t X)' dt = 0 for compactly supported X and
@@ -1461,22 +1468,22 @@ and the first variation; 7.3 for rectifiability.
 Let p and q be the orthogonal projections of ℝ^N onto ℝ^k × {0} and {0} × ℝ^{N−k}, let B_ρ(y) be
 Euclidean balls, and for a k-plane S let P_S be its Euclidean orthogonal projection. For δ ∈ (0, 1)
 and Λ ≥ 1 there is ε = ε(δ, Λ, k, N) ∈ (0, δ²) with the following property. Let h be a smooth metric
-on B_3(0) ⊆ ℝ^N with ‖h − e‖_{C²(B_3(0))} < ε², and W an integral varifold on B_3(0) for h (regarded
+on B_3(0) ⊆ ℝ^N with ‖h − e‖_{C²(B_3(0))} < ε², and V an integral varifold on B_3(0) for h (regarded
 on B_3(0) × G(ℝ^N, k) through 1.2) with locally bounded h-first variation and
 
-`‖W‖(B_3(0)) ≤ Λ,   ‖δ_h W‖(B_3(0)) < ε²,   ∫_{G_k(B_3(0))} ‖P_S − p‖ dW(y, S) < ε²`.
+`‖V‖(B_3(0)) ≤ Λ,   ‖δ_h V‖(B_3(0)) < ε²,   ∫_{G_k(B_3(0))} ‖P_S − p‖ dV(y, S) < ε²`.
 
 Then there is a Borel set A ⊆ B_1(0) ∩ (ℝ^k × {0}) of k-dimensional Lebesgue measure less than δ
-such that for every x ∈ (B_1(0) ∩ ℝ^k × {0}) ∖ A the sum of Θ^k(‖W‖, y) (the density for h) over the
-points y ∈ p⁻¹(x) ∩ spt‖W‖ with |q(y)| < ε is at most (1 + δ)(ω_k 2^k)⁻¹‖W‖(B_2(x)) + δ. For h = e
+such that for every x ∈ (B_1(0) ∩ ℝ^k × {0}) ∖ A the sum of Θ^k(‖V‖, y) (the density for h) over the
+points y ∈ p⁻¹(x) ∩ spt‖V‖ with |q(y)| < ε is at most (1 + δ)(ω_k 2^k)⁻¹‖V‖(B_2(x)) + δ. For h = e
 this is Simon1983 line 7991–8000 (42.9, printed p. 250): the thresholds ε² for the first variation
 and for the tilt, and the slab half-width ε, are the source's. The case h ≠ e, with the threshold ε²
 for the metric, is this roadmap's.
 
 Route: Simon's proof (Simon1983 line 8001–8151, 42.10 and the proof of 42.9) has three steps.
-(i) The set of points y at which ‖δW‖(B_ρ(y)) ≤ ε‖W‖(B_ρ(y)) or
-∫_{G_k(B_ρ(y))} ‖P_S − p‖ dW ≤ ερ^k fails for some ρ ∈ (0, 1) has, by Besicovitch's covering theorem,
-‖W‖-measure at most cε⁻¹ times the sum of the two ε²-small quantities, hence at most cε (line
+(i) The set of points y at which ‖δV‖(B_ρ(y)) ≤ ε‖V‖(B_ρ(y)) or
+∫_{G_k(B_ρ(y))} ‖P_S − p‖ dV ≤ ερ^k fails for some ρ ∈ (0, 1) has, by Besicovitch's covering theorem,
+‖V‖-measure at most cε⁻¹ times the sum of the two ε²-small quantities, hence at most cε (line
 8014–8046); this is where the squares are used. (ii) At the remaining points the identity and the
 weighted identity of 6.1, with weights f(|q(z − y)|), f = 1 on [0, τ] and f = 0 on [2τ, ∞), bound
 the masses of the slabs U^τ_σ(y) = B_σ(y) ∩ {|q(z − y)| < τ} with errors cεσ/τ (line 8052–8083).
@@ -1485,19 +1492,19 @@ least vertical separation of the points, concludes (line 8084–8151). For h ≠
 are run at each centre y in linear coordinates that make h(y) Euclidean (a linear map within Cε²
 of the identity). On B_ρ(y) the metric then differs from the constant metric h(y) by at most Cε²ρ
 in C⁰ and Cε² in C¹, so by 4.5 the first variation of each test field used (|X| ≤ ρ,
-|DX| ≤ C(1 + ρ/τ)) changes by at most Cε²ρ(1 + ρ/τ)‖W‖(B_ρ(y)). Against the factor ρ^{−k−1} of 6.1,
+|DX| ≤ C(1 + ρ/τ)) changes by at most Cε²ρ(1 + ρ/τ)‖V‖(B_ρ(y)). Against the factor ρ^{−k−1} of 6.1,
 and with the mass-ratio bound of 6.2, this integrates over (τ, σ) to at most
 Cε²σ(1 + σ/τ) ≤ 2Cεσ/τ, an error of the source's form. The linear change of coordinates moves
 slabs, projections, balls and densities by factors 1 + O(ε²), which shrinking ε absorbs.
 
 **Checks.**
 
-- W = m v(ℝ^k × {0}, 1)⌞B_3(0) with integer m ≥ 1 and Λ ≥ m ω_k 3^k, h = e: tilt 0, δW = 0 in B_3(0),
-  ‖W‖(B_2(x)) = m ω_k 2^k, each fibre has the single point x with density m, and the bound
+- V = m v(ℝ^k × {0}, 1)⌞B_3(0) with integer m ≥ 1 and Λ ≥ m ω_k 3^k, h = e: tilt 0, δV = 0 in B_3(0),
+  ‖V‖(B_2(x)) = m ω_k 2^k, each fibre has the single point x with density m, and the bound
   m ≤ (1 + δ)m + δ holds with A = ∅.
 - Two parallel planes ℝ^k × {±ε/2} with multiplicity 1: fibre sum 2 and mass ratio about 2.
-- A plane through 0 tilted by angle α has tilt excess |sin α| ‖W‖(B_3(0)) (the operator-norm
-  distance of 1.1), so the hypotheses fail once |sin α| ‖W‖(B_3(0)) ≥ ε²; the tilted plane through 0
+- A plane through 0 tilted by angle α has tilt excess |sin α| ‖V‖(B_3(0)) (the operator-norm
+  distance of 1.1), so the hypotheses fail once |sin α| ‖V‖(B_3(0)) ≥ ε²; the tilted plane through 0
   still satisfies the conclusion, showing that the tilt hypothesis is used for the slab, not for
   single planes.
 - Parameter accounting (h = e): if ε = 1/10 (possible only when δ² > 1/10), the hypotheses ask for
@@ -1516,10 +1523,13 @@ Route (Simon1983 line 7916–7985), with the convergent subsequence relabelled V
 charts gives, for ‖V‖-a.e. x, lim inf_i
 ‖δ_{g_i}V_i‖(B_ρ(x)) ≤ c(x)ρ^k for small ρ; at ‖V‖-a.e. x the varifold V = v(Γ, θ) has tangent space
 T_x with multiplicity θ(x) (7.4, 3.3); in g-normal coordinates at x a diagonal choice λ_i ↓ 0 gives
-integral varifolds W_i for metrics h_i → g_x in C² with W_i → θ(x) v(T_x, 1), first variation → 0 and
-tilt → 0 on B_3(0); 7.5 together with the convergence of the fibre multiplicities in L¹
-(the area formula, 3.1) shows that min(ψ_i, N) converges in L¹ to θ(x) for integers N > θ(x), so θ(x)
-is an integer.
+the rescaled varifolds Ṽ_i of V_i at x with scale λ_i (4.5's blow-up form, with the chart exp_x of g
+and the metric g_i), integral varifolds for the metrics h_i(z) = (exp_x^* g_i)(λ_i z) → g_x in C², with
+Ṽ_i → θ(x) v(T_x, 1), first variation → 0 and tilt → 0 on B_3(0). Let ψ_i(ξ) be the sum of the
+multiplicities of Ṽ_i at the points of p⁻¹(ξ) in the slab {|q| < ε}, with p, q as in 7.5. Then 7.5
+applied to Ṽ_i, together with the convergence of the fibre multiplicities given by the area formula
+(3.1), shows that min(ψ_i, m) converges in L¹ to θ(x) for every integer m > θ(x), so θ(x) is an
+integer.
 
 **Checks.**
 

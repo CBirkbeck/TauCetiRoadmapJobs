@@ -64,7 +64,7 @@
       {
        "name": "finite Grassmannian comparison",
        "role": "compatibility",
-       "statement": "for N = dim E and a surjective linear isometry e: E -> EuclideanSpace R (Fin N), V -> e^{-1} P_V e (P_V the orthogonal projection onto V read through TauCeti.finiteGrassmannian.toEuclidean) is a homeomorphism of TauCeti.finiteGrassmannian R k N onto G(E,k), with inverse P -> e(range P); replacing e by O e (O orthogonal) precomposes with V -> O^{-1} V. Route: continuous by TauCeti.finiteGrassmannian.continuous_starProjection_toEuclidean, injective by toEuclidean_injective, onto by isStarProjection_iff_eq_starProjection_range, homeomorphism by compactness of the source and Continuous.homeoOfEquivCompactToT2."
+       "statement": "for N = dim E and a surjective linear isometry e: E -> EuclideanSpace R (Fin N), S -> e^{-1} P_S e (P_S the orthogonal projection onto S read through TauCeti.finiteGrassmannian.toEuclidean) is a homeomorphism of TauCeti.finiteGrassmannian R k N onto G(E,k), with inverse P -> e(range P); replacing e by O e (O orthogonal) precomposes with S -> O^{-1} S. Route: continuous by TauCeti.finiteGrassmannian.continuous_starProjection_toEuclidean, injective by toEuclidean_injective, onto by isStarProjection_iff_eq_starProjection_range, homeomorphism by compactness of the source and Continuous.homeoOfEquivCompactToT2."
       }
      ],
      "tests": [
@@ -1160,7 +1160,7 @@
      "id": "6.3",
      "kind": "definition",
      "name": "Varifolds.density",
-     "statement": "Theta^k(mu,x) = lim mu(B_rho(x))/(omega_k rho^k); for locally bounded first variation it exists wherever the ratio bound ||deltaV||(B_rho(x)) <= Lambda||V||(B_rho(x)) holds for small rho, everywhere under bounded mean curvature without boundary, and ||V||-a.e. (in E the ratio bound holds a.e.; on M the geodesic ratio bound holds a.e. where Theta > 0, existence a.e. by chart balls and 6.2); it is measurable, upper semicontinuous in x and under convergence when ||deltaV|| <= Lambda||V||, and >= 1 on the support for rectifiable V with Theta >= 1 a.e.",
+     "statement": "Theta^k(mu,x) = lim mu(B_rho(x))/(omega_k rho^k); for locally bounded first variation it exists wherever the ratio bound ||deltaV||(B_rho(x)) <= Lambda||V||(B_rho(x)) holds for small rho, everywhere under bounded mean curvature without boundary, and ||V||-a.e. (in E the ratio bound holds a.e.; on M the geodesic ratio bound holds a.e. where Theta > 0, existence a.e. by chart balls and 6.2); it is measurable, upper semicontinuous in x and under convergence when ||deltaV|| <= Lambda||V||, and, for rectifiable V with Theta >= 1 a.e. and ||deltaV|| <= Lambda||V|| on an open U subset W, >= 1 on spt||V|| cap U, with ||V||(Bbar_rho(x)) >= e^{-(Lambda + k sqrt kappa) rho} omega_k rho^k for 0 < rho < rho_0 when x in spt||V|| cap U, kappa and rho_0 are as in 6.2 and B_{rho_0}(x) subset U.",
      "hypotheses": [
       "V locally bounded first variation in W"
      ],
@@ -1201,7 +1201,7 @@
       {
        "name": "lower bound",
        "role": "structure",
-       "statement": "Theta >= 1 on spt for rectifiable V with Theta >= 1 a.e."
+       "statement": "Theta >= 1 on spt||V|| cap U for rectifiable V with Theta >= 1 a.e. and ||deltaV|| <= Lambda||V|| on an open U subset W; if moreover kappa, rho_0 are as in 6.2 and B_{rho_0}(x) subset U, then ||V||(Bbar_rho(x)) >= e^{-(Lambda + k sqrt kappa) rho} omega_k rho^k for 0 < rho < rho_0."
       }
      ],
      "tests": [
@@ -1234,6 +1234,11 @@
        "name": "null point of density zero",
        "kind": "non-example",
        "statement": "v(L, e^{-1/|t|}): ||deltaV||(B_rho(0)) = 2e^{-1/rho}, ||V||(B_rho(0)) <= 2 rho^2 e^{-1/rho}, ratio >= rho^{-2} at the null point 0 where Theta = 0 exists; doubling ratio >= (2r)^{-1} e^{1/(3r)} unbounded."
+      },
+      {
+       "name": "ball inside U",
+       "kind": "non-example",
+       "statement": "V = v([-a,a] x {0},1) in R^2, U = B_a(0), Lambda = kappa = 0, x = 0: ||deltaV|| = delta_{(-a,0)} + delta_{(a,0)} vanishes on U, but ||V||(Bbar_{2a}(0)) = 2a < 4a = omega_1 2a; with B_{rho_0}(0) subset U, rho < a and ||V||(Bbar_rho(0)) = 2 rho, equality."
       }
      ]
     },
@@ -1535,11 +1540,11 @@
      "id": "7.5",
      "kind": "theorem",
      "name": "Varifolds.multiplicity_lemma",
-     "statement": "For delta in (0,1), Lambda >= 1 there is epsilon in (0, delta^2) such that every integral varifold W on B_3(0) for a metric h with ||h - e||_{C^2} < epsilon^2, ||W||(B_3(0)) <= Lambda, ||delta_h W||(B_3(0)) < epsilon^2 and tilt integral of ||P_S - p|| < epsilon^2 has, outside a set A of Lebesgue measure < delta, fibre density sums over the slab |q| < epsilon at most (1+delta)(omega_k 2^k)^{-1}||W||(B_2(x)) + delta. Simon's Lemma 42.9 is the case h = e; h != e is this roadmap's.",
+     "statement": "For delta in (0,1), Lambda >= 1 there is epsilon in (0, delta^2) such that every integral varifold V on B_3(0) for a metric h with ||h - e||_{C^2} < epsilon^2, ||V||(B_3(0)) <= Lambda, ||delta_h V||(B_3(0)) < epsilon^2 and tilt integral of ||P_S - p|| < epsilon^2 has, outside a set A of Lebesgue measure < delta, fibre density sums over the slab |q| < epsilon at most (1+delta)(omega_k 2^k)^{-1}||V||(B_2(x)) + delta. Simon's Lemma 42.9 is the case h = e; h != e is this roadmap's.",
      "hypotheses": [
-      "W integral on B_3(0) for h",
+      "V integral on B_3(0) for h",
       "||h - e||_{C^2(B_3)} < epsilon^2",
-      "||W||(B_3(0)) <= Lambda, ||delta_h W||(B_3(0)) < epsilon^2, tilt < epsilon^2"
+      "||V||(B_3(0)) <= Lambda, ||delta_h V||(B_3(0)) < epsilon^2, tilt < epsilon^2"
      ],
      "locator": {
       "source": "Simon1983",
