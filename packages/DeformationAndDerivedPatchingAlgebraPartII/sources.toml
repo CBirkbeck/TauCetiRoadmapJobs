@@ -1,0 +1,134 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DeformationAndDerivedPatchingAlgebraPartII"
+
+[[source]]
+id = "cesnavicius"
+authors = "Kestutis Cesnavicius"
+title = "Macaulayfication of Noetherian schemes"
+year = 2018
+venue = "Duke Math. J. 170, no. 7 (2021), 1419-1455"
+doi = "10.1215/00127094-2020-0063"
+arxiv = "1810.04493v2"
+locator_scheme = "section"
+locator = "1.14; 3.1–3.14, pp. 9–17 (arXiv v2)"
+url = "https://arxiv.org/abs/1810.04493v2"
+fetched_from = "https://arxiv.org/pdf/1810.04493v2"
+fetched_at = "2026-11-15T05:24:21Z"
+sha256 = "a07d62e6ef1e4c2126c172426391e97031d28006b92ccb6c5f3afd9c2ddb07b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["K0–K4"]
+
+[[source]]
+id = "kawasaki1996"
+authors = "Takesi Kawasaki"
+title = "On Macaulayfication of local rings — in the case dim non-CM ≤ 2"
+year = 1996
+locator_scheme = "section"
+locator = "Definition 2.1; Lemma 2.4; Definition 2.5; Theorem 2.6; Lemma 2.7, pp. 41–42"
+url = "https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/0964-3.pdf"
+fetched_from = "https://www.kurims.kyoto-u.ac.jp/~kyodo/kokyuroku/contents/pdf/0964-3.pdf"
+fetched_at = "2026-11-15T05:25:05Z"
+sha256 = "fe179ce84d4da3c01ea4798109094fba0bb22c9e9423c9575fca82711e38eddf"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["K0.5–K0.6"]
+
+[[source]]
+id = "schenzel1982"
+authors = "Peter Schenzel"
+title = "Dualisierende Komplexe in der Iokalen Algebra und Buchsbaum - Ringe"
+year = 1982
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0094123"
+locator_scheme = "section"
+locator = "2.4.2"
+url = "https://doi.org/10.1007/BFb0094123"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["K0.5"]
+
+[[source]]
+id = "huneke1982"
+authors = "Craig Huneke"
+title = "The theory of d-sequences and powers of ideals"
+year = 1982
+venue = "Advances in Mathematics 46"
+doi = "10.1016/0001-8708(82)90045-7"
+locator_scheme = "section"
+locator = "pp. 249–279"
+url = "https://doi.org/10.1016/0001-8708(82)90045-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["K1"]
+
+[[source]]
+id = "hjls"
+authors = "William Heinzer; Bernard Johnston; David Lantz; Kishor Shah"
+title = "Coefficient ideals in and blowups of a commutative Noetherian domain"
+year = 1993
+locator_scheme = "section"
+locator = "Example 3.6, p. 13; pp. 12–13"
+url = "https://www.math.purdue.edu/~heinzer/preprints/rrii53.pdf"
+fetched_from = "https://www.math.purdue.edu/~heinzer/preprints/rrii53.pdf"
+fetched_at = "2026-11-15T05:25:23Z"
+sha256 = "a834ac793daaac38a53bd179c437f47a202c920bfecccc1a1b8a287c271fe85f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["K4.6"]
+
+[[source]]
+id = "stacks"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project"
+year = 2026
+locator_scheme = "tag"
+locator = "0621, 00KQ, 0A6R, 0BJB, 0ALZ, 0BJC, 0955, 0AVZ, 08Z1, 0A7B, 0A7U, 0A7Z, 0A80, 0A84, 0AAK, 015N, 02IJ, 052P, 00JL, 01M7, 01MB, 01M3, 0804, 080A, 080D, 080E, 08XW, 00ON, 0A06"
+url = "https://stacks.math.columbia.edu/download/book.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/book.pdf"
+fetched_at = "2026-11-15T05:29:29Z"
+sha256 = "5b3a46c20a9cd3c42e7f6746a30b655367dd544aa0ac837626c01e0f44deb409"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["K0–K4"]
+
+[[source]]
+id = "kawasaki2000"
+authors = "Takesi Kawasaki"
+title = "On Macaulayfication of Noetherian schemes"
+year = 2000
+doi = "10.1090/S0002-9947-00-02603-9"
+locator_scheme = "section"
+locator = "2.2, 2.8–2.10, 3.1–3.3"
+url = "https://www.ams.org/journals/tran/2000-352-06/S0002-9947-00-02603-9/S0002-9947-00-02603-9.pdf"
+fetched_from = "https://www.ams.org/journals/tran/2000-352-06/S0002-9947-00-02603-9/S0002-9947-00-02603-9.pdf"
+fetched_at = "2026-11-15T05:31:52Z"
+sha256 = "17169f441e6acb77c18bcb98fca02deb00fc46b653f32accb193f9de842e40b5"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["K2"]
+
+[[source]]
+id = "kawasaki2002"
+authors = "Takesi Kawasaki"
+title = "On arithmetic Macaulayfication of Noetherian rings"
+year = 2002
+doi = "10.1090/S0002-9947-01-02817-3"
+locator_scheme = "section"
+locator = "3.6"
+url = "https://www.ams.org/journals/tran/2002-354-01/S0002-9947-01-02817-3/S0002-9947-01-02817-3.pdf"
+fetched_from = "https://www.ams.org/journals/tran/2002-354-01/S0002-9947-01-02817-3/S0002-9947-01-02817-3.pdf"
+fetched_at = "2026-11-15T05:31:53Z"
+sha256 = "f6059999faa94900f7694efb59d3c9ee5b76bd8ff7e16bdb8765bb67c6dc8581"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["K2"]
