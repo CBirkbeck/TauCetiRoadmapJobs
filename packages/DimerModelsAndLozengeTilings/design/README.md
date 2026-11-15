@@ -20,11 +20,11 @@ perfect matchings of the dual graph (1.5); plane tilings are height functions (2
 criterion (2.9); Kasteleyn's theorem and the local statistics formula (3.2, 3.3); the face and
 ergodicity theorem for translation-invariant Gibbs measures (4.6, 5.3); every torus limit is a
 translation-invariant Gibbs measure of the prescribed slope (7.3); the classification on the
-edges of the slope triangle, with two distinct ergodic Gibbs measures of every edge slope (6.3);
-the torus partition function as a signed sum of four determinants (8.3); existence of an ergodic
-Gibbs measure of every slope (9.5); existence, uniqueness and ergodicity of the incomplete beta
-process of every complex slope (9.7); and convergence of local statistics of tilings of growing
-regions to Gibbs measures (10.2).
+edges of the slope triangle, with two distinct ergodic Gibbs measures of every non-corner edge
+slope (6.3); the torus partition function as a signed sum of four determinants (8.3); existence of
+an ergodic Gibbs measure of every slope (9.5); existence, uniqueness and ergodicity of the
+incomplete beta process of every complex slope (9.7); and convergence of local statistics of
+tilings of growing regions to Gibbs measures (10.2).
 
 The README is definitive; `Suggested.lean` is the roadmap's acceptance test and states the
 headline theorems named in this document, each with `sorry`, with the simple definitions they
@@ -241,7 +241,20 @@ At the Mathlib revision pinned in `lake-manifest.json`.
 - `Pi.topologicalSpace` (`Mathlib/Topology/Constructions.lean`), `Function.compactSpace` and
   `Pi.compactSpace` (`Mathlib/Topology/Compactness/Compact.lean`); `MeasurableSpace.pi`
   (`Mathlib/MeasureTheory/MeasurableSpace/Constructions.lean`); `MeasureTheory.Measure.infinitePi`
-  (`Mathlib/Probability/ProductMeasure.lean`).
+  (`Mathlib/Probability/ProductMeasure.lean`, for a family of probability measures), with
+  `MeasureTheory.Measure.infinitePi_map_piCongrLeft` (the same file, line 494: for probability
+  measures `μ i` on measurable spaces `X i` and `e : α ≃ ι`, the push-forward of
+  `infinitePi (fun a => μ (e a))` along `MeasurableEquiv.piCongrLeft X e`, which sends `f` to the
+  function with value `f a` at `e a`, is `infinitePi μ`; for a constant family and `e` the
+  bijection `i ↦ γi` of `I`, this is invariance of `ν^{⊗I}` under `(γω)(i) = ω(γ⁻¹i)`);
+  `ProbabilityTheory.iIndepFun_infinitePi` (`Mathlib/Probability/Independence/InfinitePi.lean`,
+  line 124: for probability measures `P i` and measurable maps `f i` on the factors, the functions
+  `ω ↦ f i (ω i)` are independent under `infinitePi P`);
+  `ProbabilityTheory.iIndepFun.precomp` and `ProbabilityTheory.iIndepFun_iff_iIndep`
+  (`Mathlib/Probability/Independence/Basic.lean`, lines 323 and 231: an independent family stays
+  independent along an injective reindexing, and independence of functions is independence of the
+  σ-algebras they generate). 4.3 uses them to feed the coordinates along an enumeration
+  `e : ℕ ≃ I` to the zero-one law.
 - `Pi.borelSpace` (`Mathlib/MeasureTheory/Constructions/BorelSpace/Basic.lean`, line 645: for a
   countable index type and factors that are second-countable Borel spaces, the product σ-algebra
   is the Borel σ-algebra of the product topology; a factor whose σ-algebra is not its Borel
@@ -976,9 +989,9 @@ API:
 If μ is a `Γ`-invariant probability measure on `Ω` and `A` is a measurable event with `γA = A` for
 all `γ`, there is a tail event `T` with `μ(A Δ T) = 0`. Route: approximate `A` by cylinder events
 `C_k` with `μ(A Δ C_k) < 2^{−k}`, translate `C_k` by `γ_k` so that it depends only on coordinates
-outside the `k`-th set of an exhaustion of `I`, and take `T = limsup γ_kC_k`. This is the ingredient of the face theorem georgii2011 Theorem 14.15
-(uncertified), restated as sheffield2005 Lemma 3.2.2 (lines 1367–1371); the approximation is
-Mathlib's. *Needs:* 4.1; Mathlib
+outside the `k`-th set of an exhaustion of `I`, and take `T = limsup γ_kC_k`. This is the
+ingredient of the face theorem georgii2011 Theorem 14.15, restated as sheffield2005 Lemma 3.2.2
+(lines 1367–1371); the approximation is Mathlib's. *Needs:* 4.1; Mathlib
 `MeasureTheory.exists_measure_symmDiff_lt_of_generateFrom_isSetRing`, applied to the ring of
 measurable cylinders (`MeasureTheory.isSetRing_measurableCylinders`), which generates the product
 σ-algebra (`MeasureTheory.generateFrom_measurableCylinders`), with the covering subfamily `{univ}`
@@ -1003,6 +1016,9 @@ For `I = Γ` acting on itself and `S` finite with at least two positive weights,
 conclusion is that of VonNeumannAlgebras V8.BernoulliArbitraryDiscrete (Scope and ownership); the
 route here does not use it.
 *Needs:* 4.1, 4.2; Mathlib `Measure.infinitePi`,
+`MeasureTheory.Measure.infinitePi_map_piCongrLeft` (invariance),
+`ProbabilityTheory.iIndepFun_infinitePi`, `ProbabilityTheory.iIndepFun.precomp`,
+`ProbabilityTheory.iIndepFun_iff_iIndep` (independence of the coordinates along `e`),
 `ProbabilityTheory.measure_zero_or_one_of_measurableSet_limsup_atTop`, `ErgodicSMul`; Tau Ceti
 `TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant` (reverse implication).
 
@@ -1122,7 +1138,7 @@ are Gibbs. Hence an element of `𝒢_inv(γ)` is extreme in `𝒢_inv(γ)` iff i
 `𝔓_inv(X)` iff it is ergodic (`gibbsInvariant_extreme_iff_ergodic`), and conditioning an element of
 `𝒢_inv(γ)` on an invariant event of positive measure stays in `𝒢_inv(γ)`. (c) If `γ` is
 quasilocal, `𝒢(γ)`, `𝔓_inv(X)` and `𝒢_inv(γ)` are weakly closed, hence compact (sheffield2005
-Lemma 3.2.2, lines 1367–1371; georgii2011 Theorem 14.15, uncertified; gorin2021 Lemma 13.7 and its
+Lemma 3.2.2, lines 1367–1371; georgii2011 Theorem 14.15; gorin2021 Lemma 13.7 and its
 proof, lines 4561–4582; kos2006 lines 195–202; kenyon2009 Section 5.1, lines 799–809). Route for
 (b): the densities of the two measures with respect to their combination are almost surely
 invariant, so each of their level sets is almost equal to an exactly invariant event (Tau Ceti
@@ -1334,11 +1350,11 @@ with `ν{ε₀ = 1} = s`, and μ is ergodic under `ℤ²` iff `ε_*μ` is ergodi
 `β_s = (β + σ_*β)/2` (where `β` makes the pairs `(ε_{2k}, ε_{2k+1})` independent, equal to `(1,1)`
 with probability `s` and `(0,0)` otherwise, and `σ` is the shift) are distinct ergodic
 shift-invariant measures of density `s`; so there are at least two ergodic Gibbs measures of
-slope `(s,0)`, and by `ρ` the same holds on the edges `s = 0` and `s + t = 1`
-(`slopeEdge_ergodicGibbs_equiv`, `two_ergodicGibbs_of_slopeEdge`; sheffield2005 Theorem 9.5.1,
-lines 6195–6198; gorin2021 lines 4638–4642; kenyon2009 Exercise 13, line 891). Route for the
-ergodicity of `β_s`: `β` is a Bernoulli measure for the square of the shift (4.3), and a
-shift-invariant event `A` has `β_s(A) = β(A) ∈ {0,1}`. *Needs:* 1.6, 2.5, 4.3, 5.3, 6.1.
+slope `(s,0)`, and by `ρ` the same holds at the non-corner points of the edges `s = 0` and
+`s + t = 1` (`slopeEdge_ergodicGibbs_equiv`, `two_ergodicGibbs_of_slopeEdge`; sheffield2005
+Theorem 9.5.1, lines 6195–6198; gorin2021 lines 4638–4642; kenyon2009 Exercise 13, line 891).
+Route for the ergodicity of `β_s`: `β` is a Bernoulli measure for the square of the shift (4.3),
+and a shift-invariant event `A` has `β_s(A) = β(A) ∈ {0,1}`. *Needs:* 1.6, 2.5, 4.3, 5.3, 6.1.
 
 **Checks.**
 

@@ -960,6 +960,10 @@
       "target:4.1",
       "target:4.2",
       "mathlib:MeasureTheory.Measure.infinitePi",
+      "mathlib:MeasureTheory.Measure.infinitePi_map_piCongrLeft",
+      "mathlib:ProbabilityTheory.iIndepFun_infinitePi",
+      "mathlib:ProbabilityTheory.iIndepFun.precomp",
+      "mathlib:ProbabilityTheory.iIndepFun_iff_iIndep",
       "mathlib:ProbabilityTheory.measure_zero_or_one_of_measurableSet_limsup_atTop",
       "mathlib:ErgodicSMul",
       "tauceti:TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant"
@@ -1435,7 +1439,7 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "slopeEdge_ergodicGibbs_equiv",
-     "statement": "Φ₂ (no type-2 lozenge) ≅ {0,1}^ℤ via ε(M)_x=[((x,0),1)∈M], intertwining τ_{e₁} with the shift and τ_{e₂} with id; completion sets of M∈Φ₂ are singletons; measures on Φ₂ are Gibbs; invariant μ has slope (s,0) iff μ(Φ₂)=1 and density s; μ↦ε_*μ is an affine homeomorphism onto shift-invariant measures of density s preserving ergodicity; for 0<s<1 Bern(s)^{⊗ℤ} and the block measure β_s give two distinct EGMs of slope (s,0); likewise on the other edges by ρ.",
+     "statement": "Φ₂ (no type-2 lozenge) ≅ {0,1}^ℤ via ε(M)_x=[((x,0),1)∈M], intertwining τ_{e₁} with the shift and τ_{e₂} with id; completion sets of M∈Φ₂ are singletons; measures on Φ₂ are Gibbs; invariant μ has slope (s,0) iff μ(Φ₂)=1 and density s; μ↦ε_*μ is an affine homeomorphism onto shift-invariant measures of density s preserving ergodicity; for 0<s<1 Bern(s)^{⊗ℤ} and the block measure β_s give two distinct EGMs of slope (s,0); likewise at the non-corner points of the other edges by ρ.",
      "hypotheses": [
       "0 < s < 1 for the non-uniqueness"
      ],
