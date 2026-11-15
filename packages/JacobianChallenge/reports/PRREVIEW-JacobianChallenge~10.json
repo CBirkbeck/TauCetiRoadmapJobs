@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-JacobianChallenge~10",
+  "head": "617bbe1ea940d78c470666c4e9fda35490aed322",
+  "pr": 1892,
+  "folder": "JacobianChallenge",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 617bbe1. Checked the pull request's title and description as they stand now against the head and the folder's change against main: the five P3 findings of the previous review (Galois descent; Riemann-Roch on Gorenstein curves; direction of the duality supply; extent of the README rewrite and removed sections; removed Suggested.lean declarations) are all repaired in the description, and no sentence of it is contradicted by the head (counts of theorems and dropped declarations, supplier sections, section locators and pinned declarations confirmed). Adversarial rows computed for serreDuality_exists_trace, the E.1 cube theorem and dim_jacobianVariety. Gate re-run: every counter 0, OK. Suggested.lean elaborates, exit 0, 14 sorry warnings only. Dependency check: 245 roadmaps, 0 problems. No seeded-sample target falls in a changed passage; source independence on changed passages only (none).",
+  "text": "00c935368b10f3d2"
+ }
+}
