@@ -302,9 +302,9 @@
      "id": "1.5",
      "kind": "theorem",
      "name": "Prestack.limit_adjointable",
-     "statement": "(a) A natural transformation of diagrams K -> Cat_infty-hat with componentwise right adjoints and right adjointable naturality squares has a componentwise right adjoint on limits, and the projection squares are right adjointable. (b) Dualizable (invertible) objects of a limit of symmetric monoidal infinity-categories are those with dualizable (invertible) images; the invertible half from the dualizable half, invertible = dualizable with evaluation an equivalence, and equivalences in a limit being detected componentwise. (c) Descent criterion: an augmented cosimplicial infinity-category satisfying Beck-Chevalley is a limit diagram iff C^{-1} -> C^0 is comonadic.",
+     "statement": "(a) A natural transformation of diagrams K -> Cat_infty-hat, K (u+1)-small, with componentwise right adjoints and right adjointable naturality squares has a componentwise right adjoint on limits, and the projection squares are right adjointable. (b) Dualizable (invertible) objects of a limit of symmetric monoidal infinity-categories are those with dualizable (invertible) images; the invertible half from the dualizable half, invertible = dualizable with evaluation an equivalence, and equivalences in a limit being detected componentwise. (c) Descent criterion: an augmented cosimplicial infinity-category satisfying Beck-Chevalley is a limit diagram iff C^{-1} -> C^0 is comonadic.",
      "hypotheses": [
-      "K is an infinity-category",
+      "K is a (u+1)-small infinity-category, so that limits over K exist in Cat_infty-hat",
       "for (c), each coface square is right adjointable"
      ],
      "locator": {
@@ -430,7 +430,8 @@
      "name": "Prestack.QCoh",
      "statement": "QCoh : PreStk_T^op -> CAlg(Cat_infty-hat), the right Kan extension of Spec A |-> Mod_A along Spec, QCoh(X) = lim over Pts(X) of Mod_A; evaluation eta^*, pullback f^*, structure sheaf O_X. In the classical context QCoh is PrismaticCohomologyPartII 4.0 QCohPrestack (same limit of R |-> D_infty(R) with derived base change, identified through 1.2 classical values), with its eval, pullback, specEquiv and unit_eval; the statement here extends it to AnRing and CAlg^cn.",
      "hypotheses": [
-      "T is one of the three contexts"
+      "T is one of the three contexts",
+      "Cat_infty-hat is the infinity-category of (u+1)-small infinity-categories (EnhancedDerivedSheaves Cat_infty, E0.5, in the universe u+1); every Mod_A, every Pts(X) and every QCoh(X) is (u+1)-small, while PreStk_T is only locally (u+1)-small and is not an object of Cat_infty-hat"
      ],
      "locator": {
       "source": "SAG",
@@ -1437,7 +1438,7 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "Prestack.QCoh.perf",
-     "statement": "For every prestack X: perfect = dualizable, invertible = pointwise invertible, connective dualizable in QCoh(X)^cn = locally free of finite rank, X |-> Perf(X) is the right Kan extension of A |-> Perf(A) and satisfies fpqc hyperdescent; for qcqs schemes Perf(h_X) = PerfectDerived(X). Classically the first two are PrismaticCohomologyPartII 4.0 isDualizable_iff_perfect and isInvertible_iff (Perf = QCohPrestack.Perf); animated Cech descent of Perf is LanglandsParameterStacks 1.7; on the lattice quotient of 7.3 perfect and locally free objects are those of HabiroCohomologyFoundations 1.28. On the derived parameter stacks of LanglandsParameterStacks 1.8, Perf is its chartwise dualizable category: an object of the limit over the bar construction is dualizable exactly when its pullback to the chart is (1.5).",
+     "statement": "For every prestack X: perfect = dualizable, invertible = pointwise invertible, connective dualizable in QCoh(X)^cn = locally free of finite rank, X |-> Perf(X) is the right Kan extension of A |-> Perf(A) and satisfies fpqc hyperdescent; for qcqs schemes Perf(h_X) = PerfectDerived(X). Classically the first two are PrismaticCohomologyPartII 4.0 isDualizable_iff_perfect and isInvertible_iff (Perf = QCohPrestack.Perf); animated Cech descent of Perf is LanglandsParameterStacks 1.7; the statements extend these imports to every prestack and every context.",
      "hypotheses": [
       "X any prestack; qcqs for the scheme comparison"
      ],
@@ -1454,9 +1455,7 @@
       "roadmap:EnhancedDerivedSheaves E1.8",
       "roadmap:DerivedModuleAlgebra §1.E.0",
       "roadmap:PrismaticCohomologyPartII §4.0",
-      "roadmap:LanglandsParameterStacks §1.7",
-      "roadmap:HabiroCohomologyFoundations §1.28",
-      "roadmap:LanglandsParameterStacks §1.8"
+      "roadmap:LanglandsParameterStacks §1.7"
      ],
      "api": [
       {
@@ -1640,7 +1639,7 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "Prestack.QCoh.realizationEquiv",
-     "statement": "For a group prestack G over a prestack S acting on X over S: QCoh(|G^{x_S .} x_S X|) = lim_Delta QCoh(G^{x_S n} x_S X) symmetric monoidally (G-equivariant objects); pullback to X is forgetful; QCoh([X/G]) = QCoh(|G^{x_S .} x_S X|) with no hypothesis on G. For the action of the dual group on the framed derived cocycle functor in the animated context the limit is the enhanced QCoh of LanglandsParameterStacks 1.8 (the same bar construction), which this extends to every action of a group prestack.",
+     "statement": "For a group prestack G over a prestack S acting on X over S: QCoh(|G^{x_S .} x_S X|) = lim_Delta QCoh(G^{x_S n} x_S X) symmetric monoidally (G-equivariant objects); pullback to X is forgetful; QCoh([X/G]) = QCoh(|G^{x_S .} x_S X|) with no hypothesis on G. For the action of the dual group on the framed derived cocycle functor in the animated context the limit is the enhanced QCoh of LanglandsParameterStacks 1.8 (the same bar construction), which this extends to every action of a group prestack. Its perfect objects (6.3) are its chartwise dualizable objects, as LanglandsParameterStacks 1.8 defines Perf on its stacks: an object of the limit is dualizable iff each term is (1.5), and each term is the pullback of the term on X along the map induced by a vertex [0] -> [n]; so it is perfect iff its term on X is dualizable in QCoh(X).",
      "hypotheses": [
       "S a prestack; G a group prestack over S acting on X over S"
      ],
@@ -1649,8 +1648,11 @@
       "where": "Proposition 6.2.3.1, p. 492; GR-I Chapter I.3, Corollaries 1.3.8 and 1.3.11, p. 147"
      },
      "prerequisites": [
+      "target:1.5",
       "target:2.3",
       "target:3.3",
+      "target:6.1",
+      "target:6.3",
       "target:7.1",
       "roadmap:LanglandsParameterStacks §1.8"
      ],
@@ -1685,7 +1687,7 @@
       {
        "name": "parameter_stacks_agreement",
        "kind": "compatibility",
-       "statement": "Agreement with LanglandsParameterStacks 1.8 on its own Checks: for H-hat over S = Spec Lambda acting on itself by translation the limit is QCoh(S) = Mod_Lambda; for B H-hat = [S/H-hat] it is O(H-hat)-comodules in Mod_Lambda, so a Lambda-module without coherent coaction data is not an object; dropping the nerve would give Mod_Lambda in both cases."
+       "statement": "Agreement with LanglandsParameterStacks 1.8 on its own Checks: for H-hat over S = Spec Lambda acting on itself by translation the limit is QCoh(S) = Mod_Lambda, with perfect objects Perf(Lambda), since M (x)_Lambda O(H-hat) is dualizable iff M is perfect, Lambda -> O(H-hat) being faithfully flat (6.1); for B H-hat = [S/H-hat] it is O(H-hat)-comodules in Mod_Lambda, so a Lambda-module without coherent coaction data is not an object; dropping the nerve would give Mod_Lambda in both cases."
       }
      ]
     },
@@ -1693,7 +1695,7 @@
      "id": "7.3",
      "kind": "theorem",
      "name": "Prestack.QCoh.discreteQuotient",
-     "statement": "For a u-small discrete group Gamma acting on X through B Gamma -> PreStk_T, QCoh(X/Gamma) = QCoh(X)^{h Gamma} (limit over B Gamma), X/Gamma is the realization of the constant group action, and QCoh([X/Gamma]) = QCoh(X/Gamma); no finiteness of Gamma. For Gamma = Z^d acting on Spec C through ring automorphisms this is HabiroCohomologyFoundations 1.27 (QCoh([Spec C/Z^d]) = D(C)^{h Z^d}), whose heart, vector bundles and perfect complexes are its 1.28; the statement extends 1.27 to every discrete group and prestack and agrees with it on the lattice.",
+     "statement": "For a u-small discrete group Gamma acting on X through B Gamma -> PreStk_T, QCoh(X/Gamma) = QCoh(X)^{h Gamma} (limit over B Gamma), X/Gamma is the realization of the constant group action, and QCoh([X/Gamma]) = QCoh(X/Gamma); no finiteness of Gamma. For Gamma = Z^d acting on Spec C through ring automorphisms this is HabiroCohomologyFoundations 1.27 (QCoh([Spec C/Z^d]) = D(C)^{h Z^d}), and its heart, vector bundles and perfect complexes (6.2(a), 6.3) are those of its 1.28: C-modules with d commuting invertible semilinear operators, underlying finite projective, underlying perfect; the statement extends 1.27 to every discrete group and prestack and agrees with it on the lattice.",
      "hypotheses": [
       "Gamma a u-small discrete group"
      ],
@@ -1704,6 +1706,9 @@
      "prerequisites": [
       "target:2.3",
       "target:3.3",
+      "target:6.1",
+      "target:6.2",
+      "target:6.3",
       "target:7.1",
       "roadmap:EnhancedDerivedSheaves E5:presentability.3",
       "mathlib:groupCohomology",
@@ -1736,7 +1741,7 @@
       {
        "name": "lattice",
        "kind": "computation",
-       "statement": "For Z^d acting on Spec C through ring automorphisms QCoh = D(C)^{h Z^d}; d = 0 gives D(C). This is the case of HabiroCohomologyFoundations 1.27."
+       "statement": "For Z^d acting on Spec C through ring automorphisms QCoh = D(C)^{h Z^d}; d = 0 gives D(C). This is the case of HabiroCohomologyFoundations 1.27. The unit is C with the operators sigma_i, a rank-one vector bundle in the heart as in 1.28; for d = 1, C = Q[x^{+-1}], sigma(x) = 2x, the identity of C is not sigma-semilinear (x against 2x)."
       }
      ]
     },
@@ -2232,7 +2237,7 @@
     "§1.7",
     "§1.8"
    ],
-   "what": "Faithfully flat Cech descent of module categories and perfect modules over animated rings: the animated Cech case of 3.2 and 6.3; QCoh and Perf of its derived parameter stacks as totalizations over action-groupoid nerves: the case of 7.2 and 6.3 for those stacks."
+   "what": "Faithfully flat Cech descent of module categories and perfect modules over animated rings: the animated Cech case of 3.2 and 6.3; QCoh and Perf of its derived parameter stacks as totalizations over action-groupoid nerves: the case of 7.2 for those stacks, with Perf through 6.3."
   },
   {
    "roadmap": "HabiroCohomologyFoundations",
@@ -2240,7 +2245,7 @@
     "§1.27",
     "§1.28"
    ],
-   "what": "The lattice quotient QCoh([Spec C/Z^d]) = D(C)^{h Z^d} and its heart, vector bundles and perfect complexes: the lattice case of 7.3 and 6.3."
+   "what": "The lattice quotient QCoh([Spec C/Z^d]) = D(C)^{h Z^d} and its heart, vector bundles and perfect complexes: the lattice case of 7.3, with the heart and the finiteness conditions through 6.2(a) and 6.3."
   },
   {
    "roadmap": "InfinityCategoryFoundations",
