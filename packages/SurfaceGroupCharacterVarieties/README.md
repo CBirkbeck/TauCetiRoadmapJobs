@@ -76,7 +76,8 @@ This roadmap owns:
 - the character variety `𝒳(Γ, G^ℝ)` of a finitely generated group, its topology, the affine
   quotient `Hom(Γ, G)//G` of the representation scheme by a connected reductive group over any
   field, its closed immersion into `G^S//G` over fields of characteristic zero and its complex
-  comparison, functoriality, the action of `Out(Γ)` and of `Mod_{g,n}`, and the standard examples
+  comparison, functoriality and the action of `Out(Γ)` (both for every group `Γ`, on the quotient of
+  its reductive homomorphisms by conjugation), the action of `Mod_{g,n}`, and the standard examples
   (Layer 7).
 
 It leaves to named owners, never planned again here; the sections a target uses are listed under
@@ -352,6 +353,13 @@ continuous representation of any group is semisimple);
 `SL(2, R)` over a commutative ring `R`,
 `tr(A B A⁻¹ B⁻¹) = (tr A)² + (tr B)² + (tr AB)² − tr A · tr B · tr AB − 2`).
 
+Singular cohomology: `TopCat.singularCup_naturality` (naturality of the singular cup product,
+`f^*α ⌣ f^*β = f^*(α ⌣ β)`, `AlgebraicTopology/Cohomology/Cup.lean`), with its integral case
+`TopCat.integralCup_naturality` (`AlgebraicTopology/Cohomology/IntegralCup.lean`);
+`TopCat.singularCap_naturality` (the projection formula `f_*(x ⌢ f^*α) = f_*x ⌢ α` for the cap
+product, `AlgebraicTopology/Cohomology/Cap/Basic.lean`); `TopCat.singularKronecker_naturality`
+(`⟨f^*α, x⟩ = ⟨α, f_*x⟩` for the Kronecker pairing, `AlgebraicTopology/Cohomology/Kronecker.lean`).
+
 Affine groups: `TauCeti.FiniteTypeCommHopfAlgCat` and `TauCeti.FiniteTypeCommHopfAlgCat.of`
 (finite-type commutative Hopf algebras, `Algebra/AlgebraicGroup/FiniteType/CommHopfAlgCat.lean`);
 `TauCeti.reductiveCommHopfAlgProperty` (connected reductive: smooth, geometrically connected, and
@@ -360,6 +368,9 @@ every connected normal smooth unipotent closed subgroup of the geometric fibre t
 and `TauCeti.reductiveCommHopfAlgProperty_iff_linearlyReductive` (over a field of characteristic
 zero a reductive group is linearly reductive, and a geometrically connected linearly reductive one
 is reductive, `Algebra/AlgebraicGroup/Reductive/CompleteReducibility.lean`);
+`TauCeti.reductiveCommHopfAlgProperty.of_injective` (over a field of characteristic zero, a
+finite-type affine group receiving a homomorphism with injective coordinate map from a connected
+reductive group is connected reductive, `Algebra/AlgebraicGroup/Reductive/Image.lean`);
 `AlgHom.convGroupOfSemiring` (the points `WithConv (H →ₐ[R] A)` of a Hopf algebra form a group under
 convolution) and `AlgHom.mapValue` (functoriality in the value algebra,
 `Algebra/AlgebraicGroup/FunctorOfPoints.lean`); `TauCeti.PointTopology.isTopologicalGroup` and
@@ -503,7 +514,8 @@ compatible with the maps of item 11.
 Layer 1
 (representations as comodules; §1.1, the comodule invariants are the vectors fixed by every point
 over every algebra), Layer 2 (Lie algebras of closed subgroups, the adjoint representation of a
-closed subgroup on `Lie(G)`, characteristic-zero smoothness), Layer 3 (closed subgroups, identity
+closed subgroup on `Lie(G)`, characteristic-zero smoothness), Layer 3 (closed subgroups, the image
+of a homomorphism as a closed subgroup receiving a faithfully flat map from the source, identity
 components, quotients by normal closed subgroups with their faithfully flat quotient maps), Layer 3A
 (orbits are open in their closures, 3A.2; every orbit closure contains a closed orbit, 3A.4), Layer 4
 (the Jordan decomposition of points, compatible with homomorphisms), Layer 5
@@ -1103,9 +1115,12 @@ the canonical word, a finite CW complex with one vertex, `2g` edges and one open
 structure, TeichmullerGeometry §0.0f), so its singular homology is the group homology of `π₁(Σ, x)`,
 naturally (ClassifyingSpaces Stage 4 item 17). Hence `Ψ_x[f]` acts on `H₂(π₁(Σ, x); ℤ)` as `f` acts on
 `H₂(Σ; ℤ) = ℤ[Σ]`, by the sign `ε_f = ±1` with `f_*[Σ] = ε_f [Σ]`. Naturality of cup and cap products
-gives `î(f_* u, f_* v) = ε_f î(u, v)` for `u, v ∈ H₁(Σ; ℤ)` and the intersection form `î` of
-MordellLawrenceVenkatesh §5.5: writing `u = a ∩ [Σ]` and `v = b ∩ [Σ]`, the projection formula gives
-`f_* u = ε_f (f⁻¹)^* a ∩ [Σ]`, so
+(Tau Ceti `TopCat.singularCup_naturality`, `TopCat.singularCap_naturality`) gives
+`î(f_* u, f_* v) = ε_f î(u, v)` for `u, v ∈ H₁(Σ; ℤ)` and the intersection form `î` of
+MordellLawrenceVenkatesh §5.5: writing `u = a ∩ [Σ]` and `v = b ∩ [Σ]`, the projection formula
+(`TopCat.singularCap_naturality` for the class `(f⁻¹)^* a`, whose pull-back along `f` is `a`) gives
+`f_* u = ε_f (f⁻¹)^* a ∩ [Σ]`, so, by naturality of the cup product and of the Kronecker pairing
+(`TopCat.singularCup_naturality`, `TopCat.singularKronecker_naturality`),
 `î(f_* u, f_* v) = ε_f² ⟨a ∪ b, (f⁻¹)_*[Σ]⟩ = ε_f î(u, v)`. If `f` preserves the orientation, `î` is
 invariant under `f` (§5.5), and it is nonzero, being perfect (§5.5) on
 `H₁(Σ; ℤ) ≅ ℤ^{2g} ≠ 0` (MordellLawrenceVenkatesh §5.6); hence `ε_f = 1`. If `f` reverses it,
@@ -1144,7 +1159,8 @@ TeichmullerGeometry §5.4a; MordellLawrenceVenkatesh §5.1; MordellLawrenceVenka
 MordellLawrenceVenkatesh §5.6; MordellLawrenceVenkatesh §5.15; MordellLawrenceVenkatesh §5.17;
 MordellLawrenceVenkatesh §5.19; AlgebraicTopology Stage 4 items 2–3; ClassifyingSpaces Stage 3 item
 11; ClassifyingSpaces Stage 3 item 15; ClassifyingSpaces Stage 4 item 17; Mathlib `groupHomology`, `groupHomology.map`,
-`FundamentalGroup.mapOfEq`.
+`FundamentalGroup.mapOfEq`; Tau Ceti `TopCat.singularCup_naturality`,
+`TopCat.singularCap_naturality`, `TopCat.singularKronecker_naturality`.
 
 ### 3.5 The mapping class action on conjugacy classes of representations
 
@@ -1232,8 +1248,10 @@ MordellLawrenceVenkatesh §5.22; Tau Ceti
 ### Dependencies
 
 Layers 1 and 2; Mathlib's fundamental group and groupoid and `groupHomology`; Tau Ceti's
-classification of connected coverings by monodromy; MordellLawrenceVenkatesh §§5.1, 5.5, 5.6, 5.9,
-5.15, 5.17, 5.19, 5.22; MappingClassGroupsAndCanonicalRepresentations §0.2;
+classification of connected coverings by monodromy; Tau Ceti's naturality of the singular cup and
+cap products and of the Kronecker pairing (`TopCat.singularCup_naturality`,
+`TopCat.singularCap_naturality`, `TopCat.singularKronecker_naturality`, §3.4);
+MordellLawrenceVenkatesh §§5.1, 5.5, 5.6, 5.9, 5.15, 5.17, 5.19, 5.22; MappingClassGroupsAndCanonicalRepresentations §0.2;
 TeichmullerGeometry §§0.0b, 0.0e, 0.0f, 0.0h, 4.2, 5.4, 5.4a; AlgebraicTopology Stage 4;
 ClassifyingSpaces Stages 3–4. Layer 3 supplies Layer 7.
 
@@ -1521,10 +1539,12 @@ Let `G ⊆ GL(V)` be a closed subgroup of a real finite-dimensional inner produc
 then `G v ∩ M = K w` for any `w ∈ G v ∩ M`; (iii) if `G v` is not closed there is `α ∈ 𝔭` such that
 `w = lim_{t→∞} exp(tα) v` exists and `G w` is closed, so that `w ∉ G v`; (iv) the closure of every
 orbit contains exactly one closed orbit, and it contains the norm minimizers of that closure; (v) for
-a maximal abelian `𝔱 ⊆ 𝔭` and `T = exp(𝔱)`, any two disjoint closed `T`-invariant subsets of `V` are
-separated by a continuous `T`-invariant function `V → [0, 1]` (BohmLafuente2021 Theorem 1.1, lines
-77–88, with the proof of its clause (ii) at lines 580–583; Lemma 5.1, line 417; Corollary 5.5, line
-445; Lemma 6.2, line 504; Lemma 6.3, line 518; Corollary 6.4, line 562; Lemma 6.5, line 568; §4 of
+every abelian subspace `𝔱` of `Sym(V)`, its elements commuting pairwise, and `T = exp(𝔱)`, any two
+disjoint closed `T`-invariant subsets of `V` are separated by a continuous `T`-invariant function
+`V → [0, 1]`; this is used for a maximal abelian `𝔱 ⊆ 𝔭` (BohmLafuente2021 Theorem 1.1, lines
+77–88, with the proof of its clause (ii) at lines 580–583; Lemma 5.1, line 417; Corollary 5.5, lines
+445–447, for `T = exp(𝔱)` with `𝔱 ⊂ Sym(V)` abelian as set at line 425; Lemma 6.2, line 504;
+Lemma 6.3, line 518; Corollary 6.4, line 562; Lemma 6.5, line 568; §4 of
 RichardsonSlodowy1990). The decomposition `G = K T K` used throughout is LieGroups Layer 9,
 **Restricted roots and KAK**: `Ad(K)𝔱 = 𝔭`, and `G = K exp(𝔱₊) K` for the closed positive chamber
 `𝔱₊ ⊆ 𝔱` (`kakDecomposition`), so `G = K T K` (BohmLafuente2021 Corollary A.2, line 1050).
@@ -1540,8 +1560,10 @@ Layer 9 with covering `π = id`: it is closed in `GL(V)`, transpose-stable becau
 `(k exp X)ᵀ = exp(X) k⁻¹` for `k ∈ K`, `X ∈ 𝔭`, and has finitely many components, being the image of
 `K × 𝔭` with `K = G ∩ O(V)` compact and `𝔭` connected; its Cartan involution `g ↦ (gᵀ)⁻¹` has fixed
 group `K` and `−1`-eigenspace `𝔭` on `𝔤`, which is how Layer 9 gives `G = K T K`. For an abelian `T`
-the orbits are coordinate tori and closed orbits are separated by explicit monomial invariants, which
-gives (v). A non-closed orbit `G v` has a closed invariant subset `Y` of its closure disjoint from
+the orbits are coordinate tori and closed orbits are separated by explicit invariants, monomials with
+nonnegative real exponents each supported on one sign component of a coordinate stratum
+(BohmLafuente2021 Lemma 4.6, line 364, and lines 382–386), which gives (v) through Urysohn's lemma on
+their joint image. A non-closed orbit `G v` has a closed invariant subset `Y` of its closure disjoint from
 it; separating `Y` from the `T`-orbits of `K v` and using compactness of `K` produces `α ∈ 𝔭` such
 that `lim_{t→∞} exp(tα) v` exists and lies in `Y`, hence outside `G v`. Convexity then shows that a
 minimal vector cannot have a non-closed orbit, which is (ii). For (iii) the same argument is run with
@@ -1554,6 +1576,16 @@ is not closed. The same separation gives the uniqueness in (iv).
 - `ℝ_{>0}` on `ℝ²` by `λ · (x, y) = (λx, λ⁻¹y)`: `M = {|x| = |y|}`, the hyperbola branches and `0` are
   the closed orbits, and the four half-axes are non-closed orbits with `0` in their closure
   (BohmLafuente2021 lines 172–176).
+- Separation (v) for an abelian `𝔱` that is not maximal in `𝔭`: `𝔱 = ℝ·diag(1, −1)` on `ℝ²` gives the
+  action of the previous Check, and `𝔱` is a line in the three-dimensional `𝔭 = Sym₂` of `GL₂(ℝ)`,
+  strictly inside the maximal abelian diagonal plane. The two branches `{xy = 1, x > 0}` and
+  `{xy = 1, x < 0}` are closed, disjoint and `T`-invariant, and are separated by the `T`-invariant
+  function equal to `1/2 − min(xy, 1)/2` on the open first quadrant, `1/2 + min(xy, 1)/2` on the open
+  third quadrant and `1/2` elsewhere: it takes the value `0` on the first branch and `1` on the
+  second, it is continuous because both formulas tend to `1/2` as `xy → 0`, and it is constant on the
+  orbits `(λx, λ⁻¹y)`, which preserve `xy` and each quadrant. No function of the invariant `xy` alone
+  separates them, both branches lying in `{xy = 1}`; a statement restricted to maximal abelian `𝔱`
+  would not cover this case of BohmLafuente2021 Corollary 5.5.
 - `SL_n(ℝ)` on `M_n(ℝ)` by conjugation: an orbit is closed exactly when the matrix is diagonalizable
   over `ℂ`, and `[[1,1],[0,1]]` has the closed orbit of the identity in its closure
   (BohmLafuente2021 lines 179–193).
@@ -1994,26 +2026,57 @@ ArithmeticGaloisRepresentations §1.11; ReductiveGroups Layer 1; ReductiveGroups
 
 ### 7.3 Functoriality
 
-Prove that for finitely generated groups `Γ`, `Γ'`, a homomorphism of real reductive data
-`φ : (𝐆, G^ℝ) → (𝐆', G'^ℝ)` maps reductive representations to reductive representations and induces
-a continuous map `𝒳(Γ, G^ℝ) → 𝒳(Γ, G'^ℝ)`; that a surjection `Γ' ↠ Γ` induces a closed embedding
-`𝒳(Γ, G^ℝ) → 𝒳(Γ', G^ℝ)`; and that the restriction to a finite-index subgroup `Γ' ≤ Γ`, finitely
-generated by Schreier's lemma, maps reductive representations to reductive representations and
-induces a continuous map `𝒳(Γ, G^ℝ) → 𝒳(Γ', G^ℝ)` (Sikora2012 line 268, Corollary 9).
+Prove that for a homomorphism of real reductive data `φ : (𝐆, G^ℝ) → (𝐆', G'^ℝ)` and every group
+`Γ`, postcomposition with `φ` maps reductive representations to reductive representations and
+induces a continuous map `CharacterVariety Γ G^ℝ → CharacterVariety Γ G'^ℝ`; that a surjection
+`π : Γ' ↠ Γ` of groups induces, by precomposition, a closed embedding
+`CharacterVariety Γ G^ℝ → CharacterVariety Γ' G^ℝ`; and that restriction to a finite-index subgroup
+`Γ' ≤ Γ` maps reductive representations to reductive representations and induces a continuous map
+`CharacterVariety Γ G^ℝ → CharacterVariety Γ' G^ℝ` (Sikora2012 line 268, Corollary 9, for the image of
+a completely reducible subgroup under a homomorphism of reductive groups). For finitely generated
+groups these are maps of the spaces `𝒳(Γ, G^ℝ)` of §7.1: a quotient of a finitely generated group is
+finitely generated, and a finite-index subgroup of one is finitely generated by Schreier's lemma.
 
-*Proof sketch.* By §6.7 (c), the image of a reductive group under a morphism of algebraic groups is
-reductive. For a finite-index `Γ'`, the Zariski closure of `ρ(Γ')` has finite index in that of
-`ρ(Γ)` and the same identity component.
+*Proof sketch.* By §§6.2 and 6.3, which use no finite generation, `ρ : Γ → G^ℝ` is reductive exactly
+when the Zariski closure `Z` of `ρ(Γ)` in `G = 𝐆_ℂ` has reductive identity component. The image
+`φ(Z)` is a closed subgroup of `G'` (ReductiveGroups Layer 3), so it is the Zariski closure of
+`φ(ρ(Γ))`, which is dense in it. If `ρ` is reductive, the image `φ(Z⁰)` of the connected reductive
+`Z⁰` is connected, closed and of finite index in `φ(Z)`, hence its identity component
+(ReductiveGroups Layer 3), and it is reductive (Tau Ceti
+`TauCeti.reductiveCommHopfAlgProperty.of_injective`, the coordinate map of
+`Z⁰ → φ(Z⁰)` being injective and `ℂ` of characteristic zero); so `φ ∘ ρ` is reductive. For a
+finite-index `Γ' ≤ Γ` with coset representatives `γ₁, …, γ_m`, the Zariski closure of `ρ(Γ)` is the
+finite union of the translates `ρ(γ_i) Z'` of the Zariski closure `Z'` of `ρ(Γ')`, so `Z'` has finite
+index in it and the same identity component. Postcomposition with `φ` and restriction are continuous
+for the topology of pointwise convergence, each coordinate of the image being a coordinate followed
+by the continuous `φ`, or a coordinate, and they commute with conjugation, so they descend to the
+quotients. For a surjection `π`, precomposition is a homeomorphism of `Hom(Γ, G^ℝ)` onto the set of
+homomorphisms trivial on `ker π`, which is closed, `G^ℝ` being Hausdorff, and conjugation invariant;
+`ρ ∘ π` has the image of `ρ`, so it is reductive exactly when `ρ` is (§6.1). The quotient maps by
+conjugation are open, so the induced map of orbit spaces is injective, has closed image (its
+preimage is the closed invariant set above) and is open onto its image (an invariant open subset
+`W ∩ C` of the closed invariant set `C` equals `(G^ℝ · W) ∩ C`).
 
 **Checks.**
 
-- The inclusion `SO(2) ⊆ SL₂(ℝ)` maps `𝒳(Γ, SO(2))` into `𝒳(Γ, SL₂(ℝ))`.
+- The inclusion `SO(2) ⊆ SL₂(ℝ)` maps `𝒳(Γ, SO(2))` into `𝒳(Γ, SL₂(ℝ))`: for `Γ = ℤ` and `ρ(1)` a
+  rotation of infinite order, the Zariski closure of `ρ(ℤ)` in `SO(2)_ℂ ≅ 𝔾_m` is the whole
+  one-dimensional torus, `ρ(ℤ)` being infinite and the proper closed subgroups of `𝔾_m` finite, and
+  its image in `SL₂` is the torus `SO(2)_ℂ`, reductive, consistently with `ρ(1)` being semisimple in
+  `SL₂(ℝ)`.
 - Restriction to an arbitrary subgroup is not functorial: for `Γ = F₂` and a Zariski-dense
   `ρ : F₂ → SL₂(ℝ)` with `ρ(a) = [[1,1],[0,1]]`, the restriction to `⟨a⟩ ≅ ℤ` is not reductive.
 - `Γ = ℤ/2 ↞ ℤ`: `𝒳(ℤ/2, G^ℝ)` is the closed subset of `𝒳(ℤ, G^ℝ)` of classes of semisimple elements of
   order dividing two.
+- No finite generation is used: for `Γ` free of countably infinite rank, `G^ℝ = G'^ℝ = ℝ^×` and `φ`
+  the squaring map of `GL₁`, `CharacterVariety Γ ℝ^× = (ℝ^×)^ℕ` (§7.1's Check) and the induced map
+  squares each coordinate, continuous although the space is not locally compact; the surjection
+  `Γ ↠ ℤ` sending every basis element to `1` induces the diagonal embedding `ℝ^× → (ℝ^×)^ℕ`, whose
+  image is closed and whose inverse on the image is the first coordinate. A statement restricted to
+  finitely generated groups would omit both maps.
 
-*Needs:* §6.7; §7.1; Mathlib `Subgroup.fg_of_index_ne_zero`.
+*Needs:* §6.1; §6.2; §6.3; §7.1; ReductiveGroups Layer 3; Tau Ceti
+`TauCeti.reductiveCommHopfAlgProperty.of_injective`; Mathlib `Subgroup.fg_of_index_ne_zero`.
 
 ### 7.4 The outer action and the mapping class action
 
@@ -2105,7 +2168,9 @@ value (Sikora2012 lines 844–845, Example 48).
 ### Dependencies
 
 Layers 1–6; LanglandsParameterStacks §2.2; ArithmeticGaloisRepresentations §1.11; ReductiveGroups
-Layers 1, 3A; Tau Ceti's reductive groups and their characteristic-zero linear reductivity; ComplexComparisonPartII §C-1.1; TeichmullerGeometry §§4.2, 4.4, 4.5, 6.1;
+Layers 1, 3 (images and identity components, §7.3), 3A; Tau Ceti's reductive groups and their
+characteristic-zero linear reductivity; Tau Ceti `TauCeti.reductiveCommHopfAlgProperty.of_injective`
+(§7.3); ComplexComparisonPartII §C-1.1; TeichmullerGeometry §§4.2, 4.4, 4.5, 6.1;
 NonabelianLevelStructures §§5.1–5.2 (Checks of §§7.2 and 7.5); Tau Ceti
 `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two` (§7.5);
 SymplecticGeometry/HamiltonianReduction R5 (a Check of §7.1); Tau Ceti's linearly reductive
