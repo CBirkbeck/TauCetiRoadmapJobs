@@ -162,9 +162,12 @@ analytic sets of reduced groups gives (b)).
    `<+:`. Witness: `[] < [0] < [0, 5] < [1/2] < [1]`.
 9. **The dense colouring.** `ν(r) := padicValNat 2 r.den` for `r : ℚ`. Witness: `ν(3/4) = 2`,
    `ν(5) = 0`, `ν(-1/6) = 1`, `ν(1/8008) = 3`.
-10. **Ordinals.** Ordinals are in `Ordinal.{0}`, ω₁ is `Ordinal.omega 1`, and `ω ^ γ` is
-    `Ordinal.omega0 ^ γ`. Back-and-forth levels are Tau Ceti's `TauCeti.BFEquiv` (relational
-    languages; at a successor the previous level is retained, `BFEquiv.add_one`).
+10. **Ordinals.** Ordinals are in `Ordinal.{0}`, except in Layer 6.1: there the level of the
+    interval lemma and of its sum form may lie in any universe, as Tau Ceti's `BFEquiv` allows, and
+    `bfEquiv_omega0_opow_mul` is stated for `γ`, `δ`, `ε` in any one universe (6.2 uses it in
+    universe 0). ω₁ is `Ordinal.omega 1`, and `ω ^ γ` is `Ordinal.omega0 ^ γ`. Back-and-forth
+    levels are Tau Ceti's `TauCeti.BFEquiv` (relational languages; at a successor the previous
+    level is retained, `BFEquiv.add_one`).
 
 ## Exact supplier contracts
 
@@ -179,7 +182,9 @@ Read at the pinned commit.
   `FirstOrder.Language.partialOrderTheory`, `FirstOrder.Language.linearOrderTheory`
   (`Mathlib/ModelTheory/Order.lean`): the language with one binary symbol, its interpretation as
   `≤`, the theory of partial orders (reflexive, transitive, antisymmetric) and the theory of
-  linear orders (these and total); `IsChain` (`Mathlib/Order/Preorder/Chain.lean`).
+  linear orders (these and total), each with an instance of `FirstOrder.Language.Theory.IsUniversal`
+  (`Mathlib/ModelTheory/Complexity.lean`: every axiom is a universal sentence); `IsChain`
+  (`Mathlib/Order/Preorder/Chain.lean`).
 - `FirstOrder.Language.ring`, `FirstOrder.Language.Theory.field`,
   `FirstOrder.Language.Theory.fieldOfChar` (`Mathlib/ModelTheory/Algebra/`): used only in the
   Checks of Layer 1.3.
@@ -257,10 +262,14 @@ CountableModelCounting; they are consumed here directly.
   between `SimpleGraph V` and the subtype `{c // IsSimpleGraph c}`,
   `SimpleGraph.range_toRelationalConfiguration` (the range is `{c | IsSimpleGraph c}`) and
   `SimpleGraph.measurableEmbedding_toRelationalConfiguration`.
-- `TauCeti/Topology/Algebra/Group/Perm.lean`: `Equiv.Perm.instTopologicalSpace` (pointwise
-  convergence of `σ` and `σ⁻¹` on a discrete space), `Equiv.Perm.instIsTopologicalGroup`,
-  `Equiv.Perm.instPolishSpace` (countable carrier) and `Equiv.Perm.hasBasis_nhds_one_fixingSubgroup`
-  (the pointwise stabilizers of finite sets form a neighbourhood basis of `1`).
+- `TauCeti/Topology/Algebra/Group/Perm.lean`: for every topological space `α`,
+  `Equiv.Perm.instTopologicalSpace` (the topology induced by `σ ↦ (σ, σ⁻¹)` from the product of two
+  spaces of functions `α → α` with pointwise convergence), with `Equiv.Perm.continuous_apply` and
+  `Equiv.Perm.continuous_inv_apply` (evaluation of `σ` and of `σ⁻¹` at a fixed point is
+  continuous); and, for a discrete `α`, `Equiv.Perm.instIsTopologicalGroup`,
+  `Equiv.Perm.instPolishSpace` (countable `α`), `Equiv.Perm.instDiscreteTopology` (finite `α`) and
+  `Equiv.Perm.hasBasis_nhds_one_fixingSubgroup` (the pointwise stabilizers of finite sets form a
+  neighbourhood basis of `1`).
 - `TauCeti/SetTheory/Descriptive/BorelReducibility.lean`: `Setoid.BorelReducible E F` (a measurable
   `f` with `E x y ↔ F (f x) (f y)`), `Setoid.borelReducible_comap`,
   `Setoid.borelReducible_iff_exists_eq_comap`, `BorelReducible.refl`, `BorelReducible.trans`,
@@ -325,6 +334,8 @@ The targets of the base that the pin does not implement, by the base's names and
   `ω₁`), used in Checks of Layers 0.2, 3.3 and 6.4.
 - Worked example 2: the codes of one unary predicate have Scott height at most `ω` and countably
   many orbits, each Borel.
+- Worked example 3: the codes of linear orders in `Language.order` form a closed set (the API of
+  3.3).
 
 ### From TauCetiRoadmap.NoncompactQuantumSymmetry
 
@@ -852,7 +863,10 @@ lexicographic `LinearOrder (List ℚ)`, `List.IsPrefix`.
 
 Define `linearOrderClass : Set (RelationalConfiguration Language.order ℕ)` as the codes whose
 decoded relation is a linear order, the models of Mathlib's `Language.order.linearOrderTheory`.
-API: it is closed and invariant; the code of `(ℕ, ≤)` with `orderStructure` is in it.
+API: it is closed (CountableStructureSpaces worked example 3: every axiom of `linearOrderTheory` is
+universal, `Theory.IsUniversal`, so membership is an intersection over tuples of conditions on
+finitely many atoms, each clopen by `isClopen_setOf_eval`) and invariant; the code of `(ℕ, ≤)` with
+`orderStructure` is in it.
 
 **Checks.**
 
@@ -977,7 +991,7 @@ recovered as the relation of lying on the path from the marked vertex, so isomor
 reflected) (friedman-stanley-1989 §2; the binary case, rooted binary trees as partial orders and
 as subtrees of `2^{<ℕ}`: camerlo-gao-boolean lines 257–263 and 276–281; `treeClass` and the
 finitely or infinitely branching trees of `Descriptive.tree ℕ` are the roadmap's own reading).
-*Needs:* 3.4, Layer 0.1; Mathlib `Descriptive.tree`.
+*Needs:* 3.4, Layer 1.2 (the Transfer law), Layer 0.1; Mathlib `Descriptive.tree`.
 
 **Checks.**
 
@@ -1001,7 +1015,8 @@ The one-edge graph through 3.2–3.4; the chain and the star in 3.4–3.5.
 ### Dependencies
 
 Layers 0–2; Tau Ceti (tuple back-and-forth systems and the countable back-and-forth theorem);
-CountableStructureSpaces Layer 6.2 (a Check of 3.3); Mathlib.
+CountableStructureSpaces Layer 6.2 (a Check of 3.3) and worked example 3 (closedness of
+`linearOrderClass`); Mathlib.
 
 ## Layer 4: Borel S∞-spaces and the universal embedding
 
@@ -1247,31 +1262,40 @@ are not isomorphic (`Equiv.isoSetoid_encodeVia_iff`, the two ordinals being dist
 
 - Prove `exists_lt_scottHeight_of_borelComplete`, unbounded Scott height: for countable relational
   `L` and every `β < ω₁` some code `c ∈ K` has Scott height of its decoded structure
-  (`TauCeti.scottHeight`, an ordinal in `Ordinal.{0}`) greater than `β`. Otherwise every code of `K`
-  has Scott height at most `β`, and for `c, d ∈ K` isomorphism is equivalence at level `β`:
-  isomorphic codes are equivalent at every level (`isoSetoid_le_bfEquivSetoid`), and conversely
+  (`TauCeti.scottHeight`, an ordinal in `Ordinal.{0}`) greater than `β` (montalban-cst2
+  Theorem XI.3, lines 8997–9001, and lines 9046–9051, for the Scott rank of a class closed under
+  isomorphism; here for the external height `scottHeight` and an arbitrary `K`). Otherwise every
+  code of `K` has Scott height at most `β`, and for `c, d ∈ K` isomorphism is equivalence at level
+  `β`: isomorphic codes are equivalent at every level (`isoSetoid_le_bfEquivSetoid`), and conversely
   `BFEquiv β` of the empty tuples with `scottHeight ≤ β` gives an isomorphism of the two countable
   decoded structures (`nonempty_equiv_of_bfEquiv_of_scottHeight_le`). So the graph of `classIso K`
   is the preimage of the graph of `bfEquivSetoid L ℕ β`, which is measurable
   (`measurableSet_setOf_bfEquivSetoid`, `β < ω₁`), under the measurable inclusion
   `K × K → RelationalConfiguration L ℕ × RelationalConfiguration L ℕ`, and is measurable for the
   product of the subtype σ-algebras, against the theorem. Neither invariance nor Borelness of `K` is
-  used.
+  used. For the class of models of an infinitary sentence this step is CountableStructureSpaces
+  Layer 4.3 (`measurableSet_iso_inter_of_scottHeight_le`, there with the graph in the ambient
+  square); it is argued here from the pinned lemmas because `K` is an arbitrary set of codes and the
+  graph is taken in `K × K`.
 - For relational `L` (countability is not used), `classIso K` is Borel reducible to no
   equivalence relation with Borel graph on a measurable space, since Borelness pulls back along
   reductions (`BorelReducible.measurableSet_setOf`); in particular not to `eZero`
   (`measurableSet_eZero`).
 - For countable relational `L` and Borel `K`, the set `{p ∈ K ×ˢ K | ¬ p.1 ≅ p.2}` of
   non-isomorphic pairs is not an analytic subset of
-  `RelationalConfiguration L ℕ × RelationalConfiguration L ℕ`. Its complement is the
-  union of the analytic set `iso ∩ (K ×ˢ K)` (`analyticSet_setOf_isoSetoid`, with `K ×ˢ K` Borel)
+  `RelationalConfiguration L ℕ × RelationalConfiguration L ℕ` (for a Borel class closed under
+  isomorphism this also follows from the Σ¹₁-completeness of the isomorphism relation of a class on
+  top for Borel reducibility, montalban-cst2 lines 9046–9050, a Σ¹₁-complete set not being
+  coanalytic; that completeness is not proved here). Its complement is the union of the analytic
+  set `iso ∩ (K ×ˢ K)` (`analyticSet_setOf_isoSetoid`, with `K ×ˢ K` Borel)
   and the Borel set `(K ×ˢ K)ᶜ`, so it is analytic; if the set were analytic too, both would be
   Borel (Suslin, `MeasureTheory.AnalyticSet.measurableSet_of_compl`), and the preimage of the
   isomorphic pairs under the measurable inclusion of `K × K` into the square would be measurable
   for the product of the subtype σ-algebras, against the theorem.
 
-*Needs:* for the theorem, 6.1, Layer 3.3, Layer 0.1, Tau Ceti `Equiv.encodeVia`,
-`Equiv.isoSetoid_encodeVia_iff`, `BFEquiv.mono`, `BFEquiv.trans`,
+*Needs:* for the theorem, 6.1, Layer 3.3, Layer 1.2 (the definition, applied to
+`linearOrderClass`), Layer 0.1, Tau Ceti `Equiv.encodeVia`, `Equiv.isoSetoid_encodeVia_iff`,
+`BFEquiv.mono`, `BFEquiv.trans`,
 `FirstOrder.Language.Equiv.bfEquiv`, `BorelReducible.measurableSet_setOf` and
 CountableStructureSpaces Layer 4.4 (`exists_uniform_bfSeparation`); for the Scott height, Tau Ceti
 `scottHeight`, `nonempty_equiv_of_bfEquiv_of_scottHeight_le`, `bfEquivSetoid`,
@@ -1298,12 +1322,13 @@ classes coincide (`eZero_iff_finite`; camerlo-gao-boolean lines 94–100, of whi
 instance for E₀). Prove `borelReducible_eZero_of_borelComplete`: for relational `L` (countability of
 `L` is not used) and `BorelComplete K`, `eZero` is Borel reducible to `classIso K` (Layer 5 (3));
 hence equality on Cantor space is (`borelReducible_bot_eZero`). Prove
-`mk_quotient_classIso_of_borelComplete`: for countable relational `L` and `BorelComplete K`, the set
-of isomorphism types `Quotient (classIso K)` has cardinality exactly `𝔠` (at least `𝔠` by
+`mk_quotient_classIso_of_borelComplete` (the roadmap's own corollary of the reduction of `eZero`):
+for countable relational `L` and `BorelComplete K`, the set of isomorphism types
+`Quotient (classIso K)` has cardinality exactly `𝔠` (at least `𝔠` by
 `BorelReducible.lift_mk_quotient_le` and `mk_quotient_eZero`, at most `𝔠` because it is a quotient
 of a subset of the coding space, `mk_le_continuum`; the upper bound needs the countability of `L`).
 Prove that `classIso K` is not smooth (`not_isSmooth_of_borelReducible_eZero` applied to the
-reduction of `eZero`). *Needs:* Layers 1.1, 5; Tau Ceti `eZero`, `eZero_iff_finite`,
+reduction of `eZero`). *Needs:* Layers 1.1, 1.2, 5; Tau Ceti `eZero`, `eZero_iff_finite`,
 `borelReducible_bot_eZero`, `mk_quotient_eZero`, `BorelReducible.lift_mk_quotient_le`,
 `BorelReducible.trans`, `mk_le_continuum`, `Setoid.IsSmooth`,
 `not_isSmooth_of_borelReducible_eZero`, `continuous_iff`.
@@ -1336,8 +1361,8 @@ measurable map `f' : graphClass → K_α` (`Measurable.subtype_mk`), the graph o
 `classIso graphClass` is the preimage of the graph of `classIso K_α` under `f' × f'`, and so it is
 measurable by (a), against 6.2 for `graphClass`, Borel complete by Layer 2.3. Read in the ambient
 square instead, (a) would be a stronger hypothesis whenever `K_α` is not measurable, and the proof
-does not use it. *Needs:* 6.2, Layer 2.3, Layer 0.1; Mathlib `MeasurableSet.analyticSet_image`,
-`Measurable.subtype_mk`.
+does not use it. *Needs:* 6.2, Layer 2.3, Layer 1.2 (the definition, applied to `graphClass`),
+Layer 0.1; Mathlib `MeasurableSet.analyticSet_image`, `Measurable.subtype_mk`.
 
 **Checks.**
 
@@ -1365,10 +1390,11 @@ does not use it. *Needs:* 6.2, Layer 2.3, Layer 0.1; Mathlib `MeasurableSet.anal
   orbits of the codes of types `β` with `ω ≤ β ≤ α`, countably many, and each orbit is Borel (for
   a code `c` of Scott height `γ`, `γ < ω₁` by `scottHeight_lt_omega_one`, the orbit of `c` is the
   section at `c` of the Borel graph of `bfEquivSetoid L ℕ γ` (`measurableSet_setOf_bfEquivSetoid`),
-  by `isoSetoid_le_bfEquivSetoid` and `nonempty_equiv_of_bfEquiv_of_scottHeight_le`); the
-  isomorphic pairs of `K_α × K_α` are the preimages of the squares of these orbits, a countable
-  union, measurable for the product of the subtype σ-algebras. `ρ` is unbounded on `K`
-  (`exists_mem_wellOrderClass_type_eq`), so `K_α ≠ K` for every `α < ω₁`, and the lemma proves
+  by `isoSetoid_le_bfEquivSetoid` and `nonempty_equiv_of_bfEquiv_of_scottHeight_le`, as in
+  CountableStructureSpaces worked example 5); the isomorphic pairs of `K_α × K_α` are the
+  preimages of the squares of these orbits, a countable union, measurable for the product of the
+  subtype σ-algebras. `ρ` is unbounded on `K` (`exists_mem_wellOrderClass_type_eq`), so `K_α ≠ K`
+  for every `α < ω₁`, and the lemma proves
   that the coded well-orders are not Borel complete. The count of 6.3 decides this only when
   `ℵ₁ < 𝔠`: the coded well-orders have `ℵ₁` isomorphism types.
 
@@ -1381,7 +1407,7 @@ hence smooth (`Setoid.isSmooth_of_countable_quotient`, each class being Borel), 
 heights are bounded (base worked example 2). So on these examples E₀ lies strictly between smooth
 isomorphism relations and Borel complete ones, and a smooth relation is Borel
 (`IsSmooth.measurableSet_setOf`) while a Borel complete one is not (gao-idst §5.2 and §13.1).
-*Needs:* 6.2, 6.3; Tau Ceti `Setoid.IsSmooth`, `Setoid.isSmooth_of_countable_quotient`,
+*Needs:* 6.2, 6.3, Layer 1.2; Tau Ceti `Setoid.IsSmooth`, `Setoid.isSmooth_of_countable_quotient`,
 `IsSmooth.measurableSet_setOf`, `eZero`, `not_isSmooth_eZero`, `measurableSet_eZero`,
 `borelReducible_bot_eZero`, `mk_quotient_eZero`, `BorelReducible.lift_mk_quotient_le`;
 CountableStructureSpaces worked example 2.

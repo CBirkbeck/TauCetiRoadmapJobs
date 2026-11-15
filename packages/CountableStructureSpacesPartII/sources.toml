@@ -156,7 +156,7 @@ title = "Computable Structure Theory: Beyond the Arithmetic (draft of Part 2)"
 year = 2025
 version_note = "author's draft of Part 2 compiled April 22, 2025, from the author's web page; locators refer to this draft"
 locator_scheme = "theorem"
-locator = "Definition II.32 (lines 2202-2208), Observation II.35 (lines 2219-2222), Lemma II.37 (lines 2322-2331), Lemma II.38 and Corollary II.39 (lines 2337-2425), Lemma XI.2 (lines 8946-8980)"
+locator = "Definition II.32 (lines 2202-2208), Observation II.35 (lines 2219-2222), Lemma II.37 (lines 2322-2331), Lemma II.38 and Corollary II.39 (lines 2337-2425), Lemma XI.2 (lines 8946-8980), Theorem XI.3 (lines 8997-9012), classes on top for Borel reducibility: complete analyticity and unbounded Scott rank (lines 9046-9051)"
 url = "https://math.berkeley.edu/~antonio/CSTpart2.pdf"
 fetched_from = "https://math.berkeley.edu/~antonio/CSTpart2.pdf"
 fetched_at = "2026-11-05T11:22:43Z"
@@ -164,7 +164,7 @@ sha256 = "a1c43f5cc6526ac023e06d1865e6921d3cb698b2a741f3448bc47fe2e82d9ae4"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["Scope and ownership", "6.1"]
+cited_for = ["Scope and ownership", "6.1", "6.2"]
 
 [[source]]
 id = "montalban-cst1"

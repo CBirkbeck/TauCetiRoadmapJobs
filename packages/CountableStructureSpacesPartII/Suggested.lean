@@ -177,7 +177,9 @@ theorem not_measurableSet_classIso_of_borelComplete {L : FirstOrder.Language.{u,
   sorry
 
 /-- **A Borel complete class has unbounded Scott height**: for every countable ordinal `β` some code
-of the class has Scott height greater than `β`. -/
+of the class has Scott height greater than `β` (Montalbán, Part 2, Theorem XI.3 and the paragraph
+after Definition XI.4, for the Scott rank of a class closed under isomorphism; here for the
+external height and an arbitrary class). -/
 theorem exists_lt_scottHeight_of_borelComplete {L : FirstOrder.Language.{u, v}} [L.IsRelational]
     [∀ n, Countable (L.Relations n)] {K : Set (RelationalConfiguration L ℕ)}
     (hK : BorelComplete K) {β : Ordinal.{0}} (hβ : β < ω₁) :
@@ -191,7 +193,8 @@ theorem borelReducible_eZero_of_borelComplete {L : FirstOrder.Language.{u, v}} [
     Setoid.BorelReducible eZero (classIso K) := by
   sorry
 
-/-- **A Borel complete class has continuum many isomorphism types.** -/
+/-- **A Borel complete class has continuum many isomorphism types**: at least `𝔠` through the
+reduction of `E₀`, at most `𝔠` by the size of the coding space of a countable language. -/
 theorem mk_quotient_classIso_of_borelComplete {L : FirstOrder.Language.{u, v}} [L.IsRelational]
     [∀ n, Countable (L.Relations n)] {K : Set (RelationalConfiguration L ℕ)}
     (hK : BorelComplete K) :
