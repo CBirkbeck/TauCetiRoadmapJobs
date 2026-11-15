@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ImplicitAtlases~8",
+  "head": "8352e536af023a243aa1b9c9004c9632ad488ae6",
+  "pr": 974,
+  "folder": "ImplicitAtlases",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 17 changed lines since d4d479c. Checked: previous R01 repaired (invariance of domain and of dimension now cited from the Tau Ceti pin, AbelianSchemesAndArithmeticModuliPartII supplier dropped everywhere in the folder); the two cited declarations opened at the pin (InvarianceOfDomain.lean:160, :272, variable blocks :151-153, :266) and README.md:68 compared hypothesis by hypothesis; Pardon Lemma 6.1.5 p. 47 read at pardon2016 lines 1998-2020; adversarial table with 3 rows of computed values; title and description read against the head, no contradiction (the generated depends-on and merge-order blocks still list #1405 and regenerate; remark only); gate re-run OK, worker build=0; depcheck 244 roadmaps, 2229 edges, 0 problems; lake env lean on Suggested.lean exit 0, no output; D01 stands (outside the folder).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "Remark on untouched text (unnumbered): two sentences of TopologicalSheafCohomology's README on main describe ImplicitAtlases §0.7 wrongly.",
+    "where": "TopologicalSheafCohomology README on main, scope paragraph line 10 and line 221",
+    "raised": "PRREVIEW-ImplicitAtlases~6"
+   }
+  ],
+  "text": "490a60f1ca01a4a7"
+ }
+}
