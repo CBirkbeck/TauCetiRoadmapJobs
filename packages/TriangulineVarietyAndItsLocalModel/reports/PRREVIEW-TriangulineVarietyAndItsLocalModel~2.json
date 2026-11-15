@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TriangulineVarietyAndItsLocalModel~2",
+  "head": "2da125a564a2914d97661d86ce128cf66702a9ae",
+  "pr": 1829,
+  "folder": "TriangulineVarietyAndItsLocalModel",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 136 changed lines since 154076d. The folder's change (seven group headings with contents-and-consumers paragraphs, 27 subsections turned into run-in paragraphs, no statement changed) is sound: each new consumer sentence equals the set computed from the Needs lines and in-text references, the summaries were recomputed on (n,d) instances, 4 sampled locators in changed passages were read at the text (BHS19 Cor 3.5.9; Ding25 (2.11), (2.34), Prop 2.35/Cor 2.36), cross-roadmap citations of the regrouped numbers resolve at the open heads. Gate rerun: every check 0; depcheck 238 roadmaps, 2254 edges, 0 problems; Suggested.lean elaborates with no output and declares nothing. Both findings are P3 and in the pull request description: it says the Lean states definitions and theorems with sorry as the only warning (the file declares nothing), and that every other roadmap named in the README is a consumer (three are scope boundaries only). No previous finding to account for.",
+  "text": "6e113932639bb975",
+  "carried": {
+   "from": "2da125a564a2914d97661d86ce128cf66702a9ae",
+   "head": "c1b3c10b2112d63ed5f63eafbd46fd5cc5554ca3",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
