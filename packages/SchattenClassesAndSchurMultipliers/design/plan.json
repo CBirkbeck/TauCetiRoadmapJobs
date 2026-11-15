@@ -1152,7 +1152,9 @@
      "prerequisites": [
       "mathlib:MeasureTheory.Measure.support",
       "mathlib:MeasureTheory.IsFiniteMeasureOnCompacts",
-      "mathlib:MeasureTheory.Measure.InnerRegularCompactLTTop"
+      "mathlib:MeasureTheory.Measure.InnerRegularCompactLTTop",
+      "mathlib:ContinuousMap.starSubalgebra_topologicalClosure_eq_top_of_separatesPoints",
+      "mathlib:exists_continuous_zero_one_of_isClosed"
      ],
      "api": [],
      "tests": []
@@ -1181,7 +1183,9 @@
       "mathlib:MeasureTheory.Measure.support",
       "mathlib:MeasurableSet.exists_isCompact_lt_add",
       "mathlib:IsCompact.exists_isOpen_lt_add",
-      "mathlib:exists_continuousMap_one_of_isCompact_subset_isOpen"
+      "mathlib:exists_continuousMap_one_of_isCompact_subset_isOpen",
+      "mathlib:ContinuousMap.starSubalgebra_topologicalClosure_eq_top_of_separatesPoints",
+      "mathlib:exists_continuous_zero_one_of_isClosed"
      ],
      "api": [],
      "tests": []
@@ -1910,7 +1914,7 @@
     "V2.RectangularL2",
     "V13b"
    ],
-   "what": "The canonical trace with cyclicity, rank-one formulas and B(H) = S_1(H)*; L2(mu) (x) L2(nu) = L2(mu x nu); the Hilbert-space ultraproduct of a sequence of Hilbert spaces."
+   "what": "The canonical trace with cyclicity, rank-one formulas and B(H) = S_1(H)*; L2(mu) (x) L2(nu) = L2(mu x nu); the Hilbert-space ultraproduct of a sequence of Hilbert spaces along an ultrafilter on N (V13b, §13.2, built in the route of the uniqueness of the injective III_1 factor, with its quotient inner product, completeness and coordinate norm), used in target 6.4 for a non-principal ultrafilter."
   },
   {
    "roadmap": "NoncommutativeIntegration",

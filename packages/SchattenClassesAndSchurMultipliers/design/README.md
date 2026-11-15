@@ -258,6 +258,20 @@ differences, which belong to SchattenClassesAndSchurMultipliers, Part II (Downst
   to `0` with outer radius at most a fixed multiple of the inner radius, `φ_i ⋆ g → g` almost
   everywhere for every locally integrable `g` with values in a complete real normed space (§9.5).
 - `MeasureTheory.NullSingletonClass`: null singletons (used only in a Check).
+- `ProbabilityTheory.gaussianReal`, `ProbabilityTheory.nullSingletonClass_gaussianReal` and
+  `ProbabilityTheory.gaussianReal_zero_var` (`Mathlib/Probability/Distributions/Gaussian/Real.lean`):
+  the real Gaussian measure of mean `m` and variance `v`, with null singletons for `v ≠ 0` and equal
+  to the point mass `δ_m` for `v = 0` (used only in the examples of Layer 7).
+- `ContinuousMap.starSubalgebra_topologicalClosure_eq_top_of_separatesPoints`
+  (`Mathlib/Topology/ContinuousMap/StoneWeierstrass.lean`): the Stone–Weierstrass theorem for a
+  star subalgebra of `C(K, ℂ)` separating the points of a compact space `K`;
+  `exists_continuous_zero_one_of_isClosed` (`Mathlib/Topology/UrysohnsLemma.lean`): Urysohn's lemma
+  in a normal space, which a compact Hausdorff space is
+  (`NormalSpace.of_compactSpace_r1Space`). §8.1 and §8.2 combine them into the measurability of
+  continuous functions on `K × K` for the product of the Borel σ-algebras. That product can be
+  strictly smaller than the Borel σ-algebra of `X × X` when `X` is not second countable: Mathlib's
+  `Prod.opensMeasurableSpace` (`Mathlib/MeasureTheory/Constructions/BorelSpace/Basic.lean`) needs
+  one factor second countable.
 - `UnitAddTorus`: the torus `𝕋ⁿ = Fin n → UnitAddCircle` with its Haar probability measure.
 - `iteratedFDeriv`, `ContDiffOn`, `MeasureTheory.eLpNorm`, `MeasureTheory.AEStronglyMeasurable`.
 
@@ -332,8 +346,11 @@ assumed for arbitrary complex Hilbert spaces, as Tau Ceti implements it.
 - V2.RectangularL2: the unitary `L²(μ) ⊗̂ L²(ν) ≅ L²(μ ⊗ ν)` sending `f ⊗ g` to `f(x)g(y)`, which
   for σ-finite measures uses `μ.prod ν`; used for the amplifications `L²(Ω × Ω') ≅ L²(Ω) ⊗̂ L²(Ω')`
   of §1.4 and §3.7.
-- V13b: the Hilbert-space ultraproduct `∏_𝒰 H_n` of a sequence of Hilbert spaces along an
-  ultrafilter, with its quotient inner product, completeness and coordinatewise norms (§6.4).
+- V13b (§13.2): the Hilbert-space ultraproduct `∏_𝒰 H_n` of a sequence of Hilbert spaces along an
+  ultrafilter `𝒰` on `ℕ`, the quotient of the bounded sequences by those with `lim_𝒰 ‖x_n‖ = 0`,
+  built there in the route of the uniqueness of the injective factor of type III₁ with separable
+  predual, where its quotient inner product, its completeness and its coordinate norm are proved.
+  §6.4 uses it for a non-principal `𝒰` and states the three facts it consumes.
 
 ### From TauCetiRoadmap.NoncommutativeIntegration
 
@@ -1254,11 +1271,16 @@ reduce to a finite measure (§3.7, §6.2); choose a countably generated `𝒜₀
 `𝒜₀ ⊗ 𝒜₀`-measurable and finite σ-algebras `𝓑_n` increasing to `𝒜₀`; `M_n = E[M | 𝓑_n ⊗ 𝓑_n]`
 has `‖S_{M_n}‖_∞ ≤ ‖S_M‖_∞` on `L²(𝓑_n)` (§5.1), so §6.3 on the atoms of `𝓑_n` gives
 `M_n(x, y) = ⟨ξ_n(x), η_n(y)⟩` with `𝓑_n`-measurable `ξ_n, η_n`,
-`‖ξ_n‖_∞ = ‖η_n‖_∞ ≤ (‖S_M‖_∞ + 1/n)^{1/2}`. In the ultraproduct `K = ∏_𝒰 K_n`
-(VonNeumannAlgebras V13b) put `a(u) = [∫ u ξ_n dμ]` and `b(v) = [∫ v η_n dμ]` for `u, v ∈ L¹(𝒜₀)`;
-then `⟨a(u), b(v)⟩ = lim_𝒰 ∫∫ conj u(x) v(y) M_n(x, y) = ∫∫ conj u(x) v(y) M(x, y)` by Lévy's
-theorem (on the finite measure `μ ⊗ μ`, for `Re M` and `Im M`) and dominated convergence
-(`|M_n| ≤ ‖M‖_∞`). By the Radon–Nikodým representation of BanachSpaceTheory B4.0,
+`‖ξ_n‖_∞ = ‖η_n‖_∞ ≤ (‖S_M‖_∞ + 1/n)^{1/2}`. Fix a non-principal ultrafilter `𝒰` on `ℕ` and form
+the ultraproduct `K = ∏_𝒰 K_n` (VonNeumannAlgebras V13b). The facts used, proved there from the
+construction, are: for bounded sequences `⟨[x_n], [y_n]⟩ = lim_𝒰 ⟨x_n, y_n⟩`, hence
+`‖[x_n]‖ = lim_𝒰 ‖x_n‖`, and `K` is complete. Put `a(u) = [∫ u ξ_n dμ]` and `b(v) = [∫ v η_n dμ]`
+for `u, v ∈ L¹(𝒜₀)`, bounded sequences since `‖∫ u ξ_n dμ‖ ≤ ‖u‖₁ ‖ξ_n‖_∞`; by the coordinate norm
+and `lim_𝒰 ‖ξ_n‖_∞ ≤ ‖S_M‖_∞^{1/2}` (`𝒰` is non-principal), `‖a‖ ‖b‖ ≤ ‖S_M‖_∞`. Then
+`⟨a(u), b(v)⟩ = lim_𝒰 ∫∫ conj u(x) v(y) M_n(x, y) = ∫∫ conj u(x) v(y) M(x, y)` by Lévy's
+theorem (on the finite measure `μ ⊗ μ`, for `Re M` and `Im M`), dominated convergence
+(`|M_n| ≤ ‖M‖_∞`), and the agreement of `lim_𝒰` with the limit of a convergent sequence for a
+non-principal `𝒰`. By the Radon–Nikodým representation of BanachSpaceTheory B4.0,
 `a(u) = ∫ u ξ dμ` and `b(v) = ∫ v η dμ` with `‖ξ‖_∞ ‖η‖_∞ ≤ ‖a‖ ‖b‖ ≤ ‖S_M‖_∞`; testing against
 products `u(x) v(y)` gives `M = ⟨ξ, η⟩` almost everywhere; the closed span of the essential
 ranges of `ξ, η` is separable. The `p = 1` equalities follow from §4.1 and §6.2.
@@ -1266,6 +1288,10 @@ ranges of `ξ, η` is separable. The `p = 1` equalities follow from §4.1 and §
 On `[0, 1]`, elementary symbols `f(x) g(y)` have all five quantities equal to `‖f‖_∞ ‖g‖_∞`
 (`K = ℂ`); on `ℝ` the Toeplitz symbol `cos(x − y)` has `ξ(x) = η(x) = (e^{ix}, e^{−ix})/√2` with
 `⟨ξ(x), η(y)⟩ = cos(x − y)` and `‖ξ‖_∞ = ‖η‖_∞ = 1`, and `|M(x, x)| = 1`, so all five equal `1`.
+For `K_n = ℂ` the ultraproduct is `ℂ`, through `[x_n] ↦ lim_𝒰 x_n`: `⟨[1], [i]⟩ = conj(1) · i = i`
+and `‖[1 + 1/n]‖ = 1`. The ultrafilter must be non-principal: for the principal ultrafilter at `k`
+the ultraproduct is `K_k`, `lim_𝒰` is evaluation at `k`, and `⟨a(u), b(v)⟩` pairs `conj u ⊗ v` with
+`M_k` instead of `M`.
 
 *Needs:* §3.7, §4.1, §5.1, §6.2, §6.3; VonNeumannAlgebras V13b; BanachSpaceTheory B4.0;
 Mathlib `MeasureTheory.Integrable.tendsto_ae_condExp`, `ContinuousLinearMap.comp_condExp_comm`.
@@ -1336,9 +1362,9 @@ for the constant symbol acting on `M₂`, the same numbers as §5.1.
 
 Prove that for an atomless σ-finite `(Ω, μ)`, every `M ∈ L^∞(Ω × Ω, μ ⊗ μ)` and every `1 ≤ p ≤ ∞`,
 `‖S_M‖_p = ‖S_M‖_{cb,p}` (lafforgue-delasalle-2011 Theorem 1.18, line 505, proof lines 508–520;
-cgpt-2023 §1.1 property i), line 231). Route: pass to an equivalent probability measure (§3.7,
-§7.1); by §5.2 along the directed family of finite sub-σ-algebras (nonempty: it contains the
-trivial σ-algebra) it suffices that
+cgpt-2023 §1.1 property i), line 231). Route: pass to an equivalent finite measure (§3.7, §7.1;
+for `μ = 0` it is `0`, every `L²` space is `0` and both sides are `0`); by §5.2 along the directed
+family of finite sub-σ-algebras (nonempty: it contains the trivial σ-algebra) it suffices that
 `‖E[M | 𝒜 ⊗ 𝒜]‖_{cb, S_p(L²(𝒜))} ≤ ‖M‖_{S_p(L²(𝓑))}` for finite `𝒜`; for each `n` split every
 minimal set of `𝒜` into `n` sets of equal measure (§7.1), generating `𝓑'`; then the `n`-th
 amplification norm of `E[M | 𝒜 ⊗ 𝒜]` on `L²(𝒜)` is its norm on `L²(𝓑') ≅ L²(𝒜) ⊗ ℓ²_n` (§3.6), at
@@ -1362,7 +1388,12 @@ most `‖E[M | 𝓑' ⊗ 𝓑']‖_{S_p(L²(𝓑'))}` by §7.2, at most `‖M‖
 
 ### Examples
 
-- Lebesgue measure on `ℝⁿ` and on `[0, 1]`; Gaussian measures; any atomless σ-finite space.
+- Lebesgue measure on `ℝⁿ` and on `[0, 1]`; Gaussian measures of nondegenerate covariance, for
+  instance `ProbabilityTheory.gaussianReal m v` on `ℝ` with variance `v > 0`, which has null
+  singletons (`ProbabilityTheory.nullSingletonClass_gaussianReal`) and is atomless by §7.1 on the
+  standard Borel space `ℝ`; any atomless σ-finite space. A Gaussian of variance `0` is excluded:
+  `ProbabilityTheory.gaussianReal m 0` is the point mass `δ_m`
+  (`ProbabilityTheory.gaussianReal_zero_var`), the singleton `{m}` is an atom and `L² = ℂ`.
 - Counting measure on `{1, …, n}`: excluded; no Schur multiplier on `S_p^n` with different norm
   and completely bounded norm is known (lafforgue-delasalle-2011 lines 283–285).
 
@@ -1386,8 +1417,20 @@ partitions `(V_i)` of a compact set into pieces on which finitely many test func
 less than `ε`, with tags `x_i ∈ V_i ∩ supp μ` when `μ(V_i) > 0` (possible since `supp μ` is conull,
 `MeasureTheory.Measure.support`), directed by the finite family of test functions and `ε`.
 
+The integrals against `μ ⊗ μ` and `μ_α ⊗ μ_α` are taken for the product of the Borel σ-algebras,
+and every continuous compactly supported `F` on `X × X` is measurable for it, with no countability
+hypothesis on `X`: `F` vanishes off `K × K`, where the compact `K` is the union of the two
+projections of the support of `F`; the finite sums `Σ_i f_i(x) g_i(y)` with `f_i, g_i ∈ C(K, ℂ)`
+form a star subalgebra of `C(K × K, ℂ)` containing the constants and separating points (continuous
+functions separate the points of the compact Hausdorff space `K`, by Urysohn's lemma), so the
+restriction of `F` to `K × K` is a uniform limit of such sums (Stone–Weierstrass); each
+`f_i(x) g_i(y)`, extended by `0` off `K × K`, is a product of Borel functions of `x` and of `y`
+(`K` is closed), and the uniform limit of measurable functions is measurable.
+
 *Needs:* Mathlib `MeasureTheory.Measure.support`, `MeasureTheory.IsFiniteMeasureOnCompacts`,
-`MeasureTheory.Measure.InnerRegularCompactLTTop`.
+`MeasureTheory.Measure.InnerRegularCompactLTTop`,
+`ContinuousMap.starSubalgebra_topologicalClosure_eq_top_of_separatesPoints`,
+`exists_continuous_zero_one_of_isClosed`.
 
 ### 8.2 Continuous symbols
 
@@ -1403,11 +1446,19 @@ property ii), lines 232–237; caspers-delasalle-2015 Theorem 3.1, line 282):
 The same equivalence holds for the completely bounded norms. Consequently `‖S_M‖_p` and
 `‖S_M‖_{cb,p}` depend only on `supp μ` (and on `M` there), and if `supp μ` has no isolated point then
 `‖S_M‖_p = ‖S_M‖_{cb,p}`. Route: pass to an equivalent finite Radon measure with the same support
-(§3.7). First to second: for disjoint Borel neighbourhoods `V_i` of the points of `Σ` (Hausdorff;
-`μ(V_i) > 0` since the points are in the support), §5.1 for the σ-algebra they generate and §3.7
-bound the matrix of averages of `M` over `V_i × V_j` by `C`, and the averages tend to `M(s_i, s_j)`
-by continuity. Second to first: `|M(s, t)| ≤ C` on `supp μ × supp μ` (the two-point matrices,
-tested on matrix units), which is conull, so `M` is essentially bounded; then the pairing formula
+(§3.7). Then `M` is almost everywhere strongly measurable for `μ ⊗ μ` (a property of the null sets
+of `μ ⊗ μ`, the same for equivalent measures), so it defines an almost-everywhere class: choose
+compact sets `K_j` increasing with `μ(X ∖ K_j) < 1/j` (`MeasurableSet.exists_isCompact_lt_add`
+applied to `X`, then finite unions); on `K_j × K_j` the function `M` is a uniform limit of finite
+sums `Σ_i f_i(x) g_i(y)` of continuous functions on `K_j` (Stone–Weierstrass, as in §8.1), so
+`M · 1_{K_j × K_j}` is measurable for the product σ-algebra; these functions converge everywhere to
+`M · 1_N` with `N = ⋃_j K_j × K_j`, and the complement of `N` lies in
+`((X ∖ ⋃_j K_j) × X) ∪ (X × (X ∖ ⋃_j K_j))`, which is `μ ⊗ μ`-null. First to second: for disjoint
+Borel neighbourhoods `V_i` of the points of `Σ` (Hausdorff; `μ(V_i) > 0` since the points are in
+the support), §5.1 for the σ-algebra they generate and §3.7 bound the matrix of averages of `M`
+over `V_i × V_j` by `C`, and the averages tend to `M(s_i, s_j)` by continuity. Second to first:
+`|M(s, t)| ≤ C` on `supp μ × supp μ` (the two-point matrices, tested on matrix units), which is
+conull, so `M` is essentially bounded; then the pairing formula
 of §3.3 over operators whose kernels are finite sums of products of continuous compactly
 supported functions. These are dense in every `S_q`, `1 ≤ q ≤ ∞`: finite-rank operators are dense
 (§1.1), each is a limit in `S₁`, hence in `S_q`, of such operators because `‖u ⊗ v*‖₁ = ‖u‖ ‖v‖`,
@@ -1435,10 +1486,22 @@ support.
 - Continuity is needed: the symbol `1_{x=y}` on `[0, 1]` with Lebesgue measure is `0` almost
   everywhere, so its multiplier is `0`, while all its finite restrictions are identity matrices
   of norm `1`.
+- The measurability step is needed: on a discrete space `X` of cardinality larger than the
+  continuum, with `μ = δ_{x₀}`, the symbol `M = 1_{x=y}` is continuous (`X × X` is discrete) but not
+  measurable for the product σ-algebra. A set of that σ-algebra lies in the σ-algebra generated by
+  countably many rectangles `A_n × B_n`; if the diagonal did, then for distinct `x, y` lying in the
+  same sets `A_n` and `B_n` the points `(x, x)` and `(x, y)` would lie in the same rectangles, hence
+  in the same sets of the generated σ-algebra, while only `(x, x)` is on the diagonal; so the sets
+  `A_n, B_n` would separate the points of `X` and inject `X` into `{0, 1}^ℕ`, which is too small.
+  The step may take every `K_j = {x₀}`: `M · 1_{K_j × K_j} = 1_{(x₀, x₀)}` is measurable and equals
+  `M` off a `μ ⊗ μ`-null set; since `μ ⊗ μ = δ_{(x₀, x₀)}` the class is the constant `1`, and
+  `‖S_M‖_p = 1`, the norm of the `1 × 1` restriction to `supp μ = {x₀}`.
 
 *Needs:* §1.1, §3.3, §3.6, §3.7, §5.1, §8.1; Mathlib `MeasureTheory.Measure.support`,
 `MeasurableSet.exists_isCompact_lt_add`, `IsCompact.exists_isOpen_lt_add`,
-`exists_continuousMap_one_of_isCompact_subset_isOpen`.
+`exists_continuousMap_one_of_isCompact_subset_isOpen`,
+`ContinuousMap.starSubalgebra_topologicalClosure_eq_top_of_separatesPoints`,
+`exists_continuous_zero_one_of_isClosed`.
 
 ### Examples
 
@@ -1448,8 +1511,8 @@ support.
 
 ### Dependencies
 
-Layers 1, 3 and 5; Mathlib measure support, inner and outer regularity, and Urysohn's lemma for
-locally compact Hausdorff spaces.
+Layers 1, 3 and 5; Mathlib measure support, inner and outer regularity, Urysohn's lemma for
+locally compact Hausdorff and for normal spaces, and the Stone–Weierstrass theorem.
 
 ## Layer 9: Toeplitz symbols and Fourier–Schur transference on `ℝⁿ`
 
