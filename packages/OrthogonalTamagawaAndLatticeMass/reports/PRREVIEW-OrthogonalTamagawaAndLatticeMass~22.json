@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-OrthogonalTamagawaAndLatticeMass~22",
+  "head": "d4f1571fa0d5cdd3af86679ad8e2a6888581b813",
+  "pr": 1222,
+  "folder": "OrthogonalTamagawaAndLatticeMass",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since d4f1571; this round read the pull request's title and description against the head. One P3 finding, in the description only: it calls AdelicAlgebraicGroups (#792) an open pull request, and it is on main. Checked: every sentence of the description against README and Suggested.lean; the pins (Tau Ceti 2fd255d9, Mathlib 1b1ccf4b); the IntegralLattices label table and OrthogonalSpinGroups 3A on main; the status of 16 cited roadmaps; three recomputed rows (I3 mass 1/48, rank-two constant 2/pi, Bernoulli masses and bounds); gate OK; depcheck 0 problems; elaboration with eight sorry warnings only. The previous report had no finding.",
+  "text": "e62517e45fbe7a19",
+  "carried": {
+   "from": "d4f1571fa0d5cdd3af86679ad8e2a6888581b813",
+   "head": "d4f1571fa0d5cdd3af86679ad8e2a6888581b813",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
