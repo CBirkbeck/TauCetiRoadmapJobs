@@ -213,6 +213,11 @@ condition `1 ≥ 1` holds and the symbol is `1 − 3 = −2`).
 - `BoundedContinuousFunction.arzela_ascoli`
   (`Mathlib/Topology/ContinuousMap/Bounded/ArzelaAscoli.lean:113`): compactness of families of
   causal curves.
+- `CompactExhaustion` (`Mathlib/Topology/Compactness/SigmaCompact.lean:323`): compact sets
+  `K_n`, each contained in the interior of the next, with union the whole space;
+  `CompactExhaustion.choice` (line 418) provides one on a weakly locally compact σ-compact space,
+  such as a domain with its subspace topology (locally closed in `𝔐`, second countable). Used in
+  the limit-curve statement of §3.2.
 - `zorn_le_nonempty₀` (`Mathlib/Order/Zorn.lean:126`): existence of maximal developments and of
   past-inextendible extensions.
 - `IsPicardLindelof` and `IsPicardLindelof.exists_eq_forall_mem_Icc_hasDerivWithinAt`
@@ -740,14 +745,24 @@ Prove, beyond LorentzianGeometry §8.2 and §12.6:
 - *Limit curves.* Causal curves with graphs in a compact `K ⊆ D` are equi-Lipschitz, and a
   sequence of them defined on a common `[a, b]` has a subsequence converging uniformly to a causal
   curve. If `D` is a domain, `p_m → p` in `D`, and `x_m` are causal curves in `D` ending at `p_m`
-  on `[a_m, t_{p_m}]` with `a_m → a < t_p`, then a subsequence converges uniformly on compact
-  subsets of an interval `J ∋ t_p` with `inf J = a′ ≥ a` to a causal curve `x` ending at `p`, and
-  if `a′ > a` then `x` is past-inextendible in `D` (Minguzzi2019 line 1917, §2.11; Chrusciel2011
-  line 1352, §2.6). This differs from LorentzianGeometry §11.4, which treats causal curves of a
-  spacetime parametrised by arc length of an auxiliary complete Riemannian metric, and from the
-  limit curve theorem of its §12.7, for inextendible causal curves of a locally Lipschitz metric
-  on a manifold without boundary, in that the field is continuous only on `D` and the curves are
-  time-parametrised.
+  on `[a_m, t_{p_m}]` with `a_m → a < t_p`, then there are a subsequence, an interval
+  `J ⊆ [a, t_p]` containing `t_p` and a causal curve `x : J → E` in `D` ending at `p` such that
+  `x_m(s_m) → x(s)` along the subsequence whenever `s_m ∈ [a_m, t_{p_m}]` and `s_m → s ∈ J`
+  (uniform convergence on compact subsets of `J`, read with the moving endpoints); if `a ∈ J`
+  then in particular `x_m(a_m) → x(a)`, and if `a ∉ J` (for instance if `inf J > a`) then `x` is
+  past-inextendible in `D` (Minguzzi2019 line 1917, §2.11; Chrusciel2011 line 1352, §2.6, for
+  the classical limit curve theorems). Route: take compact sets `K_1 ⊆ K_2 ⊆ …` with union `D`,
+  each in the relative interior of the next (`CompactExhaustion`); along a diagonal subsequence
+  the least times `σ_m^j` from which on `x_m` stays in `K_j` converge for every `j`, and the first
+  statement applies on each `K_j`. Either some `K_j` contains the whole graphs of infinitely many
+  `x_m`, and then `a ∈ J`; or for every `j` the `x_m` eventually leave `K_j`, the points
+  `(σ_m^j, x_m(σ_m^j))` lie on the relative boundary of `K_j`, and a past endpoint `q ∈ D` of `x`
+  would be a limit of points on these boundaries for arbitrarily large `j`, which avoid the
+  relative interior of `K_{j₀}` for `j ≥ j₀`, whereas `q` lies in it for some `j₀`. This differs
+  from LorentzianGeometry §11.4, which treats causal curves of a spacetime parametrised by arc
+  length of an auxiliary complete Riemannian metric, and from the limit curve theorem of its
+  §12.7, for inextendible causal curves of a locally Lipschitz metric on a manifold without
+  boundary, in that the field is continuous only on `D` and the curves are time-parametrised.
 - *Covariance.* Λ-translates, spacetime translations and Galilean boosts carry causal curves of
   a field to causal curves of the transformed field. A boost `(t, x) ↦ (t, x + tw)` changes the
   field `(c, v)` into `(c, v + w)` and is not an isometry of one field, so this is not
@@ -766,6 +781,21 @@ Prove, beyond LorentzianGeometry §8.2 and §12.6:
   `x(t) = e^{3t}` has `|ẋ − v| = 2e^{3t}`, which on `[0, 1]` is at least `2 > 1`, so it is not
   causal there, while on `(−∞, −(ln 2)/3]`, where `2e^{3t} ≤ 1` (at `t = −1`: `2e^{−3} ≈ 0.0996`),
   it is causal: causality is a property of the curve on its interval.
+- Limit curves with `inf J = a`: field `(1, 0)`, `n = 1`, `t₀ = 0`, the domain
+  `D = H₀ \ {(1, 0)}`, `x_m ≡ 1/m` on `[1, 2]`, `p_m = (2, 1/m) → p = (2, 0)`, `a_m = a = 1`.
+  The limit is `x ≡ 0`, and `J = (1, 2]` because `(1, 0) ∉ D`: `inf J = 1 = a` but `a ∉ J`, and
+  `x` is past-inextendible in `D`, since an extension would pass through `(1, 0)`, the limit of
+  the starting points `(1, 1/m)`. A version that concludes past-inextendibility only when
+  `inf J > a` says nothing here. With `D = H₀` the same curves give `J = [1, 2]`,
+  `x_m(1) = 1/m → 0 = x(1)`, and `x` is not past-inextendible: it extends by `0` to `[0, 2]`.
+- Moving endpoints: field `(1, 0)`, `D = H₀`, `x_m ≡ 0` on `[1 + 1/m, 2]`, so `a_m ↓ a = 1` and no
+  `x_m` is defined at `1`. Convergence along `s_m ∈ [a_m, 2]` gives `J = [1, 2]` and
+  `x_m(a_m) = 0 → 0 = x(1)`; a reading that asks every `x_m` to be defined on `J` would force
+  `J = (1, 2]` and call `x ≡ 0` past-inextendible, which it is not.
+- Unbounded starting points: field `(1, x²)`, `D = [0, 1) × ℝ`, `x_m` the material curve
+  `x(s) = 1/(1/4 − s)` through `p = (1/2, −4)` on `[1/4 + 1/m, 1/2]`: `a = 1/4`,
+  `x_m(a_m) = −m` is unbounded, `J = (1/4, 1/2]`, and the limit, the same material curve, tends
+  to `−∞` at `1/4`, so it is past-inextendible.
 
 *Needs:* LorentzianGeometry §7.3 (the acoustical field is Lorentzian and time-oriented), §8.2
 and §12.6 (causal curves in `D`, past-inextendibility, restriction, concatenation, reduction to
@@ -773,8 +803,8 @@ time-parametrised curves); Mathlib `LocallyLipschitzOn`,
 `LipschitzOnWith.ae_differentiableWithinAt_of_mem`,
 `LipschitzOnWith.absolutelyContinuousOnInterval`,
 `AbsolutelyContinuousOnInterval.integral_deriv_eq_sub`, `BoundedContinuousFunction.arzela_ascoli`,
-dominated convergence and the Lebesgue differentiation theorem; Layer 3.1 for the field of
-forms.
+`CompactExhaustion`, dominated convergence and the Lebesgue differentiation theorem; Layer 3.1
+for the field of forms.
 
 ### 3.3 Causal pasts and future domains of dependence
 
@@ -810,18 +840,30 @@ Prove:
   `J⁻_{D′}(q) = J⁻_D(q)` for `q ∈ D′` and `D⁺_D(S) ∩ D′ ⊆ D⁺_{D′}(S ∩ D′)`.
 - *Compact pasts.* If `D` is a domain, `S ⊆ Σ_{t₀}` and `p ∈ D⁺_D(S)`, then every
   past-inextendible causal curve in `D` ending at `p` is defined on `[t₀, t_p]`, `J⁻_D(p)` is
-  compact, and `J⁻_D(p) ∩ Σ_{t₀} ⊆ S`. Route: a sequence of points of `J⁻_D(p)` that is unbounded
-  or converges outside `D` yields, by the limit-curve statement of §3.2, a past-inextendible
-  curve ending at `p` that misses `S` (Minguzzi2019 line 1917, §2.11, the limit curve theorems,
-  which give the classical form of this compactness).
+  compact, and `J⁻_D(p) ∩ Σ_{t₀} ⊆ S`. Route: let `q_m = (a_m, x_m(a_m))` lie on past causal
+  curves `x_m` in `D` ending at `p`, and pass to `a_m → a ∈ [t₀, t_p]`. If `a = t_p` then
+  `q_m → p`, because the field is bounded on a compact neighbourhood of `p` in `D` and the `x_m`
+  stay in it for a time independent of `m`. Otherwise the limit-curve statement of §3.2 with
+  `p_m = p` gives `q_m → (a, x(a)) ∈ J⁻_D(p)` when `a ∈ J`; when `a ∉ J` its limit `x` is
+  past-inextendible in `D`, ends at `p` and misses `Σ_{t₀} ⊇ S`, as `t₀ ≤ a ≤ inf J`, which
+  `p ∈ D⁺_D(S)` excludes (Minguzzi2019 line 1917, §2.11, the limit curve theorems, which give the
+  classical form of this compactness).
 - *Openness.* If moreover `S` is relatively open in `Σ_{t₀}`, then `D⁺_D(S)` is a domain, and
   `q ↦ J⁻_D(q)` is upper semicontinuous on it: every neighbourhood of `J⁻_D(p)` contains
-  `J⁻_D(q)` for `q` near `p`. Route: if `q_m → p ∈ D⁺_D(S)` and past-inextendible curves from
-  `q_m` miss `S`, their limit curve (§3.2) extends to a past-inextendible curve from `p`, which
-  meets `S` at time `t₀`; since `S` is open in `Σ_{t₀}` and the curves are equi-Lipschitz, the
-  curves from `q_m` reach a compact neighbourhood of that point inside `D` and, being
-  inextendible, must end at time `t₀` inside `S`, a contradiction. The classical analogue, for
-  closed achronal `S` in a spacetime, is Minguzzi2019 line 3718, Proposition 3.16, eq. (3.1),
+  `J⁻_D(q)` for `q` near `p`. Route: let `q_m → p ∈ D⁺_D(S)` and let `y_m` be past-inextendible
+  causal curves in `D` ending at `q_m` that miss `S`; restrict `y_m` to `[a_m, t_{q_m}]` with
+  `a_m` less than `1/m` above the infimum of its interval, and pass to `a_m → a`. The field is
+  bounded on a compact neighbourhood in `D` of each point of `D`, so if `(a_m, y_m(a_m))`
+  converges in `D`, the rest of `y_m`, of duration `< 1/m`, stays in such a neighbourhood, and
+  `y_m`, being past-inextendible, is defined down to `t₀`: then `a = t₀`. This convergence holds
+  if `a = t_p` (the curves stay near `p`) and if `a ∈ J` in the limit-curve statement of §3.2
+  with `p_m = q_m`. If `a < t_p` and `a ∉ J`, the limit `x` is past-inextendible in `D`, ends
+  at `p` and misses `Σ_{t₀}`, as `t₀ ≤ a ≤ inf J`, against `p ∈ D⁺_D(S)`. Otherwise `a = t₀`
+  and the limit `z` of `(a_m, y_m(a_m))` is `(t₀, x(t₀))` (or `p` itself when `t_p = t₀`), which
+  lies in `S` because `x` on `[t₀, t_p]` (or the one-point curve at `p`) is past-inextendible in
+  `D` and ends at `p`; then `(t₀, y_m(t₀)) → z`, and since `S` is relatively open in `Σ_{t₀}`,
+  `y_m` meets `S` for large `m`, a contradiction. The classical analogue, for closed achronal `S`
+  in a spacetime, is Minguzzi2019 line 3718, Proposition 3.16, eq. (3.1),
   `Int D⁺(S) = I⁺(S) ∩ I⁻(D⁺(S))`; the open-`S` statement on a domain is proved here, and
   LorentzianGeometry §12.6 has no openness statement.
 - *Idempotence.* In the same setting `D⁺_{D⁺_D(S)}(S) = D⁺_D(S)`: a past-inextendible causal

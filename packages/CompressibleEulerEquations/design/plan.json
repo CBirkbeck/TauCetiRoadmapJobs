@@ -676,10 +676,12 @@
      "id": "3.2.3",
      "kind": "theorem",
      "name": "AcousticalGeometry.limit_curve",
-     "statement": "Causal curves with graphs in a compact K ⊆ D are equi-Lipschitz and those on a common [a,b] have a uniformly convergent subsequence with causal limit; if D is a domain, p_m → p and x_m end at p_m on [a_m, t_{p_m}] with a_m → a < t_p, a subsequence converges locally uniformly on an interval J ∋ t_p with inf J = a′ ≥ a to a causal curve ending at p, past-inextendible in D if a′ > a. Differs from LorentzianGeometry §11.4 (curves of a spacetime parametrised by auxiliary complete Riemannian arc length) and from the limit curve theorem of its §12.7 (inextendible causal curves of a locally Lipschitz metric on a manifold without boundary): the field is continuous only on D and the curves are time-parametrised.",
+     "statement": "Causal curves with graphs in a compact K ⊆ D are equi-Lipschitz and those on a common [a,b] have a uniformly convergent subsequence with causal limit; if D is a domain, p_m → p in D and x_m are causal curves in D ending at p_m on [a_m, t_{p_m}] with a_m → a < t_p, there are a subsequence, an interval J ⊆ [a, t_p] containing t_p and a causal curve x : J → E in D ending at p with x_m(s_m) → x(s) whenever s_m ∈ [a_m, t_{p_m}] and s_m → s ∈ J (locally uniform convergence with moving endpoints); if a ∈ J then x_m(a_m) → x(a), and if a ∉ J (in particular if inf J > a) then x is past-inextendible in D. Route: a compact exhaustion K_j of D, the least times σ_m^j from which x_m stays in K_j, a diagonal subsequence; either some K_j contains infinitely many whole x_m (then a ∈ J) or a past endpoint of x in D would be a limit of points on the relative boundaries of K_j for arbitrarily large j. Differs from LorentzianGeometry §11.4 (curves of a spacetime parametrised by auxiliary complete Riemannian arc length) and from the limit curve theorem of its §12.7 (inextendible causal curves of a locally Lipschitz metric on a manifold without boundary): the field is continuous only on D and the curves are time-parametrised.",
      "hypotheses": [
       "D a domain",
-      "p_m → p in D"
+      "p_m → p in D",
+      "x_m causal curves in D ending at p_m on [a_m, t_{p_m}]",
+      "a_m → a < t_p"
      ],
      "locator": {
       "source": "Minguzzi2019",
@@ -688,7 +690,25 @@
      "prerequisites": [
       "target:3.2",
       "target:3.2.1",
-      "mathlib:BoundedContinuousFunction.arzela_ascoli"
+      "mathlib:BoundedContinuousFunction.arzela_ascoli",
+      "mathlib:CompactExhaustion"
+     ],
+     "tests": [
+      {
+       "name": "endpoint_outside_domain",
+       "kind": "computation",
+       "statement": "field (1,0), n = 1, D = H₀ \\ {(1,0)}, x_m ≡ 1/m on [1,2], p_m = (2,1/m) → (2,0), a = 1: limit x ≡ 0 on J = (1,2], inf J = a but a ∉ J, x past-inextendible in D (an extension would pass through (1,0) ∉ D); a clause asserting inextendibility only when inf J > a is silent. With D = H₀: J = [1,2], x_m(1) = 1/m → 0 = x(1), and x extends by 0 to [0,2]"
+      },
+      {
+       "name": "moving_endpoints",
+       "kind": "non-example",
+       "statement": "field (1,0), D = H₀, x_m ≡ 0 on [1 + 1/m, 2]: convergence along s_m ∈ [a_m, 2] gives J = [1,2] and x_m(a_m) → x(1) = 0; requiring every x_m to be defined on J forces J = (1,2] and would call x ≡ 0 past-inextendible, which it is not"
+      },
+      {
+       "name": "unbounded_start",
+       "kind": "computation",
+       "statement": "field (1,x²), D = [0,1) × ℝ, x_m the material curve 1/(1/4 − s) through (1/2,−4) on [1/4 + 1/m, 1/2]: x_m(a_m) = −m unbounded, J = (1/4,1/2], limit past-inextendible (tends to −∞ at 1/4)"
+      }
      ]
     },
     {
