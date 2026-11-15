@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsAppell~3",
+  "head": "ac7377f9e9162e8f6cb907c4b460d923dc2d8df6",
+  "pr": 2166,
+  "folder": "SpecialFunctionsAppell",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since ac7377f; this round read the pull request's title and description against the head. Two P3 findings, both in the description (large-parameter asymptotics attributed to DLMF 16.15 where the README says 16.13; symmetries said to be stated in Suggested.lean, where none is). Checked: gate at this head (every scanner 0, OK), depcheck (245 roadmaps, 0 problems), lake env lean on Suggested.lean (56 sorry warnings only), 3 pinned declarations, 5 supplier sections on main, the four copied Gauss definitions against main, DLMF 16.13 and 16.15 text, 16.16.6 recomputed numerically. The folder needs no change.",
+  "text": "f2186838e287a397"
+ }
+}
