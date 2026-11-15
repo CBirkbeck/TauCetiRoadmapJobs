@@ -39,9 +39,10 @@ quotient of the differentials, the `p`-monomial operators and the freeness of th
 normal local ring; and the interface statements of Layer 0 on Tau Ceti's sheaf of relative
 differentials (the comparison map, base change, closed immersions, the rank on the smooth locus),
 on Grassmannians along a surjection, on smoothness at closed points and on the normality of the base
-change of a normal scheme along a separable extension of the ground field, with the geometric normality of
-separable extensions and the normality of the tensor product of a geometrically normal algebra with a normal ring
-that it rests on (§0.6, which no other roadmap states and which §6.3 needs).
+change of a normal scheme along a separable extension of the ground field, with what it rests on: the normality of
+the tensor product of a separable extension of the ground field with a normal algebra and of directed colimits of
+normal rings, and the geometric normality of separable extensions that follows (§0.6, which no other roadmap states
+and which §6.3 needs).
 
 **Supplied elsewhere and cited.** The Grassmannian of locally free rank-`r` quotients of a
 quasi-coherent sheaf of finite type on an arbitrary base scheme (over an affine base and for the sheaf of a
@@ -70,7 +71,8 @@ every characteristic, through `J/J²`, because §4.4 applies it to local rings, 
 operator on fields of characteristic zero. The comparison and base-change maps of §§0.1–0.2 concern
 schemes; AdicSpacesPartIII §R3.6 states the analogous exact sequences and base change for the continuous
 differentials of adic spaces, another object. The sheaf `Ω_{X/R}` of a scheme over a ring, its universal
-derivation, quasi-coherence, finite presentation, restriction to open subschemes, its stalks as the Kähler
+derivation, the pushforward of a derivation, quasi-coherence, finite presentation, its form on an affine scheme,
+restriction to open subschemes, its stalks as the Kähler
 differentials of the local rings, finite local freeness and rank on smooth schemes, the finite locally free
 sheaves of constant rank, pure dimension, the blowup of a scheme along an ideal sheaf with its universal
 property, exterior powers of sheaves of modules, the reduced-source factorisation through a
@@ -80,10 +82,12 @@ their value on the differentials of a hypersurface (used in §3.3), the recognit
 normalisation and the bijectivity of the conormal map `I/I² → S ⊗_P Ω_{P/R}` of a surjection `P → S` onto a
 formally étale algebra (hence the identification of the cotangent space `m/m²` of a local `k`-algebra, Noetherian or not, whose residue
 field `κ` is separable algebraic over `k` with `κ ⊗_R Ω_{R/k}`, used in §§4.1 and 4.4), the finiteness of the
-`p`-th power map of an algebra of finite type over a perfect ring (used in §5.3), and the Grassmannian scheme of
+`p`-th power map of an algebra of finite type over a perfect ring (used in §5.3), the integral closedness of
+polynomial rings over integrally closed domains and the ascent of integrally closed local domains along étale maps
+(used in §0.6), and the Grassmannian scheme of
 rank-`r` quotients of a module over an affine base, with its points on affine schemes, separatedness and
 properness for a finite module, are in the pinned Tau Ceti; the smooth locus, relative normalisation,
-scheme-theoretic images, the module Grassmannian functor,
+scheme-theoretic images, the module Grassmannian functor, pullback of sheaves of modules, étale algebras over a field,
 Kähler differentials of algebras and separability of field extensions that need not be algebraic are in
 the pinned Mathlib.
 
@@ -171,7 +175,18 @@ this roadmap.
 - `Algebra.IsTranscendentalSeparable` (`Mathlib/FieldTheory/TranscendentalSeparable.lean`): every
   finitely generated subextension has a separating transcendence basis (Stacks' separable extensions,
   not necessarily algebraic), with the instances from `Algebra.IsSeparable` and from `PerfectField`, and
-  `Algebra.isSeparable_iff_isTranscendentalSeparable_and_isAlgebraic`.
+  `Algebra.isSeparable_iff_isTranscendentalSeparable_and_isAlgebraic`; its defining condition is
+  `Algebra.IsSeparablyGenerated` (same file: a transcendence basis over which the extension is separable algebraic)
+  for every finitely generated subextension.
+- For §0.6: `Algebra.Etale.iff_exists_algEquiv_prod` (an algebra over a field is étale iff it is a finite product of
+  finite separable field extensions; `Mathlib/RingTheory/Etale/Field.lean`), the instance `Algebra.Etale.baseChange`
+  (`Mathlib/RingTheory/Etale/Basic.lean`), `isIntegrallyClosed_of_isLocalization` (a localisation of an integrally
+  closed domain at a submonoid of nonzero elements is integrally closed;
+  `Mathlib/RingTheory/IntegralClosure/IntegrallyClosed.lean`) and `IsLocalization.isDomain_of_le_nonZeroDivisors`
+  (such a localisation of a domain is a domain; `Mathlib/RingTheory/Localization/Defs.lean`).
+- `AlgebraicGeometry.Scheme.Modules.pullback` and `Scheme.Modules.pullbackPushforwardAdjunction`
+  (`Mathlib/AlgebraicGeometry/Modules/Sheaf.lean`): the pullback of sheaves of modules along a morphism of schemes,
+  left adjoint to the pushforward. Used in §0.1.
 - `LocallyOfFiniteType.jacobsonSpace` (`Mathlib/AlgebraicGeometry/Morphisms/FiniteType.lean`) and
   `nonempty_inter_closedPoints` (`Mathlib/Topology/JacobsonSpace.lean`): a nonempty locally closed
   subset of a Jacobson space contains a closed point.
@@ -197,7 +212,11 @@ this roadmap.
   `TauCeti.AlgebraicGeometry.isQuasicoherent_relativeDifferentials` and
   `isFinitePresentation_relativeDifferentials` (`…/Differentials/Quasicoherent.lean`);
   `TauCeti.AlgebraicGeometry.relativeDifferentialsRestrictIso` (restriction along an open immersion over
-  `Spec R`; `…/Differentials/Restriction.lean`); `TauCeti.AlgebraicGeometry.isFiniteLocallyFree_relativeDifferentials`
+  `Spec R`) and `TauCeti.AlgebraicGeometry.pushforwardDerivation` (for `f : X → Y` over `Spec R`, an `R`-derivation of
+  `O_X` into `M` gives the `R`-derivation `h ↦ d(f*h)` of `O_Y` into `f_*M`), both in `…/Differentials/Restriction.lean`;
+  `TauCeti.AlgebraicGeometry.relativeDifferentialsSpecIso` (`…/Differentials/Spec.lean`: for an `R`-algebra `A`,
+  `Ω_{Spec A/R}` is the quasi-coherent sheaf of `Ω[A⁄R]`, with `da ↦ D a`);
+  `TauCeti.AlgebraicGeometry.isFiniteLocallyFree_relativeDifferentials`
   (smooth over `Spec R`; `…/Differentials/LocallyFree.lean`);
   `TauCeti.AlgebraicGeometry.FiniteLocallyFreeSheaf.rank_relativeDifferentials_apply` (rank `n` on a
   scheme smooth of relative dimension `n`; `…/Differentials/Rank.lean`). The base is the affine scheme
@@ -260,6 +279,12 @@ this roadmap.
   (`TauCeti/AlgebraicGeometry/Scheme/Normal.lean`; recorded in SchemeAndStackFoundations §0.30), and the instance
   `TauCeti.AlgebraicGeometry.IsRegular.isNormal` (`TauCeti/AlgebraicGeometry/Scheme/Regular/Scheme.lean`: regular
   schemes are normal; recorded in SchemeAndStackFoundations §§0.30, 4.13).
+- For §0.6: the instance `TauCeti.MvPolynomial.isIntegrallyClosed` (`TauCeti/RingTheory/MvPolynomial/IntegrallyClosed.lean`:
+  a polynomial ring in any set of variables over an integrally closed domain is integrally closed), and
+  `TauCeti.Algebra.Etale.isDomain_localization_atPrime_of_localization_under` and
+  `isIntegrallyClosed_localization_atPrime_of_localization_under` (`TauCeti/RingTheory/Etale/Normal.lean`: for an
+  étale `A → S` and a prime `q` of `S` over `p`, if `A_p` is an integrally closed domain then so is `S_q`; no
+  Noetherian hypothesis).
 - `TauCeti.AlgebraicGeometry.IsModification` (`TauCeti/AlgebraicGeometry/Morphisms/Modification/Basic.lean`;
   recorded in SchemeAndStackFoundations §4.11): `f` is proper and there is a dense open `U` of the target with
   `f⁻¹(U)` dense and `f` an isomorphism over `U`; no integrality is assumed.
@@ -329,7 +354,7 @@ this roadmap.
 
 - §0.11 `field_extension_descent`: smoothness of `X → Spec k` descends from `X_{k'}`.
 - §4.11 `IsModification.Witness`: for a modification `φ` (Tau Ceti's `IsModification`), a chosen dense open of
-  the target over which `φ` is an isomorphism and whose preimage is dense.
+  the target over which `φ` is an isomorphism.
 - §4.13 `regularLocus_eq_smoothLocus`: for `X` locally of finite type over a perfect field, the points with
   regular local ring are exactly the smooth locus.
 - §§0.7, 0.17, 0.23, 0.30, §4.11 for modifications and §4.13 for the normality of regular schemes and Serre's
@@ -390,8 +415,9 @@ statement of §5.4) need from Layers 0 and 1 only §§0.3, 0.5, 0.7 and the sett
 Define *relativeDifferentials.pullbackMap*: for a commutative ring `R`, schemes `X`, `Y` over `Spec R`
 and a morphism `f : X → Y` over `Spec R`, the `O_X`-linear map `c_f : f*Ω_{Y/R} → Ω_{X/R}` adjoint to the
 `R`-derivation `O_Y → f_*Ω_{X/R}`, `h ↦ d(f*h)` (stacksNormalization, Morphisms Lemma 29.33.8, tag 01UV,
-line 2900). Construct it from `Scheme.relativeDifferentialsHomEquiv` applied to the pushforward
-derivation and the pullback–pushforward adjunction.
+line 2900). Construct it from `Scheme.relativeDifferentialsHomEquiv` applied to Tau Ceti's `pushforwardDerivation`
+of the universal derivation of `X` (the `R`-derivation `O_Y → f_*Ω_{X/R}`, `h ↦ d(f*h)`) and Mathlib's
+`Scheme.Modules.pullbackPushforwardAdjunction`.
 
 - Characterisation: `c_f(f*(dh)) = d(f*h)` for every local section `h` of `O_Y`, and `c_f` is the unique
   `O_X`-linear map with this property.
@@ -400,7 +426,8 @@ derivation and the pullback–pushforward adjunction.
 - For an open immersion `f`, `c_f` is an isomorphism and agrees with Tau Ceti's
   `relativeDifferentialsRestrictIso` under the identification of pullback with restriction.
 - On affine schemes `Spec B → Spec A` over `Spec R` it is the sheaf of the Kähler map
-  `B ⊗_A Ω[A⁄R] → Ω[B⁄R]`.
+  `B ⊗_A Ω[A⁄R] → Ω[B⁄R]`, under Tau Ceti's `relativeDifferentialsSpecIso` (`Ω_{Spec A/R}` is the sheaf of
+  `Ω[A⁄R]`, with `da ↦ D a`) for `A` and for `B`.
 
 **Checks.**
 
@@ -413,7 +440,8 @@ derivation and the pullback–pushforward adjunction.
   not an isomorphism in general.
 
 *Needs:* Tau Ceti `AlgebraicGeometry.Scheme.relativeDifferentials`, `Scheme.relativeDifferentialsHomEquiv`,
-`relativeDifferentialsRestrictIso`; Mathlib `AlgebraicGeometry.Scheme.Modules.pullback`.
+`pushforwardDerivation`, `relativeDifferentialsRestrictIso`, `relativeDifferentialsSpecIso`; Mathlib
+`AlgebraicGeometry.Scheme.Modules.pullback`, `Scheme.Modules.pullbackPushforwardAdjunction`.
 
 ### 0.2 Base change and closed immersions
 
@@ -450,8 +478,8 @@ Lemma 29.33.15, tag 01UZ, line 2953). On affine charts it is
   `dT ↦ dT`, the identity, as `tensorKaehlerEquiv` gives for `B = 𝔽₂ ⊗_ℤ ℤ[T]`; here `Ω_{𝔽₂/ℤ} = 0` and `e` is
   already an isomorphism.
 
-*Needs:* §0.1; Tau Ceti `Scheme.relativeDifferentialsHomEquiv`; Mathlib `KaehlerDifferential.tensorKaehlerEquiv`,
-`KaehlerDifferential.mapBaseChange_surjective`.
+*Needs:* §0.1; Tau Ceti `Scheme.relativeDifferentialsHomEquiv`, `relativeDifferentialsSpecIso` (for the affine
+charts); Mathlib `KaehlerDifferential.tensorKaehlerEquiv`, `KaehlerDifferential.mapBaseChange_surjective`.
 
 ### 0.3 The smooth locus of dimension d
 
@@ -544,6 +572,14 @@ A ring `R` is **normal** when its localisation at every prime ideal is an integr
 (stacksAlgebra, Definition 10.37.11, tag 00GV, line 3976); the zero ring is normal, and `R` is normal exactly when
 `Spec R` is a normal scheme (Tau Ceti's `isNormalScheme_Spec_iff_forall_localization`).
 
+Prove *isNormal_directLimit*: the colimit `R` of a directed system of normal rings `R_i` is normal (stacksAlgebra,
+Lemma 10.37.17, tag 037D, line 4015). Route: for a prime `P` of `R` with preimages `P_i ⊆ R_i`, the local ring `R_P`
+is the directed colimit of the integrally closed domains `(R_i)_{P_i}`. A relation `ab = 0` in `R_P` holds at some
+stage, where one factor vanishes, so `R_P` is a domain; and if a fraction `a/b`, `b ≠ 0`, satisfies a monic equation
+over `R_P`, the cleared equation `aⁿ + c_1 aⁿ⁻¹ b + ⋯ + c_n bⁿ = 0` holds at some stage `j`, where `b` is nonzero, so
+`a = cb` with `c` from `(R_j)_{P_j}`, and `a/b ∈ R_P`. No Noetherian hypothesis is made: `ℚ̄ ⊗_ℚ ℚ̄`, the colimit of the
+finite products of fields `L ⊗_ℚ ℚ̄` over the finite subextensions `L/ℚ`, is normal and not Noetherian (below).
+
 Define *Algebra.IsGeometricallyNormal*: for a field `k` and a `k`-algebra `A`, the ring `K ⊗_k A` is normal for
 every field extension `K/k` (condition (1) of stacksAlgebra, Lemma 10.165.1, tag 037Z, line 21470, which is
 Definition 10.165.2, tag 0380, line 21504).
@@ -551,10 +587,24 @@ Definition 10.165.2, tag 0380, line 21504).
 - Normality: a geometrically normal `k`-algebra is a normal ring (take `K = k`, `k ⊗_k A ≅ A`).
 - *isGeometricallyNormal_of_isTranscendentalSeparable*: a separable field extension `k'/k` in the sense of the
   Conventions (`Algebra.IsTranscendentalSeparable k k'`, not necessarily algebraic or finitely generated) is
-  geometrically normal over `k` (stacksAlgebra, Lemma 10.165.4, tag 0C30, line 21510).
-- *isNormal_tensorProduct_of_isGeometricallyNormal*: for `k`-algebras `A` and `B` with `A` geometrically normal over
-  `k` and `B` a normal ring, `A ⊗_k B` is a normal ring; no finiteness or Noetherian hypothesis is made on `A` or `B`
-  (stacksAlgebra, Lemma 10.165.5, tag 06DF, line 21516).
+  geometrically normal over `k` (stacksAlgebra, Lemma 10.165.4, tag 0C30, line 21510). Route: the tensor bullet below
+  with `B = K`, a field, makes `K ⊗_k k' ≅ k' ⊗_k K` normal for every field extension `K/k`.
+- *isNormal_tensorProduct_of_isTranscendentalSeparable*: for a separable field extension `k'/k` in the sense of the
+  Conventions and a `k`-algebra `B` that is a normal ring, `k' ⊗_k B` is a normal ring; no finiteness or Noetherian
+  hypothesis is made on `k'` or `B` (the case `A = k'` of stacksAlgebra, Lemma 10.165.5, tag 06DF, line 21516, where
+  `A` is geometrically normal by 0C30). Route: `k'` is the directed union of its finitely generated subextensions
+  `k_i`, and `k' ⊗_k B` is the directed colimit of the `k_i ⊗_k B`, so by *isNormal_directLimit* it suffices that each
+  `k_i ⊗_k B` be normal. By the definition of `Algebra.IsTranscendentalSeparable`, `k_i` is separable algebraic over
+  `k(t) = k(t_1, …, t_n)` for a transcendence basis `t_1, …, t_n` (`Algebra.IsSeparablyGenerated`), hence finite
+  separable over it. First, `k(t) ⊗_k B` is the localisation of `B[t_1, …, t_n] = k[t] ⊗_k B` at the nonzero
+  polynomials of `k[t]`, so its local rings are local rings of `B[t]`; the local ring of `B[t]` at a prime `Q` over the
+  prime `q` of `B` is a localisation at a prime of `B_q[t_1, …, t_n]`, an integrally closed domain because `B_q` is one
+  (Tau Ceti's `TauCeti.MvPolynomial.isIntegrallyClosed`), so it is an integrally closed domain
+  (`IsLocalization.isDomain_of_le_nonZeroDivisors`, `isIntegrallyClosed_of_isLocalization`). Next,
+  `k_i ⊗_k B ≅ k_i ⊗_{k(t)} (k(t) ⊗_k B)` is étale over `k(t) ⊗_k B`, as a base change (`Algebra.Etale.baseChange`)
+  of the étale `k(t) → k_i` (`Algebra.Etale.iff_exists_algEquiv_prod`); so its local rings are integrally closed
+  domains (Tau Ceti's `TauCeti.Algebra.Etale.isDomain_localization_atPrime_of_localization_under` and
+  `isIntegrallyClosed_localization_atPrime_of_localization_under`), and `k_i ⊗_k B` is normal.
 
 **Checks.**
 
@@ -565,7 +615,7 @@ Definition 10.165.2, tag 0380, line 21504).
 - For `k = 𝔽_p(t)` and the field `A = k(t^{1/p}) = k[y]/(y^p − t)`, `A` is normal, but for `K = A`,
   `K ⊗_k A ≅ K[y]/((y − t^{1/p})^p)` has the nonzero nilpotent `y − t^{1/p}`, so it is not reduced and not normal:
   `A` is not geometrically normal, the separability hypothesis of the separable bullet cannot be dropped, and in the
-  tensor bullet (with `B = A`, a normal ring) "geometrically normal" cannot be weakened to "normal".
+  tensor bullet (with `k' = B = A`, a normal ring) separability cannot be dropped either.
 - For `k = 𝔽_p(t)`, `p > 2`, and `A = k[x, y]/(x^p + y² + t)`, the ring of the regular curve `C` of the Checks
   below, `A` is normal, and `K ⊗_k A` is a domain for every `K/k` (for `K ∋ t^{1/p}` it is `K[u, y]/(u^p + y²)`,
   `u = x + t^{1/p}`, with `u^p + y²` irreducible as `p` is odd), so `A` is geometrically reduced, even geometrically
@@ -579,10 +629,9 @@ Prove *isNormalScheme_pullback_of_isTranscendentalSeparable*: for a field `k`, a
 stalk an integrally closed domain, Tau Ceti's `IsNormalScheme`, SchemeAndStackFoundations §0.30) and a
 separable field extension `k'/k` in the sense of the Conventions (`Algebra.IsTranscendentalSeparable k k'`), the base change
 `W_{k'} = W ×_{Spec k} Spec k'` is normal (stacksVarieties, Lemma 33.10.6, tag 0C3M, line 1049). Neither `W` nor
-`k'/k` is assumed finite, of finite type or Noetherian. Route: `k'` is geometrically normal over `k`
-(*isGeometricallyNormal_of_isTranscendentalSeparable*); for every affine open `V` of `W` the ring `Γ(V, O_W)` is
+`k'/k` is assumed finite, of finite type or Noetherian. Route: for every affine open `V` of `W` the ring `Γ(V, O_W)` is
 normal (`isNormalScheme_iff_forall_affineOpens` and `isNormalScheme_Spec_iff_forall_localization`), so
-`k' ⊗_k Γ(V, O_W)` is normal (*isNormal_tensorProduct_of_isGeometricallyNormal*); the affine opens
+`k' ⊗_k Γ(V, O_W)` is normal (*isNormal_tensorProduct_of_isTranscendentalSeparable*); the affine opens
 `V_{k'} = Spec(k' ⊗_k Γ(V, O_W))` cover `W_{k'}`, and normality is local (`isNormalScheme_iff_openCover`).
 
 **Checks.**
@@ -603,10 +652,15 @@ normal (`isNormalScheme_iff_forall_affineOpens` and `isNormalScheme_Spec_iff_for
   subextensions `L`, hence absolutely flat, so every local ring is a field and `W_{k'}` is normal: no
   Noetherian hypothesis is needed.
 
-*Needs:* for the definition and its bullets, Mathlib `Algebra.TensorProduct`, `IsIntegrallyClosed`,
-`Algebra.IsTranscendentalSeparable` and Tau Ceti `isNormalScheme_Spec_iff_forall_localization`; for the theorem, in
-addition *Algebra.IsGeometricallyNormal* with its separable and tensor bullets and Tau Ceti `IsNormalScheme`,
-`isNormalScheme_iff_forall_affineOpens`, `isNormalScheme_iff_openCover` (SchemeAndStackFoundations §0.30).
+*Needs:* for *isNormal_directLimit*, Mathlib `IsIntegrallyClosed` and localisation; for the definition and its
+bullets, in addition Mathlib `Algebra.TensorProduct`, `Algebra.IsTranscendentalSeparable`,
+`Algebra.IsSeparablyGenerated`, `Algebra.Etale.iff_exists_algEquiv_prod`, `Algebra.Etale.baseChange`,
+`isIntegrallyClosed_of_isLocalization`, `IsLocalization.isDomain_of_le_nonZeroDivisors` and Tau Ceti
+`isNormalScheme_Spec_iff_forall_localization`, `TauCeti.MvPolynomial.isIntegrallyClosed`,
+`TauCeti.Algebra.Etale.isDomain_localization_atPrime_of_localization_under`,
+`isIntegrallyClosed_localization_atPrime_of_localization_under`; for the theorem, the tensor bullet and Tau Ceti
+`IsNormalScheme`, `isNormalScheme_iff_forall_affineOpens`, `isNormalScheme_iff_openCover` (SchemeAndStackFoundations
+§0.30).
 
 ### 0.7 Locally free quotients of the differentials
 
@@ -639,8 +693,9 @@ of the reduced Noetherian `O_{X,x}`.
 - Stalk criterion: under the same hypotheses, the predicate holds iff for every `x ∈ X` there is a surjective
   `O_{X,x}`-linear map `Ω[O_{X,x}⁄k] → O_{X,x}^d`, the stalk of `Ω_{X/k}` being identified with `Ω[O_{X,x}⁄k]` by
   Tau Ceti's `Scheme.relativeDifferentialsStalkEquiv`. Forward: the stalk of an epimorphism is surjective and
-  `E_x ≅ O_{X,x}^d`. Backward: on an affine open `Spec A ∋ x`, `Ω[A⁄k]` is finitely presented (`A` is of finite type
-  over `k`), so `Hom_A(Ω[A⁄k], A^d)` commutes with localisation (stacksAlgebra, Lemma 10.10.2, tag 0583, line 905)
+  `E_x ≅ O_{X,x}^d`. Backward: on an affine open `Spec A ∋ x`, over which `Ω_{X/k}` is the sheaf of `Ω[A⁄k]` (Tau
+  Ceti's `relativeDifferentialsRestrictIso` and `relativeDifferentialsSpecIso`), `Ω[A⁄k]` is finitely presented (`A`
+  is of finite type over `k`), so `Hom_A(Ω[A⁄k], A^d)` commutes with localisation (stacksAlgebra, Lemma 10.10.2, tag 0583, line 905)
   and the surjection at `x` comes from a map over some `D(f) ∋ x`; its cokernel is a finite module with zero stalk at
   `x`, hence zero over a smaller basic open (stacksAlgebra, Lemma 10.40.5, tag 00L2, line 4466); then glue.
 
@@ -667,7 +722,8 @@ of the reduced Noetherian `O_{X,x}`.
 *Needs:* Tau Ceti `AlgebraicGeometry.Scheme.relativeDifferentials`, `FiniteLocallyFreeSheaf.FixedRank`,
 `relativeDifferentialsRestrictIso`, `Scheme.relativeDifferentialsStalkEquiv`,
 `isFiniteLocallyFree_relativeDifferentials`, `FiniteLocallyFreeSheaf.rank_relativeDifferentials_apply`,
-`isFinitePresentation_relativeDifferentials`; §0.3 for the uniqueness, glueing and stalk bullets.
+`isFinitePresentation_relativeDifferentials`, `relativeDifferentialsSpecIso` (stalk criterion); §0.3 for the
+uniqueness, glueing and stalk bullets.
 
 ### Examples
 
@@ -691,11 +747,13 @@ local ring at the origin alone.
 
 ### Dependencies
 
-Tau Ceti's sheaf of differentials (with its stalks), smooth-locus files, finite locally free sheaves of fixed rank and
-normal schemes; Mathlib's Kähler differentials, tensor products of algebras, `IsIntegrallyClosed` and
-`Algebra.IsTranscendentalSeparable`; AlgebraicModuliForArithmeticGeometry §1.3; SchemeAndStackFoundations §§0.7, 0.30,
-4.13. Within the layer, the normality theorem of §0.6 rests on the geometric normality of separable extensions and
-its tensor-product property, stated there.
+Tau Ceti's sheaf of differentials (with its stalks and its affine form), smooth-locus files, finite locally free
+sheaves of fixed rank, normal schemes, polynomial rings over integrally closed domains and normality along étale maps;
+Mathlib's Kähler differentials, pullback of sheaves of modules, tensor products of algebras, étale algebras over a
+field, `IsIntegrallyClosed` and `Algebra.IsTranscendentalSeparable`; AlgebraicModuliForArithmeticGeometry §1.3;
+SchemeAndStackFoundations §§0.7, 0.30, 4.13. Within the layer, the normality theorem of §0.6 rests on the normality of
+`k' ⊗_k B` for a separable `k'/k` and a normal `B`, which rests on the normality of directed colimits of normal rings,
+both stated there.
 
 ## Layer 1: the setting and the Nash modification of a sheaf
 
@@ -823,17 +881,21 @@ quasi-compact `σ_U` commutes with restriction to opens; AlgebraicModuliForArith
 `Gr_r(F|_V) = π⁻¹(V)`).
 
 Prove *nashModification.baseChange*: in the situation of §1.2, for a flat morphism `g : X' → X` from a reduced
-locally Noetherian scheme such that `g⁻¹(U)` is dense in `X'`, `N(X', g*F, r, g⁻¹(U)) ≅ N(X, F, r, U) ×_X X'`
+locally Noetherian scheme, `N(X', g*F, r, g⁻¹(U)) ≅ N(X, F, r, U) ×_X X'`
 over `X'`, compatibly with the universal quotients (stacksNormalization, Morphisms Lemma 29.26.16, tag 081I, line
 2198, for the scheme-theoretic image; AlgebraicModuliForArithmeticGeometry §1.3 for
-`Gr_r(g*F) = Gr_r(F) ×_X X'`). In particular the right side is reduced.
+`Gr_r(g*F) = Gr_r(F) ×_X X'`). In particular the right side is reduced. The open `g⁻¹(U)` is automatically dense in
+`X'`, so the left side is in the situation of §1.2: generalisations lift along the flat `g` (stacksNormalization,
+Morphisms Lemma 29.26.9, tag 03HV, line 2125), so `g` maps the generic point of every irreducible component of `X'` to
+the generic point of an irreducible component of `X`, which lies in the dense open `U` as `X` is locally Noetherian;
+and every point of `X'` is a specialisation of such a generic point.
 
 **Checks.**
 
 - For `V ⊆ U`, `π_N⁻¹(V) ≅ V`.
 - For `g` the inclusion of `U`, both sides are `U`.
-- For the closed immersion `g : {0} → 𝔸²` in the third Check of §1.2 (not flat, and `g⁻¹(U) = ∅`), the
-  fibre product is the exceptional `ℙ¹` while `N({0}, k², 1, ∅)` is empty: flatness and density are needed.
+- For the closed immersion `g : {0} → 𝔸²` in the third Check of §1.2 (not flat; here `g⁻¹(U) = ∅` is not dense),
+  the fibre product is the exceptional `ℙ¹` while `N({0}, k², 1, ∅)` is empty: flatness is needed.
 
 *Needs:* §1.2; AlgebraicModuliForArithmeticGeometry §§1.3, 5.4 (`ArithmeticModuli.DMSchematicClosure.stack`).
 
@@ -895,7 +957,7 @@ gonzalezSprinberg1982, §1.2, line 94). On every irreducible component `ν` is b
   reduced fibre `ν⁻¹(0)_red ≅ ℙ¹`: `ν` is proper but not finite. The scheme-theoretic fibre is not `ℙ¹`: it
   is cut out by `(u, v²)`, which in the chart `u = vw` is `(vw, v²)`, with the nonzero nilpotent `v` at
   `v = w = 0` (an embedded point), and in the chart `v = us` is the reduced line `(u)`.
-- For `X` smooth the witness is `X` itself and `ν` is the identity.
+- For `X` smooth of relative dimension `d` the witness is `X` itself and `ν` is an isomorphism (§2.5).
 
 *Needs:* §§1.2, 1.4, 2.1; SchemeAndStackFoundations §4.11; AlgebraicModuliForArithmeticGeometry §1.3.
 
@@ -959,7 +1021,12 @@ section `s : X → Gr_d(Ω_{X/k})` with closed image (`Gr_d` is separated over `
 so `X* = s(X)` and `ν ∘ s = id` (nashModificationNotes2024, Section 2, lines 170–171;
 duarteNunezBetancourt2020, Lemma 2.4, lines 152–182, for one direction).
 
-Corollary *nashBlowupHom_isIso_of_smooth*: if `X` is smooth then `ν` is an isomorphism (§0.3).
+Corollary *nashBlowupHom_isIso_of_smooth*: if `X → Spec k` is smooth of relative dimension `d` (in particular if
+`X` is in the Setting and smooth, §0.3), then `ν` is an isomorphism. Here `X_sm^{(d)} = X`, and `σ_X` is a section of
+the separated `Gr_d(Ω_{X/k}) → X`, hence a closed immersion; so `X*` is the closed subscheme `σ_X(X)` and `ν` is
+inverse to `X → X*`.
+For `X = 𝔸²_k ⊔ 𝔸¹_k`, which is smooth but not of relative dimension `2`, `X* = 𝔸² ≠ X` for `d = 2` (§2.3): the
+relative dimension cannot be dropped.
 
 **Checks.**
 
@@ -1564,7 +1631,7 @@ isomorphism iff `X` is smooth over `k`.
 **Checks.**
 
 - For the cusp in characteristic `2`, `ν` is an isomorphism, `X` is not normal, and `ν̄` is not an isomorphism.
-- For `X` smooth, both are isomorphisms.
+- For `X` smooth of relative dimension `d`, both are isomorphisms (§2.5, and `X` is normal).
 - Over `𝔽_p(t)`, `p > 2`, the regular curve `x^p + y² + t = 0` has `ν̄` an isomorphism without being smooth: the
   perfectness hypothesis of the corollary is needed.
 
