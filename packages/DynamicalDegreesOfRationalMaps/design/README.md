@@ -400,7 +400,7 @@ Let `V` be an integral projective variety of dimension `d ≥ 2` and `A, B, C_1,
 (A · B · C_1 ⋯ C_{d−2})² ≥ (A² · C_1 ⋯ C_{d−2})·(B² · C_1 ⋯ C_{d−2}).
 ```
 
-As a consequence, for nef `A, B` and `s_k = (A^k · B^{d−k})`, prove `s_k² ≥ s_{k−1}·s_{k+1}` for `1 ≤ k ≤ d − 1` (lazarsfeld2004 Theorem 1.6.1 and Corollary 1.6.3; cutkosky2015 Theorem 6.1 and Corollary 6.3, lines 983–1033, over an arbitrary field; guedj2010 Théorème 2.4 (a), line 1180, and dangfavre2021 lines 464–467 for the use on dynamical degrees). The consequence is the main inequality with `C_1 ⋯ C_{d−2} = A^{k−1}B^{d−k−1}`.
+As a consequence, for nef `A, B` and `s_k = (A^k · B^{d−k})`, prove `s_k² ≥ s_{k−1}·s_{k+1}` for `1 ≤ k ≤ d − 1` (lazarsfeld2004 Theorem 1.6.1 and Corollary 1.6.3; cutkosky2015 Theorem 6.1 and Corollary 6.3, lines 983–1033, over an arbitrary field; guedj2010 Théorème 2.4 (a), line 1180, and dangfavre2021 lines 465–467 for the use on dynamical degrees). The consequence is the main inequality with `C_1 ⋯ C_{d−2} = A^{k−1}B^{d−k−1}`.
 
 *Route.* Both sides are homogeneous of degree two in each class, so by the ample approximation of §3.1 it suffices to treat ample line bundles `A, B, C_1, …, C_{d−2}`. By §2.4 reduce to the integral `W` over an algebraically closed `Ω`; both sides scale by `c_V²`, and the pullbacks remain ample (§2.4 (c)). By homogeneity again, replace every class by a very ample multiple (AlgebraicModuliForArithmeticGeometry §1.4). Over the purely transcendental extension `Ω(u)`, `W_{Ω(u)}` is integral and geometrically irreducible. Cut it successively by the generic members of the linear systems of `C_1, …, C_{d−2}`. By Bertini irreducibility (LefschetzPencilsAndVanishingCycles §5.1, with `s = 1`, applied while the dimension is at least `3`) each cut has geometrically irreducible support. The last one is a surface `S` with `[cut] = μ[S_red]`. The Cartier restriction formula and field-extension compatibility (CyclotomicClassGroupsAndStickelberger §4.3), with §2.1 here, turn the three numbers into `μ` times numbers on `S_red`. Apply §3.4 on `S_red` with `H = A|_S`, which is ample with `(A² · S_red) > 0`. For `d = 2` there is no cut, and the statement for ample line bundles is §3.4 with `H = A`.
 
@@ -570,7 +570,7 @@ Throughout, `X` is a projective variety of dimension `d ≥ 1`, `f : X ⤏ X` is
 
 ### 5.1 Existence
 
-For `0 ≤ k ≤ d`, prove that `deg_{k,ω}(f^n)^{1/n}` converges as `n → ∞`. Call the limit `λ_k(f)`. Prove that it equals `inf_{n ≥ 1} (C_k(ω)·deg_{k,ω}(f^n))^{1/n}` with `C_k(ω) = (d − k + 1)^k/(ω^d)` (dangfavre2021 lines 461–465; dang2020 lines 42–46; dinhsibony2005 Corollaire 7, lines 256–259; silverman2014 Proposition 7, lines 383–413; truong2020 Theorem 1.1 (1), lines 143–158, for smooth `X` over an algebraically closed field and the class of a hyperplane section).
+For `0 ≤ k ≤ d`, prove that `deg_{k,ω}(f^n)^{1/n}` converges as `n → ∞`. Call the limit `λ_k(f)`. Prove that it equals `inf_{n ≥ 1} (C_k(ω)·deg_{k,ω}(f^n))^{1/n}` with `C_k(ω) = (d − k + 1)^k/(ω^d)` (dangfavre2021 lines 461–463; dang2020 lines 42–46; dinhsibony2005 Corollaire 7, lines 256–259; silverman2014 Proposition 7, lines 383–413; truong2020 Theorem 1.1 (1), lines 143–158, for smooth `X` over an algebraically closed field and the class of a hyperplane section).
 
 *Route.* By §4.4, `u_n = log(C_k(ω)·deg_{k,ω}(f^n))` satisfies `u_{m+n} ≤ u_m + u_n`, using `f^{m+n} = f^m ∘ f^n` (Mathlib's `Scheme.RationalMap.comp_assoc`). The logarithm is defined by §4.2. Fix an ample line bundle `H` on `X`. By §4.5 there is `C ≥ 1`, independent of `n`, with `deg_{k,ω}(f^n) ≥ C^{−1}·deg_{k,H}(f^n) ≥ C^{−1}`, since `deg_{k,H}(f^n)` is a positive integer (§4.2). So `u_n ≥ log(C_k(ω)/C)` and `u_n/n ≥ min(0, log(C_k(ω)/C))` for `n ≥ 1`, which also covers the value `u_0/0 = 0`. Mathlib's `Subadditive.tendsto_lim` and `Subadditive.lim` (the infimum of `u_n/n` over `n ≥ 1`) give convergence to the infimum. Since `C_k(ω)^{1/n} → 1`, the limit is also `lim deg_{k,ω}(f^n)^{1/n}`.
 
@@ -611,7 +611,7 @@ Prove:
 - *Normalization.* `λ_k(f̃) = λ_k(f)` for the normalization lift `f̃` of §1.4.
 - *Extension of the field.* If `X` is geometrically integral, `λ_k(f_{K'}) = λ_k(f)` for every field extension `K'/K`. In general `λ_k(f)` is computed by the numbers of §4.3 on the base-changed graphs `(Γ_{f^n})_{K'}`.
 
-(dang2020 lines 35–46; truong2020 Theorem 1.1 (2), lines 159–164, for birational invariance; truong2020 §6.3, lines 1529–1533, which defines the degrees over a field that is not algebraically closed through the lift to an algebraic closure, so that invariance under extension of the field is proved here from §4.3; dinhsibony2005 Corollaire 7, lines 256–263; dangfavre2021 lines 464–465.)
+(dang2020 lines 35–46; truong2020 Theorem 1.1 (2), lines 159–164, for birational invariance; truong2020 §6.3, lines 1529–1533, which defines the degrees over a field that is not algebraically closed through the lift to an algebraic closure, so that invariance under extension of the field is proved here from §4.3; dinhsibony2005 Corollaire 7, lines 256–263; dangfavre2021 lines 83–84, for invariance under birational conjugacy.)
 
 *Needs:* §§1.4, 4.3, 4.5, 5.1.
 

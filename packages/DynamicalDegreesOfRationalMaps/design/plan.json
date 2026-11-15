@@ -1182,7 +1182,7 @@
      ],
      "locator": {
       "source": "dangfavre2021",
-      "where": "lines 461-465; dang2020 lines 42-46; dinhsibony2005 Corollaire 7, lines 256-259; silverman2014 Proposition 7, lines 383-413; truong2020 Theorem 1.1 (1), lines 143-158, for smooth X over an algebraically closed field and a hyperplane class"
+      "where": "lines 461-463; dang2020 lines 42-46; dinhsibony2005 Corollaire 7, lines 256-259; silverman2014 Proposition 7, lines 383-413; truong2020 Theorem 1.1 (1), lines 143-158, for smooth X over an algebraically closed field and a hyperplane class"
      },
      "prerequisites": [
       "target:4.2",

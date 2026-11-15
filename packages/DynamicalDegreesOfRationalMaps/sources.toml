@@ -18,7 +18,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2 (Dec 2004); numbering of the arXiv version read"
-cited_for = ["§1.1", "§1.2", "§4.1", "§4.4", "§4.5", "§5.1", "§5.3", "§5.4", "Scope"]
+cited_for = ["§1.1", "§1.2", "§4.1", "§4.4", "§4.5", "§5.1", "§5.2", "§5.3", "§5.4", "Scope"]
 
 [[source]]
 id = "dang2020"
@@ -162,7 +162,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v2 (May 2021); numbering of the arXiv version read"
-cited_for = ["§2.3", "§3.3", "§3.5", "§3.6", "§4.1", "§4.2", "§4.4", "§4.5", "§5.1", "§5.2", "§6.4", "Scope"]
+cited_for = ["§2.3", "§3.3", "§3.5", "§3.6", "§4.1", "§4.2", "§4.4", "§4.5", "§5.1", "§5.2", "§5.3", "§6.4", "Scope"]
 
 [[source]]
 id = "cutkosky2015"
