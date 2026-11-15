@@ -853,7 +853,7 @@
      "id": "4.1",
      "kind": "definition",
      "name": "tailSigma",
-     "statement": "For a countable infinite group Γ acting properly on a countable set I (for finite F,F' only finitely many γ have γF∩F'≠∅) and Ω = I → S with the product σ-algebra: the outside σ-algebras 𝓕_{Λᶜ}, the tail σ-algebra 𝓣 = ⋂_{Λ finite} 𝓕_{Λᶜ}, cylinder events, and the action (γω)(i)=ω(γ⁻¹i).",
+     "statement": "For a countable infinite group Γ acting properly on a countable set I (for finite F,F' only finitely many γ have γF∩F'≠∅) and Ω = I → S with the product σ-algebra: the outside σ-algebras 𝓕_{Λᶜ} = Mathlib's MeasureTheory.cylinderEvents Λᶜ, the tail σ-algebra 𝓣 = ⋂_{Λ finite} 𝓕_{Λᶜ} (the infimum of MeasureTheory.Filtration.cylinderEventsCompl), cylinder events as the members of MeasureTheory.measurableCylinders (fun _ : I => S), and the action (γω)(i)=ω(γ⁻¹i).",
      "hypotheses": [
       "I countable",
       "Γ countable infinite, proper action"
@@ -864,6 +864,9 @@
      },
      "prerequisites": [
       "mathlib:MeasurableSpace.pi",
+      "mathlib:MeasureTheory.cylinderEvents",
+      "mathlib:MeasureTheory.Filtration.cylinderEventsCompl",
+      "mathlib:MeasureTheory.measurableCylinders",
       "tauceti:TauCeti.Probability.tailProcess",
       "tauceti:TauCeti.Probability.tailProcess_eq_iInf_tailFamily"
      ],
@@ -874,9 +877,9 @@
        "statement": "𝓣 is a sub-σ-algebra invariant under the action; tail events are unchanged by finitely many coordinate changes."
       },
       {
-       "name": "cylinder_ring",
-       "role": "generation",
-       "statement": "Cylinder events form a ring of sets generating the product σ-algebra."
+       "name": "outside_equivariant",
+       "role": "structure",
+       "statement": "The action carries 𝓕_{Λᶜ} onto 𝓕_{(γΛ)ᶜ}; with Mathlib's cylinderEvents_mono and cylinderEvents_le_pi, 𝓣 ≤ 𝓕_{Δᶜ} ≤ 𝓕_{Λᶜ} ≤ MeasurableSpace.pi for finite Λ ⊆ Δ, the last inequality traced on X being the hypothesis 𝓑 ≤ 𝓧 of Mathlib's proper-kernel lemmas in 4.5."
       },
       {
        "name": "tail_eq_tailProcess",
@@ -917,7 +920,10 @@
      },
      "prerequisites": [
       "target:4.1",
-      "mathlib:MeasureTheory.exists_measure_symmDiff_lt_of_generateFrom_isSetRing"
+      "mathlib:MeasureTheory.exists_measure_symmDiff_lt_of_generateFrom_isSetRing",
+      "mathlib:MeasureTheory.isSetRing_measurableCylinders",
+      "mathlib:MeasureTheory.generateFrom_measurableCylinders",
+      "mathlib:MeasureTheory.univ_mem_measurableCylinders"
      ],
      "api": [],
      "tests": [
@@ -942,7 +948,7 @@
      "id": "4.3",
      "kind": "theorem",
      "name": "ergodicSMul_infinitePi",
-     "statement": "For a probability measure ν on S, ν^{⊗I} (Measure.infinitePi) is Γ-invariant, trivial on 𝓣 and ErgodicSMul Γ Ω ν^{⊗I}.",
+     "statement": "For a probability measure ν on S, ν^{⊗I} (Measure.infinitePi) is Γ-invariant, trivial on 𝓣 and ErgodicSMul Γ Ω ν^{⊗I}. For I = Γ acting on itself and S finite with at least two positive weights the ergodicity conclusion is that of VonNeumannAlgebras V8.BernoulliArbitraryDiscrete; the route does not use it.",
      "hypotheses": [
       "Γ countable infinite, proper action"
      ],
@@ -963,12 +969,12 @@
       {
        "name": "bernoulli_shift",
        "kind": "computation",
-       "statement": "The two-sided Bernoulli(1/2) shift on {0,1}^ℤ is ergodic."
+       "statement": "The two-sided Bernoulli(1/2) shift on {0,1}^ℤ is ergodic; this case is also covered by VonNeumannAlgebras V8.BernoulliArbitraryDiscrete."
       },
       {
        "name": "dirac",
        "kind": "degenerate",
-       "statement": "ν=δ_a gives the point mass at a constant configuration, ergodic."
+       "statement": "ν=δ_a gives the point mass at a constant configuration, ergodic; V8.BernoulliArbitraryDiscrete, which asks for two positive weights, excludes it."
       },
       {
        "name": "mixture",
@@ -998,7 +1004,9 @@
       "mathlib:Subtype.borelSpace",
       "mathlib:MeasureTheory.ProbabilityMeasure",
       "mathlib:MeasureTheory.ProbabilityMeasure.tendsto_measure_of_isClopen_of_tendsto",
-      "mathlib:IsPiSystem.tendsto_probabilityMeasure_of_tendsto_of_mem"
+      "mathlib:IsPiSystem.tendsto_probabilityMeasure_of_tendsto_of_mem",
+      "mathlib:MeasureTheory.isPiSystem_measurableCylinders",
+      "mathlib:IsPiSystem.comap"
      ],
      "api": [],
      "tests": [
@@ -1028,7 +1036,7 @@
      "id": "4.5",
      "kind": "definition",
      "name": "Specification",
-     "statement": "A specification on X: Markov kernels γ_Λ (Λ⊆I finite) from X to X, measurable for the trace of 𝓕_{Λᶜ} on X, proper (γ_Λ(B∩C|ω)=1_B(ω)γ_Λ(C|ω) for B∈𝓕_{Λᶜ}) and consistent (γ_Δγ_Λ=γ_Δ for Λ⊆Δ); μ is Gibbs if μγ_Λ=μ for all Λ; Γ-equivariance and quasilocality.",
+     "statement": "A specification on X: kernels γ_Λ : Kernel[𝓕_{Λᶜ,X}, 𝓕_X] X X (Λ⊆I finite; 𝓕_X the trace σ-algebra on X, 𝓕_{Λᶜ,X} the trace of 𝓕_{Λᶜ}), each IsMarkovKernel and ProbabilityTheory.Kernel.IsProper (γ_Λ(C∩B|ω)=1_B(ω)γ_Λ(C|ω) for B∈𝓕_{Λᶜ,X}), consistent: γ_Λ ∘ₖ γ_Δ = γ_Δ for Λ⊆Δ, with γ_Λ read as a kernel for 𝓕_X through Kernel.comap along the identity (Mathlib's ∘ₖ applies its right factor first, so this is γ_Δγ_Λ=γ_Δ in left-to-right kernel notation); μ is Gibbs if μ.bind γ_Λ = μ for all Λ (Kernel.Invariant); Γ-equivariance and quasilocality.",
      "hypotheses": [
       "S finite with the discrete topology and the discrete σ-algebra (DiscreteMeasurableSpace), hence a Borel space (DiscreteMeasurableSpace.toBorelSpace)",
       "X⊆Ω closed and Γ-invariant, with the subspace topology and the trace σ-algebra, a Borel space (Pi.borelSpace, Subtype.borelSpace)"
@@ -1039,13 +1047,23 @@
      },
      "prerequisites": [
       "target:4.1",
+      "mathlib:ProbabilityTheory.Kernel",
+      "mathlib:ProbabilityTheory.IsMarkovKernel",
+      "mathlib:ProbabilityTheory.Kernel.comp",
+      "mathlib:ProbabilityTheory.Kernel.comap",
+      "mathlib:measurable_id''",
+      "mathlib:ProbabilityTheory.Kernel.IsProper",
+      "mathlib:ProbabilityTheory.Kernel.isProper_iff_inter_eq_indicator_mul",
+      "mathlib:ProbabilityTheory.Kernel.IsProper.setLIntegral_eq_comp",
+      "mathlib:ProbabilityTheory.Kernel.Invariant",
+      "mathlib:MeasureTheory.cylinderEvents_le_pi",
       "mathlib:MeasureTheory.condExp"
      ],
      "api": [
       {
        "name": "isGibbs_iff_condExp",
        "role": "characterisation",
-       "statement": "μ is Gibbs iff γ_Λ(C|·) is a version of the conditional expectation of 1_C given 𝓕_{Λᶜ}."
+       "statement": "μ is Gibbs iff γ_Λ(C|·) is a version of the conditional expectation of 1_C given 𝓕_{Λᶜ,X}: by IsProper.setLIntegral_eq_comp, ∫_B γ_Λ(C|·)dμ = (μ.bind γ_Λ)(C∩B) for B∈𝓕_{Λᶜ,X}, and B=X gives the converse."
       },
       {
        "name": "gibbs_convex",
@@ -1062,22 +1080,22 @@
       {
        "name": "identity_spec_constants",
        "kind": "degenerate",
-       "statement": "On the closed shift-invariant subshift X₀={0̄,1̄} of constant configurations of {0,1}^ℤ, {0,1} with its discrete σ-algebra, each trace of 𝓕_{Λᶜ} is the full σ-algebra, so γ_Λ(·|ω)=δ_ω is a specification and every probability measure on X₀ is Gibbs."
+       "statement": "On the closed shift-invariant subshift X₀={0̄,1̄} of constant configurations of {0,1}^ℤ, {0,1} with its discrete σ-algebra, each trace of 𝓕_{Λᶜ} is the full σ-algebra, so γ_Λ(·|ω)=δ_ω is a Markov kernel for 𝓕_{Λᶜ,X₀}, proper (δ_ω(C∩B)=1_B(ω)δ_ω(C) at all sixteen pairs of subsets) and consistent (δ∘ₖδ=δ), and every probability measure on X₀ is Gibbs."
       },
       {
        "name": "identity_full_product",
        "kind": "non-example",
-       "statement": "The identity kernels on all of {0,1}^ℤ are not a specification: for Λ={0} and C={ω(0)=1}, configurations differing only at 0 have the same exterior but kernel values 0 and 1; under Bern(1/2)^{⊗ℤ} the conditional expectation of 1_C given 𝓕_{Λᶜ} is 1/2."
+       "statement": "The identity kernels on all of {0,1}^ℤ (Mathlib Kernel.id, satisfying the properness identity for every B) are not a specification: for Λ={0} and C={ω(0)=1}, configurations differing only at 0 have the same exterior but kernel values 0 and 1, so they are not a kernel for 𝓕_{Λᶜ} on the source; under Bern(1/2)^{⊗ℤ} the conditional expectation of 1_C given 𝓕_{Λᶜ} is 1/2."
       },
       {
        "name": "independent_spec",
        "kind": "computation",
-       "statement": "γ_Λ = ν^{⊗Λ}⊗δ_{ω|Λᶜ}: the only Gibbs measure is ν^{⊗I}."
+       "statement": "γ_Λ = ν^{⊗Λ}⊗δ_{ω|Λᶜ}: the only Gibbs measure is ν^{⊗I}. Properness needs B exterior: ν=Bern(1/2), Λ={0}, C={ω(0)=1}: for B={ω(1)=1} both sides are 1_B(ω)/2; for B=C at ω(0)=0 the sides are 1/2 and 0."
       },
       {
        "name": "inconsistent",
        "kind": "non-example",
-       "statement": "Independent kernels with different laws on {i} and {i,j} violate consistency; no measure is Gibbs for both."
+       "statement": "Independent kernels with laws ν on {i} and ν'≠ν on {i,j} violate consistency; no measure is Gibbs for both. Order witness: ν=Bern(1/2), ν'=Bern(1/3), i=0, j=1: γ_{0}∘ₖγ_{0,1} gives {ω(0)=1} probability 1/2 against 1/3 for γ_{0,1}; the reversed composite γ_{0,1}∘ₖγ_{0} equals γ_{0,1} for every proper family, so the other reading would make consistency vacuous."
       }
      ]
     },
@@ -1101,6 +1119,7 @@
       "target:4.2",
       "target:4.4",
       "target:4.5",
+      "tauceti:TauCeti.MeasureTheory.exists_smul_invariant_ae_eq",
       "tauceti:ErgodicSMul.iff_mem_extremePoints",
       "tauceti:TauCeti.MeasureTheory.invariantMeasuresOfMeasureUnivEq"
      ],
@@ -1989,6 +2008,10 @@
       "target:4.4",
       "target:9.1",
       "target:9.3",
+      "mathlib:MeasureTheory.exists_measure_symmDiff_lt_of_generateFrom_isSetRing",
+      "mathlib:MeasureTheory.isSetRing_measurableCylinders",
+      "mathlib:MeasureTheory.generateFrom_measurableCylinders",
+      "mathlib:MeasureTheory.univ_mem_measurableCylinders",
       "tauceti:TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant"
      ],
      "api": [],
