@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EffectiveDiophantineMethods~6",
+  "head": "db8e8457da1c7804e795e0144cb7b6fccee8f743",
+  "pr": 1046,
+  "folder": "EffectiveDiophantineMethods",
+  "date": "2026-11-15",
+  "findings": 6,
+  "blocking": 1,
+  "notes": "Full review. All six findings of the previous review are repaired at the places it named. One P2: the supplier contracts for ModularCurvesPartII (README lines 362-363, 385-406) list as supplied items that sections 9.6-9.8 and 17.2 do not state at that roadmap's open head (CM and S4 fibre identifications, bad-prime compatibilities), while the targets already treat them as application inputs. Five P3: two supplier edges no target consumes (FiniteFlatGroupsAndIntegralPadicHodgeTheory R07.1, DeligneWeightsAndPurity 1.1-1.4), a survey-only locator for 5.22 (primary source Bugeaud-Mignotte-Siksek-Stoll-Tengely Lemma 12.1), 96 proof paragraphs opening 'For the proof, ' before a capitalised sentence, code spans cut through formulas, implementation vocabulary and editorial directions in targets. Seeded sample of 15 targets read against 16 fetched sources (37 locators, 36 agree); headline statements checked against the suppliers' matveev and yu and against Cremona Proposition 3.5.1, and the four classical lists recomputed by brute force (545/514 S-unit solutions, 72 Thue-Mahler tuples, Thue quartics, integral points, triangular numbers); the nine genus-three point lists of 6.35 substituted into their quartics. Gate passes (all counters 0, build 0); Suggested.lean elaborates with twelve sorry warnings only; one-tactic probe leaves all twelve theorems open; depcheck 0 problems; pull request text agrees with the head. Not read line by line: Layers 2, 5 and 6.18-6.31 outside the sample were scanned mechanically (headings, Needs lines, locators, process words, code spans). Not verifiable: matveev2000 and yu1994 not read, published pages of bdmtv2021 and bruinStoll2010 not checked. The sources manifest was not edited.",
+  "text": "19bdf9fb6a51d73a"
+ }
+}
