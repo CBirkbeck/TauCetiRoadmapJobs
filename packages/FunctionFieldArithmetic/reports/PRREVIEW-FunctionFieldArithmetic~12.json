@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FunctionFieldArithmetic~12",
+  "head": "4cac1f81428ecc0fb612eca6666785c7f294890c",
+  "pr": 1474,
+  "folder": "FunctionFieldArithmetic",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 4cac1f8; this round checked the pull request's title and description against the head. Three P3 findings, all in the description: it names a consumer roadmap that exists nowhere (FiniteFieldsAndCharacterSums) and gives GlobalGaloisDeformationsPartII the zeta functions instead of Chebotarev; it says Layer 7 feeds a higher Siegel-Weil formula of GlobalShtukasAndFunctionFieldLanglands, which no roadmap cites; it says local Kronecker-Weber is extended to every nonarchimedean local field and that ClassFieldTheory stops at prime-to-p existence, where the head has Kronecker-Weber in characteristic p only and ClassFieldTheory has full existence in characteristic zero. The folder is unchanged and nothing in it is asked to change. Gate rerun: every counter 0, OK. Depcheck: 244 roadmaps, 2239 edges, 0 problems. Elaboration of Suggested.lean: 16 sorry warnings only. Adversarial rows computed for zeta_rationality (y^2 = x^3 - x over F_3: L = 1 + 3T^2, L(1) = 4 = h) and for the statements the findings touch. No source locator reopened (no changed passage).",
+  "text": "4464a37361a17349",
+  "carried": {
+   "from": "4cac1f81428ecc0fb612eca6666785c7f294890c",
+   "head": "4cac1f81428ecc0fb612eca6666785c7f294890c",
+   "findings": 3,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
