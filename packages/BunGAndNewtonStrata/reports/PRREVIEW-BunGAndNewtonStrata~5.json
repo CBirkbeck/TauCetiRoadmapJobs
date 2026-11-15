@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BunGAndNewtonStrata~5",
+  "head": "65fe201204341f8f8c97f988f4209063efd3e6d0",
+  "pr": 1241,
+  "folder": "BunGAndNewtonStrata",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 36 changed lines since c7d0555. Both previous findings repaired (explicit isocrystal instance in wittGL_isocrystal_classes; description paragraph). Checked: pins in the README equal lake-manifest.json; 8 library declarations opened at the pins (AlgHom.mapValue namespace, Fargues-Fontaine adic curve theorems behind the new docstring sentence); 10 supplier citations resolved at the open heads after the removal of stale labels; of the seeded sample only section 3.3 falls in the change (supplier label only); title and description read in full against the head, nothing contradicted. Gate rerun: all counters 0. Depcheck: 0 problems. Elaboration: two sorry warnings only. Adversarial table has five rows with computed values.",
+  "text": "bfbac8fbf98539ee"
+ }
+}
