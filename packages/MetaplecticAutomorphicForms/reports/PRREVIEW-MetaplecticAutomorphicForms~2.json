@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MetaplecticAutomorphicForms~2",
+  "head": "ebe857f16a27c14ef2eafcd05a4a61dda7621476",
+  "pr": 1063,
+  "folder": "MetaplecticAutomorphicForms",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "incremental re-review of 36 changed lines since 22bee85; checked the six previous findings against this head (two repaired, three partly, one not), the changed locators against the linked Weil64 and GZ86 texts (page maps, Weil64 I.2-4, GZ86 (5.2), (1.1), Lemma (2.3)), the changed supplier citations at main and the suppliers' heads, the pull request's title and description against the head, the gate (every check 0), the dependency check (0 problems) and the elaboration of Suggested.lean (four sorry warnings only). Five P3 findings: PDF page numbers of Weil64 and GZ86, the 0.14 locator, 5.5 in Layer 7 Needs lines, Lean docstring title and layer comments, one outdated sentence of the description. EZ85 could not be read (paywalled).",
+  "text": "cdc65e26ca498c3a",
+  "carried": {
+   "from": "ebe857f16a27c14ef2eafcd05a4a61dda7621476",
+   "head": "1dab48e236370ae35f4fe3edf801cab625f22709",
+   "findings": 5,
+   "lines": 129,
+   "folders": [
+    "MetaplecticAutomorphicForms"
+   ],
+   "outside": true
+  }
+ }
+}
