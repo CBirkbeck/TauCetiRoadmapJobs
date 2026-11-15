@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CharacteristicClasses~75",
+  "head": "89357f3db20befdba093e50d06c54017c710a524",
+  "pr": 1807,
+  "folder": "CharacteristicClasses",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full review of README.md and Suggested.lean. Two P3 findings, both locators of sampled targets: C5.2 cites a whole chapter (R01); C1.2b and C5.4 state theorems with no locator at the claim (R02). Seeded sample (C1.2b, C1.3, C1.4, C1.6, C2.3, C3.1, C3.4, C3.6, C5.2, C5.4, C5.5, C6.1, C6.3, C6.4, C7.2) checked: 21 locators read in 8 cached sources (thom1954, hatcher-vbkt, hatcher-at, mueller-wockel-smoothing, dupont-ccc, landweber-k-theory-elliptic, atiyah-hirzebruch-rr-1959, may-concise); Milnor-Stasheff, Bott-Tu, Milnor TDV and Milnor Universal Bundles II are uncertified and not read. Adversarial table with computed values for the six Suggested.lean theorems and the sample. 73 pinned declarations located by name; 24 cross-roadmap citations resolved at this head or on main. The worker's gate passes, build=0 included; depcheck: 245 roadmaps, 2263 edges, 0 problems; the diff outside the pull request's 13 folders is empty. Suggested.lean elaborates with six sorry warnings only; one-tactic probe closes none; no binder lost. Description agrees with the head. Overlap: no shared owner; #1808 follows this pull request. One source error recorded (Landweber section 1.7).",
+  "text": "5fa575d43a504403",
+  "carried": {
+   "from": "89357f3db20befdba093e50d06c54017c710a524",
+   "head": "99707c178ec875b9130ad40e7476593f9bf9434d",
+   "findings": 2,
+   "lines": 37,
+   "folders": [
+    "CharacteristicClasses"
+   ],
+   "onto": "be6147d8cdd18ad9b12414d1ca6a842bfcc212d2"
+  }
+ }
+}
