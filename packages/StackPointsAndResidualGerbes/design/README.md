@@ -476,9 +476,9 @@ proves its properties; Layer 4 proves its existence in each case the Stacks Proj
 closed-immersion criterion. Layer 5 adds decency, which is exactly what makes the base of a residual
 gerbe the spectrum of a field. Layer 6 computes residual gerbes from representatives and identifies
 them with classifying stacks at rational points. Layer 7 uses Layers 0–4 and 6 at a closed rational
-point to define the normal space and compare it with the tangent space. Layers 0–3 are linear;
-Layer 4 uses 3; Layer 5 uses 3 and 4; Layer 6 uses 4 and 5; Layer 7 uses 0.3, 0.4, 1.3, 2.2, 2.3,
-3.4, 4.5 and 6.4.
+point to define the normal space and compare it with the tangent space. Layers 1 and 2 each use
+Layer 0 only and are independent of each other; Layer 3 uses 0 and 2; Layer 4 uses 0–3; Layer 5
+uses 0 and 2–4; Layer 6 uses 0–5; Layer 7 uses 0.3, 0.4, 1.3, 2.2, 2.3, 3.4, 4.5 and 6.4.
 
 ## Layer 0: monomorphisms, immersions and reduced substacks
 
@@ -1084,7 +1084,7 @@ point of `[𝔸¹/𝔾_m]` as its dense open gerbe.
 
 ### Dependencies
 
-Layers 0–1; AlgebraicModuliForArithmeticGeometry §4.1; SchemeAndStackFoundations §§1.14, 1.16–1.18,
+Layer 0; AlgebraicModuliForArithmeticGeometry §4.1; SchemeAndStackFoundations §§1.14, 1.16–1.18,
 1.20–1.21, 1.23; gap:stack-morphism-permanence, gap:flat-lfp-open, gap:inertia-of-presentations,
 gap:flat-groupoid-quotients, gap:generic-flatness-spaces.
 
@@ -1232,7 +1232,7 @@ non-decent one-point spaces `U/G` and `Spec ℚ(t)/ℤ`.
 
 ### Dependencies
 
-Layers 0–2; SchemeAndStackFoundations §§1.8, 1.18–1.21; Mathlib
+Layers 0 and 2; SchemeAndStackFoundations §§1.8, 1.18–1.21; Mathlib
 `AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType`;
 gap:stack-morphism-permanence, gap:stack-separation-axioms, gap:flat-groupoid-quotients,
 gap:reduced-regular-smooth-local.
@@ -1585,7 +1585,7 @@ of the scheme of 5.1's fourth Check, whose diagonal is not quasi-compact.
 
 ### Dependencies
 
-Layers 0–4; Mathlib `AlgebraicGeometry.Scheme.residueField`, `finite_of_finite_type_of_isJacobsonRing`;
+Layers 0 and 2–4; Mathlib `AlgebraicGeometry.Scheme.residueField`, `finite_of_finite_type_of_isJacobsonRing`;
 gap:decent-algebraic-spaces, gap:decent-space-schematic-locus,
 gap:reduced-scheme-residue-field-factorisation, gap:stack-morphism-permanence,
 gap:stack-separation-axioms.
@@ -1706,13 +1706,15 @@ finite type; stacks-06RD lines 1527–1528, Lemma 101.17.8, which puts no hypoth
 residual gerbe at `x` exists (4.1); `Spec k → 𝒵_x^♭` is an isomorphism and `𝒵_x ≃ BG_x`; and if
 moreover `𝒳` is locally Noetherian, for instance locally of finite type over `k`, and `x` is a closed
 point, `BG_x → 𝒳` is a closed immersion (4.5) (alper-moduli lines 6998–6999 and 7017–7024,
-Proposition 4.5.16 (2), which assumes `𝒳` of finite type and `G_x` smooth and affine; ahr2020 lines
-476–478) (*Stacks.residualGerbe_rationalPoint*). For the proof, `𝒵_x → Spec k` factors
+Proposition 4.5.16 (2), which assumes `𝒳` Noetherian, hence quasi-separated (alper-moduli lines
+6234–6236), and of finite type over `k`, and `G_x` smooth and affine; ahr2020 lines 475–478, for
+quasi-separated `𝒳`) (*Stacks.residualGerbe_rationalPoint*). For the proof, `𝒵_x → Spec k` factors
 through the base (2.1), so `Spec k → 𝒵_x^♭ → Spec k` is the identity; a section of `𝒵_x^♭ → Spec k`
-is a monomorphism, and 3.2 makes it an isomorphism. Neither smoothness nor affineness of `G_x` nor
-algebraic closedness of `k` is used. *Needs:* 0.2, 2.1, 3.2, 3.4, 4.1, 4.5, 6.3;
-gap:stack-morphism-permanence (cancellation of local finite type for the section `x`; a stack locally
-of finite type over `k` is locally Noetherian, Lemma 101.17.5, as 4.5 requires).
+is a monomorphism, and 3.2 makes it an isomorphism. Neither smoothness nor affineness of `G_x`, nor
+quasi-separatedness of `𝒳` (neither 4.1 nor 4.5 assumes it), nor algebraic closedness of `k` is
+used. *Needs:* 0.2, 2.1, 3.2, 3.4, 4.1, 4.5, 6.3; gap:stack-morphism-permanence (cancellation of
+local finite type for the section `x`; a stack locally of finite type over `k` is locally
+Noetherian, Lemma 101.17.5, as 4.5 requires).
 
 **Checks.**
 
@@ -1743,7 +1745,12 @@ gap:stack-morphism-permanence.
 
 Throughout 7.2–7.4, `k` is a field, `𝒳` is an algebraic stack locally of finite type over `k`,
 `x ∈ 𝒳(k)` is a closed point with `p ∘ x = id`, `G_x` is affine, and `i : BG_x ≃ 𝒵_x → 𝒳` is the
-closed immersion of 6.4 with quasi-coherent ideal `ℐ` (0.4).
+closed immersion of 6.4 with quasi-coherent ideal `ℐ` (0.4). The source of 7.2–7.4 (ahr2020 §3.1,
+lines 475–476) also assumes `𝒳` quasi-separated; no statement or route of this layer uses it: 4.5
+and 6.4 need only that `𝒳` is locally Noetherian, the vector space structure on `T_{𝒳,x}` comes
+from the Rim–Schlessinger condition, which every algebraic stack over a field satisfies (Lemma
+98.5.2, stacks-artin lines 292–294; gap:algebraic-stacks-satisfy-rs), and 7.3 and 7.4 compute on a
+smooth chart. The Checks of 7.4 include a stack that is not quasi-separated.
 
 ### 7.1 Infinitesimal neighbourhoods of a closed point
 
@@ -1862,22 +1869,23 @@ gap:stack-morphism-permanence (smoothness of `W` and of `q`); gap:algebraic-stac
 
 Prove that for a smooth group scheme `G` over `k` acting on a scheme `V` locally of finite type over
 `k`, and `x ∈ V(k)` with affine stabiliser `Stab_G(x)` (the standing hypothesis of this layer) whose
-orbit `G·x` (the reduced image of the orbit map) is closed in `V`, the image of `x` is a closed point
-of `[V/G]`, `G_x` is the stabiliser `Stab_G(x)`, `𝒵_x = [G·x/G]`, and `N_x ≅ T_{V,x}/T_{G·x,x}` as
-`G_x`-representations (ahr2020 lines 484–486, under the affine stabilisers of line 476). `G` itself
-need not be affine: the route below uses only that `V → [V/G]` is a smooth atlas, and affineness
-enters through `G_x` alone, in 7.3's embedding `G_x ⊆ GLₙ`. For the proof apply the
-chart computation of 7.3 to the smooth atlas `V → [V/G]`: the base change of `x : Spec k → [V/G]`
-along `V → [V/G]` is the orbit map `G → V`, so the preimage of the image of `x` in `|V|` is the image
-of the orbit map, and the point is closed exactly when the orbit is (the map `|V| → |[V/G]|` being
-open and surjective); and `W = V ×_{[V/G]} 𝒵_x` is a closed subscheme of `V` with that support
-which is smooth over `k` (as in 7.3: `W → BG_x` is a base change of the smooth atlas and
-`BG_x → Spec k` is smooth), hence reduced, hence `W = G·x`. *Needs:* 0.3, 4.5, 6.4, 7.2, 7.3; 1.3
-(`G_x` is the stabilizer of the action groupoid at `x`, the presentation bullet, Lemma 101.5.7); 2.3
+orbit `G·x` (the reduced image of the orbit map) is closed in `V`, the image of `x` is a closed
+point of `[V/G]`, `G_x` is the stabiliser `Stab_G(x)`, `𝒵_x = [G·x/G]`, and
+`N_x ≅ T_{V,x}/T_{G·x,x}` as `G_x`-representations (ahr2020 lines 484–486, under the quasi-separated
+stack with affine stabilisers of lines 475–476; quasi-separatedness is not used). `G` itself need
+not be affine: the route below uses only that `V → [V/G]` is a smooth atlas, and affineness enters
+through `G_x` alone, in 7.3's embedding `G_x ⊆ GLₙ`. For the proof apply the chart computation of
+7.3 to the smooth atlas `V → [V/G]`: the base change of `x : Spec k → [V/G]` along `V → [V/G]` is
+the orbit map `G → V`, so the preimage of the image of `x` in `|V|` is the image of the orbit map,
+and the point is closed exactly when the orbit is (the map `|V| → |[V/G]|` being open and
+surjective); and `W = V ×_{[V/G]} 𝒵_x` is a closed subscheme of `V` with that support which is
+smooth over `k` (as in 7.3: `W → BG_x` is a base change of the smooth atlas and `BG_x → Spec k` is
+smooth), hence reduced, hence `W = G·x`. *Needs:* 0.3, 4.5, 6.4, 7.2, 7.3; 1.3 (`G_x` is the
+stabilizer of the action groupoid at `x`, the presentation bullet, Lemma 101.5.7); 2.3
 (`BG_x → Spec k` is smooth); SchemeAndStackFoundations §1.20 (`Stacks.points`, `.baseChangeImage`,
 `.atlasOpenSurjective`), §1.21 (`actionQuotient`); Mathlib
-`AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal` (the reduced structure on the closed orbit);
-gap:stack-morphism-permanence (base change and composition of smooth morphisms).
+`AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal` (the reduced structure on the closed
+orbit); gap:stack-morphism-permanence (base change and composition of smooth morphisms).
 
 **Checks.**
 
@@ -1896,6 +1904,15 @@ gap:stack-morphism-permanence (base change and composition of smooth morphisms).
   `T_{V,x}/T_{G·x,x} = (T_{E,0} ⊕ k·∂_t)/T_{E,0} = k·∂_t` is the weight-one character, which is `N_0`
   of `[𝔸¹/𝔾_m]` in 7.2's first Check. A statement for affine `G` only would exclude this action; the
   stabiliser hypothesis is what excludes `E` acting trivially on `Spec k`, with `G_x = E` not affine.
+- `[V/G]` need not be quasi-separated: over `k = ℚ`, let the constant group `G = ℤ` act on
+  `V = (ℤ × 𝔸¹) ⊔ 𝔸¹` by `n·(m, t) = (m + n, t)` on the first part and `n·t = t + n` on the second,
+  and take `x = (0, 0)` in the first part. Then `Stab_G(x) = 1`, the orbit `ℤ × {0}` is closed (one
+  closed point in each component), and `[V/G] = 𝔸¹ ⊔ 𝔸¹/ℤ`, whose second part is not
+  quasi-separated: `𝔸¹ ×_{𝔸¹/ℤ} 𝔸¹ = ℤ × 𝔸¹ → 𝔸¹ × 𝔸¹`, `(n, t) ↦ (t, t + n)`, is not
+  quasi-compact. The image of `x` is the origin of the first part, a closed point; `𝒵_x = Spec ℚ =
+  [ℤ × {0}/G]` with `G_x = 1`; and `N_x = (𝔪/𝔪²)^∨ = ℚ·∂_t` equals
+  `T_{V,x}/T_{G·x,x} = ℚ·∂_t/0`, both one-dimensional. A statement restricted to quasi-separated
+  stacks, as in the source, would exclude this action.
 - Luna vocabulary: for `k` algebraically closed, `𝒳` quasi-separated with affine stabilisers and
   `x` smooth with linearly reductive `G_x` (Tau Ceti `TauCeti.linearlyReductiveAffineGroupSchemeProperty`),
   the slice theorem (ahr2020 lines 55–60, Theorem 1.2) compares `𝒳` étale-locally with `[N_x/G_x]`;
@@ -1925,7 +1942,7 @@ gap:inertia-of-presentations, gap:homogeneous-quotient-scheme, gap:algebraic-sta
 - **FunctionFieldArithmeticPartII**: its requirement gap:zero-dimensional-dm-residual-gerbes (the
   reduction of a finite type Deligne–Mumford stack over an algebraically closed field with finite
   discrete `|𝒳|` is the disjoint union of its residual gerbes, each the classifying stack of a finite
-  constant group) is the worked example below, from 0.3, 0.5, 1.4, 4.5 and 6.4, which adds the
+  constant group) is the worked example below, from 0.3, 0.5, 1.4, 3.3, 4.5 and 6.4, which adds the
   quasi-compact diagonal hypothesis that `Bℤ` shows to be necessary.
 - **MotivicStructuresInModuliOfCurves**: stabilisers at points of its quotient stacks (the central
   `μ₂` stabilisers of its §7.3 and the quadric stabilisers of the orbit counts of its §§8.4 and 8.6),

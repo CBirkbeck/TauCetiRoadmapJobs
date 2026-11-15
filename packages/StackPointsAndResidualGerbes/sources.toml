@@ -120,7 +120,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "draft dated 2026-01-05 on the author page, CC BY-NC-ND 4.0; section and proposition numbers are those of this draft"
-cited_for = ["finite type points, tangent spaces and residual gerbes (Definitions 4.5.7, 4.5.12-4.5.13, Propositions 4.5.10, 4.5.16, 7.4.39, Exercises 4.5.11, 7.4.40): targets 1.1, 5.3, 6.2-6.4, 7.3"]
+cited_for = ["finite type points, tangent spaces and residual gerbes (Definitions 4.3.21, 4.5.7, 4.5.12-4.5.13, Propositions 4.5.10, 4.5.16, 7.4.39, Exercises 4.5.11, 7.4.40): targets 1.1, 5.3, 6.2-6.4, 7.3"]
 
 [[source]]
 id = "lmb2000"

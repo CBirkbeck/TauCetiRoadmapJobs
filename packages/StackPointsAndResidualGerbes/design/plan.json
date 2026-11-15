@@ -1854,7 +1854,7 @@
      ],
      "locator": {
       "source": "alper-moduli",
-      "where": "Proposition 4.5.16 (2), lines 6998-6999 and 7017-7024; ahr2020 lines 476-478; stacks-06RD lines 1527-1528 (Lemma 101.17.8, cancellation)"
+      "where": "Proposition 4.5.16 (2), lines 6998-6999 and 7017-7024, for Noetherian (hence quasi-separated, lines 6234-6236) X of finite type over k with G_x smooth and affine; ahr2020 lines 475-478, for quasi-separated X; quasi-separatedness and the hypotheses on G_x are not used; stacks-06RD lines 1527-1528 (Lemma 101.17.8, cancellation)"
      },
      "prerequisites": [
       "target:0.2",
@@ -1963,7 +1963,7 @@
      ],
      "locator": {
       "source": "ahr2020",
-      "where": "lines 39-43 and 477-480 (§3.1)"
+      "where": "lines 39-43 and 477-480 (§3.1, whose standing quasi-separatedness of X, lines 475-476, is not used)"
      },
      "prerequisites": [
       "target:0.4",
@@ -2031,7 +2031,7 @@
      ],
      "locator": {
       "source": "ahr2020",
-      "where": "§3.1, lines 480-484; alper-moduli Definition 4.5.7, Exercise 4.5.11, lines 6859-6881 and 6948-6951"
+      "where": "§3.1, lines 480-484 (the standing quasi-separatedness of X, lines 475-476, is not used); alper-moduli Definition 4.5.7, Exercise 4.5.11, lines 6859-6881 and 6948-6951"
      },
      "prerequisites": [
       "target:0.4",
@@ -2108,7 +2108,7 @@
      ],
      "locator": {
       "source": "ahr2020",
-      "where": "§3.1, lines 484-486, under the affine stabilisers of line 476"
+      "where": "§3.1, lines 484-486, under the quasi-separated stack with affine stabilisers of lines 475-476; quasi-separatedness is not used"
      },
      "prerequisites": [
       "target:0.3",
@@ -2144,6 +2144,11 @@
        "name": "nonaffine_group",
        "kind": "computation",
        "statement": "G = E x G_m (E an elliptic curve) on V = E x A^1 at x = (0_E, 0): Stab = G_m affine, orbit E x {0} closed, [V/G] = [A^1/G_m], x maps to 0, Z_x = B G_m, N_x = k d/dt of weight one as in 7.2; E acting trivially on Spec k has non-affine G_x = E and is excluded by the stabiliser hypothesis."
+      },
+      {
+       "name": "nonQuasiSeparated",
+       "kind": "characterisation",
+       "statement": "Over Q, the constant group Z acting on V = (Z x A^1) ⊔ A^1 by shift of the index and by translation, x = (0, 0): Stab = 1, orbit Z x {0} closed, [V/G] = A^1 ⊔ A^1/Z is not quasi-separated (A^1 x_{A^1/Z} A^1 = Z x A^1 -> A^1 x A^1 not quasi-compact), the image of x is closed, Z_x = Spec Q = [Z x {0}/G], N_x = Q d/dt = T_{V,x}/T_{Gx,x}, both one-dimensional; quasi-separatedness is not needed."
       },
       {
        "name": "luna_vocabulary",
@@ -2206,7 +2211,7 @@
   },
   {
    "roadmap": "FunctionFieldArithmeticPartII",
-   "what": "zero-dimensional Deligne-Mumford stacks with quasi-compact diagonal as disjoint unions of residual gerbes BG_x (0.5, 1.4, 4.5, 6.4)"
+   "what": "zero-dimensional Deligne-Mumford stacks with quasi-compact diagonal as disjoint unions of residual gerbes BG_x (0.3, 0.5, 1.4, 3.3, 4.5, 6.4)"
   },
   {
    "roadmap": "MotivicStructuresInModuliOfCurves",
