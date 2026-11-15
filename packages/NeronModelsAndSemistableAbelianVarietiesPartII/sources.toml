@@ -1,0 +1,17 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "NeronModelsAndSemistableAbelianVarietiesPartII"
+
+[[source]]
+id = "schroer"
+arxiv = "2004.07025v3"
+locator_scheme = "theorem"
+locator = "Proposition 8.1"
+url = "https://arxiv.org/abs/2004.07025v3"
+fetched_from = "https://arxiv.org/pdf/2004.07025v3"
+fetched_at = "2026-11-15T04:44:46Z"
+sha256 = "ae6481f25627867473ba40db3b08e5f4b861de8aa103204eefc5ad1123a46d61"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["3.1"]

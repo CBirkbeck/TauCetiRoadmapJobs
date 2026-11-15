@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NeronModelsAndSemistableAbelianVarietiesPartII~4",
+  "head": "9027cc3d260fff724c25d0cc69892285d9fa9167",
+  "pr": 870,
+  "folder": "NeronModelsAndSemistableAbelianVarietiesPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 28 changed lines since fec9eae. Both previous findings (R01 Checks, R02 Layer 6 numbering) are repaired; the ten added Checks in sections 1.5, 2.27, 3.1, 4.13 and 5.1 were recomputed and agree with the section statements and the 6.1 table; no other roadmap cites the renumbered 6.16/6.17. Title and description checked against the head: one P3 finding (the description names PadicMeasuresIwasawaAlgebras, AdicSpacesPartII and RigidAnalyticGeometry as cited by the README, which cites none of them, and points to a consumer list the merge-order block does not contain). Sample: targets 3.1 and 2.10 fall in or are cited by the changed passages and were read in schroer (Proposition 8.1, p. 22; Proposition 3.2, p. 11); the other thirteen are outside the change. Gate: all text and dependency checks pass (depcheck 0 problems); the worker's build step failed on a missing object file of TauCeti.LinearAlgebra.RootSystem.AffineDynkinType.Basic in the worker's package cache, not on the pull request: with that module compiled in scratch, Suggested.lean (unchanged since fec9eae) elaborates at main's pins with exit 0 and five sorry warnings, and the six elaborated signatures keep every binder. Elaboration at the branch's own manifest pins was not possible (no cache for them on this worker).",
+  "text": "f08177410df13ff0",
+  "carried": {
+   "from": "9027cc3d260fff724c25d0cc69892285d9fa9167",
+   "head": "bfb383084bb13b0757e0784987bc4281fe082529",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
