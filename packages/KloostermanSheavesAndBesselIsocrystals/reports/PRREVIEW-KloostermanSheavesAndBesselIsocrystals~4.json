@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KloostermanSheavesAndBesselIsocrystals~4",
+  "head": "8fd0dadeff00c64038cbed4a4e8b37b835a530c4",
+  "pr": 2289,
+  "folder": "KloostermanSheavesAndBesselIsocrystals",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 1,
+  "notes": "Full review. Previous review (13efcb3) had no findings. Seeded sample of 15 targets verified against XZ, HNY, FG, BD, GR, AC, Gaitsgory, Goertz-Haines (about 100 locators, all pages agree). Numerics: identities (i) over F2, F4, F8 and (ii) over F3, F5, F7, F9 for both character classes; quadric chart sums n=3; signed Dwork congruence for the Bessel series (s<=3, m<=2, N<=40); all agree with the README. 21 cited roadmaps and about 130 section ids resolve on main or at open heads; 13 pinned declarations opened. Gate OK; depcheck 244 roadmaps, 2233 edges, 0 problems; lake env lean gives four sorry warnings only; one-tactic probe closes none of the four theorems. Findings: R01 (P2) the README contract of gap:arithmetic-d-module-operations omits the nearby-cycle/logarithmic-fibre identification (XZ Prop 2.9.4) that section 4.3 takes from it, with geometric semisimplicity and nearby-cycle trace independence unnamed; R02 (P3) the PR description still counts the removed convolution theorem; R03 (P3) undefined y in a Check of section 0.2; R04 (P3) self-contradictory sentence in the section 6.2 route; R05 (P3) Layer 1 and Layer 4 dependency lists omit ReductiveGroups Layers 1, 10 and RD.1.44.",
+  "text": "5703481f9584d2b4"
+ }
+}
