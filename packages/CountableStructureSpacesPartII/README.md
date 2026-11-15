@@ -308,8 +308,8 @@ Neither pin puts a σ-algebra on `Equiv.Perm ℕ`; Layer 4.1 supplies it (`instM
 
 The targets of the base that the pin does not implement, by the base's names and sections:
 
-- Layer 0: closedness of `{c | IsSimpleGraph c}`, the range of the graph coding (Checks of 1.2 and
-  2.3).
+- Layer 0: closedness of `{c | IsSimpleGraph c}`, the range of the graph coding (the API of 2.3
+  and its third Check).
 - Layer 1.2: joint continuity of the logic action for every language and every discrete carrier
   `α`, the `ContinuousSMul (Equiv.Perm α) (RelationalConfiguration L α)` instance, obtained from
   Tau Ceti `continuous_uncurry_restrict` composed with `Equiv.Perm.continuous_inv_apply`; the pin
