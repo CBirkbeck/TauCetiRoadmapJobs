@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BochnerSpaces~8",
+  "head": "181256572cdeef9efcde14f2b07149539bf3fe1b",
+  "pr": 2249,
+  "folder": "BochnerSpaces",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 3 changed lines since 039c077. Previous R01 (description names no roadmap suppliers) repaired. One P3: the new inline Mathlib inputs lp.dualPairing and lp.norm_dualPairing are missing from the Exact supplier contracts and from the section 8.3 Needs line. Checked: both declarations at the Mathlib pin (lpHolder.lean:264, :275; link commit equals the pin), their hypotheses against section 8.3's exponent range, computed pairing and norm-bound instances; gate passes (worker record), Suggested.lean elaborates with 25 sorry warnings only, depcheck 0 problems; pull request title and description agree with the head; no file outside the folder. No seeded sample target lies in the changed passage; HvNVW text not readable, not re-fetched.",
+  "text": "b1fb705243291c92"
+ }
+}
