@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-WeightsInEtaleCohomology~4",
+  "head": "210329060a8989fff87684068332a3aadeed0221",
+  "pr": 1001,
+  "folder": "WeightsInEtaleCohomology",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since 9e753f8: README line 85 now names the pins of lake-manifest.json (Mathlib 1b1ccf4, Tau Ceti 2fd255d), confirmed against the manifest and the package heads; the 13 library declarations that paragraph names were opened at the new pins; previous R01 (description sentence) is repaired; title and 14 description sentences checked against the head, all stand; gate OK with every counter 0; depcheck 0 problems, no UPWARD/CYCLE; Suggested.lean elaborates with sorry as the only warning; newform_ramanujan computed on Delta at p=2; no seeded-sample target lies in the changed line; diff outside the folder empty.",
+  "text": "4d8c45fb222bffdd"
+ }
+}
