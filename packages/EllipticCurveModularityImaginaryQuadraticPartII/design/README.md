@@ -105,23 +105,27 @@ of Layer 3 are proved by explicit computations recorded in their Checks.
 - `K` is a CM number field: a totally imaginary quadratic extension of its maximal totally real
   subfield `K⁺`, in Mathlib's sense `NumberField.IsCMField`; `c` is complex conjugation and `v^c` the
   conjugate of a finite place `v`. `E/K` is an elliptic curve `y² = h(x)` with separable cubic `h`.
+  In §6.1, which names no elliptic curve, `E` is a totally real Galois extension of `ℚ` of degree eight,
+  and `E_a`, `E_b`, `E_c` are the imaginary quadratic fields so named in ACC23 §6.5.12.
 - The parent's notation is kept: `p > 100` is the prime of the parent's §7.2 (general number-field
-  form), `n = 3p`, `F = K(μ_n)`, `U ⊂ 𝔸¹_K` is `switchParameterOpen`, `B_t: h(t)y² = h(x)`,
-  `C_m(t)` the cyclic covers, `w` the reflection, `A_t = Pic⁰(C₃(t)/⟨w⟩)`, `V_θ` the character
-  systems, `η, ψ` characters of orders `3, p` and `χ = ηψ`. A *switch parameter* is a
-  `t ∈ U(K)` produced by the parent's §7.4 `simultaneous_specialization` for a finite set of places
-  containing those above `3p`, lying in the opens of the parent's §6.5 `local_type_opens` at every
-  place above `3p`. The switch parameter `t` occurs in Layers 2, 7 and 8 only; in Layers 4–5 the
-  letter `t` is the number `|T|` of framed places. The characters `η, ψ, χ` and their systems
-  `V_η, V_ψ, V_χ` occur in How to read the build, Layer 2 and §8.1 only. Elsewhere `ψ` is the
-  unramified determinant character of §3.4, `χ = (χ_v)_{v∈R}` is the tuple of tame characters at `R`
-  in Layer 5 (the index of the problems `𝒮_χ` of CrystallineLocalGlobalCompatibilityCM §9.5), and
+  form), `n = 3p`, `F = K(μ_n)`, `U ⊂ 𝔸¹_K` is `switchParameterOpen`, `B_t: h(t)y² = h(x)`, `C_m(t)` the
+  cyclic covers, `w` the reflection, `A_t = Pic⁰(C₃(t)/⟨w⟩)`, `V_θ` the character systems, `η, ψ`
+  characters of orders `3, p` and `χ = ηψ`. A *switch parameter* is a `t ∈ U(K)` produced by the
+  parent's §7.4 `simultaneous_specialization` for a finite set of places containing those above `3p`,
+  lying in the opens of the parent's §6.5 `local_type_opens` at every place above `3p`. The field
+  `F = K(μ_n)` is meant in the Summary, Layers 2 and 8, §7.5 and Layer 1 outside §1.2; §1.2, Layers 4–6
+  and §7.4 each introduce their own number field `F` in their statements, and Layer 3 uses only local
+  fields `F_v` and their extensions `F'_w`. The switch parameter `t` occurs in Layers 2, 7 and 8 only;
+  in Layers 4–5 the letter `t` is the number `|T|` of framed places. The characters `η, ψ, χ` and their
+  systems `V_η, V_ψ, V_χ` occur in How to read the build, Layer 2 and §8.1 only. Elsewhere `ψ` is the
+  unramified determinant character of §3.4, `χ = (χ_v)_{v∈R}` is the tuple of tame characters at `R` in
+  Layer 5 (the index of the problems `𝒮_χ` of CrystallineLocalGlobalCompatibilityCM §9.5), and
   `χ_(h(t))` is the quadratic character of `K(√h(t))/K` by which `B_t` twists `E` (the parent's §8.4,
-  used in Layer 2). The reflection `w` occurs in §7.1 only; elsewhere `w` is a finite place. The
-  letter `p` is the prime of the parent's switch (`p > 100`; in §7.1 any prime `p > 3`) in the
-  Summary's account of the switch, the Layer 1 Examples and Layers 2, 7 and 8; everywhere else it is
-  a coefficient prime, odd in the coefficient conventions below, in Layer 3 and in the supplier
-  obligations, and five where `p = 5` is written.
+  used in Layer 2). The reflection `w` occurs in §7.1 only; elsewhere `w` is a finite place. The letter
+  `p` is the prime of the parent's switch (`p > 100`; in §7.1 any prime `p > 3`) in the Summary's
+  account of the switch, the Layer 1 Examples and Layers 2, 7 and 8; everywhere else it is a coefficient
+  prime, odd in the coefficient conventions below, in Layer 3 and in the supplier obligations, and five
+  where `p = 5` is written.
 - Cohomological normalization as in the parent: `H¹` is étale `H¹`, its determinant is `ε_ℓ⁻¹`,
   `HT(ε_ℓ) = −1`, Frobenius in compatible systems is geometric and `rec^T(π_v) = rec(π_v ⊗ |det|^(−1/2))`.
   The residual representation of `H¹(A)` is the dual of `A[ℓ]`; dualizing inverts both eigenvalue
@@ -596,7 +600,9 @@ trace form `⟨X, Y⟩ = tr(XY)`, its invariance and its perfectness on `ad⁰` 
 pairing on `M₂(k)` is perfect, `ad⁰` is the orthogonal of `k·1`, and the two are complementary,
 `ad = k·1 ⊕ ad⁰`, when `2 ∈ k^×`; statements about the underlying `k`-modules), and base change
 along a field embedding `k → k'` for a finite group acting, are ArithmeticGaloisRepresentations §7.2
-and are used here in that form. (CaptainSude26, Lemma 3.1, line 187.)
+and are used here in that form. (CaptainSude26, Lemma 3.1 and its proof, lines 187–192, for the
+basis `e, h, f` and the action of `Ad(U)`; proof of Lemma 3.2, line 224, for the trace form; proof of
+Lemma 3.3, line 234, for the vanishing of invariants over `𝔽₅`.)
 
 *Needs:* ArithmeticGaloisRepresentations §§7.2, 7.9; Mathlib `Matrix.SpecialLinearGroup`,
 `Matrix.SpecialLinearGroup.toGL`.
@@ -1059,16 +1065,20 @@ of `P ∪ P^c` above two has ramification index dividing four, such that `F'`, `
 §5.4. The route is the preparation of CrystallineLocalGlobalCompatibilityCM §9.11 (choice of test
 places; prescribed completions over `F⁺` through GL2ModularityLifting §1.7 and
 PotentialAutomorphyInfrastructure §2.5; the five-adic degree condition; then the three imaginary
-quadratic composita), whose construction does not use clause (15). The degree condition comes from a
-composite with a totally real Galois extension `E/ℚ` of degree eight with solvable group, linearly
-disjoint from the Galois closure of the fields already used, in which five and the rational primes below
-the test places split completely (PotentialAutomorphyInfrastructure §2.5 applied over `ℚ` with the real
-place split gives a cyclic one; CaptainSude26 lines 582–588 uses a multiquadratic one). The five-adic
-completions of the maximal totally real subfield are then unchanged while its degree over `ℚ` is
-multiplied by eight, so each of its five-adic local degrees is at most one eighth of that degree; no
-later extension raises this ratio, a local degree growing by at most the global degree; and omitting
-any two five-adic places leaves at least three quarters of the degree, more than the half that
-condition (ii) of §5.1 asks (its residue fields come from the prescribed completions). Since `E` comes
+quadratic composita), whose construction does not use clause (15). Write `F₁` for the CM field reached
+before the degree condition and `F₁⁺` for its maximal totally real subfield. The degree condition comes
+from the composite `F₁E` with a totally real Galois extension `E/ℚ` of degree eight with solvable group,
+linearly disjoint from a finite Galois extension of `ℚ` containing `F₁` and the field cut out by `ρ̄`,
+in which five and every rational prime under a test place split completely
+(PotentialAutomorphyInfrastructure §2.5 applied over `ℚ` with the real place split gives a cyclic one;
+CaptainSude26 lines 582–588 uses a multiquadratic one). By linear disjointness
+`[F₁⁺E:ℚ] = 8[F₁⁺:ℚ]`, and as `E ⊗ ℚ₅ ≅ ℚ₅⁸`, above each five-adic place `u` of `F₁⁺` lie eight
+places `w` of `F₁⁺E`, each with `(F₁⁺E)_w = (F₁⁺)_u`; so `[(F₁⁺E)_w:ℚ₅] ≤ [F₁⁺:ℚ] = [F₁⁺E:ℚ]/8`. The
+final field `F'` is CM and contains the totally real `F₁⁺E`, so `F₁⁺E ⊆ F'⁺`; for a place `w'` of `F'⁺`
+over `w`, `[F'⁺_{w'}:(F₁⁺E)_w] ≤ [F'⁺:F₁⁺E]`, and the product gives `[F'⁺_{w'}:ℚ₅] ≤ [F'⁺:ℚ]/8`. The
+five-adic local degrees of `F'⁺` add up to `[F'⁺:ℚ]`, so `F'⁺` has at least eight five-adic places,
+and removing any two of them leaves a sum of at least `(3/4)[F'⁺:ℚ] > [F'⁺:ℚ]/2`: the degree half of
+condition (ii) of §5.1, whose residue-field half comes from the prescribed completions. Since `E` comes
 before the composita, the primes ramified in `E` are among those ACC23 requires to split in `E_b`. The
 route makes three additions at `P`: trivial prescribed completions at the places of `F⁺` below `P`,
 which split in `F` because `v^c ≠ v`; the rational primes below `P` among those split completely in `E`;
@@ -1119,17 +1129,17 @@ PotentialAutomorphyInfrastructure §§2.1, 2.3, 2.5; PotentialModularityAndCompa
   in `E_c` (`−2617 ≡ −1`, a square modulo `109 ≡ 1 mod 4`). With `E_a` split at `2, 5, 11` and `11`
   split completely in the totally real field `E`, every completion of `F'` above a place of `P ∪ P^c`
   over `11` is that of `F`.
-- The degree step for `F = ℚ(ζ₅)` and `q = 11` below `P`. Here `F⁺ = ℚ(√5)` has one five-adic place, of
-  local degree `2 = [F⁺:ℚ]`, so condition (ii) of §5.1 fails (there is no second five-adic place). Take
-  `E = ℚ(√31, √59, √71)`: the three primes are distinct, so `E` is totally real of degree eight with
-  group `(ℤ/2)³`, and `31 ≡ 1`, `59 ≡ 4`, `71 ≡ 1 mod 5` and `31 ≡ 9`, `59 ≡ 4`, `71 ≡ 5 mod 11` are
-  nonzero squares, so five and eleven split completely in `E`. No quadratic subfield of `E` is
-  `ℚ(√5)`, so `F⁺E` has degree `16` and eight five-adic places of local degree `2`; omitting two leaves
-  `12 > 8`. The residue fields there are still `𝔽₅`, so the residue half of (ii) needs the prescribed
-  completions. Since `31 ≡ 59 ≡ 71 ≡ 3 mod 4`, two ramifies in `E`: this `E` serves only when no place of
-  `P` lies above two (primes `≡ 1 mod 8` would split two), and `31, 59, 71` must then split in `E_b`. A
-  field in which five does not split does nothing: `ℚ(√5, √2)` (`2` is not a square modulo five) has a
-  single five-adic place, of local degree `4`, its whole degree.
+- The degree step for `F = ℚ(ζ₅)` and `q = 11` below `P`, with `F₁ = F`. Here `F₁⁺ = ℚ(√5)` has one
+  five-adic place, of local degree `2 = [F₁⁺:ℚ]`, so condition (ii) of §5.1 fails (there is no second
+  five-adic place). Take `E = ℚ(√31, √59, √71)`: the three primes are distinct, so `E` is totally real
+  of degree eight with group `(ℤ/2)³`, and `31 ≡ 1`, `59 ≡ 4`, `71 ≡ 1 mod 5` and `31 ≡ 9`, `59 ≡ 4`,
+  `71 ≡ 5 mod 11` are nonzero squares, so five and eleven split completely in `E`. No quadratic subfield
+  of `E` is `ℚ(√5)`, so `F₁⁺E` has degree `16` and eight five-adic places of local degree `2 = 16/8`;
+  omitting two leaves `12 = (3/4)·16 > 8`. The residue fields there are still `𝔽₅`, so the residue half
+  of (ii) needs the prescribed completions. Since `31 ≡ 59 ≡ 71 ≡ 3 mod 4`, two ramifies in `E`: this
+  `E` serves only when no place of `P` lies above two (primes `≡ 1 mod 8` would split two), and
+  `31, 59, 71` must then split in `E_b`. A field in which five does not split does nothing: `ℚ(√5, √2)`
+  (`2` is not a square modulo five) has a single five-adic place, of local degree `4`, its whole degree.
 - For `F = ℚ(ζ₅)`, which has no imaginary quadratic subfield, the imaginary quadratic composita are
   required to reach condition (i) of §5.1.
 

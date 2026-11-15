@@ -369,7 +369,7 @@
      ],
      "locator": {
       "source": "CaptainSude26",
-      "where": "Lemma 3.1, line 187"
+      "where": "Lemma 3.1 and its proof, lines 187-192 (basis e, h, f and the action of Ad(U)); proof of Lemma 3.2, line 224 (trace form); proof of Lemma 3.3, line 234 (vanishing of invariants over F5)"
      },
      "prerequisites": [
       "roadmap:ArithmeticGaloisRepresentations §7.2",
@@ -966,7 +966,7 @@
      "id": "6.1",
      "kind": "theorem",
      "name": "protected_solvable_preparation",
-     "statement": "F CM with ζ5 ∈ F, ρ, π satisfying CN23 Theorem 5.2 (1)-(3),(5) at p = 5 with ρbar(G_F) ≅ SL₂(F5), P nonempty with: ρbar protected, ρ(I_v) unipotent, π_v^{Iw} ≠ 0, ρ and π unramified at v^c. There is a finite solvable Galois CM F'/F, disjoint from the field of ρbar, in which every place of P ∪ P^c of odd residue characteristic splits completely and every place of P ∪ P^c above 2 has ramification index dividing 4, such that the base-changed data satisfy 5.1 and the hypotheses of 5.4. Route: the preparation of CrystallineLocalGlobalCompatibilityCM §9.11, whose 5-adic degree condition comes from a composite with a totally real Galois E/Q of degree 8 with solvable group, disjoint from the fields already used, with 5 and the primes below the test places split completely (PotentialAutomorphyInfrastructure §2.5 over Q, or the multiquadratic field of CaptainSude26), taken before the three imaginary quadratic composita: each 5-adic local degree of the totally real subfield is then at most 1/8 of its degree, no later extension raises the ratio, and omitting two 5-adic places leaves at least 3/4, giving (ii) of 5.1. Additions at P: trivial prescribed completions below P, the rational primes below P split completely in E, and the odd primes below P required to split in each of the three imaginary quadratic fields of ACC23 §6.5.12.",
+     "statement": "F CM with ζ5 ∈ F, ρ, π satisfying CN23 Theorem 5.2 (1)-(3),(5) at p = 5 with ρbar(G_F) ≅ SL₂(F5), P nonempty with: ρbar protected, ρ(I_v) unipotent, π_v^{Iw} ≠ 0, ρ and π unramified at v^c. There is a finite solvable Galois CM F'/F, disjoint from the field of ρbar, in which every place of P ∪ P^c of odd residue characteristic splits completely and every place of P ∪ P^c above 2 has ramification index dividing 4, such that the base-changed data satisfy 5.1 and the hypotheses of 5.4. Route: the preparation of CrystallineLocalGlobalCompatibilityCM §9.11, whose 5-adic degree condition comes from the composite F₁E of the CM field F₁ reached before this step with a totally real Galois E/Q of degree 8 with solvable group, linearly disjoint from a finite Galois extension of Q containing F₁ and the field of ρbar, in which 5 and every rational prime under a test place split completely (PotentialAutomorphyInfrastructure §2.5 over Q, or the multiquadratic field of CaptainSude26), taken before the three imaginary quadratic composita. Then [F₁⁺E:Q] = 8[F₁⁺:Q] and every 5-adic completion of F₁⁺E equals one of F₁⁺, so has degree ≤ [F₁⁺E:Q]/8; as F₁⁺E ⊆ F'⁺ and [F'⁺_{w'}:(F₁⁺E)_w] ≤ [F'⁺:F₁⁺E], every 5-adic local degree of F'⁺ is ≤ [F'⁺:Q]/8, so F'⁺ has at least eight 5-adic places and removing any two leaves a sum ≥ (3/4)[F'⁺:Q] > [F'⁺:Q]/2, the degree half of (ii) of 5.1. Additions at P: trivial prescribed completions below P, the rational primes below P split completely in E, and the odd primes below P required to split in each of the three imaginary quadratic fields of ACC23 §6.5.12.",
      "hypotheses": [
       "F CM, ζ5 ∈ F",
       "image SL₂(F5)",
@@ -1012,7 +1012,7 @@
       {
        "name": "prep_degree_step",
        "kind": "computation",
-       "statement": "F = Q(ζ5): F⁺ = Q(√5) has one 5-adic place, of local degree 2 = [F⁺:Q], so (ii) of 5.1 fails. E = Q(√31, √59, √71) is totally real of degree 8; 31 ≡ 1, 59 ≡ 4, 71 ≡ 1 mod 5 and 31 ≡ 9, 59 ≡ 4, 71 ≡ 5 mod 11 are nonzero squares, so 5 and 11 split completely in E; F⁺E has degree 16 and eight 5-adic places of local degree 2, and omitting two leaves 12 > 8; residue fields stay F5, so the residue half of (ii) needs the prescribed completions. 2 ramifies in E (31 ≡ 59 ≡ 71 ≡ 3 mod 4), so this E serves only when no place of P lies above 2, and 31, 59, 71 must split in E_b. Non-example: Q(√5, √2) has a single 5-adic place, of local degree 4."
+       "statement": "F = Q(ζ5), with F₁ = F: F₁⁺ = Q(√5) has one 5-adic place, of local degree 2 = [F₁⁺:Q], so (ii) of 5.1 fails. E = Q(√31, √59, √71) is totally real of degree 8; 31 ≡ 1, 59 ≡ 4, 71 ≡ 1 mod 5 and 31 ≡ 9, 59 ≡ 4, 71 ≡ 5 mod 11 are nonzero squares, so 5 and 11 split completely in E; F₁⁺E has degree 16 and eight 5-adic places of local degree 2 = 16/8, and omitting two leaves 12 = (3/4)·16 > 8; residue fields stay F5, so the residue half of (ii) needs the prescribed completions. 2 ramifies in E (31 ≡ 59 ≡ 71 ≡ 3 mod 4), so this E serves only when no place of P lies above 2, and 31, 59, 71 must split in E_b. Non-example: Q(√5, √2) has a single 5-adic place, of local degree 4."
       },
       {
        "name": "prep_Qzeta5",
@@ -1024,7 +1024,7 @@
     {
      "id": "6.2",
      "kind": "theorem",
-     "name": "steinberg_protected_lifting",
+     "name": "protected_lifting_at_five",
      "statement": "F CM, ρ : G_F → GL₂(Q̄5) satisfying CN23 Theorem 5.2 (1),(2),(3),(5) at p = 5. If either (4) holds, or ζ5 ∈ F and there is a nonempty finite set P of places v ∤ 5 with ρbar(I_v) nontrivial unipotent, ρ(I_v) unipotent, π_v^{Iw} ≠ 0, and ρ, π unramified at v^c, then ρ ≅ r_ι(Π) for a cuspidal regular algebraic weight-zero Π of PGL₂(𝔸_F).",
      "hypotheses": [
       "F CM",
