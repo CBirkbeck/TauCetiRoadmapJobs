@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PerfectoidQuotients~3",
+  "head": "6fb01ee87093d98caa151bc21e90dd0f3d05c1f3",
+  "pr": 1042,
+  "folder": "PerfectoidQuotients",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 40 changed lines since a3fe4b4. Both previous findings (R01 Part II layer numbering, R02 backticked API names) are repaired and no repair introduced a problem; no other roadmap cites a removed name. The folder's files have no finding. Two P3 findings, both in the pull request description, written for the first head: it says the Lean states real-bodied definitions and theorems (the head has one theorem and no definition), and that red-team passes are to follow (four are on the branch). Checked: the worker's gate at 6fb01ee passes every check; depcheck 245 roadmaps, 2212 edges, 0 problems; lake env lean on Suggested.lean gives sorry as the only warning; adversarial rows computed for the five changed passages and the Lean theorem; seeded targets 1.3 and 1.4 checked against Bhatt's direct summand paper (Notation 2.1, Definition 2.2, footnote 6, Theorem 2.3, p.4); nine cross-roadmap citations resolved on main or at open heads; title and summary block agree with the head.",
+  "text": "0851087ed5a36fc6",
+  "carried": {
+   "from": "6fb01ee87093d98caa151bc21e90dd0f3d05c1f3",
+   "head": "46c693863f509f6fac61641348e2ae6bbe33facd",
+   "findings": 2,
+   "lines": 16,
+   "folders": [
+    "PerfectoidQuotients"
+   ],
+   "outside": true
+  }
+ }
+}
