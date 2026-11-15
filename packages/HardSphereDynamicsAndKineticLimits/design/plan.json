@@ -1461,7 +1461,7 @@
      ],
      "locator": {
       "source": "GST2013",
-      "where": "(4.3.5) lines 1138–1140; DengHaniMa2024 (1.5) lines 175–178"
+      "where": "(4.3.5) lines 1138–1140 (the solution operator f ↦ f(Ψ(−t, ·)) only); DengHaniMa2024 (1.5) lines 175–178 (the flow operator only); the isometry and strong continuity on Lp are proved here and stated in neither source"
      },
      "prerequisites": [
       "target:7.1",
@@ -1577,7 +1577,7 @@
      ],
      "locator": {
       "source": "BGSS2023",
-      "where": "(1.1.3)–(1.1.4) lines 145–157; GST2013 lines 1138–1140; DengHaniMa2024 (1.10) lines 233–234"
+      "where": "(1.1.3)–(1.1.4) lines 145–157 (the evolution of the density); GST2013 (4.3.5) lines 1138–1140 (the solution operator); DengHaniMa2024 (1.9)–(1.10) lines 224–234 (the density of the law at time t, i.e. the duality for indicators, on Euclidean space); the Lp identities, symmetry and group law are proved here"
      },
      "prerequisites": [
       "target:7.1",
@@ -2068,6 +2068,11 @@
        "statement": "ε = 0, ∫ f⁰ = 1: F_n(0) = (f⁰)^{⊗n}."
       },
       {
+       "name": "factorial_moment",
+       "kind": "computation",
+       "statement": "h = 1_B ⊗ 1_B: the injective sum is N(B)(N(B) − 1), so E[N(B)(N(B) − 1)] = μ² ∫_{B²} F_2(t); ε = 0, t = 0, μ = 2, ∫ f⁰ = 1, ∫_B f⁰ = 1/2: N(B) Poisson(1), both sides 1; summing over all pairs gives E[N(B)²] = 2."
+      },
+      {
        "name": "stationary",
        "kind": "characterisation",
        "statement": "For the invariant measure of §9.4, F_n(t) is independent of t."
@@ -2314,9 +2319,10 @@
      "id": "10.4",
      "kind": "definition",
      "name": "HardSphere.LanfordStatement",
-     "statement": "Proposition on 𝕋^d, d ≥ 2: ∀ C₀ ≥ 1, β₀ > 0, ∃ T₀ > 0, ∀ continuous probability density f⁰ with f⁰ ≤ C₀ e^{−β₀|v|²/2} and |f⁰(x,v) − f⁰(y,v)| ≤ C₀‖x − y‖e^{−β₀|v|²/2}, ∃ mild solution f on [0, T₀] with datum f⁰ such that, with μ_ε = ε^{−(d−1)}, for all t ∈ [0, T₀]: ∫ F^ε_n(t) g → ∫ f(t)^{⊗n} g for bounded continuous g; F^{ε_k}_n(t) → f(t)^{⊗n} a.e. along every sequence ε_k → 0⁺; ess sup_K |F^ε_1(t) − f(t)| → 0 for compact K.",
+     "statement": "Proposition on 𝕋^d, d ≥ 2, with its quotient norm and the measure of 1.3, for a structure [FlatPositionSpace d 𝕋^d] of 1.1 given as an instance argument together with the properness of 𝕋^d (the instance of 1.3 is not declared in Suggested.lean, its axioms being theorems of 1.3; every structure gives the same proposition): ∀ C₀ ≥ 1, β₀ > 0, ∃ T₀ > 0, ∀ continuous probability density f⁰ with f⁰ ≤ C₀ e^{−β₀|v|²/2} and |f⁰(x,v) − f⁰(y,v)| ≤ C₀‖x − y‖e^{−β₀|v|²/2}, ∃ mild solution f on [0, T₀] with datum f⁰ such that, with μ_ε = ε^{−(d−1)}, for all t ∈ [0, T₀]: ∫ F^ε_n(t) g → ∫ f(t)^{⊗n} g for bounded continuous g; F^{ε_k}_n(t) → f(t)^{⊗n} a.e. along every sequence ε_k → 0⁺; ess sup_K |F^ε_1(t) − f(t)| → 0 for compact K.",
      "hypotheses": [
-      "d ≥ 2"
+      "d ≥ 2",
+      "instance arguments: ProperSpace 𝕋^d and FlatPositionSpace d 𝕋^d"
      ],
      "locator": {
       "source": "BGSS2023",
@@ -2350,6 +2356,11 @@
        "name": "filter_vs_sequence",
        "kind": "non-example",
        "statement": "An a.e. conclusion along the filter ε → 0⁺ would depend on representatives of uncountably many functions; sequences are used."
+      },
+      {
+       "name": "rotated_cover",
+       "kind": "characterisation",
+       "statement": "Every structure of 1.1 on 𝕋^d is π ∘ B with B orthogonal and radius ρ' ≤ 1/2 (lift of the 1-Lipschitz cover is linear of norm ≤ 1, |det B| = 1 from the local-measure axiom, injectivity fails at B⁻¹(±e_1/2)); the flow, correlation functions and mild solutions for π ∘ B are those of π conjugated by (X, V) ↦ (X, BV), so the proposition for (π ∘ B, f⁰) is that for (π, f⁰(x, B⁻¹v)), with the same bounds. d = 2, quarter turn: π(B(0.3, 0)) = π(0, 0.3), norm 0.3, lift (0.3, 0); at radius 0.6, (0, ±0.5) both map to π(0.5, 0)."
       }
      ]
     },
@@ -2357,14 +2368,14 @@
      "id": "10.5",
      "kind": "theorem",
      "name": "HardSphere.tendsto_empirical_of_correlation",
-     "statement": "On a flat position space with f⁰ ≥ 0 integrable, t ∈ ℝ, μ_ε → ∞ as ε → 0⁺ and f integrable, with P_ε = HardSphere.grandCanonical ε μ_ε f⁰, F^ε_n(t) = HardSphere.correlation ε μ_ε f⁰ n t and π^ε_t the empirical measure with μ = μ_ε: if ∫ F^ε_1(t) g → ∫ f g and ∫ F^ε_2(t) g₂ → ∫ f ⊗ f g₂ for all bounded continuous g, g₂, then P_ε(|π^ε_t(h) − ∫ f h| ≥ δ) → 0 for all bounded continuous h and δ > 0; corollary HardSphere.LanfordStatement.tendsto_empirical for d ≥ 2 under HardSphere.LanfordStatement d.",
+     "statement": "On a flat position space with f⁰ ≥ 0 integrable, t ∈ ℝ, μ_ε → ∞ as ε → 0⁺ and f integrable, with P_ε = HardSphere.grandCanonical ε μ_ε f⁰, F^ε_n(t) = HardSphere.correlation ε μ_ε f⁰ n t and π^ε_t the empirical measure with μ = μ_ε: if ∫ F^ε_1(t) g → ∫ f g and ∫ F^ε_2(t) g₂ → ∫ f ⊗ f g₂ for all bounded continuous g, g₂, then P_ε(|π^ε_t(h) − ∫ f h| ≥ δ) → 0 for all bounded continuous h and δ > 0; corollary HardSphere.LanfordStatement.tendsto_empirical for d ≥ 2, for a structure [FlatPositionSpace d 𝕋^d] given as an instance argument, under HardSphere.LanfordStatement d.",
      "hypotheses": [
       "f⁰ ≥ 0 integrable",
       "μ_ε → ∞",
       "f integrable",
       "δ > 0",
       "h bounded continuous",
-      "corollary: d ≥ 2 and HardSphere.LanfordStatement d"
+      "corollary: d ≥ 2, instance arguments ProperSpace 𝕋^d and FlatPositionSpace d 𝕋^d as in 10.4, and HardSphere.LanfordStatement d for that structure"
      ],
      "locator": {
       "source": "BGSS2023",
@@ -2384,7 +2395,7 @@
       {
        "name": "HardSphere.LanfordStatement.tendsto_empirical",
        "role": "corollary",
-       "statement": "For d ≥ 2 and under HardSphere.LanfordStatement d: for all C₀ ≥ 1 and β₀ > 0 there is T₀ > 0 such that for every continuous probability density f⁰ on 𝕋^d × E with the two bounds of 10.4 for C₀, β₀ there is a mild solution f on [0, T₀] with datum f⁰ such that, with μ_ε = ε^{−(d−1)}, P_ε = HardSphere.grandCanonical ε μ_ε f⁰ and π^ε_t the empirical measure with μ = μ_ε, for every t ∈ [0, T₀], every bounded continuous h on 𝕋^d × E and every δ > 0, P_ε(|π^ε_t(h) − ∫ f(t) h| ≥ δ) → 0 as ε → 0⁺."
+       "statement": "For d ≥ 2, a structure [FlatPositionSpace d 𝕋^d] with the properness of 𝕋^d as instance arguments (10.4), and under HardSphere.LanfordStatement d for that structure: for all C₀ ≥ 1 and β₀ > 0 there is T₀ > 0 such that for every continuous probability density f⁰ on 𝕋^d × E with the two bounds of 10.4 for C₀, β₀ there is a mild solution f on [0, T₀] with datum f⁰ such that, with μ_ε = ε^{−(d−1)}, P_ε = HardSphere.grandCanonical ε μ_ε f⁰ and π^ε_t the empirical measure with μ = μ_ε, for every t ∈ [0, T₀], every bounded continuous h on 𝕋^d × E and every δ > 0, P_ε(|π^ε_t(h) − ∫ f(t) h| ≥ δ) → 0 as ε → 0⁺."
       }
      ],
      "tests": [
