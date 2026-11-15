@@ -34,8 +34,8 @@ Stated here:
 
 Headline theorems that are not stated:
 
-* degree doubling (README §5.3) and the leveraging contradiction (README §5.5) are the steps of
-  the proof by contradiction of `R₂N = M₂N`: the first assumes `R₂N ≠ M₂N`, which
+* degree doubling (README §5.3) and its contradiction with the rank bound (README §5.5) are the
+  steps of the proof by contradiction of `R₂N = M₂N`: the first assumes `R₂N ≠ M₂N`, which
   `boundedDenominatorSpan_eq_congruenceSpan` refutes, and the second concludes that equality, so
   over these carriers both would follow from it and test nothing;
 * algebraicity and congruence of integral solutions of three-point differential equations with

@@ -4,7 +4,7 @@
 
 ## Scope and ownership
 
-This roadmap owns: the cusp-germ characterization of weak forms on finite-index subgroups (Layer 1), bounded denominators of a Laurent germ, signed cusp widths and the geometric level, Wohlfahrt's theorem with its sign hypothesis; the η-quotient presentation of the modular λ function with its `Γ(2)`-invariance, the λ covering theorem with its deck group, the integral λ reparametrization, the level-two function ring, the Kummer coordinate, and the integral series form of Jacobi's hypergeometric identity with its character, differential equation and monodromy (Layer 2); the fields `M₂N` and `R₂N`, their holonomy embedding and rank bounds (Layer 3); the nonabelian Ihara lemma, triple surjectivity and the generation identity (Layer 4); leveraging and degree doubling (Layer 5); the unbounded denominators theorem, its rational and algebraic-integer forms, Galois conjugation of weak forms with algebraic coefficients, and the root tests (Layer 6); the vector-valued and differential-equation applications (Layer 7); weakly holomorphic quasimodular forms and deficient places (Layer 8); and the cuspidal smooth model of `X(N)` with its finite-cover criterion and fundamental group (Layer 9). The modular λ covering `ℍ/Γ(2) ≅ ℂ ∖ {0, 1}` is assigned to the ModularForms family by ConformalMapping's relationship specification and by BelyiMaps' boundary section; ModularForms itself does not build it, and it is built here, in Layer 2.
+This roadmap owns: the cusp-germ characterization of weak forms on finite-index subgroups (Layer 1), bounded denominators of a Laurent germ, signed cusp widths and the geometric level, Wohlfahrt's theorem with its sign hypothesis; the η-quotient presentation of the modular λ function with its `Γ(2)`-invariance, the λ covering theorem with its deck group, the integral λ reparametrization, the level-two function ring, the Kummer coordinate, and the integral series form of Jacobi's hypergeometric identity with its character, differential equation and monodromy (Layer 2); the fields `M₂N` and `R₂N`, their holonomy embedding and rank bounds (Layer 3); the nonabelian Ihara lemma, triple surjectivity and the generation identity (Layer 4); degree doubling under p-scaling and its contradiction with the rank bound (Layer 5); the unbounded denominators theorem, its rational and algebraic-integer forms, Galois conjugation of weak forms with algebraic coefficients, and the root tests (Layer 6); the vector-valued and differential-equation applications (Layer 7); weakly holomorphic quasimodular forms and deficient places (Layer 8); and the cuspidal smooth model of `X(N)` with its finite-cover criterion and fundamental group (Layer 9). The modular λ covering `ℍ/Γ(2) ≅ ℂ ∖ {0, 1}` is assigned to the ModularForms family by ConformalMapping's relationship specification and by BelyiMaps' boundary section; ModularForms itself does not build it, and it is built here, in Layer 2.
 
 The following are imported and are not planned again.
 
@@ -21,7 +21,7 @@ The following are imported and are not planned again.
 - GeometryOfNumbersAndQuadraticArithmetic §4.3 owns the analytic `q`-Pochhammer product and the Jacobi triple product.
 - SpecialFunctionsTheta owns the theta constants `θ₂, θ₃, θ₄` and the modular function λ: the theta-constant products (§4.2), Jacobi's quartic identity `θ₃⁴ = θ₂⁴ + θ₄⁴` (§2.2); `λ = k² = (θ₂/θ₃)⁴` and `1 − λ = (θ₄/θ₃)⁴` with holomorphy, `λ ∉ {0, 1}`, `λ(τ + 2) = λ(τ)`, `λ(τ + 1) = λ(τ)/(λ(τ) − 1)`, `λ(−1/τ) = 1 − λ(τ)` and the behaviour of `λ(it)` for `t > 0` (§6.1); the bijection of `{τ ∈ ℍ : |Re τ| < 1, |τ − 1/2| > 1/2, |τ + 1/2| > 1/2}` onto `ℂ ∖ ((−∞, 0] ∪ [1, ∞))` with its boundary and cusp values (§6.2); and `F(1/2, 1/2; 1; λ(τ)) = θ₃(τ)²` there (§6.4). Kept here, each in one clause: the η-quotient presentation of λ, its integral `q`-product and its identification with that λ (§2.1); `Γ(2)`-invariance, derived from the imported laws (§2.1); the covering theorem with its deck group and the finite étale covers of `Y(2)` (§2.2), which SpecialFunctionsTheta does not state; and the integral series form `K₀(λ/16) = θ₃²` with `K₀ = Σ C(2n, n)² xⁿ`, the character `χ₋₄(d)`, the differential equation and the monodromy (§2.6).
 
-The cohomological content of CDT §4.5 (and Lemma 4.5.12, whose statement the leveraging argument does not use) belongs to ModularCurvesPartII §15.9. The questions of CDT §7.4 on logarithmic vector-valued forms, archimedean deficient places and finiteness of deficient-place sets are not theorems and are not stated.
+The cohomological content of CDT §4.5 (and Lemma 4.5.12, whose statement the degree-doubling argument of Layer 5 does not use) belongs to ModularCurvesPartII §15.9. The questions of CDT §7.4 on logarithmic vector-valued forms, archimedean deficient places and finiteness of deficient-place sets are not theorems and are not stated.
 
 Targets of this roadmap are also cited by their former numbers `Wk.n`. A former number `Wk.n` absent from the table below is §k.n here; the others moved as follows.
 
@@ -44,6 +44,7 @@ Targets of this roadmap are also cited by their former numbers `Wk.n`. A former 
 - Derivatives: `θ_q = q d/dq = (1/πi) d/dτ` and `D = Q d/dQ = (1/2πi) d/dτ` (Mathlib `Derivative.normalizedDerivOfComplex`), so `θ_q = 2D`; `DΔ = E₂Δ` and `θ_qΔ = 2E₂Δ`.
 - Bounded denominators means one nonzero scalar clears every coefficient; it is stronger than coefficients in a ring with finitely many primes inverted.
 - Matrices act on `ℍ` on the left. The rational matrix `A = diag(p, 1)` acts by conjugation `g ↦ AgA⁻¹` in `GL₂(ℚ)`; witness: `[[1, 0], [Np, 1]] ↦ [[1, 0], [N, 1]]` and `[[1, 1], [0, 1]] ↦ [[1, p], [0, 1]]`.
+- p-scaling: for a prime p, the p-scaling of a function f on `ℍ` is `τ ↦ f(pτ) = f(Aτ)`, and the p-scaling of a subgroup H of `SL₂(ℤ)` is `H_A = A⁻¹HA ∩ SL₂(ℤ)` (§1.7). If H fixes a weight-zero f, then `H_A` fixes its p-scaling: for `γ′ = A⁻¹γA` with `γ ∈ H`, `f(Aγ′τ) = f(γAτ) = f(Aτ)`. Witness at `p = 2`, `H = Γ(2)`: `T ∈ H_A`, since `ATA⁻¹ = T²`, and `f(2(τ + 1)) = f(2τ + 2) = f(2τ)`.
 - The Cayley coordinate is ConformalMappingPartII's `C(z) = i(1 + z)/(1 − z)`, with `C(0) = i`, `C(1/2) = 3i`, and `z → 1` corresponding to the cusp `∞`.
 - Vector-valued forms use CDT's convention `F ∣_k γ = ρ(γ) F`, that is `F(γτ) = (cτ + d)^k ρ(γ) F(τ)`, with `ρ` a homomorphism `SL₂(ℤ) → GL_n(ℂ)` trivial on `−I`.
 - Locators cite the published article CDT (J. Amer. Math. Soc. 38 (2025)) by journal page; Mathlib and Tau Ceti declarations are those at the pins of this repository.
@@ -74,6 +75,7 @@ Targets of this roadmap are also cited by their former numbers `Wk.n`. A former 
 - `CongruenceSubgroup.Gamma_le_Gamma_of_dvd` (`TauCeti/NumberTheory/ModularForms/CongruenceSubgroups/Basic.lean`): `M ∣ N` gives `Γ(N) ≤ Γ(M)`.
 - `TauCeti.char_neg_one_of_modFormCharSpace_ne_bot` (`TauCeti/NumberTheory/ModularForms/Parity.lean`): a nonzero character space forces `χ(−1) = (−1)^k`.
 - `TauCeti.tprod_one_add_pow_mul_tprod_one_sub_pow_odd` (`TauCeti/Analysis/SpecialFunctions/QPochhammer.lean`): Euler's identity `∏_{n≥1}(1 + qⁿ) · ∏_{n≥0}(1 − q^(2n+1)) = 1` for `‖q‖ < 1`.
+- `TauCeti.qExpansion_nat_mul` (`TauCeti/NumberTheory/ModularForms/QExpansion/Order.lean`): for `h > 0`, `m ≥ 1` and g holomorphic on `ℍ`, h-periodic and bounded at `∞`, the expansion `UpperHalfPlane.qExpansion (m·h) g` is `UpperHalfPlane.qExpansion h g` with its variable replaced by its m-th power. Assumed only with these hypotheses: without holomorphy the law fails (Checks of §1.2).
 - `TauCeti.UpperHalfPlane.laurentQExpansion`, `TauCeti.UpperHalfPlane.laurentQExpansion_of_analyticAt`, `TauCeti.UpperHalfPlane.laurentQExpansion_mul`, `TauCeti.UpperHalfPlane.laurentQExpansion_inv`, `TauCeti.UpperHalfPlane.orderTop_laurentQExpansion`, `TauCeti.UpperHalfPlane.laurentQExpansion_eq_laurentQExpansion_iff` (`TauCeti/NumberTheory/ModularForms/QExpansion/Laurent.lean`): for `h > 0` and f whose cusp function in `exp(2πiτ/h)` is meromorphic at `0`, the Laurent series `TauCeti.UpperHalfPlane.laurentQExpansion h f` in that variable, equal to `UpperHalfPlane.qExpansion h f` when the cusp function is analytic at `0`, multiplicative and compatible with inverses, of order the order at `0` of the cusp function, and determining an h-periodic f near `∞`. Assumed: it is applied only to h-periodic functions meromorphic at `∞`, which for weak forms on finite-index subgroups is §1.1; on other functions its value is not a Laurent expansion.
 
 ### From TauCetiRoadmap.ModularForms
@@ -175,14 +177,14 @@ API:
 
 For a number field `K ⊆ ℂ` and a Laurent series `a(t) = Σ_{n≥n₀} a_n tⁿ ∈ K((t))`, say that a has bounded denominators when there is a nonzero `d ∈ 𝓞_K` with `d·a_n ∈ 𝓞_K` for every n, including the finitely many negative n. For `K = ℚ` take an integer `D ≥ 1`. A periodic function `f : ℍ → ℂ` with period `h ≥ 1` and a finite principal part at `∞` has bounded denominators at `∞` when its Laurent expansion in `exp(2πiτ/h)` does; for f bounded at `∞` that expansion is `UpperHalfPlane.qExpansion h f` (CDT, Theorem 1.0.1, p.627; Definition 4.2.1(2), p.655; Remarks 6.3.1–6.3.2, pp.685–686).
 
-*Needs:* Mathlib `UpperHalfPlane.qExpansion`, `NumberField.RingOfIntegers`; §1.1.
+*Needs:* Mathlib `UpperHalfPlane.qExpansion`, `NumberField.RingOfIntegers`; Tau Ceti `TauCeti.qExpansion_nat_mul`; §1.1.
 
 API:
 
 - A Laurent series has bounded denominators exactly when some nonzero scalar of `𝓞_K` maps all its coefficients into `𝓞_K`.
 - Sums and products of series with bounded denominators have bounded denominators, cleared by the product of the two scalars.
 - The substitution `t ↦ t^m`, `m ≥ 1`, preserves and reflects bounded denominators.
-- For an h-periodic function bounded at `∞`, the coefficients are those of Mathlib's `UpperHalfPlane.qExpansion h`, and replacing h by a multiple `mh` inserts zeros (`a_n` becomes the coefficient of `t^(mn)`).
+- For a holomorphic h-periodic function bounded at `∞`, the coefficients are those of Mathlib's `UpperHalfPlane.qExpansion h`; replacing h by a multiple `mh` inserts zeros (`a_n` becomes the coefficient of `t^(mn)`), which is Tau Ceti's `TauCeti.qExpansion_nat_mul`. The same law for the Laurent expansion `TauCeti.UpperHalfPlane.laurentQExpansion` of a holomorphic h-periodic function with a finite principal part at `∞` is proved here, by multiplying with a power of the variable that clears the pole.
 - If `a ∈ 1 + tℚ[[t]]` has bounded denominators and `aⁿ ∈ ℤ[[t]]` for some `n ≥ 1`, then `a ∈ ℤ[[t]]`.
 - An integral power series with constant term `±1` has an integral inverse.
 
@@ -195,6 +197,7 @@ API:
 - `Σ tⁿ/n!` has unbounded denominators at every prime.
 - `(1 − 16t)^(1/16)` has `t²`-coefficient `−15/2`; its 16th power is integral, so by the root property it has unbounded denominators.
 - The period must be stated separately: `exp(2πiτ)` has expansion `t` for `h = 1` and `t²` for `h = 2`; Taylor coefficients alone do not identify a Fourier germ.
+- Zero insertion needs holomorphy. With `Q = exp(2πiτ)`, the function `f = Q + |Q|²Q̄` is 1-periodic, bounded and not holomorphic. Near `0` its cusp function at period 1 is `w + |w|²w̄`, with complex derivative 1 at `0` and none at `w ≠ 0`; Mathlib's iterated derivatives are 0 where no derivative exists, so `UpperHalfPlane.qExpansion 1 f` is `t`. At period 2 the cusp function is `w² + |w|⁴w̄²`, with derivative 0 at `0` and none at `w ≠ 0`, so `UpperHalfPlane.qExpansion 2 f` is `0`, not `t²`.
 
 ### 1.3 Signed cusp widths and the geometric level
 
@@ -267,7 +270,7 @@ Let H have finite index, contain `−I`, and have `L(H) = N`. For a prime p and 
 
 ### Dependencies
 
-QSeriesPartitionsAndMockModularForms §8.1; FuchsianOrbifolds Layer 3; Mathlib's modular-form, Δ, `q`-expansion and congruence-subgroup API, `MeromorphicAt`, `NumberField.RingOfIntegers` and `Subgroup.normalCore`; Tau Ceti cusp widths and `CongruenceSubgroup.Gamma_le_Gamma_of_dvd`; KSV10 for §1.8.
+QSeriesPartitionsAndMockModularForms §8.1; FuchsianOrbifolds Layer 3; Mathlib's modular-form, Δ, `q`-expansion and congruence-subgroup API, `MeromorphicAt`, `NumberField.RingOfIntegers` and `Subgroup.normalCore`; Tau Ceti cusp widths, `TauCeti.qExpansion_nat_mul` and `CongruenceSubgroup.Gamma_le_Gamma_of_dvd`; KSV10 for §1.8.
 
 ## Layer 2: The modular λ coordinate
 
@@ -487,7 +490,7 @@ Layers 1–2; Tau Ceti Laurent `q`-expansions (`TauCeti.UpperHalfPlane.laurentQE
 
 ## Layer 4: The nonabelian Ihara lemma and the generation identity
 
-This layer proves the group theory behind leveraging: the nonabelian Ihara lemma, its enhancement by the Borel reduction modulo p, and the generation identity, from the amalgam, the congruence subgroup property and the enhanced Ihara kernel bound of ModularCurvesPartII Layer 15.
+This layer proves the group theory behind the degree doubling of Layer 5: the nonabelian Ihara lemma, its enhancement by the Borel reduction modulo p, and the generation identity, from the amalgam, the congruence subgroup property and the enhanced Ihara kernel bound of ModularCurvesPartII Layer 15.
 
 Throughout, `N ≥ 3`, p is a prime not dividing N, `A = diag(p, 1)`, `D = Γ(N) ∩ Γ₀(p)`, and `c(g) = AgA⁻¹` for `g ∈ D`, which lies in `Γ(N)` and has upper-right entry divisible by p.
 
@@ -520,13 +523,13 @@ With G, p, A as in §4.2, the subgroup generated by `−I`, `G ∩ Γ(Np)` and `
 - If `G ⊇ Γ(N)`, then S is trivial and §4.1 is the statement that D is nonempty.
 - At `N = 3`, `p = 2`: reduction of `Γ(3)` modulo 2 is `SL₂(𝔽₂)`, and `D = Γ(3) ∩ Γ₀(2)` has index 3 in `Γ(3)`, the number of neighbours of a vertex of the tree of `SL₂(ℚ₂)`.
 - `c([[1, 0], [6, 1]]) = [[1, 0], [3, 1]]` for `N = 3`, `p = 2`: the conjugate lies in `Γ(3)` but not in `Γ₀(2)`.
-- For `N ≤ 2` the amalgam of ModularCurvesPartII §15.2 is not available; leveraging uses only levels `2N ≥ 4` (§5.2).
+- For `N ≤ 2` the amalgam of ModularCurvesPartII §15.2 is not available; Layer 5 uses only levels `2N ≥ 4` (§5.2).
 
 ### Dependencies
 
 Layer 1 (§§1.3, 1.8); ModularCurvesPartII §§15.2, 15.3, 15.5, 15.10; Mathlib Goursat and congruence-subgroup API.
 
-## Layer 5: Leveraging and degree doubling
+## Layer 5: Degree doubling under p-scaling
 
 This layer proves that p-scaling a noncongruence element of `R₂N` produces an element outside the compositum of `R₂N` and `M₂Np`, so that `[R₂N : M₂N]` at least doubles at each new prime, and that this contradicts the cubic-logarithmic bound of §3.8.
 
@@ -562,7 +565,7 @@ For `N > 1`, `[M₂N : ℚ(λ)] = ((2N)³/12) ∏_{p∣2N} (1 − p⁻²) > 4N³
 
 *Needs:* §§2.2, 3.1; ModularCurvesPartII §§5.14, 8.1 and gap:udc-rational-cusp-of-twisted-full-level; FuchsianOrbifolds Layer 5.
 
-### 5.5 Leveraging contradicts the cubic-logarithmic bound
+### 5.5 Degree doubling contradicts the cubic-logarithmic bound
 
 If there is a constant C with `[R₂N : ℚ(λ)] ≤ C N³ log(2N)` for every `N ≥ 1`, then `R₂N = M₂N` for every N (CDT, Proposition 4.3.5 and (4.3.6)–(4.3.7), pp.657–658).
 
@@ -606,7 +609,7 @@ Let `h₀(τ) = λ(τ)/(16 η(τ/2)²)`. It is holomorphic and nowhere zero on `
 
 *Proof sketch.* Multiply by `h₀^k` (§6.2) to reach weight 0 with an integral expansion after a monomial shift, and enlarge the level to a common multiple `2M` of all signed cusp widths, h and 24. The resulting rational, integral germ lies in `R₂M = M₂M` (§6.1), so it is a congruence modular function. Divide by `h₀^k`, which is congruence, and undo the shift.
 
-*Needs:* §§1.3, 3.2, 6.1, 6.2; Mathlib `UpperHalfPlane.qExpansion`, `UpperHalfPlane.IsBoundedAtImInfty`, `CongruenceSubgroup.IsCongruenceSubgroup`.
+*Needs:* §§1.2, 1.3, 3.2, 6.1, 6.2; Mathlib `UpperHalfPlane.qExpansion`, `UpperHalfPlane.IsBoundedAtImInfty`, `CongruenceSubgroup.IsCongruenceSubgroup`; Tau Ceti `TauCeti.qExpansion_nat_mul`.
 
 API:
 
@@ -675,7 +678,7 @@ For `n ≥ 1`, the Fermat cover `uⁿ + vⁿ = 1` over the λ-line with `λ = u�
 
 ### Dependencies
 
-Layers 1–5; Tau Ceti `TauCeti.UpperHalfPlane.laurentQExpansion`; ConformalMappingPartII §§5.5, 5.8, 9.19; QSeriesPartitionsAndMockModularForms §5.2; AlgebraicModularFormsAndSerreWeights §§1.5, 2.9 (Layers R15.1–R15.2); FuchsianOrbifolds Layers 2, 5, 6; BelyiMaps Layers 6, 9; ModularForms, Worked examples; Mathlib η, Δ, `q`-expansion, boundedness-at-`∞` and congruence-subgroup API, `IsAlgebraic` and `IntermediateField`.
+Layers 1–5; Tau Ceti `TauCeti.UpperHalfPlane.laurentQExpansion` and `TauCeti.qExpansion_nat_mul`; ConformalMappingPartII §§5.5, 5.8, 9.19; QSeriesPartitionsAndMockModularForms §5.2; AlgebraicModularFormsAndSerreWeights §§1.5, 2.9 (Layers R15.1–R15.2); FuchsianOrbifolds Layers 2, 5, 6; BelyiMaps Layers 6, 9; ModularForms, Worked examples; Mathlib η, Δ, `q`-expansion, boundedness-at-`∞` and congruence-subgroup API, `IsAlgebraic` and `IntermediateField`.
 
 ## Layer 7: Differential equations and vector-valued forms
 
@@ -914,13 +917,13 @@ The series `I₁(x) = Σ C(2n, n)² x^(n+1)/(n + 1)` and `I₂(x) = Σ C_n² x^(
 
 Fix a number field K with an embedding `ι : K → ℂ` and a representation ρ as in §7.3. Define `HasCuspidalExpansionOver ι F h a`, for `F : ℍ → ℂⁿ`, a period h and sequences `a_j : ℕ → K`, to hold when `h ≥ 1` and every component `F_j` is h-periodic, bounded as `Im τ → ∞`, and has expansion `Σ_{m≥1} ι(a_{j,m}) exp(2πimτ/h)` in Mathlib's `UpperHalfPlane.qExpansion h`, with no constant term. Let `S_k(ρ; K)` be the K-space of vector-valued forms F of weight k for ρ for which this holds for some h and a. For `h = 2N` the variable is CDT's `t = q^(1/N)`, and an odd h becomes 2h by inserting zeros. A place v of K is deficient for ρ if for some k some component `Σ_{m≥1} a_m t^m` of an element of `S_k(ρ; K)` has `|a_m|_v` unbounded (v finite), or `|a_m|_v/m^((k−1)/2+ε)` unbounded for some `ε > 0` (v archimedean, with the usual modulus, not its square) (CDT, §7.4.8, pp.694–695). CDT takes `K = ℚ`.
 
-*Needs:* §§1.2, 7.3; QSeriesPartitionsAndMockModularForms §8.4a; Mathlib `UpperHalfPlane.qExpansion`, `UpperHalfPlane.IsBoundedAtImInfty`, `NumberField.FinitePlace`, `NumberField.InfinitePlace`.
+*Needs:* §§1.2, 7.3; QSeriesPartitionsAndMockModularForms §8.4a; Mathlib `UpperHalfPlane.qExpansion`, `UpperHalfPlane.IsBoundedAtImInfty`, `NumberField.FinitePlace`, `NumberField.InfinitePlace`; Tau Ceti `TauCeti.qExpansion_nat_mul`.
 
 API of `HasCuspidalExpansionOver`:
 
 - For given F and h the sequences a are unique, since ι is injective and the expansion determines its coefficients.
-- If it holds with period h, it holds with period rh for every `r ≥ 1`, with `a_{j,rm}` the old `a_{j,m}` and zeros elsewhere.
-- If F and G satisfy it for the same k and ρ with periods h and h′, then `ι(c)F + ι(d)G` satisfies it with period `lcm(h, h′)` for all `c, d ∈ K`.
+- If F has holomorphic components, as every vector-valued form has, and it holds with period h, then it holds with period rh for every `r ≥ 1`, with `a_{j,rm}` the old `a_{j,m}` and zeros elsewhere (Tau Ceti `TauCeti.qExpansion_nat_mul`, componentwise). For a non-holomorphic F the law fails (Checks of §1.2).
+- If vector-valued forms F and G of the same weight k for ρ satisfy it with periods h and h′, then `ι(c)F + ι(d)G` satisfies it with period `lcm(h, h′)` for all `c, d ∈ K`.
 - For a vector-valued form it makes every component vanish at every cusp: `F_j ∣[k] g = Σ_l ρ(g)_{jl} F_l` tends to `0` as `Im τ → ∞`.
 
 **Checks** of `HasCuspidalExpansionOver`.
@@ -969,7 +972,7 @@ API of deficiency:
 
 ### Dependencies
 
-Layers 1, 2, 6 and 7; QSeriesPartitionsAndMockModularForms §8.4a; ModularForms Layers 0 and 4; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); AutomorphicGaloisRepresentations §4.2; GeometryOfNumbersAndQuadraticArithmetic §4.3; Mathlib graded ring of modular forms (`ModularForm.instGCommRing`), η, Δ, θ, `q`-expansion, boundedness-at-`∞`, derivative and Eisenstein API, `Algebra.adjoin`, `NumberField.FinitePlace` and `NumberField.InfinitePlace`.
+Layers 1, 2, 6 and 7; QSeriesPartitionsAndMockModularForms §8.4a; ModularForms Layers 0 and 4; AlgebraicModularFormsAndSerreWeights §2.9 (All-prime bounded denominators, Layer R15.2); AutomorphicGaloisRepresentations §4.2; GeometryOfNumbersAndQuadraticArithmetic §4.3; Tau Ceti `TauCeti.qExpansion_nat_mul`; Mathlib graded ring of modular forms (`ModularForm.instGCommRing`), η, Δ, θ, `q`-expansion, boundedness-at-`∞`, derivative and Eisenstein API, `Algebra.adjoin`, `NumberField.FinitePlace` and `NumberField.InfinitePlace`.
 
 ## Layer 9: The arithmetic fundamental group of the cuspidal model
 
@@ -1021,6 +1024,10 @@ For `N ≥ 1`, a number field `K ⊇ ℚ(μ_N)` and every geometric point η of 
 
 Layer 6; ModularCurvesPartII §§5.13, 6.3 and Layer 11, with gap:udc-all-prime-cuspidal-model-of-full-level; EtaleCohomologyFoundations §F.0.2; BelyiMaps Layer 6.
 
+## Downstream consumers
+
+The exports of this roadmap are the unbounded denominators theorem and its algebraic-integer form (§§6.3, 6.6), Galois conjugation of weak forms with algebraic coefficients (§6.5), congruence of integral components of vector-valued forms and Mason's corollary (§§7.11–7.12), and the modular λ covering (§2.2), for roadmaps on noncongruence modular forms, vertex-operator-algebra characters, Belyi covers of modular curves and arithmetic fundamental groups.
+
 ## Worked examples
 
 These cases fix normalizations used across the layers.
@@ -1033,10 +1040,6 @@ These cases fix normalizations used across the layers.
 6. `Δ = q² + ⋯`, `θ_qΔ = 2q² + ⋯`, `E₂Δ = q² + ⋯`. `E₀` and `(1 − 16x)K₀ + 8∫₀^x K₀` have constant term 1; the negated expression fails at the constant term.
 7. With `u = ∏_{m odd}(1 + q^m)^(−24)`, the coefficients of `u^(1/5)` have denominators `5, 25, 125, 625`, while `u^(1/24) = ∏_{m odd}(1 + q^m)^(−1)` is integral; a root of u with bounded denominators is integral, so `−24/n ∈ ℤ`.
 8. With `q = exp(πiτ)`, T sends `h = λ(1 − λ)/16 = q + ⋯` to `−q + ⋯`, so h is not `Γ₀(2)`-invariant; S sends λ to `1 − λ` and fixes h. The invariance group is the theta group `⟨Γ(2), S⟩`.
-
-## Downstream consumers
-
-The exports of this roadmap are the unbounded denominators theorem and its algebraic-integer form (§§6.3, 6.6), Galois conjugation of weak forms with algebraic coefficients (§6.5), congruence of integral components of vector-valued forms and Mason's corollary (§§7.11–7.12), and the modular λ covering (§2.2), for roadmaps on noncongruence modular forms, vertex-operator-algebra characters, Belyi covers of modular curves and arithmetic fundamental groups.
 
 ## References
 
