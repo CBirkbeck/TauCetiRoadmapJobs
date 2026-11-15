@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HeightsRationalPointsAndObstructionsPartII~4",
+  "head": "4a579daab315f3e2f3614f6d2e65b0cca7e8cf6c",
+  "pr": 1821,
+  "folder": "HeightsRationalPointsAndObstructionsPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 12 changed lines since 73d7cae (README Layer 12 only). One P3: the change demotes section 12.3 to a bold paragraph inside 12.2, leaving headings 12.1, 12.2, 12.4, a self-referential intro sentence and two conflicting 'Throughout this subsection' lines (C and Qbar) under one heading; repair text given. Previous review had no finding. Checked: sampled target 12.1 and the statements of 12.2-12.4 against dky-2020 (7 locators, all correct), adversarial rows with computed values for the five touched statements, the pull request title and description against the head (14 claims, none contradicted), gate (all counters 0, build=0 from the worker), depcheck (0 problems), elaboration of Suggested.lean (exit 0, three sorry warnings only), no change outside the folder, overlap and source-independence lines for the changed passages.",
+  "text": "c30c3bd93df696c3",
+  "carried": {
+   "from": "4a579daab315f3e2f3614f6d2e65b0cca7e8cf6c",
+   "head": "7ef1ff6571855abe2c88229e970adad6ca96cdd0",
+   "findings": 1,
+   "lines": 10,
+   "folders": [
+    "HeightsRationalPointsAndObstructionsPartII"
+   ],
+   "outside": true
+  }
+ }
+}
