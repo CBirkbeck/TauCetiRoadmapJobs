@@ -2071,12 +2071,13 @@ in `Q(s, C/t)`, and once `e^{2C}η_C` is small Rouché's theorem gives a zero of
 `Q(s, C/t)` holds no zero of `E(t, ·)` and `e^{2C}η_C` is small: `P > C − 1/2` (with `P = ∞` when `b = 0`), so
 `σ₂/σ₁ ≥ (1 − e^{1−2C})/(1 + e^{1−2C})` and `M` is within `O(e^{1−2C} + η_C)` of a rotation;
 `|a|²w(s) = 1 + O(η_C + e^{2−4C})`; and `|E(t, z) − a e^{−itz}| = O(e^{C}η_C + e^{1−C})` on `Q(s, C/t)`. On such
-a box `(A(t, x), C(t, x))` has modulus in `[1/(2√w), 2/√w]` and rotates on `ℝ ∩ Q(s, C/t)`; choosing `x₀`, `x₁`
-there with `C(t, x₀) = 0 < A(t, x₀) = c₁` and `A(t, x₁) = 0 < C(t, x₁) = c₂`, and `x₂ = x₁ − π/(2t)`, §8.5 gives
+a box with `C ≥ 4π`, `(A(t, x), C(t, x))` has modulus in `[1/(2√w), 2/√w]` and makes more than a full turn on
+`ℝ ∩ Q(s, C/t)`, of length `2C/t ≥ 8π/t`, while one turn takes `2π/t`; choosing `x₀`, `x₁` there with
+`C(t, x₀) = 0 < A(t, x₀) = c₁` and `A(t, x₁) = 0 < C(t, x₁) = c₂`, and `x₂ = x₁ − π/(2t)`, §8.5 gives
 `C(t, z) ≈ sin(t(z − x₀))/(c₁w)` and `A(t, z) ≈ cos(t(z − x₂))/(c₂w)`, so
 `E ≈ cos(t(z − x₂))/(c₂w) − i sin(t(z − x₀))/(c₁w)`, with `c₁c₂w = cos(t(x₂ − x₀)) + o(1)`.
 
-Route of (1). Take `C(t) → ∞` no larger than the function of §8.6 and with `e^{2C(t)}η_{C(t)}(t) → 0`, by a
+Route of (1). Take `C(t) → ∞` no larger than a function as in §8.6 and with `e^{2C(t)}η_{C(t)}(t) → 0`, by a
 diagonal argument over constant box sizes (`η_K(t) → 0` for each constant `K`, §8.5); where `T₀(s, D)` is
 bounded for every constant `D`, so that §8.6 does not apply, let `C(t)` grow so slowly that `T₀(s, C)` is
 bounded. Every smaller function tending to infinity keeps these properties, so the minimum of the
@@ -2102,9 +2103,9 @@ the parameters are `δ`-close, `E` is within `O(δe^D) + o(1)` of `e^{itx₀} e^
 **Checks.**
 
 - Free case: `E = e^{−itz}` and `w = 1`, so (2) and (3) hold exactly with `α = i`:
-  `e^{−itz} + i·i·e^{−itz} = 0`; in the route `M` is the identity, `a = 1`, `b = 0`, `x₀ = x₂ = 0`,
-  `x₁ = π/(2t)` and `c₁ = c₂ = 1`, and the two-term form is `cos tz − i sin tz = e^{−itz}` (with `−cos` in its
-  first term it would be `−e^{itz}` instead).
+  `e^{−itz} + i·i·e^{−itz} = 0`; in the route `M` is the identity, `a = 1`, `b = 0`, and at `s = 0`, with
+  `C ≥ 4π`, one may take `x₀ = x₂ = 0`, `x₁ = π/(2t)` and `c₁ = c₂ = 1`; the two-term form is
+  `cos tz − i sin tz = e^{−itz}` (with `−cos` in its first term it would be `−e^{itz}` instead).
 - (3) is not a consequence of the statements (1) and (2): they allow the function `C(t) = √t` in (1) together
   with zeros of `E(t, ·)` at `s + (log t)/t − i/(2t)`. These satisfy the hypothesis of (3), since they leave
   `Q(s, K/t)` for `t > e^K`, but they lie in `Q(s, √t/t)` above the height `−1/t` (`log t < √t`), so no large
@@ -2131,13 +2132,29 @@ be any zero of `E(t, ·)` in `Q(s, C(t)/t)`, and a unimodular `α(t)` with
 `sup_{Q(s, C(t)/t)} |E(t, z) − α γ(tp) sin(t(z − z(t)))/√w(s)| → 0`,
 `sup_{Q(s, C(t)/t)} |Ẽ(t, z) − α γ(tp) cos(t(z − z̃(t)))/√w̃(s)| → 0`, uniformly in the choice of that zero,
 `p(t) > C(t)/t` for `t ∉ T₀(s, C)`, `p(t) ≤ C(t)/t` for `t ∈ T₀(s, C)`, and `cos(t(ũ(t) − u(t))) = √(w(s) w̃(s))`
-(poltoratski2024 Lemma 7 line 1028–1097, (8.1); mauth2022 Lemma 43 line 3140). Route: §8.7(1) for `E` and `Ẽ`,
-with their common function `C(t)` and, for `t ∈ T₀(s, C)`, the chosen zero `z(t)`; inserting the two
-approximants into the determinant identity (2.2) on `ℝ ∩ Q(s, D/t)` forces equal imaginary parts, so that the
-height of the approximant of `Ẽ` moves to `p(t)`, and the cosine relation. The relation needs `√(w w̃) ≤ 1`,
-which is §6.5.
+(poltoratski2024 Lemma 7 line 1028–1097, (8.1); mauth2022 Lemma 43 line 3140). Route: take `C(t)` no larger
+than a common function of §8.7(1) for `E` and `Ẽ` and with `e^{3C(t)}(η_{C(t)}(t) + η̃_{C(t)}(t)) → 0`, by the
+diagonal argument of §8.7, where `η_C` is the error of §8.5 on `Q(s, C/t)` and `η̃_C` the same error for the
+data `B`, `D`, `μ̃`, `w̃` of `Ẽ`. Let `t ∈ T₁(s, C) ∩ T̃₁(s, C)` be large. On `Q(s, C/t)`, where
+`|e^{∓itz}| ≤ e^C`, `E(t, ·)` is within `O(e^Cη_C)` of a form `T = a e^{−itz} + b e^{itz}`: for `t ∈ T₀(s, C)`
+the form of §8.6 at the chosen zero `z(t)` (its route gives this error, because
+`2|β|²w(s) = sinh(2tp) + O(η_C)` with `tp > 1`), otherwise the two-term form of §8.7's route; in both cases
+`|a|² − |b|² = (1 + O(η_C))/w(s)` and `|b| < e^{−2}|a|`. Likewise `Ẽ(t, ·)` is within `O(e^Cη̃_C)` of a form
+`T̃ = ã e^{−itz} + b̃ e^{itz}` with `|ã|² − |b̃|² = (1 + O(η̃_C))/w̃(s)`. Forms whose coefficients differ by
+`o(e^{−C})` differ by `o(1)` on the box, and no bound below depends on the chosen zero. On `ℝ ∩ Q(s, C/t)`,
+which contains a period `π/t` of `e^{2itx}`, the determinant identity (2.2) reads `Im(E conj Ẽ) = 1`, so
+`Im(T conj T̃) = 1 + O(e^C(η_C + η̃_C))` there. Its mean against `e^{2itx}` over a period is
+`(a conj b̃ − conj(b) ã)/(2i)`, hence `conj(b̃)/ã = conj(b)/a + o(e^{−2C})`. For `t ∈ T₀(s, C)` write
+`T = α γ(tp) sin(t(z − (u − ip)))/√w(s)` with `z(t) = u − ip`, so that `conj(b)/a = conj(α)² e^{−2tp}`; for
+every real `ũ` the form `α γ(tp) cos(t(z − (ũ − ip)))/√w̃(s)` has the same ratio and `|ã|² − |b̃|² = 1/w̃(s)`,
+and choosing `ũ` by the argument of `ã/α` puts its coefficients within `o(e^{−2C})` of those of `T̃`. For
+`t ∉ T₀(s, C)` the ratio `|b/a|` is below `e^{1−2C}` (§8.7's route), so the `e^{itz}` terms of `T` and `T̃`
+are `O(e^{1−C})` on the box, and both forms are replaced by forms of height `p(t) = 2C(t)/t`, with `α`, `u`
+and `ũ` read from the arguments of `a` and `ã`. In both cases the mean of `Im(T conj T̃)` over a period gives
+`cos(t(ũ − u))/√(w w̃) = 1 + O(e^C(η_C + η̃_C) + e^{2−4C})`; since `√(w w̃) ≤ 1` (§6.5), a move of `tũ` by
+`O((e^C(η_C + η̃_C) + e^{2−4C})^{1/2}) = o(e^{−C})` makes the cosine relation exact.
 
-*Needs:* §3.2, §6.5, §8.7.
+*Needs:* §3.2, §6.5, §8.5, §8.6, §8.7.
 
 **Checks.**
 
@@ -2147,6 +2164,13 @@ which is §6.5.
   `z ∈ ℝ` under the cosine relation (numerically `2i` for `w = 0.7`, `w̃ = 0.9`).
 - The relation is forced: for the two approximants with `t(ũ − u) = Φ`, the determinant on `ℝ` is
   `γ(p)² cos Φ sin(2ip)/√(w w̃) = 2i cos Φ/√(w w̃)`; with `ũ = u` and `w w̃ = 0.63` it is `≈ 2.52i ≠ 2i`.
+- The common height comes from (2.2), not from the separate approximations. If `E(t, ·)` has no zero in
+  `Q(s, C/t)` while the approximant of `Ẽ(t, ·)` had its zero at the height `−√C/t`, moving that height to the
+  one of `E` would change it at the bottom of the box by about `e^{C − 2√C}` (`e⁸ ≈ 2981` at `C = 16`); the
+  oscillating part of (2.2) excludes this, since it forces `e^C |b̃/ã| ≤ e^{1−C} + o(1)`.
+- At a point with `w w̃ = 1` the cosine relation sits at the maximum of the cosine, so an error `ε` in the
+  constant part moves `t(ũ − u)` by about `√(2ε)` (`0.0014142` for `ε = 10⁻⁶`), not by `O(ε)`; hence the
+  route asks `e^{3C}(η_C + η̃_C) → 0` rather than `e^{2C}(η_C + η̃_C) → 0`.
 
 ### 8.9 Matching at the point
 
@@ -2257,29 +2281,40 @@ analogous identity for `b`), and `γ(p)γ(p′) = 2/(sinh 2p sinh 2p′)^{1/2}`.
 
 ### 9.3 Resonances near a point occupy little time
 
-Prove that for almost every `s` and every `C > 0`, with `K(t)` the function `C(t)` of §8.8 at `s`: if `ℓₙ(s)` is
+Prove that for almost every `s` and every `C > 0`, with `K(t)` a function `C(t)` as in §8.8 at `s`: if `ℓₙ(s)` is
 the supremum of the lengths of the intervals `I ⊆ [2ⁿ, 2ⁿ⁺¹] ∩ T₁(s, K) ∩ T̃₁(s, K)` such that `E(t, ·)` has a
 zero in `Q(s, C/t)` at every `t ∈ I` (and `0` when there is no such interval), then `ℓₙ(s)/2ⁿ → 0`
 (poltoratski2024 Lemma 9 line 1350–1377, whose statement has no restriction to `T₁(s, K) ∩ T̃₁(s, K)`; its proof
 uses (9.2), which rests on Lemma 7 and on Lemma 8, and Lemma 8 asks `1 < ty` at line 1127; mauth2022 §3.3
-Corollary 7 line 1525 for the analogous half-line statement). For `C ≤ 1` and large `n` there is no such
-interval: a zero in `Q(s, C/t)` then lies in `Q(s, K(t)/t)` at height at most `1/t`. Route: for large `t` we have
-`K(t) ≥ 4C`, so for a time `t` of such an
-interval the zero of `E(t, ·)` in `Q(s, C/t)` lies in `Q(s, K(t)/t)` below the height `−1/t`; taken as the zero
-`z(t)` of §8.8 it gives `1 < tp(t) ≤ C`, the range of §8.9, and the approximations of §8.8 hold on the boxes
-`Q(p, 3C/t) ⊆ Q(s, K(t)/t)`, `p ∈ ℝ ∩ Q(s, C/t)`. If the set of `s` with `lim sup ℓₙ(s)/2ⁿ > 2/m` had positive
-measure, then for infinitely many `n`, with `Zₙ = {s : ℓₙ(s) > 2ⁿ/m}` and for `s ∈ Zₙ` such an interval `Iₙ(s)`
-of length `> 2ⁿ/m`, a set `Sₙ ⊆ Zₙ` of measure `≳ |Zₙ|/m` shares a time `t₁` in the middle thirds of the
-`Iₙ(s)`; put `t₂ = t₁ + 2ⁿ/(3m)` and `J(s) = ℝ ∩ Q(s, C/2ⁿ⁺¹)`, an interval of length `C/2ⁿ`, for `s ∈ Sₙ`.
-§8.8 at `t₁` and `t₂`, with §8.9 applied at each `p ∈ J(s)` to the numbers `w(s)`, `w̃(s)`, puts the data at `p`
-in the form of §9.2 with increment `e(p) = e(s) + (t₂ − t₁)(p − s) + o(1)`, whose real part sweeps an interval of
-length `C/(3m)` as `p` runs over `J(s)`. There `|a_{t₁→t₂}(p)|² = 1 + (sin² Re e(p) + sinh² Im e(p))/N²`, with
-`N` bounded in terms of `C` because `t₁y₁` and `t₂y₂` lie in `(1, C]` and §8.9 moves them by `O(ε)`; so `∫_{J(s)} log|a_{t₁→t₂}| ≥ c_{m,C} |J(s)|` with
-`c_{m,C} > 0`, although the integrand vanishes where `e(p) = 0`. Since `log|a_{t₁→t₂}| ≥ 0` on `ℝ` (§4.3), a
-cover of `Sₙ` of index two by the `J(s)` and §9.1's Plancherel identity give
-`|Zₙ| ≲_{m,C} ‖f‖²_{L²(2ⁿ, 2ⁿ⁺¹)}`, which is summable, and Borel–Cantelli concludes.
+Corollary 7 line 1525 for the analogous half-line statement). For `C ≤ 1` and large `n` there is no such interval:
+a zero in `Q(s, C/t)` then lies in `Q(s, K(t)/t)` at height at most `1/t`. Route: for large `t` we have
+`K(t) ≥ 4C`, so for a time `t` of such an interval the zero of `E(t, ·)` in `Q(s, C/t)` lies in `Q(s, K(t)/t)`
+below the height `−1/t`; taken as the zero `z(t)` of §8.8 it gives `1 < tp(t) ≤ C`, the range of §8.9, and the
+approximations of §8.8 hold on the boxes `Q(p, 3C/t) ⊆ Q(s, K(t)/t)`, `p ∈ ℝ ∩ Q(s, C/t)`. The errors of §8.8 tend
+to `0` at each `s`, not uniformly in `s`: fix `m`, and let `G_N` be the set of `s` at which, for all `t ≥ 2^N`,
+`K(t) ≥ 4C` and, for `t ∈ T₁(s, K) ∩ T̃₁(s, K)`, the approximations of §8.8 hold, for every choice of the zero,
+with error below a threshold `ε₁(s) > 0` that depends only on `C`, `m`, `w(s)` and `w̃(s)` and is at most the `ε₀`
+of §8.9 and the margins used below. The sets `G_N` increase to a set of full measure. Let
+`Zₙ = {s : ℓₙ(s) > 2ⁿ/m}` and, for `s ∈ Zₙ`, let `Iₙ(s)` be such an interval of length `> 2ⁿ/m`; for `n ≥ N`, a
+set `Sₙ ⊆ Zₙ ∩ G_N` of outer measure `≳ |Zₙ ∩ G_N|/m` shares a time `t₁` in the middle thirds of the `Iₙ(s)`; put
+`t₂ = t₁ + 2ⁿ/(3m)` and `J(s) = ℝ ∩ Q(s, C/2ⁿ⁺¹)`, an interval of length `C/2ⁿ`, for `s ∈ Sₙ`. The two times share
+one `Φ` of §9.2. If `w w̃ = 1`, then `Φ = 0`. If `w w̃ < 1`, then `t(ũ(t) − u(t))` is `Φ₀` or `−Φ₀` modulo `2π`,
+where `cos Φ₀ = √(w w̃)` and `0 < Φ₀ < π/2`; for the two forms of §8.8 with `t(ũ − u) ≡ ±Φ₀` the mean of their
+quotient over `x ∈ [s, s + π/t]` is exactly `−i w(s) ± √(w/w̃) sin Φ₀`, so the mean of `Ẽ(t, x)/E(t, x)` is within
+`O(ε₁(s))` of that value; this mean is continuous in `t` (§3.1, and `E(t, ·)` has no real zeros, §3.2), so the
+sign in `±Φ₀` is constant on `Iₙ(s)`. §8.8 at `t₁` and `t₂`, with §8.9 applied at each `p ∈ J(s)` to the numbers
+`w(s)`, `w̃(s)`, then puts the data at `p` in the form of §9.2 with increment
+`e(p) = e(s) + (t₂ − t₁)(p − s) + O(Dε₁(s))`, whose real part sweeps an interval of length `C/(3m)`, up to that
+error, as `p` runs over `J(s)`. There `|a_{t₁→t₂}(p)|² = 1 + (sin² Re e(p) + sinh² Im e(p))/N²`, with `N` bounded
+in terms of `C` because `t₁y₁` and `t₂y₂` lie in `(1, C]` and §8.9 moves them by `O(Dε₁(s))`; so
+`∫_{J(s)} log|a_{t₁→t₂}| ≥ c_{m,C} |J(s)|` with `c_{m,C} > 0`, although the integrand vanishes where `e(p) = 0`.
+Since `log|a_{t₁→t₂}| ≥ 0` on `ℝ` (§4.3), a cover of `Sₙ` of index two by the `J(s)` and §9.1's Plancherel
+identity give `|Zₙ ∩ G_N| ≲_{m,C} ‖f‖²_{L²(2ⁿ, 2ⁿ⁺¹)}` for `n ≥ N`, which is summable in `n`. Borel–Cantelli,
+which needs no measurability, gives for each `N` that almost every `s ∈ G_N` lies in finitely many `Zₙ`, so
+`lim sup ℓₙ(s)/2ⁿ ≤ 1/m` at almost every `s`, for every `m`.
 
-*Needs:* §4.3, §6.8, §8.8, §8.9, §9.1, §9.2; Mathlib Borel–Cantelli (`MeasureTheory.measure_limsup_atTop_eq_zero`).
+*Needs:* §3.1, §3.2, §4.3, §6.8, §8.8, §8.9, §9.1, §9.2; Mathlib Borel–Cantelli
+(`MeasureTheory.measure_limsup_atTop_eq_zero`, stated for outer measures).
 
 **Checks.**
 
