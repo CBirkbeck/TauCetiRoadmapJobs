@@ -4026,6 +4026,18 @@
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.4/auxiliary-prime-rank"
       ]
+    },
+    {
+      "slug": "integral-hodge-realization-extension",
+      "id": "gap:integral-hodge-realization-extension",
+      "supplier": "ShimuraVarieties",
+      "section": "§7.0i, p-adic de Rham realization (new target)",
+      "needs": "For a complete discrete valuation ring O_K of mixed characteristic (0,p) with perfect residue field, an abelian scheme A over O_K and an embedding K̄ ↪ ℂ, prove that for every absolute Hodge tensor of A_ℂ, with mixed tensors, duals and Tate twists, the p-adic étale component and the de Rham component, both defined over K̄, correspond under the de Rham comparison B_dR ⊗ H¹_et(A_K̄, Q_p) ≅ B_dR ⊗_K H¹_dR(A_K/K) extended to tensor constructions (HT (1.3.4.2), p.16, the theorem of Blasius and Wintenberger used in the proof of HT Proposition 1.3.7, pp.17–18); neither an integral moduli model nor an integral tensor extension is an input.",
+      "stageId": "ShimuraVarietiesPartII",
+      "neededBy": [
+        "ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors",
+        "ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames"
+      ]
     }
   ],
   "integrationNotes": [

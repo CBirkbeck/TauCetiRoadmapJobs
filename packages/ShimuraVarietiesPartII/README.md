@@ -4,7 +4,7 @@
 
 ## Scope and ownership
 
-ShimuraVarieties stops at generic canonical models. Its §4.5 (canonical models of tori), §5.6 (potential good reduction of CM abelian varieties), §§6.3–6.6 (connected towers, star products and central-isogeny descent) and §8.1 (the canonical algebraic tower with its right adelic action) are imported. This roadmap begins at integral normalization and owns: normalized Hodge-type integral models, their stacks and canonical tensors (Layer 0); their local geometry (Layer 1); auxiliary Hodge covers (Layer 2); integral component descent to abelian type (Layer 3); Newton strata, the ordinary locus and tensor quasi-isogeny groups on these models (Layer 4); integral functoriality and ordinary special lifts (Layer 5); Kottwitz–Rapoport strata and same-field curves (Layer 6); and the group-valued tower local systems with their Frobenius classes in Conj(G) (Layer 7).
+ShimuraVarieties stops at generic canonical models. Its §4.5 (canonical models of tori), §5.6 (potential good reduction of CM abelian varieties), §§6.3–6.6 (connected towers, star products and central-isogeny descent), §7.0i (absolute Hodge tensors on abelian varieties, with the p-adic de Rham comparison of its supplier contract) and §8.1 (the canonical algebraic tower with its right adelic action) are imported. This roadmap begins at integral normalization and owns: normalized Hodge-type integral models, their stacks and canonical tensors (Layer 0); their local geometry (Layer 1); auxiliary Hodge covers (Layer 2); integral component descent to abelian type (Layer 3); Newton strata, the ordinary locus and tensor quasi-isogeny groups on these models (Layer 4); integral functoriality and ordinary special lifts (Layer 5); Kottwitz–Rapoport strata and same-field curves (Layer 6); and the group-valued tower local systems with their Frobenius classes in Conj(G) (Layer 7).
 
 What other roadmaps state is imported by section. PELModuli §§M4.5–M4.6 and §§M6.1–M6.4 state the single-lattice integral Siegel models (polarizations of any degree, and finite normalizations of the good-level model at smaller p-level), their level changes and the universal polarized abelian scheme. A finite normalization over the single-lattice model is not a lattice-chain moduli scheme; the Siegel moduli scheme at the stabilizer level of a self-dual periodic lattice chain, with its universal polarized chain of abelian schemes, is the contract gap:siegel-chain-moduli of ShimuraCompactifications Layer 7. This roadmap owns only the normalization of the Hodge closure inside these Siegel models. FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII states very-goodness (§§2.10–2.11), the very-good lattice-chain embeddings (§§3.13–3.17), versal adapted deformations and integral tensor frames (§§4.3–4.4 and 4.12), and ordinary adapted lifts with their σ-centralizer action (§§6.4–6.5); Layers 1, 2 and 5 here specialize these to points of Shimura models. GeometricSatakeAndFusionPartII states the canonical integral local models (§§3.1 and 7.6), the smooth open of maximal admissible orbits (§3.7) and the same-field Schubert curves on them (§5.5); Layers 1 and 6 transport these to Shimura models. ReductiveGroupsPartII §RG2.3 states full fixers, connected parahorics and Lang's theorem. ArithmeticGaloisRepresentations §1.11 (*Reductive quotients over fields and DVRs*) states the conjugacy quotient Conj(G) of a connected reductive group with its quotient map, flat base change and the classification of its geometric points by semisimple classes. ReductiveGroupsPartIII states character separation (§0.5), finiteness of faithful quotient maps (§0.6), the orthogonal outer quotient Conj′ (§0.7), descent from local realizations (§1.2) and algebraicity over rational invariants (§1.3), global tori with elliptic real fibre (§2.3) and the real cocharacter adjustment (§2.5), and cyclic torus closures (§3.5). BunGAndNewtonStrata states B(G), acceptable classes, the ordinary class, its integral conjugacy and torus-special acceptable pairs. HeckeStacksAndLocalShtukas states local shtuka period towers. IgusaVarietiesAndTorsionConcentration §§0.1–0.2 and §0.12 state the Newton strata of PEL models; the strata here live on normalized Hodge-type models and agree with those in the common hyperspecial Siegel case. ShimuraCompactifications owns compactifications and the lattice-chain Siegel moduli contract above. AbelianSchemesAndArithmeticModuli states Tate modules, de Rham realizations, Serre–Tate theory, Frobenius semisimplicity and twists by torsors.
 
@@ -50,7 +50,9 @@ At 2fd255d997f47c0b5d834ee416c7015d55444ce5: `TauCeti.AlgebraicGeometry.AbelianV
 
 ### From TauCetiRoadmap.ShimuraVarieties
 
-§4.5 (finite étale canonical models of tori, with reciprocity at the reflex place), §5.6 (potential good reduction of CM abelian varieties), §§6.3–6.6 (connected towers with completed symmetry, their canonical formulations, products and central-isogeny descent) and §8.1 (the canonical algebraic level tower with its right G(A_f)-action).
+§4.5 (finite étale canonical models of tori, with reciprocity at the reflex place), §5.6 (potential good reduction of CM abelian varieties), §§6.3–6.6 (connected towers with completed symmetry, their canonical formulations, products and central-isogeny descent), §7.0i (absolute Hodge tensors on complex abelian varieties, with their de Rham and finite-adelic étale realizations and the family form) and §8.1 (the canonical algebraic level tower with its right G(A_f)-action).
+
+What ShimuraVarieties must provide (gap:integral-hodge-realization-extension): §7.0i, p-adic de Rham realization (new target). For a complete discrete valuation ring O_K of mixed characteristic (0,p) with perfect residue field, an abelian scheme A over O_K and an embedding K̄ ↪ ℂ, prove that for every absolute Hodge tensor of A_ℂ, with mixed tensors, duals and Tate twists, the p-adic étale component and the de Rham component, both defined over K̄, correspond under the de Rham comparison `B_dR ⊗ H¹_et(A_K̄, Q_p) ≅ B_dR ⊗_K H¹_dR(A_K/K)` extended to tensor constructions (HT (1.3.4.2), p.16, the theorem of Blasius and Wintenberger used in the proof of HT Proposition 1.3.7, pp.17–18); neither an integral moduli model nor an integral tensor extension is an input. FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII asks §7.0i for the same comparison under the same slug.
 
 ### From TauCetiRoadmap.ShimuraData
 
@@ -284,7 +286,7 @@ Layer 0 constructs the normalized tower, its integral stacks and the canonical �
 
 *Proof sketch.* HT uses horizontal transport on the connected normal formal neighbourhood to compare the realizations from different lifts. Apply crystalline–de Rham compatibility for absolute Hodge cycles and uniqueness of parallel sections on the rigid generic fibre.
 
-*Needs:* §0.4; AbelianSchemesAndArithmeticModuli §A4.3; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2; CrystallineCohomology §CR.7.3 (gap:cr-crystalline-parallel-transport).
+*Needs:* §0.4; AbelianSchemesAndArithmeticModuli §A4.3; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2; CrystallineCohomology §CR.7.3 (gap:cr-crystalline-parallel-transport); ShimuraVarieties §7.0i (gap:integral-hodge-realization-extension).
 
 *Remark.* Do not deduce integral tensors solely from rational comparison.
 
@@ -318,7 +320,7 @@ At hyperspecial GL₂ level the normalization is the smooth modular curve. At no
 
 ### Dependencies
 
-*Needs:* ShimuraVarieties §8.1; PELModuli §§M4.5–M4.6, M6.1–M6.4; ReductiveGroupsPartII §RG2.3; Tau Ceti `TauCeti.AlgebraicGeometry.AbelianVariety`; SchemeAndStackFoundations §§1.17–1.23; AbelianSchemesAndArithmeticModuli §A4.1; AutomorphicBundles §§3.4–3.8; AbelianSchemesAndArithmeticModuli §A4.3; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2; CrystallineCohomology §CR.7.3 (gap:cr-crystalline-parallel-transport); CrystallineCohomology §CR.7.1 (gap:cr-isocrystal-tensor-descent); MotivesAndAlgebraicCycles Layer 6; BunGAndNewtonStrata §0.8; ShimuraCompactifications Layer 7 (gap:siegel-chain-moduli).
+*Needs:* ShimuraVarieties §8.1; PELModuli §§M4.5–M4.6, M6.1–M6.4; ReductiveGroupsPartII §RG2.3; Tau Ceti `TauCeti.AlgebraicGeometry.AbelianVariety`; SchemeAndStackFoundations §§1.17–1.23; AbelianSchemesAndArithmeticModuli §A4.1; AutomorphicBundles §§3.4–3.8; AbelianSchemesAndArithmeticModuli §A4.3; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2; CrystallineCohomology §CR.7.3 (gap:cr-crystalline-parallel-transport); CrystallineCohomology §CR.7.1 (gap:cr-isocrystal-tensor-descent); MotivesAndAlgebraicCycles Layer 6; BunGAndNewtonStrata §0.8; ShimuraCompactifications Layer 7 (gap:siegel-chain-moduli); ShimuraVarieties §7.0i (gap:integral-hodge-realization-extension).
 
 ## Layer 1: Corrected local geometry
 
@@ -330,7 +332,7 @@ At hyperspecial GL₂ level the normalization is the smooth modular curve. At no
 
 *Proof sketch.* Identify the p-adic absolute Hodge tensors of the abelian lift and apply the integral tensor comparison. Transport the integral frame to crystalline and de Rham evaluation as in KZ §4.1.7.
 
-*Needs:* §0.5; FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII §§4.3–4.4.
+*Needs:* §0.5; FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII §§4.3–4.4; ShimuraVarieties §7.0i (gap:integral-hodge-realization-extension).
 
 *Remark.* Rationally equal tensors with different integral lattices do not pass this statement.
 
@@ -444,17 +446,17 @@ Assume the corrected Hodge setup of Conventions.
 
 ### 1.9 Special fibre and very-special geometry
 
-**Theorem.** In the corrected Hodge setup, reducedness and normality of geometric irreducible components of the local-model special fibre transfer to the Hodge model. At very special parahoric level the relevant local-model special fibre is geometrically integral, and the Shimura special fibre is locally integral. This does not assert local integrality at an arbitrary parahoric crossing.
+**Theorem.** In the corrected Hodge setup the special fibre of the Hodge model is reduced, and at every geometric point the irreducible components of the strict henselization of its local ring are normal; both properties are transferred from the local model through the diagram of §1.4. When G^fix=G°, every irreducible component of the geometric special fibre is normal. At very special parahoric level the relevant local-model special fibre is geometrically integral, and the Shimura special fibre is locally integral. This does not assert local integrality at an arbitrary parahoric crossing.
 
 Assume the corrected Hodge setup of Conventions.
 
-(KZ, Theorem 4.4.4, p.43; KPZ Theorem 7.2.21(2), pp.84–85).
+(KP, Corollary 0.3, p.124; KPZ, Theorem 7.1.3(2), pp.72–73; KZ, Theorem 4.4.4, p.43; KPZ Theorem 7.2.21(2), pp.84–85).
 
-*Proof sketch.* KZ uses the unique extremal Schubert component at very special level to obtain local integrality. Transfer reducedness, component normality and the very-special integral case through the smooth torsor diagram.
+*Proof sketch.* KZ uses the unique extremal Schubert component at very special level to obtain local integrality. Reducedness, and normality of the irreducible components of strict henselizations, are local in the smooth topology on excellent schemes, so they pass from the local model to the frame scheme along q and descend along the surjective smooth π; the very-special integral case passes the same way. When G^fix=G° the torsor group has connected special fibre, so the inverse image under π of an irreducible component Y of the geometric special fibre is irreducible; it is then an irreducible component of the special fibre of the frame scheme, hence a connected component of q⁻¹ of a normal irreducible component of the local-model special fibre, so it is normal, and Y is normal by descent of normality along the smooth surjection π.
 
 *Needs:* §1.4; GeometricSatakeAndFusionPartII §§3.1 and 7.6 (gap:local-models); GeometricSatakeAndFusionPartII §3.7; GeometricSatakeAndFusion Layer GS0.
 
-*Remark.* An Iwahori special-fibre crossing must not be declared locally integral.
+*Remark.* An Iwahori special-fibre crossing must not be declared locally integral. The strictly local form does not by itself give normal global components: a curve with a node has two regular branches in the strict henselization at the node, yet its single irreducible component is not normal there. With a disconnected full fixer the inverse image of a component may consist of several components of the frame scheme meeting each other, and the global form is asserted only for G^fix=G°.
 
 ### Examples
 
@@ -462,7 +464,7 @@ For the hyperspecial modular curve, dim GL₂=4, dim S=dim P¹=1 and dim S̃=5; 
 
 ### Dependencies
 
-*Needs:* §0.5; FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII §§4.3–4.4; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII §§2.10–2.11; FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII §4.12; AbelianSchemesAndArithmeticModuli §A4.9; AlgebraicModuliForArithmeticGeometry Layer 6; AbelianSchemesAndArithmeticModuli §A4.3; GeometricSatakeAndFusionPartII §§3.1 and 7.6 (gap:local-models); ReductiveGroupsPartII §RG2.3; HeckeStacksAndLocalShtukas §HS2 (gap:integral-local-shimura); ShimuraVarieties §8.1; §0.3; PELModuli §§M4.5–M4.6, M6.1–M6.4; NeronModelsAndSemistableAbelianVarieties §§5.1–5.2; GeometricSatakeAndFusion Layer GS0; ShimuraCompactifications Layer 7 (gap:siegel-chain-moduli).
+*Needs:* §0.5; FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII §§4.3–4.4; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII §§2.10–2.11; FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII §4.12; AbelianSchemesAndArithmeticModuli §A4.9; AlgebraicModuliForArithmeticGeometry Layer 6; AbelianSchemesAndArithmeticModuli §A4.3; GeometricSatakeAndFusionPartII §§3.1 and 7.6 (gap:local-models); ReductiveGroupsPartII §RG2.3; HeckeStacksAndLocalShtukas §HS2 (gap:integral-local-shimura); ShimuraVarieties §8.1; §0.3; PELModuli §§M4.5–M4.6, M6.1–M6.4; NeronModelsAndSemistableAbelianVarieties §§5.1–5.2; GeometricSatakeAndFusion Layer GS0; ShimuraCompactifications Layer 7 (gap:siegel-chain-moduli); ShimuraVarieties §7.0i (gap:integral-hodge-realization-extension).
 
 ## Layer 2: Auxiliary Hodge covers
 
@@ -933,7 +935,7 @@ For an Iwahori I in GL₂(Q_p), j=diag(p,1) sends [[a,b],[c,d]] to [[a,pb],[c/p,
 
 ### 4.8 Tensor-preserving quasi-isogeny group
 
-**Definition.** For x with abelian fibre A_x over F̄_p, define I_x as the closed Q-subgroup of (End⁰(A_x))^× preserving the canonical crystalline tensors and all prime-to-p étale tensors; use the rational realization actions after scalar extension, so the functor is imposed on every Q-algebra. Define I_(x/Fq) similarly using End⁰_(Fq)(A_x). The polarization is included with its similitude/Tate line. Integral automorphisms are I_x(Q)∩Aut(A_x). This extends the pinned TauCeti abelian endomorphism ring by rationalization and tensor conditions.
+**Definition.** For x with abelian fibre A_x over F̄_p, define I_x as the closed Q-subgroup of (End⁰(A_x))^× preserving the canonical crystalline tensors and all prime-to-p étale tensors; use the rational realization actions after scalar extension, so the functor is imposed on every Q-algebra. Define I_(x/Fq) similarly using End⁰_(Fq)(A_x). The polarization is included with its similitude/Tate line. Write I_x(Z_(p))=I_x(Q)∩Aut(A_x), where A_x is taken up to prime-to-p isogeny, so that Aut(A_x)=(End(A_x)⊗Z_(p))^×. This extends the pinned TauCeti abelian endomorphism ring by rationalization and tensor conditions.
 
 (HT, §2.1.3–2.1.5, pp.21–22; KZ §4.1.10, p.32).
 
@@ -951,7 +953,7 @@ For an Iwahori I in GL₂(Q_p), j=diag(p,1) sends [[a,b],[c,d]] to [[a,pb],[c/p,
 
 - With only the Siegel polarization tensors, recover the Rosati-similitude subgroup of End⁰ units.
 - Adding projection tensors on A_1×A_2 excludes off-diagonal quasi-endomorphisms.
-- A rational quasi-isogeny with a nonintegral denominator is in I_x(Q) when it preserves the tensors, but need not lie in Aut(A_x).
+- The scalar p⁻¹ lies in I_x(Q), since scalars fix the tensors, and not in I_x(Z_(p)): if p⁻¹=f/n with f∈End(A_x) and p∤n, then [n]=[p]∘f, and the degrees n^(2d) and p^(2d)·deg f disagree for d=dim A_x≥1. A scalar ℓ⁻¹ with ℓ≠p prime lies in I_x(Z_(p)), as ℓ is a unit of Z_(p); at p=5 this is the scalar 1/2. Reading Aut(A_x) as the automorphism group of the abelian variety itself would exclude ℓ⁻¹ and change the quotient I_x(Z_(p))\G(A_f^p) of §4.11.
 
 *Remark.* All-prime tensor preservation is stronger than merely preserving the polarization.
 
@@ -1329,7 +1331,7 @@ For split-at-p GU(1,1) at hyperspecial level the KR index set has one element wh
 
 **Theorem.** For a strongly acceptable triple and y/F_q, all representation characters identify the semisimple Frobenius quotient points over algebraic closures with one point in Conj(G)(Q̄). Algebraicity of each local quotient point follows from the faithful abelian characteristic polynomial and the finite map of conjugacy quotients; equality follows from all algebraic characters, not the faithful characteristic polynomial alone.
 
-(KZ, Proof of Theorem 5.1.4, §5.3.6, p.55).
+(KZ, §5.3.2, p.53, for algebraicity; proof of Theorem 5.1.4, §5.3.6, p.55, for equality).
 
 *Proof sketch.* KZ combines representation-wise equality with invariant characters to identify the algebraic semisimple class. Use the finite faithful-quotient map of ReductiveGroupsPartIII §0.6 with the algebraicity of finite fibres (§1.3) for algebraicity, and character separation (ReductiveGroupsPartIII §0.5) for equality.
 
