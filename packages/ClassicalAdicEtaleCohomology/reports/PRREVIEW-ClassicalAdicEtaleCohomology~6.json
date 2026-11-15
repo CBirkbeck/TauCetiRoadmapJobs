@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassicalAdicEtaleCohomology~6",
+  "head": "fc1c03a776af5d4761b5bbf00b888ed65c884d6d",
+  "pr": 875,
+  "folder": "ClassicalAdicEtaleCohomology",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since fc1c03a. The previous review raised no finding of its own. Checked the pull request's title and description against the head: 16 sentences and 14 supplier entries. Three P3 findings: the prose paragraph claims the AdicEtaleGeometry sites and stops at Layer 5 (R01); the supplier paragraph leaves out CrystallineCohomology, ResolutionOfSingularitiesCharacteristicZero, AdicSpaces, AlgebraicCurves, JacobianChallenge, EllipticCurves, StableReduction, ProfiniteCohomology and LPV.6 (R02); it says EtaleDualityAndPerverseSheaves and AdicCoefficientsAndComparisons are cited, but the README names neither (R03). The gate passes every check (the worker's run includes build=0). The --movable depcheck reports 0 problems. lake env lean gives only the four sorry warnings; #check @ on all 5 declarations shows every binder kept. Adversarial rows were computed for the 8 statements the description summarises. The seeded sample falls in no changed passage. Overlap check: GaloisActionOnEtaleCohomology, EtaleCohomologyFoundations, DiamondEtaleCohomology and AdicEtaleGeometry; nothing is owned twice.",
+  "text": "9139a5b45fd46056",
+  "carried": {
+   "from": "fc1c03a776af5d4761b5bbf00b888ed65c884d6d",
+   "head": "4b7a2994ab30726a018dc859710c1d518585be26",
+   "findings": 3,
+   "lines": 4,
+   "folders": [
+    "ClassicalAdicEtaleCohomology"
+   ]
+  }
+ }
+}
