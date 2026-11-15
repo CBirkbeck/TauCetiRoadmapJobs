@@ -30,9 +30,12 @@
       "tauceti:TauCeti.Probability.strictMono_cdf_gaussianReal",
       "tauceti:TauCeti.Probability.cdf_gaussianReal_pos",
       "tauceti:TauCeti.Probability.cdf_gaussianReal_lt_one",
+      "tauceti:TauCeti.Probability.hasDerivAt_cdf_gaussianReal",
       "tauceti:MeasureTheory.Measure.quantile",
       "tauceti:MeasureTheory.Measure.cdf_quantile",
-      "tauceti:MeasureTheory.Measure.quantile_cdf"
+      "tauceti:MeasureTheory.Measure.quantile_cdf",
+      "tauceti:TauCeti.Probability.quantile_gaussianReal_zero_one",
+      "tauceti:Real.hasDerivAt_erfInv"
      ],
      "api": [
       {
@@ -90,7 +93,8 @@
       "where": "Lemma 3.4, inequality (3.2), line 295–299 (their normalization, for the first bound); Ledoux1999 inequality (1.6), line 225–226 (the tail bound e^{−r²/2} without the factor ½; the ½ form is proved here)"
      },
      "prerequisites": [
-      "target:1.1"
+      "target:1.1",
+      "tauceti:TauCeti.Probability.hasDerivAt_cdf_gaussianReal"
      ],
      "api": [],
      "tests": [
@@ -123,7 +127,8 @@
      "prerequisites": [
       "tauceti:TauCeti.Probability.map_orthogonalProjectionOnto_stdGaussian_pi",
       "tauceti:Submodule.map_orthogonalProjectionOnto_stdGaussian",
-      "mathlib:ProbabilityTheory.stdGaussian_eq_map_pi_orthonormalBasis"
+      "mathlib:ProbabilityTheory.stdGaussian_eq_map_pi_orthonormalBasis",
+      "mathlib:MeasureTheory.measurePreserving_piFinTwo"
      ],
      "api": [],
      "tests": [
@@ -586,6 +591,7 @@
       "where": "Lemma 3.4, line 892–905"
      },
      "prerequisites": [
+      "target:2.1",
       "target:3.2",
       "tauceti:TauCeti.setLIntegral_enorm_sub_setAverage_le_mul_totalVariationOn_of_eq_ball"
      ],
@@ -1076,7 +1082,8 @@
       "where": "Definition 3.2 and Lemma 3.3, line 226–232"
      },
      "prerequisites": [
-      "target:1.1"
+      "target:1.1",
+      "tauceti:TauCeti.Probability.hasDerivAt_cdf_gaussianReal"
      ],
      "api": [],
      "tests": [
@@ -1144,7 +1151,7 @@
      ],
      "locator": {
       "source": "CianchiFuscoMaggiPratelli2011",
-      "where": "line 543–552 (mirrored superlevel convention); Ehrhard1983 Définition 1.1, line 117–129"
+      "where": "line 543–552 (mirrored superlevel convention); Ehrhard1983 Définition 1.1, line 117–129 (open and closed sets; mirrored superlevel convention: his S(T, u) with T = F^⊥ is S_{F,−u} on open sets)"
      },
      "prerequisites": [
       "target:1.1",
@@ -1181,7 +1188,7 @@
       {
        "name": "disc",
        "kind": "computation",
-       "statement": "U = ball(0,1) ⊂ ℝ², e = e_2: v_U(z) = 2Φ(√(1−z²)) − 1, γ(S_e(U)) = 0.393469, section over 0 is (−∞,0.475231)."
+       "statement": "U = ball(0,1) ⊂ ℝ², e = e_2: v_U(z) = 2Φ(√(1−z²)) − 1, γ(S_e(U)) = 0.393469, section over 0 is (−∞,0.475233)."
       },
       {
        "name": "null_line",
@@ -1213,6 +1220,11 @@
       "roadmap:GeometricMeasureTheory G2",
       "roadmap:GeometricMeasureTheory G5",
       "roadmap:Isoperimetry I4",
+      "tauceti:TauCeti.ae_perimeter_inter_ball_le",
+      "tauceti:TauCeti.variationMeasure_eq_comap_inclusion",
+      "tauceti:TauCeti.ae_eq_polarDensity",
+      "tauceti:TauCeti.reducedBoundary_congr_ae",
+      "tauceti:TauCeti.outerNormal_congr_ae",
       "mathlib:LinearMap.normDet"
      ],
      "api": [],
@@ -1226,6 +1238,11 @@
        "name": "vertical_boundary",
        "kind": "degenerate",
        "statement": "ν ⊥ e: left side 0, projection a point."
+      },
+      {
+       "name": "half_plane_cut_by_balls",
+       "kind": "degenerate",
+       "statement": "U = {x_1 < 0} ⊂ ℝ² (infinite volume and perimeter, I4 not directly applicable), e = e_1, z = s e_2: U_R = U ∩ ball(0,R) has volume πR²/2, perimeter πR + 2R, section (−√(R²−s²), 0) with reduced boundary {−√(R²−s²), 0}; inside |t| < √(R²−s²) only 0 remains, the reduced boundary of U_z = (−∞,0), ⟨ν_U,e_1⟩ = 1; the point −√(R²−s²) comes from the circle, not from ∂*U."
       }
      ]
     },
@@ -1233,14 +1250,14 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "sectionMeasure_bvLoc",
-     "statement": "For P_γ(U) < ∞, n ≥ 2, unit e: v_U ∈ BV_loc(e^⊥), ∫_B e^{−W_{e^⊥}} d|Dv_U| ≤ P_γ(U; B ⊕ ℝe) for Borel B, and the absolutely continuous part of Dv_U has density −Σ_t φ(t) ν_U^⊥/|⟨ν_U,e⟩| at good z, its singular part carried by the null projection of {⟨ν_U,e⟩ = 0}.",
+     "statement": "For P_γ(U) < ∞, n ≥ 2, unit e: v_U ∈ BV_loc(e^⊥), ∫_B e^{−W_{e^⊥}} d|Dv_U| ≤ P_γ(U; B ⊕ ℝe) for Borel B, and, with ∇v_U the density of the absolutely continuous part of Dv_U and g_U(z) = −Σ_{t : z+te ∈ ∂*U} φ(t) ν_U^⊥/|⟨ν_U,e⟩| at good z where the series converges absolutely (a.e. z, by 6.2), ∇v_U = g_U volume-a.e. on e^⊥ (an identity of densities, not of pointwise derivatives at every good z), the singular part of Dv_U being carried by the null projection of {⟨ν_U,e⟩ = 0}.",
      "hypotheses": [
       "n ≥ 2",
       "P_γ(U) < ∞"
      ],
      "locator": {
       "source": "CianchiFuscoMaggiPratelli2011",
-      "where": "Lemma 4.4, equations (4.7)–(4.8), line 605–618"
+      "where": "Lemma 4.4, equations (4.7)–(4.8), line 605–618; (4.7) as printed is weaker than the bound here by √(2π), and (4.8) carries unnormalized section weights (Conventions)"
      },
      "prerequisites": [
       "target:1.3",
@@ -1259,12 +1276,17 @@
       {
        "name": "variation_bound",
        "kind": "computation",
-       "statement": "a = b = 1: 0.219695 ≤ 0.310697."
+       "statement": "a = b = 1: 0.219696 ≤ 0.310697."
       },
       {
        "name": "normalization_slip",
        "kind": "non-example",
        "statement": "Section weight e^{−t²/2} without (2π)^{−1/2} gives √(2π)bφ(a+bz)."
+      },
+      {
+       "name": "escaping_tails",
+       "kind": "non-example",
+       "statement": "ℝ², e = e_2, h = max(−1/4, min(z, 1/4)), U_z = (Q(−h), 0) for z < 0, (−∞, 0) at z = 0, (−∞, 0) ∪ (Q(1−h), ∞) for z > 0: v_U = 1/2 + h, P_γ(U) ≤ 0.995297, z = 0 good with g_U(0) = 0 but v_U′(0) = 1; g_U = v_U′ off {0, ±1/4} (1 for 0 < |z| < 1/4, 0 for |z| > 1/4)."
       }
      ]
     },
@@ -1280,7 +1302,7 @@
      ],
      "locator": {
       "source": "CianchiFuscoMaggiPratelli2011",
-      "where": "Lemma 4.6, line 781–828"
+      "where": "Lemma 4.6, inequality (4.14), line 781–828; the proof takes ∇v_E from (4.8), which carries the factor √(2π) (Conventions)"
      },
      "prerequisites": [
       "target:1.3",
@@ -1294,7 +1316,7 @@
       {
        "name": "tilted_equality",
        "kind": "computation",
-       "statement": "{x_2 < 1 + x_1}: both sides 0.310697."
+       "statement": "{x_2 < 1 + x_1}: both sides 0.310697. In the source normalization (perimeter 0.778801), the (4.8) gradient gives √(4π)·0.219696 = 0.778801, equality; the gradient φ(1+z) of v_U gives √(2π+1)·0.219696 = 0.592901, and equality would fail."
       },
       {
        "name": "slab",
@@ -1314,15 +1336,19 @@
      ],
      "locator": {
       "source": "CianchiFuscoMaggiPratelli2011",
-      "where": "Lemma 4.5, line 624–779"
+      "where": "Lemma 4.5, inequality (4.10), line 624–631, proof line 633–779; (4.10) as printed lacks √(2π) on the variation term and fails; the form here is what the proof gives against the probability measure"
      },
      "prerequisites": [
       "target:1.1",
       "target:1.3",
       "target:2.1",
       "target:2.2",
+      "target:5.1",
+      "target:5.3",
       "target:6.1",
+      "target:6.2",
       "target:6.3",
+      "tauceti:TauCeti.Probability.stdGaussian_eq_withDensity_norm",
       "roadmap:GeometricMeasureTheory G4"
      ],
      "api": [],
@@ -1335,7 +1361,17 @@
       {
        "name": "tilted_slack",
        "kind": "computation",
-       "statement": "{x_2 < 1 + x_1}: 0.439392 > 0.310697."
+       "statement": "{x_2 < 1 + x_1}: 0.219696 + 0.219696 = 0.439391 > 0.310697, and each term ≤ P_γ(U), so the sum is below 2P_γ(U) = 0.621393."
+      },
+      {
+       "name": "disc_two_P",
+       "kind": "computation",
+       "statement": "ball(0,1) ⊂ ℝ², e = e_2: first term 2e^{−1/2}/π = 0.386129; ∫ I(v_U) dγ_{e^⊥} = 0.252249 < ∫ Σ_t φ(t) dγ_{e^⊥} = 0.386129 ≤ P_γ(U) = 0.606531 (§5.3 strict on interval sections); bound 0.638378 lies between 0.517483 (§6.6) and 2P_γ(U) = 1.213061."
+      },
+      {
+       "name": "source_normalization",
+       "kind": "non-example",
+       "statement": "{x_2 < 1 + x_1} in the source normalization: perimeter 0.778801, section term 0.550695, unscaled variation term 0.219696; (4.10) as printed claims 0.778801 ≤ 0.770391 and fails; with √(2π) on the variation term 0.778801 ≤ 1.101391, which divided by √(2π) is 0.310697 ≤ 0.439391."
       }
      ]
     },
@@ -1395,6 +1431,9 @@
      "prerequisites": [
       "target:3.5",
       "target:5.3",
+      "target:6.1",
+      "target:6.2",
+      "target:6.4",
       "target:6.6"
      ],
      "api": [],
@@ -1440,6 +1479,11 @@
        "name": "null_addition",
        "kind": "degenerate",
        "statement": "H = {x_1 < 0} ∪ ℚ²: H^(1) = {x_1 < 0}."
+      },
+      {
+       "name": "strips_density_one",
+       "kind": "non-example",
+       "statement": "U = ℝ² minus the vertical strips |x_1 − 2^{−k}| < 4^{−k}, k ≥ 2: every point of the x_2-axis has density one (the strips meet ball(x, ρ) in area ≤ (256/27)ρ³), yet over (−ρ, ρ) with ρ = 2^{−m} the empty vertical sections fill the proportion (5/6)ρ (0.208333 at ρ = 1/4): positive for every ρ, tending to 0, so density one gives a proportion bound on the sections that miss U, not almost every nearby section meeting U."
       }
      ]
     },
@@ -1558,7 +1602,7 @@
       {
        "name": "disc",
        "kind": "computation",
-       "statement": "Disc in ℝ², r = 1: 0.864665 ≥ Φ(0.729711) = 0.767217."
+       "statement": "Disc in ℝ², r = 1: 0.864665 ≥ Φ(0.729712) = 0.767217."
       },
       {
        "name": "zero_radius",
@@ -1609,7 +1653,7 @@
      ],
      "locator": {
       "source": "CianchiFuscoMaggiPratelli2011",
-      "where": "equations (4.13) and (4.6), line 656–720 and 597–601"
+      "where": "equations (4.13) and (4.6), line 656–720 and 597–601; (4.6) with the gradient of the section measure carrying √(2π) (Conventions)"
      },
      "prerequisites": [
       "target:1.1",
@@ -1661,7 +1705,7 @@
      ],
      "locator": {
       "source": "Bobkov1997",
-      "where": "Theorem 1.1 (by locator); Ledoux1999 (1.11) and its equivalence with (1.4), line 296–313"
+      "where": "Corollary 1, inequality (10), p.209 (page marker line 72); for the converse the approximation by max(0, 1 − d_A/h) after Corollary 2, p.210 (page marker line 98); Ledoux1999 (1.11) and its equivalence with (1.4), line 296–313"
      },
      "prerequisites": [
       "target:1.1",
@@ -1785,7 +1829,7 @@
      ],
      "locator": {
       "source": "Ehrhard1983",
-      "where": "Définition 1.1, line 117–129; Proposition 1.2, line 134–140; Lemme 2.2 and Corollaire 2.3, line 329–355"
+      "where": "Définition 1.1, line 117–129 (mirrored superlevel convention: H(u, a) = {⟨x, u⟩ > a}, line 64–66, so his S(T, u) with T = F^⊥ is S̄_{F,−u} on closed sets); Proposition 1.2, line 134–140; Lemme 2.2 and Corollaire 2.3, line 329–355"
      },
      "prerequisites": [
       "target:1.3",
@@ -1822,7 +1866,7 @@
       {
        "name": "disc_full",
        "kind": "computation",
-       "statement": "closedBall(0,1) ⊂ ℝ², F = ℝ²: {⟨y,u⟩ ≤ −0.270289}, measure 0.393469; the strict rule gives an open half-plane."
+       "statement": "closedBall(0,1) ⊂ ℝ², F = ℝ²: {⟨y,u⟩ ≤ −0.270288}, measure 0.393469; the strict rule gives an open half-plane."
       },
       {
        "name": "ball_composition",
@@ -1832,7 +1876,7 @@
       {
        "name": "direction_matters",
        "kind": "non-example",
-       "statement": "S̄_{F,−u} sends {⟨x,u⟩ ≤ a} to {⟨x,u⟩ ≥ −a}, a different set of the same measure."
+       "statement": "S̄_{F,−u} sends {⟨x,u⟩ ≤ a} to {⟨x,u⟩ ≥ −a}, a different set of the same measure Φ(a) = 0.841345 at a = 1; Ehrhard's superlevel rule gives the same set, so his S(T, u) matches S̄_{F,−u}."
       }
      ]
     },
@@ -1855,12 +1899,12 @@
       {
        "name": "hessians",
        "kind": "computation",
-       "statement": "At (−1,1): ∂²g = −0.459910, det 0.163502; also negative definite at (0,2), (−3,−0.5), (0.5,0.6)."
+       "statement": "At (−1,1): ∂²g = −0.459912, det 0.163502; also negative definite at (0,2), (−3,−0.5), (0.5,0.6), with determinants 0.015519, 0.000142, 15.648788."
       },
       {
        "name": "symmetric_interval",
        "kind": "computation",
-       "statement": "g(−1,1) = 0.475231."
+       "statement": "g(−1,1) = Φ⁻¹(2Φ(1) − 1) = 0.475233."
       },
       {
        "name": "without_inverse",
@@ -1897,7 +1941,7 @@
       {
        "name": "disc_limit",
        "kind": "computation",
-       "statement": "closedBall(0,1) ⊂ ℝ²: limit {⟨x,u_1⟩ ≥ 0.270289}, measure 0.393469."
+       "statement": "closedBall(0,1) ⊂ ℝ²: limit {⟨x,u_1⟩ ≥ 0.270288}, measure 0.393469."
       }
      ]
     },
@@ -1955,7 +1999,7 @@
       {
        "name": "intervals",
        "kind": "computation",
-       "statement": "[−1,1], [−3,3], λ = 1/2: 1.690143 ≥ 1.628703."
+       "statement": "[−1,1], [−3,3], λ = 1/2: 1.690143 ≥ 1.628704."
       },
       {
        "name": "halfspaces",
@@ -1970,7 +2014,7 @@
       {
        "name": "borell_limit",
        "kind": "compatibility",
-       "statement": "A = [−1,1], r = 1, λ = 0.9: right side 1.554146 ≤ 1.690143; limit λ → 1 is 1.475231."
+       "statement": "A = [−1,1], r = 1, λ = 0.9: right side 1.554146 ≤ 1.690143; limit λ → 1 is 1.475233."
       }
      ]
     }
@@ -1993,7 +2037,7 @@
    "sections": [
     "I4"
    ],
-   "what": "Euclidean finite-perimeter slicing theorem along lines with reduced-boundary and normal comparison (Tau Ceti has only the integrated slicing inequality)."
+   "what": "Euclidean finite-perimeter slicing theorem along lines with reduced-boundary and normal comparison, for sets of positive finite volume and finite perimeter (Tau Ceti has only the integrated slicing inequality); 6.2 extends it to sets of locally finite perimeter by cutting with balls (Tau Ceti TauCeti.ae_perimeter_inter_ball_le)."
   }
  ],
  "consumers": [
