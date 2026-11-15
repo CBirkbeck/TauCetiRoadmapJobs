@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArtinRepresentations~5",
+  "head": "67a9da9541cfc12998ce9ca78848366ac27445f9",
+  "pr": 1711,
+  "folder": "ArtinRepresentations",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 67a9da9. Checked: the previous R01 (README 1795-1797, not repaired, carried); the gate at this head (FAIL, statement-hygiene=2: finiteLocalPolynomial line 110 and finiteNPlus line 140, each P3 with a choice-free replacement elaborated on a scratch copy, sorry the only warning); the pull request's title and description against the head (two P3: the degree 6-11 transitive-label sentence contradicts README 1639, and 'local constants consumed' contradicts section 2.4); depcheck 244 roadmaps, 2210 edges, 0 problems; elaboration of Suggested.lean with eleven sorry warnings only; adversarial rows with computed values for the two definitions, the weight-one route and the description's counts. No source passage changed, so the seeded sample and the source comparison were not redone.",
+  "text": "f849236a0df33380",
+  "carried": {
+   "from": "67a9da9541cfc12998ce9ca78848366ac27445f9",
+   "head": "3595fc91f7a2f8de597194b7e9a50be5030bfaa5",
+   "findings": 5,
+   "lines": 79,
+   "folders": [
+    "ArtinRepresentations"
+   ],
+   "outside": true
+  }
+ }
+}
