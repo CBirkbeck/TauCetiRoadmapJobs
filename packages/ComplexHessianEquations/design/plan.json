@@ -1408,11 +1408,11 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "laplacian_holder_isomorphism",
-     "statement": "For a smooth Kähler ω' on compact connected X, k ≥ 0, 0 < α < 1: Δ_{ω'} : {u ∈ C^{k+2,α} : ∫ u ω'^n = 0} → {v ∈ C^{k,α} : ∫ v ω'^n = 0} is a bounded isomorphism, and (u,β) ↦ Δ_{ω'}u − β is a bounded isomorphism {∫ u ω^n = 0} × ℝ → C^{k,α}; global Schauder ‖u‖_{C^{k+2,α}} ≤ C(‖Lu‖_{C^{k,α}} + ‖u‖_{C⁰}) for L u = Re tr(a H_{i∂∂̄u}) with a ∈ C^{k,α} uniformly positive; C^{k,α} → C^{k,β} compact for β < α.",
+     "statement": "For a smooth Kähler ω' on compact connected X, k ≥ 0, 0 < α < 1: Δ_{ω'} : {u ∈ C^{k+2,α} : ∫ u ω'^n = 0} → {v ∈ C^{k,α} : ∫ v ω'^n = 0} is a bounded isomorphism, and (u,β) ↦ Δ_{ω'}u − β is a bounded isomorphism {∫ u ω^n = 0} × ℝ → C^{k,α}; global Schauder: for a Hermitian ω on X, θ > 0 and M, ‖u‖_{C^{k+2,α}} ≤ C(‖Lu‖_{C^{k,α}} + ‖u‖_{C⁰}) for every u ∈ C^{k+2,α}(X) and every L u = Re tr(a H_{i∂∂̄u}) with a a C^{k,α} field of h-self-adjoint endomorphisms of (TX, J), a ≥ θ·Id and ‖a‖_{C^{k,α}} ≤ M (finite-atlas norms of PseudodifferentialOperators §5.4), C depending only on X, ω, k, α, θ and M (a = Id gives Δ_ω); C^{k,α} → C^{k,β} compact for β < α.",
      "hypotheses": [
       "X compact connected",
       "ω' smooth Kähler",
-      "a uniformly positive definite C^{k,α}"
+      "a h-self-adjoint C^{k,α} endomorphism field with a ≥ θ·Id (θ > 0) and ‖a‖_{C^{k,α}} ≤ M"
      ],
      "locator": {
       "source": "pss2012",
@@ -1441,6 +1441,11 @@
        "name": "two_components_kernel",
        "kind": "non-example",
        "statement": "on two components the kernel is two-dimensional"
+      },
+      {
+       "name": "schauder_constant_depends_on_theta",
+       "kind": "non-example",
+       "statement": "torus ℂ/(ℤ+iℤ), L = εΔ_ω (θ = ε), u_j = j^{−2−α} cos 2πjx: ‖u_j‖_{C^{2,α}} ≥ 8π²·2^α, ‖Lu_j‖_{C^{0,α}} ≤ 2π²(1 + 2π^α)ε, ‖u_j‖_{C⁰} → 0, so C ≥ 4·2^α/((1 + 2π^α)ε); no constant uniform in θ"
       }
      ]
     },
@@ -1660,6 +1665,7 @@
      "prerequisites": [
       "target:3.2",
       "target:5.3",
+      "target:5.4.1",
       "roadmap:RiemannianGeometry R5c",
       "roadmap:DifferentialGeometry Layer 5",
       "tauceti:TauCeti.Manifold.exists_eLpNorm_le_mul_eLpNorm_mgradient_two_add"
