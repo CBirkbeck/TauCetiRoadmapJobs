@@ -19,7 +19,8 @@ recovered from the generic Shimura variety.
 
 ## Scope and ownership
 
-This roadmap owns: strict formal O-modules, O-displays, relative duality and the Lubin–Tate frame
+This roadmap owns: strict formal O-modules, the Witt O-frame over an arbitrary O-algebra, O-displays,
+the relative isocrystal of a strict formal O-module, relative duality and the Lubin–Tate frame
 comparison (§0.1); representability of EL framed functors and of polarized PEL framed functors for an
 arbitrary self-dual periodic multichain, and of the unitary framed functors of Layers 1–5 (§0.2); principal hermitian
 modules, Mihatsch's relative comparison and the conjugation of signature conventions (§§0.3–0.7);
@@ -37,6 +38,12 @@ It leaves to other roadmaps, by section:
 
 - Zink displays and the functor BT to formal p-divisible groups are PELModuli §M2.15; the
   equivalence over every ring in which p is nilpotent is the contract gap:zink-display-equivalence.
+- Relative (ramified) Witt vectors of an arbitrary O-algebra and isocrystals with a ramified
+  coefficient field are VectorBundlesAndIsocrystals Layer 0, “Ramified coefficient rings and
+  coefficient changes”, and Layer 1, “Finite isocrystals over the completed maximal unramified
+  coefficient field”, with its slope classification; §0.1 adds the Witt O-frame (F, V and `I_O(R)`
+  over an arbitrary O-algebra), its windows and their duality, and the relative isocrystal of a
+  strict formal O-module.
 - The PEL Rapoport–Zink space of an unramified local PEL datum with a single self-dual lattice, and
   the unstructured framed deformation functor of a p-divisible group, are IgusaVarietiesAndTorsionConcentration
   §0.27. §0.2 differs in two clauses: it treats an arbitrary self-dual periodic multichain over a
@@ -175,10 +182,18 @@ The declarations consumed, with what is assumed of them:
   Ceti's (below); the Grassmannian of rank-k quotients of a locally free sheaf of rank m over an
   arbitrary base, its smoothness of relative dimension k(m−k) and its tangent Hom formula are
   imported from AlgebraicModuliForArithmeticGeometry §1.3.
-- `WittVector` (`Mathlib/RingTheory/WittVector/Defs.lean`) and `WittVector.Isocrystal`
-  (`Mathlib/RingTheory/WittVector/Isocrystal.lean`): p-typical Witt vectors and isocrystals over the
-  fraction field of W(k) for a perfect field k. The relative O-Witt vectors of §0.1 and the relative
-  isocrystals of §§1.5 and 5.4 are new.
+- `WittVector` (`Mathlib/RingTheory/WittVector/Defs.lean`), with `WittVector.ghostComponent`,
+  `WittVector.frobenius` and `WittVector.verschiebung` (`Mathlib/RingTheory/WittVector/Basic.lean`,
+  `.../Frobenius.lean`, `.../Verschiebung.lean`), and `WittVector.Isocrystal`
+  (`Mathlib/RingTheory/WittVector/Isocrystal.lean`): p-typical Witt vectors of an arbitrary
+  commutative ring with their ghost components, Frobenius and Verschiebung, and isocrystals over the
+  fraction field of W(k) for a perfect field k; they are the case O=ℤ_p, π=p of §0.1. The ring
+  `W_O(R)` of relative O-Witt vectors of an O-algebra R with respect to π, with its ghost map and its
+  functoriality in R, is VectorBundlesAndIsocrystals Layer 0; the isocrystals over K̆ with
+  coefficient field K, their morphisms and their slope classification are its Layer 1 (see the
+  subsection of that supplier). §0.1 adds what that roadmap states on perfect algebras only: the
+  Frobenius F, the Verschiebung V with respect to π and the augmentation ideal `I_O(R)` over an
+  arbitrary O-algebra R, and the relative isocrystal of a strict formal O-module.
 - `IsRegularLocalRing` (`Mathlib/RingTheory/RegularLocalRing/Defs.lean`): regularity of a noetherian
   local ring, the notion meant by "regular" in §§2.2, 5.6, 5.7, 7.8, 7.9 and 8.4.
 - `AlgebraicGeometry.Scheme`, `AlgebraicGeometry.Flat`, `AlgebraicGeometry.Smooth` and
@@ -237,6 +252,21 @@ effectivity of polarized formal lifts, Serre–Tate with structures); §§A6.10,
 Layer R07.1 (finite flat group schemes and p-divisible groups); §§R07.2.10, R07.2.17, R07.2.20,
 R07.2.26 (Dieudonné classification over perfect fields, isogeny classification, the covariant
 Dieudonné module and the comparison of conventions, rigidity along nilpotent thickenings).
+
+### From TauCetiRoadmap.VectorBundlesAndIsocrystals
+
+Layer 0, “Ramified coefficient rings and coefficient changes” (the ring `W_O(R)` of an arbitrary
+O-algebra R for a finite extension K of ℚ_p with residue field 𝔽_q and uniformizer π, with ghost
+components `w_n(x)=Σ_{i≤n} π^i x_i^(q^(n−i))`, its ring operations given by universal integral
+polynomials, its functoriality in R, and the strict π-adic lift over a perfect 𝔽_q-algebra with its
+Frobenius and Verschiebung); Layer 1, “Finite isocrystals over the completed maximal unramified
+coefficient field” (K-isocrystals: finite-dimensional K̆-vector spaces with a bijective σ-semilinear
+operator, σ the lift of the q-power Frobenius fixing K, and their morphisms), “Mixed-characteristic
+supplier comparison” (`W_O(k)[1/π]≅K̆` for k=𝔽̄_q, intertwining the Frobenius of `W_O(k)` with σ)
+and “Dieudonné–Manin classification of finite isocrystals” (slopes normalized by v(π)=1,
+decomposition into simple blocks, vanishing of Hom between distinct slopes). These are assumed as
+stated there; F, V and `I_O(R)` over an arbitrary O-algebra R (agreeing with that layer's on
+perfect 𝔽_q-algebras), and the relative isocrystal of a strict formal O-module, are §0.1.
 
 ### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
 
@@ -331,16 +361,18 @@ Strict formal O-modules, their O-displays and relative duality; representability
 
 ### 0.1 Strict formal modules, O-displays and relative duality
 
-Let O be the ring of integers of a finite extension of ℚ_p, with uniformizer π. Over an O-algebra R in which π is nilpotent, a strict O-module is a p-divisible group X with an action ι:O→End(X) through which O acts on Lie X by the structure map O→R; it is formal when X is a formal group. An O-display over R is a window over the Witt O-frame (W_O(R),I_O(R),F,V) of relative O-Witt vectors with respect to π, and strict formal O-modules over R are equivalent to nilpotent O-displays, compatibly with base change; the relative height of X is the rank of its O-display P and its dimension is the rank of P/Q. A strict formal O-module is biformal when its dual O-display is again nilpotent; its relative dual X^∨ is the strict O-module of that dual display, and it depends on π. A polarization (resp. principal polarization) is an isogeny (resp. isomorphism) λ:X→X^∨ with λ^∨=−λ. The relative crystal D_X on O-divided-power thickenings carries the Hodge filtration; deformations along such thickenings correspond to lifts of the filtration, and for principally polarized biformal X to Lagrangian lifts for the perfect alternating pairing on D_X. For a finite totally ramified extension O⊂O′, strict formal O′-modules are equivalent to nilpotent windows over the Lubin–Tate O′-frame, compatibly with duality after rescaling the pairing by a unit of the frame. (Mih19, Part III: §10, p. 40; Lemma 11.2 and Definition 11.6, pp. 41–42; Definitions 11.7–11.9, Remark 11.11 and the crystal paragraph, p. 43; Proposition 12.11, pp. 47–48.)
+Let K be a finite extension of ℚ_p with ring of integers O, uniformizer π and residue field 𝔽_q. Over an O-algebra R in which π is nilpotent, a strict O-module is a p-divisible group X with an action ι:O→End(X) through which O acts on Lie X by the structure map O→R; it is formal when X is a formal group. The Witt O-frame of an O-algebra R is (W_O(R),I_O(R),F,V): W_O(R) is the ring of relative O-Witt vectors of R with respect to π, with ghost components w_n; F is the ring endomorphism given by universal integral polynomials and characterized by `w_n(Fx)=w_{n+1}(x)` over π-torsion-free O-algebras; V is the additive map (x₀,x₁,…)↦(0,x₀,x₁,…), so that w_0(Vx)=0 and `w_n(Vx)=π·w_{n−1}(x)` for n≥1; and `I_O(R)=V W_O(R)` is the kernel of w_0:W_O(R)→R. Then FV=π, and V depends on π. An O-display over R is a window over this frame, and strict formal O-modules over R are equivalent to nilpotent O-displays, compatibly with base change; the relative height of X is the rank of its O-display P and its dimension is the rank of P/Q. Over k=𝔽̄_q, regarded as an O-algebra, `W_O(k)[1/π]` is K̆ and the rational O-display (P[1/π],F) of a strict formal O-module X over k is a K-isocrystal, the relative isocrystal of X; its K̆-dimension is the relative height of X. A strict formal O-module is biformal when its dual O-display is again nilpotent; its relative dual X^∨ is the strict O-module of that dual display, and it depends on π; over k=𝔽̄_q, X is biformal exactly when the slopes 0 and 1 do not occur in its relative isocrystal. A polarization (resp. principal polarization) is an isogeny (resp. isomorphism) λ:X→X^∨ with λ^∨=−λ. The relative crystal D_X on O-divided-power thickenings carries the Hodge filtration; deformations along such thickenings correspond to lifts of the filtration, and for principally polarized biformal X to Lagrangian lifts for the perfect alternating pairing on D_X. For a finite totally ramified extension O⊂O′, strict formal O′-modules are equivalent to nilpotent windows over the Lubin–Tate O′-frame, compatibly with duality after rescaling the pairing by a unit of the frame. (Mih19, Part III: §10, p. 40; Lemma 11.2 and Definition 11.6, pp. 41–42; Definitions 11.7–11.9, Remark 11.11, the crystal paragraph and footnote 8, p. 43; Proposition 12.11, pp. 47–48.)
 
-Hypotheses for this target: O, π as stated; R an O-algebra in which π is nilpotent; duality and polarizations only for biformal objects.
+Hypotheses for this target: K, O, π, q as stated; the Witt O-frame over every O-algebra R; displays and strict modules over O-algebras R in which π is nilpotent; duality and polarizations only for biformal objects.
 
-*Route.* Define relative O-Witt vectors with respect to π, the Witt O-frame and its windows (Mih19 Definition 11.7). Deduce the equivalence of strict formal O-modules with nilpotent O-displays from the equivalence between nilpotent displays and formal p-divisible groups (gap:zink-display-equivalence) by the Ahsendorf–Cheng–Zink construction recalled in Mih19 §11.2. Define duals of biformal objects through the dual window, polarizations by λ^∨=−λ, and the relative crystal and Hodge filtration (Mih19 Definitions 11.6, 11.9 and §11.2); prove the Lubin–Tate frame equivalence and its duality compatibility (Mih19 Proposition 12.11 and Lemma 11.2).
+*Route.* Take the ring W_O(R), its ghost map and its functoriality in R from VectorBundlesAndIsocrystals Layer 0, “Ramified coefficient rings and coefficient changes”. Define on it, for every O-algebra R, the Frobenius F and the Verschiebung V by the ghost identities above and put `I_O(R)=V W_O(R)=ker w_0`; over a perfect 𝔽_q-algebra these F and V are that layer's Frobenius and Verschiebung. This is the Witt O-frame, whose windows are the O-displays (Mih19 Definition 11.7). Over 𝔽̄_q identify `W_O(k)[1/π]` with K̆ and its Frobenius with σ by VectorBundlesAndIsocrystals Layer 1, “Mixed-characteristic supplier comparison”, so that (P[1/π],F) is a K-isocrystal of that layer's “Finite isocrystals over the completed maximal unramified coefficient field”; its slopes are those of “Dieudonné–Manin classification of finite isocrystals” (Mih19 footnote 8). Deduce the equivalence of strict formal O-modules with nilpotent O-displays from the equivalence between nilpotent displays and formal p-divisible groups (gap:zink-display-equivalence) by the Ahsendorf–Cheng–Zink construction recalled in Mih19 §11.2. Define duals of biformal objects through the dual window, polarizations by λ^∨=−λ, and the relative crystal and Hodge filtration (Mih19 Definitions 11.6, 11.9 and §11.2); prove the Lubin–Tate frame equivalence and its duality compatibility (Mih19 Proposition 12.11 and Lemma 11.2).
 
 **API.**
 
+- For every O-algebra R, F is a ring endomorphism of W_O(R) and V an additive endomorphism, both natural in R, with FV=π, the projection formula V(F(a)·x)=a·V(x) and `I_O(R)=V W_O(R)=ker w_0`.
 - The O-display of a strict formal O-module and its quasi-inverse, natural in the base.
 - The relative height is the rank of P; it is the p-height divided by [O:ℤ_p].
+- Over 𝔽̄_q the relative isocrystal (P[1/π],F) is a K-isocrystal of K̆-dimension the relative height; X↦(P[1/π],F) is a fully faithful functor from strict formal O-modules up to quasi-isogeny to K-isocrystals (an F-equivariant map of rational displays, multiplied by a power of π, preserves the lattices P and Q=πF⁻¹P), and the slopes avoid 0 and 1 exactly for biformal X.
 - For biformal X the relative dual X^∨, depending on the chosen uniformizer, with biduality.
 - Deformations along an O-divided-power thickening correspond to lifts of the Hodge filtration of D_X, Lagrangian lifts in the principally polarized case.
 - For O⊂O′ totally ramified, strict formal O′-modules are equivalent to nilpotent Lubin–Tate O′-windows.
@@ -350,8 +382,10 @@ Hypotheses for this target: O, π as stated; R an O-algebra in which π is nilpo
 - For O=ℤ_p the strictness condition is automatic and an O-display is a display: `μ_{p^∞}` over a perfect field has P of rank 1 with P/Q of rank 1, while the étale ℚ_p/ℤ_p has P/Q=0 and is not a nilpotent display.
 - For K=ℚ_p(√p) the Lubin–Tate group is a strict O_K-module of relative height 1; precomposing its action with the nontrivial automorphism of K makes √p act on Lie by −√p, so over R=O_K/(p), where √p≠−√p because p is odd, the twisted module is not strict.
 - A strict O-module of relative height 1 and dimension 1 has dual of dimension 0, hence étale, so it is not biformal and has no polarization in this sense; the rank-one sources of Layer 1, Layer 3 and Layer 5 have relative height 2 and dimension 1 and are biformal.
+- The first two ghost components are x₀ and `x₀^q+π·x₁`. For O=ℤ_p, π=p they are Mathlib's p-typical ghost components, and F and V are Mathlib's Frobenius and Verschiebung; for K=ℚ_p(√p), π=√p, q=p the second is `x₀^p+√p·x₁`. Over R=𝔽_p, W_O(𝔽_p)=O_K, F is the identity and V is multiplication by √p, with image `I_O(𝔽_p)=(√p)`. Replacing π by −√p replaces V by −V: the coordinate change x_i↦(−1)^i x_i matches the two ghost maps because q is odd, while `w_1(Vx)=π·x₀` changes sign; this is why the dual O-display depends on π (Mih19 Remark 11.11). A Verschiebung normalized with p in place of π would be multiplication by p on O_K, with image (p)=(√p)²⊊(√p), so it would not be invertible onto `I_O(𝔽_p)` and gives no frame.
+- For K/ℚ_p unramified of degree 2 and the Lubin–Tate O_K-module over 𝔽̄_p (relative height 1), the relative isocrystal is a K̆-line with a q-Frobenius-semilinear operator, q=p², whereas the Dieudonné isocrystal of the underlying p-divisible group, of height 2, is a plane over K̆=ℚ̆_p with a p-Frobenius-semilinear operator; taking the absolute isocrystal with its K-action as the relative one doubles the dimension.
 
-*Needs:* PELModuli §M2.15; gap:zink-display-equivalence; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1; EndoscopicTransferAndUnitaryTraceComparison §7.6.
+*Needs:* PELModuli §M2.15; gap:zink-display-equivalence; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1; EndoscopicTransferAndUnitaryTraceComparison §7.6; VectorBundlesAndIsocrystals Layer 0, “Ramified coefficient rings and coefficient changes”; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field”, “Mixed-characteristic supplier comparison” and “Dieudonné–Manin classification of finite isocrystals”.
 
 ### 0.2 Representability of the unitary framed functors
 
@@ -480,7 +514,7 @@ Precomposing i with the nontrivial automorphism of L/K gives an involutive equiv
 
 Within this roadmap: none; this is the first layer.
 
-Suppliers: PELModuli §M2.15, §M0.18; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.26, §R07.2.10; EndoscopicTransferAndUnitaryTraceComparison §7.6; IgusaVarietiesAndTorsionConcentration §0.27 (unstructured framed functor); AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7; AlgebraicModuliForArithmeticGeometry §1.3; Mathlib `LinearMap.charpoly`; Tau Ceti `Module.Grassmannian.scheme`.
+Suppliers: PELModuli §M2.15, §M0.18; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.26, §R07.2.10; EndoscopicTransferAndUnitaryTraceComparison §7.6; IgusaVarietiesAndTorsionConcentration §0.27 (unstructured framed functor); AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7; AlgebraicModuliForArithmeticGeometry §1.3; VectorBundlesAndIsocrystals Layer 0, “Ramified coefficient rings and coefficient changes”, and Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field”, “Mixed-characteristic supplier comparison” and “Dieudonné–Manin classification of finite isocrystals”; Mathlib `LinearMap.charpoly`; Tau Ceti `Module.Grassmannian.scheme`.
 
 Supplier contracts: gap:zink-display-equivalence (see Exact supplier contracts).
 
@@ -570,7 +604,7 @@ After fixing `𝕏_{n+1}=𝕏_n×𝔈̄` and product principal polarization, def
 
 Set `V_n=Hom^0_{O_L}(𝔈̄,𝕏)`, with h(x,y)=λ_𝔈̄^−1 y^∨ λ_𝕏 x, viewed as an element of L through `End^0_{O_L}(𝔈̄)=L`. Use the convention linear in x and conjugate-linear in y. This is an n-dimensional nonsplit nondegenerate L/K-Hermitian space; composition identifies U(V_n) with the O_L-linear polarized self-quasi-isogenies of 𝕏. (LZ22, §2.2, p. 11.)
 
-*Route.* Use the rational Dieudonné classification of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10 to identify Hom^0 and rank. Apply the Rosati equation to prove sesquilinearity and Hermitian symmetry. Calculate the determinant invariant of the supersingular framing; faithful action on Hom identifies the isometry group.
+*Route.* Identify Hom^0 with the L-linear maps of the relative isocrystals of §0.1, both isoclinic of slope 1/2, and compute its rank by the Dieudonné–Manin classification of K-isocrystals, or through the absolute rational Dieudonné classification of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10 with the O_K-action. Apply the Rosati equation to prove sesquilinearity and Hermitian symmetry. Calculate the determinant invariant of the supersingular framing; faithful action on Hom identifies the isometry group.
 
 **API.**
 
@@ -585,7 +619,7 @@ Set `V_n=Hom^0_{O_L}(𝔈̄,𝕏)`, with h(x,y)=λ_𝔈̄^−1 y^∨ λ_𝕏 x, 
 - Replacing 𝔈̄ by 𝔈 without conjugating the framing is not the declared special-Hom convention.
 - For a∈L with a ā=1, scalar composition is an isometry and acts through the same quasi-isogeny on ρ.
 
-*Needs:* §1.3; PELModuli §M0.22; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
+*Needs:* §1.3; PELModuli §M0.22; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
 
 ### 1.6 Unitary diagonal graph
 
@@ -618,11 +652,11 @@ For n≥2 and the chosen recursive framings, let `δ:N_{n−1}→N_n` be §1.4 a
 
 Within this roadmap: Layer 0 (§0.1, §0.2, §0.3, §0.6, §0.7).
 
-Suppliers: AbelianSchemesAndArithmeticModuli §A4.7; PELModuli §M2.12, §M0.22; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
+Suppliers: AbelianSchemesAndArithmeticModuli §A4.7; PELModuli §M2.12, §M0.22; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
 
 ## Layer 2: Almost self-dual and mixed moduli
 
-For n≥2 define the signature-(1,n−1) framed functor with polarization kernel killed by ϖ of order q², and prove flat regular semistable geometry over its natural coefficient ring. Construct its split Hermitian special-Hom space and the mixed isogeny functor using the conjugate source ℰ̄, fixed rational framing, unique lift and pullback λ_Y×ϖλ_ℰ̄. Prove the first projection generically finite étale of degree q+1 and the second generically an isomorphism onto its image; the local isogeny degree is q².
+For n≥2 define the signature-(1,n−1) framed functor with polarization kernel killed by ϖ of order q², and prove flat regular semistable geometry over its natural coefficient ring. Construct its split Hermitian special-Hom space and the mixed isogeny functor using the conjugate source ℰ̄, fixed rational framing, unique lift and pullback λ_Y×ϖλ_ℰ̄. Prove the first projection generically finite étale of degree q+1 and the second generically an isomorphism onto the special divisor Z(x₀) of §2.4; the local isogeny degree is q².
 
 ### 2.1 Almost self-dual framed functor
 
@@ -666,7 +700,7 @@ Hypotheses for this target: the local field conditions of Layer 1 and n≥2; a f
 
 Put `W_n=Hom^0_{O_L}(𝔈̄,𝕐)` with h(x,y)=λ_𝔈̄^−1 y^∨λ_𝕐 x. It is the split n-dimensional Hermitian space. Choose the rank-one vector x_0 of norm ϖ in a nonsplit `V_{n+1}` and a framing identification `V_{n+1}=W_n⊥Lx_0`. Use the same conjugate rank-one source 𝔈̄ as in Layer 1; the changed target polarization type and norm scaling are part of this identification. (LZ22, §10.1, p. 64; §10.2, equation (10.2.0.1) and the orthogonal decomposition following it, pp. 64–65.)
 
-*Route.* Compute rational Hom from the same isocrystal with the new polarization lattice. Use Hermitian discriminant classification to identify the split invariant. Choose an isometry of the orthogonal sum with `V_{n+1}`; retain the chosen identification.
+*Route.* Compute rational Hom from the same relative isocrystals (§0.1) with the new polarization lattice. Use Hermitian discriminant classification to identify the split invariant. Choose an isometry of the orthogonal sum with `V_{n+1}`; retain the chosen identification.
 
 **API.**
 
@@ -680,7 +714,7 @@ Put `W_n=Hom^0_{O_L}(𝔈̄,𝕐)` with h(x,y)=λ_𝔈̄^−1 y^∨λ_𝕐 x. It
 - The split invariant of W_n differs from the nonsplit invariant of the principal-framing V_n.
 - The extended isometry fixes x_0 and preserves its orthogonal complement.
 
-*Needs:* §1.3; §2.1; §1.5; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10.
+*Needs:* §1.3; §2.1; §1.5; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”.
 
 ### 2.4 Auxiliary isogeny space
 
@@ -708,13 +742,14 @@ Construct Ñ_n with points (Y,X,α), where Y∈N_n^1, `X∈N_{n+1}`, and α:Y×�
 
 ### 2.5 Generic projection comparison
 
-On rigid/adic generic fibres of the representing spaces, π_1:Ñ_n→N_n^1 is finite étale of degree q+1 and π_2 is an isomorphism onto its image. These generic assertions do not supply an integral isomorphism or integral closed immersion for π_2. (LZ22, §10.2, Remark 10.2.1, p. 65; Conjecture 10.4.1, p. 67.)
+On rigid/adic generic fibres of the representing spaces, π_1:Ñ_n→N_n^1 is finite étale of degree q+1, and π_2, as a map to the special divisor Z(x₀) of §2.4, is an isomorphism, so the image of π_2 in the generic fibre of `N_{n+1}` is the generic fibre of Z(x₀). These generic assertions do not supply an integral isomorphism or integral closed immersion for π_2. (LZ22, §10.2, Remark 10.2.1, p. 65; Conjecture 10.4.1, p. 67.)
 
-*Route.* Invert the coefficient uniformizer and describe the isogeny choices by the residual two-dimensional Hermitian quotient. There are q+1 admissible isotropic directions; in characteristic zero the finite torsion is étale. Recover the isogeny from its target and the fixed distinguished direction to identify the second map with its generic image.
+*Route.* Invert the coefficient uniformizer and describe the isogeny choices by the residual two-dimensional Hermitian quotient. There are q+1 admissible isotropic directions; in characteristic zero the finite torsion is étale. Recover the isogeny from its target and the lift of the fixed distinguished direction x₀, which exists exactly over Z(x₀), to identify the second map over the generic fibre with Z(x₀).
 
 **Checks.**
 
 - For q=3 the first generic projection has degree 4.
+- At n=2, Ñ_2 is finite over N¹_2 and so has relative dimension n−1=1, and Z(x₀) is a divisor in N_3, of relative dimension 2−1=1; reading the generic image of π₂ as the whole generic fibre of N_3, of relative dimension 2, contradicts this count.
 - The generic assertions follow without an integral resolution theorem; LRZ26 Theorem 14.6.2 proves integral finite flatness of π₁ and a proper resolution by π₂, not an integral isomorphism of Ñ_n with the special divisor Z(x₀) of §2.4.
 
 *Needs:* §2.4; AdicSpacesPartIII Layer F0; AdicSpacesPartIII §R2.9; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
@@ -729,7 +764,7 @@ On rigid/adic generic fibres of the representing spaces, π_1:Ñ_n→N_n^1 is fi
 
 Within this roadmap: Layer 0 (§0.1, §0.2, §0.3); Layer 1 (§1.1, §1.3, §1.5).
 
-Suppliers: FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.10; AbelianSchemesAndArithmeticModuli §A4.7; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; AdicSpacesPartIII Layer F0, §R2.9.
+Suppliers: FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”; AbelianSchemesAndArithmeticModuli §A4.7; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; AdicSpacesPartIII Layer F0, §R2.9.
 
 ## Layer 3: Relative exotic ramified moduli
 
@@ -1075,7 +1110,7 @@ Hypotheses for this target: L/K ramified quadratic, p>2, ū=−u, n≥2; fixed s
 
 ### 5.4 Krämer Hermitian isocrystal
 
-Let N be the relative covariant rational Dieudonné module of the framing, Π=i(u), and τ=ΠV^−1 with the covariant convention of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20. Set `C=N^{τ=1}`. Choose δ in O_K̆× with σ(δ)=−δ. The formula (x,y)=δ(⟨Πx,y⟩+u⟨x,y⟩) on C is a nondegenerate L/K-Hermitian form, and ⟨x,y⟩=(2δ)^−1 `Tr_{L/K}(u^−1(x,y))` recovers the alternating form. C has dimension n over L. (HLSY23, §2.2, equations (2.1)–(2.2), pp. 11–12.)
+Let N be the relative isocrystal of the framing (§0.1), its covariant rational relative Dieudonné module, a K-isocrystal of K̆-dimension 2n; put Π=i(u) and τ=ΠV^−1 with the covariant convention of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20. Set `C=N^{τ=1}`. Choose δ in O_K̆× with σ(δ)=−δ. The formula (x,y)=δ(⟨Πx,y⟩+u⟨x,y⟩) on C is a nondegenerate L/K-Hermitian form, and ⟨x,y⟩=(2δ)^−1 `Tr_{L/K}(u^−1(x,y))` recovers the alternating form. C has dimension n over L. (HLSY23, §2.2, equations (2.1)–(2.2), pp. 11–12.)
 
 *Route.* Use the relative covariant isocrystal and compute τ as a slope-zero descent operator. Apply descent for the fixed vectors, retaining Π and V conventions. Verify Hermitian symmetry and the inverse trace identity, including the factor 2δ.
 
@@ -1093,7 +1128,7 @@ Let N be the relative covariant rational Dieudonné module of the framing, Π=i(
 - Replacing V^−1 by F^−1 without changing conventions is not the stated τ.
 - Omitting the factor 2 changes recovery of the alternating form when p is odd.
 
-*Needs:* §5.3; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20.
+*Needs:* §5.3; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20.
 
 ### 5.5 Krämer framing parity
 
@@ -1141,7 +1176,7 @@ Hypotheses for this target: L/K ramified quadratic, p>2, ū=−u, n≥2; fixed s
 
 For the ramified principal framing 𝕏 and the rank-one source Y of Layer 5, define `V=Hom^0_{O_L}(Y,𝕏)` with h(x,y)=λ_Y^−1 y∨λ_𝕏x in `End^0_{O_L}(Y)=L`. This is a nondegenerate dimension-n Hermitian space. The group of exact-polarization framing quasi-isogenies acts by postcomposition and identifies with U(V)(K). The fixed-space comparison includes the source-line norm and becomes an isometry only in Layer 5’s normalized choice. (HLSY23, §2.2, equations (2.3)–(2.6), p. 11.)
 
-*Route.* Use relative Dieudonné full faithfulness to form the rational O_L-linear Hom space. Compute the adjoint formula for h and prove its nondegeneracy. Identify the postcomposition isometries, retaining the precise source polarization normalization.
+*Route.* Use the full faithfulness of the relative isocrystal functor of §0.1 to form the rational O_L-linear Hom space. Compute the adjoint formula for h and prove its nondegeneracy. Identify the postcomposition isometries, retaining the precise source polarization normalization.
 
 **API.**
 
@@ -1156,20 +1191,20 @@ For the ramified principal framing 𝕏 and the rank-one source Y of Layer 5, de
 - For n=2 this space has L-dimension 2, not relative-isocrystal dimension 4.
 - Rescaling λ_Y by c multiplies h by c^−1, which is tracked in the comparison.
 
-*Needs:* §5.2; §5.3; §5.4; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
+*Needs:* §5.2; §5.3; §5.4; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
 
 ### 5.9 Special Hom and fixed-space comparison
 
 Fix a principal rank-one source Y and a nonzero vector e of its rational fixed line C_Y. Evaluation b:x↦x(e) identifies `Hom^0_{O_L}(Y,𝕏)` with C as L-vector spaces, and (b(x),b(y))_C=h(x,y)(e,e)_Y. When e is an O_L-generator of the integral fixed lattice `M(Y)^{τ=1}` of §5.2, (e,e)_Y is an O_K-unit, and b is an isometry after rescaling the principal source polarization by that unit to normalize (e,e)_Y=1; for any other basis ae₀ of C_Y, with e₀ such a generator and a∈L^× not a unit, (e,e)_Y=aā(e₀,e₀)_Y has K-valuation val_L(a)≠0, so no unit rescaling makes b an isometry while keeping λ_Y principal. Do not silently replace a similarity by an isometry. (HLSY23, §2.2, pp. 11–12.)
 
-*Route.* Identify O_L-linear rational homomorphisms by Dieudonné full faithfulness. Evaluate at the chosen basis of the source line. Compute adjoints and keep its Hermitian norm factor.
+*Route.* Identify O_L-linear rational homomorphisms by the full faithfulness of the relative isocrystal functor of §0.1. Evaluate at the chosen basis of the source line. Compute adjoints and keep its Hermitian norm factor.
 
 **Checks.**
 
 - The norm factor is 1 exactly in the chosen normalization.
 - Changing e to ae multiplies the factor by a ā: for a∈O_L^× by a unit, for a=u by −u², of K-valuation 1.
 
-*Needs:* §5.2; §5.4; §5.8; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10.
+*Needs:* §5.2; §5.4; §5.8; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field”.
 
 ### Examples
 
@@ -1181,7 +1216,7 @@ Fix a principal rank-one source Y and a nonzero vector e of its rational fixed l
 
 Within this roadmap: Layer 0 (§0.1, §0.2, §0.3, §0.7).
 
-Suppliers: FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10, §R07.2.20; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; AlgebraicModuliForArithmeticGeometry §1.3; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7.
+Suppliers: FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10, §R07.2.20; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; AlgebraicModuliForArithmeticGeometry §1.3; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7.
 
 ## Layer 6: Global CM and unitary comparison data
 
