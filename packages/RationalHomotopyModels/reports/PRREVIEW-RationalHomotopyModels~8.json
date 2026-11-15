@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RationalHomotopyModels~8",
+  "head": "217820431d8c6da044722182566c06f5d01b282c",
+  "pr": 2298,
+  "folder": "RationalHomotopyModels",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 2b7b442. Checked: the title and description against the head (new folder, 3 files, 1650 lines, 48 headings, 13 headlines, 7 definitions, non-statable list, suppliers on main and at open heads, 25 source locators located in Hess2007, Morgan1978, Sullivan1977): no contradiction, no unstated change. Adversarial rows computed for 1.1, 1.2 and 3.5. Worker gate passes every check including the build; rerun shows only the exempt NOT IN ORDER line; depcheck against the candidate order: 245 roadmaps, 2235 edges, 0 problems. Elaboration: 13 sorry warnings only. No change outside the folder against main. Not read: FHT2001, DGMS1975, Quillen 1969, Bousfield-Gugenheim; the outside repositories the description names were not opened.",
+  "text": "7ecda0634fd01f27"
+ }
+}
