@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LubinTateFormalModulesAndQuasiCanonicalLifts~4",
+  "head": "95a3644e5bb131d07a7e373f79951985587b1979",
+  "pr": 2284,
+  "folder": "LubinTateFormalModulesAndQuasiCanonicalLifts",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Full review. Previous R01-R04 all repaired at this head. One P3: the Conventions clause makes K/Q_p finite in all of Layer 4, against sections 4.1-4.2 (integers of Q_p^ur, W(F_p-bar)). Checked: the 15 sampled sections and all 8 headline theorems in the adversarial table with computed values; 66 source locators against the texts (G86, Y95, H70, H68, LT66, VZ07, BKO21, Mil20), none wrong; LT65 uncertified and not readable (15 locators, tested by computation only); 58 library names resolved at the pins; all cross-roadmap citations resolved at main or the open heads, including the either-characteristic inputs of Layers 5-7 (localClassField_unique without CharZero, FFG R07.1.20 over a Dedekind base, RCDVF 4a.3 in both characteristics); gate passes; depcheck 245 roadmaps, 2241 edges, 0 problems; Suggested.lean elaborates with eight sorry warnings only; one-tactic padding probe (simp, rfl, infer_instance, trivial) fails on all eight theorems; pull request text agrees with the head. Overlap: FunctionFieldArithmetic at its open head still states equal-characteristic Lubin-Tate torsion that this roadmap (earlier in the merge order) owns. Source issue: BKO21 Lemma 5.1(ii) sign.",
+  "text": "e832272e99ee3340",
+  "carried": {
+   "from": "95a3644e5bb131d07a7e373f79951985587b1979",
+   "head": "3284d4930b8165acb5be904dc0cc48167b8ee06c",
+   "findings": 1,
+   "lines": 20,
+   "folders": [
+    "LubinTateFormalModulesAndQuasiCanonicalLifts"
+   ]
+  }
+ }
+}
