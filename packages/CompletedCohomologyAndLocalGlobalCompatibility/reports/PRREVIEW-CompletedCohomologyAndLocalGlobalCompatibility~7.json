@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompletedCohomologyAndLocalGlobalCompatibility~7",
+  "head": "0c236a02a795507b863ba5f12b5fde414ae95729",
+  "pr": 1270,
+  "folder": "CompletedCohomologyAndLocalGlobalCompatibility",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 4 changed lines since 1148c33: the two reworded README paragraphs (§4.5, §6.1) were compared with EM11 Theorems 1.2.1, 1.2.3, 1.2.4 and Corollary 1.2.2 (lines 104-215) and with the README lines citing them; content unchanged, wording independent. Gate passes (all counters 0), depcheck 246 roadmaps 0 problems, Suggested.lean elaborates with no output and declares nothing. The pull request's title and description were checked against the head for the first time: two P3 findings, both in the description (the dependency paragraph names two suppliers and calls all other roadmaps consumers; one sentence says the Lean states definitions and theorems although it states none). No finding in the folder.",
+  "text": "b1850aa864329a93",
+  "carried": {
+   "from": "0c236a02a795507b863ba5f12b5fde414ae95729",
+   "head": "0c236a02a795507b863ba5f12b5fde414ae95729",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
