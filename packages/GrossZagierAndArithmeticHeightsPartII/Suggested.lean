@@ -27,7 +27,10 @@ None of them is statable at the pins, so this file states no theorem:
 
 * the four local identities need unitary Rapoport–Zink spaces, which are formal schemes over
   `Spf O_F̆`, their special cycles and the derived Euler characteristic of coherent sheaves on
-  formal schemes; neither pinned library has formal schemes. Their analytic sides need hermitian
+  formal schemes; the pinned Tau Ceti has only the affine formal spectrum `Spf A` of an adic ring
+  (`TauCeti.FormalScheme.Spf.carrier` with `TauCeti.FormalScheme.Spf.structureSheaf`), not
+  locally noetherian formal schemes, their coherent sheaves or moduli of p-divisible groups over
+  them, and Mathlib has no formal schemes. Their analytic sides need hermitian
   local representation densities over local fields, unramified and ramified, which are not at the
   pins either (Mathlib's `IsNonarchimedeanLocalField` supplies no quadratic extension, hermitian
   form or density);
