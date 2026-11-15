@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ProjectiveModulesOverPolynomialRings~8",
+  "head": "a48935d6f2238986830ccab7a035ec53a186f3f0",
+  "pr": 2295,
+  "folder": "ProjectiveModulesOverPolynomialRings",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 137 changed lines since bde4633. Checked: new target 3.6 (statement, route, three Checks recomputed, Lean signature against the README, one-tactic probe), the route of 4.4 through 3.6, the removal of the RelativeFarguesFontaine contract, the two new Lombardi-Quitte locators (XV.2.2 item 4, XV.4.4 bis) against the text, five Mathlib declarations at the pin, RelativeFarguesFontaine 6.1-6.5 at its open head, the description against the head. Gate: every check passed; elaboration 18 sorry warnings only; depcheck 0 problems. Findings (all P3): R01 the comaximality negative control of 3.6 satisfies the conclusion; R02 the glued module of 4.4 is in max u v, not the universe of P and Q; R03 XV.4.4 bis's inverse condition is not empty for two elements.",
+  "text": "028cb2911d20e6c9"
+ }
+}
