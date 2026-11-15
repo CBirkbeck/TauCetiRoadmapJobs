@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticKTheory~16",
+  "head": "d682d86dcd72411fdfc066862ff8822c1f72003f",
+  "pr": 1418,
+  "folder": "ArithmeticKTheory",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 21 changed lines since 51e8c9f. Previous R01 (finite-field vanishing attributed to KTheoryFiniteLocalFields instead of GeneralAlgebraicKTheory §13.8c) repaired at README lines 304-306, 455-456, 977, 991-992, and also at 1399 and 2347. Checked: §13.8c at the GeneralAlgebraicKTheory head against the new contract (K3(F2)=Z/3, K3(F5)=Z/24, K4=0); KTheoryFiniteLocalFields §§0.5, 1.1-1.6 exist at its head; the vanishing is used in §§2.4, 3.3 and 5.5 (computed instances in the table); kbook IV.1.13 reopened; merge order downward (19 < 95 < 143). No seeded-sample target falls in the changed passages. Gate rerun OK; depcheck 0 problems; Suggested.lean (unchanged) elaborates with four sorry warnings only; nothing changed outside the folder; pull request text agrees with the head.",
+  "text": "7fd8087ef39edc27"
+ }
+}
