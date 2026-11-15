@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DirectSummandsAndBigCohenMacaulay~2",
+  "head": "a6bccc9f4f3edd6cf03a411c3d90fb49e5b8a659",
+  "pr": 1735,
+  "folder": "DirectSummandsAndBigCohenMacaulay",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "incremental re-review of 48 changed lines since aa4beac. Previous findings: R02, R03 and R04 are repaired. R01 is partly repaired: the new name exists_resolution is the supplier's finite-type field endpoint, not its section 7.5. Gate rerun: FAIL only on statement-hygiene (Suggested.lean line 178, local HasDerivedCategory instance). The repair with explicit HasDerivedCategory.{u+1} binders was tested and elaborates with only the ten sorry warnings. Elaboration at the head: ten sorry warnings, exit 0. Depcheck: 0 problems. Checked: the changed section 7.5 statement against BHATT12 line 42, which shows g must be f composed with pi; the section 4.8 Check (dimension 3, depth 2: correct); the page fix at ANDRE18B line 780 (pp. 87-88); the four gap contracts against their suppliers at their current heads, all still minimal; the resolution, PerfectoidSpacesPartII and gap-supplier citations. The pull request description has two P3 points: the perfectoid inputs are said to become theorems here, and flat domination and CM descent are stated without regularity. Source independence was checked on the changed passages only.",
+  "text": "205f82b2a333ff42",
+  "carried": {
+   "from": "a6bccc9f4f3edd6cf03a411c3d90fb49e5b8a659",
+   "head": "03c84cc17c6f349caf028a581117cc4b25916ba1",
+   "findings": 5,
+   "lines": 36,
+   "folders": [
+    "DirectSummandsAndBigCohenMacaulay"
+   ],
+   "outside": true
+  }
+ }
+}
