@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuaternionicModularForms~11",
+  "head": "e40ec42673f217cd4b7beb5f71d7aacf60bb2b53",
+  "pr": 934,
+  "folder": "QuaternionicModularForms",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since e40ec42; this round read the pull request's title and description against the head. Five P3 findings, all in the description (the folder stands as accepted): R01 it says Suggested.lean has proved declarations, the file declares nothing; R02 the Checks report 16 admitted targets and Lean proofs that do not exist; R03 it has AdelicAlgebraicGroups AA.5.3 consuming this roadmap's §0.3 class sets, while the head consumes class-set finiteness and stabilisers from AdelicAlgebraicGroups §5.3 on main, which cites nothing here; R04 the merge-order prose lists suppliers now on main as open and omits ArithmeticLocallySymmetricSpaces, AutomorphicFormsOnReductiveGroups and KleinianGroups as the open ones, and ReductiveGroups; R05 Layer 5 is described over Q only, the head is over totally real fields. Checked: gate at e40ec42 all checks 0 (worker's gate build=0); lake env lean exit 0 with no output; depcheck 244 roadmaps, 2210 edges, 0 problems; nothing changed outside the folder; pins a91d3aaf and 6b7abb3c match the manifest; computed rows for the §5.3 block factor, diagonal intertwining, the k=0 example and c(eta_p)=pi_p/p; previous review had no open finding",
+  "text": "2d9e13ac77c0a0f5",
+  "carried": {
+   "from": "e40ec42673f217cd4b7beb5f71d7aacf60bb2b53",
+   "head": "252a01b7a43ee99272f752db78bf88bf577f940d",
+   "findings": 5,
+   "lines": 34,
+   "folders": [
+    "QuaternionicModularForms"
+   ],
+   "outside": true
+  }
+ }
+}
