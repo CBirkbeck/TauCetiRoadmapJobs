@@ -232,8 +232,8 @@ condition `1 ≥ 1` holds and the symbol is `1 − 3 = −2`).
   Faà di Bruno formula `HasFTaylorSeriesUpToOn.comp`
   (`Mathlib/Analysis/Calculus/ContDiff/FaaDiBruno.lean:1051`: if `g` and `f` have Taylor series
   `q` and `p` up to order `m`, then `g ∘ f` has the Taylor series `q.taylorComp p`): the
-  classical derivatives of `Φ ∘ u` up to order `k` for smooth `u` in the composition estimate
-  of §4.3.
+  classical derivatives of `Φ̃ ∘ u` up to order `k` for smooth `u`, `Φ̃` the compactly supported
+  cut-off of `Φ`, in the composition estimate of §4.3.
 - `MeasureTheory.convolution`, `ContDiffBump`, the Bochner integral, `Lp`, Hölder's and
   Minkowski's inequalities, dominated convergence and the Lebesgue differentiation theorem.
 
@@ -303,7 +303,8 @@ on `E`, no Lorentzian quadratic form with a time orientation and no causal curve
 - `TauCeti.hasWeakFDerivOn_gradient_of_contDiffOn`
   (`TauCeti/Analysis/Sobolev/WeakDeriv/Basic.lean:789`): a real function of class `C¹` on an
   open set has its classical gradient as weak derivative there; applied componentwise to
-  `Φ ∘ u` for the smooth approximants `u` of §4.3.
+  `Φ̃ ∘ u`, `Φ̃` the compactly supported cut-off of `Φ` of §4.3, for the smooth approximants `u`
+  there, which may leave the domain `G` of `Φ`.
 - `TauCeti.Wkp.norm_iteratedGradient_lowerOrder_le`
   (`TauCeti/Analysis/Sobolev/Wkp/Interpolation.lean:335`): for `1 ≤ p < ∞`, `ε > 0` and
   `u ∈ W^{2,p}(E)`, `‖∇u‖_p ≤ ε‖D²u‖_p + (n²/ε)‖u‖_p`. At `p = 2` the infimum over `ε` gives
@@ -767,9 +768,10 @@ proper extension in `D`, and the *future domain of dependence* `D⁺_D(S)`, whic
 past-inextendible past causal curve in `D` ending at `p` meets `S` (Minguzzi2019 lines
 3576–3582, Definition 3.1 and Remark 3.2, for piecewise `C¹` causal curves; MinguzziCone2019
 lines 1737–1740, Definition 2.17, for continuous causal curves of a closed cone structure and
-closed achronal `S`; BarGinouxPfaffle2007 line 1006, Definition 1.3.5; ChristodoulouMiao2014
-lines 866–872; HawkingEllis1973 at §6.5; ONeill1983, Ch. 14, causality in Lorentz
-manifolds). Chrusciel2011 line 1169, §2.5, treats inextendible
+closed achronal `S`; BarGinouxPfaffle2007 line 1006, Definition 1.3.5, the two-sided Cauchy
+development `D(S)`, defined with causal curves inextendible in both directions;
+ChristodoulouMiao2014 lines 866–872; HawkingEllis1973 at §6.5; ONeill1983, Ch. 14, causality in
+Lorentz manifolds). Chrusciel2011 line 1169, §2.5, treats inextendible
 paths; its domain of dependence (lines 1843–1848, §2.9) is the timelike variant `D⁺_I`, defined
 with timelike curves, and line 1859 there names the causal variant `D⁺_J` used here.
 LorentzianGeometry §12.6 proves `S ∩ D ⊆ D⁺_D(S)`, monotonicity in `S`, the slice identity
@@ -815,8 +817,9 @@ Prove:
   of `p` all of whose causal curves on `[t₀, t_p]` start in `S`, and `D⁺_D(Σ_{t₀}) = D`. Route:
   the integral characterisation of §3.2 bounds a causal curve on `(a, t_p]` by
   `|x(t) − x_p| ≤ (t_p − a) sup(|v| + c)`, so it has a limit at `a` and extends by local existence
-  unless `a = t₀` (proved here; the notion is BarGinouxPfaffle2007 line 1006,
-  Definition 1.3.5). LorentzianGeometry §12.6's slab statement is the slice identity only.
+  unless `a = t₀` (proved here; the two-sided analogue is BarGinouxPfaffle2007 line 1006,
+  Definition 1.3.5, the Cauchy development `D(S)`, defined with causal curves inextendible in
+  both directions). LorentzianGeometry §12.6's slab statement is the slice identity only.
 - *Invariance.* If `D`, `S` are Λ-invariant and the field is Λ-periodic, `D⁺_D(S)` is
   Λ-invariant and `J⁻_D(p + λ) = J⁻_D(p) + λ`; translations and Galilean boosts act likewise.
   The Λ-invariance of `D⁺_D(S)` is also LorentzianGeometry §12.6's covering invariance for the
@@ -1037,18 +1040,36 @@ segment from `Ū` leaves `G`. Every constant is independent of `u`, `f`, `g`.
   are `0/0`, and at `k = j = 0` the interpolation exponent `j/k` of §4.2 is `0/0`; the statements
   start at `k ≥ 1`, `i ≥ 1`, and the `k = 0` case of §4.2 is the identity on `L²_Λ`. At `k = 1`,
   `i = 1` the inequality is `‖Du‖_{L²_Λ} ≤ C‖u‖_{H¹_Λ}`, true with `C = 1`.
+- The approximants leave `G` when `2k ≤ n`: `n = 3`, `N = 2`, `Λ = 0`, `k = 1`,
+  `G = {1/2 < |y| < 2}`, `K` the unit circle, `Ū = (1, 0)`, and `u = (cos ϑ, sin ϑ)` with
+  `ϑ = πβ(|x|)x₃/|x|`, where `β = 1` on `[0, 1]`, `β(r) = 2 − r` on `[1, 2]` and `β = 0` beyond.
+  Then `u` takes values in `K`, `u − Ū` is bounded and vanishes for `|x| ≥ 2`, `|∇u| = |∇ϑ|` is
+  bounded on `1 ≤ |x| ≤ 2`, and on the unit ball `|∇ϑ|² = π²(1 − t²)/|x|²` with `t = x₃/|x|`, so
+  `∫_{|x|≤1} |∇u|² = π²(4π − 4π/3) = 8π³/3`: `u − Ū ∈ H¹(ℝ³)`. For a radial kernel `φ` supported
+  in the unit ball and `ε ≤ 1`, `t` is uniformly distributed on `[−1, 1]` over every sphere about
+  `0`, so `J_εu(0) = (½∫₋₁¹ cos πt dt, ½∫₋₁¹ sin πt dt) = (0, 0) ∉ G`. For `Φ(y) = 1/|y|`, smooth
+  on `G`, `Φ(J_εu(0))` has no value, while the cut-off `Φ̃` of the route below (with `δ = 1/4`)
+  has `Φ̃(J_εu(0)) = Φ̃(0) = 0`; a route that composes the approximants with `Φ` itself fails
+  here. For `2k > n` the approximants converge uniformly (§4.2) and lie in `K_δ` for small `ε`.
 
 *Needs:* §§4.1–4.2; Mathlib Hölder's inequality and Young's inequality `Real.young_inequality`;
 Tau Ceti's Leibniz rule
 `TauCeti.HasWeakLineDerivOn.contDiffOn_smul`, `TauCeti.HasWeakFDerivOn.contDiffOn_smul` and
 `TauCeti.HasWeakLineDerivOn.lipschitzOnWith_smul` (smooth or Lipschitz factor; two Sobolev
-factors by density through §4.4), `TauCeti.HasWeakFDerivOn`; for the composition,
-`TauCeti.hasWeakFDerivOn_gradient_of_contDiffOn` applied componentwise to `Φ ∘ u` for smooth
+factors by density through §4.4), `TauCeti.HasWeakFDerivOn`; for the composition, the
+cut-off `Φ̃ = χΦ`, extended by `0` outside `G`, with `χ` smooth on `ℝ^N`, equal to `1` on the
+`δ/2`-neighbourhood of `K` and supported in `K_δ` (the indicator of the `3δ/4`-neighbourhood of
+`K` mollified at radius `δ/8`, whose derivatives of order `j` are at most `(8/δ)^j` times an
+`L¹` norm of the kernel): `Φ̃` is smooth with compact support on `ℝ^N`, `Φ̃ ∘ u = Φ ∘ u` because
+`u` takes values in `K`, and the smooth approximants `Ū + J_ε(u − Ū)` of §4.4, which may leave
+`G` when `2k ≤ n` (Check above), are composed with `Φ̃`, never with `Φ`; then
+`TauCeti.hasWeakFDerivOn_gradient_of_contDiffOn` applied componentwise to `Φ̃ ∘ u` for smooth
 `u`, whose classical derivatives up to order `k` are given by Mathlib's chain rule
 `HasFDerivAt.comp` and Faà di Bruno formula `HasFTaylorSeriesUpToOn.comp`, and density through
 §4.4 (in the scalar case `N = 1`, `k = 1`, Tau Ceti `TauCeti.W1p.hasWeakFDerivOn_comp`, applied
-on bounded open sets to `u − Ū` and to `s ↦ χ(Ū + s)Φ(Ū + s)` with `χ` smooth, equal to `1` on
-the `δ/2`-neighbourhood of `K` and supported in `K_δ`, gives the weak chain rule directly). Tau
+on bounded open sets to `u − Ū` and to `s ↦ Φ̃(Ū + s)`, gives the weak chain rule directly). The
+derivatives of `Φ̃` of order at most `max(1, k)` are bounded by those of `Φ` on `K_δ` and powers
+of `δ^{−1}`, the dependence stated for the constants above. Tau
 Ceti `TauCeti.W1p.mul`, `TauCeti.W1p.norm_mul_le` and `TauCeti.W1p.mulL` are the case
 `Λ = 0`, `n = k = 1` of the algebra property.
 
@@ -1556,10 +1577,14 @@ period group `Λ`, `k ∈ ℕ` with `2k > n + 2`, a compact `K ⊆ G` and `M > 0
 (Kato1975, Theorem I; Majda1984, Ch. 2, Theorem 2.1 and the continuation principle of §2.2;
 Dafermos2016, Ch. V, Theorem 5.1.1; LukNotes line 1239, Theorem 6.1, and line 1620,
 Theorem 6.10, for quasilinear wave equations.) Route: the iteration
-`A⁰(U^m)∂_tU^{m+1} + Σᵢ Aⁱ(U^m)∂ᵢU^{m+1} = F(U^m)` with mollified data, solved by §5.4 (the
-iterate satisfies `U^m − Ū ∈ C([0, T]; Hᵏ_Λ) ∩ C¹([0, T]; Hᵏ⁻¹_Λ)`, so `A⁰(U^m) − A⁰(Ū)` has the time
-regularity `C¹([0, T]; Hᵏ⁻¹_Λ)` that §5.4 asks, by the composition and product estimates of §4.3 at
-order `k − 1`, where `2(k − 1) > n`);
+`A⁰(U^m)∂_tU^{m+1} + Σᵢ Aⁱ(U^m)∂ᵢU^{m+1} = F(U^m)` with mollified data
+`Ū + J_ε(U₀ − Ū)` (§4.4), which, for `δ > 0` with the closed `δ`-neighbourhood `K_δ` of `K` in
+`G`, take values in `K_{δ/2}` once `ε ≤ ε₀(M, K)`, because
+`‖J_ε(U₀ − Ū) − (U₀ − Ū)‖_∞ ≤ C‖J_ε(U₀ − Ū) − (U₀ − Ū)‖_{Hᵏ⁻¹_Λ} ≤ CεM` by the embedding of §4.2
+(`2(k − 1) > n`) and the loss bound of §4.4, so that the coefficients are evaluated inside `G`;
+solved by §5.4 (the iterate satisfies `U^m − Ū ∈ C([0, T]; Hᵏ_Λ) ∩ C¹([0, T]; Hᵏ⁻¹_Λ)`, so
+`A⁰(U^m) − A⁰(Ū)` has the time regularity `C¹([0, T]; Hᵏ⁻¹_Λ)` that §5.4 asks, by the
+composition and product estimates of §4.3 at order `k − 1`, where `2(k − 1) > n`);
 boundedness `‖U^m − Ū‖_{Hᵏ_Λ} ≤ R` on a uniform interval `[0, T]`, with `R` and `T` depending only
 on `M` and `K`, by §5.3 (whose coefficients depend on this bound; the forcing is
 `F(U^m) − F(Ū)`), contraction in `C([0, T]; L²_Λ)` by §5.1,
@@ -1727,8 +1752,8 @@ solution on `D` with `U(t₀, x) = Ū(x)` for `x ∈ S`, and `D = D⁺_D({t₀} 
 cone field of `U`. Order developments by `(D₁, U₁) ≤ (D₂, U₂)` iff `D₁ ⊆ D₂` and `U₂ = U₁` on
 `D₁`; call two developments *compatible* when `U₁ = U₂` on `D₁ ∩ D₂`. (ChristodoulouMiao2014
 lines 864–880; Christodoulou2019 lines 130–138; LuoYu2023b lines 417–419 and line 910,
-Definition 2.13; BarGinouxPfaffle2007 line 1006, Definition 1.3.5; EperonReallSbierski2019
-lines 1129–1144; Christodoulou2007, Ch. 1.)
+Definition 2.13; BarGinouxPfaffle2007 line 1006, Definition 1.3.5, the two-sided Cauchy
+development `D(S)`; EperonReallSbierski2019 lines 1129–1144; Christodoulou2007, Ch. 1.)
 
 - `≤` is a partial order on the developments of fixed data.
 - *Past-closed truncation.* If `(D, U)` is a development and `D′ ⊆ D` is a Λ-invariant domain
