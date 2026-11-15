@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HeisenbergImprimitivity~11",
+  "head": "185669b20893baf39d59ef27ff86f2f047836a34",
+  "pr": 1149,
+  "folder": "HilbertModules/HeisenbergImprimitivity",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 1 changed lines since 926979b (the folder's metadata.toml deleted; the parent's math.OA topic on main is inherited, gate metadata=0). Folder files: no finding. Title and description checked against the head (step 8): four P3 findings, all in the description (HilbertModules and OperatorAlgebraDynamics called unmerged though on main; SmoothBanachRepresentations listed as supplier though the README uses Mathlib contDiffAt_ringInverse; five sorry warnings claimed, three at the head; H1-H6 numbering, head has Layers 1-6). Worker's gate passes with build=0; depcheck 0 problems, no UPWARD/CYCLE; Suggested.lean elaborates with three sorry warnings only; citations resolved on main 3cf7342; no seeded-sample target in the changed line.",
+  "text": "abdd90c019365b5e",
+  "carried": {
+   "from": "185669b20893baf39d59ef27ff86f2f047836a34",
+   "head": "185669b20893baf39d59ef27ff86f2f047836a34",
+   "findings": 4,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
