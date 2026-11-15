@@ -648,11 +648,18 @@ The API has the following laws.
 
 ### 3.5 Analytification of étale algebraic stacks and Tannakian stacks
 
-For an affinoid Gelfand stack S = GSpec(R) and an affine derived scheme Spec(R′) over Spec(R(*)) define (Spec R′)^an(A) = Map_{R(*)}(R′, A(*)). Prove that this extends uniquely to a colimit-preserving and finite-limit-preserving functor (−)^an from étale sheaves on affine derived schemes over Spec(R(*)) to Gelfand stacks over S, the !-sheafification of A ↦ X(A(*)) (ALRS Lemma 2.4.1, p. 20, ALRS line 1053). Define Tannakian, strongly Tannakian and perfect étale algebraic stacks (ALRS Definition 2.4.2, p. 21, ALRS line 1092). Prove that for a perfect strongly Tannakian X over Spec(R(*)) the presheaf A ↦ X(Spec A(*)) is already a Gelfand stack equal to X^an, and that maps Y → X^an from a Gelfand stack Y over S are the Perf(R)-linear symmetric monoidal functors Perf(X) → Perf(Y) whose extension to QCoh(X) carries connective pseudo-coherent objects to objects that are locally connective (ALRS Proposition 2.4.5, p. 22, ALRS line 1143).
+For an affinoid Gelfand stack S = GSpec(R) and an affine derived scheme Spec(R′) over Spec(R(*)) define (Spec R′)^an(A) = Map_{R(*)}(R′, A(*)). Prove that this extends uniquely to a colimit-preserving and finite-limit-preserving functor (−)^an from étale sheaves on affine derived schemes over Spec(R(*)) to Gelfand stacks over S, the !-sheafification of A ↦ X(A(*)) (ALRS Lemma 2.4.1, p. 20, ALRS line 1053). Call an étale algebraic stack X over Spec(R(*)) Tannakian if for every R(*)-algebra R′ the map x ↦ x^* from X(R′) to the D(R(*))-linear symmetric monoidal functors QCoh(X) → D(R′) is fully faithful with essential image the functors preserving connective objects, strongly Tannakian if moreover QCoh_{≥0}(X) is generated under filtered colimits by connective pseudo-coherent objects, and perfect if Ind(Perf(X)) → QCoh(X) is an equivalence (ALRS Definition 2.4.2, p. 21, ALRS line 1092). Prove that for a perfect strongly Tannakian X over Spec(R(*)) the presheaf A ↦ X(Spec A(*)) is already a Gelfand stack equal to X^an, and that maps Y → X^an from a Gelfand stack Y over S are the Perf(R)-linear symmetric monoidal functors Perf(X) → Perf(Y) whose extension to QCoh(X) carries connective pseudo-coherent objects to objects that are locally connective (ALRS Proposition 2.4.5, p. 22, ALRS line 1143).
 
 A proof route: Étale covers of finitely presented schemes become rigid étale surjections, hence !-covers. For the Tannakian statement use that perfect complexes form a sheaf of categories on GelfStk (2.3) and that connectivity of discrete pseudo-coherent complexes is !-local (Sch24 Proposition VI.1.2, contract `fredholm-criteria`).
 
 *Needs:* §2.3; §1.7; SchemeAndStackFoundations §1.18; SchemeAndStackFoundations §1.19; SchemeAndStackFoundations §1.22; ReductiveGroups Layer 1; DerivedModuleAlgebra §1.E.0; required contract `fredholm-criteria`.
+
+The API has the following laws.
+
+- For an affine derived scheme Spec(R′) over Spec(R(*)) and a Gelfand ring A over R, (Spec R′)^an(A) = Map_{R(*)}(R′, A(*)); for an étale sheaf X, X^an is the !-sheafification of A ↦ X(A(*)).
+- (−)^an preserves all colimits and finite limits, and sends étale covers of affine derived schemes over Spec(R(*)) to !-covers.
+- For a perfect strongly Tannakian X over Spec(R(*)), X^an(A) = X(Spec A(*)) for every Gelfand ring A over R, without sheafification.
+- For a perfect strongly Tannakian X and a Gelfand stack Y over S, maps Y → X^an are the Perf(R)-linear symmetric monoidal functors Perf(X) → Perf(Y) whose extension to QCoh(X) = Ind(Perf(X)) sends connective pseudo-coherent objects to locally connective objects.
 
 **Checks.**
 
@@ -737,11 +744,18 @@ The API has the following laws.
 
 ### 4.3 Zariski closed immersions and pushouts of Berkovich spaces
 
-Call a map f: Z → X of Berkovich spaces Zariski closed if it is Toën-affine and locally on a strict closed affinoid cover X_i = GSpec(A_i) the map A_i → f_{i,*}O_{Z_i} is surjective on π_0 with connective target (ALRS Definition 2.7.1, p. 26, ALRS line 1366). Prove: (1) for Zariski closed f: Z → Y and g: Z → X the pushout X ⊔_Z Y exists in Berkovich spaces, with |X ⊔_Z Y| = |X| ⊔_{|Z|} |Y| and, in the affinoid case with π_0-surjective maps, X ⊔_Z Y = GSpec(O(X) ×_{O(Z)} O(Y)) (ALRS Lemma 2.7.3, p. 26, ALRS line 1375); (2) for g: GSpec(A) → GSpec(A′) inducing an isomorphism on uniform completions and f: GSpec(A) → X Zariski closed, X ⊔_{GSpec A} GSpec(A′) exists with space |X| and structure sheaf O_X ×_{O_Z} O_{Z′} (ALRS Lemma 2.7.4, p. 27, ALRS line 1441); (3) for connective solid ℚ_p-algebras A → B ← C with A → B surjective and D = A ×_B C, the functor D(D) → D(A) ×_{D(B)} D(C) is fully faithful, an equivalence on D^+, and an equivalence on Perf when A, B, C are Gelfand (ALRS Lemma 2.7.5, p. 27, ALRS line 1461).
+Call a map f: Z → X of Berkovich spaces Zariski closed if it is Toën-affine and locally on a strict closed affinoid cover X_i = GSpec(A_i) the map A_i → f_{i,*}O_{Z_i} is surjective on π_0 with connective target (ALRS Definition 2.7.1, p. 26, ALRS line 1366). Prove: (1) for two Zariski closed maps f: Z → Y and g: Z → X the pushout X ⊔_Z Y exists in Berkovich spaces, with |X ⊔_Z Y| = |X| ⊔_{|Z|} |Y| and, in the affinoid case with π_0-surjective maps, X ⊔_Z Y = GSpec(O(X) ×_{O(Z)} O(Y)) (ALRS Lemma 2.7.3, p. 26, ALRS line 1375); (2) for g: GSpec(A) → GSpec(A′) inducing an isomorphism on uniform completions and f: GSpec(A) → X Zariski closed, X ⊔_{GSpec A} GSpec(A′) exists with space |X| and structure sheaf O_X ×_{O_Z} O_{Z′} (ALRS Lemma 2.7.4, p. 27, ALRS line 1441); (3) for connective solid ℚ_p-algebras A → B ← C with A → B surjective and D = A ×_B C, the functor D(D) → D(A) ×_{D(B)} D(C) is fully faithful, an equivalence on D^+, and an equivalence on Perf when A, B, C are Gelfand (ALRS Lemma 2.7.5, p. 27, ALRS line 1461).
 
 A proof route: In the affinoid case identify |GSpec(B ×_A C)| with the pushout of spectra pointwise, using a †-rational localization inverting an element of the kernel; glue by analytic descent. For (3) construct the right adjoint (N, M) ↦ N ×_K M and prove the unit is an equivalence; essential surjectivity on D^+ uses projectivity of ℤ_■[S] and a connectivity induction; Perf follows by passing to dualizable objects and the Fredholm property.
 
 *Needs:* §2.6; §2.7; §2.3; §1.7.
+
+The API has the following laws.
+
+- For two Zariski closed maps Z → Y and Z → X of Berkovich spaces the pushout X ⊔_Z Y exists in Berkovich spaces, and |X ⊔_Z Y| = |X| ⊔_{|Z|} |Y|.
+- If X, Y and Z are affinoid and O(X) → O(Z) and O(Y) → O(Z) are surjective on π_0, then X ⊔_Z Y = GSpec(O(X) ×_{O(Z)} O(Y)).
+- For GSpec(A) → GSpec(A′) inducing an isomorphism of uniform completions and a Zariski closed GSpec(A) → X, the pushout X ⊔_{GSpec A} GSpec(A′) has underlying space |X| and structure sheaf O_X ×_{O_{GSpec A}} O_{GSpec A′}.
+- For connective solid ℚ_p-algebras A → B ← C with A → B surjective on π_0 and D = A ×_B C, base change D(D) → D(A) ×_{D(B)} D(C) is fully faithful and an equivalence on bounded-below objects, and Perf(D) ≃ Perf(A) ×_{Perf(B)} Perf(C) when A, B and C are Gelfand rings.
 
 **Checks.**
 
@@ -812,6 +826,13 @@ A proof route: ALRS Lemma A.2.20: over strictly totally disconnected A, GSpec(B)
 
 *Needs:* §4.6; §4.2; §2.4; MotivesAndAlgebraicCyclesPartII Layer 0.
 
+The API has the following laws.
+
+- †-quasi-pro-étale maps of Gelfand rings contain the †-rational localizations and the Berkovich-étale maps and are stable under base change and filtered colimits; for A → B †-quasi-pro-étale, a map B → C is †-quasi-pro-étale if and only if A → C is.
+- Every Gelfand ring A has a †-quasi-pro-étale cover A → B with B strictly totally disconnected; over a strictly totally disconnected A every †-quasi-pro-étale A → B is a filtered colimit of finite étale A-algebras and is flat.
+- For an epimorphism f: Z → Y of τ-Gelfand stacks that is infinitesimally cohesive and formally smooth and a map g: Y → X: if τ lifts along square-zero extensions, infinitesimal cohesiveness and the existence of a cotangent complex pass from g ∘ f to g; if τ is flat and every affinoid has a strictly totally disconnected τ-cover, nilcompleteness passes from f and g ∘ f to g.
+- For f: Y → X and an epimorphism X′ → X of τ-Gelfand stacks, f is infinitesimally cohesive, resp. admits a cotangent complex, resp. for flat τ is nilcomplete, if its base change Y ×_X X′ → X′ is.
+
 **Checks.**
 
 - A †-rational localization is †-quasi-pro-étale but not finite étale.
@@ -820,9 +841,16 @@ A proof route: ALRS Lemma A.2.20: over strictly totally disconnected A, GSpec(B)
 
 ### 4.8 Tangent complexes and classifying stacks
 
-For an infinitesimally cohesive map f: Y → X with cotangent complex define its tangent complex T_f (and shifts T_f[1]) as the spectrum-valued functor (R, η, M) ↦ fib(Y(R ⊕ M) → Y(R) ×_{X(R)} X(R ⊕ M)) (ALRS Construction A.3.1, p. 186, ALRS line 10041), and the overconvergent shifted twisted tangent complex (T_X[1]{1})^† as the fibre of T_X[1]{1} → its de Rham stack (ALRS Remark 3.1.4, p. 43, ALRS line 2230). Prove that for a map Y → X of arc-stacks weakly representable in arc-diamonds, Ŷ → X̂ is infinitesimally cohesive with zero cotangent complex (ALRS Lemma A.3.4, p. 187, ALRS line 10104); that for a group G → S admitting a deformation theory and formally smooth, with BG → S admitting a deformation theory, L_{BG/S} ≅ e^*L_f[−1] is the shifted adjoint representation on the cotangent complex at the unit (ALRS Proposition A.3.5, p. 188, ALRS line 10123); and that for a partially proper rigid analytic group G over a Banach field K, BG and BG^† (G^† the overconvergent neighbourhood of 1) admit a deformation theory over GSpec(K), with GSpec(K) → BG^{dR/K} and BG^† → BG epimorphisms for the †-quasi-pro-étale topology (ALRS Lemma A.3.6, p. 190, ALRS line 10234).
+For an infinitesimally cohesive map f: Y → X with cotangent complex define its tangent complex T_f as the spectrum-valued functor (R, η, M) ↦ fib(Y(R ⊕ M) → Y(R) ×_{X(R)} X(R ⊕ M)), the fibre taken at the point given by η and the trivial derivation, and for i ≥ 0 the shifted tangent complex T_f[i], the Gelfand stack over Y with T_f[i](η) = T_f(η, R, R[i]) = τ_{≥0}Hom_R(η^*L_f, R[i]) for η: GSpec(R) → Y, the anima written τ_{≥−i}Hom_R(η^*L_f, R) in the source (ALRS Construction A.3.1, pp. 186–187, ALRS line 10041 and ALRS line 10064). Define its de Rham stack (T_f[i])^dR over Y by (T_f[i])^dR(η) = τ_{≥0}Hom_A(η^*L_f, A^u[i]) on nilperfectoid η: GSpec(A) → Y, and the overconvergent shifted tangent complex (T_f[i])^† = fib(T_f[i] → (T_f[i])^dR), a Gelfand stack over Y with (T_f[i])^†(η) = τ_{≥0}Hom_A(η^*L_f, Nil†(A)[i]) (ALRS Remark A.3.2, p. 187, ALRS line 10074); for a line bundle L on Y define T_f[i] ⊗ L, (T_f[i] ⊗ L)^dR and (T_f[i] ⊗ L)^† in the same way, with η^*L, η^*L ⊗_A A^u and η^*L ⊗_A Nil†(A) in place of R, A^u and Nil†(A). The twisted complex T^†_X[1](−1) of ALRS Remark 3.1.4 (p. 43, ALRS line 2230) is (T_g[1] ⊗ L)^† for the base change g: X × BG_m → BG_m of X → GSpec(ℚ_p) and L the line bundle of weight −1 pulled back from BG_m; the source takes the de Rham stack relative to X^dR, which has the same fibre. Prove that for a map Y → X of arc-stacks weakly representable in arc-diamonds, Ŷ → X̂ is infinitesimally cohesive with zero cotangent complex (ALRS Lemma A.3.4, p. 187, ALRS line 10104); that for a group G → S admitting a deformation theory and formally smooth, with BG → S admitting a deformation theory, L_{BG/S} ≅ e^*L_f[−1] is the shifted adjoint representation on the cotangent complex at the unit (ALRS Proposition A.3.5, p. 188, ALRS line 10123); and that for a partially proper rigid analytic group G over a Banach field K, BG and BG^† (G^† the overconvergent neighbourhood of 1) admit a deformation theory over GSpec(K), with GSpec(K) → BG^{dR/K} and BG^† → BG epimorphisms for the †-quasi-pro-étale topology (ALRS Lemma A.3.6, p. 190, ALRS line 10234).
 
-*Needs:* §4.6; §4.7; §2.8; §3.4.
+*Needs:* §4.6; §4.7; §2.8; §3.4; §3.1; §1.8; §1.2.
+
+The API has the following laws.
+
+- For i ≥ 0, η: GSpec(R) → Y and nilperfectoid η: GSpec(A) → Y, T_f[i](η) = τ_{≥0}Hom_R(η^*L_f, R[i]), (T_f[i])^dR(η) = τ_{≥0}Hom_A(η^*L_f, A^u[i]) and (T_f[i])^†(η) = τ_{≥0}Hom_A(η^*L_f, Nil†(A)[i]); twisting by a line bundle L on Y replaces the coefficients by their tensor products with η^*L.
+- (T_f[i])^† → T_f[i] → (T_f[i])^dR is a fibre sequence of spectrum objects in Gelfand stacks over Y, and likewise after twisting by a line bundle on Y.
+- For a formally smooth group G → S with unit e such that G and BG admit a deformation theory over S, L_{BG/S} ≅ e^*L_{G/S}[−1], with G acting through the adjoint action on the cotangent space at the unit.
+- For a map Y → X of arc-stacks weakly representable in arc-diamonds, Ŷ → X̂ is infinitesimally cohesive with L_{Ŷ/X̂} = 0.
 
 **Checks.**
 
@@ -830,6 +858,7 @@ For an infinitesimally cohesive map f: Y → X with cotangent complex define its
 - L_{BG_a^†} = O[−1], although G_a^† has trivial underlying arc-stack.
 - For the trivial group, BG = S and L_{BG/S} = 0.
 - For a perfectoid space Y over a perfectoid X, L_{Ŷ/X̂} = 0, whereas L_{C_p/ℚ_p} ≠ 0 since ℚ_p is not perfectoid (compare 4.5).
+- For Y = A¹ over GSpec(ℚ_p), A = C_p[ε]/ε² and a point η: GSpec(A) → A¹, η^*L_{A¹} = A·dT, so T_{A¹}[1](η) = BA, (T_{A¹}[1])^dR(η) = BC_p and (T_{A¹}[1])^†(η) = B(C_p·ε) = BG_a^†(A); for Y = GSpec(ℚ_p) all three are a point. A fibre formed with the absolute de Rham stack of the total space of T_{A¹}[1] would also contain the fibre C_p·ε of A¹(A) → A¹(C_p), the †-neighbourhood of the base point.
 
 ### Examples
 
@@ -869,11 +898,18 @@ The API has the following laws.
 
 ### 5.2 Square-zero lifts and the special fibre of the relative cone
 
-For Y → X with cotangent complex and locally eventually connective M define the anima of square-zero extensions Sqz(Y/X; M) = τ_{≥0}Hom_Y(L_{Y/X}, M[1]) and, for Y → X → S and η ∈ Sqz(X/S; M), the anima of square-zero lifts Sqz(Y/S; η) (ALRS Definition 2.8.11, p. 32, ALRS line 1712); the divisor BG_m → A¹/G_m carries the square-zero extension ℚ_p[t]/t², so every Cartier divisor D → W has its first infinitesimal neighbourhood D(1) (ALRS Example 2.8.12, p. 32, ALRS line 1724). For Berkovich spaces construct the underlying square-zero thickening of η, compatible with base change and †-formally étale maps (ALRS Lemma 2.8.13, p. 33, ALRS line 1762; ALRS Lemma 2.8.14, p. 33, ALRS line 1777). Prove: for a Cartier divisor D → W over S and Y → D, Y^{cone/(D,W)} → W is an isomorphism off D; if Y → D → W → S are infinitesimally cohesive with cotangent complexes, Y^{cone/(D,W)}_s = D ×_{T_{D/S}[1](−1)} T_{Y/S}[1](−1) along the map classifying L_{D/S} → L_{D/W}; Y^{cone/(D,W)}_s → Y is a principal homogeneous space for T_{Y/D}[1] ⊗ N*_{D/W}, whose sections over †-formally étale U → Y are the square-zero lifts of U from D to D(1) (ALRS Proposition 2.8.15, p. 34, ALRS line 1805).
+For Y → X with cotangent complex and locally eventually connective M define the anima of square-zero extensions Sqz(Y/X; M) = τ_{≥0}Hom_Y(L_{Y/X}, M[1]) and, for f: Y → X and X → S with cotangent complexes, M ∈ D^+(X) and η ∈ π_0Sqz(X/S; M), the anima of square-zero lifts Sqz(Y/S; η), the fibre of τ_{≥0}Hom_Y(L_{Y/S}, f^*M[1]) → τ_{≥0}Hom_Y(f^*L_{X/S}, f^*M[1]) at f^*η (ALRS Definition 2.8.11, p. 32, ALRS line 1712); the divisor BG_m → A¹/G_m carries the square-zero extension ℚ_p[t]/t², so every Cartier divisor D → W has its first infinitesimal neighbourhood D(1) (ALRS Example 2.8.12, p. 32, ALRS line 1724). For Berkovich spaces construct the underlying square-zero thickening of η, compatible with base change and †-formally étale maps (ALRS Lemma 2.8.13, p. 33, ALRS line 1762; ALRS Lemma 2.8.14, p. 33, ALRS line 1777). Prove: for a Cartier divisor D → W over S and Y → D, Y^{cone/(D,W)} → W is an isomorphism off D; if Y → D → W → S are infinitesimally cohesive with cotangent complexes, Y^{cone/(D,W)}_s = D ×_{T_{D/S}[1](−1)} T_{Y/S}[1](−1) along the map classifying L_{D/S} → L_{D/W}; Y^{cone/(D,W)}_s → Y is a principal homogeneous space for T_{Y/D}[1] ⊗ N*_{D/W}, whose sections over †-formally étale U → Y are the square-zero lifts of U from D to D(1) (ALRS Proposition 2.8.15, p. 34, ALRS line 1805).
 
 A proof route: Part (1) is ALRS Lemma 2.8.6(1) since W ∖ D = W ×_{A¹/G_m} G_m/G_m. Part (2) follows from the definitions and the description of D → D(1) → W; the torsor structure comes from the fibre sequence T_{Y/D}[1](−1) → T_{Y/S}[1](−1) → f^*T_{D/S}[1](−1); sections over †-étale U use ALRS Lemma 2.8.7.
 
 *Needs:* §5.1; §4.6; §4.8; DerivedModuleAlgebra §0.25.
+
+The API has the following laws.
+
+- For affinoid GSpec(B) → GSpec(A) and connective M, Sqz(GSpec(B)/GSpec(A); M) is the anima of square-zero extensions B̃ = B ×_{B ⊕ M[1]} B → B of A-algebras with ideal M.
+- Sqz(Y/S; η) is nonempty if and only if the image of f^*η in π_0Hom_Y(L_{Y/X}, f^*M[2]) vanishes, and it is then a torsor under Sqz(Y/X; f^*M), by the transitivity sequence of 4.6.
+- For a Cartier divisor D → W and Y → D, Y^{cone/(D,W)} → W is an isomorphism over W ∖ D = W ×_{A¹/G_m} G_m/G_m.
+- For Y → D → W → S infinitesimally cohesive with cotangent complexes, Y^{cone/(D,W)}_s → Y is a principal homogeneous space for T_{Y/D}[1] ⊗ N*_{D/W}, and its sections over a †-formally étale U → Y are the square-zero lifts of U over S from D to D(1).
 
 **Checks.**
 
@@ -897,11 +933,17 @@ A proof route: Primness is checked on special fibres, factoring Y/(T_{Y/X} ⋊ G
 
 ### 5.4 The filtered de Rham stack and degree-one divisors on thickened affine lines
 
-For a Gelfand stack X define the filtered de Rham stack X^{dR,+} → A¹/G_m as the sheafification of (I → R) ↦ X(R/(I ⊗_R Nil†(R))), with relative versions Y^{dR,+/X} and X^{dR,+/(D,W)} (ALRS Definition 3.1.1, p. 42, ALRS line 2195). Prove that for a †-cohesive map Y → X the square relating Y^{dR,+/X}, Y^{cone/X}, (Y × A¹/G_m)^dR and (Y^{cone/X})^dR is cartesian (ALRS Proposition 3.1.3, p. 42, ALRS line 2221), that over G_m/G_m the filtered de Rham stack is X^dR and, for X with a cotangent complex, over BG_m it is the Hodge stack, the classifying stack of the shifted tangent bundle T_X[1](−1) restricted to its overconvergent neighbourhood of zero, T^†_X[1](−1) (ALRS Remark 3.1.4, p. 43, ALRS line 2230). For a nilperfectoid A let Ã¹_A = A¹_{A^u} ⊔_{GSpec A^u} GSpec(A), a degree-one divisor on Ã¹_A being a Cartier divisor whose pullback to A¹_{A^u} is a section; define Div¹_{A¹} and X^{Div¹_{A¹}} (ALRS Definition 3.1.5, p. 43, ALRS line 2240). Prove the cartesian square (3.1.1) and Div¹_{A¹} ≅ A¹/G_m^†, and, for †-cohesive X, X^{Div¹_{A¹}} = X^{dR,+} ×_{A¹/G_m} A¹/G_m^† (ALRS §3.1, p. 43, ALRS line 2255).
+For a Gelfand stack X define the filtered de Rham stack X^{dR,+} → A¹/G_m as the sheafification of (I → R) ↦ X(R/(I ⊗_R Nil†(R))), with relative versions Y^{dR,+/X} and X^{dR,+/(D,W)} (ALRS Definition 3.1.1, p. 42, ALRS line 2195). Prove that for a †-cohesive map Y → X the square relating Y^{dR,+/X}, Y^{cone/X}, (Y × A¹/G_m)^dR and (Y^{cone/X})^dR is cartesian (ALRS Proposition 3.1.3, p. 42, ALRS line 2221), that over G_m/G_m the filtered de Rham stack is X^dR and, for X with a cotangent complex, over BG_m it is the Hodge stack (T_X[1](−1))^† of 4.8, formed for X × BG_m → BG_m and the line bundle of weight −1, which for X with tangent bundle T_X is the classifying stack of T^†_X(−1) over X × BG_m (ALRS Remark 3.1.4, p. 43, ALRS line 2230). For a nilperfectoid A let Ã¹_A = A¹_{A^u} ⊔_{GSpec A^u} GSpec(A), a degree-one divisor on Ã¹_A being a Cartier divisor whose pullback to A¹_{A^u} is a section; let Div¹_{A¹} be the Gelfand stack sending a nilperfectoid A to the anima of degree-one divisors on Ã¹_A, and X^{Div¹_{A¹}} → Div¹_{A¹} the sheafification of (A, D) ↦ X(D) (ALRS Definition 3.1.5, p. 43, ALRS line 2240). Prove the cartesian square (3.1.1) and Div¹_{A¹} ≅ A¹/G_m^†, and, for †-cohesive X, X^{Div¹_{A¹}} = X^{dR,+} ×_{A¹/G_m} A¹/G_m^† (ALRS §3.1, p. 43, ALRS line 2255).
 
 A proof route: R/(I ⊗ Nil†R) is the pullback of R/I and R^{†-red} over R^{†-red}/(R^{†-red} ⊗ I), a pullback along a †-thickening and a surjection, so †-cohesiveness gives the square; a degree-one divisor D on Ã¹_A has D = GSpec(A/(I ⊗_A Nil†(A))).
 
-*Needs:* §5.1; §4.4; §4.3; §3.1.
+*Needs:* §5.1; §4.4; §4.3; §3.1; §4.8.
+
+The API has the following laws.
+
+- The restriction of X^{dR,+} to G_m/G_m is X^dR, and for X with a cotangent complex its restriction to BG_m is the Hodge stack (T_X[1](−1))^†.
+- For a †-cohesive map Y → X, Y^{dR,+/X} = Y^{cone/X} ×_{(Y^{cone/X})^dR} (Y × A¹/G_m)^dR.
+- Div¹_{A¹} ≅ A¹/G_m^†, and for †-cohesive X, X^{Div¹_{A¹}} = X^{dR,+} ×_{A¹/G_m} A¹/G_m^†.
 
 **Checks.**
 
@@ -969,6 +1011,13 @@ For an arc-stack X over 𝔽_p define the open punctured curve Y^⋄_X = X ×_{M
 A proof route: !-ability and properness reduce to 3.3(1). Smoothness reduces, arc-locally on X (3.2) and analytically on Y (3.3(2)), to G_m over Marc(ℤ_p^cyc): the perfected multiplicative group is suave by the perfectoid disc case 3.3(3), the quotient by ℤ_p^sm is suave, and 1 → g_*1 is an equivalence by excision along Marc(ℚ_p^cyc) ⊂ Marc(ℤ_p^cyc) ⊃ Marc(𝔽_p). The dualizing complex follows from the strong theory of first Chern classes and Zav Theorem 5.7.7.
 
 *Needs:* §3.2; §3.3; §6.2; VectorBundlesAndIsocrystals Layer 1; required contract `suave-prim-calculus`.
+
+The API has the following laws.
+
+- Marc(𝔽_p)^HK = GSpec(ℚ_p)/φ^ℤ, its vector bundles are the isocrystals over ℚ_p, and O(n) is the isocrystal (ℚ_p, p^{-n}φ).
+- For a map f of qfd arc-stacks over ℤ_p that is arc-locally lqfd, f^HK is !-able; it is cohomologically proper for proper f, cohomologically étale for étale f, and for smooth f of pure relative dimension d cohomologically smooth with dualizing complex O(d)[2d] = (O(1)[2])^{⊗d}.
+- For a proper smooth map f of Berkovich spaces over ℚ_p, f^HK_* sends perfect modules to perfect modules.
+- For G_m → Marc(𝔽_p), f^HK_*O = O ⊕ O(−1)[−1], and Hyodo–Kato stacks carry a strong theory of first Chern classes in the sense of Zav Definition 5.2.8.
 
 **Checks.**
 
@@ -1068,6 +1117,12 @@ A proof route: From the adjunction of 7.1 (ALRS Lemma 3.5.2, ALRS line 2670) one
 
 *Needs:* §7.3; §7.1; §6.3; §3.2.
 
+The API has the following laws.
+
+- D^×_{FF,(−)} ⊣ (−)^⋄_FF ⊣ D^{×,dR}_{FF,(−)} between arc-stacks and perfect analytic δ-stacks, both outer functors fully faithful; D^×_{FF,(−)} preserves colimits and finite limits, and D^{×,dR}_{FF,(−)} preserves limits and colimits.
+- (D^{×,dR}_{FF,Y})^real = (Y × Marc(ℚ_p))^dR for an arc-stack Y, and D^{×,dR}_{FF,Y}/φ^ℤ realizes the Hyodo–Kato stack Y^HK of 6.3.
+- Realization commutes with de Rham stacks: for an analytic δ-stack 𝒴, perfect or not, D^×_{FF,𝒴^⋄} → 𝒴^real → (𝒴^dR)^real induce equivalences on de Rham stacks.
+
 **Checks.**
 
 - For Y = Marc(𝔽_p), (D^{×,dR}_{FF,Y})^real = Marc(ℚ_p)^dR = GSpec(ℚ_p), so Y^HK = GSpec(ℚ_p)/φ^ℤ as in 6.3.
@@ -1082,6 +1137,13 @@ A proof route: Cover FF_A by †-rational localizations; on each, the pushout de
 
 *Needs:* §7.2; §4.3; §2.3; §3.4; VectorBundlesAndIsocrystals Layer 2.
 
+The API has the following laws.
+
+- A ↦ Perf(FF_A) is a sheaf of categories on Gelfand stacks, and (S, 𝒳) ↦ Perf^{[n,m]}(𝒳/φ^ℤ) is a sheaf of categories on perfect δ-spaces.
+- For nilperfectoid or uniformly perfectoid A, Perf(FF_A) = Perf(FF_{A^u}) ×_{Perf(A^u)} Perf(A), and likewise for D^+ and for each fixed amplitude [n, m].
+- For nilperfectoid A and E ∈ Perf(FF_A), Γ(FF_A, E) = Γ(FF_{A^u}, E) ×_{Γ(A^u, E)} Γ(A, E), each term the sections of the base change of E; for strictly totally disconnected nilperfectoid A, Γ(GSpec A, O_{FF_A}) = ℚ_p^la(A).
+- (Perf^≃_FF)^real = Perf^≃ ×_{Perf^{≃,dR}} (Perf^≃_FF)^{dR,real}.
+
 **Checks.**
 
 - For A perfectoid both horizontal maps are identities and the square is trivially cartesian.
@@ -1095,6 +1157,13 @@ For λ ∈ ℚ let (D_λ, φ_{D_λ}) be the standard isocrystal of slope λ and,
 A proof route: Apply 7.5 to E = O(λ) or O(λ)[1]: the lower-left term is G_a^an ⊗ D_{−λ} (resp. its classifying stack) by definition of O(λ), the right column is the de Rham stack of the left, and the upper right is the classical Banach–Colmez space (FS Proposition II.2.2; VectorBundlesAndIsocrystals Layer 5, “Lubin–Tate universal cover and sections of O(1)”). For λ = 1 the map 1 + D̃^{<1} → BC(O(1)) is an isomorphism because log: 1 + D^{<1} → A¹ is étale of partially proper rigid spaces and 1 + D̃^{<1} → 1 + D^{<1} is †-formally étale.
 
 *Needs:* §7.5; §7.3; §3.4; §4.1; VectorBundlesAndIsocrystals Layer 1; VectorBundlesAndIsocrystals Layer 2; VectorBundlesAndIsocrystals Layer 5.
+
+The API has the following laws.
+
+- For λ ≥ 0, G_a^† ⊗ D_{−λ} → BC(O(λ)) → BC(O(λ))^dR is an extension of ℚ_p^la-modules, and BC(O) = ℚ_p^la.
+- For λ < 0, B(G_a^† ⊗ D_{−λ}) → BC(O(λ)[1]) → BC(O(λ)[1])^dR is an extension of ℚ_p^la-modules.
+- lim_{x↦x^p}(1 + D^{<1}_{ℚ_p}) ≅ BC(O(1)), compatibly with the logarithm.
+- BC_FF → BC_FF^dR is an epimorphism, and after base change to Marc(ℚ_p) the de Rham stacks are the classical Banach–Colmez spaces of VectorBundlesAndIsocrystals Layer 5.
 
 **Checks.**
 
@@ -1177,6 +1246,13 @@ A proof route: The pushout 𝒳_T = D^×_{FF,A^u} ⊔_{ℕ × T^u} (ℕ × T) in
 
 *Needs:* §8.3; §5.1; §4.4; §4.3; §6.1.
 
+The API has the following laws.
+
+- I_BK is a line bundle on Q_p^Δ, locally a finite tensor product of the (φ^n)^*I_Δ, and μ_BK: Q_p^Δ → A¹/G_m classifies the divisor I_BK → O.
+- The pullback of μ_BK along 𝒳_T → Q_p^Δ is the divisor ⊔_{n∈ℕ} φ^{n,*}D, whose Frobenius translates are pairwise disjoint.
+- Off ⋃_{n∈ℕ} φ^{-n}(Q_p^HT) the map I_BK → O is an isomorphism.
+- For †-cohesive X, X^Δ = X^cone ×_{(X^cone)^dR} D^{×,dR}_{FF,X^⋄} along μ_BK and its de Rham stack, so μ_BK: X^Δ → X^cone is †-formally étale.
+
 **Checks.**
 
 - On X_cyc, μ_BK pulls back to the ideal generated by log(q)/(q − 1): log(q) has simple zeros at all p-power roots of unity, and dividing by q − 1 removes q = 1, leaving the zeros of [p]_{q^{p^n}}, n ≥ 0 (ALRS Proposition 4.8.1(3)).
@@ -1240,7 +1316,7 @@ This layer analyses the analytic Hodge–Tate stack as a gerbe for the overconve
 
 ### 9.1 The Hodge–Tate stack as a gerbe
 
-Let I_{Div¹} be the ideal of the Hodge–Tate divisor Q_p^HT → Div¹ and I its restriction to Q_p^HT (ALRS Definition 4.4.1, p. 65, ALRS line 3413). Prove that for a nilperfectoid A, a degree-one divisor D → FF_T and a factorization T → D → FF_T through the Hodge–Tate locus, O(D) → A is a square-zero extension with ideal Nil†(A) ⊗_A I_A[1], classified by the derivation d̃: A → A ⊕ Nil†(A) ⊗ I_A[2] obtained from the derivation of A^u attached to B⁺_dR(A^u)/ξ² → A^u through the connecting map of I_A[1] → I_{A^u}[1] → Nil†(A) ⊗ I_A[2] (ALRS Lemma 4.4.2, p. 65, ALRS line 3417); thus G_a^HT is a square-zero extension of G_a × Q_p^HT by G_a^†{1}[1]. Prove that for a Gelfand stack X there is a natural map π_X: X^HT → X × Q_p^HT through X^cone_s; that for †-cohesive X with a cotangent complex the square X^HT → X^dR over X^cone_s → (X^cone_s)^dR is cartesian and π_X is a principal homogeneous space for the overconvergent shifted twisted tangent complex (T_X[1]{1})^†; and that π_X is the fibre of a derivation d̃_X: X × Q_p^HT → (T_X{1}[2])^†, so that for formally smooth X with tangent bundle T_X, π_X is an epimorphism and a gerbe banded by T_X^†{1}, where {1} is the twist by I (ALRS Proposition 4.4.3, p. 66, ALRS line 3481).
+Let I_{Div¹} be the ideal of the Hodge–Tate divisor Q_p^HT → Div¹ and I its restriction to Q_p^HT (ALRS Definition 4.4.1, p. 65, ALRS line 3413). Prove that for a nilperfectoid A, a degree-one divisor D → FF_T and a factorization T → D → FF_T through the Hodge–Tate locus, O(D) → A is a square-zero extension with ideal Nil†(A) ⊗_A I_A[1], classified by the derivation d̃: A → A ⊕ Nil†(A) ⊗ I_A[2] obtained from the derivation of A^u attached to B⁺_dR(A^u)/ξ² → A^u through the connecting map of I_A[1] → I_{A^u}[1] → Nil†(A) ⊗ I_A[2] (ALRS Lemma 4.4.2, p. 65, ALRS line 3417); thus G_a^HT is a square-zero extension of G_a × Q_p^HT by G_a^†{1}[1]. Prove that for a Gelfand stack X there is a natural map π_X: X^HT → X × Q_p^HT through X^cone_s; that for †-cohesive X with a cotangent complex the square X^HT → X^dR over X^cone_s → (X^cone_s)^dR is cartesian and π_X is a principal homogeneous space for the overconvergent shifted twisted tangent complex (T_X[1]{1})^† of 4.8, formed for X × Q_p^HT → Q_p^HT and the pullback of I; and that π_X is the fibre of a derivation d̃_X: X × Q_p^HT → (T_X{1}[2])^†, so that for formally smooth X with tangent bundle T_X, π_X is an epimorphism and a gerbe banded by T_X^†{1}, where {1} is the twist by I (ALRS Proposition 4.4.3, p. 66, ALRS line 3481).
 
 A proof route: Base change ALRS Proposition 4.3.1 (8.6) along BG_m → A¹/G_m and Div¹ → A¹/G_m. The pushout FF_T = FF_{T^u} ⊔_{T^u} T gives O(D) = A ×_{A^u} (A^u ⊕ I_{A^u}[1]) over the Hodge–Tate point; †-cohesiveness of X evaluates X on this square, and ALRS Lemma 2.8.6 (5.1) identifies X^cone_s = T_X[1]{1}, whose map to its de Rham stack has fibre (T_X[1]{1})^†.
 
@@ -1290,6 +1366,12 @@ A proof route: Base change 9.1 along Â¹/G_m → A^{1,†}/G_m → A¹/G_m, usi
 
 *Needs:* §9.1; §9.2; §5.1.
 
+The API has the following laws.
+
+- For †-cohesive X, X^{†-HT} = X^{†-cone} ×_{(X^cone_s)^dR} X^dR and X^{HT^} = X^{cone^} ×_{(X^cone_s)^dR} X^dR, using (X^{cone^})^dR = (X^{†-cone})^dR = (X^cone_s)^dR.
+- For formally smooth X with a cotangent complex, X^dR → (X^cone_s)^dR is a (T_X(−1) ⋊ G_m)^dR-torsor, G_m acting with weight −1 on the tangent space, and so are X^{HT^} → X^{cone^} and X^{†-HT} → X^{†-cone}.
+- Over a perfect prism (S, 𝒳, D) and a †-cohesive formally smooth X → D, the relative formal and overconvergent Hodge–Tate stacks are T_{X/D}{1}^dR-torsors over the corresponding relative cones, {1} being the twist by the ideal of D.
+
 **Checks.**
 
 - For X = GSpec(ℚ_p), Q_p^{HT^} = Spf(K_∞[[t]])/ℤ_p^{×,la} with K_∞ = ℚ_p(μ_{p^∞}), because (B⁺_dR(ℚ_p^cyc)/t^n)^la = K_∞[t]/t^n (ALRS §6.7, line 9169).
@@ -1303,6 +1385,13 @@ For a smooth rigid space X over ℚ_p define Faltings' extension FE_X as the ext
 A proof route: For Lemma 4.6.4 reduce, on a toric chart X → T^d with perfectoid cover X_∞, to the regular immersion X → X ×_{X^dR} X = (X ⊂ X × X)^† and identify the regular sequence (log[ε], [T_i♭] ⊗ 1 − 1 ⊗ T_i). For ALRS Proposition 4.6.8 use that formally étale maps have trivial algebraic cones (ALRS Remark 2.9.7(1), ALRS line 2062) and that the cone of a Zariski closed immersion is the spectrum of its adic filtration (ALRS Remark 2.9.7(2)). ALRS Corollary 4.6.10 is the base change of (4.6.5) along BG_m^alg → Â¹/G_m^alg, using gr^•OB_dR,X = ⊕_i gr⁰OB_dR,X(i) and gr⁰OB_dR,X = OC_X, followed by Gelfandification.
 
 *Needs:* Mathlib `WittVector.fontaineTheta`; Mathlib `BDeRhamPlus`; §9.1; §5.1; §5.3; §4.5; §2.1; PadicHodgeTheory §2.2; PadicHodgeTheory §2.3; AInfCohomology §AI.3.1; AdicEtaleGeometry §A1.12; PerfectoidSpaces §P7.16; required contract `algebraic-stacks-condensed`; required contract `formal-cone-adic-filtration`.
+
+The API has the following laws.
+
+- FE_X is an extension 0 → O_{X̂^⋄}{1} → FE_X → Ω¹_X ⊗ O_{X̂^⋄} → 0 on X̂^⋄ whose T_X{1}-torsor is X̂^⋄ ×_{X^cone_s} (X × BG_m).
+- X̂^⋄ → FF^∧_{X^⋄} ×_{X^dR} X is, locally on X_proét^{ω₁}, a regular closed immersion with formal completion Spf(OB⁺_dR,X), and L_{X̂^⋄/X} ≅ gr¹(OB⁺_dR,X)[1].
+- Spf^{≥0}(B⁺_dR,X) is the algebraic formal cone of X̂^⋄, and its base change along X × Â¹/G_m^alg → X^{cone-alg^} is Spf^{≥0}(OB⁺_dR,X).
+- X̂^⋄ ×_{X^cone_s} (X × BG_m) ≅ (AnSpec(OC_X))^Gelf, and FE_X is the classical Faltings' extension 0 → Ô_X(1) → gr¹OB⁺_dR,X → Ô_X ⊗ Ω¹_X → 0 of PadicHodgeTheory §2.3.
 
 **Checks.**
 
@@ -1368,6 +1457,13 @@ A proof route: ρ is an epimorphism because lim_{x↦x^p}A^{u,×} → (A^{♭,�
 
 *Needs:* §9.7; §9.8; §8.4; §7.6; §5.1; §4.1.
 
+The API has the following laws.
+
+- ρ: G̃_{m,Q_p^Δ} → G_m^Δ is a φ-equivariant epimorphism of commutative group stacks with fibre G, so G_m^Δ = G̃_{m,Q_p^Δ}/G.
+- log_Δ: G → G_{a,Q_p^Δ}{1} is φ-equivariant and †-formally étale, and 0 → G_a^† ⊗ G_{a,Q_p^Δ}{1} → G → ℤ_p(1)^sm → 0 is exact.
+- On arc-stacks the fibre sequence G[1/p] → (1 + D̃^{<1})_{Q_p^Δ} → G_a^Δ becomes the fundamental exact sequence 0 → ℚ_p(1) → BC(O(1)) → G_a → 0.
+- Over the cyclotomic prism, G^{Div¹~}|_{X_cyc} ≅ q^{ℤ_p^la} and G_m^{Div¹~} ≅ G̃_{m,X_cyc}/(ℤ_p^{×,la} ⋉ ℤ_p^la) with (a, b)·(q♭, T♭) = (q♭^a, q♭^b T♭).
+
 **Checks.**
 
 - On X_cyc, log_Δ(q) = log(q) = (q − 1)·e for the generator e of 9.8, and p^{-1}φ(log q) = p^{-1}log(q^p) = log q, so log_Δ(q) is φ-invariant for the twisted Frobenius; compare PrismaticCohomologyPartIII §6.10, where (q − 1)e_A = log_Δ(q^p) integrally.
@@ -1423,7 +1519,7 @@ A proof route: Construct Φ on the comodule presentation: a right C(Π_0, ℚ_p)
 
 ### 10.3 The groups G_r, G^la and locally analytic representations
 
-Let G be a compact p-adic Lie group with an open normal subgroup G_0 that is uniform pro-p, with ordered basis g_1, …, g_d, G_0 ≅ ℤ_p^d, and p-valuation; after shrinking G_0 its group law and the conjugation action of G extend to integral power series on the polydisc D^d. Let G_0(r) ⊂ G_0(1) be the polydisc of radius r ∈ (0, 1] ∩ ℚ, G_r the induced rigid analytic group ⊔_{g ∈ G/G_r} gG_0(r), G^la = ⋂_{r→0} G_r with O(G^la) = C^la_G = colim_r O(G_r), G_{<r} = ⋃_{r′<r} G_{r′} for r ∈ (0, 1] and G_{≤r} = ⋂_{r′>r} G_{r′} for r ∈ (0, 1) (ALRS §5.2.2, p. 97, ALRS line 5086; ALRS Definition 5.2.8, p. 98, ALRS line 5110). A solid representation M is locally analytic if M^la := Γ(G, C^la_G ⊗ M) → M is an isomorphism (ALRS Definition 5.2.9, p. 98, ALRS line 5124). For a p-adic Lie group G, not necessarily compact, and a compact open subgroup G_c, put G^la = ⊔_{g ∈ G/G_c} g·G_c^la; this does not depend on G_c, since G_c^la = ⊔_{h ∈ G_c/G_c′} h·G_c′^la for every open subgroup G_c′ ⊆ G_c, and G^cont and G^sm are the corresponding disjoint unions over G/G_c. Prove, for every p-adic Lie group G, not necessarily compact: BG^cont → BG^la is 0-proper with pushforward of O equal to O, so pullback is fully faithful, and Ψ: D(BG^la) → Rep^■_{ℚ_p}(G), pullback to BG^cont followed by Φ of 10.2, is fully faithful with a D(BG^la)-linear right adjoint Ψ^R (ALRS Lemma 5.2.10(1)–(2), p. 98, ALRS line 5137). For compact G prove that Ψ^R followed by pullback along GSpec(ℚ_p) → BG^la is (−)^la, so the essential image of Ψ is the category of locally analytic representations (ALRS Lemma 5.2.10(3), p. 98, ALRS line 5143); for compact G and r ∈ (0, 1) define Rep^{<r} and Rep^{≤r} as D(GSpec(ℚ_p)/G_{<r}) and D(GSpec(ℚ_p)/G_{≤r}) (ALRS Definition 5.2.11, p. 99, ALRS line 5163); for compact G and r ∈ (0, 1), GSpec(ℚ_p) → BG^la and → BG^{≤r} are 0-proper and descendable, so BG^la and BG^{≤r} are 0-proper over GSpec(ℚ_p), and both are suave, and GSpec(ℚ_p) → BG^{<r} is cohomologically smooth with BG^{<r} prim (ALRS Lemma 5.2.12, p. 99, ALRS line 5169). For a rigid analytic group 𝒢 over ℚ_p whose group of ℚ_p-points G = 𝒢(ℚ_p) is a p-adic Lie group of dimension dim 𝒢, G^la agrees with 𝒢(ℚ_p)^la of 3.4, coset by coset of a compact open subgroup when G is not compact.
+Let G be a compact p-adic Lie group with an open normal subgroup G_0 that is uniform pro-p, with ordered basis g_1, …, g_d, G_0 ≅ ℤ_p^d, and p-valuation; after shrinking G_0 its group law and the conjugation action of G extend to integral power series on the polydisc D^d. Let G_0(r) ⊂ G_0(1) be the polydisc of radius r ∈ (0, 1] ∩ ℚ, G_0(r)(ℚ_p) ⊆ G_0 the compact open subgroup of ℚ_p-points of G_0(r), normal in G because conjugation is given by integral power series, G_r the induced rigid analytic group ⊔_{g ∈ G/G_0(r)(ℚ_p)} g·G_0(r), G^la = ⋂_{r→0} G_r with O(G^la) = C^la_G = colim_r O(G_r), G_{<r} = ⋃_{r′<r} G_{r′} for r ∈ (0, 1] and G_{≤r} = ⋂_{r′>r} G_{r′} for r ∈ (0, 1) (ALRS §5.2.2, p. 97, ALRS line 5086; ALRS Definition 5.2.8, p. 98, ALRS line 5110). A solid representation M is locally analytic if M^la := Γ(G, C^la_G ⊗ M) → M is an isomorphism (ALRS Definition 5.2.9, p. 98, ALRS line 5124). For a p-adic Lie group G, not necessarily compact, and a compact open subgroup G_c, put G^la = ⊔_{g ∈ G/G_c} g·G_c^la; this does not depend on G_c, since G_c^la = ⊔_{h ∈ G_c/G_c′} h·G_c′^la for every open subgroup G_c′ ⊆ G_c, and G^cont and G^sm are the corresponding disjoint unions over G/G_c. Prove, for every p-adic Lie group G, not necessarily compact: BG^cont → BG^la is 0-proper with pushforward of O equal to O, so pullback is fully faithful, and Ψ: D(BG^la) → Rep^■_{ℚ_p}(G), pullback to BG^cont followed by Φ of 10.2, is fully faithful with a D(BG^la)-linear right adjoint Ψ^R (ALRS Lemma 5.2.10(1)–(2), p. 98, ALRS line 5137). For compact G prove that Ψ^R followed by pullback along GSpec(ℚ_p) → BG^la is (−)^la, so the essential image of Ψ is the category of locally analytic representations (ALRS Lemma 5.2.10(3), p. 98, ALRS line 5143); for compact G and r ∈ (0, 1) define Rep^{<r} and Rep^{≤r} as D(GSpec(ℚ_p)/G_{<r}) and D(GSpec(ℚ_p)/G_{≤r}) (ALRS Definition 5.2.11, p. 99, ALRS line 5163); for compact G and r ∈ (0, 1), GSpec(ℚ_p) → BG^la and → BG^{≤r} are 0-proper and descendable, so BG^la and BG^{≤r} are 0-proper over GSpec(ℚ_p), and both are suave, and GSpec(ℚ_p) → BG^{<r} is cohomologically smooth with BG^{<r} prim (ALRS Lemma 5.2.12, p. 99, ALRS line 5169). For a rigid analytic group 𝒢 over ℚ_p whose group of ℚ_p-points G = 𝒢(ℚ_p) is a p-adic Lie group of dimension dim 𝒢, G^la agrees with 𝒢(ℚ_p)^la of 3.4, coset by coset of a compact open subgroup when G is not compact.
 
 A proof route: For non-compact G, the base change of BG^cont → BG^la along the epimorphism BG_c^la → BG^la, whose fibre is the discrete set G/G_c, is BG_c^cont → BG_c^la, so descent along it reduces the 0-properness and the value of the pushforward to compact G. For compact G, 0-properness of BG^cont → BG^la is checked after pullback along the effective epimorphism GSpec(ℚ_p) → BG^la (Gest Proposition 7.9), where G^la/G^cont → GSpec(ℚ_p) is 0-proper since G^la is affinoid and BG^cont is proper (10.2); the pushforward computes locally analytic vectors (RJRC Proposition 6.1.5). Ψ^R is D(BG^la)-linear because Φ^R is D(BG^cont)-linear (10.2) and the pushforward along BG^cont → BG^la is D(BG^la)-linear by the projection formula.
 
@@ -1442,16 +1538,23 @@ The API has the following laws.
 - For G finite, G^la = G^sm = G^cont and every solid representation is locally analytic.
 - The representation C(ℤ_p, ℚ_p) with the regular action is not locally analytic: its locally analytic vectors are C^la(ℤ_p, ℚ_p) ⊊ C(ℤ_p, ℚ_p).
 - For a Banach representation B, the cohomology of the derived locally analytic vectors equals R^iLA(B) of LocallyAnalyticRepresentationsOfLocalGroups §2.3, and agrees with RJRC22 Theorems 4.36, 5.3 and 5.5; the derived locally analytic vectors V^Rla of solid representations of its §3.8 are the κ-condensed counterpart.
-- For G = ℤ_p, with coordinate x and G_0(1) the closed unit disc, and r = 1/p, G_{≤1/p} = ⋂_{r′>1/p} G_{r′} is the disjoint union over a = 0, …, p − 1 of the overconvergent closed discs of radius 1/p around a, since G_{r′} ∩ ℤ_p = pℤ_p for 1/p ≤ r′ < 1. For r = 1 the intersection ⋂_{r′>1} G_{r′} has no terms, the polydiscs G_0(r′) being defined for r′ ≤ 1 only, so G_{≤1} and Rep^{≤1} are not defined, whereas G_{<1} = ⋃_{r′<1} G_{r′} is.
+- For G = ℤ_p, with coordinate x and G_0(1) the closed unit disc, and r = 1/p, G_{≤1/p} = ⋂_{r′>1/p} G_{r′} is the disjoint union over a = 0, …, p − 1 of the overconvergent closed discs of radius 1/p around a, since G_0(r′)(ℚ_p) = {x ∈ ℤ_p : |x| ≤ r′} = pℤ_p for 1/p ≤ r′ < 1, so that G_{r′} is the union of the p discs a + G_0(r′) indexed by ℤ_p/pℤ_p; the rigid group G_{r′} itself contains all of ℤ_p. For r = 1 the intersection ⋂_{r′>1} G_{r′} has no terms, the polydiscs G_0(r′) being defined for r′ ≤ 1 only, so G_{≤1} and Rep^{≤1} are not defined, whereas G_{<1} = ⋃_{r′<1} G_{r′} is.
 - For the discrete group G = ℤ, a p-adic Lie group of dimension 0 that is not compact, take G_c = {0}: G^cont = G^la = G^sm = ⊔_{n ∈ ℤ} GSpec(ℚ_p), so BG^cont → BG^la is the identity and Ψ = Φ is the equivalence of D(Bℤ) with Rep^■_{ℚ_p}(ℤ), the solid ℚ_p[T^{±1}]-modules; the identification of Ψ^R with (−)^la is not asserted, M^la being defined for compact G only. A version of Lemma 5.2.10(1)–(2) for compact G only would not cover the second Check of 10.6 for G = ℚ_p^×, where G^la = ⊔_{n ∈ ℤ} p^n·ℤ_p^{×,la}.
 
 ### 10.4 Lazard's criterion and binomial analytic functions
 
-Prove that for a uniform pro-p group G with coordinates G ≅ ℤ_p^d and a ℚ_p-Banach space M, a function f: G → M with binomial expansion f(x) = Σ_α c_α binom(x, α) is locally analytic if and only if there is r > 1 with ‖c_α‖ r^{|α|} → 0 (ALRS Theorem 5.2.14, p. 101, ALRS line 5314; Laz65 Chapitre III, (1.3.9) Corollaire, p. 77, Laz65 line 2873). For a uniform Banach ℚ_p-algebra Λ with pseudo-uniformizer ϖ and the spectral norm |−|_ϖ normalized by |ϖ|_ϖ = 1/2 at every point of M(Λ), define for r > 1 the ϖ-complete module C_{r,ϖ}(G, Λ°) of series Σ c_α binom(x, α) with |c_α|_ϖ r^{τ(α)} ≤ 1 and → 0, where τ(α) = Σ_i w(g_i)·α_i for the p-valuation w and the ordered basis g_1, …, g_d defining the coordinates (10.3), the values w(g_i) being made rational by modifying w (ALRS p. 101, ALRS line 5333; ALRS Definition 5.2.15, p. 102, ALRS line 5364), prove that it is a subalgebra of C(G, Λ°) and, for |p|_ϖ ≤ 1/2 and 1 < r < 2, a Hopf Λ°-algebra (ALRS Lemma 5.2.16, p. 102, ALRS line 5379; ALRS Lemma 5.2.17, p. 102, ALRS line 5411), and define the analytic group G^Bin_{r,ϖ} = GSpec(C_{r,ϖ}(G, Λ)) and its semilinear representations (ALRS Definition 5.2.18, p. 104, ALRS line 5492). Prove that for 1 < r < 2 and |p|_ϖ ≤ 1/2 the natural map f: BG^la ×_{GSpec ℚ_p} GSpec(Λ) → BG^Bin_{r,ϖ} is 0-proper with f_*Λ = Λ, so that ∗-pullback along f is fully faithful (ALRS Lemma 5.2.21, p. 105, ALRS line 5617).
+Prove that for a uniform pro-p group G with coordinates G ≅ ℤ_p^d and a ℚ_p-Banach space M, a function f: G → M with binomial expansion f(x) = Σ_α c_α binom(x, α) is locally analytic if and only if there is r > 1 with ‖c_α‖ r^{|α|} → 0 (ALRS Theorem 5.2.14, p. 101, ALRS line 5314; Laz65 Chapitre III, (1.3.9) Corollaire, p. 77, Laz65 line 2873). For a uniform Banach ℚ_p-algebra Λ with pseudo-uniformizer ϖ and the spectral norm |−|_ϖ normalized by |ϖ|_ϖ = 1/2 at every point of M(Λ), define for r > 1 the ϖ-complete module C_{r,ϖ}(G, Λ°) of series Σ c_α binom(x, α) with |c_α|_ϖ r^{τ(α)} ≤ 1 and → 0, where τ(α) = Σ_i w(g_i)·α_i for the p-valuation w and the ordered basis g_1, …, g_d defining the coordinates (10.3), the values w(g_i) being made rational by modifying w (ALRS p. 101, ALRS line 5333; ALRS Definition 5.2.15, p. 102, ALRS line 5364), prove that it is a subalgebra of C(G, Λ°) and, for |p|_ϖ ≤ 1/2 and 1 < r < 2, a Hopf Λ°-algebra (ALRS Lemma 5.2.16, p. 102, ALRS line 5379; ALRS Lemma 5.2.17, p. 102, ALRS line 5411), and define the analytic group G^Bin_{r,ϖ} = GSpec(C_{r,ϖ}(G, Λ)) and, for a commutative algebra R in D(BG^Bin_{r,ϖ}), the R-semilinear Bin_{r,ϖ}-analytic representations Mod_R(D(BG^Bin_{r,ϖ})) (ALRS Definition 5.2.18, p. 104, ALRS line 5492). Prove that for 1 < r < 2 and |p|_ϖ ≤ 1/2 the natural map f: BG^la ×_{GSpec ℚ_p} GSpec(Λ) → BG^Bin_{r,ϖ} is 0-proper with f_*Λ = Λ, so that ∗-pullback along f is fully faithful (ALRS Lemma 5.2.21, p. 105, ALRS line 5617).
 
 A proof route: Lazard's criterion is Laz65 III.1.3.9 (the d-variable form of Amice's theorem). Multiplicativity of C_{r,ϖ} follows from the estimates on products of binomial coefficients; the Hopf structure needs |p|_ϖ ≤ 1/2 so that the group law is analytic on the relevant polydiscs; the Lazard–Serre resolution of ℤ_p by finite free ℤ_{p,■}[G]-modules (RJRC22 Theorem 5.7) controls group cohomology.
 
 *Needs:* §10.3; NoncommutativeAndEquivariantIwasawa §0.7; LocallyAnalyticDistributions §0.1.
+
+The API has the following laws.
+
+- For a uniform pro-p group G with coordinates and a ℚ_p-Banach space M, f = Σ_α c_α binom(x, α) is locally analytic if and only if ‖c_α‖ r^{|α|} → 0 for some r > 1.
+- C_{r,ϖ}(G, Λ°) is a ϖ-complete Λ°-subalgebra of C(G, Λ°), and a Hopf Λ°-algebra when |p|_ϖ ≤ 1/2 and 1 < r < 2.
+- For |p|_ϖ ≤ 1/2 and 1 < r < 2, G^Bin_{r,ϖ} = GSpec(C_{r,ϖ}(G, Λ)) is a group Gelfand stack over GSpec(Λ), and its R-semilinear representations form Mod_R(D(BG^Bin_{r,ϖ})).
+- For |p|_ϖ ≤ 1/2 and 1 < r < 2, f: BG^la ×_{GSpec ℚ_p} GSpec(Λ) → BG^Bin_{r,ϖ} is 0-proper with f_*Λ = Λ, so ∗-pullback along f is fully faithful.
 
 **Checks.**
 
@@ -1496,11 +1599,18 @@ A proof route: By Lemma 5.3.1 and 10.3 restrict to a compact open subgroup and l
 
 ### 10.7 Classical decompletion
 
-Prove that for a Gelfand ring R with an action of a compact p-adic Lie group G, the connective cover τ_{≥0}R^la is a Gelfand ring (ALRS Lemma 5.4.1, p. 109, ALRS line 5831). Call R classically decompleted if R^la is connective and R^la → R is an isomorphism on uniform completions; call a Berkovich G^cont-space X locally classically decompleted if it has a strict closed affinoid cover by GSpec(R_i), stabilized by compact opens G_i with R_i classically decompleted, and let X^la = ⋃ GSpec(R_i^la) (ALRS Definition 5.4.2, p. 110, ALRS line 5851). Prove that X^la is a Berkovich space and that analytic, finite étale and Berkovich-étale sites of R^la, R and R^u agree (ALRS Remark 5.4.3, p. 110, ALRS line 5862; ALRS Remark 5.4.4, p. 110, ALRS line 5867), that Berkovich-étale G-equivariant R → R′ decomplete as B ⊗_{R^la} R = R′ (ALRS Lemma 5.4.5, p. 110, ALRS line 5877), that GSpec_{|X|/G^la}(O^la_X) ≅ GSpec(R^la)/G^la (ALRS Corollary 5.4.6, p. 110, ALRS line 5895), that for a p-adic Lie group G acting on a Berkovich space X, X is locally classically decompleted if the pieces Z_i of a strict closed cover, each stable under a compact open subgroup G_i ⊂ G, are locally classically decompleted for G_i; local classical decompletedness passes to a Berkovich (finite) étale X′ → X with an extension of the action of an open G_0 ⊂ G, with X′^la → X^la Berkovich (finite) étale and X′ = X′^la ×_{X^la} X, and descends along such maps that are covers; that if X is locally classically decompleted, then for a G^la-equivariant map of Berkovich spaces Y → X^la the fibre product X ×_{X^la} Y is locally classically decompleted with (X ×_{X^la} Y)^la = Y; that if X is locally classically decompleted for G and Y for a p-adic Lie group H, then X × Y is locally classically decompleted for G × H with (X × Y)^{(G×H)-la} = X^{G-la} × Y^{H-la}; and that for G = H ⋉ N, local classical decompletion of X with respect to N and of X^{N-la} with respect to H gives X^{G-la} = (X^{N-la})^{H-la} (ALRS Lemma 5.4.7, p. 111, ALRS line 5909), and hence that for classically decompleted affinoid X = GSpec(R), R^la → O^la_X is an equivalence and Mod_{R^la}(D(BG^la)) ≅ Mod_{O^la_X}(D(|X|^Betti/G^la)), with every G^cont-equivariant affinoid Berkovich-étale GSpec(R′) → GSpec(R) classically decompleted (ALRS Theorem 5.1.1(2), p. 92, ALRS line 4747).
+Prove that for a Gelfand ring R with an action of a compact p-adic Lie group G, the connective cover τ_{≥0}R^la is a Gelfand ring (ALRS Lemma 5.4.1, p. 109, ALRS line 5831). Call R classically decompleted if R^la is connective and R^la → R is an isomorphism on uniform completions; call a Berkovich G^cont-space X locally classically decompleted if it has a strict closed affinoid cover by GSpec(R_i), stabilized by compact opens G_i with R_i classically decompleted, and let X^la = ⋃ GSpec(R_i^la) (ALRS Definition 5.4.2, p. 110, ALRS line 5851). Prove that X^la is a Berkovich space and that analytic, finite étale and Berkovich-étale sites of R^la, R and R^u agree (ALRS Remark 5.4.3, p. 110, ALRS line 5862; ALRS Remark 5.4.4, p. 110, ALRS line 5867), that for classically decompleted R a G-equivariant Berkovich-étale R → R′ decompletes: the Berkovich-étale R^la-algebra B corresponding to R′ under the equivalence of sites carries a locally analytic G-action with B ⊗_{R^la} R ≅ R′ G-equivariantly (ALRS Lemma 5.4.5, p. 110, ALRS line 5877), that GSpec_{|X|/G^la}(O^la_X) ≅ GSpec(R^la)/G^la (ALRS Corollary 5.4.6, p. 110, ALRS line 5895), that for a p-adic Lie group G acting on a Berkovich space X, X is locally classically decompleted if the pieces Z_i of a strict closed cover, each stable under a compact open subgroup G_i ⊂ G, are locally classically decompleted for G_i; local classical decompletedness passes to a Berkovich (finite) étale X′ → X with an extension of the action of an open G_0 ⊂ G, with X′^la → X^la Berkovich (finite) étale and X′ = X′^la ×_{X^la} X, and descends along such maps that are covers; that if X is locally classically decompleted, then for a G^la-equivariant map of Berkovich spaces Y → X^la the fibre product X ×_{X^la} Y is locally classically decompleted with (X ×_{X^la} Y)^la = Y; that if X is locally classically decompleted for G and Y for a p-adic Lie group H, then X × Y is locally classically decompleted for G × H with (X × Y)^{(G×H)-la} = X^{G-la} × Y^{H-la}; and that for G = H ⋉ N, local classical decompletion of X with respect to N and of X^{N-la} with respect to H gives X^{G-la} = (X^{N-la})^{H-la} (ALRS Lemma 5.4.7, p. 111, ALRS line 5909), and hence that for classically decompleted affinoid X = GSpec(R), R^la → O^la_X is an equivalence and Mod_{R^la}(D(BG^la)) ≅ Mod_{O^la_X}(D(|X|^Betti/G^la)), with every G^cont-equivariant affinoid Berkovich-étale GSpec(R′) → GSpec(R) classically decompleted (ALRS Theorem 5.1.1(2), p. 92, ALRS line 4747).
 
 A proof route: Boundedness of τ_{≥0}R^la follows by adjunction from boundedness of C^la_G ⊗ R; †-rational localizations of GSpec(R) are pulled back from GSpec(R^la) because R^{la,u} = R^u (ABLB Lemma 3.1.8), and the sites agree by ABLB Proposition 3.2.11 for the Berkovich-étale maps of ABLB Definition 3.2.8 (ALRS Remark 5.4.4 cites the pair as Lemma 3.2.8 and Proposition 3.2.11).
 
 *Needs:* §10.6; §10.5; §1.6; §2.6.
+
+The API has the following laws.
+
+- For a Gelfand ring R with an action of a compact p-adic Lie group, τ_{≥0}R^la is a Gelfand ring; if R is classically decompleted, the analytic, finite étale and Berkovich-étale sites of R^la, R and R^u agree.
+- For classically decompleted R, every G-equivariant Berkovich-étale R → R′ has R′ ≅ B ⊗_{R^la} R G-equivariantly for a Berkovich-étale R^la-algebra B with a locally analytic G-action.
+- Local classical decompletedness is local on strict closed covers by G_i-stable pieces, passes to Berkovich (finite) étale maps X′ → X with an extension of the action of an open subgroup and descends along such maps that are covers, is stable under base change along G^la-equivariant Y → X^la with (X ×_{X^la} Y)^la = Y, and under products with (X × Y)^{(G×H)-la} = X^{G-la} × Y^{H-la}.
+- For classically decompleted X = GSpec(R), R^la → O^la_X is an equivalence, GSpec_{|X|^Betti/G^la}(O^la_X) ≅ GSpec(R^la)/G^la and Mod_{R^la}(D(BG^la)) ≅ Mod_{O^la_X}(D(|X|^Betti/G^la)).
 
 **Checks.**
 
@@ -1510,11 +1620,17 @@ A proof route: Boundedness of τ_{≥0}R^la follows by adjunction from boundedne
 
 ### 10.8 Integral binomial-analytic vectors and the ϵ-TORS criterion
 
-Let G be a uniform pro-p group of dimension d with the coordinates of 10.4, and let Λ, ϖ and |−|_ϖ be as in 10.4 with |p|_ϖ ≤ 1/2 and ϖ^ϵ ∈ Λ for every ϵ in a dense subset E of ℚ_{>0} containing the exponents ϵ, (d + 1)ϵ and, when positive, δ used below (ALRS p. 112, ALRS line 5987, which assumes every rational ϵ > 0 and notes in its footnote 43 that a dense set suffices). For a Λ°-linear solid G-representation M define its integral binomial-analytic vectors M^{Bin_{r,ϖ}} = Γ(G, M ⊗_{Λ°} C_{r,ϖ}(G, Λ°)) (ALRS Definition 5.5.1, p. 112, ALRS line 5997). Prove that if a G-equivariant ϖ-complete solid animated Λ°-algebra A satisfies (ϵ-TORS) — there are 2 > r_0 > r_1 > ⋯ > 1, r_n → 1, with π_i(A^{Bin_{r_n,ϖ}}) ϖ^ϵ-torsion for i ≤ −1 — and a connective ϖ-complete A-module N admits maps N_{ϖ^{(d+1)ϵ}} → M ⊗ A_{ϖ^{(d+1)ϵ}} → N_{ϖ^{(d+1)ϵ}} composing to ϖ^δ with 0 ≤ δ < ϵ and M with trivial action, then N[1/ϖ] admits a decompletion by Bin_{r_n,ϖ}-analytic vectors, in particular by locally analytic vectors (ALRS Proposition 5.5.6, p. 113, ALRS line 6055); prove stability under relatively locally analytic base change (ALRS Corollary 5.5.13, p. 116, ALRS line 6203), define ϵ-TORS uniformly on G (ALRS Definition 5.5.14, p. 116, ALRS line 6213) and prove its stability under integral models of Tate-rational localizations (ALRS Lemmas 5.5.16–5.5.17, p. 116, ALRS line 6225).
+Let G be a uniform pro-p group of dimension d with the coordinates of 10.4, and let Λ, ϖ and |−|_ϖ be as in 10.4 with |p|_ϖ ≤ 1/2 and ϖ^ϵ ∈ Λ for every ϵ in a dense subset E of ℚ_{>0} containing the exponents ϵ, (d + 1)ϵ and, when positive, δ used below (ALRS p. 112, ALRS line 5987, which assumes every rational ϵ > 0 and notes in its footnote 43 that a dense set suffices). For a Λ°-linear solid G-representation M define its integral binomial-analytic vectors M^{Bin_{r,ϖ}} = Γ(G, M ⊗_{Λ°} C_{r,ϖ}(G, Λ°)) (ALRS Definition 5.5.1, p. 112, ALRS line 5997). Prove that if a G-equivariant ϖ-complete solid animated Λ°-algebra A satisfies (ϵ-TORS) — there are 2 > r_0 > r_1 > ⋯ > 1, r_n → 1, with π_i(A^{Bin_{r_n,ϖ}}) ϖ^ϵ-torsion for i ≤ −1 — and a connective ϖ-complete A-module N admits maps N_{ϖ^{(d+1)ϵ}} → M ⊗ A_{ϖ^{(d+1)ϵ}} → N_{ϖ^{(d+1)ϵ}} composing to ϖ^δ with 0 ≤ δ < ϵ and M with trivial action, then N[1/ϖ] admits a decompletion by Bin_{r_n,ϖ}-analytic vectors, in particular by locally analytic vectors (ALRS Proposition 5.5.6, p. 113, ALRS line 6055); prove stability under relatively locally analytic base change (ALRS Corollary 5.5.13, p. 116, ALRS line 6203), say that A satisfies ϵ-TORS uniformly on G if it satisfies ϵ-TORS as a G_0-equivariant algebra for every G_0 in a basis of compact open subgroups of G (ALRS Definition 5.5.14, p. 116, ALRS line 6213), and prove its stability under integral models of Tate-rational localizations (ALRS Lemmas 5.5.16–5.5.17, p. 116, ALRS line 6225).
 
 A proof route: Tensor the given almost-retraction with the binomial-analytic functions and use the torsion bound on negative homotopy of A^{Bin} to make the comparison map an equivalence after inverting ϖ; the Lazard–Serre resolution bounds the cohomological amplitude by d.
 
 *Needs:* §10.4; §10.5; §1.3.
+
+The API has the following laws.
+
+- If A satisfies ϵ-TORS and a connective ϖ-complete G-equivariant A-module N admits maps N_{ϖ^{(d+1)ϵ}} → M ⊗ A_{ϖ^{(d+1)ϵ}} → N_{ϖ^{(d+1)ϵ}} composing to ϖ^δ with 0 ≤ δ < ϵ and M with trivial action, then N[1/ϖ]^{Bin_{r_n,ϖ}} ⊗_{A[1/ϖ]^{Bin_{r_n,ϖ}}} A[1/ϖ] → N[1/ϖ] is an equivalence for every r_n of the condition, and N[1/ϖ] decompletes by locally analytic vectors.
+- For G-equivariant A → B and A → C with B_{ϖ^δ} ≅ M ⊗_{τ_{≥0}Γ(G, A_{ϖ^δ})} A_{ϖ^δ} G-equivariantly, for some δ > dϵ > 0 and a connective M with trivial action, if C satisfies ϵ-TORS then B ⊗_A C satisfies dϵ-TORS, and likewise uniformly on G.
+- If a p-complete Λ°-algebra A satisfies ϵ-TORS uniformly on G and f ∈ A has reduction modulo p^s coming from a G-equivariant map (ℤ/p^s)[T] → A/p^s with trivial action on (ℤ/p^s)[T], for integers s > k ≥ 1, then A⟨f/p^k⟩ and A⟨p^k/f⟩ satisfy dϵ-TORS uniformly on G.
 
 **Checks.**
 
@@ -1529,6 +1645,13 @@ Let G be a p-adic Lie group and X → X′ a G^cont-equivariant map of Berkovich
 A proof route: By Lemma 5.6.2 reduce to G^cont-equivariant perfect complexes on a strongly decompleted affinoid GSpec(R), R = colim A_i[1/ϖ]; a perfect complex descends to some A_i, where ALRS Proposition 5.6.4 (built on 10.8 and the almost isomorphism colim_r C_{r,ϖ}(G, Λ°) → C(G, Λ°) of ALRS Lemma 5.6.3) produces the decompletion; full faithfulness comes from 10.7.
 
 *Needs:* §10.8; §10.7; §10.6; §2.3; §2.2; §4.3.
+
+The API has the following laws.
+
+- For a G^cont-equivariant map X → X′ of Berkovich spaces that is locally on |X′| a map of affinoid Gelfand stacks inducing an isomorphism of uniform completions, with G acting on X′ through G^la, an open subgroup G_0 ⊆ G, a G_0^la-equivariant Y′ → X′ and Y = Y′ ×_{X′} X, the square Y/G_0^cont → Y′/G_0^la over X/G^cont → X′/G^la is cartesian; local classical decompletedness with X^la = X′ passes from X to Y with Y^la = Y′, and back when Y′ → X′ is an epimorphism; and for X′ = X^la and an epimorphism Y′ → X′, Perf(Y′/G_0^la) ≃ Perf(Y/G_0^cont) implies Perf(X′/G^la) ≃ Perf(X/G^cont).
+- For a G^cont-equivariant animated Λ°-algebra A, ϖ-adically complete with A/ϖ discrete and satisfying ϵ-TORS uniformly on G for some ϵ ∈ E, every G-equivariant perfect A[1/ϖ]-module P has P^la ⊗_{A[1/ϖ]^la} A[1/ϖ] ≃ P.
+- A strongly decompleted affinoid GSpec(A) is classically decompleted.
+- For locally strongly decompleted X, pullback gives Perf(X^la/G^la) ≃ Perf(X/G^cont), also after every G^cont-equivariant Berkovich-étale Y → X, and, for X over a Banach field K with Λ a K-algebra, after base change to X_B for every filtered colimit B = colim_j B_{j,0}[1/p] of p-adically complete animated O_K-algebras.
 
 **Checks.**
 
@@ -1730,6 +1853,13 @@ A proof route: ALRS Proposition A.3.5 (4.8) identifies L_{BG^la} with the shifte
 
 *Needs:* §11.9; §11.8; §11.5; §11.2; §4.8; §10.7.
 
+The API has the following laws.
+
+- θ^geo_β: g^∨_β → Ω¹_{X/D}{−1} is the shift of β^*L_{BG^la} → L_{X^HT/X}; over K finite over ℚ_p, θ^mix_β: g^∨_β → FE^−_X{−1} is the analogous map, and θ^arith_β: g^∨_β → O_{X^HT} is its case X = GSpec(K).
+- The dual Sen_β: T_{X/D}{1} → g_β of θ^geo_β is a map of Lie algebras and agrees with the geometric Sen operator of RCSen Theorem 1.0.4; for X = GSpec(K) and Galois X̃ the dual of θ^arith_β is the classical Sen operator.
+- For X = GSpec(K) and K_∞/K algebraic Galois with p-adic Lie group G and K^u_∞ perfectoid, β_*O = K^{u,la}_∞ is static and X^HT ≅ GSpec(K^{u,la}_∞)/G^la.
+- For compact G and a profinite étale Galois X̃^⋄ → X^⋄ with group G whose θ^geo (resp. θ^mix) is surjective, the composite β̃: X^HT → |X̃|^Betti/G^la is 0-affine and X^HT ≅ GSpec_{|X̃|^Betti}(O^la_{X̃̂^⋄})/G^la, with static values of O^la_{X̃̂^⋄} on a strict closed basis of |X̃|.
+
 **Checks.**
 
 - For K_∞ = K(μ_{p^∞}), K^{u,la}_∞ = K(μ_{p^∞}) uncompleted, so ALRS Proposition 6.4.10 recovers K^HT = GSpec(K(μ_{p^∞}))/Γ^la as in 9.7; θ^arith is dual to the identity of Lie(Γ) = ℚ_p, the Sen operator of the cyclotomic character.
@@ -1755,6 +1885,13 @@ Call a map f: Y → X of Gelfand stacks Δ-!-able if f^{Div¹} is !-able (ALRS D
 A proof route: (1) reduces by ALRS Lemma 4.2.5 (8.3) to de Rham stacks of Fargues–Fontaine curves (6.3). (2) covers A¹ by A¹ ∖ {0} and A¹ ∖ {1} and uses the presentation of G_m^{Div¹} of 9.9, !-ability of maps of Berkovich spaces and of classifying stacks of locally analytic groups; the diagonal is a base change of the zero section, which is (3). (3) writes B as a retract of a finite cell attachment A_n, each step A_m = A_{m−1} ⊗_{Sym M_m[m]} A for a finite free M_m (the equivalence of (a) and (b) in ALRS Definition 6.5.2(1), p. 160, ALRS line 8640); each step is a base change of the zero section of a shifted affine space, whose twistor stack map is, !-locally on the target, represented in affinoid Gelfand stacks (reduce to the unit section of G_m and use 9.9), hence 0-affine, and 0-affine maps are stable under composition and retracts (Gest Proposition 6.6); the trivialization of the codualizing complex is 2.2. For a regular Zariski closed immersion the cone square of 8.6 gives a second route: the twistor stack is the base change of the deformation to the normal bundle, and regular Zariski closed immersions of analytic rings are suave (RCSolid Lemma 6.3.5, contract `regular-immersion-suave`). (4) is local for †-formally étale maps on source and target, and an analytified finitely presented map factors as Y → A^d_X → X with the first map locally a surjection of finite presentation, so (2) and (3) apply.
 
 *Needs:* §8.3; §8.6; §9.9; §6.3; §5.1; §4.3; §2.2; required contract `suave-prim-calculus`; required contract `regular-immersion-suave`; required contract `gestalten-affine-proper`.
+
+The API has the following laws.
+
+- A †-formally étale map whose perfectoidization is arc-locally lqfd is Δ-!-able; in particular pro-Berkovich-étale maps are.
+- A¹ → GSpec(ℚ_p) is Δ-!-able, and the diagonal of its twistor stack is 0-affine.
+- For a surjection A → B of affinoid Gelfand rings of finite presentation as a map of animated rings, f^{Div¹} is 0-affine, hence 0-proper and !-able with trivialized codualizing complex.
+- Maps of Berkovich spaces locally of †-finite presentation are Δ-!-able; Berkovich-smooth maps, in particular rigid smooth maps, are locally †-l.c.i., hence locally †-finitely presented.
 
 **Checks.**
 
