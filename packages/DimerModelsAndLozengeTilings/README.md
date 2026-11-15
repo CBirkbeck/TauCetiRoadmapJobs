@@ -741,7 +741,9 @@ If `F(R) ⊆ ℝ²` satisfies Mathlib's `IsSimplyConnected`, then `IsSimplyConne
 edge and is affine on each triangle after lifting the vertex values `0`, `c(e)`, `c(e) + c(e')` to
 `ℝ`; it lifts through `ℝ → ℝ/ℤ`, and the lift restricted to vertices is an integer primitive.
 Path-connectedness of `F(R)` gives connectedness of `R`, since triangles of the lattice meet only
-in shared vertices or edges. Thus every domain in Aggarwal's sense is simply connected here.
+in shared vertices or edges. Thus for every domain in Aggarwal's sense, an induced subgraph with
+vertex set `V` whose union of faces `F(Faces(V))` is simply connected (aggarwal2023 lines
+338–341), the region `Faces(V)` of 1.3 is simply connected here.
 *Needs:* 2.1; Mathlib `IsSimplyConnected`, `LocallyPathConnectedSpace`,
 `IsCoveringMap.existsUnique_continuousMap_lifts`, `AddCircle.isCoveringMap_coe`.
 
