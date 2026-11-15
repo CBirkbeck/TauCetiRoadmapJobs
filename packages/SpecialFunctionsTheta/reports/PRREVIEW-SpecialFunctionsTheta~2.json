@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsTheta~2",
+  "head": "76a507d8012ddc8c5ad58fba73b01b3003f5f0fe",
+  "pr": 2252,
+  "folder": "SpecialFunctionsTheta",
+  "date": "2026-11-15",
+  "findings": 11,
+  "blocking": 3,
+  "notes": "Full re-review. All 16 findings of the previous review are repaired at this head. Gate passes every check; depcheck 0 problems; Suggested.lean elaborates with 35 sorry warnings only; one-tactic probe closes 0 of 35 theorems. All 15 sampled targets and every headline recomputed numerically (values in the report's table); every DLMF locator of the sample read at release 1.2.8 and matching; no book source could be read legally (listed under Not verifiable). Blocking: unnamed second owners of the Siegel upper half-space and theta constants with characteristics (SiegelModularForms 0.3, 5.4; MetaplecticAutomorphicForms 8.10); the modular transformation 7.6 statable but absent, and the docstring names no non-statable headline; 7.6 has no proof route and its Needs omit Poisson summation (ThetaSeries Layer 1). P3: two false Checks (7.2, 7.6), a dropped uniqueness in exists_eq_sum_thetaBasis, a headline without roadmap objects, a missing Needs item in 6.2, two Checks in 7.4, the title and one sentence of the description.",
+  "text": "17eca68a15be6789"
+ }
+}
