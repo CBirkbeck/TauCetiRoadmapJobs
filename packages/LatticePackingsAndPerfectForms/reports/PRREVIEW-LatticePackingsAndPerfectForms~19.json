@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LatticePackingsAndPerfectForms~19",
+  "head": "5efad7281e36d002386c3eb0ece04857de3e9774",
+  "pr": 1723,
+  "folder": "LatticePackingsAndPerfectForms",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 5efad72; this round checked the pull request's title and description against the head: 14 sentences read, one contradicted (R01, P3: the description names 'perfect-form certificates', which the head does not contain; replacement text given). The folder's files need no change. Checked: section and layer counts (8, 47), pins at head and main, metadata, Hermite-constant and perfect-class values, the worker's gate (all checks 0, OK), depcheck run this round (0 problems, no UPWARD or CYCLE), elaboration of Suggested.lean (exit 0, 53 sorry warnings only), no change outside the folder, overlaps and citation leads.",
+  "text": "722a049f098136da",
+  "carried": {
+   "from": "5efad7281e36d002386c3eb0ece04857de3e9774",
+   "head": "5efad7281e36d002386c3eb0ece04857de3e9774",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
