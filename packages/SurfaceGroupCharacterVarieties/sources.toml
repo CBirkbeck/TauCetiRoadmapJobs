@@ -40,7 +40,7 @@ locator = "Ch. 1, §§1.1, 1.4; Ch. 2, §§2.1–2.2; Ch. 4, §4.2; Ch. 8, §8.1
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6024#issuecomment-6712166115"
-cited_for = ["1.1: Out(π₁) as the target of the mapping class group", "2.1: isotopy and paths of homeomorphisms", "2.2, 2.6: punctures versus marked points", "2.4: surface groups", "2.5: Birman exact sequence", "3.1–3.4: the outer action and Dehn–Nielsen–Baer"]
+cited_for = ["1.1: Out(π₁) as the target of the mapping class group", "2.1: isotopy and paths of homeomorphisms", "2.2, 2.5: punctures versus marked points", "2.3: PMod of index n! (Ch. 4, §4.2)", "2.4: surface groups and the classification of closed surfaces (Ch. 1, §1.1, Theorem 1.1)", "Layer 2 Examples: the mapping class groups of the sphere with at most one puncture (Ch. 2, §2.2)", "3.1–3.4: the outer action and Dehn–Nielsen–Baer"]
 
 [[source]]
 id = "Knapp2002"
@@ -61,7 +61,7 @@ title = "Canonical representations of surface groups"
 year = 2022
 arxiv = "2205.15352v4"
 locator_scheme = "section"
-locator = "lines 41–50 (Definition 1.1.1); lines 473–475 (PMod of index n!); lines 503–515 (Lemma 2.0.1)"
+locator = "lines 41–50 (Definition 1.1.1); lines 473–475 (PMod of index n!)"
 url = "https://arxiv.org/abs/2205.15352v4"
 fetched_from = "https://arxiv.org/pdf/2205.15352v4"
 fetched_at = "2026-11-08T09:51:38Z"
@@ -70,7 +70,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v4"
-cited_for = ["1.2–1.3: conjugacy classes and the outer action", "2.3: PMod of index n!", "2.5: pure Birman sequence as used downstream", "3.3, 3.5: the Mod_{g,n}-action on conjugacy classes"]
+cited_for = ["1.2–1.3: conjugacy classes and the outer action", "2.3: PMod of index n!", "3.3, 3.5: the Mod_{g,n}-action on conjugacy classes", "7.4: the action on semisimple classes, a point of the character variety"]
 
 [[source]]
 id = "BCGGO2024"
@@ -88,7 +88,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v2"
-cited_for = ["4.2–4.3: Hom(π₁Σ, G^ℝ)", "5.1–5.2: real forms as fixed points of antiholomorphic involutions", "6.1, 6.7: reductive representations", "7.1, 7.4: the character variety and the Fuchsian locus"]
+cited_for = ["4.2–4.3: Hom(π₁Σ, G^ℝ)", "5.1–5.2: real forms as fixed points of antiholomorphic involutive automorphisms, Cartan involutions for a real form", "6.1, 6.7: reductive representations", "7.1, 7.4: the character variety and the Fuchsian locus"]
 
 [[source]]
 id = "Sikora2012"
@@ -122,7 +122,7 @@ url = "https://doi.org/10.1016/0001-8708(84)90040-9"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["References: background for the space Hom(π, G)/G; no target rests on it"]
+cited_for = ["7.1: background for the topology of Hom(π, G)/G for a surface group π; no proof step rests on it"]
 
 [[source]]
 id = "BohmLafuente2021"
@@ -131,7 +131,7 @@ title = "Real geometric invariant theory"
 year = 2017
 arxiv = "1701.00643v3"
 locator_scheme = "theorem"
-locator = "definition (1), lines 52–62; Theorem 1.1, lines 77–88; examples, lines 172–193; Lemma 5.1, line 417; Corollary 5.5, line 445; Lemma 6.3, line 518; Corollary 6.4, line 562; Lemma 6.5, line 568; Corollary A.2, line 1050"
+locator = "definition (1), lines 52–62; Theorem 1.1, lines 77–88, proof of its clause (ii), lines 580–583; examples, lines 172–193; Lemma 5.1, line 417; Corollary 5.5, line 445; Lemma 6.2, line 504; Lemma 6.3, line 518; Corollary 6.4, line 562; Lemma 6.5, line 568; Corollary A.2, line 1050"
 url = "https://arxiv.org/abs/1701.00643v3"
 fetched_from = "https://arxiv.org/pdf/1701.00643v3"
 fetched_at = "2026-11-08T10:30:10Z"
@@ -149,7 +149,7 @@ title = "A Geometric Approach to Complete Reducibility"
 year = 2005
 arxiv = "math/0408109v2"
 locator_scheme = "theorem"
-locator = "§2.4, line 263; Lemma 2.6, line 267; Lemma 2.12, line 355; Proposition 2.13, line 379; Corollary 3.7, line 510; Theorem 3.46, line 861"
+locator = "§2.2, lines 183–187; §2.4, line 263; Lemma 2.6, line 267; Lemma 2.12, line 355; Proposition 2.13, line 379; Corollary 3.7, line 510; Corollary 3.42, line 814; Theorem 3.46, line 861"
 url = "https://arxiv.org/abs/math/0408109v2"
 fetched_from = "https://arxiv.org/pdf/math/0408109v2"
 fetched_at = "2026-11-08T10:44:49Z"
@@ -158,4 +158,4 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v2 (2004), the version read; published Invent. Math. 161 (2005), 177–218"
-cited_for = ["6.3–6.4: reductive closures and complete reducibility", "6.5: closed orbits of tuples", "6.7: irreducibility and products"]
+cited_for = ["6.3: the adjoint criterion (Corollary 3.42) and characteristic zero (§2.2)", "6.3–6.4: reductive closures and complete reducibility", "6.5: closed orbits of tuples", "6.7: irreducibility and products"]
