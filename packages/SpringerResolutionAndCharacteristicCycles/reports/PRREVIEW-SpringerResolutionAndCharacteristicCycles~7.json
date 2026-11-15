@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpringerResolutionAndCharacteristicCycles~7",
+  "head": "f8ea4db6ce1133808d77c4032314bbbf303fd603",
+  "pr": 1828,
+  "folder": "SpringerResolutionAndCharacteristicCycles",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since f8ea4db; this round checked the pull request's title and description against the head. One P3: the description's sentence 'everything else named in the README is a consumer' is false for GroupSchemesOverABase (open #1522, named in Scope line 10, neither supplier nor consumer); the folder itself needs no change. Previous report had no finding. Gate rerun: all scanners 0, OK (worker's build=0); depcheck 244 roadmaps, 2231 edges, 0 problems; lake env lean on Suggested.lean exit 0 with no output (no declarations); outside-folder diff empty; overlaps and resolve: none. Adversarial rows computed for §§11.3, 11.4, 13.4, 13.5 and the p>h convention; other rows stand as in the review of f8ea4db. Seeded sample meets no changed passage.",
+  "text": "1016c10704c8041c",
+  "carried": {
+   "from": "f8ea4db6ce1133808d77c4032314bbbf303fd603",
+   "head": "906b9c79796c8bc8008db8c7fac151ce0f0ae68e",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
