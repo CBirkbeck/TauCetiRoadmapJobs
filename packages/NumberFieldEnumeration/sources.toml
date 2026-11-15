@@ -1,0 +1,113 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "NumberFieldEnumeration"
+
+[[source]]
+id = "lmfdb-polredabs"
+authors = "The LMFDB Collaboration"
+title = "Canonical defining polynomial (nf.polredabs)"
+year = 2024
+locator_scheme = "section"
+locator = "nf.polredabs, three successive minimizations"
+url = "https://www.lmfdb.org/knowledge/show/nf.polredabs"
+fetched_from = "https://www.lmfdb.org/knowledge/show/nf.polredabs"
+fetched_at = "2026-11-15T04:30:29Z"
+sha256 = "3ac3475cd2ea952f1047baa3406ef6da62573a765b205a89d0c38745a59fb645"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["1.2"]
+
+[[source]]
+id = "lmfdb-label"
+authors = "The LMFDB Collaboration"
+title = "Number field labels (nf.label)"
+locator_scheme = "section"
+locator = "nf.label, intrinsic coordinates and quartic example"
+url = "https://www.lmfdb.org/knowledge/show/nf.label"
+fetched_from = "https://www.lmfdb.org/knowledge/show/nf.label"
+fetched_at = "2026-11-15T04:30:59Z"
+sha256 = "be37af649807ed5f2fe9be4918a7c9c4fb7a94ed49dee90d7d9b58e39c4af66b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["2.3"]
+
+[[source]]
+id = "lmfdb-discriminant"
+authors = "The LMFDB Collaboration"
+title = "Number field discriminant (nf.discriminant)"
+locator_scheme = "section"
+locator = "nf.discriminant, integral-basis discriminant"
+url = "https://www.lmfdb.org/knowledge/show/nf.discriminant"
+fetched_from = "https://www.lmfdb.org/knowledge/show/nf.discriminant"
+fetched_at = "2026-11-15T04:30:59Z"
+sha256 = "2d033378706d28241f2e6a47bbf6571f780704be90a4089aa75220d1c4ed4dd4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["2.3"]
+
+[[source]]
+id = "pari"
+authors = "The PARI Group"
+title = "PARI/GP User’s Guide"
+locator_scheme = "section"
+locator = "polredabs"
+url = "https://pari.math.u-bordeaux.fr/dochtml/html-stable/General_number_fields.html"
+fetched_from = "https://pari.math.u-bordeaux.fr/dochtml/html-stable/General_number_fields.html"
+fetched_at = "2026-11-15T04:31:00Z"
+sha256 = "c2cd5e90f421803ddfb10bc9514dfd64dbb6d438246384ce0a8d26c553078fc4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["1.2"]
+
+[[source]]
+id = "jones-roberts2014"
+authors = "J. W. Jones; D. P. Roberts"
+title = "A database of number fields"
+year = 2014
+arxiv = "1404.0266v1"
+locator_scheme = "section"
+locator = "arXiv:1404.0266v1, §3"
+url = "https://arxiv.org/abs/1404.0266v1"
+fetched_from = "https://arxiv.org/pdf/1404.0266v1"
+fetched_at = "2026-11-15T04:31:45Z"
+sha256 = "b6ab1eb7fd654c37edc96f2dda3e67347ee5d8c83e1567bed4fea6d5a634699f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["2.3"]
+
+[[source]]
+id = "martinet1985"
+authors = "J. Martinet"
+title = "Méthodes géométriques dans la recherche des petits discriminants"
+year = 1985
+locator_scheme = "theorem"
+locator = "Corrected author version: §1 p. 3; Proposition 2.3 p. 6; Theorem 2.6 p. 7; Theorem 2.8 and Corollary 2.9 p. 8; p. 9"
+url = "https://jamartin.perso.math.cnrs.fr/AlgNT/dpp8384.pdf"
+fetched_from = "https://jamartin.perso.math.cnrs.fr/AlgNT/dpp8384.pdf"
+fetched_at = "2026-11-15T04:36:14Z"
+sha256 = "31a1a2472c5d11d717a02dd4ea4c2fde63908d800d3fb9e5b35e2b2c6aaa3b47"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["1.3", "2.2"]
+
+[[source]]
+id = "hunter1957"
+authors = "J. Hunter"
+title = "The minimum discriminants of quintic fields"
+year = 1957
+locator_scheme = "page"
+locator = "57–67, Hunter’s theorem"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/50D7CE2AE71A037BC06AA6D4CE32C2ED/S2040618500033463a.pdf/the-minimum-discriminants-of-quintic-fields.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/50D7CE2AE71A037BC06AA6D4CE32C2ED/S2040618500033463a.pdf/the-minimum-discriminants-of-quintic-fields.pdf"
+fetched_at = "2026-11-15T04:36:15Z"
+sha256 = "9f22f06e5eff6ba476c13cfcfad0568e7a863a34d0510b24f9d04e2eee0d5042"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["1.3"]
