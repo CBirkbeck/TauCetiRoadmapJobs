@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RigidAnalyticGeometry~63",
+  "head": "f58ded6a9aeea6977f264231bcc75a47973a0788",
+  "pr": 1807,
+  "folder": "RigidAnalyticGeometry",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "Full review. Gate at f58ded6 passes every check; depcheck reports 0 problems; Suggested.lean elaborates with twelve sorry warnings only; a one-tactic probe closes none of the twelve headlines; the elaborated signatures agree with the README. All 157 pinned library names in the README resolve and none of the headlines is proved at the pins. 60 source locators checked against the cached texts of 13 sources (Conrad, Kiehl-AR, Kiehl-AB, Kiehl-E, Bosch, Huber-CV, Huber-FR, Stacks, FK, Conrad-RA, Luetkebohmert, Temkin, Urban), all correct; BGR, Prestel and Matsumura could not be read (the sampled sections 0.2, 1.4, 3.1, 5.2, 6.1 cite BGR only). All fifteen sampled targets and the twelve headlines have computed rows in the adversarial table. Cross-roadmap citations resolved in RestrictedPowerSeries, PadicFunctionalAnalysis, SchemeAndStackFoundations, AdicSpaces, AdicSpacesPartII, PartIII, PartIV and LocallyAnalyticDistributions. R01 (P2): section 4.3 states the Runge-immersion predicate and Gerritzen-Grauert for locally closed immersions, which AdicSpacesPartIV F1.6 on main states and declares its own (README lines 4148-4161). R02 (P3): the description does not say that main's 33 Suggested.lean declarations are all replaced nor that the README is rewritten. R03 (P3): page locators into Conrad use the author text's pagination without saying so.",
+  "text": "65e3dd1e040903b8"
+ }
+}
