@@ -179,9 +179,15 @@ here only as tests of the definitions.
   indicator of s at x as r ↓ 0, for a.e. x),
   `Vitali.vitaliFamily` (`Mathlib/MeasureTheory/Covering/Vitali.lean`, which needs a uniform
   constant C with `μ(closedBall x (3r)) ≤ C μ(closedBall x r)` frequently as r ↓ 0 at every
-  point), `VitaliFamily.ae_tendsto_average` (`Mathlib/MeasureTheory/Covering/Differentiation.lean`).
+  point), `VitaliFamily.ae_tendsto_average` (`Mathlib/MeasureTheory/Covering/Differentiation.lean`),
+  `Vitali.exists_disjoint_subfamily_covering_enlargement` (`Mathlib/MeasureTheory/Covering/Vitali.lean`:
+  a family of nonempty sets with bounded sizes δ has a disjoint subfamily such that every member
+  meets a chosen one whose size is at least 1/τ times its own, for any τ > 1; on any type).
 - Hausdorff measure and Jacobians: `MeasureTheory.Measure.euclideanHausdorffMeasure`
-  (`Mathlib/Geometry/Euclidean/Volume/Measure.lean`, defined on any extended metric space),
+  (`Mathlib/Geometry/Euclidean/Volume/Measure.lean`, defined on any extended metric space, a
+  constant multiple of `μH[d]`), `LipschitzWith.hausdorffMeasure_image_le`
+  (`Mathlib/MeasureTheory/Measure/Hausdorff.lean`: a K-Lipschitz map multiplies the
+  d-dimensional Hausdorff measure of every set by at most K^d),
   `InnerProductSpace.euclideanHausdorffMeasure_eq_volume`, `LinearMap.normDet`,
   `LinearMap.normDet_comp` and `LinearMap.euclideanHausdorffMeasure_image_eq_normDet_mul_volume`
   (`Mathlib/Analysis/InnerProductSpace/NormDet.lean`; `normDet` is zero on non-injective maps, and
@@ -555,6 +561,10 @@ integer-valued Hᵏ-a.e. (Simon1983 line 2861–2897, 7318–7326; AgnolettoCorr
 line 166–175).
 
 - ‖v(Γ, θ)‖ = θ Hᵏ⌞Γ and 𝐌(v(Γ, θ)) = ∫_Γ θ dHᵏ.
+- Vanishing off the carrier: Θ^{*k}(‖v(Γ, θ)‖, x) = 0 for Hᵏ-a.e. x ∈ W ∖ Γ (Simon1983 line
+  774–788, 3.5, a theorem on any metric space, applied on (W, d_g) to θHᵏ⌞(Γ ∩ K) for compact
+  K ⊆ W; its proof rests on the covering lemma of Simon1983 line 632–640, 3.3, which is Mathlib's
+  `Vitali.exists_disjoint_subfamily_covering_enlargement`).
 - v(Γ, θ) = v(Γ', θ') when Hᵏ(Γ Δ Γ') = 0 and θ = θ' Hᵏ-a.e. on Γ ∩ Γ'; the approximate tangent
   spaces of Γ and Γ' agree Hᵏ-a.e. on Γ ∩ Γ'.
 - v(Γ, θ) + v(Γ', θ') = v(Γ ∪ Γ', θ + θ') with θ, θ' extended by 0; v(Γ, θ)⌞A = v(Γ ∩ A, θ).
@@ -571,9 +581,14 @@ line 166–175).
   its weight has no approximate tangent line (2.1).
 - For two lines L_1, L_2 crossing at 0, v(L_1 ∪ L_2, 1) = v(L_1, 1) + v(L_2, 1): the crossing point
   is Hᵏ-null.
+- For V = v((0, 1) × {0}, 1) on ℝ², the endpoints (0, 0) and (1, 0) lie off Γ and
+  ‖V‖(B_ρ((0, 0))) = ρ for ρ < 1, so their density is ρ/(ω_1 ρ) = ½; every point at positive
+  distance from [0, 1] × {0} has upper density 0. The vanishing off the carrier holds off an
+  H¹-null set, not at every point of W ∖ Γ.
 
-(Simon1983 line 2861–2897, 7318–7326.) *Needs:* Layer 1.3, Layer 2.1; GeometricMeasureTheory G2;
-GeometricCurrents G2; Tau Ceti `TauCeti.CountablyRectifiable` and its closure lemmas.
+(Simon1983 line 774–788, 2861–2897, 7318–7326.) *Needs:* Layer 1.3, Layer 2.1; GeometricMeasureTheory G2;
+GeometricCurrents G2; Tau Ceti `TauCeti.CountablyRectifiable` and its closure lemmas; Mathlib
+`Vitali.exists_disjoint_subfamily_covering_enlargement`.
 
 ### 2.3 The varifold of a C¹ submanifold
 
@@ -1473,22 +1488,37 @@ on B_3(0) × G(ℝ^N, k) through 1.2) with locally bounded h-first variation and
 
 `‖V‖(B_3(0)) ≤ Λ,   ‖δ_h V‖(B_3(0)) < ε²,   ∫_{G_k(B_3(0))} ‖P_S − p‖ dV(y, S) < ε²`.
 
-Then there is a Borel set A ⊆ B_1(0) ∩ (ℝ^k × {0}) of k-dimensional Lebesgue measure less than δ
-such that for every x ∈ (B_1(0) ∩ ℝ^k × {0}) ∖ A the sum of Θ^k(‖V‖, y) (the density for h) over the
-points y ∈ p⁻¹(x) ∩ spt‖V‖ with |q(y)| < ε is at most (1 + δ)(ω_k 2^k)⁻¹‖V‖(B_2(x)) + δ. For h = e
-this is Simon1983 line 7991–8000 (42.9, printed p. 250): the thresholds ε² for the first variation
-and for the tilt, and the slab half-width ε, are the source's. The case h ≠ e, with the threshold ε²
-for the metric, is this roadmap's.
+Then there is a Borel set Z ⊆ spt‖V‖ ∩ B_2(0) with ‖V‖(Z) < δ such that, for every
+x ∈ B_1(0) ∩ (ℝ^k × {0}), the density Θ^k(‖V‖, y) for h exists at every point
+y ∈ (p⁻¹(x) ∩ spt‖V‖) ∖ Z with |q(y)| < ε, and the sum of these densities is at most
+(1 + δ)(ω_k 2^k)⁻¹‖V‖(B_2(x)) + δ. Moreover p(Z) ∩ B_1(0) lies in a Borel set
+A ⊆ B_1(0) ∩ (ℝ^k × {0}) of k-dimensional Lebesgue measure less than δ, so for every
+x ∈ (B_1(0) ∩ ℝ^k × {0}) ∖ A the same bound holds for the sum of Θ^k(‖V‖, y) over all points
+y ∈ p⁻¹(x) ∩ spt‖V‖ with |q(y)| < ε. For h = e this last bound is Simon1983 line 7991–8000 (42.9,
+printed p. 250): the thresholds ε² for the first variation and for the tilt, and the slab half-width
+ε, are the source's. The set Z, its mass bound and the bound off Z over every x come from the proof
+(line 8014–8151), which uses the slab estimates only at the fibre points themselves. The case h ≠ e,
+with the threshold ε² for the metric, is this roadmap's.
 
 Route: Simon's proof (Simon1983 line 8001–8151, 42.10 and the proof of 42.9) has three steps.
-(i) The set of points y at which ‖δV‖(B_ρ(y)) ≤ ε‖V‖(B_ρ(y)) or
-∫_{G_k(B_ρ(y))} ‖P_S − p‖ dV ≤ ερ^k fails for some ρ ∈ (0, 1) has, by Besicovitch's covering theorem,
-‖V‖-measure at most cε⁻¹ times the sum of the two ε²-small quantities, hence at most cε (line
-8014–8046); this is where the squares are used. (ii) At the remaining points the identity and the
+(i) Let R be the set of points y ∈ spt‖V‖ ∩ B_2(0) at which ‖δV‖(B_ρ(y)) ≤ ε‖V‖(B_ρ(y)) or
+∫_{G_k(B_ρ(y))} ‖P_S − p‖ dV ≤ ερ^k fails for some ρ ∈ (0, 1). By Besicovitch's covering theorem
+‖V‖(R) is at most cε⁻¹ times the sum of the two ε²-small quantities, hence at most cε (line
+8014–8046); this is where the squares are used. Put Z = R ∩ {Θ^{*k}(‖V‖, ·) > 0} and shrink ε so
+that cε < δ/4. A point of R ∖ Z has density 0 and adds nothing to a fibre sum; at a point off R the
+density exists by the monotonicity of step (ii). To bound p(Z), write
+V = v(Γ, θ) with θ integer valued and let Γ' be the set of points of Γ at which θ is a positive
+integer equal to Θ^k(‖V‖, ·), an Hᵏ-full subset of Γ (2.1). By 2.2's vanishing off the carrier,
+Z ∖ Γ' is Hᵏ-null; since p is 1-Lipschitz and θ ≥ 1 on Γ', the k-dimensional Lebesgue measure of
+p(Z) is at most Hᵏ_e(Z ∩ Γ') ≤ (1 + Cε²)‖V‖(Z) < δ/2, where Hᵏ_e is the Euclidean Hausdorff
+measure; A is an open subset of B_1(0) ∩ (ℝ^k × {0}) of measure less than δ containing
+p(Z) ∩ B_1(0) (outer regularity of Lebesgue measure). The projection of R itself need not be small
+(the disc Check below). (ii) At the points off R the identity and the
 weighted identity of 6.1, with weights f(|q(z − y)|), f = 1 on [0, τ] and f = 0 on [2τ, ∞), bound
 the masses of the slabs U^τ_σ(y) = B_σ(y) ∩ {|q(z − y)| < τ} with errors cεσ/τ (line 8052–8083).
-(iii) An induction on the number of points of a fibre, at slab scale τ comparable to δ² times the
-least vertical separation of the points, concludes (line 8084–8151). For h ≠ e, steps (ii)–(iii)
+(iii) An induction on the number of points of a fibre off R, at slab scale τ comparable to δ² times
+the least vertical separation of the points, with the centres of each stage chosen among those
+points, concludes (line 8084–8151). For h ≠ e, steps (ii)–(iii)
 are run at each centre y in linear coordinates that make h(y) Euclidean (a linear map within Cε²
 of the identity). On B_ρ(y) the metric then differs from the constant metric h(y) by at most Cε²ρ
 in C⁰ and Cε² in C¹, so by 4.5 the first variation of each test field used (|X| ≤ ρ,
@@ -1501,18 +1531,37 @@ slabs, projections, balls and densities by factors 1 + O(ε²), which shrinking 
 
 - V = m v(ℝ^k × {0}, 1)⌞B_3(0) with integer m ≥ 1 and Λ ≥ m ω_k 3^k, h = e: tilt 0, δV = 0 in B_3(0),
   ‖V‖(B_2(x)) = m ω_k 2^k, each fibre has the single point x with density m, and the bound
-  m ≤ (1 + δ)m + δ holds with A = ∅.
+  m ≤ (1 + δ)m + δ holds with Z = A = ∅ (no point fails the ratio bounds of step (i)).
 - Two parallel planes ℝ^k × {±ε/2} with multiplicity 1: fibre sum 2 and mass ratio about 2.
 - A plane through 0 tilted by angle α has tilt excess |sin α| ‖V‖(B_3(0)) (the operator-norm
   distance of 1.1), so the hypotheses fail once |sin α| ‖V‖(B_3(0)) ≥ ε²; the tilted plane through 0
   still satisfies the conclusion, showing that the tilt hypothesis is used for the slab, not for
   single planes.
 - Parameter accounting (h = e): if ε = 1/10 (possible only when δ² > 1/10), the hypotheses ask for
-  first variation and tilt below 1/100 while the counted slab is {|q| < 1/10}. Step (i) bounds the
-  exceptional set by cε⁻¹(ε² + ε²) = 2cε = c/5; with unsquared thresholds ε the same bound would be
-  cε⁻¹(ε + ε) = 2c, which does not become small with ε, and the measure bound on A would be lost.
+  first variation and tilt below 1/100 while the counted slab is {|q| < 1/10}. Step (i) bounds
+  ‖V‖(R) by cε⁻¹(ε² + ε²) = 2cε = c/5; with unsquared thresholds ε the same bound would be
+  cε⁻¹(ε + ε) = 2c, which does not become small with ε, and the mass bound on Z, from which the
+  measure bound on A follows, would be lost.
+- The Lebesgue-measure form of the conclusion alone does not give 7.6. On B_1(0) ⊆ ℝ^k let
+  ψ_i = 1 + i·1_{E_i}, where E_i is a finite union of disjoint balls of radius at most 1/i² placed so
+  that i·1_{E_i} → ½ weakly; then Lᵏ(E_i) → 0. Each ψ_i is integer valued, ψ_i ≤ 3/2 off E_i and
+  ψ_i Lᵏ → (3/2)Lᵏ, yet 3/2 is not an integer and min(ψ_i, 2) = 1 + 1_{E_i} → 1, not 3/2, in L¹. As
+  the fibre sums of 7.6's blow-ups (where (ω_k 2^k)⁻¹‖Ṽ_i‖(B_2(ξ)) → 3/2) this is excluded by the
+  mass bound on Z: for δ < min{1/7, ω_k/2} the part of ψ_i counted off Z is an integer at most
+  (1 + δ)(3/2) + 2δ < 2, hence at most 1, so over E_i at least i of the counted multiplicity lies in
+  Z, and by the area formula (3.1) Z carries mass at least about i·Lᵏ(E_i) → ω_k/2 > δ.
+- The set Z cannot be all of R. Take k = 2, N = 3, h = e and V the sum of the multiplicity-one
+  varifolds of disjoint horizontal discs D_j ⊆ B_3(0) of radii r_j < ε whose centres are dense in
+  B_3(0), with Σ_j 2πr_j < ε². The tilt is 0, ‖δV‖(B_3(0)) ≤ Σ_j 2πr_j < ε², ‖V‖(B_3(0)) < ε² and
+  spt‖V‖ ⊇ B_3(0). For y ∈ B_2(0), the radii ρ for which the sphere ∂B_ρ(y) meets D_j form an
+  interval of length at most 2r_j, of total length less than ε²/π < ½, so some ρ ∈ (½, 1) has
+  ∂B_ρ(y) disjoint from every disc; B_ρ(y) then contains whole discs only, at least one, and
+  ‖δV‖(B_ρ(y)) ≥ (2/sup_j r_j)‖V‖(B_ρ(y)) > ε‖V‖(B_ρ(y)). So R = B_2(0) and p(R) ∩ B_1(0) is the
+  whole unit disc, of measure π. The points of positive upper density lie in ⋃_j D_j up to an
+  H²-null set (2.2), so p(Z) has measure at most Σ_j πr_j² < ε², and every fibre sum off Z is 0.
 
-(Simon1983 line 7986–8151.) *Needs:* Layer 4.5, Layer 6.1–6.3.
+(Simon1983 line 7986–8151.) *Needs:* Layer 2.1–2.2, Layer 4.5, Layer 6.1–6.3; Mathlib
+`HasBesicovitchCovering`, `LipschitzWith.hausdorffMeasure_image_le`.
 
 ### 7.6 Integral compactness
 
@@ -1525,11 +1574,25 @@ charts gives, for ‖V‖-a.e. x, lim inf_i
 T_x with multiplicity θ(x) (7.4, 3.3); in g-normal coordinates at x a diagonal choice λ_i ↓ 0 gives
 the rescaled varifolds Ṽ_i of V_i at x with scale λ_i (4.5's blow-up form, with the chart exp_x of g
 and the metric g_i), integral varifolds for the metrics h_i(z) = (exp_x^* g_i)(λ_i z) → g_x in C², with
-Ṽ_i → θ(x) v(T_x, 1), first variation → 0 and tilt → 0 on B_3(0). Let ψ_i(ξ) be the sum of the
-multiplicities of Ṽ_i at the points of p⁻¹(ξ) in the slab {|q| < ε}, with p, q as in 7.5. Then 7.5
-applied to Ṽ_i, together with the convergence of the fibre multiplicities given by the area formula
-(3.1), shows that min(ψ_i, m) converges in L¹ to θ(x) for every integer m > θ(x), so θ(x) is an
-integer.
+Ṽ_i → θ(x) v(T_x, 1), first variation → 0 and tilt → 0 on B_3(0), where T_xM is identified with
+ℝ^N by a g_x-orthonormal basis taking T_x to ℝ^k × {0}, so that g_x = e. Fix δ ∈ (0, 1), take
+Λ = θ(x)ω_k 3^k + 1 and ε = ε(δ, Λ, k, N) of 7.5 with p, q as there, and write Ṽ_i = v(Γ_i, θ_i)
+with θ_i integer valued. For large i, Ṽ_i satisfies 7.5's hypotheses; let Z_i be its set Z. For
+ξ ∈ B_1(0) ∩ (ℝ^k × {0}) let ψ'_i(ξ) and ψ''_i(ξ) be the sums of θ_i over the points of
+Γ_i ∩ p⁻¹(ξ) ∩ {|q| < ε} outside and inside Z_i, and ψ_i = ψ'_i + ψ''_i. Since Hᵏ-a.e. point of Γ_i
+lies in spt‖Ṽ_i‖ and has θ_i = Θ^k(‖Ṽ_i‖, ·) (2.1), and the image under p of an Hᵏ-null set is
+Lᵏ-null, 7.5 gives, for Lᵏ-a.e. ξ ∈ B_1(0),
+ψ'_i(ξ) ≤ (1 + δ)(ω_k 2^k)⁻¹‖Ṽ_i‖(B_2(ξ)) + δ ≤ (1 + δ)θ(x) + 2δ for large i, because
+lim sup_i sup_{|ξ| ≤ 1} ‖Ṽ_i‖(B_2(ξ)) ≤ θ(x)ω_k 2^k. By the area formula (3.1; the Jacobian of p on a
+k-plane is at most 1), ∫ ψ''_i dLᵏ ≤ (1 + o(1))‖Ṽ_i‖(Z_i) ≤ (1 + o(1))δ; by the area formula and
+Ṽ_i → θ(x) v(ℝ^k × {0}, 1), ψ_i Lᵏ → θ(x) Lᵏ as measures on B_1(0), so
+∫_{B_1(0)} ψ'_i dLᵏ ≥ θ(x)ω_k − δ − o(1). With a = (1 + δ)θ(x) + 2δ ≥ ψ'_i, the pointwise bound
+|ψ'_i − θ(x)| ≤ (a − ψ'_i) + (a − θ(x)) gives
+lim sup_i ∫_{B_1(0)} |ψ'_i − θ(x)| dLᵏ ≤ 2(δθ(x) + 2δ)ω_k + δ. Each ψ'_i is integer valued, so
+ω_k dist(θ(x), ℤ) is at most the right side: dist(θ(x), ℤ) ≤ 2(δθ(x) + 2δ) + δ/ω_k for every
+δ ∈ (0, 1), and θ(x) is an integer. The mass bound on Z_i is what excludes fibre multiplicities
+concentrating on sets of small measure (the spike Check of 7.5); the source's text at line 7977–7985
+uses only the measure bound on the exceptional set.
 
 **Checks.**
 
@@ -1539,8 +1602,8 @@ integer.
 - The segment varifolds of 7.1 converge to ½ v([0, 1] × {0}, 1), not integral; their first variations
   are unbounded, so 7.4's hypotheses fail.
 
-(Simon1983 line 7899–7985; Allard1972 Section 6.) *Needs:* Layer 3.1, Layer 3.3, Layer 4.5,
-Layer 7.4–7.5; Mathlib `HasBesicovitchCovering`.
+(Simon1983 line 7899–7985; Allard1972 Section 6.) *Needs:* Layer 2.1, Layer 3.1, Layer 3.3,
+Layer 4.5, Layer 7.4–7.5; Mathlib `HasBesicovitchCovering`, `LipschitzWith.hausdorffMeasure_image_le`.
 
 ### Examples
 
@@ -1657,20 +1720,24 @@ VarTan(V, y), and scale H_V, ‖δV‖ and σ_V as in 4.4 (this roadmap; Simon19
 ### 9.3 Comparison with GeometricCurrents G6
 
 Let T be a locally integral k-current on W (GeometricCurrents G2), represented by a countably
-k-rectifiable carrier Γ_T, an orienting simple k-vector and an integer multiplicity θ_T, and let 𝐯_T
-be GeometricCurrents G6's auxiliary varifold of T. Through 1.2's homeomorphism, 𝐯_T = v(Γ_T, |θ_T|),
-an integral varifold whose weight is the mass measure ‖T‖; G6's weak first variation of T under
-compactly supported ambient flows equals δ v(Γ_T, |θ_T|); G6's density, monotonicity with
-Riemannian error bounds and tangent cones of T are 6.1–6.3, 7.2 and 8.2 for v(Γ_T, |θ_T|); and for a
-locally minimizing T (GeometricCurrents G5), G6's stationarity is the stationarity of v(Γ_T, |θ_T|)
-(this roadmap; Simon1983 line 7253–7293).
+k-rectifiable carrier Γ_T, an orienting simple k-vector and an integer multiplicity θ_T (which may
+vanish on part of Γ_T), let Γ_T⁺ = {x ∈ Γ_T : θ_T(x) ≠ 0}, a countably k-rectifiable Hᵏ-measurable
+set on which |θ_T| is positive and locally Hᵏ-integrable, and let 𝐯_T be GeometricCurrents G6's
+auxiliary varifold of T. Through 1.2's homeomorphism, 𝐯_T = v(Γ_T⁺, |θ_T|), an integral varifold
+whose weight is the mass measure ‖T‖ = |θ_T| Hᵏ⌞Γ_T; G6's weak first variation of T under
+compactly supported ambient flows equals δ v(Γ_T⁺, |θ_T|); G6's density, monotonicity with
+Riemannian error bounds and tangent cones of T are 6.1–6.3, 7.2 and 8.2 for v(Γ_T⁺, |θ_T|); and for
+a locally minimizing T (GeometricCurrents G5), G6's stationarity is the stationarity of
+v(Γ_T⁺, |θ_T|) (this roadmap; Simon1983 line 7253–7293).
 
 **Checks.**
 
 - The current of an oriented k-plane with multiplicity 2 has varifold v(P, 2); reversing the
   orientation gives the same varifold.
 - The current [[P]] + (−[[P]]) is 0 and its varifold is 0, while v(P, 1) + v(P, 1) = v(P, 2): the
-  varifold of a sum of currents is not the sum of their varifolds.
+  varifold of a sum of currents is not the sum of their varifolds. Represented on the carrier P with
+  the orientation of [[P]], the sum has θ_T = 1 − 1 = 0, so Γ_T⁺ = ∅ and v(∅, ·) = 0; the
+  expression v(P, 0) is not a varifold of 2.2, whose multiplicities are positive.
 - The current of a smooth closed oriented curve with multiplicity 1 has varifold [curve], with
   H = curvature vector.
 
@@ -1742,9 +1809,10 @@ Layers 1–8; GeometricCurrents G1, G2, G5, G6.
 ## References
 
 - Simon1983: L. Simon, *Lectures on Geometric Measure Theory*, Proc. Centre Math. Anal. Austral.
-  Nat. Univ. 3 (1983): §4 (Radon measures, Riesz representation, compactness, coverings), §9 (first
-  variation of submanifolds), §11 (approximate tangent spaces), §§15–19 (rectifiable varifolds,
-  monotonicity, tangent cones), Chapter 8 §§38–42 (general varifolds).
+  Nat. Univ. 3 (1983): §3 (densities, the covering lemma), §4 (Radon measures, Riesz representation,
+  compactness, coverings), §9 (first variation of submanifolds), §11 (approximate tangent spaces),
+  §§15–19 (rectifiable varifolds, monotonicity, tangent cones), Chapter 8 §§38–42 (general
+  varifolds).
 - Allard1972: W. K. Allard, *On the first variation of a varifold*, Ann. of Math. (2) 95 (1972),
   417–491: Sections 3 (varifolds), 4 (first variation), 5 (monotonicity and rectifiability),
   6 (compactness), 8 (regularity).

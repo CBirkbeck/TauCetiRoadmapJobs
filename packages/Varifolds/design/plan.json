@@ -385,20 +385,26 @@
      ],
      "locator": {
       "source": "Simon1983",
-      "where": "15.1-15.5 line 2861-2897; 38 line 7318-7326"
+      "where": "15.1-15.5 line 2861-2897; 38 line 7318-7326; 3.5 line 774-788"
      },
      "prerequisites": [
       "target:1.3",
       "target:2.1",
       "roadmap:GeometricMeasureTheory G2",
       "roadmap:GeometricCurrents G2",
-      "tauceti:TauCeti.CountablyRectifiable"
+      "tauceti:TauCeti.CountablyRectifiable",
+      "mathlib:Vitali.exists_disjoint_subfamily_covering_enlargement"
      ],
      "api": [
       {
        "name": "weight",
        "role": "evaluation",
        "statement": "||v(Gamma,theta)|| = theta H^k on Gamma; mass is the integral of theta."
+      },
+      {
+       "name": "vanishing off the carrier",
+       "role": "evaluation",
+       "statement": "the upper density of ||v(Gamma,theta)|| vanishes at H^k-a.e. point of W \\ Gamma (Simon 3.5)."
       },
       {
        "name": "null modification",
@@ -441,6 +447,11 @@
        "name": "crossing lines",
        "kind": "computation",
        "statement": "v(L1 u L2,1) = v(L1,1) + v(L2,1)."
+      },
+      {
+       "name": "open segment endpoints",
+       "kind": "degenerate",
+       "statement": "for v((0,1) x {0},1) the endpoints lie off Gamma with density 1/2: the vanishing holds only H^1-a.e. off Gamma."
       }
      ]
     },
@@ -1540,7 +1551,7 @@
      "id": "7.5",
      "kind": "theorem",
      "name": "Varifolds.multiplicity_lemma",
-     "statement": "For delta in (0,1), Lambda >= 1 there is epsilon in (0, delta^2) such that every integral varifold V on B_3(0) for a metric h with ||h - e||_{C^2} < epsilon^2, ||V||(B_3(0)) <= Lambda, ||delta_h V||(B_3(0)) < epsilon^2 and tilt integral of ||P_S - p|| < epsilon^2 has, outside a set A of Lebesgue measure < delta, fibre density sums over the slab |q| < epsilon at most (1+delta)(omega_k 2^k)^{-1}||V||(B_2(x)) + delta. Simon's Lemma 42.9 is the case h = e; h != e is this roadmap's.",
+     "statement": "For delta in (0,1), Lambda >= 1 there is epsilon in (0, delta^2) such that every integral varifold V on B_3(0) for a metric h with ||h - e||_{C^2} < epsilon^2, ||V||(B_3(0)) <= Lambda, ||delta_h V||(B_3(0)) < epsilon^2 and tilt integral of ||P_S - p|| < epsilon^2 has a Borel set Z in spt||V|| n B_2(0) with ||V||(Z) < delta such that for every x in B_1(0) n R^k x {0} the densities at the fibre points y in p^{-1}(x) n spt||V|| \\ Z with |q(y)| < epsilon exist and sum to at most (1+delta)(omega_k 2^k)^{-1}||V||(B_2(x)) + delta; p(Z) n B_1(0) lies in a Borel set A of Lebesgue measure < delta, so off A the bound holds for the whole fibre sum (Simon's Lemma 42.9 when h = e). Z is the part of positive upper density of the set where the ratio bounds fail; Z, its mass bound and the bound off Z over every x come from Simon's proof; h != e is this roadmap's.",
      "hypotheses": [
       "V integral on B_3(0) for h",
       "||h - e||_{C^2(B_3)} < epsilon^2",
@@ -1548,20 +1559,24 @@
      ],
      "locator": {
       "source": "Simon1983",
-      "where": "42.9 line 7991-8000 (h = e); proof 42.10 and 42.9 line 8001-8151"
+      "where": "42.9 line 7991-8000 (h = e); proof 42.10 and 42.9 line 8001-8151 (set Z and its mass bound line 8014-8048); 3.5 line 774-788"
      },
      "prerequisites": [
+      "target:2.1",
+      "target:2.2",
       "target:4.5",
       "target:6.1",
       "target:6.2",
-      "target:6.3"
+      "target:6.3",
+      "mathlib:HasBesicovitchCovering",
+      "mathlib:LipschitzWith.hausdorffMeasure_image_le"
      ],
      "api": [],
      "tests": [
       {
        "name": "plane with multiplicity",
        "kind": "computation",
-       "statement": "m v(R^k x {0},1): fibre sum m <= (1+delta) m + delta."
+       "statement": "m v(R^k x {0},1): fibre sum m <= (1+delta) m + delta, with Z = A = empty."
       },
       {
        "name": "two sheets",
@@ -1576,7 +1591,17 @@
       {
        "name": "parameter accounting",
        "kind": "non-example",
-       "statement": "the Besicovitch bound on the exceptional set is c epsilon^{-1}(epsilon^2 + epsilon^2) = 2c epsilon; with unsquared thresholds it would be 2c and not small."
+       "statement": "the Besicovitch bound on ||V||(R) is c epsilon^{-1}(epsilon^2 + epsilon^2) = 2c epsilon; with unsquared thresholds it would be 2c, and the mass bound on Z (hence the measure bound on A) would be lost."
+      },
+      {
+       "name": "spikes",
+       "kind": "non-example",
+       "statement": "psi_i = 1 + i 1_{E_i} with i 1_{E_i} -> 1/2 weakly and L^k(E_i) -> 0: integer valued, <= 3/2 off a set of small measure, psi_i L^k -> (3/2) L^k, but min(psi_i,2) -> 1 in L^1; the mass bound on Z excludes it (Z would carry mass about omega_k/2)."
+      },
+      {
+       "name": "dense small discs",
+       "kind": "non-example",
+       "statement": "k = 2, N = 3: disjoint horizontal discs of radii r_j < epsilon with dense centres and sum 2 pi r_j < epsilon^2; every y in B_2(0) fails the first-variation ratio bound at some rho in (1/2,1), so the failure set R projects onto the unit disc (measure pi), while its positive-density part Z projects into a set of measure < epsilon^2."
       }
      ]
     },
@@ -1594,12 +1619,14 @@
       "where": "42.8 line 7899-7985"
      },
      "prerequisites": [
+      "target:2.1",
       "target:3.1",
       "target:3.3",
       "target:4.5",
       "target:7.4",
       "target:7.5",
-      "mathlib:HasBesicovitchCovering"
+      "mathlib:HasBesicovitchCovering",
+      "mathlib:LipschitzWith.hausdorffMeasure_image_le"
      ],
      "api": [],
      "tests": [
@@ -1815,7 +1842,7 @@
      "id": "9.3",
      "kind": "theorem",
      "name": "Varifolds.auxiliaryVarifold_eq",
-     "statement": "For a locally integral k-current T with carrier Gamma_T and integer multiplicity theta_T, GeometricCurrents G6's auxiliary varifold is v(Gamma_T,|theta_T|) with weight ||T||; G6's first variation, density, monotonicity and tangent cones are those of this roadmap evaluated on it; local minimizers give stationary varifolds.",
+     "statement": "For a locally integral k-current T with carrier Gamma_T and integer multiplicity theta_T (possibly zero on part of Gamma_T), with Gamma_T^+ = {theta_T != 0}, GeometricCurrents G6's auxiliary varifold is v(Gamma_T^+,|theta_T|) with weight ||T||; G6's first variation, density, monotonicity and tangent cones are those of this roadmap evaluated on it; local minimizers give stationary varifolds.",
      "hypotheses": [
       "T locally integral k-current on W"
      ],
@@ -1845,7 +1872,7 @@
       {
        "name": "cancellation",
        "kind": "non-example",
-       "statement": "[[P]] + (-[[P]]) = 0 has varifold 0, unlike v(P,1) + v(P,1)."
+       "statement": "[[P]] + (-[[P]]) = 0 has theta_T = 0 on P, Gamma_T^+ empty and varifold 0, unlike v(P,1) + v(P,1)."
       },
       {
        "name": "curve",
