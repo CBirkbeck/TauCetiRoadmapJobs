@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicSpectralTheory~8",
+  "head": "2920b0d662558ebfdf5ae79ee7b15fcae72bbe3d",
+  "pr": 925,
+  "folder": "AutomorphicSpectralTheory",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 96 changed lines since d256618. Checked: the five new group introductions (0.30, 0.39, 3.14, 6.27, 6.29) and the sections they cite; the 17 targets demoted from headings to bold labels (ids kept; GrossZagierAndArithmeticHeights citations still resolve); the reworded 4.14, 6.28 and 7.1b against Yu22 Thm 2.3.6 and 4.2.2, MW89 p.606 and Ram18 Lemma 4.1 (none copied); the seeded sample where it touches the change (4.16, 3.19). Gate passes (worker's run adds build=0); depcheck 0 problems; Suggested.lean unchanged, elaborates with only two sorry warnings. Findings: R01 P3, the PR description's dependency paragraph omits four open suppliers and the on-main ones; R02 P3, the Needs lines of 0.30 and 0.34 omit the route the new 0.30 introduction names. Previous review raised no finding.",
+  "text": "874c3b10a101515e",
+  "carried": {
+   "from": "2920b0d662558ebfdf5ae79ee7b15fcae72bbe3d",
+   "head": "759fa5bcd1e8d8c8b46ec028b0f610af20d911da",
+   "findings": 2,
+   "lines": 24,
+   "folders": [
+    "AutomorphicSpectralTheory"
+   ]
+  }
+ }
+}
