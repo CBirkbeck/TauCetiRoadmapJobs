@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RelativeJacobiansAndIntegralCurveModels~4",
+  "head": "f6d36023b149766e9b5025fd27df9f20bbcd63d7",
+  "pr": 1232,
+  "folder": "RelativeJacobiansAndIntegralCurveModels",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since 3b336e5: the reworded proof-case paragraph of README 3.1 was compared obligation by obligation with the old text (9 of 9 kept) and computed on P1, the blow-up of P1 and a smooth elliptic family; sound. Gate rerun: FAIL on statement-hygiene=1 (letI in the signature of globalFunctions_constants, Suggested.lean line 73; R01, repair tested by elaboration and Iff.rfl). Depcheck 0 problems; Suggested.lean elaborates with seven sorry warnings only. Title and description checked against the head: two stale sentences (R02 'follows Bosch-Lutkebohmert-Raynaud', R03 'red-team passes to follow'). BLR 9.5 pp. 265-267 not legally readable: wording of the reworded passage not compared with the source (for the human reviewers).",
+  "text": "af0785e15546c0c7",
+  "carried": {
+   "from": "f6d36023b149766e9b5025fd27df9f20bbcd63d7",
+   "head": "2af2fd0f6b5b397344a090228c4eb7543c1b3cbd",
+   "findings": 3,
+   "lines": 5,
+   "folders": [
+    "RelativeJacobiansAndIntegralCurveModels"
+   ],
+   "outside": true
+  }
+ }
+}
