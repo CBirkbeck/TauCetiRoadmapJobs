@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisDuality~5",
+  "head": "77ae83a71d33b2bdaa4d05a8b9b0eb25a74a2c4d",
+  "pr": 858,
+  "folder": "ArithmeticGaloisDuality",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 102 changed lines since c47fce6. Both previous findings (the invented supplier name AbelianScheme.dual_elliptic; DerivedModuleAlgebra cited by a layer it lacks) are repaired and resolved at the suppliers. The three reworded passages (reciprocity for S-idele classes, Tate's duality for class formations, the Poitou-Tate nine-term sequence with its topological table) were compared with Milne ADT Lemma 4.5, Theorem 1.13 and Theorem 4.10 and recomputed on Q with S = {p, inf} and {3, inf}: sound, no shared wording. The gate fails at this head: statement-hygiene=6 (letI in the signatures of sha_duality, centralObstruction_localization and tate_vanishing; R01, R02, each with a repair elaborated on a scratch copy, twelve sorry warnings only); every other gate check passes, build=0, depcheck 0 problems. Title and description checked against the head: one P3 sentence (R03). Seeded sample checked where it falls in the diff (Grothendieck local duality Needs line).",
+  "text": "6bf92d3b3a884a22",
+  "carried": {
+   "from": "77ae83a71d33b2bdaa4d05a8b9b0eb25a74a2c4d",
+   "head": "81804327b8e0394c70caf97017f4ff78fc464434",
+   "findings": 3,
+   "lines": 45,
+   "folders": [
+    "ArithmeticGaloisDuality"
+   ],
+   "outside": true
+  }
+ }
+}
