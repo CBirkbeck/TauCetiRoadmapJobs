@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularityWild3Adic~4",
+  "head": "6fcc25347fa1bdfc4e0b2b0602e1c37cca452bf7",
+  "pr": 1484,
+  "folder": "EllipticCurveModularityWild3Adic",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 88 changed lines since e5a4533, plus the check of the pull request's title and description. One P3 finding, in the description: it says Conrad-Diamond-Taylor covers conductors 'prime to 27' where README 6.9 says 'not divisible by 27' (N = 99 separates them). The folder's changed passages (11 regrouped headings, 22 sections turned into bold run-in titles, 11 introductions; no statement, locator or Needs line changed) have no finding: each introduction was checked against the Needs lines it summarises, and the three sampled targets inside the diff (1.5, 3.1, 5.9) against BCDT at 7 locators with computed values. Gate rerun: all counts 0, OK; depcheck 0 problems; Suggested.lean elaborates with ten sorry warnings only. The previous report had no findings to carry. Remarks only, on untouched text: README:15 uses the same 'prime to 27' phrase; 1.15 coincides with EllipticCurveModularityImaginaryQuadratic 0.2 for p = 5 over number fields.",
+  "text": "b008f7b1dca651d4",
+  "carried": {
+   "from": "6fcc25347fa1bdfc4e0b2b0602e1c37cca452bf7",
+   "head": "690b0592655aec9f258d6479fe7b05e5455b1f51",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "EllipticCurveModularityWild3Adic"
+   ],
+   "outside": true
+  }
+ }
+}
