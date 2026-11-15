@@ -198,7 +198,7 @@ Prove, for an open symmetric cone `Ω` and a `C¹` symmetric `f`:
 
 - `f = σ_n^{1/n}`, `T = diag(1, 4)`, whose sorted eigenvalue vector is `λ(T) = (4, 1)`: `∂_1 f(4, 1) = 1/4` and `∂_2 f(4, 1) = 1`, so `∇F(T) = diag(1, 1/4)` in the standard basis, `det ∇F = 1/4 = 2^{−2}`, and `tr(∇F·T) = 1 + 1 = 2 = F(T)`.
 - `A = diag(1, 4)`, `B = Id`: `tr(AB) = 5 ≥ 2·√4 = 4`; `B = A⁻¹` gives `2 = 2`, the equality case.
-- For the non-homogeneous `f = σ_n` on `ℝ²` at `T = diag(1, 4)`, `tr(∇F·T) = 4 + 4 = 8 = 2·F(T)`, so the Euler identity carries the degree.
+- For `f = σ_n` on `ℝ²`, which is homogeneous of degree two and not of degree one, at `T = diag(1, 4)`: `∇F(T) = det(T)·T⁻¹ = diag(4, 1)` and `tr(∇F·T) = 4 + 4 = 8 = 2·F(T)`. The Euler identity carries the degree, so the degree-one hypothesis is used.
 
 ### Examples
 
@@ -548,12 +548,13 @@ Prove the Aubin–Yau estimate `0 < tr_ω ω_φ ≤ C·exp(A(φ − inf φ))`, w
 
 ### 6.4 The `C³` estimate
 
-Prove Calabi's estimate: `S = |∇'h h⁻¹|²_{ω_φ}`, equal to `|∇_ω i∂∂̄φ|²` up to the metric equivalence of §6.3, is bounded by a constant depending on the `C²` bound of §6.3, `inf F`, `‖F‖_{C³}` and `‖Rm(ω)‖_{C¹}` (pss2012 Theorem 9, line 1078–1081, with (7.5)–(7.7), line 1070–1077; twwy2015 line 132–135). The route is the maximum principle for `S + A·tr h`: once `C⁻¹ω ≤ ω_φ ≤ Cω`, Calabi's identity of §6.1 gives `Δ_{ω_φ} S ≥ −C_1S − C_2`, since `Θ` is of order `1 + S^{1/2}` and `Q(T)` of order `S`, and the gradient term of the trace identity satisfies `G ≥ C_3 S`, so `Δ_{ω_φ}(S + A·tr h) ≥ C_4S − C_5` for large `A`. *Needs:* §§6.1, 6.3; Tau Ceti `TauCeti.re_leviForm_nonpos_of_isLocalMax` for the sign at the maximum.
+Prove Calabi's estimate: `S = |∇'h h⁻¹|²_{ω_φ}`, equal to `|∇_ω i∂∂̄φ|²` up to the metric equivalence of §6.3, is bounded by a constant depending on the `C²` bound of §6.3, `inf F`, `‖F‖_{C³}` and `‖Rm(ω)‖_{C¹}` (pss2012 Theorem 9, line 1078–1081, with (7.5)–(7.7), line 1070–1077; twwy2015 line 132–135). The route is the maximum principle for `S + A·tr h`: once `C⁻¹ω ≤ ω_φ ≤ Cω`, Calabi's identity of §6.1 gives `Δ_{ω_φ} S ≥ −C_1S − C_2`, since `Θ` is of order `1 + S^{1/2}` and `Q(T)`, which is linear in `T` with the bounded coefficient `Ric(ω_φ)^♯ = ω_φ⁻¹(Ric(ω) − i∂∂̄F)`, of order `S^{1/2}` (pss2012 line 1067–1070 treats `Ric(ω_φ)` as known and `T` as of order `S^{1/2}`), so that `2 Re⟨Θ, T⟩_{ω_φ} ≥ −C(S + 1)` and `|⟨T, Q(T)⟩_{ω_φ}| ≤ CS`; and the gradient term of the trace identity satisfies `G ≥ C_3 S`, so `Δ_{ω_φ}(S + A·tr h) ≥ C_4S − C_5` for large `A`. *Needs:* §§6.1, 6.3; Tau Ceti `TauCeti.re_leviForm_nonpos_of_isLocalMax` for the sign at the maximum.
 
 **Checks.**
 
 - `ω_φ = ω` gives `S = 0`.
 - On the torus solution of §6.2 with `h = diag(1 − 2π²ε cos 2πx_1, 1)`, only `∂_{z_1}h_{11} = 2π³ε sin(2πx_1)` is nonzero, so `S = O(ε²)` and `S ≠ 0` for `ε ≠ 0`.
+- The size of `Q(T)`: for `n = 1` the endomorphisms of `T^{1,0}X` are scalars and `Ric(ω_φ)^♯` is multiplication by `s_{ω_φ}`, so the commutator vanishes, `Q(T) = −s_{ω_φ}·T` and `⟨T, Q(T)⟩_{ω_φ} = −s_{ω_φ}·S`, linear in `S`. On the torus solution of §6.1 at `x = 1/4` (`q = 1`, `q' = 2πa`, `q'' = 0`), `s_{ω_φ} = −Δ_{ω_φ}F = −(log q)''/(2q) = 2π²a²` and `S = q'²/(2q³) = 2π²a²`, so `⟨T, Q(T)⟩_{ω_φ} = −4π⁴a⁴`. A bound of order `S` for `Q(T)` would leave a term of order `S^{3/2}`, from which `Δ_{ω_φ}S ≥ −C_1S − C_2` does not follow.
 
 ### 6.5 Higher-order estimates and regularity
 

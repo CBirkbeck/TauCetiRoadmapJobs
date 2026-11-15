@@ -351,7 +351,7 @@
       {
        "name": "euler_degree_two",
        "kind": "non-example",
-       "statement": "f = σ_2 at diag(1,4): tr(∇F T) = 8 = 2 F(T)"
+       "statement": "f = σ_2, homogeneous of degree two and not of degree one, at T = diag(1,4): ∇F(T) = det(T) T⁻¹ = diag(4,1) and tr(∇F T) = 8 = 2 F(T), so the degree-one hypothesis is used"
       }
      ]
     }
@@ -1736,7 +1736,7 @@
      ],
      "locator": {
       "source": "pss2012",
-      "where": "Theorem 9, line 1070–1081; twwy2015 line 132–135"
+      "where": "Theorem 9, line 1067–1081; twwy2015 line 132–135"
      },
      "prerequisites": [
       "target:6.1",
@@ -1753,6 +1753,11 @@
        "name": "c3_torus",
        "kind": "computation",
        "statement": "torus solution of 6.2: S = O(ε²) and S ≠ 0 for ε ≠ 0"
+      },
+      {
+       "name": "c3_Q_size",
+       "kind": "computation",
+       "statement": "n = 1: Q(T) = −s_{ω_φ} T and ⟨T, Q(T)⟩ = −s_{ω_φ} S, linear in S; torus solution of 6.1 at x = 1/4: s_{ω_φ} = −(log q)''/(2q) = 2π²a², S = 2π²a², ⟨T, Q(T)⟩ = −4π⁴a⁴"
       }
      ]
     },
