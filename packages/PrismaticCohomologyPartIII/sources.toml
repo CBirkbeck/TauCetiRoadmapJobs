@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PrismaticCohomologyPartIII"
+
+[[source]]
+id = "BMS2"
+authors = "Bhargav Bhatt, Matthew Morrow, Peter Scholze"
+title = "Topological Hochschild homology and integral $p$-adic Hodge theory"
+year = 2018
+arxiv = "1802.03261v2"
+locator_scheme = "theorem"
+locator = "Lemma 7.22"
+url = "https://arxiv.org/abs/1802.03261v2"
+fetched_from = "https://arxiv.org/pdf/1802.03261v2"
+fetched_at = "2026-11-15T06:30:05Z"
+sha256 = "b2338ef19714f39aeac2aaaa4e8d6bd708020815016bbe5541a74e4db3594038"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["6.11"]
