@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ErdosProgressionPowers~9",
+  "head": "fb2426473966facdbee957f5bb5bafd50389eb2c",
+  "pr": 1336,
+  "folder": "ErdosProgressionPowers",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 3e1048c; this round checked the pull request's title and description against the head: every sentence of the summary block and prose read against README.md and Suggested.lean, none contradicted, no unstated removal or supplier change (12 open suppliers match the depends-on block, 8 on main). Adversarial rows computed for effective_prime_bound, fixed_length_finiteness, consecutiveProduct_not_perfectPower and the no-GRH sentence. Worker's gate passes with build=0; dependency check with the job's merge order: 245 roadmaps, 2241 edges, 0 problems; lake env lean gives eight sorry warnings only; nothing changed outside the folder. No seeded target lies in a changed passage. Human-reviewer notes: two unrefereed 2026 preprints behind AnalyticNumberTheoryPartI section 0.34.",
+  "text": "9d372632c524fbb3"
+ }
+}
