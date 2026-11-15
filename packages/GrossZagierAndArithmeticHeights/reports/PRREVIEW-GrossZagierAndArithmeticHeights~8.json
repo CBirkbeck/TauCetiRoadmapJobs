@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GrossZagierAndArithmeticHeights~8",
+  "head": "7aec75d6624ffb2adcc5bdb5431ffa94c1f82343",
+  "pr": 1487,
+  "folder": "GrossZagierAndArithmeticHeights",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "incremental re-review of 34 changed lines since d4722a0. Checked: both previous findings (R01 partly repaired, R02 repaired with a new problem); the nine repaired supplier locators resolved at the open heads; Fuchs-Pham Theorem 2.2 at its locator (no seeded-sample target falls in a changed passage); the pull request's title and description against the head (no finding); gate passes with every counter 0, depcheck 0 problems, Suggested.lean elaborates with sorry as the only warning. Findings: R01 (P2) 9.12 cites the elliptic-only SelmerIwasawaCohomology 4.26 for the Jacobian J0(N), should be PadicHodgeRegulators 1.9; R02 (P3) the motivic-unitary shift is cited at AL.3.3 instead of AL.4.2.4.",
+  "text": "6fbfa570739981a8"
+ }
+}
