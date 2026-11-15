@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AInfCohomology~5",
+  "head": "9196e93bb3dcfd3fe26e22a26bed32e91a0a8b12",
+  "pr": 1044,
+  "folder": "AInfCohomology",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 93 changed lines since 99b809b. All seven previous findings repaired; two P3 findings in the repaired passages (a wrong page range for BMS1 §2 at README line 2653; the order of the determinant step in the new route at line 2957). Checked: the rewritten torsion target and its three Checks against bms1 Theorems 1.1, 14.5, 14.6, Corollaries 4.15, 4.17 and Lemma 4.16; the two rewritten proof plans against ck Theorems 4.2, 4.11, 4.17; the sampled target at line 3428 against bms1 Corollary 13.16; 14 locators, 4 cross-roadmap citations, 26 cited target titles. Gate passes; depcheck 0 problems; lake env lean on Suggested.lean gives six sorry warnings only.",
+  "text": "6b61e2ab84c63fc2",
+  "carried": {
+   "from": "9196e93bb3dcfd3fe26e22a26bed32e91a0a8b12",
+   "head": "d02775ef0c797ee258b3ea17ec583b13d2f67d52",
+   "findings": 2,
+   "lines": 30,
+   "folders": [
+    "AInfCohomology"
+   ]
+  }
+ }
+}
