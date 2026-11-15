@@ -85,7 +85,7 @@
      "id": "1.2",
      "kind": "construction",
      "name": "FlatPositionSpace.euclidean",
-     "statement": "Instance of FlatPositionSpace d E with π = id and ρ = ∞; on E the short lift is the identity and contact normals are (x_i − x_j)/ε.",
+     "statement": "Instance of FlatPositionSpace d E with π = id and ρ = ∞; for this instance the short lift ℓ of 1.1 is the identity on all of E, so the contact normal ℓ(x_i − x_j)/ε is (x_i − x_j)/ε for every ε > 0, and free transport x + π(t v) is x + t v.",
      "hypotheses": [
       "d ≥ 1"
      ],
@@ -113,6 +113,11 @@
        "name": "free_transport",
        "kind": "computation",
        "statement": "x = 0, v = (1, 0), t = 2 gives (2, 0)."
+      },
+      {
+       "name": "infinite_radius",
+       "kind": "non-example",
+       "statement": "d = 2, ε = 100: positions (100, 0) and 0 are in contact with normal ℓ(100, 0)/100 = (1, 0), and the ball axiom of 1.1 gives the ball of radius 100 measure 10⁴π ≈ 31415.93. The structure with π = id and ρ = 2 satisfies every axiom of 1.1 and the three other tests, but under ε < ρ admits no ε ≥ 2, specifies ℓ only on the ball of radius 2, and its ball axiom covers only radii at most 2."
       }
      ]
     },
@@ -838,11 +843,12 @@
      "id": "4.5",
      "kind": "construction",
      "name": "HardSphere.pairMap",
-     "statement": "For i ≠ j, ε + η < ρ, 2Rs ≤ η, the pair map P^{ij}_s on {ε ≤ ‖x_i − x_j‖, ‖x_i − x_j‖ + 2Rs < ρ, |v_i|, |v_j| ≤ R} changes only the pair block (z_i, z_j) and fixes every other coordinate z_k, k ∉ {i, j}; on the block it is the skew product (x_j, a, u, w) ↦ (x_j + π(h(a, u, w)), B_s(a, u), w) with a = ℓ(x_i − x_j), u = v_i − v_j, w = v_i + v_j; it is measure preserving from λ_N restricted to its domain onto λ_N restricted to its image and injective off a null set; pair maps of disjoint pairs commute.",
+     "statement": "For i ≠ j, R ≥ 0 and s ≥ 0, the pair map P^{ij}_s on {ε ≤ ‖x_i − x_j‖, ‖x_i − x_j‖ + 2Rs < ρ, |v_i|, |v_j| ≤ R} changes only the pair block (z_i, z_j) and fixes every other coordinate z_k, k ∉ {i, j}; on the block it is the skew product (x_j, a, u, w) ↦ (x_j + π(h(a, u, w)), B_s(a, u), w) with a = ℓ(x_i − x_j), u = v_i − v_j, w = v_i + v_j; it is measure preserving from λ_N restricted to its domain onto λ_N restricted to its image and injective off a null set; pair maps of disjoint pairs commute.",
      "hypotheses": [
-      "0 < ε",
-      "ε + η < ρ",
-      "2Rs ≤ η"
+      "0 < ε < ρ",
+      "i ≠ j",
+      "R ≥ 0",
+      "s ≥ 0"
      ],
      "locator": {
       "source": "GST2013",
@@ -873,7 +879,7 @@
       {
        "name": "others_fixed",
        "kind": "non-example",
-       "statement": "N = 3 on E, d = 1, ε = R = 1, η = 4: P^{12}_1 sends positions 0, 2, 20 with velocities 0.1 to 0.1, 2.1, 20; the third particle is not moved."
+       "statement": "N = 3 on E, d = 1, ε = R = 1: P^{12}_1 sends positions 0, 2, 20 with velocities 0.1 to 0.1, 2.1, 20; the third particle is not moved."
       }
      ]
     }
@@ -1158,7 +1164,7 @@
      "id": "6.2",
      "kind": "theorem",
      "name": "HardSphere.measurePreserving_stepMap",
-     "statement": "For R > 0, δ > 0 with ε + 4Rδ < ρ (near pairs, at distance at most ε + 2Rδ, then satisfy ‖x_i − x_j‖ + 2Rδ ≤ ε + 4Rδ < ρ, the domain of the pair maps of 4.5 with η = 4Rδ), on the set S_{δ,R} (|V| ≤ R, no particle within ε + 2Rδ of two others, no incoming or grazing contact state, no grazing collision in [0, δ] between near pairs) the near pairs form a matching, each collides at most once in [0, δ], and the step map Φ_δ gives the trajectory on [0, δ]; Φ_δ is defined block by block: on the Borel piece where the near pairs form a given matching M it acts by P^{ij}_δ on the block (z_i, z_j) of each {i, j} ∈ M and by the one-particle free step z_k ↦ (x_k + π(δ v_k), v_k) on each unmatched particle (disjoint blocks, each coordinate moved once); Φ_δ is injective on S_{δ,R} and measure preserving from λ_N restricted to S_{δ,R} onto λ_N restricted to its image; the complement of S_{δ,R} in 𝒟̄ ∩ {|V| ≤ R} is I (η = 2Rδ) up to a null set.",
+     "statement": "For R > 0, δ > 0 with ε + 4Rδ < ρ (near pairs, at distance at least ε and at most ε + 2Rδ with speeds at most R, then satisfy ‖x_i − x_j‖ + 2Rδ ≤ ε + 4Rδ < ρ and lie in the domain of the pair maps of 4.5), on the set S_{δ,R} (|V| ≤ R, no particle within ε + 2Rδ of two others, no incoming or grazing contact state, no grazing collision in [0, δ] between near pairs) the near pairs form a matching, each collides at most once in [0, δ], and the step map Φ_δ gives the trajectory on [0, δ]; Φ_δ is defined block by block: on the Borel piece where the near pairs form a given matching M it acts by P^{ij}_δ on the block (z_i, z_j) of each {i, j} ∈ M and by the one-particle free step z_k ↦ (x_k + π(δ v_k), v_k) on each unmatched particle (disjoint blocks, each coordinate moved once); Φ_δ is injective on S_{δ,R} and measure preserving from λ_N restricted to S_{δ,R} onto λ_N restricted to its image; the complement of S_{δ,R} in 𝒟̄ ∩ {|V| ≤ R} is I (η = 2Rδ) up to a null set.",
      "hypotheses": [
       "0 < ε",
       "R > 0",
