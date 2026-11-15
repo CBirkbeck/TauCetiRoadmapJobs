@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HomologicalStabilityOfGeneralLinearGroups~8",
+  "head": "2bf5d27f0f45c0b70be73db8e00dd94a53d10e7c",
+  "pr": 2036,
+  "folder": "HomologicalStabilityOfGeneralLinearGroups",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 43 changed lines since 41c3fd5. Previous R01 (description's source list) repaired. One new P3: README line 691 carries the status '(open pull request)'. Checked: Dempwolff 1973, Remark, p. 207 against the text (the only locator added; section 3.4 of the seeded sample); recomputed dim H^1(GL_n(F2); F2^n) = 0, 1, 0 for n = 2, 3, 4 and, for n = 2, 3 over F3, H^1(GL_n; gl_n) = 0 and (Lambda^2 gl_n)_G = 0; K3BlochGroups citations resolved at cf5467c, suppliers at their heads and on main; pull-request text read against the head. Worker's gate passes (build=0); depcheck 0 problems, no UPWARD or CYCLE; elaboration gives six sorry warnings only.",
+  "text": "2c5288071aa5b285"
+ }
+}
