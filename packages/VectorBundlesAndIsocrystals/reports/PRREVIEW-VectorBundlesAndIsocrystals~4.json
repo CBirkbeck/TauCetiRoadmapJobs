@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-VectorBundlesAndIsocrystals~4",
+  "head": "6f2c340ba320e7e2f44b4b2881bfd239d10980f3",
+  "pr": 1205,
+  "folder": "VectorBundlesAndIsocrystals",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 10 changed lines since c7a0b33; the five reworded proof-plan paragraphs were compared with FS Propositions II.2.16, II.3.5, II.3.7 and CN Remark 3.15, Proposition 3.23 (mathematics preserved, longest shared run 6 words) with five computed rows; gate rerun OK, depcheck 0 problems, Suggested.lean elaborates with sorry as the only warning; no file outside the folder; the pull request description was checked against the head for the first time: two P3 findings (stale dependency paragraph naming only CrystallineCohomology CR.4.7 and an id VB0 absent from the README; summary says Layer 1 proves Dieudonne-Manin in every rank while the mixed-characteristic case is supplied). The folder's files have no finding.",
+  "text": "8482b3c2b432110d",
+  "carried": {
+   "from": "6f2c340ba320e7e2f44b4b2881bfd239d10980f3",
+   "head": "c1b63b800c69e9a1682fac26f41d1bcdf660f71d",
+   "findings": 2,
+   "lines": 20,
+   "folders": [
+    "VectorBundlesAndIsocrystals"
+   ],
+   "outside": true
+  }
+ }
+}
