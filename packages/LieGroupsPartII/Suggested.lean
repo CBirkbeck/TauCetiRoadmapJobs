@@ -20,7 +20,8 @@ Stated here:
   minimal parabolic subgroup `P = M·exp(𝔞)·N` with `G = K·P` (`minimalParabolic_langlands`); the
   conjugacy of the pairs `(𝔞, P)` under the identity component of `K`
   (`exists_conj_minimalParabolic`); the Bruhat decomposition over `N_K(𝔞)/Z_K(𝔞)`
-  (`bruhat_decomposition_linear`); the dynamical description of a regular one-parameter subgroup
+  (`bruhat_decomposition_linear`) with its cell coordinates (`doubleCoset_cell_coordinates`);
+  the dynamical description of a regular one-parameter subgroup
   over `N_K(𝔞)/Z_K(𝔞)` (`dynamicParabolic_eq_iUnion_doubleCoset`); the classification of the Lie
   subalgebras containing the minimal parabolic subalgebra (`exists_eq_nonnegEigenspaces_of_le`);
   the component condition and its equivalent forms (`linearComponentCondition_iff`), all with no
@@ -245,6 +246,21 @@ theorem bruhat_decomposition_linear (G : Subgroup (GL (Fin n) ℝ))
         DoubleCoset.doubleCoset k' (minimalParabolic G 𝔞 H₀) (minimalParabolic G 𝔞 H₀)).Nonempty →
       ∀ H ∈ 𝔞, ((k⁻¹ * k' : GL (Fin n) ℝ) : Matrix (Fin n) (Fin n) ℝ) * H =
         H * ((k⁻¹ * k' : GL (Fin n) ℝ) : Matrix (Fin n) (Fin n) ℝ) := by
+  sorry
+
+/-- **§7.3. The cell coordinates of the Bruhat decomposition.** For a self-adjoint linear group,
+with no component condition: for `k ∈ N_K(𝔞)`, every element of the double coset `P k P` is
+`u·k·p` for a unique pair of `u ∈ N ∩ k N̄ k⁻¹` and `p ∈ P`, where `N = dynamicUnipotent G H₀` and
+`N̄ = dynamicUnipotent G (−H₀)` is its image under `θ(g) = (gᵀ)⁻¹` (Knapp 2002, Ch. VII §4). -/
+theorem doubleCoset_cell_coordinates (G : Subgroup (GL (Fin n) ℝ))
+    (hG : IsSelfAdjointLinearGroup G) (𝔞 : Submodule ℝ (Matrix (Fin n) (Fin n) ℝ))
+    (h𝔞 : IsMaximalAbelianSymmetric G 𝔞) (H₀ : Matrix (Fin n) (Fin n) ℝ)
+    (hH₀ : IsRegularElement G 𝔞 H₀) :
+    ∀ k ∈ orthogonalNormalizer G 𝔞,
+      ∀ g ∈ DoubleCoset.doubleCoset k (minimalParabolic G 𝔞 H₀) (minimalParabolic G 𝔞 H₀),
+        ∃! x : GL (Fin n) ℝ × GL (Fin n) ℝ,
+          x.1 ∈ dynamicUnipotent G H₀ ∧ k⁻¹ * x.1 * k ∈ dynamicUnipotent G (-H₀) ∧
+          x.2 ∈ minimalParabolic G 𝔞 H₀ ∧ g = x.1 * k * x.2 := by
   sorry
 
 /-- **§7.3. The dynamical description of a regular one-parameter subgroup.** With no component

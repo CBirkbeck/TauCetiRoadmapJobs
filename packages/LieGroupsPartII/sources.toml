@@ -114,12 +114,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2 read; section numbers are those of v2 (§1.2 'Facts from the structure of Lie groups'); published as Annals of Math. 196 (2022), no. 3, 941–981"
-cited_for = ["conventions", "7.3f", "consumers"]
+cited_for = ["conventions", "consumers"]
 
 [[source]]
 id = "bradlow-collier-garciaprada-gothen-oliveira2024"
 authors = "Steve Bradlow, Brian Collier, Oscar Garcia-Prada, Peter Gothen, André Oliveira"
-title = "A general Cayley correspondence and higher Teichmüller spaces"
+title = "A general Cayley correspondence and higher rank Teichmüller spaces"
 year = 2024
 doi = "10.4007/annals.2024.200.3.1"
 venue = "Annals of Mathematics 200 (2024), no. 3, 803–892"
@@ -133,5 +133,5 @@ sha256 = "c981234d6e1636c1d894834c3b545c35c8448e8a934db5120fa2b538fa6beaf8"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v2 read (title there omits the words 'general' and 'rank'); published as Annals of Math. 200 (2024), no. 3, 803–892"
+version_note = "arXiv v2 read; its title agrees with the published one; published as Annals of Math. 200 (2024), no. 3, 803–892"
 cited_for = ["consumers"]
