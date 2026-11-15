@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CohomologyOfGroups~1",
+  "head": "f8d096c070f46e0b1358bec57cfc0f0363a114f2",
+  "pr": 2338,
+  "folder": "CohomologyOfGroups",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Full review: all 15 seeded source targets, 109 computed adversarial rows, 23 signatures, 14 padding probes, ownership and supplier audit. Gate and direct Lean pass; depcheck 244 roadmaps, 2206 edges, 0 problems. One P3 source-attribution correction. Three declared supplier gaps verified; Brown82/CE56 uncertified and SwanPPeriod60 waived.",
+  "carried": {
+   "from": "f8d096c070f46e0b1358bec57cfc0f0363a114f2",
+   "head": "6447a96218f174df93c0b8c6b0c460dea63cb067",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "CohomologyOfGroups"
+   ]
+  }
+ }
+}
