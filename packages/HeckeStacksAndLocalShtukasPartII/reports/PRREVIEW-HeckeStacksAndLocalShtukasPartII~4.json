@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HeckeStacksAndLocalShtukasPartII~4",
+  "head": "236bae354d7f520d91606639bf00696f912b41c2",
+  "pr": 1844,
+  "folder": "HeckeStacksAndLocalShtukasPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 236bae3. Checked the pull request's title and description against the head sentence by sentence: one P3 (the roadmap-summary block states the shrunken-chamber theorem with the strict gap only, omitting the double-flat bound (λ_w^♭♭)^♦ ≥ ν_b of README §8.1 and he21 Theorem 6.1; instance A₂, λ=3ρ∨, ν_b=2ρ∨). The folder needs no change. Gate at 236bae3 passes on every check; Suggested.lean elaborates with only its two sorry warnings; depcheck 0 problems, no UPWARD or CYCLE; no overlap, no dropped id, no unresolved cross-roadmap citation; nothing changed outside the folder.",
+  "text": "57e785f8097d7fc9",
+  "carried": {
+   "from": "236bae354d7f520d91606639bf00696f912b41c2",
+   "head": "754645e3b8e6305d2f50e3995449bdd64188709f",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
