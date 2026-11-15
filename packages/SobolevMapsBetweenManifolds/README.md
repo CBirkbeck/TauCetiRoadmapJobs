@@ -247,10 +247,10 @@ a hypothesis (§8.2).
   embedding is a measurable embedding, so it maps Borel sets to Borel sets.
 - `MeasureTheory.lintegral_withDensity_eq_lintegral_mul₀`
   (`Mathlib/MeasureTheory/Measure/WithDensity.lean:476`) integrates nonnegative functions
-  against an a.e. measurable density. `MeasureTheory.integral_withDensity_eq_integral_toReal_smul₀`
-  (`Mathlib/MeasureTheory/Integral/Bochner/ContinuousLinearMap.lean:311`) gives the Bochner
-  formula for an a.e. measurable, a.e. finite density; its nonnegative real weights are used
-  separately for the positive and negative Jacobian parts in §6.4.
+  against an a.e. measurable density. `integral_withDensity_eq_integral_toReal_smul₀`
+  (`Mathlib/MeasureTheory/Integral/Bochner/ContinuousLinearMap.lean:311`, root namespace)
+  gives the Bochner formula for an a.e. measurable, a.e. finite density; its nonnegative real
+  weights are used separately for the positive and negative Jacobian parts in §6.4.
 - `ContDiffAt.toOpenPartialHomeomorph`
   (`Mathlib/Analysis/Calculus/InverseFunctionTheorem/ContDiff.lean`): the `C¹` inverse function
   theorem. `exists_contDiff_support_eq_eq_one_iff` and
@@ -1432,7 +1432,7 @@ Mathlib signed measure. On a relatively compact Borel `A`
 it is `μ_f^+(A) − μ_f^−(A) = ∫_A J_f dvol_M`, and against a bounded Borel `g` with compact support
 it is `∫ g J_f dvol_M`. This density-pair construction uses
 `MeasureTheory.lintegral_withDensity_eq_lintegral_mul₀` and
-`MeasureTheory.integral_withDensity_eq_integral_toReal_smul₀`; the weights are a.e. measurable
+`integral_withDensity_eq_integral_toReal_smul₀`; the weights are a.e. measurable
 by §6.2 and finite everywhere, and local integrability makes both compactly supported
 integrals finite. HeikkilaPankka2025 line 25–27 supplies only the determinant notation.
 
@@ -1492,7 +1492,7 @@ injectivity of `f` makes the images disjoint.
 
 *Needs:* §3.1, §4.4, §6.1, §6.2, §6.3; Mathlib `MeasureTheory.Measure.withDensity`,
 `MeasureTheory.lintegral_withDensity_eq_lintegral_mul₀`,
-`MeasureTheory.integral_withDensity_eq_integral_toReal_smul₀`,
+`integral_withDensity_eq_integral_toReal_smul₀`,
 `MeasureTheory.lintegral_image_eq_lintegral_abs_det_fderiv_mul`,
 `Topology.IsOpenEmbedding.measurableEmbedding`; Tau Ceti `TauCeti.riemannianVolume`,
 `TauCeti.setLIntegral_riemannianVolume_of_subset`,
