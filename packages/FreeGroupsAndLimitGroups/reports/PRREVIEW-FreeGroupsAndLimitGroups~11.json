@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FreeGroupsAndLimitGroups~11",
+  "head": "d31b59b085db7ac48df3de9037428a43719f33e8",
+  "pr": 2205,
+  "folder": "FreeGroupsAndLimitGroups",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since d31b59b. Checked: the previous R01 (description now states the finite-rank restriction and the finite system of section 11.5) is repaired; the title, the roadmap-summary block and the description's prose read against the head and the base diff (pins 1b1ccf4 and 2fd255d, 8 heading changes, ClassifyingSpaces dropped, GraphConnectivityAndFlows Target 2.1 added and resolved on main, 3 TauCeti imports, 14 sorry-bodied definitions and 15 examples removed, order with #2221), none contradicted; adversarial table with 4 computed rows (section 11.5 scope, the section 11.3 transport and composition order, the ET3 witnesses of section 7.4); 4 library declarations opened at the Tau Ceti pin; gate all checks 0 OK; depcheck 245 roadmaps, 2215 edges, 0 problems; Suggested.lean elaborates with 12 sorry warnings only. No seeded sample target falls in a changed passage; TREES remains uncertified.",
+  "text": "16e7daa59dcdfb05"
+ }
+}
