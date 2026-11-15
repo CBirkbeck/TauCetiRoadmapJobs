@@ -1,4 +1,4 @@
-# Roadmap: modular characters and blocks, part ii — the glauberman correspondence and heights of characters
+# Roadmap: modular characters and blocks, Part II — the Glauberman correspondence and heights of characters
 
 **Summary.** This roadmap continues ModularCharactersAndBlocks, which builds `p`-modular systems,
 Brauer characters, blocks, defect groups, Brauer's three main theorems and the behaviour of blocks
@@ -478,7 +478,10 @@ projective multiplicity representation with factor set `β⁻¹`; this roadmap u
 ### From TauCetiRoadmap.RepresentationTheory.CharacterTheory
 
 §2.1 (the sum of the squares of the degrees), §3.5 (column orthogonality, primitive central
-idempotents), §3.6 (the irreducible characters of `G × H` are the products `ψ × ξ`), §4.3 (central
+idempotents), §3.6 (the irreducible characters of `G × H` are the products `ψ × ξ`), §4.1 (over
+`ℂ`, `ρ(g)` is diagonalisable with root-of-unity eigenvalues, a diagonalisable endomorphism with a
+single eigenvalue is scalar, and the equality case of the triangle inequality for unit complex
+numbers; together, `|χ(g)| = χ(1)` makes `ρ(g)` scalar, which §3.4 uses), §4.3 (central
 characters, `ω_χ(𝒞⁺) = |𝒞| χ(x)/χ(1)`, integrality), §4.4 (the Galois action and
 `fieldOfValues_eq_map_fixedField_stabilizer`), §4.5 (Brauer's splitting field: for a field `K` of
 characteristic zero containing a primitive `exp(G)`-th root of unity, every irreducible
@@ -657,12 +660,17 @@ finite-dimensional `F`-vector space and `ρ` a representation of `Γ` on `V` all
 `F[Γ]`-endomorphisms are scalars. Assume `Nat.Coprime (Nat.card A) (finrank F V)` and that for
 every `a ∈ A` the twisted representation `g ↦ ρ(a • g)` is isomorphic to `ρ`. Prove that there is
 a unique representation `ρ*` of `Γ ⋊ A` on `V` with `ρ*(inl g) = ρ(g)` for all `g` and
-`det ρ*(inr a) = 1` for all `a` (glauberman line 100, Theorem 1). Route: choose `S(a)`
-implementing the twist, so that `S(a) S(b) = c(a, b) S(a b)` with scalar `c` by the scalar
-hypothesis; with `d(a) = det S(a)`, `e(b) = Π_a c(a, b)`, `r = dim V`, `n = |A|` and
-`i n + j r = 1`, the rescaling by `f(a) = d(a)^j e(a)^i` trivialises `c`, and a final rescaling
-makes the determinants `1`; two such extensions differ by scalars `h(a)` with
-`h(a)^r = h(a)^n = 1`. No finiteness of `Γ` and no coprimality with `|Γ|` is used. For
+`det ρ*(inr a) = 1` for all `a` (glauberman line 100, Theorem 1). Route: write
+`m = finrank F V`. For each `a ∈ A` pick an automorphism of `V` intertwining `ρ` with its twist by
+`a`; by the hypothesis on endomorphisms these operators form a projective representation of `A`
+with a scalar-valued 2-cocycle. Taking determinants shows that the `m`-th power of the cocycle is
+a coboundary, and multiplying the cocycle identity over all values of its last variable shows the
+same for its `|A|`-th power; as `m` and `|A|` are coprime, the cocycle is a coboundary, and
+rescaling the operators makes them a homomorphism from `A`. Its determinant `δ` is a linear
+character of `A` with `δ^{|A|} = 1`; multiplying the operators by `δ^{−k}`, where
+`k m ≡ 1 (mod |A|)`, makes every determinant `δ^{1 − k m} = 1`. Two normalised extensions differ
+by a homomorphism from `A` to the scalars whose values have order dividing both `m` and `|A|`,
+hence trivial. No finiteness of `Γ` and no coprimality with `|Γ|` is used. For
 `inl(Γ) ⊴ Γ ⋊ A`, where the twist hypothesis makes the inertia group of `ρ` everything, the
 existence part says that the scalar extension obstruction of InductionRestriction Layer 7 vanishes
 (Tau Ceti defines this obstruction for simple representations over an algebraically closed field
@@ -810,8 +818,9 @@ all `t ∈ C` and every generator `a` of `A`, and that `χ ↦ χ*_cyc` is a bij
 the sign as a function of cyclic subgroups). Route: independence of the generator from the
 power-map value law and `ℚ(χ̂) ⊆ ℚ(ζ_{|Γ|})`; the class function `Σ_β β(a⁻¹) χ̂ β` and Gallagher
 give `Σ_{g ∈ Γ} |χ̂(a g)|² = |Γ|`; writing `χ̂|_{A × C}` through the products of irreducible
-characters of `A` and `C` gives `χ̂(a t) = Σ_λ c(λ) λ(t)` with rational integers `c(λ)`, and Lemma
-2 turns the norm identity into `Σ_λ c(λ)² = 1`; injectivity uses Gallagher again and surjectivity
+characters of `A` and `C` gives `χ̂(a t) = Σ_λ m_λ λ(t)` with rational integers `m_λ`, and §3.1,
+which makes the sum of `|χ̂|²` over the coset `a Γ` equal to `|Γ : C|` times its sum over `a C`,
+turns the norm identity into `Σ_λ m_λ² = 1`; injectivity uses Gallagher again and surjectivity
 the counts of §§1.2–1.3. *Needs:* §§1.2, 1.3, 2.2–2.4, 3.1; CharacterTheory §§3.6, 4.4; Tau Ceti
 `IsPrimitiveRoot.cyclotomicIrreducibleCharacterAction_apply`.
 
@@ -848,9 +857,25 @@ Let `A` be cyclic and coprime to `Γ`, `B < A` such that `C_Γ(a) = C` for every
 `χ|_C = ε' λ` then `ε' = 1` and `Γ = C · ker χ`, and otherwise `|A : B|⁻¹ (χ|_C − ε' λ)` is a
 character of `C` (glauberman line 375, Corollary 5 (a)–(b), and line 454, Corollary 6 (c) for
 `B = 1`). For a generator `a`, `ε' θ₀(a) = ε(χ)`; when `|A|` is odd, `θ₀ = 1` and `ε' = ε(χ)`,
-while for `|A| = 2` the sign `ε'` may differ from `ε(χ)` by `θ₀(a) = −1`. Route: as in the source,
-from Lemma 2 and the orthogonality relations for `A × C`, with Lemma 3 (c) for the kernel
-statement. *Needs:* §§1.2, 3.1, 3.2; CharacterTheory §3.6.
+while for `|A| = 2` the sign `ε'` may differ from `ε(χ)` by `θ₀(a) = −1`. Route: for a faithful
+linear character `ξ` of `A/B`, inflated to `Γ ⋊ A`, the virtual character `χ̂ − χ̂ ξ` vanishes on
+`Γ ⋊ B` and has norm `2`, its two terms being distinct (their determinants on `inr(A)` are `1` and
+`ξ^{χ(1)} ≠ 1`). For `a ∈ A ∖ B` the fixed points of `⟨a⟩` are `C`, so §3.1 for `⟨a⟩` makes the
+sum of `|χ̂ − χ̂ ξ|²` over the coset `a Γ` equal to `|Γ : C|` times its sum over `a C`; hence the
+restriction to `A × C = inr(A) · inl(C)` also has norm `2` and is the difference of two distinct
+irreducible characters of `A × C`, each a linear character of `A` times an irreducible character
+of `C` (CharacterTheory §3.6). Vanishing on `C` gives the two the same factor on `C`, which is `λ`
+by §3.3 at the elements of `A ∖ B` and §3.2 at a generator; comparing the factors on `A` there
+shows that their product is `ξ` and that at least one of them squares to `1`; such a factor is a
+`θ₀` for (a), with `ε' = 1` when it belongs to the term with sign `+` and `ε' = −1` otherwise.
+For (b), by (a) the class function `χ̂|_{A × C} − ε' θ₀ λ` vanishes off `B × C`, so it is
+unchanged by multiplication by `ξ`; its restriction `χ|_C − ε' λ` to `C` is therefore `|A : B|`
+times a virtual character `Δ`, whose multiplicities away from `λ` are those of `χ|_C` divided by
+`|A : B|`, while `[χ|_C, λ] = ε' + |A : B| [Δ, λ] ≥ 0` with `|A : B| ≥ 2` excludes `[Δ, λ] < 0`. If
+`χ|_C = ε' λ`, then `ε' = 1` and `χ̂(a) = θ₀(a) χ(1)` for a generator `a`, so `inr a` acts by a
+scalar in a representation affording `χ̂` (CharacterTheory §4.1); hence `a` fixes every coset of
+`ker χ`, and the coset statement of §1.2 gives `Γ = C · ker χ`. *Needs:* §§1.2, 2.2, 3.1, 3.2,
+3.3; CharacterTheory §§3.6, 4.1.
 
 **Checks.**
 - `SL(2,3)`, `B = 1`: `ε' = ε = −1`, `χ₂|_C = 2 sgn ≠ −sgn` and `(2 sgn + sgn)/3 = sgn` is a
@@ -868,7 +893,7 @@ for a suitable sign `ε'`; for `SL(2,3)` it is `3 sgn`.
 
 ### Dependencies
 
-Layers 1–2; InverseGaloisAndArithmeticFundamentalGroups IG.3.4; CharacterTheory §§3.6, 4.4.
+Layers 1–2; InverseGaloisAndArithmeticFundamentalGroups IG.3.4; CharacterTheory §§3.6, 4.1, 4.4.
 
 ## Layer 4: the solvable case
 
@@ -924,10 +949,10 @@ for the prime-order group `S_{m−1}`, with the transitivity of the congruence t
 
 Prove that for cyclic `S`, `Λ_C` is the inverse of the cyclic correspondence of §3.2 for every
 composition series `C`, and that for solvable `S`, `Λ_C = Λ_D` for any two composition series
-(glauberman line 543, Theorem 4 (b), (c)). Consequently, for any chain `1 = T₀ ⊴ T₁ ⊴ ⋯ ⊴ T_r = S`
+(glauberman line 542, Theorem 4 (b), (c)). Consequently, for any chain `1 = T₀ ⊴ T₁ ⊴ ⋯ ⊴ T_r = S`
 with each `T_{i+1}/T_i` a `p_i`-group, `Λ` is the composite of the `p_i`-group correspondences of
-`T_{i+1}/T_i` on `C_Γ(T_i)`, by refining the chain to a composition series. Route: as in the
-source, by induction on `|S|`, with §4.2 for prime-power order, §3.4 (b) for the cyclic `p`-group
+`T_{i+1}/T_i` on `C_Γ(T_i)`, by refining the chain to a composition series. Route: induction
+on `|S|`, with §4.2 for prime-power order, §3.4 (b) for the cyclic `p`-group
 case, for cyclic `S` not of prime-power order the decomposition `S = P × E` into its Sylow
 `p`-subgroup `P` and its Hall `p'`-subgroup `E`, where `p = |S : S₁|` is the order of the top
 factor of the series (glauberman line 562), with §§2.2, 3.2, and for two series with different
@@ -967,7 +992,7 @@ irreducible constituent of `χ|_C` of multiplicity prime to `p`; and, for every 
 `χ ∈ Irr_S(Γ)`, the character `π(Γ, T)(χ)` of `C_Γ(T)` is `S/T`-invariant and
 `π(Γ, S)(χ) = π(C_Γ(T), S/T)(π(Γ, T)(χ))`; the invariance is part of the law, since only then is
 `π(Γ, T)(χ)` in `Irr_{S/T}(C_Γ(T))`, the domain of `π(C_Γ(T), S/T)`, and for the family
-constructed here it holds by §4.4 (glauberman line 543, Theorem 4, line 601, Corollaries 7–8;
+constructed here it holds by §4.4 (glauberman line 537, Theorem 4, line 601, Corollaries 7–8;
 spath-vallejo line 118 and line 129 for the compatibility law; navarro-2018, Chapter 2, for the
 uniqueness formulation). For a `p`-group `S` prove further that for every `χ ∈ Irr_S(Γ)` there is
 exactly one `λ ∈ Irr(C)` with `p ∤ [χ|_C, λ]`, that `[χ|_C, λ] ≡ ±1 (mod p)` and that
