@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BordismFormalGroups~72",
+  "head": "445f965af21f4a29e7a3877a35383ba5a8ff4523",
+  "pr": 1807,
+  "folder": "BordismFormalGroups",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 28 changed lines since b591e89. Previous R01 (F2.2 strong convergence needs finite type), R02 (F2.6 Needs) and R03 (description) are repaired; D01 stands, deferred. Checked: conditional and strong convergence of the HF_p-Adams spectral sequence with computed values on MU and on the wedge of Hℤ/p^n (lim¹ of A[p^k] nonzero), the locator Ravenel Theorem 2.1.1(ii) p. 42 at the text, the new Needs items G3.4, G4.3, G4.5, G5.3–G5.4 at this head's GeneralizedCohomology, the pull request text against the head. Gate passes (worker's run; depcheck 0 problems); Suggested.lean unchanged, elaborates with three sorry warnings only.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The comparison of the HF_p-nilpotent completion with derived p-completion has two owners, with different hypotheses",
+    "where": "GeneralizedCohomology G3.9, its sentence on the HF_p nilpotent/Adams completion",
+    "raised": "PRREVIEW-BordismFormalGroups~70"
+   }
+  ],
+  "text": "96649a8fb8d265e0"
+ }
+}
