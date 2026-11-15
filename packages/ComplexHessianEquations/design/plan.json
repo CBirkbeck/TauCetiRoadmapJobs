@@ -1824,7 +1824,7 @@
       {
        "name": "yau_F_const",
        "kind": "degenerate",
-       "statement": "F = a: b = −a, φ = 0"
+       "statement": "F = a: b = −a, φ = 0; on the continuity path b_t = −ta, the exponent tF + b_t is 0 and φ_t = 0"
       },
       {
        "name": "yau_torus_bessel",
@@ -2030,7 +2030,7 @@
       {
        "name": "deGiorgi_indicator",
        "kind": "computation",
-       "statement": "1_{[0,1)} with B_0 = 1 vanishes from s = 1"
+       "statement": "(1/4)·1_{[0,1/4)} with B_0 = δ_0 = 1 meets the hypothesis (r/4 < 1/16 when s + r < 1/4); at s_0 = 0, φ(0) = 1/4 < 1/(2B_0) = 1/2, the lemma gives φ = 0 from s = 2, and φ vanishes from 1/4"
       },
       {
        "name": "deGiorgi_exp",
@@ -2040,7 +2040,7 @@
       {
        "name": "deGiorgi_delta_zero",
        "kind": "non-example",
-       "statement": "δ_0 = 0: e^{−s} satisfies the hypothesis with B_0 = 1 and never vanishes"
+       "statement": "δ_0 = 0: e^{−s} satisfies rφ(s + r) ≤ B_0 φ(s) with B_0 = 1/e (re^{−r} ≤ 1/e) and φ(s_0)^0 = 1 < e/2 = 1/(2B_0), yet never vanishes; the threshold 1/(1 − 2^0) is undefined"
       }
      ]
     },
@@ -2048,7 +2048,7 @@
      "id": "8.3",
      "kind": "theorem",
      "name": "gpt_degenerating",
-     "statement": "In the degenerating setting of 3.4.1 on compact connected Kähler (X, ω_X), with (f,Γ) admissible satisfying the structural condition with constant γ, p > n, and φ_t ∈ C² solving the equation with normalized smooth F_t: sup |φ_t| ≤ C with C depending only on ω_X, χ, p, n, γ and upper bounds for c_t^n/V_t, E_t(φ_t), Ent_p(F_t); explicitly inf φ_t ≥ −(2B_0)^{1/δ_0} Ē − 1/(1 − 2^{−δ_0}) with δ_0 = (p−n)/(pn). The De Giorgi lemma 8.2 is applied to the strict sublevel function Φ(s) = (c_t^n/V_t) ∫_{{φ_t < −s}} e^{nF_t} ω_X^n, which is right-continuous; A_s is unchanged since its integrand vanishes on {φ_t = −s}.",
+     "statement": "In the degenerating setting of 3.4.1 on compact connected Kähler (X, ω_X), with (f,Γ) admissible satisfying the structural condition with constant γ, p > n, and φ_t ∈ C² solving the equation with normalized smooth F_t: sup |φ_t| ≤ C with C depending only on ω_X, χ, p, n, γ and upper bounds for c_t^n/V_t, E_t(φ_t), Ent_p(F_t); explicitly inf φ_t ≥ −(2B_0)^{1/δ_0} Ē − 1/(1 − 2^{−δ_0}) with δ_0 = (p−n)/(pn). The De Giorgi lemma 8.2 is applied to the strict sublevel function Φ(s) = (c_t^n/V_t) ∫_{{φ_t < −s}} e^{nF_t} ω_X^n, which is right-continuous, at s_0 = (2B_0)^{1/δ_0} Ē, where Φ(s_0)^{δ_0} < 1/(2B_0) holds strictly because −φ_t > s_0 on the open set {φ_t < −s_0}; A_s is unchanged since its integrand vanishes on {φ_t = −s}.",
      "hypotheses": [
       "dω_X = 0",
       "χ smooth closed ≥ 0",
