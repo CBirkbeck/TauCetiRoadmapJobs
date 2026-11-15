@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuantumFoundations~8",
+  "head": "824bab8b9b50a6ebb8985ce0e56bd9e9ca447d2b",
+  "pr": 1771,
+  "folder": "QuantumFoundations",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "incremental re-review of 0 changed lines since 824bab8. Checked: the pull request's title and description against the head (R03: five companions and 29 admissions, the head has one Suggested.lean with six; R04: supplier proposals with links, the README has none); supplier citations re-resolved against main at 1a19c9f, where OperatorAlgebraDynamics D8 was revised after the previous review and now owns vacuum cyclicity of the Fock representation (R01, P2, two owners) and the permutation unitaries and projectors this README cites to NoncompactQuantumSymmetry P.6 (R02, P3). Gate passes (all checks 0); depcheck 244 roadmaps, 0 problems; Suggested.lean elaborates with six sorry warnings only; no change outside the folder. The seeded sample falls in no changed passage.",
+  "text": "e75f15119e0f9934"
+ }
+}
