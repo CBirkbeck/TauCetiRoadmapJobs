@@ -1239,7 +1239,7 @@
      "id": "4.3.3",
      "kind": "theorem",
      "name": "boundaryDistance_eq_signedDistance",
-     "statement": "For Σ = ∂M (f = ρ): on W' ∩ M, r_{∂M} = d_M(·, ∂M) (intrinsic distance of (M, g_M), Manifold.riemannianEDist); r_{∂M} is a boundary defining function near ∂M with grad = ν_in on ∂M. Normalised defining function: with smooth ε₁ < ε₂ < ε (constant when ∂M is compact) such that the closed tubes E_{∂M}({|r| ≤ ε₁(q)}) and E_{∂M}({|r| ≤ ε₂(q)}) are closed in N (the closed-tube theorem inside W gives ε₂; every smaller positive continuous radius, such as ε₁ = ε₂/2, has a closed tube, the image of a closed subset of the closed ε₂-disc bundle), W := E_{∂M}({|r| < ε(q)}), W₂ := E_{∂M}({|r| < ε₂(q)}) and W₁ := E_{∂M}({|r| < ε₁(q)}), there is ρ̂ ∈ C^∞(N) with ρ̂ = r_{∂M} on W₁, ρ̂ = 1 on M ∖ W, ρ̂ = −1 on N ∖ (M ∪ W), ρ̂ between r_{∂M} and 1 on W ∩ M and between r_{∂M} and −1 on W ∖ M; hence M = {ρ̂ ≥ 0}, ∂M = {ρ̂ = 0}, N ∖ M = {ρ̂ < 0}, grad ρ̂ = ν_in on ∂M, and for 0 < ε < 1 every point of {ρ̂ ≥ −ε} ∖ M lies in W with r_{∂M} ≥ −ε. For nonempty compact connected ∂M in a connected N, N ∖ ∂M has exactly the two components {ρ > 0} and {ρ < 0}, and RiemannianGeometry R7.9's defining function for ν = ν_in has the zero set, sign sets and gradient of ρ̂ and equals the collar coordinate near ∂M; ρ̂ is built here for every regular domain, with the comparison with r_{∂M} on W used in 4.6. Route: ρ̂ = ψ r_{∂M} + (1 − ψ) s with ψ : N → [0, 1] a cutoff equal to 1 on the closed ε₁-tube and 0 on the closed set N ∖ W₂, and s : N → [−1, 1] equal to 1 on M ∖ W₁ and −1 on N ∖ (M ∪ W₁) (both closed since ∂M ⊆ W₁), from exists_contMDiff_zero_iff_one_iff_of_isClosed; the support of ψ lies in the closed ε₂-tube, closed in N and contained in W, so ψ r_{∂M} extended by 0 is smooth on the open cover {W, N ∖ closed ε₂-tube} of N.",
+     "statement": "For Σ = ∂M (f = ρ): on W' ∩ M, r_{∂M} = d_M(·, ∂M) (intrinsic distance of (M, g_M), Manifold.riemannianEDist); r_{∂M} is a boundary defining function near ∂M with grad = ν_in on ∂M. Normalised defining function: with smooth ε₁ < ε₂ < ε (constant when ∂M is compact) such that the closed tubes E_{∂M}({|r| ≤ ε₁(q)}) and E_{∂M}({|r| ≤ ε₂(q)}) are closed in N (the closed-tube theorem inside W gives ε₂; every smaller positive continuous radius, such as ε₁ = ε₂/2, has a closed tube, the image of a closed subset of the closed ε₂-disc bundle), W := E_{∂M}({|r| < ε(q)}), W₂ := E_{∂M}({|r| < ε₂(q)}) and W₁ := E_{∂M}({|r| < ε₁(q)}), there is ρ̂ ∈ C^∞(N) with ρ̂ = r_{∂M} on W₁, ρ̂ = 1 on M ∖ W, ρ̂ = −1 on N ∖ (M ∪ W), ρ̂ between r_{∂M} and 1 on W ∩ M and between r_{∂M} and −1 on W ∖ M; hence M = {ρ̂ ≥ 0}, ∂M = {ρ̂ = 0}, N ∖ M = {ρ̂ < 0}, grad ρ̂ = ν_in on ∂M, and for 0 < δ < 1 every point of {ρ̂ ≥ −δ} ∖ M lies in W with r_{∂M} ≥ −δ. For nonempty compact connected ∂M in a connected N, N ∖ ∂M has exactly the two components {ρ > 0} and {ρ < 0}, and RiemannianGeometry R7.9's defining function for ν = ν_in has the zero set, sign sets and gradient of ρ̂ and equals the collar coordinate near ∂M; ρ̂ is built here for every regular domain, with the comparison with r_{∂M} on W used in 4.6. Route: ρ̂ = ψ r_{∂M} + (1 − ψ) s with ψ : N → [0, 1] a cutoff equal to 1 on the closed ε₁-tube and 0 on the closed set N ∖ W₂, and s : N → [−1, 1] equal to 1 on M ∖ W₁ and −1 on N ∖ (M ∪ W₁) (both closed since ∂M ⊆ W₁), from exists_contMDiff_zero_iff_one_iff_of_isClosed; the support of ψ lies in the closed ε₂-tube, closed in N and contained in W, so ψ r_{∂M} extended by 0 is smooth on the open cover {W, N ∖ closed ε₂-tube} of N.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
@@ -1269,7 +1269,7 @@
       {
        "name": "sandwich",
        "kind": "compatibility",
-       "statement": "On W ∖ M the value ρ̂ is a convex combination of r_{∂M} < 0 and −1, so {ρ̂ ≥ −ε} ∖ M ⊆ {r_{∂M} ≥ −ε} for ε < 1; the unnormalised ψ r_{∂M} + (1 − ψ) ρ has no such bound (4.6's negative control)."
+       "statement": "On W ∖ M the value ρ̂ is a convex combination of r_{∂M} < 0 and −1, so {ρ̂ ≥ −δ} ∖ M ⊆ {r_{∂M} ≥ −δ} for 0 < δ < 1; the unnormalised ψ r_{∂M} + (1 − ψ) ρ has no such bound (4.6's negative control)."
       },
       {
        "name": "cutoff_frontier",
@@ -1373,7 +1373,7 @@
      "id": "4.6",
      "kind": "theorem",
      "name": "enlargement_strictlyConvex",
-     "statement": "If ∂M is compact and strictly convex and ρ̂ is the normalised defining function of 4.3.3 with constant tube radii ε₁ < ε, there is ε₀ with 0 < ε₀ < min(ε₁, 1) such that for 0 < ε ≤ ε₀: M_ε := {ρ̂ ≥ −ε} = M ∪ E_{∂M}(∂M × [−ε, 0)), −ε is a regular value of ρ̂, M_ε is a regular domain with strictly convex boundary E_{∂M}(∂M × {−ε}), M ⊆ int M_ε, and M_ε is compact if M is. Route: points of M_ε ∖ M lie in W₁ where ρ̂ = r_{∂M}; II_{M_ε} = −Hess r_{∂M} on the level sets of r_{∂M}, positive for |r| ≤ ε₀ by 2.3.2 at r = 0, continuity on the compact tube and compactness of the unit tangent vectors of the level sets.",
+     "statement": "If ∂M is compact and strictly convex and ρ̂ is the normalised defining function of 4.3.3 with constant tube radii ε₁ < ε, there is δ₀ with 0 < δ₀ < min(ε₁, 1) such that for 0 < δ ≤ δ₀: M_δ := {ρ̂ ≥ −δ} = M ∪ E_{∂M}(∂M × [−δ, 0)), −δ is a regular value of ρ̂, M_δ is a regular domain with strictly convex boundary E_{∂M}(∂M × {−δ}), M ⊆ int M_δ, and M_δ is compact if M is. Route: points of M_δ ∖ M lie in W₁ where ρ̂ = r_{∂M}; II_{M_δ} = −Hess r_{∂M} on the level sets of r_{∂M}, positive for −δ₀ ≤ r ≤ 0 (some 0 < δ₀ < min(ε₁/2, 1)) by 2.3.2 at r = 0, continuity on the compact tube and compactness of the unit tangent vectors of the level sets.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
@@ -1396,12 +1396,12 @@
       {
        "name": "ball",
        "kind": "computation",
-       "statement": "Unit ball with ε = 1/2, ε₁ = 1/4 (ρ̂ = 1 − |x| on 3/4 < |x| < 5/4): for ε < 1/4, M_ε is the ball of radius 1 + ε, II = h/(1 + ε)."
+       "statement": "Unit ball with tube radius ε = 1/2, ε₁ = 1/4 (ρ̂ = 1 − |x| on 3/4 < |x| < 5/4): for 0 < δ < 1/4, M_δ is the ball of radius 1 + δ < 5/4, II = h/(1 + δ); on 5/4 ≤ |x| < 3/2, ρ̂ lies between 1 − |x| ≤ −1/4 and −1, below −δ."
       },
       {
        "name": "cap",
        "kind": "computation",
-       "statement": "Cap of radius 0 < R < π/2 in S^{n+1}, n ≥ 1: M_ε = cap of radius R + ε, strictly convex iff R + ε < π/2; for n = 0 every arc M_ε is strictly convex vacuously and ε₀ is limited only by min(ε₁, 1)."
+       "statement": "Cap of radius 0 < R < π/2 in S^{n+1}, n ≥ 1: M_δ = cap of radius R + δ, strictly convex iff R + δ < π/2, so δ₀ < π/2 − R; for n = 0 every arc M_δ is strictly convex vacuously and δ₀ is limited only by min(ε₁, 1)."
       },
       {
        "name": "halfspace",
@@ -1411,7 +1411,7 @@
       {
        "name": "unnormalised_defining_function",
        "kind": "non-example",
-       "statement": "ρ = (1 − |x|²)e^{−|x|²} on ℝ² (0 regular, radial derivative −2/e at |x| = 1, M the closed unit disc): a function equal to r_{∂M} near the circle and to ρ for |x| ≥ 5/4 has minimum −e^{−2} at |x| = √2 and tends to 0 from below, so for 0 < ε < e^{−2} the set {ρ ≥ −ε} contains an unbounded exterior {|x| ≥ r₂}, r₂ > √2, with II = −h/r₂ < 0, and −e^{−2} is a critical value: the normalisation ρ̂ = −1 off the tube is needed."
+       "statement": "ρ = (1 − |x|²)e^{−|x|²} on ℝ² (0 regular, radial derivative −2/e at |x| = 1, M the closed unit disc): a function equal to r_{∂M} near the circle and to ρ for |x| ≥ 5/4 has minimum −e^{−2} at |x| = √2 and tends to 0 from below, so for 0 < δ < e^{−2} the set {ρ ≥ −δ} contains an unbounded exterior {|x| ≥ r₂}, r₂ > √2, with II = −h/r₂ < 0, and −e^{−2} is a critical value: the normalisation ρ̂ = −1 off the tube is needed."
       }
      ]
     }
@@ -2038,6 +2038,8 @@
       "target:1.5",
       "target:2.1",
       "target:3.1",
+      "target:4.3.1",
+      "target:4.3.2",
       "target:5.2",
       "target:5.4.5",
       "target:5.6.1"

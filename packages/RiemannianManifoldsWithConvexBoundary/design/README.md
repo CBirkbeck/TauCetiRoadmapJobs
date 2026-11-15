@@ -1006,8 +1006,8 @@ Ceti `TauCeti.SmoothEmbedding.normalExp` through the trivialisation of the norma
   There is `ρ̂ ∈ C^∞(N)` with `ρ̂ = r_{∂M}` on `W₁` (so `ρ̂ = d_M(·, ∂M)` on the neighbourhood
   `W₁ ∩ W' ∩ M` of `∂M` in `M`), `ρ̂ = 1` on `M ∖ W`, `ρ̂ = −1` on `N ∖ (M ∪ W)`, and `ρ̂` between
   `r_{∂M}` and `1` on `W ∩ M` and between `r_{∂M}` and `−1` on `W ∖ M`. Hence `M = {ρ̂ ≥ 0}`,
-  `∂M = {ρ̂ = 0}`, `N ∖ M = {ρ̂ < 0}`, `grad ρ̂ = ν_in` on `∂M`, and for `0 < ε < 1` every point
-  of `{ρ̂ ≥ −ε} ∖ M` lies in `W` with `r_{∂M} ≥ −ε`. For a nonempty compact connected `∂M` in a
+  `∂M = {ρ̂ = 0}`, `N ∖ M = {ρ̂ < 0}`, `grad ρ̂ = ν_in` on `∂M`, and for `0 < δ < 1` every point
+  of `{ρ̂ ≥ −δ} ∖ M` lies in `W` with `r_{∂M} ≥ −δ`. For a nonempty compact connected `∂M` in a
   connected `N`, the complement `N ∖ ∂M` is the union of the disjoint nonempty open sets
   `int M = {ρ > 0}` and `{ρ < 0}`, so it has exactly these two components (R7.9 allows at most
   two), and RiemannianGeometry R7.9's defining function for `ν = ν_in` has the zero set, the sign
@@ -1123,37 +1123,39 @@ lines 128–134): let `q ∈ ∂M` with `∂M` strictly convex at `q`. Then:
 
 Prove (Paternain–Salo–Uhlmann, lines 3093–3096): if `∂M` is compact and strictly convex and `ρ̂`
 is the normalised defining function of 4.3, with constant tube radii `ε₁ < ε` there, there is
-`ε₀` with `0 < ε₀ < min(ε₁, 1)` such that for `0 < ε ≤ ε₀`: `M_ε := {ρ̂ ≥ −ε}` equals
-`M ∪ E_{∂M}(∂M × [−ε, 0))`, `−ε` is a regular value of `ρ̂`, `M_ε` is a regular domain with
-strictly convex boundary `E_{∂M}(∂M × {−ε})`, `M ⊆ int M_ε`, and `M_ε` is compact if `M` is.
-Route: by 4.3 a point of `M_ε ∖ M` lies in `W` with `r_{∂M} ≥ −ε > −ε₁`, hence in `W₁`, where
-`ρ̂ = r_{∂M}`; so `M_ε = M ∪ E_{∂M}(∂M × [−ε, 0))`, `dρ̂ = dr_{∂M} ≠ 0` on `{ρ̂ = −ε}`, and with
-the defining function `ρ̂ + ε` of `M_ε`, for which `|d(ρ̂ + ε)| = 1`, 3.1 gives
-`II_{M_ε} = −Hess r_{∂M}` on the tangent spaces of `E_{∂M}(∂M × {−ε})`. At `ε = 0` this is
-`II_{∂M} ≥ c h` (2.3); `Hess r_{∂M}` is continuous on the compact set `E_{∂M}(∂M × [−ε₁/2, 0])`,
+`δ₀` with `0 < δ₀ < min(ε₁, 1)` such that for `0 < δ ≤ δ₀`: `M_δ := {ρ̂ ≥ −δ}` equals
+`M ∪ E_{∂M}(∂M × [−δ, 0))`, `−δ` is a regular value of `ρ̂`, `M_δ` is a regular domain with
+strictly convex boundary `E_{∂M}(∂M × {−δ})`, `M ⊆ int M_δ`, and `M_δ` is compact if `M` is.
+Route: by 4.3 a point of `M_δ ∖ M` lies in `W` with `r_{∂M} ≥ −δ > −ε₁`, hence in `W₁`, where
+`ρ̂ = r_{∂M}`; so `M_δ = M ∪ E_{∂M}(∂M × [−δ, 0))`, `dρ̂ = dr_{∂M} ≠ 0` on `{ρ̂ = −δ}`, and with
+the defining function `ρ̂ + δ` of `M_δ`, for which `|d(ρ̂ + δ)| = 1`, 3.1 gives
+`II_{M_δ} = −Hess r_{∂M}` on the tangent spaces of `E_{∂M}(∂M × {−δ})`. On the level `r = 0` this
+is `II_{∂M} ≥ c h` (2.3); `Hess r_{∂M}` is continuous on the compact set `E_{∂M}(∂M × [−ε₁/2, 0])`,
 over which the unit tangent vectors of the level sets of `r_{∂M}` form a compact set, so
-`−Hess r_{∂M} > 0` on those vectors for `|r| ≤ ε₀` and some `ε₀ > 0`, which is 3.2 for `x = −ρ̂`.
-`M_ε = M ∪ E_{∂M}(∂M × [−ε, 0])` is a union of two compact sets when `M` is compact, and
-`M ⊆ {ρ̂ > −ε} = int M_ε`.
+`−Hess r_{∂M} > 0` on those vectors for `−δ₀ ≤ r ≤ 0` and some `0 < δ₀ < min(ε₁/2, 1)`, which is
+3.2 for `x = −ρ̂`. `M_δ = M ∪ E_{∂M}(∂M × [−δ, 0])` is a union of two compact sets when `M` is
+compact, and `M ⊆ {ρ̂ > −δ} = int M_δ`.
 
 **Checks.**
 
 - Unit ball with tube radius `ε = 1/2` and `ε₁ = 1/4`, so that `ρ̂ = 1 − |x|` on
-  `3/4 < |x| < 5/4`: for `ε < 1/4`, `M_ε` is the ball of radius `1 + ε` with `II = h/(1 + ε)`.
-- Spherical cap of radius `0 < R < π/2` in the unit sphere `S^{n+1}`, `n ≥ 1` (6.3): `M_ε` is the
-  cap of radius `R + ε`, strictly convex iff `R + ε < π/2`, so `ε₀ < π/2 − R` and `ε₀` depends on the
-  domain. For `n = 0` every arc `M_ε` of `S¹` has strictly convex boundary (vacuously), and `ε₀` is
-  limited only by `min(ε₁, 1)`; the tube condition alone forces `ε₁ < π − R`, so `M_ε` stays a
+  `3/4 < |x| < 5/4`: for `0 < δ < 1/4`, `M_δ` is the ball of radius `1 + δ < 5/4` with
+  `II = h/(1 + δ)`; between `|x| = 5/4` and `3/2` the value `ρ̂` lies between `1 − |x| ≤ −1/4`
+  and `−1`, so it is below `−δ` there.
+- Spherical cap of radius `0 < R < π/2` in the unit sphere `S^{n+1}`, `n ≥ 1` (6.3): `M_δ` is the
+  cap of radius `R + δ`, strictly convex iff `R + δ < π/2`, so `δ₀ < π/2 − R` and `δ₀` depends on the
+  domain. For `n = 0` every arc `M_δ` of `S¹` has strictly convex boundary (vacuously), and `δ₀` is
+  limited only by `min(ε₁, 1)`; the tube condition alone forces `ε₁ < π − R`, so `M_δ` stays a
   proper arc.
-- For `n ≥ 1` the half-space is not strictly convex and every `M_ε` is a flat half-space: the
+- For `n ≥ 1` the half-space is not strictly convex and every `M_δ` is a flat half-space: the
   hypothesis is needed for the conclusion.
 - The normalisation of `ρ̂` off the tube is needed: on `ℝ²`, `ρ(x) = (1 − |x|²) e^{−|x|²}` has `0`
   as a regular value (its radial derivative at `|x| = 1` is `−2/e`) and `M = {ρ ≥ 0}` is the closed
   unit disc; a smooth function equal to `r_{∂M}` near the circle and to `ρ` for `|x| ≥ 5/4` has
   every property of 4.3's `ρ̂` except the normalisation, but `ρ` attains its minimum `−e^{−2}` at
-  `|x| = √2` and tends to `0` from below, so for `0 < ε < e^{−2}` the set `{ρ ≥ −ε}` contains an
+  `|x| = √2` and tends to `0` from below, so for `0 < δ < e^{−2}` the set `{ρ ≥ −δ}` contains an
   unbounded exterior `{|x| ≥ r₂}` with `r₂ > √2`, whose boundary circle has `II = −h/r₂ < 0`, and
-  `−e^{−2}` is a critical value: no `ε₀` works for that function.
+  `−e^{−2}` is a critical value: no `δ₀` works for that function.
 
 *Needs:* 2.3, 3.1, 3.2, 4.3.
 
@@ -1350,10 +1352,10 @@ Prove (Paternain–Salo–Uhlmann, Proposition 3.3.1, lines 3081–3106):
 - For compact `M` with strictly convex boundary the following are equivalent: `M` is non-trapping;
   `X : C^∞(SM) → C^∞(SM)` is surjective; some `f ∈ C^∞(SM)` has `Xf > 0`. Route: `f = −σ` has
   `Xf = 2` by 5.4; for surjectivity, extend `f` and the given `h ∈ C^∞(SM)` to a neighbourhood of
-  `SM` in `SN` (3.4 for the regular domain `SM`), so that `Xf > 0` on `SM_ε` and `M_ε` is
-  non-trapping with strictly convex boundary for small `ε` (4.6), and set
-  `u = −∫_0^{τ_ε} h ∘ φ_t dt` with `τ_ε` the exit time of `M_ε`, smooth on `SM` by 5.4 since
-  `SM ∩ ∂₀SM_ε = ∅`; then `Xu = h`.
+  `SM` in `SN` (3.4 for the regular domain `SM`), so that `Xf > 0` on `SM_δ` and `M_δ` is
+  non-trapping with strictly convex boundary for small `δ` (4.6), and set
+  `u = −∫_0^{τ_δ} h ∘ φ_t dt` with `τ_δ` the exit time of `M_δ`, smooth on `SM` by 5.4 since
+  `SM ∩ ∂₀SM_δ = ∅`; then `Xu = h`.
 
 **Checks.**
 
@@ -1460,7 +1462,7 @@ iff `D²w(0)` is positive definite, iff the principal curvatures at `q` are posi
 - `{y ≥ x³}` is not convex near `0` and has `II < 0` for `x < 0`; the graph form gives
   `w(x) = x³`, `w''(x) = 6x`.
 
-*Needs:* 1.4, 1.5, 2.1, 3.1, 3.2, 5.2, 5.4, 5.5, 5.6.
+*Needs:* 1.4, 1.5, 2.1, 3.1, 3.2, 4.3, 5.2, 5.4, 5.5, 5.6.
 
 ### 6.2 Half-spaces and ball exteriors
 
@@ -1630,8 +1632,9 @@ RiemannianGeometry R5a.
   normal coordinates (4.4), the exit time and its regularity (5.2–5.4), Proposition 3.3.1 (5.5) and
   the scattering relation and lens data (5.6). With these, the hypotheses of Stefanov–Uhlmann–Vasy
   Theorems 1.1–1.3 are expressible: strict convexity at a point and on a subset, the signed distance
-  `x̃` to a hypersurface (4.3), compactness of `M ∩ {x̃ ≥ −δ}`, level sets strictly concave from the
-  superlevel sets, the boundary distance function `d_M|∂M×∂M`, and equality of lens data.
+  `x̃` to a hypersurface (4.3), compactness of `M ∩ {x̃ ≥ −c}` for some `c > 0`, level sets strictly
+  concave from the superlevel sets, the boundary distance function `d_M|∂M×∂M`, and equality of
+  lens data.
 - Part II extensions of PositiveScalarCurvature and Yamabe to manifolds with boundary (mean-convex
   boundary conditions): 1.5, 2.1 and 3.4.
 
