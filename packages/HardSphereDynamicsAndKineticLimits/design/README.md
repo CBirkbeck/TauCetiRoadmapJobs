@@ -102,7 +102,7 @@ API:
 
 - On `E` itself with `π = id` and ρ = ∞ every axiom holds, and the short lift is the identity.
 - On the unit flat torus of §1.3 in dimension 2, the class of `(1/2, 1/2)` has norm `√2/2 ≈ 0.7071`, and ρ = 1/2; the short lift of the class of `(0.9, 0)` is `(−0.1, 0)`.
-- Mathlib's `UnitAddTorus (Fin 2)` with its supremum norm is not an instance for the coordinate cover: the class of `(0.1, 0.1)` has supremum norm 0.1 while every lift has Euclidean norm at least `0.1414`, so the lift axiom fails.
+- Mathlib's `UnitAddTorus (Fin 2)` with its supremum norm is not an instance for the coordinate cover, for any radius ρ > 0: for `0 < s < min(ρ, 1/2)` the class of `(s, s)` has supremum norm `s < ρ`, while every lift `(s + m, s + n)` with `m, n ∈ ℤ` has Euclidean norm at least `s√2 > s`, since `|s + m| ≥ s` for every integer `m` (0.1 against `0.1414` at `s = 0.1`; for ρ = 0.05, 0.01 against `0.01414` at `s = 0.01`), so the lift axiom fails.
 - The degenerate radius is excluded: with ρ = 0 the lift axiom would be vacuous and every contact normal undefined; the class requires `0 < ρ`.
 
 (GST2013 line 833; BGSS2023 line 119.) *Needs:* Mathlib `EuclideanSpace`, `MeasureTheory.Measure.IsAddHaarMeasure`, `MeasureTheory.Measure.addHaar_sphere`, `EuclideanSpace.volume_ball`.
@@ -831,7 +831,7 @@ Prove `HardSphere.tendsto_empirical_of_correlation`: on a flat position space, l
 
 - At the Maxwellian equilibrium on the unit torus in dimension `d ≥ 2`, where `μ_ε = ε^{−(d−1)} → ∞`, the hypotheses hold with `f = M` by §9.4 and §9.6, and the conclusion is a law of large numbers for a stationary gas. It is also the corollary for `f⁰ = M_{1,0}`, β₀ = 1 and `C₀ = 1 ≥ (2π)^{−d/2}` (`1/(2π) ≈ 0.15915` for d = 2): the mild solution provided by §10.4 is then `M` almost everywhere at each `t ∈ [0, T₀]`, since `F^ε_1(t) = F^ε_1(0)` (§9.4–9.5) converges weakly to `M` by §9.6 and an integrable function is determined almost everywhere by its integrals against bounded continuous functions.
 - Non-example in dimension 1: there `μ_ε = ε⁰ = 1` does not tend to ∞. On the unit circle with `f⁰ = M_{1,0}`, each term `(1/N!) μ_X^{⊗N}(𝒟̄^ε_N)` of the partition function increases to `1/N!` as ε → 0 and is dominated by it, so `Z_ε → e` and `P_ε(N = 1) = 1/Z_ε → e^{−1}`; for `h = 1` one has `π^ε_t(1) = N` and `∫ f h = 1`, so with δ = 1/2, `P_ε(|π^ε_t(1) − 1| ≥ 1/2) = P_ε(N ≠ 1) → 1 − e^{−1} ≈ 0.63212`, not 0, although the correlation functions converge by §9.6.
-- `ε = 0` (Poisson process with intensity `μ f⁰`): `Var(π(h)) = μ^{−1} ∫ f⁰ h²` exactly, which tends to 0.
+- `ε = 0` at `t = 0` (Poisson process with intensity `μ f⁰`; the flow is not used, `T_0` being the identity by §7.1): `F_1(0) = f⁰` and `F_2(0) = f⁰ ⊗ f⁰` for every mass of `f⁰` (the definition of §9.5 with `Z = exp(μ ∫ f⁰)`, §9.3), so the identities of §10.1 give `Var(π_0(h)) = μ^{−1} ∫ f⁰ h²` exactly, which tends to 0 as `μ → ∞`. For μ = 2, `∫ f⁰ = 1` and `h = 1`, `π_0(1) = N/2` with `N` Poisson of parameter 2, of variance `2/4 = 1/2 = μ^{−1} ∫ f⁰`.
 - Non-example: convergence of `F_1` alone does not suffice. If `F^ε_1(t) → f` but `F^ε_2(t) → 2 f ⊗ f`, the variance tends to `0 + 2m² − 2m² + m² = m²` with `m = ∫ f h`, which is positive whenever `m ≠ 0`.
 
 *Needs:* §1.3, §9.3, §9.5, §10.1, §10.3, §10.4, Mathlib `ProbabilityTheory.meas_ge_le_variance_div_sq`, `GaussianFourier.integral_rexp_neg_mul_sq_norm`.

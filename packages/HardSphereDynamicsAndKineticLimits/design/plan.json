@@ -72,7 +72,7 @@
       {
        "name": "sup_norm_torus_fails",
        "kind": "non-example",
-       "statement": "UnitAddTorus (Fin 2) with its supremum norm fails the lift axiom for the coordinate cover: the class of (0.1, 0.1) has norm 0.1 while every lift has Euclidean norm at least 0.1414."
+       "statement": "UnitAddTorus (Fin 2) with its supremum norm fails the lift axiom for the coordinate cover for any radius ρ > 0: for 0 < s < min(ρ, 1/2) the class of (s, s) has norm s < ρ while every lift (s + m, s + n), m, n ∈ ℤ, has Euclidean norm at least s√2 > s (0.1 against 0.1414 at s = 0.1; for ρ = 0.05, 0.01 against 0.01414 at s = 0.01)."
       },
       {
        "name": "zero_radius_excluded",
@@ -2396,7 +2396,7 @@
       {
        "name": "poisson_variance",
        "kind": "computation",
-       "statement": "ε = 0, t = 0: Var(π(h)) = μ^{−1} ∫ f⁰ h²."
+       "statement": "ε = 0, t = 0 (T_0 = id, the flow is not used): F_1(0) = f⁰, F_2(0) = f⁰ ⊗ f⁰, so Var(π_0(h)) = μ^{−1} ∫ f⁰ h², tending to 0 as μ → ∞; μ = 2, ∫ f⁰ = 1, h = 1: Var(N/2) = 2/4 = 1/2."
       },
       {
        "name": "needs_F2",
