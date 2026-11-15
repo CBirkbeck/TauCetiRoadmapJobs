@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsSemiparametric~4",
+  "head": "86b0b0c08578e50cec349f47a4acb4c2bab3f5f0",
+  "pr": 2378,
+  "folder": "MathematicalStatisticsSemiparametric",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 11 changed lines since c096627. Previous R01 repaired (scope, contract and Layer 6 Dependencies now name Foundations 8.3, 8.5, 8.6 as consumed; description agrees). Foundations 8.3, 8.5, 8.6 and Asymptotic 1.1 resolved at their open heads. Adversarial table: 3 rows with computed values for statements the changed text cites. Gate passes; depcheck 0 problems; Suggested.lean elaborates with 80 sorry warnings only. No source text readable: locators of the seeded sample are under Not verifiable (none lies in a changed passage).",
+  "text": "598ccb859e0e2f1c"
+ }
+}
