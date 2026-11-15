@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DerivedDeRhamCohomology~4",
+  "head": "de758afad24c0d8a090449cd6ac3e56e17aea9f2",
+  "pr": 868,
+  "folder": "DerivedDeRhamCohomology",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since 38e20bf. Previous R01 (Roby pages) repaired: Theorem IV.2 at Roby line 2222 is printed p.272, Proposition IV.8 at Roby line 2648 is printed p.284; R02 and R03 (description) repaired. Title and description read against the head: 14 claims checked (folder contents, eight theorems and three definitions, section ids PD, 5.8.1, 5.19, 6.20, 6.21, suppliers on main and in the merge order, consumer), none contradicted. Adversarial rows computed for the statements the changed citation supports (kernel of Gamma(Z)->Gamma(Z/2) in degrees 1-3; rank of Gamma^2(Z^2); the Lean augmentation-ideal statement at M=0 and M=Z/2). Gate run: all scanners 0, outside-folder 0, build passes; lake env lean gives eight sorry warnings only; depcheck 245 roadmaps, 2211 edges, 0 problems. No seeded sample target falls in the changed passage.",
+  "text": "bb65f3b3dd99c1e2"
+ }
+}
