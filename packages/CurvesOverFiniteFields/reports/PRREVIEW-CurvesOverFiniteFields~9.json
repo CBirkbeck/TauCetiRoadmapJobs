@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CurvesOverFiniteFields~9",
+  "head": "408a5d8012b1297c3cc994fd2a02bc3d8c275c20",
+  "pr": 1729,
+  "folder": "CurvesOverFiniteFields",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 1,
+  "notes": "Full review. Gate: every check passes in the worker's record for this head; depcheck 0 problems (237 roadmaps, 2250 edges). Elaboration at the head's pins: 22 sorry warnings only; one-tactic probe leaves 22 of 22 theorems open; 37 signatures compared. Seeded sample (1.1, 1.2, 1.4, 1.5, 1.6, 1.8, 1.10, 2.1, 2.3, 2.4, 3.3, 3.4, 4.1, 4.2, 4.3) and every Lean statement recomputed: 14 worked-example polynomials with exact integer arithmetic, the bounds table, the degenerate cases q = 0 and q = 1. Sources read: Waterhouse 1969 pp. 527-528, Serre Lectures on N_X(p) Theorem 4.10 and 4.7.2.2, three LMFDB knowls and one record; Stichtenoth and Ihara 1981 not readable. R01 (P2): the Newton-polygon, Hermitian and elliptic zeta declarations the README cites as at the pin are absent at the head's Tau Ceti pin 358314d4 and present at main's pin 2fd255d9. R02-R05 (P3): maximal/minimal undefined, two backticked names not declared, an unused Weil hypothesis in card_frobeniusAngles, and two stale sentences of the pull-request description. The head's pinned package checkout became unavailable late in the review; three Mathlib names were then confirmed only at main's pin and are listed under Not verifiable.",
+  "text": "9cea712e205c2be3"
+ }
+}
