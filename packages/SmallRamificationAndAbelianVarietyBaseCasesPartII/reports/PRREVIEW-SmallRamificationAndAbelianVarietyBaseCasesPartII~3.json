@@ -1,0 +1,33 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SmallRamificationAndAbelianVarietyBaseCasesPartII~3",
+  "head": "acfed580fbb43e1c6c7070f524fae46e5c02e250",
+  "pr": 1835,
+  "folder": "SmallRamificationAndAbelianVarietyBaseCasesPartII",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since acfed58; this round checked the pull request's title and description against the head (14 sentences, none contradicted) and re-ran the gate. The gate fails on statement-hygiene=3 only (letI in the signatures of lowDegreeHodgeVanishing, line 67, and geometricK3_hasBadWittPrime, lines 83 and 92): two P3 findings, each with a letI-free restatement elaborated at the pins (sorry the only warning) and shown equivalent to the head's statement (rfl for the canonical pullback instance, an explicit term for the Fact binder). Build 0, depcheck 0 problems (no UPWARD, CYCLE or moved line), outside-folder diff empty, Suggested.lean at the head elaborates with two sorry warnings. The seeded sample falls in untouched text. No previous finding was open.",
+  "text": "0fb09e05828e86e0",
+  "carried": {
+   "from": "acfed580fbb43e1c6c7070f524fae46e5c02e250",
+   "head": "f08c564f371492a0623a9034d2fb6d756a03d9ce",
+   "findings": 2,
+   "lines": 29,
+   "folders": [
+    "SmallRamificationAndAbelianVarietyBaseCasesPartII"
+   ],
+   "outside": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "The board's `design/plan.json` entry for gap `pm-remove-inverse-e` still asks for the threshold \"for every real c>0\", whereas README line 73 asks for it for every real c≥1 with (p−1)c∈ℤ, and that entr",
+    "where": "board plan.json, `needs` sentence of gap pm-remove-inverse-e",
+    "raised": "PRREVIEW-SmallRamificationAndAbelianVarietyBaseCasesPartII~3"
+   }
+  ]
+ }
+}
