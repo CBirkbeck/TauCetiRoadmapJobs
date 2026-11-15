@@ -74,3 +74,36 @@ status = "certified"
 accessed = "2026-11-15"
 version_note = "publisher PDF; the journal's about page states that every PJM article becomes free to read six years after publication, so this 1997 article is open on msp.org"
 cited_for = ["R17.5.9", "R17.6.5", "R17.6.6", "R17.6.7", "R17.6.8", "R17.6.9", "R17.6.10"]
+
+[[source]]
+id = "casselman73"
+authors = "William Casselman"
+title = "On some results of Atkin and Lehner"
+year = 1973
+venue = "Mathematische Annalen 201"
+doi = "10.1007/BF01428197"
+locator_scheme = "page"
+locator = "Theorem 1 and (1.2), p. 302; p. 305; Corollary to the Proof, p. 306; remark, p. 307; §2 Theorem 2, pp. 307–308; §3, p. 308"
+url = "https://doi.org/10.1007/BF01428197"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["R16.2.1", "R16.2.7", "R16.2.8", "R16.3.2", "R16.3.5", "R16.4.4", "R16.6.2"]
+
+[[source]]
+id = "deligne73"
+authors = "Pierre Deligne"
+title = "Les constantes des équations fonctionnelles des fonctions L"
+year = 1973
+venue = "Modular functions of one variable II, Lecture Notes in Math. 349 (1973), 501–597"
+locator_scheme = "page"
+locator = "Proposition 3.8, pp. 530–531; Theorem 4.1, p. 535; (5.6.2), p. 549; §5.11, p. 551; §8.12, p. 572"
+url = "https://publications.ias.edu/sites/default/files/Number20.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/Number20.pdf"
+fetched_at = "2026-11-15T15:49:09Z"
+sha256 = "b03f483c4eeca79b75e34b88f41406fe4c9e16ba621480ce859697c93e8d5844"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "IAS publications copy of the Springer Lecture Notes text; page numbers are those of the printed volume, shown in the scan"
+cited_for = ["R16.0.1", "R16.3.5", "R17.4.17"]
