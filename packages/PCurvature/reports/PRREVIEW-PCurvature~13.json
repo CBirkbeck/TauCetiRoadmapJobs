@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PCurvature~13",
+  "head": "774be2e2fc7388ea688e758661a23fadb0ba7e50",
+  "pr": 1747,
+  "folder": "PCurvature",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 774be2e. Checked: the pull request's title and description sentence by sentence against the head (folder contents, five layers, ownership, four supplier roadmaps and sections, Tau Ceti items, README shape with 18 targets each having a Needs line and at least 3 Checks, Suggested.lean headlines and not-statable list, sources, checks run): no contradiction and no unstated change. Gate with the candidate order: every check 0, OK. Dependency check: 245 roadmaps, 2214 edges, 0 problems. lake env lean on Suggested.lean: exit 0, 11 sorry warnings only. 9 cross-roadmap section ids resolved again on main and at the open heads. Adversarial rows recomputed for the rank-one formula, Honda and Kronecker. Seeded source sample: no changed passage, none checked. No previous finding to account for.",
+  "text": "f53c8ce6716341e6"
+ }
+}
