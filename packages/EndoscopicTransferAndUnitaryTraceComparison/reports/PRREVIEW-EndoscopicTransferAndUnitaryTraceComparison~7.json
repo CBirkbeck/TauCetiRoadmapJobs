@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EndoscopicTransferAndUnitaryTraceComparison~7",
+  "head": "f99f5d8bece5340100e9aff00d5fab030da24831",
+  "pr": 999,
+  "folder": "EndoscopicTransferAndUnitaryTraceComparison",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since 7205732, plus the check of the pull request's title and description. The reworded sentence of section 10.19 was compared with Scholze, Theorems 10.5-10.7 and Corollary 13.2 (2 locators, mathematics unchanged, wording independent) and computed on three instances. Gate rerun: all counters 0, OK; depcheck 0 problems; Suggested.lean elaborates with exit 0 and has no declarations. One P3 finding: the description says the Lean states real-bodied definitions and theorems, while Suggested.lean declares nothing. The previous report had no findings to carry.",
+  "text": "0861e69e9a26d21d",
+  "carried": {
+   "from": "f99f5d8bece5340100e9aff00d5fab030da24831",
+   "head": "1af544e9da14e16169633bdd9ae0c85473ad9628",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
