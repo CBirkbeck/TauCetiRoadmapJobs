@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArakelovGeometryAndAbelianHeightsPartII~4",
+  "head": "1dce7a6c97d83d8ad53fe89b5d754bee37588678",
+  "pr": 1833,
+  "folder": "ArakelovGeometryAndAbelianHeightsPartII",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 1dce7a6; this round checked the pull request's title and description against the head: three sentences of the description are contradicted (the Lean is said to state definitions and theorems but declares nothing; the build is said to warn of sorry but emits no warning; adelic, admissible and moduli-positivity material is said to exist in no earlier roadmap although the README imports parts from ArithmeticDynamics 4.3a, GrossZagierAndArithmeticHeights 2.4 and StableReductionPartII 6.9, 6.21-6.22). All P3; the roadmap files need no change. Gate re-run: every check 0, OK; depcheck 0 problems; Suggested.lean elaborates with no output; adversarial rows computed for 13.5 and 13.10; no source passage changed, so no locator re-read.",
+  "text": "b0b6eceab251a391",
+  "carried": {
+   "from": "1dce7a6c97d83d8ad53fe89b5d754bee37588678",
+   "head": "581cf9ffc75103ff59e130c6b6b9c4c28d2c2018",
+   "findings": 3,
+   "lines": 6,
+   "folders": [
+    "ArakelovGeometryAndAbelianHeightsPartII"
+   ],
+   "outside": true
+  }
+ }
+}
