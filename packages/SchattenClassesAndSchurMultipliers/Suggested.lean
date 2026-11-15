@@ -239,11 +239,12 @@ def fourierMultiplierCbNorm (n : ℕ) (p : ℝ≥0∞) [Fact (1 ≤ p)]
     (_ : lpSchattenNorm n p f ≤ 1),
     lpSchattenNorm n p (Lp.fourierMultiplierCLM (Matrix (Fin k) (Fin k) ℂ) m f)
 
-/-- **Fourier–Schur transference on `ℝⁿ`** (README §9.5): for `n ≥ 1`, every `m ∈ L^∞(ℝⁿ)` and
+/-- **Fourier–Schur transference on `ℝⁿ`** (README §9.5): for every `n`, every `m ∈ L^∞(ℝⁿ)` and
 every `1 ≤ p ≤ ∞`, the completely bounded norm of the Schur multiplier with Toeplitz symbol
 `m(x − y)` on `S_p(L²(ℝⁿ))` equals the completely bounded norm of the Fourier multiplier `T_m` on
-`Lᵖ(ℝⁿ)` (cgpt-2023 (FS); caspers-delasalle-2015 Theorem 4.2 and Corollary 5.3). -/
-theorem schurCbNorm_toeplitz_eq_fourierMultiplierCbNorm (n : ℕ) (hn : 1 ≤ n)
+`Lᵖ(ℝⁿ)` (cgpt-2023 (FS); caspers-delasalle-2015 Theorem 4.2 and Corollary 5.3); for `n = 0`,
+where `ℝ⁰` is a point of mass `1`, both sides are `|m(0)|`. -/
+theorem schurCbNorm_toeplitz_eq_fourierMultiplierCbNorm (n : ℕ)
     (m : Lp ℂ ∞ (volume : Measure (EuclideanSpace ℝ (Fin n)))) (p : ℝ≥0∞) [Fact (1 ≤ p)] :
     schurCbNorm (volume : Measure (EuclideanSpace ℝ (Fin n))) p (fun q => m (q.1 - q.2)) =
       fourierMultiplierCbNorm n p m := by
