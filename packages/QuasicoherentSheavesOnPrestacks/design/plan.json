@@ -39,7 +39,7 @@
       {
        "name": "theta_preservesColimits",
        "role": "structure",
-       "statement": "theta preserves small colimits, in particular pushouts."
+       "statement": "theta preserves u-small colimits, in particular pushouts."
       },
       {
        "name": "theta_preservesFiniteProducts",
@@ -393,7 +393,7 @@
       {
        "name": "pointwise_limits",
        "role": "structure",
-       "statement": "Limits and colimits of prestacks are pointwise; the empty prestack is initial and Spec Z is final."
+       "statement": "(u+1)-small limits and colimits of prestacks are pointwise; the empty prestack is initial and Spec Z is final."
       },
       {
        "name": "coYoneda",
@@ -495,7 +495,7 @@
      "id": "2.3",
      "kind": "theorem",
      "name": "Prestack.QCoh.formal",
-     "statement": "QCoh carries small colimits of prestacks to limits; QCoh(X) is stable with small colimits computed pointwise; f^* preserves small colimits and is symmetric monoidal; tensor is pointwise and preserves colimits in each variable; equivalences and zero objects are detected pointwise, vanishing of maps is not (except on affines, through the initial point); QCoh(X) is presentable for X a u-small colimit of affines; in CRing the homotopy category of QCoh(Spec R) is DerivedCategory (ModuleCat R) with shift and triangles. In the classical context these are PrismaticCohomologyPartII 4.0 limitOfColimit, isEquiv_iff_eval and homotopyCategory_spec, extended here to the animated and E-infinity contexts.",
+     "statement": "QCoh carries (u+1)-small colimits of prestacks to limits; QCoh(X) is stable with u-small colimits computed pointwise; f^* preserves u-small colimits and is symmetric monoidal; tensor is pointwise and preserves colimits in each variable; equivalences and zero objects are detected pointwise, vanishing of maps is not (except on affines, through the initial point); QCoh(X) is presentable for X a u-small colimit of affines; in CRing the homotopy category of QCoh(Spec R) is DerivedCategory (ModuleCat R) with shift and triangles. In the classical context these are PrismaticCohomologyPartII 4.0 limitOfColimit, isEquiv_iff_eval and homotopyCategory_spec, extended here to the animated and E-infinity contexts.",
      "hypotheses": [
       "X is a prestack on one of the three contexts",
       "for presentability, X is a u-small colimit of affines"
@@ -521,12 +521,12 @@
       {
        "name": "colimits_to_limits",
        "role": "structure",
-       "statement": "QCoh(colim X_i) = lim QCoh(X_i)."
+       "statement": "QCoh(colim X_i) = lim QCoh(X_i) for every (u+1)-small colimit of prestacks."
       },
       {
        "name": "stable_colimits",
        "role": "structure",
-       "statement": "QCoh(X) is stable with pointwise small colimits; f^* is colimit-preserving and symmetric monoidal."
+       "statement": "QCoh(X) is stable with pointwise u-small colimits; f^* preserves u-small colimits and is symmetric monoidal."
       },
       {
        "name": "pointwise_tensor",
@@ -571,7 +571,7 @@
      "id": "2.4",
      "kind": "theorem",
      "name": "Prestack.QCoh.leftKanInvariance",
-     "statement": "For u in {iota, theta, theta iota}, u_! the left Kan extension of prestacks, QCoh(u_! X) = QCoh(X) symmetric monoidally and naturally in X, compatibly with pullback and evaluation; u_! Spec A = Spec u(A). For u = iota or theta iota the source side is PrismaticCohomologyPartII 4.0 QCohPrestack(X).",
+     "statement": "For u in {iota, theta, theta iota}, u_! the left Kan extension of prestacks, which preserves (u+1)-small colimits, QCoh(u_! X) = QCoh(X) symmetric monoidally and naturally in X, compatibly with pullback and evaluation; u_! Spec A = Spec u(A). For u = iota or theta iota the source side is PrismaticCohomologyPartII 4.0 QCohPrestack(X).",
      "hypotheses": [
       "the module functor of the source is that of the target restricted along u"
      ],
@@ -595,7 +595,7 @@
       {
        "name": "representables",
        "role": "evaluation",
-       "statement": "u_! Spec A = Spec u(A) and u_! preserves colimits, hence the empty prestack; it preserves the final prestack Spec Z because u_! Spec Z = Spec u(Z) and u preserves the initial test ring, not because of colimit preservation."
+       "statement": "u_! Spec A = Spec u(A) and u_! preserves (u+1)-small colimits, hence the empty prestack; it preserves the final prestack Spec Z because u_! Spec Z = Spec u(Z) and u preserves the initial test ring, not because of colimit preservation."
       },
       {
        "name": "not_fibreProducts",
@@ -698,7 +698,7 @@
      "id": "3.1",
      "kind": "definition",
      "name": "Prestack.fpqcTopology",
-     "statement": "The fpqc topology on T^op by finite families with faithfully flat product, flat hypercovers (latching maps faithfully flat), fpqc sheaves and hypercomplete sheaves, and the (hyper)sheafification L, with its universal property for limit-preserving functors.",
+     "statement": "The fpqc topology on T^op by finite families with faithfully flat product, flat hypercovers (latching maps faithfully flat), fpqc sheaves and hypercomplete sheaves, and the (hyper)sheafification L, with its universal property for functors preserving (u+1)-small limits.",
      "hypotheses": [
       "T is one of the three contexts"
      ],
@@ -737,7 +737,7 @@
       {
        "name": "universal_property",
        "role": "universal property",
-       "statement": "A limit-preserving functor on PreStk^op inverts L-equivalences iff its restriction to T^op is a (hypercomplete) sheaf."
+       "statement": "A functor on PreStk^op preserving (u+1)-small limits, to an infinity-category with (u+1)-small limits, inverts L-equivalences iff its restriction to T^op is a (hypercomplete) sheaf."
       }
      ],
      "tests": [
@@ -848,7 +848,7 @@
      "id": "3.3",
      "kind": "theorem",
      "name": "Prestack.QCoh.sheafificationEquiv",
-     "statement": "(a) f^* is an equivalence for every map that becomes an equivalence after fpqc hypersheafification; (b) QCoh on hypercomplete fpqc sheaves carries small colimits to limits; (c) Cech descent along fpqc surjections; (d) fppf, etale and Zariski descent. In the classical context (a) for sheafification and (c) are PrismaticCohomologyPartII 4.0 sheafificationEquiv and cechDescent, extended here to hypersheafification and the animated and E-infinity contexts.",
+     "statement": "(a) f^* is an equivalence for every map that becomes an equivalence after fpqc hypersheafification; (b) QCoh on hypercomplete fpqc sheaves carries (u+1)-small colimits to limits; (c) Cech descent along fpqc surjections; (d) fppf, etale and Zariski descent. In the classical context (a) for sheafification and (c) are PrismaticCohomologyPartII 4.0 sheafificationEquiv and cechDescent, extended here to hypersheafification and the animated and E-infinity contexts.",
      "hypotheses": [
       "T is one of the three contexts"
      ],
@@ -1007,7 +1007,7 @@
      "id": "4.2",
      "kind": "theorem",
      "name": "Prestack.QCoh.affinePushforward",
-     "statement": "For f affine (flat affine in CRing), f^* has a pointwise right adjoint f_* (restriction of scalars at each point), f_* preserves small colimits, the projection formula holds, and the Beck-Chevalley map is an equivalence for every pullback square in the context. In the classical context these are PrismaticCohomologyPartII 4.0 affinePushforward, affineBaseChange and affineProjectionFormula; the statement extends them to every affine morphism in the animated and E-infinity contexts.",
+     "statement": "For f affine (flat affine in CRing), f^* has a pointwise right adjoint f_* (restriction of scalars at each point), f_* preserves u-small colimits, the projection formula holds, and the Beck-Chevalley map is an equivalence for every pullback square in the context. In the classical context these are PrismaticCohomologyPartII 4.0 affinePushforward, affineBaseChange and affineProjectionFormula; the statement extends them to every affine morphism in the animated and E-infinity contexts.",
      "hypotheses": [
       "f affine",
       "in the classical context f flat affine"
@@ -1362,10 +1362,11 @@
      "id": "6.2",
      "kind": "theorem",
      "name": "Prestack.QCoh.tStructure",
-     "statement": "(a) If X is a u-small colimit of affines in PreStk_T, or satisfies the hypothesis of 3.4(b) (its fpqc sheafification lies in the u-small-colimit closure of the representables in hypercomplete fpqc sheaves), then QCoh(X)^cn = lim of the Mod^cn over the presentation is presentable and is the connective part of an accessible t-structure; pullbacks are right t-exact. Presentability of QCoh(X) alone is not the hypothesis (SAG Remark 6.2.5.8 assumes condition (3) of SAG Proposition 6.2.3.4). (b) For geometric X (hypercomplete fpqc sheaf with affine diagonal and faithfully flat Spec A -> X, i.e. flat affine (4.1) and an fpqc surjection (3.3); classical context also quasi-affine diagonal), (co)connectivity is detected on the atlas, the t-structure is compatible with filtered colimits and left and right complete, and the heart is descent data, equal to Stacks.QCoh for classical stacks with flat affine atlas and affine diagonal.",
+     "statement": "(a) If X is a u-small colimit of affines in PreStk_T, or satisfies the hypothesis of 3.4(b) (its fpqc sheafification lies in the u-small-colimit closure of the representables in hypercomplete fpqc sheaves), then QCoh(X)^cn = lim of the Mod^cn over the presentation is presentable and is the connective part of an accessible t-structure; pullbacks are right t-exact. Presentability of QCoh(X) alone is not the hypothesis (SAG Remark 6.2.5.8 assumes condition (3) of SAG Proposition 6.2.3.4). (b) For geometric X (hypercomplete fpqc sheaf with affine diagonal and faithfully flat Spec A -> X, i.e. flat affine (4.1) and an fpqc surjection (3.3); classical context also a hypercomplete fpqc sheaf whose diagonal has every base change along a point the classical prestack of a quasi-affine scheme, with a flat fpqc surjection p : Spec A -> X, each base change Spec R x_X Spec A then a quasi-affine scheme flat over R; p need not be affine), (co)connectivity is detected on the atlas, the t-structure is compatible with filtered colimits and left and right complete, and the heart is descent data, equal to Stacks.QCoh for classical stacks with flat affine atlas and affine diagonal.",
      "hypotheses": [
       "(a) X a u-small colimit of affines, or L X in the u-small-colimit closure of the representables in hypercomplete fpqc sheaves (3.4(b))",
-      "(b) X geometric (then (a) holds through the Cech nerve of the atlas)"
+      "(b) X geometric (then (a) holds through the Cech nerve of the atlas)",
+      "(b, classical quasi-affine case) X a hypercomplete fpqc sheaf on CRing, every base change of X -> X x X along a point Spec R -> X x X the classical prestack h_Z of a quasi-affine scheme Z, with an fpqc surjection p : Spec A -> X every base change of which along a point Spec R -> X is (the classical prestack of) a quasi-affine scheme flat over R"
      ],
      "locator": {
       "source": "SAG",
@@ -1374,6 +1375,7 @@
      "prerequisites": [
       "target:1.3",
       "target:2.3",
+      "target:2.5",
       "target:3.3",
       "target:3.4",
       "target:5.3",
@@ -1430,7 +1432,12 @@
       {
        "name": "presentations",
        "kind": "computation",
-       "statement": "Spec A gives Mod_A^cn; a small disjoint union of affines gives the product of the connective module categories; a geometric stack is the colimit in sheaves of the affine Cech nerve of its atlas."
+       "statement": "Spec A gives Mod_A^cn; a u-small disjoint union of affines gives the product of the connective module categories; a geometric stack is the colimit in sheaves of the affine Cech nerve of its atlas."
+      },
+      {
+       "name": "doubled_plane",
+       "kind": "non-example",
+       "statement": "The plane Z with doubled origin over a field (charts U, U′ = A^2) falls under the classical quasi-affine case and is not geometric: h_Z is an fpqc sheaf (Stacks 023Q) with discrete values; the diagonal base change along U x U′ is A^2 minus 0, quasi-affine and not affine, and every diagonal base change is quasi-affine (quasi-compact immersion, Stacks 02JR); p : U + U′ -> h_Z is a flat fpqc surjection whose base change along U is U + (A^2 minus 0) -> U, not affine; connectivity in QCoh(h_Z) = Dqc(Z) (5.3) is tested on the two charts."
       }
      ]
     },
@@ -1871,7 +1878,7 @@
      "id": "8.2",
      "kind": "definition",
      "name": "Prestack.IsPerfectStack",
-     "statement": "X is perfect if it has affine diagonal and QCoh(X) = Ind(Perf(X)); equivalently QCoh(X) compactly generated with compact = dualizable; then O_X is compact, so the space-valued Map(O_X, -) commutes with filtered colimits and the derived global sections RGamma(X, -) = q_* : QCoh(X) -> D_infty(Z) (right adjoint of pullback along q : X -> Spec Z) preserve small colimits, with Map(O_X, F) = Omega^infty RGamma(X, F).",
+     "statement": "X is perfect if it has affine diagonal and QCoh(X) = Ind(Perf(X)); equivalently QCoh(X) compactly generated with compact = dualizable; then O_X is compact, so the space-valued Map(O_X, -) commutes with filtered colimits and the derived global sections RGamma(X, -) = q_* : QCoh(X) -> D_infty(Z) (right adjoint of pullback along q : X -> Spec Z) preserve u-small colimits, with Map(O_X, F) = Omega^infty RGamma(X, F).",
      "hypotheses": [
       "X has affine diagonal"
      ],
@@ -1898,7 +1905,7 @@
       {
        "name": "unit_compact",
        "role": "structure",
-       "statement": "On a perfect stack O_X is compact; RGamma(X, -) = q_* is exact and preserves coproducts (q^* sends the compact generator Z to O_X; EnhancedDerivedSheaves rightAdjoint_preservesCoproducts_iff), hence all small colimits (exact_preservesColimits_iff_coproducts); the space-valued Map(O_X, -) = Omega^infty q_* preserves filtered colimits only."
+       "statement": "On a perfect stack O_X is compact; RGamma(X, -) = q_* is exact and preserves coproducts (q^* sends the compact generator Z to O_X; EnhancedDerivedSheaves rightAdjoint_preservesCoproducts_iff), hence all u-small colimits (exact_preservesColimits_iff_coproducts); the space-valued Map(O_X, -) = Omega^infty q_* preserves filtered colimits only."
       },
       {
        "name": "invariance",
@@ -2283,7 +2290,7 @@
    "sections": [
     "§4.4.2"
    ],
-   "what": "Universal property of localization at a small set (HTT 5.5.4.20), for 3.1."
+   "what": "Universal property of localization at a small set (HTT 5.5.4.20), for 3.1 in the universe u+1."
   },
   {
    "roadmap": "DerivedInfinityCategories",
