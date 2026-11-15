@@ -1495,10 +1495,12 @@ Vitali family of 3.3), and (iv) ‖δV‖(B_ρ(x)) ≤ Λ(x)‖V‖(B_ρ(x)) for
 positive density, which are ‖V‖-almost all points here). At such x each
 C ∈ VarTan(V, x) (7.2) satisfies Θ(‖C‖, y) ≥ Θ(x) for ‖C‖-a.e. y, by 7.1 applied to the rescaled
 varifolds Ṽ_{λ_j} of 4.5 for the metrics g̃_{λ_j} → g_x (divided by (1 − ε)Θ(x)), and so at every
-y ∈ spt‖C‖ (6.3); with ‖C‖(B_ρ(y)) ≤ Θ(x)ω_kρ^k from the weight's form, the identity 6.1 for C at y
-gives P_{S^⊥}(z − y) = 0, so spt‖C‖ lies in a k-plane T, 6.4 gives C = Θ(x) v(T, 1), and (ii) makes T
-unique; 3.3's first rectifiability theorem concludes. The chart transport asserted in
-AgnolettoCorreaHoyosDaSilvaNardulli2025's proof is not used.
+y ∈ spt‖C‖ (6.3); since ρ^{−k}‖C‖(B_ρ(y)) is non-decreasing in ρ (6.1, C stationary in all of
+T_xM) and, because B_ρ(y) ⊆ B_{ρ+|y|}(0), at most Θ(x)ω_k(1 + |y|/ρ)^k, which tends to Θ(x)ω_k as
+ρ → ∞ (the weight's form, 7.2), ‖C‖(B_ρ(y)) ≤ Θ(x)ω_kρ^k for every ρ > 0; with this, the identity
+6.1 for C at y gives P_{S^⊥}(z − y) = 0, so spt‖C‖ lies in a k-plane T, 6.4 gives
+C = Θ(x) v(T, 1), and (ii) makes T unique; 3.3's first rectifiability theorem concludes. The chart
+transport asserted in AgnolettoCorreaHoyosDaSilvaNardulli2025's proof is not used.
 
 **Checks.**
 
