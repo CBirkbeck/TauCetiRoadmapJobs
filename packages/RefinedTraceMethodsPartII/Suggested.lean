@@ -15,24 +15,25 @@ for the number of words without cyclic repetitions, which gives the multipliciti
 coordinate-axes formulas (README §1.4).
 
 The following headline theorems are not statable at the pins, because Mathlib and Tau Ceti have
-no algebraic K-theory, no topological Hochschild homology or topological cyclic homology, no
-cyclic homology, no big Witt vectors, no de Rham–Witt complex and no syntomic complexes (perfectoid
-rings themselves are `TauCeti.Perfectoid.IsIntegralPerfectoid`):
+no higher or relative algebraic K-groups (Tau Ceti has Grothendieck groups only), no topological
+Hochschild homology or topological cyclic homology, no cyclic homology (Tau Ceti has the cyclic
+cohomology of cochains only), no big Witt vectors, no de Rham–Witt complex and no syntomic
+complexes (perfectoid rings themselves are `TauCeti.Perfectoid.IsIntegralPerfectoid`):
 
 * Hesselholt's formula for `K_q(k[x,y]/(xy),(x,y))` over a regular noetherian `𝔽_p`-algebra
-  (README §5.2): it lacks algebraic K-theory and the de Rham–Witt complex.
+  (README §5.2): it lacks relative algebraic K-groups and the de Rham–Witt complex.
 * Speirs' formulas for the K-theory of the coordinate axes in affine `d`-space over perfect fields
-  and over ind-smooth `ℚ`-algebras (README §§5.3–5.4): they lack algebraic K-theory, big or
+  and over ind-smooth `ℚ`-algebras (README §§5.3–5.4): they lack relative algebraic K-groups, big or
   p-typical Witt-vector valued K-groups and cyclic homology.
 * The Hesselholt–Nikolaus theorem `K_{2r}(k[x,y]/(y^a − x^b),(x,y)) ≅
   W_S(k)/(V_a W_{S/a}(k) + V_b W_{S/b}(k))` over perfect `𝔽_p`-algebras (README §6.2): it lacks
-  algebraic K-theory and big Witt vectors.
+  relative algebraic K-groups and big Witt vectors.
 * Riggenbach's theorem `K_{2r−1}(R[x]/x^e,(x);ℤ_p) ≅ W_{re}(R)/V_e W_r(R)` over perfectoid rings
-  (README §7.2): it lacks algebraic K-theory and big Witt vectors.
+  (README §7.2): it lacks relative algebraic K-groups and big Witt vectors.
 * The Antieau–Krause–Nikolaus theorems on finite chain rings `O_K/ϖ^n`: the structure of the
   p-adic K-groups through syntomic cohomology, Angeltveit's order quotient, the even vanishing
-  theorem and the nilpotence bound for `v₁` (README §§9.2, 9.3, 9.5, 9.6): they lack algebraic
-  K-theory and syntomic complexes.
+  theorem and the nilpotence bound for `v₁` (README §§9.2, 9.3, 9.5, 9.6): they lack higher
+  algebraic K-groups and syntomic complexes.
 * Prismatic cohomology relative to a δ-ring, its filtered variant and crystalline degeneration
   (README Layer 8): they lack δ-rings, prisms and prismatic cohomology.
 -/
