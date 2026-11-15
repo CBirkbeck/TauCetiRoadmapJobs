@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocallyAnalyticDistributions~6",
+  "head": "473fb50a1aaf813196e079cfcf17c223972433ed",
+  "pr": 854,
+  "folder": "LocallyAnalyticDistributions",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "Incremental re-review of 6 changed lines since 444887a. Previous findings: R01 (nilpotent output-column labels, line 647), R02 (Gauss-convergence Check now diag(p^(i+1)) with a unit limit, line 454) and R04 (monic Q = T - 1, line 829) repaired and recomputed; R03 (the shared hypothesis block copied into eleven subsections) not repaired and carried as R02. New: R01 (P2) PhiGammaModulesAndIwasawaCohomology at its open head e1f38c1 has renumbered the cited sections 4.0/4.1 to 2.7/2.8 and declares none of the eight cited names, so 13 citations break. R03 (P3): the description's layer paragraph says this roadmap constructs LA_h, proves the Amice theorem and develops Coleman's spectral mapping theorem, all of which the head imports from PadicFunctionalAnalysis and CompactOperators. R04 (P3): the description calls PadicFunctionalAnalysis, CompactOperators and RigidAnalyticGeometry 'now in pull requests' although all three have been on main since 2026-10-15/16, and it lists SchemeAndStackFoundations as cited when the README never cites it. Gate run here: every scanner 0, OK (the worker's gate also build=0); depcheck 245 roadmaps, 2213 edges, 0 problems. lake env lean: four sorry warnings, exit 0; Suggested.lean unchanged. Supplier citations re-resolved: CompactOperators 1.3/2.4/3.4 on main, PadicLocalLanglandsForGL2Qp 0.1 at 84416ad, CrystallineCohomology CR.6.2/CR.6.5 at b97c462, PadicFunctionalAnalysis and RigidAnalyticGeometry at the revision heads 89357f3 and 705e4f6. Seeded sample: the changed passages are supplier-contract Checks (4.2, 4.6, 4.14 interfaces), checked against CompactOperators; no source locator changed. Source independence: changed passages only, none shared.",
+  "text": "a00930fcaa9adc6c"
+ }
+}
