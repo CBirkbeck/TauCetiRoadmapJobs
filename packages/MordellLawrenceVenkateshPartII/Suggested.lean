@@ -87,9 +87,12 @@ def IsSmoothHypersurface {k : Type*} [Field k] {n : ℕ}
     ∃ i, aeval x (pderiv i F) ≠ 0
 
 /-- An integral form has good reduction outside the finite set `S` of primes: for every prime
-`p ∉ S` its reduction modulo `p` defines a smooth hypersurface over `𝔽_p`. A form with integer
-coefficients and this property is exactly a representative of an integral point over `ℤ[S⁻¹]`
-of the parameter space of smooth degree-`d` hypersurfaces. -/
+`p ∉ S` its reduction modulo `p` defines a smooth hypersurface over `𝔽_p`. For a form homogeneous
+of degree `d` this holds exactly when its coefficients generate the unit ideal of `ℤ[S⁻¹]` and it
+is a coordinate vector of a `ℤ[S⁻¹]`-point of the parameter space of smooth degree-`d`
+hypersurfaces; every such point has an integral coordinate vector with this property, unique up
+to a unit of `ℤ[S⁻¹]`. A multiple of such a form by a prime outside `S` defines the same
+rational point but fails the predicate, being zero modulo that prime. -/
 def HasGoodReductionOutside {n : ℕ} (S : Finset ℕ)
     (F : MvPolynomial (Fin (n + 1)) ℤ) : Prop :=
   ∀ p : ℕ, (hp : p.Prime) → p ∉ S →
