@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ExceptionalThetaCorrespondencesForG2~3",
+  "head": "496ccdede4844705c09d654c406474262da5dfdc",
+  "pr": 1736,
+  "folder": "ExceptionalThetaCorrespondencesForG2",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 6 changed lines since ce943ae: README lines 587, 593, 692 checked against GS lines 542-543 and 580 with computed dimensions and real forms; previous R01 and R02 both repaired, no new problem in the folder; gate passes (all checks 0, build OK), depcheck 0 problems, Suggested.lean elaborates with no output; title and description read against the head: one P3 finding (the description says the Lean states definitions and theorems with sorry as the only warning, but Suggested.lean has no declaration and no sorry).",
+  "text": "a547ca8a9236c679",
+  "carried": {
+   "from": "496ccdede4844705c09d654c406474262da5dfdc",
+   "head": "ad25a73d7ef4e75af6f947051ef90ec252e7a182",
+   "findings": 1,
+   "lines": 18,
+   "folders": [
+    "ExceptionalThetaCorrespondencesForG2"
+   ],
+   "outside": true
+  }
+ }
+}
