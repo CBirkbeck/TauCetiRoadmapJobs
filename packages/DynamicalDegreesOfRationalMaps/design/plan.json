@@ -16,11 +16,12 @@
      "id": "1.1",
      "kind": "definition",
      "name": "RationalMap.functionFieldPullback / RationalMap.topologicalDegree",
-     "statement": "For a dominant K-rational map f : X ⤏ Y of varieties over K, f^* : K(Y) -> K(X) is Tau Ceti's Scheme.Hom.functionFieldAlgHom of a K-representative f_V : V -> Y on a dense open V, composed with K(V) = K(X); it is independent of the representative and equals the stalk map induced by RationalMap.fromFunctionField f. e(f) = Module.finrank over f^*K(Y) of K(X). f |-> f^* is a bijection onto K-algebra maps K(Y) -> K(X); (g∘f)^* = f^*∘g^*; e(f) > 0 iff dim X = dim Y (junk 0 otherwise); e(g∘f) = e(f)e(g) in equal dimension; e(f) = 1 iff f^* is an isomorphism iff f is birational (the rational map of a partial isomorphism over K); then Scheme.Birational X Y holds and f^{-1} has pullback (f^*)^{-1}.",
+     "statement": "For a dominant K-rational map f : X ⤏ Y of varieties over K, f^* : K(Y) -> K(X) is Tau Ceti's Scheme.Hom.functionFieldAlgHom of a K-representative f_V : V -> Y on a dense open V, composed with K(V) = K(X); it is independent of the representative and equals the stalk map induced by RationalMap.fromFunctionField f. e(f) = Module.finrank over f^*K(Y) of K(X). f |-> f^* is a bijection onto K-algebra maps K(Y) -> K(X); (g∘f)^* = f^*∘g^*; e(f) > 0 iff dim X = dim Y (junk 0 otherwise); e(g∘f) = e(f)e(g) in equal dimension; e(f) = 1 iff f^* is an isomorphism iff f is birational (the rational map of a partial isomorphism over K); then Scheme.Birational X Y holds and f^{-1} has pullback (f^*)^{-1}. For a finite flat dominant K-morphism g of varieties, e(g) is Mathlib's rank Scheme.Hom.finrank g y at every point y (Tau Ceti's Scheme.Hom.finrank_eq_finrank_fieldRange_functionFieldMap).",
      "hypotheses": [
       "X, Y integral, separated, of finite type over K",
       "f dominant and over Spec K",
-      "equal dimensions for finiteness and multiplicativity"
+      "equal dimensions for finiteness and multiplicativity",
+      "g finite, flat and dominant for the agreement with Mathlib's rank"
      ],
      "locator": {
       "source": "stacks-morphisms",
@@ -37,10 +38,14 @@
       "mathlib:AlgebraicGeometry.Scheme.PartialIso.IsOver",
       "mathlib:AlgebraicGeometry.Scheme.PartialIso.symm",
       "mathlib:AlgebraicGeometry.Scheme.PartialIso.toRationalMap",
+      "mathlib:AlgebraicGeometry.Scheme.Hom.finrank",
+      "mathlib:AlgebraicGeometry.Flat",
+      "mathlib:AlgebraicGeometry.IsFinite",
       "tauceti:AlgebraicGeometry.Scheme.Hom.functionFieldAlgHom",
       "tauceti:AlgebraicGeometry.Scheme.Hom.functionFieldAlgHom_comp",
       "tauceti:AlgebraicGeometry.Scheme.Hom.functionFieldAlgHom_id",
       "tauceti:TauCeti.AlgebraicGeometry.topologicalKrullDim_eq_toNat_trdeg_functionField",
+      "tauceti:AlgebraicGeometry.Scheme.Hom.finrank_eq_finrank_fieldRange_functionFieldMap",
       "roadmap:SchemeAndStackFoundations §4.16"
      ],
      "api": [
@@ -48,6 +53,11 @@
        "name": "pullback_of_morphism",
        "role": "compatibility",
        "statement": "for a dominant morphism the pullback is the stalk map at generic points; for an alteration it is the functionFieldMap of SSF §4.16"
+      },
+      {
+       "name": "topologicalDegree_eq_finrank",
+       "role": "compatibility",
+       "statement": "for a finite flat dominant K-morphism g of varieties, e(g) = Scheme.Hom.finrank g y for every point y of the target"
       },
       {
        "name": "pullback_comp",
@@ -105,6 +115,16 @@
        "name": "square_not_birational",
        "kind": "non-example",
        "statement": "z ↦ z^2 on P^1: e = 2, f^* not surjective, the rational map of no partial isomorphism, although Scheme.Birational P^1 P^1 holds through the identity"
+      },
+      {
+       "name": "flat_rank",
+       "kind": "compatibility",
+       "statement": "z ↦ z^2 on P^1 is finite flat (K[z] free over K[z^2] with basis {1, z}) of rank 2 = e at every point in every characteristic; Frobenius of P^d is finite flat of rank p^d = e"
+      },
+      {
+       "name": "cusp_nonflat_control",
+       "kind": "non-example",
+       "statement": "normalization P^1 -> V(y^2 z - x^3) is finite dominant with e = 1 but not flat: fibre over the cusp K[t]/(t^2) of dimension 2 against 1 elsewhere; Mathlib's rank at the cusp is still 1 (torsion-free stalk, any two elements dependent over the local ring), so flatness is what ties the rank to the fibre dimension"
       }
      ]
     },
@@ -112,7 +132,7 @@
      "id": "1.2",
      "kind": "construction",
      "name": "RationalMap.graph",
-     "statement": "For a K-rational map f : X ⤏ Y of projective varieties, Γ_f is the scheme-theoretic image of (ι_U, f_U) : U -> X ×_K Y, U = f.domain, with projections π_1, π_2. Γ_f is integral, closed, projective, of dimension dim X, independent of the representative; π_1 is a modification with witness U, π_1^{-1}(U) ≅ U; π_2 ∘ γ_f = f_U; f dominant implies π_2 surjective; equal dimensions make π_2 an alteration of generic degree e(f); morphisms give π_1 an isomorphism; birational inverses swap graphs.",
+     "statement": "For a K-rational map f : X ⤏ Y of projective varieties, Γ_f is the scheme-theoretic image of (ι_U, f_U) : U -> X ×_K Y, U = f.domain, with projections π_1, π_2. Γ_f is integral, closed, projective, of dimension dim X, independent of the representative; π_1 is a modification with witness U, π_1^{-1}(U) ≅ U; π_2 ∘ γ_f = f_U; f dominant implies π_2 surjective; equal dimensions make π_2 an alteration of generic degree e(f); morphisms give π_1 an isomorphism, and a rational map with domain X is the rational map of the morphism RationalMap.toHom (Tau Ceti); birational inverses swap graphs.",
      "hypotheses": [
       "X, Y projective varieties over K",
       "f a K-rational map; dominant for the statements on π_2",
@@ -132,6 +152,8 @@
       "mathlib:AlgebraicGeometry.IsDominant",
       "mathlib:AlgebraicGeometry.Scheme.PartialIso.symm",
       "tauceti:AlgebraicGeometry.Scheme.Hom.isReduced_image",
+      "tauceti:AlgebraicGeometry.Scheme.RationalMap.toHom",
+      "tauceti:AlgebraicGeometry.Scheme.RationalMap.toRationalMap_toHom",
       "target:1.1",
       "roadmap:SchemeAndStackFoundations §0.7",
       "roadmap:SchemeAndStackFoundations §4.11",
@@ -162,7 +184,7 @@
       {
        "name": "graph_hom",
        "role": "compatibility",
-       "statement": "for a morphism g, π_1 is an isomorphism and π_2∘π_1^{-1} = g; Γ_id is the diagonal"
+       "statement": "for a morphism g, U = X, π_1 is an isomorphism and π_2∘π_1^{-1} = g; conversely U = X makes f the rational map of the morphism RationalMap.toHom f; Γ_id is the diagonal"
       },
       {
        "name": "graph_symm",
@@ -267,11 +289,11 @@
      "id": "1.4",
      "kind": "theorem",
      "name": "RationalMap.graph_normalization / RationalMap.graph_baseChange",
-     "statement": "Normalization: for ν : X̃ -> X and f̃ = ν^{-1}∘f∘ν, ν×ν maps Γ_{f̃} properly and birationally onto Γ_f, and (f^n)~ = f̃^n. Field extension: (Γ_f)_{K'} is the scheme-theoretic image of γ_f ×_K K'; for X, Y geometrically integral, f_{K'} is dominant, e(f_{K'}) = e(f), (g∘f)_{K'} = g_{K'}∘f_{K'}, Γ_{f_{K'}} = (Γ_f)_{K'}. The degree equality is proved by cases: if dim X = dim Y, a basis of K(X) over f^*K(Y) of e(f) ≥ 1 elements stays a basis after ⊗_K K' and localization; if dim X > dim Y, K(X) is infinite-dimensional over f^*K(Y), no finite basis is used, and invariance of dimension gives e(f_{K'}) = 0 = e(f).",
+     "statement": "Normalization: for ν : X̃ -> X and f̃ = ν^{-1}∘f∘ν, ν×ν maps Γ_{f̃} properly and birationally onto Γ_f, and (f^n)~ = f̃^n. Field extension: (Γ_f)_{K'} is the scheme-theoretic image of γ_f ×_K K'; for X, Y geometrically integral, f_{K'} is dominant, e(f_{K'}) = e(f), (g∘f)_{K'} = g_{K'}∘f_{K'}, Γ_{f_{K'}} = (Γ_f)_{K'}. The degree equality is proved by cases: if dim X = dim Y, a basis of K(X) over f^*K(Y) of e(f) ≥ 1 elements stays a basis after ⊗_K K' and localization, K(X) ⊗_K K' being a domain by Tau Ceti's isDomain_functionField_tensorProduct_of_geometricallyIntegral with fraction field K(X_{K'}) by an affine chart, for every extension K'/K; if dim X > dim Y, K(X) is infinite-dimensional over f^*K(Y), no finite basis is used, and invariance of dimension gives e(f_{K'}) = 0 = e(f).",
      "hypotheses": [
       "X projective variety, f dominant self-map for the normalization part",
       "K'/K any field extension; Spec K' -> Spec K is flat, and γ_f is quasi-compact with Noetherian source, which is what flat base change of scheme-theoretic images needs",
-      "X, Y geometrically integral for the statements on f_{K'}",
+      "X, Y geometrically integral (Mathlib's GeometricallyIntegral of the structure morphism) for the statements on f_{K'}",
       "no equal-dimension hypothesis for e(f_{K'}) = e(f): the case dim X > dim Y is the junk value 0 on both sides"
      ],
      "locator": {
@@ -282,11 +304,13 @@
       "mathlib:AlgebraicGeometry.Scheme.PartialIso",
       "mathlib:AlgebraicGeometry.Scheme.PartialIso.symm",
       "mathlib:AlgebraicGeometry.Scheme.Hom.image",
+      "mathlib:AlgebraicGeometry.GeometricallyIntegral",
       "mathlib:AlgebraicGeometry.IsSchemeTheoreticallyDominant.of_isPullback",
       "mathlib:AlgebraicGeometry.Scheme.Hom.ker_comp",
       "mathlib:AlgebraicGeometry.Scheme.IdealSheafData.map_bot",
       "mathlib:AlgebraicGeometry.Scheme.IdealSheafData.ker_fst_of_isClosedImmersion",
       "tauceti:AlgebraicGeometry.Scheme.Hom.isSchemeTheoreticallyDominant_toImage",
+      "tauceti:TauCeti.AlgebraicGeometry.isDomain_functionField_tensorProduct_of_geometricallyIntegral",
       "roadmap:AlgebraicModuliForArithmeticGeometry §5.4",
       "target:1.1",
       "target:1.2",
@@ -1043,7 +1067,8 @@
       "target:2.3",
       "target:3.1",
       "target:4.1",
-      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3"
+      "roadmap:CyclotomicClassGroupsAndStickelberger §4.3",
+      "mathlib:AlgebraicGeometry.GeometricallyIntegral"
      ],
      "api": [],
      "tests": [
@@ -1285,7 +1310,8 @@
       "target:1.4",
       "target:4.3",
       "target:4.5",
-      "target:5.1"
+      "target:5.1",
+      "mathlib:AlgebraicGeometry.GeometricallyIntegral"
      ],
      "api": [],
      "tests": [
@@ -1321,7 +1347,8 @@
      },
      "prerequisites": [
       "target:5.2",
-      "target:5.3"
+      "target:5.3",
+      "mathlib:AlgebraicGeometry.GeometricallyIntegral"
      ],
      "api": [
       {
@@ -1373,7 +1400,7 @@
      "id": "6.1",
      "kind": "theorem",
      "name": "projectiveSpace_rationalMap_forms",
-     "statement": "Forms F_0..F_d of a common degree, not all zero, define a unique K-rational map of P^d; every K-rational map of P^d is given by forms without common factor, unique up to a scalar, of degree deg f, with domain the complement of V(F) (codimension ≥ 2). Composition: for f = [F] dominant and g = [G] any rational map (reduced forms), G(F) is not identically zero, g∘f = [G(F)/gcd], deg(g∘f) ≤ deg f·deg g, with equality if f or g is a morphism. Iterates of morphisms: a morphism of degree a ≥ 1 is finite, surjective and dominant, with iterates of degree a^n; a morphism of degree 0 is constant, not dominant, and its iterates are taken in the composition of morphisms (RationalMap.compHom): f^0 = id, f^n = f for n ≥ 1, so deg(f^n) = (deg f)^n with 0^0 = 1.",
+     "statement": "Forms F_0..F_d of a common degree, not all zero, define a unique K-rational map of P^d; every K-rational map of P^d is given by forms without common factor, unique up to a scalar, of degree deg f, with domain the complement of V(F) (codimension ≥ 2). Composition: for f = [F] dominant and g = [G] any rational map (reduced forms), G(F) is not identically zero, g∘f = [G(F)/gcd], deg(g∘f) ≤ deg f·deg g, with equality if f or g is a morphism. Iterates of morphisms: a rational map of P^d is the rational map of a morphism exactly when its reduced forms have no common zero (Tau Ceti's RationalMap.toHom and toRationalMap_toHom); a morphism of degree a ≥ 1 is finite, surjective and dominant, with iterates of degree a^n; a morphism of degree 0 is constant, not dominant, and its iterates are taken in the composition of morphisms (RationalMap.compHom): f^0 = id, f^n = f for n ≥ 1, so deg(f^n) = (deg f)^n with 0^0 = 1.",
      "hypotheses": [
       "K a field",
       "d ≥ 1",
@@ -1393,6 +1420,8 @@
       "mathlib:AlgebraicGeometry.Scheme.RationalMap.IsDominant",
       "mathlib:AlgebraicGeometry.Scheme.RationalMap.compHom",
       "mathlib:AlgebraicGeometry.IsFinite",
+      "tauceti:AlgebraicGeometry.Scheme.RationalMap.toHom",
+      "tauceti:AlgebraicGeometry.Scheme.RationalMap.toRationalMap_toHom",
       "roadmap:SchemeAndStackFoundations §0.3",
       "roadmap:StableReduction Layer 2",
       "roadmap:ArithmeticDynamics §0.18",
