@@ -79,8 +79,10 @@ It leaves to named owners, which are consumed and never planned again:
   configuration fibration: MordellLawrenceVenkatesh §§5.1, 5.4–5.6, 5.9–5.12, 5.15–5.23;
 - the mapping class group `Mod(F)` of a compact smooth surface, whose single owner it is:
   GeometricTopology Layer 1.7.2;
-- Epstein's isotopy theorem for closed surfaces, the comparison of the boundaryless and half-plane
-  models of a surface without boundary, polygon schemas, their realizations and the standard
+- topological surfaces charted on the half-plane model, invariance of the boundary, Radó's theorem
+  that a compact surface carries a PL structure, the compatible smoothings of PL structures,
+  Epstein's isotopy theorem for closed surfaces, the comparison of the boundaryless and half-plane
+  models of a smooth surface without boundary, polygon schemas, their realizations and the standard
   models, the classification of compact surfaces by these models and the genus and orientability
   predicates it defines, the topological mapping class group `MappingClassGroupFull`
   of a space (homeomorphisms modulo isotopy through embeddings), the outer automorphism group
@@ -90,7 +92,7 @@ It leaves to named owners, which are consumed and never planned again:
   Euler number, the uniformizing holonomy, the topological Dehn–Nielsen–Baer theorem
   `dehn_nielsen_baer` for closed orientable surfaces of genus at least one, the mapping class groups
   of the sphere and the torus, and the converse marked representation comparison:
-  TeichmullerGeometry §§0.0d, 0.0e, 0.0f, 0.0h, 4.2–4.5, 5.4, 5.4a, 6.1;
+  TeichmullerGeometry §§0.0b, 0.0d, 0.0e, 0.0f, 0.0h, 4.2–4.5, 5.4, 5.4a, 6.1;
 - the presented surface groups `S±(g, m)` and the freeness of `S±(g, m)` for `m ≥ 1`:
   FreeGroupsAndLimitGroups §§6.1–6.2; van Kampen and the wedge of circles: AlgebraicTopology
   Stage 1; cellular homology and its comparison with singular homology: AlgebraicTopology Stage 4;
@@ -114,7 +116,8 @@ It leaves to named owners, which are consumed and never planned again:
   ArithmeticLocallySymmetricSpaces §§ALS.F.1, ALS.0.1;
 - compact real forms, holomorphic representations of complexifications and the algebraicity of
   holomorphic extensions between compact-real-form pairs: LieGroups Layer 7;
-  the Cartan decomposition: LieGroups Layer 9; Peter–Weyl: CompactGroups Layer 5;
+  the Cartan decomposition and the `K A K` decomposition: LieGroups Layer 9; Peter–Weyl:
+  CompactGroups Layer 5;
 - flat connections on a closed surface modulo gauge for compact `K` and their comparison with
   `Hom(π₁Σ, K)/K`: SymplecticGeometry/HamiltonianReduction R5, used here only as a Check.
 
@@ -228,7 +231,9 @@ representation), `groupHomology.map` (functoriality in the group and the module)
 `Representation.IsSemisimpleRepresentation` (every subrepresentation has a complement),
 `IsSemisimpleModule`, `ProperSMul`, `t2Space_quotient_mulAction_of_properSMul` (the orbit space of a
 proper action is Hausdorff), `IsProperMap`, `IsCompact`, `IsConnected`, `IsPreconnected`,
-`Directed`, `T2Space`. Assumed: these exist at the pin with the stated meaning; no outer
+`Directed`, `T2Space`, `TopologicalSpace.Opens.instChartedSpace` (an open subset of a charted space is
+charted on the same model by the restricted charts). Assumed: these exist at the pin with the stated
+meaning; no outer
 automorphism group, mapping class group, representation scheme or character variety exists in
 Mathlib.
 
@@ -289,8 +294,13 @@ boundary.
 
 ### From TauCetiRoadmap.TeichmullerGeometry
 
-§0.0e (a surface without boundary charted on the half-plane model `𝓡∂ 2` is read as one charted on
-the boundaryless model `𝓡 2`, and conversely), §0.0f (the realization `schemaRealization w` of a
+§0.0b (a topological surface is a space charted on the half-plane model `𝓡∂ 2`, compact when it is
+moreover compact Hausdorff; a homeomorphism of surfaces carries boundary onto boundary,
+`image_boundary`; by Radó's theorem every compact surface carries a PL structure), §0.0e (every PL
+structure is compatible with some smooth structure on its space; for smooth surfaces, a smooth
+`𝓡∂ 2` surface with empty boundary has an atlas on the boundaryless model `𝓡 2` with the same smooth
+maps, and a smooth `𝓡 2` surface is a smooth `𝓡∂ 2` surface with empty boundary), §0.0f (the
+realization `schemaRealization w` of a
 polygon schema, the quotient of the closed unit disc whose boundary arcs are glued by the letters of
 `w`, with the cell structure of one open disc, one open edge per class of sides and one vertex per
 vertex class on which `StandardSurface.eulerChar_model` is counted; the standard surfaces
@@ -419,7 +429,10 @@ universal complexification of `K`, and for compact real forms `K ⊆ G(ℂ)`, `K
 holomorphic extension `G(ℂ) → G'(ℂ)` of a continuous homomorphism `K → K'` is a regular algebraic
 homomorphism `G → G'`). Layer 9 (the Cartan decomposition
 `K × 𝔭 → G`, `(k, X) ↦ k exp X`, a diffeomorphism for a real reductive group with Cartan
-involution).
+involution), and its paragraph **Restricted roots and KAK** (for a maximal abelian `𝔞 ⊆ 𝔭`,
+`Ad(K)𝔞 = 𝔭` and `G = K exp(𝔞₊) K` for the closed positive chamber `𝔞₊ ⊆ 𝔞`, `kakDecomposition`),
+both for the global matrix models of that layer: a closed transpose-stable subgroup of `GL_N(ℝ)` with
+finitely many components, with Cartan involution `g ↦ (gᵀ)⁻¹`, and its finite central covers.
 
 ### From TauCetiRoadmap.RepresentationTheory/CompactGroups
 
@@ -581,20 +594,29 @@ The group of isotopy classes has the following API.
   ambient isotopy, because its total map is a continuous bijection from a compact space to a
   Hausdorff space.
 - For locally compact Hausdorff `X`, `Homeo₀(X)` is the identity path component of `X ≃ₜ X`.
+- A closed surface `Σ_g` carries a smooth structure `F`: a PL structure by Radó's theorem
+  (TeichmullerGeometry §0.0b) and a smooth structure compatible with it (TeichmullerGeometry
+  §0.0e). The half-plane atlas of `F` has empty boundary, because the identity of `Σ_g` is a
+  homeomorphism from `Σ_g` with its given atlas, of empty boundary, and carries boundary onto
+  boundary (`image_boundary`, TeichmullerGeometry §0.0b). So TeichmullerGeometry §0.0e's comparison
+  of the two models, stated for smooth surfaces, gives the topological space `Σ_g` an atlas on the
+  boundaryless model `𝓡 2`, that is on the finite-dimensional real normed space
+  `EuclideanSpace ℝ (Fin 2)`, and every open subset, in particular `Σ_{g,n} = Σ_g ∖ P` (`P` is finite,
+  hence closed), inherits one (Mathlib `TopologicalSpace.Opens.instChartedSpace`).
 - The identity of `X ≃ₜ X` induces a surjective homomorphism `Mod^±(X) → MappingClassGroupFull X`,
   because the final map of an ambient isotopy is isotopic to the identity through embeddings
   (`TauCeti.AmbientIsotopic.isotopic`); it is an isomorphism when `X` is compact, connected,
   Hausdorff and charted on a finite-dimensional real normed space
-  (`TauCeti.isotopic_iff_ambientIsotopic`), in particular for a closed surface `Σ_g`, whose atlas
-  with empty boundary is read on the boundaryless model by TeichmullerGeometry §0.0e; composed with
-  TeichmullerGeometry §0.0h's forgetful isomorphism, it identifies `Mod^±(Σ_g)` with
-  GeometricTopology Layer 1.7.2's `Mod(F)` for a smooth structure `F` on `Σ_g` (one exists by
-  TeichmullerGeometry §0.0e), the owner of the mapping class groups of compact surfaces.
+  (`TauCeti.isotopic_iff_ambientIsotopic`), in particular for a closed surface `Σ_g`, charted on
+  `𝓡 2` by the previous bullet; composed with TeichmullerGeometry §0.0h's forgetful isomorphism, it
+  identifies `Mod^±(Σ_g)` with GeometricTopology Layer 1.7.2's `Mod(F)` for the smooth structure `F`
+  of the previous bullet, the owner of the mapping class groups of compact surfaces.
 - For a topological manifold `X` without boundary, charted on a finite-dimensional real normed
   space, every homotopy `I × X → X` through homeomorphisms starting at the identity is an ambient
   isotopy: extended by its end maps to `ℝ × X`, its level-preserving total map is a continuous
   bijection of `ℝ × X`, a manifold without boundary charted on a space of one more dimension, onto
-  itself, hence open by invariance of domain (`Continuous.isOpenEmbedding_of_injective`).
+  itself, hence open by invariance of domain (`Continuous.isOpenEmbedding_of_injective`). This
+  applies to `Σ_{g,n}`, charted on `𝓡 2` as above.
 - For an oriented surface, the orientation-preserving homeomorphisms contain `Homeo₀(X)` and
   their image `Mod(X)` has index at most two in `Mod^±(X)`.
 
@@ -613,8 +635,9 @@ The group of isotopy classes has the following API.
 `TauCeti.AmbientIsotopy.symm`, `TauCeti.AmbientIsotopy.conj`,
 `TauCeti.AmbientIsotopy.finalHomeomorph_conj`, `TauCeti.AmbientIsotopic.setoid`,
 `TauCeti.Isotopic`, `TauCeti.AmbientIsotopic.isotopic`, `TauCeti.isotopic_iff_ambientIsotopic`,
-`Continuous.isOpenEmbedding_of_injective`; TeichmullerGeometry §0.0e; TeichmullerGeometry §0.0h;
-GeometricTopology Layer 1.7.2; Mathlib `ContinuousMap.compactOpen`, `Homeomorph`, `QuotientGroup`.
+`Continuous.isOpenEmbedding_of_injective`; TeichmullerGeometry §0.0b; TeichmullerGeometry §0.0e;
+TeichmullerGeometry §0.0h; GeometricTopology Layer 1.7.2; Mathlib `ContinuousMap.compactOpen`,
+`Homeomorph`, `QuotientGroup`, `TopologicalSpace.Opens.instChartedSpace`.
 
 ### 2.2 Punctures and marked points
 
@@ -721,8 +744,9 @@ homeomorphic to it being itself (`StandardSurface.homeomorph_unique`).
   `d₂ = a − a = 0`, so `H₁ = 0` and `H₂ = ℤ`, and `Surface.genus Σ_0 = 0`; the projective plane `a a`
   has `d₂ = 2` and `H₂ = 0` (AlgebraicTopology Stage 4 item 3's Check), and is excluded.
 
-*Needs:* TeichmullerGeometry §0.0e; TeichmullerGeometry §0.0f; AlgebraicTopology Stage 4 item 2;
-AlgebraicTopology Stage 4 item 3; MordellLawrenceVenkatesh §5.1; MordellLawrenceVenkatesh §5.5;
+*Needs:* TeichmullerGeometry §0.0b; TeichmullerGeometry §0.0e; TeichmullerGeometry §0.0f;
+AlgebraicTopology Stage 4 item 2; AlgebraicTopology Stage 4 item 3; MordellLawrenceVenkatesh §5.1;
+MordellLawrenceVenkatesh §5.5;
 MordellLawrenceVenkatesh §5.6.
 
 Prove that for every `g, n ≥ 0` and every enumeration `p₁, …, p_n` of `P` there is an isomorphism
@@ -813,8 +837,9 @@ and it extends over the punctures by the argument of §2.2 (FarbMargalit2012, Ch
 
 Tau Ceti's isotopies, ambient isotopies, invariance of domain and directed intersections of
 continua; MordellLawrenceVenkatesh §§5.1, 5.4, 5.5, 5.6, 5.9, 5.17, 5.19, 5.20, 5.23;
-FreeGroupsAndLimitGroups §§6.1–6.2; AlgebraicTopology Stages 1 and 4; TeichmullerGeometry §§0.0e,
-0.0f, 0.0h, 4.3, 5.4a; GeometricTopology Layer 1.7.2. Layer 2 supplies Layers 3, 4 and 7.
+FreeGroupsAndLimitGroups §§6.1–6.2; AlgebraicTopology Stages 1 and 4; TeichmullerGeometry §§0.0b,
+0.0e, 0.0f, 0.0h, 4.3, 5.4a; GeometricTopology Layer 1.7.2; Mathlib's charted spaces on open subsets.
+Layer 2 supplies Layers 3, 4 and 7.
 
 ## Layer 3: The outer action of the mapping class group
 
@@ -916,9 +941,11 @@ action on `H₂` is stated here. For `g = 0`,
 §8.1, Theorem 8.1).
 
 *Proof sketch.* For the comparison, `Surface.IsOrientable Σ_g` and `Surface.genus Σ_g = g ≥ 1`
-(§2.4) are the hypotheses of `dehn_nielsen_baer`; TeichmullerGeometry §0.0e exchanges the
-boundaryless atlas of `Σ_g` (used in §2.1) and its half-plane atlas with empty boundary (in which
-§5.4 there is stated). Every class of `Mod^±(Σ)` has a representative `f` fixing `x`, the point
+(§2.4) are the hypotheses of `dehn_nielsen_baer`, which is stated for the half-plane atlas of `Σ_g`
+with empty boundary; the boundaryless atlas that `Σ_g` carries by TeichmullerGeometry §§0.0b and
+0.0e (§2.1) enters only the proof that §2.1's comparison is bijective; both are atlases of the same
+topological space `Σ_g`, and `Mod^±(Σ)` and `MappingClassGroupFull Σ` depend on that space alone.
+Every class of `Mod^±(Σ)` has a representative `f` fixing `x`, the point
 `f(x)` being moved back to `x` by isotopy extension along a path (MordellLawrenceVenkatesh §5.17),
 and both `Ψ_x` (§3.3, with the constant path) and
 `dehn_nielsen_baer` send its class to the outer class of `FundamentalGroup.mapOfEq f`. For `g ≥ 1`,
@@ -961,7 +988,8 @@ for some `f`, `Ψ_x` being onto, and that `f` cannot reverse orientation.
 - Genus two: the hyperelliptic class maps to the outer class acting by `−1` on the abelianization
   (the genus-two example of TeichmullerGeometry Layer 5).
 
-*Needs:* §2.1; §2.4; §3.2; §3.3; TeichmullerGeometry §0.0e; TeichmullerGeometry §0.0f;
+*Needs:* §2.1; §2.4; §3.2; §3.3; TeichmullerGeometry §0.0b; TeichmullerGeometry §0.0e;
+TeichmullerGeometry §0.0f;
 TeichmullerGeometry §0.0h; TeichmullerGeometry §4.2; TeichmullerGeometry §5.4;
 TeichmullerGeometry §5.4a; MordellLawrenceVenkatesh §5.1; MordellLawrenceVenkatesh §5.5;
 MordellLawrenceVenkatesh §5.6; MordellLawrenceVenkatesh §5.15; MordellLawrenceVenkatesh §5.17;
@@ -1044,7 +1072,7 @@ MordellLawrenceVenkatesh §5.20; MordellLawrenceVenkatesh §5.22; Tau Ceti
 
 Layers 1 and 2; Mathlib's fundamental group and groupoid and `groupHomology`; Tau Ceti's
 classification of connected coverings by monodromy; MordellLawrenceVenkatesh §§5.1, 5.5, 5.6, 5.9,
-5.15, 5.17, 5.19, 5.20, 5.22; TeichmullerGeometry §§0.0e, 0.0f, 0.0h, 4.2, 5.4, 5.4a;
+5.15, 5.17, 5.19, 5.20, 5.22; TeichmullerGeometry §§0.0b, 0.0e, 0.0f, 0.0h, 4.2, 5.4, 5.4a;
 AlgebraicTopology Stage 4; ClassifyingSpaces Stages 3–4. Layer 3 supplies Layer 7.
 
 ## Layer 4: Representation schemes
@@ -1220,8 +1248,15 @@ for the trace form.
 - `SL₂(ℝ)`: `K = SO(2)`, `𝔭` the traceless symmetric matrices, `U = SU(2)`; the minimal vectors of
   `M₂(ℝ)` under conjugation are the normal matrices (BohmLafuente2021 line 193).
 - `GL₁(ℝ)` acting on `ℝ` by `λ · v = λv`: `𝔭 = ℝ` and only `0` minimizes the norm on its orbit.
-- The embedding of `SL₂(ℝ)` conjugated by `[[1,1],[0,1]]` is not transpose-stable: it carries `SO(2)`
-  to a subgroup not contained in `O(2)`, and the norm is not `K`-invariant.
+- Transpose-stability depends on the embedding: the circle `𝐆 = SO(2)` embedded by
+  `r_θ ↦ u r_θ u⁻¹` with `u = [[1,1],[0,1]]` has image `{[[c + s, −2s],[s, c − s]]}` (`c = cos θ`,
+  `s = sin θ`), and the transpose `[[1,1],[−2,−1]]` of its element `[[1,−2],[1,−1]]` (`θ = π/2`) is
+  not of this form. Here `K = G^ℝ ∩ O(2) = {±1}` (orthogonality of the columns forces
+  `s(2c + s) = 0` and `s(2s − c) = 0`, hence `s = 0`) and `𝔭 = 0` (the Lie algebra
+  `ℝ·[[1,−2],[1,−1]]` contains no nonzero symmetric matrix), so `K exp(𝔭) = {±1} ≠ G^ℝ`; the compact
+  group `G^ℝ` does not even preserve the norm of `ℝ²`, since `[[1,−2],[1,−1]] e₁ = (1, 1)` has squared
+  norm `2`. Conjugating `SL₂(ℝ)` by the same `u` gives no non-example: `u ∈ SL₂(ℝ)`, so the image is
+  `SL₂(ℝ)` itself, transpose-stable with `K = SO(2)`.
 
 *Needs:* §5.1; ArithmeticLocallySymmetricSpaces §ALS.F.1; LieGroups Layer 9; ReductiveGroupsPartII
 §RG2.0a.2.
@@ -1235,17 +1270,23 @@ Let `G ⊆ GL(V)` be a closed subgroup of a real finite-dimensional inner produc
 then `G v ∩ M = K w` for any `w ∈ G v ∩ M`; (iii) if `G v` is not closed there is `α ∈ 𝔭` such that
 `lim_{t→∞} exp(tα) v` exists and lies outside `G v`; (iv) the closure of every orbit contains exactly
 one closed orbit, and it contains the norm minimizers of that closure; (v) for a maximal abelian
-`𝔱 ⊆ 𝔭` and `T = exp(𝔱)`, `G = K T K`, and any two disjoint closed `T`-invariant subsets of `V` are
-separated by a continuous `T`-invariant function `V → [0, 1]` (BohmLafuente2021 Theorem 1.1, lines
-77–88; Lemma 5.1, line 417; Corollary 5.5, line 445; Lemma 6.3, line 518; Corollary 6.4, line 562;
-Lemma 6.5, line 568; Corollary A.2, line 1050; §4 of RichardsonSlodowy1990).
+`𝔱 ⊆ 𝔭` and `T = exp(𝔱)`, any two disjoint closed `T`-invariant subsets of `V` are separated by a
+continuous `T`-invariant function `V → [0, 1]` (BohmLafuente2021 Theorem 1.1, lines 77–88; Lemma 5.1,
+line 417; Corollary 5.5, line 445; Lemma 6.3, line 518; Corollary 6.4, line 562; Lemma 6.5, line 568;
+§4 of RichardsonSlodowy1990). The decomposition `G = K T K` used throughout is LieGroups Layer 9,
+**Restricted roots and KAK**: `Ad(K)𝔱 = 𝔭`, and `G = K exp(𝔱₊) K` for the closed positive chamber
+`𝔱₊ ⊆ 𝔱` (`kakDecomposition`), so `G = K T K` (BohmLafuente2021 Corollary A.2, line 1050).
 
 *Proof sketch.* Along `t ↦ exp(tA) v` with `A ∈ 𝔭` the squared norm is
 `Σ e^{2tλ_i} ‖v_i‖²` in an eigenbasis of `A`, convex with derivative `2⟨A v, v⟩` at `0`; this gives (i)
-with `G = K exp(𝔭)`. For an abelian `T` the orbits are coordinate tori and closed orbits are separated
-by explicit monomial invariants, which gives (v) after the `K T K` decomposition (proved from the
-conjugacy of maximal abelian subalgebras of `𝔭` under `K`). A non-closed orbit has a closed invariant
-subset of its closure disjoint from it; separating it from the `T`-orbits of `K v` and using
+with `G = K exp(𝔭)`. In an orthonormal basis of `V`, `G` is a global matrix model of LieGroups
+Layer 9 with covering `π = id`: it is closed in `GL(V)`, transpose-stable because
+`(k exp X)ᵀ = exp(X) k⁻¹` for `k ∈ K`, `X ∈ 𝔭`, and has finitely many components, being the image of
+`K × 𝔭` with `K = G ∩ O(V)` compact and `𝔭` connected; its Cartan involution `g ↦ (gᵀ)⁻¹` has fixed
+group `K` and `−1`-eigenspace `𝔭` on `𝔤`, which is how Layer 9 gives `G = K T K`. For an abelian `T`
+the orbits are coordinate tori and closed orbits are separated by explicit monomial invariants, which
+gives (v). A non-closed orbit has a closed invariant subset of its closure disjoint from it;
+separating it from the `T`-orbits of `K v` and using
 compactness of `K` produces `α` in (iii). Convexity then shows that a minimal vector cannot have a
 non-closed orbit, which is (ii), and the same separation gives the uniqueness in (iv).
 
@@ -1262,7 +1303,8 @@ non-closed orbit, which is (ii), and the same separation gives the uniqueness in
   in each orbit closure as in (iv). For compact `G` (`𝔭 = 0`) instead `M = V` and every orbit is
   closed.
 
-*Needs:* Mathlib inner product spaces, `Matrix.orthogonalGroup`, compactness; LieGroups Layer 9.
+*Needs:* Mathlib inner product spaces, `Matrix.orthogonalGroup`, compactness; LieGroups Layer 9,
+**Restricted roots and KAK**.
 
 ### Examples
 
@@ -1518,7 +1560,7 @@ which gives a map of sets `Hom(Γ, G^ℝ) → 𝒳(Γ, G^ℝ)` extending the quo
 orbit meets `M` in one `K`-orbit, so the map from `(M ∩ Hom)/K` is a continuous bijection. For its
 inverse, let `v_n → v` in `Hom^red`, `w_n ∈ G^ℝ v_n ∩ M` (bounded by `‖v_n‖`) and `w` a limit point.
 If `G^ℝ w ≠ G^ℝ v`, separate these closed orbits by a `T`-invariant function `f` (§5.4 (v)) and
-write `w_n = g_n v_n` with `g_n = k_n t_n k'_n` (`G^ℝ = K T K`); along a subsequence `k_n → k`,
+write `w_n = g_n v_n` with `g_n = k_n t_n k'_n` (`G^ℝ = K T K`, §5.4); along a subsequence `k_n → k`,
 `k'_n → k'`, and `f(k'_n v_n) = f(t_n k'_n v_n) = f(k_n⁻¹ w_n)` tends both to `f(k' v) = 0` and to
 `f(k⁻¹ w) = 1`. `K` is compact, so its action on the closed set `M ∩ Hom` is proper, and the orbit
 space is Hausdorff (`t2Space_quotient_mulAction_of_properSMul`), locally compact and second

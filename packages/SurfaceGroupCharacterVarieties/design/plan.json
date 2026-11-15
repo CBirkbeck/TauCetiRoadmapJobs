@@ -187,8 +187,10 @@
       "tauceti:TauCeti.Isotopic",
       "tauceti:TauCeti.AmbientIsotopic.isotopic",
       "tauceti:TauCeti.isotopic_iff_ambientIsotopic",
+      "roadmap:TeichmullerGeometry §0.0b",
       "roadmap:TeichmullerGeometry §0.0e",
       "roadmap:TeichmullerGeometry §0.0h",
+      "mathlib:TopologicalSpace.Opens.instChartedSpace",
       "tauceti:Continuous.isOpenEmbedding_of_injective",
       "roadmap:GeometricTopology Layer 1.7.2"
      ],
@@ -224,9 +226,14 @@
        "statement": "For locally compact Hausdorff X, f ∈ Homeo₀(X) iff f is joined to 1 in the two-sided compact-open topology."
       },
       {
+       "name": "SurfaceGroup.closedSurface_boundarylessChart",
+       "role": "compatibility",
+       "statement": "A closed surface Σ_g carries a smooth structure F: a PL structure by Radó's theorem (TeichmullerGeometry §0.0b) and a compatible smooth structure (TeichmullerGeometry §0.0e). Its half-plane atlas has empty boundary (image_boundary, TeichmullerGeometry §0.0b, applied to the identity of Σ_g), so TeichmullerGeometry §0.0e's comparison of the two models, stated for smooth surfaces, charts Σ_g on the boundaryless model EuclideanSpace ℝ (Fin 2); its open subsets, in particular Σ_g ∖ P, inherit charts (TopologicalSpace.Opens.instChartedSpace)."
+      },
+      {
        "name": "Homeomorph.isotopyClasses.toMappingClassGroupFull",
        "role": "compatibility",
-       "statement": "The identity of X ≃ₜ X induces a surjective homomorphism Mod^±(X) → MappingClassGroupFull X (TauCeti.AmbientIsotopic.isotopic), bijective for compact connected Hausdorff X charted on a finite-dimensional real normed space (TauCeti.isotopic_iff_ambientIsotopic), in particular for closed surfaces read on the boundaryless model (TeichmullerGeometry §0.0e). Composed with TeichmullerGeometry §0.0h's forgetful isomorphism it identifies Mod^±(Σ_g) with GeometricTopology Layer 1.7.2's Mod(F) for a smooth structure F on Σ_g, the owner of the mapping class groups of compact surfaces."
+       "statement": "The identity of X ≃ₜ X induces a surjective homomorphism Mod^±(X) → MappingClassGroupFull X (TauCeti.AmbientIsotopic.isotopic), bijective for compact connected Hausdorff X charted on a finite-dimensional real normed space (TauCeti.isotopic_iff_ambientIsotopic), in particular for closed surfaces charted on the boundaryless model by SurfaceGroup.closedSurface_boundarylessChart. Composed with TeichmullerGeometry §0.0h's forgetful isomorphism it identifies Mod^±(Σ_g) with GeometricTopology Layer 1.7.2's Mod(F) for that smooth structure F on Σ_g, the owner of the mapping class groups of compact surfaces."
       }
      ],
      "tests": [
@@ -344,6 +351,7 @@
       "where": "Ch. 1, §1.1, Theorem 1.1"
      },
      "prerequisites": [
+      "roadmap:TeichmullerGeometry §0.0b",
       "roadmap:TeichmullerGeometry §0.0e",
       "roadmap:TeichmullerGeometry §0.0f",
       "roadmap:AlgebraicTopology Stage 4 item 2",
@@ -681,6 +689,7 @@
       "target:2.4a",
       "target:3.2",
       "target:3.3",
+      "roadmap:TeichmullerGeometry §0.0b",
       "roadmap:TeichmullerGeometry §0.0e",
       "roadmap:TeichmullerGeometry §0.0f",
       "roadmap:TeichmullerGeometry §0.0h",
@@ -1058,7 +1067,7 @@
       {
        "name": "non_stable_embedding",
        "kind": "non-example",
-       "statement": "SL₂(ℝ) conjugated by [[1,1],[0,1]] is not transpose-stable and the norm is not K-invariant."
+       "statement": "SO(2) embedded as u SO(2) u⁻¹, u = [[1,1],[0,1]]: the image {[[c+s, −2s],[s, c−s]]} is not transpose-stable (the transpose [[1,1],[−2,−1]] of [[1,−2],[1,−1]] is not in it), K = {±1}, 𝔭 = 0, so K exp(𝔭) ≠ G^ℝ, and ‖[[1,−2],[1,−1]] e₁‖² = 2. Conjugating SL₂(ℝ) by u ∈ SL₂(ℝ) gives SL₂(ℝ) again, transpose-stable."
       }
      ]
     },
@@ -1066,7 +1075,7 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "RealReductiveLinear.kempfNess",
-     "statement": "For G ⊆ GL(V) closed with G = K exp(𝔭): (i) M = {v : ⟨Av,v⟩ = 0 ∀A ∈ 𝔭} is a closed cone equal to the norm minimizers of each orbit; (ii) Gv closed iff Gv ∩ M ≠ ∅, then Gv ∩ M = Kw; (iii) a non-closed orbit has α ∈ 𝔭 with lim exp(tα)v outside Gv; (iv) each orbit closure contains exactly one closed orbit, containing the norm minimizers of the closure; (v) G = KTK for T = exp(𝔱), 𝔱 ⊆ 𝔭 maximal abelian, and disjoint closed T-invariant sets are separated by continuous T-invariant functions.",
+     "statement": "For G ⊆ GL(V) closed with G = K exp(𝔭): (i) M = {v : ⟨Av,v⟩ = 0 ∀A ∈ 𝔭} is a closed cone equal to the norm minimizers of each orbit; (ii) Gv closed iff Gv ∩ M ≠ ∅, then Gv ∩ M = Kw; (iii) a non-closed orbit has α ∈ 𝔭 with lim exp(tα)v outside Gv; (iv) each orbit closure contains exactly one closed orbit, containing the norm minimizers of the closure; (v) for T = exp(𝔱), 𝔱 ⊆ 𝔭 maximal abelian, disjoint closed T-invariant sets are separated by continuous T-invariant functions. G = KTK is LieGroups Layer 9, Restricted roots and KAK (Ad(K)𝔱 = 𝔭, kakDecomposition): G is a global matrix model of that layer with π = id, closed, transpose-stable ((k exp X)ᵀ = exp(X) k⁻¹) and with finitely many components (image of K × 𝔭, K compact).",
      "hypotheses": [
       "V a finite-dimensional real inner product space",
       "G ⊆ GL(V) closed",
@@ -1078,7 +1087,7 @@
      },
      "prerequisites": [
       "mathlib:Matrix.orthogonalGroup",
-      "roadmap:LieGroups Layer 9"
+      "roadmap:LieGroups Layer 9, Restricted roots and KAK"
      ],
      "api": [],
      "tests": [
@@ -1665,6 +1674,7 @@
   {
    "roadmap": "TeichmullerGeometry",
    "sections": [
+    "§0.0b",
     "§0.0e",
     "§0.0f",
     "§0.0h",
@@ -1676,7 +1686,7 @@
     "§5.4a",
     "§6.1"
    ],
-   "what": "Comparison of the boundaryless and half-plane models of a surface without boundary; polygon schemas, their realizations schemaRealization with their cell structure, the standard models StandardSurface.orientable/nonorientable, StandardSurface.isSurface_model, StandardSurface.homeomorph_unique, classification_of_surfaces, Surface.genus and Surface.IsOrientable; the topological mapping class group MappingClassGroupFull; the outer automorphism group OuterAut of an arbitrary group (innerAut_normal); the geometric group and its inversion equivalence; the attaching word of the polygon model and its commutator convention; the Euler number and the uniformizing holonomy; the topological Dehn-Nielsen-Baer theorem dehn_nielsen_baer; the mapping class groups of the sphere and the torus; the converse marked representation comparison."
+   "what": "Topological surfaces charted on the half-plane model, invariance of the boundary (image_boundary) and Radó's theorem that a compact surface carries a PL structure; compatible smoothings of PL structures and the comparison of the boundaryless and half-plane models of a smooth surface without boundary; polygon schemas, their realizations schemaRealization with their cell structure, the standard models StandardSurface.orientable/nonorientable, StandardSurface.isSurface_model, StandardSurface.homeomorph_unique, classification_of_surfaces, Surface.genus and Surface.IsOrientable; the topological mapping class group MappingClassGroupFull; the outer automorphism group OuterAut of an arbitrary group (innerAut_normal); the geometric group and its inversion equivalence; the attaching word of the polygon model and its commutator convention; the Euler number and the uniformizing holonomy; the topological Dehn-Nielsen-Baer theorem dehn_nielsen_baer; the mapping class groups of the sphere and the torus; the converse marked representation comparison."
   },
   {
    "roadmap": "GeometricTopology",
@@ -1762,9 +1772,10 @@
     "Layer 7, Real forms and global descent",
     "Layer 7, Representations and holomorphic descent",
     "Layer 7, Compact-real-form pairs and algebraic morphisms",
-    "Layer 9"
+    "Layer 9",
+    "Layer 9, Restricted roots and KAK"
    ],
-   "what": "Compact real forms of connected complex reductive groups (existence, connectedness, conjugacy); holomorphic representations of the complexification versus continuous representations of the compact form; regular algebraicity of the holomorphic extension of a continuous homomorphism between compact-real-form pairs; the Cartan decomposition."
+   "what": "Compact real forms of connected complex reductive groups (existence, connectedness, conjugacy); holomorphic representations of the complexification versus continuous representations of the compact form; regular algebraicity of the holomorphic extension of a continuous homomorphism between compact-real-form pairs; the Cartan decomposition and, paragraph Restricted roots and KAK, Ad(K)𝔞 = 𝔭 and G = K exp(𝔞₊) K (kakDecomposition) for the global matrix models of Layer 9."
   },
   {
    "roadmap": "CompactGroups",
