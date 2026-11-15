@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QWittVectors~7",
+  "head": "4728b2a213521cae485d6f0cd902490fc5176190",
+  "pr": 1351,
+  "folder": "QWittVectors",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 4 changed lines since a42588c: the two dependency-pin hashes of the README (lines 33, 46) equal lake-manifest.json and the checked-out packages; 44 Mathlib and 5 Tau Ceti declarations cited under the pins found in the cited files at the new pins, hypotheses of the cyclotomic and Tau Ceti ones recomputed; previous R01 (description) repaired; title and description checked against the head (suppliers, 7 gaps and their consuming sections, 4 consumers, change statement) with no contradiction; seeded sample has no target in the changed lines; gate OK with every count 0 and build=0; depcheck 244 roadmaps, 2210 edges, 0 problems; Suggested.lean elaborates with two sorry warnings only; outside-folder diff empty.",
+  "text": "2d716f342ce40529"
+ }
+}
