@@ -622,7 +622,7 @@
       {
        "name": "static_examples",
        "kind": "computation",
-       "statement": "field (1,0), n = 1: t/2 causal, 2t not, |t| on [−1,1] causal with a corner"
+       "statement": "field (1,0), n = 1: t/2 causal, 2t not on any interval of positive length (on a one-point interval every map is causal), |t| on [−1,1] causal with a corner"
       },
       {
        "name": "cantor",
@@ -632,7 +632,7 @@
       {
        "name": "material_curve",
        "kind": "computation",
-       "statement": "field (1,x): eᵗ causal (ẋ = v), e^{3t} not (|ẋ − v| = 2e^{3t} > 1)"
+       "statement": "field (1,x): eᵗ causal (ẋ = v); e^{3t} on [0,1] not causal (|ẋ − v| = 2e^{3t} ≥ 2 > 1), while on (−∞, −(ln 2)/3], where 2e^{3t} ≤ 1 (2e^{−3} ≈ 0.0996 at t = −1), it is causal"
       }
      ]
     },
@@ -702,7 +702,7 @@
      ],
      "locator": {
       "source": "Minguzzi2019",
-      "where": "lines 3576–3582, Definition 3.1, Remark 3.2 (causal curves); MinguzziCone2019 lines 1737–1740, Definition 2.17; Chrusciel2011 line 1169 (§2.5, inextendible paths) and lines 1843–1848, §2.9 (the timelike variant D⁺_I; line 1859 names the causal variant D⁺_J); BarGinouxPfaffle2007 line 1006; HawkingEllis1973 §6.5"
+      "where": "lines 3576–3582, Definition 3.1, Remark 3.2 (causal curves); MinguzziCone2019 lines 1737–1740, Definition 2.17; Chrusciel2011 line 1169 (§2.5, inextendible paths) and lines 1843–1848, §2.9 (the timelike variant D⁺_I; line 1859 names the causal variant D⁺_J); BarGinouxPfaffle2007 line 1006; HawkingEllis1973 §6.5; ONeill1983 Ch. 14"
      },
      "prerequisites": [
       "roadmap:LorentzianGeometry §12.6",
@@ -871,6 +871,11 @@
        "name": "torus_comparison",
        "kind": "compatibility",
        "statement": "cos x on 2πℤ: norm² 2π here versus (1+4π²)/2 for the unit-period torus norm; equivalent, not equal"
+      },
+      {
+       "name": "besov_comparison",
+       "kind": "compatibility",
+       "statement": "against PDE §7.2's periodic B¹_{2,2}(𝕋), 𝕋 = ℝ/ℤ of length 1, blocks of PDE §7.1: y = x/2π sends cos x to cos 2πy, frequency |ξ| = 1, carried by P_0 alone; norm² 1/2 there (every s) against 2π here; the constant 1 has 1 against 2π; ratios 4π and 2π differ, so equivalent, not proportional"
       },
       {
        "name": "wkp_norm_k2",
@@ -1177,7 +1182,7 @@
      "statement": "For W ∈ C¹([0,T];L²_Λ) ∩ C([0,T];H¹_Λ): dE/dt = ∫_F⟨(∂_tA⁰ + Σ∂ᵢAⁱ − B − Bᵀ)W,W⟩ + 2∫_F⟨LW,W⟩, and ‖W(t)‖ ≤ Ce^{Ct}(‖W(0)‖ + ∫₀ᵗ‖LW‖) with C depending on λ₀, sup‖A⁰‖, sup|∂_tA⁰|, sup|∂ᵢAⁱ| and sup‖B‖, all finite by the hypotheses of 5.1. Differs from SymmetricHyperbolicSystems §2.1 (pointwise, classical solutions) and §2.3 (integrated identity and L² estimate for classical solutions vanishing outside a bounded set) by the class C¹(L²_Λ) ∩ C(H¹_Λ) and by integration over a fundamental domain of Λ.",
      "hypotheses": [
       "W ∈ C¹([0,T];L²_Λ) ∩ C([0,T];H¹_Λ)",
-      "L as in 5.1: A⁰ bounded, C¹ with bounded first derivatives, A⁰ ≥ λ₀I; Aⁱ bounded with bounded spatial derivatives; B continuous and bounded"
+      "L as in 5.1: LinearSystem.IsSymmetricHyperbolic with constant λ₀ (A⁰, Aⁱ symmetric, A⁰ ≥ λ₀I); A⁰ bounded, C¹ with bounded first derivatives; Aⁱ bounded with bounded spatial derivatives; B continuous and bounded"
      ],
      "locator": {
       "source": "Friedrichs1954",
@@ -1280,10 +1285,10 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.linear_existence",
-     "statement": "For coefficients with A^μ − Ā^μ, B ∈ C([0,T];Hᵏ_Λ), A⁰ − Ā⁰ ∈ C¹([0,T];Hᵏ⁻¹_Λ) (so ∂_tA⁰ is bounded, 2(k−1) > n), A⁰ ≥ λ₀I, 2k > n + 2, W₀ ∈ Hᵏ_Λ and f ∈ C([0,T];Hᵏ_Λ) there is a unique W ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) with LW = f, W(0) = W₀, obeying the estimate dE_k/dt ≤ C E_k + C E_k^{1/2}‖f‖_{Hᵏ_Λ} of 5.3 with C depending on n, N, k, Λ, λ₀, the constant matrices Ā⁰, …, Āⁿ (spatial ones included), sup_t ‖∂_tA⁰‖_∞, sup_t ‖A^μ − Ā^μ‖_{Hᵏ_Λ} and sup_t ‖B‖_{Hᵏ_Λ}. Differs from SymmetricHyperbolicSystems §7.3 by the class: Hᵏ_Λ data, forcing and coefficients against smooth compactly supported data and C_b^∞ coefficients.",
+     "statement": "For a LinearSystem n N of SymmetricHyperbolicSystems §1.2 satisfying LinearSystem.IsSymmetricHyperbolic with constant λ₀ (A⁰, Aⁱ symmetric, A⁰ ≥ λ₀I) whose coefficients have A^μ − Ā^μ, B ∈ C([0,T];Hᵏ_Λ), A⁰ − Ā⁰ ∈ C¹([0,T];Hᵏ⁻¹_Λ) (so ∂_tA⁰ is bounded, 2(k−1) > n; by 4.2 L is then an operator of 5.1), 2k > n + 2, W₀ ∈ Hᵏ_Λ and f ∈ C([0,T];Hᵏ_Λ) there is a unique W ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) with LW = f, W(0) = W₀, obeying the estimate dE_k/dt ≤ C E_k + C E_k^{1/2}‖f‖_{Hᵏ_Λ} of 5.3 with C depending on n, N, k, Λ, λ₀, the constant matrices Ā⁰, …, Āⁿ (spatial ones included), sup_t ‖∂_tA⁰‖_∞, sup_t ‖A^μ − Ā^μ‖_{Hᵏ_Λ} and sup_t ‖B‖_{Hᵏ_Λ}. Differs from SymmetricHyperbolicSystems §7.3 by the class: Hᵏ_Λ data, forcing and coefficients against smooth compactly supported data and C_b^∞ coefficients.",
      "hypotheses": [
       "2k > n + 2",
-      "A⁰ ≥ λ₀I",
+      "LinearSystem.IsSymmetricHyperbolic with constant λ₀: A⁰, Aⁱ symmetric (the predicate of 5.1) and A⁰ ≥ λ₀I",
       "coefficients in Ā + C([0,T];Hᵏ_Λ)",
       "A⁰ − Ā⁰ ∈ C¹([0,T];Hᵏ⁻¹_Λ)"
      ],
@@ -1292,6 +1297,7 @@
       "where": "Ch. 2, §2.1 (linear existence); Kato1975 Theorem I; LukNotes line 1158, Theorem 5.3"
      },
      "prerequisites": [
+      "target:5.1",
       "target:4.4",
       "target:5.1.1",
       "target:5.3",
@@ -1304,6 +1310,11 @@
        "name": "background_speed",
        "kind": "non-example",
        "statement": "Λ = 2πℤ, k = 2, A⁰ = e^{sin x}, A¹ = M, B = f = 0, W(0) = sin x + sin 2x: E₂′(0) = 22πM, E₂(0) ≤ 24eπ, while λ₀ = e^{−1}, ∂_tA⁰ = 0, A^μ − Ā^μ do not depend on M; C must depend on |Ā¹|"
+      },
+      {
+       "name": "jordan_block",
+       "kind": "non-example",
+       "statement": "A⁰ = I, A¹ = [[0,1],[0,0]], B = 0, f = 0 meet every hypothesis except symmetry; the only solution with data (g, h) is (g − th′, h), which leaves Hᵏ_Λ at every t > 0 when h ∈ Hᵏ_Λ, h′ ∉ Hᵏ_Λ; LinearSystem.IsSymmetricHyperbolic fails, so the statement does not apply"
       }
      ]
     }

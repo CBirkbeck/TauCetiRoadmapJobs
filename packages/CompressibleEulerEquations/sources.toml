@@ -50,7 +50,7 @@ locator = "Ch. 14"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/6000#issuecomment-6645264885"
-cited_for = ["References"]
+cited_for = ["3.3"]
 
 [[source]]
 id = "ChristodoulouMiao2014"

@@ -66,9 +66,15 @@ Boundaries:
 - **Mathlib and Tau Ceti** supply everything below this roadmap. The whole-space identification
   `Hᵏ = Wᵏ'²` and the embedding `Hᵏ(ℝⁿ) ⊆ C₀(ℝⁿ)` for `2k > n`, which the PDE roadmap on main
   lists among its §1.3–§1.4 material, are already pinned Tau Ceti declarations and are cited
-  from Tau Ceti directly; nothing else of the PDE roadmap is consumed. The PDE roadmap's scope
-  is scalar elliptic and parabolic theory and excludes systems; it plans no hyperbolic system,
-  no Moser estimate and no periodic Sobolev space, so nothing here duplicates it.
+  from Tau Ceti directly; nothing else of the PDE roadmap is consumed. Every statement of the
+  PDE roadmap is scalar (elliptic, parabolic and dispersive theory, with the dyadic analysis of
+  its Layer 7); it plans no hyperbolic system and no Moser estimate in `Hᵏ` (the product bounds
+  of its §7.3 are paraproduct estimates in the Hölder–Zygmund spaces `𝒞^s`). Its §7.1–§7.2 plan
+  the periodic Besov spaces on `𝕋^d = ℝ^d/ℤ^d` by Fourier series; their case `p = q = 2`,
+  integer `s = k`, is `Hᵏ_Λ` for a full-rank `Λ` after a linear change of variable (`y = x/2π`
+  for `Λ = (2πℤ)^n`), up to norm equivalence. The spaces `Hᵏ_Λ` here are for discrete period
+  groups of every rank, nothing here uses the full-rank case, and the norm comparison is a Check
+  of §4.1.
 - **Lorentzian geometry** is LorentzianGeometry's, and this roadmap imports what it uses of it.
   LorentzianGeometry §7.3 owns the acoustical form on `ℝ × Σ` (the form, its inverse, the
   material vector `B`, causal vectors, its Lorentzian character and the time orientation `[B]`),
@@ -322,9 +328,15 @@ on `E`, no Lorentzian quadratic form with a time orientation and no causal curve
 - §2.1: the pointwise energy identity
   `∂_t⟨A⁰u, u⟩ + Σⱼ ∂ⱼ⟨Aʲu, u⟩ = ⟨Ku, u⟩ + 2⟨F, u⟩`, `K = ∂_tA⁰ + Σⱼ ∂ⱼAʲ − B − Bᵀ`, for
   classical solutions of `Lu = F` with `A⁰`, `Aʲ` of class `C¹` and `B` continuous. Used in
-  §5.2 in local form: applied to `ψu` and to the coefficients `ψA⁰ + (1 − ψ)λI`, `ψAʲ`, `ψB`
-  for a smooth cutoff `ψ` equal to `1` near a point, it gives the identity with `Lu` in place of
-  `F` at every point near which `u`, `A⁰` and the `Aʲ` are `C¹`.
+  §5.2 in local form, for an operator satisfying `LinearSystem.IsSymmetricHyperbolic` with
+  constant `λ`: at a point `p ∈ (0, T) × E` near which `u`, `A⁰` and the `Aʲ` are `C¹`, it gives
+  the identity with `Lu` in place of `F`, applied to `ψu` and to the coefficients
+  `ψA⁰ + (1 − ψ)λI`, `ψAʲ`, `ψB` for a smooth cutoff `ψ` with `0 ≤ ψ ≤ 1`, equal to `1` near `p`
+  and compactly supported in an open subset of `(0, T) × E` on which `u`, `A⁰` and the `Aʲ` are
+  `C¹`. The cut-off coefficients and `ψu` (extended by `0`) are `C¹` on all of `ℝ × E`, `ψB` is
+  continuous, and the cut-off coefficients keep the predicate with the same `λ`, since
+  `ψA⁰ + (1 − ψ)λI = λI + ψ(A⁰ − λI) ≥ λI` when `ψ ≥ 0` (with `A⁰ = 2I`, `λ = 1`: `1.5I` at
+  `ψ = 1/2`, while a value `ψ = −1` would give the matrix `0`).
 
 The statements of its §2.2, §2.3 and §7.3 (single-speed finite propagation, the integrated
 identity and `L²` estimate for classical solutions vanishing outside a bounded set, existence
@@ -344,10 +356,11 @@ Euler symbol, limit curves, compact causal pasts, openness and idempotence of do
 dependence and the slab statements; it needs Layer 1, LorentzianGeometry, Mathlib and, for one
 identification in §3.1, §2.2, and can be built in parallel with Layers 4 and 5. Layer 4 is the
 `Hᵏ_Λ` calculus on Tau Ceti's Sobolev spaces. Layer 5 is the Friedrichs energy method in
-`Hᵏ_Λ` for linear systems on SymmetricHyperbolicSystems' carrier (Layers 2 and 4). Layer 6 proves local uniqueness
-on lens-shaped domains and uniqueness on domains of dependence (Layers 3 and 5). Layer 7 is local
-well-posedness (Layers 4–6). Layer 8 is the theory of developments (Layers 3, 6 and 7). The
-headline theorems, which the acceptance test states, are the local well-posedness of
+`Hᵏ_Λ` for linear systems on SymmetricHyperbolicSystems' carrier (Layers 2 and 4). Layer 6
+proves local uniqueness on lens-shaped domains and uniqueness on domains of dependence (Layers
+2, 3 and 5). Layer 7 is local well-posedness (Layers 2 and 4–6, and §3.3 for uniformly local
+data). Layer 8 is the theory of developments (Layers 1–3, 6 and 7, and LorentzianGeometry §12.6).
+The headline theorems, which the acceptance test states, are the local well-posedness of
 compressible Euler (§7.2), uniqueness on lens-shaped domains (§6.1), the uniqueness and
 existence theorems for developments (§8.2–§8.3) and the nullity of the regular boundary of a
 maximal development (§8.4); the definitions they need are the equation of state, the Euler
@@ -689,14 +702,17 @@ Prove, beyond LorentzianGeometry §8.2 and §12.6:
 
 **Checks.**
 
-- Field `(1, 0)`, `n = 1`: `x(t) = t/2` is causal, `x(t) = 2t` is not (`|2| > 1`), and
+- Field `(1, 0)`, `n = 1`: `x(t) = t/2` is causal, `x(t) = 2t` is not on any interval of
+  positive length (`|2| > 1`; on a one-point interval every map is causal), and
   `x(t) = |t|` on `[−1, 1]` is causal with a corner: Lipschitz, with derivative `±1` off `0`.
 - Let `f` be the Cantor function on `[0, 1]` and `x = 10f` with the field `(1, 0)`: `x` is
   continuous with `ẋ = 0` almost everywhere, so it passes a definition that drops the Lipschitz
   condition, but it is not Lipschitz and violates the integral characterisation, since
   `x(1) − x(0) = 10 > 1 = ∫₀¹ c` (compare Minguzzi2019 line 1364, Remark 2.13).
 - Field `(1, x)` on `𝔐` (`n = 1`): the material curve `x(t) = eᵗ` has `ẋ = v` and is causal;
-  `x(t) = e^{3t}` has `|ẋ − v| = 2e^{3t} > 1` and is not.
+  `x(t) = e^{3t}` has `|ẋ − v| = 2e^{3t}`, which on `[0, 1]` is at least `2 > 1`, so it is not
+  causal there, while on `(−∞, −(ln 2)/3]`, where `2e^{3t} ≤ 1` (at `t = −1`: `2e^{−3} ≈ 0.0996`),
+  it is causal: causality is a property of the curve on its interval.
 
 *Needs:* LorentzianGeometry §7.3 (the acoustical field is Lorentzian and time-oriented), §8.2
 and §12.6 (causal curves in `D`, past-inextendibility, restriction, concatenation, reduction to
@@ -719,7 +735,8 @@ past-inextendible past causal curve in `D` ending at `p` meets `S` (Minguzzi2019
 3576–3582, Definition 3.1 and Remark 3.2, for piecewise `C¹` causal curves; MinguzziCone2019
 lines 1737–1740, Definition 2.17, for continuous causal curves of a closed cone structure and
 closed achronal `S`; BarGinouxPfaffle2007 line 1006, Definition 1.3.5; ChristodoulouMiao2014
-lines 866–872; HawkingEllis1973 at §6.5). Chrusciel2011 line 1169, §2.5, treats inextendible
+lines 866–872; HawkingEllis1973 at §6.5; ONeill1983, Ch. 14, causality in Lorentz
+manifolds). Chrusciel2011 line 1169, §2.5, treats inextendible
 paths; its domain of dependence (lines 1843–1848, §2.9) is the timelike variant `D⁺_I`, defined
 with timelike curves, and line 1859 there names the causal variant `D⁺_J` used here.
 LorentzianGeometry §12.6 proves `S ∩ D ⊆ D⁺_D(S)`, monotonicity in `S`, the slice identity
@@ -866,6 +883,14 @@ fundamental domain `F` of `Λ` acting on `E`. Define `Hᵏ_Λ(E; ℝ^N)`, for `k
   IncompressibleFlows norm of the rescaled function `y ↦ u(2πy)` on the unit-period torus is
   `Σ (1 + 4π²|m|²)|c_m|²`; for `cos x` the two values are `2π` and `(1 + 4π²)/2`. The norms are
   equivalent and not equal; an agreement claim that ignores the rescaling is refuted here.
+- Against the periodic Besov spaces of PDE §7.2 (`𝕋 = ℝ/ℤ` of length `1`, the blocks of PDE §7.1
+  acting on Fourier coefficients with its `2π` convention), `n = 1`, `Λ = 2πℤ`, `k = 1`: the
+  change of variable `y = x/2π` turns `cos x` into `cos 2πy`, of frequency `|ξ| = 1`, carried by
+  the block `P_0` alone (`χ = 1` on the unit ball, so for `j ≥ 1` the multiplier
+  `ψ(2^{−j}ξ) = χ(2^{−j−1}ξ) − χ(2^{−j}ξ)` vanishes at `|ξ| = 1`). Its `B^s_{2,2}(𝕋)` norm
+  squared is `‖cos 2πy‖²_{L²(𝕋)} = 1/2` for every `s`, in particular at `s = 1`, against `2π` for
+  `‖cos x‖²_{H¹_Λ}`; the constant `1` has `1` against `2π`. The ratios `4π` and `2π` differ: the
+  two norms are equivalent, not proportional.
 
 *Needs:* Tau Ceti `TauCeti.HasWeakFDerivOn`, `TauCeti.Wkp`,
 `MeasureTheory.Lp.memSobolev_natCast_iff_exists_wkp_value_eq`; Mathlib `TemperedDistribution.MemSobolev`,
@@ -1263,9 +1288,13 @@ most `C‖∇U‖_∞‖U − Ū‖_{Hᵏ_Λ}`, and the coefficient terms `∂_t
 
 ### 5.4 Linear existence in `Hᵏ_Λ`
 
-Prove: for coefficients `A^μ(t, x)`, `B(t, x)` with `A^μ − Ā^μ, B ∈ C([0, T]; Hᵏ_Λ)` for constant
-matrices `Ā^μ`, with `A⁰ − Ā⁰ ∈ C¹([0, T]; Hᵏ⁻¹_Λ)` in addition (so that `∂_tA⁰` is bounded, since
-`2(k − 1) > n`), `A⁰ ≥ λ₀I`, `2k > n + 2`, data `W₀ ∈ Hᵏ_Λ` and `f ∈ C([0, T]; Hᵏ_Λ)`, there is a
+Prove: for a linear system `LinearSystem n N` of SymmetricHyperbolicSystems §1.2 satisfying
+`LinearSystem.IsSymmetricHyperbolic` with constant `λ₀` (so `A⁰` and every `Aⁱ` take symmetric
+values and `A⁰ ≥ λ₀I`), whose coefficients `A^μ(t, x)`, `B(t, x)` satisfy
+`A^μ − Ā^μ, B ∈ C([0, T]; Hᵏ_Λ)` for constant matrices `Ā^μ`, with
+`A⁰ − Ā⁰ ∈ C¹([0, T]; Hᵏ⁻¹_Λ)` in addition (so that `∂_tA⁰` is bounded, since `2(k − 1) > n`; by
+the embedding of §4.2 the coefficients then have the bounds of §5.1, and `L` is an operator of
+§5.1), `2k > n + 2`, data `W₀ ∈ Hᵏ_Λ` and `f ∈ C([0, T]; Hᵏ_Λ)`, there is a
 unique `W ∈ C([0, T]; Hᵏ_Λ) ∩ C¹([0, T]; Hᵏ⁻¹_Λ)` with `LW = f`, `W(0) = W₀`, obeying the estimate
 `dE_k/dt ≤ C E_k + C E_k^{1/2}‖f‖_{Hᵏ_Λ}`, `E_k = Σ_{|α|≤k} ∫_F ⟨A⁰∂^αW, ∂^αW⟩`, with `C` depending
 on `n`, `N`, `k`, `Λ`, `λ₀`, the constant matrices `Ā⁰, …, Āⁿ` (the spatial ones included),
@@ -1288,8 +1317,11 @@ supported data and forcing and `C_b^∞` coefficients there.
 
 - Constant-coefficient transport: `W = W₀(x − at)`, in `C([0, T]; Hᵏ_Λ)` for every `k`, with
   `W_ε` given on the Fourier side by `e^{−iatmφ̂(εm)²}Ŵ₀(m)`.
-- Uniqueness forces the zero solution for zero data and forcing; without symmetry (the Jordan
-  block of §5.1) existence in `Hᵏ` with the estimate fails.
+- Uniqueness forces the zero solution for zero data and forcing. Symmetry is needed: the Jordan
+  block of §5.1, `A⁰ = I`, `A¹ = [[0, 1], [0, 0]]`, `B = 0`, `f = 0`, has constant coefficients
+  (`A^μ = Ā^μ`) and `A⁰ ≥ I`, and its only solution with data `(g, h)` is `(g − th′, h)`, which
+  for `h ∈ Hᵏ_Λ` with `h′ ∉ Hᵏ_Λ` leaves `Hᵏ_Λ` at every `t > 0`; `A¹` is not symmetric, so
+  `LinearSystem.IsSymmetricHyperbolic` fails and the statement does not apply.
 - The constant depends on the spatial background matrices: on `Λ = 2πℤ` (`n = N = 1`) with
   `k = 2`, `A⁰ = e^{sin x}`, `A¹ = M` constant, `B = f = 0` and `W(0) = sin x + sin 2x`, take
   `Ā⁰ = 1`, `Ā¹ = M`, `λ₀ = e^{−1}`: `∂_tA⁰ = 0`, `A¹ − Ā¹ = 0` and `A⁰ − Ā⁰` do not depend on `M`.
@@ -1611,7 +1643,7 @@ times; constant states are global.
 
 ### Dependencies
 
-Layers 2, 4, 5 and 6.
+Layers 2, 3 (§3.3, for §7.3), 4, 5 and 6.
 
 ## Layer 8: developments and maximal developments
 
@@ -1801,7 +1833,7 @@ developments.
 
 ### Dependencies
 
-Layers 1, 2 (§2.2), 3, 6 and 7.
+Layers 1, 2 (§2.2), 3, 6 and 7; LorentzianGeometry §12.6 (concatenation, for §8.4).
 
 ## Downstream consumers
 
