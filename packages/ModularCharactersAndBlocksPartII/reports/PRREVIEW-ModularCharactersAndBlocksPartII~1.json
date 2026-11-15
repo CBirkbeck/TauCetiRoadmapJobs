@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ModularCharactersAndBlocksPartII~1",
+  "head": "c2e9927b3f03dc1c195dd2e17cf18b60e99a1cf6",
+  "pr": 2411,
+  "folder": "ModularCharactersAndBlocksPartII",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full review at c2e9927. Gate: every check OK; depcheck 0 problems; lake env lean on Suggested.lean gives 16 sorry warnings only; #check of all 20 declarations matches the README; 0 of 16 one-tactic probes close; 62 cited library names confirmed at the pins. Seeded sample (15 targets: 1.1, 2.2, 2.4, 3.3, 3.4, 4.2, 4.3, 4.5, 4.6, 5.1, 5.2, 7.2, 7.3, 8.3, 8.4) verified against glauberman, hartley-turull, geck, spath-vallejo, reynolds, martinez, sambale; 99 locators checked in 10 sources; isaacs, navarro-1998, navarro-2018 and feit are uncertified. Declared gap clifford-multiplicity-dvd-index is precise, minimal and consistent between plan.json and README. Findings: R01 (P3) README:517 states Isaacs 3.12 backwards; R02 (P3) the PR description's dependency paragraph is contradicted by the head and omits the declared gap. Source issues: a gap in the proof of Glauberman Theorem 4(a); misprints in Martinez and Sambale.",
+  "text": "4510cda3e673e9bf",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "The route of the declared gap states Isaacs 3.12 backwards",
+    "where": "the gap's `detail` text in the board's `design/plan.json`",
+    "raised": "PRREVIEW-ModularCharactersAndBlocksPartII~1"
+   }
+  ]
+ }
+}
