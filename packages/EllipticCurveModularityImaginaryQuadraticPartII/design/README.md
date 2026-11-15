@@ -128,7 +128,8 @@ of Layer 3 are proved by explicit computations recorded in their Checks.
   `φ⁻¹` would conjugate `U` to `U³`, since `7⁻¹ ≡ 3 mod 5`.
 - `ad⁰` is the trace-zero adjoint of ArithmeticGaloisRepresentations §7.2 (for a homomorphism into
   `GL₂(k)`, its §7.9 `ResidualImage.adZeroRep`): the trace-zero `2×2` matrices with the conjugation
-  action, basis `e = E₁₂`, `h = diag(1, −1)`, `f = E₂₁`. For `U = 1 + e` and `D = Ad(U)`:
+  action, with the standard basis `e = E₁₂`, `h = diag(1, −1)`, `f = E₂₁` (used in Layers 3–4 only,
+  where the cubic `h` of the curve does not occur). For `U = 1 + e` and `D = Ad(U)`:
   `D(e) = e`, `D(h) = h − 2e`, `D(f) = f + h − e`. The trace form `⟨X, Y⟩ = tr(XY)` has Gram matrix
   `[[0,0,1],[0,2,0],[1,0,0]]` in this basis, of determinant `−2`; it identifies `ad⁰` with its dual
   whenever `2` is invertible (the perfectness and splitting of §7.2 there) and is degenerate in
@@ -146,7 +147,8 @@ of Layer 3 are proved by explicit computations recorded in their Checks.
 - `Iw_v ⊂ PGL₂(O_{F_v})` is the Iwahori subgroup of matrices upper triangular modulo `ϖ_v`. `O` is the
   ring of integers of a finite extension of `ℚ₅` (of `ℚ_p` in Layer 3) with uniformizer `ϖ` and
   residue field `k`; `CNL_O` is the category of complete Noetherian local `O`-algebras with residue
-  field `k`.
+  field `k`. In Layer 7, which uses no coefficient ring, `O` is, as in the parent, the origin of `E` and of
+  its quadratic twists `B_t`.
 
 ## Exact supplier contracts
 
@@ -1002,7 +1004,8 @@ disjointness and perfectness of `SL₂(𝔽₅)` preserve `ρ̄(G_{F'}) = ρ̄(G
 preserved by PotentialAutomorphyInfrastructure §2.1 or a split witness; the local components at
 `P'` are those at `P`, so protection, unipotent inertia and Iwahori vectors persist, and `P'^c` lies
 outside `S'`. (CN23, end of the proof of Theorem 5.2, lines 4433–4509; CaptainSude26, proof of
-Proposition 5.2, lines 543–603.)
+Proposition 5.2, lines 543–603; ACC23, §6.5.12, p. 178, lines 7163–7187, for the three imaginary
+quadratic fields.)
 
 *Needs:* §§3.3, 5.1; CrystallineLocalGlobalCompatibilityCM §9.11; GL2ModularityLifting §1.7;
 PotentialAutomorphyInfrastructure §§2.1, 2.3, 2.5; PotentialModularityAndCompatibleSystems §§2.12–2.16.
@@ -1011,9 +1014,16 @@ PotentialAutomorphyInfrastructure §§2.1, 2.3, 2.5; PotentialModularityAndCompa
 
 - A ramified prescribed completion of index five at a place of `P` would make residual inertia
   `U⁵ = 1`; the preparation keeps every place above `P` split.
-- If `v` and `v^c` were both ramified for `ρ`, every CM extension has isomorphic completions above `v` and
-  `v^c` (complex conjugation of `F'` exchanges them), so `P'^c ∩ S' = ∅` could not be reached by
-  preparation; the hypothesis at `v^c` is necessary for this route.
+- If `ρ(I_{v^c})` is infinite, or finite of order divisible by five (for instance when `ρ̄` is also
+  protected at `v^c`), no CM extension `F'/F` reaches `P'^c ∩ S' = ∅` with `P'` protected. Complex
+  conjugation of `F'` matches each place above `v^c` with a place above `v` of isomorphic completion and
+  equal ramification index. Making `ρ` unramified at a place above `v^c` is impossible when `ρ(I_{v^c})`
+  is infinite (an open subgroup of an infinite profinite group is nontrivial) and otherwise forces a
+  ramification index divisible by five there, hence at the matching place above `v`, where residual
+  inertia becomes `U^(5k) = 1` (§3.3, third bullet). If instead `ρ(I_{v^c})` has order three, a prescribed
+  completion of ramification index three at the place of `F⁺` below `v` makes `ρ` unramified above `v^c`
+  and keeps protection above `v`, three being prime to five. The preparation of this section keeps
+  `P ∪ P^c` completely split, so it needs `ρ` and `π` unramified at `v^c`.
 - For `F = ℚ(ζ₅)`, which has no imaginary quadratic subfield, the imaginary quadratic composita are
   required to reach condition (i) of §5.1.
 
@@ -1052,9 +1062,9 @@ lines 264–498, with `μ₅ ⊂ F` at line 267; CN23, Theorem 5.2, lines 3849�
   element `g` of determinant `−1` gives `det(2g) = 4·(−1) = 1`, so the projective image of `G_F` is
   `PSL₂(𝔽₅)`, the projective kernels of `G_F` and `G_{F(ζ₅)}` have indices `60` and `2·60 = 120` in
   `G_F`, and (4) holds (CN23, Lemma 6.1.4, line 4562). Over `k = 𝔽₂₅` take `μ` with `μ² = 2` and
-  `h = diag(1, 2)`: then `det(μh) = 2·2 = 4 = −1`, `tr(μh) = 3μ ∉ 𝔽₅`, `(μh)² = diag(2, 3) ∈ SL₂(𝔽₅)`, and
-  `⟨SL₂(𝔽₅), μh⟩` has order `240`, determinants `{±1}` and projective image `PGL₂(𝔽₅)` of order `120`
-  (`det h = 2` is not a square modulo five); both projective kernels have index `120`, so they are
+  `γ = diag(1, 2)`: then `det(μγ) = 2·2 = 4 = −1`, `tr(μγ) = 3μ ∉ 𝔽₅`, `(μγ)² = diag(2, 3) ∈ SL₂(𝔽₅)`, and
+  `⟨SL₂(𝔽₅), μγ⟩` has order `240`, determinants `{±1}` and projective image `PGL₂(𝔽₅)` of order `120`
+  (`det γ = 2` is not a square modulo five); both projective kernels have index `120`, so they are
   equal, the projective field contains `F(ζ₅)` and (4) fails although `ζ₅ ∉ F`.
 - If `ζ₅ ∉ F` and `det ρ̄` has order four, (4) holds for every coefficient field: the projective image of
   `G_F` normalizes `PSL₂(𝔽₅)` in `PGL₂(k̄)`, whose normalizer is `PGL₂(𝔽₅)` (the centralizer is trivial
@@ -1082,22 +1092,23 @@ PotentialModularityAndCompatibleSystems §§2.12–2.16.
 
 ### 7.1 The width-three multiplicative degeneration
 
-Let `k` be a number field, `E/k: y² = h(x)`, `p > 3` prime, `n = 3p`, and `R_*` a point of exact order
-`2n` of the parameter cover with `[n]R_* = a/2` nonzero two-torsion, as in the parent's §2.1. Prove:
-(a) for `t ∈ U(k)` the image of the `k`-point `(O, 1)` of `C₃(t)` is a `k`-point of
-`D_t = C₃(t)/⟨w⟩`, so `D_t ≅ A_t` over `k`; (b) in the nodal model of the parent's §2.3 at `R_*` for
-`m = 3`, the reflection `w` fixes exactly one of the three nodes, acting by `−1` on both branches there,
-and exchanges the other two; (c) the quotient of the regular model by `w` has an `A₁` singularity
-`uv = s²` at the image of the fixed node and an ordinary node of thickness one at the image of the
-exchanged pair, its components are rational, and after resolving the `A₁` point the fiber is a cycle of
-three rational curves: `D` and `A` have semistable reduction of type `I₃` in the smoothing parameter
-`s`; (d) `1/j(A_t)` has a zero of exact order three in `s`, and over a field containing the data of (b)
-the Tate parameter is `c s³ h(s)` with `c ≠ 0` and `h(0) = 1`. For (b): on the elliptic component
-`E' → E`, an étale cyclic triple cover, the lifts of `[−1]` are `Q ↦ −Q + c₀` with `c₀ ∈ ker(E' → E)`;
-the fiber over the two-torsion point is a coset `P₀ + ker`, and `2(P₀ + jT') = c₀` has exactly one
-solution `j ∈ ℤ/3` because two is invertible modulo three. For (d), the total thickness `2 + 1 = 3`
-equals `v(q)` per unit of `v(s)`; `R_*` is not two-torsion, so `x` is étale there and the `t`-parameter
-is a unit multiple of `s`. (CaptainSude26, Lemma 5.1, lines 503–532.)
+Let `K` be a number field (this section and §7.2 do not use that `K` is CM), `E/K: y² = h(x)`, `p > 3`
+prime, `n = 3p`, and `R_*` a point of exact order `2n` of the parameter cover with `[n]R_* = a/2` nonzero
+two-torsion, as in the parent's §2.1. Prove: (a) for `t ∈ U(K)` the image of the `K`-point `(O, 1)` of
+`C₃(t)` is a `K`-point of `D_t = C₃(t)/⟨w⟩`, so `D_t ≅ A_t` over `K`; (b) in the nodal model of the
+parent's §2.3 at `R_*` for `m = 3`, the reflection `w` fixes exactly one of the three nodes, acting by
+`−1` on both branches there, and exchanges the other two; (c) the quotient of the regular model by `w`
+has an `A₁` singularity `z₁z₂ = s²` at the image of the fixed node and an ordinary node of thickness one
+at the image of the exchanged pair, its components are rational, and after resolving the `A₁` point the
+fiber is a cycle of three rational curves: `D` and `A` have semistable reduction of type `I₃` in the
+smoothing parameter `s`; (d) `1/j(A_t)` has a zero of exact order three in `s`, and over a field
+containing the data of (b) the Tate parameter `q_A` of `A_t` is `s³λ(s)` for a power series `λ` with
+`λ(0) ≠ 0`. For (b): on the elliptic component `E' → E`, an étale cyclic triple cover, the lifts of
+`[−1]` are `Q ↦ −Q + c₀` with `c₀ ∈ ker(E' → E)`; the fiber over the two-torsion point is a coset
+`P₀ + ker`, and `2(P₀ + rT') = c₀` has exactly one solution `r ∈ ℤ/3` because two is invertible modulo
+three. For (d), the total thickness `2 + 1 = 3` equals `v(q_A)` per unit of `v(s)`; `R_*` is not
+two-torsion, so `x` is étale there and the `t`-parameter is a unit multiple of `s`. (CaptainSude26,
+Lemma 5.1, lines 503–532.)
 
 *Needs:* EllipticCurveModularityImaginaryQuadratic §§1.3, 2.1, 2.3, 4.2; EllipticCurves Layer 4;
 SchemeAndStackFoundations §§4.13, 4.18.
@@ -1113,16 +1124,16 @@ SchemeAndStackFoundations §§4.13, 4.18.
 
 ### 7.2 Local opens at an auxiliary prime
 
-Keep the setting of §7.1 with `k = K` a number field. Prove: there is a finite set `Σ₀` of rational
-primes such that for every rational prime `q ∉ Σ₀` with `q ≥ 7`, `q ≠ p`, split completely in the field
-of definition of the data of §7.1(b) and in the normal closure of `K`, and every place `v` of `K` above
-`q`: (a) there is a nonempty open `Ω_v ⊂ U(K_v)` such that for `t ∈ Ω_v` the curve `A_t` has split
-multiplicative reduction at `v` with `v(Δ_min(A_t)) = 3k_v`, for a fixed integer `k_v` prime to five;
-(b) for every other place `v' ≠ v` of `K` above `q` there is a nonempty open `Ω_v' ⊂ U(K_v')` on which
-`A_t` has good reduction at `v'`. For (a): spread the `I₃` model and `s` over the ring of integers with
-`Σ₀` inverted, so that the node and branch data, the thicknesses, good reduction of `E` and the unit
-leading coefficient of `1/j` persist; at `v` the Tate parameter is `c s³ h(s)` with `c` a unit; choose
-`v(s) = k_v` large with `5 ∤ k_v`. For (b): near the compact-type boundary point `O` the Jacobian family
+Keep the setting of §7.1. Prove: there is a finite set `Σ₀` of rational primes such that for every
+rational prime `q ∉ Σ₀` with `q ≥ 7`, `q ≠ p`, split completely in the field of definition of the data of
+§7.1(b) and in the normal closure of `K`, and every place `v` of `K` above `q`: (a) there is a nonempty
+open `Ω_v ⊂ U(K_v)` such that for `t ∈ Ω_v` the curve `A_t` has split multiplicative reduction at `v`
+with `v(Δ_min(A_t)) = 3m_v`, for a fixed integer `m_v` prime to five; (b) for every other place `v' ≠ v`
+of `K` above `q` there is a nonempty open `Ω_v' ⊂ U(K_v')` on which `A_t` has good reduction at `v'`.
+For (a): spread the `I₃` model and `s` over the ring of integers with `Σ₀` inverted, so that the node and
+branch data, the thicknesses, good reduction of `E` and the unit leading coefficient of `1/j` persist;
+at `v` the Tate parameter is `s³λ(s)` with `λ(0)` a unit, so `v(q_A) = 3v(s)` once `v(s) > 0`; choose
+`v(s) = m_v` large with `5 ∤ m_v`. For (b): near the compact-type boundary point `O` the Jacobian family
 is an abelian scheme with fiber `E³` (the parent's §2.2); by the parent's §6.1 the `d`-torsion is locally
 constant for an odd `d ≠ q`, hence unramified, so nearby fibers are semistable
 (NeronModelsAndSemistableAbelianVarieties §3.12); by the parent's §6.3 their toric rank is that of `E³`,
@@ -1148,17 +1159,18 @@ residual Frobenius has both diagonal entries `1`, and a change of tame lift make
 element of the image of `I_v` on `H¹(A_K̄, Q̄₅)` has characteristic polynomial `(X − 1)²`; and if `A` is
 the localization of a modular non-CM curve with realizing `π`, then `π_v` is the Steinberg
 representation, which has nonzero Iwahori-fixed vectors. If instead `5 | v(Δ_min(A))`, `A[5]` is
-unramified. The Tate-curve description is ArithmeticGaloisRepresentations §6.3 with `v(Δ_min) = v(q)`
-(EllipticCurves Layer 4); the automorphic statement is the parent's §0.3 `automorphic_wd`, the full
-Weil–Deligne parameter being `Sp(2)`. (CaptainSude26, paragraph after Lemma 5.1, lines 533–536.)
+unramified. The Tate-curve description is ArithmeticGaloisRepresentations §6.3 with
+`v(Δ_min) = v(q_A)` for the Tate parameter `q_A` of `A` (EllipticCurves Layer 4); the automorphic
+statement is the parent's §0.3 `automorphic_wd`, the full Weil–Deligne parameter being `Sp(2)`.
+(CaptainSude26, paragraph after Lemma 5.1, lines 533–536.)
 
 *Needs:* §3.3; ArithmeticGaloisRepresentations §6.3; EllipticCurves Layer 4;
 EllipticCurveModularityImaginaryQuadratic §0.3; GL2AutomorphicRepresentationsAndTransfer R16.3.2.
 
 **Checks.**
 
-- For `v(q) = 3` the residual inertia is `[[1, 3],[0, 1]]`, a nontrivial unipotent; for `v(q) = 15` it is
-  trivial.
+- For `v(q_A) = 3` the residual inertia is `[[1, 3],[0, 1]]`, a nontrivial unipotent; for `v(q_A) = 15` it
+  is trivial.
 - A non-split multiplicative curve is the unramified quadratic twist of a split one: its residual
   Frobenius has diagonal entries `−1`, its residual inertia is unchanged, so it is still protected, and
   its automorphic component is the twist of Steinberg by the unramified quadratic character, which also
@@ -1233,7 +1245,7 @@ PotentialAutomorphyInfrastructure §2.3(2); the result is cuspidal because `A_t`
 
 For `K = ℚ(ζ₅)` and `E: y² = x³ + x + 1`, choose `p > 100` from the parent's §7.2, a prime `q ≡ 1 mod 5`
 outside `Σ₀`, a place `v | q` and `t` in all the opens; `A_t` is split multiplicative at `v` with
-`v(Δ_min) = 3k_v`, good at the other three places above `q`, and the switch at five produces `A'` over a
+`v(Δ_min) = 3m_v`, good at the other three places above `q`, and the switch at five produces `A'` over a
 solvable CM extension, after which Theorem 6.2 and descent make `A_t` modular over `ℚ(ζ₅)`.
 
 ### Dependencies
@@ -1254,12 +1266,19 @@ representation `π_E` of `GL₂(𝔸_K)`, of weight zero and trivial central cha
 archimedean parameter `complexInfinityParameter` at every complex place, and
 `L(E/K, s) = L(π_E, s − 1/2)`. It is cuspidal if `E` is geometrically non-CM; otherwise it is the
 quadratic automorphic induction or the isobaric sum of Theorem 2.4. For geometrically CM `E` use
-Theorem 2.4. For non-CM `E`: if `ζ₅ ∉ K`, Theorem 2.5; if `ζ₅ ∈ K`, take `t` from §7.5, base change
-`π_{A_t}` to `F = K(μ₃ₚ)` by PotentialAutomorphyInfrastructure §2.3(1) to realize `V_η` as in
-Theorem 2.1(c), apply Theorem 2.2 and then Theorem 2.3. (CaptainSude26, Theorem 1.1, line 26, with its
-proof, line 671; LeHung26, Remark 1.3.1, line 125.)
+Theorem 2.4. For non-CM `E`: if `ζ₅ ∉ K`, Theorem 2.5; if `ζ₅ ∈ K`, take `t` from §7.5, which makes
+`A_t` modular over `K`, and re-run the argument of Theorem 2.1(c), which does not use `ζ₅ ∉ K`:
+`F = K(μ₃ₚ)` is CM by Theorem 1.1; `A_t` is geometrically non-CM because its mod-five image
+`SL₂(𝔽₅)` (§7.5(a)) has no abelian subgroup of index at most two, so `H¹(A_t)|G_F` is absolutely
+irreducible (FaltingsFinitenessAndIsogenyTheorems R28.6.2–R28.6.3); PotentialAutomorphyInfrastructure
+§2.3(1) gives the cuspidal weight-zero base change of `π_{A_t}` to `PGL₂(𝔸_F)`, which realizes `V_η`
+under the identification `V_η ≅ H¹(A_t)|G_F` of the parent's §4.2 `cubic_character_elliptic`. Then
+apply Theorem 2.2 and Theorem 2.3. (CaptainSude26, Theorem 1.1, line 26, with its proof, line 671; LeHung26,
+Remark 1.3.1, line 125.)
 
-*Needs:* Theorems 2.1–2.5 and 7.5; PotentialAutomorphyInfrastructure §2.3.
+*Needs:* Theorems 1.1, 2.1–2.5 and 7.5; EllipticCurveModularityImaginaryQuadratic §4.2
+(`cubic_character_elliptic`); PotentialAutomorphyInfrastructure §2.3; FaltingsFinitenessAndIsogenyTheorems
+R28.6.2–R28.6.3.
 
 **Checks.**
 
@@ -1279,7 +1298,8 @@ reducible. The biquadratic field `ℚ(√−1, √5)` does not contain `ζ₅` (
 
 ### Dependencies
 
-Layers 2 and 7; PotentialAutomorphyInfrastructure §2.3.
+Layers 1, 2 and 7; EllipticCurveModularityImaginaryQuadratic §4.2; PotentialAutomorphyInfrastructure
+§2.3; FaltingsFinitenessAndIsogenyTheorems R28.6.2–R28.6.3.
 
 ## Downstream consumers
 
@@ -1316,8 +1336,7 @@ versions below, with printed pages where given.
   (line 4513); Lemma 6.1.3, p. 88 (line 4545); Lemma 6.1.4, p. 88 (line 4562); Proposition 6.1.5,
   pp. 88–89 (line 4574).
 - **AKT23.** Patrick B. Allen, Chandrashekhar Khare and Jack A. Thorne, *Modularity of `GL₂(𝔽_p)`-representations
-  over CM fields*, arXiv:1910.12986v2. Lemma A.5, p. 86 (line 3979), replaced in this case by Lemma 4.2's
-  route.
+  over CM fields*, arXiv:1910.12986v2. Lemma A.5, p. 86 (line 3979), replaced in this case by §4.2.
 - **ACC23.** P. B. Allen et al., *Potential automorphy over CM fields*, arXiv:1812.09999v2. §3.1 setting,
   pp. 57–58 (lines 2309–2345); Theorem 3.1.1, p. 58 (line 2346); §6.4.1 (patching data); §6.5.12 (auxiliary imaginary quadratic fields, line 7163);
   Proposition 6.5.13.

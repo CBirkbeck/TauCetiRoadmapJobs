@@ -968,7 +968,7 @@
      ],
      "locator": {
       "source": "CN23",
-      "where": "end of proof of Theorem 5.2, lines 4433-4509; CaptainSude26 proof of Prop. 5.2 lines 543-603"
+      "where": "end of proof of Theorem 5.2, lines 4433-4509; CaptainSude26 proof of Prop. 5.2 lines 543-603; ACC23 §6.5.12, p. 178, lines 7163-7187 (the three imaginary quadratic fields)"
      },
      "prerequisites": [
       "target:3.3",
@@ -991,7 +991,7 @@
       {
        "name": "prep_conjugate_ramified",
        "kind": "non-example",
-       "statement": "If v and v^c are both ramified, completions above v and v^c are isomorphic in every CM extension and P'^c ∩ S' = ∅ cannot be reached."
+       "statement": "If ρ(I_{v^c}) is infinite or of order divisible by 5 (e.g. ρbar also protected at v^c), complex conjugation of any CM F' matches places above v^c and v with equal ramification index, so making ρ unramified above v^c is impossible or forces 5 | e above v, where residual inertia becomes U^(5k) = 1: P'^c ∩ S' = ∅ cannot be reached with P' protected. If ρ(I_{v^c}) has order 3, a ramification-index-3 completion at the place of F⁺ below v makes ρ unramified above v^c and keeps protection above v. The preparation here keeps P ∪ P^c split, so it needs ρ, π unramified at v^c."
       },
       {
        "name": "prep_Qzeta5",
@@ -1026,7 +1026,7 @@
       {
        "name": "lifting_det_order_two",
        "kind": "computation",
-       "statement": "ζ5 ∉ F, det of order 2, ρbar(G_{F(ζ5)}) ≅ SL₂(F5): with GL₂(F5)-coefficients det(2g) = 4·(−1) = 1, the projective image of G_F is PSL₂(F5) (kernel indices 60 vs 120) and (4) holds; over F25 with μ² = 2, h = diag(1,2), ⟨SL₂(F5), μh⟩ has order 240, det(μh) = −1, tr(μh) = 3μ ∉ F5, projective image PGL₂(F5) (both kernel indices 120), so (4) fails although ζ5 ∉ F: ζ5 ∈ F is a genuine hypothesis of the protected alternative."
+       "statement": "ζ5 ∉ F, det of order 2, ρbar(G_{F(ζ5)}) ≅ SL₂(F5): with GL₂(F5)-coefficients det(2g) = 4·(−1) = 1, the projective image of G_F is PSL₂(F5) (kernel indices 60 vs 120) and (4) holds; over F25 with μ² = 2, γ = diag(1,2), ⟨SL₂(F5), μγ⟩ has order 240, det(μγ) = −1, tr(μγ) = 3μ ∉ F5, projective image PGL₂(F5) (both kernel indices 120), so (4) fails although ζ5 ∉ F: ζ5 ∈ F is a genuine hypothesis of the protected alternative."
       },
       {
        "name": "lifting_det_order_four",
@@ -1055,9 +1055,9 @@
      "id": "7.1",
      "kind": "theorem",
      "name": "width_three_degeneration",
-     "statement": "For R_* of exact order 2n with [n]R_* = a/2: (a) the image of (O,1) is a k-point of D_t, so D_t ≅ A_t; (b) w fixes exactly one of the three nodes of the m = 3 nodal model, acting by −1 on both branches, and exchanges the other two; (c) the quotient has an A1 point uv = s² and a node of thickness one, and after resolution is a cycle of three rational curves (type I3); (d) 1/j(A_t) has a zero of order 3 in s and the Tate parameter is c s³ h(s), c ≠ 0, h(0) = 1.",
+     "statement": "For R_* of exact order 2n with [n]R_* = a/2: (a) the image of (O,1) is a K-point of D_t, so D_t ≅ A_t; (b) w fixes exactly one of the three nodes of the m = 3 nodal model, acting by −1 on both branches, and exchanges the other two; (c) the quotient has an A1 point z₁z₂ = s² and a node of thickness one, and after resolution is a cycle of three rational curves (type I3); (d) 1/j(A_t) has a zero of order 3 in s and the Tate parameter q_A of A_t is s³λ(s) with λ a power series, λ(0) ≠ 0.",
      "hypotheses": [
-      "k a number field",
+      "K a number field (CM not used)",
       "p > 3 prime, n = 3p",
       "R_* as in the parent's §2.1"
      ],
@@ -1097,7 +1097,7 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "auxiliary_prime_opens",
-     "statement": "There is a finite set Σ0 of rational primes such that for q ∉ Σ0, q ≥ 7, q ≠ p, split completely in the field of the data of 7.1(b) and in the normal closure of K, and each place v | q: (a) a nonempty open Ω_v ⊂ U(K_v) on which A_t is split multiplicative with v(Δ_min) = 3k_v, 5 ∤ k_v; (b) for every other v' | q a nonempty open on which A_t has good reduction.",
+     "statement": "There is a finite set Σ0 of rational primes such that for q ∉ Σ0, q ≥ 7, q ≠ p, split completely in the field of the data of 7.1(b) and in the normal closure of K, and each place v | q: (a) a nonempty open Ω_v ⊂ U(K_v) on which A_t is split multiplicative with v(Δ_min) = 3m_v, 5 ∤ m_v; (b) for every other v' | q a nonempty open on which A_t has good reduction.",
      "hypotheses": [
       "K a number field",
       "q as stated"
@@ -1162,7 +1162,7 @@
       {
        "name": "tate_v3",
        "kind": "computation",
-       "statement": "v(q) = 3: residual inertia [[1,3],[0,1]]; v(q) = 15: trivial."
+       "statement": "v(q_A) = 3: residual inertia [[1,3],[0,1]]; v(q_A) = 15: trivial."
       },
       {
        "name": "tate_nonsplit",
@@ -1282,13 +1282,17 @@
       "where": "Theorem 1.1, line 26, proof line 671; LeHung26 Remark 1.3.1 line 125"
      },
      "prerequisites": [
+      "target:1.1",
       "target:2.1",
       "target:2.2",
       "target:2.3",
       "target:2.4",
       "target:2.5",
       "target:7.5",
-      "roadmap:PotentialAutomorphyInfrastructure §2.3"
+      "roadmap:EllipticCurveModularityImaginaryQuadratic §4.2",
+      "roadmap:PotentialAutomorphyInfrastructure §2.3",
+      "roadmap:FaltingsFinitenessAndIsogenyTheorems R28.6.2",
+      "roadmap:FaltingsFinitenessAndIsogenyTheorems R28.6.3"
      ],
      "api": [],
      "tests": [
