@@ -2026,12 +2026,6 @@
     "stages": [
       "DiophantineApproximationAndTranscendencePartII:AA.5"
     ]
-  },
-  {
-    "slug": "complex-logarithmic-equilibrium",
-    "needs": "For every nonempty compact K⊆ℂ, provide logarithmic energy of Borel probabilities with diagonal value +∞ via bounded-below kernel truncations, weak lower semicontinuity and a minimizing measure, identify exp(−inf I) with the transfinite diameter of §6.18, prove uniqueness of the minimizer when this value is positive, and identify the equilibrium probabilities of every circle and closed disc of positive radius as normalized boundary arc measure, compatibly with nonzero affine changes of coordinates.",
-    "supplier": "ClassicalArithmeticCompletion",
-    "section": "§§6.18,6.40 (energy/equilibrium extension)"
   }
 ],
   "sourceIssues": [
