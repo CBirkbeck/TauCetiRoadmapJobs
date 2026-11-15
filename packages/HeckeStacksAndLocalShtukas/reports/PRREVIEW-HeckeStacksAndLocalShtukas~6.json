@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HeckeStacksAndLocalShtukas~6",
+  "head": "025265d621093098579b0cb45284c7b91a052dbf",
+  "pr": 1252,
+  "folder": "HeckeStacksAndLocalShtukas",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 4 changed lines since 5775c9b: both previous findings (R01 bound variable in HS1.9, R02 exclusion clause of the HS4.2 torus Check) repaired verbatim, four adversarial rows computed; gate rerun OK with every counter 0; lake env lean exit 0 with no output (no declarations); depcheck 0 problems; no change outside the folder; seeded sample has no target in the changed passages. Title and description checked against the head for the first time: three P3 findings, all in the pull request's text (description says the Lean states definitions and theorems and that the build warns of sorry, while Suggested.lean declares nothing; title differs from the README title). No finding in the folder.",
+  "text": "b45013655b7f19cf",
+  "carried": {
+   "from": "025265d621093098579b0cb45284c7b91a052dbf",
+   "head": "7b6a2e26c3e483d5ff60da1d232edbcac6a76aed",
+   "findings": 3,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
