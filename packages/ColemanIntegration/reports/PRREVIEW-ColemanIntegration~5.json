@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ColemanIntegration~5",
+  "head": "9d45df98d3d8fd5eaaca6e1e2481088ce6e8d5cc",
+  "pr": 1043,
+  "folder": "ColemanIntegration",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 11 changed lines since c35168f. Both previous findings repaired (L3.Fc.1 regulator theorem now for every number field, checked on Q, Q(i), Q(2^(1/3)) for n = 2, 3 and against BBdJR Theorem 2.2 p. 5; the stale red-team sentence of the description removed). One new P3 on the pull request description: its AI-assistance sentence refers to co-author lines that 17 of 24 commits lack and names only one of the three models the trailers show. Seeded sample: the Definition of L3.Fc.1 falls in the changed passages; 9 locators read in BBdJR (arXiv:0707.3682v2) and BDJ (Numdam). 6 supplier citations resolved at the heads of ArithmeticKTheory and MotivicEtaleKTheory. Gate: every check 0, OK; depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean gives five sorry warnings only; no file changed outside the folder. Overlap with BorelRegulators read: single owners; its text still calls the L3.Fc.1 theorem Galois-only (for that roadmap's review).",
+  "text": "80b905fcd86ee2f1",
+  "carried": {
+   "from": "9d45df98d3d8fd5eaaca6e1e2481088ce6e8d5cc",
+   "head": "9d45df98d3d8fd5eaaca6e1e2481088ce6e8d5cc",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
