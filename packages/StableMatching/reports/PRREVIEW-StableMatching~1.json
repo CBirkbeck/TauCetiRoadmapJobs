@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StableMatching~1",
+  "head": "42797bbdda9806a71c2f3fe6d4bd3d151bf84df8",
+  "pr": 2346,
+  "folder": "StableMatching",
+  "date": "2026-11-15",
+  "findings": 12,
+  "blocking": 4,
+  "notes": "Gate: text scanners all 0. The build fails: 5 errors at Suggested.lean:201-203 (untyped binder P), reproduced with lake env lean; the typed-binder fix was tested. depcheck: 245 roadmaps, 2231 edges, 0 problems. Sample: all 10 sampled targets (0.1-3.2) checked against Roth 2008 (author's copy, draft of 18 July 2007; 16 locators) and Roth 1982 (author page; 5 locators). GS 1962, Dubins-Freedman 1981, McVitie-Wilson 1970, Knuth 1976 and Sotomayor 1996 not legally readable. Adversarial pass by brute force over 1,500 random markets of at most 3x3, plus 531 and 145 markets with several stable matchings: every headline holds. Findings: Matching duplicates Mathlib PEquiv (PEquiv version elaborates); the 0.1 efficiency claim fails for the empty market; the 2.2 Needs line is insufficient. One-tactic probe: 10/10 theorems survive. Overlaps: none.",
+  "text": "691dab728518709f"
+ }
+}
