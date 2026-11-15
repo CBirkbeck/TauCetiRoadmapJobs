@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FarguesFontaineDiamonds~5",
+  "head": "f96f9b6cb701423b931fe029382e1f80c6906dcf",
+  "pr": 964,
+  "folder": "FarguesFontaineDiamonds",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 50 changed lines since 389338f. Previous R01-R04 repaired (R04: the manifest is the board package's sources.toml, four certified records). Title and description checked against the head: 1,215 lines, no declarations, Layer 0/4/5 citations, divisor sentence. Changed passages: 6 pinned Tau Ceti declarations opened (Adic.lean, IntervalChart.lean) and their hypotheses compared; absence of Yoneda-adic, perfectoid-space, Spd and etale-site carriers confirmed at the pins; 5 VectorBundlesAndIsocrystals, 3 RelativeFarguesFontaine, 1 BunGAndNewtonStrata and 3 AdicSpacesPartII citations resolved. Seeded sample: none of the ten targets falls in the changed passages; no source locator changed. Gate: all checks 0, OK; depcheck 247 roadmaps, 2238 edges, 0 problems; lake env lean on Suggested.lean exit 0, no warning, no declarations. Two remarks on untouched text, no change asked.",
+  "text": "6e1864f2f32d9b74"
+ }
+}
