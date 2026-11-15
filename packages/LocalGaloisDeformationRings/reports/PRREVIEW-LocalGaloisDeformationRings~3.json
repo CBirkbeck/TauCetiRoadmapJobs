@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalGaloisDeformationRings~3",
+  "head": "23fae8315eee4f5e63ee5f06795892807b4ff157",
+  "pr": 923,
+  "folder": "LocalGaloisDeformationRings",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "incremental re-review of 8 changed lines since 3580989. Checked: the five previous findings (R02, R03 repaired; R01, R04 not repaired and written again; R05 partly, its repair states the type convention as the complement of Kisin's determinant law (2.4.2), read in the published article); the three changed passages with computed values; the two supplier citations of the changed Needs line at the supplier's head; the pull request's title and description against the head (two P3 findings: stale supplier paragraph, validation sentence); the gate (all counters zero, build passes), the dependency check (245 roadmaps, 2221 edges, 0 problems) and the elaboration of Suggested.lean (three sorry warnings only). All five findings are P3.",
+  "text": "e379b990684216f1"
+ }
+}
