@@ -2,7 +2,7 @@
  "roadmap": "QuasicoherentSheavesOnPrestacks",
  "title": "Quasi-coherent sheaves on prestacks",
  "parent": null,
- "summary": "The functor-of-points theory of quasi-coherent sheaves: QCoh(X) as the limit of module infinity-categories over the affine points of a prestack, for classical, animated and connective E-infinity test rings over Z, with the coherent module functor and module theory of connective algebras, flat hyperdescent without finiteness hypotheses, invariance under fpqc sheafification, affine pushforward with base change, the comparison with quasi-coherent derived sheaves of every Mathlib scheme, the t-structure and perfect and almost perfect objects, quotients by group prestacks and discrete groups, classical quotient stacks, and compact generation and perfect stacks.",
+ "summary": "The functor-of-points theory of quasi-coherent sheaves: QCoh(X) as the limit of module infinity-categories over the affine points of a prestack, for classical, animated and connective E-infinity test rings over Z, with the coherent module functor and module theory of connective algebras, flat hyperdescent without finiteness hypotheses, invariance under fpqc sheafification, affine pushforward with base change, the comparison with quasi-coherent derived sheaves of every Mathlib scheme, the t-structure and perfect and almost perfect objects, quotients by group prestacks over a base and by discrete groups, classical quotient stacks, and compact generation and perfect stacks. It imports and extends PrismaticCohomologyPartII 4.0 (classical QCohPrestack), LanglandsParameterStacks 1.7 (animated faithfully flat descent) and HabiroCohomologyFoundations 1.27-1.28 (lattice quotients).",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -159,7 +159,7 @@
       "roadmap:EnhancedDerivedSheaves E5:abstract.2",
       "roadmap:EnhancedDerivedSheaves E1.3",
       "roadmap:EnhancedDerivedSheaves E3.2",
-      "roadmap:HigherToposTheory L9.6",
+      "roadmap:StableInfinityCategories §11.1.1",
       "mathlib:Module.Flat",
       "mathlib:Module.FaithfullyFlat",
       "mathlib:DerivedCategory.TStructure.t"
@@ -308,8 +308,8 @@
       "roadmap:EnhancedDerivedSheaves E3.4",
       "roadmap:EnhancedDerivedSheaves E5:abstract.5",
       "roadmap:EnhancedDerivedSheaves E0.7",
-      "roadmap:HigherToposTheory L3.5",
-      "roadmap:HigherToposTheory L4.2"
+      "roadmap:CartesianFibrations §1.3.1",
+      "roadmap:CartesianFibrations §5.5.3"
      ],
      "api": [
       {
@@ -418,13 +418,13 @@
      "id": "2.2",
      "kind": "definition",
      "name": "Prestack.QCoh",
-     "statement": "QCoh : PreStk_T^op -> CAlg(Cat_infty-hat), the right Kan extension of Spec A |-> Mod_A along Spec, QCoh(X) = lim over Pts(X) of Mod_A; evaluation eta^*, pullback f^*, structure sheaf O_X.",
+     "statement": "QCoh : PreStk_T^op -> CAlg(Cat_infty-hat), the right Kan extension of Spec A |-> Mod_A along Spec, QCoh(X) = lim over Pts(X) of Mod_A; evaluation eta^*, pullback f^*, structure sheaf O_X. In the classical context QCoh is PrismaticCohomologyPartII 4.0 QCohPrestack (same limit of R |-> D_infty(R) with derived base change, identified through 1.2 classical values), with its eval, pullback, specEquiv and unit_eval; the statement here extends it to AnRing and CAlg^cn.",
      "hypotheses": [
       "T is one of the three contexts"
      ],
      "locator": {
       "source": "SAG",
-      "where": "Definition 6.2.2.1, pp. 490-491; Remarks 6.2.2.5 and 6.2.2.7, pp. 491-492; Section 6.2.6 and Notation 6.2.6.1, pp. 496-497; GR-I Chapter I.3, Section 1.1, p. 143"
+      "where": "Definition 6.2.2.1, pp. 490-491; Remarks 6.2.2.5 and 6.2.2.7, pp. 491-492; Section 6.2.6 and Notation 6.2.6.1, pp. 496-497; GR-I Chapter I.3, Sections 1.1.3-1.1.4, pp. 144-145"
      },
      "prerequisites": [
       "target:1.2",
@@ -432,7 +432,8 @@
       "roadmap:EnhancedDerivedSheaves E3.1",
       "roadmap:EnhancedDerivedSheaves E0.7",
       "roadmap:EnhancedDerivedSheaves E5:abstract.1",
-      "mathlib:groupCohomology"
+      "mathlib:groupCohomology",
+      "roadmap:PrismaticCohomologyPartII §4.0"
      ],
      "api": [
       {
@@ -483,7 +484,7 @@
      "id": "2.3",
      "kind": "theorem",
      "name": "Prestack.QCoh.formal",
-     "statement": "QCoh carries small colimits of prestacks to limits; QCoh(X) is stable with small colimits computed pointwise; f^* preserves small colimits and is symmetric monoidal; tensor is pointwise and preserves colimits in each variable; equivalences and zero objects are detected pointwise, vanishing of maps is not (except on affines, through the initial point); QCoh(X) is presentable for X a u-small colimit of affines; in CRing the homotopy category of QCoh(Spec R) is DerivedCategory (ModuleCat R) with shift and triangles.",
+     "statement": "QCoh carries small colimits of prestacks to limits; QCoh(X) is stable with small colimits computed pointwise; f^* preserves small colimits and is symmetric monoidal; tensor is pointwise and preserves colimits in each variable; equivalences and zero objects are detected pointwise, vanishing of maps is not (except on affines, through the initial point); QCoh(X) is presentable for X a u-small colimit of affines; in CRing the homotopy category of QCoh(Spec R) is DerivedCategory (ModuleCat R) with shift and triangles. In the classical context these are PrismaticCohomologyPartII 4.0 limitOfColimit, isEquiv_iff_eval and homotopyCategory_spec, extended here to the animated and E-infinity contexts.",
      "hypotheses": [
       "X is a prestack on one of the three contexts",
       "for presentability, X is a u-small colimit of affines"
@@ -496,13 +497,14 @@
       "target:2.2",
       "target:1.2",
       "target:1.5",
-      "roadmap:HigherToposTheory L6.3",
+      "roadmap:PresheavesAndCompletions §1.4.3",
       "roadmap:EnhancedDerivedSheaves E0.5",
       "roadmap:EnhancedDerivedSheaves E5:presentability.2",
       "roadmap:EnhancedDerivedSheaves E1.3",
       "roadmap:EnhancedDerivedSheaves E5:abstract.4",
       "roadmap:EnhancedDerivedSheaves E5",
-      "mathlib:DerivedCategory"
+      "mathlib:DerivedCategory",
+      "roadmap:PrismaticCohomologyPartII §4.0"
      ],
      "api": [
       {
@@ -558,7 +560,7 @@
      "id": "2.4",
      "kind": "theorem",
      "name": "Prestack.QCoh.leftKanInvariance",
-     "statement": "For u in {iota, theta, theta iota}, u_! the left Kan extension of prestacks, QCoh(u_! X) = QCoh(X) symmetric monoidally and naturally in X, compatibly with pullback and evaluation; u_! Spec A = Spec u(A).",
+     "statement": "For u in {iota, theta, theta iota}, u_! the left Kan extension of prestacks, QCoh(u_! X) = QCoh(X) symmetric monoidally and naturally in X, compatibly with pullback and evaluation; u_! Spec A = Spec u(A). For u = iota or theta iota the source side is PrismaticCohomologyPartII 4.0 QCohPrestack(X).",
      "hypotheses": [
       "the module functor of the source is that of the target restricted along u"
      ],
@@ -570,7 +572,8 @@
       "target:2.3",
       "target:1.1",
       "target:1.2",
-      "roadmap:EnhancedDerivedSheaves E3.1"
+      "roadmap:EnhancedDerivedSheaves E3.1",
+      "roadmap:PrismaticCohomologyPartII §4.0"
      ],
      "api": [
       {
@@ -630,8 +633,9 @@
       "mathlib:AlgebraicGeometry.Spec",
       "roadmap:EnhancedDerivedSheaves E0.5",
       "roadmap:EnhancedDerivedSheaves E2.7",
-      "roadmap:HigherToposTheory L2.1",
-      "roadmap:HigherToposTheory L2.2"
+      "roadmap:CartesianFibrations §2.1.1",
+      "roadmap:CartesianFibrations §2.2.1",
+      "roadmap:InfinityCategoryFoundations §5.1.1"
      ],
      "api": [
       {
@@ -698,8 +702,8 @@
       "roadmap:EnhancedDerivedSheaves E2.7",
       "roadmap:EnhancedDerivedSheaves E3.2",
       "roadmap:EnhancedDerivedSheaves E0.5",
-      "roadmap:HigherToposTheory L6.3",
-      "roadmap:HigherToposTheory L7.6",
+      "roadmap:PresheavesAndCompletions §1.4.3",
+      "roadmap:PresentableInfinityCategories §4.4.2",
       "mathlib:AlgebraicGeometry.Scheme.fpqcPrecoverage",
       "mathlib:Module.FaithfullyFlat"
      ],
@@ -747,7 +751,7 @@
      "id": "3.2",
      "kind": "theorem",
      "name": "Prestack.Mod.flatHyperdescent",
-     "statement": "For A in CAlg^cn and every flat hypercover A -> A_., Mod_A^cn -> lim Mod^cn_{A_.} and Mod_A -> lim_{Delta_s} Mod_{A_.} are equivalences, the second symmetric monoidal; Mod is a hypercomplete fpqc sheaf; M = lim M (x)_A A_n; the same for AnRing and CRing; no finiteness, countability or descendability hypothesis.",
+     "statement": "For A in CAlg^cn and every flat hypercover A -> A_., Mod_A^cn -> lim Mod^cn_{A_.} and Mod_A -> lim_{Delta_s} Mod_{A_.} are equivalences, the second symmetric monoidal; Mod is a hypercomplete fpqc sheaf; M = lim M (x)_A A_n; the same for AnRing and CRing; no finiteness, countability or descendability hypothesis. On Cech nerves of faithfully flat maps this is LanglandsParameterStacks 1.7 (animated) and PrismaticCohomologyPartII 4.0 QCohPrestack.flatDescent (classical); the theorem extends both to flat hypercovers and CAlg^cn and agrees with them, the comparison functors being the same.",
      "hypotheses": [
       "A is connective",
       "A -> A_. is a flat hypercover"
@@ -770,7 +774,9 @@
       "roadmap:EnhancedDerivedSheaves E1.8.DMA.1",
       "roadmap:EnhancedDerivedSheaves E2.7",
       "roadmap:SchemeAndStackFoundations §1.1",
-      "roadmap:HigherToposTheory L11.3"
+      "roadmap:HypercompletenessAndCoherence §6.1.1",
+      "roadmap:LanglandsParameterStacks §1.7",
+      "roadmap:PrismaticCohomologyPartII §4.0"
      ],
      "api": [
       {
@@ -787,6 +793,11 @@
        "name": "sheaf",
        "role": "structure",
        "statement": "Mod is a hypercomplete CAlg(Cat_infty-hat)-valued fpqc sheaf on T^op in each context."
+      },
+      {
+       "name": "cech_imports",
+       "role": "compatibility",
+       "statement": "Restricted along theta and theta iota to Cech nerves of faithfully flat maps, the equivalence is that of LanglandsParameterStacks 1.7 and of PrismaticCohomologyPartII 4.0 QCohPrestack.flatDescent."
       }
      ],
      "tests": [
@@ -826,7 +837,7 @@
      "id": "3.3",
      "kind": "theorem",
      "name": "Prestack.QCoh.sheafificationEquiv",
-     "statement": "(a) f^* is an equivalence for every map that becomes an equivalence after fpqc hypersheafification; (b) QCoh on hypercomplete fpqc sheaves carries small colimits to limits; (c) Cech descent along fpqc surjections; (d) fppf, etale and Zariski descent.",
+     "statement": "(a) f^* is an equivalence for every map that becomes an equivalence after fpqc hypersheafification; (b) QCoh on hypercomplete fpqc sheaves carries small colimits to limits; (c) Cech descent along fpqc surjections; (d) fppf, etale and Zariski descent. In the classical context (a) for sheafification and (c) are PrismaticCohomologyPartII 4.0 sheafificationEquiv and cechDescent, extended here to hypersheafification and the animated and E-infinity contexts.",
      "hypotheses": [
       "T is one of the three contexts"
      ],
@@ -838,7 +849,8 @@
       "target:2.3",
       "target:3.1",
       "target:3.2",
-      "roadmap:EnhancedDerivedSheaves E2.7"
+      "roadmap:EnhancedDerivedSheaves E2.7",
+      "roadmap:PrismaticCohomologyPartII §4.0"
      ],
      "api": [
       {
@@ -890,7 +902,9 @@
       "target:3.3",
       "roadmap:EnhancedDerivedSheaves E5:presentability.2",
       "roadmap:EnhancedDerivedSheaves E2.7",
-      "roadmap:HigherToposTheory L11.3"
+      "roadmap:HypercompletenessAndCoherence §2.4.1",
+      "roadmap:HypercompletenessAndCoherence §2.5.1",
+      "roadmap:HypercompletenessAndCoherence §2.5.2"
      ],
      "api": [
       {
@@ -982,7 +996,7 @@
      "id": "4.2",
      "kind": "theorem",
      "name": "Prestack.QCoh.affinePushforward",
-     "statement": "For f affine (flat affine in CRing), f^* has a pointwise right adjoint f_* (restriction of scalars at each point), f_* preserves small colimits, the projection formula holds, and the Beck-Chevalley map is an equivalence for every pullback square in the context.",
+     "statement": "For f affine (flat affine in CRing), f^* has a pointwise right adjoint f_* (restriction of scalars at each point), f_* preserves small colimits, the projection formula holds, and the Beck-Chevalley map is an equivalence for every pullback square in the context. In the classical context these are PrismaticCohomologyPartII 4.0 affinePushforward, affineBaseChange and affineProjectionFormula; the statement extends them to every affine morphism in the animated and E-infinity contexts.",
      "hypotheses": [
       "f affine",
       "in the classical context f flat affine"
@@ -995,7 +1009,8 @@
       "target:1.2",
       "target:1.5",
       "target:2.3",
-      "target:4.1"
+      "target:4.1",
+      "roadmap:PrismaticCohomologyPartII §4.0"
      ],
      "api": [
       {
@@ -1336,14 +1351,14 @@
      "id": "6.2",
      "kind": "theorem",
      "name": "Prestack.QCoh.tStructure",
-     "statement": "(a) For presentable QCoh(X), QCoh(X)^cn generates an accessible t-structure; pullbacks are right t-exact. (b) For geometric X (hypercomplete fpqc sheaf with affine diagonal and faithfully flat Spec A -> X, i.e. flat affine (4.1) and an fpqc surjection (3.3); classical context also quasi-affine diagonal), (co)connectivity is detected on the atlas, the t-structure is compatible with filtered colimits and left and right complete, and the heart is descent data, equal to Stacks.QCoh for classical stacks with flat affine atlas and affine diagonal.",
+     "statement": "(a) If X is a u-small colimit of affines in PreStk_T, or satisfies the hypothesis of 3.4(b) (its fpqc sheafification lies in the u-small-colimit closure of the representables in hypercomplete fpqc sheaves), then QCoh(X)^cn = lim of the Mod^cn over the presentation is presentable and is the connective part of an accessible t-structure; pullbacks are right t-exact. Presentability of QCoh(X) alone is not the hypothesis (SAG Remark 6.2.5.8 assumes condition (3) of SAG Proposition 6.2.3.4). (b) For geometric X (hypercomplete fpqc sheaf with affine diagonal and faithfully flat Spec A -> X, i.e. flat affine (4.1) and an fpqc surjection (3.3); classical context also quasi-affine diagonal), (co)connectivity is detected on the atlas, the t-structure is compatible with filtered colimits and left and right complete, and the heart is descent data, equal to Stacks.QCoh for classical stacks with flat affine atlas and affine diagonal.",
      "hypotheses": [
-      "(a) QCoh(X) presentable",
-      "(b) X geometric"
+      "(a) X a u-small colimit of affines, or L X in the u-small-colimit closure of the representables in hypercomplete fpqc sheaves (3.4(b))",
+      "(b) X geometric (then (a) holds through the Cech nerve of the atlas)"
      ],
      "locator": {
       "source": "SAG",
-      "where": "Remark 6.2.5.8 and Warning 6.2.5.9, pp. 495-496; Proposition 9.1.3.1 and Corollary 9.1.3.2, pp. 733-734; GR-I Chapter I.3, Proposition 1.5.4, p. 150"
+      "where": "Remark 6.2.5.8 and Warning 6.2.5.9, pp. 495-496, with condition (3) of Proposition 6.2.3.4, p. 493; Proposition 9.1.3.1 and Corollary 9.1.3.2, pp. 733-734; GR-I Chapter I.3, Proposition 1.5.4, p. 150"
      },
      "prerequisites": [
       "target:1.3",
@@ -1353,7 +1368,9 @@
       "target:5.3",
       "roadmap:SchemeAndStackFoundations §1.22",
       "roadmap:SchemeAndStackFoundations §2.18",
-      "roadmap:HigherToposTheory L9.6"
+      "roadmap:StableInfinityCategories §11.1.1",
+      "target:6.1",
+      "roadmap:EnhancedDerivedSheaves E5:presentability.2"
      ],
      "api": [
       {
@@ -1370,6 +1387,11 @@
        "name": "heart_classical",
        "role": "compatibility",
        "statement": "For classical stacks with flat affine atlas and affine diagonal the heart is Stacks.QCoh."
+      },
+      {
+       "name": "connective_presentable",
+       "role": "structure",
+       "statement": "Under (a), QCoh(X)^cn = lim_j QCoh(X_j)^cn over the colimit presentation (connectivity is detected on the X_j, fpqc-locally in sheaves), a u-small limit of presentable categories along colimit-preserving functors, hence presentable."
       }
      ],
      "tests": [
@@ -1392,6 +1414,11 @@
        "name": "BZ2_heart",
        "kind": "computation",
        "statement": "The heart of QCoh(B(Z/2) x Spec F_2) is F_2[Z/2]-modules with Ext^1 of the unit F_2."
+      },
+      {
+       "name": "presentations",
+       "kind": "computation",
+       "statement": "Spec A gives Mod_A^cn; a small disjoint union of affines gives the product of the connective module categories; a geometric stack is the colimit in sheaves of the affine Cech nerve of its atlas."
       }
      ]
     },
@@ -1399,7 +1426,7 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "Prestack.QCoh.perf",
-     "statement": "For every prestack X: perfect = dualizable, invertible = pointwise invertible, connective dualizable in QCoh(X)^cn = locally free of finite rank, X |-> Perf(X) is the right Kan extension of A |-> Perf(A) and satisfies fpqc hyperdescent; for qcqs schemes Perf(h_X) = PerfectDerived(X).",
+     "statement": "For every prestack X: perfect = dualizable, invertible = pointwise invertible, connective dualizable in QCoh(X)^cn = locally free of finite rank, X |-> Perf(X) is the right Kan extension of A |-> Perf(A) and satisfies fpqc hyperdescent; for qcqs schemes Perf(h_X) = PerfectDerived(X). Classically the first two are PrismaticCohomologyPartII 4.0 isDualizable_iff_perfect and isInvertible_iff (Perf = QCohPrestack.Perf); animated Cech descent of Perf is LanglandsParameterStacks 1.7; on the lattice quotient of 7.3 perfect and locally free objects are those of HabiroCohomologyFoundations 1.28.",
      "hypotheses": [
       "X any prestack; qcqs for the scheme comparison"
      ],
@@ -1414,7 +1441,10 @@
       "target:5.3",
       "target:6.1",
       "roadmap:EnhancedDerivedSheaves E1.8",
-      "roadmap:DerivedModuleAlgebra §1.E.0"
+      "roadmap:DerivedModuleAlgebra §1.E.0",
+      "roadmap:PrismaticCohomologyPartII §4.0",
+      "roadmap:LanglandsParameterStacks §1.7",
+      "roadmap:HabiroCohomologyFoundations §1.28"
      ],
      "api": [
       {
@@ -1531,9 +1561,10 @@
      "id": "7.1",
      "kind": "definition",
      "name": "Prestack.GroupAction",
-     "statement": "Group prestacks (groupoid objects of PreStk_T with final object of objects), actions, realizations |G^{x.} x X| (colimits in PreStk_T) and quotients [X/G] (fpqc hypersheafification); constant groups; classical group spaces through h.",
+     "statement": "Fix a base prestack S. Group prestacks over S (groupoid objects G_. of PreStk_T/S with G_0 -> S an equivalence; unit e : S -> G, products over S), actions on X over S (groupoid objects (G^{x_S n} x_S X)_n with object of objects X), realizations |G^{x_S .} x_S X| (colimits in PreStk_T, equal to colimits in the slice) and quotients [X/G] (fpqc hypersheafification), BG = [S/G]; the absolute case is S = Spec Z; constant discrete groups over Spec Z; classical group schemes over S acting on S-schemes through h (SchemeAndStackFoundations 1.13 via GroupSpace.ofGroupScheme), which are group prestacks over h_S, not absolute ones.",
      "hypotheses": [
-      "T one of the three contexts"
+      "T one of the three contexts",
+      "S a prestack (the base); absolute case S = Spec Z"
      ],
      "locator": {
       "source": "HTT",
@@ -1544,37 +1575,46 @@
       "target:2.5",
       "target:3.1",
       "roadmap:SchemeAndStackFoundations §1.13",
-      "roadmap:HigherToposTheory L6.8",
-      "roadmap:HigherToposTheory L10.1",
-      "roadmap:HigherToposTheory L10.3"
+      "roadmap:LimitsAndKanExtensions §9.1.2",
+      "roadmap:InfinityTopoi §3.1.2",
+      "roadmap:InfinityTopoi §4.4.1",
+      "roadmap:InfinityTopoi §3.3.2",
+      "roadmap:InfinityTopoi §3.5.1",
+      "target:3.2",
+      "target:3.3"
      ],
      "api": [
       {
        "name": "effective",
        "role": "structure",
-       "statement": "Groupoid objects of the presheaf infinity-topos PreStk_T are effective (HTT 6.1.3.10 with 6.1.3.19): X x_{|G^{x.} x X|} X = G x X."
+       "statement": "Groupoid objects of the presheaf infinity-topos PreStk_T and of its slices are effective (HTT 6.1.0.6 through 6.1.3.10 and 6.1.3.19): X x_{|G^{x_S .} x_S X|} X = G x_S X."
       },
       {
        "name": "geometric_quotient",
        "role": "structure",
-       "statement": "For G affine and X affine, [X/G] has affine diagonal; with G flat, X -> [X/G] is an fpqc surjection."
+       "statement": "If S is affine, G affine over S and X affine, [X/G] has affine diagonal; with G flat over S, X -> [X/G] is an fpqc surjection, so [X/G] is geometric."
       },
       {
        "name": "trivial",
        "role": "degenerate",
-       "statement": "[X/1] = X and G acting on itself has final realization."
+       "statement": "The trivial group 1 = S over S has constant bar construction: |1^{x_S .} x_S X| = X and [X/1] = L X (hypersheafification), equal to X exactly when X is a hypercomplete fpqc sheaf (every affine is, by 3.2). G acting on itself by translation has bar construction the Cech nerve of G -> S split by e, realization S and [G/G] = L S."
       }
      ],
      "tests": [
       {
        "name": "trivial_group",
-       "kind": "degenerate",
-       "statement": "For the trivial group the bar construction is constant."
+       "kind": "non-example",
+       "statement": "For the empty prestack over Spec Z, [empty/1] = L(empty) = Spec 0 (empty -> Spec 0 is fpqc-local, Spec 0 is a hypercomplete sheaf): its value at the zero ring is a point, that of the empty prestack is empty, so [X/1] = X fails; both have QCoh = 0."
       },
       {
        "name": "translation",
        "kind": "computation",
-       "statement": "G acting on itself by translation has final realization; pi_0 of values would wrongly treat BG."
+       "statement": "G acting on itself by translation over S has realization S (final when S = Spec Z); pi_0 of values would wrongly treat BG = [S/G], whose values have pi_1 = G(A)."
+      },
+      {
+       "name": "relative_unit",
+       "kind": "non-example",
+       "statement": "For the trivial group scheme G = S over S = Spec F_2 (classical), the unit is the identity of Spec F_2, the translation realization is Spec F_2 and its QCoh is D_infty(F_2); as an absolute group prestack G would need a unit Spec Z -> Spec F_2, i.e. a point in Hom(F_2, Z), which is empty."
       },
       {
        "name": "constant_BGamma",
@@ -1587,9 +1627,9 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "Prestack.QCoh.realizationEquiv",
-     "statement": "QCoh(|G^{x.} x X|) = lim_Delta QCoh(G^{x n} x X) symmetric monoidally (G-equivariant objects); pullback to X is forgetful; QCoh([X/G]) = QCoh(|G^{x.} x X|) with no hypothesis on G.",
+     "statement": "For a group prestack G over a prestack S acting on X over S: QCoh(|G^{x_S .} x_S X|) = lim_Delta QCoh(G^{x_S n} x_S X) symmetric monoidally (G-equivariant objects); pullback to X is forgetful; QCoh([X/G]) = QCoh(|G^{x_S .} x_S X|) with no hypothesis on G.",
      "hypotheses": [
-      "G a group prestack acting on X"
+      "S a prestack; G a group prestack over S acting on X over S"
      ],
      "locator": {
       "source": "SAG",
@@ -1616,7 +1656,7 @@
       {
        "name": "trivial_and_translation",
        "kind": "degenerate",
-       "statement": "QCoh([X/1]) = QCoh(X) and QCoh([G/G]) = D(Z)."
+       "statement": "QCoh([X/1]) = QCoh(L X) = QCoh(X) (3.3), zero for X empty although [empty/1] = Spec 0; QCoh([G/G]) = QCoh(L S) = QCoh(S): D_infty(Z) in the absolute case, D_infty(F_2) for the trivial group over Spec F_2."
       },
       {
        "name": "BZ2",
@@ -1634,7 +1674,7 @@
      "id": "7.3",
      "kind": "theorem",
      "name": "Prestack.QCoh.discreteQuotient",
-     "statement": "For a u-small discrete group Gamma acting on X through B Gamma -> PreStk_T, QCoh(X/Gamma) = QCoh(X)^{h Gamma} (limit over B Gamma), X/Gamma is the realization of the constant group action, and QCoh([X/Gamma]) = QCoh(X/Gamma); no finiteness of Gamma.",
+     "statement": "For a u-small discrete group Gamma acting on X through B Gamma -> PreStk_T, QCoh(X/Gamma) = QCoh(X)^{h Gamma} (limit over B Gamma), X/Gamma is the realization of the constant group action, and QCoh([X/Gamma]) = QCoh(X/Gamma); no finiteness of Gamma. For Gamma = Z^d acting on Spec C through ring automorphisms this is HabiroCohomologyFoundations 1.27 (QCoh([Spec C/Z^d]) = D(C)^{h Z^d}), whose heart, vector bundles and perfect complexes are its 1.28; the statement extends 1.27 to every discrete group and prestack and agrees with it on the lattice.",
      "hypotheses": [
       "Gamma a u-small discrete group"
      ],
@@ -1647,7 +1687,9 @@
       "target:3.3",
       "target:7.1",
       "roadmap:EnhancedDerivedSheaves E5:presentability.3",
-      "mathlib:groupCohomology"
+      "mathlib:groupCohomology",
+      "roadmap:HabiroCohomologyFoundations §1.27",
+      "roadmap:HabiroCohomologyFoundations §1.28"
      ],
      "api": [
       {
@@ -1675,7 +1717,7 @@
       {
        "name": "lattice",
        "kind": "computation",
-       "statement": "For Z^d acting on Spec C through ring automorphisms QCoh = D(C)^{h Z^d}; d = 0 gives D(C)."
+       "statement": "For Z^d acting on Spec C through ring automorphisms QCoh = D(C)^{h Z^d}; d = 0 gives D(C). This is the case of HabiroCohomologyFoundations 1.27."
       }
      ]
     },
@@ -1683,7 +1725,7 @@
      "id": "7.4",
      "kind": "theorem",
      "name": "Prestack.QCoh.quotientStack",
-     "statement": "For G flat affine over k acting on a k-scheme X and [X/G] = actionQuotient: (a) QCoh([X/G]^natural) = lim Dqc(G^n x X); (b) heart = Stacks.QCoh([X/G]) = G-equivariant quasi-coherent sheaves; (c) for X = Spec k, O(G)-comodules; (d) if [X/G] is quasi-compact with affine diagonal, D^+(heart) -> QCoh^+ is an equivalence.",
+     "statement": "For G flat affine over k acting on a k-scheme X and [X/G] = actionQuotient: (a) G is a group prestack over Spec k through h (7.1), and QCoh([X/G]^natural) = lim Dqc(G^{x_k n} x_k X) for the relative bar construction; (b) heart = Stacks.QCoh([X/G]) = G-equivariant quasi-coherent sheaves; (c) for X = Spec k, O(G)-comodules; (d) if [X/G] is quasi-compact with affine diagonal, D^+(heart) -> QCoh^+ is an equivalence.",
      "hypotheses": [
       "k a commutative ring",
       "G flat affine group scheme over k",
@@ -1702,13 +1744,14 @@
       "roadmap:SchemeAndStackFoundations §1.21",
       "roadmap:SchemeAndStackFoundations §1.22",
       "roadmap:EnhancedDerivedSheaves E1.3",
-      "roadmap:HigherToposTheory L9.4"
+      "roadmap:DerivedInfinityCategories §5.5.2",
+      "target:7.1"
      ],
      "api": [
       {
        "name": "presentation",
        "role": "evaluation",
-       "statement": "QCoh([X/G]^natural) = lim Dqc(G^n x X)."
+       "statement": "QCoh([X/G]^natural) = lim Dqc(G^{x_k n} x_k X), the realization being taken over Spec k."
       },
       {
        "name": "heart",
@@ -1725,7 +1768,7 @@
       {
        "name": "trivial_group",
        "kind": "degenerate",
-       "statement": "[X/1] = X and (a) is 5.3."
+       "statement": "For the trivial group G = Spec k, [X/1]^natural = h_X (2.5), the relative bar construction is constant with value h_X, and (a) is 5.3."
       },
       {
        "name": "BGm_Z",
@@ -1802,7 +1845,7 @@
      "id": "8.2",
      "kind": "definition",
      "name": "Prestack.IsPerfectStack",
-     "statement": "X is perfect if it has affine diagonal and QCoh(X) = Ind(Perf(X)); equivalently QCoh(X) compactly generated with compact = dualizable; then O_X is compact.",
+     "statement": "X is perfect if it has affine diagonal and QCoh(X) = Ind(Perf(X)); equivalently QCoh(X) compactly generated with compact = dualizable; then O_X is compact, so the space-valued Map(O_X, -) commutes with filtered colimits and the derived global sections RGamma(X, -) = q_* : QCoh(X) -> D_infty(Z) (right adjoint of pullback along q : X -> Spec Z) preserve small colimits, with Map(O_X, F) = Omega^infty RGamma(X, F).",
      "hypotheses": [
       "X has affine diagonal"
      ],
@@ -1815,7 +1858,9 @@
       "target:3.3",
       "target:6.3",
       "roadmap:EnhancedDerivedSheaves E5:presentability.1",
-      "roadmap:EnhancedDerivedSheaves E5:abstract.4"
+      "roadmap:EnhancedDerivedSheaves E5:abstract.4",
+      "roadmap:EnhancedDerivedSheaves E3.2",
+      "roadmap:EnhancedDerivedSheaves E3.3"
      ],
      "api": [
       {
@@ -1826,7 +1871,7 @@
       {
        "name": "unit_compact",
        "role": "structure",
-       "statement": "On a perfect stack O_X is compact and global sections commute with colimits."
+       "statement": "On a perfect stack O_X is compact; RGamma(X, -) = q_* is exact and preserves coproducts (q^* sends the compact generator Z to O_X; EnhancedDerivedSheaves rightAdjoint_preservesCoproducts_iff), hence all small colimits (exact_preservesColimits_iff_coproducts); the space-valued Map(O_X, -) = Omega^infty q_* preserves filtered colimits only."
       },
       {
        "name": "invariance",
@@ -1843,12 +1888,17 @@
       {
        "name": "BGm",
        "kind": "computation",
-       "statement": "BG_m over any ring is perfect: characters generate and dualizable = compact = finitely many perfect weights."
+       "statement": "BG_m over any ring R is perfect: characters O(n) generate; the Mod_R-valued mapping object M |-> M_n (weight-n part) preserves colimits, so Map(O(n), -) = Omega^infty (-)_n commutes with filtered colimits and O(n) is compact; dualizable = compact = finitely many perfect weights."
       },
       {
        "name": "non_qc",
        "kind": "non-example",
        "statement": "The coproduct of countably many Spec Z is not perfect: O dualizable not compact."
+      },
+      {
+       "name": "mapping_space_vs_RGamma",
+       "kind": "non-example",
+       "statement": "On Spec F_2, Map(O, 0 + 0) is a point while Map(O, 0) u Map(O, 0) has two points: the space-valued global sections do not preserve finite coproducts although O is compact; RGamma gives 0 + 0 = 0 on both sides."
       }
      ]
     },
@@ -1900,6 +1950,11 @@
        "name": "products",
        "role": "structure",
        "statement": "Animated, E-infinity: X_1 x X_2 is perfect (pointwise pushforward along the projection, external products of compact objects generate), and X_1 x_Y X_2 is affine over it. Classical: X_1 x_Y X_2 -> X_2 is a base change of X_1 -> Y; apply (a) or (b)."
+      },
+      {
+       "name": "derived_pushforward_point",
+       "role": "structure",
+       "statement": "In (d), for a point U = Spec A of X_1 with U x X_2 perfect, the pushforward along U x X_2 -> U is a functor to Mod_A (A-linear derived global sections), exact and coproduct-preserving because the pullback sends the compact generator A to the compact unit, hence colimit-preserving, with the projection formula."
       }
      ],
      "tests": [
@@ -1951,13 +2006,16 @@
       "roadmap:ReductiveGroups Layer 1",
       "roadmap:ReductiveGroups Layer 6",
       "roadmap:SchemeAndStackFoundations §1.1",
-      "gap:chevalley-quasiprojective-quotient"
+      "gap:chevalley-quasiprojective-quotient",
+      "target:6.3",
+      "target:8.2",
+      "roadmap:EnhancedDerivedSheaves E5:presentability.1"
      ],
      "api": [
       {
        "name": "BGLn",
        "role": "structure",
-       "statement": "BGL_n is perfect in characteristic zero."
+       "statement": "BGL_n is perfect in characteristic zero: derived invariants are t-exact, so pi_0 Map(V[i], M) = Hom(V, pi_i M) for finite-dimensional V in degree zero and all i (a statement about pi_0 only); these V are compact and dualizable and generate; the compact = dualizable objects are their stable retract-closed span, the objects with finitely many nonzero pi_i, each finite-dimensional, including shifts such as O[1]."
       },
       {
        "name": "BG",
@@ -1980,6 +2038,11 @@
        "name": "char_p",
        "kind": "non-example",
        "statement": "B(Z/p) over F_p is not perfect (8.5)."
+      },
+      {
+       "name": "shifted_unit_BGL1",
+       "kind": "non-example",
+       "statement": "On BGL_1 = BG_m over Q, O[1] is invertible with inverse O[-1] and atlas pullback pi_1 = Q, pi_0 = 0, so compact dualizable objects are not only representations in degree zero; Map(Q, O[1]) = K(Q,1) has pi_0 = 0 = Hom(Q, pi_0 O[1]) and pi_1 = Q."
       }
      ]
     },
@@ -1987,9 +2050,9 @@
      "id": "8.5",
      "kind": "example",
      "name": "Prestack.QCoh.notCompact_charP",
-     "statement": "For G = Z/p over F_p, O_{BG} is dualizable and not compact, so BG is not perfect; more generally on B Gamma x Spec k with char k dividing |Gamma|, O is not compact.",
+     "statement": "For G = Z/p over F_p, O_{BG} is dualizable and not compact, so BG is not perfect; more generally on B Gamma x Spec k for a finite group Gamma and a field k of characteristic p dividing |Gamma|, O is dualizable and not compact. Route: an element of order p (Cauchy) generates C; V = Coind_C^Gamma k has H^i(Gamma; V) = H^i(C; k) = k for all i >= 0 (Shapiro and the cyclic computation), and pi_0 Map(O, V[i]) = H^i(Gamma; V); then pi_0 Map(O, (+)_i V[i]) = prod_i k, not the sum.",
      "hypotheses": [
-      "Gamma finite, char k divides |Gamma|"
+      "Gamma finite, k a field of characteristic p dividing |Gamma|"
      ],
      "locator": {
       "source": "HR-perf",
@@ -1999,25 +2062,47 @@
       "target:3.3",
       "target:6.3",
       "target:8.2",
-      "mathlib:groupCohomology"
+      "mathlib:groupCohomology",
+      "target:2.2",
+      "roadmap:EnhancedDerivedSheaves E5:presentability.3",
+      "mathlib:Rep.coind",
+      "mathlib:groupCohomology.coindIso",
+      "mathlib:Rep.FiniteCyclicGroup.groupCohomologyIsoEven",
+      "mathlib:Rep.FiniteCyclicGroup.groupCohomologyIsoOdd",
+      "mathlib:exists_prime_orderOf_dvd_card"
      ],
      "api": [
       {
+       "name": "mapping_groupCohomology",
+       "role": "evaluation",
+       "statement": "For a k-linear representation V of a finite group Gamma (Mathlib Rep k Gamma) in the heart of Fun(B Gamma, Mod_k), pi_0 Map(O, V[i]) = H^i(Gamma; V) (Mathlib groupCohomology), Map(O, V[i]) being Omega^infty of V^{h Gamma}[i] (2.2) and the cohomology of V^{h Gamma} being group cohomology (EnhancedDerivedSheaves E5:presentability.3 continuousDerivedInvariants)."
+      },
+      {
+       "name": "coinduced_witness",
+       "role": "evaluation",
+       "statement": "With g of order p (exists_prime_orderOf_dvd_card), C = <g> and V = Coind_C^Gamma k (Rep.coind), H^i(Gamma; V) = H^i(C; k) = k for every i >= 0 by groupCohomology.coindIso and Rep.FiniteCyclicGroup.groupCohomologyIsoEven/Odd (maps g - 1 = 0 and norm p = 0)."
+      },
+      {
        "name": "product_vs_sum",
        "role": "evaluation",
-       "statement": "pi_0 Map(O, (+)_i O[i]) = prod_i H^i(Gamma; k), strictly larger than the sum."
+       "statement": "In Fun(B Gamma, Mod_k), (+)_{i>=0} V[i] = prod_{i>=0} V[i], so pi_0 Map(O, (+)_i V[i]) = prod_i k, while compactness of O would give the sum (+)_i k."
       }
      ],
      "tests": [
       {
        "name": "trivial_group",
        "kind": "degenerate",
-       "statement": "For trivial Gamma, O is compact."
+       "statement": "For trivial Gamma, O is compact: H^i = 0 for i > 0, and there is no element of order p."
       },
       {
        "name": "Zp_Fp",
        "kind": "computation",
        "statement": "H^i(Z/p; F_p) = F_p for all i >= 0, so the comparison sum -> product is not surjective."
+      },
+      {
+       "name": "S3_F3",
+       "kind": "computation",
+       "statement": "For Gamma = S_3 over F_3, H^1(S_3; F_3) = Hom(S_3, F_3) = 0 and H^2(S_3; F_3) = 0 (the C_2 = S_3/C_3 action on H^2(C_3; F_3) = F_3 is -1), but V = Coind_{C_3}^{S_3} F_3, two-dimensional, has H^i(S_3; V) = F_3 for every i, so the comparison (+)_i F_3 -> prod_i F_3 is not surjective."
       },
       {
        "name": "Zp_Q",
@@ -2093,44 +2178,105 @@
    "what": "Faithful representations of affine group schemes; complete reducibility in characteristic zero."
   },
   {
-   "roadmap": "HigherToposTheory",
+   "roadmap": "PrismaticCohomologyPartII",
    "sections": [
-    "L2.1",
-    "L2.2",
-    "L3.5",
-    "L4.2",
-    "L6.3",
-    "L6.8",
-    "L7.6",
-    "L9.4",
-    "L9.6",
-    "L10.1",
-    "L10.3",
-    "L11.3"
+    "§4.0"
    ],
-   "what": "HTT and HA Chapter 1 statements used in proof routes: fibred groupoids and Kan complexes, Cartesian edges and exponentials, free cocompletion, groupoid objects, localizations, derived infinity-categories, t-structures, infinity-topoi and the statement of Giraud's theorem, descent and effective groupoid objects in infinity-topoi, hypercompleteness of truncated objects and the realizations of hypercoverings."
+   "what": "QCohPrestack on space-valued prestacks over ordinary rings with its point-limit API, QCohPrestack.Perf, Cech descent along faithfully flat ring maps, sheafification invariance and flat affine pushforward, base change and projection formula: the classical context of 2.2-2.4, 3.2-3.3, 4.2 and 6.3."
+  },
+  {
+   "roadmap": "LanglandsParameterStacks",
+   "sections": [
+    "§1.7"
+   ],
+   "what": "Faithfully flat Cech descent of module categories and perfect modules over animated rings: the animated Cech case of 3.2 and 6.3."
+  },
+  {
+   "roadmap": "HabiroCohomologyFoundations",
+   "sections": [
+    "§1.27",
+    "§1.28"
+   ],
+   "what": "The lattice quotient QCoh([Spec C/Z^d]) = D(C)^{h Z^d} and its heart, vector bundles and perfect complexes: the lattice case of 7.3 and 6.3."
+  },
+  {
+   "roadmap": "InfinityCategoryFoundations",
+   "sections": [
+    "§5.1.1"
+   ],
+   "what": "Kan complexes as infinity-categories with groupoid homotopy category (HTT 1.2.5.1), for 2.5."
+  },
+  {
+   "roadmap": "CartesianFibrations",
+   "sections": [
+    "§1.3.1",
+    "§2.1.1",
+    "§2.2.1",
+    "§5.5.3"
+   ],
+   "what": "Cartesian edges over equivalences (HTT 2.4.1.5), nerves of Grothendieck fibrations and right fibrations (HTT 2.4.2.2, 2.4.2.4), exponentials of Cartesian fibrations (HTT 3.1.2.1); for 1.5 and 2.5."
+  },
+  {
+   "roadmap": "PresheavesAndCompletions",
+   "sections": [
+    "§1.4.3"
+   ],
+   "what": "Presheaf infinity-categories as free cocompletions (HTT 5.1.5.6), for 2.3 and 3.1."
+  },
+  {
+   "roadmap": "LimitsAndKanExtensions",
+   "sections": [
+    "§9.1.2"
+   ],
+   "what": "Groupoid objects (HTT 6.1.2.6-6.1.2.7), for 7.1."
+  },
+  {
+   "roadmap": "PresentableInfinityCategories",
+   "sections": [
+    "§4.4.2"
+   ],
+   "what": "Universal property of localization at a small set (HTT 5.5.4.20), for 3.1."
+  },
+  {
+   "roadmap": "DerivedInfinityCategories",
+   "sections": [
+    "§5.5.2"
+   ],
+   "what": "Universal property of D^-(A) (HA 1.3.3.2), in dual form for D^+ in 7.4."
+  },
+  {
+   "roadmap": "StableInfinityCategories",
+   "sections": [
+    "§11.1.1",
+    "§11.3.2"
+   ],
+   "what": "t-structures generated by colimit- and extension-closed presentable subcategories (HA 1.4.4.11), for 1.3 and 6.2; the t-structure on Sp, named in Scope."
+  },
+  {
+   "roadmap": "InfinityTopoi",
+   "sections": [
+    "§3.1.2",
+    "§3.3.2",
+    "§3.5.1",
+    "§4.4.1"
+   ],
+   "what": "Infinity-topoi, descent and effective groupoid objects, Giraud's theorem (HTT 6.1.0.6, 6.1.3.10, 6.1.3.19), for 7.1."
+  },
+  {
+   "roadmap": "HypercompletenessAndCoherence",
+   "sections": [
+    "§2.4.1",
+    "§2.5.1",
+    "§2.5.2",
+    "§6.1.1"
+   ],
+   "what": "Truncated objects are hypercomplete (HTT 6.5.2.9); realizations of hypercoverings and hypercompletion (HTT 6.5.3.11-6.5.3.13); for 3.2, 3.4 and 7.1."
   }
  ],
  "consumers": [
   {
-   "roadmap": "PrismaticCohomologyPartII",
-   "what": "Section 4.0 imports 2.2-2.3, 3.2-3.3, 4.2 and 6.3."
-  },
-  {
-   "roadmap": "LanglandsParameterStacks",
-   "what": "Section 1.7 imports 3.2; section 1.8 imports 2.2, 6.3 and 7.2."
-  },
-  {
-   "roadmap": "HabiroCohomologyFoundations",
-   "what": "Section 1.27 imports 2.2, 3.3 and 7.3; section 1.28 imports 6.2-6.3."
-  },
-  {
    "roadmap": "AnalyticStacks",
-   "what": "Sections 1.1-1.2 import 2.2, 2.4 and 5.3."
-  },
-  {
-   "roadmap": "AlgebraicModuliForArithmeticGeometry",
-   "what": "Section 7.7 compares spaceDQCoh with QCoh of the functor of points through 3.3 and 5.3."
+   "what": "Sections 1.1-1.2: its D on animated affines and its extension to !-sheaves is the restriction of the animated QCoh of 2.2; 2.4 and 5.3 compare it with the classical theory and with Dqc of schemes."
   }
  ],
  "gaps": [
