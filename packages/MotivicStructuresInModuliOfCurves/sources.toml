@@ -326,7 +326,8 @@ id = "arsie-vistoli"
 authors = "Alessandro Arsie, Angelo Vistoli"
 title = "Stacks of cyclic covers of projective spaces"
 year = 2003
-venue = "Multiple-Valued Logic / An International Journal, Vol. 8, No. 5-6, 591-604, 2002"
+venue = "Compositio Mathematica 140 (2004), no. 3, 647–666"
+doi = "10.1112/S0010437X03000253"
 arxiv = "math/0301008v2"
 locator_scheme = "theorem"
 locator = "Corollary 4.7"
@@ -337,7 +338,7 @@ sha256 = "097ce92485887b931b957823ab6e452627c8f94503c22c85551be34862366262"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
-version_note = "arXiv v2"
+version_note = "arXiv v2; its numbering is the one cited"
 cited_for = ["8.1"]
 
 [[source]]
