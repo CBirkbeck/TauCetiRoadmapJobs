@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ProetaleCohomologyOfPAdicCurvesAndTowers~3",
+  "head": "adac797c3c255d06b2db1d9d2b3d47c0b99f469f",
+  "pr": 2287,
+  "folder": "ProetaleCohomologyOfPAdicCurvesAndTowers",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full review. Two P3 findings: R01 README lines 117 and 835 cite a supplier declaration name `Semistable.aOmega` that exists in no roadmap (AInfCohomology §AI.6.2 names the target 'Semistable AΩ complex'); R02 the pull request description says Suggested.lean states one headline (irreducibility) while the head states four theorems. Previous review had no findings; D01 resolved (the board plan's gaps list now has completed-semistable-ring-general-K). Checked: all 15 seeded targets against the source texts (100 locators in CDN-CURVES, CDN-STEIN, CDN20, CDN23, CDN-DUKE, GK14, GK05, GK05-RT, DAT06; none wrong); 34 pinned Mathlib and Tau Ceti declarations at their stated lines; 126 cross-roadmap section ids in 30 roadmaps; the 4 declared gaps; adversarial table of 26 rows with computed values. Gate passes on every check; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with four sorry warnings only; #check of all 10 declarations agrees with the README; one-tactic probe closes none of the four sorried theorems. Uncertified sources (SS91, IS01, DS01, NAK84, KM74, BW00) not read.",
+  "text": "53392eaa72d55278",
+  "carried": {
+   "from": "adac797c3c255d06b2db1d9d2b3d47c0b99f469f",
+   "head": "854686f62cbf2506f9f269c4d44955f7b771f8cf",
+   "findings": 2,
+   "lines": 4,
+   "folders": [
+    "ProetaleCohomologyOfPAdicCurvesAndTowers"
+   ]
+  }
+ }
+}
