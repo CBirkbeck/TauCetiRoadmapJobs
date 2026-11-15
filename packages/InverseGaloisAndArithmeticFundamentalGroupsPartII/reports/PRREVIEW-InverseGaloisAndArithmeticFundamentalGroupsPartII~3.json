@@ -1,0 +1,32 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-InverseGaloisAndArithmeticFundamentalGroupsPartII~3",
+  "head": "1a552d040d9cba5271d60841aabee31af4fc35d3",
+  "pr": 2263,
+  "folder": "InverseGaloisAndArithmeticFundamentalGroupsPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 64 changed lines since 5b96805 (README Layer 1 only: five retitled group headings with consumer sentences, eleven targets turned into bold run-in titles, one reworded sentence). Checked: every consumer claim of the five group paragraphs against the Needs lines; seven adversarial rows with computed values; EVW16 locators for the sampled targets in changed passages (lines 700, 726-740, 815-832); title and description against the head (no contradiction); gate passes; depcheck 0 problems; Suggested.lean elaborates with sorry the only warning. One P3 finding: the eleven demoted targets leave the target list (46 targets at 5b96805, 35 at this head) and five heading ids now name groups; repair tested (46 again). The previous review had no open finding.",
+  "text": "1a854c6ee09889d2",
+  "carried": {
+   "from": "1a552d040d9cba5271d60841aabee31af4fc35d3",
+   "head": "ec8fcaccf14256842d6b597c923e29df5baf8eda",
+   "findings": 1,
+   "lines": 72,
+   "folders": [
+    "InverseGaloisAndArithmeticFundamentalGroupsPartII"
+   ]
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "Gap wording (the review gives this item no F number): the `needs` text of the `gaps` entry `geomtop-marked-disc-diffeomorphisms` in `packages/InverseGaloisAndArithmeticFundamentalGroupsPartII/design/p",
+    "where": "the board plan's gap entry geomtop-marked-disc-diffeomorphisms needs rewording",
+    "raised": "PRREVIEW-InverseGaloisAndArithmeticFundamentalGroupsPartII~3"
+   }
+  ]
+ }
+}
