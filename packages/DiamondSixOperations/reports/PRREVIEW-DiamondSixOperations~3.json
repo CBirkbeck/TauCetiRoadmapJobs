@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DiamondSixOperations~3",
+  "head": "5c71e4e3d71008689a686bd77c2dd5a51a07c8b6",
+  "pr": 927,
+  "folder": "DiamondSixOperations",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 27 changed lines since f893965. Previous R01-R04 all repaired, no new problem from the repairs. Changed passages (j_* exactness reduction and 3·dim.trg proof route, T=∅ Check, reworded direct-sum criterion and non-free quotients, Huber 5.5.8 locator, renamed layers S4/S5 and their anchors, dropped LZ14) checked against ECD arXiv v4 (22.5, 21.13-21.14, 23.7, 24.3) and DiamondEtaleCohomology §§C0.19, C8.16, C8.21, C8.22 at its open head; 7 adversarial rows with computed values. Pull request title and description read against the head: one P3 (the description says the Lean states definitions and theorems; Suggested.lean declares nothing and the description does not say so). Gate re-run: all scanners and depcheck pass (245 roadmaps, 0 problems). Build not run: the worktree's .lake/packages link is dangling on this worker (lake error 17), an environment fault, not counted as a finding; Suggested.lean and the manifest are unchanged since f893965, where it elaborated with exit 0.",
+  "text": "b6a4e84813925bae",
+  "carried": {
+   "from": "5c71e4e3d71008689a686bd77c2dd5a51a07c8b6",
+   "head": "a795f1d2c5053d618d67a9d577f74d3cd5c328a0",
+   "findings": 1,
+   "lines": 11,
+   "folders": [
+    "DiamondSixOperations"
+   ],
+   "outside": true
+  }
+ }
+}
