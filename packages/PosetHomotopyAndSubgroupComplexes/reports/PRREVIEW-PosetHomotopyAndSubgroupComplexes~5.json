@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PosetHomotopyAndSubgroupComplexes~5",
+  "head": "2961439ed724ebc6527a9532b8d917b606b0d353",
+  "pr": 2296,
+  "folder": "PosetHomotopyAndSubgroupComplexes",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 3e08670; this round read the pull request's title and description against the head: one sentence (Quillen's conjecture 'appears only in Research context') is contradicted by README 4.6 (P3, repair is in the description only). Gate passes on every check; Suggested.lean elaborates with 20 sorry warnings only; depcheck 0 problems; 5 cross-roadmap citations resolved at main and at the open heads of HomotopyTheoryOfCategories and OddOrderTheorem; nothing changed outside the folder; overlap read against 5 closest roadmaps incl. FinitenessAndDualityOfGroups, nothing shared; adversarial rows computed for 4.5, 4.6, 4.7; no source locator changed, none re-read.",
+  "text": "67e100a851833a46"
+ }
+}
