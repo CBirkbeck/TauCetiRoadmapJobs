@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OrdinaryAutomorphicFormsAndModularityLifting~7",
+  "head": "e9064128ace433fe5be1724c3ef88a2b1584ef7c",
+  "pr": 1066,
+  "folder": "OrdinaryAutomorphicFormsAndModularityLifting",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 27 changed lines since e2406a3: both previous findings (R01, R02, in the description) repaired; the changed passages checked (pins against lake-manifest.json; TauCeti.Ring.IsCohenMacaulay, its local criterion and Module.IsCohenMacaulay opened at the pin; the two restated §4.3 theorems instantiated on k[[x,y]], k[[x,y,z]] and negative controls; Noetherianity recovered from the class in a probe copy); title and description checked against the head and against the citing heads of GL2ModularityLifting and PotentialModularityAndCompatibleSystems; gate rerun OK; depcheck 0 problems; lake env lean on Suggested.lean gives four sorry warnings and no error; no change outside the folder. Sampled target in the diff: §4.3 only, its SW99 locators untouched and not re-read.",
+  "text": "5b1dbebf6ae5eb11"
+ }
+}
