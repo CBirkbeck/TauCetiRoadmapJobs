@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SemisimpleAlgebras~13",
+  "head": "7a39a1dd6951153a08a8c24c58493721a149fe6f",
+  "pr": 989,
+  "folder": "RepresentationTheory/SemisimpleAlgebras",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 7a39a1d. Previous R01 and R02 (description) repaired. Title and description checked sentence by sentence against the head and main: no contradiction; rewrite, Layer 1.5 -> §1.3, removed sections, 22 removed declarations (17 + 5, all pinned) and Tau Ceti as supplier stated. Stacks Theorem 6.1 (074Q) locator checked; 19 pinned declarations opened; adversarial rows for §1.1, §5.1 against the pinned TauCeti.skolemNoether, the pinned simple-subalgebra centralizer theorems, and the five other removed declarations. Gate OK (all counts 0), depcheck 0 problems, lake env lean: only the sorry warning. Remark for the humans: CharacterTheory on main (README lines 222, 355) cites the removed blocks_equiv_simpleModules with no mapping.",
+  "text": "820668cbd9e9f89c"
+ }
+}
