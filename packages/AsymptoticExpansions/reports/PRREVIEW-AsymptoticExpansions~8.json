@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AsymptoticExpansions~8",
+  "head": "3d73056ecbb2af64bae4628270fe10b7c183b7b9",
+  "pr": 2113,
+  "folder": "AsymptoticExpansions",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 3d73056; no previous findings; title and quoted description checked against both base-to-head README corrections, with computed cosine-sign and Mellin-pole witnesses; no seeded sample targets changed; supplier citations and overlap scopes checked; gate, targeted build and standalone Lean elaboration passed (39 sorry warnings only).",
+  "text": "67002702c93eb699"
+ }
+}
