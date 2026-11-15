@@ -209,7 +209,7 @@ ClassicalErgodicTheory Conventions (Bowen balls), §§5.3, 8.5; Mathlib's topolo
 
 ### 2.1 Topological mixing of flows
 
-ClassicalErgodicTheory §5.2 defines topological mixing of a map (`IsTopologicallyMixing`). Define a continuous flow g to be topologically mixing when for all nonempty open U, V there is t₀ with g^t(U) ∩ V nonempty for every t ≥ t₀ (BowenRuelle1975, line 165, footnote 2; BCS2022, lines 43–44).
+ClassicalErgodicTheory §5.2 defines topological mixing of a map (`IsTopologicallyMixing`). Define a continuous flow g to be topologically mixing when for all nonempty open U, V there is t₀ with g^t(U) ∩ V nonempty for every t ≥ t₀ (the continuous-time form of the notion for homeomorphisms of BowenRuelle1975, line 165, footnote 2, and for diffeomorphisms of BCS2022, lines 43–44; it is the hypothesis on Anosov flows in TsujiiZhang2023, Theorem 1.1, line 125, and Theorem 1.2, line 156).
 
 Its API:
 
@@ -279,7 +279,7 @@ Layer 1; ArithmeticDynamics §2.7; GeometryOfNumbersAndQuadraticArithmetic §4.2
 
 ### 4.1 Time-t maps, rescaling and flow coboundaries
 
-Prove, for a continuous flow g on a compact metric space with h_top(g) < ∞ and a continuous F (BowenRuelle1975, lines 190–192 for t = 1, lines 213–219 and 409–413; TsujiiZhang2023, lines 106–109):
+Prove, for a continuous flow g on a compact metric space with h_top(g) < ∞ and a continuous F (BowenRuelle1975, lines 190–199, for the time-one map: P_g(F) = P_{g^1}(F_1), ∫F dμ = ∫F_1 dμ for μ ∈ M(g), and P_g(F) as the supremum of the free energy over M(g); Remark 4.5, lines 409–413, for the rescaling of time):
 
 - for t > 0, P_{g^t}(F_t) = t P_g(F), that is `topologicalPressure` (g t) F_t = t · `flowTopologicalPressure` g F; equivalently, for the rescaled flow g_a(s) = g(as) with a > 0, P_{g_a}(aF) = a P_g(F);
 - for t > 0 and μ ∈ M(g), μ ∈ ES_g(F) iff μ is an equilibrium state of F_t for the map g^t (`IsEquilibriumState` (g t) F_t μ); ClassicalErgodicTheory §8.1 proves the case t = 1;
@@ -996,7 +996,7 @@ Layers 1 and 4–10; ClassicalErgodicTheory §§3.4, 5.5, 8.2; ProbabilisticAndM
 - **Smale1967** — S. Smale, *Differentiable dynamical systems*, Bull. Amer. Math. Soc. 73 (1967), 747–817. Part I, Section 1.3.
 - **ClimenhagaPesin2016** — V. Climenhaga, Ya. Pesin, *Hadamard–Perron theorems and effective hyperbolicity*, Ergodic Theory Dynam. Systems (2016), arXiv:1303.2375v1. Theorem 11.1, Remark 11.2.
 - **Buzzi2014** — J. Buzzi, *C^r surface diffeomorphisms with no maximal entropy measure*, Ergodic Theory Dynam. Systems (2014), arXiv:1205.4096v1. Corollary 1.
-- **TsujiiZhang2023** — M. Tsujii, Z. Zhang, *Smooth mixing Anosov flows in dimension three are exponentially mixing*, Ann. of Math. 197 (2023), arXiv:2006.04293v1. Theorem 1.1, Definition 3.5.
+- **TsujiiZhang2023** — M. Tsujii, Z. Zhang, *Smooth mixing Anosov flows in dimension three are exponentially mixing*, Ann. of Math. 197 (2023), arXiv:2006.04293v1. Theorems 1.1 and 1.2, Definition 3.5.
 - **BCS2022** — J. Buzzi, S. Crovisier, O. Sarig, *Measures of maximal entropy for surface diffeomorphisms*, Ann. of Math. 195 (2022), arXiv:1811.02240v2. Topological mixing (lines 43–44), Main Theorem, Corollaries 1.4–1.6.
 - **Walters1982** — P. Walters, *An Introduction to Ergodic Theory*, GTM 79 (cited by locator). Theorem 8.2.
 - **Bowen1975** — R. Bowen, *Equilibrium States and the Ergodic Theory of Anosov Diffeomorphisms*, LNM 470, 2nd ed. 2008 (cited by locator). Chapters 1, 3, 4.

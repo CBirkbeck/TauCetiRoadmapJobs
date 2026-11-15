@@ -74,7 +74,7 @@ title = "Smooth mixing Anosov flows in dimension three are exponential mixing"
 year = 2020
 arxiv = "2006.04293v1"
 locator_scheme = "theorem"
-locator = "Theorem 1.1; Definition 3.5"
+locator = "Theorem 1.1; Theorem 1.2; Definition 3.5"
 url = "https://arxiv.org/abs/2006.04293v1"
 fetched_from = "https://arxiv.org/pdf/2006.04293v1"
 fetched_at = "2026-11-04T22:01:14Z"
@@ -83,7 +83,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 version_note = "arXiv v1"
-cited_for = ["4.1", "10.3", "Downstream consumers"]
+cited_for = ["2.1", "10.3", "Downstream consumers"]
 
 [[source]]
 id = "FH2019"

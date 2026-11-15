@@ -215,7 +215,7 @@
      ],
      "locator": {
       "source": "BowenRuelle1975",
-      "where": "line 165, footnote 2; BCS2022 lines 43-44"
+      "where": "line 165, footnote 2 (homeomorphisms); BCS2022 lines 43-44 (diffeomorphisms); TsujiiZhang2023 lines 125, 156 (flows)"
      },
      "prerequisites": [
       "roadmap:ClassicalErgodicTheory §5.2",
@@ -393,7 +393,7 @@
      ],
      "locator": {
       "source": "BowenRuelle1975",
-      "where": "lines 190-192 (t = 1), 213-219 and 409-413; TsujiiZhang2023 lines 106-109"
+      "where": "lines 190-199 (t = 1); Remark 4.5, lines 409-413 (rescaling)"
      },
      "prerequisites": [
       "roadmap:ClassicalErgodicTheory §5.4",
