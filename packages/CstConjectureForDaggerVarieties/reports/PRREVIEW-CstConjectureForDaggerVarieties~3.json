@@ -1,0 +1,33 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CstConjectureForDaggerVarieties~3",
+  "head": "cb613f0106c334864629967e664662c2cf628588",
+  "pr": 1759,
+  "folder": "CstConjectureForDaggerVarieties",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 126 changed lines since 3ed5d07, and first check of the pull request's title and description. Checked: the 9 new group introductions (14 consumer claims against the Needs lines and proof routes), survival of all 45 target numbers after 19 headings became bold run-ins, the only outside citations (of §1.5, unchanged), the repaired supplier sentence at README line 82, the six renamed docstring bullets; 10 CN25 locators in the regrouped sample sections against the cached text; the 12 VectorBundlesAndIsocrystalsPartII sections at its open head; three Mathlib declarations named by the description at the pin; gate rerun OK; depcheck 244 roadmaps, 2229 edges, 0 problems, no UPWARD/CYCLE; lake env lean exit 0 with no output (no declarations); outside-folder diff empty. Two P3 findings: the description says the Lean states definitions and theorems and builds with a sorry warning, while Suggested.lean declares nothing; six docstring bullets now carry a group heading instead of the theorem whose missing carriers they list. Previous R02 repaired; previous R01 (board plan.json gap suppliers lag the README) not repaired, lies outside the pull request and is passed to the human reviewers rather than carried as a finding.",
+  "text": "768b868d32183964",
+  "carried": {
+   "from": "cb613f0106c334864629967e664662c2cf628588",
+   "head": "af57e66db65149ce38372e8bfd20b6d85224f598",
+   "findings": 2,
+   "lines": 20,
+   "folders": [
+    "CstConjectureForDaggerVarieties"
+   ],
+   "outside": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "R01: in `packages/CstConjectureForDaggerVarieties/design/plan.json` the gap entries `qbc-pairs` and `natural-period-hom` must name VectorBundlesAndIsocrystalsPartII as supplier, with the needs the REA",
+    "where": "board plan.json, supplier and needs of gaps qbc-pairs and natural-period-hom",
+    "raised": "PRREVIEW-CstConjectureForDaggerVarieties~3"
+   }
+  ]
+ }
+}
