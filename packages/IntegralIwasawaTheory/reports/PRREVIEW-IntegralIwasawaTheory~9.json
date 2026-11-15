@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IntegralIwasawaTheory~9",
+  "head": "eaaddd44c0df76a2805477ab11200a7f00b46387",
+  "pr": 1306,
+  "folder": "IntegralIwasawaTheory",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since eaaddd4. Checked the pull request's title and description against the head: two P3 findings, both in the description (it counts three consumers where the README names eight; it omits the roadmap's own p-adic Baker-Brumer proof and says all headlines are on class-group carriers). Gate rerun: every check 0, OK. Elaboration of Suggested.lean: exit 0, six sorry warnings only. Dependency check: 245 roadmaps, 2211 edges, 0 problems. No file changed outside the folder. Adversarial rows computed for bakerBrumer_expDisc, classNumberGrowth, ferreroWashington and the description's supplier claims. Seeded sample: no changed passage, no source reopened. For the humans: LinearFormsInLogarithms on main states the same p-adic Baker theorem (its 8.10).",
+  "text": "5db56472364dc25d",
+  "carried": {
+   "from": "eaaddd44c0df76a2805477ab11200a7f00b46387",
+   "head": "72d834e57f58ddc3937645876087e2f4cd210042",
+   "findings": 2,
+   "lines": 8,
+   "folders": [
+    "IntegralIwasawaTheory"
+   ]
+  }
+ }
+}
