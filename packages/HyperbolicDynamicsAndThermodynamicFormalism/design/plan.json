@@ -15,8 +15,8 @@
     {
      "id": "1.1",
      "kind": "definition",
-     "name": "Dynamics.bowenBall",
-     "statement": "For a map T of a pseudometric space, d_n(x,y) = max_{0<=k<n} d(T^k x, T^k y) (0 for n = 0) and, for eps > 0, B_n(x,eps) is the open d_n-ball; for a flow g and real t >= 0, d_t(x,y) = sup_{0<=s<=t} d(g^s x, g^s y) (so d_0 = d) and B_t(x,eps) is the open d_t-ball.",
+     "name": "Dynamics.dynDist",
+     "statement": "For a map T of a pseudometric space, d_n(x,y) = max_{0<=k<n} d(T^k x, T^k y) (0 for n = 0); for a flow g and real t >= 0, d_t(x,y) = sup_{0<=s<=t} d(g^s x, g^s y) (so d_0 = d). The Bowen balls B_n(x,eps) = {y | for all k < n, d(T^k x, T^k y) < eps} and B_t(x,eps) = {y | for all s in [0,t], d(g^s x, g^s y) < eps} are ClassicalErgodicTheory's (Conventions); for eps > 0 they are the open d_n- and d_t-balls (finite maximum for maps; for flows the supremum over the compact [0,t] of the continuous s -> d(g^s x, g^s y) is attained).",
      "hypotheses": [
       "X a pseudometric space",
       "T : X -> X, or g : Flow R X",
@@ -24,9 +24,10 @@
      ],
      "locator": {
       "source": "BowenRuelle1975",
-      "where": "lines 163-164 (map separation, k in [0,n]) and lines 99-101 (closed flow balls); ClimenhagaThompson2016 lines 175-177"
+      "where": "lines 163-164 (map separation, k in [0,n]) and lines 99-101 (closed flow balls); ClimenhagaThompson2016 lines 170-175 (d_t with s in [0,t], open and closed balls) and line 945 (separated means d_t > delta)"
      },
      "prerequisites": [
+      "roadmap:ClassicalErgodicTheory Conventions",
       "mathlib:Dynamics.dynEntourage",
       "mathlib:Dynamics.mem_ball_dynEntourage",
       "mathlib:Flow"
@@ -35,7 +36,7 @@
       {
        "name": "bowenBall_eq_ball_dynEntourage",
        "role": "compatibility",
-       "statement": "For eps > 0, B_n(x,eps) is the ball at x of Dynamics.dynEntourage T {d < eps} n; at eps = 0 the metric ball is empty while the entourage ball at n = 0 is univ."
+       "statement": "For eps > 0, ClassicalErgodicTheory's Bowen ball B_n(x,eps) is the open d_n-ball and the ball at x of Dynamics.dynEntourage T {d < eps} n; the flow ball B_t(x,eps) is the open d_t-ball. At eps = 0 the metric ball is empty while the entourage ball at n = 0 is univ."
       },
       {
        "name": "bowenBall_zero",
@@ -1276,15 +1277,16 @@
      "id": "8.1",
      "kind": "theorem",
      "name": "Manifold.hadamardPerron",
-     "statement": "Uniform Hadamard-Perron for sequences f_n = (A_n x + g_n, B_n y + h_n) with |A_n^{-1}| <= mu^{-1}, |B_n| <= lambda, mu > max(1,lambda), small C^1 nonlinearities: unique invariant family of C^1 graphs over E^u with expansion and growth characterisation. Stable family only under further hypotheses: lambda < 1 and each f_n the restriction of a C^1 diffeomorphism F_n of R^d fixing 0 whose inverse has linear parts B_n^{-1}, A_n^{-1} (B_n invertible) and small C^1 nonlinear parts; then graphs over E^s with F_n^{-1}(W^-_{n+1}) cap box = W^-_n.",
+     "statement": "Uniform Hadamard-Perron for sequences (f_n)_{n in Z}, f_n = (A_n x + g_n, B_n y + h_n) on the box B^u(r0) x B^s(r0), with |A_n^{-1}| <= mu^{-1}, |B_n| <= lambda, mu > max(1,lambda), g_n(0) = h_n(0) = 0, small C^1 nonlinearities: unique family (W^+_n)_{n in Z} of C^1 graphs over E^u with (i) f_n(W^+_n) cap box = W^+_{n+1}, (ii) expansion by more than mu' on W^+_n, (iii) if z has points z_L (L >= 0) of the box with z_0 = z, f_{n-L}(z_L) = z_{L-1} and |z_L| < C nu^{-L} |z| for some C > 0 and lambda' < nu < mu', then z in W^+_n (no inverse needed; for invertible f_n these are the backward images of the source). Stable family only under further hypotheses: lambda < 1 and each f_n the restriction of a C^1 diffeomorphism F_n of R^d fixing 0 whose inverse has linear parts B_n^{-1}, A_n^{-1} (B_n invertible) and small C^1 nonlinear parts; then graphs over E^s with F_n^{-1}(W^-_{n+1}) cap box = W^-_n.",
      "hypotheses": [
+      "n ranges over Z",
       "mu > max(1, lambda)",
-      "C^1 norms of g_n, h_n below delta0",
+      "g_n(0) = h_n(0) = 0 and C^1 norms of g_n, h_n below delta0",
       "for the stable family: lambda < 1, f_n restrictions of C^1 diffeomorphisms whose inverses satisfy the corresponding bounds"
      ],
      "locator": {
       "source": "ClimenhagaPesin2016",
-      "where": "Theorem 11.1, lines 1822-1840; Remark 11.2, lines 1841-1843 (stable family via inverses); KatokHasselblatt1995 Theorem 6.2.8"
+      "where": "Theorem 11.1, lines 1822-1840 (stated for n <= 0, with inverses in (iii)); line 1854 (lambda' = lambda + (1 + 1/gamma) delta); Remark 11.2, lines 1841-1843 (stable family via inverses); KatokHasselblatt1995 Theorem 6.2.8"
      },
      "prerequisites": [
       "mathlib:ContractingWith",
@@ -1310,7 +1312,7 @@
       {
        "name": "noninvertible_nonexample",
        "kind": "non-example",
-       "statement": "f_n(x,y) = (2x, 0) satisfies the unstable hypotheses (A = 2, B = 0, mu = 2, lambda = 1/2), has unstable graphs y = 0, collapses vertical lines and receives no stable conclusion."
+       "statement": "f_n(x,y) = (2x, 0) satisfies the unstable hypotheses (A = 2, B = 0, mu = 2, lambda = 1/2), has unstable graphs y = 0, collapses vertical lines and receives no stable conclusion; clause (iii) with backward sequences applies: z = (x,0) has z_L = (2^-L x, 0) with |z_L| = 2^-L |z| < 2 nu^-L |z| for nu < 2, and (x,y) with y != 0 has no z_1 and is off the graph."
       }
      ]
     },
@@ -1366,14 +1368,14 @@
      "id": "8.3",
      "kind": "theorem",
      "name": "Flow.IsHyperbolicSet.localStrongStableManifold",
-     "statement": "For a hyperbolic set of a C^r flow: strong stable plaques (C^r discs tangent to E^s, contraction C' e^{-kappa' t}, sandwiching the strong stable sets W^s_{r/K} in plaque in W^s_{Kr}); weak stable plaques, the images of [-r,r] x strong plaque under (v,y) -> g^v y, whose interiors are C^r submanifolds tangent to E^s + RX (the closed weak plaque has corners); unstable analogues; continuous in x.",
+     "statement": "For a hyperbolic set of a C^r flow: strong stable plaques (C^r discs tangent to E^s, contraction C' e^{-kappa' t}, sandwiching the strong stable sets W^s_{r/K} in plaque in W^s_{Kr}); weak stable plaques, the images of [-r,r] x strong plaque under (v,y) -> g^v y, whose interiors are C^r submanifolds tangent to E^s + RX (the closed weak plaque has corners); unstable analogues; continuous in x. Charts straightening the weak plaques: for small eps and x in Lambda a C^r chart phi_x from the eps-ball of T_xM with phi_x(0) = x, derivative the identity at 0, carrying the eps-ball of E^s_x + RX(x) into the weak stable plaque and that of E^u_x + RX(x) into the weak unstable plaque, with C^1 bounds on phi_x and its inverse uniform in x.",
      "hypotheses": [
       "g C^r flow, r >= 1",
       "Lambda hyperbolic"
      ],
      "locator": {
       "source": "BowenRuelle1975",
-      "where": "lines 96-108; Appendix A.1, lines 643-652; FH2019 Part II"
+      "where": "lines 96-108 (definitions); Appendix A.1, lines 643-652 (charts phi_x); FH2019 Part II"
      },
      "prerequisites": [
       "mathlib:Flow",
@@ -1387,7 +1389,13 @@
       "mathlib:Manifold.riemannianEDist",
       "mathlib:extChartAt"
      ],
-     "api": [],
+     "api": [
+      {
+       "name": "weakPlaqueChart",
+       "role": "constructor",
+       "statement": "For small eps > 0 and x in Lambda, a C^r chart phi_x from the closed eps-ball of T_xM (E^s_x, RX(x), E^u_x orthogonal) to M, a diffeomorphism onto its image, with phi_x(0) = x and D phi_x(0) = id, carrying the eps-ball of E^s_x + RX(x) into W^cs_{r0}(x) and that of E^u_x + RX(x) into W^cu_{r0}(x), C^1 norms of phi_x and its inverse bounded uniformly in x; phi_{g^t x}^{-1} o g^t o phi_x has derivative Dg^t_x at 0. Built from the layer's chart at x and the two shears straightening the weak stable and then the weak unstable plaque."
+      }
+     ],
      "tests": [
       {
        "name": "suspension_discs",
@@ -1403,6 +1411,16 @@
        "name": "convergence_needed",
        "kind": "non-example",
        "statement": "Without convergence the set contains the orbit segment."
+      },
+      {
+       "name": "suspension_chart",
+       "kind": "computation",
+       "statement": "Constant-roof suspension of the cat map: phi_x(sigma,a,b) = [s0 + sigma, w0 + a e_u + b e_v] is linear in the height and eigenline coordinates; with g^1 x represented by [s0, A w0], phi_{g^1 x}^{-1} o g^1 o phi_x = (sigma, a, b) -> (sigma, ((3+sqrt5)/2) a, ((3-sqrt5)/2) b) = Dg^1_x."
+      },
+      {
+       "name": "curved_weak_plaque",
+       "kind": "non-example",
+       "statement": "Flow theta' = 1, u' = u, v' = -v + u^2 on R/Z x R^2: solutions u = u0 e^t, v = u0^2 e^{2t}/3 + c e^{-t}; the periodic orbit u = v = 0 has weak stable manifold {u = 0} and weak unstable manifold {v = u^2/3}. The coordinate chart carries E^u + RX onto {v = 0}, which meets {v = u^2/3} only along u = 0; phi_x(sigma,a,b) = (theta0 + sigma, a, b + a^2/3) straightens both and has derivative the identity at 0."
       }
      ]
     },
@@ -1461,6 +1479,11 @@
        "name": "iterate_shrink",
        "kind": "non-example",
        "statement": "f = diag(2,1/2) on one copy and swapping two other copies by diag(2,1/2): {0_1} is isolated for f by balls around 0_1 and 0_2, but for f^2 the fixed point 0_2 lies in that U; U cap f(U) isolates {0_1} for f^2."
+      },
+      {
+       "name": "two_component_orbit",
+       "kind": "computation",
+       "statement": "In the three-copy example the period-two saddle orbit {c,d} = {0_2, 0_3} is locally maximal; rho(c,d) = top for the Riemannian extended distance, the truncated distance min(1, rho) of the Conventions gives 1, and with it f on {c,d} is the swap of two points of 2.2, a compact metric space with weak specification with tau = 1 below scale 1."
       }
      ]
     },
@@ -2286,6 +2309,7 @@
   {
    "roadmap": "ClassicalErgodicTheory",
    "sections": [
+    "Conventions",
     "§0.3",
     "§1.4",
     "§3.4",
@@ -2305,7 +2329,7 @@
     "§8.4",
     "§8.5"
    ],
-   "what": "invariantProbabilities, flowInvariantProbabilities; open-cover entropy, power and inverse rules, IsTopologicallyMixing; IsExpansive; topologicalPressure, pressureNetSum, flowTopologicalPressure with separated-set form and entropy rescaling; generators and usc for expansive homeomorphisms, Jacobs' formula; measureEntropy_flow (Abramov), measureEntropy_toralEndomorphism, toralEndomorphism and mixing of Haar measure; variational principles; IsEquilibriumState, IsMeasureOfMaximalEntropy, IsFlowEquilibriumState, structure and existence (exists_isEquilibriumState); HasBowenProperty, IsGibbsMeasure, HasSpecification, Bowen's theorem; IsExpansiveFlow, HasFlowBowenProperty, HasFlowSpecification, flow coboundaries"
+   "what": "Bowen balls B_n(x,eps), B_t(x,eps) and separated sets (Conventions); invariantProbabilities, flowInvariantProbabilities; open-cover entropy, power and inverse rules, IsTopologicallyMixing; IsExpansive; topologicalPressure, pressureNetSum, flowTopologicalPressure with separated-set form and entropy rescaling; generators and usc for expansive homeomorphisms, Jacobs' formula; measureEntropy_flow (Abramov), measureEntropy_toralEndomorphism, toralEndomorphism and mixing of Haar measure; variational principles; IsEquilibriumState, IsMeasureOfMaximalEntropy, IsFlowEquilibriumState, structure and existence (exists_isEquilibriumState); HasBowenProperty, IsGibbsMeasure, HasSpecification, Bowen's theorem; IsExpansiveFlow, HasFlowBowenProperty, HasFlowSpecification, flow coboundaries"
   },
   {
    "roadmap": "GeometryOfNumbersAndQuadraticArithmetic",
