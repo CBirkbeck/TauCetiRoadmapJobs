@@ -233,7 +233,7 @@ url = "https://doi.org/10.1007/978-3-642-61798-0"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Exact supplier contracts: PDE §3.2 (C13) strong maximum principle and Aleksandrov–Bakelman–Pucci estimate, §5.4 (E23) weak Harnack inequality (weak-harnack-supersolutions), §5.6 (E25) interior Schauder estimate", "6.5"]
+cited_for = ["Exact supplier contracts: PDE §3.2 (C13) strong maximum principle and Aleksandrov–Bakelman–Pucci estimate, §5.4 (E23) weak Harnack inequality (weak-harnack-supersolutions), §5.6 (E25) interior Schauder estimate", "5.2", "6.5"]
 
 [[source]]
 id = "yau1978"
@@ -315,7 +315,7 @@ title = "Complex Analytic and Differential Geometry"
 year = 2012
 venue = "book manuscript, Institut Fourier, Université de Grenoble I, version of 21 June 2012"
 locator_scheme = "theorem"
-locator = "Proposition 4.22 (Chapter I, §4.B, p. 37): the Green–Riesz representation and the Harnack inequality for subharmonic functions on a disc, the one-variable input of 7.1"
+locator = "Proposition 4.22 (Chapter I, §4.B, p. 37): the Green–Riesz representation and the Harnack inequality for subharmonic functions on a disc, the one-variable input of 7.1; Corollary 6.5 (Chapter VI, §6, p. 306): the Laplacians of a Kähler manifold satisfy Δ = 2Δ'', for 5.1"
 url = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
 fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
 fetched_at = "2026-11-05T14:50:23Z"
@@ -323,4 +323,4 @@ sha256 = "d7c7654a7417e8322e5dcf8fe8ec818b4c1a18cf280b41f2df5a871b776d89a1"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-05"
-cited_for = ["7.1"]
+cited_for = ["5.1", "7.1"]
