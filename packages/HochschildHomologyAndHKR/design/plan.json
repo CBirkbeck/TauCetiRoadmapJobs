@@ -362,7 +362,16 @@
       "target:1.2",
       "target:2.1",
       "mathlib:AlgebraicTopology.DoldKan.homotopyEquivNormalizedMooreComplexAlternatingFaceMapComplex",
-      "mathlib:AlgebraicTopology.DoldKan.degeneraciesVanish_iff_QInfty_f_comp"
+      "mathlib:AlgebraicTopology.DoldKan.degeneraciesVanish_iff_QInfty_f_comp",
+      "tauceti:TauCeti.hochschildCochainComplex",
+      "tauceti:TauCeti.normalizedHochschildCochains",
+      "tauceti:TauCeti.normalizedHochschildCochains_zero",
+      "tauceti:TauCeti.normalizedHochschildCochainComplex",
+      "tauceti:TauCeti.normalizedHochschildCochainComplexι",
+      "tauceti:TauCeti.multilinearCurryFirstEquiv",
+      "tauceti:TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary",
+      "tauceti:TauCeti.DualBimodule.instModule",
+      "tauceti:TauCeti.DualBimodule.instModuleOp"
      ],
      "api": [
       {
@@ -379,6 +388,11 @@
        "name": "HochschildHKR.exists_normalized_representative",
        "role": "characterisation",
        "statement": "Every class of HH^n(A,M) has a normalised cocycle representative."
+      },
+      {
+       "name": "HochschildHKR.normalizedCochainComplex_isoTauCeti",
+       "role": "compatibility",
+       "statement": "For a k-module N and M = A →ₗ[k] N with the dual bimodule structure (a·g)(x)=g(xa), (g·a)(x)=g(ax) (scoped instances of TauCeti.DualBimodule), currying the first argument φ ↦ ((a₁,…,a_n) ↦ (x ↦ φ(x,a₁,…,a_n))) (TauCeti.multilinearCurryFirstEquiv) is an isomorphism of cochain complexes TauCeti.hochschildCochainComplex k A N ≅ C^•(A, A →ₗ[k] N) (TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary); it restricts in every degree to TauCeti.normalizedHochschildCochains k A N n ≅ N^n(A, A →ₗ[k] N) (the pinned condition concerns slots 1,…,n; both are everything in degree zero), hence TauCeti.normalizedHochschildCochainComplex k A N ≅ N^•(A, A →ₗ[k] N), commuting with TauCeti.normalizedHochschildCochainComplexι and the inclusion N^• → C^•."
       }
      ],
      "tests": [
@@ -396,6 +410,11 @@
        "name": "normalized_cochains_k",
        "kind": "degenerate",
        "statement": "For A=k, N^n=0 for n≥1 and N⁰=M."
+      },
+      {
+       "name": "normalized_cochains_pinned_comparison",
+       "kind": "compatibility",
+       "statement": "A=k[x], N=k, k nonzero, ∂=∂_x: the pinned φ(a₀,a₁)=(a₀∂a₁)(0) has φ(a₀,1)=0 and bφ=0; its curried form ψ(a₁)(y)=φ(y,a₁) has ψ(1)=0, so ψ ∈ N¹(A, A →ₗ[k] k), and ψ(ab)(y)=(ya∂b)(0)+(yb∂a)(0)=(a·ψ(b))(y)+(ψ(a)·b)(y) is a derivation into the dual bimodule. Currying the last argument, ψ′(a)(y)=φ(a,y), gives ψ′(1)(x)=φ(1,x)=1≠0: the wrong slot does not preserve normalisation."
       }
      ]
     }
@@ -802,7 +821,7 @@
       {
        "name": "HochschildHKR.barResolution_homotopy",
        "role": "structure",
-       "statement": "b'∘h + h∘b' = id in positive degrees and μ∘h=id in degree zero; h is right A-linear."
+       "statement": "b′∘h + h∘b′ = id on B_n(A) for n ≥ 1, b′∘h + h∘μ = id on B₀(A), μ∘h = id on A; h is right A-linear."
       },
       {
        "name": "HochschildHKR.barResolution_projective",
@@ -812,9 +831,9 @@
      ],
      "tests": [
       {
-       "name": "bar_degree_two",
+       "name": "bar_degree_zero",
        "kind": "computation",
-       "statement": "(h b'+b' h)(a₁⊗a₂)=1⊗a₁a₂+a₁⊗a₂−1⊗a₁a₂=a₁⊗a₂ (Ginz05 lines 774–782)."
+       "statement": "On B₀(A)=A⊗A, (hμ+b′h)(a₁⊗a₂)=1⊗a₁a₂+a₁⊗a₂−1⊗a₁a₂=a₁⊗a₂ (Ginz05 lines 774–782, which counts tensor factors and calls this the degree-two piece); on B₁(A), (b′h+hb′)(a₀⊗a₁⊗a₂)=(a₀⊗a₁⊗a₂−1⊗a₀a₁⊗a₂+1⊗a₀⊗a₁a₂)+(1⊗a₀a₁⊗a₂−1⊗a₀⊗a₁a₂)=a₀⊗a₁⊗a₂."
       },
       {
        "name": "bar_k",

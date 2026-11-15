@@ -143,6 +143,15 @@ Variants kept here, each differing in one stated respect from an existing object
   arbitrary bimodule of coefficients and by their comparison with the unnormalised complex; for
   `M = A`, §2.1 identifies the two complexes, terms and boundaries, under
   `A ⊗[k] A^{⊗n} ≅ ⨂[k]^{n+1} A`;
+- the normalised cochains of §2.2 differ from `TauCeti.normalizedHochschildCochains`, its complex
+  `TauCeti.normalizedHochschildCochainComplex` and the inclusion
+  `TauCeti.normalizedHochschildCochainComplexι` by allowing an arbitrary bimodule of coefficients
+  and by their homotopy equivalence with the full complex: the pinned cochains take `n + 1`
+  arguments with values in a `k`-module `N`, and §2.2 identifies them, under currying of the first
+  argument (`TauCeti.multilinearCurryFirstEquiv`), with the normalised cochains with coefficients
+  in the dual bimodule `A →ₗ[k] N`; NoncommutativeGeometry N1.Cyclic compares the normalised and
+  full scalar cochains of a unital complex algebra on cohomology for its cyclic theory, the case
+  `k = N = ℂ`, and keeps that statement;
 - the normalisation theorem of Layer 2 is for ordinary algebras with arbitrary bimodule
   coefficients, where DGAInfinity Layer 8's is for strictly unital DG algebras with coefficients
   in the algebra;
@@ -414,6 +423,28 @@ canonical map, and the determinant map is identified as `n!` times it.
   `a_{n+1}a₀ ⊗ a₁ ⊗ ⋯ ⊗ a_n`; and the chain complex in `ChainComplex (ModuleCat k) ℕ` with these
   terms and `b`. The coefficients are `A` itself, and the pinned file compares these chains neither
   with the unnormalised complex nor with `A ⊗ Ā^{⊗n}`; §2.1 does both.
+- `TauCeti.hochschildCochainComplex` (`TauCeti/RingTheory/HochschildCohomology/Complex.lean`) with
+  `TauCeti.normalizedHochschildCochains`, `TauCeti.normalizedHochschildCochains_zero`,
+  `TauCeti.normalizedHochschildCochainComplex` and `TauCeti.normalizedHochschildCochainComplexι`
+  (`TauCeti/RingTheory/CyclicCohomology/Normalized/Basic.lean`): for a commutative ring `k`, a ring
+  `A` with `Module k A`, `IsScalarTower k A A` and `SMulCommClass k A A`, and a `k`-module `N`, the
+  complex in `CochainComplex (ModuleCat k) ℕ` with degree-`n` term
+  `MultilinearMap k (fun _ : Fin (n + 1) ↦ A) N` and differential
+  `bφ(a₀,…,a_{n+1}) = Σ_{i=0}^{n} (−1)^i φ(a₀,…,a_i a_{i+1},…,a_{n+1}) + (−1)^{n+1} φ(a_{n+1}a₀, a₁,…,a_n)`;
+  the submodule of cochains that vanish whenever some argument other than the zeroth is `1` (no
+  condition in degree zero), the subcomplex they form, and its inclusion into the full complex.
+  The pin has coefficients in a `k`-module only, and proves neither that the inclusion is a
+  homotopy equivalence nor that the cohomologies agree; §2.2 does both for every bimodule.
+- `TauCeti.multilinearCurryFirstEquiv` (`TauCeti/LinearAlgebra/Multilinear/Curry.lean`), the scoped
+  instances `TauCeti.DualBimodule.instModule` and `TauCeti.DualBimodule.instModuleOp`, and
+  `TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary`
+  (`TauCeti/RingTheory/HochschildCohomology/Dual.lean`): for a commutative ring `k`, a `k`-algebra
+  `A` and a `k`-module `N`, the bimodule structure on `A →ₗ[k] N` with `(a · g)(x) = g(x a)` and
+  `(g · a)(x) = g(a x)`, the `k`-linear equivalence `φ ↦ ((a₁,…,a_n) ↦ (x ↦ φ(x, a₁,…,a_n)))` from
+  multilinear maps in `n + 1` arguments into `N` onto multilinear maps in `n` arguments into
+  `A →ₗ[k] N`, and the identity that it carries `b` to
+  `TauCeti.hochschildBimoduleCoboundary k A (A →ₗ[k] N) n`. The instances are scoped because a
+  pointwise action also exists when `N` is an `A`-module; §2.2 uses the dual one only.
 - `exteriorPower.instProjective` (`TauCeti/LinearAlgebra/ExteriorPower/Basic.lean`): `⋀[R]^n M` is a
   projective `R`-module when `M` is, for every commutative ring `R`, with no finiteness hypothesis.
 - `TauCeti.derivationLieAlgebra R A` (`TauCeti/Algebra/Lie/Derivation/Basic.lean`): derivations of
@@ -805,11 +836,26 @@ argument to `Y(A,M)` viewed as a simplicial object of `(ModuleCat k)ᵒᵖ`, whe
 degeneracies becomes the intersection of the kernels of the codegeneracies.
 
 *Needs:* §1.2; the Mathlib declarations of §2.1; the abelian structure of the opposite category
-(`Mathlib/CategoryTheory/Abelian/Opposite.lean`).
+(`Mathlib/CategoryTheory/Abelian/Opposite.lean`); Tau Ceti `TauCeti.hochschildCochainComplex`,
+`TauCeti.normalizedHochschildCochains`, `TauCeti.normalizedHochschildCochains_zero`,
+`TauCeti.normalizedHochschildCochainComplex`, `TauCeti.normalizedHochschildCochainComplexι`,
+`TauCeti.multilinearCurryFirstEquiv`, `TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary`,
+`TauCeti.DualBimodule.instModule`, `TauCeti.DualBimodule.instModuleOp` (for the comparison only).
 
 - `N⁰(A,M) = M`; a 1-cochain is normalised exactly when `f(1) = 0`.
 - The inclusion induces `H^n(N^•(A,M)) ≅ HH^n(A,M)`, natural in `M`.
 - Every class of `HH^n(A,M)` is represented by a normalised cocycle.
+- For a `k`-module `N` and `M = A →ₗ[k] N` with the dual bimodule structure
+  `(a · g)(x) = g(x a)`, `(g · a)(x) = g(a x)` (the scoped instances of `TauCeti.DualBimodule`),
+  currying the first argument, `φ ↦ ((a₁,…,a_n) ↦ (x ↦ φ(x, a₁,…,a_n)))`
+  (`TauCeti.multilinearCurryFirstEquiv`), is an isomorphism of cochain complexes
+  `TauCeti.hochschildCochainComplex k A N ≅ C^•(A, A →ₗ[k] N)`, since it carries the pinned `b` to
+  `δ` (`TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary`). The pinned condition concerns
+  the arguments in slots `1,…,n`, which are `a₁,…,a_n` after currying, so it restricts to an
+  isomorphism of `TauCeti.normalizedHochschildCochains k A N n` onto `N^n(A, A →ₗ[k] N)` in every
+  degree (both are everything in degree zero), hence of complexes
+  `TauCeti.normalizedHochschildCochainComplex k A N ≅ N^•(A, A →ₗ[k] N)`, and the square formed with
+  `TauCeti.normalizedHochschildCochainComplexι` and the inclusion `N^• → C^•` commutes.
 
 **Checks.**
 
@@ -819,6 +865,13 @@ degeneracies becomes the intersection of the kernels of the codegeneracies.
   `δg(1,1) = 1`; for nonzero `k` it is a cocycle that is not normalised, and its class is that of
   `0 ∈ N²`.
 - For `A = k`, `N^n = 0` for `n ≥ 1` and `N⁰ = M`, in agreement with §1.2 Checks.
+- Comparison with Tau Ceti for `A = k[x]`, `N = k` and nonzero `k`, with `∂ = ∂_x`: the pinned
+  cochain `φ(a₀,a₁) = (a₀ ∂a₁)(0)` has `φ(a₀,1) = 0`, so it is normalised, and
+  `bφ(a₀,a₁,a₂) = (a₀a₁∂a₂ − a₀∂(a₁a₂) + a₂a₀∂a₁)(0) = 0`. Its curried form `ψ(a₁)(y) = φ(y,a₁)` has
+  `ψ(1) = 0`, so `ψ ∈ N¹(A, A →ₗ[k] k)`, and `ψ` is a derivation into the dual bimodule, as it must
+  be: `ψ(ab)(y) = (y a ∂b)(0) + (y b ∂a)(0) = (a · ψ(b))(y) + (ψ(a) · b)(y)`. Currying the last
+  argument instead, `ψ′(a)(y) = φ(a,y)`, gives `ψ′(1)(x) = φ(1,x) = 1 ≠ 0`: that choice of slot does
+  not carry normalised cochains to normalised ones.
 
 ### Examples
 
@@ -830,7 +883,10 @@ unit (§3.5).
 
 Layer 1; Mathlib's Dold–Kan normalisation and tensor powers; Tau Ceti's normalised chains of an
 algebra with coefficients in itself (`TauCeti.normalizedHochschildChains`), for the comparison of
-§2.1. No roadmap supplier is used.
+§2.1, and its normalised cochains with values in a `k`-module with the currying comparison to the
+dual bimodule (`TauCeti.normalizedHochschildCochainComplex`,
+`TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary`), for the comparison of §2.2. No roadmap
+supplier is used.
 
 ## Layer 3: Low degrees and square-zero extensions
 
@@ -1056,8 +1112,10 @@ lines 747–782; HKR62 lines 414–447; Weibel94 §9.1; Loday98 §1.1).
 
 **Checks.**
 
-- In degree two, `(h b′ + b′ h)(a₁ ⊗ a₂) = 1 ⊗ a₁a₂ + a₁ ⊗ a₂ − 1 ⊗ a₁a₂ = a₁ ⊗ a₂` (Ginz05
-  lines 774–782).
+- On `B₀(A) = A ⊗ A`, `(h μ + b′ h)(a₁ ⊗ a₂) = 1 ⊗ a₁a₂ + a₁ ⊗ a₂ − 1 ⊗ a₁a₂ = a₁ ⊗ a₂` (Ginz05
+  lines 774–782, which counts tensor factors and calls this the degree-two piece). On `B₁(A)`, the
+  first degree where `h b′` is the right term,
+  `(b′ h + h b′)(a₀ ⊗ a₁ ⊗ a₂) = (a₀ ⊗ a₁ ⊗ a₂ − 1 ⊗ a₀a₁ ⊗ a₂ + 1 ⊗ a₀ ⊗ a₁a₂) + (1 ⊗ a₀a₁ ⊗ a₂ − 1 ⊗ a₀ ⊗ a₁a₂) = a₀ ⊗ a₁ ⊗ a₂`.
 - For `A = k`, `B_n(k) = k` with `b′_n` multiplication by `Σ_{i=0}^{n}(−1)^i`, and the augmented
   complex `⋯ → k → k → k → k → 0` is exact.
 - The homotopy `h` is not left `A`-linear: for `A = k[x]` with `k` nonzero, `h(x · (1 ⊗ 1)) = 1 ⊗ x ⊗ 1` while
