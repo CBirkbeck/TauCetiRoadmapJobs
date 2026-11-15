@@ -16,10 +16,10 @@
      "id": "1.1",
      "kind": "definition",
      "name": "Varifolds.grassmannian",
-     "statement": "For a finite-dimensional real inner product space E and 0 <= k <= dim E, G(E,k) is the set of self-adjoint idempotent continuous linear maps of E with k-dimensional range, with the operator-norm metric; S -> P_S is a bijection from k-dimensional subspaces onto G(E,k).",
+     "statement": "For a finite-dimensional real inner product space E and an integer k >= 0, G(E,k) is the set of self-adjoint idempotent continuous linear maps of E with k-dimensional range, with the operator-norm metric; S -> P_S is a bijection from k-dimensional subspaces onto G(E,k). G(E,k) is empty when k > dim E (the fibre of the target bundle of a push-forward into a manifold of dimension below k, 3.1); the API below takes 0 <= k <= dim E.",
      "hypotheses": [
       "E finite-dimensional real inner product space",
-      "0 <= k <= dim E"
+      "k >= 0 an integer; the API for 0 <= k <= dim E"
      ],
      "locator": {
       "source": "Simon1983",
@@ -59,7 +59,7 @@
       {
        "name": "image plane",
        "role": "continuity",
-       "statement": "for finite-dimensional inner product spaces E, F, the pairs (L,P) with L: E -> F linear and injective on range P form an open set, on which the projection onto L(range P) in G(F,k) depends continuously on (L,P); with Q = L P it is Q (Q*Q + 1 - P)^{-1} Q*. L need not be injective on E."
+       "statement": "for finite-dimensional inner product spaces E, F, the pairs (L,P) with L: E -> F linear and injective on range P form an open set (empty when dim F < k), on which the projection onto L(range P) in G(F,k) depends continuously on (L,P); with Q = L P it is Q (Q*Q + 1 - P)^{-1} Q*. L need not be injective on E."
       },
       {
        "name": "finite Grassmannian comparison",
@@ -76,7 +76,7 @@
       {
        "name": "degenerate ranks",
        "kind": "degenerate",
-       "statement": "G(E,0) = {0} and G(E,dim E) = {1}."
+       "statement": "G(E,0) = {0} and G(E,dim E) = {1}; G(R,2) is empty (a self-adjoint idempotent of R is 0 or 1)."
       },
       {
        "name": "idempotent non-example",
@@ -525,7 +525,7 @@
      "id": "3.1",
      "kind": "construction",
      "name": "Varifolds.Varifold.pushforward",
-     "statement": "For f: W -> W' of class C^1, proper on spt||V||, f_#V(A) = integral of 1_A(f x, df_x S) J_S f(x) dV(x,S), with J_S f = normDet(df_x restricted to S).",
+     "statement": "For f: W -> W' of class C^1, proper on spt||V||, f_#V(A) = integral of 1_A(f x, df_x S) J_S f(x) dV(x,S), with J_S f = normDet(df_x restricted to S). No bound on dim M' is assumed: if dim M' < k, no df_x is injective on a k-plane, J_S f = 0 identically, G_k(W') is empty and f_#V = 0; for dim M' >= k this case does not arise.",
      "hypotheses": [
       "f C^1",
       "f proper on spt||V||"
@@ -594,6 +594,11 @@
        "name": "non-proper",
        "kind": "non-example",
        "statement": "collapsing infinitely many vertical segments gives infinite mass: properness is needed."
+      },
+      {
+       "name": "target of dimension below k",
+       "kind": "degenerate",
+       "statement": "f(y) = y_1 from R^2 to R, k = 2, V = v(unit disc, 1): normDet(df_x) = 0 everywhere and G_2(R) is empty, so f_#V = 0; dropping the Jacobian and recording the image line would give a measure on G_1(R) of weight 2 sqrt(1 - t^2) dt and mass pi, a 1-varifold."
       }
      ]
     },
@@ -1799,7 +1804,7 @@
       {
        "name": "constant multiplicity",
        "role": "characterisation",
-       "statement": "stationary V is a constant multiple of [spt] near points of reg^2."
+       "statement": "if V is stationary and x in reg^2 V, then for every open U containing x such that spt||V|| cap U is a connected C^2 embedded k-submanifold of U (such U exist: a slice chart domain at x), V restricted to U is theta_0 [spt||V|| cap U] with theta_0 > 0 constant (6.4 in U)."
       }
      ],
      "tests": [
@@ -1822,6 +1827,11 @@
        "name": "quadratic cone",
        "kind": "computation",
        "statement": "sing^r C_{p,q} = {0}."
+      },
+      {
+       "name": "connected support is not enough",
+       "kind": "non-example",
+       "statement": "V = v(L_1,1) + v(L_2,2), lines of R^2 crossing at 0, x in L_1 minus {0}: x is in reg^2 V; a ball about x containing 0 meets spt in a connected cross that is not a submanifold, with multiplicities 1 and 2; a ball about x missing L_2 gives theta_0 = 1."
       }
      ]
     },

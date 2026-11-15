@@ -345,13 +345,15 @@ bound to the route.
 
 ### 1.1 The Grassmannian of a Euclidean space
 
-For a finite-dimensional real inner product space E and 0 ≤ k ≤ dim E, define the Grassmannian
+For a finite-dimensional real inner product space E and an integer k ≥ 0, define the Grassmannian
 G(E, k) as the set of continuous linear maps P : E → E that are self-adjoint idempotents
 (`IsStarProjection`) whose range has dimension k, with the subspace topology and the metric of the
 operator norm. The map S ↦ P_S = `Submodule.starProjection S` is a bijection from the
 k-dimensional subspaces of E onto G(E, k), with inverse P ↦ range P
-(`isStarProjection_iff_eq_starProjection_range`) (Simon1983 line 7295–7300, §38). The tangential
-trace of an endomorphism A of E along P is tr(P ∘ A).
+(`isStarProjection_iff_eq_starProjection_range`) (Simon1983 line 7295–7300, §38). For k > dim E no
+subspace has dimension k and G(E, k) = ∅; this empty Grassmannian is the fibre of the target bundle
+of a push-forward into a manifold of dimension below k (3.1). The statements below take
+0 ≤ k ≤ dim E. The tangential trace of an endomorphism A of E along P is tr(P ∘ A).
 
 - G(E, k) is compact: it is closed in `E →L[ℝ] E` and every element has norm at most 1 (norm 1
   when k ≥ 1).
@@ -366,8 +368,9 @@ trace of an endomorphism A of E along P is tr(P ∘ A).
 - For each endomorphism A of E, P ↦ tr(P ∘ A) is continuous (indeed linear) on G(E, k), and
   |tr(P ∘ A)| ≤ k‖A‖.
 - For a finite-dimensional real inner product space F, the pairs (L, P) of a linear map L : E → F
-  and P ∈ G(E, k) with L injective on range P form an open set, and on it the projection onto
-  L(range P), an element of G(F, k), depends continuously on (L, P); L need not be injective on E.
+  and P ∈ G(E, k) with L injective on range P form an open set (empty when dim F < k), and on it
+  the projection onto L(range P), an element of G(F, k), depends continuously on (L, P); L need not
+  be injective on E.
   With Q = L ∘ P and Q* its adjoint, A = Q*Q + 1 − P preserves range P and ker P, is the identity on
   ker P and is invertible exactly when L is injective on range P (⟨Q*Qv, v⟩ = |Lv|² for v ∈ range P),
   and the projection is Q A⁻¹ Q*.
@@ -391,8 +394,9 @@ trace of an endomorphism A of E along P is tr(P ∘ A).
 
 - For the lines ℓ_θ of ℝ², `P_{ℓ_θ} − P_{ℓ_0} = sin θ · R` with R a symmetric orthogonal
   reflection, so `‖P_{ℓ_θ} − P_{ℓ_0}‖ = |sin θ|`; perpendicular lines are at distance 1, not √2.
-- G(E, 0) = {0} and G(E, dim E) = {1}; a definition requiring only `P ∘ P = P` would put the
-  non-self-adjoint idempotents `[[1, t], [0, 0]]`, t ∈ ℝ, into G(ℝ², 1) and lose compactness.
+- G(E, 0) = {0} and G(E, dim E) = {1}, and G(ℝ, 2) = ∅ (a self-adjoint idempotent of ℝ is 0 or 1,
+  of rank 0 or 1); a definition requiring only `P ∘ P = P` would put the non-self-adjoint
+  idempotents `[[1, t], [0, 0]]`, t ∈ ℝ, into G(ℝ², 1) and lose compactness.
 - diag(1, 1, 0) belongs to G(ℝ³, 2) and not to G(ℝ³, 1): the rank condition is on the range, and
   its trace 2 is the dimension.
 - Under the complement map, the line ℓ_0 of ℝ² goes to ℓ_{π/2}, and tr(P_{ℓ_0} ∘ diag(a, b)) = a.
@@ -677,7 +681,9 @@ Define f_#V(A) = ∫ 1_A(f(x), df_x(S)) J_S f(x) dV(x, S), the integrand being t
 J_S f(x) = 0; in projection form (x, P) ↦ (f(x), P_{df_x(range P)}) is continuous on the open set
 {J_S f(x) ≠ 0}, where df_x is injective on S = range P (1.1's image-plane continuity, in orthonormal
 frames) (Simon1983 line 7443–7454, 39.1; AgnolettoCorreaHoyosDaSilvaNardulli2025 line
-188–195).
+188–195). No bound on dim M' is assumed: if dim M' < k, then df_x is injective on no k-plane,
+J_S f ≡ 0, every G(T_yM', k) is empty (1.1), so G_k(W') = ∅ and f_#V = 0, the only k-varifold on
+W'; for dim M' ≥ k this case does not arise.
 
 - f_#V is a varifold on W'; ‖f_#V‖(A) = ∫_{π⁻¹f⁻¹(A)} J_S f(x) dV(x, S); spt‖f_#V‖ ⊆ f(spt‖V‖), with
   equality when f is an immersion.
@@ -709,6 +715,11 @@ transported by GeometricCurrents G2's chart comparison and the chain rule for J.
   definition ignoring J = 0 would place an atom at the origin.
 - For f(t) = t² on ℝ and V = v([−1, 1], 1), f_#V = v([0, 1], 2): each s ∈ (0, 1] has the two
   preimages ±√s, consistent with ∫ φ(t²)|2t| dt = 2∫_0^1 φ.
+- A target of dimension below k: for f(y) = y_1 from ℝ² to ℝ, k = 2 and V = v(D, 1) with D the open
+  unit disc, normDet(df_x : ℝ² → ℝ) = 0 at every x and G_2(ℝ) = ∅, so f_#V = 0. A model that
+  dropped the Jacobian and recorded the image subspace df_x(ℝ²) = ℝ would produce the measure on
+  G_1(ℝ) with weight 2√(1 − t²) dt on (−1, 1), of mass π: a 1-varifold, not a push-forward of the
+  2-varifold V.
 - For V = Σ_{j∈ℤ} v({j} × [0, 1], 1) on ℝ² and f(y) = (0, y_2), f is not proper on spt‖V‖ and the
   formula would give infinite mass to the segment {0} × [0, 1]: properness is necessary.
 
@@ -1760,8 +1771,12 @@ embedded k-submanifold of U; reg^r V is the set of such points and sing^r V = sp
 - For a C^r diffeomorphism f of W onto W', spt‖f_#V‖ = f(spt‖V‖), f(reg^r V) = reg^r(f_#V) and
   f(sing^r V) = sing^r(f_#V).
 - For open W' ⊆ W, reg^r of the restriction of V to W' is reg^r V ∩ W'.
-- If V is stationary and x ∈ reg^2 V, then on a neighbourhood U of x with spt‖V‖ ∩ U connected,
-  V⌞U = θ_0 [spt‖V‖ ∩ U] for a constant θ_0 > 0 (6.4): the multiplicity is locally constant on reg^2 V.
+- If V is stationary and x ∈ reg^2 V, then for every open U ∋ x such that spt‖V‖ ∩ U is a
+  connected C² embedded k-submanifold of U, the restriction of V to U is θ_0 [spt‖V‖ ∩ U] for a
+  constant θ_0 > 0 (6.4 in U, where the restriction is stationary, since a field with compact
+  support in U extends by 0 to W, has support spt‖V‖ ∩ U, and is nonzero because x ∈ spt‖V‖).
+  Such U exist: the domain of a slice chart at x, with a cube as image, of the submanifold that
+  regularity provides. Hence the multiplicity is locally constant on reg^2 V.
 
 **Checks.**
 
@@ -1770,6 +1785,10 @@ embedded k-submanifold of U; reg^r V is the set of such points and sing^r V = sp
 - For V = 0 both sets are empty; for ½ v(L, 1), reg^r V = L: regularity of the support ignores the
   multiplicity.
 - For the cone C_{p,q} with multiplicity 1, sing^r = {0} for every r.
+- For V = v(L_1, 1) + v(L_2, 2), two lines of ℝ² crossing at 0 (stationary), and x ∈ L_1 ∖ {0},
+  x ∈ reg^2 V. A ball U about x containing 0 has spt‖V‖ ∩ U = (L_1 ∪ L_2) ∩ U connected but not a
+  submanifold, and V restricted to U carries the multiplicities 1 and 2: connectedness of
+  spt‖V‖ ∩ U alone does not give a constant multiple. A ball about x missing L_2 gives θ_0 = 1.
 
 (AgnolettoCorreaHoyosDaSilvaNardulli2025 line 89–101; Simon2023 line 73–83.) *Needs:* Layer 1.3,
 Layer 3.1, Layer 6.4.
