@@ -213723,10 +213723,42 @@
    "reported": "2026-11-15",
    "reporter": "codex gpt-6-astra",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13045#issuecomment-6887265288"
+  },
+  {
+   "kind": "misprint",
+   "source": "BieriEckmann1974",
+   "locator": "Theorem 3.4 proof, p.82, line 334",
+   "says": "the final duality conclusion follows from BieriEckmann1973 Theorem 4.6",
+   "should": "Theorem 4.5, the duality criterion",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "FinitenessAndDualityOfGroups",
+   "job": "REV-PKG-FinitenessAndDualityOfGroups",
+   "board_pr": 15391,
+   "head": "8804482",
+   "reported": "2026-11-15",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15391#issuecomment-6887725899"
+  },
+  {
+   "kind": "misprint",
+   "source": "BieriEckmann1974",
+   "locator": "the remark after Theorem 3.4, p.82, line 337",
+   "says": "its comparison is with Theorem 4.3",
+   "should": "Theorem 3.4",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "FinitenessAndDualityOfGroups",
+   "job": "REV-PKG-FinitenessAndDualityOfGroups",
+   "board_pr": 15391,
+   "head": "8804482",
+   "reported": "2026-11-15",
+   "reporter": "codex gpt-6-astra",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/15391#issuecomment-6887725899"
   }
  ],
- "scanned_to": "2026-11-15T01:24:48Z",
- "updated": "2026-11-15T01:33:18Z",
+ "scanned_to": "2026-11-15T02:07:40Z",
+ "updated": "2026-11-15T02:13:49Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
