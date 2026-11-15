@@ -313,7 +313,8 @@ theorem existsUnique_fongReynolds {G : Type u} {O : Type v} [Group G] [Finite G]
 /-- **Reynolds' height formula.** Over a splitting `p`-modular system, if the block `b` of `O[G]`
 has a normal defect group `D`, `|G|_p = p^a` and `|D| = p^d`, then the heights
 `ν_p(χ(1)) − (a − d)` of its ordinary characters are exactly the numbers `ν_p(ξ(1))` for the
-irreducible characters `ξ` of `D` (Reynolds 1963, Theorem 8; Martínez 2024, Corollary 8.12). -/
+irreducible characters `ξ` of `D` (Reynolds 1963, Theorem 8; Martínez 2024, Corollary 8.12 for
+the block of `D C_G(D)`, carried to `G` in the proof of Theorem 9.8). -/
 theorem reynolds_heights {G : Type u} {O : Type v} [Group G] [Finite G] [CommRing O]
     [IsDomain O] [IsDiscreteValuationRing O] [IsAdicComplete (IsLocalRing.maximalIdeal O) O]
     [CharZero O] {ζ : FractionRing O} (hζ : IsPrimitiveRoot ζ (Monoid.exponent G)) {p : ℕ}

@@ -258,7 +258,32 @@ reduction theorems, blocks with cyclic defect groups, and Dade's conjectures.
   nonzero coefficient on its centraliser: the base §6.2 definition of a defect group, written with
   coefficients. The defect groups of `b` are those of its reduction
   `MonoidAlgebra.mapRingHom G (IsLocalRing.residue O) b`. A degree is read as a natural number `n`
-  with `χ(1) = n` in `K`, which determines `n` as `K` has characteristic zero.
+  with `χ(1) = n` in `K`, which determines `n` as `K` has characteristic zero. Witnesses for
+  `IsBlockDefectGroup`, with `r` a `3`-cycle and `t` a transposition. In `k[S₃]` at `p = 2`, for
+  `e = 1 + r + r²`, the reduction of the principal block idempotent `(1 + r + r²)/3`, the subgroup
+  `⟨t⟩` qualifies (coefficient `1` at `1 ∈ C_G(⟨t⟩) = {1, t}`, and `⟨t⟩` is a Sylow `2`-subgroup),
+  while `1` satisfies the first two clauses and fails only maximality, so a definition without the
+  maximality clause would accept the trivial group. For `e = r + r²`, the reduction of the
+  defect-zero idempotent `(2 − r − r²)/3` (as `−1/3 ≡ 1` modulo `2`), the coefficients at `1` and
+  `t` vanish, so `⟨t⟩` fails and `1` is the defect group, whereas a definition reading the
+  coefficients on all of `G` would accept `⟨t⟩`. In `k[S₄]` at `p = 3`, the character `χ` with
+  values `3, 1, −1, 0, −1` on the classes of `1, (12), (12)(34), (123), (1234)` has defect zero and
+  idempotent `(1/8) Σ_g χ(g) g`, with coefficients `3/8, 1/8, −1/8, 0, −1/8` on these classes,
+  which reduce to `0, 2, 1, 0, 1` (as `8 ≡ 2` and `2⁻¹ ≡ 2` modulo `3`); as a control, the central
+  character, `2, −1, −2` on the class sums of the transpositions, the double transpositions and
+  the `4`-cycles, gives `2·2 + (−1) + (−2) = 1` on this element. The reduced idempotent vanishes
+  on `C_G(⟨(123)⟩) = ⟨(123)⟩`, and the four Sylow `3`-subgroups are self-centralising, so the defect
+  group is `1`; with the normaliser `S₃` of `⟨(123)⟩` in place of its centraliser, the
+  transpositions, of coefficient `2`, would make `⟨(123)⟩` qualify. Witnesses for
+  `blockCharacters`. Over `O = ℤ₂[ζ₃]`, whose fraction field contains a primitive sixth root of
+  unity, `b = (1 + r + r²)/3 ∈ O[S₃]` gives `{1, sgn}`: it acts as `1` on both and as `0` on `std`,
+  where `r` has eigenvalues `ζ₃, ζ₃²` and `1 + ζ₃ + ζ₃² = 0`; `b = (2 − r − r²)/3` gives `{std}`, on
+  which it acts as `(2 + 1)/3 = 1`; `b = 1` gives every irreducible `K`-character, and `b = 0` the
+  empty set, an irreducible representation being nonzero. The definition does not ask for a
+  splitting system: over `O = ℤ₂`, whose fraction field `ℚ₂` lacks `ζ₃`,
+  `b = (2 − r − r²)/3 ∈ ℤ₂[C₃]` gives the single character `2, −1, −1` of the two-dimensional
+  irreducible `ℚ₂`-representation, on which `r` acts with minimal polynomial `X² + X + 1`, while a
+  definition through complex characters would give the two linear characters `λ, λ̄` of `C₃`.
 - **Valuations and heights.** `ν = padicValNat p` on natural numbers and `ν_p = padicValRat p` on
   rationals; both send `0` to `0`. `|G|_p = p^a` with `a = ν(|G|)`; for a block with defect group
   `D`, `|D| = p^d`. For `q ∈ ℚ ⊆ K`, `q ∈ O` exactly when `ν_p(q) ≥ 0`, and `q ∈ m` exactly when
@@ -380,7 +405,8 @@ projective multiplicity representation with factor set `β⁻¹`; this roadmap u
   statement of Layers 6–9 here is proved for it, at an arbitrary place `v` over `p`, and carried
   to an arbitrary splitting `p`-modular system by the change of system of §6.1.
 - §1.2: stable lattices, and the compatibility of reduction with restriction and induction.
-- §1.3: `existsUnique_blockIdempotent_map_residue` and surjectivity of `Z(O[G]) → Z(k[G])`.
+- §1.3: `existsUnique_blockIdempotent_map_residue`, the uniqueness of the central lift of a
+  central idempotent of `k[G]` to `Z(O[G])`, and surjectivity of `Z(O[G]) → Z(k[G])`.
 - §2.1–2.2: Brauer characters, their induction formula and linear independence of `IBr(G)`.
 - §2.3: a field of characteristic `p` containing a primitive root of unity of order the `p'`-part
   of the exponent splits `G` and its subgroups, in particular the residue field of a splitting
@@ -1338,35 +1364,38 @@ blocks of `H`); base §§6.1, 6.2, 7.1.
 Let `N ⊴ G`. Prove: `χ ∈ Irr(G)` lies over `θ ∈ Irr(N)` exactly when `ω_χ(𝒞⁺) = ω_θ(𝒞⁺)` for every
 `G`-class `𝒞 ⊆ N` (martinez line 1652, Proposition 7.6); a block `B` of `G` covers a block `b` of
 `N` exactly when `λ_B(𝒞⁺) = λ_b(𝒞⁺)` for every `G`-class `𝒞 ⊆ N` (martinez line 1790, Proposition
-7.11); `Σ_{B covers b} e_B = Σ_{b'} e_{b'}`, `b'` running over the `G`-conjugates of `b` (martinez
-line 1642); the blocks of `N` covered by `B` form one `G`-orbit (martinez line 1760, Corollary
-7.8); if `B` covers `b`, every `θ ∈ Irr(b)` lies under some `χ ∈ Irr(B)` and every `φ ∈ IBr(b)`
-under some member of `IBr(B)` (martinez line 1763, Proposition 7.9); and if `b^G` is defined it
-covers `b` (martinez line 1976, Lemma 8.6). Route: for the first, Clifford's theorem in character
-form over `ℂ`, where `Irr(G)` is read (Conventions), so that the unit and algebraic-closure
-hypotheses of Tau Ceti `TauCeti.clifford_restrict_character` hold; it gives `ω_χ = ω_ξ` on the
-`G`-class sums in `N` for every `ξ` under `χ`, and `ω_ψ(e_η) = δ_{ψη}` on the orbit idempotent
-`Σ_i e_{θ_i}` (`θ_i` the `G`-conjugates of `θ`), a combination of `G`-class sums in `N`, so that
-`ω_ξ = ω_θ` there only for `ξ` conjugate to `θ`; for the third, the sum of the `e_{b'}` over the
-`G`-orbit of `b` is a `G`-invariant idempotent of `Z(O[N])`, hence central in `O[G]` and the sum
-of the block idempotents of `G` below it (base §0.2), which are those of the blocks covering `b`
-(base §8.2); for the second, in one direction the first applied to some `χ ∈ Irr(B)` over some
-`θ ∈ Irr(b)` (base §8.2) with `λ_B(𝒞⁺) = ω_χ(𝒞⁺) mod m` (§6.1), and in the other the third:
-`Σ_{B' covers b} e_{B'}` is a combination of `G`-class sums in `N`, on which `λ_B` agrees with
-`λ_b`, and `λ_b` is `1` on it, so `B` is one of the `B'`; for the fourth, the third and the
-orthogonality of the idempotent sums of two distinct orbits, which therefore share no `e_B`; for
+7.11); in `Z(O[G])` the central lifts satisfy `Σ_{B covers b} e_B = Σ_{b'} e_{b'}`, `b'` running
+over the `G`-conjugates of `b`, the lift to `O` of the identity over `k` by which base §8.2 defines
+covering (martinez line 1642); the blocks of `N` covered by `B` form one `G`-orbit (martinez line
+1760, Corollary 7.8); if `B` covers `b`, every `θ ∈ Irr(b)` lies under some `χ ∈ Irr(B)` and every
+`φ ∈ IBr(b)` under some member of `IBr(B)` (martinez line 1763, Proposition 7.9); and if `b^G` is
+defined it covers `b` (martinez line 1976, Lemma 8.6). Route: for the first, Clifford's theorem in
+character form over `ℂ`, where `Irr(G)` is read (Conventions), so that the unit and
+algebraic-closure hypotheses of Tau Ceti `TauCeti.clifford_restrict_character` hold; it gives
+`ω_χ = ω_ξ` on the `G`-class sums in `N` for every `ξ` under `χ`, and `ω_ψ(e_η) = δ_{ψη}` on the
+orbit idempotent `Σ_i e_{θ_i}` (`θ_i` the `G`-conjugates of `θ`), a combination of `G`-class sums in
+`N`, so that `ω_ξ = ω_θ` there only for `ξ` conjugate to `θ`; for the third, the sum of the `e_{b'}`
+over the `G`-orbit of `b` is a `G`-invariant idempotent of `Z(O[N])`, hence central in `O[G]` and
+the sum of the block idempotents of `G` below it (base §0.2); its reduction is the orbit sum over
+`k`, which base §8.2 writes as the sum of the block idempotents of `k[G]` of the blocks covering
+`b`, and a central idempotent of `k[G]` has exactly one central lift (base §1.3), so the blocks
+below it are those covering `b`; for the second, in one direction the first applied to some
+`χ ∈ Irr(B)` over some `θ ∈ Irr(b)` (base §8.2) with `λ_B(𝒞⁺) = ω_χ(𝒞⁺) mod m` (§6.1), and in the
+other the third: `Σ_{B' covers b} e_{B'}` is a combination of `G`-class sums in `N`, on which `λ_B`
+agrees with `λ_b`, and `λ_b` is `1` on it, so `B` is one of the `B'`; for the fourth, the third and
+the orthogonality of the idempotent sums of two distinct orbits, which therefore share no `e_B`; for
 the fifth, connectivity of `Irr(b)` in the Brauer graph (§6.1), the decomposition of `χ⁰` (base
 §2.4), Frobenius reciprocity for ordinary characters (InductionRestriction Layer 2), and, for the
 modular step that a simple `k[G]`-module `W` with a simple `k[N]`-module `V` among the composition
 factors of `Res_N W` is a quotient of `Ind_N^G V`, two statements that hold over every field, in
 particular over the residue field `k`, which is finite and so not algebraically closed (it is `𝔽₄`
 for `S₃` at `p = 2`, base §1.1): the restriction of a simple module to a normal subgroup is
-semisimple (Tau Ceti `TauCeti.Representation.isSemisimpleRepresentation_comp_subtype`), so `V` is
-a submodule of `Res_N W`, and induction is left adjoint to restriction (Mathlib
-`Rep.indResAdjunction`), so `Hom_G(Ind_N^G V, W) ≅ Hom_N(V, Res_N W) ≠ 0`; base §2.1 identifies
-the Brauer character of `Ind_N^G V` with `φ^G`; for the sixth, the second and
+semisimple (Tau Ceti `TauCeti.Representation.isSemisimpleRepresentation_comp_subtype`), so `V` is a
+submodule of `Res_N W`, and induction is left adjoint to restriction (Mathlib
+`Rep.indResAdjunction`), so `Hom_G(Ind_N^G V, W) ≅ Hom_N(V, Res_N W) ≠ 0`; base §2.1 identifies the
+Brauer character of `Ind_N^G V` with `φ^G`; for the sixth, the second and
 `λ_{b^G}(𝒞⁺) = λ_b((𝒞 ∩ N)⁺) = λ_b(𝒞⁺)` for a `G`-class `𝒞 ⊆ N`, which is the definition of `b^G`
-(base §7.1). *Needs:* §6.1; §6.3 (the change of level, for the blocks of `N`); base §§0.2, 2.1,
+(base §7.1). *Needs:* §6.1; §6.3 (the change of level, for the blocks of `N`); base §§0.2, 1.3, 2.1,
 2.4, 3.1, 4.2, 7.1, 8.2; InductionRestriction Layers 2 and 5; Tau Ceti
 `TauCeti.clifford_restrict_character`,
 `TauCeti.Representation.isSemisimpleRepresentation_comp_subtype`; Mathlib `Rep.indResAdjunction`.
@@ -1584,7 +1613,10 @@ the system of `G` through the change of level of §6.3). Prove: for `χ ∈ Irr(
 (§7.2). Route: `χ = ψ^G` with `ψ ∈ Irr(T | θ_ξ)` (Clifford, `G_{θ_ξ} ≤ T`), `θ_ξ(1) ∣ ψ(1)`,
 `ν(|G : D|) = ν(|G : T|) + ν(|N : D|)`. Prove further Reynolds' height formula: `h(χ) = ν(ξ(1))`
 for every irreducible constituent `ξ` of `χ|_D`, so the set of heights of `B` is
-`{ν(ξ(1)) : ξ ∈ Irr(D)}` (reynolds line 531, Theorem 8; martinez line 2131), using
+`{ν(ξ(1)) : ξ ∈ Irr(D)}` (reynolds line 531, Theorem 8, for the formula; martinez line 2131,
+Corollary 8.12, for the block `b` of `N = D C_N(D)`, the situation of martinez line 2018, Theorem
+8.11, and martinez lines 2331–2347, in the proof of Theorem 9.8, for the passage from `b` to `B`
+through the stabiliser `T`), using
 gap:clifford-multiplicity-dvd-index (applied to `N ⊴ T`) to make `ψ(1)/θ_ξ(1)` prime to `p`. The
 headline `reynolds_heights` is the height formula at an arbitrary splitting `p`-modular system:
 for a block `b` of `O[G]` whose reduction has the normal defect group `D`, the set of heights
