@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FunctionFieldArithmetic~13",
+  "head": "4cac1f81428ecc0fb612eca6666785c7f294890c",
+  "pr": 1474,
+  "folder": "FunctionFieldArithmetic",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 4cac1f8; this round read the pull request's title and description against the head: the three findings of the previous report (R01-R03, all in the description) are repaired and every remaining sentence is supported by the README (end theorems, consumers resolved at 7 open heads and ClassFieldTheory on main, no citation of Layer 7 anywhere). Gate rerun: every counter 0, OK; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 16 sorry warnings only. Adversarial rows computed for zeta_rationality (y^2=x^3+x+1 over F_5: N1=9, P=1+3T+5T^2, P(1)=9=h) and localAbelianExistence_all (F_2((T)), 3 index-2 subgroups containing U^(2), 3 quadratic extensions of conductor <= 2). No source locator reopened: no passage changed.",
+  "text": "d3df084e172d2ea2"
+ }
+}
