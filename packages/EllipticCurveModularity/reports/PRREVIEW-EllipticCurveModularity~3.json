@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularity~3",
+  "head": "c45ecff95b20a53a2e3ab613a8de07323e95f474",
+  "pr": 1018,
+  "folder": "EllipticCurveModularity",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 30 changed lines since 6a07636. Previous findings: R01 and R02 repaired, R03 not repaired, R04 partly repaired. Gate rerun: FAIL on statement-hygiene=1 (rationalEndomorphisms_eq_int concludes Nonempty of a ring isomorphism; repair with Int.castRingHom bijective tested in a scratch copy); all other counters 0. depcheck 0 problems, no UPWARD or CYCLE. Suggested.lean elaborates with 13 sorry warnings only and is unchanged since 6a07636. Changed passages checked: the reworded oddness argument (computed at p = 7 and p = 2, compared with serre lines 873-877), the IsSemistable contract row against the pinned Tau Ceti declaration, Serre Theorem 5 pages 208-210, Milne section 8 and Proposition 12.1 (statements confirmed; corrected-2012 page numbers not re-read). Pull request title and description read against the head: no contradiction.",
+  "text": "b865c48c83b2e276"
+ }
+}
