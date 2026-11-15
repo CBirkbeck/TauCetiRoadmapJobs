@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GlobalShtukasAndFunctionFieldLanglands~8",
+  "head": "de1f7c1ed1666a9b71e22b5b8b3e7ab125ef5a2f",
+  "pr": 1490,
+  "folder": "GlobalShtukasAndFunctionFieldLanglands",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since ede1562: the reworded statement of README §4.1 checked against VL Lemma 8.11 (VL lines 5925-5941) with computed instances (I empty, I a singleton, the contracted-product Frobenius condition, the A²×A¹ remark, the diagonal-action wrong model); its Needs citations resolved on main and at the Mathlib pin; the pull request's title and description read against the head, no sentence contradicted; no seeded-sample target in the changed passage; gate passes (all counters 0, build OK), depcheck 0 problems, Suggested.lean elaborates with no warning (no declarations); outside-folder diff empty.",
+  "text": "547fb1ceddc8f0b5"
+ }
+}
