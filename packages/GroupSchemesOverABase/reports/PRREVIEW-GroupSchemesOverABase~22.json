@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GroupSchemesOverABase~22",
+  "head": "180c164263118e615ee98ada6bbfcaff6acd0485",
+  "pr": 1522,
+  "folder": "GroupSchemesOverABase",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 6 changed lines since 4a23b23. Previous R01 repaired: the FlagVarieties bullet and the GS7 paragraph of Downstream consumers are deleted; 0 occurrences of GS7 or FlagVarieties remain in the folder and GS7 matches nowhere on main or at the open heads. Adversarial table: 4 rows with computed values (the deletion; 6.2 on SL2, PGL2, GL2, a torus, PGL3; the description's outside-folder and supplier claims; ReductiveGroups 8.1, 8.2, 9D on main). Gate: worker's passes, rerun with the candidate order passes; depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean exit 0 with 25 sorry warnings only. Description checked against the head: no contradiction, nothing unstated. Seeded sample not reread (none in a changed passage). Two ownership overlaps with open pull requests are left to the human reviewers.",
+  "text": "a5895a97aa10453e"
+ }
+}
