@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularityImaginaryQuadratic~4",
+  "head": "3a571656e6ee39c3d202a5427912841d6d0b0474",
+  "pr": 1048,
+  "folder": "EllipticCurveModularityImaginaryQuadratic",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 139 changed lines since d07b13b. Checked: the three previous findings (all repaired); the repaired passages of sections 5.1 and 7.2 with computed values (projective orders p-1, p+1 at p = 5, 7, 11; Hermite instance; strong irreducibility and the bound 404/10200); the citations FiniteFlatGroups R07.5.1-R07.5.3, PotentialAutomorphyInfrastructure 2.26, Faltings R28.6.2-R28.6.3, ModularityAndLanglandsExtensions 2.18 at their open heads; Mathlib NumberField.finite_of_discr_bdd at the pin; the thirteen regrouped subsections and nine new intro sentences, with sibling citations still resolving; five OpenAI locators in the changed groups; the pull request title and description against the head (no contradiction). Gate re-run: FAIL on tex=1 (README line 1480, braces outside a code span), which is the one finding R01 (P3); depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning; no file outside the folder.",
+  "text": "1a8280f53ad87f8b",
+  "carried": {
+   "from": "3a571656e6ee39c3d202a5427912841d6d0b0474",
+   "head": "74684b88c394435f9c89fb875e084a14622aec66",
+   "findings": 1,
+   "lines": 23,
+   "folders": [
+    "EllipticCurveModularityImaginaryQuadratic"
+   ],
+   "outside": true
+  }
+ }
+}
