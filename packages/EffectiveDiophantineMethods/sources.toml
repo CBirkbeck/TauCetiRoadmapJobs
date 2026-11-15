@@ -16,3 +16,22 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-15"
 cited_for = ["3.26"]
+
+[[source]]
+id = "bmsst2008"
+authors = "Y. Bugeaud, M. Mignotte, S. Siksek, M. Stoll, Sz. Tengely"
+title = "Integral Points on Hyperelliptic Curves"
+year = 2008
+venue = "Algebra & Number Theory 2 (2008), No. 8, 859-885."
+arxiv = "0801.4459v4"
+locator_scheme = "theorem"
+locator = "Lemma 12.1"
+url = "https://arxiv.org/abs/0801.4459v4"
+fetched_from = "https://arxiv.org/pdf/0801.4459v4"
+fetched_at = "2026-11-15T14:35:39Z"
+sha256 = "1c8448055f8bb94562a9465a4495b32a7d0b798704b4d3fc38da547245d65f72"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v4"
+cited_for = ["5.22"]
