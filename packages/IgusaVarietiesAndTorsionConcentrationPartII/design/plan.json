@@ -1984,7 +1984,7 @@
   },
   {
    "slug": "auxiliary-character-finite-avoidance",
-   "needs": "For every finite set D of rational primes disjoint from S, a choice of the Hecke character ϖ of 𝒦 extending the quadratic character of 𝒦/ℚ, with the archimedean type of §1.8, Ram_ℚ(ϖ) ⊂ Spl_{F/F⁺} and Ram_ℚ(ϖ) ∩ D = ∅.",
+   "needs": "In the Case 2 setting of §8.1, where every rational prime ramified in F lies in Spl_{F/F⁺} and in S, for every finite set D of rational primes disjoint from S, a choice of the Hecke character ϖ of 𝒦 extending the quadratic character of 𝒦/ℚ, with the archimedean type of §1.8, Ram_ℚ(ϖ) ⊂ Spl_{F/F⁺} and Ram_ℚ(ϖ) ∩ D = ∅.",
    "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
    "section": "§6.3"
   },
