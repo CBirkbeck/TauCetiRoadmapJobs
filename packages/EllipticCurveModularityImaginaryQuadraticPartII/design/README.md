@@ -31,9 +31,10 @@ fields. This roadmap starts exactly there.
 
 **Owned here.**
 
-- Layer 1: CM-ness of every intermediate field of a cyclotomic extension of a CM field, and the
-  descent of decomposed genericity and cyclotomic absolute irreducibility along a finite extension
-  of number fields.
+- Layer 1: CM-ness of the cyclotomic extensions of a CM field and of every field between two CM
+  fields (instances of the criterion of MordellLawrenceVenkatesh §1.3, where the CM base excludes the
+  totally real alternative), and the descent of decomposed genericity and cyclotomic absolute
+  irreducibility along a finite extension of number fields.
 - Layer 2: the auxiliary curve made modular over `K` before base change when `ζ₅ ∉ K`; the three
   lifts, the descent along `F/K` and the removal of the twist over an arbitrary CM field; the full
   local comparison and the CM branch over an arbitrary CM field; the endpoint for `ζ₅ ∉ K`.
@@ -50,10 +51,10 @@ fields. This roadmap starts exactly there.
   at `p = 5` for residual image `SL₂(𝔽₅)` with a protected place, and the relative presentation in
   which protected places are not framed.
 - Layers 5–6: Hecke-valued Galois representations at Iwahori level on the protected places, the
-  prepared lifting theorem and the general Steinberg-protected lifting theorem over CM fields at
-  `p = 5`. Theorem 5.3 is CrystallineLocalGlobalCompatibilityCM §§9.7 and 9.9 with the protected
+  prepared lifting theorem and the general lifting theorem at five with a protected place over CM
+  fields. Theorem 5.3 is CrystallineLocalGlobalCompatibilityCM §§9.7 and 9.9 with the protected
   places added to the Iwahori places; Theorem 6.1 is the preparation of its §9.11 with the
-  protected places kept split.
+  protected places kept split at odd residue characteristic and kept protected above two.
 - Layer 7: the width-three multiplicative degeneration of `A_t`, the auxiliary-prime local opens,
   the switch at five with retained auxiliary places (the parent's §0.3 `switch_five` with finitely
   many further retained places), and the modular auxiliary curve over a CM field containing `μ₅`.
@@ -63,15 +64,16 @@ fields. This roadmap starts exactly there.
 monodromy, character systems and congruences (Layers 1–4), Serre's large-prime theorem (§5.1),
 `potentiallySemistableCM` (§5.2), `cm_modularity` (§5.3), the independent seed, `switch_five` and
 `modular_elliptic_all_coefficients` (§0.3), the local opens (Layer 6), the simultaneous
-specialization (§§7.1–7.4), the change of coefficient prime and automorphic local types (§8.1)
-and the local and CM arguments of §§8.5–8.6. CrystallineLocalGlobalCompatibilityCM supplies the
-integral local–global compatibility, non-neat `PGL₂` complexes, prepared patching and the solvable
-preparation (§§7.5, 8.1–8.7, 9.1–9.11). ArithmeticGaloisRepresentations supplies the trace-zero
-adjoint with its conjugation action, its trace pairing, the splitting `ad = A·1 ⊕ ad⁰` when `2` is
-invertible and its base change (§7.2, and §7.9 `ResidualImage.adZeroRep` for a homomorphism into
-`GL₂(k)`), and the cohomology of `SL₂` with these coefficients (§7.7); Layer 3 restricts it to
-`SL₂` and does not define it again. The deformation-theoretic, automorphic and arithmetic carriers
-come from the suppliers listed below.
+specialization (§§7.1–7.4), the change of coefficient prime and automorphic local types (§8.1) and
+the local and CM arguments of §§8.5–8.6. MordellLawrenceVenkatesh supplies the criterion for a
+number field to be totally real or CM by products of complex conjugations (§1.3).
+CrystallineLocalGlobalCompatibilityCM supplies the integral local–global compatibility, non-neat
+`PGL₂` complexes, prepared patching and the solvable preparation (§§7.5, 8.1–8.7, 9.1–9.11).
+ArithmeticGaloisRepresentations supplies the trace-zero adjoint with its conjugation action, its
+trace pairing, the splitting `ad = A·1 ⊕ ad⁰` when `2` is invertible and its base change (§7.2, and
+§7.9 `ResidualImage.adZeroRep` for a homomorphism into `GL₂(k)`), and the cohomology of `SL₂` with
+these coefficients (§7.7); Layer 3 restricts it to `SL₂` and does not define it again. The
+deformation-theoretic, automorphic and arithmetic carriers come from the suppliers listed below.
 
 **Outside this roadmap.** Totally real fields (they use the totally real lifting theorems and are a
 separate roadmap); number fields that are neither CM nor totally real; abelian varieties of
@@ -174,11 +176,9 @@ Pin `1b1ccf4b088b32fa3f23f2de1127433254a81e1e`.
 
 - `NumberField.IsCMField` (`Mathlib/NumberTheory/NumberField/CMField.lean`): a characteristic-zero
   field that is totally complex and quadratic over `maximalRealSubfield`. With it
-  `NumberField.IsCMField.complexConj` and `NumberField.IsCMField.isConj_complexConj` (it induces
-  complex conjugation through every complex embedding), `NumberField.IsCMField.ofCMExtension` (a
-  totally complex quadratic extension of a totally real field is CM),
-  `NumberField.IsCMField.of_isAbelianGalois` and `IsCyclotomicExtension.Rat.isCMField`. The file has no statement about composita or subfields
-  of CM fields; Theorem 1.1 supplies the one needed.
+  `NumberField.IsCMField.of_isAbelianGalois` and `IsCyclotomicExtension.Rat.isCMField`. The file has
+  no statement about composita or subfields of CM fields; MordellLawrenceVenkatesh §1.3 supplies the
+  criterion and Theorem 1.1 the two instances needed.
 - `IsCyclotomicExtension` (`Mathlib/NumberTheory/Cyclotomic/Basic.lean`) and `IsPrimitiveRoot`.
 - `NumberField.isTotallyComplex_of_algebra`
   (`Mathlib/NumberTheory/NumberField/InfinitePlace/TotallyRealComplex.lean`): an extension of a
@@ -249,6 +249,8 @@ through Taylor–Wiles selection (CN23 line 4404); Layer 4 replaces that step.
 
 ### From other roadmaps
 
+- **MordellLawrenceVenkatesh** §1.3 (a number field inside `ℚ̄` is totally real or CM exactly when
+  `c₁c₂` fixes it pointwise for all complex conjugations `c₁, c₂ ∈ Gal(ℚ̄/ℚ)`), used by Theorem 1.1.
 - **PotentialAutomorphyInfrastructure** §2.1 (`genericity_normal_closure_restriction`), §2.3
   (`soluble_base_change_and_descent`, over CM or totally real fields, with all-place local
   compatibility), §2.5 (`auxiliary_cm_extension_prescriptions`, CM refinement of prescribed
@@ -321,51 +323,55 @@ whose text states characteristic-zero comparisons only.
 
 ## How to read the build
 
-Layer 1 adds two lemmas the libraries lack: CM-ness of the fields between a CM field and its
-cyclotomic extensions, and descent of the residual hypotheses of the lifting theorems along finite
-extensions. Layer 2 runs the parent's switch over an arbitrary CM field: given an automorphic seed
-for `V_η` over `F`, the three lifts and the descent give `E`; when `ζ₅ ∉ K` the seed comes from the
-parent's residual criterion over `K` followed by base change, which proves Theorem 2.5. Layers 3–6
-build the lifting theorem at five with a protected place: the finite-group and local computations
-(Layer 3), the global Galois cohomology and Taylor–Wiles primes (Layer 4), the Hecke algebras and
-prepared patching (Layer 5) and the solvable preparation and descent (Layer 6). Layer 7 produces a
-protected place on the auxiliary curve from a width-three degeneration of the cover family, retains
-it through the switch at five and proves the auxiliary curve modular when `μ₅ ⊂ K`. Layer 8 combines
-Layers 2 and 7 into the headline. Layers 1–2 are independent of Layers 3–7.
+Layer 1 adds two lemmas the libraries lack: CM-ness of the cyclotomic extensions of a CM field and
+of the fields between two CM fields, and descent of the residual hypotheses of the lifting theorems
+along finite extensions. Layer 2 runs the parent's switch over an arbitrary CM field: given an
+automorphic seed for `V_η` over `F`, the three lifts and the descent give `E`; when `ζ₅ ∉ K` the
+seed comes from the parent's residual criterion over `K` followed by base change, which proves
+Theorem 2.5. Layers 3–6 build the lifting theorem at five with a protected place: the finite-group
+and local computations (Layer 3), the global Galois cohomology and Taylor–Wiles primes (Layer 4),
+the Hecke algebras and prepared patching (Layer 5) and the solvable preparation and descent
+(Layer 6). Layer 7 produces a protected place on the auxiliary curve from a width-three degeneration
+of the cover family, retains it through the switch at five and proves the auxiliary curve modular
+when `μ₅ ⊂ K`. Layer 8 combines Layers 2 and 7 into the headline. Layers 1–2 are independent of
+Layers 3–7.
 
 ## Layer 1: Cyclotomic CM fields and descent of residual hypotheses
 
-### 1.1 Intermediate fields of a cyclotomic extension of a CM field
+### 1.1 Cyclotomic extensions and intermediate fields of CM fields
 
-Prove: let `K` be a CM number field, `S` a set of positive integers and `L/K` a finite extension
-with `IsCyclotomicExtension S K L`. Then every intermediate field `K ⊆ K' ⊆ L` is a CM field; in
-particular `L` is CM. The route: `L` is the composite of `K` with a cyclotomic field `ℚ(μ_m)` inside
-`L`, which is CM or `ℚ` (`IsCyclotomicExtension.Rat.isCMField`); a composite of CM fields is CM,
-because each complex embedding induces the same complex conjugation on the composite (MilneCM,
-Proposition 1.4 and Corollary 1.5, p. 10). For `K'` between `K` and `L`: `K'` is totally complex
-because it contains `K` (`NumberField.isTotallyComplex_of_algebra`). The Galois closure `L̃` of `L`
-over `ℚ` is CM (MilneCM, Corollary 1.5), and its complex conjugation `c` is central in `Gal(L̃/ℚ)`:
-for an embedding `β : L̃ → ℂ` and `σ ∈ Gal(L̃/ℚ)`, `β ∘ σ` is again an embedding, so
-`β ∘ σcσ⁻¹ = conj ∘ β = β ∘ c` (`NumberField.IsCMField.isConj_complexConj`) and `σcσ⁻¹ = c` because `β`
-is injective (MilneCM, Proposition 1.4(b) and the uniqueness of complex conjugation noted after it,
-p. 10, lines 273–290). Hence `c` normalizes `Gal(L̃/K')` and preserves `K'`; its fixed field in `K'` is
-totally real and `K'` is quadratic over it, so `NumberField.IsCMField.ofCMExtension` applies. This is
-the fact used when descending along `F/K` through intermediate fields (LeHung26, Lemma 5.1, p. 9).
+Prove: (a) let `K` be a CM number field, `S` a set of positive integers and `L/K` a finite extension
+with `IsCyclotomicExtension S K L`; then `L` is a CM field. (b) Let `K ⊆ L` be CM number fields; then
+every intermediate field `K ⊆ K' ⊆ L` is a CM field. Both are instances of the criterion of
+MordellLawrenceVenkatesh §1.3: a number field inside `ℚ̄` is totally real or CM exactly when `c₁c₂`
+fixes it pointwise for all complex conjugations `c₁, c₂ ∈ Gal(ℚ̄/ℚ)`. For (a), `L` is generated over `K`
+by a cyclotomic field `ℚ(μ_m) ⊆ L`, which is CM or `ℚ` (`IsCyclotomicExtension.Rat.isCMField`); every
+`c₁c₂` fixes `K` and `ℚ(μ_m)` pointwise, hence their composite `L` (MilneCM, Corollary 1.5, p. 10). For
+(b), every `c₁c₂` fixes `L` pointwise, hence `K'` (MilneCM, Remark 1.6, p. 10). In both cases the field
+contains `K`, so it is totally complex (`NumberField.isTotallyComplex_of_algebra`) and therefore CM,
+not totally real. Part (a) makes `F = K(μ_n)` CM in Layers 2 and 8; part (b) is the fact used when
+descending along `F/K` through intermediate fields (LeHung26, Lemma 5.1, p. 9).
 
-*Needs:* Mathlib `NumberField.IsCMField`, `NumberField.IsCMField.ofCMExtension`,
-`NumberField.IsCMField.complexConj`, `NumberField.IsCMField.isConj_complexConj`,
-`IsCyclotomicExtension`, `IsCyclotomicExtension.Rat.isCMField`,
-`NumberField.isTotallyComplex_of_algebra`.
+*Needs:* Mathlib `NumberField.IsCMField`, `IsCyclotomicExtension`,
+`IsCyclotomicExtension.Rat.isCMField`, `NumberField.isTotallyComplex_of_algebra`;
+MordellLawrenceVenkatesh §1.3.
 
 **Checks.**
 
 - For `K = ℚ(i)` and `L = ℚ(ζ₂₀)`, `Gal(L/K) ≅ (ℤ/5)ˣ` is cyclic of order four; the intermediate
   fields are `ℚ(i)`, `ℚ(i, √5)` and `ℚ(ζ₂₀)`, and the middle one is CM with maximal real subfield
   `ℚ(√5)`.
-- The subfield `ℚ(√5)` of `ℚ(ζ₂₀)` is totally real, not CM: the statement concerns fields containing
-  `K`, and fails for arbitrary subfields of `L`.
-- For `S = {1, 2}` the extension is trivial, `L = K`, and the statement reduces to `K` being CM.
-- For `K = ℚ(√−3)` and `S = {4}`, `L = ℚ(ζ₁₂)` is abelian over `ℚ`, and the conclusion agrees with
+- Part (b) does not need `L/K` cyclotomic: for `K = ℚ(i) ⊂ K' = ℚ(i, √5) ⊂ L = ℚ(i, √3, √5)`, `L` is CM
+  of degree eight with quadratic subfields `ℚ(√d)`, `d ∈ {−1, ±3, ±5, ±15}`; it contains neither `ζ₈`
+  (no `√2`) nor `ζ₅` (`Gal(L/ℚ) ≅ (ℤ/2)³` has no cyclic quotient of order four), so its roots of unity
+  are `μ₁₂` and `K(μ₁₂) = ℚ(i, √3) ≠ L`. Still `K'` is CM with maximal real subfield `ℚ(√5)`.
+- The subfield `ℚ(√5)` of `ℚ(ζ₂₀)` is totally real, not CM: part (b) concerns fields containing `K`,
+  and fails for arbitrary subfields of `L`.
+- Part (a) needs `K` CM: for `K = ℚ(2^(1/3))`, `K(ζ₃)` is the splitting field of `X³ − 2`, with Galois
+  group `S₃`; its complex conjugations are transpositions, `c₁c₂` can be a three-cycle, which moves
+  `2^(1/3)`, and the field is not CM.
+- For `S = {1, 2}` the extension is trivial, `L = K`, and (a) reduces to `K` being CM.
+- For `K = ℚ(√−3)` and `S = {4}`, `L = ℚ(ζ₁₂)` is abelian over `ℚ`, and (a) agrees with
   `NumberField.IsCMField.of_isAbelianGalois`.
 
 ### 1.2 Descent of residual hypotheses along a finite extension
@@ -403,7 +409,8 @@ Theorem 2.1 applies.
 
 ### Dependencies
 
-Mathlib's CM-field and cyclotomic API; AutomorphicGaloisRepresentationsPartII AG2.7;
+Mathlib's CM-field and cyclotomic API; MordellLawrenceVenkatesh §1.3;
+AutomorphicGaloisRepresentationsPartII AG2.7;
 ArithmeticGaloisRepresentations §2.1.
 
 ## Layer 2: The switch over an arbitrary CM field
@@ -1035,7 +1042,7 @@ DeformationAndDerivedPatchingAlgebra §§8.1–8.5; GlobalGaloisDeformations §�
 LocalGaloisDeformationRings §§2.15, 3.14, 4.14–4.15, 6.6; AutomorphicGaloisRepresentationsPartII
 AG2.5 through `gap:acc-torsion-inertial-comparison`.
 
-## Layer 6: The Steinberg-protected lifting theorem
+## Layer 6: The lifting theorem at five with a protected place
 
 ### 6.1 Solvable preparation keeping the protected places
 
@@ -1044,19 +1051,26 @@ CN23 Theorem 5.2 at `p = 5` with `ρ̄(G_F)` conjugate to `SL₂(𝔽₅)`, and 
 `v ∤ 5` such that, for every `v ∈ P`: `ρ̄|G_{F_v}` is protected; every element of `ρ(I_v)` has
 characteristic polynomial `(X − 1)²`; `π_v^(Iw_v) ≠ 0`; and `ρ`, `π` are unramified at `v^c`. Prove: there
 is a finite solvable Galois CM extension `F'/F`, linearly disjoint over `F` from the field cut out by
-`ρ̄`, in which every place of `P ∪ P^c` splits completely, such that `F'`, `S' = S'₅ ⊔ R' ⊔ P'` with `P'`
-the places above `P`, the base change `π_{F'}` and `ρ|G_{F'}` satisfy §5.1 and the hypotheses of §5.4.
-The route is the preparation of CrystallineLocalGlobalCompatibilityCM §9.11 (choice of test places,
-prescribed completions over `F⁺` through GL2ModularityLifting §1.7 and PotentialAutomorphyInfrastructure
-§2.5, the three imaginary quadratic composita, the degree inflation at five), whose construction does
-not use clause (15), with trivial prescribed completions at the places of `F⁺` below `P`; these places
-split over `F⁺` because `v^c ≠ v`. Since `ζ₅ ∈ F` no auxiliary smooth places are added. Linear
-disjointness and perfectness of `SL₂(𝔽₅)` preserve `ρ̄(G_{F'}) = ρ̄(G_F)`; decomposed genericity is
-preserved by PotentialAutomorphyInfrastructure §2.1 or a split witness; the local components at
-`P'` are those at `P`, so protection, unipotent inertia and Iwahori vectors persist, and `P'^c` lies
-outside `S'`. (CN23, end of the proof of Theorem 5.2, lines 4433–4509; CaptainSude26, proof of
-Proposition 5.2, lines 543–603; ACC23, §6.5.12, p. 178, lines 7163–7187, for the three imaginary
-quadratic fields.)
+`ρ̄`, in which every place of `P ∪ P^c` of odd residue characteristic splits completely and every place
+of `P ∪ P^c` above two has ramification index dividing four, such that `F'`, `S' = S'₅ ⊔ R' ⊔ P'` with
+`P'` the places above `P`, the base change `π_{F'}` and `ρ|G_{F'}` satisfy §5.1 and the hypotheses of
+§5.4. The route is the preparation of CrystallineLocalGlobalCompatibilityCM §9.11 (choice of test
+places, prescribed completions over `F⁺` through GL2ModularityLifting §1.7 and
+PotentialAutomorphyInfrastructure §2.5, the three imaginary quadratic composita, the degree inflation
+at five), whose construction does not use clause (15), with three additions at `P`: trivial prescribed
+completions at the places of `F⁺` below `P`, which split in `F` because `v^c ≠ v`; these places in the
+split set of the degree inflation; and the odd rational primes below `P` among the primes required to
+split in each of the three imaginary quadratic fields `E_a`, `E_b = ℚ(√−d_b)`, `E_c = ℚ(√−d_c)` (ACC23
+already requires it in `E_b`, `ρ` being ramified at `P`). Two splits in `E_a` but never in `E_b` (third
+Check), so at a place `v` of `P ∪ P^c` above two the composita give `F'_w = F_v(√−d_b, √−d_c)`, of degree
+dividing four over `F_v`. Since `ζ₅ ∈ F` no auxiliary smooth places are added. Linear disjointness and
+perfectness of `SL₂(𝔽₅)` preserve `ρ̄(G_{F'}) = ρ̄(G_F)`; decomposed genericity is preserved by
+PotentialAutomorphyInfrastructure §2.1 or a split witness. At a place of `P'` the completion is that of
+`P` or, above two, an extension of ramification index dividing four, which is prime to five: protection
+persists (§3.3), unipotent inertia persists on the smaller inertia group, Iwahori vectors persist
+because the parameter of `π_v` is trivial on inertia, and `P'^c` lies outside `S'`. (CN23, end of the
+proof of Theorem 5.2, lines 4433–4509; CaptainSude26, proof of Proposition 5.2, lines 543–603; ACC23,
+§6.5.12, p. 178, lines 7163–7187, for the three imaginary quadratic fields.)
 
 *Needs:* §§3.3, 5.1; CrystallineLocalGlobalCompatibilityCM §9.11; GL2ModularityLifting §1.7;
 PotentialAutomorphyInfrastructure §§2.1, 2.3, 2.5; PotentialModularityAndCompatibleSystems §§2.12–2.16.
@@ -1064,7 +1078,8 @@ PotentialAutomorphyInfrastructure §§2.1, 2.3, 2.5; PotentialModularityAndCompa
 **Checks.**
 
 - A ramified prescribed completion of index five at a place of `P` would make residual inertia
-  `U⁵ = 1`; the preparation keeps every place above `P` split.
+  `U⁵ = 1`; the preparation keeps every place above `P` of odd residue characteristic split, and above
+  two its ramification index divides four.
 - If `ρ(I_{v^c})` is infinite, or finite of order divisible by five (for instance when `ρ̄` is also
   protected at `v^c`), no CM extension `F'/F` reaches `P'^c ∩ S' = ∅` with `P'` protected. Complex
   conjugation of `F'` matches each place above `v^c` with a place above `v` of isomorphic completion and
@@ -1074,8 +1089,23 @@ PotentialAutomorphyInfrastructure §§2.1, 2.3, 2.5; PotentialModularityAndCompa
   inertia is generated by a power of `U⁵ = 1` and is trivial (§3.3, third bullet). If instead
   `ρ(I_{v^c})` has order three, a prescribed completion of ramification index three at the place of `F⁺`
   below `v` makes `ρ` unramified above `v^c` and keeps protection above `v`, three being prime to five.
-  The preparation of this section keeps `P ∪ P^c` completely split, so it needs `ρ` and `π` unramified
-  at `v^c`.
+  The preparation of this section prescribes trivial completions at `P ∪ P^c` and adds there only the
+  ramification of the imaginary quadratic composita above two, so it needs `ρ` and `π` unramified at
+  `v^c`.
+- Above two the three fields cannot all split. Under the conditions of ACC23 §6.5.12 (lines
+  7165–7172: five is unramified, and an odd prime other than five ramified in one of `E_b`, `E_c` splits
+  in the other), two splits in `E_a` and never in `E_b`. If `−d_b` were a square in `ℚ₂`, the Hilbert
+  symbol `(−d_b, −d_c)_l` would be `1` at `l = 2`, at every odd prime dividing `d_b` (it splits in `E_c`),
+  at every odd prime dividing `d_c` (it splits in `E_b`) and at every other prime, and `−1` at the real
+  place, against the product formula. For ACC23's choice `E_b = ℚ(√−p_b)`, `E_c = ℚ(√−p_c)` with
+  `p_b ≡ 1 mod 4` and `p_c ≡ 1 mod 4p_b`, the completion of `E_bE_c` at two is `ℚ₂(√−p_b, √−p_c)`; it
+  contains the unramified `ℚ₂(√(p_b p_c))` (`p_b p_c ≡ 1 mod 4`) and has ramification index two, prime to
+  five, so a protected place above two stays protected.
+- For `q = 11` below `P` the added congruences are compatible with ACC23's: `p_b = 109` and `p_c = 2617`
+  are primes with `109 ≡ 1 mod 4`, `2617 ≡ 1 mod 436` and `109 ≡ 2617 ≡ −1 mod 11` (`11 ∤ 436`). Then
+  `−4·109 ≡ −4·2617 ≡ 4 mod 11` is a nonzero square, so `11` splits in `E_b` and `E_c`, and `109` splits
+  in `E_c` (`−2617 ≡ −1`, a square modulo `109 ≡ 1 mod 4`). With `E_a` split at `2, 5, 11`, every
+  completion of `F'` above a place of `P ∪ P^c` over `11` is that of `F`.
 - For `F = ℚ(ζ₅)`, which has no imaginary quadratic subfield, the imaginary quadratic composita are
   required to reach condition (i) of §5.1.
 
@@ -1407,5 +1437,5 @@ versions below, with printed pages where given.
   Proposition 6.5.13.
 - **CHT08.** Laurent Clozel, Michael Harris and Richard Taylor, *Automorphy for some l-adic lifts of
   automorphic mod l Galois representations*, Publ. Math. IHÉS 108 (2008). Lemma 4.1.2, p. 116.
-- **MilneCM.** J. S. Milne, *Complex Multiplication*, course notes, version of 14 July 2020. Proposition 1.4
-  with the uniqueness of complex conjugation noted after it, and Corollary 1.5, p. 10 (lines 273–295).
+- **MilneCM.** J. S. Milne, *Complex Multiplication*, course notes, version of 14 July 2020. Proposition 1.4,
+  Corollary 1.5 and Remark 1.6, p. 10 (lines 273–300).

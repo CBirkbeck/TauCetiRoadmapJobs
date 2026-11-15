@@ -16,25 +16,21 @@
      "id": "1.1",
      "kind": "theorem",
      "name": "isCMField_of_intermediate_cyclotomic",
-     "statement": "Let K be a CM number field and L/K a finite extension with IsCyclotomicExtension S K L. Every intermediate field K ⊆ K' ⊆ L is a CM field; in particular L is CM.",
+     "statement": "(a) Let K be a CM number field and L/K a finite extension with IsCyclotomicExtension S K L; then L is CM. (b) Let K ⊆ L be CM number fields; then every intermediate field K ⊆ K' ⊆ L is CM. Both are instances of the criterion of MordellLawrenceVenkatesh §1.3 (totally real or CM iff every product of two complex conjugations fixes the field), the CM base excluding the totally real alternative.",
      "hypotheses": [
-      "K is a number field with NumberField.IsCMField K",
-      "L/K finite",
-      "IsCyclotomicExtension S K L",
-      "K ⊆ K' ⊆ L"
+      "(a) K a number field with NumberField.IsCMField K; L/K finite; IsCyclotomicExtension S K L",
+      "(b) K ⊆ L number fields, both CM; K ⊆ K' ⊆ L"
      ],
      "locator": {
       "source": "MilneCM",
-      "where": "Proposition 1.4(b) with the uniqueness of complex conjugation noted after it, and Corollary 1.5, p. 10 (lines 273-295)"
+      "where": "Corollary 1.5 and Remark 1.6, p. 10 (lines 292-300), with Proposition 1.4 (lines 273-287)"
      },
      "prerequisites": [
       "mathlib:NumberField.IsCMField",
-      "mathlib:NumberField.IsCMField.ofCMExtension",
-      "mathlib:NumberField.IsCMField.complexConj",
-      "mathlib:NumberField.IsCMField.isConj_complexConj",
       "mathlib:IsCyclotomicExtension",
       "mathlib:IsCyclotomicExtension.Rat.isCMField",
-      "mathlib:NumberField.isTotallyComplex_of_algebra"
+      "mathlib:NumberField.isTotallyComplex_of_algebra",
+      "roadmap:MordellLawrenceVenkatesh §1.3"
      ],
      "api": [],
      "tests": [
@@ -44,19 +40,29 @@
        "statement": "For K = Q(i), L = Q(zeta_20), the intermediate field Q(i, sqrt 5) is CM with maximal real subfield Q(sqrt 5)."
       },
       {
+       "name": "cm_intermediate_noncyclotomic",
+       "kind": "computation",
+       "statement": "For K = Q(i) ⊂ K' = Q(i, sqrt 5) ⊂ L = Q(i, sqrt 3, sqrt 5), L is CM of degree 8 with roots of unity mu_12, so L ≠ K(mu_S) for every S; K' is CM with maximal real subfield Q(sqrt 5): (b) does not need L/K cyclotomic."
+      },
+      {
        "name": "cm_intermediate_trivial",
        "kind": "degenerate",
-       "statement": "For S = {1, 2}, L = K and the statement is that K is CM."
+       "statement": "For S = {1, 2}, L = K and (a) is that K is CM."
       },
       {
        "name": "cm_intermediate_real_subfield",
        "kind": "non-example",
-       "statement": "Q(sqrt 5) inside Q(zeta_20) is totally real and not CM: the statement needs K' to contain K."
+       "statement": "Q(sqrt 5) inside Q(zeta_20) is totally real and not CM: (b) needs K' to contain K."
+      },
+      {
+       "name": "cm_cyclotomic_noncm_base",
+       "kind": "non-example",
+       "statement": "For K = Q(2^(1/3)), K(zeta_3) is the splitting field of X^3 - 2 with Galois group S_3; complex conjugations are transpositions, a product of two can be a 3-cycle moving 2^(1/3), and K(zeta_3) is not CM: (a) needs K CM."
       },
       {
        "name": "cm_intermediate_abelian",
        "kind": "compatibility",
-       "statement": "For K = Q(sqrt -3), S = {4}, L = Q(zeta_12) and the conclusion agrees with NumberField.IsCMField.of_isAbelianGalois."
+       "statement": "For K = Q(sqrt -3), S = {4}, L = Q(zeta_12) and (a) agrees with NumberField.IsCMField.of_isAbelianGalois."
       }
      ]
     },
@@ -954,13 +960,13 @@
   },
   {
    "key": "6",
-   "title": "The Steinberg-protected lifting theorem",
+   "title": "The lifting theorem at five with a protected place",
    "targets": [
     {
      "id": "6.1",
      "kind": "theorem",
      "name": "protected_solvable_preparation",
-     "statement": "F CM with ζ5 ∈ F, ρ, π satisfying CN23 Theorem 5.2 (1)-(3),(5) at p = 5 with ρbar(G_F) ≅ SL₂(F5), P nonempty with: ρbar protected, ρ(I_v) unipotent, π_v^{Iw} ≠ 0, ρ and π unramified at v^c. There is a finite solvable Galois CM F'/F, disjoint from the field of ρbar, with P ∪ P^c split completely, such that the base-changed data satisfy 5.1 and the hypotheses of 5.4.",
+     "statement": "F CM with ζ5 ∈ F, ρ, π satisfying CN23 Theorem 5.2 (1)-(3),(5) at p = 5 with ρbar(G_F) ≅ SL₂(F5), P nonempty with: ρbar protected, ρ(I_v) unipotent, π_v^{Iw} ≠ 0, ρ and π unramified at v^c. There is a finite solvable Galois CM F'/F, disjoint from the field of ρbar, in which every place of P ∪ P^c of odd residue characteristic splits completely and every place of P ∪ P^c above 2 has ramification index dividing 4, such that the base-changed data satisfy 5.1 and the hypotheses of 5.4. Route: the preparation of CrystallineLocalGlobalCompatibilityCM §9.11 with trivial prescribed completions below P, P in the split set of the degree inflation, and the odd primes below P required to split in each of the three imaginary quadratic fields of ACC23 §6.5.12.",
      "hypotheses": [
       "F CM, ζ5 ∈ F",
       "image SL₂(F5)",
@@ -986,12 +992,22 @@
       {
        "name": "prep_index_five",
        "kind": "non-example",
-       "statement": "A completion of ramification index 5 above P makes residual inertia U⁵ = 1."
+       "statement": "A completion of ramification index 5 above P makes residual inertia U⁵ = 1; the preparation keeps places above P of odd residue characteristic split and gives ramification index dividing 4 above 2."
       },
       {
        "name": "prep_conjugate_ramified",
        "kind": "non-example",
-       "statement": "If ρ(I_{v^c}) is infinite or of order divisible by 5 (e.g. ρbar also protected at v^c), complex conjugation of any CM F' matches places above v^c and v with equal ramification index, so making ρ unramified above v^c is impossible or forces 5 | e above v, where residual inertia is generated by a power of U⁵ = 1 and is trivial: P'^c ∩ S' = ∅ cannot be reached with P' protected. If ρ(I_{v^c}) has order 3, a ramification-index-3 completion at the place of F⁺ below v makes ρ unramified above v^c and keeps protection above v. The preparation here keeps P ∪ P^c split, so it needs ρ, π unramified at v^c."
+       "statement": "If ρ(I_{v^c}) is infinite or of order divisible by 5 (e.g. ρbar also protected at v^c), complex conjugation of any CM F' matches places above v^c and v with equal ramification index, so making ρ unramified above v^c is impossible or forces 5 | e above v, where residual inertia is generated by a power of U⁵ = 1 and is trivial: P'^c ∩ S' = ∅ cannot be reached with P' protected. If ρ(I_{v^c}) has order 3, a ramification-index-3 completion at the place of F⁺ below v makes ρ unramified above v^c and keeps protection above v. The preparation here prescribes trivial completions at P ∪ P^c and adds only the 2-adic ramification of the imaginary quadratic composita, so it needs ρ, π unramified at v^c."
+      },
+      {
+       "name": "prep_two_adic",
+       "kind": "non-example",
+       "statement": "Under ACC23 §6.5.12 (5 unramified; an odd prime ≠ 5 ramified in one of E_b = Q(sqrt -d_b), E_c = Q(sqrt -d_c) splits in the other), 2 never splits in E_b: if -d_b were a 2-adic square, the Hilbert symbols (-d_b, -d_c)_l would be 1 at every prime and -1 at infinity. For p_b ≡ 1 mod 4, p_c ≡ 1 mod 4p_b the completion at 2 is Q_2(sqrt -p_b, sqrt -p_c), ramification index 2, prime to 5: protection above 2 survives."
+      },
+      {
+       "name": "prep_odd_split",
+       "kind": "computation",
+       "statement": "For q = 11 below P: p_b = 109, p_c = 2617 are primes with 109 ≡ 1 mod 4, 2617 ≡ 1 mod 436, 109 ≡ 2617 ≡ -1 mod 11; -4·109 ≡ -4·2617 ≡ 4 mod 11, so 11 splits in E_b and E_c, and 109 splits in E_c since -2617 ≡ -1 is a square mod 109."
       },
       {
        "name": "prep_Qzeta5",
@@ -1382,6 +1398,13 @@
     "§2.5"
    ],
    "what": "Genericity under restriction, soluble base change and descent over CM fields with all-place compatibility, CM prescribed completions."
+  },
+  {
+   "roadmap": "MordellLawrenceVenkatesh",
+   "sections": [
+    "§1.3"
+   ],
+   "what": "A number field inside Q-bar is totally real or CM exactly when every product of two complex conjugations fixes it pointwise; used by Theorem 1.1."
   },
   {
    "roadmap": "AutomorphicGaloisRepresentationsPartII",
