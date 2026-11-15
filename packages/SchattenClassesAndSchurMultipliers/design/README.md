@@ -44,9 +44,11 @@ This roadmap owns:
   the kernel map onto `S₂`), the kernel calculus (adjoint, composition, multiplication operators,
   transposition) and the transformation of kernels under change of measure, measure-preserving
   isomorphisms and passage to a sub-σ-algebra, and, for the `L^∞` conditional expectation of
-  BochnerSpaces §7.4, the uniqueness in its pairing characterisation, its invariance under
-  `𝒜`-measurable densities, its commutation with complex conjugation and its module property
-  against `MeasureTheory.condExpL2` (Layer 2);
+  BochnerSpaces §7.4, the `𝒜`-measurability of its values, its positivity and its tower law
+  (carried over from the `L¹` projection by the adjoint formula), its agreement with
+  `MeasureTheory.condExp` on integrable functions, the uniqueness in its pairing characterisation,
+  its invariance under `𝒜`-measurable densities, its commutation with complex conjugation and its
+  module property against `MeasureTheory.condExpL2` (Layer 2);
 - Schur multipliers on `L²(Ω, μ)` for σ-finite `(Ω, μ)`: the multiplier on `S₂`, its norms on
   `S_p`, its unique bounded extension, its completely bounded norm by amplified symbols, the finite
   (Hadamard) case, and their invariances (Layer 3); duality and interpolation (Layer 4);
@@ -95,10 +97,13 @@ It leaves to named roadmaps, and consumes from them by section:
   values in a reflexive space (B4.0), which gives the Radon–Nikodým representation of bounded maps
   `L¹(μ) → K` used in §6.4.
 - **BochnerSpaces** owns the scalar conditional expectation on `L^∞` for a measure whose trim to
-  the sub-σ-algebra is σ-finite, defined as the adjoint of the `L¹` projection, with positivity,
-  contractivity, the tower law and agreement with `MeasureTheory.condExp` on integrable functions
-  (§7.4), and the divisibility of atomless finite measures (§7.5). §2.5 proves the further
-  properties of that expectation which Layers 5–7 use, and §7.1 applies §7.5 to the restriction
+  the sub-σ-algebra is σ-finite, defined as the adjoint of the `L¹` projection `E₁`, with its
+  adjoint formula, its contractivity and its agreement with `MeasureTheory.condExpL2` on
+  `L^∞ ∩ L²`, together with the positivity, idempotence, tower law and agreement with
+  `MeasureTheory.condExp` of `E₁` (§7.4), and the divisibility of atomless finite measures
+  (§7.5). §2.5 proves the further properties of that expectation which Layers 5–7 use, among
+  them the `𝒜`-measurability of its values, its positivity and its tower law, carried over from
+  `E₁` by the adjoint formula, and §7.1 applies §7.5 to the restriction
   of an atomless measure to a set of finite measure. Mathlib's `MeasureTheory.condExp` is `0` on
   every non-integrable function and gives this expectation only on integrable functions; the
   normal expectation of NoncommutativeIntegration §4.3 lives on that roadmap's own `Lᵖ` carriers
@@ -194,6 +199,11 @@ differences, which belong to SchattenClassesAndSchurMultipliers, Part II (Downst
   finite measure (§2.5, §5.3, §6.4); §2.4 uses `MeasureTheory.condExpL2` for kernels, and bounded
   functions of a measure that is only σ-finite on the sub-σ-algebra take the `L^∞` conditional
   expectation of BochnerSpaces §7.4 (§2.5).
+- `MeasureTheory.condExp_indicator` (`…/ConditionalExpectation/Indicator.lean`): for an integrable
+  `f` and a set `A ∈ 𝒜`, the conditional expectation of `1_A f` is `1_A` times that of `f`;
+  `MeasureTheory.MemLp.condExpL2_ae_eq_condExp'` (`…/ConditionalExpectation/Basic.lean`): when `μ`
+  is σ-finite on `𝒜`, `MeasureTheory.condExpL2` and `MeasureTheory.condExp` agree on functions
+  that are integrable and square-integrable (§2.5).
 - `MeasureTheory.exists_pos_lintegral_lt_of_sigmaFinite`
   (`Mathlib/MeasureTheory/Integral/Lebesgue/Countable.lean`) and `MeasureTheory.lintegral_trim`:
   an everywhere positive measurable function of finite integral for a σ-finite measure, and
@@ -440,14 +450,14 @@ on rank-one kernels and extended by continuity.
 
 - §7.4: for σ-algebras `𝒜 ⊆ 𝓑` on `Ω` and a measure `μ` on `𝓑` whose trim `μ.trim h` to `𝒜` is
   σ-finite, with complex scalars: the `L¹` projection `E₁` of `L¹(Ω, 𝓑, μ)` onto the
-  `𝒜`-measurable classes (positive, contractive, idempotent, satisfying the tower law for nested
-  σ-algebras, equal to `MeasureTheory.condExp` on integrable functions), and the contraction
-  `φ ↦ E[φ | 𝒜]` of `L^∞(Ω, 𝓑, μ)`, with values in the `𝒜`-measurable classes, defined as its
-  adjoint: `∫ E[φ | 𝒜] g dμ = ∫ φ E₁(g) dμ` for every `g ∈ L¹(μ)`, in particular
-  `∫ E[φ | 𝒜] g dμ = ∫ φ g dμ` for every `𝒜`-measurable `g ∈ L¹(μ)`; it agrees with
-  `MeasureTheory.condExpL2` on `L^∞ ∩ L²` and with `MeasureTheory.condExp` on `L^∞ ∩ L¹`.
-  Positivity, contractivity and the tower law of `E[· | 𝒜]` are those of `E₁` carried over by the
-  adjoint formula.
+  `𝒜`-measurable classes (positive, contractive, idempotent with range the `𝒜`-measurable
+  classes, satisfying the tower law for nested σ-algebras, equal to `MeasureTheory.condExp` on
+  integrable functions), and the linear contraction `φ ↦ E[φ | 𝒜]` of `L^∞(Ω, 𝓑, μ)` defined as
+  its adjoint: `∫ E[φ | 𝒜] g dμ = ∫ φ E₁(g) dμ` for every `g ∈ L¹(μ)`; it agrees with
+  `MeasureTheory.condExpL2` on `L^∞ ∩ L²`. Nothing else is assumed of `E[· | 𝒜]`: the
+  `𝒜`-measurability of its values, its positivity, its tower law and its agreement with
+  `MeasureTheory.condExp` on `L^∞ ∩ L¹` are proved in §2.5 from the properties of `E₁` listed
+  here.
 - §7.5: for a finite atomless measure `ν`, a measurable set `A` and `0 ≤ t ≤ 1`, a measurable
   `B ⊆ A` with `ν(B) = t ν(A)`. Atomless is assumed there in the sense of §7.1: no set is an atom
   in the sense of Tau Ceti's `MeasureTheory.Measure.IsAtom`. Under the weaker reading by null
@@ -461,8 +471,8 @@ operators and interpolation with the compact endpoint, and defines completely bo
 amplification. Layer 2 gives every Hilbert–Schmidt operator between `L²` spaces its kernel, computes
 kernels of adjoints, products, transposes, multiplication operators, changes of measure and
 compressions to sub-σ-algebras, and proves the properties of the `L^∞` conditional expectation of
-BochnerSpaces §7.4 that the later layers use, among them its module property against the `L²`
-projection. Layer 3 defines Schur multipliers, their norms,
+BochnerSpaces §7.4 that the later layers use, among them the `𝒜`-measurability of its values,
+its positivity and tower law, and its module property against the `L²` projection. Layer 3 defines Schur multipliers, their norms,
 extensions and completely bounded norms, with the finite case and the invariances. Layer 4 proves
 duality and interpolation. Layer 5 studies conditional expectations of symbols and martingale
 limits. Layer 6 proves the Schur product theorem and the Grothendieck–Haagerup characterisation,
@@ -473,8 +483,8 @@ BMO seminorms and the interpolation inequality between matrix BMO and `S₂`; La
 Hörmander–Mikhlin–Schur theorem.
 
 Layers 1 and 2 can be built at once, except that §2.3 and §2.4 use §1.1 and §1.4. Layer 3 needs
-Layers 1 and 2; Layer 4 needs Layers 1–3; Layer 5 needs Layers 2 and 3. Layer 6 needs Layers 1, 3,
-4 and 5 (§6.1–6.3 need only Layers 1, 3 and 4). Layer 7 needs Layers 3 and 5. Layer 8 needs
+Layers 1 and 2; Layer 4 needs Layers 1–3; Layer 5 needs Layers 2 and 3. Layer 6 needs Layers 1–5
+(§6.1–6.3 need only Layers 1, 3 and 4). Layer 7 needs Layers 2, 3 and 5. Layer 8 needs
 Layers 1, 3 and 5. Layer 9 needs Layers 1, 3, 4 and 8. Layer 10 needs Layers 1 and 3. Layer 11 needs
 Layers 2, 3, 4, 7 and 10.
 
@@ -815,14 +825,39 @@ counting measure and `𝒜 = 𝓑`, the kernel `k(i, j) = u_i u_j` with `u_j = 1
 
 Let `𝒜 ⊆ 𝓑` be σ-algebras on `Ω` and `μ` a measure on `𝓑` that is σ-finite on `𝒜`
 (`MeasureTheory.SigmaFinite (μ.trim h)`). For `φ ∈ L^∞(Ω, 𝓑, μ)`, `E[φ | 𝒜]` is the `L^∞`
-conditional expectation of BochnerSpaces §7.4: linear, positive and contractive, with values in
-the `𝒜`-measurable classes, satisfying the tower law `E[E[φ | 𝒜] | 𝒜'] = E[φ | 𝒜']` for
-`𝒜' ⊆ 𝒜` with `μ` σ-finite on `𝒜'`, and `∫ E[φ | 𝒜] g dμ = ∫ φ g dμ` for every `𝒜`-measurable
-`g ∈ L¹(μ)` (lafforgue-delasalle-2011 lines 356–359 for the setting). Layer 5 and its consumers
-use it on `Ω × Ω` for `μ ⊗ μ` and `𝒜 ⊗ 𝒜`, on which `μ ⊗ μ` is σ-finite (§2.4). Prove:
+conditional expectation of BochnerSpaces §7.4: the linear contraction of `L^∞(Ω, 𝓑, μ)` adjoint
+to the `L¹` projection `E₁` onto the `𝒜`-measurable classes,
+`∫ E[φ | 𝒜] g dμ = ∫ φ E₁(g) dμ` for every `g ∈ L¹(μ)`, which agrees with
+`MeasureTheory.condExpL2` on `L^∞ ∩ L²` (lafforgue-delasalle-2011 lines 356–359 for the setting).
+Since `E₁` fixes the `𝒜`-measurable classes, `∫ E[φ | 𝒜] g dμ = ∫ φ g dμ` for every
+`𝒜`-measurable `g ∈ L¹(μ)`. The measure `μ` is σ-finite, because it is on `𝒜`, so a class of
+`L^∞(μ)` is determined by its integrals against `L¹(μ)` (test the difference `ψ` against
+`1_B conj ψ` for sets `B` of finite measure); the first three statements below pass properties of
+`E₁` to `E[· | 𝒜]` in this way. Layer 5 and its consumers use `E[· | 𝒜]` on `Ω × Ω` for `μ ⊗ μ`
+and `𝒜 ⊗ 𝒜`, on which `μ ⊗ μ` is σ-finite (§2.4). Prove:
 
+- **`𝒜`-measurable values.** `E[φ | 𝒜]` is the class of an `𝒜`-measurable function. For `A ∈ 𝒜`
+  of finite measure, `1_A E[φ | 𝒜] = E[1_A φ | 𝒜]`, because `E₁(1_A g) = 1_A E₁(g)` for
+  `g ∈ L¹(μ)` (`E₁` is `MeasureTheory.condExp` on `L¹`, and `MeasureTheory.condExp_indicator`);
+  as `1_A φ ∈ L^∞ ∩ L²`, this is `MeasureTheory.condExpL2 (1_A φ)`, an element of
+  `MeasureTheory.lpMeas`. Countably many disjoint such `A` cover `Ω` because the trim is σ-finite,
+  and the `𝒜`-measurable representatives on the pieces glue.
+- **Positivity.** If `φ ≥ 0` almost everywhere, then `E[φ | 𝒜] ≥ 0` almost everywhere: for
+  `g ≥ 0` in `L¹(μ)`, `∫ E[φ | 𝒜] g dμ = ∫ φ E₁(g) dμ ≥ 0` because `E₁` is positive, and testing
+  `g = 1_B` on sets `B` of finite measure on which `E[φ | 𝒜]` has positive or negative imaginary
+  part, or negative real part, shows that these sets are null.
+- **Tower law.** For a σ-algebra `𝒜' ⊆ 𝒜` on which `μ` is σ-finite, with `L¹` projection `E₁'`,
+  `E[E[φ | 𝒜] | 𝒜'] = E[φ | 𝒜']`: for `g ∈ L¹(μ)`,
+  `∫ E[E[φ | 𝒜] | 𝒜'] g = ∫ E[φ | 𝒜] E₁'(g) = ∫ φ E₁(E₁'(g)) = ∫ φ E₁'(g) = ∫ E[φ | 𝒜'] g`, since
+  `E₁` fixes the `𝒜'`-measurable, hence `𝒜`-measurable, class `E₁'(g)`.
+- **Agreement with `MeasureTheory.condExp`.** If `φ` is also `μ`-integrable, then
+  `E[φ | 𝒜] = MeasureTheory.condExp 𝒜 μ φ`: `φ ∈ L²` because `|φ|² ≤ ‖φ‖_∞ |φ|`, so
+  `E[φ | 𝒜] = MeasureTheory.condExpL2 φ`, which is `MeasureTheory.condExp 𝒜 μ φ`
+  (`MeasureTheory.MemLp.condExpL2_ae_eq_condExp'`). In particular this holds for every `φ` when
+  `μ` is finite.
 - **Characterisation.** `E[φ | 𝒜]` is the unique `𝒜`-measurable class in `L^∞(μ)` with
-  `∫ E[φ | 𝒜] g dμ = ∫ φ g dμ` for every `𝒜`-measurable `g ∈ L¹(μ)`: for the difference `ψ` of two
+  `∫ E[φ | 𝒜] g dμ = ∫ φ g dμ` for every `𝒜`-measurable `g ∈ L¹(μ)`: it is one such class by the
+  first statement and the identity above; for the difference `ψ` of two
   such classes and a set `A ∈ 𝒜` of finite measure, `g = 1_A conj ψ` is admissible and gives
   `∫_A |ψ|² dμ = 0`, and countably many such `A` cover `Ω` because the trim is σ-finite. Hence
   `E[φ | 𝒜]` fixes the `𝒜`-measurable classes.
@@ -834,11 +869,9 @@ use it on `Ω × Ω` for `μ ⊗ μ` and `𝒜 ⊗ 𝒜`, on which `μ ⊗ μ` i
   (`MeasureTheory.exists_pos_lintegral_lt_of_sigmaFinite` for `μ.trim h`, with
   `MeasureTheory.lintegral_trim`); `w · μ` (`MeasureTheory.Measure.withDensity`) is a finite
   measure with the null sets of `μ`, and `E[φ | 𝒜]` is the class of
-  `MeasureTheory.condExp 𝒜 (w · μ) φ`, by the change of density and the agreement of
-  BochnerSpaces §7.4 with `MeasureTheory.condExp` on the `w · μ`-integrable `φ`
+  `MeasureTheory.condExp 𝒜 (w · μ) φ`, by the change of density and the agreement with
+  `MeasureTheory.condExp` for the finite measure `w · μ`, on which `φ` is integrable
   (lafforgue-delasalle-2011 lines 422–424 for the reduction by an `𝒜`-measurable density).
-  Whenever `φ` is also `μ`-integrable, `E[φ | 𝒜] = MeasureTheory.condExp 𝒜 μ φ`, in particular
-  for every bounded `φ` when `μ` is finite.
 - **Conjugation.** `E[conj φ | 𝒜] = conj E[φ | 𝒜]`: the right side is `𝒜`-measurable and
   `∫ conj E[φ | 𝒜] g dμ = conj ∫ E[φ | 𝒜] conj g dμ = conj ∫ φ conj g dμ = ∫ conj φ g dμ`, so the
   characterisation applies.
@@ -863,10 +896,21 @@ use it on `Ω × Ω` for `μ ⊗ μ` and `𝒜 ⊗ 𝒜`, on which `μ ⊗ μ` i
   `(a + 3b)/4`, unchanged for `ρ · μ` with a constant `ρ > 0` (masses `c`, `3c`). The density
   must be `𝒜`-measurable: `ρ = (3, 1)` gives masses `3`, `3` and the expectation `(a + b)/2`,
   which is `1/2` against `1/4` at `(a, b) = (1, 0)`.
+- The `𝒜`-measurability of the values is a property of `E₁`, not of adjoints of projections onto
+  the `𝒜`-measurable classes: on `{1, 2}` with masses `1` and `3` and `𝒜` trivial, the projection
+  `g ↦ g(1) · 1` of `L¹` onto the constants has the adjoint `φ ↦ (φ(1) + 3φ(2)) · 1_{{1}}`, which
+  sends `1` to `(4, 0)`, not a constant, while `E[1 | 𝒜] = MeasureTheory.condExpL2 1 = 1`.
+- On `{1, 2, 3, 4}` with counting measure, `φ = 1_{{1}}` and `𝒜` generated by `{1, 2}` and
+  `{3, 4}`: `E[φ | 𝒜] = (1/2, 1/2, 0, 0)`, whose mean `1/4` is the mean of `φ`, as the tower law
+  for the trivial `𝒜'` requires. The inclusion `𝒜' ⊆ 𝒜` is needed: for the σ-algebra generated by
+  `{1, 3}` and `{2, 4}`, the expectation of `(1/2, 1/2, 0, 0)` is the constant `1/4`, while that
+  of `φ` is `(1/2, 0, 1/2, 0)`.
 
 *Needs:* §2.4 (σ-finiteness of `μ ⊗ μ` on `𝒜 ⊗ 𝒜`); BochnerSpaces §7.4; Mathlib
-`MeasureTheory.condExp`, `MeasureTheory.condExpL2`, `MeasureTheory.Measure.withDensity`,
-`MeasureTheory.exists_pos_lintegral_lt_of_sigmaFinite`, `MeasureTheory.lintegral_trim`.
+`MeasureTheory.condExp`, `MeasureTheory.condExp_indicator`, `MeasureTheory.condExpL2`,
+`MeasureTheory.lpMeas`, `MeasureTheory.MemLp.condExpL2_ae_eq_condExp'`,
+`MeasureTheory.Measure.withDensity`, `MeasureTheory.exists_pos_lintegral_lt_of_sigmaFinite`,
+`MeasureTheory.lintegral_trim`.
 
 ### Examples
 
@@ -1129,7 +1173,7 @@ Throughout this layer `𝒜 ⊆ 𝓑` are σ-algebras on `Ω`, `μ` is a measure
 `𝒜`, and `L²(𝒜) = L²(Ω, 𝒜, μ)` (lafforgue-delasalle-2011 (6), lines 356–357). Conditional
 expectations of symbols are those of §2.5 for `μ ⊗ μ` onto `𝒜 ⊗ 𝒜`, on which `μ ⊗ μ` is σ-finite
 (§2.4), written `E[φ | 𝒜 ⊗ 𝒜]`; Mathlib's `MeasureTheory.condExp` agrees with them on integrable
-symbols, in particular when `μ` is finite, and is `0` on the others.
+symbols, in particular when `μ` is finite (§2.5), and is `0` on the others.
 
 ### 5.1 Contractivity of the conditional expectation
 
@@ -1315,7 +1359,8 @@ construction, are: for bounded sequences `⟨[x_n], [y_n]⟩ = lim_𝒰 ⟨x_n, 
 for `u, v ∈ L¹(𝒜₀)`, bounded sequences since `‖∫ u ξ_n dμ‖ ≤ ‖u‖₁ ‖ξ_n‖_∞`; by the coordinate norm
 and `lim_𝒰 ‖ξ_n‖_∞ ≤ ‖S_M‖_∞^{1/2}` (`𝒰` is non-principal), `‖a‖ ‖b‖ ≤ ‖S_M‖_∞`. Then
 `⟨a(u), b(v)⟩ = lim_𝒰 ∫∫ conj u(x) v(y) M_n(x, y) = ∫∫ conj u(x) v(y) M(x, y)` by Lévy's
-theorem (on the finite measure `μ ⊗ μ`, for `Re M` and `Im M`), dominated convergence
+theorem (on the finite measure `μ ⊗ μ`, on which the expectations of §2.5 are
+`MeasureTheory.condExp`, for `Re M` and `Im M`), dominated convergence
 (`|M_n| ≤ ‖M‖_∞`), and the agreement of `lim_𝒰` with the limit of a convergent sequence for a
 non-principal `𝒰`. By the Radon–Nikodým representation of BanachSpaceTheory B4.0,
 `a(u) = ∫ u ξ dμ` and `b(v) = ∫ v η dμ` with `‖ξ‖_∞ ‖η‖_∞ ≤ ‖a‖ ‖b‖ ≤ ‖S_M‖_∞`; testing against
@@ -1330,7 +1375,7 @@ and `‖[1 + 1/n]‖ = 1`. The ultrafilter must be non-principal: for the princi
 the ultraproduct is `K_k`, `lim_𝒰` is evaluation at `k`, and `⟨a(u), b(v)⟩` pairs `conj u ⊗ v` with
 `M_k` instead of `M`.
 
-*Needs:* §3.7, §4.1, §5.1, §6.2, §6.3; VonNeumannAlgebras V13b; BanachSpaceTheory B4.0;
+*Needs:* §2.5, §3.7, §4.1, §5.1, §6.2, §6.3; VonNeumannAlgebras V13b; BanachSpaceTheory B4.0;
 Mathlib `MeasureTheory.Integrable.tendsto_ae_condExp`, `ContinuousLinearMap.comp_condExp_comm`.
 
 ### Examples
@@ -1342,7 +1387,7 @@ Mathlib `MeasureTheory.Integrable.tendsto_ae_condExp`, `ContinuousLinearMap.comp
 
 ### Dependencies
 
-Layers 1 (§1.4) and 3–5; Mathlib matrix order and completely positive maps, the separation theorem;
+Layers 1 (§1.4), 2 (§2.5) and 3–5; Mathlib matrix order and completely positive maps, the separation theorem;
 VonNeumannAlgebras V13b; BanachSpaceTheory B4.0.
 
 ## Layer 7: atomless measure spaces
@@ -1398,7 +1443,7 @@ inequality concludes.
 On `{1, 2}` with counting measure and `𝒜` trivial the conclusion is `|average of φ| ≤ ‖S_φ‖_p`
 for the constant symbol acting on `M₂`, the same numbers as §5.1.
 
-*Needs:* §3.7, §5.1.
+*Needs:* §2.5, §3.7, §5.1.
 
 ### 7.3 Norm equals completely bounded norm on atomless spaces
 
@@ -1410,7 +1455,8 @@ family of finite sub-σ-algebras (nonempty: it contains the trivial σ-algebra) 
 `‖E[M | 𝒜 ⊗ 𝒜]‖_{cb, S_p(L²(𝒜))} ≤ ‖M‖_{S_p(L²(𝓑))}` for finite `𝒜`; for each `n` split every
 minimal set of `𝒜` into `n` sets of equal measure (§7.1), generating `𝓑'`; then the `n`-th
 amplification norm of `E[M | 𝒜 ⊗ 𝒜]` on `L²(𝒜)` is its norm on `L²(𝓑') ≅ L²(𝒜) ⊗ ℓ²_n` (§3.6), at
-most `‖E[M | 𝓑' ⊗ 𝓑']‖_{S_p(L²(𝓑'))}` by §7.2, at most `‖M‖_{S_p(L²(𝓑))}` by §5.1.
+most `‖E[M | 𝓑' ⊗ 𝓑']‖_{S_p(L²(𝓑'))}` by §7.2 applied to `E[M | 𝓑' ⊗ 𝓑']`, whose expectation
+onto `𝒜 ⊗ 𝒜` is `E[M | 𝒜 ⊗ 𝒜]` by the tower law of §2.5, and at most `‖M‖_{S_p(L²(𝓑))}` by §5.1.
 
 **Checks.**
 
@@ -1426,7 +1472,7 @@ most `‖E[M | 𝓑' ⊗ 𝓑']‖_{S_p(L²(𝓑'))}` by §7.2, at most `‖M‖
 - Counting measure on `{1, 2}` is excluded; at `p ∈ {1, ∞}` equality holds there by §6.3, and at
   `p = 2` by §3.5, independently of this theorem.
 
-*Needs:* §3.6, §3.7, §5.1, §5.2, §7.1, §7.2.
+*Needs:* §2.5, §3.6, §3.7, §5.1, §5.2, §7.1, §7.2.
 
 ### Examples
 
@@ -1441,7 +1487,7 @@ most `‖E[M | 𝓑' ⊗ 𝓑']‖_{S_p(L²(𝓑'))}` by §7.2, at most `‖M‖
 
 ### Dependencies
 
-Layers 3 and 5; Tau Ceti `MeasureTheory.Measure.IsAtom`; BochnerSpaces §7.5.
+Layers 2 (§2.5), 3 and 5; Tau Ceti `MeasureTheory.Measure.IsAtom`; BochnerSpaces §7.5.
 
 ## Layer 8: continuous symbols on Radon measure spaces
 

@@ -428,12 +428,13 @@
      "id": "2.5",
      "kind": "theorem",
      "name": "SchattenClasses.linftyCondExp_calculus",
-     "statement": "For sigma-algebras A in B on Omega and a measure mu on B that is sigma-finite on A, and phi in Linf(Omega, B, mu), E[phi | A] is the Linf conditional expectation of BochnerSpaces §7.4 (linear, positive, contractive, A-measurable values, tower law, int E[phi | A] g dmu = int phi g dmu for A-measurable g in L1(mu)). Proved here: (characterisation) E[phi | A] is the unique A-measurable class in Linf(mu) with int E[phi | A] g dmu = int phi g dmu for every A-measurable g in L1(mu) (test the difference psi against 1_S conj psi for S in A of finite measure, which cover Omega countably), hence it fixes the A-measurable classes; (change of density) for A-measurable rho : Omega -> (0, infinity), rho . mu is sigma-finite on A with the null sets and Linf classes of mu and the same conditional expectation (g -> rho g maps the A-measurable classes of L1(rho . mu) onto those of L1(mu)); (finite equivalent measure) there is an A-measurable w > 0 with int w dmu < infinity (exists_pos_lintegral_lt_of_sigmaFinite for mu.trim, lintegral_trim), w . mu (withDensity) is finite with the null sets of mu, and E[phi | A] is the class of MeasureTheory.condExp A (w . mu) phi; E[phi | A] = MeasureTheory.condExp A mu phi whenever phi is mu-integrable, in particular when mu is finite; (conjugation) E[conj phi | A] = conj E[phi | A]; (module property) for A-measurable k in L2(mu), MeasureTheory.condExpL2 (phi k) = E[phi | A] k (for A-measurable g in L2, conj g . k is A-measurable and integrable). Used on Omega x Omega for mu x mu and A x A, on which mu x mu is sigma-finite (target 2.4).",
+     "statement": "For sigma-algebras A in B on Omega and a measure mu on B that is sigma-finite on A, and phi in Linf(Omega, B, mu), E[phi | A] is the Linf conditional expectation of BochnerSpaces §7.4: the linear contraction of Linf(Omega, B, mu) adjoint to the L1 projection E_1 onto the A-measurable classes, int E[phi | A] g dmu = int phi E_1(g) dmu for g in L1(mu), agreeing with condExpL2 on Linf cap L2; since E_1 fixes the A-measurable classes, int E[phi | A] g dmu = int phi g dmu for A-measurable g in L1(mu). Proved here, passing properties of E_1 through the adjoint formula (mu is sigma-finite, so an Linf class is determined by its integrals against L1): (A-measurable values) for S in A of finite measure, 1_S E[phi | A] = E[1_S phi | A] because E_1(1_S g) = 1_S E_1(g) (E_1 is condExp on L1, MeasureTheory.condExp_indicator), and this is condExpL2(1_S phi), an element of lpMeas; countably many disjoint such S cover Omega and the A-measurable pieces glue; (positivity) phi >= 0 a.e. implies E[phi | A] >= 0 a.e., since int E[phi | A] g = int phi E_1(g) >= 0 for g >= 0 in L1 by positivity of E_1, tested on g = 1_S; (tower law) for a sigma-algebra A' contained in A on which mu is sigma-finite, with L1 projection E_1', E[E[phi | A] | A'] = E[phi | A'], since int E[E[phi | A] | A'] g = int phi E_1(E_1'(g)) = int phi E_1'(g) as E_1 fixes the A'-measurable, hence A-measurable, class E_1'(g); (agreement with condExp) if phi is also mu-integrable then phi in L2 (|phi|^2 <= ||phi||_inf |phi|) and E[phi | A] = condExpL2 phi = MeasureTheory.condExp A mu phi (MeasureTheory.MemLp.condExpL2_ae_eq_condExp'), in particular for every phi when mu is finite; (characterisation) E[phi | A] is the unique A-measurable class in Linf(mu) with int E[phi | A] g dmu = int phi g dmu for every A-measurable g in L1(mu) (it is one by the first item; test the difference psi of two against 1_S conj psi for S in A of finite measure, which cover Omega countably), hence it fixes the A-measurable classes; (change of density) for A-measurable rho : Omega -> (0, infinity), rho . mu is sigma-finite on A with the null sets and Linf classes of mu and the same conditional expectation (g -> rho g maps the A-measurable classes of L1(rho . mu) onto those of L1(mu)); (finite equivalent measure) there is an A-measurable w > 0 with int w dmu < infinity (exists_pos_lintegral_lt_of_sigmaFinite for mu.trim, lintegral_trim), w . mu (withDensity) is finite with the null sets of mu, and E[phi | A] is the class of MeasureTheory.condExp A (w . mu) phi (change of density and agreement with condExp for w . mu); (conjugation) E[conj phi | A] = conj E[phi | A]; (module property) for A-measurable k in L2(mu), MeasureTheory.condExpL2 (phi k) = E[phi | A] k (for A-measurable g in L2, conj g . k is A-measurable and integrable). Used on Omega x Omega for mu x mu and A x A, on which mu x mu is sigma-finite (target 2.4).",
      "hypotheses": [
       "A subset B sigma-algebras on Omega",
       "mu a measure on B, sigma-finite on A (SigmaFinite (mu.trim h))",
       "phi in Linf(Omega, B, mu)",
-      "for the change of density: rho A-measurable with values in (0, infinity)"
+      "for the change of density: rho A-measurable with values in (0, infinity)",
+      "for the tower law: A' a sigma-algebra contained in A, with mu sigma-finite on A'"
      ],
      "locator": {
       "source": "lafforgue-delasalle-2011",
@@ -446,7 +447,10 @@
       "mathlib:MeasureTheory.condExpL2",
       "mathlib:MeasureTheory.Measure.withDensity",
       "mathlib:MeasureTheory.exists_pos_lintegral_lt_of_sigmaFinite",
-      "mathlib:MeasureTheory.lintegral_trim"
+      "mathlib:MeasureTheory.lintegral_trim",
+      "mathlib:MeasureTheory.condExp_indicator",
+      "mathlib:MeasureTheory.lpMeas",
+      "mathlib:MeasureTheory.MemLp.condExpL2_ae_eq_condExp'"
      ],
      "api": [],
      "tests": [
@@ -469,6 +473,16 @@
        "name": "linftyCondExp_finite",
        "kind": "computation",
        "statement": "on {1, 2} with masses 1 and 3 and A trivial: E[(a, b) | A] = (a + 3b)/4, unchanged for rho . mu with constant rho > 0; the non-A-measurable density rho = (3, 1) gives masses 3, 3 and (a + b)/2, which is 1/2 against 1/4 at (a, b) = (1, 0)"
+      },
+      {
+       "name": "linftyCondExp_measurable_values",
+       "kind": "non-example",
+       "statement": "on {1, 2} with masses 1 and 3 and A trivial, the projection g -> g(1) . 1 of L1 onto the constants has adjoint phi -> (phi(1) + 3 phi(2)) . 1_{{1}}, sending 1 to (4, 0), not constant; E[1 | A] = condExpL2 1 = 1: A-measurable values come from E_1 being the conditional expectation, not from adjointness to a projection"
+      },
+      {
+       "name": "linftyCondExp_tower",
+       "kind": "non-example",
+       "statement": "on {1, 2, 3, 4} with counting measure, phi = 1_{{1}}, A generated by {1, 2} and {3, 4}: E[phi | A] = (1/2, 1/2, 0, 0), whose mean 1/4 is the mean of phi (tower law for trivial A'); for the sigma-algebra generated by {1, 3} and {2, 4}, not contained in A, the expectation of (1/2, 1/2, 0, 0) is 1/4 while that of phi is (1/2, 0, 1/2, 0), so the inclusion A' in A is needed"
       }
      ]
     }
@@ -997,6 +1011,7 @@
       "where": "Theorem 1.7, line 274; proof lines 286-337; cgpt-2023 lines 89-94"
      },
      "prerequisites": [
+      "target:2.5",
       "target:3.7",
       "target:4.1",
       "target:5.1",
@@ -1089,6 +1104,7 @@
       "where": "Lemma 1.17, line 489; proof lines 493-501"
      },
      "prerequisites": [
+      "target:2.5",
       "target:3.7",
       "target:5.1"
      ],
@@ -1109,6 +1125,7 @@
       "where": "Theorem 1.18, line 505; proof lines 508-520; cgpt-2023 line 231"
      },
      "prerequisites": [
+      "target:2.5",
       "target:3.6",
       "target:3.7",
       "target:5.1",
@@ -1949,7 +1966,7 @@
     "§7.4",
     "§7.5"
    ],
-   "what": "For sigma-algebras A in B and a measure mu on B whose trim to A is sigma-finite, with complex scalars: the L1 projection E_1 onto the A-measurable classes (positive, contractive, idempotent, tower law, equal to MeasureTheory.condExp on integrable functions) and the Linf contraction E[. | A], with values in the A-measurable classes, defined as its adjoint, int E[phi | A] g dmu = int phi E_1(g) dmu for g in L1(mu), agreeing with condExpL2 on Linf cap L2 and with condExp on Linf cap L1 (§7.4); divisibility of atomless finite measures: for measurable A and 0 <= t <= 1 a measurable subset of A of measure t nu(A), atomless meaning that no set is a MeasureTheory.Measure.IsAtom (§7.5; false under null singletons alone, by the countable-cocountable measure). Used in targets 2.5 and 7.1."
+   "what": "For sigma-algebras A in B and a measure mu on B whose trim to A is sigma-finite, with complex scalars: the L1 projection E_1 onto the A-measurable classes (positive, contractive, idempotent with range the A-measurable classes, tower law, equal to MeasureTheory.condExp on integrable functions) and the linear contraction E[. | A] of Linf defined as its adjoint, int E[phi | A] g dmu = int phi E_1(g) dmu for g in L1(mu), agreeing with condExpL2 on Linf cap L2 (§7.4); nothing else is assumed of E[. | A]: its A-measurable values, positivity, tower law and agreement with condExp on Linf cap L1 are proved in target 2.5 from the properties of E_1; divisibility of atomless finite measures: for measurable A and 0 <= t <= 1 a measurable subset of A of measure t nu(A), atomless meaning that no set is a MeasureTheory.Measure.IsAtom (§7.5; false under null singletons alone, by the countable-cocountable measure). Used in targets 2.5 and 7.1."
   }
  ],
  "consumers": [
