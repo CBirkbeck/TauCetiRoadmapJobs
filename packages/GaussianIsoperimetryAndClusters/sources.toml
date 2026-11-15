@@ -148,21 +148,6 @@ accessed = "2026-11-04"
 cited_for = ["1.1", "1.2", "7.3", "8.1", "8.2", "8.3", "8.4", "8.5"]
 
 [[source]]
-id = "Ledoux1996"
-authors = "Michel Ledoux"
-title = "Isoperimetry and Gaussian analysis"
-year = 1996
-venue = "Lectures on Probability Theory and Statistics (Saint-Flour 1994), Lecture Notes in Mathematics 1648 (1996), 165–294"
-doi = "10.1007/BFb0095676"
-locator_scheme = "chapter"
-locator = "Chapter 1"
-url = "https://doi.org/10.1007/BFb0095676"
-licence_class = "none"
-status = "uncertified"
-version_note = "paywalled; the author's page could not be reached on 2026-11-04; cited by its locator without the text"
-cited_for = ["References"]
-
-[[source]]
 id = "CarlenKerce2001"
 authors = "Eric A. Carlen, C. Kerce"
 title = "On the cases of equality in Bobkov's inequality and Gaussian rearrangement"

@@ -26,8 +26,10 @@ Stated here:
   every probability density `e^{−W}` with `W` of class `C¹` and every prescribed measure vector
   (§3.5);
 * Layer 4: the measure map of the Gaussian model simplicial clusters is a smooth bijection onto
-  the open simplex with derivative `−L_A/√2` (§4.3), and the model profile satisfies
-  `∇I_m = Ψ⁻¹/√2` and `∇²I_m = −L_A⁻¹` (§4.6);
+  the open simplex with derivative `−L_A/√2`, invertible because every model interface area is
+  positive (§4.3); the model profile satisfies `∇I_m = Ψ⁻¹/√2` and `∇²I_m = −L_A⁻¹` (§4.6); and
+  for `q ≤ n + 1` it bounds the isoperimetric profile of `q`-clusters on the open simplex
+  (§4.7);
 * Layer 6: Ehrhard symmetrisation does not increase Gaussian perimeter (§6.6);
 * Layer 7: the Gaussian isoperimetric theorem with its equality case (§7.3), and its two-cell
   cluster form: the profile identity and the characterization of minimizing `2`-clusters (§7.4);
@@ -252,16 +254,19 @@ noncomputable def modelProfile (q : ℕ) (v : EuclideanSpace ℝ (Fin q)) : ℝ 
   else 0
 
 /-- **The measure map is a diffeomorphism onto the open simplex** (§4.3). For `q ≥ 2`, `Ψ` is
-injective and `C^∞`, its range is the open simplex `{v : v_i > 0, Σ v_i = 1}`, and its derivative
-at `x` is `−L_{A^m(x)}/√2` on `E^{(q−1)}` (MilmanNeeman2022, Lemma 2.1). -/
+injective and `C^∞`, its range is the open simplex `{v : v_i > 0, Σ v_i = 1}`, its derivative
+at `x` is `−L_{A^m(x)}/√2` on `E^{(q−1)}`, and every model interface area `A^m_ij(x)` with `i ≠ j`
+is positive, so that `L_{A^m(x)}` is positive definite on `E^{(q−1)}` and the derivative is
+invertible (MilmanNeeman2022, Lemma 2.1). -/
 theorem modelMeasureMap_diffeomorph {q : ℕ} (hq : 2 ≤ q) :
     Function.Injective (modelMeasureMap q) ∧
       range (modelMeasureMap q) = {v | (∀ i, 0 < v i) ∧ ∑ i, v i = 1} ∧
       ContDiff ℝ ((⊤ : ℕ∞) : WithTop ℕ∞) (modelMeasureMap q) ∧
-      ∀ x, HasFDerivAt (modelMeasureMap q)
+      (∀ x, HasFDerivAt (modelMeasureMap q)
         (-(Real.sqrt 2)⁻¹ •
           (interfaceOperator q fun i j => modelInterfaceArea q i j x).comp
-            (simplexTangent q).subtypeL) x := by
+            (simplexTangent q).subtypeL) x) ∧
+      ∀ (x : simplexTangent q) (i j : Fin q), i ≠ j → 0 < modelInterfaceArea q i j x := by
   sorry
 
 /-- **The differential identities of the model profile** (§4.6). For `q ≥ 2` and `x ∈ E^{(q−1)}`,
@@ -278,6 +283,18 @@ theorem modelProfile_hessian {q : ℕ} (hq : 2 ≤ q) (x : simplexTangent q) :
           (a : EuclideanSpace ℝ (Fin q)) =
               interfaceOperator q (fun i j => modelInterfaceArea q i j x) u →
             H a b = -⟪u, b⟫ := by
+  sorry
+
+/-- **The model profile bounds the isoperimetric profile** (§4.7). For `1 ≤ q ≤ n + 1`,
+`n = dim E`, and `v` in the open simplex, `I^{(q−1)}(v) ≤ I_m^{(q−1)}(v)` for the Gaussian
+measure of `E`: for `q ≥ 2` a simplicial `q`-cluster of `E` with measure vector `v` is a
+competitor, and for `q = 1` both sides vanish (MilmanNeeman2022, Section 2, after Lemma 2.3). -/
+theorem isoperimetricProfile_le_modelProfile {E : Type*} [NormedAddCommGroup E]
+    [InnerProductSpace ℝ E] [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E] {q : ℕ}
+    (hqn : q ≤ Module.finrank ℝ E + 1) {v : Fin q → ℝ} (hv : ∀ i, 0 < v i)
+    (hsum : ∑ i, v i = 1) :
+    isoperimetricProfile (gaussianWeight E) q v ≤
+      ENNReal.ofReal (modelProfile q (WithLp.toLp 2 v)) := by
   sorry
 
 end Model
@@ -349,7 +366,7 @@ theorem Cluster.perimeter_eq_iff_halfSpaces [Nontrivial E] (Ω : Cluster (gaussi
 /-- **The Borell–Sudakov–Tsirelson inequality** (§8.1). For every set `A ⊆ E` (its Gaussian
 measure being the outer measure), every real `a` with `Φ(a) ≤ γ(A)` and every `r > 0`, the open
 `r`-thickening of `A` has Gaussian measure at least `Φ(a + r)` (Borell1975, Theorem 3.1;
-SudakovTsirelson1974, Theorem 1; Ledoux1999, (1.5)). -/
+SudakovTsirelson1974, Theorem 1; Ledoux1999, (1.5); Ehrhard1983, Théorème 2.4). -/
 theorem borell_sudakov_tsirelson (A : Set E) {a : ℝ}
     (ha : ENNReal.ofReal (cdf (gaussianReal 0 1) a) ≤ stdGaussian E A) {r : ℝ} (hr : 0 < r) :
     ENNReal.ofReal (cdf (gaussianReal 0 1) (a + r)) ≤ stdGaussian E (thickening r A) := by
@@ -358,7 +375,7 @@ theorem borell_sudakov_tsirelson (A : Set E) {a : ℝ}
 /-- **The Borell–Sudakov–Tsirelson inequality for Gaussian laws on a Euclidean space** (§8.1).
 For the law `multivariateGaussian m S` with `K = √S`, every set `A`, every real `a` with
 `Φ(a) ≤ γ_{m,S}(A)` and every `r > 0`, the enlargement `A + r K(ball(0, 1))` has measure at least
-`Φ(a + r)` (Ledoux1999, (1.7); Ehrhard1983, Théorème 2.4). -/
+`Φ(a + r)` (Ledoux1999, (1.7), for centred laws; the mean `m` is a translation). -/
 theorem borell_sudakov_tsirelson_multivariateGaussian {ι : Type*} [Fintype ι] [DecidableEq ι]
     (m : EuclideanSpace ℝ ι) (S : Matrix ι ι ℝ) (A : Set (EuclideanSpace ℝ ι)) {a : ℝ}
     (ha : ENNReal.ofReal (cdf (gaussianReal 0 1) a) ≤ multivariateGaussian m S A) {r : ℝ}
