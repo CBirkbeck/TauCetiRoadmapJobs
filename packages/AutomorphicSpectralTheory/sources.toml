@@ -16,3 +16,613 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["4.5"]
+
+[[source]]
+id = "Yu22"
+authors = "Hongjie Yu"
+title = "Comptage des systèmes locaux $\\ell$-adiques sur une courbe"
+year = 2018
+arxiv = "1807.04659v5"
+locator_scheme = "theorem"
+locator = "Théorème 2.3.6; Théorème 4.2.2, Proposition 4.2.3, Lemmes 4.2.5–4.2.8; Proposition 5.3.1; Lemmes A.1–A.3"
+url = "https://arxiv.org/abs/1807.04659v5"
+fetched_from = "https://arxiv.org/pdf/1807.04659v5"
+fetched_at = "2026-11-15T06:10:17Z"
+sha256 = "9383bcdee14777ec647ba2658da3319d7d43864f9481b07c7d9550f1a454de1c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v5"
+cited_for = ["4.14", "6.28", "6.29", "3.16"]
+
+[[source]]
+id = "Art80"
+authors = "James Arthur"
+title = "A trace formula for reductive groups II: applications of a truncation operator"
+year = 1980
+locator_scheme = "theorem"
+locator = "Lemma 1.1"
+url = "https://www.claymath.org/library/cw/arthur/pdf/9.pdf"
+fetched_from = "https://www.claymath.org/library/cw/arthur/pdf/9.pdf"
+fetched_at = "2026-11-15T06:12:52Z"
+sha256 = "8478531337b3fd5925026614f1a6533e35e87324674af26f664d6de7f455f647"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["3.3"]
+
+[[source]]
+id = "ACC+23"
+authors = "Patrick B. Allen, Frank Calegari, Ana Caraiani, Toby Gee, David Helm, Bao V. Le Hung, James Newton, Peter Scholze, Richard Taylor, Jack A. Thorne"
+title = "Potential automorphy over CM fields"
+year = 2018
+arxiv = "1812.09999v2"
+locator_scheme = "section"
+locator = "§1.2, pp.907–908; §2.4.9, proof of Theorem 2.4.10, pp.949–950 (Annals pagination)"
+url = "https://arxiv.org/abs/1812.09999v2"
+fetched_from = "https://arxiv.org/pdf/1812.09999v2"
+fetched_at = "2026-11-15T06:13:04Z"
+sha256 = "7c882c4dc7208e08a0b1f4b3ce6e5c5234c9815f139a4c3a372898378a24d08c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["2.14", "5.14"]
+
+[[source]]
+id = "Art81"
+authors = "James Arthur"
+title = "The trace formula in invariant form"
+year = 1981
+locator_scheme = "theorem"
+locator = "Corollary 6.5"
+url = "https://www.claymath.org/library/cw/arthur/pdf/10.pdf"
+fetched_from = "https://www.claymath.org/library/cw/arthur/pdf/10.pdf"
+fetched_at = "2026-11-15T06:13:06Z"
+sha256 = "6bdf32990eb33b6d02a7bd858ace66fc85cebe2e97dca1a4be082afd958d3a43"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["6.29"]
+
+[[source]]
+id = "Art82"
+authors = "James Arthur"
+title = "On the inner product of truncated Eisenstein series"
+year = 1982
+locator_scheme = "section"
+locator = "§2; §9, Theorem 9.1, p.69"
+url = "https://www.claymath.org/library/cw/arthur/pdf/12.pdf"
+fetched_from = "https://www.claymath.org/library/cw/arthur/pdf/12.pdf"
+fetched_at = "2026-11-15T06:13:06Z"
+sha256 = "f0693c409f3cbae9e8cedbc1c2eceec4657f79fdc361fcb0ffc89f40b044547c"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["3.5", "3.6", "3.9"]
+
+[[source]]
+id = "Art83PW"
+authors = "James Arthur"
+title = "A Paley-Wiener theorem for real reductive groups"
+year = 1983
+locator_scheme = "section"
+locator = "III §4, Theorems 4.1–4.2, pp.84–87"
+url = "https://www.claymath.org/library/cw/arthur/pdf/15.pdf"
+fetched_from = "https://www.claymath.org/library/cw/arthur/pdf/15.pdf"
+fetched_at = "2026-11-15T06:13:08Z"
+sha256 = "a78240ce1095e2a17591bf829fa726675ca865e77e8c3d663823d3dcf4fb8034"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["6.2", "6.3"]
+
+[[source]]
+id = "Art88G"
+authors = "James Arthur"
+title = "The invariant trace formula II: global theory"
+year = 1988
+locator_scheme = "section"
+locator = "§§3–6; Theorem 4.4, p.520"
+url = "https://www.claymath.org/library/cw/arthur/pdf/27.pdf"
+fetched_from = "https://www.claymath.org/library/cw/arthur/pdf/27.pdf"
+fetched_at = "2026-11-15T06:13:09Z"
+sha256 = "42d2193dde29d159ebf757e3636f7ab3e4c0c85644cac360baffb7e0758e507b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["6.13", "6.16"]
+
+[[source]]
+id = "Art89L"
+authors = "James Arthur"
+title = "The L2-Lefschetz numbers of Hecke operators"
+year = 1989
+locator_scheme = "section"
+locator = "§2, p.264"
+url = "https://www.claymath.org/library/cw/arthur/pdf/32.pdf"
+fetched_from = "https://www.claymath.org/library/cw/arthur/pdf/32.pdf"
+fetched_at = "2026-11-15T06:13:10Z"
+sha256 = "5c8655176c90fa08ab9037d317d5f6bfc75914a6b3c41415f52873b7c21d050c"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["6.20"]
+
+[[source]]
+id = "Art89W"
+authors = "James Arthur"
+title = "Intertwining operators and residues I: weighted characters"
+year = 1989
+locator_scheme = "theorem"
+locator = "§2, Theorem 2.1, pp.28–29"
+url = "https://www.claymath.org/library/cw/arthur/pdf/28.pdf"
+fetched_from = "https://www.claymath.org/library/cw/arthur/pdf/28.pdf"
+fetched_at = "2026-11-15T06:13:11Z"
+sha256 = "0ba6be4e9e8020d1d0cf6a3a87cb79297e66f18a75d2af7d1e09d3e57139c13f"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["2.3"]
+
+[[source]]
+id = "BCG25"
+authors = "George Boxer, Frank Calegari, Toby Gee"
+title = "Cuspidal cohomology of GL_n(Z) and SL_n(Z)"
+year = 2025
+locator_scheme = "theorem"
+locator = "Remark 1.2"
+url = "https://math.uchicago.edu/~fcale/papers/WeightZero.pdf"
+fetched_from = "https://math.uchicago.edu/~fcale/papers/WeightZero.pdf"
+fetched_at = "2026-11-15T06:13:13Z"
+sha256 = "4d27afabbef371babf3a73dad19bc8ccee180636be27bd6ebee17f58f7150290"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["5.11"]
+
+[[source]]
+id = "BH16"
+authors = "A. I. Badulescu, G. Henniart"
+title = "Shintani relation for base change: unitary and elliptic representations"
+year = 2016
+arxiv = "1605.06948v1"
+locator_scheme = "section"
+locator = "§§2.1–2.2, 2.6, 6.1–6.2; Propositions 6.4–6.6; Theorem D(a)"
+url = "https://arxiv.org/abs/1605.06948v1"
+fetched_from = "https://arxiv.org/pdf/1605.06948v1"
+fetched_at = "2026-11-15T06:13:17Z"
+sha256 = "42743bb93d2811d5d9b25fd4039febfe22da71d0bde2a1ce9caae2ad54e011bb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["7.0b"]
+
+[[source]]
+id = "BK14"
+authors = "Joseph Bernstein, Bernhard Krötz"
+title = "Smooth Frechet Globalizations of Harish-Chandra Modules"
+year = 2008
+venue = "Israel Journal of Mathematics 199 (1), 2014, 45 - 111"
+arxiv = "0812.1684v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.1; Proposition 9.6; Theorem 10.6; Theorems 11.6–11.7 and Remark 11.8"
+url = "https://arxiv.org/abs/0812.1684v3"
+fetched_from = "https://arxiv.org/pdf/0812.1684v3"
+fetched_at = "2026-11-15T06:13:23Z"
+sha256 = "f5f2e79d87532c9ac46389d7eb1606e0301eac0ba7c7972ab628e278e091ca3e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["0.49", "1.1", "2.4a", "3.7"]
+
+[[source]]
+id = "BL24"
+authors = "Joseph Bernstein, Erez Lapid"
+title = "On the meromorphic continuation of Eisenstein series"
+year = 2024
+locator_scheme = "section"
+locator = "§2.3, Theorem, p.191; §5, p.197"
+url = "https://www.math.tau.ac.il/~bernstei/Publication_list/publication_texts/2023-10-15-Eisenstein-series-JAMS.pdf"
+fetched_from = "https://www.math.tau.ac.il/~bernstei/Publication_list/publication_texts/2023-10-15-Eisenstein-series-JAMS.pdf"
+fetched_at = "2026-11-15T06:13:26Z"
+sha256 = "3b8dd9425a4fb8ea77afb3cd0e21cff0ed79fd30a93fabea69af99f59828d125"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["1.15a", "1.15c"]
+
+[[source]]
+id = "BPCZ22"
+authors = "Raphaël Beuzart-Plessis, Pierre-Henri Chaudouard, Michał Zydor"
+title = "The global Gan-Gross-Prasad conjecture for unitary groups: the endoscopic case"
+year = 2022
+locator_scheme = "section"
+locator = "§2.5.13, pp.215–216; Appendix A.0.7–A.0.11, pp.331–333"
+url = "https://hal.science/hal-02989495v1"
+fetched_from = "https://hal.science/hal-02989495/document"
+fetched_at = "2026-11-15T06:13:29Z"
+sha256 = "89d35fa8ef01a38dc640094ca85303e2e182cea2753d0e2cb127e789b93d9745"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["0.11", "0.12", "0.13", "0.14", "0.15", "0.17", "0.18", "0.46", "0.47", "0.51"]
+
+[[source]]
+id = "CD90"
+authors = "Laurent Clozel, Patrick Delorme"
+title = "Le théorème de Paley-Wiener invariant pour les groupes de Lie réductifs II"
+year = 1990
+locator_scheme = "section"
+locator = "§0, Théorème 1, p.195; §§1–2, pp.196–203; §5, Proposition 4 and Théorème 3, pp.212–214"
+url = "https://www.numdam.org/article/ASENS_1990_4_23_2_193_0.pdf"
+fetched_from = "https://www.numdam.org/article/ASENS_1990_4_23_2_193_0.pdf"
+fetched_at = "2026-11-15T06:13:30Z"
+sha256 = "dd70f4069fdeec6fc31e44557f239080f5c169743dc8aa2de5b69659da594432"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["0.48", "6.1", "6.18", "6.19"]
+
+[[source]]
+id = "CGH20"
+authors = "Frank Calegari, David Geraghty, Michael Harris"
+title = "Bloch--Kato conjectures for automorphic motives"
+year = 2019
+arxiv = "1907.08694v1"
+locator_scheme = "theorem"
+locator = "§3, proof of Lemma 3.1, p.5"
+url = "https://arxiv.org/abs/1907.08694v1"
+fetched_from = "https://arxiv.org/pdf/1907.08694v1"
+fetched_at = "2026-11-15T06:13:34Z"
+sha256 = "8389edfec6576b92aea1fd4dbf6c96ccb86b2186a6f244ab46c4abf1c02e2bed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["5.12", "5.13"]
+
+[[source]]
+id = "CT20"
+authors = "Gaëtan Chenevier, Olivier Taïbi"
+title = "Discrete series multiplicities for classical groups over Z and level 1 algebraic cusp forms"
+year = 2020
+arxiv = "1907.08783v1"
+locator_scheme = "equation"
+locator = "§1.4, (1.4.3)"
+url = "https://arxiv.org/abs/1907.08783v1"
+fetched_from = "https://arxiv.org/pdf/1907.08783v1"
+fetched_at = "2026-11-15T06:13:41Z"
+sha256 = "81b7fe2c31d0ab4ac7465c7d5209611638fa0d8c7c4ff11f7f4746866491742c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["6.20"]
+
+[[source]]
+id = "Ch15"
+authors = "Pierre-Henri Chaudouard"
+title = "Sur le comptage des fibrés de Hitchin"
+year = 2015
+locator_scheme = "theorem"
+locator = "§2.6; Théorème 3.9.1, p.13; §§3.10–3.11; §4.5; Théorèmes 6.1.1 and 6.2.1, pp.32–33"
+url = "https://webusers.imj-prg.fr/~pierre-henri.chaudouard/contrib-Laumon.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~pierre-henri.chaudouard/contrib-Laumon.pdf"
+fetched_at = "2026-11-15T06:13:42Z"
+sha256 = "2ae48bde8a176d908e8af2cbb0df1cd9923d8ae758cdd108f384299d43601345"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["3.17a", "6.22", "6.23", "6.24"]
+
+[[source]]
+id = "Cog04"
+authors = "James W. Cogdell"
+title = "Lectures on L-functions, converse theorems, and functoriality for GL(n)"
+year = 2004
+locator_scheme = "section"
+locator = "Lecture 9, §5, pp.72–76"
+url = "https://people.math.osu.edu/cogdell.1/fields-www.pdf"
+fetched_from = "https://people.math.osu.edu/cogdell.1/fields-www.pdf"
+fetched_at = "2026-11-15T06:13:46Z"
+sha256 = "2c5ec050a6db216dcd2104b7fe266ddc03e4db7c7d300239e60d6ee9c40618a7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["3.6a", "4.14a"]
+
+[[source]]
+id = "DZ22"
+authors = "Semyon Dyatlov, Maciej Zworski"
+title = "Mathematical theory of scattering resonances"
+year = 2022
+locator_scheme = "theorem"
+locator = "Appendix C, §C.3, Definitions C.6–C.7 and Theorem C.8, pp.521–523"
+url = "https://math.mit.edu/~dyatlov/res/res_final.pdf"
+fetched_from = "https://math.mit.edu/~dyatlov/res/res_final.pdf"
+fetched_at = "2026-11-15T06:14:08Z"
+sha256 = "694d0542c6e2ce66ff58fc57ee70e94b331a0bbf6e5e8fe89f541309be9516dc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["0.16"]
+
+[[source]]
+id = "Fra98"
+authors = "Jens Franke"
+title = "Harmonic analysis in weighted L2-spaces"
+year = 1998
+locator_scheme = "theorem"
+locator = "§4; §7, Theorems 16–18, pp.246–256; §7.6, Theorem 20, p.261"
+url = "https://www.numdam.org/item/10.1016/s0012-9593(98)80015-3.pdf"
+fetched_from = "https://www.numdam.org/item/10.1016/s0012-9593(98)80015-3.pdf"
+fetched_at = "2026-11-15T06:14:10Z"
+sha256 = "3c0465f6413bf156d8574f4bc94f1768cb7ff650deec645e46171b24f269c58b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10", "5.13"]
+
+[[source]]
+id = "GZ86"
+authors = "Benedict H. Gross, Don B. Zagier"
+title = "Heegner points and derivatives ofL-series"
+year = 1986
+venue = "Inventiones Mathematicae 84"
+doi = "10.1007/BF01388809"
+locator_scheme = "equation"
+locator = "Chapter II, §2, (2.4)–(2.16), pp.238–241; Chapter IV, §2, (2.1), p.273; Chapter IV, §3, (3.2)–(3.3), pp.277–281"
+url = "https://doi.org/10.1007/BF01388809"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.35", "0.36", "0.37", "0.38", "0.39", "0.40", "0.41", "0.42", "0.43", "0.44", "0.45", "1.23", "1.24", "1.26", "2.24"]
+
+[[source]]
+id = "JZ20"
+authors = "Dihua Jiang, Lei Zhang"
+title = "Arthur Parameters and Cuspidal Automorphic Modules of Classical Groups"
+year = 2015
+arxiv = "1508.03205v4"
+locator_scheme = "theorem"
+locator = "§5.1, Theorem 5.1; Appendix B, Proposition B.1 and Theorem B.2, pp.85–87"
+url = "https://arxiv.org/abs/1508.03205v4"
+fetched_from = "https://arxiv.org/pdf/1508.03205v4"
+fetched_at = "2026-11-15T06:14:22Z"
+sha256 = "d97bf3048aa10de52f07ae5bbbc3970c974996ae4193d9cd7f12b17890df7bb4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v4"
+cited_for = ["2.7", "2.8", "2.9", "2.10", "2.11", "2.12", "2.13"]
+
+[[source]]
+id = "Laf97"
+authors = "Laurent Lafforgue"
+title = "Chtoucas de Drinfeld et conjecture de Ramanujan-Petersson"
+year = 1997
+locator_scheme = "page"
+locator = "VI §2; pp.227, 284, 301"
+url = "https://numdam.org/item/AST_1997__243__1_0.pdf"
+fetched_from = "https://numdam.org/item/AST_1997__243__1_0.pdf"
+fetched_at = "2026-11-15T06:14:27Z"
+sha256 = "d8d0b8a69818a733b817a8d381b5c300b28aa8d47d74ab816cc1ad41b3f2bb82"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["1.10b", "1.12", "1.13", "3.15", "6.22", "6.35", "6.39"]
+
+[[source]]
+id = "Lan66"
+authors = "Robert P. Langlands"
+title = "Eisenstein series"
+year = 1966
+locator_scheme = "section"
+locator = "§3, Lemma 3; §4, Corollary"
+url = "https://publications.ias.edu/sites/default/files/Eisenstein-series-rpl_0.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/Eisenstein-series-rpl_0.pdf"
+fetched_at = "2026-11-15T06:14:28Z"
+sha256 = "7ee86983d6d186532cd229ec3223d999a6e643f960bac62e970a1257b2f66715"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["1.5", "1.8"]
+
+[[source]]
+id = "Lom16"
+authors = "Luis Alberto Lomelí"
+title = "On automorphic L-functions in positive characteristic"
+year = 2016
+locator_scheme = "theorem"
+locator = "§3.2, Proposition 3.1, pp.1747–1748"
+url = "https://aif.centre-mersenne.org/item/10.5802/aif.3049.pdf"
+fetched_from = "https://aif.centre-mersenne.org/item/10.5802/aif.3049.pdf"
+fetched_at = "2026-11-15T06:21:11Z"
+sha256 = "3d0bfdb20a7a6526e61fea395c68a0f3e7c72c6acb7a05660cfdb504127ef873"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["1.15b"]
+
+[[source]]
+id = "MW89"
+authors = "Colette Mœglin, Jean-Loup Waldspurger"
+title = "Le spectre résiduel de GL(n)"
+year = 1989
+locator_scheme = "page"
+locator = "Théorème, pp.605–606; I §10, Proposition, pp.639–640"
+url = "https://www.numdam.org/item/ASENS_1989_4_22_4_605_0.pdf"
+fetched_from = "https://www.numdam.org/item/ASENS_1989_4_22_4_605_0.pdf"
+fetched_at = "2026-11-15T06:21:12Z"
+sha256 = "a46e3549d05d2cd39f396ef326840f4484f3935ff3daa17e6339091962de9e94"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["2.3a", "4.14", "4.14a"]
+
+[[source]]
+id = "RM19"
+authors = "Fulvio Ricci, Francesco Paolo Maiale"
+title = "Analysis of sublaplacians on Lie groups"
+year = 2019
+locator_scheme = "theorem"
+locator = "§1.8.2, Theorem 1.70, pp.30–33"
+url = "https://poisson.phc.dm.unipi.it/~fpmaiale/notes/HAoLG.pdf"
+fetched_from = "https://poisson.phc.dm.unipi.it/~fpmaiale/notes/HAoLG.pdf"
+fetched_at = "2026-11-15T06:21:20Z"
+sha256 = "cac70b9437f36dbc77348810faefbb1b5f5d53ff4b558fac822840847a4d7ffc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["1.6"]
+
+[[source]]
+id = "Ram15"
+authors = "Dinakar Ramakrishnan"
+title = "A mild Tchebotarev theorem for GL(n)"
+year = 2015
+locator_scheme = "theorem"
+locator = "Theorem 1.2; Proposition 2.1, Lemmas 2.3 and 2.5, pp.5–7; Lemma 4.4, pp.8–9"
+url = "https://www.its.caltech.edu/~dinakar/papers/mildTcheb-arxiv.pdf"
+fetched_from = "https://www.its.caltech.edu/~dinakar/papers/mildTcheb-arxiv.pdf"
+fetched_at = "2026-11-15T06:21:21Z"
+sha256 = "196750e33ab03d8bfdf9788ac243260c7394d4c0c8b8bfa88d6b89f612a33150"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["7.1a", "7.1c"]
+
+[[source]]
+id = "Ram18"
+authors = "Dinakar Ramakrishnan"
+title = "A Theorem on GL(n) a la Tchebotarev"
+year = 2018
+arxiv = "1806.08429v1"
+locator_scheme = "theorem"
+locator = "Theorem A; Propositions 1.1, 2.1, 3.1, 5.1; Lemma 4.1 and Sublemma 4.2, pp.9–11"
+url = "https://arxiv.org/abs/1806.08429v1"
+fetched_from = "https://arxiv.org/pdf/1806.08429v1"
+fetched_at = "2026-11-15T06:21:25Z"
+sha256 = "0f060fb77aefe19622c07dad86e4bf73f17b1906b8463357e4b441caca50c9d1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["7.1", "7.1a", "7.1b", "7.1c", "7.1d", "7.2"]
+
+[[source]]
+id = "Sar03"
+authors = "Peter Sarnak"
+title = "Notes on the generalized Ramanujan conjectures"
+year = 2003
+locator_scheme = "section"
+locator = "§2, pp.7–8"
+url = "https://web.math.princeton.edu/~sarnak/Preprints/SarnakFieldsNotes.pdf"
+fetched_from = "https://web.math.princeton.edu/~sarnak/Preprints/SarnakFieldsNotes.pdf"
+fetched_at = "2026-11-15T06:21:26Z"
+sha256 = "766114fc87df19458e94e16336d50ddf26fd9210807d9d54ce72ce7fbd2c240c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["7.1a"]
+
+[[source]]
+id = "Tai17"
+authors = "Olivier Taïbi"
+title = "Dimensions of spaces of level one automorphic forms for split classical groups using the trace formula"
+year = 2017
+locator_scheme = "equation"
+locator = "§3.1.3, (3.1.1), p.280"
+url = "https://www.numdam.org/item/10.24033/asens.2321.pdf"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.2321.pdf"
+fetched_at = "2026-11-15T06:28:09Z"
+sha256 = "1d81643d7b37ba26127d5d55360fa928757f2d9e9d6dbc4ff89e6489ed924c65"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["6.20"]
+
+[[source]]
+id = "Tes09"
+authors = "Gerald Teschl"
+title = "Mathematical methods in quantum mechanics"
+year = 2009
+locator_scheme = "theorem"
+locator = "§§0.4–0.5, Theorems 0.23 and 0.26, pp.22–24; §§6.2–6.3, Theorems 6.6–6.7, Lemmas 6.10–6.16"
+url = "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
+fetched_from = "https://www.mat.univie.ac.at/~gerald/ftp/book-schroe/schroe.pdf"
+fetched_at = "2026-11-15T06:29:17Z"
+sha256 = "8dc8de0b58aa0a3fedfe594a345f9b5875322e5526ea581cb640a98d55b82818"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "0.10", "1.16a"]
+
+[[source]]
+id = "YZ17"
+authors = "Zhiwei Yun, Wei Zhang"
+title = "Shtukas and the Taylor expansion of L-functions"
+year = 2017
+locator_scheme = "theorem"
+locator = "Appendix B, Proposition B.1, Theorem B.2, Remarks B.4–B.5, pp.902–906"
+url = "https://math.mit.edu/~zyun/Taylor_Expansion_published.pdf"
+fetched_from = "https://math.mit.edu/~zyun/Taylor_Expansion_published.pdf"
+fetched_at = "2026-11-15T06:29:25Z"
+sha256 = "b02ed5cbe5e6443a59360551cd41048ebb1e589d3c4cbe89f7fcbbbec50fc111"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["3.6b", "3.6c", "3.6d"]
+
+[[source]]
+id = "Yetter04"
+authors = "D. N. Yetter"
+title = "Measurable Categories"
+year = 2003
+arxiv = "math/0309185v2"
+locator_scheme = "section"
+locator = "§2, Definitions 1–2 and Example 4, pp.2–4; §4, Definition 26 and Theorem 27, pp.13–14"
+url = "https://arxiv.org/abs/math/0309185v2"
+fetched_from = "https://arxiv.org/pdf/math/0309185v2"
+fetched_at = "2026-11-15T06:29:29Z"
+sha256 = "a3b59a3b059e2d10c55abdd688415c1e20d23e0a536cf9afd09950a5fbae6bf3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["0.1", "0.2", "0.3"]
+
+[[source]]
+id = "Lan80"
+authors = "Robert P. Langlands"
+title = "Base change for GL(2)"
+year = 1980
+locator_scheme = "page"
+locator = "Chapter 10, pp.108–109"
+url = "https://publications.ias.edu/sites/default/files/base-change-for-gl2_rpl_2.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/base-change-for-gl2_rpl_2.pdf"
+fetched_at = "2026-11-15T06:30:28Z"
+sha256 = "ce2f2e13f2619fd97229ff9f5e94b8b2d37f9c1085da45c10dd151b92adae64e"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["1.15b", "1.15c"]
+
+[[source]]
+id = "Sha25"
+authors = "Jacob Shapiro"
+title = "Functional analysis: Princeton University MAT520 lecture notes"
+year = 2025
+locator_scheme = "theorem"
+locator = "§10.1, Theorem 10.5"
+url = "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/MAT520_Lecture_Notes.pdf"
+fetched_from = "https://web.math.princeton.edu/~js129/PDFs/teaching/MAT520_fall_2025/MAT520_Lecture_Notes.pdf"
+fetched_at = "2026-11-15T06:41:45Z"
+sha256 = "56aefb385eefd760ecd55bce9e3be14759f307fa98b5a00b8b787fde735e6b9d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["0.5"]
