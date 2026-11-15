@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups~6",
+  "head": "fda6fe9abc624c886614f2a1dc14d99fd0fece5c",
+  "pr": 1842,
+  "folder": "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 145 changed lines since ee22726. Previous R01 (renamed pinned local instance) repaired: Suggested.lean elaborates with sorry as the only warning (7). Checked the regrouping of 33 subsections under 10 group headings (all 76 section ids kept, no reference broken) and all 55 consumption claims of the 10 new group paragraphs against the 77 Needs lines: 3 disagree (R01, P3; the proof routes side with the new paragraphs, so the three Needs lines are to be completed). Gate passes with every count zero, build included; depcheck 0 problems; nothing changed outside the folder; pull request text agrees with the head. Sampled targets in changed passages (2.4, 5.4, 8.3) checked for content against nv21 arXiv v3; the printed Acta locators could not be re-read (published PDF not extractable on this worker).",
+  "text": "6dbf373ba4e34524",
+  "carried": {
+   "from": "fda6fe9abc624c886614f2a1dc14d99fd0fece5c",
+   "head": "72888dcb68f4173fea09a63f63afec10e3250048",
+   "findings": 1,
+   "lines": 40,
+   "folders": [
+    "QuantitativeOrbitMethodAndMicrolocalAnalysisOnLieGroups"
+   ]
+  }
+ }
+}
