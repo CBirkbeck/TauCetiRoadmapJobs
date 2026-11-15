@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CrystallineLocalGlobalCompatibilityCM~4",
+  "head": "cb5cbd7fa132c9d2603a9b9ae5d26dac415c358a",
+  "pr": 1182,
+  "folder": "CrystallineLocalGlobalCompatibilityCM",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 139 changed lines since 762a228 (README only: 7 reworded statements, 8 grouping headings with 27 targets demoted to bold numbered paragraphs, 3 headings renamed). Checked: each reworded statement against CN arXiv v3 at its locator (8 locators; seeded targets 1.9, 7.3, 8.4, 9.11, 9.12 fall in the change); every consumer claim of the grouping sentences against the Needs lines; no stale heading reference; citations of this roadmap from EllipticCurveModularityImaginaryQuadratic and ModularityAndLanglandsExtensions resolve; adversarial table of 11 rows with computed values, tetrahedral F_7 example recomputed; title and description read against the head, nothing contradicted or left unstated; overlap check against 5 closest roadmaps, nothing shared. Gate: all counts zero, OK; depcheck 246 roadmaps, 2257 edges, 0 problems; lake env lean on Suggested.lean: sorry the only warning. No previous finding outstanding.",
+  "text": "cf889e41c64c3282"
+ }
+}
