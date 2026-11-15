@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsNonparametric~3",
+  "head": "ec0b5601ac2ddced99d5e9dbdfd034160f972c31",
+  "pr": 2368,
+  "folder": "MathematicalStatisticsNonparametric",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 1,
+  "notes": "Full review of README.md and Suggested.lean. Previous review: R01-R04 and R06 repaired, R05 in part. One P1: the 5.5 boundary theorem (ratio of the conditional MSE to its leading term tends to 1) is false when the leading bias coefficient vanishes (p = 0, c = 1, m = x^2, h = n^(-1/6): ratio 1 + (2/9) n^(1/6)); the repaired two-limit statement elaborates. Four P3: two pinned facts restated or cited at a weaker declaration (ContinuousLinearMap.abs_singularValue_sub_singularValue_le, IsGaussian.ext); seven padding declarations and two padding conjuncts (one-tactic probe); five Lean names absent from the README; a Mathlib pull-request reference and five results without theorem or page. Seeded sample: 15 targets computed in the adversarial table; source text readable only for KimSamworth16 (7.5) and Johnstone17 (6.3, 6.4), 11 locators checked, the commercial books are under Not verifiable. Gate: every check passed; elaboration exit 0 with 211 sorry warnings only; depcheck 0 problems; generic one-tactic probe closes none of 211. Cross-roadmap citations resolved at the open heads of MathematicalStatisticsFoundations and MathematicalStatisticsAsymptotic and on main.",
+  "text": "49820351721b7115"
+ }
+}
