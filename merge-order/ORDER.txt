@@ -59,6 +59,7 @@ ArithmeticStatisticsPartV
 SieveMethodsAndPrimePatterns
 ArithmeticGaloisRepresentations
 ArithmeticLocallySymmetricSpaces
+LieGroupsPartII
 AutomorphicFormsOnReductiveGroups
 QuaternionicModularForms
 ArithmeticGaloisDuality
