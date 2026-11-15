@@ -752,10 +752,13 @@ Prove, beyond LorentzianGeometry §8.2 and §12.6:
   then in particular `x_m(a_m) → x(a)`, and if `a ∉ J` (for instance if `inf J > a`) then `x` is
   past-inextendible in `D` (Minguzzi2019 line 1917, §2.11; Chrusciel2011 line 1352, §2.6, for
   the classical limit curve theorems). Route: take compact sets `K_1 ⊆ K_2 ⊆ …` with union `D`,
-  each in the relative interior of the next (`CompactExhaustion`); along a diagonal subsequence
-  the least times `σ_m^j` from which on `x_m` stays in `K_j` converge for every `j`, and the first
-  statement applies on each `K_j`. Either some `K_j` contains the whole graphs of infinitely many
-  `x_m`, and then `a ∈ J`; or for every `j` the `x_m` eventually leave `K_j`, the points
+  each in the relative interior of the next (`CompactExhaustion`), and fix `j_p` with `p` in the
+  relative interior of `K_{j_p}`. That interior is open in `D`, so for `m` large
+  `p_m ∈ K_{j_p} ⊆ K_j` for every `j ≥ j_p`, and the least times `σ_m^j` from which on `x_m` stays
+  in `K_j` exist (for `j < j_p` there may be no such time, when `p_m ∉ K_j`); along a diagonal
+  subsequence `σ_m^j` converges for every `j ≥ j_p`, and the first statement applies on each
+  `K_j`. Either some `K_j` contains the whole graphs of infinitely many `x_m`, and then `a ∈ J`;
+  or for every `j ≥ j_p` the `x_m` eventually leave `K_j`, the points
   `(σ_m^j, x_m(σ_m^j))` lie on the relative boundary of `K_j`, and a past endpoint `q ∈ D` of `x`
   would be a limit of points on these boundaries for arbitrarily large `j`, which avoid the
   relative interior of `K_{j₀}` for `j ≥ j₀`, whereas `q` lies in it for some `j₀`. This differs
