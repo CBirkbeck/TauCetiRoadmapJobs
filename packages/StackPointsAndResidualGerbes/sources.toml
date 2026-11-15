@@ -103,7 +103,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v4"
-cited_for = ["not cited by the design: recorded to document that the residual-gerbe appendix is that of rydh2011"]
+cited_for = ["not cited by the roadmap: recorded so that the appendix on algebraicity of points and residual gerbes cited in 5.3-5.5 is not confused with this paper; it is Appendix B of rydh2011"]
 
 [[source]]
 id = "alper-moduli"
