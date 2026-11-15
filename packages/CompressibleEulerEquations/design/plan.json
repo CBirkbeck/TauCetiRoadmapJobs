@@ -2022,9 +2022,9 @@
      "id": "8.4.1",
      "kind": "theorem",
      "name": "CompressibleEuler.boundary_null_of_maximal",
-     "statement": "If moreover (D,U) is maximal and U extends to a classical solution Ũ on N (periodically on Λ-translates), then ∂_tφ(q) + ṽ(q)·∇φ(q) = c̃(q)|∇φ(q)| and ∇φ(q) ≠ 0: ∂D is null for the acoustical form of Ũ at q. Route: if strict, with a = ∂_tφ(q) + ṽ(q)·∇φ(q) > c̃(q)|∇φ(q)|, choose M with c̃ + |ṽ − ṽ(q)| < M near q and M|∇φ(q)| < a (no upper bound when ∇φ(q) = 0); the lens {φ ≥ 0} ∩ {ψ > 0} ∩ N₀, ψ the periodised moving cone (ε, x_q, ṽ(q), M), lies in a ball of radius O(ε) about q (its linearisation is {|y| − (M/a)b·y < ε}, bounded iff M|b| < a), and adding it to D contradicts maximality. Differs from LorentzianGeometry §12.7 (∂_U D⁺_U(S) ∩ {t > t₀} = H⁺_U(S) ∩ {t > t₀}, null where C¹, for a locally Lipschitz metric on an open U of a manifold without boundary and S closed in a slice): the form exists only on D and N, S is open, D is relatively open in the half-space H_{t₀}, and nullity comes from maximality through the lens of 6.1.",
+     "statement": "If moreover U extends to a classical solution Ũ on N (periodically on Λ-translates) and no development (D′,U′) ≥ (D,U) with D′ ⊆ D ∪ ⋃_{λ∈Λ}(N + λ) contains q (in particular when (D,U) is maximal, since q ∉ D), then ∂_tφ(q) + ṽ(q)·∇φ(q) = c̃(q)|∇φ(q)| and ∇φ(q) ≠ 0: ∂D is null for the acoustical form of Ũ at q. Route: if strict, with a = ∂_tφ(q) + ṽ(q)·∇φ(q) > c̃(q)|∇φ(q)|, choose M with c̃ + |ṽ − ṽ(q)| < M near q and M|∇φ(q)| < a (no upper bound when ∇φ(q) = 0); the lens {φ ≥ 0} ∩ {ψ > 0} ∩ N₀, ψ the periodised moving cone (ε, x_q, ṽ(q), M), lies in a ball of radius O(ε) about q (its linearisation is {|y| − (M/a)b·y < ε}, bounded iff M|b| < a), and adding it with its Λ-translates to D gives a development above (D,U), inside D ∪ ⋃_{λ∈Λ}(N + λ), containing q, against the hypothesis. Consequence: a C¹ hypersurface H ⊆ ∂D ∩ {t > t₀}, each point q of which has N, φ as in 8.4 with D ∩ N = {φ < 0} and a classical extension of U to N, is null at each point where the hypothesis above holds for such an N; if it holds at every point of H (in particular if (D,U) is maximal), H is null. Differs from LorentzianGeometry §12.7 (∂_U D⁺_U(S) ∩ {t > t₀} = H⁺_U(S) ∩ {t > t₀}, null where C¹, for a locally Lipschitz metric on an open U of a manifold without boundary and S closed in a slice): the form exists only on D and N, S is open, D is relatively open in the half-space H_{t₀}, and nullity comes, through the lens of 6.1, from the absence of a development above (D,U) containing q and adding only points near q and its Λ-translates (maximality in particular).",
      "hypotheses": [
-      "(D,U) maximal",
+      "no development (D′,U′) ≥ (D,U) with D′ ⊆ D ∪ ⋃_{λ∈Λ}(N + λ) contains q (in particular (D,U) maximal)",
       "classical extension Ũ on N",
       "hypotheses of 8.4"
      ],
@@ -2057,7 +2057,49 @@
       {
        "name": "separates_from_horizon_theorem",
        "kind": "non-example",
-       "statement": "c = 1, v = 0, n = 1, S = (−1,1): the truncation {|x| < 1 − t, 0 ≤ t < 1/2} is a development with spacelike top t = 1/2, allowed by 8.4 and excluded by 8.4.1 (not maximal); LorentzianGeometry §12.7 with U = ℝ² sees D⁺_U({0} × [−1,1]) = {0 ≤ t ≤ 1 − |x|}, null boundary above t = 0"
+       "statement": "c = 1, v = 0, n = 1, S = (−1,1): the truncation {|x| < 1 − t, 0 ≤ t < 1/2} is a development with spacelike top t = 1/2, allowed by 8.4; at each top point (1/2, x_q) the hypothesis of 8.4.1 fails (for 0 < r < 1/2 − |x_q| with the cone in N, the union with {t ≥ 1/2, |x − x_q| < r − 2(t − 1/2)} is a development above the truncation containing the point), so the hypersurface consequence claims nothing there, while on the lateral boundary |x| = 1 − t of the maximal development {|x| < 1 − t} it gives 1 = 1; LorentzianGeometry §12.7 with U = ℝ² sees D⁺_U({0} × [−1,1]) = {0 ≤ t ≤ 1 − |x|}, null boundary above t = 0"
+      },
+      {
+       "name": "extension_alone_insufficient",
+       "kind": "non-example",
+       "statement": "n = 1, c₀ = 1, v₀ = 0, t₀ = 0, T = 1, S = {x > 0}: the development D = {x > t, 0 ≤ t < 1} of 8.3 has at (t,x) = (1,5) the boundary φ = t − 1 with ∂_tφ = 1 > 0: spacelike, although the constant state extends; the hypothesis of 8.4.1 fails there, since for small r the union of D with {t ≥ 1, |x − 5| < r − 2(t − 1)} is a development above D containing (1,5)"
+      }
+     ]
+    },
+    {
+     "id": "8.4.2",
+     "kind": "theorem",
+     "name": "CompressibleEuler.slabDevelopment_boundary_null",
+     "statement": "For the development (D,U) = (D⁺_O({t₀} × S), U) of 8.3, O = [t₀, t₀+T) × E, a point q ∈ ∂D with t₀ < t(q) < t₀ + T, an open N ∋ q with N ⊆ (t₀, t₀+T) × E and φ ∈ C¹(N) with dφ(q) ≠ 0 and D ∩ N = {φ < 0}: ∂_tφ(q) + v(q)·∇φ(q) = c(q)|∇φ(q)| for the acoustical field (c,v) of U, so the boundary is null at q. Route: 8.4.1 with Ũ = U on ⋃_{λ∈Λ}(N + λ) ⊆ O; a development above (D,U) inside D ∪ ⋃_{λ∈Λ}(N + λ) ⊆ O is contained in O, hence below (D,U), the largest development in O (8.3), so it does not contain q ∉ D. On the top t = t₀ + T only 8.4 applies.",
+     "hypotheses": [
+      "hypotheses of 8.3",
+      "t₀ < t(q) < t₀ + T",
+      "N ⊆ (t₀, t₀+T) × E",
+      "D ∩ N = {φ < 0}, dφ(q) ≠ 0"
+     ],
+     "locator": {
+      "source": "LuoYu2023b",
+      "where": "lines 417–419 (the future domain of dependence of data on a half-space and its null boundary)"
+     },
+     "prerequisites": [
+      "target:8.4.1",
+      "target:8.3"
+     ],
+     "tests": [
+      {
+       "name": "half_space_lateral_null",
+       "kind": "computation",
+       "statement": "n = 1, c₀ = 1, v₀ = 0, t₀ = 0, T = 1, S = {x > 0}: D = {x > t, 0 ≤ t < 1}; at (t,x) = (1/2,1/2), φ = t − x gives ∂_tφ + v∂_xφ = 1 = c|∂_xφ|"
+      },
+      {
+       "name": "top_excluded",
+       "kind": "non-example",
+       "statement": "same data at (t,x) = (1,5): φ = t − 1 gives 1 > 0, spacelike although the constant state extends; t(q) = t₀ + T and no N ∋ q lies in (0,1) × ℝ, so the statement does not apply"
+      },
+      {
+       "name": "half_space_general",
+       "kind": "computation",
+       "statement": "constant data (ρ₀,v₀) on {x¹ > 0}: D = {x¹ > (v₀¹ + c₀)(t − t₀)} ∩ O, φ = (v₀¹ + c₀)(t − t₀) − x¹ gives ∂_tφ + v₀·∇φ = v₀¹ + c₀ − v₀¹ = c₀ = c₀|∇φ|"
       }
      ]
     }

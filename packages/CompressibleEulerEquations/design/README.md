@@ -1885,10 +1885,6 @@ development is compatible with `(O, U)`, so every maximal development contains t
 Kato1975, Theorem I and Majda1984, Ch. 2, for the slab). Route: openness and idempotence of
 `D⁺` (§3.3), §6.2 for compatibility, §8.2.
 
-- For data on a half-space `{x¹ > 0}`, the part of the boundary of the development along which
-  the solution extends as a classical solution is null by §8.4; this is the configuration of
-  LuoYu2023b lines 417–419.
-
 **Checks.**
 
 - `S = E` with constant data: `O = H_{t₀}` (`T = ∞`), and the unique maximal development is
@@ -1912,9 +1908,11 @@ open neighbourhood `N` of `q` and a `C¹` function `φ` on `N` with `dφ(q) ≠ 
   past side. Route: otherwise a past-directed timelike vector `X` with `dφ(q)(X) > 0` exists, and
   segments in direction `X` from points of `D` near `q` are causal and leave `D` at time `> t₀`,
   contradicting `D = D⁺_D({t₀} × S)`.
-- (b) If moreover `(D, U)` is maximal and `U` extends to a classical solution `Ũ` on `N` (and on
-  the Λ-translates of `N`, periodically), then `∂_tφ(q) + ṽ(q)·∇φ(q) = c̃(q)|∇φ(q)|` and
-  `∇φ(q) ≠ 0`: `∂D` is a null hypersurface of the acoustical form of `Ũ` at `q`. Route: suppose
+- (b) If moreover `U` extends to a classical solution `Ũ` on `N` (and on the Λ-translates of
+  `N`, periodically), and no development `(D′, U′) ≥ (D, U)` with
+  `D′ ⊆ D ∪ ⋃_{λ∈Λ} (N + λ)` contains `q` (this holds in particular when `(D, U)` is maximal,
+  since `q ∉ D`), then `∂_tφ(q) + ṽ(q)·∇φ(q) = c̃(q)|∇φ(q)|` and `∇φ(q) ≠ 0`: `∂D` is a null
+  hypersurface of the acoustical form of `Ũ` at `q`. Route: suppose
   the inequality were strict, and write `a = ∂_tφ(q) + ṽ(q)·∇φ(q)` and `b = ∇φ(q)`, so that
   `a > c̃(q)|b|`. Choose `M` with `c̃ + |ṽ − ṽ(q)| < M` on a neighbourhood of `q` and `M|b| < a`;
   this is possible because `c̃(q) < a/|b|` (with no upper bound when `b = 0`) and by continuity.
@@ -1925,9 +1923,10 @@ open neighbourhood `N` of `q` and a `C¹` function `φ` on `N` with `dφ(q) ≠ 
   `as + b·y ≥ 0` and `ε − |y| − Ms > 0` one has `|y| − (M/a)(b·y) < ε`, a bounded set exactly
   when `M|b| < a`; so for a small ball `N₀ ⊆ N` about `q` and small `ε` the lens
   `{φ ≥ 0} ∩ {ψ > 0} ∩ N₀` lies in a ball of radius `O(ε)` about `q`. This lens, together with
-  its Λ-translates, added to `D` with `Ũ`, would give a strictly larger development: past causal
-  curves from the lens stay in it until they reach `{φ = 0}`, and cannot re-enter it from `D`
-  because `φ` increases along future causal curves near `q`. Without the bound `M|b| < a` the
+  its Λ-translates, added to `D` with `Ũ`, would give a development above `(D, U)`, contained in
+  `D ∪ ⋃_{λ∈Λ} (N + λ)` and containing `q` (where `φ = 0` and `ψ = ε`), against the hypothesis:
+  past causal curves from the lens stay in it until they reach `{φ = 0}`, and cannot re-enter it
+  from `D` because `φ` increases along future causal curves near `q`. Without the bound `M|b| < a` the
   set `{φ ≥ 0} ∩ {ψ > 0}` need not be small (Check below).
 
 (Christodoulou2019 lines 131–138: the regular part `C` of the boundary of the maximal
@@ -1941,17 +1940,31 @@ function on `U`, that `∂_U D⁺_U(S) ∩ {t > t₀} = H⁺_U(S) ∩ {t > t₀}
 `H⁺_U(S)` is null, in the sense of its §9.2, wherever it is a `C¹` hypersurface. Statement (b)
 differs: the acoustical form exists only on `D` and on the neighbourhood `N` to which the
 solution extends, `S` is open, `D` is a relatively open subset of the half-space `H_{t₀}`, which
-has boundary, and nullity follows from maximality among developments through the moving-cone
-lens of §6.1, not from achronality in a fixed spacetime; (a), for a development that need not
-be maximal, gives only spacelike or null. The two are separated by the constant state `c = 1`,
-`v = 0`, `n = 1`, `S = (−1, 1)`: its truncation `{|x| < 1 − t, 0 ≤ t < 1/2}` is a development
-(§8.1) whose top `t = 1/2` is spacelike, which (a) allows and (b) excludes by non-maximality,
-while §12.7 with `U = ℝ²` sees only `D⁺_U({0} × [−1, 1]) = {0 ≤ t ≤ 1 − |x|}`, whose boundary
-above `t = 0` is null, and says nothing about the truncation.
+has boundary, and nullity follows, through the moving-cone lens of §6.1, from the absence of a
+development above `(D, U)` that contains `q` and adds only points of `N` and its Λ-translates
+(in particular from maximality among developments), not from achronality in a fixed spacetime;
+(a), for any development, gives only spacelike or null. The two are separated by the constant
+state `c = 1`, `v = 0`, `n = 1`, `S = (−1, 1)`: its truncation `{|x| < 1 − t, 0 ≤ t < 1/2}` is a
+development (§8.1) whose top `t = 1/2` is spacelike, which (a) allows and at which the hypothesis
+of (b) fails (Checks), while §12.7 with `U = ℝ²` sees only
+`D⁺_U({0} × [−1, 1]) = {0 ≤ t ≤ 1 − |x|}`, whose boundary above `t = 0` is null, and says nothing
+about the truncation.
 
-- Consequently, a `C¹` hypersurface contained in `∂D ∩ {t > t₀}`, with `D` on one side and along
-  which `U` extends as a classical solution, is null for the acoustical form of the extension at
-  each of its points.
+- *Regular boundary hypersurfaces.* Let `H ⊆ ∂D ∩ {t > t₀}` be a `C¹` hypersurface such that
+  each `q ∈ H` has an open neighbourhood `N` with `D ∩ N = {φ < 0}` for a `C¹` function `φ` on
+  `N` with `dφ(q) ≠ 0` (so that `D` lies on one side of `H` near `q`), and a classical extension
+  of `U` to `N` and its Λ-translates. If `(D, U)` satisfies the hypothesis of (b) at each point of
+  `H` for such an `N` (in particular, if `(D, U)` is maximal), then `H` is null for the acoustical
+  form of the extension at each of its points; the value of the extension at `q` is the limit of
+  `U` from `D`, so this form does not depend on the extension chosen.
+- *Developments inside a slab.* Let `(D, U) = (D⁺_O({t₀} × S), U)` be the development of §8.3,
+  with `O = [t₀, t₀ + T) × E`, and let `q ∈ ∂D` with `t₀ < t(q) < t₀ + T`, an open `N ∋ q` with
+  `N ⊆ (t₀, t₀ + T) × E` and `φ` be as above. Then `∂_tφ(q) + v(q)·∇φ(q) = c(q)|∇φ(q)|` for the
+  acoustical field `(c, v)` of `U`: the boundary is null at `q`. Route: (b) with `Ũ = U` on
+  `⋃_{λ∈Λ} (N + λ) ⊆ O`; a development above `(D, U)` contained in `D ∪ ⋃_{λ∈Λ} (N + λ) ⊆ O` is a
+  development contained in `O`, hence below `(D, U)`, the largest one (§8.3), so it does not
+  contain `q ∉ D`. On the top `{t = t₀ + T}` only (a) applies. For data on a half-space
+  `{x¹ > 0}` this is the configuration of LuoYu2023b lines 417–419.
 
 **Checks.**
 
@@ -1961,9 +1974,26 @@ above `t = 0` is null, and says nothing about the truncation.
   `φ = x − (2√(1 + t) − (1 + t))`, `∂_tφ = 1 − 1/√2 ≈ 0.2929`, `v∂_xφ = √2 − 1 ≈ 0.4142`, sum
   `1/√2`, equal to `c|∂_xφ| = (1 + t)^{−1/2} = 1/√2`: null.
 - The truncation `D ∩ {t < T}`, `T > t₀`, has `φ = t − T` with `∂_tφ = 1 > 0 = c|∇φ|`:
-  spacelike, which (a) allows and (b) excludes, and indeed truncations are not maximal. The domain `{|x| < 1 − t/2}`
-  with `c = 1`, `v = 0` has `∂_tφ = 1/2 < 1 = c|∇φ|`: timelike, excluded by (a), and indeed it is
-  not a development.
+  spacelike, which (a) allows; so the hypothesis of (b) must fail on the top. For the state
+  `c = 1`, `v = 0` and the truncation `{|x| < 1 − t, 0 ≤ t < 1/2}` it does: at a top point
+  `(1/2, x_q)`, `|x_q| < 1/2`, and for `0 < r < 1/2 − |x_q|` so small that the cone below lies
+  in `N`, the union with
+  `{t ≥ 1/2, |x − x_q| < r − 2(t − 1/2)}` and the constant state is a development above the
+  truncation containing `(1/2, x_q)` (a backward causal curve, of speed at most `1`, stays in the
+  cone of slope `2` down to `t = 1/2` and then has `|x(t)| < |x_q| + r + 1/2 − t < 1 − t`), so the
+  consequence for hypersurfaces claims nothing about the top. On the lateral boundary `|x| = 1 − t`
+  of the maximal development `{|x| < 1 − t}` it gives, with `φ = |x| − 1 + t`,
+  `∂_tφ = 1 = c|∂_xφ|`. The domain `{|x| < 1 − t/2}` with `c = 1`, `v = 0` has
+  `∂_tφ = 1/2 < 1 = c|∇φ|`: timelike, excluded by (a), and indeed it is not a development.
+- Developments inside a slab: `n = 1`, `c₀ = 1`, `v₀ = 0`, `t₀ = 0`, `T = 1`, constant data on
+  `S = {x > 0}`, so `D = D⁺_O({0} × S) = {x > t, 0 ≤ t < 1}`. At `(t, x) = (1/2, 1/2)`, `φ = t − x`
+  gives `∂_tφ + v∂_xφ = 1 = c|∂_xφ|`: null, as the slab statement asserts. At `(1, 5)`, on the
+  top, `φ = t − 1` gives `∂_tφ = 1 > 0 = c|∂_xφ|`: spacelike, although the constant state extends
+  past it; there the slab statement does not apply (`t(q) = t₀ + T`, and no `N ∋ q` lies in
+  `(0, 1) × ℝ`), and the hypothesis of (b) fails, since for small `r` (the cone inside `N`) the
+  union of `D` with
+  `{t ≥ 1, |x − 5| < r − 2(t − 1)}` is a development above `D` containing `(1, 5)`. So the
+  hypothesis of (b) cannot be weakened to "`U` extends classically to `N`".
 - The lens of (b) needs the upper bound on `M`: `n = 1`, `c̃ = 1`, `ṽ = 0`, `q = 0` and the
   strictly spacelike `φ = t − 0.9x` (`a = 1 > 0.9 = c̃|b|`). For `M = 5`, `M|b| = 4.5 > 1`, and
   the point `(t, x) = (−100, −400)` has `φ = 260 ≥ 0` and `ψ = ε − 400 + 500 > 0`: the set
@@ -1972,7 +2002,8 @@ above `t = 0` is null, and says nothing about the truncation.
   `−ε/0.055 < x < ε/1.945`, so `|x| < 18.2ε` and `|t| < 16.4ε`.
 
 *Needs:* §3.1 (covector classification), §3.2 (local existence of causal segments), §3.3,
-LorentzianGeometry §12.6 (concatenation), §6.1 (moving cones), §8.1, §8.2.
+LorentzianGeometry §12.6 (concatenation), §6.1 (moving cones), §8.1, §8.2; §8.3 (the largest
+development in a slab) for the statement on developments inside a slab only.
 
 ### Examples
 
