@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GenericDoublePointInterpolation~2",
+  "head": "6326e749aff14697acd93739c24b22713f749ffa",
+  "pr": 1472,
+  "folder": "GenericDoublePointInterpolation",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 6 changed lines since 5cd46bd. Previous R01 (three BO locators) repaired and verified against BO lines 604-623 and 654-670; three adversarial rows computed for the statements those locators cite. Gate rerun: all checks 0, OK; depcheck 0 problems; Suggested.lean elaborates with 17 sorry warnings only. Folder files need no change. First check of the pull request description against the head: two P3 findings, both in the description (it names EffectiveBoundsPartII as a roadmap the README names, which it does not; its end-theorem sentence stops at degree at least five while the head states the every-degree theorem).",
+  "text": "d457ee5be1a51ea0",
+  "carried": {
+   "from": "6326e749aff14697acd93739c24b22713f749ffa",
+   "head": "211ae44f3c03594d94b48fa5f7cba72ca45d0697",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
