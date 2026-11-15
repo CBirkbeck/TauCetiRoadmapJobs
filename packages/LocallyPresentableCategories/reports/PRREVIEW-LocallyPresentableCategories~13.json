@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocallyPresentableCategories~13",
+  "head": "a051ce976751e118c6bd5ccc64ee1f932f5e948e",
+  "pr": 1926,
+  "folder": "LocallyPresentableCategories",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 15 changed lines since 7c83474. Previous R01-R03 all repaired (README Scope lines 81-86 and Downstream consumers lines 987-988 now name ModelCategories, PresentableInfinityCategories and AccessibleInfinityCategories; the description's Scope, Review and Sources paragraphs match the head). The 8 cross-roadmap citations of the changed passages resolved at ModelCategories ac5fe3a, the InfinityCategoryTheory family 7e04598 and main 2248bbb. Gate rerun on a051ce9: 0 on every check, OK; lake env lean on Suggested.lean exits 0 with 27 sorry warnings and no error; depcheck 245 roadmaps, 2229 edges, 0 problems. No statement changed; one adversarial row with computed values for 1.3 against ModelCategories 1.2.1, which the changed text cites. The seeded sample falls in no changed passage; source independence checked on changed passages only. Adamek-Rosicky 1994, Makkai-Pare 1989, Gabriel-Ulmer 1971 and ABLR 2002 remain unread (paywalled), reported to the human reviewers.",
+  "text": "12575cdd032307f5"
+ }
+}
