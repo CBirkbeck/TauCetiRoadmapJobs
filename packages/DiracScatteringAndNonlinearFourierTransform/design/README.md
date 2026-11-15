@@ -17,10 +17,10 @@ For square-integrable `q` it constructs the scattering limit and the non-linear 
 `L²(ℝ)`-convergence of truncations and the elementary rules it shares with the linear transform.
 The spectral side follows: de Branges spaces, Weyl functions, the Neumann and Dirichlet spectral
 measures with the isometric embeddings `B(E(t,·)) → L²(μ)`, and the Szegő condition
-`log w ∈ L¹(Π)` for square-integrable potentials. The last three layers carry out Poltoratski's
-argument for real potentials: meromorphic inner functions and resonances, universality of
-reproducing kernels and the approximation of `E` by sines and exponentials near almost every real
-point, and the pointwise convergence `q⌃_T(s) → q⌃(s)` for almost every `s ∈ ℝ`.
+`log w ∈ L¹(Π)` for square-integrable potentials. For real potentials the last three layers develop
+meromorphic inner functions and resonances, universality of reproducing kernels and the
+approximation of `E` by sines and exponentials near almost every real point, and prove the pointwise
+convergence `q⌃_T(s) → q⌃(s)` for almost every `s ∈ ℝ`.
 
 ## Scope and ownership
 
@@ -51,10 +51,9 @@ This roadmap owns, by layer:
   function of exponential type, Poltoratski's zero-localisation lemma, and the Dirac inner
   functions with their Riccati equation and the motion of resonances;
 - Layer 8: universality of reproducing kernels at almost every real point and the
-  approximation of the Hermite–Biehler functions near a real point (Poltoratski §§6–8);
+  approximation of the Hermite–Biehler functions near a real point;
 - Layer 9: scattering data of subintervals, the resonance lemmas and the non-linear Carleson
-  theorem with its strong form and the boundedness of generalised eigenfunctions (Poltoratski
-  §9).
+  theorem with its strong form and the boundedness of generalised eigenfunctions.
 
 It leaves to named owners:
 
@@ -67,7 +66,8 @@ It leaves to named owners:
   the Dyson series of a continuous path, Jacobi's formula for the derivative of the determinant,
   the identity `det(exp A) = exp(tr A)`, Young's inequality for an integrable kernel, the duality
   `L^∞(μ) ≃ L¹(μ)*` of a finite measure, the Hardy–Littlewood maximal function with its weak
-  and strong type bounds, the Herglotz and Nevanlinna representations, the Cayley transform of
+  and strong type bounds, the Herglotz representation on the disc with the Herglotz transform of a
+  finite measure on the circle, the Nevanlinna representation with a finite measure, the Cayley transform of
   the half-plane, the half-plane Phragmén–Lindelöf principle for bounded functions, the
   half-space Poisson kernel with its mass, positivity, harmonicity in the pole and kernel
   comparison, the half-space Poisson integral of bounded data with its harmonicity and boundary
@@ -80,6 +80,11 @@ It leaves to named owners:
   with respect to a spectral measure;
 - finite-order Hadamard factorization to AnalyticNumberTheoryPartI §0.23, consumed in Layer 7
   for entire functions of order at most one;
+- the subtracted-kernel Herglotz representation of a holomorphic `F` on `ℂ₊` with `Im F ≥ 0`,
+  `F(z) = a + bz + ∫ ((x − z)⁻¹ − x/(1 + x²)) dν_F(x)` with its unique triple `(a, b, ν_F)`, to
+  AutomorphicSpectralTheory §0.5, consumed in §2.2 and §6.5; §2.2 states the form for nonnegative
+  harmonic functions, which differs by the passage from `u` to a holomorphic `F` with `Im F = u`, the
+  normalisation `ν = πν_F` of the Poisson integral and the mass and vague-limit descriptions of `ν`;
 - the disc Hardy space `H²(𝔻)` to Tau Ceti (`TauCeti.HardySpace`, `Analysis/Fourier/Hardy/Basic.lean`
   line 43, with its disc functions, reproducing kernel, boundary uniqueness and the Toeplitz operators
   of bounded symbols in `Analysis/Fourier/Hardy/`), and the further theory of those Toeplitz operators
@@ -93,9 +98,9 @@ It leaves to named owners:
   the discrete SU(1,1) model, the Schrödinger reduction and integrable systems to later roadmaps
   that consume Layers 3–6.
 
-The headline theorem of Layer 9 is stated, as in the source, for real potentials. Layers 1–6 are
-stated for complex potentials `q = f + ig` (the system with `Q_q = [[g, f], [f, −g]]`), and Layers
-7–9 for real `f`, where the source's argument is written.
+The headline theorem of Layer 9 is stated for real potentials, the generality of poltoratski2024
+Theorem 1 (line 579–581). Layers 1–6 are stated for complex potentials `q = f + ig` (the system with
+`Q_q = [[g, f], [f, −g]]`), and Layers 7–9 for real `f`.
 
 ## Conventions
 
@@ -147,7 +152,8 @@ stated for complex potentials `q = f + ig` (the system with `Q_q = [[g, f], [f, 
 - **Spectral measures.** The Weyl function is `m = lim_{t→∞} −Ẽ(t, ·)/E(t, ·)` on `ℂ₊`, and the
   Neumann spectral measure `μ` is the Poisson-finite measure with
   `m(z) = c + βz + (1/π)∫ (1/(x − z) − x/(1 + x²)) dμ(x)`, so that `Im m(x + i0) = w(x)` is the
-  density of its absolutely continuous part. The Dirichlet spectral measure `μ̃` has Weyl function
+  density of its absolutely continuous part; that is, `(c, β, μ/π)`, with `c = Re m(i)`, is the triple of
+  `m` in the Herglotz representation of AutomorphicSpectralTheory §0.5. The Dirichlet spectral measure `μ̃` has Weyl function
   `−1/m`. Free case: `m = i`, `μ = μ̃ = dx`.
 - **Boxes.** `Q(s, C) = {z : |Re z − s| ≤ C, |Im z| ≤ C}` (poltoratski2024 line 625), and
   `γ(p) = √2/√(sinh 2p)` (poltoratski2024 (7.4) line 849).
@@ -228,6 +234,13 @@ All at the pinned Mathlib; paths under `Mathlib/`.
   `σ(X) log(σ(X)/ν(X)) + ν(X) − σ(X) ≤ klDiv σ ν`, the left side read through `ENNReal.ofReal`. The circle
   carries Mathlib's Borel structure (`MeasureTheory/Group/Circle.lean` lines 32, 34) and is a compact
   metric space.
+- For the convergence of truncated spectral measures in §6.5: `span_fourier_closure_eq_top`
+  (`Analysis/Fourier/AddCircle.lean` line 244: the span of the monomials `fourier n`, `n ∈ ℤ`, is dense in
+  the continuous complex functions on `AddCircle T`), `AddCircle.homeomorphCircle'`
+  (`Analysis/SpecialFunctions/Complex/Circle.lean` line 421: the homeomorphism `AddCircle (2π) ≃ₜ Circle`,
+  `θ ↦ e^{iθ}`) and `MeasureTheory.FiniteMeasure.tendsto_iff_forall_integral_rclike_tendsto`
+  (`MeasureTheory/Measure/FiniteMeasure.lean` line 748: weak convergence of finite measures is convergence
+  of the integrals of every bounded continuous `𝕜`-valued function, `𝕜 = ℝ` or `ℂ`).
 - For Liouville's formula in §1.4: `Matrix.det_apply` (`LinearAlgebra/Matrix/Determinant/Basic.lean`
   line 66, the Leibniz expansion of `det` as a signed sum over permutations of products of entries),
   `Matrix.trace_mul_comm` (`LinearAlgebra/Matrix/Trace.lean` line 156, `tr(AB) = tr(BA)`),
@@ -306,11 +319,15 @@ All at the pinned Tau Ceti; paths under `TauCeti/`.
 - `MeasureTheory.Lp.dualOneEquiv` (`MeasureTheory/Function/L1Space/Dual.lean` line 102): for a
   **finite** measure `μ` and `𝕜 = ℝ` or `ℂ`, integration against an essentially bounded function is a
   linear isometric equivalence `L^∞(μ) ≃ L¹(μ)*`. §2.5 applies it to the finite Poisson measure `Π`.
-- `TauCeti.exists_isFiniteMeasure_eq_nevanlinnaKernel_add` and `TauCeti.nevanlinnaKernel_im`
-  (`Analysis/Complex/Pick/Nevanlinna.lean` lines 436, 332): a function holomorphic on
-  `UpperHalfPlane.upperHalfPlaneSet` with nonnegative imaginary part is
-  `βz + ∫ (1 + xz)/(x − z) dρ(x) + Re F(i)` with `ρ` finite and `β ≥ 0`, and the kernel has
-  imaginary part `Im z (1 + x²)/|x − z|²`. Layer 2 and Layer 6 consume it unchanged.
+- `MeasureTheory.Measure.herglotzTransform` (`Analysis/Complex/Herglotz.lean` line 138): the Herglotz
+  transform `H_ν(ξ) = ∫ (ζ + ξ)/(ζ − ξ) dν(ζ)` of a measure `ν` on Mathlib's `Circle`;
+  `MeasureTheory.Measure.herglotzTransform_zero` (line 150): `H_ν(0)` is the total mass of `ν`, as a real
+  number. `TauCeti.I_mul_herglotzTransform_cayley_eq` (`Analysis/Complex/Pick/Nevanlinna.lean` line 404): for
+  a finite measure `ν` on `Circle` and `z ∈ ℂ₊`, `i H_ν((z − i)/(z + i)) = ν({1}) z + ∫ (1 + xz)/(x − z) dν_C(x)`,
+  with `ν_C` the Cayley pushforward below. §6.5 uses them to write a Weyl function as a Herglotz transform
+  in the Cayley coordinate. The Nevanlinna representation `TauCeti.exists_isFiniteMeasure_eq_nevanlinnaKernel_add`
+  (same file, line 436: `F(z) = βz + ∫ (1 + xz)/(x − z) dρ(x) + Re F(i)` with `ρ` finite and `β ≥ 0`) is
+  consumed through AutomorphicSpectralTheory §0.5, which converts it to the subtracted kernel.
 - `TauCeti.integral_circle_eq_atom_add_integral_cayleyPushforward` and
   `MeasureTheory.Measure.cayleyPushforward` (`Analysis/Complex/Pick/Nevanlinna.lean` lines 188, 176): for a
   finite measure `ν` on Mathlib's `Circle` and a continuous `f` from `Circle` to a real Banach space,
@@ -370,6 +387,16 @@ All at the pinned Tau Ceti; paths under `TauCeti/`.
   multiplicity, `h` a polynomial of degree at most `n` and `Σ |α|^{−n−1} < ∞`. Layer 7 uses it with
   `ρ = n = 1` for the Hermite–Biehler functions `E(t, ·)`, which have order at most one by
   §3.1.
+
+### From TauCetiRoadmap.AutomorphicSpectralTheory
+
+- §0.5 (Herglotz representation): a function `F` holomorphic on `ℂ₊` with `Im F ≥ 0` is
+  `F(z) = a + bz + ∫ ((t − z)⁻¹ − t/(1 + t²)) dν_F(t)` for a unique triple with `a = Re F(i)`, `b ≥ 0` and
+  `ν_F` a positive Borel measure with `∫ dν_F/(1 + t²) < ∞`, obtained from the finite measure `ρ` of Tau
+  Ceti `TauCeti.exists_isFiniteMeasure_eq_nevanlinnaKernel_add` by `dν_F = (1 + t²) dρ`. Since
+  `Im (t − z)⁻¹ = π P(z, t)`, on `ℂ₊` this gives `Im F = b Im z + P[πν_F]` with the Poisson integral of §2.1.
+  §2.2 consumes it for a holomorphic `F` with `Im F = u`, and §6.5 for the Weyl function `m`, whose triple is
+  `(Re m(i), β, μ_q/π)`.
 
 ## How to read the build
 
@@ -677,23 +704,35 @@ define the Schwarz integral `S[ν](z) = (1/(πi)) ∫ (1/(x − z) − x/(1 + x�
 ### 2.2 Positive harmonic functions on the half-plane
 
 Prove that a nonnegative harmonic `u` on `ℂ₊` is `u(z) = c Im z + P[ν](z)` for a unique `c ≥ 0` and a
-unique Poisson-finite `ν`, and that `πy u(iy) − πc y² = ∫ y²/(x² + y²) dν(x)` increases to `ν(ℝ)` as
-`y → ∞` (garnett2007, Ch. I §3, uncertified). Route: `u = Im F` with `F`
-holomorphic on `ℂ₊`, `F′` being the conjugate complex partial of `u`, which is holomorphic by
-Mathlib's `HarmonicAt.differentiableAt_complex_partial` and has a primitive by Tau Ceti
-`DifferentiableOn.hasDerivAt_wedgeIntegral_upperHalfPlane`; then Tau Ceti
-`TauCeti.exists_isFiniteMeasure_eq_nevanlinnaKernel_add` and `TauCeti.nevanlinnaKernel_im` give
-`u = β Im z + P[ν]` with `ν = π(1 + x²)ρ`. Uniqueness: `ν` is the vague limit of the measures `u(x + iy) dx` as `y → 0`, and `c = lim u(iy)/y` as
-`y → ∞`.
+unique Poisson-finite `ν`, that `πy u(iy) − πc y² = ∫ y²/(x² + y²) dν(x)` increases to `ν(ℝ)` as `y → ∞`,
+that `c = lim u(iy)/y` as `y → ∞`, and that `ν` is the vague limit of the measures `u(x + iy) dx` as
+`y → 0` (garnett2007, Ch. I §3, uncertified). This is the harmonic form of the Herglotz representation of
+AutomorphicSpectralTheory §0.5: if `F` is holomorphic on `ℂ₊` with `Im F = u` and `(a, b, ν_F)` is its
+triple there, then `c = b` and `ν = πν_F`, because `Im (x − z)⁻¹ = π P(z, x)`. Route: the function
+`i(∂ₓu − i∂ᵧu)`, `i` times the complex partial of `u`, is holomorphic on `ℂ₊` by Mathlib's
+`HarmonicAt.differentiableAt_complex_partial`; it has a primitive by Tau Ceti
+`DifferentiableOn.hasDerivAt_wedgeIntegral_upperHalfPlane`, whose imaginary part has the gradient of `u`,
+so after subtracting an imaginary constant the primitive is an `F` with `Im F = u` and
+`F′ = i(∂ₓu − i∂ᵧu)`, and §0.5 applies to it. Uniqueness: for each representation,
+`cz + (1/π)∫ ((x − z)⁻¹ − x/(1 + x²)) dν(x)` is holomorphic with imaginary part `u` and real part `0` at
+`i`; two holomorphic functions on `ℂ₊` with the same imaginary part differ by a real constant, so the two
+functions coincide and the uniqueness of the triple in §0.5 gives that of `(c, ν)`. Mass: `πy P[ν](iy)`
+is `∫ y²/(x² + y²) dν(x)`, which increases to `ν(ℝ)` by monotone convergence, and `P[ν](iy)/y → 0`. Vague
+limit: for `φ` continuous with compact support, `∫ φ(x) P[ν](x + iy) dx = ∫ (∫ P(x + iy, t) φ(x) dx) dν(t)`
+by Tonelli, the inner integral tends to `φ(t)` with a bound `C_φ/(1 + t²)` for `y ≤ 1`, and the term
+`cy ∫ φ` tends to `0`.
 
-*Needs:* §2.1; Mathlib `HarmonicAt.differentiableAt_complex_partial`; Tau Ceti
-`DifferentiableOn.hasDerivAt_wedgeIntegral_upperHalfPlane`,
-`TauCeti.exists_isFiniteMeasure_eq_nevanlinnaKernel_add`, `TauCeti.nevanlinnaKernel_im`.
+*Needs:* §2.1; AutomorphicSpectralTheory §0.5; Mathlib `HarmonicAt.differentiableAt_complex_partial`;
+Tau Ceti `DifferentiableOn.hasDerivAt_wedgeIntegral_upperHalfPlane`.
 
 **Checks.**
 
-- `u = Im z`: `c = 1`, `ν = 0`.
-- `u = P[δ₀]`: `c = 0`, `ν = δ₀`, and `πy u(iy) = 1 = ν(ℝ)` for every `y`.
+- `u = Im z`: `c = 1`, `ν = 0`. The complex partial of `u` is `∂ₓu − i∂ᵧu = −i`, and `F′ = i · (−i) = 1` is
+  the derivative of `F = z`; the conjugate partial `∂ₓu + i∂ᵧu = i` is not `F′`.
+- `u = P[δ₀]`: `c = 0`, `ν = δ₀`, and `πy u(iy) = 1 = ν(ℝ)` for every `y`. Here `F = −1/(πz)` has the triple
+  `(0, 0, δ₀/π)` of AutomorphicSpectralTheory §0.5, and `ν = π · δ₀/π = δ₀`; reading `ν = ν_F` would give
+  mass `1/π`, while `πy u(iy) = 1`. The derivative `F′ = 1/(πz²)` equals `i(∂ₓu − i∂ᵧu)` with
+  `∂ₓu − i∂ᵧu = −i/(πz²)`.
 - `u ≡ 1 = P[dx]`: `ν(ℝ) = ∞` and `πy u(iy) = πy → ∞`.
 - `u = Re z` is harmonic but takes the value `−1` at `−1 + i`; positivity is a hypothesis.
 
@@ -938,8 +977,8 @@ garnett2007, Ch. II §4, p. 64, uncertified). Its API:
 Mathlib (harmonic functions, the disc Poisson kernel and Poisson formula, Lebesgue differentiation,
 the `L²` Fourier transform, Phragmén–Lindelöf, Banach–Alaoglu, Jensen's inequality, Fatou's lemma,
 Tonelli's theorem); Tau Ceti (the half-space Poisson kernel and Poisson integral, maximal function,
-Nevanlinna representation, half-plane primitives, mean-value converse, F. and M. Riesz uniqueness,
-Cayley transform, the dual of `L¹` of a finite measure).
+half-plane primitives, mean-value converse, F. and M. Riesz uniqueness, Cayley transform, the dual of
+`L¹` of a finite measure); AutomorphicSpectralTheory §0.5 (the Herglotz representation) for §2.2.
 
 ## Layer 3: Dirac systems and their Hermite–Biehler functions
 
@@ -1480,7 +1519,9 @@ Ch. 2, waived). Its API:
 Define the Neumann spectral measure `μ_q` as the Poisson-finite measure of §2.2 for the positive harmonic
 function `Im m`, so that `Im m = β Im z + P[μ_q]` with `β ≥ 0`, and the Dirichlet spectral measure `μ̃_q`
 likewise for `Im(−1/m)`; write `μ = w dx + μ_s` and `μ̃ = w̃ dx + μ̃_s` (poltoratski2024 line 255–264;
-mauth2022 line 692–701; romanov2014 line 2275–2281). Its API:
+mauth2022 line 692–701; romanov2014 line 2275–2281). Equivalently, `(Re m(i), β, μ_q/π)` is the triple of
+`m` in AutomorphicSpectralTheory §0.5, so `m(z) = Re m(i) + βz + (1/π)∫ ((x − z)⁻¹ − x/(1 + x²)) dμ_q(x)`.
+Its API:
 
 - `w(x) = Im m(x + i0)` and `w̃(x) = Im(−1/m)(x + i0) = w(x)/|m(x + i0)|²` at almost every `x` where the
   nontangential limit `m(x + i0)` exists and is finite and nonzero (§2.4); hence `w w̃ ≤ 1` almost
@@ -1488,8 +1529,27 @@ mauth2022 line 692–701; romanov2014 line 2275–2281). Its API:
 - Compact support: if `q = 0` on `(T, ∞)` then `β = 0`, `μ_q = dx/|E(T, x)|²` and `μ̃_q = dx/|Ẽ(T, x)|²`.
 - Free case: `μ = μ̃ = dx`.
 - `μ_q` and `μ̃_q` are determined by `m`, which depends only on `q` on `[0, ∞)`.
+- Truncations: let `C = TauCeti.boundaryCayley`, let `μ_T = dx/|E(T, ·)|²` be the Neumann spectral measure of
+  the truncation `q_T` (compact-support bullet) and `m_T = −Ẽ(T, ·)/E(T, ·)` its Weyl function (§6.4), and
+  on Mathlib's `Circle`, written `X`, let `ν_T = C_*(μ_T/(π(1 + x²)))` and `ν = C_*(μ_q/(π(1 + x²))) + β δ₁`. Then
+  `m(z) = Re m(i) + i H_ν((z − i)/(z + i))` on `ℂ₊`, where `H_ν(ξ) = ∫ (ζ + ξ)/(ζ − ξ) dν(ζ)` is the Herglotz
+  transform, and likewise `m_T(z) = Re m_T(i) + i H_{ν_T}((z − i)/(z + i))`; the masses satisfy
+  `ν_T(X) = Im m_T(i) → Im m(i) = ν(X)`; and `ν_T → ν` weakly on the circle as `T → ∞`. Route: the identity
+  is Tau Ceti `TauCeti.I_mul_herglotzTransform_cayley_eq` for `ν`, whose atom at `1` is `β` and whose Cayley
+  pushforward is `μ_q/(π(1 + x²))`, compared with the representation above through
+  `(1 + xz)/(x − z) = (1 + x²)((x − z)⁻¹ − x/(1 + x²))`; the masses are `H(0)` (Tau Ceti
+  `MeasureTheory.Measure.herglotzTransform_zero`), the value at `z = i`. Since `m_T → m` locally uniformly on
+  `ℂ₊` (§6.4), `H_{ν_T} → H_ν` uniformly on `|ξ| = 1/2`. For `k ≥ 1` the coefficient of `ξᵏ` in `H_ν(ξ)` is
+  `2∫ ζ̄ᵏ dν(ζ)`, so every Fourier coefficient of `ν_T` tends to that of `ν`. The masses are bounded and the
+  trigonometric polynomials are dense in the continuous functions on the circle (Mathlib
+  `span_fourier_closure_eq_top`, carried to `Circle` by `AddCircle.homeomorphCircle'`), so `∫ g dν_T → ∫ g dν`
+  for every continuous `g`, which is weak convergence (Mathlib
+  `MeasureTheory.FiniteMeasure.tendsto_iff_forall_integral_rclike_tendsto`).
 
-*Needs:* §2.2, §2.4, §2.5, §6.4; Tau Ceti `TauCeti.exists_isFiniteMeasure_eq_nevanlinnaKernel_add`.
+*Needs:* §2.2, §2.4, §2.5, §6.4; AutomorphicSpectralTheory §0.5; Tau Ceti `TauCeti.boundaryCayley`,
+`MeasureTheory.Measure.herglotzTransform`, `MeasureTheory.Measure.herglotzTransform_zero`,
+`TauCeti.I_mul_herglotzTransform_cayley_eq`; Mathlib `span_fourier_closure_eq_top`,
+`AddCircle.homeomorphCircle'`, `MeasureTheory.FiniteMeasure.tendsto_iff_forall_integral_rclike_tendsto`.
 
 **Checks.**
 
@@ -1499,6 +1559,15 @@ mauth2022 line 692–701; romanov2014 line 2275–2281). Its API:
   `Re m(x + i0) ≠ 0`.
 - A constant potential on all of `[0, ∞)`, `f ≡ c > 0`, has `w = 0` on `(−c, c)` (exponentially growing and
   decaying real solutions), so `μ` is not equivalent to Lebesgue measure without a decay hypothesis.
+- Truncations, free case: `μ_T = dx` and `ν_T = C_*(dx/(π(1 + x²)))`, normalised arc length, for every `T`;
+  `H_{ν_T} ≡ 1`, so `m_T = i`, and the mass is `1 = Im i`.
+- Truncations, masses: for `f ≡ 1` on `[0, ∞)` the Weyl function is `m(z) = (1 + iκ)/z` with `κ = √(z² − 1)`,
+  `Im κ > 0`, so `Im m(i) = √2 − 1 ≈ 0.414214`; the masses `Im m_T(i)` are `0.537329`, `0.443190`, `0.415910`,
+  `0.414219` at `T = 0.5, 1, 2, 4`.
+- Truncations, weak and not pointwise: for the same `f ≡ 1` at `x = 2`, the density `1/|E(T, 2)|²` oscillates
+  in `T` between `1/2` and `3/2` with period `π/√3` and has no limit, while the limit density is
+  `w(2) = Im m(2 + i0) = √3/2 ≈ 0.866025`, its mean over a period. Convergence of the densities is not part
+  of the statement and fails.
 
 ### 6.6 The isometric embedding and uniqueness of the spectral measure
 
@@ -1506,9 +1575,8 @@ Prove that for every `t ≥ 0` and `F ∈ PW_t`, `∫ |F|² dμ_q = ‖F‖²_{B
 `∫ |F|² dμ̃_q = ‖F‖²_{B(Ẽ(t,·))}`, and that `μ_q` is the only Poisson-finite measure with the first property
 for all `t` (poltoratski2024 line 255–262; romanov2014 §8 Theorem 16 line 2283–2363;
 debranges1968 §§19–23 and remling2018 Ch. 3, waived). Route: the measures `μ_T = dx/|E(T, ·)|²` of the
-truncations `q_T` (§6.5) represent `m_T = −Ẽ(T, ·)/E(T, ·)`, and `m_T → m` locally uniformly (§6.4), so the
-Cayley images of `μ_T/(π(1 + x²))`, with the atoms `β_T δ₁`, converge weakly on the circle (their
-Herglotz transforms converge); for `F ∈ PW_t` with `zF ∈ PW_t`, `(1 + x²)|F(x)|² → 0` at `±∞`, so
+truncations `q_T` (§6.5) have Cayley images `C_*(μ_T/(π(1 + x²)))` that converge weakly on the circle to
+`C_*(μ/(π(1 + x²))) + β δ₁` (truncation bullet of §6.5); for `F ∈ PW_t` with `zF ∈ PW_t`, `(1 + x²)|F(x)|² → 0` at `±∞`, so
 `∫|F|² dμ_T → ∫|F|² dμ`, while `∫|F|² dμ_T = ‖F‖²_{B(E(t,·))}` for `T ≥ t` by §6.3; such `F` are dense in
 `PW_t` (§2.7), and Cauchy sequences in `B(E(t, ·))` are Cauchy in `L²(μ)`. Uniqueness: two such measures
 give equal finite measures `|k_ε|² dμ` for `k_ε(x) = sin(εx)/x`, by Mathlib `Measure.ext_of_charFun`
@@ -1587,13 +1655,13 @@ Theorem 3 line 702–707; denisov2006 Theorem 11.1 line 3246 with the dictionary
 truncation `q_T`, `w_T = |E(T, ·)|^{−2}` and `|E(T, x)| = |a(T, x) + b(T, x)| ≤ 2|a(T, x)|`, so
 `∫ log w_T dΠ ≥ −2π log 2 − 2∫ log|a(T, x)| dx = −2π log 2 − π‖q‖²_{L²(0,T)}` by §4.4. With `σ`,
 `ν_T = ν_{μ_T,0}` and `ν = ν_{μ_q,β}` as in §6.7, §6.7 gives `klDiv σ ν_T ≤ ν_T(X) − 1 + 2 log 2 + ‖q‖²`.
-The measures `ν_T` converge weakly to `ν` (§6.6), so `ν_T(X) → ν(X)`, and Tau Ceti
+The measures `ν_T` converge weakly to `ν` and `ν_T(X) → ν(X)` (truncation bullet of §6.5), and Tau Ceti
 `TauCeti.lowerSemicontinuous_klDiv_finiteMeasure`, with `σ` fixed, gives
 `klDiv σ ν ≤ ν(X) − 1 + 2 log 2 + ‖q‖² < ∞`. By §6.7, `w > 0` almost everywhere, `log w ∈ L¹(Π)` and
 `(1/π)∫ log w dΠ = ν(X) − 1 − klDiv σ ν ≥ −2 log 2 − ‖q‖²`. The Dirichlet side is the same with
 `|Ẽ(T, x)| = |a(T, x) − b(T, x)| ≤ 2|a(T, x)|`.
 
-*Needs:* §4.4, §6.5, §6.6, §6.7; Tau Ceti `TauCeti.lowerSemicontinuous_klDiv_finiteMeasure`.
+*Needs:* §4.4, §6.5, §6.7; Tau Ceti `TauCeti.lowerSemicontinuous_klDiv_finiteMeasure`.
 
 **Checks.**
 
@@ -1610,11 +1678,14 @@ The measures `ν_T` converge weakly to `ν` (§6.6), so `ν_T(X) → ν(X)`, and
 
 ### Dependencies
 
-Layer 2 (§2.1, §2.2, §2.4–§2.7), Layer 3, Layer 4 (§4.1–§4.4), Layer 1 (§1.1, §1.3).
+Layer 2 (§2.1, §2.2, §2.4–§2.7), Layer 3, Layer 4 (§4.1–§4.4), Layer 1 (§1.1, §1.3);
+AutomorphicSpectralTheory §0.5 for §6.5; Tau Ceti (the Herglotz transform on the circle and its Cayley
+identity, the Cayley pushforward, the relative entropy); Mathlib (relative entropy, Fourier density on the
+circle, weak convergence of finite measures).
 
 ## Layer 7: Meromorphic inner functions and resonances
 
-From here on the potential is real, `q = f`, as in poltoratski2024 §§3–9.
+From here on the potential is real, `q = f`.
 
 ### 7.1 Meromorphic inner functions and the phase of a Hermite–Biehler function
 
@@ -1833,8 +1904,10 @@ Remark 3 line 863; mauth2022 Lemma 23 line 1258 and Lemma 32 line 1765). Route: 
 - The normalisation: `|γ(p) sin(t(x − z(t)))|` with `t(x − x(t)) = a` real equals
   `(2(sin²a + sinh²p)/sinh 2p)^{1/2}` with `p = t y(t)`, between `γ(p) sinh p` and `γ(p) cosh p`, and tends to
   `1` as `p → ∞`, matching `|E(t, x)| ≈ 1/√w(s)` away from resonances.
-- Determinant consistency: with `E ≈ αγ(p) sin(t(z − z₀))/√w` and `Ẽ ≈ αγ(p) cos(t(z − z̃₀))/√w̃`, the
-  quantity `E Ẽ# − Ẽ E#` equals `2i` exactly when `cos(t(x̃₀ − x₀)) = √(w w̃)` (computed in §9.2).
+- Determinant consistency: with `E ≈ αγ(p) sin(t(z − z₀))/√w` and `Ẽ ≈ αγ(p) cos(t(z − z̃₀))/√w̃`, where
+  `z₀ = x₀ − ip/t` and `z̃₀ = x̃₀ − ip/t` have the height `p/t` of the factor `γ(p)`, the quantity
+  `E Ẽ# − Ẽ E#` equals `2i` exactly when `cos(t(x̃₀ − x₀)) = √(w w̃)` (computed in §9.2); at a common height
+  `p′/t ≠ p/t` it is `2i sinh 2p′/sinh 2p` under the same relation (§8.9).
 - Free case: `T₀ = ∅` and the statement is vacuous.
 
 ### 8.7 Approximation away from resonances
@@ -1885,25 +1958,42 @@ cosine relation. The relation needs `√(w w̃) ≤ 1`, which is §6.5.
 
 ### 8.9 Matching at the point
 
-Prove that for almost every `s` and every `C > 1` there are `ε₀ > 0` and `D = D(C, s)` such that if for
-some `t > 0` the two approximations of §8.8 hold on `Q(s, 3C/t)` with error `ε < ε₀`, with parameters
-`x, x̃, y` satisfying `1 < ty < 2C`, `−π/2 < t(x̃ − x) < π/2` and `cos(t(x̃ − x)) = √(w(s) w̃(s))`, then there
-are `x′, x̃′, y′` and a unimodular `α′` with `|tx′ − tx| + |tx̃′ − tx̃| + |ty′ − ty| + |α′ − α| < Dε`,
-`x̃′ − x′ = x̃ − x`, and exactly `E(t, s) = α′ γ(ty) sin(t(s − (x′ − iy′)))/√w(s)` and
-`Ẽ(t, s) = α′ γ(ty) cos(t(s − (x̃′ − iy′)))/√w̃(s)` (poltoratski2024 Lemma 8 line 1116–1172; mauth2022
-Lemma 45 line 3251). Route: the quotient `sin(t(z − (x − iy)))/cos(t(z − (x̃ − iy)))` has derivative bounded
-below near `s`, so it attains the value `E(t, s)/Ẽ(t, s)` at a point `a` with `|a − s| ≤ D₂ε/t`; translate the
-parameters by `a − s` and use (2.2) for the moduli.
+Let `s ∈ ℝ`, let `w, w̃ > 0` be numbers and let `C > 1`. Prove that there are `ε₀ > 0` and `D`, depending
+only on `C`, `w` and `w̃`, with the following property. Let `t > 0` and let `E`, `Ẽ` be entire functions with
+`E(s) conj Ẽ(s) − Ẽ(s) conj E(s) = 2i`, the determinant identity (2.2) of §3.2 at the real point `s`. Suppose that for some
+`0 < ε < ε₀`, some `x, x̃, y ∈ ℝ` with `1 < ty < 2C`, `−π/2 < t(x̃ − x) < π/2` and `cos(t(x̃ − x)) = √(w w̃)`,
+and some unimodular `α`, both `sup_{z ∈ Q(s, 3C/t)} |E(z) − α γ(ty) sin(t(z − (x − iy)))/√w| < ε` and
+`sup_{z ∈ Q(s, 3C/t)} |Ẽ(z) − α γ(ty) cos(t(z − (x̃ − iy)))/√w̃| < ε`. Then there are `x′, x̃′, y′ ∈ ℝ` and a
+unimodular `α′` with `|tx′ − tx| + |tx̃′ − tx̃| + |ty′ − ty| + |α′ − α| < Dε`, `x̃′ − x′ = x̃ − x`, and exactly
+`E(s) = α′ γ(ty′) sin(t(s − (x′ − iy′)))/√w` and `Ẽ(s) = α′ γ(ty′) cos(t(s − (x̃′ − iy′)))/√w̃`
+(poltoratski2024 Lemma 8 line 1116–1172 and mauth2022 Lemma 45 line 3251–3298, which print the factor
+`γ(ty)` in (8.5) and (58); the third Check shows that (2.2) forces `γ(ty′)`). §9.3 and §9.6 apply it to
+`E = E(t, ·)` and `Ẽ = Ẽ(t, ·)`, which satisfy (2.2) on `ℝ` (§3.2), with `w = w(s)` and `w̃ = w̃(s)` at the
+points `s` where `w(s) w̃(s) > 0`, which are almost all `s` by §6.8. Route: the quotient
+`g(z) = sin(t(z − (x − iy)))/cos(t(z − (x̃ − iy)))` has `g′(z) = t cos(t(x̃ − x))/cos²(t(z − (x̃ − iy)))`, of
+modulus at least `t √(w w̃)/cosh²(5C)` on `Q(s, 3C/t)`, so it attains the value `√(w/w̃) E(s)/Ẽ(s)` at a point
+`a` with `|a − s| ≤ D₂ε/t`; put `x′ = x − Re(a − s)`, `x̃′ = x̃ − Re(a − s)` and `y′ = y + Im(a − s)`. Then
+`E(s) = κ sin(t(s − (x′ − iy′)))/√w` and `Ẽ(s) = κ cos(t(s − (x̃′ − iy′)))/√w̃` for one `κ ∈ ℂ`, and (2.2) at
+`s` gives `|κ|² sinh(2ty′) = 2`, that is `|κ| = γ(ty′)`.
 
-*Needs:* §3.2, §8.8; Mathlib inverse function theorem for holomorphic maps.
+*Needs:* §8.1; Mathlib inverse function theorem for holomorphic maps; for the application, §3.2 and §6.8.
 
 **Checks.**
 
 - If the approximations are exact at `s`, the conclusion holds with `x′ = x`, `x̃′ = x̃`, `y′ = y`, `α′ = α`.
 - The constraint `1 < ty < 2C` keeps the quotient holomorphic near `s` (no zero of the cosine within `1/(2t)`
   of `ℝ ∩ Q(s, 3C/t)`).
-- Moduli: the exact forms give `|E(t, s)|²/|Ẽ(t, s)|² = (w̃/w)|sin|²/|cos|²`, and (2.2) at the real point
-  `s` fixes the common factor `γ(ty)` once the cosine relation holds.
+- Moduli: two forms `κ sin(t(s − (x′ − iy′)))/√w` and `κ cos(t(s − (x̃′ − iy′)))/√w̃` with
+  `cos(t(x̃′ − x′)) = √(w w̃)` have determinant `E conj Ẽ − Ẽ conj E = i|κ|² sinh(2ty′)` at the real point `s`, so
+  (2.2) fixes `|κ| = γ(ty′)`. With the factor `γ(ty)` printed in the sources and `y′ ≠ y` it is
+  `2i sinh(2ty′)/sinh(2ty)`, not `2i`: for `w = 0.7`, `w̃ = 0.9`, `t = 1`, `s = 0`, `ty = 1.5` it is `2.0820i`
+  at `ty′ = 1.52` and `2.4448i` at `ty′ = 1.6`, while the factor `γ(ty′)` gives `2i` in both cases.
+- The factor `γ(ty)` cannot be kept: with it, (2.2) forces `y′ = y`, and only `x′` and `arg α′` remain to match
+  the three real parameters of `(E(s), Ẽ(s))`. In the setting of the previous Check take for `E(s)`, `Ẽ(s)` the
+  forms with `x = 0.3`, height `1.52` and factor `γ(1.52)`; they satisfy (2.2) and differ by `0.0023` and
+  `0.0020` from the forms with `x = 0.3`, height `1.5` and factor `γ(1.5)`. The conclusion holds exactly with
+  `x′ = 0.3`, `y′ = 1.52`, `α′ = 1`, whereas at height `1.5` with factor `γ(1.5)` no real `x′` matches both
+  moduli (the larger of the two modulus errors is at least `0.0012`).
 
 ### Examples
 
@@ -1917,9 +2007,8 @@ Layer 2 (§2.3, §2.4, §2.6–§2.8), Layer 3, Layer 6, Layer 7.
 
 ## Layer 9: Pointwise convergence of the non-linear Fourier transform
 
-The potential is real and square-integrable. The route of this layer is the argument of
-poltoratski2024 §9 of arXiv version 14, whose subinterval calculus and resonance lemmas are stated
-here as targets.
+The potential is real and square-integrable. Locators in this layer are to arXiv version 14 of
+poltoratski2024 (References).
 
 ### 9.1 Scattering data of subintervals
 
@@ -2040,7 +2129,7 @@ three relations of §9.5, whose conclusion contradicts the third relation; the g
 special one by two insertions with `β₁`, `β₂` chosen through §9.4 and a continuity argument in `t₂`; the errors
 of §8.8–§8.9 are taken `≪ Δ⁴`.
 
-*Needs:* §8.6–§8.9, §9.2–§9.5.
+*Needs:* §6.8, §8.6–§8.9, §9.2–§9.5.
 
 **Checks.**
 
@@ -2124,10 +2213,10 @@ Layer 3, Layer 4, Layer 5 (§5.2, §5.5, §5.6), Layer 6 (§6.5, §6.8), Layer 7
 ## References
 
 - **poltoratski2024** — A. Poltoratski, *Pointwise convergence of the non-linear Fourier transform*, Ann.
-  of Math. 199 (2024), 741–793; arXiv:2103.13349 version 14, to which the locators refer; §9 of
-  version 14 (the subinterval calculus, the insertion of zero intervals and Lemma 10) is the route of
-  Layer 9, and replaces the argument through Lemma 11 of the published version, in which mnatsakanyan2022
-  (abstract and line 135–137 of its version 4) reports an error.
+  of Math. 199 (2024), 741–793; arXiv:2103.13349 version 14, to which the locators refer. In version 14
+  the absence of resonances is proved in §9 by the subinterval calculus, the insertion of zero intervals
+  and Lemma 10, in place of the argument through Lemma 11 of the published version, in which
+  mnatsakanyan2022 (abstract and line 135–137 of its version 4) reports an error.
 - **mauth2022** — L. Mauth, *On pointwise convergence of the non-linear Fourier transform*, arXiv:2210.12286
   v1; the detailed account of poltoratski2024's earlier version, used for Layers 2, 3, 6 and 8 (§§2, 3.1–3.2,
   3.7), whose dictionary (line 65–87) matches the numbering.
