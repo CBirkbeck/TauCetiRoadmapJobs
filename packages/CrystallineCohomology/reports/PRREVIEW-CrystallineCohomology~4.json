@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CrystallineCohomology~4",
+  "head": "5231bad75352a6086d9952ff511636c8a8ddc6ac",
+  "pr": 857,
+  "folder": "CrystallineCohomology",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 94 changed lines since 6ab379a; verified all four previous repairs, changed statements and target references, affected seeded source passages and corrected locators, ownership scopes, PR title/description and added-folder diff. Gate fails only tex=2; dependency check has zero problems; direct elaboration, targeted build and three elaborated signatures pass. Two P3 findings; no P1/P2 findings.",
+  "text": "7cdd40d757819851",
+  "carried": {
+   "from": "5231bad75352a6086d9952ff511636c8a8ddc6ac",
+   "head": "b97c46285b47a50a90701780d8e8320d52391b0b",
+   "findings": 2,
+   "lines": 4,
+   "folders": [
+    "CrystallineCohomology"
+   ],
+   "outside": true
+  }
+ }
+}
