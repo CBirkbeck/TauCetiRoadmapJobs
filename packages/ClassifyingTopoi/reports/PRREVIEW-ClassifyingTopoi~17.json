@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassifyingTopoi~17",
+  "head": "0e6bf1d9cbe7b7befd22902b2de17aacdf4dad49",
+  "pr": 1997,
+  "folder": "ClassifyingTopoi",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Incremental re-review of 117 changed lines since 25e5b86. Previous R01, R02, R03 and R05 are repaired; R04 is partly repaired, because ToposTheoreticBridges at its head consumes 1.1, 1.3, 1.4 and 2.4 and cites 4.3 (R03). New findings, all P3: the new GeometricFormula.IsCoherent has no Checks (R01); the GrothendieckTopoi 6.5 contract and the Needs line of 3.3 do not state the idempotent-completion fact and the Mathlib API the new route uses (R02). Checked: the gate, rerun, with every check 0, OK; depcheck with 245 roadmaps, 2206 edges and 0 problems; lake env lean exits 0 with 28 sorry warnings; #check @ on the 3 changed theorems and IsCoherent; IsCoherent computed in Lean on bot (coherent) and on a ULift ℕ disjunction (not coherent); the one-tactic probe closes none of the 3 changed theorems. Sample locators in the changed passages checked against the text: Caramello 2017 (arXiv:0905.0299v1) Theorems 3.6 and 14.4, Caramello 2012b (arXiv:0805.2187v1) Theorem 4.6. Elephant D1.1 is paywalled. GrothendieckTopoi 6.5 and ToposTheoreticBridges resolved at their open heads. Pull-request description checked against this head: consistent.",
+  "text": "7d76ced4ab30ba82"
+ }
+}
