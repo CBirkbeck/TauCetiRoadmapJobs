@@ -7,10 +7,10 @@ The chain complex `C_•(A,M)` and the cochain complex `C^•(A,M)` are built as
 (co)face complexes of a simplicial and a cosimplicial `k`-module, so that Mathlib's Dold–Kan
 normalisation gives the normalisation theorem over every `k`. The low degrees are identified
 (`HH_0 = M/[A,M]`, `HH^0 = M^A`, `HH^1 = Der/Inn`, `HH_1(R,R) = Ω¹_{R/k}` for commutative `R`,
-and `HH²` as the classes of `k`-split square-zero extensions); for `k`-projective `A` the bar
-resolution identifies `HH^n(A,M)` with Mathlib's `Ext^n` over the enveloping algebra
-`Aᵉ = A ⊗_k Aᵐᵒᵖ` and `HH_n(A,M)` with `Tor_n^{Aᵉ}(M,A)`. The cup product makes `HH^•(A,A)` a
-graded `k`-algebra, equal up to sign to the Yoneda algebra. An explicit sign dictionary
+and `HH²` as the classes of `k`-split square-zero extensions); the bar resolution identifies
+`HH^n(A,M)`, for `k`-projective `A`, with Mathlib's `Ext^n` over the enveloping algebra
+`Aᵉ = A ⊗_k Aᵐᵒᵖ`, and `HH_n(A,M)`, for `k`-flat `A`, with `Tor_n^{Aᵉ}(M,A)`. The cup product makes
+`HH^•(A,A)` a graded `k`-algebra, equal up to sign to the Yoneda algebra. An explicit sign dictionary
 identifies these complexes with the Hochschild cochains and chains of DGAInfinity Layer 8 for
 `A` in degree zero; through it Gerstenhaber's homotopy formula gives graded commutativity, and
 the antisymmetrisation map of RefinedTraceMethods §1.9 acts on the classical complex. The end
@@ -38,8 +38,9 @@ This roadmap owns:
   cocycles, coboundaries and `HH¹`, `HH₁` of a commutative algebra, the twisted square-zero
   extension of a 2-cochain and the classification of `k`-split square-zero extensions by `HH²`
   (Layer 3);
-- the bar resolution over `Aᵉ`, the identification of `HH^n` with Mathlib's `Ext` and the
-  construction of `Tor` over `Aᵉ` with `HH_n ≅ Tor_n` (Layer 4);
+- the bar resolution over `Aᵉ`, the identification of `HH^n` with Mathlib's `Ext`, the
+  construction of `Tor` over `Aᵉ` with its computation by flat resolutions, and `HH_n ≅ Tor_n`
+  (Layer 4);
 - the cup product on `C^•(A,A)`, the Leibniz rule, the graded algebra `HH^•(A,A)`, the
   computation of Yoneda products from cocycles on projective resolutions and the comparison of the
   cup product with the Yoneda product (Layer 5);
@@ -202,12 +203,14 @@ Variants kept here, each differing in one stated respect from an existing object
   not, where RefinedTraceMethods §1.9 states `ε₁` on derived Hochschild chains.
 
 Generality. The ground ring `k` is an arbitrary commutative ring throughout. The identification
-`HH^n ≅ Ext^n` and `HH_n ≅ Tor_n` is stated for `A` projective as a `k`-module, where the bar
-complex is a projective resolution; the comparison with derived Hochschild chains is stated for
-`k`-flat `A`. The cohomological HKR theorem is stated for `R` smooth over `k` in Mathlib's sense
-(`Algebra.Smooth`: formally smooth and finitely presented) and projective as a `k`-module. Both
-hypotheses are needed by the route: smoothness gives that `HH_•(R,R)` is finite projective, and
-`k`-projectivity makes `C_•(R,R)` a complex of projective `R`-modules, which is what turns the
+`HH^n ≅ Ext^n` is stated for `A` projective as a `k`-module, where the bar complex is a
+projective resolution, and `HH_n ≅ Tor_n` for `A` flat as a `k`-module, where it is a resolution
+by flat `Aᵉ`-modules; flatness cannot be dropped (`k = ℤ`, `A = ℤ[x]/(px)`, §4.5 Checks). The
+comparison with derived Hochschild chains is stated for `k`-flat `A`. The cohomological HKR theorem
+is stated for `R` smooth over `k` in Mathlib's sense (`Algebra.Smooth`: formally smooth and
+finitely presented) and projective as a `k`-module. Both hypotheses are needed by the route:
+smoothness gives that `HH_•(R,R)` is finite projective, and `k`-projectivity makes `C_•(R,R)` a
+complex of projective `R`-modules, which is what turns the
 cohomology of `Hom_R(C_•(R,R), M)` into `Hom_R(HH_•(R,R), M)` (HKR62 Lemma 4.1 and Theorem 5.1,
 whose standing hypothesis is a `K`-projective algebra). Smoothness does not imply
 `k`-projectivity: `ℤ → ℤ[1/2]` is étale and `ℤ[1/2]` is not a projective `ℤ`-module (§7.6
@@ -302,7 +305,11 @@ canonical map, and the determinant map is identified as `n!` times it.
   `HomologicalComplex.homology`, `HomologicalComplex.homologyMap`, `HomotopyEquiv`, `QuasiIso`;
   the long exact homology sequence `CategoryTheory.ShortComplex.ShortExact.δ` with
   `CategoryTheory.ShortComplex.ShortExact.homology_exact₁`, `homology_exact₂` and
-  `homology_exact₃` (`Mathlib/Algebra/Homology/HomologySequence.lean`).
+  `homology_exact₃` (`Mathlib/Algebra/Homology/HomologySequence.lean`), its naturality
+  `HomologicalComplex.HomologySequence.δ_naturality` (`Mathlib/Algebra/Homology/HomologySequenceLemmas.lean`:
+  a morphism of short exact sequences of complexes commutes with the connecting maps), and the five
+  lemma `CategoryTheory.Abelian.isIso_of_epi_of_isIso_of_isIso_of_mono`
+  (`Mathlib/CategoryTheory/Abelian/DiagramLemmas/Four.lean`).
 - **Simplicial normalisation.** `CategoryTheory.SimplicialObject`,
   `CategoryTheory.CosimplicialObject`, `AlgebraicTopology.alternatingFaceMapComplex`,
   `AlgebraicTopology.alternatingCofaceMapComplex`, `AlgebraicTopology.normalizedMooreComplex`,
@@ -325,7 +332,10 @@ canonical map, and the determinant map is identified as `n!` times it.
   instance) with `AlgHom.mulLeftRight_apply` (`a ⊗ op b` acts on `A` by `x ↦ a x b`, the convention
   of §4.1),
   `Module.Projective.tensorProduct` (`Mathlib/Algebra/Module/Projective.lean`: `M ⊗[R₀] N` is
-  `R`-projective for `M` projective over `R` and `N` projective over `R₀`), `Module.Flat`.
+  `R`-projective for `M` projective over `R` and `N` projective over `R₀`), `Module.Flat` (for a
+  commutative ring of scalars only) with `Module.Flat.rTensor_preserves_injective_linearMap`
+  (`Mathlib/RingTheory/Flat/Basic.lean`: `− ⊗[R] X` sends injective maps to injective maps for
+  flat `X`) and the flatness of a tensor product of flat modules (same file).
 - **Ext, Tor and derived functors.** `CategoryTheory.ProjectiveResolution`,
   `CategoryTheory.Abelian.Ext` with `CategoryTheory.Abelian.Ext.comp` (the Yoneda product), the
   instance `HasExt.{v} (ModuleCat.{v} R)` of `Mathlib/Algebra/Category/ModuleCat/Ext/HasExt.lean`
@@ -410,9 +420,11 @@ canonical map, and the determinant map is identified as `n!` times it.
   the tensor product of a right `A`-module and a left `A`-module over a noncommutative `A`, with
   `TauCeti.BalancedTensorProduct.tmul`, `TauCeti.BalancedTensorProduct.induction_on`,
   `TauCeti.BalancedTensorProduct.hom_ext`, `TauCeti.BalancedTensorProduct.lid`,
-  `TauCeti.BalancedTensorProduct.rid` and `TauCeti.BalancedTensorProduct.outerFactors`
-  (`(M ⊗[k] L) ⊗[A] (N ⊗[k] P) ≃ (M ⊗[A] N) ⊗[k] (L ⊗[k] P)`). It is an ordinary, underived
-  tensor product.
+  `TauCeti.BalancedTensorProduct.rid`, `TauCeti.BalancedTensorProduct.outerFactors`
+  (`(M ⊗[k] L) ⊗[A] (N ⊗[k] P) ≃ (M ⊗[A] N) ⊗[k] (L ⊗[k] P)`) and
+  `TauCeti.BalancedTensorProduct.finsuppScalarRight`
+  (`TauCeti/LinearAlgebra/TensorProduct/Balanced/Finsupp.lean`: `M ⊗[A] (I →₀ A) ≃ (I →₀ M)` for a
+  right `A`-module `M` and any set `I`). It is an ordinary, underived tensor product.
 - `TauCeti.Algebra.TensorProduct.moduleLeft`, `TauCeti.Algebra.TensorProduct.moduleRight`,
   `TauCeti.Algebra.TensorProduct.moduleSMulCommClass`,
   `TauCeti.Algebra.TensorProduct.moduleLeftIsScalarTower`,
@@ -692,7 +704,8 @@ Tau Ceti's bimodule cofaces, with functoriality, long exact sequences and the `R
 structure in the commutative case.
 Layer 2 deduces the normalisation theorem from Mathlib's Dold–Kan normalisation. Layer 3
 identifies the low degrees and classifies square-zero extensions. Layer 4 constructs the bar
-resolution and identifies the theory with `Ext` and `Tor` over `Aᵉ` for `k`-projective `A`.
+resolution and identifies the theory with `Ext` over `Aᵉ` for `k`-projective `A` and with `Tor`
+over `Aᵉ` for `k`-flat `A`.
 Layer 5 constructs the cup product, the graded algebra `HH^•(A,A)` and its comparison with the
 Yoneda product. Layer 6 compares the cochain complex with the pinned positive-arity Hochschild complex of
 Tau Ceti and DGAInfinity Layer 8, the chain complex with Layer 8's chains and, for flat
@@ -1317,23 +1330,74 @@ and `HH¹ = 0 = Ext¹`, not the whole term `C¹ = ℤ`.
 Define, for a bimodule `M`, the functor `M ⊗_{Aᵉ} − : ModuleCat Aᵉ ⥤ ModuleCat k`,
 `N ↦ TauCeti.BalancedTensorProduct k Aᵉ M N` with the right structure of §4.1, and
 `Tor_n^{Aᵉ}(M, −)` as its `CategoryTheory.Functor.leftDerived` functors, as Mathlib does for
-`Rep.Tor`. Prove that `M ⊗_{Aᵉ} B_n(A) ≅ M ⊗[k] A^{⊗n}` through
+`Rep.Tor`. Call a left `Aᵉ`-module `F` flat when `N ↦ N ⊗_{Aᵉ} F` sends injective maps of
+bimodules to injective maps; Mathlib's `Module.Flat` requires a commutative ring of scalars and
+does not apply to `Aᵉ`. Prove that `M ⊗_{Aᵉ} B_n(A) ≅ M ⊗[k] A^{⊗n}` through
 `m ⊗ (a₀ ⊗ a₁ ⊗ ⋯ ⊗ a_n ⊗ a_{n+1}) ↦ a_{n+1} m a₀ ⊗ a₁ ⊗ ⋯ ⊗ a_n`, compatibly with `b`, and that for
-`A` projective as a `k`-module `HH_n(A,M) ≅ Tor_n^{Aᵉ}(M,A)`, naturally in `M` (Ginz05 §5.1,
-lines 944–976; Weibel94 §9.1; Loday98 §1.1).
+`A` flat as a `k`-module `HH_n(A,M) ≅ Tor_n^{Aᵉ}(M,A)`, naturally in `M` (Ginz05 §5.1,
+lines 944–976; Weibel94 §9.1; Loday98 §1.1). One route: for `k`-flat `A` every `A^{⊗n}` is
+`k`-flat (§4.2), so `B_n(A) ≅ Aᵉ ⊗[k] A^{⊗n}` is a flat `Aᵉ`-module (fourth bullet below); the
+augmentation `B_•(A) → A` is a resolution over every `k` (§4.2), so the fifth bullet below
+identifies `Tor_n^{Aᵉ}(M,A)` with the homology of `M ⊗_{Aᵉ} B_•(A) ≅ C_•(A,M)`. Projectivity of `A`
+over `k` is used for `Ext` (§4.4), not here.
 
 *Needs:* §§1.1, 4.1–4.2; Mathlib `CategoryTheory.Functor.leftDerived`,
-`CategoryTheory.ProjectiveResolution.isoLeftDerivedObj`; Tau Ceti
+`CategoryTheory.ProjectiveResolution.isoLeftDerivedObj`, `CategoryTheory.ProjectiveResolution`,
+`Module.Flat`, `Module.Flat.rTensor_preserves_injective_linearMap`,
+`CategoryTheory.ShortComplex.ShortExact.δ`, `HomologicalComplex.HomologySequence.δ_naturality`,
+`CategoryTheory.Abelian.isIso_of_epi_of_isIso_of_isIso_of_mono`; Tau Ceti
 `TauCeti.BalancedTensorProduct`, `TauCeti.BalancedTensorProduct.outerFactors`,
-`TauCeti.BalancedTensorProduct.rid`.
+`TauCeti.BalancedTensorProduct.lid`, `TauCeti.BalancedTensorProduct.rid`,
+`TauCeti.BalancedTensorProduct.finsuppScalarRight`.
 
 - `Tor_0^{Aᵉ}(M,N) ≅ M ⊗_{Aᵉ} N`, naturally in `N`.
 - `Tor_n^{Aᵉ}(M,P) = 0` for projective `P` and `n ≥ 1`.
 - `Tor_n^{Aᵉ}(M,N)` is computed by any projective resolution of `N`, and is functorial in `M`.
+- Free, hence projective, left `Aᵉ`-modules are flat (`N ⊗_{Aᵉ} (I →₀ Aᵉ) ≅ (I →₀ N)`,
+  `TauCeti.BalancedTensorProduct.finsuppScalarRight`). For a flat `k`-module `X`, the left
+  `Aᵉ`-module `Aᵉ ⊗[k] X`, with `Aᵉ` acting on the first factor, is flat: `N ⊗_{Aᵉ} (Aᵉ ⊗[k] X) ≅ N ⊗[k] X`
+  naturally in the bimodule `N` (`TauCeti.BalancedTensorProduct.outerFactors` with
+  `TauCeti.BalancedTensorProduct.rid`), and `− ⊗[k] X` preserves injective maps
+  (`Module.Flat.rTensor_preserves_injective_linearMap`).
+- Flat resolutions compute `Tor`: for every resolution `F_• → N` by flat left `Aᵉ`-modules,
+  `Tor_n^{Aᵉ}(M,N) ≅ H_n(M ⊗_{Aᵉ} F_•)` for every `n`, naturally in `M`; with `F_• = F` in degree
+  zero, `Tor_n^{Aᵉ}(M,F) = 0` for flat `F` and `n ≥ 1` (Weibel94 §3.2, over any ring). One route:
+  a chain map `φ` over the identity of `N` from a projective resolution `P_•` of `N` to `F_•` exists
+  because `F_•` is exact (the comparison theorem, Weibel94 §2.2; Mathlib's
+  `CategoryTheory.ProjectiveResolution.lift` is the case of a projective target). The `P_j` and
+  `F_j` being flat, a short exact sequence of bimodules `0 → M' → M → M'' → 0` stays short exact
+  after `− ⊗_{Aᵉ} P_•` and `− ⊗_{Aᵉ} F_•`, and `φ` maps the first long exact homology sequence to
+  the second (`HomologicalComplex.HomologySequence.δ_naturality`). In degree zero `φ` induces the
+  identity of `M ⊗_{Aᵉ} N`. For a free bimodule `Q`, `Q ⊗_{Aᵉ} P_•` and `Q ⊗_{Aᵉ} F_•` are direct
+  sums of copies of the two resolutions (`TauCeti.BalancedTensorProduct.lid` on each summand) and
+  have no homology in positive degrees. Induction on `n` with a presentation `0 → L → Q → M → 0`,
+  `Q` free, and the five lemma (`CategoryTheory.Abelian.isIso_of_epi_of_isIso_of_isIso_of_mono`)
+  on `0 → H_n(M ⊗ −) → H_{n−1}(L ⊗ −) → H_{n−1}(Q ⊗ −)` shows that `φ` induces isomorphisms in
+  every degree.
 
 **Checks.**
 
 - `Tor_0^{Aᵉ}(M,A) ≅ M/[A,M]`, matching §3.1; for `A = M = Mat₂(k)` it is `k`.
+- A flat algebra that is not projective: for `k = ℤ` and `A = M = ℚ[x]`, `A` is torsion-free,
+  hence flat over `ℤ`, and not projective, since its direct summand `ℚ` is not. As
+  `ℚ ⊗_ℤ ℚ = ℚ`, `C_•(A,A)` is the Hochschild complex of `ℚ[x]` over `ℚ` and `Aᵉ = ℚ[x,y]`, and
+  `ℚ[x,y] --(x−y)--> ℚ[x,y] → ℚ[x]` is a free resolution
+  (`x − y` is a nonzerodivisor) that becomes `ℚ[x] --0--> ℚ[x]` after `M ⊗_{Aᵉ} −`, as `x` and `y`
+  both act on `M` by `x`. So `Tor_n^{Aᵉ}(M,A)` is `ℚ[x], ℚ[x], 0, 0, …`, matching `HH₀ = ℚ[x]` (§3.1),
+  `HH₁ ≅ Ω¹_{ℚ[x]/ℤ} = ℚ[x] dx` (§3.4) and the vanishing above degree one of §8.4 over `ℚ`.
+- Flatness of `A` cannot be dropped: for a prime `p`, `k = ℤ`, `A = ℤ[x]/(px)` (`x` is `p`-torsion, so
+  `A` is not flat) and `M = 𝔽_p` with `x` acting by `0` on both sides, the normalised chains of §2.1 are
+  `𝔽_p ⊗_ℤ V^{⊗_ℤ n} = V^{⊗_{𝔽_p} n}` with `V = A/ℤ·1 = x𝔽_p[x]`, with the boundary of `𝔽_p[x]` over
+  `𝔽_p` with the same coefficients, so `HH₂(A,𝔽_p) = HH₂(𝔽_p[x],𝔽_p) = 0` (the resolution of
+  `𝔽_p[x]` over `𝔽_p[x,y]` by `x − y` has length one). Over `Aᵉ = ℤ[x,y]/(px,py)` the annihilator of
+  `x − y` is `pℤ` and that of `p` is `(x,y)`, so
+  `⋯ → (Aᵉ)² --(x,y)--> Aᵉ --p--> Aᵉ --(x−y)--> Aᵉ → A` is the start of a free resolution, whose
+  differentials in degrees `1`, `2` and `3` vanish after `𝔽_p ⊗_{Aᵉ} −`; hence
+  `Tor₂^{Aᵉ}(𝔽_p, A) = 𝔽_p ≠ 0`. Both sides are `𝔽_p` in degrees `0` and `1`.
+- Flatness of `F` cannot be dropped from the vanishing: for `k = A = ℤ`, so `Aᵉ = ℤ`, and
+  `M = ℤ/p`, `Tor₁(ℤ/p, ℚ) = 0` although `ℚ` is not projective, while the resolution `ℤ → ℚ` of
+  `ℚ/ℤ` by flat modules gives `Tor₁(ℤ/p, ℚ/ℤ) = ker(ℤ/p → ℤ/p ⊗ ℚ = 0) = ℤ/p`, the `p`-torsion of
+  `ℚ/ℤ`.
 - For `A = k`, `Aᵉ = k`, `Tor_0(M,k) = M` and `Tor_n(M,k) = 0` for `n ≥ 1`, as for `HH_n(k,M)`.
 - `Tor_n^{Aᵉ}(M, Aᵉ) = 0` for `n ≥ 1` and `Tor_0^{Aᵉ}(M,Aᵉ) ≅ M`.
 - The left structure `m · (a ⊗ op b) = a m b` is not a right `Aᵉ`-structure: for `A = M = Mat₂(k)`
@@ -1349,8 +1413,10 @@ For `A = k[x]` (free over `k`) the bar resolution is a free resolution of `k[x]`
 
 ### Dependencies
 
-Layers 1–3; Mathlib `Ext`, projective resolutions, left derived functors; Tau Ceti balanced tensor
-products, the restrictions of an `A ⊗[k] B`-module to its factors with their linearity criterion
+Layers 1–3; Mathlib `Ext`, projective resolutions, left derived functors, flat modules over `k`,
+the naturality of the homology sequence and the five lemma (§4.5); Tau Ceti balanced tensor
+products with their unit isomorphisms and free modules (§4.5), the restrictions of an
+`A ⊗[k] B`-module to its factors with their linearity criterion
 (`TauCeti.Algebra.TensorProduct.moduleLeft`, `TauCeti.Algebra.TensorProduct.moduleRight`,
 `TauCeti.Algebra.TensorProduct.moduleSMulCommClass`,
 `TauCeti.Algebra.TensorProduct.moduleLeftIsScalarTower`,
@@ -2129,7 +2195,8 @@ such a roadmap is outside this one.
 - **Loday98**: Jean-Louis Loday, *Cyclic Homology*, 2nd ed., Grundlehren der mathematischen
   Wissenschaften 301, Springer (1998). §§1.1, 1.3, 1.5, 3.2, 3.4 (Theorem 3.4.4).
 - **Weibel94**: Charles A. Weibel, *An Introduction to Homological Algebra*, Cambridge Studies in
-  Advanced Mathematics 38, Cambridge University Press (1994). §§9.1–9.4 (Theorem 9.4.7).
+  Advanced Mathematics 38, Cambridge University Press (1994). §2.2 (the comparison theorem), §3.2
+  (Tor and flat resolutions), §§9.1–9.4 (Theorem 9.4.7).
 - **CE56**: Henri Cartan and Samuel Eilenberg, *Homological Algebra*, Princeton Mathematical
   Series 19, Princeton University Press (1956). Chapters IX and XI.
 - **Ger63**: Murray Gerstenhaber, *The cohomology structure of an associative ring*, Annals of

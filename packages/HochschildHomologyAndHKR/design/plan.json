@@ -938,17 +938,17 @@
      "id": "4.5",
      "kind": "definition",
      "name": "HochschildHKR.tor",
-     "statement": "For a bimodule M, the functor M ⊗_{Aᵉ} − : ModuleCat Aᵉ ⥤ ModuleCat k, N ↦ TauCeti.BalancedTensorProduct k Aᵉ M N (right structure of 4.1), and Tor_n^{Aᵉ}(M,−) its left derived functors; M ⊗_{Aᵉ} B_n(A) ≅ M⊗A^{⊗n} via m⊗(a₀⊗a₁⊗…⊗a_n⊗a_{n+1}) ↦ a_{n+1} m a₀ ⊗ a₁⊗…⊗a_n compatibly with b; for k-projective A, HH_n(A,M) ≅ Tor_n^{Aᵉ}(M,A) naturally in M.",
+     "statement": "For a bimodule M, the functor M ⊗_{Aᵉ} − : ModuleCat Aᵉ ⥤ ModuleCat k, N ↦ TauCeti.BalancedTensorProduct k Aᵉ M N (right structure of 4.1), and Tor_n^{Aᵉ}(M,−) its left derived functors; a left Aᵉ-module F is flat when N ↦ N ⊗_{Aᵉ} F sends injective bimodule maps to injective maps (Mathlib's Module.Flat needs commutative scalars); M ⊗_{Aᵉ} B_n(A) ≅ M⊗A^{⊗n} via m⊗(a₀⊗a₁⊗…⊗a_n⊗a_{n+1}) ↦ a_{n+1} m a₀ ⊗ a₁⊗…⊗a_n compatibly with b; for k-flat A, HH_n(A,M) ≅ Tor_n^{Aᵉ}(M,A) naturally in M, since B_n(A) ≅ Aᵉ⊗[k]A^{⊗n} is then a flat Aᵉ-module, B_•(A) → A is a resolution over every k, and flat resolutions compute Tor.",
      "hypotheses": [
       "k a commutative ring",
       "A a ring with Algebra k A",
       "M an A-bimodule: Module A M, Module Aᵐᵒᵖ M, SMulCommClass A Aᵐᵒᵖ M, IsScalarTower k A M, IsScalarTower k Aᵐᵒᵖ M",
       "k, A, M in one universe u",
-      "Module.Projective k A for the comparison with HH_n"
+      "Module.Flat k A for the comparison with HH_n"
      ],
      "locator": {
       "source": "Ginz05",
-      "where": "§5.1, lines 944–976"
+      "where": "§5.1, lines 944–976; Weibel94 §§2.2, 3.2 (comparison theorem, flat resolutions) and §9.1; Loday98 §1.1"
      },
      "prerequisites": [
       "target:1.1",
@@ -958,7 +958,15 @@
       "mathlib:CategoryTheory.ProjectiveResolution.isoLeftDerivedObj",
       "tauceti:TauCeti.BalancedTensorProduct",
       "tauceti:TauCeti.BalancedTensorProduct.outerFactors",
-      "tauceti:TauCeti.BalancedTensorProduct.rid"
+      "tauceti:TauCeti.BalancedTensorProduct.rid",
+      "mathlib:CategoryTheory.ProjectiveResolution",
+      "mathlib:Module.Flat",
+      "mathlib:Module.Flat.rTensor_preserves_injective_linearMap",
+      "mathlib:CategoryTheory.ShortComplex.ShortExact.δ",
+      "mathlib:HomologicalComplex.HomologySequence.δ_naturality",
+      "mathlib:CategoryTheory.Abelian.isIso_of_epi_of_isIso_of_isIso_of_mono",
+      "tauceti:TauCeti.BalancedTensorProduct.lid",
+      "tauceti:TauCeti.BalancedTensorProduct.finsuppScalarRight"
      ],
      "api": [
       {
@@ -972,9 +980,19 @@
        "statement": "Tor_n^{Aᵉ}(M,P)=0 for projective P and n≥1; Tor is computed by any projective resolution and is functorial in M."
       },
       {
+       "name": "HochschildHKR.flat_of_free",
+       "role": "structure",
+       "statement": "Free, hence projective, left Aᵉ-modules are flat (N⊗_{Aᵉ}(I→₀Aᵉ) ≅ I→₀N, TauCeti.BalancedTensorProduct.finsuppScalarRight); for a k-flat X, Aᵉ⊗[k]X is a flat left Aᵉ-module, since N⊗_{Aᵉ}(Aᵉ⊗[k]X) ≅ N⊗[k]X naturally in N (outerFactors, rid) and −⊗[k]X preserves injections."
+      },
+      {
+       "name": "HochschildHKR.tor_flatResolution",
+       "role": "structure",
+       "statement": "For every resolution F_• → N by flat left Aᵉ-modules, Tor_n^{Aᵉ}(M,N) ≅ H_n(M⊗_{Aᵉ}F_•) naturally in M; hence Tor_n^{Aᵉ}(M,F)=0 for flat F and n≥1. Route: comparison chain map from a projective resolution (target exact suffices), both sides δ-functors in M (flat terms), equal in degree 0, zero on free M in positive degrees; induction with the five lemma."
+      },
+      {
        "name": "HochschildHKR.homologyIsoTor",
        "role": "compatibility",
-       "statement": "HH_n(A,M) ≅ Tor_n^{Aᵉ}(M,A) for k-projective A."
+       "statement": "HH_n(A,M) ≅ Tor_n^{Aᵉ}(M,A) for k-flat A, naturally in M."
       }
      ],
      "tests": [
@@ -997,6 +1015,21 @@
        "name": "tor_wrong_side",
        "kind": "non-example",
        "statement": "m·(a⊗op b)=a m b is not a right Aᵉ-action: for Mat₂(k) with k nonzero, applying E₁₂⊗1 then E₂₁⊗1 to 1 gives E₂₂, while the product E₁₁⊗1 gives E₁₁."
+      },
+      {
+       "name": "tor_flat_not_projective",
+       "kind": "computation",
+       "statement": "k=ℤ, A=M=ℚ[x], flat (torsion-free) and not projective (summand ℚ): ℚ⊗_ℤℚ=ℚ, so Aᵉ=ℚ[x,y]; the resolution by x−y becomes ℚ[x] --0--> ℚ[x] after M⊗_{Aᵉ}−, so Tor_n = ℚ[x], ℚ[x], 0, …, matching HH₀=ℚ[x], HH₁≅Ω¹_{ℚ[x]/ℤ}=ℚ[x]dx and HH_n=0 for n≥2."
+      },
+      {
+       "name": "tor_nonflat_algebra",
+       "kind": "non-example",
+       "statement": "p prime, k=ℤ, A=ℤ[x]/(px) (not flat), M=𝔽_p with x acting by 0: normalised chains V^{⊗_{𝔽_p}n}, V=x𝔽_p[x], with the boundary of 𝔽_p[x] over 𝔽_p, so HH₂(A,𝔽_p)=0; over Aᵉ=ℤ[x,y]/(px,py), ann(x−y)=pℤ and ann(p)=(x,y), so ⋯→(Aᵉ)² --(x,y)--> Aᵉ --p--> Aᵉ --(x−y)--> Aᵉ → A starts a free resolution whose differentials in degrees 1–3 vanish after 𝔽_p⊗_{Aᵉ}−: Tor₂^{Aᵉ}(𝔽_p,A)=𝔽_p≠0."
+      },
+      {
+       "name": "tor_nonflat_coefficient",
+       "kind": "non-example",
+       "statement": "k=A=ℤ, M=ℤ/p: Tor₁(ℤ/p,ℚ)=0 with ℚ flat and not projective; the flat resolution ℤ→ℚ of ℚ/ℤ gives Tor₁(ℤ/p,ℚ/ℤ)=ker(ℤ/p→ℤ/p⊗ℚ=0)=ℤ/p."
       }
      ]
     }
