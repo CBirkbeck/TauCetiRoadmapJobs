@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InstantonFloerTheory~7",
+  "head": "0b47a8ff14cb84f24d09ce059748142d72d6b9f1",
+  "pr": 1083,
+  "folder": "InstantonFloerTheory",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 0b47a8f; this round read the pull request's title and description against the head: both previous findings (R01, R02, on the description) are repaired and no sentence is contradicted by the head. Gate rerun: every counter 0, OK; depcheck 244 roadmaps, 2229 edges, 0 problems; lake env lean on Suggested.lean exit 0 with no output (no declaration, nothing to probe). Adversarial table: 7 rows with computed values for statements the description cites; 4 source locators checked (cs1612, froyshov9903, km0807). The seeded sample falls outside the changed passages. Donaldson and Donaldson-Kronheimer remain unread (not in an open repository), noted for the human reviewers.",
+  "text": "51580a15e6178985"
+ }
+}
