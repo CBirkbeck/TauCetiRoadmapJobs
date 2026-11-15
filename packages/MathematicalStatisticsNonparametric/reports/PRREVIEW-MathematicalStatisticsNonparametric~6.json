@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsNonparametric~6",
+  "head": "b6eaa8b11821e8f0c93cf4527bafc613173869d4",
+  "pr": 2368,
+  "folder": "MathematicalStatisticsNonparametric",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 77 changed lines since e7f4031. The four previous findings (5.3 attribution, 8.6 perturbation supplier, the envelope name, two padding declarations) are repaired; the 5.3 proof and the 8.6 rate were recomputed (2x2 instance, separations 3g/4, constant 4*sqrt 2). One new P3: the supplier OperatorTheory/SpectralSubspacePerturbation consumed in 8.6 has no subsection under Exact supplier contracts and 'form separation' is undefined. Gate passes at this head; elaboration exit 0 with 202 sorry warnings only; depcheck 246 roadmaps, 0 problems; pinned continuous_translateLp opened; SSP-C15/C16 read on main; pull request text agrees with the head. Seeded sample: 3.1 and 4.3 fall in changed passages, locators untouched and unread (van der Vaart not readable).",
+  "text": "64d120599307d596"
+ }
+}
