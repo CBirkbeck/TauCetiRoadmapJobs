@@ -1,0 +1,372 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PrismaticCohomology"
+
+[[source]]
+id = "BS22"
+authors = "Bhargav Bhatt, Peter Scholze"
+title = "Prisms and Prismatic Cohomology"
+year = 2019
+arxiv = "1905.08229v4"
+locator_scheme = "theorem"
+locator = "Remark 2.5; Construction 4.4; Theorems 6.3–6.4; Construction 7.6; Proposition 7.11"
+url = "https://arxiv.org/abs/1905.08229v4"
+fetched_from = "https://arxiv.org/pdf/1905.08229v4"
+fetched_at = "2026-11-15T06:01:59Z"
+sha256 = "1d91a6eb85828feb73f84ab3b27ced17514f0855d61c3bff71ab9d8287891e4a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v4"
+cited_for = ["0.58; 1.3; 1.22; 2.4; 2.16"]
+
+[[source]]
+id = "ALB23"
+authors = "Johannes Anschütz, Arthur-César Le Bras"
+title = "Prismatic Dieudonné theory"
+year = 2019
+arxiv = "1907.10525v4"
+locator_scheme = "theorem"
+locator = "Proposition 3.1.11; Proposition 3.3.8"
+url = "https://arxiv.org/abs/1907.10525v4"
+fetched_from = "https://arxiv.org/pdf/1907.10525v4"
+fetched_at = "2026-11-15T06:02:28Z"
+sha256 = "6eb02c16c525360141b1c5d118ae04db070f3c0e9cb9fff0f1598fc889b50aec"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v4"
+cited_for = ["2.4; 2.16"]
+
+[[source]]
+id = "Lur11"
+authors = "Jacob Lurie"
+title = "Derived Algebraic Geometry XIII: Rational and p-adic Homotopy Theory"
+year = 2011
+locator_scheme = "section"
+locator = "Section 2.2"
+url = "https://www.math.ias.edu/~lurie/papers/DAG-XIII.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/DAG-XIII.pdf"
+fetched_at = "2026-11-15T06:03:19Z"
+sha256 = "75a4d6d9e5e22c8f1261a09e499c6668ceacb90d6cfaf4a2de4a10e2fe0cd535"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["References"]
+
+[[source]]
+id = "Hes10"
+authors = "Lars Hesselholt"
+title = "The big de Rham-Witt complex"
+year = 2010
+venue = "Acta Math. 214 (2015), 135-207"
+doi = "10.1007/s11511-015-0124-y"
+arxiv = "1006.3125v3"
+locator_scheme = "section"
+locator = "Lemmas 1.1 and 1.18"
+url = "https://arxiv.org/abs/1006.3125v3"
+fetched_from = "https://arxiv.org/pdf/1006.3125v3"
+fetched_at = "2026-11-15T06:03:24Z"
+sha256 = "1b21e5adf08ea73ea1aac471100d6b191d57d47d95ff27ae0f25ee5e1d9f2973"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["References"]
+
+[[source]]
+id = "Bha12"
+authors = "Bhargav Bhatt"
+title = "p-adic derived de Rham cohomology"
+year = 2012
+arxiv = "1204.6560v1"
+locator_scheme = "section"
+locator = "Proposition 8.5; Corollary 8.6"
+url = "https://arxiv.org/abs/1204.6560v1"
+fetched_from = "https://arxiv.org/pdf/1204.6560v1"
+fetched_at = "2026-11-15T06:03:31Z"
+sha256 = "e5ca4056c89eaed462a12038c29d5c3b0a7e06d02d18a7db6dfdf1cfe9f4f00f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["References"]
+
+[[source]]
+id = "BL22"
+authors = "Bhargav Bhatt, Jacob Lurie"
+title = "Absolute prismatic cohomology"
+year = 2022
+arxiv = "2201.06120v1"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://arxiv.org/abs/2201.06120v1"
+fetched_from = "https://arxiv.org/pdf/2201.06120v1"
+fetched_at = "2026-11-15T06:03:45Z"
+sha256 = "0b1beeb20c29424ed8e330c14a66b36c0edcc84255edf5caa0ff9e235139a269"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["References"]
+
+[[source]]
+id = "BMS2"
+authors = "Bhargav Bhatt, Matthew Morrow, Peter Scholze"
+title = "Topological Hochschild homology and integral $p$-adic Hodge theory"
+year = 2018
+arxiv = "1802.03261v2"
+locator_scheme = "section"
+locator = "Lemmas 4.6, 4.7, 4.34; Remark 10.4"
+url = "https://arxiv.org/abs/1802.03261v2"
+fetched_from = "https://arxiv.org/pdf/1802.03261v2"
+fetched_at = "2026-11-15T06:03:51Z"
+sha256 = "b2338ef19714f39aeac2aaaa4e8d6bd708020815016bbe5541a74e4db3594038"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["References"]
+
+[[source]]
+id = "BMS1"
+authors = "Bhargav Bhatt, Matthew Morrow, Peter Scholze"
+title = "Integral p-adic Hodge theory"
+year = 2016
+arxiv = "1602.03148v3"
+locator_scheme = "section"
+locator = "Section 6"
+url = "https://arxiv.org/abs/1602.03148v3"
+fetched_from = "https://arxiv.org/pdf/1602.03148v3"
+fetched_at = "2026-11-15T06:04:00Z"
+sha256 = "285f7d2088607688365ca92222dcf44c0acd6c4788dd872fe6a6191b9c4e072a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["References"]
+
+[[source]]
+id = "KY"
+authors = "Teruhisa Koshikawa, Zijian Yao"
+title = "Logarithmic prismatic cohomology II"
+year = 2023
+arxiv = "2306.00364v1"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://arxiv.org/abs/2306.00364v1"
+fetched_from = "https://arxiv.org/pdf/2306.00364v1"
+fetched_at = "2026-11-15T06:04:07Z"
+sha256 = "7c55cba22922d94587979fbc45296eb51b13f17b3a5cb23c4d5c138c3866541b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v1"
+cited_for = ["References"]
+
+[[source]]
+id = "ARC"
+authors = "Bhargav Bhatt, Akhil Mathew"
+title = "The arc-topology"
+year = 2018
+venue = "Duke Math. J. 170, no. 9 (2021), 1899-1988"
+doi = "10.1215/00127094-2020-0088"
+arxiv = "1807.04725v4"
+locator_scheme = "section"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1807.04725v4"
+fetched_from = "https://arxiv.org/pdf/1807.04725v4"
+fetched_at = "2026-11-15T06:04:14Z"
+sha256 = "4cdf5593067a425ca0aebc969d34efa4ef296cde613c3d9a6c671db65b9b6620"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v4"
+cited_for = ["References"]
+
+[[source]]
+id = "Rydh10"
+authors = "David Rydh"
+title = "Submersions and effective descent of etale morphisms"
+year = 2007
+venue = "Bull. Soc. Math. France 138 (2), 2010, p. 181-230"
+doi = "10.24033/bsmf.2588"
+arxiv = "0710.2488v3"
+locator_scheme = "section"
+locator = "Theorem 2.8; Theorem 3.12; Remark 3.13"
+url = "https://arxiv.org/abs/0710.2488v3"
+fetched_from = "https://arxiv.org/pdf/0710.2488v3"
+fetched_at = "2026-11-15T06:04:19Z"
+sha256 = "f08edb88b1ce0cef74885750b397f4b336e7a31a98500c78dcad873faa23e7f5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["References"]
+
+[[source]]
+id = "BS17"
+authors = "Bhargav Bhatt, Peter Scholze"
+title = "Projectivity of the Witt vector affine Grassmannian"
+year = 2015
+arxiv = "1507.06490v3"
+locator_scheme = "section"
+locator = "Lemma 11.22"
+url = "https://arxiv.org/abs/1507.06490v3"
+fetched_from = "https://arxiv.org/pdf/1507.06490v3"
+fetched_at = "2026-11-15T06:04:26Z"
+sha256 = "b4d5a4e0a6591971c6b8521d790e5db6e61112f1350a0e4a05a8d98b6e0b961e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["References"]
+
+[[source]]
+id = "FF"
+authors = "Laurent Fargues, Jean-Marc Fontaine"
+title = "Courbes et fibrés vectoriels en théorie de Hodge p-adique"
+year = 2018
+locator_scheme = "section"
+locator = "Section 1.10"
+url = "https://webusers.imj-prg.fr/~laurent.fargues/Courbe_fichier_principal.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~laurent.fargues/Courbe_fichier_principal.pdf"
+fetched_at = "2026-11-15T06:04:34Z"
+sha256 = "8c020573d3dce341088ea7e83fe1063b410686c08e3a144fa3c0de634667cc79"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["References"]
+
+[[source]]
+id = "Mathew"
+authors = "Akhil Mathew"
+title = "Faithfully flat descent of almost perfect complexes in rigid geometry"
+year = 2019
+arxiv = "1912.10968v3"
+locator_scheme = "section"
+locator = "Theorem 7.8; Definition 7.1; Propositions 7.3–7.7; Theorem 5.8"
+url = "https://arxiv.org/abs/1912.10968v3"
+fetched_from = "https://arxiv.org/pdf/1912.10968v3"
+fetched_at = "2026-11-15T06:04:39Z"
+sha256 = "d93b37226d0c4af6ee7e63165d833181914696d4af69383032aa4148c0b3a690"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["References"]
+
+[[source]]
+id = "CS"
+authors = "Kestutis Cesnavicius, Peter Scholze"
+title = "Purity for flat cohomology"
+year = 2019
+arxiv = "1912.10932v3"
+locator_scheme = "section"
+locator = "Theorem 5.3.5; Lemma 5.4.2"
+url = "https://arxiv.org/abs/1912.10932v3"
+fetched_from = "https://arxiv.org/pdf/1912.10932v3"
+fetched_at = "2026-11-15T06:04:48Z"
+sha256 = "2f9d3ee868c244a7ddd6579a5dafed10a7ac9eb8b2ffe840db9f2bc115cd6ed4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["References"]
+
+[[source]]
+id = "Stacks"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, More on Algebra"
+year = 2026
+locator_scheme = "section"
+locator = "Tag 0D4B"
+url = "https://stacks.math.columbia.edu/tag/0D4B"
+fetched_from = "https://stacks.math.columbia.edu/download/more-algebra.pdf#nameddest=0D4B"
+fetched_at = "2026-11-15T06:05:04Z"
+sha256 = "ab69179738e642603ddbde651f2838e1cb5d8711e8bcd7c447cbf02a8bb6a5d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["References"]
+
+[[source]]
+id = "K1"
+authors = "Teruhisa Koshikawa"
+title = "Logarithmic Prismatic Cohomology I"
+year = 2020
+arxiv = "2007.14037v3"
+locator_scheme = "section"
+locator = "Propositions 3.1–3.2; Lemma B.4"
+url = "https://arxiv.org/abs/2007.14037v3"
+fetched_from = "https://arxiv.org/pdf/2007.14037v3"
+fetched_at = "2026-11-15T06:05:11Z"
+sha256 = "90f68a84bc17618b9bf491ad1b6c43e69e81620f3e2ae1139047cb31ab3a180d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v3"
+cited_for = ["References"]
+
+[[source]]
+id = "Lecture V"
+authors = "Bhargav Bhatt"
+title = "Lecture V: The prismatic site"
+year = "undated"
+locator_scheme = "section"
+locator = "Lemma 5.1"
+url = "https://www.math.ias.edu/~bhatt/teaching/prismatic-columbia/lecture5-prismatic-site.pdf"
+fetched_from = "https://www.math.ias.edu/~bhatt/teaching/prismatic-columbia/lecture5-prismatic-site.pdf"
+fetched_at = "2026-11-15T06:05:12Z"
+sha256 = "c2890789651f980857383a3850c1615e17d8e4e868598aa1b14ab82c9cb4c959"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["References"]
+
+[[source]]
+id = "AC"
+authors = "Marco D'Addezio"
+title = "Affine crystalline cohomology and de Rham cohomology in Lean 4"
+year = 2026
+locator_scheme = "section"
+locator = "CechNerveData; rightDerivedLimIsoCech; hasEnoughInjectivesFunctorCategory"
+url = "https://github.com/daddeziomath/affine-crystalline"
+fetched_from = "https://github.com/daddeziomath/affine-crystalline"
+fetched_at = "2026-11-15T06:05:36Z"
+sha256 = "9d5d434f33e346f4082dac52ea5b8c54d2ebb083aec9793f1138746d1427793f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["References"]
+
+[[source]]
+id = "PIN-square"
+authors = "The Mathlib contributors"
+title = "Mathlib: square-zero extensions"
+year = 2026
+locator_scheme = "section"
+locator = "TrivSqZeroExt.snd_mul; TrivSqZeroExt.snd_pow"
+url = "https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/TrivSqZeroExt/Basic.lean"
+fetched_from = "https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/Algebra/TrivSqZeroExt/Basic.lean"
+fetched_at = "2026-11-15T06:05:37Z"
+sha256 = "d986e8e3223b1f17189760819db1d8923a75576d7a93d27a77308b5aadc7f777"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["References"]
+
+[[source]]
+id = "PIN-adic-complete"
+authors = "The Mathlib contributors"
+title = "Mathlib: completeness of adic completion"
+year = 2026
+locator_scheme = "section"
+locator = "AdicCompletion"
+url = "https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/AdicCompletion/Completeness.lean"
+fetched_from = "https://github.com/leanprover-community/mathlib4/blob/6b7abb3c7686292736be2955bd3eb9ebf63b456a/Mathlib/RingTheory/AdicCompletion/Completeness.lean"
+fetched_at = "2026-11-15T06:05:37Z"
+sha256 = "d8d60bb3ee687b6cea9c258e654c81efbc61da92fc52f238a11af9bce06204f1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+cited_for = ["References"]

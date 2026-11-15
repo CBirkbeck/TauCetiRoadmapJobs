@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PrismaticCohomology~3",
+  "head": "ed42a0a3d2b64d030d7113a1e1e9f37294dcfb47",
+  "pr": 1057,
+  "folder": "PrismaticCohomology",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 142 changed lines since 36d19e5; checked all five previous findings, changed statements and seeded-sample intersections, source wording, supplier ownership and citations, PR title and description; gate and dependency check passed; targeted build, direct elaboration and all 13 signature checks passed. Two P3 findings remain.",
+  "text": "3171ca80810f2898",
+  "carried": {
+   "from": "ed42a0a3d2b64d030d7113a1e1e9f37294dcfb47",
+   "head": "c0c3cf09ebd4b73f462e3450d3c2421747f58e15",
+   "findings": 2,
+   "lines": 32,
+   "folders": [
+    "PrismaticCohomology"
+   ],
+   "outside": true
+  }
+ }
+}
