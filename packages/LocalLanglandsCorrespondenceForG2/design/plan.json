@@ -4727,6 +4727,24 @@
         "LocalLanglandsCorrespondenceForG2:5.2",
         "LocalLanglandsCorrespondenceForG2:8.2"
       ]
+    },
+    {
+      "slug": "split-steinberg-theta-cuspidality",
+      "supplier": "ExceptionalThetaCorrespondencesForG2",
+      "section": "Layer 10, §§10.5–10.6 (global exceptional lifts)",
+      "needs": "For split G2 over a number field k and a globally generic cuspidal automorphic representation of G2(A_k) with the Steinberg representation as its component at some finite place, the global exceptional theta lift to PGSp6 (nonzero by §10.6) is cuspidal: the split-form counterpart of the Steinberg alternative of §10.5, §10.6 giving cuspidality only from a supercuspidal place with supercuspidal lift (GS, §3.4, p. 12).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:3.15"
+      ]
+    },
+    {
+      "slug": "pgsp6-pgso8-unramified-theta",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "Layer 3, §§3.34, 3.41",
+      "needs": "For F nonarchimedean of characteristic zero and every residue characteristic, the similitude theta lift to split PGSO8(F) of every irreducible representation of PGSp6(F) with a nonzero PGSp6(O_F)-fixed vector is nonzero (the unramified case beside the generic case of §3.41; GS, proof of Lemma 12.5, p. 37).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:8.1"
+      ]
     }
   ],
   "sourceIssues": [
