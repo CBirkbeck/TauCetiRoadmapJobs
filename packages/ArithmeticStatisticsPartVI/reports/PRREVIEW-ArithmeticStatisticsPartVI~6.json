@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartVI~6",
+  "head": "26c32bd618e3023f6cd6e16921b651e5836c365e",
+  "pr": 1176,
+  "folder": "ArithmeticStatisticsPartVI",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 26c32bd; the folder is unchanged and has no finding. Checked the pull request's title and description against the head (14 sentences): three P3 findings, all in the description (open supplier ArithmeticStatisticsPartV #1175 unnamed; Part VIII does not consume this part; two local solubility lemmas are odd-p only). Gate rerun: all counters 0, OK; worker's targeted build passed; Suggested.lean elaborates with sorry as the only warning (10); depcheck 0 problems; overlap check against Parts I, II, III, V, VII: nothing shared. Seeded source sample not reread (unchanged text).",
+  "text": "6686d347330f9226",
+  "carried": {
+   "from": "26c32bd618e3023f6cd6e16921b651e5836c365e",
+   "head": "ca973dc92ef1c24504546466d0d8b139e22df349",
+   "findings": 3,
+   "lines": 2,
+   "folders": [
+    "ArithmeticStatisticsPartVI"
+   ],
+   "outside": true
+  }
+ }
+}
