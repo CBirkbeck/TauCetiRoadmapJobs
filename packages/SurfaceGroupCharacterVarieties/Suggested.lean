@@ -33,8 +33,9 @@ Headline theorems stated here:
   and over `ℂ`, closed complex orbit and closed real orbit (Layer 6.7);
 * the character variety `𝒳(Γ, G^ℝ)` of a finitely generated group is Hausdorff, locally compact and
   second countable (Layer 7.1); for a complex reductive group it is the universal Hausdorff
-  quotient of `Hom(Γ, G(ℂ))` by conjugation (Layer 7.2); and `Out(Γ)` acts on it by homeomorphisms
-  (Layer 7.4).
+  quotient of `Hom(Γ, G(ℂ))` by conjugation (Layer 7.2); and `Out(Γ)` acts by homeomorphisms on
+  the character variety of every group `Γ` with values in a subgroup of the points of an affine
+  group over a topological field, `𝒳(Γ, G^ℝ)` among them (Layer 7.4).
 
 Headline theorems not statable at the pins:
 * the description of the image of the orientation-preserving mapping classes of a closed oriented
@@ -56,7 +57,13 @@ Headline theorems not statable at the pins:
   `Hom(Γ, G)//G` (Layer 7.2): the pins have neither the representation scheme `Hom(Γ, G)` of a
   finitely generated group as an affine scheme nor the affine quotient `Spec O(X)^G`; the
   topological content of the comparison, that the closed-orbit map is the universal Hausdorff
-  quotient, is stated.
+  quotient, is stated;
+* the action of `Mod_{g,n}` on `𝒳(Σ_{g,n}, G^ℝ)` and its independence of the base point
+  (Layer 7.4): `Mod_{g,n}` needs the orientation-preserving homeomorphisms of a topological
+  surface, which the pins lack; on the whole homeomorphism group of a path-connected space the
+  action is the composite of `exists_outerAction` and `exists_outAction_characterVariety`, and the
+  independence of the base point follows from the triviality of inner automorphisms in
+  `exists_outAction_characterVariety`, so neither is stated a second time.
 -/
 
 namespace TauCetiRoadmap.SurfaceGroupCharacterVarieties
@@ -345,14 +352,13 @@ theorem characterVariety_universalHausdorffQuotient {H : Type} [CommRing H] [Hop
               Continuous F' ∧ F' ∘ q = F := by
   sorry
 
-/-- **The outer action on the character variety** (Layer 7.4). For a real reductive datum
-`(𝐆, G^ℝ)` and a finitely generated `Γ`, precomposition with automorphisms preserves reductivity,
-and `Out(Γ)` acts on `𝒳(Γ, G^ℝ)` by homeomorphisms, `[φ] · [ρ] = [ρ ∘ φ⁻¹]`. -/
-theorem exists_outAction_characterVariety {H : Type} [CommRing H] [HopfAlgebra ℝ H]
-    [Algebra.FiniteType ℝ H]
-    (hH : reductiveCommHopfAlgProperty ℝ (FiniteTypeCommHopfAlgCat.of ℝ H))
-    (G : Subgroup (WithConv (H →ₐ[ℝ] ℝ))) (hG : IsOpen (G : Set (WithConv (H →ₐ[ℝ] ℝ))))
-    (Γ : Type*) [Group Γ] [Group.FG Γ] :
+/-- **The outer action on the character variety** (Layer 7.4). For every group `Γ`, every field
+`k` with a topology and every subgroup `G` of the `k`-points of an affine group over `k`,
+precomposition with automorphisms of `Γ` preserves reductivity, and `Out(Γ)` acts on the character
+variety `CharacterVariety Γ G` by homeomorphisms, `[φ] · [ρ] = [ρ ∘ φ⁻¹]`; in particular on
+`𝒳(Γ, G^ℝ)` for a real reductive datum `(𝐆, G^ℝ)`. -/
+theorem exists_outAction_characterVariety {k A : Type*} [Field k] [TopologicalSpace k]
+    [CommRing A] [HopfAlgebra k A] (G : Subgroup (WithConv (A →ₐ[k] k))) (Γ : Type*) [Group Γ] :
     (∀ (φ : MulAut Γ) (ρ : Γ →* G), IsReductiveRep G ρ → IsReductiveRep G (ρ.comp φ.toMonoidHom)) ∧
       ∃ a : Out Γ →* (CharacterVariety Γ G ≃ₜ CharacterVariety Γ G),
         ∀ (φ : MulAut Γ) (ρ ρ' : {ρ : Γ →* G // IsReductiveRep G ρ}),

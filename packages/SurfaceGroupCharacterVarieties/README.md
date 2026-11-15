@@ -21,7 +21,8 @@ generated group `Γ`. The end theorems are:
 `𝒳(Γ, G^ℝ)` is Hausdorff, locally compact and second countable and is homeomorphic to the space of
 minimal vectors modulo a maximal compact subgroup; for complex groups it is homeomorphic to the
 complex points of the affine quotient `Hom(Γ, G)//G`, which is the universal Hausdorff quotient of
-`Hom(Γ, G(ℂ))/G(ℂ)`; and `Out(Γ)`, hence `Mod_{g,n}` through `Ψ`, acts on it by homeomorphisms,
+`Hom(Γ, G(ℂ))/G(ℂ)`; and `Out(Γ)`, hence `Mod_{g,n}` through `Ψ`, acts on it by homeomorphisms
+(the action of `Out(Γ)` for every group `Γ` and every subgroup of the points of an affine group),
 compatibly with change of basepoint and with the action on conjugacy classes of all
 representations. `Suggested.lean` states, against the pinned libraries, the non-descent theorem of
 §1.3, the extension over punctures of §2.2, the outer action of §3.3, the real Kempf–Ness theorem of
@@ -78,7 +79,8 @@ This roadmap owns:
   comparison, functoriality, the action of `Out(Γ)` and of `Mod_{g,n}`, and the standard examples
   (Layer 7).
 
-It leaves to named owners, which are consumed and never planned again:
+It leaves to named owners, never planned again here; the sections a target uses are listed under
+*Exact supplier contracts* and in the *Needs:* lines:
 
 - surfaces with boundary and punctures as topological data, `Mod(S)` (orientation-preserving,
   boundary fixed, punctures permuted) and its action, through `Out(π₁ S)`, on isomorphism classes of
@@ -245,8 +247,8 @@ the tangent-space theory of character varieties; the Kirwan–Ness stratificatio
   the orientation-preserving homeomorphisms modulo isotopy, punctures permuted; `Mod^±_{g,n}`
   allows orientation reversal. `PMod_{g,n}` is MappingClassGroupsAndCanonicalRepresentations §0.2's
   `PMod(g, 0, n)`, the classes fixing each puncture, which §2.3 identifies with the kernel of the
-  permutation homomorphism `σ` given by the extension over `P`. The hypothesis `2g − 2 + n > 0`
-  (`χ(Σ_{g,n}) < 0`) is stated where it is used.
+  permutation homomorphism `σ` given by the extension over `P`. No target here assumes
+  `2g − 2 + n > 0`; a hypothesis on the genus is stated where it is used.
 - **Notation shared with suppliers.** `Ψ_x` is the outer action of §3.3; MordellLawrenceVenkatesh's
   `Ψ` (§§5.9, 5.22 there) is the symplectic representation, written here as the action on `H₁`.
   `Mod^±(X)` is the topological group of §2.1; TeichmullerGeometry §3.1's `Mod±(Σ) = π₀ Diff(Σ)` of
@@ -387,14 +389,13 @@ Lefschetz duality by cap product with `[S]`, and the intersection form `î` on `
 alternating, perfect for `∂S = ∅`, invariant under orientation-preserving homeomorphisms, and equal
 on transverse oriented simple closed curves to the signed count of intersection points), §5.6 (for
 a surface of type `(g, b, n)` with `b + n = 0`, `H₁(S; ℤ) ≅ ℤ^{2g}`), §5.9 (`Mod(S)`, `Mod(S*)`,
-`Forget`, and the action of `Mod(S)`, through `Out(π₁ S)`, on isomorphism classes of finite
-coverings, `[p] ↦ [f ∘ p]`, which on monodromy is precomposition with the outer automorphism
-`(f⁻¹)_*`), §5.15 (asphericity), §5.17 (the evaluation
+`Forget`, surjective for every surface, and the action of `Mod(S)`, through `Out(π₁ S)`, on
+isomorphism classes of finite coverings, `[p] ↦ [f ∘ p]`, which on monodromy is precomposition with
+the outer automorphism `(f⁻¹)_*`), §5.15 (asphericity), §5.17 (the evaluation
 fibration of `Homeo⁺(S, ∂S)` with the compact-open topology, equivalently isotopy extension for
-moving one interior point of a surface with punctures), §5.19 (`Push : π₁(S, x) →* Mod(S*)`, acting
-on `π₁(S, x)` by `MulAut.conj`, with `Forget(Push α) = 1`), §5.20 (the Birman exact sequence for
-`χ(S) < 0`), §5.22 (for `g ≥ 1` the symplectic representation `Mod(S_g) → Sp(2g, ℤ)` is
-surjective). Used: the isotopies of §5.9 on `S = Σ_g ∖ P`, which §§5.17–5.19 handle as paths in
+moving one interior point of a surface with punctures), §5.19 (for every surface,
+`Push : π₁(S, x) →* Mod(S*)`, acting on `π₁(S, x)` by `MulAut.conj`, with `Forget(Push α) = 1`),
+§5.22 (for `g ≥ 1` the symplectic representation `Mod(S_g) → Sp(2g, ℤ)` is surjective). Used: the isotopies of §5.9 on `S = Σ_g ∖ P`, which §§5.17–5.19 handle as paths in
 `Homeo⁺(S, ∂S)` with the compact-open topology, are homotopies through homeomorphisms; by §2.1 these
 are exactly the ambient isotopies of
 the boundaryless surface `S`, so `Mod(S)` is the same group whether §5.9's isotopies are read as
@@ -502,10 +503,16 @@ compatible with the maps of item 11.
 Layer 1
 (representations as comodules; §1.1, the comodule invariants are the vectors fixed by every point
 over every algebra), Layer 2 (Lie algebras of closed subgroups, the adjoint representation of a
-closed subgroup on `Lie(G)`, characteristic-zero smoothness), Layer 3A (orbits
-are open in their closures, 3A.2; every orbit closure contains a closed orbit, 3A.4), Layer 5
-(unipotent groups, the unipotent radical, fixed vectors of unipotent groups), Layer 6 (the centre of
-a connected reductive group is of multiplicative type), Layer 7 (parabolic subgroups, Levi
+closed subgroup on `Lie(G)`, characteristic-zero smoothness), Layer 3 (closed subgroups, identity
+components, quotients by normal closed subgroups with their faithfully flat quotient maps), Layer 3A
+(orbits are open in their closures, 3A.2; every orbit closure contains a closed orbit, 3A.4), Layer 4
+(the Jordan decomposition of points, compatible with homomorphisms), Layer 5
+(unipotent groups, the unipotent radical, fixed vectors of unipotent groups, the decomposition
+`B = B_u ⋊ T` of a smooth connected solvable group), Layer 5P (the polynomial exponential and
+logarithm of unipotent points in characteristic zero), Layer 6 (the centre of a connected reductive
+group is of multiplicative type; in characteristic zero an affine group is linearly reductive exactly
+when its identity component is reductive), Layer 7 (Borel subgroups, completeness of `G/B`,
+parabolic subgroups, Levi
 decompositions, cocharacter parabolics `P_λ`, `L_λ`, the limit map `c_λ`). Affine groups as Hopf
 algebras with their groups of points, the adjoint action of the points on the Lie algebra,
 reductivity and its characteristic-zero equivalence with linear reductivity are consumed from the
@@ -514,6 +521,11 @@ pinned Tau Ceti declarations of the previous subsection.
 What ReductiveGroups must provide (gap:borel-tits): the Borel–Tits theorem, that for a closed
 unipotent subgroup `U` of a connected reductive group `G` over an algebraically closed field there is
 a parabolic subgroup `P` of `G` with `U ⊆ R_u(P)` and `N_G(U) ⊆ P`. Supplier section: Layer 7.
+
+What ReductiveGroups must provide (gap:adjoint-kernel): for a connected affine group `G` of finite
+type over a field of characteristic zero, the kernel of the adjoint representation
+`Ad : G → GL(Lie G)` is the centre `Z(G)`. Supplier section: Layer 2. Used in §6.3 and in Layer 6's
+Examples; the connectedness is needed (`O₂`, §6.3's Check).
 
 ### From TauCetiRoadmap.ReductiveGroupsPartII
 
@@ -1147,8 +1159,8 @@ coverings of degree `d`, under the monodromy correspondence
 and with homomorphisms `H → H'`; that for a subgroup `M ≤ Mod^±_{g,n}` of finite index (in particular
 `PMod_{g,n}`, of index `n!` in `Mod_{g,n}` by MappingClassGroupsAndCanonicalRepresentations §0.2
 and §2.3) an orbit is finite under `M` exactly when it is finite
-under `Mod^±_{g,n}`. Prove the non-descent theorem: let `2g − 2 + n > 0`, `S = Σ_{g,n}` marked at
-`x`, and `Mod(S*)` the group of classes fixing `x` with `Forget : Mod(S*) → Mod_{g,n}`
+under `Mod^±_{g,n}`. Prove the non-descent theorem, for every `(g, n)`: let `S = Σ_{g,n}` marked at
+`x`, and `Mod(S*)` the group of classes fixing `x` with the surjection `Forget : Mod(S*) → Mod_{g,n}`
 (MordellLawrenceVenkatesh §5.9). The based action `[f] · ρ = ρ ∘ (f_{const})⁻¹` of `Mod(S*)` on
 `Hom(π₁(S, x), H)`, given by §3.3's based homomorphism and §1.3, makes the quotient map
 `Hom(π₁(S, x), H) → Rep(π₁(S, x), H)` equivariant for `Mod(S*)` acting on `Rep(π₁(S, x), H)`
@@ -1162,10 +1174,14 @@ loop `γ` at `x` lifts through `f ∘ p` as `f⁻¹ ∘ γ` lifts through `p`; s
 is that of `p` at `f⁻¹(x)` precomposed with `FundamentalGroup.map f⁻¹`. Transport along a path
 `δ' : x ⟶ f⁻¹(x)` conjugates it, by the bijection of fibres that `δ'` induces, into
 `ρ_p ∘ (f⁻¹)_{δ'}` (§3.1), whose class is `[ρ_p ∘ Ψ_x[f]⁻¹]`. Equivariance: `Ψ_x[Forget f]` is the
-class of `f_{const}`, the constant path joining `x` to `f(x) = x` (§3.3). Non-descent: the kernel of
-`Forget` is `Push(π₁(S, x))` for `χ(S) < 0` (MordellLawrenceVenkatesh §5.20), and `Push(α)` acts by
-`ρ ↦ ρ ∘ (MulAut.conj [α])⁻¹ = MulAut.conj (ρ [α])⁻¹ ∘ ρ` (§1.3; MordellLawrenceVenkatesh §5.19),
-which fixes `ρ` for every `α` exactly when `ρ(π₁(S, x))` is commutative.
+class of `f_{const}`, the constant path joining `x` to `f(x) = x` (§3.3). Non-descent: `Forget` being
+surjective, the action factors through it exactly when its kernel acts trivially. If it does, each
+`Push(α)` acts trivially, since `Forget(Push α) = 1` (MordellLawrenceVenkatesh §5.19), and `Push(α)`
+acts by `ρ ↦ ρ ∘ (MulAut.conj [α])⁻¹ = MulAut.conj (ρ [α])⁻¹ ∘ ρ` (§1.3; MordellLawrenceVenkatesh
+§5.19), so `ρ[α]` commutes with `ρ(π₁(S, x))` for every `α`. Conversely a class in the kernel of
+`Forget` is represented by a homeomorphism `f` fixing `x` and ambient isotopic to the identity in
+`S` (Conventions, §2.1); the track `η` of `x` is a loop at `x`, and `f_{const} = MulAut.conj [η]`
+(§3.2), which fixes every `ρ` with commutative image. No exactness of the Birman sequence is used.
 
 **Checks.**
 
@@ -1181,6 +1197,12 @@ which fixes `ρ` for every `α` exactly when `ρ(π₁(S, x))` is commutative.
 - Non-descent on `(g, n) = (0, 3)`, `π₁ = F₂ = ⟨a, b⟩`, `H = S₃`: for the surjection `ρ` with
   `ρ(a) = (1 2)`, `ρ(b) = (2 3)`, `Push(a) · ρ` sends `b` to `(1 2)(2 3)(1 2) = (1 3) ≠ (2 3)`, so a
   class in the kernel of `Forget` moves `ρ`.
+- Non-descent on the torus `(g, n) = (1, 0)`, where `χ = 0` and `Push` is trivial
+  (MordellLawrenceVenkatesh §5.19), so the Birman sequence is not exact on the left: a class in the
+  kernel of `Forget` acts on `π₁ = ℤ²` by an inner automorphism, the identity, so the based action
+  factors through `Forget`, and every homomorphism from `ℤ²` has commutative image; both sides
+  hold. The same holds for `(0, 0)`, `(0, 1)` and `(0, 2)`, with `π₁ = 1, 1, ℤ`; a statement
+  restricted to `2g − 2 + n > 0` would omit these true cases.
 - The theorem is about the based action, not about lifts of sets: as an action on sets, the action
   of `Mod_{g,n}` on `Rep(π₁, H)` always lifts along `Hom(π₁, H) → Rep(π₁, H)`, because the fibres
   over one orbit are conjugation orbits `H · ρ`, pairwise in bijection through `ρ ↦ ρ ∘ φ⁻¹`, and
@@ -1195,8 +1217,8 @@ which fixes `ρ` for every `α` exactly when `ρ(π₁(S, x))` is commutative.
   of `ρ ∘ M⁻¹ : (a, b) ↦ b − a mod 3`, as the formula `[ρ ∘ Ψ[f]⁻¹]` predicts; the right action
   `ρ ∘ M : (a, b) ↦ a + b mod 3` has kernel `{b ≡ −a mod 3}`, a different cover.
 
-*Needs:* §1.3; §2.3; §3.1; §3.3; MappingClassGroupsAndCanonicalRepresentations §0.2;
-MordellLawrenceVenkatesh §5.9; MordellLawrenceVenkatesh §5.19; MordellLawrenceVenkatesh §5.20;
+*Needs:* §1.3; §2.1; §2.3; §3.1; §3.2; §3.3; MappingClassGroupsAndCanonicalRepresentations §0.2;
+MordellLawrenceVenkatesh §5.9; MordellLawrenceVenkatesh §5.19;
 MordellLawrenceVenkatesh §5.22; Tau Ceti
 `TauCeti.ConnectedCoveringSpace.monodromyEquivalence`,
 `TauCeti.FundamentalGroupoidAction.basepointMulAction`; Mathlib `FundamentalGroup.map`.
@@ -1211,7 +1233,7 @@ MordellLawrenceVenkatesh §5.22; Tau Ceti
 
 Layers 1 and 2; Mathlib's fundamental group and groupoid and `groupHomology`; Tau Ceti's
 classification of connected coverings by monodromy; MordellLawrenceVenkatesh §§5.1, 5.5, 5.6, 5.9,
-5.15, 5.17, 5.19, 5.20, 5.22; MappingClassGroupsAndCanonicalRepresentations §0.2;
+5.15, 5.17, 5.19, 5.22; MappingClassGroupsAndCanonicalRepresentations §0.2;
 TeichmullerGeometry §§0.0b, 0.0e, 0.0f, 0.0h, 4.2, 5.4, 5.4a; AlgebraicTopology Stage 4;
 ClassifyingSpaces Stages 3–4. Layer 3 supplies Layer 7.
 
@@ -1228,8 +1250,9 @@ generated by `w^*(a) − ε(a)` for `a ∈ A` and `w` in the kernel `N` of `Free
 is the coproduct-word map of `w`. Prove that the representing algebra does not depend on `s` up to
 unique isomorphism, is of finite type when `A` is, and is functorial (contravariantly in `Γ`,
 covariantly in `G`), commutes with base change `k → k'`, and that conjugation by `G` is an action by
-scheme automorphisms (Sikora2012 line 584, `Hom(Γ, G)` a closed subset of `Hom(F, G)`;
-BCGGO2024 lines 2706–2708).
+scheme automorphisms (Sikora2012 lines 459–468, Lemma 26, the universal representation algebra and
+its uniqueness over `ℂ`; Sikora2012 line 584, `Hom(Γ, G)` a closed subset of `Hom(F, G)`;
+BCGGO2024 lines 2706–2708, the conjugation action on `Hom(π₁Σ, G^ℝ)`).
 
 The representation scheme has the following API.
 
@@ -1292,7 +1315,9 @@ MappingClassGroupsAndCanonicalRepresentations §0.1 with `b = 0` and the inversi
 generators (Conventions), `Hom(π₁(Σ_g, x), G)` is isomorphic, equivariantly for conjugation, to the
 closed subscheme `{(A_i, B_i) ∈ G^{2g} : ∏_i [A_i, B_i] = 1}` of `G^{2g}`, and that for `n ≥ 1`,
 `Hom(π₁(Σ_{g,n}, x), G) ≅ G^{2g+n−1}`, with the peripheral evaluations `ρ ↦ ρ(p_j)` given by the
-relator (BCGGO2024 lines 2706–2708; FreeGroupsAndLimitGroups §§6.1–6.2).
+relator (FreeGroupsAndLimitGroups §§6.1–6.2 for the presentation and the freeness; Sikora2012
+lines 420–421, Remark 24, for `Hom(F_m, G) = G^m`; BCGGO2024 lines 2706–2708 for `Hom(π₁Σ, G^ℝ)`
+with its conjugation action).
 
 **Checks.**
 
@@ -1635,13 +1660,14 @@ characteristic-zero equivalence of `G`-complete reducibility with reductivity of
 line 228, Proposition 8, completely reducible subgroups as those with linearly reductive closure).
 
 *Proof sketch.* A subspace is `ρ(Γ)`-stable exactly when it is `Z`-stable, its stabilizer being
-closed. If `Z⁰` is reductive then `Z` is linearly reductive in characteristic zero
-(`TauCeti.reductiveCommHopfAlgProperty.linearlyReductive` for `Z⁰`, then averaging over the finite
-group `Z/Z⁰`), so `𝔤` is semisimple. Conversely if
+closed. If `Z⁰` is reductive then `Z` is linearly reductive (ReductiveGroups Layer 6, the corollary
+for groups that need not be connected: in characteristic zero an affine group is linearly reductive
+exactly when its identity component is reductive), so `𝔤` is semisimple. Conversely if
 `𝔤` is a semisimple `Z`-module, the unipotent radical `R_u(Z⁰)`, normal in `Z`, has nonzero fixed
-vectors on each simple summand (ReductiveGroups Layer 5), hence acts trivially; so
-`R_u(Z⁰) ⊆ ker(Ad) = Z(G)`, which is of multiplicative type (ReductiveGroups Layer 6) and contains no
-nontrivial unipotent subgroup.
+vectors on each simple summand (ReductiveGroups Layer 5), which form a `Z`-submodule, so it acts
+trivially; so `R_u(Z⁰) ⊆ ker(Ad) = Z(G)` (gap:adjoint-kernel, `G` being connected and `k` of
+characteristic zero), which is of multiplicative type (ReductiveGroups Layer 6) and contains no
+nontrivial unipotent subgroup (ReductiveGroups Layer 5).
 
 **Checks.**
 
@@ -1650,30 +1676,52 @@ nontrivial unipotent subgroup.
   semisimple, and `Z⁰ = Z` is not reductive.
 - `Z = N(T)` in `SL₂` (disconnected, `Z⁰ = T`): reductive identity component and `𝔤` semisimple; a
   definition requiring `Z` connected would reject it.
+- The kernel of `Ad` is what the converse uses: for `G = SL₂`, `ker(Ad) = {±1} = Z(SL₂)` contains no
+  unipotent element other than `1`, so the upper unipotent subgroup, whose `Ad`-image is a
+  nontrivial unipotent of `𝔰𝔩₂`, is not in it; for the disconnected `G = O₂` over `ℂ`, `Ad` is
+  the determinant on `Lie(O₂) = 𝔰𝔬₂`, one-dimensional, and its kernel `SO₂` is not the centre
+  `{±1}`, which is why `G` is connected.
 
-*Needs:* ReductiveGroups Layer 2; ReductiveGroups Layer 5; ReductiveGroups Layer 6; Tau Ceti
-`TauCeti.reductiveCommHopfAlgProperty.linearlyReductive`.
+*Needs:* ReductiveGroups Layer 2; ReductiveGroups Layer 5; ReductiveGroups Layer 6;
+gap:adjoint-kernel.
 
 ### 6.4 Complete reducibility
 
-Prove that for `G` as in §6.3 and a closed subgroup `Z` topologically generated by finitely many
-elements `z₁, …, z_m` (`Z` is the Zariski closure of the subgroup they generate), `Z` is
-`G`-completely reducible (ArithmeticGaloisRepresentations §1.11, `IsGCompletelyReducible`) if and only
-if `Z⁰` is reductive (BateMartinRohrle2005 line 263 and Lemma 2.6, line 267; Theorem 3.46, line 861;
-Sikora2012 line 228, Proposition 8). The implication from complete reducibility to reductivity of
-`Z⁰` holds for every closed subgroup `Z` (gap:gcr-reductive-identity-component). The Zariski closure of
-the image of a finitely generated group is topologically generated by the images of its generators,
-which is the case §6.7 uses.
+Prove that for `G` as in §6.3 and every closed subgroup `Z` of `G`, `Z` is `G`-completely reducible
+(ArithmeticGaloisRepresentations §1.11, `IsGCompletelyReducible`) if and only if `Z⁰` is reductive
+(BateMartinRohrle2005 lines 263–264, for every closed subgroup, the converse in characteristic zero;
+Lemma 2.6, line 267; Theorem 3.46, line 861; Sikora2012 line 228, Proposition 8). Prove on the way
+that every closed subgroup `Z` is topologically finitely generated: `Z` is the Zariski closure of
+the subgroup generated by finitely many elements `z₁, …, z_m` (BateMartinRohrle2005 Remark 2.9,
+lines 300–309, for subgroups with reductive identity component over a field transcendental over its
+prime field). The Zariski closure of the image of a finitely generated group is topologically
+generated by the images of its generators, which is the case §6.7 uses.
 
-*Proof sketch.* If `Z⁰` is reductive, `𝔤` is a semisimple `Z`-module (§6.3) and every subgroup is
-separable in characteristic zero (ReductiveGroups Layer 2), so the argument of BateMartinRohrle2005
+*Proof sketch.* Finite generation: the identity components of the Zariski closures of the finitely
+generated subgroups of `Z(k)` are connected closed subgroups of `Z⁰` (ReductiveGroups Layer 3),
+directed under inclusion, since the closure for `⟨F, F'⟩` contains those for `F` and `F'`; by
+dimension one of them, `C`, the identity component of the closure of a finitely generated `F`,
+contains all the others, and `zCz⁻¹`, the identity component of the closure of `zFz⁻¹`, lies in
+`C` for every `z ∈ Z(k)`, so `C` is normal in `Z`. If `C ≠ Z⁰`, the quotient `Z⁰/C` (ReductiveGroups
+Layer 3) is connected of positive dimension and has a point of infinite order: a point `y` with
+unipotent part `y_u ≠ 1` (ReductiveGroups Layer 4) gives `y_u^n = exp(n log y_u) ≠ 1` for `n ≠ 0`,
+`k` having characteristic zero (ReductiveGroups Layer 5P); if every point is semisimple, a Borel
+subgroup `B` of `Z⁰/C` is nontrivial, since otherwise `Z⁰/C = (Z⁰/C)/B` would be complete
+(ReductiveGroups Layer 7) as well as affine and connected, hence a point, and `B = B_u ⋊ T` with
+`B_u = 1` (ReductiveGroups Layer 5) is a nontrivial torus, which has the point `(2, 1, …, 1)`. A lift
+`z ∈ Z⁰(k)` of that point, which exists over the algebraically closed `k`, makes the closure of
+`⟨F, z⟩` contain `C` and infinitely many cosets `zⁿC`, so its identity component is strictly larger
+than `C`, a contradiction. Hence `C = Z⁰`, and adding to the generators of `F` one point of each of
+the finitely many components of `Z` gives `z₁, …, z_m`.
+
+Complete reducibility: if `Z⁰` is reductive, `𝔤` is a semisimple `Z`-module (§6.3) and every subgroup
+is separable in characteristic zero (ReductiveGroups Layer 2), so the argument of BateMartinRohrle2005
 Theorem 3.46 applies to the tuple `(z₁, …, z_m)`: if `Z` were not `G`-completely reducible, this
 tuple would have a non-closed orbit in `G^m` (ArithmeticGaloisRepresentations §1.11), a cocharacter
 limit into the closed orbit would lower the dimension of the centralizer, while its adjoint image is
 `GL(𝔤)`-conjugate to that of `Z` by the `GL(𝔤)` case of the same criterion, which preserves the
-dimension of the fixed space; a contradiction. The finitely many generators are what makes the tuple
-exist. Conversely a `G`-completely reducible `Z` has reductive identity component by
-gap:gcr-reductive-identity-component, whose route uses gap:borel-tits.
+dimension of the fixed space; a contradiction. Conversely a `G`-completely reducible `Z` has reductive
+identity component by gap:gcr-reductive-identity-component, whose route uses gap:borel-tits.
 
 **Checks.**
 
@@ -1691,9 +1739,15 @@ gap:gcr-reductive-identity-component, whose route uses gap:borel-tits.
   fixes no line of `ℂ²` (`T` fixes only the two coordinate lines, which the second generator
   exchanges), so it lies in no Borel subgroup and is `SL₂`-completely reducible; a statement
   requiring `Z` connected would exclude it.
+- Topological finite generation in characteristic zero: `𝔾_a^n` is topologically generated by its
+  `n` basis vectors, the closure of `ℤv` being the line `kv` because `ℤv` is infinite, and `𝔾_m` by
+  the single point `2`, of infinite order. Over the algebraic closure of `𝔽_p` every finitely
+  generated subgroup of `G(k)` is finite (BateMartinRohrle2005 lines 302–303), so `𝔾_a` is not
+  topologically finitely generated there: the finite-generation step uses the characteristic.
 
 *Needs:* §6.3; ArithmeticGaloisRepresentations §1.11; ReductiveGroups Layer 2; ReductiveGroups
-Layer 3A; ReductiveGroups Layer 7; gap:gcr-reductive-identity-component; gap:borel-tits.
+Layer 3; ReductiveGroups Layer 3A; ReductiveGroups Layer 4; ReductiveGroups Layer 5; ReductiveGroups
+Layer 5P; ReductiveGroups Layer 7; gap:gcr-reductive-identity-component; gap:borel-tits.
 
 ### 6.5 Closed complex orbits
 
@@ -1793,14 +1847,16 @@ of `ρ`.
 ### Examples
 
 - `Γ = ℤ`: `ρ(1) = g` is reductive exactly when `g` is semisimple (`Ad(g)` semisimple forces the
-  unipotent part of `g` into the centre, which has no unipotent elements).
+  unipotent part of `g` into `ker(Ad)`, which is the centre by gap:adjoint-kernel and has no
+  unipotent elements).
 - `Γ = π₁(Σ_g)`, `g ≥ 2`, `G^ℝ = PSL₂(ℝ)`: the uniformizing holonomy (TeichmullerGeometry §4.5) has
   Zariski-dense image and is reductive.
 
 ### Dependencies
 
-Layers 4 and 5; ReductiveGroups Layers 2, 3A, 5, 6, 7; ArithmeticGaloisRepresentations §§1.7, 1.11;
-ComplexComparisonPartII §C-1.1. Layer 6 supplies Layer 7.
+Layers 4 and 5; ReductiveGroups Layers 2, 3, 3A, 4, 5, 5P, 6, 7; ArithmeticGaloisRepresentations
+§§1.7, 1.11; ComplexComparisonPartII §C-1.1; the supplier gaps gap:adjoint-kernel,
+gap:gcr-reductive-identity-component and gap:borel-tits. Layer 6 supplies Layer 7.
 
 ## Layer 7: Character varieties
 
@@ -1961,20 +2017,26 @@ reductive. For a finite-index `Γ'`, the Zariski closure of `ρ(Γ')` has finite
 
 ### 7.4 The outer action and the mapping class action
 
-Prove that for a finitely generated group `Γ`, `Out(Γ)` acts on `𝒳(Γ, G^ℝ)` by homeomorphisms,
-`[φ] · [ρ] = [ρ ∘ φ⁻¹]`, and that this is the restriction of §1.3's action on `Rep(Γ, G^ℝ)`. For
+Prove that for every group `Γ`, every field `k` with a topology, every commutative Hopf `k`-algebra
+`O(𝐆)` and every subgroup `G` of `𝐆(k)`, precomposition with automorphisms of `Γ` preserves
+reductivity and `Out(Γ)` acts on `CharacterVariety Γ G` by homeomorphisms,
+`[φ] · [ρ] = [ρ ∘ φ⁻¹]`; in particular, for a real reductive datum and a finitely generated `Γ`,
+`Out(Γ)` acts on `𝒳(Γ, G^ℝ)` by homeomorphisms, and this is the restriction of §1.3's action on
+`Rep(Γ, G^ℝ)`; no reductivity of `𝐆` and no finite generation of `Γ` is used. For
 `Γ = π₁(Σ_{g,n}, x)`, prove that a path `σ : x ⟶ x'` induces a homeomorphism
 `𝒳(π₁(Σ_{g,n}, x'), G^ℝ) ≅ 𝒳(π₁(Σ_{g,n}, x), G^ℝ)` independent of `σ`, so that `𝒳(Σ_{g,n}, G^ℝ)` is
 well defined, and that `Mod^±_{g,n}` acts on it by homeomorphisms through `Ψ_x` (§3.3), compatibly
 with these identifications and with §3.5's action on all conjugacy classes (BCGGO2024 lines
-2712–2713; LandesmanLitt2024 lines 47–50). `Suggested.lean` states the first clause, for a real
-reductive datum, as `exists_outAction_characterVariety`: precomposition with an automorphism
-preserves reductivity, and a homomorphism from `Out(Γ)` to the homeomorphism group of `𝒳(Γ, G^ℝ)`
-sends `[φ]` to `[ρ] ↦ [ρ ∘ φ⁻¹]`.
+2712–2713; LandesmanLitt2024 lines 47–50). `Suggested.lean` states the first clause, at the
+generality of `CharacterVariety`, as `exists_outAction_characterVariety`: precomposition with an
+automorphism preserves reductivity, and a homomorphism from `Out(Γ)` to the homeomorphism group of
+`CharacterVariety Γ G` sends `[φ]` to `[ρ] ↦ [ρ ∘ φ⁻¹]`.
 
-*Proof sketch.* Precomposition with `φ⁻¹` is continuous for the pointwise topology, commutes with
-conjugation and preserves reductivity (§6.1); inner automorphisms act trivially on classes (§1.3).
-Two choices of `σ` differ by an inner automorphism.
+*Proof sketch.* Precomposition with `φ⁻¹` permutes the coordinates of `G^Γ`, so it is continuous
+for the pointwise topology, with continuous inverse the precomposition with `φ`; it commutes with
+conjugation and preserves reductivity, which depends only on `ρ(Γ)` (§6.1), and `ρ ∘ φ⁻¹` has the
+same image as `ρ`; inner automorphisms act trivially on classes (§1.3). Two choices of `σ` differ by
+an inner automorphism.
 
 **Checks.**
 
@@ -1983,14 +2045,21 @@ Two choices of `σ` differ by an inner automorphism.
   while its semisimplification is the trivial point, fixed by `Mod`.
 - `Γ = ℤ`: `Out(ℤ)` acts on `𝒳(ℤ, G^ℝ)` by `[g] ↦ [g⁻¹]`; on `𝒳(ℤ, SO(2)) = SO(2)` it is complex
   conjugation, with fixed points `±1`.
+- The first clause uses neither reductivity of `𝐆` nor finite generation of `Γ`: for the unipotent
+  `𝐆 = 𝔾_a` over `ℝ`, `G = ℝ` and `Γ = ℤ`, `Ad` and conjugation are trivial, `CharacterVariety ℤ G`
+  is `ℝ` through `ρ ↦ ρ(1)`, and the class of `−1 ∈ Aut(ℤ)` acts by `x ↦ −x`; for `Γ` free of
+  countably infinite rank and `G = ℝ^×`, `CharacterVariety Γ G = (ℝ^×)^ℕ` (§7.1's Check), on which
+  each automorphism acts through `Γ^{ab}` by a homeomorphism, each coordinate of `ρ ∘ φ⁻¹` being a
+  product of finitely many coordinates of `ρ` and their inverses, although the space is not locally
+  compact.
 - `g ≥ 2`, `G^ℝ = PSL₂(ℝ)`: the classes of discrete faithful representations of Euler number
   `2 − 2g` form a subset `Fuch` of `𝒳(π₁(Σ_g), PSL₂(ℝ))` in bijection with `Teich(Σ_g)` through
   TeichmullerGeometry §§4.5 and 6.1 (via `ι` of TeichmullerGeometry §4.2), equivariantly for
   `Mod_{g,0}`; the reflection-conjugate classes have Euler number `2g − 2` and correspond to the
   conjugate surface (BCGGO2024 lines 2714–2726, Example 8.2).
 
-*Needs:* §1.3; §3.3; §3.5; §6.1; §7.1; TeichmullerGeometry §4.2; TeichmullerGeometry §4.5;
-TeichmullerGeometry §6.1.
+*Needs:* §1.3; §3.3; §3.5; §6.1; §7.1; TeichmullerGeometry §4.2; TeichmullerGeometry §4.4;
+TeichmullerGeometry §4.5; TeichmullerGeometry §6.1.
 
 ### 7.5 Examples and comparisons
 
@@ -2036,7 +2105,7 @@ value (Sikora2012 lines 844–845, Example 48).
 ### Dependencies
 
 Layers 1–6; LanglandsParameterStacks §2.2; ArithmeticGaloisRepresentations §1.11; ReductiveGroups
-Layers 1, 3A; Tau Ceti's reductive groups and their characteristic-zero linear reductivity; ComplexComparisonPartII §C-1.1; TeichmullerGeometry §§4.2, 4.5, 6.1;
+Layers 1, 3A; Tau Ceti's reductive groups and their characteristic-zero linear reductivity; ComplexComparisonPartII §C-1.1; TeichmullerGeometry §§4.2, 4.4, 4.5, 6.1;
 NonabelianLevelStructures §§5.1–5.2 (Checks of §§7.2 and 7.5); Tau Ceti
 `Matrix.SpecialLinearGroup.trace_commutatorElement_fin_two` (§7.5);
 SymplecticGeometry/HamiltonianReduction R5 (a Check of §7.1); Tau Ceti's linearly reductive

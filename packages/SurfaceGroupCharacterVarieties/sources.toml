@@ -98,7 +98,7 @@ year = 2009
 venue = "Trans. of AMS 364 (2012) 5173--5208"
 arxiv = "0902.2589v3"
 locator_scheme = "section"
-locator = "line 228 (Proposition 8); lines 262–268 (Corollary 9); lines 363–364 (Corollary 17); lines 572–586 (Theorem 30); lines 823–845 (§11, Example 48)"
+locator = "line 228 (Proposition 8); lines 262–268 (Corollary 9); lines 363–364 (Corollary 17); lines 420–421 (Remark 24); lines 459–468 (universal representation algebra, Lemma 26); lines 572–586 (Theorem 30); lines 823–845 (§11, Example 48)"
 url = "https://arxiv.org/abs/0902.2589v3"
 fetched_from = "https://arxiv.org/pdf/0902.2589v3"
 fetched_at = "2026-11-08T09:51:59Z"
@@ -107,7 +107,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v3"
-cited_for = ["4.1: Hom(Γ, G) as a closed subset of Hom(F, G)", "6.3–6.7: completely reducible representations and closed orbits", "7.2: the affine quotient and the unique closed orbit per fibre", "7.3: images of completely reducible subgroups"]
+cited_for = ["4.1: the universal representation algebra (Lemma 26) and Hom(Γ, G) as a closed subset of Hom(F, G)", "4.3: Hom(F_m, G) = G^m (Remark 24)", "6.3–6.7: completely reducible representations and closed orbits", "7.2: the affine quotient and the unique closed orbit per fibre", "7.3: images of completely reducible subgroups"]
 
 [[source]]
 id = "Goldman1984"
@@ -149,7 +149,7 @@ title = "A Geometric Approach to Complete Reducibility"
 year = 2005
 arxiv = "math/0408109v2"
 locator_scheme = "theorem"
-locator = "§2.2, lines 183–187; §2.4, line 263; Lemma 2.6, line 267; Lemma 2.12, line 355; Proposition 2.13, line 379; Corollary 3.7, line 510; Corollary 3.42, line 814; Theorem 3.46, line 861"
+locator = "§2.2, lines 183–187; §2.4, lines 263–264; Remark 2.9, lines 300–309; Lemma 2.6, line 267; Lemma 2.12, line 355; Proposition 2.13, line 379; Corollary 3.7, line 510; Corollary 3.42, line 814; Theorem 3.46, line 861"
 url = "https://arxiv.org/abs/math/0408109v2"
 fetched_from = "https://arxiv.org/pdf/math/0408109v2"
 fetched_at = "2026-11-08T10:44:49Z"
@@ -158,4 +158,4 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v2 (2004), the version read; published Invent. Math. 161 (2005), 177–218"
-cited_for = ["6.3: the adjoint criterion (Corollary 3.42) and characteristic zero (§2.2)", "6.3–6.4: reductive closures and complete reducibility", "6.5: closed orbits of tuples", "6.7: irreducibility and products"]
+cited_for = ["6.3: the adjoint criterion (Corollary 3.42) and characteristic zero (§2.2)", "6.3–6.4: reductive closures and complete reducibility", "6.4: topologically finitely generated subgroups (Remark 2.9)", "6.5: closed orbits of tuples", "6.7: irreducibility and products"]
