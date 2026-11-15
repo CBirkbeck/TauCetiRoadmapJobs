@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GlaubermanZStar~7",
+  "head": "581115cc26a7833c99dc8eb3bfc6b52d86c73f37",
+  "pr": 1778,
+  "folder": "GlaubermanZStar",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "incremental re-review of 0 changed lines since 581115c; this round checked the pull request's title and description against the head and reran the gate. Gate FAIL: dropped=19 (LocalFiniteGroupTheory is on the never-cite list and is named as a supplier in README.md and once in Suggested.lean): R01 (P2), with replacement owners checked (ModularCharactersAndBlocks 0.3 for the 2'-core, Mathlib IsCyclic.isComplement' for the cyclic-Sylow complement, CohomologyOfGroups 8.2 for 2-groups with a unique involution). R02 (P3): the description's validation sentence says five admitted targets and a character alternative; the head has four admitted theorems and one definition. Depcheck 0 problems; lake env lean on Suggested.lean gives four sorry warnings only; nothing changed outside the folder; no seeded-sample passage changed; adversarial rows computed for the statements the findings touch.",
+  "text": "b4a5f92673c5bb9e"
+ }
+}
