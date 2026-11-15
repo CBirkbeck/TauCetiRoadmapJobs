@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NonordinaryCMSpecialValues~3",
+  "head": "26e27c66b36ed533c35bdbb045be54fd8e36fd4a",
+  "pr": 2290,
+  "folder": "NonordinaryCMSpecialValues",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "Full review. The three findings of the previous review are repaired. Sample: all 15 seeded targets read at their locators in BKO21, FINIS06, KATO04, JIA24 and ROHRLICH84 (31 locators); KATO99 and BOXALL92 not readable (uncertified, waived). Gate passes at 26e27c6 including the targeted build; depcheck 244 roadmaps, 2231 edges, 0 problems; Suggested.lean elaborates with 3 sorry warnings only; one-tactic probes close nothing; 11 pinned declarations opened. Findings: R01 (P2) section 2.7 asserts integrality of the whole family while its route covers only components with a unit smoothing factor; R02-R03 (P3) layer-level dependency statements disagree with the Needs lines; R04 (P3) the description cites section 4.5a, now 4.7.",
+  "text": "eadbd479486ba2f7"
+ }
+}
