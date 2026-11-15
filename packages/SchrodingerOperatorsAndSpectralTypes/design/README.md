@@ -69,7 +69,9 @@ owned elsewhere and consumed by section.
   Weyl criterion is gap:weyl-criterion below), the decomposition `ℋ = ℋ_pp ⊕ ℋ_ac ⊕ ℋ_sc` into
   reducing subspaces with commuting projections preserving `dom A`, the restrictions `A_pp`,
   `A_ac`, `A_sc`, `σ(A) = σ(A_pp) ∪ σ(A_ac) ∪ σ(A_sc)` and `σ(A_pp) = closure σ_p(A)`, together
-  with the scalar atomic/continuous split of a σ-finite Borel measure (UO-C03), closed forms,
+  with the scalar atomic/continuous split of a σ-finite Borel measure (UO-C03), strong commutation
+  (UO-B03: a bounded self-adjoint operator commutes with the group `e^{isA}` iff it commutes with
+  every `P_A(B)`), closed forms,
   the Friedrichs extension and the self-adjoint complexification of a real self-adjoint operator
   (UO-D06), graph cores (UO-E01), relatively compact perturbations and
   the invariance of the essential spectrum (UO-E04), worked cores (UO-E05), and the free Laplacian
@@ -319,8 +321,12 @@ multiplication operators). Assumed: `P_A` is the unique real PVM with
 
 UO-A01–UO-A02 (unbounded spectral integral; real symbols give self-adjoint operators; every
 self-adjoint `A` is `id[P_A]`), UO-A06 (`supp P_A = σ(A)`), UO-A07 (maximal multiplication
-operators, self-adjoint for real symbols), UO-C01 (`λ ∈ σ(A)` iff every neighbourhood has
-nonzero spectral projection), UO-C02 (essential spectrum: its isolated-eigenvalue and Fredholm
+operators, self-adjoint for real symbols), UO-B03 (strong commutation: for self-adjoint `A` and
+`C`, commuting spectral projections, commuting resolvents and commuting groups `e^{isA}`, `e^{itC}`
+are equivalent; used in 1.7 and 1.9 with `C` an orthogonal projection `Q`, whose group is
+`e^{itQ} = 1 + (e^{it} − 1)Q` and whose spectral projection at `{1}` is `Q`, so that `Q` commutes
+with every `e^{isA}` iff it commutes with every `P_A(B)`), UO-C01 (`λ ∈ σ(A)` iff every
+neighbourhood has nonzero spectral projection), UO-C02 (essential spectrum: its isolated-eigenvalue and Fredholm
 definitions and their equivalence for self-adjoint `A`, unitary invariance, and `λ ∉ σ_ess(A)` iff
 `P_A((λ − ε, λ + ε))` has finite rank for some `ε > 0`), UO-C03 (the reducing subspaces `ℋ_pp`,
 `ℋ_ac`, `ℋ_sc` defined by the types of all vector spectral measures, their projections commuting
@@ -690,14 +696,21 @@ For self-adjoint `H₁, H₂` on `ℋ` and a sign `±`, let `D_±(H₂, H₁)` b
 
 Say the wave operators **exist on `ℋ_ac(H₁)`** when `ℋ_ac(H₁) ⊆ D_±`, and are **complete** when
 moreover `Ω_±(ℋ_ac(H₁)) = ℋ_ac(H₂)`. If they exist on `ℋ_ac(H₁)`, then
-`Ω_±(ℋ_ac(H₁)) ⊆ ℋ_ac(H₂)`. Route: `ℋ_ac(H₁)` reduces `H₁` (UO-C03), so by the intertwining
-`W := Ω_±(ℋ_ac(H₁))` is a closed subspace invariant under every `e^{−isH₂}` and reduces `H₂`, as
-`Ω_±(D_±)` does in the second item; `Ω_±` maps `ℋ_ac(H₁)` unitarily onto `W` and conjugates the
-reduced restriction `A` of `H₁` into the reduced restriction `A′` of `H₂` (`Ω_± A Ω_±⁻¹ ⊆ A′` by the
-intertwining on `dom H₁`, with equality since both are self-adjoint). For `x ∈ ℋ_ac(H₁)`, 1.1's
-transport law gives `μ^{A′}_{Ω_± x} = μ^A_x`, and 1.3 identifies the two sides with
-`μ^{H₂}_{Ω_± x}` and `μ^{H₁}_x`; the latter is absolutely continuous, so `Ω_± x ∈ ℋ_ac(H₂)`.
-*Needs:* 1.1, 1.3; SelfAdjointSpectralTheory SA-E26–SA-E30; UnboundedOperators UO-C03.
+`Ω_±(ℋ_ac(H₁)) ⊆ ℋ_ac(H₂)`. Route: the projection of `ℋ_ac(H₁)` commutes with every `P_{H₁}(B)`
+(UO-C03), hence with every `e^{−isH₁}` (UnboundedOperators UO-B03, (i)⇒(iii), applied to `H₁` and
+this bounded self-adjoint projection), so by the intertwining `W := Ω_±(ℋ_ac(H₁))` is a closed
+subspace with `e^{−isH₂} W = W` for every real `s`. Its projection `Q` commutes with every
+`e^{−isH₂}` (`W^⊥` is invariant too, the adjoint of `e^{−isH₂}` being `e^{isH₂}`), hence with every
+`P_{H₂}(B)` by UO-B03, (iii)⇒(i), applied to `H₂` and `Q`, whose group is
+`e^{itQ} = 1 + (e^{it} − 1)Q`. This is 1.3's hypothesis, so `W` reduces `H₂` with a self-adjoint
+reduced restriction `A′`. `Ω_±` maps `ℋ_ac(H₁)` unitarily onto `W` and conjugates the reduced
+restriction `A` of `H₁` into `A′` (`Ω_± A Ω_±⁻¹ ⊆ A′` by the intertwining on `dom H₁`, with equality
+since both are self-adjoint). For `x ∈ ℋ_ac(H₁)`, 1.1's transport law gives
+`μ^{A′}_{Ω_± x} = μ^A_x`, and 1.3 identifies the two sides with `μ^{H₂}_{Ω_± x}` and `μ^{H₁}_x`;
+the latter is absolutely continuous, so `Ω_± x ∈ ℋ_ac(H₂)`. Invariance under `e^{−isH₂}` for `s`
+in a half-line only would not do: on `L²(ℝ)` with `H₂ = M_x`, the Hardy space of boundary values
+of the upper half-plane is invariant under `e^{−isx}` exactly for `s ≤ 0` and does not reduce `M_x`.
+*Needs:* 1.1, 1.3; SelfAdjointSpectralTheory SA-E26–SA-E30; UnboundedOperators UO-B03, UO-C03.
 
 **Checks.**
 
@@ -781,8 +794,9 @@ Pearson's argument (pearson78; rs3 Theorem XI.7) combines it with the Schmidt ex
 Rosenblum's lemma 1.8, its only spectral input (yafaev04 line 195–206), to obtain the limit for
 density-bounded `φ`; since `‖W(t)‖ ≤ ‖J‖` and density-bounded vectors are dense in `ℋ_ac(H₁)`
 (1.8), the limit then exists on all of `ℋ_ac(H₁)`. The intertwining relation is the limit of
-`e^{isH₂} W(t) = W(t + s) e^{isH₁}`, as `e^{isH₁}` commutes with `P_ac(H₁)` (UO-C03).
-*Needs:* 1.2, 1.8; SelfAdjointSpectralTheory SA-E26–SA-E29; UnboundedOperators UO-C03; Tau Ceti
+`e^{isH₂} W(t) = W(t + s) e^{isH₁}`, as `e^{isH₁}` commutes with `P_ac(H₁)` (UO-C03 gives
+commutation with every `P_{H₁}(B)`, and UnboundedOperators UO-B03, (i)⇒(iii), passes it to the group).
+*Needs:* 1.2, 1.8; SelfAdjointSpectralTheory SA-E26–SA-E29; UnboundedOperators UO-B03, UO-C03; Tau Ceti
 `ContinuousLinearMap.nuclearENorm`.
 
 **The Kato–Rosenblum theorem.** Let `H₁` be self-adjoint, `V` bounded self-adjoint and trace
@@ -849,7 +863,7 @@ trace-class conditions on resolvent differences, which are outside this roadmap.
 
 ### Dependencies
 
-SelfAdjointSpectralTheory Parts B, C, D, E; UnboundedOperators Layers 1, 3 and 4.7; Tau Ceti
+SelfAdjointSpectralTheory Parts B, C, D, E; UnboundedOperators Layers 1 and 3, §2.3 (UO-B03) and §4.7; Tau Ceti
 projection-valued measures, Hilbert–Schmidt and nuclear gauges; Mathlib Lebesgue decomposition;
 OperatorIdeals OI-B29–OI-B36.
 
@@ -969,7 +983,7 @@ pairing `⟨dv, du⟩_g := g(grad Re v, grad Re u) + g(grad Im v, grad Im u) +
 i(g(grad Re v, grad Im u) − g(grad Im v, grad Re u))`, conjugate-linear in `v`. Prove Green's
 formula: if `u` is `C²`, `v` is `C¹` and one of them has compact support, then
 `∫ conj(v)·Δu dvol_g = ∫ ⟨dv, du⟩_g dvol_g`; hence `∫ conj(v)·Δu = ∫ conj(Δv)·u` when both are `C²`
-and one has compact support (DifferentialGeometry 12.5; grigoryan09 Ch. 4).
+and one has compact support (DifferentialGeometry 12.5; grigoryan09 Ch. 3).
 
 - `Δ` is complex-linear, commutes with complex conjugation, and kills locally constant functions.
 - `⟨du, du⟩_g = |grad Re u|² + |grad Im u|² ≥ 0`.
@@ -1636,6 +1650,6 @@ and 3.10 its lower inclusion.
   (1980): §2, Theorem 2.1, Corollary 2.2.
 - Cited by locator: `pearson78` (D. B. Pearson, *A generalization of the Birman trace theorem*,
   J. Funct. Anal. 28 (1978), 182–186), `rs1` (§VII.2), `rs2` (Ch. IX, §X.2, Theorem X.12), `rs3`
-  (§XI.3: the chain rule, Theorems XI.7–XI.8), `kato76` (Ch. V §4.1, Ch. X §4.4), `grigoryan09` (Ch. 4, 11), `gaffney54`,
+  (§XI.3: the chain rule, Theorems XI.7–XI.8), `kato76` (Ch. V §4.1, Ch. X §4.4), `grigoryan09` (Ch. 3, 4, 11), `gaffney54`,
   `chernoff73`, `strichartz83` (Theorem 2.4), `chavel84` (Ch. I), `iwaniec02` (Ch. 4, 7, 11),
   `lp76` (Ch. 1, 8), `cfks87` (Ch. 1).

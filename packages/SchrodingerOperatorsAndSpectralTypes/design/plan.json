@@ -36,8 +36,8 @@
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E01",
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E05",
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E44",
-      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-B44",
-      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-C25",
+      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-B44-SA-B45",
+      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-C25-SA-C28",
       "roadmap:OperatorTheory UnboundedOperators UO-A01",
       "roadmap:OperatorTheory UnboundedOperators UO-A02",
       "gap:spectral-integral-resolvent"
@@ -520,6 +520,7 @@
       "target:1.7a",
       "target:1.1",
       "target:1.3",
+      "roadmap:OperatorTheory UnboundedOperators UO-B03",
       "roadmap:OperatorTheory UnboundedOperators UO-C03"
      ],
      "api": [],
@@ -600,10 +601,12 @@
      },
      "prerequisites": [
       "target:1.8a",
+      "target:1.2",
       "tauceti:ContinuousLinearMap.hilbertSchmidtEnergy",
       "tauceti:ContinuousLinearMap.hilbertSchmidtEnergy_indep",
       "tauceti:ContinuousLinearMap.nuclearENorm",
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-C86",
+      "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E26",
       "roadmap:OperatorTheory OperatorIdeals OI-B29-OI-B36"
      ],
      "api": [],
@@ -640,6 +643,7 @@
       "target:1.8a",
       "target:1.8b",
       "roadmap:OperatorTheory SelfAdjointSpectralTheory SA-E26-SA-E29",
+      "roadmap:OperatorTheory UnboundedOperators UO-B03",
       "roadmap:OperatorTheory UnboundedOperators UO-C03",
       "tauceti:ContinuousLinearMap.nuclearENorm"
      ],
@@ -914,7 +918,7 @@
      ],
      "locator": {
       "source": "grigoryan09",
-      "where": "Ch. 3-4"
+      "where": "Ch. 3"
      },
      "prerequisites": [
       "tauceti:TauCeti.Manifold.laplaceBeltrami",
@@ -968,7 +972,7 @@
      ],
      "locator": {
       "source": "grigoryan09",
-      "where": "Ch. 4 (Green formula)"
+      "where": "Ch. 3 (Green formula)"
      },
      "prerequisites": [
       "target:3.1a",
@@ -1782,6 +1786,7 @@
      "prerequisites": [
       "roadmap:QuantumFoundations S8.2",
       "target:4.3a",
+      "target:4.2",
       "tauceti:ContinuousLinearMap.hilbertSchmidtEnergy",
       "tauceti:ContinuousLinearMap.isCompactOperator_of_hilbertSchmidtEnergy_ne_top",
       "roadmap:OperatorTheory OperatorIdeals OI-C14",
@@ -2011,6 +2016,7 @@
     "UO-A02",
     "UO-A06",
     "UO-A07",
+    "UO-B03",
     "UO-C01",
     "UO-C02",
     "UO-C03",
@@ -2020,7 +2026,7 @@
     "UO-E05",
     "UO-E06"
    ],
-   "what": "unbounded spectral integral and multipliers, spectral support, essential spectrum (Weyl criterion requested as gap weyl-criterion), the pp/ac/sc reducing decomposition, closed forms and Friedrichs extension, the self-adjoint complexification of a real self-adjoint operator (UO-D06, used in 3.8 and 3.9), cores, relatively compact perturbations (V A-compact when V(A - i)^{-1} is compact), real L^2 + L^infinity potentials on R^3 (UO-E06, the d = 3 case of 4.4b)"
+   "what": "unbounded spectral integral and multipliers, spectral support, strong commutation (UO-B03: a bounded self-adjoint operator commutes with the group e^{isA} iff with every P_A(B), used in 1.7 and 1.9), essential spectrum (Weyl criterion requested as gap weyl-criterion), the pp/ac/sc reducing decomposition, closed forms and Friedrichs extension, the self-adjoint complexification of a real self-adjoint operator (UO-D06, used in 3.8 and 3.9), cores, relatively compact perturbations (V A-compact when V(A - i)^{-1} is compact), real L^2 + L^infinity potentials on R^3 (UO-E06, the d = 3 case of 4.4b)"
   },
   {
    "roadmap": "QuantumFoundations",
