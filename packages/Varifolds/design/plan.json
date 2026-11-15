@@ -16,10 +16,10 @@
      "id": "1.1",
      "kind": "definition",
      "name": "Varifolds.grassmannian",
-     "statement": "For a finite-dimensional real inner product space E and 0 <= k <= dim E, G(E,k) is the set of self-adjoint idempotent continuous linear maps of E with k-dimensional range, with the operator-norm metric; S -> P_S is a bijection from k-dimensional subspaces onto G(E,k).",
+     "statement": "For a finite-dimensional real inner product space E and an integer k >= 0, G(E,k) is the set of self-adjoint idempotent continuous linear maps of E with k-dimensional range, with the operator-norm metric; S -> P_S is a bijection from k-dimensional subspaces onto G(E,k). G(E,k) is empty when k > dim E (the fibre of the target bundle of a push-forward into a manifold of dimension below k, 3.1); the API below takes 0 <= k <= dim E.",
      "hypotheses": [
       "E finite-dimensional real inner product space",
-      "0 <= k <= dim E"
+      "k >= 0 an integer; the API for 0 <= k <= dim E"
      ],
      "locator": {
       "source": "Simon1983",
@@ -28,7 +28,12 @@
      "prerequisites": [
       "mathlib:IsStarProjection",
       "mathlib:Submodule.starProjection",
-      "mathlib:isStarProjection_iff_eq_starProjection_range"
+      "mathlib:isStarProjection_iff_eq_starProjection_range",
+      "mathlib:Continuous.homeoOfEquivCompactToT2",
+      "tauceti:TauCeti.finiteGrassmannian",
+      "tauceti:TauCeti.finiteGrassmannian.toEuclidean",
+      "tauceti:TauCeti.finiteGrassmannian.toEuclidean_injective",
+      "tauceti:TauCeti.finiteGrassmannian.continuous_starProjection_toEuclidean"
      ],
      "api": [
       {
@@ -44,7 +49,7 @@
       {
        "name": "isometry action",
        "role": "functoriality",
-       "statement": "a linear isometry U gives the homeomorphism P -> U P U^{-1}, functorial in U."
+       "statement": "a surjective linear isometry U: E -> F gives the homeomorphism P -> U P U^{-1} of G(E,k) onto G(F,k), functorial in U; any linear isometry U gives P -> U P U*, a homeomorphism of G(E,k) onto the closed set of projections in G(F,k) with range in range U; for k >= 1 this set is all of G(F,k) only when U is surjective, for k = 0 both sides are {0}."
       },
       {
        "name": "tangential trace",
@@ -54,7 +59,12 @@
       {
        "name": "image plane",
        "role": "continuity",
-       "statement": "for finite-dimensional inner product spaces E, F, the pairs (L,P) with L: E -> F linear and injective on range P form an open set, on which the projection onto L(range P) in G(F,k) depends continuously on (L,P); with Q = L P it is Q (Q*Q + 1 - P)^{-1} Q*. L need not be injective on E."
+       "statement": "for finite-dimensional inner product spaces E, F, the pairs (L,P) with L: E -> F linear and injective on range P form an open set (empty when dim F < k), on which the projection onto L(range P) in G(F,k) depends continuously on (L,P); with Q = L P it is Q (Q*Q + 1 - P)^{-1} Q*. L need not be injective on E."
+      },
+      {
+       "name": "finite Grassmannian comparison",
+       "role": "compatibility",
+       "statement": "for N = dim E and a surjective linear isometry e: E -> EuclideanSpace R (Fin N), S -> e^{-1} P_S e (P_S the orthogonal projection onto S read through TauCeti.finiteGrassmannian.toEuclidean) is a homeomorphism of TauCeti.finiteGrassmannian R k N onto G(E,k), with inverse P -> e(range P); replacing e by O e (O orthogonal) precomposes with S -> O^{-1} S. Route: continuous by TauCeti.finiteGrassmannian.continuous_starProjection_toEuclidean, injective by toEuclidean_injective, onto by isStarProjection_iff_eq_starProjection_range, homeomorphism by compactness of the source and Continuous.homeoOfEquivCompactToT2."
       }
      ],
      "tests": [
@@ -66,7 +76,7 @@
       {
        "name": "degenerate ranks",
        "kind": "degenerate",
-       "statement": "G(E,0) = {0} and G(E,dim E) = {1}."
+       "statement": "G(E,0) = {0} and G(E,dim E) = {1}; G(R,2) is empty (a self-adjoint idempotent of R is 0 or 1)."
       },
       {
        "name": "idempotent non-example",
@@ -82,6 +92,16 @@
        "name": "image plane boundary",
        "kind": "non-example",
        "statement": "for L_s = diag(1,s) and lines l_theta the image line tends to l_0 along s = 0 and to l_{pi/2} along theta = pi/2, so there is no continuous extension at (diag(1,0), P_{l_{pi/2}}); diag(1,0) is injective on l_0, A = 1 and the projection there is P_{l_0}."
+      },
+      {
+       "name": "isometric inclusion",
+       "kind": "non-example",
+       "statement": "the inclusion t -> (t,0) of R into R^2 is a non-surjective linear isometry: G(R,1) = {1} goes to diag(1,0) only, P_{l_{pi/2}} = diag(0,1) is missed and U^{-1} does not exist; a rotation of R^2 conjugates l_theta to l_{theta+phi} and reaches every line. For k = 0 the same U maps G(R,0) = {0} onto G(R^2,0) = {0}: the image is everything though U is not surjective."
+      },
+      {
+       "name": "finite Grassmannian comparison",
+       "kind": "compatibility",
+       "statement": "for E = EuclideanSpace R (Fin 2), e = id, k = 1: span(cos theta, sin theta) goes to P_{l_theta}; with e the rotation by phi it goes to P_{l_{theta - phi}}; span(1,1) goes to (1/2)[[1,1],[1,1]] = P_{l_{pi/4}}, while the unnormalised outer product [[1,1],[1,1]] squares to twice itself; k = 0 and k = N give one point on both sides."
       }
      ]
     },
@@ -122,7 +142,7 @@
       {
        "name": "isometries",
        "role": "functoriality",
-       "statement": "an isometry f induces (x,P) -> (f x, df P df^{-1})."
+       "statement": "an isometry f of an open set of (M,g) onto an open set of (M',g') (C^1 diffeomorphism with f*g' = g, each df_x a surjective linear isometry) induces (x,P) -> (f x, df P df^{-1})."
       },
       {
        "name": "change of metric",
@@ -195,7 +215,7 @@
       {
        "name": "restriction",
        "role": "functoriality",
-       "statement": "restriction to open sets is transitive, local and commutes with weights."
+       "statement": "restriction to open sets is transitive, local and commutes with weights; for open W' the restriction has support spt||V|| cap W', taken in W'."
       }
      ],
      "tests": [
@@ -213,6 +233,11 @@
        "name": "degenerate",
        "kind": "degenerate",
        "statement": "V restricted to the empty set is 0; spt of a Dirac varifold at x is {x}."
+      },
+      {
+       "name": "support of a restriction",
+       "kind": "computation",
+       "statement": "the horizontal lift of H^1 on [0,1] x {0} restricted to the open disc of radius 1/2 about 0 has support [0,1/2) x {0} = spt cap W', closed in W' but not in R^2."
       }
      ]
     },
@@ -365,20 +390,26 @@
      ],
      "locator": {
       "source": "Simon1983",
-      "where": "15.1-15.5 line 2861-2897; 38 line 7318-7326"
+      "where": "15.1-15.5 line 2861-2897; 38 line 7318-7326; 3.5 line 774-788"
      },
      "prerequisites": [
       "target:1.3",
       "target:2.1",
       "roadmap:GeometricMeasureTheory G2",
       "roadmap:GeometricCurrents G2",
-      "tauceti:TauCeti.CountablyRectifiable"
+      "tauceti:TauCeti.CountablyRectifiable",
+      "mathlib:Vitali.exists_disjoint_subfamily_covering_enlargement"
      ],
      "api": [
       {
        "name": "weight",
        "role": "evaluation",
        "statement": "||v(Gamma,theta)|| = theta H^k on Gamma; mass is the integral of theta."
+      },
+      {
+       "name": "vanishing off the carrier",
+       "role": "evaluation",
+       "statement": "the upper density of ||v(Gamma,theta)|| vanishes at H^k-a.e. point of W \\ Gamma (Simon 3.5)."
       },
       {
        "name": "null modification",
@@ -421,6 +452,11 @@
        "name": "crossing lines",
        "kind": "computation",
        "statement": "v(L1 u L2,1) = v(L1,1) + v(L2,1)."
+      },
+      {
+       "name": "open segment endpoints",
+       "kind": "degenerate",
+       "statement": "for v((0,1) x {0},1) the endpoints lie off Gamma with density 1/2: the vanishing holds only H^1-a.e. off Gamma."
       }
      ]
     },
@@ -428,7 +464,7 @@
      "id": "2.3",
      "kind": "definition",
      "name": "Varifolds.submanifoldVarifold",
-     "statement": "[Sigma] = v(Sigma,1) for a C^1 embedded k-submanifold Sigma of W with locally finite area; its tangent planes are the classical ones and its weight is the Riemannian volume of Sigma.",
+     "statement": "[Sigma] = v(Sigma,1) for a C^1 embedded k-submanifold Sigma of W with locally finite area (possibly non-compact, non-orientable, not closed); its tangent planes are the classical ones and its weight H^k restricted to Sigma is the Riemannian volume of Sigma for the continuous induced metric (this roadmap's chart comparison).",
      "hypotheses": [
       "Sigma C^1 embedded k-submanifold of W, H^k(Sigma cap K) < inf for compact K"
      ],
@@ -440,7 +476,9 @@
       "target:2.2",
       "roadmap:GeometricMeasureTheory G2",
       "roadmap:GeometricCurrents G2",
-      "tauceti:TauCeti.riemannianVolume"
+      "tauceti:TauCeti.riemannianVolume",
+      "tauceti:TauCeti.eq_riemannianVolume_iff",
+      "mathlib:LinearMap.normDet_comp"
      ],
      "api": [
       {
@@ -451,7 +489,7 @@
       {
        "name": "weight",
        "role": "compatibility",
-       "statement": "weight equals the Riemannian volume of Sigma with the induced metric."
+       "statement": "weight equals the Riemannian volume of Sigma with the induced continuous metric: by eq_riemannianVolume_iff compare on small chart sources, GMT G2 area formula (injective case) for the chart parametrisation, GeometricCurrents G2 chart comparison of H^k for d_g, normDet_comp; agrees with GeometricCurrents G2's mass of a compact oriented smooth source."
       },
       {
        "name": "support",
@@ -464,6 +502,11 @@
        "name": "circle",
        "kind": "computation",
        "statement": "the unit circle gives mass 2 pi."
+      },
+      {
+       "name": "C1 graph",
+       "kind": "computation",
+       "statement": "graph of |t|^{3/2} over (-1,1): induced metric (1 + (9/4)|t|) dt^2, H^1(Sigma) = integral of sqrt(1 + (9/4)|t|) = (26 sqrt 13 - 16)/27 ~ 2.879 > 2 sqrt 2; non-compact, C^1 not C^2."
       },
       {
        "name": "half-line",
@@ -487,7 +530,7 @@
      "id": "3.1",
      "kind": "construction",
      "name": "Varifolds.Varifold.pushforward",
-     "statement": "For f: W -> W' of class C^1, proper on spt||V||, f_#V(A) = integral of 1_A(f x, df_x S) J_S f(x) dV(x,S), with J_S f = normDet(df_x restricted to S).",
+     "statement": "For f: W -> W' of class C^1, proper on spt||V||, f_#V(A) = integral of 1_A(f x, df_x S) J_S f(x) dV(x,S), with J_S f = normDet(df_x restricted to S). No bound on dim M' is assumed: if dim M' < k, no df_x is injective on a k-plane, J_S f = 0 identically, G_k(W') is empty and f_#V = 0; for dim M' >= k this case does not arise.",
      "hypotheses": [
       "f C^1",
       "f proper on spt||V||"
@@ -518,7 +561,7 @@
       {
        "name": "isometry",
        "role": "compatibility",
-       "statement": "for isometries J = 1 and f_# is the measure push-forward."
+       "statement": "for an isometry f of W onto W', J = 1 and f_# is the measure push-forward along 1.2's homeomorphism; for an isometric immersion, J = 1 and f_# is the measure push-forward along (x,P) -> (f x, df P df*)."
       },
       {
        "name": "mass bound",
@@ -528,7 +571,7 @@
       {
        "name": "continuity",
        "role": "continuity",
-       "statement": "f_# preserves convergence on sets where f is uniformly proper."
+       "statement": "if f is proper on a closed set F containing spt||V_j|| for all j and spt||V||, then V_j -> V implies f_#V_j -> f_#V: for phi in C_c(G_k(W')), the integrand (x,S) -> J_S f(x) phi(f x, df_x S) extends continuously by 0 to {J = 0} and on G_k(F) vanishes outside the compact set G_k(f^{-1}(pi(spt phi)) cap F), so a cutoff chi o pi makes it a test function with the same integrals."
       },
       {
        "name": "rectifiable",
@@ -556,6 +599,11 @@
        "name": "non-proper",
        "kind": "non-example",
        "statement": "collapsing infinitely many vertical segments gives infinite mass: properness is needed."
+      },
+      {
+       "name": "target of dimension below k",
+       "kind": "degenerate",
+       "statement": "f(y) = y_1 from R^2 to R, k = 2, V = v(unit disc, 1): normDet(df_x) = 0 everywhere and G_2(R) is empty, so f_#V = 0; dropping the Jacobian and recording the image line would give a measure on G_1(R) of weight 2 sqrt(1 - t^2) dt and mass pi, a 1-varifold."
       }
      ]
     },
@@ -721,7 +769,7 @@
       {
        "name": "locality",
        "role": "structure",
-       "statement": "deltaV(X) = 0 if X vanishes on an open set containing spt||V|| cap spt X; restriction to open sets."
+       "statement": "V is carried by G_k(spt||V||) and div_S X(x) depends only on nabla X(x), so deltaV(X) = 0 when nabla X vanishes at every point of spt||V||, in particular when spt X cap spt||V|| is empty; restriction to open sets."
       },
       {
        "name": "continuity",
@@ -759,14 +807,61 @@
        "name": "support dependence",
        "kind": "non-example",
        "statement": "the vertical lift of H^1 on an axis has deltaV(X) != 0 for some X vanishing on the support."
+      },
+      {
+       "name": "one-jet locality",
+       "kind": "computation",
+       "statement": "V = v(L,1), L the x-axis of R^2, X = psi(y) y_2^2 e_1: spt X meets L but DX = 0 on L, and div_L X = d_1(psi y_2^2) = 0 on L, so deltaV(X) = 0."
       }
      ]
     },
     {
      "id": "4.2",
+     "kind": "theorem",
+     "name": "Varifolds.rieszRepresentation_vectorField",
+     "statement": "A linear functional L on compactly supported continuous vector fields on W with local sup bounds is integration of a unit field eta against a unique Radon measure ||L||, with ||L||(U) = sup{L(X): |X| <= 1, spt X subset U}. On a frame domain ||L|| is the chart image of Tau Ceti's Distribution.massMeasure of the frame-coordinate functional (C^0 tests, Euclidean norm); the polar field and the gluing over W are built here.",
+     "hypotheses": [
+      "local bounds sup{L(X): |X| <= 1, spt X subset K} < inf for compact K"
+     ],
+     "locator": {
+      "source": "Simon1983",
+      "where": "4.1-4.2 line 857-882"
+     },
+     "prerequisites": [
+      "tauceti:Distribution.HasLocallyFiniteMass",
+      "tauceti:Distribution.massMeasure",
+      "tauceti:Distribution.massMeasure_preimage_coe",
+      "tauceti:Distribution.enorm_apply_le_lintegral_massMeasure",
+      "tauceti:TauCeti.RealRMK.posPart",
+      "tauceti:TauCeti.RealRMK.negPart",
+      "tauceti:TauCeti.RealRMK.integral_rieszMeasure_posPart_sub_integral_rieszMeasure_negPart",
+      "mathlib:RealRMK.rieszMeasure",
+      "mathlib:MeasureTheory.Measure.rnDeriv"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Dirac",
+       "kind": "computation",
+       "statement": "L(X) = <X(0),v>: for v != 0, ||L|| = |v| delta_0 and eta(0) = v/|v| (v = 2e_1 gives 2 delta_0 and e_1); for v = 0, L = 0, ||L|| = 0 and eta is unconstrained on the null set, so eta is unique only ||L||-a.e."
+      },
+      {
+       "name": "cancellation",
+       "kind": "degenerate",
+       "statement": "two cancelling terms give ||L|| = 0."
+      },
+      {
+       "name": "Euclidean norm",
+       "kind": "non-example",
+       "statement": "L(X) = integral of X^1 + X^2 gives sqrt 2 Lebesgue, not 2 Lebesgue: the mass-measure supremum on U is sqrt 2 vol(U) with EuclideanSpace-valued tests, and would be 2 vol(U) with the sup norm of Fin 2 -> R."
+      }
+     ]
+    },
+    {
+     "id": "4.3",
      "kind": "definition",
      "name": "Varifolds.Varifold.IsStationary",
-     "statement": "V is stationary if deltaV = 0; V has locally bounded first variation if |deltaV(X)| <= C_K sup|X| for spt X subset K; then ||deltaV|| is Radon with the open-set sup formula and is lower semicontinuous under convergence.",
+     "statement": "V is stationary if deltaV = 0; V has locally bounded first variation if |deltaV(X)| <= C_K sup|X| for spt X subset K; then ||deltaV|| (from 4.2) is Radon with the open-set sup formula and is lower semicontinuous under convergence.",
      "hypotheses": [
       "V varifold on W"
      ],
@@ -776,7 +871,7 @@
      },
      "prerequisites": [
       "target:4.1",
-      "target:4.3"
+      "target:4.2"
      ],
      "api": [
       {
@@ -814,48 +909,10 @@
      ]
     },
     {
-     "id": "4.3",
-     "kind": "theorem",
-     "name": "Varifolds.rieszRepresentation_vectorField",
-     "statement": "A linear functional L on compactly supported continuous vector fields on W with local sup bounds is integration of a unit field eta against a unique Radon measure ||L||, with ||L||(U) = sup{L(X): |X| <= 1, spt X subset U}.",
-     "hypotheses": [
-      "local bounds sup{L(X): |X| <= 1, spt X subset K} < inf for compact K"
-     ],
-     "locator": {
-      "source": "Simon1983",
-      "where": "4.1-4.2 line 857-882"
-     },
-     "prerequisites": [
-      "tauceti:TauCeti.RealRMK.posPart",
-      "tauceti:TauCeti.RealRMK.negPart",
-      "tauceti:TauCeti.RealRMK.integral_rieszMeasure_posPart_sub_integral_rieszMeasure_negPart",
-      "mathlib:RealRMK.rieszMeasure",
-      "mathlib:MeasureTheory.Measure.rnDeriv"
-     ],
-     "api": [],
-     "tests": [
-      {
-       "name": "Dirac",
-       "kind": "computation",
-       "statement": "L(X) = <X(0),v> gives |v| delta_0 and eta = v/|v|."
-      },
-      {
-       "name": "cancellation",
-       "kind": "degenerate",
-       "statement": "two cancelling terms give ||L|| = 0."
-      },
-      {
-       "name": "Euclidean norm",
-       "kind": "non-example",
-       "statement": "L(X) = integral of X^1 + X^2 gives sqrt 2 Lebesgue, not 2 Lebesgue."
-      }
-     ]
-    },
-    {
      "id": "4.4",
      "kind": "theorem",
      "name": "Varifolds.Varifold.firstVariation_eq_riesz",
-     "statement": "For locally bounded first variation, deltaV(X) = -integral <H_V,X> d||V|| + integral <eta_V,X> d sigma_V with H_V in L^1_loc, sigma_V = ||deltaV|| on a ||V||-null set, |eta_V| = 1; stationary iff H_V = 0 and sigma_V = 0; isometry and dilation laws.",
+     "statement": "For locally bounded first variation, deltaV(X) = -integral <H_V,X> d||V|| + integral <eta_V,X> d sigma_V with H_V in L^1_loc, sigma_V = ||deltaV|| on a ||V||-null set, |eta_V| = 1; stationary iff H_V = 0 and sigma_V = 0; laws for smooth isometries onto open sets and for dilations.",
      "hypotheses": [
       "V of locally bounded first variation in W"
      ],
@@ -867,7 +924,10 @@
       "target:4.2",
       "target:4.3",
       "mathlib:MeasureTheory.Measure.rnDeriv",
-      "mathlib:MeasureTheory.Measure.singularPart"
+      "mathlib:MeasureTheory.Measure.singularPart",
+      "mathlib:ContMDiff.mpullback_vectorField",
+      "tauceti:TauCeti.IsLocalRiemannianIsometry.mfderiv_leviCivitaConnection_mpullback",
+      "tauceti:Bundle.ContMDiffRiemannianMetric.restrictOpenTangentSpace"
      ],
      "api": [
       {
@@ -884,6 +944,11 @@
        "name": "dilations",
        "role": "functoriality",
        "statement": "delta(V_{x,lambda})(Y) = lambda^{1-k} deltaV(Y o eta), H scales by lambda."
+      },
+      {
+       "name": "smooth isometries",
+       "role": "functoriality",
+       "statement": "for a smooth isometry f of W onto an open W' (f*g' = g), delta(f_#V)(Y) = deltaV(f^*Y) with f^*Y = df^{-1}(Y o f) of class C^1 (Mathlib ContMDiff.mpullback_vectorField) and f carrying the Levi-Civita connection (TauCeti.IsLocalRiemannianIsometry.mfderiv_leviCivitaConnection_mpullback); hence ||delta f_#V|| = f_*||deltaV||, H_{f_#V}(f x) = df_x H_V(x), sigma_{f_#V} = f_* sigma_V, eta transported by df. For f only C^1, f^*Y is only continuous; smoothness of C^1 isometries (Myers-Steenrod) is not used."
       }
      ],
      "tests": [
@@ -901,6 +966,11 @@
        "name": "sphere",
        "kind": "compatibility",
        "statement": "H_{[S^k]} = -k x; dilated circle has |H| = lambda/R."
+      },
+      {
+       "name": "isometry direction",
+       "kind": "computation",
+       "statement": "rotation R by pi/2 and the unit circle: at R e_1 = e_2 the mean curvature is -e_2 = R(-e_1) = df(H(e_1)); a law without df would give -e_1, tangent to the circle at e_2."
       }
      ]
     },
@@ -922,6 +992,8 @@
       "target:3.1",
       "target:3.2",
       "target:4.1",
+      "target:4.3",
+      "target:4.4",
       "roadmap:HopfRinow Layer 2",
       "mathlib:CovariantDerivative.leviCivitaConnection"
      ],
@@ -930,7 +1002,7 @@
       {
        "name": "conformal constant",
        "kind": "computation",
-       "statement": "h = c^2 g gives |c^k - 1| |delta_g V(X)|."
+       "statement": "h = c^2 g gives |c^k - 1| |delta_g V(X)|; for the flat metric g = e this is at most k|c^k - 1| sup|DX| ||V||(K)."
       },
       {
        "name": "derivative term",
@@ -941,6 +1013,11 @@
        "name": "great circle",
        "kind": "compatibility",
        "statement": "blow-ups of a great circle on S^2 are lines with zero Euclidean first variation."
+      },
+      {
+       "name": "connection term",
+       "kind": "non-example",
+       "statement": "g = e^{4t}dt^2 on R, h = 4g, V = delta_{(0,1)}, X = (1-t^2)^2 on [-1,1]: Christoffel symbol 2, delta_g V(X) = 2, delta_h V^h(X) = 4, difference 2 > k|c^k - 1| sup|X'| = 8/(3 sqrt 3); the derivative-only bound fails off the flat metric."
       }
      ]
     }
@@ -954,7 +1031,7 @@
      "id": "5.1",
      "kind": "theorem",
      "name": "Varifolds.firstVariation_submanifold",
-     "statement": "For a C^2 embedded k-submanifold Sigma closed in W with locally finite area, delta[Sigma](X) = -k integral <H_Sigma,X> dH^k with H_Sigma the averaged mean curvature; [Sigma] is stationary iff Sigma is minimal; agrees with R5a.2 for smooth Sigma.",
+     "statement": "For a C^2 embedded k-submanifold Sigma closed in W with locally finite area, with B(X,Y) = (nabla_X Y)^perp on C^1 tangent fields and H_Sigma = (1/k) tr B (this roadmap's convention for C^2 Sigma; R5a's B and R5a.2's H for smooth Sigma), delta[Sigma](X) = -k integral <H_Sigma,X> dH^k; [Sigma] is stationary iff H_Sigma = 0; agrees with R5a.2's first volume variation for smooth Sigma.",
      "hypotheses": [
       "1 <= k <= N",
       "Sigma C^2 embedded, closed in W, locally finite area"
@@ -992,6 +1069,11 @@
        "name": "top dimension",
        "kind": "degenerate",
        "statement": "[W] is stationary for k = N."
+      },
+      {
+       "name": "C2 graph",
+       "kind": "computation",
+       "statement": "graph of |t|^{5/2} over (-1,1): C^2, not smooth, B(tau,tau) = u''(1+u'^2)^{-3/2} nu continuous; for X = phi(y_1)chi(y_2)e_2 both sides equal -integral phi u''(1+u'^2)^{-3/2} dt."
       }
      ]
     },
@@ -1006,7 +1088,7 @@
      ],
      "locator": {
       "source": "Simon1983",
-      "where": "9.6 line 2005-2016; 16.4 line 2954-2971; 41.2(3) line 7675-7682"
+      "where": "9.6 line 2005-2016; 16.4 line 2954-2971 (rectifiable case); 41.2(3) line 7675-7682"
      },
      "prerequisites": [
       "target:3.1",
@@ -1052,7 +1134,7 @@
      ],
      "locator": {
       "source": "Simon1983",
-      "where": "17.2-17.6 line 3016-3076; 40.1-40.4 line 7513-7547"
+      "where": "17.2-17.6 line 3016-3076 (rectifiable case); 40.1-40.4 line 7513-7547"
      },
      "prerequisites": [
       "target:4.4"
@@ -1119,13 +1201,13 @@
      "id": "6.3",
      "kind": "definition",
      "name": "Varifolds.density",
-     "statement": "Theta^k(mu,x) = lim mu(B_rho(x))/(omega_k rho^k); for locally bounded first variation it exists ||V||-a.e., everywhere under bounded mean curvature without boundary; it is measurable, upper semicontinuous in x and under convergence when ||deltaV|| <= Lambda||V||, and >= 1 on the support for rectifiable V with Theta >= 1 a.e.",
+     "statement": "Theta^k(mu,x) = lim mu(B_rho(x))/(omega_k rho^k); for locally bounded first variation it exists wherever the ratio bound ||deltaV||(B_rho(x)) <= Lambda||V||(B_rho(x)) holds for small rho, everywhere under bounded mean curvature without boundary, and ||V||-a.e. (in E the ratio bound holds a.e.; on M the geodesic ratio bound holds a.e. where Theta > 0, existence a.e. by chart balls and 6.2); it is measurable, upper semicontinuous in x and under convergence when ||deltaV|| <= Lambda||V||, and, for rectifiable V with Theta >= 1 a.e. and ||deltaV|| <= Lambda||V|| on an open U subset W, >= 1 on spt||V|| cap U, with ||V||(Bbar_rho(x)) >= e^{-(Lambda + k sqrt kappa) rho} omega_k rho^k for 0 < rho < rho_0 when x in spt||V|| cap U, kappa and rho_0 are as in 6.2 and B_{rho_0}(x) subset U.",
      "hypotheses": [
       "V locally bounded first variation in W"
      ],
      "locator": {
       "source": "Simon1983",
-      "where": "17.8-17.9 line 3119-3152; 40.5 line 7550-7565"
+      "where": "17.8-17.9 line 3119-3152 (rectifiable case); 40.5 line 7550-7565"
      },
      "prerequisites": [
       "target:1.4",
@@ -1140,7 +1222,7 @@
       {
        "name": "existence",
        "role": "structure",
-       "statement": "exists where the first-variation ratio is bounded; a.e. in general."
+       "statement": "exists where the first-variation ratio is bounded; a.e. in general (on M by chart-ball Besicovitch and 6.2, without a geodesic ratio bound); on M the geodesic ratio bound holds a.e. at points of positive density."
       },
       {
        "name": "measurability",
@@ -1160,7 +1242,7 @@
       {
        "name": "lower bound",
        "role": "structure",
-       "statement": "Theta >= 1 on spt for rectifiable V with Theta >= 1 a.e."
+       "statement": "Theta >= 1 on spt||V|| cap U for rectifiable V with Theta >= 1 a.e. and ||deltaV|| <= Lambda||V|| on an open U subset W; if moreover kappa, rho_0 are as in 6.2 and B_{rho_0}(x) subset U, then ||V||(Bbar_rho(x)) >= e^{-(Lambda + k sqrt kappa) rho} omega_k rho^k for 0 < rho < rho_0."
       }
      ],
      "tests": [
@@ -1188,6 +1270,16 @@
        "name": "half multiplicity",
        "kind": "degenerate",
        "statement": "v(L,1/2) has Theta = 1/2."
+      },
+      {
+       "name": "null point of density zero",
+       "kind": "non-example",
+       "statement": "v(L, e^{-1/|t|}): ||deltaV||(B_rho(0)) = 2e^{-1/rho}, ||V||(B_rho(0)) <= 2 rho^2 e^{-1/rho}, ratio >= rho^{-2} at the null point 0 where Theta = 0 exists; doubling ratio >= (2r)^{-1} e^{1/(3r)} unbounded."
+      },
+      {
+       "name": "ball inside U",
+       "kind": "non-example",
+       "statement": "V = v([-a,a] x {0},1) in R^2, U = B_a(0), Lambda = kappa = 0, x = 0: ||deltaV|| = delta_{(-a,0)} + delta_{(a,0)} vanishes on U, but ||V||(Bbar_{2a}(0)) = 2a < 4a = omega_1 2a; with B_{rho_0}(0) subset U, rho < a and ||V||(Bbar_rho(0)) = 2 rho, equality."
       }
      ]
     },
@@ -1208,8 +1300,10 @@
      "prerequisites": [
       "target:2.3",
       "target:3.3",
-      "target:4.2",
+      "target:4.3",
       "target:6.3",
+      "mathlib:Besicovitch.ae_tendsto_rnDeriv",
+      "mathlib:MeasureTheory.Measure.setLIntegral_rnDeriv_le",
       "roadmap:GeometricCurrents G1"
      ],
      "api": [],
@@ -1233,6 +1327,16 @@
        "name": "non-closed curve",
        "kind": "degenerate",
        "statement": "the graph of sin(1/t) over (0,1) is connected, C^2 embedded, of infinite length in the closed ball of radius 2 and not closed; only V = 0 is stationary with support in it, the first alternative."
+      },
+      {
+       "name": "nonconstant volume density",
+       "kind": "non-example",
+       "statement": "on R with g = e^{2t}dt^2, V = [R] is stationary (deltaV(X) = integral of (e^t X)' dt = 0) with coordinate multiplicity 1, while 1 times the volume density e^t is not constant: constancy concerns the coordinate multiplicity."
+      },
+      {
+       "name": "atom on a line",
+       "kind": "non-example",
+       "statement": "V' = v(L,1) + delta_{(0,L)} on R^2 has weight H^1 on L plus delta_0, carried by L but not absolutely continuous with respect to H^1 on L; its density at 0 is infinite, the ratio of dt(closed ball r) to the chart image of the weight at 0 is 2r/(2r+1) -> 0, and deltaV'(psi y_1 e_1) = 0 + 1 = 1, so V' is not stationary: finite density is what the absolute continuity step uses."
       }
      ]
     },
@@ -1248,7 +1352,7 @@
      ],
      "locator": {
       "source": "Simon1983",
-      "where": "19.1-19.2 line 3373-3400"
+      "where": "19.1-19.2 line 3371-3400 (rectifiable case; the general case is this roadmap's, by the same test field)"
      },
      "prerequisites": [
       "target:4.4"
@@ -1268,7 +1372,7 @@
       {
        "name": "Dirac",
        "kind": "degenerate",
-       "statement": "delta_{(0,P)} is stationary off {0} and lies in {0}."
+       "statement": "delta_{(0,P)} is stationary off {0} and lies in {0}; for k >= 1 it is not rectifiable, so the rectifiable case of the source does not cover it."
       }
      ]
     }
@@ -1284,6 +1388,7 @@
      "name": "Varifolds.density_ge_one_of_tendsto",
      "statement": "For metrics g_i -> g in C^2 on compacts and varifolds V_i -> V with lim inf ||delta_{g_i}V_i||(U) finite and Theta_{g_i} >= 1 outside sets of vanishing mass: V has locally bounded first variation, ||delta V||(U) <= lim inf, and Theta_g(||V||,.) >= 1 a.e.",
      "hypotheses": [
+      "V_i -> V on G_k^g(W)",
       "g_i -> g in C^2 on compact sets",
       "lim inf ||delta V_i||(U) < inf",
       "density bound outside B_i with ||V_i||(B_i cap K) -> 0"
@@ -1295,7 +1400,7 @@
      "prerequisites": [
       "target:1.2",
       "target:1.4",
-      "target:4.2",
+      "target:4.3",
       "target:4.5",
       "target:6.2",
       "target:6.3",
@@ -1332,14 +1437,15 @@
      ],
      "locator": {
       "source": "Simon1983",
-      "where": "42.1-42.3 line 7733-7774; 19.3 line 3414-3450"
+      "where": "42.1-42.3 line 7733-7774; 19.3 line 3414-3481 (rectifiable case)"
      },
      "prerequisites": [
       "target:1.4",
       "target:3.2",
       "target:4.5",
       "target:6.1",
-      "target:6.3"
+      "target:6.3",
+      "mathlib:MeasureTheory.Measure.ext_of_integral_eq_on_compactlySupported"
      ],
      "api": [
       {
@@ -1378,6 +1484,11 @@
        "name": "great circle",
        "kind": "compatibility",
        "statement": "on S^2, VarTan = {v(T_x C,1)}."
+      },
+      {
+       "name": "ball masses",
+       "kind": "non-example",
+       "statement": "the measure with density 1 + (1/2) sin(log r) cos theta in dr dtheta on R^2 has mu(B_rho) = 2 pi rho but lambda^{-1} integral over B_lambda of cos theta is -pi/4 at lambda = 1 and pi/4 at lambda = e^pi: radial tests do not give dilation invariance of the weight."
       }
      ]
     },
@@ -1426,11 +1537,12 @@
      "id": "7.4",
      "kind": "theorem",
      "name": "Varifolds.compactness_rectifiable",
-     "statement": "For metrics g_i -> g in C^2 and rectifiable V_i with locally bounded masses and first variations and Theta >= 1 outside vanishing sets, a subsequence converges to a rectifiable V with locally bounded first variation, Theta >= 1 a.e., ||deltaV|| <= lim inf; stationarity passes to the limit.",
+     "statement": "For metrics g_i -> g in C^2 and any sequence of rectifiable V_i with locally bounded masses and first variations and Theta >= 1 outside vanishing sets, some subsequence V_{i_j} converges, and every subsequential limit V is rectifiable with locally bounded first variation, Theta >= 1 a.e., ||deltaV||(U) <= lim inf_j ||delta V_{i_j}||(U); stationarity passes to the limit.",
      "hypotheses": [
       "g_i -> g in C^2",
       "sup (||V_i||(U) + ||delta V_i||(U)) < inf",
-      "density bound"
+      "density bound",
+      "no convergence of (V_i) assumed"
      ],
      "locator": {
       "source": "Simon1983",
@@ -1444,9 +1556,14 @@
      "api": [],
      "tests": [
       {
+       "name": "alternating lines",
+       "kind": "degenerate",
+       "statement": "the lines y_2 = 0 (even i) and y_2 = 1 (odd i) satisfy the hypotheses, the full sequence does not converge (test integrals alternate 1, 0), and the even and odd subsequences converge."
+      },
+      {
        "name": "zigzags",
        "kind": "non-example",
-       "statement": "unbounded first variation; limit with planes at +-45 degrees is not rectifiable."
+       "statement": "zigzags of slopes +-1 and amplitude 1/i over [0,1]: ||deltaV_i|| = sqrt 2 (i - 1) + 2 (interior corners and the two endpoint atoms) -> inf; the limit with planes at +-45 degrees is not rectifiable."
       },
       {
        "name": "shrinking circles",
@@ -1464,28 +1581,34 @@
      "id": "7.5",
      "kind": "theorem",
      "name": "Varifolds.multiplicity_lemma",
-     "statement": "For delta in (0,1), Lambda >= 1 there is epsilon such that every integral varifold W on B_3(0) for a metric h with ||h - e||_{C^2} <= epsilon satisfying Simon's mass, first-variation and tilt hypotheses has, outside a set of measure <= delta, fibre density sums over the slab |q| < epsilon at most (1+delta)(omega_k 2^k)^{-1}||W||(B_2(x)) + delta.",
+     "statement": "For delta in (0,1), Lambda >= 1 there is epsilon in (0, delta^2) such that every integral varifold V on B_3(0) for a metric h with ||h - e||_{C^2} < epsilon^2, ||V||(B_3(0)) <= Lambda, ||delta_h V||(B_3(0)) < epsilon^2 and tilt integral of ||P_S - p|| < epsilon^2 has a Borel set Z in spt||V|| n B_2(0) with ||V||(Z) < delta such that for every x in B_1(0) n R^k x {0} the densities at the fibre points y in p^{-1}(x) n spt||V|| \\ Z with |q(y)| < epsilon exist and sum to at most (1+delta)(omega_k 2^k)^{-1}||V||(B_2(x)) + delta; p(Z) n B_1(0) lies in a Borel set A of Lebesgue measure < delta, so off A the bound holds for the whole fibre sum (Simon's Lemma 42.9 when h = e). Z is the part of positive upper density of the set where the ratio bounds fail; Z, its mass bound and the bound off Z over every x come from Simon's proof; h != e is this roadmap's.",
      "hypotheses": [
-      "W integral on B_3(0)",
-      "||h - e||_{C^2(B_3)} <= epsilon",
-      "mass <= Lambda, ||delta_h W|| <= epsilon, tilt <= epsilon"
+      "V integral on B_3(0) for h",
+      "||h - e||_{C^2(B_3)} < epsilon^2",
+      "||V||(B_3(0)) <= Lambda, ||delta_h V||(B_3(0)) < epsilon^2, tilt < epsilon^2"
      ],
      "locator": {
       "source": "Simon1983",
-      "where": "42.9-42.10 line 7986-8151"
+      "where": "42.9 line 7991-8000 (h = e); proof 42.10 and 42.9 line 8001-8151 (set Z and its mass bound line 8014-8048); 3.5 line 774-788"
      },
      "prerequisites": [
+      "target:2.1",
+      "target:2.2",
       "target:4.5",
       "target:6.1",
       "target:6.2",
-      "target:6.3"
+      "target:6.3",
+      "target:7.1",
+      "target:7.2",
+      "mathlib:HasBesicovitchCovering",
+      "mathlib:LipschitzWith.hausdorffMeasure_image_le"
      ],
      "api": [],
      "tests": [
       {
        "name": "plane with multiplicity",
        "kind": "computation",
-       "statement": "m v(R^k x {0},1): fibre sum m <= (1+delta) m + delta."
+       "statement": "m v(R^k x {0},1): fibre sum m <= (1+delta) m + delta, with Z = A = empty."
       },
       {
        "name": "two sheets",
@@ -1496,6 +1619,26 @@
        "name": "tilted plane",
        "kind": "non-example",
        "statement": "large tilt violates the hypotheses."
+      },
+      {
+       "name": "parameter accounting",
+       "kind": "non-example",
+       "statement": "the Besicovitch bound on ||V||(R) is c epsilon^{-1}(epsilon^2 + epsilon^2) = 2c epsilon; with unsquared thresholds it would be 2c, and the mass bound on Z (hence the measure bound on A) would be lost."
+      },
+      {
+       "name": "spikes",
+       "kind": "non-example",
+       "statement": "psi_i = 1 + i 1_{E_i} with i 1_{E_i} -> 1/2 weakly and L^k(E_i) -> 0: integer valued, <= 3/2 off a set of small measure, psi_i L^k -> (3/2) L^k, but min(psi_i,2) -> 1 in L^1; the mass bound on Z excludes it (Z would carry mass about omega_k/2)."
+      },
+      {
+       "name": "dense small discs",
+       "kind": "non-example",
+       "statement": "k = 2, N = 3: disjoint horizontal discs of radii r_j < epsilon with dense centres and sum 2 pi r_j < epsilon^2; every y in B_2(0) fails the first-variation ratio bound at some rho in (1/2,1), so the failure set R projects onto the unit disc (measure pi), while its positive-density part Z projects into a set of measure < epsilon^2."
+      },
+      {
+       "name": "density one half on R",
+       "kind": "non-example",
+       "statement": "k = 2, N = 3, V = v(D,1) for a horizontal disc of radius r with 2 pi r < epsilon^2: a boundary point has density 1/2, the ratio ||deltaV||(B_rho)/||V||(B_rho) >= 4/(pi rho) > epsilon for rho <= r, so it lies in R and in Z; the dichotomy 'density 0 or at least 1' holds only off R, where 7.2, 7.1 and 6.3 give it and bound the number of counted points by (1+delta)Lambda(omega_k 2^k)^{-1} + delta."
       }
      ]
     },
@@ -1503,7 +1646,7 @@
      "id": "7.6",
      "kind": "theorem",
      "name": "Varifolds.compactness_integral",
-     "statement": "In 7.4, if the V_i are integral then the limit is integral.",
+     "statement": "In 7.4, if the V_i are integral then every subsequential limit is integral.",
      "hypotheses": [
       "hypotheses of 7.4",
       "V_i integral"
@@ -1513,12 +1656,14 @@
       "where": "42.8 line 7899-7985"
      },
      "prerequisites": [
+      "target:2.1",
       "target:3.1",
       "target:3.3",
       "target:4.5",
       "target:7.4",
       "target:7.5",
-      "mathlib:HasBesicovitchCovering"
+      "mathlib:HasBesicovitchCovering",
+      "mathlib:LipschitzWith.hausdorffMeasure_image_le"
      ],
      "api": [],
      "tests": [
@@ -1643,6 +1788,7 @@
      "prerequisites": [
       "target:1.3",
       "target:3.1",
+      "target:4.1",
       "target:6.4"
      ],
      "api": [
@@ -1664,7 +1810,7 @@
       {
        "name": "constant multiplicity",
        "role": "characterisation",
-       "statement": "stationary V is a constant multiple of [spt] near points of reg^2."
+       "statement": "if V is stationary and x in reg^2 V, then for every open U containing x such that spt||V|| cap U is a connected C^2 embedded k-submanifold of U (such U exist: a slice chart domain at x), V restricted to U is theta_0 [spt||V|| cap U] with theta_0 > 0 constant (6.4 in U)."
       }
      ],
      "tests": [
@@ -1687,6 +1833,11 @@
        "name": "quadratic cone",
        "kind": "computation",
        "statement": "sing^r C_{p,q} = {0}."
+      },
+      {
+       "name": "connected support is not enough",
+       "kind": "non-example",
+       "statement": "V = v(L_1,1) + v(L_2,2), lines of R^2 crossing at 0, x in L_1 minus {0}: x is in reg^2 V; a ball about x containing 0 meets spt in a connected cross that is not a submanifold, with multiplicities 1 and 2; a ball about x missing L_2 gives theta_0 = 1."
       }
      ]
     },
@@ -1694,10 +1845,10 @@
      "id": "9.2",
      "kind": "theorem",
      "name": "Varifolds.locality_isometry_invariance",
-     "statement": "Every notion of Layers 1-8 commutes with restriction to open subsets and with push-forward by isometries; Euclidean dilations preserve stationarity, rectifiability, integrality, regular sets, densities and varifold tangents and scale H, ||deltaV||, sigma.",
+     "statement": "Every notion of Layers 1-4, 6 and 7 and of 9.1 commutes with restriction to open subsets and with push-forward by smooth isometries of open sets onto open sets (H, eta transported by df, VarTan(f_#V, f x) = (df_x)_# VarTan(V, x), since f o exp_x = exp_{f x} o df_x); Euclidean dilations preserve stationarity, rectifiability, integrality, regular sets, densities and varifold tangents and scale H, ||deltaV||, sigma.",
      "hypotheses": [
       "W' open in W",
-      "f isometry"
+      "f smooth isometry of an open set onto an open set (f*g' = g); smoothness of a C^1 isometry (Myers-Steenrod) is not used"
      ],
      "locator": {
       "source": "Simon1983",
@@ -1706,10 +1857,14 @@
      "prerequisites": [
       "target:1.3",
       "target:3.1",
+      "target:3.2",
       "target:4.4",
       "target:6.3",
       "target:7.2",
-      "target:9.1"
+      "target:9.1",
+      "roadmap:HopfRinow Layer 1",
+      "tauceti:TauCeti.RiemannianIsometry.riemannianExp_mfderiv",
+      "tauceti:Bundle.ContMDiffRiemannianMetric.restrictOpenTangentSpace"
      ],
      "api": [],
      "tests": [
@@ -1734,7 +1889,7 @@
      "id": "9.3",
      "kind": "theorem",
      "name": "Varifolds.auxiliaryVarifold_eq",
-     "statement": "For a locally integral k-current T with carrier Gamma_T and integer multiplicity theta_T, GeometricCurrents G6's auxiliary varifold is v(Gamma_T,|theta_T|) with weight ||T||; G6's first variation, density, monotonicity and tangent cones are those of this roadmap evaluated on it; local minimizers give stationary varifolds.",
+     "statement": "For a locally integral k-current T with carrier Gamma_T and integer multiplicity theta_T (possibly zero on part of Gamma_T), with Gamma_T^+ = {theta_T != 0}, GeometricCurrents G6's auxiliary varifold is v(Gamma_T^+,|theta_T|) with weight ||T||; G6's first variation, density, monotonicity and tangent cones are those of this roadmap evaluated on it; local minimizers give stationary varifolds.",
      "hypotheses": [
       "T locally integral k-current on W"
      ],
@@ -1764,7 +1919,7 @@
       {
        "name": "cancellation",
        "kind": "non-example",
-       "statement": "[[P]] + (-[[P]]) = 0 has varifold 0, unlike v(P,1) + v(P,1)."
+       "statement": "[[P]] + (-[[P]]) = 0 has theta_T = 0 on P, Gamma_T^+ empty and varifold 0, unlike v(P,1) + v(P,1)."
       },
       {
        "name": "curve",
@@ -1777,21 +1932,21 @@
      "id": "9.4",
      "kind": "example",
      "name": "Varifolds.acceptance_statements",
-     "statement": "Simon's theorem (warped metric g on R^{n+m+l}, smooth hypersurface Sigma with [Sigma] stationary for g and sing^inf [Sigma] = {0} x {0} x K) and Edelen-Spolaor's theorem for n >= 8 (stationary integral varifolds converging to a multiplicity-one cone-singular varifold have at most one singular point of the same type in B_{1/2}) are statable in this roadmap's notions; they are not targets.",
+     "statement": "Simon's theorem (warped metric g on R^{n+m+l}, smooth hypersurface Sigma with Sigma = reg^inf [Sigma] (Simon's convention) and [Sigma] stationary for g and sing^inf [Sigma] = {0} x {0} x K) and Edelen-Spolaor's theorem for n >= 8 (stationary integral varifolds converging to a multiplicity-one cone-singular varifold have at most one singular point of the same type in B_{1/2}) are statable in this roadmap's notions; they are not targets.",
      "hypotheses": [
       "n >= 3, m >= 2, n+m >= 8, l >= 1, K closed (Simon)",
       "n >= 8, p+q = n-1 (Edelen-Spolaor)"
      ],
      "locator": {
       "source": "Simon2023",
-      "where": "Theorem 1.1 line 84-96; Theorem 3.7 line 432-441; EdelenSpolaor2023 Theorem 1.4 line 104-135"
+      "where": "conventions line 77-83; Theorem 1.1 line 84-96; Theorem 3.7 line 432-441; EdelenSpolaor2023 Theorem 1.4 line 104-135"
      },
      "prerequisites": [
       "target:1.4",
       "target:2.2",
       "target:2.3",
       "target:3.1",
-      "target:4.2",
+      "target:4.3",
       "target:6.3",
       "target:7.2",
       "target:8.2",
@@ -1807,7 +1962,7 @@
       {
        "name": "empty K",
        "kind": "degenerate",
-       "statement": "K empty gives sing^inf [Sigma] empty."
+       "statement": "K empty gives sing^inf [Sigma] empty and, by the convention Sigma = reg^inf [Sigma], Sigma closed; the punctured hyperplane (R^8 x {0}) minus {0} in R^9 is stationary with empty singular set, not closed, and violates the convention."
       },
       {
        "name": "cone itself",
@@ -1853,7 +2008,7 @@
     "Layer 1",
     "Layer 2"
    ],
-   "what": "Riemannian distance, exponential map, normal balls, Gauss lemma, local distance identity."
+   "what": "Riemannian distance, local existence and uniqueness of geodesics, exponential map, normal balls, Gauss lemma, local distance identity."
   }
  ],
  "consumers": [
