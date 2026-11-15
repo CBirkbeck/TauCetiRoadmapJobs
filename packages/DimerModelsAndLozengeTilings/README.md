@@ -1455,8 +1455,9 @@ API:
 
 **Checks.**
 
-- The point mass at the empty configuration satisfies every cylinder identity (a plane tiling has
-  an edge in every face, so both cylinders are empty unless `F = ∅`, when `ω = ω'`) and is a
+- The point mass at the empty configuration satisfies every cylinder identity (for `F ≠ ∅` the
+  window `E` contains the three edges of a face, on which a plane tiling has an edge, so neither
+  cylinder contains the empty configuration and both have mass `0`; for `F = ∅`, `ω = ω'`) and is a
   probability measure, but it gives full mass to a configuration that is not a plane tiling:
   the concentration clause is what excludes it.
 - `2δ_{M₃}` satisfies the cylinder identities and is concentrated on `𝔈(𝕋)`, but has mass `2`:
@@ -1650,7 +1651,8 @@ Every weak limit point of `(μ^{s,t}_n)_n` lies in `𝒢_inv` and has slope `(s,
 point of `μ^w_{n₁(k),n₂(k)}` with `n₁(k), n₂(k) → ∞` lies in `𝒢_inv`. Hence for every
 `(s,t) ∈ 𝒯̄` the fibre of `𝒢_inv` over `(s,t)` is nonempty, compact and convex (kenyon2009
 Section 5.4, lines 844–866; kos2006 Theorem 2.1, lines 215–220, whose existence half this is,
-without the ergodicity of the limit; gorin2021 Section 3.3). The uniform statement is
+without the ergodicity of the limit; gorin2021 Section 13.4, lines 4689–4694, for the weighted
+torus computation of its Theorem 4.11 read as a local limit). The uniform statement is
 `torusLimit_mem_gibbsInvariant_slope`: for `(s,t) ∈ 𝒯̄`, a strictly increasing `φ : ℕ → ℕ` and a
 measure ν such that `torusMeasure (φ k) s t` of every cylinder converges to its ν-mass, ν lies in
 `lozengeGibbsInvariant` and `slope ν = (s,t)`. On the compact metrisable space `TriEdge → Bool`
@@ -1677,7 +1679,8 @@ The 1 × 1 and 2 × 2 tori; row tilings of period two.
 
 ### Dependencies
 
-Layers 1, 2, 5, 6.
+Layers 1, 2, 4 (the weak topology of 4.4, for 7.3), 5, 6; Mathlib `ProbabilityTheory.uniformOn`
+and the compactness of `ProbabilityMeasure`.
 
 ## Layer 8: Kasteleyn theory on the torus
 
@@ -2179,5 +2182,5 @@ Layers 4, 5, 9 (for 10.3), and 2.
 - [thurston1990] W. P. Thurston, *Conway's tiling groups*, Amer. Math. Monthly 97 (1990), 757–773;
   cited by bibliographic data for 2.9, the statement and proof used being gorin2021 Theorem 1.4.
 - [georgii2011] H.-O. Georgii, *Gibbs measures and phase transitions*, 2nd ed., de Gruyter (2011);
-  cited by bibliographic data, Theorem 14.15, for 4.2 and 4.6, whose statement is restated in
+  cited by bibliographic data, Theorem 14.15, for 4.2, 4.6 and 5.4, whose statement is restated in
   sheffield2005 Lemma 3.2.2.
