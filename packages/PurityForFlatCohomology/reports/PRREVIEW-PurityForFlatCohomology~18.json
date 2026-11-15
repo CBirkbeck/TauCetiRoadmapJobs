@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PurityForFlatCohomology~18",
+  "head": "a825987a7981aa0f299fba09af1295f62805a6df",
+  "pr": 1840,
+  "folder": "PurityForFlatCohomology",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since a825987; this round checked the pull request's title and description against the head: previous R01 (étale-depth sentence of the description) is repaired, and no sentence of the title, summary block or prose is contradicted by the head (15 stated theorems, suppliers, consumers, validation paragraph compared). Adversarial rows computed for §1.6/§6.3, §6.5 and §§0.4-0.5; 3 CS24 locators checked (Theorems 3.2.4, 6.2.4, 6.2.7). Gate rerun: all counters 0, OK; depcheck 0 problems, no UPWARD/CYCLE; lake env lean on Suggested.lean: 15 sorry warnings, 0 errors. Accepted conditional on the three declared supplier gaps (prismatic-dieudonne-perfectoid, ci-defect-additivity, regular-tower-tilt). One scope question for the human reviewers (GroupSchemesOverABase and §§7.12a-7.12e).",
+  "text": "0a1516b5745008b7"
+ }
+}
