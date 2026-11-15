@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalPurity~63",
+  "head": "89357f3db20befdba093e50d06c54017c710a524",
+  "pr": 1807,
+  "folder": "LocalPurity",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "Full review at Tau Ceti 2fd255d9 / Mathlib 1b1ccf4b. Previous findings R01-R05 (at 3adc047) all repaired. Four P3 findings: R01 SchemeAndStackFoundations 2.6 cited for affine vanishing that is pinned in Tau Ceti; R02 Noetherian/local completion instances used by the routes but not named; R03 five sentences saying the route is the source's; R04 pull-request description omits the Suggested.lean declarations removed and renamed. Gate at 89357f3: every check 0, OK. depcheck: 244 roadmaps, 2237 edges, 0 problems. lake env lean Suggested.lean: four sorry warnings only; signatures equal README statements; one-tactic padding probe closes none of the four headlines. Seeded sample 1.1, 1.2, 1.3, 1.4, 2.1, 2.2 and 60 source locators read in the cached texts (Stacks chapters 10, 15, 28, 29, 30, 32, 37, 49, 52, 58; SGA 1 X 3.2-3.3; SGA 2 X 3.1-3.4), all agreeing; 98 library names of the README resolved at the pins; SchemeAndStackFoundations sections 0.9, 0.14, 2.6, 2.7, 4.7-4.8 resolved on main. Adversarial table: 12 rows with computed values. Overlap check and source-independence lines included. Source issues: two errors (0BM9, 0BMA (2)) and two misprints (05EL, 0EY3).",
+  "text": "5fa575d43a504403",
+  "carried": {
+   "from": "89357f3db20befdba093e50d06c54017c710a524",
+   "head": "e1ab95b4c0df9e343115d497627a5ae3ae41fc72",
+   "findings": 4,
+   "lines": 101,
+   "folders": [
+    "LocalPurity"
+   ],
+   "onto": "99707c178ec875b9130ad40e7476593f9bf9434d"
+  }
+ }
+}
