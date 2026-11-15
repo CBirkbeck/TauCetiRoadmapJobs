@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompactQuantumMetricSpaces~9",
+  "head": "7db4c1935951132997415e90a8d1d568b93c6ba1",
+  "pr": 1155,
+  "folder": "CompactQuantumMetricSpaces",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 7db4c19. The previous report raised no finding. The title and description were checked against the head: 4 P3 findings. R01: the Validation paragraph reports 14 admissions, but the head has 17. R02: the supplier list cites CompactGroupsPartII, which the head never cites, and leaves out HeisenbergImprimitivity 3.1, OperatorKTheory K7.5, CharacteristicClasses C1 and OptimalTransport. R03: the description never says the pull request adds a new roadmap. R04: it calls admissible Lip-norms bridges. Also checked: gate rerun OK; depcheck 244 roadmaps, 0 problems; elaboration with 37 #check lines, 17 sorry warnings and no other diagnostic; rieffel00 Notation 4.1, Definition 4.2, Definition 5.1 and Theorem 5.2 at lines 620, 627, 825 and 833; supplier citations resolved at their current heads; overlap check of 8 closest roadmaps, with no second owner.",
+  "text": "6f4f27c25bb72bce",
+  "carried": {
+   "from": "7db4c1935951132997415e90a8d1d568b93c6ba1",
+   "head": "455918cf7d03c9468edd44b52bab8c46a7d121f8",
+   "findings": 4,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
