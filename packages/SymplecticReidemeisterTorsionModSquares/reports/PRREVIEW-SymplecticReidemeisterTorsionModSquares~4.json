@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SymplecticReidemeisterTorsionModSquares~4",
+  "head": "95862e1d3852c8f5d2128ba1df0e5f92462a63a4",
+  "pr": 1645,
+  "folder": "SymplecticReidemeisterTorsionModSquares",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 95862e1; this round checked the pull request's title and description against the head (14 sentences, 13 agree). R01 (P3): the summary block says the metaplectic cover is joined into the three-manifold theorem, but it is consumed only by the separate real Chern vanishing of Layer 8 (README 7.5 Needs and Layer 7 Dependencies cite neither); repair is a one-sentence edit of the description, no folder change. Gate rerun at this head: all counters 0, OK; depcheck 0 problems; lake env lean on Suggested.lean: sorry the only warning; outside-folder diff empty. Adversarial rows computed for zassenhaus_primary_formula, 7.5 and 8.1-8.2; other rows stand as in the review of 95862e1. Seeded sample: no sampled target lies in a changed passage. Previous findings: none. Acceptance of the folder remains conditional on the 14 declared supplier gaps.",
+  "text": "fe7d8aaa3e9ecfc2",
+  "carried": {
+   "from": "95862e1d3852c8f5d2128ba1df0e5f92462a63a4",
+   "head": "d54bae5a643137fd1127cacd78ce3433c73c8488",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
