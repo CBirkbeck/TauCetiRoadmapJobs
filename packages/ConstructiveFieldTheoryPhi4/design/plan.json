@@ -1176,7 +1176,7 @@
       {
        "name": "basic",
        "role": "lemma",
-       "statement": "S >= 0, S(-x) = S(x), S(x) <= S(0) when finite, S positive definite."
+       "statement": "S >= 0, S(-x) = S(x), S(x) <= S(0) (Cauchy-Schwarz in V_R and translation invariance when S(0) is finite, trivially otherwise); when S(0) < infinity every S(x) is finite and S is positive definite: sum_{x,y} c_x c_y S(x - y) = lim_R <(sum_x c_x phi_x)^2>_{V_R} >= 0 for finitely supported real c."
       },
       {
        "name": "monotone_beta",
@@ -1204,6 +1204,11 @@
        "name": "trivial",
        "kind": "degenerate",
        "statement": "rho = delta_0: chi = 0, beta_c = infinity; J = 0: chi = integral phi^2."
+      },
+      {
+       "name": "positive_definite",
+       "kind": "non-example",
+       "statement": "c = delta_0 - delta_1 + delta_2 on Z: the d = 1 Ising two-point function t^{|x|} gives 3 - 4t + 2t^2 = 2(1-t)^2 + 1 > 0, while the function equal to 1 at 0, 4/5 at +-1 and 0 elsewhere (nonnegative, even, bounded by its value at 0) gives 3 - 16/5 = -1/5: positive definiteness is not implied by the other properties."
       },
       {
        "name": "high_temperature",

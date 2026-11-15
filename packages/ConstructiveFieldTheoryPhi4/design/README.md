@@ -459,7 +459,7 @@ Define the two-point function `S_{ρ,J}(x) = ⟨φ_0φ_x⟩_{J,ρ} ∈ [0, ∞]`
 
 The API consists of the following facts.
 
-- S ≥ 0, S(−x) = S(x), S(x) ≤ S(0) = ⟨φ_0²⟩_{J,ρ} when finite (Cauchy–Schwarz), and S is positive definite: `Σ_{x,y} c_xc_y S(x − y) ≥ 0` for finitely supported real c.
+- S ≥ 0, S(−x) = S(x) and S(x) ≤ S(0) = ⟨φ_0²⟩_{J,ρ} (Cauchy–Schwarz in V_R and translation invariance when S(0) is finite, trivially otherwise); and, when S(0) < ∞, every S(x) is finite and S is positive definite: `Σ_{x,y} c_xc_y S(x − y) ≥ 0` for finitely supported real c, the sum being `lim_R ⟨(Σ_x c_xφ_x)²⟩_{V_R}` by translation invariance (4.1).
 - S and χ are non-decreasing in β (4.1), so `{β ≥ 0 : χ(ρ, βJ) < ∞}` is an interval containing 0, and `χ(ρ, 0) = ∫φ² dρ`.
 - For ρ in the Griffiths–Simon class and Λ ∋ 0 finite, the Simon–Lieb inequality gives `S(y) ≤ Σ_{u∈Λ, v∉Λ} ⟨φ_0φ_u⟩_Λ J_{uv} S(y − v)` for y ∉ Λ.
 - The truncated susceptibility `χ_L = Σ_{x∈Λ_L} S(x)` (Aizenman–Duminil-Copin (5.23)) is finite whenever the moments are.
@@ -470,6 +470,7 @@ The API consists of the following facts.
 
 - d = 1, nearest-neighbour Ising with t = tanh J: `χ = (1 + t)/(1 − t) < ∞` for all J, so `β_c = ∞`.
 - For ρ = δ₀, S ≡ 0, χ = 0 and β_c = ∞; for J = 0, χ = ∫φ²dρ.
+- Positive definiteness is not implied by the other properties: for c = δ₀ − δ₁ + δ₂ on ℤ, the d = 1 Ising two-point function `t^{|x|}` gives `3 − 4t + 2t² = 2(1 − t)² + 1 > 0`, while the function equal to 1 at 0, to 4/5 at ±1 and to 0 elsewhere, which is nonnegative, even and bounded by its value at 0, gives `3 − 16/5 = −1/5`.
 - Ising on ℤ^d with nearest-neighbour coupling J, 0 ≤ 2dJ < 1: Simon–Lieb with Λ = {0}, applied in the boxes V_R to `max_v Σ_{y∈V_R} ⟨σ_vσ_y⟩_{V_R}`, gives `χ(ρ_I, J) ≤ 1/(1 − 2dJ)`; at d = 1, J = ¼ this reads `e^{1/2} ≈ 1.649 ≤ 2`. For J > 0, applying the estimate to βJ with 2dβJ < 1 gives `β_c(ρ_I, J) ≥ 1/(2dJ)`; for J = 0, β_c = ∞.
 - The susceptibility estimate is not asserted outside 2dJ < 1: at d = 1, J = 1, `χ(ρ_I, 1) = e² ≈ 7.389` while `1/(1 − 2dJ) = −1`, and at J = ½ the denominator vanishes; the bound `β_c ≥ 1/(2dJ)` still holds there.
 
