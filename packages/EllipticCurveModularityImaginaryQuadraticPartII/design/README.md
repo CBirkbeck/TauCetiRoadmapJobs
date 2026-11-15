@@ -110,7 +110,16 @@ of Layer 3 are proved by explicit computations recorded in their Checks.
   `t ∈ U(K)` produced by the parent's §7.4 `simultaneous_specialization` for a finite set of places
   containing those above `3p`, lying in the opens of the parent's §6.5 `local_type_opens` at every
   place above `3p`. The switch parameter `t` occurs in Layers 2, 7 and 8 only; in Layers 4–5 the
-  letter `t` is the number `|T|` of framed places.
+  letter `t` is the number `|T|` of framed places. The characters `η, ψ, χ` and their systems
+  `V_η, V_ψ, V_χ` occur in How to read the build, Layer 2 and §8.1 only. Elsewhere `ψ` is the
+  unramified determinant character of §3.4, `χ = (χ_v)_{v∈R}` is the tuple of tame characters at `R`
+  in Layer 5 (the index of the problems `𝒮_χ` of CrystallineLocalGlobalCompatibilityCM §9.5), and
+  `χ_(h(t))` is the quadratic character of `K(√h(t))/K` by which `B_t` twists `E` (the parent's §8.4,
+  used in Layer 2). The reflection `w` occurs in §7.1 only; elsewhere `w` is a finite place. The
+  letter `p` is the prime of the parent's switch (`p > 100`; in §7.1 any prime `p > 3`) in the
+  Summary's account of the switch, the Layer 1 Examples and Layers 2, 7 and 8; everywhere else it is
+  a coefficient prime, odd in the coefficient conventions below, in Layer 3 and in the supplier
+  obligations, and five where `p = 5` is written.
 - Cohomological normalization as in the parent: `H¹` is étale `H¹`, its determinant is `ε_ℓ⁻¹`,
   `HT(ε_ℓ) = −1`, Frobenius in compatible systems is geometric and `rec^T(π_v) = rec(π_v ⊗ |det|^(−1/2))`.
   The residual representation of `H¹(A)` is the dual of `A[ℓ]`; dualizing inverts both eigenvalue
@@ -132,7 +141,9 @@ of Layer 3 are proved by explicit computations recorded in their Checks.
   action, with the standard basis `e = E₁₂`, `h = diag(1, −1)`, `f = E₂₁` (used in Layers 3–4 only,
   where the cubic `h` of the curve does not occur). The matrix `U = 1 + e = [[1,1],[0,1]]` occurs in
   Layers 3–6 only, the parameter open `U ⊂ 𝔸¹_K` in Layers 2 and 7 only. For `D = Ad(U)`:
-  `D(e) = e`, `D(h) = h − 2e`, `D(f) = f + h − e`. The trace form `⟨X, Y⟩ = tr(XY)` has Gram matrix
+  `D(e) = e`, `D(h) = h − 2e`, `D(f) = f + h − e`; `D` has this meaning in Layer 3 only, while in
+  Layer 7 `D_t` is the quotient curve of §7.1 and `G_D` the absolute Galois group of the finite
+  Galois field `D/ℚ` of the parent's §7.4. The trace form `⟨X, Y⟩ = tr(XY)` has Gram matrix
   `[[0,0,1],[0,2,0],[1,0,0]]` in this basis, of determinant `−2`; it identifies `ad⁰` with its dual
   whenever `2` is invertible (the perfectness and splitting of §7.2 there) and is degenerate in
   characteristic two.
@@ -150,7 +161,8 @@ of Layer 3 are proved by explicit computations recorded in their Checks.
   ring of integers of a finite extension of `ℚ₅` (of `ℚ_p` in Layer 3) with uniformizer `ϖ` and
   residue field `k`; `CNL_O` is the category of complete Noetherian local `O`-algebras with residue
   field `k`. In Layer 7, which uses no coefficient ring, `O` is, as in the parent, the origin of `E` and of
-  its quadratic twists `B_t`.
+  its quadratic twists `B_t`. In Layer 5 and in the supplier obligations, `K`, `K_v` and `K^P` are
+  levels (compact open subgroups), as in the sources; the number field there is `F`.
 
 ## Exact supplier contracts
 
@@ -261,7 +273,7 @@ through Taylor–Wiles selection (CN23 line 4404); Layer 4 replaces that step.
 - **DeformationAndDerivedPatchingAlgebra** §§8.1–8.5 (simultaneous patching).
 - **ArithmeticGaloisDuality** R02.2 (inflation–restriction, Hochschild–Serre), R02.4.2 (the local Tate
   pairing and the counting proof that unramified classes are exact annihilators).
-- **ArithmeticGaloisRepresentations** Layer 1 (decomposition groups), §4.3 (subgroups of `PSL₂`,
+- **ArithmeticGaloisRepresentations** §2.1 (decomposition groups, in its Layer 2), §4.3 (subgroups of `PSL₂`,
   perfectness), §6.3 (the Tate curve `E` of parameter `q_E`: for `ℓ` prime to the residue
   characteristic, `E[ℓ^n]` is unramified iff `ℓ^n | v(q_E)`, inertia acts unipotently and
   `WD ≅ Sp(2)`), §7.2 (*ContinuousRep.adZero*: the trace-zero adjoint of a representation of a
@@ -323,18 +335,18 @@ Layers 2 and 7 into the headline. Layers 1–2 are independent of Layers 3–7.
 ### 1.1 Intermediate fields of a cyclotomic extension of a CM field
 
 Prove: let `K` be a CM number field, `S` a set of positive integers and `L/K` a finite extension
-with `IsCyclotomicExtension S K L`. Then every intermediate field `K ⊆ E ⊆ L` is a CM field; in
+with `IsCyclotomicExtension S K L`. Then every intermediate field `K ⊆ K' ⊆ L` is a CM field; in
 particular `L` is CM. The route: `L` is the composite of `K` with a cyclotomic field `ℚ(μ_m)` inside
 `L`, which is CM or `ℚ` (`IsCyclotomicExtension.Rat.isCMField`); a composite of CM fields is CM,
 because each complex embedding induces the same complex conjugation on the composite (MilneCM,
-Proposition 1.4 and Corollary 1.5, p. 10). For `E` between `K` and `L`: `E` is totally complex
+Proposition 1.4 and Corollary 1.5, p. 10). For `K'` between `K` and `L`: `K'` is totally complex
 because it contains `K` (`NumberField.isTotallyComplex_of_algebra`). The Galois closure `L̃` of `L`
-over `ℚ` is CM (MilneCM, Corollary 1.5), and its complex conjugation `ι` is central in `Gal(L̃/ℚ)`:
-for an embedding `φ : L̃ → ℂ` and `σ ∈ Gal(L̃/ℚ)`, `φ ∘ σ` is again an embedding, so
-`φ ∘ σισ⁻¹ = conj ∘ φ = φ ∘ ι` (`NumberField.IsCMField.isConj_complexConj`) and `σισ⁻¹ = ι` because `φ`
+over `ℚ` is CM (MilneCM, Corollary 1.5), and its complex conjugation `c` is central in `Gal(L̃/ℚ)`:
+for an embedding `β : L̃ → ℂ` and `σ ∈ Gal(L̃/ℚ)`, `β ∘ σ` is again an embedding, so
+`β ∘ σcσ⁻¹ = conj ∘ β = β ∘ c` (`NumberField.IsCMField.isConj_complexConj`) and `σcσ⁻¹ = c` because `β`
 is injective (MilneCM, Proposition 1.4(b) and the uniqueness of complex conjugation noted after it,
-p. 10, lines 273–290). Hence `ι` normalizes `Gal(L̃/E)` and preserves `E`; its fixed field in `E` is
-totally real and `E` is quadratic over it, so `NumberField.IsCMField.ofCMExtension` applies. This is
+p. 10, lines 273–290). Hence `c` normalizes `Gal(L̃/K')` and preserves `K'`; its fixed field in `K'` is
+totally real and `K'` is quadratic over it, so `NumberField.IsCMField.ofCMExtension` applies. This is
 the fact used when descending along `F/K` through intermediate fields (LeHung26, Lemma 5.1, p. 9).
 
 *Needs:* Mathlib `NumberField.IsCMField`, `NumberField.IsCMField.ofCMExtension`,
@@ -366,7 +378,7 @@ Frobenius eigenvalues and `q_v = q_w = q`. Part (b) holds because `G_{F(ζ_ℓ)}
 (LeHung26, §4.4, last sentences of "All conjugates", lines 318–321.)
 
 *Needs:* AutomorphicGaloisRepresentationsPartII AG2.7 (`IsDecomposedGenericPrime`,
-`decomposedGenericPrime_local`); ArithmeticGaloisRepresentations Layer 1 (decomposition groups).
+`decomposedGenericPrime_local`); ArithmeticGaloisRepresentations §2.1 (decomposition groups).
 
 **Checks.**
 
@@ -388,15 +400,16 @@ Theorem 2.1 applies.
 
 ### Dependencies
 
-Mathlib's CM-field and cyclotomic API; AutomorphicGaloisRepresentationsPartII AG2.7.
+Mathlib's CM-field and cyclotomic API; AutomorphicGaloisRepresentationsPartII AG2.7;
+ArithmeticGaloisRepresentations §2.1.
 
 ## Layer 2: The switch over an arbitrary CM field
 
 ### 2.1 The auxiliary curve made modular before base change
 
 Let `K` be a CM field with `ζ₅ ∉ K`, `E/K` geometrically non-CM, and `t ∈ U(K)` a switch parameter
-(Conventions). Prove: (a) the residual representation of `H¹(A_t)` modulo five is decomposed generic
-over `K` and absolutely irreducible on `G_{K(ζ₅)}`, and `A_t` is geometrically non-CM; (b) `A_t` is
+(Conventions). Prove: (a) `A_t` is geometrically non-CM, and the mod-five residual representation of
+`H¹(A_t)` is absolutely irreducible on `G_{K(ζ₅)}` and decomposed generic over `K`; (b) `A_t` is
 modular over `K`: there is a cuspidal weight-zero `π_A` of `PGL₂(𝔸_K)` realizing `H¹(A_t)` at every
 `(ℓ, ι)`; (c) `F/K` is finite abelian, `F` is CM, and the base change `π_{A,F}` is a cuspidal
 weight-zero representation of `PGL₂(𝔸_F)` with `r_ι(π_{A,F}) ≅ V_η` under the parent's identification
@@ -434,11 +447,12 @@ parameter. Suppose one member of `V_η` is realized by a cuspidal weight-zero re
 The route is the parent's §8.3 table, applied over `F`, which is CM by Theorem 1.1. Change the
 coefficient prime of `π_η` to `p` (§8.1 `character_automorphy_change_prime`). Lift
 `V_η → V_χ` at `p`, `V_χ → V_ψ` at `3` and `V_ψ → V₁` at `p` with §5.2 `potentiallySemistableCM`,
-changing the coefficient prime after each row. Determinant, weights, finite ramification and
-potential semistability come from §4.1; the residual isomorphisms from §4.4; residual absolute
-irreducibility on `G_{F(ζ_ℓ)}` and decomposed genericity over `F` from §7.4(1)–(2); the local
-alternatives at every place above `ℓ` from §6.6 and §8.1 `character_automorphic_local_type`. The
-lifting primes are `3` and `p > 100`, so the five-adic projective-field clause of §5.2 never applies.
+and before each later row move to its coefficient prime by the same §8.1 statement. In every row
+§4.1 supplies the determinant, the Hodge–Tate weights, potential semistability and the finiteness of
+the ramification set; §4.4 the residual isomorphism; §7.4(1)–(2) decomposed genericity over `F` and
+absolute irreducibility on `G_{F(ζ_ℓ)}`; §6.6 and §8.1 `character_automorphic_local_type` the local
+alternatives above `ℓ`. The lifting primes are `3` and `p > 100`, so the five-adic projective-field
+clause of §5.2 never applies.
 This gives a cuspidal weight-zero realization of `V₁ = H¹(B_t)|G_F`. Since `B_t` is a quadratic twist
 of the non-CM `E`, `H¹(B_t)|G_F` is absolutely irreducible, and PotentialAutomorphyInfrastructure
 §2.3(2) descends it along the soluble CM extension `F/K` to `π_B` realizing `H¹(B_t)`. Finally
@@ -483,7 +497,11 @@ R16.3.2.
 
 - At a split multiplicative place the local factor has degree one and `N` has rank one; at a
   potentially good place with nontrivial inertia the factor is `1`; at a good place it has degree two.
-  Weil semisimplification alone cannot distinguish the first two.
+  The first two already differ in the Weil part of the parameter, unramified at the split
+  multiplicative place and ramified at the other. What `N` changes is the degree: with `N` forgotten,
+  the split multiplicative parameter is unramified with Frobenius eigenvalues `1` and `q_v`, and its
+  factor would be `((1 − T)(1 − q_v T))⁻¹`, of degree two, against `(1 − T)⁻¹` with `N`; at `q_v = 4`
+  these are `((1 − T)(1 − 4T))⁻¹` and `(1 − T)⁻¹`.
 - For `K = ℚ(ζ₈)` there are two complex places, and each carries the same parameter; at `z = i` it is
   `diag(i, −i)`, of trace zero and determinant one.
 - At a good place with `q_v = 4`, `a = 4` the cohomological polynomial is `T² − 4T + 4` and the unitary
@@ -561,7 +579,7 @@ of odd characteristic with `#k ≠ 5` this vanishing is also part of ArithmeticG
 §7.7, which states it together with `H¹(SL₂(k), ad⁰) = 0` and therefore excludes `𝔽₅`; the
 statement here differs in covering every field with `2 ∈ k^×`, among them `𝔽₅`, the case Layer 4
 uses, and every infinite field of characteristic other than two. The route: for
-`X = [[a, b],[c, −a]]`, `UX − XU = [[c, −2a],[0, −c]]` and `UᵀX − XUᵀ = [[−b, 0],[2a, b]]`. The
+`X = [[x, y],[z, −x]]`, `UX − XU = [[z, −2x],[0, −z]]` and `UᵀX − XUᵀ = [[−y, 0],[2x, y]]`. The
 trace form `⟨X, Y⟩ = tr(XY)`, its invariance and its perfectness on `ad⁰` when `2 ∈ k^×` (the trace
 pairing on `M₂(k)` is perfect, `ad⁰` is the orthogonal of `k·1`, and the two are complementary,
 `ad = k·1 ⊕ ad⁰`, when `2 ∈ k^×`; statements about the underlying `k`-modules), and base change
@@ -704,11 +722,12 @@ ClassFieldTheory Layer 5.
 
 - With `μ₅ ⊂ F_v`: `M^(I_v) = k e`, so `h⁰ = 1`, `h² = h⁰(M(1)) = 1`, and the Euler characteristic gives
   `h¹ = 2`. Without `μ₅`, for `q_v ≡ 2 mod 5`, `φ` scales `e` by `2`, so `h⁰ = 0` and `L_v = 0`.
-- In (d) the relation `φτφ⁻¹ = τ^(q_v)` forces `(D − 1)c(φ) = 0` because `1 + D + ⋯ + D^(q_v − 1) = 1`
-  when `5 | q_v − 1`; so `c(φ) ∈ k e`, `c(τ)` is free modulo `(D − 1)M = k e ⊕ k h`, and
-  `dim H¹ = 4 − 2 = 2`.
+- In (d), for a cocycle `ξ`, the relation `φτφ⁻¹ = τ^(q_v)` forces `(D − 1)ξ(φ) = 0` because
+  `1 + D + ⋯ + D^(q_v − 1) = 1` when `5 | q_v − 1`; so `ξ(φ) ∈ k e`, `ξ(τ)` is free modulo
+  `(D − 1)M = k e ⊕ k h`, and `dim H¹ = 4 − 2 = 2`.
 - The ramified class `(f, 0)` is not in `L_v` (trace condition of §3.4(i)) and pairs nontrivially with
-  `(0, e)`: a nonzero class with nonzero restriction to inertia fails the dual condition.
+  `(0, e)`. As `L_v^⊥ = L_v = k[(0, e)]` here, a class `a(f, 0) + b(0, e)` lies in `L_v^⊥` only for
+  `a = 0`, that is, only when its image in `H¹(I_v, M)` vanishes.
 
 ### Examples
 
@@ -764,15 +783,28 @@ nonempty set of places at which `ρ̄` is protected. Put
 `N ≥ 1`, every `r ≥ dim H_∅` and every finite set `B` of places there is a Taylor–Wiles datum `Q_N` of
 level `N` in the sense of GlobalGaloisDeformations §5.1, of exactly `r` places of degree one over `ℚ`
 outside `S ∪ B`, with `H_{Q_N} = 0`; each rational prime below `Q_N` is unramified in `F` and splits in
-every imaginary quadratic subfield of `F`. The route: by §4.1 a nonzero `κ ∈ H_∅` restricts to a
-nonzero homomorphism on `G_{LC_N}` whose image spans `M`, because `ad⁰` is absolutely irreducible under
-`SL₂(𝔽₅)`; take `σ ∈ G_{C_N}` with `ρ̄(σ) = diag(2, 3)` (possible since `L ∩ C_N = F`), whose
-coinvariants `M/(Ad ρ̄(σ) − 1)M` are the diagonal line, and multiply `σ` by an element of `G_{LC_N}` to
-make the image of `κ` there nonzero; this is a detecting class, the class of `diag(2, 3)` is a padding
-class, and GlobalGaloisDeformations §5.6 selects the primes. A class of `H_{Q_N}` is locally trivial,
-hence unramified, at `Q_N`, so lies in `H_∅` and is killed by the selected evaluations.
-(CaptainSude26, Lemma 3.4, lines 242–263; replaces AKT23, Lemma A.5, line 3979, and
-CrystallineLocalGlobalCompatibilityCM §9.3 in this case.)
+every imaginary quadratic subfield of `F`.
+
+The route. As `μ₅ ⊂ F`, `M(1) ≅ M`. Let `g ∈ ρ̄(G_F)` correspond to `diag(2, 3)` under a conjugation of
+`ρ̄(G_F)` onto `SL₂(𝔽₅)`; `Ad(g)` has eigenvalues `4, 1, 4` on `M` (on `e, h, f` for `diag(2, 3)`
+itself), so `W = (Ad(g) − 1)M`, its `4`-eigenspace, is a hyperplane. Call `σ ∈ G_{C_N}` *detecting* for
+a nonzero `κ ∈ H_∅` if `ρ̄(σ)` is conjugate to `g` and the value at `σ` of a cocycle representing `κ`
+lies outside `(Ad ρ̄(σ) − 1)M`; this depends neither on the representative nor on `σ` within its
+conjugacy class. A detecting `σ` with `ρ̄(σ) = g` exists. On `G_{LC_N}`, which acts trivially on `M`,
+the cocycle is a homomorphism, nonzero by §4.1 and equivariant for conjugation by `G_F`; its values span
+a nonzero `ρ̄(G_F)`-stable subspace, which is `M` because `ad⁰` is absolutely irreducible for `SL₂(𝔽₅)`,
+so some `κ(γ)`, `γ ∈ G_{LC_N}`, lies outside `W`. Since `L ∩ C_N = F` there is `σ₀ ∈ G_{C_N}` with
+`ρ̄(σ₀) = g`, and `κ(γσ₀) = κ(γ) + κ(σ₀)`, so `σ₀` or `γσ₀` is detecting. In a finite Galois quotient
+through which `κ`, `ρ̄` and `Gal(C_N/F)` factor, a place `w ∉ S` with Frobenius in the class of a
+detecting element has `q_w ≡ 1 mod 5^N`, distinct residual eigenvalues and `κ|G_{F_w} ≠ 0`, because an
+unramified class at `w` is its value at `Frob_w` modulo `(Ad ρ̄(Frob_w) − 1)M`; places with Frobenius in
+the class of `σ₀` have the first two properties whatever `κ` is. These are the detecting and padding
+classes of GlobalGaloisDeformations §5.6, which, with the places above primes ramified in `F` added to
+`B`, yields `r` places of degree one over `ℚ` with jointly injective localizations on `H_∅` (Chebotarev
+Layer 10); a rational prime with an unramified place of degree one in `F` splits in every quadratic
+subfield. A class of `H_{Q_N}` is trivial on `G_{F_w}` for `w ∈ Q_N`, so it is unramified there and lies
+in `H_∅` with zero localizations at `Q_N`; it vanishes. (CaptainSude26, Lemma 3.4, lines 242–263;
+replaces AKT23, Lemma A.5, line 3979, and CrystallineLocalGlobalCompatibilityCM §9.3 in this case.)
 
 *Needs:* §4.1; GlobalGaloisDeformations §§3.6, 5.1, 5.6; Chebotarev Layer 10.
 
@@ -780,10 +812,11 @@ CrystallineLocalGlobalCompatibilityCM §9.3 in this case.)
 
 - `diag(2, 3)` lies in `SL₂(𝔽₅)` (`6 ≡ 1`), has distinct eigenvalues and acts on `e, f` by `4` and on
   `h` by `1`, so its coinvariants on `ad⁰` are one-dimensional.
-- If a protected place were put into the framing set `T`, its dual condition would disappear from `H_Q`;
-  the inflated exceptional class takes values at a Taylor–Wiles Frobenius `g` of order prime to five
-  that are coboundaries on `⟨g⟩`, so it is locally trivial at every Taylor–Wiles prime and `H_Q` never
-  vanishes.
+- If every protected place were put into the framing set `T`, no dual condition would remain at a
+  place of `P`, and the inflated exceptional class would lie in every `H_Q`: its values at a
+  Taylor–Wiles Frobenius `g`, of order prime to five, are coboundaries on `⟨g⟩`, so it is locally
+  trivial at every Taylor–Wiles prime, and `H_Q` never vanishes. Framing only part of `P` does no
+  harm: at a protected place left unframed the inflated class is ramified (§4.1) and fails `L_v^⊥`.
 - For `H_∅ = 0` the padding class still yields exactly `r` primes; the size is independent of `N`.
 
 ### 4.3 The relative presentation with unframed protected places
@@ -838,21 +871,24 @@ GlobalGaloisDeformations §§3.4, 3.6, 3.7, 5.1, 5.6; LocalGaloisDeformationRing
 Define a *protected prepared datum* to consist of a CM field `F` with `μ₅ ⊂ F`, an isomorphism
 `ι : Q̄₅ ≅ ℂ`, finite sets of finite places `S = S₅ ⊔ R ⊔ P` with `S₅` the places above five,
 `S₅ = S₅^cr ⊔ S₅^st`, `R ∪ P` prime to five, `P` nonempty and `P^c ∩ S = ∅`, and a cuspidal regular
-algebraic weight-zero `π` of `PGL₂(𝔸_F)`, such that: (i) every rational prime below `S` or ramified in
-`F` splits in an imaginary quadratic subfield of `F`; (ii) for each `v ∈ S₅`, with `v̄` the place of `F⁺`
-below it, there is a five-adic `v̄' ≠ v̄` with `Σ_{w̄ ≠ v̄, v̄'} [F⁺_w̄ : ℚ₅] > [F⁺:ℚ]/2`, and the residue
-field of `v̄` is larger than `𝔽₅`; (iii) `π_v` is unramified for `v ∉ R ∪ P ∪ S₅^st` and
-`π_v^(Iw_v) ≠ 0` for `v ∈ R ∪ P ∪ S₅^st`; (iv) for `v ∈ S₅^st`, `π` is `ι`-ordinary of weight zero at `v`
-and `r_ι(π)|G_{F_v}` is non-crystalline ordinary; (v) `ρ̄ = r̄_ι(π)` has image conjugate to `SL₂(𝔽₅)`
-and is decomposed generic; (vi) `ρ̄|G_{F_v}` is trivial for `v ∈ S₅ ∪ R`; (vii) `ρ̄|G_{F_v}` is protected
-for `v ∈ P`. (CaptainSude26, §4, lines 264–289; CN23, §5.6, lines 4226–4260.)
+algebraic weight-zero `π` of `PGL₂(𝔸_F)`, such that: (i) each rational prime that ramifies in `F` or
+lies below a place of `S` has two places in some imaginary quadratic subfield of `F`; (ii) for each
+`v ∈ S₅`, with `v̄` the place of `F⁺` below it, there is a five-adic `v̄' ≠ v̄` with
+`Σ_{w̄ ≠ v̄, v̄'} [F⁺_w̄ : ℚ₅] > [F⁺:ℚ]/2`, and the residue field of `v̄` is larger than `𝔽₅`; (iii)
+`π_v` is unramified for `v ∉ R ∪ P ∪ S₅^st` and `π_v^(Iw_v) ≠ 0` for `v ∈ R ∪ P ∪ S₅^st`; (iv) for
+`v ∈ S₅^st`, `π` is `ι`-ordinary of weight zero at `v` and `r_ι(π)|G_{F_v}` is non-crystalline ordinary;
+(v) `ρ̄ = r̄_ι(π)` has image conjugate to `SL₂(𝔽₅)` and is decomposed generic; (vi) `ρ̄|G_{F_v}` is
+trivial for `v ∈ S₅ ∪ R`; (vii) `ρ̄|G_{F_v}` is protected for `v ∈ P`. (CaptainSude26, §4, lines
+264–289; CN23, §5.6, lines 4226–4260.)
 
 - The level `K^P = ∏ K_v ⊂ PGL₂(Ô_F)` is `PGL₂(O_{F_v})` outside `R ∪ P ∪ S₅^st` and `Iw_v` on
   `R ∪ P ∪ S₅^st`; it has no pro-`v` Iwahori auxiliary places.
 - The framing set is `T = S₅ ⊔ R`; the unitary parabolics at five and the maximal ideal `𝔪` are those of
   CrystallineLocalGlobalCompatibilityCM §9.4 for the partition of `S₅`.
-- The localized complexes at `K^P` are perfect by CrystallineLocalGlobalCompatibilityCM §8.7, since
-  `ζ₅ ∈ F`, `ρ̄` is absolutely irreducible and the coefficients are trivial modulo `ϖ`.
+- CrystallineLocalGlobalCompatibilityCM §8.7 makes the localized complexes at `K^P` perfect. Its
+  hypotheses (`p` odd, `ζ_p ∈ F`, `ρ̄_𝔪` absolutely irreducible, a free rank-one coefficient module
+  with trivial reduction) hold by `μ₅ ⊂ F`, by (v), and because every coefficient character used at
+  this level is trivial modulo `ϖ`.
 - Forgetting `P` into the Iwahori places gives the data (1)–(14) of CrystallineLocalGlobalCompatibilityCM
   §9.1 except clause (14) at `P`, together with `ζ₅ ∈ F` and `S = S₅ ∪ R ∪ P` in place of clauses
   (10)–(11); clause (15) fails, by (v).
@@ -904,35 +940,38 @@ GlobalGaloisDeformations §5.5. (CaptainSude26, §4, lines 285–289; CN23, §5.
 ### 5.3 Hecke-valued representations satisfy the protected problems
 
 For a protected prepared datum, every `χ` and every Taylor–Wiles datum `Q` of §4.2 with
-`Q ∩ (S ∪ S^c) = ∅`, prove: there are
-`N ≥ 1` depending only on `[F:ℚ]`, ideals `J_{χ,Q}` with `J_{χ,Q}^N = 0` and surjective `O[Δ_Q]`-algebra
-maps `R_{𝒮^P_{χ,Q}} → T_{χ,Q}/J_{χ,Q}`, where `T_{χ,Q}` is the derived Hecke image of
-CrystallineLocalGlobalCompatibilityCM §9.9 at the level `K^P(Q)`, matching the characteristic
-polynomials of Frobenius at `v ∉ S ∪ Q` with `P_v(X)`, compatible with reduction modulo `ϖ` from `χ` to
-`1` and with augmentation from `Q` to `∅` as in ACC23, §6.4.1. The route is the construction of
-CrystallineLocalGlobalCompatibilityCM §§9.7 and 9.9 with `R ∪ P` in the role of the Iwahori places
-`R` on the automorphic side. At `v ∈ P` the level is `Iw_v` with trivial coefficient character, so
-every torus operator of a unit acts as `1` and the inertial comparison gives the characteristic
-polynomial `(X − 1)²` for every `σ ∈ I_v` on the neat-level Hecke algebra; it descends through the
-non-neat comparison of CrystallineLocalGlobalCompatibilityCM §8.6 and the finitely many nilpotent ideals,
-coefficient by coefficient, and by §3.4 the representation then satisfies the unipotent-inertia
-condition over the possibly nonreduced quotient. Since `P^c ∩ S = ∅` and `Q ∩ S^c = ∅`, no place of
-`P^c` lies in `S ∪ Q`, so `K^P(Q)` is hyperspecial on `P^c`. The inertial comparison
-(`gap:acc-torsion-inertial-comparison`) is applied with the conjugation-stable set
-`(S ∪ Q) ∪ (S ∪ Q)^c` and the Iwahori-type set `R ∪ P ∪ Q`; every conjugate of a place of
-`R ∪ P ∪ Q` that is not itself in `R ∪ P ∪ Q` lies outside `S ∪ Q` and has hyperspecial level, so the
-representation is unramified outside `S ∪ Q`, in particular at `P^c` (CaptainSude26, lines 299–314).
-(CaptainSude26, Lemma 4.1, lines 291–408; CN23,
-Propositions 5.6.2–5.6.3, lines 4334–4390; ACC23, Theorem 3.1.1, line 2346.)
+`Q ∩ (S ∪ S^c) = ∅`, prove: there are `N ≥ 1` depending only on `[F:ℚ]`, ideals `J_{χ,Q}` with
+`J_{χ,Q}^N = 0` and surjective `O[Δ_Q]`-algebra maps `R_{𝒮^P_{χ,Q}} → T_{χ,Q}/J_{χ,Q}`, where `T_{χ,Q}`
+is the derived Hecke image of CrystallineLocalGlobalCompatibilityCM §9.9 at the level `K^P(Q)`, matching
+the characteristic polynomials of Frobenius at `v ∉ S ∪ Q` with `P_v(X)`, compatible with reduction
+modulo `ϖ` from `χ` to `1` and with augmentation from `Q` to `∅` as in ACC23, §6.4.1. The route is the
+construction of CrystallineLocalGlobalCompatibilityCM §§9.7 and 9.9 with `R ∪ P` in the role of the
+Iwahori places `R` on the automorphic side. What `P` adds is this. For `v ∈ P` and `σ ∈ I_v`, local
+reciprocity sends `σ` to a unit `u ∈ O_{F_v}^×`; the coefficient module is trivial on `Iw_v`, so the
+torus operators of `diag(u, 1)` and `diag(1, u)` are the identity and the torus polynomial `P_{v,σ}` of
+the inertial comparison is `(X − 1)²`. The comparison thus gives `tr ρ(σ) = 2` and `det ρ(σ) = 1` for
+the representation `ρ` over the neat-level Hecke algebra modulo a nilpotent ideal. These are equalities of elements, carried by ring
+maps; the comparison of CrystallineLocalGlobalCompatibilityCM §8.6 passes from neat level to `K^P(Q)`
+through ring maps and finitely many nilpotent quotients, so they hold over `T_{χ,Q}/J_{χ,Q}`. There the
+local representation at `v`, over a ring that may be nonreduced, satisfies §3.4(i), and §3.4, which is
+stated over every object of `CNL_O`, makes it a point of the local problem at `v`. Since `P^c ∩ S = ∅`
+and `Q ∩ S^c = ∅`, no place of `P^c` lies in `S ∪ Q`, so `K^P(Q)` is hyperspecial on `P^c`. The inertial
+comparison (`gap:acc-torsion-inertial-comparison`) is applied with the conjugation-stable set
+`(S ∪ Q) ∪ (S ∪ Q)^c` and the Iwahori-type set `R ∪ P ∪ Q`; every conjugate of a place of `R ∪ P ∪ Q`
+that is not itself in `R ∪ P ∪ Q` lies outside `S ∪ Q` and has hyperspecial level, so the representation
+is unramified outside `S ∪ Q`, in particular at `P^c` (CaptainSude26, lines 299–314). (CaptainSude26,
+Lemma 4.1, lines 291–408; CN23, Propositions 5.6.2–5.6.3, lines 4334–4390; ACC23, Theorem 3.1.1, line
+2346.)
 
 *Needs:* §§3.4, 5.1, 5.2; CrystallineLocalGlobalCompatibilityCM §§8.6, 9.4, 9.6, 9.7, 9.9;
 `gap:acc-torsion-inertial-comparison` (AutomorphicGaloisRepresentationsPartII AG2.5).
 
 **Checks.**
 
-- At full Iwahori level with trivial character the torus polynomial at `v ∈ P` is `(X − 1)²`; with the
-  coefficient character `χ_v⁻¹(a/d)` of the `R` places it would be `(X − χ_v(u))(X − χ_v(u)⁻¹)`, which is
-  not the protected condition.
+- At `v ∈ P`, on `Iw_v` with the trivial coefficient module, the operators of `diag(u, 1)` and
+  `diag(1, u)`, `u ∈ O_{F_v}^×`, are the identity and `P_{v,σ} = (X − 1)²`. Were the coefficient module
+  at `v` the character `χ_v⁻¹(a/d)` used at `R`, they would act by `χ_v(u)⁻¹` and `χ_v(u)`, giving
+  `(X − χ_v(u))(X − χ_v(u)⁻¹)`, whose roots are not `1` once `χ_v(u) ≠ 1`: not the protected condition.
 - At level `Iw_{v,1}` (pro-`v` Iwahori) the torus operators act through `k_v×` and the polynomial is not
   forced to be `(X − 1)²`; the full Iwahori level at `P` is part of the datum.
 - For `Q = ∅` the maps are those of the first construction, with `Δ_∅ = 1`.
@@ -958,7 +997,8 @@ the two systems `χ = 1` and `χ` with `χ_v² ≠ 1` (possible since `q_v ≡ 1
 DeformationAndDerivedPatchingAlgebra §§8.1–8.5 with the perfect complexes of
 CrystallineLocalGlobalCompatibilityCM §9.6 at `K^P`. The dimensions `dim R_∞ = r + 4t − d` and
 `dim S_∞ = r + 4t` give deficit `d = l₀`. The components at five are those of LocalGaloisDeformationRings
-§§4.14–4.15 and 6.6, those at `R` those of §2.15; there are no component labels at `P`. Propagation of
+§§4.14–4.15 and 6.6, those at `R` those of §2.15; `P` has no factor in the local base (§4.3), so no
+component is chosen there. Propagation of
 automorphic support is CrystallineLocalGlobalCompatibilityCM §§8.2–8.5, and the weight-zero rational
 comparison of §9.10 turns the support point into `Π`. (CaptainSude26, Theorem 4.2 and proof,
 lines 410–498; CN23, Proposition 5.6.1, line 4261.)
@@ -971,8 +1011,9 @@ DeformationAndDerivedPatchingAlgebra §§8.1–8.5; LocalGaloisDeformationRings 
 
 - If `ρ` had inertia at `v ∈ P` acting through `ζ₅^(±1)` (first Check of §3.4) it would not define a point
   of the patched problem, although `ρ̄` is protected.
-- Source and target lie on matching components at five: ordinary or nonordinary at `S₅^cr`,
-  non-crystalline ordinary at `S₅^st`; a supersingular target with an ordinary source is excluded.
+- At each place above five, `π` and `ρ` must give points of one irreducible component of the local
+  ring: at `S₅^cr` both ordinary or both non-ordinary, at `S₅^st` both non-crystalline ordinary. An
+  ordinary `r_ι(π)` with a supersingular `ρ` at a place of `S₅^cr` is excluded by the hypotheses.
 - For the smallest configuration of §5.1 (`d = 40`, `t = 10`, `R = ∅`) the deficit is forty, matching
   `l₀ = 40` for `PGL₂` over a CM field of degree eighty, one for each complex place; at `r = 111`, the
   least value with `g ≥ 0`, `dim R_∞ = 111 = r + 4t − d` and `dim S_∞ = 151 = r + 4t`.
@@ -1027,10 +1068,11 @@ PotentialAutomorphyInfrastructure §§2.1, 2.3, 2.5; PotentialModularityAndCompa
   equal ramification index. Making `ρ` unramified at a place above `v^c` is impossible when `ρ(I_{v^c})`
   is infinite (an open subgroup of an infinite profinite group is nontrivial) and otherwise forces a
   ramification index divisible by five there, hence at the matching place above `v`, where residual
-  inertia becomes `U^(5k) = 1` (§3.3, third bullet). If instead `ρ(I_{v^c})` has order three, a prescribed
-  completion of ramification index three at the place of `F⁺` below `v` makes `ρ` unramified above `v^c`
-  and keeps protection above `v`, three being prime to five. The preparation of this section keeps
-  `P ∪ P^c` completely split, so it needs `ρ` and `π` unramified at `v^c`.
+  inertia is generated by a power of `U⁵ = 1` and is trivial (§3.3, third bullet). If instead
+  `ρ(I_{v^c})` has order three, a prescribed completion of ramification index three at the place of `F⁺`
+  below `v` makes `ρ` unramified above `v^c` and keeps protection above `v`, three being prime to five.
+  The preparation of this section keeps `P ∪ P^c` completely split, so it needs `ρ` and `π` unramified
+  at `v^c`.
 - For `F = ℚ(ζ₅)`, which has no imaginary quadratic subfield, the imaginary quadratic composita are
   required to reach condition (i) of §5.1.
 
@@ -1107,8 +1149,8 @@ parent's §2.3 at `R_*` for `m = 3`, the reflection `w` fixes exactly one of the
 `−1` on both branches there, and exchanges the other two; (c) the quotient of the regular model by `w`
 has an `A₁` singularity `z₁z₂ = s²` at the image of the fixed node and an ordinary node of thickness one
 at the image of the exchanged pair, its components are rational, and after resolving the `A₁` point the
-fiber is a cycle of three rational curves: `D` and `A` have semistable reduction of type `I₃` in the
-smoothing parameter `s`; (d) `1/j(A_t)` has a zero of exact order three in `s`, and over a field
+fiber is a cycle of three rational curves: the families `D_t` and `A_t` have semistable reduction of
+type `I₃` in the smoothing parameter `s`; (d) `1/j(A_t)` has a zero of exact order three in `s`, and over a field
 containing the data of (b) the Tate parameter `q_A` of `A_t` is `s³λ(s)` for a power series `λ` with
 `λ(0) ≠ 0`. For (b): on the elliptic component `E' → E`, an étale cyclic triple cover, the lifts of
 `[−1]` are `Q ↦ −Q + c₀` with `c₀ ∈ ker(E' → E)`; the fiber over the two-torsion point is a coset
@@ -1137,12 +1179,20 @@ rational prime `q ∉ Σ₀` with `q ≥ 7`, `q ≠ p`, split completely in the 
 open `Ω_v ⊂ U(K_v)` such that for `t ∈ Ω_v` the curve `A_t` has split multiplicative reduction at `v`
 with `v(Δ_min(A_t)) = 3m_v`, for a fixed integer `m_v` prime to five; (b) for every other place `v' ≠ v`
 of `K` above `q` there is a nonempty open `Ω_v' ⊂ U(K_v')` on which `A_t` has good reduction at `v'`.
-For (a): spread the `I₃` model and `s` over the ring of integers with `Σ₀` inverted, so that the node and
-branch data, the thicknesses, good reduction of `E` and the unit leading coefficient of `1/j` persist;
-at `v` the Tate parameter is `s³λ(s)` with `λ(0)` a unit, so `v(q_A) = 3v(s)` once `v(s) > 0`; choose
-`v(s) = m_v` large with `5 ∤ m_v`. For (b): near the compact-type boundary point `O` the Jacobian family
-is an abelian scheme with fiber `E³` (the parent's §2.2); by the parent's §6.1 the `d`-torsion is locally
-constant for an odd `d ≠ q`, hence unramified, so nearby fibers are semistable
+For (a): let `K₁ ⊇ K` be the field of definition of the data of §7.1(b), over which §7.1(c)–(d) hold;
+the model of §7.1(c) and its coordinate `s` are defined over `O_{K₁}[1/n₀]` for some integer `n₀ ≥ 1`.
+Let `Σ₀` contain the prime factors of `n₀`, the residue characteristics of the places of bad
+reduction of `E`, and the finitely many primes modulo which the reduced family is no longer a cycle
+of type `I₃` with nodes of thicknesses two and one before resolution, or the coefficient of `s³` in
+`1/j(A_t)` is not a unit. For `q` as in the statement and `v | q`, `K₁` embeds in `K_v` and
+§7.1(c)–(d) hold over `O_{K_v}`, with `q_A = s³λ(s)` and `λ(0) ∈ O_{K_v}^×`. Fix an integer `m_v > 0`
+with `5 ∤ m_v`, large enough that `λ` converges to a unit where `v(s) ≥ m_v`, and let `Ω_v` be the set
+of `t ∈ U(K_v)` near the degeneration point with `v(s) = m_v`: it is open, nonempty because `s` is a
+unit multiple of a local coordinate of the `t`-line there (§7.1(d)), and on it `A_t` is split
+multiplicative, the branches being defined over `K_v`, with `v(Δ_min(A_t)) = v(q_A) = 3m_v`. For (b):
+near the compact-type boundary point `O` the Jacobian family is an abelian scheme with fiber `E³` (the
+parent's §2.2); by the parent's §6.1 the `d`-torsion is locally constant for an integer `d ≥ 3` prime
+to `q` (`d = 3` will do, as `q ≥ 7`), hence unramified, so nearby fibers are semistable
 (NeronModelsAndSemistableAbelianVarieties §3.12); by the parent's §6.3 their toric rank is that of `E³`,
 namely zero, so they have good reduction, and so does the isogeny factor `A_t`; the parent's §6.5
 pulls the neighborhood back to the `t`-line. (CaptainSude26, Lemma 5.1, lines 520–532.)
@@ -1162,7 +1212,8 @@ NeronModelsAndSemistableAbelianVarieties §§3.1, 3.12, 5.1; EllipticCurves Laye
 
 Let `K_v` be a finite extension of `ℚ_ℓ` with `ℓ ≠ 5` and `μ₅ ⊂ K_v`, and `A/K_v` split multiplicative with
 `5 ∤ v(Δ_min(A))`. Prove: `A[5]` and the residual representation of `H¹(A)` are protected (§3.3);
-residual Frobenius has both diagonal entries `1`, and a change of tame lift makes it trivial; every
+in the basis of §3.3 a Frobenius lift acts residually by a unipotent upper triangular matrix, which
+becomes the identity once the lift is multiplied by a suitable power of `τ`; every
 element of the image of `I_v` on `H¹(A_K̄, Q̄₅)` has characteristic polynomial `(X − 1)²`; and if `A` is
 the localization of a modular non-CM curve with realizing `π`, then `π_v` is the Steinberg
 representation, which has nonzero Iwahori-fixed vectors. If instead `5 | v(Δ_min(A))`, `A[5]` is
@@ -1178,10 +1229,10 @@ EllipticCurveModularityImaginaryQuadratic §0.3; GL2AutomorphicRepresentationsAn
 
 - For `v(q_A) = 3` the residual inertia is `[[1, 3],[0, 1]]`, a nontrivial unipotent; for `v(q_A) = 15` it
   is trivial.
-- A non-split multiplicative curve is the unramified quadratic twist of a split one: its residual
-  Frobenius has diagonal entries `−1`, its residual inertia is unchanged, so it is still protected, and
-  its automorphic component is the twist of Steinberg by the unramified quadratic character, which also
-  has Iwahori-fixed vectors.
+- A non-split multiplicative curve is the unramified quadratic twist of a split one. The twist
+  leaves inertia acting as before, so the curve is still protected, and multiplies the residual image
+  of Frobenius by `−1`, giving `−1` times a unipotent matrix; its automorphic component is Steinberg
+  twisted by the unramified quadratic character, which still has Iwahori-fixed vectors.
 - Good reduction gives unramified `A[5]`, never protected.
 
 ### 7.4 The switch at five with retained auxiliary places
@@ -1226,8 +1277,10 @@ contains the opposite transvections `[[1, ±3],[0,1]]` and `[[1, 0],[±3, 1]]` (
 coefficient `3`); they generate `SL₂(𝔽₅)`, and `det = ε̄₅` is trivial on `G_K`; genericity descends from
 `F` by Theorem 1.2. Part (b) is §7.3. For (c): apply §7.4 to `ρ̄ = A_t[5]` with the partition given by the
 potential reduction types of `A_t` above five, `F_avoid` containing the field cut out by `ρ̄`, and `Σ` the
-places above `q` with the split-multiplicative opens at the places above `v` and the good-reduction
-opens at the others, all nonempty because `A_t` supplies points. Over the resulting `L`, which contains
+places of `K` above `q`, with the open of curves of split multiplicative reduction whose minimal
+discriminant has valuation prime to five at `v` and the open of curves of good reduction at each other
+place above `q`; each is nonempty, since by the choice of `t` in the opens of §7.2 the curve `A_t`
+itself is a point of it. Over the resulting `L`, which contains
 `ζ₅` because `K` does, the protected alternative of Theorem 6.2 applies to `H¹(A_t)|G_L`, `π_{A'}` and `P`
 the places above `v`: clause (4) fails, the protected conditions hold by §7.3 and §7.4, the five-adic
 matching holds by the parent's §0.3 `auxiliary_local_types`. Descend along `L/K` by

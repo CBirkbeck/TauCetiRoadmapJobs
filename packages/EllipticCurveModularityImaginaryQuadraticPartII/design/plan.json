@@ -16,12 +16,12 @@
      "id": "1.1",
      "kind": "theorem",
      "name": "isCMField_of_intermediate_cyclotomic",
-     "statement": "Let K be a CM number field and L/K a finite extension with IsCyclotomicExtension S K L. Every intermediate field K ⊆ E ⊆ L is a CM field; in particular L is CM.",
+     "statement": "Let K be a CM number field and L/K a finite extension with IsCyclotomicExtension S K L. Every intermediate field K ⊆ K' ⊆ L is a CM field; in particular L is CM.",
      "hypotheses": [
       "K is a number field with NumberField.IsCMField K",
       "L/K finite",
       "IsCyclotomicExtension S K L",
-      "K ⊆ E ⊆ L"
+      "K ⊆ K' ⊆ L"
      ],
      "locator": {
       "source": "MilneCM",
@@ -51,7 +51,7 @@
       {
        "name": "cm_intermediate_real_subfield",
        "kind": "non-example",
-       "statement": "Q(sqrt 5) inside Q(zeta_20) is totally real and not CM: the statement needs E to contain K."
+       "statement": "Q(sqrt 5) inside Q(zeta_20) is totally real and not CM: the statement needs K' to contain K."
       },
       {
        "name": "cm_intermediate_abelian",
@@ -75,7 +75,7 @@
      },
      "prerequisites": [
       "roadmap:AutomorphicGaloisRepresentationsPartII AG2.7",
-      "roadmap:ArithmeticGaloisRepresentations Layer 1"
+      "roadmap:ArithmeticGaloisRepresentations §2.1"
      ],
      "api": [],
      "tests": [
@@ -134,7 +134,7 @@
      "id": "2.1",
      "kind": "theorem",
      "name": "cm_seed_before_base_change",
-     "statement": "With ζ5 ∉ K and t a switch parameter: (a) the mod-5 residual representation of H¹(A_t) is decomposed generic over K and absolutely irreducible on G_{K(ζ5)}, and A_t is geometrically non-CM; (b) A_t is modular over K by a cuspidal weight-zero π_A of PGL₂(𝔸_K) realizing H¹(A_t) at every (ℓ, ι); (c) F/K is finite abelian, F is CM, and the base change π_{A,F} is cuspidal weight zero with r_ι(π_{A,F}) ≅ V_η.",
+     "statement": "With ζ5 ∉ K and t a switch parameter: (a) A_t is geometrically non-CM, and the mod-5 residual representation of H¹(A_t) is absolutely irreducible on G_{K(ζ5)} and decomposed generic over K; (b) A_t is modular over K by a cuspidal weight-zero π_A of PGL₂(𝔸_K) realizing H¹(A_t) at every (ℓ, ι); (c) F/K is finite abelian, F is CM, and the base change π_{A,F} is cuspidal weight zero with r_ι(π_{A,F}) ≅ V_η.",
      "hypotheses": [
       "K is a CM field",
       "E/K is geometrically non-CM, y² = h(x)",
@@ -253,7 +253,7 @@
       {
        "name": "local_factor_degrees",
        "kind": "computation",
-       "statement": "Split multiplicative: degree 1 with N of rank 1; potentially good with nontrivial inertia: factor 1; good: degree 2."
+       "statement": "Split multiplicative: degree 1 with N of rank 1; potentially good with nontrivial inertia: factor 1; good: degree 2. The first two already differ in the Weil part (unramified versus ramified); with N forgotten the split multiplicative parameter (eigenvalues 1, q_v) would have factor ((1 − T)(1 − q_v T))⁻¹ of degree 2, against (1 − T)⁻¹ with N; at q_v = 4, ((1 − T)(1 − 4T))⁻¹ and (1 − T)⁻¹."
       },
       {
        "name": "complex_parameter_i",
@@ -573,12 +573,12 @@
       {
        "name": "tangent_cocycles",
        "kind": "computation",
-       "statement": "Cocycles (c(τ), c(φ)) with c(φ) ∈ ke: dim Z¹ = 4, dim B¹ = 2, dim H¹ = 2."
+       "statement": "Cocycles (ξ(τ), ξ(φ)) with ξ(φ) ∈ ke: dim Z¹ = 4, dim B¹ = 2, dim H¹ = 2."
       },
       {
        "name": "tangent_ramified_class",
        "kind": "non-example",
-       "statement": "(f,0) is not in L_v and pairs nontrivially with (0,e)."
+       "statement": "(f,0) is not in L_v and pairs nontrivially with (0,e); as L_v^⊥ = L_v = k[(0,e)], a(f,0) + b(0,e) lies in L_v^⊥ only for a = 0, i.e. only with zero image in H¹(I_v, M)."
       }
      ]
     }
@@ -662,7 +662,7 @@
       {
        "name": "tw_framed_P_fails",
        "kind": "non-example",
-       "statement": "Framing a protected place drops its dual condition; the inflated exceptional class is locally trivial at every Taylor-Wiles prime and survives."
+       "statement": "Framing every protected place leaves no dual condition at P; the inflated exceptional class is then locally trivial at every Taylor-Wiles prime and lies in every H_Q. With one protected place left unframed it is ramified there (4.1) and excluded."
       },
       {
        "name": "tw_padding",
@@ -878,7 +878,7 @@
       {
        "name": "hecke_torus_poly",
        "kind": "computation",
-       "statement": "At full Iwahori level with trivial character the torus polynomial at P is (X−1)²; with character χ_v it would be (X−χ_v(u))(X−χ_v(u)⁻¹)."
+       "statement": "On Iw_v at v ∈ P with trivial coefficients, diag(u,1) and diag(1,u) act as 1 and P_{v,σ} = (X−1)²; with the R-type character χ_v⁻¹(a/d) they would act by χ_v(u)⁻¹, χ_v(u), giving (X−χ_v(u))(X−χ_v(u)⁻¹)."
       },
       {
        "name": "hecke_pro_v_level",
@@ -991,7 +991,7 @@
       {
        "name": "prep_conjugate_ramified",
        "kind": "non-example",
-       "statement": "If ρ(I_{v^c}) is infinite or of order divisible by 5 (e.g. ρbar also protected at v^c), complex conjugation of any CM F' matches places above v^c and v with equal ramification index, so making ρ unramified above v^c is impossible or forces 5 | e above v, where residual inertia becomes U^(5k) = 1: P'^c ∩ S' = ∅ cannot be reached with P' protected. If ρ(I_{v^c}) has order 3, a ramification-index-3 completion at the place of F⁺ below v makes ρ unramified above v^c and keeps protection above v. The preparation here keeps P ∪ P^c split, so it needs ρ, π unramified at v^c."
+       "statement": "If ρ(I_{v^c}) is infinite or of order divisible by 5 (e.g. ρbar also protected at v^c), complex conjugation of any CM F' matches places above v^c and v with equal ramification index, so making ρ unramified above v^c is impossible or forces 5 | e above v, where residual inertia is generated by a power of U⁵ = 1 and is trivial: P'^c ∩ S' = ∅ cannot be reached with P' protected. If ρ(I_{v^c}) has order 3, a ramification-index-3 completion at the place of F⁺ below v makes ρ unramified above v^c and keeps protection above v. The preparation here keeps P ∪ P^c split, so it needs ρ, π unramified at v^c."
       },
       {
        "name": "prep_Qzeta5",
@@ -1140,7 +1140,7 @@
      "id": "7.3",
      "kind": "theorem",
      "name": "tate_curve_protected",
-     "statement": "For K_v finite over Q_ℓ, ℓ ≠ 5, μ5 ⊂ K_v and A/K_v split multiplicative with 5 ∤ v(Δ_min): A[5] and the residual H¹ are protected, residual Frobenius has diagonal 1 and becomes trivial after a tame-lift change, inertia acts unipotently on H¹(A, Q̄5), and for modular non-CM A the local component is Steinberg. If 5 | v(Δ_min), A[5] is unramified.",
+     "statement": "For K_v finite over Q_ℓ, ℓ ≠ 5, μ5 ⊂ K_v and A/K_v split multiplicative with 5 ∤ v(Δ_min): A[5] and the residual H¹ are protected, a Frobenius lift acts residually by a unipotent upper triangular matrix, trivial after multiplying the lift by a power of τ, inertia acts unipotently on H¹(A, Q̄5), and for modular non-CM A the local component is Steinberg. If 5 | v(Δ_min), A[5] is unramified.",
      "hypotheses": [
       "ℓ ≠ 5",
       "μ5 ⊂ K_v",
@@ -1167,7 +1167,7 @@
       {
        "name": "tate_nonsplit",
        "kind": "compatibility",
-       "statement": "Non-split multiplicative: residual Frobenius diagonal −1, still protected, component the unramified quadratic twist of Steinberg."
+       "statement": "Non-split multiplicative: inertia acts as for the split twist, so still protected; residual Frobenius is −1 times a unipotent; component the unramified quadratic twist of Steinberg."
       },
       {
        "name": "tate_good",
@@ -1483,7 +1483,7 @@
   {
    "roadmap": "ArithmeticGaloisRepresentations",
    "sections": [
-    "Layer 1",
+    "§2.1",
     "§4.3",
     "§6.3",
     "§7.2",
