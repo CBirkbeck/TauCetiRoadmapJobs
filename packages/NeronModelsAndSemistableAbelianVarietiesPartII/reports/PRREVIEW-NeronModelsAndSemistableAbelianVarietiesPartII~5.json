@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NeronModelsAndSemistableAbelianVarietiesPartII~5",
+  "head": "bfb383084bb13b0757e0784987bc4281fe082529",
+  "pr": 870,
+  "folder": "NeronModelsAndSemistableAbelianVarietiesPartII",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 9027cc3; previous R01 (description) repaired; title and description checked against the head (ten main roadmaps cited, four open suppliers, fourteen = eleven nonzero-j + three zero-j models, discriminants of models 12-14 and the five F2 point counts recomputed); schroer locators for Theorems 10.4, 10.5 and Proposition 11.1 checked; worker's gate passes including build; depcheck 0 problems; Suggested.lean elaborates with sorry the only warning; no change outside the folder",
+  "text": "e4674482adb75699"
+ }
+}
