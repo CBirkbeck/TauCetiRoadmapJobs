@@ -1313,7 +1313,9 @@
       "target:4.3.1",
       "target:4.3.2",
       "target:5.1.1",
-      "target:4.4"
+      "target:4.4",
+      "target:2.1",
+      "target:4.1"
      ],
      "tests": [
       {
@@ -1355,7 +1357,9 @@
       "target:5.3",
       "target:4.2",
       "mathlib:IsPicardLindelof",
-      "mathlib:IsPicardLindelof.exists_eq_forall_mem_Icc_hasDerivWithinAt"
+      "mathlib:IsPicardLindelof.exists_eq_forall_mem_Icc_hasDerivWithinAt",
+      "roadmap:SymmetricHyperbolicSystems §1.2",
+      "target:4.1"
      ],
      "tests": [
       {
@@ -1552,7 +1556,9 @@
       "target:5.1.1",
       "target:4.2",
       "target:4.4",
-      "target:6.2.1"
+      "target:6.2.1",
+      "target:2.1",
+      "target:4.1"
      ],
      "tests": [
       {
@@ -1601,12 +1607,14 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "CompressibleEuler.localWellPosedness",
-     "statement": "For a barotropic law (I,p), a period group Λ, 2k > n + 2, a background (ρ₀,v₀) ∈ I × E and data with ρ̄ − ρ₀, v̄ − v₀ ∈ Hᵏ_Λ and ρ_* ≤ ρ̄ ≤ ρ^* for [ρ_*,ρ^*] ⊆ I: there are T > 0 and a unique Λ-periodic classical solution on [t₀, t₀+T] × E with (ρ − ρ₀, v − v₀) ∈ C(Hᵏ_Λ) and ρ ≥ ρ_*/2; T depends only on (I,p), Λ, k, (ρ₀,v₀), [ρ_*,ρ^*] and a bound M ≥ ‖(ρ̄ − ρ₀, v̄ − v₀)‖_{Hᵏ_Λ}, and the solution depends continuously on the data within this class (data converging in (ρ₀,v₀) + Hᵏ_Λ with norm ≤ M and ρ_* ≤ ρ̄^m ≤ ρ^* have solutions on [t₀, t₀+T] converging in C([t₀, t₀+T];Hᵏ_Λ)); if the maximal time is finite then ∫‖∇(ρ,v)‖_∞ = ∞ or the closure of the range of ρ is not compact in I. The full system is analogous with s̄ − s₀ ∈ Hᵏ_Λ and (ρ̄,s̄) in a compact subset L of 𝒪 (L in place of [ρ_*,ρ^*], ρ_* = min_L ρ, the range of (ρ,s) in 𝒪 in place of that of ρ in I). Route: 7.1 with Ū = (ρ₀,v₀) and K = [ρ_*,ρ^*] × B̄(v₀, CM), C the embedding constant of 4.2; T shrunk to ≤ ρ_*/(2C′) with C′ > 0, C′ ≥ ‖v·∇ρ + ρ div v‖_∞, bounded in terms of R(M,K), ρ₀, v₀.",
+     "statement": "For a barotropic law (I,p), a period group Λ, 2k > n + 2, a background (ρ₀,v₀) ∈ I × E and data with ρ̄ − ρ₀, v̄ − v₀ ∈ Hᵏ_Λ and ρ_* ≤ ρ̄ ≤ ρ^* for [ρ_*,ρ^*] ⊆ I: there are T > 0 and a unique Λ-periodic classical solution on [t₀, t₀+T] × E with (ρ − ρ₀, v − v₀) ∈ C(Hᵏ_Λ) and ρ ≥ ρ_*/2; T depends only on (I,p), Λ, k, (ρ₀,v₀), [ρ_*,ρ^*] and a bound M ≥ ‖(ρ̄ − ρ₀, v̄ − v₀)‖_{Hᵏ_Λ}, and the solution depends continuously on the data within this class (data converging in (ρ₀,v₀) + Hᵏ_Λ with norm ≤ M and ρ_* ≤ ρ̄^m ≤ ρ^* have solutions on [t₀, t₀+T] converging in C([t₀, t₀+T];Hᵏ_Λ)); if the maximal time is finite then ∫‖∇(ρ,v)‖_∞ = ∞ or the closure of the range of ρ is not compact in I. The full system is analogous for an equation of state (𝒪,P), a background (ρ₀,v₀,s₀) with (ρ₀,s₀) ∈ 𝒪 and v₀ ∈ E, and data (ρ̄,v̄,s̄) with s̄ − s₀ ∈ Hᵏ_Λ as well and (ρ̄,s̄)(E) in a compact subset L of 𝒪 ((𝒪,P), (ρ₀,v₀,s₀) and L in place of (I,p), (ρ₀,v₀) and [ρ_*,ρ^*], ρ_* = min_L ρ, the triples with s − s₀ and ∇(ρ,v,s) in place of the pairs, the range of (ρ,s) in 𝒪 in place of that of ρ in I). Route: 7.1 with Ū = (ρ₀,v₀) ∈ G = I × E (full: Ū = (ρ₀,v₀,s₀) ∈ G since (ρ₀,s₀) ∈ 𝒪) and K = [ρ_*,ρ^*] × B̄(v₀, CM) (full: {(ρ,v,s) : (ρ,s) ∈ L, |v − v₀| ≤ CM}), C the embedding constant of 4.2; T shrunk to ≤ ρ_*/(2C′) with C′ > 0, C′ ≥ ‖v·∇ρ + ρ div v‖_∞, bounded in terms of R(M,K), ρ₀, v₀.",
      "hypotheses": [
+      "(ρ₀, v₀) ∈ I × E",
       "[ρ_*, ρ^*] ⊆ I",
       "2k > n + 2",
       "ρ̄ − ρ₀, v̄ − v₀ ∈ Hᵏ_Λ",
-      "‖(ρ̄ − ρ₀, v̄ − v₀)‖_{Hᵏ_Λ} ≤ M (for the uniform time and the continuity)"
+      "‖(ρ̄ − ρ₀, v̄ − v₀)‖_{Hᵏ_Λ} ≤ M (for the uniform time and the continuity)",
+      "full system: (𝒪, P) an equation of state, background (ρ₀, v₀, s₀) with (ρ₀, s₀) ∈ 𝒪 and v₀ ∈ E, s̄ − s₀ ∈ Hᵏ_Λ, (ρ̄, s̄)(E) ⊆ L with L ⊆ 𝒪 compact"
      ],
      "locator": {
       "source": "AbbresciaSpeck2022",
@@ -1618,7 +1626,11 @@
       "target:2.2.2",
       "target:7.1",
       "target:7.1.1",
-      "target:4.2"
+      "target:4.2",
+      "target:1.1",
+      "target:1.2",
+      "target:1.3",
+      "target:4.1"
      ],
      "tests": [
       {
@@ -1635,6 +1647,11 @@
        "name": "sobolev_threshold",
        "kind": "computation",
        "statement": "n = 3: k = 3 gives 2k = 6 > 5 (the H³ setting of Abbrescia–Speck); k = 2 gives 4 < 5 and is excluded"
+      },
+      {
+       "name": "full_background_outside_states",
+       "kind": "non-example",
+       "statement": "Λ = 2πℤ, n = 1, 𝒪 = (0,∞) × (0,1), data (1, 0, 1/2): the triple (1, 0, 5) has s̄ − 5 = −9/2 ∈ Hᵏ_Λ (squared norm 81π/2) but (1, 5) ∉ 𝒪, so it is not in G and 7.1 does not apply; the background (1, 0, 1/2) ∈ G gives the constant solution; for Λ not of full rank (ρ₀, s₀) lies in the closure of (ρ̄, s̄)(E) ⊆ L automatically"
       }
      ]
     },
@@ -1714,7 +1731,8 @@
       "target:7.3.1",
       "target:3.3.3",
       "target:4.2",
-      "target:4.3.1"
+      "target:4.3.1",
+      "target:4.1"
      ],
      "tests": [
       {

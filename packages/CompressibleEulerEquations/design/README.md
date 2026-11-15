@@ -413,8 +413,9 @@ identification in §3.1, §2.2, and can be built in parallel with Layers 4 and 5
 `Hᵏ_Λ` calculus on Tau Ceti's Sobolev spaces. Layer 5 is the Friedrichs energy method in
 `Hᵏ_Λ` for linear systems on SymmetricHyperbolicSystems' carrier (Layers 2 and 4). Layer 6
 proves local uniqueness on lens-shaped domains and uniqueness on domains of dependence (Layers
-2, 3 and 5). Layer 7 is local well-posedness (Layers 2 and 4–6, and §3.3 for uniformly local
-data). Layer 8 is the theory of developments (Layers 1–3, 6 and 7, and LorentzianGeometry §12.6).
+2, 3 and 5). Layer 7 is local well-posedness (Layers 2 and 4–6, Layer 1 for the Euler statement,
+and §3.3 for uniformly local data). Layer 8 is the theory of developments (Layers 1–3, 6 and 7,
+and LorentzianGeometry §12.6).
 The headline theorems, which the acceptance test states, are the local well-posedness of
 compressible Euler (§7.2), uniqueness on lens-shaped domains (§6.1), the uniqueness and
 existence theorems for developments (§8.2–§8.3) and the nullity of the regular boundary of a
@@ -503,7 +504,7 @@ Fix an equation of state `(𝒪, P)`. Define a *classical solution* of the full 
 (ChristodoulouMiao2014 lines 833–838, eqs. (2.1)–(2.3); AbbresciaSpeck2022 lines 158–160).
 Prove the conservative form (the barotropic one with `P(ρ, s)` and `∂_t(ρs) + div(ρsv) = 0`),
 Galilean invariance as in §1.2 with `s ∘ φ⁻¹`, and the constant-entropy reduction: if `s ≡ s₀`
-on `D` then `(ρ, v)` is a barotropic solution for `ρ ↦ P(ρ, s₀)` on each interval `J` with
+on `D` then `(ρ, v)` is a barotropic solution for `ρ ↦ P(ρ, s₀)` on each open interval `J` with
 `J × {s₀} ⊆ 𝒪` containing `ρ(D)`, and conversely. Prove entropy propagation: if `(ρ, v, s)` is a
 classical solution on a slab `[t₀, t₁) × E` with `v` bounded on `[t₀, t₂] × E` for every
 `t₂ < t₁` and `s = s₀` on `Σ_{t₀}`, then `s ≡ s₀`, since `s` is constant along the material
@@ -1436,8 +1437,8 @@ most `C‖∇U‖_∞‖U − Ū‖_{Hᵏ_Λ}`, and the coefficient terms `∂_t
   `Ū = 0`, `Λ = 2πℤ`, `U(t, x) = eᵗ` on `[0, log 2]`, `K = [0, 2]`: at `t = 0`, `‖∂_tU‖_∞ = 1`
   while `‖∇U‖_∞ = 0`, so `‖∂_tU‖_∞ ≤ C‖∇U‖_∞` fails; the stated bound reads `1 ≤ C(1 + 0)`.
 
-*Needs:* §§4.2–4.3, §4.4 (Friedrichs' lemma, for the differentiability of `E_k`), §5.1; Tau Ceti
-`TauCeti.le_mul_exp_of_le_add_mul_integral`.
+*Needs:* §2.1 (the system), §§4.1–4.3, §4.4 (Friedrichs' lemma, for the differentiability of
+`E_k`), §5.1; Tau Ceti `TauCeti.le_mul_exp_of_le_add_mul_integral`.
 
 ### 5.4 Linear existence in `Hᵏ_Λ`
 
@@ -1483,7 +1484,8 @@ supported data and forcing and `C_b^∞` coefficients there.
   at `t = 0`, while `E₂(0) ≤ e(2π + 5π + 17π) = 24eπ`. A constant independent of `M` would give
   `22πM ≤ C·24eπ` for every `M`; with `C` depending on `|Ā¹| = M` there is no contradiction.
 
-*Needs:* §§4.2–4.4, §§5.1–5.3; Mathlib `IsPicardLindelof`,
+*Needs:* SymmetricHyperbolicSystems §1.2 (the linear system and its predicate), §§4.1–4.4,
+§§5.1–5.3; Mathlib `IsPicardLindelof`,
 `IsPicardLindelof.exists_eq_forall_mem_Icc_hasDerivWithinAt`.
 
 ### Examples
@@ -1583,8 +1585,9 @@ the period group of the data in §8.4.
   satisfies `A⁰ ≥ λ₀I` for no `λ₀ > 0` and is not an operator of §5.1. For a system with
   `A⁰ = 2` and `λ = 1` the cut-off `A⁰` is `1 + θ`, which is `1.5 ≥ 1` at `θ = 1/2`.
 
-*Needs:* §2.1 (difference bound), §2.2 (dominance for Euler), §5.1 (the operator class the
-cut-off coefficients belong to), §5.2; Mathlib `MeasureTheory.convolution` and `ContDiffBump`
+*Needs:* §2.1 (difference bound), §2.2 (dominance for Euler), §3.1 (the acoustical form, for the
+Euler reading of the spacelike condition), §5.1 (the operator class the cut-off coefficients
+belong to), §5.2; Mathlib `MeasureTheory.convolution` and `ContDiffBump`
 for the cutoff `θ`.
 
 ### 6.2 Uniqueness on domains of dependence
@@ -1712,7 +1715,8 @@ Bona–Smith regularisation of the data; continuation by the tame estimate of §
   values in `K` but no solution on `[0, T(M, K)]`, so their norm exceeds `M`.
 - Constant data `U₀ ≡ Ū` give the constant solution with `T* = ∞`.
 
-*Needs:* §§4.2–4.4, §§5.1–5.4, §6.2; Tau Ceti `TauCeti.le_mul_exp_of_le_add_mul_integral`.
+*Needs:* §2.1 (the system and the dominating cone map `κ`), §§4.1–4.4, §§5.1–5.4, §6.2; Tau Ceti
+`TauCeti.le_mul_exp_of_le_add_mul_integral`.
 
 ### 7.2 Compressible Euler
 
@@ -1726,14 +1730,19 @@ on the data within this class: if `(ρ̄^m, v̄^m) → (ρ̄, v̄)` in `(ρ₀, 
 `‖(ρ̄^m − ρ₀, v̄^m − v₀)‖_{Hᵏ_Λ} ≤ M` and `ρ_* ≤ ρ̄^m ≤ ρ^*`, their solutions, all defined on
 `[t₀, t₀ + T]`, converge to `(ρ, v)` in `C([t₀, t₀ + T]; Hᵏ_Λ)`. If the maximal time is finite
 then `∫ ‖∇(ρ, v)‖_∞ dt = ∞` or the closure of the range of `ρ` is not a compact subset of `I`. The
-same holds for the full system with `s̄ − s₀ ∈ Hᵏ_Λ` and `(ρ̄, s̄)(E)` contained in a compact subset
-`L` of `𝒪`, with `L` in place of `[ρ_*, ρ^*]`, `ρ_*` the least density on `L`, and the range of
-`(ρ, s)` in `𝒪` in place of the range of `ρ` in `I`. (AbbresciaSpeck2022 lines 172–179, the full
-system on `ℝ × 𝕋²` with non-vacuum `H³` data; ChristodoulouMiao2014 lines 866–868; LuoYu2023a
+same holds for the full system, for an equation of state `(𝒪, P)` in place of `(I, p)`, a
+background `(ρ₀, v₀, s₀)` with `(ρ₀, s₀) ∈ 𝒪` and `v₀ ∈ E` in place of `(ρ₀, v₀)`, and data
+`(ρ̄, v̄, s̄)` with `s̄ − s₀ ∈ Hᵏ_Λ` as well and `(ρ̄, s̄)(E)` contained in a compact subset `L` of
+`𝒪`: with `L` in place of `[ρ_*, ρ^*]`, `ρ_*` the least density on `L`, the triples
+`(ρ̄ − ρ₀, v̄ − v₀, s̄ − s₀)`, `(ρ − ρ₀, v − v₀, s − s₀)` and `∇(ρ, v, s)` in place of the pairs,
+and the range of `(ρ, s)` in `𝒪` in place of the range of `ρ` in `I`. (AbbresciaSpeck2022
+lines 172–179, the full system on `ℝ × 𝕋²` with non-vacuum `H³` data; ChristodoulouMiao2014 lines 866–868; LuoYu2023a
 lines 82–95; Majda1984, Ch. 2.) Route: §7.1 applied to the symmetrisers of §2.2, with `F = 0`,
-`Ū = (ρ₀, v₀)` and the compact `K = [ρ_*, ρ^*] × B̄(v₀, CM) ⊆ G`, where `C` is the constant of
-the embedding `Hᵏ_Λ ⊆ C_b` of §4.2, so that `K` contains the values of every datum of the class
-(for the full system `K = {(ρ, v, s) : (ρ, s) ∈ L, |v − v₀| ≤ CM}`); the bound `ρ ≥ ρ_*/2` by
+`Ū = (ρ₀, v₀)`, which lies in `G = I × E` because `ρ₀ ∈ I`, and the compact
+`K = [ρ_*, ρ^*] × B̄(v₀, CM) ⊆ G`, where `C` is the constant of the embedding `Hᵏ_Λ ⊆ C_b` of
+§4.2, so that `K` contains the values of every datum of the class (for the full system
+`Ū = (ρ₀, v₀, s₀)`, which lies in `G` because `(ρ₀, s₀) ∈ 𝒪`, and
+`K = {(ρ, v, s) : (ρ, s) ∈ L, |v − v₀| ≤ CM}`); the bound `ρ ≥ ρ_*/2` by
 shrinking `T` to at most `ρ_*/(2C′)`, where `C′ > 0` bounds
 `‖∂_tρ‖_∞ = ‖v·∇ρ + ρ div v‖_∞` in terms of the bound `R(M, K)` of §7.1, `ρ₀` and `v₀`, by the
 embedding of §4.2 into `C¹_b` (`2k > n + 2`).
@@ -1752,8 +1761,16 @@ embedding of §4.2 into `C¹_b` (`2k > n + 2`).
   `(t, x¹)`, by uniqueness and invariance under translations in `x²`.
 - Sobolev threshold for `n = 3`: `k = 3` gives `2k = 6 > 5 = n + 2`, the `H³` setting of
   AbbresciaSpeck2022 line 179; `k = 2` gives `4 < 5` and is excluded.
+- The background of the full system must be a state: on `Λ = 2πℤ` (`n = 1`) with
+  `𝒪 = (0, ∞) × (0, 1)` and the constant data `(ρ̄, v̄, s̄) = (1, 0, 1/2)`, the triple `(1, 0, 5)`
+  has `s̄ − 5 = −9/2 ∈ Hᵏ_Λ` (squared norm `(81/4)·2π = 81π/2`) but `(1, 5) ∉ 𝒪`, so it is not a
+  point of `G` and §7.1 cannot be applied at it; the background `(1, 0, 1/2)` lies in `G`, and the
+  solution is the constant one. When `Λ` is not of full rank the condition holds automatically:
+  `ρ̄ − ρ₀` and `s̄ − s₀` tend to `0` at infinity orthogonally to the span of `Λ` (§4.2), so
+  `(ρ₀, s₀)` lies in the closure of `(ρ̄, s̄)(E)`, inside `L`.
 
-*Needs:* §2.2, §4.2 (the embeddings into `C_b` and `C¹_b`), §7.1.
+*Needs:* §§1.1–1.3 (the equations of state and the Euler systems the statement is about), §2.2,
+§4.1 (the space `Hᵏ_Λ`), §4.2 (the embeddings into `C_b` and `C¹_b`), §7.1.
 
 ### 7.3 Uniformly local data
 
@@ -1845,7 +1862,7 @@ enters, together with the slab statement of §3.3 and continuity at `t = T`.
   where `a = 1`; this is why only the cones `C_y` over `B(y, 1)`, where `χ(· − y) = 1`, are glued.
 
 *Needs:* §2.1 (maximal speed, monotonicity, the continuous dominating cone map), §3.3 (slabs),
-§4.2, §4.3, §6.2, §7.1.
+§4.1 (the spaces `Hᵏ(E)` and `Hᵏ_Λ`), §4.2, §4.3, §6.2, §7.1.
 
 ### Examples
 
@@ -1854,7 +1871,7 @@ times; constant states are global.
 
 ### Dependencies
 
-Layers 2, 3 (§3.3, for §7.3), 4, 5 and 6.
+Layers 1 (the Euler systems, for §7.2), 2, 3 (§3.3, for §7.3), 4, 5 and 6.
 
 ## Layer 8: developments and maximal developments
 
