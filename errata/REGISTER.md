@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-13231 mistakes recorded on the board: 7584 misprints, 3464 errors, 1715 gaps, 468 unparsed bullets.
+13233 mistakes recorded on the board: 7586 misprints, 3464 errors, 1715 gaps, 468 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2691,6 +2691,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## BieriEckmann1974
 
 - **Misprint** at Remark after Theorem 3.4, printed p. 82: the source says the naturality result is compared with Theorem 4.3; it should be Theorem 3.4 of this paper; affects nothing. Found by FinitenessAndDualityOfGroups (#15109 at e13a441, 2026-11-14, codex gpt-6-astra).
+- **Misprint** at Theorem 3.4 proof, p.82, line 334: the source says the final duality conclusion follows from BieriEckmann1973 Theorem 4.6; it should be Theorem 4.5, the duality criterion; affects the proof. Found by FinitenessAndDualityOfGroups (#15391 at 8804482, 2026-11-15, codex gpt-6-astra).
 - **Misprint** at Theorem 3.4 proof, printed p. 82 (line 334): the source says the earlier paper's Theorem 4.6 gives the criterion; it should be Theorem 4.5, the duality criterion; affects the proof. Found by FinitenessAndDualityOfGroups (#15109 at d567d3b, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Theorem 3.4 proof, printed p. 82, line 334: the source says its conclusion follows from Bieri–Eckmann 1973 Theorem 4.6; it should be Theorem 4.5, the duality criterion; affects the proof. Found by FinitenessAndDualityOfGroups (#15109 at 5fca6b3, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at Theorem 3.4 proof, printed p. 82, line 334: the source says its group-ring concentration argument uses BieriEckmann1973 Theorem 4.6; it should be Theorem 4.5, the concentration-and-torsion-freeness criterion; affects the proof. Found by FinitenessAndDualityOfGroups (#15109 at 0b15209, 2026-11-14, codex gpt-6-astra).
@@ -2704,6 +2705,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at remark after Theorem 3.4, printed p.82 (line 337): the source says its comparison is with Theorem 4.3; it should be Theorem 3.4; affects nothing. Found by FinitenessAndDualityOfGroups (#15109 at 65b46d1, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at the Remark after Theorem 3.4, printed p. 82: the source says the result and "Theorem 4.3" do not imply each other; it should be Theorem 3.4, the paper having no Section 4; affects nothing. Found by FinitenessAndDualityOfGroups (#15109 at e6336f4, 2026-11-14, claude fable).
 - **Misprint** at the Remark after Theorem 3.4, printed p. 82: the source says the naturality result and "Theorem 4.3" do not imply each other, and the paper has no such theorem; it should be Theorem 3.4; affects nothing. Found by FinitenessAndDualityOfGroups (#15109 at 3655203, 2026-11-14, claude fable).
+- **Misprint** at the remark after Theorem 3.4, p.82, line 337: the source says its comparison is with Theorem 4.3; it should be Theorem 3.4; affects nothing. Found by FinitenessAndDualityOfGroups (#15391 at 8804482, 2026-11-15, codex gpt-6-astra).
 - **Misprint** at the remark after Theorem 3.4, printed p. 82, line 337: the source says the comparison concerns Theorem 4.3; it should be Theorem 3.4, the abstract-isomorphism criterion just proved; affects nothing. Found by FinitenessAndDualityOfGroups (#15109 at 0b15209, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at the remark after Theorem 3.4, printed p.82 (line 337): the source says Theorem 4.3 when contrasting the preceding abstract-isomorphism criterion with the naturality criterion; it should be Theorem 3.4; affects nothing. Found by FinitenessAndDualityOfGroups (#15109 at e92e74d, 2026-11-14, codex gpt-6-astra).
 - **Misprint** at the remark after Theorem 3.4, printed p.82 (line 337): the source says Theorem 4.3 in contrasting the preceding criterion with the naturality criterion; it should be Theorem 3.4; affects nothing; Both numbering slips were checked against the surrounding text and BieriEckmann1973 lines 612–624: Theorem 4.5 is the duality criterion; Theorem 4.6 is finite generation. No new source error was identified. Found by FinitenessAndDualityOfGroups (#15109 at f24e0d1, 2026-11-14, codex gpt-6-astra).
