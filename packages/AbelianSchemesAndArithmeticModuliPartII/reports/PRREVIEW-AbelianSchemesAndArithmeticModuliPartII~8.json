@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AbelianSchemesAndArithmeticModuliPartII~8",
+  "head": "fc1683bcd350a755c11a9f11f8497570af901ef0",
+  "pr": 1405,
+  "folder": "AbelianSchemesAndArithmeticModuliPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since fc1683b. Checked: the pull request's title and description against the head (no sentence contradicted, no change unstated); the gate rerun (FAIL: dropped=1, README line 53 names PlanarTopology, finding R01 P3; all other scanners, depcheck, stray-files and outside-folder 0); depcheck 244 roadmaps, 2231 edges, 0 problems; elaborated signatures of the 6 declarations against the README; closest open roadmaps for shared ownership (none). Not reproduced: elaboration and the targeted build, because the pinned Mathlib and Tau Ceti packages are missing from this worker's package cache (lake stops with 'already exists' on .lake/packages before Lean runs); the gate's build entry is that infrastructure error, not a Lean diagnostic, and is not counted as a finding. The previous review had no findings to carry.",
+  "text": "f0e109651c2b589d",
+  "carried": {
+   "from": "fc1683bcd350a755c11a9f11f8497570af901ef0",
+   "head": "6684834bd8430fc1a6c701f372ae6ff987e4365f",
+   "findings": 1,
+   "lines": 94,
+   "folders": [
+    "AbelianSchemesAndArithmeticModuliPartII"
+   ],
+   "outside": true
+  }
+ }
+}
