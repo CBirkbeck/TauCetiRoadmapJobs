@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ChromaticHomotopyTheory~14",
+  "head": "8ecccd20de8600d92ccbef7bd197092eb0b2c1b3",
+  "pr": 1643,
+  "folder": "ChromaticHomotopyTheory",
+  "date": "2026-11-15",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since 29867f9. The reworded bootstrap bullet of §4.2 (README:371) was checked against csy Theorem 4.3.10 (line 3445-3454), Definitions 4.1.8 and 4.1.14, at m=1 and against the §4.2 application; it is sound and independently worded. The four P3 findings are all in the pull request description, checked against this head for the first time: it credits this roadmap with ko->KO (owned by GeneralAlgebraicKTheoryPartII §4.30a), its prose paragraph lists supplier-owned layers and reverses the direction of supply, it says the Lean states definitions and theorems where Suggested.lean declares none, and it attributes WeierstrassCurve.formalGroup to Mathlib. Gate re-run: all counters 0, OK (worker: build=0). Depcheck: 243 roadmaps, 2235 edges, 0 problems. Suggested.lean elaborates with exit 0 and no output. No change outside the folder.",
+  "text": "4c16c9f492275823",
+  "carried": {
+   "from": "8ecccd20de8600d92ccbef7bd197092eb0b2c1b3",
+   "head": "815443c9d4a2fcb5c70c248f85f020cc05d373f3",
+   "findings": 4,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
