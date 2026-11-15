@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MinimalSurfaces~11",
+  "head": "664cc10cd9d2fea2fdda48a54d29f43d3fd1bade",
+  "pr": 2321,
+  "folder": "RiemannianGeometry/MinimalSurfaces",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 664cc10. Checked: the pull request's title and description sentence by sentence against the diff from the base (83 lines, README.md only; 2.6 extension, 2.2 locator, 2.5 source [CM, §1.7] to [CM, §1.9], no Layer 2 declaration in Suggested.lean, no supplier added, no heading or declaration removed): all hold. Adversarial rows computed afresh for 2.6 (translation law, strip injectivity, disconnected-section negative Check, scaling). Gate rerun: every check 0; depcheck 245 roadmaps, 0 problems; lake env lean on Suggested.lean: 5 sorry warnings only. The previous report had no finding. The seeded sample falls in no changed passage; [CM] remains unread (no legal copy).",
+  "text": "2fbc38466dfae66f"
+ }
+}
