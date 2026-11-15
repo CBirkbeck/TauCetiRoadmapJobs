@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-InstantonFloerTheory~6",
+  "head": "0b47a8ff14cb84f24d09ce059748142d72d6b9f1",
+  "pr": 1083,
+  "folder": "InstantonFloerTheory",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 0b47a8f; this round checked the pull request's title and description against the head. Two P3 findings, both in the description: its Suggested.lean paragraph describes the 3,261-byte prototype of the first commit and older pins (the head's file is 2,392 bytes and declares nothing; pins Lean v4.36.0-rc2, Mathlib 1b1ccf4b, Tau Ceti 2fd255d9), and its validation paragraph vouches for a text that five later commits changed. The folder's files have no finding. Checked: every mathematical sentence of the description located in the README; 7 adversarial rows with computed values; 2 source locators (scaduto1401 lines 83-88, cs1612 lines 29-32); supplier sections resolved at the open heads of FourManifolds, GaugeQuiltFieldTheory and FukayaTheory; scope of 8 closest roadmaps read, nothing with two owners; gate passes (all counters 0, worker's build=0); depcheck 0 problems; lake env lean on Suggested.lean exits 0 with no output.",
+  "text": "ab67f866754be223",
+  "carried": {
+   "from": "0b47a8ff14cb84f24d09ce059748142d72d6b9f1",
+   "head": "0b47a8ff14cb84f24d09ce059748142d72d6b9f1",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
