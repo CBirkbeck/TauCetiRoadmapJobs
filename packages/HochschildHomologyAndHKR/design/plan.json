@@ -938,7 +938,7 @@
      "id": "4.5",
      "kind": "definition",
      "name": "HochschildHKR.tor",
-     "statement": "For a bimodule M, the functor M ⊗_{Aᵉ} − : ModuleCat Aᵉ ⥤ ModuleCat k, N ↦ TauCeti.BalancedTensorProduct k Aᵉ M N (right structure of 4.1), and Tor_n^{Aᵉ}(M,−) its left derived functors; a left Aᵉ-module F is flat when N ↦ N ⊗_{Aᵉ} F sends injective bimodule maps to injective maps (Mathlib's Module.Flat needs commutative scalars); M ⊗_{Aᵉ} B_n(A) ≅ M⊗A^{⊗n} via m⊗(a₀⊗a₁⊗…⊗a_n⊗a_{n+1}) ↦ a_{n+1} m a₀ ⊗ a₁⊗…⊗a_n compatibly with b; for k-flat A, HH_n(A,M) ≅ Tor_n^{Aᵉ}(M,A) naturally in M, since B_n(A) ≅ Aᵉ⊗[k]A^{⊗n} is then a flat Aᵉ-module, B_•(A) → A is a resolution over every k, and flat resolutions compute Tor.",
+     "statement": "For a bimodule M, the functor M ⊗_{Aᵉ} − : ModuleCat Aᵉ ⥤ ModuleCat k, N ↦ TauCeti.BalancedTensorProduct k Aᵉ M N (right structure of 4.1), and Tor_n^{Aᵉ}(M,−) its left derived functors; a left Aᵉ-module F is flat when N ↦ N ⊗_{Aᵉ} F sends injective bimodule maps to injective maps (Mathlib's Module.Flat needs commutative scalars); N ↦ N ⊗_{Aᵉ} F and M ⊗_{Aᵉ} − are right exact and commute with direct sums, being left adjoints; M ⊗_{Aᵉ} B_n(A) ≅ M⊗A^{⊗n} via m⊗(a₀⊗a₁⊗…⊗a_n⊗a_{n+1}) ↦ a_{n+1} m a₀ ⊗ a₁⊗…⊗a_n compatibly with b; for k-flat A, HH_n(A,M) ≅ Tor_n^{Aᵉ}(M,A) naturally in M, since B_n(A) ≅ Aᵉ⊗[k]A^{⊗n} is then a flat Aᵉ-module, B_•(A) → A is a resolution over every k, and flat resolutions compute Tor.",
      "hypotheses": [
       "k a commutative ring",
       "A a ring with Algebra k A",
@@ -948,15 +948,17 @@
      ],
      "locator": {
       "source": "Ginz05",
-      "where": "§5.1, lines 944–976; Weibel94 §§2.2, 3.2 (comparison theorem, flat resolutions) and §9.1; Loday98 §1.1"
+      "where": "§5.1, lines 944–976; Weibel94 §§2.2, 2.6, 3.2 (comparison theorem, left adjoints are right exact, flat resolutions) and §9.1; Loday98 §1.1"
      },
      "prerequisites": [
       "target:1.1",
       "target:4.1",
       "target:4.2",
       "mathlib:CategoryTheory.Functor.leftDerived",
+      "mathlib:CategoryTheory.Functor.leftDerivedZeroIsoSelf",
       "mathlib:CategoryTheory.ProjectiveResolution.isoLeftDerivedObj",
       "tauceti:TauCeti.BalancedTensorProduct",
+      "tauceti:TauCeti.BalancedTensorProduct.liftEquiv",
       "tauceti:TauCeti.BalancedTensorProduct.outerFactors",
       "tauceti:TauCeti.BalancedTensorProduct.rid",
       "mathlib:CategoryTheory.ProjectiveResolution",
@@ -970,9 +972,14 @@
      ],
      "api": [
       {
+       "name": "HochschildHKR.tensor_rightExact",
+       "role": "structure",
+       "statement": "For every left Aᵉ-module F, N ↦ N⊗_{Aᵉ}F on bimodules, and for every bimodule M, M⊗_{Aᵉ}− on left Aᵉ-modules, are k-linear, right exact (preserve finite colimits) and commute with arbitrary direct sums, each being a left adjoint: by TauCeti.BalancedTensorProduct.liftEquiv, k-linear maps N⊗_{Aᵉ}F → X are balanced bilinear maps, naturally the Aᵉ-linear maps F → Hom_k(N,X), (e·φ)(n)=φ(n·e), and the right-linear maps N → Hom_k(F,X), (φ·e)(f)=φ(e·f) (Weibel94 §2.6). For a free bimodule Q=(I→₀Aᵉ) (right structure of 4.1 = right multiplication up to the swap), Q⊗_{Aᵉ}F ≅ I→₀F naturally in F (TauCeti.BalancedTensorProduct.lid on each summand); M⊗_{Aᵉ}(I→₀Aᵉ) ≅ I→₀M naturally in M (TauCeti.BalancedTensorProduct.finsuppScalarRight)."
+      },
+      {
        "name": "HochschildHKR.torZeroIso",
        "role": "evaluation",
-       "statement": "Tor_0^{Aᵉ}(M,N) ≅ M ⊗_{Aᵉ} N naturally in N."
+       "statement": "Tor_0^{Aᵉ}(M,N) ≅ M ⊗_{Aᵉ} N naturally in N (CategoryTheory.Functor.leftDerivedZeroIsoSelf, using the right exactness of M⊗_{Aᵉ}− from tensor_rightExact)."
       },
       {
        "name": "HochschildHKR.tor_projective",
@@ -982,12 +989,12 @@
       {
        "name": "HochschildHKR.flat_of_free",
        "role": "structure",
-       "statement": "Free, hence projective, left Aᵉ-modules are flat (N⊗_{Aᵉ}(I→₀Aᵉ) ≅ I→₀N, TauCeti.BalancedTensorProduct.finsuppScalarRight); for a k-flat X, Aᵉ⊗[k]X is a flat left Aᵉ-module, since N⊗_{Aᵉ}(Aᵉ⊗[k]X) ≅ N⊗[k]X naturally in N (outerFactors, rid) and −⊗[k]X preserves injections."
+       "statement": "Free left Aᵉ-modules are flat (N⊗_{Aᵉ}(I→₀Aᵉ) ≅ I→₀N naturally in N, tensor_rightExact, and I→₀− preserves injections), and so are projective ones, as direct summands of free modules: for i : P → Q, r : Q → P, r∘i = id, Q free, f : N → N' injective, (id⊗i)∘(f⊗P) = (f⊗Q)∘(id⊗i) and (id⊗r)∘(id⊗i) = id give f⊗P injective (the argument of Module.Flat.of_retract, commutative scalars only; Weibel94 §3.2); for a k-flat X, Aᵉ⊗[k]X is a flat left Aᵉ-module, since N⊗_{Aᵉ}(Aᵉ⊗[k]X) ≅ N⊗[k]X naturally in N (outerFactors, rid) and −⊗[k]X preserves injections."
       },
       {
        "name": "HochschildHKR.tor_flatResolution",
        "role": "structure",
-       "statement": "For every resolution F_• → N by flat left Aᵉ-modules, Tor_n^{Aᵉ}(M,N) ≅ H_n(M⊗_{Aᵉ}F_•) naturally in M; hence Tor_n^{Aᵉ}(M,F)=0 for flat F and n≥1. Route: comparison chain map from a projective resolution (target exact suffices), both sides δ-functors in M (flat terms), equal in degree 0, zero on free M in positive degrees; induction with the five lemma."
+       "statement": "For every resolution F_• → N by flat left Aᵉ-modules, Tor_n^{Aᵉ}(M,N) ≅ H_n(M⊗_{Aᵉ}F_•) naturally in M; hence Tor_n^{Aᵉ}(M,F)=0 for flat F and n≥1. Route: comparison chain map from a projective resolution (target exact suffices); both sides δ-functors in M, since each −⊗_{Aᵉ}P_j, −⊗_{Aᵉ}F_j is right exact (tensor_rightExact) and preserves injections (P_j projective hence flat by flat_of_free, F_j flat); equal in degree 0 by right exactness of M⊗_{Aᵉ}−; zero on free M=(I→₀Aᵉ) in positive degrees, where M⊗_{Aᵉ}F_• ≅ I→₀F_• (tensor_rightExact); induction with the five lemma."
       },
       {
        "name": "HochschildHKR.homologyIsoTor",
@@ -1030,6 +1037,16 @@
        "name": "tor_nonflat_coefficient",
        "kind": "non-example",
        "statement": "k=A=ℤ, M=ℤ/p: Tor₁(ℤ/p,ℚ)=0 with ℚ flat and not projective; the flat resolution ℤ→ℚ of ℚ/ℤ gives Tor₁(ℤ/p,ℚ/ℤ)=ker(ℤ/p→ℤ/p⊗ℚ=0)=ℤ/p."
+      },
+      {
+       "name": "tensor_right_exact_not_exact",
+       "kind": "non-example",
+       "statement": "k=A=ℤ, F=ℤ/p: 0→ℤ --p--> ℤ→ℤ/p→0 becomes ℤ/p --0--> ℤ/p --id--> ℤ/p→0, exact in the middle and on the right, first map with kernel ℤ/p=Tor₁(ℤ/p,ℤ/p); with flat F=ℚ it becomes 0→ℚ --p--> ℚ→0→0. (⊕_ℕℤ)⊗ℚ=⊕_ℕℚ, while (Π_ℕℤ)⊗ℚ → Π_ℕℚ has image the sequences with a common denominator and misses (1,1/2,1/3,…)."
+      },
+      {
+       "name": "flat_projective_not_free",
+       "kind": "computation",
+       "statement": "k=A=ℤ/6, Aᵉ=ℤ/6: idempotents 3 and 4 split ℤ/6=3·ℤ/6⊕4·ℤ/6, so P=3·ℤ/6≅ℤ/2 is projective, not free (two elements, against 6^r or infinitely many); N⊗_{ℤ/6}P ≅ 3N via n⊗3 ↦ 3n, and injective f : N → N' restricts to injective 3N → 3N', so P is flat, which the free case alone does not give."
       }
      ]
     }

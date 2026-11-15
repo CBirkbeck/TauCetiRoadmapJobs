@@ -361,7 +361,9 @@ canonical map, and the determinant map is identified as `n!` times it.
   (additive functors preserve homotopy equivalences, homotopies pass to opposite complexes, and
   homotopy equivalences induce isomorphisms on homology),
   `CategoryTheory.Functor.leftDerived` with
-  `CategoryTheory.ProjectiveResolution.isoLeftDerivedObj`, and the scoped instance
+  `CategoryTheory.ProjectiveResolution.isoLeftDerivedObj` and
+  `CategoryTheory.Functor.leftDerivedZeroIsoSelf` (`F.leftDerived 0 ≅ F` for an additive `F` that
+  preserves finite colimits), and the scoped instance
   `ModuleCat.Algebra.instLinear` making `ModuleCat S` linear over a commutative `S₀` with
   `Algebra S₀ S`. The group-cohomology identifications `groupCohomologyIsoExt` and the separately
   derived `Rep.Tor` are the template for §§4.4–4.5: Mathlib's monoidal `Tor` does not apply to a
@@ -419,7 +421,9 @@ canonical map, and the determinant map is identified as `n!` times it.
 - `TauCeti.BalancedTensorProduct k A M N` (`TauCeti/LinearAlgebra/TensorProduct/Balanced/Basic.lean`):
   the tensor product of a right `A`-module and a left `A`-module over a noncommutative `A`, with
   `TauCeti.BalancedTensorProduct.tmul`, `TauCeti.BalancedTensorProduct.induction_on`,
-  `TauCeti.BalancedTensorProduct.hom_ext`, `TauCeti.BalancedTensorProduct.lid`,
+  `TauCeti.BalancedTensorProduct.hom_ext`, `TauCeti.BalancedTensorProduct.liftEquiv` (balanced
+  bilinear maps are the linear maps out of the balanced tensor product),
+  `TauCeti.BalancedTensorProduct.lid`,
   `TauCeti.BalancedTensorProduct.rid`, `TauCeti.BalancedTensorProduct.outerFactors`
   (`(M ⊗[k] L) ⊗[A] (N ⊗[k] P) ≃ (M ⊗[A] N) ⊗[k] (L ⊗[k] P)`) and
   `TauCeti.BalancedTensorProduct.finsuppScalarRight`
@@ -1336,27 +1340,46 @@ does not apply to `Aᵉ`. Prove that `M ⊗_{Aᵉ} B_n(A) ≅ M ⊗[k] A^{⊗n}`
 `m ⊗ (a₀ ⊗ a₁ ⊗ ⋯ ⊗ a_n ⊗ a_{n+1}) ↦ a_{n+1} m a₀ ⊗ a₁ ⊗ ⋯ ⊗ a_n`, compatibly with `b`, and that for
 `A` flat as a `k`-module `HH_n(A,M) ≅ Tor_n^{Aᵉ}(M,A)`, naturally in `M` (Ginz05 §5.1,
 lines 944–976; Weibel94 §9.1; Loday98 §1.1). One route: for `k`-flat `A` every `A^{⊗n}` is
-`k`-flat (§4.2), so `B_n(A) ≅ Aᵉ ⊗[k] A^{⊗n}` is a flat `Aᵉ`-module (fourth bullet below); the
-augmentation `B_•(A) → A` is a resolution over every `k` (§4.2), so the fifth bullet below
+`k`-flat (§4.2), so `B_n(A) ≅ Aᵉ ⊗[k] A^{⊗n}` is a flat `Aᵉ`-module (fifth bullet below); the
+augmentation `B_•(A) → A` is a resolution over every `k` (§4.2), so the sixth bullet below
 identifies `Tor_n^{Aᵉ}(M,A)` with the homology of `M ⊗_{Aᵉ} B_•(A) ≅ C_•(A,M)`. Projectivity of `A`
 over `k` is used for `Ext` (§4.4), not here.
 
 *Needs:* §§1.1, 4.1–4.2; Mathlib `CategoryTheory.Functor.leftDerived`,
+`CategoryTheory.Functor.leftDerivedZeroIsoSelf`,
 `CategoryTheory.ProjectiveResolution.isoLeftDerivedObj`, `CategoryTheory.ProjectiveResolution`,
 `Module.Flat`, `Module.Flat.rTensor_preserves_injective_linearMap`,
 `CategoryTheory.ShortComplex.ShortExact.δ`, `HomologicalComplex.HomologySequence.δ_naturality`,
 `CategoryTheory.Abelian.isIso_of_epi_of_isIso_of_isIso_of_mono`; Tau Ceti
-`TauCeti.BalancedTensorProduct`, `TauCeti.BalancedTensorProduct.outerFactors`,
+`TauCeti.BalancedTensorProduct`, `TauCeti.BalancedTensorProduct.liftEquiv`,
+`TauCeti.BalancedTensorProduct.outerFactors`,
 `TauCeti.BalancedTensorProduct.lid`, `TauCeti.BalancedTensorProduct.rid`,
 `TauCeti.BalancedTensorProduct.finsuppScalarRight`.
 
-- `Tor_0^{Aᵉ}(M,N) ≅ M ⊗_{Aᵉ} N`, naturally in `N`.
+- For every left `Aᵉ`-module `F`, the functor `N ↦ N ⊗_{Aᵉ} F` on bimodules, and for every
+  bimodule `M`, the functor `M ⊗_{Aᵉ} −` on left `Aᵉ`-modules, are `k`-linear, right exact (they
+  preserve finite colimits) and commute with arbitrary direct sums, each being a left adjoint
+  (Weibel94 §2.6): by `TauCeti.BalancedTensorProduct.liftEquiv` the `k`-linear maps
+  `N ⊗_{Aᵉ} F → X` into a `k`-module `X` are the balanced bilinear maps, and these correspond,
+  naturally in `N`, `F` and `X`, both to the `Aᵉ`-linear maps `F → Hom_k(N,X)`, where
+  `(e·φ)(n) = φ(n·e)`, and to the maps `N → Hom_k(F,X)` linear for the right structures, where
+  `(φ·e)(f) = φ(e·f)`. For a free bimodule `Q = (I →₀ Aᵉ)`, on whose summands the right structure of
+  §4.1 is right multiplication up to the swap, `Q ⊗_{Aᵉ} F ≅ (I →₀ F)` naturally in `F`
+  (`TauCeti.BalancedTensorProduct.lid` on each summand); for a free left module,
+  `M ⊗_{Aᵉ} (I →₀ Aᵉ) ≅ (I →₀ M)` naturally in `M`
+  (`TauCeti.BalancedTensorProduct.finsuppScalarRight`).
+- `Tor_0^{Aᵉ}(M,N) ≅ M ⊗_{Aᵉ} N`, naturally in `N` (`CategoryTheory.Functor.leftDerivedZeroIsoSelf`,
+  which needs the right exactness of `M ⊗_{Aᵉ} −` of the first bullet).
 - `Tor_n^{Aᵉ}(M,P) = 0` for projective `P` and `n ≥ 1`.
 - `Tor_n^{Aᵉ}(M,N)` is computed by any projective resolution of `N`, and is functorial in `M`.
-- Free, hence projective, left `Aᵉ`-modules are flat (`N ⊗_{Aᵉ} (I →₀ Aᵉ) ≅ (I →₀ N)`,
-  `TauCeti.BalancedTensorProduct.finsuppScalarRight`). For a flat `k`-module `X`, the left
-  `Aᵉ`-module `Aᵉ ⊗[k] X`, with `Aᵉ` acting on the first factor, is flat: `N ⊗_{Aᵉ} (Aᵉ ⊗[k] X) ≅ N ⊗[k] X`
-  naturally in the bimodule `N` (`TauCeti.BalancedTensorProduct.outerFactors` with
+- Free left `Aᵉ`-modules are flat: `N ⊗_{Aᵉ} (I →₀ Aᵉ) ≅ (I →₀ N)` naturally in `N` (first
+  bullet), and `I →₀ −` preserves injective maps. Projective left `Aᵉ`-modules are flat too, as
+  direct summands of free ones (Weibel94 §3.2): for `i : P → Q` and `r : Q → P` with `r ∘ i = id`
+  and `Q` free, and an injective bimodule map `f : N → N'`, the map `f ⊗ P` is injective, because
+  `(id ⊗ i) ∘ (f ⊗ P) = (f ⊗ Q) ∘ (id ⊗ i)` and `(id ⊗ r) ∘ (id ⊗ i) = id` (the argument of
+  Mathlib's `Module.Flat.of_retract`, which is stated for commutative scalars only). For a flat
+  `k`-module `X`, the left `Aᵉ`-module `Aᵉ ⊗[k] X`, with `Aᵉ` acting on the first factor, is flat:
+  `N ⊗_{Aᵉ} (Aᵉ ⊗[k] X) ≅ N ⊗[k] X` naturally in the bimodule `N` (`TauCeti.BalancedTensorProduct.outerFactors` with
   `TauCeti.BalancedTensorProduct.rid`), and `− ⊗[k] X` preserves injective maps
   (`Module.Flat.rTensor_preserves_injective_linearMap`).
 - Flat resolutions compute `Tor`: for every resolution `F_• → N` by flat left `Aᵉ`-modules,
@@ -1364,15 +1387,19 @@ over `k` is used for `Ext` (§4.4), not here.
   zero, `Tor_n^{Aᵉ}(M,F) = 0` for flat `F` and `n ≥ 1` (Weibel94 §3.2, over any ring). One route:
   a chain map `φ` over the identity of `N` from a projective resolution `P_•` of `N` to `F_•` exists
   because `F_•` is exact (the comparison theorem, Weibel94 §2.2; Mathlib's
-  `CategoryTheory.ProjectiveResolution.lift` is the case of a projective target). The `P_j` and
-  `F_j` being flat, a short exact sequence of bimodules `0 → M' → M → M'' → 0` stays short exact
-  after `− ⊗_{Aᵉ} P_•` and `− ⊗_{Aᵉ} F_•`, and `φ` maps the first long exact homology sequence to
-  the second (`HomologicalComplex.HomologySequence.δ_naturality`). In degree zero `φ` induces the
-  identity of `M ⊗_{Aᵉ} N`. For a free bimodule `Q`, `Q ⊗_{Aᵉ} P_•` and `Q ⊗_{Aᵉ} F_•` are direct
-  sums of copies of the two resolutions (`TauCeti.BalancedTensorProduct.lid` on each summand) and
-  have no homology in positive degrees. Induction on `n` with a presentation `0 → L → Q → M → 0`,
-  `Q` free, and the five lemma (`CategoryTheory.Abelian.isIso_of_epi_of_isIso_of_isIso_of_mono`)
-  on `0 → H_n(M ⊗ −) → H_{n−1}(L ⊗ −) → H_{n−1}(Q ⊗ −)` shows that `φ` induces isomorphisms in
+  `CategoryTheory.ProjectiveResolution.lift` is the case of a projective target). Each
+  `− ⊗_{Aᵉ} P_j` and `− ⊗_{Aᵉ} F_j` is right exact (first bullet) and preserves injective maps (the
+  `P_j` are projective, hence flat by the fifth bullet, and the `F_j` are flat), so a short exact
+  sequence of bimodules `0 → M' → M → M'' → 0` stays short exact after `− ⊗_{Aᵉ} P_•` and
+  `− ⊗_{Aᵉ} F_•`, and `φ` maps the first long exact homology sequence to the second
+  (`HomologicalComplex.HomologySequence.δ_naturality`). In degree zero both complexes have
+  homology `M ⊗_{Aᵉ} N`, by the right exactness of `M ⊗_{Aᵉ} −` (first bullet), and `φ` induces
+  its identity. For a free bimodule `Q = (I →₀ Aᵉ)`, `Q ⊗_{Aᵉ} P_•` and `Q ⊗_{Aᵉ} F_•` are
+  isomorphic to `I →₀ P_•` and `I →₀ F_•` (first bullet), direct sums of copies of the two
+  resolutions, and so have no homology in positive degrees. Induction on `n` with a presentation
+  `0 → L → Q → M → 0`, `Q` free, and the five lemma
+  (`CategoryTheory.Abelian.isIso_of_epi_of_isIso_of_isIso_of_mono`) on
+  `0 → H_n(M ⊗ −) → H_{n−1}(L ⊗ −) → H_{n−1}(Q ⊗ −)` shows that `φ` induces isomorphisms in
   every degree.
 
 **Checks.**
@@ -1398,6 +1425,18 @@ over `k` is used for `Ext` (§4.4), not here.
   `M = ℤ/p`, `Tor₁(ℤ/p, ℚ) = 0` although `ℚ` is not projective, while the resolution `ℤ → ℚ` of
   `ℚ/ℤ` by flat modules gives `Tor₁(ℤ/p, ℚ/ℤ) = ker(ℤ/p → ℤ/p ⊗ ℚ = 0) = ℤ/p`, the `p`-torsion of
   `ℚ/ℤ`.
+- Right exact, not exact: for `k = A = ℤ`, so `Aᵉ = ℤ`, and `F = ℤ/p`, the sequence
+  `0 → ℤ --p--> ℤ → ℤ/p → 0` becomes `ℤ/p --0--> ℤ/p --id--> ℤ/p → 0`, exact in the middle and on
+  the right, as for every `F`, while the first map has kernel `ℤ/p = Tor₁(ℤ/p, ℤ/p)`; with the flat
+  `F = ℚ` it becomes `0 → ℚ --p--> ℚ → 0 → 0`, short exact. Direct sums pass through the tensor
+  product and products do not: `(⊕_ℕ ℤ) ⊗ ℚ = ⊕_ℕ ℚ`, while the canonical map
+  `(Π_ℕ ℤ) ⊗ ℚ → Π_ℕ ℚ` has image the sequences with a common denominator and misses
+  `(1, 1/2, 1/3, …)`.
+- Projective but not free, and still flat: for `k = A = ℤ/6`, so `Aᵉ = ℤ/6`, the idempotents `3`
+  and `4` split `ℤ/6 = 3·ℤ/6 ⊕ 4·ℤ/6`, so `P = 3·ℤ/6 ≅ ℤ/2` is projective; it is not free, having
+  two elements where a free `ℤ/6`-module has `6^r` or infinitely many. `N ⊗_{ℤ/6} P ≅ 3N` through
+  `n ⊗ 3 ↦ 3n`, and an injective `f : N → N'` restricts to an injective `3N → 3N'`, so `P` is flat,
+  which the free case alone does not give.
 - For `A = k`, `Aᵉ = k`, `Tor_0(M,k) = M` and `Tor_n(M,k) = 0` for `n ≥ 1`, as for `HH_n(k,M)`.
 - `Tor_n^{Aᵉ}(M, Aᵉ) = 0` for `n ≥ 1` and `Tor_0^{Aᵉ}(M,Aᵉ) ≅ M`.
 - The left structure `m · (a ⊗ op b) = a m b` is not a right `Aᵉ`-structure: for `A = M = Mat₂(k)`
@@ -1414,8 +1453,9 @@ For `A = k[x]` (free over `k`) the bar resolution is a free resolution of `k[x]`
 ### Dependencies
 
 Layers 1–3; Mathlib `Ext`, projective resolutions, left derived functors, flat modules over `k`,
-the naturality of the homology sequence and the five lemma (§4.5); Tau Ceti balanced tensor
-products with their unit isomorphisms and free modules (§4.5), the restrictions of an
+the naturality of the homology sequence, the five lemma and the zeroth left derived functor of a
+right exact functor (§4.5); Tau Ceti balanced tensor products with their universal property, unit
+isomorphisms and free modules (§4.5), the restrictions of an
 `A ⊗[k] B`-module to its factors with their linearity criterion
 (`TauCeti.Algebra.TensorProduct.moduleLeft`, `TauCeti.Algebra.TensorProduct.moduleRight`,
 `TauCeti.Algebra.TensorProduct.moduleSMulCommClass`,
@@ -2195,8 +2235,8 @@ such a roadmap is outside this one.
 - **Loday98**: Jean-Louis Loday, *Cyclic Homology*, 2nd ed., Grundlehren der mathematischen
   Wissenschaften 301, Springer (1998). §§1.1, 1.3, 1.5, 3.2, 3.4 (Theorem 3.4.4).
 - **Weibel94**: Charles A. Weibel, *An Introduction to Homological Algebra*, Cambridge Studies in
-  Advanced Mathematics 38, Cambridge University Press (1994). §2.2 (the comparison theorem), §3.2
-  (Tor and flat resolutions), §§9.1–9.4 (Theorem 9.4.7).
+  Advanced Mathematics 38, Cambridge University Press (1994). §2.2 (the comparison theorem), §2.6
+  (left adjoints are right exact), §3.2 (Tor and flat resolutions), §§9.1–9.4 (Theorem 9.4.7).
 - **CE56**: Henri Cartan and Samuel Eilenberg, *Homological Algebra*, Princeton Mathematical
   Series 19, Princeton University Press (1956). Chapters IX and XI.
 - **Ger63**: Murray Gerstenhaber, *The cohomology structure of an associative ring*, Annals of
