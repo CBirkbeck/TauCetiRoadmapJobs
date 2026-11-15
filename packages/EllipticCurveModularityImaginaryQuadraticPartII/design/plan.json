@@ -263,7 +263,7 @@
       {
        "name": "unitary_shift",
        "kind": "computation",
-       "statement": "q = 4, a = 4: polynomial T² − 4T + 4, unitary roots 1, 1, fixing the shift s − 1/2."
+       "statement": "q_v = 4, a = 4: polynomial T² − 4T + 4, unitary roots 1, 1, fixing the shift s − 1/2."
       }
      ]
     },
@@ -471,12 +471,12 @@
       {
        "name": "protected_tate",
        "kind": "computation",
-       "statement": "A split Tate curve with p ∤ v(q) has E_q[p] protected, inertia acting by [[1, v(q)t_p],[0,1]]."
+       "statement": "A split Tate curve E/F_v with Tate parameter q_E and p ∤ v(q_E) has E[p] protected, inertia acting by [[1, v(q_E)t_p],[0,1]]."
       },
       {
        "name": "protected_tate_divisible",
        "kind": "non-example",
-       "statement": "If p | v(q), E_q[p] is unramified and not protected (q = ϖ⁵, p = 5)."
+       "statement": "If p | v(q_E), E[p] is unramified and not protected (q_E = ϖ_v⁵, p = 5)."
       },
       {
        "name": "protected_semisimple_inertia",
@@ -702,7 +702,7 @@
       {
        "name": "presentation_cyclotomic_five",
        "kind": "computation",
-       "statement": "F = Q(ζ5): d = 2, t = 1, r = 6 (least with g ≥ 0) gives g = 0, as the count q − 3[F⁺:Q] − 1 + |S| of CrystallineLocalGlobalCompatibilityCM §9.3 at (6, 2, 1); d = 1 has no μ5."
+       "statement": "F = Q(ζ5): d = 2, t = 1, r = 6 (least with g ≥ 0) gives g = 0, the value of the count of CrystallineLocalGlobalCompatibilityCM §9.3 (Taylor-Wiles primes − 3[F⁺:Q] − 1 + framed places) at six primes, [F⁺:Q] = 2 and one framed place, compared as a formula only since Q(ζ5) has no imaginary quadratic subfield; d = 1 has no μ5."
       },
       {
        "name": "presentation_dims",
