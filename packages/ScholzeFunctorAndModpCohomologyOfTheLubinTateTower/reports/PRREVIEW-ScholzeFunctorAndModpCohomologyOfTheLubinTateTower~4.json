@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ScholzeFunctorAndModpCohomologyOfTheLubinTateTower~4",
+  "head": "020986ba8eacd237047a170a6e45c3c560864159",
+  "pr": 1757,
+  "folder": "ScholzeFunctorAndModpCohomologyOfTheLubinTateTower",
+  "date": "2026-11-15",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 20 changed lines since fe3535f; checked: the regrouping of 4.1-4.3 and 5.1-5.3 (two new sentences against every Needs line of Layers 4-6, internal and external citations of the four run-in parts), 5 source locators at the regrouped sections (sample target 5.1; CDN23, DPS23), the pull request's title and description against the head (none contradicted), the gate (all checks pass, build=0 by the worker), depcheck 0 problems, elaboration of Suggested.lean (sorry the only warning, file unchanged). Previous report had no finding. Acceptance conditional on the seven declared supplier gaps.",
+  "text": "43c1a06471810e17"
+ }
+}
