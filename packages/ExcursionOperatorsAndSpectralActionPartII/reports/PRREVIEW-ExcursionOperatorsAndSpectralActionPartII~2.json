@@ -1,0 +1,22 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ExcursionOperatorsAndSpectralActionPartII~2",
+  "head": "cc4ec51ca5b60a01bf5f35e96fc9a0a6eaccf2da",
+  "pr": 1832,
+  "folder": "ExcursionOperatorsAndSpectralActionPartII",
+  "date": "2026-11-15",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since cc4ec51; this round checked the pull request's title and description against the head: 11 description sentences compared with the README and Suggested.lean, one P3 (the sentence 'The roadmap covers:' announces a list that is absent). Previous report had no finding. Gate passes (worker's run, every check 0); depcheck rerun: 240 roadmaps, 2243 edges, 0 problems; Suggested.lean re-elaborated, sorry the only warning; overlaps none; one adversarial row computed (A1, Z/2: l1 error 1/(4m+1)).",
+  "text": "e91017ba07fb94e8",
+  "carried": {
+   "from": "cc4ec51ca5b60a01bf5f35e96fc9a0a6eaccf2da",
+   "head": "e903735d3b76b7b542ff602ce0e926346e2d2035",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  }
+ }
+}
