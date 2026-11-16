@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HyperbolicDynamicsAndThermodynamicFormalism~5",
+  "head": "fe970db74e0e3ad81e7fe2e7e1a4afc04a70e086",
+  "pr": 2441,
+  "folder": "HyperbolicDynamicsAndThermodynamicFormalism",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 2,
+  "notes": "incremental re-review of 2 changed lines since bfbca4f. Checked: the changed §6.5 Check (README.md:451) recomputed on the period-1 orbit at δ = 1, 0.6, 0.9 against (F2) and against the Lean definition HasFlowHyperbolicLocalProductStructure: correct, previous R03 repaired, no new problem. Previous R01 and R02 (P2) not repaired: the board's design/plan.json still lists the gaps sphere-bundle-embedding (provided by the pins) and connection-map-jacobi-derivative (owned by README §9.3); both are changes to the board, not to the roadmap folder, which has no finding. Gate at fe970db: every check 0, OK; depcheck 0 problems; lake env lean on Suggested.lean: 15 sorry warnings only; pull request text agrees with the head; no change outside the folder. The seeded sample does not fall in the changed passage.",
+  "text": "128d6ba3553b6c97"
+ }
+}
