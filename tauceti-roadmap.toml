@@ -158,7 +158,7 @@ per_run = 40   # eight Fable loops now serve reviews; 20 per sync left the newes
 text_per_run = 5   # of per_run: checks of an accepted head's text; ten a run filled the review queue faster than the reviewers could clear it. A head a human has approved gets none (a repair's push would dismiss the approval)
 authors = []
 skip_authors = ["bwangpj"]   # #196 is abandoned (user 2026-10-28): not tracked, not reviewed
-operator_prs = [617, 986, 1215, 1411, 1797, 1807, 1808, 1854]   # many-folder pull requests reviewed by the operator's serial chains: the chain files their rounds, the intake files none (and #986, which #763 supersedes: no review until it is closed; #1411: both folders are settled, and each folder's check of the description rewrites the text the other's check read, so no more rounds are filed for it)
+operator_prs = [617, 986, 1215, 1411, 1520, 1797, 1807, 1808, 1854]   # many-folder pull requests reviewed by the operator's serial chains: the chain files their rounds, the intake files none (and #986, which #763 supersedes: no review until it is closed; #1411: both folders are settled, and each folder's check of the description rewrites the text the other's check read, so no more rounds are filed for it; #1520: rounds held by the operator)
 parent_roadmaps = ["RiemannianGeometry"]   # carries Surfaces/ below it and stays a reviewed roadmap, not a family index
 max_folders = 20   # a pull request that repairs the dependency loops of main touches 16 roadmaps and is no chore (2026-11-04)
 # A changes-needed review of a pool author's pull request is repaired in the same job; the repaired head is re-reviewed by another worker.
