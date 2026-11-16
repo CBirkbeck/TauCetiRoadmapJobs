@@ -3404,21 +3404,33 @@
   "gaps": [
     {
       "slug": "trilog-specialization-closure",
-      "needs": "For every one-parameter family over F(t) of admissible parameters of the coordinate 22-term trilogarithm relation, the specialization at t=0 of the relation, with symbols specialized by the valuation-zero rule, lies in the relation subgroup R₃(F) of trilogGroup F.",
+      "needs": "For every infinite field F and every one-parameter family over F(t) of admissible parameters of the coordinate 22-term trilogarithm relation, the specialization at t=0 of the relation, with symbols specialized by the valuation-zero rule, lies in the relation subgroup R₃(F) of trilogGroup F.",
       "supplier": "Polylogarithms",
       "section": "§3.1"
     },
     {
       "slug": "mixed-tate-number-fields",
-      "needs": "For every number field F, the neutral Tannakian heart MT(F) with its graded fibre functor, Ext¹(ℚ(0),ℚ(n)) ≃ K_{2n−1}(F)⊗ℚ through PS.3.0, vanishing Ext² between Tate objects, the primitive part of the weight-n motivic Lie coalgebra identified with K_{2n−1}(F)⊗ℚ, and the Hodge realization to framed mixed Hodge–Tate structures whose period on Ext¹ is the Beilinson regulator.",
+      "needs": "For every number field F, the neutral Tannakian heart MT(F) with its graded fibre functor, Ext¹(ℚ(0),ℚ(n)) ≃ K_{2n−1}(F)⊗ℚ through PS.3.0 for n ≥ 1, and vanishing Ext² between Tate objects.",
+      "supplier": "PeriodsAndSpecialValues",
+      "section": "PS.9.8–PS.9.9"
+    },
+    {
+      "slug": "mixed-tate-hodge-realization",
+      "needs": "For every number field F and embedding σ: F → ℂ, an exact ℚ-linear tensor functor from MT(F) to the graded-polarizable mixed ℚ-Hodge structures (HodgeStructures Layer L2, with the tensor product of MixedHodgeModulesAndIrregularHodgeTheory §3.1 on a point), compatible with weight filtrations and sending ℚ(n) to the Tate structure of weight −2n, whose induced map Ext¹_{MT(F)}(ℚ(0),ℚ(n)) → ℂ/(2πi)ⁿℚ followed by projection to ℝ(n−1) is the Beilinson regulator at σ of the PS.3.0 class, for n ≥ 1.",
       "supplier": "PeriodsAndSpecialValues",
       "section": "PS.9.8–PS.9.9"
     },
     {
       "slug": "punctured-line-path-torsors",
-      "needs": "For every number field F and finite S ⊂ ℙ¹(F), the unipotent motivic fundamental groupoid of ℙ¹∖S in MT(F) with tangential base points at S, its path torsors and Betti, de Rham and Hodge realizations, its Lie algebra identified with the free Lie algebra on the puncture loops modulo their sum, and the special-derivation action of the motivic Lie algebra.",
+      "needs": "For every number field F and finite S ⊂ ℙ¹(F), the unipotent motivic fundamental groupoid of ℙ¹∖S in MT(F) with tangential base points at S, its path torsors and Betti, de Rham and Hodge realizations, its Lie algebra identified with the free Lie algebra on the puncture loops X_s modulo their sum, and the action of the motivic Lie algebra at a tangential base point a ∈ S by derivations killing X_a and sending each X_s, s ≠ a, to a bracket [X_s, u_s].",
       "supplier": "PeriodsAndSpecialValues",
       "section": "PS.9.10"
+    },
+    {
+      "slug": "decorated-flag-lengths",
+      "needs": "For every infinite field F, every N ≥ 1 and every flag length 1 ≤ k ≤ N, the augmented complex of generic m-tuples of decorated k-flags in F^N is acyclic before GL_N(F)-coinvariants, and the comparison map from a projective ℚ[GL_N(F)]-resolution of ℚ into it exists, is unique up to chain homotopy and is natural in field embeddings.",
+      "supplier": "Polylogarithms",
+      "section": "§3.4"
     }
   ],
   "sourceIssues": [

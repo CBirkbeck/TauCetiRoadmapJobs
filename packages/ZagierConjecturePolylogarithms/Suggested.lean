@@ -6,7 +6,12 @@ import Mathlib
 The roadmap is README.md; this file is not the roadmap. It states the roadmap's headline
 theorems against the pinned APIs: the weight-four Zagier theorem of Goncharov and Rudenko for
 every number field, as rational existence of explicit weight-four cycles and as rationality of
-the zeta-normalized `L₄` determinant of every family of explicit weight-four cycles.
+the zeta-normalized `L₄` determinant of every family of explicit weight-four cycles. The source
+states its Theorem 1.2 for the inductively defined groups; explicit existence is stronger than
+that statement and explicit every-family rationality is a consequence of it (README §6.4). For
+fields with a complex place the roadmap's proof of existence uses the combinatorial lift
+`G₄(F) → L₄(F)` of README §5.7, three steps of which no cited source proves. The every-family
+statement does not use that lift.
 
 The explicit cycle condition is written on native carriers by testing the raw cobracket
 `[x] ↦ [x]₃ ⊗ u(x)` against every function on the field that satisfies the explicit
@@ -21,17 +26,18 @@ place.
   and the descent of the weight-four cobracket: the pins have no carrier for the
   Goncharov–Rudenko group `L₄(F)`, the quotient of single and double symbols by the heptagon
   relation and its iterated one-parameter specializations, nor for the rational pre-Bloch group.
-* The realization of the combinatorial Lie coalgebra by motivic correlators, base-point change,
-  depth reduction and the period of every explicit cycle in the motivic Lie coalgebra: the pins
-  have no mixed Tate motives over a number field, no motivic fundamental groupoid of a punctured
-  line and no framed mixed Hodge–Tate structures.
+* The realization of the combinatorial Lie coalgebra by motivic correlators over a number field
+  and by Hodge correlator variations over a smooth complex variety, base-point change, depth
+  reduction and the period of every explicit cycle in the motivic Lie coalgebra: the pins have no
+  mixed Tate motives over a number field, no motivic fundamental groupoid of a punctured line, no
+  framed mixed Hodge–Tate structures and no variations of mixed Hodge structures.
 * Collision continuity of Hodge correlators: the pins have no Hodge correlator integrals over
   plane trivalent trees.
 * The Grassmannian configuration chain map and the generic polylogarithmic Chern cocycle: the pins
   have no configuration complexes of generic vectors, no Grassmannian group `G₄(F)` and no real
   Deligne cohomology of the simplicial classifying varieties.
 * The maps `K_{8-i}(F)_ℚ → H^i Γ(F,4)` and the comparison of `L₄ ∘ κ` with the Borel regulator:
-  the pins have no higher Quillen K-groups of a number field and no Borel regulator.
+  the pins have no higher Quillen K-groups of a field and no Borel regulator.
 -/
 
 namespace TauCetiRoadmap.ZagierConjecturePolylogarithms
@@ -116,19 +122,24 @@ noncomputable def zagierDeterminantFour (F : Type u) [Field F] [NumberField F]
   Real.pi ^ (4 * (InfinitePlace.nrRealPlaces F + InfinitePlace.nrComplexPlaces F)) /
     Real.sqrt |(NumberField.discr F : ℝ)| * (periodMatrixFour F c).det
 
-/-- Zagier's weight-four conjecture, existence (Goncharov–Rudenko, Theorem 1.2, p. 5): for every
-number field `F` there are `r₂` explicit weight-four cycles whose zeta-normalized `L₄` determinant
-is a nonzero rational multiple of `ζ_F(4)`. For `r₂ > 0` rescaling one family makes the multiple
-one; for `r₂ = 0` the determinant is empty and the multiple is fixed (over `ℚ` it is `90`). -/
+/-- Zagier's weight-four conjecture, existence (Goncharov–Rudenko, Theorem 1.2, p. 5, stated there
+for the inductively defined groups; here for explicit cycles, which is stronger, README §6.4): for
+every number field `F` there are `r₂` explicit weight-four cycles whose zeta-normalized `L₄`
+determinant is a nonzero rational multiple of `ζ_F(4)`. For `r₂ > 0` rescaling one family makes
+the multiple one; for `r₂ = 0` the determinant is empty and the multiple is fixed (over `ℚ` it is
+`90`). For `r₂ > 0` the roadmap's proof uses the combinatorial lift `G₄(F) → L₄(F)` of README
+§5.7, which the source reaches only through its motivic image over number fields. -/
 theorem zagier_four_exists (F : Type u) [Field F] [NumberField F] :
     ∃ c : {w : InfinitePlace F // w.IsComplex} → F →₀ ℚ,
       (∀ j, IsCycle4 (c j)) ∧ ∃ q : ℚ, q ≠ 0 ∧
         zagierDeterminantFour F c = (q : ℝ) * (NumberField.dedekindZeta F 4).re := by
   sorry
 
-/-- Zagier's weight-four conjecture, every family (Goncharov–Rudenko, Theorem 1.2, p. 5): for
-every family of `r₂` explicit weight-four cycles the zeta-normalized `L₄` determinant is a
-rational, possibly zero, multiple of `ζ_F(4)`. -/
+/-- Zagier's weight-four conjecture, every family (Goncharov–Rudenko, Theorem 1.2, p. 5, stated
+there for the inductively defined groups, of which this is a consequence; README §6.3 proves it
+for explicit cycles without the lift of README §5.7): for every family of `r₂` explicit
+weight-four cycles the zeta-normalized `L₄` determinant is a rational, possibly zero, multiple of
+`ζ_F(4)`. -/
 theorem zagier_four_everyFamily (F : Type u) [Field F] [NumberField F]
     (c : {w : InfinitePlace F // w.IsComplex} → F →₀ ℚ) (hc : ∀ j, IsCycle4 (c j)) :
     ∃ q : ℚ, zagierDeterminantFour F c = (q : ℝ) * (NumberField.dedekindZeta F 4).re := by
