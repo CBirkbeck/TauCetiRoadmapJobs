@@ -64,9 +64,10 @@ headline theorem, and the carrier it lacks, is listed below; the README states e
 * The infinitely primitivable functions (README §7.5) lie in `H⁰_dR(Σ_n) · O(Ω)`. It lacks the
   Drinfeld half-plane and its coverings as rigid analytic spaces with their functions.
 * The filtered derived realisation (README §7.6): for `r` large,
-  `Hom((Π(V)^an)′, RΓ_dR(Σ_r)^ρ[1]) ≅ D_dR(V)` as filtered spaces. It lacks coadmissible modules
-  over the distribution algebra of `GL₂(ℚ_p)` with their derived category, the de Rham complex of
-  a rigid analytic space and the functor `D_dR` of a de Rham Galois representation.
+  `Hom((Π(V)^an)′, RΓ_dR(Σ_r)^ρ[1]) ≅ D_dR(V)` as filtered spaces. It lacks the abelian category
+  of coadmissible modules over the distribution algebra of `GL₂(ℚ_p)` (Mathlib's `DerivedCategory`
+  would give its derived category once that category exists), the de Rham complex of a rigid
+  analytic space and the functor `D_dR` of a de Rham Galois representation.
 
 The pinned Mathlib has the period rings `B_dR⁺` and `B_dR` of a perfectoid field and the
 linear-algebra and locally convex carriers the README cites, but none of the carriers named

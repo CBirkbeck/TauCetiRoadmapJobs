@@ -2072,11 +2072,11 @@
   {
    "slug": "cuspidal-projectivity-coefficients",
    "id": "PadicLocalLanglandsForGL2QpPartII/gap/cuspidal-projectivity-coefficients",
-   "supplier": "SmoothRepresentationsOfLocalGroups",
-   "section": "§SR.3.2 (cuspidal-splitting)",
+   "supplier": "GL2AutomorphicRepresentationsAndTransfer",
+   "section": "R16.2.10",
    "title": "cuspidal projectivity coefficients",
-   "needs": "§SR.3.2, *cuspidal-splitting*, for a field L of characteristic zero rather than ℂ. For G = GL₂(ℚ_p) and a smooth character ζ of Z, a smooth absolutely irreducible supercuspidal L-representation with central character ζ is projective and injective in the category of smooth L-representations with central character ζ.",
-   "detail": "§SR.3.2, *cuspidal-splitting*, for a field L of characteristic zero rather than ℂ. For G = GL₂(ℚ_p) and a smooth character ζ of Z, a smooth absolutely irreducible supercuspidal L-representation with central character ζ is projective and injective in the category of smooth L-representations with central character ζ.",
+   "needs": "In R16.2.10, for G = GL₂(ℚ_p), a field L of characteristic zero and a smooth character ζ: Z → L^×, a smooth absolutely irreducible supercuspidal L-representation with central character ζ is projective and injective in the category of smooth L-representations with central character ζ.",
+   "detail": "in R16.2.10, the form with coefficients in a field of characteristic zero, which that section names as the input of the Drinfeld-tower application without stating it. For G = GL₂(ℚ_p), a field L of characteristic zero and a smooth character ζ: Z → L^×, a smooth absolutely irreducible supercuspidal L-representation with central character ζ is projective and injective in the category of smooth L-representations with central character ζ.",
    "neededBy": [
     "PadicLocalLanglandsForGL2QpPartII:GR.3/general-central-character"
    ]

@@ -74,7 +74,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "author's copy; locators are theorem numbers and lines of this copy"
-cited_for = ["2.3", "2.4", "7.1", "7.2", "Source corrections"]
+cited_for = ["0.4", "2.3", "2.4", "7.1", "7.2", "Source corrections"]
 
 [[source]]
 id = "TEI90"
