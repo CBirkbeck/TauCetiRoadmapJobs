@@ -44,7 +44,7 @@ title = "Galois representations arising from some compact Shimura varieties"
 year = 2011
 doi = "10.4007/annals.2011.173.3.9"
 locator_scheme = "theorem"
-locator = "Lemma 7.1, p. 1722"
+locator = "Lemma 7.1, p. 1722; section 3.4, Cases 2-3, pp. 1668-1669; section 4.2, Case 2, (4.6) and the explicit BC-transfer, pp. 1678-1679; section 4.4, (4.19)-(4.20), p. 1683"
 url = "https://annals.math.princeton.edu/wp-content/uploads/annals-v173-n3-p09-p.pdf"
 fetched_from = "https://annals.math.princeton.edu/wp-content/uploads/annals-v173-n3-p09-p.pdf"
 fetched_at = "2026-10-26T22:53:37Z"
@@ -52,7 +52,7 @@ sha256 = "8a0aca35f1817d60967c48a7e0070d20973b5b057d2dde945780e70ca4a09678"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["Exact supplier contracts: gap auxiliary-character-finite-avoidance", "10.2"]
+cited_for = ["Exact supplier contracts: gap auxiliary-character-finite-avoidance", "9.1", "Layer 9 Examples", "10.2"]
 
 [[source]]
 id = "Shin09"
