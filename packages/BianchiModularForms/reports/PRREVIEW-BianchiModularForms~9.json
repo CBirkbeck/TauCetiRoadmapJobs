@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BianchiModularForms~9",
+  "head": "32c8accde4e7a284969ee160f7aa77999419ab24",
+  "pr": 1719,
+  "folder": "BianchiModularForms",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 9 changed lines since 722ea50: the two rewritten supplier-contract bullets (Mathlib Hecke ring carrier, Tau Ceti ring structure) checked against 9 declarations at the pins, all present; one P3: the rewritten Mathlib bullet still lists `Doset`, which the pinned Mathlib does not have (it is `DoubleCoset`). Previous report had no finding. No seeded-sample target in the changed passages. Gate rerun: all counters 0, OK (worker's build=0). Depcheck: 0 problems. Suggested.lean elaborates with two sorry warnings only. Description not contradicted by the head.",
+  "text": "a644b7fcb539eaed",
+  "carried": {
+   "from": "32c8accde4e7a284969ee160f7aa77999419ab24",
+   "head": "58973fceee57e868b4701cdf9c5772a6b884dcfa",
+   "findings": 1,
+   "lines": 7,
+   "folders": [
+    "BianchiModularForms"
+   ]
+  }
+ }
+}
