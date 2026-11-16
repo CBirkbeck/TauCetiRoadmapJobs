@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RealSurfacePeriodIndex~3",
+  "head": "3acc88c22cdbba7e8d6a6a6d197b58b13449eece",
+  "pr": 2462,
+  "folder": "RealSurfacePeriodIndex",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review of the whole README (2837 lines) and Suggested.lean at 3acc88c. Seeded sample: all 15 targets (0.4, 0.6a, 1.5, 2.7, 2.8, 5.8, 6.7, 6.8, 6.10, 7.2, 7.12, 8.2, 8.3, 8.7, 9.15) checked against the cached texts at their locators; 65 source locators verified (B19 40, EKM 14, CT05 4, VA13 3, MVH98 3, BEC05 1); source corrections E1-E11, E14-E18, E20-E23 confirmed at the source. Adversarial table: 27 rows with computed values (15 sampled targets, the 8 Lean theorems and the definition, plus E3, E6, E23). 65 library declarations opened at the pins (29 Mathlib, 36 Tau Ceti), all at the stated file and line. About 95 cross-roadmap citations resolved across 24 roadmaps on main or at open heads; K3BlochGroups 5.8 does state quantifier elimination for real closed fields (its line 2052). Gate: every check 0, OK. depcheck: 263 roadmaps, 2577 edges, 0 problems, no UPWARD/CYCLE/moved. lake env lean: 8 sorry warnings only; one-tactic probe closes none of the 8 theorems; #check on all 9 declarations agrees with the README. The three declared gaps are precise, match the plan.json slugs and are provided by no other roadmap. PR description read against the head: nothing contradicted; nothing changed outside the folder. Word-run scan of README and Suggested.lean against 9 cached texts: no shared run beyond titles, formulas and one-clause facts (max 12 words). Previous findings: R02-R04 repaired, R01 deferred as D01, which stands (QuadraticFormInvariantsPartII unchanged at b38ee3c). Not verifiable: locators into the uncertified sources (BCR, ARA75, SPR55, EL73, BRO80, DK96, DIK00, CTP90, SER06, SCH94, GG73, BRE97, DIM85). Remark: the board plan.json still has the earlier needs wording for gap:at2-stratified-pair-transport (outside the pull request); README line 105 states the corrected contract.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Tsen–Lang and real closures at an ordering have two owners",
+    "where": "QuadraticFormInvariantsPartII §§5.1, 5.4–5.6, §6.0 and its lines 57–60, 118, 2029",
+    "raised": "PRREVIEW-RealSurfacePeriodIndex~1"
+   }
+  ],
+  "text": "0f920e15bf728a28"
+ }
+}
