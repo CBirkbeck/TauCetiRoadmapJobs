@@ -35,7 +35,7 @@ Headline theorems stated here:
   second countable (Layer 7.1); for a complex reductive group it is the universal Hausdorff
   quotient of `Hom(Γ, G(ℂ))` by conjugation (Layer 7.2); and `Out(Γ)` acts by homeomorphisms on
   the character variety of every group `Γ` with values in a subgroup of the points of an affine
-  group over a topological field, `𝒳(Γ, G^ℝ)` among them (Layer 7.4).
+  group over a field with a topology, `𝒳(Γ, G^ℝ)` among them (Layer 7.4).
 
 Headline theorems not statable at the pins:
 * the description of the image of the orientation-preserving mapping classes of a closed oriented
