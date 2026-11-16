@@ -40,7 +40,8 @@ This roadmap owns:
 3. **Semilinear groups and tensor filtrations** (Layer 2): the semilinear coefficient normalizer
    and its Frobenius centralizer bound, the descent of semisimplification to a field of
    characteristic zero in groups with reductive identity component (rational representatives,
-   finiteness of rational classes over p-adic fields, continuity), tensor G-structures and
+   finiteness of geometric classes inside one linear class, finiteness of rational classes over
+   p-adic fields, continuity), tensor G-structures and
    G-filtrations, crystalline inner forms, adjoint
    Hodge profiles and their top-weight sums, uniform filtrations, finiteness of global
    coefficient-group types, finiteness of semisimplification geometries, finiteness of local
@@ -85,8 +86,9 @@ It uses, and does not redevelop:
   identities and unimodality; `eulerian` in `Suggested.lean` restates §2.18's definition only so
   that the Layer 8 headline can be stated.
 - **ReductiveGroups** owns algebraic groups, their closed subgroups, quotients and component groups
-  (Layer 3), their tori (Layer 4), unipotent radicals (Layer 5), characteristic-zero Levi
-  complements (Layer 6A), root, Weyl, parabolic and Bruhat theory
+  (Layer 3), orbits of algebraic actions (Layer 3A), their tori (Layer 4), unipotent radicals
+  (Layer 5), linear reductivity (Layer 6), characteristic-zero Levi complements (Layer 6A), root, Weyl,
+  parabolic and Bruhat theory
   (Layer 7) and algebraic parabolics with Levi intersections (Layer 7b). The coefficient-normalizer
   specializations and the remaining disconnected-group statements of Layer 2 (rational
   semisimplification, semisimplification geometries) are owned here.
@@ -97,7 +99,10 @@ It uses, and does not redevelop:
   R-Levis, with Levi semisimplification unique up to `G°(k̄)`-conjugacy over an algebraically
   closed field `k̄`. §2.3 here differs in owning only the descent to a field of characteristic zero
   (parabolics and Levis defined over that field and a rational representative of the geometric
-  class), the finiteness of rational classes over p-adic fields and continuity.
+  class), the finiteness of the classes of homomorphisms into `G` inside one linear class, the
+  finiteness of rational classes over p-adic fields and continuity; the characteristic-zero criterion
+  that a subgroup is G-completely reducible exactly when its identity component is reductive is asked
+  of LanglandsParameterStacks §2.3 in the supplier contracts.
 - **ReductiveGroupsPartII** §RG2.0.2 owns the analytic manifold structure on the points of a smooth
   group over a characteristic-zero local field; Layer 9 uses it for the Zariski density of open
   subgroups of `SO(E)(ℚ_ℓ)`.
@@ -157,8 +162,7 @@ It uses, and does not redevelop:
   morphism with finite invertible coefficients, and **ClassicalAdicEtaleCohomology** §8.2 owns
   Huber's comparison of algebraic and analytic proper higher direct images; together they supply the
   lisseness hypothesis of PadicHodgeTheory §7.3 for the smooth projective families of Layer 0.
-- **Chebotarev** Layer 10 owns the Chebotarev density theorem; **ArithmeticGaloisDuality** §R02.3.1 owns
-  Hermite's finiteness of extensions of bounded degree unramified outside a finite set.
+- **Chebotarev** Layer 10 owns the Chebotarev density theorem.
 - **HeightsRationalPointsAndObstructions** §§1.6–1.7 own weak Mordell–Weil and Mordell–Weil, and §5.2
   owns the scheme-theoretic translation stabilizer of a closed subscheme of an abelian variety over a
   field, as a subgroup functor on all test schemes (nilpotent ones included) with membership, action and
@@ -168,9 +172,12 @@ It uses, and does not redevelop:
   **FaltingsFinitenessAndIsogenyTheorems** §R28.5.15 owns Shafarevich finiteness for curves of
   genus at least two.
 - **AbelianSchemesAndArithmeticModuliPartII** Layer B3 owns the o-minimal Ax–Schanuel machinery for
-  Kuga mixed Shimura varieties, and §B2.4 owns polarized fixed parts for families of geometric origin;
-  the pure Ax–Schanuel theorem for period maps and the theorem of the fixed part for every polarized
-  integral variation are asked of it in the supplier contracts.
+  Kuga mixed Shimura varieties; the pure Ax–Schanuel theorem for period maps is asked of it in the
+  supplier contracts.
+- **MappingClassGroupsAndCanonicalRepresentations** §5.4 owns the limit theorem for polarizable real
+  variations on a punctured disc and the theorem of the fixed part for admissible graded-polarizable real
+  variations on a smooth quasi-projective variety; §3.1 applies the latter to polarized integral
+  variations, which are admissible.
 
 It leaves to other roadmaps: the general theory of variations of mixed Hodge structure and limiting
 Hodge structures; general relative p-adic Hodge theory beyond the good-reduction proper smooth
@@ -345,13 +352,17 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 ### From TauCetiRoadmap.ReductiveGroups
 
 - Layer 3 (closed subgroup schemes and kernels, normal subgroups and their fppf quotients, the
-  identity component and its finite étale component group), Layer 4 (Jordan decomposition,
-  diagonalizable groups and tori), Layer 5 (unipotent groups and the unipotent radical), Layer 6A
+  identity component and its finite étale component group), Layer 3A (algebraic actions: an orbit is
+  locally closed and open in its closure, and the orbit of a reduced group is smooth), Layer 4 (Jordan
+  decomposition, diagonalizable groups and tori), Layer 5 (unipotent groups and the unipotent radical),
+  Layer 6 (reductive groups and linear reductivity: in characteristic zero an affine group of finite
+  type is linearly reductive exactly when its identity component is reductive), Layer 6A
   (characteristic-zero Levi complements for general affine groups), Layer 7 (Borel and parabolic
   subgroups, roots, Weyl group and Bruhat decomposition) and Layer 7b (algebraic parabolics and Levi
   intersections), all over a field of characteristic zero. Layer 3 is consumed in §2.1, for the
-  normalizer as a group scheme and the exactness of `1 → B → G → Aut_(E₀)(E) → 1`; the layers
-  together are consumed in Layers 2, 3, 4 and 5. Connected root theory is used only on identity
+  normalizer as a group scheme and the exactness of `1 → B → G → Aut_(E₀)(E) → 1`; Layers 3A and 6 in
+  §2.3, for the geometric finiteness inside a linear class; the layers together are consumed in
+  Layers 2, 3, 4 and 5. Connected root theory is used only on identity
   components; complete reducibility for disconnected groups is imported from LanglandsParameterStacks
   §§2.3–2.4, and the other disconnected-group statements are targets here.
 
@@ -381,6 +392,7 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   characteristic zero every finite component group is étale, so these apply to every group of
   Conventions with reductive identity component. Consumed in §§2.3 and 2.11, and through §2.3 in
   §§2.5, 2.9–2.10, 4.5, 5.2, 5.4–5.5, 5.7–5.8, 6.1, 7.2 and 7.5.
+- What LanglandsParameterStacks must provide (gap:complete-reducibility-reductive-criterion): for an algebraic group `G` over a field of characteristic zero whose identity component is reductive, a closed subgroup `H ⊂ G` is G-completely reducible, all R-parabolics of §2.3 being tested, exactly when its identity component `H°` is reductive (Serre for connected `G`; Bate–Martin–Röhrle for reductive identity component; LS, Lemma 5.37, p. 56, LS lines 2574–2577).
 
 ### From TauCetiRoadmap.RestrictedPowerSeries and TauCetiRoadmap.ComplexKahlerGeometry
 
@@ -421,12 +433,25 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 - Layer B2 §B2.6 (semirational Pila–Wilkie block counting) and Layer B3 (definable uniformization
   and the Ax–Schanuel theorem for Kuga mixed Shimura varieties) are the o-minimal machinery on
   which the Ax–Schanuel request below rests.
-- §B2.4 (polarized fixed parts): for polarized integral variations from smooth proper complex
-  algebraic families over a smooth connected quasi-projective base, the invariant local system is a
-  constant Hodge subvariation, and the identity component of the Zariski closure of monodromy is
-  semisimple. The request below extends it beyond geometric origin. Consumed in §3.1.
-- What AbelianSchemesAndArithmeticModuliPartII must provide (gap:polarized-fixed-part): the theorem of the fixed part for every polarized integral variation of Hodge structure on a smooth connected complex quasi-projective variety, not only for those of geometric origin: the global flat sections form a sub-Hodge structure of every fibre that is independent of the fibre after parallel transport, so a polarized integral variation with trivial monodromy is constant.
 - What AbelianSchemesAndArithmeticModuliPartII must provide (gap:period-map-ax-schanuel): the Ax–Schanuel theorem for pure polarized integral variations of Hodge structure (Bakker–Tsimerman) in the monodromy-orbit form: for such a variation on a smooth irreducible complex algebraic variety `X`, with `D_mon` the orbit, in the flag variety of a reference fibre, of the identity component of the Zariski closure of monodromy through a Hodge filtration, every irreducible analytic component `U` of the intersection of an algebraic subvariety `W ⊂ X × D_mon` with the graph of a local lift of the period map satisfies `codim_(X×D_mon) U ≥ codim_(X×D_mon) W + codim_(X×D_mon)(graph)` unless the projection of `U` to `X` lies in a proper weakly special subvariety of `X`; all codimensions are taken in `X × D_mon`, not in the product with a larger compact dual.
+
+### From TauCetiRoadmap.MappingClassGroupsAndCanonicalRepresentations
+
+- §5.4 (the limit theorem and the theorem of the fixed part): for a polarizable complex variation of pure
+  Hodge structure on a punctured disc, the Hodge bundles extend to subbundles of the canonical extension
+  and the limit is a mixed Hodge structure with the monodromy weight filtration, with no
+  quasi-unipotence assumed; and for an admissible graded-polarizable real variation `W` on a smooth
+  quasi-projective complex variety `X`, `H⁰(X, W)` carries a real mixed Hodge structure for which
+  `H⁰(X, W) ⊗ ℝ → W` is a morphism of variations. A polarizable pure real variation is admissible: for a
+  one-step weight filtration the two conditions of admissibility are the extension of the Hodge bundles
+  and the existence of the monodromy weight filtration given by the limit theorem along each disc.
+  Applied to the real variation of a polarized integral variation `V`: the inclusion of the flat
+  sections into each fibre is an injective morphism into a pure Hodge structure, hence strict, so the
+  flat sections form a real sub-Hodge structure of each fibre, of the same weight; they are defined over
+  `ℚ`, so they form a rational sub-Hodge structure, the same in every fibre after parallel transport, and
+  a polarized integral variation with trivial monodromy is constant. On a smooth connected variety that
+  is not quasi-projective this is applied on a dense affine open subset, which has the same flat
+  sections because its fundamental group surjects onto that of the variety. Consumed in §3.1.
 
 ### From TauCetiRoadmap.MotivesAndAlgebraicCycles
 
@@ -559,12 +584,10 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   satisfies `a(x₀) = 0`, and every pointed morphism `(C, x₀) → (A, 0)` to an abelian variety factors
   as `h ∘ a` for a unique homomorphism `h : Jac C → A`. Consumed in §10.10.
 
-### From TauCetiRoadmap.Chebotarev and TauCetiRoadmap.ArithmeticGaloisDuality
+### From TauCetiRoadmap.Chebotarev
 
 - Chebotarev Layer 10 (Dirichlet-density Chebotarev): every conjugacy class of a finite Galois group is the
   Frobenius class of a set of primes of positive density. Consumed in §7.3.
-- ArithmeticGaloisDuality §R02.3.1: Hermite's theorem that a number field has finitely many extensions of
-  bounded degree unramified outside a finite set. Consumed in §2.9.
 
 ### From TauCetiRoadmap.HeightsRationalPointsAndObstructions and FaltingsFinitenessAndIsogenyTheorems
 
@@ -1251,6 +1274,36 @@ parabolic is `TauCeti.Cocharacter.parabolic`; the characteristic-zero Levi compl
 ReductiveGroups Layer 6A are the `U_λ`-conjugates of `L_λ`, so a reductive subgroup of `P_λ` (the
 Zariski closure of a semisimple element, a torus) is unipotently conjugate into `L_λ`.
 
+In characteristic zero a closed subgroup `H ⊂ G` is G-completely reducible exactly when its identity
+component `H°` is reductive (LS, Lemma 5.37, p. 56, LS lines 2574–2577;
+gap:complete-reducibility-reductive-criterion); such an `H` is then linearly reductive (ReductiveGroups
+Layer 6), so for a faithful representation `G → GL_M` the composite of a G-completely reducible
+homomorphism with it is semisimple.
+
+Prove the **geometric finiteness inside a linear class**. Let `k̄` be algebraically closed of
+characteristic zero, `G` an affine algebraic group of finite type over `k̄` with a faithful
+representation `G → GL_M` (no condition on `G°` is needed here), `Γ` a group and `ρ₀ : Γ → GL_M(k̄)` a
+semisimple representation. Then the homomorphisms `ρ : Γ → G(k̄)` whose composite with `G → GL_M` is
+`GL_M(k̄)`-conjugate to `ρ₀` form finitely many `G(k̄)`-conjugacy classes (LV, Lemma 2.6 and proof,
+printed pp. 906–907, LV lines 536–569, for connected reductive `G`, with the double cosets taken for the
+centralizer of the image as in LS, proof of Lemma 5.49, pp. 61–62, LS lines 2832–2837; see Source
+corrections).
+
+A route: let `L ⊂ GL_M` be the Zariski closure of `ρ₀(Γ)`. Its unipotent radical is normal in `L`, so
+its fixed vectors in a simple summand of `ρ₀` form a nonzero `L`-stable subspace, hence the whole
+summand; it acts trivially on the faithful representation `k̄^M` and is trivial, so `L°` is reductive
+and `L` is linearly reductive (ReductiveGroups Layer 6). The homomorphisms in question are the
+`Ad(g) ∘ ρ₀` for `g` in the transporter `X = {g ∈ GL_M : gLg⁻¹ ⊂ G}`, a closed subvariety of `GL_M` on
+which `G × Z` acts by `(h, z)·g = hgz⁻¹`, where `Z = Z_(GL_M)(L)`; as `ρ₀(Γ)` is dense in `L`,
+`Ad(g) ∘ ρ₀` and `Ad(g′) ∘ ρ₀` are `G(k̄)`-conjugate exactly when `g′ ∈ G(k̄)·g·Z(k̄)`. A tangent vector
+`Y·g` to `X` at `g` satisfies `Y − Ad(glg⁻¹)Y ∈ Lie G` for every `l ∈ L`, so the class of `Y` in
+`gl_M / Lie G` is fixed by `gLg⁻¹`; a `gLg⁻¹`-stable complement of `Lie G` in `gl_M`, which exists by
+linear reductivity, lifts that class to a fixed vector `Y′`, and `Y = (Y − Y′) + Y′` lies in
+`Lie G + Lie Z_(GL_M)(gLg⁻¹)`, the tangent space at `g` of the orbit through `g`. The tangent space of
+`X` at each point is therefore that of its orbit, so every orbit is open in `X` (ReductiveGroups
+Layer 3A for orbits), and the Noetherian space `X` is a finite union of orbits. Nothing requires `L`
+to be connected; passing to `L°` would lose classes (Checks).
+
 API:
 
 - Over `k`, a Richardson parabolic defined over `k` and minimal among those containing a given
@@ -1262,6 +1315,10 @@ API:
 - The semisimplification of a continuous representation into `G(k)`, for `k` a finite extension of ℚ_p,
   is continuous: the Levi projection `P_λ → L_λ` is a morphism of algebraic groups defined over `k`,
   so `P_λ(k) → L_λ(k)` is continuous.
+- A G-completely reducible homomorphism has semisimple composite with every faithful representation
+  of `G`.
+- One `GL_M(k̄)`-class of semisimple representations of `Γ` meets the homomorphisms into `G(k̄)` in
+  finitely many `G(k̄)`-classes, for every closed `G ⊂ GL_M`.
 
 **Checks.**
 
@@ -1288,10 +1345,25 @@ API:
 - For `G = GL(V)` the construction over `k` is the semisimplification of the `k`-representation,
   the graded pieces of a maximal `Γ`-stable flag of `k`-subspaces, in agreement with the `GL(V)`
   comparison of ArithmeticGaloisRepresentations §1.11.
+- Geometric finiteness, a count above one: for the block-diagonal `G = GL₂ × GL₂ ⊂ GL₄`, `Γ = ℤ` and
+  `ρ₀(1) = diag(1, 2, 3, 4)`, a homomorphism into `G` in the `GL₄`-class of `ρ₀` is fixed up to
+  `G(k̄)`-conjugacy by the two eigenvalues it places on the first factor: `binomial(4, 2) = 6` classes.
+  `1 ↦ (diag(1, 2), diag(3, 4))` and `1 ↦ (diag(1, 3), diag(2, 4))` are `GL₄`-conjugate and not
+  `G(k̄)`-conjugate, so finiteness of `GL`-classes is not finiteness of `G`-classes.
+- Semisimplicity of `ρ₀` cannot be dropped: in the upper unitriangular group `U₃ ⊂ GL₃`, every
+  `u = ((1, a, c), (0, 1, b), (0, 0, 1))` with `ab ≠ 0` has `(u − 1)² ≠ 0` and so is `GL₃`-conjugate to the
+  single Jordan block `J₃`, while `(a, b)` is invariant under `U₃`-conjugation (it is the image in the
+  abelianization `U₃/[U₃, U₃] ≅ 𝔾_a²`); the homomorphisms `ℤ → U₃` in the `GL₃`-class of `1 ↦ J₃` form
+  infinitely many classes. There the image closure is `𝔾_a`, which is not linearly reductive.
+- A disconnected image closure: for `Γ = ℤ/2`, `ρ₀(1) = diag(1, 1, −1, −1)` and `G = GL₂ × GL₂ ⊂ GL₄`,
+  the involutions of `G` in that `GL₄`-class are classified by the dimension `0`, `1` or `2` of their
+  `−1`-eigenspace on the first factor: three classes. The identity component of the image closure is
+  trivial, and its conjugates into `G` form one class, so the count cannot be read off `L°`; the
+  double cosets are those of `G` and of the centralizer `Z = GL₂ × GL₂` of the image, three of them.
 
-*Needs:* LanglandsParameterStacks §§2.3–2.4; ArithmeticGaloisRepresentations §1.11, *Complete
-reducibility and closed tuples*; §2.11; `TauCeti.Cocharacter.parabolic`; ReductiveGroups Layers 6A,
-7, 7b.
+*Needs:* LanglandsParameterStacks §§2.3–2.4 with gap:complete-reducibility-reductive-criterion;
+ArithmeticGaloisRepresentations §1.11, *Complete reducibility and closed tuples*; §2.11;
+`TauCeti.Cocharacter.parabolic`; ReductiveGroups Layers 3A, 6, 6A, 7, 7b.
 
 ### 2.4 Tensor G-structures
 
@@ -1466,14 +1538,16 @@ Frobenius characteristic polynomials (in the standard representation) at every p
 Lemma 5.49 and proof, pp. 61–62; LS line 2813). The case `K = ℚ` is the one consumed in §§4.5, 6.1
 and 7.6.
 
-A route: the component action has bounded degree, so Hermite's theorem over `K` leaves finitely many
-extensions `L/K` killing it; on each, the connected refinement of Faltings's lemma over `L` leaves
-finitely many `GL`-classes of the standard representation; conjugacy rigidity of a finite component
-group follows from vanishing of its characteristic-zero `H¹` on the Lie algebra; and a geometric
-conjugacy class of homomorphisms splits into finitely many rational classes by §2.11 applied to the
-centralizer of the image. The finiteness of
-`GL`-classes alone does not give finiteness of `G`-classes, and the coefficient-linear subgroup of a
-`GO` factor is not connected.
+A route: the standard representation of such a `ρ` is semisimple, because a G-completely reducible
+image has a Zariski closure with reductive identity component (§2.3); so Faltings's lemma over `K`
+(MordellLawrenceVenkatesh §1.2) leaves finitely many isomorphism classes of standard representations.
+Each such `GL`-class contains finitely many `G(ℚ̄_p)`-classes of homomorphisms into `G`, by the
+geometric finiteness inside a linear class of §2.3 applied with `Γ = G_K`, which allows the Zariski
+closure of the image to be disconnected; and each `G(ℚ̄_p)`-class of homomorphisms with values in
+`G(ℚ_p)` splits into finitely many `G(ℚ_p)`-classes by §2.11 applied to the centralizer of the image.
+The finiteness of `GL`-classes alone does not give finiteness of `G`-classes (Checks), and no
+reduction to the identity component is made, which matters because the coefficient-linear subgroup
+of a `GO` factor is not connected.
 
 **Checks.**
 
@@ -1484,10 +1558,16 @@ centralizer of the image. The finiteness of
   this valid instance.
 - For `G = GO₂` two representations conjugate in `GL₂` need not be `G(ℚ_p)`-conjugate; finiteness
   still holds by §2.11.
+- For `E = ℚ_p × ℚ_p` and `H = GL₂` the coefficient normalizer is `G = GL₂² ⋊ C₂ ⊂ GL₄`. The elements of
+  `G(ℚ̄_p)` that are `GL₄`-conjugate to `diag(1, 2, 3, 4)` form three `G(ℚ̄_p)`-classes: in `G°` the class
+  is fixed by the two eigenvalues on the first factor, six choices exchanged in pairs by the swap,
+  and an element `(a, b)·s` of the other component has square `(ab, ba)`, so its eigenvalues come in
+  pairs `x, −x`, which `{1, 2, 3, 4}` does not contain. One `GL`-class of standard representations can
+  hold several `G`-classes.
 - Dropping integrality of the Frobenius polynomials (keeping only algebraic-integer eigenvalues) leaves
   the hypothesis of Faltings's lemma unverified; §1.9 supplies integrality for orbit systems.
 
-*Needs:* §§2.3, 2.11; MordellLawrenceVenkatesh §1.2; ArithmeticGaloisDuality §R02.3.1.
+*Needs:* §§2.3, 2.11; MordellLawrenceVenkatesh §1.2.
 
 ### 2.10 Finitely many semisimplification geometries
 
@@ -1583,7 +1663,7 @@ ArithmeticGaloisRepresentations §1.11, *Complete reducibility and closed tuples
 `TauCeti.Cocharacter.parabolic`;
 `TauCeti.Tannaka.fgPointTensorIsoEquiv`; MotivesAndAlgebraicCycles §§6.2, 6.8; PadicHodgeTheory
 §§3.3–3.6, 5.5; AbelianSchemesAndArithmeticModuli §§A6.30–A6.31; MordellLawrenceVenkatesh §§0.3–0.4,
-1.2; ArithmeticGaloisDuality §R02.3.1; Mathlib `Finsupp`.
+1.2; Mathlib `Finsupp`.
 
 ## Layer 3: Period orbits and transcendence transfer
 
@@ -1608,9 +1688,10 @@ cocharacters at the points of the universal cover of `X(ℂ)` factor through the
 discrete; on a finite étale cover the monodromy lies in `G_mon°`, which is normal in `M^der`
 (gap:andre-monodromy-normality); the Lie algebra of the centralizer `H′` of `G_mon°` in `M^der` is then a
 polarized integral subvariation of `End(V)` with trivial monodromy, so its Hodge structure is constant by
-the theorem of the fixed part (gap:polarized-fixed-part); as `M^ad = (G_mon°)^ad × (H′)^ad` and the
-image of a Hodge cocharacter in the torus `M/M^der` is constant, any two Hodge cocharacters differ by
-conjugation by `G_mon°(ℂ)`. The transfer to `Φ_p` is the torsor argument of LS lines 2913–2939. The torsor
+the theorem of the fixed part (MappingClassGroupsAndCanonicalRepresentations §5.4); as
+`M^ad = (G_mon°)^ad × (H′)^ad` and the image of a Hodge cocharacter in the torus `M/M^der` is constant, any
+two Hodge cocharacters differ by conjugation by `G_mon°(ℂ)`. The transfer to `Φ_p` is the torsor argument
+of LS lines 2913–2939. The torsor
 `P_V → X_(K′)` of tensor isomorphisms between the fibre functors at a point and at the reference point
 `x₀`, on the category generated by `(V_dR, ∇)` (MotivesAndAlgebraicCycles §6.8), carries the
 `G_mon`-equivariant morphism `Φ_P : P_V → Flag(V_(x₀))` sending `φ : V_x ≅ V_(x₀)` to `φ(F_x)`, and the
@@ -1647,8 +1728,8 @@ connection, not the Hodge filtrations: a horizontal tensor need not be a Hodge t
   MordellLawrenceVenkatesh §3.8 in rank two.
 
 *Needs:* §§0.2, 0.6–0.7, 2.5; MotivesAndAlgebraicCycles §6.8; ShimuraData §§1.2–1.4, 3.4–3.6 with
-gap:andre-monodromy-normality; AbelianSchemesAndArithmeticModuliPartII §B2.4 with
-gap:polarized-fixed-part; ReductiveGroups Layer 4.
+gap:andre-monodromy-normality; MappingClassGroupsAndCanonicalRepresentations §5.4; ReductiveGroups
+Layer 4.
 
 ### 3.2 Parabolic stabilizers of period orbits
 
@@ -1790,7 +1871,8 @@ coefficients. In dimension zero a point is dense in itself, so positive base dim
 ### Dependencies
 
 Layers 0 and 2; ShimuraData §§1.2–1.4, 3.4–3.7; MotivesAndAlgebraicCycles §6.8; ReductiveGroups
-Layer 4; AbelianSchemesAndArithmeticModuliPartII §B2.4 and Layer B3; ComplexKahlerGeometry K3 §3.4;
+Layer 4; AbelianSchemesAndArithmeticModuliPartII Layer B3; MappingClassGroupsAndCanonicalRepresentations
+§5.4; ComplexKahlerGeometry K3 §3.4;
 RestrictedPowerSeries §§2.1, 5.2; MordellLawrenceVenkatesh §§2.5–2.6, 2.8; `TauCeti.Cocharacter.parabolic`;
 Mathlib `Ideal.iInf_pow_eq_bot_of_isLocalRing`.
 
@@ -2011,19 +2093,36 @@ API:
 
 ### 5.3 Balanced, weakly balanced and semibalanced filtrations
 
-For `F` and `P → M` as in §5.2, `F` is **balanced** when `w_M(F_M) = ι_(GM)(w_G(F))`, **weakly balanced**
-when `⟨γ_P, F_M⟩ = 0` and **semibalanced** when `⟨γ_P, F_M⟩ ≤ 0`. Prove that balanced implies weakly
-balanced implies semibalanced, and that restriction to `G°` preserves all three; the last two test one
-character and are in general weaker than balance (LS, Definition 8.4, Remark 8.5 and Example 8.6,
-pp. 75–76; LV, §11.4, pp. 989–990).
+For `F` and `P → M` as in §5.2, with `P` and `F` defined over a field `k`, `F` is **balanced** when
+`⟨χ, F_M⟩ = 0` for every character `χ` of `M` defined over `k` and trivial on `Z(G)` (a character of the
+whole group `M`, not only of `M°`), **weakly balanced** when `⟨γ_P, F_M⟩ = 0` and **semibalanced** when
+`⟨γ_P, F_M⟩ ≤ 0`. Prove that balanced implies weakly balanced implies semibalanced; that when `G` is
+connected (so that `M` is) and every character of `M` is defined over `k`, balance is the equality
+`w_M(F_M) = ι_(GM)(w_G(F))` in `a_M` of §5.1; and that restriction to `G°` preserves weak balance and
+semibalance, which test the one character `γ_P`, but does not preserve balance (LS, Definition 8.4,
+Remark 8.5, Example 8.6 and proof of Lemma 8.7, pp. 75–77, LS line 3478, with the correction listed in
+Source corrections; LV, §11.4 and (11.7), pp. 989–990). For a disconnected `G` the two differ in both
+directions (Checks): the equality in `a_M` can fail for a balanced filtration, as it does for one that
+global purity gives, and can hold for one that is not balanced.
+
+A route for the comparison: for connected `G` restriction `X^*(G) ⊗ ℚ → X^*(Z(G)°) ⊗ ℚ` is bijective,
+so `⟨ι_(GM)(w_G(F)), χ⟩ = ⟨ψ, F⟩` for the character `ψ` of `G` that agrees rationally with `χ` on `Z(G)°`;
+the equality in `a_M` therefore says that `⟨χ − ψ|_M, F_M⟩ = 0` for every `χ`, and the `χ − ψ|_M` are,
+up to multiples, the characters of `M` trivial on `Z(G)`.
 
 API:
 
-- Balance compares central weights in `a_M`.
-- Balance implies weak balance, since `γ_P` vanishes on the centre of `G`; weak balance implies
-  semibalance.
+- Balance tests the characters of `M` defined over the base field and trivial on `Z(G)`; for connected
+  `G` whose Levi has all its characters over the base field it is the equality of central weights in
+  `a_M`.
+- Balance implies weak balance, since `γ_P` is a character of `M` defined over the base field and
+  trivial on the centre of `G`; weak balance implies semibalance.
 - For `GL(V)`, `F` is balanced exactly when every nonzero graded block has the same average `F`-weight
   as `V`.
+- For `GSp(V)` or `GO(V)` with multiplier `ν` and a self-dual flag, `F` is balanced exactly when every
+  nonzero graded block has the average `F`-weight `⟨ν, F⟩/2` of `V`: the characters `det_k²·ν^(−dim gr_k)`
+  of `M` are trivial on the scalars, and the middle block is self-dual, even when its similitude group
+  `GO(gr₀)` is disconnected.
 
 **Checks.**
 
@@ -2042,6 +2141,24 @@ API:
 - A generic `F¹` meets `f₀` trivially and `f₁` in a line, giving `(2, 1, 0)`, which is not
   semibalanced; semibalance is not automatic on the flag variety.
 - With the inverse-determinant convention the sign is `≤ 0`; with `det(Ad)` it would be `≥ 0`.
+- For a disconnected Levi the equality in `a_M` can fail for a balanced filtration. Let `C : y² = x³ − x`,
+  `p ≡ 1 mod 4`, `W = H¹_et(C_ℚ̄, ℚ_p)` and `E_et = ℚ(i) ⊗ ℚ_p ≅ ℚ_p × ℚ_p`, on which `G_ℚ` acts through
+  `Gal(ℚ(i)/ℚ)` by exchanging the factors. `V = W ⊗_(ℚ_p) E_et` with the diagonal action gives
+  `ρ : G_ℚ → G(ℚ_p)` for the coefficient normalizer `G = GL₂² ⋊ C₂` of §2.1 (`E = ℚ_p × ℚ_p`, `H = GL₂`),
+  crystalline at `p` and pure of weight 1. Over `ℚ(i)`, `W` is the sum of two characters `ψ, ψ^c`, and the
+  `E_et`-line made of the `ψ`-line of the first factor and the `ψ^c`-line of the second is `G_ℚ`-stable,
+  complex conjugation exchanging both the lines and the factors. Its Levi has `M° = 𝔾_m⁴`, with
+  coordinates `(x₁, y₁ | x₂, y₂)` for the line and the quotient on each factor, and the de Rham degrees
+  `(0, 1 | 1, 0)`; so `w_M(F_M) = (0, 1 | 1, 0)` against `ι_(GM)(w_G(F)) = (½, ½ | ½, ½)`. The component of
+  `M` outside `M°` exchanges the factors, so the characters of `M` trivial on `Z(G)`, the diagonal
+  scalars, are up to finite order the powers of `x₁x₂/(y₁y₂)`, which pairs with `F_M` to
+  `(0 + 1) − (1 + 0) = 0`: `F` is balanced, while as a `G°`-filtration it is not (`x₁/y₁` pairs to `−1`).
+  The `G°`-statement is the one over `ℚ(i)` that the last Check of §5.8 refutes.
+- Connectedness of `G`, not only of `M`, is needed for the comparison with `a_M`: in `G = GL₂² ⋊ C₂`,
+  `λ = (diag(t, 1), 1)` is not fixed by the swap, so `P_λ = B × GL₂` and `M = T × GL₂` are connected, but
+  `Z(G)` is the diagonal `𝔾_m`, smaller than `Z(G°) = 𝔾_m²`. For `F_M` given by
+  `(diag(t^a, t^b), diag(t^c, t^d))` the equality in `a_M` says `a = b`, while balance, through the
+  characters `x₁²/det₂` and `y₁²/det₂`, says `a = b = (c + d)/2`.
 
 *Needs:* §§5.1–5.2.
 
@@ -2060,9 +2177,16 @@ average `−w/2` (Conventions: `ℚ_p(−1)`, with geometric Frobenius `q`, has 
 `+1` and Hodge–Tate weight `−1`). The statement is over ℚ; it is false in this form over number fields
 with several embeddings (LS, Lemmas 8.1 and 8.7, pp. 73 and 76–77).
 
-A route: MordellLawrenceVenkatesh §1.13 applies to every rational character of the Levi that is trivial
-on `Z(G)`; the resulting identities are the central-weight equality, transported through the inner form
-of §2.6.
+For a disconnected Levi the conclusion concerns the characters of `M` itself, not those of `M°` (§5.3,
+Checks).
+
+A route: let `χ` be a character of `P` (equivalently of `M`, the unipotent radical having none) defined
+over `ℚ_p` and trivial on `Z(G)`. Then `χ ∘ ρ` is crystalline at `p` and pure of weight 0: an element of
+`P` acting by a scalar in the faithful representation is central in `G` and so acts trivially on `χ`,
+which gives a multiplicative relation between the Frobenius eigenvalues of `ρ` and of `χ ∘ ρ` in which
+`χ` occurs and the exponents of the eigenvalues of `ρ` sum to zero (LS, proof of Lemma 8.7, LS lines
+3477–3508). MordellLawrenceVenkatesh §1.13 then gives `χ ∘ ρ` Hodge weight 0, that is `⟨χ, F_M⟩ = 0`,
+transported through the inner form of §2.6, whose characters are those of `M`.
 
 **Checks.**
 
@@ -2235,8 +2359,9 @@ integer `e > 0` assume `A ≥ e/c` and `B > T(e/c) + T((h⁰ − t)/2 + e/c)`, b
 `[0, dim H]`. Prove that for every parabolic `P` and every prescribed induced Levi filtration, the
 semibalanced filtrations in the orbit `G·F₀` with that induced filtration form a locus of codimension at
 least `e`. In the single connected group case (`c = 1`) the stronger hypotheses `A ≥ e` and
-`B > T(e) + T(h⁰/2 + e)` give codimension strictly greater than `e` for balanced filtrations (LS, Lemma
-8.12 and proof, pp. 79–80, LS line 3605; LV, Proposition 11.3, pp. 990–993).
+`B > T(e) + T(h⁰/2 + e)` give codimension strictly greater than `e` for weakly balanced filtrations, in
+particular for balanced ones (LS, Lemma 8.12 and proof, pp. 79–80, LS line 3605; LV, Proposition 11.3,
+pp. 990–993, whose proof uses only the vanishing (11.14) of the modular character, LV lines 3740–3749).
 
 A route: stratify by the finitely many `P–Q` double cosets and compute the dimension of each fibre;
 semibalance is a nonpositive modular sum, whose root contributions are paired by §5.9; the largest `e/c`
@@ -2481,8 +2606,10 @@ their pairing tensor (LV, Proposition 10.6, printed pp. 981–982, with the conc
 pp. 993–994).
 
 A route: reduce to semisimple `φ`, which only enlarges the incidence locus; stratify by the finitely many
-conjugacy types of self-dual flags; graded pairs vary at cost at most `z` (§5.11); apply the connected
-balanced estimate of §5.10 with parameter `z + e` and project to the Hodge flag variety.
+conjugacy types of self-dual flags; graded pairs vary at cost at most `z` (§5.11); the average `r/2` on
+every graded block makes the filtration balanced in `GAut` and hence weakly balanced in `GAut°` (§5.3),
+so the connected estimate of §5.10 for weakly balanced filtrations applies with parameter `z + e`;
+project to the Hodge flag variety.
 
 **Checks.**
 
@@ -2492,7 +2619,7 @@ balanced estimate of §5.10 with parameter `z + e` and project to the Hodge flag
 - A graded object with average weight different from `r/2` is excluded; §7.5 supplies the average by
   global purity.
 
-*Needs:* §§5.4–5.5, 5.10–5.11.
+*Needs:* §§5.3–5.5, 5.10–5.11.
 
 ### 7.5 Classical semisimplification fibres are nondense
 
@@ -3373,11 +3500,28 @@ The following corrections to the sources are used throughout; each is fixed by a
   Without it the assertion fails: `ℚ_p ⊕ ℚ_p(−1)` and the nonsplit crystalline Kummer extension of
   `ℚ_p(−1)` by `ℚ_p` attached to `2` (`p` odd) give graded de Rham degrees `0` and `1` against the
   average `1/2`.
+- **LS, Definition 8.4 and Lemma 8.7, pp. 75–77.** Lemma 8.7 asserts balance in the sense of Definition 8.4,
+  which tests every character of the identity component of the Levi (LS lines 3384–3390 and 3400), while
+  its proof shows the vanishing only for the characters of `P` over `ℚ_p` trivial on `Z(G)` (LS line 3478).
+  The stronger assertion fails for the coefficient normalizer `GL₂² ⋊ C₂` and the `H¹` of `y² = x³ − x`
+  tensored with `ℚ(i)`, `p ≡ 1 mod 4`: the induced degrees `(0, 1 | 1, 0)` differ from the central weight
+  `(½, ½ | ½, ½)`, while every character of `M` trivial on `Z(G)` pairs to zero with them (§5.3, Checks).
+  §5.3 defines balance through the characters of `M` over the base field; its consumers use the modular
+  character (§§5.10, 5.12) and the self-dual block averages (§§7.4–7.5), which that balance gives.
 - **LS, proof of Lemma 8.14, p. 80.** The cyclic cocycle lemma is applied on `Z_U(φ^r)`, where conjugation by
   `φ` has order dividing `r`; on all of `U` it can have infinite order (`diag(2, 1)` on an upper root group).
 - **LS, proof of Lemma 5.49, pp. 61–62.** The coefficient-linear subgroup need not be connected (for even `N`,
-  `GO_N` is disconnected); its identity component and finite quotient are treated separately, with the
-  rational-orbit finiteness of §2.11.
+  `GO_N` is disconnected), although the proof treats it as connected (LS line 2830); §2.9 makes no
+  reduction to an identity component, since the geometric finiteness of §2.3 allows a disconnected image
+  closure, and §2.11 passes to rational classes.
+- **LV, proof of Lemma 2.6, printed pp. 906–907.** The transporter `{g : Ad(g)L ⊂ G}` is a finite union of
+  double cosets of `G` and of the centralizer `Z_(GL_n)(L)` of the image, not of `G` and `L` (LV lines
+  555–558), and the passage to `L°` (LV line 559) loses classes. For `Γ = ℤ/2`, `ρ₀(1) = diag(1, 1, −1, −1)`
+  and `G = GL₂ × GL₂ ⊂ GL₄`, the orbit of `G × Z_(GL₄)(L)` through the transposition of `e₂` and `e₃` has
+  dimension `16 − 4 = 12`, more than `dim(G × L) = 8`, so there are infinitely many `(G, L)`-double cosets;
+  the conjugates of `ρ₀` into `G` form three `G`-classes, while the trivial group `L°` gives one. The
+  correction is recorded in LS, proof of Lemma 5.49, pp. 61–62 (LS lines 2832–2837); §2.3 proves the
+  geometric finiteness with the centralizer and a possibly disconnected `L`.
 - **LS, proof of Lemma 5.49, p. 61, use of LV Lemma 2.3.** Faltings's lemma needs Frobenius characteristic
   polynomials in `ℤ[t]`; integral Frobenius eigenvalues only give algebraic-integer coefficients. §1.9
   supplies rationality for the orbit systems, and this roadmap uses that stronger hypothesis.

@@ -4650,10 +4650,10 @@
       "section": "§4.4"
     },
     {
-      "slug": "polarized-fixed-part",
-      "needs": "the theorem of the fixed part for every polarized integral variation of Hodge structure on a smooth connected complex quasi-projective variety, not only for those of geometric origin: the global flat sections form a sub-Hodge structure of every fibre that is independent of the fibre after parallel transport, so a polarized integral variation with trivial monodromy is constant.",
-      "supplier": "AbelianSchemesAndArithmeticModuliPartII",
-      "section": "§B2.4"
+      "slug": "complete-reducibility-reductive-criterion",
+      "needs": "for an algebraic group `G` over a field of characteristic zero whose identity component is reductive, a closed subgroup `H ⊂ G` is G-completely reducible, all R-parabolics of §2.3 being tested, exactly when its identity component `H°` is reductive (Serre for connected `G`; Bate–Martin–Röhrle for reductive identity component; LS, Lemma 5.37, p. 56, LS lines 2574–2577).",
+      "supplier": "LanglandsParameterStacks",
+      "section": "§2.3"
     }
   ],
   "sourceIssues": [
