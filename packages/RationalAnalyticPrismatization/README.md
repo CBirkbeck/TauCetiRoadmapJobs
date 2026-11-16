@@ -70,7 +70,7 @@ The general theory of analytic stacks over `ℚ_{p,■}` is consumed at the sect
 - **Classifying stacks of locally profinite groups (§4.2).** For a second-countable locally pro-p group G and ℚ_p-coefficients, the classifying stack of locally constant ℚ_p-valued functions on G is !-able and cohomologically smooth, with dualizing complex the unit in degree 0 on which G acts through the modulus δ(g) = [gKg⁻¹ : K], K an open pro-p subgroup `(HM Example 5.3.21, HM line 4911, in the quasi-coherent formalism over ℚ_{p,■})`. Used in 10.3 and 12.2.
 - **Perfect complexes on analytic stacks of Fredholm rings (§4.5).** For an essentially small category C₀ of affinoid analytic stacks of Fredholm analytic rings, closed under finite limits and finite coproducts, and integers a ≤ b, the unique extension of A ↦ `Perf^{[a,b]}(A)` to a sheaf of categories on AnStk(C₀) inverting !-equivalences, perfectness and amplitude being tested on a jointly surjective family of affinoids (ABLB Lemma 4.2.11, Definition 4.2.12 and Remark 4.2.13, ABLB line 2235, ABLB line 2253, ABLB line 2257, stated there for Gelfand rings). It is applied to C₀ = `GelfRing_{ω₁}^op`, every Gelfand ring being Fredholm by 1.7. Used in 2.3.
 - **Betti stacks (§4.1).** The Betti realization of light condensed anima in analytic stacks over `ℚ_{p,■}`, preserving colimits and finite limits, with S^Betti = AnSpec(C^lc(S, ℚ_p)) for light profinite S, and the descent of D along hypercovers of light profinite sets (RCSolid §6.5, RCSolid line 4745; ABLB Lemma 4.2.9, ABLB line 2214). Used in 2.5.
-- **Nuclear modules (§4.3(1)–(2)).** Nuclear objects of D(A) for a solid ℚ_p-algebra A: the Hom criterion, closure under colimits and tensor products, ω₁-compact nuclear objects basic nuclear, and, for nuclear A, nuclearity tested on the underlying ℚ_p-module and on homotopy groups, with closure under countable limits (ABLB Definition A.0.4 and Lemmas A.0.6–A.0.9, ABLB line 6767, ABLB line 6781, ABLB line 6789). AnalyticStacks §4.3 builds on the nuclear objects of RefinedTraceMethods §4.3; descent of nuclear modules along descendable maps of Gelfand rings is 2.3. Used in 2.3, 3.2 and 10.2.
+- **Nuclear modules (§4.3, with RefinedTraceMethods §4.3).** Nuclear objects of D(A) for a solid ℚ_p-algebra A, characterized by the Hom criterion in the opening of §4.3 (ABLB Definition A.0.4, ABLB line 6767), and, for nuclear A, §4.3(1): nuclearity tested on the underlying ℚ_p-module and on homotopy groups, with closure under countable limits (ABLB Lemmas A.0.7–A.0.8, ABLB line 6789, ABLB line 6795). Closure of nuclear objects under colimits and tensor products and the identification of the ω₁-compact nuclear objects with the basic nuclear ones (ABLB Lemma A.0.6, ABLB line 6781) are RefinedTraceMethods §4.3 (Nuclear objects; Closure and generation of nuclear objects), applied to D(A), which is compactly generated with compact unit. Descent of nuclear modules along descendable maps of Gelfand rings is 2.3. Used in 2.3, 3.2 and 10.2.
 - **Fredholm criteria (§4.4(1), (3)–(5)).** For a map of analytic rings A → B with − ⊗_A B conservative, descent of connectivity and of perfect amplitude, and !-local perfectness over Fredholm rings (Sch24 Proposition VI.1.2, Corollaries VI.1.3–VI.1.4, Sch24 line 1720); A is Fredholm if and only if the cone of 1 − f is perfect for every trace-class endomorphism f of a compact object (Sch24 Proposition VI.1.5, Sch24 line 1743); and for A → Ā surjective on π₀ with Ā Fredholm and the Nakayama condition on finitely presented static modules, A is Fredholm (Sch24 Proposition VI.1.7, Sch24 line 1755). The Fredholm property of Banach ℚ_p-algebras with the induced structure is 1.7. Used in 1.7, 2.3 and 3.5.
 - **The cotangent complex of analytic rings (§§5.1–5.3).** For maps A → B of solid animated ℤ-algebras and of analytic rings with induced structure, `L_{B/A} ∈ D_{≥0}(B)` corepresenting M ↦ Der_A(B, M), with `L_{B′/A′} = L_{B/A}` ⊗_B B′ for pushouts, compatibility with colimits, the transitivity fibre sequence and `L_{B/A}` = 0 for idempotent A → B (RCSolid Definition 7.4.1 and Lemma 7.4.3, RCSolid line 5257, RCSolid line 5276; ALRS Lemma A.1.1, ALRS line 9427); agreement with the animated cotangent complex of EnhancedDerivedSheaves §E5:cotangent-export.1 on discrete rings, so that for discrete A, `L_{A/ℤ}` is discrete with `L_{A/ℤ}(*) = L_{A(*)/ℤ}` (RCSolid Example 7.4.4(1), RCSolid line 5295); and descent of exterior powers along descendable maps, ∧^m_A `L_{A/R} ≃ Tot(∧^m_{A^•} L_{A^•/R})` (ALRS Lemma A.1.2, ALRS line 9435). Used in 4.5.
 - **Cartier duality of the overconvergent and analytic vector groups (§7.5(4), with §7.2(3)).** The 1-categorical Cartier duality between the overconvergent group `G_a^{♯,†}` and the analytic group G_a^an through the pairing `G_a^{♯,†}` × G_a^an → G_m (RC26a Proposition 3.2.27, RC26a line 1936; ALRS cites it as RC26a Theorem 3.2.27). Used in 5.3, 11.2, 11.5, 11.8 and 12.6.
@@ -187,7 +187,7 @@ Uniform pro-p groups (§0.1), compact p-adic analytic groups with an open normal
 
 ### From TauCetiRoadmap.RefinedTraceMethods
 
-The derived HKR filtration on Hochschild homology of commutative rings, complete, left Kan extended from polynomial rings, with graded pieces ∧^n L[n] (§1.10), and Hochschild homology of a commutative or animated ring as its tensor with the circle, functorial in the space (§1.7); 4.5 uses them, with the same left Kan extension from polynomial rings to animated rings, for p-completeness of the solid cotangent complex. Sections consumed: §1.7, §1.10.
+The derived HKR filtration on Hochschild homology of commutative rings, complete, left Kan extended from polynomial rings, with graded pieces ∧^n L[n] (§1.10), and Hochschild homology of a commutative or animated ring as its tensor with the circle, functorial in the space (§1.7); 4.5 uses them, with the same left Kan extension from polynomial rings to animated rings, for p-completeness of the solid cotangent complex. Nuclear and basic nuclear objects of a compactly generated presentable symmetric monoidal stable ∞-category with compact unit, their closure under colimits and tensor products, and the identification of the ω₁-compact nuclear objects with the basic nuclear ones (§4.3); 2.3, 3.2 and 10.2 use them for D(A), A a solid ℚ_p-algebra. Sections consumed: §1.7, §1.10, §4.3.
 
 ### Comparison partners used only in Checks
 
@@ -571,7 +571,7 @@ Since every Gelfand ring is Fredholm (1.7), AnalyticStacks §4.5 applied to C₀
 
 A proof route: D(X) is the limit of D(A) over affinoids GSpec(A) → X along symmetric monoidal pullbacks, so an object of D(X) is dualizable if and only if each of its pullbacks is; a dualizable module over a Gelfand ring is perfect by the Fredholm property 1.7, and a perfect one is dualizable, so the dualizable objects of D(X) are those perfect on every affinoid, which is Perf(X) by AnalyticStacks §4.5. For D^+, a descendable map has a nilpotent fibre power (EnhancedDerivedSheaves §E5:descent), so B is descendable in D^+(A), and ALRS Lemma 2.1.9 applies because D^+ ⊂ D and Nuc ⊂ D are full and D(−) inverts !-equivalences (AnalyticStacks §3.3); for nuclear modules use pro-constancy of the partial totalizations.
 
-*Needs:* §1.7; §2.1; §2.2; EnhancedDerivedSheaves §E5:descent; EnhancedDerivedSheaves §E5:presentability.4; AnalyticStacks §3.3; AnalyticStacks §4.5; AnalyticStacks §4.3; AnalyticStacks §4.4.
+*Needs:* §1.7; §2.1; §2.2; EnhancedDerivedSheaves §E5:descent; EnhancedDerivedSheaves §E5:presentability.4; AnalyticStacks §3.3; AnalyticStacks §4.5; AnalyticStacks §4.3; AnalyticStacks §4.4; RefinedTraceMethods §4.3.
 
 **Checks.**
 
@@ -686,7 +686,7 @@ GSpec(ℚ_p) is the final Gelfand stack and GSpec(0) the initial one. The Betti 
 
 ### Dependencies
 
-Layers 0 and 1; AnalyticStacks §0.5, §0.6, §§0.8–0.11, §2.3, §2.11, §3.2, §3.3, §3.6, §4.1, §4.3, §4.4, §4.5; EnhancedDerivedSheaves §E2.6, §E2.7, §E5:descent, §E5:presentability.4; TropicalAndBerkovichArithmetic §0.17, §0.19; RigidAnalyticGeometry §6.2; AdicSpacesPartII §R1.1, §R0.10; AdicSpacesPartIV §F1.7; PerfectoidSpaces §P2.10; MotivesAndAlgebraicCyclesPartII Layer 0.
+Layers 0 and 1; AnalyticStacks §0.5, §0.6, §§0.8–0.11, §2.3, §2.11, §3.2, §3.3, §3.6, §4.1, §4.3, §4.4, §4.5; RefinedTraceMethods §4.3; EnhancedDerivedSheaves §E2.6, §E2.7, §E5:descent, §E5:presentability.4; TropicalAndBerkovichArithmetic §0.17, §0.19; RigidAnalyticGeometry §6.2; AdicSpacesPartII §R1.1, §R0.10; AdicSpacesPartIV §F1.7; PerfectoidSpaces §P2.10; MotivesAndAlgebraicCyclesPartII Layer 0.
 
 ## Layer 3: Analytic de Rham stacks, analytification and Cartier divisors
 
@@ -720,7 +720,7 @@ Prove that (−)^dR: `ArcStk^qfd_{ℚ_p}` → GelfStk^qfd is left exact and comm
 
 A proof route: Commutation with colimits reduces, by the adjunction between perfectoid and nilperfectoid affinoids, to arc-hyperdescent of qfd affinoid perfectoid rings for the pullback functor (ABLB Theorem 5.6.1), which is proved through nuclear modules and the cohomology of de Rham stacks of overconvergent polydiscs (ABLB §§5.5–5.6).
 
-*Needs:* §3.1; §2.3; §2.4; AnalyticStacks §4.3.
+*Needs:* §3.1; §2.3; §2.4; AnalyticStacks §4.3; RefinedTraceMethods §4.3.
 
 **Checks.**
 
@@ -808,7 +808,7 @@ The de Rham stack of the analytic affine line is A¹/G_a^†, where G_a^†(A) =
 
 ### Dependencies
 
-Layer 2; AnalyticStacks §§0.8–0.11, §3.3, §4.3, §4.4, §6.4, §6.6; SchemeAndStackFoundations §1.18–§1.22; ReductiveGroups Layer 1; EnhancedDerivedSheaves §E5:presentability.4; DerivedModuleAlgebra §1.E.0.
+Layer 2; AnalyticStacks §§0.8–0.11, §3.3, §4.3, §4.4, §6.4, §6.6; RefinedTraceMethods §4.3; SchemeAndStackFoundations §1.18–§1.22; ReductiveGroups Layer 1; EnhancedDerivedSheaves §E5:presentability.4; DerivedModuleAlgebra §1.E.0.
 
 ## Layer 4: Morphisms, pushouts, †-cohesiveness and deformation theory
 
@@ -1204,6 +1204,14 @@ A proof route: Given (S, 𝒳) and T → 𝒳, the composite T^u → 𝒳 is det
 
 *Needs:* §7.1; §6.1; §4.3; §1.2; §1.8; PerfectoidSpaces §P1.27.
 
+The API has the following laws.
+
+- For uniformly perfectoid A and T = GSpec(A), the pair (T♭, 𝒳_T) is initial among the δ-spaces (S, 𝒳) equipped with a map T → 𝒳 of Berkovich spaces, where 𝒳_T is the pushout of f_φ: ℕ × T^u → `D^×_{FF,T♭}` along ℕ × T^u → ℕ × T.
+- Among perfect δ-spaces with a map from T the initial one is (T♭, `D^×_{FF,A}`), where `D^×_{FF,A}` = (ℤ × T) `⊔_{ℤ × T^u}` `D^×_{FF,T♭}`, and FF_A = `D^×_{FF,A}/φ^ℤ` is a Berkovich space.
+- The radius map κ: 𝒳_T → (0, ∞) sends the n-th copy of T to p^n, and `κ^{-1}(p^n)` = GSpec`(A ×_{A^u} B^†_{[p^n,p^n],A^u})`.
+- The natural map `D^×_{FF,Marc(A^u)} → D^×_{FF,A}` is an isomorphism if and only if A is perfectoid.
+- For nilperfectoid A, 𝒳_T represents the maps `W′(A_{≤1}) → B_{≤1}`, B a Gelfand ring, whose composite to every perfectoid B-algebra factors through `D^×_{FF,A^u}`.
+
 **Checks.**
 
 - For A perfectoid, 𝒳_T = `D^×_{FF,T♭}`, since the pushout is along the identity of ℕ × T.
@@ -1387,7 +1395,7 @@ The API has the following laws.
 
 - On X_cyc, μ_BK pulls back to the ideal generated by log(q)/(q − 1): log(q) has simple zeros at all p-power roots of unity, and dividing by q − 1 removes q = 1, leaving the zeros of `[p]_{q^{p^n}}`, n ≥ 0 (ALRS Proposition 4.8.1(3)).
 - The translates `φ^{n,*}D` and `φ^{m,*}D` for n ≠ m have disjoint supports because the radius map multiplies by p under Frobenius (6.1).
-- On Q_p^Δ only the pullbacks `φ^{n,*}` with n ≥ 0 exist, because φ is not invertible on the δ-spaces 𝒳_T; the ℤ-indexed product `⊗_{n∈ℤ}` φ^n(I_Δ) exists only on the perfection Div¹~, where it is the perfected twist of 9.8.
+- On Q_p^Δ only the pullbacks `φ^{n,*}` with n ≥ 0 exist, because φ is not invertible on the δ-spaces 𝒳_T; the ℤ-indexed product `⊗_{n∈ℤ}` φ^n(I_Δ) exists only on the perfection Div¹~, where it is the pullback of `I_{Div¹}` (9.7), the underlying line bundle of the perfected twist of 9.8.
 - Over the open complement Q_p^Δ ∖ ⋃_n `φ^{-n}(Q_p^HT)` the Breuil–Kisin ideal is trivial.
 
 ### 8.5 The radius map and the Hyodo–Kato and twistor regions
@@ -1569,7 +1577,7 @@ A proof route: X^cone_s → `X^{cone^}` is an epimorphism, so it suffices to pro
 
 Let 1 + `D̃^{<1}_{ℚ_p} = lim_{x↦x^p}(1 + D^{<1}_{ℚ_p})` with coordinate q and Frobenius q ↦ q^p, and let (S_cyc, X_cyc, I) be the cyclotomic prism with divisor ([p]_q). Prove: (1) the square Q_p^Δ → `Q_p^{Δ,dR}` over μ_BK: A¹/G_m → `A^{1,dR}/G_m^dR` is cartesian; (2) the square Q_p^HT → GSpec(ℚ_p) over ι: BG_m → BG_m^dR is cartesian, so `π_{ℚ_p}`: Q_p^HT → GSpec(ℚ_p) is a BG_m^†-torsor, a gerbe banded by G_m^†; (3) along X_cyc → Q_p^Δ, I_BK pulls back to (log(q)/(q − 1)), and the ideal `I_{Div¹}` of the Hodge–Tate divisor of Div¹ (9.1) pulls back along X_cyc → Div¹~ → Div¹ to (log q), whereas I_Δ pulls back along X_cyc → Q_p^Δ to ([p]_q); (4) X_cyc → Div¹~ induces Div¹~ ≅ `X_cyc/ℤ_p^{×,la}` with a·(q, `q^{1/p}`, …) = (q^a, `q^{a/p}`, …), hence Div¹ ≅ `X_cyc/ℚ_p^{×,la}` and Q_p^HT ≅ `GSpec(ℚ_p(μ_{p^∞}))/ℤ_p^{×,la}`, the action factoring through the Galois action of `ℤ_p^{×,sm}` via the cyclotomic character; and the cartesian square of 8.6 becomes `((1 + D̃^{<1}) ∖ {1})/ℚ_p^{×,la}` over A¹/G_m via log (ALRS Proposition 4.8.1, p. 79, ALRS line 4112). Prove that ι^dR: GSpec(ℚ_p) → BG_m^dR is classified by the Tate twist Ô ⊗ ℚ_p(1) ≅ gr¹B⁺_dR on Spa(ℚ_p)_proét (ALRS §4.8, p. 81, ALRS line 4202), and that `D^×_{FF,ℚ_p^cyc} → (1 + D̃^{<1}_{ℚ_p})` ∖ {1}, q ↦ `[ε^{1/p}]`, is Γ-equivariant through χ and sends the prism ideal to the ideal of the untilt ℚ_p^cyc (ALRS Example 4.8.4, p. 81, ALRS line 4206).
 
-A proof route: (1)–(2) are ALRS Proposition 4.3.1 for X = GSpec(ℚ_p). For (3), log(q)/(q − 1) has simple zeros exactly at the zeros of `[p]_{q^{p^n}}`, n ≥ 0; the pullback of `I_{Div¹}` to Div¹~ is the perfection `⊗_{n∈ℤ}` φ^n(I_Δ) of I_BK (8.4), and on X_cyc it is the limit of `(log(q)/(q^{p^{-n}} − 1))`, with zeros those of log q. For (4) use Q_p^HK = `(1 + D̃^{<1})^dR` and that log is †-formally étale.
+A proof route: (1)–(2) are ALRS Proposition 4.3.1 for X = GSpec(ℚ_p). For (3), log(q)/(q − 1) has simple zeros exactly at the zeros of `[p]_{q^{p^n}}`, n ≥ 0; the pullback of `I_{Div¹}` to Div¹~ is the perfection `⊗_{n∈ℤ}` φ^n(I_Δ) of I_BK (8.4), with the Frobenius structure of an ideal sheaf, which permutes the factors, and on X_cyc it is the limit of `(log(q)/(q^{p^{-n}} − 1))`, with zeros those of log q. For (4) use Q_p^HK = `(1 + D̃^{<1})^dR` and that log is †-formally étale.
 
 *Needs:* §8.6; §9.1; §8.4; §7.6; §3.4.
 
@@ -1582,7 +1590,7 @@ A proof route: (1)–(2) are ALRS Proposition 4.3.1 for X = GSpec(ℚ_p). For (3
 
 ### 9.8 The Breuil–Kisin twist
 
-Let `O_{Q_p^Δ}⟨1⟩` be the pullback along Q_p^Δ → `D^{×,dR}_{FF,Marc(ℚ_p)}` of the line bundle of the isocrystal `(ℚ_p, p^{-1}φ)`, a φ-equivariant line bundle. Define the Breuil–Kisin twist `O_{Q_p^Δ}{1}` = I_BK ⊗ O⟨1⟩ with its Frobenius φ^*I_BK ≅ `I_Δ^{-1}` I_BK, and O{n} = `O{1}^{⊗n}` (ALRS Construction 4.9.1, p. 82, ALRS line 4233). Construct the perfected twist `O_{Div¹~}{1} = ⊗_{n∈ℤ}` φ^n(I_Δ) with Frobenius structure, descending to `O_{Div¹}{1} = I_{Div¹}⟨1⟩` on Div¹; prove that its pullback along `FF_{Q_p^⋄}` → Div¹ is the Tate twist ℚ_p(1) as a pro-étale local system, whereas `O_{Div¹}⟨1⟩` pulls back to the line bundle of Frobenius slope one (ALRS Remark 4.9.3, p. 82, ALRS line 4278). Compare with the integral Breuil–Kisin twist of PrismaticCohomologyPartII §3.9, built as a limit of I_k/I_k² along transition maps divided by p, which correspond rationally to the twist by O⟨1⟩ (ALRS Remark 4.9.2, p. 82, ALRS line 4239).
+Let `O_{Q_p^Δ}⟨1⟩` be the pullback along Q_p^Δ → `D^{×,dR}_{FF,Marc(ℚ_p)}` of the line bundle of the isocrystal `(ℚ_p, p^{-1}φ)`, a φ-equivariant line bundle. Define the Breuil–Kisin twist `O_{Q_p^Δ}{1}` = I_BK ⊗ O⟨1⟩ with its Frobenius φ^*I_BK ≅ `I_Δ^{-1}` I_BK, and O{n} = `O{1}^{⊗n}` (ALRS Construction 4.9.1, p. 82, ALRS line 4233). Construct the perfected twist `O_{Div¹~}{1}` as the tensor product of the pullback of `I_{Div¹}` to Div¹~ (9.7) with the pullback of O⟨1⟩: after forgetting Frobenius it is `⊗_{n∈ℤ}` φ^n(I_Δ), the ideal sheaf of `⊔_{n∈ℤ}` φ^n(Q_p^HT), and its Frobenius structure is `p^{-1}` times the one of that ideal sheaf, which permutes the factors (ALRS Remark 4.9.3(3)–(4), pp. 82–83, ALRS line 4283; ALRS Remark 4.10.7, p. 87, ALRS line 4508); it descends to `O_{Div¹}{1} = I_{Div¹}⟨1⟩` on Div¹; prove that its pullback along `FF_{Q_p^⋄}` → Div¹ is the Tate twist ℚ_p(1) as a pro-étale local system, whereas `O_{Div¹}⟨1⟩` pulls back to the line bundle of Frobenius slope one (ALRS Remark 4.9.3, p. 82, ALRS line 4278). Compare with the integral Breuil–Kisin twist of PrismaticCohomologyPartII §3.9, built as a limit of I_k/I_k² along transition maps divided by p, which correspond rationally to the twist by O⟨1⟩ (ALRS Remark 4.9.2, p. 82, ALRS line 4239).
 
 *Needs:* §8.4; §9.7; §7.4; §6.3; VectorBundlesAndIsocrystals Layer 6.
 
@@ -1590,6 +1598,7 @@ The API has the following laws.
 
 - O{1} carries the φ-structure φ^*O{1} ≅ `I_Δ^{-1}` ⊗ O{1} obtained from φ^*I_BK ≅ `I_Δ^{-1}I_BK` and the slope twist of O⟨1⟩.
 - The restriction of O{1} to Q_p^HT is the conormal ideal I ≅ Ô(1) of the Hodge–Tate divisor.
+- On Div¹~ the perfected twist `O_{Div¹~}{1}` is the pullback of `I_{Div¹}` tensored with the pullback of O⟨1⟩; its Frobenius structure is an isomorphism φ^*`O_{Div¹~}{1}` ≅ `O_{Div¹~}{1}`, and its descent to Div¹ is `O_{Div¹}{1}` = `I_{Div¹}` ⊗ O⟨1⟩.
 - The pullback of `O_{Div¹}{1}` to `FF_{Q_p^⋄}` is the Tate twist O ⊗ ℚ_p(1), a slope-zero line bundle; the pullback of `O_{Div¹}⟨1⟩` has slope one.
 - O{m} ⊗ O{n} ≅ O{m + n} and O{0} = O, compatibly with Frobenius structures.
 
@@ -1599,6 +1608,7 @@ The API has the following laws.
 - Without the factor O⟨1⟩ the generator would satisfy φ(e′) = `p·[p]_q^{-1}·e′`, off by p from the integral normalization.
 - O{0} = O with the identity Frobenius structure.
 - Away from the Hodge–Tate locus I is trivial and O{1} ≅ O⟨1⟩, matching the dualizing complexes of 12.2 on Div¹ ∖ Q_p^HT ≅ `Div^{1,dR}` ∖ GSpec(ℚ_p).
+- On X_cyc the pullback of `I_{Div¹}` is generated by log q, and φ(log q) = p·log q: with the Frobenius structure of an ideal sheaf, which permutes the factors, `⊗_{n∈ℤ}` φ^n(I_Δ) descends to `I_{Div¹}`, whose pullback to `FF_{Q_p^⋄}` is the ideal O(−1) of the untilt divisor, with no nonzero sections. The generator e = log q ⊗ e⟨1⟩ of the perfected twist satisfies φ(e) = p·`p^{-1}`·e = e, so the perfected twist descends to a line bundle of slope zero, the Tate twist; omitting O⟨1⟩ changes the slope by one.
 
 ### 9.9 The prismatic logarithm and the prismatization of G_m
 
@@ -1659,7 +1669,7 @@ Let Π^cont be the Berkovich space of ℚ_p-valued continuous functions on Π an
 
 A proof route: Construct Φ on the comodule presentation: a right C(Π_0, ℚ_p)-comodule M → M ⊗ C(Π_0, ℚ_p) becomes a `ℚ_{p,■}[Π_0]`-module through the evaluation pairing C(Π_0, ℚ_p) ⊗ `ℚ_{p,■}[Π_0]` → ℚ_p, and glue over compact opens. ALRS constructs Φ through Mann's solid sheaves on classifying stacks (Man26 Lemmas 10.3 and 10.5) and the nuclear comparison of AM24 Lemma 3.29; the two constructions agree on nuclear objects, which is recorded as a Check. The right adjoint is computed by the projection formula of ALRS Lemma 5.2.7, which holds because ℚ_p has a finite free resolution over `ℤ_{p,■}[Π_0]`; Φ^R(ℚ_p) = Γ(Π_0, C(Π_0, ℚ_p)) = ℚ_p by Shapiro's lemma, without Gestalten.
 
-*Needs:* §10.1; §2.2; §2.5; §2.3; NoncommutativeAndEquivariantIwasawa §0.1; NoncommutativeAndEquivariantIwasawa §0.6; AnalyticStacks §4.3.
+*Needs:* §10.1; §2.2; §2.5; §2.3; NoncommutativeAndEquivariantIwasawa §0.1; NoncommutativeAndEquivariantIwasawa §0.6; AnalyticStacks §4.3; RefinedTraceMethods §4.3.
 
 The API has the following laws.
 
@@ -1752,6 +1762,12 @@ A proof route: By Lemma 5.3.1 and 10.3 restrict to a compact open subgroup and l
 
 *Needs:* §10.3; §10.2; §2.7; §2.2; §1.6.
 
+The API has the following laws.
+
+- For a light profinite group Π, an action of Π^cont on GSpec(R) induces a continuous action on the Banach algebra R^u; along a Berkovich-étale map R → R′ the action of some open subgroup of Π extends to R′, and two such extensions agree on a smaller open subgroup.
+- For a Berkovich space X with an action of G^cont, h_X: X/G^cont → |X|^Betti/G^la is 0-proper.
+- O^la_X = `h_*O_{X/G^cont}` is a commutative algebra in D(|X|^Betti/G^la), and pullback gives a fully faithful functor `Mod_{O^la_X}(D(|X|^Betti/G^la))` → D(X/G^cont).
+
 **Checks.**
 
 - For G trivial, h = (X → |X|^Betti) and O^la_X = h_*O_X, recovering 2.7.
@@ -1843,6 +1859,13 @@ A proof route: For Z = T^an use the Tannakian description of maps to T^an (3.5) 
 
 *Needs:* §10.9; §10.7; §10.6; §10.5; §3.5; §3.4; §2.8; §2.7.
 
+The API has the following laws.
+
+- The Gelfand stacks Z over X^la/G^la for which `β^ét_{X,Z}` is an equivalence are stable under limits, include every Z with Z → `Z^{dR/(X^la/G^la)}` an equivalence, include Z′ along with Z whenever Z′ → Z is Berkovich-étale, and include Z along with Z′ whenever Z′ → Z is a Berkovich-étale cover.
+- For a compact p-adic Lie group H and a G^cont-equivariant H^la-torsor T → X with `β_{X,Z}` an equivalence for Z = BH^la × X^la/G^la, T ≅ T′ `×_{X^la}` X for a G^la-equivariant H^la-torsor T′ → X^la, and `O(T)^{G-la}` ≅ O(T′) as sheaves on |X|.
+- For p-adic Lie groups G and H and a Berkovich space W with a (G × H)^cont-action such that Y = W/G^cont is a Berkovich space, locally classically decompleted for the H^cont-action with decompletion `Y^{H-la}`, and `β_{Y,Z}` is an equivalence for Z = BG^la × `Y^{H-la}/H^la`, one has `Y^{H-la}/H^la` ≅ `GSpec_{|W|^Betti}(O^{(G×H)-la}_W)/(G × H)^la`.
+- When perfect complexes on all Berkovich-étale X′/G^cont admit decompletions, `β^ét_{X,Z}` is an equivalence for Z = T^an × X^la/G^la with T perfect strongly Tannakian, for Z = BU × X^la/G^la with U an open subgroup of 𝐇(ℚ_p)^la, and for Z = BΓ^la × X^la/G^la with Γ a p-adic Lie group.
+
 **Checks.**
 
 - For the trivial torsor `β_{X,Z}` sends the trivial H^la-torsor on X^la/G^la to the trivial one on X/G^cont.
@@ -1871,7 +1894,7 @@ For G = ℤ_p^× acting on X_arith = `D^×_{FF,ℚ_p^cyc}`, X^la_arith = BC(O(1)
 
 ### Dependencies
 
-Layers 0–7; NoncommutativeAndEquivariantIwasawa §0.1, §0.2, §0.6, §0.7; PadicFunctionalAnalysis §4.4; Mathlib `PadicInt.mahlerEquiv`; EnhancedDerivedSheaves §E5:abstract.2, §E5:abstract.5; LocallyAnalyticRepresentationsOfLocalGroups §2.3 and §3.8 (comparison Checks); LocallyAnalyticDistributionsPartII §1.5 (comparison Check); PadicPeriodRings §1.3, §1.4; SolidAnalyticRings §1.5; AnalyticStacks §§0.8–0.11, §2.3, §2.11, §3.6, §4.2, §4.3.
+Layers 0–7; NoncommutativeAndEquivariantIwasawa §0.1, §0.2, §0.6, §0.7; PadicFunctionalAnalysis §4.4; Mathlib `PadicInt.mahlerEquiv`; EnhancedDerivedSheaves §E5:abstract.2, §E5:abstract.5; LocallyAnalyticRepresentationsOfLocalGroups §2.3 and §3.8 (comparison Checks); LocallyAnalyticDistributionsPartII §1.5 (comparison Check); PadicPeriodRings §1.3, §1.4; SolidAnalyticRings §1.5; AnalyticStacks §§0.8–0.11, §2.3, §2.11, §3.6, §4.2, §4.3; RefinedTraceMethods §4.3.
 
 ## Layer 11: The pro-étale comparison, Sen operators and torsors
 
@@ -1901,6 +1924,13 @@ For K/ℚ_p finite and X = GSpec(K), prove that α^HT_X: X̂^⋄ → X^HT is 0-p
 A proof route: (1) follows from 11.1 and the cartesian square X̂^⋄ = `FF_{X̂^⋄}` `×_{X^{Div¹}}` X^HT, pushforward along the Cartier divisor X̂^⋄ → `FF_{X^⋄}` being conservative and preserving perfect complexes; (2) holds since X^HT → BG_m is †-formally étale and `L_{BG_m}` = O[−1] (4.8); for (a), over K_∞ the gerbe trivializes and the BG_a^†-action becomes the Γ^†-action, so θ is the derivative of the locally analytic Γ-action; (b) uses Γ(Gal_K, M) = Γ(X^HT, N) = Γ(Γ^sm, Γ(θ_N, N)) and exactness of smooth Γ-invariants in characteristic zero.
 
 *Needs:* §11.1; §9.7; §4.8; §9.8; PadicHodgeTheory §4.4; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.P7.2; AnalyticStacks §7.2, §7.5; AnalyticStacks §7.6.
+
+The API has the following laws.
+
+- For K/ℚ_p finite and X = GSpec(K), α^HT_X is 0-proper with O ≅ α^HT_*O, Perf(X^HT) ≃ Perf(X̂^⋄), and `L_{X^HT/ℚ_p}` = `L_{X^HT/X}` ≅ O[−1].
+- Every M ∈ D(X^HT) carries an arithmetic Sen operator θ_M, natural in M; for M in the essential image of `α^{HT,*}`, θ_M is the base change along `K(ζ_{p^∞})` → C_p of the derivative of the Γ-action on Γ`(Gal^cont_{K^cyc}, M)^{Γ-la}`.
+- For static M in the essential image of `α^{HT,*}`, H*(Gal^cont_K, M) ≅ H*`(θ_M, M)^{Gal_K}`.
+- `θ_{O{n}}` = n, so H^i(Gal_K, C_p(n)) ≅ H^i(K `→^{n}` K).
 
 **Checks.**
 
@@ -1944,6 +1974,13 @@ For D and X → D as in 11.4 prove: (1) `α^HT_{X/D}`: X̂^⋄ → X^HT is 0-pro
 A proof route: (1) follows from 11.4 and X̂^⋄ = `FF_{X^⋄}` `×_{X^{Div¹/FF_D}}` X^HT; (2) from the cartesian square X^HT → X over `X/T_{X/D}{1} → X/T^dR_{X/D}{1}` and 4.8; (3)–(4) from Cartier duality for BT^†{1} (RC26a, AnalyticStacks §7.5(4) and §7.6) and the relative de Rham complex of X → `BT^†_{X/D}{1}`; (5) from the local description of RCSen §3.2 on toric charts.
 
 *Needs:* §11.4; §9.2; §4.8; AnalyticStacks §7.2, §7.5; AnalyticStacks §7.6.
+
+The API has the following laws.
+
+- `α^HT_{X/D}` is 0-proper with O ≅ α^HT_*O, and Perf(X^HT ×_X U) ≃ Perf(X̂^⋄ ×_X U) for every Berkovich-étale U → X.
+- `L_{X^HT/X} ≅ Ω¹_{X/D}{−1}[−1]`.
+- Every M ∈ D(X^HT) is a `Sym_{O_X}(T_{X/D}{1})`-module through its geometric Sen operator θ_M, an `Ω¹_{X/D}{−1}`-Higgs field, and `π_X^*π_{X,*}M` is its Higgs complex.
+- Every relative locally analytic orthonormalizable Banach Ô_X-sheaf lies in the essential image of `α^{HT,*}`, and its θ_M is the geometric Sen operator of RCSen Theorem 1.0.3.
 
 **Checks.**
 
