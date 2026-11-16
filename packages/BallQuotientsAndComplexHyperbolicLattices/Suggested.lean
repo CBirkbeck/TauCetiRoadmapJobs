@@ -139,8 +139,9 @@ theorem margulis_lemma (n : ℕ) :
 /-! ## Layer 5: Lattices in PU(1,n) -/
 
 /-- A lattice in `PU(1,n)`: a discrete subgroup `Γ` with a fundamental domain of finite measure,
-for a Haar measure, for its action on `PU(1,n)` by left multiplication (README §5.1;
-VonNeumannAlgebras Layer 9). -/
+for a Haar measure, for its action on `PU(1,n)` by left multiplication. Inversion `g ↦ g⁻¹` turns
+such a domain into one of the same measure for the right action used by VonNeumannAlgebras
+Layer 9, `PU(1,n)` being unimodular (README §5.1). -/
 def IsLattice {n : ℕ} (Γ : Subgroup (projectiveUnitaryGroup n)) : Prop :=
   DiscreteTopology Γ ∧ ∃ μ : Measure (projectiveUnitaryGroup n), μ.IsHaarMeasure ∧
     ∃ s : Set (projectiveUnitaryGroup n), IsFundamentalDomain Γ s μ ∧ μ s ≠ ⊤
@@ -165,7 +166,8 @@ theorem IsLattice.exists_finset_cuspPoint_orbits {n : ℕ}
   sorry
 
 /-- **The cocompactness criterion** (README §6.1). A lattice `Γ` of `PU(1,n)` is cocompact,
-`PU(1,n)/Γ` being compact, exactly when it has no cusp point. -/
+the space `PU(1,n)/Γ` of left cosets `gΓ` being compact (equivalently `Γ\PU(1,n)`, through
+`g ↦ g⁻¹`), exactly when it has no cusp point. -/
 theorem IsLattice.compactSpace_quotient_iff {n : ℕ}
     {Γ : Subgroup (projectiveUnitaryGroup n)} (hΓ : IsLattice Γ) :
     CompactSpace (projectiveUnitaryGroup n ⧸ Γ) ↔ ∀ b, ¬ IsCuspPoint Γ b := by
