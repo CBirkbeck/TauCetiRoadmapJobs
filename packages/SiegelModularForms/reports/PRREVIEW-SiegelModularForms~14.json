@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SiegelModularForms~14",
+  "head": "bee9025c8cac666d178144115f847d3a7b6924c5",
+  "pr": 1714,
+  "folder": "SiegelModularForms",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since 8723e79: the changed Downstream-consumers sentence (README.md:3507) checked against HalfIntegralWeightModularForms at d7e7ece5; previous R01 (description's direction of supply) repaired; D01 stands (outside the folder); title and description read against the head, none contradicted; section 9.2 of the seeded sample re-read with its two Eichler-Zagier locators and its dimension values recomputed; worker's gate all 0 and OK; depcheck 0 problems; Suggested.lean elaborates with 72 sorry warnings only; no change outside the folder.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "Unnumbered (*For the human reviewers*): the DOIs in these three records resolve to other works, and the records took their titles and authors from those works.",
+    "where": "board manifest packages/SiegelModularForms/sources.toml, records mizumoto1991, arakawa1983, satoh1986",
+    "raised": "PRREVIEW-SiegelModularForms~13"
+   }
+  ],
+  "text": "3fdedcd1004641c0"
+ }
+}
