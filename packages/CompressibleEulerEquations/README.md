@@ -66,15 +66,18 @@ Boundaries:
 - **Mathlib and Tau Ceti** supply everything below this roadmap. The whole-space identification
   `Hᵏ = Wᵏ'²` and the embedding `Hᵏ(ℝⁿ) ⊆ C₀(ℝⁿ)` for `2k > n`, which the PDE roadmap on main
   lists among its §1.3–§1.4 material, are already pinned Tau Ceti declarations and are cited from
-  Tau Ceti directly; nothing else of the PDE roadmap is consumed. Tau Ceti also has six special
-  cases of Layer 4. On `ℝⁿ`: the product on `W^{1,p}(ℝⁿ)` for `p > n` (at `p = 2`, the case
-  `n = k = 1`, `Λ = 0` of the algebra property), the scalar weak chain rule for a `C¹` function
-  with bounded derivative, and the additive interpolation inequality on `W^{2,p}(E)`. On the
-  circle (`n = 1`, `Λ = Tℤ`, complex values): the continuous representatives of
-  `TauCeti.CircleSobolev s A` for `s > 1/2`, the algebra property of that space, and the action
-  of holomorphic functions on it. §§4.2–4.3 state the general forms, and the supplier contracts
-  say how each differs. The commutation `∂^αJ_εu = J_ε∂^αu` of a mollifier with weak derivatives
-  is already pinned for every smooth compactly supported kernel
+  Tau Ceti directly; nothing else of the PDE roadmap is consumed. Tau Ceti also has nine special
+  cases of Layer 4. On `ℝⁿ` and its open subsets: the product on `W^{1,p}(ℝⁿ)` for `p > n` (at
+  `p = 2`, the case `n = k = 1`, `Λ = 0` of the algebra property), the scalar weak chain rule for a
+  `C¹` function with bounded derivative, the additive interpolation inequality on `W^{2,p}(E)`,
+  and the interior embedding `W^{k+j,2}(Ω) ⊆ Cʲ(Ω)` for `2k > n`, without a bound. On the circle
+  (`n = 1`, `Λ = Tℤ`, complex values): the continuous representatives of
+  `TauCeti.CircleSobolev s A` for `s > 1/2`, the algebra property of that space, the action of
+  holomorphic functions on it, the derivative `H^{s+1} → H^s`, and, for `s > 1/2`, the
+  differentiability of the continuous representative of an element of `H^{s+1}`, with the
+  representative of its derivative as derivative. §§4.1–4.3 state the general forms, and the
+  supplier contracts say how each differs. The commutation `∂^αJ_εu = J_ε∂^αu` of a mollifier
+  with weak derivatives is already pinned for every smooth compactly supported kernel
   (`TauCeti.HasWeakLineDerivOn.lineDeriv_convolution_right`); §4.4 consumes it and does not
   restate it. Every statement of the PDE
   roadmap is scalar (elliptic, parabolic and dispersive theory, with the dyadic analysis of its
@@ -316,6 +319,25 @@ on `E`, no Lorentzian quadratic form with a time orientation and no causal curve
   for `2k > n` every element of `W^{k,2}(ℝⁿ)` has a unique representative in `C₀(ℝⁿ)`, and the
   representative map is a bounded linear map. Only continuity, vanishing at infinity and the sup
   bound are used; no Hölder modulus is assumed.
+- `TauCeti.Wkp.exists_contDiffOn_ae_eq`
+  (`TauCeti/Analysis/Sobolev/Wkp/ContDiffRepresentative.lean:101`), with
+  `TauCeti.HasWeakFDerivOn.contDiffOn_succ` (`TauCeti/Analysis/Sobolev/WeakDeriv/Classical.lean:145`:
+  a function continuous on an open set with a weak derivative of class `Cᵐ` there is of class
+  `Cᵐ⁺¹` there): for Lebesgue measure, an open `Ω ⊆ E` and `2k > n`, every element of
+  `W^{k+j,2}(Ω)` agrees almost everywhere on `Ω` with a function of class `Cʲ` on `Ω`, which need
+  not be bounded. With `Ω = ⊤`, and `k − j` in place of `k` (so that the hypothesis reads
+  `2k > n + 2j`), this is the regularity of the representative in §4.2 for `Λ = 0`; §4.2 adds the
+  bound `sup_{|α|≤j} ‖∂^αu‖_∞ ≤ C‖u‖_{Hᵏ_Λ}`, the decay and every period group. Consumed in §4.2.
+- `TauCeti.Wkp.exists_value_eq_iff_forall_exists_hasWeakLineDerivOn`, with its two directions
+  `TauCeti.Wkp.exists_hasWeakLineDerivOn_value` and
+  `TauCeti.Wkp.exists_value_eq_of_forall_hasWeakLineDerivOn`
+  (`TauCeti/Analysis/Sobolev/Wkp/LineDeriv.lean:287,156,267`): for an additive Haar measure and an
+  open `Ω`, an element of `Lᵖ(Ω)` is the value of an element of `W^{k+1,p}(Ω)` exactly when in
+  every direction it has a weak derivative that is the value of an element of `W^{k,p}(Ω)`, and
+  for the converse the directions of one orthonormal basis suffice. With `Ω = ⊤`, `p = 2` and
+  Lebesgue measure it is, by induction on `k`, the identification of §4.1 at `Λ = 0` of a family
+  `IsWeakDerivFamily k u g` whose members `g_α`, `|α| ≤ k`, lie in `L²` with an element of
+  `TauCeti.Wkp volume ⊤ 2 k` of value `u`; consumed, not proved again.
 - `TauCeti.exists_norm_le_hasWeakLineDerivOn_of_frequently_eLpNorm_inv_mul_sub_le`
   (`TauCeti/Analysis/Sobolev/DifferenceQuotient.lean:152`): a locally integrable `u` on an
   open set whose `L²` difference quotients in a direction `v` are bounded by `C` on every
@@ -399,8 +421,8 @@ on `E`, no Lorentzian quadratic form with a time orientation and no causal curve
   `L²(AddCircle T)` for the probability Haar measure by `TauCeti.CircleSobolev.toLpₗᵢ`
   (`TauCeti/Analysis/Sobolev/Circle/Lp.lean:59`): for `n = 1`, `Λ = Tℤ` and integer `s = k` this
   is `Hᵏ_Λ` (real functions, complexified) up to norm equivalence; nothing here uses it, and the
-  norm comparison is a Check of §4.1. For `s > 1/2` the space carries three special cases of
-  Layer 4, none of them consumed. `TauCeti.CircleSobolev.toContinuousMap` with
+  norm comparison is a Check of §4.1. The space carries five special cases of Layer 4, none of
+  them consumed; all but the derivative need `s > 1/2`. `TauCeti.CircleSobolev.toContinuousMap` with
   `TauCeti.CircleSobolev.norm_toContinuousMap_le`
   (`TauCeti/Analysis/Sobolev/Circle/Basic.lean:807,831`), the continuous representative as a
   bounded linear map into `C(AddCircle T, E)`, is the embedding of §4.2 at `j = 0`.
@@ -412,12 +434,20 @@ on `E`, no Lorentzian quadratic form with a time orientation and no causal curve
   (`TauCeti/Analysis/Sobolev/Circle/Nemytskii.lean:431,441`), by which, for `F` holomorphic on an
   open `U ⊆ ℂ` and `u` with values in `U`, `F ∘ u` represents an element of the space and
   `u ↦ F ∘ u` is analytic on the open set of such `u`, is the composition statement of §4.3 for
-  `N = 2` and holomorphic `Φ`, membership and continuity. At integer orders `s = k ≥ 1` these are
-  the case `n = 1`, `Λ = Tℤ`, complex values, of §§4.2–4.3, up to the norm equivalence of §4.1;
-  §§4.2–4.3 state the embeddings into `C^j_b` for `2k > n + 2j`, the tame bounds with `L^∞`
+  `N = 2` and holomorphic `Φ`, membership and continuity. `TauCeti.CircleSobolev.derivative` with
+  `TauCeti.CircleSobolev.norm_derivative_le` (`TauCeti/Analysis/Sobolev/Circle/Derivative.lean:83,98`),
+  for `s + 1 ≤ t` the operator `H^t → H^s` multiplying the `m`-th Fourier coefficient by `2πim/T`,
+  of norm at most `2π/T`, is the boundedness of `∂ᵢ : Hᵏ⁺¹_Λ → Hᵏ_Λ` of §4.1; and
+  `TauCeti.CircleSobolev.hasDerivAt_toContinuousMap` (same file, line 195), by which for
+  `s > 1/2` and `s + 1 ≤ t` the continuous representative of `a ∈ H^t` is differentiable with the
+  continuous representative of the derivative of `a` as derivative, gives, applied `j` times
+  together with `TauCeti.CircleSobolev.norm_toContinuousMap_le`, the embedding of §4.2 into
+  `C^j_b` with its bound when `2k > 1 + 2j` (at `k = 2`, `j = 1`: `s = 1 > 1/2`, `t = 2 = s + 1`).
+  At integer orders `s = k ≥ 1` these are the case `n = 1`, `Λ = Tℤ`, complex values, of
+  §§4.1–4.3, up to the norm equivalence of §4.1; §§4.1–4.3 state the tame bounds with `L^∞`
   factors, every `n`, period groups of every rank, and real `Φ` that is only smooth on an open
-  `G ⊆ ℝ^N`, while the pinned statements also cover real orders `s > 1/2` and Banach-algebra
-  values.
+  `G ⊆ ℝ^N`, while the pinned statements also cover real orders (`s > 1/2` where a continuous
+  representative enters) and values in complex Banach spaces and algebras.
 - `TauCeti.le_mul_exp_of_le_add_mul_integral` (`TauCeti/Analysis/ODE/Gronwall.lean:59`): the
   integral Grönwall inequality `φ(t) ≤ c + K∫ₐᵗ φ ⇒ φ(t) ≤ c e^{K(t−a)}` for continuous `φ` and
   `K ≥ 0`, the closure step of every energy estimate.
@@ -1039,6 +1069,24 @@ Prove:
   `y = x/(1 + t)` the left-moving boundary characteristic satisfies `ẏ = −(1 + t)^{−3/2}`, so
   `D⁺_D(S) = {(t, x) : |x| < 2√(1 + t) − (1 + t)}`, which closes at `t = 3`; at `t = 1` the half-width
   is `2√2 − 2 ≈ 0.828`, against `1 − t = 0` for the static field `(1, 0)`.
+- Causal pasts of a constant field `(c₀, v₀)` on `D = H_{t₀}`:
+  `J⁻_D(p) = {(t, x) : t₀ ≤ t ≤ t_p, |x − x_p − (t − t_p)v₀| ≤ c₀(t_p − t)}`, since a causal curve
+  satisfies `|x(t) − x_p − (t − t_p)v₀| ≤ c₀(t_p − t)` and the segments to `p` are causal. For
+  `n = 1`, the field `(1, 0)`, `t₀ = 0` and `p = (1, 0)` it is `{0 ≤ t ≤ 1, |x| ≤ 1 − t}`: it
+  contains `p` (the one-point curve) and `(0, 1)` (the null curve `x = 1 − t`), not `(0, 1.1)`. The
+  chronological past `{0 ≤ t < 1, |x| < 1 − t}` omits `p` and `(0, 1)`, and a definition asking
+  `|ẋ − v| < c` almost everywhere omits `(0, 1)`, since it would force `|x(1) − x(0)| < 1`.
+- The causal past is taken inside `D`, not in `𝔐`: same field and `p`, and the domain
+  `D = H₀ \ ({1/2} × [−1, 1])`. A past causal curve from `p` defined at `t = 1/2` would have
+  `|x(1/2)| ≤ 1/2`, a point removed from `D`, so `J⁻_D(p) = {1/2 < t ≤ 1, |x| ≤ 1 − t}`; the point
+  `(0, 0)` lies in `D` and in the causal past of `p` in `𝔐`, but not in `J⁻_D(p)`, so the past in
+  `𝔐` intersected with `D` is the wrong set.
+- Compactness of `J⁻_D(p)` needs `p ∈ D⁺_D(S)`: same field and `p`, and
+  `D = H₀ \ {(1/2, 0)}`. Then `J⁻_D(p)` is the closed triangle of the first of these Checks
+  without `(1/2, 0)` (`(0, 0)` is reached through `(1/2, 1/4)`, with slopes `1/2`), which is not
+  compact; and `p ∉ D⁺_D(Σ₀)`, since `x ≡ 0` on `(1/2, 1]` has no extension in `D` (it would pass
+  through `(1/2, 0)`) and misses `Σ₀`. The same curve shows `p ∉ D⁺_D(Σ₀)` for the slit domain of
+  the previous Check, so the statement on compact pasts makes no claim in either.
 
 *Needs:* LorentzianGeometry §12.6 (`futureDomainOfDependenceIn`, past-inextendibility, the
 reduction to time-parametrised curves, concatenation, the slice identity); Mathlib
@@ -1047,9 +1095,9 @@ characterisation).
 
 ### Examples
 
-Constant fields and the expanding flow give explicit domains of dependence; the Cantor curve,
-the closed domain, the unbounded field and the point datum off the initial slice are the negative
-controls.
+Constant fields and the expanding flow give explicit domains of dependence and causal pasts; the
+Cantor curve, the closed domain, the unbounded field, the point datum off the initial slice and
+the slit and punctured half-spaces are the negative controls.
 
 ### Dependencies
 
@@ -1086,7 +1134,9 @@ as `t′ → t` in `I`. This is the Sobolev space of the quotient `E/Λ`; for
 - The norm does not depend on `F`; `Hᵏ_Λ` is a real Hilbert space; translations act
   isometrically; `∂ᵢ : Hᵏ⁺¹_Λ → Hᵏ_Λ` is bounded; `∫_F (∂ᵢu)·w = −∫_F u·∂ᵢw` for `u, w ∈ H¹_Λ`.
 - For `Λ = 0`, `u ∈ Hᵏ_Λ` iff each coordinate of `u` is the value of an element of
-  `TauCeti.Wkp volume ⊤ 2 k`, iff each coordinate is in Mathlib's `MemSobolev k 2` (through
+  `TauCeti.Wkp volume ⊤ 2 k` (by induction on `k`, one derivative at a time, through
+  `TauCeti.Wkp.exists_value_eq_iff_forall_exists_hasWeakLineDerivOn`), iff each coordinate is in
+  Mathlib's `MemSobolev k 2` (through
   `MeasureTheory.Lp.memSobolev_natCast_iff_exists_wkp_value_eq`), with equivalent norms in both
   cases. In the first case the norms are equal in particular when `k ≤ 1`, and at every order
   when `n = 1`; for `n ≥ 2` and `k = 2` they differ. Tau Ceti's `Wkp` norm squared at order
@@ -1160,6 +1210,9 @@ as `t′ → t` in `I`. This is the Sobolev space of the quotient `E/Λ`; for
   `U(t′) − U(t) = 0` for all `t, t′`, yet `U(t) − Ū = 1` has infinite squared norm on `Λ = 0`.
 
 *Needs:* Tau Ceti `TauCeti.HasWeakLineDerivOn`, `TauCeti.HasWeakFDerivOn`, `TauCeti.Wkp`,
+`TauCeti.Wkp.exists_value_eq_iff_forall_exists_hasWeakLineDerivOn` (with
+`TauCeti.Wkp.exists_hasWeakLineDerivOn_value` and
+`TauCeti.Wkp.exists_value_eq_of_forall_hasWeakLineDerivOn`),
 `MeasureTheory.Lp.memSobolev_natCast_iff_exists_wkp_value_eq`, `TauCeti.Wkp.lowerOrder_translate`
 and `TauCeti.Wkp.iteratedGradient_translate` (translations); Mathlib
 `MeasureTheory.IsAddFundamentalDomain`, `Finset.Nat.antidiagonalTuple`,
@@ -1170,7 +1223,10 @@ and `TauCeti.Wkp.iteratedGradient_translate` (translations); Mathlib
 Prove: if `2k > n + 2j`, every `u ∈ Hᵏ_Λ` has a `Cʲ` representative with
 `sup_{|α|≤j} ‖∂^αu‖_∞ ≤ C‖u‖_{Hᵏ_Λ}`, `C = C(n, k, j, Λ)`, whose derivatives of order `≤ j` tend to
 `0` at infinity in the directions orthogonal to `V`; the inclusion `Hᵏ_Λ ⊆ C^j_b` is bounded
-(for `Λ = 0`, `TauCeti.Wkp.toZeroAtInfty` applied to `∂^αu`; in general through the
+(for `Λ = 0`, `TauCeti.Wkp.exists_contDiffOn_ae_eq` with `Ω = ⊤` for the `Cʲ` representative,
+and `TauCeti.Wkp.toZeroAtInfty` applied to `∂^αu ∈ H^{k−|α|}`, `|α| ≤ j`, for the bound and the
+decay: the classical derivatives of the representative are continuous and equal almost everywhere
+to the continuous representatives of the `∂^αu`, hence equal to them; in general through the
 localisation of §4.1). Prove the interpolation inequality
 `‖u‖_{Hʲ_Λ} ≤ C‖u‖_{L²_Λ}^{1−j/k}‖u‖_{Hᵏ_Λ}^{j/k}` for `k ≥ 1` and `0 ≤ j ≤ k`; at `k = 0` the only
 order is `j = 0`, the exponent `j/k` is undefined, and the statement is the identity
@@ -1205,16 +1261,19 @@ embedding is LukNotes line 1210, Theorem 5.5, for `Λ = 0`.
 
 *Needs:* §4.1; Tau Ceti `TauCeti.Wkp.toZeroAtInfty`,
 `TemperedDistribution.MemSobolev.exists_zeroAtInftyContinuousMap_ae_eq`,
+`TauCeti.Wkp.exists_contDiffOn_ae_eq` (with `TauCeti.HasWeakFDerivOn.contDiffOn_succ`),
 `TauCeti.exists_norm_le_hasWeakLineDerivOn_of_frequently_eLpNorm_inv_mul_sub_le`; Mathlib
 Plancherel, `MeasureTheory.Lp.fourierTransformₗᵢ`, for the interpolation inequality on `E`
 (Tau Ceti `TauCeti.Wkp.norm_iteratedGradient_lowerOrder_le` is its case `j = 1`, `k = 2`,
 `Λ = 0`; `TauCeti.CircleSobolev.toContinuousMap` with
 `TauCeti.CircleSobolev.norm_toContinuousMap_le` is the case `n = 1`, `Λ = Tℤ`, `j = 0`, complex
-values, of the embedding).
+values, of the embedding, and with `TauCeti.CircleSobolev.hasDerivAt_toContinuousMap` and
+`TauCeti.CircleSobolev.derivative` its case `j ≥ 1`, `2k > 1 + 2j`).
 
 ### 4.3 Gagliardo–Nirenberg interpolation and Moser estimates
 
-Prove, for `u, f, g ∈ L^∞ ∩ Hᵏ_Λ` and multi-indices `α`:
+Prove, for `u, f, g ∈ L^∞ ∩ Hᵏ_Λ` and multi-indices `α` (the commutator and composition
+estimates state their own hypotheses):
 
 - *Gagliardo–Nirenberg.* For `k ≥ 1` and `1 ≤ i ≤ k`,
   `‖Dⁱu‖_{L^{2k/i}_Λ} ≤ C‖u‖_∞^{1−i/k}‖u‖_{Hᵏ_Λ}^{i/k}`, and for `Λ = 0` the homogeneous form with
@@ -1228,8 +1287,20 @@ Prove, for `u, f, g ∈ L^∞ ∩ Hᵏ_Λ` and multi-indices `α`:
   `∂^βf ∂^{α−β}g` with `0 < β < α` by Hölder's inequality with exponents `2|α|/|β|` and
   `2|α|/|α − β|`, the Gagliardo–Nirenberg inequality at order `|α|` for both factors and Young's
   inequality (Majda1984, Ch. 2, §2.1).
-- *Commutators.* For `1 ≤ |α| ≤ k`,
-  `‖∂^α(fg) − f∂^αg‖_{L²_Λ} ≤ C(‖∇f‖_∞‖g‖_{Hᵏ⁻¹_Λ} + ‖∇f‖_{Hᵏ⁻¹_Λ}‖g‖_∞)` (Majda1984, Ch. 2, §2.1).
+- *Commutators.* Let `k ≥ 1`, `1 ≤ |α| ≤ k`, let `f` be Λ-periodic and locally integrable with
+  weak gradient `∇f ∈ L^∞ ∩ Hᵏ⁻¹_Λ` (`f` itself need not lie in `L²_Λ`; when `2k > n + 2`,
+  `f − f̄ ∈ Hᵏ_Λ` for a constant `f̄` suffices, by the embedding of §4.2), and let
+  `g ∈ L^∞ ∩ Hᵏ⁻¹_Λ`. The commutator `[∂^α, f]g = Σ_{0<β≤α} (α choose β) ∂^βf ∂^{α−β}g` contains
+  derivatives of `g` of order at most `|α| − 1` only, equals `∂^α(fg) − f∂^αg` when moreover
+  `g ∈ Hᵏ_Λ`, is unchanged when a constant is added to `f`, and satisfies
+  `‖[∂^α, f]g‖_{L²_Λ} ≤ C(‖∇f‖_∞‖g‖_{Hᵏ⁻¹_Λ} + ‖∇f‖_{Hᵏ⁻¹_Λ}‖g‖_∞)` (Majda1984, Ch. 2, §2.1). Route:
+  with `m = |α| − 1`, write each term as `∂^{β−e}(∂_e f) ∂^{α−β}g` for a unit multi-index
+  `e ≤ β`, with orders `i = |β| − 1` and `j = |α − β|`, `i + j = m`. For `m = 0` it is `∂_e f · g`,
+  bounded by `‖∇f‖_∞‖g‖_{L²_Λ}`; for `m ≥ 1` the terms with `i = 0` or `j = 0` are bounded by
+  `‖∇f‖_∞‖g‖_{Hᵐ_Λ}` or `‖∇f‖_{Hᵐ_Λ}‖g‖_∞`, and the others by Hölder's inequality with exponents
+  `2m/i` and `2m/j`, the Gagliardo–Nirenberg inequality at order `m ≤ k − 1` for `∂_e f` and for
+  `g`, and Young's inequality, since the product of the two bounds is
+  `(‖∂_e f‖_∞‖g‖_{Hᵐ_Λ})^{j/m}(‖∂_e f‖_{Hᵐ_Λ}‖g‖_∞)^{i/m}`.
 - *Composition.* For `Φ` smooth on an open `G ⊆ ℝ^N`, a compact `K ⊆ G`, `Ū ∈ K` and `u` with
   values in `K` and `u − Ū ∈ Hᵏ_Λ`: `Φ(u) − Φ(Ū) ∈ Hᵏ_Λ` with
   `‖Φ(u) − Φ(Ū)‖_{Hᵏ_Λ} ≤ C(Φ, K, k)‖u − Ū‖_{Hᵏ_Λ}`, and for `Λ = 0` and `k ≥ 1` the top
@@ -1258,6 +1329,13 @@ segment from `Ū` leaves `G`. Every constant is independent of `u`, `f`, `g`.
   the right side as `λ^{3/4}`; the ratio `λ^{−1/4}` is `2` at `λ = 1/16` and `1/2` at `λ = 16`.
 - The `L^∞` factors are needed: on `ℝⁿ`, `u = |x|^{−n/3}` on the unit ball (zero outside) is in
   `L²`, but `u² = |x|^{−2n/3}` has `∫ u⁴ = ∞` near `0`, so `L² = H⁰` is not an algebra.
+- Commutator with a coefficient outside `L²`: `Λ = 0`, `n = 1`, `k = 2`, `α = 2`, `f = 1 + e^{−x²}`
+  (Burgers' coefficient at `U = 1 + e^{−x²}`, `Ū = 1`; `∫ f² = ∞`) and `g = e^{−x²}`. Then
+  `[∂², f]g = 2f′g′ + f″g = (12x² − 2)e^{−2x²}`, of squared `L²` norm `(19/8)√π ≈ 4.21`, so of norm
+  `≈ 2.05`, while `‖f′‖_∞ = √2e^{−1/2} ≈ 0.858`, `‖g‖²_{H¹} = 2√(π/2)`, `‖f′‖²_{H¹} = 4√(π/2)` and
+  `‖g‖_∞ = 1` give the right side `≈ 0.858 · 1.583 + 2.239 · 1 ≈ 3.60` with `C = 1`. A statement
+  asking `f ∈ Hᵏ_Λ` would say nothing here (`‖f‖_{H²} = ∞`), and §5.3 applies the estimate to
+  exactly such coefficients; replacing `f` by `f − 1` changes neither side.
 - Composition with `Φ(u) = u²`, `n = 1`, `k = 1`: `‖(u²)′‖₂ = ‖2uu′‖₂ ≤ 2‖u‖_∞‖u′‖₂`, the constant
   `2 sup_K |u|` predicted by the composition estimate.
 - Order zero, composition: `Λ = 0`, `K = {0}`, `u = Ū = 0`, `Φ ≡ 1`. The uncentred top-derivative
@@ -1582,8 +1660,11 @@ equation as `∂_tW + Σᵢ Mⁱ(U)∂ᵢW = A⁰(U)⁻¹f`, apply `∂^α` and 
 
 Applying `∂^α` to the equation directly produces instead the time commutator
 `[∂^α, A⁰(U)]∂_tW`, and eliminating `∂_tW` by the equation leads to the same two terms. The
-commutator is bounded by §4.3 by `C(‖∇U‖_∞‖W‖_{Hᵏ_Λ} + ‖U − Ū‖_{Hᵏ_Λ}‖∇W‖_∞)`, where `‖∇U‖_∞` and
-`‖∇W‖_∞` are controlled by the `Hᵏ_Λ` norms since `2k > n + 2`. The forcing term is bounded by
+commutator `[∂^α, Mⁱ(U)]∂ᵢW = [∂^α, Mⁱ(U) − Mⁱ(Ū)]∂ᵢW` is bounded by the commutator estimate of
+§4.3, with `f = Mⁱ(U) − Mⁱ(Ū) ∈ L^∞ ∩ Hᵏ_Λ` (composition estimate; `Mⁱ(U)` itself is not in
+`L²_Λ` when `Λ` is not of full rank and `Mⁱ(Ū) ≠ 0`) and `g = ∂ᵢW ∈ L^∞ ∩ Hᵏ⁻¹_Λ`, by
+`C(‖∇U‖_∞‖W‖_{Hᵏ_Λ} + ‖U − Ū‖_{Hᵏ_Λ}‖∇W‖_∞)`, where `‖∇U‖_∞` and `‖∇W‖_∞` are controlled by the
+`Hᵏ_Λ` norms since `2k > n + 2`. The forcing term is bounded by
 the product and composition estimates of §4.3 after writing
 `A⁰(U)⁻¹ = A⁰(Ū)⁻¹ + (A⁰(U)⁻¹ − A⁰(Ū)⁻¹)`:
 `‖A⁰(U)⁻¹f‖_{Hᵏ_Λ} ≤ C(1 + ‖U − Ū‖_{Hᵏ_Λ})‖f‖_{Hᵏ_Λ}`, using `‖f‖_∞ ≤ C‖f‖_{Hᵏ_Λ}`; this is where
@@ -1647,10 +1728,26 @@ duality). The time derivative of `A⁰` enters through the term `∫⟨∂_tA⁰
 of §5.1, so the hypothesis on `A⁰` is part of the statement; `Aⁱ` and `B` need no time derivative.
 Route: the Friedrichs regularisation
 `A⁰∂_tW_ε = −Σᵢ J_ε(Aⁱ∂ᵢJ_εW_ε) − BW_ε + f` is an ODE with Lipschitz right-hand side in
-`Hᵏ_Λ` and has a solution on `[0, T]` by `IsPicardLindelof` and the uniform bound; the bounds of
-§5.3 hold uniformly in `ε` by Friedrichs' lemma; `(W_ε)` is Cauchy in `C([0, T]; L²_Λ)` by §5.1;
-the limit is in `C([0, T]; Hᵏ⁻¹_Λ)` with an `Hᵏ` bound by §4.2, solves the equation, and is
-strongly continuous in `Hᵏ_Λ` because the weighted energy `E_k(t)` is continuous and the equation is
+`Hᵏ_Λ` and has a solution on `[0, T]` by `IsPicardLindelof` and the uniform bound. The estimate
+of the statement holds for `W_ε` uniformly in `ε`. §5.3 is not used for it, being stated for
+coefficients `A^μ(U)` with `U − Ū ∈ C¹([0, T]; Hᵏ⁻¹_Λ)` and for `B = 0`; its computation is
+carried out with `A^μ(t, x)` and `B(t, x)`. Write the regularised equation as
+`∂_tW_ε = −(A⁰)⁻¹(Σᵢ J_ε(Aⁱ∂ᵢJ_εW_ε) + BW_ε − f)` and apply `∂^α`, `|α| ≤ k`. The commutators of
+`∂^α` with `(A⁰)⁻¹` and with `Aⁱ`, and the terms `∂^α((A⁰)⁻¹BW_ε)` and `∂^α((A⁰)⁻¹f)`, are
+bounded by the commutator, product and composition estimates of §4.3 through
+`sup_t ‖A^μ − Ā^μ‖_{Hᵏ_Λ}` and `sup_t ‖B‖_{Hᵏ_Λ}`: a commutator is unchanged when the constant
+`Āⁱ` is subtracted from `Aⁱ`, and matrix inversion is composed on the compact set
+`{λ₀I ≤ A ≤ sup‖A⁰‖ I}` of symmetric matrices, centred at `Ā⁰`, which lies in it when `Λ` is not
+of full rank (then `A⁰(t, x) → Ā⁰` orthogonally to the span of `Λ`), and at a value of `A⁰` when
+`Λ` has full rank (then constants lie in `Hᵏ_Λ`). The term `∫_F ⟨∂_tA⁰∂^αW_ε, ∂^αW_ε⟩` is bounded
+through `sup_t ‖∂_tA⁰‖_∞`. In the principal term, with `V = J_ε∂^αW_ε`,
+`Σᵢ ∫_F ⟨J_ε(Aⁱ∂ᵢ∂^αJ_εW_ε), ∂^αW_ε⟩ = Σᵢ ∫_F ⟨Aⁱ∂ᵢV, V⟩ = −½ Σᵢ ∫_F ⟨(∂ᵢAⁱ)V, V⟩` by the
+`L²_Λ` symmetry of `J_ε`, the symmetry of `Aⁱ` and integration by parts on `F` (§4.1). No time
+derivative of `Aⁱ` or `B` enters, and nothing depends on `ε`, `J_ε` being a contraction on every
+`Hʲ_Λ` (§4.4). Then `(W_ε)` is Cauchy in `C([0, T]; L²_Λ)` by §5.1; the limit is in
+`C([0, T]; Hᵏ⁻¹_Λ)` with an `Hᵏ` bound by §4.2, solves the equation, and is strongly continuous
+in `Hᵏ_Λ` because the weighted energy `E_k(t)` is continuous (the energy identity of §5.1 applied
+to `J_δ∂^αW`, passed to the limit `δ → 0` with Friedrichs' lemma of §4.4) and the equation is
 time-reversible. This differs from SymmetricHyperbolicSystems §7.3 by the class: data, forcing
 and coefficients in `Hᵏ_Λ` (coefficients in `Ā + C([0, T]; Hᵏ_Λ)`), against smooth compactly
 supported data and forcing and `C_b^∞` coefficients there.
@@ -1672,8 +1769,9 @@ supported data and forcing and `C_b^∞` coefficients there.
   at `t = 0`, while `E₂(0) ≤ e(2π + 5π + 17π) = 24eπ`. A constant independent of `M` would give
   `22πM ≤ C·24eπ` for every `M`; with `C` depending on `|Ā¹| = M` there is no contradiction.
 
-*Needs:* SymmetricHyperbolicSystems §1.2 (the linear system and its predicate), §§4.1–4.4,
-§§5.1–5.3; Mathlib `IsPicardLindelof`,
+*Needs:* SymmetricHyperbolicSystems §1.2 (the linear system and its predicate), §§4.1–4.4 (the
+commutator, product and composition estimates of §4.3; the mollifier and Friedrichs' lemma of
+§4.4), §5.1; Mathlib `IsPicardLindelof`,
 `IsPicardLindelof.exists_eq_forall_mem_Icc_hasDerivWithinAt`.
 
 ### Examples
@@ -1774,6 +1872,14 @@ the period group of the data in §8.4.
   at `t = 0` (there `t + 1/x < 0`), yet at `t = 0.9`, `x = −1/0.3` the second has `u = g(0.6)`,
   which is nonzero for suitable `g`. Neither is `ℤ`-periodic; the characteristics `x = 1/(c − t)`
   enter from `x = −∞` at time `c`.
+- The compactness clause of a lens function: for `Λ = 0` the same `φ = 1 − t` on `[0, 2] × ℝ` is
+  Lipschitz and (vacuously) Λ-periodic, but `{φ > 0} = [0, 1) × ℝ` lies in no compact set, so it is
+  not a lens function for `Λ = 0`. It must not be one: the two solutions `(0, x)` and `(u, x)` of
+  the previous Check are classical on `[0, 2] × ℝ`, agree on its base and differ at
+  `(0.9, −10/3)`, so a definition without the clause would make local uniqueness false. The
+  periodicity clause: for `Λ = 2πℤ` (`n = 1`) the single cone `R − |x − x₀| − Mt` is not a lens
+  function, taking the values `R` at `x₀` and `R − 2π` at `x₀ + 2π` when `t = 0` (§5.2); its
+  periodisation is.
 - The cutoff of the linearised operator: for Burgers, `n = N = 1`, `Λ = 0`, `A⁰ = 1`,
   `A¹(u) = u`, with `U₁` given only on a neighbourhood of `L̄`, and `λ = 1`, the cut-off
   coefficients are `1` and `θU₁`, defined on all of `[t₁, t₂] × ℝ`. The plausible cutoff
@@ -1806,8 +1912,9 @@ from `t₀` to `t_p` in steps `h`, applying §6.1 with `Λ = 0` (single moving c
 at points `q` of the shrinking neighbourhoods; each step loses a margin `O(εh)`, so for `ε`
 small the total loss `O(ε(t_p − t₀))` stays below the distance from `J⁻_D(p)` to the complement
 of `N` (Majda1984, Ch. 2, §2.1, the energy method, whose localised form is proved here;
-ChristodoulouMiao2014 lines 872–878; EperonReallSbierski2019
-lines 1178–1189).
+ChristodoulouMiao2014 lines 872–878, where local uniqueness is asserted on the whole of
+`D₁ ∩ D₂`; the statement here carries the hypothesis `J⁻_D(p) ⊆ O`, without which it fails, by
+the second Check below and §8.2; EperonReallSbierski2019 lines 1178–1189).
 
 - *Slab uniqueness.* Two classical solutions on `[t₀, t₁) × E` with the same data on `Σ_{t₀}`,
   one of which has a cone field bounded on `[t₀, t₂] × E` for each `t₂ < t₁`, agree: take that
@@ -2133,7 +2240,9 @@ matter; the conditions on the data are then consequences of the existence of a d
 is open because `D` is relatively open, and `Ū` is `C¹`, Λ-periodic and `𝒪`-valued on `S` because
 `U` is so on `D`. Order developments by `(D₁, U₁) ≤ (D₂, U₂)` iff `D₁ ⊆ D₂` and `U₂ = U₁` on
 `D₁`; call two developments *compatible* when `U₁ = U₂` on `D₁ ∩ D₂`. (ChristodoulouMiao2014
-lines 864–880; Christodoulou2019 lines 130–138; LuoYu2023b lines 417–419 and line 910,
+lines 864–872 for developments, and lines 872–880, which assert that any two developments of the
+same data are compatible, false on a fixed Galilean background by §8.2; Christodoulou2019 lines
+130–138; LuoYu2023b lines 417–419 and line 910,
 Definition 2.13; BarGinouxPfaffle2007 line 1006, Definition 1.3.5, the two-sided Cauchy
 development `D(S)`; EperonReallSbierski2019 lines 1129–1144; Christodoulou2007, Ch. 1.)
 
