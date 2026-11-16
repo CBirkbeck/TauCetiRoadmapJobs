@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RationalAnalyticPrismatization~4",
+  "head": "1d7a78e9b3c2c26ef5ddb2bd7b4f40d5b86c238e",
+  "pr": 2456,
+  "folder": "RationalAnalyticPrismatization",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review; accepted conditional on the declared gap gap:proetale-v-comparison (DiamondsAndVStacks D6.5, used in 11.7). Previous R01 (10.2 D-properness cited to AnalyticStacks 0.11(ii)) and the previous remark on the 8.1 Check are both repaired. Whole README read (13 layers, 93 subsections, 375 Checks). Seeded sample of 15 targets (0.1, 1.4, 2.4, 2.5, 4.1, 7.6, 8.5, 9.6, 9.7, 9.9, 10.3, 10.7, 11.5, 11.8, 12.6) and the seven headline theorems checked with computed instances; 174 source locators in 12 sources match; 21 pinned Mathlib and Tau Ceti declarations are at their cited lines; cross-roadmap citations resolved against AnalyticStacks at #1687, MotivesAndAlgebraicCyclesPartII at #2459, other open heads and main. Gate re-run passes with every check 0; depcheck reports 264 roadmaps, 2584 edges, 0 problems; lake env lean on Suggested.lean is clean. Suggested.lean declares nothing (no headline is statable at the pins), so the #check comparison and the one-tactic probe have nothing to test. The two plan gaps with supplier none (Gestalten) are stated as targets in Layer 0 and are not declared as gaps by the README. Nine source errata recorded (eight in ALRS, one in HM). For the humans: main sources are unrefereed preprints and lecture notes; subsections of Layers 10-12 pair in order with ALRS sections 5.3-5.8 and 6.1-6.7, in the order the Needs lines force.",
+  "text": "b93fc7fa5e66c66e"
+ }
+}
