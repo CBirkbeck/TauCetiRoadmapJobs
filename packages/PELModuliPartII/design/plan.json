@@ -5820,8 +5820,8 @@
       "neededBy": [
         "PELModuliPartII:U0/strict-module-display"
       ],
-      "detail": "PELModuli §M2.15 defines Zink displays and the functor BT, and states the equivalence only over complete local noetherian rings with perfect residue field. Mih19 §11.2, p. 43, recalls the equivalence over every ring in which p is nilpotent, on which the O-display theory of U0 rests.",
-      "needs": "For every ring R in which p is nilpotent, prove that BT is an equivalence from nilpotent displays over R to formal p-divisible groups over R, compatible with base change and with duality of biformal objects.",
+      "detail": "PELModuli §M2.15 defines Zink displays, their duals and base change, and the functor BT over rings of characteristic p only, and states the equivalence only over complete local noetherian rings with perfect residue field. Mih19 §11.2, p. 43, recalls displays and the equivalence over every ring in which p is nilpotent, on which the O-display theory of U0 rests; its bases, such as O_L̆/(p²), are not of characteristic p.",
+      "needs": "For every ring R in which p is nilpotent, define displays over R with their base change and duals and the functor BT to formal p-divisible groups over R (§M2.15 defines them over rings of characteristic p), and prove that BT is an equivalence from nilpotent displays over R to formal p-divisible groups over R, compatible with base change and with duality of biformal objects.",
       "supplier": "PELModuli",
       "section": "§M2.15"
     },

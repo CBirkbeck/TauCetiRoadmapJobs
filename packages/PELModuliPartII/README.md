@@ -1,7 +1,7 @@
 # Roadmap: Siegel and PEL moduli problems, part II: unitary integral and formal moduli
 
 **Summary.** This roadmap builds the integral and formal moduli of unitary type that the arithmetic of
-unitary Shimura varieties uses: strict formal O-modules and their O-displays; the unitary
+unitary Shimura varieties uses: the O-displays of strict formal O-modules; the unitary
 Rapoport–Zink spaces of principal, almost self-dual, exotic and Krämer type, with their special
 homomorphism spaces; the integral CM moduli at every prime; the integral models of
 Rapoport–Smithling–Zhang, Li–Liu, He–Li–Shi–Yang and Liu–Tian–Xiao–Zhang–Zhu built from pairs of a
@@ -12,16 +12,18 @@ primes unramified in the CM field. Its end theorems are the formal smoothness or
 reduction of the four families of local spaces (§§1.2, 2.2, 3.4, 5.7) and the two connected
 components of the exotic space over every p-adic field (§3.7); the finite étaleness of the CM moduli
 at every prime (§6.6); the smoothness, regular semistable reduction and quasi-projectivity of the
-global integral models (§§7.2, 7.7, 7.8, 7.9, 8.3, 8.7); and the uniformization of their basic loci by
+global integral models (§§7.6, 7.7, 7.8, 7.9, 8.4, 8.7); and the uniformization of their basic loci by
 the local spaces (§§9.5–9.10). A polarization kernel, a signature convention, an integral Lie
 annihilation equation and a coefficient field are part of every statement: none of them can be
 recovered from the generic Shimura variety.
 
 ## Scope and ownership
 
-This roadmap owns: strict formal O-modules, O-displays, relative duality and the Lubin–Tate frame
-comparison (§0.1); representability of polarized PEL framed functors for an arbitrary self-dual
-periodic multichain, and of the unitary framed functors of Layers 1–5 (§0.2); principal hermitian
+This roadmap owns: the Witt O-frame over an arbitrary O-algebra, O-displays of strict formal
+O-modules, the relative isocrystal of a strict formal O-module, relative duality, the Lubin–Tate frame
+comparison and the f-O-display comparison for an unramified extension (§0.1); representability of EL
+framed functors and of polarized PEL framed functors for an arbitrary self-dual periodic multichain, and
+the representability criterion that Layers 1–5 apply to their relative unitary framed functors (§0.2); principal hermitian
 modules, Mihatsch's relative comparison and the conjugation of signature conventions (§§0.3–0.7);
 the unitary Rapoport–Zink spaces of principal, almost self-dual, exotic and Krämer type, their
 special homomorphism spaces, the rank-raising embedding and the diagonal graph (Layers 1–5), with
@@ -35,12 +37,25 @@ groups and the basic-locus uniformizations (Layer 9).
 
 It leaves to other roadmaps, by section:
 
-- Zink displays and the functor BT to formal p-divisible groups are PELModuli §M2.15; the
-  equivalence over every ring in which p is nilpotent is the contract gap:zink-display-equivalence.
+- Zink displays over rings of characteristic p and the functor BT to formal p-divisible groups are
+  PELModuli §M2.15; their definition over every ring in which p is nilpotent, with base change and
+  duals, and the equivalence there are the contract gap:zink-display-equivalence.
+- The strict O_K-action on a p-divisible group (O_K acting on Lie through the structure map), its
+  O_K-relative height h, characterized by rank X[π]=q^h, the relative height of an O_K-linear
+  quasi-isogeny, and the formula height_p=[K:ℚ_p]·h are HilbertModularVarietiesAndShimuraCurves
+  §R18.5.4; §0.1 applies them over every O-algebra in which π is nilpotent and adds formality,
+  O-displays, the relative isocrystal and relative duality.
+- Relative (ramified) Witt vectors of an arbitrary O-algebra and isocrystals with a ramified
+  coefficient field are VectorBundlesAndIsocrystals Layer 0, “Ramified coefficient rings and
+  coefficient changes”, and Layer 1, “Finite isocrystals over the completed maximal unramified
+  coefficient field”, with its slope classification; §0.1 adds the Witt O-frame (F, V and `I_O(R)`
+  over an arbitrary O-algebra), its windows and their duality, and the relative isocrystal of a
+  strict formal O-module.
 - The PEL Rapoport–Zink space of an unramified local PEL datum with a single self-dual lattice, and
   the unstructured framed deformation functor of a p-divisible group, are IgusaVarietiesAndTorsionConcentration
-  §0.27. §0.2 differs in one clause: it treats an arbitrary self-dual periodic multichain over a
-  ramified or unramified datum, which the almost self-dual, exotic and Krämer spaces need.
+  §0.27. §0.2 differs in two clauses: it treats an arbitrary self-dual periodic multichain over a
+  ramified or unramified datum, and EL data without polarization, which the almost self-dual, exotic and
+  Krämer spaces need since their polarizations are relative, not Cartier.
 - Strict dimension-one Dieudonné classification and strict O-module deformations with Drinfeld
   levels are EndoscopicTransferAndUnitaryTraceComparison §§7.6 and 10.2; Tate full faithfulness over
   finite fields, Honda theory and the B-linear isogeny classification are its §§8.3 and 8.10.
@@ -48,8 +63,10 @@ It leaves to other roadmaps, by section:
   IgusaVarietiesAndTorsionConcentration §0.31.
 - Locally noetherian formal schemes and the Berthelot generic fibre are AdicSpacesPartIII Layer F0
   and §R2.9; descent, algebraic spaces and stacks are SchemeAndStackFoundations Layer 1, formal
-  deformation theory its Layer 4; Grassmannians and their tangent spaces are
-  AlgebraicModuliForArithmeticGeometry §1.3.
+  deformation theory its Layer 4; the Grassmannian scheme of a module over an affine base is already
+  in Tau Ceti (`Module.Grassmannian.scheme`), and Grassmannians of locally free sheaves over an
+  arbitrary base, their smoothness and their tangent spaces are AlgebraicModuliForArithmeticGeometry
+  §1.3.
 - p-divisible groups and their Dieudonné theory are FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer
   R07.1 and §§R07.2.10, R07.2.17, R07.2.20, R07.2.26; Grothendieck–Messing, effectivity of polarized
   formal lifts and Serre–Tate with structures are AbelianSchemesAndArithmeticModuli §§A4.7–A4.9.
@@ -58,8 +75,8 @@ It leaves to other roadmaps, by section:
   a global hermitian space with prescribed local invariants is the contract gap:hermitian-local-global.
 - Smoothness of the automorphism group scheme of a polarized unitary lattice multichain is the
   contract gap:unitary-multichain-stabilizer.
-- Quasi-projectivity and properness of PEL moduli at good primes are ShimuraCompactifications §§7.5
-  and 7.18; at the remaining primes and parahoric levels they are the contract
+- Quasi-projectivity and properness of PEL moduli at good primes are ShimuraCompactifications §§7.3,
+  7.5 and 7.18; at the remaining primes and parahoric levels they are the contract
   gap:bad-prime-projectivity.
 
 The special-fibre geometry built on the models of Layers 7 and 8 — the basic isogeny correspondence
@@ -81,10 +98,25 @@ are functors on Nilp of the appropriate coefficient ring. A framing is defined o
 out by the uniformizer, which need not be reduced. A formal space is locally formally of finite type;
 quasi-compactness and the p-adic topology are not presumed.
 
-*Strict modules and heights.* Strict O_K-modules have the structural O_K-action on Lie. Relative height
-2n means absolute p-height 2n[K:ℚ_p], and the strict object then has dimension n. The relative dual of
+*Strict modules and heights.* Strict O_K-modules have the structural O_K-action on Lie, and the
+relative height of a strict O_K-module or of an O_K-linear quasi-isogeny is its O_K-relative height,
+both as in HilbertModularVarietiesAndShimuraCurves §R18.5.4; the height of the underlying p-divisible
+group is called its absolute p-height. Relative height
+2n means absolute p-height 2n[K:ℚ_p]. The unitary local objects of this roadmap of relative height 2n
+have dimension n by definition (§§0.3 and 3.1); the height does not force it, since over 𝔽̄_q there is a
+strict formal O_K-module of relative height 2n and dimension 1, the base object of Lubin–Tate
+deformation theory. Forgetting the O_K-action keeps the Lie algebra, so the underlying p-divisible
+group has the same dimension as the strict object. The relative dual of
 §0.1 depends on the chosen uniformizer and is not the Cartier dual. For a hermitian Hom pairing
-h(x,y) the first argument is L-linear and the second conjugate-linear. Exact preservation of a
+h(x,y) the first argument is L-linear and the second conjugate-linear. GeometryOfNumbersAndQuadraticArithmetic
+§§2.7 and 2.9 write forms conjugate-linear in the first argument; every result imported from them is
+applied to the transposed form H(x,y)=h(y,x), which equals ε times the conjugate of h(x,y) when h is
+ε-hermitian (ε=±1). H is conjugate-linear in x, linear in y and ε-hermitian for the same ε. H and h
+have the same isometries and the same adjoint of endomorphisms (h(ax,y)=h(x,a*y) exactly when
+H(ax,y)=H(x,a*y)); since O_L is stable under conjugation they have the same dual lattice
+{x : h(x,Λ)⊆O_L}={x : H(x,Λ)⊆O_L}, hence the same invariant factors; and their Gram matrices on a
+basis are transposes of each other, so their Gram determinants are equal and define the same
+determinant class. Exact preservation of a
 polarization, preservation up to an O_K-unit, and a common rational scalar on a pair are three
 separately specified arrow conventions.
 
@@ -93,7 +125,7 @@ separately specified arrow conventions.
 the target action, the source action and the framing together (§0.7). Layers 3–4 use the even-rank
 exotic convention (n−1,1) with a separate principal CM source of signature (1,0), and the local form
 h^exo(x,y)=u⁻²λ₀⁻¹y^∨λx. Layer 5 uses the Krämer convention (1,n−1), with conjugate rank-(n−1)
-subbundle and structural rank-one quotient; its comparison with the global Krämer model of §7.5
+subbundle and structural rank-one quotient; its comparison with the global Krämer model of §7.4
 conjugates these actions.
 
 *Global notation.* F/F⁺ is a CM extension, Φ a CM type, r the unitary signature, v₀ the distinguished
@@ -101,15 +133,16 @@ finite place and E the reflex field indicated. For a fixed p-adic embedding, F_u
 the completion at the place above u induced by the embedding, and the Li–Liu coefficient field is
 K=F_uE_Φ, used only under the admissibility and unramifiedness hypotheses of §§6.2 and 6.4. In the
 exotic global setting the hermitian form is h′=ϖ⁻¹λ₀⁻¹y^∨λx with `ϖ∈O_{F⁺}` totally positive and
-val_u(ϖ)=1, so that h′=(u²/ϖ)·h^exo with u²/ϖ a unit at u (§9.6). Nonempty CM components and their
-polarization ideals are input data. Neatness is imposed on both factors whenever a scheme rather than
+val_u(ϖ)=1, so that h′=(u²/ϖ)·h^exo with u²/ϖ a unit at u (§9.6). A polarization ideal a, a nonzero
+ideal of `O_{F⁺}` for which the CM moduli M₀^a of §6.6 is nonempty, and a component of M₀^a are input
+data; every component of a nonempty M₀^a is itself nonempty (§6.6). Neatness is imposed on both factors whenever a scheme rather than
 a stack is asserted. A claimed regular or semistable model is always over the named coefficient
 discrete valuation ring.
 
 *Conventions fixed by a computed witness.*
 
-1. At n=3 and [K:ℚ_p]=2 a strict local object has relative height 6, absolute height 12 and dimension
-   3; absolute height 6 would specify a different carrier.
+1. At n=3 and [K:ℚ_p]=2 a principal hermitian module of rank 3 (§0.3) has relative height 6, absolute
+   height 12 and dimension 3; absolute height 6 would specify a different carrier.
 2. In the unramified mixed construction at n=2 signatures add as (1,1)+(0,1)=(1,2); adding the
    unconjugated source gives (2,1). At q=3 the source product polarization has degree 9·9 and the
    principal target forces the isogeny degree 9, not q^(n+1)=27; the first generic projection has
@@ -133,6 +166,11 @@ discrete valuation ring.
 8. In the exotic global setting at n=2 the global and local forms on the same Hom space differ by
    u²/ϖ: with val_u(ϖ)=1 this is a unit and lattice duality agrees; with val_u(ϖ)=0 the dual of a
    self-dual lattice moves by one valuation.
+9. For L=ℚ₃(u) with u²=3 and the rank-one form h(x,y)=xȳ of this roadmap's convention, h(u,1)=u,
+   while the unit form x̄y of GeometryOfNumbersAndQuadraticArithmetic §2.7 takes the value ū=−u at
+   (u,1); the latter is the transposed form H, with H(u,1)=h(1,u)=−u. On the diagonal both give the
+   norm xx̄, so norms, Gram determinants and dual lattices do not detect the convention; since H is
+   the conjugate of h, a value outside K, such as h(u,1)=u, does.
 
 ## Exact supplier contracts
 
@@ -154,14 +192,24 @@ The declarations consumed, with what is assumed of them:
   of a square matrix, used in item 3 of the Conventions.
 - `Module.Grassmannian` (`Mathlib/RingTheory/Grassmannian.lean`): submodules of a module whose
   quotient is finite projective of constant rank k. It is the set of R-points of the Grassmannians of
-  quotients used in §§0.6, 1.2, 5.1 and 7.6; their representability and smoothness are imported from
-  AlgebraicModuliForArithmeticGeometry §1.3.
-- `WittVector` (`Mathlib/RingTheory/WittVector/Defs.lean`) and `WittVector.Isocrystal`
-  (`Mathlib/RingTheory/WittVector/Isocrystal.lean`): p-typical Witt vectors and isocrystals over the
-  fraction field of W(k) for a perfect field k. The relative O-Witt vectors of §0.1 and the relative
-  isocrystals of §§1.5 and 5.4 are new.
+  quotients used in §§0.6, 1.2, 5.1 and 7.5. Over an affine base the representing scheme is Tau
+  Ceti's (below); the Grassmannian of rank-k quotients of a locally free sheaf of rank m over an
+  arbitrary base, its smoothness of relative dimension k(m−k) and its tangent Hom formula are
+  imported from AlgebraicModuliForArithmeticGeometry §1.3.
+- `WittVector` (`Mathlib/RingTheory/WittVector/Defs.lean`), with `WittVector.ghostComponent`,
+  `WittVector.frobenius` and `WittVector.verschiebung` (`Mathlib/RingTheory/WittVector/Basic.lean`,
+  `.../Frobenius.lean`, `.../Verschiebung.lean`), and `WittVector.Isocrystal`
+  (`Mathlib/RingTheory/WittVector/Isocrystal.lean`): p-typical Witt vectors of an arbitrary
+  commutative ring with their ghost components, Frobenius and Verschiebung, and isocrystals over the
+  fraction field of W(k) for a perfect field k; they are the case O=ℤ_p, π=p of §0.1. The ring
+  `W_O(R)` of relative O-Witt vectors of an O-algebra R with respect to π, with its ghost map and its
+  functoriality in R, is VectorBundlesAndIsocrystals Layer 0; the isocrystals over K̆ with
+  coefficient field K, their morphisms and their slope classification are its Layer 1 (see the
+  subsection of that supplier). §0.1 adds what that roadmap states on perfect algebras only: the
+  Frobenius F, the Verschiebung V with respect to π and the augmentation ideal `I_O(R)` over an
+  arbitrary O-algebra R, and the relative isocrystal of a strict formal O-module.
 - `IsRegularLocalRing` (`Mathlib/RingTheory/RegularLocalRing/Defs.lean`): regularity of a noetherian
-  local ring, the notion meant by "regular" in §§2.2, 5.6, 5.7, 7.8, 7.9 and 8.3.
+  local ring, the notion meant by "regular" in §§2.2, 5.6, 5.7, 7.8, 7.9 and 8.4.
 - `AlgebraicGeometry.Scheme`, `AlgebraicGeometry.Flat`, `AlgebraicGeometry.Smooth` and
   `AlgebraicGeometry.SmoothOfRelativeDimension` (`Mathlib/AlgebraicGeometry/Scheme.lean`,
   `Mathlib/AlgebraicGeometry/Morphisms/Flat.lean`, `Mathlib/AlgebraicGeometry/Morphisms/Smooth.lean`):
@@ -174,6 +222,16 @@ The declarations consumed, with what is assumed of them:
   abelian varieties over a field, with smooth structure morphism. It is the carrier of the abelian
   varieties over F̄_p in §9.1; abelian schemes over a discrete valuation ring or a nilpotent thickening
   are not supplied and are imported from AbelianSchemesAndArithmeticModuli.
+- `Module.Grassmannian.scheme` and `Module.Grassmannian.toSpec`
+  (`TauCeti/AlgebraicGeometry/Grassmannian/Basic.lean`), `Module.Grassmannian.schemeHomEquiv`
+  (`.../Grassmannian/Points.lean`) and `Module.Grassmannian.isSeparated_toSpec` and
+  `Module.Grassmannian.isProper_toSpec` (`.../Grassmannian/Proper.lean`): for a module M over a
+  commutative ring R, in the universe of R, and k≥0, the scheme over Spec R glued from the standard
+  affine charts; its morphisms from Spec A over Spec R, for an R-algebra A, are the points of
+  Mathlib's `Module.Grassmannian` of rank-k quotients of A⊗_R M; it is separated over Spec R, and
+  proper when M is finite. It is the carrier of the Grassmannian of rank-r quotients of a free
+  rank-n module in §0.6, over Spec O_L̆. Smoothness and the tangent space are not at the pin; they
+  are AlgebraicModuliForArithmeticGeometry §1.3.
 - `TauCeti.FormalScheme.Spf.carrier` and `TauCeti.FormalScheme.Spf.structureSheaf`
   (`TauCeti/AlgebraicGeometry/FormalScheme/Spf/Carrier.lean`, `.../Spf/StructureSheaf.lean`): the
   underlying space of the formal spectrum of a topological ring and its structure sheaf for an adic
@@ -195,7 +253,16 @@ from a CM object); §§M4.3, M4.5–M4.8 (canonical models, normalized models at
 at primes unramified in F); §M5.5 (unitary PEL data with prescribed signatures). These are assumed
 as stated there, in particular only over a base of good primes where PELModuli says so.
 
-What PELModuli must provide (gap:zink-display-equivalence): For every ring R in which p is nilpotent, prove that BT is an equivalence from nilpotent displays over R to formal p-divisible groups over R, compatible with base change and with duality of biformal objects.
+What PELModuli must provide (gap:zink-display-equivalence): For every ring R in which p is nilpotent, define displays over R with their base change and duals and the functor BT to formal p-divisible groups over R (§M2.15 defines them over rings of characteristic p), and prove that BT is an equivalence from nilpotent displays over R to formal p-divisible groups over R, compatible with base change and with duality of biformal objects.
+
+### From TauCetiRoadmap.HilbertModularVarietiesAndShimuraCurves
+
+§R18.5.4 (the strict O_K-action on a p-divisible group, O_K acting on Lie through the structure map;
+the O_K-relative height h of a p-divisible group with O_K-action, characterized by rank X[π]=q^h, and
+of an O_K-linear quasi-isogeny, the q-logarithm of its degree after clearing a power of π; and the
+formula height_p(X)=[K:ℚ_p]·h). These are assumed as stated there; they use nothing of the base
+beyond the structure map from O_K, and §0.1 applies them over every O_K-algebra in which π is
+nilpotent.
 
 ### From TauCetiRoadmap.AbelianSchemesAndArithmeticModuli
 
@@ -208,6 +275,21 @@ effectivity of polarized formal lifts, Serre–Tate with structures); §§A6.10,
 Layer R07.1 (finite flat group schemes and p-divisible groups); §§R07.2.10, R07.2.17, R07.2.20,
 R07.2.26 (Dieudonné classification over perfect fields, isogeny classification, the covariant
 Dieudonné module and the comparison of conventions, rigidity along nilpotent thickenings).
+
+### From TauCetiRoadmap.VectorBundlesAndIsocrystals
+
+Layer 0, “Ramified coefficient rings and coefficient changes” (the ring `W_O(R)` of an arbitrary
+O-algebra R for a finite extension K of ℚ_p with residue field 𝔽_q and uniformizer π, with ghost
+components `w_n(x)=Σ_{i≤n} π^i x_i^(q^(n−i))`, its ring operations given by universal integral
+polynomials, its functoriality in R, and the strict π-adic lift over a perfect 𝔽_q-algebra with its
+Frobenius and Verschiebung); Layer 1, “Finite isocrystals over the completed maximal unramified
+coefficient field” (K-isocrystals: finite-dimensional K̆-vector spaces with a bijective σ-semilinear
+operator, σ the lift of the q-power Frobenius fixing K, and their morphisms), “Mixed-characteristic
+supplier comparison” (`W_O(k)[1/π]≅K̆` for k=𝔽̄_q, intertwining the Frobenius of `W_O(k)` with σ)
+and “Dieudonné–Manin classification of finite isocrystals” (slopes normalized by v(π)=1,
+decomposition into simple blocks, vanishing of Hom between distinct slopes). These are assumed as
+stated there; F, V and `I_O(R)` over an arbitrary O-algebra R (agreeing with that layer's on
+perfect 𝔽_q-algebras), and the relative isocrystal of a strict formal O-module, are §0.1.
 
 ### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
 
@@ -240,7 +322,9 @@ Layer 1 (descent, algebraic spaces and stacks) for the algebraic integral models
 ### From TauCetiRoadmap.GeometryOfNumbersAndQuadraticArithmetic
 
 §§2.7, 2.9 (hermitian lattices, duals and invariant factors; signed hermitian forms over local fields of
-odd residue characteristic).
+odd residue characteristic). Their forms are conjugate-linear in the first argument; they are applied
+here to the transposed form H(x,y)=h(y,x) of the Conventions, which has the same isometries, adjoints,
+dual lattices, invariant factors and determinant class as h (Conventions, item 9).
 
 ### From TauCetiRoadmap.PadicHodgeTheory
 
@@ -268,11 +352,15 @@ What ReductiveGroupsPartII must provide (gap:unitary-multichain-stabilizer): For
 
 ### From TauCetiRoadmap.ShimuraCompactifications
 
-§7.5 (properness of the integral toroidal model for a complete cone system, hence of the moduli
-itself when the PEL datum has no cusp label) and §7.18 (quasi-projectivity of the neat PEL moduli of
-PELModuli §M2.8), both over a base of good primes in the sense of PELModuli §M0.10. §8.7, and §7.2 on a base all of whose
+§7.3 (the integral toroidal model, the open immersion of the PEL moduli of PELModuli §M2.8 into it
+and its stratification by cusp and cone labels; when the datum has no nonzero cusp label the open
+stratum is the only one, so the open immersion is surjective and hence an isomorphism), §7.5
+(properness of the integral toroidal model for a complete cone system) and §7.18
+(quasi-projectivity of the neat PEL moduli of PELModuli §M2.8), all over a base of good primes in the
+sense of PELModuli §M0.10. Together, §§7.3 and 7.5 make the PEL moduli proper when its datum has no
+nonzero cusp label. §8.7, and §7.6 on a base all of whose
 primes are good for the product datum, consume them through finite comparison morphisms from CM-pair
-moduli to the PEL moduli of the product A₀×A; §7.2 on a base with a bad prime, §7.7 and §8.3 consume
+moduli to the PEL moduli of the product A₀×A; §7.6 on a base with a bad prime, §7.7 and §8.4 consume
 gap:bad-prime-projectivity through the same kind of finite comparison morphism, into the multichain
 moduli that contract names.
 
@@ -296,45 +384,52 @@ uniformizes the basic loci of the models of Layers 7–8 by the local spaces of 
 
 ## Layer 0: Strict modules, representability and relative unitary conventions
 
-Strict formal O-modules, their O-displays and relative duality; representability of the polarized unitary framed functors of Layers 1–5 as formal schemes locally formally of finite type; principal hermitian modules and simultaneous conjugation of signature, source and framing. For unramified L/K and ℚ_p⊂K₀⊂K construct Mihatsch’s relative comparison of hermitian modules with a signature, using the full P(r,s) determinant and structural-action clause, and restrict it to supersingular framings; compare framed deformations and the rank-r Grassmannian local model of relative dimension rs.
+Strict formal O-modules, their O-displays and relative duality; a representability criterion for relative unitary framed functors as formal schemes locally formally of finite type, which Layers 1–5 apply; principal hermitian modules and simultaneous conjugation of signature, source and framing. For unramified L/K and ℚ_p⊂K₀⊂K construct Mihatsch’s relative comparison of supersingular hermitian modules with a signature, using the full P(r,s) determinant and structural-action clause, and apply it to supersingular framings; compare framed deformations and the rank-r Grassmannian local model of relative dimension rs.
 
 ### 0.1 Strict formal modules, O-displays and relative duality
 
-Let O be the ring of integers of a finite extension of ℚ_p, with uniformizer π. Over an O-algebra R in which π is nilpotent, a strict O-module is a p-divisible group X with an action ι:O→End(X) through which O acts on Lie X by the structure map O→R; it is formal when X is a formal group. An O-display over R is a window over the Witt O-frame (W_O(R),I_O(R),F,V) of relative O-Witt vectors with respect to π, and strict formal O-modules over R are equivalent to nilpotent O-displays, compatibly with base change; the relative height of X is the rank of its O-display P and its dimension is the rank of P/Q. A strict formal O-module is biformal when its dual O-display is again nilpotent; its relative dual X^∨ is the strict O-module of that dual display, and it depends on π. A polarization (resp. principal polarization) is an isogeny (resp. isomorphism) λ:X→X^∨ with λ^∨=−λ. The relative crystal D_X on O-divided-power thickenings carries the Hodge filtration; deformations along such thickenings correspond to lifts of the filtration, and for principally polarized biformal X to Lagrangian lifts for the perfect alternating pairing on D_X. For a finite totally ramified extension O⊂O′, strict formal O′-modules are equivalent to nilpotent windows over the Lubin–Tate O′-frame, compatibly with duality after rescaling the pairing by a unit of the frame. (Mih19, Part III: §10, p. 40; Lemma 11.2 and Definition 11.6, pp. 41–42; Definitions 11.7–11.9, Remark 11.11 and the crystal paragraph, p. 43; Proposition 12.11, pp. 47–48.)
+Let K be a finite extension of ℚ_p with ring of integers O, uniformizer π and residue field 𝔽_q. Over an O-algebra R in which π is nilpotent, a strict O-module is a p-divisible group X with a strict O-action ι:O→End(X) in the sense of HilbertModularVarietiesAndShimuraCurves §R18.5.4, that is, O acts on Lie X by the structure map O→R; it is formal when X is a formal group. The Witt O-frame of an O-algebra R is (W_O(R),I_O(R),F,V): W_O(R) is the ring of relative O-Witt vectors of R with respect to π, with ghost components w_n; F is the ring endomorphism given by universal integral polynomials and characterized by `w_n(Fx)=w_{n+1}(x)` over π-torsion-free O-algebras; V is the additive map (x₀,x₁,…)↦(0,x₀,x₁,…), so that w_0(Vx)=0 and `w_n(Vx)=π·w_{n−1}(x)` for n≥1; and `I_O(R)=V W_O(R)` is the kernel of w_0:W_O(R)→R. Then FV=π, and V depends on π. An O-display over R is a window over this frame, and strict formal O-modules over R are equivalent to nilpotent O-displays, compatibly with base change; the relative height of X is the rank of its O-display P and its dimension is the rank of P/Q. Over k=𝔽̄_q, regarded as an O-algebra, `W_O(k)[1/π]` is K̆ and the rational O-display (P[1/π],F) of a strict formal O-module X over k is a K-isocrystal, the relative isocrystal of X; its K̆-dimension is the relative height of X. A strict formal O-module is biformal when its dual O-display is again nilpotent; its relative dual X^∨ is the strict O-module of that dual display, and it depends on π; over k=𝔽̄_q, X is biformal exactly when the slopes 0 and 1 do not occur in its relative isocrystal. A polarization (resp. principal polarization) is an isogeny (resp. isomorphism) λ:X→X^∨ with λ^∨=−λ. The relative crystal D_X on O-divided-power thickenings carries the Hodge filtration; deformations along such thickenings correspond to lifts of the filtration, and for principally polarized biformal X to Lagrangian lifts for the perfect alternating pairing on D_X. For a finite totally ramified extension O⊂O′, strict formal O′-modules are equivalent to nilpotent windows over the Lubin–Tate O′-frame, compatibly with duality after rescaling the pairing by a unit of the frame. For a finite unramified extension O⊂O′ of degree f and an O′-algebra R in which π is nilpotent, `A_{O′/O}(R)=(W_O(R),I_O(R),F^f,F^{f−1}V⁻¹)` is an O′-frame, whose windows are the f-O-displays; the map `W_O(R)→W_{O′}(R)` is a strict morphism of O′-frames from it to the Witt O′-frame, so base change δ from f-O-displays to O′-displays is compatible with duality, and the Z/f-grading of the O-display of a strict formal O′-module gives a functor γ from strict formal O′-modules to nilpotent f-O-displays. For noetherian R, γ and δ are equivalences, δ on nilpotent windows. (Mih19, Part III: §10, p. 40; (11.2), Lemma 11.2 and Definition 11.6, pp. 41–42; Definitions 11.7–11.9, Remark 11.11, the crystal paragraph and footnote 8, p. 43; Proposition 12.11, pp. 47–48; §13, Definition 13.1 and Proposition 13.2 with its proof, pp. 48–49.)
 
-Hypotheses for this target: O, π as stated; R an O-algebra in which π is nilpotent; duality and polarizations only for biformal objects.
+Hypotheses for this target: K, O, π, q as stated; the Witt O-frame over every O-algebra R; displays and strict modules over O-algebras R in which π is nilpotent; duality and polarizations only for biformal objects; the equivalences γ and δ of the unramified case over noetherian O′-algebras R in which π is nilpotent.
 
-*Route.* Define relative O-Witt vectors with respect to π, the Witt O-frame and its windows (Mih19 Definition 11.7). Deduce the equivalence of strict formal O-modules with nilpotent O-displays from the equivalence between nilpotent displays and formal p-divisible groups (gap:zink-display-equivalence) by the Ahsendorf–Cheng–Zink construction recalled in Mih19 §11.2. Define duals of biformal objects through the dual window, polarizations by λ^∨=−λ, and the relative crystal and Hodge filtration (Mih19 Definitions 11.6, 11.9 and §11.2); prove the Lubin–Tate frame equivalence and its duality compatibility (Mih19 Proposition 12.11 and Lemma 11.2).
+*Route.* Take the ring W_O(R), its ghost map and its functoriality in R from VectorBundlesAndIsocrystals Layer 0, “Ramified coefficient rings and coefficient changes”. Define on it, for every O-algebra R, the Frobenius F and the Verschiebung V by the ghost identities above and put `I_O(R)=V W_O(R)=ker w_0`; over a perfect 𝔽_q-algebra these F and V are that layer's Frobenius and Verschiebung. This is the Witt O-frame, whose windows are the O-displays (Mih19 Definition 11.7). Over 𝔽̄_q identify `W_O(k)[1/π]` with K̆ and its Frobenius with σ by VectorBundlesAndIsocrystals Layer 1, “Mixed-characteristic supplier comparison”, so that (P[1/π],F) is a K-isocrystal of that layer's “Finite isocrystals over the completed maximal unramified coefficient field”; its slopes are those of “Dieudonné–Manin classification of finite isocrystals” (Mih19 footnote 8). Deduce the equivalence of strict formal O-modules with nilpotent O-displays from the equivalence between nilpotent displays and formal p-divisible groups (gap:zink-display-equivalence) by the Ahsendorf–Cheng–Zink construction recalled in Mih19 §11.2. Define duals of biformal objects through the dual window, polarizations by λ^∨=−λ, and the relative crystal and Hodge filtration (Mih19 Definitions 11.6, 11.9 and §11.2); prove the Lubin–Tate frame equivalence and its duality compatibility (Mih19 Proposition 12.11 and Lemma 11.2). For O⊂O′ unramified of degree f, the unique lift O′→W_O(R) of the structure map grades the O-display P of a strict formal O′-module as `P_0⊕…⊕P_{f−1}`, strictness puts `P_1,…,P_{f−1}` inside Q, and γ(P) is P_0 with Q_0 and the f-fold composite Frobenius; δ is base change along the strict frame morphism, compatible with duals by (11.2). The composite δ∘γ is the O′-display functor of the first clause for O′ (Mih19 §13, p. 49, recalling Ahsendorf), hence an equivalence on nilpotent objects; the quasi-inverse of γ built from an O′-stable normal decomposition in the proof of Mih19 Proposition 13.2 makes γ, and therefore δ, an equivalence for noetherian R.
 
 **API.**
 
+- For every O-algebra R, F is a ring endomorphism of W_O(R) and V an additive endomorphism, both natural in R, with FV=π, the projection formula V(F(a)·x)=a·V(x) and `I_O(R)=V W_O(R)=ker w_0`.
 - The O-display of a strict formal O-module and its quasi-inverse, natural in the base.
-- The relative height is the rank of P; it is the p-height divided by [O:ℤ_p].
+- The rank of P is the O-relative height of X of HilbertModularVarietiesAndShimuraCurves §R18.5.4 (rank X[π]=q^(rank P)); by the formula there it is the p-height divided by [K:ℚ_p].
+- Over 𝔽̄_q the relative isocrystal (P[1/π],F) is a K-isocrystal of K̆-dimension the relative height; X↦(P[1/π],F) is a fully faithful functor from strict formal O-modules up to quasi-isogeny to K-isocrystals (an F-equivariant map of rational displays, multiplied by a power of π, preserves the lattices P and Q=πF⁻¹P), and the slopes avoid 0 and 1 exactly for biformal X.
 - For biformal X the relative dual X^∨, depending on the chosen uniformizer, with biduality.
 - Deformations along an O-divided-power thickening correspond to lifts of the Hodge filtration of D_X, Lagrangian lifts in the principally polarized case.
 - For O⊂O′ totally ramified, strict formal O′-modules are equivalent to nilpotent Lubin–Tate O′-windows.
+- For O⊂O′ unramified of degree f and noetherian R in which π is nilpotent, γ is an equivalence from strict formal O′-modules over R to nilpotent f-O-displays over R, and δ is an equivalence from nilpotent f-O-displays to nilpotent O′-displays over R, compatible with duality.
 
 **Checks.**
 
 - For O=ℤ_p the strictness condition is automatic and an O-display is a display: `μ_{p^∞}` over a perfect field has P of rank 1 with P/Q of rank 1, while the étale ℚ_p/ℤ_p has P/Q=0 and is not a nilpotent display.
 - For K=ℚ_p(√p) the Lubin–Tate group is a strict O_K-module of relative height 1; precomposing its action with the nontrivial automorphism of K makes √p act on Lie by −√p, so over R=O_K/(p), where √p≠−√p because p is odd, the twisted module is not strict.
 - A strict O-module of relative height 1 and dimension 1 has dual of dimension 0, hence étale, so it is not biformal and has no polarization in this sense; the rank-one sources of Layer 1, Layer 3 and Layer 5 have relative height 2 and dimension 1 and are biformal.
+- The first two ghost components are x₀ and `x₀^q+π·x₁`. For O=ℤ_p, π=p they are Mathlib's p-typical ghost components, and F and V are Mathlib's Frobenius and Verschiebung; for K=ℚ_p(√p), π=√p, q=p the second is `x₀^p+√p·x₁`. Over R=𝔽_p, W_O(𝔽_p)=O_K, F is the identity and V is multiplication by √p, with image `I_O(𝔽_p)=(√p)`. Replacing π by −√p replaces V by −V: the coordinate change x_i↦(−1)^i x_i matches the two ghost maps because q is odd, while `w_1(Vx)=π·x₀` changes sign; this is why the dual O-display depends on π (Mih19 Remark 11.11). A Verschiebung normalized with p in place of π would be multiplication by p on O_K, with image (p)=(√p)²⊊(√p), so it would not be invertible onto `I_O(𝔽_p)` and gives no frame.
+- For K/ℚ_p unramified of degree 2 and the Lubin–Tate O_K-module over 𝔽̄_p (relative height 1), the relative isocrystal is a K̆-line with a q-Frobenius-semilinear operator, q=p², whereas the Dieudonné isocrystal of the underlying p-divisible group, of height 2, is a plane over K̆=ℚ̆_p with a p-Frobenius-semilinear operator; taking the absolute isocrystal with its K-action as the relative one doubles the dimension.
+- For f=1 the frame `A_{O/O}(R)` is the Witt O-frame and γ and δ are the identity. For O=ℤ_p and `O′=W(𝔽_{p²})`, so f=2, a strict formal O′-module of relative height 2 and dimension d has p-typical display P of rank 4=[O′:ℤ_p]·2, graded as P_0⊕P_1 with both pieces of rank 2 and Q=Q_0⊕P_1; its 2-ℤ_p-display (P_0,Q_0) has rank 2 over W(R) with P_0/Q_0 of rank d, and δ of it is an O′-display of rank 2, the relative height. Taking the whole rank-4 display as the f-display would double the relative height, and putting P_1 outside Q would contradict strictness, O′ acting on Lie=P/Q only through the structure map.
 
-*Needs:* PELModuli §M2.15; gap:zink-display-equivalence; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1; EndoscopicTransferAndUnitaryTraceComparison §7.6.
+*Needs:* PELModuli §M2.15; gap:zink-display-equivalence; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1; HilbertModularVarietiesAndShimuraCurves §R18.5.4; EndoscopicTransferAndUnitaryTraceComparison §7.6; VectorBundlesAndIsocrystals Layer 0, “Ramified coefficient rings and coefficient changes”; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field”, “Mixed-characteristic supplier comparison” and “Dieudonné–Manin classification of finite isocrystals”.
 
-### 0.2 Representability of the unitary framed functors
+### 0.2 Representability of framed functors
 
-For local PEL data in the sense of RZ96 Definition 3.21 (a semisimple ℚ_p-algebra B with involution, a maximal order O_B, a self-dual periodic multichain 𝓛 of O_B-lattices, a cocharacter with local reflex field E and a framing object over F̄_p), the functor 𝓜 on schemes over Spf O_Ĕ on which p is locally nilpotent, of 𝓛-sets of p-divisible groups with O_B-action satisfying the Kottwitz condition, with the polarizations prescribed by 𝓛 and a framing quasi-isogeny over the special fibre, is represented by a formal scheme locally formally of finite type over Spf O_Ĕ. Consequently the functors N_n of Layer 1, N¹_n of Layer 2, N^exo of Layer 3 and N_n^Kra of Layer 5 are represented by separated formal schemes locally formally of finite type over Spf O_L̆ in every case (O_L̆=O_K̆ when L/K is unramified): each is, for suitable data, the closed formal subscheme of such an 𝓜 cut out by the strictness of Layer 0, the Eisenstein conditions, the relative polarization and kernel conditions, the wedge condition, and the open and closed conditions of height zero and exact multiplier; N^exo is moreover intersected with the open spin locus, and N_n^Kra is the closed subscheme of the relative Grassmannian of rank-(n−1) summands of Lie X cut out by the Krämer conditions. The space Ñ_n of Layer 2 is closed in `N¹_n×N_{n+1}`. None of these formal schemes is asserted to be quasi-compact or to carry the p-adic topology. (RZ96, Theorem 2.16, p. 54; Definition 3.21, pp. 81–82; Theorem 3.25 and its proof, p. 88.)
+For local EL or PEL data in the sense of RZ96 Definition 3.18 (a semisimple ℚ_p-algebra B, with an involution in the PEL case, a maximal order O_B, a multichain 𝓛 of O_B-lattices, self-dual and periodic in the PEL case, a cocharacter with local reflex field E and a framing object over F̄_p), the functor 𝓜 of RZ96 Definition 3.21 on schemes over Spf O_Ĕ on which p is locally nilpotent, of 𝓛-sets of p-divisible groups with O_B-action satisfying the Kottwitz condition, in the PEL case with the polarizations prescribed by 𝓛, and a framing quasi-isogeny over the special fibre, is represented by a formal scheme locally formally of finite type over Spf O_Ĕ. Consequently, for a quadratic extension L/K and a biformal framing object 𝕏 with O_L-action over the residue field of O_L̆, every relative unitary framed functor is represented by a separated formal scheme locally formally of finite type over Spf O_L̆ (O_L̆=O_K̆ when L/K is unramified). Here a relative unitary framed functor is a subfunctor of the EL functor 𝓜 for B=L, O_B=O_L and a single lattice, applied to the underlying p-divisible group of 𝕏 with its O_L-action, cut out by finitely many conditions of the following kinds: closed conditions (the strictness of §0.1; a determinant, Eisenstein or wedge equation on Lie X; that the lift to X of the relative quasi-polarization pulled back from 𝕏 along the framing is an isogeny; a kernel condition on that lift); open and closed conditions (a height or a degree); open conditions on Lie X at geometric points; and the adjunction of an O_L-stable locally direct summand of Lie X cut out by closed conditions in a Grassmannian bundle. The subfunctor of a product of two relative unitary framed functors cut out by the condition that the lift of a fixed framing quasi-isogeny between objects built from the two universal objects is an isogeny with a prescribed kernel condition is again represented by a separated formal scheme locally formally of finite type over Spf O_L̆, closed in the product. The relative polarization is a quasi-isogeny from X to its relative dual X^∨ of §0.1, not to the Cartier dual of the underlying p-divisible group, so these functors are not PEL functors of RZ96 for their underlying groups; every point is biformal, its special fibre being quasi-isogenous to the biformal 𝕏, so X^∨ exists over the whole functor. Layers 1, 2, 3 and 5 apply this criterion to their framed functors (§§1.2, 2.2, 2.4, 3.3, 5.3 and 5.7). None of these formal schemes is asserted to be quasi-compact or to carry the p-adic topology. (RZ96, Proposition 2.9, p. 52; Theorem 2.16, p. 54; Definition 3.18, p. 77; Definition 3.21, pp. 81–82; Theorem 3.25 and its proof, p. 88.)
 
-Hypotheses for this target: p>2 for the unitary consequences; the data of RZ96 Definition 3.21 for the general statement.
+Hypotheses for this target: p>2 and a biformal framing object for the relative unitary criterion; the data of RZ96 Definition 3.21 for the general statement.
 
-*Route.* Represent the unstructured functor of framed p-divisible groups (RZ96 Theorem 2.16; it is the unstructured functor of IgusaVarietiesAndTorsionConcentration §0.27) and cut out the O_B-stable locus and the 𝓛-set conditions as closed subfunctors; the Kottwitz condition is closed (RZ96 proof of Theorem 3.25). Translate the relative conditions of Layer 0 (strict action, relative polarization of §0.1) into closed conditions on the absolute p-divisible group, and the height and multiplier conditions into open and closed ones. Add the Krämer filtration as a closed subscheme of a Grassmannian bundle and the spin condition as an open condition; separatedness follows from rigidity of quasi-isogenies.
+*Route.* Represent the unstructured functor of framed p-divisible groups (RZ96 Theorem 2.16; it is the unstructured functor of IgusaVarietiesAndTorsionConcentration §0.27) and cut out the O_B-stable locus and the 𝓛-set conditions as closed subfunctors; the Kottwitz condition is closed (RZ96 proof of Theorem 3.25). For the relative functors start from the EL functor: strictness and the determinant, Eisenstein and wedge conditions are closed conditions on Lie of the absolute p-divisible group with its O_L-action. Impose the relative polarization through the relative dual of §0.1, not the Cartier dual: by Drinfeld rigidity the quasi-isogeny ρ^∨∘λ_𝕏∘ρ over the special fibre lifts uniquely to a quasi-isogeny λ:X→X^∨ over the base; that λ is an isogeny is a closed condition (RZ96 Proposition 2.9), and each kernel condition says that a quasi-isogeny built from λ (λ itself for a principal polarization, λ∘i(u)⁻¹ for the exotic kernel X[i(u)], ϖλ⁻¹ for an almost self-dual kernel inside X[ϖ]) is an isogeny of prescribed degree, a closed condition followed by an open and closed one; when the framing is to preserve the polarization only up to O_K^×, the lift is required to be principal and arrows allow O_K^×-multiples. The height condition is open and closed. Add a filtration of Lie X as a closed subscheme of a Grassmannian bundle and a nonvanishing condition on Lie X at geometric points as an open condition. For a subfunctor of a product, the fixed framing quasi-isogeny lifts uniquely by rigidity, and that the lift is an isogeny with the prescribed kernel is closed by RZ96 Proposition 2.9. Separatedness follows from rigidity of quasi-isogenies.
 
 **Checks.**
 
-- At n=1 with L/K unramified, N_1=Spf O_L̆ (LZ22 §2.2): the strict O_L-action leaves no deformation parameter, whereas the unstructured deformation space of the underlying p-divisible group, of height 2[K:ℚ_p] and dimension [K:ℚ_p], has [K:ℚ_p]² parameters.
+- For L/K unramified, the relative unitary framed functor of strict O_L-modules of relative height 2, dimension 1 and signature (1,0) with principal relative polarization and height-zero framing (the functor N_1 of §1.1) is Spf O_L̆ (LZ22 §2.2): the strict O_L-action leaves no deformation parameter, whereas the unstructured deformation space of the underlying p-divisible group, of height 2[K:ℚ_p] and dimension 1 (forgetting the action keeps the Lie algebra), has 1·(2[K:ℚ_p]−1)=2[K:ℚ_p]−1 parameters; a dimension [K:ℚ_p] would give [K:ℚ_p]² and confuse the underlying group with the different object that §0.4 produces.
+- A relative polarization is not a polarization of the underlying p-divisible group. For K/ℚ_p totally ramified of degree 2, the rank-one source of §1.3 (relative height 2, dimension 1) has underlying p-divisible group of height 4 and dimension 1, whose Cartier dual has dimension 4−1=3, while its relative dual has relative height 2 and dimension 2−1=1; a principal relative polarization is therefore not an isomorphism with the Cartier dual, and the relative functors are cut out of the EL functor, not of the PEL functor of their underlying groups.
 - The spin condition is open, not closed: imposing only the closed conditions on the exotic functor adds the locus where i(u) acts by zero on Lie at some geometric point.
-- At n=2 the completed local ring of N_2 at a point is O_L̆[[t]], whose ideal of definition contains t; the topology is not the p-adic one.
+- For the same data in relative height 4, dimension 2 and signature (1,1) (the functor N_2 of §1.1), the completed local ring at a point is O_L̆[[t]], whose ideal of definition contains t; the topology is not the p-adic one.
 - IgusaVarietiesAndTorsionConcentration §0.27 is the case of an unramified datum with a single self-dual lattice; the almost self-dual chain Λ⊂Λ^♯ of Layer 2, with Λ^♯/Λ of length one, and the ramified data of Layer 3 and Layer 5 lie outside it.
 
 *Needs:* §0.1; IgusaVarietiesAndTorsionConcentration §0.27 (unstructured framed functor); AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.26.
@@ -345,30 +440,30 @@ For a quadratic extension L/K of p-adic fields with p odd, fix an embedding L in
 
 Hypotheses for this target: p>2; L/K quadratic; r,s nonnegative; n=r+s>0. All local moduli are evaluated on locally noetherian schemes over the completed maximal unramified coefficient ring on which the residue characteristic is locally nilpotent; reduction means the scheme cut out by the uniformizer, not the reduced scheme.
 
-*Route.* Specialize §0.1 to O=O_K, keeping the structural O_K-action on Lie X. Impose the two-embedding determinant equation and the relative adjoint equation; inherit base change and isomorphisms from §0.1. Record the absolute-height conversion and its distinction from absolute dimension.
+*Route.* Specialize §0.1 to O=O_K, keeping the structural O_K-action on Lie X. Impose the two-embedding determinant equation and the relative adjoint equation; inherit base change and isomorphisms from §0.1. Record the absolute-height conversion of HilbertModularVarietiesAndShimuraCurves §R18.5.4; forgetting the O_K-action keeps Lie X, so the dimension stays n.
 
 **API.**
 
 - A strict formal O_K-module with an O_L-action, a principal relative polarization and the two displayed equations is a principal hermitian module; isomorphisms are O_L-linear isomorphisms preserving λ.
-- For relative height 2n, the underlying p-divisible group has p-height 2n[K:ℚ_p].
+- For relative height 2n and dimension n, the underlying p-divisible group has p-height 2n[K:ℚ_p] and dimension n.
 - Base change preserves strictness, signature and relative polarization; identity and iterated base changes have canonical compatible isomorphisms.
 - For every a∈O_L the existing finite-free characteristic polynomial on Lie X is the stated two-factor polynomial.
 
 **Checks.**
 
-- For [K:ℚ_p]=2 and n=3 the relative height is 6 and absolute height 12; the dimension is 3.
+- For [K:ℚ_p]=2 and n=3 the relative height is 6 and absolute height 12; the dimension is 3 for the strict module and for its underlying p-divisible group, not 3[K:ℚ_p]=6.
 - For n=1, signature (1,0) gives Lie action a, while signature (0,1) gives ā.
 - An action whose adjoint fixes a with a≠ā fails the polarization condition.
 - An unramified quadratic extension with K ramified over ℚ_p still has relative height 2n.
 - The polarization adjoint is conjugation on O_L.
 
-*Needs:* FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1; §0.1; PELModuli §M0.18; Mathlib `LinearMap.charpoly`.
+*Needs:* FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1; §0.1; HilbertModularVarietiesAndShimuraCurves §R18.5.4; PELModuli §M0.18; Mathlib `LinearMap.charpoly`.
 
 ### 0.4 Mihatsch relative comparison
 
-Suppose L/K is unramified quadratic and ℚ_p⊂K₀⊂K. On locally noetherian schemes over Spf O_L̆ on which p is locally nilpotent, construct Mihatsch’s equivalence C from hermitian O_L–O_K₀-modules that have a signature (Zariski locally on the base they satisfy the condition P(r,s) below, with its structural-action Eisenstein clause, for some (r,s)) to strict O_K hermitian O_L-modules, sending signature (r,s) to signature (r,s). No supersingularity is assumed: supersingular framings enter only in §0.5. For K/K₀ unramified, contract the embedding-graded display by a full Frobenius round trip. For K/K₀ totally ramified, lift the pairing through the inverse-different trace, pass through the Lubin–Tate frame and rescale by the frame-change unit. Compose along the unramified/totally ramified factorization. C is compatible with Rosati adjoints and polarized quasi-isogenies. Write Ψ for the K₀-embeddings of the maximal subfield Lᵘ⊂L unramified over K₀, split into conjugate halves Ψ₀,Ψ₁ with distinguished ψ₀∈Ψ₀. Put `P₀₁(a;T)=∏_{ψ∈Ψ₁}ψ(charpoly_{L/Lᵘ}(a;T))`, P₁₀=P₀₁(T−a)/(T−ā), and P(r,s)=P₁₀^r P₀₁^s; the indicated quotient is polynomial. Require this characteristic polynomial on Lie and `(i(a)−a)|Lie_{ψ₀}=0` for every a∈O_L. This last zero-endomorphism equation is part of the input. On the O_K₀ side the relative height and dimension are 2n[K:K₀] and n[K:K₀]; the strict O_K side has height 2n and dimension n. (Mih19, Definitions 2.7–2.8, pp. 8–9; Definition 3.2 and Theorem 3.3, p. 12; Propositions 3.4 and 3.6, Lemma 3.9 and Corollary 3.10, pp. 11–18.)
+Suppose L/K is unramified quadratic and ℚ_p⊂K₀⊂K. A hermitian O_L–O_K₀-module over a scheme over Spf O_L̆ is a supersingular strict formal O_K₀-module X (all relative slopes 1/2) with an O_L-action i and a principal relative polarization λ of §0.1 (for O=O_K₀) such that λ⁻¹i(a)^∨λ=i(ā); it has rank n when its K₀-relative height is 2n[K:K₀], and its dimension is then n[K:K₀]. On locally noetherian schemes over Spf O_L̆ on which p is locally nilpotent, construct Mihatsch’s equivalence C from the stack of hermitian O_L–O_K₀-modules that have a signature (Zariski locally on the base they satisfy the condition P(r,s) below, with its structural-action Eisenstein clause, for some (r,s)) to the stack of supersingular principal hermitian O_L-modules of §0.3 that have a signature, sending signature (r,s) to signature (r,s). Supersingularity is part of the carrier, as in the source: C is built from O-displays and relative duals, which exist only for formal, resp. biformal, objects (§0.1). For K/K₀ unramified of degree f, contract the embedding-graded display by a full Frobenius round trip; the result is a principally polarized f-O_K₀-display with O_L-action, which the base change δ of §0.1 (O=O_K₀, O′=O_K) turns into a principally polarized strict formal O_K-module. For K/K₀ totally ramified, lift the pairing through the inverse-different trace, pass through the Lubin–Tate frame and rescale by the frame-change unit. Compose along the unramified/totally ramified factorization. C is compatible with Rosati adjoints and polarized quasi-isogenies. Write Ψ for the K₀-embeddings of the maximal subfield Lᵘ⊂L unramified over K₀, split into conjugate halves Ψ₀,Ψ₁ with distinguished ψ₀∈Ψ₀. Put `P₀₁(a;T)=∏_{ψ∈Ψ₁}ψ(charpoly_{L/Lᵘ}(a;T))`, P₁₀=P₀₁(T−a)/(T−ā), and P(r,s)=P₁₀^r P₀₁^s; the indicated quotient is polynomial. Require this characteristic polynomial on Lie and `(i(a)−a)|Lie_{ψ₀}=0` for every a∈O_L. This last zero-endomorphism equation is part of the input. The condition P(r,s) concerns only Lie X with its O_L-action, so it is defined for every p-divisible group with O_L-action over such a base, formal or not; §6.5 imposes it on abelian schemes at every point, where C is not used. On the O_K₀ side the relative height and dimension are 2n[K:K₀] and n[K:K₀]; the strict O_K side has height 2n and dimension n. C changes the p-divisible group: the strict O_K₀-module underlying C(X) has K₀-relative height 2n[K:K₀] but dimension n, so C(X) is not X with its action restricted or forgotten. (Mih19, Definition 2.2 and its footnote 3 (supersingularity), p. 7; Definitions 2.7–2.8, pp. 8–9; the opening of §3 (the lift of the pairing through a generator of the inverse different), p. 11; Definition 3.2 and Theorem 3.3, p. 12; Propositions 3.4 and 3.6, Lemma 3.9 and Corollary 3.10, pp. 12–18.)
 
-*Route.* Use the O-display and Lubin–Tate window equivalences of §0.1 and normal decompositions. In the totally ramified case keep the inverse-different generator and the unit correcting the change of frame. Identify contracted Hodge crystals and homomorphism lifting across square-zero thickenings, then induct along the nilpotent nilradical of a noetherian base.
+*Route.* Use the O-display, f-O-display and Lubin–Tate window equivalences of §0.1 and normal decompositions. In the totally ramified case keep the inverse-different generator and the unit correcting the change of frame. Identify contracted Hodge crystals and homomorphism lifting across square-zero thickenings, then induct along the nilpotent nilradical of a noetherian base.
 
 **API.**
 
@@ -384,7 +479,8 @@ Suppose L/K is unramified quadratic and ℚ_p⊂K₀⊂K. On locally noetherian 
 - An absolute Lie action satisfying only multiplicity ranks but violating the structural-action clause is not an input to C.
 - The comparison applies when K/ℚ_p is ramified; this is distinct from the exotic comparison in Layer 4.
 - On the relative side the height is 2n, not the absolute height.
-- On a μ-ordinary hermitian module of signature (1,n−1) over F̄_p with K₀=K, C is the identity: the comparison is defined on objects that are not supersingular, and a version restricted to supersingular objects could not be applied at the ordinary points of the global models of Layer 7, where §6.5 imposes the same Lie condition.
+- The domain of C is cut out by supersingularity, not by failure of μ-ordinarity, so whether a μ-ordinary object is an input of C depends on the signature. Take K₀=K=ℚ_p and `L=ℚ_{p²}`, where C is the identity. For signature (r,s) the Hodge cocharacters at the two embeddings of L are (1^r,0^s) and (1^s,0^r); Frobenius interchanges them, and the μ-ordinary slopes are their average: slope 1 with multiplicity min(r,s), slope 1/2 with multiplicity |r−s| and slope 0 with multiplicity min(r,s), each slope taken twice, 2n slopes in all. So the μ-ordinary object is supersingular, hence an input of C, exactly when rs=0. At n=1 and signature (1,0) the average is 1/2: the μ-ordinary object is the supersingular module 𝔈 of §1.3, of height 2 and dimension 1, and C(𝔈)=𝔈. At n=2, the μ-ordinary principally polarized p-divisible group with O_L-action of signature (1,1) is the product of an étale and a multiplicative O_L-module of O_L-height 1: its slopes are 0,0,1,1 and its étale part has height 2, so it is not formal, has no nilpotent O-display (§0.1) and is not supersingular. The ordinary and μ-ordinary points of the global models of Layer 7, where §6.5 imposes the same condition P(r,s), are handled by the local model of §0.6 with K₀=ℚ_p through the Grothendieck–Messing local-model diagram of §7.5, which uses P(r,s) and not C.
+- C changes the dimension, which forgetting an action never does: for K₀=ℚ_p, K/ℚ_p totally ramified of degree 2 and n=1, a hermitian O_L–ℤ_p-module has height 4 and dimension 2, while C(X) has relative height 2 and dimension 1 and its underlying p-divisible group has height 4 and dimension 1.
 
 *Needs:* §0.3; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; AbelianSchemesAndArithmeticModuli §A4.7.
 
@@ -410,7 +506,7 @@ For unramified quadratic L/K, intermediate K₀⊂K and the signature P(r,s) wit
 **API.**
 
 - The local model is the functor on schemes S over Spec O_L̆ of O_L-stable Lagrangian subbundles F of D⊗O_S, where D is the free module of rank n over `O_L ⊗_{O_{K₀}} O_L̆` with its split perfect alternating pairing for which the O_L-action is adjoint to its conjugate, such that the O_L-action on the quotient D⊗O_S/F satisfies the characteristic-polynomial condition (i) for P(r,s) and the structural-action clause (ii) on the distinguished summand; it is a closed subfunctor of the Grassmannian of O_L-stable Lagrangian subbundles of D (Mih19, Definition 2.11, p. 9).
-- The subfunctor cut out by clause (ii) and the rank conditions (i′) on the embedding-graded pieces of the quotient (zero on the banal summands of the chosen half-system, full on the banal summands of its conjugate, r on the distinguished summand and the complementary rank on its conjugate; Mih19, Lemma 2.10, p. 9) is a closed subscheme isomorphic to the Grassmannian of rank-r quotients of the free rank-n O_L̆-module obtained from the distinguished summand of D by the structural action, the banal pieces being forced and the conjugate piece the orthogonal complement of the distinguished one. It contains the local model, the two have the same generic fibre, and they coincide (Mih19, Proposition 2.12 and its proof, pp. 9–10). The Grassmannian is the R-points functor of `Module.Grassmannian` of the Mathlib contract, represented by AlgebraicModuliForArithmeticGeometry §1.3.
+- The subfunctor cut out by clause (ii) and the rank conditions (i′) on the embedding-graded pieces of the quotient (zero on the banal summands of the chosen half-system, full on the banal summands of its conjugate, r on the distinguished summand and the complementary rank on its conjugate; Mih19, Lemma 2.10, p. 9) is a closed subscheme isomorphic to the Grassmannian of rank-r quotients of the free rank-n O_L̆-module obtained from the distinguished summand of D by the structural action, the banal pieces being forced and the conjugate piece the orthogonal complement of the distinguished one. It contains the local model, the two have the same generic fibre, and they coincide (Mih19, Proposition 2.12 and its proof, pp. 9–10). The Grassmannian is the R-points functor of `Module.Grassmannian` of the Mathlib contract, represented over Spec O_L̆ by Tau Ceti's `Module.Grassmannian.scheme` of the free O_L̆-module of rank n with k=r; its smoothness of relative dimension rs is AlgebraicModuliForArithmeticGeometry §1.3.
 - The local model is integral and smooth over Spec O_L̆ of relative dimension rs, and its relative tangent space at a point is the module of homomorphisms from the rank-s kernel to the rank-r quotient on the distinguished summand (Mih19, Proposition 2.12, p. 9; the tangent formula of AlgebraicModuliForArithmeticGeometry §1.3).
 - For a hermitian O_L–O_K₀-module over a scheme over Spf O_L̆, the Hodge filtration of its relative Dieudonné crystal D_X of §0.1 is, Zariski locally after trivializing the crystal by a basis adapted to the embedding grading, a point of the Lagrangian Grassmannian of D, and the module has signature (r,s) exactly when that point lies in the local model; this is the chart through which §0.4 and §1.2 compute deformations (Mih19, Lemma 2.13 and the proof of Lemma 2.10, pp. 9–10).
 
@@ -421,7 +517,7 @@ For unramified quadratic L/K, intermediate K₀⊂K and the signature P(r,s) wit
 - Replacing the characteristic-polynomial condition (i) by the rank conditions (i′), keeping clause (ii), does not change the functor: the subfunctor so defined is the integral smooth Grassmannian of the second API bullet, it contains the local model because (i) evaluated on the maximal unramified subring of O_L over O_K₀ forces the ranks of the graded pieces, and the two have the same generic fibre (Mih19, Proposition 2.12, pp. 9–10). A definition that only recorded multiplicities of embeddings, without the equality of generic fibres, would not know that (i) imposes nothing beyond (i′) integrally.
 - Clause (ii) is not implied by (i) when K/K₀ is ramified. Take K₀=ℚ_p, K=ℚ_p(√p), n=2, (r,s)=(2,0) and S the spectrum of the residue field k. The local model has a single k-point, the subbundle whose distinguished part is the image of √p, on whose rank-2 quotient √p acts by zero, as clause (ii) demands since the structural image of √p vanishes in k. The O_L-stable Lagrangian F whose distinguished part is the second coordinate copy of `O_L ⊗_{O_{K₀}} k` inside the free rank-2 module, with conjugate part forced by the pairing, has a rank-2 quotient on which √p acts as a nonzero square-zero nilpotent; for every a in O_L both sides of (i) equal `(t − a₀)²(t − ā₀)²` in k[t], where a₀ and ā₀ are the images of a under the two residue embeddings, so F satisfies (i) and the rank conditions (i′) but not (ii). A definition without clause (ii) therefore has a larger special fibre; when K/K₀ is unramified clause (ii) is automatic (Mih19, Remark 2.9, p. 9).
 
-*Needs:* §0.4; §0.1; AlgebraicModuliForArithmeticGeometry §1.3; AbelianSchemesAndArithmeticModuli §A4.7.
+*Needs:* §0.4; §0.1; Tau Ceti `Module.Grassmannian.scheme`; AlgebraicModuliForArithmeticGeometry §1.3; AbelianSchemesAndArithmeticModuli §A4.7.
 
 ### 0.7 Comparison of signature conventions
 
@@ -433,21 +529,22 @@ Precomposing i with the nontrivial automorphism of L/K gives an involutive equiv
 
 - For n=1 the two rank-one Lie characters are interchanged.
 - Conjugating the target from signature (1,n−1) to (n−1,1) while keeping the rank-one source 𝔈̄ of signature (0,1) pairs the target with a source of the wrong signature: in the conjugated convention the source is 𝔈 of signature (1,0), as in §1.4, and the special-Hom space is formed from it.
+- At n=3 the equivalence sends signature (1,2) to (2,1): with i′(a)=i(ā), det(T−i′(a)|Lie X)=(T−ā)(T−a)² replaces (T−a)(T−ā)², while the relative height 6, the dimension 3 and λ are unchanged, and λi′(a)=λi(ā)=i(a)^∨λ=i′(ā)^∨λ is again the polarization relation. An operation that changed λ or the height would not be this equivalence.
 
 *Needs:* §0.3.
 
 ### Examples
 
-- Heights. Take K=ℚ_p(√p), so [K:ℚ_p]=2, L/K unramified quadratic and n=3. A principal hermitian O_L-module of signature (1,2) has relative height 6 and dimension 3 as a strict O_K-module, and its underlying p-divisible group has height 12 and dimension 6. The absolute height 6 is the height of a different carrier.
-- Deformation parameters. For the same K and n=1, the unstructured deformation space of the underlying p-divisible group (height 4, dimension 2) has 2·2=4 parameters, whereas N_1=Spf O_L̆ has none: the strict O_L-action removes all four.
-- Relative comparison. For K₀=ℚ_p and K/ℚ_p unramified of degree f=2, an O_L–ℤ_p-hermitian module of signature (1,1) in the sense of §0.4 has height 2n[K:K₀]=8 and dimension 4; the comparison C sends it to a strict O_K-module of relative height 4 and dimension 2.
+- Heights. Take K=ℚ_p(√p), so [K:ℚ_p]=2, L/K unramified quadratic and n=3. A principal hermitian O_L-module of signature (1,2) has relative height 6 and dimension 3 as a strict O_K-module, and its underlying p-divisible group has height 12 and dimension 3. The absolute height 6 is the height of a different carrier. When the module is supersingular, the inverse of the comparison C of §0.4 with K₀=ℚ_p attaches to it a hermitian O_L–ℤ_p-module of height 12 and dimension n[K:ℚ_p]=6: a different p-divisible group, not the underlying one.
+- Deformation parameters. For the same K and n=1, the unstructured deformation space of the underlying p-divisible group (height 4, dimension 1) has 1·(4−1)=3 parameters, whereas N_1=Spf O_L̆ has none: the strict O_L-action removes all three.
+- Relative comparison. For K₀=ℚ_p and K/ℚ_p unramified of degree f=2, a supersingular O_L–ℤ_p-hermitian module of signature (1,1) in the sense of §0.4 has height 2n[K:K₀]=8 and dimension 4; the comparison C sends it to a strict O_K-module of relative height 4 and dimension 2, whose underlying p-divisible group has height 8 and dimension 2.
 - Local model. At (r,s)=(1,2) the local model of §0.6 is the Grassmannian of rank-one quotients of a free module of rank 3, the projective plane, of relative dimension rs=2.
 
 ### Dependencies
 
 Within this roadmap: none; this is the first layer.
 
-Suppliers: PELModuli §M2.15, §M0.18; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.26, §R07.2.10; EndoscopicTransferAndUnitaryTraceComparison §7.6; IgusaVarietiesAndTorsionConcentration §0.27 (unstructured framed functor); AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7; AlgebraicModuliForArithmeticGeometry §1.3; Mathlib `LinearMap.charpoly`.
+Suppliers: PELModuli §M2.15, §M0.18; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.26, §R07.2.10; HilbertModularVarietiesAndShimuraCurves §R18.5.4; EndoscopicTransferAndUnitaryTraceComparison §7.6; IgusaVarietiesAndTorsionConcentration §0.27 (unstructured framed functor); AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7; AlgebraicModuliForArithmeticGeometry §1.3; VectorBundlesAndIsocrystals Layer 0, “Ramified coefficient rings and coefficient changes”, and Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field”, “Mixed-characteristic supplier comparison” and “Dieudonné–Manin classification of finite isocrystals”; Mathlib `LinearMap.charpoly`; Tau Ceti `Module.Grassmannian.scheme`.
 
 Supplier contracts: gap:zink-display-equivalence (see Exact supplier contracts).
 
@@ -537,7 +634,7 @@ After fixing `𝕏_{n+1}=𝕏_n×𝔈̄` and product principal polarization, def
 
 Set `V_n=Hom^0_{O_L}(𝔈̄,𝕏)`, with h(x,y)=λ_𝔈̄^−1 y^∨ λ_𝕏 x, viewed as an element of L through `End^0_{O_L}(𝔈̄)=L`. Use the convention linear in x and conjugate-linear in y. This is an n-dimensional nonsplit nondegenerate L/K-Hermitian space; composition identifies U(V_n) with the O_L-linear polarized self-quasi-isogenies of 𝕏. (LZ22, §2.2, p. 11.)
 
-*Route.* Use the rational Dieudonné classification of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10 to identify Hom^0 and rank. Apply the Rosati equation to prove sesquilinearity and Hermitian symmetry. Calculate the determinant invariant of the supersingular framing; faithful action on Hom identifies the isometry group.
+*Route.* Identify Hom^0 with the L-linear maps of the relative isocrystals of §0.1, both isoclinic of slope 1/2, and compute its rank by the Dieudonné–Manin classification of K-isocrystals, or through the absolute rational Dieudonné classification of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10 with the O_K-action. Apply the Rosati equation to prove sesquilinearity and Hermitian symmetry. Calculate the determinant invariant of the supersingular framing; faithful action on Hom identifies the isometry group.
 
 **API.**
 
@@ -552,7 +649,7 @@ Set `V_n=Hom^0_{O_L}(𝔈̄,𝕏)`, with h(x,y)=λ_𝔈̄^−1 y^∨ λ_𝕏 x, 
 - Replacing 𝔈̄ by 𝔈 without conjugating the framing is not the declared special-Hom convention.
 - For a∈L with a ā=1, scalar composition is an isometry and acts through the same quasi-isogeny on ρ.
 
-*Needs:* §1.3; PELModuli §M0.22; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
+*Needs:* §1.3; PELModuli §M0.22; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
 
 ### 1.6 Unitary diagonal graph
 
@@ -585,11 +682,11 @@ For n≥2 and the chosen recursive framings, let `δ:N_{n−1}→N_n` be §1.4 a
 
 Within this roadmap: Layer 0 (§0.1, §0.2, §0.3, §0.6, §0.7).
 
-Suppliers: AbelianSchemesAndArithmeticModuli §A4.7; PELModuli §M2.12, §M0.22; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
+Suppliers: AbelianSchemesAndArithmeticModuli §A4.7; PELModuli §M2.12, §M0.22; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
 
 ## Layer 2: Almost self-dual and mixed moduli
 
-For n≥2 define the signature-(1,n−1) framed functor with polarization kernel killed by ϖ of order q², and prove flat regular semistable geometry over its natural coefficient ring. Construct its split Hermitian special-Hom space and the mixed isogeny functor using the conjugate source ℰ̄, fixed rational framing, unique lift and pullback λ_Y×ϖλ_ℰ̄. Prove the first projection generically finite étale of degree q+1 and the second generically an isomorphism onto its image; the local isogeny degree is q².
+For n≥2 define the signature-(1,n−1) framed functor with polarization kernel killed by ϖ of order q², and prove flat regular semistable geometry over its natural coefficient ring. Construct its split Hermitian special-Hom space and the mixed isogeny functor using the conjugate source ℰ̄, fixed rational framing, unique lift and pullback λ_Y×ϖλ_ℰ̄. Prove the first projection generically finite étale of degree q+1 and the second generically an isomorphism onto the special divisor Z(x₀) of §2.4; the local isogeny degree is q².
 
 ### 2.1 Almost self-dual framed functor
 
@@ -631,9 +728,9 @@ Hypotheses for this target: the local field conditions of Layer 1 and n≥2; a f
 
 ### 2.3 Almost self-dual special Hom space
 
-Put `W_n=Hom^0_{O_L}(𝔈̄,𝕐)` with h(x,y)=λ_𝔈̄^−1 y^∨λ_𝕐 x. It is the split n-dimensional Hermitian space. Choose the rank-one vector x_0 of norm ϖ in a nonsplit `V_{n+1}` and a framing identification `V_{n+1}=W_n⊥Lx_0`. Use the same conjugate rank-one source 𝔈̄ as in Layer 1; the changed target polarization type and norm scaling are part of this identification. (LZ22, §10.2, equations (10.2.1)–(10.2.2), pp. 64–65.)
+Put `W_n=Hom^0_{O_L}(𝔈̄,𝕐)` with h(x,y)=λ_𝔈̄^−1 y^∨λ_𝕐 x. It is the split n-dimensional Hermitian space. Choose the rank-one vector x_0 of norm ϖ in a nonsplit `V_{n+1}` and a framing identification `V_{n+1}=W_n⊥Lx_0`. Use the same conjugate rank-one source 𝔈̄ as in Layer 1; the changed target polarization type and norm scaling are part of this identification. (LZ22, §10.1, p. 64; §10.2, equation (10.2.0.1) and the orthogonal decomposition following it, pp. 64–65.)
 
-*Route.* Compute rational Hom from the same isocrystal with the new polarization lattice. Use Hermitian discriminant classification to identify the split invariant. Choose an isometry of the orthogonal sum with `V_{n+1}`; retain the chosen identification.
+*Route.* Compute rational Hom from the same relative isocrystals (§0.1) with the new polarization lattice. Use Hermitian discriminant classification to identify the split invariant. Choose an isometry of the orthogonal sum with `V_{n+1}`; retain the chosen identification.
 
 **API.**
 
@@ -647,19 +744,19 @@ Put `W_n=Hom^0_{O_L}(𝔈̄,𝕐)` with h(x,y)=λ_𝔈̄^−1 y^∨λ_𝕐 x. It
 - The split invariant of W_n differs from the nonsplit invariant of the principal-framing V_n.
 - The extended isometry fixes x_0 and preserves its orthogonal complement.
 
-*Needs:* §1.3; §2.1; §1.5; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10.
+*Needs:* §1.3; §2.1; §1.5; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”.
 
 ### 2.4 Auxiliary isogeny space
 
-Construct Ñ_n with points (Y,X,α), where Y∈N_n^1, `X∈N_{n+1}`, and α:Y×ℰ̄→X is an O_L-linear isogeny with kernel contained in (Y×ℰ̄)[ϖ], compatible with the fixed rational framings, and satisfying α*λ_X=λ_Y×ϖλ_ℰ̄. Write π_1 and π_2 for the two forgetful maps. In the induced rational special-Hom description the distinguished rank-one direction has norm ϖ. For a fixed pair (Y,X) and the chosen rational framing isogeny, the integral lift α is unique if it exists; Ñ is a closed subfunctor of `N_n^1×N_{n+1}`. The source has signature (1,n), since ℰ̄ has signature (0,1), and deg α=q². (LZ22, §10.2, p. 65.)
+Construct Ñ_n with points (Y,X,α), where Y∈N_n^1, `X∈N_{n+1}`, and α:Y×ℰ̄→X is an O_L-linear isogeny with kernel contained in (Y×ℰ̄)[ϖ], compatible with the fixed rational framings, and satisfying α*λ_X=λ_Y×ϖλ_ℰ̄. Write π_1 and π_2 for the two forgetful maps. In the induced rational special-Hom description the distinguished rank-one direction has norm ϖ. For a fixed pair (Y,X) and the chosen rational framing isogeny, the integral lift α is unique if it exists; Ñ_n is a closed subfunctor of `N_n^1×N_{n+1}`. The source has signature (1,n), since ℰ̄ has signature (0,1), and deg α=q². (LZ22, §10.2, p. 65.) Write Z(x₀) for the special divisor on `N_{n+1}` of the vector x₀ of §2.3: the closed formal subscheme over which the quasi-homomorphism ρ_X⁻¹∘x₀∘ρ_ℰ̄ from ℰ̄ to X, given over the uniformizer-zero subscheme, lifts to a homomorphism ℰ̄_S→X. The map π₂ factors through Z(x₀), the lift being the restriction of α to the factor ℰ̄. (LZ22, §2.3, p. 11; diagram (10.2.0.3), p. 65.)
 
-*Route.* Choose once the framing isogeny matching W_n⊥Lx_0. Impose the prescribed finite flat kernel and pullback-polarization conditions as closed conditions on `N¹_n×N_{n+1}` (§0.2). Construct the two projections and verify their base changes.
+*Route.* Choose once the framing isogeny matching W_n⊥Lx_0. Impose the prescribed finite flat kernel and pullback-polarization conditions as closed conditions on `N¹_n×N_{n+1}` (§0.2). Construct the two projections and verify their base changes. Z(x₀) is closed: by rigidity the quasi-homomorphism lifts uniquely over S, locally on S some p^m times it is a homomorphism, and it is a homomorphism exactly where p^m times it kills ℰ̄[p^m], a closed condition (RZ96, proof of Proposition 2.9 and Lemma 2.10, pp. 52–53).
 
 **API.**
 
 - A point of Ñ_n is (Y,X,α) with ker α⊂(Y×ℰ̄)[ϖ] and α*λ_X=λ_Y×ϖλ_ℰ̄.
 - π₁ forgets X and α and lands in N¹_n.
-- π₂ forgets Y and α and lands in `N_{n+1}`.
+- π₂ forgets Y and α and lands in `N_{n+1}`; it factors through the special divisor Z(x₀), the restriction of α to ℰ̄ being the lift of x₀.
 - Both projections commute with nilpotent-base pullback.
 - For the same pair (Y,X) and fixed rational framing isogeny, two integral lifts agree by rigidity; this is not uniqueness of the target given Y alone.
 
@@ -669,19 +766,21 @@ Construct Ñ_n with points (Y,X,α), where Y∈N_n^1, `X∈N_{n+1}`, and α:Y×�
 - Replacing ϖλ_ℰ̄ by λ_ℰ̄ changes the polarization equation and does not define the same auxiliary functor.
 - Two objects with the same Y can have distinct isogeny choices; π_1 does not discard a uniqueness datum.
 - At n=2, Y×ℰ̄ has signature (1,2). Substituting ℰ gives (2,1) and cannot be isogenous in characteristic zero to the specified N₃ target.
+- The restriction β of α to ℰ̄ has λ_ℰ̄⁻¹β^∨λ_Xβ=λ_ℰ̄⁻¹(ϖλ_ℰ̄)=ϖ, read off from α*λ_X=λ_Y×ϖλ_ℰ̄ on the second factor; this is h(x₀,x₀), as it must be for β to lift x₀, and β is never the lift of a vector of unit norm, so reading π₂ as landing in the divisor of a unit vector of W_n is excluded.
 
 *Needs:* §2.1; §2.3; §1.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1; §0.2.
 
 ### 2.5 Generic projection comparison
 
-On rigid/adic generic fibres of the representing spaces, π_1:Ñ_n→N_n^1 is finite étale of degree q+1 and π_2 is an isomorphism onto its image. These generic assertions do not supply an integral isomorphism or integral closed immersion for π_2. (LZ22, §10.2, Remark 10.2.1, p. 65; Conjecture 10.4.1, p. 67.)
+On rigid/adic generic fibres of the representing spaces, π_1:Ñ_n→N_n^1 is finite étale of degree q+1, and π_2, as a map to the special divisor Z(x₀) of §2.4, is an isomorphism, so the image of π_2 in the generic fibre of `N_{n+1}` is the generic fibre of Z(x₀). These generic assertions do not supply an integral isomorphism or integral closed immersion for π_2. (LZ22, §10.2, Remark 10.2.1, p. 65; Conjecture 10.4.1, p. 67.)
 
-*Route.* Invert the coefficient uniformizer and describe the isogeny choices by the residual two-dimensional Hermitian quotient. There are q+1 admissible isotropic directions; in characteristic zero the finite torsion is étale. Recover the isogeny from its target and the fixed distinguished direction to identify the second map with its generic image.
+*Route.* Invert the coefficient uniformizer and describe the isogeny choices by the residual two-dimensional Hermitian quotient. There are q+1 admissible isotropic directions; in characteristic zero the finite torsion is étale. Recover the isogeny from its target and the lift of the fixed distinguished direction x₀, which exists exactly over Z(x₀), to identify the second map over the generic fibre with Z(x₀).
 
 **Checks.**
 
 - For q=3 the first generic projection has degree 4.
-- The generic assertions follow without an integral resolution theorem; LRZ26 Theorem 14.6.2 proves integral finite flatness of π₁ and a proper resolution by π₂, not an integral isomorphism of Ñ with its lifting divisor.
+- At n=2, Ñ_2 is finite over N¹_2 and so has relative dimension n−1=1, and Z(x₀) is a divisor in N_3, of relative dimension 2−1=1; reading the generic image of π₂ as the whole generic fibre of N_3, of relative dimension 2, contradicts this count.
+- The generic assertions follow without an integral resolution theorem; LRZ26 Theorem 14.6.2 proves integral finite flatness of π₁ and a proper resolution by π₂, not an integral isomorphism of Ñ_n with the special divisor Z(x₀) of §2.4.
 
 *Needs:* §2.4; AdicSpacesPartIII Layer F0; AdicSpacesPartIII §R2.9; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
 
@@ -695,7 +794,7 @@ On rigid/adic generic fibres of the representing spaces, π_1:Ñ_n→N_n^1 is fi
 
 Within this roadmap: Layer 0 (§0.1, §0.2, §0.3); Layer 1 (§1.1, §1.3, §1.5).
 
-Suppliers: FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.10; AbelianSchemesAndArithmeticModuli §A4.7; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; AdicSpacesPartIII Layer F0, §R2.9.
+Suppliers: FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”; AbelianSchemesAndArithmeticModuli §A4.7; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; AdicSpacesPartIII Layer F0, §R2.9.
 
 ## Layer 3: Relative exotic ramified moduli
 
@@ -734,6 +833,7 @@ For an exotic module λ there is a unique O_L-compatible symmetric principal iso
 
 - The factor σ is symmetric, not alternating.
 - σ∘i(u) recovers λ, with kernel X[i(u)] of order q^n; σ∘i(u²) has kernel X[ϖ] of order `q^{2n}`, so the factorization fixes the single power of i(u).
+- The symmetry of σ is forced by ū=−u: if σ^∨=σ and σi(a)=i(ā)^∨σ, then λ^∨=(σi(u))^∨=i(u)^∨σ=σi(ū)=−σi(u)=−λ, as a polarization requires; an alternating σ, σ^∨=−σ, would give λ^∨=+λ, which is not a polarization in the sense of §0.1.
 
 *Needs:* §3.1; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10.
 
@@ -760,11 +860,11 @@ Fix a supersingular framing 𝕏∈Exo(n−1,1). N^exo classifies X∈Exo(n−1,
 
 ### 3.4 Exotic good reduction theorem
 
-For every finite extension K/ℚ_p with p>2, L/K ramified quadratic and n even with n≥2, N^exo is formally smooth of relative dimension n−1 over Spf O_L̆. Its connected components are described in §3.7. (LL22, §2.1, Lemma 2.4 and its proof, p. 10.)
+For every finite extension K/ℚ_p with p>2, L/K ramified quadratic and n even with n≥2, N^exo is formally smooth of relative dimension n−1 over Spf O_L̆. Its connected components are described in §3.7. (LL22, §2.1, Lemma 2.4 and its proof, p. 10, with footnote 8. The local model is the π-modular local model of signature (n−1,1) with the wedge and spin conditions; its smoothness of relative dimension n−1 is RSZ17, Definition 3.9 and Proposition 3.10 with its proof, pp. 18–19, written there for K=ℚ_p, whose affine chart is PaRa09, §5.c, pp. 38–39, set up over any complete discretely valued K with perfect residue field of odd characteristic (PaRa09, §1.b.1, p. 10).)
 
 Hypotheses for this target: L/K ramified quadratic, p>2, u a uniformizer of L with ū=−u, n even and n≥2; strict relative O_K-module conventions as in Layer 0.
 
-*Route.* Represent N^exo by §0.2; the spin condition cuts out an open formal subscheme. Use the even-rank exotic local-model smoothness calculation (the local-model smoothness invoked in the proof of LL22 Lemma 2.4). Read the relative dimension off the local model; no comparison with an absolute space over an unramified K is used.
+*Route.* Represent N^exo by §0.2; the spin condition cuts out an open formal subscheme. Use the even-rank exotic local-model smoothness calculation: the open chart of the wedge local model around the point F1 of PaRa09 §5.c is the product of a point with an affine space of dimension n−1 when one signature entry is 1 (PaRa09, end of §5.c, p. 39; at n=2 the chart is the affine line), and the special fibre of the local model is a single orbit of the stabilizer group scheme, which the chart meets, so the local model is smooth everywhere (RSZ17, proof of Proposition 3.10, p. 19). Read the relative dimension off the local model; no comparison with an absolute space over an unramified K is used.
 
 **Checks.**
 
@@ -799,7 +899,7 @@ Fix a supersingular strict O_K-module X₀ of relative height 2 and dimension 1,
 
 On `V^exo=Hom^0_{O_L}(X_0,𝕏)`, use h(x,y)=u^−2 λ_0^−1 y^∨λ_𝕏 x. It is a nondegenerate nonsplit L/K-Hermitian space of dimension n. The u^−2 normalization, the principal rank-one CM source and the target’s symmetric principal factor are retained when identifying its unitary group with the framing isometries. (LL22, §2.1, the pairing (2.1) and footnote 9, p. 11.)
 
-*Route.* Compute Hom and adjoints in the rational relative Dieudonné category. Use the principal source polarization and target adjoint relation to prove Hermitian symmetry; retain the declared u^−2 scalar and the target symmetric factor. Compute the Hermitian invariant and identify the group action by composition.
+*Route.* Compute Hom and adjoints through the relative isocrystals of §0.1: those of X₀ and of 𝕏 are isoclinic of slope 1/2, of K̆-dimensions 2 and 2n, and the full faithfulness of the relative isocrystal functor identifies V^exo with their O_L-linear maps. Since L/K is totally ramified, L⊗_K K̆ is the completion L̆ of the maximal unramified extension of L, so these are the maps of the associated L-isocrystals, isoclinic of L̆-ranks 1 and n and of one common slope; the Dieudonné–Manin classification with coefficient field L gives the L-dimension n. Use the principal source polarization and target adjoint relation to prove Hermitian symmetry; retain the declared u^−2 scalar and the target symmetric factor. Compute the Hermitian invariant and identify the group action by composition.
 
 **API.**
 
@@ -813,35 +913,41 @@ On `V^exo=Hom^0_{O_L}(X_0,𝕏)`, use h(x,y)=u^−2 λ_0^−1 y^∨λ_𝕏 x. It
 - The L-dimension is n, not 2n.
 - The normalized pairing obeys h(y,x) is the L/K-conjugate of h(x,y) despite the alternating λ factors.
 
-*Needs:* §3.2; §3.3; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; §3.5.
+*Needs:* §3.2; §3.3; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; §3.5; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”.
 
 ### 3.7 Exotic connected components
 
-Let K/ℚ_p be finite with p>2, L/K ramified quadratic, n even with n≥2, and N^exo the relative exotic framed space of §3.3. Then N^exo has exactly two connected components: the loci where the parity invariant κ₂(ρ)=ht(ρ₁) mod 2 of the minimal cover (X̃,ρ₁,ρ₂) of the height-zero framing ρ is 0, respectively 1. The reduced locus of each component is connected and is the union of closed Bruhat–Tits strata V_Λ indexed by the vertex lattices Λ of V^exo; each V_Λ meets each component in a nonempty connected smooth projective variety of dimension t(Λ)/2−1, V_Λ∩V_Λ′ is `V_{Λ+Λ′}` or empty according as Λ+Λ′ is a vertex lattice or not, and the irreducible components are the V_Λ of maximal type t(Λ)=n. In particular each component of N^exo_red has pure dimension n/2−1. (LL22, Lemma 2.4 and footnote 8, p. 10; Proposition 2.28 and Remark 2.29, pp. 22–23; Wu16, §3.4, equations (3.21)–(3.26), pp. 12–13; Theorems 5.17–5.18 and proof, pp. 30–31.)
+Let K/ℚ_p be finite with p>2, L/K ramified quadratic, n even with n≥2, and N^exo the relative exotic framed space of §3.3. For a point (X,ρ) of N^exo over an algebraically closed field, the minimal cover of the height-zero framing ρ is the triple (X̃,ρ₁,ρ₂) of a p-divisible group X̃ with isogenies ρ₁:X̃→X and ρ₂:X̃→𝕏 such that ρ∘ρ₁=ρ₂, through which every other such triple (Y,α₁,α₂) factors: α₁=ρ₁∘β and α₂=ρ₂∘β for a unique isogeny β:Y→X̃. Its Dieudonné module is the intersection of those of X and 𝕏 in the common isocrystal identified through ρ, so X̃ inherits the O_L-action and ρ₁, ρ₂ are O_L-linear; heights are O_K-relative (Conventions; HilbertModularVarietiesAndShimuraCurves §R18.5.4), and ht(ρ₁)=ht(ρ₂) because ρ has height zero. The parity invariant is κ₂(ρ)=ht(ρ₁) mod 2. Then N^exo has exactly two connected components: the loci where κ₂ is 0, respectively 1.
+
+Lattices of V^exo are taken with the conventions of LL22. For an O_L-lattice Λ of V^exo let Λ^♯={x : h(x,Λ)⊆O_L} be its dual lattice in the sense of the Conventions, and `Λ^∨={x : Tr_{L/K}h(x,y)∈O_K for all y∈Λ}` its dual for the trace form; since p is odd the inverse different of L/K is u⁻¹O_L, so Λ^∨={x : h(x,Λ)⊆u⁻¹O_L}=u⁻¹Λ^♯. Λ is a vertex lattice when Λ⊆Λ^∨ and uΛ^∨⊆Λ, that is Λ^♯⊆Λ⊆u⁻¹Λ^♯, and its type is t(Λ)=dim_k(Λ^∨/Λ). Since V^exo is nonsplit, Λ^∨/Λ with the form induced by `u²·Tr_{L/K}h` is a nonsplit quadratic space over k, so t(Λ) is even and positive, and t(Λ)≤n because uΛ^∨⊆Λ and Λ^∨/uΛ^∨ has k-dimension n. This type is not the invariant t of GeometryOfNumbersAndQuadraticArithmetic §2.7, which is computed from Λ^♯/Λ for lattices with Λ⊆Λ^♯. (LL22, Definition 2.10 and Remark 2.13, pp. 12–13; Definition 2.27(1), p. 22.)
+
+Write N^ε, ε∈{0,1}, for the two components, V_Λ for the closed Bruhat–Tits stratum of N^exo_red indexed by a vertex lattice Λ of V^exo (the reduced locus of the special cycle of Λ, which meets both components), and `V_Λ^ε=V_Λ∩N^ε_red`. Each reduced locus N^ε_red is connected and is the union of the V_Λ^ε; each V_Λ^ε is a nonempty connected smooth projective variety of dimension t(Λ)/2−1, hence irreducible, so V_Λ=V_Λ^0⊔V_Λ^1 is disconnected. V_Λ∩V_Λ′ is `V_{Λ+Λ′}` or empty according as Λ+Λ′ is a vertex lattice or not, and correspondingly `V_Λ^ε∩V_Λ′^ε` is `V_{Λ+Λ′}^ε` or empty. The irreducible components of N^ε_red are the V_Λ^ε with t(Λ)=n; in particular each N^ε_red has pure dimension n/2−1. (LL22, Lemma 2.4 and footnote 8, p. 10; Proposition 2.28 and Remark 2.29, pp. 22–23; Wu16, §3.4, the minimal cover (3.18)–(3.20) and equations (3.21)–(3.26), pp. 12–13; Theorems 5.17–5.18 and proof, pp. 30–31.)
 
 Hypotheses for this target: L/K ramified quadratic, p>2, u a uniformizer of L with ū=−u, n even and n≥2; strict relative O_K-module conventions as in Layer 0; K/ℚ_p an arbitrary finite extension.
 
-*Route.* Define κ₂ by the minimal cover of the framing; it is locally constant, so the two loci are open and closed (Wu16 §3.4). Construct the Bruhat–Tits stratification over K by the special-Hom lattices of §3.6 and identify each closed stratum with the generalized Deligne–Lusztig variety of the orthogonal group of Λ^∨/Λ over the residue field (LL22 Proposition 2.28). Every vertex lattice lies in one of maximal type and the simplicial complex of vertex lattices is connected; hence each κ₂-locus has connected reduced locus (the argument of Wu16 Theorem 5.18(2), which uses only the hermitian lattice combinatorics of L/K and so applies over every K, as LL22 footnote 8 records). Both loci are nonempty, since every stratum V_Λ meets each of them (LL22 Proposition 2.28(2)); a framing self-quasi-isogeny g with κ₂(g)=1 maps one isomorphically onto the other (Wu16 (3.24)).
+*Route.* Define κ₂ by the minimal cover of the framing; it is locally constant, so the two loci are open and closed (Wu16 §3.4). Construct the Bruhat–Tits stratification over K by the special-Hom lattices of §3.6 and identify each closed stratum with the generalized Deligne–Lusztig variety of the orthogonal group of Λ^∨/Λ over the residue field (LL22 Proposition 2.28). Restrict the stratification to each κ₂-locus: V_Λ^ε is connected (LL22 Proposition 2.28(2)), hence irreducible, being smooth. Every stratum lies in a stratum of maximal type t=n and the simplicial complex of vertex lattices is connected; hence each κ₂-locus has connected reduced locus whose irreducible components are the V_Λ^ε of maximal type (the argument of Wu16 Theorem 5.18(2), stated there for the strata of one component and with the stratum Wu16 attaches to Λ equal to `V_{uΛ^∨}` here (LL22, proof of Proposition 2.28, p. 23), which uses only the hermitian lattice combinatorics of L/K and so applies over every K, as LL22 footnote 8 records). Both loci are nonempty, since every stratum V_Λ meets each of them (LL22 Proposition 2.28(2)); a framing self-quasi-isogeny g with κ₂(g)=1 maps one isomorphically onto the other (Wu16 (3.24)).
 
 **Checks.**
 
-- At K=ℚ_p and n=2 there are two components, each formally smooth of relative dimension 1, with reduced locus of dimension n/2−1=0; reading the dimension of the reduced locus as the relative dimension would give 1.
-- At n=2 the space V^exo is two-dimensional and nonsplit, hence anisotropic; every vertex lattice has type 2, no two distinct vertex lattices span a vertex lattice, and connectedness forces the reduced locus of each component to be a single point.
+- At K=ℚ_p and n=2 there are two components, each formally smooth of relative dimension 1, with reduced locus of dimension n/2−1=0; reading the dimension of the reduced locus as the relative dimension would give 0 instead of 1.
+- At n=2 the space V^exo is two-dimensional and nonsplit, hence anisotropic, with an orthogonal basis e₁,e₂ of norms 1 and −ε, ε a nonsquare unit of O_K. Λ₀=O_Le₁+O_Le₂ has Λ₀^♯=Λ₀ and Λ₀^∨=u⁻¹Λ₀, so it is a vertex lattice of type 2, and it is the only one: a vertex lattice has even type between 2 and n=2, so Λ^∨/Λ=u⁻¹Λ^♯/Λ has the same dimension 2 as u⁻¹Λ^♯/Λ^♯ and Λ=Λ^♯, whence h(x,x)∈O_K on Λ; since ε is a nonsquare, h(x,x) has K-valuation the minimum of those of the norms of its two coordinates, so Λ⊆Λ₀, and then Λ=Λ^♯⊇Λ₀^♯=Λ₀. Read with the dual Λ^♯ alone, Λ₀ would have type 0 and V_Λ₀ dimension −1, and no lattice would have type 2. Each V_Λ₀^ε has dimension 2/2−1=0, so each N^ε_red is the single point V_Λ₀^ε and V_Λ₀ is two points, one in each component.
+- κ₂ is the parity of a relative height. If ρ is an isomorphism, the minimal cover is (X,id,ρ) and κ₂(ρ)=0. For K/ℚ_p unramified of degree 2, the absolute height of every O_K-linear isogeny is twice its relative height (HilbertModularVarietiesAndShimuraCurves §R18.5.4), so the parity of the absolute height of ρ₁ is 0 at every point and does not separate the two components.
+- The full stratum is not irreducible: at n=4 and t(Λ)=4, V_Λ is two disjoint copies of ℙ¹ (LL22 Remark 2.29), while each V_Λ^ε is one ℙ¹; at t(Λ)=2, V_Λ is two points and each V_Λ^ε one point. Calling V_Λ an irreducible component, or a nonempty intersection `V_{Λ+Λ′}` of type 2 a single point, contradicts LL22 Proposition 2.28(2); within one component both statements hold for V_Λ^ε.
 - The labels depend on the framing, not on the geometry of one component: a framing self-quasi-isogeny g exchanges the two components when κ₂(g)=1 and preserves each when κ₂(g)=0 (Wu16 (3.24)).
 
-*Needs:* §3.3; §3.4; §3.6; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10.
+*Needs:* §3.3; §3.4; §3.6; §0.1; HilbertModularVarietiesAndShimuraCurves §R18.5.4; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10.
 
 ### Examples
 
 - Rank two. For K=ℚ_p and n=2, N^exo has two connected components, each of relative dimension 1 over Spf O_L̆ with reduced locus a single point; each component is Spf O_L̆[[t]].
 - Polarization kernel. For n=2 the exotic polarization has kernel X[i(u)] of order q²; a principal polarization (kernel of order 1) is not an exotic polarization.
-- Rank four. For n=4 the reduced locus of each component is a union of curves V_Λ with t(Λ)=4, of dimension t(Λ)/2−1=1; two of them meet, if at all, in `V_{Λ+Λ′}`, which is a point when t(Λ+Λ′)=2.
+- Rank four. For n=4 the reduced locus N^ε_red of each component is a union of projective lines V_Λ^ε with t(Λ)=4, of dimension t(Λ)/2−1=1, while the full stratum V_Λ=V_Λ^0⊔V_Λ^1 is two disjoint lines, one in each component. Two lines V_Λ^ε and V_Λ′^ε of the same component meet, if at all, in `V_{Λ+Λ′}^ε`, which is a single point when t(Λ+Λ′)=2; the full `V_{Λ+Λ′}` is then two points.
 
 ### Dependencies
 
 Within this roadmap: Layer 0 (§0.1, §0.2, §0.3).
 
-Suppliers: FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.10; PELModuli §M0.18; AbelianSchemesAndArithmeticModuli §A4.7; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
+Suppliers: FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.10; HilbertModularVarietiesAndShimuraCurves §R18.5.4; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”; PELModuli §M0.18; AbelianSchemesAndArithmeticModuli §A4.7; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
 
 ## Layer 4: Absolute and relative exotic comparison
 
@@ -885,7 +991,7 @@ For a nondistinguished component i of an Exo_Φ object, Q_i=(u⊗1−1⊗[φ_i(u
 
 ### 4.3 Exotic relative functor
 
-Choose μ in the coefficient Witt units satisfying `F^f(μ)/μ=∏_{i=1}^{f−1}F^{f−1−i}(ε_i)`. Define rel by retaining (P_0,Q_0), contracting F_0 through the normalized banal Frobenius maps `F′_1,…,F′_{f−1}`, and multiplying the retained pairing by μ. This gives a functor `rel:Exo_{Φ,b}(n−1,1)→Exo_b(n−1,1)` over noetherian nilpotent bases, preserving polarized morphisms and rational homomorphisms. (LL22, §2.8, equations (2.20)–(2.22) and the pairing correction, pp. 38–40.)
+Choose μ in the coefficient Witt units satisfying `F^f(μ)/μ=∏_{i=1}^{f−1}F^{f−1−i}(ε_i)`. Define rel by retaining (P_0,Q_0), contracting F_0 through the normalized banal Frobenius maps `F′_1,…,F′_{f−1}`, and multiplying the retained pairing by μ. The result is an f-ℤ_p-display with O_L-action, hence by the unramified case of §0.1 (O=ℤ_p, O′=O_K) a strict formal O_K-module. This gives a functor `rel:Exo_{Φ,b}(n−1,1)→Exo_b(n−1,1)` over noetherian nilpotent bases, preserving polarized morphisms and rational homomorphisms. (LL22, §2.8, equations (2.20)–(2.22) and the pairing correction, pp. 38–40.)
 
 *Route.* Solve the Frobenius difference equation for a unit μ in the chosen unramified coefficient ring. Compose the normalized maps around the embedding cycle to obtain the relative display. Check its display relations and pairing identities, using μ to cancel the ε-product.
 
@@ -906,7 +1012,7 @@ Choose μ in the coefficient Witt units satisfying `F^f(μ)/μ=∏_{i=1}^{f−1}
 
 ### 4.4 Exotic display equivalence
 
-The functor rel is an equivalence of the supersingular exotic module categories on noetherian nilpotent bases. A quasi-inverse reconstructs the banal components, and the equivalence identifies endomorphisms, adjoints and polarized rational Hom spaces. The hypotheses K/ℚ_p unramified and the noetherian nilpotent base are retained. (LL22, §2.8, Proposition 2.62 and Lemma 2.63, pp. 40–42; Remark 2.68, p. 43.)
+The functor rel is an equivalence of the supersingular exotic module categories on noetherian nilpotent bases. A quasi-inverse reconstructs the banal components, and the equivalence identifies endomorphisms, adjoints and polarized rational Hom spaces. The hypotheses K/ℚ_p unramified and the noetherian nilpotent base are retained. (LL22, §2.8, Proposition 2.62 and Lemma 2.63, pp. 40–42; Remark 2.68, p. 44.)
 
 *Route.* Use a normal decomposition of the retained display to reconstruct each omitted component. Check the unit and counit are integral display isomorphisms. Descend endomorphisms through the component equations and check compatibility of the pairing.
 
@@ -919,7 +1025,7 @@ The functor rel is an equivalence of the supersingular exotic module categories 
 
 ### 4.5 Absolute principal CM source comparison
 
-With unramified K/ℚ_p of degree f, let X₀,Φ be the principal CM source of absolute height 2f and dimension f: each ψ_i Lie summand has rank one and O_L acts through φ_i∈Φ. The principal polarized display contraction constructed as in LL22 (2.21) sends it to §3.5 and gives `End_{O_L}(X₀,Φ)≅O_L` and the matching rational Hom map into an exotic target. It is a separate principal-source comparison, not an application of the even-rank exotic category to rank one. Contracting source and target compatibly gives the isometry of the u^−2-normalized forms in (2.25). (LL22, §2.8, paragraph preceding equation (2.25) and Corollary 2.66, p. 43.)
+With unramified K/ℚ_p of degree f, let X₀,Φ be the principal CM source of absolute height 2f and dimension f: each ψ_i Lie summand has rank one and O_L acts through φ_i∈Φ. The principal polarized display contraction constructed as in LL22 (2.21), an f-ℤ_p-display read as a strict formal O_K-module by the unramified case of §0.1, sends it to §3.5 and gives `End_{O_L}(X₀,Φ)≅O_L` and the matching rational Hom map into an exotic target. It is a separate principal-source comparison, not an application of the even-rank exotic category to rank one. Contracting source and target compatibly gives the isometry of the u^−2-normalized forms in (2.25). (LL22, §2.8, paragraph preceding equation (2.25) and Corollary 2.66, p. 43.)
 
 *Route.* Contract the principal CM display around its embedding cycle, keeping its principal pairing. Identify its retained rank-one relative source and O_L endomorphisms. Restrict a Hom display morphism to the distinguished component and compare the source and target pairing corrections to obtain (2.25).
 
@@ -940,6 +1046,8 @@ With unramified K/ℚ_p of degree f, let X₀,Φ be the principal CM source of a
 
 ### 4.6 Absolute and relative exotic spaces
 
+Fix a supersingular object 𝕏_Φ of Exo_Φ(n−1,1) over the residue field of O_L̆. Define N_Φ as the functor of pairs (X,ρ) with X an object of Exo_Φ(n−1,1) over S and ρ a height-zero O_L-linear framing quasi-isogeny from X to 𝕏_Φ on the uniformizer-zero subscheme with `ρ*λ_{𝕏_Φ}=λ_X`, arrows preserving the action, the exact polarization and the framing, as in §3.3. Put `V_Φ=Hom^0_{O_L}(X₀,Φ,𝕏_Φ)`, with X₀,Φ the principal source of §4.5 taken over the residue field, and give it the u^−2-normalized form `h_Φ(x,y)=u^−2 λ_{X₀,Φ}^−1 y^∨ λ_{𝕏_Φ} x` of §3.6, read in `End^0_{O_L}(X₀,Φ)=L`. (LL22, §2.8, Definition 2.64 and the paragraph preceding (2.25), p. 43.)
+
 After choosing an identification rel(𝕏_Φ)≅𝕏 and the principal-source contraction of `X_{0,Φ}≅X_0`, rel induces an equivariant isomorphism N_Φ≅N^exo of framed formal schemes and an isometry V_Φ≅V^exo for the normalized u^−2 special-Hom forms. It transports the condition that a rational homomorphism is integral on a deformation; changing the chosen framing identifications conjugates the comparison. (LL22, §2.8, Corollaries 2.65–2.66, pp. 42–43.)
 
 *Route.* Transport framed objects and the two framings under the categorical equivalence. Use Lemma 2.63 for quasi-homomorphism descent and the polarization calculation for its isometry. Apply formal Yoneda and compare the postcomposition actions.
@@ -948,8 +1056,9 @@ After choosing an identification rel(𝕏_Φ)≅𝕏 and the principal-source co
 
 - For f=1 and identity framing choices the comparison is identity.
 - Integrality of a rational homomorphism is preserved; no intersection-number theorem is needed.
+- For f=2 and n=2, 𝕏_Φ has absolute height 8 and dimension 4 and X₀,Φ height 4 and dimension 2, while V_Φ has L-dimension n=2 (ℚ_p-dimension 8), the dimension of V^exo; a framing with `ρ*λ_{𝕏_Φ}=c·λ_X` for a unit c≠1 is not a point of N_Φ, as for N^exo in §3.3.
 
-*Needs:* §4.4; §3.3; §3.6; §0.2; §4.5.
+*Needs:* §4.1; §4.4; §3.3; §3.6; §0.2; §4.5.
 
 ### Examples
 
@@ -992,15 +1101,15 @@ Hypotheses for this target: L/K ramified quadratic, p>2, ū=−u, n≥2; fixed s
 
 ### 5.2 Ramified rank-one source
 
-Fix a supersingular strict principal hermitian O_L-module Y of relative height 2 and dimension 1, of signature (0,1). Its chosen height-zero exact-polarization deformation component has a canonical lift G over O_L̆ with conjugate structural Lie action. Distinguish this chosen component from Howard19’s full rank-one space, which permits arbitrary quasi-isogeny height and is a countable disjoint union of Spf O_L̆. Fix a generator e of the associated Hermitian fixed line; its norm is an O_K-unit and rescale λ_Y by that unit to normalize (e,e)_Y=1 when an isometry is required. (HLSY23, §§2.2–2.3, pp. 11–12; Howard19 Proposition 2.1, p. 6.)
+Fix a supersingular strict principal hermitian O_L-module Y of relative height 2 and dimension 1, of signature (0,1). Its chosen height-zero exact-polarization deformation component has a canonical lift G over O_L̆ with conjugate structural Lie action. Distinguish this chosen component from Howard19’s full rank-one space, which permits arbitrary quasi-isogeny height and is a countable disjoint union of Spf O_L̆. Fix an O_L-generator e of the integral fixed lattice `M(Y)^{τ=1}`, where M(Y) is the relative Dieudonné module of Y and τ=i(u)V⁻¹ with the covariant convention of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20, the operator used in §5.4; it is a free O_L-module of rank one, because V M(Y)=i(u)M(Y) makes τ bijective on M(Y). Its norm (e,e)_Y is an O_K-unit, because λ_Y is principal, and rescaling λ_Y by that unit normalizes (e,e)_Y=1 when an isometry is required. A mere basis of the rational line `C_Y=M(Y)[1/u]^{τ=1}` does not suffice: u·e is such a basis, of norm −u²(e,e)_Y, of K-valuation 1. (HLSY23, §§2.2–2.3, pp. 11–12; Howard19 Proposition 2.1, p. 6.)
 
-*Route.* Use the height-one strict deformation theory of EndoscopicTransferAndUnitaryTraceComparison §10.2 for the rank-one signature and chosen framing component. Compute its Hermitian fixed line using relative Dieudonné theory. Retain the polarization normalization and its effect on the source-line norm.
+*Route.* Use the height-one strict deformation theory of EndoscopicTransferAndUnitaryTraceComparison §10.2 for the rank-one signature and chosen framing component. Compute its integral fixed lattice using relative Dieudonné theory: V M(Y) is the unique O_L̆-submodule of colength one, i(u)M(Y), so τ is a bijective σ-semilinear map of M(Y) and its fixed points form an O_L-lattice spanning M(Y) over O_K̆; rationally, (M(Y)[1/u],τ) is a K-isocrystal of K̆-dimension 2 and slope 1/2−1/2=0, so its fixed space C_Y has K-dimension 2, an L-line. Retain the polarization normalization and its effect on the source-line norm.
 
 **API.**
 
 - The chosen framed rank-one source has a canonical lift G over O_L̆ with conjugate structural Lie action.
 - Its special fibre with framed polarization is the chosen Y.
-- Rescaling the source polarization by the O_K-unit (e,e)_Y⁻¹ gives (e,e)=1.
+- For an O_L-generator e of `M(Y)^{τ=1}`, (e,e)_Y is an O_K-unit and rescaling the source polarization by (e,e)_Y⁻¹ gives (e,e)=1; another generator is ae with a∈O_L^×, of norm aā(e,e)_Y, again a unit.
 - Pullback of the canonical lift is compatible with its framing and source action.
 
 **Checks.**
@@ -1008,8 +1117,9 @@ Fix a supersingular strict principal hermitian O_L-module Y of relative height 2
 - The Lie action of a∈O_L is ā, not a.
 - The relative height is 2 and the absolute height is 2[K:ℚ_p].
 - The chosen height-zero component does not equal the countable union allowing arbitrary height.
+- The generator must be integral: if e₀ generates `M(Y)^{τ=1}` with (e₀,e₀)_Y=1, then u e₀ is a basis of the rational fixed line with norm uū=−u², of K-valuation 1, and rescaling λ_Y by (−u²)⁻¹ gives a quasi-polarization that is not principal, indeed not an isogeny.
 
-*Needs:* §0.3; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; §0.2; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2.
+*Needs:* §0.3; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20; §0.2; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”.
 
 ### 5.3 Krämer framed formal space
 
@@ -1036,7 +1146,7 @@ Hypotheses for this target: L/K ramified quadratic, p>2, ū=−u, n≥2; fixed s
 
 ### 5.4 Krämer Hermitian isocrystal
 
-Let N be the relative covariant rational Dieudonné module of the framing, Π=i(u), and τ=ΠV^−1 with the covariant convention of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20. Set `C=N^{τ=1}`. Choose δ in O_K̆× with σ(δ)=−δ. The formula (x,y)=δ(⟨Πx,y⟩+u⟨x,y⟩) on C is a nondegenerate L/K-Hermitian form, and ⟨x,y⟩=(2δ)^−1 `Tr_{L/K}(u^−1(x,y))` recovers the alternating form. C has dimension n over L. (HLSY23, §2.2, equations (2.1)–(2.2), pp. 11–12.)
+Let N be the relative isocrystal of the framing (§0.1), its covariant rational relative Dieudonné module, a K-isocrystal of K̆-dimension 2n; put Π=i(u) and τ=ΠV^−1 with the covariant convention of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20. Set `C=N^{τ=1}`. Choose δ in O_K̆× with σ(δ)=−δ. The formula (x,y)=δ(⟨Πx,y⟩+u⟨x,y⟩) on C is a nondegenerate L/K-Hermitian form, and ⟨x,y⟩=(2δ)^−1 `Tr_{L/K}(u^−1(x,y))` recovers the alternating form. C has dimension n over L. (HLSY23, §2.2, equations (2.1)–(2.2), pp. 11–12.)
 
 *Route.* Use the relative covariant isocrystal and compute τ as a slope-zero descent operator. Apply descent for the fixed vectors, retaining Π and V conventions. Verify Hermitian symmetry and the inverse trace identity, including the factor 2δ.
 
@@ -1054,11 +1164,11 @@ Let N be the relative covariant rational Dieudonné module of the framing, Π=i(
 - Replacing V^−1 by F^−1 without changing conventions is not the stated τ.
 - Omitting the factor 2 changes recovery of the alternating form when p is odd.
 
-*Needs:* §5.3; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20.
+*Needs:* §5.3; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20.
 
 ### 5.5 Krämer framing parity
 
-The two determinant signs `χ((−1)^{n(n−1)/2} det C)` give the two framing polarization classes. Their resulting ramified unitary formal moduli spaces are isomorphic for n odd; for n even they are not isomorphic. Keep a specified sign when comparing them to a global basic locus; a self-dual lattice alone does not select the sign at a ramified place. (HLSY23, §2.1–2.2, pp. 11–12; RSZ21 Remark 6.9, p. 33.)
+The two determinant signs `χ((−1)^{n(n−1)/2} det C)` give the two framing polarization classes. Their resulting ramified unitary formal moduli spaces are isomorphic for n odd; for n even they are not isomorphic. Keep a specified sign when comparing them to a global basic locus; a self-dual lattice alone does not select the sign at a ramified place. (HLSY23, §2.2, p. 11; RSZ21 Remark 6.9, p. 33.)
 
 *Route.* Apply ramified Hermitian determinant classification. Check the effect of unit rescaling on the determinant sign in odd and even rank. Compare the framing categories, retaining the selected sign in the global input.
 
@@ -1085,7 +1195,7 @@ Over the natural ramified coefficient DVR with p odd, the principal Krämer loca
 
 ### 5.7 Krämer regularity theorem
 
-N_n^Kra is flat, regular and locally formally of finite type over O_L̆, of relative dimension n−1, and has semistable reduction over this natural coefficient ring. Its forgetful map to the wedge-model framed functor is proper and an isomorphism on the generic fibre. Global models after a ramified coefficient extension require a separate regularity check; the global n=2 case is not obtained from RSZ21 Theorem 6.7(ii). (HLSY23, §2.1, p. 11; Howard19 Proposition 2.2, p. 6; RSZ21 Theorem 6.7 and Remark 6.8, pp. 32–33.)
+N_n^Kra is flat, regular and locally formally of finite type over O_L̆, of relative dimension n−1, and has semistable reduction over this natural coefficient ring. Its forgetful map to the wedge-model framed functor is proper and an isomorphism on the generic fibre. Global models after a ramified coefficient extension require a separate regularity check; the global n=2 case is not obtained from RSZ21 Theorem 6.7(ii). (HLSY23, §2.1, p. 10; Howard19 Proposition 2.2, p. 6; RSZ21 Theorem 6.7 and Remark 6.8, pp. 32–33.)
 
 Hypotheses for this target: L/K ramified quadratic, p>2, ū=−u, n≥2; fixed supersingular principal hermitian framing of signature (1,n−1).
 
@@ -1102,7 +1212,7 @@ Hypotheses for this target: L/K ramified quadratic, p>2, ū=−u, n≥2; fixed s
 
 For the ramified principal framing 𝕏 and the rank-one source Y of Layer 5, define `V=Hom^0_{O_L}(Y,𝕏)` with h(x,y)=λ_Y^−1 y∨λ_𝕏x in `End^0_{O_L}(Y)=L`. This is a nondegenerate dimension-n Hermitian space. The group of exact-polarization framing quasi-isogenies acts by postcomposition and identifies with U(V)(K). The fixed-space comparison includes the source-line norm and becomes an isometry only in Layer 5’s normalized choice. (HLSY23, §2.2, equations (2.3)–(2.6), p. 11.)
 
-*Route.* Use relative Dieudonné full faithfulness to form the rational O_L-linear Hom space. Compute the adjoint formula for h and prove its nondegeneracy. Identify the postcomposition isometries, retaining the precise source polarization normalization.
+*Route.* Use the full faithfulness of the relative isocrystal functor of §0.1 to form the rational O_L-linear Hom space. Compute the adjoint formula for h and prove its nondegeneracy. Identify the postcomposition isometries, retaining the precise source polarization normalization.
 
 **API.**
 
@@ -1117,20 +1227,21 @@ For the ramified principal framing 𝕏 and the rank-one source Y of Layer 5, de
 - For n=2 this space has L-dimension 2, not relative-isocrystal dimension 4.
 - Rescaling λ_Y by c multiplies h by c^−1, which is tracked in the comparison.
 
-*Needs:* §5.2; §5.3; §5.4; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
+*Needs:* §5.2; §5.3; §5.4; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
 
 ### 5.9 Special Hom and fixed-space comparison
 
-Fix a principal rank-one source Y and a basis e of its Hermitian fixed-space line. Evaluation b:x↦x(e) identifies `Hom^0_{O_L}(Y,𝕏)` with C as L-vector spaces, and (b(x),b(y))_C=h(x,y)(e,e)_Y. It is an isometry only after normalizing (e,e)_Y=1, which may require rescaling the chosen source polarization. Do not silently replace a similarity by an isometry. (HLSY23, §2.2, pp. 11–12.)
+Fix a principal rank-one source Y and a nonzero vector e of its rational fixed line C_Y. Evaluation b:x↦x(e) identifies `Hom^0_{O_L}(Y,𝕏)` with C as L-vector spaces, and (b(x),b(y))_C=h(x,y)(e,e)_Y. When e is an O_L-generator of the integral fixed lattice `M(Y)^{τ=1}` of §5.2, (e,e)_Y is an O_K-unit, and b is an isometry after rescaling the principal source polarization by that unit to normalize (e,e)_Y=1; for any other basis ae₀ of C_Y, with e₀ such a generator and a∈L^× not a unit, (e,e)_Y=aā(e₀,e₀)_Y has K-valuation val_L(a)≠0, so no unit rescaling makes b an isometry while keeping λ_Y principal. Do not silently replace a similarity by an isometry. (HLSY23, §2.2, pp. 11–12.)
 
-*Route.* Identify O_L-linear rational homomorphisms by Dieudonné full faithfulness. Evaluate at the chosen basis of the source line. Compute adjoints and keep its Hermitian norm factor.
+*Route.* Identify O_L-linear rational homomorphisms by the full faithfulness of the relative isocrystal functor of §0.1. Evaluate at the chosen basis of the source line. Compute adjoints and keep its Hermitian norm factor.
 
 **Checks.**
 
 - The norm factor is 1 exactly in the chosen normalization.
-- Changing e to ae multiplies the factor by a ā.
+- Changing e to ae multiplies the factor by a ā: for a∈O_L^× by a unit, for a=u by −u², of K-valuation 1.
+- The factor is (e,e)_Y, not its inverse. Rescaling λ_Y by c∈O_K^× multiplies h by c⁻¹ (§5.8) and the norm (e,e)_Y by c, while C_Y, e, b and the left side (b(x),b(y))_C, which uses only λ_𝕏, are unchanged; so h(x,y)(e,e)_Y is invariant, as the identity requires, whereas h(x,y)(e,e)_Y⁻¹ would be multiplied by c⁻², which is not 1 for c=2.
 
-*Needs:* §5.4; §5.8; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10.
+*Needs:* §5.2; §5.4; §5.8; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field”.
 
 ### Examples
 
@@ -1142,7 +1253,7 @@ Fix a principal rank-one source Y and a basis e of its Hermitian fixed-space lin
 
 Within this roadmap: Layer 0 (§0.1, §0.2, §0.3, §0.7).
 
-Suppliers: FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10, §R07.2.20; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; AlgebraicModuliForArithmeticGeometry §1.3; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7.
+Suppliers: FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10, §R07.2.20; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; AlgebraicModuliForArithmeticGeometry §1.3; SchemeAndStackFoundations Layer 4; AbelianSchemesAndArithmeticModuli §A4.7.
 
 ## Layer 6: Global CM and unitary comparison data
 
@@ -1241,23 +1352,32 @@ After the maximal-unramified embedding decomposition Lie `A=⊕_{w,ψ}Lie_{w,ψ}
 
 ### 6.6 Integral CM moduli at every prime
 
-Let F/F⁺ be a CM field, Φ a CM type with reflex field E_Φ, and a a fractional ideal of F⁺. The moduli problem M₀^a over `O_{E_Φ}` of triples (A₀,ι₀,λ₀), with A₀ an abelian scheme, ι₀:O_F→End(A₀) satisfying the Kottwitz condition char(ι₀(a)|Lie `A₀)=∏_{φ∈Φ}(T−φ(a)`) for all a∈O_F, and λ₀ a polarization of type a whose Rosati involution induces conjugation on O_F, is a Deligne–Mumford stack finite and étale over Spec `O_{E_Φ}`, at every prime, including the primes ramified in F. It is the disjoint union of open and closed substacks `M₀^{a,ξ}` indexed by the classes ξ of rank-one hermitian lattices of type Φ and polarization type a. A given `M₀^{a,ξ}` may be empty; M₀^a is nonempty when F/F⁺ is ramified at some finite place. This extends the CM moduli of PELModuli §M4.7, which assumes p unramified in F, to every prime. (RSZ21, §3.3, (3.15)–(3.16) and Remark 3.7, pp. 11–12; §4.1, (4.2), p. 17; LL22, Notation 4.19, pp. 57–58.)
+Let F/F⁺ be a CM field, Φ a CM type with reflex field E_Φ, and `a⊆O_{F⁺}` a nonzero ideal. The moduli problem M₀^a over `O_{E_Φ}` of triples (A₀,ι₀,λ₀), with A₀ an abelian scheme, ι₀:O_F→End(A₀) satisfying the Kottwitz condition `char(ι₀(a)|Lie A₀)=∏_{φ∈Φ}(T−φ(a))` for all a∈O_F, and λ₀ a polarization with ker λ₀=A₀[a] whose Rosati involution induces conjugation on O_F, with arrows the O_F-linear isomorphisms pulling λ₀ back exactly, is a Deligne–Mumford stack finite and étale over Spec `O_{E_Φ}`, at every prime, including the primes ramified in F. For `a=O_{F⁺}` the kernel condition says that λ₀ is principal. It is the disjoint union of open and closed substacks `M₀^{a,ξ}` indexed by the classes ξ of pairs (Λ₀,⟨,⟩₀) of a locally free rank-one O_F-module with an O_F-hermitian alternating ℤ-valued form, positive for Φ, whose dual lattice is a⁻¹Λ₀, up to local similarity by `Ẑ^×` and global similarity by `ℚ^×_{>0}`. Every `M₀^{a,ξ}` is nonempty: the pairs (Λ₀,⟨,⟩₀) are in bijection with the isomorphism classes of complex points of M₀^a, a pair of class ξ giving the complex torus (Λ₀⊗ℝ)/Λ₀ with the complex structure of Φ and the Riemann form ⟨,⟩₀, a complex point of `M₀^{a,ξ}`; being finite étale over the connected Spec `O_{E_Φ}`, `M₀^{a,ξ}` then maps onto it. What can be empty is the set of classes, that is M₀^a itself; M₀^a is nonempty for every a when F/F⁺ is ramified at some finite place. The ideal is integral: the dual of Λ₀ contains Λ₀ for every polarization, so a⁻¹Λ₀ ⊇ Λ₀ forces `a⊆O_{F⁺}`. This extends the CM moduli of PELModuli §M4.7, which assumes p unramified in F, to every prime. (RSZ21, §3.4, the bijection of the set of pairs with the complex points of M₀^a, (3.15)–(3.16) and Remark 3.7, pp. 11–12; §4.1, (4.2), p. 17; LL22, Notation 4.19, pp. 57–58.)
 
-Hypotheses for this target: F/F⁺ CM, Φ a CM type, a a fractional ideal of F⁺; no condition on the residue characteristic.
+Hypotheses for this target: F/F⁺ CM, Φ a CM type, a a nonzero ideal of `O_{F⁺}`; no condition on the residue characteristic.
 
 *Route.* On a local Artinian thickening, after an étale extension of the base, decompose O_F⊗O_S by places and unramified embeddings; each piece is O_S[x]/(E(x)) for an Eisenstein-type polynomial, and a quotient that is locally free with characteristic polynomial `∏_{φ∈Φ}(T−φ(π))` is R[x]/(H) with H that polynomial, so the Kottwitz condition determines the Hodge filtration. By Grothendieck–Messing and Serre–Tate, (A₀,ι₀) and its polarization therefore deform uniquely: M₀^a is formally étale. Properness from potentially good reduction of CM abelian varieties and finiteness of the polarized objects of fixed type; an étale proper quasi-finite Deligne–Mumford stack is finite étale. The ξ-decomposition is by the Betti lattices on complex points and descends to E_Φ.
 
+**API.**
+
+- An object of M₀^a over an `O_{E_Φ}`-scheme S is a triple (A₀,ι₀,λ₀) as stated, with ker λ₀ equal to the finite flat subgroup scheme A₀[a], the common kernel of the ι₀(x) for x∈a; an arrow (A₀,ι₀,λ₀)→(A₀′,ι₀′,λ₀′) is an O_F-linear isomorphism μ₀ with μ₀^∨∘λ₀′∘μ₀=λ₀, with no similitude factor.
+- Pullback along a morphism of `O_{E_Φ}`-schemes preserves the Kottwitz condition, the kernel equation and exact arrows, and M₀^a is a stack for the fppf topology.
+- The structure morphism M₀^a→Spec `O_{E_Φ}` is finite étale: an object over a field of characteristic p has, over every Artinian thickening, a deformation with its ι₀ and λ₀ that is unique up to unique isomorphism.
+- For each class ξ the substack `M₀^{a,ξ}` is open and closed, nonempty and surjective onto Spec `O_{E_Φ}`; the `M₀^{a,ξ}` are pairwise disjoint and cover M₀^a, and on complex points ξ is the class of H₁(A₀,ℤ) with the Riemann form of λ₀. M₀^a is empty exactly when there is no class ξ.
+
 **Checks.**
 
+- A non-integral ideal is not a polarization type: for F⁺=ℚ, F=ℚ(i) and a=(1/2)ℤ the lattice condition would ask for Λ₀^∨=2Λ₀, a proper sublattice of Λ₀, whereas a polarization makes ⟨,⟩₀ integral on Λ₀ and so Λ₀⊆Λ₀^∨. For a=ℤ the condition Λ₀^∨=Λ₀ is met by a principally polarized elliptic curve with CM by ℤ[i], and for a=2ℤ the condition Λ₀^∨=(1/2)Λ₀ is met by twice that polarization, whose kernel is A₀[2].
+- Arrows pull λ₀ back exactly. For F⁺=ℚ(√2), F=F⁺(i) and any object (A₀,ι₀,λ₀), the unit c=1+√2 of `O_{F⁺}` gives an O_F-linear automorphism ι₀(c) of (A₀,ι₀), and, c being fixed by the CM involution, ι₀(c)^∨∘λ₀∘ι₀(c)=λ₀∘ι₀(c²) with c²=3+2√2≠1 totally positive. By the arrow law of the first API bullet, ι₀(c) is therefore an arrow from (A₀,ι₀,λ₀∘ι₀(3+2√2)) to (A₀,ι₀,λ₀); the source is an object, its polarization being the pullback of λ₀ along the automorphism ι₀(c), with the same kernel A₀[a] and the same Rosati involution. It is not an automorphism of (A₀,ι₀,λ₀), since it pulls λ₀ back to λ₀∘ι₀(3+2√2)≠λ₀, and it is not an arrow in the opposite labelling, from (A₀,ι₀,λ₀) to (A₀,ι₀,λ₀∘ι₀(3+2√2)), since it pulls the latter back to λ₀∘ι₀(c⁴)=λ₀∘ι₀(17+12√2)≠λ₀; the arrow in that labelling is ι₀(c⁻¹)=ι₀(√2−1). A groupoid whose arrows allowed `O_{F⁺}^×`-similitudes would count ι₀(c) as an automorphism of (A₀,ι₀,λ₀) and define a different stack.
 - For F imaginary quadratic, Φ={φ} and p ramified in F, the p-divisible group of A₀ is a strict `O_{F_p}-module` of relative height 1, whose deformation is unique; so M₀^a is étale at p, a case excluded by the hypothesis that p is unramified in PELModuli §M4.7.
 - Over R=k[ε] with k of characteristic p, the x-stable submodules of R[x]/(x²) with free rank-one quotient are exactly the ideals (x+εc), c∈k, since (x+α) contains x² only when α²=0. The Kottwitz condition prescribes the characteristic polynomial T+εc of x on the quotient and so fixes c, whereas the condition rank Lie=|Φ| alone allows every c: rank conditions do not give étaleness.
-- Emptiness is allowed: a pair moduli problem built on `M₀^{a,ξ}` is empty when `M₀^{a,ξ}` is, and nonemptiness is a separate hypothesis wherever it is used.
+- Emptiness is a property of M₀^a, not of a component. Take F⁺=ℚ(√3), F=F⁺(i)=ℚ(ζ₁₂), a=`O_{F⁺}` and Φ the two embeddings sending i to the same square root of −1 in ℂ. F/F⁺ is unramified at every finite place (the discriminants are 12 and 144=12²) and O_F has class number one, so a pair is, up to isomorphism, O_F with `⟨x,y⟩₀=Tr_{F/ℚ}(θxȳ)`, θ̄=−θ, and self-duality forces θO_F=(2√3)⁻¹O_F, (2√3) being the different of ℤ[√3]. The units ε of O_F with ε̄=−ε are ±iη with η a unit of ℤ[√3], all of norm +1; so θ=±iη/(2√3), and since √3 changes sign between the two members of Φ while the two images of η have the same sign, the imaginary parts of the two images of θ have opposite signs and θ is never Φ-positive. Hence M₀^a is empty, there is no class ξ and no pair moduli problem over it (RSZ21, Remark 3.7(ii), p. 12); a rescaling of Λ₀ multiplies θ by a totally positive αᾱ and changes nothing. For F imaginary quadratic, ramified over ℚ at some prime, M₀^a is nonempty for every a with a single class ξ (RSZ21, Remark 3.7(i), (iv)), and its one component is nonempty.
 
 *Needs:* PELModuli §§M0.23–M0.25; PELModuli §§M4.7–M4.8; PELModuli §M2.11; AbelianSchemesAndArithmeticModuli §A4.7; AbelianSchemesAndArithmeticModuli §A4.9; §0.1.
 
 ### 6.7 Integral unitary level data
 
-Fix O_F-lattices Λ_v and their Hermitian duals Λ_v^♯, a CM polarization ideal a prime to p when working semi-globally, and a selected nonempty CM component ξ. Record for every v|p whether F_v/F⁺_v is split, unramified quadratic or ramified quadratic, and its self-dual, almost self-dual or π-modular lattice type. K_v is the lattice stabilizer, except at explicitly named split Drinfeld congruence levels. Record separately the alternating trace-dual lattice used by the global polarization; its relation to the Hermitian dual involves the different and the chosen trace scalar. (RSZ21, §§3.3, 4.1, pp. 14–19; Remark 6.5, pp. 30–31; LZ22 §11.2, pp. 74–75.)
+Fix O_F-lattices Λ_v and their Hermitian duals Λ_v^♯, the CM polarization ideal `a⊆O_{F⁺}` of §6.6 (nonzero, and prime to p when working semi-globally) with M₀^a nonempty, and a selected CM component ξ of M₀^a. Record for every v|p whether F_v/F⁺_v is split, unramified quadratic or ramified quadratic, and its self-dual, almost self-dual or π-modular lattice type. K_v is the lattice stabilizer, except at explicitly named split Drinfeld congruence levels. Record separately the alternating trace-dual lattice used by the global polarization; its relation to the Hermitian dual involves the different and the chosen trace scalar. (RSZ21, §3.4, Definition 3.9 and Remarks 3.11–3.12, pp. 13–14; §4.1, pp. 17–19; Remark 6.5, pp. 30–31; LZ22 §11.2, pp. 74–75.)
 
 Hypotheses for this target: F/F⁺ CM, Φ a CM type with distinguished φ₀, n≥2; signature (n−1,1) at φ₀ and (n,0) at the other members of Φ. Use the PELModuli carriers, rational similitude convention and positive CM norm torus.
 
@@ -1280,7 +1400,7 @@ Hypotheses for this target: F/F⁺ CM, Φ a CM type with distinguished φ₀, n�
 
 ### 6.8 Adjusted unitary sign condition
 
-For a polarized CM pair (A₀,A) and nonsplit finite place v, define inv_v using `(−1)^{n(n−1)/2}` times the determinant of the Hermitian Tate-Hom space when reschar(v) is invertible. In characteristic reschar(v), use the Frobenius-fixed determinant line Λⁿ `Hom_{F_v}(D(A₀),D(A))` with its induced Hermitian form; multiply its raw invariant by `(−1)^{Σ_{φ∈Φ_{ν,v}}r_φ}` in RSZ20’s opposite-CM convention. For the positive CM convention transport both r₀ and Φ as in RSZ20 Remark A.2. Impose inv_v^r(A₀,A)=inv_v(V) at every geometric point. The split-place condition is vacuous. Explicitly, the convention-independent parity exponent is `Σ_{φ∈Φ_v}(n` r₀,φ−r_φ), where r₀,φ is the CM source multiplicity. It becomes Σr_φ in the opposite-CM convention r₀|Φ=0, and `Σ(n−r_φ)=Σ_{Φ̄_v}r_φ` in the positive-CM convention r₀|Φ=1. (RSZ20, Appendix A, equations (A.1)–(A.8), Remarks A.2–A.3 and Proposition A.1, pp. 54–58.)
+For a polarized CM pair (A₀,A) and nonsplit finite place v, define inv_v using `(−1)^{n(n−1)/2}` times the determinant of the Hermitian Tate-Hom space when reschar(v) is invertible. In characteristic reschar(v), use the Frobenius-fixed determinant line Λⁿ `Hom_{F_v}(D(A₀),D(A))` with its induced Hermitian form; multiply its raw invariant by `(−1)^{Σ_{φ∈Φ_{ν,v}}r_φ}` in RSZ20’s opposite-CM convention. For the positive CM convention transport both r₀ and Φ as in RSZ20 Remark A.2. Impose inv_v^r(A₀,A)=inv_v(V) at every geometric point. The split-place condition is vacuous. Explicitly, the convention-independent parity exponent is `Σ_{φ∈Φ_v}(n·r₀,φ−r_φ)`, where r₀,φ is the CM source multiplicity. It becomes Σr_φ in the opposite-CM convention r₀|Φ=0, and `Σ(n−r_φ)=Σ_{Φ̄_v}r_φ` in the positive-CM convention r₀|Φ=1. (RSZ20, Appendix A, equations (A.1)–(A.8), Remarks A.2–A.3 and Proposition A.1, pp. 54–58.)
 
 *Route.* Apply the Tate-Hom pairing away from the residue characteristic. Construct the determinant isocrystal and its slope-zero fixed line in residue characteristic. Include the CM/signature adjustment and prove base-change invariance and local constancy by the integral comparison in Proposition A.1.
 
@@ -1303,7 +1423,7 @@ For a polarized CM pair (A₀,A) and nonsplit finite place v, define inv_v using
 
 - Characteristic polynomials do not see the action. Over 𝔽₃ the matrix with rows (0,1) and (0,0) has characteristic polynomial T² and is nonzero; so a Lie action with the right characteristic polynomial need not satisfy the annihilation equation Q(i(π))=0 of §6.5.
 - CM moduli at a ramified prime. For F=ℚ(√−p) with p odd and Φ={φ}, the p-divisible group of a point of M₀^a is a strict `O_{F_p}-module` of relative height 1 and dimension 1, so it has a unique deformation and M₀^a is étale at p, a prime that PELModuli §M4.7 excludes.
-- Parity exponent of the sign. For n=3, one embedding φ∈Φ_v and r_φ=2, the exponent `Σ_{φ∈Φ_v}(n` r₀,φ−r_φ) of §6.8 is 3·1−2=1 in the positive-CM convention and −2, of even parity, in the opposite-CM convention: the two conventions differ, so the convention is part of the datum.
+- Parity exponent of the sign. For n=3, one embedding φ∈Φ_v and r_φ=2, the exponent `Σ_{φ∈Φ_v}(n·r₀,φ−r_φ)` of §6.8 is 3·1−2=1 in the positive-CM convention and −2, of even parity, in the opposite-CM convention: the two conventions differ, so the convention is part of the datum.
 
 ### Dependencies
 
@@ -1317,7 +1437,7 @@ Construct localized and semi-global CM-pair models, the polarized multichain loc
 
 ### 7.1 Localized RSZ moduli
 
-Let D contain all places of residual characteristic 2, all ramified quadratic places, and all inert places where V_v is nonsplit; enlarge it to the pullback of a finite rational-prime set, with product d. Away d choose self-dual lattices and hyperspecial levels; at d choose compact open levels. Over O_E[1/d], define the groupoid of CM pairs (A₀,i₀,λ₀;A,i,λ;η_d) in Zhang21 Definition 6.1: A₀ lies on a chosen nonempty principal CM component, A has the fake-Drinfeld Kottwitz signature and Rosati conjugation, λ is principal in the category localized at d, η_d is the prescribed Hermitian Hom-Tate level, and the Eisenstein clauses hold at every remaining place. Arrows have A₀ an exact polarized isomorphism and A an O_F-linear d-isogeny pulling back λ and the level exactly. (Zhang21, Definition 6.1, pp. 904–905, with §6.2.2, pp. 903–904.)
+Let D contain all places of residual characteristic 2, all ramified quadratic places, and all inert places where V_v is nonsplit; enlarge it to the pullback of a finite rational-prime set, with product d. Away d choose self-dual lattices and hyperspecial levels; at d choose compact open levels. Over O_E[1/d], define the groupoid of CM pairs (A₀,i₀,λ₀;A,i,λ;η_d) in Zhang21 Definition 6.1: A₀ lies on a chosen component of the principal CM moduli `M₀=M₀^{O_{F⁺}}` of §6.6, which is assumed nonempty, A has the fake-Drinfeld Kottwitz signature and Rosati conjugation, λ is principal in the category localized at d, η_d is the prescribed Hermitian Hom-Tate level, and the Eisenstein clauses hold at every remaining place. Arrows have A₀ an exact polarized isomorphism and A an O_F-linear d-isogeny pulling back λ and the level exactly. (Zhang21, Definition 6.1, pp. 904–905, with §6.2.2, pp. 903–904.)
 
 Hypotheses for this target: F/F⁺ CM, Φ a CM type with distinguished φ₀, n≥2; signature (n−1,1) at φ₀ and (n,0) at the other members of Φ. Use the PELModuli carriers, rational similitude convention and positive CM norm torus.
 
@@ -1333,26 +1453,12 @@ Hypotheses for this target: F/F⁺ CM, Φ a CM type with distinguished φ₀, n�
 **Checks.**
 
 - An inert nonsplit Hermitian place belongs to D and is not assigned good self-dual reduction.
-- If the selected principal CM moduli component is empty, so is the pair moduli; nonemptiness is not automatic.
+- If the principal CM moduli M₀ is empty, as for F⁺=ℚ(√3), F=F⁺(i) and the CM type of the last Check of §6.6, there is no component to select and no localized RSZ moduli; nonemptiness of M₀ is a hypothesis, not automatic.
 - An arrow scaling λ by c≠1 without the corresponding exact localized polarization equality is rejected.
 
 *Needs:* §6.1; §6.7; §6.5; §6.6; PELModuli §M1.7; PELModuli §M1.1.
 
-### 7.2 Localized smoothness and representability
-
-The localized RSZ functor is a smooth separated finite-type Deligne–Mumford stack over O_E[1/d] of relative dimension n−1. For sufficiently small levels on both the CM and unitary factors it is represented by a quasi-projective scheme, and sending a point to the product A₀×A with the action of O_F×O_F, the product polarization and the level structure induced by η₀ and η (through V(A)≅V(A₀,A)⊗V(A₀), V(A₀) being free of rank one) is a finite morphism to the PEL moduli of the product datum: the moduli of PELModuli §M2.8 when every residue characteristic of O_E[1/d] is unramified in F⁺ (then every prime of the base is good for the product datum in the sense of PELModuli §M0.10), and otherwise the multichain moduli of gap:bad-prime-projectivity, whose multichain at every prime of the base is generated by the single self-dual lattice Λ₀⊕Λ. The theorem uses the prescribed good local types and Eisenstein condition, not just the generic Kottwitz signature. (Zhang21, Theorem 6.2, p. 905; Stacks, Tags 0B3G, 0B3H, 0C4M (quasi-projectivity along finite morphisms and under base change); RZ96, Definition 6.9, p. 279 (the multichain moduli problem of the bad case).)
-
-*Route.* Apply PELModuli §M2.8 and §6.6 and impose the local conditions. Compute formal deformations through the relative comparison and the line-Grassmannian chart. Kill stabilizers by sufficiently small levels on both factors. For quasi-projectivity prove the comparison with the product PEL moduli finite (the pair is recovered from its image: A₀ and A as the images of the two idempotents of O_F×O_F, η from the product level structure and η₀; the conditions defining the source are closed, so the comparison is proper and quasi-finite) and pull back quasi-projectivity of that PEL moduli, base-changed to O_E[1/d] (a finite morphism is quasi-affine of finite type, hence quasi-projective; quasi-projective morphisms compose over a quasi-compact base and are stable under base change: Stacks Tags 0B3H, 0C4M, 0B3G): it is ShimuraCompactifications §7.18 when every residue characteristic of O_E[1/d] is unramified in F⁺, so good in the sense of PELModuli §M0.10, and gap:bad-prime-projectivity for the multichain generated by Λ₀⊕Λ when O_E[1/d] keeps a prime ramified in F⁺; quasi-projectivity is not local on the base, so the second case is not reduced to the first prime by prime.
-
-**Checks.**
-
-- For n=2 relative dimension is 1.
-- Small unitary level alone does not remove a nontrivial CM automorphism.
-- For F⁺=ℚ(√3), F=F⁺(i) and p=3: 3 is ramified in F⁺ and the place of F⁺ above 3 is inert in F (−1 is not a square modulo 3), so 3 need not divide d; it divides the discriminant of O_F×O_F, 3 is a bad prime in the sense of PELModuli §M0.10, and the comparison lands in the multichain moduli of gap:bad-prime-projectivity, not in that of PELModuli §M2.8. On a base all of whose residue characteristics are unramified in F⁺ the target is the PELModuli §M2.8 moduli and ShimuraCompactifications §7.18 applies unchanged.
-
-*Needs:* §7.1; §0.5; PELModuli §M0.10; PELModuli §M2.8; SchemeAndStackFoundations Layer 1; AbelianSchemesAndArithmeticModuli §A4.7; ShimuraCompactifications §7.18; gap:bad-prime-projectivity.
-
-### 7.3 Semi-global RSZ moduli
+### 7.2 Semi-global RSZ moduli
 
 Fix ν|p of E and distinguished v₀ of F⁺. Over `O_{E,(ν)}`, the semi-global functor has a CM abelian scheme (A₀,i₀,λ₀) in `M₀^{a,ξ}`, a unitary abelian scheme A with `O_{F,(p)}-action`, Kottwitz signature and Rosati quasi-polarization λ, a prime-to-p Hermitian Hom-Tate K^p-level, and at split v≠v₀ above p the specified étale Hom-level at the CM-selected factor. Require ker λ_v⊂A[ϖ_v] of order #Λ_v^♯/Λ_v at every v|p; impose Eisenstein at the distinguished fake-Drinfeld factor and sign plus Eisenstein at all other p-factors. At v₀ impose the matching sign when needed. Arrows are polarized CM isomorphisms on A₀ and prime-to-p O_F-linear quasi-isogenies on A pulling λ and all levels back exactly. (LZ22, §11.2, conditions (M1)–(M9), pp. 74–75; §11.3, p. 75; RSZ21 Definition 4.1, pp. 18–19.)
 
@@ -1376,11 +1482,11 @@ Hypotheses for this target: F/F⁺ CM, Φ a CM type with distinguished φ₀, n�
 
 *Needs:* §6.1; §6.7; §6.5; §6.8; §6.6; PELModuli §M1.6; PELModuli §M1.1.
 
-### 7.4 Exotic integral model
+### 7.3 Exotic integral model
 
-For n even, a ramified quadratic distinguished place u with F⁺_u/ℚ_p unramified, an admissible Φ and K/F_u unramified as in Layer 6, construct the unitary integral model over O_K with π-modular exotic local polarization. Require (A[u^∞],i,λ)∈Exo_Φ(n−1,1) and (A[v^∞],i,λ)∈Exo_Φ(n,0) at other ramified v|p, while A₀ remains the rank-one CM factor. Impose the split/banal/inert conditions at the other p-places and retain the chosen CM component or auxiliary CM product according to its arrow convention. LL22 prints A₀ in place of A in this condition; only A has the height and dimension of Exo_Φ(n−1,1) (see References, LL22). (LL22, §4.5, pp. 65–66; RSZ21 Theorem 5.4(e) and Theorem 5.7, pp. 26–27.)
+For n even, a ramified quadratic distinguished place u with F⁺_u/ℚ_p unramified, an admissible Φ and K/F_u unramified as in Layer 6, construct the unitary integral model over O_K with π-modular exotic local polarization. Require (A[u^∞],i,λ)∈Exo_Φ(n−1,1), while A₀ remains the rank-one CM factor. At every other place v above p that ramifies in F, take Λ_v π_v-modular for a uniformizer π_v of F_v, so that ker λ[v^∞]=A[v^∞][i(π_v)], and impose on Lie A[v^∞] the banal Eisenstein condition of §6.5; the signature of A at the embeddings inducing v is banal, and neither condition needs a hypothesis on F⁺_v/ℚ_p (RSZ21, §5.2, case (1), p. 25, and Theorem 5.4(b)). When F⁺_v/ℚ_p is unramified, the banal Eisenstein condition says that O_F acts on each embedding summand of Lie A[v^∞] through the member of Φ above that embedding, and with the kernel condition it is membership of (A[v^∞],i,λ) in the category Exo_Φ(n,0) of LL22 (Remark 2.67, p. 44). Impose the split/banal/inert conditions at the remaining p-places and retain the chosen CM component or auxiliary CM product according to its arrow convention. LL22 prints A₀ in place of A in the conditions at the ramified places; only A has the height and dimension of Exo_Φ(n−1,1) (see References, LL22). (LL22, §4.5, pp. 65–66, and Remark 2.67, p. 44; RSZ21, Theorem 5.4(b), (e) and Theorem 5.7, pp. 26–27.)
 
-*Route.* Apply the unitary local-model diagram with the π-modular wedge and spin conditions. Identify the absolute distinguished and banal ramified factors with Exo_Φ, respecting their different ranks. Use the generic CM-product comparison to identify the chosen canonical model.
+*Route.* Apply the unitary local-model diagram with the π-modular wedge and spin conditions at u and the banal Eisenstein conditions at the other ramified places, where the local-model factor is a point (RSZ21, proof of Theorem 5.4). Identify the absolute distinguished factor at u with Exo_Φ(n−1,1), of rank n, apart from the rank-one CM factor. Use the generic CM-product comparison to identify the chosen canonical model.
 
 **API.**
 
@@ -1393,11 +1499,12 @@ For n even, a ramified quadratic distinguished place u with F⁺_u/ℚ_p unramif
 
 - For n≥2 the rank-one A₀[u^∞] cannot satisfy the height and dimension of Exo_Φ(n−1,1).
 - The distinguished kernel is A[i(u)] and is not principal.
-- Omitting the banal Exo_Φ(n,0) condition at another ramified v|p changes the functor.
+- Omitting the banal Eisenstein condition at another ramified v above p changes the functor. Take n=2 and F⁺_v=ℚ_p, so that a single embedding summand of Lie A[v^∞] has rank 2: over a field of characteristic p, i(π_v) acting by the matrix with rows (0,1) and (0,0) has square 0, as π_v² requires there, and characteristic polynomial T², the one the Kottwitz condition prescribes, but it is nonzero, whereas the Eisenstein condition demands i(π_v)=φ(π_v)=0 there (Conventions, item 3).
+- When F⁺_v=ℚ_p the condition at v says that O_F acts on Lie A[v^∞], of rank n, through the member φ of Φ inducing v, with polarization kernel A[v^∞][i(π_v)]: A[v^∞] has height 2n and dimension n, and with the structural action taken to be φ it is the relative Exo(n,0) of §3.1 for K=ℚ_p and L=F_v.
 
-*Needs:* §4.1; §7.3; §6.4; §6.3.
+*Needs:* §4.1; §7.2; §6.4; §6.3; §6.5; §6.7.
 
-### 7.5 Global Krämer modification
+### 7.4 Global Krämer modification
 
 Assume p odd, `F_{v₀}/F⁺_{v₀}` ramified quadratic, `F⁺_{v₀}/ℚ_p` unramified and `Λ_{v₀}` self-dual. Impose the wedge equations for signature (n−1,1) on the distinguished Lie factor and Eisenstein on banal factors. Construct the global Krämer enhancement by a stable locally direct summand P⊂Lie A whose embedding-summand ranks are `r^Φ_{w,ψ}=Σ_{φ∈Hom_{w,ψ}∩Φ}r_φ` and which is annihilated on P and Lie A/P by the respective products ∏(T−φ(π_w)) for the two CM halves with nonzero r_φ. This is the Krämer–Eisenstein condition of RSZ21 (6.10), independent of π_w. At the distinguished rank-n factor P has structural rank n−1 and quotient conjugate rank 1; compare Layer 5 by conjugating the local actions. (RSZ21, Definition 6.10, equations (6.6)–(6.10) and Lemma 6.11, pp. 33–34; LZ22 §11.6, p. 77.)
 
@@ -1416,9 +1523,9 @@ Assume p odd, `F_{v₀}/F⁺_{v₀}` ramified quadratic, `F⁺_{v₀}/ℚ_p` unr
 - The Layer 5 comparison swaps the local structural/conjugate labels, rather than imposing both contradictory rank conditions.
 - On a banal factor the equation reduces to the corresponding Eisenstein annihilator clause.
 
-*Needs:* §7.3; §5.1; §6.5; SchemeAndStackFoundations Layer 4; AlgebraicModuliForArithmeticGeometry §1.3.
+*Needs:* §7.2; §5.1; §6.5; SchemeAndStackFoundations Layer 4; AlgebraicModuliForArithmeticGeometry §1.3.
 
-### 7.6 Unitary local-model comparison
+### 7.5 Unitary local-model comparison
 
 For the semi-global functor, construct its torsor of trivializations of the polarized de Rham lattice multichain generated by Λ_p and its dual, and its Hodge-filtration map to the corresponding unitary Grassmannian local model times the CM base. The torsor group is the automorphism group scheme of the polarized multichain, smooth by gap:unitary-multichain-stabilizer. The torsor map and Hodge map are smooth of equal relative dimension, with the imposed Eisenstein, wedge/spin or Krämer equations on the local model. This is the particular unitary local-model diagram, built from Grothendieck–Messing and the Grassmannians of AlgebraicModuliForArithmeticGeometry §1.3. (RSZ21, §5.1, diagram (5.5) and decompositions (5.6)–(5.7), pp. 23–24; Theorem 5.4, pp. 26–27.)
 
@@ -1437,13 +1544,27 @@ For the semi-global functor, construct its torsor of trivializations of the pola
 - An almost self-dual polarization gives a lattice multichain, not the perfect-pairing single-lattice chart.
 - After ramified base change the diagram still exists, but a chart uv−ϖ becomes uv−t^e and cannot certify regularity.
 
-*Needs:* §7.3; AbelianSchemesAndArithmeticModuli §A4.7; AbelianSchemesAndArithmeticModuli §A4.3; SchemeAndStackFoundations Layer 4; §6.7; AlgebraicModuliForArithmeticGeometry §1.3; gap:unitary-multichain-stabilizer.
+*Needs:* §7.2; AbelianSchemesAndArithmeticModuli §A4.7; AbelianSchemesAndArithmeticModuli §A4.3; SchemeAndStackFoundations Layer 4; §6.7; AlgebraicModuliForArithmeticGeometry §1.3; gap:unitary-multichain-stabilizer.
+
+### 7.6 Localized smoothness and representability
+
+The localized RSZ functor is a smooth separated finite-type Deligne–Mumford stack over O_E[1/d] of relative dimension n−1. For sufficiently small levels on both the CM and unitary factors it is represented by a quasi-projective scheme, and sending a point to the product A₀×A with the action of O_F×O_F, the product polarization and the level structure induced by η₀ and η (through V(A)≅V(A₀,A)⊗V(A₀), V(A₀) being free of rank one) is a finite morphism to the PEL moduli of the product datum: the moduli of PELModuli §M2.8 when every residue characteristic of O_E[1/d] is unramified in F⁺ (then every prime of the base is good for the product datum in the sense of PELModuli §M0.10), and otherwise the multichain moduli of gap:bad-prime-projectivity, whose multichain at every prime of the base is generated by the single self-dual lattice Λ₀⊕Λ. The theorem uses the prescribed good local types and Eisenstein condition, not just the generic Kottwitz signature. (Zhang21, Theorem 6.2, p. 905; Stacks, Tags 0B3G, 0B3H, 0C4M (quasi-projectivity along finite morphisms and under base change); RZ96, Definition 6.9, p. 279 (the multichain moduli problem of the bad case).)
+
+*Route.* Apply PELModuli §M2.8 and §6.6 and impose the local conditions. Compute deformations at every point of characteristic p, ordinary, μ-ordinary or basic, through the Grothendieck–Messing local-model diagram built as in §7.5 from the self-dual lattices at the places above p, which needs no formality of A[p^∞]: at the distinguished factor the local model is that of §0.6 with K₀=ℚ_p when the place is inert in F and the Lubin–Tate local model of RZ17 Lemma 8.6, p. 30, when it is split, both smooth of relative dimension n−1; at the banal factors the Eisenstein equations of §6.5 make the local model a point, and the CM factor is étale by §6.6 (RSZ21, Theorem 5.4 and Theorem 5.7 with their proofs, pp. 26–28). The comparison C of §0.4 is defined on supersingular objects only and is not used. Kill stabilizers by sufficiently small levels on both factors. For quasi-projectivity prove the comparison with the product PEL moduli finite (the pair is recovered from its image: A₀ and A as the images of the two idempotents of O_F×O_F, η from the product level structure and η₀; the conditions defining the source are closed, so the comparison is proper and quasi-finite) and pull back quasi-projectivity of that PEL moduli, base-changed to O_E[1/d] (a finite morphism is quasi-affine of finite type, hence quasi-projective; quasi-projective morphisms compose over a quasi-compact base and are stable under base change: Stacks Tags 0B3H, 0C4M, 0B3G): it is ShimuraCompactifications §7.18 when every residue characteristic of O_E[1/d] is unramified in F⁺, so good in the sense of PELModuli §M0.10, and gap:bad-prime-projectivity for the multichain generated by Λ₀⊕Λ when O_E[1/d] keeps a prime ramified in F⁺; quasi-projectivity is not local on the base, so the second case is not reduced to the first prime by prime.
+
+**Checks.**
+
+- For n=2 relative dimension is 1.
+- Small unitary level alone does not remove a nontrivial CM automorphism.
+- For F⁺=ℚ(√3), F=F⁺(i) and p=3: 3 is ramified in F⁺ and the place of F⁺ above 3 is inert in F (−1 is not a square modulo 3), so 3 need not divide d; it divides the discriminant of O_F×O_F, 3 is a bad prime in the sense of PELModuli §M0.10, and the comparison lands in the multichain moduli of gap:bad-prime-projectivity, not in that of PELModuli §M2.8. On a base all of whose residue characteristics are unramified in F⁺ the target is the PELModuli §M2.8 moduli and ShimuraCompactifications §7.18 applies unchanged.
+
+*Needs:* §7.1; §7.5; §0.6; §6.5; §6.6; PELModuli §M0.10; PELModuli §M2.8; SchemeAndStackFoundations Layer 1; AbelianSchemesAndArithmeticModuli §A4.7; ShimuraCompactifications §7.18; gap:bad-prime-projectivity.
 
 ### 7.7 Exotic integral smoothness
 
-Under §7.4’s hypotheses and sufficiently small/neat levels, the model is smooth over O_K of relative dimension n−1. Sending a point to the product A₀×A with the action of O_F×O_F, the product polarization and the induced level structure is a finite morphism to the multichain moduli of gap:bad-prime-projectivity for the product datum, base-changed to O_K, whose multichain at u is generated by Λ₀⊕Λ_u with Λ_u π-modular (Λ_u^♯=π⁻¹Λ_u for a uniformizer π of F_u, matching ker λ[u^∞]=A[π]) and at the other places above p by the lattices of §7.4; hence the model is quasi-projective over O_K. It is projective in the compact Li–Liu setting F⁺≠ℚ: V is then definite at a real place, hence anisotropic, so the product datum has no cusp label and its generic fibre is proper. Changes of split prime-to-p level are finite étale. The absolute-to-relative identification used for its formal basic factor requires F⁺_u/ℚ_p unramified and is Layer 4’s comparison. (LL22, §4.5, p. 66, where projectivity is attributed to RSZ20 Theorem 4.7, which does not prove it (see References, LL22), and Assumption 1.3, p. 4; RSZ21 Theorem 5.7, p. 27; RZ96, Definition 6.9, p. 279 (the multichain moduli problem); Stacks, Tags 0B3G, 0B3H, 0C4M, 01WN, 0BCL (quasi-projectivity and properness along finite morphisms).)
+Under §7.3’s hypotheses and sufficiently small/neat levels, the model is smooth over O_K of relative dimension n−1. Sending a point to the product A₀×A with the action of O_F×O_F, the product polarization and the induced level structure is a finite morphism to the multichain moduli of gap:bad-prime-projectivity for the product datum, base-changed to O_K, whose multichain at u is generated by Λ₀⊕Λ_u with Λ_u π-modular (Λ_u^♯=π⁻¹Λ_u for a uniformizer π of F_u, matching ker λ[u^∞]=A[π]) and at the other places above p by the lattices of §7.3; hence the model is quasi-projective over O_K. It is projective in the compact Li–Liu setting F⁺≠ℚ: V is then definite at a real place, hence anisotropic, so the product datum has no cusp label and its generic fibre is proper. Changes of split prime-to-p level are finite étale. The absolute-to-relative identification used for its formal basic factor requires F⁺_u/ℚ_p unramified and is Layer 4’s comparison. (LL22, §4.5, p. 66, where projectivity is attributed to RSZ20 Theorem 4.7, which does not prove it (see References, LL22), and Assumption 1.3, p. 4; RSZ21 Theorem 5.7, p. 27; RZ96, Definition 6.9, p. 279 (the multichain moduli problem); Stacks, Tags 0B3G, 0B3H, 0C4M, 01WN, 0BCL (quasi-projectivity and properness along finite morphisms).)
 
-*Route.* Use the even-rank π-modular local-model smoothness theorem at the distinguished place. Use the banal smooth factors and the étale CM base at the other p-places. Prove the comparison with the product PEL moduli finite as in §7.2 (the pair is recovered from the two idempotents of O_F×O_F; the exotic Lie and polarization conditions are closed, so the comparison is proper and quasi-finite) and pull back the quasi-projectivity of gap:bad-prime-projectivity (Stacks Tags 0B3G, 0B3H, 0C4M). For F⁺≠ℚ the generic fibre of the product datum is proper (ShimuraCompactifications §7.5 over the reflex field, no cusp label), so the gap’s properness clause makes its moduli proper, the model is proper as it is finite over it (Stacks Tag 01WN), and proper quasi-projective is projective (Stacks Tag 0BCL). Use the prime-to-p level torsor for finite étaleness.
+*Route.* Use the even-rank π-modular local-model smoothness theorem at the distinguished place (RSZ21, Theorem 5.4(e) and the proofs of Theorems 5.4 and 5.7, pp. 26–28; the local model is that of §3.4, smooth by RSZ17 Proposition 3.10 and PaRa09 §5.c). Use the banal smooth factors (RSZ21, Theorem 5.4(b) and Theorem 5.7) and the étale CM base at the other p-places. Prove the comparison with the product PEL moduli finite as in §7.6 (the pair is recovered from the two idempotents of O_F×O_F; the exotic Lie and polarization conditions are closed, so the comparison is proper and quasi-finite) and pull back the quasi-projectivity of gap:bad-prime-projectivity (Stacks Tags 0B3G, 0B3H, 0C4M). For F⁺≠ℚ the generic fibre of the product datum is proper (ShimuraCompactifications §§7.3 and 7.5 over the reflex field, no cusp label), so the gap’s properness clause makes its moduli proper, the model is proper as it is finite over it (Stacks Tag 01WN), and proper quasi-projective is projective (Stacks Tag 0BCL). Use the prime-to-p level torsor for finite étaleness.
 
 **Checks.**
 
@@ -1452,7 +1573,7 @@ Under §7.4’s hypotheses and sufficiently small/neat levels, the model is smoo
 - The multichain of the comparison at u is Λ₀⊕Λ_u⊂Λ₀⊕π⁻¹Λ_u up to the periodicity by π on the second factor, so its multichain of abelian schemes is determined by A₀×A and λ; the comparison separates λ from cλ for c≠1, since λ₀×cλ is not a rational multiple of λ₀×λ.
 - For F⁺=ℚ and even n≥4, V of signature (n−1,1) has a trace form that is an indefinite rational quadratic form in 2n≥8 variables, isotropic by Meyer’s theorem, so V is isotropic, the product datum has a cusp label and the projectivity clause would fail; this is why it keeps F⁺≠ℚ.
 
-*Needs:* §7.4; §7.6; §3.4; §4.6; §6.3; SchemeAndStackFoundations Layer 1; gap:bad-prime-projectivity; §7.2; ShimuraCompactifications §7.5.
+*Needs:* §7.3; §7.5; §3.4; §4.6; §6.3; SchemeAndStackFoundations Layer 1; gap:bad-prime-projectivity; §7.6; ShimuraCompactifications §7.3; ShimuraCompactifications §7.5.
 
 ### 7.8 Ramified wedge and Krämer geometry
 
@@ -1466,13 +1587,13 @@ The self-dual ramified wedge model is flat, with isolated singularities; the glo
 - At n=2 the wedge local model has a chart uv=ϖ over `O_{F⁺_{v₀}}`; after the ramified extension with ϖ=t²·(unit) it becomes uv=t²·(unit), whose maximal ideal at u=v=t=0 needs three generators in a ring of dimension 2, so it is not regular: semistability is lost, as RSZ21 Remark 6.8 states.
 - At n=2 the Krämer chart yz=u lives over `O_{F̆_{v₀}}`; after an unramified extension `E_ν/F_{v₀}` the element u is still a uniformizer, so at y=z=0 the maximal ideal is generated by y and z in a ring of dimension 2: the Krämer model is regular and strictly semistable there, unlike the wedge chart of the previous Check.
 
-*Needs:* §7.5; §7.6; §5.7; §5.6; SchemeAndStackFoundations Layer 4.
+*Needs:* §7.4; §7.5; §5.7; §5.6; SchemeAndStackFoundations Layer 4.
 
 ### 7.9 Self-dual and almost self-dual geometry
 
 If v₀ is split in F, with self-dual `Λ_{v₀}` and the Eisenstein condition of Layer 6 at the CM-selected factor w₀ (the Lubin–Tate condition of RZ17 §8, automatic when v₀ is unramified over p), the semi-global model is smooth of relative dimension n−1. If v₀ is inert, `V_{v₀}` is split and `Λ_{v₀}` self-dual, the semi-global model is smooth of relative dimension n−1; `F⁺_{v₀}/ℚ_p` may be ramified when the structural-action Eisenstein clause is retained. If v₀ is inert, `V_{v₀}` nonsplit, `Λ_{v₀}` almost self-dual and `F⁺_{v₀}/ℚ_p` unramified, the model is flat of relative dimension n−1; it is regular and semistable when E_ν/ℚ_p is unramified. At the other p-places assume the banal or permitted local types of LZ22 §11.2. For sufficiently small K^p it is representable over the CM stack by a scheme; after neat CM level it is a scheme. (LZ22, §11.2, p. 75; §11.3, pp. 75–76 (semistability when ν is unramified over p, p. 76); §11.4, p. 76; RZ17, §8, equations (8.1)–(8.2), p. 28.)
 
-*Route.* Apply the local-model diagram, using the Eisenstein comparison on any ramified absolute base field. Use the self-dual smooth chart or the almost self-dual semistable chart. Check unramifiedness of the coefficient extension before transferring the latter regularity assertion.
+*Route.* Apply the local-model diagram of §7.5, which computes deformations at every point by Grothendieck–Messing, ordinary or not. At a split v₀ the distinguished factor is the Lubin–Tate local model of RZ17 Lemma 8.6, p. 30, smooth of relative dimension n−1. At an inert v₀ with self-dual lattice it is the local model of §0.6 with K₀=ℚ_p and `K=F⁺_{v₀}`, smooth of relative dimension n−1 also when `F⁺_{v₀}/ℚ_p` is ramified, because the structural-action clause of §6.5 is imposed; the comparison C of §0.4 is not used. In the almost self-dual case use the semistable chart of the almost self-dual local model, as in §2.2. Check unramifiedness of the coefficient extension before transferring the latter regularity assertion.
 
 **Checks.**
 
@@ -1480,7 +1601,7 @@ If v₀ is split in F, with self-dual `Λ_{v₀}` and the Eisenstein condition o
 - Flatness survives coefficient extension; regularity is asserted only with the stated unramified base hypothesis.
 - At a split v₀ with self-dual lattice the model is smooth; principal congruence levels at v₀ are the Drinfeld levels of IgusaVarietiesAndTorsionConcentration §0.31, not a target here.
 
-*Needs:* §7.6; §1.2; §2.2; §0.5; SchemeAndStackFoundations Layer 1.
+*Needs:* §7.5; §0.6; §6.5; §1.2; §2.2; SchemeAndStackFoundations Layer 1.
 
 ### 7.10 Global integral gluing and levels
 
@@ -1501,19 +1622,19 @@ Under LZ22’s global lattice conditions: at 2 the CM extension is unramified; i
 - At an almost self-dual place a ramified E_ν/ℚ_p is not certified regular by the semistable local theorem.
 - A split congruence level failing CM matching or the unramified reflex extension is not covered by the regular-level theorem.
 
-*Needs:* §7.5; §7.8; §7.9; PELModuli §§M4.5–M4.6; §6.6; SchemeAndStackFoundations Layer 1; IgusaVarietiesAndTorsionConcentration §0.31; EndoscopicTransferAndUnitaryTraceComparison §10.2.
+*Needs:* §7.4; §7.8; §7.9; PELModuli §§M4.5–M4.6; §6.6; SchemeAndStackFoundations Layer 1; IgusaVarietiesAndTorsionConcentration §0.31; EndoscopicTransferAndUnitaryTraceComparison §10.2.
 
 ### Examples
 
-- Good and bad bases. For F⁺=ℚ and F=ℚ(i) with V split at 3, the prime 3 is inert in F and unramified in F⁺, so it need not divide d and the comparison of §7.2 at 3 lands in the PELModuli §M2.8 moduli. For F⁺=ℚ(√3) and F=F⁺(i)=ℚ(ζ₁₂), the place of F⁺ above 3 is inert in F but 3 is ramified in F⁺, and the comparison lands in the multichain moduli of gap:bad-prime-projectivity.
+- Good and bad bases. For F⁺=ℚ and F=ℚ(i) with V split at 3, the prime 3 is inert in F and unramified in F⁺, so it need not divide d and the comparison of §7.6 at 3 lands in the PELModuli §M2.8 moduli. For F⁺=ℚ(√3) and F=F⁺(i)=ℚ(ζ₁₂), the place of F⁺ above 3 is inert in F but 3 is ramified in F⁺, and the comparison lands in the multichain moduli of gap:bad-prime-projectivity.
 - Wedge versus Krämer at n=2. The wedge chart uv=ϖ over `O_{F⁺_{v₀}}` becomes uv=t²·(unit) over `O_{F_{v₀}}`, not regular at the origin; the Krämer chart yz=u lives over `O_{F̆_{v₀}}` and stays regular after an unramified extension `E_ν/F_{v₀}`.
 - Isotropy for F⁺=ℚ. For n=4 the trace form of a hermitian space of signature (3,1) is a rational quadratic form of signature (6,2) in 8 variables, isotropic by Meyer's theorem; the exotic model is then not proper, which is why §7.7 asserts projectivity only for F⁺≠ℚ.
 
 ### Dependencies
 
-Within this roadmap: Layer 0 (§0.5); Layer 1 (§1.2); Layer 2 (§2.2); Layer 3 (§3.4); Layer 4 (§4.1, §4.6); Layer 5 (§5.1, §5.6, §5.7); Layer 6 (§6.1, §6.3, §6.4, §6.5, §6.6, §6.7, §6.8).
+Within this roadmap: Layer 0 (§0.6); Layer 1 (§1.2); Layer 2 (§2.2); Layer 3 (§3.4); Layer 4 (§4.1, §4.6); Layer 5 (§5.1, §5.6, §5.7); Layer 6 (§6.1, §6.3, §6.4, §6.5, §6.6, §6.7, §6.8).
 
-Suppliers: PELModuli §M0.10, §M1.7, §M1.1, §M2.8, §M1.6, §§M4.5–M4.6; SchemeAndStackFoundations Layer 1, Layer 4; AbelianSchemesAndArithmeticModuli §A4.7, §A4.3; ShimuraCompactifications §7.18, §7.5; AlgebraicModuliForArithmeticGeometry §1.3; IgusaVarietiesAndTorsionConcentration §0.31; EndoscopicTransferAndUnitaryTraceComparison §10.2.
+Suppliers: PELModuli §M0.10, §M1.7, §M1.1, §M2.8, §M1.6, §§M4.5–M4.6; SchemeAndStackFoundations Layer 1, Layer 4; AbelianSchemesAndArithmeticModuli §A4.7, §A4.3; ShimuraCompactifications §7.18, §7.5, §7.3; AlgebraicModuliForArithmeticGeometry §1.3; IgusaVarietiesAndTorsionConcentration §0.31; EndoscopicTransferAndUnitaryTraceComparison §10.2.
 
 Supplier contracts: gap:bad-prime-projectivity, gap:unitary-multichain-stabilizer (see Exact supplier contracts).
 
@@ -1523,7 +1644,7 @@ Construct the mixed global isogeny model using an actual totally positive F⁺ s
 
 ### 8.1 Neat smooth unitary moduli
 
-Use the special inert setting of LTXZZ22 Definition 3.3.4: p is odd, inert and unramified in F, and F⁺_𝔭=ℚ_p; take the unramified coefficient ring `ℤ_{p,Φ}`, N≥1, a Hermitian space V of signature (N−1,1) at the distinguished embedding and definite at the others, self-dual p-lattice and neat tame unitary/CM levels. Over the fixed finite étale CM level scheme T_p, define pairs (A₀,i₀,λ₀,η₀;A,i,λ,η^p) with A of Kottwitz type NΦ−τ∞+τ∞^c, λ p-principal, and Hermitian Hom-Tate level η^p. Arrows are prime-to-p quasi-isogenies φ₀,φ on both factors with the SAME c∈ℤ_(p)^× multiplying λ₀ and λ, and with transported CM and Hom levels. This arrow relation differs from RSZ’s exact CM-isomorphism convention and must be related through the explicit Layer 6 quotient adapter. Sending a pair to (A₀×A, i₀×i, λ₀×λ, η₀^p⊕(η^p⊗η₀^p)), where V^p(A)≅Hom_F(V^p(A₀),V^p(A))⊗V^p(A₀) because V^p(A₀) is free of rank one, is a finite morphism to the PEL moduli of PELModuli §M2.8 for the product datum (the algebra F×F with its involution, the sum of the two Hermitian spaces, the self-dual lattice at p and a common similitude factor); p is a good prime in the sense of PELModuli §M0.10 for this datum. (LTXZZ22, Definition 3.3.4, p. 147; Lemma 4.2.1 and Definition 4.2.2, pp. 159–161.)
+Use the special inert setting of LTXZZ22 Definition 3.3.4: 𝔭 is a prime of F⁺ that is inert in F, the rational prime p below it is odd and unramified in F, and F⁺_𝔭=ℚ_p; the composite of the distinguished embedding τ∞ with the fixed isomorphism ℂ≅ℚ̄_p induces the place 𝔭 of F⁺. In this setting (§§8.1–8.4 and 8.7), p-adic lattices are self-dual at every prime of F⁺ above p other than 𝔭, and every defect of a lattice or of a polarization at p lies at 𝔭. Take the unramified coefficient ring `ℤ_{p,Φ}`, N≥1, a Hermitian space V of signature (N−1,1) at the distinguished embedding and definite at the others, a self-dual lattice of V⊗_F F_𝔮 at every prime 𝔮 of F⁺ above p, and neat tame unitary/CM levels. Over the fixed finite étale CM level scheme T_p, define pairs (A₀,i₀,λ₀,η₀;A,i,λ,η^p) with A of Kottwitz type NΦ−τ∞+τ∞^c, λ p-principal, and Hermitian Hom-Tate level η^p. Arrows are prime-to-p quasi-isogenies φ₀,φ on both factors with the SAME c∈ℤ_(p)^× multiplying λ₀ and λ, and with transported CM and Hom levels. This arrow relation differs from RSZ’s exact CM-isomorphism convention and must be related through the explicit Layer 6 quotient adapter. Sending a pair to (A₀×A, i₀×i, λ₀×λ, η₀^p⊕(η^p⊗η₀^p)), where V^p(A)≅Hom_F(V^p(A₀),V^p(A))⊗V^p(A₀) because V^p(A₀) is free of rank one, is a finite morphism to the PEL moduli of PELModuli §M2.8 for the product datum (the algebra F×F with its involution, the sum of the two Hermitian spaces, the self-dual lattice at p and a common similitude factor); p is a good prime in the sense of PELModuli §M0.10 for this datum. (LTXZZ22, Definition 3.3.4, p. 147; §4.1, the initial data and the choice of ℂ≅ℚ̄_p; §4.2, the self-dual lattices at the primes above p; Lemma 4.2.1 and Definition 4.2.2, pp. 159–161.)
 
 *Route.* Use the existing CM/PEL carriers with the two prescribed neat levels and special inert coefficient field. Impose the p-principal polarization and Hom-level while using the common-scalar quasi-isogeny arrow relation on both factors. Compare the resulting quotient to the RSZ or auxiliary-CM generic functor through the actual quotient maps. Prove the comparison with the product PEL moduli finite: the pair is recovered from its image (A₀ and A as the images of the two idempotents of O_F×O_F, η^p from the product level structure and η₀^p), the arrow relations agree because a prime-to-p F×F-linear quasi-isogeny of A₀×A is a pair (φ₀,φ) and the PEL similitude factor is the common scalar c, and the conditions defining the source (the CM component T_p, the Kottwitz type of A, p-principality of λ) are closed; so the comparison is proper and quasi-finite, hence finite.
 
@@ -1541,13 +1662,14 @@ Use the special inert setting of LTXZZ22 Definition 3.3.4: p is odd, inert and u
 - Scaling λ₀ and λ by different rational p-units is not the stated arrow relation.
 - The comparison with the product PEL moduli does not identify (A₀,λ₀;A,λ) with (A₀,λ₀;A,cλ) for a p-unit c≠1: λ₀×cλ is not a rational multiple of λ₀×λ, since a common multiple would have to be 1 on the first factor and c on the second.
 - An inert place with [F⁺_𝔭:ℚ_p]>1 is excluded from this source-specific adapter, even when another RSZ theorem applies.
+- Special inertness is a condition on 𝔭, not on p. For F⁺=ℚ(√2), F=F⁺(i) and p=7, the prime 7 splits in F⁺ as 𝔭𝔭′ because 2≡3² mod 7, 𝔭 is inert in F because −1 is not a square mod 7, 7 is unramified in F=ℚ(ζ₈), and F⁺_𝔭=ℚ₇; so 𝔭 is special inert although 7 is not inert in F. Requiring p itself to be inert in F would leave a single prime of F⁺ above p, of local degree [F⁺:ℚ], and F⁺_𝔭=ℚ_p would then force F⁺=ℚ.
 - For N=3, the condition that a map carry `ω_{A₀∨,τ∞}=0` into `ω_{A∨,τ∞}` is vacuous and gives dimension 3, whereas the required period line has dimension 1.
 
-*Needs:* §6.3; §7.3; PELModuli §M0.10; PELModuli §M0.18; PELModuli §M1.6; §6.6; PELModuli §M2.8.
+*Needs:* §6.3; §7.2; PELModuli §M0.10; PELModuli §M0.18; PELModuli §M1.6; §6.6; PELModuli §M2.8.
 
 ### 8.2 Neat almost self-dual moduli
 
-Under the same special inert and neat coefficient hypotheses, fix the standard definite Hermitian space V° of rank N≥1 and a self-dual p-lattice; its away-p Hom-Tate data index the moduli. Define the LTXZZ22 almost self-dual CM pair with Kottwitz type NΦ−τ∞+τ∞^c and ker λ[p^∞]⊂A[p] of rank p², keeping the common p-unit scalar on both polarization arrows. At p this polarization has defect one, rather than the principal type of the fixed tame reference space. For N=1 retain the zero-dimensional smooth boundary case. The generic unitary space is a separately chosen indefinite uniformization datum, not V° itself. (LTXZZ22, §5.1 and Definition 5.2.1, pp. 188–189; Remark 5.2.4, p. 190.)
+Under the same special inert and neat coefficient hypotheses, fix the standard definite Hermitian space V° of rank N≥1 and a self-dual lattice of V°⊗_F F_𝔮 at every prime 𝔮 of F⁺ above p; its away-p Hom-Tate data index the moduli. Define the LTXZZ22 almost self-dual CM pair with Kottwitz type NΦ−τ∞+τ∞^c and ker λ[p^∞] contained in A[𝔭] and of rank p², keeping the common p-unit scalar on both polarization arrows. At 𝔭 this polarization has defect one and at the other primes of F⁺ above p it is principal, whereas the lattices of the fixed tame reference space are self-dual at every prime above p. For N=1 retain the zero-dimensional smooth boundary case. The generic unitary space is a separately chosen indefinite uniformization datum, not V° itself. (LTXZZ22, §5.1 and Definition 5.2.1, pp. 188–189; Remark 5.2.4, p. 190.)
 
 *Route.* Keep the same CM factor and arrows as in the smooth adapter. Replace the principal local polarization condition by the rank-p² kernel bound, with the prescribed tame Hermitian reference datum. Treat N=1 separately from the n≥2 mixed local functor.
 
@@ -1555,7 +1677,7 @@ Under the same special inert and neat coefficient hypotheses, fix the standard d
 
 - A point is a CM pair with the defect-one polarization and fixed tame level.
 - Each point has a CM level point in T_p.
-- The p-primary polarization kernel is killed by p and has rank p².
+- The p-primary polarization kernel is contained in A[𝔭], hence killed by p, and has rank p².
 - Permitted tame Hecke changes preserve the local defect-one kernel type.
 
 **Checks.**
@@ -1566,26 +1688,9 @@ Under the same special inert and neat coefficient hypotheses, fix the standard d
 
 *Needs:* §8.1; §2.1; PELModuli §M1.1.
 
-### 8.3 Almost self-dual local equations
+### 8.3 Almost self-dual generic comparison
 
-Over a perfect residue field k of a point of T_p, the completed local ring of the almost self-dual model is either `W(k)[[t₁,…,t_{N−1}]]`, or, for N≥2, W(k)[[x₁,…,x_N]]/(x₁x_N−p). Thus the model is regular and strictly semistable of relative dimension N−1 over the unramified coefficient ring. The N=1 model has only the first type. Quasi-projectivity does not follow from the local rings. For the uniformization datum (V′,j,Λ′_p) of §8.4, sending a pair to (A₀×A, i₀×i, λ₀×λ) with the induced away-p level structure is a finite morphism to the multichain moduli of gap:bad-prime-projectivity for the product datum (the algebra F×F with its involution, V₀⊕V′, a common similitude factor), base-changed to the coefficient ring, whose multichain at p is generated by Λ₀⊕Λ′_p⊂Λ₀⊕Λ′_p^♯; hence the model is quasi-projective over T_p, and it is projective over T_p exactly when its generic fibre is proper, that is, when V′ is anisotropic. The balloon, ground and link geometry and the tangent exact sequences of Theorem 5.2.5(2)–(5) are planned by SelmerIwasawaCohomologyPartII §2.3; this target gives only the ambient local equations. (LTXZZ22, Theorem 5.2.5(1) and its local-model proof, pp. 190–193; RZ96, Definition 6.9, p. 279 (the multichain moduli problem); Stacks, Tags 0B3G, 0B3H, 0C4M, 0C4N, 01WN, 0BCL (quasi-projectivity and properness along finite morphisms, and over T_p).)
-
-*Route.* Normalize the local polarization pairing to diag(p,1,…,1). Describe simultaneous Hodge line/hyperplane lifts and their orthogonality relation by Grothendieck–Messing. In the crossing chart eliminate the remaining variables to obtain x₁x_N=p; in the other admissible charts solve for one variable to obtain a smooth power-series ring. Check the impossible fourth rank case and the N=1 boundary before concluding semistability. Prove the comparison with the product PEL moduli finite as in §8.1 (the pair is recovered from the two idempotents of O_F×O_F and λ; the kernel condition on λ is closed). Pull back the gap’s quasi-projectivity to obtain quasi-projectivity over the coefficient ring (Stacks Tags 0B3G, 0B3H, 0C4M), hence over T_p, since the model is quasi-compact over T_p (Stacks Tag 0C4N). If the generic fibre is proper then V′ is anisotropic, the product datum has no cusp label, its generic fibre is proper (ShimuraCompactifications §7.5 over the reflex field), the gap makes its moduli proper, the model is proper as it is finite over it (Stacks Tag 01WN), and proper quasi-projective is projective (Stacks Tag 0BCL); the converse is base change to the generic fibre.
-
-**Checks.**
-
-- For N=2 the crossing ring is W(k)[[x₁,x₂]]/(x₁x₂−p).
-- The ambient local rings are reduced and regular although the special fibre can cross.
-- After a ramified coefficient extension p=t^e with e>1, this argument supplies flatness but not regularity.
-- For N=1, V′ has rank one and is anisotropic, so the product datum has no cusp label and the model is finite over T_p, hence projective, in agreement with its zero-dimensional boundary case.
-- For F⁺=ℚ and N=2, V′ has signature (1,1) and is isotropic exactly when −det V′ is a norm from F; then the product datum has a cusp label, the generic fibre is a non-proper Shimura curve and the model is quasi-projective but not projective.
-- The multichain of the comparison at p is Λ₀⊕Λ′_p⊂Λ₀⊕Λ′_p^♯⊂p⁻¹(Λ₀⊕Λ′_p), with Λ′_p^♯/Λ′_p of order p², so its multichain of abelian schemes is A₀×A followed by A₀×A^∨ through λ; a p-principal λ would give the single self-dual lattice of §8.1 instead.
-
-*Needs:* §8.2; §7.6; AbelianSchemesAndArithmeticModuli §A4.7; SchemeAndStackFoundations Layer 4; gap:bad-prime-projectivity; §8.4; §8.1; ShimuraCompactifications §7.5.
-
-### 8.4 Almost self-dual generic comparison
-
-Choose an indefinite Hermitian V′ with the distinguished signature, an away-p isometry j:V°⊗𝔸_f^p≅V′⊗𝔸_f^p and an almost self-dual p-lattice Λ′_p of length-one defect, with its stabilizer K′_p. The generic fibre of the almost self-dual model is Sh(V′,jK^pK′_p)×(T_p)_η. This comparison depends on the uniformization datum (V′,j,Λ′_p); changing it gives the corresponding transported comparison. Its existence uses gap:hermitian-local-global and the two-place invariant change. (LTXZZ22, Definition 5.2.6 and formula (5.2), pp. 192–193.)
+Choose an indefinite Hermitian V′ with the distinguished signature, an away-p isometry j:V°⊗𝔸_f^p≅V′⊗𝔸_f^p and a p-adic lattice Λ′_p of V′ that is almost self-dual at 𝔭, with Λ′_𝔭^♯/Λ′_𝔭 of length one, and self-dual at the other primes of F⁺ above p, with its stabilizer K′_p. The generic fibre of the almost self-dual model is Sh(V′,jK^pK′_p)×(T_p)_η. This comparison depends on the uniformization datum (V′,j,Λ′_p); changing it gives the corresponding transported comparison. Its existence uses gap:hermitian-local-global and the two-place invariant change. (LTXZZ22, Definition 5.2.6 and formula (5.2), pp. 192–193.)
 
 *Route.* Use gap:hermitian-local-global to obtain V′ with the prescribed archimedean and p-adic invariants. Compare the rational Hom-Tate and polarization datum with its stabilizer lattices. Apply the canonical PEL comparison, retaining the independent CM level point.
 
@@ -1603,6 +1708,23 @@ Choose an indefinite Hermitian V′ with the distinguished signature, an away-p 
 - For two different CM level points the product comparison retains two separate components.
 
 *Needs:* §8.2; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; PELModuli §M3.8; ShimuraVarieties §6.7; PELModuli §§M3.1–M3.2; gap:hermitian-local-global.
+
+### 8.4 Almost self-dual local equations
+
+Over a perfect residue field k of a point of T_p, the completed local ring of the almost self-dual model is either `W(k)[[t₁,…,t_{N−1}]]`, or, for N≥2, W(k)[[x₁,…,x_N]]/(x₁x_N−p). Thus the model is regular and strictly semistable of relative dimension N−1 over the unramified coefficient ring. The N=1 model has only the first type. Quasi-projectivity does not follow from the local rings. For the uniformization datum (V′,j,Λ′_p) of §8.3, sending a pair to (A₀×A, i₀×i, λ₀×λ) with the induced away-p level structure is a finite morphism to the multichain moduli of gap:bad-prime-projectivity for the product datum (the algebra F×F with its involution, V₀⊕V′, a common similitude factor), base-changed to the coefficient ring, whose multichain at p is generated by Λ₀⊕Λ′_p⊂Λ₀⊕Λ′_p^♯; hence the model is quasi-projective over T_p, and it is projective over T_p exactly when its generic fibre is proper, that is, when V′ is anisotropic. The balloon, ground and link geometry and the tangent exact sequences of Theorem 5.2.5(2)–(5) are planned by SelmerIwasawaCohomologyPartII §2.3; this target gives only the ambient local equations. (LTXZZ22, Theorem 5.2.5(1) and its local-model proof, pp. 190–193; RZ96, Definition 6.9, p. 279 (the multichain moduli problem); Stacks, Tags 0B3G, 0B3H, 0C4M, 0C4N, 01WN, 0BCL (quasi-projectivity and properness along finite morphisms, and over T_p).)
+
+*Route.* Normalize the local polarization pairing to diag(p,1,…,1). Describe simultaneous Hodge line/hyperplane lifts and their orthogonality relation by Grothendieck–Messing. In the crossing chart eliminate the remaining variables to obtain x₁x_N=p; in the other admissible charts solve for one variable to obtain a smooth power-series ring. Check the impossible fourth rank case and the N=1 boundary before concluding semistability. Prove the comparison with the product PEL moduli finite as in §8.1 (the pair is recovered from the two idempotents of O_F×O_F and λ; the kernel condition on λ is closed). Pull back the gap’s quasi-projectivity to obtain quasi-projectivity over the coefficient ring (Stacks Tags 0B3G, 0B3H, 0C4M), hence over T_p, since the model is quasi-compact over T_p (Stacks Tag 0C4N). If the generic fibre is proper then V′ is anisotropic, the product datum has no cusp label, its generic fibre is proper (ShimuraCompactifications §§7.3 and 7.5 over the reflex field), the gap makes its moduli proper, the model is proper as it is finite over it (Stacks Tag 01WN), and proper quasi-projective is projective (Stacks Tag 0BCL); the converse is base change to the generic fibre.
+
+**Checks.**
+
+- For N=2 the crossing ring is W(k)[[x₁,x₂]]/(x₁x₂−p).
+- The ambient local rings are reduced and regular although the special fibre can cross.
+- After a ramified coefficient extension p=t^e with e>1, this argument supplies flatness but not regularity.
+- For N=1, V′ has rank one and is anisotropic, so the product datum has no cusp label and the model is finite over T_p, hence projective, in agreement with its zero-dimensional boundary case.
+- For N=2 the model is projective over T_p for every F⁺: Λ′_𝔭 is almost self-dual, so in an orthogonal basis its Gram matrix is diag(1,p) up to units, det V′ has valuation 1 at the inert prime 𝔭, −det V′ is not a norm from the unramified F_𝔭 (norms have even valuation), and V′ is anisotropic already at 𝔭. This differs from the self-dual model of §8.7, where V at N=2 can be isotropic. The first non-projective case is N=3 with F⁺=ℚ: V′ has signature (2,1), the quadratic form x↦h(x,x) on V′ viewed as a 6-dimensional ℚ-space is indefinite, hence isotropic by Meyer's theorem, so V′ is isotropic (a 3-dimensional hermitian space over F_𝔭 is isotropic, so 𝔭 imposes nothing), the product datum has a cusp label and the model is quasi-projective but not projective.
+- The multichain of the comparison at p is Λ₀⊕Λ′_p⊂Λ₀⊕Λ′_p^♯⊂p⁻¹(Λ₀⊕Λ′_p), with Λ′_p^♯/Λ′_p of order p², so its multichain of abelian schemes is A₀×A followed by A₀×A^∨ through λ; a p-principal λ would give the single self-dual lattice of §8.1 instead.
+
+*Needs:* §8.2; §7.5; AbelianSchemesAndArithmeticModuli §A4.7; SchemeAndStackFoundations Layer 4; gap:bad-prime-projectivity; §8.3; §8.1; ShimuraCompactifications §7.3; ShimuraCompactifications §7.5.
 
 ### 8.5 Integral level and Hecke system
 
@@ -1623,7 +1745,7 @@ For fixed allowable integral p-type, form the system over sufficiently small pri
 - The unitary finite adeles are those of F⁺, not of the CM field F.
 - A nonsplit change of parahoric p-type is not declared finite étale by this theorem.
 
-*Needs:* §8.1; §8.2; §8.4; IgusaVarietiesAndTorsionConcentration §0.31; PELModuli §M1.13; ShimuraVarieties §1.7.
+*Needs:* §8.1; §8.2; §8.3; IgusaVarietiesAndTorsionConcentration §0.31; PELModuli §M1.13; ShimuraVarieties §1.7.
 
 ### 8.6 Mixed integral isogeny moduli
 
@@ -1644,13 +1766,13 @@ At the inert almost self-dual distinguished place v₀, choose the totally posit
 - An α with correct polarization but wrong transported tame level is not a point.
 - The formal distinguished isogeny has the same fixed reduction as Layer 2; merely specifying its degree is insufficient.
 
-*Needs:* §2.4; §7.3; PELModuli §M2.14; AbelianSchemesAndArithmeticModuli §A6.13.
+*Needs:* §2.4; §7.2; PELModuli §M2.14; AbelianSchemesAndArithmeticModuli §A6.13.
 
 ### 8.7 Smooth integral geometry and tangent space
 
-The neat smooth unitary model is a smooth quasi-projective scheme over T_p of relative dimension N−1. At a geometric point its relative tangent space is `Hom(ω_{A∨,τ∞},H₁^dR(A)_{τ∞}/ω_{A∨,τ∞})`, with source rank 1 and target rank N−1. Its generic fibre is the canonical unitary Shimura variety times the CM factor. It is projective over T_p exactly when its generic fibre is proper. Both quasi-projectivity and this criterion come from the PEL moduli of the product A₀×A through the finite comparison morphism of §8.1: that PEL moduli is quasi-projective (ShimuraCompactifications §7.18); the product datum has a cusp label exactly when the product Hermitian space has a nonzero totally isotropic F×F-stable subspace, that is, the CM line being anisotropic, exactly when V is isotropic, which is exactly when the generic fibre is not proper; with no cusp label the PEL moduli is proper (ShimuraCompactifications §7.5). Projectivity does not follow from smoothness and quasi-projectivity alone. Here H₁^dR is the dual of the imported H¹_dR. On complex points the negative period line is `Hom_ℂ(H₁^dR(A₀)_{τ∞},ω_{A∨,τ∞})`; the condition on the zero subspace `ω_{A₀∨,τ∞}` cannot define that line. (LTXZZ22, Theorem 4.2.3 and formula (4.2), pp. 161–163; Remark 4.2.5, p. 163 (corrected period line); Stacks, Tags 0B3G, 0B3H, 0C4M, 0C4N, 01WN, 0BCL (quasi-projectivity and properness along finite morphisms, and over T_p).)
+The neat smooth unitary model is a smooth quasi-projective scheme over T_p of relative dimension N−1. At a geometric point its relative tangent space is `Hom(ω_{A∨,τ∞},H₁^dR(A)_{τ∞}/ω_{A∨,τ∞})`, with source rank 1 and target rank N−1. Its generic fibre is the canonical unitary Shimura variety times the CM factor. It is projective over T_p exactly when its generic fibre is proper. Both quasi-projectivity and this criterion come from the PEL moduli of the product A₀×A through the finite comparison morphism of §8.1: that PEL moduli is quasi-projective (ShimuraCompactifications §7.18); the product datum has a cusp label exactly when the product Hermitian space has a nonzero totally isotropic F×F-stable subspace, that is, the CM line being anisotropic, exactly when V is isotropic, which is exactly when the generic fibre is not proper; with no cusp label the PEL moduli is proper (ShimuraCompactifications §§7.3 and 7.5). Projectivity does not follow from smoothness and quasi-projectivity alone. Here H₁^dR is the dual of the imported H¹_dR. On complex points the negative period line is `Hom_ℂ(H₁^dR(A₀)_{τ∞},ω_{A∨,τ∞})`; the condition on the zero subspace `ω_{A₀∨,τ∞}` cannot define that line. (LTXZZ22, Theorem 4.2.3 and formula (4.2), pp. 161–163; Remark 4.2.5, p. 163 (corrected period line); Stacks, Tags 0B3G, 0B3H, 0C4M, 0C4N, 01WN, 0BCL (quasi-projectivity and properness along finite morphisms, and over T_p).)
 
-*Route.* Compute the polarized Hodge deformation using the rank-one distinguished quotient; the other factors are banal. Use neat levels for scheme representability; for quasi-projectivity pull back the quasi-projectivity of ShimuraCompactifications §7.18 along the finite comparison of §8.1 (a finite morphism is quasi-affine of finite type, hence quasi-projective, and quasi-projective morphisms compose over a quasi-compact base and are stable under base change: Stacks Tags 0B3H, 0C4M, 0B3G); this gives quasi-projectivity over the coefficient ring, and over T_p because the model is quasi-compact over T_p (Stacks Tag 0C4N). Identify the generic canonical model. For the projectivity clause: if the generic fibre is proper then V is anisotropic, the product datum has no cusp label, its PEL moduli is proper by ShimuraCompactifications §7.5, the model is proper as it is finite over that moduli (Stacks Tag 01WN), and a proper quasi-projective morphism is projective (Stacks Tag 0BCL); the converse is base change to the generic fibre.
+*Route.* Compute the polarized Hodge deformation using the rank-one distinguished quotient; the other factors are banal. Use neat levels for scheme representability; for quasi-projectivity pull back the quasi-projectivity of ShimuraCompactifications §7.18 along the finite comparison of §8.1 (a finite morphism is quasi-affine of finite type, hence quasi-projective, and quasi-projective morphisms compose over a quasi-compact base and are stable under base change: Stacks Tags 0B3H, 0C4M, 0B3G); this gives quasi-projectivity over the coefficient ring, and over T_p because the model is quasi-compact over T_p (Stacks Tag 0C4N). Identify the generic canonical model. For the projectivity clause: if the generic fibre is proper then V is anisotropic, the product datum has no cusp label, its PEL moduli is proper by ShimuraCompactifications §§7.3 and 7.5, the model is proper as it is finite over that moduli (Stacks Tag 01WN), and a proper quasi-projective morphism is projective (Stacks Tag 0BCL); the converse is base change to the generic fibre.
 
 **Checks.**
 
@@ -1658,7 +1780,7 @@ The neat smooth unitary model is a smooth quasi-projective scheme over T_p of re
 - The CM tangent contribution is zero because T_p is étale over the coefficient ring.
 - For F⁺=ℚ and N=2, V has signature (1,1) and is isotropic exactly when −det V is a norm from F; then the product datum has a cusp label, the generic fibre is a non-proper Shimura curve and the model is not projective, while for anisotropic V the model is projective.
 
-*Needs:* §8.1; §7.2; AbelianSchemesAndArithmeticModuli §A4.7; AbelianSchemesAndArithmeticModuli §A4.3; ShimuraVarieties §§2.5–2.7; SchemeAndStackFoundations Layer 4; ShimuraCompactifications §§7.5, 7.18.
+*Needs:* §8.1; §7.6; AbelianSchemesAndArithmeticModuli §A4.7; AbelianSchemesAndArithmeticModuli §A4.3; ShimuraVarieties §§2.5–2.7; SchemeAndStackFoundations Layer 4; ShimuraCompactifications §§7.3, 7.5, 7.18.
 
 ### Examples
 
@@ -1668,9 +1790,9 @@ The neat smooth unitary model is a smooth quasi-projective scheme over T_p of re
 
 ### Dependencies
 
-Within this roadmap: Layer 2 (§2.1, §2.4); Layer 6 (§6.3, §6.6); Layer 7 (§7.2, §7.3, §7.6).
+Within this roadmap: Layer 2 (§2.1, §2.4); Layer 6 (§6.3, §6.6); Layer 7 (§7.2, §7.5, §7.6).
 
-Suppliers: PELModuli §M0.10, §M0.18, §M1.6, §M2.8, §M1.1, §M3.8, §§M3.1–M3.2, §M1.13, §M2.14; AbelianSchemesAndArithmeticModuli §A4.7, §A6.13, §A4.3; SchemeAndStackFoundations Layer 4; ShimuraCompactifications §7.5, §§7.5, 7.18; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; ShimuraVarieties §6.7, §1.7, §§2.5–2.7; IgusaVarietiesAndTorsionConcentration §0.31.
+Suppliers: PELModuli §M0.10, §M0.18, §M1.6, §M2.8, §M1.1, §M3.8, §§M3.1–M3.2, §M1.13, §M2.14; AbelianSchemesAndArithmeticModuli §A4.7, §A6.13, §A4.3; SchemeAndStackFoundations Layer 4; ShimuraCompactifications §§7.3, 7.5, 7.18; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; ShimuraVarieties §6.7, §1.7, §§2.5–2.7; IgusaVarietiesAndTorsionConcentration §0.31.
 
 Supplier contracts: gap:bad-prime-projectivity, gap:hermitian-local-global (see Exact supplier contracts).
 
@@ -1697,26 +1819,32 @@ Hypotheses for this target: K, A, A′ as stated; at every place 𝔭 of K above
 
 ### 9.2 Quotients of formal schemes by discrete groups
 
-Let 𝔐 be a formal scheme locally formally of finite type over Spf O_Ĕ and Γ a group acting on 𝔐 over Spf O_Ĕ such that (i) every quasi-compact open subset of 𝔐_red meets only finitely many of its Γ-translates and (ii) every point of 𝔐 has an open neighbourhood U with γU∩U=∅ for every γ≠1 in Γ; in particular Γ acts freely on all points of 𝔐_red, generic points of components included. Construct the quotient Γ\𝔐: the fpqc quotient sheaf is represented by a formal scheme locally formally of finite type over Spf O_Ĕ and 𝔐→Γ\𝔐 is a Γ-torsor and a local isomorphism. Hypothesis (ii) is what makes the quotient a formal scheme rather than the formal algebraic space of RZ96 Proposition 2.37: Γ\𝔐 is then locally isomorphic to 𝔐. For the unitary uniformization data of Layer 9 — the group I(ℚ) of polarized self-quasi-isogenies of a basic pair, acting on 𝔐×G(𝔸_f^p)/K^p — conditions (i) and (ii) hold when K^p is small enough that every intersection of I(ℚ) with a conjugate of J(ℚ_p)×K^p is torsion free, as in RZ96 Theorem 6.30; for general K^p the quotient is a formal Deligne–Mumford stack with finite stabilizers. The quotient is used as a sheaf on `Nilp_{O_Ĕ}`, not only through its geometric points. (RZ96, Propositions 2.34–2.37, pp. 64–67; Theorem 6.23 and its proof, p. 289; Theorem 6.30, p. 293.)
+Let 𝔐 be a formal scheme locally formally of finite type over Spf O_Ĕ and Γ a group acting on 𝔐 over Spf O_Ĕ such that (i) for every quasi-compact open U of 𝔐_red the set {γ∈Γ : U∩γU≠∅} is finite and (ii) every point of 𝔐 has an open neighbourhood U with U∩γU=∅ for every γ≠1. Construct the quotient Γ∖𝔐: the fpqc quotient sheaf is represented by a formal scheme locally formally of finite type over Spf O_Ĕ, and 𝔐→Γ∖𝔐 is a Γ-torsor and a Zariski local isomorphism. This conclusion uses the disjoint neighbourhoods of (ii). Freeness on points, including generic points of components, does not imply (ii). (RZ96, proof of Proposition 2.37, pp. 66–67, applied when these neighbourhoods exist.)
 
-Hypotheses for this target: 𝔐, Γ as stated; for the unitary application K^p sufficiently small as stated.
+For a framed space 𝔐 of §0.2, with structure-preserving framing quasi-isogeny group J(ℚ_p), and a discrete, torsion-free subgroup Γ⊂J(ℚ_p) separated in its profinite topology, construct the étale quotient sheaf Γ∖𝔐 as a formal algebraic space locally formally of finite type, and prove that 𝔐→Γ∖𝔐 is an étale Γ-torsor. Profinite separation means that for every γ≠1 there is a finite-index normal subgroup not containing γ. This theorem does not assume (ii). (RZ96, Propositions 2.34–2.37, pp. 64–67.)
 
-*Route.* Choose a covering of 𝔐 by opens U with U∩γU=∅ for γ≠1, as (ii) allows. Glue the images of these opens along the Γ-action to obtain Γ\𝔐, and check that it represents the quotient sheaf. For the unitary application, use that I(ℚ) is discrete in J(ℚ_p)×G(𝔸_f^p) (proof of RZ96 Theorem 6.23) and that the stabilizers in J(ℚ_p) of points and of irreducible components of 𝔐_red are compact, so stabilizers in I(ℚ) are finite and trivial when the stated intersections are torsion free; local finiteness follows from discreteness in the same way (RZ96 Proposition 2.34).
+For the unitary uniformization data of Layer 9, let I(ℚ) be the polarized self-quasi-isogeny group of the basic pair, acting on 𝔐×G(𝔸_f^p)/K^p. Decompose its quotient sheaf over tame double cosets into Γ_g∖𝔐, where Γ_g is the image in J(ℚ_p) of I(ℚ)∩(J(ℚ_p)×gK^pg⁻¹). For sufficiently small K^p these projections are injective and each Γ_g is discrete, torsion-free and profinitely separated, so the formal algebraic-space theorem applies. For general K^p retain the quotient formal Deligne–Mumford stack with finite stabilizers. The arithmetic application asserts no disjoint Zariski neighbourhoods; formal-scheme representability at sufficiently small level is established together with Θ in §9.5. All quotients are sheaves, or the indicated quotient stack, on `Nilp_{O_Ĕ}`. (RZ96, proof of Theorem 6.23, pp. 289–290; Theorem 6.30, p. 293.)
+
+Hypotheses for the first theorem: 𝔐, Γ and (i)–(ii) as stated. For the algebraic-space theorem: the framed space of §0.2 and discrete, torsion-free, profinitely separated Γ⊂J(ℚ_p); the arithmetic application verifies these hypotheses for Γ_g at sufficiently small K^p.
+
+*Route.* Under (ii), glue the images of disjoint-translate neighbourhoods along the action to represent the quotient by a formal scheme. For the arithmetic application prove discreteness of I(ℚ) in J(ℚ_p)×G(𝔸_f^p), then discreteness and local finiteness for each Γ_g by RZ96 Proposition 2.34. Compact stabilizers give finite stabilizers, and small tame level excludes torsion by the polarized-automorphism argument of RZ96 Theorem 6.23. To prove profinite separation, fix a tame prime ℓ≠p and a faithful linear realization of I over ℚ_ℓ. The compact tame-level image preserves a ℤ_ℓ-lattice; reduction modulo ℓ^r separates every nonidentity γ for some r. Apply RZ96 Proposition 2.37: local finiteness and separation supply finite-index normal subgroups avoiding the finitely many nonidentity translates meeting a chosen bounded chart. Glue the resulting finite free quotients in the étale topology. Freeness identifies the fibre product of 𝔐 with itself over Γ_g∖𝔐 with Γ_g×𝔐, giving the étale torsor. This construction does not use Θ.
 
 **API.**
 
-- For a free, locally finite action the quotient Γ\𝔐 is a formal scheme locally formally of finite type.
-- 𝔐→Γ\𝔐 is a Γ-torsor and a local isomorphism.
-- A Γ-invariant morphism from 𝔐 to a formal scheme factors uniquely through Γ\𝔐.
-- For K′^p⊂K^p the level-forgetful map of quotients is finite étale.
+- Under (i)–(ii), Γ∖𝔐 is a formal scheme locally formally of finite type and the projection is a Γ-torsor and a Zariski local isomorphism.
+- For a discrete, torsion-free, profinitely separated Γ⊂J(ℚ_p) acting on the framed space, Γ∖𝔐 is a formal algebraic space locally formally of finite type and the projection is an étale Γ-torsor; in particular this applies to the arithmetic Γ_g.
+- In either sheaf quotient, a Γ-invariant morphism from 𝔐 to a formal scheme factors uniquely through the quotient.
+- For sufficiently small tame levels K′^p⊂K^p the level-forgetful map of arithmetic quotients is finite étale.
 
 **Checks.**
 
-- For Γ trivial the quotient is 𝔐.
-- For Γ=ℤ acting on `𝔐=⊔_{h∈ℤ}𝔑` by translating the index, the action is free and locally finite and Γ\𝔐≅𝔑.
-- The scalar −1∈U(V)(K) fixes every point of N_n, since −1 is an automorphism of every (X,ι,λ) carrying ρ to −ρ; the quotient sheaf by {±1} is N_n itself and N_n→N_n is not a {±1}-torsor, so freeness must be checked for the group modulo the elements acting trivially.
+- For Γ trivial the quotient is 𝔐 and the torsor has one sheet.
+- For Γ=ℤ acting on `𝔐=⊔_{h∈ℤ}𝔑` by translating the index, a neighbourhood in one copy is disjoint from every nontrivial translate, so (ii) holds and Γ∖𝔐≅𝔑. For Γ=mℤ⊂ℤ the map between quotients has m sheets, for m≥1.
+- For the unramified quadratic L/ℚ₃ take the rank-three hermitian form with Gram matrix H having rows (0,1,0), (1,0,0), (0,0,3). Its determinant is −3. Put Λ₊=O_L(3e)+O_Lf+O_La, Λ₋=O_Le+O_L(3f)+O_La and Σ=Λ₊+Λ₋. Their duals are O_Le+O_L(f/3)+O_L(a/3), O_L(e/3)+O_Lf+O_L(a/3), and O_Le+O_Lf+O_L(a/3), respectively. Thus 3Λ♯⊆Λ⊆Λ♯ in all three cases and the dual-quotient lengths are 3,3,1. In the rank-three unramified unitary space the first two lattices label irreducible curves C₊, C₋ meeting in the single point x=V(Σ); the dimensions are (3−1)/2=1 and (1−1)/2=0. (LZ22, §§2.5–2.7, p. 12.)
+- In that example g=diag(3,1/3,1) satisfies g*Hg=H and gΛ₋=Λ₊. Its powers have valuations (m,−m,0), so Γ=⟨g⟩ is discrete infinite cyclic, torsion-free and profinitely separated. RZ96 Propositions 2.34–2.37 apply. Every open U containing x contains both generic points η₊ and η₋, and gη₋=η₊, so η₊∈U∩gU. The algebraic-space theorem applies to this framed action, while (ii) fails. This tests the proposed implication from discreteness and freeness; it does not prescribe a global CM pair with Γ as its arithmetic subgroup.
+- The scalar −1∈U(V)(K) fixes every point of N_n, since −1 is an automorphism of every (X,ι,λ) carrying ρ to −ρ; the quotient sheaf by {±1} is N_n itself and N_n→N_n has one sheet, not two, so it is not a {±1}-torsor. The quotient stack retains this stabilizer; an effective action alone still needs its point stabilizers checked.
 
-*Needs:* §0.2; AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 1.
+*Needs:* §0.2; §9.1 (faithful realizations of the arithmetic self-quasi-isogeny group); AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 1.
 
 ### 9.3 Nearby unitary framing datum
 
@@ -1741,7 +1869,7 @@ For the global unitary V and distinguished nonsplit finite place v₀, use the h
 
 ### 9.4 Banal and CM local factors
 
-In the RSZ uniformization hypotheses, the full absolute p-local framed space N′ is the product `(Z^ℚ(ℚ_p)/K_{Z,p})×N_{O_{Ĕ_ν}}×∏_{v|p,v≠v₀}U(V_v)/K_v`, where the other p-factors are banal and satisfy sign and Eisenstein and N is the matching principal or almost self-dual relative framed space. The two coset factors are formal discrete étale spaces. For an exotic model replace N by its absolute exotic factor and then use Layer 4. This decomposition is equivariant for the identified local framing group; none of the discrete factors is discarded before quotienting. (LZ22, §13.1, pp. 80–81; RSZ20 Lemma 8.16, p. 53, and Remark 8.18, p. 54, Appendix B, pp. 59–60.)
+In the RSZ uniformization hypotheses, the full absolute p-local framed space N′ is the product `(Z^ℚ(ℚ_p)/K_{Z,p})×N_{O_{Ĕ_ν}}×∏_{v|p,v≠v₀}U(V_v)/K_v`, where the other p-factors are banal and satisfy sign and Eisenstein and N is the matching principal or almost self-dual relative framed space. The two coset factors are formal discrete étale spaces. For an exotic model replace N by its absolute exotic factor and then use Layer 4. This decomposition is equivariant for the identified local framing group; none of the discrete factors is discarded before quotienting. (LZ22, §13.1, pp. 80–81; RSZ20 Lemma 8.16, p. 53, and Remark 8.18, p. 54, Appendix B, pp. 58–60.)
 
 *Route.* Split the absolute p-divisible group by the p-adic places and the CM torus component. Use the strict Eisenstein condition and banal deformation rigidity to identify each nondistinguished factor with its discrete lattice-coset functor. Apply the relative comparison only to the distinguished factor and verify the actions on every factor.
 
@@ -1762,24 +1890,27 @@ In the RSZ uniformization hypotheses, the full absolute p-local framed space N�
 
 ### 9.5 Unitary uniformization morphism
 
-For a chosen basic global CM pair and sufficiently small integral level, construct Θ from the arithmetic quotient G̃′(ℚ)∖(N′×G̃(𝔸_f^p)/K^p) to the completion of the integral model along the basic isogeny component. Starting from the framed p-divisible deformation and the away-p lattice/level data, use Serre–Tate effectivity and the quasi-isogeny pushout construction to recover the polarized abelian pair. Descent through quasi-isogenies makes the map independent of representatives. RZ96 Theorem 6.30 identifies the image with an open-and-closed basic sublocus Z′; equality with the full basic locus Z requires its Hasse hypothesis or a disjoint union over framing classes. (RZ96, §§6.13–6.16, pp. 282–284; Theorems 6.24, 6.27 and 6.30, pp. 291–295.)
+For a chosen basic global CM pair and sufficiently small integral level, construct Θ from the arithmetic quotient sheaf Q=G̃′(ℚ)∖(N′×G̃(𝔸_f^p)/K^p), represented initially by the formal algebraic space of §9.2, to the completion of the integral model along the basic isogeny component. Starting from the framed p-divisible deformation and the away-p lattice/level data, use Serre–Tate effectivity and the quasi-isogeny pushout construction to recover the polarized abelian pair. Descent through quasi-isogenies makes the map independent of representatives. Prove that Θ is an isomorphism of étale sheaves onto the completion along an open-and-closed basic sublocus Z′; thus Q is represented by that formal scheme. Equality with the full basic locus Z requires the Hasse hypothesis of RZ96 Theorem 6.30 or a disjoint union over framing classes. (RZ96, §§6.13–6.16, pp. 282–284; Theorem 6.23 and its proof, pp. 289–290; Theorems 6.24, 6.27 and 6.30, pp. 291–295.)
 
-*Route.* Construct the polarized abelian quasi-isogeny pushout for every finite locally closed framed chart; retain the exact CM factor. Use Serre–Tate (AbelianSchemesAndArithmeticModuli §A4.9) and effectivity of polarized formal lifts (§A4.8) to identify its infinitesimal functor with the local p-divisible deformation functor. Show fully faithful descent modulo the global quasi-isogeny group and compatibility with the tame level torsor. Use the basic rational comparison and Hasse partition for essential surjectivity; apply §9.2 to obtain an isomorphism onto the indicated completion.
+*Route.* Construct the polarized abelian quasi-isogeny pushout for every finite locally closed framed chart; retain the exact CM factor. Use Serre–Tate (AbelianSchemesAndArithmeticModuli §A4.9) and effectivity of polarized formal lifts (§A4.8) to compare the infinitesimal functors. Descend the construction to the quotient sheaf of §9.2. Prove full faithfulness modulo global quasi-isogenies, compatibility with the tame level torsor, and essential surjectivity onto the selected completion, using the basic rational comparison and the Hasse partition. These give the sheaf isomorphism and therefore formal-scheme representability. Alternatively, the quasi-finite representability argument of RZ96 Theorem 6.23, pp. 289–290, first makes Q a formal scheme using Θ; formal étaleness, radiciality, surjectivity and properness on the reduced loci then give the isomorphism. Neither route requires condition (ii) of §9.2 for the arithmetic action.
 
 **API.**
 
-- Θ is defined on a framed deformation together with its discrete and tame level data.
+- Θ is defined on a framed deformation together with its discrete and tame level data and descends to Q.
 - Changing by G̃′(ℚ) yields canonically isomorphic polarized abelian data.
-- On formal deformation rings Θ is the Serre–Tate/local-model comparison.
+- On infinitesimal deformation functors Θ is the Serre–Tate/local-model comparison.
+- Θ identifies Q with the indicated completed basic component as an étale sheaf; that completion represents Q by a formal scheme.
 - Θ commutes with permitted tame Hecke maps and the associated changes of level.
 
 **Checks.**
 
-- The RZ96 framing convention points from the fixed object to the deformation; use inversion to compare with the local ρ:X→𝕏 convention.
-- Without the Hasse hypothesis the theorem concludes Z′⊂Z open and closed, rather than equality with all Z.
-- Forgetting the CM torus coset before descent changes the source of Θ.
+- The RZ96 framing convention points from the fixed object to the deformation; use inversion to compare with the local ρ:X→𝕏 convention. For g=diag(3,1/3), gg⁻¹=id whereas g²=diag(9,1/9)≠id.
+- Without the Hasse hypothesis the theorem concludes Z′⊂Z open and closed, rather than equality with all Z: one chosen framing class among two accounts for one component of the partition.
+- When the CM quotient class set has two elements, the source of Θ retains both labelled fibres; deleting that class factor leaves one fibre instead of two.
+- The map Spec k→Spec(k[ε]/(ε²)) is bijective on geometric points but kills the one-dimensional tangent direction ε; the deformation comparison must therefore be an isomorphism on nilpotent bases, not merely on geometric points.
+- For the intersecting-component action in §9.2 the quotient map remains an étale torsor although every neighbourhood U of x has η₊∈U∩gU. The arithmetic uniformization proof obtains a formal scheme from Θ and its completed target, without asserting (ii) for such actions.
 
-*Needs:* §9.3; §9.4; AbelianSchemesAndArithmeticModuli §A4.9; AbelianSchemesAndArithmeticModuli §A4.8; §0.2; §9.2; §9.1.
+*Needs:* §9.3; §9.4; AbelianSchemesAndArithmeticModuli §A4.9; AbelianSchemesAndArithmeticModuli §A4.8; §0.2; §9.2 (the formal algebraic-space quotient and étale torsor); §9.1; §7.1; §7.2; §7.3; §7.4; §8.6 (the integral models whose completions §§9.6–9.10 identify); AdicSpacesPartIII Layer F0 (completion along the basic locus).
 
 ### 9.6 Exotic basic-locus uniformization
 
@@ -1794,7 +1925,7 @@ In the compact even-rank LL22 setting and at a ramified distinguished u with F�
 - The CM fibre is fixed before writing the unitary quotient.
 - At n=2 the two forms on the same Hom space differ by u²/ϖ, which has valuation 1−val_u(ϖ) in F⁺_u: with val_u(ϖ)=1 it is a unit and a lattice self-dual for h^exo is self-dual for h′; with val_u(ϖ)=0 the h′-dual of a self-dual Λ is (u²/ϖ)^−1Λ≠Λ, and the integrality test `(x,x)∈O_{F⁺_u}` shifts by one valuation.
 
-*Needs:* §7.4; §9.5; §4.6; §3.6; §6.4; §6.3.
+*Needs:* §7.3; §9.5; §4.6; §3.6; §6.4; §6.3.
 
 ### 9.7 Inert basic-locus uniformization
 
@@ -1825,7 +1956,7 @@ For the RSZ completion the CM projection is the discrete quotient Z^ℚ(ℚ)∖Z
 
 ### 9.9 Krämer completion compatibility
 
-For every n≥2, in the ramified setting of §7.5 with `E_ν/F_{v₀}` unramified, the global Krämer enhancement completed along a selected basic component is the corresponding principal ramified framed completion with the Layer 5 Krämer filtration, times its CM and other discrete local factors and modulo the global framing group. The comparison conjugates the local Lie labels as specified in Layer 7 and preserves the forgetful map to the wedge model. It uses the moduli functor and Θ, not the regularity of either side. (HLSY23, §10.2, pp. 77–79 (the global Krämer model and its condition (H4)); RSZ21 Definition 6.10 and Lemma 6.11, pp. 33–34 (the Krämer–Eisenstein condition); RZ96, Theorem 6.30, p. 293, through §9.5 (the completion of the underlying model). No cited text states the comparison with the Krämer filtration; the transport of the filtration to the completion is new here.)
+For every n≥2, in the ramified setting of §7.4 with `E_ν/F_{v₀}` unramified, the global Krämer enhancement completed along a selected basic component is the corresponding principal ramified framed completion with the Layer 5 Krämer filtration, times its CM and other discrete local factors and modulo the global framing group. The comparison conjugates the local Lie labels as specified in Layer 7 and preserves the forgetful map to the wedge model. It uses the moduli functor and Θ, not the regularity of either side. (HLSY23, §10.2, pp. 77–79 (the global Krämer model and its condition (H4)); RSZ21 Definition 6.10 and Lemma 6.11, pp. 33–34 (the Krämer–Eisenstein condition); RZ96, Theorem 6.30, p. 293, through §9.5 (the completion of the underlying model). No cited text states the comparison with the Krämer filtration; the transport of the filtration to the completion is new here.)
 
 *Route.* Apply the formal deformation comparison to the underlying polarized ramified pair. Transport the Hodge filtration to the precisely labeled Krämer subbundle through the local-model diagram. Check descent of the enhancement and compatibility with the wedge forgetful maps.
 
@@ -1834,11 +1965,11 @@ For every n≥2, in the ramified setting of §7.5 with `E_ν/F_{v₀}` unramifie
 - The completed subbundle has rank n−1 with the declared local conjugate action.
 - At n=2 the comparison is asserted as for n≥3: both sides are étale locally yz=u over `O_{Ĕ_ν}` (§5.6), and nothing in the comparison uses the blowup description of RSZ21 Theorem 6.7(ii), which needs n≥3.
 
-*Needs:* §7.5; §5.3; §9.5; §0.7.
+*Needs:* §7.4; §5.3; §9.5; §0.7.
 
 ### 9.10 Mixed basic-locus comparison
 
-The completion of the corrected mixed integral isogeny model at its chosen basic framing component is the arithmetic quotient of the mixed local framed space Ñ¹_n with the same CM, other-p and tame factors as in Layer 9. The two forgetful maps to the almost self-dual and principal rank-(n+1) completions correspond to π₁ and π₂ of Layer 2, equivariantly for the embedded nearby group. On generic fibres they recover the stated isogeny correspondence. Its proof uses the moduli functor and generic projections. For context, LRZ26 Theorem 14.6.2 proves that π₁ is integrally finite flat of degree q+1 and π₂ is proper and an isomorphism away from a zero-dimensional center, with exceptional projective spaces. There is no integral identification Ñ¹_n≅Z(x₀). That divisor-resolution and its intersection consequences belong to the cycle consumer, rather than being a hypothesis of this moduli uniformization. (LZ22, §13.4, pp. 82–83; §10.2 and Remark 10.2.1, pp. 64–65; distinguish Conjecture 10.4.1, p. 67.)
+The completion of the corrected mixed integral isogeny model at its chosen basic framing component is the arithmetic quotient of the mixed local framed space Ñ_n of §2.4 with the same CM, other-p and tame factors as in Layer 9. The two forgetful maps to the almost self-dual and principal rank-(n+1) completions correspond to π₁ and π₂ of Layer 2, equivariantly for the embedded nearby group. On generic fibres they recover the stated isogeny correspondence. Its proof uses the moduli functor and generic projections. For context, LRZ26 Theorem 14.6.2 proves that π₁ is integrally finite flat of degree q+1 and π₂ is proper and an isomorphism away from a zero-dimensional center, with exceptional projective spaces. There is no integral identification of Ñ_n with the special divisor Z(x₀) of §2.4, through which π₂ factors. That divisor-resolution and its intersection consequences belong to the cycle consumer, rather than being a hypothesis of this moduli uniformization. (LZ22, §13.4, pp. 82–83; §10.2 and Remark 10.2.1, pp. 64–65; distinguish Conjecture 10.4.1, p. 67.)
 
 *Route.* Use Serre–Tate full faithfulness for the finite-kernel isogeny α as well as its source and target. Identify the local framing isogeny and the two transported level structures. Apply Θ to the enhanced functor and verify that forgetting α commutes with both quotient maps.
 
@@ -1851,13 +1982,13 @@ The completion of the corrected mixed integral isogeny model at its chosen basic
 
 ### Examples
 
-- Discrete quotients. For Γ=ℤ acting on `𝔐=⊔_{h∈ℤ}𝔑` by shifting the index, the action is free and locally finite and Γ\𝔐≅𝔑; for Γ={±1} acting on N_n through U(V)(K), the element −1 fixes every point, so the quotient must be taken by the image of Γ in the automorphisms of N_n.
+- Discrete quotients. For Γ=ℤ acting on `𝔐=⊔_{h∈ℤ}𝔑` by shifting the index, (i)–(ii) of §9.2 hold and Γ∖𝔐≅𝔑. The rank-three intersecting-component action of §9.2 instead gives a formal algebraic-space quotient and an étale torsor without (ii). For Γ={±1} acting on N_n through U(V)(K), −1 fixes every point: the quotient sheaf is N_n, while the quotient stack retains the order-two stabilizer.
 - Tate–Dieudonné for a supersingular curve. For A=A′ a supersingular elliptic curve over F̄_p and K=ℚ, End⁰A⊗ℚ_ℓ=M₂(ℚ_ℓ) has dimension 4 for ℓ≠p, and at p both sides are the quaternion division algebra over ℚ_p of invariant 1/2.
 - Exotic normalization at n=2. On the same Hom space h′=(u²/ϖ)·h^exo; with val_u(ϖ)=1 the factor is a unit and a lattice self-dual for h^exo is self-dual for h′, while with val_u(ϖ)=0 the h′-dual of a self-dual lattice Λ is (u²/ϖ)⁻¹Λ≠Λ.
 
 ### Dependencies
 
-Within this roadmap: Layer 0 (§0.1, §0.2, §0.5, §0.7); Layer 1 (§1.1, §1.5); Layer 2 (§2.1, §2.3, §2.4, §2.5); Layer 3 (§3.6); Layer 4 (§4.6); Layer 5 (§5.3, §5.9); Layer 6 (§6.1, §6.3, §6.4, §6.5, §6.6, §6.8); Layer 7 (§7.1, §7.4, §7.5, §7.9); Layer 8 (§8.5, §8.6).
+Within this roadmap: Layer 0 (§0.1, §0.2, §0.5, §0.7); Layer 1 (§1.1, §1.5); Layer 2 (§2.1, §2.3, §2.4, §2.5); Layer 3 (§3.6); Layer 4 (§4.6); Layer 5 (§5.3, §5.9); Layer 6 (§6.1, §6.3, §6.4, §6.5, §6.6, §6.8); Layer 7 (§7.1, §7.2, §7.3, §7.4, §7.9); Layer 8 (§8.5, §8.6).
 
 Suppliers: EndoscopicTransferAndUnitaryTraceComparison §§8.3, 8.10; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.17, §R07.2.10; AbelianSchemesAndArithmeticModuli §§A4.1, A6.10–A6.11, §A4.9, §A4.8; AdicSpacesPartIII Layer F0; SchemeAndStackFoundations Layer 1; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; PELModuli §M3.8, §§M3.1–M3.2, §M3.2.
 
@@ -1868,8 +1999,10 @@ Supplier contracts: gap:hermitian-local-global (see Exact supplier contracts).
 
 SelmerIwasawaCohomologyPartII uses the models of Layers 7 and 8 in its Layers 2 and 5. The native
 strictly semistable models of LTXZZ22 §5.2, their local equations and generic-fibre comparison, and
-the smooth models of LTXZZ22 §4.2, which that roadmap requests in its supplier contracts as native Shimura models, are
-§§8.1–8.4 and 8.7 here. The special-fibre items of the source papers belong to that roadmap:
+the smooth models of LTXZZ22 §4.2 are §§8.1–8.4 and 8.7 here (construction, local equations, strict
+semistability, generic-fibre comparison). That roadmap requests them from ShimuraVarieties in its
+supplier contract named native-shimura; ShimuraVarieties does not state them, and their owner is this
+roadmap. The special-fibre items of the source papers belong to that roadmap:
 
 | Source items | Owner |
 | --- | --- |
@@ -1884,7 +2017,8 @@ the smooth models of LTXZZ22 §4.2, which that roadmap requests in its supplier 
 The local spaces of Layers 1–5, their special homomorphism spaces and the uniformizations of Layer 9
 are the inputs of arithmetic intersection problems on unitary Shimura varieties (the Kudla–Rapoport
 conjecture in the principal, almost self-dual and Krämer cases, and the arithmetic fundamental lemma);
-the special cycles and intersection numbers themselves are not constructed here.
+apart from the single divisor Z(x₀) of §2.4, through which π₂ factors, the special cycles and
+intersection numbers themselves are not constructed here.
 
 ## References
 
@@ -1908,10 +2042,10 @@ unsupported as printed, the note says what is used instead; the targets use the 
   ([author page](https://www.math.columbia.edu/~chaoli/AIPF2.pdf)), with its pagination and equation
   numbering. Notes: in §4.3, p. 58, and §4.5, p. 66, the exotic conditions at the ramified places
   above p are printed for the CM source A₀[v^∞]; only A[v^∞], of height 2nf, can satisfy them, and
-  §7.4 imposes them on A. In §4.5, p. 66, the integral models are called smooth projective with a
+  §7.3 imposes them on A. In §4.5, p. 66, the integral models are called smooth projective with a
   reference to RSZ20 Theorem 4.7, which proves flatness, the generic fibre and smoothness but no
   projectivity; §7.7 proves projectivity by gap:bad-prime-projectivity and ShimuraCompactifications
-  §7.5.
+  §§7.3 and 7.5.
 - **HLSY23.** Qiao He, Chao Li, Yousheng Shi and Tonghai Yang, *A proof of the Kudla–Rapoport
   conjecture for Krämer models*, [arXiv:2208.07988v2](https://arxiv.org/pdf/2208.07988v2); locators
   are for this version. Notes: Definition 2.2(2), p. 10, gives the framing as a height-zero O_L-linear
@@ -1919,9 +2053,12 @@ unsupported as printed, the note says what is used instead; the targets use the 
   back to an O_K-unit multiple of the object polarization, as Howard19 §2 does. The introduction, §1.2,
   p. 2, gives the Krämer filtration rank one; Definition 2.2(3) has rank n−1, which §5.1 uses. In
   §10.2, p. 78, the Krämer model is called regular and semistable at every place above the ramified
-  and almost self-dual places; the cited RSZ21 Theorem 6.7(ii) and RSZ20 Theorem 4.7(ii) need ν
-  unramified over `F_{v₀}` at ramified places and E_ν unramified over ℚ_p at almost self-dual places, and
-  §§7.8–7.10 keep both hypotheses.
+  and almost self-dual places, with references to RSZ20 Theorems 5.2 and 5.4. Part (ii) of RSZ20
+  Theorem 5.2 gives semistable reduction at an almost self-dual place only when E_ν is unramified over
+  ℚ_p, and the lattice types that theorem admits at a ramified place include a self-dual lattice only
+  for n=2, which part (ii) excludes; the semistable reduction of the Krämer model at a ramified place
+  is RSZ21 Theorem 6.7(ii), for n≥3 and ν unramified over `F_{v₀}`. §§7.8–7.10 keep both hypotheses,
+  and §7.8 treats n=2 through the charts of §5.6.
 - **LTXZZ22.** Yifeng Liu, Yichao Tian, Liang Xiao, Wei Zhang and Xinwen Zhu, *On the
   Beilinson–Bloch–Kato conjecture for Rankin–Selberg motives*, Inventiones Mathematicae 228 (2022),
   107–375; read as [arXiv:1912.11942v3](https://arxiv.org/abs/1912.11942v3), whose numbering agrees
@@ -1929,15 +2066,22 @@ unsupported as printed, the note says what is used instead; the targets use the 
   4.2.2, p. 160, writes the unitary Hecke parameter with adeles of F; U(V) is a group over F⁺ and §8.5
   uses `U(V)(𝔸_{F⁺,f}^p)`. The last assertion of Theorem 4.2.3, p. 161, equates projectivity of the
   integral model with properness of its generic fibre without an integral properness argument; §8.7
-  supplies one through ShimuraCompactifications §§7.5 and 7.18. Remark 4.2.5, p. 163, defines the
+  supplies one through ShimuraCompactifications §§7.3, 7.5 and 7.18. Remark 4.2.5, p. 163, defines the
   negative period line by a condition on the source Hodge subspace, which is zero at τ∞; §8.1 uses
-  `Hom_ℂ(H₁^dR(A₀)_{τ∞},ω_{A∨,τ∞})`. §5.2, p. 188, states the definite space V° in rank N>1 while
-  Remark 5.2.4 and Theorem 5.2.5 treat N=1; §8.2 takes N≥1.
+  `Hom_ℂ(H₁^dR(A₀)_{τ∞},ω_{A∨,τ∞})`.
 - **RSZ20.** Michael Rapoport, Brian Smithling and Wei Zhang, *Arithmetic diagonal cycles on unitary
   Shimura varieties*, [arXiv:1710.06962](https://arxiv.org/pdf/1710.06962), with its printed pages.
 - **RSZ21.** Michael Rapoport, Brian Smithling and Wei Zhang, *On Shimura varieties for unitary
   groups*, Pure and Applied Mathematics Quarterly 17 (2021); author copy of 16 April 2020
   ([author page](https://www.math.uni-bonn.de/people/rapoport/myalggeom/preprints/unitshim.pdf)).
+- **RSZ17.** Michael Rapoport, Brian Smithling and Wei Zhang, *On the arithmetic transfer conjecture
+  for exotic smooth formal moduli spaces*, Duke Mathematical Journal 166 (2017), 2183–2336;
+  [arXiv:1503.06520v3](https://arxiv.org/pdf/1503.06520v3), with the arXiv numbering and pagination.
+  Its §3 takes the base field to be ℚ_p.
+- **PaRa09.** Georgios Pappas and Michael Rapoport, *Local models in the ramified case. III. Unitary
+  groups*, Journal of the Institute of Mathematics of Jussieu 8 (2009), 507–564;
+  [arXiv:math/0702286v1](https://arxiv.org/pdf/math/0702286v1), with the arXiv numbering (lettered
+  subsections) and pagination.
 - **Mih19.** Andreas Mihatsch, *Relative unitary RZ-spaces and the Arithmetic Fundamental Lemma*,
   [arXiv:1611.06520v2](https://arxiv.org/pdf/1611.06520v2); Theorems 3.1 and 3.3 are numbered as in
   this version.
