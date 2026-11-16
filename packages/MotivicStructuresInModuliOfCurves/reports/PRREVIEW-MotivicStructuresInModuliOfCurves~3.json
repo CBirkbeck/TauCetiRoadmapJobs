@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MotivicStructuresInModuliOfCurves~3",
+  "head": "2a11c505a5e78ef3209ac06d0ac38b3724a3958e",
+  "pr": 2437,
+  "folder": "MotivicStructuresInModuliOfCurves",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 26 changed lines since 4143737. Checked: previous R01-R04 all repaired (EtaleCohomologyFoundations §F.7 contract and Needs, §9.5 API and Checks, stability dichotomy, Fr_{g,n} rename). Sampled §6.3 locators verified against the source text (clp §5.2 pp. 13-14; canning-larson-genus-seven Remark 2.3 pp. 6-7). Cross-roadmap citations resolved: EtaleCohomologyFoundations §§F.6-F.7 on main; MotivesAndAlgebraicCycles §§2.6-2.7, StableReductionPartII §0.4 and WeilConjectures WC.1 §1.7 at their open heads. Adversarial values recomputed for the new Checks, the dichotomy and the headline. Gate all 0 and OK; depcheck 0 problems; lake env lean exits 0 with sorry the only warning. One P3: the §9.5 Needs line omits WeilConjectures WC.1.",
+  "text": "f70b3719b6b99d91"
+ }
+}
