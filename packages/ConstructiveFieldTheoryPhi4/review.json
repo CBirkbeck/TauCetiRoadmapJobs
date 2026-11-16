@@ -1,0 +1,18 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-ConstructiveFieldTheoryPhi4",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-ConstructiveFieldTheoryPhi4",
+   "fix": "FIX-PKG-ConstructiveFieldTheoryPhi4~2",
+   "from": "273ca986018e73b5539959ba76ac2d61bca3e081",
+   "head": "961d8dd99a6fbe7a6732472848ef32dea06135c2",
+   "findings": 3,
+   "lines": 14
+  },
+  "notes": "every finding of `REV-PKG-ConstructiveFieldTheoryPhi4` (3) was P3 and `FIX-PKG-ConstructiveFieldTheoryPhi4~2` repaired them at `961d8dd`, changing 14 lines of the package; no further review round was filed"
+ }
+}
