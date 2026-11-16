@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GrothendieckTopoi~28",
+  "head": "353b75c799c62006f9d00afdf4cf8f3bcb8c35c9",
+  "pr": 1520,
+  "folder": "GrothendieckTopoi",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "incremental re-review of 5 changed lines since ff38c29 (the README paragraph on ownership with InfinityCategoryTheory, InfinityTopoi). Checked: InfinityTopoi at the head of #2270 (a6d7928), with §§17.5, 18.3, 18.3.1, 19.2, 19.4 and 20.2 resolved. R01 (P2): the covering topology of a frame is defined both by 7.1 Frame.grothendieckTopology and by InfinityTopoi §18.3.1. R02 (P3): the claimed supply of 1.4, 7.1 and 7.2 to InfinityTopoi is not taken there (InfinityCategoryTheory index line 15; no citation of GrothendieckTopoi). Adversarial rows for 1.4, 7.1 and 7.2 against §§19.4, 18.3.1 and 20.2. The previous review raised no finding. Gate: the worker's gate passes. A local run fails only on depcheck NOT IN ORDER from the public order file (not a finding); with the candidate order and --movable, 261 roadmaps, 2596 edges, 0 problems. Elaboration exits 0 with 44 sorry warnings and nothing else. Nothing changed outside the folder. No seeded target falls in the change, and the changed passage carries no source locator.",
+  "text": "68d2cece3c6b1526"
+ }
+}
