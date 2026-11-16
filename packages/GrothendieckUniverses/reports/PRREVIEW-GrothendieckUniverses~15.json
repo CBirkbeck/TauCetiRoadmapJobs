@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GrothendieckUniverses~15",
+  "head": "68882445a1220a9875bf05620889043feac5b18f",
+  "pr": 1783,
+  "folder": "GrothendieckUniverses",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 29 changed lines since 8c6b38b (the new Provenance section and 2 references). Checked: every claim of the section against AxiomMath/Stacks at c496df0 and LeanPool/lean-pool at f8b9b72 (licence, toolchain, Mathlib version, file names, stacks tags, absence of universe definitions, also the SGA 4 index outside SetTheory); Stacks Tags 000B, 000G, 05N2, 05N3, 046U; adversarial rows for 1.3 and 2.3, the statements the section cites; the description's Provenance paragraph. One P3: Tag 05N2 (Lemma 3.7.1, factorisation through a stage of an ordinal-indexed colimit) is described as a cofinality bound in README lines 346-347 and in the description. Gate passes (exit 0, worker's build=0); depcheck 0 problems; Suggested.lean elaborates with the 8 sorry warnings only; nothing changed outside the folder.",
+  "text": "eeeafbccf9fc3cdf"
+ }
+}
