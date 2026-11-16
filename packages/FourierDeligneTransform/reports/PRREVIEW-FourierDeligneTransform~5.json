@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FourierDeligneTransform~5",
+  "head": "e1ab460e6052bb41a4b61eeeb39b56ba33ca9953",
+  "pr": 2132,
+  "folder": "FourierDeligneTransform",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 6 changed lines since b215ba1: the three changed README passages (scope sentence on DeligneWeightsAndPurity §4.5; the DeligneWeightsAndPurity and CongruenceSpectralGap consumer bullets) resolved against DeligneWeightsAndPurity and CongruenceSpectralGap at their open heads (8 citations, 16 internal section ids, section lists equal on both sides); LAU87 lines 2613-2657 and KL85 lines 413-430 reopened; no seeded sample target lies in the change; adversarial table of 7 rows with computed values; pull request title and description agree with the head; gate all counters 0 OK; depcheck 260 roadmaps, 2595 edges, 0 problems; lake env lean on Suggested.lean exit 0, no output; no file changed outside the folder.",
+  "text": "6a6816b8167507f4"
+ }
+}
