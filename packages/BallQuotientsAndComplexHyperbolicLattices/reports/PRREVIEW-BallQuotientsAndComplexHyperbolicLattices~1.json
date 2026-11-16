@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BallQuotientsAndComplexHyperbolicLattices~1",
+  "head": "eeb54a8b308d285371357cc24a2fa6d451c7b658",
+  "pr": 2425,
+  "folder": "BallQuotientsAndComplexHyperbolicLattices",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "Full review at eeb54a8. Gate passes (all checks); depcheck: 240 roadmaps, 2252 edges, 0 problems; lake env lean: 7 sorry warnings only; #check @ of 16 declarations matches the README; one-tactic probe closes none of the 7 theorems. Sample: all 15 seeded targets checked (71 locators in 8 cached sources). Also resolved: 49 Mathlib and 16 Tau Ceti declarations, and about 115 cross-roadmap sections and names; both gaps declared consistently. R01 (P2): ShimuraVarieties §P.6 is credited with normality of quotients and with (Z/F)^an = Z^an/F, which it does not state; §9.5 uses the latter. R02, R03 (P3): pull-request description text.",
+  "text": "5789ee66858a3956"
+ }
+}
