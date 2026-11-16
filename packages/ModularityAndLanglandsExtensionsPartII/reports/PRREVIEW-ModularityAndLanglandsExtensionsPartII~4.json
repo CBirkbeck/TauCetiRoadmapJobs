@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ModularityAndLanglandsExtensionsPartII~4",
+  "head": "b05eba793148844403e3a2bb7a68f6ca1e5bf543",
+  "pr": 2449,
+  "folder": "ModularityAndLanglandsExtensionsPartII",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Full review of an unchanged head. One P3: README lines 860-862 (section 1.2) misdescribe what the printed proof of nt21 Theorem 2.27 omits (it has irreducibility and regularity, nt21 line 2065; it lacks Hodge-Tate regularity on U, line 2076). Seeded sample of 15 targets (0.1, 1.1, 1.2, 2.2, 3.4, 4.1, 5.10, 6.9, 7.4, 9.2, 9.5, 9.6, 10.7, 12.2, 13.3) and the headline sections 7.5, 13.10, 14.1-14.5 checked against nt21, nt21b, nt26, th24, ct17, at20, con99: 52 locators, all at the stated pages. Gate: every check 0, OK. Depcheck: 261 roadmaps, 2526 edges, 0 problems. Elaboration: only the two sorry warnings; one-tactic probe closes neither theorem. 16 pinned declarations and 56 cross-roadmap section ids resolved. 14 gaps identical in plan.json and README. D01 resolved: the description now lists #2268. Not verifiable: kl87, bbm82, kw09 (uncertified). Four source issues recorded (nt21 Prop 7.4 and Thm 2.27, nt26 Lemma 5.7 twice).",
+  "text": "91766cf8406f643a",
+  "carried": {
+   "from": "b05eba793148844403e3a2bb7a68f6ca1e5bf543",
+   "head": "5ea26252deb1bb6eaa226fac3bfae3b9222c6290",
+   "findings": 1,
+   "lines": 11,
+   "folders": [
+    "ModularityAndLanglandsExtensionsPartII"
+   ]
+  }
+ }
+}
