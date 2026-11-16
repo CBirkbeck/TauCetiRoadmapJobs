@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-InfinityTopoi~3",
+  "head": "a6d792879dcbf10fd3ed0ec1531909b1b704b030",
+  "pr": 2270,
+  "folder": "InfinityCategoryTheory/InfinityTopoi",
+  "date": "2026-11-16",
+  "findings": 8,
+  "blocking": 6,
+  "notes": "Full re-review. Previous findings: R01-R04 not repaired (R01, R02, R05, R06 here), R05-R10 repaired. New: sorry'd def grpGrpEquivCommGrp (R03), missing finite-limits hypothesis in isLeftExact_iff_isLeftExactAt with a counterexample (R04), wrong internal reference in 4.3.1 (R07), pullback functors defined without pullbacks (R08). Sample: 39 HTT locators read against the text for the 15 seeded targets and the targets of the findings, all agree; SAG, Kerodon, SGA 4 not opened. Gate FAIL (sorry-data=1, imports=3, statement-hygiene=2, build=7): three Tau Ceti imports absent at pin 2fd255d, so Suggested.lean was not elaborated; a scratch copy of the three Mathlib-only statements and of the repaired theorem form elaborates, one-tactic probe closes none. Depcheck 0 problems; 224 cross-roadmap ids resolved; adversarial table with computed values in the report.",
+  "text": "bc0fd25be0f5b32e"
+ }
+}
