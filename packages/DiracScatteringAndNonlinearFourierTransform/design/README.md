@@ -1415,12 +1415,15 @@ Prove that `∫_ℝ log|a(∞, x)| dx = (π/2)‖q‖²` and `∫_ℝ −log(1 �
 `a(∞, iy)` is positive (poltoratski2024 (5.5) line 545–548 and line 567–577, printed with
 constant `1`; mauth2022 line 206–210; denisov2006 Theorem 11.1 line 3246–3255). Route: the reverse of
 §5.3's inequality comes from the pseudo-hyperbolic identity of §5.3,
-`∫ −log(1 − |q⌃*|²) ≥ π‖q‖²_{L²(0,T)} − 2∫|log|1 + uρ₂ conj ρ₁||`, where the last integral tends to `0`
-because `‖ρ₂‖²_{L²} ≤ π‖q‖²_{L²(T,∞)}` (§5.3 applied to the tail, with `r² ≤ −log(1 − r²)`) and
-`‖ρ₁‖²_{L²} ≤ π‖q‖²`; equality with `ν(ℝ)` forces the singular part of the measure of §5.3 to vanish, so
+`∫ −log(1 − |q⌃*|²) ≥ π‖q‖²_{L²(0,T)} − 2∫|log|1 + uρ₂ conj ρ₁||` (§4.4 for the first term), where the
+last integral tends to `0`: with `L(r) = −log(1 − r²)` and `|u| = 1` on `ℝ`,
+`|log|1 + uρ₂ conj ρ₁|| ≤ −log(1 − |ρ₁||ρ₂|) ≤ (L(|ρ₁|) L(|ρ₂|))^{1/2}` (Cauchy–Schwarz on the series
+`Σₙ (|ρ₁||ρ₂|)ⁿ/n`), so by Cauchy–Schwarz in `x` the integral is at most
+`(∫ L(|ρ₁|) · ∫ L(|ρ₂|))^{1/2} ≤ π‖q‖_{L²(0,T)} ‖q‖_{L²(T,∞)}`, by §4.4 for `ρ₁` and by §5.3 applied to the
+tail for `ρ₂`; equality with `ν(ℝ)` forces the singular part of the measure of §5.3 to vanish, so
 `log|a(∞, ·)| = P[log|a(∞, ·)|]` and §2.8 applies.
 
-*Needs:* §2.2, §2.4, §2.8, §5.1, §5.3.
+*Needs:* §2.2, §2.4, §2.8, §4.4, §5.1, §5.3.
 
 **Checks.**
 
@@ -1434,6 +1437,10 @@ because `‖ρ₂‖²_{L²} ≤ π‖q‖²_{L²(T,∞)}` (§5.3 applied to the
   (modulation rule of §4.1), and `I ≈ 12.54` at `ξ = −0.25`, where the factor `e^{−3.992i}` is not `1`
   and `O_h ≠ a(∞, ·)`, while `I ≈ 21.71` at `ξ = −0.5`. As `I` is continuous in `ξ`, it equals
   `2π² ≈ 19.74` for some `ξ` in between, where the two outer functions coincide although `I ≠ 0`.
+- Cross term: the `L²` norms of `ρ₁`, `ρ₂` do not control `∫|log|1 + uρ₂ conj ρ₁||`, since at
+  `|ρ₁| = |ρ₂| = 0.999` with `uρ₂ conj ρ₁ = −0.998001` the integrand is `6.2151` although `|ρ₁ρ₂| < 1`; the
+  logarithmic bound is attained there, `−log(1 − 0.998001) = 6.2151 = (L(0.999) L(0.999))^{1/2}`, and at
+  `(|ρ₁|, |ρ₂|) = (0.999, 0.3)` and `(0.1, 0.9)` it reads `0.3562 ≤ 0.7656` and `0.0943 ≤ 0.1292`.
 
 ### 5.5 Convergence of truncations
 
@@ -1848,8 +1855,10 @@ Hermite–Biehler, entire of order at most one, with no real zeros:
 
 Let `θ` be meromorphic inner with the representation of §7.1, `0 < ε < 1` and `x, y ∈ ℝ` with
 `|θ′(x)| > (1 + ε)|θ′(y)|`. Prove that `θ` has a zero in the disc `{ζ : |ζ − x| < 3|y − x|/ε}`
-(poltoratski2024 Lemma 1 line 332–360; mauth2022 Lemma 29 line 1624). Route: some summand satisfies the
-same inequality, which places `ζₙ` inside an Apollonius circle with foci `x` and `y`.
+(poltoratski2024 Lemma 1 line 332–360; mauth2022 Lemma 29 line 1624–1627 with radius `4|y − x|/ε` for
+`0 < ε < ε₀` and a small fixed `ε₀`). Route: some summand satisfies the same inequality, which places `ζₙ`
+inside an Apollonius circle with foci `x` and `y`: `|y − ζₙ| > √(1 + ε)|x − ζₙ|`, so
+`|x − ζₙ| < |y − x|/(√(1 + ε) − 1) = (√(1 + ε) + 1)|y − x|/ε < 3|y − x|/ε` for `0 < ε < 1`.
 
 *Needs:* §7.1.
 
