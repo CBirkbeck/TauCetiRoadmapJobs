@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsLegendre~7",
+  "head": "acc222374904747267f50f870aed78daaed34528",
+  "pr": 2121,
+  "folder": "SpecialFunctionsLegendre",
+  "date": "2026-11-16",
+  "findings": 7,
+  "blocking": 4,
+  "notes": "Full review. Both findings of the previous review are repaired. Adversarial pass computed at 30 digits for all 45 Suggested.lean theorems and the 15 sampled targets; one Lean headline false (Funk-Hecke off 0<theta0<pi), two README overclaims (addition theorem and Herglotz for all real theta; 14.17.9 for m>n), one second owner (Sturm comparison, SpecialFunctionsBessel), three P3 (a Whittaker-Watson locator, source-order wording in the Summary, module docstring). DLMF locators checked against the text of Release 1.2.8; Whittaker-Watson against the 1920 third edition; the other eight books could not be read. Gate rerun: all checks 0, OK; depcheck 0 problems; elaboration 45 sorry warnings and no error; one-tactic probe closes 0 of 45.",
+  "text": "3a351ccf38939a84"
+ }
+}
