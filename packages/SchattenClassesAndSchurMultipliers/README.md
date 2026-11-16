@@ -186,7 +186,8 @@ differences, which belong to SchattenClassesAndSchurMultipliers, Part II (Downst
   Caspers–de la Salle symbol `φ(s t⁻¹)`.
 - **Matrix BMO.** `U_z` is multiplication by `e^{2πi⟨z, x⟩}` on `L²(ℝⁿ)` and `π(A)(z) = U_z A U_z*`,
   with kernel `e^{2πi⟨z, x − y⟩} k_A(x, y)`. Cubes are axis-parallel; averages `⨍_Q` are
-  normalised by Lebesgue measure.
+  normalised by Lebesgue measure. A cube of the torus `𝕋ⁿ` is the image of a cube of `ℝⁿ` of side
+  at most `1` and may wrap around (Layer 10).
 - **The HMS norm.** `σ_n = ⌊n/2⌋ + 1`; derivatives in `x` and in `y` are Fréchet derivatives
   (Mathlib `iteratedFDeriv`) with their operator norms; the multi-index form of the sources is
   equivalent up to a factor depending only on `n`, absorbed in `C_n`.
@@ -265,7 +266,11 @@ differences, which belong to SchattenClassesAndSchurMultipliers, Part II (Downst
   (`Mathlib/Analysis/Complex/Hadamard.lean`): the three-lines theorem.
 - `MeasureTheory.Lp.fourierTransformₗᵢ` (`Mathlib/Analysis/Fourier/LpSpace.lean`): the Fourier
   transform on `L²(ℝⁿ; F)` as a linear isometric equivalence (Plancherel), for every complex
-  Hilbert space `F`.
+  Hilbert space `F`. `fourier_gaussian_innerProductSpace`
+  (`Mathlib/Analysis/SpecialFunctions/Gaussian/FourierTransform.lean`): on a finite-dimensional
+  real inner product space `V` and for `Re b > 0`, the Fourier transform of `v ↦ e^{−b‖v‖²}` is
+  `w ↦ (π/b)^{dim V/2} e^{−π²‖w‖²/b}`; with `b = π/T²` this is `𝓕γ_T = Tⁿ γ_{1/T}` for the
+  Gaussian `γ_T` of width `T` (§9.4).
 - `MeasureTheory.Measure.support` (`Mathlib/MeasureTheory/Measure/Support.lean`): the support of a
   measure, closed, conull under inner regularity; `MeasureTheory.IsFiniteMeasureOnCompacts`,
   `MeasureTheory.Measure.InnerRegularCompactLTTop`.
@@ -716,10 +721,17 @@ cgpt-2023 lines 217–219). When `‖T‖_p < ∞`, `T` extends uniquely to a bo
 
 - `‖T^{(1)}‖_p = ‖T‖_p`, and `m ↦ ‖T^{(m)}‖_p` is nondecreasing (compress to a corner); so
   `‖T‖_p ≤ ‖T‖_{cb,p}`.
-- `‖S ∘ T‖_{cb,p} ≤ ‖S‖_{cb,p} ‖T‖_{cb,p}`; `‖·‖_{cb,p}` is a seminorm in `[0, ∞]`.
-- For bounded `V : K → K'` and `W : H' → H`, the map `A ↦ V A W` has `‖·‖_{cb,p} ≤ ‖V‖ ‖W‖`;
-  for an isometry `U` the map `A ↦ U A U*` is a complete isometry, and `A ↦ U* A U` a complete
-  contraction left inverse to it.
+- For linear `T : S₂(H) → S₂(K)` and `S : S₂(K) → S₂(L)`, read in `[0, ∞]` with `0 · ∞ = 0`:
+  `‖S ∘ T‖_{cb,p} ≤ ‖S‖_{cb,p} ‖T‖_{cb,p}` unless `‖S‖_{cb,p} = 0` and `‖T‖_{cb,p} = ∞`, and
+  `‖S ∘ T‖_p ≤ ‖S‖_p ‖T‖_p` unless `‖S‖_p = 0` and `‖T‖_p = ∞`. The excluded case needs `p < 2`
+  and `‖S‖₂ = ∞`: a map of norm `0` at `p` vanishes on the finite-rank operators, hence on all of
+  `S₂` when `p ≥ 2` (every element of `S₂` has finite `p`-norm) or when it is bounded on `S₂`
+  (finite-rank operators are dense), and then `S ∘ T = 0`. `‖·‖_{cb,p}` is a seminorm in `[0, ∞]`.
+- For bounded `V : H → K` and `W : K → H`, the map `A ↦ V A W : S₂(H) → S₂(K)` has
+  `‖·‖_{cb,p} ≤ ‖V‖ ‖W‖`, since its amplification of level `m` is `A ↦ V_m A W_m` with the
+  diagonal operators `V_m = V ⊕ ⋯ ⊕ V`, `W_m = W ⊕ ⋯ ⊕ W` of norms `‖V‖`, `‖W‖`; for an isometry
+  `U : H → K` the map `A ↦ U A U* : S₂(H) → S₂(K)` is a complete isometry, and
+  `B ↦ U* B U : S₂(K) → S₂(H)` a complete contraction left inverse to it.
 - Duality: if `T, T^♯ : S₂ → S₂` satisfy `Tr(T(A) B) = Tr(A T^♯(B))` for all `A, B ∈ S₂`, then
   `‖T‖_p = ‖T^♯‖_{p'}` and `‖T‖_{cb,p} = ‖T^♯‖_{cb,p'}`, by §1.2 at every level, since
   `(T^{(m)})^♯ = (T^♯)^{(m)}` for the block trace.
@@ -775,6 +787,11 @@ cgpt-2023 lines 217–219). When `‖T‖_p < ∞`, `T` extends uniquely to a bo
   `‖T‖_{4/3} ≥ ‖T w₀‖_{4/3}/‖w₀‖_{4/3} = 1`. With `p₀ = 1`, `p₁ = 2`, `θ = 1/2` (so `p_θ = 4/3`)
   the bound read in `[0, ∞]` would give `1 ≤ 0^{1/2} ∞^{1/2} = 0`; the interpolation law asserts
   nothing here because `‖T‖₂ = ∞`.
+- Composition needs its exclusion: at `p = 1`, with `T` the map of the previous Check
+  (`‖T‖_{cb,1} = 0`, since every block of an element of `S₁(H^m)` lies in `S₁`) and the rank-one
+  map `R(A) = ⟨e₀, A e₀⟩ w₀`, bounded on `S₂` with `‖R E₀₀‖₁ = ‖w₀‖₁ = Σ_j 1/(j+1) = ∞`, so
+  `‖R‖_{cb,1} = ∞`: `T R E₀₀ = T w₀ = w₀`, so `‖T ∘ R‖₁ = ∞` while `‖T‖_{cb,1} ‖R‖_{cb,1} = 0 · ∞ = 0`.
+  In the other order `R ∘ T` vanishes on `S₁`, and `‖R ∘ T‖_{cb,1} = 0 ≤ ∞ · 0`.
 - Conjugation `A ↦ U A U*` by a unitary of `H ≠ 0` has `‖·‖_{cb,p} = 1` for every `p`; on
   `H = 0` it is the zero map, with every norm `0`.
 - The map `A ↦ E₁₁ A E₁₁` on `M₂` has `‖·‖_{cb,p} = 1` for every `p` (a compression), and the
@@ -1136,6 +1153,20 @@ definition `schurNorm` of `Suggested.lean`. Prove (lafforgue-delasalle-2011 line
   convergence;
 - `‖S_M‖_p` is unchanged when `M` is changed on a null set.
 
+**Checks.**
+
+- A one-point space of mass `w > 0` with the constant symbol `c`: `L² = ℂ`, multiplication by `a`
+  has kernel `a/w`, `S_M(a) = c a`, and `‖S_M‖_p = |c|` for every `p`, whatever `w`.
+- The supremum is over `‖A‖_p ≤ 1`, not over `‖A‖₂ ≤ 1`: on `{1, 2}` with counting measure and
+  `M = 1`, `S_M = id` and `‖S_M‖₁ = 1`, while `sup { ‖A‖₁ : ‖A‖₂ ≤ 1 } = √2`, attained at
+  `A = I/√2` (`‖A‖₂ = 1`, `‖A‖₁ = 2/√2`).
+- The norm is not the essential supremum of the symbol when `p ≠ 2`: the triangular truncation
+  `M = [[1, 1], [0, 1]]` on `M₂` has `‖M‖_∞ = ‖S_M‖₂ = 1` (§3.1) and `‖S_M‖_∞ = 2/√3` (§3.4).
+- Lower semicontinuity can be strict: on `ℕ` with counting measure, `M_k = 1_{(k,k)}` tends to `0`
+  everywhere with `‖M_k‖_∞ = 1`, and `S_{M_k}(A) = A_{kk} E_{kk}` has `‖S_{M_k}‖_p = 1` for every
+  `p` (`|A_{kk}| ≤ ‖A‖ ≤ ‖A‖_p`, with equality at `A = E_{kk}`), while the limit symbol `0` has
+  norm `0 < 1 = liminf_k ‖S_{M_k}‖_p`.
+
 *Needs:* §1.1, §1.2, §1.4, §2.2, §3.1.
 
 ### 3.4 Finite index sets
@@ -1169,7 +1200,10 @@ cgpt-2023 lines 217–219). In `Suggested.lean` this is `schurCbNorm`, whose sup
   `‖S_M‖_2` is the norm `‖S_M‖_{S₂ → S₂} = ‖M‖_∞` of §3.1 and `‖M_m‖_∞ = ‖M‖_∞` for `m ≥ 1`. This
   is `schurNorm_two_eq`, the isometry of `M ↦ S_M` on `S₂` with its completely bounded form: for
   σ-finite `μ` and `M ∈ L^∞(μ ⊗ μ)`, `‖S_M‖₂ = ‖S_M‖_{cb,2} = ‖M‖_∞`.
-- `‖S_{MN}‖_{cb,p} ≤ ‖S_M‖_{cb,p} ‖S_N‖_{cb,p}`, and the same for `‖·‖_p`.
+- `‖S_{MN}‖_{cb,p} ≤ ‖S_M‖_{cb,p} ‖S_N‖_{cb,p}`, and the same for `‖·‖_p`, in `[0, ∞]` with no
+  exception: `S_{MN} = S_M ∘ S_N` (§3.2), and the case excluded in §1.4 does not occur, because
+  `S_M` is bounded on `S₂` (§3.1), so `‖S_M‖_p = 0` forces `S_M = 0` and `M = 0` almost
+  everywhere.
 - `‖S_M‖_{cb,p}` is unchanged when `M` is changed on a `μ ⊗ μ`-null set `N`: then `M_m` changes
   only on the null set of the points `((x, i), (y, j))` with `(x, y) ∈ N`, and §3.3 applies at
   every level.
@@ -1191,7 +1225,7 @@ cgpt-2023 lines 217–219). In `Suggested.lean` this is `schurCbNorm`, whose sup
   level, and `S_M(E₁₂) = 2E₁₂` gives the reverse.
 - For the zero measure all norms are `0`.
 
-*Needs:* §1.4, §2.4, §3.1, §3.3, §3.4; Mathlib `Matrix.kroneckerMap`; VonNeumannAlgebras
+*Needs:* §1.4, §2.4, §3.1, §3.2, §3.3, §3.4; Mathlib `Matrix.kroneckerMap`; VonNeumannAlgebras
 V2.RectangularL2 (for `L²(Ω × Fin m)`).
 
 ### 3.6 Stabilisation and comparison of completely bounded norms
@@ -1926,7 +1960,7 @@ and 250–251; caspers-delasalle-2015 lines 26–41; lafforgue-delasalle-2011 (3
 - `m = cos(2π⟨a, ·⟩)`: `T_m = (V_a + V_{−a})/2` has norm at most `1` on every `Lᵖ`, and equal to `1`
   at `p = 1`, since `‖T_m f‖₁ = ‖f‖₁` for nonnegative `f`.
 - `m = 1`: the identity, all norms `1`; `m = 0`: all norms `0`.
-- Tracial picture, a projection of infinite-measure support: `n = 1`, `k = 2`,
+- Tracial picture, a projection of finite trace on a space of infinite measure: `n = 1`, `k = 2`,
   `g = 1_{[0, 2]} E₁₁` has `|g|^p = g`, so `τ₂(|g|^p) = 2 = ∫_0^2 ‖E₁₁‖_p^p dξ` and both norms are
   `2^{1/p}`; at `p = ∞` both are `1`. The measure of `ℝ` is infinite, so the probability-space
   identification of NoncommutativeIntegration §4.4 does not reach this case.
@@ -1974,8 +2008,9 @@ Theorem 5.1, line 529, and Theorem 5.2, line 543, for `G = ℝⁿ`):
 - for `g ∈ L²(ℝⁿ; F_k)`, `‖g‖_{Lᵖ(S_p^k)} ≤ liminf_R |Q_R|^{−1/p} ‖Λ_{Q_R}(g)‖_p`, by the pairing,
   Hölder for the trace and the first bound for `h`; with equality and a limit when also
   `g ∈ Lᵖ(ℝⁿ; S_p^k)`, by the first bound for `g`;
-- intertwining: `Λ_F(𝓕(m · 𝓕⁻¹ g)) = S_{M_m}(Λ_F(g))`, with the amplified symbol of §3.5 for
-  `k > 1`, by comparing kernels.
+- intertwining: `Λ_F(𝓕(m · 𝓕⁻¹ g)) = S_{M_m}(Λ_F(g))`, by comparing kernels, where `S_{M_m}` is
+  the Schur multiplier of §3.1 on `L²(F)`, for Lebesgue measure restricted to `F`, whose symbol is
+  the restriction of `M_m` to `F × F`, amplified as in §3.5 for `k > 1`.
 
 caspers-delasalle-2015 state Theorem 5.1 for every `1 ≤ p ≤ ∞` (line 530) and Theorem 5.2, the
 asymptotically isometric embedding behind the third bullet, for `1 < p < ∞` only (line 543); the
@@ -2004,8 +2039,9 @@ Prove that for `1 ≤ p ≤ ∞` there are `f_R ∈ L² ∩ Lᵖ(ℝⁿ)`, `g_R 
 `∫ (T_m f_R) g_R → m(0)` for every bounded `m` continuous at `0` (caspers-delasalle-2015 Lemma 4.1,
 line 449, proves this on a locally compact group for `1 < p < ∞` with `p/p'` rational; on `ℝⁿ`
 explicit Gaussians give every `1 ≤ p ≤ ∞`). Write `γ_T(x) = e^{−π|x|²/T²}` for the Gaussian of
-width `T`, and take `f_R` the multiple of `γ_R` normalised in `Lᵖ`. For `1 < p < ∞` take
-`g_R = f_R^{p−1}`, the norming element, a multiple of `γ_{R/√(p−1)}` with `‖g_R‖_{p'} = 1` and
+width `T`, whose Fourier transform is `𝓕γ_T = Tⁿ γ_{1/T}` (Mathlib
+`fourier_gaussian_innerProductSpace` with `b = π/T²`), and take `f_R` the multiple of `γ_R`
+normalised in `Lᵖ`. For `1 < p < ∞` take `g_R = f_R^{p−1}`, the norming element, a multiple of `γ_{R/√(p−1)}` with `‖g_R‖_{p'} = 1` and
 `∫ f_R g_R = 1`. For `p = 1` take `g_R = γ_{T_R}` (normalised in `L^∞`) with `T_R/R → ∞`, and for
 `p = ∞` take `g_R = T_R^{−n} γ_{T_R}` (normalised in `L¹`) with `T_R/R → 0`; then
 `∫ f_R g_R = (1 + R²/T_R²)^{−n/2}`, respectively `(1 + T_R²/R²)^{−n/2}`, which tends to `1`. In
@@ -2018,7 +2054,7 @@ points `s_1, …, s_N ∈ ℝⁿ` and `a ∈ S_p^N(S_p^k)`, `b ∈ S_{p'}^N(S_{p
 `A_R(x) = D(x) (a f_R(x)) D(x)*` with the unitary `D(x) = diag(e_{s_i}(x))`, and the modulation rule
 of §9.2 (caspers-delasalle-2015 Theorem 4.2, proof lines 494–522).
 
-*Needs:* §9.2; Mathlib `MeasureTheory.Lp.fourierTransformₗᵢ`.
+*Needs:* §9.2; Mathlib `MeasureTheory.Lp.fourierTransformₗᵢ`, `fourier_gaussian_innerProductSpace`.
 
 ### 9.5 Fourier–Schur transference
 
@@ -2038,7 +2074,9 @@ semicontinuity of §3.3.
 Route. Fourier side: the transferred operator `g ↦ 𝓕(m · 𝓕⁻¹ g)` is
 `R T_m R`, with the norms of `T_m`; for `g ∈ L² ∩ Lᵖ`, §9.3 gives
 `‖R T_m R g‖_p ≤ liminf |Q_R|^{−1/p} ‖S_{M_m}(Λ_{Q_R}(g))‖_p ≤ ‖S_{M_m}‖_p ‖g‖_p`, and the same at
-every level `k`. Schur side: by §9.1 and §9.2 replace `m` by `m * ρ_ε` (continuous, with
+every level `k`; the second inequality bounds the multiplier of the restriction of `M_m` to
+`Q_R × Q_R` by `‖S_{M_m}‖_p` (the restriction rule of §3.7) and `‖Λ_{Q_R}(g)‖_p` by
+`|Q_R|^{1/p} ‖g‖_p` (§9.3). Schur side: by §9.1 and §9.2 replace `m` by `m * ρ_ε` (continuous, with
 `‖T_{m*ρ_ε}‖_{cb,p} ≤ ‖T_m‖_{cb,p}`); by §9.4 every finite restriction of `M_{m*ρ_ε}` to points of
 `ℝⁿ`, amplified or not, has norm at most `‖T_m‖_{cb,p}`; by §8.2 (Lebesgue measure has support `ℝⁿ`)
 `‖S_{M_{m*ρ_ε}}‖_{(cb),p} ≤ ‖T_m‖_{cb,p}`; and `m * ρ_ε → m` almost everywhere
@@ -2067,7 +2105,7 @@ contributes `0`, so both sides are `|m(0)|`.
   theorems, as the mollification step of the route provides; a statement restricted to
   continuous `m` would not cover this symbol.
 
-*Needs:* §3.3, §4.2, §8.2, §9.1–§9.4; Mathlib
+*Needs:* §3.3, §3.7, §4.2, §8.2, §9.1–§9.4; Mathlib
 `ContDiffBump.ae_convolution_tendsto_right_of_locallyIntegrable`, `volume_euclideanSpace_eq_dirac`.
 
 ### Examples
@@ -2080,14 +2118,17 @@ contributes `0`, so both sides are `|m(0)|`.
 ### Dependencies
 
 Layers 1 (§1.1, §1.4), 2 (§2.1, §2.2), 3, 4 and 8; Tau Ceti `L²` Fourier multipliers;
-NoncommutativeIntegration §1.3, §1.4, §1.5, §2.6; Mathlib Plancherel, mollifiers and the volume of
-`ℝ⁰`.
+NoncommutativeIntegration §1.3, §1.4, §1.5, §2.6; Mathlib Plancherel, the Fourier transform of
+Gaussians, mollifiers and the volume of `ℝ⁰`.
 
 ## Layer 10: operator-valued and matrix BMO
 
-Throughout this layer `n ≥ 1`, `H` is a complex Hilbert space, `𝕋ⁿ = UnitAddTorus (Fin n)` with
-its Haar probability measure, and cubes are axis-parallel cubes of positive side, in `𝕋ⁿ` of side
-at most `1`.
+Throughout this layer `n ≥ 1`, `H` is a complex Hilbert space and `𝕋ⁿ = UnitAddTorus (Fin n)`
+with its Haar probability measure. A cube of `ℝⁿ` is an axis-parallel cube of positive side. A cube
+of `𝕋ⁿ` is the image under the quotient map `ℝⁿ → 𝕋ⁿ` of a cube of `ℝⁿ` of side at most `1`, so it
+may wrap around, and the average over it of a function on `𝕋ⁿ` is the average of the `ℤⁿ`-periodic
+lift of the function over that cube of `ℝⁿ`; the family of cubes of `𝕋ⁿ` is invariant under
+translations of `𝕋ⁿ`.
 
 ### 10.1 Column and row BMO of operator-valued functions
 
@@ -2102,8 +2143,8 @@ lines 246–263; mei-2007 lines 96–110).
 - For every `α ∈ S₂(H)`, `⨍_Q |f − α|² = ⨍_Q |f − f_Q|² + |f_Q − α|²`; so the infimum over constants
   is attained at `f_Q` (cgpt-2023 line 683, with constant `1`).
 - Operator Jensen: `|⨍_Q g|² ≤ ⨍_Q |g|²`; hence `‖f‖_{BMO^c} ≤ ess sup_z ‖f(z)‖`.
-- Invariance under translations, dilations and the reflection of the variable, and under
-  `f ↦ U f V` for unitaries `U`, `V`.
+- Invariance under translations and the reflection of the variable, on `ℝⁿ` and on `𝕋ⁿ`, under
+  dilations of the variable on `ℝⁿ`, and under `f ↦ U f V` for unitaries `U`, `V`.
 - `‖f‖_{BMO^c} = sup_{‖h‖ ≤ 1} ‖f(·) h‖_{BMO(ℝⁿ; H)}`, the `H`-valued BMO seminorm with square means
   (mei-2007 lines 101–103).
 - Dyadic comparison on `𝕋ⁿ`: for the dyadic filtration `(𝓓_k)_{k ≥ 0}` of `𝕋ⁿ = [0, 1)ⁿ`, with
@@ -2130,6 +2171,14 @@ lines 246–263; mei-2007 lines 96–110).
   `⨍_Q |f − f_Q|² = (1 − |⨍_Q e^{2πiz} dz|²) e`, which is `e` at `Q = 𝕋`, where the mean vanishes,
   so `‖f‖_{BMO^c} = 1`. The unitary-valued `z ↦ U_z` on `L²(ℝⁿ)` is not an `S₂`-valued function:
   every singular value of `U_z` is `1`, so `‖U_z‖₂ = ∞`.
+- Cubes of `𝕋` wrap around: for a rank-one projection `e` and `f(z) = z e` for `z ∈ [0, 1)`,
+  `⨍_Q |f − f_Q|²` is the variance of the values of `f` on `Q` times `e`. Intervals inside `[0, 1)`
+  give at most `1/12`, so seminorm at most `(1/12)^{1/2} ≈ 0.289`; the arc `[3/4, 5/4)` gives `7/48`,
+  seminorm `(7/48)^{1/2} ≈ 0.382`; the arcs `[1 − h, 1 + h)` give `1/4 − h/2 + h²/3 → 1/4`; and a
+  variance of values in `[0, 1)` is at most `1/4`. So `‖f‖_{BMO^c} = 1/2`, the value of every
+  translate of `f`. A definition by the intervals of one fundamental domain would give `f` the
+  value `0.289` and its translate by `1/2`, whose jump lies inside `[0, 1)`, the value `1/2`, and
+  would not be translation invariant.
 
 *Needs:* Mathlib `MeasureTheory.Lp`, Bochner integration, `UnitAddTorus`; §1.1.
 
@@ -2191,15 +2240,20 @@ For `k ≥ 0` let `m_k(x) = (⌊8^k x_j⌋)_j ∈ ℤⁿ` and `p_k(x) = 8^{−k}
   `m_k(x) = m_k(y)` lie in one cube of side `8^{−k}`, so `|x − y| < √n 8^{−k} ≤ 2^{−k}`;
 - Lemma 1.3: for `4^k ≥ 4√n` and `A ∈ S₂`,
   `‖π_k J_k(A)‖_{BMO^c(𝕋ⁿ)} ≤ ‖π J_k(A)‖_{BMO^c(ℝⁿ)} + C_n 2^{−k} ‖J_k A‖₂`, and the same for rows
-  (cgpt-2023 Lemma 1.3, line 379, proof lines 380–454), by rescaling cubes of `𝕋ⁿ` to cubes of side
-  up to `8^k/2` in `ℝⁿ`, comparing small cubes with `π` up to `C_n 2^{−k}‖J_k A‖₂`, and bounding
-  large cubes through `|⨍_Q e^{2πi⟨ξ, p_k(x) − p_k(y)⟩} dξ| ≲ 2^{−k}`, which uses
-  `|p_k(x) − p_k(y)| ≥ 2^{−k}/2` on the support of `J_k`;
+  (cgpt-2023 Lemma 1.3, line 379, proof lines 380–454), by rescaling the cubes of `𝕋ⁿ`, of side at
+  most `1`, by the factor `8^k` to cubes of side at most `8^k` in `ℝⁿ`, comparing small cubes with
+  `π` up to `C_n 2^{−k}‖J_k A‖₂`, and bounding large cubes through
+  `|⨍_Q e^{2πi⟨ξ, p_k(x) − p_k(y)⟩} dξ| ≲ 2^{−k}`, which uses `|p_k(x) − p_k(y)| ≥ 2^{−k}/2` on the
+  support of `J_k`;
 - `‖A − J_k A‖₂ → 0` and `‖A‖_p ≤ liminf_k ‖J_k A‖_p` for `A ∈ S₂` (the diagonal is null; §1.1).
 
 The source asserts the mean-zero property for every `k` and writes `‖A‖_p = lim_k ‖J_k(A)‖_p`
 (cgpt-2023 lines 375–378 and 506); for `n ≥ 2` the first holds only for `4^k ≥ √n`, and only the
-inequality `≤ liminf` is used, as stated here.
+inequality `≤ liminf` is used, as stated here. The source takes the cubes of `𝕋ⁿ` inside
+`[−1/2, 1/2]ⁿ` (line 380); since `π_k J_k(A)` is `ℤⁿ`-periodic, a cube of `𝕋ⁿ` that wraps around
+lifts to a cube of `ℝⁿ` of side at most `1` with the same average, and the argument, which
+translates small cubes to the origin and bounds large cubes by their size alone, applies to it
+unchanged.
 
 **Checks.**
 
