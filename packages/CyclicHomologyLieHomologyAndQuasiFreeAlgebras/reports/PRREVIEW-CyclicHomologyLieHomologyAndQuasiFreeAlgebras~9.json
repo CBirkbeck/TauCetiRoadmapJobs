@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CyclicHomologyLieHomologyAndQuasiFreeAlgebras~9",
+  "head": "20efc9707391d6232ea8d99eb233ff5cc82c6847",
+  "pr": 2037,
+  "folder": "CyclicHomologyLieHomologyAndQuasiFreeAlgebras",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 16 changed lines since 1a9242b. The change is a new Provenance section about LeanPool and one References entry. Its claims were checked at LeanPool commit f8b9b72: eilenbergZilber HomotopyEquiv with no sorry, Apache-2.0, v4.35.0 against the pin v4.36.0-rc2, and no cyclic-homology project by name. The pinned Tau Ceti's bisimplicial diag, doubleComplex and diagAlexanderWhitney were checked with #check. R01 (P3): the paragraph names no target and omits DerivedModuleAlgebra §0.2.2 on main, which owns the theorem; the replacement text was tested with resolve and the dependency check. The previous review had no findings. No seeded target falls in the changed text. Gate: all scanners 0; only NOT IN ORDER against the public order; the candidate-order dependency check has 0 problems; the worker's build passed. Elaboration: 0 errors, 5 sorry warnings. Overlap check: read 6 closest roadmaps. Source independence: changed passages only.",
+  "text": "af5173f6a932c162"
+ }
+}
