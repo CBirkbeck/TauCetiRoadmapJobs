@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ModularityAndLanglandsExtensionsPartII~2",
+  "head": "79b71ce0b0e9882a0a23bfa78ed3301f69bf527d",
+  "pr": 2449,
+  "folder": "ModularityAndLanglandsExtensionsPartII",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "Full re-review. Seeded sample of 15 targets (2.3, 3.3, 3.5, 4.2, 4.5, 5.4, 6.9, 7.4, 7.6, 8.3, 9.5, 12.3, 14.1, 14.4, 14.5) checked against nt21, nt21b, nt26 and th24: all hold; 53 locators checked in total. Previous findings R01-R04 repaired. Gate at 79b71ce: every check 0, OK. Depcheck: 257 roadmaps, 2447 edges, 0 problems. Elaboration: only the two sorry warnings; #check @ of all 4 declarations matches the README; no padding. One P2: gap:dyadic-definite-unitary-forms asks PotentialAutomorphyInfrastructurePartII for l = 2 objects already supplied by AutomorphicFormsOnReductiveGroups 7.4-7.5 (main) and OrdinaryAutomorphicFormsAndModularityLiftingPartII 2.1, 2.3 (merge order 303). The repair, tested on a scratch copy, gives depcheck 0 problems.",
+  "text": "aad6de5ef4c177af"
+ }
+}
