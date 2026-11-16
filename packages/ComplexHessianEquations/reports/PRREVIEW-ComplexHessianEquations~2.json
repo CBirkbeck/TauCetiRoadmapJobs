@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexHessianEquations~2",
+  "head": "f6e02cc15c1072302b4608e4a55217939f3d4ea8",
+  "pr": 2440,
+  "folder": "ComplexHessianEquations",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 12 changed lines since 7fbebb5. R01 (cite Mathlib eigenvalues₀ for eigenvalueVector) and R02 (description names its six suppliers) repaired. Every clause of the new README supplier-contract text was checked at the Mathlib pin (Spectrum.lean:60/63/66, PiL2.lean:220/225/1219, Hermitian.lean:57, Fintype/Card.lean:497). A scratch probe proves eigenvalueVector A = eigenvalues₀ ∘ Fin.cast (card_fin n).symm (subst; rfl) and that eigenvalueVector is antitone. Sampled §1.1 locators (szekelyhidi2018, gpt2023, guo-phong2024) re-read. Adversarial rows cover eigenvalueVector, its wrong model, Lewis differentiability and the gradient formula. Description checked against this head; suppliers all on main. Gate rerun: all checks 0, OK; depcheck 0 problems; elaboration has only 17 sorry warnings; no change outside the folder.",
+  "text": "aa051510363a62d2"
+ }
+}
