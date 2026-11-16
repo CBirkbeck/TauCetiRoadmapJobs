@@ -85,7 +85,7 @@ Tau Ceti at the pin of the content repository's lake manifest; file and line loc
 
 ### From TauCetiRoadmap.HeightsRationalPointsAndObstructions
 
-§2.16b: `smoothBrauer_residueExact` (finitely many nonzero residues, exactness of 0 → Br X → Br U → ⊕ H¹(k(D), ℚ/ℤ), removal of codimension two) and `pullbackMultiplicity` (pullback multiplies residues by the ramification index), for smooth varieties in characteristic zero; `brauerResidue_henselianFormula` (for a henselian discrete valuation ring, n invertible, an unramified character χ and a uniformiser t, the residue of (χ, t) is χ). §2.19a: `finiteFlatBrauerCorestriction` for a finite locally free morphism of rank d, with `pullback_comp` (corestriction after pullback is multiplication by d); for Spec L → Spec K and Br(Spec K) = Br(K) (SchemeAndStackFoundations §2.22, `brauer_field`) this is the corestriction `cor_{L/K}` with `cor_{L/K}(α_L) = [L : K]·α`.
+§2.16b: `smoothBrauer_residueExact` (finitely many nonzero residues, exactness of 0 → Br X → Br U → ⊕ H¹(k(D), ℚ/ℤ) for every dense open U, removal of codimension two, and the generic injection Br X ↪ Br k(X), with no affineness assumed) and `pullbackMultiplicity` (pullback multiplies residues by the ramification index), for smooth varieties in characteristic zero; `brauerResidue_henselianFormula` (for a henselian discrete valuation ring, n invertible, an unramified character χ and a uniformiser t, the residue of (χ, t) is χ). §2.19a: `finiteFlatBrauerCorestriction` for a finite locally free morphism of rank d, with `pullback_comp` (corestriction after pullback is multiplication by d); for Spec L → Spec K and Br(Spec K) = Br(K) (SchemeAndStackFoundations §2.22, `brauer_field`) this is the corestriction `cor_{L/K}` with `cor_{L/K}(α_L) = [L : K]·α`.
 
 ### From TauCetiRoadmap.PurityForFlatCohomology and TauCetiRoadmap.LefschetzPencilsAndVanishingCycles
 
@@ -549,7 +549,7 @@ The unramified locus U_α of a class of Br(ℝ(S)), with residues and purity fro
 
 ### 1.1 Unramified locus of a Brauer class
 
-X smooth integral over k, char k = 0; residues are those of HeightsRationalPointsAndObstructions §2.16b at the DVRs `O_{X,Γ}`. Br(U) ↪ Br(k(X)) for open U (injectivity for regular integral schemes).
+X smooth integral over k, char k = 0; residues are those of HeightsRationalPointsAndObstructions §2.16b at the DVRs `O_{X,Γ}`. Br(U) ↪ Br(k(X)) for every nonempty open U, affine or not: U is again smooth and integral with k(U) = k(X), and the generic injection of HeightsRationalPointsAndObstructions §2.16b (`smoothBrauer_residueExact`, exact at Br U for each dense open of U) applies to it.
 
 Let k be a field of characteristic 0 and X a smooth integral k-variety, with Br(X) = H²_ét(X, 𝔾_m) ⊂ Br(k(X)). Say that α ∈ Br(k(X)) ramifies along a prime divisor Γ ⊂ X when its residue res_Γ(α) ∈ H¹(k(Γ), ℚ/ℤ) is nonzero. A class ramifies along only finitely many prime divisors; the reduced divisor they form is called the ramification divisor, and U_α denotes its complement in X. An open V ⊂ X satisfies α ∈ Br(V) ⊂ Br(k(X)) exactly when V meets none of the prime divisors along which α ramifies; hence U_α is itself such an open and contains every other one. For a smooth proper surface S over ℝ and α ∈ Br(ℝ(S)), U_α is a dense open of S whose complement is a curve or empty, and the complement is empty exactly when α ∈ Br(S). (B19, §2.4, p. 75)
 
@@ -575,8 +575,9 @@ The definition has the following API.
 - For α = (x, y) on 𝔸², 2α = 0 has `U_{2α}` = 𝔸² ≠ U_α: the locus is not preserved by multiples.
 - For X = Spec of a field (dimension 0) U_α = X and Br(X) is Mathlib's `BrauerGroup`.
 - If S is a smooth projective real surface and α ∈ Br(S), then U_α = S.
+- The injection Br(U) ↪ Br(k(X)) is not an affine statement: for U = ℙ²_ℝ, Br(ℙ²_ℝ) = Br(ℝ) = ℤ/2 maps to Br(ℝ(x, y)) with the Hamilton class going to ℍ ⊗ ℝ(x, y), which is still a division algebra because −1 is not a sum of two squares in the real field ℝ(x, y); a version of the injection restricted to affine opens would not cover this projective U.
 
-*Needs:* HeightsRationalPointsAndObstructions §2.16b (`smoothBrauer_residueExact`); SchemeAndStackFoundations §2.22 (`brauer_regular_injectivity`); Mathlib `AlgebraicGeometry.Scheme.functionField`.
+*Needs:* HeightsRationalPointsAndObstructions §2.16b (`smoothBrauer_residueExact`); Mathlib `AlgebraicGeometry.Scheme.functionField`.
 
 ### 1.2 Kummer and topological Brauer sequences
 
@@ -768,7 +769,7 @@ For α = (x, y) over ℝ(x, y), the unramified locus in 𝔸² is the complement
 
 ### Dependencies
 
-Layer 0; AlgebraicTopology Stage 6; AlgebraicTopologyPartII §7.4; ComplexComparisonPartII §C6.3 (`artinComparison`); ComplexComparisonPartII §C6.3 (gap:real-artin-comparison); HeightsRationalPointsAndObstructions §2.16b (`brauerResidue_henselianFormula`); HeightsRationalPointsAndObstructions §2.16b (`pullbackMultiplicity`); HeightsRationalPointsAndObstructions §2.16b (`smoothBrauer_residueExact`); LefschetzPencilsAndVanishingCycles §0.10; Mathlib `AlgebraicGeometry.Scheme.functionField`; Mathlib `AlgebraicGeometry.Scheme`; Mathlib `ModuleCat.matrixEquivalence`; MotivesAndAlgebraicCycles §7.6b; PurityForFlatCohomology §8.4; ResolutionOfSingularitiesCharacteristicZero §5.1 (principalization); SchemeAndStackFoundations §0.6 (`reflexiveHull`); SchemeAndStackFoundations §0.9; SchemeAndStackFoundations §2.11; SchemeAndStackFoundations §2.22 (`brauer_kummer_sequence`); SchemeAndStackFoundations §2.22 (`brauer_regular_injectivity`); SchemeAndStackFoundations §2.22 (`mk_eq_zero_iff`); SchemeAndStackFoundations §2.22 (`mk_opposite`); SchemeAndStackFoundations §2.22 (`mk_tensor`); SchemeAndStackFoundations §3.4 (`classGroup_picard_locallyFactorial`); SchemeAndStackFoundations §3.4 (`picard_excision_sequence`); SchemeAndStackFoundations §4.13; Tau Ceti `TauCeti.AlgebraicGeometry.IsRegular.of_smooth`; Tau Ceti `TauCeti.AlgebraicGeometry.IsRegular.uniqueFactorizationMonoid_stalk`; Tau Ceti `TauCeti.IsRegularLocalRing.free_of_isReflexive`; Tau Ceti `TauCeti.Quaternion.brauerGroupMulEquiv`.
+Layer 0; AlgebraicTopology Stage 6; AlgebraicTopologyPartII §7.4; ComplexComparisonPartII §C6.3 (`artinComparison`); ComplexComparisonPartII §C6.3 (gap:real-artin-comparison); HeightsRationalPointsAndObstructions §2.16b (`brauerResidue_henselianFormula`); HeightsRationalPointsAndObstructions §2.16b (`pullbackMultiplicity`); HeightsRationalPointsAndObstructions §2.16b (`smoothBrauer_residueExact`); LefschetzPencilsAndVanishingCycles §0.10; Mathlib `AlgebraicGeometry.Scheme.functionField`; Mathlib `AlgebraicGeometry.Scheme`; Mathlib `ModuleCat.matrixEquivalence`; MotivesAndAlgebraicCycles §7.6b; PurityForFlatCohomology §8.4; ResolutionOfSingularitiesCharacteristicZero §5.1 (principalization); SchemeAndStackFoundations §0.6 (`reflexiveHull`); SchemeAndStackFoundations §0.9; SchemeAndStackFoundations §2.11; SchemeAndStackFoundations §2.22 (`brauer_kummer_sequence`); SchemeAndStackFoundations §2.22 (`mk_eq_zero_iff`); SchemeAndStackFoundations §2.22 (`mk_opposite`); SchemeAndStackFoundations §2.22 (`mk_tensor`); SchemeAndStackFoundations §3.4 (`classGroup_picard_locallyFactorial`); SchemeAndStackFoundations §3.4 (`picard_excision_sequence`); SchemeAndStackFoundations §4.13; Tau Ceti `TauCeti.AlgebraicGeometry.IsRegular.of_smooth`; Tau Ceti `TauCeti.AlgebraicGeometry.IsRegular.uniqueFactorizationMonoid_stalk`; Tau Ceti `TauCeti.IsRegularLocalRing.free_of_isReflexive`; Tau Ceti `TauCeti.Quaternion.brauerGroupMulEquiv`.
 
 ## Layer 2: unramified classes on complex surfaces and de Jong's theorem
 
@@ -2446,7 +2447,7 @@ For a real Enriques surface S, H²(S, O_S) = 0 and H³(S(ℂ), ℤ)_tors ≅ ℤ
 A proof can proceed as follows.
 
 1. H²(O) = 0 (EnriquesSurfaces §1.1) and c₁ : Pic(S_ℂ) ≅ H²(S(ℂ), ℤ) (EnriquesSurfaces §1.3), so the complex topological Brauer sequence (§1.2) gives Br(S_ℂ) ≅ H³(S(ℂ), ℤ)_tors, which is ℤ/2 by Poincaré duality H³ ≅ H₁ and π₁ = ℤ/2 (EnriquesSurfaces §1.4).
-2. For α ∈ Br(S) ⊂ Br(ℝ(S)), cor(res α) = 2α for the quadratic extension ℂ(S)/ℝ(S) (HeightsRationalPointsAndObstructions §2.19a) and res α ∈ Br(S_ℂ) is killed by 2, so 4α = 0.
+2. For α ∈ Br(S), corestriction along the finite locally free morphism S_ℂ → S of rank 2 (HeightsRationalPointsAndObstructions §2.19a, `finiteFlatBrauerCorestriction` with `pullback_comp`) gives cor(res α) = 2α in Br(S) itself, and res α ∈ Br(S_ℂ) is killed by 2, so 4α = cor(2·res α) = 0; no passage to the function field ℝ(S) is needed.
 
 **Checks.**
 
