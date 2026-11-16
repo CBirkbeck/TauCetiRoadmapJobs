@@ -4609,6 +4609,20 @@
       ]
     },
     {
+      "slug": "symplectic-steinberg-generic-parameter",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "Layer 3, §§3.8, 3.15, 3.17",
+      "needs": "For n ≥ 1 and a discrete automorphic representation of Sp2n over a number field whose component at some finite place v is the Steinberg representation, the discrete global Arthur parameter is a single unitary self-dual cuspidal representation of GL(2n+1) with b = 1, Steinberg at v, hence generic with trivial global component group (GS, proof of Lemma 12.4, p. 37, uses it at n = 3).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:1.7",
+        "LocalLanglandsCorrespondenceForG2:3.1",
+        "LocalLanglandsCorrespondenceForG2:3.11",
+        "LocalLanglandsCorrespondenceForG2:6.4",
+        "LocalLanglandsCorrespondenceForG2:8.1",
+        "LocalLanglandsCorrespondenceForG2:10.6"
+      ]
+    },
+    {
       "slug": "pgsp6-similitude-theta-tables",
       "supplier": "MetaplecticAutomorphicForms",
       "section": "Layer 3, §§3.41–3.42",
@@ -4760,7 +4774,7 @@
       "slug": "cubic-global-jacquet-langlands",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "Layer 4, §4.7a (Jacquet–Langlands correspondence)",
-      "needs": "For a central division algebra D of degree three over a number field, the global Jacquet–Langlands transfer of the discrete automorphic spectrum of D× to that of GL3, with the identity at the split places and the local transfer of §4.7a at the ramified places, its L-functions being products of shifted cuspidal L-functions so that the Rankin–Selberg functional equation applies (GF, §2.7(b)).",
+      "needs": "For a central division algebra D of degree three over a number field, the global Jacquet–Langlands transfer of the discrete automorphic spectrum of D× to that of GL3, the identity at the split places; for infinite-dimensional Π′ a cuspidal transfer with the local transfer of §4.7a at the ramified places; for Π′ = χ ∘ Nrd the transfer χ ∘ det, whose ramified components have the cuspidal support of the local transfers χ_v ⊗ St3; its L-functions being cuspidal ones or L(s+1,χ)L(s,χ)L(s−1,χ), so that the Rankin–Selberg functional equation applies summand by summand (GF, §2.7(b)).",
       "neededBy": [
         "LocalLanglandsCorrespondenceForG2:3.11"
       ]
