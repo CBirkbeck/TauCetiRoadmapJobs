@@ -32,3 +32,80 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["9.7", "9.8"]
+
+[[source]]
+id = "BFP"
+authors = "Jonas Bergström, Carel Faber, Sam Payne"
+title = "Polynomial point counts and odd cohomology vanishing on moduli spaces of stable curves"
+year = 2022
+venue = "Ann. Math. (2) 199 (2024), no. 3, 1323-1365"
+doi = "10.4007/annals.2024.199.3.7"
+arxiv = "2206.07759v2"
+locator_scheme = "theorem"
+locator = "Proposition 4.2 and proof, p. 7"
+url = "https://arxiv.org/abs/2206.07759v2"
+fetched_from = "https://arxiv.org/pdf/2206.07759v2"
+fetched_at = "2026-11-16T21:10:34Z"
+sha256 = "36beb2d3eccb42161a0b6190a653b060337f08fed5866f6b578888d503346758"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v2"
+cited_for = ["8.24"]
+
+[[source]]
+id = "PW"
+authors = "Sam Payne, Thomas Willwacher"
+title = "Weight two compactly supported cohomology of moduli spaces of curves"
+year = 2021
+arxiv = "2110.05711v3"
+locator_scheme = "section"
+locator = "§2.3, pp. 8–9"
+url = "https://arxiv.org/abs/2110.05711v3"
+fetched_from = "https://arxiv.org/pdf/2110.05711v3"
+fetched_at = "2026-11-16T21:18:36Z"
+sha256 = "97ceff2de73df8ae6dfc79032e7d587b99fc20fa63fb0e383e770cc8821d1455"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v3"
+cited_for = ["8.24"]
+
+[[source]]
+id = "Pet"
+authors = "Dan Petersen"
+title = "A spectral sequence for stratified spaces and configuration spaces of points"
+year = 2017
+venue = "Geom. Topol. 21 (2017), no. 4, 2527-2555"
+arxiv = "1603.01137v2"
+locator_scheme = "theorem"
+locator = "Example 3.5, p. 7"
+url = "https://arxiv.org/abs/1603.01137v2"
+fetched_from = "https://arxiv.org/pdf/1603.01137v2"
+fetched_at = "2026-11-16T21:18:41Z"
+sha256 = "2d0bb90429d1010328fa4315df3a071221b351c996b7592277641f92dddc77bc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v2"
+cited_for = ["8.24"]
+
+[[source]]
+id = "Sun"
+authors = "Shenghao Sun"
+title = "L-series of Artin stacks over finite fields"
+year = 2010
+venue = "Algebra and Number Theory, 6:1 (2012), 47-122"
+doi = "10.2140/ant.2012.6.47"
+arxiv = "1008.3689v2"
+locator_scheme = "theorem"
+locator = "Proposition 7.3.2, preprint p. 47; §§2.1–2.3, preprint pp. 5–6"
+url = "https://arxiv.org/abs/1008.3689v2"
+fetched_from = "https://arxiv.org/pdf/1008.3689v2"
+fetched_at = "2026-11-16T21:18:48Z"
+sha256 = "85947e31a4b0f65e7d1cfad998a8f28969411d2e8dca561b645ef266ae8c8d1b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v2"
+cited_for = ["8.24"]
