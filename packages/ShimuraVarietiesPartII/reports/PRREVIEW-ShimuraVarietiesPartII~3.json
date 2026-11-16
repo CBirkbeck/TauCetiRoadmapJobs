@@ -1,0 +1,30 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ShimuraVarietiesPartII~3",
+  "head": "9962e5f6f366a5d7646111e5a120b5fac5709d39",
+  "pr": 2463,
+  "folder": "ShimuraVarietiesPartII",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "incremental re-review of 6 changed lines since 7a2df81. Checked: previous R02 (Scope sentence on ReductiveGroupsPartIII Layer 5) is repaired; previous R01 is partly repaired, because the new §2.2 splitting step holds only at the prime of the fixed embedding (S3 cubic counterexample at p=7; repair is K=F·k with a uniform T); R03 is deferred as D01, which stands. The restated gap:hodge-cover-refinement was checked against KP Lemma 4.6.22 (p.206) and KPZ §§7.2.1-7.2.10; the seeded sample was checked where it touches the change (§2.5, KPZ Proposition 7.2.19, p.83). Gate OK; depcheck reports 0 problems; lake env lean exits 0 with no output; Suggested.lean is unchanged and declares nothing. The description was re-read against the head with no finding.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "the description still has a second, unclosed summary marker (R05 partly repaired)",
+    "where": "the pull-request body, where the worker keeps the stray summary marker verbatim",
+    "raised": "PRREVIEW-ShimuraVarietiesPartII~2"
+   },
+   {
+    "id": "D02",
+    "severity": "",
+    "title": "D01: the description's second opening roadmap-summary marker has no closing marker; it sits after the AI-assistance paragraph.",
+    "where": "the pull-request description's marker comments, which the worker keeps",
+    "raised": "PRREVIEW-ShimuraVarietiesPartII~3"
+   }
+  ],
+  "text": "36d19466e4fa904a"
+ }
+}
