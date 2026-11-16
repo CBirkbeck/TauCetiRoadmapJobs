@@ -161,14 +161,6 @@ def HasFlowBowenProperty (ϕ : Flow ℝ X) (F : X → ℝ) : Prop :=
     (∀ s ∈ Icc 0 t, dist (ϕ s x) (ϕ s y) ≤ ε) →
       |(∫ s in (0 : ℝ)..t, F (ϕ s x)) - ∫ s in (0 : ℝ)..t, F (ϕ s y)| ≤ K
 
-/-- The lower Gibbs property of a flow-invariant probability at scale `ε` (README §5.1): a constant
-`K ≥ 1` with `ν (B_t(x, ε)) exp (t P_g(F) − ∫_0^t F (g^s x) ds) ≥ K⁻¹` for all `x` and `t ≥ 0`. -/
-def HasLowerGibbsProperty (ϕ : Flow ℝ X) (F : C(X, ℝ)) (ν : ProbabilityMeasure X) (ε : ℝ) :
-    Prop :=
-  ν ∈ flowInvariantProbabilities ϕ ∧ ∃ K ≥ (1 : ℝ), ∀ (x : X) (t : ℝ), 0 ≤ t →
-    K⁻¹ ≤ (ν : Measure X).real {y | ∀ s ∈ Icc 0 t, dist (ϕ s x) (ϕ s y) < ε} *
-      Real.exp (t * (flowTopologicalPressure ϕ F).toReal - ∫ s in (0 : ℝ)..t, F (ϕ s x))
-
 end MetricNotions
 
 /-! ## Layer 2: Mixing and weak specification -/
@@ -207,6 +199,20 @@ theorem upperSemicontinuousOn_measureEntropy_of_isExpansiveFlow {X : Type*} [Met
   sorry
 
 /-! ## Layer 5: Bowen's uniqueness criterion under weak specification -/
+
+section LowerGibbs
+
+variable {X : Type*} [PseudoMetricSpace X] [MeasurableSpace X]
+
+/-- The lower Gibbs property of a flow-invariant probability at scale `ε` (README §5.1): a constant
+`K ≥ 1` with `ν (B_t(x, ε)) exp (t P_g(F) − ∫_0^t F (g^s x) ds) ≥ K⁻¹` for all `x` and `t ≥ 0`. -/
+def HasLowerGibbsProperty (ϕ : Flow ℝ X) (F : C(X, ℝ)) (ν : ProbabilityMeasure X) (ε : ℝ) :
+    Prop :=
+  ν ∈ flowInvariantProbabilities ϕ ∧ ∃ K ≥ (1 : ℝ), ∀ (x : X) (t : ℝ), 0 ≤ t →
+    K⁻¹ ≤ (ν : Measure X).real {y | ∀ s ∈ Icc 0 t, dist (ϕ s x) (ϕ s y) < ε} *
+      Real.exp (t * (flowTopologicalPressure ϕ F).toReal - ∫ s in (0 : ℝ)..t, F (ϕ s x))
+
+end LowerGibbs
 
 section Criterion
 
