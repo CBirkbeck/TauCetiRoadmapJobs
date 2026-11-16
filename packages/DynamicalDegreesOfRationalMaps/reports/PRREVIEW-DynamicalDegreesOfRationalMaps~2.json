@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DynamicalDegreesOfRationalMaps~2",
+  "head": "6de2f8c8299a13f8cf66b31d339fe136ec5ac4a1",
+  "pr": 2431,
+  "folder": "DynamicalDegreesOfRationalMaps",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 34 changed lines since 14cf9af. Previous R01 (mixedDegree_baseChange) and R02 (dependencies in the description) are both repaired. Checked: the term-by-term route of README 4.3 against the elaborated signature of Tau Ceti finrank_cohomology_pullback_eq_of_isPullback (FlatBaseChange.lean:277); the seeded-sample locators in the changed 4.3 (dang2020 lines 18-20, truong2020 lines 1529-1533); the layer dependency lists; the pull-request description against the head. Gate rerun OK; depcheck 0 problems; lake env lean gives 18 sorry warnings only; #check @ on 31 declarations shows no lost binder. New findings: 2 P3 (Layer 4 dependency list omits the Tau Ceti input; a description sentence attributes all of 4.3's invariance to that theorem).",
+  "text": "f8000f919b5daa57"
+ }
+}
