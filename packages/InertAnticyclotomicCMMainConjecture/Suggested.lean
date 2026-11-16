@@ -23,7 +23,8 @@ so the file states nothing; the headline theorems and what each one lacks are li
 * Layer 4 (§4.2): torsion of the opposite signed Selmer dual and vanishing of the compact
   strict and opposite signed Selmer modules. It lacks the same signed Selmer carriers and the
   compact corestriction limits with their Cartier-dual local conditions.
-* Layer 4 (§4.4): the opposite signed characteristic formula char(X_(−ε)) = char(H^ε/loc C).
+* Layer 4 (§4.4): the opposite signed characteristic formula char(X_(−ε)) = char(ℋ^ε/loc C),
+  where ℋ^ε is the signed part of the compact local Iwasawa cohomology at the place above p.
   It lacks the signed Selmer carriers and the all-auxiliary elliptic-unit module; the
   characteristic ideal itself is the pinned `TauCeti.Iwasawa.charIdeal`.
 * Layer 6 (§6.4): the finite-character CM rank bounds (BKO21 Theorem 6.2). It lacks Rubin's
