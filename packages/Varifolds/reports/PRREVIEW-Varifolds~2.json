@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Varifolds~2",
+  "head": "2a4c6778145ad4d7ed2ee856a2a5d3cc3ba3badc",
+  "pr": 2443,
+  "folder": "Varifolds",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 13 changed lines since a85c365. R01, R02 and R03 are repaired (docstring bullet on metrics varying in C2, Layer 3 section title, the description's dependency paragraph). The changed docstring's claims hold in a scratch probe with 0 errors: EMetricSpace.ofRiemannianMetric, with T3Space taken along TauCeti.WithMetric.homeomorph, gives IsRiemannianManifold, and grassmannBundle and rectifiable_compactness instantiate on the copy. chartC2Topology is uniform C2 convergence on compact chart sets. Neither pin has a map between the Grassmann bundles of two metrics. Sample locators for 1.2, 7.4 and 7.6 checked against Simon1983 lines 7301-7305 and 7886-7912 and Agnoletto lines 151-156. The 14 supplier ids in the description resolve on main ef3d21f. Gate: every check passes. Depcheck: 0 problems. lake env lean: 15 sorry warnings and nothing else.",
+  "text": "fc44ccb7c309c1bd"
+ }
+}
