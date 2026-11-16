@@ -14,7 +14,9 @@ definition they need (`HasZeroTotalSignature`).
 
 Conventions. The function field of an integral surface over `ℝ` is a field `K` with
 `Algebra.EssFiniteType ℝ K` and `Algebra.trdeg ℝ K = 2`; `K` is nonreal when `¬ IsSemireal K`
-(for a smooth projective model `S` of `K` this is `S(ℝ) = ∅`). The period of a central simple
+(for a smooth projective model `S` of `K` this is `S(ℝ) = ∅`). The upper bound of Theorem 0.12
+and the isotropy statements behind Theorems 0.10 and 0.13 hold for every field of the given
+transcendence degree over `ℝ` and are stated without finite generation. The period of a central simple
 `K`-algebra `A` is `orderOf (TauCeti.BrauerGroup.mk A)` in Tau Ceti's group structure on Mathlib's
 `BrauerGroup`, and its index is `TauCeti.Algebra.index K A`; quantifying over all `A` quantifies
 over all Brauer classes.
@@ -25,7 +27,7 @@ Publ. Math. IHÉS 130 (2019)):
 * de Jong's theorem in characteristic zero (README §2.9), `index_eq_orderOf_of_isAlgClosed`;
 * the norm bound over real closed fields (§2.10), `index_dvd_two_mul_orderOf_of_isRealClosed`;
 * Theorem 0.3 (§7.4), `index_eq_orderOf_of_not_isSemireal`;
-* Theorem 0.4 in its birational form (§7.5), `index_eq_orderOf_of_forall_isRealClosed`;
+* Theorem 0.4 in its birational form (§7.6), `index_eq_orderOf_of_forall_isRealClosed`;
 * Theorem 0.12 (§§7.8, 7.10), `not_anisotropic_of_hasZeroTotalSignature` and
   `exists_anisotropic_hasZeroTotalSignature`;
 * Theorem 0.10 (§7.11), `not_anisotropic_of_not_isSemireal`;
@@ -35,7 +37,7 @@ Headline theorems not statable at the pins:
 
 * Theorem 0.4 in its scheme form (classes of `Br(U)` on a smooth real surface `U` vanishing at
   every real point): Mathlib and Tau Ceti have no Brauer group of a scheme and no evaluation of a
-  Brauer class at a real point. Its birational form above is equivalent (README §7.5).
+  Brauer class at a real point. Its birational form above is equivalent (README §7.6).
 * Theorem 0.5 (the topological criterion `ind = per` or `ind = 2 per` for `α ∈ Br(S)`): it needs
   `Br(S)`, the Borel equivariant cohomology `H²_G(S(ℂ), 𝔽₂)`, the real Kummer sequence and the
   canonical real-locus components `[ξ]₁ ∈ H¹(S(ℝ), 𝔽₂)`, none of which is at the pins.
@@ -57,21 +59,21 @@ namespace TauCetiRoadmap.RealSurfacePeriodIndex
 
 universe u v
 
-/-! ## Layer 0: real function fields -/
+/-! ## Layer 0: real function fields: orderings, real closures, Brauer index and the Elman–Lam invariant -/
 
-/-- A quadratic form `q` over a field `K` (with `2` invertible) has **zero total signature**: for
-every real closed field `R` with a `K`-algebra structure, the base change `q_R` vanishes on an
-`R`-subspace of `R ⊗[K] V` of half the dimension of `V`. For nondegenerate `q` this says that the
-signature of `q` vanishes at every ordering of `K` (Sylvester's law over the real closure); for
-nonreal `K` it holds for every form. This is the condition in the Elman–Lam u-invariant
-(README §0.6; B19 §0.5, p. 66; EKM §37). -/
+/-- A quadratic form `q` on a finite-dimensional vector space `V` over a field `K` (with `2`
+invertible) has **zero total signature**: for every real closed field `R` with a `K`-algebra
+structure, the base change `q_R` vanishes on an `R`-subspace of `R ⊗[K] V` of half the dimension
+of `V`. For nondegenerate `q` this says that the signature of `q` vanishes at every ordering of
+`K` (Sylvester's law over the real closure); for nonreal `K` it holds for every form. This is the
+condition in the Elman–Lam u-invariant (README §0.6; B19 §0.5, p. 66; EKM §36, p. 161). -/
 def HasZeroTotalSignature {K : Type u} [Field K] [Invertible (2 : K)] {V : Type v}
-    [AddCommGroup V] [Module K V] (q : QuadraticForm K V) : Prop :=
+    [AddCommGroup V] [Module K V] [FiniteDimensional K V] (q : QuadraticForm K V) : Prop :=
   ∀ (R : Type u) [Field R] [IsRealClosed R] [Algebra K R],
     ∃ W : Submodule R (R ⊗[K] V), 2 * Module.finrank R W = Module.finrank K V ∧
       ∀ w ∈ W, q.baseChange R w = 0
 
-/-! ## Layer 2: de Jong's theorem and the norm bound -/
+/-! ## Layer 2: de Jong's theorem by Hodge theory, and the norm bound over real closed fields -/
 
 /-- **De Jong's period-index theorem in characteristic zero.** For `k` algebraically closed of
 characteristic zero and `K` a finitely generated field extension of `k` of transcendence degree
@@ -85,14 +87,14 @@ theorem index_eq_orderOf_of_isAlgClosed (k : Type u) [Field k] [IsAlgClosed k] [
 
 /-- **Norm bound over a real closed field.** For `R` real closed and `K` a finitely generated
 field extension of `R` of transcendence degree `2`, the index of every central simple
-`K`-algebra divides twice the period of its class (README §2.10; B19 §0.1, p. 63). -/
+`K`-algebra divides twice the period of its class (README §2.10; B19 §0.2, p. 63). -/
 theorem index_dvd_two_mul_orderOf_of_isRealClosed (R : Type u) [Field R] [IsRealClosed R]
     (K : Type u) [Field K] [Algebra R K] [Algebra.EssFiniteType R K]
     (htr : Algebra.trdeg R K = 2) (A : CSA.{u, u} K) :
     TauCeti.Algebra.index K A ∣ 2 * orderOf (TauCeti.BrauerGroup.mk A) := by
   sorry
 
-/-! ## Layer 7: period equals index, the u-invariant and quadratic forms -/
+/-! ## Layer 7: period equals index: the main theorems and the u-invariant -/
 
 /-- **Theorem 0.3.** If `K` is the function field of a real surface without real points, that is
 a finitely generated field extension of `ℝ` of transcendence degree `2` in which `-1` is a sum of
@@ -107,7 +109,8 @@ theorem index_eq_orderOf_of_not_isSemireal (K : Type u) [Field K] [Algebra ℝ K
 /-- **Theorem 0.4, birational form.** Let `K` be a finitely generated field extension of `ℝ` of
 transcendence degree `2` and `A` a central simple `K`-algebra whose class becomes trivial over
 every real closed field `R` with a `K`-algebra structure. Then the index of `A` equals the period
-of its class (README §7.5; B19 Theorem 0.4, p. 64, and §6.4, p. 95). -/
+of its class (README §§7.5, 7.6; B19 Theorem 0.4, p. 64, its proof in §6.3, p. 95, and the
+passage from real closures to real points in §6.4, p. 96). -/
 theorem index_eq_orderOf_of_forall_isRealClosed (K : Type u) [Field K] [Algebra ℝ K]
     [Algebra.EssFiniteType ℝ K] (htr : Algebra.trdeg ℝ K = 2) (A : CSA.{u, u} K)
     (hA : ∀ (R : Type u) [Field R] [IsRealClosed R] [Algebra K R],
@@ -134,23 +137,26 @@ theorem exists_anisotropic_hasZeroTotalSignature (K : Type u) [Field K] [Algebra
     ∃ q : QuadraticForm K (Fin 4 → K), q.Anisotropic ∧ HasZeroTotalSignature q := by
   sorry
 
-/-- **Theorem 0.10.** Over the function field `K` of a real surface without real points (finitely
-generated of transcendence degree `2` over `ℝ`, with `-1` a sum of squares), every quadratic form
-of dimension at least `5` is isotropic (README §7.11; B19 Theorem 0.10, p. 66). -/
+/-- **Theorem 0.10.** Over a field `K` of transcendence degree `2` over `ℝ`, not necessarily
+finitely generated, in which `-1` is a sum of squares (for instance the function field of a real
+surface without real points), every quadratic form of dimension at least `5` is isotropic
+(README §7.11; B19 Theorem 0.10, p. 66, for function fields, and §6.4, p. 95, for its deduction
+from Theorem 0.12). -/
 theorem not_anisotropic_of_not_isSemireal (K : Type u) [Field K] [Algebra ℝ K]
-    [Algebra.EssFiniteType ℝ K] (htr : Algebra.trdeg ℝ K = 2) (hK : ¬ IsSemireal K)
+    (htr : Algebra.trdeg ℝ K = 2) (hK : ¬ IsSemireal K)
     {V : Type v} [AddCommGroup V] [Module K V] [FiniteDimensional K V]
     (hV : 5 ≤ Module.finrank K V) (q : QuadraticForm K V) :
     ¬ q.Anisotropic := by
   sorry
 
-/-- **Pairs of quadrics over real curves without real points (Theorem 0.13).** Over the function
-field `K` of a real curve without real points (finitely generated of transcendence degree `1` over
-`ℝ`, with `-1` a sum of squares), any two quadratic forms on a space of dimension at least `5`
-have a common nonzero zero; in particular every degree-four del Pezzo surface over `K` has a
-rational point (README §7.13; B19 Theorem 0.13, p. 66, and its proof, p. 96). -/
+/-- **Pairs of quadrics over real curves without real points (Theorem 0.13).** Over a field `K`
+of transcendence degree `1` over `ℝ`, not necessarily finitely generated, in which `-1` is a sum
+of squares (for instance the function field of a real curve without real points), any two
+quadratic forms on a space of dimension at least `5` have a common nonzero zero; in particular
+every degree-four del Pezzo surface over `K` has a rational point (README §7.13; B19 Theorem 0.13
+and its deduction from Theorem 0.10 by Amer–Brumer in §0.5, p. 66). -/
 theorem exists_common_zero_of_not_isSemireal (K : Type u) [Field K] [Algebra ℝ K]
-    [Algebra.EssFiniteType ℝ K] (htr : Algebra.trdeg ℝ K = 1) (hK : ¬ IsSemireal K)
+    (htr : Algebra.trdeg ℝ K = 1) (hK : ¬ IsSemireal K)
     {V : Type v} [AddCommGroup V] [Module K V] [FiniteDimensional K V]
     (hV : 5 ≤ Module.finrank K V) (q₁ q₂ : QuadraticForm K V) :
     ∃ x : V, x ≠ 0 ∧ q₁ x = 0 ∧ q₂ x = 0 := by

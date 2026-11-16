@@ -30,7 +30,7 @@ venue = "Compositio Mathematica 110, 215-237 (1998)"
 doi = "10.1023/A:1000223408405"
 arxiv = "alg-geom/9606007v1"
 locator_scheme = "theorem"
-locator = "Theorem 4.4, Proposition 4.2"
+locator = "Theorems 1.3, 4.4, Proposition 4.2"
 url = "https://arxiv.org/abs/alg-geom/9606007v1"
 fetched_from = "https://arxiv.org/pdf/alg-geom/9606007v1"
 fetched_at = "2026-10-25T20:22:04Z"
@@ -39,7 +39,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["Layer 9"]
+cited_for = ["Layer 5", "Layer 9"]
 
 [[source]]
 id = "BW20"
@@ -50,7 +50,7 @@ venue = "Inventiones mathematicae 222 (2020), 1-77"
 doi = "10.1007/s00222-020-00965-8"
 arxiv = "1801.00872v3"
 locator_scheme = "theorem"
-locator = "Propositions 1.3, 2.8, 2.9; Theorem 1.12; Lemma 2.11"
+locator = "Propositions 1.3, 2.8, 2.9; Theorem 1.12; Lemma 2.11; display (1.22)"
 url = "https://arxiv.org/abs/1801.00872v3"
 fetched_from = "https://arxiv.org/pdf/1801.00872v3"
 fetched_at = "2026-10-25T20:22:11Z"
@@ -59,7 +59,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3"
-cited_for = ["Layer 4"]
+cited_for = ["Layer 1", "Layer 5", "Layer 6", "Layer 9"]
 
 [[source]]
 id = "EKM"
@@ -67,7 +67,7 @@ authors = "Richard Elman, Nikita Karpenko, Alexander Merkurjev"
 title = "The Algebraic and Geometric Theory of Quadratic Forms"
 year = 2008
 locator_scheme = "theorem"
-locator = "Theorem 17.14; Lemmas 19.4, 19.10; Corollary 36.4; Theorem 37.4; Corollary 37.5; Proposition 37.7; Corollary 37.8; Lemma 38.1; Corollary 38.2; Theorem 97.2; Corollaries 97.5, 97.6; Theorem 97.7; Theorem 98.19; §33"
+locator = "Corollary 17.6; Theorem 17.14; Lemmas 19.4, 19.5, 19.10; Exercise 19.15; Lemma 31.19; Theorem 31.22; Corollary 34.12; Proposition 35.9; Theorem 35.12; Corollary 36.4; Theorem 37.4; Corollary 37.5; Proposition 37.7; Corollary 37.8; Lemma 38.1; Corollary 38.2; Theorem 97.2; Corollaries 97.5, 97.6; Theorem 97.7; Theorem 98.19; §33; §36 (definition of the u-invariant, p. 161); §98 (pure quaternions and the reduced norm, p. 390)"
 url = "https://www.math.ucla.edu/~merkurev/Book/Kniga-final/Kniga.pdf"
 fetched_from = "https://www.math.ucla.edu/~merkurev/Book/Kniga-final/Kniga.pdf"
 fetched_at = "2026-10-25T20:22:26Z"
@@ -75,7 +75,7 @@ sha256 = "0b547b09ee83c370a932e2c2117fe1757bb8b342ca0af9d73526b5edffb842e6"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-cited_for = ["Layer 0"]
+cited_for = ["Layer 0", "Layer 1"]
 
 [[source]]
 id = "BEC05"
@@ -83,7 +83,7 @@ authors = "Karim Johannes Becher"
 title = "On fields of u-invariant 4"
 year = 2005
 locator_scheme = "section"
-locator = "§§2-3, Theorem 3.1"
+locator = "§1 (p. 1); §2 (definition of the u-invariant, p. 3); §3 (p. 3)"
 url = "https://www.math.uni-bielefeld.de/lag/man/154.pdf"
 fetched_from = "https://www.math.uni-bielefeld.de/lag/man/154.pdf"
 fetched_at = "2026-10-25T20:22:27Z"
@@ -99,7 +99,7 @@ authors = "Jean-Louis Colliot-Thélène"
 title = "Algèbres simples centrales sur les corps de fonctions de deux variables (d'après A. J. de Jong)"
 year = 2006
 locator_scheme = "section"
-locator = "§2.2, Proposition 2.2, Theorem 2.5, Proposition 2.6, Theorem 3.14 and proof, Lemma 3.15"
+locator = "§2.2, Proposition 2.2, Proposition 2.3, Theorem 2.5, Proposition 2.6, Theorem 3.14 and proof, Lemma 3.15"
 url = "http://www.numdam.org/item/SB_2004-2005__47__379_0.pdf"
 fetched_from = "https://www.numdam.org/item/SB_2004-2005__47__379_0.pdf"
 fetched_at = "2026-10-25T20:22:41Z"
@@ -125,7 +125,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["Layer 5", "Layer 6"]
+cited_for = ["Layer 2", "Layer 4", "Layer 6"]
 
 [[source]]
 id = "VOI06"
@@ -169,16 +169,16 @@ title = "Real Algebraic Geometry"
 year = 1998
 doi = "10.1007/978-3-662-03718-8"
 locator_scheme = "theorem"
-locator = "Example 7.1.4, Proposition 7.1.7, §10.3, Theorem 12.4.11, Example 15.2.2"
+locator = "§1.3, §4.1 (Artin–Lang homomorphism theorem), Example 7.1.4, Proposition 7.1.7, §10.3, Theorem 12.4.11, Example 15.2.2"
 url = "https://doi.org/10.1007/978-3-662-03718-8"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 0", "Layer 6", "Layer 9"]
+cited_for = ["Layer 0", "Layer 6", "Layer 7", "Layer 9"]
 
 [[source]]
 id = "ARA75"
-authors = "J�n Kr. Arason"
+authors = "Jón Kr. Arason"
 title = "Primideale im graduierten Wittring und im mod 2 Cohomologiering"
 year = 1975
 venue = "Mathematische Zeitschrift 145"
@@ -208,16 +208,16 @@ cited_for = ["Layer 0"]
 [[source]]
 id = "EL73"
 authors = "Richard Elman, Tsit-Yuen Lam"
-title = "Quadratic forms and theu-invariant. I"
+title = "Quadratic forms and the u-invariant. I"
 year = 1973
 venue = "Mathematische Zeitschrift 131"
 doi = "10.1007/BF01174904"
 locator_scheme = "section"
-locator = "u-invariant of real fields"
+locator = "bound u(F) ≤ 6 when u(F(√−1)) = 4, as recalled in BEC05, §1, p. 1, and §3, p. 3"
 url = "https://doi.org/10.1007/BF01174904"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled; cited by its locator without the text"
+version_note = "paywalled; cited by its locator without the text; the theorem number in EL73 is not recorded"
 cited_for = ["Layer 0"]
 
 [[source]]
@@ -278,7 +278,7 @@ url = "https://doi.org/10.1007/978-3-540-30615-3"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 5"]
+cited_for = ["Layer 4"]
 
 [[source]]
 id = "SCH94"
@@ -323,7 +323,7 @@ url = "https://doi.org/10.1007/978-1-4612-0647-7"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 5"]
+cited_for = ["Layer 4"]
 
 [[source]]
 id = "DIM85"
