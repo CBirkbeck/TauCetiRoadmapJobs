@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-14745 mistakes recorded on the board: 8336 misprints, 3845 errors, 2066 gaps, 498 unparsed bullets.
+14748 mistakes recorded on the board: 8336 misprints, 3846 errors, 2068 gaps, 498 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -7397,6 +7397,11 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at §9, Proposition 9.3 proof, p. 76 (Dupont2003 line 2209): the source says the derivative of the degree-2k characteristic form lies in Ω^k(E); it should be its degree is 2k+1; use injectivity of pullback in that degree; affects the proof. Found by CharacteristicClasses (ERRATA-CharacteristicClasses at d077cb4, 2026-10-24, codex gpt-6-astra).
 - **Misprint** at §9, Theorem 9.5 proof, p. 79 (Dupont2003 line 2282): the source says the concluding comparison evaluates the k-linear polynomial P on one curvature argument; it should be retain k curvature arguments in both terms, as in equation (9.6); affects the proof. Found by CharacteristicClasses (ERRATA-CharacteristicClasses at d077cb4, 2026-10-24, codex gpt-6-astra).
 
+## DvHKZ
+
+- **Gap** at Theorem 4.2.3, proof, p.36: the source says the stabilizer in GSp of the lattice supplied by its reference is a parahoric and applies its Siegel lemma; it should be first make the lattice self-dual or a periodic self-dual chain, since a direct sum of lattices can have a non-parahoric stabilizer; affects the proof. Found by ShimuraVarietiesPartII (#13091 at e3fbcf2, 2026-11-16, claude fable).
+- **Error** at the proof of Theorem 4.2.3, p.36, and §A.3, p.49: the source says the stabilizer in GSp of any lattice on which the form is integral is a parahoric; it should be take a self-dual lattice or a lattice chain; affects the proof. Found by ShimuraVarietiesPartII (#13091 at e3fbcf2, 2026-11-16, claude fable).
+
 ## ECD
 
 - **Error** at Lemma 10.13, proof, p. 54 (ECD line 2221): the source says every open subspace descends to a finite-level quotient; it should be use a basis of quasicompact opens; the open ℤₚ∖{0} in a trivial ℤₚ-torsor does not descend; affects the proof. Found by PerfectoidTowers (ERRATA-PerfectoidTowers at 537fec2, 2026-10-24, codex gpt-6-astra).
@@ -12233,6 +12238,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at proof of Proposition 5.2.3, Case (3), p. 52: the source says the upper unipotent is u₊(−2x⁻¹, 2x⁻²), which violates the root relation (sum 8x⁻²); it should be u₊(−2x⁻¹, −2x⁻²), whose inverse is the displayed matrix; affects nothing. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
 - **Gap** at proof of Proposition 5.2.3, pp. 49–50: the source says individual bounds on the Frobenius translates of a root step give a bound on their orbit sum; it should be choose the orbit existentially, since D₄ triality gives coefficient 3 against 2; affects the proof. Found by GeometricSatakeAndFusionPartII (#1177 at 7896af2, 2026-10-24, claude opus).
 - **Gap** at proof of Proposition 5.2.3, printed pp. 49–50 (KZ line 2197): the source says individual orbit-step inequalities allow their sum; it should be select an invariant integral step existentially, since triality gives central coefficient 3 against budget 2; affects the proof. Found by GeometricSatakeAndFusionPartII (#1177 at f37fdb5, 2026-10-29, codex gpt-6-astra).
+- **Gap** at the proof of Proposition 4.3.2, p.37: the source says the Pappas–Rapoport existence theorem applies to its single-lattice normalized models; it should be first compare them with the lattice-chain or self-dual-lattice models; affects the proof; The source issues of round 1 (KZ Proposition 4.2.3(5); HT §§1.3.15, 2.1.3 and the proof of Proposition 1.3.10; KP Theorem 4.2.7, Lemma 3.1.17, Lemma 4.6.13 and §4.6.21) stand as reported there and were not re-examined. Found by ShimuraVarietiesPartII (#13091 at e3fbcf2, 2026-11-16, claude fable).
 - **Gap** at the proof of Proposition 5.2.3, pp. 49–50 (KZ line 2197): the source says individually admissible conjugate coroot increments may all be added; it should be justify a joint dominance budget or choose an admissible invariant increment existentially; affects the proof. Found by GeometricSatakeAndFusionPartII (#1177 at 60448fc, 2026-10-27, codex gpt-6-astra).
 - **Gap** at the proofs of Corollary 5.2.7 and Proposition 5.3.5, pp.52–54: the source says the source applies a Bertini corollary for smooth projective varieties to a smooth chart of a stack; it should be use a same-field curve through a smooth rational point without projectivity; affects the proof. Found by ShimuraVarietiesPartII (#13091 at 99b9ecf, 2026-11-16, claude fable).
 - **Misprint** at §3.2.5, p.23: the source says the source forms the first-order ideal from the maximal ideal and uniformizer multiples in A_E, just after introducing the maximal ideal of A_G̃; it should be use A_G̃ throughout; affects nothing. Found by ShimuraVarietiesPartII (#428 at 57dc0a4, 2026-10-23, claude opus).
