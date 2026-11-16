@@ -16,7 +16,7 @@
      "id": "1.1",
      "kind": "definition",
      "name": "StackChow.ProperCover",
-     "statement": "A proper cover of a stack M is a scheme X of finite type over k with a proper surjective (hence representable) morphism X -> M; for integral M a proper covering is one with X integral and X -> M generically finite. Every stack M has a finite, finitely presented surjective morphism Z -> M from a scheme of finite type over k, etale over a dense open substack, so every stack has a proper cover and every integral stack a proper covering; a stack with a separated finite-type morphism to a Noetherian scheme (in particular every separated stack) has a generically finite proper cover by a quasi-projective scheme; proper covers pass to closed and open substacks, along morphisms representable by schemes, to vector bundles and products, and from M' to M along a proper representable surjection M' -> M.",
+     "statement": "A proper cover of a stack M is a scheme X of finite type over k with a proper surjective (hence representable) morphism X -> M; for integral M a proper covering is one with X integral and X -> M generically finite. Every stack M has a finite, finitely presented surjective morphism Z -> M from a scheme of finite type over k, etale over a dense open substack, so every stack has a proper cover and every integral stack a proper covering; a stack with a separated finite-type morphism to a Noetherian scheme (in particular every separated stack) has a generically finite proper cover by a quasi-projective scheme; proper covers pass to closed and open substacks, along morphisms N -> M of stacks representable by schemes (X x_M N is a scheme of finite type over k, proper and surjective over N), to vector bundles, to products M x_k M' with a stack M', and from a stack M' to M along a proper representable surjection M' -> M.",
      "hypotheses": [
       "M a Deligne-Mumford stack of finite type over a field k with quasi-compact separated diagonal representable by schemes (Convention 1)"
      ],
@@ -66,7 +66,7 @@
       {
        "name": "baseChange_nonRepresentable",
        "kind": "non-example",
-       "statement": "Base change of id_{Spec k} along BG -> Spec k is id_BG, proper surjective but with non-scheme source."
+       "statement": "Base change of id_{Spec k} along BG -> Spec k is id_BG, proper surjective but with non-scheme source; along the etale disjoint union of countably many Spec k, representable by schemes but not a stack, it is not of finite type; along Spec K -> Spec k, K/k finite, it is Spec K, a proper cover."
       },
       {
        "name": "BG_nonseparatedGroup_finiteCover",
@@ -1213,7 +1213,7 @@
       {
        "name": "resolutionComparison.functorial",
        "role": "lemma",
-       "statement": "Compatible with pullback along X' -> X and with direct sums."
+       "statement": "Compatible with pullback along morphisms u : X' -> X from a stack X' (Convention 1): u^*P = u^*F_1 x_{X' x_X E} u^*H_1, formed from the pulled-back resolutions of u^*E and their presentations of X' x_X E = [u^*F_1/u^*F_0], with the pulled-back extension; and with direct sums of resolutions."
       }
      ],
      "tests": [
@@ -1225,7 +1225,7 @@
       {
        "name": "P1_nonChainAutomorphism",
        "kind": "computation",
-       "statement": "On P^1 with E = [O(-4) -0-> Omega], 1+xi (xi in H^1(O(-2))) is represented by no chain map; P is O(3)+O(3), not O(4)+O(2)."
+       "statement": "On P^1 with E = [O(-4) -0-> Omega], 1+xi (xi in H^1(O(-2))) is represented by no chain map; P is O(3)+O(3), not O(4)+O(2); pulled back to a closed point, xi restricts to 0 and u^*P = k^2 is the split comparison bundle of [k -0-> k] with itself."
       },
       {
        "name": "acyclicSummand",
@@ -1715,7 +1715,7 @@
       {
        "name": "RelativeSpaceOfMaps.open_etale",
        "role": "lemma",
-       "statement": "Stable under open substacks and etale M' -> M."
+       "statement": "Stable under open substacks and under etale morphisms M' -> M from a stack M' (Convention 1), with the map C_{M'} -> C_M -> X: extensions of g' : T -> M' correspond to extensions of its composite to M (7.1, M' -> M etale)."
       },
       {
        "name": "RelativeSpaceOfMaps.fixedCurve",
@@ -1727,7 +1727,7 @@
       {
        "name": "pointTarget",
        "kind": "degenerate",
-       "statement": "For X = Spec k, (M, F) qualifies iff M -> B is etale."
+       "statement": "For X = Spec k, (M, F) qualifies iff M -> B is etale; the etale disjoint union of countably many Spec k over B = Spec k lifts uniquely but is not quasi-compact, so it is no stack of Convention 1 and does not qualify."
       },
       {
        "name": "P1_to_Pr",
@@ -1745,7 +1745,7 @@
      "id": "9.2",
      "kind": "construction",
      "name": "ObstructionTheory.prestableUpperShriek",
-     "statement": "For pi : C_M -> M, R pi_* of a locally free sheaf is perfect of amplitude [0,1] commuting with base change; omega_pi is invertible with trace; pi^! := L pi^*(-) (x) omega_pi[1]; the projection formula holds on complexes with quasi-coherent cohomology, Grothendieck duality and the adjunction hold against complexes bounded below, and Serre duality (R pi_* V)^v = R pi_*(V^v (x) omega_pi)[1] holds, compatibly with base change.",
+     "statement": "For pi : C_M -> M, R pi_* of a locally free sheaf is perfect of amplitude [0,1] and commutes with base change along every u : M' -> M from a scheme or a stack of Convention 1, pi' : C_{M'} -> M' being formed by the same construction (StableReduction Layer 2 for locally Noetherian M'; SchemeAndStackFoundations §2.18 torIndependent_baseChange for an arbitrary scheme M', such as the affine T of 9.3); omega_pi is invertible with trace; pi^! := L pi^*(-) (x) omega_pi[1]; the projection formula holds on complexes with quasi-coherent cohomology for pi and every pi', Grothendieck duality and the adjunction hold against complexes bounded below, and Serre duality (R pi_* V)^v = R pi_*(V^v (x) omega_pi)[1] holds, compatibly with base change along every such u from a stack of Convention 1.",
      "hypotheses": [
       "the setting of 9.1"
      ],
@@ -1792,6 +1792,11 @@
        "name": "constantFamily",
        "kind": "compatibility",
        "statement": "For C x M, R pi_*(pr^*V) = R Gamma(C, V) (x) O_M and duality is Serre duality on C."
+      },
+      {
+       "name": "nonNoetherianBaseChange",
+       "kind": "computation",
+       "statement": "For C x A^1 -> A^1 and the non-flat u : Spec R -> A^1, R = k[x_1, x_2, ...]/(x_1, x_2, ...)^2, t -> x_1: R pi'_* O = R Gamma(C, O) (x)_k R, free of ranks 1 and g in degrees 0 and 1, equal to Lu^*(R Gamma(C, O) (x) O_{A^1}); R is not Noetherian, so this is Tor-independent base change, not a base change between locally Noetherian bases."
       }
      ]
     },
@@ -1828,7 +1833,7 @@
       {
        "name": "mapsObstructionTheory.baseChange",
        "role": "lemma",
-       "statement": "e and phi commute with base change along M' -> M."
+       "statement": "e and phi commute with base change along morphisms u : M' -> M from a stack M' (Convention 1), with the pulled-back family and map: under Lu^*E = E' (9.2), phi' is Lu^*phi followed by Lu^*L_{M/B} -> L_{M'/B}."
       }
      ],
      "tests": [

@@ -361,7 +361,9 @@ being étale and separated), has `U → V` the identity, so the cone has rank eq
   (`quasiCoherent_topology_comparison`: for quasi-coherent `F`,
   `H^q(X_Zar, F) = H^q(X_ét, F^a) = H^q(X_fppf, F^a)`), used in 6.1 to split, on each affine étale
   chart, an extension of a finite locally free module by a quasi-coherent one.
-- §2.18 (derived categories of quasi-coherent complexes on schemes), §2.19 (the right adjoint
+- §2.18 (derived categories of quasi-coherent complexes on schemes; `projectionFormula`, and
+  `torIndependent_baseChange` for a qcqs `f` Tor-independent of the base change, used in 9.2 for the
+  base change of `Rπ_*` to every scheme, `π` being flat), §2.19 (the right adjoint
   `a_f` of `Rf_*`, `pushforwardRightAdjoint_adj`, `globalDuality`, the upper shriek functor and its
   local complete intersection formula), §2.20 (relative dualising complexes of flat finitely
   presented morphisms and their base change).
@@ -455,10 +457,10 @@ lines 299–328). Prove:
 - every integral `ℳ` has a proper covering: the reduced structure on an irreducible component of
   `Z` that dominates `ℳ` is one (vistoli1989 Lemma 1.10, lines 299–327, gives one from any proper
   cover);
-- proper covers pass to closed substacks, to open substacks, along morphisms `𝒩 → ℳ`
-  representable by schemes (the base change `X ×_ℳ 𝒩` is a scheme proper and surjective over `𝒩`),
-  to vector bundles over `ℳ`, to products `ℳ ×_k ℳ′`, and from a stack `ℳ′` to `ℳ` along a proper
-  surjective representable `ℳ′ → ℳ`.
+- proper covers pass to closed substacks, to open substacks, along morphisms `𝒩 → ℳ` of stacks
+  that are representable by schemes (the base change `X ×_ℳ 𝒩` is a scheme of finite type over `k`,
+  proper and surjective over `𝒩`), to vector bundles over `ℳ`, to products `ℳ ×_k ℳ′` with a stack
+  `ℳ′`, and from a stack `ℳ′` to `ℳ` along a proper surjective representable `ℳ′ → ℳ`.
 
 *Needs:* SchemeAndStackFoundations §§1.19–1.20 (`IsProperStack`, `RepresentableProperty`,
 `Stacks.points`); VirtualFundamentalClass §0.2; for the proper coverings of integral stacks and the
@@ -486,7 +488,10 @@ passage of proper covers to closed substacks, also gap:closed-substacks-of-stack
   valuative criterion would lift to a second extension of the same generic point in the separated `Z`.
 - Base change along a morphism that is not representable by schemes does not preserve proper
   covers: the base change of `id : Spec k → Spec k` along `BG → Spec k` is `id : BG → BG`, proper and
-  surjective, whose source is not a scheme when `|G| > 1`.
+  surjective, whose source is not a scheme when `|G| > 1`. The source must be a stack: along the
+  étale `⊔_ℕ Spec k → Spec k`, representable by schemes, the base change of `id` is `⊔_ℕ Spec k`, which
+  is not quasi-compact, so not of finite type over `k`; along `Spec K → Spec k` with `K/k` finite it is
+  `Spec K`, a proper cover of `Spec K`.
 - A proper cover need not be separated, and a non-separated stack with inertia that is not finite
   still has a finite one. Let `G` be the étale group scheme over `𝔸¹` obtained from the constant
   `ℤ/2` by deleting the non-identity point over `0`, so its fibres are `ℤ/2` over `t ≠ 0` and trivial
@@ -1360,8 +1365,11 @@ provide. *Needs:* VirtualFundamentalClass §§3.2, 4.3–4.5, 6.5; SchemeAndStac
 **API.**
 
 - `C(F•) ×_{F_1} P = 𝔠_{X/𝔜} ×_𝔈 P = C(H•) ×_{H_1} P` as closed subcones of `P`.
-- The construction is compatible with pullback along morphisms `X′ → X` and with direct sums of
-  resolutions.
+- The construction is compatible with pullback along morphisms `u : X′ → X` from a stack `X′`
+  (Convention 1): `u^*P = u^*F_1 ×_{X′ ×_X 𝔈} u^*H_1`, the same fibre product formed from the
+  pulled-back resolutions `u^*F•`, `u^*H•` of `u^*E` and their presentations of
+  `X′ ×_X 𝔈 = [u^*F_1/u^*F_0]` (VirtualFundamentalClass §4.5), with the pulled-back extension. It is
+  compatible with direct sums of resolutions.
 
 **Checks.**
 
@@ -1373,6 +1381,9 @@ provide. *Needs:* VirtualFundamentalClass §§3.2, 4.3–4.5, 6.5; SchemeAndStac
   `0 ≠ ξ` in the `Ext¹`, the automorphism `1 + ξ` of `(E, φ)` is represented by no morphism of complexes.
   With `F• = H• = E` identified by `id` and `1 + ξ`, `P` is the total space of the nonsplit extension of
   `O(4)` by `O(2)`, which is `O(3) ⊕ O(3)`, not `O(4) ⊕ O(2)`: the extension is not split globally.
+  Pulled back to a closed point `u : Spec k → ℙ¹`, `ξ` restricts to `0` (a morphism `k → k[1]` in `D(k)`),
+  and `u^*P = k²`, the fibre of `O(3)²`, is the comparison bundle of `u^*E = [k --0--> k]` with itself, a
+  split extension of `k` by `k` of rank `2 = 1 + 1`.
 - For `H• = F• ⊕ [G --id--> G]`, `P ≅ F_1 ⊕ G_1 ⊕ F_0` with `G_1` the bundle of `G^∨`, of rank
   `rk F_1 + rk H_0`, `H_0 = F_0 ⊕ G_1`.
 
@@ -1873,7 +1884,9 @@ SchemeAndStackFoundations §1.19; for the second API statement, also SchemeAndSt
 
 **API.**
 
-- The condition is stable under restriction to open substacks of `M` and under étale morphisms `M′ → M`.
+- The condition is stable under restriction to open substacks of `M` and under étale morphisms `M′ → M`
+  from a stack `M′` (Convention 1), with the map `𝒞_{M′} → 𝒞_M → X`: extensions of `g′ : T → M′` correspond
+  to extensions of its composite to `M` (7.1, `M′ → M` being étale).
 - For `𝔅 = Spec k`, a fixed projective curve `C` and `X` an open subscheme of a projective `k`-scheme `X̄`,
   every open subscheme of finite type of the scheme of morphisms `Mor(C, X)`, with its universal map,
   satisfies it. Here `Mor(C, X̄)` is the open subscheme of a Hilbert scheme of `C × X̄` of
@@ -1885,7 +1898,9 @@ SchemeAndStackFoundations §1.19; for the second API statement, also SchemeAndSt
 **Checks.**
 
 - `X = Spec k`: `(M, F)` is a relative space of maps if and only if `M → 𝔅` is formally étale, hence étale,
-  `M → 𝔅` being of finite type and of Deligne–Mumford type.
+  `M → 𝔅` being of finite type and of Deligne–Mumford type. The étale `⊔_ℕ Spec k → Spec k = 𝔅` lifts
+  uniquely along square-zero extensions but is not quasi-compact, so it is no stack of Convention 1 and no
+  relative space of maps; the étale morphisms of the API are from stacks.
 - `𝔅 = Spec k`, `C = ℙ¹`, `X = ℙ^r`: the open subscheme of `ℙ^{(r+1)(d+1)−1}` of `(r + 1)`-tuples of degree-`d`
   forms without common zero, up to scalars, with its universal map, is one.
 - A single point `M = Spec k` with `F = id : ℙ¹ → ℙ¹` over `𝔅 = Spec k` is not one: the first-order
@@ -1894,18 +1909,26 @@ SchemeAndStackFoundations §1.19; for the second API statement, also SchemeAndSt
 ### 9.2 Derived pushforward and duality along prestable families
 
 In the setting of 9.1, construct the morphism of ringed sites `π : (𝒞_M)_ét → M_ét`, `(U → M) ↦ 𝒞_U`,
-with `Lπ^* ⊣ Rπ_*` (EnhancedDerivedSheaves E1.4, through VirtualFundamentalClass §3.1). Prove that for a
-locally free `V` of finite rank on `𝒞_M`, `Rπ_*V` is perfect of amplitude `[0, 1]` and commutes with base
-change along every `M′ → M` (StableReduction Layer 2, cohomology and base change, on étale charts of `M`).
+with `Lπ^* ⊣ Rπ_*` (EnhancedDerivedSheaves E1.4, through VirtualFundamentalClass §3.1); the same
+construction gives `π′ : 𝒞_{M′} → M′` for every morphism `u : M′ → M` whose source `M′` is a scheme or a
+stack of Convention 1, `𝒞_{M′} := 𝒞 ×_𝔅 M′` being a prestable family étale locally on `M′` (9.1). Prove
+that for a locally free `V` of finite rank on `𝒞_M`, `Rπ_*V` is perfect of amplitude `[0, 1]` and commutes
+with base change along every such `u`, `Lu^*Rπ_*V ≅ Rπ′_*(u′^*V)` for the projection `u′ : 𝒞_{M′} → 𝒞_M`
+(StableReduction Layer 2, cohomology and base change, on étale charts of `M`, for locally Noetherian
+`M′`; for an arbitrary scheme `M′`, such as the affine `T` of 9.3, SchemeAndStackFoundations §2.18
+`torIndependent_baseChange` on étale charts, the charts of `π` being flat, hence Tor-independent of every
+base change, and quasi-compact and quasi-separated).
 Construct the relative dualising sheaf `ω_π`, invertible, by étale descent of StableReduction Layer 2's
 dualising sheaves of the charts along their base-change isomorphisms, with its trace `R¹π_*ω_π → O_M`.
 Define *prestableUpperShriek* `π^! := Lπ^*(−) ⊗ ω_π[1]`. Prove: the projection formula
-`Rπ_*(Lπ^*K ⊗ A) ≅ K ⊗ Rπ_*A` for complexes with quasi-coherent cohomology; the trace
+`Rπ_*(Lπ^*K ⊗ A) ≅ K ⊗ Rπ_*A` for complexes with quasi-coherent cohomology, for `π` and, by
+SchemeAndStackFoundations §2.18 `projectionFormula` on étale charts, for every `π′` above; the trace
 `tr : Rπ_*(ω_π[1]) → O_M`, through `R¹π_*ω_π → O_M`; Grothendieck duality
 `Rπ_*RHom(L, π^!K) ≅ RHom(Rπ_*L, K)` for `L` with quasi-coherent cohomology and `K` with quasi-coherent
 cohomology bounded below, induced by `tr`, compatibly with étale base change on `M`, hence the adjunction
 `Hom(Rπ_*L, K) ≅ Hom(L, π^!K)` on these; and Serre duality `(Rπ_*V)^∨ ≅ Rπ_*(V^∨ ⊗ ω_π)[1]` for `V` locally
-free, compatible with base change (behrend-fantechi1997 lines 1592–1597, for a product family
+free, compatible with base change along every such `u` from a stack `M′` of Convention 1
+(behrend-fantechi1997 lines 1592–1597, for a product family
 `C × M → M` with `C` a projective curve with a dualising complex, which for Gorenstein `C` is the
 complex written `ω_C[1]` here; the statements for flat proper Gorenstein families of curves are those
 of SchemeAndStackFoundations §§2.19–2.20). Route: on an affine étale chart `U → M`, `𝒞_U → U` is a flat proper
@@ -1934,6 +1957,12 @@ and uses the adjunction only against the bounded complexes `J[1]` of square-zero
   (StableReduction Layer 2), not `2g(Ẽ) − 2`.
 - For `𝒞_M = C × M` with `C` fixed, `Rπ_*(pr^*V) = RΓ(C, V) ⊗ O_M` and duality is Serre duality on `C`
   tensored with `O_M`.
+- Base change to a scheme that is not locally Noetherian, as 9.3 needs for its affine `T`: for
+  `𝒞_M = C × 𝔸¹ → M = 𝔸¹ = Spec k[t]` with `C` a smooth projective curve of genus `g`, and
+  `u : M′ = Spec R → 𝔸¹`, `R = k[x_1, x_2, …]/(x_1, x_2, …)²`, `t ↦ x_1`, `Rπ′_*O = RΓ(C, O) ⊗_k R` is free of
+  rank `1` in degree `0` and `g` in degree `1`, equal to `Lu^*(RΓ(C, O) ⊗_k O_{𝔸¹})`. Here `u` is not flat
+  (`t · x_1 = 0`) and `R` is not Noetherian (its maximal ideal needs infinitely many generators), so this
+  is no base change between locally Noetherian bases; it is Tor-independent base change, `π` being flat.
 
 ### 9.3 The Kodaira–Spencer morphism and the obstruction theory
 
@@ -1964,7 +1993,9 @@ separated or not, and every field the obstruction theory of AlgebraicGromovWitte
 
 - For `𝔅 = Spec k` and a fixed curve `C`, at a point `[F]` of `M`, `H⁰(φ)` is dual to the tangent map
   `H⁰(C, F^*T_X) → T_{[F]}M`.
-- `e` and `φ` commute with base change along `M′ → M` with the pulled-back family and map.
+- `e` and `φ` commute with base change along morphisms `u : M′ → M` from a stack `M′` (Convention 1), with
+  the pulled-back family and map: under `Lu^*E ≅ E′` (9.2), `φ′` is `Lu^*φ` followed by the functoriality
+  map `Lu^*L_{M/𝔅} → L_{M′/𝔅}`.
 
 **Checks.**
 
