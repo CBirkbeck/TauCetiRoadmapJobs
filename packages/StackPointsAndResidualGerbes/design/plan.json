@@ -2463,6 +2463,18 @@
    "needs": "ReductiveGroups Layer 3 must prove that for a smooth affine group scheme G of finite type over a field k and a closed subgroup scheme H, the fppf quotient G/H is represented by a separated scheme of finite type over k, smooth over k, all of whose irreducible components have dimension dim G - dim H.",
    "supplier": "ReductiveGroups",
    "section": "Layer 3"
+  },
+  {
+   "slug": "qcoh-stacks-abelian-tensor",
+   "title": "Quasi-coherent modules on an algebraic stack form an abelian category with structure sheaf and tensor products",
+   "neededBy": [
+    "0.4",
+    "7.2"
+   ],
+   "detail": "Stacks, Sheaves on Stacks, Definition 96.6.1, Lemmas 96.11.2, 96.11.3, 96.12.5 (1)-(2), 96.15.1 (1), (2), (5) (stacks-sheaves-on-stacks lines 374-375, 733-742, 869-874, 1068-1077); Groupoids in Spaces, Lemma 78.12.6 (stacks-groupoids-spaces lines 593-603). SchemeAndStackFoundations §1.22 defines Stacks.QCoh with pullback, presentationEquiv, ofSpaceEquiv and the quasi-coherent pushforward only; QCoh.abelian is stated in §1.11 for algebraic spaces.",
+   "needs": "SchemeAndStackFoundations §1.22 must prove that Stacks.QCoh of an algebraic stack is abelian with kernels and cokernels computed on U under QCoh.presentationEquiv for a flat presentation [U/R], that it contains the structure sheaf, that tensor products of quasi-coherent modules are quasi-coherent, and that QCoh.pullback preserves colimits and tensor products (hence is right exact).",
+   "supplier": "SchemeAndStackFoundations",
+   "section": "§1.22"
   }
  ]
 }
