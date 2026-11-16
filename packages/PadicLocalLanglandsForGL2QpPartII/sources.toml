@@ -36,7 +36,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "authors' copy (GPW5.pdf); locators are theorem numbers and lines of this copy"
-cited_for = ["0.2", "0.3", "0.4", "3.3", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11", "4.14", "Layer 4", "Conventions", "Exact supplier contracts", "How to read the build", "Source corrections"]
+cited_for = ["0.2", "0.3", "0.4", "3.3", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10", "4.11", "4.14", "7.3", "Layer 4", "Conventions", "Exact supplier contracts", "How to read the build", "Source corrections"]
 
 [[source]]
 id = "CDN23"
@@ -83,7 +83,6 @@ title = "Geometry of an étale covering of the p-adic upper half plane"
 year = 1990
 venue = "Annales de l'Institut Fourier 40 (1990), no. 1, 69–78"
 doi = "10.5802/aif.1203"
-version_note = "Numdam copy of the published article; locators are theorem numbers and lines of this copy"
 locator_scheme = "theorem"
 locator = "Theorem 5; Corollary 6; Theorem 8"
 url = "https://www.numdam.org/item/10.5802/aif.1203.pdf"
@@ -93,4 +92,41 @@ sha256 = "5eb098c0b1f4ea47bb19ceb98074452a59162accfd68e228a8273bf8dd5fa729"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
+version_note = "Numdam copy of the published article; locators are theorem numbers and lines of this copy"
 cited_for = ["7.3"]
+
+[[source]]
+id = "COLMEZ14LA"
+authors = "Pierre Colmez"
+title = "La série principale unitaire de GL2(Qp) : vecteurs localement analytiques"
+year = 2014
+venue = "Automorphic Forms and Galois Representations, Vol. 1, London Math. Soc. Lecture Note Ser. 414 (2014)"
+locator_scheme = "theorem"
+locator = "Théorème 3.23"
+url = "https://webusers.imj-prg.fr/~pierre.colmez/locan.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~pierre.colmez/locan.pdf"
+fetched_at = "2026-11-16T08:52:02Z"
+sha256 = "ce00ca9dd90610b4f4a46d8e37ca27f5000565fad706fea7188f1a5168f21560"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "author's copy; locators are theorem numbers and lines of this copy"
+cited_for = ["1.7"]
+
+[[source]]
+id = "DOSPINESCU12THESE"
+authors = "Gabriel Dospinescu"
+title = "Actions infinitésimales dans la correspondance de Langlands locale p-adique"
+year = 2012
+venue = "Thèse de doctorat, École polytechnique (2012)"
+locator_scheme = "theorem"
+locator = "Théorème 8.4.3"
+url = "https://dospinescu.perso.math.cnrs.fr/these.pdf"
+fetched_from = "https://dospinescu.perso.math.cnrs.fr/these.pdf"
+fetched_at = "2026-11-16T08:52:09Z"
+sha256 = "00ba3f8684d2b5be9af3ce4bb68faa64d09c6c9acb8da586b79047385cfa9528"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "the thesis as posted on the author's page; locators are theorem numbers and lines of this copy"
+cited_for = ["1.7"]

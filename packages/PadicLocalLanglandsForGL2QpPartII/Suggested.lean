@@ -61,8 +61,9 @@ headline theorem, and the carrier it lacks, is listed below; the README states e
   specialisations lie in the image of the Bloch–Kato exponential. It lacks rigid analytic
   functions on the tower, the distribution algebra of `ℤ_p^×` and Iwasawa cohomology of p-adic
   Galois representations with its Bloch–Kato exponential.
-* The infinitely primitivable functions (README §7.5) lie in `H⁰_dR(Σ_n) · O(Ω)`. It lacks the
-  Drinfeld half-plane and its coverings as rigid analytic spaces with their functions.
+* The infinitely primitivable functions (README §7.5) on the cover `Σ_r` of DLB level `r` lie in
+  `H⁰_dR(Σ_r) · O(Ω)`. It lacks the Drinfeld half-plane and its coverings as rigid analytic
+  spaces with their functions.
 * The filtered derived realisation (README §7.6): for `r` large,
   `Hom((Π(V)^an)′, RΓ_dR(Σ_r)^ρ[1]) ≅ D_dR(V)` as filtered spaces. It lacks the abelian category
   of coadmissible modules over the distribution algebra of `GL₂(ℚ_p)` (Mathlib's `DerivedCategory`
