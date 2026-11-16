@@ -1,0 +1,18 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-ComplexHessianEquations",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-ComplexHessianEquations",
+   "fix": "FIX-PKG-ComplexHessianEquations~2",
+   "from": "1c0511b1a1027dea5b1b42ebe196f8799dc88acb",
+   "head": "46a43403aba94575f5755ba6da3201a187e2f7c5",
+   "findings": 1,
+   "lines": 9
+  },
+  "notes": "every finding of `REV-PKG-ComplexHessianEquations` (1) was P3 and `FIX-PKG-ComplexHessianEquations~2` repaired them at `46a4340`, changing 9 lines of the package; no further review round was filed"
+ }
+}
