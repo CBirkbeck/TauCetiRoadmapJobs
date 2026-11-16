@@ -1,0 +1,32 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GrossZagierAndArithmeticHeightsPartII~3",
+  "head": "f94727177b4545f6b8bbe09e7ab6f675b125e94e",
+  "pr": 2457,
+  "folder": "GrossZagierAndArithmeticHeightsPartII",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full review at the head the previous review accepted. Two P3 findings: R01, the fourth Check of 13.9 cites LL1 (9.2) for a coefficient that (9.2) prints with q^r - 1 (the value is that of LL1 (9.3) and LZ Remark 10.5.4); R02, four passages say LL2's proof of Lemma 2.32 omits t = 6, but the source treats t >= 6 (the cached text renders every >= of LL2 as >; checked against arXiv:2101.09485), so the previous round's R02 request is reversed. Seeded sample of 15 targets checked against LL2, K, Z, LZ, LL1, Liu11a, GS19, YZZ09, KM90, VZ84, Bor99, Bor98, ES, HSY23b, Shi22, HSY23a, Zha12 (about 120 locators); adversarial table of 29 rows with computed values; 150 cross-roadmap section citations and 6 pinned declarations resolved; 8 gap slugs equal plan.json. Gate rerun: every check 0, OK; depcheck 263 roadmaps, 2570 edges, 0 problems; lake env lean on Suggested.lean exits 0 with no output (the file declares nothing; no headline is statable at the pins). D01 stands. Lusztig76 and McGraw03 uncertified, not read.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Two owners for GSpin Kudla divisors and orthogonal Borcherds products over ℚ",
+    "where": "ComplexMultiplicationAndExplicitReciprocityPartII §§4.2–4.2a must cite GrossZagierAndArithmeticHeightsPartII §12.6a(e)",
+    "raised": "PRREVIEW-GrossZagierAndArithmeticHeightsPartII~1"
+   }
+  ],
+  "text": "94eedbd027dd43bf",
+  "carried": {
+   "from": "f94727177b4545f6b8bbe09e7ab6f675b125e94e",
+   "head": "28467a87884f4f58bd2914a25ca3553b5f4c3474",
+   "findings": 2,
+   "lines": 12,
+   "folders": [
+    "GrossZagierAndArithmeticHeightsPartII"
+   ]
+  }
+ }
+}
