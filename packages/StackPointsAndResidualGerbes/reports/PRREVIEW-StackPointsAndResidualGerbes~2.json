@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StackPointsAndResidualGerbes~2",
+  "head": "bc166a23ae905e807f6d00c42c9a14d2089580d7",
+  "pr": 2429,
+  "folder": "StackPointsAndResidualGerbes",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 121 changed lines since 3688535. Previous findings R01-R07 are all repaired. Checked against main: the 2.1 rigidification comparison against AlgebraicModuliForArithmeticGeometry §5.1 (.stack, .stabilizer_kernel, .geometry) and SchemeAndStackFoundations §1.20 setoid_criterion; the 5.1 folded-line Check against SchemeAndStackFoundations §1.9 and §1.12. Checked against stacks-06QB/06RD: the 2.4 Lemma 101.28.10 restatement (lines 2775-2820) and the 1.3 Lemma 101.5.4 bullet (lines 544-564); 14 locators in all, including the seeded 1.3, 2.1 and 5.1 where the change touches them. Also checked: the new 6.4 zero-dimensional Deligne-Mumford target and its Bℤ Check, and the consumer FunctionFieldArithmeticPartII line 53. Adversarial rows computed for 8 changed statements. Gate OK with every check 0; depcheck 0 problems; lake env lean on Suggested.lean silent, exit 0. Two P3 findings remain: 6.4's Needs omits the Mathlib unramified-over-algebraically-closed lemmas (Algebra.FormallyUnramified.finite_of_free, bijective_of_isAlgClosed_of_isLocalRing); the description's summary block drops the hypotheses of the zero-dimensional Deligne-Mumford statement (refuted by Bℤ).",
+  "text": "daf525cbda4ef50a"
+ }
+}
