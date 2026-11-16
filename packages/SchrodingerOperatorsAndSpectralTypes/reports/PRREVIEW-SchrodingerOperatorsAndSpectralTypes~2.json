@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchrodingerOperatorsAndSpectralTypes~2",
+  "head": "9710150a398959dfea5cca17ab2e8c6f2ef19e4a",
+  "pr": 2424,
+  "folder": "SchrodingerOperatorsAndSpectralTypes",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review; folder unchanged since the previous review, whose two description findings (R01, R02) are repaired in the description. All 15 seeded targets checked at their locators (44 line ranges in 8 cached sources, 11 Teschl pages); adversarial table of 26 rows with computed values covering the 12 headline theorems; 58 library declarations opened at the pins; cross-roadmap citations resolved on main and at open heads (roadmaps resolve: none missing); gate all checks 0; depcheck 241 roadmaps, 2261 edges, 0 problems; lake env lean gives 12 sorry warnings only; #check on 19 declarations, no lost binder; one-tactic probe closes none. Accepted conditional on the declared gaps weyl-criterion (UnboundedOperators UO-C02) and spectral-integral-resolvent (UnboundedOperators UO-A02). 13 sources settled as uncertified were cited by locator only. For the human reviewers: the generated merge-order block says no other author's open pull request is a dependency while the prose names QuantumFoundations #1771.",
+  "text": "6855650d6f56c80a"
+ }
+}
