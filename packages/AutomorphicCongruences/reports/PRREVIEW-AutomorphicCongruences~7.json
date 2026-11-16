@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicCongruences~7",
+  "head": "c30ac902ed681dacd9d01e0ad2174c3cbd3e4b16",
+  "pr": 1816,
+  "folder": "AutomorphicCongruences",
+  "date": "2026-11-15",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 8 changed lines since e508d2e: the four reworded sentences (README §§2.12, 2.14, 2.22, 6.4) checked against FW Thm 7.32 and Lemma 7.31, Wan-2020 Thms 1.1-1.2, BCS Prop. 5.2.1 and Lemma 5.2.3 and found equivalent to the previous text and to the sources; seeded sample checked where it falls in the diff (§2.22); gate rerun OK, Suggested.lean elaborates with no output, depcheck 0 problems, nothing changed outside the folder. Title and description read against the head: two P3 findings, both in the description (it says the Lean states definitions and theorems with a sorry warning, while Suggested.lean declares nothing; it says Hida theory is imported, while §§1.2, 2.2, 2.9 own the unitary Hida theory). The folder itself needs no edit.",
+  "text": "c5df4af21625d544",
+  "carried": {
+   "from": "c30ac902ed681dacd9d01e0ad2174c3cbd3e4b16",
+   "head": "4291999733431da30324e98a9bff86bc03ea91a0",
+   "findings": 2,
+   "lines": 2,
+   "folders": [
+    "AutomorphicCongruences"
+   ]
+  }
+ }
+}
