@@ -178,7 +178,7 @@ cited_for = ["Layer 0", "Layer 6", "Layer 9"]
 
 [[source]]
 id = "ARA75"
-authors = "J�n Kr. Arason"
+authors = "Jón Kr. Arason"
 title = "Primideale im graduierten Wittring und im mod 2 Cohomologiering"
 year = 1975
 venue = "Mathematische Zeitschrift 145"
@@ -208,7 +208,7 @@ cited_for = ["Layer 0"]
 [[source]]
 id = "EL73"
 authors = "Richard Elman, Tsit-Yuen Lam"
-title = "Quadratic forms and theu-invariant. I"
+title = "Quadratic forms and the u-invariant. I"
 year = 1973
 venue = "Mathematische Zeitschrift 131"
 doi = "10.1007/BF01174904"

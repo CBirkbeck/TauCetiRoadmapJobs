@@ -45,7 +45,7 @@ Mathlib at the pin of the content repository's lake manifest; file and line loca
 - Signatures over a linearly ordered field: the inertia indices `sigPos` and `sigNeg` (LinearAlgebra/QuadraticForm/Signature.lean:65, 98; the maximal dimension of a positive, respectively negative, definite subspace, defined as 0 on infinite-dimensional spaces), their isometry invariance `QuadraticMap.Equivalent.sigPos_eq` and `QuadraticMap.Equivalent.sigNeg_eq` (lines 121, 133), and the diagonal count `QuadraticForm.sigPos_of_equiv_weightedSumSquares` (line 243). What the pins lack is the space X_F of all orderings of a field with the Harrison topology, its functoriality and compactness, and the signature as a function of a varying ordering, with its independence of the real closure and its local constancy (§§0.1, 0.2, 0.4).
 - `IsSemireal` (Algebra/Ring/Semireal/Defs.lean:38) and `IsRealClosed` (FieldTheory/IsRealClosed/Basic.lean:52): a real closed field is semireal, has x or −x a square for every x, and has a root of every odd-degree polynomial; the class does not fix an order relation. `IsRealClosed.isSquare_neg_of_not_isSquare` (line 80).
 - Quadratic forms: `QuadraticMap.Anisotropic` (LinearAlgebra/QuadraticForm/Basic.lean:1054), `QuadraticForm.baseChange` (LinearAlgebra/QuadraticForm/TensorProduct.lean:128, which assumes 2 invertible in the base ring), the diagonalisation `QuadraticForm.equivalent_weightedSumSquares_units_of_nondegenerate'` (LinearAlgebra/QuadraticForm/IsometryEquiv.lean:177) and Sylvester's law over ℝ `QuadraticForm.equivalent_signType_weighted_sum_squared` (LinearAlgebra/QuadraticForm/Real.lean:78); `CliffordAlgebra.even`.
-- `QuadraticAlgebra` and `QuadraticAlgebra.basis` (Algebra/QuadraticAlgebra/Defs.lean:44, 387), used for the local model of the finite double cover.
+- `QuadraticAlgebra` and `QuadraticAlgebra.basis` (Algebra/QuadraticAlgebra/Defs.lean:44, 387), with `QuadraticAlgebra.finrank_eq_two` (same file, line 405: over a ring with the strong rank condition, `QuadraticAlgebra` R a b has `Module.finrank` 2, being free on the basis 1, i) and `QuadraticAlgebra.discr_def` (Algebra/QuadraticAlgebra/Discriminant.lean:54: the discriminant of `QuadraticAlgebra` R a b, in which i² = a + b·i, is b² + 4a, so `QuadraticAlgebra` O b 0, where z² = b, has discriminant 4b), used for the local model of the finite double cover.
 - `ModuleCat.matrixEquivalence` (RingTheory/Morita/Matrix.lean:187): for a ring R and a nonempty finite index type, R-modules and modules over the matrix ring over R are equivalent categories (Morita), used to compute commutants of Azumaya algebras in §1.6.
 - Field theory: `Algebra.trdeg` (RingTheory/AlgebraicIndependent/Basic.lean:45, a cardinal), `Algebra.EssFiniteType` (RingTheory/EssentialFiniteness.lean:40), `Algebra.IsAlgebraic`, `RatFunc`, `PowerSeries`, `HahnSeries`, `HenselianLocalRing`, `IsDiscreteValuationRing`, `IsLocalRing.maximalIdeal`, `MvPolynomial.IsHomogeneous`, and Krull's height theorem `Ideal.height_le_spanFinrank` (RingTheory/Ideal/KrullsHeightTheorem.lean:282).
 - Topology and schemes: `TopologicalSpace.generateFrom`, `isCompact_univ_pi` (Topology/Compactness/Compact.lean:1172), `IsClosed`, `AlgebraicGeometry.Scheme`, `AlgebraicGeometry.Scheme.isBasis_affineOpens` (AlgebraicGeometry/AffineScheme.lean:303: the affine opens of a scheme form a basis of its topology), `AlgebraicGeometry.Scheme.functionField`, `Equiv.Perm.sign`, `ENat`, `TensorProduct`; `Module.finrank` and `Metric.ball` (finite-dimensional real vector spaces and their balls, §2.6).
@@ -403,7 +403,7 @@ A proof can proceed as follows.
 
 K complete for a discrete valuation; char k ≠ 2; all u_i, v_j units.
 
-Let K be a complete discretely valued field with residue field k of characteristic ≠ 2 and uniformizer π. A diagonal form q = ⟨u_1, …, u_r⟩ ⊥ π⟨v_1, …, v_s⟩ with units u_i, v_j is anisotropic over K iff both residue forms ⟨ū_1, …, ū_r⟩ and ⟨v̄_1, …, v̄_s⟩ are anisotropic over k. Applied twice, the form ⟨1, y₁, −y₂, −y₁y₂⟩ is anisotropic over the iterated Laurent series field ℂ((y₁))((y₂)). (EKM, Lemma 19.4, Lemma 19.10 and Exercise 19.15, pp. 80–82; B19, §6.4, p. 96, citing Springer 1955; SPR55, Springer 1955)
+Let K be a complete discretely valued field with residue field k of characteristic ≠ 2 and uniformizer π. A diagonal form q = ⟨u_1, …, u_r⟩ ⊥ π⟨v_1, …, v_s⟩ with units u_i, v_j is anisotropic over K iff both residue forms ⟨ū_1, …, ū_r⟩ and ⟨v̄_1, …, v̄_s⟩ are anisotropic over k. Applied twice, the form ⟨1, y₁, −y₂, −y₁y₂⟩ is anisotropic over the iterated Laurent series field ℂ((y₁))((y₂)). (EKM, Lemma 19.4, Lemma 19.10 and Exercise 19.15, pp. 80–82, whose §19, p. 79, attributes these results to SPR55; B19, §6.4, p. 96, citing SPR55)
 
 A proof can proceed as follows.
 
@@ -499,7 +499,7 @@ A proof can proceed as follows.
 
 char F ≠ 2; u(F(√−1)) ≤ 4 (for transcendence degree 2 over ℝ this follows from Tsen–Lang). Becher states the conclusion when u(F(√−1)) = 4, the case of a C₂ field such as ℂ(x, y). When u(F(√−1)) < 4 (for example F real closed, where F(√−1) is algebraically closed), no field having u-invariant 3 (EKM Corollary 36.4) gives u(F(√−1)) ≤ 2, hence u(F) ≤ 2 and I²F torsion-free (EKM Proposition 37.7 and its proof), so the conclusions hold with the Albert-form clause empty.
 
-Let F be a field of characteristic ≠ 2 with u(F(√−1)) ≤ 4. Then I³F is torsion-free, u(F) ∈ {0, 1, 2, 4, 6}, and if u(F) = 6 there is an anisotropic Albert form over F with zero total signature. If F ⊇ ℝ has transcendence degree 2 over ℝ, then F(√−1) is C₂, so u(F(√−1)) ≤ 4 and these conclusions apply. (BEC05, §3, p. 3; EKM, Theorem 37.4 and Corollary 37.5, pp. 167–168; EKM, Corollary 36.4, p. 162; Proposition 37.7 and proof, pp. 168–169; EL73, Elman–Lam 1973)
+Let F be a field of characteristic ≠ 2 with u(F(√−1)) ≤ 4. Then I³F is torsion-free, u(F) ∈ {0, 1, 2, 4, 6}, and if u(F) = 6 there is an anisotropic Albert form over F with zero total signature. If F ⊇ ℝ has transcendence degree 2 over ℝ, then F(√−1) is C₂, so u(F(√−1)) ≤ 4 and these conclusions apply. (BEC05, §3, p. 3; EKM, Theorem 37.4 and Corollary 37.5, pp. 167–168; EKM, Corollary 36.4, p. 162; Proposition 37.7 and proof, pp. 168–169; the list {0, 1, 2, 4, 6} for transcendence degree 2 over a real closed field is EL73, as cited in BEC05, §1, p. 1)
 
 A proof can proceed as follows.
 
@@ -548,7 +548,7 @@ The unramified locus U_α of a class of Br(ℝ(S)), with residues and purity fro
 
 X smooth integral over k, char k = 0; residues are those of HeightsRationalPointsAndObstructions §2.16b at the DVRs `O_{X,Γ}`. Br(U) ↪ Br(k(X)) for open U (injectivity for regular integral schemes).
 
-Let X be a smooth integral variety over a field k of characteristic 0, with Br(X) = H²_ét(X, 𝔾_m) ⊂ Br(k(X)). For α ∈ Br(k(X)) only finitely many prime divisors Γ ⊂ X have nonzero residue res_Γ(α) ∈ H¹(k(Γ), ℚ/ℤ); their union is the ramification divisor of α, and its complement U_α is the largest open subset U ⊂ X with α ∈ Br(U) ⊂ Br(k(X)). For a smooth proper surface S over ℝ and α ∈ Br(ℝ(S)), U_α is a dense open of S whose complement is a curve or empty, and it is empty exactly when α ∈ Br(S). (B19, §2.4, p. 75)
+Let k be a field of characteristic 0 and X a smooth integral k-variety, with Br(X) = H²_ét(X, 𝔾_m) ⊂ Br(k(X)). Say that α ∈ Br(k(X)) ramifies along a prime divisor Γ ⊂ X when its residue res_Γ(α) ∈ H¹(k(Γ), ℚ/ℤ) is nonzero. A class ramifies along only finitely many prime divisors; the reduced divisor they form is called the ramification divisor, and U_α denotes its complement in X. An open V ⊂ X satisfies α ∈ Br(V) ⊂ Br(k(X)) exactly when V meets none of the prime divisors along which α ramifies; hence U_α is itself such an open and contains every other one. For a smooth proper surface S over ℝ and α ∈ Br(ℝ(S)), U_α is a dense open of S whose complement is a curve or empty, and the complement is empty exactly when α ∈ Br(S). (B19, §2.4, p. 75)
 
 A construction can proceed as follows.
 
@@ -1375,7 +1375,7 @@ The construction has the following API.
 
 ### Examples
 
-On ℙ²_ℝ with A = O(1), l = 2, N = O and R a real line, L = O(1) and L ⊗ N = O(1) are very ample, and x² + y² + z² cuts out a smooth conic without real points meeting R in two conjugate points; with N = O(−1), L = O is not very ample. For quartic surfaces in ℙ³, lines form a four-dimensional family and containing a given line imposes five conditions, so quartics containing a line form a divisor, of codimension `h^{2,0}` = 1, the expected dimension of a Noether–Lefschetz locus. (B19 §5, pp. 86–90; BEN18.)
+On ℙ²_ℝ with A = O(1), l = 2, N = O and R a real line, L = O(1) and L ⊗ N = O(1) are very ample, and x² + y² + z² cuts out a smooth conic without real points meeting R in two conjugate points; with N = O(−1), L = O is not very ample. For quartic surfaces in ℙ³, lines form a four-dimensional family and containing a given line imposes five conditions, so quartics containing a line form a divisor, of codimension `h^{2,0}` = 1, the expected dimension of a Noether–Lefschetz locus. (B19 §5, pp. 86–90; BEN18, Introduction, p. 2, on Noether–Lefschetz loci of the expected dimension.)
 
 ### Dependencies
 
@@ -1410,7 +1410,7 @@ The definition has the following API.
 - If T(ℝ) = ∅, (i) and (iii) hold for every Ψ, and (ii) says the kernel is spanned by classes of curves avoiding Ψ.
 - If D(ℝ) ∩ Ψ ≠ ∅, condition (i) fails.
 - Ψ = Θ(α) is always admissible, Θ(α) being open and closed in U(ℝ) (§1.4).
-- On S = ℙ²_ℝ with R a real line, Ψ = U(ℝ) ≅ ℝ² is open and closed in U(ℝ) but not closed in S(ℝ); condition (ii) can hold, the generator cl_R(R) of H¹(ℝℙ², 𝔽₂) being the class of a curve whose real locus misses Ψ.
+- On S = ℙ²_ℝ no class has a single line as ramification divisor: the complement of a line is 𝔸²_ℝ, and Br(𝔸²_ℝ) = Br(ℝ) consists of classes unramified everywhere on ℙ²_ℝ. Take instead α = (−1, x/z): its residue is the class of −1 along {x = 0} and along {z = 0}, where x/z has valuation 1 and −1 and −1 is not a square in the residue field ℝ(t), and 0 along every other prime divisor; so R = {x = 0} ∪ {z = 0} is SNC and α has period 2. Then U(ℝ) = {x/z ≠ 0} is two open half-planes, Θ(α) = {x/z < 0} ≅ ℝ², and Ψ = Θ(α) is open and closed in U(ℝ) but not closed in S(ℝ). Condition (ii) holds for every cover: H¹(Ψ, 𝔽₂) = 0, so the kernel is all of H¹(ℝℙ², 𝔽₂) = 𝔽₂, generated by cl_R of the line {x = 0}, whose real locus misses Ψ; cl_R(R) = 2h = 0 would not generate it.
 
 *Needs:* §3.2; §3.4; §1.4; §1.1; MotivesAndAlgebraicCycles §7.6b.
 
@@ -1558,7 +1558,7 @@ A proof can proceed as follows.
 
 ### Examples
 
-If S(ℝ) = ∅ then Ψ = ∅, every cover satisfies the hypotheses of §5.1, and the topological obstruction vanishes for every cover that also satisfies Assumption 3.1 (§5.5); ampleness of L(R) is needed: a complex Enriques surface E viewed as a surface over ℝ has E(ℝ) = ∅, and for its nonzero Brauer class α the split cover (L = O, R = D = ∅, s = 1, so L(R) = O is not ample) gives T = E ⊔ E and τ = (τ_E, τ_E) ≠ 0, where τ_E is the nonzero element of H³(E(ℂ), ℤ)[2] = ℤ/2 (G exchanges the two copies E(ℂ) and Ē(ℂ) of the complex locus of E, so its equivariant cohomology is that of E(ℂ), and Pic(E) ≅ H²(E(ℂ), ℤ) makes Br(E)[2] → H³(E(ℂ), ℤ)[2] an isomorphism; EnriquesSurfaces §§1.3–1.4). On ℙ²_ℝ with R a real line, Ψ = U(ℝ) ≅ ℝ² is open and closed in U(ℝ) but not closed in ℝℙ². The boundary component on Ψ is [ζ]₁ = [α̃]₀ ∪ cl_R(L(R)): for constant evaluation t it is 0 when t = 0 (the case 4 | n of the induction) and [e]₁, the formula printed in the source, when t = 1; on a Ψ with components of both kinds it is cl_R(L(R)) on Θ and 0 on Ψ ∖ Θ, it vanishes altogether when cl_R(L(R)) = 0, and whether the obstruction vanishes then depends on whether this class is the restriction of [ξ]₁ for some ξ ∈ H²_G(S(ℂ), ℤ(1)): on the real Enriques surface with four real components ℝℙ² of §5.5, with Θ = N₁ ⊔ N₂, it is h₁ for cl_R(L) = h₁ + h₃ (τ ≠ 0) and h₁ + h₂ for cl_R(L) = h₁ + h₂ (τ = 0). (B19 §4, pp. 79–85; source correction E3.)
+If S(ℝ) = ∅ then Ψ = ∅, every cover satisfies the hypotheses of §5.1, and the topological obstruction vanishes for every cover that also satisfies Assumption 3.1 (§5.5); ampleness of L(R) is needed: a complex Enriques surface E viewed as a surface over ℝ has E(ℝ) = ∅, and for its nonzero Brauer class α the split cover (L = O, R = D = ∅, s = 1, so L(R) = O is not ample) gives T = E ⊔ E and τ = (τ_E, τ_E) ≠ 0, where τ_E is the nonzero element of H³(E(ℂ), ℤ)[2] = ℤ/2 (G exchanges the two copies E(ℂ) and Ē(ℂ) of the complex locus of E, so its equivariant cohomology is that of E(ℂ), and Pic(E) ≅ H²(E(ℂ), ℤ) makes Br(E)[2] → H³(E(ℂ), ℤ)[2] an isomorphism; EnriquesSurfaces §§1.3–1.4). On ℙ²_ℝ with α = (−1, x/z), ramified along the two real lines {x = 0} and {z = 0} (§5.1 Checks; no class is ramified along a single line), Ψ = Θ(α) = {x/z < 0} ≅ ℝ² is open and closed in U(ℝ) but not closed in ℝℙ². The boundary component on Ψ is [ζ]₁ = [α̃]₀ ∪ cl_R(L(R)): for constant evaluation t it is 0 when t = 0 (the case 4 | n of the induction) and [e]₁, the formula printed in the source, when t = 1; on a Ψ with components of both kinds it is cl_R(L(R)) on Θ and 0 on Ψ ∖ Θ, it vanishes altogether when cl_R(L(R)) = 0, and whether the obstruction vanishes then depends on whether this class is the restriction of [ξ]₁ for some ξ ∈ H²_G(S(ℂ), ℤ(1)): on the real Enriques surface with four real components ℝℙ² of §5.5, with Θ = N₁ ⊔ N₂, it is h₁ for cl_R(L) = h₁ + h₃ (τ ≠ 0) and h₁ + h₂ for cl_R(L) = h₁ + h₂ (τ = 0). (B19 §4, pp. 79–85; source correction E3.)
 
 ### Dependencies
 
@@ -1572,7 +1572,7 @@ Positivity in squared real line bundles; the topological conditions on the real 
 
 Real points only; the tensor-square presentation is fixed.
 
-For a one-dimensional real vector space M, the positive elements of `M^{⊗2}` are those of the form m ⊗ m with m ≠ 0; the notion depends on the presentation as a tensor square. For a real variety X and a line bundle M on X, a section of `M^{⊗2}` is positive (negative) at x ∈ X(ℝ) if its value is positive (negative) in `M_x^{⊗2}`. (B19, §6, p. 90)
+Let M be a real line, that is, a one-dimensional ℝ-vector space. Call t ∈ `M^{⊗2}` positive when t = m ⊗ m for some nonzero m ∈ M, and negative when −t is positive; this half-line is attached to the given expression of the space as the square of M, not to the underlying one-dimensional space alone. If X is a real variety, M a line bundle on X and x ∈ X(ℝ), a section s of `M^{⊗2}` is positive (negative) at x when s(x) is positive (negative) in the square `M_x^{⊗2}` of the real fibre. (B19, §6, p. 90)
 
 A construction can proceed as follows.
 
@@ -2272,7 +2272,7 @@ The construction has the following API.
 
 ι meets the branch components at general points of Δ_i(ℝ) ∩ Θ₀.
 
-In §8.5 let ε̂ ∈ H¹(𝕊¹, 𝔽₂) be the class of the pullback of the alternating double cover ((ι*ê)). Then ε̃ = `ε̂ + Σ_{4 ∤ m_i} ι*cl_R(Δ_i)` in H¹(𝕊¹, 𝔽₂). On Θ₀ every m_i met by 𝕊¹ is even, and the local discrepancy at a crossing with Δ_i is m_i/2 mod 2. (B19, Lemma 7.6 and proof, pp. 101–102)
+In §8.5 let ε̂ ∈ H¹(𝕊¹, 𝔽₂) be the class of the double cover of 𝕊¹ obtained by pulling back along ι the complex points of the alternating double cover of §8.2 over V; if ê ∈ H¹_G(V(ℂ), 𝔽₂) is the class of that cover, then ε̂ = ι*[ê]₁, since ι takes values in Θ₀ ⊂ V(ℝ), where G acts trivially and forgetting the G-action projects H¹_G(V(ℝ), 𝔽₂) = H⁰(V(ℝ)) ⊕ H¹(V(ℝ)) (the canonical decomposition, MotivesAndAlgebraicCycles §7.6b) onto its degree-one component. Then ε̃ = `ε̂ + Σ_{4 ∤ m_i} ι*cl_R(Δ_i)` in H¹(𝕊¹, 𝔽₂). On Θ₀ every m_i met by 𝕊¹ is even, and the local discrepancy at a crossing with Δ_i is m_i/2 mod 2. (B19, Lemma 7.6 and proof, pp. 101–102)
 
 A proof can proceed as follows.
 
@@ -2692,7 +2692,7 @@ A proof can proceed as follows.
 
 ### Examples
 
-Two disjoint copies of ℝℙ² have deg(w₁²) = 1 + 1 = 0, as the real locus of a real Enriques surface must, while a single ℝℙ² has deg(w₁²) = 1 and is excluded (§9.8); two Klein bottles have Euler characteristic 0 and w₁ ≠ 0. A class of period 4 on a real Enriques surface restricts to a nonzero class of period 2 and index 2 over ℂ(S), and has index 4 = per. Over the real Puiseux field, X² − t has the roots `±t^{1/2}` while −t, with leading coefficient −1, is not a square; at t = 0 the sextic z² = (w² − u² − v²)u²v² normalises to the quadric z² = w² − u² − v². (B19 §8, pp. 104–110; MVH98.)
+Two disjoint copies of ℝℙ² have deg(w₁²) = 1 + 1 = 0, as the real locus of a real Enriques surface must, while a single ℝℙ² has deg(w₁²) = 1 and is excluded (§9.8); two Klein bottles have Euler characteristic 0 and w₁ ≠ 0. A class of period 4 on a real Enriques surface restricts to a nonzero class of period 2 and index 2 over ℂ(S), and has index 4 = per. Over the real Puiseux field, X² − t has the roots `±t^{1/2}` while −t, with leading coefficient −1, is not a square; at t = 0 the sextic z² = (w² − u² − v²)u²v² normalises to the quadric z² = w² − u² − v². (B19 §8, pp. 104–110; MVH98, Theorem 1.3, p. 3, for the classes of period 4.)
 
 ### Dependencies
 
