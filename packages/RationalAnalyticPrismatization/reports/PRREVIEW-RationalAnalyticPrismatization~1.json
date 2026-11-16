@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RationalAnalyticPrismatization~1",
+  "head": "4670ade60d85217d8a3a65772f6b259e4c2cd3ac",
+  "pr": 2456,
+  "folder": "RationalAnalyticPrismatization",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "Full review. The 15 seeded targets were verified at their locators in ALRS, ABLB, Gest, RJRC22 and BC16 (about 120 locators). Headline statements were checked against ALRS Theorems 5.1.1, 6.1.1, 6.2.1-6.2.2, 6.3.1, 6.5.4, 6.5.8, Proposition 6.5.10, Corollary 6.5.11, Proposition 6.6.7 and Construction 6.7.5. The worker's gate passed with every check at 0; dependency check: 259 roadmaps, 2488 edges, 0 problems; lake env lean on Suggested.lean exits 0 with no messages (no declarations). The 36 consumed AnalyticStacks sections resolve at #1687 head dd5bc83, plus 16 further suppliers; MotivesAndAlgebraicCyclesPartII exists only as a board package. 25 pinned Mathlib and Tau Ceti declarations were opened. Findings: one P2 (BG^cont 0-properness used in 10.3/10.6 but stated nowhere) and two P3 on the pull request text. Eleven ALRS source issues recorded.",
+  "text": "393017d0c8cf726e"
+ }
+}
