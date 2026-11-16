@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HodgeClassesForJacquetLanglands~3",
+  "head": "e9118f6166794de0597c82731100987fa7ae7ee8",
+  "pr": 2436,
+  "folder": "HodgeClassesForJacquetLanglands",
+  "date": "2026-11-16",
+  "findings": 6,
+  "blocking": 3,
+  "notes": "Full review of an unchanged head (the previous review had no findings). Sample: all 15 seeded targets checked against IP23 at their locators, plus every parenthesised IP23 locator against the page markers (two wrong page ranges, P3), Mil17, Wal85 and FM06 locators. Adversarial table with 22 computed rows. Findings: P2 the d = 1 quaternionic coefficient cohomology and multiplicity space are already stated by HilbertModularVarietiesAndShimuraCurves and are not cited; P2 the algebraic groups GU_E, GSU_E, GU_B of the exceptional isogeny have no defining target and no supplier; P2 the L-rational isotypic part of sections 0.2-0.3 lacks the L-model hypothesis of the source; three P3 (two locators, undefined symbols in 10.4). Gate at e9118f6: every check passed; depcheck 252 roadmaps, 2396 edges, 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes nothing; 26 pinned declarations opened; citations resolved in 27 suppliers; 8 declared gaps match the plan.",
+  "text": "b5425f4092334e13"
+ }
+}
