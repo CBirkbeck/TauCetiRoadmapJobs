@@ -2520,7 +2520,7 @@
    "neededBy": [
     "8.4"
    ],
-   "detail": "For a field k, an affine group scheme H of finite type over k and a closed immersion H -> GL_n, the fppf quotient GL_n/H is represented by a quasi-projective k-scheme admitting a GL_n-equivariant immersion into the projectivization of a finite-dimensional representation, so that O(1) is a GL_n-linearized ample line bundle. Used in the proof of BZFN Corollary 3.22 (BZFN line 1205) to make BG perfect from BGL_n.",
+   "detail": "For a field k, an affine group scheme H of finite type over k and a closed immersion H -> GL_n, the fppf quotient GL_n/H is represented by a quasi-projective k-scheme admitting a GL_n-equivariant immersion into the projectivization of a finite-dimensional representation, so that O(1) is a GL_n-linearized ample line bundle. Used in the proof of BZFN Corollary 3.22 (p. 24) to make BG perfect from BGL_n.",
    "needs": "A statement that the fppf quotient of GL_n by a closed subgroup scheme of finite type over a field is a quasi-projective scheme with a GL_n-equivariant immersion into the projectivization of a finite-dimensional representation.",
    "supplier": "ReductiveGroups",
    "section": "Layer 3 (subgroups, quotients, components)"
