@@ -4602,14 +4602,26 @@
   ],
   "gaps": [
     {
-      "slug": "eulerian-log-concavity-and-variance",
-      "needs": "log-concavity of every row `q ↦ A(n, q)` on its contiguous support `0 ≤ q < n`, preservation of log-concavity on contiguous support under convolution and reflection of finite sequences, and the variance `(n + 1)/12` of the descent number of a uniformly random permutation of `Fin n` for `n ≥ 2`.",
+      "slug": "eulerian-row-log-concavity",
+      "needs": "for every `n`, the row `q ↦ A(n, q)` is positive exactly on `0 ≤ q < n` when `n ≥ 1` and on `{0}` when `n = 0` (the empty permutation gives `A(0, 0) = 1`), and `A(n, q)² ≥ A(n, q − 1)·A(n, q + 1)` for every `q ≥ 1`.",
       "supplier": "ClassicalArithmeticCompletion",
       "section": "§2.56"
     },
     {
+      "slug": "log-concave-convolution",
+      "needs": "if `a, b : ℤ → ℝ` are nonnegative, finitely supported, supported on integer intervals and log-concave (`a_k² ≥ a_(k−1)·a_(k+1)` for every `k`), then the convolution `k ↦ Σ_j a_j·b_(k−j)` and the reflection `k ↦ a_(−k)` have the same four properties.",
+      "supplier": "ClassicalArithmeticCompletion",
+      "section": "§2.56"
+    },
+    {
+      "slug": "eulerian-descent-variance",
+      "needs": "for `n ≥ 2` the descent number of a uniformly random permutation of `Fin n` has mean `(n − 1)/2` and variance `(n + 1)/12`, that is `Σ_q q·A(n, q) = n!·(n − 1)/2` and `Σ_q (q − (n − 1)/2)²·A(n, q) = n!·(n + 1)/12`.",
+      "supplier": "ClassicalArithmeticCompletion",
+      "section": "§2.39"
+    },
+    {
       "slug": "eulerian-central-limit",
-      "needs": "the central limit theorem for descents: for a uniformly random permutation of `Fin n`, `(des − (n − 1)/2)/√n` converges in law to the centred normal law of variance `1/12` as `n → ∞`, together with the uniform bound on its second moments that gives convergence of first absolute moments.",
+      "needs": "for a uniformly random permutation of `Fin n`, `(des − (n − 1)/2)/√n` converges in law to the centred normal law of variance `1/12` as `n → ∞`.",
       "supplier": "ClassicalArithmeticCompletion",
       "section": "§2.18"
     },
@@ -4621,21 +4633,27 @@
     },
     {
       "slug": "period-map-ax-schanuel",
-      "needs": "the Ax–Schanuel theorem for pure polarized integral variations of Hodge structure (Bakker–Tsimerman): for such a variation on a smooth irreducible complex algebraic variety `X` with monodromy period orbit `D_mon ⊂ Ď`, every irreducible analytic component `U` of the intersection of an algebraic subvariety `W ⊂ X × Ď` with the graph of a local lift of the period map satisfies `codim_(X×Ď) U ≥ codim W + codim_(X×Ď)(graph)` unless the projection of `U` to `X` lies in a weakly special subvariety, in the monodromy-orbit form used in §3.4.",
+      "needs": "the Ax–Schanuel theorem for pure polarized integral variations of Hodge structure (Bakker–Tsimerman) in the monodromy-orbit form: for such a variation on a smooth irreducible complex algebraic variety `X`, with `D_mon` the orbit, in the flag variety of a reference fibre, of the identity component of the Zariski closure of monodromy through a Hodge filtration, every irreducible analytic component `U` of the intersection of an algebraic subvariety `W ⊂ X × D_mon` with the graph of a local lift of the period map satisfies `codim_(X×D_mon) U ≥ codim_(X×D_mon) W + codim_(X×D_mon)(graph)` unless the projection of `U` to `X` lies in a proper weakly special subvariety of `X`; all codimensions are taken in `X × D_mon`, not in the product with a larger compact dual.",
       "supplier": "AbelianSchemesAndArithmeticModuliPartII",
       "section": "Layer B3"
     },
     {
       "slug": "relative-crystalline-comparison",
-      "needs": "for a smooth projective morphism `f : 𝒴 → 𝒳` of smooth `W(k)`-schemes with `k` finite and `p` unramified, the fibrewise crystalline comparisons of §8.1 at the points of a residue disk of `𝒳`, which are horizontal for the Gauss–Manin connection on `R^i f_* Ω^•` by the proper smooth pushforward of de Rham local systems of §7.3, are compatible with the Frobenius of the convergent F-isocrystal `R^i f_crys,*` of CrystallineCohomology §CR.7.3, so that `R^i f_*ℚ_p` and that filtered F-isocrystal are associated in the sense of Faltings.",
+      "needs": "for a smooth projective morphism `f : 𝒴 → 𝒳` of smooth `W(k)`-schemes with `k` finite and `p` unramified, the fibrewise crystalline comparisons of §8.1 at the points of a residue disk of `𝒳`, which are horizontal for the Gauss–Manin connection on `R^i f_* Ω^•` by the proper smooth pushforward of de Rham local systems of §7.3 applied to the constant coefficient `ℤ_p`, whose higher direct images are lisse, are compatible with the Frobenius of the convergent F-isocrystal `R^i f_crys,*` of CrystallineCohomology §CR.7.3, so that `R^i f_*ℚ_p` and that filtered F-isocrystal are associated in the sense of Faltings.",
       "supplier": "PadicHodgeTheory",
       "section": "§8.1"
     },
     {
       "slug": "hodge-tate-image-cocharacter",
-      "needs": "for a crystalline representation `ρ : G_K → GL(V)` of a finite unramified `K/ℚ_p` preserving a family of tensors, the Zariski closure of `ρ(G_K)` contains a torus that is conjugate over `ℚ̄_p`, inside the group fixing those tensors, to the image of the Hodge cocharacter of `D_dR(V)` (Sen; Wintenberger's tensor-compatible splitting).",
+      "needs": "for a Hodge–Tate representation `ρ : G_K → GL(V)` of a finite extension `K/ℚ_p` on a finite-dimensional `ℚ_p`-vector space, comparing the graded Hodge–Tate fibre functor with the forgetful fibre functor extended to `C_p`, on the tensor category generated by `V`, gives a cocharacter of the Zariski closure of `ρ(G_K)` over `C_p` that acts by `t^i` on the `C_p(i)`-isotypic part of `V ⊗ C_p`, so that its weights on `V ⊗ C_p` are the Hodge–Tate weights of `V` with their multiplicities (Serre; Sen; the step used in the proof of LS, Lemma 3.14, p. 26, LS lines 1191–1200).",
       "supplier": "PadicHodgeTheory",
       "section": "§4.4"
+    },
+    {
+      "slug": "complete-reducibility-reductive-criterion",
+      "needs": "for an algebraic group `G` over a field of characteristic zero whose identity component is reductive, a closed subgroup `H ⊂ G` is G-completely reducible, all R-parabolics of §2.3 being tested, exactly when its identity component `H°` is reductive (Serre for connected `G`; Bate–Martin–Röhrle for reductive identity component; LS, Lemma 5.37, p. 56, LS lines 2574–2577).",
+      "supplier": "LanglandsParameterStacks",
+      "section": "§2.3"
     }
   ],
   "sourceIssues": [
