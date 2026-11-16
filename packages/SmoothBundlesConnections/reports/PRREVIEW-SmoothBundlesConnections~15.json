@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SmoothBundlesConnections~15",
+  "head": "c1d15cd8cb85438668834751f6ad40499fafe0ea",
+  "pr": 2127,
+  "folder": "SmoothBundlesConnections",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 97 changed lines since 06c60b8. Previous R02 repaired (refinement maps consumed from Tau Ceti: nine declarations opened at the pin, direction, hypotheses and homotopy sign recomputed on the two-copy cover: T_r=2, T_s=5, Mathlib homotopy gives -3, insertion formula +3); previous R01 is deferred D01, which stands (ComplexKahlerGeometry 2.5 on main and at its open head). Seeded sample checked where it falls in the change: Stacks Tag 09UY, p. 24, read at its locator. Gate rerun: every counter 0, OK; depcheck 0 problems; Suggested.lean elaborates with seven sorry warnings only; no file outside the folder changed; pull request text agrees with the head.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Soft/fine-sheaf acyclicity has two owners: B6.1 here and ComplexKahlerGeometry 2.5",
+    "where": "ComplexKahlerGeometry 2.5, on main and in its open revision",
+    "raised": "PRREVIEW-SmoothBundlesConnections~13"
+   }
+  ],
+  "text": "50ad4de9cbcdeb73"
+ }
+}
