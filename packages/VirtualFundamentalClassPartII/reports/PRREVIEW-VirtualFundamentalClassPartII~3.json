@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-VirtualFundamentalClassPartII~3",
+  "head": "fed9814a551e25bff3a4b62335d78d99640faa51",
+  "pr": 2446,
+  "folder": "VirtualFundamentalClassPartII",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "incremental re-review of 15 changed lines since 1cb68bf. Previous R01 (9.3 tangent-map direction) and R02 (finite-type spaces of maps in the Layer 9 example) are repaired. New P2 R01: the rewritten 9.1 clause says the stack of stable maps of a given class is a stack of Convention 1 over every field, but in characteristic p the Frobenius P1 -> P1 has a non-reduced automorphism group, so the stack is not Deligne-Mumford; the repair restricts the clause to characteristic 0 and adds a Check. Checked: the seeded sample where the diff falls (9.1, 9.3), behrend1997 lines 20-47, 82-91 and 129-141, behrend-fantechi1997 lines 1583-1614, the pull-request text, and AlgebraicGromovWittenTheory (#1998) and StackPointsAndResidualGerbes (#2429) at their heads. Gate rerun: OK, every check 0. Depcheck: 0 problems. lake env lean Suggested.lean: exit 0, no output (0 declarations).",
+  "text": "9fe76f2f84b255a5"
+ }
+}
