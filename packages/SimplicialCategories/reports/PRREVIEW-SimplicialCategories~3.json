@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SimplicialCategories~3",
+  "head": "2a6d75e99edc129575a268f0a49e5741cffe2654",
+  "pr": 2269,
+  "folder": "ModelCategoryTheory/SimplicialCategories",
+  "date": "2026-11-16",
+  "findings": 8,
+  "blocking": 5,
+  "notes": "Full re-review. Previous findings: R01-R03 not repaired, R04-R06 repaired. Gate FAIL (imports=3, build=7, residue=1). Seeded sample of 15 sections checked against HTT (70 label-and-page pairs, no mismatch) and Ber07 Thm. 1.1; GJ99, DK80 and Kerodon not readable. Depcheck: 261 roadmaps, 2594 edges, 0 problems. Scratch elaboration with the three absent imports removed and unitComp names: Layers 1, 2, 4, 6 elaborate with sorry only, Layer 5 lacks its carriers at the pin; 22 signatures compared; no padding. New findings: section 5.8.2 square (P2), Scope claim that the two weak-equivalence classes agree (P2), residue, a wrong supplier section in 5.4.5, notation in 3.4.3 (P3).",
+  "text": "3ff1a471061c0db6"
+ }
+}
