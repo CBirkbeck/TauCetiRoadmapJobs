@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HochschildHomologyAndHKR~1",
+  "head": "72a252e3a20aede52745d6d4d3853771a4c7afa6",
+  "pr": 2447,
+  "folder": "HochschildHomologyAndHKR",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Three P3 findings: the Layer 8 dependency line includes the gap-dependent section 7.6; the PR description is missing the layer and supplier lists it announces and never mentions the declared gap; 'explicit sign dictionary' overclaims for chains (section 6.3 proves only that the signs exist). Gate: worker's gate.md and my own run both OK; depcheck 253 roadmaps, 2400 edges, 0 problems. Elaboration: 8 sorry warnings only; elaborated signatures match the README; one-tactic probe closed 0 of 8 theorems. Seeded sample: all 15 targets checked. 49 locators in Ginz05, HKR62, AV20 and StacksSmooth checked against the cached texts and all support the claims. Loday98, Weibel94, CE56, Ger63 and Mat86 are uncertified, so their locators are not verifiable. Adversarial table has 25 rows with computed values. 17 cross-roadmap citations resolved; the gap slug matches plan.json and RefinedTraceMethods section 1.9 does not already supply it. Overlap check covered CyclicHomologyLieHomologyAndQuasiFreeAlgebras, DGAInfinity, NoncommutativeGeometry and DerivedModuleAlgebra. Source independence: largest share Ginz05, 46 of 126 locators; contents independent.",
+  "text": "2216d3acb9183a74"
+ }
+}
