@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HyperbolicDynamicsAndThermodynamicFormalism~4",
+  "head": "bfbca4f304b5fc1af42c6637816ecdc9e38f008e",
+  "pr": 2441,
+  "folder": "HyperbolicDynamicsAndThermodynamicFormalism",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 2,
+  "notes": "Full review at an unchanged head. Previous R01 and R02 are not repaired: the board's design/plan.json still declares the gaps sphere-bundle-embedding (provided by the pins: ContMDiff.iff_comp_isImmersion with isSmoothEmbedding_coe_sphereBundle) and connection-map-jacobi-derivative (owned by README section 9.3), although three replies report them removed; both are re-raised (P2) and need a change to the board's plan, not to the roadmap folder. New: one P3 Check in section 6.5 (the instance delta = 0.6 on a period-1 orbit does not violate (F2), since e <= 0.4 excludes the pair; delta = 1 does). Sample: all 15 seeded targets; 51 line ranges read in 11 cached sources; the uncertified texts (KatokHasselblatt1995, Bowen1975 and others) not read, so section 9.3's source is unverified. Gate: every check 0; depcheck 256 roadmaps, 2432 edges, 0 problems; lake env lean: 15 sorry warnings only; #check of all 50 declarations; one-tactic probe closes none of the 15 theorems. Restated supplier definitions compared with ClassicalErgodicTheory's Lean at its open head: they agree. Adversarial table of 27 rows found no false theorem in README or Suggested.lean. One source error recorded (BowenRuelle1975, proof of Theorem 5.1: radius 2 epsilon should be 3 epsilon).",
+  "text": "128d6ba3553b6c97"
+ }
+}
