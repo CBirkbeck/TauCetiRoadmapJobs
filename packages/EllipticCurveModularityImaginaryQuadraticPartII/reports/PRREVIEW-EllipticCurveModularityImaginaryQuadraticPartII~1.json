@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularityImaginaryQuadraticPartII~1",
+  "head": "669904eb1c434e7cd9e2710e772bc23e0c7e34d7",
+  "pr": 2445,
+  "folder": "EllipticCurveModularityImaginaryQuadraticPartII",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full review. Seeded sample 1.1, 2.2, 2.5, 3.1-3.4, 5.1, 5.4, 6.1, 6.2, 7.1-7.4 checked against the cached texts of CaptainSude26, LeHung26, CN23, ACC23, AKT23, CHT08, MilneCM and OpenAI26 (59 distinct passages); all locators found at the cited lines and pages. Only defect: §§3.3-3.5 cite the p=5, mu_5, rho-bar(phi)=1 case of CaptainSude26 Lemma 3.1 for more general statements (true, checked). Adversarial pass computed 22 rows, including every numeric Check (109/2617, Q(sqrt31,sqrt59,sqrt71), <T_a,T_b> of order 120, the patching dimensions 111/151, the 240-element group of 6.2); no false statement. Gate at 669904e passes; depcheck 0 problems; Suggested.lean elaborates silently (declares nothing; no headline statable at the pins); 17 Mathlib and 4 Tau Ceti names checked by #check. Declared gap acc-torsion-inertial-comparison is precise, declared in plan.json and README, and supplied nowhere else. Overlap with the parent, the totally real Part, CrystallineLocalGlobalCompatibilityCM, PAI Part II and OAFML Part II: imports only. Findings are all P3: locator generality (R01), the 7.5 Example lacks q != p and splitting in the field of the 7.1(b) data (R02), PR validation sentences (R03).",
+  "text": "8fd590f4cbfacc2e"
+ }
+}
