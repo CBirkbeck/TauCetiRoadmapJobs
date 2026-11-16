@@ -28,13 +28,14 @@ Stated here:
   two correlation functions (`HardSphere.tendsto_empirical_of_correlation`), and its corollary
   under Lanford's theorem (`HardSphere.LanfordStatement.tendsto_empirical`).
 
-Every headline theorem of the roadmap is statable at the pins. Lanford's theorem itself is not a
-theorem of this roadmap: it is the proposition `HardSphere.LanfordStatement d`, defined here for
-every `d`; for `d ≥ 2` it is the theorem of its sources, for `d = 0` it is false (README §10.4), and
-its proof (the BBGKY and Boltzmann hierarchies) is outside this roadmap. The flat position space
-structure of the flat torus `FlatTorus L` (README §1.3) is not declared here: its fields (the lift and injectivity axioms at the
-injectivity radius and the local measure axiom) are theorems of §1.3, and an instance with unproved
-fields is excluded. So `HardSphere.LanfordStatement` and its corollary take a structure
+Every headline theorem of the roadmap is statable at the pins. Lanford's theorem itself is not
+a theorem of this roadmap: it is the proposition `HardSphere.LanfordStatement d`, defined here
+for every `d`; for `d ≥ 2` it is the statement of BGSS2023 Theorem 1 (the grand canonical gas on
+the torus), for `d = 0` it is false (README §10.4), and its proof (the BBGKY and Boltzmann
+hierarchies) is outside this roadmap. The flat position space structure of the flat torus
+`FlatTorus L` (README §1.3) is not declared here: its fields (the lift and injectivity axioms at
+the injectivity radius and the local measure axiom) are theorems of §1.3, and an instance with
+unproved fields is excluded. So `HardSphere.LanfordStatement` and its corollary take a structure
 `[FlatPositionSpace d (UnitFlatTorus d)]` as an instance argument; every such structure gives the
 same proposition (README §10.4).
 -/
@@ -363,7 +364,10 @@ noncomputable def grandCanonical (ε : ℝ) (μ : ℝ≥0) (f₀ : X × Euclidea
 /-- Invariance of the Maxwellian grand canonical measure: on every flat position space, for
 `0 < ε < ρ`, the grand canonical measure with `f⁰(x, v) = c exp(−β|v − u|²/2)`, `β > 0`, is invariant
 under the componentwise hard-sphere flow; when `μ_X(X) = ∞` and `μ c > 0` the partition function is
-infinite and the measure is zero (BGSS2023 lines 479–483). -/
+infinite and the measure is zero. The equilibrium `f⁰ = M` and its invariant measure are named in
+BGSS2023 lines 479–483; the invariance, on every flat position space and for every value of the
+partition function, is proved in the roadmap from the conservation of energy and momentum (README
+§9.2, §9.4) and is stated as a theorem in none of GST2013, BGSS2023 and DengHaniMa2024. -/
 theorem grandCanonical_flow_invariant {ε : ℝ} (hε : 0 < ε)
     (hερ : ENNReal.ofReal ε < FlatPositionSpace.radius d X) (μ c : ℝ≥0) {β : ℝ}
     (hβ : 0 < β) (u : EuclideanSpace ℝ (Fin d)) (t : ℝ) :
@@ -464,16 +468,21 @@ theorem tendsto_empirical_of_correlation {f₀ : X × EuclideanSpace ℝ (Fin d)
         {p | δ ≤ |empirical ε (μ ε) t h p - ∫ z, f z * h z|}) (𝓝[>] 0) (𝓝 0) := by
   sorry
 
-/-- Lanford's theorem as a proposition, on the unit torus `𝕋^d` with a flat position space
-structure: for all `C₀ ≥ 1` and `β₀ > 0` there is `T₀ > 0` such that for every continuous
+/-- Lanford's theorem as a proposition, on the unit torus `𝕋^d` with a flat position
+space structure: for all `C₀ ≥ 1` and `β₀ > 0` there is `T₀ > 0` such that for every continuous
 probability density `f⁰` on `𝕋^d × E` with `f⁰(x, v) ≤ C₀ exp(−β₀|v|²/2)` and
 `|f⁰(x, v) − f⁰(y, v)| ≤ C₀ ‖x − y‖ exp(−β₀|v|²/2)` there is a mild solution `f` on `[0, T₀]` with
 datum `f⁰` such that, in the scaling `μ_ε = ε^{−(d−1)}`, at every `t ∈ [0, T₀]`: the correlation
 functions `F^ε_n(t)`, `n ≥ 1`, converge to `f(t)^{⊗n}` against every bounded continuous function and
 almost everywhere along every sequence `ε_k → 0⁺`, and `F^ε_1(t) → f(t)` in essential supremum on
-every compact set. For `d ≥ 2` it is the theorem of BGSS2023 Theorem 1 (lines 316–321) and GST2013
-Theorem 8 (lines 2069–2080) (Lanford1975), whose proof is outside this roadmap; for `d = 0` it is
-false (README §10.4). -/
+every compact set. For `d ≥ 2` it is the statement of BGSS2023 Theorem 1 (lines 316–321), the
+grand canonical form on the torus of Lanford's theorem, which that source attributes to Lanford1975
+and refers to other works to prove (lines 313–315 and 322), recovering only the convergence of
+`F^ε_1(t)` in the sense of measures (BGSS2023 Proposition 5.4.1, lines 2874–2895). GST2013 Theorem 8
+(lines 2069–2080) is the counterpart on `ℝᵈ` for a fixed number `N` of particles with
+`N ε^{d−1} = 1` (GST2013 lines 672 and 833), and Lanford1975 is likewise the fixed-`N` (canonical)
+statement (BGSS2023 lines 313–315). Its proof is outside this roadmap; for `d = 0` it is false
+(README §10.4). -/
 def LanfordStatement (d : ℕ) [FlatPositionSpace d (UnitFlatTorus d)] : Prop :=
   ∀ C₀ β₀ : ℝ, 1 ≤ C₀ → 0 < β₀ → ∃ T₀ : ℝ, 0 < T₀ ∧
     ∀ f₀ : UnitFlatTorus d × EuclideanSpace ℝ (Fin d) → ℝ, Continuous f₀ → (∀ z, 0 ≤ f₀ z) →
