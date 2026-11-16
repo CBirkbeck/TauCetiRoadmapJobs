@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DynamicalDegreesOfRationalMaps~1",
+  "head": "14cf9afe410238a32146bf6eff36f088063c63b8",
+  "pr": 2431,
+  "folder": "DynamicalDegreesOfRationalMaps",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Gate passes (all checks; depcheck 243 roadmaps, 2270 edges, 0 problems). lake env lean on Suggested.lean: 19 sorry warnings only; #check @ on 32 declarations matches the README; one-tactic probe closes 0 of 19 theorems. Seeded sample of 15 targets (1.1, 2.1, 2.2, 3.2, 3.5, 3.6, 4.1, 4.3, 4.4, 4.5, 5.1, 5.3, 6.1, 6.3, 6.4) verified against 58 locators in 13 cached sources; lazarsfeld2004 and fulton1998 not readable (uncertified). 60 Mathlib and 41 Tau Ceti file:line citations and 34 cross-roadmap sections resolved. Adversarial table covers all 19 headline theorems. Findings: R01 P3 mixedDegree_baseChange is a termwise consequence of Tau Ceti finrank_cohomology_pullback_eq_of_isPullback (uncited); R02 P3 the description's dependency paragraph names no supplier. Three source issues recorded (dang2020 Prop 3.4.1/Thm 3.4.4, dinhsibony2005 Cor 7 proof, silverman2014 Ex 6).",
+  "text": "6e05597de8f7d24c"
+ }
+}
