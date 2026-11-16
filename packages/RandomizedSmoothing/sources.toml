@@ -1,0 +1,38 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RandomizedSmoothing"
+
+[[source]]
+id = "CohenRosenfeldKolter2019"
+authors = "Jeremy M Cohen, Elan Rosenfeld, J. Zico Kolter"
+title = "Certified Adversarial Robustness via Randomized Smoothing"
+year = 2019
+arxiv = "1902.02918v2"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1902.02918v2"
+fetched_from = "https://arxiv.org/pdf/1902.02918v2"
+fetched_at = "2026-11-16T02:51:52Z"
+sha256 = "a03d92f572f076e35e8edf84471580805acf2f422e0736e29828798f5d3bb995"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v2"
+cited_for = ["2.2"]
+
+[[source]]
+id = "SalmanEtAl2019"
+authors = "Hadi Salman, Greg Yang, Jerry Li, Pengchuan Zhang, Huan Zhang, Ilya Razenshteyn, Sebastien Bubeck"
+title = "Provably Robust Deep Learning via Adversarially Trained Smoothed Classifiers"
+year = 2019
+arxiv = "1906.04584v5"
+locator_scheme = "theorem"
+locator = "Lemma 2"
+url = "https://arxiv.org/abs/1906.04584v5"
+fetched_from = "https://arxiv.org/pdf/1906.04584v5"
+fetched_at = "2026-11-16T02:51:59Z"
+sha256 = "4779df54e211707f4d5fdb0cb7f3fc26eb24b4826da1e497dff9a7d50475aaed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v5"
+cited_for = ["1.3"]
