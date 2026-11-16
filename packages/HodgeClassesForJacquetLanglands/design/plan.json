@@ -3996,22 +3996,16 @@
   ],
   "gaps": [
     {
-      "slug": "compact-matsushima",
-      "needs": "For G anisotropic modulo its centre, prove FrankeInput(G, K, V) unconditionally, so that the automorphic comparison map gives the Hecke-equivariant Matsushima decomposition H^*(X_K, V) ≃ ⊕_π m(π) H^*(𝔪_G, K_∞; π_∞ ⊗ V) ⊗ π_f^K compatible with level maps, by the compact-quotient spectral decomposition instead of Eisenstein series (IP23, §2.2.2, p. 16).",
+      "slug": "shimura-matsushima-comparison",
+      "needs": "For a connected reductive G over ℚ, a closed subgroup K_h ⊂ G(ℝ) containing Z(ℝ) with K_h/Z(ℝ) compact (for a Shimura datum K_h = Stab_{G(ℝ)}(h)), the quotients S_K = G(ℚ)∖(G(ℝ)/K_h × G(𝔸_f)/K) (equal to Sh_K(ℂ) for a Shimura datum) and a finite-dimensional representation V over a number field L on which Z(ℚ) ∩ K acts trivially for small K, with 𝕍_K at neat K the local system on S_K obtained by descending the constant sheaf V along G(ℚ) (the descent that gives the local systems on X_K, with K_∞A_∞ replaced by K_h), supply: the Hecke action on H^*(S_K, 𝕍), the de Rham and relative Lie algebra comparison H^*(S_K, 𝕍_ℂ) ≃ H^*(𝔤, K_h; C^∞(G(ℚ)∖G(𝔸)/K) ⊗ V_ℂ) relative to K_h, so with the real central directions Lie Z(ℝ) divided out and the functions transforming under Z(ℝ)° by the inverse of its action on V, and, for compact S_K, the Hecke-equivariant Matsushima decomposition H^*(S_K, 𝕍_ℂ) ≃ ⊕_π m(π) H^*(𝔤, K_h; π_∞ ⊗ V_ℂ) ⊗ π_f^K, obtained from the discrete decomposition, at each level K, of L² of the compact space G(ℚ)A_∞∖G(𝔸)/K = ⊔_g Γ_g∖G(ℝ)¹, with A_∞ the identity component of the real points of the maximal ℚ-split central torus, G(ℝ)¹ ≃ G(ℝ)/A_∞, g over G(ℚ)∖G(𝔸_f)/K and Γ_g = G(ℚ) ∩ gKg⁻¹ a cocompact lattice in G(ℝ)¹ (AdelicAlgebraicGroups §3.4; AutomorphicSpectralTheory §4.7 for each Γ_g), applied to each A_∞-weight summand of V after multiplying by a positive character |χ|^{1/N} of G(ℚ)∖G(𝔸) with the same restriction to A_∞; not from the quotient by G(ℚ)Z(ℝ)°, which is not Hausdorff when Z(ℚ) is not discrete in Z(𝔸_f), nor from Z(ℝ)°-invariant functions, which miss central characters nontrivial on the compact part of Z(ℝ)°, nor from Eisenstein series or the Matsushima formula of X_K relative to K_∞A_∞; compatible with level pullbacks, translations and the covering transfers of the finite level maps, whose composite with pullback is the effective degree [K₂ : K₁(K₂ ∩ Z(ℚ))], without imposing axiom SV5 (IP23, §2.2.2, p. 16; Mil17, Lemma 5.13 and footnote 40, p. 57).",
       "supplier": "ArithmeticLocallySymmetricSpaces",
-      "section": "§ALS.5b.4"
+      "section": "§§ALS.5b.1, ALS.5b.4"
     },
     {
       "slug": "vhs-hodge-decomposition",
       "needs": "For a compact Kähler manifold X and a polarized real variation of Hodge structure 𝕍 of weight w on X, construct the pure Hodge structure of weight k + w on H^k(X, 𝕍), functorial for morphisms of variations and holomorphic pullback and compatible with cup products and the top-degree trace (the Hodge decomposition used in IP23, §11.3, p. 85).",
       "supplier": "ComplexKahlerGeometry",
       "section": "§K6.1"
-    },
-    {
-      "slug": "quaternion-ramification-classification",
-      "needs": "Prove that quaternion algebras over a number field are classified by their ramification sets, that every finite set of non-complex places of even cardinality occurs, that an element of order two in Br(F) is the class of a unique quaternion algebra, and that a quadratic extension E/F embeds in B exactly when no place ramified in B splits in E (IP23, §12.2.1, p. 94).",
-      "supplier": "ClassFieldTheory",
-      "section": "Layer 10"
     },
     {
       "slug": "norm-subgroup-restriction",
@@ -4021,21 +4015,33 @@
     },
     {
       "slug": "quaternionic-doubling-residue",
-      "needs": "Extend the anisotropic Siegel–Weil formula, the doubling Schwartz map, standard doubling factors, local doubling zeta integrals and the factorization of theta pairings to the doubled anisotropic rank-three skew-Hermitian space over a division quaternion algebra, with I_v(s) of Levi character |Nrd(a)|^{s+5/2}, the normalized intertwiner (b_v(s)/a_v(s)) M_v(s) and the residue of the doubling integral at s = 3/2 identified with a theta pairing by the second-term Siegel–Weil identity (IP23, §9.5, Lemmas 9.6–9.8, pp. 61–64).",
+      "needs": "Extend the anisotropic Siegel–Weil formula, the doubling Schwartz map, standard doubling factors, local doubling zeta integrals and the factorization of theta pairings to the doubled anisotropic rank-three skew-Hermitian space over a division quaternion algebra, with the degenerate principal series I_v(s) of functions satisfying F(pg) = |Nrd(a)|^{s+5/2} F(g) for p in the Siegel parabolic with Levi component a ∈ GL₃(B_v), the normalized induction of |Nrd(a)|^s since δ_P(a)^{1/2} = |Nrd(a)|^{5/2}, the normalized intertwiner (b_v(s)/a_v(s)) M_v(s) and the residue of the doubling integral at s = 3/2 identified with a theta pairing by the second-term Siegel–Weil identity (IP23, §9.5, Lemmas 9.6–9.8, pp. 61–64).",
       "supplier": "MetaplecticAutomorphicForms",
       "section": "§§6.4, 6.10a–6.12"
     },
     {
       "slug": "quaternionic-shimizu-lift",
-      "needs": "Prove that the global similitude theta lift from B^× to GU(B₁ ⊗_E B₂)° ≃ (B₁^× × B₂^×)/F^× of an irreducible unitary cuspidal σ̄ is π̄_{B₁} ⊠ π̄_{B₂} for the Jacquet–Langlands transfers of the transfer π of σ, and zero when either transfer is missing (IP23, proof of Lemma 9.2, p. 58).",
+      "needs": "For a number field F, a quadratic extension E/F embedded in quaternion algebras B₁, B₂ over F, B = B₁·B₂ in the Brauer group, V = B₁ ⊗_E B₂ and W = B, construct the Periods-I splitting: for every place v a map s̃_v to ℂ¹ on the pairs (g, h) ∈ GU(V_v)° × GU(W_v) with ν(g) = ν(h), trivialising the Weil cocycle z_Y of the similitude dual pair of §3.23, equal to the standard compact splitting at almost every place, with product one at rational points (the splitting that §3.32a compares with §3.24; IP23, §9.3, p. 58, and §A.10, pp. 112–113); and prove that the global similitude theta lift formed with it, from B^× to GU(B₁ ⊗_E B₂)° ≃ (B₁^× × B₂^×)/F^×, of an irreducible unitary cuspidal σ̄ is π̄_{B₁} ⊠ π̄_{B₂} for the Jacquet–Langlands transfers of the transfer π of σ, and zero when either transfer is missing (IP23, proof of Lemma 9.2, p. 58).",
       "supplier": "MetaplecticAutomorphicForms",
-      "section": "§§5.6, 6.15"
+      "section": "§§3.23, 3.32a, 5.6, 6.15"
     },
     {
       "slug": "derham-local-system-cohomology",
-      "needs": "Prove that a lisse ℚ_p-sheaf on a geometrically connected smooth variety over a finite extension K of ℚ_p whose stalk at one classical point, defined over a finite extension K′ of K, is a de Rham representation of G_{K′} is de Rham in the sense of §7.2, and that every subquotient of a de Rham representation of G_K is de Rham (IP23, Remark 11.10, p. 90).",
+      "needs": "Prove that a lisse ℚ_p-sheaf on a geometrically connected smooth variety over a finite extension K of ℚ_p whose stalk at one classical point, defined over a finite extension K′ of K, is a de Rham representation of G_{K′} is de Rham in the sense of §7.2 (IP23, Remark 11.10, p. 90).",
       "supplier": "PadicHodgeTheory",
-      "section": "§§3.3, 7.2"
+      "section": "§7.2"
+    },
+    {
+      "slug": "quaternionic-rational-model",
+      "needs": "For a quaternion algebra D over a number field F and an irreducible admissible representation π′_f of D^×(𝔸_{F,f}) with trivial central character, construct a D^×(𝔸_{F,f})-stable model of π′_f over every subfield L ⊂ ℂ containing ℚ(π′_f), unique up to homothety, whose K-invariants are for every compact open K the H_ℚ(D^×(𝔸_{F,f}), K)-stable L-structure of (π′_f)^K, given locally, at a split place, by the character line L when the local component is one-dimensional (a ramified character composed with the determinant has no newvector) and by the L-span of the translates of a newvector when it is infinite-dimensional, and at a ramified place by the L-span of the translates of a torus-fixed vector, where the trivial central character cannot be dropped (Waldspurger 1985, Lemmas I.1, I.2.1–I.2.2 and §II.1, pp. 123–124, 147–148; IP23, §3.2, p. 19).",
+      "supplier": "GL2AutomorphicRepresentationsAndTransfer",
+      "section": "§R17.3.8"
+    },
+    {
+      "slug": "unitary-stable-range",
+      "needs": "For a local field F_v of characteristic zero, archimedean or not and of any residue characteristic, a quadratic étale algebra E_v/F_v, a one-dimensional Hermitian E_v-space V_v and the split two-dimensional skew-Hermitian E_v-space W_v, prove that the theta lift of every character of U(V_v) to U(W_v), for the Weil representation of §3.3 with any admissible pair of splitting characters, is nonzero (the unitary stable range; IP23, proof of Lemma 9.1, p. 57).",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "§3.9"
     }
   ],
   "coverage": [
