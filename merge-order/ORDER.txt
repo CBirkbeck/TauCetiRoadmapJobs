@@ -156,6 +156,7 @@ ArithmeticStatisticsPartVII
 ArithmeticStatisticsPartVIII
 ArithmeticStatistics
 WeightsInEtaleCohomology
+LatticePackingsAndPerfectForms
 EndoscopicTransferAndUnitaryTraceComparison
 OrthogonalTamagawaAndLatticeMass
 MetaplecticAutomorphicForms
