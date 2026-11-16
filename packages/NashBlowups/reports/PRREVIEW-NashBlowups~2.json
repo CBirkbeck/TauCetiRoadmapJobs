@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NashBlowups~2",
+  "head": "dd3e0e3f9b4c730750dd677aa984ee0053939a98",
+  "pr": 2413,
+  "folder": "NashBlowups",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 12 changed lines since f8bd785: R01 (locators or own-statement marks for nashBlowupHom_isIso_of_smooth, nashBlowup.baseChange, nashIterate_of_smooth/normalizedNashIterate_of_smooth) and R02 (description's Dependencies paragraph) both repaired; new locators nashModificationNotes2024 lines 110-111 and nobile1975 lines 147-148 checked against the cached texts; adversarial rows for the three changed targets and the cited §§0.3, 6.4 (V(x^2-2y^2) over Q(sqrt2), x^p+y^2+t over F_p(t), A^2+A^1); Tau Ceti preimage_smoothLocus_le_smoothLocus_pullback_snd and isPureDimensional_pullback_Spec_map_iff_of_field opened at the pin; gate rerun at this head passes every check; depcheck 0 problems; Suggested.lean unchanged, elaborates with only two sorry warnings, #check @ of 3 declarations matches the README; PR title and description agree with the head; no change outside the folder; source independence on changed passages only.",
+  "text": "391d84011440b8f2"
+ }
+}
