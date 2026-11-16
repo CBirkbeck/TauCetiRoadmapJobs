@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NashBlowups~3",
+  "head": "dd3e0e3f9b4c730750dd677aa984ee0053939a98",
+  "pr": 2413,
+  "folder": "NashBlowups",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Full review at the head the previous review read (no change in the folder; it had no findings). One P3 finding, on the pull request description only: its Dependencies paragraph says AlgebraicModuliForArithmeticGeometry and DerivedDeRhamCohomology are not yet on main and merge first, while both are on main at 818115d (commits b4ffac68, ea83ad87). README and Suggested.lean: no finding. Checked: all 15 sampled targets and every other line locator of the README (86 locators in 10 cached sources, all at the stated line); adversarial table of 20 statements with computed values (cusp in characteristics 0, 2, 3, node, x^p+y^2+t over F_p(t), quadric cone in characteristic 2, k[eps]/(eps^2), A^2 + A^1, the empty scheme, d = 0); 99 Mathlib and Tau Ceti declarations located at the pins; 16 cross-roadmap citations resolved on main; gate rerun passes every check; depcheck 233 roadmaps, 2228 edges, 0 problems; Suggested.lean elaborates with two sorry warnings only, #check @ of the 3 declarations matches README 0.7, 4.4, 5.4, one-tactic probe closes neither theorem; overlap check against SchemeAndStackFoundations (main and open revision), PurityOfBranchLocus, DirectSummandsAndBigCohenMacaulay, AbhyankarLemma: nothing shared; source independence: 14 passages against 8 sources, arrangement independent of nashModificationNotes2024. Five uncertified sources cited by locator only. Eight source errata recorded.",
+  "text": "391d84011440b8f2",
+  "carried": {
+   "from": "dd3e0e3f9b4c730750dd677aa984ee0053939a98",
+   "head": "dd3e0e3f9b4c730750dd677aa984ee0053939a98",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
