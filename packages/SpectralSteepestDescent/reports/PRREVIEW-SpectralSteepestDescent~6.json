@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpectralSteepestDescent~6",
+  "head": "7460969f3a59ed2f2f3ec8b432729d258e8ee765",
+  "pr": 2423,
+  "folder": "SpectralSteepestDescent",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 137 changed lines since 054ef3c. All six previous findings repaired. Two new P3 findings from the repair of the former R01: the Layer 2 Dependencies paragraph (README line 290) still says 2.1 uses OI-A50 and omits MAJ-A31 for 2.2; the 2.1 route misstates the spectrum of the Hermitian dilation for finrank E != finrank F and names no pinned declaration for it. Checked: the new Lidskii target and its route on computed instances, the 2.2 upper bound via MAJ-A31, the 1.3 isometry bullet in both directions; pinned declarations polarIsometry, exists_linearIsometryEquiv_eq_polarFactor, hermitianDilation, finrank_eigenspace_hermitianDilation_eq_adjoint_comp_self, kyFanSum_add_le; PD-A29, PD-A52, PD-B12, PD-B13, MAJ-A31 on main; FanHoffman1955 lines 59-70; all 28 Lean names present in the README; pull request text agrees with the head. Gate passes (every check 0), depcheck 0 problems, elaboration 20 sorry warnings only.",
+  "text": "532e7d571cd93e26"
+ }
+}
