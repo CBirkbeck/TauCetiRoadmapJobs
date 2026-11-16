@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ExceptionalThetaCorrespondencesForG2~4",
+  "head": "ad25a73d7ef4e75af6f947051ef90ec252e7a182",
+  "pr": 1736,
+  "folder": "ExceptionalThetaCorrespondencesForG2",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 18 changed lines since 496ccde. Checked: the previous finding R01 (description) is repaired; every changed Tau Ceti citation against the pin 2fd255d (31 declaration names resolve, 9 line locators compared, 1 stale: D4/Tripled/GroupScheme.lean:119 should be :120, R01 P3); the renamed separable splitting-subfield theorem supports its use in section 2.2; the IsCommJordan instance at Jordan.lean:71; title and description against the head (consistent); gate all 0 OK; depcheck 0 problems; Suggested.lean elaborates with no output (no declaration). No seeded-sample target falls in a changed passage.",
+  "text": "b500c86be309fde8",
+  "carried": {
+   "from": "ad25a73d7ef4e75af6f947051ef90ec252e7a182",
+   "head": "15fa6a69aec87916f344bdbae2b5dd263e89ec07",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "ExceptionalThetaCorrespondencesForG2"
+   ]
+  }
+ }
+}
