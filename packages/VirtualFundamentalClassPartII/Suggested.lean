@@ -31,10 +31,10 @@ with the carrier it lacks.
 ## Headline theorems, none statable at the pins
 
 1. *Integral Chow groups of Deligne–Mumford stacks that need not be separated* (README 2.2–2.3):
-   `A_i(ℳ)` for a Deligne–Mumford stack of finite type over a field, with `A_i(ℳ) ⊗ ℚ` equal to
-   the rational group of a separated stack. Lacks Deligne–Mumford stacks, their integral closed
-   substacks and their Chow groups.
-2. *Rational intersection theory on every Deligne–Mumford stack* (README 4.1–4.3): pushforward
+   `A_i(ℳ)` for a Deligne–Mumford stack of finite type over a field with quasi-compact separated
+   diagonal, with `A_i(ℳ) ⊗ ℚ` equal to the rational group of a separated stack. Lacks
+   Deligne–Mumford stacks, their integral closed substacks and their Chow groups.
+2. *Rational intersection theory on every such stack* (README 4.1–4.3): pushforward
    along every proper morphism, Gysin maps of regular local immersions acting on stacks, homotopy
    invariance and Chern classes, built through finite covers by schemes. Lacks stacks, proper
    covers and Chow groups of stacks and of algebraic spaces.

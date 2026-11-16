@@ -7,8 +7,8 @@ resolution property*, with pullback and functoriality over *smooth* bases. This 
 its sections, from the closed substacks, residual gerbes and residue fields of
 StackPointsAndResidualGerbes and from the scheme intersection theory of SchemeAndStackFoundations
 Layer 5, and widens them in three directions. First, it builds the integral Chow groups `A_i(ℳ)` of
-Deligne–Mumford stacks of finite type over an arbitrary field with no separatedness assumed,
-with their degrees, integral operations (flat pullback, proper representable pushforward,
+Deligne–Mumford stacks of finite type over an arbitrary field whose diagonal is quasi-compact and
+separated (Convention 1), with no separatedness of the stack assumed, with their degrees, integral operations (flat pullback, proper representable pushforward,
 localisation, exterior products and refined Gysin maps with algebraic-space sources), and,
 through the finite cover by a scheme that every such stack has, the rational pushforward along
 every proper morphism, Gysin maps acting on stacks, homotopy invariance and Chern classes
@@ -35,7 +35,8 @@ dimension (Layers 6–9).
 
 This roadmap owns:
 
-- proper covers of Deligne–Mumford stacks, their existence (a finite cover by a scheme) and
+- proper covers of the Deligne–Mumford stacks of Convention 1, whose diagonal is quasi-compact and
+  separated, their existence (a finite cover by a scheme) and
   proper coverings of integral ones, the description of the function field of an integral stack
   (the residue field at its generic point) by rational functions and on étale charts, the generic
   stabiliser order `e(𝒱)` and
@@ -64,7 +65,8 @@ This roadmap owns:
   relative characterisations of obstruction theories (Layer 7);
 - cycles and rational equivalences on algebraic stacks locally of finite type, formed on smooth
   charts and descended, with no Chow group; the deformation space of a local immersion of algebraic
-  stacks; the canonical rational equivalence on an arbitrary ambient algebraic stack locally of finite
+  stacks; the intersection of cycles and rational equivalences with `P`-divisors and Kresch's explicit
+  rational equivalence between the two intersections of two `P`-divisors; the canonical rational equivalence on an arbitrary ambient algebraic stack locally of finite
   type, with its invariance along relative tangent directions, regular-immersion pullback and
   functoriality of virtual classes over bases of pure dimension, and deformation invariance of
   virtual counts (Layer 8);
@@ -174,9 +176,19 @@ ImplicitAtlases.
 2. **Words.** These are VirtualFundamentalClass's words. A *local immersion* is a representable,
    unramified morphism of finite type (vistoli1989 lines 499–500, there called a local embedding;
    kresch1999b lines 232–234 uses the word local immersion, for morphisms that are only locally of
-   finite type); it is a *regular local immersion of codimension `d`* if, étale locally on source and
-   target, it is a regular closed immersion of codimension `d`. Vistoli's regular local embeddings
-   (vistoli1989 (1.20), lines 503–505) are the regular local immersions. A *local embedding* is a
+   finite type); a local immersion `ℱ → 𝒢` is a *regular local immersion of codimension `d`* if there
+   are schemes `U`, `V` with smooth surjections `V → 𝒢` and `U → ℱ` such that `U → ℱ ×_𝒢 V` is étale and
+   `U → V` is a regular closed immersion of codimension `d` (the charts of
+   gap:normal-cones-of-local-immersions; kresch1999b Lemma 2.2 and lines 232–234; vistoli1989 (1.20),
+   lines 503–505, with étale atlases). Smooth charts are needed because the target need not be
+   Deligne–Mumford: 8.4's `η_b : B𝔾_m × {b} → B𝔾_m × B`, for `𝔐 = B𝔾_m` and a closed point `b` of the
+   regular curve `B`, has no étale chart by schemes on its target, and
+   the chart `V = B` (through `Spec k → B𝔾_m`), `U = {b}`, with `U → (B𝔾_m × {b}) ×_{B𝔾_m × B} B = {b}`
+   an isomorphism, makes it regular of codimension `1`. When `𝒢` is Deligne–Mumford the condition is
+   that, étale locally on source and target, the morphism is a regular closed immersion of
+   codimension `d`; Vistoli's regular local embeddings are then the regular local immersions. For
+   `Spec k → BG` (`G` finite étale) the chart `U = V = Spec k`, with `U → Spec k ×_{BG} Spec k = G` the
+   unit section, open and closed, makes it regular of codimension `0`. A *local embedding* is a
    chart pair: an étale morphism `U → X` from
    an affine scheme of finite type over `k` with a closed immersion of `U` into a smooth affine scheme
    of finite type over `k` (VirtualFundamentalClass §§3.4, 5.1, 9.1). behrend-fantechi1997 Definition
@@ -272,7 +284,13 @@ ImplicitAtlases.
 - `AlgebraicGeometry.Scheme.ord` (`Mathlib/AlgebraicGeometry/OrderOfVanishing.lean`): the order of an
   element of the function field of an integral locally Noetherian scheme at a point. Its value is
   `0` at points of coheight different from `1` and for the zero function; 2.2 evaluates it only on
-  nonzero functions at points of coheight one.
+  nonzero functions at points of coheight one; 8.1 evaluates it on normal integral schemes.
+- `AlgebraicGeometry.Scheme.Hom.normalization`, `AlgebraicGeometry.Scheme.Hom.fromNormalization` and
+  `AlgebraicGeometry.Scheme.Hom.normalizationPullback` (`Mathlib/AlgebraicGeometry/Normalization.lean`):
+  the relative normalisation of a quasi-compact quasi-separated morphism, integral over the target, and
+  the comparison map from the normalisation of a base change to the base change of the normalisation,
+  an isomorphism along a smooth morphism. 8.1 takes the normalisation
+  of an integral scheme as that of `Spec k(M) → M`.
 - `AlgebraicGeometry.IsClosedImmersion`, `AlgebraicGeometry.Flat`, `AlgebraicGeometry.Etale`,
   `AlgebraicGeometry.Smooth` and `AlgebraicGeometry.IsProper` (`Mathlib/AlgebraicGeometry/Morphisms/`):
   the scheme morphism properties to which SchemeAndStackFoundations §§1.19–1.20 reduce those of
@@ -297,6 +315,11 @@ The pin has no algebraic stacks, no Chow groups of stacks and no cotangent compl
   the carriers under SchemeAndStackFoundations §§1.3 and 1.18. `IsAlgebraicSpace` asks for a diagonal
   representable by schemes and an étale atlas; it does not include quasi-separatedness, which
   Convention 1 adds.
+- `TauCeti.AlgebraicGeometry.isFinite_fromNormalization_of_isJapanese`
+  (`TauCeti/AlgebraicGeometry/Normalization/Finite.lean`): for an integral scheme whose rings of sections
+  on nonempty affine opens are Japanese and a finite extension `L` of its function field, the
+  normalisation in `Spec L` is finite. 8.1 uses it with `L = k(M)` for an integral scheme `M` of finite
+  type over `k`.
 - `TauCeti.AlgebraicGeometry.PrestableFamily` (`TauCeti/AlgebraicGeometry/Curves/Prestable.lean`):
   proper, geometrically connected, at-worst-nodal relative curves; it is stable under base change
   and syntomic of relative dimension one. The genus is not part of it.
@@ -491,7 +514,8 @@ virtual class without the resolution property and to prove the relative formulas
 independent of the Chow lane: it needs only VirtualFundamentalClass Layers 3–5 and §9.1,
 DerivedModuleAlgebra §§0.7 and 0.25 and SchemeAndStackFoundations §4.1. Layer 8 extends the cycles
 and rational equivalences of Layer 2 to algebraic stacks by smooth descent and the deformation to the
-normal cone to local immersions, and combines them with Layers 3–6 and VirtualFundamentalClass §2.5
+normal cone to local immersions, adds the intersection with `P`-divisors that builds the canonical
+rational equivalence, and combines them with Layers 3–6 and VirtualFundamentalClass §2.5
 for base change, functoriality and deformation invariance over bases of pure dimension, and Layer 9
 combines Layers 6–7 with StableReduction and
 SchemeAndStackFoundations duality for spaces of maps from curves; its virtual class is Layer 6's.
@@ -744,9 +768,13 @@ VirtualFundamentalClass §0.2; Tau Ceti
   locally finite sums there are finite because `X` is quasi-compact.
 - Étale descent needs an atlas of finite type: for `ℳ = Spec k` and the étale surjection
   `U = ⊔_{n ∈ ℕ} Spec k → Spec k`, the pullback of `[Spec k]` would be the sum of the infinitely many
-  points of `U`, which is no element of a free abelian group; `U` is not quasi-compact, so it is not a
-  stack of Convention 1 and `Z_0(U)` is not defined. For `U` of finite type, `𝒱 ×_ℳ U` is reduced and
-  has finitely many components, each of dimension `dim 𝒱`, so `[𝒱 ×_ℳ U]` is a finite sum.
+  points of `U`, which is no element of the free abelian group on those points; `U` is not
+  quasi-compact, so it is not a stack of Convention 1 and this section defines no `Z_0(U)`. The group of
+  compatible families of 8.1 on `U` is `Z_0(U) = ℤ^ℕ`, the product over the points, not free on them; it
+  contains this pullback as the family with every coefficient `1`, whose restriction to each open
+  `⊔_{n ≤ m} Spec k` of finite type is the finite sum of its `m + 1` points. For `U` of finite type,
+  `𝒱 ×_ℳ U` is reduced and has finitely many components, each of dimension `dim 𝒱`, so `[𝒱 ×_ℳ U]` is a
+  finite sum.
 
 ### 2.2 Rational equivalence and the Chow groups
 
@@ -1715,11 +1743,18 @@ SchemeAndStackFoundations §4.1. Within the layer, 7.1 → 7.2.
 type and quasi-separated over `k` (Convention 1), Deligne–Mumford or not, quasi-compact or not, define
 *smoothCycles* `Z_*(𝔛)` and *smoothRatEquivalences* `W_*(𝔛)`: the families `(z_U)`, one for each scheme
 `U` of finite type over `k` with a smooth morphism `U → 𝔛` of constant relative dimension `r_U`, with
-`z_U ∈ Z_{i+r_U}(U)` for `Z_i(𝔛)`, respectively `z_U ∈ W_{i+r_U}(U)` for `W_i(𝔛)` (2.1–2.2), such that
-`z_{U′}` is the flat pullback of `z_U` (3.1) for every smooth `U′ → U` over `𝔛`; on `W_*` this pullback
-sends `(𝒱, φ)` to the components of `𝒱 ×_U U′`, each with the pullback of `φ`. Dimension is that of
-VirtualFundamentalClass §0.2. The boundary `∂ : W_*(𝔛) → Z_*(𝔛)` is taken chart by chart (kresch1999b
-lines 192–204, Proposition 2.1, lines 205–207, and Remark 2.5, lines 250–256). Prove:
+`z_U ∈ Z_*(U) = ⊕_j Z_j(U)`, respectively `z_U ∈ W_*(U) = ⊕_j W_j(U)` (2.1–2.2), such that `z_{U′}` is the
+flat pullback of `z_U` (3.1) for every smooth `U′ → U` over `𝔛`; on `W_*` this pullback sends `(𝒱, φ)` to
+the components of `𝒱 ×_U U′`, each with the pullback of `φ`. The subgroups `Z_i(𝔛)` and `W_i(𝔛)` of
+*degree `i`* are formed by the families with `z_U ∈ Z_{i+r_U}(U)`, respectively `z_U ∈ W_{i+r_U}(U)`, for
+every `U`, and the degree-`i` parts `(z_U^{(i+r_U)})_U` of a family form such a family, flat pullback
+shifting degrees by the relative dimension. For quasi-compact `𝔛`, `Z_*(𝔛) = ⊕_i Z_i(𝔛)` and
+`W_*(𝔛) = ⊕_i W_i(𝔛)`, a family being determined by its value on one smooth surjection of finite type
+(the descent below), which has finitely many degrees; when the dimensions of the components of `𝔛` are
+unbounded they are larger, an element such as `[𝔛]` having nonzero parts in infinitely many degrees.
+Dimension is that of VirtualFundamentalClass §0.2. The boundary `∂ : W_*(𝔛) → Z_*(𝔛)` is taken chart
+by chart (kresch1999b lines 192–204, Proposition 2.1, lines 205–207, and Remark 2.5, lines 250–256).
+Prove:
 
 - flat pullback along a smooth morphism of schemes of finite type commutes with `∂` (3.1), so that `∂`
   is defined; and `U ↦ Z_*(U)`, `U ↦ W_*(U)`, with the degree shifted by the relative dimension, are
@@ -1768,6 +1803,50 @@ a representable closed immersion it is VirtualFundamentalClass §1.5's deformati
 `M°_F G` need not be separated (kresch1999b Remark 2.6, lines 307–309). This extends
 VirtualFundamentalClass §1.5's deformation from representable closed immersions to local immersions.
 
+*Intersection with a `P`-divisor.* Let `M` be an integral scheme of finite type over `k` and
+`π : M̂ → M` its normalisation, the relative normalisation of `Spec k(M) → M` (Mathlib
+`AlgebraicGeometry.Scheme.Hom.normalization` and `AlgebraicGeometry.Scheme.Hom.fromNormalization`),
+finite because a finitely generated `k`-domain is Japanese (Tau Ceti
+`TauCeti.AlgebraicGeometry.isFinite_fromNormalization_of_isJapanese` with `L = k(M)`). Push rational
+equivalences forward along it by `π_*(W, φ) := (π(W), N_{k(W)/k(π(W))}(φ))`, whose boundary is the
+pushforward of `div(φ)` by 3.2's formula on schemes (`e = 1`). The *support* `|D|` of a Cartier divisor
+`D` on `M` is the image under `π` of the prime divisors of `M̂` along which `π^*D` has nonzero order
+(kresch1999b Definition 1.1, lines 65–69); for normal `M` or effective `D` it is the union of the
+components of the Weil divisor `[D]` (its Remark 1.2, lines 70–72). Define a *PDivisor* on `M`: a triple
+`(U, U′, x)` of nonempty open subschemes `U`, `U′` covering `M` and `x ∈ k(M)^×` invertible on `U ∩ U′`,
+such that the Cartier divisor `D` given by `x` on `U` and by `1` on `U′` has `|D| = M ∖ U′`; `x` is its
+*defining function* (its Definition 1.4, lines 83–94). For a dominant `M → ℙ¹`, the preimages of
+`ℙ¹ ∖ ∞` and `ℙ¹ ∖ 0` with the pulled-back coordinate form one, whose divisor is the fibre over `0` (its
+lines 101–102). Define *pDivisorIntersection* `D · − : Z_j(M) → Z_{j−1}(|D|)` by `D·[V] := [D|_V]` for an
+integral `V ⊄ |D|` and `D·[V] := 0` for `V ⊆ |D|`, and `D · − : W_j(M) → W_{j−1}(|D|)` by
+`D·(V, y) := π_{V*} Σ_W (W, (y^{ord_W x}/x^{ord_W y})|_W)` for an integral `V ⊄ |D|` of dimension `j + 1`
+with normalisation `π_V : V̂ → V` and `y ∈ k(V)^×`, the sum over the irreducible components `W` of
+`|π_V^*D|`, and `D·(V, y) := 0` for `V ⊆ |D|` (its Definitions 1.5–1.6, lines 109–138). Here `ord` is
+`AlgebraicGeometry.Scheme.ord` on the normal `V̂`; `x|_V ∈ k(V)^×` because a `V ⊄ |D|` meets `U′` and so,
+if it meets `U`, meets `U ∩ U′` (otherwise the sum is empty); and `y^{ord_W x}/x^{ord_W y}` has order
+`0` along `W`, so it restricts to `k(W)^×`. For two `P`-divisors `D`, `E` with defining functions `x`, `y`,
+define *pDivisorRatEquivalence* `ω(D, E) := π_* Σ_W (W, (y^{ord_W x}/x^{ord_W y})|_W) ∈ W_*(|D| ∩ |E|)`, the
+sum over the irreducible components `W` common to `|π^*D|` and `|π^*E|`; then `ω(E, D) = −ω(D, E)`.
+Prove:
+
+- `∂(D·α) = D·(∂α)` for every `α ∈ W_*(M)` (kresch1999b Proposition 1.8, lines 142–151, deduced from its
+  Proposition 1.9, lines 153–163, on normal varieties);
+- `D·[E] − E·[D] = ∂ω(D, E)` in `Z_*(|D| ∩ |E|)` for two `P`-divisors `D`, `E` (its Corollary 1.10, lines
+  182–190);
+- for a smooth morphism `f : M′ → M` from a scheme of finite type over `k`, with the pulled-back triple
+  acting on each integral closed `V′ ⊆ M′` by the same formulas, `f^* ∘ D· = (f^*D)· ∘ f^*` on cycles and
+  on rational equivalences, and `f^*ω(D, E) = ω(f^*D, f^*E)` (its Proposition 2.1, lines 205–207;
+  `M̂ ×_M M′` is the normalisation of `M′` in its generic fibre over `M`, Mathlib
+  `AlgebraicGeometry.Scheme.Hom.normalizationPullback`).
+
+Hence a `P`-divisor on an integral algebraic stack `𝔐` locally of finite type and quasi-separated over
+`k` — open substacks in place of open subschemes, and `x` a rational function, a morphism to `𝔸¹` on a
+nonempty open substack (kresch1999b lines 192–199) — acts by `D· : Z_*(𝔐) → Z_*(|D|)` and
+`D· : W_*(𝔐) → W_*(|D|)` on the groups above, chart by chart, and `ω(D, E) ∈ W_*(|D| ∩ |E|)` is defined with `∂(D·α) = D·(∂α)` and
+`D·[E] − E·[D] = ∂ω(D, E)` (its lines 199–204): on a smooth chart `U → 𝔐` every irreducible component of
+`U` dominates `𝔐` and carries the restricted `P`-divisor, and the identities hold componentwise. The
+fibre over `0` of a dominant `𝔐 → ℙ¹` is again one.
+
 *The canonical rational equivalence.* Let `Y` be an algebraic stack locally of finite type and
 quasi-separated over `k` (Convention 1), neither reducedness nor pure dimension being assumed,
 `i : X → Y` a local immersion, `v : Y′ → Y` a regular local immersion with normal bundle `N`,
@@ -1783,15 +1862,14 @@ those of 2.1–2.2. Prove:
   is the normal cone of `j^*N` in `N`, as `N → Y′` is flat. `β(Y′, X)` is `−ω` for the rational
   equivalence `ω` built in the proof of kresch1999b Proposition 2.3 (statement lines 242–243,
   construction lines 259–304, with the boundary of the opposite sign at line 304) from the double
-  deformation space `M°_X Y ×_Y M°_{Y′}Y → ℙ¹ × ℙ¹` of the deformation spaces above and the intersection
-  of its two `P`-divisors: kresch1999b Corollary 1.10 (lines 182–190), stated for a variety, is applied
-  on smooth charts (lines 202–204) to each irreducible
-  component of the double deformation space that dominates `ℙ¹ × ℙ¹`, with its reduced structure, and
-  the results are summed with the multiplicities of these components, so that no reducedness of `Y` is
-  used and its multiplicities enter `β`; on a smooth ambient it is the rational equivalence to which
-  VirtualFundamentalClass §2.5 applies kresch1999b Theorem 3.1 (lines 334–336 name the rational
-  equivalence of this proof),
-  and on a reduced equidimensional scheme vistoli1989 Lemmas 3.16 and 4.6 (lines 1172–1174 and
+  deformation space `M°_X Y ×_Y M°_{Y′}Y → ℙ¹ × ℙ¹` of the deformation spaces above: `ω = ω(D, E)` of the
+  `P`-divisor operations above, for the fibres `D` and `E` over `0` of the first and the second
+  projection to `ℙ¹` (kresch1999b Corollary 1.10, lines 182–190, applied on smooth charts as in lines
+  202–204), is taken on each irreducible component of the double deformation space that dominates
+  `ℙ¹ × ℙ¹`, with its reduced structure, and the results are summed with the multiplicities of these
+  components, so that no reducedness of `Y` is used and its multiplicities enter `β`; on a smooth
+  ambient it is the rational equivalence to which VirtualFundamentalClass §2.5 applies kresch1999b
+  Theorem 3.1 (lines 334–336 name the rational equivalence of this proof), and on a reduced equidimensional scheme vistoli1989 Lemmas 3.16 and 4.6 (lines 1172–1174 and
   1451–1470) give one with the same boundary by normalising a blow-up;
 - `β(Y′, X)` commutes with smooth base change `Y_1 → Y` (kresch1999b Proposition 2.1, lines 205–207, and
   lines 202–204: the formation of the rational equivalence commutes with smooth pullback) and with
@@ -1812,9 +1890,13 @@ Route: compatibility with smooth factorisations follows from compatibility with 
 because the double deformation space of `(X → Ỹ, Ỹ ×_Y Y′ → Ỹ)` is the base change of that of
 `(X → Y, Y′ → Y)` along `M°_X Ỹ → M°_X Y`, which is smooth (étale locally `Ỹ = Y × 𝔸^n` with `X` inside
 `Y × 0`, where `M°_X Ỹ = M°_X Y × 𝔸^n`), compatibly with both `P`-divisors. For the third
-statement, the two projections `p_1, p_2 : Y ×_𝔅 Y → Y` are smooth of Deligne–Mumford type and pull `Y′`
-back to the same closed substack `(Y ×_𝔅 Y) ×_𝔅 𝔅′`, because `Y′` comes from `𝔅`; compatibility with smooth factorisations, applied to `(i, i) : X → Y ×_𝔅 Y` (a local immersion, as the relative diagonal of
-`p` is unramified) through `p_1` and through `p_2`, gives `p_1^*β = p_2^*β`, and under
+statement, the two projections `p_1, p_2 : Y ×_𝔅 Y → Y` are smooth of Deligne–Mumford type and pull
+`Y′ → Y` back to the same local immersion `(Y ×_𝔅 Y) ×_𝔅 𝔅′ → Y ×_𝔅 Y`, the two pullbacks being identified
+by the 2-isomorphism `p ∘ p_1 ≅ p ∘ p_2`, because `Y′` comes from `𝔅` (it is no closed substack in general:
+for `𝔅 = BG`, `𝔅′ = Spec k` and `Y = BG × 𝔸¹`, with `G` finite étale and `|G| > 1`, it is the finite étale
+`𝔸² → BG × 𝔸²` of degree `|G|`); compatibility with smooth factorisations, applied to
+`(i, i) : X → Y ×_𝔅 Y` (a local immersion, as the relative diagonal of `p` is unramified) through `p_1`
+and through `p_2`, gives `p_1^*β = p_2^*β`, and under
 `C_{X/Y×_𝔅Y} = i^*T_{Y/𝔅} ×_X C` these two pullbacks are the projection and the action
 (behrend-fantechi1997 lines 781–809 and the proof of Proposition 3.5, lines 894–897, whose two inverse
 images of `Y′` in `Y × Y` differ). For the fourth statement, generators `f_1, …, f_c` of the ideal of `Y′`
@@ -1828,8 +1910,12 @@ No step uses reducedness or pure dimension of `Y`, `𝔅` or `𝔐`. This extend
 be neither smooth nor reduced. *Needs:* for the groups `Z_*`, `W_*` of algebraic stacks, 2.1, 2.2 and
 3.1 (flat pullback of cycles and of rational equivalences on schemes), VirtualFundamentalClass §0.2 and
 StackPointsAndResidualGerbes §0.3; for the deformation space, SchemeAndStackFoundations §5.5,
-VirtualFundamentalClass §1.5 and gap:normal-cones-of-local-immersions; for `β`, these and
-VirtualFundamentalClass §2.5; for the compatibility with smooth factorisations and the two invariance
+VirtualFundamentalClass §1.5 and gap:normal-cones-of-local-immersions; for the `P`-divisor operations,
+2.1, 2.2, 3.1, 3.2 (the norm formula for the pushforward from the normalisation), Mathlib
+`AlgebraicGeometry.Scheme.ord`, `AlgebraicGeometry.Scheme.Hom.normalization`,
+`AlgebraicGeometry.Scheme.Hom.fromNormalization` and `AlgebraicGeometry.Scheme.Hom.normalizationPullback`,
+and Tau Ceti `TauCeti.AlgebraicGeometry.isFinite_fromNormalization_of_isJapanese`; for `β`, all of these
+and VirtualFundamentalClass §2.5; for the compatibility with smooth factorisations and the two invariance
 statements, also VirtualFundamentalClass §§1.6, 9.1.
 
 **Checks.**
@@ -1861,8 +1947,12 @@ statements, also VirtualFundamentalClass §§1.6, 9.1.
   uses. Taking the cycles of the atlas with no shift would put it in degree `1`.
 - A stack that is not quasi-compact: for `Y = ⊔_ℕ 𝔸²` with the plane example on every component
   (`X = ⊔_ℕ {0}`, `Y′ = ⊔_ℕ {y = 0}`), `N ×_Y C = ⊔_ℕ 𝔸³` and `β = (c·ν/η)_{n ∈ ℕ}`, with infinitely many
-  nonzero components and finitely many over each quasi-compact open; it is an element of `W_*` of
-  `⊔_ℕ 𝔸³`, and of no direct sum as in 2.2.
+  nonzero components and finitely many over each quasi-compact open; it is an element of `W_2` of
+  `⊔_ℕ 𝔸³`, and of no direct sum over integral closed substacks as in 2.2. Unbounded dimension leaves
+  every graded piece: for `Y = ⊔_{n ≥ 1} 𝔸ⁿ` with `X` the origins and `Y′ = ⊔_n {x_1 = 0}`,
+  `N ×_Y C = ⊔_n 𝔸^{n+1}` and the `n`-th component of `β` is `ν/ξ_1 ∈ W_n(𝔸^{n+1})`, so `β` lies in `W_*`
+  and in no `⊕_i W_i`; likewise `[Y]` has the part `[𝔸ⁿ]` in degree `n`. On each chart of finite type,
+  which meets finitely many components, the family is a finite sum.
 - Agreement with 2.2 on a stack of Convention 1: on `[𝔸¹/μ₂]` with the étale atlas `𝔸¹_x`, the family of
   `div(y)`, `y = x²`, is `div(x²) = 2·[0]` on the atlas, which descends to `2·[Bμ₂]`, the value of
   `div(y)` in 2.2's Check.
@@ -1886,6 +1976,26 @@ statements, also VirtualFundamentalClass §§1.6, 9.1.
   `Spec k[u] = C_{0/𝔸¹}` over `t = 0`, as in VirtualFundamentalClass §1.5 and SchemeAndStackFoundations §5.5
   with `0` and `∞` exchanged. Without removing the strict transform of `𝔸¹ × 0` from the blow-up, the
   fibre over `0` would be `𝔸¹ ∪ ℙ¹`, two lines meeting in a point, not the cone.
+- `ω(D, E)` and its sign on the plane example: the double deformation space over `𝔸¹ × 𝔸¹` is
+  `M = Spec k[s, t, ξ, η, ν]/(sη − tν)` (`x = sξ`, `y = sη = tν`), integral and normal, being a hypersurface
+  singular only along `s = t = η = ν = 0`, of codimension `3`. For the fibres `D`, `E` over `0` of `s` and
+  `t`, `[D] = [s = t = 0] + [s = ν = 0]` and `[E] = [s = t = 0] + [t = η = 0]`, so `D·[E] = [s = t = η = 0]`
+  and `E·[D] = [s = t = ν = 0]`. The common component `W = {s = t = 0} = 𝔸³_{ξ,η,ν}` has
+  `ord_W s = ord_W t = 1`, so `ω(D, E) = (W, t/s) = (W, η/ν)` and `∂ω(D, E) = [η = 0] − [ν = 0]`, which is
+  `D·[E] − E·[D]`; then `β = −ω(D, E) = ν/η`, the first Check with `c = 1`. The exponents exchanged,
+  `(W, s/t)`, give the opposite boundary.
+- The defining function is part of a `P`-divisor: over `k = ℚ` on `M = 𝔸²_{a,b}`, `(M, M ∖ {a = 0}, a)` and
+  `(M, M ∖ {a = 0}, 2a)` give the same Cartier divisor and the same `D·[V]` for every `V`, while for
+  `α = (M, a) ∈ W_1(M)` the first gives `D·α = ({a = 0}, a/a) = 0` and the second
+  `D·α = ({a = 0}, a/(2a)) = ({a = 0}, 1/2) ≠ 0`, both with boundary `0 = D·(∂α)`, as `∂α = [a = 0]` lies
+  in `|D|` (kresch1999b Remark 1.7, lines 139–141). An operation on `W_*` defined from the Cartier
+  divisor alone is not well posed.
+- The support is read on the normalisation: for `char k ∉ {2, 3}` and the nodal cubic
+  `M : v² = u²(u + 1)`, normalised by `𝔸¹_τ` with `u = τ² − 1`, `v = τ(τ² − 1)` and the node at `τ = ±1`,
+  `φ = (τ − 1)/(τ + 1)` is a unit off the node and its Weil divisor is `0`, its orders `1` and `−1` on the
+  two branches adding at the node, while `|D| = {node}`; so `(M, M ∖ {node}, φ)` is a `P`-divisor. For
+  `α = (M, τ + 2) ∈ W_0(M)`, with values `3` at `τ = 1` and `1` at `τ = −1`, `D·α = (node, 3) + (node, 1)`,
+  which is `(node, 3) ≠ 0`; a support read off the Weil divisor would be empty and lose it.
 
 ### 8.2 Regular-immersion pullback over a base of pure dimension
 
@@ -2087,8 +2197,10 @@ Conventions 1 and 7, separated or not; and 5.4's degree is taken on `X_b`, which
 ### Dependencies
 
 Layers 2–6; VirtualFundamentalClass §§0.2, 1.5–1.6, 2.5, 5.5, 6.4–6.5, 8.1, 9.1, 9.3, 9.5;
-gap:normal-cones-of-local-immersions; StackPointsAndResidualGerbes §0.3; SchemeAndStackFoundations §5.5.
-Within 8.1, the groups `Z_*`, `W_*` of algebraic stacks and the deformation space precede `β`. Within the layer,
+gap:normal-cones-of-local-immersions; StackPointsAndResidualGerbes §0.3; SchemeAndStackFoundations §5.5;
+Mathlib's normalisation of schemes and Tau Ceti's finiteness of it (8.1).
+Within 8.1, the groups `Z_*`, `W_*` of algebraic stacks, the deformation space and the `P`-divisor
+operations precede `β`. Within the layer,
 8.1 → 8.2 → 8.3, and 8.2 → 8.4.
 
 ## Layer 9: obstruction theories of spaces of maps from curves
@@ -2303,7 +2415,12 @@ also SchemeAndStackFoundations §§5.2–5.4.
 
 - `X = ℙ^r`, `g = 0`, degree `d`, `b = n − 3`: the virtual dimension is `(r + 1)d + r + n − 3`, which for
   `r = 2`, `d = 1`, `n = 0` is `2`, the dimension of the space of lines in `ℙ²`.
-- `X` with `c_1(T_X) = 0` and of pure dimension `3`: the virtual dimension is `n` for every `g` and `β`.
+- `X` proper of pure dimension `3` with `c_1(T_X) = 0`, over a base of pure dimension `b = 3g − 3 + n`:
+  `δ = c_1(T_X) · β = 0` and the virtual dimension is `3g − 3 + n + 3(1 − g) = n` for every `g` and `β`
+  (for `g = 2`, `n = 0` it is `3 + 0 − 3 = 0`). The value `n` needs this base: over `𝔅 = Spec k` (`b = 0`)
+  it is `3(1 − g)`, which for `g = 0` and an abelian threefold `X` is `3`, the dimension of the space of
+  maps `ℙ¹ → X`, which is `X` itself since every such map is constant, with `F^*T_X = O³`,
+  `H⁰(ℙ¹, O³) = k³` and `H¹(ℙ¹, O³) = 0`.
 - `X = Spec k`: `δ = 0`, `dim X = 0`, and the virtual dimension is `b`.
 - The rank is that of `F^*T_X`, not `dim X`, when `X` is not of pure dimension: for `X = Spec k ⊔ ℙ¹`,
   `𝔅 = Spec k`, `C = ℙ¹` and `F` constant onto the point `Spec k`, `F^*T_X = 0`, so `ℓ = 0`, `δ = 0` and
