@@ -10,8 +10,8 @@ the zeta-normalized `L₄` determinant of every family of explicit weight-four c
 states its Theorem 1.2 for the inductively defined groups; explicit existence is stronger than
 that statement and explicit every-family rationality is a consequence of it (README §6.4). For
 fields with a complex place the roadmap's proof of existence uses the combinatorial lift
-`G₄(F) → L₄(F)` of README §5.7, three steps of which no cited source proves; the every-family
-theorem does not use it.
+`G₄(F) → L₄(F)` of README §5.7, three steps of which no cited source proves. The every-family
+statement does not use that lift.
 
 The explicit cycle condition is written on native carriers by testing the raw cobracket
 `[x] ↦ [x]₃ ⊗ u(x)` against every function on the field that satisfies the explicit

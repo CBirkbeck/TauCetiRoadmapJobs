@@ -3416,7 +3416,7 @@
     },
     {
       "slug": "mixed-tate-hodge-realization",
-      "needs": "For every number field F and embedding σ: F → ℂ, an exact ℚ-linear tensor functor from MT(F) to the mixed ℚ-Hodge structures of HodgeStructures Layer L2, compatible with weight filtrations and sending ℚ(n) to the Tate structure of weight −2n, whose induced map Ext¹_{MT(F)}(ℚ(0),ℚ(n)) → ℂ/(2πi)ⁿℚ followed by projection to ℝ(n−1) is the Beilinson regulator at σ of the PS.3.0 class, for n ≥ 1.",
+      "needs": "For every number field F and embedding σ: F → ℂ, an exact ℚ-linear tensor functor from MT(F) to the graded-polarizable mixed ℚ-Hodge structures (HodgeStructures Layer L2, with the tensor product of MixedHodgeModulesAndIrregularHodgeTheory §3.1 on a point), compatible with weight filtrations and sending ℚ(n) to the Tate structure of weight −2n, whose induced map Ext¹_{MT(F)}(ℚ(0),ℚ(n)) → ℂ/(2πi)ⁿℚ followed by projection to ℝ(n−1) is the Beilinson regulator at σ of the PS.3.0 class, for n ≥ 1.",
       "supplier": "PeriodsAndSpecialValues",
       "section": "PS.9.8–PS.9.9"
     },
