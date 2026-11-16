@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RefinedTraceMethodsPartII~4",
+  "head": "004cc5895437512d9c38b629b935559ddc9a3b79",
+  "pr": 2410,
+  "folder": "RefinedTraceMethodsPartII",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 2,
+  "notes": "Full review of an unchanged head (previous review had no open finding). Two P2 wording findings: README line 789 (§8.6 completeness) shares 20 consecutive words with akn24 Proposition 2.11, and line 690 (§8.1 pre-prismatic and relatively qrsp definitions) follows akn-delta Definitions 2.2 and 9.2 clause by clause (18-word run); replacement text given for both. Mathematics: all fifteen sampled targets and every headline recomputed (adversarial table with values); 113 source locators checked in 9 sources; 92 cross-roadmap section ids resolved on main or at open heads; both declared gaps precise, minimal and matching plan.json. Gate re-run: every check passes; depcheck 236 roadmaps, 2232 edges, 0 problems; nothing outside the folder. Suggested.lean elaborates with three sorry warnings only; #check on all six declarations matches the README; one-tactic probe closes none (no padding). Pull request text agrees with the head. Four source issues recorded (speirs-axes Theorems 1-2, akn-delta Proposition 8.6, hesselholt-cusp-polytopes Corollary 1.7, akn24 Remark 5.3).",
+  "text": "02b3ae7efe525087"
+ }
+}
