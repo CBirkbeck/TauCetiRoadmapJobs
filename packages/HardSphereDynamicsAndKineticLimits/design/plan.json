@@ -2346,20 +2346,29 @@
      ],
      "locator": {
       "source": "BGSS2023",
-      "where": "Theorem 1, lines 316–321; GST2013 Theorem 4 and Remark 3.1.1 lines 668–696, Theorem 8 lines 2069–2080; Lanford1975"
+      "where": "Theorem 1, lines 316–321 (prints the a.e. conclusion and uniform convergence of F^ε_1 on compact sets, of which the ess-sup clause is the representative-free form); GST2013 Theorem 4 and Remark 3.1.1 lines 668–696, Theorem 8 with Definition 6.2.1 lines 2041–2055 and 2069–2080 (averages against compactly supported continuous functions of the velocities, locally uniformly off the diagonals); Lanford1975. The bounded-continuous conclusion is printed in none of these and follows from the a.e. one (API lanfordStatement_weak_of_ae), the step BGSS2023 lines 370–371 take without comment"
      },
      "prerequisites": [
       "target:1.1",
       "target:1.3",
       "target:9.5",
       "target:9.6",
-      "target:10.3"
+      "target:10.2",
+      "target:10.3",
+      "mathlib:GaussianFourier.integral_rexp_neg_mul_sq_norm",
+      "mathlib:MeasureTheory.tendsto_integral_of_dominated_convergence",
+      "mathlib:Filter.tendsto_iff_seq_tendsto"
      ],
      "api": [
       {
        "name": "lanfordStatement_zero",
        "role": "initial time",
        "statement": "At t = 0 every conclusion holds by §9.6."
+      },
+      {
+       "name": "lanfordStatement_weak_of_ae",
+       "role": "the first conclusion follows from the second",
+       "statement": "For a probability density f⁰ on 𝕋^d × E with f⁰ ≤ C₀ e^{−β₀|v|²/2}, a mild solution f on [0, T₀] with datum f⁰, t ∈ [0, T₀] and n ≥ 1: if F^{ε_k}_n(t) → f(t)^{⊗n} a.e. along every sequence ε_k → 0⁺, then ∫ F^ε_n(t) g → ∫ f(t)^{⊗n} g as ε → 0⁺ for every bounded measurable g. Route: ∫ F^ε_n(t) = μ_ε^{−n} E[descFactorial N n] is independent of t (9.5) and tends to 1 (9.6, ρ⁰ ≤ C₀(2π/β₀)^{d/2}); ∫ f(t) = ∫ f⁰ = 1 by integrating the mild identity (1.1 translation invariance, Fubini under the bound of 10.2, ψ = 1 of 10.2); Scheffé by dominated convergence of (f(t)^{⊗n} − F^{ε_k}_n(t))^+ ≤ |f(t)^{⊗n}| and ∫|F − f^{⊗n}| = ∫F − 1 + 2∫(f^{⊗n} − F)^+; sequences to the filter 𝓝[>] 0 by Filter.tendsto_iff_seq_tendsto."
       }
      ],
      "tests": [
@@ -2400,7 +2409,7 @@
      ],
      "locator": {
       "source": "BGSS2023",
-      "where": "Corollary 1.2.1, lines 344–349, proof lines 352–371"
+      "where": "Corollary 1.2.1, lines 344–349, proof lines 352–371; the hypotheses here are the convergence of the two integrals, which that proof draws at lines 370–371 from the a.e. clause of Theorem 1, the step given by API lanfordStatement_weak_of_ae of 10.4"
      },
      "prerequisites": [
       "target:1.1",
