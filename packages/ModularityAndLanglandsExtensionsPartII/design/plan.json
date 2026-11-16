@@ -5766,7 +5766,7 @@
     },
     {
       "slug": "unobstructed-auxiliary-prime",
-      "needs": "in Layer 3, the input of Newton–Thorne I Proposition 8.3 not covered by the template: unobstructedness of the local deformation problems at the ramified primes for all but finitely many `p` (Weston, wes04) together with an auxiliary prime `q_a > p` with formally smooth local lifting ring, giving patched modules of full support (nt21 pp. 92–96).",
+      "needs": "in Layer 3, the input of Newton–Thorne I Proposition 8.3 not covered by the template: unobstructedness of the local deformation problems at the ramified primes for all but finitely many `p` (Weston, wes04 Proposition 3.2 with Remark 3.3, pp. 5–6, for principal-series and supercuspidal components and Proposition 5.3, p. 10, for special components: `H⁰(ℚ_l, ad⁰ r̄(1)) = 0` at each ramified prime `l ≠ p`) together with an auxiliary prime `q_a > p` with formally smooth local lifting ring, giving patched modules of full support (nt21 pp. 92–96).",
       "supplier": "GL2ModularityLifting",
       "section": "Layer 3"
     },
