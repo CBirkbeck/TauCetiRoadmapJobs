@@ -1,0 +1,18 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-DESIGN-VirtualFundamentalClassPartII~16",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-DESIGN-VirtualFundamentalClassPartII~16",
+   "fix": "FIX-DESIGN-VirtualFundamentalClassPartII~17",
+   "from": "bfade431cc7f5649dab7dbb5f3f51c7f820e4d7b",
+   "head": "0959f92960df6b1a47e5b079b9277d6b2826610e",
+   "findings": 1,
+   "lines": 84
+  },
+  "notes": "every finding of `REV-DESIGN-VirtualFundamentalClassPartII~16` (1) was P3 and `FIX-DESIGN-VirtualFundamentalClassPartII~17` repaired them at `0959f92`, changing 84 lines of the design; no further review round was filed"
+ }
+}
