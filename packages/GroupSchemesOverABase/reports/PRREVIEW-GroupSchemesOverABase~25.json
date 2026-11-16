@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GroupSchemesOverABase~25",
+  "head": "c44b9b3ecf1e01be523aa678c17b61745a08744f",
+  "pr": 1522,
+  "folder": "GroupSchemesOverABase",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 40 changed lines since 446fe51: the two Provenance paragraphs checked against the cited repository at c496df0 (README, lean-toolchain, 5 listings, 9 files) and Stacks Tag 047T; previous R01 repaired (047R, 047O named in README and description); one P3: the absence sentence omits Tag 047T (Groupoids/GroupSchemeProperties/Immersion.lean), the immersion case of 4.5's monomorphism theorem. Gate: every counter 0 at the worker, build 0; depcheck 0 problems with the candidate order; lake env lean on Suggested.lean gives 25 sorry warnings only. Of the seeded sample only 4.5 touches the change.",
+  "text": "72b004e31974db6e"
+ }
+}
