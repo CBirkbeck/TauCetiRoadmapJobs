@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsGamma~8",
+  "head": "96a40442d0575fd044734406d110734ff33fdf7c",
+  "pr": 2191,
+  "folder": "SpecialFunctionsGamma",
+  "date": "2026-11-16",
+  "findings": 6,
+  "blocking": 2,
+  "notes": "Full review. Findings: R01 (P1) 4.6 needs a pointwise Fourier convergence test that no layer, supplier or pinned declaration provides; R02 (P2) the x > 0 case of 7.3 is ZerosOfLFunctions 1.3a on main, uncited; R03-R06 (P3) Lean integrability of 9.3, build diagram against Dependencies, two Checks for temmePhi, description lists ExplicitZetaBounds as open. Previous finding (description, AnalyticNumberTheoryPartII) repaired. Gate: all checks 0; depcheck 0 problems; Suggested.lean elaborates with 81 sorry warnings only; one-tactic probe closes none. Adversarial table: 39 rows with computed values (all 15 sampled targets and every layer). Sources: DLMF Chapter 5 equations of every layer and Whittaker-Watson Ch. XII (1920 edition) checked against the text; the other nine books not readable legally (listed under Not verifiable). 25 cross-roadmap citations resolved on main and at the open head of ExplicitNumberFields.",
+  "text": "b9e47e7841a1b940"
+ }
+}
