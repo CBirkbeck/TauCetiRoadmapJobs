@@ -107,14 +107,15 @@ theorem contDiffOn_spectralFunction_iff {Ω : Set (Fin n → ℝ)} (hΩ : IsOpen
         {B | eigenvalueVector B ∈ Ω} ↔ ContDiffOn ℝ 1 f Ω := by
   sorry
 
-/-- **Concavity of spectral functions** (Spruck 2005, Theorem 1.4 and its proof). For an open
-convex set `Γ ⊆ ℝⁿ` invariant under coordinate permutations and a symmetric, concave `C¹`
-function `f` on `Γ`, the spectral function `A ↦ f(λ(A))` is concave on the spectral domain
-`{A | λ(A) ∈ Γ}`; in particular (at `f = 0`) the spectral domain is convex. -/
-theorem concaveOn_spectralFunction {Γ : Set (Fin n → ℝ)} (hΓo : IsOpen Γ) (hΓc : Convex ℝ Γ)
+/-- **Concavity of spectral functions** (Spruck 2005, Theorem 1.4 and its proof, for a smooth `f`
+on an open convex cone; README §1.4 gives a route through Ky Fan's inequality and majorization
+that needs neither differentiability nor openness). For a convex set `Γ ⊆ ℝⁿ` invariant under
+coordinate permutations and a symmetric function `f` concave on `Γ`, the spectral function
+`A ↦ f(λ(A))` is concave on the spectral domain `{A | λ(A) ∈ Γ}`; in particular (at `f = 0`)
+the spectral domain is convex. -/
+theorem concaveOn_spectralFunction {Γ : Set (Fin n → ℝ)}
     (hΓs : ∀ (σ : Equiv.Perm (Fin n)), ∀ μ ∈ Γ, μ ∘ σ ∈ Γ) {f : (Fin n → ℝ) → ℝ}
-    (hfs : ∀ (σ : Equiv.Perm (Fin n)), ∀ μ ∈ Γ, f (μ ∘ σ) = f μ)
-    (hf1 : ContDiffOn ℝ 1 f Γ) (hf : ConcaveOn ℝ Γ f) :
+    (hfs : ∀ (σ : Equiv.Perm (Fin n)), ∀ μ ∈ Γ, f (μ ∘ σ) = f μ) (hf : ConcaveOn ℝ Γ f) :
     ConcaveOn ℝ {A : hermitianMatrices 𝕜 n | eigenvalueVector A ∈ Γ}
       (fun A ↦ f (eigenvalueVector A)) := by
   sorry
@@ -159,17 +160,17 @@ theorem garding {N m : ℕ} {p : MvPolynomial (Fin N) ℝ} {a : Fin N → ℝ}
   sorry
 
 /-- **Gårding's theorem**, independence of the direction (Spruck 2005, Theorem 2.2). A
-hyperbolic polynomial of degree `m ≥ 1` is hyperbolic in every direction `b` of its Gårding cone,
-with the same cone. -/
+hyperbolic polynomial is hyperbolic in every direction `b` of its Gårding cone, with the same
+cone. At degree `m = 0` the polynomial is a positive constant and every cone is `ℝ^N`. -/
 theorem isHyperbolic_and_gardingCone_eq_of_mem {N m : ℕ} {p : MvPolynomial (Fin N) ℝ}
-    {a b : Fin N → ℝ} (hp : IsHyperbolic p m a) (hm : 1 ≤ m) (hb : b ∈ gardingCone p a) :
+    {a b : Fin N → ℝ} (hp : IsHyperbolic p m a) (hb : b ∈ gardingCone p a) :
     IsHyperbolic p m b ∧ gardingCone p b = gardingCone p a := by
   sorry
 
-/-- The elementary symmetric polynomial `σ_k`, `1 ≤ k ≤ n`, is hyperbolic of degree `k` in the
+/-- The elementary symmetric polynomial `σ_k`, `k ≤ n`, is hyperbolic of degree `k` in the
 direction `e = (1, …, 1)`, and its Gårding cone is `Γ_k` (Spruck 2005, §2;
-Dinew–Kołodziej 2014, §1). -/
-theorem isHyperbolic_esymm_and_gardingCone_eq {n k : ℕ} (hk : 1 ≤ k) (hkn : k ≤ n) :
+Dinew–Kołodziej 2014, §1). At `k = 0`, `σ_0 = 1` and both cones are `ℝⁿ`. -/
+theorem isHyperbolic_esymm_and_gardingCone_eq {n k : ℕ} (hkn : k ≤ n) :
     IsHyperbolic (esymm (Fin n) ℝ k) k 1 ∧
       gardingCone (esymm (Fin n) ℝ k) 1 = hessianCone n k := by
   sorry
