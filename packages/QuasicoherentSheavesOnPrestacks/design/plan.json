@@ -853,6 +853,7 @@
       "where": "Theorem D.6.3.1 and Corollaries D.6.3.3-D.6.3.4, pp. 2177-2178; Propositions D.6.1.3 and D.6.2.3, pp. 2174-2177; GR-I Chapter I.3, Theorem 1.3.4 and Corollary 1.3.5, pp. 146-147"
      },
      "prerequisites": [
+      "target:1.1",
       "target:1.2",
       "target:1.3",
       "target:1.5",
@@ -871,7 +872,8 @@
       "roadmap:PrismaticCohomologyPartII §4.0",
       "roadmap:HypercompletenessAndCoherence §9.4.1",
       "roadmap:HypercompletenessAndCoherence §11.5.2",
-      "roadmap:HypercompletenessAndCoherence §11.5.3"
+      "roadmap:HypercompletenessAndCoherence §11.5.3",
+      "mathlib:AlgebraicGeometry.Scheme.fpqcTopology"
      ],
      "api": [
       {
@@ -893,6 +895,11 @@
        "name": "cech_imports",
        "role": "compatibility",
        "statement": "Restricted along theta and theta iota to Cech nerves of faithfully flat maps, the equivalence is that of LanglandsParameterStacks 1.7 and of PrismaticCohomologyPartII 4.0 QCohPrestack.flatDescent."
+      },
+      {
+       "name": "affines_sheaves",
+       "role": "structure",
+       "statement": "Affines are hypercomplete fpqc sheaves in each context: Spec B = Map_T(B, -) preserves finite products, and for a flat hypercover A -> A_. the case M = A gives A = lim A_n on underlying modules; the forgetful functors of AnRing and CAlg^cn to D(Z)_{>=0} (1.1) and of CRing to abelian groups are conservative and preserve limits, so A = lim A_n among test rings and Map_T(B, -) preserves it (in CRing: the equalizer of A_0 => A_1); on Cech nerves in CRing this is the affine form of Mathlib's Subcanonical instance for AlgebraicGeometry.Scheme.fpqcTopology."
       }
      ],
      "tests": [
@@ -915,6 +922,11 @@
        "name": "Fp_not_cover",
        "kind": "non-example",
        "statement": "Z -> F_p kills Q, so descent fails."
+      },
+      {
+       "name": "affine_line",
+       "kind": "non-example",
+       "statement": "Classical, Spec Z[t] (value: the underlying set). Along Z -> Z[1/2] x Z[1/3] the equalizer is the pairs (a, b) equal in Z[1/6], i.e. Z[1/2] cap Z[1/3] = Z. Along Z -> F_p x Z[1/p], surjective on spectra and not flat, the mixed factors of the tensor square vanish, the two cofaces to F_p x Z[1/p] coincide, and the equalizer F_p x Z[1/p] contains (1, 0), outside the image of Z: without flatness affines are not sheaves."
       },
       {
        "name": "dual_numbers",
@@ -1725,7 +1737,7 @@
       {
        "name": "geometric_quotient",
        "role": "structure",
-       "statement": "For every G the atlas X -> [X/G] is an fpqc surjection: X -> |G^{x_S .} x_S X| is an effective epimorphism of PreStk_T (its Cech nerve is the effective action groupoid, InfinityTopoi 7.1.1), its hypersheafification is one of hypercomplete fpqc sheaves (InfinityTopoi 7.4.1), so every point Spec R -> [X/G] lifts to X after an fpqc cover {R -> R_i} (3.1, local lifting), along which the base change of the atlas is G x_S Spec R_i -> Spec R_i, a base change of G -> S split by the unit. If S and X are affine and G is affine over S, [X/G] has affine diagonal: X x X -> [X/G] x [X/G] is an fpqc surjection, the base change of the diagonal along it is X x_{[X/G]} X = G x_S X -> X x X (effectivity, L left exact, affines fixed by L, 3.2), a map of affines, and affineness is local on the target (4.1); so the atlas is affine. If moreover G is flat over S, the atlas is flat (its base change along a point becomes flat after R -> prod R_i, and flatness descends along faithfully flat maps, 6.1), so [X/G] is geometric (6.2); flatness of G gives the flatness of the atlas, not its surjectivity."
+       "statement": "For every G the atlas X -> [X/G] is an fpqc surjection: X -> |G^{x_S .} x_S X| is an effective epimorphism of PreStk_T (its Cech nerve is the effective action groupoid, InfinityTopoi 7.1.1), its hypersheafification is one of hypercomplete fpqc sheaves (InfinityTopoi 7.4.1), so every point Spec R -> [X/G] lifts to X after an fpqc cover {R -> R_i} (3.1, local lifting), along which the base change of L X -> [X/G] is L(G x_S Spec R_i) -> Spec R_i (effectivity, L left exact, L Spec R_i = Spec R_i by 3.2), the hypersheafification of a base change of G -> S split by the unit; when X and G x_S Spec R_i are hypercomplete fpqc sheaves (for instance X affine and G affine over S, 3.2, 4.1), L X = X and this is the base change of the atlas itself, the projection G x_S Spec R_i -> Spec R_i; for the constant group Z/2 it is not (test realization_diagonal). If S and X are affine and G is affine over S, [X/G] has affine diagonal: X x X -> [X/G] x [X/G] is an fpqc surjection, the base change of the diagonal along it is X x_{[X/G]} X = G x_S X -> X x X (effectivity, L left exact, affines fixed by L, 3.2), a map of affines, and affineness is local on the target (4.1); so the atlas is affine. If moreover G is flat over S, the atlas is flat (its base change along a point becomes flat after R -> prod R_i, and flatness descends along faithfully flat maps, 6.1), so [X/G] is geometric (6.2); flatness of G gives the flatness of the atlas, not its surjectivity."
       },
       {
        "name": "trivial",
@@ -1762,7 +1774,7 @@
       {
        "name": "realization_diagonal",
        "kind": "non-example",
-       "statement": "For Gamma = Z/2 the fibre of the diagonal of the constant prestack B Gamma over the base points at R is Spec R + Spec R (prestack coproduct); for R = Z its value at Z x Z has 2 points, while an affine Y has Y(Z x Z) = Y(Z) x Y(Z), 4 points; so the realization has no affine diagonal. Its hypersheafification is also the quotient by L Gamma = Spec(Z x Z), affine over Spec Z, and the fibre becomes Spec(R x R), affine."
+       "statement": "For Gamma = Z/2 the fibre of the diagonal of the constant prestack B Gamma over the base points at R is Spec R + Spec R (prestack coproduct); for R = Z its value at Z x Z has 2 points, while an affine Y has Y(Z x Z) = Y(Z) x Y(Z), 4 points; so the realization has no affine diagonal. Its hypersheafification is also the quotient by L Gamma = Spec(Z x Z), affine over Spec Z, and the fibre becomes Spec(R x R), affine. Accordingly the base change of the atlas Spec Z -> [Spec Z/Gamma] along itself is L Gamma = Spec(Z x Z), with 4 points at Z x Z (the idempotents of Z x Z), not the constant prestack Gamma, with 2: X is a sheaf, Gamma x Spec Z is not."
       }
      ]
     },
@@ -1893,6 +1905,7 @@
      "prerequisites": [
       "target:2.5",
       "target:3.1",
+      "target:3.2",
       "target:3.3",
       "target:5.3",
       "target:6.2",
@@ -1926,7 +1939,7 @@
       {
        "name": "affine_diagonal",
        "role": "structure",
-       "statement": "For X affine, [X/G]^natural has affine diagonal: every object of [X/G](Spec R) is fppf-locally in the image of the groupoid prestack (SchemeAndStackFoundations 1.18 Stack.stackification_locally_essSurj), so points of the square lift to h_X x h_X after an fppf cover; the base change of the diagonal along h_X x h_X is h_{G x_k X} -> h_X x h_X (effectivity of 7.1, L_fppf left exact, h_X and h_{G x_k X} fppf sheaves), a map of affines; 4.1 in its fppf form."
+       "statement": "For X affine, [X/G]^natural has affine diagonal: every object of [X/G](Spec R) is fppf-locally in the image of the groupoid prestack (SchemeAndStackFoundations 1.18 Stack.stackification_locally_essSurj), so points of the square lift to h_X x h_X after an fppf cover; the base change of the diagonal along h_X x h_X is h_{G x_k X} -> h_X x h_X (effectivity of 7.1, L_fppf left exact, h_X and h_{G x_k X} affines, hence fpqc sheaves by 3.2 and so fppf sheaves by 3.1), a map of affines; 4.1 in its fppf form."
       }
      ],
      "tests": [
