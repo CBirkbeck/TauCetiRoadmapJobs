@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DynamicalDegreesOfRationalMaps~4",
+  "head": "2635b0ca6e1a681433e2d0c30325b5560e042276",
+  "pr": 2431,
+  "folder": "DynamicalDegreesOfRationalMaps",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review at an unchanged head; the previous review listed no finding. Seeded sample of 15 sections: 76 source locators checked against the cached texts, all supporting their claims (lazarsfeld2004 and fulton1998 uncertified, not read). Adversarial table of 22 rows with recomputed values, covering every sampled section and all 18 Lean theorems. 101 library citations opened at the pins; 34 cross-roadmap sections resolved on main or at open heads. Gate rerun: all checks 0, OK; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 18 sorry warnings only; one-tactic probe closes 0 of 18. Pull request text agrees with the head. Five source errata recorded.",
+  "text": "b7f8aef317f34422"
+ }
+}
