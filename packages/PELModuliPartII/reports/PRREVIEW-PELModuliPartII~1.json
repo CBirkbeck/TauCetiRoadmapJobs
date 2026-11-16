@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PELModuliPartII~1",
+  "head": "33e42347d2ea6cf5dc35d9854b732ae46d197c54",
+  "pr": 2453,
+  "folder": "PELModuliPartII",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 2,
+  "notes": "Full review. Gate: all checks pass; depcheck 257 roadmaps, 2447 edges, 0 problems; Suggested.lean elaborates with no messages (no declarations; docstring names every headline as not statable, confirmed at the pins). Seeded sample of 15 targets (0.1, 2.1, 3.3, 3.6, 3.7, 4.6, 5.1, 5.2, 5.4, 5.6, 6.7, 7.3, 7.10, 8.3, 8.6) checked against the cached texts of Mih19, LZ22, Cho18, LL22, Wu16, HLSY23, Howard19, Kraemer03, RSZ21, RSZ20, LTXZZ22 and RZ96 (about 55 locators); no README locator is flagged unverified. 87 cross-roadmap section ids in 17 roadmaps resolved; 21 Mathlib/Tau Ceti declarations opened at the pins. 4 declared gaps match plan.json and are owned nowhere else. Blocking: R01 (LTXZZ22 4.2/5.2 models planned here and also contracted from ShimuraVarieties by SelmerIwasawaCohomologyPartII), R02 (polarization-kernel order stated with the hermitian dual instead of the trace dual). P3: R03 (Exo(n,0) locator), R04 (description sentence on Suggested.lean).",
+  "text": "a099947133ca90c0",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The LTXZZ22 §§4.2/5.2 integral models have two plans",
+    "where": "SelmerIwasawaCohomologyPartII gap:native-shimura must cite PELModuliPartII §§8.1–8.4, 8.7",
+    "raised": "PRREVIEW-PELModuliPartII~1"
+   }
+  ]
+ }
+}
