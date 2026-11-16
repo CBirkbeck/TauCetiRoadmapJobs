@@ -200,7 +200,18 @@ Variants kept here, each differing in one stated respect from an existing object
 - the cup product of §5.1 is the ungraded product on the carrier of Layer 1; §6.1 proves that it
   is DGAInfinity Layer 8's brace expression up to an explicit sign;
 - `HH_1(R,R) ≅ Ω¹_{R/k}` of §3.4 is for the classical complex of every commutative `R`, flat or
-  not, where RefinedTraceMethods §1.9 states `ε₁` on derived Hochschild chains.
+  not, where RefinedTraceMethods §1.9 states `ε₁`, and KTheoryFiniteLocalFields §4.0 checks
+  `HH₁(A/ℤ) = Ω¹_{A/ℤ}`, both on derived Hochschild chains;
+- the homological computation of §8.4 (`homological_hkr_mvPolynomial`), that
+  `ε^cl_n : Ω^n_{R/k} → HH_n(R,R)` is an isomorphism for `R = MvPolynomial (Fin m) k` with the
+  classes `ε^cl_n(dX_I)` as a basis, is the polynomial case of the smooth HKR comparison
+  `HH_n(A/k) ≅ Ω^n_{A/k}` of KTheoryFiniteLocalFields §4.0, which is kept there: §4.0 states it on
+  derived Hochschild chains, for every smooth algebra, without naming the map, and RefinedTraceMethods
+  §1.9 names the map `ε_n` on those chains; §8.4 states it on the classical complex (which §6.3
+  identifies with the derived chains, `R` being free over `k`), with the antisymmetrisation as the map
+  and an explicit basis, over every `k`, and proves it from the Koszul resolution of §8.2 with no
+  smoothness input and without gap:smooth-hkr-antisymmetrisation, which §6.4(d) uses for the general
+  smooth case.
 
 Generality. The ground ring `k` is an arbitrary commutative ring throughout. The identification
 `HH^n ≅ Ext^n` is stated for `A` projective as a `k`-module, where the bar complex is a
