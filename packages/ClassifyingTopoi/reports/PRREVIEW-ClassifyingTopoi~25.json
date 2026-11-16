@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassifyingTopoi~25",
+  "head": "8ab628d5e31218779d0fd4dcab15e3eb70d837dd",
+  "pr": 1997,
+  "folder": "ClassifyingTopoi",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 29 changed lines since 373af3b (the new provenance section, README 1404-1424, and two References entries). Checked the AxiomMath Stacks repository at c496df0 (README, lean-toolchain, manifest, the Topos/ listing and six files) and LeanPool at f8b9b72 (toolchain, manifest, InfinitaryLogic imports). Checked Stacks tags 00XA, 00XC, 04I9, 00YV and 04I6, GrothendieckTopoi 2.1, 2.2, 2.4 and its provenance section, and the description's Provenance paragraph. R01 (P3): tags 00XA and 00XC swapped. R02 (P3): the ring-object files (00YV), the commutative-ring case of 1.4, are left out of the negative claim. Seeded sample: no target in a changed passage. Gate rerun: every check 0, OK; worker gate build=0; depcheck 0 problems; lake env lean: 28 sorry warnings only.",
+  "text": "99658f32f900ade4"
+ }
+}
