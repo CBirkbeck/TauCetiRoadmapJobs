@@ -1,10 +1,18 @@
 {
-  "review": {
-    "status": "needs_changes",
-    "reviewer": "independent-review-REV-PKG-MordellLawrenceVenkateshPartII~2",
-    "date": "2026-11-10",
-    "findings": 16,
-    "blocking": 11,
-    "notes": "Checked all previous repairs, all 15 seeded source targets against cached legal texts, all target Needs lines, supplier heads and overlap leads, pinned declarations and six elaborated signatures. Original Suggested.lean passes with only two sorry warnings; both theorems resist simp, rfl and infer_instance. Report includes computed adversarial witnesses and 16 actionable findings. Dependency check: 236 roadmaps, 2153 edges, 0 problems. Serre remains settled uncertified; the indexed LawrenceVenkateshMethod head was not readable."
-  }
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-MordellLawrenceVenkateshPartII~12",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-MordellLawrenceVenkateshPartII~12",
+   "fix": "FIX-PKG-MordellLawrenceVenkateshPartII~13",
+   "from": "abba9ce2e4247fa415ec8c2942e8d801cf0bff90",
+   "head": "5ef803a8f4d6d7a39d0935d947bc2fd8cead6c3a",
+   "findings": 1,
+   "lines": 25
+  },
+  "notes": "every finding of `REV-PKG-MordellLawrenceVenkateshPartII~12` (1) was P3 and `FIX-PKG-MordellLawrenceVenkateshPartII~13` repaired them at `5ef803a`, changing 25 lines of the package; no further review round was filed"
+ }
 }
