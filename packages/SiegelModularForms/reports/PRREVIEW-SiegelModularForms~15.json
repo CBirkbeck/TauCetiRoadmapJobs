@@ -1,0 +1,30 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SiegelModularForms~15",
+  "head": "61c6276efc325858d7e582f8d52f3375103c5a0b",
+  "pr": 1714,
+  "folder": "SiegelModularForms",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "incremental re-review of 44 changed lines since bee9025. Checked: the Hecke-ring supplier contract, 7.1, the build overview and Layer 7 Dependencies against the pinned Mathlib (HeckeRing/Defs.lean: no product) and Tau Ceti (Associativity.lean:484 instRingHeckeRing, Commutativity.lean:79 HeckeAntiInvolution, :459 mul_comm_of_antiInvolution); the anti-involution and coset counts of 7.1 recomputed; five van der Geer locators of 7.1 read; of the seeded sample only 7.2 and 7.5 touch the change. One finding (R01, P2): with the Hecke ring at the pins, the Hecke pair and the commutativity of the Hecke ring of 7.1 are statable on the file's gammaGSp (scratch probe elaborates, not closed by one tactic) and are neither stated nor named as not statable. Gate: every check 0, build 0. Depcheck: 250 roadmaps, 0 problems. Elaboration: exit 0, 72 sorry warnings only. Pull request text not contradicted. D01 stands.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "Unnumbered (*For the human reviewers*): the DOIs in these three records resolve to other works, and the records took their titles and authors from those works.",
+    "where": "board manifest packages/SiegelModularForms/sources.toml, records mizumoto1991, arakawa1983, satoh1986",
+    "raised": "PRREVIEW-SiegelModularForms~13"
+   },
+   {
+    "id": "D02",
+    "severity": "",
+    "title": "D01: In the board manifest, the three records `mizumoto1991`, `arakawa1983` and `satoh1986` need the titles and authors of the works the README cites in place of those of the unrelated works their DOI",
+    "where": "board manifest `packages/SiegelModularForms/sources.toml`, records `mizumoto1991`, `arakawa1983`, `satoh1986`",
+    "raised": "PRREVIEW-SiegelModularForms~15"
+   }
+  ],
+  "text": "3fdedcd1004641c0"
+ }
+}
