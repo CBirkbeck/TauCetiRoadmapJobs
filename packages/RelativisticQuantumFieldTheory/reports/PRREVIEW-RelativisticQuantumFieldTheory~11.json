@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RelativisticQuantumFieldTheory~11",
+  "head": "370862005686caea27f3f6d0855520fd75611c74",
+  "pr": 1772,
+  "folder": "RelativisticQuantumFieldTheory",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 9 changed lines since 4395f35: the new Provenance section and its reference. Every claim about LeanPool OSforGFF and ConnesKreimer checked against the files at commit f8b9b72 (9 declarations, toolchain v4.35.0, Apache-2.0 notices, absences searched over 87 files); every section reference resolved at the head; two P3 findings in README line 5575 (zero-diagonal carrier cited at 7.2 instead of 7.1; section 0.5 presented as the reason no measure is constructed). Previous report had no finding. Seeded sample: no sampled section falls in the changed passages. Gate rerun: all checks 0, OK; depcheck 0 problems; Suggested.lean elaborates with 14 sorry warnings and nothing else; pull request text agrees with the head.",
+  "text": "9bfdcabb01d7b130",
+  "carried": {
+   "from": "370862005686caea27f3f6d0855520fd75611c74",
+   "head": "564db65caf039e59f149f6cd86bd7038a5998b1d",
+   "findings": 2,
+   "lines": 4,
+   "folders": [
+    "RelativisticQuantumFieldTheory"
+   ]
+  }
+ }
+}
