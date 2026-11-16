@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticKTheoryPartII~1",
+  "head": "ab2c76b03aeb283cdfdc7879d381a93ae46e77c7",
+  "pr": 2433,
+  "folder": "ArithmeticKTheoryPartII",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "One P3: the PR description states the k-range, the Bernoulli divisibility (omits n_j<p) and the Hurewicz range more broadly than the head. Gate OK at ab2c76b; depcheck 249 roadmaps, 2363 edges, 0 problems; lake env lean on Suggested.lean: 4 sorry warnings only; #check @ of all 7 declarations matches README; one-tactic probe closes none. Seeded sample (0.2, 0.3, 2.1-2.4, 3.2, 3.5, 3.6, 4.1, 6.1, 7.1, 8.2, 8.4, 8.5) verified against FGV, mirzaiiVanDerKallen2002 (Thm 4.1: g>=2i+5 onto, g>=2i+6 bijective at usr(Z)=2) and borel1974; charney1987 uncertified, not read. 28/28 pinned declarations exist; supplier sections of 27 roadmaps resolve, key contents read. 13 gaps match plan.json. Adversarial table: 25 rows with computed values. No second owner and no shared wording found; arrangement independent of FGV (order forced by the Needs chain). 14 FGV source issues logged.",
+  "text": "dc1a5b7c3980121d"
+ }
+}
