@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-VirtualFundamentalClassPartII~1",
+  "head": "fd554cbca80f0368a6af1e38f620ad9f56b20145",
+  "pr": 2446,
+  "folder": "VirtualFundamentalClassPartII",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full review at fd554cb. The gate rerun is OK on every check, and the depcheck reports 253 roadmaps, 2400 edges, 0 problems. lake env lean Suggested.lean exits 0 with no output: the file has no declarations, the twelve docstring headlines are unstatable at the pins, and there is no padding. All 15 seeded-sample targets were verified against the cached texts (85 locator ranges, all supporting the statements). All 25 contract library names elaborate at the pins. Every supplier section was resolved: VirtualFundamentalClass #1996, StackPointsAndResidualGerbes #2429, SchemeAndStackFoundations on main and at #1808, EquivariantIntersectionTheory, StableReduction, EnhancedDerivedSheaves, DerivedModuleAlgebra, StableReductionPartII 5.15 and AlgebraicGromovWittenTheory 4.1-4.3. Both declared gaps are precise, minimal and declared in plan.json. The adversarial table has 30 rows. Three P3 findings: 8.1 identifies Kresch's rational equivalence with VirtualFundamentalClass 2.5's Vistoli construction; the 9.1/9.3 API takes a projective rather than prestable curve; the description's sentences about the Lean file do not match the head. gillet1984 and fulton1998 are uncertified and were not read.",
+  "text": "97b301e66ee075d1"
+ }
+}
