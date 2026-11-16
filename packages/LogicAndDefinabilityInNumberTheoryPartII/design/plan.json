@@ -3530,6 +3530,24 @@
       "needs": "The cyclic Hasse norm theorem for global function fields: in a cyclic extension L/K of global function fields an element of Kˣ is a norm from L exactly when it is a local norm at every place of K.",
       "supplier": "ArithmeticGaloisDuality",
       "section": "§R02.3.2"
+    },
+    {
+      "slug": "snc-bertini-over-base",
+      "needs": "Kerz–Saito's Bertini theorem (Theorem 3.2) over the base itself: for S the spectrum of a finite field or of an excellent henselian discrete valuation ring with finite residue field, an irreducible regular X projective over S of positive relative dimension over its image T (with simple normal crossings reduced special fibre when flat), an admissible simple normal crossings divisor Y and an invertible sheaf ample relative to T, every sufficiently large power has a section defined over S with support Z such that Y ∪ Z is again an admissible simple normal crossings divisor containing a regular divisor ample relative to T.",
+      "supplier": "LefschetzPencilsAndVanishingCycles",
+      "section": "§3.5"
+    },
+    {
+      "slug": "finite-field-divisor-adapted-fibration",
+      "needs": "For a smooth projective geometrically integral surface X over a finite field k and an integral curve C in X: a smooth projective surface X′ with a birational k-morphism X′ → X, a smooth projective geometrically integral k-curve B and a dominant k-morphism X′ → B whose generic fibre is smooth and geometrically integral over k(B) and under which the strict transform of C maps dominantly onto B, all over k itself and not over a finite extension of k.",
+      "supplier": "LefschetzPencilsAndVanishingCycles",
+      "section": "§3.5"
+    },
+    {
+      "slug": "embedded-resolution-dimension-two",
+      "needs": "Embedded resolution in dimension at most two: for a regular excellent scheme Z of any dimension and a reduced closed subscheme X of Z of dimension at most two, a projective surjective morphism Z′ → Z with Z′ regular, an isomorphism over Z ∖ X, such that the reduced preimage of X is a simple normal crossings divisor on Z′ (Cossart–Jannsen–Saito, Corollary 0.4).",
+      "supplier": "AdicCoefficientsAndComparisonsPartII",
+      "section": "§PA.0.12"
     }
   ],
   "upstreamNotes": [
