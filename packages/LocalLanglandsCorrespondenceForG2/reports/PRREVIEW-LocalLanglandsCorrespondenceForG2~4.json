@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalLanglandsCorrespondenceForG2~4",
+  "head": "038ac8454520358a8db678cffef298ed1e4ee426",
+  "pr": 2458,
+  "folder": "LocalLanglandsCorrespondenceForG2",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "Full review. R01 (P2): Xu's packets are undefined over unbounded parameters outside the supplier's range, where sections 10.8-10.9 use them. R02 (P3): section 9.1 transfers a lift on PGL2(D) by Jacquet-Langlands where only the inner-form parameter of the supplier's section 10.31 exists. D01 stands. Checked: the 15 sampled targets and the headline theorems against the cached texts (78 locators in 11 sources), 31 library declarations at the pins, 96 cross-roadmap citations at main or the open heads, the gate (all checks pass), the dependency check (0 problems), elaboration of Suggested.lean (sorry the only warning), #check of the three theorems, the one-tactic padding probe (none closes), the pull request text, overlap and source independence. Not read: Griess and SpV (uncertified).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "The new lower-tower Xu-packet contract is not declared in plan.json",
+    "where": "the board's design/plan.json gaps list of this package",
+    "raised": "PRREVIEW-LocalLanglandsCorrespondenceForG2~2"
+   }
+  ],
+  "text": "5c414e42b0ab5587"
+ }
+}
