@@ -22,8 +22,9 @@ the pins:
   set `B(G, μ⁻¹)` of a reductive group over `ℚ_p`, Grothendieck groups of admissible
   representations of `J_b(ℚ_p)` and of adelic groups, and base change to `GL_n`. These are absent.
 * The auxiliary-pair condition (README §8.7), which needs the signature of a compact unitary
-  PEL datum and the sets `S_i` of complex embeddings attached to `ι_p : ℚ̄_p ≅ ℂ`. The PEL datum
-  is absent, and this file does not encode it ad hoc.
+  PEL datum and the sets `S_i` of complex embeddings attached to `ι_p : ℚ̄_p ≅ ℂ` and to a place
+  `u` of the imaginary quadratic subfield above `p`. The PEL datum is absent, and this file does
+  not encode it ad hoc.
 
 What is statable is the arithmetic input that turns the hypotheses of Theorem 1.1 into the
 auxiliary-prime hypothesis of Theorem 6.3.1(2): existence of infinitely many decomposed generic
@@ -59,9 +60,9 @@ def IsStrongGenericAt {F L k : Type*} [Field F] [NumberField F] [Field L] [Numbe
             (Nat.card (𝓞 F ⧸ v) : AlgebraicClosure k)
 
 /-- A rational prime `p` splits completely in `F` and `r` is strongly decomposed generic at every
-prime of `𝓞 F` above `p` (the hypothesis of CS17 Theorem 1.1(2)). Complete splitting is
-expressed by `[F : ℚ]` distinct primes of `𝓞 F` above `p`. Strong genericity at a prime above `p`
-excludes `p = ℓ`. -/
+prime of `𝓞 F` above `p` (the hypothesis of the second assertion of CS17 Theorem 1.1, README
+§11.7(2)). Complete splitting is expressed by `[F : ℚ]` distinct primes of `𝓞 F` above `p`.
+Strong genericity at a prime above `p` excludes `p = ℓ`. -/
 def IsCompletelySplitStrongGenericPrime {F L k : Type*} [Field F] [NumberField F] [Field L]
     [NumberField L] [Algebra F L] [IsGalois F L] [Field k] [Finite k] {n : ℕ}
     (r : (L ≃ₐ[F] L) →* Matrix.GeneralLinearGroup (Fin n) k) (p : ℕ) : Prop :=
