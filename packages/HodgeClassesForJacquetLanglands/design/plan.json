@@ -4009,7 +4009,7 @@
     },
     {
       "slug": "quaternion-ramification-classification",
-      "needs": "Prove that quaternion algebras over a number field are classified by their ramification sets, that every finite set of non-complex places of even cardinality occurs, that an element of order two in Br(F) is the class of a unique quaternion algebra, and that a quadratic extension E/F embeds in B exactly when no place ramified in B splits in E (IP23, §12.2.1, p. 94).",
+      "needs": "Prove that for a quaternion algebra B over a number field F and a quadratic extension E/F, E embeds in B as an F-algebra exactly when no place of F ramified in B splits in E (IP23, §12.2.1, p. 94). The realization of ramification sets and the classification of quaternion algebras by them are GL2AutomorphicRepresentationsAndTransfer §R17.1.5 and are not asked for.",
       "supplier": "ClassFieldTheory",
       "section": "Layer 10"
     },
@@ -4027,21 +4027,27 @@
     },
     {
       "slug": "quaternionic-shimizu-lift",
-      "needs": "Prove that the global similitude theta lift, formed with the Periods-I splitting of §3.32a, from B^× to GU(B₁ ⊗_E B₂)° ≃ (B₁^× × B₂^×)/F^× of an irreducible unitary cuspidal σ̄ is π̄_{B₁} ⊠ π̄_{B₂} for the Jacquet–Langlands transfers of the transfer π of σ, and zero when either transfer is missing (IP23, proof of Lemma 9.2, p. 58).",
+      "needs": "For a number field F, a quadratic extension E/F embedded in quaternion algebras B₁, B₂ over F, B = B₁·B₂ in the Brauer group, V = B₁ ⊗_E B₂ and W = B, construct the Periods-I splitting: for every place v a map s̃_v to ℂ¹ on the pairs (g, h) ∈ GU(V_v)° × GU(W_v) with ν(g) = ν(h), trivialising the Weil cocycle z_Y of the similitude dual pair of §3.23, equal to the standard compact splitting at almost every place, with product one at rational points (the splitting that §3.32a compares with §3.24; IP23, §9.3, p. 58, and §A.10, pp. 112–113); and prove that the global similitude theta lift formed with it, from B^× to GU(B₁ ⊗_E B₂)° ≃ (B₁^× × B₂^×)/F^×, of an irreducible unitary cuspidal σ̄ is π̄_{B₁} ⊠ π̄_{B₂} for the Jacquet–Langlands transfers of the transfer π of σ, and zero when either transfer is missing (IP23, proof of Lemma 9.2, p. 58).",
       "supplier": "MetaplecticAutomorphicForms",
-      "section": "§§3.32a, 5.6, 6.15"
+      "section": "§§3.23, 3.32a, 5.6, 6.15"
     },
     {
       "slug": "derham-local-system-cohomology",
-      "needs": "Prove that a lisse ℚ_p-sheaf on a geometrically connected smooth variety over a finite extension K of ℚ_p whose stalk at one classical point, defined over a finite extension K′ of K, is a de Rham representation of G_{K′} is de Rham in the sense of §7.2, and that every subquotient of a de Rham representation of G_K is de Rham (IP23, Remark 11.10, p. 90).",
+      "needs": "Prove that a lisse ℚ_p-sheaf on a geometrically connected smooth variety over a finite extension K of ℚ_p whose stalk at one classical point, defined over a finite extension K′ of K, is a de Rham representation of G_{K′} is de Rham in the sense of §7.2 (IP23, Remark 11.10, p. 90).",
       "supplier": "PadicHodgeTheory",
-      "section": "§§3.3, 7.2"
+      "section": "§7.2"
     },
     {
       "slug": "quaternionic-rational-model",
       "needs": "For a quaternion algebra D over a number field F and an irreducible admissible representation π′_f of D^×(𝔸_{F,f}) with trivial central character, construct a D^×(𝔸_{F,f})-stable model of π′_f over every subfield L ⊂ ℂ containing ℚ(π′_f), unique up to homothety, whose K-invariants are for every compact open K the H_ℚ(D^×(𝔸_{F,f}), K)-stable L-structure of (π′_f)^K, given locally, at a split place, by the character line L when the local component is one-dimensional (a ramified character composed with the determinant has no newvector) and by the L-span of the translates of a newvector when it is infinite-dimensional, and at a ramified place by the L-span of the translates of a torus-fixed vector, where the trivial central character cannot be dropped (Waldspurger 1985, Lemmas I.1, I.2.1–I.2.2 and §II.1, pp. 123–124, 147–148; IP23, §3.2, p. 19).",
       "supplier": "GL2AutomorphicRepresentationsAndTransfer",
       "section": "§R17.3.8"
+    },
+    {
+      "slug": "unitary-stable-range",
+      "needs": "For a local field F_v of characteristic zero, archimedean or not and of any residue characteristic, a quadratic étale algebra E_v/F_v, a one-dimensional Hermitian E_v-space V_v and the split two-dimensional skew-Hermitian E_v-space W_v, prove that the theta lift of every character of U(V_v) to U(W_v), for the Weil representation of §3.3 with any admissible pair of splitting characters, is nonzero (the unitary stable range; IP23, proof of Lemma 9.1, p. 57).",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "§3.9"
     }
   ],
   "coverage": [
