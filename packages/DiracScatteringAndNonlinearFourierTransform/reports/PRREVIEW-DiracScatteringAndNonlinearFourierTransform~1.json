@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DiracScatteringAndNonlinearFourierTransform~1",
+  "head": "3798662924eb6235c4fb0c18a8b57975c5d690a1",
+  "pr": 2444,
+  "folder": "DiracScatteringAndNonlinearFourierTransform",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Three P3 findings: a false Check in §8.7 (R01), §6.8 locators that state only the qualitative Szegő condition (R02), and an empty Dependencies sentence in the PR description (R03). Seeded sample: 15 targets, 14 verified against the cached texts; §2.2 rests on garnett2007, which is uncertified. 74 source locators checked in all. Adversarial table: 22 rows with computed values. These include numeric checks of the Plancherel constant π/2 and of the §9.2 identities, and rederivations of the §4.1 dictionary and the §6.4 Weyl data. 103 pinned declarations (63 Mathlib, 40 Tau Ceti) checked at their cited file and line; 7 cross-roadmap citations resolved. Gate: the worker's gate passes and the dependency check reports 0 problems (252 roadmaps, 2396 edges). Lean: elaboration gives only sorry warnings, signatures match the README, and the one-tactic probe closed 0 of 9 theorems. Overlap check: 8 roadmaps read, no double owner. Source independence: no copied wording; Layer 8's order is forced by its Needs chain. Seven source misprints and errors recorded (poltoratski2024 (5.5), Lemma 8 (8.5), Lemma 5, Lemma 7; mauth2022 (4), Lemma 45, Lemma 43).",
+  "text": "00eb1d08d31292c9"
+ }
+}
