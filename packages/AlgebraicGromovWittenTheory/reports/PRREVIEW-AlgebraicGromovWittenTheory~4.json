@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicGromovWittenTheory~4",
+  "head": "2457b2a157106e117570b6057f6ddbaa5a0135cc",
+  "pr": 1998,
+  "folder": "AlgebraicGromovWittenTheory",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full review. Previous R01-R06 and R08 repaired, R07 partly (nine definitions still below three Checks: R03). Seeded sample of 15 targets verified against the fetched texts (Behrend 1997, Behrend-Manin, Fulton-Pandharipande, Kontsevich-Manin 1998, Kock, Iritani, Behrend product formula): 38 locators, all support their statements. Adversarial table with computed values for the sample, six headlines and finding-touched targets; no false statement found. 24 pinned declarations opened; 31 cross-roadmap citations resolved. Findings, all P3: Needs/Dependencies lines omit three contracted suppliers and VirtualFundamentalClass in Layer 0 (R01); pinned NovikovSeries.mapRingHom, rescaleContinuousAlgEquiv and gradeBy uncited (R02); Checks count (R03). Gate passed on 2457b2a; depcheck 264 roadmaps, 2580 edges, 0 problems; Suggested.lean elaborates with no output and declares nothing (no headline statable at the pins, docstring says so). Overlap check and source-independence lines included.",
+  "text": "7c64630f0be1446e"
+ }
+}
