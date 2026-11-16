@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ShimuraVarietiesPartII~2",
+  "head": "7a2df81ba87bc2dacf77c08f36749d2959e03ea8",
+  "pr": 2463,
+  "folder": "ShimuraVarietiesPartII",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "incremental re-review of 27 changed lines since 53e61e3. Previous findings: R01-R04 and R06 repaired, R05 partly repaired. The three restated gaps were checked against KPZ 7.2.1-7.2.10, KP Lemma 4.6.22, MP19 Theorem 1 and Corollary 4.1.11, and HT 1.3.2 and 2.1.8-2.1.9. gap:hodge-cover-refinement drops the reflex splitting that 2.2 imports (P2). The scope line on ReductiveGroupsPartIII Layer 5 is now wrong, and one summary marker remains (P3). Also checked: the 2.3 Checks, the 4.7 and 4.13 sketches, the supplier sections at their heads, and the description counts. The seeded sample is untouched by the diff. Gate OK; depcheck 0 problems; lake env lean exit 0 with no output.",
+  "text": "36d19466e4fa904a",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "the description still has a second, unclosed summary marker (R05 partly repaired)",
+    "where": "the pull-request body, where the worker keeps the stray summary marker verbatim",
+    "raised": "PRREVIEW-ShimuraVarietiesPartII~2"
+   }
+  ]
+ }
+}
