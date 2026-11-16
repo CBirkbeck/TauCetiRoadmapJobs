@@ -2360,12 +2360,6 @@
       "section": "§6.11"
     },
     {
-      "slug": "cyclotomic-p-class-fields",
-      "needs": "For the cyclotomic fields ℚ(ζ_(p^n)), n≥1, inside one algebraic closure of ℚ, embed their Tau Ceti Hilbert class fields `TauCeti.ClassFieldTheory.hilbertClassField` compatibly along the tower ℚ(ζ_(p^n))⊂ℚ(ζ_(p^(n+1))), so that their maximal p-subextensions nest; and, for a number field F and a finite set S of its primes, identify the maximal abelian extension of F unramified at every place in which every prime of S splits completely with the subfield of `TauCeti.ClassFieldTheory.hilbertClassField` F fixed by the images under `TauCeti.ClassFieldTheory.hilbertClassArtinEquiv` of the classes of the primes of S.",
-      "supplier": "ClassFieldTheory",
-      "section": "Layers 11–13"
-    },
-    {
       "slug": "ppav-embedding-atlases",
       "needs": "For each g≥0 provide the quasi-projective ℚ-schemes, one for each embedding dimension and Hilbert polynomial, parametrizing principally polarized abelian schemes (A,λ) of relative dimension g with a closed embedding into projective space under which O(1) restricts to the cube of the symmetric ample line bundle Δ*(1×λ)*𝒫, 𝒫 the Poincaré bundle; show that their forgetful maps to 𝔄_g⊗ℚ are smooth and jointly surjective; and provide maps of these atlases covering the product 𝔄_g×𝔄_h→𝔄_(g+h) and the splitting of a principally polarized abelian scheme by a Rosati-fixed idempotent, associative and unital up to specified isomorphisms.",
       "supplier": "PELModuli",
