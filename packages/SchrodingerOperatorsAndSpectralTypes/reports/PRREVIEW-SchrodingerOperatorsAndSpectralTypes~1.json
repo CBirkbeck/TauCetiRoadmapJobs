@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SchrodingerOperatorsAndSpectralTypes~1",
+  "head": "9710150a398959dfea5cca17ab2e8c6f2ef19e4a",
+  "pr": 2424,
+  "folder": "SchrodingerOperatorsAndSpectralTypes",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Both findings are P3 and concern the pull request description, not the roadmap folder: an overstated extension of UO-E06, and a dependency paragraph that calls CongruenceSpectralGap and MaassForms consumers. Gate passes (all checks 0); depcheck reports 0 problems. Suggested.lean elaborates with 12 sorry warnings only. #check @ on all 19 declarations matches the README, and the cusp region carries the hyperbolic metric. The padding probe closes none of the 12 theorems. All 15 seeded targets were checked: 57 locators in 8 cached sources plus 11 Teschl page numbers. 72 cross-roadmap citations resolve on main or at their open heads. Both declared gaps match plan.json and ask for nothing already provided. Overlap with UnboundedOperators, SelfAdjointSpectralTheory and its revision, VariationalMethods, QuantumFoundations, CongruenceSpectralGap, AutomorphicSpectralTheory and SchattenClassesAndSchurMultipliers: nothing owned twice. Source independence: teschl has 40 of 98 locators and the contents are independent. Errata: Teschl Theorem 6.4's printed bound (6.3) is false (numeric counterexample).",
+  "text": "77c2de4860fa2935"
+ }
+}
