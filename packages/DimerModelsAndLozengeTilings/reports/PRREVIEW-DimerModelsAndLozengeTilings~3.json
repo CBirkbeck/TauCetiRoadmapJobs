@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DimerModelsAndLozengeTilings~3",
+  "head": "72bfddb237ad291475da62697baab59a4ed4caf8",
+  "pr": 2422,
+  "folder": "DimerModelsAndLozengeTilings",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review of an unchanged head (the previous review had no findings). Seeded sample of 15 targets and every headline recomputed: lattice, height and flip examples by hand; torus tilings, the four twisted determinants, the sign formula and the torus correlations by enumeration on tori up to 3x3 in the Lean form of K_ab; the kernel G_w, the inner integrals, the incomplete beta kernel and the identity of 9.7(a) by quadrature on 35 pairs. 77 source locators checked in 8 sources; 64 Mathlib and 17 Tau Ceti declarations opened at the pinned lines; cross-roadmap citations resolved on main and at the open head of ClassicalErgodicTheory. Gate re-run: all checks 0; depcheck 0 problems; lake env lean: 18 sorry warnings only; one-tactic probe closes none of the 18 theorems. Four source errata recorded (gorin2021 Lemma 4.7, aggarwal2023 remark after Definition 1.2, kenyon2009 Theorem 6 and Section 5.4). thurston1990 and georgii2011 uncertified.",
+  "text": "2677a30adf059be3"
+ }
+}
