@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KatoEulerSystems~5",
+  "head": "7a6112ea9c57338168dc296706a6953e553fc5a8",
+  "pr": 1804,
+  "folder": "KatoEulerSystems",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 903763b; the title and description were read against the head. Previous R01 (description: every prime covered) is repaired. One P3 finding in the description: it says RankZeroOneBSDPartII consumes this roadmap by name, but that roadmap's open head (27e8ab08) has 0 occurrences of KatoEulerSystems and the README says only 'can use'. The folder's files need no change. Gate rerun: every check 0, OK; depcheck 234 roadmaps, 2228 edges, 0 problems; lake env lean on Suggested.lean: sorry warnings only (lines 50, 75). Seeded sample not rechecked: the folder's diff is empty. Adversarial table: 7 rows with computed values for the statements the description cites.",
+  "text": "48236fd0555a0570",
+  "carried": {
+   "from": "7a6112ea9c57338168dc296706a6953e553fc5a8",
+   "head": "88ffcc3b1205ad0c872235066edfafd3dd121354",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "KatoEulerSystems"
+   ]
+  }
+ }
+}
