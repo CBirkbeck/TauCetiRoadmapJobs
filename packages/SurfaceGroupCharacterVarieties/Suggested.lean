@@ -54,10 +54,11 @@ Headline theorems not statable at the pins:
   compact subgroup (Layer 7.1): it needs a Cartan-compatible realization of the conjugation action
   as a linear action (Layer 5.3), a construction of this roadmap that the pins do not have;
 * the homeomorphism of `𝒳(Γ, G(ℂ))` with the complex points of the affine quotient
-  `Hom(Γ, G)//G` (Layer 7.2): the pins have neither the representation scheme `Hom(Γ, G)` of a
-  finitely generated group as an affine scheme nor the affine quotient `Spec O(X)^G`; the
-  topological content of the comparison, that the closed-orbit map is the universal Hausdorff
-  quotient, is stated;
+  `Hom(Γ, G)//G` (Layer 7.2): the pins have the invariant subalgebra of a comodule algebra
+  (`TauCeti.ComoduleAlgebra.coinvariants`) but not the representation algebra of a finitely
+  generated group with its conjugation coaction, a construction of this roadmap (Layer 4.1); the
+  topological content of the comparison, that `𝒳(Γ, G(ℂ))` is Hausdorff and the closed-orbit map
+  is the universal Hausdorff quotient, is stated;
 * the action of `Mod_{g,n}` on `𝒳(Σ_{g,n}, G^ℝ)` and its independence of the base point
   (Layer 7.4): `Mod_{g,n}` needs the orientation-preserving homeomorphisms of a topological
   surface, which the pins lack; on the whole homeomorphism group of a path-connected space the
@@ -330,26 +331,27 @@ theorem characterVariety_t2_locallyCompact_secondCountable {H : Type} [CommRing 
   sorry
 
 /-- **The universal Hausdorff quotient** (Layer 7.2; Sikora2012, §11). For a connected reductive
-group `G` over `ℂ` and a finitely generated group `Γ`, sending a homomorphism to the class of the
-unique closed orbit in its orbit closure is a continuous map `Hom(Γ, G(ℂ)) → 𝒳(Γ, G(ℂ))`,
-constant on conjugation orbits and equal to the quotient map on reductive homomorphisms, through
-which every continuous conjugation-invariant map to a Hausdorff space factors uniquely and
-continuously. -/
+group `G` over `ℂ` and a finitely generated group `Γ`, the character variety `𝒳(Γ, G(ℂ))` is
+Hausdorff, and sending a homomorphism to the class of the unique closed orbit in its orbit closure
+is a continuous map from `Hom(Γ, G(ℂ))` to it, constant on conjugation orbits and equal to the
+quotient map on reductive homomorphisms, through which every continuous conjugation-invariant map
+to a Hausdorff space factors uniquely and continuously. -/
 theorem characterVariety_universalHausdorffQuotient {H : Type} [CommRing H] [HopfAlgebra ℂ H]
     [Algebra.FiniteType ℂ H]
     (hH : reductiveCommHopfAlgProperty ℂ (FiniteTypeCommHopfAlgCat.of ℂ H))
     (Γ : Type*) [Group Γ] [Group.FG Γ] :
-    ∃ q : (Γ →* (⊤ : Subgroup (WithConv (H →ₐ[ℂ] ℂ)))) →
-        CharacterVariety Γ (⊤ : Subgroup (WithConv (H →ₐ[ℂ] ℂ))),
-      Continuous q ∧
-        (∀ (ρ : Γ →* (⊤ : Subgroup (WithConv (H →ₐ[ℂ] ℂ)))) (hρ : IsReductiveRep ⊤ ρ),
-          q ρ = Quotient.mk _ ⟨ρ, hρ⟩) ∧
-        (∀ ρ ρ' : Γ →* (⊤ : Subgroup (WithConv (H →ₐ[ℂ] ℂ))), ρ' ∈ conjOrbit ρ → q ρ' = q ρ) ∧
-        ∀ (Z : Type*) [TopologicalSpace Z] [T2Space Z]
-          (F : (Γ →* (⊤ : Subgroup (WithConv (H →ₐ[ℂ] ℂ)))) → Z), Continuous F →
-          (∀ ρ ρ', ρ' ∈ conjOrbit ρ → F ρ' = F ρ) →
-            ∃! F' : CharacterVariety Γ (⊤ : Subgroup (WithConv (H →ₐ[ℂ] ℂ))) → Z,
-              Continuous F' ∧ F' ∘ q = F := by
+    T2Space (CharacterVariety Γ (⊤ : Subgroup (WithConv (H →ₐ[ℂ] ℂ)))) ∧
+      ∃ q : (Γ →* (⊤ : Subgroup (WithConv (H →ₐ[ℂ] ℂ)))) →
+          CharacterVariety Γ (⊤ : Subgroup (WithConv (H →ₐ[ℂ] ℂ))),
+        Continuous q ∧
+          (∀ (ρ : Γ →* (⊤ : Subgroup (WithConv (H →ₐ[ℂ] ℂ)))) (hρ : IsReductiveRep ⊤ ρ),
+            q ρ = Quotient.mk _ ⟨ρ, hρ⟩) ∧
+          (∀ ρ ρ' : Γ →* (⊤ : Subgroup (WithConv (H →ₐ[ℂ] ℂ))), ρ' ∈ conjOrbit ρ → q ρ' = q ρ) ∧
+          ∀ (Z : Type*) [TopologicalSpace Z] [T2Space Z]
+            (F : (Γ →* (⊤ : Subgroup (WithConv (H →ₐ[ℂ] ℂ)))) → Z), Continuous F →
+            (∀ ρ ρ', ρ' ∈ conjOrbit ρ → F ρ' = F ρ) →
+              ∃! F' : CharacterVariety Γ (⊤ : Subgroup (WithConv (H →ₐ[ℂ] ℂ))) → Z,
+                Continuous F' ∧ F' ∘ q = F := by
   sorry
 
 /-- **The outer action on the character variety** (Layer 7.4). For every group `Γ`, every field
