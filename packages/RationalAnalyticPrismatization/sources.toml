@@ -25,7 +25,7 @@ title = "Analytic de Rham stacks of Fargues-Fontaine curves"
 year = 2025
 arxiv = "2510.15196v2"
 locator_scheme = "theorem"
-locator = "Definitions 2.1.1, 2.2.3, 2.2.8, 2.2.19, 2.3.1, 3.1.1, 3.1.5, 3.1.15, 3.2.8, 3.3.1, 4.1.8, 4.1.11, 4.2.1, 4.2.6, 4.2.14, 4.3.1, 4.3.6, 4.7.2, 6.1.1, 6.1.2, 6.2.4; Lemmas 2.1.2, 3.1.8, 3.1.12, 3.1.14, 3.1.17, 4.2.11, 4.4.3, 4.5.1, 6.2.9; Propositions 3.1.9, 3.2.10, 3.2.11, 4.4.7, 4.5.5, 4.6.4, 5.1.4, 5.7.1; Corollary 4.4.10; Remarks 4.4.11 and 6.1.3; Theorems 4.8.7, 5.1.7, 5.6.6, 6.3.1, 7.1.1; Appendix A"
+locator = "Definitions 2.1.1, 2.2.3, 2.2.8, 2.2.19, 2.3.1, 3.1.1, 3.1.5, 3.1.15, 3.2.8, 3.3.1, 4.1.5, 4.1.8, 4.1.11, 4.2.1, 4.2.6, 4.2.14, 4.3.1, 4.3.6, 4.7.2, 6.1.1, 6.1.2, 6.2.4; Lemmas 2.1.2, 3.1.8, 3.1.12, 3.1.14, 3.1.17, 4.2.11, 4.4.3, 4.5.1, 6.2.9; Propositions 3.1.9, 3.2.10, 3.2.11, 4.4.7, 4.5.5, 4.6.4, 5.1.4, 5.7.1; Example 4.1.13; Corollary 4.4.10; Remarks 4.4.11 and 6.1.3; Theorems 4.8.7, 5.1.7, 5.6.6, 6.3.1, 7.1.1; Appendix A"
 url = "https://arxiv.org/abs/2510.15196v2"
 fetched_from = "https://arxiv.org/pdf/2510.15196v2"
 fetched_at = "2026-10-25T21:21:16Z"
@@ -34,7 +34,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2 (3 March 2026); locators are v2. ALRS cites an earlier numbering, collated in the roadmap (References): the ALRS citations Definition 3.3.1, Definition 2.3.1, Lemma 3.6.2, Proposition 2.4.9 and Corollary 3.4.10 are v2 Definition 3.1.1, Definition 3.1.5, Lemma 3.1.17, Proposition 3.1.9 and Corollary 4.4.10, and the ALRS citation Lemma 3.2.8 is v2 Definition 3.2.8 (with Proposition 3.2.11)."
-cited_for = ["Conventions", "Exact supplier contracts", "Scope and ownership", "1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 3.1, 3.2, 3.3, 4.1, 6.2, 6.3, 6.4, 7.4, 7.5, 10.7, 11.1, 12.2, 12.4, 12.5"]
+cited_for = ["Conventions", "Exact supplier contracts", "Scope and ownership", "1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 3.1, 3.2, 3.3, 4.1, 6.1, 6.2, 6.3, 6.4, 7.4, 7.5, 10.7, 11.1, 12.2, 12.4, 12.5"]
 
 [[source]]
 id = "RCSolid"
