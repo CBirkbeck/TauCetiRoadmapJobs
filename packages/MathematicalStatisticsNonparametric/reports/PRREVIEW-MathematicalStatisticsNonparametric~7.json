@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsNonparametric~7",
+  "head": "ecf336112baee51d6bda8d1915bab7a2534550cf",
+  "pr": 2368,
+  "folder": "MathematicalStatisticsNonparametric",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 17 changed lines since b6eaa8b. Previous R01 (missing supplier contract, undefined 'form separation') repaired: the new contract subsection was compared term by term with SSP-C15/SSP-C16 of OperatorTheory/SpectralSubspacePerturbation on main and computed on a 2x2 instance (0.2297 <= 0.2361); the 3g/4 separations of 8.6 recomputed for both spans. No seeded-sample target falls in the changed passages; no locator changed. Gate: every check passed (worker's run at this head); depcheck 0 problems; elaboration exit 0 with 202 sorry warnings only; pull request text agrees with the head. Source texts of van der Vaart and Tsybakov remain unread (for the human reviewers).",
+  "text": "dea4c344cddf166a"
+ }
+}
