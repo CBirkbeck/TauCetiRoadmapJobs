@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-Varifolds~1",
+  "head": "a85c365985db4c6d50fbbe5cc9265baec25870be",
+  "pr": 2443,
+  "folder": "Varifolds",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full review. Gate passes; depcheck 0 problems; Suggested.lean elaborates with 15 sorry warnings only. All 15 sampled targets verified against Simon1983, AgnolettoCorreaHoyosDaSilvaNardulli2025, Scharrer2022, Simon2023 and EdelenSpolaor2023 (48 locators). 15 headline theorems tested adversarially with computed values; the one-tactic probe closes none. 66 library declarations and 14 cross-roadmap citations resolved; no ownership overlap. Three P3 findings: a module-docstring claim that the pins lack an EMetricSpace (EMetricSpace.ofRiemannianMetric supplies it), the Layer 3 section-comment title, and a description dependency paragraph that names no supplier. Two source issues recorded in Simon1983 (41.1, proof of 42.8).",
+  "text": "9e724717cfe66ac9"
+ }
+}
