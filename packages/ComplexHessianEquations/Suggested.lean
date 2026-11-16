@@ -18,8 +18,8 @@ definitions needed to state them.
 Stated here:
 
 * Layer 1: Lewis's theorem on the derivative of spectral functions of Hermitian matrices over
-  `RCLike 𝕜` (differentiability, the gradient formula and the `C¹` criterion), the convexity of
-  spectral domains and the concavity of spectral functions (§§1.3–1.4).
+  `RCLike 𝕜` (differentiability, the gradient formula and the `C¹` criterion) and the concavity
+  of spectral functions on their convex spectral domains (§§1.3–1.4).
 * Layer 2: Gårding's theorem on hyperbolic polynomials and their cones, the identification of the
   Gårding cone of `σ_k` with `Γ_k`, the concavity of Hessian quotients, and the Hessian pair
   `(σ_k^{1/k}, Γ_k)` as a concave admissible pair with its sharp structural constant
@@ -107,17 +107,10 @@ theorem contDiffOn_spectralFunction_iff {Ω : Set (Fin n → ℝ)} (hΩ : IsOpen
         {B | eigenvalueVector B ∈ Ω} ↔ ContDiffOn ℝ 1 f Ω := by
   sorry
 
-/-- **Convexity of spectral domains** (Spruck 2005, Theorem 1.4 and its proof). For an open
-convex set `Γ ⊆ ℝⁿ` invariant under coordinate permutations, the Hermitian matrices whose
-eigenvalue vector lies in `Γ` form a convex set. -/
-theorem convex_spectralDomain {Γ : Set (Fin n → ℝ)} (hΓo : IsOpen Γ) (hΓc : Convex ℝ Γ)
-    (hΓs : ∀ (σ : Equiv.Perm (Fin n)), ∀ μ ∈ Γ, μ ∘ σ ∈ Γ) :
-    Convex ℝ {A : hermitianMatrices 𝕜 n | eigenvalueVector A ∈ Γ} := by
-  sorry
-
 /-- **Concavity of spectral functions** (Spruck 2005, Theorem 1.4 and its proof). For an open
 convex set `Γ ⊆ ℝⁿ` invariant under coordinate permutations and a symmetric, concave `C¹`
-function `f` on `Γ`, the spectral function `A ↦ f(λ(A))` is concave on the spectral domain. -/
+function `f` on `Γ`, the spectral function `A ↦ f(λ(A))` is concave on the spectral domain
+`{A | λ(A) ∈ Γ}`; in particular (at `f = 0`) the spectral domain is convex. -/
 theorem concaveOn_spectralFunction {Γ : Set (Fin n → ℝ)} (hΓo : IsOpen Γ) (hΓc : Convex ℝ Γ)
     (hΓs : ∀ (σ : Equiv.Perm (Fin n)), ∀ μ ∈ Γ, μ ∘ σ ∈ Γ) {f : (Fin n → ℝ) → ℝ}
     (hfs : ∀ (σ : Equiv.Perm (Fin n)), ∀ μ ∈ Γ, f (μ ∘ σ) = f μ)
@@ -423,19 +416,23 @@ theorem exists_abs_le_mongeAmpere_degenerating [T2Space X] [CompactSpace X] [Con
   sorry
 
 /-- **The Guo–Phong–Tong estimate on a fixed background** (§8.6; Guo–Phong–Tong 2023,
-Theorem 1). Let `(X, κ)` be compact connected Kähler, and fix `γ > 0`, `p > n` and `K`. There is
-`C` such that for every admissible pair with structural constant `γ`, every smooth `F` with
-`∫ e^{nF} κ^n = V` and entropy `V⁻¹ ∫ e^{nF} |F|^p κ^n ≤ K`, and every normalized `C²`
-solution `φ` of `f(λ_κ[κ + i∂∂̄φ]) = e^F`, `|φ| ≤ C`. -/
+Theorem 1, in the form its proof establishes). Let `(X, κ)` be compact connected Kähler, and fix
+`γ > 0`, `p > n` and bounds `K₁`, `K₂`. There is `C` such that for every admissible pair with
+structural constant `γ`, every smooth `F` with `∫ e^{nF} κ^n = V` and entropy
+`V⁻¹ ∫ e^{nF} |F|^p κ^n ≤ K₂`, and every normalized `C²` solution `(c, φ)` of
+`f(λ_κ[κ + i∂∂̄φ]) = c·e^F` with `c^n ≤ K₁`, `|φ| ≤ C`. The constant `c` is not fixed to `1`:
+for the Hessian pairs `(σ_k^{1/k}, Γ_k)` with `k < n` no normalized `F` has a solution with
+`c = 1`. -/
 theorem exists_abs_le_of_entropy_le [T2Space X] [CompactSpace X] [ConnectedSpace X]
     (κ : SmoothTwoForm 𝓘(ℝ, E) X) (hκ : κ.Compatible (ofComplexManifold E X))
-    (hκc : κ.IsClosed) {γ p : ℝ} (hγ : 0 < γ) (hp : (finrank ℂ E : ℝ) < p) (K : ℝ) :
-    ∃ C : ℝ, ∀ P : AdmissiblePair (finrank ℂ E), P.IsStructural γ → ∀ F φ : X → ℝ,
+    (hκc : κ.IsClosed) {γ p : ℝ} (hγ : 0 < γ) (hp : (finrank ℂ E : ℝ) < p) (K₁ K₂ : ℝ) :
+    ∃ C : ℝ, ∀ P : AdmissiblePair (finrank ℂ E), P.IsStructural γ → ∀ (c : ℝ) (F φ : X → ℝ),
       ContMDiff 𝓘(ℝ, E) 𝓘(ℝ) ∞ F → ContMDiff 𝓘(ℝ, E) 𝓘(ℝ) 2 φ →
       formPowIntegral κ (fun x ↦ Real.exp (finrank ℂ E * F x)) = formPowIntegral κ (fun _ ↦ 1) →
-      IsNormalizedSolution P κ κ F 1 φ →
+      IsNormalizedSolution P κ κ F c φ →
+      c ^ finrank ℂ E ≤ K₁ →
       (formPowIntegral κ (fun _ ↦ 1))⁻¹ *
-          formPowIntegral κ (fun x ↦ Real.exp (finrank ℂ E * F x) * |F x| ^ p) ≤ K →
+          formPowIntegral κ (fun x ↦ Real.exp (finrank ℂ E * F x) * |F x| ^ p) ≤ K₂ →
       ∀ x, |φ x| ≤ C := by
   sorry
 
@@ -443,7 +440,8 @@ theorem exists_abs_le_of_entropy_le [T2Space X] [CompactSpace X] [ConnectedSpace
 the setting of §8.3, fix `γ > 0`, `1 ≤ k ≤ n`, `q > n/k` and bounds `K₁`, `K₂`. There is `C` such
 that for every admissible pair with structural constant `γ`, every `t ∈ (0, 1]`, and every
 normalized `C²` solution `φ` of `f(λ_κ[ω_t + i∂∂̄φ]) = c·e^F` with smooth normalized `F`, whose
-eigenvalue vector lies in `Γ_k`, with `∫ e^{nqF} κ^n ≤ K₁` (the `L^q` norm of `e^{nF}`) and
+eigenvalue vector lies in `Γ_k`, with `∫ e^{nqF} κ^n ≤ K₁` (the `q`-th power of the `L^q` norm
+of `e^{nF}`) and
 `c^n/V_t ≤ K₂`, `|φ| ≤ C`. -/
 theorem exists_abs_le_hessian_degenerating [T2Space X] [CompactSpace X] [ConnectedSpace X]
     (κ : SmoothTwoForm 𝓘(ℝ, E) X) (hκ : κ.Compatible (ofComplexManifold E X))
