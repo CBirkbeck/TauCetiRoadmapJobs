@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HodgeClassesForJacquetLanglands~4",
+  "head": "3528628124d62065e909ad0eeb0fc0b442077028",
+  "pr": 2436,
+  "folder": "HodgeClassesForJacquetLanglands",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 125 changed lines since e9118f6. Previous findings: R01, R03, R04, R05, R06 repaired; R02 partly repaired (GU_E, U_E, GSU_E, GU_B, U_B defined in section 1.2, but PGU_E and PGU_B° still undefined: one P3 finding). Recomputed the new kernel Res_{E/F}mu_2 of the exterior isogeny on geometric points (order four, F-points ±1), the dimensions and components of the new group schemes, the block isogeny, and the Q(sqrt 5) level-23 Check; 8 IP23 locators checked in the changed passages and the seeded sample falling in them (sections 0.2, 1.7, 10.3); HilbertModularVarietiesAndShimuraCurves R18.4.1, R18.4.24b, R18.4.25a, R18.4.25 and ReductiveGroups Layer 3 resolved. Gate passes; depcheck 0 problems; Suggested.lean elaborates with three sorry warnings only; pull request text agrees with the head. One source erratum recorded (IP23 Propositions 5.6 and 5.10).",
+  "text": "2b45eab65682a8b0",
+  "carried": {
+   "from": "3528628124d62065e909ad0eeb0fc0b442077028",
+   "head": "71a3489e6865d4d2bf947d5c66cdc117f2844912",
+   "findings": 1,
+   "lines": 24,
+   "folders": [
+    "HodgeClassesForJacquetLanglands"
+   ]
+  }
+ }
+}
