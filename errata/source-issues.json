@@ -234651,10 +234651,42 @@
    "reported": "2026-11-16",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13054#issuecomment-6909637676"
+  },
+  {
+   "kind": "misprint",
+   "source": "SAG",
+   "locator": "the proof of Proposition 9.1.5.1, printed p. 737",
+   "says": "the opening four words of the sentence choosing the atlas twice in a row",
+   "should": "them once",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "QuasicoherentSheavesOnPrestacks",
+   "job": "RT-QuasicoherentSheavesOnPrestacks~2b",
+   "board_pr": 18060,
+   "head": "74646e9",
+   "reported": "2026-11-16",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18060#issuecomment-6909827437"
+  },
+  {
+   "kind": "misprint",
+   "source": "SAG",
+   "locator": "Warning 10.4.6.9, printed p. 930",
+   "says": "the classifying stack is G and then forms the derived category of the heart of QCoh of X",
+   "should": "use one letter for the stack",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "QuasicoherentSheavesOnPrestacks",
+   "job": "RT-QuasicoherentSheavesOnPrestacks~2b",
+   "board_pr": 18060,
+   "head": "74646e9",
+   "reported": "2026-11-16",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18060#issuecomment-6909827437"
   }
  ],
- "scanned_to": "2026-11-16T06:55:19Z",
- "updated": "2026-11-16T06:55:36Z",
+ "scanned_to": "2026-11-16T07:06:12Z",
+ "updated": "2026-11-16T07:10:34Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
