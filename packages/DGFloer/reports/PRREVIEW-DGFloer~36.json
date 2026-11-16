@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DGFloer~36",
+  "head": "62765e61af9185ad959dcc707445839bd7f42f65",
+  "pr": 1798,
+  "folder": "DGFloer",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 62765e6; the pull request's title and description read against the head and main: one P3 (the description says ImplicitAtlases is still an open pull request; it is on main since 9d0f6ec). Gate rerun OK, depcheck 0 problems, Suggested.lean elaborates with seven sorry warnings only; adversarial rows for the torus criterion and mod-2 vanishing; citations of AlgebraicTopology (#1807 and main), HamiltonianReduction and DGFloerPartII (#1799) resolved. No folder change is requested.",
+  "text": "b52e1a0ccfc14169",
+  "carried": {
+   "from": "62765e61af9185ad959dcc707445839bd7f42f65",
+   "head": "62765e61af9185ad959dcc707445839bd7f42f65",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
