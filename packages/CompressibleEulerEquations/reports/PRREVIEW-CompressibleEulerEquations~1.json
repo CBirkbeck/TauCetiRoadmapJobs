@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompressibleEulerEquations~1",
+  "head": "85b68bdfcb8d1b605d774c8330e7dc26c515fd47",
+  "pr": 2442,
+  "folder": "CompressibleEulerEquations",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "Four P3 findings: R01 exists_incompatible_developments and quadraticLaw mirror the 8.2 Non-uniqueness Check (padding); R02 IsHalfSpaceDomain has no API or Checks; R03 a 7.1 Check names the zero family, which IsWeakDerivFamily (g 0 = u) rejects; R04 one description sentence calls every non-main roadmap a consumer. Gate at 85b68bd: all checks OK; depcheck 251 roadmaps, 2394 edges, 0 problems; outside-folder diff empty. lake env lean Suggested.lean: 15 sorry warnings only; #check of 37 declarations keeps every binder; one-tactic probe closes none of 15 theorems. Seeded sample of 15 targets: 69 locators in 13 cached sources match; Majda1984, Kato1975, Dafermos2016 uncertified and 4 waived sources not verifiable. 52 Tau Ceti and 24 Mathlib file:line citations resolve. LorentzianGeometry (fc070ae) and SymmetricHyperbolicSystems (6a5cca3) sections resolve at their open heads. Adversarial table: 26 rows with computed values. One source error recorded (ChristodoulouMiao2014 lines 872-880). Majda1984 (largest share, 18/113) text and contents unreadable; arrangement independent of ChristodoulouMiao2014.",
+  "text": "9fedc2c5aea6e3c0"
+ }
+}
