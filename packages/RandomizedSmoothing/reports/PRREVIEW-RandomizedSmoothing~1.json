@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RandomizedSmoothing~1",
+  "head": "ea14431e8d07bd259a8755b77b4bb2c2041fb576",
+  "pr": 2428,
+  "folder": "RandomizedSmoothing",
+  "date": "2026-11-16",
+  "findings": 13,
+  "blocking": 3,
+  "notes": "Full review. Gate FAIL at this head (imports, mathlib-subimports, no-import-mathlib, outside-folder); build passes; depcheck 0 problems. Sources: Cohen-Rosenfeld-Kolter (arXiv:1902.02918) Theorems 1-2, Lemma 4, Propositions 2-5 and Salman et al. (arXiv:1906.04584) Lemmas 1-2 read at their locators; Clopper-Pearson 1934 and Lehmann-Romano not readable. All 13 sampled sections computed on degenerate cases (table in the report); numerics of Layer 6 recomputed. One-tactic probe run on a scratch copy: 3 declarations close, 1 more is a numerical value. Repair statements for the two absent headlines elaborated on a scratch copy. Blocking: two statable headlines absent (R01), sharpness weaker than the source (R02), planned decision procedures and numerical enclosures (R03).",
+  "text": "95b1b4a4ffc34117"
+ }
+}
