@@ -3789,7 +3789,8 @@
         "ShimuraVarietiesPartII:SV2.5/integral-datum-maps",
         "ShimuraVarietiesPartII:SV2.5/ordinary-very-good",
         "ShimuraVarietiesPartII:SV2.6/kr-stratification",
-        "ShimuraVarietiesPartII:SV2.6/same-field-curves"
+        "ShimuraVarietiesPartII:SV2.6/same-field-curves",
+        "ShimuraVarietiesPartII:SV2.5/arbitrary-siegel-map"
       ]
     },
     {
@@ -3797,7 +3798,7 @@
       "id": "gap:open-curve-companions",
       "supplier": "GlobalShtukasAndFunctionFieldLanglands",
       "section": "§§6.1–6.2, Constant twists and Compatible systems on curves (semisimple form)",
-      "needs": "State §6.2 for semisimple lisse sheaves on a smooth geometrically connected open curve over F_q, as the direct sum of the companions of its irreducible constituents, with one common finite coefficient extension. The constant twist of §6.1 and the irreducible companion of §6.2 are supplied and are not part of the gap.",
+      "needs": "Let C be a smooth geometrically connected curve over F_q, not assumed proper, ℓ≠p, and L a semisimple lisse Q̄_ℓ-sheaf on C whose Frobenius eigenvalues at every closed point are algebraic numbers that are units at every finite place not above p (algebraic and p-plain, the hypothesis of §6.2, imposed on each irreducible constituent). State that there is a number field F containing the coefficients of all Frobenius characteristic polynomials of L and that, for every prime ℓ′≠p and every embedding F↪Q̄_ℓ′, there is a semisimple lisse Q̄_ℓ′-sheaf on C whose Frobenius characteristic polynomial at every closed point is the image of that of L, namely the direct sum of the companions of the irreducible constituents of L over one common finite coefficient extension. The constant twist of §6.1 and the irreducible companion of §6.2 are supplied and are not part of the gap. The p-plain hypothesis is needed: the constant rank-one Q̄_2-sheaf on A¹ over F_5 with geometric Frobenius 3 is semisimple and lisse, but a 3-adic companion would be a continuous character with Frobenius value 3, which is not a 3-adic unit.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.7/representationwise-independence"
@@ -3807,8 +3808,8 @@
       "slug": "integral-local-shimura",
       "id": "gap:integral-local-shimura",
       "supplier": "HeckeStacksAndLocalShtukas",
-      "section": "§HS2, especially §§HS2.1, HS2.13",
-      "needs": "For an odd-p local Shimura datum (G,b,μ) with specified fixer, supply its integral local Shimura variety and the completion comparison used in KPZ Theorem 7.1.8, compatible with universal shtukas and derived-isomorphism maps as in KZ Proposition 4.3.2; include the full-fixer extension, not only a generic period tower.",
+      "section": "§HS2, integral local Shimura varieties of quasi-parahoric models (new targets beside §§HS2.1 and HS2.13)",
+      "needs": "Let G be a connected reductive group over Q_p, 𝒢 a quasi-parahoric model of G (a smooth open subgroup scheme of the full fixer of a point of the extended building containing the connected parahoric; its special fibre may be disconnected), μ a minuscule cocharacter with local reflex field E, and k an algebraic closure of the residue field of E. (i) Extend the framed shtukas of §HS2.1 to 𝒢 and define, for μ-admissible b∈G(Q̆_p), the integral local Shimura variety M^int_(𝒢,b,μ) over Spd O_Ĕ with its base point and universal 𝒢-shtuka (PaRa26 §2.4, Definition 2.4.1, pp.7–8). (ii) Prove purity for 𝒢-torsors: for an algebraically closed nonarchimedean field C of characteristic p with open bounded valuation ring C⁺ and pseudo-uniformizer ϖ, and for products of such points, every 𝒢-torsor over Spec W(C⁺) minus V(p,[ϖ]) extends to Spec W(C⁺) and is trivial (PaRa26 Propositions 3.2.1–3.2.2, pp.12–13). (iii) Attach to a de Rham pro-étale 𝒢(Z_p)-torsor bounded by μ over a smooth E-scheme X its 𝒢-shtuka over X^♢ with one leg bounded by μ, compatibly with change of group, and prove that a pro-étale torsor over a smooth connected X that is de Rham at one classical point is de Rham (PaRa24 §2.6, Proposition 2.6.3, p.40, and Proposition 4.1.2, p.77, with the rigidity theorem of Liu–Zhu cited there). (iv) For X normal, flat, separated and of finite type over O_E, prove that a homomorphism between the restrictions to the generic fibre of two 𝒢-shtukas over X extends uniquely over X (PaRa24 Theorem 2.7.7, p.48, and Corollary 2.7.10, p.50). (v) For p>2 and (G,{μ}) of abelian type, prove that the formal completion of M^int_(𝒢,b,μ) at a k-point x is isomorphic to the v-sheaf of the completed local ring of M_loc(G,{μ}) at a k-point y obtained from a trivialization of the 𝒢-torsor underlying the shtuka at x (PaRa26 Theorem 2.5.5, p.9). (vi) For a homomorphism f:G→G′ carrying centre to centre and inducing an isomorphism of adjoint groups, extended to quasi-parahoric models 𝒢→𝒢′ whose neutral components belong to the same point of the common adjoint building, with b′=f(b) and {μ′}={f∘μ}, prove that f induces an isomorphism from the formal completion of M^int_(𝒢,b,μ) at x onto that of M^int_(𝒢′,b′,μ′) at f(x), after base change of reflex rings (PaRa26 Proposition 5.3.1, p.35, cited in KZ Proposition 4.3.2 as Theorem 5.2 of an earlier version). Formal completions are those of DiamondsAndVStacksPartII §D9.8; no statement about a Shimura model is part of the gap.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.1/weaker-strict-comparison",
@@ -3820,8 +3821,8 @@
       "slug": "general-connected-reduction",
       "id": "gap:general-connected-reduction",
       "supplier": "HeckeStacksAndLocalShtukas",
-      "section": "§HS2",
-      "needs": "For the integral Hodge-model shtuka at an arbitrary odd-p full fixer, supply the reduction of the integral frame torsor to the connected fixer used in the proof of KPZ Corollary 7.2.24, compatible with adjoint descent.",
+      "section": "§HS2, component groups of full fixers (new target)",
+      "needs": "Let G be a connected reductive group over Q_p, G^fix the full fixer of a point of its extended building, G° its relative identity component, π₀(G^fix) the finite étale component group over F_p, and i the inclusion of the special fibre. (i) Prove that 1→G°→G^fix→i_*π₀(G^fix)→1 is an exact sequence of sheaves of groups on the big étale site of Spec Z_p, and that the corresponding sequence of v-sheaves of groups over Spd Z_p is exact (PaRa26, proof of Proposition 3.2.1, p.12; DvHKZ Lemma 4.3.4, p.39). (ii) For a quasi-parahoric model 𝒢, a minuscule μ and a 𝒢-shtuka with one leg bounded by μ over the v-sheaf of a flat O_E-scheme, construct its v-sheaf local-model map to the quotient of the v-sheaf of M_loc(G,{μ}) by 𝒢^♢, functorial in 𝒢, so that the maps for G° and G^fix are 2-compatible under M_loc(G°,{μ})=M_loc(G^fix,{μ}) (PaRa24 §4.9.1, p.99; DvHKZ diagram (4.3.1), p.37). No statement about a Shimura model is part of the gap.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.3/adjoint-local-model-diagram"
@@ -3854,21 +3855,10 @@
       "id": "gap:noot-coarse-comparison",
       "supplier": "ArithmeticGaloisRepresentations",
       "section": "Layer 6",
-      "needs": "For the tensor Hodge realization of an abelian special fibre, after an extension defining its geometric endomorphisms and a sufficiently divisible neat Frobenius power, supply equality and rationality of its Conj′ classes at all realizations as used in HT Corollary 2.1.9, independently of the full Conj(G) conclusion here.",
+      "needs": "For the tensor Hodge realization of an abelian special fibre, after an extension defining its geometric endomorphisms and a neat Frobenius power with sufficiently divisible positive exponent, supply equality and rationality of its Conj′ classes at all realizations as used in HT Corollary 2.1.9, independently of the full Conj(G) conclusion here.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.4/all-prime-tate-comparison"
-      ]
-    },
-    {
-      "slug": "finite-field-bertini",
-      "id": "gap:finite-field-bertini",
-      "supplier": "AlgebraicModuliForArithmeticGeometry",
-      "section": "Layer 1",
-      "needs": "For a smooth geometrically irreducible finite-type F_q-scheme of positive dimension, a specified F_q-point and a dense open, supply a smooth geometrically connected curve over F_q through that point whose inverse image of the open is nonempty, as used in KZ Corollary 5.2.7.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.6/same-field-curves"
       ]
     },
     {
@@ -3890,7 +3880,21 @@
       "needs": "For the normal Hodge models S_K defined in Layer 0 at neat tame level over the completed maximal unramified local reflex ring, assuming their geometric special fibre is locally integral, prove that the special fibre of each connected integral component is geometrically irreducible, compatibly with specialization, as used in the proof of HT Corollary 1.3.16.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
-        "ShimuraVarietiesPartII:SV2.4/ordinary-density"
+        "ShimuraVarietiesPartII:SV2.4/ordinary-density",
+        "ShimuraVarietiesPartII:SV2.5/arbitrary-siegel-map"
+      ]
+    },
+    {
+      "slug": "siegel-chain-moduli",
+      "id": "gap:siegel-chain-moduli",
+      "supplier": "ShimuraCompactifications",
+      "section": "Layer 7, Siegel lattice-chain moduli (new target)",
+      "needs": "For a symplectic Q-space (V,ψ), a prime p, a self-dual periodic Z_p-lattice chain L in V_Qp with stabilizer K′_p=GSp(L)(Z_p) and a prime-to-p level K′^p neat in the adelic sense of PELModuli §M2.2, pose over Z_(p) the moduli problem of L-indexed chains of abelian schemes up to prime-to-p isogeny, with periodicity isomorphisms, a Q-homogeneous principal polarization identifying the chain with its dual chain, and K′^p-level structure; prove that it is represented by a quasi-projective Z_(p)-scheme carrying the universal polarized chain, with generic fibre Sh_(K′)(GSp(V),S^±) and finite étale transition maps for open K″^p ⊂ K′^p compatible with prime-to-p Hecke translation, and that for the chain p^nΛ of one self-dual lattice Λ it is the principally polarized Siegel moduli of PELModuli §M2.8. This is the Siegel moduli scheme with parahoric level given by L of KPZ Theorem 7.1.8, p.74.",
+      "stageId": "ShimuraVarietiesPartII",
+      "neededBy": [
+        "ShimuraVarietiesPartII:SV2.0/integral-hodge-data",
+        "ShimuraVarietiesPartII:SV2.1/weaker-strict-comparison",
+        "ShimuraVarietiesPartII:SV2.1/canonical-hodge-model"
       ]
     },
     {
@@ -3913,7 +3917,7 @@
       "id": "gap:multiplier-exact-sequences",
       "supplier": "ShimuraData",
       "section": "Layer 4, Hodge-type multiplier sequences (new target)",
-      "needs": "For a Hodge-type datum (G,X) with G^ad Q-simple, with G^c generated by G^der and the largest compact subtorus Z_(G,0) of Z_G and Z^c_G generated by Z_(G^der) and Z_(G,0), prove that the multiplier c of any Hodge embedding gives exact sequences 1 → G^c → G → G_m → 1 and 1 → Z^c_G → Z_G → G_m → 1 (KPZ Lemma 7.2.5, p.78), and hence that the common-multiplier subgroup of a finite product of such data has centre an extension of G_m by the product of the Z^c.",
+      "needs": "For a Hodge-type datum (G,X), with no simplicity hypothesis on G^ad, with G^c generated by G^der and the largest compact subtorus Z_(G,0) of Z_G and Z^c_G generated by Z_(G^der) and Z_(G,0), prove that the multiplier c of any Hodge embedding gives exact sequences 1 → G^c → G → G_m → 1 and 1 → Z^c_G → Z_G → G_m → 1, and hence that the common-multiplier subgroup of a finite product of Hodge-type data, itself of Hodge type through the direct-sum embedding, has centre an extension of G_m by the product of the Z^c (KPZ Lemma 7.2.5, p.78, stated there for G^ad Q-simple; its proof uses only that G is generated by G^c and the weight w_h(G_m), which holds for every Hodge-type datum because w_h is the rational scalar cocharacter and Z_G(R)/w_h(R^×) is compact; KZ applies it without simplicity to the matched datum in the proof of Lemma 4.3.8(1), p.40).",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.2/nonexceptional-cover",
@@ -3951,8 +3955,8 @@
       "slug": "rg3-cyclic-torus-and-neatness",
       "id": "gap:rg3-cyclic-torus-and-neatness",
       "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.3/cyclic-torus-and-neatness, stable centralizers (new statement)",
-      "needs": "With the connected cyclic closure of RG3.3/cyclic-torus-and-neatness, prove that for a semisimple γ∈G(Q) the connected centralizers Z_G(γ^n)° are constant for n divisible enough and then equal the centralizer of the torus generated by γ^n, compatibly with base change to Q_ℓ and Q_p (HT §§2.1.5–2.1.7, pp.22–24).",
+      "section": "§3.5, stable centralizers (new target beside §3.5)",
+      "needs": "For a field F of characteristic zero, a connected reductive F-group G and a semisimple γ∈G(F), let S be the Zariski closure of the group generated by γ and e the index of its identity component; prove that for every positive integer n divisible by e the closure of the group generated by γ^n is the torus S°, so that Z_G(γ^n)=Z_G(S°) is connected reductive and independent of n (n=0 is excluded: γ^0=1 has closure 1 and centralizer G), compatibly with field extension (used for F=Q_ℓ and for the finite-period crystalline field in HT §§2.1.5–2.1.7, pp.22–24).",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.4/isogeny-realizations"
@@ -3963,7 +3967,7 @@
       "slug": "rg3-r-smooth-tori",
       "id": "gap:rg3-r-smooth-tori",
       "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.2, R-smooth tori (new target)",
+      "section": "Layer 2, R-smooth tori (new target)",
       "needs": "For a torus T over a finite extension F of Q_p, R-smooth meaning that the Zariski closure of T in the Weil restriction of the lft Néron model of T over a splitting field is smooth, prove that a finite product of Weil restrictions of tori split by tamely ramified extensions is R-smooth and that an extension of an R-smooth torus by an R-smooth torus is R-smooth (KZ Proposition 2.4.6, p.14; KPZ Proposition 2.1.5(1)–(2), p.10).",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
@@ -3979,7 +3983,7 @@
       "slug": "rg3-r-smooth-abelian-type",
       "id": "gap:rg3-r-smooth-abelian-type",
       "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.2, R-smooth centralizers (new target)",
+      "section": "Layer 2, R-smooth centralizers (new target)",
       "needs": "For p>2 and a reductive group G over Q_p whose adjoint group is a product of Weil restrictions of groups split by tamely ramified extensions and whose centre Z_G is an R-smooth torus, prove that the centralizer of a maximal Q̆_p-split torus of G is R-smooth (KPZ Lemma 7.2.11, pp.80–81).",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
@@ -3994,7 +3998,7 @@
       "slug": "rg3-stabilizer-closed-immersion",
       "id": "gap:rg3-stabilizer-closed-immersion",
       "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.2, stabilizer closed immersions (new target)",
+      "section": "§5.3a, integral stabilizer schemes (new target extending §5.3a, whose equality of full fixers is the case K̃=K on integral points)",
       "needs": "For p>2, a closed immersion G → G′ of reductive groups over a finite extension K of Q_p inducing an isomorphism of derived groups with G R-smooth, a finite extension K̃/K and x ∈ B(G,K) with image x′ ∈ B(G′,K̃), prove that G → Res_(K̃/K) G′_K̃ extends to a closed immersion of Bruhat–Tits stabilizer schemes G_x → Res_(O_K̃/O_K) G′_(x′) (KPZ Proposition 2.1.5(3), p.10; KZ Propositions 2.4.8 and 2.4.10, pp.15–16).",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
@@ -4004,26 +4008,49 @@
       "availability": "board design outside the prescribed merge order"
     },
     {
-      "slug": "rg3-conj-prime-centralizer-dimension",
-      "id": "gap:rg3-conj-prime-centralizer-dimension",
-      "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.0/orthogonal-outer-action, centralizer dimension (new statement)",
-      "needs": "With Out′(H), Conj′(H) and Aut′(H) as in RG3.0/orthogonal-outer-action, prove that two semisimple geometric points with the same image in Conj′(H) have centralizers of the same dimension (HT §2.1.8, p.24; proof of Corollary 2.1.9, pp.24–25).",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.4/all-prime-tate-comparison"
-      ],
-      "availability": "board design outside the prescribed merge order"
-    },
-    {
       "slug": "compact-quotient-borel",
       "id": "gap:compact-quotient-borel",
       "supplier": "ReductiveGroupsPartIII",
-      "section": "RG3.2, required split-group extension",
-      "needs": "For a connected split reductive group over a nonarchimedean local field and a reductive subgroup with compact homogeneous quotient, supply the Borel-containment argument used in K17 Corollary 2.1.7, p.31 and the resulting equality for a reductive centralizer.",
+      "section": "Layer 2, compact homogeneous quotients over local fields (new target)",
+      "needs": "Let F be a nonarchimedean local field of characteristic zero, H a connected split reductive F-group and I⊂H a closed F-subgroup. (a) If I(F)\\H(F) is compact, then I contains a Borel subgroup of H. (b) If moreover the identity component of I is reductive, then I=H: H/I is proper because I contains a Borel subgroup, affine because I° is reductive, and geometrically connected because H is, hence a point. (K17 Corollary 2.1.7 and its proof, p.31, which takes (a) from Borel–Tits.) For H=G_m and I=1 the quotient F^× is not compact; for H=GL₂ and I a Borel subgroup the quotient P¹(F) is compact but I° is not reductive, so (b) needs its reductivity hypothesis.",
       "stageId": "ShimuraVarietiesPartII",
       "neededBy": [
         "ShimuraVarietiesPartII:SV2.4/auxiliary-prime-rank"
+      ]
+    },
+    {
+      "slug": "integral-hodge-realization-extension",
+      "id": "gap:integral-hodge-realization-extension",
+      "supplier": "ShimuraVarieties",
+      "section": "§7.0i, p-adic de Rham realization (new target)",
+      "needs": "For a complete discrete valuation ring O_K of mixed characteristic (0,p) with perfect residue field, an abelian scheme A over O_K and an embedding K̄ ↪ ℂ, prove that for every absolute Hodge tensor of A_ℂ, with mixed tensors, duals and Tate twists, the p-adic étale component and the de Rham component, both defined over K̄, correspond under the de Rham comparison B_dR ⊗ H¹_et(A_K̄, Q_p) ≅ B_dR ⊗_K H¹_dR(A_K/K) extended to tensor constructions (HT (1.3.4.2), p.16, the theorem of Blasius and Wintenberger used in the proof of HT Proposition 1.3.7, pp.17–18); neither an integral moduli model nor an integral tensor extension is an input.",
+      "stageId": "ShimuraVarietiesPartII",
+      "neededBy": [
+        "ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors",
+        "ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames"
+      ]
+    },
+    {
+      "slug": "fixer-stable-lattices",
+      "id": "gap:fixer-stable-lattices",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "§RG2.3.5, stable lattices for full fixers (new target beside hodge-type-fixer-immersion)",
+      "needs": "For a connected reductive group G over a finite extension F of Q_p, a point x of its extended building with full fixer scheme G_x, and a finite-dimensional algebraic representation ρ: G → GL(V), prove that V contains an O_F-lattice Λ for which ρ extends to a morphism of O_F-group schemes G_x → GL(Λ), that is, by the extension principle of §RG2.3.1, a lattice stable under G_x(O_F̆); no tameness, minuscule or closed-immersion hypothesis or conclusion is involved (KZ §4.3.5, p.40, by the G(F̆)- and Galois-equivariant embedding of buildings and the lattice chain of the image point; equally by the stable-lattice argument for V as a comodule over the flat Hopf algebra of G_x).",
+      "stageId": "ShimuraVarietiesPartII",
+      "neededBy": [
+        "ShimuraVarietiesPartII:SV2.5/arbitrary-siegel-map"
+      ]
+    },
+    {
+      "slug": "rg3-r-smooth-central-quotient",
+      "id": "gap:rg3-r-smooth-central-quotient",
+      "supplier": "ReductiveGroupsPartIII",
+      "section": "Layer 2, central quotients of fixers (new target)",
+      "needs": "For a connected reductive group G over a finite extension F of Q_p whose centre Z_G is an R-smooth torus (Conventions), and a point x of its extended building with full fixer scheme G_x and image x_ad in the building of G^ad, prove that the Zariski closure Z of Z_G in G_x is smooth, that G_x/Z is a smooth affine group scheme with generic fibre G^ad, and that its neutral component is the parahoric group scheme of G^ad at x_ad; G_x/Z itself need not be the full fixer of x_ad (KZ Proposition 2.4.13, p.17, for the parahoric of a central extension with R-smooth torus kernel; KPZ §7.1.12, p.75, with KP Lemma 4.6.2(2), p.198, for the full fixer).",
+      "stageId": "ShimuraVarietiesPartII",
+      "neededBy": [
+        "ShimuraVarietiesPartII:SV2.3/adjoint-local-model-diagram",
+        "ShimuraVarietiesPartII:SV2.3/strong-adjoint-local-model-diagram"
       ]
     }
   ],
