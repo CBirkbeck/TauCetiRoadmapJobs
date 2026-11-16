@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HomotopyTheoryOfCategories~19",
+  "head": "46d6fae4473d28ef1b7a1ba68d2a573796161d93",
+  "pr": 1521,
+  "folder": "HomotopyTheoryOfCategories",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 10 changed lines since 8fbebd0. Previous R01 and R02 are repaired, with the text the review proposed. Checked: the new FactorizationSystems sentence against LeanPool f8b9b72 (Examples.lean: one system, EpiMonoSet on Type u) and against README 7.5, 8.3 and the pinned SimplexCategory.reedyStructure (Mathlib Reedy/SimplexCategory.lean line 42); the reuse clause against the LeanPool file headers and NOTICE, and against the authors rule at line 330 of the repository README. Seeded sample: only 7.5 falls in the changed citations; Riehl-Verity TAC 2014 2.7 and 2.6 verified. Description checked against the head: nothing contradicted. Gate: the worker's gate is 0 on every check with build=0; my re-run is 0 except depcheck NOT IN ORDER against the public order (not a finding). Candidate-order depcheck: 257 roadmaps, 2433 edges, 0 problems. lake env lean: exit 0, 52 sorry warnings only; Suggested.lean unchanged. Nothing outside the folder. Overlap: GeneralAlgebraicKTheory (main) read, nothing shared.",
+  "text": "433bf5ca44778f62"
+ }
+}
