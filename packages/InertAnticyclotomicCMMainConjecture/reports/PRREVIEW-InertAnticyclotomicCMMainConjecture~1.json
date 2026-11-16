@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-InertAnticyclotomicCMMainConjecture~1",
+  "head": "920db3ff377c349fd2563b46e64ed163086c74ff",
+  "pr": 2435,
+  "folder": "InertAnticyclotomicCMMainConjecture",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 2,
+  "notes": "All 15 sampled targets checked against BKO21, AHII05, AHI06, BIL86 and RUB91 (43 locators); one locator defect (R03, §5.5). Gate rerun at 920db3f passes; dependency check 0 problems; lake env lean on Suggested.lean exits 0 with no messages (no declarations). Findings: R01 (P1) §4.3's route uses BIL86 Theorem 3.24 as an input nothing owns; R02 (P2) gaps elliptic-unit-euler-system and inert-two-variable-main-conjecture request from NonordinaryCMSpecialValues what ModularIwasawaMainConjecturesPartII §§2.2, 4.1, 4.8(ii) plans (repair tested: moved #374->#404, 0 problems); R03 (P3) §5.5 locator; R04 (P3) the PR description's claims about Suggested.lean.",
+  "text": "ec296d6cbbe94e88",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Two gaps give a second owner to objects ModularIwasawaMainConjecturesPartII plans",
+    "where": "merge order: place this roadmap after ModularIwasawaMainConjecturesPartII",
+    "raised": "PRREVIEW-InertAnticyclotomicCMMainConjecture~1"
+   }
+  ]
+ }
+}
