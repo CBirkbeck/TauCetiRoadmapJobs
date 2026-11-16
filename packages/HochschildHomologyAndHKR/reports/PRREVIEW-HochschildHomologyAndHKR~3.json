@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HochschildHomologyAndHKR~3",
+  "head": "2c1724c235c07dbc0f3b846689d0b6a022e9713d",
+  "pr": 2447,
+  "folder": "HochschildHomologyAndHKR",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review of an unchanged head (the previous review accepted it with no finding). Accepted conditional on the declared gap smooth-hkr-antisymmetrisation (RefinedTraceMethods 1.9), checked precise, minimal and declared in plan.json and the README. Seeded sample of 15 sections plus all 8 Suggested.lean theorems recomputed on degenerate instances (26 table rows). 51 source locators read in the cached texts of Ginz05, HKR62, AV20 and StacksSmooth; Loday98, Weibel94, CE56, Ger63 and Mat86 are uncertified and listed as not verifiable. 46 Mathlib and 44 Tau Ceti declarations opened at the pins; 15 cross-roadmap citations resolved on main and at open heads. Gate OK on my run, worker gate build=0; depcheck 257 roadmaps, 2447 edges, 0 problems. lake env lean on Suggested.lean: 8 sorry warnings only; one-tactic probe closes 0 of 8. Pull request text agrees with the head. Five source issues recorded for Ginz05.",
+  "text": "20854baeffbbf5c6"
+ }
+}
