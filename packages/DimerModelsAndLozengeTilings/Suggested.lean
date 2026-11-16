@@ -16,8 +16,8 @@ set of invariant probability measures.
 Stated here: tilings are the perfect matchings of the dual hexagonal graph (Layer 1); plane tilings
 are height functions, flip connectivity and Thurston's criterion (Layer 2); Kasteleyn's theorem and
 the determinantal local statistics on finite simply connected regions (Layer 3); the face property
-and the ergodicity criterion for invariant Gibbs measures of a specification on a finite-alphabet
-subshift with a proper countable-group action (Layer 4); the face property for invariant dimer
+and the ergodicity criterion for invariant Gibbs measures of a specification on a subshift over
+any alphabet with a proper countable-group action (Layer 4); the face property for invariant dimer
 Gibbs measures of a positive edge weight on a locally finite graph with a proper action of a
 countable infinite group by automorphisms, and the face property and the ergodicity criterion for
 invariant lozenge Gibbs measures (Layer 5); the classification of invariant Gibbs measures on the
@@ -315,13 +315,13 @@ def Specification.gibbsInvariant {Γ I S : Type*} [Group Γ] [MulAction Γ I] [T
     [MeasurableSpace S] {X : Subshift Γ I S} (γ : Specification X) : Set (Measure X) :=
   {μ | μ ∈ TauCeti.MeasureTheory.invariantMeasuresOfMeasureUnivEq Γ X 1 ∧ γ.IsGibbs μ}
 
-/-- **The face property** (README 4.6(b); sheffield2005 Lemma 3.2.2, lines 1367–1371;
-georgii2011 Theorem 14.15). For a countable infinite group acting properly on a countable index
-set, a finite discrete alphabet and any specification on a subshift, equivariant or not, the
-invariant Gibbs measures form a face of the invariant probability measures. -/
+/-- **The face property** (README 4.6(b); sheffield2005 Lemma 3.2.2, lines 1367–1371, for the
+spin spaces `ℝ^m` and `ℤ^m` of lines 256–263; georgii2011 Theorem 14.15). For a countable infinite
+group acting properly on a countable index set, any alphabet, finite or not, and any specification
+on a subshift, equivariant or not, the invariant Gibbs measures form a face of the invariant
+probability measures. -/
 theorem gibbsInvariant_isExtreme {Γ I S : Type*} [Group Γ] [Countable Γ] [Infinite Γ]
-    [MulAction Γ I] [Countable I] [Finite S] [TopologicalSpace S]
-    [DiscreteTopology S] [MeasurableSpace S] [DiscreteMeasurableSpace S]
+    [MulAction Γ I] [Countable I] [TopologicalSpace S] [MeasurableSpace S]
     (hproper : ∀ F F' : Finset I, {g : Γ | ∃ i ∈ F, g • i ∈ F'}.Finite)
     (X : Subshift Γ I S) (γ : Specification X) :
     IsExtreme ℝ≥0∞ (TauCeti.MeasureTheory.invariantMeasuresOfMeasureUnivEq Γ X 1)
@@ -332,8 +332,7 @@ theorem gibbsInvariant_isExtreme {Γ I S : Type*} [Group Γ] [Countable Γ] [Inf
 Lemmas 3.2.1–3.2.2, lines 1352–1371). Under the hypotheses of `gibbsInvariant_isExtreme`, an
 invariant Gibbs measure is an extreme point of `𝒢_inv(γ)` iff it is ergodic. -/
 theorem gibbsInvariant_extreme_iff_ergodic {Γ I S : Type*} [Group Γ] [Countable Γ] [Infinite Γ]
-    [MulAction Γ I] [Countable I] [Finite S] [TopologicalSpace S]
-    [DiscreteTopology S] [MeasurableSpace S] [DiscreteMeasurableSpace S]
+    [MulAction Γ I] [Countable I] [TopologicalSpace S] [MeasurableSpace S]
     (hproper : ∀ F F' : Finset I, {g : Γ | ∃ i ∈ F, g • i ∈ F'}.Finite)
     (X : Subshift Γ I S) (γ : Specification X) {μ : Measure X}
     (hμ : μ ∈ γ.gibbsInvariant) :

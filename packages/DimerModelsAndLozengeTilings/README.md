@@ -9,9 +9,9 @@ triangular lattice with its faces, lozenges and dual hexagonal graph; tilings of
 matchings; height functions, a combinatorial simple connectivity with a bridge to Mathlib's
 `IsSimplyConnected`, the lattice of height functions, flips and Thurston's tileability criterion;
 Kasteleyn's theorem and Kenyon's determinantal local statistics on finite simply connected
-regions; Gibbs specifications on finite-alphabet configuration spaces with a proper action of a
-countable group, and the dimer specification on any locally finite periodic graph, with the face
-property and the extreme-point characterisation of ergodic Gibbs measures; slopes; the
+regions; Gibbs specifications on configuration spaces with a proper action of a countable group,
+and the dimer specification on any locally finite periodic graph, with the face property and the
+extreme-point characterisation of ergodic Gibbs measures; slopes; the
 classification of ergodic Gibbs measures on the boundary of the slope triangle; torus tilings and
 the four-determinant Kasteleyn formula on the torus; and the explicit determinantal kernel of an
 ergodic Gibbs measure of every interior slope, identified with Okounkov–Reshetikhin's incomplete
@@ -632,7 +632,8 @@ infinite, `tilingSubgraph R` is a bijection from `𝔈(R)` onto the perfect matc
 `hexGraph` (`tilingSubgraph_bijOn`; aggarwal2023 lines 342–364; gorin2021 lines 698–702; kenyon2009
 lines 96–113). Injectivity uses that two distinct faces share at most one edge and that every edge
 of a tiling has both faces in `R`. *Needs:* 1.2, 1.4; Mathlib `SimpleGraph.induce`,
-`SimpleGraph.toSubgraph`, `SimpleGraph.Subgraph.isPerfectMatching_iff`, `Set.BijOn`.
+`SimpleGraph.toSubgraph`, `SimpleGraph.Subgraph.IsPerfectMatching`,
+`SimpleGraph.Subgraph.isPerfectMatching_iff`, `Set.BijOn`.
 
 **Checks.**
 
@@ -861,11 +862,16 @@ boundary height `h_R` therefore depends only on `R` (aggarwal2023 lines 403–40
 
 ### 2.8 The lattice of height functions and flips
 
-The pointwise minimum and maximum of two height functions on `R` are height functions. For finite
-simply connected tileable `R` with boundary height `h = h_R`, the height functions with boundary
-values `h` have a least element `H_min(v) = max_{u∈∂R}(h(u) − ρ_R(v,u))` and a greatest
-`H_max(v) = min_{u∈∂R}(h(u) + ρ_R(u,v))`, where `ρ_R(u,v)` is the least number of positively
-oriented steps of an edge path from `u` to `v` in `E(R)`. A flip at an interior vertex `v` lowers
+The pointwise minimum and maximum of two height functions on `R` are height functions: along a
+positively oriented edge both functions are nondecreasing and rise by at most one, hence so do
+their minimum and maximum (gorin2021 footnote 1, lines 765–769, for the pointwise maximum of its
+heights `x + y − 3H` (2.5), which is the minimum here; cohn-kenyon-propp2001 Section 1.4, lines
+404–423, proves the corresponding statement for domino height functions, whose values are fixed
+modulo 4, by a different argument). For finite simply connected tileable `R` with boundary height
+`h = h_R`, the height functions with boundary values `h` have a least element
+`H_min(v) = max_{u∈∂R}(h(u) − ρ_R(v,u))` and a greatest `H_max(v) = min_{u∈∂R}(h(u) + ρ_R(u,v))`,
+where `ρ_R(u,v)` is the least number of positively oriented steps of an edge path from `u` to `v`
+in `E(R)`. A flip at an interior vertex `v` lowers
 `H(v)` by one where allowed, that is when `H(v+e_k) = H(v) = H(v−e_k) + 1` for `k = 1,2,3`;
 equivalently it replaces the edges `(v,3)`, `(v−e₁,1)`, `(v−e₂,2)` of `M` by `(v,1)`, `(v,2)`,
 `(v−e₃,3)`. If `H ≠ H_min`, a flip is available at a vertex `v` where `H − H_min` is maximal,
@@ -876,8 +882,7 @@ the reverse. Hence any two tilings of a finite simply connected region are joine
 flips, `Relation.ReflTransGen IsFlip M M'` (`flip_connected`; a flip applied to a tiling of `R`
 is again a tiling of `R`, since the six faces round `v` all lie in `R`), and all tilings of such a
 region have the same number of lozenges of each type (gorin2021 lines 756–782 and footnote 1,
-lines 765–769; kenyon2009 lines 537–550; cohn-kenyon-propp2001 Section 1.4 for the lattice
-structure). *Needs:* 2.6, 2.7; Mathlib `Relation.ReflTransGen`.
+lines 765–769; kenyon2009 lines 537–550). *Needs:* 2.6, 2.7; Mathlib `Relation.ReflTransGen`.
 
 **Checks.**
 
@@ -1061,21 +1066,24 @@ Layers 1–2; Tau Ceti's complementary-minor identity; Mathlib determinants and 
 Throughout this layer `Γ` is a countable infinite group acting on a countable set `I`, and the
 action is proper: for finite `F, F' ⊆ I` only finitely many `γ ∈ Γ` have `γF ∩ F' ≠ ∅`. `S` is a
 measurable space, `Ω = I → S` carries the product σ-algebra, and `Γ` acts on `Ω` by
-`(γω)(i) = ω(γ⁻¹i)`. For 4.4–4.6 `S` is moreover finite and carries both the discrete topology and
-the discrete σ-algebra (every subset measurable, Mathlib `DiscreteMeasurableSpace`); `Ω` carries
-the product topology, and a subset `X ⊆ Ω` carries the subspace topology and the trace σ-algebra.
-A closed `Γ`-invariant `X ⊆ Ω` is called a subshift. For `I = Γ` acting on itself by left
+`(γω)(i) = ω(γ⁻¹i)`. Where subshifts enter (4.4–4.6), `S` also carries a topology, `Ω` the product
+topology, and a subset `X ⊆ Ω` the subspace topology and the trace σ-algebra. A closed
+`Γ`-invariant `X ⊆ Ω` is called a subshift. For `I = Γ` acting on itself by left
 multiplication it is the carrier of Mathlib's `SymbolicDynamics.FullShift.MulSubshift S Γ`
 (additively `SymbolicDynamics.FullShift.Subshift`): `(γω)(h) = ω(γ⁻¹h)` is `mulShift γ⁻¹ ω`, and as
 `γ` runs over `Γ` so does `γ⁻¹`, so invariance under the action is Mathlib's condition. Witness on
 `ℤ`: the action of `1` moves the indicator of `{0}` to the indicator of `{1}`, which is
 `shift (−1)` of it, while `shift 1` gives the indicator of `{−1}`. For the index sets of Layers
-5–10 (edges of a graph, with several `Γ`-orbits) Mathlib has no carrier. Then `S` is a Borel
-space (`DiscreteMeasurableSpace.toBorelSpace`), so is `Ω` (`Pi.borelSpace`: `I` is countable and
-the finite discrete `S` is second-countable), and so is `X`
-(`Subtype.borelSpace`): the product σ-algebra of `Ω` and its trace on `X` are the Borel
-σ-algebras. The discrete topology alone does not force this; with the trivial σ-algebra on
-`{0,1}` the product σ-algebra is trivial (4.4, Checks). `Bool`, the alphabet of Layers 5–10,
+5–10 (edges of a graph, with several `Γ`-orbits) Mathlib has no carrier. For the weak topology
+of 4.4, for quasilocality in 4.5 and for the closedness statement 4.6(c), `S` is moreover finite
+and carries both the discrete topology and the discrete σ-algebra (every subset measurable,
+Mathlib `DiscreteMeasurableSpace`); specifications, Gibbs measures and the face property
+4.6(a)–(b) put no hypothesis on `S`. Such an `S` is a Borel space
+(`DiscreteMeasurableSpace.toBorelSpace`), so is `Ω` (`Pi.borelSpace`: `I` is countable and the
+finite discrete `S` is second-countable), and so is `X` (`Subtype.borelSpace`): the product
+σ-algebra of `Ω` and its trace on `X` are the Borel σ-algebras. The discrete topology alone does
+not force this; with the trivial σ-algebra on `{0,1}` the product σ-algebra is trivial (4.4,
+Checks). `Bool`, the alphabet of Layers 5–10,
 carries both discrete structures natively (`Bool.instMeasurableSpace` is `⊤`; `Bool.borelSpace`).
 
 ### 4.1 Outside and tail σ-algebras
@@ -1190,9 +1198,10 @@ measurable cylinders, a π-system by `MeasureTheory.isPiSystem_measurableCylinde
 
 API:
 
-- The action on a subshift is a group action, and each `ω ↦ γ • ω` is a homeomorphism and is
-  measurable, so the action is `MeasurableConstSMul`, as Tau Ceti's
-  `ErgodicSMul.iff_mem_extremePoints` requires.
+- For every `S`, finite or not, the action on a subshift is a group action, and each
+  `ω ↦ γ • ω` is a homeomorphism and is measurable (each coordinate of `γ • ω` is a coordinate of
+  `ω`), so the action is `MeasurableConstSMul`, as Tau Ceti's `ErgodicSMul.iff_mem_extremePoints`
+  requires.
 - For `I = Γ` acting on itself by left multiplication, a subshift is the same as a closed set
   invariant under Mathlib's `mulShift`, through `(γ • ω) = mulShift γ⁻¹ ω`.
 - On a compact metrisable `X`, weak convergence of probability measures is convergence of the
@@ -1299,18 +1308,24 @@ Hence an element of `𝒢_inv(γ)` is extreme in `𝒢_inv(γ)` iff it is extrem
 ergodic, `ErgodicSMul Γ X μ` (`gibbsInvariant_extreme_iff_ergodic`), and conditioning an element of
 `𝒢_inv(γ)` on an invariant event of positive measure stays in `𝒢_inv(γ)`. Both Lean statements
 carry the standing hypotheses of the layer explicitly: `Γ` countable and infinite, `I` countable,
-properness as the finiteness of `{γ : ∃ i ∈ F, γ • i ∈ F'}` for all finite `F`, `F'`, and `S`
-finite with the discrete topology and the discrete σ-algebra. (c) If `γ` is
+and properness as the finiteness of `{γ : ∃ i ∈ F, γ • i ∈ F'}` for all finite `F`, `F'`; they put
+no hypothesis on the alphabet `S` beyond its topology and σ-algebra, since the inputs of (a) and
+(b) that involve `S`, namely 4.2, the measurability of the action (4.4) and the properness of the
+kernels, hold for every `S` (sheffield2005 states Lemma 3.2.2 for the spin spaces `ℝ^m` and `ℤ^m`,
+lines 256–263). (c) If `S` is finite with its discrete topology and σ-algebra and `γ` is
 quasilocal, `𝒢(γ)`, `𝔓_inv(X)` and `𝒢_inv(γ)` are weakly closed, hence compact (sheffield2005
 Lemma 3.2.2, lines 1367–1371; georgii2011 Theorem 14.15; gorin2021 Lemma 13.7 and its
 proof, lines 4561–4582; kos2006 lines 195–202; kenyon2009 Section 5.1, lines 799–809). Route for
 (b): the densities of the two measures with respect to their combination are almost surely
 invariant, so each of their level sets is almost equal to an exactly invariant event (Tau Ceti
-`TauCeti.MeasureTheory.exists_smul_invariant_ae_eq`), hence almost surely equal to a tail event by
-4.2; the densities therefore have tail-measurable versions, and (a) applies; the ergodicity
-statement is Tau Ceti's `ErgodicSMul.iff_mem_extremePoints`. No step uses equivariance of `γ`,
-only the invariance of the two measures and the properness of the action (sheffield2005 works with
-translation-invariant potentials, line 354); equivariance is what makes `𝒢(γ)` itself
+`TauCeti.MeasureTheory.exists_smul_invariant_ae_eq`), hence almost surely equal to the trace of a
+tail event by 4.2, applied to the push-forward of the measure to `Ω` (invariant, because `X` is):
+an invariant event `A = X ∩ A'` of `X` makes `A'` almost invariant for the push-forward, so neither
+closedness nor measurability of `X` in `Ω` is used; the densities therefore have tail-measurable
+versions, and (a) applies; the ergodicity statement is Tau Ceti's
+`ErgodicSMul.iff_mem_extremePoints`. No step uses equivariance of `γ`, only the invariance of the
+two measures and the properness of the action (sheffield2005 works with translation-invariant
+potentials, line 354); equivariance is what makes `𝒢(γ)` itself
 `Γ`-invariant (4.5). *Needs:* 4.2, 4.4, 4.5; Tau Ceti
 `TauCeti.MeasureTheory.exists_smul_invariant_ae_eq`, `ErgodicSMul.iff_mem_extremePoints`,
 `TauCeti.MeasureTheory.invariantMeasuresOfMeasureUnivEq`.
@@ -1321,8 +1336,15 @@ translation-invariant potentials, line 354); equivariance is what makes `𝒢(γ
   `𝒢_inv = 𝔓_inv` is the segment from `δ_{0̄}` to `δ_{1̄}`, and the face statement holds trivially;
   its extreme points `δ_{0̄}`, `δ_{1̄}` are the ergodic elements, while the midpoint gives the
   invariant event `{1̄}` measure `1/2`.
-- For the independent specification, `𝒢_inv = {ν^{⊗ℤ}}`, a one-point face of `𝔓_inv`, and
-  `ν^{⊗ℤ}` is ergodic (4.3).
+- For the independent specification of a law `ν` on `S`, with `Γ = I = ℤ` and `X = Ω`,
+  `𝒢_inv = {ν^{⊗ℤ}}`, a one-point face of `𝔓_inv`, and `ν^{⊗ℤ}` is ergodic (4.3). This includes
+  an infinite alphabet, `S = ℤ` with the geometric law `ν{n} = 2^{−n−1}` on `n ≥ 0`, outside the
+  finite-alphabet setting of 4.4 and covered by (b) as stated.
+- A non-discrete σ-algebra on `S`: for `S = {0,1}` with the discrete topology, the trivial
+  σ-algebra and `X = {0̄, 1̄}` (4.4, Checks), the trace σ-algebra on `X` is `{∅, X}`, so `X` has a
+  single probability measure; it is invariant, Gibbs for the only specification and ergodic,
+  `𝔓_inv(X)` and `𝒢_inv(γ)` are that one point, and (b) holds. What fails there is the setting of
+  (c): the clopen set `{1̄}` is not measurable.
 - The tail hypothesis of (a) is needed: for the independent specification with `ν = Bern(1/2)`,
   the density `f(ω) = 2·1_{ω(0)=1}` is not tail-measurable and `f·Bern(1/2)^{⊗ℤ}` (coordinate `0`
   equal to `1` almost surely) is not Gibbs. The same example shows that (b) uses the invariance of
@@ -1453,9 +1475,11 @@ and infinite, and `w` positive). Route: 4.6(b) for the subshift `𝔛(G)` and th
 invariant probability measures concentrated on `𝔛(G)` form a face of all invariant probability
 measures (Tau Ceti `TauCeti.MeasureTheory.isExtreme_setOf_measure_eq_zero`), and a face of a face is
 a face. Closedness is 4.6(c), `γ^w` being quasilocal by 5.2; the ergodicity equivalences follow from
-the face property and Tau Ceti's `ErgodicSMul.iff_mem_extremePoints`. Its statement for
-`hexGraph` is 5.4. *Needs:* 4.6, 5.2; Mathlib `SimpleGraph.Iso.mapEdgeSet`, `IsExtreme`; Tau Ceti
-`TauCeti.MeasureTheory.isExtreme_setOf_measure_eq_zero`,
+the face property, Tau Ceti's `ErgodicSMul.iff_mem_extremePoints` (extreme in `𝔓_inv` iff ergodic)
+and `TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant` (ergodic iff every exactly
+invariant event has measure `0` or `1`). Its statement for `hexGraph` is 5.4. *Needs:* 4.6, 5.2;
+Mathlib `SimpleGraph.Iso.mapEdgeSet`, `IsExtreme`; Tau Ceti
+`TauCeti.MeasureTheory.isExtreme_setOf_measure_eq_zero`, `ErgodicSMul.iff_mem_extremePoints`,
 `TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant`.
 
 **Checks.**
@@ -1537,10 +1561,10 @@ Matchings of `ℤ` (two configurations, every measure Gibbs); `C₆`; the frozen
 
 ### Dependencies
 
-Layer 4; Mathlib `SimpleGraph.Iso.mapEdgeSet` and Tau Ceti
-`TauCeti.MeasureTheory.isExtreme_setOf_measure_eq_zero` (5.3); for 5.4 also 1.2, 1.5 and 2.10,
-Mathlib `VAddInvariantMeasure`, `ErgodicVAdd`, `IsExtreme`, and Tau Ceti
-`ErgodicSMul.iff_mem_extremePoints`.
+Layer 4; Mathlib `SimpleGraph.Iso.mapEdgeSet`, `IsExtreme` and Tau Ceti
+`TauCeti.MeasureTheory.isExtreme_setOf_measure_eq_zero`, `ErgodicSMul.iff_mem_extremePoints`,
+`TauCeti.MeasureTheory.ergodicSMul_iff_forall_smul_invariant` (5.3); for 5.4 also 1.2, 1.5 and
+2.10, and Mathlib `VAddInvariantMeasure`, `ErgodicVAdd`.
 
 ## Layer 6: slopes and the boundary of the slope triangle
 
@@ -1611,7 +1635,7 @@ in the sense of gorin2021 lines 4638–4642; sheffield2005 Theorem 9.5.1, lines 
 Exercise 13, line 891). Route for the ergodicity of
 `β_s`: `β` is a Bernoulli measure for the square of the shift (4.3), and a shift-invariant event `A`
 has `β_s(A) = β(A) ∈ {0,1}`. *Needs:* 1.6, 2.5, 4.3, 5.3, 5.4, 6.1; Mathlib
-`MeasureTheory.MeasurePreserving`, `Ergodic`, `ErgodicVAdd`.
+`MeasureTheory.MeasurePreserving`, `Ergodic`, `ErgodicVAdd`, `Set.BijOn`.
 
 **Checks.**
 
@@ -1758,7 +1782,7 @@ columns the black faces of the fundamental domain (`twistedKasteleyn n₁ n₂ w
 `torusPartitionFunction n₁ n₂ w`, the `finsum` over the torus tilings of the product of `w` over
 their edges `(v,k)` with `v ∈ [0,n₁) × [0,n₂)`, one for each white face of the fundamental domain.
 Positivity of `w` is not used in 8.1–8.3, which are polynomial identities in the weights.
-*Needs:* 7.1; Mathlib `Matrix.det`, `finsum`, `finprod`.
+*Needs:* 7.1; Mathlib `Matrix.det`, `finsum`, `finprod`; the Lean core class `NeZero`.
 
 API:
 
@@ -2242,8 +2266,9 @@ Layers 4, 5, 9 (for 10.3), and 2.
   3.10 (lines 1218–1504), Theorems 4.3–4.11 (lines 1603–1898), Theorem 6.1 (lines 2256–2298),
   Lecture 13 (lines 4491–4786).
 - [cohn-kenyon-propp2001] H. Cohn, R. Kenyon, J. Propp, *A variational principle for domino
-  tilings*, J. Amer. Math. Soc. 14 (2001); read as arXiv:math/0008220v3. Section 1.4 (the lattice
-  of height functions), cited for 2.8; Theorem 1.1 belongs to Part II.
+  tilings*, J. Amer. Math. Soc. 14 (2001); read as arXiv:math/0008220v3. Section 1.4, lines
+  404–423 (the lattice of domino height functions), cited in 2.8 for the domino counterpart of the
+  lattice of height functions; Theorem 1.1 belongs to Part II.
 - [thurston1990] W. P. Thurston, *Conway's tiling groups*, Amer. Math. Monthly 97 (1990), 757–773;
   cited by bibliographic data for 2.9, the statement and proof used being gorin2021 Theorem 1.4.
 - [georgii2011] H.-O. Georgii, *Gibbs measures and phase transitions*, 2nd ed., de Gruyter (2011);
