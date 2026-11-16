@@ -1,0 +1,30 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalLanglandsCorrespondenceForG2~6",
+  "head": "0d0914b9d82e506e846a84f5b84c8a6455fe7232",
+  "pr": 2458,
+  "folder": "LocalLanglandsCorrespondenceForG2",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 31 changed lines since 88decde. R01 (Xu packets over unbounded parameters, §10.8) and R02 (inner-form parameter in §§9.1, 9.2, 10.4, 10.7) are repaired; R03 is deferred as D02; D01 and D02 stand (plan.json, outside the folder). Computed: the central-character cancellation in the §10.8 definition, the trivial-representation Check (delta_B^(1/2) exponents (3,2,1,-3), quadratic tau_0, distinct twisted weak classes), agreement with the supplier on Phi+_unit, the GL2(D) instance chi1.Nrd x chi2.Nrd (dimension 4, determinant 1, twist rule). Of the seeded sample only §9.2 has changed text; its locator (GS §§12.3(b)-12.4, pp. 35-36) and three further GS locators were checked against the text. Supplier citations resolved at the open heads (ModularityAndLanglandsExtensions §3.19; EndoscopicTransferAndUnitaryTraceComparison §§4.7a, 10.30, 10.31) and on main (SmoothRepresentationsOfLocalGroups SR.3.3). Gate passes with the build; depcheck 0 problems; Suggested.lean unchanged and elaborates with three sorry warnings only; nothing changed outside the folder; pull request text not contradicted. Accepted conditional on the declared supplier gaps. Griess and SpV remain uncertified (not read).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "The new lower-tower Xu-packet contract is not declared in plan.json",
+    "where": "the board's design/plan.json gaps list of this package",
+    "raised": "PRREVIEW-LocalLanglandsCorrespondenceForG2~2"
+   },
+   {
+    "id": "D02",
+    "severity": "P3",
+    "title": "The new central-character contract is not declared in plan.json",
+    "where": "the `gaps` list of this package's board `design/plan.json`",
+    "raised": "PRREVIEW-LocalLanglandsCorrespondenceForG2~5"
+   }
+  ],
+  "text": "5c414e42b0ab5587"
+ }
+}
