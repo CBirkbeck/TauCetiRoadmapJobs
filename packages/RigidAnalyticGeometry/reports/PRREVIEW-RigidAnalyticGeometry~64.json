@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RigidAnalyticGeometry~64",
+  "head": "618bc240b025c49112044e2be3bc99e687d09b9f",
+  "pr": 1807,
+  "folder": "RigidAnalyticGeometry",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 17 changed lines since f58ded6. R01-R03 of the previous report are repaired (ownership of Runge immersions and immersion Gerritzen-Grauert stated in Scope and Downstream consumers and in the description; description states the rewrite and the replacement of main's 33 declarations, counted one by one against the pins and AdicSpacesPartIII R3.6; Conrad pagination stated and checked at lines 201, 263, 274). Adversarial rows computed for the Section 4.3 statements the change cites. Gate passes, depcheck 0 problems, Suggested.lean unchanged and elaborates with twelve sorry warnings only. No sampled section lies in the changed passages. Source independence checked on the changed passages only; BGR uncertified.",
+  "text": "a2d99ad6876003a9"
+ }
+}
