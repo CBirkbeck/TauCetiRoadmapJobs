@@ -2922,7 +2922,7 @@
       {
        "name": "radius_reversed",
        "kind": "non-example",
-       "statement": "Using the radius of 𝒳_T instead of that of X^Δ replaces κ by 1/κ: the Hodge–Tate locus stays at 1, its n-th inverse Frobenius translate moves from p^{-n} to p^n, and the intervals (0, p) and (1, ∞) of ALRS Proposition 4.2.13 become (1/p, ∞) and (0, 1); they are not exchanged. Part (1) read in that radius would claim that X^Δ → (D^×_{FF,X^⋄})^dR is an isomorphism over (1, ∞), which contains the radii p, p², … of the inverse Frobenius translates of X^HT, where X^Δ is not the de Rham stack of the disc (ALRS Remark 4.2.12, p. 63, ALRS line 3291): for X = GSpec(ℚ_p) the isomorphism would extend by Frobenius over (0, p) and identify Div¹ with Q_p^HK on coequalizers, whereas by the first Check of 8.6 the map Div¹ → Q_p^HK is a base change of A¹/G_m → A^{1,dR}/G_m^dR, which is not an isomorphism over the origin, the image of the Hodge–Tate locus."
+       "statement": "Using the radius of 𝒳_T instead of that of X^Δ replaces κ by 1/κ: the Hodge–Tate locus stays at 1, its n-th inverse Frobenius translate moves from p^{-n} to p^n, and the intervals (0, p) and (1, ∞) of ALRS Proposition 4.2.13 become (1/p, ∞) and (0, 1); they are not exchanged. Part (1) read in that radius would claim that X^Δ → (D^×_{FF,X^⋄})^dR is an isomorphism over (1, ∞), which contains the radii p, p², … of the inverse Frobenius translates of X^HT, where X^Δ is not the de Rham stack of the disc (ALRS Remark 4.2.12, p. 63, ALRS line 3291): for X = GSpec(ℚ_p) the isomorphism would hold over κ ∈ (0, 1) and extend by Frobenius, which multiplies κ by p, over κ ∈ (0, p) (that is, over (1/p, ∞) in the radius of 𝒳_T), and identify Div¹ with Q_p^HK on coequalizers, whereas by the first Check of 8.6 the map Div¹ → Q_p^HK is a base change of A¹/G_m → A^{1,dR}/G_m^dR, which is not an isomorphism over the origin, the image of the Hodge–Tate locus."
       }
      ]
     },
@@ -4503,7 +4503,7 @@
      "id": "11.9",
      "kind": "theorem",
      "name": "TauCeti.Twistor.torsors",
-     "statement": "Let X be a smooth partially proper rigid space over ℚ_p and G a p-adic Lie group. Prove: (1) Map(X^HT, BG^la) ≃ Map(X̂^⋄, BG^la) ≃ Map(X^⋄, BG), so G^la-torsors on X^HT, G^la-torsors on X̂^⋄ and pro-étale G-torsors on X^⋄ are equivalent; (2) for every Berkovich-étale U ⊂ FF^⋄_{X^⋄}, pullback gives Map(X^{Div¹}|_U, BG^la) ≃ Map(FF_{X^⋄}|_U, BG^la); (3) there is a natural map Map(X^⋄, BG) → Map(FF_{X^⋄}, BG^la) sending X̃^⋄ → X^⋄ to FF^⋄_{X̃^⋄} → FF^⋄_{X^⋄} after perfectoidization; and the analogous statements hold relative to a perfectoid base D with X^{Div¹/FF_D} (ALRS Theorem 6.4.1, p. 153, ALRS line 8321). Part (1) does not need partial properness (ALRS Remark 6.4.2, p. 154, ALRS line 8349), and Γ(X^{Div¹}, O) = Γ(G^la, Γ(FF_{X̃}, O)^{G-la}) for a perfectoid pro-étale G-torsor X̃^⋄ → X^⋄ (ALRS Remark 6.4.3, p. 154, ALRS line 8351); whether X^{Div¹} = FF^la_{X̃}/G^la in general is not asserted (ALRS Remark 1.22, p. 9, ALRS line 460).",
+     "statement": "Let X be a smooth partially proper rigid space over ℚ_p and G a p-adic Lie group. Prove: (1) Map(X^HT, BG^la) ≃ Map(X̂^⋄, BG^la) ≃ Map(X^⋄, BG), so G^la-torsors on X^HT, G^la-torsors on X̂^⋄ and pro-étale G-torsors on X^⋄ are equivalent; (2) for every Berkovich-étale U ⊂ FF^⋄_{X^⋄}, pullback gives Map(X^{Div¹}|_U, BG^la) ≃ Map(FF_{X^⋄}|_U, BG^la); (3) there is a natural map Map(X^⋄, BG) → Map(FF_{X^⋄}, BG^la) sending X̃^⋄ → X^⋄ to FF^⋄_{X̃^⋄} → FF^⋄_{X^⋄} after perfectoidization; and the analogous statements hold relative to a perfectoid base D with X^{Div¹/FF_D} (ALRS Theorem 6.4.1, p. 153, ALRS line 8321). Part (1) does not need partial properness (ALRS Remark 6.4.2, p. 154, ALRS line 8349), and Γ(X^{Div¹}, O) = Γ(G^la, Γ(FF_{X̃^⋄}, O)^{G-la}), with (−)^{G-la} the derived G-locally analytic vectors, for every pro-étale G-torsor X̃^⋄ → X^⋄ (ALRS Remark 6.4.3, p. 154, ALRS line 8351); whether X^{Div¹} = FF^la_{X̃}/G^la in general is not asserted (ALRS Remark 1.22, p. 9, ALRS line 460).",
      "hypotheses": [
       "X is a smooth partially proper rigid space over ℚ_p (smooth suffices for (1)); G is a p-adic Lie group"
      ],
@@ -4528,6 +4528,11 @@
        "name": "torsor_trivialG",
        "kind": "degenerate",
        "statement": "For G trivial all mapping anima are points."
+      },
+      {
+       "name": "torsor_trivialG_cohomology",
+       "kind": "degenerate",
+       "statement": "For G trivial the formula of ALRS Remark 6.4.3 reads Γ(X^{Div¹}, O) = Γ(FF_{X^⋄}, O), the first isomorphism of 11.7 for K = ℚ_p: X̃^⋄ = X^⋄, G^la is the trivial group, so Γ(G^la, −) and (−)^{G-la} are the identity. A restriction to perfectoid torsors would exclude this case: for X = GSpec(ℚ_p), X̃ = X is not perfectoid, ℚ_p being discretely valued."
       },
       {
        "name": "torsor_Zp_point",
