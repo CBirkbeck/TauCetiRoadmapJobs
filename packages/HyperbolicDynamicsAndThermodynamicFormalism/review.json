@@ -1,0 +1,18 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-HyperbolicDynamicsAndThermodynamicFormalism~5",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-HyperbolicDynamicsAndThermodynamicFormalism~5",
+   "fix": "FIX-PKG-HyperbolicDynamicsAndThermodynamicFormalism~6",
+   "from": "ff09c75f67aa01a2d7c59dbb24ad3db20d6e949c",
+   "head": "1b6ac448fc61a4f2c2ae317ccd70b1943fe912a9",
+   "findings": 4,
+   "lines": 10
+  },
+  "notes": "every finding of `REV-PKG-HyperbolicDynamicsAndThermodynamicFormalism~5` (4) was P3 and `FIX-PKG-HyperbolicDynamicsAndThermodynamicFormalism~6` repaired them at `1b6ac44`, changing 10 lines of the package; no further review round was filed"
+ }
+}
