@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HyperellipticCurves~11",
+  "head": "9c4193b8eb9082df9be3bba53cf7200497d5c36b",
+  "pr": 1707,
+  "folder": "HyperellipticCurves",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 82 changed lines since ea85c21: the Chabauty-Coleman deferral in Scope and the LeanPool/lean-pool Provenance entry, checked declaration by declaration against lean-pool at f8b9b72 (26 declarations in 10 files, toolchain, licence, DOI) and against EffectiveDiophantineMethods Layer 4 and 4.13 at its open head. Two P3 findings in the Provenance entry: hypotheses (2 nonzero, f squarefree) dropped for aj and the reduced Mumford representative; ChabautyColeman.genus attributed to files that do not contain it. Previous report had no finding. Gate passes (all counters 0, depcheck 0 problems of 248 roadmaps); Suggested.lean unchanged, elaborates with 16 sorry warnings only; no change outside the folder; title and description agree with the head. Seeded source sample not re-read: none falls in the changed passages.",
+  "text": "1263fa193cfa5752",
+  "carried": {
+   "from": "9c4193b8eb9082df9be3bba53cf7200497d5c36b",
+   "head": "91861b57ffbe77d16c829cb96afaa2b25c3fa898",
+   "findings": 2,
+   "lines": 10,
+   "folders": [
+    "HyperellipticCurves"
+   ]
+  }
+ }
+}
