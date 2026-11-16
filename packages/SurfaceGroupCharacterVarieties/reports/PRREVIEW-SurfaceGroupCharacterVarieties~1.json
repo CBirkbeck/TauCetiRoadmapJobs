@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SurfaceGroupCharacterVarieties~1",
+  "head": "077c1cec756c302847b7137af723168f79b607ce",
+  "pr": 2430,
+  "folder": "SurfaceGroupCharacterVarieties",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "Full review. Gate rerun: all checks pass, depcheck 0 problems, elaboration sorry-only (13 theorems), #check @ of all 24 declarations matches the README. Seeded sample of 15 targets: locators read in LandesmanLitt2024, BCGGO2024, Sikora2012, BateMartinRohrle2005 and BohmLafuente2021; FarbMargalit2012, RichardsonSlodowy1990 and Knapp2002 (waived) and Richardson1988 and Goldman1984 (uncertified) listed as not verifiable. Adversarial table: 33 rows with computed values. 59 cited library names checked at the pins; 17 cross-roadmap suppliers resolved at open heads or on main; 3 declared gaps consistent with plan.json. One-tactic probe: no padding. Findings: R01 (P2) IsRealReductiveLinearGroup/symmetricPart duplicate LieGroupsPartII s7.1 IsSelfAdjointLinearGroup/linearLieAlgebra (merge order 65) without citation; R02-R04 (P3) two locators that do not state the cited claim and a wrong reason in the module docstring.",
+  "text": "44c2dd5a7e386c60"
+ }
+}
