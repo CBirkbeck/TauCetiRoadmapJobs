@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InertAnticyclotomicCMMainConjecture~4",
+  "head": "09efa597cf1d253d6a982915be473a53a117c7ec",
+  "pr": 2435,
+  "folder": "InertAnticyclotomicCMMainConjecture",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review of an unchanged head. Seeded sample of 15 targets and the four headline theorems recomputed (21 table rows); 38 source locators checked against BKO21, AHII05, AHI06 and RUB91 (BIL86 not reopened, BRU67 waived); 31 library declarations opened at the pins; supplier sections resolved at their heads; gate rerun with the targeted build, every check 0; depcheck 0 problems; Suggested.lean elaborates with no message and declares nothing. Accepted conditional on the six supplier gaps; D01 stands (deferred, outside this folder).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Two gaps give a second owner to objects ModularIwasawaMainConjecturesPartII plans",
+    "where": "merge order: place this roadmap after ModularIwasawaMainConjecturesPartII",
+    "raised": "PRREVIEW-InertAnticyclotomicCMMainConjecture~1"
+   }
+  ],
+  "text": "9b1419c7e5099ec6"
+ }
+}
