@@ -379,3 +379,22 @@ status = "certified"
 accessed = "2026-11-16"
 version_note = "arXiv v3 (11 March 2012); numbering and pages of this version"
 cited_for = ["1.1a; 1.3a"]
+
+[[source]]
+id = "cossart_piltant_i"
+authors = "Vincent Cossart, Olivier Piltant"
+title = "Resolution of singularities of threefolds in positive characteristic. I."
+year = 2008
+venue = "Journal of Algebra 320 (2008), 1051–1082"
+doi = "10.1016/j.jalgebra.2008.03.032"
+locator_scheme = "theorem"
+locator = "Theorem 2.1 and its proof; Theorem 7.2 (HAL v1 numbering)"
+url = "https://hal.science/hal-00139124v1"
+fetched_from = "https://hal.science/hal-00139124/document"
+fetched_at = "2026-11-16T08:17:11Z"
+sha256 = "55c90ceac6d4bc5d613561b18105cc5045b4b4addd13bc55c8b15c71822aad2a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "HAL hal-00139124v1 (preprint of 30 March 2007); numbering of this version; Part II (cossart_piltant) cites Theorem 2.1 as conjecture 3.1 of Part I"
+cited_for = ["1.3b"]
