@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PrestableInfinityCategories"
+
+[[source]]
+id = "SAG"
+locator_scheme = "theorem"
+locator = "Prop. C.1.2.9"
+url = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_at = "2026-11-16T17:08:00Z"
+sha256 = "515109098ae5cd73bf266fa97bf498b4e8c7adb6e936be67e6fa9a86bb69020d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-16"
+cited_for = ["3.1"]
+
+[[source]]
+id = "HA"
+locator_scheme = "theorem"
+locator = "Prop. 1.4.3.9"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-11-16T17:09:20Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-16"
+cited_for = ["4.6"]
