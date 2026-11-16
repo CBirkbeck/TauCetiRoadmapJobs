@@ -20,8 +20,8 @@ Conventions of the statements. `K` is a field and a projective variety over `K` 
 with `[X.Over (Spec (.of K))] [IsIntegral X] [X.IsProjectiveOver K]` (Tau Ceti's
 `AlgebraicGeometry.Scheme.IsProjectiveOver`), of dimension `d` in the sense of
 `topologicalKrullDim X = d`. A real class on `X` is a finite formal real combination of
-line-bundle classes, an element of `LineBundleClass X →₀ ℝ`; its image in `Pic(X) ⊗ ℝ` is the
-class, and every number below depends only on that image (README §2.3). A real polarization
+line-bundle classes, an element of `LineBundleClass X →₀ ℝ`; its image in `Pic(X) ⊗ ℝ` is
+the class, and every number below depends only on that image (README §2.3). A real polarization
 is a real class `ω` with `IsNef K ω` and `0 < realIntersection K X (fun _ : Fin d ↦ ω)`.
 
 The base change `f_{K'}` of a rational self-map along a field extension `K'/K` (README §1.4) is
@@ -56,9 +56,9 @@ noncomputable section
 /-! ## Layer 1: Function fields and the graph of a dominant rational map -/
 
 /-- The graph `Γ_f` of a rational map `f : X ⤏ Y` (README §1.2): the scheme-theoretic image of
-`(ι_V, g) : V → X × Y` for a representative `(V, g)` of `f`. The image does not depend on the
-representative. For `K`-rational maps between `K`-schemes it lies in the closed subscheme
-`X ×_K Y` of `X × Y`. -/
+`(ι_V, g) : V → X × Y` for a representative `(V, g)` of `f`. For a reduced `X` the image does not
+depend on the representative, and for `K`-rational maps between `K`-schemes it lies in the closed
+subscheme `X ×_K Y` of `X × Y` (README §1.2). -/
 def graph {X Y : Scheme.{u}} (f : X ⤏ Y) : Scheme.{u} :=
   (prod.lift f.representative.domain.ι f.representative.hom).image
 
@@ -120,7 +120,8 @@ def realIntersection (K : Type u) [Field K] (X : Scheme.{u}) [X.Over (Spec (.of 
 /-- A real class `ω = Σ t_a a` on a scheme `X` over `K` is **nef** (README §2.3) if
 `Σ t_a (a · C) ≥ 0` for every integral closed curve `C ⊆ X`, proper over `K`, where `(a · C)` is
 Tau Ceti's degree `LineBundleClass.intersectionNumber` of the restriction of `a` to `C`. For a
-single line bundle this is the nefness of AlgebraicModuliForArithmeticGeometryPartII §1.5. -/
+single line bundle on a proper `X` this is the nefness of AlgebraicModuliForArithmeticGeometryPartII
+§1.5. -/
 def IsNef (K : Type u) [Field K] {X : Scheme.{u}} [X.Over (Spec (.of K))]
     (ω : LineBundleClass X →₀ ℝ) : Prop :=
   ∀ (C : Scheme.{u}) [C.Over (Spec (.of K))] [IsIntegral C] [IsProper (C ↘ Spec (.of K))]
@@ -226,10 +227,11 @@ theorem mixedDegree_baseChange (K K' : Type u) [Field K] [Field K'] [Algebra K K
   sorry
 
 /-- **Sub-multiplicativity of the degrees** (README §4.4). Let `f_1 : X_1 ⤏ X_2` and
-`f_2 : X_2 ⤏ X_3` be dominant `K`-rational maps between projective varieties of dimension `d`,
-`L_1`, `L_3` nef real classes and `L_2` a real polarization. For `p + q = d`,
-`(L_2^d)·deg(f_2 ∘ f_1; L_1^p | L_3^q) ≤ (p + 1)^q·deg(f_1; L_1^p | L_2^q)·deg(f_2; L_2^p | L_3^q)`;
-in the README's indexing `k = q`, the constant is `(d − k + 1)^k/(L_2^d)`. No normality is
+`f_2 : X_2 ⤏ X_3` be dominant `K`-rational maps between projective varieties of dimension `d`
+and `L_1`, `L_2`, `L_3` nef real classes. For `p + q = d`,
+`(L_2^d)·deg(f_2 ∘ f_1; L_1^p | L_3^q) ≤ (p + 1)^q·deg(f_1; L_1^p | L_2^q)·deg(f_2; L_2^p | L_3^q)`.
+No positivity of `L_2` is needed in this multiplied form; when `(L_2^d) > 0`, in the README's
+indexing `k = q`, it is the bound with constant `(d − k + 1)^k/(L_2^d)`. No normality is
 assumed. Dang, Theorem 1 (i) and Theorem 5.2.1, for normal varieties over an algebraically
 closed field; Dang–Favre, Theorem 1.3. -/
 theorem mixedDegree_comp_le (K : Type u) [Field K] {X₁ X₂ X₃ : Scheme.{u}}
@@ -240,8 +242,7 @@ theorem mixedDegree_comp_le (K : Type u) [Field K] {X₁ X₂ X₃ : Scheme.{u}}
     (h₃ : topologicalKrullDim X₃ = d) (f₁ : X₁ ⤏ X₂) (f₂ : X₂ ⤏ X₃) [f₁.IsDominant]
     [f₂.IsDominant] [f₁.IsOver (Spec (.of K))] [f₂.IsOver (Spec (.of K))]
     (L₁ : LineBundleClass X₁ →₀ ℝ) (L₂ : LineBundleClass X₂ →₀ ℝ)
-    (L₃ : LineBundleClass X₃ →₀ ℝ) (hL₁ : IsNef K L₁) (hL₂ : IsNef K L₂)
-    (hL₂d : 0 < realIntersection K X₂ fun _ : Fin d ↦ L₂) (hL₃ : IsNef K L₃)
+    (L₃ : LineBundleClass X₃ →₀ ℝ) (hL₁ : IsNef K L₁) (hL₂ : IsNef K L₂) (hL₃ : IsNef K L₃)
     (p q : ℕ) (hpq : p + q = d) :
     realIntersection K X₂ (fun _ : Fin d ↦ L₂) * mixedDegree K (f₁.comp f₂) L₁ L₃ p q ≤
       ((p + 1 : ℕ) : ℝ) ^ q * mixedDegree K f₁ L₁ L₂ p q * mixedDegree K f₂ L₂ L₃ p q := by
@@ -250,7 +251,8 @@ theorem mixedDegree_comp_le (K : Type u) [Field K] {X₁ X₂ X₃ : Scheme.{u}}
 /-- **Comparison of polarizations** (README §4.5). For real polarizations `ω`, `ω'` on a
 projective variety `X` of dimension `d` and `p + q = d`, there is `C ≥ 1`, independent of the
 map, with `deg(f; ω^p | ω^q) ≤ C·deg(f; ω'^p | ω'^q)` and the reverse inequality for every
-dominant `K`-rational self-map `f`. Dang, Theorem 1 (ii); Dinh–Sibony, Corollaire 7. -/
+dominant `K`-rational self-map `f`. Dang, Theorem 1 (ii); Dang–Favre, Theorem 1.3 (second
+item). -/
 theorem exists_mixedDegree_comparison (K : Type u) [Field K] {X : Scheme.{u}}
     [X.Over (Spec (.of K))] [IsIntegral X] [X.IsProjectiveOver K] {d : ℕ}
     (hX : topologicalKrullDim X = d) (ω ω' : LineBundleClass X →₀ ℝ) (hω : IsNef K ω)
@@ -274,7 +276,8 @@ instance isDominant_partialIso {X Y : Scheme.{u}} (φ : X.PartialIso Y) :
 `φ : X ⇢ Y` between projective varieties of dimension `d`, real polarizations `ω_X`, `ω_Y` and
 `p + q = d`, there is `C ≥ 1`, independent of the map, comparing the degrees of every dominant
 `K`-rational self-map `f` of `X` and of its conjugate `φ ∘ f ∘ φ^{−1}`, written
-`φ.symm.toRationalMap.comp (f.comp φ.toRationalMap)`. -/
+`φ.symm.toRationalMap.comp (f.comp φ.toRationalMap)`. Dang, Theorem 1 (ii) and the remark after
+it; Dinh–Sibony, Corollaire 7 (the estimate in its proof), over `ℂ` and for `Y = X`. -/
 theorem exists_mixedDegree_birational_comparison (K : Type u) [Field K] {X Y : Scheme.{u}}
     [X.Over (Spec (.of K))] [Y.Over (Spec (.of K))] [IsIntegral X] [IsIntegral Y]
     [X.IsProjectiveOver K] [Y.IsProjectiveOver K] {d : ℕ} (hX : topologicalKrullDim X = d)
@@ -446,25 +449,6 @@ theorem algebraicEntropy_bounds (K : Type u) [Field K] {X : Scheme.{u}}
     (hωd : 0 < realIntersection K X fun _ : Fin d ↦ ω) :
     Real.log (topologicalDegree f) ≤ algebraicEntropy K d f ω ∧
       algebraicEntropy K d f ω ≤ d * Real.log (dynamicalDegree K d 1 f ω) := by
-  sorry
-
-/-- **Invariance of the algebraic entropy under extension of the field** (README §5.4). In the
-setting of `dynamicalDegree_baseChange`, with `f'` the base change `f_{K'}` of `f`,
-`h_alg(f_{K'}) = h_alg(f)`. -/
-theorem algebraicEntropy_baseChange (K K' : Type u) [Field K] [Field K'] [Algebra K K']
-    {X X' : Scheme.{u}} [X.Over (Spec (.of K))] [X'.Over (Spec (.of K'))] [IsIntegral X]
-    [IsIntegral X'] [X.IsProjectiveOver K] [X'.IsProjectiveOver K']
-    [GeometricallyIntegral (X ↘ Spec (.of K))] {d : ℕ} (hX : topologicalKrullDim X = d)
-    (π : X' ⟶ X) [IsDominant π]
-    (hπ : IsPullback π (X' ↘ Spec (.of K')) (X ↘ Spec (.of K))
-      (Spec.map (CommRingCat.ofHom (algebraMap K K'))))
-    (f : X ⤏ X) [f.IsDominant] [f.IsOver (Spec (.of K))]
-    (f' : X' ⤏ X') [f'.IsDominant] [f'.IsOver (Spec (.of K'))]
-    (hf : f'.compHom π = π.toRationalMap.comp f)
-    (ω : LineBundleClass X →₀ ℝ) (hω : IsNef K ω)
-    (hωd : 0 < realIntersection K X fun _ : Fin d ↦ ω) :
-    algebraicEntropy K' d f' (ω.mapDomain (LineBundleClass.pullback π)) =
-      algebraicEntropy K d f ω := by
   sorry
 
 end
