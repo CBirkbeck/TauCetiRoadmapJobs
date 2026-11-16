@@ -2,7 +2,7 @@
  "roadmap": "RiemannianManifoldsWithConvexBoundary",
  "title": "Riemannian manifolds with convex boundary",
  "parent": null,
- "summary": "Boundary geometry of smooth Riemannian manifolds with boundary over Mathlib's half-space model: boundary defining functions, the second fundamental form, Weingarten map and mean curvature, conformal change, strict convexity/convexity/strict concavity with Hessian characterisations and stability, regular domains and the realisation of every (M, g) in a boundaryless manifold (defining functions on GeometricTopology's collar extension and double, Seeley extension of metrics), geodesics at the boundary, signed distance and boundary normal coordinates, convexity functions with strictly concave level sets, unit sphere bundle strata, exit time and its regularity, non-trapping criteria (Paternain–Salo–Uhlmann Prop. 3.3.1), scattering relation and lens data, and acceptance examples (balls, caps, hyperbolic domains, small geodesic balls, half-spaces, exteriors, a conformal disc made strictly concave).",
+ "summary": "Boundary geometry of smooth Riemannian manifolds with boundary over Mathlib's half-space model: boundary defining functions, the second fundamental form, Weingarten map and mean curvature, conformal change, strict convexity/convexity/strict concavity with Hessian characterisations and stability, regular domains and the realisation of every Hausdorff second-countable (M, g) in a boundaryless manifold (defining functions on GeometricTopology's collar extension and double, Seeley extension of metrics), geodesics at the boundary, signed distance and boundary normal coordinates, convexity functions with strictly concave level sets, unit sphere bundle strata, exit time and its regularity, non-trapping criteria (Paternain–Salo–Uhlmann Prop. 3.3.1), scattering relation and lens data, and acceptance examples (balls, caps, hyperbolic domains, small geodesic balls, half-spaces, exteriors, a conformal disc made strictly concave).",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -73,6 +73,7 @@
       "where": "lines 2687–2689 (inward unit normal ν); lee-riemannian2018 Ch. 8 (uncertified)"
      },
      "prerequisites": [
+      "roadmap:DifferentialGeometry §12.2",
       "roadmap:DifferentialGeometry §12.5",
       "target:1.1",
       "tauceti:TauCeti.Manifold.mgradient"
@@ -103,7 +104,7 @@
       {
        "name": "slanted_metric",
        "kind": "computation",
-       "statement": "Half-plane with g = [[1, a], [a, 1]], |a| < 1: ν_in = (e₀ − a e₁)/√(1 − a²); the coordinate vector e₀ has g(e₀, e₁) = a ≠ 0 and fails orthogonality."
+       "statement": "Half-plane with g = [[1, a], [a, 1]], |a| < 1: ν_in = (e₀ − a e₁)/√(1 − a²). For a ≠ 0 the coordinate vector e₀ has g(e₀, e₁) = a ≠ 0 and fails orthogonality (a = 1/2: ν_in = (2/√3, −1/√3), g(e₀, e₁) = 1/2); at a = 0 the formula returns e₀, then the correct normal."
       },
       {
        "name": "unit_ball",
@@ -404,7 +405,7 @@
      ],
      "locator": {
       "source": "paternain-salo-uhlmann2023",
-      "where": "Definition 3.1.7, lines 2738–2739; Definition 2.5.1, lines 2449–2461; stefanov-uhlmann-vasy2021 lines 89–90, 93"
+      "where": "Definition 3.1.7, lines 2738–2739; Definition 2.5.1, lines 2449–2461 (dimension two; a circle {r = r̄} named as seen from the larger radii, so its strictly concave circle is a strictly concave boundary of {r ≤ r̄}); stefanov-uhlmann-vasy2021 lines 89–90, 93"
      },
      "prerequisites": [
       "target:1.4",
@@ -530,7 +531,7 @@
      "id": "2.3.2",
      "kind": "theorem",
      "name": "exists_pos_le_boundarySecondFundamentalForm",
-     "statement": "If ∂M is compact and strictly convex there is c > 0 with II_q(u, u) ≥ c h_q(u, u) for all q ∈ ∂M, u ∈ T_q∂M.",
+     "statement": "If ∂M is compact and strictly convex there is c > 0 with II_q(u, u) ≥ c h_q(u, u) for all q ∈ ∂M, u ∈ T_q∂M; equivalently every principal curvature is at least c.",
      "hypotheses": [
       "M Hausdorff topological space with ChartedSpace (EuclideanHalfSpace (n+1)) M and IsManifold (𝓡∂ (n+1)) ∞ M, n ≥ 0",
       "g a smooth Riemannian metric: Bundle.RiemannianBundle on TangentSpace (𝓡∂ (n+1)) with IsContMDiffRiemannianBundle (𝓡∂ (n+1)) ∞",
@@ -544,7 +545,8 @@
      "prerequisites": [
       "target:1.4",
       "target:2.1",
-      "target:2.3.1"
+      "target:2.3.1",
+      "target:1.5"
      ],
      "api": [],
      "tests": [
@@ -556,7 +558,12 @@
       {
        "name": "unit_ball",
        "kind": "computation",
-       "statement": "Unit ball: best constant c = 1."
+       "statement": "Unit ball of ℝⁿ⁺¹, n ≥ 1: best constant c = 1 (II = h, and a unit u ∈ T_q∂M gives 1 ≥ c)."
+      },
+      {
+       "name": "unit_ball_dimension_one",
+       "kind": "degenerate",
+       "statement": "n = 0, M = [−1, 1]: every T_q∂M is zero, II_q(0, 0) = 0 = c h_q(0, 0) for every c > 0 (c = 2, c = 100), so the existence statement holds and there is no largest constant."
       }
      ]
     },
@@ -601,7 +608,7 @@
      "id": "3.1",
      "kind": "construction",
      "name": "regularDomain",
-     "statement": "For (N, g) boundaryless and ρ with 0 regular, D_ρ := {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the metric pulled back along the inclusion j is a Riemannian manifold with boundary {ρ = 0}; j is a smooth closed embedding with invertible differential everywhere; Levi-Civita connections correspond (Hess^D(f∘j) = Hess^N f, grad likewise, boundary points included); ρ∘j is a global defining function, dj(ν_in) = grad ρ/|grad ρ|, II = −Hess^N ρ/|dρ| on T∂D_ρ; the structure depends only on the set {ρ ≥ 0}; lengths of curves agree, so d_D ≥ d_N on D.",
+     "statement": "For (N, g) boundaryless and ρ with 0 regular, D_ρ := {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the metric pulled back along the inclusion j is a Riemannian manifold with boundary {ρ = 0}; j is smooth with invertible differential everywhere (RiemannianGeometry R7.9 for φ = −ρ, a = 0, when N is second countable; local, so for every Hausdorff N by restriction to second-countable chart domains) and a closed embedding; Levi-Civita connections correspond (Hess^D(f∘j) = Hess^N f, grad likewise, boundary points included); ρ∘j is a global defining function, v is outward iff dρ(dj v) < 0 (R7.9's outward criterion), so dj(ν_in) = grad ρ/|grad ρ|, II = −Hess^N ρ/|dρ| on T∂D_ρ; the structure depends only on the set {ρ ≥ 0}; lengths of curves agree, so d_D ≥ d_N on D.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth, 0 a regular value (TauCeti.IsRegularValue)"
@@ -619,14 +626,17 @@
       "tauceti:Bundle.ContMDiffRiemannianMetric.pullback",
       "mathlib:CovariantDerivative.IsLeviCivitaConnection.uniqueness",
       "mathlib:Manifold.pathELength",
+      "roadmap:RiemannianGeometry §R7.9",
       "target:1.3",
-      "target:1.4"
+      "target:1.4",
+      "target:1.1",
+      "target:1.2"
      ],
      "api": [
       {
        "name": "regularDomain_inclusion_embedding",
        "role": "structure",
-       "statement": "j : D_ρ → N is a smooth closed embedding with invertible differential at every point."
+       "statement": "j : D_ρ → N is smooth with invertible differential at every point (RiemannianGeometry R7.9, local) and a closed embedding."
       },
       {
        "name": "regularDomain_leviCivita",
@@ -636,7 +646,7 @@
       {
        "name": "regularDomain_secondFundamentalForm",
        "role": "evaluation",
-       "statement": "II_{D_ρ} = −Hess^N ρ/|dρ| on T∂D_ρ and dj(ν_in) = grad ρ/|grad ρ|."
+       "statement": "v ∈ T_qD_ρ at q ∈ ∂D_ρ is outward iff dρ(dj v) < 0 (RiemannianGeometry R7.9), so dj(ν_in) = grad ρ/|grad ρ|; II_{D_ρ} = −Hess^N ρ/|dρ| on T∂D_ρ."
       },
       {
        "name": "regularDomain_congr",
@@ -669,6 +679,11 @@
        "name": "cone",
        "kind": "non-example",
        "statement": "ρ = x₀² − x₁² on ℝ²: {ρ ≥ 0} is a double cone, not a manifold with boundary at 0."
+      },
+      {
+       "name": "outward_criterion",
+       "kind": "computation",
+       "statement": "Closed unit ball, φ = −ρ = |x|² − 1: dφ(v) = 2⟨x, v⟩ > 0 iff v outward, so ν_out = x and dj(ν_in) = −x = grad ρ/|grad ρ|; half-space ρ = x⁰: dφ(−e₀) = 1 > 0, −e₀ outward. Using ρ in place of φ makes x inward and e₀ outward."
       }
      ]
     },
@@ -676,10 +691,10 @@
      "id": "3.2",
      "kind": "definition",
      "name": "IsLevelStrictlyConcaveFromSuperlevel",
-     "statement": "For U ⊆ N open and x ∈ C^∞(U) with dx ≠ 0 on U, the level set of x through y ∈ U is strictly concave from the superlevel sets at y if Hess x(v, v) > 0 for all nonzero v ∈ ker dx_y; on U if at every y ∈ U. Theorem: for a regular sublevel domain {x ≤ c} of U, II(v, v) = Hess x(v, v)/|dx| on its boundary, so the boundary is strictly convex at y iff the level set is strictly concave from the superlevel sets at y; the superlevel domain {x ≥ c} has II = −Hess x/|dx|; for M = {ρ ≥ 0} and x = −ρ this is strict convexity of ∂M.",
+     "statement": "For U ⊆ N open, x ∈ C^∞(U) and y ∈ U with dx_y ≠ 0, the level set of x through y is strictly concave from the superlevel sets at y if Hess x(v, v) > 0 for all nonzero v ∈ ker dx_y; the level sets of x are strictly concave from the superlevel sets on U if dx ≠ 0 on U and this holds at every y ∈ U. Theorem: for c a regular value of x (dx ≠ 0 on {x = c}; dx may vanish elsewhere in U), {x ≤ c} is a regular domain of U with defining function c − x and II(v, v) = Hess x(v, v)/|dx| on its boundary, so the boundary is strictly convex at y iff the level set is strictly concave from the superlevel sets at y; the superlevel domain {x ≥ c} has II = −Hess x/|dx|; for M = {ρ ≥ 0} and x = −ρ this is strict convexity of ∂M.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
-      "U ⊆ N open, x ∈ C^∞(U), dx ≠ 0 on U"
+      "U ⊆ N open, x ∈ C^∞(U); dx_y ≠ 0 at the point y for the notion at y; dx ≠ 0 on U for the notion on U; c a regular value of x (dx ≠ 0 on {x = c}) for the sublevel and superlevel domains"
      ],
      "locator": {
       "source": "stefanov-uhlmann-vasy2021",
@@ -689,18 +704,19 @@
       "target:1.4",
       "target:2.1",
       "target:3.1",
-      "tauceti:TauCeti.Manifold.hessian"
+      "tauceti:TauCeti.Manifold.hessian",
+      "target:1.3"
      ],
      "api": [
       {
        "name": "secondFundamentalForm_sublevel",
        "role": "evaluation",
-       "statement": "II of {x ≤ c} is Hess x/|dx| on ker dx."
+       "statement": "For c a regular value of x, II of the regular domain {x ≤ c} of U is Hess x/|dx| on ker dx along {x = c}."
       },
       {
        "name": "secondFundamentalForm_superlevel",
        "role": "evaluation",
-       "statement": "II of {x ≥ c} is −Hess x/|dx| on ker dx."
+       "statement": "For c a regular value of x, II of the regular domain {x ≥ c} of U is −Hess x/|dx| on ker dx along {x = c}."
       },
       {
        "name": "isLevelStrictlyConcave_neg_iff",
@@ -717,7 +733,7 @@
       {
        "name": "norm_squared",
        "kind": "computation",
-       "statement": "x = |z|²: Hess x = 2g; for c > 0, {x ≤ c} has II = h/√c; for n ≥ 1, x = −|z|² fails."
+       "statement": "x = |z|² on all of ℝⁿ⁺¹: dx = 2z vanishes only at 0, Hess x = 2g, so the notion holds at every y ≠ 0 and on ℝⁿ⁺¹ ∖ {0}, not on ℝⁿ⁺¹; every c > 0 is a regular value and {x ≤ c} is the closed ball with |dx| = 2√c and II = h/√c; c = 0 is critical and {x ≤ 0} = {0} is no regular domain; on U = ℝⁿ⁺¹ ∖ {0}, {x ≤ c} is the punctured ball, a non-compact regular domain of U; for n ≥ 1, x = −|z|² fails at every y ≠ 0."
       },
       {
        "name": "affine",
@@ -732,7 +748,7 @@
       {
        "name": "dimension_one",
        "kind": "degenerate",
-       "statement": "n = 0: ker dx_y = 0, so every x with dx ≠ 0, including x(t) = t and x = −|z|², satisfies the condition vacuously."
+       "statement": "n = 0: ker dx_y = 0, so the condition holds vacuously at every y with dx_y ≠ 0, for every x, including x(t) = t on ℝ and x = −|z|² on ℝ ∖ {0}."
       }
      ]
     },
@@ -901,7 +917,8 @@
       "target:3.4.1",
       "roadmap:DifferentialGeometry §12.1",
       "tauceti:TauCeti.nonempty_contMDiffRiemannianMetric",
-      "mathlib:exists_contMDiffSection_forall_mem_convex_of_local"
+      "mathlib:exists_contMDiffSection_forall_mem_convex_of_local",
+      "target:3.1"
      ],
      "api": [],
      "tests": [
@@ -932,7 +949,8 @@
       "target:3.3.2",
       "target:3.4.2",
       "roadmap:GeometricTopology §1.1",
-      "roadmap:GeometricTopology §1.3"
+      "roadmap:GeometricTopology §1.3",
+      "roadmap:RiemannianGeometry §R5c"
      ],
      "api": [],
      "tests": [
@@ -950,6 +968,16 @@
        "name": "closed_manifold",
        "kind": "degenerate",
        "statement": "A compact manifold without boundary is its own realisation with ρ̃ ≡ 1."
+      },
+      {
+       "name": "doubled_half_line",
+       "kind": "non-example",
+       "statement": "[0, ∞) with the point 1 doubled is a manifold over 𝓡∂ 1 with dx² on both copies but is not Hausdorff, so it is no subspace of a Hausdorff M̃ and no regular domain: the Hausdorff hypothesis cannot be dropped."
+      },
+      {
+       "name": "r5c_conventions",
+       "kind": "compatibility",
+       "statement": "Closed unit disc with c(q, t) = (1 − t/2)q: M̃ is the open disc of radius 3/2, ρ̃ = 2(1 − |x|) for 3/4 < |x| < 5/4; in the chart (t, θ) int M = {x⁰ > 0} (Mathlib, normal coordinate first) and in R5c's order (θ, t) int M = {x_2 > 0}; the misread {θ > 0} crosses the circle; R5c's defining function is −ρ̃ = 2(|x| − 1), negative on int M; for closed M, −ρ̃ ≡ −1 is R5c's ρ = −1. The non-compact half-line (M̃ ≅ (−1, ∞)) is outside R5c's compact setting, and the compactness of the double S² is not part of R5c's statement."
       }
      ]
     },
@@ -957,9 +985,10 @@
      "id": "3.6",
      "kind": "theorem",
      "name": "secondFundamentalForm_eq_inner_immersion",
-     "statement": "For a regular domain M of (N, g), the inclusion (∂M, h) → (N, g) is an isometric embedding of boundaryless manifolds; RiemannianGeometry R5a's B satisfies B(u, w) = II(u, w)ν_in, S_{ν_in} = S, averaged mean curvature vector H ν_in (n ≥ 1); Gauss: ⟨R^{∂M}(X, Y)Z, W⟩ = ⟨R^N(X, Y)Z, W⟩ + II(X, W)II(Y, Z) − II(X, Z)II(Y, W).",
+     "statement": "For a regular domain M of a second-countable (N, g), the inclusion (∂M, h) → (N, g) is an isometric embedding of boundaryless manifolds; RiemannianGeometry R5a's B satisfies B(u, w) = II(u, w)ν_in, S_{ν_in} = S, averaged mean curvature vector H ν_in (n ≥ 1); Gauss: ⟨R^{∂M}(X, Y)Z, W⟩ = ⟨R^N(X, Y)Z, W⟩ + II(X, W)II(Y, Z) − II(X, Z)II(Y, W).",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
+      "N second countable (the standing setting of RiemannianGeometry R5a); then ∂M, with the subspace topology of N (3.1), is Hausdorff and second countable",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)"
      ],
      "locator": {
@@ -1054,6 +1083,7 @@
      "prerequisites": [
       "target:1.3",
       "target:1.4",
+      "target:3.1",
       "target:4.1",
       "roadmap:HopfRinow §Layer 1",
       "tauceti:TauCeti.Manifold.hessian_apply_eq_mvfderiv_sub"
@@ -1116,7 +1146,8 @@
      },
      "prerequisites": [
       "target:4.2.2",
-      "target:4.1"
+      "target:4.1",
+      "target:2.1"
      ],
      "api": [],
      "tests": [
@@ -1186,7 +1217,7 @@
      "id": "4.3.2",
      "kind": "theorem",
      "name": "hypersurface_tube_gaussLemma",
-     "statement": "There is a smooth ε : Σ → (0, ∞), constant if Σ is compact, such that E_Σ is a diffeomorphism from {(q, r) : |r| < ε(q)} onto an open neighbourhood W of Σ with sign f(E_Σ(q, r)) = sign r, and dE_Σ(∂_r) is a unit vector orthogonal to dE_Σ(T_qΣ × {0}) (Gauss lemma for hypersurfaces).",
+     "statement": "There is a smooth ε : Σ → (0, ∞), constant if Σ is compact, such that E_Σ is a diffeomorphism from {(q, r) : |r| < ε(q)} onto an open neighbourhood W of Σ with sign f(E_Σ(q, r)) = sign r, and dE_Σ(∂_r) is a unit vector orthogonal to dE_Σ(T_qΣ × {0}) (Gauss lemma for hypersurfaces). For compact connected Σ in a connected N this is RiemannianGeometry R7.9's normal collar for ν = ν_Σ; here Σ may be non-compact or disconnected (variable radius), and the sign of f is added.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "f ∈ C^∞(N) with 0 a regular value",
@@ -1200,14 +1231,15 @@
       "target:4.3.1",
       "tauceti:TauCeti.SmoothEmbedding.exists_partialDiffeomorph_normalExp_subset",
       "tauceti:TauCeti.SmoothEmbedding.exists_isClosedEmbedding_normalExp_norm_le_subset",
-      "roadmap:HopfRinow §Layer 2"
+      "roadmap:HopfRinow §Layer 2",
+      "roadmap:RiemannianGeometry §R7.9"
      ],
      "api": [],
      "tests": [
       {
        "name": "sphere_tube",
        "kind": "computation",
-       "statement": "Σ = S^n: E(q, r) = (1 − r)q is a diffeomorphism for |r| < 1, not beyond (centre)."
+       "statement": "Σ = S^n: E(q, r) = (1 − r)q is a diffeomorphism for |r| < 1, not beyond (centre). After t = −r this is R7.9's collar (1 + t)q for the normal x, injective for ε ≤ 1."
       }
      ]
     },
@@ -1215,7 +1247,7 @@
      "id": "4.3.3",
      "kind": "theorem",
      "name": "boundaryDistance_eq_signedDistance",
-     "statement": "For Σ = ∂M (f = ρ): on W' ∩ M, r_{∂M} = d_M(·, ∂M) (intrinsic distance of (M, g_M), Manifold.riemannianEDist); r_{∂M} is a boundary defining function near ∂M with grad = ν_in on ∂M. Normalised defining function: with a smooth ε₁ < ε (constant when ∂M is compact) such that the closed tube E_{∂M}({|r| ≤ ε₁(q)}) is closed in N, W := E_{∂M}({|r| < ε(q)}) and W₁ := E_{∂M}({|r| < ε₁(q)}), there is ρ̂ ∈ C^∞(N) with ρ̂ = r_{∂M} on W₁, ρ̂ = 1 on M ∖ W, ρ̂ = −1 on N ∖ (M ∪ W), ρ̂ between r_{∂M} and 1 on W ∩ M and between r_{∂M} and −1 on W ∖ M; hence M = {ρ̂ ≥ 0}, ∂M = {ρ̂ = 0}, N ∖ M = {ρ̂ < 0}, grad ρ̂ = ν_in on ∂M, and for 0 < ε < 1 every point of {ρ̂ ≥ −ε} ∖ M lies in W with r_{∂M} ≥ −ε. Route: ρ̂ = ψ r_{∂M} + (1 − ψ) s with ψ a cutoff equal to 1 on the closed tube and 0 off W, and s : N → [−1, 1] equal to 1 on M ∖ W₁ and −1 on N ∖ (M ∪ W₁) (both closed since ∂M ⊆ W₁), from exists_contMDiff_zero_iff_one_iff_of_isClosed.",
+     "statement": "For Σ = ∂M (f = ρ): on W' ∩ M, r_{∂M} = d_M(·, ∂M) (intrinsic distance of (M, g_M), Manifold.riemannianEDist); r_{∂M} is a boundary defining function near ∂M with grad = ν_in on ∂M. Normalised defining function: with smooth ε₁ < ε₂ < ε (constant when ∂M is compact) such that the closed tubes E_{∂M}({|r| ≤ ε₁(q)}) and E_{∂M}({|r| ≤ ε₂(q)}) are closed in N (the closed-tube theorem inside W gives ε₂; every smaller positive continuous radius, such as ε₁ = ε₂/2, has a closed tube, the image of a closed subset of the closed ε₂-disc bundle), W := E_{∂M}({|r| < ε(q)}), W₂ := E_{∂M}({|r| < ε₂(q)}) and W₁ := E_{∂M}({|r| < ε₁(q)}), there is ρ̂ ∈ C^∞(N) with ρ̂ = r_{∂M} on W₁, ρ̂ = 1 on M ∖ W, ρ̂ = −1 on N ∖ (M ∪ W), ρ̂ between r_{∂M} and 1 on W ∩ M and between r_{∂M} and −1 on W ∖ M; hence M = {ρ̂ ≥ 0}, ∂M = {ρ̂ = 0}, N ∖ M = {ρ̂ < 0}, grad ρ̂ = ν_in on ∂M, and for 0 < δ < 1 every point of {ρ̂ ≥ −δ} ∖ M lies in W with r_{∂M} ≥ −δ. For nonempty compact connected ∂M in a connected N, N ∖ ∂M has exactly the two components {ρ > 0} and {ρ < 0}, and RiemannianGeometry R7.9's defining function for ν = ν_in has the zero set, sign sets and gradient of ρ̂ and equals the collar coordinate near ∂M; ρ̂ is built here for every regular domain, with the comparison with r_{∂M} on W used in 4.6. Route: ρ̂ = ψ r_{∂M} + (1 − ψ) s with ψ : N → [0, 1] a cutoff equal to 1 on the closed ε₁-tube and 0 on the closed set N ∖ W₂, and s : N → [−1, 1] equal to 1 on M ∖ W₁ and −1 on N ∖ (M ∪ W₁) (both closed since ∂M ⊆ W₁), from exists_contMDiff_zero_iff_one_iff_of_isClosed; the support of ψ lies in the closed ε₂-tube, closed in N and contained in W, so ψ r_{∂M} extended by 0 is smooth on the open cover {W, N ∖ closed ε₂-tube} of N.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
@@ -1232,19 +1264,25 @@
       "target:3.1",
       "mathlib:Manifold.riemannianEDist",
       "mathlib:exists_contMDiff_zero_iff_one_iff_of_isClosed",
-      "tauceti:TauCeti.SmoothEmbedding.exists_isClosedEmbedding_normalExp_norm_le_subset"
+      "tauceti:TauCeti.SmoothEmbedding.exists_isClosedEmbedding_normalExp_norm_le_subset",
+      "roadmap:RiemannianGeometry §R7.9"
      ],
      "api": [],
      "tests": [
       {
        "name": "ball",
        "kind": "computation",
-       "statement": "Unit ball: d_M(x, ∂M) = 1 − |x| = r_{∂M}; with ε = 1/2, ε₁ = 1/4, ρ̂ = 1 − |x| on 3/4 < |x| < 5/4, ρ̂ = 1 on |x| ≤ 1/2 and ρ̂ = −1 on |x| ≥ 3/2."
+       "statement": "Unit ball: d_M(x, ∂M) = 1 − |x| = r_{∂M}; with ε = 1/2, ε₂ = 3/8, ε₁ = 1/4, ρ̂ = 1 − |x| on 3/4 < |x| < 5/4, ρ̂ = 1 on |x| ≤ 1/2 and ρ̂ = −1 on |x| ≥ 3/2."
       },
       {
        "name": "sandwich",
        "kind": "compatibility",
-       "statement": "On W ∖ M the value ρ̂ is a convex combination of r_{∂M} < 0 and −1, so {ρ̂ ≥ −ε} ∖ M ⊆ {r_{∂M} ≥ −ε} for ε < 1; the unnormalised ψ r_{∂M} + (1 − ψ) ρ has no such bound (4.6's negative control)."
+       "statement": "On W ∖ M the value ρ̂ is a convex combination of r_{∂M} < 0 and −1, so {ρ̂ ≥ −δ} ∖ M ⊆ {r_{∂M} ≥ −δ} for 0 < δ < 1; the unnormalised ψ r_{∂M} + (1 − ψ) ρ has no such bound (4.6's negative control)."
+      },
+      {
+       "name": "cutoff_frontier",
+       "kind": "non-example",
+       "statement": "Closed unit ball, ρ = 1 − |x|², ε = 1: W = {0 < |x| < 2} has the centre 0 on its frontier, where r_{∂M} = 1 − |x| is not smooth; a cutoff only required to vanish off W may equal |x|² near 0, and then ψ r_{∂M} = |x|² − |x|³ is not C³ at 0. With ε₂ = 3/4, ε₁ = 1/2: W₂ = {1/4 < |x| < 7/4}, ψ = 0 for |x| ≤ 1/4, ψ r_{∂M} vanishes near 0 and ρ̂ = s = 1 there."
       }
      ]
     },
@@ -1252,7 +1290,7 @@
      "id": "4.4",
      "kind": "theorem",
      "name": "boundaryNormalCoordinates",
-     "statement": "E = E_{∂M} restricted to {0 ≤ r < ε(q)} is a diffeomorphism onto an open neighbourhood of ∂M in M (a smooth collar), with r = d_M(·, ∂M); on {|r| < ε(q)}, (E*g)((u, a), (u', a')) = a a' + h_r(u, u') with (h_r) a smooth family of metrics on ∂M, h_0 = h; II = −½ ∂_r h_r|_{r=0}.",
+     "statement": "E = E_{∂M} restricted to {0 ≤ r < ε(q)} is a diffeomorphism onto the open neighbourhood W ∩ M of ∂M in M (a smooth collar after r = ε(q)s); there is a smooth η : ∂M → (0, ∞) with η ≤ ε, constant when ∂M is compact, such that E({|r| < η(q)}) ⊆ W' (the distance neighbourhood of 4.3.1/4.3.3), hence r = d_M(·, ∂M) on E({0 ≤ r < η(q)}) (route: the largest admissible half-width m(q) ≤ ε(q) is positive and lower semicontinuous by the tube lemma, and a partition of unity gives smooth 0 < η < m); on {|r| < ε(q)}, (E*g)((u, a), (u', a')) = a a' + h_r(u, u') for u, u' ∈ T_q∂M, where h_r(u, u') := g(dE_{(q, r)}(u, 0), dE_{(q, r)}(u', 0)), defined for |r| < ε(q), is an inner product on T_q∂M (positive definite as dE_{(q, r)} is injective) depending smoothly on (q, r) in the tube; for each r it is a Riemannian metric on the open set {q ∈ ∂M : ε(q) > |r|}, which is all of ∂M when ε is constant and |r| < ε; h_0 = h on all of ∂M; II = −½ ∂_r h_r|_{r=0} at every q ∈ ∂M, the derivative taken in r ∈ (−ε(q), ε(q)).",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
@@ -1266,7 +1304,8 @@
       "target:1.4",
       "target:4.3.2",
       "target:4.3.3",
-      "roadmap:GeometricTopology §1.1"
+      "roadmap:GeometricTopology §1.1",
+      "mathlib:SmoothPartitionOfUnity"
      ],
      "api": [],
      "tests": [
@@ -1284,6 +1323,16 @@
        "name": "dimension_one",
        "kind": "degenerate",
        "statement": "n = 0: E*g = dr²."
+      },
+      {
+       "name": "surface_case",
+       "kind": "convention",
+       "statement": "n = 1, against RiemannianGeometry/Surfaces 1.2 with the inward normal: in arclength s on ∂M, h_r = a(s, r)² ds², II = −a_t(s, 0) ds² = k_g ds²; disc of radius R: a = 1 − r/R, II = ds²/R, k_g = 1/R; cap {φ ≤ φ₀} of the unit sphere: a = sin(φ₀ − r)/sin φ₀, II = cot φ₀ · ds² (6.3 at R = φ₀), k_g = cot φ₀; the outward normal would give a = 1 + r/R and II = −ds²/R on the disc, the exterior's value."
+      },
+      {
+       "name": "unequal_strips",
+       "kind": "non-example",
+       "statement": "ℝ², ρ = x(1 − x), M = [0, 1] × ℝ: radii ε = 0.9 on {x = 0} and 0.01 on {x = 1} satisfy the tube, sign and Gauss conclusions of 4.3.2 (disjoint strips (−0.9, 0.9) × ℝ and (0.99, 1.01) × ℝ), but at (0.8, 0) the normal coordinate is 0.8 while d_M(·, ∂M) = 0.2; with η = 0.4 and 0.005 the distance equals r on the smaller half-tube, which omits (0.8, 0); h_r = dy² wherever defined and −½∂_r h_r|₀ = 0 = II, but for 0.01 ≤ |r| < 0.9 (e.g. r = 0.5) {q : ε(q) > |r|} = {0} × ℝ, so h_r is a metric on that component only."
       }
      ]
     },
@@ -1332,7 +1381,7 @@
      "id": "4.6",
      "kind": "theorem",
      "name": "enlargement_strictlyConvex",
-     "statement": "If ∂M is compact and strictly convex and ρ̂ is the normalised defining function of 4.3.3 with constant tube radii ε₁ < ε, there is ε₀ with 0 < ε₀ < min(ε₁, 1) such that for 0 < ε ≤ ε₀: M_ε := {ρ̂ ≥ −ε} = M ∪ E_{∂M}(∂M × [−ε, 0)), −ε is a regular value of ρ̂, M_ε is a regular domain with strictly convex boundary E_{∂M}(∂M × {−ε}), M ⊆ int M_ε, and M_ε is compact if M is. Route: points of M_ε ∖ M lie in W₁ where ρ̂ = r_{∂M}; II_{M_ε} = −Hess r_{∂M} on the level sets of r_{∂M}, positive for |r| ≤ ε₀ by 2.3.2 at r = 0, continuity on the compact tube and compactness of the unit tangent vectors of the level sets.",
+     "statement": "If ∂M is compact and strictly convex and ρ̂ is the normalised defining function of 4.3.3 with constant tube radii ε₁ < ε, there is δ₀ with 0 < δ₀ < min(ε₁, 1) such that for 0 < δ ≤ δ₀: M_δ := {ρ̂ ≥ −δ} = M ∪ E_{∂M}(∂M × [−δ, 0)), −δ is a regular value of ρ̂, M_δ is a regular domain with strictly convex boundary E_{∂M}(∂M × {−δ}), M ⊆ int M_δ, and M_δ is compact if M is. Route: points of M_δ ∖ M lie in W₁ where ρ̂ = r_{∂M}; II_{M_δ} = −Hess r_{∂M} on the level sets of r_{∂M}, positive for −δ₀ ≤ r ≤ 0 (some 0 < δ₀ < min(ε₁/2, 1)) by 2.3.2 at r = 0, continuity on the compact tube and compactness of the unit tangent vectors of the level sets.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
@@ -1348,19 +1397,22 @@
       "target:2.3.2",
       "target:3.1",
       "target:3.2",
-      "target:4.3.3"
+      "target:4.3.3",
+      "target:1.3",
+      "target:1.4",
+      "target:2.1"
      ],
      "api": [],
      "tests": [
       {
        "name": "ball",
        "kind": "computation",
-       "statement": "Unit ball with ε = 1/2, ε₁ = 1/4 (ρ̂ = 1 − |x| on 3/4 < |x| < 5/4): for ε < 1/4, M_ε is the ball of radius 1 + ε, II = h/(1 + ε)."
+       "statement": "Unit ball with tube radius ε = 1/2, ε₁ = 1/4 (ρ̂ = 1 − |x| on 3/4 < |x| < 5/4): for 0 < δ < 1/4, M_δ is the ball of radius 1 + δ < 5/4, II = h/(1 + δ); on 5/4 ≤ |x| < 3/2, ρ̂ lies between 1 − |x| ≤ −1/4 and −1, below −δ."
       },
       {
        "name": "cap",
        "kind": "computation",
-       "statement": "Cap of radius 0 < R < π/2 in S^{n+1}, n ≥ 1: M_ε = cap of radius R + ε, strictly convex iff R + ε < π/2; for n = 0 every arc M_ε is strictly convex vacuously and ε₀ is limited only by min(ε₁, 1)."
+       "statement": "Cap of radius 0 < R < π/2 in S^{n+1}, n ≥ 1: M_δ = cap of radius R + δ, strictly convex iff R + δ < π/2, so δ₀ < π/2 − R; for n = 0 every arc M_δ is strictly convex vacuously and δ₀ is limited only by min(ε₁, 1)."
       },
       {
        "name": "halfspace",
@@ -1370,7 +1422,7 @@
       {
        "name": "unnormalised_defining_function",
        "kind": "non-example",
-       "statement": "ρ = (1 − |x|²)e^{−|x|²} on ℝ² (0 regular, radial derivative −2/e at |x| = 1, M the closed unit disc): a function equal to r_{∂M} near the circle and to ρ for |x| ≥ 5/4 has minimum −e^{−2} at |x| = √2 and tends to 0 from below, so for 0 < ε < e^{−2} the set {ρ ≥ −ε} contains an unbounded exterior {|x| ≥ r₂}, r₂ > √2, with II = −h/r₂ < 0, and −e^{−2} is a critical value: the normalisation ρ̂ = −1 off the tube is needed."
+       "statement": "ρ = (1 − |x|²)e^{−|x|²} on ℝ² (0 regular, radial derivative −2/e at |x| = 1, M the closed unit disc): a function equal to r_{∂M} near the circle and to ρ for |x| ≥ 5/4 has minimum −e^{−2} at |x| = √2 and tends to 0 from below, so for 0 < δ < e^{−2} the set {ρ ≥ −δ} contains an unbounded exterior {|x| ≥ r₂}, r₂ > √2, with II = −h/r₂ < 0, and −e^{−2} is a critical value: the normalisation ρ̂ = −1 off the tube is needed."
       }
      ]
     }
@@ -1384,7 +1436,7 @@
      "id": "5.1",
      "kind": "construction",
      "name": "unitSphereBundleStrata",
-     "statement": "SN = {|v| = 1} ⊆ TN with Tau Ceti's sphere-bundle structure (radius 1), π its projection; SM = π⁻¹(M), ∂SM = π⁻¹(∂M), ∂±SM = {±⟨v, ν_in⟩ ≥ 0}, ∂₀SM = ∂₊SM ∩ ∂₋SM, μ = ⟨v, ν_in⟩ on ∂SM; 0 is a regular value of ρ∘π on SN, SM is a regular domain of SN with boundary ∂SM, ∂SM a closed boundaryless submanifold, ∂₀SM = {μ = 0} the unit vectors tangent to ∂M (a hypersurface of ∂SM for n ≥ 1); the geodesic flow preserves SN with generator X, a smooth vector field acting on C^∞(SM).",
+     "statement": "SN = {|v| = 1} ⊆ TN with Tau Ceti's sphere-bundle structure (radius 1), π its projection; SM = π⁻¹(M), ∂SM = π⁻¹(∂M), ∂±SM = {±⟨v, ν_in⟩ ≥ 0}, ∂₀SM = ∂₊SM ∩ ∂₋SM, μ = ⟨v, ν_in⟩ on ∂SM; 0 is a regular value of ρ∘π on SN, SM is a regular domain of SN with boundary ∂SM, ∂SM a closed boundaryless submanifold, ∂₀SM = {μ = 0} the unit vectors tangent to ∂M (a hypersurface of ∂SM for n ≥ 1); the geodesic flow φ_t preserves SN with generator X, a smooth vector field on SN with Xũ = d/dt ũ(φ_t)|₀ on C^∞(SN); X(z) ∈ T_zSN = dj(T_zSM) for z ∈ SM, so X is a smooth vector field on the manifold with boundary SM acting on C^∞(SM) by Xu := du(X).",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
@@ -1421,7 +1473,7 @@
       {
        "name": "geodesicVectorField_unitSphereBundle",
        "role": "structure",
-       "statement": "The geodesic flow preserves SN; its generator X acts on C^∞(SM) by Xu = d/dt u(φ_t)|₀."
+       "statement": "The geodesic flow φ_t preserves SN and its generator X is a smooth vector field on SN; for z ∈ SM, X(z) ∈ T_zSN = dj(T_zSM) (j : SM → SN the inclusion, 3.1), so X is a smooth vector field on the manifold with boundary SM and Xu := du(X) for u ∈ C^∞(SM); Xu(z) = d/dt ũ(φ_t z)|₀ for every smooth ũ on an open neighbourhood of z in SN agreeing with u on SM, and Xu(z) is the one-sided derivative at 0 of t ↦ u(φ_t z) whenever φ_t z stays in SM for t in [0, δ) or (−δ, 0]."
       }
      ],
      "tests": [
@@ -1434,6 +1486,11 @@
        "name": "interval",
        "kind": "degenerate",
        "statement": "[a, b]: ∂SM has four points, μ = ±1, ∂₀SM = ∅."
+      },
+      {
+       "name": "disc_glancing_generator",
+       "kind": "computation",
+       "statement": "Closed disc in ℝ², z = ((0, −1), (1, 0)) ∈ ∂₀SM: φ_t z = ((t, −1), (1, 0)) ∉ SM for t ≠ 0 since 1 + t² > 1, so u(φ_t z) exists only at t = 0; with σ̃(x, v) = −2⟨x, v⟩ extending σ, σ̃(φ_t z) = −2t and Xσ(z) = −2 (5.4)."
       },
       {
        "name": "suv_labels",
@@ -1449,7 +1506,8 @@
      "statement": "τ(x, v) := sup{T > 0 : ∃ geodesic γ of M on [0, T] with γ(0) = x, γ'(0) = v} ∈ [0, ∞] (sup ∅ = 0); M is non-trapping if τ < ∞ on every unit (x, v).",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
-      "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)"
+      "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
+      "N second countable"
      ],
      "locator": {
       "source": "paternain-salo-uhlmann2023",
@@ -1461,7 +1519,8 @@
       "target:5.1",
       "tauceti:TauCeti.Manifold.IsGeodesicCurveOnFrom",
       "tauceti:TauCeti.Manifold.geodesicInterval",
-      "tauceti:TauCeti.Manifold.maximalGeodesic"
+      "tauceti:TauCeti.Manifold.maximalGeodesic",
+      "target:2.1"
      ],
      "api": [
       {
@@ -1482,7 +1541,7 @@
       {
        "name": "exitTime_flow",
        "role": "structure",
-       "statement": "For compact M and unit v with τ < ∞: the geodesic extends to [0, τ], ends on ∂M with μ ≤ 0; for 0 ≤ t ≤ τ(x, v) and (y, w) = φ_t(x, v): τ(y, w) = τ(x, v) − t and τ(y, −w) = τ(x, −v) + t."
+       "statement": "For compact M and (x, v) ∈ SM (unit v, as μ and φ_t require) with τ(x, v) < ∞: the geodesic extends to [0, τ], ends on ∂M with μ ≤ 0; for 0 ≤ t ≤ τ(x, v) and (y, w) = φ_t(x, v) ∈ SM: τ(y, w) = τ(x, v) − t and τ(y, −w) = τ(x, −v) + t."
       },
       {
        "name": "closed_trapped",
@@ -1574,6 +1633,39 @@
      ]
     },
     {
+     "id": "5.4.4",
+     "kind": "theorem",
+     "name": "exitTime_fold_near_glancing",
+     "statement": "Near every z₀ ∈ ∂₀SM, on SM: τ(x, v) = Q(√a(x, v), x, v) and −τ(x, −v) = Q(−√a(x, v), x, v) with Q, a smooth and a ≥ 0 on SM (route: 5.3.1 for h(t, y) = ρ(γ_y(t)), smooth by the flow of 5.1, with h = ∂_t h = 0 and ∂_t² h = −|dρ| II(v₀, v₀) < 0 at (0, z₀) by 4.2.1; for y ∈ SM near z₀, h(·, y) is concave near 0 with h(0, y) ≥ 0, so the realisation formula of 5.2 gives τ(y) as the larger root and γ_{x,−v}(t) = γ_{x,v}(−t) gives −τ(x, −v) as the smaller; continuity of τ is not used).",
+     "hypotheses": [
+      "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
+      "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
+      "N second countable",
+      "M compact",
+      "∂M strictly convex near the base point of z₀"
+     ],
+     "locator": {
+      "source": "paternain-salo-uhlmann2023",
+      "where": "Lemma 3.2.9, lines 2955–2966"
+     },
+     "prerequisites": [
+      "target:5.3.1",
+      "target:4.2.1",
+      "target:5.1",
+      "target:5.2",
+      "target:1.4",
+      "target:2.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "ball",
+       "kind": "computation",
+       "statement": "Unit ball, on SM (|v| = 1): a = 4(⟨x, v⟩² + 1 − |x|²), Q(r, ·) = (−2⟨x, v⟩ + r)/2."
+      }
+     ]
+    },
+    {
      "id": "5.4.1",
      "kind": "theorem",
      "name": "exitTime_continuous_smooth",
@@ -1581,6 +1673,7 @@
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
+      "N second countable",
       "M compact",
       "∂M strictly convex",
       "M non-trapping"
@@ -1598,7 +1691,8 @@
       "target:5.2",
       "mathlib:ContDiffAt.implicitFunction",
       "mathlib:ContDiffAt.contDiffAt_implicitFunction",
-      "tauceti:TauCeti.Manifold.contMDiffOn_maximalGeodesic"
+      "tauceti:TauCeti.Manifold.contMDiffOn_maximalGeodesic",
+      "target:2.1"
      ],
      "api": [],
      "tests": [
@@ -1617,6 +1711,7 @@
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
+      "N second countable",
       "M compact",
       "∂M strictly convex",
       "M non-trapping"
@@ -1628,7 +1723,9 @@
      "prerequisites": [
       "target:5.2",
       "target:5.3.1",
-      "target:5.4.1"
+      "target:5.4.1",
+      "target:2.1",
+      "target:5.1"
      ],
      "api": [
       {
@@ -1673,6 +1770,7 @@
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
+      "N second countable",
       "M compact",
       "∂M strictly convex",
       "M non-trapping"
@@ -1684,7 +1782,10 @@
      "prerequisites": [
       "target:1.4",
       "target:4.2.1",
-      "target:5.4.2"
+      "target:5.4.2",
+      "target:2.1",
+      "target:5.1",
+      "target:5.2"
      ],
      "api": [],
      "tests": [
@@ -1696,42 +1797,14 @@
      ]
     },
     {
-     "id": "5.4.4",
-     "kind": "theorem",
-     "name": "exitTime_fold_near_glancing",
-     "statement": "Near every z₀ ∈ ∂₀SM, on SM: τ(x, v) = Q(√a(x, v), x, v) and −τ(x, −v) = Q(−√a(x, v), x, v) with Q, a smooth and a ≥ 0 on SM.",
-     "hypotheses": [
-      "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
-      "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
-      "M compact",
-      "∂M strictly convex near the base point of z₀"
-     ],
-     "locator": {
-      "source": "paternain-salo-uhlmann2023",
-      "where": "Lemma 3.2.9, lines 2955–2966"
-     },
-     "prerequisites": [
-      "target:5.3.1",
-      "target:4.2.1",
-      "target:5.2"
-     ],
-     "api": [],
-     "tests": [
-      {
-       "name": "ball",
-       "kind": "computation",
-       "statement": "Unit ball: a = 4(⟨x, v⟩² + 1 − |x|²), Q(r, ·) = (−2⟨x, v⟩ + r)/2."
-      }
-     ]
-    },
-    {
      "id": "5.4.5",
      "kind": "theorem",
      "name": "exitTime_sum_prod_smooth",
-     "statement": "σ := τ(x, v) − τ(x, −v) and T := τ(x, v)τ(x, −v) are smooth on the manifold with boundary SM, σ = τ̃ on ∂SM, and τ = (σ + √(σ² + 4T))/2; Xσ = −2 on SM.",
+     "statement": "σ := τ(x, v) − τ(x, −v) and T := τ(x, v)τ(x, −v) are smooth on the manifold with boundary SM, σ = τ̃ on ∂SM, and τ = (σ + √(σ² + 4T))/2; Xσ = −2 on SM, X acting on C^∞(SM) by du(X) (5.1): on int SM from σ(φ_t z) = σ(z) − 2t (5.2), at boundary points (glancing ones included) by continuity of Xσ and density of int SM.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
+      "N second countable",
       "M compact",
       "∂M strictly convex",
       "M non-trapping"
@@ -1744,14 +1817,16 @@
       "target:5.3.2",
       "target:5.4.4",
       "target:5.4.1",
-      "target:5.1"
+      "target:5.1",
+      "target:5.2",
+      "target:2.1"
      ],
      "api": [],
      "tests": [
       {
        "name": "ball",
        "kind": "computation",
-       "statement": "Unit ball: σ = −2⟨x, v⟩, T = 1 − |x|², d/dt(−2⟨x + tv, v⟩) = −2."
+       "statement": "Unit ball, on SM (|v| = 1): σ = −2⟨x, v⟩, T = 1 − |x|², d/dt(−2⟨x + tv, v⟩) = −2|v|² = −2 (off SM, homogeneity gives −2⟨x, v⟩/|v|² and (1 − |x|²)/|v|², which is why σ and T live on SM)."
       },
       {
        "name": "interval",
@@ -1764,10 +1839,11 @@
      "id": "5.5.1",
      "kind": "theorem",
      "name": "isNonTrapping_of_X_pos",
-     "statement": "For compact M (no convexity hypothesis): if f ∈ C^∞(SM) has Xf > 0 on SM then M is non-trapping, with τ ≤ (max f − min f)/min Xf. Hessian criterion: if u is smooth near M with Hess u positive definite on M, M is non-trapping (f = du(v), Xf = Hess u(v, v)).",
+     "statement": "For compact M (no convexity hypothesis): if f ∈ C^∞(SM) has Xf > 0 on SM then M is non-trapping, and τ(x, v) ≤ (max_SM f − min_SM f)/min_SM Xf for every (x, v) ∈ SM (the extrema exist because SM is compact and contains (x, v); for SM = ∅ there is no point to bound). Hessian criterion: if u is smooth near M with Hess u positive definite on M, M is non-trapping (f = du(v), Xf = Hess u(v, v)).",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
+      "N second countable",
       "M compact"
      ],
      "locator": {
@@ -1784,12 +1860,12 @@
       {
        "name": "ball_bound",
        "kind": "computation",
-       "statement": "Unit ball, u = |x|²/2: f = ⟨x, v⟩, Xf = 1, τ ≤ 2 = diameter."
+       "statement": "Unit ball, u = |x|²/2: f = ⟨x, v⟩, Xf = |v|² = 1 on SM, τ(x, v) ≤ 2 = diameter for (x, v) ∈ SM."
       },
       {
        "name": "closed_manifold",
        "kind": "non-example",
-       "statement": "Compact M without boundary: no f has Xf > 0 (maximum of f), τ ≡ ∞."
+       "statement": "Nonempty compact M without boundary: SM is nonempty and compact, so Xf = 0 at a maximum of f and no f has Xf > 0; τ ≡ ∞ on SM."
       }
      ]
     },
@@ -1801,6 +1877,7 @@
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
+      "N second countable",
       "M compact",
       "∂M strictly convex"
      ],
@@ -1813,7 +1890,10 @@
       "target:5.4.5",
       "target:4.6",
       "target:3.4.1",
-      "target:5.4.1"
+      "target:5.4.1",
+      "target:2.1",
+      "target:5.1",
+      "target:5.2"
      ],
      "api": [],
      "tests": [
@@ -1825,7 +1905,12 @@
       {
        "name": "closed_manifold",
        "kind": "degenerate",
-       "statement": "Closed M: all three conditions fail."
+       "statement": "Nonempty closed M (compact, ∂M = ∅): all three conditions fail (Xf = 0 at a maximum of f on the nonempty compact SM, so no Xu equals 1 and no f has Xf > 0; τ ≡ ∞ on SM)."
+      },
+      {
+       "name": "empty_domain",
+       "kind": "degenerate",
+       "statement": "N = ℝ², ρ ≡ −1 (0 a regular value with empty fibre): M = ∅ is compact with vacuously strictly convex boundary, SM = ∅ and C^∞(SM) is a single point; non-trapping, surjectivity of X and ∃ f with Xf > 0 all hold, as the equivalence requires."
       },
       {
        "name": "strictly_convex_trapped",
@@ -1842,6 +1927,7 @@
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
+      "N second countable",
       "M compact",
       "∂M strictly convex",
       "M non-trapping"
@@ -1853,7 +1939,9 @@
      "prerequisites": [
       "target:5.4.2",
       "target:5.1",
-      "target:5.2"
+      "target:5.2",
+      "target:2.1",
+      "target:4.1"
      ],
      "api": [
       {
@@ -1908,6 +1996,7 @@
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
       "ρ : N → ℝ smooth with 0 a regular value; M = {ρ ≥ 0} with Tau Ceti's sublevel atlas for −ρ and the pulled-back metric (3.1)",
+      "N second countable",
       "M compact",
       "∂M strictly convex",
       "M non-trapping"
@@ -1919,7 +2008,9 @@
      "prerequisites": [
       "target:5.6.1",
       "target:1.2",
-      "target:5.1"
+      "target:5.1",
+      "target:2.1",
+      "target:5.2"
      ],
      "api": [
       {
@@ -1961,10 +2052,10 @@
      "id": "6.1.1",
      "kind": "example",
      "name": "euclideanBall",
-     "statement": "Closed ball B̄(c, R) ⊆ ℝⁿ⁺¹: II = h/R, S = R⁻¹ id, H = 1/R for n ≥ 1, strictly convex, non-trapping, τ(x, v) = −⟨x − c, v⟩ + √(⟨x − c, v⟩² + R² − |x − c|²), τ̃ = −2⟨x − c, v⟩ and α(x, v) = (x − 2⟨x − c, v⟩v, v) on ∂SM, signed distance R − |x − c|.",
+     "statement": "Closed ball B̄(c, R) ⊆ ℝⁿ⁺¹: II = h/R, S = R⁻¹ id, H = 1/R for n ≥ 1, strictly convex, non-trapping, τ(x, v) = −⟨x − c, v⟩ + √(⟨x − c, v⟩² + R² − |x − c|²) for x ∈ B̄(c, R) and |v| = 1, hence by homogeneity (5.2) τ(x, v) = (−⟨x − c, v⟩ + √(⟨x − c, v⟩² + |v|²(R² − |x − c|²)))/|v|² for v ≠ 0 and τ(x, 0) = ∞, τ̃ = −2⟨x − c, v⟩ and α(x, v) = (x − 2⟨x − c, v⟩v, v) on ∂SM, signed distance R − |x − c|.",
      "hypotheses": [
       "Euclidean metric on ℝⁿ⁺¹",
-      "R > 0"
+      "c ∈ ℝⁿ⁺¹ and R > 0"
      ],
      "locator": {
       "source": "paternain-salo-uhlmann2023",
@@ -1975,9 +2066,12 @@
       "target:1.5",
       "target:2.1",
       "target:3.1",
+      "target:4.3.1",
+      "target:4.3.2",
       "target:5.2",
       "target:5.4.5",
-      "target:5.6.1"
+      "target:5.6.1",
+      "target:5.1"
      ],
      "api": [],
      "tests": [
@@ -1985,6 +2079,11 @@
        "name": "disc_tau",
        "kind": "computation",
        "statement": "R = 1, x = (0, −1): τ = sin θ + |sin θ|."
+      },
+      {
+       "name": "speed",
+       "kind": "non-example",
+       "statement": "R = 1, x = 0: τ(0, e₁) = 1 equals the unit-speed root, but τ(0, e₁/4) = 4 and τ(0, 0) = ∞ while that root still gives 1 at e₁/4 and at 0, and 4 > diam = 2; the general-speed formula gives (√(1/16))/(1/16) = 4 and the general bound 4 ≤ 2/(1/4) = 8."
       },
       {
        "name": "radius_zero",
@@ -1997,7 +2096,7 @@
      "id": "6.1.2",
      "kind": "example",
      "name": "convexEuclideanDomain",
-     "statement": "Every compact regular domain D ⊆ ℝⁿ⁺¹ is non-trapping (Hessian criterion with |x|²/2) with τ ≤ diam D; if D is convex as a set, ∂D is convex; in adapted coordinates D = {x₀ ≥ w(x')} with w(0) = 0, Dw(0) = 0, II_q = D²w(0), so ∂D is strictly convex at q iff D²w(0) is positive definite iff the principal curvatures at q are positive.",
+     "statement": "Every compact regular domain D ⊆ ℝⁿ⁺¹ is non-trapping (Hessian criterion with |x|²/2) with τ(x, v) ≤ diam D for (x, v) ∈ SD (the geodesic is the segment from x to x + τ(x, v)v, both endpoints in D), τ(x, v) ≤ diam D/|v| for v ≠ 0 and τ(x, 0) = ∞; if D is convex as a set, ∂D is convex; in adapted coordinates D = {x₀ ≥ w(x')} with w(0) = 0, Dw(0) = 0, II_q = D²w(0), so ∂D is strictly convex at q iff D²w(0) is positive definite iff the principal curvatures at q are positive.",
      "hypotheses": [
       "Euclidean metric on ℝⁿ⁺¹",
       "D = {ρ ≥ 0} compact regular domain"
@@ -2011,7 +2110,9 @@
       "target:1.5",
       "target:2.1",
       "target:3.1",
-      "target:5.5.1"
+      "target:5.2",
+      "target:5.5.1",
+      "target:5.1"
      ],
      "api": [],
      "tests": [
@@ -2034,18 +2135,20 @@
      "statement": "Closed half-space: II = 0, convex, for n ≥ 1 nowhere strictly convex, tangent geodesics stay in ∂M, τ = ∞ on ∂₀SM. For R > 0 the closed exterior {|x − c| ≥ R}: II = −h/R, strictly concave, H = −1/R for n ≥ 1, and for q ∈ ∂M and 0 ≠ v ⊥ (q − c) the tangent line q + tv enters int M to second order, ρ(q + tv) = t²|v|² for ρ = |x − c|² − R².",
      "hypotheses": [
       "Euclidean metric on ℝⁿ⁺¹",
-      "R > 0 for the exterior"
+      "c ∈ ℝⁿ⁺¹ and R > 0 for the exterior"
      ],
      "locator": {
       "source": "paternain-salo-uhlmann2023",
-      "where": "Definition 2.5.1 and Lemma 2.5.2, lines 2449–2473"
+      "where": "Definition 2.5.1 and Lemma 2.5.2, lines 2449–2473, in dimension two; the source names the circle {r = r̄} as seen from the larger radii, so its strictly convex circle {r = R} (b(r) = r, b′ = 1 > 0) is the strictly convex boundary of the ball {r ≤ R} and the strictly concave boundary of the exterior {r ≥ R}"
      },
      "prerequisites": [
       "target:1.4",
       "target:1.5",
       "target:2.1",
+      "target:3.1",
       "target:4.2.1",
-      "target:5.2"
+      "target:5.2",
+      "target:5.1"
      ],
      "api": [],
      "tests": [
@@ -2053,6 +2156,11 @@
        "name": "exterior",
        "kind": "computation",
        "statement": "Unit exterior, unit v ⊥ q: ρ(q + tv) = t² along the tangent line, II = −h, H = −1 for n ≥ 1; v = 0 gives the constant curve on ∂M, which does not enter int M."
+      },
+      {
+       "name": "side_of_the_name",
+       "kind": "convention",
+       "statement": "Plane, q = (1, 0), v = (0, 1): |q + tv|² = 1 + t², r̈(0) = 1 > 0 (the source calls the unit circle strictly convex); exterior ρ = |x|² − 1 = t² ≥ 0 with II = −h, ball ρ = 1 − |x|² = −t² with II = h; taking the source's name for the exterior would give II = +h."
       },
       {
        "name": "halfline",
@@ -2065,9 +2173,10 @@
      "id": "6.3.1",
      "kind": "example",
      "name": "sphericalCap",
-     "statement": "In S^{n+1} with Tau Ceti's round metric, the cap C_R = {⟨x, p⟩ ≥ cos R}, 0 < R < π: II = cot R · h. For n ≥ 1: strictly convex iff R < π/2, totally geodesic boundary at R = π/2, strictly concave for R > π/2; non-trapping iff R < π/2. For n = 0: C_R is the arc {|θ| ≤ R} of S¹, II is the zero form, and C_R is non-trapping for every 0 < R < π with τ(θ, ±1) = R ∓ θ.",
+     "statement": "In S^{n+1} with Tau Ceti's round metric, for p ∈ S^{n+1} (a unit vector of ℝⁿ⁺²), the cap C_R = {⟨x, p⟩ ≥ cos R} of geodesic radius R about p, 0 < R < π: II = cot R · h. For n ≥ 1: strictly convex iff R < π/2, totally geodesic boundary at R = π/2, strictly concave for R > π/2; non-trapping iff R < π/2. For n = 0: C_R is the arc {|θ| ≤ R} of S¹, II is the zero form, and C_R is non-trapping for every 0 < R < π with τ(θ, ±1) = R ∓ θ.",
      "hypotheses": [
       "unit round sphere S^{n+1}",
+      "p ∈ S^{n+1} (a unit vector of ℝⁿ⁺²), the centre of the cap",
       "0 < R < π"
      ],
      "locator": {
@@ -2079,19 +2188,27 @@
       "target:2.1",
       "target:3.1",
       "target:5.5.1",
-      "tauceti:TauCeti.sphereRoundMetric"
+      "tauceti:TauCeti.sphereRoundMetric",
+      "target:3.6",
+      "target:5.2",
+      "roadmap:RiemannianGeometry §R5a"
      ],
      "api": [],
      "tests": [
       {
        "name": "cap_values",
        "kind": "computation",
-       "statement": "ρ = ⟨x, p⟩ − cos R: Hess ρ = −cos R · g, |dρ| = sin R, II = cot R · h; R = π/4 gives II = h."
+       "statement": "ρ = ⟨x, p⟩ − cos R: grad ρ = p − ⟨x, p⟩x, |dρ|² = |p|² − cos² R = sin² R since |p| = 1, Hess ρ = −cos R · g, II = cot R · h; R = π/4 gives II = h."
       },
       {
        "name": "arc",
        "kind": "degenerate",
        "statement": "n = 0, R = 3π/4: exit times 3π/4 ∓ θ ≤ 3π/2 are finite although R ≥ π/2; the cut-off π/2 needs n ≥ 1."
+      },
+      {
+       "name": "unit_centre",
+       "kind": "non-example",
+       "statement": "p = 2e with e ∈ S^{n+1}, R = π/3: {⟨x, p⟩ ≥ 1/2} = {⟨x, e⟩ ≥ 1/4} is the cap of radius arccos(1/4) ≈ 1.318 about e, with II = h/√15 ≈ 0.258 h, not cot(π/3) h ≈ 0.577 h, and |dρ| = √15/2, not √3/2; the centre must be a unit vector."
       }
      ]
     },
@@ -2099,7 +2216,7 @@
      "id": "6.3.2",
      "kind": "example",
      "name": "hyperbolicDomain",
-     "statement": "In TauCeti.UpperHalfSpace with hyperbolicMetric, u(x, y) = (|x|² + y² + 1)/(2y) has Hess u = u·g and u ≥ 1; every compact regular domain is non-trapping; closed balls {u ≤ cosh R}, R > 0, are strictly convex with II = coth R · h.",
+     "statement": "In TauCeti.UpperHalfSpace with hyperbolicMetric, u(x, y) = (|x|² + y² + 1)/(2y) has Hess u = u·g, u ≥ 1 and |du|² = u² − 1; every compact regular domain is non-trapping; for R > 0, cosh R is a regular value of u (|du| = sinh R on {u = cosh R}; du vanishes only where u = 1), so by 3.2 on the whole half-space the closed balls {u ≤ cosh R} are regular domains, strictly convex with II = coth R · h.",
      "hypotheses": [
       "hyperbolic space of dimension n + 1 in the upper half-space model",
       "R > 0 for the balls {u ≤ cosh R}"
@@ -2111,18 +2228,20 @@
      "prerequisites": [
       "target:1.4",
       "target:2.1",
+      "target:3.1",
       "target:3.2",
       "target:5.5.1",
       "tauceti:TauCeti.UpperHalfSpace",
       "tauceti:TauCeti.UpperHalfSpace.hyperbolicMetric",
-      "tauceti:TauCeti.UpperHalfSpace.hasConstantSectionalCurvature"
+      "tauceti:TauCeti.UpperHalfSpace.hasConstantSectionalCurvature",
+      "target:5.2"
      ],
      "api": [],
      "tests": [
       {
        "name": "hessian_plane",
        "kind": "computation",
-       "statement": "n = 1: Hess u_xx = 1/(2y) + (x² + 1)/(2y³) = u/y², Hess u_xy = 0, Hess u_yy = u/y²."
+       "statement": "n = 1: Hess u_xx = 1/(2y) + (x² + 1)/(2y³) = u/y², Hess u_xy = 0, Hess u_yy = u/y²; |du|² = y²(u_x² + u_y²) = u² − 1, so at (0, 2) u = 5/4 = cosh(log 2), |du| = 3/4 = sinh(log 2), and at (0, 1) u = 1, du = 0: 3.2 applies through the regular value cosh R, not through du ≠ 0 on the half-space."
       },
       {
        "name": "compare_R1",
@@ -2135,9 +2254,10 @@
      "id": "6.4",
      "kind": "example",
      "name": "smallGeodesicBall",
-     "statement": "For boundaryless Hausdorff (N, g) and p ∈ N there is r_p > 0 such that for 0 < R < r_p, d(p, ·)² is smooth on B(p, r_p) with R² regular, and B̄(p, R) is a compact regular domain with strictly convex boundary, non-trapping; r_p uniform over compact sets of centres.",
+     "statement": "For boundaryless Hausdorff second-countable (N, g) and p ∈ N there is r_p > 0 such that for 0 < R < r_p, d(p, ·)² is smooth on B(p, r_p) with R² regular, and B̄(p, R) is a compact regular domain of the open submanifold B(p, r_p) (Hausdorff, second countable, boundaryless, with the restricted metric), with defining function R² − d(p, ·)², whose boundary is strictly convex and which is non-trapping (d(p, ·)² need not be smooth on all of N); r_p uniform over compact sets of centres.",
      "hypotheses": [
       "(N, g) Hausdorff boundaryless smooth manifold over 𝓘(ℝ, E), finrank ℝ E = n + 1, with a smooth Riemannian metric",
+      "N second countable (the standing hypothesis of Layer 5, whose criterion 5.5.1 the route applies, and of SmoothBundlesConnections B6.0)",
       "p ∈ N"
      ],
      "locator": {
@@ -2149,8 +2269,14 @@
       "target:3.2",
       "target:5.5.1",
       "roadmap:HopfRinow §Layer 2",
-      "roadmap:RiemannianGeometry §R1",
-      "roadmap:SmoothBundlesConnections §B6.0"
+      "tauceti:TauCeti.Manifold.IsNormalDomain",
+      "tauceti:TauCeti.Manifold.normalCoordinateField",
+      "tauceti:TauCeti.Manifold.IsNormalDomain.mfderiv_inner_normalCoordinateField_self",
+      "tauceti:TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self",
+      "roadmap:SmoothBundlesConnections §B6.0",
+      "target:1.3",
+      "target:2.1",
+      "target:5.2"
      ],
      "api": [],
      "tests": [
@@ -2162,7 +2288,7 @@
       {
        "name": "flat_torus",
        "kind": "computation",
-       "statement": "ℝ²/ℤ²: d(p, ·)² smooth on B(p, 1/2), balls are flat discs with II = h/R."
+       "statement": "ℝ²/ℤ²: d(p, ·)² is smooth on B(p, 1/2) and not beyond (min(s², (1 − s)²) through the cut point p + (1/2, 0), one-sided derivatives ±1), so R² − d(p, ·)² is a defining function on B(p, 1/2), not on the torus; r_p = 1/2, R = 1/4: ρ = 1/16 − |z|², dρ = −2z ≠ 0 on |z| = 1/4, II = 2h/(2 · 1/4) = 4h = h/R, and 5.5 with u = |z|²/2, f = ⟨z, v⟩, Xf = 1 gives τ ≤ 1/2, the diameter."
       }
      ]
     },
@@ -2184,7 +2310,8 @@
       "target:2.1",
       "target:3.1",
       "target:3.6",
-      "roadmap:RiemannianGeometry §R5a"
+      "roadmap:RiemannianGeometry §R5a",
+      "target:1.4"
      ],
      "api": [],
      "tests": [
@@ -2234,18 +2361,18 @@
    "roadmap": "HopfRinow",
    "sections": [
     "§Layer 1",
-    "§Layer 2",
-    "§Layer 4"
+    "§Layer 2"
    ],
-   "what": "geodesics, maximal intervals, geodesic flow, exponential map; normal balls, Gauss lemma, local distance identity, variation symmetry; compact implies complete"
+   "what": "geodesics, maximal intervals, geodesic flow, exponential map; normal balls, Gauss lemma, local distance identity, variation symmetry"
   },
   {
    "roadmap": "RiemannianGeometry",
    "sections": [
-    "§R1",
-    "§R5a"
+    "§R5a",
+    "§R5c",
+    "§R7.9"
    ],
-   "what": "normal-coordinate jets (vanishing Christoffel symbols at the centre); B, S, mean curvature vector and Gauss equation of isometric immersions with pinned signs"
+   "what": "B, S, mean curvature vector, Gauss equation and the equivalence of B = 0 with total geodesicity for isometric immersions of Hausdorff second-countable boundaryless manifolds (RiemannianGeometry's standing setting) with pinned signs (R5a); the inclusion of a regular sublevel {φ ≤ a} is smooth with invertible differential and v is outward iff dφ(dι v) > 0, and for a compact connected two-sided hypersurface of a connected manifold the normal collar and, when it separates, a defining function equal to the collar coordinate near it and ±1 off the collar with gradient ν (R7.9); relatively compact smooth domains (open, compact closure, a chart at each boundary point in which the domain is x_m > 0 on the last coordinate), every compact Riemannian manifold with boundary as the closure of one by a collar glued along the boundary and the Seeley extension of the metric, and a defining function with regular value 0 negative on the domain (R5c, scalar principal eigenfunction, items 1 and 3)"
   },
   {
    "roadmap": "GeometricTopology",
@@ -2253,7 +2380,7 @@
     "§1.1",
     "§1.3"
    ],
-   "what": "smooth collars and the interior as a boundaryless manifold (1.1); gluing along the boundary with collars, hence the collar extension M ∪_f (∂M × [0, 1)) and the double M ∪_id M (1.3)"
+   "what": "smooth collars and the interior as a boundaryless manifold (1.1; assumed: with the open-submanifold structure, charts of M restricted to the interior, so that the inclusion is a smooth open embedding); gluing along the boundary with collars, hence the collar extension M ∪_f (∂M × [0, 1)) and the double M ∪_id M (1.3)"
   },
   {
    "roadmap": "ComplexKahlerGeometry",
