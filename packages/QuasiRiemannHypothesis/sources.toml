@@ -8,7 +8,7 @@ title = "The Quasi-Riemann Hypothesis: A Zero-Free Half-Plane Re(s) > 7/8"
 year = 2026
 venue = "OpenAI Math Release preprint, repository openai/math (Apache-2.0), revision adc7f1241b42e322a6451854ab7e4b4c146bf78a"
 locator_scheme = "theorem"
-locator = "Theorem 1.1; Corollary 1.2; equation (2.1); Proposition 2.1; Theorem 3.1; Lemmas 4.1-4.10; Proposition 5.1; Proposition 6.3; Lemma 7.1; Proposition 8.3; Lemma 9.1; Proposition 9.2; Lemma 11.1; Propositions 11.2, 11.3; Proposition 15.3; Lemmas 17.1, 17.6, 18.1; Proposition 19.2; Lemma 20.2; Proposition 20.3"
+locator = "Theorem 1.1, p. 4; Corollary 1.2, p. 7; (2.1) and Proposition 2.1, p. 8; Theorem 3.1, p. 10; §4.1 and Lemma 4.1, pp. 10-11; Lemmas 4.2-4.4 and (4.5)-(4.8), pp. 13-16; §4.2, p. 17; Lemmas 4.5-4.7, pp. 17-20; Lemmas 4.8-4.10, pp. 21-23; Proposition 5.1 and (5.1)-(5.6), pp. 24-27; Lemmas 5.2-5.5, Definition 5.6, Lemmas 5.7-5.8 and (5.39), pp. 34-44; (6.1)-(6.2), Lemmas 6.1-6.2, Proposition 6.3, pp. 46-49; Lemma 7.1 and (7.1)-(7.15), pp. 50-54; Lemmas 8.1-8.2 and Proposition 8.3, pp. 56-59; Lemma 9.1, p. 61; Proposition 9.2, p. 67; Definition 10.1 and Lemmas 10.2-10.6, pp. 70-82; Lemma 11.1, Proposition 11.2 and the margin table, pp. 82-84; Proposition 11.3 and (11.2), pp. 84-85"
 url = "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf"
 fetched_from = "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf"
 fetched_at = "2026-11-16T22:14:13Z"
@@ -17,7 +17,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Dated 30 September 2026, 199 pages; unrefereed and machine-written; unchanged since the repository's initial commit adc7f12 (6 October 2026). Text recognised by OCR. Numbering checked against the filed locators."
-cited_for = ["Scope", "Final targets T1-T6", "Intermediate targets"]
+cited_for = ["Scope", "1.1", "1.2", "1.3", "1.4", "2.1", "2.2", "2.3", "2.4", "2.5", "3.1", "3.2", "3.3", "3.4", "3.5", "4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "5.1", "5.2", "5.3", "5.4", "5.5", "6.1", "6.2", "6.5", "7.1", "7.2", "7.3", "7.4", "8.7", "9.1", "9.2", "9.3", "9.4", "10.1", "10.2", "10.3", "10.4", "10.5", "10.6", "10.7", "11.1", "11.3"]
 
 [[source]]
 id = "openai2026quasiRHalt"
@@ -26,7 +26,7 @@ title = "The Quasi-Riemann Hypothesis"
 year = 2026
 venue = "OpenAI Math Release preprint, repository openai/math (Apache-2.0), revision adc7f1241b42e322a6451854ab7e4b4c146bf78a"
 locator_scheme = "theorem"
-locator = "Theorem 1.1; Proposition 3.1 and Section 3; Propositions 5.1-5.2; Section 6.1; Lemma 7.2; Appendix A"
+locator = "Theorem 1.1, p. 2; Proposition 3.1 and Section 3 (the alternative route)"
 url = "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/paper2.pdf"
 fetched_from = "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-October-5-2026/paper2.pdf"
 fetched_at = "2026-11-16T22:16:34Z"
@@ -35,7 +35,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Dated 5 October 2026, 49 pages; alternate proof of the 11/12 half-plane; the repository README says this write-up was edited by a human; unrefereed. Text recognised by OCR."
-cited_for = ["Final targets T1"]
+cited_for = ["Scope", "10.7"]
 
 [[source]]
 id = "liu2026improved"
@@ -44,7 +44,7 @@ title = "Improved zero-free half-planes for the quasi-Riemann hypothesis"
 year = 2026
 arxiv = "2610.12234v2"
 locator_scheme = "theorem"
-locator = "Abstract (B_new about 0.874957); Part I, Sections 1-14 (summary of the 7/8 proof)"
+locator = "Part I: Proposition 3.1; Proposition 4.1; Lemma 4.2; (4.1), (4.5), (4.8)-(4.14); Proposition 5.1; (6.1)-(6.2); Proposition 6.3"
 url = "https://arxiv.org/abs/2610.12234v2"
 fetched_from = "https://arxiv.org/pdf/2610.12234v2"
 fetched_at = "2026-11-16T22:16:39Z"
@@ -53,7 +53,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "arXiv v2 (12 October 2026); unrefereed. The filed issue called it 'Slightly improved ...' with no authors; the arXiv record is used here."
-cited_for = ["Scope (status of the source)"]
+cited_for = ["Scope", "1.3", "7.4", "9.1", "9.2", "9.4", "10.1", "10.2", "10.3", "10.4", "10.7"]
 
 [[source]]
 id = "dunnradziwill2024"
@@ -64,7 +64,7 @@ venue = "Ann. of Math. (2) 200 (2024), no. 3, 967-1057"
 doi = "10.4007/annals.2024.200.3.3"
 arxiv = "2109.07463v3"
 locator_scheme = "equation"
-locator = "(1.4), (1.5), (1.7), (5.1), (5.4), (5.7), (5.9), (5.12)-(5.17); Lemma 5.3; Appendix A rows 1, 10, 19"
+locator = "(1.4)-(1.5), (1.7)-(1.8); §5.1, (5.1)-(5.17); Appendix A rows 1, 10, 19"
 url = "https://arxiv.org/abs/2109.07463v3"
 fetched_from = "https://arxiv.org/pdf/2109.07463v3"
 fetched_at = "2026-11-16T22:16:44Z"
@@ -73,7 +73,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Locators are those of arXiv v3 as read; agreement with the Annals numbering was not checked."
-cited_for = ["Placement (U1 block)", "Risks 3"]
+cited_for = ["2.2", "2.5", "4.3", "8.1", "8.7"]
 
 [[source]]
 id = "goldmakherlouvel2013"
@@ -84,7 +84,7 @@ venue = "Math. Proc. Cambridge Philos. Soc. 154 (2013), no. 2, 193-212"
 doi = "10.1017/S0305004112000370"
 arxiv = "1112.1642v2"
 locator_scheme = "theorem"
-locator = "Definition 1; Theorem 1.1; Corollary 1.2"
+locator = "Definition 1, Theorem 1.1 and Corollary 1.2, pp. 1-2; §2"
 url = "https://arxiv.org/abs/1112.1642v2"
 fetched_from = "https://arxiv.org/pdf/1112.1642v2"
 fetched_at = "2026-11-16T22:16:49Z"
@@ -93,7 +93,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Locators are those of arXiv v2 as read; agreement with the published numbering was not checked."
-cited_for = ["U2 block (quadratic large sieve)"]
+cited_for = ["6.2", "6.3"]
 
 [[source]]
 id = "bgl2014"
@@ -104,7 +104,7 @@ venue = "Int. Math. Res. Not. IMRN 2014, no. 7, 1925-1955"
 doi = "10.1093/imrn/rns257"
 arxiv = "1112.1650v1"
 locator_scheme = "theorem"
-locator = "Theorem 1.3; Section 2 (Lemma 2.1, the characters chi_a); Section 3 (Lemmas 3.1-3.5)"
+locator = "Theorem 1.3, p. 4; Lemmas 2.1-2.3, pp. 6-7; §3; Appendix II, p. 20"
 url = "https://arxiv.org/abs/1112.1650v1"
 fetched_from = "https://arxiv.org/pdf/1112.1650v1"
 fetched_at = "2026-11-16T22:16:55Z"
@@ -113,7 +113,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Locators are those of arXiv v1 as read; agreement with the IMRN numbering was not checked."
-cited_for = ["U2 block (n-th order large sieve)"]
+cited_for = ["6.3", "6.4"]
 
 [[source]]
 id = "gaozhao2020"
@@ -133,7 +133,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Locators are those of arXiv v3 as read."
-cited_for = ["E1 (functional equation over Q(sqrt-3))"]
+cited_for = ["Downstream consumers"]
 
 [[source]]
 id = "gaozhao2024"
@@ -153,7 +153,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Locators are those of arXiv v2 as read."
-cited_for = ["U2 block (sextic large sieve over Z[omega])"]
+cited_for = ["6.5", "Downstream consumers"]
 
 [[source]]
 id = "baierbansal2018"
@@ -164,7 +164,7 @@ venue = "Int. J. Number Theory 14 (2018), no. 10, 2737-2756"
 doi = "10.1142/S1793042118501658"
 arxiv = "1802.08964v2"
 locator_scheme = "theorem"
-locator = "Section 3, Theorem 3"
+locator = "§3, Theorem 3"
 url = "https://arxiv.org/abs/1802.08964v2"
 fetched_from = "https://arxiv.org/pdf/1802.08964v2"
 fetched_at = "2026-11-16T22:17:14Z"
@@ -173,7 +173,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Locators are those of arXiv v2 as read."
-cited_for = ["U2 block (planar additive large sieve)"]
+cited_for = ["6.1"]
 
 [[source]]
 id = "maynardpratt2024"
@@ -193,7 +193,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Locators are those of arXiv v2 as read."
-cited_for = ["U5 (zero detection)"]
+cited_for = ["7.4"]
 
 [[source]]
 id = "guthmaynard2026"
@@ -204,7 +204,7 @@ venue = "Ann. of Math. (2) 203 (2026), no. 2, 623-675"
 doi = "10.4007/annals.2026.203.2.6"
 arxiv = "2405.20552v2"
 locator_scheme = "section"
-locator = "Section 13.1"
+locator = "§13.1"
 url = "https://arxiv.org/abs/2405.20552v2"
 fetched_from = "https://arxiv.org/pdf/2405.20552v2"
 fetched_at = "2026-11-16T22:18:49Z"
@@ -213,7 +213,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Locators are those of arXiv v2 as read."
-cited_for = ["U5 (zero detection)"]
+cited_for = ["7.4"]
 
 [[source]]
 id = "thornerzaman2019"
@@ -224,7 +224,7 @@ venue = "Alg. Number Th. 13 (2019) 1039-1068"
 doi = "10.2140/ant.2019.13.1039"
 arxiv = "1803.02823v3"
 locator_scheme = "theorem"
-locator = "Theorem 1.1"
+locator = "Theorem 1.1 (background; ZerosOfLFunctions §§8.7-8.8 supply what is used)"
 url = "https://arxiv.org/abs/1803.02823v3"
 fetched_from = "https://arxiv.org/pdf/1803.02823v3"
 fetched_at = "2026-11-16T22:18:53Z"
@@ -233,7 +233,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Locators are those of arXiv v3 as read."
-cited_for = ["E5 (context; ZerosOfLFunctions 8.7-8.8 stand in)"]
+cited_for = ["References"]
 
 [[source]]
 id = "bimsissac2017"
@@ -253,7 +253,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "arXiv v1 (titled 'Irreducibility and r-th root finding over finite fields') was read; its Conjecture 6.3 and Theorem 6.7 carry the numbers the preprint cites for the ISSAC version, whose text was not read."
-cited_for = ["Final targets T4 (Check)"]
+cited_for = ["11.3"]
 
 [[source]]
 id = "tao2015"
@@ -273,7 +273,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Statement read in arXiv v3."
-cited_for = ["Final targets T4(c)"]
+cited_for = ["11.3"]
 
 [[source]]
 id = "bcss2025"
@@ -293,7 +293,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Read as arXiv v2."
-cited_for = ["Scope (terminology)"]
+cited_for = ["References"]
 
 [[source]]
 id = "lamzourilisound2015"
@@ -303,7 +303,7 @@ year = 2015
 venue = "Math. Comp. 84 (2015), 2391-2412"
 arxiv = "1309.3595v3"
 locator_scheme = "theorem"
-locator = "Theorem 1.1; Sections 2-3 (preliminary lemmas and the proof of Theorem 1.1, a smoothed explicit-formula argument under GRH)"
+locator = "Lemma 2.2 and Theorem 1.1 (the smoothed explicit formula under GRH, the case theta = 1/2)"
 url = "https://arxiv.org/abs/1309.3595v3"
 fetched_from = "https://arxiv.org/pdf/1309.3595v3"
 fetched_at = "2026-11-16T22:19:17Z"
@@ -312,7 +312,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Read as arXiv v3; used as a template for the argument, not for its constants."
-cited_for = ["Final targets T4(a) (template)"]
+cited_for = ["11.2"]
 
 [[source]]
 id = "milnecft2020"
@@ -320,7 +320,7 @@ authors = "J. S. Milne"
 title = "Class Field Theory"
 year = 2020
 locator_scheme = "chapter"
-locator = "Chapter VI Section 1; Chapter VIII (5.3), (5.5)"
+locator = "Chapter VIII, 5.3 and 5.5, p. 245"
 url = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
 fetched_from = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
 fetched_at = "2026-11-16T22:19:24Z"
@@ -329,7 +329,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Course notes, version 4.03 (6 August 2020), on the author's site."
-cited_for = ["U4 (power residue symbol and Artin map)"]
+cited_for = ["2.1"]
 
 [[source]]
 id = "kazhdanpatterson1984"
@@ -339,7 +339,7 @@ year = 1984
 venue = "Publ. Math. IHES 59 (1984), 35-142"
 doi = "10.1007/BF02698770"
 locator_scheme = "section"
-locator = "Introduction (p. 36); Chapter I, Section 3 (Whittaker models of the theta representations)"
+locator = "Introduction, p. 36 (theta coefficients known only for GL_r with r in {n-1, n})"
 url = "http://www.numdam.org/item/PMIHES_1984__59__35_0/"
 fetched_from = "https://www.numdam.org/item/PMIHES_1984__59__35_0.pdf"
 fetched_at = "2026-11-16T22:22:42Z"
@@ -348,7 +348,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Read on Numdam (publisher scan)."
-cited_for = ["U1 block (generality limit)"]
+cited_for = ["Scope", "References"]
 
 [[source]]
 id = "heathbrown2000"
@@ -358,7 +358,7 @@ year = 2000
 venue = "Israel J. Math. 120, part A (2000), 97-124"
 doi = "10.1007/s11856-000-1273-y"
 locator_scheme = "theorem"
-locator = "Theorem 2 (the cubic large sieve over Z[omega]); Section 4"
+locator = "Theorem 2, p. 3"
 url = "https://ora.ox.ac.uk/objects/uuid:16c3966e-61cb-499d-839c-559b3794fcff/files/m502494cff282fae8a90f44a466f2b941"
 fetched_from = "https://ora.ox.ac.uk/objects/uuid:16c3966e-61cb-499d-839c-559b3794fcff/files/m502494cff282fae8a90f44a466f2b941"
 fetched_at = "2026-11-16T22:26:21Z"
@@ -367,7 +367,7 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Read from the copy in the Oxford University Research Archive (version not stated on the record); Theorem 2 is numbered as the preprint cites it."
-cited_for = ["U2 block (cubic large sieve, used in (14.6) for Lemma 14.2)", "Risks 5"]
+cited_for = ["6.5"]
 
 [[source]]
 id = "kubota1969"
@@ -376,7 +376,7 @@ title = "On automorphic functions and the reciprocity law in a number field"
 year = 1969
 venue = "Lectures in Mathematics, Department of Mathematics, Kyoto University, no. 2, Kinokuniya Book-Store, Tokyo"
 locator_scheme = "chapter"
-locator = "Sections 1-3 (GL(2) over a totally imaginary field containing the n-th roots of unity; construction of the n-fold covering group); Sections 5-6 (Eisenstein series)"
+locator = "§3, Propositions 1-4, pp. 24-25; §5, Theorem 5 and (36)-(42), pp. 43-47; §6, Theorem 6 and (45), pp. 49-50"
 url = "https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/a2a7c0d6-a84e-4cdb-97b2-e93c639d9950/content"
 fetched_from = "https://repository.kulib.kyoto-u.ac.jp/server/api/core/bitstreams/a2a7c0d6-a84e-4cdb-97b2-e93c639d9950/content"
 fetched_at = "2026-11-16T22:21:45Z"
@@ -385,7 +385,7 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Kyoto University Research Information Repository, handle 2433/84907."
-cited_for = ["U1 block"]
+cited_for = ["8.1", "8.3", "8.5"]
 
 [[source]]
 id = "patterson1977"
@@ -395,7 +395,7 @@ year = 1977
 venue = "J. Reine Angew. Math. 296 (1977), 125-161"
 doi = "10.1515/crll.1977.296.125"
 locator_scheme = "theorem"
-locator = "Theorem 8.1; Sections 7-8"
+locator = "§2 and (1.1), pp. 2-5; §3, (3.1)-(3.11), pp. 6-8; Theorem 7.1 and Lemma 7.2, pp. 23-24; Theorem 8.1, (8.1)-(8.3), (8.8)-(8.9), pp. 29-31; Table III, p. 151"
 url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0296/LOG_0014.pdf"
 fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0296/LOG_0014.pdf"
 fetched_at = "2026-11-16T22:23:35Z"
@@ -404,7 +404,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Read from the GDZ scan of the journal volume (logical section LOG_0014); text recognised by OCR."
-cited_for = ["U1 block (cubic theta coefficients)"]
+cited_for = ["8.1", "8.3", "8.4", "8.5", "8.6", "8.7"]
 
 [[source]]
 id = "yoshimoto1987"
@@ -422,16 +422,15 @@ sha256 = "acdf6f3e72aac6054394dd613afab6c5d04740a8b67766a77fc94c731d3bf14f"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-16"
-cited_for = ["Final targets T1 (alternative route); U1 block"]
+cited_for = ["References"]
 
 [[source]]
 id = "quanta2026quasiRH"
 authors = "Quanta Magazine (staff writer)"
 title = "AI Proved the Quasi-Riemann Hypothesis. What Happens Now?"
 year = 2026
-version_note = "News article of 19 October 2026, freely readable on the publisher's site; cited for context on the verification status only."
 locator_scheme = "section"
-locator = "whole article (verification status of the 7/8 and 11/12 papers)"
+locator = "whole article (reception of the two preprints)"
 url = "https://www.quantamagazine.org/ai-proved-the-quasi-riemann-hypothesis-what-happens-now-20261019/"
 fetched_from = "https://www.quantamagazine.org/ai-proved-the-quasi-riemann-hypothesis-what-happens-now-20261019/"
 fetched_at = "2026-11-16T22:28:03Z"
@@ -439,4 +438,23 @@ sha256 = "4c12c3e23e58bbb681c6e42b7005f073b444872303dbafeb5640ac64ce292364"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-16"
-cited_for = ["Scope (status of the source)"]
+version_note = "News article of 19 October 2026, freely readable on the publisher's site; cited for context on the verification status only."
+cited_for = ["Scope", "References"]
+
+[[source]]
+id = "kubota1968"
+authors = "Tomio Kubota"
+title = "Über diskontinuierliche Gruppen Picardschen Typus und zugehörige Eisensteinsche Reihen"
+year = 1968
+venue = "Nagoya Math. J. 32 (1968), 259-271"
+doi = "10.1017/S0027763000026684"
+locator_scheme = "section"
+locator = "§2, p. 262; §3, (8)-(17), pp. 263-265; §4, (18)-(29), pp. 265-268"
+url = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/8AE1B4830D44DA9F60A39DC35A461E22/S0027763000026684a.pdf/uber-diskontinuierliche-gruppen-picardschen-typus-und-zugehorige-eisensteinsche-reihen.pdf"
+fetched_from = "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/8AE1B4830D44DA9F60A39DC35A461E22/S0027763000026684a.pdf/uber-diskontinuierliche-gruppen-picardschen-typus-und-zugehorige-eisensteinsche-reihen.pdf"
+fetched_at = "2026-11-16T23:00:52Z"
+sha256 = "bb188d0e1ec5be94ea20e3847c42ee1bad2f1fb20964db1089ef72a293f0c8b8"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-16"
+cited_for = ["8.2", "8.3", "8.4"]

@@ -1,0 +1,2309 @@
+{
+ "roadmap": "QuasiRiemannHypothesis",
+ "title": "The quasi-Riemann hypothesis: a zero-free half-plane Re s > 11/12 for Dirichlet and Hecke L-functions",
+ "parent": null,
+ "summary": "Every Dirichlet L-function (ζ included) and every finite-order Hecke L-function of ℚ(√−3) has no zero in Re s > 11/12, by the cubic-theta probe of openai2026quasiRH Part I; with the general library it needs (zero-free half-planes and the continuation principle, power residue symbols as ray class characters, Gauss sums and reciprocity at composite moduli of ℤ[ω], smooth Mellin kernels, uniform Hecke L-function bounds and zero detection, large sieves over number fields, Kubota's character and theta functions with Patterson's cubic theta function, the transfer from abelian fields to Dirichlet L-functions) and the consequences: the zero strip, the conditional least-character bound (log q)^(1/(1−θ)) and the least quadratic nonresidue n(p) ≤ C(log p)^12.",
+ "baseline": {
+  "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
+  "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
+ },
+ "layers": [
+  {
+   "key": "1",
+   "title": "Zero-free half-planes and the continuation principle",
+   "targets": [
+    {
+     "id": "1.1",
+     "kind": "definition",
+     "name": "QuasiRiemann.ZeroFreeRightOf",
+     "statement": "ZeroFreeRightOf σ f :⟺ ∀ s : ℂ, σ < s.re → meromorphicOrderAt f s ≤ 0 (no zero in Re s > σ, poles allowed).",
+     "hypotheses": [
+      "σ : ℝ",
+      "f : ℂ → ℂ"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Theorem 1.1, p. 4; (2.1), p. 8"
+     },
+     "prerequisites": [
+      "mathlib:meromorphicOrderAt",
+      "mathlib:meromorphicOrderAt_mul",
+      "mathlib:riemannZeta_ne_zero_of_one_le_re",
+      "mathlib:DirichletCharacter.differentiableAt_LFunction",
+      "tauceti:TauCeti.LFunctions.heckeLFunctionC_eventuallyEq_primitive",
+      "tauceti:TauCeti.GlobalNumberFields.RayClassCharacter.eulerCorrection_ne_zero"
+     ],
+     "api": [
+      {
+       "name": "antitone",
+       "role": "monotonicity",
+       "statement": "σ ≤ σ' → ZeroFreeRightOf σ f → ZeroFreeRightOf σ' f"
+      },
+      {
+       "name": "congr_germ",
+       "role": "germ invariance",
+       "statement": "equal punctured germs at every point of Re s > σ give equivalent predicates"
+      },
+      {
+       "name": "mul_unit",
+       "role": "stability",
+       "statement": "f meromorphic and D analytic nonvanishing on Re s > σ: ZeroFreeRightOf σ (f*D) ↔ ZeroFreeRightOf σ f"
+      },
+      {
+       "name": "of_analytic",
+       "role": "value reading",
+       "statement": "AnalyticAt f s → (meromorphicOrderAt f s ≤ 0 ↔ f s ≠ 0)"
+      },
+      {
+       "name": "dirichlet_iff",
+       "role": "Dirichlet reading",
+       "statement": "ZeroFreeRightOf σ (LFunction χ) ↔ ∀ s, σ < re s → (χ = 1 ∧ s = 1) ∨ LFunction χ s ≠ 0"
+      },
+      {
+       "name": "hecke_iff_primitive",
+       "role": "presentation invariance",
+       "statement": "0 ≤ σ → (ZeroFreeRightOf σ (heckeLFunctionC χ) ↔ ZeroFreeRightOf σ (heckeLFunctionC (PrimitiveRayClassCharacter.of χ).character))"
+      }
+     ],
+     "tests": [
+      {
+       "name": "sub_two",
+       "kind": "computation",
+       "statement": "s ↦ s − 2 is zero-free right of 2 but not of 3/2 (order 1 at 2)"
+      },
+      {
+       "name": "zero_fun",
+       "kind": "degenerate",
+       "statement": "the zero function is zero-free right of no σ (order ⊤)"
+      },
+      {
+       "name": "pole_allowed",
+       "kind": "computation",
+       "statement": "s ↦ 1/(s−1) is zero-free right of every σ (order −1 at 1)"
+      },
+      {
+       "name": "value_based_wrong",
+       "kind": "non-example",
+       "statement": "s−2 modified to value 1 at 2 has order 1: excluded, while a value-based definition accepts it"
+      },
+      {
+       "name": "zeta_one",
+       "kind": "compatibility",
+       "statement": "riemannZeta is zero-free right of 1 (Mathlib nonvanishing, pole of order −1)"
+      }
+     ]
+    },
+    {
+     "id": "1.2",
+     "kind": "definition",
+     "name": "QuasiRiemann.zeroAbscissa",
+     "statement": "zeroAbscissa L := sSup ({1/2} ∪ {Re ρ | ∃ η, 1/2 ≤ Re ρ ∧ 0 < meromorphicOrderAt (L η) ρ}) for a family L : ι → ℂ → ℂ.",
+     "hypotheses": [
+      "L : ι → ℂ → ℂ"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "(2.1), p. 8"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "mathlib:sSup"
+     ],
+     "api": [
+      {
+       "name": "mem_Icc",
+       "role": "bracket",
+       "statement": "(∀ η, ZeroFreeRightOf 1 (L η)) → 1/2 ≤ zeroAbscissa L ≤ 1"
+      },
+      {
+       "name": "le_iff",
+       "role": "characterisation",
+       "statement": "under the same hypothesis, for σ ≥ 1/2: zeroAbscissa L ≤ σ ↔ ∀ η, ZeroFreeRightOf σ (L η)"
+      },
+      {
+       "name": "exists_zero_near",
+       "role": "approximation",
+       "statement": "zeroAbscissa L > 1/2 → ∀ ε > 0, ∃ η ρ, zero of L η with zeroAbscissa L − ε < Re ρ ≤ zeroAbscissa L"
+      },
+      {
+       "name": "mul_unit",
+       "role": "invariance",
+       "statement": "multiplying each L η by an analytic nonvanishing factor on Re s > 0 does not change it"
+      }
+     ],
+     "tests": [
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "the empty family has zero abscissa 1/2"
+      },
+      {
+       "name": "single_zero",
+       "kind": "computation",
+       "statement": "{s ↦ s − 3/4} gives 3/4; {s ↦ s − 1/4} gives 1/2"
+      },
+      {
+       "name": "pole_not_zero",
+       "kind": "computation",
+       "statement": "{s − 3/4, 1/(s−1)} gives 3/4"
+      },
+      {
+       "name": "zero_function",
+       "kind": "non-example",
+       "statement": "a family containing 0 has unbounded set and junk sSup 0; excluded by the zero-free-right-of-1 hypothesis"
+      }
+     ]
+    },
+    {
+     "id": "1.3",
+     "kind": "theorem",
+     "name": "QuasiRiemann.zeroAbscissa_le_of_commonSignal",
+     "statement": "If σ₀ < β* = zeroAbscissa L, there are no ω ∈ (0, β*−σ₀), σ > 0 and, for every η, D_η analytic nonvanishing on Re s > 0 with 1/(L_η D_η) bounded on Re s ≥ 2, H_η holomorphic on Re s > σ₀ with |H_η − 1| ≤ 1/2, and J_η with |J_η(Z)| ≤ A_η Z^(C(σ₀)+ω) and |J_η(Z) − f_η(Z)| ≤ B_η Z^(C(β*)−σ) for large Z, where f_η(Z) = (2πi)⁻¹∫_{Re s=2} Z^(C(s)) e^((s−5/6)²) H_η(s)/(L_η D_η)(s) ds and C(s) = s + c.",
+     "hypotheses": [
+      "every L η meromorphic on Re s > 1/2, analytic and nonvanishing on Re s > 1",
+      "σ₀ ∈ (1/2, 1)",
+      "c : ℝ"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Proposition 2.1, p. 8"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:1.2",
+      "mathlib:mellin",
+      "mathlib:mellinInv_mellin_eq",
+      "mathlib:Complex.exp"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "1.4",
+     "kind": "theorem",
+     "name": "QuasiRiemann.lateHeightChoice",
+     "statement": "If |J_η(Z)| ≪ Z^(C(σ₀)+ω) and, for every N and τ ∈ (0, min(d_min/100, τ₀)], |J_η − f_η| ≤ K(Z^(C(β*)−m)(1+Z^τ)^(A_η) + Z^(B_η − Nτ)) for large Z, then |J_η − f_η| ≪_η Z^(C(β*)−m/2).",
+     "hypotheses": [
+      "m > 0, 0 < ω < β* − σ₀, d_min > 0 independent of η",
+      "A_η ≥ 0, B_η, τ₀ > 0 depending on η"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 11.1, p. 82"
+     },
+     "prerequisites": [],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "2",
+   "title": "Power residue symbols as ray class characters, and primary elements of ℤ[ω]",
+   "targets": [
+    {
+     "id": "2.1",
+     "kind": "theorem",
+     "name": "QuasiRiemann.exists_rayClassCharacter_powerResidueSymbol",
+     "statement": "For K ⊇ μ_n, ι : K → ℂ and 0 ≠ a ∈ 𝓞 K there are a modulus 𝔪 (finite part supported on primes dividing n a, infinite part empty when n ≥ 3) and ψ : RayClassCharacter 𝔪 with ψ(idealClass 𝔟) = ι((a/𝔟)_n) for every nonzero ideal 𝔟 prime to n a.",
+     "hypotheses": [
+      "K number field, HasEnoughRootsOfUnity (𝓞 K) n",
+      "a ≠ 0"
+     ],
+     "locator": {
+      "source": "milnecft2020",
+      "where": "Chapter VIII, 5.3 and 5.5, p. 245; openai2026quasiRH Lemma 4.1, p. 11"
+     },
+     "prerequisites": [
+      "tauceti:Ideal.powerResidueSymbolIdeal",
+      "tauceti:Ideal.powerResidueSymbolIdeal_mul_right",
+      "roadmap:ClassicalArithmeticCompletion §1.33",
+      "roadmap:ClassicalArithmeticCompletion §1.34",
+      "roadmap:ClassFieldTheory Layer 11",
+      "roadmap:ClassFieldTheory §13.1",
+      "tauceti:TauCeti.ClassFieldTheory.isAdmissibleModulus_iff_le_rayClassField",
+      "tauceti:TauCeti.ClassFieldTheory.IsAdmissibleModulus.mem_support_of_ramified",
+      "mathlib:autAdjoinRootXPowSubCEquiv",
+      "mathlib:AlgHom.IsArithFrobAt"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "minus_one_Q",
+       "kind": "computation",
+       "statement": "K = ℚ, n = 2, a = −1: conductor 4∞ (real place needed)"
+      },
+      {
+       "name": "five_Q",
+       "kind": "computation",
+       "statement": "K = ℚ, n = 2, a = 5: ψ(3) = −1 = (3/5), conductor 5"
+      },
+      {
+       "name": "nth_power",
+       "kind": "degenerate",
+       "statement": "a = bⁿ gives the trivial character on ideals prime to n b"
+      }
+     ]
+    },
+    {
+     "id": "2.2",
+     "kind": "definition",
+     "name": "QuasiRiemann.Eisenstein.IsPrimary",
+     "statement": "IsPrimary c :⟺ 3 ∣ c − 1 in 𝓞 = ℤ[ω].",
+     "hypotheses": [
+      "F with IsCyclotomicExtension {3} ℚ F"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "§4.1, p. 10; dunnradziwill2024 (1.4)"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.IsPrimaryEisenstein",
+      "tauceti:IsPrimitiveRoot.existsUnique_isPrimaryEisenstein_unit_mul",
+      "tauceti:IsPrimitiveRoot.isPrimaryEisenstein_add_mul_iff",
+      "roadmap:ClassicalArithmeticCompletion §1.12"
+     ],
+     "api": [
+      {
+       "name": "iff_neg_isPrimaryEisenstein",
+       "role": "translation",
+       "statement": "IsPrimary c ↔ TauCeti.IsPrimaryEisenstein (−c)"
+      },
+      {
+       "name": "mul",
+       "role": "monoid",
+       "statement": "IsPrimary 1 and IsPrimary a → IsPrimary b → IsPrimary (a*b)"
+      },
+      {
+       "name": "add_mul_iff",
+       "role": "coordinates",
+       "statement": "IsPrimary (a + bω) ↔ a ≡ 1 ∧ b ≡ 0 (mod 3)"
+      },
+      {
+       "name": "existsUnique_unit_mul",
+       "role": "normalization",
+       "statement": "every element prime to λ has exactly one primary unit multiple"
+      }
+     ],
+     "tests": [
+      {
+       "name": "examples",
+       "kind": "computation",
+       "statement": "1, −2 and 1 + 3ω are primary; −1 − 3ω is IsPrimaryEisenstein and not primary"
+      },
+      {
+       "name": "units",
+       "kind": "degenerate",
+       "statement": "only the unit 1 is primary"
+      },
+      {
+       "name": "tauceti_not_mul",
+       "kind": "non-example",
+       "statement": "IsPrimaryEisenstein (−1) but not IsPrimaryEisenstein ((−1)(−1))"
+      },
+      {
+       "name": "lambda",
+       "kind": "non-example",
+       "statement": "λ = 1 + 2ω has no primary unit multiple"
+      }
+     ]
+    },
+    {
+     "id": "2.3",
+     "kind": "definition",
+     "name": "QuasiRiemann.Eisenstein.sexticSymbol",
+     "statement": "χ_c(a) := ι(powerResidueSymbolIdeal (span {c}) 6 (mk a)) for primary c prime to 6, zero on nonunits; χ_1 = 1.",
+     "hypotheses": [
+      "c primary and prime to 6"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "§4.1, p. 11"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "tauceti:Ideal.powerResidueSymbolIdeal",
+      "tauceti:Ideal.powerResidueSymbol_pow_div",
+      "tauceti:Ideal.mk_powerResidueSymbol",
+      "tauceti:Ideal.powerResidueSymbol_mk_of_pow_eq_one"
+     ],
+     "api": [
+      {
+       "name": "mul_left_right",
+       "role": "multiplicativity",
+       "statement": "χ_c(ab) = χ_c(a)χ_c(b) and χ_(cd)(a) = χ_c(a)χ_d(a)"
+      },
+      {
+       "name": "eq_zero_iff",
+       "role": "zero extension",
+       "statement": "χ_c(a) = 0 ↔ (a, c) ≠ 1"
+      },
+      {
+       "name": "prime_euler",
+       "role": "Euler criterion",
+       "statement": "at a primary prime p, χ_p(a) ≡ a^((q_p−1)/6) mod p; χ_p(ζ) = ζ^((q_p−1)/6) for ζ ∈ μ_6"
+      },
+      {
+       "name": "sq_cube",
+       "role": "specialization",
+       "statement": "χ_c² = (·/c)_3 and χ_c³ = (·/c)_2"
+      }
+     ],
+     "tests": [
+      {
+       "name": "p7_values",
+       "kind": "computation",
+       "statement": "p = 1 + 3ω: χ_p(2) = ω, χ_p(3) = −ω², χ_p(−1) = −1"
+      },
+      {
+       "name": "sixth_power",
+       "kind": "degenerate",
+       "statement": "χ_p⁶(7) = 0 while χ_p⁶(2) = 1"
+      },
+      {
+       "name": "square_modulus",
+       "kind": "non-example",
+       "statement": "χ_(p²) = χ_p², so its cube is 1 on units: no residue detection at p²"
+      },
+      {
+       "name": "unit_ideal",
+       "kind": "degenerate",
+       "statement": "χ_1(0) = 1"
+      }
+     ]
+    },
+    {
+     "id": "2.4",
+     "kind": "theorem",
+     "name": "QuasiRiemann.Eisenstein.fixedNumeratorFamily_finite",
+     "statement": "For fixed S and generators π_𝔭, the functions A ↦ χ_A(u ∏ π_𝔭^(v_𝔭)) on primary good A depend only on u and v_𝔭 mod 6, number at most 6^(|S|+1), and are ray class characters with a common modulus supported on S.",
+     "hypotheses": [
+      "S finite set of primes containing those above 6"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 4.1 (second assertion), p. 11"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:2.3"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "2.5",
+     "kind": "theorem",
+     "name": "QuasiRiemann.Eisenstein.cubicSymbol_reciprocity",
+     "statement": "(a/b)_3 = (b/a)_3 for coprime primary a, b prime to 3; supplements (ω/d)_3 = ω^(α₂), (λ/d)_3 = ω^(−α₃) for d ≡ 1 + α₂λ² + α₃λ³ (mod 9); χ_c(4) = (2/c)_3 = (c/(−2))_3 for primary c prime to 2.",
+     "hypotheses": [
+      "a, b primary, coprime, prime to 3"
+     ],
+     "locator": {
+      "source": "dunnradziwill2024",
+      "where": "(1.4)–(1.5); openai2026quasiRH proof of Lemma 4.4, p. 16"
+     },
+     "prerequisites": [
+      "target:2.2",
+      "tauceti:TauCeti.IsPrimaryEisenstein.cubic_reciprocity",
+      "tauceti:TauCeti.IsPrimaryEisenstein.cubic_reciprocity_intCast",
+      "tauceti:Ideal.map_powerResidueSymbolIdeal",
+      "roadmap:ClassicalArithmeticCompletion §1.72",
+      "roadmap:ClassicalArithmeticCompletion §1.75"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "omega_supplement",
+       "kind": "computation",
+       "statement": "d = 1 + 3ω: α₂ = −1, α₃ = 1, (ω/d)_3 = ω² = ω^((7−1)/3)"
+      },
+      {
+       "name": "two_supplement",
+       "kind": "computation",
+       "statement": "c = 1 + 3ω: χ_c(4) = ω² = 2^((7−1)/3) mod c"
+      },
+      {
+       "name": "conjugate_pair",
+       "kind": "computation",
+       "statement": "π = −2 + 3ω (norm 19), t = −7: (π̄/π)_3 = (−7/π)_3 = 7⁶ ≡ 1 (mod 19)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "3",
+   "title": "Smooth profiles, Mellin and Fourier kernels, and the lattice ℤ[ω]",
+   "targets": [
+    {
+     "id": "3.1",
+     "kind": "definition",
+     "name": "QuasiRiemann.SmoothProfile",
+     "statement": "A profile on (0,∞)^d with log-support in compact Ω; seminorms p_j(w) = Σ_{|α|≤j} sup|∂^α w_log|; log-Fourier transform ŵ(t) = ∫ w_log(u)e^(−it·u)du; separation norm ‖w‖_{J,sep} = (2π)^(−d)∫|ŵ(t)|(1+|t|)^J dt; p(w) = 1 + Σ p(w_i) for tuples.",
+     "hypotheses": [
+      "d ≥ 1",
+      "Ω ⊂ ℝ^d compact"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "§4.3, p. 17"
+     },
+     "prerequisites": [
+      "mathlib:Real.fourierIntegral",
+      "mathlib:SchwartzMap"
+     ],
+     "api": [
+      {
+       "name": "monomial_separation",
+       "role": "inversion",
+       "statement": "w(x) = (2π)^(−d)∫ ŵ(t) ∏ x_j^(it_j) dt"
+      },
+      {
+       "name": "twist",
+       "role": "translation",
+       "statement": "the twist x^(iτ) translates ŵ by τ and costs (1+|τ|)^J in the separation norm"
+      },
+      {
+       "name": "rescale",
+       "role": "invariance",
+       "statement": "x ↦ e^k x multiplies ŵ by a unit phase and preserves the separation norm"
+      }
+     ],
+     "tests": [
+      {
+       "name": "inversion_at_one",
+       "kind": "computation",
+       "statement": "w_log(0) = (2π)^(−d)∫ŵ; dropping (2π)^(−d) is off by (2π)^d"
+      },
+      {
+       "name": "zero_profile",
+       "kind": "degenerate",
+       "statement": "all seminorms of 0 vanish but p(w) ≥ 1"
+      },
+      {
+       "name": "indicator",
+       "kind": "non-example",
+       "statement": "the indicator of [1,2] is not a profile; ‖·‖_{1,sep} diverges"
+      }
+     ]
+    },
+    {
+     "id": "3.2",
+     "kind": "theorem",
+     "name": "QuasiRiemann.SmoothProfile.smoothCalculus",
+     "statement": "‖w‖_{J,sep} ≪_{J,d,Ω} p_{J+d+2}(w); Sobolev sup bound on unit boxes; tail bound ∫_{|t|>T₁}|ŵ|(1+|t|)^J ≤ T₁^(−N)‖w‖_{J+N,sep}; pointwise Mellin decay |MW(σ+iT)| ≪ (1+|T|)^(−N) Σ_{j≤N}∫ y^σ|(y∂_y)^j W| dy/y; joint Gaussian bound (4.12).",
+     "hypotheses": [
+      "J, N ≥ 0",
+      "W annular or smooth at 0 and Schwartz at ∞ with σ in a compact subset of (0,∞)"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 4.5 and (4.9)–(4.12), pp. 17–19"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "mathlib:mellin"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.3",
+     "kind": "definition",
+     "name": "QuasiRiemann.gaussianWeight",
+     "statement": "W_G(y) = (2√π)⁻¹ exp(−(log y)²/4) on (0,∞).",
+     "hypotheses": [],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 4.6, p. 19"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.2",
+      "mathlib:mellin"
+     ],
+     "api": [
+      {
+       "name": "mellin_eq",
+       "role": "transform",
+       "statement": "mellin W_G s = exp(s²) for all s"
+      },
+      {
+       "name": "annular_decomposition",
+       "role": "decomposition",
+       "statement": "Σ_k e^(A|k|) p_j(w_k) < ∞ for the pieces w_k(x) = W_G(e^k x)χ(log x)"
+      },
+      {
+       "name": "tail",
+       "role": "tail",
+       "statement": "the part |k| > κ log Z − C₀ weighted by Z^B e^(A|k|) is O(Z^(−M))"
+      }
+     ],
+     "tests": [
+      {
+       "name": "mass",
+       "kind": "computation",
+       "statement": "MW_G(0) = 1 and MW_G(1) = e"
+      },
+      {
+       "name": "wrong_normalization",
+       "kind": "non-example",
+       "statement": "exp(−(log y)²) has Mellin √π e^(s²/4)"
+      },
+      {
+       "name": "not_annular",
+       "kind": "non-example",
+       "statement": "W_G > 0 on (0,∞), so the decomposition is needed"
+      }
+     ]
+    },
+    {
+     "id": "3.4",
+     "kind": "theorem",
+     "name": "QuasiRiemann.kernelSeminormBounds",
+     "statement": "sup(1+|ξ|)^A |∂^β f̂(ξ)| ≪ s_{⌈A⌉+|β|}(f) for Schwartz f; for K_W(x) = (2πi)⁻¹∫_{(σ)} MW(−s)m(s)x^(−s)ds with |m(σ+it)| ≤ C(1+|t|)^h: |(x∂_x)^j K_W(x)| ≪ x^(−σ)∫|MW(−σ−it)|(1+|t|)^(h+j)dt.",
+     "hypotheses": [
+      "f Schwartz on ℝ^d",
+      "m holomorphic of polynomial growth on a closed vertical strip"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 4.7, p. 20"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "target:3.2",
+      "mathlib:SchwartzMap",
+      "mathlib:mellin"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "3.5",
+     "kind": "theorem",
+     "name": "QuasiRiemann.Eisenstein.selfDual_poisson_idealCount",
+     "statement": "e(z) = exp(4πi Im z/√3); 𝓞 is self-dual for (x,y) ↦ e(xy) with covolume 1 for (2/√3)dx dy; Σ_{x ∈ v+b𝓞} f(x) = q_b⁻¹ Σ_{y ∈ b⁻¹𝓞} f̂(y) e(vy); #{𝔞 : N𝔞 ≤ H} = πH/(3√3) + O(√H + 1).",
+     "hypotheses": [
+      "f Schwartz on ℂ",
+      "b ≠ 0, v ∈ 𝓞"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "§4.1, p. 11"
+     },
+     "prerequisites": [
+      "roadmap:ThetaSeries Layer 1",
+      "mathlib:ZLattice.covolume"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "dual_check",
+       "kind": "computation",
+       "statement": "e(1) = e(ω) = 1 and e(ω/2) = −1"
+      },
+      {
+       "name": "covolume",
+       "kind": "computation",
+       "statement": "area √3/2 times 2/√3 = 1"
+      },
+      {
+       "name": "count_H3",
+       "kind": "computation",
+       "statement": "two ideals of norm ≤ 3 against π/√3 ≈ 1.81"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "4",
+   "title": "Gauss sums modulo ideals and the sextic reciprocity phase",
+   "targets": [
+    {
+     "id": "4.1",
+     "kind": "definition",
+     "name": "QuasiRiemann.idealGaussSum",
+     "statement": "For K ⊇ μ_n, 𝔠 prime to n, j ∈ ℤ, y ∈ 𝔠⁻¹𝔡⁻¹: ψ_y(x) = exp(2πi Tr(xy)) on 𝓞/𝔠 and g_j(𝔠, y) = gaussSum (ι ∘ ((·/𝔠)_n)^j) ψ_y; over ℤ[ω], γ_j(c) = q_c^(−1/2) g_j((c), 1/(cλ)).",
+     "hypotheses": [
+      "𝔠 nonzero, prime to n",
+      "y ∈ 𝔠⁻¹𝔡⁻¹"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "§4.1, p. 11"
+     },
+     "prerequisites": [
+      "mathlib:gaussSum",
+      "mathlib:gaussSum_mulShift",
+      "tauceti:Ideal.powerResidueSymbolIdeal",
+      "roadmap:CharacterSumsOverFiniteFields Layer 1"
+     ],
+     "api": [
+      {
+       "name": "addChar_wellDefined",
+       "role": "well-definedness",
+       "statement": "ψ_y depends only on x mod 𝔠; primitive when y𝔠𝔡 is prime to 𝔠"
+      },
+      {
+       "name": "mulShift",
+       "role": "shift",
+       "statement": "g_j(𝔠, a y) = ι((a/𝔠)_n)^(−j) g_j(𝔠, y) for a prime to 𝔠"
+      },
+      {
+       "name": "unit_ideal",
+       "role": "degenerate",
+       "statement": "g_j(𝓞, y) = 1"
+      },
+      {
+       "name": "prime_abs",
+       "role": "modulus",
+       "statement": "|g_j(𝔭,y)| = √N𝔭 for j ≢ 0, and g_0(𝔭,y) = −1, with ψ_y primitive"
+      },
+      {
+       "name": "conj",
+       "role": "conjugation",
+       "statement": "conj g_j(𝔠,y) = ι((−1/𝔠)_n)^j g_(−j)(𝔠,y)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "Q_five",
+       "kind": "compatibility",
+       "statement": "K = ℚ, n = 2, 𝔠 = (5), y = 1/5: g_1 = √5"
+      },
+      {
+       "name": "j_six",
+       "kind": "degenerate",
+       "statement": "γ_6(1+3ω) = −1/√7, not 0"
+      },
+      {
+       "name": "gamma3_square",
+       "kind": "computation",
+       "statement": "γ_3(1+3ω)² = χ_p(−1) = −1"
+      }
+     ]
+    },
+    {
+     "id": "4.2",
+     "kind": "theorem",
+     "name": "QuasiRiemann.idealGaussSum_mul",
+     "statement": "g_j((ab), h/(ab)) = ι((b/a)_n^j (a/b)_n^j) g_j((a), h/a) g_j((b), h/b); over ℤ[ω], γ_j(ab) = (χ_a(b)χ_b(a))^j γ_j(a)γ_j(b).",
+     "hypotheses": [
+      "a, b coprime, (a), (b) prime to n",
+      "h ∈ 𝔡⁻¹"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "proof of Lemma 4.4, p. 16"
+     },
+     "prerequisites": [
+      "target:4.1"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Q_15",
+       "kind": "computation",
+       "statement": "g(15) = g(3)g(5) = i√15"
+      },
+      {
+       "name": "ramanujan",
+       "kind": "degenerate",
+       "statement": "j = 0: g_0(p)g_0(q) = 1 = g_0(pq)"
+      },
+      {
+       "name": "one",
+       "kind": "degenerate",
+       "statement": "a = 1 gives an identity"
+      }
+     ]
+    },
+    {
+     "id": "4.3",
+     "kind": "theorem",
+     "name": "QuasiRiemann.Eisenstein.gaussSum_prime_identities",
+     "statement": "For a good primary prime p: γ_2(p)³ = −α(p), γ_1(p)γ_2(p) = conj(χ_p(4))γ_3(p)γ_2(p)³, |γ_j(p)| = 1 for j ≢ 0 (mod 6).",
+     "hypotheses": [
+      "p primary prime outside S"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 4.2, p. 13"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "tauceti:Ideal.gaussSum_powerResidueSymbol_three_pow_three_eq",
+      "roadmap:CharacterSumsOverFiniteFields Layer 2"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "p7",
+       "kind": "computation",
+       "statement": "7^(3/2)γ_2(1+3ω)³ = −7(1+3ω) = 7·(−1−3ω), Tau Ceti's Nπ·π"
+      },
+      {
+       "name": "dr_18",
+       "kind": "compatibility",
+       "statement": "γ_2(c)³ = g̃(c)³ = μ(c)c/|c| of dunnradziwill2024 (1.8)"
+      },
+      {
+       "name": "j6",
+       "kind": "non-example",
+       "statement": "|γ_6(p)| = 1/√7"
+      }
+     ]
+    },
+    {
+     "id": "4.4",
+     "kind": "definition",
+     "name": "QuasiRiemann.Eisenstein.quadraticGamma",
+     "statement": "Γ(c) = |c|⁻¹ Σ_{x mod c} e(x²/c) for nonzero c prime to 2; Γ(c) = ½Σ_{y mod 2} e(−cy²/4) = (1 + i^(−b) + i^a + i^(b−a))/2 for c = a + bω; τ(a,b) = Γ(ab)/(Γ(a)Γ(b)) is the bicharacter (−1)^(eh+fg+fh) on square classes (−1)^e λ^f.",
+     "hypotheses": [
+      "c ∈ 𝓞 nonzero, prime to 2"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 4.3, p. 14"
+     },
+     "prerequisites": [
+      "target:3.5",
+      "roadmap:ThetaSeries Layer 1"
+     ],
+     "api": [
+      {
+       "name": "four_term",
+       "role": "evaluation",
+       "statement": "Γ(c) = ½ Σ_{y mod 2} e(−cy²/4)"
+      },
+      {
+       "name": "periodic",
+       "role": "periodicity",
+       "statement": "Γ depends on c mod 4 and Γ(cv²) = Γ(c) for v prime to 2; |Γ| = 1"
+      },
+      {
+       "name": "table",
+       "role": "values",
+       "statement": "Γ = 1, 1, i, −i on 1, −1, λ, −λ"
+      },
+      {
+       "name": "tau_bicharacter",
+       "role": "bicharacter",
+       "statement": "τ is symmetric, {±1}-valued, given by (−1)^(eh+fg+fh)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "gamma_one",
+       "kind": "degenerate",
+       "statement": "Γ(1) = 1"
+      },
+      {
+       "name": "gamma_lambda",
+       "kind": "computation",
+       "statement": "Γ(λ) = (1+2ω)/√3 = i, agreeing with the four-term value"
+      },
+      {
+       "name": "tau_values",
+       "kind": "computation",
+       "statement": "τ(λ,λ) = −1, τ(−1,λ) = −1, τ(−1,−1) = 1"
+      },
+      {
+       "name": "gamma_p7",
+       "kind": "computation",
+       "statement": "Γ(1+3ω) = i"
+      }
+     ]
+    },
+    {
+     "id": "4.5",
+     "kind": "theorem",
+     "name": "QuasiRiemann.Eisenstein.sexticReciprocity",
+     "statement": "χ_b(a) = R(a,b)χ_a(b) for coprime primary a,b outside S with R = τ; G(c) = conj(χ_c(4))Γ(c) has |G| = 1, factors through the ray class group mod 12, G(vw) = G(v)G(w)R(v,w), G(v²) = χ_v(4), R(p,p) = γ_3(p)² = χ_p(−1); for squarefree c: γ_2(c)³ = μ(c)α(c), γ_1(c)γ_2(c) = μ(c)α(c)G(c), G(c) = conj(χ_c(4))γ_3(c); zero-preserving identity (4.8).",
+     "hypotheses": [
+      "a, b primary outside S"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 4.4 and (4.5)–(4.8), pp. 15–16"
+     },
+     "prerequisites": [
+      "target:2.5",
+      "target:4.2",
+      "target:4.3",
+      "target:4.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "pair_7_19",
+       "kind": "computation",
+       "statement": "a = 1+3ω, b = −2+3ω: χ_b(a) = −ω², χ_a(b) = ω², ratio −1 = τ(λ,λ)"
+      },
+      {
+       "name": "cubic_part",
+       "kind": "compatibility",
+       "statement": "χ_b(a)² = ω = χ_a(b)²"
+      },
+      {
+       "name": "diagonal",
+       "kind": "computation",
+       "statement": "R(p,p) = i² = −1 = χ_p(−1) for p = 1+3ω"
+      }
+     ]
+    },
+    {
+     "id": "4.6",
+     "kind": "theorem",
+     "name": "QuasiRiemann.finiteFourierExpansion",
+     "statement": "Φ = Σ_θ a_θ θ on a finite abelian group with Σ|a_θ| ≤ |T|^(1/2) max|Φ|; separation of R(a,b) on T × T; χ_n(p)χ_p(n) = R(p,n)1_{(n,p)=1}.",
+     "hypotheses": [
+      "T finite abelian"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "§4.2, p. 17"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.LFunctions.sum_smul_rayClassCoeff",
+      "target:4.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "Z2",
+       "kind": "computation",
+       "statement": "indicator of 0 on ℤ/2: a_θ = 1/2, Σ|a| = 1 ≤ √2"
+      },
+      {
+       "name": "character",
+       "kind": "degenerate",
+       "statement": "Φ = θ₀ has one coefficient 1"
+      },
+      {
+       "name": "noncoprime",
+       "kind": "non-example",
+       "statement": "n = p: both sides 0; the indicator is needed"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "5",
+   "title": "Analytic inputs for Hecke L-functions, and the transfer to Dirichlet L-functions",
+   "targets": [
+    {
+     "id": "5.1",
+     "kind": "theorem",
+     "name": "QuasiRiemann.deletedEulerFactor_bounds",
+     "statement": "For squarefree 𝔯 and |a_𝔭| ≤ 1, D_𝔯(s) = ∏(1 − a_𝔭 N𝔭^(−s)) satisfies |D_𝔯| + |D_𝔯|⁻¹ ≪ N𝔯^ε on Re s ≥ σ₀ > 0, |D_𝔯(σ+it)| ≪ N𝔯^((−σ)₊+ε), |D_𝔯'/D_𝔯| ≪ log(2N𝔯) on Re s ≥ σ₀.",
+     "hypotheses": [
+      "σ₀ > 0, ε > 0"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 4.10, p. 23"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.GlobalNumberFields.RayClassCharacter.eulerCorrection_ne_zero"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.2",
+     "kind": "theorem",
+     "name": "QuasiRiemann.heckeL_strip_growth",
+     "statement": "|ℒ(σ+it)| ≪_K (Q(3+|t|)^d)^(3/5) on −1/10 ≤ σ ≤ 11/10 for primitive finite-order ψ of conductor norm Q (ℒ = L(·,ψ), or (s−1)ζ_K(s)/(s+1) for ψ = 1).",
+     "hypotheses": [
+      "K of degree d",
+      "ψ primitive finite-order"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 4.8, p. 21 (K = F)"
+     },
+     "prerequisites": [
+      "roadmap:ZerosOfLFunctions §3.4",
+      "roadmap:LFunctions Layer 5"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.3",
+     "kind": "theorem",
+     "name": "QuasiRiemann.heckeL_logControl",
+     "statement": "If ℒ has no zero in the open disc of radius 2 − a − 2ε about 2+it, then |ℒ| + |ℒ|⁻¹ ≪ (2Q(3+|t|)^d)^(ε₁) on the closed disc of radius 2 − a − 6ε and |ℒ'/ℒ| ≪ log(2Q(3+|t|)) on radius 2 − a − 8ε; consequently on Re s ≥ b + ν for b ≥ the zero abscissa.",
+     "hypotheses": [
+      "a ∈ [1/2,1]",
+      "0 < ε < 10⁻³",
+      "ε₁ > 0"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 4.9, p. 22 (K = F)"
+     },
+     "prerequisites": [
+      "target:5.2",
+      "target:1.2",
+      "mathlib:Complex.borelCaratheodory",
+      "mathlib:Complex.HadamardThreeLines.norm_le_interp_of_mem_verticalClosedStrip'",
+      "roadmap:AnalyticNumberTheoryPartIII §8.2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "5.4",
+     "kind": "definition",
+     "name": "QuasiRiemann.normComposedCharacter",
+     "statement": "For K abelian and χ a Dirichlet character mod q: χ ∘ N_{K/ℚ}, the ray class character mod q𝓞_K·(all real places) with value χ(N𝔞) on 𝔞 prime to q; base change L^S_K(s, χ∘N) = ∏_{ψ ∈ X(K)} L^S(s, χψ) on Re s > 1, as germs, and pointwise off 1 (S = primes dividing q d_K).",
+     "hypotheses": [
+      "K abelian over ℚ",
+      "χ : DirichletCharacter ℂ q"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "(11.2), p. 85 (K = F)"
+     },
+     "prerequisites": [
+      "tauceti:TauCeti.ClassFieldTheory.kroneckerWeber",
+      "roadmap:LFunctions Layer 4",
+      "tauceti:TauCeti.eventuallyEq_of_meromorphic_of_eqOn_halfPlane",
+      "tauceti:TauCeti.LFunctions.heckeLFunctionC"
+     ],
+     "api": [
+      {
+       "name": "apply_prime",
+       "role": "evaluation",
+       "statement": "value χ(p)^f at a prime of residue degree f over p ∤ q"
+      },
+      {
+       "name": "mul",
+       "role": "multiplicativity",
+       "statement": "(χ₁∘N)(χ₂∘N) = (χ₁χ₂)∘N; 1∘N = 1"
+      },
+      {
+       "name": "baseChange",
+       "role": "factorization",
+       "statement": "L^S_K(s, χ∘N) = ∏_{ψ ∈ X(K)} L^S(s, χψ)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "F_inert",
+       "kind": "computation",
+       "statement": "K = F, χ mod 7 of order 3: value χ(4) at the inert prime (2)"
+      },
+      {
+       "name": "Qi",
+       "kind": "computation",
+       "statement": "K = ℚ(i), χ mod 5 with χ(2) = i: values i at (1+i), −1 at (3)"
+      },
+      {
+       "name": "real_places",
+       "kind": "non-example",
+       "statement": "K = ℚ(√2), χ odd: N(1+√2) = −1 forces real places in the modulus"
+      }
+     ]
+    },
+    {
+     "id": "5.5",
+     "kind": "theorem",
+     "name": "QuasiRiemann.transfer_zeroFree",
+     "statement": "K abelian, σ₀ ∈ [1/2,1): if heckeLFunctionC ψ.character is zero-free right of σ₀ for every primitive ψ of K, then heckeLFunctionC χ is for every presentation χ, and DirichletCharacter.LFunction χ is for every Dirichlet χ.",
+     "hypotheses": [
+      "K abelian over ℚ",
+      "σ₀ ∈ [1/2, 1)"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Proposition 11.3, p. 84 (K = F)"
+     },
+     "prerequisites": [
+      "target:1.1",
+      "target:5.4",
+      "mathlib:DirichletCharacter.LFunction_changeLevel",
+      "mathlib:DirichletCharacter.LFunction_apply_one_ne_zero"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "zeta_F",
+       "kind": "computation",
+       "statement": "ζ_F = ζ L(·,χ₋₃), L(1,χ₋₃) = π/(3√3) ≠ 0"
+      },
+      {
+       "name": "chi_m3",
+       "kind": "degenerate",
+       "statement": "χ = χ₋₃: the cofactor is principal mod 3 with a pole at 1"
+      },
+      {
+       "name": "sigma_one",
+       "kind": "degenerate",
+       "statement": "σ₀ = 1 is Mathlib's nonvanishing on Re s ≥ 1"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "6",
+   "title": "Large sieves over number fields",
+   "targets": [
+    {
+     "id": "6.1",
+     "kind": "theorem",
+     "name": "QuasiRiemann.additiveLargeSieve_torus",
+     "statement": "For a full-rank lattice Λ ⊂ ℝ^d with dual Λ^∨ for a nondegenerate pairing B and δ-separated points z_j of ℝ^d/Λ: Σ_{m ∈ Λ^∨, |m| ≤ Q} |Σ a_j e^(2πiB(m,z_j))|² ≪_{Λ,B,d} (Q^d + δ^(−d)) Σ|a_j|².",
+     "hypotheses": [
+      "0 < δ ≤ 1",
+      "Q ≥ 1"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 6.1, p. 47; baierbansal2018 §3, Theorem 3"
+     },
+     "prerequisites": [
+      "roadmap:ThetaSeries Layer 1",
+      "mathlib:SchwartzMap"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "one_point",
+       "kind": "degenerate",
+       "statement": "J = 1: left side ≍ Q^d"
+      },
+      {
+       "name": "equispaced",
+       "kind": "computation",
+       "statement": "z_j = j/N, Q < N: N² = N·N"
+      },
+      {
+       "name": "empty",
+       "kind": "degenerate",
+       "statement": "J = 0"
+      }
+     ]
+    },
+    {
+     "id": "6.2",
+     "kind": "definition",
+     "name": "QuasiRiemann.HeckeFamily",
+     "statement": "An n-th order Hecke family w.r.t. 𝔠: primitive Hecke characters χ_𝔞 of trivial infinite type, 𝔞 squarefree prime to 𝔠, of order dividing n, with a finite group G, [·], C : G×G → μ_n, χ_𝔞(𝔟) = χ_𝔟(𝔞)C([𝔞],[𝔟]) for coprime 𝔞,𝔟, and χ_𝔞χ_𝔟 primitive mod 𝔞𝔟 when [𝔞] = [𝔟]; quadratic large sieve Σ*_{N𝔞≤M}|Σ*_{N𝔟≤N} λ_𝔟χ_𝔟(𝔞)|² ≪ (MN)^ε(M+N)Σ*|λ_𝔟|²; Corollary 1.2 for χ^(n/2).",
+     "hypotheses": [
+      "k ⊇ μ_n",
+      "𝔠 integral ideal"
+     ],
+     "locator": {
+      "source": "goldmakherlouvel2013",
+      "where": "Definition 1, Theorem 1.1, Corollary 1.2, pp. 1–2"
+     },
+     "prerequisites": [
+      "target:4.5",
+      "roadmap:LFunctions Layer 5",
+      "target:3.5",
+      "roadmap:ThetaSeries Layer 1"
+     ],
+     "api": [
+      {
+       "name": "pow",
+       "role": "restriction",
+       "statement": "{χ_𝔞^(n/d)} is a d-th order Hecke family"
+      },
+      {
+       "name": "ff_isHeckeFamily",
+       "role": "example",
+       "statement": "the Fisher–Friedberg characters form an n-th order Hecke family"
+      },
+      {
+       "name": "eisenstein_quadratic",
+       "role": "example",
+       "statement": "over ℤ[ω] the quadratic symbols at primary generators, with conductor a or λa, form a quadratic family with G the square classes mod 4 and C = R"
+      }
+     ],
+     "tests": [
+      {
+       "name": "jacobi_Q",
+       "kind": "compatibility",
+       "statement": "k = ℚ: (a/·) with C the quadratic reciprocity sign; (21/·) primitive mod 21, (15/·) of conductor 60"
+      },
+      {
+       "name": "trivial_family",
+       "kind": "non-example",
+       "statement": "χ_𝔞 = 1 fails the primitivity axiom"
+      },
+      {
+       "name": "conductor_lambda",
+       "kind": "computation",
+       "statement": "χ_p³ for p = 1+3ω is odd at λ: conductor λp"
+      }
+     ]
+    },
+    {
+     "id": "6.3",
+     "kind": "definition",
+     "name": "QuasiRiemann.fisherFriedbergCharacter",
+     "statement": "For K ⊇ μ_n (n ≥ 3), S with 𝓞_S of class number one containing the places above n, 𝔠 = ∏𝔭^(e_𝔭) and representatives ℰ of R_𝔠: χ_𝔞(𝔟) = (x m_E/𝔟)_n for 𝔞 = (x)E𝔤^n, x ≡ 1 mod 𝔠, then replaced by its primitive inducing character.",
+     "hypotheses": [
+      "n ≥ 3"
+     ],
+     "locator": {
+      "source": "bgl2014",
+      "where": "Appendix II, p. 20; §2, Lemma 2.1, p. 6"
+     },
+     "prerequisites": [
+      "target:2.1",
+      "target:6.2"
+     ],
+     "api": [
+      {
+       "name": "wellDefined",
+       "role": "construction",
+       "statement": "χ_𝔞 is a primitive n-th order Hecke character of trivial infinite type, equal to (a/·)_n off 𝔠𝔞 when 𝔞 = (a), a ≡ 1 mod 𝔠"
+      },
+      {
+       "name": "mul_conductor",
+       "role": "structure",
+       "statement": "χ_𝔞χ_𝔟 = χ_𝔞𝔟 if 𝔞𝔟 is n-th power free; χ_(𝔞𝔟^n) = χ_𝔞; conductor between 𝔞₀ and 𝔠𝔞₀"
+      },
+      {
+       "name": "reciprocity",
+       "role": "reciprocity",
+       "statement": "χ_𝔞(𝔟)χ_𝔟(𝔞)⁻¹ depends only on [𝔞],[𝔟] ∈ R_𝔠"
+      }
+     ],
+     "tests": [
+      {
+       "name": "cubic_F",
+       "kind": "computation",
+       "statement": "K = F, n = 3, 𝔠 = (9): χ_(10)((1+3ω)) = ω"
+      },
+      {
+       "name": "nth_power",
+       "kind": "degenerate",
+       "statement": "𝔞 = 𝔟^n gives the trivial character"
+      },
+      {
+       "name": "choice",
+       "kind": "characterisation",
+       "statement": "another ℰ changes χ_𝔞 by a character of [𝔞] only"
+      }
+     ]
+    },
+    {
+     "id": "6.4",
+     "kind": "theorem",
+     "name": "QuasiRiemann.nthOrderLargeSieve",
+     "statement": "Σ*_{N𝔞≤M}|Σ*_{N𝔟≤N} λ_𝔟 χ_𝔞(𝔟)|² ≪_ε (MN)^ε (M + N + (MN)^(2/3)) Σ*|λ_𝔟|² for the Fisher–Friedberg characters, n ≥ 3, M, N ≥ 1/2.",
+     "hypotheses": [
+      "n ≥ 3",
+      "sums over squarefree ideals prime to S"
+     ],
+     "locator": {
+      "source": "bgl2014",
+      "where": "Theorem 1.3, p. 4"
+     },
+     "prerequisites": [
+      "target:6.2",
+      "target:6.3",
+      "roadmap:LFunctions Layer 5",
+      "target:3.2",
+      "target:3.5"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "6.5",
+     "kind": "theorem",
+     "name": "QuasiRiemann.Eisenstein.cubic_sextic_largeSieve",
+     "statement": "Cubic: Σ*_{q_m≤M}|Σ*_{q_n≤N} c_n (n/m)_3|² ≪ (M+N+(MN)^(2/3))(MN)^ε Σ*|c_n|² over squarefree elements ≡ 1 mod 3. Sextic: Σ_{k sf, q_k≤K}|Σ_{n sf, q_n≤D} c_n χ_n(k)^s|² ≪ (KD)^ε(K+D+(KD)^(2/3))Σ|c_n|², s = ±1, primary good indices.",
+     "hypotheses": [
+      "coefficients independent of the row"
+     ],
+     "locator": {
+      "source": "heathbrown2000",
+      "where": "Theorem 2, p. 3; openai2026quasiRH Lemma 9.1, p. 61; gaozhao2024 Lemma 2.9"
+     },
+     "prerequisites": [
+      "target:6.4",
+      "target:2.4",
+      "target:2.5",
+      "target:4.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "trivial_sizes",
+       "kind": "degenerate",
+       "statement": "M = N = 1: one term"
+      },
+      {
+       "name": "diagonal_zero",
+       "kind": "degenerate",
+       "statement": "(n/m)_3 = 0 at m = n"
+      },
+      {
+       "name": "regime",
+       "kind": "computation",
+       "statement": "(MN)^(2/3) dominates exactly for M^(1/2) < N < M²"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "7",
+   "title": "Zero detection for finite-order Hecke L-functions",
+   "targets": [
+    {
+     "id": "7.1",
+     "kind": "definition",
+     "name": "QuasiRiemann.detectingPolynomial",
+     "statement": "S_m = U^(−m/2) Σ_𝔫 ψ(𝔫) W(N𝔫/U^m) and M_r = U^(−r/2) Σ_𝔫 μ(𝔫)ψ(𝔫) W(N𝔫/U^r) for a presentation ψ with its zero extension.",
+     "hypotheses": [
+      "U > 1",
+      "r, m ≥ 0",
+      "W annular, possibly norm-twisted"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "(4.1)–(4.2), p. 12"
+     },
+     "prerequisites": [
+      "target:3.1",
+      "tauceti:TauCeti.LFunctions.heckeLFunctionC",
+      "mathlib:mellin"
+     ],
+     "api": [
+      {
+       "name": "mellin_repr",
+       "role": "Mellin form",
+       "statement": "M_r = (2πi)⁻¹∫_{(c)} MW(s)U^(r(s−1/2)) L^orig(s,ψ)⁻¹ ds; S_m with L^orig(s,ψ)"
+      },
+      {
+       "name": "trivial_bound",
+       "role": "size",
+       "statement": "|M_r| ≪ U^(r/2), |S_m| ≪ U^(m/2)"
+      },
+      {
+       "name": "twist",
+       "role": "twist",
+       "statement": "a norm twist x^(iv) shifts the L-argument by iv"
+      }
+     ],
+     "tests": [
+      {
+       "name": "r_zero",
+       "kind": "degenerate",
+       "statement": "r = 0, supp W ⊂ (1/2,2): M_0 = W(1)"
+      },
+      {
+       "name": "Q_trivial",
+       "kind": "compatibility",
+       "statement": "K = ℚ, ψ = 1: the smoothed Möbius sum"
+      },
+      {
+       "name": "presentation",
+       "kind": "non-example",
+       "statement": "an extra prime in the modulus changes M_r: the presentation, not the primitive character"
+      }
+     ]
+    },
+    {
+     "id": "7.2",
+     "kind": "theorem",
+     "name": "QuasiRiemann.bufferedZeroFreeBins",
+     "statement": "Pigeonhole bins (i,a) with a ≤ M_i < a+ε, M_{i+1} < a+2ε; a selected zero when a > a₀; |L^orig|^{±1} ≪ U^(ε₁) on Re s ≥ a+6ε, |Im s| ≤ (3i+2)T₁; reflected-line bound U^(a−1/2+12ε+ε₁)(3+T₁)^C; O_ε(1) bins.",
+     "hypotheses": [
+      "a₀ ∈ (1/2,1)",
+      "0 < ε < 10⁻³",
+      "2 ≤ T₁ ≤ U^(1/100)",
+      "conductors and deleted radicals ≪ U"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 8.1, p. 56"
+     },
+     "prerequisites": [
+      "target:5.1",
+      "target:5.2",
+      "target:5.3",
+      "roadmap:LFunctions Layer 5",
+      "target:1.2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "7.3",
+     "kind": "theorem",
+     "name": "QuasiRiemann.pointwiseDyadicBounds",
+     "statement": "In a bin with δ = 2a − 1: |M_r|² ≪ U^(δr+ε), |S_m|² ≪ U^(δ min(m,1−m)+ε) once (1+T₁)^A ≤ U^(ε/10).",
+     "hypotheses": [
+      "bounded r, m",
+      "uniformly smooth profiles",
+      "twist heights ≤ (3i+1)T₁"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 8.2, p. 57"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.2",
+      "target:3.2"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "7.4",
+     "kind": "theorem",
+     "name": "QuasiRiemann.twoSaturatedWitnesses",
+     "statement": "For t ∈ [1,3/2]: ψ ∈ 𝒳, a zero ρ, and M_r, S_m of the same presentation and twist with r ≤ t+O(1/log U), r+m ≥ t−O(1/log U), t−1/2−O(ε) ≤ r, 0 ≤ m ≤ 1/2+O(ε), |M_rS_m|² ≫ U^(δ(r+m)−ε), |M_r|² ≫ U^(δr−ε), |S_m|² ≫ U^(δm−ε).",
+     "hypotheses": [
+      "a > a₀",
+      "hypotheses of 7.3"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Proposition 8.3, p. 59; liu2026improved Proposition 5.1; maynardpratt2024 Appendix C"
+     },
+     "prerequisites": [
+      "target:7.1",
+      "target:7.2",
+      "target:7.3",
+      "target:5.1",
+      "target:5.2"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "8",
+   "title": "Kubota's character, Eisenstein series on ℍ³ and theta functions",
+   "targets": [
+    {
+     "id": "8.1",
+     "kind": "definition",
+     "name": "QuasiRiemann.kubotaCharacter",
+     "statement": "κ(σ) = (c/d)_n (c ≠ 0), 1 (c = 0) on Γ(N) ⊂ GL₂(𝓞_K), K totally imaginary ⊇ μ_n, n² ∣ N; for F, n = 3: κ(γ) = (c/a)_3 on Γ₁(3), extended to Γ₂ = SL₂(ℤ)Γ₁(3) by 1 on SL₂(ℤ).",
+     "hypotheses": [
+      "K totally imaginary ⊇ μ_n",
+      "n² ∣ N"
+     ],
+     "locator": {
+      "source": "kubota1969",
+      "where": "§3, Propositions 1–2, pp. 24–25; patterson1977 §2; dunnradziwill2024 (5.2)–(5.5)"
+     },
+     "prerequisites": [
+      "target:2.3",
+      "tauceti:Ideal.powerResidueSymbolIdeal",
+      "roadmap:ClassicalArithmeticCompletion §1.59"
+     ],
+     "api": [
+      {
+       "name": "map_mul",
+       "role": "homomorphism",
+       "statement": "κ(στ) = κ(σ)κ(τ) on Γ(N) (and on Γ₂ for the cubic case)"
+      },
+      {
+       "name": "upper_triangular",
+       "role": "triviality",
+       "statement": "κ = 1 on upper triangular elements"
+      },
+      {
+       "name": "surjective",
+       "role": "nontriviality",
+       "statement": "κ takes every value of μ_n"
+      },
+      {
+       "name": "coset",
+       "role": "cosets",
+       "statement": "g ≡ g' mod 3 implies Γ₂g = Γ₂g'; [SL₂(𝓞):Γ₂] = 27"
+      }
+     ],
+     "tests": [
+      {
+       "name": "explicit",
+       "kind": "computation",
+       "statement": "γ = (1+3ω, −3ω²; 3, 1−3ω): (c/a)_3 = ω = (b/d)_3"
+      },
+      {
+       "name": "unit_modulus",
+       "kind": "degenerate",
+       "statement": "κ((1 0; 3 1)) = 1"
+      },
+      {
+       "name": "SL2Z",
+       "kind": "non-example",
+       "statement": "(0 −1; 1 0) ∈ SL₂(ℤ) has κ = 1, where (c/a)_3 is undefined (a = 0)"
+      }
+     ]
+    },
+    {
+     "id": "8.2",
+     "kind": "definition",
+     "name": "QuasiRiemann.automorphicWithCharacter",
+     "statement": "For Γ ⊂ SL₂(ℂ) discrete of finite type and unitary χ: smooth f on ℍ³ with f(γw) = χ(γ)f(w); essential cusps have χ(Γ_c) = 1; Fourier–Bessel expansion α v^s + β v^(2−s) + Σ a(μ) v K_{s−1}(4π|μ|v) ě(μz) for Δ₃-eigenfunctions of moderate growth.",
+     "hypotheses": [
+      "Γ cofinite of finite type",
+      "χ unitary character"
+     ],
+     "locator": {
+      "source": "kubota1968",
+      "where": "§§2–3, pp. 262–264"
+     },
+     "prerequisites": [
+      "roadmap:BianchiModularForms §0.3",
+      "roadmap:BianchiModularForms §0.4",
+      "roadmap:MaassForms §7.1",
+      "roadmap:AutomorphicFormsOnReductiveGroups §4.5"
+     ],
+     "api": [
+      {
+       "name": "fourierBessel",
+       "role": "expansion",
+       "statement": "the expansion at essential cusps; constant term vanishes at nonessential cusps"
+      },
+      {
+       "name": "growth",
+       "role": "growth",
+       "statement": "moderate growth excludes v I_{±(s−1)}; coefficients polynomially bounded"
+      }
+     ],
+     "tests": [
+      {
+       "name": "constant",
+       "kind": "degenerate",
+       "statement": "SL₂(𝓞), χ = 1, constant function: α = 1, s = 0"
+      },
+      {
+       "name": "infinity_essential",
+       "kind": "computation",
+       "statement": "∞ is essential for (Γ₂, κ)"
+      },
+      {
+       "name": "eigenvalue",
+       "kind": "computation",
+       "statement": "order 1/3 gives eigenvalue 8/9"
+      }
+     ]
+    },
+    {
+     "id": "8.3",
+     "kind": "definition",
+     "name": "QuasiRiemann.eisensteinSeriesWithCharacter",
+     "statement": "E_i(w,s,χ) = Σ_{σ ∈ Γ_i\\Γ} χ̄(σ) v(σ_i⁻¹σw)^s at an essential cusp κ_i.",
+     "hypotheses": [
+      "Re s > 2"
+     ],
+     "locator": {
+      "source": "kubota1968",
+      "where": "(8), (18), pp. 263, 266; patterson1977 (3.1)"
+     },
+     "prerequisites": [
+      "target:8.2"
+     ],
+     "api": [
+      {
+       "name": "converges",
+       "role": "convergence",
+       "statement": "absolutely and locally uniformly for Re s > 2"
+      },
+      {
+       "name": "automorphic",
+       "role": "automorphy",
+       "statement": "E_i(γw) = χ(γ)E_i(w), Δ₃E_i = s(2−s)E_i"
+      },
+      {
+       "name": "constantTerm",
+       "role": "constant term",
+       "statement": "δ_ij v^s + φ_ij(s,χ)v^(2−s) with φ_ij = (π/(s−1))Σ χ_ij(c,d)|c|^(−2s)"
+      },
+      {
+       "name": "coefficients",
+       "role": "Fourier coefficients",
+       "statement": "Dirichlet series Σ χ_ij(c,d) ě(μd/c)|c|^(−2s) times v K_{s−1}(4π|μ|v)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "gauss_picard",
+       "kind": "compatibility",
+       "statement": "SL₂(ℤ[i]), χ = 1: constant term a ratio of Dedekind zeta values"
+      },
+      {
+       "name": "nonessential",
+       "kind": "non-example",
+       "statement": "at a nonessential cusp the series is ill defined"
+      },
+      {
+       "name": "s_three",
+       "kind": "degenerate",
+       "statement": "s = 3: absolutely convergent"
+      }
+     ]
+    },
+    {
+     "id": "8.4",
+     "kind": "theorem",
+     "name": "QuasiRiemann.eisenstein_meromorphicContinuation",
+     "statement": "E_i continues meromorphically; ℰ and Φ holomorphic on Re s ≥ 1 except finitely many simple poles in (1,2], s = 2 exactly when χ is trivial; Φ(1+it) unitary; Φ(s)Φ(2−s) = I; ℰ(s) = Φ(s)ℰ(2−s); residues in (1,2] square integrable.",
+     "hypotheses": [
+      "(Γ, χ) as in 8.2"
+     ],
+     "locator": {
+      "source": "kubota1968",
+      "where": "§3, p. 265; §4, (28)–(29), p. 268; patterson1977 §3, (3.9)–(3.11)"
+     },
+     "prerequisites": [
+      "target:8.2",
+      "target:8.3",
+      "roadmap:MaassForms §7.1",
+      "roadmap:BianchiModularForms §0.3",
+      "roadmap:AutomorphicSpectralTheory §0.15",
+      "roadmap:AutomorphicSpectralTheory §0.16"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "8.5",
+     "kind": "definition",
+     "name": "QuasiRiemann.kubotaTheta",
+     "statement": "θ := Res_{s=1+1/n} E(w,s,κ) at ∞ for K imaginary quadratic ⊇ μ_n, Γ = Γ(N) ∩ SL₂(𝓞_K), n² ∣ N an n-th power.",
+     "hypotheses": [
+      "n ∈ {2,3,4,6}"
+     ],
+     "locator": {
+      "source": "kubota1969",
+      "where": "§6, Theorem 6 and (45), pp. 49–50"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "target:8.4"
+     ],
+     "api": [
+      {
+       "name": "nonzero_L2",
+       "role": "existence",
+       "statement": "the pole is at most simple; θ ≠ 0, square integrable, automorphic with κ"
+      },
+      {
+       "name": "eigen",
+       "role": "eigenfunction",
+       "statement": "Δ₃θ = (1+1/n)(1−1/n)θ"
+      },
+      {
+       "name": "expansion",
+       "role": "expansion",
+       "statement": "constant term ∝ v^(1−1/n), nonconstant terms v K_(1/n)(4π|μ|v)ě(μz)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "n3",
+       "kind": "computation",
+       "statement": "pole 4/3, eigenvalue 8/9, order 1/3"
+      },
+      {
+       "name": "n2",
+       "kind": "computation",
+       "statement": "pole 3/2, eigenvalue 3/4, order 1/2"
+      },
+      {
+       "name": "not_one",
+       "kind": "non-example",
+       "statement": "a residue at 1 would have eigenvalue 1"
+      }
+     ]
+    },
+    {
+     "id": "8.6",
+     "kind": "theorem",
+     "name": "QuasiRiemann.pattersonConverseTheorem",
+     "statement": "Three coefficient functions c_a on M_a with (7.4) whose completed twisted Dirichlet series Ξ_a(s,l,b) continue meromorphically (entire for l ≠ 0; at most simple poles at 4/3, 2/3 for l = 0), are bounded in vertical strips and satisfy (7.5) give f(w) = π r(0,0)v^(2/3) + Σ c₀(μ)vK_(1/3)(4π|μ|v)ě(μz) automorphic under Γ₂ with κ.",
+     "hypotheses": [
+      "c_a on M_a as in (7.1)"
+     ],
+     "locator": {
+      "source": "patterson1977",
+      "where": "Theorem 7.1 and Lemma 7.2, pp. 23–24"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "target:8.2",
+      "mathlib:mellinInv_mellin_eq",
+      "roadmap:AutomorphicFormsOnReductiveGroups §4.5"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "8.7",
+     "kind": "theorem",
+     "name": "QuasiRiemann.cubicTheta",
+     "statement": "θ on ℍ³, automorphic under Γ₂ with κ, proportional to the residues at 4/3, with θ = σv^(2/3) + Σ τ(μ)vK_(1/3)(4π|μ|v)ě(μz), σ² = 3⁵/4, τ given by Patterson's (8.1); expansions at H_j∞, (t₀,t₁,t₂) = (0,ω²,ω), with C₀ = σv^(2/3), C₁ = C₂ = 0 and d_j from τ, τ₁, τ₂; supp d_j ⊆ {uλ^k n b³ : k ≥ −4}, |d_j(μ)| ≤ 27·3^(k/6)|b|.",
+     "hypotheses": [],
+     "locator": {
+      "source": "patterson1977",
+      "where": "Theorem 8.1, (8.1)–(8.3), (8.8)–(8.9), Table III; dunnradziwill2024 (5.6)–(5.16), Appendix A; openai2026quasiRH (5.2)"
+     },
+     "prerequisites": [
+      "target:8.4",
+      "target:8.5",
+      "target:8.6",
+      "target:4.1",
+      "target:4.3",
+      "target:2.5"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "n0_coefficient",
+       "kind": "compatibility",
+       "statement": "τ(λ⁻³cd³) = 3^(5/2)|d|g̃(c), attaining 27·3^(−1/2)|d|"
+      },
+      {
+       "name": "n_ge1",
+       "kind": "computation",
+       "statement": "|τ(λ^(3n−4)cd³)| = 3^(n/2+2)|d| ≤ 3^(n/2+7/3)|d|"
+      },
+      {
+       "name": "cusp_coeff",
+       "kind": "non-example",
+       "statement": "|τ₁| = 9|d| at k = −4; a bound without |b| fails at d = 2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "9",
+   "title": "The completed cubic reflection",
+   "targets": [
+    {
+     "id": "9.1",
+     "kind": "definition",
+     "name": "QuasiRiemann.Eisenstein.completedThetaSum",
+     "statement": "D(s,Ψ) = Σ_{c sf} γ_2(c)α(c)Ψ(c)q_c^(−s), L₀(s,Ψ) = Σ_n α(n)³Ψ(n)³q_n^(−3s+1/2), T = L₀D, C_V(X;Ψ) = Σ_{c sf, n} γ_2(c)α(cn³)Ψ(cn³)q_c^(−1/2)q_n^(−1)V(q_cq_n³/X).",
+     "hypotheses": [
+      "Ψ finite-order on primary elements, zero-extended"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "§5.1, p. 25; liu2026improved (4.1)"
+     },
+     "prerequisites": [
+      "target:4.1",
+      "target:4.5",
+      "mathlib:mellin"
+     ],
+     "api": [
+      {
+       "name": "mellin",
+       "role": "Mellin form",
+       "statement": "C_V(X;Ψ) = (2πi)⁻¹∫_{(a)} V̂(s−1/2)X^(s−1/2)T(s,Ψ)ds, a > 1"
+      },
+      {
+       "name": "support",
+       "role": "support",
+       "statement": "A primary is cn³ iff every valuation is 0 or 1 mod 3, uniquely"
+      }
+     ],
+     "tests": [
+      {
+       "name": "trivial_term",
+       "kind": "degenerate",
+       "statement": "Ψ = 1, c = n = 1: V(1/X)"
+      },
+      {
+       "name": "support_check",
+       "kind": "computation",
+       "statement": "p² is not of the form cn³; p³ and p⁴ are"
+      },
+      {
+       "name": "not_full_sum",
+       "kind": "non-example",
+       "statement": "at A = p³ the coefficient comes from L₀, not from γ_2"
+      }
+     ]
+    },
+    {
+     "id": "9.2",
+     "kind": "theorem",
+     "name": "QuasiRiemann.Eisenstein.completedCubicReflection",
+     "statement": "T(s,Ψ) is entire of polynomial growth on vertical strips; C_V(X;Ψ) = Σ_t ζ_t Σ_{0≠μ∈λ⁻⁴𝓞} d_t(μ)α(μ)ϑ_t(λ⁴μ)q_μ^(−1/2)∏_{p active}B_p(λ⁴μ)V♯(q_μX/q_(c_t)²) with |ζ_t| ≤ 1/81, the stated B_p, V♯ and its bounds (5.4)–(5.6).",
+     "hypotheses": [
+      "𝒳 fixed finite family, 𝔈, L as stated",
+      "P finite set of good primes, j_p ∈ {0..5}",
+      "V smooth with (x∂_x)^jV rapidly decreasing at 0 and ∞"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Proposition 5.1 and (5.1)–(5.6), pp. 24–27; liu2026improved Proposition 4.1"
+     },
+     "prerequisites": [
+      "target:8.1",
+      "target:8.7",
+      "target:4.1",
+      "target:4.5",
+      "target:2.5",
+      "target:3.2",
+      "target:3.4",
+      "mathlib:Complex.Gamma"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "9.3",
+     "kind": "theorem",
+     "name": "QuasiRiemann.Eisenstein.reflectionSectorsAndTails",
+     "statement": "Fixed ray sectors (Lemma 5.2), common annular kernel profile (Lemma 5.3), lattice tails Σ_{aq_μ>U}|K(aq_μ)| ≪ C_A(1+a⁻¹)U^(1−A) (Lemma 5.4).",
+     "hypotheses": [
+      "A > 1"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemmas 5.2–5.4, pp. 34–36"
+     },
+     "prerequisites": [
+      "target:9.2",
+      "target:2.4",
+      "target:3.2",
+      "target:3.5"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "9.4",
+     "kind": "theorem",
+     "name": "QuasiRiemann.Eisenstein.reflectedEnergy",
+     "statement": "Quadratic reduction Σ_k|Σ β(n,b)χ_k(nb)³|² ≪ (KNB)^ε(K+NB)NB; reflected energy Σ_{q_m≪Z^M, q_(m_pow)≍Z^O}|C_V(Z^N;νχ_•(m))|² ≪ Z^(O/2+max(M−O,2M−O−N)+ε)𝓜_{A,J}(V)², in particular Σ_{q_m≤Z}|C_V(Z;νχ_•(m))|² ≪ Z^(1+ε).",
+     "hypotheses": [
+      "|β| ≤ 1 independent of k",
+      "bounded M, N, O"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 5.5, Definition 5.6, Lemmas 5.7–5.8, (5.39), pp. 37–44; liu2026improved Lemma 4.2"
+     },
+     "prerequisites": [
+      "target:9.2",
+      "target:9.3",
+      "target:6.2",
+      "target:3.3"
+     ],
+     "api": [],
+     "tests": []
+    }
+   ]
+  },
+  {
+   "key": "10",
+   "title": "The probe at 11/12 and the 11/12 half-plane",
+   "targets": [
+    {
+     "id": "10.1",
+     "kind": "definition",
+     "name": "QuasiRiemann.Eisenstein.probe",
+     "statement": "I_η(X,Y,Z) = Y⁻¹Σ_v W₁(q_v/Y)χ_v(b*)τ*⁻¹ξ̄(v)(q_(b*)q_vX)^(−1/2)Σ_{m≠0}ξ(m)q_v^(−1/2)g_(χ_v)(v,−m)W₀(q_m/(q_(b*)q_vX))(2πi)⁻¹∫_{(4)}Z^tΦ(t)T_(m,v,η)(t)dt.",
+     "hypotheses": [
+      "η primitive finite-order Hecke character of F",
+      "W₀, W₁ annular nonnegative nonzero",
+      "Φ(t) = e^(t²)"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "(6.1), p. 46; liu2026improved (4.5)"
+     },
+     "prerequisites": [
+      "target:9.1",
+      "target:4.6",
+      "target:3.3"
+     ],
+     "api": [
+      {
+       "name": "finite",
+       "role": "finiteness",
+       "statement": "the m and v sums are finite; m = 0 excluded"
+      },
+      {
+       "name": "theta_average",
+       "role": "structure",
+       "statement": "T_(m,v,η)(t) = Σ_θ a_θ T(t+1/2, Ψ_(m,v,η)θ)"
+      }
+     ],
+     "tests": [
+      {
+       "name": "unit_tau",
+       "kind": "computation",
+       "statement": "|τ*| = 1 and |Ξ| ≤ 1"
+      },
+      {
+       "name": "xi_zero",
+       "kind": "degenerate",
+       "statement": "ξ(m) = 0 for m meeting b*"
+      },
+      {
+       "name": "gaussian_mellin",
+       "kind": "compatibility",
+       "statement": "V_G = (2πi)⁻¹∫_{(4)}Φ(t)x^(−t)dt"
+      }
+     ]
+    },
+    {
+     "id": "10.2",
+     "kind": "theorem",
+     "name": "QuasiRiemann.Eisenstein.balancedLowEstimate",
+     "statement": "Separation (6.2); Σ_{q_m≤CQ}|A_(m,σ,t₀)(Y)|² ≪ (Q+Y²)/Y; |I_η(Z^(1/2),Z^(1/2),Z)| ≪_{η,ε} Z^(1/4+ε).",
+     "hypotheses": [],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "(6.2), Lemma 6.2, Proposition 6.3, pp. 46–49"
+     },
+     "prerequisites": [
+      "target:10.1",
+      "target:6.1",
+      "target:9.4",
+      "target:4.6"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "10.3",
+     "kind": "theorem",
+     "name": "QuasiRiemann.Eisenstein.poissonRepresentation",
+     "statement": "Poisson representation (7.5); F_(η,u) = ζ^S_F(6z)L^S(w,χ_•(u))L^S(x,ηχ_•(u))⁻¹H_(η,u) with H_(η,u) holomorphic on D₁, D₂, ≪ q_u^ε, H_(η,1) = 1+O(P₀^(−4/5)) on D₂; M(1/6) > 0; c_S > 0; sup_{Re s>7/8}|H_η − 1| ≤ 1/2.",
+     "hypotheses": [
+      "u nonzero sixth-power-free prime to S",
+      "P₀ large"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Lemma 7.1 and (7.1)–(7.15), pp. 50–54; liu2026improved (4.8)–(4.14)"
+     },
+     "prerequisites": [
+      "target:10.1",
+      "target:3.5",
+      "target:4.2",
+      "target:4.5",
+      "target:5.1"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "10.4",
+     "kind": "theorem",
+     "name": "QuasiRiemann.Eisenstein.sexticRowEnvelope",
+     "statement": "#B ≪ U^(R(δ)+ε)(1+T₁)^A, R(δ) = min{1, max(1−δ/2, 4/3−δ)}, δ = 2a−1, for rows of one bin with a > 51/100.",
+     "hypotheses": [
+      "bounded dyad U = Z^d",
+      "𝒳_u = {ν χ_·(u)^(±1)}"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Proposition 9.2, p. 67; liu2026improved (6.2)"
+     },
+     "prerequisites": [
+      "target:7.2",
+      "target:7.4",
+      "target:6.5"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "10.5",
+     "kind": "theorem",
+     "name": "QuasiRiemann.Eisenstein.highExpansionContours",
+     "statement": "External tails (Lemma 10.2), contour transformation for a bin (Lemma 10.3), retained integrals (Lemma 10.4), principal signal c_S f_η (Lemma 10.5), outer row norms (Lemma 10.6).",
+     "hypotheses": [
+      "data of Definition 10.1"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Definition 10.1, Lemmas 10.2–10.6, pp. 70–82"
+     },
+     "prerequisites": [
+      "target:10.3",
+      "target:10.4",
+      "target:7.2",
+      "target:7.3",
+      "target:3.2",
+      "target:3.4",
+      "target:5.1",
+      "target:1.3"
+     ],
+     "api": [],
+     "tests": []
+    },
+    {
+     "id": "10.6",
+     "kind": "theorem",
+     "name": "QuasiRiemann.Eisenstein.balancedHighEstimate",
+     "statement": "If β* > 11/12: |J_(I,η)(Z) − f_(I,η)(Z)| ≪_η Z^(C_I(β*)−1/4800), C_I(s) = s − 2/3, J_(I,η) = I_η(Z^(1/2),Z^(1/2),Z)/c_S.",
+     "hypotheses": [
+      "β* > 11/12"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Proposition 11.2 and the margin table of §11, pp. 82–84"
+     },
+     "prerequisites": [
+      "target:10.5",
+      "target:1.4"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "loss_budget",
+       "kind": "computation",
+       "statement": "46·10⁻⁶ < (1/1200)/4"
+      },
+      {
+       "name": "retained",
+       "kind": "computation",
+       "statement": "3m₀/4 = 1/1600 > 1/2400"
+      },
+      {
+       "name": "min_margin",
+       "kind": "computation",
+       "statement": "1/1200 is the least listed saving"
+      }
+     ]
+    },
+    {
+     "id": "10.7",
+     "kind": "theorem",
+     "name": "QuasiRiemann.zeroFree_eleven_twelfths",
+     "statement": "Every heckeLFunctionC χ (χ a ray class character of any modulus of F) and every DirichletCharacter.LFunction χ is zero-free right of 11/12; riemannZeta s ≠ 0 for Re s > 11/12.",
+     "hypotheses": [],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Theorem 3.1, p. 10; liu2026improved Proposition 6.3; openai2026quasiRHalt Theorem 1.1"
+     },
+     "prerequisites": [
+      "target:1.2",
+      "target:1.3",
+      "target:5.5",
+      "target:10.2",
+      "target:10.3",
+      "target:10.6",
+      "roadmap:LFunctions Layer 5",
+      "roadmap:LFunctions Layer 7",
+      "tauceti:TauCeti.LFunctions.heckeLFunctionC",
+      "mathlib:DirichletCharacter.LFunction",
+      "mathlib:riemannZeta"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "landau_siegel",
+       "kind": "computation",
+       "statement": "(1−β)log q ≥ (log 3)/12 for real zeros, q ≥ 3"
+      },
+      {
+       "name": "principal_mod4",
+       "kind": "degenerate",
+       "statement": "ζ(s)(1−2^(−s)): pole at 1, zeros on Re s = 0 only"
+      },
+      {
+       "name": "exponent",
+       "kind": "computation",
+       "statement": "C_I(11/12) = 1/4"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "key": "11",
+   "title": "Consequences",
+   "targets": [
+    {
+     "id": "11.1",
+     "kind": "theorem",
+     "name": "QuasiRiemann.zeroStrip_of_zeroFree",
+     "statement": "If every primitive Dirichlet L-function is zero-free right of θ ∈ [1/2,1), every zero ρ with Re ρ > 0 of a primitive one satisfies 1−θ ≤ Re ρ ≤ θ; same for the primitive finite-order Hecke family of F; at θ = 11/12, 1/12 ≤ Re ρ ≤ 11/12.",
+     "hypotheses": [
+      "θ ∈ [1/2, 1)"
+     ],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "proof of Corollary 1.2, p. 7"
+     },
+     "prerequisites": [
+      "mathlib:DirichletCharacter.IsPrimitive.completedLFunction_one_sub",
+      "mathlib:DirichletCharacter.LFunction_ne_zero_of_one_le_re",
+      "mathlib:DirichletCharacter.LFunction_eq_zero_iff_of_re_nonpos",
+      "roadmap:LFunctions Layer 5",
+      "roadmap:LFunctions Layer 7",
+      "target:10.7"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "grh",
+       "kind": "degenerate",
+       "statement": "θ = 1/2 gives Re ρ = 1/2"
+      },
+      {
+       "name": "imprimitive",
+       "kind": "non-example",
+       "statement": "principal mod p: zeros on Re s = 0; excluded"
+      },
+      {
+       "name": "zeta",
+       "kind": "computation",
+       "statement": "ζ: 1/12 ≤ Re ρ ≤ 11/12"
+      }
+     ]
+    },
+    {
+     "id": "11.2",
+     "kind": "definition",
+     "name": "QuasiRiemann.leastNonOne",
+     "statement": "leastNonOne χ = least n ≥ 1 with χ(n) ∉ {0,1} for nonprincipal χ; conditional theorem: zero-free right of θ ∈ [1/2,1) ⇒ leastNonOne χ ≤ C_θ (log q)^(1/(1−θ)); Hecke analogue with N𝔭 ≤ C_{K,θ}(log N𝔣 + 2)^(1/(1−θ)).",
+     "hypotheses": [
+      "χ nonprincipal mod q ≥ 2"
+     ],
+     "locator": {
+      "source": "lamzourilisound2015",
+      "where": "Lemma 2.2 and Theorem 1.1 (θ = 1/2)"
+     },
+     "prerequisites": [
+      "roadmap:ZerosOfLFunctions §4.4",
+      "roadmap:ZerosOfLFunctions §4.5",
+      "roadmap:ZerosOfLFunctions §8.4",
+      "roadmap:ZerosOfLFunctions §8.5",
+      "roadmap:ZerosOfLFunctions §8.6",
+      "mathlib:DirichletCharacter.LFunction_changeLevel"
+     ],
+     "api": [
+      {
+       "name": "le_q",
+       "role": "existence",
+       "statement": "leastNonOne χ ≤ q"
+      },
+      {
+       "name": "primitive",
+       "role": "invariance",
+       "statement": "unchanged on passing to the primitive character on n prime to q; at least 2"
+      },
+      {
+       "name": "legendre",
+       "role": "compatibility",
+       "statement": "for the Legendre character mod p it is SieveApplications.leastNonresidue p"
+      }
+     ],
+     "tests": [
+      {
+       "name": "mod5",
+       "kind": "computation",
+       "statement": "χ mod 5 with χ(2) = i: value 2"
+      },
+      {
+       "name": "legendre7",
+       "kind": "computation",
+       "statement": "(·/7): value 3"
+      },
+      {
+       "name": "zero_values",
+       "kind": "non-example",
+       "statement": "χ mod 12 induced by (·/3): value 5; counting 0 as non-one gives 2"
+      }
+     ]
+    },
+    {
+     "id": "11.3",
+     "kind": "theorem",
+     "name": "QuasiRiemann.leastNonresidue_le",
+     "statement": "∃ C, ∀ odd prime p, SieveApplications.leastNonresidue p ≤ C (log p)^12; ∀ δ > 0, leastNonresidue p ≪_δ p^δ.",
+     "hypotheses": [],
+     "locator": {
+      "source": "openai2026quasiRH",
+      "where": "Corollary 1.2, p. 7; tao2015 Conjecture 1.1"
+     },
+     "prerequisites": [
+      "target:10.7",
+      "target:11.2",
+      "roadmap:SieveMethodsAndPrimePatterns §2.9"
+     ],
+     "api": [],
+     "tests": [
+      {
+       "name": "ankeny",
+       "kind": "compatibility",
+       "statement": "θ = 1/2 gives exponent 2"
+      },
+      {
+       "name": "bims",
+       "kind": "computation",
+       "statement": "the bimsissac2017 route needs ϵ = 11/24 and gives 48"
+      },
+      {
+       "name": "p7",
+       "kind": "computation",
+       "statement": "n(7) = 3"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "suppliers": [
+  {
+   "roadmap": "LFunctions",
+   "sections": [
+    "Layer 4",
+    "Layer 5",
+    "Layer 7"
+   ],
+   "what": "continued Dirichlet and Hecke L-functions, functional equations with root numbers, nonvanishing on Re s = 1, cyclotomic factorization"
+  },
+  {
+   "roadmap": "ZerosOfLFunctions",
+   "sections": [
+    "§3.4",
+    "§4.4",
+    "§4.5",
+    "§8.4",
+    "§8.5",
+    "§8.6"
+   ],
+   "what": "strip bound, local zero counts, Weil explicit formula for the two families, prime ideal theorem"
+  },
+  {
+   "roadmap": "ClassicalArithmeticCompletion",
+   "sections": [
+    "§1.12",
+    "§1.23",
+    "§1.33",
+    "§1.34",
+    "§1.38",
+    "§1.59",
+    "§1.72",
+    "§1.75"
+   ],
+   "what": "power residue symbols, Frobenius on n-th roots, general power reciprocity, prime cubic reciprocity and supplements"
+  },
+  {
+   "roadmap": "ClassFieldTheory",
+   "sections": [
+    "Layer 11",
+    "§13.1"
+   ],
+   "what": "global Artin reciprocity, ray class fields, conductors and ramification, Kronecker–Weber"
+  },
+  {
+   "roadmap": "ThetaSeries",
+   "sections": [
+    "Layer 1"
+   ],
+   "what": "Poisson summation for a full-rank lattice"
+  },
+  {
+   "roadmap": "GlobalNumberFields",
+   "sections": [
+    "Layer 2",
+    "Layer 9"
+   ],
+   "what": "moduli, ray class groups and characters (as Tau Ceti realizes them)"
+  },
+  {
+   "roadmap": "CharacterSumsOverFiniteFields",
+   "sections": [
+    "Layer 1",
+    "Layer 2"
+   ],
+   "what": "Gauss and Jacobi sums at primes"
+  },
+  {
+   "roadmap": "BianchiModularForms",
+   "sections": [
+    "§0.3",
+    "§0.4"
+   ],
+   "what": "discreteness, finite covolume and cusps of groups commensurable with SL₂(𝓞_K) on ℍ³"
+  },
+  {
+   "roadmap": "MaassForms",
+   "sections": [
+    "§7.1"
+   ],
+   "what": "the Laplacian on ℍ³"
+  },
+  {
+   "roadmap": "AutomorphicFormsOnReductiveGroups",
+   "sections": [
+    "§4.5"
+   ],
+   "what": "the K-Bessel function"
+  },
+  {
+   "roadmap": "AutomorphicSpectralTheory",
+   "sections": [
+    "§0.15",
+    "§0.16"
+   ],
+   "what": "meromorphic operator families and analytic Fredholm continuation"
+  },
+  {
+   "roadmap": "SieveMethodsAndPrimePatterns",
+   "sections": [
+    "§2.9"
+   ],
+   "what": "SieveApplications.leastNonresidue"
+  },
+  {
+   "roadmap": "AnalyticNumberTheoryPartIII",
+   "sections": [
+    "§8.2"
+   ],
+   "what": "Carathéodory's derivative inequality"
+  }
+ ],
+ "consumers": [
+  {
+   "roadmap": "QuasiRiemannHypothesisPartII",
+   "what": "the 7/8 half-plane by the compensated probe, consuming Layers 1–10 and the 11/12 bound"
+  },
+  {
+   "roadmap": "ExplicitPrimeCounting",
+   "what": "a Part II with bounds under a zero-free half-plane, unconditional at 11/12"
+  },
+  {
+   "roadmap": "AnalyticNumberTheoryPartIII",
+   "what": "a Part II with ψ(x) − x ≪ x^(11/12+ε)"
+  },
+  {
+   "roadmap": "ZerosOfLFunctions",
+   "what": "a Part II with power savings over ℚ(√−3)"
+  },
+  {
+   "roadmap": "SieveMethodsAndPrimePatterns",
+   "what": "the bound on the least quadratic nonresidue"
+  },
+  {
+   "roadmap": "ExplicitMultiplicativeFunctions",
+   "what": "qualitative power savings M(x) = O(x^(11/12+ε))"
+  }
+ ],
+ "gaps": []
+}
