@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuadraticFormsOverABase~10",
+  "head": "c6ecaae0abf331580c9ab3976c8bb44f7c958f01",
+  "pr": 1930,
+  "folder": "QuadraticFormsOverABase",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 64 changed lines since 5626f46. The change is the Provenance section and the LeanPool reference; the README is identical above Provenance and Suggested.lean is unchanged since 7cf144f. Checked: the previous findings R01-R04, all repaired. Every claim of the new Provenance text was checked against LeanPool at f8b9b72: NOTICE, file headers, project cards, and nine declarations in Prod, BaseChangeProjective, Regularity, NonsingularOverFields, QuadraticEtale, Resultant and Main. The repaired sentence gives Hasse-Minkowski to QuadraticFormInvariants, which on main leaves it to GlobalQuadraticForms section 5.5 (R01). The description was read against this head: its 'orthogonalGroup and conj carry their own proofs' is stale, since conj is deleted and orthogonalGroup is a range (R02). A 7-row adversarial table has computed values. Seeded sample: no target lies in the changed passages. Gate: the worker's gate is all 0 with build=0; my rerun flags only NOT IN ORDER against the public order. depcheck with the candidate order: 258 roadmaps, 2453 edges, 0 problems, also with the R01 repair. lake env lean on Suggested.lean exits 0 with 22 sorry-only warnings. #print axioms on the 17 definitions shows no sorryAx. Nothing changed outside the folder against origin/main.",
+  "text": "5fe2e127e060009d"
+ }
+}
