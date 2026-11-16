@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiracScatteringAndNonlinearFourierTransform~3",
+  "head": "550224ea2356b727c7630e3f34e7cd44c6d7c6ca",
+  "pr": 2444,
+  "folder": "DiracScatteringAndNonlinearFourierTransform",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review of an unchanged head (previous review read the same head, no findings). Sample: all 15 seeded targets (1.1, 1.2, 1.6, 1.7, 2.5, 2.7, 3.1, 4.4, 6.1, 7.3, 8.1, 9.2, 9.3, 9.4, 9.5) and the 9 headline theorems, each with recomputed values; 54 source locators checked against the cached texts; 1.1, 1.7 and 2.5 cite only waived or uncertified texts (listed under Not verifiable). 104 cited library declarations resolved at the pins with matching lines; 6 cross-roadmap citations resolved (AutomorphicSpectralTheory 0.5 and 1.6 at its open head, four on main). Gate run at this head: all counts 0, OK; depcheck 256 roadmaps, 2432 edges, 0 problems. lake env lean on Suggested.lean: 9 sorry warnings only; one-tactic probe closes none of the 9 theorems. Overlap check and source-independence line recorded; five source errata and five items for the human reviewers recorded.",
+  "text": "91920c6ac427fb65"
+ }
+}
