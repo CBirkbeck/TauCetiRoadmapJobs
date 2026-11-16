@@ -234523,10 +234523,42 @@
    "reported": "2026-11-16",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18040#issuecomment-6908783390"
+  },
+  {
+   "kind": "gap",
+   "source": "GST2013",
+   "locator": "the proof of Proposition 4.1.1, printed p. 28 (lines 879–880)",
+   "says": "grazing collisions are removed up to a null set of data, with no argument",
+   "should": "justified, for instance by the null set of tangent relative data",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "HardSphereDynamicsAndKineticLimits",
+   "job": "RT-HardSphereDynamicsAndKineticLimits~2b",
+   "board_pr": 18031,
+   "head": "3bffb46",
+   "reported": "2026-11-16",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18031#issuecomment-6909288988"
+  },
+  {
+   "kind": "error",
+   "source": "DengHaniMa2024",
+   "locator": "Proposition 1.2(3), printed p. 4 (lines 186–187)",
+   "says": "the flow maps are diffeomorphisms of the domain minus one null set",
+   "should": "measure-preserving bijections, discontinuous at data colliding exactly at the given time",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "HardSphereDynamicsAndKineticLimits",
+   "job": "RT-HardSphereDynamicsAndKineticLimits~2b",
+   "board_pr": 18031,
+   "head": "3bffb46",
+   "reported": "2026-11-16",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18031#issuecomment-6909288988"
   }
  ],
- "scanned_to": "2026-11-16T06:29:52Z",
- "updated": "2026-11-16T06:30:53Z",
+ "scanned_to": "2026-11-16T06:35:07Z",
+ "updated": "2026-11-16T06:38:10Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
