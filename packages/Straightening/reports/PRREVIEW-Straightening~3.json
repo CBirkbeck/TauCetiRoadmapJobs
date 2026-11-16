@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-Straightening~3",
+  "head": "a6d792879dcbf10fd3ed0ec1531909b1b704b030",
+  "pr": 2270,
+  "folder": "InfinityCategoryTheory/Straightening",
+  "date": "2026-11-16",
+  "findings": 9,
+  "blocking": 3,
+  "notes": "Full review. Gate fails (build=7, imports=3: three TauCeti modules absent at pin 2fd255d); every other gate check 0; depcheck 0 problems. Previous findings: R01-R04 not repaired, R05-R08 and R10 repaired, R09 partly. Seeded sample of 15 targets verified against HTT and Nikolaus-Scholze texts; 73 locators matched (HTT 58, NS 8, HA 5, Liu-Zheng 2). About 700 cross-Part and 290 internal section ids resolved (one wrong supplier section, two wrong internal ids). A copy of Suggested.lean without the three imports and Layer 3 elaborates at the pin with sorry the only warning; #check of its seven declarations agrees with the README; one-tactic probes close none. Ownership overlap with BordismFormalGroups F6.5 and EnhancedDerivedSheaves on main still unresolved in the README (P2). Adversarial table with computed values in the report.",
+  "text": "bc0fd25be0f5b32e"
+ }
+}
