@@ -234619,10 +234619,42 @@
    "reported": "2026-11-16",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18047#issuecomment-6909376787"
+  },
+  {
+   "kind": "gap",
+   "source": "nt26",
+   "locator": "Lemma 3.4(2)–(3), p. 16, and proof of Proposition 3.9, pp. 20–21",
+   "says": "the twisted residual representation is scalar above `p` and applies a finiteness theorem stated for a residually trivial one",
+   "should": "make the twisting character residually trivial at those places and above `v_0`",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "ModularityAndLanglandsExtensionsPartII",
+   "job": "RT-ModularityAndLanglandsExtensionsPartII~2a",
+   "board_pr": 13054,
+   "head": "1d736a3",
+   "reported": "2026-11-16",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13054#issuecomment-6909637676"
+  },
+  {
+   "kind": "misprint",
+   "source": "nt26",
+   "locator": "Lemma 3.4(5), p. 16",
+   "says": "the Hodge–Tate condition is for embeddings of a field `K` not defined there",
+   "should": "`K_1`",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "ModularityAndLanglandsExtensionsPartII",
+   "job": "RT-ModularityAndLanglandsExtensionsPartII~2a",
+   "board_pr": 13054,
+   "head": "1d736a3",
+   "reported": "2026-11-16",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13054#issuecomment-6909637676"
   }
  ],
- "scanned_to": "2026-11-16T06:40:19Z",
- "updated": "2026-11-16T06:52:01Z",
+ "scanned_to": "2026-11-16T06:55:19Z",
+ "updated": "2026-11-16T06:55:36Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
