@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DimerModelsAndLozengeTilings~1",
+  "head": "8ce8e7983a90c79be88b1c18c7c81aaa3edfe1f6",
+  "pr": 2422,
+  "folder": "DimerModelsAndLozengeTilings",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "Four P3 findings: the residue step of 9.1/9.7 has no named supplier; positiveSteps has no API and one Check; the gibbsmeasure reference is missing from sources.toml; the PR description's dependency paragraph contradicts the README. Gate re-run at the head: all checks 0, OK; depcheck 0 problems. Seeded sample of 15 targets verified against aggarwal2023, gorin2021, kenyon2009, kos2006, sheffield2005 and kenyon1997 (38 locators). Suggested.lean elaborates with sorry only; #check of 59 declarations matches the README; one-tactic probe closes 0 of 18. Torus four-determinant formula brute-forced for n1,n2<=3 with signed weights; incomplete-beta/G_w identity of 9.7(a) checked numerically. Overlap: ClassicalErgodicTheory, PointProcesses, Exchangeability, ProbabilisticAndMetricNumberTheory, MathematicalBilliards; no second owner.",
+  "text": "608c8cf248325419"
+ }
+}

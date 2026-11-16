@@ -177,3 +177,20 @@ status = "uncertified"
 accessed = "2026-11-04"
 cited_for = ["4.2, 4.6, 5.4 invariant Gibbs measures form a face of the invariant measures; restated in sheffield2005 Lemma 3.2.2"]
 note = "de Gruyter only; cited by locator alone, no text read; the statements used are restated in open text in sheffield2005 Lemmas 3.2.1-3.2.5"
+
+[[source]]
+id = "gibbsmeasure"
+authors = "Yaël Dillies, Matteo Cipollina"
+title = "GibbsMeasure: a Lean formalisation of specifications and Gibbs measures, file GibbsMeasure/Specification.lean"
+year = 2024
+locator_scheme = "section"
+locator = "GibbsMeasure/Specification.lean at commit fffe01e3a5d783fbe95b629cd34b97d50939b42b: IsConsistent (lines 34-39), Specification (lines 54-63), IsGibbsMeasure and isGibbsMeasure_iff_forall_bind_eq (lines 163-171)"
+url = "https://raw.githubusercontent.com/YaelDillies/gibbs-measure/fffe01e3a5d783fbe95b629cd34b97d50939b42b/GibbsMeasure/Specification.lean"
+fetched_from = "https://raw.githubusercontent.com/YaelDillies/gibbs-measure/fffe01e3a5d783fbe95b629cd34b97d50939b42b/GibbsMeasure/Specification.lean"
+fetched_at = "2026-11-16T02:01:12Z"
+sha256 = "f0c3113f24ef6081cb3418fc40006023611e6bd06a37482a7787591122bb6791"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "the authors' public repository, Apache 2.0 (file header); pinned at the commit in the URL"
+cited_for = ["4.5 the shape of a specification and of its consistency equation; the conditional-expectation form of the Gibbs predicate"]
