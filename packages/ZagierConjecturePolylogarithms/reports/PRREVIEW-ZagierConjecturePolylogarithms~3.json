@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ZagierConjecturePolylogarithms~3",
+  "head": "456456e66c1102ab9485723392eb610be4ab4dcd",
+  "pr": 2454,
+  "folder": "ZagierConjecturePolylogarithms",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Full review. One P3 finding: README lines 3, 20 and 82 cite Polylogarithms §4.4 for three assertions; at its open head bd1c355 that section defines two. Seeded sample (§§1.2, 2.1, 2.4, 3.3, 3.4, 3.9, 3.10, 4.1, 4.2, 4.4, 4.5, 4.7, 4.8, 5.3, 5.9): 61 locators read in the cached texts of GR, G08, M20 and G93, all at the stated pages and lines. Computed: the §2.4 facet identity exactly on three tuples; d^2 = 0 on D31 at three points; the 22-term relation for L3 at five triples; the weight-two tree integral; the degree-eight cancellation of §4.8 (Y/X = -9, X nonzero, so Lemma 7.9 of GR fails as the README says) and the square delta R72 = R62 d on C7(2); period weights and diagonal equations; the calibration at 2+i. Gate: every check 0 with the build; depcheck 259 roadmaps, 2488 edges, 0 problems; lake env lean on Suggested.lean gives two sorry warnings only; one-tactic probes close neither headline. 48 cross-roadmap citations resolved on main or at the open heads; five declared gaps match plan and README. Not verifiable: G93 Theorem 4.5 heading (OCR), G00 and CGR outside the sample, published numbering of GR. For humans: existence for r2 > 0 rests on three proof obligations of README §5.7 that no cited source discharges.",
+  "text": "2c4084653cdbb660",
+  "carried": {
+   "from": "456456e66c1102ab9485723392eb610be4ab4dcd",
+   "head": "e43c93c9286e1fa3be32bf04e2bb26797583f982",
+   "findings": 1,
+   "lines": 6,
+   "folders": [
+    "ZagierConjecturePolylogarithms"
+   ]
+  }
+ }
+}
