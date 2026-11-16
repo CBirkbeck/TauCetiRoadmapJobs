@@ -237291,10 +237291,42 @@
    "reported": "2026-11-16",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13094#issuecomment-6914786337"
+  },
+  {
+   "kind": "error",
+   "source": "B19",
+   "locator": "proof of Proposition 4.4, after (4.8), printed page 84",
+   "says": "the degree-one component of ζ on Ψ equals that of e once the lift has zero degree-one component there",
+   "should": "the product of the degree-zero component of the lift with [e]₁, which vanishes where the class evaluates to 0",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "RealSurfacePeriodIndex",
+   "job": "RT-RealSurfacePeriodIndex~1a",
+   "board_pr": 13094,
+   "head": "2f325ff",
+   "reported": "2026-11-16",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13094#issuecomment-6914857642"
+  },
+  {
+   "kind": "error",
+   "source": "B19",
+   "locator": "Theorem 0.6 (ii), printed page 65",
+   "says": "the criterion includes one nonempty half with an odd number of components of odd Euler characteristic",
+   "should": "dropped, since χ(S(ℝ)) ≡ χ(S(ℂ)) = 12 mod 2 makes that number even",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "RealSurfacePeriodIndex",
+   "job": "RT-RealSurfacePeriodIndex~1a",
+   "board_pr": 13094,
+   "head": "2f325ff",
+   "reported": "2026-11-16",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13094#issuecomment-6914857642"
   }
  ],
- "scanned_to": "2026-11-16T11:11:22Z",
- "updated": "2026-11-16T11:12:12Z",
+ "scanned_to": "2026-11-16T11:14:41Z",
+ "updated": "2026-11-16T11:26:17Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
