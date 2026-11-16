@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GlobalGaloisDeformationsPartII~14",
+  "head": "222567a4ca7f9c5f9fc679371fd218d6c6dfc60b",
+  "pr": 1837,
+  "folder": "GlobalGaloisDeformationsPartII",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since df03de2. Checked: the pull request's title and description sentence by sentence against the head (R01 of the previous review repaired: the description now names both uniform torsion headlines); gate rerun, all checks 0, exit 0; depcheck 234 roadmaps, 2228 edges, 0 problems; Suggested.lean elaborates with sorry at 128:8 and 147:8 as the only warnings; adversarial table of 5 rows with computed values for the statements the description cites (uniformTorsion, uniformTorsion_H1, the 2.9 Checks, 8.5, 10.1/10.3); 4 source locators read (FKP19 Lemma B.1; FKP22 Theorem 7.4, Lemma 3.7, Proposition 9.1); 5 cross-roadmap citations resolved at main and at open heads; the seeded sample lies in untouched text. Remark, no change asked: the citation of PotentialAutomorphyInfrastructurePartII 8.17 resolves through that roadmap's earlier-numbering table to ModularityAndLanglandsExtensions 4.2.",
+  "text": "4b92cf7dd0197031"
+ }
+}
