@@ -428,3 +428,4 @@ MathematicalBilliards
 DimerModelsAndLozengeTilings
 GaussianIsoperimetryAndClusters
 Varifolds
+CompressibleEulerEquations
