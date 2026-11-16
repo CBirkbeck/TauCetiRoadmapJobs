@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GSp4NonregularModularityLifting~4",
+  "head": "449f216bbb58ada716d813bc02dd4074ec5f3395",
+  "pr": 1817,
+  "folder": "GSp4NonregularModularityLifting",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 147 changed lines since 11b3de3. Previous R01 (two owners with AlgebraicModularFormsAndSerreWeightsPartII), R02 and R03 (description) all repaired. Checked: every changed passage against the supplier's sections at its open head (3.1-3.8, 4.1-4.3, 5.2-5.7, 6.1, 6.3, 7.3, 7.6, 8.2, 8.6, 8.7) with computed values in the adversarial table; the LocalGaloisDeformationRings section citations; 12 source locators in changed passages (CG20, P20, Yam14); sampled targets 3.2 and 4.7 (the others untouched); description against the head; gate passes (worker's gate, depcheck re-run 0 problems, lake env lean no output, outside-folder diff empty). Accepted conditional on the 19 declared supplier contracts, unchanged.",
+  "text": "3ee4285d25970ad1"
+ }
+}
