@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DynamicalDegreesOfRationalMaps~3",
+  "head": "2635b0ca6e1a681433e2d0c30325b5560e042276",
+  "pr": 2431,
+  "folder": "DynamicalDegreesOfRationalMaps",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 6 changed lines since 6de2f8c. Previous R01 (Layer 4 dependency list) and R02 (description on README 4.3) both repaired. The Layer 4-6 dependency lists were compared name by name with their sections' Needs lines and all are complete. All 18 library declarations they cite were opened at the pinned Mathlib and Tau Ceti. The description was rechecked against README 1.4 and 4.3. Adversarial rows cover 5.1 (limUnder, Submultiplicative, n = 0 junk), 4.3, 5.3-5.4 and the 6.2 IsEffectiveCartier route. Seeded sample: no target falls in the changed lines; 3 locators spot-checked in the sections they tag. Gate: text checks pass on rerun and the worker's build passed. depcheck: 0 problems, no UPWARD or CYCLE. lake env lean: 18 sorry warnings only. Overlap and source-independence checks are on the changed passages; nothing shared.",
+  "text": "b7f8aef317f34422"
+ }
+}
