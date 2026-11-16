@@ -4609,6 +4609,45 @@
       ]
     },
     {
+      "slug": "classical-discrete-packets",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "Layer 3, §3.15",
+      "needs": "For Sp2n (n ≥ 1) or split SO2n (n ≥ 2) over F and a bounded parameter φ, the members of the tempered packet of φ are square-integrable exactly when φ is discrete, that is, when its standard representation is a sum of pairwise non-isomorphic irreducible orthogonal representations of WD_F (GS, §3.4, p. 12).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:3.7",
+        "LocalLanglandsCorrespondenceForG2:5.1",
+        "LocalLanglandsCorrespondenceForG2:5.2",
+        "LocalLanglandsCorrespondenceForG2:6.1",
+        "LocalLanglandsCorrespondenceForG2:8.2",
+        "LocalLanglandsCorrespondenceForG2:10.2"
+      ]
+    },
+    {
+      "slug": "classical-packets-parabolic-induction",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "Layer 3, §3.15",
+      "needs": "For Sp2n or split SO2n over F, a standard Levi subgroup GL_n1 × ⋯ × GL_nr × G0 and bounded parameters φ_i of GL_ni and φ0 of G0, the tempered packet of ⨁(φ_i ⊕ φ_i∨) ⊕ φ0 is the set of irreducible constituents of the normalized inductions of rec⁻¹(φ1) ⊗ ⋯ ⊗ rec⁻¹(φr) ⊗ τ0, τ0 in the tempered packet of φ0 (for SO2n up to the outer automorphism) (GS, §3.3, p. 11; proof of Theorem 12.3, p. 36).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:3.1",
+        "LocalLanglandsCorrespondenceForG2:3.4",
+        "LocalLanglandsCorrespondenceForG2:3.6",
+        "LocalLanglandsCorrespondenceForG2:5.5",
+        "LocalLanglandsCorrespondenceForG2:9.3",
+        "LocalLanglandsCorrespondenceForG2:10.8"
+      ]
+    },
+    {
+      "slug": "classical-packets-cuspidal-support",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "Layer 3, §3.15",
+      "needs": "For Sp2n (n ≥ 1) or split SO2n (n ≥ 2) over F and a discrete parameter φ = ⨁ ρ_i ⊠ S_ai: (a) if every a_i = 1, every member of its packet is supercuspidal; (b) a member that is a subquotient of the normalized induction of a supercuspidal τ1 ⊗ ⋯ ⊗ τr ⊗ τ0 of a standard Levi subgroup satisfies ⨁(rec(τ_j) ⊕ rec(τ_j)∨) ⊕ λ0 ≅ ⨁_i ⨁_(0≤k<a_i) ρ_i|·|^((a_i−1)/2−k) as representations of W_F, λ0 the restriction of the parameter of τ0 along w ↦ (w, diag(|w|^(1/2), |w|^(−1/2))) (Mœglin; GS, proof of Proposition 6.1, pp. 21–22).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:2.0",
+        "LocalLanglandsCorrespondenceForG2:3.1",
+        "LocalLanglandsCorrespondenceForG2:6.1"
+      ]
+    },
+    {
       "slug": "symplectic-steinberg-generic-parameter",
       "supplier": "ModularityAndLanglandsExtensions",
       "section": "Layer 3, §§3.8, 3.15, 3.17",
@@ -4670,7 +4709,7 @@
       "slug": "pgsp6-pgso8-complex-theta",
       "supplier": "MetaplecticAutomorphicForms",
       "section": "Layer 3, §3.34",
-      "needs": "For the pair PGSp6(C) × PGSO8(C) at a complex place, where the similitude and isometry correspondences coincide, the theta correspondence described on Langlands parameters (Adams–Barbasch), so that the local spin lift of a generic σ at a complex place has the parameter of the triality transform of the parameter of σ and the spin gamma identity holds there (GS, proof of Proposition 4.1(i), p. 19).",
+      "needs": "For the pair PGSp6(C) × PGSO8(C) at a complex place, where the similitude and isometry correspondences coincide, the theta correspondence described on Langlands parameters (Adams–Barbasch): the lift of a generic σ with parameter φ_σ into Spin7(C) has parameter ι ∘ φ_σ into Spin8(C), so every constituent of its pullback along f2 has the SO8(C)-valued parameter s ∘ φ_σ (GS, proof of Proposition 4.1(i), p. 19).",
       "neededBy": [
         "LocalLanglandsCorrespondenceForG2:2.3",
         "LocalLanglandsCorrespondenceForG2:2.4"
@@ -4687,6 +4726,15 @@
       ]
     },
     {
+      "slug": "pgsp6-pgso8-global-generic-theta",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "Layer 6, §§6.13–6.14, with §3.34",
+      "needs": "For a number field k and a cuspidal automorphic representation of PGSp6(A_k) with a nonzero Whittaker coefficient for a nondegenerate character, the global similitude theta lift to split PGSO8 has a nonzero Whittaker coefficient for a nondegenerate character, in particular is nonzero (GS, §4.3, p. 17).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:2.3"
+      ]
+    },
+    {
       "slug": "pgsp6-similitude-rallis",
       "supplier": "MetaplecticAutomorphicForms",
       "section": "Layer 6, §§6.13–6.14",
@@ -4700,7 +4748,7 @@
       "slug": "pgsp6-shahidi-spin-factor",
       "supplier": "AutomorphicLFunctionsAndLocalFactorsPartII",
       "section": "Layer 6 (generalized local factors)",
-      "needs": "Extending gap:ramified-spin-factor of ExceptionalThetaCorrespondencesForG2 (the same Langlands–Shahidi construction from the Heisenberg parabolic of split F4 with Levi GSp6): the gamma and epsilon factors of generic representations of PGSp6(F) for the eight-dimensional spin representation of Spin7, the unramified normalization (the product of the Tate factors of the eight spin characters of the Satake parameter), the quadratic-twist rule, holomorphy of L(s, σ, spin) in Re s > 0 for tempered σ, and the global functional equation for globally generic cuspidal representations of PGSp6 over a number field.",
+      "needs": "Extending gap:ramified-spin-factor of ExceptionalThetaCorrespondencesForG2 (the same Langlands–Shahidi construction from the Heisenberg parabolic of split F4 with Levi GSp6): the gamma and epsilon factors of generic representations of PGSp6(F) for the eight-dimensional spin representation of Spin7, the unramified normalization (the product of the Tate factors of the eight spin characters of the Satake parameter), the quadratic-twist rule, the change-of-character rule γ(s, σ, spin, ψ_a) = |a|^(8(s−1/2)) γ(s, σ, spin, ψ), holomorphy of L(s, σ, spin) in Re s > 0 for tempered σ, and the global functional equation L^S(s, Σ, spin) = ∏_(v∈S) γ(s, Σ_v, spin, Ψ_v) L^S(1 − s, Σ∨, spin) for globally generic cuspidal Σ of PGSp6 over a number field, whose factor at an archimedean place v is the Weil-group gamma factor of s ∘ φ_v, φ_v the Langlands parameter of Σ_v.",
       "neededBy": [
         "LocalLanglandsCorrespondenceForG2:2.4",
         "LocalLanglandsCorrespondenceForG2:6.1"
