@@ -1,0 +1,18 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-HochschildHomologyAndHKR~2",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-HochschildHomologyAndHKR~2",
+   "fix": "FIX-PKG-HochschildHomologyAndHKR~3",
+   "from": "8856b57a31f6c690d639300e55c8ae4d35437ff1",
+   "head": "713ca6ae2d718abb13f2fca1a1eb53a21cf18def",
+   "findings": 1,
+   "lines": 13
+  },
+  "notes": "every finding of `REV-PKG-HochschildHomologyAndHKR~2` (1) was P3 and `FIX-PKG-HochschildHomologyAndHKR~3` repaired them at `713ca6a`, changing 13 lines of the package; no further review round was filed"
+ }
+}
