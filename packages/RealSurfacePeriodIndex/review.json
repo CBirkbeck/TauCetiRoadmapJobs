@@ -1,10 +1,18 @@
 {
-  "review": {
-    "status": "needs_changes",
-    "reviewer": "independent-review-REV-PKG-RealSurfacePeriodIndex~2",
-    "date": "2026-11-10",
-    "findings": 16,
-    "blocking": 12,
-    "notes": "Checked all eight prior findings (seven repaired, F07 partly repaired), the 15 seeded targets, current supplier heads and pinned APIs; original and finite-dimensional repair copies elaborate with eight sorry warnings only. All eight one-tactic padding probes fail; all nine elaborated signatures inspected. Computed adversarial table and source limitations recorded. Dependency check: 236 roadmaps, 2145 edges, 0 problems. Sixteen findings include false proof assertions, native duplication, missing hypotheses, mixed-evaluation scope, open-head ownership and internal ordering defects. Three declared supplier gaps are valid contracts."
-  }
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-RealSurfacePeriodIndex~12",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-RealSurfacePeriodIndex~12",
+   "fix": "FIX-PKG-RealSurfacePeriodIndex~13",
+   "from": "40ff3c23136f2965b807b26a4b3441529280bc6f",
+   "head": "2f325ff815572badacb1119829db648e9de3e342",
+   "findings": 1,
+   "lines": 11
+  },
+  "notes": "every finding of `REV-PKG-RealSurfacePeriodIndex~12` (1) was P3 and `FIX-PKG-RealSurfacePeriodIndex~13` repaired them at `2f325ff`, changing 11 lines of the package; no further review round was filed"
+ }
 }
