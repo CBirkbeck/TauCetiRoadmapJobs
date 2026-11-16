@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MordellLawrenceVenkatesh~5",
+  "head": "9bbc6cbf35c522564621dbca9e64111ed6bd065c",
+  "pr": 1231,
+  "folder": "MordellLawrenceVenkatesh",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "incremental re-review of 27 changed lines since 3756140. Checked: the added section 'Existing formalizations outside Tau Ceti' against the external repository at commit 82a30cb (licence, both theorem statements, directory contents) and its citations of HeightsRationalPointsAndObstructions §§5.10-5.12, 6.4 at that open head; the pull request text; the gate (FAIL: build=1, a deprecation warning at Suggested.lean 59 after the merge of main moved the Mathlib pin; repair tested on a copy); elaboration (4 sorry warnings plus the deprecation); depcheck 0 problems; the pins named in the README and docstring against lake-manifest.json (stale, R02); Tau Ceti at the new pin now proves the plane Schoenflies theorem, so 5.2 is a corollary (R03). The seeded sample falls in no changed passage; no source locator reopened.",
+  "text": "b4ce7916f30f13bf"
+ }
+}
