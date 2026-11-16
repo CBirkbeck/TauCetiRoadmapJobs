@@ -1795,9 +1795,6 @@
       "roadmap:RiemannianGeometry R1",
       "roadmap:RiemannianGeometry R2",
       "roadmap:RiemannianGeometry R4",
-      "roadmap:TangentialBordism §2.3",
-      "gap:sphere-bundle-embedding",
-      "gap:connection-map-jacobi-derivative",
       "target:7.2",
       "target:7.3",
       "target:7.7",
@@ -2418,13 +2415,6 @@
     "R4"
    ],
    "what": "sectional curvature, Jacobi fields, Rauch and Riccati comparison, Cartan-Hadamard"
-  },
-  {
-   "roadmap": "TangentialBordism",
-   "sections": [
-    "§2.3"
-   ],
-   "what": "comparison of sphere-bundle carriers with the literal subsets of the total space; corestriction theorem of gap sphere-bundle-embedding"
   }
  ],
  "consumers": [
@@ -2437,28 +2427,5 @@
    "what": "the cat matrix as a hyperbolic toral automorphism (9.1)"
   }
  ],
- "gaps": [
-  {
-   "slug": "sphere-bundle-embedding",
-   "title": "Smooth corestriction into the unit sphere bundle",
-   "neededBy": [
-    "9.3"
-   ],
-   "detail": "Tau Ceti supplies the unit sphere bundle with its regular-level atlas (TauCeti.sphereBundleChartedSpace), its manifold structure (TauCeti.isManifold_sphereBundle) and the smooth embedding of its inclusion (TauCeti.isSmoothEmbedding_coe_sphereBundle). The geodesic-flow example needs the restricted flow, a smooth map into the total space with values in the sphere bundle, to be smooth into the sphere bundle; no corestriction theorem for this atlas was found at the pins.",
-   "needs": "For the unit sphere bundle of a C^n Riemannian vector bundle with Tau Ceti's regular-level atlas, a C^n map from a C^n manifold into the total space with values in the sphere bundle is C^n into the sphere bundle.",
-   "supplier": "TangentialBordism",
-   "section": "§2.3 (B1.5)"
-  },
-  {
-   "slug": "connection-map-jacobi-derivative",
-   "title": "Connection map and the Jacobi-field derivative of the geodesic flow",
-   "neededBy": [
-    "9.3"
-   ],
-   "detail": "RiemannianGeometry R2 supplies Jacobi fields and variations through geodesics but not the connection map of the Levi-Civita connection, the horizontal-vertical splitting of T(TM), or the identification of the derivative of the geodesic flow with the Jacobi-field map; proposed as RiemannianGeometry, Part II.",
-   "needs": "For a smooth Riemannian manifold with its Levi-Civita connection: the connection map K : T(TM) -> TM as a smooth vector-bundle map over the projection TM -> M, the horizontal-vertical splitting of T_v(TM) identified with T_x M + T_x M by (D pi, K), a smooth vector-bundle isomorphism onto the pull-back of TM + TM, and, for v in TM, xi in T_v(TM) with components (w, w') and t in the domain of the geodesic of v, D(geodesic flow at time t)_v xi = (J(t), D_t J(t)) where J is the Jacobi field along that geodesic with J(0) = w, D_t J(0) = w'.",
-   "supplier": "RiemannianGeometry",
-   "section": "proposed Part II: connection map and Jacobi derivative of the geodesic flow"
-  }
- ]
+ "gaps": []
 }
