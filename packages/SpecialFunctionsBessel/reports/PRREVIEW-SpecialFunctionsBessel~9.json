@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsBessel~9",
+  "head": "cdb084767ab8a1cc95d5eb0531b0d7887aa2ba0a",
+  "pr": 1987,
+  "folder": "SpecialFunctionsBessel",
+  "date": "2026-11-16",
+  "findings": 8,
+  "blocking": 4,
+  "notes": "Full review. Gate at cdb0847 passes (every rule 0); depcheck 253 roadmaps, 2398 edges, 0 problems; Suggested.lean elaborates with 50 sorry warnings and no error; one-tactic probe closes none of the 50 theorems. Seeded sample of 15 targets checked against the DLMF text (46 sections fetched, Release 1.2.8) and by mpmath computation; the six cited books could not be read legally, so their page locators are not verified. Findings: R01 (P1) false Kelvin derivative recurrence in 7.2; R02 (P1) the variation paths of 6.3 exceed the bounds 10.17.15/10.40.12; R03 (P1) 5.4 owns 10.54.4-10.54.5, which need the Legendre function Q_n; R04 (P2) LaguerreJacobi cited by ids F1-F2 and a lemma name its head lacks; R05-R08 (P3) a nonexistent locator 10.55.1, two narrowed sectors, former section numbers cited by roadmaps on main with no mapping, and 10.22.57 excluded for a reason that does not apply. Previous finding (description count of suppliers) repaired. Two DLMF errata recorded.",
+  "text": "bf214f9dd0634bce"
+ }
+}
