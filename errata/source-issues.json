@@ -236459,10 +236459,42 @@
    "reported": "2026-11-16",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18047#issuecomment-6912989776"
+  },
+  {
+   "kind": "gap",
+   "source": "ALRS",
+   "locator": "§3.2, printed page 44",
+   "says": "the disc that still contains the locus p = 0 is a Berkovich space glued from spectra of its interval rings",
+   "should": "treat only the punctured disc that way, those rings not being ℚ_p-algebras",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "RationalAnalyticPrismatization",
+   "job": "RT-RationalAnalyticPrismatization~2a",
+   "board_pr": 18047,
+   "head": "05a6825",
+   "reported": "2026-11-16",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18047#issuecomment-6913013884"
+  },
+  {
+   "kind": "misprint",
+   "source": "ALRS",
+   "locator": "Example 2.7.2, printed page 26",
+   "says": "the source calls a disc of radius one half a †-rational subspace of the unit disc",
+   "should": "take a radius in the value group, such as 1/p",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "RationalAnalyticPrismatization",
+   "job": "RT-RationalAnalyticPrismatization~2a",
+   "board_pr": 18047,
+   "head": "05a6825",
+   "reported": "2026-11-16",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18047#issuecomment-6913013884"
   }
  ],
- "scanned_to": "2026-11-16T09:47:48Z",
- "updated": "2026-11-16T09:47:59Z",
+ "scanned_to": "2026-11-16T09:48:55Z",
+ "updated": "2026-11-16T09:53:04Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
