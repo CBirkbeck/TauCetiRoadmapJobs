@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MotivicStructuresInModuliOfCurves~2",
+  "head": "4143737ee37fdad15fbe2d1686cf2f4ffa227e1c",
+  "pr": 2437,
+  "folder": "MotivicStructuresInModuliOfCurves",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "Full re-review: previous R01-R06 all repaired. Seeded sample of 15 targets checked against clp, bfp, canning-larson, keel, clp-h11, av, gp, petersen-genus-two, gk, cfp (about 60 locators, all correct; 7 source corrections confirmed). Gate all 0 OK; depcheck 254 roadmaps, 2400 edges, 0 problems; Suggested.lean elaborates with sorry as only warning, one-tactic probe fails, carriers (PointedPrestableFamily, infinitesimalAut, Scheme.genus, Skeleton) checked at the pins. Point-count tables recomputed exactly. Four P3 findings: missing cohomological blow-up supplier in 2.6, no Checks for stableMass/IsStableOfGenus, an incomplete unstable-curve dichotomy in 9.5, and the X_{g,n}/X_n notation clash in Layer 6.",
+  "text": "f70b3719b6b99d91"
+ }
+}
