@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TropicalAndBerkovichArithmetic~3",
+  "head": "0390796e2e1bfbf0559b3db3d29516d94ffa1c8a",
+  "pr": 1494,
+  "folder": "TropicalAndBerkovichArithmetic",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 15 changed lines since e9a0ac4. Previous R01 repaired (ClassicalAdicEtaleCohomology 3.1 cited in prose, items found at its open head). New pins equal lake-manifest.json; all 6 cited library paths and 36 backticked library names of the supplier contracts exist at the pins. New provenance section: 10 LeanPool declarations, the CFGraph carrier, toolchain, authors and licences read at commit f8b9b72 and compared with sections 3.1, 3.4, 3.5, 3.9; graph Riemann-Roch recomputed on a point and a 2-banana. Gate passes (worker record, build OK); depcheck 0 problems; Suggested.lean elaborates with sorry the only warning; no outside-folder change; pull request text agrees with the head. Seeded sample: no sampled target falls in the changed passages.",
+  "text": "65ae89498144ed42"
+ }
+}
