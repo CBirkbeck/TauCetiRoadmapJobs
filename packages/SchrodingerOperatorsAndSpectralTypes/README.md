@@ -134,6 +134,9 @@ with bounded real potentials on `ℝ^d`. The following are owned elsewhere and c
   kernel on `σ`-finite standard Borel measure spaces gives a Hilbert–Schmidt operator whose
   Hilbert–Schmidt norm is the `L²` norm of the kernel; 4.3 uses it on `ℝ^d` and does not restate
   it.
+- **Schmidt series.** BanachSpaceTheory B4 states the Schmidt series `T x = Σ_j s_j ⟪e_j, x⟫ f_j` of
+  a compact operator `T` between Hilbert spaces, with `s_n` the approximation numbers of `T`; 1.8 and
+  1.9 use it and do not restate it.
 - **Laplacians of congruence quotients.** CongruenceSpectralGap §0.2 proves, on a torsion-free
   principal congruence cover `Γ(N′)\ℍ` (`N′ ≥ 3`), that `−y²(∂ₓ² + ∂ᵧ²)` is essentially self-adjoint
   on compactly supported smooth functions with the maximal operator as closure, and that the kernel
@@ -345,7 +348,12 @@ with bounded real potentials on `ℝ^d`. The following are owned elsewhere and c
   eigenvalues) in `TauCeti/Analysis/InnerProductSpace/LinearPMap/Eigenbasis.lean`.
 - `ContinuousLinearMap.nuclearENorm` and
   `ContinuousLinearMap.isCompactOperator_of_nuclearENorm_ne_top` in
-  `TauCeti/Analysis/OperatorIdeal/Nuclear/Basic.lean`: trace class means finite nuclear gauge;
+  `TauCeti/Analysis/OperatorIdeal/Nuclear/Basic.lean`: trace class means finite nuclear gauge, and
+  the gauge is by definition the sum in `ℝ≥0∞` of the zero-indexed approximation numbers
+  `ContinuousLinearMap.singularValue` (`ContinuousLinearMap.nuclearENorm_def`);
+  `ContinuousLinearMap.tsum_singularValue_sq_eq_hilbertSchmidtEnergy` in
+  `TauCeti/Analysis/OperatorIdeal/ApproximationNumber/HilbertSchmidt.lean` (for a complete source
+  space and any Hilbert basis `b` of it, `Σ_n a_n(T)² = hilbertSchmidtEnergy T b`, used in 1.8);
   `ContinuousLinearMap.hilbertSchmidtEnergy` (the energy `Σᵢ ‖T bᵢ‖²` in `ℝ≥0∞` of `T` relative to a
   Hilbert basis `b` of its source, an explicit argument) and
   `ContinuousLinearMap.hilbertSchmidtEnergy_indep` (any two Hilbert bases give the same energy) in
@@ -373,32 +381,35 @@ operators). Assumed: `P_A` is the unique real PVM with `⟪f, (z − A)⁻¹ f�
 
 ### From TauCetiRoadmap.OperatorTheory/UnboundedOperators
 
-UO-A01–UO-A02 (unbounded spectral integral; real symbols give self-adjoint operators; every
-self-adjoint `A` is `id[P_A]`), UO-A06 (`supp P_A = σ(A)`), UO-A07 (maximal multiplication
-operators, self-adjoint for real symbols), UO-B03 (strong commutation: for self-adjoint `A` and `C`,
-commuting spectral projections, commuting resolvents and commuting groups `e^{isA}`, `e^{itC}` are
-equivalent; used in 1.7 and 1.9 with `C` an orthogonal projection `Q`, whose group is
-`e^{itQ} = 1 + (e^{it} − 1)Q` and whose spectral projection at `{1}` is `Q`, so that `Q` commutes
-with every `e^{isA}` iff it commutes with every `P_A(B)`), UO-C01 (`λ ∈ σ(A)` iff every
-neighbourhood has nonzero spectral projection), UO-C02 (essential spectrum: its isolated-eigenvalue
-and Fredholm definitions and their equivalence for self-adjoint `A`, unitary invariance, and
-`λ ∉ σ_ess(A)` iff `P_A((λ − ε, λ + ε))` has finite rank for some `ε > 0`), UO-C03 (the reducing
-subspaces `ℋ_pp`, `ℋ_ac`, `ℋ_sc` defined by the types of all vector spectral measures, their
-projections commuting with every `P_A(B)` and preserving `dom A`, the restrictions `A_pp`, `A_ac`,
-`A_sc`, the union formula, `σ(A_pp) = closure σ_p(A)`, and the scalar atomic/continuous split; the
-restrictions are self-adjoint by 1.3 and SA-C19 for arbitrary `ℋ`), UO-D06 (closed semibounded
-forms, the represented self-adjoint operator by its graph characterisation, the real-shift
-self-adjointness criterion, the Friedrichs extension and the square-root domain identification; and,
-from its real unbounded spectral restriction, the complexification `A_ℂ` of a real densely defined
-self-adjoint `A` on a complete real inner-product space `H`, a partial operator on Tau Ceti's
-Hilbert complexification `WithLp 2 (TauCeti.Complexification H)` with domain `ι(dom A) + i•ι(dom A)`
-for the real inclusion `ι`, action `A_ℂ(ι x + i•ι y) = ι(Ax) + i•ι(Ay)`, densely defined, closed and
-self-adjoint, used in 3.8 and 3.9), UO-E01 (graph cores), UO-E04 (Weyl's theorem on compact
-resolvent differences; `V` is `A`-compact when `dom A ⊆ dom V` and `V(A − i)⁻¹` is compact, and a
-symmetric `A`-compact `V` leaves the essential spectrum unchanged), UO-E05 (cores of `−d²/dx²` and
-of the free Laplacian on `ℝ³`), UO-E06 (the free Laplacian on `H²(ℝ³)` and real `V₂ + V_∞` with
-`V₂ ∈ L²(ℝ³)`, `V_∞ ∈ L^∞(ℝ³)`: self-adjointness on `H²(ℝ³)`, the `C_c^∞(ℝ³)` core, relative
-compactness when `V_∞` vanishes at infinity; the three-dimensional case of 4.4 and a Check of 4.2).
+UO-A01–UO-A02 (unbounded spectral integral; its matrix elements `⟪y, f[P]x⟫ = ∫ f dμ_{y,x}` through
+the polarised measure `μ_{y,x}`, with `|μ_{y,x}|(B) ≤ ‖P(B)y‖‖P(B)x‖`, used in 1.8; real symbols
+give self-adjoint operators; every self-adjoint `A` is `id[P_A]`), UO-A06 (`supp P_A = σ(A)`),
+UO-A07 (maximal multiplication operators, self-adjoint for real symbols), UO-B03 (strong
+commutation: for self-adjoint `A` and `C`, commuting spectral projections, commuting resolvents and
+commuting groups `e^{isA}`, `e^{itC}` are equivalent; used in 1.7 and 1.9 with `C` an orthogonal
+projection `Q`, whose group is `e^{itQ} = 1 + (e^{it} − 1)Q` and whose spectral projection at `{1}`
+is `Q`, so that `Q` commutes with every `e^{isA}` iff it commutes with every `P_A(B)`; its route
+identifies the group `e^{isA}` with the bounded integrals `e^{is·}[P_A]`, used in 1.8), UO-C01
+(`λ ∈ σ(A)` iff every neighbourhood has nonzero spectral projection), UO-C02 (essential spectrum:
+its isolated-eigenvalue and Fredholm definitions and their equivalence for self-adjoint `A`, unitary
+invariance, and `λ ∉ σ_ess(A)` iff `P_A((λ − ε, λ + ε))` has finite rank for some `ε > 0`), UO-C03
+(the reducing subspaces `ℋ_pp`, `ℋ_ac`, `ℋ_sc` defined by the types of all vector spectral measures,
+their projections commuting with every `P_A(B)` and preserving `dom A`, the restrictions `A_pp`,
+`A_ac`, `A_sc`, the union formula, `σ(A_pp) = closure σ_p(A)`, and the scalar atomic/continuous
+split; the restrictions are self-adjoint by 1.3 and SA-C19 for arbitrary `ℋ`), UO-D06 (closed
+semibounded forms, the represented self-adjoint operator by its graph characterisation, the
+real-shift self-adjointness criterion, the Friedrichs extension and the square-root domain
+identification; and, from its real unbounded spectral restriction, the complexification `A_ℂ` of a
+real densely defined self-adjoint `A` on a complete real inner-product space `H`, a partial operator
+on Tau Ceti's Hilbert complexification `WithLp 2 (TauCeti.Complexification H)` with domain
+`ι(dom A) + i•ι(dom A)` for the real inclusion `ι`, action `A_ℂ(ι x + i•ι y) = ι(Ax) + i•ι(Ay)`,
+densely defined, closed and self-adjoint, used in 3.8 and 3.9), UO-E01 (graph cores), UO-E04 (Weyl's
+theorem on compact resolvent differences; `V` is `A`-compact when `dom A ⊆ dom V` and `V(A − i)⁻¹`
+is compact, and a symmetric `A`-compact `V` leaves the essential spectrum unchanged), UO-E05 (cores
+of `−d²/dx²` and of the free Laplacian on `ℝ³`), UO-E06 (the free Laplacian on `H²(ℝ³)` and real
+`V₂ + V_∞` with `V₂ ∈ L²(ℝ³)`, `V_∞ ∈ L^∞(ℝ³)`: self-adjointness on `H²(ℝ³)`, the `C_c^∞(ℝ³)` core,
+relative compactness when `V_∞` vanishes at infinity; the three-dimensional case of 4.4 and a Check
+of 4.2).
 
 What OperatorTheory/UnboundedOperators must provide (gap:weyl-criterion): in §3.2 (UO-C02), Weyl's
 criterion as a stated item: for self-adjoint `A` on a complex Hilbert space and real `λ`,
@@ -489,11 +500,22 @@ norm.
 
 ### From TauCetiRoadmap.OperatorTheory/OperatorIdeals and TauCetiRoadmap.FuchsianOrbifolds
 
-OperatorIdeals OI-B29–OI-B36 (nuclear gauge, trace-class family, Hilbert–Schmidt energy, its basis
-independence OI-B35, and norm) and OI-C14 (Hilbert–Schmidt operators are compact, pinned as Tau Ceti
+OperatorIdeals OI-B29–OI-B36 (nuclear gauge `ν(T) = Σ_n a_n(T)`, trace-class family,
+Hilbert–Schmidt energy, its adjoint swap OI-B34 and basis independence OI-B35, and norm), used in
+1.8, 1.9 and 4.3, and OI-C14 (Hilbert–Schmidt operators are compact, pinned as Tau Ceti
 `ContinuousLinearMap.isCompactOperator_of_hilbertSchmidtEnergy_ne_top`), used in 4.3.
 FuchsianOrbifolds Layer 3 (cusp coordinates of a Fuchsian group with a parabolic element), used in
 Checks of Layer 3.10.
+
+### From TauCetiRoadmap.BanachSpaceTheory
+
+B4 (the compact Schmidt series): for a compact `T : H → K` between complete real or complex Hilbert
+spaces, orthonormal families `(e_j)` in `H` and `(f_j)` in `K`, finite or countable, and
+`s_j > 0` nonincreasing (tending to `0` in infinite rank) with `T x = Σ_j s_j ⟪e_j, x⟫ f_j`, the
+series converging in operator norm through its finite truncations, and `s_n = a_n(T)` for the
+zero-padded sequence in OperatorIdeals' zero-based convention, so that `Σ_j s_j` is the nuclear
+gauge of `T`. The `s_j` are the square roots of the nonzero eigenvalues of `T†T` with multiplicity.
+Used in 1.8 (for `V` and `|V|^{1/2}`) and in 1.9 (for the trace-class `C`).
 
 ## How to read the build
 
@@ -848,9 +870,16 @@ SA-E11–SA-E13; UnboundedOperators UO-A01–UO-A02, UO-C02, UO-D06.
   `σ_ess = {0}` (`0` is not isolated), every `μ_n = 0` and no eigenvalue below `0`. The model
   "spectrum minus eigenvalues" gives `σ_ess = ∅` for `0` on `ℓ²`, and then at `c = 1 < +∞` the count
   `#{n : μ_n < 1}` is infinite, which no finite dimension matches.
-- Bounded below is needed: `A = −diag(n)` on `ℓ²` has `σ_ess = ∅` (each `−n` is isolated of
-  multiplicity `1`), and `μ_1 = −∞`, so every `μ_n = −∞` and at `c = 0` the count is infinite, while
-  the eigenspaces below `0` span an infinite-dimensional space.
+- Bounded below is needed: `A = −diag(n)` on `ℓ²`, `n ≥ 1`, has `σ_ess = ∅` (each `−n` is an
+  isolated eigenvalue of multiplicity `1`), and every min–max value is `−∞`: whatever `n − 1`
+  obstacles are given, the span of `n` eigenvectors for eigenvalues below `−K` contains a unit vector
+  orthogonal to them, of form below `−K`. So `μ_n(A)` is not in `ℝ ∪ {+∞}`, and `μ₁` is not the
+  least eigenvalue, since `−1 > −2 > ⋯` has no least element: the eigenvalue description of `μ_n`
+  fails. The counting identity does not detect this: at `c = 0` the count `#{n : μ_n < 0}` and the
+  dimension of the sum of the eigenspaces below `0` are both infinite. What fails there is the
+  finiteness of that sum, which the paragraph above derives from the compactness of
+  `σ(A) ∩ (−∞, c]` for `A ≥ γ`; compared with a natural-number dimension, whose junk value for an
+  infinite-dimensional space is `0` (Mathlib `Module.finrank`), the infinite count gives `∞ ≠ 0`.
 
 ### 1.7 Abstract wave operators
 
@@ -915,24 +944,41 @@ only `m²` enters.
 
 Prove (kato57 line 92–111, Lemma 2.1; rosenblum57 §§3–4):
 
-- for `x` density-bounded with constant `m`, every Hilbert–Schmidt `C` and every Hilbert basis `b`
-  of `ℋ`, `∫_ℝ ‖C e^{−itH} x‖² dt ≤ 2π m² · hilbertSchmidtEnergy C b`, the inequality read in `ℝ≥0∞`
-  (Tau Ceti `ContinuousLinearMap.hilbertSchmidtEnergy`); the right side does not depend on `b` (Tau
-  Ceti `ContinuousLinearMap.hilbertSchmidtEnergy_indep`, OperatorIdeals OI-B35), and `‖C‖²_HS` below
+-  for `x` density-bounded with constant `m`, every Hilbert–Schmidt `C : ℋ → 𝒦` into a Hilbert space
+  `𝒦` and every Hilbert basis `b` of `ℋ`,
+  `∫_ℝ ‖C e^{−itH} x‖² dt ≤ 2π m² · hilbertSchmidtEnergy C b`, the inequality read in `ℝ≥0∞` (Tau
+  Ceti `ContinuousLinearMap.hilbertSchmidtEnergy`); the right side does not depend on `b` (Tau Ceti
+  `ContinuousLinearMap.hilbertSchmidtEnergy_indep`, OperatorIdeals OI-B35), and `‖C‖²_HS` below
   denotes this common value;
 - for a bounded self-adjoint trace-class `V` (`ContinuousLinearMap.nuclearENorm V ≠ ⊤`), the
   operator `|V|^{1/2}` is Hilbert–Schmidt with `hilbertSchmidtEnergy |V|^{1/2} b = nuclearENorm V`
   for every Hilbert basis `b` of `ℋ`.
 
 Route: Parseval for the Fourier transform of `d⟪E(λ)x, C*φ_n⟫/dλ` summed over an orthonormal basis
-of the range of `C` (kato57 line 97–111), each term a scalar `L²` density in `λ`; Mathlib's
-Plancherel theorem is for the kernel `e^{−2πi⟨x, ξ⟩}`, and the substitution `t = 2πτ` turns it into
+`(φ_n)` of the closed range of `C` (kato57 line 97–111), each term a scalar `L²` density in `λ`. The
+matrix elements are spectral integrals: `⟪C*φ_n, e^{−itH} x⟫ = ∫ e^{−itλ} dμ_{C*φ_n, x}(λ)`, since
+the group `e^{−itH}` is the bounded integral of `e^{−itλ}` against `P_H` (UO-B03) and matrix
+elements of spectral integrals are integrals against the polarised measure (UO-A01). The bound
+`|μ_{y,x}|(B) ≤ ‖P_H(B)y‖‖P_H(B)x‖` of UO-A01 makes `μ_{y,x}` absolutely continuous for
+density-bounded `x`, with density `g` satisfying `|g|² ≤ m²·(μ_y.rnDeriv Leb)` almost everywhere, so
+`‖g‖₂² ≤ m²‖y‖²`; summed over `y = C*φ_n` this is `m²` times the Hilbert–Schmidt energy of `C*`,
+which is that of `C` (OI-B34, OI-B35). Mathlib's Plancherel theorem is for the kernel
+`e^{−2πi⟨x, ξ⟩}`, and the substitution `t = 2πτ` turns it into
 `∫ |∫ e^{−itλ} g(λ) dλ|² dt = 2π ‖g‖₂²`, the factor `2π` of the estimate. The square root goes
-through the compact self-adjoint eigenbasis of `V` (SA-C86) and OperatorIdeals OI-B29–OI-B36.
-*Needs:* 1.1, 1.2; SelfAdjointSpectralTheory SA-C86, SA-E26; UnboundedOperators UO-C03;
+through the compact self-adjoint eigenbasis of `V` (SA-C86), in which `|V|^{1/2}` is diagonal with
+entries `|λ_j|^{1/2}`. By BanachSpaceTheory B4 the approximation numbers of `V` and of `|V|^{1/2}`
+are the `|λ_j|` and the `|λ_j|^{1/2}` in nonincreasing order, padded with zeros (the square roots of
+the eigenvalues `λ_j²` of `V†V` and `|λ_j|` of `|V|`), so `nuclearENorm V = Σ_j |λ_j|` (OI-B29,
+`ContinuousLinearMap.nuclearENorm_def`) and
+`hilbertSchmidtEnergy |V|^{1/2} b = Σ_n a_n(|V|^{1/2})² = Σ_j |λ_j|`
+(`ContinuousLinearMap.tsum_singularValue_sq_eq_hilbertSchmidtEnergy`). *Needs:* 1.1, 1.2;
+SelfAdjointSpectralTheory SA-C86, SA-E26; UnboundedOperators UO-A01 (matrix elements of spectral
+integrals through the polarised measure, and its bound), UO-B03 (the group `e^{isH}` as the bounded
+integrals `e^{is·}[P_H]`), UO-C03; BanachSpaceTheory B4 (Schmidt series, with `s_n = a_n`);
 OperatorTheory/OperatorIdeals OI-B29–OI-B36; Tau Ceti `ContinuousLinearMap.hilbertSchmidtEnergy`,
-`ContinuousLinearMap.hilbertSchmidtEnergy_indep`; Mathlib `MeasureTheory.Lp.norm_fourier_eq`
-(Plancherel on `L²`) and `MeasureTheory.Lp.fourierTransformₗᵢ`.
+`ContinuousLinearMap.hilbertSchmidtEnergy_indep`, `ContinuousLinearMap.nuclearENorm_def`,
+`ContinuousLinearMap.tsum_singularValue_sq_eq_hilbertSchmidtEnergy`; Mathlib
+`MeasureTheory.Lp.norm_fourier_eq` (Plancherel on `L²`) and `MeasureTheory.Lp.fourierTransformₗᵢ`.
 
 **Checks.**
 
@@ -956,29 +1002,41 @@ OperatorTheory/OperatorIdeals OI-B29–OI-B36; Tau Ceti `ContinuousLinearMap.hil
 
 ### 1.9 Pearson's theorem and the Kato–Rosenblum theorem
 
-**Pearson's theorem.** Let `H₁`, `H₂` be self-adjoint on `ℋ` and `J` a bounded operator on `ℋ`, and
-suppose there is a trace-class `C` (`ContinuousLinearMap.nuclearENorm C ≠ ⊤`) with
-`⟪H₂ψ, Jφ⟫ − ⟪ψ, J H₁φ⟫ = ⟪ψ, Cφ⟫` for all `ψ ∈ dom H₂` and `φ ∈ dom H₁`, the form sense of
-`C = H₂J − JH₁`. Prove that the strong limits
+**Pearson's theorem.** Let `H₁` be self-adjoint on a Hilbert space `ℋ₁`, `H₂` self-adjoint on a
+Hilbert space `ℋ₂` and `J : ℋ₁ → ℋ₂` bounded, and suppose there is a trace-class `C : ℋ₁ → ℋ₂`
+(`ContinuousLinearMap.nuclearENorm C ≠ ⊤`) with `⟪H₂ψ, Jφ⟫ − ⟪ψ, J H₁φ⟫ = ⟪ψ, Cφ⟫` for all
+`ψ ∈ dom H₂` and `φ ∈ dom H₁`, the form sense of `C = H₂J − JH₁`. Prove that the strong limits
 
     W_±(H₂, H₁; J) := s-lim_{t → ±∞} e^{itH₂} J e^{−itH₁} P_ac(H₁)
 
-exist and satisfy `e^{isH₂} W_±(H₂, H₁; J) = W_±(H₂, H₁; J) e^{isH₁}` for every real `s` (yafaev04
-line 116–122, Definition 1.3, and line 191–198, Theorem 1.8; pearson78; rs3 Theorem XI.7). No
-isometry is asserted. The existence clause, for `x ∈ ℋ_ac(H₁)` (`μ_x ≪ Leb` for the spectral measure
-`P₁` of `H₁`, given through `IsSpectralMeasureOf H₁ P₁`) and with `e^{itHⱼ}` the unitary groups of
-the Conventions, is `pearson_tendsto` in `Suggested.lean`; on `ℋ_ac(H₁)^⊥` the operator `W_±`
+exist, as bounded operators `ℋ₁ → ℋ₂`, and satisfy
+`e^{isH₂} W_±(H₂, H₁; J) = W_±(H₂, H₁; J) e^{isH₁}` for every real `s` (yafaev04 line 116–122,
+Definition 1.3, and line 191–198, Theorem 1.8, stated there with `ℋ₁ = ℋ₂`; pearson78; rs3 Theorem
+XI.7). The identification operator `J` is Kato's device for comparing operators on two spaces
+(yafaev04 line 115, citing Kato's *Scattering theory with two Hilbert spaces*, line 1051). The case
+`ℋ₁ = ℋ₂` gives the general one: on `ℋ₁ ⊕ ℋ₂` the operators `H₁ ⊕ 0`, `0 ⊕ H₂`,
+`(φ₁, φ₂) ↦ (0, Jφ₁)` and `(φ₁, φ₂) ↦ (0, Cφ₁)` satisfy the one-space hypothesis,
+`ℋ_ac(H₁ ⊕ 0) = ℋ_ac(H₁) ⊕ 0`, and the evolved vectors of `(x, 0)` are
+`(0, e^{itH₂} J e^{−itH₁} x)`; the route below does not use `ℋ₁ = ℋ₂` either. No isometry is
+asserted. The existence clause, for `x ∈ ℋ_ac(H₁)` (`μ_x ≪ Leb` for the spectral measure `P₁` of
+`H₁`, given through `IsSpectralMeasureOf H₁ P₁`) and with `e^{itHⱼ}` the unitary groups of the
+Conventions on `ℋⱼ`, is `pearson_tendsto` in `Suggested.lean`; on `ℋ_ac(H₁)^⊥` the operator `W_±`
 vanishes by its factor `P_ac(H₁)`. Route: with `W(t) := e^{itH₂} J e^{−itH₁}`, Duhamel's formula in
 the form sense, `⟪ψ, (W(t) − W(s)) φ⟫ = i ∫_s^t ⟪e^{−iuH₂}ψ, C e^{−iuH₁}φ⟫ du` for `ψ ∈ dom H₂`,
 `φ ∈ dom H₁`, comes from differentiating `u ↦ ⟪e^{−iuH₂}ψ, J e^{−iuH₁}φ⟫` (SA-E26–SA-E29). Pearson's
-argument (pearson78; rs3 Theorem XI.7) combines it with the Schmidt expansion of `C` and Rosenblum's
-lemma 1.8, its only spectral input (yafaev04 line 195–206), to obtain the limit for density-bounded
-`φ`; since `‖W(t)‖ ≤ ‖J‖` and density-bounded vectors are dense in `ℋ_ac(H₁)` (1.8), the limit then
-exists on all of `ℋ_ac(H₁)`. The intertwining relation is the limit of
-`e^{isH₂} W(t) = W(t + s) e^{isH₁}`, as `e^{isH₁}` commutes with `P_ac(H₁)` (UO-C03 gives
-commutation with every `P_{H₁}(B)`, and UnboundedOperators UO-B03, (i)⇒(iii), passes it to the
-group). *Needs:* 1.2, 1.8; SelfAdjointSpectralTheory SA-E26–SA-E29; UnboundedOperators UO-B03,
-UO-C03; Tau Ceti `ContinuousLinearMap.nuclearENorm`.
+argument (pearson78; rs3 Theorem XI.7) combines it with the Schmidt series
+`C = Σ_j s_j ⟪e_j, ·⟫ f_j` of the compact operator `C` (BanachSpaceTheory B4: orthonormal `(e_j)` in
+`ℋ₁`, `(f_j)` in `ℋ₂`, `s_j = a_j(C)`, so that `Σ_j s_j = nuclearENorm C < ∞`; `C` is compact by
+`ContinuousLinearMap.isCompactOperator_of_nuclearENorm_ne_top`) and Rosenblum's lemma 1.8, its only
+spectral input (yafaev04 line 195–206), to obtain the limit for density-bounded `φ`; since
+`‖W(t)‖ ≤ ‖J‖` and density-bounded vectors are dense in `ℋ_ac(H₁)` (1.8), the limit then exists on
+all of `ℋ_ac(H₁)`. The intertwining relation is the limit of `e^{isH₂} W(t) = W(t + s) e^{isH₁}`, as
+`e^{isH₁}` commutes with `P_ac(H₁)` (UO-C03 gives commutation with every `P_{H₁}(B)`, and
+UnboundedOperators UO-B03, (i)⇒(iii), passes it to the group). *Needs:* 1.1, 1.2, 1.8;
+SelfAdjointSpectralTheory SA-E26–SA-E29; UnboundedOperators UO-B03, UO-C03; BanachSpaceTheory B4
+(Schmidt series of a compact operator, with `s_n = a_n`); OperatorTheory/OperatorIdeals OI-B29; Tau
+Ceti `ContinuousLinearMap.nuclearENorm`,
+`ContinuousLinearMap.isCompactOperator_of_nuclearENorm_ne_top`.
 
 **The Kato–Rosenblum theorem.** Let `H₁` be self-adjoint, `V` bounded self-adjoint and trace class,
 and `H₂ = H₁ + V` on `dom H₁` (self-adjoint by SA-C54). When the wave operators of 1.7 exist on
@@ -1000,7 +1058,7 @@ measures of `H₁`, `H₂` and `U₁`, `U₂` their unitary groups: as `t → +�
 existence, completeness and the equality of the absolutely continuous spectra are exactly this, the
 isometry being automatic for limits of unitaries.
 
-Route. (a) `J = 1` and `C = V` satisfy Pearson's hypothesis: `dom H₂ = dom H₁` and
+Route. (a) On `ℋ₁ = ℋ₂ = ℋ`, `J = 1` and `C = V` satisfy Pearson's hypothesis: `dom H₂ = dom H₁` and
 `⟪(H₁ + V)ψ, φ⟫ − ⟪ψ, H₁φ⟫ = ⟪ψ, Vφ⟫` by the symmetry of `H₁` and `V`; so `ℋ_ac(H₁) ⊆ D_±(H₂, H₁)`,
 and with `(H₁, H₂, V)` replaced by `(H₂, H₁, −V)` also `ℋ_ac(H₂) ⊆ D_±(H₁, H₂)`. (b) Each
 `e^{itH₂} e^{−itH₁}` is unitary, so the strong limit `W_±(H₂, H₁)` is isometric on `ℋ_ac(H₁)`, and
@@ -1032,6 +1090,12 @@ SelfAdjointSpectralTheory SA-C54, SA-E26–SA-E29; UnboundedOperators UO-C03.
 - Pearson's limit need not be isometric: `J = 0` satisfies the hypothesis with `C = 0`, and
   `W_±(H₂, H₁; 0) = 0` on the nonzero `ℋ_ac(H₁)` of `H₁ = M_x` on `L²(ℝ)`; isometry in the
   Kato–Rosenblum theorem comes from `J = 1`.
+-  Two different spaces: `ℋ₁ = L²(ℝ)`, `ℋ₂ = L²(ℝ) ⊕ ℂ`, `H₁ = M_x`, `H₂ = M_x ⊕ 5` and `J` the
+  inclusion `φ ↦ (φ, 0)`. For `ψ = (ψ₁, c) ∈ dom H₂`,
+  `⟪H₂ψ, Jφ⟫ − ⟪ψ, JH₁φ⟫ = ⟪xψ₁, φ⟫ − ⟪ψ₁, xφ⟫ = 0`, so `C = 0`, and
+  `e^{itH₂} J e^{−itH₁} x = (e^{itλ} e^{−itλ} x, 0) = Jx` for every `t`: `W_± = J`, an isometry onto
+  `L²(ℝ) ⊕ 0 = ℋ_ac(H₂)` that misses the eigenvector `(0, 1)` of `H₂` for `5`. No operator on a
+  single one of the two spaces plays the role of `J` here.
 - Weak convergence with preserved norms is not convergence: for `H₁ = M_x`, `H₂ = 2M_x` on `L²(ℝ)`
   and `x = 1_{[0,1]}`, `e^{itH₂} e^{−itH₁} x = e^{itx} 1_{[0,1]}` has norm `1`, tends weakly to `0`
   (`⟪x, e^{itx} x⟫ = (e^{it} − 1)/(it) → 0`) and stays at distance `1` from `0`; here
@@ -1050,8 +1114,9 @@ outside this roadmap.
 ### Dependencies
 
 SelfAdjointSpectralTheory Parts B, C, D, E; UnboundedOperators Layers 1 and 3, §2.3 (UO-B03) and
-§4.7; Tau Ceti projection-valued measures, Hilbert–Schmidt and nuclear gauges; Mathlib Lebesgue
-decomposition; OperatorIdeals OI-B29–OI-B36.
+§4.7; Tau Ceti projection-valued measures, Hilbert–Schmidt and nuclear gauges, approximation
+numbers; Mathlib Lebesgue decomposition and Plancherel on `L²`; OperatorIdeals OI-B29–OI-B36;
+BanachSpaceTheory B4 (Schmidt series, in 1.8 and 1.9).
 
 ## Layer 2: Semibounded operators and perturbations
 
@@ -1326,7 +1391,8 @@ by density to `u ∈ H²_loc` paired with compactly supported elements of `H¹`.
 `closure Δ₀ ⊆ Δ_F ⊆ Δ_max = (closure Δ₀)† = closure Δ₀`. (e) The square-root and form
 identifications are UO-D06's for the form `𝔞` on `H¹₀ = H¹`. *Needs:* 3.1–3.5; HilbertModules H6
 (`(closure T)* = T*`); UnboundedOperators UO-D06; ComplexKahlerGeometry K5a; PDE §1.2 (density of
-`C_c^∞` in the zero-boundary space `W^{1,2}_0` on Euclidean open sets).
+`C_c^∞` in the zero-boundary space `W^{1,2}_0` on Euclidean open sets); Mathlib
+`IsRiemannianManifold` (completeness in its extended-metric form, Conventions).
 
 **Checks.**
 
@@ -1581,7 +1647,9 @@ by `0`. It is supported in `{e^{2n} ≤ y ≤ e^{3n}}`, inside the cusp once `e^
 `‖(Δ_X − 1/4 − t²) v_j‖ → 0`. Weyl's criterion in the direction "an orthonormal sequence in `dom A`
 with `‖(A − λ) v_j‖ → 0` forces `λ ∈ σ_ess(A)`" (UnboundedOperators UO-C02, gap:weyl-criterion;
 teschl line 6277–6281, Lemma 6.17, p. 145) then gives `1/4 + t² ∈ σ_ess(Δ_X)`. *Needs:* 3.1, 3.6;
-UnboundedOperators UO-C02 with gap:weyl-criterion.
+UnboundedOperators UO-C02 with gap:weyl-criterion; Tau Ceti `TauCeti.UpperHalfSpace` with its
+hyperbolic metric, `TauCeti.IsLocalRiemannianIsometry`, `TauCeti.Manifold.instRiemannianBundleOpen`
+(the cusp charts).
 
 In `Suggested.lean` this is `Ici_quarter_subset_essentialSpectrum`: for `X` complete and a cusp
 chart `φ : ℍ_a → X`, every real `λ ≥ 1/4` lies in the essential spectrum of the closure of `Δ₀`
@@ -1635,11 +1703,14 @@ AutomorphicSpectralTheory §1.16a treats `Γ₀(N)` in finite-stabilizer orbifol
 ### Dependencies
 
 Layers 1 and 2; DifferentialGeometry Layer 12; RiemannianGeometry R5c (3.8, 3.9) and R7.8;
-Completed/HopfRinow; HilbertModules H6; ComplexKahlerGeometry K5a; PseudodifferentialOperators P1.0;
-SmoothBundlesConnections B2.2; UnboundedOperators UO-C02 (with gap:weyl-criterion), UO-D06 (forms,
-Friedrichs extension, and the complexification of a real self-adjoint operator in 3.8 and 3.9);
-SelfAdjointSpectralTheory SA-C54, SA-C86; Tau Ceti Riemannian volume, Laplace–Beltrami and Green
-identities, Hilbert complexification, compact resolvents and their eigenbases.
+Completed/HopfRinow; HilbertModules H6; ComplexKahlerGeometry K5a; PDE §1.2 (3.6);
+PseudodifferentialOperators P1.0; SmoothBundlesConnections B2.2; UnboundedOperators UO-C02 (with
+gap:weyl-criterion), UO-D06 (forms, Friedrichs extension, and the complexification of a real
+self-adjoint operator in 3.8 and 3.9); SelfAdjointSpectralTheory SA-C54, SA-C86; Tau Ceti Riemannian
+volume, Laplace–Beltrami and Green identities, Hilbert complexification, compact resolvents and
+their eigenbases, the upper half-plane with its hyperbolic metric, local Riemannian isometries and
+restricted metrics on open submanifolds (3.10); Mathlib `LinearPMap` adjoints and closures,
+`IsRiemannianManifold` and compact operators.
 
 ## Layer 4: Schrödinger operators on `L²(ℝ^d)`
 
@@ -1840,8 +1911,8 @@ subinterval. That theorem is not a target.
 
 Layers 1 and 2; QuantumFoundations §8.2; Mathlib Sobolev, Fourier and compact-operator APIs; PDE
 §1.3; UnboundedOperators UO-A07, UO-C02, UO-C03, UO-D06, UO-E04, UO-E06; SelfAdjointSpectralTheory
-SA-C54, SA-E47; OperatorIdeals OI-C14; AutomorphicSpectralTheory §0.8 (Hilbert–Schmidt operators
-from square-integrable kernels, in 4.3); Tau Ceti resolvent identity and Hilbert–Schmidt
+SA-C54, SA-D22, SA-E47; OperatorIdeals OI-C14; AutomorphicSpectralTheory §0.8 (Hilbert–Schmidt
+operators from square-integrable kernels, in 4.3); Tau Ceti resolvent identity and Hilbert–Schmidt
 compactness.
 
 ## Downstream consumers
@@ -1897,16 +1968,16 @@ compactness.
 - `yafaev04`: D. Yafaev, *Lectures on scattering theory*, arXiv math/0403213v1 (2004): Definitions
   1.1–1.3, Theorem 1.4 (Kato–Rosenblum), Theorem 1.8 (Pearson) and Lemma 1.9 (Rosenblum).
 - `rosenblum57`: M. Rosenblum, *Perturbation of the continuous spectrum and unitary equivalence*,
-  Pacific J. Math. 7 (1957): Theorem 1.6.
+  Pacific J. Math. 7 (1957): Theorem 1.6, §§3–4.
 - `hm23`: W. Hide, M. Magee, *Near optimal spectral gaps for hyperbolic surfaces*, Ann. of Math. 198
   (2023), arXiv 2107.05292v3: Introduction, Theorem 1.1, Corollary 1.3.
 - `kps26`: Yu. Karpeshina, L. Parnovski, R. Shterenberg, *Bethe–Sommerfeld conjecture and absolutely
   continuous spectrum of multi-dimensional quasi-periodic Schrödinger operators*, Ann. of Math. 203
   (2026), arXiv 2010.05881v3: (1.1)–(1.6), Theorem 1.1.
 - `lp80`: P. D. Lax, R. S. Phillips, *Scattering theory for automorphic functions*, Bull. AMS 2
-  (1980): §2, Theorem 2.1, Corollary 2.2.
+  (1980): §2, Theorem 2.1, Corollary 2.2, §§4–7.
 - Cited by locator: `pearson78` (D. B. Pearson, *A generalization of the Birman trace theorem*, J.
-  Funct. Anal. 28 (1978), 182–186), `rs1` (§VII.2), `rs2` (Ch. IX, §X.2, Theorem X.12), `rs3`
+  Funct. Anal. 28 (1978), 182–186), `rs1` (§VII.2), `rs2` (Ch. IX, §X.1, §X.2, Theorem X.12), `rs3`
   (§XI.3: the chain rule, Theorems XI.7–XI.8), `kato76` (Ch. V §4.1, Ch. X §4.4), `grigoryan09` (Ch.
   3, 4, 11), `gaffney54`, `chernoff73`, `strichartz83` (Theorem 2.4), `chavel84` (Ch. I),
   `iwaniec02` (Ch. 4, 7, 11), `lp76` (Ch. 1, 8), `cfks87` (Ch. 1).

@@ -163,23 +163,26 @@ theorem minMax_principle {H : Type*} [NormedAddCommGroup H] [InnerProductSpace �
             ℕ∞) := by
   sorry
 
-/-- Pearson's theorem (README §1.9). Let `H₁`, `H₂` be self-adjoint, `J` bounded, and suppose that
-`H₂ J − J H₁ = C` in the form sense on `dom H₂ × dom H₁` for a trace-class `C` (finite nuclear
-gauge). Then for every `x` in the absolutely continuous subspace of `H₁` the vectors
-`e^{itH₂} J e^{−itH₁} x` converge as `t → +∞` and as `t → −∞` (Yafaev, Theorem 1.8; Pearson 1978;
-Reed–Simon III, Theorem XI.7). Here `P₁` is the spectral measure of `H₁` and `U₁`, `U₂` are the
-unitary groups `e^{itH₁}`, `e^{itH₂}`. -/
-theorem pearson_tendsto {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℂ H]
-    [CompleteSpace H] (H₁ H₂ : H →ₗ.[ℂ] H) (h₁ : IsSelfAdjoint H₁) (h₂ : IsSelfAdjoint H₂)
-    (J C : H →L[ℂ] H) (hC : C.nuclearENorm ≠ ⊤)
+/-- Pearson's theorem (README §1.9). Let `H₁` be self-adjoint on a Hilbert space `K₁`, `H₂`
+self-adjoint on a Hilbert space `K₂`, `J : K₁ → K₂` bounded, and suppose that `H₂ J − J H₁ = C`
+in the form sense on `dom H₂ × dom H₁` for a trace-class `C : K₁ → K₂` (finite nuclear gauge).
+Then for every `x` in the absolutely continuous subspace of `H₁` the vectors
+`e^{itH₂} J e^{−itH₁} x` converge in `K₂` as `t → +∞` and as `t → −∞` (Yafaev, Theorem 1.8, for
+`K₁ = K₂`; Pearson 1978; Reed–Simon III, Theorem XI.7). Here `P₁` is the spectral measure of `H₁`
+and `U₁`, `U₂` are the unitary groups `e^{itH₁}` on `K₁` and `e^{itH₂}` on `K₂`. -/
+theorem pearson_tendsto {K₁ K₂ : Type*} [NormedAddCommGroup K₁] [InnerProductSpace ℂ K₁]
+    [CompleteSpace K₁] [NormedAddCommGroup K₂] [InnerProductSpace ℂ K₂] [CompleteSpace K₂]
+    (H₁ : K₁ →ₗ.[ℂ] K₁) (H₂ : K₂ →ₗ.[ℂ] K₂) (h₁ : IsSelfAdjoint H₁) (h₂ : IsSelfAdjoint H₂)
+    (J C : K₁ →L[ℂ] K₂) (hC : C.nuclearENorm ≠ ⊤)
     (hJC : ∀ (ψ : H₂.domain) (φ : H₁.domain),
-      ⟪H₂ ψ, J φ⟫_ℂ - ⟪(ψ : H), J (H₁ φ)⟫_ℂ = ⟪(ψ : H), C φ⟫_ℂ)
-    (P₁ : TauCeti.ProjValMeasure ℝ H) (hP₁ : IsSpectralMeasureOf H₁ P₁)
-    (U₁ U₂ : TauCeti.Semigroups.StronglyContinuousGroup H) (hU₁ : U₁.IsUnitary)
+      ⟪H₂ ψ, J φ⟫_ℂ - ⟪(ψ : K₂), J (H₁ φ)⟫_ℂ = ⟪(ψ : K₂), C φ⟫_ℂ)
+    (P₁ : TauCeti.ProjValMeasure ℝ K₁) (hP₁ : IsSpectralMeasureOf H₁ P₁)
+    (U₁ : TauCeti.Semigroups.StronglyContinuousGroup K₁)
+    (U₂ : TauCeti.Semigroups.StronglyContinuousGroup K₂) (hU₁ : U₁.IsUnitary)
     (hU₂ : U₂.IsUnitary) (hgen₁ : U₁.complexGenerator hU₁ = Complex.I • H₁)
-    (hgen₂ : U₂.complexGenerator hU₂ = Complex.I • H₂) (x : H) (hx : P₁.diag x ≪ volume) :
-    (∃ y : H, Tendsto (fun t : ℝ => U₂ t (J (U₁ (-t) x))) atTop (𝓝 y)) ∧
-      ∃ y : H, Tendsto (fun t : ℝ => U₂ t (J (U₁ (-t) x))) atBot (𝓝 y) := by
+    (hgen₂ : U₂.complexGenerator hU₂ = Complex.I • H₂) (x : K₁) (hx : P₁.diag x ≪ volume) :
+    (∃ y : K₂, Tendsto (fun t : ℝ => U₂ t (J (U₁ (-t) x))) atTop (𝓝 y)) ∧
+      ∃ y : K₂, Tendsto (fun t : ℝ => U₂ t (J (U₁ (-t) x))) atBot (𝓝 y) := by
   sorry
 
 /-- The Kato–Rosenblum theorem (README §1.9). Let `A` be self-adjoint and `V` bounded,
