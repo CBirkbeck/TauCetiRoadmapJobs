@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HodgeClassesForJacquetLanglands~2",
+  "head": "e9118f6166794de0597c82731100987fa7ae7ee8",
+  "pr": 2436,
+  "folder": "HodgeClassesForJacquetLanglands",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 12 changed lines since 11238e8. All four previous findings are repaired: the R01 and R02 IP23 §12.2 page locators, the R03 weight-two theorem now requiring Q(pi) = Q in the description, and the R04 Hodge-star relation restricted to wedge-2 in dimension four. The changed locators were checked against the IP23 page markers: §12.2.2 pp. 94-96; §12.2.3 and Prop. 12.2 p. 96; §12.2.4 pp. 96-97; §§12.2.6 and 12.2.10 p. 97; Theorem 1 hypotheses p. 4. Sampled targets 5.4 and 7.1 fall in the change and were checked. The description was read against this head. Gate: all checks pass; depcheck 251 roadmaps, 2394 edges, 0 problems. Elaboration: three sorry warnings only; #check @ on all four declarations shows no lost binders. Supplier sections cited by the changed passages resolve. Overlap check and source independence cover the changed passages only.",
+  "text": "b5425f4092334e13"
+ }
+}
