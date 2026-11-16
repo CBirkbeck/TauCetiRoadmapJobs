@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticLocallySymmetricSpacesPartII~3",
+  "head": "568b4e2614dfdf3fca026d0efb3b942d72c9a8d8",
+  "pr": 2401,
+  "folder": "ArithmeticLocallySymmetricSpacesPartII",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "Full review of the same head the previous review accepted (it listed no finding). R01 (P2): the cohomological comparison at the non-neat level SL2(O_F) used by section 5.5 is cited to fgt10 section 3.3 only, while ArithmeticLocallySymmetricSpaces ALS.5b.5 and section 4.1 assume neat level. R02 (P3): section 3.4 passes from CompletedCohomologyPartII's Ore rank over Z_p[[G]] to the skew rank over A without the step or the gap:skew-rank Needs entry. Checked: all 15 sampled targets and every other source locator against fu24, fgt10, marshall12, aw13, aw14, serre77 (50 source mentions); 36 library declarations at the pins; 63 cross-roadmap section ids in 12 roadmaps; gate passes; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with only the two sorry warnings; one-tactic probe closes nothing; pull-request text agrees with the head; both declared gaps precise and declared in the README.",
+  "text": "7ad45418ed6d9e25"
+ }
+}
