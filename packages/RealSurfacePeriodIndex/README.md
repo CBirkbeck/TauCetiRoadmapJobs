@@ -18,8 +18,8 @@ The following material has other owners and is consumed through their interfaces
 - **Brauer groups of schemes and fields.** Brauer groups of schemes with `brauer_field`, the Kummer sequence, Hilbert 90 and Tsen's theorem for one-variable function fields are SchemeAndStackFoundations §§2.11, 2.16 and 2.22; Brauer residues, purity and residues of pullbacks are HeightsRationalPointsAndObstructions §2.16b; the corestriction of Brauer classes along a finite locally free morphism, with cor ∘ res equal to multiplication by the degree, is HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`), applied here to Spec L → Spec K for finite field extensions L/K. The index of a central simple algebra and a splitting field of that degree are Tau Ceti's `TauCeti.Algebra.index` and `TauCeti.Algebra.exists_isSplittingField_finrank_eq_index`; the index through maximal subfields is SemisimpleAlgebras Layer 6. The coniveau spectral sequence of étale cohomology with supports is PurityForFlatCohomology §8.4 and Gabber's absolute purity is LefschetzPencilsAndVanishingCycles §0.10; together they give the residue complex and purity of a two-dimensional excellent regular local ring used in §1.7. Reflexive hulls are SchemeAndStackFoundations §0.6, and freeness of reflexive modules over regular local rings of dimension at most two is Tau Ceti's `TauCeti.IsRegularLocalRing.free_of_isReflexive`.
 - **General geometry.** Principalization, SNC compactification and resolution are ResolutionOfSingularitiesCharacteristicZero §§5.1, 6.2 and 7.8; projective bundles and ample powers are AlgebraicModuliForArithmeticGeometry §§1.1 and 1.4; the remaining scheme theory (relative Spec, depth, Noetherian approximation, Leray, quasi-coherent and Serre duality, Picard groups, formal functions, blow-ups, Bertini, SNC divisors, projective bundles, intersection numbers on surfaces) is SchemeAndStackFoundations by section; blow-ups of surfaces are StableReduction Layer 4; miracle flatness is ModularCurves 4D; purity of the branch locus is PurityOfBranchLocus §2.3.
 - **Complex geometry.** Ehresmann's theorem, Gauss–Manin connections, relative Hodge bundles, Riemann existence and the Artin comparison over ℂ are ComplexComparisonPartII §§C5.2, C5.3, C6.2 and C6.3; the carrier of variations of Hodge structure is ShimuraData §3.1; integral weak Lefschetz and the cohomological dimension of affine varieties are AffineMorseLefschetz §§A5 and A3; singular cohomology with products and duality is AlgebraicTopology Stage 6.
-- **Quadratic forms and real algebra.** Square classes, diagonal calculus, hyperbolic planes, Witt theory, quaternion algebras, the Witt ring and the Brauer-valued invariants are QuadraticFormInvariants Layers 0, 1, 2, 4 and 5. The signature over an ordered field (inertia indices, isometry invariance, additivity and multiplicativity, Sylvester's law over real closed fields) is Mathlib's `sigPos` and `sigNeg` with Tau Ceti's `TauCeti.RegularFormClass.signature`; this roadmap adds only its dependence on a varying ordering (§0.4). Real closures of ordered fields and the extension of preorderings to orderings are Tau Ceti's `TauCeti.RealClosure.exists_realClosure` and `Subsemiring.IsPreordering.exists_le_isOrdering`, the formal form of RealAlgebraicGeometry Layer 1, which also supplies the algebraic closedness of R(√−1) for real closed R.
-- **Enriques surfaces and Puiseux series.** The Enriques condition (a smooth proper geometrically connected surface with numerically trivial canonical bundle and χ(O) = 1, stable under field extension) is WeilConjectures WC.7; the characteristic-zero invariants of Enriques surfaces are EnriquesSurfaces §§1.1, 1.3 and 1.4; the Puiseux field and its ramified levels are FormalLaurentPuiseux L4 (`puiseuxField`, `ramifiedEmbedding`), and its algebraic closedness over an algebraically closed field of characteristic zero is FormalLaurentPuiseux L5 (`puiseuxField_isAlgClosed`); only its order and its real closedness are planned here (§9.11).
+- **Quadratic forms and real algebra.** Square classes, diagonal calculus, hyperbolic planes, Witt theory, quaternion algebras, the Witt ring and the Brauer-valued invariants are QuadraticFormInvariants Layers 0, 1, 2, 4 and 5. The signature over an ordered field (inertia indices, isometry invariance, additivity and multiplicativity, Sylvester's law over real closed fields) is Mathlib's `sigPos` and `sigNeg` with Tau Ceti's `TauCeti.RegularFormClass.signature`; this roadmap adds only its dependence on a varying ordering (§0.4). Real closures of ordered fields, the extension of preorderings to orderings and the algebraic closedness of R(√−1) for real closed R are Tau Ceti's `TauCeti.RealClosure.exists_realClosure`, `Subsemiring.IsPreordering.exists_le_isOrdering` and `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`, the formal form of RealAlgebraicGeometry Layer 1; the converse criterion, that a field in which −1 is not a square is real closed once adjoining √−1 gives an algebraically closed field, is Tau Ceti's `TauCeti.RealClosure.isRealClosed_of_isAlgClosed_adjoin`.
+- **Enriques surfaces and Puiseux series.** The Enriques condition (a smooth proper geometrically connected surface with numerically trivial canonical bundle and χ(O) = 1, stable under field extension) is WeilConjectures WC.7; the characteristic-zero invariants of Enriques surfaces are EnriquesSurfaces §§1.1, 1.3 and 1.4; the Puiseux field and its ramified levels are FormalLaurentPuiseux L4 (`puiseuxField`, `ramifiedEmbedding`), and its algebraic closedness over an algebraically closed field of characteristic zero is FormalLaurentPuiseux L5 (`puiseuxField_isAlgClosed`), consumed in their Tau Ceti form `TauCeti.puiseuxField`, `LaurentSeries.ramifiedEmbedding` and `TauCeti.puiseuxField.instIsAlgClosed`; only its order and its real closedness are planned here (§9.11).
 
 The avoided set Ψ ⊃ Θ is allowed to contain components where the class evaluates to 0, and the printed computation of the source omits the factor [α̃]₀ in the boundary component on Ψ (§5.4, source correction E3). For a given double cover, the source's Propositions 4.4 and 4.5 are replaced by exact criteria under their own hypotheses: the topological obstruction vanishes if and only if the corrected term ([α̃]₀ ∪ cl_R(L(R)))|_Ψ is the restriction to Ψ of the degree-one real component [ξ]₁ of a class ξ ∈ H²_G(S(ℂ), ℤ(1)) (§5.5), and the integral pushforward adjustment exists if and only if that term is the Borel–Haefliger class of a line bundle (§5.8). Both hold when the evaluation is constant on Ψ or cl_R(L(R)) vanishes on Ψ, and the first fails for a cover of a real Enriques surface with mixed evaluation (§5.5), so the unconditional form of Proposition 4.4 is false and is not planned. The source's Proposition 6.6, which constructs the cover, is planned in its stated generality (§6.13): taking the auxiliary ample bundle of §4.9 to be a square makes cl_R(L(R)) = 0. The Tsen–Lang theory of §0.7 has this roadmap as its single owner; QuadraticFormInvariantsPartII, later in the merge order, imports it for its Layer 5. Lang's conjecture (function fields of i-dimensional real varieties without real points are C_i) and Pfister's conjecture (u ≤ 2^i in transcendence degree i) are the context of Theorems 0.10 and 0.12 and are not used; Lieblich's bound ind | per² over finite fields (the source's Theorem 0.2) is background.
 
@@ -47,7 +47,7 @@ Mathlib at the pin of the content repository's lake manifest; file and line loca
 - Quadratic forms: `QuadraticMap.Anisotropic` (LinearAlgebra/QuadraticForm/Basic.lean:1054), `QuadraticForm.baseChange` (LinearAlgebra/QuadraticForm/TensorProduct.lean:128, which assumes 2 invertible in the base ring), the diagonalisation `QuadraticForm.equivalent_weightedSumSquares_units_of_nondegenerate'` (LinearAlgebra/QuadraticForm/IsometryEquiv.lean:177) and Sylvester's law over ℝ `QuadraticForm.equivalent_signType_weighted_sum_squared` (LinearAlgebra/QuadraticForm/Real.lean:78); `CliffordAlgebra.even`.
 - `QuadraticAlgebra` and `QuadraticAlgebra.basis` (Algebra/QuadraticAlgebra/Defs.lean:44, 387), with `QuadraticAlgebra.finrank_eq_two` (same file, line 405: over a ring with the strong rank condition, `QuadraticAlgebra` R a b has `Module.finrank` 2, being free on the basis 1, i) and `QuadraticAlgebra.discr_def` (Algebra/QuadraticAlgebra/Discriminant.lean:54: the discriminant of `QuadraticAlgebra` R a b, in which i² = a + b·i, is b² + 4a, so `QuadraticAlgebra` O b 0, where z² = b, has discriminant 4b), used for the local model of the finite double cover.
 - `ModuleCat.matrixEquivalence` (RingTheory/Morita/Matrix.lean:187): for a ring R and a nonempty finite index type, R-modules and modules over the matrix ring over R are equivalent categories (Morita), used to compute commutants of Azumaya algebras in §1.6.
-- Field theory: `Algebra.trdeg` (RingTheory/AlgebraicIndependent/Basic.lean:45, a cardinal), `Algebra.EssFiniteType` (RingTheory/EssentialFiniteness.lean:40), `Algebra.IsAlgebraic`, `RatFunc`, `PowerSeries`, `HahnSeries`, `HenselianLocalRing`, `IsDiscreteValuationRing`, `IsLocalRing.maximalIdeal`, `MvPolynomial.IsHomogeneous`, and Krull's height theorem `Ideal.height_le_spanFinrank` (RingTheory/Ideal/KrullsHeightTheorem.lean:282).
+- Field theory: `Algebra.trdeg` (RingTheory/AlgebraicIndependent/Basic.lean:45, a cardinal), `Algebra.EssFiniteType` (RingTheory/EssentialFiniteness.lean:40), `Algebra.IsQuadraticExtension` (LinearAlgebra/Dimension/StrongRankCondition.lean:666: S is a free R-module of rank 2), `Algebra.IsAlgebraic`, `RatFunc`, `PowerSeries`, `HahnSeries`, `HenselianLocalRing`, `IsDiscreteValuationRing`, `IsLocalRing.maximalIdeal`, `MvPolynomial.IsHomogeneous`, and Krull's height theorem `Ideal.height_le_spanFinrank` (RingTheory/Ideal/KrullsHeightTheorem.lean:282).
 - Topology and schemes: `TopologicalSpace.generateFrom`, `isCompact_univ_pi` (Topology/Compactness/Compact.lean:1172), `IsClosed`, `AlgebraicGeometry.Scheme`, `AlgebraicGeometry.Scheme.isBasis_affineOpens` (AlgebraicGeometry/AffineScheme.lean:303: the affine opens of a scheme form a basis of its topology), `AlgebraicGeometry.Scheme.functionField`, `Equiv.Perm.sign`, `ENat`, `TensorProduct`; `Module.finrank` and `Metric.ball` (finite-dimensional real vector spaces and their balls, §2.6).
 
 Mathlib has no Brauer group of a scheme, no equivariant Betti cohomology of real varieties, no cycle class maps and no variations of Hodge structure at the pin; these come from the roadmaps below.
@@ -68,6 +68,8 @@ Tau Ceti at the pin of the content repository's lake manifest; file and line loc
 - `TauCeti.hyperbolicPlane` (LinearAlgebra/QuadraticForm/Hyperbolic.lean:76) and `QuadraticForm.not_anisotropic_baseChange` (LinearAlgebra/QuadraticForm/BaseChange.lean:389).
 - Signature over a field with `LinearOrder` and `IsStrictOrderedRing`: `TauCeti.RegularFormClass.signature` (LinearAlgebra/QuadraticForm/RegularFormClass/Signature.lean:52) on isometry classes of nondegenerate forms, with `TauCeti.signature_formClass` (line 66: the signature of the class of a nondegenerate form is `sigPos − sigNeg`, for 2 invertible), `TauCeti.RegularFormClass.signatureHom` (line 140: a semiring homomorphism to ℤ, so additive under orthogonal sums and multiplicative under tensor products), `TauCeti.RegularFormClass.signature_hyperbolicClass` (line 111: the hyperbolic plane has signature 0), and Sylvester's law over an ordered real closed field `TauCeti.RegularFormClass.eq_iff_rank_eq_and_signature_eq` (LinearAlgebra/QuadraticForm/Witt/Signature.lean:133).
 - Orderings and real closures: `Subsemiring.IsPreordering.exists_le_isOrdering` (Algebra/Order/Ring/Ordering/Extension.lean:62: a preordering of a field lies in an ordering), `Subsemiring.IsOrdering.comap` (Algebra/Order/Ring/Ordering/Map.lean:64: orderings restrict along ring maps), `Subsemiring.IsOrdering.strictMono_comap` and `Subsemiring.IsOrdering.strictMono_iff_nonneg_iff_mem_comap` (same file, lines 105 and 85: for an ordering Q of a field L and a field embedding ι : F → L, ι is strictly monotone from the cone order of ι⁻¹(Q) to the cone order of Q, and an embedding from a linearly ordered field is strictly monotone for the cone order of Q exactly when ι⁻¹(Q) is its nonnegative cone), and `TauCeti.RealClosure.exists_realClosure` (FieldTheory/RealClosure/Basic.lean:120: a strictly ordered field K has a real closed, strictly ordered extension in the universe of K, algebraic over K, with a strictly monotone embedding).
+- Quadratic extensions of real closed fields: `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension` (FieldTheory/RealClosure/QuadraticExtension.lean:63: if R is real closed and K/R is a quadratic extension, in the sense of Mathlib's `Algebra.IsQuadraticExtension`, then K is algebraically closed) and `TauCeti.RealClosure.isRealClosed_of_isAlgClosed_adjoin` (same file, line 144: if −1 is not a square in a field R, and i is an element of a field extension of R with i² = −1 such that R(i) is algebraically closed, then R is real closed).
+- The Puiseux field: `TauCeti.puiseuxField` (RingTheory/LaurentSeries/Puiseux/Basic.lean:70: for any field K, the intermediate field of `HahnSeries` ℚ K over K formed by the series lying in the image of some ramified level), `LaurentSeries.ramifiedEmbedding` (RingTheory/LaurentSeries/Ramified.lean:418: the level-n embedding K((X)) → `HahnSeries` ℚ K, an algebra map sending the coefficient of `X^k` to that of `t^{k/n}`) and `TauCeti.puiseuxField.instIsAlgClosed` (RingTheory/LaurentSeries/Puiseux/AlgClosure.lean:63: for K algebraically closed of characteristic zero, the Puiseux field of K is algebraically closed).
 
 ### From TauCetiRoadmap.SchemeAndStackFoundations
 
@@ -125,7 +127,7 @@ QuadraticFormInvariants Layer 0 (square classes, diagonal calculus and chain equ
 
 ### From TauCetiRoadmap.RealAlgebraicGeometry and TauCetiRoadmap.FormalLaurentPuiseux
 
-RealAlgebraicGeometry Layer 1 (adjoining √−1 to a real closed field gives an algebraically closed field; its real closures and preordering extension are consumed in their Tau Ceti form, `TauCeti.RealClosure.exists_realClosure` and `Subsemiring.IsPreordering.exists_le_isOrdering`). FormalLaurentPuiseux L4 (`puiseuxField K`, `ramifiedEmbedding`, the common level of a finite family and the algebraicity of each level) and L5 (for K algebraically closed of characteristic zero, the root theorem and `puiseuxField_isAlgClosed`).
+RealAlgebraicGeometry Layer 1 (adjoining √−1 to a real closed field gives an algebraically closed field, consumed as `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`; its real closures and preordering extension are consumed in their Tau Ceti form, `TauCeti.RealClosure.exists_realClosure` and `Subsemiring.IsPreordering.exists_le_isOrdering`). FormalLaurentPuiseux L4 (`puiseuxField K`, `ramifiedEmbedding`, the common level of a finite family and the algebraicity of each level) and L5 (for K algebraically closed of characteristic zero, the root theorem and `puiseuxField_isAlgClosed`); the field, its levels and its algebraic closedness are consumed in their Tau Ceti form `TauCeti.puiseuxField`, `LaurentSeries.ramifiedEmbedding` and `TauCeti.puiseuxField.instIsAlgClosed`.
 
 ### From TauCetiRoadmap.StableReduction, TauCetiRoadmap.ModularCurves and TauCetiRoadmap.PurityOfBranchLocus
 
@@ -207,7 +209,7 @@ A construction can proceed as follows.
 
 1. Existence: give F the cone order of P (§0.1: `LinearOrder.ofAddSubmonoid` with `IsOrderedRing.ofSubsemiring`), a strictly ordered field with nonnegative cone P, then apply Tau Ceti's `TauCeti.RealClosure.exists_realClosure`, which gives an algebraic ordered real closure with a strictly monotone embedding.
 2. Strict monotonicity sends P into the nonnegative elements of R, which are the squares of R because R is real closed (`IsRealClosed.isSquare_neg_of_not_isSquare`).
-3. Brauer groups restrict along ι by `TauCeti.BrauerGroup.baseChange`; for real closed R, Br(R) has two elements, the trivial class and the quaternion class (−1,−1), because R(i) is algebraically closed and Br(R(i)/R) ≅ Rˣ/(R(i)ˣ norms) = `Rˣ/R_{>0}`.
+3. Brauer groups restrict along ι by `TauCeti.BrauerGroup.baseChange`; for real closed R, Br(R) has two elements, the trivial class and the quaternion class (−1,−1), because R(i) is algebraically closed (Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`) and Br(R(i)/R) ≅ Rˣ/(R(i)ˣ norms) = `Rˣ/R_{>0}`.
 
 The definition has the following API.
 
@@ -228,7 +230,7 @@ The definition has the following API.
 - The real algebraic numbers with the inclusion form a real closure of ℚ at its unique ordering.
 - ℂ with an embedding of ℝ is not a real closure: it is not real closed.
 
-*Needs:* §0.1; Mathlib `IsRealClosed`; Mathlib `IsRealClosed.isSquare_neg_of_not_isSquare`; Mathlib `Algebra.IsAlgebraic`; Mathlib `LinearOrder.ofAddSubmonoid`; Mathlib `IsOrderedRing.ofSubsemiring`; Tau Ceti `Subsemiring.IsOrdering.strictMono_comap`; Tau Ceti `TauCeti.RealClosure.exists_realClosure`; Tau Ceti `TauCeti.BrauerGroup.baseChange`; Tau Ceti `TauCeti.Quaternion.brauerGroupMulEquiv`.
+*Needs:* §0.1; Mathlib `IsRealClosed`; Mathlib `IsRealClosed.isSquare_neg_of_not_isSquare`; Mathlib `Algebra.IsAlgebraic`; Mathlib `LinearOrder.ofAddSubmonoid`; Mathlib `IsOrderedRing.ofSubsemiring`; Tau Ceti `Subsemiring.IsOrdering.strictMono_comap`; Tau Ceti `TauCeti.RealClosure.exists_realClosure`; Tau Ceti `TauCeti.BrauerGroup.baseChange`; Tau Ceti `TauCeti.Quaternion.brauerGroupMulEquiv`; Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`.
 
 ### 0.4 Signature of a quadratic form at an ordering
 
@@ -295,9 +297,9 @@ The definition has the following API.
 
 ### 0.6 The Elman–Lam u-invariant
 
-char F = 0. The supremum is taken in ℕ∞; forms with nonzero signature somewhere are not counted.
+char F ≠ 2 (a field of positive characteristic has no orderings, so for it the signature condition is empty). The supremum is taken in ℕ∞; forms with nonzero signature somewhere are not counted.
 
-For a field F of characteristic 0, u(F) ∈ ℕ ∪ {∞} is the supremum of dim q over nondegenerate anisotropic quadratic forms q over F with zero total signature (sign_P(q) = 0 for every P ∈ X_F); the zero form counts with dimension 0. For nonreal F the signature condition is empty and u(F) is the classical maximal dimension of an anisotropic form. By definition u(F) ≤ n iff every nondegenerate form of dimension > n with zero total signature is isotropic. (B19, §0.5, p. 66; EKM, §36, p. 161; BEC05, §2, p. 3)
+For a field F of characteristic ≠ 2, u(F) ∈ ℕ ∪ {∞} is the supremum of dim q over nondegenerate anisotropic quadratic forms q over F with zero total signature (sign_P(q) = 0 for every P ∈ X_F); the zero form counts with dimension 0. For nonreal F the signature condition is empty and u(F) is the classical maximal dimension of an anisotropic form. By definition u(F) ≤ n iff every nondegenerate form of dimension > n with zero total signature is isotropic. (B19, §0.5, p. 66; EKM, §36, p. 161; BEC05, §2, p. 3)
 
 The Lean statements use the predicate `HasZeroTotalSignature q` for a quadratic form q on a finite-dimensional vector space V over a field K in which 2 is invertible: for every real closed field R and every K-algebra structure on R, the base change q_R on R ⊗_K V vanishes on an R-subspace of dimension ½·dim V. Every ordering of K is induced from some real closure (§0.3) and every K-algebra map to a real closed field induces an ordering; over R a nondegenerate form of signature s and dimension n has maximal totally isotropic subspaces of dimension (n − |s|)/2 (Sylvester's law over R, §0.4), so for nondegenerate q the predicate says exactly that sign_P(q) = 0 for every ordering P. For degenerate q it can hold with nonzero signature (⟨1, 0⟩ over ℝ); this is harmless in the u-invariant statements, because in characteristic ≠ 2 a degenerate form is isotropic (a vector v of the radical has 2q(v) = b_q(v, v) = 0). For nonreal K there is no K-algebra map to a real closed field, and the predicate holds for every form.
 
@@ -326,6 +328,7 @@ The definition has the following API.
 - Over ℝ the half-dimensional isotropic-subspace condition holds for ⟨1, −1⟩ (the line x = y) and fails for ⟨1, 1⟩, whose base change to every real closed field is anisotropic; a signature-blind condition such as "q_R is isotropic" would accept ⟨1, 1, −1⟩, of signature 1.
 - Over ℝ(t), the form ⟨1, −t⟩ fails the condition: at a real closure where t < 0 its base change is positive definite, matching sign = 2 at those orderings.
 - Over ℂ(x, y) the condition is empty and holds for ⟨1, x, y, xy⟩, which is anisotropic; this is the classical computation u(ℂ(x, y)) = 4.
+- In odd characteristic the invariant is the classical one: u(𝔽₃) = 2, since ⟨1, 1⟩ is anisotropic (−1 is not a square modulo 3) while every form of dimension 3 over a finite field is isotropic (Chevalley–Warning). A definition restricted to characteristic 0 would leave u(𝔽₃) undefined, although 𝔽₃ satisfies the hypothesis u(𝔽₉) = 2 ≤ 4 of §0.14, whose conclusion u(𝔽₃) ∈ {0, 1, 2, 4, 6} it meets.
 
 *Needs:* §0.4; §0.1; §0.3; Mathlib `QuadraticMap.Anisotropic`; Mathlib `QuadraticForm.baseChange`; Mathlib `IsRealClosed`; Mathlib `ENat`.
 
@@ -368,14 +371,14 @@ If F has transcendence degree 1 over a real closed field, then u(F) ≤ 2. In pa
 
 A proof can proceed as follows.
 
-1. F(√−1) has transcendence degree 1 over the algebraically closed field R(√−1), hence is C₁ by Tsen–Lang (§0.7), so u(F(√−1)) ≤ 2.
+1. F(√−1) has transcendence degree 1 over R(√−1), which is algebraically closed (Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`), hence is C₁ by Tsen–Lang (§0.7), so u(F(√−1)) ≤ 2.
 2. Elman–Lam's comparison of u(F) with u(F(√−1)) for the quadratic extension F(√−1)/F, in the refined form EKM proves, gives u(F) ≤ 2.
 
 **Checks.**
 
 - u(ℝ(t)) ≤ 2, attained by ⟨1, −(1 + t²)⟩.
 
-*Needs:* §0.6; §0.7.
+*Needs:* §0.6; §0.7; Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`.
 
 ### 0.9 Witt's theorem on Brauer classes of real curves
 
@@ -538,7 +541,7 @@ The space of orderings of ℝ is one point and that of ℝ(t) is infinite and co
 
 ### Dependencies
 
-HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`); Mathlib `Algebra.IsAlgebraic`; Mathlib `Algebra.trdeg`; Mathlib `CliffordAlgebra.even`; Mathlib `ENat`; Mathlib `HenselianLocalRing`; Mathlib `Ideal.height_le_spanFinrank`; Mathlib `IsClosed`; Mathlib `IsDiscreteValuationRing`; Mathlib `IsRealClosed.isSquare_neg_of_not_isSquare`; Mathlib `IsRealClosed`; Mathlib `IsSemireal`; Mathlib `MvPolynomial.IsHomogeneous`; Mathlib `QuadraticForm.baseChange`; Mathlib `QuadraticForm.equivalent_signType_weighted_sum_squared`; Mathlib `QuadraticForm.equivalent_weightedSumSquares_units_of_nondegenerate'`; Mathlib `QuadraticMap.Anisotropic`; Mathlib `RatFunc`; Mathlib `Subsemiring.IsOrdering`; Mathlib `Subsemiring.IsPreordering`; Mathlib `Subsemiring.IsPreordering.isPointed`; Mathlib `Subsemiring.IsPointed.nonneg`; Mathlib `Subsemiring.IsSpanning.nonneg`; Mathlib `Subsemiring.IsOrdering.of_isPrime_supportIdeal`; Mathlib `LinearOrder.ofAddSubmonoid`; Mathlib `IsOrderedRing.ofSubsemiring`; Mathlib `IsOrderedRing.toIsStrictOrderedRing`; Mathlib `TopologicalSpace.generateFrom`; Mathlib `isCompact_univ_pi`; Mathlib `sigPos`; Mathlib `sigNeg`; Mathlib `QuadraticMap.Equivalent.sigPos_eq`; Mathlib `QuadraticForm.sigPos_of_equiv_weightedSumSquares`; QuadraticFormInvariants Layer 0; QuadraticFormInvariants Layer 1; QuadraticFormInvariants Layer 2; QuadraticFormInvariants Layer 4; QuadraticFormInvariants Layer 5; SchemeAndStackFoundations §2.16 (`tsen_theorem`); SchemeAndStackFoundations §2.22 (`brauer_field`); SchemeAndStackFoundations §2.22 (`brauer_regular_injectivity`); SemisimpleAlgebras Layer 6; Tau Ceti `Subsemiring.IsOrdering.comap`; Tau Ceti `Subsemiring.IsOrdering.strictMono_comap`; Tau Ceti `Subsemiring.IsPreordering.exists_le_isOrdering`; Tau Ceti `TauCeti.RealClosure.exists_realClosure`; Tau Ceti `TauCeti.RegularFormClass.signature`; Tau Ceti `TauCeti.RegularFormClass.signatureHom`; Tau Ceti `TauCeti.RegularFormClass.signature_hyperbolicClass`; Tau Ceti `TauCeti.signature_formClass`; Tau Ceti `TauCeti.Algebra.exists_isSplittingField_finrank_eq_index`; Tau Ceti `TauCeti.Algebra.index`; Tau Ceti `TauCeti.Algebra.index_dvd_deg`; Tau Ceti `TauCeti.Algebra.deg_baseChange`; Tau Ceti `TauCeti.BrauerGroup.baseChange`; Tau Ceti `TauCeti.BrauerGroup.baseChange_mk`; Tau Ceti `TauCeti.BrauerGroup.exists_eq_mk_centralDivisionRing`; Tau Ceti `TauCeti.Quaternion.brauerGroupMulEquiv`; Tau Ceti `TauCeti.hyperbolicPlane`.
+HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`); Mathlib `Algebra.IsAlgebraic`; Mathlib `Algebra.trdeg`; Mathlib `CliffordAlgebra.even`; Mathlib `ENat`; Mathlib `HenselianLocalRing`; Mathlib `Ideal.height_le_spanFinrank`; Mathlib `IsClosed`; Mathlib `IsDiscreteValuationRing`; Mathlib `IsRealClosed.isSquare_neg_of_not_isSquare`; Mathlib `IsRealClosed`; Mathlib `IsSemireal`; Mathlib `MvPolynomial.IsHomogeneous`; Mathlib `QuadraticForm.baseChange`; Mathlib `QuadraticForm.equivalent_signType_weighted_sum_squared`; Mathlib `QuadraticForm.equivalent_weightedSumSquares_units_of_nondegenerate'`; Mathlib `QuadraticMap.Anisotropic`; Mathlib `RatFunc`; Mathlib `Subsemiring.IsOrdering`; Mathlib `Subsemiring.IsPreordering`; Mathlib `Subsemiring.IsPreordering.isPointed`; Mathlib `Subsemiring.IsPointed.nonneg`; Mathlib `Subsemiring.IsSpanning.nonneg`; Mathlib `Subsemiring.IsOrdering.of_isPrime_supportIdeal`; Mathlib `LinearOrder.ofAddSubmonoid`; Mathlib `IsOrderedRing.ofSubsemiring`; Mathlib `IsOrderedRing.toIsStrictOrderedRing`; Mathlib `TopologicalSpace.generateFrom`; Mathlib `isCompact_univ_pi`; Mathlib `sigPos`; Mathlib `sigNeg`; Mathlib `QuadraticMap.Equivalent.sigPos_eq`; Mathlib `QuadraticForm.sigPos_of_equiv_weightedSumSquares`; QuadraticFormInvariants Layer 0; QuadraticFormInvariants Layer 1; QuadraticFormInvariants Layer 2; QuadraticFormInvariants Layer 4; QuadraticFormInvariants Layer 5; SchemeAndStackFoundations §2.16 (`tsen_theorem`); SchemeAndStackFoundations §2.22 (`brauer_field`); SchemeAndStackFoundations §2.22 (`brauer_regular_injectivity`); SemisimpleAlgebras Layer 6; Tau Ceti `Subsemiring.IsOrdering.comap`; Tau Ceti `Subsemiring.IsOrdering.strictMono_comap`; Tau Ceti `Subsemiring.IsPreordering.exists_le_isOrdering`; Tau Ceti `TauCeti.RealClosure.exists_realClosure`; Tau Ceti `TauCeti.RegularFormClass.signature`; Tau Ceti `TauCeti.RegularFormClass.signatureHom`; Tau Ceti `TauCeti.RegularFormClass.signature_hyperbolicClass`; Tau Ceti `TauCeti.signature_formClass`; Tau Ceti `TauCeti.Algebra.exists_isSplittingField_finrank_eq_index`; Tau Ceti `TauCeti.Algebra.index`; Tau Ceti `TauCeti.Algebra.index_dvd_deg`; Tau Ceti `TauCeti.Algebra.deg_baseChange`; Tau Ceti `TauCeti.BrauerGroup.baseChange`; Tau Ceti `TauCeti.BrauerGroup.baseChange_mk`; Tau Ceti `TauCeti.BrauerGroup.exists_eq_mk_centralDivisionRing`; Tau Ceti `TauCeti.Quaternion.brauerGroupMulEquiv`; Tau Ceti `TauCeti.hyperbolicPlane`; Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`.
 
 ## Layer 1: period, index and real evaluation on real surfaces
 
@@ -659,7 +662,7 @@ Let k ⊂ K be algebraically closed fields, X an integral variety over k and α 
 A proof can proceed as follows.
 
 1. ind(α_K) divides ind(α) and per(α_K) divides per(α) (§0.12).
-2. Let L/K(X_K) be a finite separable splitting field of α_K of degree d = ind(α_K). Spread out: there are a finitely generated k-subalgebra A ⊂ K, a dense open V ⊂ X ×_k Spec A, a finite étale V-scheme W of degree d with function field L, and an Azumaya algebra on V of class α whose pullback to W is split (SchemeAndStackFoundations §0.9).
+2. Let L/K(X_K) be a finite separable splitting field of α_K of degree d = ind(α_K). Spread out: there are a finitely generated k-subalgebra A ⊂ K, a dense open V ⊂ X ×_k Spec A, a finite étale V-scheme W of degree d whose base change along Spec K → Spec A is an integral finite étale cover of the dense open `V_K = V ×_{Spec A} Spec K` of X_K with function field L, and an Azumaya algebra on V, pulled back from one representing α on a dense open of X, whose pullback to W is split (SchemeAndStackFoundations §0.9).
 3. Since k is algebraically closed, k-points of Spec A are dense; for a in a dense open set, V_a is a dense open of X, W_a → V_a is finite étale of degree d, and W_a splits α. Each component of W_a has function field a finite splitting field of degree at most d, so ind(α) ≤ d.
 4. With the first step, ind(α) = ind(α_K). Applied to the multiples mα: mα_K = 0 gives ind(mα) = 1, so mα = 0, and per(α) = per(α_K).
 
@@ -668,6 +671,7 @@ A proof can proceed as follows.
 - For k = K the statement is empty.
 - For ℚ̄ ⊂ ℂ, X = 𝔸² and α = (x, y): per = ind = 2 over ℚ̄(x, y) and over ℂ(x, y), the norm form ⟨1, −x, −y, xy⟩ being anisotropic over both by Springer's theorem at the origin.
 - Algebraic closedness of k is needed: for ℝ ⊂ ℂ and X = Spec ℝ, the quaternion class has index 2 over ℝ and 1 over ℂ.
+- The spread-out cover W of step 2 does not have function field L when k ≠ K, since it is of finite type over k: for ℚ̄ ⊂ ℂ, X = 𝔸², α = (x, y) and L = ℂ(x, y)(√x) one may take A = ℚ̄ and W = Spec ℚ̄[x, y, z, (xy)⁻¹]/(z² − x), whose function field is ℚ̄(x, y)(√x); L is the function field of its base change to ℂ, and specialising at the only point of Spec ℚ̄ gives a splitting field of degree 2 = d, so ind(α) ≤ 2.
 
 *Needs:* §0.12; SchemeAndStackFoundations §0.9.
 
@@ -981,7 +985,7 @@ Let R be a real closed field and F the function field of an integral surface ove
 
 A proof can proceed as follows.
 
-1. If √−1 ∈ F, F is the function field of a connected smooth projective surface over the algebraically closed field R(√−1) (a projective model resolved by ResolutionOfSingularitiesCharacteristicZero §7.8, field resolution), and §2.9 gives ind = per.
+1. If √−1 ∈ F, F is the function field of a connected smooth projective surface over the field R(√−1), algebraically closed by Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension` (a projective model resolved by ResolutionOfSingularitiesCharacteristicZero §7.8, field resolution), and §2.9 gives ind = per.
 2. Otherwise L = F(√−1) is likewise the function field of a connected smooth projective surface over R(√−1); by de Jong, ind(α_L) = per(α_L), which divides n.
 3. Reverse index divisibility (§0.12): ind(α) divides [L : F]·ind(α_L) = 2 ind(α_L), which divides 2n.
 4. Period divides index and both have the same prime divisors (§0.12), so ind(α) ∈ {n, 2n}, and for odd n the factor 2 is excluded.
@@ -991,7 +995,7 @@ A proof can proceed as follows.
 - For Albert's class (x, x) + (y, xy) over ℝ(x, y), the period is 2 and the index is 4 = 2n.
 - Every class of odd period over ℝ(S) has index equal to its period.
 
-*Needs:* §2.9; §0.12; ResolutionOfSingularitiesCharacteristicZero §7.8 (field resolution).
+*Needs:* §2.9; §0.12; ResolutionOfSingularitiesCharacteristicZero §7.8 (field resolution); Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`.
 
 ### Examples
 
@@ -999,7 +1003,7 @@ For S = ℙ² and A = O(1), A² = 1 > −3 = A·K_S and the hypersurface family 
 
 ### Dependencies
 
-Layer 0; Layer 1; AffineMorseLefschetz §A5; AlgebraicModuliForArithmeticGeometry §1.4 (`amplePowersAndFixedTwists`); AlgebraicTopology Stage 6; ComplexComparisonPartII §C5.2 (`GaussManin`); ComplexComparisonPartII §C5.2 (`ehresmannFibration`); ComplexComparisonPartII §C5.3 (`relativeHodgeBundles`); Mathlib `AlgebraicGeometry.Scheme`; Mathlib `Metric.ball`; Mathlib `Module.finrank`; MotivesAndAlgebraicCycles §7.8; ResolutionOfSingularitiesCharacteristicZero §7.8 (field resolution); SchemeAndStackFoundations §2.6; SchemeAndStackFoundations §4.13; SchemeAndStackFoundations §5.10; ShimuraData §3.1 (`Variation`).
+Layer 0; Layer 1; AffineMorseLefschetz §A5; AlgebraicModuliForArithmeticGeometry §1.4 (`amplePowersAndFixedTwists`); AlgebraicTopology Stage 6; ComplexComparisonPartII §C5.2 (`GaussManin`); ComplexComparisonPartII §C5.2 (`ehresmannFibration`); ComplexComparisonPartII §C5.3 (`relativeHodgeBundles`); Mathlib `AlgebraicGeometry.Scheme`; Mathlib `Metric.ball`; Mathlib `Module.finrank`; MotivesAndAlgebraicCycles §7.8; ResolutionOfSingularitiesCharacteristicZero §7.8 (field resolution); SchemeAndStackFoundations §2.6; SchemeAndStackFoundations §4.13; SchemeAndStackFoundations §5.10; ShimuraData §3.1 (`Variation`); Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`.
 
 ## Layer 3: ramified double covers
 
@@ -1625,7 +1629,7 @@ The definition has the following API.
 
 Strong C^∞ topology; 𝒮 compact.
 
-If ι : 𝒮 → Ξ satisfies Assumption 6.1, so does every ι′ close enough to ι in C^∞(𝒮, Ξ) for the strong C^∞ topology. (B19, Lemma 6.2, p. 91)
+Assumption 6.1 is an open condition on the map: an embedding ι : 𝒮 → Ξ satisfying it has a neighbourhood in C^∞(𝒮, Ξ), for the strong (Whitney) C^∞ topology, consisting of embeddings that satisfy it as well. (B19, Lemma 6.2, p. 91)
 
 A proof can proceed as follows.
 
@@ -2572,38 +2576,38 @@ A proof can proceed as follows.
 
 R real closed; f > 0 in K iff the leading coefficient of f is positive in R. `IsRealClosed` is Mathlib's class: semireal, every element or its negative a square, and every polynomial of odd degree has a root.
 
-For a real closed field R let K = `puiseuxField` R ⊂ `HahnSeries` ℚ R be the Puiseux field of FormalLaurentPuiseux L4 (series whose support lies in (1/n)ℤ and is bounded below for some n), ordered by the sign of the leading coefficient. Then K is real closed (`IsRealClosed` K), R ⊂ K is an ordered subfield, t is positive and smaller than every positive element of R, and K(√−1) = `puiseuxField` (R(√−1)). For R = ℝ this is the field K = ⋃_n ℝ((`t^{1/n}`)) of Proposition 0.7, which is non-archimedean. Semialgebraic topology and cohomology over K are those of MotivesAndAlgebraicCycles §7.6a. (B19, §0.4, p. 65; §8.2, p. 107; BCR, Example 15.2.2, p. 392)
+For a real closed field R let K = `TauCeti.puiseuxField` R ⊂ `HahnSeries` ℚ R be the Puiseux field (the series whose support lies in (1/n)ℤ and is bounded below for some n; FormalLaurentPuiseux L4 in its Tau Ceti form), ordered by the sign of the leading coefficient. Then K is real closed (`IsRealClosed` K), R ⊂ K is an ordered subfield, t is positive and smaller than every positive element of R, and K(√−1) = `TauCeti.puiseuxField` (R(√−1)). For R = ℝ this is the field K = ⋃_n ℝ((`t^{1/n}`)) of Proposition 0.7, which is non-archimedean. Semialgebraic topology and cohomology over K are those of MotivesAndAlgebraicCycles §7.6a. (B19, §0.4, p. 65; §8.2, p. 107; BCR, Example 15.2.2, p. 392)
 
 A construction can proceed as follows.
 
 1. The leading-coefficient order is a linear order compatible with addition and multiplication (the leading coefficient of a product is the product of leading coefficients), so K is an ordered field and in particular semireal.
-2. Squares: write f = a t^q (1 + ε) with a ∈ Rˣ, q ∈ ℚ and ε of positive order, all at a single level R((`t^{1/n}`)) (FormalLaurentPuiseux L4). If a > 0 then `f = (√a · t^{q/2} · (1 + ε)^{1/2})²`, the binomial series converging t-adically at level 2n; if a < 0 the same applies to −f.
-3. Odd-degree roots: R(√−1) is algebraically closed of characteristic 0 (RealAlgebraicGeometry Layer 1), so `puiseuxField` (R(√−1)) = K(√−1) is algebraically closed (FormalLaurentPuiseux L5, `puiseuxField_isAlgClosed`). Coefficientwise conjugation is a K-automorphism of order 2; the roots in K(√−1) of an odd-degree f ∈ K[X] are permuted in pairs, so one of them is fixed and lies in K.
+2. Squares: write f = a t^q (1 + ε) with a ∈ Rˣ, q ∈ ℚ and ε of positive order, all at a single level R((`t^{1/n}`)), the image of `LaurentSeries.ramifiedEmbedding` R n (FormalLaurentPuiseux L4). If a > 0 then `f = (√a · t^{q/2} · (1 + ε)^{1/2})²`, the binomial series converging t-adically at level 2n; if a < 0 the same applies to −f.
+3. Odd-degree roots: R(√−1) is algebraically closed of characteristic 0 (Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`, RealAlgebraicGeometry Layer 1), so `TauCeti.puiseuxField` (R(√−1)) = K(√−1) is algebraically closed (Tau Ceti `TauCeti.puiseuxField.instIsAlgClosed`, FormalLaurentPuiseux L5). Coefficientwise conjugation is a K-automorphism of order 2; the roots in K(√−1) of an odd-degree f ∈ K[X] are permuted in pairs, so one of them is fixed and lies in K. Alternatively, steps 2 and 3 can be replaced by one application of `TauCeti.RealClosure.isRealClosed_of_isAlgClosed_adjoin`: −1 is not a square in the ordered field K of step 1, and for i = √−1 in `TauCeti.puiseuxField` (R(√−1)) the field K(i) is the whole of that algebraically closed field (a series splits coefficientwise as g + i·h with g, h in K at the same level).
 4. t − r has leading coefficient −r for r > 0 in R, so 0 < t < r; for R = ℝ, n·t < 1 for every natural n, so K is non-archimedean.
 
 The definition has the following API.
 
-- The leading-coefficient order on `puiseuxField` R, making it a strictly ordered field.
-- `IsRealClosed` (`puiseuxField` R) for every real closed R.
+- The leading-coefficient order on `TauCeti.puiseuxField` R, making it a strictly ordered field.
+- `IsRealClosed` (`TauCeti.puiseuxField` R) for every real closed R.
 - 0 < t and t < r for every positive r ∈ R.
-- `puiseuxField` (R(√−1)) is (`puiseuxField` R)(√−1), coefficientwise, with conjugation acting on coefficients.
+- `TauCeti.puiseuxField` (R(√−1)) is (`TauCeti.puiseuxField` R)(√−1), coefficientwise, with conjugation acting on coefficients.
 
 **Checks.**
 
-- `t^{1/2}` · `t^{1/2}` = t in `puiseuxField` ℝ, while −t has negative leading coefficient and is not a square.
-- `puiseuxField` ℝ is not archimedean: n·t < 1 for every natural n.
+- `t^{1/2}` · `t^{1/2}` = t in `TauCeti.puiseuxField` ℝ, while −t has negative leading coefficient and is not a square.
+- `TauCeti.puiseuxField` ℝ is not archimedean: n·t < 1 for every natural n.
 - The constant series form an ordered subfield isomorphic to R; the order does not depend on a choice of root of unity or uniformiser.
-- `IsRealClosed` in Mathlib's sense, so §0.3 applies to (`puiseuxField` ℝ, id).
+- `IsRealClosed` in Mathlib's sense, so §0.3 applies to (`TauCeti.puiseuxField` ℝ, id).
 - X² − t has the two roots `±t^{1/2}` in K.
 - X³ − t has the root `t^{1/3}` in K and two further roots in K(√−1) ∖ K.
 
-*Needs:* FormalLaurentPuiseux L4 (`puiseuxField`); FormalLaurentPuiseux L5 (`puiseuxField_isAlgClosed`); RealAlgebraicGeometry Layer 1; Mathlib `HahnSeries`; Mathlib `IsRealClosed`; MotivesAndAlgebraicCycles §7.6a.
+*Needs:* FormalLaurentPuiseux L4 (`puiseuxField`); FormalLaurentPuiseux L5 (`puiseuxField_isAlgClosed`); RealAlgebraicGeometry Layer 1; Tau Ceti `TauCeti.puiseuxField`; Tau Ceti `LaurentSeries.ramifiedEmbedding`; Tau Ceti `TauCeti.puiseuxField.instIsAlgClosed`; Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`; Tau Ceti `TauCeti.RealClosure.isRealClosed_of_isAlgClosed_adjoin`; Mathlib `HahnSeries`; Mathlib `IsRealClosed`; MotivesAndAlgebraicCycles §7.6a.
 
 ### 9.12 The sextic double plane and its K3 resolution
 
 The K3 property is proved from the equation: a double plane branched along a sextic with only ADE singularities has rational double points, and its minimal resolution has trivial canonical bundle and H¹(O) = 0.
 
-Over ℝ[[t]] let 𝒳 = {z² = (w² − u² − v²)u²v² − t w⁶}, a double cover of ℙ² branched along a sextic. Its base change to K = `puiseuxField` ℝ has rational double points only, and the minimal resolution S of 𝒳_K is a K3 surface over K (smooth projective geometrically connected with K_S ≅ O_S and H¹(O_S) = 0). S(K) has four semialgebraically connected components, distinguished by the signs of u/w and v/w, each semialgebraically homeomorphic to a sphere, so H¹(S(K), 𝔽₂) = 0 (semialgebraic cohomology). (B19, Proof of Proposition 0.7, p. 107; BCR, Example 15.2.2, pp. 392–393)
+Over ℝ[[t]] let 𝒳 = {z² = (w² − u² − v²)u²v² − t w⁶}, a double cover of ℙ² branched along a sextic. Its base change to K = `TauCeti.puiseuxField` ℝ has rational double points only, and the minimal resolution S of 𝒳_K is a K3 surface over K (smooth projective geometrically connected with K_S ≅ O_S and H¹(O_S) = 0). The real locus S(K) is the disjoint union of four semialgebraic 2-spheres, one for each pair of signs taken by the functions u/w and v/w; these spheres are the semialgebraically connected components of S(K), and since a sphere has no degree-one cohomology, H¹(S(K), 𝔽₂) = 0 in semialgebraic cohomology. (B19, Proof of Proposition 0.7, p. 107; BCR, Example 15.2.2, pp. 392–393)
 
 A construction can proceed as follows.
 
@@ -2696,7 +2700,7 @@ Two disjoint copies of ℝℙ² have deg(w₁²) = 1 + 1 = 0, as the real locus 
 
 ### Dependencies
 
-Layer 0; Layer 1; Layer 2; Layer 7; Layer 8; AlgebraicTopology Stage 6; AlgebraicTopologyPartII §10.3; AlgebraicTopologyPartII §10.5; AlgebraicTopologyPartII §12.1; AlgebraicTopologyPartII §9.2; AlgebraicTopologyPartII §9.3; EnriquesSurfaces §1.1; EnriquesSurfaces §1.3; EnriquesSurfaces §1.4; FormalLaurentPuiseux L4 (`puiseuxField`); FormalLaurentPuiseux L5 (`puiseuxField_isAlgClosed`); HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`); Mathlib `HahnSeries`; Mathlib `IsRealClosed`; MotivesAndAlgebraicCycles §7.10; MotivesAndAlgebraicCycles §7.6a; MotivesAndAlgebraicCycles §7.6b; RealAlgebraicGeometry Layer 1; SchemeAndStackFoundations §5.10; StableReduction Layer 4; WeilConjectures WC.7.
+Layer 0; Layer 1; Layer 2; Layer 7; Layer 8; AlgebraicTopology Stage 6; AlgebraicTopologyPartII §10.3; AlgebraicTopologyPartII §10.5; AlgebraicTopologyPartII §12.1; AlgebraicTopologyPartII §9.2; AlgebraicTopologyPartII §9.3; EnriquesSurfaces §1.1; EnriquesSurfaces §1.3; EnriquesSurfaces §1.4; FormalLaurentPuiseux L4 (`puiseuxField`); FormalLaurentPuiseux L5 (`puiseuxField_isAlgClosed`); HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`); Mathlib `HahnSeries`; Mathlib `IsRealClosed`; MotivesAndAlgebraicCycles §7.10; MotivesAndAlgebraicCycles §7.6a; MotivesAndAlgebraicCycles §7.6b; RealAlgebraicGeometry Layer 1; SchemeAndStackFoundations §5.10; StableReduction Layer 4; WeilConjectures WC.7; Tau Ceti `LaurentSeries.ramifiedEmbedding`; Tau Ceti `TauCeti.puiseuxField`; Tau Ceti `TauCeti.puiseuxField.instIsAlgClosed`; Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`; Tau Ceti `TauCeti.RealClosure.isRealClosed_of_isAlgClosed_adjoin`.
 
 ## Downstream consumers
 
