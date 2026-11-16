@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GSp4NonregularModularityLifting~3",
+  "head": "11b3de3c86acb0dfc80851b8459f3cdd212f4437",
+  "pr": 1817,
+  "folder": "GSp4NonregularModularityLifting",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "incremental re-review of 0 changed lines since 11b3de3. Checked: the pull request's title and description against the head, and ownership against the open heads as they are now. R01 (P2): AlgebraicModularFormsAndSerreWeightsPartII (open new roadmap, earlier in the merge order) owns the secondary Hasse section, Hasse lifts, formal operators with Q2, neighbor reciprocity and theta operators and says this roadmap imports them (its README line 16, added 2026-11-06, after the previous review), while this README line 9 claims ownership of the same objects and never cites it. R02 (P3): the description says the Lean states definitions and theorems and builds with sorry as the only warning; Suggested.lean declares nothing. R03 (P3): the description's 'Klingen newvector' names no contract of the head (Klingen level comparison with no-newforms; paramodular newvector). Other description sentences agree with the head. No previous finding to carry (the previous report had none). Gate: the worker's gate at 11b3de3 passes every check including the build; depcheck re-run: 235 roadmaps, 2240 edges, 0 problems, no UPWARD/CYCLE/moved line; lake env lean on Suggested.lean: no output; outside-folder diff empty. Seeded sample: no sampled target lies in a changed passage (folder unchanged). Adversarial table: 6 rows with computed values. Source independence: changed passages only, none changed; largest share CG20, 78 of 149 locators.",
+  "text": "d01f6b36f944d31d"
+ }
+}
