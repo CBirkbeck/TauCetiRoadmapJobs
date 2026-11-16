@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RiemannianManifoldsWithConvexBoundary~3",
+  "head": "689d6f5a19c72869b211f90513cbf927f1590996",
+  "pr": 2451,
+  "folder": "RiemannianManifoldsWithConvexBoundary",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review at the head the previous review read. Previous R01-R03 repaired. 61 source locators checked against the three cached texts (all fifteen sampled sections); Lee and Sharafutdinov uncertified. Adversarial table of 22 rows with computed values. Gate passes (build included); depcheck 0 problems; lake env lean gives 11 sorry warnings only; one-tactic probe closes 0 of 11 theorems; signatures compared; cross-roadmap citations resolved on main; no overlap or second owner; pull-request text agrees with the head. Two misprints in paternain-salo-uhlmann2023 recorded.",
+  "text": "2a17ee181d34e620"
+ }
+}
