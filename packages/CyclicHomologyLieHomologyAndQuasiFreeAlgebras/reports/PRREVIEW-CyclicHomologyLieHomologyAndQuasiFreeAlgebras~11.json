@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CyclicHomologyLieHomologyAndQuasiFreeAlgebras~11",
+  "head": "dea0b52f200d1ac3e15839d827278e370dd8c1e5",
+  "pr": 2037,
+  "folder": "CyclicHomologyLieHomologyAndQuasiFreeAlgebras",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 16 changed lines since 20efc97. R01 repaired: README 1045-1051 is the repair text verbatim, and the description's phrase was replaced. The changed Provenance passages were checked against LeanPool at f8b9b72 (NOTICE, 6 file headers, the EilenbergZilber binders and eilenbergZilber at BisimplicialNormalized.lean:755), against DerivedModuleAlgebra 0.2.2 on main, and by 3 Tau Ceti #checks at the pin. GeneralAlgebraicKTheory 8.3 and 8.10 resolved on main. Seeded sample: none of the 15 targets falls in the changed passages. Gate: the worker's gate passes with build=0; my run's only line is NOT IN ORDER against the public order, and the depcheck on the candidate order reports 0 problems. lake env lean: 0 errors, 5 sorry warnings. Overlap check covered HochschildHomologyAndHKR and GeneralAlgebraicKTheory: nothing shared. Pull-request text holds at this head.",
+  "text": "9055aa407a6d86e7"
+ }
+}
