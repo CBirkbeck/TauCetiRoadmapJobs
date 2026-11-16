@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsStruve~7",
+  "head": "9961786ae3f29436d2b76a8de85e25644814d64f",
+  "pr": 2129,
+  "folder": "SpecialFunctionsStruve",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 2,
+  "notes": "Full review of the reorganized folder. Gate: every check 0, build 0; depcheck 254 roadmaps, 2401 edges, 0 problems; Suggested.lean elaborates with 26 sorry warnings only; padding probe closes 0 of 26. Sample: all 15 seeded targets plus every headline, recomputed numerically (adversarial table). 42 DLMF locators checked against the fetched text; the six cited books could not be read legally (listed under Not verifiable). 45 cross-roadmap section citations resolved. Findings: R01 (P2) parameter holomorphy of 1F2 also owned by SpecialFunctionsGeneralizedHypergeometric 1.4 (#2136); R02 (P2) statable headlines (Lommel recurrence, S_{0,nu} integral) absent and the non-statable uniform expansion of 7.2 not named in the docstring; R03 (P3) Summary says the arrangement is that of two sources; R04 (P3) description sentence on headline citations contradicted by six DLMF-only headlines.",
+  "text": "69643e5576d0b465"
+ }
+}
