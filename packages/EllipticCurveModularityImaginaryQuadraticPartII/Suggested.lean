@@ -17,12 +17,15 @@ The headline theorems and what each lacks at the pins:
   whose attached `ℓ`-adic Galois representations realize the étale `H¹(E_K̄, Q̄_ℓ)` for every `ℓ` and
   every `ι : Q̄_ℓ ≅ ℂ`, with Frobenius-semisimple Weil–Deligne compatibility at every finite place
   away from `ℓ`, agreement of every finite local factor, the expected parameter at every complex
-  place and `L(E/K, s) = L(π_E, s − 1/2)`. The Galois side exists at the pins: Tau Ceti's
+  place and `L(E/K, s) = L(π_E, s − 1/2)`. The elliptic-curve side exists at the pins: Tau Ceti's
   `WeierstrassCurve.tateModuleGaloisRepresentation` is the `ℤ_ℓ`-linear Galois action on the Tate
-  module, dual to `H¹`. Missing: automorphic representations of `GL₂` over a number field (Mathlib
+  module, dual to `H¹`, and Mathlib's `WeierstrassCurve.LSeries`, the Euler product of the local
+  factors read on minimal models at the primes of `K`, is the left side `L(E/K, s)` of the
+  `L`-function identity. Missing: automorphic representations of `GL₂` over a number field (Mathlib
   has `NumberField.AdeleRing` but no automorphic forms on `GL₂(𝔸_K)`), the Galois representations
   attached to them, Weil–Deligne representations and the local Langlands correspondence for `GL₂`,
-  and the `L`-functions of elliptic curves and of automorphic representations over number fields.
+  and the `L`-functions of automorphic representations of `GL₂(𝔸_K)` for a CM field `K` (Mathlib's
+  `ModularForm.L` is that of a classical modular form, an object over `ℚ`).
 * Theorem 6.2, the potentially Barsotti–Tate lifting theorem at five over CM fields with a
   protected place: a continuous `ρ : G_F → GL₂(Q̄₅)` with determinant `ε₅⁻¹`, potentially
   semistable above five with labelled Hodge–Tate weights `{0, 1}`, with `ρ̄` decomposed generic and
