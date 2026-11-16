@@ -1,10 +1,18 @@
 {
-  "review": {
-    "status": "needs_changes",
-    "reviewer": "independent-review-REV-PKG-MotivesAndAlgebraicCyclesPartII~2",
-    "date": "2026-11-10",
-    "findings": 11,
-    "blocking": 9,
-    "notes": "Reviewed all 80 targets and all six prior repairs (repaired); verified all 15 seeded source targets against cached legal texts; recorded computed adversarial witnesses, current supplier resolution, object-level duplication and all nine declared gaps. Suggested.lean elaborated successfully with no warnings; zero declarations make exhaustive padding and binder probes empty. Dependency check: 236 roadmaps, 2150 edges, 0 problems. Eleven findings: three P1, six P2, two P3. BLR remains settled uncertified."
-  }
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-MotivesAndAlgebraicCyclesPartII~12",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-MotivesAndAlgebraicCyclesPartII~12",
+   "fix": "FIX-PKG-MotivesAndAlgebraicCyclesPartII~13",
+   "from": "52b6c6b2df923a7de6d88130741dba68e38e795c",
+   "head": "6309723ccd937d2b3a283ac7f210832f492f15fe",
+   "findings": 2,
+   "lines": 17
+  },
+  "notes": "every finding of `REV-PKG-MotivesAndAlgebraicCyclesPartII~12` (2) was P3 and `FIX-PKG-MotivesAndAlgebraicCyclesPartII~13` repaired them at `6309723`, changing 17 lines of the package; no further review round was filed"
+ }
 }
