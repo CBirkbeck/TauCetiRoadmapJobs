@@ -43,8 +43,11 @@ This roadmap owns:
    finiteness of rational classes over p-adic fields, continuity), tensor G-structures and
    G-filtrations, crystalline inner forms, adjoint
    Hodge profiles and their top-weight sums, uniform filtrations, finiteness of global
-   coefficient-group types, finiteness of semisimplification geometries and finiteness of local
-   nonabelian Galois cohomology.
+   coefficient-group types, finiteness of semisimplification geometries, finiteness of local
+   nonabelian Galois cohomology and the bijection `H¹(F, L ⋉ U) → H¹(F, L)` for unipotent `U` in
+   characteristic zero (EndoscopicTransferAndUnitaryTraceComparison §1.13a states it for a rational
+   parabolic of a connected reductive group; the form here also covers the Richardson parabolics of
+   disconnected groups).
 4. **Period orbits and transcendence transfer** (Layer 3): period maps in one monodromy orbit,
    parabolic stabilizers, the codimension consequence of Ax–Schanuel (§3.3; Lawrence–Sawin,
    Lemma 6.3) and its transfer to p-adic non-density over an arbitrary number field.
@@ -369,8 +372,8 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   from a minimal containing R-parabolic, G-completely reducible and unique up to `G°(k̄)`-conjugacy,
   and the equality of dimension and component count of all minimal containing R-parabolics. In
   characteristic zero every finite component group is étale, so these apply to every group of
-  Conventions with reductive identity component. Consumed in §2.3, and through it in §§2.5,
-  2.9–2.10, 5.2, 5.5, 5.7 and 7.2.
+  Conventions with reductive identity component. Consumed in §§2.3 and 2.11, and through §2.3 in
+  §§2.5, 2.9–2.10, 5.2, 5.5, 5.7–5.8, 7.2 and 7.5.
 
 ### From TauCetiRoadmap.RestrictedPowerSeries and TauCetiRoadmap.ComplexKahlerGeometry
 
@@ -576,7 +579,9 @@ treats integral points with semisimple Galois representations and isolates stron
 handles the associated graded of nonsplit representations, which gives the all-points coefficient
 theorem of Layer 6. Layer 7 proves the higher-dimensional Lawrence–Venkatesh theorem through its own
 small-centralizer prime argument. Layer 8 is pure combinatorics and Hodge-number asymptotics and can
-be built alongside Layers 0–7; Layers 9 and 10 finish the projective and abelian applications.
+be built alongside Layers 0–7; Layers 9 and 10 finish the projective and abelian applications. Inside a
+layer the subsections are grouped by topic and the `*Needs:*` lines give the order: §2.11 comes before
+§§2.3 and 2.9, and §§8.2–8.4 come before §8.1.
 
 ## Layer 0: Compatible Hodge–Deligne realizations
 
@@ -1518,10 +1523,19 @@ Corollary 1 to Proposition 36, applied to `G/N` and `G/Z`):
 The two indexing groups differ: an unmarked subgroup is classified by its normalizer, a marked
 homomorphism by its centralizer.
 
+Over every field `F` of characteristic zero, prove also that for a linear algebraic group `P = L ⋉ U`
+over `F` with `U` unipotent (for instance a Richardson parabolic with an R-Levi, LanglandsParameterStacks
+§2.3), the projection to `L` induces a bijection `H¹(F, P) → H¹(F, L)`; in particular `H¹(F, U) = 1`
+(the step of LS, proof of Lemma 8.10, p. 78, LS line 3572).
+
 A route: for a finite group `H` this is finiteness of extensions of bounded degree of a p-adic field;
 for connected reductive `H` it is the Kottwitz description of PadicHodgeTheory §5.5; the unipotent
 radical has trivial `H¹` in characteristic zero; and the general case follows from the exact sequences
-of nonabelian cohomology with twisting.
+of nonabelian cohomology with twisting. For the bijection, `L ⊂ P` splits the projection, so it is
+surjective; the fibre through the class of an `L`-valued cocycle `c` is the image, under twisting, of
+`H¹(F, U_c)` for the twist `U_c` of `U` by `c`, again unipotent, with a characteristic central series
+whose quotients are forms of vector groups; these are vector groups with trivial `H¹` (additive Hilbert
+90), so the fibre is a point.
 
 **Checks.**
 
@@ -1537,8 +1551,14 @@ of nonabelian cohomology with twisting.
   `ℚ₃(√6)` (one per quadratic étale `ℚ₃`-algebra, `|ℚ₃^×/ℚ₃^(×2)| = 4`). The normalizer `N = T ⋊ C₂` has
   `ker[H¹(ℚ₃, N) → H¹(ℚ₃, GL₂)] = H¹(ℚ₃, N)` of four elements, whereas the centralizer `T` has
   `H¹(ℚ₃, T) = 1` (Hilbert 90): indexing subgroups by the centralizer would undercount.
+- For `P = 𝔾_a ⋊ μ₂` over `ℚ₃`, with `μ₂` acting by sign, `H¹(ℚ₃, P) → H¹(ℚ₃, μ₂) = ℚ₃^×/ℚ₃^(×2)` is a
+  bijection of four-element sets: the twist of `𝔾_a` by the character of `ℚ₃(√a)` becomes `𝔾_a` after
+  multiplication by `√a` and has trivial `H¹`. For the upper Borel `B = T ⋉ U` of `GL₂`,
+  `H¹(ℚ₃, B) = H¹(ℚ₃, T) = 1`.
+- Characteristic zero is needed for the bijection: over `𝔽_p` the constant group `ℤ/p` is unipotent with
+  trivial Levi quotient, while `H¹(𝔽_p, ℤ/p) = Hom(Ẑ, ℤ/p)` has `p` elements.
 
-*Needs:* PadicHodgeTheory §5.5; ReductiveGroups Layers 5, 6A.
+*Needs:* PadicHodgeTheory §5.5; LanglandsParameterStacks §2.3; ReductiveGroups Layers 5, 6A.
 
 ### Examples
 
@@ -2052,9 +2072,11 @@ of §2.6.
 
 ### 5.5 Bifiltered Frobenius objects and graded types
 
-A **bifiltered coefficient Frobenius object** is `(V, φ, F, f)` with Hodge G-filtration `F`, φ-stable
-auxiliary G-filtration `f` and the given semilinear coefficient structure. Its **graded type** is the
-`G`-conjugacy class of `(P_f, φ_M, F_M)`, where `f` enters only through its parabolic `P_f` (so its
+In the setting of §2.1, with `G` the semilinear coefficient normalizer of `V` and
+`σ ∈ Aut_(E₀)(E)`, a **bifiltered coefficient Frobenius object** is `(V, φ, F, f)` with `φ ∈ G(E₀)`
+σ-semilinear and two G-filtrations (§2.5), the Hodge filtration `F` and the auxiliary filtration `f`,
+the latter φ-stable, that is `φ ∈ P_f(E₀)` for the dynamic parabolic `P_f` of `f`. Its **graded type**
+is the `G`-conjugacy class of `(P_f, φ_M, F_M)`, where `f` enters only through its parabolic `P_f` (so its
 numerical indexing, and whatever else of `f` the parabolic does not record by §2.5, is forgotten) and the
 full indexing of `F_M` is kept (LS, Definition 8.8 and Remark 8.9, pp. 77–78).
 
@@ -2073,7 +2095,7 @@ API:
 - Two φ-stable flags with the same quotient dimensions and different Frobenius eigenvalues on the graded
   pieces have different types; types are not characteristic polynomials of the ungraded `φ`.
 
-*Needs:* §§2.3, 2.6, 5.2.
+*Needs:* §§2.1, 2.3, 2.5–2.6, 5.2.
 
 ### 5.6 Finite cyclic cocycles in unipotent groups
 
@@ -2123,24 +2145,53 @@ in Source corrections; LS line 3668).
 
 ### 5.8 Finitely many local types from global semisimplification
 
-Prove that for a fixed global coefficient-group semisimplification `ρ^ss` and fixed residue Frobenius
-data, the local bifiltered objects obtained from global semisimplification flags have finitely many
-graded types, and their induced Hodge filtrations are balanced. The finiteness concerns types, which
-record the auxiliary filtration only through its parabolic, not flags or extensions (LS, Lemma 8.10,
-pp. 78–79).
+Let `G` be the semilinear coefficient normalizer of §2.1 with `E₀ = ℚ_p`, formed for the étale fibre
+`V_et` over `E_et`, with its standard representation `G → GL_(ℚ_p)(V_et)`, and let
+`ρ₀ : G_ℚ → G(ℚ_p)` be continuous, G-completely reducible (§2.3), crystalline at `p` (§2.6), pure in
+the sense of §5.4 (there are a finite set `Σ` of primes and an integer `w` such that for every prime
+`ℓ ∉ Σ`, `ℓ ≠ p`, `ρ₀` is unramified at `ℓ` and the characteristic polynomial of geometric Frobenius at
+`ℓ` in the standard representation has algebraic coefficients and only roots that are Weil `ℓ`-numbers
+of weight `w`), and such that its composite with `G → Aut_(ℚ_p)(E_et)` is the Galois action on `E_et`.
+Prove that there is a finite set of bifiltered coefficient Frobenius objects `(V₀, φ₀, F₀, f₀)` (§5.5),
+depending only on `ρ₀`, in which `(V₀, φ₀, F₀)` is the filtered φ-module of the restriction of `ρ₀` to
+`Gal(ℚ̄_p/ℚ_p)` (§2.6) and `F₀` is balanced relative to `P_(f₀)` (§5.3), with the following property.
+For every continuous `ρ : G_ℚ → G(ℚ_p)`, crystalline at `p`, with the same composite to
+`Aut_(ℚ_p)(E_et)` and with a G-semisimplification (§2.3) that is `G(ℚ_p)`-conjugate to `ρ₀`, there are a
+φ-stable auxiliary filtration `f` on the filtered φ-module `(V, φ, F)` of the restriction of `ρ` to
+`Gal(ℚ̄_p/ℚ_p)` and a tensor isomorphism between the `D_cris` fibre functors of `ρ` and `ρ₀` on
+`Rep(G)` that carries the graded type of `(V, φ, F, f)` to that of one of them. The finiteness concerns
+types, which record the auxiliary filtration only through its parabolic, not flags or extensions (LS,
+Lemma 8.10, pp. 78–79, whose final step applies LS, Lemma 8.7, under the purity hypothesis of LS,
+Lemma 8.1; see Source corrections).
 
-A route: §2.10 gives finitely many allowable parabolic and Levi pairs up to centralizer conjugacy; the
-crystalline comparison for the fixed global quotient representation and §5.4 give balance; unipotent
-conjugacy and §5.7 compare different splittings without changing the type.
+A route: a G-semisimplification of `ρ` is its Levi projection for a Richardson parabolic `P` defined
+over `ℚ_p` (§2.3), so after conjugation `ρ` lands in `P(ℚ_p)` with Levi projection `ρ₀`; §2.10, applied
+to the Zariski closure of the image of `ρ₀`, leaves finitely many allowable parabolic and Levi pairs up
+to its centralizer, which fixes `ρ₀`. By §2.11 the map `H¹(ℚ_p, P) → H¹(ℚ_p, L)` is bijective, so the
+`D_cris` fibre functors of `ρ` and `ρ₀`, whose torsors have the same image in `H¹(ℚ_p, L)`, are tensor
+isomorphic compatibly with `P` (LS line 3572); §5.4 applied to `ρ₀`, whose image lies in
+`L(ℚ_p) ⊂ P(ℚ_p)`, gives balance; unipotent conjugacy and §5.7 compare different splittings without
+changing the type.
 
 **Checks.**
 
 - Infinitely many auxiliary indexings of one flag give one type.
-- For irreducible `ρ^ss` the only global flag is trivial and there is one type.
-- A fixed semisimplification can have infinitely many nonisomorphic extensions; they share finitely many
-  types.
+- For `ρ₀` G-irreducible over `ℚ_p` (in no proper Richardson parabolic defined over `ℚ_p`), the minimal
+  Richardson parabolic of every `ρ` in the statement is `G`, so `ρ` is `G(ℚ_p)`-conjugate to `ρ₀`; one
+  object, with trivial auxiliary filtration, suffices, and it is balanced because `P = G` gives `M = G`.
+- A fixed `ρ₀` can have infinitely many nonisomorphic extensions; they share finitely many types.
+- Purity is needed. For `G = GL₂`, `p` odd and `ρ₀ = ℚ_p ⊕ ℚ_p(−1)` (Weil weights 0 and 2), the Kummer
+  extension of `ℚ_p(−1)` by `ℚ_p` attached to `2`, a `p`-adic unit (so it is crystalline at `p`), is
+  nonsplit with the single Galois-stable line `ℚ_p ⊂ V`; its graded de Rham degrees are `0` on the line
+  and `1` on the quotient, against the average `1/2` of `V`, so it is not balanced. The hypothesis of one
+  weight `w` excludes this `ρ₀`.
+- The group is `G_ℚ`. For `y² = x³ − x`, with complex multiplication by `ℤ[i]`, and `p ≡ 1 mod 4`, its
+  `H¹` restricted to `G_(ℚ(i))` is the sum of two characters of Weil weight 1, and at a place above `p`,
+  whose completion is `ℚ_p`, they have Hodge–Tate weights `0` and `−1`, not `−1/2`: the Hodge filtration
+  is not balanced relative to the Borel of either character line, so the balance that §5.4 gives for every
+  Galois-stable flag, and on which the balance of `F₀` rests, fails over `ℚ(i)`.
 
-*Needs:* §§2.10, 5.4–5.5, 5.7.
+*Needs:* §§2.1, 2.3, 2.6, 2.10–2.11, 5.3–5.5, 5.7.
 
 ### 5.9 Root pairing for opposite flag directions
 
@@ -2196,11 +2247,11 @@ stratum of codimension below `e` would violate the strict inequality.
 
 ### 5.11 Dimension of Frobenius-stable graded pairs
 
-Fix a semisimple `φ` in the coefficient normalizer. Prove that the pairs `(P, F_M)` with `φ ∈ P` and a
-prescribed conjugacy class of quotient filtered Frobenius data form finitely many orbits of `Z_G(φ)`, so
-their dimension is at most `dim Z_G(φ)`; for arbitrary `φ`, replacing `φ` by its semisimple part `φ^ss`
-and using §5.7 gives the bound `dim Z_G(φ^ss)`, and cyclewise §2.2 bounds the cost by `dim H` (LS, Lemma
-8.15, p. 81; LV, §11.6, pp. 993–994).
+In the setting of §2.1, fix a semisimple `φ` in the semilinear coefficient normalizer `G`. Prove that the
+pairs `(P, F_M)` with `φ ∈ P` and a prescribed conjugacy class of quotient filtered Frobenius data form
+finitely many orbits of `Z_G(φ)`, so their dimension is at most `dim Z_G(φ)`; for arbitrary `φ`, replacing
+`φ` by its semisimple part `φ^ss` and using §5.7 gives the bound `dim Z_G(φ^ss)`, and cyclewise §2.2
+bounds the cost by `dim H` (LS, Lemma 8.15, p. 81; LV, §11.6, pp. 993–994).
 
 **Checks.**
 
@@ -2209,7 +2260,7 @@ and using §5.7 gives the bound `dim Z_G(φ^ss)`, and cyclewise §2.2 bounds the
   through its torus, a finite set of dimension `0 ≤ n = dim Z(φ)`.
 - The bound is in terms of the dimension of the acting centralizer, not the number of its points.
 
-*Needs:* §§2.2, 2.10, 5.5, 5.7.
+*Needs:* §§2.1–2.2, 2.10, 5.5, 5.7.
 
 ### 5.12 Fixed-type codimension under balanced monodromy
 
@@ -2271,10 +2322,13 @@ all arguments of `T` lying in `[0, dim H]`. Prove that `𝒳(ℤ[S⁻¹])` is no
 semisimplicity hypothesis is imposed on the Galois representations of the fibres (LS, Theorem 8.17,
 pp. 83–84; LS line 3812).
 
-A route: §2.9 gives finitely many global G-semisimplifications; for each residue disk and each global
-type, §5.8 gives finitely many balanced local graded types; §5.12 with `e = d` bounds the codimension of
-each incidence locus, and §3.4 turns it into a proper Zariski-closed subset; the integral points lie in
-the finite union.
+A route: §2.9 gives finitely many global G-semisimplifications; in each class that occurs, take for `ρ₀`
+the G-semisimplification of the representation of an integral point: Levi projection keeps it
+crystalline at `p` (its standard representation is a sum of subquotients), keeps the Frobenius
+characteristic polynomials and hence purity, and keeps the composite to `Aut_(ℚ_p)(E_et)`, which is
+trivial on `G°`. For each residue disk and each such `ρ₀`, §5.8 gives finitely many balanced local graded
+types; §5.12 with `e = d` bounds the codimension of each incidence locus, and §3.4 turns it into a proper
+Zariski-closed subset; the integral points lie in the finite union.
 
 **Checks.**
 
@@ -2284,7 +2338,7 @@ the finite union.
   nothing, consistently with the cost `dim H` of a semilinear centralizer.
 - For `d = 0` the conclusion is false and the hypothesis `d ≥ 1` excludes it.
 
-*Needs:* §§0.2, 0.4, 1.1, 1.4–1.5, 1.9, 2.1, 2.7–2.9, 3.4, 4.2, 5.8, 5.12.
+*Needs:* §§0.2, 0.4, 1.1, 1.4–1.5, 1.9, 2.1, 2.3, 2.7–2.9, 3.4, 4.2, 5.8, 5.12.
 
 ### Examples
 
@@ -2362,12 +2416,17 @@ shows that Levi projection preserves its conjugacy class.
 
 ### 7.3 A bounded prime with small Frobenius centralizer
 
-For a fixed smooth projective family over `ℤ[S⁻¹]` with fixed Hodge type on primitive middle cohomology of
-degree `r` and similitude group `GAut` of the intersection pairing, prove that there is `L` such that every
-integral point admits a prime `ℓ ≤ L` outside `S` with `dim Z_GAut((φ_crys,ℓ)^ss) ≤ h⁰`. An auxiliary
-prime `p` outside `S`, large enough for the Fontaine–Laffaille range, is fixed first. The bound is uniform
-in the integral point and is not an effective formula for `L` (LV, Lemma 10.4, statement printed
-p. 975, proof pp. 976–978).
+Let `𝒴` be smooth of finite type over `ℤ[S⁻¹]` with geometrically connected generic fibre `Y/ℚ`, and let
+`π : 𝒵 → 𝒴` be smooth projective with geometrically connected fibres of relative dimension `r` and a
+relatively ample class; let `V` be its primitive degree-`r` cohomology with the intersection pairing,
+`GAut = GAut(V, ⟨ , ⟩)` its similitude group and `h` the adjoint profile of the Hodge filtration in
+`GAut` (§2.7), the same at every point of `Y(ℂ)` because `Y` is geometrically connected. Prove that there
+is `L` such that every integral point `y ∈ 𝒴(ℤ[S⁻¹])` admits a prime `ℓ ≤ L` outside `S` with
+`dim Z_GAut((φ_crys,ℓ)^ss) ≤ h⁰`, where `φ_crys,ℓ` is the crystalline Frobenius of the fibre at `y`
+reduced modulo `ℓ`, on its primitive degree-`r` crystalline cohomology. An auxiliary prime `p` outside
+`S`, large enough for the Fontaine–Laffaille range, is fixed first. The bound is uniform in the integral
+point and is not an effective formula for `L` (LV, Lemma 10.4, statement printed p. 975, proof
+pp. 976–978).
 
 A route: by MordellLawrenceVenkatesh §1.2 the auxiliary `p`-adic representations have finitely many
 semisimplifications. In each reductive image choose a very regular open subset avoiding the finitely many
@@ -2414,23 +2473,41 @@ balanced estimate of §5.10 with parameter `z + e` and project to the Hodge flag
 
 ### 7.5 Classical semisimplification fibres are nondense
 
-Under the numerical inequalities of §7.6, fix `ℓ ∉ S` and a residue point whose crystalline semisimple
-Frobenius centralizer has dimension at most `h⁰`. Prove that the integral points in its residue disk whose
-global ℓ-adic representations have a prescribed semisimplification form a subset that is not Zariski dense
-in the base. Global semisimplification flags are self-dual after pairing dual constituents, and every
-graded piece has average descending de Rham degree `r/2` by §5.4 (LV, Lemma 10.5, statement printed
-p. 975, proof pp. 979–981).
+In the setting of §7.3, let `Y` have dimension `d ≥ 1`, assume that the Zariski closure of the geometric
+monodromy of `V` contains `Aut(V, ⟨ , ⟩)°`, and assume `A ≥ h⁰ + d` and
+`B > T(h⁰ + d) + T(3h⁰/2 + d)`. Fix a prime `ℓ ∉ S`, a point `y₀ ∈ 𝒴(ℤ[S⁻¹])` with
+`dim Z_GAut((φ_crys,ℓ)^ss) ≤ h⁰` at `y₀`, and a GAut-semisimplification `ρ₀` (§2.3) of the global ℓ-adic
+representation `G_ℚ → GAut(ℚ_ℓ)` of `y₀`. Prove that the set of `y ∈ 𝒴(ℤ[S⁻¹])` congruent to `y₀`
+modulo `ℓ` whose global ℓ-adic representation has a GAut-semisimplification `GAut(ℚ_ℓ)`-conjugate to
+`ρ₀` is not Zariski dense in `Y`. Global semisimplification flags are self-dual after pairing dual
+constituents, and every graded piece has average descending de Rham degree `r/2` by §5.4 (LV, Lemma
+10.5, statement printed p. 975, proof pp. 979–981, under the monodromy hypothesis (10.1) of LV, printed
+p. 968).
 
 A route: construct paired self-dual semisimplification flags, transport their graded data through
-`D_cris`, use the small centralizer and §7.4 with `e = dim Y`, and apply §3.4 on the disk.
+`D_cris`, use the small centralizer and §7.4 with `e = d`, and apply §3.4 on the disk. The monodromy
+hypothesis makes the connected period orbit `D_mon` of §3.1 a connected component of the variety of
+self-dual filtrations with the dimension data of the Hodge filtration: `G_mon` is the Zariski closure
+of monodromy (§0.6), so `G_mon°` lies between `Aut(V, ⟨ , ⟩)°` and
+`GAut(V, ⟨ , ⟩)° = 𝔾_m·Aut(V, ⟨ , ⟩)°`; scalars fix every filtration; and that variety is one
+`Aut(V, ⟨ , ⟩)`-orbit whose components are the `Aut(V, ⟨ , ⟩)°`-orbits. So the codimension of §7.4 is a
+codimension in `D_mon`, as §3.4 requires. The inequalities give those of §7.4 with `z ≤ h⁰` and `e = d`,
+since `T` is nondecreasing on `[0, A + h⁰]` and `3h⁰/2 + d ≤ A + h⁰`.
 
 **Checks.**
 
 - The representations of the points may be nonsplit; only their semisimplifications are fixed.
 - The self-duality of the flag comes from the polarization, not from semisimplicity.
 - For an irreducible semisimplification the flag is trivial and §7.4 reduces to §4.4.
+- The monodromy hypothesis is needed. For the constant family `𝒵₀ × 𝔸¹ → 𝔸¹`, with `𝒵₀` smooth projective
+  over `ℤ[S⁻¹]`, the geometric monodromy is trivial and `D_mon` is a point, while `A ≥ 1` puts a nonzero
+  positive part in `Lie GAut`, so `Aut(V, ⟨ , ⟩)°` has positive dimension and the hypothesis fails.
+  Without it the conclusion would be false: every `y ≡ y₀` modulo `ℓ` has the fibre and the
+  representation of `y₀`, and `y₀ + ℓℤ[S⁻¹]` is infinite, hence Zariski dense in `𝔸¹`, whatever the
+  Hodge numbers of `𝒵₀`, on which alone (with `d = 1`) the two inequalities depend; a smooth
+  hypersurface of large dimension and degree (§8.9) satisfies them, and §7.3 supplies `ℓ` at `y₀`.
 
-*Needs:* §§3.4, 5.4, 7.4; PadicHodgeTheory §§3.5, 8.1.
+*Needs:* §§0.6, 2.3, 3.1, 3.4, 5.4, 7.3–7.4; PadicHodgeTheory §§3.5, 8.1.
 
 ### 7.6 Higher-dimensional integral-point non-density
 
@@ -2446,9 +2523,11 @@ with arguments in the domain of `T`. Prove that `𝒴(ℤ[S⁻¹])` is not Zaris
 printed pp. 969–970, monodromy hypothesis (10.1), printed p. 968; proofs §§10.3–10.5, printed
 pp. 974–982).
 
-A route: §7.3 gives finitely many possible small-centralizer primes; for each, MordellLawrenceVenkatesh
-§1.2 leaves finitely many semisimplifications, and there are finitely many residue disks; §7.5 applies to
-each and a finite union concludes.
+A route: §7.3 gives finitely many possible small-centralizer primes; for each, §2.9 over `K = ℚ`, with
+`E = E₀ = ℚ_ℓ` so that the normalizer is `GAut` (the Frobenius polynomials lie in `ℤ[t]` with roots of
+weight `r`, DeligneWeightsAndPurity §§4.3–4.4), leaves finitely many `GAut(ℚ_ℓ)`-classes of
+semisimplifications, and there are finitely many residue disks; §7.5 applies to each and a finite union
+concludes.
 
 **Checks.**
 
@@ -2458,7 +2537,7 @@ each and a finite union concludes.
   nondecreasing (`3h⁰/2 + d ≤ A + h⁰`).
 - The non-density conclusion does not need monodromy on subvarieties; §7.7 does.
 
-*Needs:* §§2.7, 7.3, 7.5; MordellLawrenceVenkatesh §1.2.
+*Needs:* §§2.7, 2.9, 7.3, 7.5; DeligneWeightsAndPurity §§4.3–4.4.
 
 ### 7.7 Finiteness under monodromy on every subvariety
 
@@ -2524,8 +2603,8 @@ at frequency 1 cannot prove the stated estimate.
 
 ### Dependencies
 
-Layers 2–5; MotivesAndAlgebraicCycles §§6.3, 6.8; PadicHodgeTheory §§3.5, 4.4, 5.5, 6.1, 8.1;
-PadicDifferentialEquationsAndRigidCohomology §RD.7.7; DeligneWeightsAndPurity §§0.7, 0.10, 0.16, 4.3;
+Layers 0 and 2–5; MotivesAndAlgebraicCycles §§6.3, 6.8; PadicHodgeTheory §§3.5, 4.4, 5.5, 6.1, 8.1;
+PadicDifferentialEquationsAndRigidCohomology §RD.7.7; DeligneWeightsAndPurity §§0.7, 0.10, 0.16, 4.3–4.4;
 WeilConjectures Layer WC.5; EtaleDualityAndPerverseSheaves §4.3; AlgebraicModuliForArithmeticGeometry
 §9.4; SchemeAndStackFoundations §0.9; MordellLawrenceVenkatesh §1.2; Chebotarev Layer 10.
 
@@ -3255,6 +3334,11 @@ The following corrections to the sources are used throughout; each is fixed by a
 - **LS, Definition 5.44, p. 60.** The associated graded of a decreasing filtration is `F^a/F^(a+1)`.
 - **LS, Definition 9.1, p. 85.** Primitivity excludes nonzero stabilizing translations: translation by zero
   fixes every divisor.
+- **LS, Lemma 8.10, pp. 78–79.** The balance of `F₀` relative to `f₀` is obtained from LS, Lemma 8.7,
+  which assumes the purity of LS, Lemma 8.1; the statement of Lemma 8.10 omits it, and §5.8 assumes it.
+  Without it the assertion fails: `ℚ_p ⊕ ℚ_p(−1)` and the nonsplit crystalline Kummer extension of
+  `ℚ_p(−1)` by `ℚ_p` attached to `2` (`p` odd) give graded de Rham degrees `0` and `1` against the
+  average `1/2`.
 - **LS, proof of Lemma 8.14, p. 80.** The cyclic cocycle lemma is applied on `Z_U(φ^r)`, where conjugation by
   `φ` has order dividing `r`; on all of `U` it can have infinite order (`diag(2, 1)` on an upper root group).
 - **LS, proof of Lemma 5.49, pp. 61–62.** The coefficient-linear subgroup need not be connected (for even `N`,
