@@ -1,0 +1,30 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HyperbolicDynamicsAndThermodynamicFormalism~6",
+  "head": "fe970db74e0e3ad81e7fe2e7e1a4afc04a70e086",
+  "pr": 2441,
+  "folder": "HyperbolicDynamicsAndThermodynamicFormalism",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 2,
+  "notes": "Full review at the head the previous review read. Both findings (R01, R02) are re-raised and concern the board's design/plan.json gaps (sphere-bundle-embedding: provided by the pins; connection-map-jacobi-derivative: owned by README 9.3); the roadmap folder itself has no finding. Checked: the 15 seeded sample targets and all headline theorems (adversarial table with computed values); 59 source locators read against the text in 6 sources, 7 sources uncertified and not read; all 164 backticked library names at the pins; cross-roadmap citations at ClassicalErgodicTheory e3c5108, GeometryOfNumbersAndQuadraticArithmetic 81b8a64, ArithmeticDynamics ae79f44 and main 5ff4294; gate OK; depcheck 0 problems; Suggested.lean elaborates with 15 sorry warnings only; one-tactic padding probe closes none; pull request text agrees with the head; two source issues recorded.",
+  "text": "128d6ba3553b6c97",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Declared gap `sphere-bundle-embedding` asks for what the pins provide",
+    "where": "board plan.json, target 9.3 prerequisites and gaps list, edited together",
+    "raised": "PRREVIEW-HyperbolicDynamicsAndThermodynamicFormalism~6"
+   },
+   {
+    "id": "D02",
+    "severity": "P2",
+    "title": "Declared gap `connection-map-jacobi-derivative` asks RiemannianGeometry for what §9.3 owns",
+    "where": "board plan.json, target 9.3 prerequisites and gaps list, edited together",
+    "raised": "PRREVIEW-HyperbolicDynamicsAndThermodynamicFormalism~6"
+   }
+  ]
+ }
+}
