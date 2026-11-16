@@ -1261,12 +1261,6 @@
       "needs": "For a fixed rational cyclic odd-prime isogeny at good reduction, identify its actual kernel and quotient characters, deduce ordinarity and local p-torsion vanishing under the two-character exclusion, and at p=3 prove the good unramified versus bad ramified twist dictionary with its connected/étale kernel alternatives."
     },
     {
-      "slug": "complementary-heegner-twists",
-      "supplier": "ArithmeticStatisticsPartVI",
-      "section": "Supporting local-to-global and analytic inputs: Heegner logarithm and low rank",
-      "needs": "For every rational elliptic curve and finite set of rational primes, prove both complementary imaginary-quadratic twist nonvanishing branches with those primes split, infinitely many odd fundamental discriminants below −4, and twist analytic order zero when the original root number is −1 and one when it is +1."
-    },
-    {
       "slug": "quadratic-analytic-factorization",
       "supplier": "EllipticCurveModularity",
       "section": "Layer R29.6: Continuation and the functional equation",
