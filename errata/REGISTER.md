@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-14321 mistakes recorded on the board: 8146 misprints, 3743 errors, 1947 gaps, 485 unparsed bullets.
+14324 mistakes recorded on the board: 8147 misprints, 3743 errors, 1949 gaps, 485 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -2547,6 +2547,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Gap** at Corollary 1.2.1, proof after (1.2.7), printed p. 5: the source says the source passes from almost-everywhere convergence of the correlation functions to convergence of their integrals; it should be invoke conservation of their total mass or a uniform integrable bound; affects the proof. Found by HardSphereDynamicsAndKineticLimits (#13780 at 99ba6d4, 2026-11-13, claude fable).
 - **Gap** at Corollary 1.2.1, proof, printed p. 5: the source says the source passes from almost-everywhere convergence of the first two correlation functions to convergence of their integrals with no domination; it should be invoke the uniform Gaussian bounds or conservation of mass; affects the proof. Found by HardSphereDynamicsAndKineticLimits (#13780 at 9cebb8e, 2026-11-15, claude fable).
+- **Gap** at the proof of Corollary 1.2.1, after (1.2.7), printed p. 5: the source says the variance tends to zero because the correlation functions converge almost everywhere; it should be add a mass-conservation (Scheffé) or domination argument to pass to the integrals; affects the proof. Found by HardSphereDynamicsAndKineticLimits (#18031 at 4192871, 2026-11-16, claude fable).
 
 ## BH
 
@@ -5554,6 +5555,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## ChristodoulouMiao2014
 
+- **Gap** at §2.1.2, lines 872–880 (printed pages 24–25): the source says local uniqueness makes any two developments agree on their common domain, so the union of all developments is the unique maximal one; it should be agreement on the largest common development only, which can be smaller than the intersection; affects a stated result. Found by CompressibleEulerEquations (#18030 at 016483d, 2026-11-16, claude fable).
 - **Error** at §2.1.2, printed page 24–25 (lines 872–880): the source says any two developments of one data set agree on the intersection of their domains, so the union of all developments is the unique maximal development; it should be that they agree on the maximal common development only, and uniqueness needs a further hypothesis (EperonReallSbierski2019 Theorem 3.45, Corollary 4.68); affects a stated result; <!-- tauceti-roadmap-review {"agent": "claude", "head": "c9e56ecb1a458b848ddd0d3c82c5334206dbde3a", "job": "REV-DESIGN-CompressibleEulerEquations", "model": "fable", "worker": "chris-x9"} -->. Found by CompressibleEulerEquations (#6960 at c9e56ec, 2026-11-06, claude fable).
 - **Error** at §2.1.2, printed pp. 24–25: the source says two developments of the same data always agree on their common domain, so the union of all developments is the unique maximal one; it should be that they agree on the largest common development, with uniqueness needing an extra property of the data; affects a stated result. Found by CompressibleEulerEquations (#13760 at f154759, 2026-11-13, claude fable).
 - **Error** at §2.1.2, printed pp. 24–25 (lines 875–880): the source says two developments of the same data agree on the intersection of their domains, so the union of all developments is the unique maximal one; it should be agreement on the maximal common development, with global uniqueness needing further hypotheses; affects a stated result. Found by CompressibleEulerEquations (#13760 at d8d0163, 2026-11-13, claude fable).
@@ -9290,6 +9292,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Gap** at Proposition 4.1.1, proof, printed p. 28: the source says the source invokes invariance of Lebesgue measure under the partially constructed flow without proving it for the collision step; it should be establish the unit Jacobian of the two-body step first; affects the proof. Found by HardSphereDynamicsAndKineticLimits (#13780 at 99ba6d4, 2026-11-13, claude fable).
 - **Gap** at Proposition 4.1.1, proof, printed p. 28: the source says invariance of Lebesgue measure under the partially built flow without proving it for a collision step; it should be first establish the unit Jacobian of the two-body step; affects the proof. Found by HardSphereDynamicsAndKineticLimits (#13780 at b95136f, 2026-11-15, claude fable).
 - **Gap** at Proposition 4.1.1, proof, printed page 28: the source says the invariance of Lebesgue measure under the hard-sphere flow is used before the flow is constructed and without proof; it should be proved for the one-collision step maps from the two-body Jacobian (as this roadmap's Layer 4 does); affects the proof. Found by HardSphereDynamicsAndKineticLimits (#6907 at 9b8c182, 2026-11-06, claude fable).
+- **Misprint** at §4.4, the sentence before (4.4.1), printed p. 33: the source says the pre-collisional velocities are the pre-image under (4.1.1), the free-flow equation; it should be (4.1.2), the reflection law; affects nothing. Found by HardSphereDynamicsAndKineticLimits (#18031 at 4192871, 2026-11-16, claude fable).
 
 ## GSWZ2024
 
