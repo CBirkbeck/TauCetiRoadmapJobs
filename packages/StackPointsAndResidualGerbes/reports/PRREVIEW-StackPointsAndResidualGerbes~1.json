@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StackPointsAndResidualGerbes~1",
+  "head": "3688535b9e38b6dff4a662f09acfe0acc8ce7b83",
+  "pr": 2429,
+  "folder": "StackPointsAndResidualGerbes",
+  "date": "2026-11-16",
+  "findings": 7,
+  "blocking": 0,
+  "notes": "Full review at 3688535. Gate re-run: OK (all checks 0). Depcheck: 241 roadmaps, 2261 edges, 0 problems. Suggested.lean elaborates with no output; it declares nothing, and no headline is statable because the pins have no algebraic stack (checked at Stack/Basic.lean:37, IsStack.lean:49, AlgebraicSpace/Basic.lean:195). About 110 source locators checked against the cached texts, including all 15 seeded targets (0.2, 0.3, 1.1, 1.2, 2.4, 2.6, 3.2, 3.4, 3.5, 5.1, 5.3, 6.1, 7.1, 7.2, 7.4); all agree. 41 pinned Mathlib and Tau Ceti declarations verified at the stated file, line and name. Every SchemeAndStackFoundations, AlgebraicModuliForArithmeticGeometry and ReductiveGroups citation resolves on main. The 17 gap slugs match design/plan.json; none asks for what is already provided. Adversarial table: 24 rows with computed values. Source independence: 26 passages against 7 sources, longest shared run 12 words; arrangement independent of Morphisms of Stacks (Ch. 101). Findings, all P3: R01 base of a gerbe and 2.4 not related to AlgebraicModuli §5.1 rigidification; R02 the statement promised to FunctionFieldArithmeticPartII is not a target; R03 undefined T_i, x_i in 2.4; R04 a 5.1 Check is half-witnessed; R05-R07 pull-request description text.",
+  "text": "a31a146d936b74b5"
+ }
+}
