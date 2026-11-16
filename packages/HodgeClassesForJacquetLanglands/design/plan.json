@@ -4008,12 +4008,6 @@
       "section": "§K6.1"
     },
     {
-      "slug": "quaternion-ramification-classification",
-      "needs": "Prove that for a quaternion algebra B over a number field F and a quadratic extension E/F, E embeds in B as an F-algebra exactly when no place of F ramified in B splits in E (IP23, §12.2.1, p. 94). The realization of ramification sets and the classification of quaternion algebras by them are GL2AutomorphicRepresentationsAndTransfer §R17.1.5 and are not asked for.",
-      "supplier": "ClassFieldTheory",
-      "section": "Layer 10"
-    },
-    {
       "slug": "norm-subgroup-restriction",
       "needs": "For a quaternion algebra B over a totally real F, a CM extension E/F in B and the subgroups H_N^+ ⊂ H_∞^+ ⊂ B^×(𝔸_F), show that every irreducible unitary automorphic representation of H_N^+ with central character ξ_E is a constituent of the restriction of a cuspidal representation of B^×(𝔸_F) whose Jacquet–Langlands transfer σ has base change σ_E independent of the choice, compatibly with the archimedean discrete-series signs (IP23, §11.3, p. 86 and §12.2.4, pp. 96–97).",
       "supplier": "GL2AutomorphicRepresentationsAndTransfer",
@@ -4021,7 +4015,7 @@
     },
     {
       "slug": "quaternionic-doubling-residue",
-      "needs": "Extend the anisotropic Siegel–Weil formula, the doubling Schwartz map, standard doubling factors, local doubling zeta integrals and the factorization of theta pairings to the doubled anisotropic rank-three skew-Hermitian space over a division quaternion algebra, with I_v(s) of Levi character |Nrd(a)|^{s+5/2}, the normalized intertwiner (b_v(s)/a_v(s)) M_v(s) and the residue of the doubling integral at s = 3/2 identified with a theta pairing by the second-term Siegel–Weil identity (IP23, §9.5, Lemmas 9.6–9.8, pp. 61–64).",
+      "needs": "Extend the anisotropic Siegel–Weil formula, the doubling Schwartz map, standard doubling factors, local doubling zeta integrals and the factorization of theta pairings to the doubled anisotropic rank-three skew-Hermitian space over a division quaternion algebra, with the degenerate principal series I_v(s) of functions satisfying F(pg) = |Nrd(a)|^{s+5/2} F(g) for p in the Siegel parabolic with Levi component a ∈ GL₃(B_v), the normalized induction of |Nrd(a)|^s since δ_P(a)^{1/2} = |Nrd(a)|^{5/2}, the normalized intertwiner (b_v(s)/a_v(s)) M_v(s) and the residue of the doubling integral at s = 3/2 identified with a theta pairing by the second-term Siegel–Weil identity (IP23, §9.5, Lemmas 9.6–9.8, pp. 61–64).",
       "supplier": "MetaplecticAutomorphicForms",
       "section": "§§6.4, 6.10a–6.12"
     },
