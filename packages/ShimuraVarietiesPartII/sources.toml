@@ -145,3 +145,21 @@ status = "certified"
 accessed = "2026-11-16"
 version_note = "arXiv:2204.02829v4; arXiv pagination and numbering; the comparison of completions under ad-isomorphisms is Proposition 5.3.1 there, cited by KZ as Theorem 5.2 of an earlier arXiv version; not collated with the journal"
 cited_for = ["Exact supplier contracts", "§1.8", "§5.1"]
+
+[[source]]
+id = "MP19"
+authors = "Keerthi Madapusi Pera"
+title = "Toroidal compactifications of integral models of Shimura varieties of Hodge type"
+year = 2012
+arxiv = "1211.1731v6"
+locator_scheme = "theorem"
+locator = "Theorem 1; Corollary 4.1.11"
+url = "https://arxiv.org/abs/1211.1731v6"
+fetched_from = "https://arxiv.org/pdf/1211.1731v6"
+fetched_at = "2026-11-16T16:39:03Z"
+sha256 = "837b3cf0f903126f08057ada808e031d101f2fab49d7837619a14ad05d00d155"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v6"
+cited_for = ["Exact supplier contracts", "References"]
