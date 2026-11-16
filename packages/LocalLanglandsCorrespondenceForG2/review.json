@@ -1,10 +1,18 @@
 {
-  "review": {
-    "status": "needs_changes",
-    "reviewer": "independent-review-REV-PKG-LocalLanglandsCorrespondenceForG2~2",
-    "date": "2026-11-10",
-    "findings": 11,
-    "blocking": 7,
-    "notes": "Checked F01\u2013F09 repairs, all 75 targets and Needs lines, all 15 seeded source targets, 11 declared gap contracts, current supplier heads and overlap leads, and pinned declarations. Computed adversarial witnesses are in the round-2 report. Suggested.lean elaborates with only its expected sorry warning; both signatures checked; all one-tactic padding probes fail. A native octonion formulation of the missing Griess headline also elaborates. Dependency check: 236 roadmaps, 2147 edges, 0 problems. Griess original text remains settled uncertified. Eleven findings require repair, seven blocking."
-  }
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-LocalLanglandsCorrespondenceForG2~9",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-LocalLanglandsCorrespondenceForG2~9",
+   "fix": "FIX-PKG-LocalLanglandsCorrespondenceForG2~10",
+   "from": "2afd21ebb659bfe0173a9d44d98a60d155c5ea56",
+   "head": "3b3f4a7812964d134e8cf61a7fd35996a4f846ac",
+   "findings": 4,
+   "lines": 58
+  },
+  "notes": "every finding of `REV-PKG-LocalLanglandsCorrespondenceForG2~9` (4) was P3 and `FIX-PKG-LocalLanglandsCorrespondenceForG2~10` repaired them at `3b3f4a7`, changing 58 lines of the package; no further review round was filed"
+ }
 }
