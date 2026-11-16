@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PresentableInfinityCategories~3",
+  "head": "a6d792879dcbf10fd3ed0ec1531909b1b704b030",
+  "pr": 2270,
+  "folder": "InfinityCategoryTheory/PresentableInfinityCategories",
+  "date": "2026-11-16",
+  "findings": 9,
+  "blocking": 4,
+  "notes": "Full review. Gate FAIL (imports=3, build=7; all other checks 0); depcheck 0 problems. Previous findings: R06, R08, R09 repaired, R07 partly, R01-R05 not. Sample: all 15 seeded targets read against HTT, HA and SAG from the author's page (57 locators, all agree). Adversarial table with computed values for the sample, the headlines and each finding. New: a false Check and an instance-free Check in 5.7.9, a citation of a nonexistent section, a wrong route in 4.1.1. Layer 9 elaborates at the pin in a scratch copy with the R01 repair; Layers 4 and 7 could not be elaborated. Overlap with EnhancedDerivedSheaves on main stands (P2). Adamek-Rosicky not readable.",
+  "text": "bc0fd25be0f5b32e"
+ }
+}
