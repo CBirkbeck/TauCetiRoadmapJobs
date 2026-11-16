@@ -191,6 +191,7 @@ CompletedCohomologyPartII
 CohomologyComparisons
 CstConjectureForDaggerVarieties
 AutomorphicBundles
+HilbertModularForms
 HodgeTateAndCanonicalSubgroups
 PerfectoidShimuraVarieties
 TorsionCohomologyInfrastructure
