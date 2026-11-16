@@ -246,8 +246,9 @@ def IsNonTrapping : Prop :=
 
 open Classical in
 /-- The endpoint `(γ(T), γ'(T))` in `TM` of a geodesic `γ` of `(M, g)` on `[0, T]` issuing from
-`z`, and `z` itself when there is none; geodesics of `M` with the same initial data agree on a
-common interval (README §4.1), so the choice of `γ` does not matter (README §5.6). -/
+`z`, and `z` itself when there is none, as for every `T ≤ 0`; geodesics of `M` with the same
+initial data agree on a common interval (README §4.1), so the choice of `γ` does not matter
+(README §5.6). -/
 noncomputable def geodesicEndpoint (z : TangentBundle (𝓡∂ (n + 1)) M) (T : ℝ) :
     TangentBundle (𝓡∂ (n + 1)) M :=
   if h : ∃ γ : ℝ → M,
@@ -256,10 +257,11 @@ noncomputable def geodesicEndpoint (z : TangentBundle (𝓡∂ (n + 1)) M) (T : 
       (TauCeti.Manifold.curveVelocityWithin (𝓡∂ (n + 1)) h.choose (Icc 0 T) T)
   else z
 
-/-- The scattering relation `α(z) = φ_{τ̃(z)}(z)` on `∂SM`: for `z` with positive exit time, the
-endpoint of the geodesic of `M` issuing from `z` at its exit time; otherwise `(y, −w)` for the
-endpoint `(y, w)` of the geodesic issuing from `−z`, which runs the geodesic through `z` backwards
-to its entry point; a glancing vector of a strictly convex boundary is fixed (README §5.6;
+/-- The scattering relation `α(z) = φ_{τ̃(z)}(z)` on `∂SM`: for `z` with positive finite exit time,
+the endpoint of the geodesic of `M` issuing from `z` at its exit time; otherwise `(y, −w)` for the
+endpoint `(y, w)` of the geodesic issuing from `−z` at the exit time of `−z` (at time `0`, so
+`(y, w) = −z`, when that exit time is infinite), which runs the geodesic through `z` backwards to
+its entry point; a glancing vector of a strictly convex boundary is fixed (README §5.6;
 Paternain–Salo–Uhlmann, Definition 3.3.4). -/
 noncomputable def scatteringRelation (z : TangentBundle (𝓡∂ (n + 1)) M) :
     TangentBundle (𝓡∂ (n + 1)) M :=

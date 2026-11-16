@@ -1523,7 +1523,8 @@ geodesic of `M` (Paternain–Salo–Uhlmann, Definition 3.3.4, lines 3114–3117
 for `z ∈ TM` and `T ∈ ℝ` let `geodesicEndpoint z T` be the endpoint `(γ(T), γ'(T))` of a geodesic
 `γ` of `(M, g)` on `[0, T]` issuing from `z`, which does not depend on the choice of `γ` (4.1), and
 `z` itself when there is none; then `α(z)` (`scatteringRelation`) is `geodesicEndpoint z τ(z)` when
-`τ(z) > 0`, and otherwise `(y, −w)` for `(y, w) = geodesicEndpoint (x, −v) τ(x, −v)`, `z = (x, v)`.
+`0 < τ(z) < ∞`, and otherwise `(y, −w)` for `(y, w) = geodesicEndpoint (x, −v) T′`, `z = (x, v)`,
+where `T′ = τ(x, −v)` when that is finite and `T′ = 0` when it is infinite.
 On `∂SM` this is `φ_{τ̃(z)}(z)`: inward vectors follow their geodesic to its exit, outward vectors
 follow theirs backwards to its entry, and glancing vectors, with `τ = 0` in both directions, are
 fixed. Define the tangential
@@ -1532,7 +1533,9 @@ projection `P(x, v) := v − μ(x, v) ν_in(x) ∈ T_x∂M` on `∂SM`, and the 
 `(∂M, h)` (Stefanov–Uhlmann–Vasy, lines 150–163, with their `∂±` interchanged).
 
 - `geodesicEndpoint z T` is `(γ(T), γ'(T))` for every geodesic `γ` of `(M, g)` on `[0, T]` issuing
-  from `z`, and on a regular domain it is `φ_T(z)` whenever `t ↦ π(φ_t z)` maps `[0, T]` into `M`.
+  from `z`; on a regular domain, for `T > 0`, it is `φ_T(z)` whenever `φ_t z` is defined for
+  `t ∈ [0, T]` and `t ↦ π(φ_t z)` maps `[0, T]` into `M`; for `T ≤ 0` it is `z`, since no geodesic
+  is defined on the empty set `[0, T]`, `T < 0`, or on `{0}`, which carries no derivative.
 - `α` is a diffeomorphism of `∂SM`, `α ∘ α = id`, `α(∂±SM) = ∂∓SM`, the fixed-point set of `α` is
   exactly `∂₀SM`, and `τ̃ ∘ α = −τ̃` (Lemma 3.3.5 and Exercise 3.3.6, lines 3118–3127). Read on
   `TM`, for every compact Hausdorff non-trapping `(M, g)` with strictly convex boundary and
@@ -1563,8 +1566,14 @@ projection `P(x, v) := v − μ(x, v) ν_in(x) ∈ T_x∂M` on `∂SM`, and the 
   `z = ((0, −1), (0, 1))`, the endpoint at time `1` is `((0, 0), (0, 1))`; for `T = 3 > τ(z) = 2` no
   geodesic of `M` is defined on `[0, 3]`, so the value is `z`, not the point `((0, 2), (0, 1))`
   of the flow of `ℝ²`, which lies outside `M`; for `T = 0` the parameter set `{0}` carries no
-  derivative, so the value is again `z`; and for the zero vector at `x` the constant curve gives
-  `(x, 0)` for every `T > 0`.
+  derivative, so the value is again `z`; for `T = −1` the parameter set `[0, −1]` is empty, so the
+  value is `z`, not `φ_{−1}(z) = ((0, −2), (0, 1))`; and for the zero vector at `x` the constant
+  curve gives `(x, 0)` for every `T > 0`.
+- The scattering relation off the unit vectors: for the zero vector `z = (x, 0)`, `τ = ∞` in both
+  directions, so the first branch does not apply, `T′ = 0`, `geodesicEndpoint (x, 0) 0 = (x, 0)`,
+  and the sign change returns `α(z) = (x, 0) = z`; at a boundary point this agrees with the zero
+  vector being glancing (5.1). A definition with the condition `τ(z) > 0` alone would evaluate the
+  endpoint at the time `∞`, which is no real time.
 
 *Needs:* 1.2, 2.1, 3.5, 4.1, 5.1, 5.2, 5.4; Tau Ceti `TauCeti.Manifold.IsGeodesicCurveOnFrom`,
 `TauCeti.Manifold.curveVelocityWithin`, `TauCeti.IsOutwardPointing`.
@@ -1828,10 +1837,11 @@ RiemannianGeometry R5a.
 
 - G. P. Paternain, M. Salo, G. Uhlmann, *Geometric Inverse Problems with Emphasis on Two
   Dimensions*, Cambridge Studies in Advanced Mathematics 204, 2023 (`paternain-salo-uhlmann2023`):
-  Chapter 2.5 (lines 2443–2530) and Chapter 3, Sections 3.1–3.3 (lines 2640–3127).
+  Preface (lines 307–310), Section 2.5 (lines 2443–2530) and Chapter 3, Sections 3.1–3.3
+  (lines 2640–3127).
 - P. Stefanov, G. Uhlmann, A. Vasy, *Local and global boundary rigidity and the geodesic X-ray
   transform in the normal gauge*, Ann. of Math. 194 (2021) (`stefanov-uhlmann-vasy2021`):
-  Section 1, lines 15–230.
+  abstract and Section 1 (condition (1.1), Theorems 1.1–1.4), lines 8–230.
 - G. Uhlmann, A. Vasy, *The inverse problem for the local geodesic ray transform*, Invent. Math.
   205 (2016) (`uhlmann-vasy2016`): Section 1, lines 15–70 and 128–142; Section 3, lines 498–524.
 - J. M. Lee, *Introduction to Riemannian Manifolds*, 2nd ed., GTM 176, 2018
