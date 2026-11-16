@@ -3452,7 +3452,7 @@
     },
     {
       "slug": "udc-bombieri-andre-katz",
-      "needs": "The Bombieri–André theorem that a differential system satisfying Galochkin's condition is globally nilpotent, and Katz's theorem that a globally nilpotent operator over Q̄(x) is regular singular with quasi-unipotent local monodromy at every point of P¹.",
+      "needs": "If a differential system y′ = Gy over Q̄(x) satisfies Galochkin's condition (§5.3), then every point of P¹ is at worst a regular singular point of it, its exponents there are rational, and so every local monodromy is quasi-unipotent: the composite of the Bombieri–André theorem, which gives nilpotent p-curvature for a set of primes of Dirichlet density one, and Katz's local monodromy theorem under that hypothesis.",
       "supplier": "DiophantineApproximationAndTranscendence",
       "section": "§5.3"
     }
