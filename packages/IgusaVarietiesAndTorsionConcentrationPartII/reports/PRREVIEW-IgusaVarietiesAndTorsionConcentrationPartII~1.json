@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IgusaVarietiesAndTorsionConcentrationPartII~1",
+  "head": "b96db01e7d7782a979f94f2758909cd5e0562cb5",
+  "pr": 2439,
+  "folder": "IgusaVarietiesAndTorsionConcentrationPartII",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Two P3 findings: a false Check in §8.1 (the ramification condition already excludes F+ = Q, CS17 footnote 27) and a partial restatement of the supplier's theta in §9.1 (owned by EndoscopicTransferAndUnitaryTraceComparison §6.6(d)). Seeded sample: all 15 targets checked against CS17, Shin-BCU, Shin09, Shin11 and Shin12; 47 locators verified. Gate at b96db01 passed every check; depcheck: 252 roadmaps, 2396 edges, 0 problems; nothing changed outside the folder. Suggested.lean elaborates with only two sorry warnings; #check of the 4 declarations matches the README; one-tactic probes fail, so neither theorem is padding. 131 cross-roadmap ids and 17 library declarations resolved. 3 declared gaps match design/plan.json. Adversarial table: 21 rows with computed values. Overlap: kept variants of AG2.7, parent §§5.1-5.4 and Endoscopic §§8.22/14.4-14.5 are stated in Scope; nothing else shared. Source independence: 24 passages, 5 sources; CS17 has 128 of 160 locators; layer order is forced by the Needs lines. 13 source issues recorded.",
+  "text": "1045811dfb25f489"
+ }
+}
