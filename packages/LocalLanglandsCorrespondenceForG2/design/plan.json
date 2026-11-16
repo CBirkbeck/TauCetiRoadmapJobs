@@ -4624,21 +4624,46 @@
       ]
     },
     {
-      "slug": "pgsp6-similitude-theta-tables",
+      "slug": "pgsp6-similitude-twist-rule",
       "supplier": "MetaplecticAutomorphicForms",
-      "section": "Layer 3, §§3.41–3.42",
-      "needs": "For the similitude pairs PGSp6 × PGSO8, PGSp6 × PGO6 and PGSp6 × PGO(5,1), give the parameters of the lifts of representations induced from every proper Levi of PGSp6 (with the lower-tower Jacquet–Langlands identification), the quadratic-twist rule along each lift, the lift of each generic constituent of a Siegel-induced I3(τ) with τ discrete, and the vanishing of the lift of the Steinberg representation of PGSp6(F) to split PGO6 (GS, proof of Lemma 12.5, p. 37).",
+      "section": "Layer 3, §§3.34, 3.41–3.42",
+      "needs": "For H one of split PGSO8, split PGO6 and PGO(5,1) over F, every irreducible σ of PGSp6(F) and every quadratic character χ of F×, the similitude theta lift of σ ⊗ χ ∘ sim to H is the lift of σ twisted by χ ∘ sim_H, and χ ∘ sim_H restricts to χ ∘ det on PGL4 and to χ ∘ Nrd on PGL2(D) (GS, proof of Theorem 12.6, pp. 38–39).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:2.5",
+        "LocalLanglandsCorrespondenceForG2:10.3",
+        "LocalLanglandsCorrespondenceForG2:10.4"
+      ]
+    },
+    {
+      "slug": "pgsp6-steinberg-pgo6-vanishing",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "Layer 3, §§3.10, 3.34",
+      "needs": "The similitude theta lift of the Steinberg representation of PGSp6(F) to split PGO6(F) is zero (GS, proof of Lemma 12.5, p. 37).",
       "neededBy": [
         "LocalLanglandsCorrespondenceForG2:2.3",
-        "LocalLanglandsCorrespondenceForG2:2.5",
-        "LocalLanglandsCorrespondenceForG2:5.5",
+        "LocalLanglandsCorrespondenceForG2:8.1"
+      ]
+    },
+    {
+      "slug": "pgsp6-lower-tower-parameters",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "Layer 3, §§3.34, 3.42",
+      "needs": "If an irreducible σ of PGSp6(F) has nonzero similitude lift τ to split PGO6(F) or to PGO(5,1)(F), with φ_τ : WD_F → SL4(C) the parameter of a constituent of τ on PGL4(F), respectively on PGL2(D)(F) through the inner-form parameter, then every constituent of the restriction of σ to Sp6(F) has parameter 1 ⊕ Λ²φ_τ, and, when τ is on split PGO6, the lift of σ to split PGSO8(F) is an irreducible subquotient, with the exponents of τ′, of the normalized induction of 1 ⊗ τ′ from the parabolic with Levi the image of GL1 × GSO6, τ′ a constituent of τ on PGSO6(F) (GS, §§12.2–12.3 and proof of Theorem 12.3, pp. 34–36).",
+      "neededBy": [
         "LocalLanglandsCorrespondenceForG2:9.1",
         "LocalLanglandsCorrespondenceForG2:9.2",
-        "LocalLanglandsCorrespondenceForG2:9.3",
-        "LocalLanglandsCorrespondenceForG2:10.3",
         "LocalLanglandsCorrespondenceForG2:10.4",
-        "LocalLanglandsCorrespondenceForG2:10.7",
-        "LocalLanglandsCorrespondenceForG2:8.1"
+        "LocalLanglandsCorrespondenceForG2:10.7"
+      ]
+    },
+    {
+      "slug": "pgsp6-pgso8-induction-principle",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "Layer 3, §§3.34, 3.41–3.42",
+      "needs": "For a proper standard parabolic P = MN of PGSp6 with M the image of GL_n1 × ⋯ × GL_nr × GSp_2n0, and σ in Irr♥(PGSp6(F)) the Langlands quotient, respectively a constituent, of the normalized induction of τ1 ⊗ ⋯ ⊗ τr ⊗ τ0 (essentially tempered with exponents in the positive chamber, respectively discrete), τ0 has nonzero similitude lift θ(τ0) to split GSO_(2n0+2)(F) and the lift of σ to split PGSO8(F) is the Langlands quotient, respectively a constituent, of the normalized induction of τ1 ⊗ ⋯ ⊗ τr ⊗ θ(τ0) from the parabolic with Levi the image of GL_n1 × ⋯ × GL_nr × GSO_(2n0+2) (GS, proof of Theorem 12.3, second bullet, p. 36).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:5.5",
+        "LocalLanglandsCorrespondenceForG2:9.3"
       ]
     },
     {
@@ -4757,7 +4782,16 @@
       "slug": "cubic-jordan-global-theta",
       "supplier": "ExceptionalThetaCorrespondencesForG2",
       "section": "Layer 10 (global exceptional lifts), with Layer 5",
-      "needs": "For a totally real k, a central simple k-algebra D of degree three, H = Aut(D) as a Jordan algebra and split G2, the global theta lift in both directions for the dual pair H × G2 in the E6 attached to D, with local components in the local correspondences of §§5.1 and 5.9 at the finite places; and, for D a division algebra and e ⊂ D a cubic subfield, a cuspidal representation of H spherical at the real places with nonzero H_e-period has nonzero lift to G2, cuspidal when a finite local lift is supercuspidal, then irreducible with the local lifts as components and with nonzero lift back to H (GF, Lemma 2.5 and §2.7(b)).",
+      "needs": "For a totally real k, a central simple k-algebra D of degree three, H = Aut(D) as a Jordan algebra and split G2, the global theta lift in both directions for the dual pair H × G2 in the E6 attached to D, with every irreducible automorphic constituent of a nonzero lift having its local components at the finite places in the local correspondences of §§5.1 and 5.9 (GF, §2.7(b), p. 7).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:3.11"
+      ]
+    },
+    {
+      "slug": "cubic-period-global-theta",
+      "supplier": "ExceptionalThetaCorrespondencesForG2",
+      "section": "Layer 10 (global exceptional lifts), with Layer 5",
+      "needs": "For a totally real k, a central division algebra D of degree three over k, H = Aut(D), a cubic subfield e ⊂ D with pointwise stabilizer H_e, and a cuspidal representation Ξ of H(A_k) spherical at the real places with nonzero H_e-period, the global lift of Ξ (the lift of the cubic-jordan-global-theta contract) to split G2 is nonzero, cuspidal when some finite local lift θ(Ξ_v) is supercuspidal, then irreducible with the local lifts as components at the finite places, and its lift back to H is nonzero (GF, Lemma 2.5 and proof, pp. 8–9).",
       "neededBy": [
         "LocalLanglandsCorrespondenceForG2:3.11"
       ]

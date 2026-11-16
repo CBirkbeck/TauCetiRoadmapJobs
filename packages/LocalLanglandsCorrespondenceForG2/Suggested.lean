@@ -1,5 +1,6 @@
 import Mathlib
 import TauCeti.Algebra.Octonion.Basic
+import TauCeti.NumberTheory.ClassFieldTheory.WeilGroup.Topology
 
 /-!
 # The local Langlands correspondence for G₂: target signatures
@@ -14,11 +15,13 @@ Statable and stated here:
   two homomorphisms from a group into it whose octonion representations are completely reducible
   and isomorphic are conjugate by one automorphism;
 * the unacceptability of `Spin₇(ℂ)` (README §0.8): there are two homomorphisms from a finite
-  group to `Spin₇(ℂ)` that are conjugate element by element but not by one element. With its
-  local form (README §0.8: two `Spin₇`-valued parameters of `W_F × SL₂(ℂ)`, of finite image on
-  `W_F`, elementwise conjugate and not conjugate, for every `F`; Chenevier–Gan, Proposition 8.3),
-  which needs the `Spin₇`-valued parameters that the pins lack (see below), this is the reason
-  the PGSp₆ correspondence of Layer 10 takes values in weak parameter classes.
+  group to `Spin₇(ℂ)` that are conjugate element by element but not by one element;
+* its local form on the Weil group of every nonarchimedean local field of characteristic zero
+  (README §0.8; Chenevier–Gan, Proposition 8.3), stated on `TauCeti.ClassFieldTheory.WeilGroup`
+  with its Weil topology: the two parameters of the README are trivial on `SL₂(ℂ)` and of finite
+  image on `W_F`, so they are homomorphisms of `W_F` with open kernel and finite image. With the
+  finite-group form, this is the reason the PGSp₆ correspondence of Layer 10 takes values in weak
+  parameter classes.
 
 Not statable at the pins, with what each lacks:
 
@@ -138,6 +141,25 @@ theorem spin7_not_acceptable :
     ∃ (Γ : Type) (_ : Group Γ) (_ : Finite Γ) (r r' : Γ →* spinGroup sumSquaresSeven),
       (∀ γ, IsConj (r γ) (r' γ)) ∧
         ¬ ∃ g : spinGroup sumSquaresSeven, ∀ γ, r' γ = g * r γ * g⁻¹ := by
+  sorry
+
+/-- **`Spin₇` is unacceptable on the Weil group of every `p`-adic field** (Chenevier–Gan,
+*Spin(7) is unacceptable*, Proposition 8.3 and its proof). For a nonarchimedean local field `K` of
+characteristic zero there are a homomorphism `r : W_K → Spin₇(ℂ)` with open kernel and finite image
+and a character `η` of `W_K` with open kernel and values in the centre `{±1}` of `Spin₇(ℂ)` such that
+`r w` and `η w * r w` are conjugate in `Spin₇(ℂ)` for every `w`, while no single element of
+`Spin₇(ℂ)` conjugates `r` to `η · r`. Extended trivially to `SL₂(ℂ)`, `r` and `η · r` are two
+`Spin₇`-valued parameters of `W_K × SL₂(ℂ)` with one weak class and two conjugacy classes. The
+source works in the compact form; a finite subgroup of `Spin₇(ℂ)` is conjugate into it, element
+conjugacy passes to `Spin₇(ℂ)`, and non-conjugacy passes by the polar decomposition of README §0.8. -/
+theorem spin7_not_acceptable_weilGroup (K : Type*) [Field K] [ValuativeRel K]
+    [TopologicalSpace K] [IsNonarchimedeanLocalField K] [CharZero K] :
+    ∃ r η : TauCeti.ClassFieldTheory.WeilGroup K →* spinGroup sumSquaresSeven,
+      IsOpen (r.ker : Set (TauCeti.ClassFieldTheory.WeilGroup K)) ∧ Finite r.range ∧
+        IsOpen (η.ker : Set (TauCeti.ClassFieldTheory.WeilGroup K)) ∧
+        (∀ w, η w ∈ Subgroup.center (spinGroup sumSquaresSeven) ∧ η w * η w = 1) ∧
+        (∀ w, IsConj (r w) (η w * r w)) ∧
+        ¬ ∃ g : spinGroup sumSquaresSeven, ∀ w, η w * r w = g * r w * g⁻¹ := by
   sorry
 
 end TauCetiRoadmap.LocalLanglandsCorrespondenceForG2
