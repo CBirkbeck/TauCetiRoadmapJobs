@@ -1,0 +1,30 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalLanglandsCorrespondenceForG2~5",
+  "head": "88decded54b52fdc596f08c6de1d556dde700143",
+  "pr": 2458,
+  "folder": "LocalLanglandsCorrespondenceForG2",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "incremental re-review of 31 changed lines since 038ac84. The change (the Sp2n central-character contract with its uses in sections 6.1 and 10.5, the definition of L2_e in section 1.1 with API and Checks) is correct: instances computed, 4 locators checked in GS and GF, the supplier sections read at their open heads. The two findings of the previous report are not repaired, their passages being unchanged: R01 (P2) Xu packets undefined over unbounded parameters in sections 10.8-10.9; R02 (P3) Jacquet-Langlands on PGL2(D) in section 9.1 where only the inner-form parameter exists. New R03 (P3): the slug symplectic-packets-central-character is absent from design/plan.json (repair outside the folder). D01 stands. Gate: every check passes; dependency check 0 problems; Suggested.lean unchanged and elaborates with sorry the only warning; pull request text not contradicted. Not read: Griess and SpV (uncertified).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "The new lower-tower Xu-packet contract is not declared in plan.json",
+    "where": "the board's design/plan.json gaps list of this package",
+    "raised": "PRREVIEW-LocalLanglandsCorrespondenceForG2~2"
+   },
+   {
+    "id": "D02",
+    "severity": "P3",
+    "title": "The new central-character contract is not declared in plan.json",
+    "where": "the `gaps` list of this package's board `design/plan.json`",
+    "raised": "PRREVIEW-LocalLanglandsCorrespondenceForG2~5"
+   }
+  ],
+  "text": "5c414e42b0ab5587"
+ }
+}
