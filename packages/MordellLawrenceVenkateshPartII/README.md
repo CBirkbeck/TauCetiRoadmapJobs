@@ -290,8 +290,12 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 
 ### From TauCetiRoadmap.MordellLawrenceVenkatesh
 
-- §§0.3–0.4: the centralizer of a σ-semilinear automorphism of a module over a finite étale algebra
-  and its dimension bound (Lawrence–Venkatesh Lemma 2.1); consumed in §2.2.
+- §§0.3–0.4: for a field `E` with an automorphism `σ` of finite order `e` and a σ-semilinear bijection
+  `φ` of a `d`-dimensional `E`-vector space, the centralizer `Z(φ)` as an algebra over `E^σ`, with
+  `dim_(E^σ) Z(φ) = dim_E Z(φ^e) ≤ d²` (Lawrence–Venkatesh Lemma 2.1); consumed in §2.2, which reduces a
+  finite étale algebra `E` over `E₀` with `E^σ = E₀` to this case: `σ` permutes the field factors of `E`
+  in one cycle of length `k`, and restriction to one factor `E₁` identifies `Z(φ)` with the centralizer of
+  the `σ^k`-semilinear map `φ^k` on that factor, where `σ^k` has fixed field `E₀` on `E₁`.
 - §0.24: Goursat's lemma for products of simple Lie algebras; consumed in §4.1.
 - §1.2: Faltings's finiteness lemma: for fixed `K`, `S`, rank and weight, finitely many semisimple
   pure Galois representations with integral Frobenius polynomials up to isomorphism; consumed in
@@ -333,8 +337,10 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 - §2.18 (Eulerian numbers, `A(n, q)` counting permutations of `Fin n` with `q` descents), §2.39
   (the factorial sum, symmetry, recurrence and Worpitzky's identity) and §2.56 (unimodality of the
   rows); consumed in Layer 8.
-- What ClassicalArithmeticCompletion must provide (gap:eulerian-log-concavity-and-variance): log-concavity of every row `q ↦ A(n, q)` on its contiguous support, which is `0 ≤ q < n` for `n ≥ 1` and `{0}` for `n = 0` (the empty permutation gives `A(0, 0) = 1`), preservation of log-concavity on contiguous support under convolution and reflection of finite sequences, and the variance `(n + 1)/12` of the descent number of a uniformly random permutation of `Fin n` for `n ≥ 2`.
-- What ClassicalArithmeticCompletion must provide (gap:eulerian-central-limit): the central limit theorem for descents: for a uniformly random permutation of `Fin n`, `(des − (n − 1)/2)/√n` converges in law to the centred normal law of variance `1/12` as `n → ∞`, together with the uniform bound on its second moments that gives convergence of first absolute moments.
+- What ClassicalArithmeticCompletion must provide (gap:eulerian-row-log-concavity): for every `n`, the row `q ↦ A(n, q)` is positive exactly on `0 ≤ q < n` when `n ≥ 1` and on `{0}` when `n = 0` (the empty permutation gives `A(0, 0) = 1`), and `A(n, q)² ≥ A(n, q − 1)·A(n, q + 1)` for every `q ≥ 1`.
+- What ClassicalArithmeticCompletion must provide (gap:log-concave-convolution): if `a, b : ℤ → ℝ` are nonnegative, finitely supported, supported on integer intervals and log-concave (`a_k² ≥ a_(k−1)·a_(k+1)` for every `k`), then the convolution `k ↦ Σ_j a_j·b_(k−j)` and the reflection `k ↦ a_(−k)` have the same four properties.
+- What ClassicalArithmeticCompletion must provide (gap:eulerian-descent-variance): for `n ≥ 2` the descent number of a uniformly random permutation of `Fin n` has mean `(n − 1)/2` and variance `(n + 1)/12`, that is `Σ_q q·A(n, q) = n!·(n − 1)/2` and `Σ_q (q − (n − 1)/2)²·A(n, q) = n!·(n + 1)/12`.
+- What ClassicalArithmeticCompletion must provide (gap:eulerian-central-limit): for a uniformly random permutation of `Fin n`, `(des − (n − 1)/2)/√n` converges in law to the centred normal law of variance `1/12` as `n → ∞`.
 
 ### From TauCetiRoadmap.ReductiveGroups
 
@@ -463,7 +469,7 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   and a cohomological projector restricts them when it is given geometrically on both sides.
   Consumed in §§0.1, 0.5, 0.7, 1.2 and 7.5.
 - What PadicHodgeTheory must provide (gap:relative-crystalline-comparison): for a smooth projective morphism `f : 𝒴 → 𝒳` of smooth `W(k)`-schemes with `k` finite and `p` unramified, the fibrewise crystalline comparisons of §8.1 at the points of a residue disk of `𝒳`, which are horizontal for the Gauss–Manin connection on `R^i f_* Ω^•` by the proper smooth pushforward of de Rham local systems of §7.3 applied to the constant coefficient `ℤ_p`, whose higher direct images are lisse, are compatible with the Frobenius of the convergent F-isocrystal `R^i f_crys,*` of CrystallineCohomology §CR.7.3, so that `R^i f_*ℚ_p` and that filtered F-isocrystal are associated in the sense of Faltings.
-- What PadicHodgeTheory must provide (gap:hodge-tate-image-cocharacter): for a crystalline representation `ρ : G_K → GL(V)` of a finite unramified `K/ℚ_p` preserving a family of tensors, the Zariski closure of `ρ(G_K)` contains a torus that is conjugate over `ℚ̄_p`, inside the group fixing those tensors, to the image of the Hodge cocharacter of `D_dR(V)` (Sen; Wintenberger's tensor-compatible splitting).
+- What PadicHodgeTheory must provide (gap:hodge-tate-image-cocharacter): for a Hodge–Tate representation `ρ : G_K → GL(V)` of a finite extension `K/ℚ_p` on a finite-dimensional `ℚ_p`-vector space, comparing the graded Hodge–Tate fibre functor with the forgetful fibre functor extended to `C_p`, on the tensor category generated by `V`, gives a cocharacter of the Zariski closure of `ρ(G_K)` over `C_p` that acts by `t^i` on the `C_p(i)`-isotypic part of `V ⊗ C_p`, so that its weights on `V ⊗ C_p` are the Hodge–Tate weights of `V` with their multiplicities (Serre; Sen; the step used in the proof of LS, Lemma 3.14, p. 26, LS lines 1191–1200).
 
 ### From TauCetiRoadmap.CrystallineCohomology
 
@@ -1802,7 +1808,7 @@ Let `H` be a connected semisimple group in characteristic zero with simple adjoi
 is the graph of an isogeny after central quotients. Prove that `∼` is an equivalence relation, and that
 projection onto one representative of each class is surjective with finite kernel. This applies to
 `SL_N` (`N ≥ 2`), `Sp_(2r)` (`r ≥ 1`) and `SO_N` (`N = 3` or `N ≥ 5`); `SO₂` and `SO₄` are excluded
-(LS, Lemma 6.5, pp. 67–68; LS line 3082).
+(LS, Lemma 6.5, pp. 67–68; LS line 3082, with the restriction of Source corrections).
 
 A route: Goursat's lemma for simple Lie algebras applies to each two-factor projection; a three-factor
 projection gives transitivity, and induction on the number of classes gives the last assertion.
@@ -2398,13 +2404,27 @@ contains a torus conjugate over `ℚ̄_p`, inside the similitude group of the in
 image of the Hodge cocharacter transported by §7.1 (LV, proof of Lemma 10.4 and footnote 11, printed
 pp. 976–978).
 
-A route: the tensor-compatible Hodge–Tate splitting places the Hodge cocharacter in the algebraic Galois
-group, compatibly with the form tensors, which upgrades the `GL` assertion to the similitude group; §2.3
-shows that Levi projection preserves its conjugacy class.
+A route: by gap:hodge-tate-image-cocharacter the Zariski closure of the image contains, over `C_p`, a
+cocharacter whose weights on `V` are the Hodge–Tate weights; every maximal torus of the identity
+component over `C_p` is conjugate to the base change of one defined over `ℚ̄_p`, so the closure contains
+over `ℚ̄_p` a cocharacter with the same weights, whose inverse has the de Rham jumps as weights
+(Conventions, Hodge–Tate signs). The intersection pairing is Galois-equivariant with values in a Tate
+twist, so the closure lies in the similitude group, and §7.1 carries a Hodge cocharacter of `D_dR(V)`
+in the similitude group of the de Rham pairing to a cocharacter of the similitude group of `V ⊗ ℚ̄_p`
+with the same weights. In the full similitude group of a nondegenerate symmetric or alternating form
+over an algebraically closed field, two cocharacters with the same weights on `V` are conjugate by an
+isometry: for multiplier weight `w` the weight spaces for `k` and `w − k` are dually paired, the
+weight-`w/2` space is nondegenerate, and Witt's theorem matches the two decompositions. §2.3 shows that
+Levi projection preserves the conjugacy class.
 
 **Checks.**
 
-- The similitude-group assertion does not follow from equality of `GL` weight multiplicities alone.
+- In the connected group `GSO₄` of the split symmetric form pairing `e₁` with `e₄` and `e₂` with `e₃`,
+  the cocharacters `t ↦ diag(t, 1, t, 1)` and `t ↦ diag(t, t, 1, 1)` both have multiplier `t` and
+  weights `1, 1, 0, 0` on `V`, but their weight-one planes `⟨e₁, e₃⟩` and `⟨e₁, e₂⟩` are isotropic planes
+  meeting in a line, hence in different rulings, so they are not `GSO₄`-conjugate; the isometry
+  exchanging `e₂` and `e₃`, of determinant `−1`, conjugates them in `GO₄`. Comparing weights decides
+  conjugacy only in the similitude group with both components (Conventions, Groups).
 - For `H¹` of an elliptic curve with good ordinary reduction the local representation is an extension
   of a character of Hodge–Tate weight `−1` by an unramified character (Hodge–Tate weight `0`); the de
   Rham Hodge cocharacter is `t ↦ diag(t, 1)` in a basis whose first vector spans `F¹`, and its image,
@@ -2689,7 +2709,8 @@ log-concavity of `β`.
 - At `n = 3`: `2·(2/9) + 2·4·(1/36) = 2/3 = 4/6`.
 - The descent count of a random permutation of `Fin 2` is Bernoulli `1/2`, of variance `1/4 = 3/12`.
 
-*Needs:* §8.2; ClassicalArithmeticCompletion §§2.18, 2.39 with gap:eulerian-log-concavity-and-variance.
+*Needs:* §8.2; ClassicalArithmeticCompletion §§2.18, 2.39 with gap:eulerian-descent-variance, and §2.56
+with gap:eulerian-row-log-concavity and gap:log-concave-convolution.
 
 ### 8.4 The central Eulerian convolution mass is at most one half
 
@@ -2797,9 +2818,10 @@ large `n`; that `β₀ < 40/√n` for all large `n`; and that for each fixed `c 
 `c/√n` fraction of difference weights is `o(√n)` (LV, Lemma 10.3, (10.9)–(10.12) and the proof of
 (10.13), printed pp. 972–974; LV line 3004).
 
-A route: the central limit theorem for descents with uniform second moments gives convergence of first
-absolute moments (uniform integrability); log-concavity and the variance bound give the central-mass
-estimate; Cauchy–Schwarz controls the upper-tail partial sums.
+A route: the central limit theorem for descents gives the normal limit of the difference `D` of two
+independent descent counts, and the second moment of §8.3 gives `E[(D/√n)²] = (n + 1)/(6n) ≤ 1/4` for
+`n ≥ 2`, so `|D|/√n` is uniformly integrable and first absolute moments converge; log-concavity and
+the variance bound give the central-mass estimate; Cauchy–Schwarz controls the upper-tail partial sums.
 
 **Checks.**
 
@@ -3334,6 +3356,15 @@ The following corrections to the sources are used throughout; each is fixed by a
   reindexing, even for reductive `G`: on `𝔾_m` the cocharacters `t` and `t⁻¹` share the parabolic `𝔾_m`
   but give the chains `0 ⊂ ℚe₊ ⊂ V` and `0 ⊂ ℚe₋ ⊂ V` on `V = ℚe₊ ⊕ ℚe₋` (LS line 2645). The criterion
   of the same passage (equal parabolics and conjugacy in them) is the one used in §2.5.
+- **LS, Lemma 6.5, p. 67.** The index-class lemma needs `H` to have finite centre and simple adjoint
+  quotient, so among special orthogonal groups only `SO₃` and `SO_N` with `N ≥ 5` qualify; LS line 3082
+  places no condition on `N`, and its proof uses the finite centre (LS line 3095). For `H = SO₂ = 𝔾_m` the
+  subgroup `{(a, b, ab)} ⊂ H³` surjects onto every pair of factors, so it has three singleton classes,
+  but it has dimension 2 and does not surject onto `H³`. For `H = SO₄ = (SL₂ × SL₂)/μ₂`, writing `[x, y]`
+  for the image of `(x, y)`, the image `G ⊂ H²` of `(x, y, z) ↦ ([x, y], [x, z])` from `SL₂³` surjects
+  onto each factor and has dimension 9 < 12, so it forms one class, while its projection to one factor
+  has the three-dimensional kernel `{(1, [±1, z]) : z ∈ SL₂}`. §4.1 assumes the simple adjoint quotient;
+  its application in §4.3 has `n ≥ 3`, so `N = n!·d ≥ 6`.
 - **LS, Definition 5.44, p. 60.** The associated graded of a decreasing filtration is `F^a/F^(a+1)`.
 - **LS, Definition 9.1, p. 85.** Primitivity excludes nonzero stabilizing translations: translation by zero
   fixes every divisor.
