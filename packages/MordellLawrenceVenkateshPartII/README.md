@@ -295,10 +295,11 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 - §0.24: Goursat's lemma for products of simple Lie algebras; consumed in §4.1.
 - §1.2: Faltings's finiteness lemma: for fixed `K`, `S`, rank and weight, finitely many semisimple
   pure Galois representations with integral Frobenius polynomials up to isomorphism; consumed in
-  §§2.9, 7.3 and 7.6. Its hypotheses are integer characteristic polynomials of Frobenius, which
-  §1.9 supplies for the orbit systems.
+  §§2.9 and 7.3, and through §2.9 in §§4.5, 6.1 and 7.6. Its hypotheses are integer characteristic
+  polynomials of Frobenius, which §1.9 supplies for the orbit systems.
 - §§1.10, 1.12–1.13: global purity forces the conjugation relation on Hodge–Tate exponents, the
-  weight of a filtration, and the Hodge weight `w/2` of a pure representation; consumed in §5.4.
+  weight of a filtration, and the Hodge weight `w/2` of a pure representation; consumed in §5.4,
+  §1.12 through §1.13, whose conclusion is stated in that weight.
 - §§2.5, 2.6, 2.8: residue disks with coordinates, formal horizontal sections with integral
   coefficients, and their complex convergence; consumed in §§0.7 and 3.4.
 - §2.11: crystalline Frobenius on de Rham cohomology of fibres and its compatibility with
@@ -323,9 +324,9 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 - §§5.2–5.3: the exceptional Pell pairs and exceptional degrees `D_j`; consumed in §§10.5, 10.6
   and 10.9.
 - §6.7: classical convolution monodromy (`SL`, `Sp` or `SO`) for hypersurfaces outside the
-  exceptional degrees; consumed in §10.5.
+  exceptional degrees; consumed in §§4.3 and 10.5.
 - §§8.2–8.3: a torsion character of order prime to `p`, generic in every Galois conjugate, with
-  big monodromy uniformly on its orbit; consumed in §§1.7 and 4.3.
+  big monodromy uniformly on its orbit; consumed in §§1.7, 4.3 and 10.5.
 
 ### From TauCetiRoadmap.ClassicalArithmeticCompletion
 
@@ -373,7 +374,7 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   and the equality of dimension and component count of all minimal containing R-parabolics. In
   characteristic zero every finite component group is étale, so these apply to every group of
   Conventions with reductive identity component. Consumed in §§2.3 and 2.11, and through §2.3 in
-  §§2.5, 2.9–2.10, 5.2, 5.5, 5.7–5.8, 7.2 and 7.5.
+  §§2.5, 2.9–2.10, 4.5, 5.2, 5.4–5.5, 5.7–5.8, 6.1, 7.2 and 7.5.
 
 ### From TauCetiRoadmap.RestrictedPowerSeries and TauCetiRoadmap.ComplexKahlerGeometry
 
@@ -424,11 +425,12 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
 ### From TauCetiRoadmap.MotivesAndAlgebraicCycles
 
 - §§6.1–6.3: neutral fibre data over a field, reconstruction of the neutral group `G_ω = Aut^⊗(ω)`
-  with `C ≃ Rep_fd(G_ω)`, and finite type exactly when one object tensor-generates.
+  with `C ≃ Rep_fd(G_ω)`, and finite type exactly when one object tensor-generates. Consumed in
+  §§0.3, 0.6, 2.4 and 7.1.
 - §6.8: for any neutral category and exact faithful tensor fibre `η` with values in finite
   projective `R`-modules, `Isom^⊗(ω_R, η)` is an affine faithfully flat right `G_ω,R`-torsor,
   finitely presented when `G_ω` is of finite type, and `Aut^⊗(η)` is its inner twist. Consumed in
-  §§0.3, 0.6, 2.4, 2.6, 3.1 and 7.1. A finitely presented faithfully flat torsor over a field is a
+  §§0.6, 2.4, 2.6, 3.1 and 7.1. A finitely presented faithfully flat torsor over a field is a
   nonempty scheme of finite type and so has a point over an algebraic closure.
 
 ### From TauCetiRoadmap.PadicHodgeTheory
@@ -459,7 +461,7 @@ finiteness for the quotient of the hypersurface parameter space by `PGL_(n+1)`.
   crystalline cohomology of the special fibre with its Frobenius and, over `K`, de Rham cohomology
   with its Hodge filtration; the comparisons commute with pullback, cup product and Tate twists,
   and a cohomological projector restricts them when it is given geometrically on both sides.
-  Consumed in §§0.5, 0.7, 1.2 and 7.5.
+  Consumed in §§0.1, 0.5, 0.7, 1.2 and 7.5.
 - What PadicHodgeTheory must provide (gap:relative-crystalline-comparison): for a smooth projective morphism `f : 𝒴 → 𝒳` of smooth `W(k)`-schemes with `k` finite and `p` unramified, the fibrewise crystalline comparisons of §8.1 at the points of a residue disk of `𝒳`, which are horizontal for the Gauss–Manin connection on `R^i f_* Ω^•` by the proper smooth pushforward of de Rham local systems of §7.3 applied to the constant coefficient `ℤ_p`, whose higher direct images are lisse, are compatible with the Frobenius of the convergent F-isocrystal `R^i f_crys,*` of CrystallineCohomology §CR.7.3, so that `R^i f_*ℚ_p` and that filtered F-isocrystal are associated in the sense of Faltings.
 - What PadicHodgeTheory must provide (gap:hodge-tate-image-cocharacter): for a crystalline representation `ρ : G_K → GL(V)` of a finite unramified `K/ℚ_p` preserving a family of tensors, the Zariski closure of `ρ(G_K)` contains a torus that is conjugate over `ℚ̄_p`, inside the group fixing those tensors, to the image of the Hodge cocharacter of `D_dR(V)` (Sen; Wintenberger's tensor-compatible splitting).
 
@@ -1455,7 +1457,8 @@ above `p`, the coefficient normalizer `G/ℚ_p` of §2.1 with its standard repre
 the continuous G-completely reducible representations `G_K → G(ℚ_p)` unramified outside `T` whose
 Frobenius characteristic polynomials (in the standard representation) at every place `v ∉ T` lie in
 `ℤ[t]` with roots of Weil weight `w` relative to `Nv` form finitely many `G(ℚ_p)`-conjugacy classes (LS,
-Lemma 5.49 and proof, pp. 61–62; LS line 2813). The case `K = ℚ` is the one consumed in §§4.5 and 6.1.
+Lemma 5.49 and proof, pp. 61–62; LS line 2813). The case `K = ℚ` is the one consumed in §§4.5, 6.1
+and 7.6.
 
 A route: the component action has bounded degree, so Hermite's theorem over `K` leaves finitely many
 extensions `L/K` killing it; on each, the connected refinement of Faltings's lemma over `L` leaves
@@ -1998,7 +2001,7 @@ API:
 - For diagonal `μ` in `SL₂` the two fixed points of `ℙ¹` lie in distinct orbits of the upper Borel and
   are not conjugate under its torus; the fixed-point step needs one `Q`-orbit.
 
-*Needs:* §§2.5, 5.1.
+*Needs:* §§2.3, 2.5, 5.1.
 
 ### 5.3 Balanced, weakly balanced and semibalanced filtrations
 
