@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RandomizedSmoothing~5",
+  "head": "3897f41307002407045ac35a8ee3f3201c2ba3f1",
+  "pr": 2428,
+  "folder": "RandomizedSmoothing",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 61 changed lines since bbe1599: all nine previous findings (R01-R09) repaired with no new problem; the seven changed passages (1.1 Check, 1.2 route, contracts, 3.2 Checks, 3.3 upper bound, 4.1 grid bounds, 5.2 non-example) recomputed, values in the adversarial table; CohenRosenfeldKolter2019 Lemma 4 locator checked; 5 Tau Ceti declarations opened at the pin; pull-request title and description read against the head; gate passes (worker's run, build included), depcheck 0 problems, Suggested.lean elaborates with 14 sorry warnings only; Clopper-Pearson 1934 not readable (paywalled).",
+  "text": "c1ade904e57f3059"
+ }
+}
