@@ -47,6 +47,10 @@ packages_dir = "packages"
 # 30 since 2026-11-15 (owner: every roadmap in the pipeline is to be made, as fast as it can be): at 5,
 # 42 roadmaps sat parked for days, each waiting for a release by hand after every round.
 max_rounds = 30
+# A package review whose every finding is P3 ends with its repair: when the repair round changed at
+# most `[prreview] small_change_lines` lines of the package and nothing outside it, no further review
+# round is filed and the package goes on to its red team as an accepted one.
+settle_minor = true
 # Logins whose comments are the board's own (claim notices, intake notes): the hosted workflow's, and the GitHub App
 # under which a host may write the board's bookkeeping (`[worker] board_token_command`, set in that host's overlay).
 bot_logins = ["github-actions[bot]", "tauceti-roadmap-app[bot]"]
