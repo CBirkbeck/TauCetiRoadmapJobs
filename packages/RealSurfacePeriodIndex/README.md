@@ -6,7 +6,7 @@
 
 This roadmap owns everything specific to Benoist's argument: the ramified double covers and their topology, the corrected evaluation term on the avoided set with the exact criteria that replace the source's Propositions 4.4 and 4.5 for a given cover, the source's Proposition 6.6, the Noether–Lefschetz locus of the double-cover family, the real-locus control by branch sections with prescribed signs, the degree-two splitting, the induction on the period, the obstruction for covers of even degree, the real Enriques criterion and the Puiseux counterexample. It also owns the inputs no other roadmap states:
 
-- the real-function-field theory of Layer 0 (the space of orderings with the Harrison topology, real closures at an ordering, the signature as a function of a varying ordering, the clopen survival locus of a Brauer class, the Elman–Lam u-invariant), the Tsen–Lang theorem (§0.7: C_i fields, the Lang–Nagata theorem for systems of forms, closure under algebraic and transcendental extensions), the period and index of a Brauer class of a field (§0.12), and the classical theorems of Witt, Springer, Amer–Brumer, Albert, Elman–Lam and Pfister's criterion; Layer 0 never imports Layers 1–9;
+- the real-function-field theory of Layer 0 (the space of orderings with the Harrison topology, real closures at an ordering, the Artin–Lang theorem (§0.5a), the signature as a function of a varying ordering, the clopen survival locus of a Brauer class, the Elman–Lam u-invariant and Pfister's local–global principle identifying it with the torsion-form invariant (§0.6a)), the Tsen–Lang theorem (§0.7: C_i fields, the Lang–Nagata theorem for systems of forms, closure under algebraic and transcendental extensions), the period and index of a Brauer class of a field (§0.12), and the classical theorems of Witt, Springer, Amer–Brumer, Albert, Elman–Lam and Pfister's criterion; Layer 0 never imports Layers 1–9;
 - the Kummer and topological Brauer sequences of real varieties with the real class of a two-torsion line bundle (the source's Lemma 2.1), invariance of period and index under extension of algebraically closed fields, and de Jong's reduction to unramified classes with its two local inputs: Azumaya models of prescribed degree over regular schemes of dimension at most two, and Saltman's local form of a class whose ramification has normal crossings on a two-dimensional excellent regular local ring;
 - the weight-two variation of a family of surfaces with Griffiths' formula, Voisin's open cone, open cones meeting lattice cosets, the Kodaira–Spencer factorisation through normal bundles, Green's criterion over ℝ and the stratification of the double-cover family;
 - the anticanonical model of degree-four del Pezzo surfaces, and the classical real-geometric inputs of Bochnak–Coste–Roy (Nash approximation), Bröcker (real divisors with prescribed signs) and Colliot-Thélène–Parimala (prescribed evaluation functions).
@@ -14,14 +14,14 @@ This roadmap owns everything specific to Benoist's argument: the ramified double
 The following material has other owners and is consumed through their interfaces.
 
 - **Equivariant and real-locus cohomology.** Borel equivariant Betti and semialgebraic cohomology of real varieties, the real–complex exact sequences, the canonical real-locus decompositions, Krasnov's equivariant cycle class cl and the Borel–Haefliger class cl_R, equivariant purity and pushforward are MotivesAndAlgebraicCycles §§7.6a–7.6b; the complex and real Lefschetz (1,1) theorems are §7.8; the real Picard image and cl_R(K) = w₁ on real Enriques surfaces are §7.10; Gersten complexes and residues are §0.5b.
-- **Double-cover topology.** Free descent above twice the dimension is AlgebraicTopologyPartII Layer 6 (consumed there from MotivesAndAlgebraicCycles §7.6a); the twisted Bockstein in canonical coordinates is §7.4; the self-intersection class γ and the canonical splitting are §§9.2–9.3; the corrected localisation sequence and its self-duality are §§10.3 and 10.5; γ = w and the surface identities for w₁ are §12.1; embedded loop representatives are §12.2; sign local systems, the double-cover extension and the ramified trace triangle are §§14.1–14.3; permutation quotients, the trace-zero operator, trace-quotient lifts, the corrected integral lift, cyclic reduction and the circle extension are §§15.1–15.6, the circle extension obtaining the vanishing of the positive equivariant Ext stalks of a free permutation stalk on a fixed circle, its truncation input, from MotivesAndAlgebraicCycles §7.6a; equivariant Ehresmann transport, stratified pair transport, the finite-index equivariant lattice and the double-cover chase are §§16.1–16.4.
+- **Double-cover topology.** Free descent above twice the dimension is AlgebraicTopologyPartII Layer 6 (consumed there from MotivesAndAlgebraicCycles §7.6a); the Bockstein in canonical coordinates is §7.4, and its sign-twisted form β + e ∪ (·), with e = ω for the real–complex covering, is §14.2; the self-intersection class γ and the canonical splitting are §§9.2–9.3; the corrected localisation sequence and its self-duality are §§10.3 and 10.5; γ = w and the surface identities for w₁ are §12.1; embedded loop representatives are §12.2; sign local systems, the double-cover extension and the ramified trace triangle are §§14.1–14.3; permutation quotients, the trace-zero operator, trace-quotient lifts, the corrected integral lift, cyclic reduction and the circle extension are §§15.1–15.6, the circle extension obtaining the vanishing of the positive equivariant Ext stalks of a free permutation stalk on a fixed circle, its truncation input, from MotivesAndAlgebraicCycles §7.6a; equivariant Ehresmann transport, stratified pair transport, the finite-index equivariant lattice and the double-cover chase are §§16.1–16.4.
 - **Brauer groups of schemes and fields.** Brauer groups of schemes with `brauer_field`, the Kummer sequence, Hilbert 90 and Tsen's theorem for one-variable function fields are SchemeAndStackFoundations §§2.11, 2.16 and 2.22; Brauer residues, purity and residues of pullbacks are HeightsRationalPointsAndObstructions §2.16b; the corestriction of Brauer classes along a finite locally free morphism, with cor ∘ res equal to multiplication by the degree, is HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`), applied here to Spec L → Spec K for finite field extensions L/K. The index of a central simple algebra and a splitting field of that degree are Tau Ceti's `TauCeti.Algebra.index` and `TauCeti.Algebra.exists_isSplittingField_finrank_eq_index`; the index through maximal subfields is SemisimpleAlgebras Layer 6. The coniveau spectral sequence of étale cohomology with supports is PurityForFlatCohomology §8.4 and Gabber's absolute purity is LefschetzPencilsAndVanishingCycles §0.10; together they give the residue complex and purity of a two-dimensional excellent regular local ring used in §1.7. Reflexive hulls are SchemeAndStackFoundations §0.6, and freeness of reflexive modules over regular local rings of dimension at most two is Tau Ceti's `TauCeti.IsRegularLocalRing.free_of_isReflexive`.
 - **General geometry.** Principalization, SNC compactification and resolution are ResolutionOfSingularitiesCharacteristicZero §§5.1, 6.2 and 7.8; projective bundles and ample powers are AlgebraicModuliForArithmeticGeometry §§1.1 and 1.4; the remaining scheme theory (relative Spec, depth, Noetherian approximation, Leray, quasi-coherent and Serre duality, Picard groups, formal functions, blow-ups, Bertini, SNC divisors, projective bundles, intersection numbers on surfaces) is SchemeAndStackFoundations by section; blow-ups of surfaces are StableReduction Layer 4; miracle flatness is ModularCurves 4D; purity of the branch locus is PurityOfBranchLocus §2.3.
 - **Complex geometry.** Ehresmann's theorem, Gauss–Manin connections, relative Hodge bundles, Riemann existence and the Artin comparison over ℂ are ComplexComparisonPartII §§C5.2, C5.3, C6.2 and C6.3; the carrier of variations of Hodge structure is ShimuraData §3.1; integral weak Lefschetz and the cohomological dimension of affine varieties are AffineMorseLefschetz §§A5 and A3; singular cohomology with products and duality is AlgebraicTopology Stage 6.
-- **Quadratic forms and real algebra.** Square classes, diagonal calculus, hyperbolic planes, Witt theory, quaternion algebras, the Witt ring and the Brauer-valued invariants are QuadraticFormInvariants Layers 0, 1, 2, 4 and 5. The signature over an ordered field (inertia indices, isometry invariance, additivity and multiplicativity, Sylvester's law over real closed fields) is Mathlib's `sigPos` and `sigNeg` with Tau Ceti's `TauCeti.RegularFormClass.signature`; this roadmap adds only its dependence on a varying ordering (§0.4). Real closures of ordered fields, the extension of preorderings to orderings and the algebraic closedness of R(√−1) for real closed R are Tau Ceti's `TauCeti.RealClosure.exists_realClosure`, `Subsemiring.IsPreordering.exists_le_isOrdering` and `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`, the formal form of RealAlgebraicGeometry Layer 1; the converse criterion, that a field in which −1 is not a square is real closed once adjoining √−1 gives an algebraically closed field, is Tau Ceti's `TauCeti.RealClosure.isRealClosed_of_isAlgClosed_adjoin`.
+- **Quadratic forms and real algebra.** Square classes, diagonal calculus, hyperbolic planes, Witt theory, quaternion algebras, the Witt ring and the Brauer-valued invariants are QuadraticFormInvariants Layers 0, 1, 2, 4 and 5. The signature over an ordered field (inertia indices, isometry invariance, additivity and multiplicativity, Sylvester's law over real closed fields) is Mathlib's `sigPos` and `sigNeg` with Tau Ceti's `TauCeti.RegularFormClass.signature`; this roadmap adds only its dependence on a varying ordering (§0.4). Real closures of ordered fields, the extension of preorderings to orderings and the algebraic closedness of R(√−1) for real closed R are Tau Ceti's `TauCeti.RealClosure.exists_realClosure`, `Subsemiring.IsPreordering.exists_le_isOrdering` and `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`, the formal form of RealAlgebraicGeometry Layer 1; the converse criterion, that a field in which −1 is not a square is real closed once adjoining √−1 gives an algebraically closed field, is Tau Ceti's `TauCeti.RealClosure.isRealClosed_of_isAlgClosed_adjoin`. Quantifier elimination and model completeness for real closed ordered fields, the transfer step of the Artin–Lang theorem (§0.5a), are K3BlochGroups §5.8.
 - **Enriques surfaces and Puiseux series.** The Enriques condition (a smooth proper geometrically connected surface with numerically trivial canonical bundle and χ(O) = 1, stable under field extension) is WeilConjectures WC.7; the characteristic-zero invariants of Enriques surfaces are EnriquesSurfaces §§1.1, 1.3 and 1.4; the Puiseux field and its ramified levels are FormalLaurentPuiseux L4 (`puiseuxField`, `ramifiedEmbedding`), and its algebraic closedness over an algebraically closed field of characteristic zero is FormalLaurentPuiseux L5 (`puiseuxField_isAlgClosed`), consumed in their Tau Ceti form `TauCeti.puiseuxField`, `LaurentSeries.ramifiedEmbedding` and `TauCeti.puiseuxField.instIsAlgClosed`; only its order and its real closedness are planned here (§9.11).
 
-The avoided set Ψ ⊃ Θ is allowed to contain components where the class evaluates to 0, and the printed computation of the source omits the factor [α̃]₀ in the boundary component on Ψ (§5.4, source correction E3). For a given double cover, the source's Propositions 4.4 and 4.5 are replaced by exact criteria under their own hypotheses: the topological obstruction vanishes if and only if the corrected term ([α̃]₀ ∪ cl_R(L(R)))|_Ψ is the restriction to Ψ of the degree-one real component [ξ]₁ of a class ξ ∈ H²_G(S(ℂ), ℤ(1)) (§5.5), and the integral pushforward adjustment exists if and only if that term is the Borel–Haefliger class of a line bundle (§5.8). Both hold when the evaluation is constant on Ψ or cl_R(L(R)) vanishes on Ψ, and the first fails for a cover of a real Enriques surface with mixed evaluation (§5.5), so the unconditional form of Proposition 4.4 is false and is not planned. The source's Proposition 6.6, which constructs the cover, is planned in its stated generality (§6.13): taking the auxiliary ample bundle of §4.9 to be a square makes cl_R(L(R)) = 0. The Tsen–Lang theory of §0.7 has this roadmap as its single owner; QuadraticFormInvariantsPartII, later in the merge order, imports it for its Layer 5. Lang's conjecture (function fields of i-dimensional real varieties without real points are C_i) and Pfister's conjecture (u ≤ 2^i in transcendence degree i) are the context of Theorems 0.10 and 0.12 and are not used; Lieblich's bound ind | per² over finite fields (the source's Theorem 0.2) is background.
+The avoided set Ψ ⊃ Θ is allowed to contain components where the class evaluates to 0, and the printed computation of the source omits the factor [α̃]₀ in the boundary component on Ψ (§5.4, source correction E3). For a given double cover, the source's Propositions 4.4 and 4.5 are replaced by exact criteria under their own hypotheses: the topological obstruction vanishes if and only if the corrected term ([α̃]₀ ∪ cl_R(L(R)))|_Ψ is the restriction to Ψ of the degree-one real component [ξ]₁ of a class ξ ∈ H²_G(S(ℂ), ℤ(1)) (§5.5), and the integral pushforward adjustment exists if and only if that term is the Borel–Haefliger class of a line bundle (§5.8). Both hold when the evaluation is constant on Ψ or cl_R(L(R)) vanishes on Ψ, and the first fails for a cover of a real Enriques surface with mixed evaluation (§5.5), so the unconditional form of Proposition 4.4 is false and is not planned. The source's Proposition 6.6, which constructs the cover, is planned in its stated generality (§6.13): taking the auxiliary ample bundle of §4.9 to be a square makes cl_R(L(R)) = 0. The Tsen–Lang theory of §0.7 has this roadmap as its single owner; QuadraticFormInvariantsPartII consumes it for its Layer 5. Lang's conjecture (function fields of i-dimensional real varieties without real points are C_i) and Pfister's conjecture (u ≤ 2^i in transcendence degree i) are the context of Theorems 0.10 and 0.12 and are not used; Lieblich's bound ind | per² over finite fields (the source's Theorem 0.2) is background.
 
 ## Conventions
 
@@ -29,7 +29,7 @@ The avoided set Ψ ⊃ Θ is allowed to contain components where the class evalu
 
 Brauer groups are written additively in the prose and multiplicatively in Lean (Tau Ceti's `TauCeti.BrauerGroup.instCommGroup` on Mathlib's `BrauerGroup`). The period per(α) is the order of α; in Lean, for a central simple algebra A of class `TauCeti.BrauerGroup.mk A`, it is `orderOf (TauCeti.BrauerGroup.mk A)`. The index ind(α) is the index of any central simple algebra of class α (§0.12); in Lean it is `TauCeti.Algebra.index K A`, and the headline statements quantify over all central simple algebras A, which is the same as quantifying over all classes because every class has a representative.
 
-A field K is the function field of an integral surface over ℝ exactly when K is a finitely generated field extension of ℝ of transcendence degree 2; in Lean this is `Algebra.EssFiniteType ℝ K` together with `Algebra.trdeg ℝ K = 2`. The upper bound u ≤ 4 of Theorem 0.12 and the isotropy statements of Theorems 0.10 and 0.13 (§§7.8, 7.11, 7.13) hold for every field of the given transcendence degree over ℝ and are stated without finite generation; the other field-theoretic headline statements keep `Algebra.EssFiniteType`, which their routes through projective models use. K is nonreal when −1 is a sum of squares in K, which in Lean is `¬ IsSemireal K`; for a smooth projective model S of K, K is nonreal exactly when S(ℝ) = ∅ (a real point x embeds K into the real field ℝ((z₁))((z₂)) through the completed local ring; conversely the Artin–Lang theorem). The Elman–Lam u-invariant counts forms of zero signature at every ordering; for nonreal fields it is the classical u-invariant. The zero-total-signature condition used by the Lean statements is `HasZeroTotalSignature` (§0.6), stated for quadratic forms on finite-dimensional vector spaces over a field in which 2 is invertible, and phrased through base change to real closed fields so that it needs no choice of diagonalisation.
+A field K is the function field of an integral surface over ℝ exactly when K is a finitely generated field extension of ℝ of transcendence degree 2; in Lean this is `Algebra.EssFiniteType ℝ K` together with `Algebra.trdeg ℝ K = 2`. The upper bound u ≤ 4 of Theorem 0.12 and the isotropy statements of Theorems 0.10 and 0.13 (§§7.8, 7.11, 7.13) hold for every field of the given transcendence degree over ℝ and are stated without finite generation; the other field-theoretic headline statements keep `Algebra.EssFiniteType`, which their routes through projective models use. K is nonreal when −1 is a sum of squares in K, which in Lean is `¬ IsSemireal K`; for a smooth projective model S of K, K is nonreal exactly when S(ℝ) = ∅ (a real point x embeds K into the real field ℝ((z₁))((z₂)) through the completed local ring; conversely the Artin–Lang theorem, §0.5a). The Elman–Lam u-invariant counts forms of zero signature at every ordering, which by Pfister's local–global principle (§0.6a) are the forms with torsion Witt class; for nonreal fields it is the classical u-invariant. The zero-total-signature condition used by the Lean statements is `HasZeroTotalSignature` (§0.6), stated for quadratic forms on finite-dimensional vector spaces over a field in which 2 is invertible, and phrased through base change to real closed fields so that it needs no choice of diagonalisation.
 
 Locators to B19 refer to the published version, printed pages 63–110. Statements are stated at the generality of the source unless a correction is recorded in "Source corrections".
 
@@ -99,7 +99,7 @@ What MotivesAndAlgebraicCycles must provide (gap:picard-cokernel-torsion-free): 
 
 ### From TauCetiRoadmap.AlgebraicTopologyPartII
 
-Layer 6 (free descent: for X of dimension d over ℝ, restriction H^i_G(X(ℂ), M) → H^i_G(X(ℝ), M) is an isomorphism for i > 2d, consumed there from MotivesAndAlgebraicCycles §7.6a), §7.4 (twisted Bockstein: the mod-two reduction of the integral Bockstein of a class with canonical components a_i has components β(`a_{i−1}`) + (k − i)a_i), §9.2 (the class γ_X with γ_0 = 1), §9.3 (canonical splitting of the localisation sequence), §10.3 (corrected localisation sequence), §10.5 (its self-duality), §12.1 (γ_X = w(TX(ℝ)); for a compact surface, w₁ = 0 iff orientable and deg(w₁²) = χ mod 2), §12.2 (embedded loop representatives transverse to finitely many immersed curves and avoiding a finite set), §14.1 (sign local system of an equivariant double covering and the classification of double covers by H¹_G(S, 𝔽₂)), §14.2 (extension class e_L with β_L(x) = β(x) + e ∪ x), §14.3 (ramified trace triangle), §15.1 (permutation quotient Q and the exact sequence 0 → p_*ℤ → ℤ ⊕ Q → ℤ/n → 0, under the adjunction hypotheses stated there, which hold for the generically finite maps of smooth surfaces used here), §15.2 (trace-zero operator ψ with ψ mod n = p*φ), §15.3 (trace-quotient lifting criterion), §15.4 (the corrected integral lift b = p*η − ψ(ζ), with the minus sign), §15.5 (reduction ℤ/n → 𝔽₂ in sign degrees one and two), §15.6 (circle extension and the degree-one component of φζ; its truncation step uses the vanishing of the positive equivariant Ext stalks of a free permutation stalk on a fixed circle, the finite-group Ext-stalk comparison it obtains from MotivesAndAlgebraicCycles §7.6a), §16.1 (equivariant Ehresmann transport), §16.2 (equivariant stratified pair transport, given invariant control data), §16.3 (finite index of the image of H²_G(T, ℤ(j)) in H²(T, ℤ(j))^G), §16.4 (double-cover chase comparison g(δ) + ζ ∪ ω = g(η₀ ∪ ω), with the plus sign and modulo the image recorded there).
+Layer 6 (free descent: for X of dimension d over ℝ, restriction H^i_G(X(ℂ), M) → H^i_G(X(ℝ), M) is an isomorphism for i > 2d, consumed there from MotivesAndAlgebraicCycles §7.6a), §7.4 (component formula: the mod-two reduction of the ordinary equivariant integral Bockstein of a class with canonical components a_i has components β(`a_{i−1}`) + (k − i)a_i; it carries no sign twist), §9.2 (the class γ_X with γ_0 = 1), §9.3 (canonical splitting of the localisation sequence), §10.3 (corrected localisation sequence), §10.5 (its self-duality), §12.1 (γ_X = w(TX(ℝ)); for a compact surface, w₁ = 0 iff orientable and deg(w₁²) = χ mod 2), §12.2 (embedded loop representatives transverse to finitely many immersed curves and avoiding a finite set), §14.1 (sign local system of an equivariant double covering and the classification of double covers by H¹_G(S, 𝔽₂)), §14.2 (extension class e_L with β_L(x) = β(x) + e ∪ x; for the real–complex covering S × G → S the sign system is ℤ(1) and e = ω), §14.3 (ramified trace triangle), §15.1 (permutation quotient Q and the exact sequence 0 → p_*ℤ → ℤ ⊕ Q → ℤ/n → 0, under the adjunction hypotheses stated there, which hold for the generically finite maps of smooth surfaces used here), §15.2 (trace-zero operator ψ with ψ mod n = p*φ), §15.3 (trace-quotient lifting criterion), §15.4 (the corrected integral lift b = p*η − ψ(ζ), with the minus sign), §15.5 (reduction ℤ/n → 𝔽₂ in sign degrees one and two), §15.6 (circle extension and the degree-one component of φζ; its truncation step uses the vanishing of the positive equivariant Ext stalks of a free permutation stalk on a fixed circle, the finite-group Ext-stalk comparison it obtains from MotivesAndAlgebraicCycles §7.6a), §16.1 (equivariant Ehresmann transport), §16.2 (equivariant stratified pair transport, given invariant control data), §16.3 (finite index of the image of H²_G(T, ℤ(j)) in H²(T, ℤ(j))^G), §16.4 (double-cover chase comparison g(δ) + ζ ∪ ω = g(η₀ ∪ ω), with the plus sign and modulo the image recorded there).
 
 What AlgebraicTopologyPartII must provide (gap:at2-stratified-pair-transport): for f : M → B a smooth map of manifolds with commuting involutions, proper on a G-invariant closed Whitney-stratified subset whose strata all map submersively onto B, invariant f-compatible control data exist, so that §16.2 applies without assuming them.
 
@@ -129,6 +129,10 @@ QuadraticFormInvariants Layer 0 (square classes, diagonal calculus and chain equ
 
 RealAlgebraicGeometry Layer 1 (adjoining √−1 to a real closed field gives an algebraically closed field, consumed as `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`; its real closures and preordering extension are consumed in their Tau Ceti form, `TauCeti.RealClosure.exists_realClosure` and `Subsemiring.IsPreordering.exists_le_isOrdering`). FormalLaurentPuiseux L4 (`puiseuxField K`, `ramifiedEmbedding`, the common level of a finite family and the algebraicity of each level) and L5 (for K algebraically closed of characteristic zero, the root theorem and `puiseuxField_isAlgClosed`); the field, its levels and its algebraic closedness are consumed in their Tau Ceti form `TauCeti.puiseuxField`, `LaurentSeries.ramifiedEmbedding` and `TauCeti.puiseuxField.instIsAlgClosed`.
 
+### From TauCetiRoadmap.K3BlochGroups
+
+§5.8 (quantifier elimination for the theory of real closed ordered fields in the language of ordered rings, with its consequence that every ordered-field embedding between real closed fields is elementary for formulas with parameters in its domain), used in §0.5a for the inclusion of a real closed field R into a real closure of a function field over R. Only this model-theoretic statement is consumed, not the Bloch-group applications of that section.
+
 ### From TauCetiRoadmap.StableReduction, TauCetiRoadmap.ModularCurves and TauCetiRoadmap.PurityOfBranchLocus
 
 StableReduction Layer 4 (blow-ups and intersection theory on surfaces), ModularCurves 4D (miracle flatness for finite morphisms between regular schemes of the same dimension), PurityOfBranchLocus §2.3 (Zariski–Nagata purity of the ramification and branch loci of a finite cover of a regular scheme).
@@ -139,11 +143,11 @@ WeilConjectures WC.7 (the Enriques condition: a smooth proper geometrically conn
 
 ## How to read the build
 
-Layer 0 is pure field theory and feeds every later layer. Layer 1 attaches to a Brauer class of a real surface its unramified locus, its Kummer and topological data and its real evaluation, and proves the two reductions behind de Jong's theorem. Layer 2 runs Benoist's strategy over ℂ (hypersurface families, weak Lefschetz, Voisin's cone, lattice cosets) to prove de Jong's theorem and the real norm bound. Layer 3 constructs the ramified double covers and computes their topology. Layers 4 and 5 are two independent branches built on it: Layer 4 is the geometry of the family of covers, finding a cover carrying a real-pointless curve whose Noether–Lefschetz locus has the expected dimension, and Layer 5 is the cohomology of a single cover, pulling a period-two class back to it and deciding exactly when its topological obstruction vanishes and its integral lift can be adjusted; Layer 4 comes first because the square auxiliary bundle it constructs is what makes the criteria of Layer 5 hold for the covers used later. Layer 6 joins the two branches: it controls the real locus of the branch curve, applies Green's criterion over ℝ and transports the Kummer data, giving the degree-two splitting. Layer 7 runs the induction on the period and proves Theorems 0.3, 0.4, the sufficient half of 0.5, 0.10, 0.12 and 0.13. Layer 8 proves the obstruction half of Theorem 0.5 from the topology of covers of even degree. Layer 9 applies the criterion to real Enriques surfaces (Theorem 0.6) and builds the Puiseux counterexample (Proposition 0.7). Each target's *Needs:* line lists what its statement and its suggested route use; a different route is not bound to it.
+Layer 0 is the theory of real function fields and their quadratic forms, including the Artin–Lang theorem that connects orderings with real points, and feeds every later layer. Layer 1 attaches to a Brauer class of a real surface its unramified locus, its Kummer and topological data and its real evaluation, and proves the two reductions behind de Jong's theorem. Layer 2 runs Benoist's strategy over ℂ (hypersurface families, weak Lefschetz, Voisin's cone, lattice cosets) to prove de Jong's theorem and the real norm bound. Layer 3 constructs the ramified double covers and computes their topology. Layers 4 and 5 are two independent branches built on it: Layer 4 is the geometry of the family of covers, finding a cover carrying a real-pointless curve whose Noether–Lefschetz locus has the expected dimension, and Layer 5 is the cohomology of a single cover, pulling a period-two class back to it and deciding exactly when its topological obstruction vanishes and its integral lift can be adjusted; Layer 4 comes first because the square auxiliary bundle it constructs is what makes the criteria of Layer 5 hold for the covers used later. Layer 6 joins the two branches: it controls the real locus of the branch curve, applies Green's criterion over ℝ and transports the Kummer data, giving the degree-two splitting. Layer 7 runs the induction on the period and proves Theorems 0.3, 0.4, the sufficient half of 0.5, 0.10, 0.12 and 0.13. Layer 8 proves the obstruction half of Theorem 0.5 from the topology of covers of even degree. Layer 9 applies the criterion to real Enriques surfaces (Theorem 0.6) and builds the Puiseux counterexample (Proposition 0.7). Each target's *Needs:* line lists what its statement and its suggested route use; a different route is not bound to it.
 
 ## Layer 0: real function fields: orderings, real closures, Brauer index and the Elman–Lam invariant
 
-The space of orderings of a field with the Harrison topology, its compactness and inverse limits; real closures at a specified ordering, built on Tau Ceti's real closures of ordered fields; signatures of quadratic forms at orderings and the clopen locus of orderings where a Brauer class survives; the Elman–Lam u-invariant and the zero-total-signature predicate of the Lean statements; the Tsen–Lang theorem; Witt's theorem on Brauer classes of real curves; Springer's theorem over complete discretely valued fields; the Amer–Brumer theorem; the period and index of a Brauer class; Albert's isotropy criterion; the Elman–Lam bound for fields with u(F(√−1)) ≤ 4; and Pfister's criterion in transcendence degree 2. Nothing in this layer refers to surfaces.
+The space of orderings of a field with the Harrison topology, its compactness and inverse limits; real closures at a specified ordering, built on Tau Ceti's real closures of ordered fields; the Artin–Lang theorem, which realises an ordering of a finitely generated domain by a real point; signatures of quadratic forms at orderings and the clopen locus of orderings where a Brauer class survives; the Elman–Lam u-invariant and the zero-total-signature predicate of the Lean statements, with Pfister's local–global principle identifying zero total signature with torsion in the Witt ring; the Tsen–Lang theorem; Witt's theorem on Brauer classes of real curves; Springer's theorem over complete discretely valued fields; the Amer–Brumer theorem; the period and index of a Brauer class; Albert's isotropy criterion; the Elman–Lam bound for fields with u(F(√−1)) ≤ 4; and Pfister's criterion in transcendence degree 2. Nothing in this layer refers to surfaces.
 
 ### 0.1 The space of orderings with the Harrison topology
 
@@ -195,7 +199,7 @@ A proof can proceed as follows.
 **Checks.**
 
 - For F = ℝ(t) the space X_F is infinite and compact.
-- For the directed union of the finite extensions K_i of a finitely generated K_0 ⊂ K, the limit statement is exactly the Tychonoff step of Benoist p. 96.
+- Inverse limit, computed: let F_n = ℚ(√p₁, …, √p_n) for the first n primes and F their union. F_n has degree 2ⁿ over ℚ and all its embeddings are real, so `X_{F_n}` has 2ⁿ points, indexed by the signs of the √p_i; each restriction `X_{F_{n+1}}` → `X_{F_n}` is two-to-one and onto (`p_{n+1}` is positive at every ordering, so both signs of `√p_{n+1}` occur), and X_F is {±1}^ℕ, a Cantor set: compact, Hausdorff, totally disconnected and uncountable, although every `X_{F_n}` is finite. With Z_n the orderings of F_n at which −1 is positive, every Z_n is empty and so is the limit; with Z_n the orderings at which √p₁ < 0, every Z_n has 2ⁿ⁻¹ points and the limit is the nonempty half {ε : ε₁ = −1} of {±1}^ℕ. A family of closed Z_n with nonempty members and empty limit cannot occur, as step 4 requires.
 
 *Needs:* §0.1; Mathlib `isCompact_univ_pi`; Mathlib `IsClosed`.
 
@@ -295,11 +299,34 @@ The definition has the following API.
 
 *Needs:* §0.1; §0.2; §0.3; §0.4; Tau Ceti `TauCeti.BrauerGroup.baseChange`; Tau Ceti `TauCeti.BrauerGroup.exists_eq_mk_centralDivisionRing`; SemisimpleAlgebras Layer 6.
 
+### 0.5a The Artin–Lang theorem
+
+R real closed, with its unique ordering (the squares); A a finitely generated R-algebra that is a domain. An integral variety over R is an integral separated scheme of finite type over R, with function field R(V); a smooth R-point is an R-point in the smooth locus of V → Spec R.
+
+Let R be a real closed field, A a finitely generated R-algebra that is a domain, K its field of fractions, P an ordering of K and f_1, …, f_r ∈ A with f_i >_P 0 for every i. Then there is an R-algebra homomorphism x : A → R with f_i(x) > 0 for every i. Consequently, for an integral variety V over R the following are equivalent: R(V) is real; V has a smooth R-point; V(R) is Zariski dense in V. In particular V(R) = ∅ makes R(V) nonreal; and for every ordering P of R(V), every dense open V′ ⊂ V and finitely many f_1, …, f_r ∈ R(V)ˣ with f_i >_P 0, there is a smooth point x ∈ V′(R) at which every f_i is regular and invertible with f_i(x) > 0. (BCR, §4.1, Artin–Lang homomorphism theorem and its corollaries, pp. 85–87)
+
+A proof can proceed as follows.
+
+1. Let (R′, ι) be a real closure of K at P (§0.3). The composite R → K → R′ is an embedding of real closed fields, and it preserves the orders because the nonnegative elements of R are its squares.
+2. Write A = R[t_1, …, t_n]/(g_1, …, g_m) and choose polynomials representing the f_i. The images ι(t_j) solve g_1 = ⋯ = g_m = 0 and f_1 > 0, …, f_r > 0 in R′, since ι⁻¹ of the squares of R′ is P (§0.3).
+3. The existence of a solution of this finite system is an existential formula of ordered rings with parameters, the coefficients of the g_k and the f_i, in R. Every ordered-field embedding between real closed fields is elementary (K3BlochGroups §5.8), so the formula holds in R; a solution in R is the homomorphism x.
+4. Density: suppose R(V) has an ordering P, and let V′ ⊂ V be a dense open and Z ⊊ V a proper closed subset. The smooth locus of V → Spec R (Mathlib `AlgebraicGeometry.Scheme.Hom.smoothLocus`) is open and contains the generic point, R(V) being separable over R in characteristic 0. Choose a nonempty affine open Spec A inside it, inside V′, off Z and inside the domains of regularity of the f_i and the 1/f_i (affine opens form a basis, Mathlib `AlgebraicGeometry.Scheme.isBasis_affineOpens`; V is irreducible). Then Frac A = R(V), and steps 1–3 applied to A, P and f_1, …, f_r give a smooth point x ∈ V′(R) ∖ Z with f_i(x) > 0. Taking r = 0, smooth real points are Zariski dense.
+5. Conversely, a smooth point x ∈ V(R) with local parameters z_1, …, z_d embeds R(V) into Frac R[[z_1, …, z_d]] ⊂ R((z_1))⋯((z_d)), a field ordered recursively (a nonzero series in z_d is positive when its lowest-order coefficient, an element of `R((z_1))⋯((z_{d−1}))`, is positive), so R(V) is real. A Zariski-dense V(R) meets the nonempty open smooth locus. This closes the cycle of equivalences.
+
+**Checks.**
+
+- V = {x² + y² + z² = −1} ⊂ 𝔸³_ℝ has V(ℝ) = ∅, and −1 = x² + y² + z² is a sum of squares in ℝ(V), as the theorem requires.
+- Negative control for "smooth": V = {x² + y² = 0} ⊂ 𝔸²_ℝ is integral (x² + y² is irreducible over ℝ) with the single real point (0, 0), which is singular; ℝ(V) contains y/x with (y/x)² = −1, so ℝ(V) is nonreal and V(ℝ) is not Zariski dense. "V has a real point" in place of "a smooth real point" would be false.
+- A = ℝ[t], P the ordering of ℝ(t) in which t is positive and smaller than every positive real, f_1 = t, f_2 = 1 − t: the homomorphism t ↦ 1/2 makes both positive, although no real number realises the infinitesimal ordering itself; the theorem produces a real point, not an order-preserving embedding of K into R.
+- Negative control for "real closed": over R = ℚ, A = ℚ[t]/(t² − 2) is a domain whose fraction field ℚ(√2) has two orderings, yet there is no ℚ-algebra map A → ℚ; the transfer of step 3 needs R real closed.
+
+*Needs:* §0.1; §0.3; K3BlochGroups §5.8; Mathlib `IsRealClosed`; Mathlib `AlgebraicGeometry.Scheme.Hom.smoothLocus`; Mathlib `AlgebraicGeometry.Scheme.isBasis_affineOpens`; Mathlib `PowerSeries`.
+
 ### 0.6 The Elman–Lam u-invariant
 
 char F ≠ 2 (a field of positive characteristic has no orderings, so for it the signature condition is empty). The supremum is taken in ℕ∞; forms with nonzero signature somewhere are not counted.
 
-For a field F of characteristic ≠ 2, u(F) ∈ ℕ ∪ {∞} is the supremum of dim q over nondegenerate anisotropic quadratic forms q over F with zero total signature (sign_P(q) = 0 for every P ∈ X_F); the zero form counts with dimension 0. For nonreal F the signature condition is empty and u(F) is the classical maximal dimension of an anisotropic form. By definition u(F) ≤ n iff every nondegenerate form of dimension > n with zero total signature is isotropic. (B19, §0.5, p. 66; EKM, §36, p. 161; BEC05, §2, p. 3)
+For a field F of characteristic ≠ 2, u(F) ∈ ℕ ∪ {∞} is the supremum of dim q over nondegenerate anisotropic quadratic forms q over F with zero total signature (sign_P(q) = 0 for every P ∈ X_F); the zero form counts with dimension 0. For nonreal F the signature condition is empty and u(F) is the classical maximal dimension of an anisotropic form. By definition u(F) ≤ n iff every nondegenerate form of dimension > n with zero total signature is isotropic. (B19, §0.5, p. 66; EKM, §36, p. 161; BEC05, §2, p. 3) EKM counts forms that become hyperbolic over every real closure and Elman–Lam and Becher count forms with torsion Witt class; §0.6a shows that both give this invariant.
 
 The Lean statements use the predicate `HasZeroTotalSignature q` for a quadratic form q on a finite-dimensional vector space V over a field K in which 2 is invertible: for every real closed field R and every K-algebra structure on R, the base change q_R on R ⊗_K V vanishes on an R-subspace of dimension ½·dim V. Every ordering of K is induced from some real closure (§0.3) and every K-algebra map to a real closed field induces an ordering; over R a nondegenerate form of signature s and dimension n has maximal totally isotropic subspaces of dimension (n − |s|)/2 (Sylvester's law over R, §0.4), so for nondegenerate q the predicate says exactly that sign_P(q) = 0 for every ordering P. For degenerate q it can hold with nonzero signature (⟨1, 0⟩ over ℝ); this is harmless in the u-invariant statements, because in characteristic ≠ 2 a degenerate form is isotropic (a vector v of the radical has 2q(v) = b_q(v, v) = 0). For nonreal K there is no K-algebra map to a real closed field, and the predicate holds for every form.
 
@@ -331,6 +358,31 @@ The definition has the following API.
 - In odd characteristic the invariant is the classical one: u(𝔽₃) = 2, since ⟨1, 1⟩ is anisotropic (−1 is not a square modulo 3) while every form of dimension 3 over a finite field is isotropic (Chevalley–Warning). A definition restricted to characteristic 0 would leave u(𝔽₃) undefined, although 𝔽₃ satisfies the hypothesis u(𝔽₉) = 2 ≤ 4 of §0.14, whose conclusion u(𝔽₃) ∈ {0, 1, 2, 4, 6} it meets.
 
 *Needs:* §0.4; §0.1; §0.3; Mathlib `QuadraticMap.Anisotropic`; Mathlib `QuadraticForm.baseChange`; Mathlib `IsRealClosed`; Mathlib `ENat`.
+
+### 0.6a Pfister's local–global principle
+
+char F ≠ 2; q nondegenerate; W(F) is the Witt ring of QuadraticFormInvariants Layer 4; m·q is the orthogonal sum of m copies of q, so that m·q represents m times the class of q.
+
+Let F be a field of characteristic ≠ 2 and q a nondegenerate quadratic form over F. Then sign_P(q) = 0 for every P ∈ X_F if and only if the Witt class of q is torsion in W(F), and in that case 2^m·q is hyperbolic for some m ≥ 0. In particular, when F is nonreal every class of W(F) is killed by a power of 2. Consequently the u-invariant of §0.6 is the supremum of the dimensions of anisotropic forms with torsion Witt class, which is the invariant of EL73 and BEC05 (BEC05, §2, p. 3), and it is also EKM's invariant, whose forms are those hyperbolic over every real closure, since by Sylvester's law over a real closed field a nondegenerate form of signature 0 is hyperbolic. (EKM, Theorem 31.22, p. 128, and Lemma 31.19, p. 126; EKM, Corollary 34.12, p. 141; EKM, §36, p. 161)
+
+A proof can proceed as follows.
+
+1. For each P, sign_P is a ring homomorphism W(F) → ℤ (§0.4: additive, multiplicative, zero on the hyperbolic plane), and ℤ is torsion-free, so a torsion class has signature 0 at every ordering.
+2. Conversely, suppose sign_P(q) = 0 for every P but no 2^m·q is hyperbolic. By Zorn's lemma there is an algebraic extension K/F maximal among those over which no 2^m·q_K is hyperbolic: hyperbolicity over the union of a chain is witnessed over a finitely generated subextension, hence over a member of the chain.
+3. Witt kernel of a quadratic extension: let a ∈ Kˣ be a nonsquare and φ an anisotropic form on V over K that is isotropic over K(√a), say φ(v + √a·w) = 0 with v, w ∈ V. Then φ(v) + a·φ(w) = 0 and b_φ(v, w) = 0, both v and w are nonzero, and they span a plane on which φ is φ(w)⟨1, −a⟩. With Witt cancellation (QuadraticFormInvariants Layer 1) and induction on the dimension, an anisotropic form that is hyperbolic over K(√a) is isometric to ⟨1, −a⟩ ⊗ ψ; so the kernel of W(K) → W(K(√a)) is ⟨1, −a⟩·W(K) (EKM, Corollary 34.12).
+4. Let a ∈ Kˣ. If a is not a square, maximality of K gives m with 2^m·q hyperbolic over K(√a), so 2^m·q_K = ⟨1, −a⟩·y in W(K) by step 3, and ⟨1, a⟩·2^m·q_K = 0 because ⟨1, a⟩ ⊗ ⟨1, −a⟩ = ⟨1, a, −a, −a²⟩ is hyperbolic. If −a is not a square either, likewise ⟨1, −a⟩·2^(m′)·q_K = 0; since ⟨1, a⟩ + ⟨1, −a⟩ = ⟨1, 1⟩ = 2 in W(K), adding gives 2^(M+1)·q_K = 0 for M = max(m, m′), a contradiction. So for every a ∈ Kˣ, a or −a is a square.
+5. −1 is not a square in K, for otherwise ⟨1, 1⟩ ≅ ⟨1, −1⟩ and 2·q_K = 0. A sum b² + c² with (b, c) ≠ (0, 0) is then nonzero, and it is a square: otherwise −(b² + c²) = d² with d ≠ 0, so ⟨1, 1, 1⟩ is isotropic, the norm form ⟨1, 1, 1, 1⟩ of the quaternion algebra (−1, −1) is isotropic, hence hyperbolic (QuadraticFormInvariants Layer 2), and 4·q_K = 0. Hence the squares of K form the positive cone of an ordering P_K, every diagonal entry of q_K is ± a square, and q_K ≅ r⟨1⟩ ⊥ s⟨−1⟩ with r ≠ s since q_K is not hyperbolic. For the restricted ordering P = P_K ∩ F (§0.1), sign_P(q) = `sign_{P_K}(q_K)` = r − s ≠ 0 (§0.4), contradicting the hypothesis.
+6. The consequences: the forms counted in §0.6 and the torsion forms coincide by steps 1–5; a nondegenerate form is hyperbolic over a real closure at P exactly when its signature there is 0 (Tau Ceti `TauCeti.RegularFormClass.eq_iff_rank_eq_and_signature_eq` over the real closure, with §0.4).
+
+**Checks.**
+
+- Over ℝ(t), q = ⟨1, −(1 + t²)⟩ is anisotropic (1 + t² is not a square) and has zero total signature (1 + t² is positive at every ordering). Since ⟨1, 1⟩ represents 1 + t² = 1² + t² and has square determinant, ⟨1, 1⟩ ≅ ⟨1 + t², 1 + t²⟩, so 2·q = ⟨1, 1, −(1 + t²), −(1 + t²)⟩ is hyperbolic: the class of q has order exactly 2.
+- Over ℝ(t), n·⟨1, −t⟩ has signature 2n at the orderings with t < 0, so no multiple of ⟨1, −t⟩ is hyperbolic and its class has infinite order; the signature condition fails, as it must.
+- Over the nonreal field ℂ(x, y), 2·q = ⟨1, 1⟩ ⊗ q = ⟨1, −1⟩ ⊗ q is hyperbolic for every q, while ⟨1, x, y, xy⟩ is anisotropic (§0.7 Checks): torsion does not mean hyperbolic, which is why u counts anisotropic torsion forms.
+- Over 𝔽₃, which is nonreal, ⟨1, 1⟩ is anisotropic (−1 is not a square modulo 3) and ⟨1, 1⟩ ≅ ⟨−1, −1⟩ (it represents −1 = 1 + 1), so 4·⟨1⟩ = ⟨1, 1, −1, −1⟩ is hyperbolic: ⟨1⟩ has order exactly 4 in W(𝔽₃), a power of 2, as the principle requires; a statement allowing torsion of odd order would not be sharp here.
+- Over ℝ, W(ℝ) ≅ ℤ by the signature is torsion-free, and a zero-signature form is hyperbolic: u(ℝ) = 0 under each of the three definitions.
+
+*Needs:* §0.1; §0.4; §0.6; QuadraticFormInvariants Layer 1; QuadraticFormInvariants Layer 2; QuadraticFormInvariants Layer 4; Tau Ceti `TauCeti.RegularFormClass.eq_iff_rank_eq_and_signature_eq`.
 
 ### 0.7 The Tsen–Lang theorem
 
@@ -372,35 +424,36 @@ If F has transcendence degree 1 over a real closed field, then u(F) ≤ 2. In pa
 A proof can proceed as follows.
 
 1. F(√−1) has transcendence degree 1 over R(√−1), which is algebraically closed (Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`), hence is C₁ by Tsen–Lang (§0.7), so u(F(√−1)) ≤ 2.
-2. Elman–Lam's comparison of u(F) with u(F(√−1)) for the quadratic extension F(√−1)/F, in the refined form EKM proves, gives u(F) ≤ 2.
+2. Elman–Lam's comparison of u(F) with u(F(√−1)) for the quadratic extension F(√−1)/F, in the refined form EKM proves (EKM Proposition 37.7, whose argument runs through torsion forms, read in the sense of §0.6 by §0.6a), gives u(F) ≤ 2.
 
 **Checks.**
 
 - u(ℝ(t)) ≤ 2, attained by ⟨1, −(1 + t²)⟩.
 
-*Needs:* §0.6; §0.7; Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`.
+*Needs:* §0.6; §0.6a; §0.7; Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`.
 
 ### 0.9 Witt's theorem on Brauer classes of real curves
 
 C smooth, integral, of finite type and separated over ℝ; ramification of β at finitely many points is allowed. W ⊂ C(ℝ) dense for the Euclidean topology. β is unramified at x ∈ C(ℝ) when it lies in the image of Br(`O_{C,x}`) → Br(F), which is injective for the regular local ring `O_{C,x}` (SchemeAndStackFoundations §2.22, `brauer_regular_injectivity`), and then β(x) ∈ Br(ℝ) is its image under `O_{C,x}` → κ(x) = ℝ; no surface notion of Layer 1 is used.
 
-Let C be a smooth integral curve over ℝ with function field F = ℝ(C). (a) A class β ∈ Br(F) that vanishes at every real closure of F is zero. (b) If β is unramified at the points of a Euclidean-dense subset W of C(ℝ) and β(x) = 0 ∈ Br(ℝ) for x ∈ W, then β vanishes at every real closure, hence β = 0; the class may be ramified elsewhere. (c) If C(ℝ) = ∅, then F is nonreal and Br(F) = 0. (B19, Proposition 4.2 proof, p. 80; EKM, Corollary 37.8, p. 169; BCR, §10.3, pp. 254–256)
+Let C be a smooth integral curve over ℝ with function field F = ℝ(C). (a) A class β ∈ Br(F) that vanishes at every real closure of F is zero. (b) If β is unramified at the points of a Euclidean-dense subset W of C(ℝ) and β(x) = 0 ∈ Br(ℝ) for x ∈ W, then β vanishes at every real closure, hence β = 0; the class may be ramified elsewhere. (c) If C(ℝ) = ∅, then F is nonreal and Br(F) = 0. (B19, Proposition 4.2 proof, p. 80; EKM, Corollary 37.8, p. 169; BCR, §10.3, pp. 254–256; BCR, §4.1, for the real points used in (b) and (c))
 
 A proof can proceed as follows.
 
 1. Tsen: Br(ℂ(C)) = 0 (SchemeAndStackFoundations §2.16, `tsen_theorem`), so β is split by the quadratic extension F(i)/F and equals the quaternion class (−1, f) for some f ∈ Fˣ (cyclic algebras; QuadraticFormInvariants Layers 2 and 5).
 2. At an ordering P, β vanishes over the real closure iff f >_P 0 (§0.3, Br(R) = {0, (−1,−1)}).
 3. (a) If f is positive at every ordering, the norm form ⟨1, 1, −f, −f⟩ of (−1, f) has zero total signature; by §0.8 it is isotropic, so (−1, f) splits.
-4. (b) Every ordering of F is centred at a real point of the smooth completion of C and is determined by a half-branch there; the sign of f at the ordering is its sign on that half-branch near the centre. Since W is dense, f > 0 near every real point along every half-branch, so f >_P 0 for every P and (a) applies.
-5. (c) If C(ℝ) = ∅, the smooth completion has no real points outside a finite set, so there are no half-branches and no orderings: F is nonreal, and (a) holds vacuously for every β.
+4. (b) Suppose f <_P 0 for some ordering P of F. Let C′ ⊂ C be the dense open on which f and 1/f are regular. By the Artin–Lang theorem (§0.5a, applied to −f >_P 0) there is x ∈ C′(ℝ) with f(x) < 0, so f < 0 on a Euclidean neighbourhood of x in C′(ℝ), which contains a point w of the dense set W. There β is unramified, f is a unit, and β(w) = (−1, f(w)) ≠ 0 in Br(ℝ), a contradiction. So f >_P 0 for every P, and (a) applies.
+5. (c) If C(ℝ) = ∅, then F is nonreal by §0.5a (an integral variety without real points has a nonreal function field); X_F is empty, every β vanishes at all real closures, and (a) gives β = 0.
 
 **Checks.**
 
 - Br(ℝ(C)) = 0 for the conic C : x² + y² = −1.
 - Over ℝ(t), the class (−1, t) is nonzero: it does not vanish at the orderings with t < 0, matching (a).
 - Over ℝ(t), the class (−1, 1 + t²) is zero, consistent with (b): it evaluates to 0 at every real point.
+- Step 4 on (−1, t) over ℝ(t), with W = C(ℝ) ∖ {0}: f = t is negative at the orderings with t < 0, and §0.5a produces real points t₀ < 0 where (−1, t₀) is the Hamilton class, so the hypothesis of (b) fails, as it must for a nonzero class.
 
-*Needs:* §0.3; §0.4; §0.8; SchemeAndStackFoundations §2.16 (`tsen_theorem`); SchemeAndStackFoundations §2.22 (`brauer_regular_injectivity`); QuadraticFormInvariants Layer 2; QuadraticFormInvariants Layer 5.
+*Needs:* §0.3; §0.4; §0.5a; §0.8; SchemeAndStackFoundations §2.16 (`tsen_theorem`); SchemeAndStackFoundations §2.22 (`brauer_regular_injectivity`); QuadraticFormInvariants Layer 2; QuadraticFormInvariants Layer 5.
 
 ### 0.10 Springer's theorem for complete discretely valued fields
 
@@ -502,25 +555,26 @@ A proof can proceed as follows.
 
 char F ≠ 2; u(F(√−1)) ≤ 4 (for transcendence degree 2 over ℝ this follows from Tsen–Lang). Becher states the conclusion when u(F(√−1)) = 4, the case of a C₂ field such as ℂ(x, y). When u(F(√−1)) < 4 (for example F real closed, where F(√−1) is algebraically closed), no field having u-invariant 3 (EKM Corollary 36.4) gives u(F(√−1)) ≤ 2, hence u(F) ≤ 2 and I²F torsion-free (EKM Proposition 37.7 and its proof), so the conclusions hold with the Albert-form clause empty.
 
-Let F be a field of characteristic ≠ 2 with u(F(√−1)) ≤ 4. Then I³F is torsion-free, u(F) ∈ {0, 1, 2, 4, 6}, and if u(F) = 6 there is an anisotropic Albert form over F with zero total signature. If F ⊇ ℝ has transcendence degree 2 over ℝ, then F(√−1) is C₂, so u(F(√−1)) ≤ 4 and these conclusions apply. (BEC05, §3, p. 3; EKM, Theorem 37.4 and Corollary 37.5, pp. 167–168; EKM, Corollary 36.4, p. 162; Proposition 37.7 and proof, pp. 168–169; the list {0, 1, 2, 4, 6} for transcendence degree 2 over a real closed field is EL73, as cited in BEC05, §1, p. 1)
+Let F be a field of characteristic ≠ 2 with u(F(√−1)) ≤ 4. Then I³F is torsion-free, u(F) ∈ {0, 1, 2, 4, 6}, and if u(F) = 6 there is an anisotropic Albert form over F with zero total signature. If F ⊇ ℝ has transcendence degree 2 over ℝ, then F(√−1) is C₂, so u(F(√−1)) ≤ 4 and these conclusions apply. (EKM, Proposition 35.9, p. 150, and Theorem 35.12, p. 152, for the torsion-freeness of I³F; EL73, cited by locator, for u(F) ∈ {0, 1, 2, 4, 6} and the Albert form, which BEC05, §3, p. 3, recalls without proof; EKM, Theorem 37.4 and Corollary 37.5, pp. 167–168; EKM, Corollary 36.4, p. 162; Proposition 37.7 and proof, pp. 168–169; the list {0, 1, 2, 4, 6} for transcendence degree 2 over a real closed field is EL73, as cited in BEC05, §1, p. 1)
 
 A proof can proceed as follows.
 
 1. For F of transcendence degree 2 over ℝ, F(√−1) has transcendence degree 2 over ℂ, hence is C₂ by Tsen–Lang (§0.7), so every form of dimension ≥ 5 over it is isotropic and u(F(√−1)) ≤ 4.
-2. If u(F(√−1)) = 4, Elman–Lam's analysis of torsion forms over F whose extension to F(√−1) is isotropic gives torsion-freeness of I³F and u(F) ∈ {0, 1, 2, 4, 6} (BEC05 §3, p. 3). If u(F(√−1)) < 4, then u(F(√−1)) ≤ 2 (EKM Corollary 36.4) and EKM Proposition 37.7 gives u(F) ≤ 2, with I²F, hence I³F, torsion-free.
-3. If u(F) = 6, choose an anisotropic torsion form of dimension 6; Becher's argument (§3) produces from it an anisotropic torsion Albert form, using that I³F is torsion-free.
+2. Torsion-freeness of I³F: if √−1 ∈ F, then F = F(√−1) is nonreal with u(F) ≤ 4, so every 3-fold Pfister form over F, of dimension 8, is isotropic, hence hyperbolic, and I³F = 0. Otherwise F(√−1)/F is a quadratic, hence normal, extension; F(√−1) is nonreal, so all its forms are torsion, and u(F(√−1)) ≤ 4 makes every 3-fold Pfister form over it isotropic, hence hyperbolic. So F(√−1) has no anisotropic torsion 3-fold Pfister form, this property descends to F (EKM, Theorem 35.12, p. 152), and for F it is equivalent to the torsion-freeness of I³F (EKM, Proposition 35.9, p. 150). The values: if u(F(√−1)) = 4, Elman–Lam's analysis of torsion forms over F gives u(F) ∈ {0, 1, 2, 4, 6} (EL73, cited by locator; recalled without proof in BEC05, §3, p. 3); if u(F(√−1)) < 4, then u(F(√−1)) ≤ 2 (EKM Corollary 36.4) and EKM Proposition 37.7 gives u(F) ≤ 2. These sources count torsion forms, which are the forms of §0.6 by §0.6a.
+3. If u(F) = 6, choose an anisotropic form of dimension 6 with zero total signature, which is torsion by §0.6a; Becher's argument (§3) produces from it an anisotropic torsion Albert form, using that I³F is torsion-free, and a torsion form has zero total signature (§0.6a, step 1).
 
 **Checks.**
 
 - For F = ℝ(x, y), u(F(√−1)) = 4 and the bound gives u(F) ≤ 6 before Benoist's theorem; Theorem 0.12 excludes 6.
+- One degree lower the conclusion fails: over F = ℝ(x, y), the 2-fold Pfister form π = ⟨1, −(1 + x²)⟩ ⊗ ⟨1, −y⟩ is anisotropic (Springer's theorem, §0.10, over ℝ(x)((y)): its residue forms ⟨1, −(1 + x²)⟩ and ⟨−1, 1 + x²⟩ are anisotropic over ℝ(x), 1 + x² not being a square) and torsion (2·π = ⟨1, 1⟩ ⊗ ⟨1, −(1 + x²)⟩ ⊗ ⟨1, −y⟩ is hyperbolic because ⟨1, 1⟩ ⊗ ⟨1, −(1 + x²)⟩ is, by the §0.6a Checks). So I²F is not torsion-free while I³F is: the exponent 3 in step 2 is sharp.
 
-*Needs:* §0.6; §0.13; §0.7; QuadraticFormInvariants Layer 4.
+*Needs:* §0.6; §0.6a; §0.13; §0.7; QuadraticFormInvariants Layer 4.
 
 ### 0.15 Pfister's criterion: index two implies u ≤ 4
 
 K ⊇ ℝ of transcendence degree 2, not necessarily finitely generated; index as in §0.12.
 
-Let K be a field extension of ℝ of transcendence degree 2. If every nonzero class α ∈ Br(K)[2] that vanishes at all real closures of K has index 2, then u(K) ≤ 4 in the Elman–Lam sense. (Pfister proves the equivalence; only this direction is a target.) (B19, §6.4, p. 95; BEC05, §3, Theorem 3.1 and Remark 3.2, pp. 3–4)
+Let K be a field extension of ℝ of transcendence degree 2. If every nonzero class α ∈ Br(K)[2] that vanishes at all real closures of K has index 2, then u(K) ≤ 4 in the Elman–Lam sense. (Pfister proves the equivalence; only this direction is a target.) (B19, §6.4, p. 95, which states the criterion and attributes it to Pfister; BEC05, §3, p. 3, for the anisotropic torsion Albert form used in step 1. BEC05's Theorem 3.1 and Remark 3.2 are different criteria for u ≤ 4, by universality of four-dimensional forms, and are not used.)
 
 A proof can proceed as follows.
 
@@ -541,7 +595,7 @@ The space of orderings of ℝ is one point and that of ℝ(t) is infinite and co
 
 ### Dependencies
 
-HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`); Mathlib `Algebra.IsAlgebraic`; Mathlib `Algebra.trdeg`; Mathlib `CliffordAlgebra.even`; Mathlib `ENat`; Mathlib `HenselianLocalRing`; Mathlib `Ideal.height_le_spanFinrank`; Mathlib `IsClosed`; Mathlib `IsDiscreteValuationRing`; Mathlib `IsRealClosed.isSquare_neg_of_not_isSquare`; Mathlib `IsRealClosed`; Mathlib `IsSemireal`; Mathlib `MvPolynomial.IsHomogeneous`; Mathlib `QuadraticForm.baseChange`; Mathlib `QuadraticForm.equivalent_signType_weighted_sum_squared`; Mathlib `QuadraticForm.equivalent_weightedSumSquares_units_of_nondegenerate'`; Mathlib `QuadraticMap.Anisotropic`; Mathlib `RatFunc`; Mathlib `Subsemiring.IsOrdering`; Mathlib `Subsemiring.IsPreordering`; Mathlib `Subsemiring.IsPreordering.isPointed`; Mathlib `Subsemiring.IsPointed.nonneg`; Mathlib `Subsemiring.IsSpanning.nonneg`; Mathlib `Subsemiring.IsOrdering.of_isPrime_supportIdeal`; Mathlib `LinearOrder.ofAddSubmonoid`; Mathlib `IsOrderedRing.ofSubsemiring`; Mathlib `IsOrderedRing.toIsStrictOrderedRing`; Mathlib `TopologicalSpace.generateFrom`; Mathlib `isCompact_univ_pi`; Mathlib `sigPos`; Mathlib `sigNeg`; Mathlib `QuadraticMap.Equivalent.sigPos_eq`; Mathlib `QuadraticForm.sigPos_of_equiv_weightedSumSquares`; QuadraticFormInvariants Layer 0; QuadraticFormInvariants Layer 1; QuadraticFormInvariants Layer 2; QuadraticFormInvariants Layer 4; QuadraticFormInvariants Layer 5; SchemeAndStackFoundations §2.16 (`tsen_theorem`); SchemeAndStackFoundations §2.22 (`brauer_field`); SchemeAndStackFoundations §2.22 (`brauer_regular_injectivity`); SemisimpleAlgebras Layer 6; Tau Ceti `Subsemiring.IsOrdering.comap`; Tau Ceti `Subsemiring.IsOrdering.strictMono_comap`; Tau Ceti `Subsemiring.IsPreordering.exists_le_isOrdering`; Tau Ceti `TauCeti.RealClosure.exists_realClosure`; Tau Ceti `TauCeti.RegularFormClass.signature`; Tau Ceti `TauCeti.RegularFormClass.signatureHom`; Tau Ceti `TauCeti.RegularFormClass.signature_hyperbolicClass`; Tau Ceti `TauCeti.signature_formClass`; Tau Ceti `TauCeti.Algebra.exists_isSplittingField_finrank_eq_index`; Tau Ceti `TauCeti.Algebra.index`; Tau Ceti `TauCeti.Algebra.index_dvd_deg`; Tau Ceti `TauCeti.Algebra.deg_baseChange`; Tau Ceti `TauCeti.BrauerGroup.baseChange`; Tau Ceti `TauCeti.BrauerGroup.baseChange_mk`; Tau Ceti `TauCeti.BrauerGroup.exists_eq_mk_centralDivisionRing`; Tau Ceti `TauCeti.Quaternion.brauerGroupMulEquiv`; Tau Ceti `TauCeti.hyperbolicPlane`; Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`.
+HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`); K3BlochGroups §5.8; Mathlib `AlgebraicGeometry.Scheme.Hom.smoothLocus`; Mathlib `AlgebraicGeometry.Scheme.isBasis_affineOpens`; Mathlib `PowerSeries`; Mathlib `Algebra.IsAlgebraic`; Mathlib `Algebra.trdeg`; Mathlib `CliffordAlgebra.even`; Mathlib `ENat`; Mathlib `HenselianLocalRing`; Mathlib `Ideal.height_le_spanFinrank`; Mathlib `IsClosed`; Mathlib `IsDiscreteValuationRing`; Mathlib `IsRealClosed.isSquare_neg_of_not_isSquare`; Mathlib `IsRealClosed`; Mathlib `IsSemireal`; Mathlib `MvPolynomial.IsHomogeneous`; Mathlib `QuadraticForm.baseChange`; Mathlib `QuadraticForm.equivalent_signType_weighted_sum_squared`; Mathlib `QuadraticForm.equivalent_weightedSumSquares_units_of_nondegenerate'`; Mathlib `QuadraticMap.Anisotropic`; Mathlib `RatFunc`; Mathlib `Subsemiring.IsOrdering`; Mathlib `Subsemiring.IsPreordering`; Mathlib `Subsemiring.IsPreordering.isPointed`; Mathlib `Subsemiring.IsPointed.nonneg`; Mathlib `Subsemiring.IsSpanning.nonneg`; Mathlib `Subsemiring.IsOrdering.of_isPrime_supportIdeal`; Mathlib `LinearOrder.ofAddSubmonoid`; Mathlib `IsOrderedRing.ofSubsemiring`; Mathlib `IsOrderedRing.toIsStrictOrderedRing`; Mathlib `TopologicalSpace.generateFrom`; Mathlib `isCompact_univ_pi`; Mathlib `sigPos`; Mathlib `sigNeg`; Mathlib `QuadraticMap.Equivalent.sigPos_eq`; Mathlib `QuadraticForm.sigPos_of_equiv_weightedSumSquares`; QuadraticFormInvariants Layer 0; QuadraticFormInvariants Layer 1; QuadraticFormInvariants Layer 2; QuadraticFormInvariants Layer 4; QuadraticFormInvariants Layer 5; SchemeAndStackFoundations §2.16 (`tsen_theorem`); SchemeAndStackFoundations §2.22 (`brauer_field`); SchemeAndStackFoundations §2.22 (`brauer_regular_injectivity`); SemisimpleAlgebras Layer 6; Tau Ceti `Subsemiring.IsOrdering.comap`; Tau Ceti `Subsemiring.IsOrdering.strictMono_comap`; Tau Ceti `Subsemiring.IsPreordering.exists_le_isOrdering`; Tau Ceti `TauCeti.RealClosure.exists_realClosure`; Tau Ceti `TauCeti.RegularFormClass.signature`; Tau Ceti `TauCeti.RegularFormClass.signatureHom`; Tau Ceti `TauCeti.RegularFormClass.signature_hyperbolicClass`; Tau Ceti `TauCeti.RegularFormClass.eq_iff_rank_eq_and_signature_eq`; Tau Ceti `TauCeti.signature_formClass`; Tau Ceti `TauCeti.Algebra.exists_isSplittingField_finrank_eq_index`; Tau Ceti `TauCeti.Algebra.index`; Tau Ceti `TauCeti.Algebra.index_dvd_deg`; Tau Ceti `TauCeti.Algebra.deg_baseChange`; Tau Ceti `TauCeti.BrauerGroup.baseChange`; Tau Ceti `TauCeti.BrauerGroup.baseChange_mk`; Tau Ceti `TauCeti.BrauerGroup.exists_eq_mk_centralDivisionRing`; Tau Ceti `TauCeti.Quaternion.brauerGroupMulEquiv`; Tau Ceti `TauCeti.hyperbolicPlane`; Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`.
 
 ## Layer 1: period, index and real evaluation on real surfaces
 
@@ -610,7 +664,7 @@ Let X be a smooth variety over ℝ, e ∈ H¹_G(X(ℂ), 𝔽₂), and υ(e) ∈ 
 A proof can proceed as follows.
 
 1. The Kummer boundary of e in H²_G(X(ℂ), ℤ(1)) is cl(υ(e)) (compatibility of Krasnov's class with the Kummer boundary, MotivesAndAlgebraicCycles §7.6b).
-2. Restricted to X(ℝ), the Bockstein of 0 → ℤ(1) → ℤ(1) → 𝔽₂ → 0 followed by reduction modulo 2 is (a₀, a₁) ↦ (0, a₁, Sq¹a₁) in canonical components (AlgebraicTopologyPartII §7.4, with [ξ]_i = [ξ ∪ ω]_i from MotivesAndAlgebraicCycles §7.6b).
+2. Restricted to X(ℝ), the Bockstein of 0 → ℤ(1) → ℤ(1) → 𝔽₂ → 0 followed by reduction modulo 2 is (a₀, a₁) ↦ (0, a₁, Sq¹a₁) in canonical components. The untwisted component formula of AlgebraicTopologyPartII §7.4 gives (a₀, 0, Sq¹a₁) in degree 1; the coefficients ℤ(1) are the sign system of the covering X(ℂ) × G → X(ℂ), whose extension class is ω, so the boundary is β + ω ∪ (·) (AlgebraicTopologyPartII §14.2), and adding ω ∪ (a₀, a₁) = (a₀, a₁, 0) gives (0, a₁, Sq¹a₁) (with [ξ]_i = [ξ ∪ ω]_i from MotivesAndAlgebraicCycles §7.6b).
 3. Krasnov's compatibility cl_R(M) = [cl(M)]₁ (MotivesAndAlgebraicCycles §7.6b) identifies the degree-one component a₁ = [e]₁ with cl_R(υ(e)).
 
 **Checks.**
@@ -618,8 +672,9 @@ A proof can proceed as follows.
 - For X = Spec ℝ, H¹(X(ℝ)) = 0 and both sides vanish.
 - For X = ℙ¹_ℝ, Pic(X)[2] = 0 and H¹_G(ℙ¹(ℂ), 𝔽₂) is the constant class of ℝˣ/ℝˣ², whose degree-one component on the circle ℙ¹(ℝ) is 0, as the formula predicts.
 - On a real Enriques surface, a lift of K_S has [e]₁ = cl_R(K_S) = w₁ (§9.5).
+- The sign twist of step 2 is needed: on X = Spec ℝ and e = ω (a₀ = 1, a₁ = 0), the untwisted formula of AlgebraicTopologyPartII §7.4 alone gives degree-zero component 1, that is ω² ≠ 0, whereas the target H²_G(pt, ℤ(1)) is 0 (§1.2 Checks); the term ω ∪ e = ω² of §14.2 cancels it, 1 + 1 = 0.
 
-*Needs:* §1.2; ComplexComparisonPartII §C6.3 (gap:real-artin-comparison); AlgebraicTopologyPartII §7.4; MotivesAndAlgebraicCycles §7.6b.
+*Needs:* §1.2; ComplexComparisonPartII §C6.3 (gap:real-artin-comparison); AlgebraicTopologyPartII §7.4; AlgebraicTopologyPartII §14.2; MotivesAndAlgebraicCycles §7.6b.
 
 ### 1.4 Real evaluation and the nonzero evaluation locus
 
@@ -769,9 +824,9 @@ For α = (x, y) over ℝ(x, y), the unramified locus in 𝔸² is the complement
 
 ### Dependencies
 
-Layer 0; AlgebraicTopology Stage 6; AlgebraicTopologyPartII §7.4; ComplexComparisonPartII §C6.3 (`artinComparison`); ComplexComparisonPartII §C6.3 (gap:real-artin-comparison); HeightsRationalPointsAndObstructions §2.16b (`brauerResidue_henselianFormula`); HeightsRationalPointsAndObstructions §2.16b (`pullbackMultiplicity`); HeightsRationalPointsAndObstructions §2.16b (`smoothBrauer_residueExact`); LefschetzPencilsAndVanishingCycles §0.10; Mathlib `AlgebraicGeometry.Scheme.functionField`; Mathlib `AlgebraicGeometry.Scheme`; Mathlib `ModuleCat.matrixEquivalence`; MotivesAndAlgebraicCycles §7.6b; PurityForFlatCohomology §8.4; ResolutionOfSingularitiesCharacteristicZero §5.1 (principalization); SchemeAndStackFoundations §0.6 (`reflexiveHull`); SchemeAndStackFoundations §0.9; SchemeAndStackFoundations §2.11; SchemeAndStackFoundations §2.22 (`brauer_kummer_sequence`); SchemeAndStackFoundations §2.22 (`mk_eq_zero_iff`); SchemeAndStackFoundations §2.22 (`mk_opposite`); SchemeAndStackFoundations §2.22 (`mk_tensor`); SchemeAndStackFoundations §3.4 (`classGroup_picard_locallyFactorial`); SchemeAndStackFoundations §3.4 (`picard_excision_sequence`); SchemeAndStackFoundations §4.13; Tau Ceti `TauCeti.AlgebraicGeometry.IsRegular.of_smooth`; Tau Ceti `TauCeti.AlgebraicGeometry.IsRegular.uniqueFactorizationMonoid_stalk`; Tau Ceti `TauCeti.IsRegularLocalRing.free_of_isReflexive`; Tau Ceti `TauCeti.Quaternion.brauerGroupMulEquiv`.
+Layer 0; AlgebraicTopology Stage 6; AlgebraicTopologyPartII §7.4; AlgebraicTopologyPartII §14.2; ComplexComparisonPartII §C6.3 (`artinComparison`); ComplexComparisonPartII §C6.3 (gap:real-artin-comparison); HeightsRationalPointsAndObstructions §2.16b (`brauerResidue_henselianFormula`); HeightsRationalPointsAndObstructions §2.16b (`pullbackMultiplicity`); HeightsRationalPointsAndObstructions §2.16b (`smoothBrauer_residueExact`); LefschetzPencilsAndVanishingCycles §0.10; Mathlib `AlgebraicGeometry.Scheme.functionField`; Mathlib `AlgebraicGeometry.Scheme`; Mathlib `ModuleCat.matrixEquivalence`; MotivesAndAlgebraicCycles §7.6b; PurityForFlatCohomology §8.4; ResolutionOfSingularitiesCharacteristicZero §5.1 (principalization); SchemeAndStackFoundations §0.6 (`reflexiveHull`); SchemeAndStackFoundations §0.9; SchemeAndStackFoundations §2.11; SchemeAndStackFoundations §2.22 (`brauer_kummer_sequence`); SchemeAndStackFoundations §2.22 (`mk_eq_zero_iff`); SchemeAndStackFoundations §2.22 (`mk_opposite`); SchemeAndStackFoundations §2.22 (`mk_tensor`); SchemeAndStackFoundations §3.4 (`classGroup_picard_locallyFactorial`); SchemeAndStackFoundations §3.4 (`picard_excision_sequence`); SchemeAndStackFoundations §4.13; Tau Ceti `TauCeti.AlgebraicGeometry.IsRegular.of_smooth`; Tau Ceti `TauCeti.AlgebraicGeometry.IsRegular.uniqueFactorizationMonoid_stalk`; Tau Ceti `TauCeti.IsRegularLocalRing.free_of_isReflexive`; Tau Ceti `TauCeti.Quaternion.brauerGroupMulEquiv`.
 
-## Layer 2: unramified classes on complex surfaces and de Jong's theorem
+## Layer 2: de Jong's theorem by Hodge theory, and the norm bound over real closed fields
 
 The weight-two variation of a family of surfaces and Griffiths' formula; Benoist's Hodge-theoretic proof of de Jong's theorem for unramified classes: the family of hypersurfaces of degree divisible by the period in ℙ¹ × S, vanishing of the topological obstruction by weak Lefschetz, the compatible integral lift and pushforward adjustment, Voisin's open cone and the lattice argument, density of splitting hypersurfaces, and ind = per for α ∈ Br(S); then de Jong's theorem in characteristic 0 and the norm bound ind | 2 per over any real closed base field.
 
@@ -854,7 +909,7 @@ A proof can proceed as follows.
 
 ### 2.4 Compatible integral lift and pushforward adjustment
 
-The setting of §2.1; the compatibility β mod n = p_b*α̃ is imposed (an arbitrary integral lift of p_b*α in the Brauer sequence is not enough).
+The setting of §2.1; the compatibility β mod n = p_b*α̃ is imposed (an arbitrary integral lift of p_b*α in the Brauer sequence is not enough; source correction E2).
 
 In §2.1 fix a Kummer lift α̃ ∈ H²(S(ℂ), ℤ/n) of α. Choose β ∈ H²(T_b(ℂ), ℤ) whose reduction modulo n is exactly p_b*α̃; such β exists because the Bockstein of p_b*α̃ is τ = 0. Then `p_{b*}β` is divisible by n, and there is γ ∈ H²(T_b(ℂ), ℤ) with `p_{b*}(β − nγ)` = 0. The class β − nγ lies in H²(T_b, ℤ)_S = ker `p_{b*}` and still induces p_b*α in Br(T_b). (B19, Lemma 1.4, p. 70; B19, Lemma 1.3 and (1.1)–(1.2), p. 69)
 
@@ -1008,7 +1063,7 @@ For S = ℙ² and A = O(1), A² = 1 > −3 = A·K_S and the hypersurface family 
 
 Layer 0; Layer 1; AffineMorseLefschetz §A5; AlgebraicModuliForArithmeticGeometry §1.4 (`amplePowersAndFixedTwists`); AlgebraicTopology Stage 6; ComplexComparisonPartII §C5.2 (`GaussManin`); ComplexComparisonPartII §C5.2 (`ehresmannFibration`); ComplexComparisonPartII §C5.3 (`relativeHodgeBundles`); Mathlib `AlgebraicGeometry.Scheme`; Mathlib `Metric.ball`; Mathlib `Module.finrank`; MotivesAndAlgebraicCycles §7.8; ResolutionOfSingularitiesCharacteristicZero §7.8 (field resolution); SchemeAndStackFoundations §2.6; SchemeAndStackFoundations §4.13; SchemeAndStackFoundations §5.10; ShimuraData §3.1 (`Variation`); Tau Ceti `TauCeti.RealClosure.isAlgClosed_of_isQuadraticExtension`.
 
-## Layer 3: ramified double covers
+## Layer 3: double covers branched along a curve: finite and incidence models and their cohomology
 
 The finite rank-two cover Spec_S(O_S ⊕ L⁻¹(−R)) branched along R ∪ D, which is normal with ordinary double points over the singular points of the branch locus; the incidence model rv² = sw² in a projective bundle, its map to the finite model, its fixed singular points and their resolution, and the family in a fixed threefold; local structure and Stein factorisation; the étale and finite-flat strata; pushforward is an isomorphism on `H^{≥3}` and onto on H² for L(R) ample; and the image of the equivariant pushforward, cut out by the first real component.
 
@@ -1151,7 +1206,7 @@ Let S be a connected smooth projective surface over ℝ and L(R) ample. Put I = 
 
 A proof can proceed as follows.
 
-1. For i ≥ 5, restriction to the real locus is an isomorphism (AlgebraicTopologyPartII Layer 6, i > 2·dim) and the canonical decomposition identifies both groups with H¹ of the real loci; pushforward acts on real coordinates by the real Gysin map (MotivesAndAlgebraicCycles §7.6b).
+1. For i ≥ 5, restriction to the real locus is an isomorphism (AlgebraicTopologyPartII Layer 6, i > 2·dim) and the canonical decomposition identifies both groups with H¹ of the real loci; pushforward acts on real coordinates by the real Gysin map (MotivesAndAlgebraicCycles §7.6b), which for the finite cover p, of relative dimension 0, keeps the twist ℤ(i − 1) on both sides (source correction E11).
 2. Descending induction: the real–complex exact sequences (MotivesAndAlgebraicCycles §7.6a) for T and S, connected by pushforwards, with §3.5 on the ordinary terms and the induction hypothesis in degree i + 1, identify the image with {ξ : [ξ ∪ ω]₁ ∈ I}.
 3. [ξ ∪ ω]₁ = [ξ]₁ (invariance of integral components under ω, MotivesAndAlgebraicCycles §7.6b).
 
@@ -1169,7 +1224,7 @@ For S = 𝔸², R = {x = 0} and D = {y = 0}, the finite double cover is z² = xy
 
 AffineMorseLefschetz §A3; AlgebraicModuliForArithmeticGeometry §1.1; AlgebraicTopology Stage 6; AlgebraicTopologyPartII Layer 6 (free descent, from MotivesAndAlgebraicCycles §7.6a); AlgebraicTopologyPartII §14.1; AlgebraicTopologyPartII §14.3; Mathlib `QuadraticAlgebra.basis`; Mathlib `QuadraticAlgebra.discr_def`; Mathlib `QuadraticAlgebra.finrank_eq_two`; Mathlib `QuadraticAlgebra`; MotivesAndAlgebraicCycles §7.6a; MotivesAndAlgebraicCycles §7.6b; SchemeAndStackFoundations §0.1; SchemeAndStackFoundations §0.17; SchemeAndStackFoundations §2.2; SchemeAndStackFoundations §4.11; SchemeAndStackFoundations §4.17; SchemeAndStackFoundations §4.9; SchemeAndStackFoundations §5.4; StableReduction Layer 4; Tau Ceti `TauCeti.forall_isDomain_and_isIntegrallyClosed_iff_satisfiesSerreR_one_and_satisfiesSerreS_two`.
 
-## Layer 4: Noether–Lefschetz loci for double covers
+## Layer 4: a real-pointless curve on a double cover and the dimension of its Noether–Lefschetz locus
 
 The parameters for a real-pointless curve C on the double cover; the point s = a₁s₀ + a₂c of the parameter space and the lift of C to the cover; restriction of the anti-invariant summand to C; the auxiliary cohomological hypotheses on a line bundle N; the bounds h¹(C, `N_{C/X}`) ≤ h²(O_S) and H²(T, O_T(C)) = 0; the Kodaira–Spencer contraction through normal bundles; the Noether–Lefschetz locus of the expected dimension; and blowing up points to realise the auxiliary hypotheses.
 
@@ -1388,7 +1443,7 @@ On ℙ²_ℝ with A = O(1), l = 2, N = O and R a real line, L = O(1) and L ⊗ N
 
 Layer 2; Layer 3; AlgebraicModuliForArithmeticGeometry §1.4 (`amplePowersAndFixedTwists`); MotivesAndAlgebraicCycles §7.6b; SchemeAndStackFoundations §2.2; SchemeAndStackFoundations §2.20; SchemeAndStackFoundations §2.6; SchemeAndStackFoundations §2.6 (`ample_serre_vanishing`); SchemeAndStackFoundations §4.13; SchemeAndStackFoundations §5.10; StableReduction Layer 4.
 
-## Layer 5: pulling back a period-two class to a double cover
+## Layer 5: classes of period two on a branched double cover: residues, topological obstruction and integral lifts
 
 The hypotheses on a double cover killing a period-two class (avoidance of the set Ψ ⊃ Θ, generation of a kernel by curves avoiding Ψ, injectivity on H²); the pulled-back class is unramified, componentwise on a possibly disconnected cover; its topological obstruction is killed by ω; the boundary component on the avoided set with the corrected evaluation term; and the exact criteria replacing the source's Propositions 4.4 and 4.5 for a given cover: vanishing of the obstruction, the Picard correction through the trace quotient, the curve adjustment, and the integral pushforward adjustment.
 
@@ -1396,7 +1451,7 @@ The hypotheses on a double cover killing a period-two class (avoidance of the se
 
 Cohomology of real loci with 𝔽₂ coefficients; cl_R is the Borel–Haefliger class of MotivesAndAlgebraicCycles §7.6b. Ψ need not be closed in S(ℝ).
 
-Let S be a connected smooth projective surface over ℝ, α ∈ Br(ℝ(S)) of period 2 whose ramification divisor R is SNC, U = S ∖ R, Θ = Θ(α) ⊂ U(ℝ), and Ψ ⊂ U(ℝ) a subset open and closed in U(ℝ) with Θ ⊂ Ψ. For a double cover p : T → S of §3.2 ramified over R ∪ D, Assumption 4.1 is: (i) p(T(ℝ)) ∩ Ψ = ∅; (ii) the kernel of H¹(S(ℝ), 𝔽₂) → H¹(Ψ, 𝔽₂) is generated by p_*H¹(T(ℝ), 𝔽₂) and the Borel–Haefliger classes cl_R(Γ) of curves Γ ⊂ S with Γ(ℝ) ∩ Ψ = ∅; (iii) p_* : H²(T(ℝ), 𝔽₂) → H²(S(ℝ), 𝔽₂) is injective. Since Δ(ℝ) ⊂ p(T(ℝ)), (i) forces Ψ ⊂ S*(ℝ). (B19, §4 and Assumption 4.1, pp. 79–80)
+Let S be a connected smooth projective surface over ℝ, α ∈ Br(ℝ(S)) of period 2 whose ramification divisor R is SNC, U = S ∖ R, Θ = Θ(α) ⊂ U(ℝ), and Ψ ⊂ U(ℝ) a subset open and closed in U(ℝ) with Θ ⊂ Ψ. For a double cover p : T → S of §3.2 ramified over R ∪ D, Assumption 4.1 consists of three conditions: (i) no real point of T maps into Ψ, that is p(T(ℝ)) ∩ Ψ = ∅; (ii) every class of H¹(S(ℝ), 𝔽₂) that restricts to 0 on Ψ is a sum of a pushforward p_*c with c ∈ H¹(T(ℝ), 𝔽₂) and of classes cl_R(Γ) of curves Γ ⊂ S with Γ(ℝ) ∩ Ψ = ∅; (iii) p_* : H²(T(ℝ), 𝔽₂) → H²(S(ℝ), 𝔽₂) is injective. As the real branch locus Δ(ℝ) lies in p(T(ℝ)), condition (i) puts Ψ inside S*(ℝ). (B19, §4 and Assumption 4.1, pp. 79–80)
 
 A construction can proceed as follows.
 
@@ -1431,7 +1486,7 @@ A proof can proceed as follows.
 
 1. Fix a component T_i. Residues of `α_{ℝ(T_i)}` vanish along integral curves of T_i not lying over R, because α is unramified on U and pullback preserves this.
 2. Along a curve dominating a component of R, the ramification index is 2 and the residue of the restriction is the ramification index times the restricted residue (HeightsRationalPointsAndObstructions §2.16b, `pullbackMultiplicity`), which kills a class of period 2.
-3. The remaining curves Γ are ℙ¹'s contracted by p: the exceptional curves over Sing R and the ℙ¹ fibres over R ∩ D of the incidence model (both kinds must be treated). The ramification locus of `α_{ℝ(T_i)}` is then smooth, so, the Gersten complex being a complex (MotivesAndAlgebraicCycles §0.5b), res_Γ(α) ∈ H¹(ℝ(Γ), ℤ/2) is unramified on Γ.
+3. The remaining curves Γ are ℙ¹'s contracted by p: the exceptional curves over Sing R and the ℙ¹ fibres over R ∩ D of the incidence model (both kinds must be treated; source correction E20). The ramification locus of `α_{ℝ(T_i)}` is then smooth, so, the Gersten complex being a complex (MotivesAndAlgebraicCycles §0.5b), res_Γ(α) ∈ H¹(ℝ(Γ), ℤ/2) is unramified on Γ.
 4. If Γ ≅ ℙ¹_ℂ, H¹_ét(Γ, ℤ/2) = 0. If Γ ≅ ℙ¹_ℝ, it suffices to show res_Γ(α)|_x = 0 at one x ∈ Γ(ℝ): choose a curve Γ′ ⊂ T_i through x transverse to Γ and meeting T_U; at general real points y of Γ′, p(y) ∉ Ψ ⊃ Θ by (i), so (p*α)_y = 0, and Witt's theorem (§0.9 (b), which allows ramification of the class on Γ′) gives `p*α|_{ℝ(Γ′)}` = 0, so its residue at x, which is res_Γ(α)|_x, vanishes.
 5. All residues along curves of T_i vanish, so `α_{ℝ(T_i)}` ∈ Br(T_i) by purity for the regular surface T_i (HeightsRationalPointsAndObstructions §2.16b, `smoothBrauer_residueExact`); these classes form α_T ∈ Br(T) = ⊕ Br(T_i), which restricts to p*α on T_U.
 
@@ -1551,7 +1606,7 @@ Under these hypotheses the following are equivalent: (a) for every β ∈ H²_G(
 A proof can proceed as follows.
 
 1. §5.6 gives δ|_V = η + p_*γ₀ + cl(μ|_V) with p_*β = 2δ + cl(θ₁).
-2. Real components on Ψ ∩ V(ℝ): [p_*γ₀]₁ = p_*[γ₀]₁ vanishes on Ψ because Ψ has no real preimage (Assumption 4.1 (i)); the component computation of §5.4 applied to α̃ = η mod 2 − φ(ζ) gives [η]₁ = [α̃]₁ + [α̃]₀ ∪ [e]₁ = [α̃]₀ ∪ cl_R(M) on Ψ ∩ V(ℝ); so [δ − cl(μ)]₁ = c_Ψ on Ψ ∩ V(ℝ), hence on Ψ by §1.9.
+2. Real components on Ψ ∩ V(ℝ): [p_*γ₀]₁ = p_*[γ₀]₁ vanishes on Ψ because Ψ has no real preimage (Assumption 4.1 (i)); only this restriction to Ψ is claimed, not vanishing on V(ℝ) (source correction E23); the component computation of §5.4 applied to α̃ = η mod 2 − φ(ζ) gives [η]₁ = [α̃]₁ + [α̃]₀ ∪ [e]₁ = [α̃]₀ ∪ cl_R(M) on Ψ ∩ V(ℝ); so [δ − cl(μ)]₁ = c_Ψ on Ψ ∩ V(ℝ), hence on Ψ by §1.9.
 3. (c) ⇒ (a): δ′ = δ − cl(μ) − cl(φ_Ψ) has [δ′]₁ = 0 on Ψ; §5.7 gives ν and γ with δ′ − cl(ν) = p_*γ, and p_*(β − 2γ) = 2δ + cl(θ₁) − 2(δ − cl(μ) − cl(φ_Ψ) − cl(ν)) = cl(θ) with θ = θ₁ + 2μ + 2φ_Ψ + 2ν.
 4. (a) ⇒ (b) because β exists; (b) ⇒ (c): from p_*(β − 2γ) = cl(θ) and p_*β = 2δ + cl(θ₁), 2(δ − p_*γ) = cl(θ − θ₁); the cokernel of cl : Pic(S) → H²_G(S(ℂ), ℤ(1)) being torsion-free (gap:picard-cokernel-torsion-free), δ − p_*γ = cl(θ₂) with θ₂ ∈ Pic(S). Restricting first components to Ψ, [p_*γ]₁|_Ψ = 0 by Assumption 4.1 (i), so c_Ψ = [δ − cl(μ)]₁|_Ψ = cl_R(θ₂ − μ)|_Ψ.
 
@@ -1605,7 +1660,7 @@ The definition has the following API.
 
 Homology classes via Poincaré duality on the compact surface Ξ; cl_R from MotivesAndAlgebraicCycles §7.6b.
 
-Let S be a connected smooth projective surface over ℝ, R an SNC divisor and Ξ ⊂ S(ℝ) a union of connected components with R(ℝ) ⊂ Ξ. Assumption 6.1 asks for a compact one-manifold 𝒮 and a C^∞ embedding ι : 𝒮 → Ξ meeting R(ℝ) transversally in its smooth locus with: (i) every component of Ξ meets ι(𝒮); (ii) ι_*[𝒮] = cl_R(R) in H¹(Ξ, 𝔽₂); (iii) H¹(Ξ, 𝔽₂) is generated by the classes of the components of ι(𝒮) and the Borel–Haefliger classes of curves with real locus in Ξ; (iv) for each component Σ of Ξ, with Σ₀ = Σ ∩ (ι(𝒮) ∪ R(ℝ)) and a decomposition Σ ∖ Σ₀ = Σ₊ ⊔ Σ₋ into open and closed parts, if every point of Σ₀ is in the closures of both Σ₊ and Σ₋ then Σ₊ ∪ Σ₀ is connected. (B19, Assumption 6.1, pp. 90–91)
+Let S be a connected smooth projective surface over ℝ, R an SNC divisor and Ξ ⊂ S(ℝ) a union of connected components with R(ℝ) ⊂ Ξ. Assumption 6.1 is the existence of a compact one-manifold 𝒮, possibly empty, and a C^∞ embedding ι : 𝒮 → Ξ whose image crosses R(ℝ) only at smooth points of R, and transversally there, subject to four conditions, labelled (i)–(iv) as in the source. (i) No connected component of Ξ is disjoint from ι(𝒮). (ii) The pushforward of the mod-2 fundamental class, ι_*[𝒮], equals cl_R(R) in H¹(Ξ, 𝔽₂). (iii) H¹(Ξ, 𝔽₂) is spanned by the classes of the individual circles of ι(𝒮) together with the classes cl_R(Γ) of the curves Γ ⊂ S with Γ(ℝ) ⊂ Ξ. (iv) For a component Σ of Ξ put Σ₀ = Σ ∩ (ι(𝒮) ∪ R(ℝ)); whenever Σ ∖ Σ₀ is the disjoint union of two subsets Σ₊ and Σ₋, each open and closed in Σ ∖ Σ₀, such that every point of Σ₀ lies both in the closure of Σ₊ and in the closure of Σ₋, the set Σ₊ ∪ Σ₀ is connected. (B19, Assumption 6.1, pp. 90–91)
 
 A construction can proceed as follows.
 
@@ -1613,15 +1668,15 @@ A construction can proceed as follows.
 
 The definition has the following API.
 
-- (𝒮, ι) with transversality and (i)–(iv).
-- (i).
-- (ii) ι_*[𝒮] = cl_R(R).
-- (iii).
-- (iv).
+- The data: a compact one-manifold 𝒮 and an embedding ι : 𝒮 → Ξ crossing R(ℝ) only at smooth points of R, transversally.
+- Condition (i): every component of Ξ meets ι(𝒮).
+- Condition (ii): ι_*[𝒮] = cl_R(R) in H¹(Ξ, 𝔽₂).
+- Condition (iii): the circle classes of ι(𝒮) and the classes cl_R(Γ) with Γ(ℝ) ⊂ Ξ span H¹(Ξ, 𝔽₂).
+- Condition (iv): on each component Σ, every splitting of Σ ∖ Σ₀ into two open and closed parts adherent to all of Σ₀ has Σ₊ ∪ Σ₀ connected.
 
 **Checks.**
 
-- On Ξ = S² with R(ℝ) = ∅, one embedded circle satisfies (i)–(iv): H¹(S²) = 0, its class is 0 = cl_R(R), and both sides are discs.
+- On Ξ = S² with R(ℝ) = ∅, one embedded circle satisfies (i)–(iv): H¹(S²) = 0, its class is 0 = cl_R(R), and for (iv) Σ₀ is the circle, the only splitting adherent to all of Σ₀ is into the two open discs, and an open disc together with the circle is a closed disc, which is connected.
 - On a torus Ξ with R(ℝ) = ∅, a single null-homotopic circle fails (iii) unless curve classes generate H¹(Ξ).
 - (ii) is equality of Poincaré duals of ι_*[𝒮] and of the Borel–Haefliger class of R.
 - If Ξ = ∅ (so R(ℝ) = ∅), the empty embedding satisfies Assumption 6.1.
@@ -1828,7 +1883,7 @@ A proof can proceed as follows.
 
 ### 6.12 Transport of the chosen Kummer lift along the family
 
-The pair (T, p⁻¹R) is transported by AlgebraicTopologyPartII §16.2; its stratification, properness and submersion hypotheses for this family are §6.11.
+The pair (T, p⁻¹R) is transported by AlgebraicTopologyPartII §16.2; its stratification, properness and submersion hypotheses for this family are §6.11. The normalisation and the pair transport complete the source's proof of Proposition 6.6 (source correction E21).
 
 Before deforming the fibre T_s in Proposition 6.6, normalise the integral lift β of the pulled-back class so that `(β mod 2)|_{T_{s,U}} = p_s*α̃` (subtract cl(φ̄) for φ̄ ∈ Pic(T_s) extending the difference on `T_{s,U}`), and reapply §5.8 to the normalised lift. Over a small G-stable contractible real parameter neighbourhood Λ(ℝ), transport the pair (T, p⁻¹R) equivariantly so that the restriction to T_U and the pullback of the fixed class α̃ correspond on every fibre: `(β_x mod 2)|_{T_{x,U}} = p_x*α̃` for x ∈ Λ(ℝ). (B19, Proof of Proposition 6.6, pp. 94–95, citing DIM85, Lemma 4; B19, Proposition 1.2 proof, p. 71)
 
@@ -1932,7 +1987,7 @@ A proof can proceed as follows.
 
 ### 7.3 Sufficient condition for period equals index
 
-The odd case needs no lift condition.
+The odd case needs no lift condition; the half-period lift is imposed only for even n (source correction E8).
 
 Let S be a connected smooth projective surface over ℝ and α ∈ Br(ℝ(S)) of period n, U = U_α, Θ = Θ(α), assumed to be a union of components of S(ℝ). If n is odd, ind(α) = n. If n is even and some lift ξ ∈ H²_G(U(ℂ), 𝔽₂) of (n/2)α has [ξ]₁|_Θ = 0, then ind(α) = n. (B19, Proposition 6.7 and proof, p. 95)
 
@@ -1996,7 +2051,7 @@ A proof can proceed as follows.
 1. Replace U by a nonempty affine open U′ ⊂ U (affine opens form a basis, Mathlib `AlgebraicGeometry.Scheme.isBasis_affineOpens`). A presentation of its finitely generated coordinate ring embeds U′ as a closed subscheme of some 𝔸ⁿ_ℝ ⊂ ℙⁿ_ℝ, so U′ is quasi-projective; it is smooth, and integral because U, connected and smooth, is integral. Then ℝ(U′) = ℝ(U), α restricts to Br(U′), and α_x = 0 for x ∈ U′(ℝ) ⊂ U(ℝ); period and index depend only on the class of α in Br(ℝ(U)). Compactify U′ to a connected smooth projective S with ℝ(S) = ℝ(U) (ResolutionOfSingularitiesCharacteristicZero §6.2, SNC compactification); then U′ ⊂ U_α (§1.1).
 2. Each nonempty component of S(ℝ) is a smooth surface, and the real points of S ∖ U′, a closed subset of dimension ≤ 1, have empty interior in it, so U′(ℝ) is dense in S(ℝ) and in its open subset U_α(ℝ); evaluation is locally constant on U_α(ℝ) (§1.4) and vanishes on U′(ℝ), hence Θ(α) = ∅.
 3. Apply §7.3 with Θ = ∅, a union of (no) components, for which the lift condition is empty.
-4. Birational form: take a smooth projective model S of K (field resolution) and U = U_α, the unramified locus of α (§1.1), which is a smooth open surface with α ∈ Br(U). By §7.5, α_x = 0 for every x ∈ U(ℝ); apply the first part. Conversely the scheme form follows from the birational form, because the locus of orderings where α survives is clopen (§0.5) and, if nonempty, contains orderings centred at points of U(ℝ) (Artin–Lang, BCR §4.1).
+4. Birational form: take a smooth projective model S of K (field resolution) and U = U_α, the unramified locus of α (§1.1), which is a smooth open surface with α ∈ Br(U). By §7.5, α_x = 0 for every x ∈ U(ℝ); apply the first part. Conversely the scheme form follows from the birational form: if α survives at some ordering P of ℝ(U), the survival locus Z(α) is clopen (§0.5), so it contains a basic open set H(f_1) ∩ ⋯ ∩ H(f_r) around P; by §0.5a there is a point x ∈ U(ℝ) at which the f_i are regular and positive, each f_i, a unit of ℝ[[z₁, z₂]] with positive constant term, is positive at the ordering induced through ℝ((z₁))((z₂)) at x (as in §7.5), so that ordering lies in Z(α); and α_x ≠ 0, because α_x = 0 would make α vanish at it by the comparison Br(ℝ) ≅ Br(ℝ[[z₁, z₂]]) ↪ Br(K) of §7.5, steps 2–3.
 
 **Checks.**
 
@@ -2004,7 +2059,7 @@ A proof can proceed as follows.
 - For U = ℙ²_ℝ, U′ = 𝔸²_ℝ and S = ℙ²_ℝ (the closure of the standard immersion, whose boundary z = 0 is already a smooth divisor), the complement of U′(ℝ) in ℝℙ² is a real projective line, with empty interior, so a class vanishing on U′(ℝ) has Θ(α) = ∅ on all of ℝℙ²: passing to the affine open loses nothing. Br(ℙ²_ℝ) = Br(ℝ), and the Hamilton class, nonzero at every point of 𝔸²(ℝ), is excluded on U′ as on U.
 - For U = ℙ²_ℝ and U′ the complement of the conic x² + y² = z², U′(ℝ) is ℝℙ² minus a circle, a disc and a Möbius band, dense in ℝℙ²; an affine open cannot miss a whole component of S(ℝ), which is two-dimensional, whereas (S ∖ U′)(ℝ) has dimension at most 1.
 
-*Needs:* §7.3; §1.4; §1.1; §7.5; §0.5; Mathlib `AlgebraicGeometry.Scheme.isBasis_affineOpens`; ResolutionOfSingularitiesCharacteristicZero §6.2 (SNC compactification); ResolutionOfSingularitiesCharacteristicZero §7.8 (field resolution); Tau Ceti `TauCeti.BrauerGroup.baseChange`.
+*Needs:* §7.3; §1.4; §1.1; §7.5; §0.5; §0.5a; Mathlib `AlgebraicGeometry.Scheme.isBasis_affineOpens`; ResolutionOfSingularitiesCharacteristicZero §6.2 (SNC compactification); ResolutionOfSingularitiesCharacteristicZero §7.8 (field resolution); Tau Ceti `TauCeti.BrauerGroup.baseChange`.
 
 ### 7.7 Unramified classes: the sufficient half of Theorem 0.5
 
@@ -2090,12 +2145,12 @@ A proof can proceed as follows.
 
 K nonreal (no orderings), so its Elman–Lam invariant is the classical one; K need not be finitely generated over ℝ. For K = ℝ(S) with S an integral surface over ℝ and S(ℝ) = ∅, ℝ(S) is nonreal.
 
-Let K be a field extension of ℝ of transcendence degree 2, not necessarily finitely generated, in which −1 is a sum of squares; for instance K = ℝ(S) for an integral surface S over ℝ with S(ℝ) = ∅, the case of B19's Theorem 0.10. Every quadratic form over K on a vector space of dimension ≥ 5 is isotropic (Lean: `not_anisotropic_of_not_isSemireal`). (B19, Theorem 0.10, p. 66, for K = ℝ(S), and §6.4, p. 95, for its deduction from Theorem 0.12, which holds for every field of transcendence degree 2 over ℝ; BCR, §4.1, Artin–Lang homomorphism theorem (pp. 85–87))
+Let K be a field extension of ℝ of transcendence degree 2, not necessarily finitely generated, in which −1 is a sum of squares; for instance K = ℝ(S) for an integral surface S over ℝ with S(ℝ) = ∅, the case of B19's Theorem 0.10. Every quadratic form over K on a vector space of dimension ≥ 5 is isotropic (Lean: `not_anisotropic_of_not_isSemireal`). (B19, Theorem 0.10, p. 66, for K = ℝ(S), and §6.4, p. 95, for its deduction from Theorem 0.12, which holds for every field of transcendence degree 2 over ℝ; BCR, §4.1, Artin–Lang homomorphism theorem, pp. 85–87, through §0.5a)
 
 A proof can proceed as follows.
 
 1. K is nonreal, so it has no orderings (§0.1) and the zero-total-signature condition is empty (§0.6); §7.8, which asks only for transcendence degree 2, says that every quadratic form over K of dimension ≥ 5 is isotropic.
-2. For K = ℝ(S) with S(ℝ) = ∅, K is nonreal: by the Artin–Lang theorem the function field of an integral real variety is real iff the variety has a smooth real point, and S has no real points at all.
+2. For K = ℝ(S) with S(ℝ) = ∅, K is nonreal: by the Artin–Lang theorem (§0.5a) the function field of an integral real variety is real iff the variety has a smooth real point, and S has no real points at all.
 
 **Checks.**
 
@@ -2104,7 +2159,7 @@ A proof can proceed as follows.
 - Nonreality cannot be dropped: over ℝ(x, y) the form ⟨1, 1, 1, 1, 1⟩ is anisotropic, being positive at every ordering.
 - Transcendence degree 2 cannot be raised: over the nonreal field ℂ(x, y, z) the eight-dimensional form ⟨1, x⟩ ⊗ ⟨1, y⟩ ⊗ ⟨1, z⟩ is anisotropic, by Springer's theorem (§0.10) applied three times in ℂ((x))((y))((z)).
 
-*Needs:* §7.8; §0.6; §0.1.
+*Needs:* §7.8; §0.6; §0.1; §0.5a.
 
 ### 7.12 Degree-four del Pezzo surfaces are intersections of two quadrics
 
@@ -2130,7 +2185,7 @@ A proof can proceed as follows.
 
 A degree-4 del Pezzo surface over a field F is a smooth complete intersection of two quadrics in ℙ⁴_F by §7.12. K nonreal of transcendence degree 1 over ℝ, not necessarily finitely generated.
 
-Let K be a field extension of ℝ of transcendence degree 1, not necessarily finitely generated, in which −1 is a sum of squares; for instance K = ℝ(C) for an integral curve C over ℝ with C(ℝ) = ∅. Any two quadratic forms q₁, q₂ on a K-vector space of dimension ≥ 5 have a common nonzero zero (Lean: `exists_common_zero_of_not_isSemireal`). Consequently every del Pezzo surface of degree 4 over K has a K-rational point; for K = ℝ(C) with C(ℝ) = ∅ this is B19's Theorem 0.13. (B19, Theorem 0.13 and its deduction from Theorem 0.10 by Amer–Brumer, §0.5, p. 66)
+Let K be a field extension of ℝ of transcendence degree 1, not necessarily finitely generated, in which −1 is a sum of squares; for instance K = ℝ(C) for an integral curve C over ℝ with C(ℝ) = ∅, which is nonreal by §0.5a. Any two quadratic forms q₁, q₂ on a K-vector space of dimension ≥ 5 have a common nonzero zero (Lean: `exists_common_zero_of_not_isSemireal`). Consequently every del Pezzo surface of degree 4 over K has a K-rational point; for K = ℝ(C) with C(ℝ) = ∅ this is B19's Theorem 0.13. (B19, Theorem 0.13 and its deduction from Theorem 0.10 by Amer–Brumer, §0.5, p. 66)
 
 A proof can proceed as follows.
 
@@ -2145,7 +2200,7 @@ A proof can proceed as follows.
 - Nonreality cannot be dropped: over ℝ(x), q₁ = ⟨1, 1, 1, 1, 1⟩ has no nonzero zero, so it shares none with any q₂.
 - Transcendence degree 1 cannot be raised: over the nonreal field ℂ(x, y), q₁ = ⟨1, x, y, xy, 0⟩ and q₂ = ⟨0, 0, 0, 0, 1⟩ on ℂ(x, y)⁵ have no common nonzero zero, since q₂ = 0 forces the last coordinate to vanish and ⟨1, x, y, xy⟩ is anisotropic (Springer's theorem, §0.10, applied twice).
 
-*Needs:* §7.11; §0.11; §7.12.
+*Needs:* §7.11; §0.11; §7.12; §0.5a.
 
 ### Examples
 
@@ -2155,7 +2210,7 @@ For n = 2 the half-period class is α itself and t = 1 on Θ(α); for n = 4 the 
 
 Layer 0; Layer 1; Layer 2; Layer 6; HeightsRationalPointsAndObstructions §2.19a (`finiteFlatBrauerCorestriction`); Mathlib `AlgebraicGeometry.Scheme.isBasis_affineOpens`; Mathlib `IsLocalRing.maximalIdeal`; Mathlib `IsRealClosed`; Mathlib `IsSemireal`; Mathlib `PowerSeries`; Mathlib `QuadraticMap.Anisotropic`; ResolutionOfSingularitiesCharacteristicZero §6.2 (SNC compactification); ResolutionOfSingularitiesCharacteristicZero §7.8 (field resolution); SchemeAndStackFoundations §2.22 (`brauer_henselian_local`); SchemeAndStackFoundations §2.6 (`projectiveSpace_cohomology`); SchemeAndStackFoundations §5.10; Tau Ceti `QuadraticForm.not_anisotropic_baseChange`; Tau Ceti `TauCeti.BrauerGroup.baseChange`.
 
-## Layer 8: the obstruction to period equals index
+## Layer 8: covers of even degree and the case ind = 2 per
 
 The finite-flat open U₀ and the restricted evaluation locus Θ₀; the alternating double cover of a generically finite cover and its branch multiplicities; the trace-quotient lift and the sign-corrected pullback lift; the circle double cover attached to the quotient class and its local monodromy correction; the correcting line bundle and algebraicity of the quotient component; the source's Proposition 7.1 (the obstruction to splitting by a cover of even degree) and the obstruction half of Theorem 0.5 (ind = 2 per).
 
@@ -2244,7 +2299,7 @@ With η, ζ from §8.3 and ψ : Q → p_*ℤ the trace-zero operator, `p*α̃|_{
 A proof can proceed as follows.
 
 1. α̃ = η mod n − φ(ζ); p*(η mod n) = (p*η) mod n.
-2. ψ mod n = p*∘φ as maps Q → p_*(ℤ/n): they agree on étale stalks and p_*(ℤ/n) → j_*j*p_*(ℤ/n) is injective (AlgebraicTopologyPartII §15.2); hence p*φ(ζ) = ψ(ζ) mod n.
+2. ψ mod n = p*∘φ as maps Q → p_*(ℤ/n): they agree on étale stalks and the target p_*(ℤ/n) → j_*j*p_*(ℤ/n) is injective (AlgebraicTopologyPartII §15.2; source correction E7); hence p*φ(ζ) = ψ(ζ) mod n.
 3. This is AlgebraicTopologyPartII §15.4 on the surface.
 
 **Checks.**
@@ -2481,7 +2536,7 @@ Let S be a real Enriques surface with S(ℝ) ≠ ∅. In 0 → ℝˣ/ℝˣ² →
 A proof can proceed as follows.
 
 1. H¹_G has four elements: 0, the constant class c (with [c]₀ = 1 on S(ℝ)), and the two lifts of K_S; [·]₀ of a lift of K_S is the indicator of the complement of its half.
-2. A lift with [δ]₀ = 0 exists iff its half is all of S(ℝ), that is iff the other half is empty; it is unique since the two lifts differ by c.
+2. A lift with [δ]₀ = 0 exists iff its half is all of S(ℝ), that is iff the other half is empty; it is the unique nonzero such class, since the two lifts differ by c and 0 also has [0]₀ = 0 (source correction E15).
 3. [δ]₁ = cl_R(υ(δ)) = cl_R(K_S) (§1.3) and cl_R(K_S) = w₁ (Kahn's theorem, MotivesAndAlgebraicCycles §7.10).
 
 **Checks.**
@@ -2675,7 +2730,7 @@ The class α of §9.13 has index ≠ 2, hence index 4. (B19, Proof of Propositio
 
 A proof can proceed as follows.
 
-1. If α = (f, g) with f, g ∈ K(S)ˣ, then at points x outside zeros and poles, x ∈ Ξ iff f(x) > 0 or g(x) > 0.
+1. If α = (f, g) in Br(K(S)) with f, g ∈ K(S)ˣ (source correction E14), then at points x outside zeros and poles, x ∈ Ξ iff f(x) > 0 or g(x) > 0.
 2. Descend f, g to ℝ((`t^{1/n}`)) and multiply by suitable powers of the positive `t^{1/n}` (preserving signs) so that they specialise to nonzero rational functions f₀, g₀ on the special fibre, viewed on the quadric Q = {z² = w² − u² − v²}.
 3. On the divisor D = {u = 0} ⊂ Q, choose general real points on the arc v/w < 0, avoiding zeros and poles of the unit parts of f₀, g₀ after factoring the powers of u; the sign pattern there forces even orders of f₀, g₀ along D.
 4. At general points of the arc v/w > 0, the signs of f₀, g₀ are then constant across D, contradicting the required jump between u/w > 0 (in Ξ) and u/w < 0 (not in Ξ).
@@ -2713,7 +2768,7 @@ Layer 0; Layer 1; Layer 2; Layer 7; Layer 8; AlgebraicTopology Stage 6; Algebrai
 
 ## Downstream consumers
 
-QuadraticFormInvariantsPartII, later in the merge order, consumes §0.7: its C_i fields, Lang–Nagata theorem for systems, algebraic-extension step and Tsen–Lang theorem (its §§5.1, 5.4, 5.5 and 5.6) are imported from §0.7, which is their single owner, while its finite-field and Kronecker-dimension applications (its §§5.3 and 5.7) stay there; there is no supply edge from it to this roadmap. Layer 0 is general real-function-field theory (orderings, signatures at a varying ordering, the Elman–Lam invariant, the Tsen–Lang theorem, the period and index of a Brauer class) for any roadmap on quadratic forms over function fields, and for the real-function-field applications of Benoist–Wittenberg, which import Layer 0 by section. Layers 3–8 are the natural input for period-index and integral Hodge questions on other real varieties (Benoist–Wittenberg, BW20 and BW20II); Theorems 0.3, 0.4, 0.10, 0.12 and 0.13 are stated in field-theoretic form in `Suggested.lean` for direct use.
+QuadraticFormInvariantsPartII consumes §0.7: its C_i fields, Lang–Nagata theorem for systems, algebraic-extension step and Tsen–Lang theorem (its §§5.1, 5.4, 5.5 and 5.6) are imported from §0.7, which is their single owner, while its finite-field and Kronecker-dimension applications (its §§5.3 and 5.7) stay there; there is no supply edge from it to this roadmap. Layer 0 is general real-function-field theory (orderings, signatures at a varying ordering, the Elman–Lam invariant, the Tsen–Lang theorem, the period and index of a Brauer class) for any roadmap on quadratic forms over function fields, and for the real-function-field applications of Benoist–Wittenberg, which import Layer 0 by section. Layers 3–8 are the natural input for period-index and integral Hodge questions on other real varieties (Benoist–Wittenberg, BW20 and BW20II); Theorems 0.3, 0.4, 0.10, 0.12 and 0.13 are stated in field-theoretic form in `Suggested.lean` for direct use.
 
 ## Source corrections
 Each entry records what the source has at the locator (B19, published version, unless the entry names another source) and the corrected statement the targets of this roadmap use. The targets cite these entries as source corrections.

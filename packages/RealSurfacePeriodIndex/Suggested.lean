@@ -73,7 +73,7 @@ def HasZeroTotalSignature {K : Type u} [Field K] [Invertible (2 : K)] {V : Type 
     ∃ W : Submodule R (R ⊗[K] V), 2 * Module.finrank R W = Module.finrank K V ∧
       ∀ w ∈ W, q.baseChange R w = 0
 
-/-! ## Layer 2: de Jong's theorem and the norm bound -/
+/-! ## Layer 2: de Jong's theorem by Hodge theory, and the norm bound over real closed fields -/
 
 /-- **De Jong's period-index theorem in characteristic zero.** For `k` algebraically closed of
 characteristic zero and `K` a finitely generated field extension of `k` of transcendence degree
