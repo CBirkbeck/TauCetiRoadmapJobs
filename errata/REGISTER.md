@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-14539 mistakes recorded on the board: 8259 misprints, 3790 errors, 1998 gaps, 492 unparsed bullets.
+14541 mistakes recorded on the board: 8261 misprints, 3790 errors, 1998 gaps, 492 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -15332,8 +15332,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at Remark 6.2.3.2, printed p. 492: the source says X′ is the fpqc sheafification of F; it should be the sheafification of X; affects nothing. Found by QuasicoherentSheavesOnPrestacks (#18060 at bfb5a71, 2026-11-16, claude fable).
 - **Misprint** at Warning 10.4.6.9, printed p. 930: the source says G is the classifying stack and then writes the derived category of the heart of X; it should be use one letter for the stack; affects nothing. Found by QuasicoherentSheavesOnPrestacks (#16366 at c5701ab, 2026-11-15, claude fable).
 - **Misprint** at Warning 10.4.6.9, printed p. 930: the source says the source names the classifying stack G and then writes the derived category of the heart of QCoh(X); it should be use one letter for the stack; affects nothing. Found by QuasicoherentSheavesOnPrestacks (#18060 at bfb5a71, 2026-11-16, claude fable).
+- **Misprint** at Warning 10.4.6.9, printed p. 930: the source says the classifying stack is G and then forms the derived category of the heart of QCoh of X; it should be use one letter for the stack; affects nothing. Found by QuasicoherentSheavesOnPrestacks (#18060 at 74646e9, 2026-11-16, claude fable).
 - **Misprint** at Warning 6.2.5.9, printed p. 496: the source says membership of F in QCoh(X) does not give coconnective values; it should be membership in the coconnective part of QCoh(X); affects nothing. Found by QuasicoherentSheavesOnPrestacks (#18060 at bfb5a71, 2026-11-16, claude fable).
 - **Misprint** at the proof of Proposition 9.1.5.1, printed p. 737: the source says the source repeats the opening words of a sentence choosing a faithfully flat map; it should be have them once; affects nothing. Found by QuasicoherentSheavesOnPrestacks (#18060 at 5ba936e, 2026-11-16, claude fable).
+- **Misprint** at the proof of Proposition 9.1.5.1, printed p. 737: the source says the opening four words of the sentence choosing the atlas twice in a row; it should be them once; affects nothing. Found by QuasicoherentSheavesOnPrestacks (#18060 at 74646e9, 2026-11-16, claude fable).
 - **Misprint** at §A.5.7, opening paragraph, printed p. 1805: the source says it applies a theorem whose number is printed as an unresolved reference mark; it should be the number of the theorem of §A.5 being applied; affects nothing. Found by QuasicoherentSheavesOnPrestacks (#16366 at 07e260f, 2026-11-15, claude fable).
 
 ## Saito, Hilbert modular forms and p-adic Hodge theory, arXiv:math/0612077v2
