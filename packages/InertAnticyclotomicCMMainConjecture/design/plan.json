@@ -2427,16 +2427,22 @@
   ],
   "gaps": [
     {
+      "slug": "wiles-reciprocity-every-local-unit",
+      "needs": "Wiles reciprocity in dual-exponential form of §4.3 for every element x of U∞*⊗_O R, R the integers of any finite extension of Φ, rather than for the projected class of §4.2 over the auxiliary field of §4.1: the finite Kummer class of x at level n has dual exponential with coefficient π^(−n−1)δ_n(x) against the invariant differential of the Lubin–Tate module, and its χ-weighted sum over Gal(Φ_n/Φ) is δ_χ(x) times that differential.",
+      "supplier": "AnticyclotomicLocalUnits",
+      "section": "§4.3"
+    },
+    {
       "slug": "elliptic-unit-euler-system",
-      "needs": "For every finite abelian extension F of K containing H and every ideal a of O_K prime to 6pf, the norm-compatible elliptic units of auxiliary ideal a (Rubin 1991 §1), with their Euler-system norm relations over the ray class tower K(g p^∞), g prime to p, and their Kummer classes twisted by the inverse avatar to classes in lim_cor H¹(F,T′) along the two-variable tower, extending NCM.1/normalized-zeta-class beyond moduli supported on f, p and one auxiliary split prime.",
+      "needs": "For every ideal g of O_K prime to p, every n≥1, every ideal a prime to 6pg and every prime 𝔮 of K not dividing 6pa, the norm from K(g𝔮pⁿ) to K(gpⁿ) sends the standard elliptic unit of §2.2 of twist a and modulus g𝔮pⁿ to the unit of modulus gpⁿ raised to 1−Frob_𝔮⁻¹ when 𝔮∤g and to that unit itself when 𝔮|g (compare Rubin 1991 §1, (1c), in Kolyvagin's form), extending §2.2's norm compatibility along the p-tower to the primes not dividing p.",
       "supplier": "NonordinaryCMSpecialValues",
-      "section": "NCM.1"
+      "section": "§2.2"
     },
     {
       "slug": "inert-two-variable-main-conjecture",
       "needs": "Rubin's two-variable theorem at a non-split prime (Rubin 1991 Theorem 4.1(ii)): for p∤#μ(H), K₀ abelian over K with H⊆K₀ and p∤[K₀:K], and the ℤ_p²-extension of K₀ abelian over K, char(A∞) divides char(Ē∞/C̄∞), with equality of χ-parts for every irreducible ℤ_p-representation χ of Gal(K₀/K) nontrivial on the decomposition group of p.",
       "supplier": "NonordinaryCMSpecialValues",
-      "section": "NCM.1"
+      "section": "§§2.2–2.3"
     },
     {
       "slug": "restriction-of-scalars-finite-extension",
@@ -2449,6 +2455,12 @@
       "needs": "For a finite character ρ of Γ≅ℤ_p with values in a finite extension of Frac(R) and the height-one prime P_ρ=ker(R⟦Γ⟧→ρ(R⟦Γ⟧)), the coefficient of P_ρ in charDivisor(M) of a finitely generated torsion module M equals the order of vanishing at T=ρ(γ)−1 of a generator of char(M).",
       "supplier": "PadicMeasuresIwasawaAlgebras",
       "section": "§4.6"
+    },
+    {
+      "slug": "leopoldt-abelian-over-imaginary-quadratic",
+      "needs": "For every imaginary quadratic field k, every finite abelian extension M/k and every prime ℓ, the field-level Leopoldt defect δ(M,ℓ) of §2.2 vanishes, that is, the localisation map from O_M^×⊗ℤ_ℓ to the product over v|ℓ of the pro-ℓ completions of the local unit groups is injective (the Ax–Brumer theorem), extending §4.4 from abelian extensions of ℚ.",
+      "supplier": "IntegralIwasawaTheory",
+      "section": "§4.4"
     }
   ],
   "sourceIssues": [
