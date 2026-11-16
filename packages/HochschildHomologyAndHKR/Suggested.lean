@@ -215,14 +215,6 @@ def detCochain (k R : Type u) [CommRing k] [CommRing R] [Algebra k R] {n : ℕ}
   (Matrix.detRowAlternating.toMultilinearMap.restrictScalars k).compLinearMap
     fun _ ↦ LinearMap.pi fun j ↦ (D j).toLinearMap
 
-/-- The determinant cochain is the determinant of the matrix with entries `Dⱼ(rᵢ)`, row `i` and
-column `j`. -/
-example (k R : Type u) [CommRing k] [CommRing R] [Algebra k R] {n : ℕ}
-    (D : Fin n → Derivation k R R) (r : Fin n → R) :
-    detCochain k R D r = (Matrix.of fun i j ↦ D j (r i)).det := by
-  simp [detCochain]
-  rfl
-
 /-- The determinant cocycle represents `n!` times the cup product of the derivations (README §7.5),
 for every commutative `k`-algebra `R`: `⟨D₁, …, Dₙ⟩ − n! · (D₁ ∪ ⋯ ∪ Dₙ)` is a Hochschild
 coboundary, so `[⟨D₁, …, Dₙ⟩] = n! [D₁ ∪ ⋯ ∪ Dₙ]` in `HHⁿ(R, R)`: the determinant is the signed

@@ -453,7 +453,12 @@ canonical map, and the determinant map is identified as `n!` times it.
   finite projective module is finite projective, `Mathlib/LinearAlgebra/Dual/Lemmas.lean`), the
   `Module.IsReflexive` instance for finite projective modules (same file) and `Module.evalEquiv`
   (`P ≃ₗ[R] P**` for a reflexive `P`, `Mathlib/LinearAlgebra/Dual/Defs.lean`).
-- **Regular sequences.** `RingTheory.Sequence.IsWeaklyRegular`,
+- **Regular sequences.** `MvPolynomial.algebraTensorAlgEquiv`
+  (`Mathlib/RingTheory/TensorProduct/MvPolynomial.lean`:
+  `A ⊗[R] MvPolynomial σ R ≃ₐ[A] MvPolynomial σ A` for a commutative `R`-algebra `A`,
+  `a ⊗ P ↦ a · P`, the coefficients of `P` mapped into `A`), `MvPolynomial.aeval` and
+  `AlgEquiv.ofAlgHom` (two mutually inverse algebra maps give an algebra isomorphism), for the
+  change of variables of §8.1; `RingTheory.Sequence.IsWeaklyRegular`,
   `LinearEquiv.isWeaklyRegular_congr'` (`Mathlib/RingTheory/Regular/RegularSequence.lean`: weak
   regularity transported along a semilinear equivalence, the sequence mapped by the ring map) and
   `MvPolynomial.span_X_image_eq_ker_aeval_ite_mem` (`Mathlib/RingTheory/MvPolynomial/Ideal.lean`:
@@ -898,6 +903,23 @@ functorialities commute (Loday98 §1.1; Weibel94 §9.1).
 
 *Needs:* §§1.1–1.2; Mathlib `HomologicalComplex.homologyMap`.
 
+**Checks.**
+
+- For the structure map `φ : k → B` and a `B`-bimodule `N`, `C_n(k, φ*N) = N ⊗[k] k^{⊗n} ≅ N`. The
+  chain map is `n ↦ n ⊗ 1 ⊗ ⋯ ⊗ 1` in each degree, and on `HH₀` it is the quotient map
+  `N → N/[B,N]`. For `B = N = Mat₂(k)` this is `Mat₂(k) → Mat₂(k)/[Mat₂(k), Mat₂(k)] ≅ k`, the trace
+  (§3.1 Checks).
+- The chain map needs `φ` to be multiplicative. Take `k` nonzero and the `k`-linear map
+  `φ : k[x] → k[x]` with `φ(1) = 1`, `φ(x) = x` and `φ(x^j) = 0` for `j ≥ 2`. The formula
+  `n ⊗ a₁ ⊗ ⋯ ⊗ a_n ↦ n ⊗ φ(a₁) ⊗ ⋯ ⊗ φ(a_n)`, with the identity on the coefficients `k[x]`, does not
+  commute with `b`. It sends `b(1 ⊗ x ⊗ x) = 2x ⊗ x − 1 ⊗ x²` to `2x ⊗ x`, while
+  `b(1 ⊗ φ(x) ⊗ φ(x)) = 2x ⊗ x − 1 ⊗ x²`; the two differ by `1 ⊗ x² ≠ 0`.
+- The cochain map goes from `B` to `A`, and a pulled-back cochain vanishes whenever one of its
+  arguments lies in `ker φ`. Take the quotient `φ : k[x] → k[x]/(x²)` and `N = k[x]/(x²)`. The
+  derivation `x∂_x` of `k[x]/(x²)` pulls back to the derivation `p ↦ x p′ mod x²` of `k[x]` into
+  `φ*N`, which kills `x²`. When `2 ≠ 0` in `k`, the derivation `p ↦ p′ mod x²` of `k[x]` into `φ*N`
+  sends `x²` to `2x ≠ 0`, so it is not a pulled-back cochain.
+
 ### 1.4 Long exact sequences in the coefficients
 
 Let `0 → M' → M → M'' → 0` be a short exact sequence of `A`-bimodules. If `A` is flat as a
@@ -932,6 +954,21 @@ Chapter IX). The connecting maps are natural in morphisms of short exact sequenc
   (`Module.projective_lifting_property` with the first bullet), and `Hom_k(A^{⊗n}, −)` is left
   exact. A `k`-linear splitting of the sequence splits it again after `− ⊗[k] A^{⊗n}` or
   `Hom_k(A^{⊗n}, −)` is applied, whatever `A` is.
+
+**Checks.**
+
+- Chains need the hypothesis. Take `k = ℤ` and `A = ℤ[ε]/(ε², 2ε) = ℤ ⊕ (ℤ/2)ε`, which is not flat
+  over `ℤ`. Make `ℤ` and `ℤ/2` into `A`-bimodules through the ring map `A → ℤ`, `ε ↦ 0`. The
+  sequence `0 → ℤ --2--> ℤ → ℤ/2 → 0` of bimodules is exact and not split over `ℤ`. Here
+  `C₁(A, ℤ) = ℤ ⊗_ℤ A ≅ ℤ ⊕ ℤ/2`, and the map induced by `2` sends `1 ⊗ ε ≠ 0` to `1 ⊗ 2ε = 0`. So
+  `C₁(A, ℤ) → C₁(A, ℤ)` is not injective, and the sequence of complexes is not exact on the left.
+- Cochains need the hypothesis, in the same example. The cochain in `C¹(A, ℤ/2)` sending `ε` to `1`
+  and `1` to `0` has no lift to `C¹(A, ℤ)`, because every `ℤ`-linear map `A → ℤ` kills the torsion
+  element `ε`. So `C¹(A, ℤ) → C¹(A, ℤ/2)` is not surjective.
+- A `k`-split sequence needs nothing of `A`. Take `k = ℤ`, `A = 𝔽₂` (neither flat nor projective
+  over `ℤ`) and the split sequence `0 → 𝔽₂ → 𝔽₂² → 𝔽₂ → 0` of `𝔽₂`-bimodules. For an `𝔽₂`-module
+  `M`, `𝔽₂^{⊗n} = 𝔽₂` for `n ≥ 1`, `M ⊗_ℤ 𝔽₂ = M` and `Hom_ℤ(𝔽₂, M) = M`. So in every degree both
+  the chain sequence and the cochain sequence are the given sequence, which is exact.
 
 ### 1.5 Commutative algebras
 
@@ -1762,7 +1799,8 @@ satisfying the graded Jacobi identity for the degrees `p − 1`, `q − 1`
 cohomology is `Z¹(A,A) = Der_k(A)`, there being no arity-zero cochain to quotient by, and the
 extension of `{−,−}` to the degrees involving `HH¹` and `HH⁰` is the transport of Layer 8's
 bracket on the full complex, which identifies `HH^n(A,A)` with Layer 8's Hochschild cohomology of
-`A` in Gerstenhaber degree `n − 1` for every `n ≥ 0` (Ginz05 §6.6, lines 1351–1375; Ger63 §7; the
+`A` in suspended degree `n − 1` (the degree of `Θf` for `f` of arity `n`) for every `n ≥ 0`
+(Ginz05 §6.6, lines 1351–1375; Ger63 §7; the
 sign dictionary follows from DGAInfinity's Koszul tensor-map rule and suspension square). The
 clauses with arity-zero cochains and the cup-product clause compare this roadmap's complex with
 DGAInfinity Layer 8's; no later section uses them, and §6.2 proves its formula on the classical
@@ -1787,8 +1825,9 @@ the full complex).
   bracket of `Der_k(A,A)/Inn(A,A)` inherited from `TauCeti.derivationLieAlgebra`; on the pinned
   complex it is the bracket of `TauCeti.AInfinityAlgebra.PositiveHochschild.Cohomology 𝒜 0 = Der_k(A)`
   before the quotient by inner derivations.
-- The Hochschild cohomology of Layer 8 for `A` is concentrated in Gerstenhaber degrees `≥ −1`, the
-  degree `−1` part being `HH⁰(A,A) = Z(A)`; the pinned positive-arity complex sees the degrees
+- The Hochschild cohomology of Layer 8 for `A` is concentrated in suspended degrees `≥ −1`, the
+  degree `−1` part being `HH⁰(A,A) = Z(A)` (an element `x ∈ C⁰ = A` has arity `0`, and `Θx ∈ sA` has
+  degree `−1`); the pinned positive-arity complex sees the degrees
   `≥ 0` and misses the arity-zero cochains, so its degree-`0` cohomology is `Der_k(A)` rather than
   `HH¹(A,A)`, and its cohomology in degree `n − 1 ≥ 1` is `HH^n(A,A)`.
 
@@ -1906,17 +1945,36 @@ RefinedTraceMethods §1.9; (b) the classical projection `π^cl_n : HH_n(R,R) →
 `[r₀ ⊗ ⋯ ⊗ r_n] ↦ r₀ dr₁ ∧ ⋯ ∧ dr_n`, is well-defined and, if `R` is flat over `k`, corresponds to
 `ν_n π_n`; (c) `π^cl_n ∘ ε^cl_n = n! · id`, and `ε^cl₁` is the inverse of the isomorphism of §3.4;
 (d) if `R` is smooth over `k` (hence flat, `Algebra.Smooth.flat`), `ε^cl_n` is an isomorphism for
-every `n`. Flatness enters only through the comparison with the derived chains: the
-antisymmetrised chain is a cycle (the inner terms of `b` cancel in the pairs `σ, σ ∘ (i i+1)` and
-the first term of `σ` cancels the last term of its cyclic shift) and `π^cl_n ∘ b = 0` by the Leibniz
-rule of `d`, for every commutative `R` (Ginz05 §9.2, lines 2142–2156; AV20 lines 237–243; Loday98
-§1.3 and §3.4, Theorem 3.4.4; Weibel94 §9.4).
+every `n`. Flatness enters only through the comparison with the derived chains: (a)–(c) hold
+for every commutative `R`. Write `Alt(r₀; r₁,…,r_n) = Σ_{σ∈S_n} sgn(σ) r₀ ⊗ r_{σ(1)} ⊗ ⋯ ⊗ r_{σ(n)}`.
+One route to (a) takes three steps on the classical complex. First, `Alt(r₀; r₁,…,r_n)` is a cycle:
+the inner terms of `b` cancel in the pairs `σ, σ ∘ (i i+1)`, and the first term of `σ` cancels the
+last term of its cyclic shift. Second, it is `0` when `r_i = r_j` for some `1 ≤ i < j ≤ n`, the
+terms `σ` and `(i j) ∘ σ` cancelling. Third, its class is a derivation in each `r_i`, `i ≥ 1`, and
+by the second step it suffices to treat `r₁`. For `a, c ∈ R` let `W` be the sum of
+`sgn(w) r₀ ⊗ w₁ ⊗ ⋯ ⊗ w_{n+1}` over the orderings `w` of the letters `a, c, r₂, …, r_n` in which `a`
+comes before `c`, `sgn(w)` being the sign of `w` as a permutation of `(a, c, r₂, …, r_n)`; then
+
+    b(W) = Alt(r₀a; c, r₂,…,r_n) − Alt(r₀; ac, r₂,…,r_n) + Alt(r₀c; a, r₂,…,r_n).
+
+Indeed the inner terms of `b` cancel in the pairs `w, w ∘ (i i+1)`, except those that multiply `a` by
+the `c` right after it, which sum to `−Alt(r₀; ac, r₂,…,r_n)`. The first term of `w` cancels the last
+term of its cyclic shift, except when `w` begins with `a` or ends with `c`; these terms give
+`Alt(r₀a; c, r₂,…,r_n)` and `Alt(r₀c; a, r₂,…,r_n)`. So `(r₁,…,r_n) ↦ [Alt(1; r₁,…,r_n)]` is an
+alternating `k`-multilinear map into the `R`-module `HH_n(R,R)` of §1.5 that is a `k`-derivation
+in each argument. Applying `KaehlerDifferential.linearMapEquivDerivation` one argument at a time
+gives an `R`-multilinear map on `Ω¹_{R/k}`. It is alternating on the elements `dr`, which span
+`Ω¹_{R/k}` over `R`, hence alternating, and `exteriorPower.alternatingMapLinearEquiv` gives
+`ε^cl_n` on `⋀[R]^n Ω[R⁄k]`, the coefficient `r₀` acting through §1.5. For (b), `π^cl_n ∘ b = 0` by
+the Leibniz rule of `d` (Ginz05 §9.2, lines 2142–2156; AV20 lines 237–243; Loday98 §1.3 and §3.4,
+Theorem 3.4.4; Weibel94 §9.4).
 
 *Needs:* §§1.5, 3.4; §6.3 and RefinedTraceMethods §1.9 (the antisymmetrisation map and the HKR
 projection) for the comparison clauses of (a) and (b); gap:smooth-hkr-antisymmetrisation (for
 (d)); Mathlib `Algebra.Smooth.flat`, `exteriorPower.alternatingMapLinearEquiv` with
-`KaehlerDifferential.linearMapEquivDerivation` (to define `ε^cl_n` on `Ω^n_{R/k}` from its values on
-`r₀ dr₁ ∧ ⋯ ∧ dr_n`), `exteriorPower.ιMulti` and `KaehlerDifferential.D` (the values of `π^cl_n`).
+`KaehlerDifferential.linearMapEquivDerivation` and `KaehlerDifferential.span_range_derivation` (to
+define `ε^cl_n` on `Ω^n_{R/k}` from its values on `r₀ dr₁ ∧ ⋯ ∧ dr_n`), `exteriorPower.ιMulti` and
+`KaehlerDifferential.D` (the values of `π^cl_n`).
 
 **Checks.**
 
@@ -1929,6 +1987,18 @@ projection) for the comparison clauses of (a) and (b); gap:smooth-hkr-antisymmet
   complex is `𝔽_p` in every degree with `b_n = 1` for even `n ≥ 2` and `0` for odd `n`, so
   `HH_n(𝔽_p,𝔽_p) = 0` for `n ≥ 1`; (a)–(c) hold with both sides zero, while the derived
   `HH₂(𝔽_p/ℤ) = 𝔽_p` is not `HH₂(𝔽_p,𝔽_p)`: the comparison clauses need flatness, (a)–(c) do not.
+- The derivation step, computed. For `n = 1`, `W = r₀ ⊗ a ⊗ c`, and the identity is the boundary
+  `b(r₀ ⊗ a ⊗ c) = r₀a ⊗ c − r₀ ⊗ ac + c r₀ ⊗ a` of §3.4. For `n = 2`,
+  `W = r₀ ⊗ a ⊗ c ⊗ r − r₀ ⊗ a ⊗ r ⊗ c + r₀ ⊗ r ⊗ a ⊗ c`. Of the twelve terms of `b(W)`, six cancel in
+  pairs by commutativity of `R`, and the other six are
+  `Alt(r₀a; c, r) − Alt(r₀; ac, r) + Alt(r₀c; a, r)`. All orderings with `a` before `c` are needed: for
+  `R = k[a, c, r]` with `k` nonzero and `r₀ = 1`, leaving out the middle ordering `(a, r, c)` adds
+  `b(1 ⊗ a ⊗ r ⊗ c)` to the boundary, and so leaves in it the basis tensor `1 ⊗ a ⊗ rc`, which the
+  right side does not contain.
+- No flatness enters. Take `k = ℤ` and `R = 𝔽₂[x,y]`, which is not flat over `ℤ`, with
+  `a = c = x`, `r = y` and `r₀ = 1`. Then `b(W) = 2 · Alt(x; x, y) − Alt(1; x², y)`, so the nonzero chain
+  `1 ⊗ x² ⊗ y − 1 ⊗ y ⊗ x²` equals `−b(W)` and its class is `0`. This is what
+  `ε^cl₂(d(x²) ∧ dy) = ε^cl₂(2x dx ∧ dy) = 0` requires.
 
 ### Examples
 
@@ -2221,8 +2291,12 @@ ideal with regular quotient of a regular local ring, and Ginz05 §9.3, lines 219
 without proof a regular sequence generating the ideal of the diagonal of a smooth variety over an
 algebraically closed field of characteristic zero). One route: `Rᵉ ≅ R ⊗[k] R` by
 `Algebra.TensorProduct.congr` of the identity and `AlgEquiv.toOpposite` (`R` is commutative), and
-`R ⊗[k] R ≅ MvPolynomial (Fin m) R`, with the first factor `R ⊗ 1` as coefficients and the second
-copy of the variables replaced by `Y_i = 1 ⊗ X_i − X_i ⊗ 1 = −t_i`; both are ring isomorphisms.
+`R ⊗[k] R ≅ MvPolynomial (Fin m) R` by `MvPolynomial.algebraTensorAlgEquiv k R`
+(`r ⊗ P ↦ r · P`, so `r ⊗ X_i ↦ r X_i`, with the first factor `R ⊗ 1` as coefficients and
+`X_i ⊗ 1` going to the constant `C(X_i)`), followed by the `R`-algebra automorphism
+`MvPolynomial.aeval (X_i ↦ X_i + C(X_i))`, whose inverse is `MvPolynomial.aeval (X_i ↦ X_i − C(X_i))`
+(`AlgEquiv.ofAlgHom`); under the composite the variable `X_i` of the target is
+`Y_i = 1 ⊗ X_i − X_i ⊗ 1 = −t_i`. Both maps are ring isomorphisms.
 Under their composite the multiplication map is evaluation at `Y = 0`, whose kernel is spanned by
 the `Y_i` (`MvPolynomial.span_X_image_eq_ker_aeval_ite_mem` for the set of all variables); Tau
 Ceti's `MvPolynomial.isWeaklyRegular_map_X` makes the `Y_i` weakly regular over the coefficient
@@ -2232,13 +2306,18 @@ Replacing each `Y_i` by `t_i = −Y_i` changes neither the ideals `(Y₁,…,Y_j
 multiplication by `Y_{j+1}` on their quotients, so the `t_i` are weakly regular as well.
 
 *Needs:* Mathlib `MvPolynomial`, `Algebra.TensorProduct`, `Algebra.TensorProduct.congr`,
-`AlgEquiv.toOpposite`, `RingTheory.Sequence.IsWeaklyRegular`, `LinearEquiv.isWeaklyRegular_congr'`,
+`AlgEquiv.toOpposite`, `MvPolynomial.algebraTensorAlgEquiv`, `MvPolynomial.aeval`,
+`AlgEquiv.ofAlgHom`, `RingTheory.Sequence.IsWeaklyRegular`, `LinearEquiv.isWeaklyRegular_congr'`,
 `MvPolynomial.span_X_image_eq_ker_aeval_ite_mem`; Tau Ceti `MvPolynomial.isWeaklyRegular_map_X`.
 
 **Checks.**
 
 - `m = 0`: the empty sequence, `Rᵉ = k`, and the kernel is `0`.
-- `m = 1`: `t = X ⊗ 1 − 1 ⊗ X` is a nonzerodivisor of `k[X] ⊗ k[X] ≅ k[X,Y]` for nonzero `k`.
+- `m = 1`: under the composite of the route, `X ⊗ 1 ↦ C(X)` and `1 ⊗ X ↦ X ↦ X + C(X)`, so the
+  variable of `MvPolynomial (Fin 1) R` is `1 ⊗ X − X ⊗ 1 = −t`, and the multiplication map, which
+  sends `1 ⊗ X − X ⊗ 1` to `X − X = 0`, is evaluation of that variable at `0`. The element `t` is a
+  nonzerodivisor of `k[X] ⊗ k[X] ≅ k[X,Y]` for nonzero `k`. Without the change of variables the
+  variable would be `1 ⊗ X`, whose image under multiplication is `X ≠ 0` for nonzero `k`.
 - For `R = k[x]/(x²)` with `k` nonzero, `t = x ⊗ 1 − 1 ⊗ x` is a zero divisor:
   `t (x ⊗ 1 + 1 ⊗ x) = x² ⊗ 1 − 1 ⊗ x² = 0` with `x ⊗ 1 + 1 ⊗ x ≠ 0`.
 
