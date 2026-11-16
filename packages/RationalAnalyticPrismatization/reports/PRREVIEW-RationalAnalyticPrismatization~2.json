@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RationalAnalyticPrismatization~2",
+  "head": "6d6b04ac37b32446d04aa1082dd1bdcf1777c83d",
+  "pr": 2456,
+  "folder": "RationalAnalyticPrismatization",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "incremental re-review of 18 changed lines since 4670ade. Checked: previous R01-R03, all repaired; the 10.2, 10.3 and 10.6 routes and the NoncommutativeAndEquivariantIwasawa contract, against 13 locators in ALRS, HM and ALBM; NoncommutativeAndEquivariantIwasawa sections 0.2, 0.11 and 0.13 on main; AnalyticStacks section 0.11 at #1687; MotivesAndAlgebraicCyclesPartII Layer 0 at #2459. The seeded sample lies outside the changed passages. Gate re-run passes, depcheck reports 0 problems, and lake env lean is clean. New: R01 (P2) 0-properness of BPi^cont cites a 2.2 law whose source (HM Remark 4.4.11(iii)) covers only finite monomorphism covers, and needs descendability instead; R02 (P3) no supplier named for AnalyticStacks 0.11 in 10.2; R03 (P3) the description says MotivesAndAlgebraicCyclesPartII has no pull request, but #2459 is open.",
+  "text": "258abe6bad90b2e8"
+ }
+}
