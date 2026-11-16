@@ -3004,5 +3004,12 @@
    "what": "§1.1, §1.2, §1.7 for comparison arguments of linear systems."
   }
  ],
- "gaps": []
+ "gaps": [
+  {
+   "slug": "dirac-weyl-alternative",
+   "needs": "In §4.8 (UO-D07), for Ju′ + Vu = λu on [0, ∞) with J = [[0, −1], [1, 0]] and V Hermitian and integrable on every [0, t], state the limit-point/limit-circle alternative at ∞ with its independence of λ: either every solution is square-integrable near ∞ for every complex λ, or for every nonreal λ the solutions square-integrable near ∞ form a line, as its API bullet states for Sturm–Liouville expressions.",
+   "supplier": "OperatorTheory/UnboundedOperators",
+   "section": "§4.8"
+  }
+ ]
 }
