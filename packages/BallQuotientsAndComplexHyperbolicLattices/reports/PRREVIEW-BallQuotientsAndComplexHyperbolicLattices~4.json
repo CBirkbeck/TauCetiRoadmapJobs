@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BallQuotientsAndComplexHyperbolicLattices~4",
+  "head": "b8bc019a59561ef3248b634ef829b6f7f5406ee6",
+  "pr": 2425,
+  "folder": "BallQuotientsAndComplexHyperbolicLattices",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 6 changed lines since a4e5dee. R01 of the previous review is repaired (Summary and Layer 10 Examples now scope Borel algebraicity to smooth varieties, as section 10.3 states). The new clause of section 12.2 (r_W(Gamma_H) torsion-free, hence S_(Gamma_H) smooth by section 9.5) was checked by computation on explicit elements and against sections 6.4, 9.5 and 12.1; MilneSVI Theorem 3.14 re-read at its lines for the sampled target 10.3; changed passages compared with MilneSVI and BaldiUllmo2023 for wording. Gate passes (build=0 OK); depcheck 248 roadmaps, 2342 edges, 0 problems; lake env lean on Suggested.lean gives 7 sorry warnings only; nothing changed outside the folder; pull request text agrees with the head.",
+  "text": "ef1f16e59b7248eb"
+ }
+}
