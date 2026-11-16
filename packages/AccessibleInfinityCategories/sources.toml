@@ -1,0 +1,41 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AccessibleInfinityCategories"
+
+[[source]]
+id = "htt"
+locator_scheme = "theorem"
+locator = "Prop. 5.4.2.2"
+url = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HTT.pdf"
+fetched_at = "2026-11-16T16:43:40Z"
+sha256 = "58855f3a0ad6d9c470ded74a38938b9468927592e9ae1209bab6a068e67ede6e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-16"
+cited_for = ["5.1.1"]
+
+[[source]]
+id = "ha"
+locator_scheme = "theorem"
+locator = "Prop. 5.2.2.36"
+url = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/HA.pdf"
+fetched_at = "2026-11-16T16:44:04Z"
+sha256 = "112b145a95a62daefb8275851cac9ab6430004cfc8f751a33a8d981fd7ad68c3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-16"
+cited_for = ["8.1.1"]
+
+[[source]]
+id = "sag"
+locator_scheme = "theorem"
+locator = "Lemma 4.5.3.1"
+url = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_from = "https://www.math.ias.edu/~lurie/papers/SAG-rootfile.pdf"
+fetched_at = "2026-11-16T16:49:44Z"
+sha256 = "515109098ae5cd73bf266fa97bf498b4e8c7adb6e936be67e6fa9a86bb69020d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-16"
+cited_for = ["3.1.4"]
