@@ -93,12 +93,12 @@ year = 2019
 venue = "EMS Zurich Lectures in Advanced Mathematics"
 doi = "10.4171/200"
 locator_scheme = "chapter"
-locator = "Part II"
+locator = "Chapter 5 (Hyperbolicity), Chapter 8 (Anosov flows)"
 url = "https://doi.org/10.4171/200"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled (EMS Press, subscription required on the landing page); cited by its locator without the text"
-cited_for = ["6.5", "6.6", "7.2", "7.4", "7.7", "8.3", "8.5", "9.2", "9.3"]
+version_note = "paywalled (EMS Press, subscription required on the landing page); cited by its locator without the text; the chapter numbers and titles are those of the publisher's public table of contents (https://ems.press/books/zlam/170/contents)"
+cited_for = ["7.2"]
 
 [[source]]
 id = "KatokHasselblatt1995"
@@ -171,7 +171,7 @@ venue = "Adv. Math. 303 (2016), 745-799"
 doi = "10.1016/j.aim.2016.07.029"
 arxiv = "1505.03803v2"
 locator_scheme = "theorem"
-locator = "Theorem A, Theorem 5.5, Theorem 3.2, Propositions 3.3-3.4, Proposition 4.15, Lemma 4.16, Proposition 4.19, Lemma 6.13, Propositions 6.16, 6.17"
+locator = "Theorem A, Theorem 5.5, Theorem 3.2, Lemma 2.10, Propositions 3.3-3.4, Proposition 4.15, Lemma 4.16, Proposition 4.19, Lemma 6.13, Propositions 6.16, 6.17"
 url = "https://arxiv.org/abs/1505.03803v2"
 fetched_from = "https://arxiv.org/pdf/1505.03803v2"
 fetched_at = "2026-11-06T00:53:23Z"

@@ -28,12 +28,21 @@ Headline theorems of the README that are not stated here, with what each lacks a
   source are built by the theorem itself (README Layer 8); their consequence, the local product
   structure of locally maximal hyperbolic sets (README §§8.4–8.5), is stated;
 * the Anosov property of the geodesic flow of a compact manifold of negative sectional curvature
-  (README §9.3): the geodesic flow of the unit tangent sphere bundle as a `Flow ℝ` on Tau Ceti's
+  (README §9.3), Anosov's theorem, proved there by an analysis of stable Jacobi fields: the
+  geodesic flow of the unit tangent sphere bundle as a `Flow ℝ` on Tau Ceti's
   sphere-bundle manifold is not available (Tau Ceti has the maximal geodesic flow on its open
   domain in the tangent bundle and the sphere bundle as an embedded manifold, into which Mathlib's
   `ContMDiff.iff_comp_isImmersion` corestricts smooth maps; the restricted flow as a `Flow ℝ` is a
   construction of README §9.3 whose existence rests on its theorems that the geodesic spray of a
   compact manifold is complete and that the sphere bundle is invariant).
+
+The other Anosov statements of README Layer 9, for hyperbolic toral automorphisms (§9.1) and for
+suspensions and time changes of Anosov diffeomorphisms (§9.2), are examples that check the
+definitions of README Layer 7 on explicit systems, not headline theorems, and are not stated;
+§9.1 would also need as data the diffeomorphism of `UnitAddTorus (Fin n)` induced by an integer
+matrix, a construction of that section. The ergodic conclusion of §9.1 that the roadmap is built
+to reach, that Haar measure is the unique measure of maximal entropy, is stated
+(`isEquilibriumState_toralEndomorphism_zero_iff`).
 -/
 
 noncomputable section
@@ -437,8 +446,8 @@ section LocalMaximality
 variable {X : Type*} [TopologicalSpace X]
 
 /-- Local maximality of a set for a homeomorphism (README §8.4): an open `U ⊇ Λ`, an isolating
-neighbourhood, such that every point whose whole orbit lies in `U` lies in `Λ`; for an invariant
-`Λ` this says `Λ = ⋂_(n ∈ ℤ) fⁿ(U)`. -/
+neighbourhood, such that every point whose whole orbit lies in `U` lies in `Λ`; for `Λ` with
+`f(Λ) = Λ` this says `Λ = ⋂_(n ∈ ℤ) fⁿ(U)`. -/
 def IsLocallyMaximal (f : X ≃ₜ X) (Λ : Set X) : Prop :=
   ∃ U : Set X, IsOpen U ∧ Λ ⊆ U ∧ ∀ x, (∀ n : ℕ, f^[n] x ∈ U ∧ f.symm^[n] x ∈ U) → x ∈ Λ
 
@@ -528,14 +537,14 @@ section BowenRuelle
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   {H : Type*} [TopologicalSpace H] (I : ModelWithCorners ℝ E H)
   {M : Type*} [MetricSpace M] [ChartedSpace H M] [IsManifold I ∞ M] [I.Boundaryless]
-  [CompactSpace M] [MeasurableSpace M] [BorelSpace M]
+  [SigmaCompactSpace M] [MeasurableSpace M] [BorelSpace M]
   [RiemannianBundle (fun x : M ↦ TangentSpace I x)]
   [IsContinuousRiemannianBundle E (fun x : M ↦ TangentSpace I x)]
 
-/-- Bowen's theorem (README §10.2): on a basic set of a `C¹` diffeomorphism of a compact manifold,
-with the truncated Riemannian distance, a Hölder potential has exactly one equilibrium state; it is
-ergodic, positive on nonempty relatively open sets and a Gibbs measure, and it is also the
-equilibrium state of every `φ + c + ψ ∘ f - ψ`. -/
+/-- Bowen's theorem (README §10.2): on a basic set of a `C¹` diffeomorphism of a σ-compact manifold,
+not necessarily compact, with the truncated Riemannian distance, a Hölder potential has exactly one
+equilibrium state; it is ergodic, positive on nonempty relatively open sets and a Gibbs measure, and
+it is also the equilibrium state of every `φ + c + ψ ∘ f - ψ`. -/
 theorem existsUnique_isEquilibriumState_of_isBasicSet
     (hd : ∀ x y : M, edist x y = min 1 (riemannianEDist I x y))
     (f : M ≃ₘ^1⟮I, I⟯ M) {Λ : Set M} (hΛ : IsBasicSet I f Λ) (hmaps : MapsTo f Λ Λ)
@@ -548,9 +557,10 @@ theorem existsUnique_isEquilibriumState_of_isBasicSet
         IsEquilibriumState (hmaps.restrict f Λ Λ) φ' ν := by
   sorry
 
-/-- The Bowen–Ruelle theorem (README §10.3): on a basic set of a `C¹` flow of a compact manifold, a
-Hölder potential `F` has exactly one equilibrium state `ν`; it is flow-ergodic, positive on
-nonempty relatively open sets and lower Gibbs at every scale; it is the equilibrium state of
+/-- The Bowen–Ruelle theorem (README §10.3): on a basic set of a `C¹` flow of a σ-compact manifold,
+not necessarily compact, a Hölder potential `F` has exactly one equilibrium state `ν`; it is
+flow-ergodic, positive on nonempty relatively open sets and lower Gibbs at every scale; it is the
+equilibrium state of
 `F + c + L_gψ` for every `ψ` differentiable along the flow with continuous derivative `L_gψ`; for
 every `t > 0` it is the only `g`-invariant equilibrium state of `F_t` for the time-`t` map; and it
 is the equilibrium state of `a F` for the flow rescaled by `a > 0`. -/
@@ -581,13 +591,14 @@ section PositiveEntropy
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   {H : Type*} [TopologicalSpace H] (I : ModelWithCorners ℝ E H)
   {M : Type*} [MetricSpace M] [ChartedSpace H M] [IsManifold I ∞ M] [I.Boundaryless]
-  [CompactSpace M]
+  [SigmaCompactSpace M]
   [RiemannianBundle (fun x : M ↦ TangentSpace I x)]
   [IsContinuousRiemannianBundle E (fun x : M ↦ TangentSpace I x)]
 
 /-- Positive entropy of basic sets of flows (README §10.4): the topological entropy of a basic set
-of a `C¹` flow is positive unless the basic set is a single periodic orbit; its unique measure of
-maximal entropy, the Bowen–Margulis measure, is the case `F = 0` of the Bowen–Ruelle theorem. -/
+of a `C¹` flow on a σ-compact manifold is positive unless the basic set is a single periodic orbit;
+its unique measure of maximal entropy, the Bowen–Margulis measure, is the case `F = 0` of the
+Bowen–Ruelle theorem. -/
 theorem pos_coverEntropy_of_isFlowBasicSet
     (ϕ : Flow ℝ M) (hϕ : ContMDiff (𝓘(ℝ, ℝ).prod I) I 1 (fun p : ℝ × M => ϕ p.1 p.2))
     {Λ : Set M} (hΛ : IsFlowBasicSet I ϕ Λ) (hinv : IsInvariant ϕ Λ) :
@@ -596,8 +607,9 @@ theorem pos_coverEntropy_of_isFlowBasicSet
   sorry
 
 /-- Positive entropy of basic sets of diffeomorphisms (README §10.4): the topological entropy of a
-basic set of a `C¹` diffeomorphism is positive unless the basic set is finite; its unique measure
-of maximal entropy, Bowen's measure, is the case `φ = 0` of Bowen's theorem. -/
+basic set of a `C¹` diffeomorphism of a σ-compact manifold is positive unless the basic set is
+finite; its unique measure of maximal entropy, Bowen's measure, is the case `φ = 0` of Bowen's
+theorem. -/
 theorem pos_coverEntropy_of_isBasicSet
     (f : M ≃ₘ^1⟮I, I⟯ M) {Λ : Set M} (hΛ : IsBasicSet I f Λ) (hmaps : MapsTo f Λ Λ) :
     Λ.Finite ∨ 0 < Dynamics.coverEntropy (hmaps.restrict f Λ Λ) univ := by
