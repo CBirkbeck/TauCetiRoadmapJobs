@@ -868,7 +868,7 @@ Fix a supersingular strict O_K-module X₀ of relative height 2 and dimension 1,
 
 On `V^exo=Hom^0_{O_L}(X_0,𝕏)`, use h(x,y)=u^−2 λ_0^−1 y^∨λ_𝕏 x. It is a nondegenerate nonsplit L/K-Hermitian space of dimension n. The u^−2 normalization, the principal rank-one CM source and the target’s symmetric principal factor are retained when identifying its unitary group with the framing isometries. (LL22, §2.1, the pairing (2.1) and footnote 9, p. 11.)
 
-*Route.* Compute Hom and adjoints in the rational relative Dieudonné category. Use the principal source polarization and target adjoint relation to prove Hermitian symmetry; retain the declared u^−2 scalar and the target symmetric factor. Compute the Hermitian invariant and identify the group action by composition.
+*Route.* Compute Hom and adjoints through the relative isocrystals of §0.1: those of X₀ and of 𝕏 are isoclinic of slope 1/2, of K̆-dimensions 2 and 2n, and the full faithfulness of the relative isocrystal functor identifies V^exo with their O_L-linear maps. Since L/K is totally ramified, L⊗_K K̆ is the completion L̆ of the maximal unramified extension of L, so these are the maps of the associated L-isocrystals, isoclinic of L̆-ranks 1 and n and of one common slope; the Dieudonné–Manin classification with coefficient field L gives the L-dimension n. Use the principal source polarization and target adjoint relation to prove Hermitian symmetry; retain the declared u^−2 scalar and the target symmetric factor. Compute the Hermitian invariant and identify the group action by composition.
 
 **API.**
 
@@ -882,7 +882,7 @@ On `V^exo=Hom^0_{O_L}(X_0,𝕏)`, use h(x,y)=u^−2 λ_0^−1 y^∨λ_𝕏 x. It
 - The L-dimension is n, not 2n.
 - The normalized pairing obeys h(y,x) is the L/K-conjugate of h(x,y) despite the alternating λ factors.
 
-*Needs:* §3.2; §3.3; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; §3.5.
+*Needs:* §3.2; §3.3; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; §3.5; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”.
 
 ### 3.7 Exotic connected components
 
@@ -911,7 +911,7 @@ Hypotheses for this target: L/K ramified quadratic, p>2, u a uniformizer of L wi
 
 Within this roadmap: Layer 0 (§0.1, §0.2, §0.3).
 
-Suppliers: FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.10; PELModuli §M0.18; AbelianSchemesAndArithmeticModuli §A4.7; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
+Suppliers: FiniteFlatGroupsAndIntegralPadicHodgeTheory Layer R07.1, §R07.2.10; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”; PELModuli §M0.18; AbelianSchemesAndArithmeticModuli §A4.7; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2; GeometryOfNumbersAndQuadraticArithmetic §§2.7, 2.9.
 
 ## Layer 4: Absolute and relative exotic comparison
 
@@ -1067,7 +1067,7 @@ Hypotheses for this target: L/K ramified quadratic, p>2, ū=−u, n≥2; fixed s
 
 Fix a supersingular strict principal hermitian O_L-module Y of relative height 2 and dimension 1, of signature (0,1). Its chosen height-zero exact-polarization deformation component has a canonical lift G over O_L̆ with conjugate structural Lie action. Distinguish this chosen component from Howard19’s full rank-one space, which permits arbitrary quasi-isogeny height and is a countable disjoint union of Spf O_L̆. Fix an O_L-generator e of the integral fixed lattice `M(Y)^{τ=1}`, where M(Y) is the relative Dieudonné module of Y and τ=i(u)V⁻¹ with the covariant convention of FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20, the operator used in §5.4; it is a free O_L-module of rank one, because V M(Y)=i(u)M(Y) makes τ bijective on M(Y). Its norm (e,e)_Y is an O_K-unit, because λ_Y is principal, and rescaling λ_Y by that unit normalizes (e,e)_Y=1 when an isometry is required. A mere basis of the rational line `C_Y=M(Y)[1/u]^{τ=1}` does not suffice: u·e is such a basis, of norm −u²(e,e)_Y, of K-valuation 1. (HLSY23, §§2.2–2.3, pp. 11–12; Howard19 Proposition 2.1, p. 6.)
 
-*Route.* Use the height-one strict deformation theory of EndoscopicTransferAndUnitaryTraceComparison §10.2 for the rank-one signature and chosen framing component. Compute its integral fixed lattice using relative Dieudonné theory: V M(Y) is the unique O_L̆-submodule of colength one, i(u)M(Y), so τ is a bijective σ-semilinear map of M(Y) and its fixed points form an O_L-lattice spanning M(Y) over O_K̆. Retain the polarization normalization and its effect on the source-line norm.
+*Route.* Use the height-one strict deformation theory of EndoscopicTransferAndUnitaryTraceComparison §10.2 for the rank-one signature and chosen framing component. Compute its integral fixed lattice using relative Dieudonné theory: V M(Y) is the unique O_L̆-submodule of colength one, i(u)M(Y), so τ is a bijective σ-semilinear map of M(Y) and its fixed points form an O_L-lattice spanning M(Y) over O_K̆; rationally, (M(Y)[1/u],τ) is a K-isocrystal of K̆-dimension 2 and slope 1/2−1/2=0, so its fixed space C_Y has K-dimension 2, an L-line. Retain the polarization normalization and its effect on the source-line norm.
 
 **API.**
 
@@ -1083,7 +1083,7 @@ Fix a supersingular strict principal hermitian O_L-module Y of relative height 2
 - The chosen height-zero component does not equal the countable union allowing arbitrary height.
 - The generator must be integral: if e₀ generates `M(Y)^{τ=1}` with (e₀,e₀)_Y=1, then u e₀ is a basis of the rational fixed line with norm uū=−u², of K-valuation 1, and rescaling λ_Y by (−u²)⁻¹ gives a quasi-polarization that is not principal, indeed not an isogeny.
 
-*Needs:* §0.3; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20; §0.2; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2.
+*Needs:* §0.3; §0.1; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.10; FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.2.20; §0.2; EndoscopicTransferAndUnitaryTraceComparison §§7.6, 10.2; VectorBundlesAndIsocrystals Layer 1, “Finite isocrystals over the completed maximal unramified coefficient field” and “Dieudonné–Manin classification of finite isocrystals”.
 
 ### 5.3 Krämer framed formal space
 
@@ -2012,9 +2012,12 @@ unsupported as printed, the note says what is used instead; the targets use the 
   back to an O_K-unit multiple of the object polarization, as Howard19 §2 does. The introduction, §1.2,
   p. 2, gives the Krämer filtration rank one; Definition 2.2(3) has rank n−1, which §5.1 uses. In
   §10.2, p. 78, the Krämer model is called regular and semistable at every place above the ramified
-  and almost self-dual places; the cited RSZ21 Theorem 6.7(ii) and RSZ20 Theorem 4.7(ii) need ν
-  unramified over `F_{v₀}` at ramified places and E_ν unramified over ℚ_p at almost self-dual places, and
-  §§7.8–7.10 keep both hypotheses.
+  and almost self-dual places, with references to RSZ20 Theorems 5.2 and 5.4. Part (ii) of RSZ20
+  Theorem 5.2 gives semistable reduction at an almost self-dual place only when E_ν is unramified over
+  ℚ_p, and the lattice types that theorem admits at a ramified place include a self-dual lattice only
+  for n=2, which part (ii) excludes; the semistable reduction of the Krämer model at a ramified place
+  is RSZ21 Theorem 6.7(ii), for n≥3 and ν unramified over `F_{v₀}`. §§7.8–7.10 keep both hypotheses,
+  and §7.8 treats n=2 through the charts of §5.6.
 - **LTXZZ22.** Yifeng Liu, Yichao Tian, Liang Xiao, Wei Zhang and Xinwen Zhu, *On the
   Beilinson–Bloch–Kato conjecture for Rankin–Selberg motives*, Inventiones Mathematicae 228 (2022),
   107–375; read as [arXiv:1912.11942v3](https://arxiv.org/abs/1912.11942v3), whose numbering agrees
