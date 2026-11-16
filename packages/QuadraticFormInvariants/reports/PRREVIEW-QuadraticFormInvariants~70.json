@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuadraticFormInvariants~70",
+  "head": "60aa3a4f37d0734962ec0ec7bdd8764f3f8bbfd5",
+  "pr": 1411,
+  "folder": "QuadraticFormInvariants",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 60aa3a4; the title and description were checked sentence by sentence against the folder's diff from main (five Checks blocks at README 1005, 1438, 1545, 1700, 2354; hunks at 363, 967, 1310, 1920; 17 ProfiniteCohomology aliases, cup a def, 8 names absent; no statement, heading or Lean declaration changed); previous R01 repaired; no seeded-sample target falls in a changed passage; gate passes (own run: only outside-folder for the pull request's own IntegralLattices files); depcheck 0 problems; Suggested.lean elaborates with no output.",
+  "text": "f1bc7fefbe2616f5"
+ }
+}
