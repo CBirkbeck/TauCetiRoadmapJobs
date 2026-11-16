@@ -655,7 +655,8 @@ random field and whose finite-dimensional marginals are the double limits of the
 symmetric under `Φ ↦ −Φ` when every member of `𝒞` is even, invariant under every linear isometry
 of `ℝ^d` preserving `ℤ^d` (the hyperoctahedral group `W_d`) acting on test functions, and
 `E[T_f²]` is at most `liminf_n liminf_k ⟨(T^{n,k}_f)²⟩` (Aizenman–Duminil-Copin, the paragraph
-after Definition 1.1; Sokal, Lemma 2.2; README §7.3). -/
+after Definition 1.1; compare Sokal, Lemma 2.2, for φ⁴ lattice measures along a subsequence;
+README §7.3). -/
 theorem exists_reachableField {d : ℕ} {𝒞 : Set (Measure ℝ)} (S : ReachabilityScheme d 𝒞)
     (hS : S.Converges) :
     ∃ μ : Measure (C_c(EuclideanSpace ℝ (Fin d), ℝ) → ℝ), IsProbabilityMeasure μ ∧
@@ -685,8 +686,8 @@ single-site measures of variance `1 / (2d + m²/L_n²)` (that is, `b_n = −(d +
 scales `L_n → ∞` and any volumes `R_{n,k} ≥ L_n` with `R_{n,k} → ∞` as `k → ∞`. For every finite
 family `(f_i)` of test functions the laws of the rescaled fields `(T^{n,k}_{f_i})_i`, normalised by
 the block second moment, converge as `k → ∞` and then as `n → ∞` to the centred Gaussian law with
-covariance `C_m(f_i, f_j) / C_m(1_Q, 1_Q)`, `Q = [−1, 1]^d` (Sokal, Section 2.3 and Lemma 2.2;
-Fröhlich, the paragraph after (33); README §7.4). -/
+covariance `C_m(f_i, f_j) / C_m(1_Q, 1_Q)`, `Q = [−1, 1]^d`; the statement in this form is the
+roadmap's (Fröhlich, the paragraph after (33), for the free lattice field; README §7.4). -/
 theorem gff_reachable (d : ℕ) (m : ℝ) (hm : 0 < m ∨ (m = 0 ∧ 3 ≤ d)) (L : ℕ → ℕ)
     (hL1 : ∀ n, 1 ≤ L n) (hL : Tendsto L atTop atTop) (R : ℕ → ℕ → ℕ)
     (hRL : ∀ n k, L n ≤ R n k) (hR : ∀ n, Tendsto (R n) atTop atTop) {ι : Type*} [Fintype ι]
