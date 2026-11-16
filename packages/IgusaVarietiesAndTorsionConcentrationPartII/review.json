@@ -1,10 +1,18 @@
 {
-  "review": {
-    "status": "needs_changes",
-    "reviewer": "independent-review-REV-PKG-IgusaVarietiesAndTorsionConcentrationPartII~2",
-    "date": "2026-11-10",
-    "findings": 7,
-    "blocking": 7,
-    "notes": "All nine previous findings repaired. Independently read the 15 seeded source targets, repaired passages, remaining uncomputed statements, supplier heads and pinned declarations; report includes computed adversarial values, seven new findings, ownership/overlap checks and both declared gap contracts. Dependency check: 236 roadmaps, 2153 edges, 0 problems. Suggested.lean elaborated successfully with only two sorry warnings; all four elaborated signatures retain required binders; both sorried theorems resist all one-tactic probes. No padding or absent statable headline found. Two additional legal author sources were added without rewriting original manifest entries."
-  }
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-IgusaVarietiesAndTorsionConcentrationPartII~9",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-IgusaVarietiesAndTorsionConcentrationPartII~9",
+   "fix": "FIX-PKG-IgusaVarietiesAndTorsionConcentrationPartII~10",
+   "from": "5160e7006a5578c1d0591fb3b04d2d2c1def255b",
+   "head": "deb125ce96885659d93a60d82092cc3eae1cf8a7",
+   "findings": 2,
+   "lines": 19
+  },
+  "notes": "every finding of `REV-PKG-IgusaVarietiesAndTorsionConcentrationPartII~9` (2) was P3 and `FIX-PKG-IgusaVarietiesAndTorsionConcentrationPartII~10` repaired them at `deb125c`, changing 19 lines of the package; no further review round was filed"
+ }
 }
