@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GroupSchemesOverABase~26",
+  "head": "744fcb46164fd65ebbfd44ecc0d43ea0d4504de0",
+  "pr": 1522,
+  "folder": "GroupSchemesOverABase",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 15 changed lines since c44b9b3 (README Provenance paragraph, lines 1503-1511). Previous R01 repaired: the immersion case (Stacks Tag 047T, Groupoids/GroupSchemeProperties/Immersion.lean) is named and the absence sentence narrowed; the file was opened at c496df0 (isClosedImmersion_of_isImmersion: Field k, IsImmersion, no finiteness or quasi-compactness, no sorry) and Tag 047T read. Description names 047T and agrees with the head; nothing changed outside the folder; Suggested.lean unchanged. Of the seeded sample only 4.5 is cited by the change; its statement and signature were recomputed (Z_k -> G_a, Frobenius of G_a, G_m -> G_m x| Z/2). Worker's gate passes (all counters 0, build=0); my rerun without the candidate order shows only depcheck NOT IN ORDER (placement, no finding); depcheck with the candidate order: 0 problems, no UPWARD or CYCLE. lake env lean: 25 sorry warnings, nothing else. Not verifiable: absence claims about the external repository checked by file name only. Four bullets for the human reviewers carried (licence, coordination, two ownership).",
+  "text": "b0a1a3f8becd5dc3"
+ }
+}
