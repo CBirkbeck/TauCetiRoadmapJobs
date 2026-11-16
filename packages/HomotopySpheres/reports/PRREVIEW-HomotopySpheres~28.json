@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HomotopySpheres~28",
+  "head": "64bdd7e2617444b54417df9a0a486cebe9a161ec",
+  "pr": 284,
+  "folder": "HomotopySpheres",
+  "date": "2026-11-16",
+  "findings": 7,
+  "blocking": 1,
+  "notes": "Full review. Previous review's 16 findings checked one by one (12 repaired, R01 withdrawn and replaced by a cyclic-supply finding, R06 and R08 partly, R05 no longer held). Seeded sample of 15 targets read against the text: 56 locators verified in milnor_hcobordism, kervairemilnor1963, hatcher_at, hatcher_vbkt, atiyah1971, ranicki2002 and Snaith (arXiv 1001.4751); Toda, Gray, Bott, Browder, Wall, Fomenko-Fuchs and Levine not readable legally. Worker gate at 64bdd7e all zero; depcheck rerun 0 problems; Suggested.lean elaborates with 20 sorry warnings only; one-tactic probe closes none of the 20 theorems; 37 pinned declarations opened. Findings: P2 cyclic supply between 3A.4 and GeneralizedCohomology G2 item 5; P3 stale README text against the Lean corollary, missing supplier contracts, the word uncertified, a pinned Tau Ceti finiteness theorem planned again, locators, and the description omitting the new supplier IntegralLattices.",
+  "text": "32e6a00d9f4e47e9"
+ }
+}
