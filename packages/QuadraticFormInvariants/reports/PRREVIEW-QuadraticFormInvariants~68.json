@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuadraticFormInvariants~68",
+  "head": "dfca92fc6ffa9f2008fa0d8b1e3ccac32e1e4515",
+  "pr": 1411,
+  "folder": "QuadraticFormInvariants",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full review. Both findings of the previous review are repaired. Three P3 findings: the README's description of ProfiniteCohomology's declarations no longer matches main (R01), the Dependencies of Layers 3 and 5 omit Layer 1 (R02), and one sentence of the pull request description misnames the added Checks (R03). Checked: the 13 seeded targets (19 passages in ekm2008, kahn1984, serre1984cmh, kozlowski1984; five targets cite only uncertified texts and were computed); every qualified library name and all 184 file paths in the README at the pins; 21 elaborated types including the five headline declarations; the worker's gate (all checks pass; my run reports only the two IntegralLattices files, the pull request's own); depcheck 0 problems; Suggested.lean elaborates with no output; one-tactic probe fails on the one public theorem; adversarial table of 25 rows with computed values.",
+  "text": "d2b71f22e6c6d0c5",
+  "carried": {
+   "from": "dfca92fc6ffa9f2008fa0d8b1e3ccac32e1e4515",
+   "head": "60aa3a4f37d0734962ec0ec7bdd8764f3f8bbfd5",
+   "findings": 3,
+   "lines": 39,
+   "folders": [
+    "QuadraticFormInvariants"
+   ],
+   "onto": "f2c8a5ada023b90b3e8d8967bee71d02ecfd7b10"
+  }
+ }
+}
