@@ -1,0 +1,30 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularIwasawaMainConjectures~6",
+  "head": "4d87fc8b4890baa983025221cbdd1c55e591aee5",
+  "pr": 1499,
+  "folder": "ModularIwasawaMainConjectures",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 8f21cae; this round checked the pull request's title and description against the head. Previous R01 (description: suppliers' pull requests and dependent sections) repaired: the description's 26 dependent sections and five supplier gaps match the README's Needs lines exactly. Gate rerun: every check 0, OK, outside-folder diff empty; depcheck 238 roadmaps, 2248 edges, 0 problems, no UPWARD/CYCLE/moved; lake env lean on Suggested.lean: three sorry warnings only; targeted build succeeds with the module-system advisory as the description states. 28 supplier sections of KatoEulerSystems and AutomorphicCongruences resolved at their open heads. Adversarial table: 3 rows with computed values (section sets, tame-component twist at (p,k)=(7,4),(5,2),(3,3),(2,2), gap attribution). Seeded sample: no target in a changed passage. Deferred D01 and D02 stand (board plan, outside the folder); accepted conditional on the declared gaps.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "R01: The `gaps` list of `packages/ModularIwasawaMainConjectures/design/plan.json` must gain entries for gap:tate-twisted-components and gap:central-critical-equality.",
+    "where": "board plan of this package, add two AutomorphicCongruences gap entries",
+    "raised": "PRREVIEW-ModularIwasawaMainConjectures~5"
+   },
+   {
+    "id": "D02",
+    "severity": "",
+    "title": "R02: The plan's `manin-period-comparison` entry must be reworded to what README lines 147–151 request: - a rational signed comparison with an explicit fractional ratio r_E^±; - a p-unit comparison onl",
+    "where": "board plan entry manin-period-comparison, reworded to the README's fractional comparison",
+    "raised": "PRREVIEW-ModularIwasawaMainConjectures~5"
+   }
+  ],
+  "text": "31367eb569e6baa0"
+ }
+}
