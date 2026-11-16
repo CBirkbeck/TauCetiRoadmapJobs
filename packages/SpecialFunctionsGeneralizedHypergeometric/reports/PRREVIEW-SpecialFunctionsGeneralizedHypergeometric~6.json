@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsGeneralizedHypergeometric~6",
+  "head": "89aa8774fbf5dd2e593983c99eed40f6997f5ca5",
+  "pr": 2136,
+  "folder": "SpecialFunctionsGeneralizedHypergeometric",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "Full review of the reorganized head. Previous review had no finding. R01 (P2): the Thomae symmetry group (6.1) and Dougall's bilateral sum (6.6) are headlines statable at the pins and absent from Suggested.lean; tested statements elaborate on a scratch copy (63 sorry warnings). R02 (P3): the limit named for Sheppard's transformation (README line 776) gives a different identity; the right limit is d -> infinity. Adversarial pass computed in double precision for all 60 theorems and the prose targets of the seeded sample (1.2, 1.4, 1.6, 2.1, 2.2, 3.2, 3.3, 3.5, 4.5, 5.2, 6.1, 6.4, 6.5, 7.2, 7.3): series, continuation by the differential equation, Richardson-accelerated sums at 1, Mellin-Barnes and loop quadrature; all statements hold at the instances tried, README Check values reproduced. Thomae group: order 120 with the class counts of S5, invariant constant on all 120 images. DLMF Chapter 16 read through the sources service: 50 equations and 22 condition sentences agree. The six books (Andrews-Askey-Roy, Beals-Wong, Duverney, Koepf, Paris-Kaminski, Srinivasa Rao-Lakshminarayanan) could not be read legally: their locators are not verified. Supplier citations resolved on main (SpecialFunctionsHypergeometric 1.2-1.4, 4.2, 4.3, 5.1, 6.3, 7.3; ZerosOfLFunctions 1.2-1.3; AsymptoticExpansions 8.2, 8.6, 8.7). Worker gate passes; depcheck: 253 roadmaps, 2397 edges, 0 problems. Suggested.lean elaborates with 60 sorry warnings only; one-tactic probe closes 0 of 60. Overlap check against the eight closest roadmaps: nothing shared. Title and description agree with the head.",
+  "text": "8cbf8afd54a24f95"
+ }
+}
