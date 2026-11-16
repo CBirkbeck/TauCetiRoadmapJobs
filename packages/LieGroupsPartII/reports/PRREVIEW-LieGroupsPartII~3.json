@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LieGroupsPartII~3",
+  "head": "e515f2a3ffc4f83382d0637b67a248fc8e296826",
+  "pr": 2427,
+  "folder": "LieGroupsPartII",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review of an unchanged head. Adversarial table: 23 rows with computed values over the 15 sampled targets and all 13 Lean theorems. Sources read: borel-tits1965 (4.15, 5.18 (ii), 14.4), brown-fisher-hurtado2022 §3.1, brown-rodriguezhertz-wang2022 §1.2 (1), bradlow-collier-garciaprada-gothen-oliveira2024 Introduction; knapp2002, warner1972, wallach1988, bourbaki-lie4-6 are uncertified and listed as not verifiable. 53 pinned declarations opened, 32 cross-roadmap citations resolved. Gate passes; depcheck 0 problems; Suggested.lean elaborates with 13 sorry warnings only; one-tactic probe closes none; 26 #check types compared.",
+  "text": "5ffe95f41fa553b1"
+ }
+}
