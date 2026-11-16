@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StableMatching~9",
+  "head": "d461ad2fbce04049213dad93cd18e719a9457f87",
+  "pr": 2346,
+  "folder": "StableMatching",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 3 changed lines since c017fba. Previous R01 (LeanPool's NOTICE does not name the authors) is repaired: README.md:321-323 now points to the per-file headers and LeanPool's registry. At lean-pool f8b9b72 all 343 entries of LeanPool/projects/ carry authors:, classical-graph-colouring.yaml:18-19 names the author, and the 4 Galvin/ headers name the same author. Adversarial rows: the registry claim; 1.2 exists_isStable and 1.1 deferred acceptance on a mutually acceptable 1x1 market (unique stable matching, which DA returns). The seeded sample falls outside the changed lines, so its earlier rows stand. Gate rerun: all checks 0, OK; the worker's gate has build=0. depcheck: 261 roadmaps, 2511 edges, 0 problems. lake env lean on Suggested.lean: 10 sorry warnings, nothing else. Nothing changed outside the folder. Title and description checked against this head: nothing contradicted. Overlap lists are empty. Source independence: changed passages only, 1 passage against lean-pool NOTICE, longest shared run 3 words.",
+  "text": "3d47913158e8864e"
+ }
+}
