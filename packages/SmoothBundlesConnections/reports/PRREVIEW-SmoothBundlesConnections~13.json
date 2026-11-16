@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SmoothBundlesConnections~13",
+  "head": "06c60b83a54a31d97923f16e4d8bcea815981e9a",
+  "pr": 2127,
+  "folder": "SmoothBundlesConnections",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "Full review; folder text unchanged since ca84a4a. R01 (P2): soft/fine-sheaf acyclicity is owned both by B6.1 and by ComplexKahlerGeometry 2.5 (main lines 744, 748; unchanged at the head of #1807), and the README says that roadmap consumes it. R02 (P3): B6.1's raw refinement maps, homotopies and coefficient change restate pinned Tau Ceti (CategoryTheory/Sites/SheafCohomology/Cech/Basic.lean cechComplexMap, cechComplexMapHomotopy, cechComplexHomologyMap_eq; Coefficients.lean cechComplexFunctorMapIso). Seeded sample (5 B6.1 targets) read at 18 locators in demailly-agbook, Stacks, Nicolaescu, Meinrenken; one sign misprint found in Stacks Tag 09UY. Gate as supplied: all counters 0, build OK; depcheck 0 problems; Suggested.lean elaborates with 7 sorry warnings only; 14 signatures compared; 35 one-tactic padding probes all fail; 208 README identifiers looked up at the pins; adversarial table of 18 rows with computed values. Kolar-Michor-Slovak body text not searchable (contents page read), Kobayashi-Nomizu and Lee not read.",
+  "text": "58370b3f55d025b6",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Soft/fine-sheaf acyclicity has two owners: B6.1 here and ComplexKahlerGeometry 2.5",
+    "where": "ComplexKahlerGeometry 2.5, on main and in its open revision",
+    "raised": "PRREVIEW-SmoothBundlesConnections~13"
+   }
+  ]
+ }
+}
