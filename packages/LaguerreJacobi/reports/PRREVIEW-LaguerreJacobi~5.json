@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LaguerreJacobi~5",
+  "head": "7789316220ddb35971e363198061e0c6baa998e9",
+  "pr": 117,
+  "folder": "LaguerreJacobi",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 104 changed lines since 3e89142. All six previous findings (R01-R06) are repaired. One new P3: the Layer 5 Needs line consumes Mathlib MeasureTheory.Measure.restrict_pi_pi, which the supplier contracts do not list. Checked: the three changed Lean statements (boundary term at infinity with a polynomial factor, the two unweighted tensor bases) with computed values, exact Gram matrices for 4 Laguerre and 3 Jacobi parameter choices, the measure identification proved at the pin, the hypotheses of TauCeti.piHilbertBasis, 3 DLMF locators read again (5.12.1, 14.17.6, 18.9.1 with Table 18.9.1), the reference entry against the 19 locators of the text, the pull request text. Gate: every rule 0, build passes; depcheck 0 problems; lake env lean gives 44 sorry warnings only; one-tactic probe closes none of the three changed theorems.",
+  "text": "0853a5003549a811"
+ }
+}
