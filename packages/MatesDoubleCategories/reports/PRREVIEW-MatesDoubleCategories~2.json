@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MatesDoubleCategories~2",
+  "head": "5823e4f95cd2de4472cb664c62b72bbc500b1b97",
+  "pr": 2299,
+  "folder": "MatesDoubleCategories",
+  "date": "2026-11-16",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "Full re-review. Previous findings: R01, R02, R04, R06 repaired; R03 and R05 partly (now R04 and R02). Five P3 findings: Mathlib SimplexCategory.II not cited for the M1.4 duality; a proved example testing no kept definition; docstring omits M1.4's theorems; README form leftovers; pull-request description omits M1.4. Seeded sample (M1.1-M1.3 API, M1.4 simplex conventions and hom-category theorem, M3.1, M3.2, M4 API and checks) and all headlines computed in the adversarial table; no mathematical defect found. 20 source locators checked against FairbanksShulman, ChengGurskiRiehl, Schanuel-Street (Numdam) and Riehl-Verity (arXiv v4); KellyStreet uncertified and Riehl-Verity published pagination not verifiable. Gate passes at the head (all checks 0, targeted build); Suggested.lean elaborates with sorry as the only warning; one-tactic probes fail on the one sorried theorem; depcheck 0 problems; no overlap with open or main roadmaps.",
+  "text": "a9fde2b769e0eb7a"
+ }
+}
