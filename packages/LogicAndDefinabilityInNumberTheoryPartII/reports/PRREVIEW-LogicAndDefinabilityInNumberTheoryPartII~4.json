@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LogicAndDefinabilityInNumberTheoryPartII~4",
+  "head": "05885da04652966f2335db6c7c2fc03aeba5b42e",
+  "pr": 2438,
+  "folder": "LogicAndDefinabilityInNumberTheoryPartII",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full review at the head the previous review accepted (no earlier finding to recheck). Three P3 findings: Poonen Theorem 2.2 cited for the valuation-ring family it does not state (Suggested.lean:66, README 0.7); the README summary and the pull request summary say the base roadmap stops at its Layer 0 interpretations. Seeded sample of 15 targets (0.4, 0.5, 0.9, 1.2, 1.5, 2.1, 2.4, 2.5, 4.5, 4.6, 5.2, 6.1, 6.8, 7.4, 7.6) and the 9 headline theorems recomputed, values in the table; about 80 locators read in dittmann_pop, poonen_uniform, akns, kerz_saito, pop_eei2, pop_eei, rumely, jannsen_hasse and two Stacks tags; kato_hasse, merkurjev_suslin, moret_bailly, lenstra_cm uncertified and not verifiable. Gate passes every check including the build; elaboration gives only the 9 sorry warnings; one-tactic probe fails on all 9 theorems; depcheck 258 roadmaps, 2454 edges, 0 problems; 24 library declarations opened at the pins; five declared gaps agree between plan.json and the README; no overlap with open pull requests.",
+  "text": "7ce010d02e75b992",
+  "carried": {
+   "from": "05885da04652966f2335db6c7c2fc03aeba5b42e",
+   "head": "cbf44f45be56817b7969d50cdc902287d6978b0a",
+   "findings": 3,
+   "lines": 16,
+   "folders": [
+    "LogicAndDefinabilityInNumberTheoryPartII"
+   ]
+  }
+ }
+}
