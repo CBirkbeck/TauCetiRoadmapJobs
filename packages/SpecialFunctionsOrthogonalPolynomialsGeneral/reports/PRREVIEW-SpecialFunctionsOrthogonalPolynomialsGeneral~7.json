@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsOrthogonalPolynomialsGeneral~7",
+  "head": "94e88bcd4f3deffe1a1ba2b5398b247315773a60",
+  "pr": 2192,
+  "folder": "SpecialFunctionsOrthogonalPolynomialsGeneral",
+  "date": "2026-11-16",
+  "findings": 5,
+  "blocking": 1,
+  "notes": "Full review. Gate fails on empty-sections (Suggested.lean line 785); all other scanners, depcheck (0 problems) and the targeted build pass; lake env lean gives 71 sorry warnings only. Seeded sample of 15 targets: DLMF 18.1-18.2 (Release 1.2.8), Simon and Magnus locators read and confirmed; Chihara, Gautschi, Ismail, Andrews-Askey-Roy, Schmuedgen and Koekoek-Lesky-Swarttouw not legally readable (Not verifiable). All numerical Checks recomputed. One P2 (section 1.3 positive-diagonal symmetrization false for negative off-diagonal entries), four P3 (gate, three unused definitions, README/Lean conclusion mismatch at four names, primary source for 5.7). One-tactic probe: 0 of 71 close. DLMF 18.2.11_1 sign error recorded under Source issues.",
+  "text": "13d1bf3d1ce2f3a8"
+ }
+}
