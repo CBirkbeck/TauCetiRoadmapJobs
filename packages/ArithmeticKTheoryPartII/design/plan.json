@@ -2355,19 +2355,13 @@
   "gaps": [
     {
       "slug": "duality-transfer",
-      "needs": "Compare integral dualization with finite-projective transfer through the trace-dual inverse different and preserve the Bott descent edges and coefficient maps at every odd prime power.",
+      "needs": "For a finite extension A⊂B of Dedekind domains with separable fraction-field extension and inverse different 𝔡_(B/A)⁻¹={x : Tr_(B/A)(xB)⊂A}, show that the transfer K(B)→K(A) induced by restriction of scalars intertwines, as a homotopy of maps of spectra, the involution of K(B) induced by the duality P↦Hom_B(P,𝔡_(B/A)⁻¹) with the dualization involution ψ⁻¹ of K(A), through the natural isomorphism Hom_B(P,𝔡_(B/A)⁻¹)≅Hom_A(P,A) given by composition with the trace; so that, when 𝔡_(B/A) is principal, transfer commutes with ψ⁻¹, also after smashing with any coefficient spectrum.",
       "supplier": "SchemeKTheoryOperations",
       "section": "§6.11"
     },
     {
-      "slug": "topological-symplectic-hodge",
-      "needs": "Provide the ku/KU realization of the unitary model, tangent-normalized primitive Chern-character pairing with bott=−β_Top and bott^m=(−1)^mβ_Top^m, integral lifts for m<p and coefficient-Bockstein compatibility.",
-      "supplier": "GeneralizedCohomology",
-      "section": "G5.4–G5.6"
-    },
-    {
       "slug": "cyclotomic-p-class-fields",
-      "needs": "For the cyclotomic fields ℚ(ζ_(p^n)), n≥1, inside one algebraic closure of ℚ, embed their Tau Ceti `hilbertClassField`s compatibly along the tower ℚ(ζ_(p^n))⊂ℚ(ζ_(p^(n+1))), so that their maximal p-subextensions nest; and, for a number field F and a finite set S of its primes, identify the maximal abelian extension of F unramified at every place in which every prime of S splits completely with the subfield of `hilbertClassField` F fixed by the images under `hilbertClassArtinEquiv` of the classes of the primes of S.",
+      "needs": "For the cyclotomic fields ℚ(ζ_(p^n)), n≥1, inside one algebraic closure of ℚ, embed their Tau Ceti Hilbert class fields `TauCeti.ClassFieldTheory.hilbertClassField` compatibly along the tower ℚ(ζ_(p^n))⊂ℚ(ζ_(p^(n+1))), so that their maximal p-subextensions nest; and, for a number field F and a finite set S of its primes, identify the maximal abelian extension of F unramified at every place in which every prime of S splits completely with the subfield of `TauCeti.ClassFieldTheory.hilbertClassField` F fixed by the images under `TauCeti.ClassFieldTheory.hilbertClassArtinEquiv` of the classes of the primes of S.",
       "supplier": "ClassFieldTheory",
       "section": "Layers 11–13"
     },
@@ -2379,7 +2373,7 @@
     },
     {
       "slug": "cm-arbitrary-automorphism",
-      "needs": "Provide the arbitrary-automorphism polarized reciprocity dictionary on isometries with conjugation-paired embedding lifts and possibly negative translating signatures, natural for positive-line Serre tensor.",
+      "needs": "For a CM field E Galois over ℚ, with complex conjugation c, inverse different 𝔡_E⁻¹ and Hilbert class field H, a CM type Φ of E and σ∈Aut(ℂ), consider the principally polarized complex abelian varieties A with an O_E-action whose first homology L=H₁(A;ℤ) is an invertible O_E-module and whose Riemann form is −Tr_(E/ℚ)∘b for a perfect skew-Hermitian pairing b:L⊗_(O_E)L̄→𝔡_E⁻¹ of type Φ, where b has type Ψ when, for x≠0, Im τ(b(x,x))>0 exactly for τ∈Ψ. Provide a Hermitian O_E-line (X,h), h:X⊗_(O_E)X̄≅O_E, depending only on σ and Φ and possibly negative at some real places of the maximal real subfield, such that for every such A the conjugate σA, with its transported polarization and O_E-action, has first homology isometric to (L⊗_(O_E)X, b⊗h), a pairing of type σΦ; and show that arithmetic Artin reciprocity Pic(O_E)≅Gal(H/E) sends [X] to the product over τ∈Φ of w_(στ)⁻¹∘σ∘w_τ, for every choice of embeddings w_τ:H→ℂ extending the embeddings τ:E→ℂ with w_(cτ)=c∘w_τ.",
       "supplier": "ComplexMultiplicationAndExplicitReciprocity",
       "section": "§§1.2, 2.1–2.2"
     },
@@ -2391,13 +2385,13 @@
     },
     {
       "slug": "low-postnikov-finite-type",
-      "needs": "Provide the p-local H-space Postnikov splitting for positive integral finite-type spectra through degree 2p−3 and the free/cyclic Eilenberg–Mac Lane homology and Bockstein calculations in that range.",
+      "needs": "For an odd prime p and a spectrum E with π_i(E)=0 for i≤0 and every π_i(E) finitely generated, show that after p-localization τ_(≤2p−3)E splits as the product of the Σ^iHπ_i(E), 1≤i≤2p−3, so that τ_(≤2p−3)Ω∞E is p-locally equivalent as an H-space to the product of the K(π_i(E),i); and, for n≥1 and A=ℤ or ℤ/p^k with k≥1, show that the map into the normalized chains C_*(K(A,n);ℤ_p) with the shuffle product, from the free graded-commutative differential graded ℤ_p-algebra on a cycle x of degree n representing the fundamental class (for A=ℤ/p^k together with y of degree n+1 and ∂y=p^k·x), is an isomorphism on homology in degrees ≤2p−2, and hence also after reduction modulo every p^r, compatibly with the coefficient connecting maps.",
       "supplier": "StableHomotopyKTheory",
       "section": "§§3.20, 3.34–3.37"
     },
     {
       "slug": "compact-relative-cocycles",
-      "needs": "Provide completed relative bar homology for finite-free coefficients and finite-type compact targets, with coefficient coinvariants and exact finite inverse limits.",
+      "needs": "For a profinite group Γ, a closed subgroup H and a finite free ℤ_p-module M with continuous Γ-action, show that the first homology H₁^cts(Γ,H;M) of the completed relative chains of the relative-homology contract above is the inverse limit, over the open normal subgroups U of Γ and n≥1, of the finite-group relative homology H₁(Γ/U,HU/U;(M/p^nM)_U) under the maps induced by the quotient maps of pairs and of coefficients; that inverse limits over this system are exact on short exact sequences of systems of finite groups; and that, for a finitely generated ℤ_p-module T with its p-adic topology, φ↦((g,m)↦φ([g]⊗m)) is a bijection from the continuous ℤ_p-linear maps φ:H₁^cts(Γ,H;M)→T onto the continuous maps α:Γ×M→T that are ℤ_p-linear in M, vanish on H×M and satisfy α(gg′,m)=α(g,g′m)+α(g′,m).",
       "supplier": "ArithmeticGaloisDuality",
       "section": "R02.1 and R02.2"
     },
