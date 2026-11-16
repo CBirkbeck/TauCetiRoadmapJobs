@@ -7,7 +7,7 @@ authors = "Johannes Anschütz, Arthur-César Le Bras, Juan Esteban Rodríguez Ca
 title = "Rational analytic prismatization"
 year = 2026
 locator_scheme = "theorem"
-locator = "§§2–6 and Appendix A. Principal statements: Definitions 2.6.4, 3.4.2, 4.1.1, 5.2.23, 5.4.2, 5.6.8, 6.4.4, 6.5.1–6.5.2; Propositions 3.4.12, 3.5.3, 3.6.3, 3.7.4, 4.3.1–4.3.2, 4.4.3–4.4.4, 4.5.2, 4.8.1, 5.3.2, 5.5.6, 5.7.3, 5.8.9–5.8.10, 6.4.10, 6.4.12, 6.5.3, 6.5.10, 6.6.7, 6.7.1–6.7.7, A.3.5; Corollaries 4.6.10–4.6.12, 5.7.18, 6.5.11; Theorems 4.7.1–4.7.2, 4.10.6, 4.10.13, 5.1.1, 5.2.14, 5.6.10, 5.7.4, 5.7.19, 6.1.1, 6.1.3, 6.2.1–6.2.2, 6.3.1–6.3.2, 6.4.1, 6.5.4, 6.5.8; Remarks 2.1.1, 5.1.4, 6.5.5–6.5.6; equation (1.2.2)"
+locator = "§§2–6 and Appendix A. Principal statements: Definitions 2.6.4, 3.4.2, 4.1.1, 5.2.23, 5.4.2, 5.6.8, 6.4.4, 6.5.1–6.5.2; Propositions 3.4.12, 3.5.3, 3.6.3, 3.7.4, 4.3.1–4.3.2, 4.4.3–4.4.4, 4.5.2, 4.8.1, 5.3.2, 5.5.6, 5.7.3, 5.8.9–5.8.10, 6.4.10, 6.4.12, 6.5.3, 6.5.10, 6.6.7, 6.7.1–6.7.7, A.3.5; Corollaries 4.6.10–4.6.12, 5.7.18, 6.5.11; Theorems 4.7.1–4.7.2, 4.10.6, 4.10.13, 5.1.1, 5.2.14, 5.6.10, 5.7.4, 5.7.19, 6.1.1, 6.1.3, 6.2.1–6.2.2, 6.3.1–6.3.2, 6.4.1, 6.5.4, 6.5.8; Remarks 2.1.1, 3.1.4, 5.1.4, 6.5.5–6.5.6, A.3.2; equation (1.2.2)"
 url = "https://people.mpim-bonn.mpg.de/scholze/analytic_prismatization.pdf"
 fetched_from = "https://people.mpim-bonn.mpg.de/scholze/analytic_prismatization.pdf"
 fetched_at = "2026-10-25T21:10:15Z"
@@ -15,7 +15,7 @@ sha256 = "ddd5d34768ef1edd5c9e67271ed5c0191c8c937d1e49c68bcc1f1b88527c0367"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-version_note = "Preprint read from the author's page (193 pages, pdftotext). Not refereed; numbering is that of the file with the recorded sha256, and the design cites each statement by number, page and line of this file. The introduction and the body differ in wording for Theorem 1.19 versus Theorem 5.1.1(1) (prim with trivial codualizing complex versus 0-proper); the body statement is the locator. Collations of its outgoing citations: RC26a 3.2.27 is cited as a Theorem but is a Proposition in RC26a v3; Lazard's Chapitre III, (1.3.9) is cited as Corollary I.3.9; Remark 5.4.4 cites ABLB v2 Definition 3.2.8 as Lemma 3.2.8."
+version_note = "Preprint read from the author's page (193 pages, pdftotext). Not refereed; numbering is that of the file with the recorded sha256, and the design cites each statement by number, page and line of this file. The introduction and the body differ in wording for Theorem 1.19 versus Theorem 5.1.1(1) (prim with trivial codualizing complex versus 0-proper); the body statement is the locator. Collations of its outgoing citations: RC26a 3.2.27 is cited as a Theorem but is a Proposition in RC26a v3; Lazard's Chapitre III, (1.3.9) is cited as Corollary I.3.9; Remark 5.4.4 cites ABLB v2 Definition 3.2.8 as Lemma 3.2.8. Remark 6.1.5 writes the twistor stack of an unramified K as the untwisted product GSpec(K) × Div¹, which holds only for K = ℚ_p; the design states the Frobenius-twisted product (11.1)."
 cited_for = ["Scope", "Final targets T1–T14", "Risks", "Design: Layers 1–12"]
 
 [[source]]
@@ -25,7 +25,7 @@ title = "Analytic de Rham stacks of Fargues-Fontaine curves"
 year = 2025
 arxiv = "2510.15196v2"
 locator_scheme = "theorem"
-locator = "Definitions 2.1.1, 2.2.3, 2.2.8, 2.2.19, 2.3.1, 3.1.1, 3.1.5, 3.1.15, 3.2.8, 3.3.1, 4.1.8, 4.1.11, 4.2.1, 4.2.6, 4.2.14, 4.3.1, 4.3.6, 4.7.2, 6.1.1, 6.1.2, 6.2.4; Lemmas 2.1.2, 3.1.8, 3.1.12, 3.1.17, 4.2.11, 6.2.9; Propositions 3.1.9, 3.2.10, 3.2.11, 4.4.7, 4.6.4, 5.1.4, 5.7.1; Corollary 4.4.10; Remark 6.1.3; Theorems 4.8.7, 5.1.7, 5.6.6, 6.3.1, 7.1.1; Appendix A"
+locator = "Definitions 2.1.1, 2.2.3, 2.2.8, 2.2.19, 2.3.1, 3.1.1, 3.1.5, 3.1.15, 3.2.8, 3.3.1, 4.1.8, 4.1.11, 4.2.1, 4.2.6, 4.2.14, 4.3.1, 4.3.6, 4.7.2, 6.1.1, 6.1.2, 6.2.4; Lemmas 2.1.2, 3.1.8, 3.1.12, 3.1.14, 3.1.17, 4.2.11, 4.5.1, 6.2.9; Propositions 3.1.9, 3.2.10, 3.2.11, 4.4.7, 4.6.4, 5.1.4, 5.7.1; Corollary 4.4.10; Remarks 4.4.11 and 6.1.3; Theorems 4.8.7, 5.1.7, 5.6.6, 6.3.1, 7.1.1; Appendix A"
 url = "https://arxiv.org/abs/2510.15196v2"
 fetched_from = "https://arxiv.org/pdf/2510.15196v2"
 fetched_at = "2026-10-25T21:21:16Z"
@@ -34,7 +34,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2 (3 March 2026); locators are v2. ALRS cites an earlier numbering, collated in the design: the ALRS citations Definition 3.3.1, Definition 2.3.1, Lemma 3.6.2, Proposition 2.4.9 and Corollary 3.4.10 are v2 Definition 3.1.1, Definition 3.1.5, Lemma 3.1.17, Proposition 3.1.9 and Corollary 4.4.10, and the ALRS citation Lemma 3.2.8 is v2 Definition 3.2.8 (with Proposition 3.2.11)."
-cited_for = ["Scope", "Final targets T1–T2", "Risks", "Design: Layers 1–8, 10 and 12"]
+cited_for = ["Scope", "Final targets T1–T2", "Risks", "Design: Layers 1–8, 10–12"]
 
 [[source]]
 id = "RCSolid"
@@ -132,7 +132,7 @@ title = "The analytic de Rham stack in rigid geometry"
 year = 2024
 arxiv = "2401.07738v1"
 locator_scheme = "theorem"
-locator = "§5.2–§5.4; Lemma 2.6.13; Proposition 3.7.5; Theorems 5.2.10, 5.3.7 and 5.4.1"
+locator = "§5.2–§5.4; Lemma 2.6.13; Propositions 2.6.9(3) and 3.7.5; Theorems 5.2.10, 5.3.7 and 5.4.1"
 url = "https://arxiv.org/abs/2401.07738v1"
 fetched_from = "https://arxiv.org/pdf/2401.07738v1"
 fetched_at = "2026-10-25T21:23:53Z"
@@ -141,7 +141,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1. Earlier construction of the analytic de Rham stack, superseded in ABLB §4; used for comparison and for the cotangent-complex conventions of ALRS Appendix A."
-cited_for = ["Final targets T1", "Design: 1.3, 3.1, 4.2"]
+cited_for = ["Final targets T1", "Design: 1.2, 1.3, 3.1, 4.2"]
 
 [[source]]
 id = "FS"
