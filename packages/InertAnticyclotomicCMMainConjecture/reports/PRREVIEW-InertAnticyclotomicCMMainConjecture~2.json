@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-InertAnticyclotomicCMMainConjecture~2",
+  "head": "4e14b57e889434e5a8eb01556a7a66b9ddc4fb72",
+  "pr": 2435,
+  "folder": "InertAnticyclotomicCMMainConjecture",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "incremental re-review of 24 changed lines since 920db3f. Checked: the four previous findings (R01 Billot identity now owned with hypotheses; R03 §5.5 locator and R04 PR text repaired; R02 deferred as D01, which stands); the rewritten §4.3 against BIL86 pp.350-366, with the formulas read from page images of the cached scan (Theorem 3.22 carries no involution, so the route double-counts it: R01, P2; the reduction of Proposition 3.17 modulo gamma+ - 1 is missing: R02; §3.2 is cited for W' and K-tilde descents: R03); the BKO21 locators of §5.5, §6.1 and References (pp.948, 962-963); SelmerIwasawaCohomology §§3.10-3.12, 3.20 at its open head; the PR text against the head (no finding); the gate rerun (all 0, OK), the dependency check (0 problems), the empty outside-folder diff and lake env lean on Suggested.lean (exit 0, no messages).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Two gaps give a second owner to objects ModularIwasawaMainConjecturesPartII plans",
+    "where": "merge order: place this roadmap after ModularIwasawaMainConjecturesPartII",
+    "raised": "PRREVIEW-InertAnticyclotomicCMMainConjecture~1"
+   }
+  ],
+  "text": "e2c7724559c6c40a"
+ }
+}
