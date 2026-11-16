@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GrothendieckTopoi~27",
+  "head": "ff38c294d8313d44d9ca8bc377db2f669eaa1ca2",
+  "pr": 1520,
+  "folder": "GrothendieckTopoi",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 28 changed lines since a0bf576 (README Provenance section only). R01, R02 and R03 are repaired. R01: the README now attaches Stacks 00XC to MorphismOfTopoi.lean, whose morphism of topoi of a morphism of sites corresponds to 2.4's GeometricMorphism.ofContinuous, and 00XA to ToposDefs.lean. R02: StacksFrontier is described as kept apart from the human-reviewed StacksCore tier. R03: the description's Provenance paragraph agrees with the README. Checked against the external repository at c496df0 (14 files: tags at MorphismOfTopoi.lean 98, ToposDefs.lean 37/52, TwoMorphismOfTopoi.lean 54/182, LocalizationAndMorphismsOfTopoi.lean 434/807; README tier lines 11, 13-14; toolchain; licence) and against Stacks 00XA (Def. 7.15.1) and 00XC (Lemma 7.15.2) read at the Stacks site. The adversarial table has computed rows for 2.1, 2.2, 2.4, 3.1 and 9.1, the targets the changed text cites; the external 00XC construction has the same fields as 2.4 under a weaker hypothesis (u_s exact), recorded as a remark. Seeded sample: 2.1, 3.1 and 9.1 fall in the cited passages; their SGA 4 locators are not verifiable (SGA 4 is paywalled). Gate: the worker's gate passes every check, build included. depcheck on the candidate order with --movable reports 0 problems (GrothendieckTopoi on line 84, after DiamondEtaleCohomology on line 83). lake env lean on Suggested.lean exits 0 with 44 sorry warnings and nothing else; Suggested.lean, the manifest and the toolchain are unchanged; nothing changed outside the folder. Source independence: changed passages only.",
+  "text": "68d2cece3c6b1526"
+ }
+}
