@@ -5795,6 +5795,15 @@
       ]
     },
     {
+      "slug": "equivariant-grr",
+      "needs": "For G smooth affine over a field, a G-equivariant projective morphism f : X → Y of smooth quasi-projective schemes with G-linearised ample invertible sheaves (Convention 5), and a G-equivariant vector bundle E on X whose higher direct images R^i f_*E are vector bundles, the Grothendieck–Riemann–Roch identity ch(Σ_i (−1)^i [R^i f_*E]) · td(T_Y) = f_*(ch(E) · td(T_X)) in the completed rational equivariant Chow ring ∏_c A^c_G(Y) ⊗ ℚ, obtained from SchemeAndStackFoundations §5.8 on the mixed spaces of §2.1; applied on the SL₂-lift to the degree-four cover C → ℙ and the ℙ¹-fibration ℙ → H_{4,g,n} of the tetragonal Hurwitz stack.",
+      "supplier": "EquivariantIntersectionTheory",
+      "section": "Layer 2 (§§2.1–2.2)",
+      "neededBy": [
+        "MotivicStructuresInModuliOfCurves §6.5"
+      ]
+    },
+    {
       "slug": "pointed-coarse-projectivity",
       "needs": "For every stable pair (g,n), projectivity over ℤ of the coarse space of M̄_{g,n} together with a rational combination of tautological divisor classes that is the pullback of an ample class on the coarse space.",
       "supplier": "StableReductionPartII",
@@ -5862,6 +5871,7 @@
         "MotivicStructuresInModuliOfCurves §0.1",
         "MotivicStructuresInModuliOfCurves §5.3",
         "MotivicStructuresInModuliOfCurves §10.5",
+        "MotivicStructuresInModuliOfCurves §9.7",
         "MotivicStructuresInModuliOfCurves §12.9"
       ]
     },
