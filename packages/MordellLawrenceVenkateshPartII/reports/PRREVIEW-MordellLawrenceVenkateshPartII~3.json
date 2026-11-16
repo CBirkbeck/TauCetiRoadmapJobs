@@ -1,0 +1,32 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MordellLawrenceVenkateshPartII~3",
+  "head": "035186509c522e3c33cdd068de5eb24de9039d63",
+  "pr": 2461,
+  "folder": "MordellLawrenceVenkateshPartII",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full review at an unchanged head. Two P3 findings: README line 3516 says every source correction has an explicit instance, but four bullets (lines 3526, 3548, 3597, 3598) have none; the pull request description repeats the claim. All 15 seeded sample targets verified against LS, LV, BC and Beauville at their locators; 36 source locators, 20 pinned library declarations and 125 supplier section citations resolved. Gate passed in the worker's run; depcheck rerun 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probes (simp, norm_num, aesop, G = 1) do not close the headline. D01 stands (deferred, not counted). Serre's two locators and the arXiv v3 wording of LV are not verifiable from cached texts.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "`gap:griffiths-residue-hodge-filtration` is not declared in the plan",
+    "where": "board plan.json `gaps` of this package must declare the slug",
+    "raised": "PRREVIEW-MordellLawrenceVenkateshPartII~1"
+   }
+  ],
+  "text": "390177a21e91eb63",
+  "carried": {
+   "from": "035186509c522e3c33cdd068de5eb24de9039d63",
+   "head": "460dec4e81903258e9e3286236e1f7e71ef76ce9",
+   "findings": 2,
+   "lines": 8,
+   "folders": [
+    "MordellLawrenceVenkateshPartII"
+   ]
+  }
+ }
+}
