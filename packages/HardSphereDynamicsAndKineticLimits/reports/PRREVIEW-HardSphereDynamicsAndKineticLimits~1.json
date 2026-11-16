@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HardSphereDynamicsAndKineticLimits~1",
+  "head": "55781a9b981d0be184263ffa30a0be02e2b8115b",
+  "pr": 2448,
+  "folder": "HardSphereDynamicsAndKineticLimits",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full review at 55781a9. Seeded sample of 15 targets verified against the cached GST2013, BGSS2023 and DengHaniMa2024 texts (82 locators, all correct; one hypothesis mismatch, R01: the proposition of section 10.4 adds Continuous f0, which BGSS2023 (1.1.5) does not assume). Gate: every check 0, OK; depcheck: 255 roadmaps, 2429 edges, 0 problems; nothing changed outside the folder. Suggested.lean elaborates with 11 sorry warnings only; 31 signatures compared, dropped-binder leads false positives; 66 supplier declarations #check'd at the pins; padding probe negative on 11/11 theorems; 12 cross-roadmap citations resolved (ClassicalErgodicTheory section 3.5 at its open head). Adversarial table: 27 rows with computed values. R02: two unfinished sentences in the pull-request description. Both findings P3.",
+  "text": "2f8b6327dea0699f"
+ }
+}
