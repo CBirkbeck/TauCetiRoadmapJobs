@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PadicLocalLanglandsForGL2QpPartII~1",
+  "head": "04fba0034c6fc7884b696ebb53ccd464daf71665",
+  "pr": 2455,
+  "folder": "PadicLocalLanglandsForGL2QpPartII",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 2,
+  "notes": "Full review at 04fba00. Seeded sample of 15 targets (0.2, 0.3, 0.4, 1.1, 2.3, 3.3, 4.1, 4.2, 4.7, 4.10, 4.12, 5.5, 6.1, 6.3, 7.5) checked against DLB17, CDN20, CDN23, COLMEZ19POIDS, DOSPINESCU12THESE, COLMEZ14LA and TEI90 (about 105 locators); all match. Gate OK (every check 0); depcheck 258 roadmaps, 2463 edges, 0 problems; Suggested.lean elaborates with no messages and no declarations. 17 supplier roadmaps resolved (4 on main, 13 at open heads); overlap check found no object with two owners. Findings: R01 P2 gap continuous-galois-tensor-comparison names this roadmap's §4.5 objects; R02 P2 §1.7 density route translates the thesis proof step by step; R03 P3 two Checks use M(·) where the type M(·)[1] is meant; R04 P3 PR summary claims density for every V.",
+  "text": "1087a646a1bf9263"
+ }
+}
