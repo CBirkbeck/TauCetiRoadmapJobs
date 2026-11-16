@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LieGroupsPartII~1",
+  "head": "aa066e23d962c1a3498879cc21c85668129a8359",
+  "pr": 2427,
+  "folder": "LieGroupsPartII",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full review; 3 P3 findings, none blocking. Gate: all checks OK at aa066e2; depcheck 0 problems. Elaboration: 13 sorry warnings only. One-tactic probe (simp, rfl, infer_instance): none of the 13 theorems closes, no padding. Seeded sample of 15 targets: borel-tits1965 Thm 4.15 (pp. 90-91) and Cor. 5.18(ii) (p. 101), brown-fisher-hurtado2022 s3.1 eq. (1), brown-rodriguezhertz-wang2022 s1.2 eq. (1) and the bradlow et al. 2024 Introduction verified against the text; the knapp2002, warner1972, wallach1988 and bourbaki-lie4-6 locators are uncertified and unverifiable. Adversarial table: 25 rows, all statements hold; the Lean is mathematically sound. Checked at the pins: 46 Tau Ceti and 17 Mathlib declarations. Cross-roadmap citations resolved: 32 (RealSemisimpleLieGroups at the head of #2229; LieGroups, ArithmeticLocallySymmetricSpaces, FlagVarieties and RootSystems on main; AutomorphicFormsOnReductiveGroups s2.3a). Findings: R01, pinned Tau Ceti Lie declarations cited as LieGroups targets; R02, Knapp/Wallach locators attached to the moving-split-centre case they do not cover; R03, the PR description promises a dependency list it does not give and misclassifies AutomorphicFormsOnReductiveGroups, a transitive prerequisite through RealSemisimpleLieGroups s3.1.",
+  "text": "4329a822f14636ea"
+ }
+}
