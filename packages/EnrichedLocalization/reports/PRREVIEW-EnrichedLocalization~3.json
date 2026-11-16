@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EnrichedLocalization~3",
+  "head": "2a6d75e99edc129575a268f0a49e5741cffe2654",
+  "pr": 2269,
+  "folder": "ModelCategoryTheory/EnrichedLocalization",
+  "date": "2026-11-16",
+  "findings": 9,
+  "blocking": 5,
+  "notes": "Full re-review. Previous findings: R05-R08 repaired, R01-R03 not repaired, R04 replaced by a reindexing that fails (new R03). Gate at head (worker): imports=1 build=3 FAIL, all other rules 0; depcheck 261 roadmaps, 2594 edges, 0 problems; no change outside the family folder. Sources: all 15 seeded sections checked against HTT (author's PDF), HA, Dugger (arXiv v1, both papers) and Riehl (author's PDF), 70 locators agree; DK80 section 7 uncertified (paywalled). Lean: head stops at an import absent at the pinned Tau Ceti; a scratch copy with the pinned weak-equivalence module elaborates with sorry only, signatures match README 3.2.1, one-tactic probe does not close the theorem. Findings: P1 build/import; P1 supplier contract cites Tau Ceti declarations absent at the pin; P1 section 4.3.1 reindexed on a<=b forces Z homotopically constant and excludes the application in 4.4.3 (computed on the README's own two-point instance); P2 second owner BordismFormalGroups F6.5 on main; P2 section 3.3.1 missing small (co)limits and functorial factorizations; P3 map direction in 3.3.1 API, ambiguous clause references, an editing remark at 2.4.6, description overlap list incomplete.",
+  "text": "3ff1a471061c0db6"
+ }
+}
