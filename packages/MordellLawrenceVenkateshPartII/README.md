@@ -1538,7 +1538,7 @@ ArithmeticGaloisRepresentations §1.11, *Complete reducibility and closed tuples
 `TauCeti.Cocharacter.parabolic`;
 `TauCeti.Tannaka.fgPointTensorIsoEquiv`; MotivesAndAlgebraicCycles §§6.2, 6.8; PadicHodgeTheory
 §§3.3–3.6, 5.5; AbelianSchemesAndArithmeticModuli §§A6.30–A6.31; MordellLawrenceVenkatesh §§0.3–0.4,
-1.2; ArithmeticGaloisDuality §R02.3.1.
+1.2; ArithmeticGaloisDuality §R02.3.1; Mathlib `Finsupp`.
 
 ## Layer 3: Period orbits and transcendence transfer
 
@@ -1746,7 +1746,8 @@ coefficients. In dimension zero a point is dense in itself, so positive base dim
 
 Layers 0 and 2; ShimuraData §§1.2–1.4, 3.4–3.7; MotivesAndAlgebraicCycles §6.8; ReductiveGroups
 Layer 4; AbelianSchemesAndArithmeticModuliPartII §B2.4 and Layer B3; ComplexKahlerGeometry K3 §3.4;
-RestrictedPowerSeries §§2.1, 5.2; MordellLawrenceVenkatesh §§2.5–2.6, 2.8.
+RestrictedPowerSeries §§2.1, 5.2; MordellLawrenceVenkatesh §§2.5–2.6, 2.8; `TauCeti.Cocharacter.parabolic`;
+Mathlib `Ideal.iInf_pow_eq_bot_of_isLocalRing`.
 
 ## Layer 4: Balanced monodromy and semisimple fibres
 
@@ -1833,9 +1834,9 @@ groups to the de Rham group.
 
 ### 4.4 Codimension of semisimple isomorphism orbits
 
-Let a uniform coefficient filtration have single-factor profile `h` on `H` and strongly c-balanced
-monodromy relative to σ, with `E^σ = E₀` on the chosen Frobenius cycle. For an integer `e > 0` assume
-`A ≥ (e + dim H)/c`. Prove that in the monodromy flag orbit the locus whose filtered Frobenius module is
+In the setting of §2.1, let a uniform coefficient filtration have single-factor profile `h` on `H` and
+strongly c-balanced monodromy relative to σ, with `E^σ = E₀` on the chosen Frobenius cycle. For an
+integer `e > 0` assume `A ≥ (e + dim H)/c`. Prove that in the monodromy flag orbit the locus whose filtered Frobenius module is
 isomorphic to a prescribed one has codimension at least `e` (LS, Lemma 7.2, pp. 70–71; LS line 3205).
 
 A route: project the period orbit to `c` independent factor flags in one Frobenius cycle; the product
@@ -1850,17 +1851,22 @@ flag variety has dimension `c·A`, while an orbit of the semilinear centralizer 
 - For `H = GL₂` with weights `(1, 0)`, `A = 1` and `dim H = 4`, so `A ≥ (1 + 4)/c` needs `c ≥ 5`
   independent factors; a single factor gives nothing.
 
-*Needs:* §§2.2, 2.8, 3.2, 4.2.
+*Needs:* §§2.1–2.2, 2.8, 3.2, 4.2.
 
 ### 4.5 Non-density for semisimple integral fibres
 
 Let `𝒳` be smooth of finite type over `ℤ[S⁻¹]` with geometrically connected generic fibre `X` of
-dimension `d ≥ 1`. Let `V` be an integral polarized pure Hodge–Deligne system with integral Frobenius
-and Frobenius characteristic polynomials in `ℤ[t]` outside `S`, with uniform coefficient filtration and
-strongly c-balanced monodromy, and assume `A ≥ (d + dim H)/c`. Prove that the integral points whose
-global coefficient-group representations are G-completely reducible are not Zariski dense in `X`. The
-coefficient permutation representation is fixed, and `S` is enlarged only by finitely many primes (LS,
-Theorem 7.3, pp. 71–72; LS line 3259).
+dimension `d ≥ 1`. Let `E` be a nonzero constant étale H⁰-algebra on `𝒳` (§§0.4, 1.1), let `H` be
+`GL_N`, `GSp_N` or `GO_N`, and let `V` be a pure polarized integral Hodge–Deligne system on `𝒳` with
+integral Frobenius (§0.2) and Frobenius characteristic polynomials with integer coefficients outside
+`S`, which is an equidimensional `E`-module of rank `N > 0` with an `H`-structure (§§1.4–1.5). Let `G`
+be the semilinear coefficient normalizer of §2.1 that `E`, `H` and `N` define in each realization (over
+`ℚ_p` in the étale one). Assume that the Hodge filtration is uniform with single-factor adjoint profile
+`h` on `H` (§2.8), that the differential monodromy is strongly c-balanced relative to residue Frobenius
+for an integer `c ≥ 1` (§4.2), and that `A ≥ (d + dim H)/c`. Prove that the integral points whose
+global Galois representations into `G(ℚ_p)` are G-completely reducible (§2.3) are not Zariski dense in
+`X`. The coefficient permutation representation is fixed, and `S` is enlarged only by finitely many
+primes (LS, Theorem 7.3, pp. 71–72; LS line 3259).
 
 A route: §2.9 leaves finitely many semisimple G-representations; on each of finitely many residue disks a
 fixed representation gives one centralizer orbit of filtrations, of codimension at least `d` by §4.4
@@ -1873,8 +1879,11 @@ with `e = d`; §3.4 and a finite union conclude.
   it.
 - Enlarging `S` enlarges the set of integral points, so non-density for a larger `S` implies it for a
   smaller one.
+- For `E = ℚ` and `H = GL_N`, `G = GL_N`, `dim H = N²` and G-complete reducibility is semisimplicity of
+  the `ℚ_p`-representation. For `E = ℚ × ℚ` and `H = GL_N`, `dim G = 2N²` while the hypothesis uses
+  `dim H = N²`: the cost is that of one classical factor, not of the whole normalizer.
 
-*Needs:* §§0.2, 1.9, 2.9, 3.4, 4.4.
+*Needs:* §§0.2, 0.4, 1.1, 1.4–1.5, 1.9, 2.1, 2.3, 2.8–2.9, 3.4, 4.2, 4.4.
 
 ### Examples
 
@@ -2188,8 +2197,8 @@ and using §5.7 gives the bound `dim Z_G(φ^ss)`, and cyclewise §2.2 bounds the
 
 ### 5.12 Fixed-type codimension under balanced monodromy
 
-Let the coefficient system have uniform single-factor profile `h`, rank `t` for `H`, strongly c-balanced
-monodromy and a balanced reference graded type. For an integer `e > 0` assume
+In the setting of §2.1, let the coefficient system have uniform single-factor profile `h` on `H`, with
+`t = rank H`, strongly c-balanced monodromy and a balanced reference graded type. For an integer `e > 0` assume
 `A ≥ (e + dim H)/c` and `B > T((e + dim H)/c) + T((h⁰ − t)/2 + (e + dim H)/c)`, with arguments in
 `[0, dim H]`. Prove that in the monodromy period orbit the locus admitting a φ-stable auxiliary
 filtration of that graded type has codimension at least `e` (LS, Lemma 8.16, pp. 81–83; LS line 3722).
@@ -2207,7 +2216,7 @@ product; apply §5.10 with parameter `e + dim H`, and let the graded pairs vary 
 - For `c = 1` the hypothesis contains the parameter `e + dim H`, larger than LV's `e + z`, because the
   centralizer bound is the cruder `dim H`.
 
-*Needs:* §§2.8, 4.2, 5.5, 5.10–5.11.
+*Needs:* §§2.1, 2.8, 4.2, 5.5, 5.10–5.11.
 
 ### Examples
 
@@ -2231,11 +2240,14 @@ p-adic transfer into non-density of all integral points under the two single-fac
 ### 6.1 The coefficient non-density theorem
 
 Let `𝒳` be smooth of finite type over `ℤ[S⁻¹]` with geometrically connected generic fibre `X` of
-dimension `d ≥ 1`. Let `V` be a pure polarized integral Hodge–Deligne system on `𝒳` with integral
-Frobenius and Frobenius characteristic polynomials in `ℤ[t]` outside `S`, an equidimensional module of
-classical rank `N` over a constant étale H⁰-algebra with the required coefficient pairing (§1.5). Assume
-a uniform single-factor profile `h` on `H`, strongly c-balanced differential monodromy relative to
-residue Frobenius, and, with `t = rank H`,
+dimension `d ≥ 1`. Let `E` be a nonzero constant étale H⁰-algebra on `𝒳` (§§0.4, 1.1), let `H` be
+`GL_N`, `GSp_N` or `GO_N`, and let `V` be a pure polarized integral Hodge–Deligne system on `𝒳` with
+integral Frobenius (§0.2) and Frobenius characteristic polynomials with integer coefficients outside
+`S`, which is an equidimensional `E`-module of rank `N > 0` with an `H`-structure (§§1.4–1.5). Let `G`
+be the semilinear coefficient normalizer of §2.1 that `E`, `H` and `N` define in each realization (over
+`ℚ_p` in the étale one). Assume that the Hodge filtration is uniform with single-factor adjoint profile
+`h` on `H` (§§2.7–2.8), that the differential monodromy is strongly c-balanced relative to residue
+Frobenius for an integer `c ≥ 1` (§4.2), and, with `t = rank H` (the dimension of a maximal torus),
 
     A ≥ (d + dim H)/c   and   B > T((d + dim H)/c) + T((h⁰ − t)/2 + (d + dim H)/c),
 
@@ -2256,7 +2268,7 @@ the finite union.
   nothing, consistently with the cost `dim H` of a semilinear centralizer.
 - For `d = 0` the conclusion is false and the hypothesis `d ≥ 1` excludes it.
 
-*Needs:* §§1.9, 2.9, 3.4, 5.8, 5.12.
+*Needs:* §§0.2, 0.4, 1.1, 1.4–1.5, 1.9, 2.1, 2.7–2.9, 3.4, 4.2, 5.8, 5.12.
 
 ### Examples
 
@@ -2266,7 +2278,7 @@ finitely many local graded types, which is what the codimension estimate consume
 
 ### Dependencies
 
-Layers 1–5.
+Layers 0–5.
 
 ## Layer 7: Higher-dimensional Lawrence–Venkatesh non-density
 
@@ -2866,9 +2878,10 @@ not identify coordinate changes over ℚ with coordinate changes over `ℤ[S⁻�
 
 ### Dependencies
 
-Layers 7 and 8; SchemeAndStackFoundations §4.14; AlgebraicModuliForArithmeticGeometry §2.1;
+Layers 0, 7 and 8; SchemeAndStackFoundations §4.14; AlgebraicModuliForArithmeticGeometry §2.1;
 EtaleDualityAndPerverseSheaves §4.3; DeligneWeightsAndPurity §§2.2, 9.12; LefschetzPencilsAndVanishingCycles
-§§2.8, 3.4, 4.4–4.5, 5.8, 5.10; ReductiveGroupsPartII §RG2.0.2; ComplexComparisonPartII §C6.6.
+§§2.8, 3.4, 4.4–4.5, 5.8, 5.10; ReductiveGroupsPartII §RG2.0.2; ComplexComparisonPartII §C6.6; Mathlib
+`MvPolynomial.pderiv`, `AlgebraicClosure`.
 
 ## Layer 10: Hypersurface Shafarevich finiteness
 
