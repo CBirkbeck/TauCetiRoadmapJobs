@@ -1,10 +1,9 @@
 # Roadmap: varifolds
 
 **Summary.** This roadmap builds the general theory of k-dimensional varifolds on an open subset W
-of a smooth Riemannian manifold (M, g), in the generality of Allard's theory as presented in
-Chapter 8 of Simon's lectures: a varifold is an arbitrary Radon measure on the Grassmann bundle of
-unoriented k-planes, and the analysis is carried out for varifolds of locally bounded first
-variation. It starts from Mathlib's Radon measures, Riesz–Markov–Kakutani theorem, Hausdorff
+of a smooth Riemannian manifold (M, g), in the generality of Allard's theory: a varifold is an
+arbitrary Radon measure on the Grassmann bundle of unoriented k-planes, and the analysis is carried
+out for varifolds of locally bounded first variation. It starts from Mathlib's Radon measures, Riesz–Markov–Kakutani theorem, Hausdorff
 measure, norm determinants, smooth embeddings and Levi-Civita connection, Tau Ceti's finite
 Grassmannians, flows of compactly supported vector fields, signed Riesz representation, mass
 measures of functionals on test functions, Prokhorov theorem, Riemannian volume, divergence
@@ -21,8 +20,8 @@ comparison between the intrinsic theory on an embedded submanifold M ⊆ ℝ^L a
 in ℝ^L; and the identification of GeometricCurrents' auxiliary varifold of an integral current
 with the rectifiable varifold of its carrier. Every notion is defined intrinsically on (M, g); the
 Euclidean space E is the case of the flat metric, and no isometric embedding theorem is used. The
-theorems of Allard's paper and of Simon's Chapter 8 are the case W ⊆ E with the flat metric, and
-the roadmap states them there as well wherever its Riemannian statement needs a construction of
+Euclidean theorems of the literature (Allard1972; Simon1983, §§38–42) are the case W ⊆ E with the
+flat metric, and the roadmap states them there as well wherever its Riemannian statement needs a construction of
 its own (the normal-coordinate blow-up of 3.2, or a sequence of metrics).
 
 ## Scope and ownership
@@ -157,8 +156,8 @@ here only as tests of the definitions.
   E, `β_{x,λ} = η_{x,λ}`.
 - **Varifold convergence** is convergence against every compactly supported continuous function
   on the Grassmann bundle (vague convergence; `VarifoldTendsto` for a sequence of measures on any
-  topological space). Simon's Chapter 4 convention, in which rectifiable varifolds converge when
-  their weights do, is not used. A limit is always required to be a Radon measure: a measure that
+  topological space). The convention for rectifiable varifolds in which a sequence converges when
+  its weights do (Simon1983 line 2898–2902, §15) is not used. A limit is always required to be a Radon measure: a measure that
   is infinite on a compact set has no integrals of test functions to converge to.
 - **First variation and mean curvature.** `δV(X) = ∫ div_S X(x) dV(x, S)` with
   `div_S X = tr(P_S ∘ ∇X)`, ∇ the Levi-Civita connection. The Riesz decomposition is written
@@ -184,7 +183,7 @@ here only as tests of the definitions.
   is again a Riemannian manifold, its Grassmann bundle is G_k(W), and the geodesic balls of W and of
   M about x agree below the radius of a normal ball of x contained in W. Vector fields are sections
   `Π x, TangentSpace I x`, of class C¹ in the sense of `ContMDiff` of the section into the tangent
-  bundle, and test functions are `C_c(·, ℝ)`. All types live in a single universe.
+  bundle, and test functions are `C_c(·, ℝ)`.
 
 ## Exact supplier contracts
 
@@ -209,7 +208,8 @@ here only as tests of the definitions.
   against ν, is at most μ(s); no σ-finiteness is assumed), `MeasureTheory.Measure.condKernel`
   (`Mathlib/Probability/Kernel/Disintegration/StandardBorel.lean`, finite measures on a product with
   standard Borel second factor).
-- Differentiation of measures: `HasBesicovitchCovering` and its finite-dimensional instance
+- Differentiation of measures: `HasBesicovitchCovering` (`Mathlib/MeasureTheory/Covering/Besicovitch.lean`)
+  and its finite-dimensional instance
   (`Mathlib/MeasureTheory/Covering/BesicovitchVectorSpace.lean`), `Besicovitch.vitaliFamily`,
   `Besicovitch.ae_tendsto_rnDeriv` and `Besicovitch.ae_tendsto_measure_inter_div_of_measurableSet`
   (`Mathlib/MeasureTheory/Covering/Besicovitch.lean`; the last says that for a locally finite
@@ -221,12 +221,13 @@ here only as tests of the definitions.
   `Vitali.exists_disjoint_subfamily_covering_enlargement` (`Mathlib/MeasureTheory/Covering/Vitali.lean`:
   a family of nonempty sets with bounded sizes δ has a disjoint subfamily such that every member
   meets a chosen one whose size is at least 1/τ times its own, for any τ > 1; on any type).
-- Hausdorff measure and Jacobians: `MeasureTheory.Measure.euclideanHausdorffMeasure`
-  (`Mathlib/Geometry/Euclidean/Volume/Measure.lean`, defined on any extended metric space, a
-  constant multiple of `μH[d]`), `LipschitzWith.hausdorffMeasure_image_le`
+- Hausdorff measure and Jacobians: `MeasureTheory.Measure.euclideanHausdorffMeasure` and
+  `InnerProductSpace.euclideanHausdorffMeasure_eq_volume`
+  (`Mathlib/Geometry/Euclidean/Volume/Measure.lean`: the measure is defined on any extended metric
+  space, a constant multiple of `μH[d]`, and on a d-dimensional real inner product space it equals
+  Lebesgue measure), `LipschitzWith.hausdorffMeasure_image_le`
   (`Mathlib/MeasureTheory/Measure/Hausdorff.lean`: a K-Lipschitz map multiplies the
-  d-dimensional Hausdorff measure of every set by at most K^d),
-  `InnerProductSpace.euclideanHausdorffMeasure_eq_volume`, `LinearMap.normDet`,
+  d-dimensional Hausdorff measure of every set by at most K^d), `LinearMap.normDet`,
   `LinearMap.normDet_comp` and `LinearMap.euclideanHausdorffMeasure_image_eq_normDet_mul_volume`
   (`Mathlib/Analysis/InnerProductSpace/NormDet.lean`; `normDet` is zero on non-injective maps, and
   `normDet_comp` says normDet(g ∘ f) = normDet(g restricted to range f) · normDet(f)).
@@ -314,7 +315,8 @@ here only as tests of the definitions.
   and `…/Geodesic/Normal/Basic.lean`: the exponential map on its natural domain, the logarithm
   inverting it on a normal domain, and normal domains, that is open star-shaped neighbourhoods of 0
   in T_xM inside the domain of exp_x on which exp_x is a diffeomorphism onto its image), with
-  `TauCeti.Manifold.exists_isNormalDomain_ball` (small balls are normal domains) and
+  `TauCeti.Manifold.exists_isNormalDomain_ball` (`…/Geodesic/Normal/Basic.lean`: some tangent
+  ball of positive radius about 0 is a normal domain) and
   `TauCeti.Manifold.IsNormalDomain.image_riemannianExp_ball`
   (`…/Geodesic/Gauss/Distance.lean`: on a boundaryless manifold whose extended distance is the
   Riemannian one, exp_x maps the tangent ball of radius r inside a normal domain onto the metric ball
@@ -500,7 +502,7 @@ of a push-forward into a manifold of dimension below k (3.1). The statements bel
 Define G_k(W) as the set of pairs (x, P) with x ∈ W and P ∈ G(T_xM, k) for the inner product g_x,
 a subset of the total space of the endomorphism bundle of TM over W with the subspace topology,
 and π(x, P) = x; for W = M this is `grassmannBundle I M k`, with its Borel σ-algebra
-(`grassmannBundle.instMeasurableSpace`, `grassmannBundle.instBorelSpace`). For M = E with the flat
+(`grassmannBundle.instMeasurableSpace`; it is a Borel space by definition). For M = E with the flat
 metric, G_k(W) is W × G(E, k) with the product topology
 (Simon1983 line 7301–7305; AgnolettoCorreaHoyosDaSilvaNardulli2025 line 151–156). Prove:
 
@@ -1257,7 +1259,22 @@ div_S X^⊥ = −⟨X, tr_S B_M⟩ by differentiating ⟨X^⊥, τ_i⟩ = 0.
 - M = S^N ⊆ ℝᴺ⁺¹, Σ a great k-sphere: `B_{S^N}(u, v) = −⟨u, v⟩x`, so `tr_{TΣ} B = −k x` and
   `H_{ι_#[Σ]} = −k x`, the mean curvature of a unit k-sphere of ℝᴺ⁺¹ (5.1).
 - M an affine subspace: B_M = 0 and δ(ι_#V)(X) = δV(X^⊤).
-- V = 0 gives 0 = 0; for k = 0 both sides vanish.
+- The trace is over S, not over T_xM, and the curvature term enters with a minus sign. Let M be
+  the unit cylinder {x_1² + x_2² = 1} ⊆ ℝ³, with outward unit normal ν = (x_1, x_2, 0), horizontal
+  unit tangent τ = (−x_2, x_1, 0) and vertical unit tangent e_3; then B_M(τ, τ) = −ν and
+  B_M(τ, e_3) = B_M(e_3, e_3) = 0, so |B_M| = 1 and the full trace is `tr_{T_xM} B_M = −ν`. Take
+  k = 1. For V the multiplicity-one varifold of a vertical line {p} × ℝ, a geodesic of M (H_V = 0,
+  σ_V = 0), tr_S B_M = B_M(e_3, e_3) = 0 and `H_{ι_#V} = 0`, as for every straight line of ℝ³ (5.1);
+  a model with the full trace would give −ν. For V the multiplicity-one varifold of the circle
+  {x_3 = 0}, also a geodesic of M, tr_S B_M = −ν and `H_{ι_#V} = −ν`, the curvature vector of a unit
+  circle of ℝ³ (H = −x on the unit circle, 5.1); the opposite sign of the curvature term would give
+  +ν. On this circle `‖δ(ι_#V)‖ = |H_{ι_#V}| H¹⌞circle = H¹⌞circle = k|B_M| ‖V‖`, so the bound
+  ‖δ(ι_#V)‖ ≤ ι_*(‖δV‖ + k|B_M| ‖V‖) of the first consequence is attained.
+- The trace depends on the direction of S. On the same cylinder, for 0 < α < π/2 the helix
+  γ(t) = (cos t, sin t, t tan α), t ∈ ℝ, is a properly embedded geodesic of M; its unit tangent is
+  cos α τ + sin α e_3, so tr_S B_M = cos²α B_M(τ, τ) = −cos²α ν, while its curvature vector in ℝ³
+  is γ''/|γ'|² = −ν/sec²α = −cos²α ν, which is `H_{ι_#V}` for its multiplicity-one varifold. A model
+  with any constant multiple c of the full trace in place of tr_S B_M gives −cν for every α.
 
 (Simon1983 line 2005–2016, 2954–2971, 7675–7682.) *Needs:* Layer 3.1, Layer 3.3, Layer 4.1–4.4;
 RiemannianGeometry R5a; GeometricCurrents G2 (comparison of Hausdorff measures); Tau Ceti
@@ -1265,8 +1282,9 @@ RiemannianGeometry R5a; GeometricCurrents G2 (comparison of Hausdorff measures);
 
 ### Examples
 
-Spheres, great spheres and the half hyperplane as test cases of 5.1; the great sphere inside S^N as
-a test case of 5.2.
+Spheres, great spheres and the half hyperplane as test cases of 5.1; the great sphere inside S^N,
+and the vertical lines, horizontal circles and helices of the unit cylinder of ℝ³, as test cases of
+5.2.
 
 ### Dependencies
 
@@ -1336,10 +1354,12 @@ at every point of B_ρ₀(x), and √κ ρ_0 ≤ π/2. Then for 0 < σ < ρ < ρ
 
 and if ‖δV‖(B_t(x)) ≤ Λ‖V‖(B_t(x)) for 0 < t < ρ_0, then `ρ ↦ e^{(Λ + k√κ)ρ}ρ^{−k}‖V‖(B_ρ(x))` is
 non-decreasing on (0, ρ_0) (`monotonicity_inequality` and `monotoneOn_exp_mul_densityRatio`, for
-W = M; Scharrer2022 line 1120–1127 and 1184–1203, Lemma 3.3 and Remark 3.4;
-AgnolettoCorreaHoyosDaSilvaNardulli2025 line 542, Lemma 2.22). Scharrer states the inequality with
-closed balls; the two forms are equivalent, because ‖V‖ and ‖δV‖ charge the spheres
-{d_g(x, ·) = t} for at most countably many t, and ‖V‖(B̄_s(x)) increases to ‖V‖(B_σ(x)) as s ↑ σ.
+W = M; Scharrer2022 line 1120–1127 and 1184–1203, Lemma 3.3 and Remark 3.4; a differential form
+for a weighted, mollified mass ratio, under a two-sided bound |sec| ≤ K and for radii below a
+ρ_0(r_0, K), is AgnolettoCorreaHoyosDaSilvaNardulli2025 line 524 and 542–640, Lemma 2.22).
+Scharrer states the inequality with closed balls; the two forms are equivalent, because ‖V‖ and
+‖δV‖ charge the spheres {d_g(x, ·) = t} for at most countably many t, and ‖V‖(B̄_s(x)) increases to
+‖V‖(B_σ(x)) as s ↑ σ.
 All quantities lie in [0, ∞] and are finite here, B̄_ρ(x) being compact.
 
 Route: with r = d_g(x, ·), the field r∇r = ½∇r² is smooth on the normal ball (HopfRinow Layer 2),

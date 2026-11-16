@@ -18,7 +18,7 @@ its Riemannian extended distance), the Grassmann bundle `grassmannBundle I M k` 
 a varifold is a measure on it, finite on compact sets; the statements take the open set `W` of
 the README to be `M` itself, an open subset with the restricted metric being again a Riemannian
 manifold. In a Euclidean space `F`, a varifold on an open `W ⊆ F` is a measure on
-`W × Euclidean.grassmannian F k`, as in Allard's paper and Simon's Chapter 8.
+`W × Euclidean.grassmannian F k` (Allard1972, Section 3; Simon1983, §38).
 
 Stated here:
 
@@ -86,10 +86,6 @@ noncomputable def grassmannBundle (k : ℕ) :
 noncomputable instance grassmannBundle.instMeasurableSpace (k : ℕ) :
     MeasurableSpace (grassmannBundle I M k) :=
   borel _
-
-/-- The σ-algebra of `grassmannBundle.instMeasurableSpace` is the Borel σ-algebra (§1.2). -/
-instance grassmannBundle.instBorelSpace (k : ℕ) : BorelSpace (grassmannBundle I M k) :=
-  ⟨rfl⟩
 
 /-- The **weight** `‖V‖ = π_* V` of a varifold `V` on `(M, g)`: the image of `V` under the
 projection `(x, P) ↦ x` (§1.3; Simon1983, §38). -/
@@ -329,7 +325,9 @@ on `(M, g)`, `κ ≥ 0`, let the tangent ball of radius `ρ₀` about `0` in `T_
 so that `exp_x` maps it onto `B_{ρ₀}(x)`, let the sectional curvature be at most `κ` on `B_{ρ₀}(x)`
 and `√κ ρ₀ ≤ π/2`. Then for `0 < σ < ρ < ρ₀`,
 `σ^{−k}‖V‖(B_σ(x)) ≤ ρ^{−k}‖V‖(B_ρ(x)) + ∫_σ^ρ t^{−k} (‖δV‖(B_t(x)) + k√κ ‖V‖(B_t(x))) dt`
-(Scharrer2022, Lemma 3.3 and Remark 3.4; AgnolettoCorreaHoyosDaSilvaNardulli2025, Lemma 2.22). -/
+(Scharrer2022, Lemma 3.3 and Remark 3.4; compare AgnolettoCorreaHoyosDaSilvaNardulli2025,
+Lemma 2.22, a differential form for a weighted, mollified ratio under a two-sided curvature
+bound). -/
 theorem monotonicity_inequality (hk : 1 ≤ k) (V : Measure (grassmannBundle I M k))
     [IsFiniteMeasureOnCompacts V] (hV : HasLocallyBoundedFirstVariation V) (x : M)
     {κ ρ₀ : ℝ} (hκ : 0 ≤ κ) (hnormal : IsNormalDomain I M x (Metric.ball 0 ρ₀))
@@ -417,7 +415,7 @@ namespace Euclidean
 variable {W : TopologicalSpace.Opens F}
 
 /-- `C ∈ VarTan(V, x)` (§7.2): `C` is a Radon measure on `G_k(F)` and the limit of the dilations
-`V_{x,λ_j}` along some `λ_j ↓ 0` (Simon1983, 42.1). -/
+`V_{x,λ_j}` along some `λ_j ↓ 0` (Simon1983, 42.3). -/
 def IsVarifoldTangent (V : Measure (W × grassmannian F k)) (x : F)
     (C : Measure ((⊤ : TopologicalSpace.Opens F) × grassmannian F k)) : Prop :=
   IsFiniteMeasureOnCompacts C ∧ ∃ s : ℕ → ℝ, (∀ j, 0 < s j) ∧ Tendsto s atTop (𝓝 0) ∧
@@ -441,7 +439,7 @@ theorem exists_isVarifoldTangent (hk : 1 ≤ k) (V : Measure (W × grassmannian 
 first variation in `W`, `Θ^k(‖V‖, x)` exists and is finite at `x ∈ W` and
 `ρ^{1−k}‖δV‖(B_ρ(x)) → 0` as `ρ ↓ 0`, then every `C ∈ VarTan(V, x)` is stationary in `F`, has
 `‖C‖(B_ρ(0)) = Θ^k(‖V‖, x) ω_k ρ^k` for every `ρ > 0`, and has a dilation-invariant weight,
-`‖C‖(λA) = λ^k ‖C‖(A)` (Simon1983, 42.3). -/
+`‖C‖(λA) = λ^k ‖C‖(A)` (Simon1983, 42.1–42.3). -/
 theorem IsVarifoldTangent.isStationary (hk : 1 ≤ k) {V : Measure (W × grassmannian F k)}
     [IsFiniteMeasureOnCompacts V] (hV : HasLocallyBoundedFirstVariation V) {x : F}
     (hx : x ∈ W) {θ : ℝ≥0∞} (hθ : θ ≠ ⊤) (hdens : HasDensity (weight V) k x θ)
