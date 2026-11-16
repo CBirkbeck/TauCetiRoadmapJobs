@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComplexKahlerGeometry~96",
+  "head": "445f965af21f4a29e7a3877a35383ba5a8ff4523",
+  "pr": 1807,
+  "folder": "ComplexKahlerGeometry",
+  "date": "2026-11-16",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "Full review of the whole README (3639 lines) and Suggested.lean at 445f965. No mathematical defect found: every Check and convention recomputed, adversarial table with computed values for the 15 seeded-sample sections and all 27 headline theorems. Five P3 findings: SmoothBundlesConnections B6.3 is consumed in 7.3 and 4.5 but missing from the supplier contract and both Needs lines; 4.1, 5.3 and 5.8 define carriers with no Check (replacement Checks written); three defects of the pull-request description (it says Suggested.lean changes only in comments although uniqueFactorizationMonoid_holomorphicStalk is restated and an import added; its K7.1 sentence describes an earlier head; it omits the new supplier GlobalHolomorphicFunctions, the exchange of 8.2 and 8.3 and the move of the polydisc lemma to 2.4). Checked: 41 source locators against demailly-agbook, sakane-parallelisable, angella-iwasawa, hormann-steinbauer-distributions, ballmann-kahler, berwick-evans-tripathy, knutson-borel-weil, lojasiewicz-triangulation and rainer-advanced-complex-analysis; pinned declarations opened in Mathlib and Tau Ceti (Compatible, Orientation.card_eq, smoothStalkIsDomain, the filtered spectral-sequence comparison and others) and about 60 further names found at the pins; cross-roadmap citations resolved on main and at this head (GlobalHolomorphicFunctions, AlgebraicTopology with its Stage-to-Layer map, CharacteristicClasses, GeneralizedCohomology, TopologicalKTheory, SmoothBundlesConnections and the other suppliers). depcheck: 234 roadmaps, 2252 edges, 0 problems; the mutual supply with RealAnalyticGeometry and PseudodifferentialOperators is the earlier recorded deferral D01 and was not raised again. Gate: the worker's gate passed; in my rerun every scanner was 0 except outside-folder=24, which lists only the pull request's own twelve other folders. lake env lean on Suggested.lean: exit 0, 27 sorry warnings only; the one-tactic probe closes none of the 27 theorems; #check of every declaration shows no theorem lost a binder. Not verifiable: the uncertified sources (webster-nn, hormander-alpdo1, griffiths-harris, koszul-malgrange, wells-dacm, raghunathan-discrete-subgroups, nomizu-nilmanifolds).",
+  "text": "96649a8fb8d265e0",
+  "carried": {
+   "from": "445f965af21f4a29e7a3877a35383ba5a8ff4523",
+   "head": "618bc240b025c49112044e2be3bc99e687d09b9f",
+   "findings": 5,
+   "lines": 62,
+   "folders": [
+    "ComplexKahlerGeometry"
+   ]
+  }
+ }
+}
