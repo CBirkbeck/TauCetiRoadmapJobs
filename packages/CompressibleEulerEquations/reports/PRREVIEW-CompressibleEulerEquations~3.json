@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CompressibleEulerEquations~3",
+  "head": "59271f0dbc63b61a628deb87068cef7abe99446a",
+  "pr": 2442,
+  "folder": "CompressibleEulerEquations",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review of README.md and Suggested.lean. Seeded sample of 15 targets (1.3, 2.1, 2.2, 3.2, 4.1-4.4, 5.2, 6.1, 6.2, 7.3, 8.1, 8.3, 8.4) and all 14 headline theorems recomputed, with values in the adversarial table. 71 source locators checked in 13 cached texts; Majda1984, Kato1975, Dafermos2016 uncertified and four waived sources not verifiable. 78 pinned declarations opened at their cited file and line. Supplier citations resolved at the open heads of LorentzianGeometry and SymmetricHyperbolicSystems and on main. Gate: every check OK; depcheck 256 roadmaps, 2432 edges, 0 problems; elaboration gives 14 sorry warnings only; one-tactic probe closes none of the 14 theorems. One source issue recorded (ChristodoulouMiao2014 section 2.1.2). Two notes for the human reviewers (Majda1984 not tested; LukNotes licence).",
+  "text": "ebb8fbe5ec85b7e7"
+ }
+}

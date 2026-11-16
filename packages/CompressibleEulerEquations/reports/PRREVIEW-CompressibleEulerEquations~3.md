@@ -1,0 +1,66 @@
+# Review of CompressibleEulerEquations (pull request #2442 at 59271f0)
+
+**Verdict:** accepted
+
+No findings at this head. This is a full review: every passage of `TauCetiRoadmap/CompressibleEulerEquations/README.md` and `Suggested.lean` was read and recomputed, not only the passages changed since the last review.
+
+Previous review (same head, no findings): its record of R01–R04 as repaired was confirmed again. `quadraticLaw` does not occur in `Suggested.lean`; README.md:188–209 carries the domain API and Checks; README.md:2068–2070 reads "the zero family is not one, its `g_0 = 0` differing from `U₀` on `2πℤ`"; the description names PDE, ComplexKahlerGeometry, MathematicalStatisticsNonparametric and RelativisticQuantumFieldTheory as scope boundaries only.
+
+## Verified sound
+
+| Statement | Instances tried | Values computed | Result | Change |
+|---|---|---|---|---|
+| §1.3 full Euler system, `EquationOfState.IsSolution` (sample) | `P = e^sρ²`, `s = x`, `ρ = e^{−x/2}`, `v = 0`; `(1, 0, t)`; boosted expanding flow, `w = 1` | `P(ρ, s) = 1`, `∇P = 0`; truncated momentum term `−e^{x/2} ≠ 0`; `Bs = 1`; boost residual `0`, wrong rule `−1/(1 + t)` | holds; Lean mass, momentum and entropy lines match | none |
+| §2.1 quasilinear systems, `Dominates` (sample) | transport `a = 3`, cone `(1, 0)`, `ζ = (1, −1)`; wave system, cone `(1/2, 0)`, `ζ = (1/2, e₁)`; `N = 0` | `1 ≥ 1`, symbol `−2`; eigenvalue `−1/2`; monotonicity: `ζ₀ + w·ζ′ ≥ (c′ − \|w′ − w\|)\|ζ′\| ≥ c\|ζ′\|`; empty matrix PSD | holds | none |
+| §2.2 Euler symmetrisers (sample) | `n = 1`, `ρ = 1`, `c = 2`, `v = 3`; `P = e^sρ²` at `(1, 0)`; `ζ = (−3, 1)` | `det(A¹ − λA⁰) = 4(λ − 1)(λ − 5)`; `SM¹` entries `(aρ, bv, ρb)` symmetric; minors `2, 2, 2`; `σ = [[0, 4], [4, 0]]`, `det = −16`; threshold `c + \|v − w\| = 5` | holds | none |
+| §3.2 sound-cone fields, causal curves (sample) | field `(1, x)`, `x = e^{3t}`; `10 ×` Cantor function; field `(1, x²)`, `x = 1/(1/4 − s)` | `\|ẋ − v\| = 2e^{3t}`, `≤ 1` iff `t ≤ −(ln 2)/3`; `10 > 1 = ∫c`; `x(1/2) = −4`, `x(a_m) = −m` | holds; integral characterisation checked in both directions | none |
+| §4.1 spaces `Hᵏ_Λ`, `sobolevNormSq` (sample) | `u = e^{−\|x\|²}`, `n = 2`, `k = 2`; `cos x` on `2πℤ`; indicator of `[0, 1]`; `1_{2πℤ}` | `π/2 + π + 7π/2 = 5π`; ordered pairs `11π/2`; `Wkp` norm² `(7/2 + 8e^{−2})π ≈ 4.58π`; `2` against `2π`, ratios `π`, `2π`; no family, `∞`; norm `0` | holds; `Wkp` norm read at the pin (module docstring) | none |
+| §4.2 embeddings, interpolation (sample) | `u = e^{−x²}`, `G = √(π/2)`; dilations `u(λx)`; `k = 0` | `1 ≤ G ≈ 1.2533`; `2G ≤ √5·G`; `λ^{1/2}` against `λ^{1/6}`; additive form `2.947 ≥ 1.120`; `j/k = 0/0` excluded | holds | none |
+| §4.3 Gagliardo–Nirenberg, Moser (sample) | `f = 1 + e^{−x²}`, `g = e^{−x²}`, `α = 2`; Nirenberg exponents `m = k`, `j = i`, `q = ∞`, `r = 2`; `n = 3` map into the circle | `[∂², f]g = (12x² − 2)e^{−2x²}`, norm² `(19/8)√π ≈ 4.21`, right side `≈ 3.60`; `1/p = i/(2k)`; scaling `λ^{i − ni/(2k)}` both sides; `∫\|∇u\|² = 8π³/3`, `J_εu(0) = 0 ∉ G` | holds | none |
+| §4.4 Friedrichs mollifiers (sample) | `a = sin(x/2)`, `u = sin x`; `a = x`; `u = 1` on `2πℤ` | commutator `μ₂ε²/8` at `π`, its negative at `3π`; `ψ = −zφ_ε`, `‖ψ′‖_{L¹}` independent of `ε`; `1 ≤ C/ε` fails at `ε = 2C` | holds; no commutator lemma at the pins (`TauCeti/Analysis/Sobolev/Mollification/` read) | none |
+| §5.2 weighted energies (sample) | periodised cone, `dχ = (e·w − M, −e)`; transport `a = 1`, `χ = (1 − \|x\| − t/2)₊`; speed against cone, `a = 1` | `M − e·w + w·e = M ≥ M\|e\|`; `−1/2 + 1 = 1/2 > 0`, support `(−1.1, −0.1)` meets `\|x\| < 0.55`; `(1/2, 1)` dominates, `1/2` is no speed | holds | none |
+| §6.1 `QuasilinearSystem.eqOn_lens` (sample, headline) | `A¹ = diag(z², 0)`, `u = g(t + 1/x)`, `φ = 1 − t`, `Λ = ℤ` and `Λ = 0`; `v₀ = 3`, `c₀ = 1`; `t₁ = t₂` | `g′·(1 − 1) = 0`, value `g(0.6)` at `(0.9, −10/3)`; static cone `M ≥ 4`, moving `M ≥ 1`; lens equals base | holds; periodicity and compactness clauses both needed, both in the Lean | none |
+| §6.2 `QuasilinearSystem.eqOn_causalPast` (sample, headline) | counter-flow of §8.2 at `(2, 0)`; Burgers, `κ = (1 + \|u\|, 0)`; `t_p = t₀` | pasts `[x − 3t, x − t]` leave the other domain; `λ(u) = \|u\|`; `J⁻ ∩ Σ_{t₀} ⊆ S` by the one-sided extension argument; `J⁻ = {p}` | holds; `J⁻_D(p) ⊆ O` is `hpO` | none |
+| §7.1 `QuasilinearSystem.localWellPosedness` (headline) | Burgers, `u₀ = −e^{−λ²x²}`, `λ = 1, 10`; `1_{2πℤ}`; `M < 0` | `T* = 1.1658`, `0.1166`; `‖u₀″‖² ≈ 3760`; norm `0` but no continuous solution; `ofReal M = 0` forces `U₀ = Ū` | holds; `Continuous U₀` and the norm bound are in the Lean | none |
+| §7.1 `QuasilinearSystem.exists_extension_of_lintegral_lt_top` (headline) | Burgers at `T*`; `F ≡ 1`, `Ū = 0`; `F(u) = u`, `U = eᵗ` | `∫‖u_x‖_∞ = ∞`, values in `[−1, 0]`; `u₀ + t ∉ L²`; `‖∂_tU‖_∞ = 1`, `‖∇U‖_∞ = 0` | holds; `hsrc`, `hcpt`, `hgrad` are the three hypotheses used | none |
+| §7.2 `EquationOfState.localWellPosedness` (headline) | `p = ρ³/3`, `ρ̄ = 1 + e^{−x²}/2`; background `(1, 0, 5)`, `𝒪 = (0, ∞) × (0, 1)`; lower bound `r < 0` | `v − ρ ≡ −1`, `v + ρ = 1 + e^{−x²}`, `T* = 1.1658`, `ρ ∈ [1, 3/2]`; `(1, 5) ∉ 𝒪`; `r/2 < 0 < ρ` | holds; `hŪ` is in the Lean | none |
+| §7.2 `EquationOfState.exists_extension_of_lintegral_lt_top` (headline) | velocity bound along material curves | `sup\|v(t)\| ≤ sup\|v(t₀)\| + C_L∫‖∇(ρ, s)‖_∞`, `C_L = max_L(\|∂_ρP\| + \|∂_sP\|)/ρ` finite | holds; reduces to §7.1 | none |
+| §7.3 uniformly local data (sample) | switched symbol; transport `a = 3`, cone `(1, 3)`, `ζ = (−2, 1)`; `F = u/(1 − u)`, `x = 0, 10, 100` | added entry `ζ₀ ≥ (c − \|w\|)\|ζ′\|`; `1 ≥ 1` with entry `−2`; exit times `0.0721`, `0.00365`, `4.84·10⁻⁵`; `(t, x) ∈ C_x` for `t ≤ 1/(2m)` | holds | none |
+| §8.1 developments, `IsDevelopment` (sample) | `{\|x\| < 1 + t}`, `x ≡ 1.9`; truncation at `T = 0`; `S = ∅` | exits at `t = 0.9` missing `S`; slice `∅ ≠ {0} × S`; `D⁺_D(∅) = ∅` so `D = ∅` | holds; first-exit proof of `J⁻_{D′}(p) ⊆ D` redone | none |
+| §8.2 `EquationOfState.maximalCommonDevelopment` (headline) | counter-flow `p = ρ²`, `ρ = 1/2`, `v = ±2` | `c = 1`; `v − c = 1`, `v + c = −1`; `W₁₂ = D₁ ∩ D₂ ∩ {t < 1}`; `W₁₂ ⊆ W₂₁` proved through the open set `W₁₂` and compact pasts | holds | none |
+| §8.2 `EquationOfState.compatible_iff` (headline) | same pair; a truncation with its development | not compatible: `2 ≠ −2` at `(2, 0)`, `W₁₂ ≠ D₁ ∩ D₂`, no upper bound; three implications proved by first exit and gluing | holds in both directions | none |
+| §8.2 `EquationOfState.exists_maximal_development` (headline) | chain of truncations; `S = ∅` | union of a nonempty chain is a development; `D = D′ = ∅` | holds | none |
+| §8.2 `EquationOfState.isGreatest_development_of_solution` (headline) | constants on `B(0, R)`; expanding flow on `(−1, 1)` | `\|x − v₀t\| < R − c₀t`; `ẏ = −(1 + t)^{−3/2}`, half-width `2√2 − 2 ≈ 0.828` at `t = 1`, closes at `t = 3` | holds; no bound on the field needed | none |
+| §8.3 `EquationOfState.isDevelopment_slab` (sample, headline) | translate `U^λ`; two slabs `T ≤ T′` | `U = U^λ` on `D` by §6.2, then `D ⊆ D − λ` for `±λ`; `D = D′ ∩ {t < t₀ + T}` | holds without periodicity of `U` | none |
+| §8.3 `EquationOfState.slab_subset_of_maximal` (headline) | field `(1, x²)` on `[0, 1) × ℝ`; `p ∈ D ∩ O` | blow-up at `s = 1/4`, `D⁺_D(Σ₀) ≠ D`; `J⁻_D(p) ⊆ {t ≤ t_p} ⊆ O` | holds; `hbdd` is needed and present | none |
+| §8.4 `EquationOfState.boundary_futureCausal` (sample, headline) | truncation top; `{\|x\| < 1 − t/2}`; `u = v − c′b/\|b\|`, `c′ < c` | `1 ≥ 0`; `1/2 < 1` excluded; `dφ(1, u) = a − c′\|b\| < 0` gives the exiting segment | holds | none |
+| §8.4 `EquationOfState.boundary_null` (sample, headline) | expanding flow at `(1, 2√2 − 2)`; `φ = t − 0.9x`, `M = 5` and `1.05`; `b = 0` | `0.2929 + 0.4142 = 0.7071 = c`; `φ = 260`, `ψ = ε + 100`; `\|x\| < 18.2ε`; `a = 0` gives `dφ(q) = 0` | holds; `∇φ(q) ≠ 0` follows | none |
+| LorentzianGeometry §7.3 citation | README.md:229–230, 835–837 | §7.3 there proves `B` continuous timelike and names §8.1 for the orientation `[B]`; §12.6's field needs only the timelike field | consistent with what is consumed | none |
+| SymmetricHyperbolicSystems `LinearSystem.apply` (README.md:1586–1593) | `h` unbounded on every open set | spatial term is `fderiv ℝ (u t) x eⱼ`, `0` where `h` is not Fréchet differentiable | Check stands | none |
+
+- Source locators checked against the cached texts: 71 in 13 sources (ChristodoulouMiao2014 14, EperonReallSbierski2019 14, AbbresciaSpeck2022 8, LukNotes 7, Minguzzi2019 5, Chrusciel2011 5, Christodoulou2019 4, LuoYu2023a 4, MinguzziCone2019 3, BarGinouxPfaffle2007 3, LuoYu2023b 2, Nirenberg1959 1, LukSpeck2018 1); every one matches its line, number and hypotheses.
+- Library declarations opened at the pins: 78, each at the file and line the README gives. Statements read in full for `TauCeti.HasWeakLineDerivOn` (local integrability is part of it), `Wkp.norm_iteratedGradient_lowerOrder_le` (`n²/ε`), `W1p.norm_mul_le` (`3‖ι‖`), `Wkp.exists_contDiffOn_ae_eq`, `Wkp.toZeroAtInfty`, `HasWeakLineDerivOn.lineDeriv_convolution_right`, the difference-quotient criterion and `CircleSobolev.norm_sq_eq_tsum`.
+- Cross-roadmap citations resolved: LorentzianGeometry §6.1, §6.3, §7.3, §8.2, §8.3, §9.2, §11.4, §12.6, §12.7 and SymmetricHyperbolicSystems Conventions, §1.2, §2.1, §2.2, §2.3, §7.3 at their open heads; PDE §1.3, §1.4, §7.1–§7.3 and ComplexKahlerGeometry §5.7 on main; MathematicalStatisticsNonparametric §6.2 and RelativisticQuantumFieldTheory RQFT1 at their open heads. The 16 "Lean names found nowhere" are 15 declarations of this file and SymmetricHyperbolicSystems' `IsSymmetricHyperbolic`.
+- Duplication by object: the pinned Mathlib and Tau Ceti have no symmetric hyperbolic system, causal curve, Moser or commutator estimate, or partially periodic Sobolev space; main and the open heads have no quasilinear symmetric hyperbolic system, equation of state or development.
+- Gate at 59271f0: every check OK. Dependency check: `depcheck: 256 roadmaps, 2432 edges, 0 problem(s)`. The diff outside the folder is empty.
+- Elaboration: `lake env lean` on `Suggested.lean` gives 14 `declaration uses sorry` warnings and nothing else. One-tactic probe (`rfl`, `trivial`, `simp`, `simp_all`, `infer_instance`) on a scratch copy: none of the 14 theorems closes. All 21 definitions are used by a headline. The elaborated types of the 35 declarations were compared with the README statements: `[NeZero n]` is in all 14 theorems, and no binder is lost.
+- Headlines: the 14 of README.md:565–577 are the 14 theorems of the file and the "fourteen" of the description; none is omitted or stated through a stand-in.
+- Pull request text: title and description read against the head; no sentence is contradicted, and the suppliers named are the README's.
+
+Overlap check: read LorentzianGeometry, SymmetricHyperbolicSystems, IncompressibleFlows, PDE, RelativisticQuantumFieldTheory, SobolevPolynomialApproximation, YangMillsConnectionsAndCaloricGauge. The acoustical form, causal curves and domains of dependence in subsets are LorentzianGeometry's, cited. Linear systems and their classical energy theory are SymmetricHyperbolicSystems', cited. Equations of state, developments, quasilinear systems and well-posedness are owned here, as LorentzianGeometry's Downstream consumers and SymmetricHyperbolicSystems' scope both say. Sobolev spaces on the full torus are PDE §7.2's; `Hᵏ_Λ` for period groups of every rank is owned here, with the full-rank comparison a Check of §4.1.
+
+Source independence: 16 passages compared with 9 sources, none shared (the definitions of §1.1, §3.3 and §8.1, the proof plans of §3.3, §6.2, §8.2 and §8.4, the statements of §4.3 and §7.2, four docstrings of `Suggested.lean`, and three Checks); largest share Majda1984, 18 of 113 locators, whose text and contents could not be read; contents compared with ChristodoulouMiao2014 (16 locators): independent, no layer corresponds to one of its chapters.
+
+## Not verifiable
+
+- Majda1984 (Ch. 2, §§2.1–2.3, Theorem 2.1), Kato1975 (Theorem II) and Dafermos2016 (Ch. V, §5.1, Theorem 5.1.1): uncertified, no legal text; the sampled §2.2, §4.4 and §7.3 cite only these, and their statements were recomputed instead.
+- Friedrichs1954 (pp. 345–392), Christodoulou2007 (Ch. 1), HawkingEllis1973 (§6.5) and ONeill1983 (Ch. 14): waived, cited by locator alone.
+
+## Source issues
+
+- **Gap** in ChristodoulouMiao2014 at §2.1.2, printed pp. 24–25: the source says two developments of the same data agree on the whole intersection of their domains, so the union of all developments is the unique maximal one; it should be that they agree on the points whose acoustical causal past lies in both domains, uniqueness of a maximal development needing a separate argument; affects a stated result.
+
+## For the human reviewers
+
+- **Not tested.** Majda1984 holds the largest share of locators (18 of 113, `TauCetiRoadmap/CompressibleEulerEquations/README.md`). Its text and table of contents could not be read legally, so wording and arrangement were not checked against it.
+- **Licence.** LukNotes is unpublished lecture notes read from the author's page (manifest `licence_class` author-page). It is cited for seven standard facts (README.md §§4.2, 4.3, 5.1–5.4, 6.1, 7.1).
