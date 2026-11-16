@@ -3446,7 +3446,7 @@
     },
     {
       "slug": "udc-all-prime-cuspidal-model-of-full-level",
-      "needs": "For N ≥ 1 and a number field K ⊇ Q(μ_N), the minimal regular model of X(N)_K over O_K (unique for N ≥ 6, where the genus is at least 1; for N ≤ 5, where X(N)_K ≅ P¹_K, a smooth proper model) at every prime, including the primes dividing N, with the cusp ∞ extending to a section through the smooth locus and the component of the smooth locus of each closed fibre through that section.",
+      "needs": "For N ≥ 1 and a number field K ⊇ Q(μ_N), the minimal regular model of X(N)_K over O_K (unique for N ≥ 6, where the genus is at least 1; for N ≤ 5, where X(N)_K ≅ P¹_K, a smooth proper model) at every prime, including the primes dividing N, with the cusp ∞ extending to a section through the smooth locus and the component of the smooth locus of each closed fibre through that section, and, for N ≥ 6, with the ring of functions on the formal completion of the model along that section mapping, compatibly with the expansion at ∞ on the generic fibre, into O_K[[q_N]], where q_N = exp(2πiτ/N) is the Tate parameter of ∞ (§4.8), as it does for a regular resolution of the base change to O_K of the cyclotomic compactification of §4.11, whose completion along ∞ is Z[ζ_N][[q_N]] (§4.1) and which maps to the minimal regular model by a morphism that is an isomorphism on generic fibres and carries the cusp section to the cusp section.",
       "supplier": "ModularCurvesPartII",
       "section": "Layer 11 (§11.4)"
     },
