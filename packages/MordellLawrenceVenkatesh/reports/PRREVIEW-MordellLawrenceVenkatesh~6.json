@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MordellLawrenceVenkatesh~6",
+  "head": "4bf88fa58c0d0f9bf0f165162683940ca7f90c85",
+  "pr": 1231,
+  "folder": "MordellLawrenceVenkatesh",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 55 changed lines since 9bbc6cb. R01-R03 of the previous report all repaired: deprecated simp lemma replaced (elaboration: three sorry warnings only), pins renamed to Mathlib 1b1ccf4 and Tau Ceti 2fd255d (checked against lake-manifest.json), section 5.2 now composes the pinned Schoenflies theorem and Homeomorph.sphereCone and schoenflies_extension is deleted. Checked: 7 library declarations opened at the pins; the composite extension and the closed-disk claim recomputed; the new ownership sentence against GeometricTopology Layer 1.7.2 on main, with the torus twist matrices computed on both sides (mutually inverse); the renamed Nakayama lemma against its use in 1.1; the pull request text against the head. Gate: all scanners 0, build 0, OK. Depcheck: 239 roadmaps, 2273 edges, 0 problems. The seeded sample meets the diff only at the definition supporting 0.4; no source locator changed.",
+  "text": "353d011887e7215a"
+ }
+}
