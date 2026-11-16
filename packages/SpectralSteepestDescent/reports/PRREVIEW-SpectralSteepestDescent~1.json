@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpectralSteepestDescent~1",
+  "head": "6ed719d1b628e6cdca65d75cf99025547eb8ab43",
+  "pr": 2423,
+  "folder": "SpectralSteepestDescent",
+  "date": "2026-11-16",
+  "findings": 13,
+  "blocking": 3,
+  "notes": "Full review. Sample: all 15 seeded targets (1.2-6.2) and the 22 theorems of Suggested.lean computed on instances; Layer 4 scalar claims checked numerically and with exact rationals. Sources read: FanHoffman1955, BernsteinNewhouse2024, JordanMuon2024 (GuptaKorenSinger2018 located); Higham, Mirsky, Bjorck-Bowie, Horn-Johnson not readable (paywalled). R01 (P1): section 1.2 non-uniqueness claim false for surjective maps. R02 (P2): Fan-Hoffman stated square-only. R03 (P2): Suggested.lean states 1.4 and 3.2 over the reals only although statable over RCLike. Gate at 6ed719d fails on imports, mathlib-subimports, no-import-mathlib, outside-folder (R04, R05); build passes, elaboration gives sorry warnings only. Depcheck: 239 roadmaps, 2248 edges, 0 problems. One-tactic probe closed nothing. The sources service recorded four entries in the package's sources.toml while fetching.",
+  "text": "f4d77142204671fe"
+ }
+}

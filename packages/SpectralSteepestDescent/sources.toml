@@ -1,0 +1,64 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SpectralSteepestDescent"
+
+[[source]]
+id = "BernsteinNewhouse2024"
+authors = "Jeremy Bernstein, Laker Newhouse"
+title = "Old Optimizer, New Norm: An Anthology"
+year = 2024
+arxiv = "2409.20325v2"
+locator_scheme = "section"
+locator = "Section 4"
+url = "https://arxiv.org/abs/2409.20325v2"
+fetched_from = "https://arxiv.org/pdf/2409.20325v2"
+fetched_at = "2026-11-16T01:52:48Z"
+sha256 = "75e911f6d3ab68ac04e3bfab622b32e052116cd01ca2d2b909731b1aedd7f140"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v2"
+cited_for = ["1.2"]
+
+[[source]]
+id = "GuptaKorenSinger2018"
+authors = "Vineet Gupta, Tomer Koren, Yoram Singer"
+title = "Shampoo: Preconditioned Stochastic Tensor Optimization"
+year = 2018
+arxiv = "1802.09568v2"
+locator_scheme = "section"
+locator = "Section 3"
+url = "https://arxiv.org/abs/1802.09568v2"
+fetched_from = "https://arxiv.org/pdf/1802.09568v2"
+fetched_at = "2026-11-16T01:53:01Z"
+sha256 = "dedd4fdb7f591342eb3bcee119d7d51f3b751d7070afc0b1ba59560ef2594d64"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v2"
+cited_for = ["1.4"]
+
+[[source]]
+id = "FanHoffman1955"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://www.ams.org/journals/proc/1955-006-01/S0002-9939-1955-0067841-7/S0002-9939-1955-0067841-7.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1955-006-01/S0002-9939-1955-0067841-7/S0002-9939-1955-0067841-7.pdf"
+fetched_at = "2026-11-16T01:53:46Z"
+sha256 = "268b0e8faae4e44e1c5216b40e014167618cd40077aa0278360b7f95791e4464"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-16"
+cited_for = ["2.2"]
+
+[[source]]
+id = "JordanMuon2024"
+locator_scheme = "section"
+locator = "Newton-Schulz"
+url = "https://kellerjordan.github.io/posts/muon/"
+fetched_from = "https://kellerjordan.github.io/posts/muon/"
+fetched_at = "2026-11-16T01:53:47Z"
+sha256 = "4e94982993cf2660a47b059c46edb0729acc6198fc90f1375725b9cf3096aa76"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-16"
+cited_for = ["4.3"]
