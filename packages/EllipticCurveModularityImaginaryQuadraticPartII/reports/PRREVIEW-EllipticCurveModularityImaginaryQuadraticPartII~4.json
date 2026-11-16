@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularityImaginaryQuadraticPartII~4",
+  "head": "8aabd7a2a9f5cb66cf31127210264c272d0ffda2",
+  "pr": 2445,
+  "folder": "EllipticCurveModularityImaginaryQuadraticPartII",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 13 changed lines since fcd601d: R01 (second Check of 3.5) and R02 (description summary on Theorems 6.2 and 8.1) are both repaired; the four changed README passages (3.3 fourth Check, 3.5 first and second Checks, the Theorem 6.2 consumer bullet) were recomputed, with the sampled 3.5 checked against CaptainSude26 lines 177-226 and the citations of CrystallineLocalGlobalCompatibilityCM 9.12 and ModularityAndLanglandsExtensions 2.29 resolved at their open heads; the title and description were read against the head and agree with it; the gate passes with every counter 0, depcheck reports 0 problems, the diff outside the folder is empty, and Suggested.lean (no declaration) elaborates with exit 0 and no output. The declared gap gap:acc-torsion-inertial-comparison is untouched. Three scope and licence points are listed for the human reviewers.",
+  "text": "122526c6fd8e3b27"
+ }
+}
