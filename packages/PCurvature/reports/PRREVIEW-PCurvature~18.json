@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PCurvature~18",
+  "head": "e8f959ce4f3b03932d0b712c2d9418286700cd7a",
+  "pr": 1747,
+  "folder": "PCurvature",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since d027b39 (the head only merges main; the folder is byte-identical). Previous R01 (description omitted the Provenance section and its source) is repaired in the description. Checked: description against the head clause by clause; nothing changed outside the folder against origin/main; 9 supplier citations re-resolved on main and at the FormalConnectionsOpers head; 4 Tau Ceti declarations at the pin; adversarial rows computed for 2.0 kaehlerD_eq_zero_iff (p = 2, R = F_2[eps]/eps^2, A = R[t]; A = R); worker's gate all 0 with build OK; depcheck 0 problems, no UPWARD/CYCLE; lake env lean on Suggested.lean exit 0 with 11 sorry warnings only. No seeded-sample target falls in a changed passage. Conditional on no declared gaps (none declared).",
+  "text": "3425e1cb50c51486"
+ }
+}
