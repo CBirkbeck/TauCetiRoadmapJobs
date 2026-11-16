@@ -1,10 +1,18 @@
 {
-  "review": {
-    "status": "needs_changes",
-    "reviewer": "independent-review-REV-PKG-GrossZagierAndArithmeticHeightsPartII~2",
-    "date": "2026-11-10",
-    "findings": 15,
-    "blocking": 10,
-    "notes": "Checked prior F01\u2013F06 repairs (F01 partly repaired; F02\u2013F06 repaired), all 103 targets and 15 seeded source samples, eight headline omissions, supplier objects and indexed open heads, four declared gaps, and computed adversarial instances. Suggested.lean elaborated with exit 0 and no warnings; zero declarations means no one-tactic or signature probes. Depcheck: 236 roadmaps, 2151 edges, 0 problems. Fifteen repairable findings include false primitive-cycle/Euler definitions, normalization and domain defects, stale supplier locators and duplicate Fourier ownership. Three primary sources added through the service; Lusztig76 remains uncertified."
-  }
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-GrossZagierAndArithmeticHeightsPartII~10",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-GrossZagierAndArithmeticHeightsPartII~10",
+   "fix": "FIX-PKG-GrossZagierAndArithmeticHeightsPartII~11",
+   "from": "c32c349c434117be88bca7e6b955e0037a845958",
+   "head": "71f5745a15b6ff88c143f0594d2c3c5043c3d7ba",
+   "findings": 3,
+   "lines": 36
+  },
+  "notes": "every finding of `REV-PKG-GrossZagierAndArithmeticHeightsPartII~10` (3) was P3 and `FIX-PKG-GrossZagierAndArithmeticHeightsPartII~11` repaired them at `71f5745`, changing 36 lines of the package; no further review round was filed"
+ }
 }
