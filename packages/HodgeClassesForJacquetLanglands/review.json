@@ -1,10 +1,18 @@
 {
-  "review": {
-    "status": "needs_changes",
-    "reviewer": "independent-review-REV-PKG-HodgeClassesForJacquetLanglands~2",
-    "date": "2026-11-10",
-    "findings": 9,
-    "blocking": 9,
-    "notes": "All five preceding findings repaired. Read 75 targets and checked all 15 seeded IP23 locators, current supplier contracts, seven matching declared gaps, ownership/overlap leads and pinned APIs. Computed adversarial table covers sampled targets, headlines and findings. Suggested.lean elaborates with only three sorry warnings; all four signatures checked; all three sorried theorems probed, no padding found. Depcheck: 236 roadmaps, 2155 edges, 0 problems. Nine new findings: one P1 and eight P2, including compact Schwartz sign, missing hypotheses, finite-factor identification and splitting-comparison scope."
-  }
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-HodgeClassesForJacquetLanglands~8",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-HodgeClassesForJacquetLanglands~8",
+   "fix": "FIX-PKG-HodgeClassesForJacquetLanglands~9",
+   "from": "4798c86eb7a91127b493a79725ded2bd9657470d",
+   "head": "14accbdb5bf4296b975b63aef1a82dc9057f2b9b",
+   "findings": 1,
+   "lines": 43
+  },
+  "notes": "every finding of `REV-PKG-HodgeClassesForJacquetLanglands~8` (1) was P3 and `FIX-PKG-HodgeClassesForJacquetLanglands~9` repaired them at `14accbd`, changing 43 lines of the package; no further review round was filed"
+ }
 }
