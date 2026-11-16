@@ -1,10 +1,18 @@
 {
-  "review": {
-    "status": "needs_changes",
-    "reviewer": "independent-review-REV-DESIGN-HardSphereDynamicsAndKineticLimits~3",
-    "date": "2026-11-11",
-    "findings": 7,
-    "blocking": 4,
-    "notes": "Reviewed all 45 targets and 159 planned Checks, all 13 prior repairs (11 repaired, 2 partly repaired), all 15 seeded source targets, 9 manifest entries, pinned supplier declarations, overlap/ownership leads and dependency order. Gate: 230 roadmaps, 2063 edges, 0 problems, no UPWARD/CYCLE. Computed adversarial table in report. No Suggested.lean at design stage; elaboration not available (this lane does not elaborate; say so in the report). Six original sources remain settled uncertified; no renewed requests. No supplier gaps."
-  }
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-DESIGN-HardSphereDynamicsAndKineticLimits~17",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-DESIGN-HardSphereDynamicsAndKineticLimits~17",
+   "fix": "FIX-DESIGN-HardSphereDynamicsAndKineticLimits~18",
+   "from": "4aa8c07c793291b04f0b6bfa6b0675e14a89d639",
+   "head": "2a7c1d3fa3d4b7a02944c381855cc677abf0cbb4",
+   "findings": 1,
+   "lines": 27
+  },
+  "notes": "every finding of `REV-DESIGN-HardSphereDynamicsAndKineticLimits~17` (1) was P3 and `FIX-DESIGN-HardSphereDynamicsAndKineticLimits~18` repaired them at `2a7c1d3`, changing 27 lines of the design; no further review round was filed"
+ }
 }
