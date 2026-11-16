@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RobustnessCertificates~2",
+  "head": "713a2adc7ccc7e07e8fe4982ac032ce0c972f1b0",
+  "pr": 2426,
+  "folder": "RobustnessCertificates",
+  "date": "2026-11-16",
+  "findings": 7,
+  "blocking": 1,
+  "notes": "Full re-review. Previous R01-R11 repaired (Layer 6 Examples/Dependencies still missing, now R05). Gate FAIL on tex=3 only (README lines 376-377, wrapped code spans); build passes; head elaborates with 17 sorry warnings only. Dependency check: 241 roadmaps, 2252 edges, 0 problems. Sample: all 14 seeded sections (1.1-6.2) computed in the adversarial table; 16 source locators read in 6 arXiv sources (15 agree, 1 page off); 12 pinned declarations opened; one-tactic probe closes none of the 17 theorems. One P2: the affine radius formula of 1.3 needs the hypothesis that f predicts i at x. P3: gate tex, a false crownRelax Check at l=u=0, a pull-request link as roadmap citation, Layer 6 endings, Mathlib LDL not cited, one page locator.",
+  "text": "d0e66835d3794336"
+ }
+}
