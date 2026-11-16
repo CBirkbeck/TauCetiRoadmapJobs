@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiracScatteringAndNonlinearFourierTransform~2",
+  "head": "550224ea2356b727c7630e3f34e7cd44c6d7c6ca",
+  "pr": 2444,
+  "folder": "DiracScatteringAndNonlinearFourierTransform",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 29 changed lines since 3798662. R01 (§8.7 Check), R02 (§6.8 attribution of the Szegő constant) and R03 (description's dependency sentence) are all repaired. Checked: the new §8.7 Check on its instance (zeros at s + (log t)/t − i/(2t), C = √t, t = 200; C′(200) = 5 < log 200 = 5.298); the last clause of §8.7(1) by box monotonicity; the §5.5 and §6.8 attributions against poltoratski2024 line 263–268, 518–547, 577; mauth2022 line 702–707; denisov2006 line 3246 and its §13 at line 4219; the §8.7 locators (poltoratski2024 line 1002–1012, mauth2022 line 1397–1408) from the seeded sample; szego_condition numerically (barrier f = 0.7 on [0, 1.3]: −0.918466 ≥ −2.023294) and exists_nonlinearFourier_plancherel (q = 1 on [0, 1]: ∫|F|² = 2.3926 ≤ π ≤ 4π). Gate: text checks OK here, and the worker's gate with the targeted build is OK. depcheck: 255 roadmaps, 2429 edges, 0 problems. lake env lean: 9 sorry warnings only. 5-word-run scan of the added lines against 8 sources found formula fragments only. Overlap check: no new shared ownership.",
+  "text": "91920c6ac427fb65"
+ }
+}
