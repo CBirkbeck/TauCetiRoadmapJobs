@@ -1,0 +1,18 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-Varifolds",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-Varifolds",
+   "fix": "FIX-PKG-Varifolds~2",
+   "from": "9536a778ae4f01f8820122c99fe663a6548ca367",
+   "head": "2485ce7b88ed73a01668009c599b59506b4dd03d",
+   "findings": 3,
+   "lines": 85
+  },
+  "notes": "every finding of `REV-PKG-Varifolds` (3) was P3 and `FIX-PKG-Varifolds~2` repaired them at `2485ce7`, changing 85 lines of the package; no further review round was filed"
+ }
+}
