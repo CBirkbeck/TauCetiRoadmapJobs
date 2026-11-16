@@ -29,7 +29,7 @@ The avoided set Ψ ⊃ Θ is allowed to contain components where the class evalu
 
 Brauer groups are written additively in the prose and multiplicatively in Lean (Tau Ceti's `TauCeti.BrauerGroup.instCommGroup` on Mathlib's `BrauerGroup`). The period per(α) is the order of α; in Lean, for a central simple algebra A of class `TauCeti.BrauerGroup.mk A`, it is `orderOf (TauCeti.BrauerGroup.mk A)`. The index ind(α) is the index of any central simple algebra of class α (§0.12); in Lean it is `TauCeti.Algebra.index K A`, and the headline statements quantify over all central simple algebras A, which is the same as quantifying over all classes because every class has a representative.
 
-A field K is the function field of an integral surface over ℝ exactly when K is a finitely generated field extension of ℝ of transcendence degree 2; in Lean this is `Algebra.EssFiniteType ℝ K` together with `Algebra.trdeg ℝ K = 2`. K is nonreal when −1 is a sum of squares in K, which in Lean is `¬ IsSemireal K`; for a smooth projective model S of K, K is nonreal exactly when S(ℝ) = ∅ (a real point x embeds K into the real field ℝ((z₁))((z₂)) through the completed local ring; conversely the Artin–Lang theorem). The Elman–Lam u-invariant counts forms of zero signature at every ordering; for nonreal fields it is the classical u-invariant. The zero-total-signature condition used by the Lean statements is `HasZeroTotalSignature` (§0.6), stated for quadratic forms on finite-dimensional vector spaces over a field in which 2 is invertible, and phrased through base change to real closed fields so that it needs no choice of diagonalisation.
+A field K is the function field of an integral surface over ℝ exactly when K is a finitely generated field extension of ℝ of transcendence degree 2; in Lean this is `Algebra.EssFiniteType ℝ K` together with `Algebra.trdeg ℝ K = 2`. The upper bound u ≤ 4 of Theorem 0.12 and the isotropy statements of Theorems 0.10 and 0.13 (§§7.8, 7.11, 7.13) hold for every field of the given transcendence degree over ℝ and are stated without finite generation; the other field-theoretic headline statements keep `Algebra.EssFiniteType`, which their routes through projective models use. K is nonreal when −1 is a sum of squares in K, which in Lean is `¬ IsSemireal K`; for a smooth projective model S of K, K is nonreal exactly when S(ℝ) = ∅ (a real point x embeds K into the real field ℝ((z₁))((z₂)) through the completed local ring; conversely the Artin–Lang theorem). The Elman–Lam u-invariant counts forms of zero signature at every ordering; for nonreal fields it is the classical u-invariant. The zero-total-signature condition used by the Lean statements is `HasZeroTotalSignature` (§0.6), stated for quadratic forms on finite-dimensional vector spaces over a field in which 2 is invertible, and phrased through base change to real closed fields so that it needs no choice of diagonalisation.
 
 Locators to B19 refer to the published version, printed pages 63–110. Statements are stated at the generality of the source unless a correction is recorded in "Source corrections".
 
@@ -406,12 +406,12 @@ A proof can proceed as follows.
 
 K complete for a discrete valuation; char k ≠ 2; all u_i, v_j units.
 
-Let K be a complete discretely valued field with residue field k of characteristic ≠ 2 and uniformizer π. A diagonal form q = ⟨u_1, …, u_r⟩ ⊥ π⟨v_1, …, v_s⟩ with units u_i, v_j is anisotropic over K iff both residue forms ⟨ū_1, …, ū_r⟩ and ⟨v̄_1, …, v̄_s⟩ are anisotropic over k. Applied twice, the form ⟨1, y₁, −y₂, −y₁y₂⟩ is anisotropic over the iterated Laurent series field ℂ((y₁))((y₂)). (EKM, Lemma 19.4, Lemma 19.10 and Exercise 19.15, pp. 80–82, whose §19, p. 79, attributes these results to SPR55; B19, §6.4, p. 96, citing SPR55)
+Let K be a complete discretely valued field with residue field k of characteristic ≠ 2 and uniformizer π. A diagonal form q = ⟨u_1, …, u_r⟩ ⊥ π⟨v_1, …, v_s⟩ with units u_i, v_j is anisotropic over K iff both residue forms ⟨ū_1, …, ū_r⟩ and ⟨v̄_1, …, v̄_s⟩ are anisotropic over k. Applied twice, the form ⟨1, y₁, −y₂, −y₁y₂⟩ is anisotropic over the iterated Laurent series field ℂ((y₁))((y₂)). (EKM, Lemma 19.4, p. 80, for the direction "an isotropic residue form makes q isotropic", which uses completeness; EKM, Lemma 19.5, p. 80, for the direction "anisotropic residue forms make q anisotropic", valid over any discrete valuation ring; EKM, Lemma 19.10 and Exercise 19.15, pp. 81–82, for the Witt-ring form; EKM §19, p. 79, attributes these results to SPR55; B19, §6.4, p. 96, citing SPR55)
 
 A proof can proceed as follows.
 
-1. If a residue form is isotropic, Hensel's lemma (completeness, char k ≠ 2) lifts a nonsingular zero to a zero of the corresponding unit form, so q is isotropic.
-2. Conversely, let q(x) = 0 with x = (x′, x″) primitive (all coordinates in the valuation ring O, one of them a unit), so that q₁(x′) + π q₂(x″) = 0 for q₁ = ⟨u_1, …, u_r⟩ and q₂ = ⟨v_1, …, v_s⟩. If some coordinate of x′ is a unit, reduction modulo π gives q̄₁(x̄′) = 0 with x̄′ ≠ 0. Otherwise x′ = π y′ with y′ integral, so π² q₁(y′) + π q₂(x″) = 0, hence q₂(x″) + π q₁(y′) = 0 with a unit coordinate in x″, and reduction gives q̄₂(x̄″) = 0 with x̄″ ≠ 0. So an isotropic q has at least one isotropic residue form; together with step 1, q is anisotropic iff both residue forms are.
+1. If a residue form is isotropic, Hensel's lemma (completeness, char k ≠ 2) lifts a nonsingular zero to a zero of the corresponding unit form, so q is isotropic (EKM Lemma 19.4).
+2. Conversely, let q(x) = 0 with x = (x′, x″) primitive (all coordinates in the valuation ring O, one of them a unit), so that q₁(x′) + π q₂(x″) = 0 for q₁ = ⟨u_1, …, u_r⟩ and q₂ = ⟨v_1, …, v_s⟩. If some coordinate of x′ is a unit, reduction modulo π gives q̄₁(x̄′) = 0 with x̄′ ≠ 0. Otherwise x′ = π y′ with y′ integral, so π² q₁(y′) + π q₂(x″) = 0, hence q₂(x″) + π q₁(y′) = 0 with a unit coordinate in x″, and reduction gives q̄₂(x̄″) = 0 with x̄″ ≠ 0. So an isotropic q has at least one isotropic residue form (EKM Lemma 19.5, where completeness is not needed); together with step 1, q is anisotropic iff both residue forms are.
 3. The Witt-ring form: the two residue homomorphisms give a split exact sequence identifying W(K) with W(k) ⊕ W(k).
 4. For ℂ((y₁))((y₂)): write ⟨1, y₁⟩ ⊥ (−y₂)⟨1, y₁⟩; both residue forms are ⟨1, y₁⟩ up to sign over ℂ((y₁)), which is anisotropic by the same theorem since ⟨1⟩ is anisotropic over ℂ.
 
@@ -947,15 +947,17 @@ Let S be a connected smooth projective surface over ℂ and α ∈ Br(S) ⊂ Br(
 
 A proof can proceed as follows.
 
-1. Apply §2.7 with two consecutive large integers d, d + 1: there are smooth T ∈ |dnH| and T′ ∈ |(d+1)nH| on which α vanishes.
-2. Their function fields are splitting fields of α of degrees dn and (d+1)n over ℂ(S), so ind(α) divides both (§0.12), hence divides n.
+1. Put n = per(α). §2.7 holds for every d beyond some bound; fix such a d, so that it holds for d + 1 as well. The splitting loci of §2.7 are dense in the nonempty spaces B_d(ℂ) and `B_{d+1}(ℂ)`, so there are b ∈ B_d(ℂ) and b′ ∈ `B_{d+1}(ℂ)` with p_b*α = 0 and `p_{b′}*α` = 0.
+2. Over the generic point of S, the surface T_b meets ℙ¹ over ℂ(S) in the zero scheme of a nonzero binary form of degree dn, a finite ℂ(S)-scheme of length dn (§2.1). As T_b is smooth this scheme is reduced, so it is Spec(L₁ × ⋯ × L_r), where the L_i are the function fields of the irreducible components of T_b dominating S and the degrees [L_i : ℂ(S)] add up to dn. The image of α in Br(L_i) is the restriction of p_b*α = 0 to the generic point of a component, so each L_i is a finite splitting field of α; by §0.12 ind(α) divides every [L_i : ℂ(S)], hence their sum dn. The same reasoning for b′ gives ind(α) | (d + 1)n, so ind(α) divides gcd(dn, (d + 1)n) = n.
 3. per(α) divides ind(α) (§0.12), so ind(α) = n.
 
 **Checks.**
 
-- For S an Enriques surface over ℂ and α the nonzero class of Br(S) ≅ ℤ/2, ind(α) = 2.
+- For S an Enriques surface over ℂ and α the nonzero class of Br(S) ≅ ℤ/2, ind(α) = 2: the two degrees are 2d and 2d + 2, with gcd 2.
+- One degree alone does not suffice: for that Enriques class and d = 2 the splitting member gives only ind(α) | 4, which also allows 4; the coprime multipliers d and d + 1 bring the bound down to n.
+- Smoothness of the member is what makes the degrees of the dominating components add up to dn: for α = 0 the nonreduced divisor 2T₀ with T₀ ∈ |H| lies in |2H|, its generic fibre has length 2, yet its only component has function field of degree 1 over ℂ(S).
 
-*Needs:* §2.7; §0.12.
+*Needs:* §2.7; §2.1; §0.12.
 
 ### 2.9 De Jong's period-index theorem in characteristic zero
 
@@ -2085,18 +2087,21 @@ A proof can proceed as follows.
 
 ### 7.11 Quadratic forms of rank five over surfaces without real points
 
-S(ℝ) = ∅, so ℝ(S) is nonreal (no orderings) on a smooth projective model, and the Elman–Lam invariant is the classical one.
+K nonreal (no orderings), so its Elman–Lam invariant is the classical one; K need not be finitely generated over ℝ. For K = ℝ(S) with S an integral surface over ℝ and S(ℝ) = ∅, ℝ(S) is nonreal.
 
-Let K be a field finitely generated of transcendence degree 2 over ℝ in which −1 is a sum of squares; for instance K = ℝ(S) for an integral surface S over ℝ with S(ℝ) = ∅. Every quadratic form over K on a vector space of dimension ≥ 5 is isotropic (Lean: `not_anisotropic_of_not_isSemireal`). (B19, Theorem 0.10, p. 66; BCR, §4.1, Artin–Lang homomorphism theorem (pp. 85–87))
+Let K be a field extension of ℝ of transcendence degree 2, not necessarily finitely generated, in which −1 is a sum of squares; for instance K = ℝ(S) for an integral surface S over ℝ with S(ℝ) = ∅, the case of B19's Theorem 0.10. Every quadratic form over K on a vector space of dimension ≥ 5 is isotropic (Lean: `not_anisotropic_of_not_isSemireal`). (B19, Theorem 0.10, p. 66, for K = ℝ(S), and §6.4, p. 95, for its deduction from Theorem 0.12, which holds for every field of transcendence degree 2 over ℝ; BCR, §4.1, Artin–Lang homomorphism theorem (pp. 85–87))
 
 A proof can proceed as follows.
 
-1. If K = ℝ(S) with S(ℝ) = ∅, then K is nonreal: by the Artin–Lang theorem the function field of an integral real variety is real iff the variety has a smooth real point, and S has no real points at all.
-2. For nonreal K the zero-total-signature condition is empty (§0.6), so §7.8 says that every quadratic form of dimension ≥ 5 is isotropic.
+1. K is nonreal, so it has no orderings (§0.1) and the zero-total-signature condition is empty (§0.6); §7.8, which asks only for transcendence degree 2, says that every quadratic form over K of dimension ≥ 5 is isotropic.
+2. For K = ℝ(S) with S(ℝ) = ∅, K is nonreal: by the Artin–Lang theorem the function field of an integral real variety is real iff the variety has a smooth real point, and S has no real points at all.
 
 **Checks.**
 
 - Over ℝ(x, y, z | x² + y² + z² = −1), ⟨1, 1, 1, 1, a⟩ is isotropic for every a.
+- Finite generation is not used: an algebraic closure of ℝ(x, y) has transcendence degree 2 over ℝ, contains √−1 and is not finitely generated over ℝ, and every form of dimension ≥ 2 over it is isotropic, as §7.8 gives for every nonreal field of transcendence degree 2.
+- Nonreality cannot be dropped: over ℝ(x, y) the form ⟨1, 1, 1, 1, 1⟩ is anisotropic, being positive at every ordering.
+- Transcendence degree 2 cannot be raised: over the nonreal field ℂ(x, y, z) the eight-dimensional form ⟨1, x⟩ ⊗ ⟨1, y⟩ ⊗ ⟨1, z⟩ is anisotropic, by Springer's theorem (§0.10) applied three times in ℂ((x))((y))((z)).
 
 *Needs:* §7.8; §0.6; §0.1.
 
@@ -2122,19 +2127,22 @@ A proof can proceed as follows.
 
 ### 7.13 Degree-four del Pezzo surfaces over real curves without real points
 
-A degree-4 del Pezzo surface over a field F is a smooth complete intersection of two quadrics in ℙ⁴_F by §7.12.
+A degree-4 del Pezzo surface over a field F is a smooth complete intersection of two quadrics in ℙ⁴_F by §7.12. K nonreal of transcendence degree 1 over ℝ, not necessarily finitely generated.
 
-Let K be a field finitely generated of transcendence degree 1 over ℝ in which −1 is a sum of squares; for instance K = ℝ(C) for an integral curve C over ℝ with C(ℝ) = ∅. Any two quadratic forms q₁, q₂ on a K-vector space of dimension ≥ 5 have a common nonzero zero (Lean: `exists_common_zero_of_not_isSemireal`). Consequently, for C an integral curve over ℝ with C(ℝ) = ∅, every del Pezzo surface of degree 4 over ℝ(C) has an ℝ(C)-rational point. (B19, Theorem 0.13 and its deduction from Theorem 0.10 by Amer–Brumer, §0.5, p. 66)
+Let K be a field extension of ℝ of transcendence degree 1, not necessarily finitely generated, in which −1 is a sum of squares; for instance K = ℝ(C) for an integral curve C over ℝ with C(ℝ) = ∅. Any two quadratic forms q₁, q₂ on a K-vector space of dimension ≥ 5 have a common nonzero zero (Lean: `exists_common_zero_of_not_isSemireal`). Consequently every del Pezzo surface of degree 4 over K has a K-rational point; for K = ℝ(C) with C(ℝ) = ∅ this is B19's Theorem 0.13. (B19, Theorem 0.13 and its deduction from Theorem 0.10 by Amer–Brumer, §0.5, p. 66)
 
 A proof can proceed as follows.
 
-1. Write the surface as {q₁ = q₂ = 0} ⊂ ℙ⁴ over F = ℝ(C) (§7.12).
-2. K(t) is finitely generated of transcendence degree 2 over ℝ and nonreal (for K = ℝ(C), it is ℝ(C × ℙ¹)), so q₁ + tq₂ is isotropic over K(t) by §7.11.
-3. Amer–Brumer (§0.11) gives a common nonzero zero of q₁, q₂ over K; on the model of step 1 it is an ℝ(C)-rational point.
+1. Write the surface as {q₁ = q₂ = 0} ⊂ ℙ⁴ over K (§7.12).
+2. The rational function field K(t) has transcendence degree 2 over ℝ and is nonreal, an expression of −1 as a sum of squares in K remaining one in K(t) (for K = ℝ(C), K(t) = ℝ(C × ℙ¹)); so q₁ + tq₂ is isotropic over K(t) by §7.11.
+3. Amer–Brumer (§0.11) gives a common nonzero zero of q₁, q₂ over K; on the model of step 1 it is a K-rational point.
 
 **Checks.**
 
 - When C is the anisotropic conic, this is equivalent to the real integral Hodge conjecture for 1-cycles on degree-4 del Pezzo fibrations over C (BW20II, Proposition 8.3).
+- Finite generation is not used: over an algebraic closure of ℝ(x), two quadratic forms in N ≥ 3 variables always have a common nonzero zero, since two quadrics in a projective space of dimension N − 1 ≥ 2 over an algebraically closed field meet.
+- Nonreality cannot be dropped: over ℝ(x), q₁ = ⟨1, 1, 1, 1, 1⟩ has no nonzero zero, so it shares none with any q₂.
+- Transcendence degree 1 cannot be raised: over the nonreal field ℂ(x, y), q₁ = ⟨1, x, y, xy, 0⟩ and q₂ = ⟨0, 0, 0, 0, 1⟩ on ℂ(x, y)⁵ have no common nonzero zero, since q₂ = 0 forces the last coordinate to vanish and ⟨1, x, y, xy⟩ is anisotropic (Springer's theorem, §0.10, applied twice).
 
 *Needs:* §7.11; §0.11; §7.12.
 
