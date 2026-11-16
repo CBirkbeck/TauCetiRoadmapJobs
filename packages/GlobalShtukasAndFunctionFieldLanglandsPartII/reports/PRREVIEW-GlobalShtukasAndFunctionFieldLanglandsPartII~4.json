@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GlobalShtukasAndFunctionFieldLanglandsPartII~4",
+  "head": "eeebf9a947fbb96a12be227335c930b7e34b9e93",
+  "pr": 1845,
+  "folder": "GlobalShtukasAndFunctionFieldLanglandsPartII",
+  "date": "2026-11-15",
+  "findings": 3,
+  "blocking": 2,
+  "notes": "incremental re-review of 136 changed lines since 9a1ad06, plus the pull request's title and description. The diff is a pure regrouping: 22 headings demoted to bold run-in titles with byte-identical bodies, 11 group headings and 11 added paragraphs; every consumer claim of the 11 paragraphs checked against the Needs lines and section texts (exact), every summary against the section statements. Findings: R01 (P2) 15 citations of SmoothRepresentationsOfLocalGroupsPartII Layer 5 on 10 lines use the numbering before its head 9228cb0 (5.22-5.28 gone; old 5.23-5.28 are 5.16-5.21); R02 (P2) section 8.0 proves again the recognition theorem owned by LieHighestWeightPartII 5.5, opened since and earlier in the merge order; R03 (P3) the description says the roadmap builds the Bessel companion, which the head imports from KloostermanSheavesAndBesselIsocrystals. R01 and R02 come from supplier changes after the previous review, not from this diff. Gate re-run OK (all scanners 0; worker build 0); depcheck 236 roadmaps, 2241 edges, 0 problems; lake env lean on Suggested.lean exits 0 with no output (declares nothing); outside-folder diff empty. Sample: 5 locators re-read at st 4018, ghs 408, ch26 372/609/1549 for the retitled sampled sections. KloostermanSheavesAndBesselIsocrystals citations now resolved at its open head through its table of former labels (15/15 slugs). Adversarial table: 11 rows with computed values. Source independence: 22 changed passages against the cached sources, none shared.",
+  "text": "e7c149e63c74a249"
+ }
+}
