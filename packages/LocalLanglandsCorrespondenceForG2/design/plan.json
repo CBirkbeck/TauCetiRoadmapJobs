@@ -4595,35 +4595,143 @@
       "section": "Layer 10 (trace parameters and classical comparison)",
       "needs": "For generic irreducible representations of GL_n(F), equality of the gamma factors of all twists by irreducible representations of GL_r(F), r ≤ n, implies isomorphism, so a bounded Weil–Deligne representation is determined with its monodromy by these gamma factors.",
       "neededBy": [
-        "LocalLanglandsCorrespondenceForG2:3.13",
-        "LocalLanglandsCorrespondenceForG2:2.5"
+        "LocalLanglandsCorrespondenceForG2:3.13"
       ]
     },
     {
-      "slug": "pgsp6-similitude-theta-tables",
+      "slug": "so8-spinor-norm-twist",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "Layer 3, §3.15",
+      "needs": "For split SO8 over F and a quadratic character χ of F×, viewed as a homomorphism W_F → μ2 = Z(SO8(C)), the packet of Arthur's correspondence attached to χ·φ is the twist by χ ∘ SN of the packet attached to φ, SN the spinor norm (tempered packets of §3.15, extended to all parameters by the Langlands classification).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:2.5",
+        "LocalLanglandsCorrespondenceForG2:10.3"
+      ]
+    },
+    {
+      "slug": "classical-discrete-packets",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "Layer 3, §3.15",
+      "needs": "For Sp2n (n ≥ 1) or split SO2n (n ≥ 2) over F and a bounded parameter φ, the members of the tempered packet of φ are square-integrable exactly when φ is discrete, that is, when its standard representation is a sum of pairwise non-isomorphic irreducible orthogonal representations of WD_F (GS, §3.4, p. 12).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:3.7",
+        "LocalLanglandsCorrespondenceForG2:5.1",
+        "LocalLanglandsCorrespondenceForG2:5.2",
+        "LocalLanglandsCorrespondenceForG2:6.1",
+        "LocalLanglandsCorrespondenceForG2:8.2",
+        "LocalLanglandsCorrespondenceForG2:10.2"
+      ]
+    },
+    {
+      "slug": "classical-packets-parabolic-induction",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "Layer 3, §3.15",
+      "needs": "For Sp2n or split SO2n over F, a standard Levi subgroup GL_n1 × ⋯ × GL_nr × G0 and bounded parameters φ_i of GL_ni and φ0 of G0, the tempered packet of ⨁(φ_i ⊕ φ_i∨) ⊕ φ0 is the set of irreducible constituents of the normalized inductions of rec⁻¹(φ1) ⊗ ⋯ ⊗ rec⁻¹(φr) ⊗ τ0, τ0 in the tempered packet of φ0 (for SO2n up to the outer automorphism) (GS, §3.3, p. 11; proof of Theorem 12.3, p. 36).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:3.1",
+        "LocalLanglandsCorrespondenceForG2:3.4",
+        "LocalLanglandsCorrespondenceForG2:3.6",
+        "LocalLanglandsCorrespondenceForG2:5.5",
+        "LocalLanglandsCorrespondenceForG2:9.3",
+        "LocalLanglandsCorrespondenceForG2:10.8"
+      ]
+    },
+    {
+      "slug": "classical-packets-cuspidal-support",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "Layer 3, §3.15",
+      "needs": "For Sp2n (n ≥ 1) or split SO2n (n ≥ 2) over F and a discrete parameter φ = ⨁ ρ_i ⊠ S_ai: (a) if every a_i = 1, every member of its packet is supercuspidal; (b) a member that is a subquotient of the normalized induction of a supercuspidal τ1 ⊗ ⋯ ⊗ τr ⊗ τ0 of a standard Levi subgroup satisfies ⨁(rec(τ_j) ⊕ rec(τ_j)∨) ⊕ λ0 ≅ ⨁_i ⨁_(0≤k<a_i) ρ_i|·|^((a_i−1)/2−k) as representations of W_F, λ0 the restriction of the parameter of τ0 along w ↦ (w, diag(|w|^(1/2), |w|^(−1/2))) (Mœglin; GS, proof of Proposition 6.1, pp. 21–22).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:2.0",
+        "LocalLanglandsCorrespondenceForG2:3.1",
+        "LocalLanglandsCorrespondenceForG2:6.1"
+      ]
+    },
+    {
+      "slug": "symplectic-steinberg-generic-parameter",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "Layer 3, §§3.8, 3.15, 3.17",
+      "needs": "For n ≥ 1 and a cuspidal automorphic representation of Sp2n over a number field whose component at some finite place v is the Steinberg representation, the discrete global Arthur parameter is a single unitary self-dual cuspidal representation of GL(2n+1) with b = 1, Steinberg at v, hence generic with trivial global component group (MagaardSavin, Proposition 8.2, over Q by an argument using only Arthur's classification; KS, Lemma 2.1 and Corollary 2.2; GS, proof of Lemma 12.4, p. 37, uses it at n = 3).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:1.7",
+        "LocalLanglandsCorrespondenceForG2:2.3",
+        "LocalLanglandsCorrespondenceForG2:3.1",
+        "LocalLanglandsCorrespondenceForG2:3.11",
+        "LocalLanglandsCorrespondenceForG2:6.4",
+        "LocalLanglandsCorrespondenceForG2:8.1",
+        "LocalLanglandsCorrespondenceForG2:10.6"
+      ]
+    },
+    {
+      "slug": "pgsp6-similitude-twist-rule",
       "supplier": "MetaplecticAutomorphicForms",
-      "section": "Layer 3, §§3.41–3.42",
-      "needs": "For the similitude pairs PGSp6 × PGSO8, PGSp6 × PGO6 and PGSp6 × PGO(5,1), give the parameters of the lifts of representations induced from every proper Levi of PGSp6 (with the lower-tower Jacquet–Langlands identification), the quadratic-twist rule along each lift, and the lift of each generic constituent of a Siegel-induced I3(τ) with τ discrete.",
+      "section": "Layer 3, §§3.34, 3.41–3.42",
+      "needs": "For H one of split PGSO8, split PGO6 and PGO(5,1) over F, every irreducible σ of PGSp6(F) and every quadratic character χ of F×, the similitude theta lift of σ ⊗ χ ∘ sim to H is the lift of σ twisted by χ ∘ sim_H, and χ ∘ sim_H restricts to χ ∘ det on PGL4 and to χ ∘ Nrd on PGL2(D) (GS, proof of Theorem 12.6, pp. 38–39).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:2.5",
+        "LocalLanglandsCorrespondenceForG2:10.3",
+        "LocalLanglandsCorrespondenceForG2:10.4"
+      ]
+    },
+    {
+      "slug": "pgsp6-steinberg-pgo6-vanishing",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "Layer 3, §§3.10, 3.34",
+      "needs": "The similitude theta lift of the Steinberg representation of PGSp6(F) to split PGO6(F) is zero (GS, proof of Lemma 12.5, p. 37).",
       "neededBy": [
         "LocalLanglandsCorrespondenceForG2:2.3",
-        "LocalLanglandsCorrespondenceForG2:2.5",
-        "LocalLanglandsCorrespondenceForG2:5.5",
+        "LocalLanglandsCorrespondenceForG2:8.1"
+      ]
+    },
+    {
+      "slug": "pgsp6-lower-tower-parameters",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "Layer 3, §§3.34, 3.42",
+      "needs": "If an irreducible σ of PGSp6(F) has nonzero similitude lift τ to split PGO6(F) or to PGO(5,1)(F), with φ_τ : WD_F → SL4(C) the parameter of a constituent of τ on PGL4(F), respectively on PGL2(D)(F) through the inner-form parameter, then every constituent of the restriction of σ to Sp6(F) has parameter 1 ⊕ Λ²φ_τ, and, when τ is on split PGO6, the lift of σ to split PGSO8(F) is an irreducible subquotient, with the exponents of τ′, of the normalized induction of 1 ⊗ τ′ from the parabolic with Levi the image of GL1 × GSO6, τ′ a constituent of τ on PGSO6(F) (GS, §§12.2–12.3 and proof of Theorem 12.3, pp. 34–36).",
+      "neededBy": [
         "LocalLanglandsCorrespondenceForG2:9.1",
         "LocalLanglandsCorrespondenceForG2:9.2",
-        "LocalLanglandsCorrespondenceForG2:9.3",
-        "LocalLanglandsCorrespondenceForG2:10.3",
         "LocalLanglandsCorrespondenceForG2:10.4",
         "LocalLanglandsCorrespondenceForG2:10.7"
+      ]
+    },
+    {
+      "slug": "pgsp6-pgso8-induction-principle",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "Layer 3, §§3.34, 3.41–3.42",
+      "needs": "For a proper standard parabolic P = MN of PGSp6 with M the image of GL_n1 × ⋯ × GL_nr × GSp_2n0, and σ in Irr♥(PGSp6(F)) the Langlands quotient, respectively a constituent, of the normalized induction of τ1 ⊗ ⋯ ⊗ τr ⊗ τ0 (essentially tempered with exponents in the positive chamber, respectively discrete), τ0 has nonzero similitude lift θ(τ0) to split GSO_(2n0+2)(F) and the lift of σ to split PGSO8(F) is the Langlands quotient, respectively a constituent, of the normalized induction of τ1 ⊗ ⋯ ⊗ τr ⊗ θ(τ0) from the parabolic with Levi the image of GL_n1 × ⋯ × GL_nr × GSO_(2n0+2) (GS, proof of Theorem 12.3, second bullet, p. 36).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:5.5",
+        "LocalLanglandsCorrespondenceForG2:9.3"
       ]
     },
     {
       "slug": "pgsp6-pgso8-complex-theta",
       "supplier": "MetaplecticAutomorphicForms",
       "section": "Layer 3, §3.34",
-      "needs": "For the pair PGSp6(C) × PGSO8(C) at a complex place, where the similitude and isometry correspondences coincide, the theta correspondence described on Langlands parameters (Adams–Barbasch), so that the local spin lift of a generic σ at a complex place has the parameter of the triality transform of the parameter of σ and the spin gamma identity holds there (GS, proof of Proposition 4.1(i), p. 19).",
+      "needs": "For the pair PGSp6(C) × PGSO8(C) at a complex place, where the similitude and isometry correspondences coincide, the theta correspondence described on Langlands parameters (Adams–Barbasch): the lift of a generic σ with parameter φ_σ into Spin7(C) has parameter ι ∘ φ_σ into Spin8(C), so every constituent of its pullback along f2 has the SO8(C)-valued parameter s ∘ φ_σ (GS, proof of Proposition 4.1(i), p. 19).",
       "neededBy": [
         "LocalLanglandsCorrespondenceForG2:2.3",
         "LocalLanglandsCorrespondenceForG2:2.4"
+      ]
+    },
+    {
+      "slug": "pgsp6-pgso8-archimedean-generic-theta",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "Layer 3, §§3.17, 3.34, 3.41",
+      "needs": "At a real or complex place of a number field, the similitude theta lift to split PGSO8 of every generic irreducible Casselman–Wallach representation of PGSp6 is nonzero (the archimedean case of §3.41; GS, proof of Lemma 12.5, p. 37).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:2.3",
+        "LocalLanglandsCorrespondenceForG2:8.1"
+      ]
+    },
+    {
+      "slug": "pgsp6-pgso8-global-generic-theta",
+      "supplier": "MetaplecticAutomorphicForms",
+      "section": "Layer 6, §§6.13–6.14, with §3.34",
+      "needs": "For a number field k and a cuspidal automorphic representation of PGSp6(A_k) with a nonzero Whittaker coefficient for a nondegenerate character, the global similitude theta lift to split PGSO8 has a nonzero Whittaker coefficient for a nondegenerate character, in particular is nonzero (GS, §4.3, p. 17).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:2.3"
       ]
     },
     {
@@ -4632,6 +4740,7 @@
       "section": "Layer 6, §§6.13–6.14",
       "needs": "For a cuspidal representation of PGSp6 with generic global Arthur parameter and nonzero local similitude lifts to split PGSO8 everywhere, the global similitude lift to PGSO8 is nonzero when L^S(s, std) is nonzero at s = 1, and cuspidal when the lift to PGO6 vanishes.",
       "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:2.3",
         "LocalLanglandsCorrespondenceForG2:8.1"
       ]
     },
@@ -4639,7 +4748,7 @@
       "slug": "pgsp6-shahidi-spin-factor",
       "supplier": "AutomorphicLFunctionsAndLocalFactorsPartII",
       "section": "Layer 6 (generalized local factors)",
-      "needs": "Extending gap:ramified-spin-factor of ExceptionalThetaCorrespondencesForG2 (the same Langlands–Shahidi construction from the Heisenberg parabolic of split F4 with Levi GSp6): the gamma and epsilon factors of generic representations of PGSp6(F) for the eight-dimensional spin representation of Spin7, the quadratic-twist rule, holomorphy of L(s, σ, spin) in Re s > 0 for tempered σ, and the global functional equation for globally generic cuspidal representations of PGSp6 over a number field.",
+      "needs": "Extending gap:ramified-spin-factor of ExceptionalThetaCorrespondencesForG2 (the same Langlands–Shahidi construction from the Heisenberg parabolic of split F4 with Levi GSp6): the gamma and epsilon factors of generic representations of PGSp6(F) for the eight-dimensional spin representation of Spin7, the unramified normalization (the product of the Tate factors of the eight spin characters of the Satake parameter), the quadratic-twist rule, the change-of-character rule γ(s, σ, spin, ψ_a) = |a|^(8(s−1/2)) γ(s, σ, spin, ψ), holomorphy of L(s, σ, spin) in Re s > 0 for tempered σ, and the global functional equation L^S(s, Σ, spin) = ∏_(v∈S) γ(s, Σ_v, spin, Ψ_v) L^S(1 − s, Σ∨, spin) for globally generic cuspidal Σ of PGSp6 over a number field, whose factor at an archimedean place v is the Weil-group gamma factor of s ∘ φ_v, φ_v the Langlands parameter of Σ_v.",
       "neededBy": [
         "LocalLanglandsCorrespondenceForG2:2.4",
         "LocalLanglandsCorrespondenceForG2:6.1"
@@ -4659,10 +4768,13 @@
       "slug": "poincare-weak-containment",
       "supplier": "AutomorphicFormsOnReductiveGroups",
       "section": "Layer 4",
-      "needs": "The Sakellaridis–Venkatesh Poincaré-series weak containment (Theorem 16.3.2, Remark 16.4.1) for quaternion pointwise stabilizers in Aut(O) and for generic Whittaker characters, with hyperspecial vectors outside the prescribed set and at most one further place.",
+      "needs": "The Sakellaridis–Venkatesh Poincaré-series weak containment (Theorem 16.3.2, Remark 16.4.1) for a finite set S of places, finite or archimedean, in three instances: for quaternion pointwise stabilizers in Aut(O), O totally definite over a totally real k, summands of the untwisted L2(G_D(k_v)\\G(k_v)) are weakly contained, restricted to G(k_S), in the vectors of L2_D spherical outside S and one further finite place, and outside S alone when k has a real place outside S (separation by a test function of small support at that real place, where G is compact); for a split group with a nondegenerate character psi, summands of the twisted Whittaker space L2(N(k_v)\\G(k_v), psi_v) (f(ng) = psi_v(n)f(g)) are weakly contained in the vectors of the psi-generic cuspidal spectrum with fixed supercuspidal sigma at w spherical outside S, w and one further finite place, and outside S and w alone when k has an archimedean place outside S (Ichino–Lapid–Mao, proof of Proposition 4.5); for H = Aut(D), D a central division algebra of degree three over a totally real k, the pointwise stabilizer H_e of a cubic subfield e and S the ramification set of D, summands of L2(H_e(k_v)\\H(k_v)) are weakly contained in the vectors of the cubic-period spectrum L2_e fixed by a maximal compact subgroup at every real place and spherical outside S and one further finite place (GF, proof of Lemma 2.5).",
       "neededBy": [
         "LocalLanglandsCorrespondenceForG2:1.3",
-        "LocalLanglandsCorrespondenceForG2:1.6"
+        "LocalLanglandsCorrespondenceForG2:1.4",
+        "LocalLanglandsCorrespondenceForG2:1.6",
+        "LocalLanglandsCorrespondenceForG2:2.4",
+        "LocalLanglandsCorrespondenceForG2:3.11"
       ]
     },
     {
@@ -4672,6 +4784,17 @@
       "needs": "For each of split G2(R) and split PGSp6(R) with a fixed positive system, a constant C ≥ 0 depending only on the group and the system such that every irreducible unitary Harish-Chandra module with real integral discrete-series infinitesimal character Λ and ⟨Λ, α∨⟩ > C for every positive root α is a discrete-series module (the contract ExceptionalThetaCorrespondencesForG2 declares on the same supplier under the same slug).",
       "neededBy": [
         "LocalLanglandsCorrespondenceForG2:1.6",
+        "LocalLanglandsCorrespondenceForG2:6.4"
+      ]
+    },
+    {
+      "slug": "regular-real-isolation",
+      "supplier": "AutomorphicFormsOnReductiveGroups",
+      "section": "Layer 2, §2.4",
+      "needs": "For each of split G2(R) and split PGSp6(R) with a fixed positive system, a constant C' ≥ 0 such that every discrete series whose infinitesimal character Λ satisfies ⟨Λ, α∨⟩ > C' for every positive root α is an isolated point of the unitary dual for the Fell topology, and such that for every such discrete-series Λ and every nondegenerate character psi some discrete series with infinitesimal character Λ is psi-generic.",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:1.6",
+        "LocalLanglandsCorrespondenceForG2:5.2",
         "LocalLanglandsCorrespondenceForG2:6.4"
       ]
     },
@@ -4692,6 +4815,51 @@
       "neededBy": [
         "LocalLanglandsCorrespondenceForG2:5.2",
         "LocalLanglandsCorrespondenceForG2:8.2"
+      ]
+    },
+    {
+      "slug": "split-steinberg-theta-cuspidality",
+      "supplier": "ExceptionalThetaCorrespondencesForG2",
+      "section": "Layer 10, §§10.5–10.6 (global exceptional lifts)",
+      "needs": "For split G2 over a number field k and a globally generic cuspidal automorphic representation of G2(A_k) with the Steinberg representation as its component at some finite place, the global exceptional theta lift to PGSp6 (nonzero by §10.6) is cuspidal: the split-form counterpart of the Steinberg alternative of §10.5, §10.6 giving cuspidality only from a supercuspidal place with supercuspidal lift (GS, §3.4, p. 12).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:3.15"
+      ]
+    },
+    {
+      "slug": "cubic-jordan-global-theta",
+      "supplier": "ExceptionalThetaCorrespondencesForG2",
+      "section": "Layer 10 (global exceptional lifts), with Layer 5",
+      "needs": "For a totally real k, a central simple k-algebra D of degree three, H = Aut(D) as a Jordan algebra and split G2, the global theta lift in both directions for the dual pair H × G2 in the E6 attached to D, with every irreducible automorphic constituent of a nonzero lift having its local components at the finite places in the local correspondences of §§5.1 and 5.9 (GF, §2.7(b), p. 7).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:3.11"
+      ]
+    },
+    {
+      "slug": "cubic-period-global-theta",
+      "supplier": "ExceptionalThetaCorrespondencesForG2",
+      "section": "Layer 10 (global exceptional lifts), with Layer 5",
+      "needs": "For a totally real k, a central division algebra D of degree three over k, H = Aut(D), a cubic subfield e ⊂ D with pointwise stabilizer H_e, and a cuspidal representation Ξ of H(A_k) spherical at the real places with nonzero H_e-period, the global lift of Ξ (the lift of the cubic-jordan-global-theta contract) to split G2 is nonzero, cuspidal when some finite local lift θ(Ξ_v) is supercuspidal, then irreducible with the local lifts as components at the finite places, and its lift back to H is nonzero (GF, Lemma 2.5 and proof, pp. 8–9).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:3.11"
+      ]
+    },
+    {
+      "slug": "real-exceptional-theta-parameters",
+      "supplier": "ExceptionalThetaCorrespondencesForG2",
+      "section": "Layer 10, §10.7 (real infinitesimal-character matching)",
+      "needs": "At a real place: the theta lift to PGSp6(R) of the irreducible representation of highest weight lambda of compact G2 is the holomorphic discrete series with standard parameter sgn ⊕ ⨁ Ind((z/z̄)^⟨lambda+rho, alpha∨⟩) over the long positive roots alpha; and for split G2(R), spherical Howe duality for G2 × PGSp6 and (PGL3 ⋊ Z/2) × G2 with the spherical exponent (chi1, chi2, chi3) matched to the standard parameter 1 ⊕ ⨁ chi_i^(±1), respectively chi1 ⊕ chi2 ⊕ chi3; global lifts have these real components (GF, §2.7).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:3.11"
+      ]
+    },
+    {
+      "slug": "cubic-global-jacquet-langlands",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "Layer 4, §4.7a (Jacquet–Langlands correspondence)",
+      "needs": "For a central division algebra D of degree three over a number field, the global Jacquet–Langlands transfer of the discrete automorphic spectrum of D× to that of GL3, the identity at the split places; for infinite-dimensional Π′ a cuspidal transfer with the local transfer of §4.7a at the ramified places; for Π′ = χ ∘ Nrd the transfer χ ∘ det, whose ramified components have the cuspidal support of the local transfers χ_v ⊗ St3; its L-functions being cuspidal ones or L(s+1,χ)L(s,χ)L(s−1,χ), so that the Rankin–Selberg functional equation applies summand by summand (GF, §2.7(b)).",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:3.11"
       ]
     }
   ],
