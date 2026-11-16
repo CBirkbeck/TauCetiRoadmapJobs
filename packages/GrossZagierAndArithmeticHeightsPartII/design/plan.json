@@ -6556,24 +6556,26 @@
       "slug": "ramified-hermitian-densities",
       "supplier": "GeometryOfNumbersAndQuadraticArithmetic",
       "section": "§3.2",
-      "needs": "§3.2 extended to ramified quadratic F/F₀ of odd residue characteristic, namely the local density Den(M,L), its vanishing when χ(M) ≠ χ(L), its interpolation polynomials in X = q^(−s) for the trace-dual hyperbolic lattices of the exotic setting and in X = q^(−2k) for the hermitian-sharp hyperbolic plane of the Krämer setting, and their finite overlattice expansions.",
+      "needs": "§3.2 extended to ramified quadratic F/F₀ of odd residue characteristic, namely the local density Den(M,L), its vanishing whenever L ⊗ F admits no isometric embedding into M ⊗ F (in particular for nondegenerate M and L of equal rank with χ(M) ≠ χ(L); for rank(M) > rank(L) different signs do not force vanishing), its interpolation polynomials in X = q^(−s) for the trace-dual hyperbolic lattices of the exotic setting and in X = q^(−2k) for the hermitian-sharp hyperbolic plane of the Krämer setting, and their finite overlattice expansions.",
       "neededBy": [
         "6.1",
         "6.3",
         "8.1",
-        "8.2"
+        "8.2",
+        "8.6"
       ]
     },
     {
       "slug": "nonaffine-formal-filtration-product",
       "supplier": "SchemeKTheoryOperationsPartII",
-      "section": "FK.2",
-      "needs": "FK.2 extended so that on a regular locally noetherian formal scheme exhausted by quasi-compact opens, such as a unitary Rapoport–Zink space, the codimension filtration on supported K₀ is rationally multiplicative for the supported cup product, compatibly with the noetherian exhaustion.",
+      "section": "§2.4",
+      "needs": "§2.4 extended so that on a regular locally noetherian formal scheme exhausted by quasi-compact opens, such as a unitary Rapoport–Zink space, the codimension filtration on supported K₀ is rationally multiplicative for the supported cup product, compatibly with the noetherian exhaustion.",
       "neededBy": [
         "0.6",
         "1.1",
         "6.2",
-        "7.6"
+        "7.6",
+        "8.6"
       ]
     },
     {
@@ -6586,15 +6588,58 @@
       ]
     },
     {
-      "slug": "jr-afl-local-inputs",
+      "slug": "jr-zhang-formulation-fl",
       "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
       "section": "Layers 2 and 4",
-      "needs": "for an unramified quadratic extension of p-adic fields of odd residue characteristic, the passage from the GL_n(F₀)-group formulation, with the space X_n of invertible hermitian matrices on the unitary side, and the augmented Lie-algebra formulation of EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5, and from the matching, η-twisted orbital distributions and smooth transfer that that roadmap requests from EndoscopicTransferAndUnitaryTraceComparison, to Zhang's formulations on S_n = {γ ∈ GL_n(F) : γγ̄ = 1} under GL_(n−1)(F₀) and on S_(n−1) × (F₀^(n−1) ⊕ (F₀^(n−1))*) under GL_(n−1)(F₀): regular semisimple matching with U(V_n) under U(V_(n−1)) and with U(V_(n−1)) × V_(n−1), the transfer factors ω(γ) = η̃(det(γ)^(−⌊n/2⌋)·det(γ^i e)_(i=0)^(n−1)) and ω(γ,u′) = η̃(det(γ)^(−⌊(n−1)/2⌋)·det(γ^i u₁)_(i=0)^(n−2)), smooth transfer compatible with the partial Fourier transform, and the Jacquet–Rallis fundamental lemma for the unit test functions in both of Zhang's versions for every residue cardinality q, including q ≤ n.",
+      "needs": "for an unramified quadratic extension of p-adic fields of odd residue characteristic, the passage from the GL_n(F₀)-group formulation, with the space X_n of invertible hermitian matrices on the unitary side, and the augmented Lie-algebra formulation of EndoscopicTransferAndUnitaryTraceComparisonPartII §§4.4–4.5, from the matching and η-twisted orbital distributions that that roadmap requests from EndoscopicTransferAndUnitaryTraceComparison, and from the fundamental lemma in the homogeneous formulation that GanGrossPrasadUnitaryGroups requests from it (gap:relative-fundamental-lemma), to Zhang's formulations on S_n = {γ ∈ GL_n(F) : γγ̄ = 1} under GL_(n−1)(F₀) and on S_(n−1) × (F₀^(n−1) ⊕ (F₀^(n−1))*) under GL_(n−1)(F₀): regular semisimple matching with U(V_n) under U(V_(n−1)) and with U(V_(n−1)) × V_(n−1), the transfer factors ω(γ) = η̃(det(γ)^(−⌊n/2⌋)·det(γ^i e)_(i=0)^(n−1)) and ω(γ,u′) = η̃(det(γ)^(−⌊(n−1)/2⌋)·det(γ^i u₁)_(i=0)^(n−2)) with the natural unramified extension η̃(x) = (−1)^(v_F(x)) of η, and the Jacquet–Rallis fundamental lemma for the unit test functions in both of Zhang's versions for every residue cardinality q, including q ≤ n, in the form that the unit function transfers to the pair whose component on the nonsplit unitary group is zero, so that its normalized orbital integrals vanish at the regular semisimple elements matching the nonsplit group.",
       "neededBy": [
         "9.3",
         "9.5",
         "9.7",
+        "9.8",
         "14.1"
+      ]
+    },
+    {
+      "slug": "jr-smooth-transfer-existence",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "Layers 2 and 4",
+      "needs": "for every finite extension F₀ of ℚ_p, p = 2 included, and every quadratic étale F₀-algebra F, a ramified or unramified field or the split algebra F₀ × F₀ (where Zhang's comparison also asks the test functions to match in the elementary way of Z Remark 13.2, p. 63), with Zhang's regular semisimple matching and the transfer factors of gap:jr-zhang-formulation-fl formed with a fixed extension η̃ of η to F^×, the existence of smooth transfer in both of Zhang's formulations (Z Definitions 2.1–2.2, p. 10), in both directions, so that every Schwartz function on Zhang's side has a transfer to the unitary side for the hermitian spaces of the given dimension and every Schwartz function on the unitary side for one hermitian space, extended by zero to the others, has a transfer on Zhang's side, deduced from the existence of smooth transfer in the homogeneous formulation that GanGrossPrasadUnitaryGroups requests from it (gap:relative-finite-transfer).",
+      "neededBy": [
+        "14.1",
+        "14.4"
+      ]
+    },
+    {
+      "slug": "jr-transfer-weil-compatibility",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "Layers 2 and 4",
+      "needs": "for every F₀ and F as in gap:jr-smooth-transfer-existence, the compatibility of smooth transfer in Zhang's semi-Lie formulation with the partial Fourier transform in the vector variable, so that ω(h)Φ′ matches ω(h)Φ for every h ∈ SL₂(F₀) whenever Φ′ matches Φ, where ω(h) denotes the local Weil representations of the two sides (Z Appendix A, Theorem A.1, p. 73).",
+      "neededBy": [
+        "14.1"
+      ]
+    },
+    {
+      "slug": "relative-fundamental-lemma",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "Layers 2 and 4",
+      "needs": "for every unramified quadratic extension F/F₀ of nonarchimedean local fields of characteristic zero, every residue characteristic included, and every m ≥ 1, the Jacquet–Rallis fundamental lemma in the homogeneous formulation, with the transfer factor and quotient measures of the request GanGrossPrasadUnitaryGroups makes under the same name, namely that the characteristic function of Res_(F/F₀)(GL_m × GL_(m+1))(O_F₀) matches the characteristic function of the hyperspecial subgroup of U(W) × U(W ⊕ ⟨1⟩) stabilizing a self-dual lattice Λ ⊂ W and Λ ⊕ O_F·e, where e spans ⟨1⟩ and has norm 1, for the m-dimensional hermitian space W containing a self-dual lattice, and zero on the other m-dimensional hermitian space, together with its Lie-algebra form in every rank and, for the split algebra F₀ × F₀, the elementary spherical base-change transfer.",
+      "neededBy": [
+        "9.3",
+        "9.5",
+        "9.7",
+        "9.8",
+        "14.1"
+      ]
+    },
+    {
+      "slug": "relative-finite-transfer",
+      "supplier": "EndoscopicTransferAndUnitaryTraceComparison",
+      "section": "Layers 2 and 4",
+      "needs": "for every finite extension F₀ of ℚ_p, p = 2 included, every quadratic étale F₀-algebra F and every m ≥ 1, the existence of smooth transfer in the homogeneous Jacquet–Rallis formulation in both directions, with the transfer factor and quotient measures of the request GanGrossPrasadUnitaryGroups makes under the same name, so that every compactly supported smooth function on Res_(F/F₀)(GL_m × GL_(m+1))(F₀) has a matching family on the groups U(W) × U(W ⊕ ⟨1⟩) over the m-dimensional hermitian spaces W and every compactly supported smooth function on one U(W) × U(W ⊕ ⟨1⟩), extended by zero to the others, has a matching function on Res_(F/F₀)(GL_m × GL_(m+1))(F₀).",
+      "neededBy": [
+        "14.1",
+        "14.4"
       ]
     }
   ],
