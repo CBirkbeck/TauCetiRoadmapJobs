@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuantumEnvelopingAlgebras~9",
+  "head": "a6737a5694c79f55c6ac02c9bb4d94e806c6037c",
+  "pr": 2363,
+  "folder": "QuantumEnvelopingAlgebras",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 119 changed lines since c1f4398: the change deletes the QuantumPlaneLattice section and its docstring paragraph from Suggested.lean, repairing the previous R01; README unchanged. Checked: gate re-run (all checks 0, OK), depcheck 0 problems, elaboration with 16 sorry warnings only, remaining uses of gaussian/specialize (quantumLucas, instances computed at orders 3 and 4), README names against the Lean, the pull-request description against the head (70 declarations, 16 theorems), sampled targets 8.1-8.2 (README untouched). Two points for the human reviewers (quantum Casimir ownership wording in KacMoody; STATUS.md names absent from the pin).",
+  "text": "7f989c78a196cd65"
+ }
+}
