@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsHighDimensional~3",
+  "head": "fd782b0ab7743d49354bac9657652cb86dd5a9f3",
+  "pr": 2396,
+  "folder": "MathematicalStatisticsHighDimensional",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 57 changed lines since 3d248d3. All five previous findings (R01-R05) repaired. Recomputed the corrected exponent min(1, νδ², ν²δ²) of 8.2 with its proof route (reduction to δ ≤ √2, ‖P‖ ≤ ν/4, the three exponents) and its three Checks; recomputed the eight new Checks (designCol, Akaike, Schwarz, supportPattern, glassoObjective); resolved the added Tau Ceti citation at the pin. Gate passes with the build; depcheck 0 problems; Suggested.lean elaborates with 76 sorry warnings only; #check of spiked_leading_eigenvector compared with the README. Pull request text agrees with the head. Wainwright2019 not readable: the printed form of Cor 8.7 is under Not verifiable and flagged for the human reviewers.",
+  "text": "8217dd5edf9b0c0c"
+ }
+}
