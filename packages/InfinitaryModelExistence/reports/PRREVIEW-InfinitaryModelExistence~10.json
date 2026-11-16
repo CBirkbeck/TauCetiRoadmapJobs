@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-InfinitaryModelExistence~10",
+  "head": "bd6b3b7c989b57abe05783af4fa41b5db24802c1",
+  "pr": 1615,
+  "folder": "InfinitaryModelExistence",
+  "date": "2026-11-16",
+  "findings": 6,
+  "blocking": 0,
+  "notes": "incremental re-review of 69 changed lines since 92ff6a6. Checked: the three P2 findings of the previous review (countable fragment in the 5.2 corollary, the substBounds occurrence inclusions, the polarity laws moved to 7.3) are repaired, each recomputed on instances and against the pinned Tau Ceti declarations; the six P3 findings (gate name Fragment.generated_countable, implemented results kept as targets, two unused Lean definitions, no Checks for the infinitary toFormula, README shape, description) are not or only partly repaired and are carried. Gate rerun: FAIL with readme-ids-missing=1 only; depcheck 0 problems; Suggested.lean elaborates with seven sorry warnings and nothing else; marker2013 Theorem 1.31 and Exercise 1.32 reopened for the changed corollary; seeded sample checked where it falls in the changed passages (0.2, 5.2, 7.3).",
+  "text": "83f25a8a7647a496"
+ }
+}
