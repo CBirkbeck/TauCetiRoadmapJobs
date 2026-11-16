@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PCurvature~19",
+  "head": "4201786837d86eecf47004854bb8e7f839515bc8",
+  "pr": 1747,
+  "folder": "PCurvature",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 8 changed lines since e8f959c: one reworded sentence of the README's Provenance section (lines 743-747), checked against the cited repository's root README and lean-toolchain at commit c496df0 (StacksCore human-reviewed, StacksFrontier written by AI agents, v4.35.0, Apache-2.0) and found supported; no statement, heading, supplier or Lean declaration changed; no seeded-sample target falls in the change; adversarial rows computed for 2.0 kaehlerD_eq_zero_iff and apply_eq_zero_of_mem_frobeniusImage at p = 3; description read against the head, no sentence contradicted; previous report had no finding; gate passes (every check 0, build=0); depcheck 251 roadmaps, 0 problems; lake env lean on Suggested.lean exit 0 with 11 sorry warnings only; nothing changed outside the folder.",
+  "text": "3425e1cb50c51486"
+ }
+}
