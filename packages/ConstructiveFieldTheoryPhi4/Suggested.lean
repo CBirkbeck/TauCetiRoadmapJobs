@@ -32,11 +32,11 @@ Stated here:
   Simon–Lieb inequality for the Griffiths–Simon class, the Messager–Miracle-Solé reflection
   inequality, the uniform second-moment bound for φ⁴ measures and Newman's exponential bound;
 * Layer 4: the free-boundary infinite-volume state, the uniform exponential moments of φ⁴ systems,
-  the high-temperature lower bound on the Ising critical point, and the axis monotonicity of the
-  free-boundary two-point function;
+  the high-temperature bound on the Ising susceptibility with the resulting lower bound on the
+  Ising critical point, and the axis monotonicity of the free-boundary two-point function;
 * Layer 5: reflection positivity of the periodic measure through vertex and edge hyperplanes, the
-  chessboard estimate, Gaussian domination, the infrared bound and long-range order of the Ising
-  model in dimension at least three;
+  chessboard estimate in dimension at least one, Gaussian domination, the infrared bound and
+  long-range order of the Ising model in dimension at least three;
 * Layer 6: Gaussian processes with a prescribed positive semidefinite kernel on an arbitrary index
   type, and Wick's law as a characterisation of centred Gaussian random fields;
 * Layer 7: the existence, symmetry and `W_d`-invariance of the reachable random field of a
@@ -409,12 +409,16 @@ theorem phi4_uniform_expMoment (d : ℕ) (J : Sym2 (Fin d → ℤ) → ℝ) (hJ 
       ∫ ω, Real.exp (a * |ω x|) ∂boxGibbs d J (phi4Measure lam b) R ≤ C := by
   sorry
 
-/-- **4.3, the high-temperature bound.** The critical point of the nearest-neighbour Ising model on
-`ℤ^d` is at least `1/(2d)`: for `0 ≤ β < 1/(2d)` the susceptibility is at most `1/(1 − 2dβ)`
-(from the Simon–Lieb inequality of §3.5 with `Λ` a single site, in the finite-volume form of
-Aizenman–Duminil-Copin, Lemma 5.7 with footnote 5, p. 30; README §4.3). -/
+/-- **4.3, the high-temperature bound.** For the nearest-neighbour Ising model on `ℤ^d` and every
+`β ≥ 0` with `2dβ < 1`, the susceptibility at coupling `β J^{nn}` is at most `1/(1 − 2dβ)`; in
+particular the critical point is at least `1/(2d)` (from the Simon–Lieb inequality of §3.5 with `Λ`
+a single site, in the finite-volume form of Aizenman–Duminil-Copin, Lemma 5.7 with footnote 5,
+p. 30; README §4.3). -/
 theorem criticalPoint_ising_ge (d : ℕ) :
-    ((2 * d : ℝ≥0∞))⁻¹ ≤ criticalPoint d (nnCoupling d) isingMeasure := by
+    (∀ β : ℝ≥0, 2 * (d : ℝ) * β < 1 →
+        susceptibility d (fun e ↦ (β : ℝ) * nnCoupling d e) isingMeasure ≤
+          ENNReal.ofReal (1 - 2 * (d : ℝ) * β)⁻¹) ∧
+      ((2 * d : ℝ≥0∞))⁻¹ ≤ criticalPoint d (nnCoupling d) isingMeasure := by
   sorry
 
 /-- **4.4, axis monotonicity of the two-point function.** For the nearest-neighbour coupling of
@@ -480,11 +484,11 @@ theorem reflectionPositive (d L : ℕ) [NeZero L] {J : ℝ} (hJ : 0 ≤ J) (ρ :
       ∂gibbsMeasure (torusCoupling d L J) ρ := by
   sorry
 
-/-- **5.2, the chessboard estimate.** For `J ≥ 0`, an admissible single-site probability measure and
-bounded measurable real functions `f_v`, `v ∈ T_L`,
+/-- **5.2, the chessboard estimate.** For `d ≥ 1`, so that `|T_L| = (2L)^d` is even, `J ≥ 0`, an
+admissible single-site probability measure and bounded measurable real functions `f_v`, `v ∈ T_L`,
 `|⟨Π_v f_v(φ_v)⟩|^{|T_L|} ≤ Π_w ⟨Π_v f_w(φ_v)⟩` (Peled–Spinka, Proposition 2.16;
-README §5.2). -/
-theorem chessboard (d L : ℕ) [NeZero L] {J : ℝ} (hJ : 0 ≤ J) (ρ : Measure ℝ)
+README §5.2). On the one-point torus (`d = 0`) the estimate fails for `f ≡ −1`. -/
+theorem chessboard (d L : ℕ) (hd : 1 ≤ d) [NeZero L] {J : ℝ} (hJ : 0 ≤ J) (ρ : Measure ℝ)
     [IsProbabilityMeasure ρ] (hρ : IsAdmissible ρ) (f : (Fin d → ZMod (2 * L)) → ℝ → ℝ)
     (hf : ∀ v, Measurable (f v)) (hfb : ∃ C, ∀ v t, |f v t| ≤ C) :
     |∫ φ, ∏ v, f v (φ v) ∂gibbsMeasure (torusCoupling d L J) ρ| ^
