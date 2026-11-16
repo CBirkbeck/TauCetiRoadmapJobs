@@ -4612,9 +4612,10 @@
       "slug": "symplectic-steinberg-generic-parameter",
       "supplier": "ModularityAndLanglandsExtensions",
       "section": "Layer 3, §§3.8, 3.15, 3.17",
-      "needs": "For n ≥ 1 and a discrete automorphic representation of Sp2n over a number field whose component at some finite place v is the Steinberg representation, the discrete global Arthur parameter is a single unitary self-dual cuspidal representation of GL(2n+1) with b = 1, Steinberg at v, hence generic with trivial global component group (GS, proof of Lemma 12.4, p. 37, uses it at n = 3).",
+      "needs": "For n ≥ 1 and a cuspidal automorphic representation of Sp2n over a number field whose component at some finite place v is the Steinberg representation, the discrete global Arthur parameter is a single unitary self-dual cuspidal representation of GL(2n+1) with b = 1, Steinberg at v, hence generic with trivial global component group (MagaardSavin, Proposition 8.2, over Q by an argument using only Arthur's classification; KS, Lemma 2.1 and Corollary 2.2; GS, proof of Lemma 12.4, p. 37, uses it at n = 3).",
       "neededBy": [
         "LocalLanglandsCorrespondenceForG2:1.7",
+        "LocalLanglandsCorrespondenceForG2:2.3",
         "LocalLanglandsCorrespondenceForG2:3.1",
         "LocalLanglandsCorrespondenceForG2:3.11",
         "LocalLanglandsCorrespondenceForG2:6.4",
