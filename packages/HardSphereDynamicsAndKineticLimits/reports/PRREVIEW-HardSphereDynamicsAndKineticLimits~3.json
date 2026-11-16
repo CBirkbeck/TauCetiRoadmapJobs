@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HardSphereDynamicsAndKineticLimits~3",
+  "head": "53720278c25a055aa69bde327b2afc89222a6b3f",
+  "pr": 2448,
+  "folder": "HardSphereDynamicsAndKineticLimits",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review of an unchanged head (previous review: accepted, no findings). Gate: every check 0. Depcheck: 258 roadmaps, 2463 edges, 0 problems. Elaboration: 11 sorry warnings only; one-tactic probe closes none of the 11 theorems; 64 Mathlib names checked by #check and 10 Tau Ceti names by file and line. Sources: 75 line ranges of GST2013, BGSS2023 and DengHaniMa2024 read, covering the 15 sampled sections; Alexander1976 and Lanford1975 are uncertified and not read. Cross-roadmap: ClassicalErgodicTheory 3.5 items 1, 3, 4 and 0.2 at its open head; MathematicalBilliards, RandomMatrices, ProbabilisticAndMetricNumberTheory on main. Adversarial table: 25 rows with computed values. One source misprint recorded (GST2013 (4.4.1)). Two items for the human reviewers (the conditional corollary and the unproved printed form of Lanford's theorem).",
+  "text": "af9d417e7f4ca68c"
+ }
+}
