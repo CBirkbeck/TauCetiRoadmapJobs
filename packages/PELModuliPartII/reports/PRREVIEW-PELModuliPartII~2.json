@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PELModuliPartII~2",
+  "head": "d9b6dfaecbebd91fdb57a56fc56143ee378ff79d",
+  "pr": 2453,
+  "folder": "PELModuliPartII",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 21 changed lines since 33e4234. Previous findings: R02 (kernel orders now measured by the Hom-space hermitian dual, a prime to p, with M^v=c*D^-1*M^* on W), R03 (LL22 Remark 2.9, p. 11) and R04 (description) repaired; R01 deferred as D01, which stands (SelmerIwasawaCohomologyPartII line 159 unchanged). New P3 R01: the list of product-datum lattices in section 6.7 omits section 7.6, which uses Lambda_0+Lambda and does not cite 6.7. Checked: 11 locators in RSZ21, LZ22 and LL22, all matching; the 6.7 algebra recomputed on unramified and ramified witnesses; sampled 7.2 and 6.6; PELModuli M3.8 at its open head; gate passes (every check); depcheck 258 roadmaps, 2465 edges, 0 problems; lake env lean Suggested.lean exit 0, file unchanged and declaring nothing; no change outside the folder; source independence checked on changed passages only (7 passages, 3 sources, none shared).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The LTXZZ22 §§4.2/5.2 integral models have two plans",
+    "where": "SelmerIwasawaCohomologyPartII gap:native-shimura must cite PELModuliPartII §§8.1–8.4, 8.7",
+    "raised": "PRREVIEW-PELModuliPartII~1"
+   }
+  ],
+  "text": "294401274af9e47a"
+ }
+}
