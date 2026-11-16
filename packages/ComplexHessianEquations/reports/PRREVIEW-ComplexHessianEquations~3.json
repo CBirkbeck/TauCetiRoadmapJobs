@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexHessianEquations~3",
+  "head": "f6e02cc15c1072302b4608e4a55217939f3d4ea8",
+  "pr": 2440,
+  "folder": "ComplexHessianEquations",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review at an unchanged head; the previous review had no finding to repair. Sample: 88 of 132 source locators opened at their lines, including every readable locator of the 15 seeded sections (1.2, 1.3, 1.5, 2.1, 3.2, 4.1, 5.2, 5.3, 5.4, 6.1, 6.3, 6.4, 6.6, 7.1, 8.2); none wrong. Adversarial table: 30 rows with computed values covering the 15 sampled sections and all 17 headline theorems, including n = 0, degree 0 and the two-component and unnormalized controls. Library: 107 cited declarations and 55 cited files located at the pins; Stampacchia, weak Harnack, majorization, integralTopForm, complexManifoldOrientation, Levi form, Polynomial.Splits and the implicit function theorem read in source. 27 cross-roadmap citations resolved on main or at open heads. Gate: every check 0, OK; depcheck 252 roadmaps, 2396 edges, 0 problems; no change outside the folder. Elaboration: 17 sorry warnings only; one-tactic probe closes none of the 17 theorems. Overlap and source-independence lines are in the report. Uncertified texts (yau1978, szekelyhidi2014, tian1987, hormander1990, kolodziej1998, gilbarg-trudinger2001, cns1985, ckns1985) are listed under Not verifiable. For the humans: the board plan still declares gap:weak-harnack-supersolutions, which the README no longer uses; the open PDE revision was not readable.",
+  "text": "aa051510363a62d2"
+ }
+}
