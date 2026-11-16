@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ExplicitCharacterSumsAndSieves~11",
+  "head": "ebf1dc855b80e21c0743682f5935f9af6dd0df4b",
+  "pr": 1948,
+  "folder": "ExplicitCharacterSumsAndSieves",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 36 changed lines since 438bce4: the added Provenance section and its References entry, every claim read against the LeanPool repository at the cited commit (12 files: carrier fields against Mathlib BoundingSieve at the pin, fundamental_theorem_simple, the three BrunTitchmarsh statements, the four IwaniecLinearSieve names, toolchain v4.35.0, Apache-2.0 licence, authors), with computed values in a 7-row adversarial table; cross-roadmap citations resolved on main (SieveMethodsAndPrimePatterns 1.3 and 5.2, ExplicitPrimeCounting 0.1); the previous review had no finding; the seeded sample falls in no changed passage; title and description checked against the head, none contradicted; gate rerun OK (worker's build=0), depcheck 0 problems with no UPWARD or CYCLE line, Suggested.lean elaborates with sorry warnings only; one licence fact noted for the human reviewers",
+  "text": "8d1f56c182898d53"
+ }
+}
