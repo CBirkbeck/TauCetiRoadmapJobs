@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalLanglandsCorrespondenceForG2~2",
+  "head": "10f35925740fc5e6c1f77981c4fc4198e246716b",
+  "pr": 2458,
+  "folder": "LocalLanglandsCorrespondenceForG2",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 19 changed lines since 8d99a61. Previous findings: R02 and R03 repaired; R01 partly repaired, because the new pgsp6-lower-tower-xu-packets contract is in the README but not in design/plan.json gaps (27 slugs against the README's 28). New P3: an undefined τ′ in §10.7. Checked: the new contract and the §10.7 route against ModularityAndLanglandsExtensions §3.19, EndoscopicTransferAndUnitaryTraceComparison §4.7a and §10.30, MetaplecticAutomorphicForms §3.42 and ExceptionalThetaCorrespondencesForG2 Layer 1 §§1.1-1.8 at their open heads; the 6 GS/HD locators in the changed vicinity, including the sampled §3.7, §4.4 and §10.1 and GS Theorem 12.7(ii) p. 39; adversarial rows for the contract, §10.7, the §§6.6-6.7 Checks and §3.8. Gate passes; depcheck 0 problems; Suggested.lean unchanged and elaborates with 3 sorry warnings; no change outside the folder; added wording shares at most 6 words with the sources.",
+  "text": "5c414e42b0ab5587",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "The new lower-tower Xu-packet contract is not declared in plan.json",
+    "where": "the board's design/plan.json gaps list of this package",
+    "raised": "PRREVIEW-LocalLanglandsCorrespondenceForG2~2"
+   }
+  ]
+ }
+}
