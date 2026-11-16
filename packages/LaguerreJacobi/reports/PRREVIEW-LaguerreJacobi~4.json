@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LaguerreJacobi~4",
+  "head": "3e8914242430895d618cb5885e61f6e08273eaef",
+  "pr": 117,
+  "folder": "LaguerreJacobi",
+  "date": "2026-11-16",
+  "findings": 6,
+  "blocking": 1,
+  "notes": "Full re-review. Previous R01-R08 all repaired. Gate passes at 3e89142 (all rules 0, targeted build); depcheck 0 problems; Suggested.lean elaborates with 42 sorry warnings only; one-tactic probe closes none of 42 theorems. All 15 sampled targets and 21 DLMF locators read against the text; 57 library names resolved at the moved pins (Mathlib 1b1ccf4, Tau Ceti 2fd255d). Exact and numeric recomputation of every identity and constant: 0 failures. Findings: R01 (P2) tensor products of the sqrt-w bases promised, no target; R02-R06 (P3) boundary target at infinity, stale ProbabilityTheory namespace sentences, history sentence, incomplete jacobi list, incomplete reference locators. Szego not readable.",
+  "text": "d714c06bf799edbe"
+ }
+}
