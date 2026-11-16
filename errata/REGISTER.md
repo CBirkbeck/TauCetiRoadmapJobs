@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-14537 mistakes recorded on the board: 8258 misprints, 3790 errors, 1997 gaps, 492 unparsed bullets.
+14539 mistakes recorded on the board: 8259 misprints, 3790 errors, 1998 gaps, 492 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -13884,7 +13884,9 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Corollary 6.2, item (2), p. 49: the source says the `p`-adic places at which `π′` is Steinberg are places of `F`; it should be places of `E`, where `π′` lives; affects nothing. Found by ModularityAndLanglandsExtensionsPartII (#13054 at 02c1f07, 2026-11-16, claude fable).
 - **Gap** at Corollary 6.2, statement, p. 49: the source says `SP_{r−1}` is assumed for every `0 < r < p`, which for `r = 1` is `SP_0`, not a defined statement; it should be assume `SP_{r−1}` only for `r > 1`; affects nothing. Found by ModularityAndLanglandsExtensionsPartII (#13054 at 9734b6e, 2026-11-15, claude fable).
+- **Gap** at Lemma 3.4(2)–(3), p. 16, and proof of Proposition 3.9, pp. 20–21: the source says the twisted residual representation is scalar above `p` and applies a finiteness theorem stated for a residually trivial one; it should be make the twisting character residually trivial at those places and above `v_0`; affects the proof. Found by ModularityAndLanglandsExtensionsPartII (#13054 at 1d736a3, 2026-11-16, claude fable).
 - **Misprint** at Lemma 3.4(5), p. 16: the source says the embedding is of an undefined field `K`; it should be `K_1`; affects nothing. Found by ModularityAndLanglandsExtensionsPartII (#13054 at c1c9366, 2026-11-15, claude fable).
+- **Misprint** at Lemma 3.4(5), p. 16: the source says the Hodge–Tate condition is for embeddings of a field `K` not defined there; it should be `K_1`; affects nothing. Found by ModularityAndLanglandsExtensionsPartII (#13054 at 1d736a3, 2026-11-16, claude fable).
 - **Misprint** at Lemma 4.7 proof, p. 34: the source says the source refers to root subgroups inside the diagonal torus; it should be refer to kernels of root characters, where two diagonal eigenvalues agree; affects the proof. Found by ModularityAndLanglandsExtensionsPartII (#13054 at 40050a9, 2026-11-10, codex gpt-6-astra).
 - **Gap** at Lemma 5.7, proof, pp. 41–42: the source says the residual tensors are irreducible over `F` and takes `v_1 ∤ t`; it should be give irreducibility over `F(ζ_t)` and `v_1 ∤ p`, which the later steps use; affects the proof. Found by ModularityAndLanglandsExtensionsPartII (#13054 at eee0a12, 2026-11-15, claude fable).
 - **Misprint** at Proposition 6.1, proof, p. 47: the source says the auxiliary prime `t` is prime to the conductor of `π`; it should be prime to the conductor of `π_a`, the representation whose level is raised modulo `t`; affects nothing. Found by ModularityAndLanglandsExtensionsPartII (#13054 at 02c1f07, 2026-11-16, claude fable).
