@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RiemannianManifoldsWithConvexBoundary~1",
+  "head": "bde64eedb747f480b3a469ba4876f98efe952fce",
+  "pr": 2451,
+  "folder": "RiemannianManifoldsWithConvexBoundary",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Three P3 findings: a false negative-control Check in 4.5, a 4.4 locator into lines that do not state the result, and a description whose dependency paragraph names no roadmap. Checked: the full seeded sample of 15 targets against the cached texts (62 locators: 41 PSU, 13 SUV, 8 UV); an adversarial table of 22 rows covering every headline theorem; all 86 cited library names at the pins; 18 cross-roadmap citations on main; overlap with 8 closest roadmaps, nothing owned twice; source independence (13 passages, contents independent). Gate: all checks pass; depcheck 0 problems; lake env lean gives only 11 sorry warnings; signatures match the README; the one-tactic padding probe closes nothing.",
+  "text": "0ea943d31f77aeb2"
+ }
+}
