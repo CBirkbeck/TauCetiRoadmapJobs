@@ -39,9 +39,11 @@ README §6.1 constructs it by gluing the morphisms that Mathlib's
 library has the glued map, nor the chart morphisms `y_j ↦ F_j/F_i` into the degree-zero
 localizations; pinning the map down through them would be a long ad hoc encoding.
 
-Invariance under the normalization lift (README §§4.3, 5.3) is the case of
+Invariance of the dynamical degrees under the normalization lift (README §5.3) is the case of
 `dynamicalDegree_birational_conj` in which the partial isomorphism is the inverse of the
-normalization over the normal locus.
+normalization over the normal locus. The equality of the degrees themselves under the lift
+(README §4.3) is not a case of that theorem, which compares only the limits `λ_k`: it is an
+instance of model independence (README §4.1), a README target.
 -/
 
 namespace TauCetiRoadmap.DynamicalDegreesOfRationalMaps
@@ -327,7 +329,8 @@ def algebraicEntropy (K : Type u) [Field K] {X : Scheme.{u}} [X.Over (Spec (.of 
 `f` of a projective variety of dimension `d`, a real polarization `ω` and `k ≤ d`, the sequence
 `deg_{k,ω}(f^n)^{1/n}` converges to `λ_k(f)`, and
 `λ_k(f) = inf_{n ≥ 1} (C_k(ω)·deg_{k,ω}(f^n))^{1/n}` with `C_k(ω) = (d − k + 1)^k/(ω^d)`.
-Dinh–Sibony, Corollaire 7; Dang, Theorem 1; Truong, Theorem 1.1 (1). -/
+Dang–Favre, §1.3 after Theorem 1.3; Dinh–Sibony, Corollaire 7, for convergence over `ℂ`;
+Dang, Theorem 1; Truong, Theorem 1.1 (1). -/
 theorem tendsto_dynamicalDegree (K : Type u) [Field K] {X : Scheme.{u}}
     [X.Over (Spec (.of K))] [IsIntegral X] [X.IsProjectiveOver K] {d : ℕ}
     (hX : topologicalKrullDim X = d) (f : X ⤏ X) [f.IsDominant] [f.IsOver (Spec (.of K))]
