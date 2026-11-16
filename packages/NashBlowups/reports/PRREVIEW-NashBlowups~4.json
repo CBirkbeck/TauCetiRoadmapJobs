@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NashBlowups~4",
+  "head": "dd3e0e3f9b4c730750dd677aa984ee0053939a98",
+  "pr": 2413,
+  "folder": "NashBlowups",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since dd3e0e3. Previous R01 (description said two suppliers were not on main) is repaired. Title and description read sentence by sentence against the head and main at 51d880d: the 15 cited supplier and boundary sections resolve on main, the supplier list equals the README's contracts, nothing contradicted or left unstated. Adversarial rows computed for the two Lean headlines the description names (cusp over Q and F_2; cone z^2 = xy in characteristic 2). Gate rerun: every check passes; depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean gives two sorry warnings only. Seeded source sample not re-read: no passage of the folder changed. Source issues of the previous review are not repeated.",
+  "text": "6d69cfb06db45267"
+ }
+}
