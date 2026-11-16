@@ -2072,7 +2072,7 @@
       {
        "name": "non_qc",
        "kind": "non-example",
-       "statement": "The coproduct of countably many Spec Z is not perfect: O dualizable not compact."
+       "statement": "Classical context: for the scheme X = the disjoint union of countably many Spec Z, h_X has affine diagonal (a point of h_X x h_X at R is a pair of locally constant f, g : Spec R -> N, and the fibre of the diagonal is Spec(Re) for the idempotent e of the open and closed locus f = g) and compactly generated QCoh, and is not perfect: O dualizable not compact. The coproduct of prestacks (value N at every test ring) has the same QCoh, prod D(Z) (2.3, 3.3), and no affine diagonal: the fibre over the indices (0, 1) is the empty prestack, empty also at the zero ring, where an affine has a point."
       },
       {
        "name": "mapping_space_vs_RGamma",
@@ -2202,7 +2202,7 @@
       {
        "name": "BGLn",
        "role": "structure",
-       "statement": "BGL_n is perfect in characteristic zero. It has affine diagonal (7.4 with X = Spec k), and QCoh((BGL_n)^natural) is QCoh of the geometric stack [Spec k/GL_n] of 7.1, its fpqc hypersheafification (7.4(a), 3.3(a), 7.2; t-structures agree as connectivity is fpqc-local, 6.1), whose t-structure is left and right complete (6.2(b)). Derived invariants are t-exact, so pi_0 Map(V[i], M) = Hom(V, pi_i M) for finite-dimensional V in degree zero and all i (a statement about pi_0 only); these V are compact and dualizable and generate; the compact = dualizable objects are their stable retract-closed span, the objects with finitely many nonzero pi_i, each finite-dimensional, including shifts such as O[1]."
+       "statement": "BGL_n is perfect in characteristic zero. It has affine diagonal (7.4 with X = Spec k), and QCoh((BGL_n)^natural) is QCoh of the geometric stack [Spec k/GL_n] of 7.1, its fpqc hypersheafification (7.4(a), 3.3(a), 7.2; t-structures agree as connectivity is fpqc-local, 6.1), whose t-structure is left and right complete (6.2(b)). Complete reducibility (ReductiveGroups Layer 6) and local finiteness (Layer 1, heart of 7.4(c)) make the heart semisimple, so Ext^i vanishes in it for i > 0; by 7.4(d), for the quasi-compact [Spec k/GL_n] with affine diagonal, pi_0 Map(O, M[i]) = Ext^i(O, M) in the heart for M in the heart. So RGamma = q_* carries the heart to the heart; it is left t-exact (right adjoint of the t-exact q^*), right t-exact on bounded objects by induction and on connective M by left completeness (pi_0 RGamma(tau_{<=m} M) constant in m, no lim^1); so pi_0 Map(V[i], M) = Hom(V, pi_i M) for finite-dimensional V in degree zero and all i (a statement about pi_0 only); these V are compact and dualizable and generate; the compact = dualizable objects are their stable retract-closed span, the objects with finitely many nonzero pi_i, each finite-dimensional, including shifts such as O[1]."
       },
       {
        "name": "BG",
@@ -2219,7 +2219,7 @@
       {
        "name": "BZp_Q",
        "kind": "computation",
-       "statement": "B(Z/p) over Q is perfect: invariants are exact by Maschke."
+       "statement": "B(Z/p) over Q is perfect: by Maschke H^i(Z/p; V) = 0 for i > 0, and these are pi_0 Map(O, V[i]) by the group-cohomology formula of 8.5 (any field); so invariants are exact and O is compact. For a finite group this formula, not 7.4(d), compares the heart with QCoh."
       },
       {
        "name": "BGa_Q",
@@ -2235,6 +2235,11 @@
        "name": "shifted_unit_BGL1",
        "kind": "non-example",
        "statement": "On BGL_1 = BG_m over Q, O[1] is invertible with inverse O[-1] and atlas pullback pi_1 = Q, pi_0 = 0, so compact dualizable objects are not only representations in degree zero; Map(Q, O[1]) = K(Q,1) has pi_0 = 0 = Hom(Q, pi_0 O[1]) and pi_1 = Q."
+      },
+      {
+       "name": "semisimple_heart_not_enough",
+       "kind": "non-example",
+       "statement": "Semisimplicity of the heart alone does not make invariants exact: on the constant prestack K(Z,2) x Spec Q, QCoh = Fun(K(Z,2), Mod_Q) (2.3) with heart the Q-vector spaces (K(Z,2) simply connected), yet pi_0 Map(O, O[2]) = H^2(K(Z,2); Q) = Q while Ext^2(O, O) in the heart is 0; the comparison of 7.4(d) fails there, and the route uses it."
       },
       {
        "name": "twist_not_product",
