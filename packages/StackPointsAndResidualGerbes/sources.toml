@@ -73,8 +73,8 @@ year = 2015
 venue = "Ann. of Math. 191(3) (2020), 675-738"
 doi = "10.4007/annals.2020.191.3.1"
 arxiv = "1504.06467v3"
-locator_scheme = "theorem"
-locator = "Theorem 1.1"
+locator_scheme = "section"
+locator = "Section 1 (Theorems 1.1-1.2), Sections 1.5 and 3.1"
 url = "https://arxiv.org/abs/1504.06467v3"
 fetched_from = "https://arxiv.org/pdf/1504.06467v3"
 fetched_at = "2026-11-05T05:39:06Z"
@@ -86,32 +86,12 @@ version_note = "arXiv v3"
 cited_for = ["infinitesimal neighbourhoods (§1.5), normal and tangent spaces (§3.1) and the slice theorems as vocabulary Checks (Theorems 1.1-1.2): targets 0.4, 6.4, 7.1-7.4"]
 
 [[source]]
-id = "rydh2015"
-authors = "David Rydh"
-title = "Noetherian approximation of algebraic spaces and stacks"
-year = 2009
-venue = "J. Algebra 422 (2015), 105-147"
-doi = "10.1016/j.jalgebra.2014.09.012"
-arxiv = "0904.0227v4"
-locator_scheme = "theorem"
-locator = "Theorem B"
-url = "https://arxiv.org/abs/0904.0227v4"
-fetched_from = "https://arxiv.org/pdf/0904.0227v4"
-fetched_at = "2026-11-05T05:39:11Z"
-sha256 = "6f78233beec951c4d2c8b7ca03823a1bbe182b93eff4691c3775cd10b999675e"
-licence_class = "open-repository"
-status = "certified"
-accessed = "2026-11-05"
-version_note = "arXiv v4"
-cited_for = ["not cited by the design: recorded to document that the residual-gerbe appendix is that of rydh2011"]
-
-[[source]]
 id = "alper-moduli"
 authors = "Jarod Alper"
 title = "Stacks and Moduli (lecture notes)"
 year = 2026
 locator_scheme = "section"
-locator = "Section 4.5.3"
+locator = "Sections 4.3.4, 4.5.2-4.5.3, 7.4.5"
 url = "https://sites.math.washington.edu/~jarod/moduli.pdf"
 fetched_from = "https://sites.math.washington.edu/~jarod/moduli.pdf"
 fetched_at = "2026-11-05T05:39:35Z"
@@ -177,7 +157,7 @@ authors = "The Stacks Project Authors"
 title = "The Stacks Project, Decent Algebraic Spaces"
 year = 2026
 locator_scheme = "section"
-locator = "Sections 68.6, 68.10, 68.12-68.14"
+locator = "Sections 68.6-68.8, 68.10-68.13, 68.15"
 url = "https://stacks.math.columbia.edu/download/decent-spaces.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/decent-spaces.pdf"
 fetched_at = "2026-11-07T01:39:07Z"
@@ -185,7 +165,7 @@ sha256 = "2e29935b33d7a90b4fcdfa1ce801af37406a0f0dc6d9103d54ffd2263122a3e6"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
-cited_for = ["decent algebraic spaces, residue fields and residual spaces (Definitions 68.6.1, 68.11.2, 68.13.6, Lemmas 68.11.1, 68.13.5-68.13.10, Example 68.13.11): targets 3.4, 4.2, 5.1-5.3 and gap decent-algebraic-spaces; a decent algebraic space has a dense open subspace which is a scheme (Theorem 68.10.2): gap decent-space-schematic-locus of target 5.4"]
+cited_for = ["decent algebraic spaces, residue fields and residual spaces (Definitions 68.6.1, 68.11.2, 68.13.6, Lemmas 68.11.1, 68.13.5-68.13.10, Example 68.13.11): targets 3.4, 4.2, 5.1-5.3 and gap decent-algebraic-spaces", "specialisations, stratification by schemes, sobriety and decency of locally separated spaces (Lemmas 68.7.2, 68.8.3, Proposition 68.12.4, Lemma 68.15.2): gap decent-algebraic-spaces of targets 5.1-5.3", "a decent algebraic space has a dense open subspace which is a scheme (Theorem 68.10.2): gap decent-space-schematic-locus of target 5.4"]
 
 [[source]]
 id = "stacks-criteria"
@@ -209,7 +189,7 @@ authors = "The Stacks Project Authors"
 title = "The Stacks Project, Sheaves on Algebraic Stacks"
 year = 2026
 locator_scheme = "section"
-locator = "Section 96.14"
+locator = "Sections 96.6, 96.11-96.12, 96.14-96.15"
 url = "https://stacks.math.columbia.edu/download/stacks-sheaves.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/stacks-sheaves.pdf"
 fetched_at = "2026-11-07T01:44:05Z"
@@ -217,7 +197,7 @@ sha256 = "1ad5e359c3a2ef5bccc1dd2a41fcc0a442b413d2662f50a13680024fe4c9a883"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-07"
-cited_for = ["quasi-coherent modules on a presentation (Proposition 96.14.3) and the inclusion of quasi-coherent modules into all modules, right exact and not exact in general (Lemma 96.15.1 (3)): target 0.4"]
+cited_for = ["quasi-coherent modules on a presentation (Proposition 96.14.3) and the inclusion of quasi-coherent modules into all modules, right exact and not exact in general (Lemma 96.15.1 (3)): target 0.4", "the structure sheaf (Definition 96.6.1), pullback of quasi-coherent modules (Lemmas 96.11.2-96.11.3), colimits and tensor products (Lemma 96.12.5), abelianness and tensor products of quasi-coherent modules (Lemma 96.15.1 (1), (2), (5)): the supplier contract gap:qcoh-stacks-abelian-tensor of targets 0.4, 7.2"]
 
 [[source]]
 id = "stacks-morphisms-schemes"
@@ -338,7 +318,7 @@ authors = "The Stacks Project Authors"
 title = "The Stacks Project, Groupoids in Algebraic Spaces"
 year = 2026
 locator_scheme = "theorem"
-locator = "Groupoids in Spaces, Lemmas 78.25.1 and 78.27.1-78.27.2"
+locator = "Groupoids in Spaces, Lemmas 78.12.6, 78.25.1 and 78.27.1-78.27.2"
 url = "https://stacks.math.columbia.edu/download/spaces-groupoids.pdf"
 fetched_from = "https://stacks.math.columbia.edu/download/spaces-groupoids.pdf"
 fetched_at = "2026-11-11T12:45:24Z"
@@ -346,7 +326,7 @@ sha256 = "530a97af19dd13c53cddd32663181e19c535623a6898ad3dfb8192b750a49b56"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-11"
-cited_for = ["gap:flat-groupoid-quotients"]
+cited_for = ["gap:flat-groupoid-quotients", "quasi-coherent modules on a flat groupoid form an abelian category with kernels computed on U (Lemma 78.12.6): gap:qcoh-stacks-abelian-tensor"]
 
 [[source]]
 id = "stacks-more-groupoids-spaces"
