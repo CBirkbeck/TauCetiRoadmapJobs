@@ -3542,6 +3542,12 @@
       "needs": "For a smooth projective geometrically integral surface X over a finite field k and an integral curve C in X: a smooth projective surface X′ with a birational k-morphism X′ → X, a smooth projective geometrically integral k-curve B and a dominant k-morphism X′ → B whose generic fibre is smooth and geometrically integral over k(B) and under which the strict transform of C maps dominantly onto B, all over k itself and not over a finite extension of k.",
       "supplier": "LefschetzPencilsAndVanishingCycles",
       "section": "§3.5"
+    },
+    {
+      "slug": "embedded-resolution-dimension-two",
+      "needs": "Embedded resolution in dimension at most two: for a regular excellent scheme Z of any dimension and a reduced closed subscheme X of Z of dimension at most two, a projective surjective morphism Z′ → Z with Z′ regular, an isomorphism over Z ∖ X, such that the reduced preimage of X is a simple normal crossings divisor on Z′ (Cossart–Jannsen–Saito, Corollary 0.4).",
+      "supplier": "AdicCoefficientsAndComparisonsPartII",
+      "section": "§PA.0.12"
     }
   ],
   "upstreamNotes": [

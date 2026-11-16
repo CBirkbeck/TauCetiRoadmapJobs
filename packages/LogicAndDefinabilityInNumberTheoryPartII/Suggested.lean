@@ -5,8 +5,9 @@ import Mathlib
 
 The roadmap is `README.md`; this file is not the roadmap. It states the roadmap's headline
 theorems against the pinned Mathlib and Tau Ceti APIs: Pop's sentences fixing the Kronecker
-dimension, Poonen's characteristic sentence, uniform constant field and uniform algebraic
-dependence, the uniform definability of geometric prime divisors in every Kronecker dimension
+dimension, Poonen's characteristic sentence, uniform prime field and uniform algebraic
+dependence (whose case of one variable is his uniform constant field), the uniform
+definability of geometric prime divisors in every Kronecker dimension
 (Dittmann–Pop for dimension at least three, Rumely and Pop below), uniform arithmetic
 normalizations, the single sentence
 characterizing a finitely generated integral domain among finitely generated rings
@@ -67,17 +68,20 @@ theorem exists_sentence_charZero :
         ¬ σ.Realize K := by
   sorry
 
-/-- **The uniform constant field** (Poonen, Theorem 1.3): one ring formula defines, in every
-finitely generated field, finite fields included, the set of elements algebraic over the prime
-field (README §0.13). -/
-theorem exists_formula_isAlgebraic_primeField :
-    ∃ φ : Language.ring.Formula (Fin 1), ∀ (K : Type u) [Field K] [Field.FG K] [FirstOrder.Ring.CompatibleRing K],
-      ∀ x : K, φ.Realize ![x] ↔ IsAlgebraic (⊥ : Subfield K) x := by
+/-- **The uniform prime field** (Poonen, Theorem 1.2): one ring formula defines, in every
+infinite finitely generated field, the prime subfield (README §0.13a). Finite fields are
+excluded: no formula defines `𝔽_p` in `𝔽_{p²}` for every prime `p`. -/
+theorem exists_formula_mem_primeField :
+    ∃ φ : Language.ring.Formula (Fin 1), ∀ (K : Type u) [Field K] [Field.FG K] [Infinite K]
+      [FirstOrder.Ring.CompatibleRing K],
+      ∀ x : K, φ.Realize ![x] ↔ x ∈ (⊥ : Subfield K) := by
   sorry
 
 /-- **Uniform algebraic dependence** (Poonen, Theorem 1.4): for every `n` one ring formula in `n`
 variables defines, in every finitely generated field, the `n`-tuples that are algebraically
-dependent over the prime field (README §0.14). For `n = 0` the formula is false. -/
+dependent over the prime field (README §0.14). For `n = 0` the formula is false; for `n = 1` it
+defines the constant field, the elements algebraic over the prime field (Poonen, Theorem 1.3;
+README §0.13). -/
 theorem exists_formula_not_algebraicIndependent (n : ℕ) :
     ∃ φ : Language.ring.Formula (Fin n), ∀ (K : Type u) [Field K] [Field.FG K] [FirstOrder.Ring.CompatibleRing K],
       ∀ x : Fin n → K, φ.Realize x ↔ ¬ AlgebraicIndependent (⊥ : Subfield K) x := by
