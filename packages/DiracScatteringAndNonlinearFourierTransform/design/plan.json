@@ -2,7 +2,7 @@
  "roadmap": "DiracScatteringAndNonlinearFourierTransform",
  "title": "Dirac scattering and the non-linear Fourier transform",
  "parent": null,
- "summary": "Carathéodory linear systems with integrable coefficients and a holomorphic parameter; half-plane function theory (Poisson integrals, Fatou, bounded holomorphic functions, H², Paley–Wiener, outer functions); Dirac systems with locally integrable complex potential, their fundamental matrix and Hermite–Biehler functions; finite-interval SU(1,1) scattering with the half-plane inequality, outerness and the non-linear Plancherel identity (constant π/2); the square-integrable scattering limit and the non-linear Fourier transform with boundary values, Plancherel at infinity and L² convergence of truncations; de Branges spaces, Weyl functions, spectral measures and the Szegő condition; meromorphic inner functions and resonances; universality and approximation of Hermite–Biehler functions; Poltoratski's pointwise convergence theorem for real square-integrable potentials.",
+ "summary": "Carathéodory linear systems with integrable coefficients and a holomorphic parameter; half-plane function theory (Poisson integrals, Fatou, bounded holomorphic functions, H², Paley–Wiener, outer functions); Dirac systems with locally integrable complex potential, their fundamental matrix and Hermite–Biehler functions; finite-interval SU(1,1) scattering with the half-plane inequality, outerness and the non-linear Plancherel identity (constant π/2); the square-integrable scattering limit and the non-linear Fourier transform with boundary values, Plancherel at infinity and L² convergence of truncations; de Branges spaces, Weyl functions, spectral measures and the Szegő condition; meromorphic inner functions and resonances; universality and approximation of Hermite–Biehler functions; subinterval scattering data, the time resonances spend near a point, resonance-free points, and the pointwise convergence of the non-linear Fourier transform at almost every resonance-free point for real square-integrable potentials (the conditional form of Poltoratski's theorem).",
  "baseline": {
   "mathlib": "1b1ccf4b088b32fa3f23f2de1127433254a81e1e",
   "tauceti": "2fd255d997f47c0b5d834ee416c7015d55444ce5"
@@ -95,6 +95,11 @@
        "name": "agreementWithTauCeti",
        "kind": "compatibility",
        "statement": "Agreement with Tau Ceti: for `𝕜 = ℝ` and essentially bounded `P`, the solution is the one of `TauCeti.exists_continuousOn_eq_forall_mem_Icc_eq_picard`, by `TauCeti.eqOn_of_forall_mem_Icc_eq_picard`."
+      },
+      {
+       "name": "fixedParameterOnC2",
+       "kind": "compatibility",
+       "statement": "Fixed parameter on `ℂ²`: for `E = EuclideanSpace ℂ (Fin 2)`, `F = 0` and `P(t) = Ω(λ − V(t))` with `V` Hermitian and integrable on `[a, b]`, the theorem is the local integral-equation existence and uniqueness of OperatorTheory/UnboundedOperators §4.8 for `Ju′ + Vu = λu`. For `V = 0`, `λ = −z` and `t₀ = 0` the solutions from `(1, 0)` and `(0, 1)` are the columns of `[[cos tz, −sin tz], [sin tz, cos tz]]`, the free fundamental matrix of §3.1; the sign `λ = z` gives the transpose `[[cos tz, sin tz], [−sin tz, cos tz]]`."
       },
       {
        "name": "integrabilityIsNecessaryOn",
@@ -317,7 +322,7 @@
      "id": "1.7",
      "kind": "theorem",
      "name": "existsUnique_caratheodory",
-     "statement": "Let `t₀ ∈ I`, `x₀ ∈ E` and `F : ℝ × E → E` with `t ↦ F(t, x)` strongly measurable on `I` for each `x`, `‖F(t, x) − F(t, y)‖ ≤ L(t)‖x − y‖` and `‖F(t, x₀)‖ ≤ m(t)` for almost every `t ∈ I` and all `x, y`, where `L, m ≥ 0` are integrable on compact subintervals of `I`. Prove that there is a `Y : ℝ → E`, continuous on `I`, with `Y(t) = x₀ + ∫_{t₀}^{t} F(s, Y(s)) ds` for `t ∈ I`, and that any two such functions agree on `I`; that every such `Y` is absolutely continuous on compact subintervals of `I` with `‖Y(t) − x₀‖ ≤ |∫_{t₀}^{t} m| exp|∫_{t₀}^{t} L|`; and that two initial values give solutions at distance at most `‖x₀ − x₀′‖ exp|∫_{t₀}^{t} L|` at every `t ∈ I`. Prove the local form. Let `B` be the closed ball of radius `r` about `x₀`, suppose the two bounds hold only for `x, y ∈ B` and almost every `t ∈ [t₀, t₀ + δ] ⊆ I`, and let `τ ≤ δ` satisfy `(∫_{t₀}^{t₀+τ} m) exp(∫_{t₀}^{t₀+τ} L) ≤ r`. Call a solution on `[t₀, t₀ + τ]` a `Y` continuous there with `s ↦ F(s, Y(s))` integrable on `[t₀, t₀ + τ]` and the integral equation for `t ∈ [t₀, t₀ + τ]`. Then there is a solution on `[t₀, t₀ + τ]` with values in `B`, and any two solutions with values in `B` agree on `[t₀, t₀ + τ]`. If the inequality is strict, every solution on `[t₀, t₀ + τ]` has values in `B`, so any two solutions agree there: a solution leaving `B` meets the sphere `‖x − x₀‖ = r` at a first time `t*`, and 1.1 on `[t₀, t*]` bounds `‖Y(t*) − x₀‖` by `(∫_{t₀}^{t₀+τ} m) exp(∫_{t₀}^{t₀+τ} L) < r`. The composite `s ↦ F(s, Y(s))` is strongly measurable for `Y` continuous with values where `F` is Lipschitz in `x`, because `Y` is a uniform limit of step functions (coddingtonlevinson1955, Ch. 2 §1, waived).",
+     "statement": "Let `t₀ ∈ I`, `x₀ ∈ E` and `F : ℝ × E → E` with `t ↦ F(t, x)` strongly measurable on `I` for each `x`, `‖F(t, x) − F(t, y)‖ ≤ L(t)‖x − y‖` and `‖F(t, x₀)‖ ≤ m(t)` for almost every `t ∈ I` and all `x, y`, where `L, m ≥ 0` are integrable on compact subintervals of `I`. Prove that there is a `Y : ℝ → E`, continuous on `I`, with `Y(t) = x₀ + ∫_{t₀}^{t} F(s, Y(s)) ds` for `t ∈ I`, and that any two such functions agree on `I`; that every such `Y` is absolutely continuous on compact subintervals of `I` with `‖Y(t) − x₀‖ ≤ |∫_{t₀}^{t} m| exp|∫_{t₀}^{t} L|`; and that two initial values give solutions at distance at most `‖x₀ − x₀′‖ exp|∫_{t₀}^{t} L|` at every `t ∈ I`. Prove the local form. Let `B` be the closed ball of radius `r` about `x₀`, suppose the two bounds hold only for `x, y ∈ B` and almost every `t ∈ [t₀, t₀ + δ] ⊆ I`, and let `τ ≤ δ` satisfy `(∫_{t₀}^{t₀+τ} m) exp(∫_{t₀}^{t₀+τ} L) ≤ r`. Call a solution on `[t₀, t₀ + τ]` a `Y` continuous there with `s ↦ F(s, Y(s))` integrable on `[t₀, t₀ + τ]` and the integral equation for `t ∈ [t₀, t₀ + τ]`. Then there is a solution on `[t₀, t₀ + τ]` with values in `B`, and any two solutions with values in `B` agree on `[t₀, t₀ + τ]`. If the inequality is strict, every solution on `[t₀, t₀ + τ]` has values in `B`, so any two solutions agree there: a solution leaving `B` meets the sphere `‖x − x₀‖ = r` at a first time `t*`, and 1.1 on `[t₀, t*]` bounds `‖Y(t*) − x₀‖` by `(∫_{t₀}^{t₀+τ} m) exp(∫_{t₀}^{t₀+τ} L) < r`. The composite `s ↦ F(s, Y(s))` is almost everywhere strongly measurable for every continuous `Y`, and in the local form for every continuous `Y` with values in `B`: after `F(t, ·)` is replaced by `0` for the `t` of a null set outside which the Lipschitz bound holds, every `F(t, ·)` is continuous on `E` (on `B` in the local form) and every section `t ↦ F(t, x)` is unchanged almost everywhere, so Tau Ceti `MeasureTheory.AEStronglyMeasurable.apply_of_forall_of_continuous` applies with the parameter space `E` (the ball `B`) (coddingtonlevinson1955, Ch. 2 §1, waived).",
      "hypotheses": [
       "t₀ ∈ I, x₀ ∈ E",
       "t ↦ F(t,x) strongly measurable",
@@ -332,7 +337,7 @@
      "prerequisites": [
       "target:1.1",
       "target:1.2",
-      "mathlib:StronglyMeasurable",
+      "tauceti:MeasureTheory.AEStronglyMeasurable.apply_of_forall_of_continuous",
       "mathlib:IsPicardLindelof",
       "mathlib:ODE_solution_unique_of_mem_Ioo"
      ],
@@ -382,7 +387,7 @@
      ],
      "locator": {
       "source": "poltoratski2024",
-      "where": "line 250–254 and 610–614; mauth2022 line 378–392"
+      "where": "line 250–254 and 610–614; mauth2022 line 378–392, Lemma 3 line 390–392"
      },
      "prerequisites": [
       "mathlib:InnerProductSpace.HarmonicOnNhd",
@@ -407,7 +412,7 @@
       {
        "name": "isHarmonicOnNonnegative",
        "role": "lemma",
-       "statement": "`P[ν]` is harmonic on `ℂ₊`, nonnegative, and `P[ν] = Re S[ν]`; `S[ν]` is holomorphic on `ℂ₊` and real at `z = i`; `S⁰[h] − S[h]` is the imaginary constant `−(i/π) ∫ x h(x)/(1 + x²) dx`. Route: on a compact subset of `ℂ₊` the `z`-derivative `(x − z)^{−2}` of the Schwarz integrand is bounded by a constant times `1/(1 + x²)`, so `S[ν]` is holomorphic (Mathlib `hasFDerivAt_integral_of_dominated_of_fderiv_le`), hence analytic (Mathlib `DifferentiableOn.analyticAt`). Its real part `P[ν]` is then harmonic (Mathlib `AnalyticAt.harmonicAt_re`). It is nonnegative because the kernel is positive (Tau Ceti `TauCeti.halfSpacePoissonKernel_pos`)."
+       "statement": "`P[ν]` is harmonic on `ℂ₊` (mauth2022 Lemma 3 line 390–392), nonnegative, and `P[ν] = Re S[ν]`; `S[ν]` is holomorphic on `ℂ₊` and real at `z = i`; `S⁰[h] − S[h]` is the imaginary constant `−(i/π) ∫ x h(x)/(1 + x²) dx`. Route: on a compact subset of `ℂ₊` the `z`-derivative `(x − z)^{−2}` of the Schwarz integrand is bounded by a constant times `1/(1 + x²)`, so `S[ν]` is holomorphic (Mathlib `hasFDerivAt_integral_of_dominated_of_fderiv_le`), hence analytic (Mathlib `DifferentiableOn.analyticAt`). Its real part `P[ν]` is then harmonic (Mathlib `AnalyticAt.harmonicAt_re`). It is nonnegative because the kernel is positive (Tau Ceti `TauCeti.halfSpacePoissonKernel_pos`)."
       },
       {
        "name": "soExactlyWhen",
@@ -462,32 +467,31 @@
      "id": "2.2",
      "kind": "theorem",
      "name": "exists_eq_mul_im_add_poissonIntegral",
-     "statement": "Prove that a nonnegative harmonic `u` on `ℂ₊` is `u(z) = c Im z + P[ν](z)` for a unique `c ≥ 0` and a unique Poisson-finite `ν`, and that `πy u(iy) − πc y² = ∫ y²/(x² + y²) dν(x)` increases to `ν(ℝ)` as `y → ∞` (mauth2022 Lemma 3 line 390; garnett2007, Ch. I §3, uncertified). Route: `u = Im F` with `F` holomorphic on `ℂ₊`, `F′` being the conjugate complex partial of `u`, which is holomorphic by Mathlib's `HarmonicAt.differentiableAt_complex_partial` and has a primitive by Tau Ceti `DifferentiableOn.hasDerivAt_wedgeIntegral_upperHalfPlane`; then Tau Ceti `TauCeti.exists_isFiniteMeasure_eq_nevanlinnaKernel_add` and `TauCeti.nevanlinnaKernel_im` give `u = β Im z + P[ν]` with `ν = π(1 + x²)ρ`. Uniqueness: `ν` is the vague limit of the measures `u(x + iy) dx` as `y → 0`, and `c = lim u(iy)/y` as `y → ∞`.",
+     "statement": "Prove that a nonnegative harmonic `u` on `ℂ₊` is `u(z) = c Im z + P[ν](z)` for a unique `c ≥ 0` and a unique Poisson-finite `ν`, that `πy u(iy) − πc y² = ∫ y²/(x² + y²) dν(x)` increases to `ν(ℝ)` as `y → ∞`, that `c = lim u(iy)/y` as `y → ∞`, and that `ν` is the vague limit of the measures `u(x + iy) dx` as `y → 0` (garnett2007, Ch. I §3, uncertified). This is the harmonic form of the Herglotz representation of AutomorphicSpectralTheory §0.5: if `F` is holomorphic on `ℂ₊` with `Im F = u` and `(a, b, ν_F)` is its triple there, then `c = b` and `ν = πν_F`, because `Im (x − z)⁻¹ = π P(z, x)`. Route: the function `i(∂ₓu − i∂ᵧu)`, `i` times the complex partial of `u`, is holomorphic on `ℂ₊` by Mathlib's `HarmonicAt.differentiableAt_complex_partial`; it has a primitive by Tau Ceti `DifferentiableOn.hasDerivAt_wedgeIntegral_upperHalfPlane`, whose imaginary part has the gradient of `u`, so after subtracting an imaginary constant the primitive is an `F` with `Im F = u` and `F′ = i(∂ₓu − i∂ᵧu)`, and §0.5 applies to it. Uniqueness: for each representation, `cz + (1/π)∫ ((x − z)⁻¹ − x/(1 + x²)) dν(x)` is holomorphic with imaginary part `u` and real part `0` at `i`; two holomorphic functions on `ℂ₊` with the same imaginary part differ by a real constant, so the two functions coincide and the uniqueness of the triple in §0.5 gives that of `(c, ν)`. Mass: `πy P[ν](iy)` is `∫ y²/(x² + y²) dν(x)`, which increases to `ν(ℝ)` by monotone convergence, and `P[ν](iy)/y → 0`. Vague limit: for `φ` continuous with compact support, `∫ φ(x) P[ν](x + iy) dx = ∫ (∫ P(x + iy, t) φ(x) dx) dν(t)` by Tonelli, the inner integral tends to `φ(t)` with a bound `C_φ/(1 + t²)` for `y ≤ 1`, and the term `cy ∫ φ` tends to `0`.",
      "hypotheses": [
       "u ≥ 0 harmonic on ℂ₊"
      ],
      "locator": {
-      "source": "mauth2022",
-      "where": "Lemma 3 line 390; garnett2007 Ch. I §3 (uncertified)"
+      "source": "garnett2007",
+      "where": "Ch. I §3 (uncertified)"
      },
      "prerequisites": [
       "target:2.1",
+      "roadmap:AutomorphicSpectralTheory §0.5",
       "mathlib:HarmonicAt.differentiableAt_complex_partial",
-      "tauceti:DifferentiableOn.hasDerivAt_wedgeIntegral_upperHalfPlane",
-      "tauceti:TauCeti.exists_isFiniteMeasure_eq_nevanlinnaKernel_add",
-      "tauceti:TauCeti.nevanlinnaKernel_im"
+      "tauceti:DifferentiableOn.hasDerivAt_wedgeIntegral_upperHalfPlane"
      ],
      "api": [],
      "tests": [
       {
        "name": "item0",
        "kind": "computation",
-       "statement": "`u = Im z`: `c = 1`, `ν = 0`."
+       "statement": "`u = Im z`: `c = 1`, `ν = 0`. The complex partial of `u` is `∂ₓu − i∂ᵧu = −i`, and `F′ = i · (−i) = 1` is the derivative of `F = z`; the conjugate partial `∂ₓu + i∂ᵧu = i` is not `F′`."
       },
       {
        "name": "andForEvery",
        "kind": "computation",
-       "statement": "`u = P[δ₀]`: `c = 0`, `ν = δ₀`, and `πy u(iy) = 1 = ν(ℝ)` for every `y`."
+       "statement": "`u = P[δ₀]`: `c = 0`, `ν = δ₀`, and `πy u(iy) = 1 = ν(ℝ)` for every `y`. Here `F = −1/(πz)` has the triple `(0, 0, δ₀/π)` of AutomorphicSpectralTheory §0.5, and `ν = π · δ₀/π = δ₀`; reading `ν = ν_F` would give mass `1/π`, while `πy u(iy) = 1`. The derivative `F′ = 1/(πz²)` equals `i(∂ₓu − i∂ᵧu)` with `∂ₓu − i∂ᵧu = −i/(πz²)`."
       },
       {
        "name": "and",
@@ -1263,7 +1267,8 @@
      },
      "prerequisites": [
       "target:1.3",
-      "target:4.1"
+      "target:4.1",
+      "mathlib:Real.tendsto_integral_exp_smul_cocompact"
      ],
      "api": [],
      "tests": [
@@ -1531,7 +1536,7 @@
      "id": "5.4",
      "kind": "theorem",
      "name": "integral_log_one_sub_normSq_nlft",
-     "statement": "Prove that `∫_ℝ log|a(∞, x)| dx = (π/2)‖q‖²` and `∫_ℝ −log(1 − |q⌃*(x)|²) dx = π‖q‖²`; that `|q⌃*| < 1` almost everywhere; that `a(∞, ·)` is outer, `a(∞, ·) = O⁰_{log|a(∞, ·)|}`, so that `a(∞, z) = exp(−(1/(2πi)) ∫ log(1 − |q⌃*(x)|²)/(x − z) dx)` and `b(∞, ·) = q⌃ a(∞, ·)`, so that `q⌃` determines `a(∞, ·)` and `b(∞, ·)`, and `q⌃ = 0` only when `q = 0` almost everywhere; and that for real `q` the value `a(∞, iy)` is positive (poltoratski2024 (5.5) line 545–548 and line 567–577, printed with constant `1`; mauth2022 line 206–210; denisov2006 Theorem 11.1 line 3246–3255). Route: the reverse of §5.3's inequality comes from the pseudo-hyperbolic identity of §5.3, `∫ −log(1 − |q⌃*|²) ≥ π‖q‖²_{L²(0,T)} − 2∫|log|1 + uρ₂ conj ρ₁||`, where the last integral tends to `0` because `‖ρ₂‖²_{L²} ≤ π‖q‖²_{L²(T,∞)}` (§5.3 applied to the tail, with `r² ≤ −log(1 − r²)`) and `‖ρ₁‖²_{L²} ≤ π‖q‖²`; equality with `ν(ℝ)` forces the singular part of the measure of §5.3 to vanish, so `log|a(∞, ·)| = P[log|a(∞, ·)|]` and §2.8 applies.",
+     "statement": "Prove that `∫_ℝ log|a(∞, x)| dx = (π/2)‖q‖²` and `∫_ℝ −log(1 − |q⌃*(x)|²) dx = π‖q‖²`; that `|q⌃*| < 1` almost everywhere; that `a(∞, ·)` is outer, `a(∞, ·) = O⁰_{log|a(∞, ·)|}`, so that `a(∞, z) = exp(−(1/(2πi)) ∫ log(1 − |q⌃*(x)|²)/(x − z) dx)` and `b(∞, ·) = q⌃ a(∞, ·)`, so that `q⌃` determines `a(∞, ·)` and `b(∞, ·)`, and `q⌃ = 0` only when `q = 0` almost everywhere; and that for real `q` the value `a(∞, iy)` is positive (poltoratski2024 (5.5) line 545–548 and line 567–577, printed with constant `1`; mauth2022 line 206–210; denisov2006 Theorem 11.1 line 3246–3255). Route: the reverse of §5.3's inequality comes from the pseudo-hyperbolic identity of §5.3, `∫ −log(1 − |q⌃*|²) ≥ π‖q‖²_{L²(0,T)} − 2∫|log|1 + uρ₂ conj ρ₁||` (§4.4 for the first term), where the last integral tends to `0`: with `L(r) = −log(1 − r²)` and `|u| = 1` on `ℝ`, `|log|1 + uρ₂ conj ρ₁|| ≤ −log(1 − |ρ₁||ρ₂|) ≤ (L(|ρ₁|) L(|ρ₂|))^{1/2}` (Cauchy–Schwarz on the series `Σₙ (|ρ₁||ρ₂|)ⁿ/n`), so by Cauchy–Schwarz in `x` the integral is at most `(∫ L(|ρ₁|) · ∫ L(|ρ₂|))^{1/2} ≤ π‖q‖_{L²(0,T)} ‖q‖_{L²(T,∞)}`, by §4.4 for `ρ₁` and by §5.3 applied to the tail for `ρ₂`; equality with `ν(ℝ)` forces the singular part of the measure of §5.3 to vanish, so `log|a(∞, ·)| = P[log|a(∞, ·)|]` and §2.8 applies.",
      "hypotheses": [
       "q square-integrable on [0,∞)"
      ],
@@ -1543,6 +1548,7 @@
       "target:2.2",
       "target:2.4",
       "target:2.8",
+      "target:4.4",
       "target:5.1",
       "target:5.3"
      ],
@@ -1561,7 +1567,12 @@
       {
        "name": "normalisationIsTheRight",
        "kind": "computation",
-       "statement": "Normalisation: `O⁰` is the right outer function, since `a(∞, iy) → 1`; the outer function `O_h` normalised at `i` differs from it by `e^{−(i/π)∫ x h/(1+x²)}`, which is `1` exactly when that integral vanishes, as for real `q`, where `log|a(∞, ·)|` is even."
+       "statement": "Normalisation: `O⁰` is the right outer function, since `a(∞, iy) → 1`; the outer function `O_h` normalised at `i` differs from it by `e^{−(i/π)I}` with `I = ∫ x h/(1+x²) dx`, which is `1` exactly when `I` is an integer multiple of `2π²`. For real `q`, `I = 0`, since `log|a(∞, ·)|` is even. For `q = 0.3 e^{2iξs} 1_{[0,400]}`, `h(x) = h₀(x + ξ)` with `h₀` the boundary log-modulus at `ξ = 0` (modulation rule of §4.1), and `I ≈ 12.54` at `ξ = −0.25`, where the factor `e^{−3.992i}` is not `1` and `O_h ≠ a(∞, ·)`, while `I ≈ 21.71` at `ξ = −0.5`. As `I` is continuous in `ξ`, it equals `2π² ≈ 19.74` for some `ξ` in between, where the two outer functions coincide although `I ≠ 0`."
+      },
+      {
+       "name": "crossTermLogarithmicBound",
+       "kind": "non-example",
+       "statement": "Cross term: the `L²` norms of `ρ₁`, `ρ₂` do not control `∫|log|1 + uρ₂ conj ρ₁||`, since at `|ρ₁| = |ρ₂| = 0.999` with `uρ₂ conj ρ₁ = −0.998001` the integrand is `6.2151` although `|ρ₁ρ₂| < 1`; the logarithmic bound is attained there, `−log(1 − 0.998001) = 6.2151 = (L(0.999) L(0.999))^{1/2}`, and at `(|ρ₁|, |ρ₂|) = (0.999, 0.3)` and `(0.1, 0.9)` it reads `0.3562 ≤ 0.7656` and `0.0943 ≤ 0.1292`."
       }
      ]
     },
@@ -1601,7 +1612,7 @@
       {
        "name": "convergenceInDoesNot",
        "kind": "non-example",
-       "statement": "Convergence in `L²(ℝ)` does not give convergence at a given point; the pointwise statement is §9.7."
+       "statement": "Convergence in `L²(ℝ)` does not give convergence at a given point; the pointwise statement, at almost every resonance-free point, is §9.6."
       }
      ]
     },
@@ -1609,14 +1620,14 @@
      "id": "5.6",
      "kind": "theorem",
      "name": "nlft_translate_modulate_dilate",
-     "statement": "Prove, for square-integrable `q` and `z ∈ ℂ₊`: translation `(q^{t₀})⌃ = e^{2izt₀} q⌃` for `t₀ ≥ 0`; modulation `(q e^{2iξ·})⌃(z) = q⌃(z + ξ)` for `ξ ∈ ℝ`; dilation `(λ q(λ·))⌃(z) = q⌃(z/λ)` for `λ > 0`; for real potentials `q⌃(−conj z) = conj q⌃(z)` and `q⌃*(−x) = conj q⌃*(x)` almost everywhere; and the first-order approximation: for `q` integrable on `[0, ∞)` with `L = ∫₀^∞ |q|`, `|q⌃(z) − ∫₀^∞ q(s) e^{2izs} ds| ≤ sinh L − L + L(cosh L − 1)` on the closed half-plane, where at real `x` the linear term is `𝓕(q · 1_{[0,∞)})(−x/π)` with Mathlib's `𝓕` (poltoratski2024 line 561–567; taothiele2012 line 687–688 for the discrete model). Route: §4.1's rules pass to the limit; the first-order bound combines §4.2 with `|1/a − 1| ≤ |a − 1|` from §4.3.",
+     "statement": "Prove, for square-integrable `q` and `z ∈ ℂ₊`: translation `(q^{t₀})⌃ = e^{2izt₀} q⌃` for `t₀ ≥ 0`; modulation `(q e^{2iξ·})⌃(z) = q⌃(z + ξ)` for `ξ ∈ ℝ`; dilation `(λ q(λ·))⌃(z) = q⌃(z/λ)` for `λ > 0`; for real potentials `q⌃(−conj z) = conj q⌃(z)` and `q⌃*(−x) = conj q⌃*(x)` almost everywhere; and the first-order approximation: for `q` integrable on `[0, ∞)` with `L = ∫₀^∞ |q|`, `|q⌃(z) − ∫₀^∞ q(s) e^{2izs} ds| ≤ sinh L − L + L(cosh L − 1)` on the closed half-plane, where at real `x` the linear term is `𝓕(q · 1_{[0,∞)})(−x/π)` with Mathlib's `𝓕` (poltoratski2024 line 561–567; taothiele2012 Lecture 1 Lemma 1 (5), (7) line 225–240 and line 210–220 for the discrete model). Route: §4.1's rules pass to the limit; the first-order bound combines §4.2 with `|1/a − 1| ≤ |a − 1|` from §4.3.",
      "hypotheses": [
       "q square-integrable on [0,∞)",
       "for the first-order bound q integrable on [0,∞)"
      ],
      "locator": {
       "source": "poltoratski2024",
-      "where": "line 561–567; taothiele2012 line 687–688"
+      "where": "line 561–567; taothiele2012 Lecture 1 Lemma 1 (5), (7) line 225–240 and line 210–220"
      },
      "prerequisites": [
       "target:4.1",
@@ -1756,7 +1767,7 @@
      "id": "6.3",
      "kind": "theorem",
      "name": "norm_deBrangesSpace_diracE_eq",
-     "statement": "Prove that for `0 < s ≤ t` and `F ∈ PW_s`, `‖F‖_{B(E(t,·))} = ‖F‖_{B(E(s,·))}`, and the same for `Ẽ` (poltoratski2024 line 255–262; romanov2014 §8 Theorem 16 line 2283 by an operator-theoretic route). Route: on `ℝ`, `∂ₜ |E(t, x)|^{−2} = −2 Re(q(t)/E(t, x)²)` almost everywhere (§3.2), so `∂ₜ ∫ |F|² |E(t, ·)|^{−2} = −2 Re(q(t) ∫ (F/E(t, ·))(F#/E(t, ·)) dx)`, and the integral vanishes by the product law of §2.6, since `F/E(t, ·)` and `F#/E(t, ·)` lie in `H²(ℂ₊)` for `t ≥ s` (§6.2); differentiation under the integral is dominated because `|F|²` is integrable and `|q(t)||E(t, x)|^{−2} ≤ |q(t)| e^{2∫₀ᵗ|q|}`.",
+     "statement": "Prove that for `0 < s ≤ t` and `F ∈ PW_s`, `‖F‖_{B(E(t,·))} = ‖F‖_{B(E(s,·))}`, and the same for `Ẽ` (poltoratski2024 line 255–262; romanov2014 §8 Theorem 16 line 2283 by an operator-theoretic route). Route: fix `x ∈ ℝ`. The map `r ↦ E(r, x)` is absolutely continuous on `[s, t]` (§1.2, applied to `Θ(·, x)` and followed by the linear map `(u, v) ↦ u − iv`), and `|E(r, x)| ≥ c = e^{−∫₀ᵗ|q|}` there (§3.2). So `r ↦ |E(r, x)|^{−2}`, which is `E(·, x)` followed by the Lipschitz map `w ↦ max(|w|, c)^{−2}`, is absolutely continuous on `[s, t]` (Mathlib `LipschitzWith.comp_absolutelyContinuousOnInterval`), with derivative `−2 Re(q(r)/E(r, x)²)` at almost every `r` (§3.2). Mathlib `AbsolutelyContinuousOnInterval.integral_deriv_eq_sub` gives, for every `x`, `|E(t, x)|^{−2} − |E(s, x)|^{−2} = −2∫_s^t Re(q(r)/E(r, x)²) dr`. Multiply by `|F(x)|² = F(x)F#(x)` and integrate over `ℝ`. The integrand is bounded by `2|F(x)|²|q(r)| e^{2∫₀ʳ|q|}`, which is integrable on `[s, t] × ℝ`, so the two integrals may be exchanged (Mathlib `MeasureTheory.intervalIntegral_integral_swap`): `‖F‖²_{B(E(t,·))} − ‖F‖²_{B(E(s,·))} = −2∫_s^t Re(q(r) ∫ (F/E(r, ·))(F#/E(r, ·)) dx) dr`. For every `r ∈ [s, t]`, `F ∈ PW_s ⊆ PW_r`, so `F/E(r, ·)` and `F#/E(r, ·)` lie in `H²(ℂ₊)` (§6.2) and the inner integral vanishes by the product law of §2.6. The same argument with `Ẽ`, which satisfies the same equation and the same bounds (§3.2), gives the identity for `Ẽ`.",
      "hypotheses": [
       "q integrable on every [0,t]",
       "0 < s ≤ t, F ∈ PW_s"
@@ -1770,10 +1781,17 @@
       "target:2.6",
       "target:3.2",
       "target:6.2",
-      "mathlib:hasFDerivAt_integral_of_dominated_of_fderiv_le"
+      "mathlib:LipschitzWith.comp_absolutelyContinuousOnInterval",
+      "mathlib:AbsolutelyContinuousOnInterval.integral_deriv_eq_sub",
+      "mathlib:MeasureTheory.intervalIntegral_integral_swap"
      ],
      "api": [],
      "tests": [
+      {
+       "name": "pointwiseTimeDerivativeFails",
+       "kind": "non-example",
+       "statement": "The time derivative of the norm cannot be taken under the integral at every `t`: for `q = 1_{[0,1]}` and `x = 0`, `|E(t, 0)|^{−2} = e^{−2 min(t, 1)}` has one-sided derivatives `−2e^{−2}` and `0` at `t = 1`. The integrated identity holds there: `e^{−2t} − e^{−2s} = −2∫_s^t e^{−2r} dr` for `0 ≤ s ≤ t ≤ 1`, and both sides are constant in `t` beyond `1`, where `q = 0`."
+      },
       {
        "name": "forRealConstantAnd",
        "kind": "compatibility",
@@ -1805,11 +1823,11 @@
       "where": "§8 Theorem 15 line 2217–2261, Lemma 23 line 2370; remling2018 Ch. 2 (waived)"
      },
      "prerequisites": [
-      "target:1.1",
-      "target:1.3",
       "target:3.1",
       "target:3.2",
-      "target:3.3"
+      "target:3.3",
+      "roadmap:OperatorTheory/UnboundedOperators §4.8",
+      "mathlib:TendstoLocallyUniformlyOn.differentiableOn"
      ],
      "api": [
       {
@@ -1828,6 +1846,11 @@
        "statement": "`m(z)` is the unique `w` with `Φ(·, z) + wΘ(·, z) ∈ L²(ℝ₊; ℂ²)`."
       },
       {
+       "name": "weylFunctionOfCompactSupport",
+       "role": "lemma",
+       "statement": "Compact support: if `q = 0` almost everywhere on `(T, ∞)` for some `T ≥ 0`, then `m = −Ẽ(T, ·)/E(T, ·)` on `ℂ₊`. Beyond `T` the system is free, so `E(t, z) = e^{−i(t−T)z} E(T, z)` and likewise for `Ẽ` (§3.2), and for `t ≥ T` the solution `(u, v) = Φ + wΘ` has `(u − iv)(t) = e^{−i(t−T)z}(Ẽ(T, z) + wE(T, z))`, of modulus growing like `e^{(t−T) Im z}` unless it vanishes, and `(u + iv)(t) = e^{i(t−T)z}(Ẽ#(T, z) + wE#(T, z))`, which decays. As `|u|² + |v|² = (|u − iv|² + |u + iv|²)/2`, `Φ + wΘ` is square-integrable exactly when `Ẽ(T, z) + wE(T, z) = 0`, and `E(T, z) ≠ 0` on `ℂ₊` (§3.3)."
+      },
+      {
        "name": "isHolomorphicOnWith",
        "role": "lemma",
        "statement": "`m` is holomorphic on `ℂ₊` with `Im m > 0`, and `−Ẽ(t, ·)/E(t, ·) → m` locally uniformly on `ℂ₊`, with error at most twice the radius."
@@ -1840,14 +1863,14 @@
       {
        "name": "routeOfAtTime",
        "role": "lemma",
-       "statement": "Route: `Im(conj u · v)` of `Φ + wΘ` at time `t` is `−Im w + Im z ∫₀ᵗ|Φ + wΘ|²` by the Christoffel–Darboux identity; nesting is monotonicity in `t`; since `A, B, C, D` are real entire (§3.1), `(u − iv)(t) = Ẽ(t, z) + wE(t, z)` and `(u + iv)(t) = Ẽ#(t, z) + wE#(t, z)`, and `Im(conj u · v) = (|u − iv|² − |u + iv|²)/4` gives the second description, a disc because `|E(t, z)| > |E#(t, z)|` (§3.3); `u − iv` vanishes at `w = −Ẽ/E`, where `u + iv ≠ 0` because `(u, v) ≠ 0`, so that point lies inside the disc. Limit point: if `Θ(·, z₀) ∈ L²` for some `z₀ ∈ ℂ₊`, every solution is square-integrable at `z₀` and then, by variation of constants and §1.1, at every `z`; at `z = 0`, `det[Θ, Φ] = 1` gives `1 ≤ |Θ||Φ|`, which is not integrable on `[0, ∞)`."
+       "statement": "Route: `Im(conj u · v)` of `Φ + wΘ` at time `t` is `−Im w + Im z ∫₀ᵗ|Φ + wΘ|²` by the Christoffel–Darboux identity; nesting is monotonicity in `t`; since `A, B, C, D` are real entire (§3.1), `(u − iv)(t) = Ẽ(t, z) + wE(t, z)` and `(u + iv)(t) = Ẽ#(t, z) + wE#(t, z)`, and `Im(conj u · v) = (|u − iv|² − |u + iv|²)/4` gives the second description, a disc because `|E(t, z)| > |E#(t, z)|` (§3.3); `u − iv` vanishes at `w = −Ẽ/E`, where `u + iv ≠ 0` because `(u, v) ≠ 0`, so that point lies inside the disc. Limit point: if `Θ(·, z₀) ∈ L²` for some `z₀ ∈ ℂ₊`, then `Φ(·, z₀) ∈ L²` as well, since `Φ + wΘ` is square-integrable for `w` in the nonempty `⋂_t D_t(z₀)`. So at `λ₀ = −z₀` the square-integrable solutions do not form a line, `∞` is a limit-circle endpoint by the alternative of OperatorTheory/UnboundedOperators §4.8 (dictionary of the Conventions), and every solution is square-integrable at every `z`, in particular at `z = 0`; there `det[Θ, Φ] = 1` gives `1 ≤ |Θ||Φ|`, which is not integrable on `[0, ∞)`."
       }
      ],
      "tests": [
       {
        "name": "freeCaseForEvery",
        "kind": "degenerate",
-       "statement": "Free case: `−Ẽ/E = i` for every `t`, `m = i`, and `Φ + iΘ = (i e^{itz}, e^{itz})` is square-integrable on `ℝ₊` for `z ∈ ℂ₊`; the radius is `1/sinh(2t Im z) → 0`."
+       "statement": "Free case: `−Ẽ/E = i` for every `t`, `m = i`, and `Φ + iΘ = (i e^{itz}, e^{itz})` is square-integrable on `ℝ₊` for `z ∈ ℂ₊`; the radius is `1/sinh(2t Im z) → 0`. Under the dictionary of the Conventions this is the limit-point case of OperatorTheory/UnboundedOperators §4.8 at `λ = −z ∈ ℂ₋`: the square-integrable solutions are the multiples of `(i e^{itz}, e^{itz})`, while `Φ − iΘ = (−i e^{−itz}, e^{−itz})` grows like `e^{t Im z}`."
       },
       {
        "name": "weylPointIsInterior",
@@ -1860,9 +1883,9 @@
        "statement": "On `ℝ`, `Im(−Ẽ(t, x)/E(t, x)) = 1/|E(t, x)|²` by `det M = 1`; for the smooth complex potential of §3.1 at `x = 0.7`, both sides are `0.983136`, and `Im(E/Ẽ) = 1/|Ẽ|² = 0.838119`."
       },
       {
-       "name": "compactSupportOnExactly",
-       "kind": "degenerate",
-       "statement": "Compact support (`q = 0` on `(T, ∞)`): `m = −Ẽ(T, ·)/E(T, ·)` exactly, since beyond `T` the square-integrable free solution has `u − iv = 0`."
+       "name": "compactSupportComputed",
+       "kind": "computation",
+       "statement": "Compact support, computed: in the free case the formula gives `−Ẽ(T, ·)/E(T, ·) = i = m` for every `T`. For `f = 1` on `[0, 1]`, zero afterwards, at `z = i` it gives `m(i) = i/(1 + √2 tanh √2) ≈ 0.443190i`; with this `w`, `u − iv` vanishes at `t = 1` and `∫₀^∞ |Φ + wΘ|² = Im m(i)/Im z ≈ 0.443190` (`≈ 0.401791` on `[0, 1]` and `|u + iv|²/4 ≈ 0.041399` on the free tail), while `w = m(i) + 0.01` leaves `|u − iv| ≈ 0.0491` at `t = 1`, so the solution grows like `e^{t−1}`. The boundary points `−D(1, i)/C(1, i) ≈ 0.591892i` and `−B(1, i)/A(1, i) ≈ 0.385819i` of `D_1(i)`, the ends of a diameter of length `≈ 0.206073`, are not `m(i)`."
       }
      ]
     },
@@ -1870,7 +1893,7 @@
      "id": "6.5",
      "kind": "definition",
      "name": "spectralMeasure",
-     "statement": "Define the Neumann spectral measure `μ_q` as the Poisson-finite measure of §2.2 for the positive harmonic function `Im m`, so that `Im m = β Im z + P[μ_q]` with `β ≥ 0`, and the Dirichlet spectral measure `μ̃_q` likewise for `Im(−1/m)`; write `μ = w dx + μ_s` and `μ̃ = w̃ dx + μ̃_s` (poltoratski2024 line 255–264; mauth2022 line 692–701; romanov2014 line 2275–2281). Its API:",
+     "statement": "Define the Neumann spectral measure `μ_q` as the Poisson-finite measure of §2.2 for the positive harmonic function `Im m`, so that `Im m = β Im z + P[μ_q]` with `β ≥ 0`, and the Dirichlet spectral measure `μ̃_q` likewise for `Im(−1/m)`; write `μ = w dx + μ_s` and `μ̃ = w̃ dx + μ̃_s` (poltoratski2024 line 255–264; mauth2022 line 692–701; romanov2014 line 2275–2281). Equivalently, `(Re m(i), β, μ_q/π)` is the triple of `m` in AutomorphicSpectralTheory §0.5, so `m(z) = Re m(i) + βz + (1/π)∫ ((x − z)⁻¹ − x/(1 + x²)) dμ_q(x)`. Its API:",
      "hypotheses": [
       "q integrable on every [0,t]"
      ],
@@ -1883,7 +1906,14 @@
       "target:2.4",
       "target:2.5",
       "target:6.4",
-      "tauceti:TauCeti.exists_isFiniteMeasure_eq_nevanlinnaKernel_add"
+      "roadmap:AutomorphicSpectralTheory §0.5",
+      "tauceti:TauCeti.boundaryCayley",
+      "tauceti:MeasureTheory.Measure.herglotzTransform",
+      "tauceti:MeasureTheory.Measure.herglotzTransform_zero",
+      "tauceti:TauCeti.I_mul_herglotzTransform_cayley_eq",
+      "mathlib:span_fourier_closure_eq_top",
+      "mathlib:AddCircle.homeomorphCircle'",
+      "mathlib:MeasureTheory.FiniteMeasure.tendsto_iff_forall_integral_rclike_tendsto"
      ],
      "api": [
       {
@@ -1905,6 +1935,11 @@
        "name": "andAreDeterminedBy",
        "role": "lemma",
        "statement": "`μ_q` and `μ̃_q` are determined by `m`, which depends only on `q` on `[0, ∞)`."
+      },
+      {
+       "name": "truncationsConvergeWeakly",
+       "role": "lemma",
+       "statement": "Truncations: let `C = TauCeti.boundaryCayley`, let `μ_T = dx/|E(T, ·)|²` be the Neumann spectral measure of the truncation `q_T` (compact-support bullet) and `m_T = −Ẽ(T, ·)/E(T, ·)` its Weyl function (§6.4), and on Mathlib's `Circle`, written `X`, let `ν_T = C_*(μ_T/(π(1 + x²)))` and `ν = C_*(μ_q/(π(1 + x²))) + β δ₁`. Then `m(z) = Re m(i) + i H_ν((z − i)/(z + i))` on `ℂ₊`, where `H_ν(ξ) = ∫ (ζ + ξ)/(ζ − ξ) dν(ζ)` is the Herglotz transform, and likewise `m_T(z) = Re m_T(i) + i H_{ν_T}((z − i)/(z + i))`; the masses satisfy `ν_T(X) = Im m_T(i) → Im m(i) = ν(X)`; and `ν_T → ν` weakly on the circle as `T → ∞`. Route: the identity is Tau Ceti `TauCeti.I_mul_herglotzTransform_cayley_eq` for `ν`, whose atom at `1` is `β` and whose Cayley pushforward is `μ_q/(π(1 + x²))`, compared with the representation above through `(1 + xz)/(x − z) = (1 + x²)((x − z)⁻¹ − x/(1 + x²))`; the masses are `H(0)` (Tau Ceti `MeasureTheory.Measure.herglotzTransform_zero`), the value at `z = i`. Since `m_T → m` locally uniformly on `ℂ₊` (§6.4), `H_{ν_T} → H_ν` uniformly on `|ξ| = 1/2`. For `k ≥ 1` the coefficient of `ξᵏ` in `H_ν(ξ)` is `2∫ ζ̄ᵏ dν(ζ)`, so every Fourier coefficient of `ν_T` tends to that of `ν`. The masses are bounded and the trigonometric polynomials are dense in the continuous functions on the circle (Mathlib `span_fourier_closure_eq_top`, carried to `Circle` by `AddCircle.homeomorphCircle'`), so `∫ g dν_T → ∫ g dν` for every continuous `g`, which is weak convergence (Mathlib `MeasureTheory.FiniteMeasure.tendsto_iff_forall_integral_rclike_tendsto`)."
       }
      ],
      "tests": [
@@ -1922,6 +1957,21 @@
        "name": "aConstantPotentialOn",
        "kind": "non-example",
        "statement": "A constant potential on all of `[0, ∞)`, `f ≡ c > 0`, has `w = 0` on `(−c, c)` (exponentially growing and decaying real solutions), so `μ` is not equivalent to Lebesgue measure without a decay hypothesis."
+      },
+      {
+       "name": "truncationsFreeCase",
+       "kind": "degenerate",
+       "statement": "Truncations, free case: `μ_T = dx` and `ν_T = C_*(dx/(π(1 + x²)))`, normalised arc length, for every `T`; `H_{ν_T} ≡ 1`, so `m_T = i`, and the mass is `1 = Im i`."
+      },
+      {
+       "name": "truncationsMasses",
+       "kind": "computation",
+       "statement": "Truncations, masses: for `f ≡ 1` on `[0, ∞)` the Weyl function is `m(z) = (1 + iκ)/z` with `κ = √(z² − 1)`, `Im κ > 0`, so `Im m(i) = √2 − 1 ≈ 0.414214`; the masses `Im m_T(i)` are `0.537329`, `0.443190`, `0.415910`, `0.414219` at `T = 0.5, 1, 2, 4`."
+      },
+      {
+       "name": "truncationsWeakNotPointwise",
+       "kind": "non-example",
+       "statement": "Truncations, weak and not pointwise: for the same `f ≡ 1` at `x = 2`, the density `1/|E(T, 2)|²` oscillates in `T` between `1/2` and `3/2` with period `π/√3` and has no limit, while the limit density is `w(2) = Im m(2 + i0) = √3/2 ≈ 0.866025`, its mean over a period. Convergence of the densities is not part of the statement and fails."
       }
      ]
     },
@@ -1929,10 +1979,10 @@
      "id": "6.6",
      "kind": "theorem",
      "name": "integral_normSq_spectralMeasure_eq",
-     "statement": "Prove that for every `t ≥ 0` and `F ∈ PW_t`, `∫ |F|² dμ_q = ‖F‖²_{B(E(t,·))}` and `∫ |F|² dμ̃_q = ‖F‖²_{B(Ẽ(t,·))}`, and that `μ_q` is the only Poisson-finite measure with the first property for all `t` (poltoratski2024 line 255–262; romanov2014 §8 Theorem 16 line 2283–2363; debranges1968 §§19–23 and remling2018 Ch. 3, waived). Route: the measures `μ_T = dx/|E(T, ·)|²` of the truncations `q_T` (§6.5) represent `m_T = −Ẽ(T, ·)/E(T, ·)`, and `m_T → m` locally uniformly (§6.4), so the Cayley images of `μ_T/(π(1 + x²))`, with the atoms `β_T δ₁`, converge weakly on the circle (their Herglotz transforms converge); for `F ∈ PW_t` with `zF ∈ PW_t`, `(1 + x²)|F(x)|² → 0` at `±∞`, so `∫|F|² dμ_T → ∫|F|² dμ`, while `∫|F|² dμ_T = ‖F‖²_{B(E(t,·))}` for `T ≥ t` by §6.3; such `F` are dense in `PW_t` (§2.7), and Cauchy sequences in `B(E(t, ·))` are Cauchy in `L²(μ)`. Uniqueness: two such measures give equal finite measures `|k_ε|² dμ` for `k_ε(x) = sin(εx)/x`, by Mathlib `Measure.ext_of_charFun` applied to `e^{iax}k_ε` and `k_ε`.",
+     "statement": "Prove that for every `t > 0` and `F ∈ PW_t`, `∫ |F|² dμ_q = ‖F‖²_{B(E(t,·))}` and `∫ |F|² dμ̃_q = ‖F‖²_{B(Ẽ(t,·))}`, and that `μ_q` is the only Poisson-finite measure with the first property for all `t > 0` (poltoratski2024 line 255–262; romanov2014 §8 Theorem 16 line 2283–2363; debranges1968 §§19–23 and remling2018 Ch. 3, waived). Route: the measures `μ_T = dx/|E(T, ·)|²` of the truncations `q_T` (§6.5) have Cayley images `C_*(μ_T/(π(1 + x²)))` that converge weakly on the circle to `C_*(μ/(π(1 + x²))) + β δ₁` (truncation bullet of §6.5); for `F ∈ PW_t` with `zF ∈ PW_t`, `(1 + x²)|F(x)|² → 0` at `±∞`, so `∫|F|² dμ_T → ∫|F|² dμ`, while `∫|F|² dμ_T = ‖F‖²_{B(E(t,·))}` for `T ≥ t` by §6.3; such `F` are dense in `PW_t` (§2.7), and Cauchy sequences in `B(E(t, ·))` are Cauchy in `L²(μ)`. Uniqueness: two such measures give equal finite measures `|k_ε|² dμ` for `k_ε(x) = sin(εx)/x`, by Mathlib `Measure.ext_of_charFun` applied to `e^{iax}k_ε` and `k_ε`.",
      "hypotheses": [
       "q integrable on every [0,t]",
-      "t ≥ 0, F ∈ PW_t"
+      "t > 0, F ∈ PW_t"
      ],
      "locator": {
       "source": "poltoratski2024",
@@ -1963,62 +2013,71 @@
        "name": "failsTheIdentityIn",
        "kind": "non-example",
        "statement": "`2 dx` fails the identity in the free case (`∫ |F|² 2dx = 2‖F‖²`), so the normalisation of `μ` is forced."
+      },
+      {
+       "name": "timeZeroExcluded",
+       "kind": "degenerate",
+       "statement": "`t = 0`: `E(0, ·) = 1` is not Hermite–Biehler, so `B(E(0, ·))` is not defined (§6.1), and `PW_0 = {0}`; the statement is for `t > 0`, as in §6.2 and §6.3, and loses nothing."
       }
      ]
     },
     {
      "id": "6.7",
-     "kind": "definition",
-     "name": "relativeEntropy",
-     "statement": "For finite Borel measures `σ`, `ν` on a compact metric space `X` define the relative entropy `S(σ | ν) = −∫ log(dσ/dν) dσ` when `σ ≪ ν` and `−∞` otherwise (killipsimon2003 (5.9) line 1812–1819). Its API:",
+     "kind": "theorem",
+     "name": "klDiv_cayley_poissonMeasure_spectralMeasure",
+     "statement": "Write `X` for Mathlib's `Circle`, `C = TauCeti.boundaryCayley` for the boundary Cayley map `x ↦ (x − i)/(x + i)`, and `σ = C_*(Π/π)`, which is normalised arc length `dθ/2π`. For a Poisson-finite measure `μ` on `ℝ` with Lebesgue decomposition `μ = w dx + μ_s` (Mathlib `Measure.rnDeriv` and `Measure.singularPart` with respect to Lebesgue measure) and `β ≥ 0`, let `ν_{μ,β} = C_*(μ/(π(1 + x²))) + β δ₁`, a finite measure on `X` of mass `β + (1/π)∫ dμ/(1 + x²)`. The entropy of `σ` relative to `ν` in the sense of killipsimon2003 ((5.9) line 1812–1819, (5.10) line 1831–1834) is, in Mathlib's terms, `S(σ | ν) = ν(X) − σ(X) − klDiv σ ν`, read as `−∞` when `klDiv σ ν = ∞` (Mathlib `InformationTheory.klDiv`). The facts the source proves about it are in the pinned libraries: the bound `S(σ | ν) ≤ log ν(X)` for a probability measure `σ` (killipsimon2003 Lemma 5.1 line 1836) is Mathlib `InformationTheory.mul_log_le_klDiv` at `σ(X) = 1`; the variational formula (Theorem 5.2 line 1864) is Tau Ceti `TauCeti.klDiv_eq_iSup_boundedContinuousFunction_integral_sub_integral_exp_sub_one` with `F = e^f`; and the joint weak upper semicontinuity of `S` (Corollary 5.3 line 1960) is `TauCeti.lowerSemicontinuous_klDiv_finiteMeasure` together with the continuity of the total mass under weak convergence. Prove that `klDiv σ ν_{μ,β} = ν_{μ,β}(X) − 1 − (1/π) ∫ log w dΠ` when `w > 0` almost everywhere and `log w ∈ L¹(Π)`, and that `klDiv σ ν_{μ,β} = ∞` otherwise; equivalently `S(σ | ν_{μ,β}) = (1/π) ∫ log w dΠ` in `[−∞, ∞)`. Route: `log⁺ w ≤ w` and `∫ w dΠ ≤ ∫ dμ/(1 + x²) < ∞`, so the positive part of `log w` is always `Π`-integrable; `σ` has no atoms and is equivalent to arc length, while `C_*(μ_s)` and the atom are singular to arc length, so `σ ≪ ν_{μ,β}` exactly when `w > 0` almost everywhere, and then `dσ/dν_{μ,β}` is `1/w` carried by `C`, `σ`-almost everywhere; changing variables along `C` gives `∫ llr σ ν_{μ,β} dσ = −(1/π) ∫ log w dΠ`, which is finite exactly when `log w ∈ L¹(Π)`.",
      "hypotheses": [
-      "σ, ν finite Borel measures on a compact metric space"
+      "μ a Poisson-finite positive Borel measure on ℝ with μ = w dx + μ_s",
+      "β ≥ 0",
+      "σ = C_*(Π/π), ν_{μ,β} = C_*(μ/(π(1 + x²))) + β δ₁ on Mathlib's Circle, C = TauCeti.boundaryCayley",
+      "first case: w > 0 almost everywhere and log w ∈ L¹(Π)"
      ],
      "locator": {
       "source": "killipsimon2003",
-      "where": "(5.9) line 1812–1819, Lemma 5.1 line 1836, Theorem 5.2 line 1864, Corollary 5.3 line 1960"
+      "where": "(5.9) line 1812–1819, (5.10) line 1831–1834 for the notion; Lemma 5.1 line 1836, Theorem 5.2 line 1864, Corollary 5.3 line 1960 for the facts the pinned libraries supply"
      },
      "prerequisites": [
+      "target:2.1",
+      "mathlib:InformationTheory.klDiv",
+      "mathlib:MeasureTheory.llr",
+      "mathlib:InformationTheory.mul_log_le_klDiv",
       "mathlib:Measure.rnDeriv",
-      "tauceti:TauCeti.boundaryCayley"
+      "mathlib:Measure.singularPart",
+      "tauceti:TauCeti.boundaryCayley",
+      "tauceti:TauCeti.klDiv_eq_iSup_boundedContinuousFunction_integral_sub_integral_exp_sub_one",
+      "tauceti:TauCeti.lowerSemicontinuous_klDiv_finiteMeasure"
      ],
-     "api": [
-      {
-       "name": "forAProbabilityMeasure",
-       "role": "lemma",
-       "statement": "`S(σ | ν) ≤ log ν(X)` for a probability measure `σ`, with equality for `σ = ν` (Lemma 5.1 line 1836)."
-      },
-      {
-       "name": "variationalFormulaTheoremLine",
-       "role": "lemma",
-       "statement": "Variational formula: `S(σ | ν) = inf {∫ F dν − ∫ (1 + log F) dσ : F continuous, min F > 0}` (Theorem 5.2 line 1864)."
-      },
-      {
-       "name": "jointWeakUpperSemicontinuity",
-       "role": "lemma",
-       "statement": "Joint weak upper semicontinuity: `σₙ → σ` and `νₙ → ν` weakly imply `S(σ | ν) ≥ lim sup S(σₙ | νₙ)` (Corollary 5.3 line 1960)."
-      },
-      {
-       "name": "transportToTheLine",
-       "role": "lemma",
-       "statement": "Transport to the line: for a Poisson-finite `μ = w dx + μ_s` on `ℝ`, with `σ` the Cayley image of `Π/π` and `ν` the Cayley image of `μ/(π(1 + x²))` together with any atom at `1`, `S(σ | ν) = (1/π) ∫ log w dΠ`."
-      }
-     ],
+     "api": [],
      "tests": [
       {
-       "name": "aPointMass",
+       "name": "sigmaIsArcLengthAndFreeCase",
        "kind": "computation",
-       "statement": "Let `σ = dθ/2π` be the Cayley image of `Π/π`: the `σ` of the transport bullet, a non-atomic probability measure. Then `ν = σ` gives `S = 0`, and `ν = 2σ` gives `S = log 2 = log ν(X)`. For the point mass `ν = δ₁`, the set `X ∖ {1}` has `ν`-measure `0` and `σ`-measure `1`. So `σ` is not absolutely continuous with respect to `ν`, and `S = −∞`. Two equal point masses, by contrast, give `S(δ₁ | δ₁) = 0`, so this case needs a non-atomic first argument."
+       "statement": "`σ` is arc length: the averages of `Re ζᵏ` against `C_*(Π/π)` are `1, 0, 0, 0` for `k = 0, 1, 2, 3` (numerically to `10⁻¹²`), as for `dθ/2π`. Free spectral measure `μ = dx`, `β = 0`: `ν = σ`, so `klDiv σ σ = 0` (Mathlib `InformationTheory.klDiv_self`), and the formula gives `1 − 1 − (1/π)∫ log 1 dΠ = 0`."
+      },
+      {
+       "name": "doubleLebesgueMassCorrection",
+       "kind": "computation",
+       "statement": "`μ = 2 dx`, `β = 0`: `ν = 2σ`, `klDiv σ (2σ) = log(1/2) + 2 − 1 = 1 − log 2 ≈ 0.306853`, which the formula reproduces, and `S = log 2 = log ν(X)`: the equality case of the bound `klDiv σ ν ≥ ν(X) − 1 − log ν(X)` from `InformationTheory.mul_log_le_klDiv`. Reading `S` as `−klDiv σ ν`, without the mass correction, would give `log 2 − 1 ≈ −0.306853` instead."
+      },
+      {
+       "name": "pointMassNotAbsolutelyContinuous",
+       "kind": "non-example",
+       "statement": "Point mass `μ = 0`, `β = 1`: `ν = δ₁` and `w = 0`. The set `X ∖ {1}` has `ν`-measure `0` and `σ`-measure `1`, so `σ` is not absolutely continuous with respect to `ν` and `klDiv σ δ₁ = ∞` (Mathlib `InformationTheory.klDiv_of_not_ac`), `S = −∞`. Two equal point masses, by contrast, give `klDiv δ₁ δ₁ = 0`, so this case needs the non-atomic first argument `σ`."
+      },
+      {
+       "name": "junkValueOfLogarithm",
+       "kind": "non-example",
+       "statement": "Junk value of the logarithm: for `μ = w dx` with `w = 0` on `[0, 1]` and `w = 1` elsewhere, Mathlib's `Real.log 0 = 0` makes `log w` identically `0`, integrable with integral `0`, yet `σ` is not absolutely continuous with respect to `ν_{μ,0}` and `klDiv σ ν_{μ,0} = ∞`. The hypothesis `w > 0` almost everywhere is what separates the two cases."
+      },
+      {
+       "name": "rectangularBarrier",
+       "kind": "computation",
+       "statement": "Rectangular barrier `f = 0.7` on `[0, 1.3]`, the potential of §6.5's Checks, with `μ = dx/|E(T, x)|²`, `T = 1.3` and `β = 0`: `ν(X) = (1/π)∫ w dΠ = Im m(i) = 0.537539` (quadrature `0.537539`). Since `e^{iTz}E(T, z) = a(1 + ρ)` with `a` outer (§4.4) and `|ρ| < 1` (§4.3), `log|E(T, z)| − T Im z` is the Poisson integral of `log|E(T, ·)|`, so `(1/π)∫ log w dΠ = 2T − 2 log|E(T, i)| = −0.918466` (quadrature `−0.918467`). Hence `klDiv σ ν = 0.537539 − 1 + 0.918466 = 0.456005`, above the bound `ν(X) − 1 − log ν(X) = 0.158293`; a sign error in the transport would make it negative."
       },
       {
        "name": "semicontinuityIsNotContinuity",
        "kind": "non-example",
-       "statement": "Semicontinuity is not continuity: `νₙ = (1 + sin nθ) dθ/2π → σ` weakly while `S(σ | νₙ) = (1/2π)∫₀^{2π} log(1 + sin θ) dθ = −log 2 < 0 = S(σ | σ)`."
-      },
-      {
-       "name": "freeSpectralMeasure",
-       "kind": "computation",
-       "statement": "Free spectral measure `μ = dx`: `S(σ | ν) = (1/π)∫ log 1 dΠ = 0`."
+       "statement": "Semicontinuity is not continuity: `νₙ = (1 + sin nθ) dθ/2π = ν_{μₙ,0}` for `μₙ = (1 + sin(n arg C(x))) dx` converges weakly to `σ`, while `klDiv σ νₙ = −(1/2π)∫₀^{2π} log(1 + sin nθ) dθ = log 2 > 0 = klDiv σ σ` (numerically `0.693144` at `n = 3`), and the formula gives `1 − 1 − (−log 2)`. So the pinned lower semicontinuity cannot be improved to continuity."
       }
      ]
     },
@@ -2026,7 +2085,7 @@
      "id": "6.8",
      "kind": "theorem",
      "name": "integrable_log_spectralDensity",
-     "statement": "Let `q` be square-integrable. Prove that `∫ log w dΠ ≥ −2π log 2 − π‖q‖²` and the same for `w̃`; hence `log w, log w̃ ∈ L¹(Π)` and `w, w̃ > 0` almost everywhere (poltoratski2024 line 263–268; mauth2022 Theorem 3 line 702–707; denisov2006 Theorem 11.1 line 3246 with the dictionary of §13). Route: for the truncation `q_T`, `w_T = |E(T, ·)|^{−2}` and `|E(T, x)| = |a(T, x) + b(T, x)| ≤ 2|a(T, x)|`, so `∫ log w_T dΠ ≥ −2π log 2 − 2∫ log|a(T, x)| dx = −2π log 2 − π‖q‖²_{L²(0,T)}` by §4.4; the measures converge as in §6.6, and §6.7 transfers the bound to `μ`; `log⁺ w ≤ w` is `Π`-integrable because `μ` is Poisson-finite.",
+     "statement": "Let `q` be square-integrable. Prove that `∫ log w dΠ ≥ −2π log 2 − π‖q‖²` and the same for `w̃`; hence `log w, log w̃ ∈ L¹(Π)` and `w, w̃ > 0` almost everywhere (poltoratski2024 line 263–268; mauth2022 Theorem 3 line 702–707; denisov2006 Theorem 11.1 line 3246 with the dictionary of §13). Route: for the truncation `q_T`, `w_T = |E(T, ·)|^{−2}` and `|E(T, x)| = |a(T, x) + b(T, x)| ≤ 2|a(T, x)|`, so `∫ log w_T dΠ ≥ −2π log 2 − 2∫ log|a(T, x)| dx = −2π log 2 − π‖q‖²_{L²(0,T)}` by §4.4. With `σ`, `ν_T = ν_{μ_T,0}` and `ν = ν_{μ_q,β}` as in §6.7, §6.7 gives `klDiv σ ν_T ≤ ν_T(X) − 1 + 2 log 2 + ‖q‖²`. The measures `ν_T` converge weakly to `ν` and `ν_T(X) → ν(X)` (truncation bullet of §6.5), and Tau Ceti `TauCeti.lowerSemicontinuous_klDiv_finiteMeasure`, with `σ` fixed, gives `klDiv σ ν ≤ ν(X) − 1 + 2 log 2 + ‖q‖² < ∞`. By §6.7, `w > 0` almost everywhere, `log w ∈ L¹(Π)` and `(1/π)∫ log w dΠ = ν(X) − 1 − klDiv σ ν ≥ −2 log 2 − ‖q‖²`. The Dirichlet side is the same with `|Ẽ(T, x)| = |a(T, x) − b(T, x)| ≤ 2|a(T, x)|`.",
      "hypotheses": [
       "q square-integrable on [0,∞)"
      ],
@@ -2037,8 +2096,8 @@
      "prerequisites": [
       "target:4.4",
       "target:6.5",
-      "target:6.6",
-      "target:6.7"
+      "target:6.7",
+      "tauceti:TauCeti.lowerSemicontinuous_klDiv_finiteMeasure"
      ],
      "api": [],
      "tests": [
@@ -2127,7 +2186,7 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "exists_zero_mem_ball_of_phaseDeriv",
-     "statement": "Let `θ` be meromorphic inner with the representation of §7.1, `0 < ε < 1` and `x, y ∈ ℝ` with `|θ′(x)| > (1 + ε)|θ′(y)|`. Prove that `θ` has a zero in the disc `{ζ : |ζ − x| < 3|y − x|/ε}` (poltoratski2024 Lemma 1 line 332–360; mauth2022 Lemma 29 line 1624). Route: some summand satisfies the same inequality, which places `ζₙ` inside an Apollonius circle with foci `x` and `y`.",
+     "statement": "Let `θ` be meromorphic inner with the representation of §7.1, `0 < ε < 1` and `x, y ∈ ℝ` with `|θ′(x)| > (1 + ε)|θ′(y)|`. Prove that `θ` has a zero in the disc `{ζ : |ζ − x| < 3|y − x|/ε}` (poltoratski2024 Lemma 1 line 332–360; mauth2022 Lemma 29 line 1624–1627 with radius `4|y − x|/ε` for `0 < ε < ε₀` and a small fixed `ε₀`). Route: some summand satisfies the same inequality, which places `ζₙ` inside an Apollonius circle with foci `x` and `y`: `|y − ζₙ| > √(1 + ε)|x − ζₙ|`, so `|x − ζₙ| < |y − x|/(√(1 + ε) − 1) = (√(1 + ε) + 1)|y − x|/ε < 3|y − x|/ε` for `0 < ε < 1`.",
      "hypotheses": [
       "θ meromorphic inner with the representation of 7.1",
       "0 < ε < 1",
@@ -2135,7 +2194,7 @@
      ],
      "locator": {
       "source": "poltoratski2024",
-      "where": "Lemma 1 line 332–360; mauth2022 Lemma 29 line 1624"
+      "where": "Lemma 1 line 332–360; mauth2022 Lemma 29 line 1624–1627 (radius 4|y − x|/ε for 0 < ε < ε₀ small)"
      },
      "prerequisites": [
       "target:7.1"
@@ -2427,7 +2486,7 @@
      "id": "8.6",
      "kind": "theorem",
      "name": "diracE_approx_sin_near_resonance",
-     "statement": "Prove that for almost every `s` and every `D > 1` with `T₀(s, D)` unbounded there is `C(t) > D`, `C(t) → ∞`, such that: if `z(t) = x(t) − iy(t)` is a continuous choice of zeros of `E(t, ·)` in `Q(s, C(t)/t)` for `t ∈ T₀(s, C)`, then there is a continuous unimodular `α(s, t)` with `sup_{z ∈ Q(s, C(t)/t)} |E(t, z) − α(s, t) γ(t y(t)) sin(t(z − z(t)))/√w(s)| → 0` as `t → ∞` in `T₀(s, C) ∩ {t y(t) > 1}`, and with error `o(γ(t y(t)))` without the restriction `t y(t) > 1`; and, equivalently for the Dirac inner function on `Q₊(s, C(t)/t) = Q(s, C(t)/t) ∩ ℂ₊`, `sup |θ(t, z) − conj(α)² sin(t(z − conj z(t)))/sin(t(z − z(t)))| → 0`, with the derivative relation at the zero `conj z(t)` of `θ(t, ·)`: `α² ∂_zθ(t, conj z(t)) = (1 + o(1)) t/sin(2it y(t))` (poltoratski2024 Lemma 6 and Corollary 2, line 850–917, Remark 3 line 863; mauth2022 Lemma 23 line 1258 and Lemma 32 line 1765). Route: `E(t, z(t)) = 0` gives `A(t, z(t)) = iC(t, z(t)) = β`, so `D(t, z(t), ·) = iβE(t, ·)`, and §8.5 makes `iβE` close to `sin(t(· − z(t)))/w(s)`; the determinant identity (2.2) at two points fixes `2|β|²w(s) = (1 + o(1)) sinh(2t y(t))`.",
+     "statement": "Prove that for almost every `s` and every `D > 1` with `T₀(s, D)` unbounded there is `C(t) > D`, `C(t) → ∞`, such that: if `z(t) = x(t) − iy(t)` is a choice of zeros of `E(t, ·)` in `Q(s, C(t)/t)` for `t ∈ T₀(s, C)`, then there are unimodular `α(s, t)`, continuous in `t` where the choice is, with `sup_{z ∈ Q(s, C(t)/t)} |E(t, z) − α(s, t) γ(t y(t)) sin(t(z − z(t)))/√w(s)| → 0` as `t → ∞` in `T₀(s, C) ∩ {t y(t) > 1}`, uniformly in the choice of the zeros, and with error `o(γ(t y(t)))` without the restriction `t y(t) > 1`; and, equivalently for the Dirac inner function on `Q₊(s, C(t)/t) = Q(s, C(t)/t) ∩ ℂ₊`, `sup |θ(t, z) − conj(α)² sin(t(z − conj z(t)))/sin(t(z − z(t)))| → 0`, with the derivative relation at the zero `conj z(t)` of `θ(t, ·)`: `α² ∂_zθ(t, conj z(t)) = (1 + o(1)) t/sin(2it y(t))` (poltoratski2024 Lemma 6 and Corollary 2, line 850–917, Remark 3 line 863; mauth2022 Lemma 23 line 1258 and Lemma 32 line 1765). Route: `E(t, z(t)) = 0` gives `A(t, z(t)) = iC(t, z(t)) = β`, so `D(t, ·, z(t)) = iβE(t, ·)`, since `D(t, λ, z(t)) = βC(t, λ) + iβA(t, λ)`, and §8.5 makes `iβE` close to `sin(t(· − z(t)))/w(s)`; the determinant identity (2.2) at two points fixes `2|β|²w(s) = (1 + o(1)) sinh(2t y(t))`. The error of §8.5 is a supremum over the box, and `sinh(2t y(t)) > sinh 2` when `t y(t) > 1`, so no estimate depends on which zero is chosen; continuity enters only through `β`, hence `α`.",
      "hypotheses": [
       "f real square-integrable",
       "a.e. s with T₀(s,D) unbounded for some D > 1"
@@ -2451,7 +2510,7 @@
       {
        "name": "determinantConsistencyWithAnd",
        "kind": "computation",
-       "statement": "Determinant consistency: with `E ≈ αγ(p) sin(t(z − z₀))/√w` and `Ẽ ≈ αγ(p) cos(t(z − z̃₀))/√w̃`, the quantity `E Ẽ# − Ẽ E#` equals `2i` exactly when `cos(t(x̃₀ − x₀)) = √(w w̃)` (computed in §9.2)."
+       "statement": "Determinant consistency: with `E ≈ αγ(p) sin(t(z − z₀))/√w` and `Ẽ ≈ αγ(p) cos(t(z − z̃₀))/√w̃`, where `z₀ = x₀ − ip/t` and `z̃₀ = x̃₀ − ip/t` have the height `p/t` of the factor `γ(p)`, the quantity `E Ẽ# − Ẽ E#` equals `2i` exactly when `cos(t(x̃₀ − x₀)) = √(w w̃)` (computed in §9.2); at a common height `p′/t ≠ p/t` it is `2i sinh 2p′/sinh 2p` under the same relation (§8.9)."
       },
       {
        "name": "freeCaseAndThe",
@@ -2464,7 +2523,7 @@
      "id": "8.7",
      "kind": "theorem",
      "name": "diracE_approx_exp_away_from_resonance",
-     "statement": "Prove (poltoratski2024 Corollary 3 line 1002–1012 and the argument of line 918–996; mauth2022 Corollary 6 line 1397–1408): (1) for almost every `s` there are `C(t) → ∞` and `z(t) = x(t) − iy(t) ∈ ℂ₋` with `sup_{z ∈ Q(s, C(t)/t)} |E(t, z) − α(s, t) γ(t y(t)) sin(t(z − z(t)))/√w(s)| → 0` as `t → ∞` in `T₁(s, C)`, `|α| = 1`, where `z(t)` is a zero of `E(t, ·)` when `t ∈ T₀(s, C)`; (2) if this holds and `t ∉ T₀(s, C(t))` for all large `t`, then for every `D > 0`, `sup_{z ∈ Q(s, D/t)} |E(t, z) + iα(s, t) e^{−itz}/√w(s)| → 0`. Route: §8.5 with two values of the second argument shows that `(A(t, x), C(t, x))` has modulus bounded below and rotates on `ℝ ∩ Q(s, C/t)`; choosing its zero crossings gives `E ≈ −cos(t(z − x₂))/(c₂w) − i sin(t(z − x₀))/(c₁w)`; if `t(x₂ − x₀)` were not `o(1)` modulo `2π`, or `c₁ − c₂` not `o(1)`, the phase derivative of `E` would vary by a factor `1 + ε` on an interval of length `8π/t`, and §7.2 would give a zero in `Q(s, C/t)`.",
+     "statement": "Prove (poltoratski2024 Corollary 3 line 1002–1012 and the argument of line 918–996; mauth2022 Corollary 6 line 1397–1408): (1) for almost every `s` there are `C(t) → ∞` and `z(t) = x(t) − iy(t) ∈ ℂ₋` with `sup_{z ∈ Q(s, C(t)/t)} |E(t, z) − α(s, t) γ(t y(t)) sin(t(z − z(t)))/√w(s)| → 0` as `t → ∞` in `T₁(s, C)`, `|α| = 1`, where for `t ∈ T₀(s, C)` the point `z(t)` can be any zero of `E(t, ·)` in `Q(s, C(t)/t)`, uniformly in the choice, and for `t ∉ T₀(s, C)` one can take `t y(t) = 2C(t)`; the same function `C(t)` gives the approximation of `Ẽ(t, ·)` of this form, with `w̃(s)`, `T̃₀(s, C)` and `T̃₁(s, C)` in place of `w(s)`, `T₀(s, C)` and `T₁(s, C)`, and so does every smaller function tending to infinity; (2) if the approximation of `E` in (1) holds at `s` for a function `C(t) → ∞` and `t ∉ T₀(s, C(t))` for all large `t`, then for every `D > 0`, `sup_{z ∈ Q(s, D/t)} |E(t, z) + iα(s, t) e^{−itz}/√w(s)| → 0`; (3) for almost every `s`: if `T₀(s, K)` is bounded for every `K > 0`, then for every `D > 0` there are unimodular `α(s, t)` with `sup_{z ∈ Q(s, D/t)} |E(t, z) + iα(s, t) e^{−itz}/√w(s)| → 0` as `t → ∞`. Route, the two-term form. Fix `s` where §8.5 holds and `w(s) > 0`, write `η_C(t)` for the error of §8.5 on `Q(s, C/t)`, and let `C ≥ 3`. Two values `ω₁`, `ω₂ = ω₁ + π/(2t)` of the second argument in `ℝ ∩ Q(s, C/t)` define a real matrix `M = M(t)` by `(A(t, ω_j), C(t, ω_j)) = M(cos tω_j, sin tω_j)/√w(s)`, and §8.5 gives `det M = 1 + O(η_C)` and `(A(t, z), C(t, z)) = M(cos tz, sin tz)/√w(s) + O(‖M‖e^{C}η_C)` on `Q(s, C/t)`, where `|cos tz|, |sin tz| ≤ e^{C}`. So `E(t, ·)` is within `O(‖M‖e^{C}η_C)` of `T(z) = a e^{−itz} + b e^{itz}` with `|a| = (σ₁ + σ₂)/(2√w(s))` and `|b| = (σ₁ − σ₂)/(2√w(s))` for the singular values `σ₁ ≥ σ₂` of `M`; in particular `|a|² − |b|² = det M/w(s)` and `‖M‖ ≤ 2√w(s)|a|`. §8.5 alone does not bound `M` (last Check); a box free of zeros does. If `b ≠ 0`, the zeros `ζ` of `T` lie at the height `P/t`, `e^{2P} = |a|/|b|`, spaced `π/t` apart, and `T(z) = −2i a e^{−itζ} sin(t(z − ζ))`, so `|T| ≥ 2 sin(1/2)|a|e^{−P}` on the circle of radius `1/(2t)` about `ζ` (`sin(1/2) = 0.4794` is the minimum of `|sin|` on `|τ| = 1/2`). If `P ≤ C − 1/2`, one of these circles lies in `Q(s, C/t)`, and once `e^{2C}η_C` is small Rouché's theorem gives a zero of `E(t, ·)` inside it. Hence, if `Q(s, C/t)` holds no zero of `E(t, ·)` and `e^{2C}η_C` is small: `P > C − 1/2` (with `P = ∞` when `b = 0`), so `σ₂/σ₁ ≥ (1 − e^{1−2C})/(1 + e^{1−2C})` and `M` is within `O(e^{1−2C} + η_C)` of a rotation; `|a|²w(s) = 1 + O(η_C + e^{2−4C})`; and `|E(t, z) − a e^{−itz}| = O(e^{C}η_C + e^{1−C})` on `Q(s, C/t)`. On such a box with `C ≥ 4π`, `(A(t, x), C(t, x))` has modulus in `[1/(2√w), 2/√w]` and makes more than a full turn on `ℝ ∩ Q(s, C/t)`, of length `2C/t ≥ 8π/t`, while one turn takes `2π/t`; choosing `x₀`, `x₁` there with `C(t, x₀) = 0 < A(t, x₀) = c₁` and `A(t, x₁) = 0 < C(t, x₁) = c₂`, and `x₂ = x₁ − π/(2t)`, §8.5 gives `C(t, z) ≈ sin(t(z − x₀))/(c₁w)` and `A(t, z) ≈ cos(t(z − x₂))/(c₂w)`, so `E ≈ cos(t(z − x₂))/(c₂w) − i sin(t(z − x₀))/(c₁w)`, with `c₁c₂w = cos(t(x₂ − x₀)) + o(1)`. Route of (1). Take `C(t) → ∞` no larger than a function as in §8.6 and with `e^{2C(t)}η_{C(t)}(t) → 0`, by a diagonal argument over constant box sizes (`η_K(t) → 0` for each constant `K`, §8.5); where `T₀(s, D)` is bounded for every constant `D`, so that §8.6 does not apply, let `C(t)` grow so slowly that `T₀(s, C)` is bounded. Every smaller function tending to infinity keeps these properties, so the minimum of the functions for `E` and for `Ẽ` serves both. For `t ∈ T₀(s, C) ∩ T₁(s, C)` every zero of `E(t, ·)` in `Q(s, C/t)` lies in the box of §8.6 below the height `−1/t`, and §8.6 gives the approximation with it, uniformly in the choice. For `t ∉ T₀(s, C)` the two-term form gives `E(t, ·)` within `o(1)` of `(a/|a|) e^{−itz}/√w(s)` on all of `Q(s, C/t)`, and `γ(2C) sin(t(z − u) + 2iC) = i e^{−it(z − u)} + O(e^{−3C})` there, so (1) holds with `z(t) = u − 2iC(t)/t` for any real `u` and `α = −i e^{−itu} a/|a|`. For `Ẽ = B − iD` the same argument runs with `B`, `D`, `μ̃` and `w̃` in place of `A`, `C`, `μ` and `w`. Route of (3), with constant boxes: at an `s` where §8.5 holds and `w(s) > 0`, fix `δ > 0`, let `ε > 0` be such that every two-term form allowed by the route (`c₁`, `c₂` within the bounds it gives and `c₁c₂w = cos(t(x₂ − x₀))`, so that `cos(t(x₂ − x₀))` is bounded below by a positive constant) whose parameters are `δ`-far from `t(x₂ − x₀) ∈ 2πℤ`, `c₁ = c₂` has phase derivative varying by a factor more than `1 + 2ε` on `J_t = (s − 4π/t, s + 4π/t)`, and take `K ≥ max(D, 4π + 24π/ε)`. For large `t` the box `Q(s, K/t)` contains no zero of `E(t, ·)` and §8.5 on it gives the two-term form there; a phase derivative of `E` varying by the factor `1 + ε` on `J_t` would give, by §7.2, a zero within `24π/(εt)` of `J_t`, hence in `Q(s, K/t)`. So the parameters are `δ`-close, `E` is within `O(δe^D) + o(1)` of `e^{itx₀} e^{−itz}/√w(s)` on `Q(s, D/t)`, and `δ` is arbitrary: `α = ie^{itx₀}`.",
      "hypotheses": [
       "f real square-integrable",
       "a.e. s"
@@ -2476,14 +2535,20 @@
      "prerequisites": [
       "target:7.2",
       "target:8.5",
-      "target:8.6"
+      "target:8.6",
+      "tauceti:TauCeti.rouche_exists_eq_zero_iff"
      ],
      "api": [],
      "tests": [
       {
        "name": "freeCaseAndSo",
        "kind": "degenerate",
-       "statement": "Free case: `E = e^{−itz}` and `w = 1`, so (2) holds exactly with `α = i`: `e^{−itz} + i·i·e^{−itz} = 0`."
+       "statement": "Free case: `E = e^{−itz}` and `w = 1`, so (2) and (3) hold exactly with `α = i`: `e^{−itz} + i·i·e^{−itz} = 0`; in the route `M` is the identity, `a = 1`, `b = 0`, and at `s = 0`, with `C ≥ 4π`, one may take `x₀ = x₂ = 0`, `x₁ = π/(2t)` and `c₁ = c₂ = 1`; the two-term form is `cos tz − i sin tz = e^{−itz}` (with `−cos` in its first term it would be `−e^{itz}` instead)."
+      },
+      {
+       "name": "clauseThreeNotFromOneAndTwo",
+       "kind": "non-example",
+       "statement": "(3) is not a consequence of the statements (1) and (2): they allow the function `C(t) = √t` in (1) together with zeros of `E(t, ·)` at `s + (log t)/t − i/(2t)`. These satisfy the hypothesis of (3), since they leave `Q(s, K/t)` for `t > e^K`, but they lie in `Q(s, √t/t)` above the height `−1/t` (`log t < √t`), so no large `t` is in `T₁(s, C)`: (1) gives no approximation and the hypothesis of (2) fails. The route of (3) reaches its contradiction inside `Q(s, K/t)` with `K` constant, whatever the function of (1) is."
       },
       {
        "name": "withAndAndOn",
@@ -2494,6 +2559,11 @@
        "name": "atAPointWith",
        "kind": "non-example",
        "statement": "At a point `s` with `w(s) = 0` the normalisation `1/√w(s)` is undefined; for square-integrable `f` such points form a null set (§6.8), which is why the statement holds almost everywhere and not everywhere."
+      },
+      {
+       "name": "eccentricTwoTermForm",
+       "kind": "non-example",
+       "statement": "§8.5 does not fix the two-term form. With `w(s) = 1`, `E(z) = 2 cos tz − (i/2) sin tz = 1.25 e^{−itz} + 0.75 e^{itz}` (`M = diag(2, 1/2)`, `|a|² − |b|² = 1`) satisfies the relation of §8.5 exactly, `D(t, λ, z) = sin(t(λ − z))`. Its zeros are `((k + 1/2)π − 0.2554 i)/t` with `0.2554 = ½ log(5/3)`, and the minimum of `|E|` on the circle of radius `1/(2t)` about `(π/2 − 0.2554 i)/t` is `0.9284 = 2 sin(1/2) · 1.25 · e^{−0.2554}`, the bound of the route. At that zero it differs by `e^{−0.2554} = 0.7746` from every `κ e^{−itz}` with `|κ| = 1`. For `C ≥ 2` the zero lies in `Q(0, C/t)` above the height `−1/t`, so every `t` is in `T₀(0, C)` and not in `T₁(0, C)`, and (1) claims nothing: it is the absence of zeros, through Rouché's theorem, that brings `M` close to a rotation."
       }
      ]
     },
@@ -2501,7 +2571,7 @@
      "id": "8.8",
      "kind": "theorem",
      "name": "diracE_diracETilde_joint_approx",
-     "statement": "Prove that for almost every `s` there is `C(t) → ∞` such that for every `t ∈ T₁(s, C) ∩ T̃₁(s, C)` there are `z(t) = u(t) − ip(t)`, `z̃(t) = ũ(t) − ip(t)` with `p(t) > 0` and a unimodular `α(t)` with `sup_{Q(s, C(t)/t)} |E(t, z) − α γ(tp) sin(t(z − z(t)))/√w(s)| → 0`, `sup_{Q(s, C(t)/t)} |Ẽ(t, z) − α γ(tp) cos(t(z − z̃(t)))/√w̃(s)| → 0`, `p(t) > C(t)/t` for `t ∉ T₀(s, C)`, `p(t) ≤ C(t)/t` for `t ∈ T₀(s, C)`, and `cos(t(ũ(t) − u(t))) = √(w(s) w̃(s))` (poltoratski2024 Lemma 7 line 1028–1097, (8.1); mauth2022 Lemma 43 line 3140). Route: §8.7 for `E` and `Ẽ`; inserting the two approximants into the determinant identity (2.2) on `ℝ ∩ Q(s, D/t)` forces equal imaginary parts and the cosine relation. The relation needs `√(w w̃) ≤ 1`, which is §6.5.",
+     "statement": "Prove that for almost every `s` there is `C(t) → ∞` such that for every `t ∈ T₁(s, C) ∩ T̃₁(s, C)` there are `z(t) = u(t) − ip(t)`, `z̃(t) = ũ(t) − ip(t)` with `p(t) > 0`, where for `t ∈ T₀(s, C)` the point `z(t)` can be any zero of `E(t, ·)` in `Q(s, C(t)/t)`, and a unimodular `α(t)` with `sup_{Q(s, C(t)/t)} |E(t, z) − α γ(tp) sin(t(z − z(t)))/√w(s)| → 0`, `sup_{Q(s, C(t)/t)} |Ẽ(t, z) − α γ(tp) cos(t(z − z̃(t)))/√w̃(s)| → 0`, uniformly in the choice of that zero, `p(t) > C(t)/t` for `t ∉ T₀(s, C)`, `p(t) ≤ C(t)/t` for `t ∈ T₀(s, C)`, and `cos(t(ũ(t) − u(t))) = √(w(s) w̃(s))` (poltoratski2024 Lemma 7 line 1028–1097, (8.1); mauth2022 Lemma 43 line 3140). Route: take `C(t)` no larger than a common function of §8.7(1) for `E` and `Ẽ` and with `e^{3C(t)}(η_{C(t)}(t) + η̃_{C(t)}(t)) → 0`, by the diagonal argument of §8.7, where `η_C` is the error of §8.5 on `Q(s, C/t)` and `η̃_C` the same error for the data `B`, `D`, `μ̃`, `w̃` of `Ẽ`. Let `t ∈ T₁(s, C) ∩ T̃₁(s, C)` be large. On `Q(s, C/t)`, where `|e^{∓itz}| ≤ e^C`, `E(t, ·)` is within `O(e^Cη_C)` of a form `T = a e^{−itz} + b e^{itz}`: for `t ∈ T₀(s, C)` the form of §8.6 at the chosen zero `z(t)` (its route gives this error, because `2|β|²w(s) = sinh(2tp) + O(η_C)` with `tp > 1`), otherwise the two-term form of §8.7's route; in both cases `|a|² − |b|² = (1 + O(η_C))/w(s)` and `|b| < e^{−2}|a|`. Likewise `Ẽ(t, ·)` is within `O(e^Cη̃_C)` of a form `T̃ = ã e^{−itz} + b̃ e^{itz}` with `|ã|² − |b̃|² = (1 + O(η̃_C))/w̃(s)`. Forms whose coefficients differ by `o(e^{−C})` differ by `o(1)` on the box, and no bound below depends on the chosen zero. On `ℝ ∩ Q(s, C/t)`, which contains a period `π/t` of `e^{2itx}`, the determinant identity (2.2) reads `Im(E conj Ẽ) = 1`, so `Im(T conj T̃) = 1 + O(e^C(η_C + η̃_C))` there. Its mean against `e^{2itx}` over a period is `(a conj b̃ − conj(b) ã)/(2i)`, hence `conj(b̃)/ã = conj(b)/a + o(e^{−2C})`. For `t ∈ T₀(s, C)` write `T = α γ(tp) sin(t(z − (u − ip)))/√w(s)` with `z(t) = u − ip`, so that `conj(b)/a = conj(α)² e^{−2tp}`; for every real `ũ` the form `α γ(tp) cos(t(z − (ũ − ip)))/√w̃(s)` has the same ratio and `|ã|² − |b̃|² = 1/w̃(s)`, and choosing `ũ` by the argument of `ã/α` puts its coefficients within `o(e^{−2C})` of those of `T̃`. For `t ∉ T₀(s, C)` the ratio `|b/a|` is below `e^{1−2C}` (§8.7's route), so the `e^{itz}` terms of `T` and `T̃` are `O(e^{1−C})` on the box, and both forms are replaced by forms of height `p(t) = 2C(t)/t`, with `α`, `u` and `ũ` read from the arguments of `a` and `ã`. In both cases the mean of `Im(T conj T̃)` over a period gives `cos(t(ũ − u))/√(w w̃) = 1 + O(e^C(η_C + η̃_C) + e^{2−4C})`; since `√(w w̃) ≤ 1` (§6.5), a move of `tũ` by `O((e^C(η_C + η̃_C) + e^{2−4C})^{1/2}) = o(e^{−C})` makes the cosine relation exact.",
      "hypotheses": [
       "f real square-integrable",
       "a.e. s"
@@ -2513,6 +2583,8 @@
      "prerequisites": [
       "target:3.2",
       "target:6.5",
+      "target:8.5",
+      "target:8.6",
       "target:8.7"
      ],
      "api": [],
@@ -2531,6 +2603,16 @@
        "name": "theRelationIsForced",
        "kind": "non-example",
        "statement": "The relation is forced: for the two approximants with `t(ũ − u) = Φ`, the determinant on `ℝ` is `γ(p)² cos Φ sin(2ip)/√(w w̃) = 2i cos Φ/√(w w̃)`; with `ũ = u` and `w w̃ = 0.63` it is `≈ 2.52i ≠ 2i`."
+      },
+      {
+       "name": "commonHeightFromDeterminant",
+       "kind": "non-example",
+       "statement": "The common height comes from (2.2), not from the separate approximations. If `E(t, ·)` has no zero in `Q(s, C/t)` while the approximant of `Ẽ(t, ·)` had its zero at the height `−√C/t`, moving that height to the one of `E` would change it at the bottom of the box by about `e^{C − 2√C}` (`e⁸ ≈ 2981` at `C = 16`); the oscillating part of (2.2) excludes this, since it forces `e^C |b̃/ã| ≤ e^{1−C} + o(1)`."
+      },
+      {
+       "name": "squareRootLossAtMaximalCosine",
+       "kind": "computation",
+       "statement": "At a point with `w w̃ = 1` the cosine relation sits at the maximum of the cosine, so an error `ε` in the constant part moves `t(ũ − u)` by about `√(2ε)` (`0.0014142` for `ε = 10⁻⁶`), not by `O(ε)`; hence the route asks `e^{3C}(η_C + η̃_C) → 0` rather than `e^{2C}(η_C + η̃_C) → 0`."
       }
      ]
     },
@@ -2538,20 +2620,24 @@
      "id": "8.9",
      "kind": "theorem",
      "name": "diracE_exact_form_at_point",
-     "statement": "Prove that for almost every `s` and every `C > 1` there are `ε₀ > 0` and `D = D(C, s)` such that if for some `t > 0` the two approximations of §8.8 hold on `Q(s, 3C/t)` with error `ε < ε₀`, with parameters `x, x̃, y` satisfying `1 < ty < 2C`, `−π/2 < t(x̃ − x) < π/2` and `cos(t(x̃ − x)) = √(w(s) w̃(s))`, then there are `x′, x̃′, y′` and a unimodular `α′` with `|tx′ − tx| + |tx̃′ − tx̃| + |ty′ − ty| + |α′ − α| < Dε`, `x̃′ − x′ = x̃ − x`, and exactly `E(t, s) = α′ γ(ty) sin(t(s − (x′ − iy′)))/√w(s)` and `Ẽ(t, s) = α′ γ(ty) cos(t(s − (x̃′ − iy′)))/√w̃(s)` (poltoratski2024 Lemma 8 line 1116–1172; mauth2022 Lemma 45 line 3251). Route: the quotient `sin(t(z − (x − iy)))/cos(t(z − (x̃ − iy)))` has derivative bounded below near `s`, so it attains the value `E(t, s)/Ẽ(t, s)` at a point `a` with `|a − s| ≤ D₂ε/t`; translate the parameters by `a − s` and use (2.2) for the moduli.",
+     "statement": "Let `s ∈ ℝ`, let `w, w̃ > 0` be numbers and let `C > 1`. Prove that there are `ε₀ > 0` and `D`, depending only on `C`, `w` and `w̃`, with the following property. Let `t > 0` and let `E`, `Ẽ` be entire functions with `E(s) conj Ẽ(s) − Ẽ(s) conj E(s) = 2i`, the determinant identity (2.2) of §3.2 at the real point `s`. Suppose that for some `0 < ε < ε₀`, some `x, x̃, y ∈ ℝ` with `1 < ty < 2C`, `−π/2 < t(x̃ − x) < π/2` and `cos(t(x̃ − x)) = √(w w̃)`, and some unimodular `α`, both `sup_{z ∈ Q(s, 3C/t)} |E(z) − α γ(ty) sin(t(z − (x − iy)))/√w| < ε` and `sup_{z ∈ Q(s, 3C/t)} |Ẽ(z) − α γ(ty) cos(t(z − (x̃ − iy)))/√w̃| < ε`. Then there are `x′, x̃′, y′ ∈ ℝ` and a unimodular `α′` with `|tx′ − tx| + |tx̃′ − tx̃| + |ty′ − ty| + |α′ − α| < Dε`, `x̃′ − x′ = x̃ − x`, and exactly `E(s) = α′ γ(ty′) sin(t(s − (x′ − iy′)))/√w` and `Ẽ(s) = α′ γ(ty′) cos(t(s − (x̃′ − iy′)))/√w̃` (poltoratski2024 Lemma 8 line 1116–1172 and mauth2022 Lemma 45 line 3251–3298, which print the factor `γ(ty)` in (8.5) and (58); the third Check shows that (2.2) forces `γ(ty′)`). §9.3 applies it to `E = E(t, ·)` and `Ẽ = Ẽ(t, ·)`, which satisfy (2.2) on `ℝ` (§3.2), at the points `p` of `ℝ ∩ Q(s, C/2ⁿ⁺¹)`, keeping the numbers `w = w(s)` and `w̃ = w̃(s)`, for the points `s` where `w(s) w̃(s) > 0`, which are almost all `s` by §6.8. Route: the quotient `g(z) = sin(t(z − (x − iy)))/cos(t(z − (x̃ − iy)))` has `g′(z) = t cos(t(x̃ − x))/cos²(t(z − (x̃ − iy)))`, of modulus at least `t √(w w̃)/cosh²(5C)` on `Q(s, 3C/t)`, so it attains the value `√(w/w̃) E(s)/Ẽ(s)` at a point `a` with `|a − s| ≤ D₂ε/t` (on the disc of radius `c/t` about `s`, with `c` depending only on `C`, `w`, `w̃`, `|g′ − g′(s)| ≤ |g′(s)|/2` because `|g″| ≲ t²` there, so `g` maps the disc of radius `r ≤ c/t` about `s` onto a set containing the disc of radius `|g′(s)| r/2` about `g(s)`, and the value is within `O(ε)` of `g(s)`); put `x′ = x − Re(a − s)`, `x̃′ = x̃ − Re(a − s)` and `y′ = y + Im(a − s)`. Then `E(s) = κ sin(t(s − (x′ − iy′)))/√w` and `Ẽ(s) = κ cos(t(s − (x̃′ − iy′)))/√w̃` for one `κ ∈ ℂ`, and (2.2) at `s` gives `|κ|² sinh(2ty′) = 2`, that is `|κ| = γ(ty′)`.",
      "hypotheses": [
-      "f real square-integrable",
-      "a.e. s, C > 1",
-      "the approximations of 8.8 on Q(s,3C/t) with error ε < ε₀",
-      "1 < ty < 2C, −π/2 < t(x̃ − x) < π/2, cos(t(x̃ − x)) = √(w w̃)"
+      "s ∈ ℝ, w, w̃ > 0 numbers, C > 1",
+      "E, Ẽ entire with E(s) conj Ẽ(s) − Ẽ(s) conj E(s) = 2i",
+      "the two approximations on Q(s,3C/t) with error ε < ε₀",
+      "1 < ty < 2C, −π/2 < t(x̃ − x) < π/2, cos(t(x̃ − x)) = √(w w̃), |α| = 1"
      ],
      "locator": {
       "source": "poltoratski2024",
-      "where": "Lemma 8 line 1116–1172; mauth2022 Lemma 45 line 3251"
+      "where": "Lemma 8 line 1116–1172 ((8.5) prints γ(ty)); mauth2022 Lemma 45 line 3251–3298 ((58) likewise)"
      },
      "prerequisites": [
+      "target:8.1",
       "target:3.2",
-      "target:8.8"
+      "target:6.8",
+      "mathlib:ApproximatesLinearOn.surjOn_closedBall_of_nonlinearRightInverse",
+      "mathlib:ContinuousLinearEquiv.toNonlinearRightInverse",
+      "mathlib:Convex.norm_image_sub_le_of_norm_fderiv_le'"
      ],
      "api": [],
      "tests": [
@@ -2566,9 +2652,14 @@
        "statement": "The constraint `1 < ty < 2C` keeps the quotient holomorphic near `s` (no zero of the cosine within `1/(2t)` of `ℝ ∩ Q(s, 3C/t)`)."
       },
       {
-       "name": "moduliTheExactForms",
+       "name": "moduliFixTheFactor",
        "kind": "computation",
-       "statement": "Moduli: the exact forms give `|E(t, s)|²/|Ẽ(t, s)|² = (w̃/w)|sin|²/|cos|²`, and (2.2) at the real point `s` fixes the common factor `γ(ty)` once the cosine relation holds."
+       "statement": "Moduli: two forms `κ sin(t(s − (x′ − iy′)))/√w` and `κ cos(t(s − (x̃′ − iy′)))/√w̃` with `cos(t(x̃′ − x′)) = √(w w̃)` have determinant `E conj Ẽ − Ẽ conj E = i|κ|² sinh(2ty′)` at the real point `s`, so (2.2) fixes `|κ| = γ(ty′)`. With the factor `γ(ty)` printed in the sources and `y′ ≠ y` it is `2i sinh(2ty′)/sinh(2ty)`, not `2i`: for `w = 0.7`, `w̃ = 0.9`, `t = 1`, `s = 0`, `ty = 1.5` it is `2.0820i` at `ty′ = 1.52` and `2.4448i` at `ty′ = 1.6`, while the factor `γ(ty′)` gives `2i` in both cases."
+      },
+      {
+       "name": "sourceFactorCannotBeKept",
+       "kind": "non-example",
+       "statement": "The factor `γ(ty)` cannot be kept: with it, (2.2) forces `y′ = y`, and only `x′` and `arg α′` remain to match the three real parameters of `(E(s), Ẽ(s))`. In the setting of the previous Check take for `E(s)`, `Ẽ(s)` the forms with `x = 0.3`, height `1.52` and factor `γ(1.52)`; they satisfy (2.2) and differ by `0.0023` and `0.0020` from the forms with `x = 0.3`, height `1.5` and factor `γ(1.5)`. The conclusion holds exactly with `x′ = 0.3`, `y′ = 1.52`, `α′ = 1`, whereas at height `1.5` with factor `γ(1.5)` no real `x′` matches both moduli (the larger of the two modulus errors is at least `0.0012`)."
       }
      ]
     }
@@ -2678,16 +2769,20 @@
      "id": "9.3",
      "kind": "theorem",
      "name": "resonance_time_proportion_tendsto_zero",
-     "statement": "Prove that for almost every `s` and every `C > 0`, if `Iₙ(s)` is the longest subinterval of `[2ⁿ, 2ⁿ⁺¹]` such that `Q(s, C/t)` contains a zero of `E(t, ·)` for every `t ∈ Iₙ(s)`, then `|Iₙ(s)|/2ⁿ → 0` (poltoratski2024 Lemma 9 line 1350–1377; mauth2022 §3.3 Corollary 7 line 1525 for the analogous half-line statement). Route: if the set of `s` with `lim sup |Iₙ(s)|/2ⁿ > 2/m` had positive measure, then for infinitely many `n` a set `Sₙ` of measure `≳ |Zₙ|/m`, `Zₙ = {s : |Iₙ(s)| > 2ⁿ/m}`, shares a time `t₁` in the middle thirds of the `Iₙ(s)`; with `t₂ = t₁ + 2ⁿ/(3m)`, §9.2 and §8.8–§8.9 give `log|a_{t₁→t₂}| ≥ c_m > 0` on `ℝ ∩ Q(s, C/2ⁿ⁺¹)` for `s ∈ Sₙ`; a cover of index two and §9.1's Plancherel identity give `|Zₙ| ≲_{m,C} ‖f‖²_{L²(2ⁿ, 2ⁿ⁺¹)}`, which is summable, and Borel–Cantelli concludes.",
+     "statement": "Prove that for almost every `s` and every `C > 0`, with `K(t)` a function `C(t)` as in §8.8 at `s`: if `ℓₙ(s)` is the supremum of the lengths of the intervals `I ⊆ [2ⁿ, 2ⁿ⁺¹] ∩ T₁(s, K) ∩ T̃₁(s, K)` such that `E(t, ·)` has a zero in `Q(s, C/t)` at every `t ∈ I` (and `0` when there is no such interval), then `ℓₙ(s)/2ⁿ → 0` (poltoratski2024 Lemma 9 line 1350–1377, whose statement has no restriction to `T₁(s, K) ∩ T̃₁(s, K)`; its proof uses (9.2), which rests on Lemma 7 and on Lemma 8, and Lemma 8 asks `1 < ty` at line 1127; mauth2022 §3.3 Corollary 7 line 1525 for the analogous half-line statement). For `C ≤ 1` and large `n` there is no such interval: a zero in `Q(s, C/t)` then lies in `Q(s, K(t)/t)` at height at most `1/t`. Route: for large `t` we have `K(t) ≥ 4C`, so for a time `t` of such an interval the zero of `E(t, ·)` in `Q(s, C/t)` lies in `Q(s, K(t)/t)` below the height `−1/t`; taken as the zero `z(t)` of §8.8 it gives `1 < tp(t) ≤ C`, the range of §8.9, and the approximations of §8.8 hold on the boxes `Q(p, 3C/t) ⊆ Q(s, K(t)/t)`, `p ∈ ℝ ∩ Q(s, C/t)`. The errors of §8.8 tend to `0` at each `s`, not uniformly in `s`: fix `m`, and let `G_N` be the set of `s` at which, for all `t ≥ 2^N`, `K(t) ≥ 4C` and, for `t ∈ T₁(s, K) ∩ T̃₁(s, K)`, the approximations of §8.8 hold, for every choice of the zero, with error below a threshold `ε₁(s) > 0` that depends only on `C`, `m`, `w(s)` and `w̃(s)` and is at most the `ε₀` of §8.9 and the margins used below. The sets `G_N` increase to a set of full measure. Let `Zₙ = {s : ℓₙ(s) > 2ⁿ/m}` and, for `s ∈ Zₙ`, let `Iₙ(s)` be such an interval of length `> 2ⁿ/m`; for `n ≥ N`, a set `Sₙ ⊆ Zₙ ∩ G_N` of outer measure `≳ |Zₙ ∩ G_N|/m` shares a time `t₁` in the middle thirds of the `Iₙ(s)`; put `t₂ = t₁ + 2ⁿ/(3m)` and `J(s) = ℝ ∩ Q(s, C/2ⁿ⁺¹)`, an interval of length `C/2ⁿ`, for `s ∈ Sₙ`. The two times share one `Φ` of §9.2. If `w w̃ = 1`, then `Φ = 0`. If `w w̃ < 1`, then `t(ũ(t) − u(t))` is `Φ₀` or `−Φ₀` modulo `2π`, where `cos Φ₀ = √(w w̃)` and `0 < Φ₀ < π/2`; for the two forms of §8.8 with `t(ũ − u) ≡ ±Φ₀` the mean of their quotient over `x ∈ [s, s + π/t]` is exactly `−i w(s) ± √(w/w̃) sin Φ₀`, so the mean of `Ẽ(t, x)/E(t, x)` is within `O(ε₁(s))` of that value; this mean is continuous in `t` (§3.1, and `E(t, ·)` has no real zeros, §3.2), so the sign in `±Φ₀` is constant on `Iₙ(s)`. §8.8 at `t₁` and `t₂`, with §8.9 applied at each `p ∈ J(s)` to the numbers `w(s)`, `w̃(s)`, then puts the data at `p` in the form of §9.2 with increment `e(p) = e(s) + (t₂ − t₁)(p − s) + O(Dε₁(s))`, whose real part sweeps an interval of length `C/(3m)`, up to that error, as `p` runs over `J(s)`. There `|a_{t₁→t₂}(p)|² = 1 + (sin² Re e(p) + sinh² Im e(p))/N²`, with `N` bounded in terms of `C` because `t₁y₁` and `t₂y₂` lie in `(1, C]` and §8.9 moves them by `O(Dε₁(s))`; so `∫_{J(s)} log|a_{t₁→t₂}| ≥ c_{m,C} |J(s)|` with `c_{m,C} > 0`, although the integrand vanishes where `e(p) = 0`. Since `log|a_{t₁→t₂}| ≥ 0` on `ℝ` (§4.3), a cover of `Sₙ` of index two by the `J(s)` and §9.1's Plancherel identity give `|Zₙ ∩ G_N| ≲_{m,C} ‖f‖²_{L²(2ⁿ, 2ⁿ⁺¹)}` for `n ≥ N`, which is summable in `n`. Borel–Cantelli, which needs no measurability, gives for each `N` that almost every `s ∈ G_N` lies in finitely many `Zₙ`, so `lim sup ℓₙ(s)/2ⁿ ≤ 1/m` at almost every `s`, for every `m`; off the union of these null sets over `m = 1, 2, …`, `ℓₙ(s)/2ⁿ → 0`. That null set depends on `C`, through `G_N`, `ε₁(s)` and `c_{m,C}`, and the `C > 0` are uncountably many. The length `ℓₙ(s)` is nondecreasing in `C`: `Q(s, C/t) ⊆ Q(s, C′/t)` for `C ≤ C′`, while `K`, `T₁(s, K)` and `T̃₁(s, K)` do not involve `C`, so every interval counted for `C` is counted for `C′`. Hence the statement for `C = 1, 2, 3, …`, off the union of the corresponding null sets, gives it for every `C > 0`, by comparison with `C′ = ⌈C⌉`.",
      "hypotheses": [
       "f real square-integrable",
-      "a.e. s, C > 0"
+      "a.e. s, one null set for every C > 0",
+      "K a function C(t) as in 8.8 at s; times restricted to T₁(s, K) ∩ T̃₁(s, K)"
      ],
      "locator": {
       "source": "poltoratski2024",
       "where": "Lemma 9 line 1350–1377"
      },
      "prerequisites": [
+      "target:3.1",
+      "target:3.2",
+      "target:4.3",
       "target:6.8",
       "target:8.8",
       "target:8.9",
@@ -2700,7 +2795,7 @@
       {
        "name": "compactSupportTheResonances",
        "kind": "degenerate",
-       "statement": "Compact support: the resonances are fixed (§8 Examples), so `Iₙ(s) = ∅` for large `n`."
+       "statement": "Compact support: the resonances are fixed (§8 Examples), so `ℓₙ(s) = 0` for large `n`."
       },
       {
        "name": "summabilityInput",
@@ -2710,164 +2805,105 @@
       {
        "name": "aResonanceAtFixed",
        "kind": "computation",
-       "statement": "A resonance at fixed distance `δ` from `s` lies in `Q(s, C/t)` only for `t ≤ C/δ`, so it contributes to `Iₙ(s)` only for `2ⁿ ≤ C/δ`."
+       "statement": "A resonance at fixed distance `δ` from `s` lies in `Q(s, C/t)` only for `t ≤ C/δ`, so it contributes to `ℓₙ(s)` only for `2ⁿ ≤ C/δ`."
+      },
+      {
+       "name": "zeroAboveHeightExcluded",
+       "kind": "non-example",
+       "statement": "The restriction to `T₁(s, K)` is needed by the route: a zero at `s − 0.3i/t` for every `t ∈ [2ⁿ, 2ⁿ⁺¹]` lies in `Q(s, K(t)/t)` above the height `−1/t` once `K(t) ≥ 0.3`, so no such `t` is in `T₁(s, K)` and the zero does not count towards `ℓₙ(s)`; §8.9 asks `1 < ty`, and here `ty = 0.3`."
+      },
+      {
+       "name": "integralBoundNotPointwise",
+       "kind": "non-example",
+       "statement": "The lower bound is for the integral only. With `υ = 1`, `Im e = 0` and `e(s) = 0`, the formula of §9.2 gives `log|a_{t₁→t₂}| = ½ log(1 + sin²(Re e)/sinh² 2)`: `0` at `p = s` and `≈ 0.000379` at the shift `Re e = 0.1`, with mean `≈ 0.000126 > 0` over shifts in `[−0.1, 0.1]`. A pointwise bound `log|a_{t₁→t₂}| ≥ c > 0` on `J(s)` fails at `p = s`."
+      },
+      {
+       "name": "monotoneInBoxSize",
+       "kind": "computation",
+       "statement": "Monotonicity in `C`, used to pass from integer `C` to every `C > 0`: if for one `n` with `K ≥ 2.7` on `[2ⁿ, 2ⁿ⁺¹]` and every `t` there the only zero of `E(t, ·)` in `Q(s, K(t)/t)` is `s + 2.7/t − 2i/t` and `Ẽ(t, ·)` has none there, then every such `t` is in `T₁(s, K) ∩ T̃₁(s, K)` (height `−2/t < −1/t`), and the zero lies in `Q(s, 3/t)` (`2.7 ≤ 3`, `2 ≤ 3`) but not in `Q(s, 2.5/t)` (`2.7 > 2.5`): `ℓₙ(s)` is `2ⁿ` for `C = 3` and `0` for `C = 2.5` and for `C = 2`. So `ℓₙ(s)` does depend on `C`, and the comparison must round `C` up, never down."
       }
      ]
     },
     {
      "id": "9.4",
-     "kind": "construction",
-     "name": "insertZeroInterval",
-     "statement": "For `t₁ ≥ 0` and `β ≥ 0` define `f^{t₁,β}` as `f` on `[0, t₁)`, `0` on `[t₁, t₁ + β)` and `f(· − β)` on `[t₁ + β, ∞)`, and write `*` for its data (poltoratski2024 line 1380–1388). Its API:",
+     "kind": "definition",
+     "name": "resonanceFreePoints",
+     "statement": "Call `s ∈ ℝ` a resonance-free point of the real potential `f` when, for every `C > 0`, the sets of times `T₀(s, C)` and `T̃₀(s, C)` of §8.1 are bounded: there is `T(s, C)` such that `Q(s, C/t)` contains no zero of `E(t, ·)` and no zero of `Ẽ(t, ·)` for `t > T(s, C)`. Write `R(f)` for the set of resonance-free points (poltoratski2024 line 97–101 and 1173–1176, where the condition for `E` at almost every point is the property from which Theorem 1 is deduced; mauth2022 line 1893–1894, whose exceptional set `{s : T₀(s, C) is unbounded}` is the complement of the condition for `E` at one `C`). Its API:",
      "hypotheses": [
-      "f real square-integrable",
-      "t₁ ≥ 0, β ≥ 0"
+      "f real, integrable on every [0,t]",
+      "s ∈ ℝ"
      ],
      "locator": {
       "source": "poltoratski2024",
-      "where": "(9.5)–(9.8) line 1380–1481"
+      "where": "line 97–101, 1173–1176; mauth2022 line 1893–1894"
      },
      "prerequisites": [
       "target:3.1",
-      "target:5.6",
-      "target:9.1",
-      "target:9.2"
+      "target:3.3",
+      "target:6.4",
+      "target:6.5",
+      "target:8.1"
      ],
      "api": [
       {
-       "name": "forWithTheFree",
+       "name": "forThereIsSuch",
        "role": "lemma",
-       "statement": "For `t ≥ t₁`, `M*(t + β, z) = M_{t₁→t}(z) M₀(β, z) M(t₁, z)` with `M₀` the free fundamental matrix; in particular `E*(t₁ + β, z) = e^{−iβz} E(t₁, z)` and `Ẽ*(t₁ + β, z) = e^{−iβz} Ẽ(t₁, z)`."
+       "statement": "For `s ∈ R(f)` there is `C(t) → ∞` such that `Q(s, C(t)/t)` contains no zero of `E(t, ·)` or of `Ẽ(t, ·)` for all large `t`: with `T_k = max(k, T(s, 1), …, T(s, k))`, put `C(t) = k` for `T_k < t ≤ T_{k+1}`."
       },
       {
-       "name": "theSubintervalDataOf",
+       "name": "conjugatingTheSystemBy",
        "role": "lemma",
-       "statement": "The subinterval data of `f^{t₁,β}` on `(t₁ + β, t₂ + β)` equal those of `f` on `(t₁, t₂)`, and `‖f^{t₁,β}‖ = ‖f‖`."
+       "statement": "Conjugating the system by `Ω` changes the sign of the potential: `M_{−f}(t, z) = Ω M_f(t, z) Ω⁻¹`, that is `A_{−f} = D_f`, `C_{−f} = −B_f`, `B_{−f} = −C_f`, `D_{−f} = A_f`. Hence `Ẽ_f(t, ·) = −i E_{−f}(t, ·)` and `Ẽ_{−f}(t, ·) = −i E_f(t, ·)`, so `R(f) = R(−f)`; the Weyl function of `−f` is `−1/m_f`, so the density `w_{−f}` of §6.5 is the Dirichlet density `w̃_f`."
       },
       {
-       "name": "exactIncrementRelationIn",
+       "name": "ifVanishesOnThen",
        "role": "lemma",
-       "statement": "Exact increment relation: in the setting of §9.2, if `E*(t₂ + β, s)` and `Ẽ*(t₂ + β, s)` have the forms of §9.2 with the same `w, w̃, Φ`, then the forms at `t₁ + β` hold with `υ* = υ` and `α₁* = e^{−iβs} α₁`, and `sin e*/sin(e* + 2iυ) = e^{2iβs} sin e/sin(e + 2iυ)` (poltoratski2024 (9.5)–(9.8) line 1400–1481)."
-      },
-      {
-       "name": "routeTheChainRule",
-       "role": "lemma",
-       "statement": "Route: the chain rule; `E′ = −izE` on the inserted interval; the translation rule (§5.6) for the segment's transform, and §9.2 on both sides."
+       "statement": "If `f` vanishes on `[T₀, ∞)` for some `T₀ > 0`, then `R(f) = ℝ`: for `t ≥ T₀`, `E(t, ·) = e^{−i(t−T₀)z} E(T₀, ·)` and `Ẽ(t, ·) = e^{−i(t−T₀)z} Ẽ(T₀, ·)` (the free equation), whose zeros are the fixed zeros of `E(T₀, ·)` and `Ẽ(T₀, ·)`, all in the open lower half-plane (§3.3); the finitely many in the compact box `Q(s, C/T₀)`, which contains `Q(s, C/t)` for `t ≥ T₀`, lie at a distance at least some `δ > 0` from `ℝ`, so `Q(s, C/t)`, where `|Im z| ≤ C/t`, contains none of them for `t > max(T₀, C/δ)`."
       }
      ],
      "tests": [
       {
-       "name": "andTheIdentityIs",
+       "name": "freeCaseAndHave",
        "kind": "degenerate",
-       "statement": "`β = 0`: `f^{t₁,0} = f`, `e* = e`, and the identity is trivial."
+       "statement": "Free case: `E(t, ·) = e^{−itz}` and `Ẽ(t, ·) = −i e^{−itz}` have no zeros, so `R(0) = ℝ`."
       },
       {
-       "name": "choiceOfAsRuns",
-       "kind": "computation",
-       "statement": "Choice of `β`: as `β` runs over an interval of length `π/|s|` (`s ≠ 0`), `e^{2iβs}` runs once around the unit circle, which is how the argument of `e*` is adjusted (poltoratski2024 line 1479–1481, 1518–1520)."
+       "name": "hasInfinitelyManyZeros",
+       "kind": "degenerate",
+       "statement": "`f = c 1_{[0,T₀]}`: `E(t, ·)` has infinitely many zeros for every `t ≥ T₀` (§7 Examples), and still `R(f) = ℝ` by the third bullet; the condition concerns boxes of size `C/t` about `s`, not the absence of zeros."
       },
       {
-       "name": "soSPlancherelIdentity",
-       "kind": "computation",
-       "statement": "`‖f^{t₁,β}‖_{L²(t₁+β, t₂+β)} = ‖f‖_{L²(t₁, t₂)}`, so §9.1's Plancherel identity is the same for both segments."
+       "name": "notSquareIntegrableWith",
+       "kind": "non-example",
+       "statement": "`f ≡ c > 0` (not square-integrable). With `κ = √(c² − z²)`, `E(t, z) = cosh κt + (c − iz) sinh κt/κ` and `Ẽ(t, z) = −i(cosh κt − (c + iz) sinh κt/κ)`; a zero of `E(t, ·)` needs `e^{2κt} = (c − iz − κ)/(c − iz + κ)` and a zero of `Ẽ(t, ·)` needs `e^{2κt} = (c + iz + κ)/(c + iz − κ)`. For `0 < |s| < c` both right sides stay bounded on `Q(s, C/t)` while `|e^{2κt}|` grows like `e^{2√(c² − s²)t}`, so `s ∈ R(f)`. At `s = 0` the second denominator vanishes and `Ẽ(t, ·)` has a zero near `−2ic e^{−2ct}` (for `c = 1`, `t = 5`: `−9.0808·10⁻⁵ i`, against `−9.0800·10⁻⁵ i`), so `0 ∉ R(f)`, while `E(t, ·)` has no zero near `0`: a definition through `E` alone would admit `0`. At `s = 1/2` (`c = 1`) the point is resonance-free while `|E(10, 1/2)| ≈ 6434` grows like `e^{(√3/2)t}`, so resonance-freeness alone does not give the conclusions of §9.5, which also need square integrability."
+      },
+      {
+       "name": "membershipInIsNot",
+       "kind": "non-example",
+       "statement": "Membership in `R(f)` is not decided by the moduli at `s` of the transforms of `f` on subintervals. For data in the forms of §9.2 at times `t_j < t_k`, `|(f 1_{(t_j,t_k)})⌃(s)| = |sin(θ_k − θ_j)/sin(θ_k − conj θ_j)|`, which is the pseudo-hyperbolic distance `|ζ_k − ζ_j|/|1 − conj ζ_j ζ_k|` of the points `ζ_k = e^{2iθ_k}` of the unit disc and is unchanged by every automorphism of the disc; inserting a zero interval of length `β` after `t₁` replaces the restriction of `f` to each subinterval by a translate, whose transform has the same modulus at `s` (§5.6). With `θ_k = i h_k`, the heights `1, 0.99, 0.98` (a resonance moving towards `ℝ`) and `1, 1.0102119, 1.0208659` (its image under the half-turn of the disc about `ζ₁`, a resonance moving away) give the same moduli `d₁₂ = 0.0027860`, `d₂₃ = 0.0028445`, `d₁₃ = 0.0056305` on `(t₁, t₂)`, `(t₂, t₃)`, `(t₁, t₃)`, and in both cases `d₁₃ = (d₁₂ + d₂₃)/(1 + d₁₂ d₂₃)`, the addition law of pseudo-hyperbolic distances along a geodesic."
       }
      ]
     },
     {
      "id": "9.5",
      "kind": "theorem",
-     "name": "sinh_ratio_gap",
-     "statement": "For `υ > 0` put `F_υ(x) = sinh x/sinh(υ + x)`. Prove that there are `c(υ) > 0` and `Δ₀(υ) > 0` such that for `0 < Δ < Δ₀` and `Δ₁, Δ₂ ∈ (0, 3Δ)` with `|F_υ(Δ₁) − sinh Δ/sinh(υ − Δ)| ≤ c(υ)Δ³/8` and `|F_{υ+Δ₁}(Δ₂) − sinh Δ/sinh(υ − 2Δ)| ≤ c(υ)Δ³/8`, one has `|sinh 2Δ/sinh(υ − 2Δ) − sinh(Δ₁ + Δ₂)/sinh(υ + Δ₁ + Δ₂)| ≥ c(υ)Δ²` (poltoratski2024 Lemma 10 line 1584–1663). Route: expand `F_υ(x) = x/S − Cx²/S² + O(x³)` with `S = sinh υ`, `C = cosh υ`; then `Δ₁ = Δ + 2CΔ²/S + O(Δ³)`, `Δ₂ = Δ + 4CΔ²/S + O(Δ³)`, and the difference is `2CΔ²/S² + O(Δ³)`.",
-     "hypotheses": [
-      "υ > 0",
-      "0 < Δ < Δ₀(υ), Δ₁, Δ₂ ∈ (0, 3Δ) with the two near-equalities"
-     ],
-     "locator": {
-      "source": "poltoratski2024",
-      "where": "Lemma 10 line 1584–1663"
-     },
-     "prerequisites": [
-      "mathlib:Real.sinh"
-     ],
-     "api": [],
-     "tests": [
-      {
-       "name": "withExactHypothesesThe",
-       "kind": "computation",
-       "statement": "With exact hypotheses, the ratio of the difference to `Δ²` at `υ = 1` is `2.4204`, `2.3250`, `2.2792` for `Δ = 0.02, 0.01, 0.005`, tending to `2 cosh 1/sinh² 1 ≈ 2.2346`; at `υ = 0.5` it tends to `8.305`, at `υ = 2` to `0.572`."
-      },
-      {
-       "name": "atAgainstTheExpansion",
-       "kind": "computation",
-       "statement": "`Δ₁ = 0.010270` at `υ = 1`, `Δ = 0.01`, against the expansion `0.010263`."
-      },
-      {
-       "name": "theLowerBoundFails",
-       "kind": "non-example",
-       "statement": "The lower bound fails without the quadratic term: the first-order terms cancel (`2Δ/S` on both sides)."
-      }
-     ]
-    },
-    {
-     "id": "9.6",
-     "kind": "theorem",
-     "name": "eventually_no_resonance_in_box",
-     "statement": "Prove that for almost every `s ∈ ℝ` and every `C > 0` there is `T(s, C)` such that `Q(s, C/t)` contains no zero of `E(t, ·)` for `t > T(s, C)`; hence there is `C(t) → ∞` with `Q(s, C(t)/t)` free of zeros for large `t` (poltoratski2024 §9 line 1173–1539: \"Special case\", \"General case\" and \"Final step\"). Route: if not, by §9.3 a resonance near `s` enters and leaves the box `Q(s, 2C/t)` infinitely often and moves by a hyperbolic distance comparable to a fixed small `Δ`; for three times `t₁ < t₂ < t₃` with purely vertical increments `e = τ = iΔ` (the special case), inserting zero intervals (§9.4) makes the modified increments purely imaginary, `e* = −iΔ₁`, `τ* = −iΔ₂`, and comparing moduli on `(t₁, t₂)`, `(t₂, t₃)` and `(t₁, t₃)` gives the three relations of §9.5, whose conclusion contradicts the third relation; the general case is reduced to the special one by two insertions with `β₁`, `β₂` chosen through §9.4 and a continuity argument in `t₂`; the errors of §8.8–§8.9 are taken `≪ Δ⁴`.",
+     "name": "diracE_asymptotics_resonanceFree",
+     "statement": "Prove that for every real square-integrable `f` there is a Lebesgue-null set `N_f` such that for every `s ∈ R(f) ∖ N_f` and every `D > 0` there are unimodular `α(s, t)` and a constant `β(s)` with `Im β(s) = −√(w(s) w̃(s))`, `|β(s)| = 1`, such that `sup_{Q(s,D/t)} |E(t, z) + iα(s, t) e^{−itz}/√w(s)| → 0` and `sup_{Q(s,D/t)} |Ẽ(t, z) + iβ(s) α(s, t) e^{−itz}/√w̃(s)| → 0`; consequently `|E(t, s)| → 1/√w(s)`, `|Ẽ(t, s)| → 1/√w̃(s)`, `|a(t, s)|² → (1/w + 1/w̃ + 2)/4` and `|b(t, s)|² → (1/w + 1/w̃ − 2)/4` at `s` (poltoratski2024 (9.9)–(9.10) line 1538–1574; mauth2022 line 3855–3875). Route: `N_f` is the union of the exceptional null sets of §8.7(3) for `f` and for `−f` and of `{w w̃ = 0}` (§6.8). At `s ∈ R(f) ∖ N_f` the sets `T₀(s, K)` are bounded for every `K > 0` (§9.4), so §8.7(3) gives the approximation of `E`; and §8.7(3) for `−f`, whose sets `T₀(s, K)` are the sets `T̃₀(s, K)` of `f` because `E_{−f} = iẼ_f`, with `w_{−f} = w̃_f` (§9.4), gives that of `Ẽ`. The determinant identity (2.2) on `ℝ` gives `(conj β − β)/√(w w̃) = 2i`, and continuity of `Ẽ(t, s)/E(t, s)` in `t` makes `β` constant.",
      "hypotheses": [
       "f real square-integrable",
-      "a.e. s, C > 0"
+      "s ∈ R(f) outside a null set N_f, D > 0"
      ],
      "locator": {
       "source": "poltoratski2024",
-      "where": "§9 line 1173–1539 (special case, general case, final step)"
-     },
-     "prerequisites": [
-      "target:8.6",
-      "target:8.7",
-      "target:8.8",
-      "target:8.9",
-      "target:9.2",
-      "target:9.3",
-      "target:9.4",
-      "target:9.5"
-     ],
-     "api": [],
-     "tests": [
-      {
-       "name": "compactSupportTheResonances",
-       "kind": "degenerate",
-       "statement": "Compact support: the resonances are fixed zeros of `E(T, ·)` at positive distance from `ℝ`, so the conclusion holds for every `s`."
-      },
-      {
-       "name": "freeCaseNoZeros",
-       "kind": "degenerate",
-       "statement": "Free case: no zeros at all."
-      },
-      {
-       "name": "notSquareIntegrableFor",
-       "kind": "non-example",
-       "statement": "`f ≡ c` (not square-integrable): for `s ∈ (−c, c)`, `|E(t, s)|` grows like `e^{√(c² − s²) t}`, and the conclusion of §9.7, which follows from this one, fails there; the almost-everywhere statement needs `f ∈ L²`."
-      }
-     ]
-    },
-    {
-     "id": "9.7",
-     "kind": "theorem",
-     "name": "diracE_asymptotics_ae",
-     "statement": "Prove that for almost every `s` and every `D > 0` there are unimodular `α(s, t)` and a constant `β(s)` with `Im β(s) = −√(w(s) w̃(s))`, `|β(s)| = 1`, such that `sup_{Q(s,D/t)} |E(t, z) + iα(s, t) e^{−itz}/√w(s)| → 0` and `sup_{Q(s,D/t)} |Ẽ(t, z) + iβ(s) α(s, t) e^{−itz}/√w̃(s)| → 0`; consequently `|E(t, s)| → 1/√w(s)`, `|Ẽ(t, s)| → 1/√w̃(s)`, `|a(t, s)|² → (1/w + 1/w̃ + 2)/4` and `|b(t, s)|² → (1/w + 1/w̃ − 2)/4` at `s` (poltoratski2024 (9.9)–(9.10) line 1538–1574). Route: §9.6 and §8.7(2) for `E` and for `Ẽ`; (2.2) on `ℝ` gives `(conj β − β)/√(w w̃) = 2i`.",
-     "hypotheses": [
-      "f real square-integrable",
-      "a.e. s, D > 0"
-     ],
-     "locator": {
-      "source": "poltoratski2024",
-      "where": "(9.9)–(9.10) line 1538–1574"
+      "where": "(9.9)–(9.10) line 1538–1574; mauth2022 line 3855–3875"
      },
      "prerequisites": [
       "target:3.2",
       "target:4.1",
+      "target:6.5",
+      "target:6.8",
       "target:8.7",
-      "target:9.6"
+      "target:9.4"
      ],
      "api": [],
      "tests": [
@@ -2884,48 +2920,51 @@
       {
        "name": "compactSupportAtFor",
        "kind": "degenerate",
-       "statement": "Compact support at `x = 0` for `f = c 1_{[0,T]}`: `w(0) = e^{−2cT}`, `w̃(0) = e^{2cT}`, and the limit `|a|² = (e^{2cT} + e^{−2cT} + 2)/4 = cosh² cT` is the exact value `a(T, 0) = cosh cT`."
+       "statement": "Compact support at `x = 0` for `f = c 1_{[0,T]}`, where `R(f) = ℝ` (§9.4): `w(0) = e^{−2cT}`, `w̃(0) = e^{2cT}`, and the limit `|a|² = (e^{2cT} + e^{−2cT} + 2)/4 = cosh² cT` is the exact value `a(T, 0) = cosh cT`."
       }
      ]
     },
     {
-     "id": "9.8",
+     "id": "9.6",
      "kind": "theorem",
-     "name": "nlft_truncate_tendsto_ae",
-     "statement": "Prove that for every real square-integrable `f`, `b(T, s)/a(T, s) = (f_T)⌃*(s) → f⌃*(s)` as `T → ∞` for almost every `s ∈ ℝ`; the strong form: for almost every `s` and every `C > 0`, `sup_{|z − s| < C/T} |(f_T)⌃(z) − f⌃*(s)| → 0`, where `(f_T)⌃ = b(T, ·)/a(T, ·)` is holomorphic on the disc for large `T`; and the corollaries: `a(T, s)`, `b(T, s)` have convergent moduli, and the generalised eigenfunctions `t ↦ M(t, s)` are bounded on `[0, ∞)` for almost every `s` (poltoratski2024 Theorem 1 line 578–586 and line 54–57; mauth2022 Theorem 2 line 216 and Theorem 6 line 4121 for the equivalence with the absence of resonances). Route: §9.7 makes `b/a = (E − iẼ)/(E + iẼ)` uniformly close on `Q(s, D/T)` to the constant `(1/√w − iβ/√w̃)/(1/√w + iβ/√w̃)`, so the pointwise limit exists almost everywhere; §5.5 gives `(f_T)⌃* → f⌃*` in `Π`-measure, so along a subsequence almost everywhere, and the two limits agree almost everywhere.",
+     "name": "nlft_truncate_tendsto_resonanceFree",
+     "statement": "Prove that for every real square-integrable `f` there is a Lebesgue-null set `N′_f` containing the set `N_f` of §9.5 such that for every `s ∈ R(f) ∖ N′_f`: `b(T, s)/a(T, s) = (f_T)⌃*(s) → f⌃*(s)` as `T → ∞`; the strong form holds, `sup_{|z − s| < C/T} |(f_T)⌃(z) − f⌃*(s)| → 0` for every `C > 0`, where `(f_T)⌃ = b(T, ·)/a(T, ·)` is holomorphic on the disc for large `T`; the moduli `|a(T, s)|` and `|b(T, s)|` converge; and the generalised eigenfunction `t ↦ M(t, s)` is bounded on `[0, ∞)` (poltoratski2024 Theorem 1 line 578–586, line 54–57 and the deduction (9.9)–(9.10) line 1538–1582; mauth2022 Theorem 2 line 216 and its deduction at line 3851–3862; both deduce the theorem from the resonance-free condition at almost every point). Route: §9.5 makes `b/a = (E − iẼ)/(E + iẼ)` uniformly close on `Q(s, D/T)` to the constant `(1/√w − iβ/√w̃)/(1/√w + iβ/√w̃)`, whose denominator has squared modulus `1/w + 1/w̃ + 2 > 0`, so the limit exists at every `s ∈ R(f) ∖ N_f`; §5.5 gives `(f_T)⌃* → f⌃*` in `Π`-measure, so along a sequence `T_k → ∞` almost everywhere, and `N′_f` adds to `N_f` the null set where this fails; `|A|, |C| ≤ |E|` and `|B|, |D| ≤ |Ẽ|` on `ℝ` bound `M(t, s)`.",
      "hypotheses": [
-      "f real square-integrable on [0,∞)"
+      "f real square-integrable on [0,∞)",
+      "s ∈ R(f) outside a null set N′_f ⊇ N_f"
      ],
      "locator": {
       "source": "poltoratski2024",
-      "where": "Theorem 1 line 578–586 and line 54–57; mauth2022 Theorem 2 line 216, Theorem 6 line 4121"
+      "where": "Theorem 1 line 578–586, line 54–57 and (9.9)–(9.10) line 1538–1582; mauth2022 Theorem 2 line 216 and line 3851–3862"
      },
      "prerequisites": [
+      "target:3.2",
       "target:5.2",
       "target:5.5",
-      "target:9.7"
+      "target:9.4",
+      "target:9.5"
      ],
      "api": [],
      "tests": [
       {
-       "name": "integrableTheConvergenceIs",
-       "kind": "computation",
-       "statement": "`f` integrable: the convergence is uniform on `ℝ` (§5.2), with no exceptional set."
+       "name": "integrableByTheConvergence",
+       "kind": "compatibility",
+       "statement": "`f` integrable: by §5.2 the convergence holds uniformly on `ℝ`, at every point, resonance-free or not; on `R(f) ∖ N′_f` the two statements agree."
       },
       {
-       "name": "compactSupportFor",
+       "name": "compactSupportAndFor",
        "kind": "degenerate",
-       "statement": "Compact support: `(f_T)⌃* = f⌃*` for `T ≥ T₀`."
+       "statement": "Compact support: `R(f) = ℝ` (§9.4) and `(f_T)⌃* = f⌃*` for `T ≥ T₀`, so the convergence holds at every `s`."
       },
       {
-       "name": "boundedEigenfunctionsFailWithout",
+       "name": "squareIntegrabilityCannotBe",
        "kind": "non-example",
-       "statement": "Bounded eigenfunctions fail without square-integrability: `f ≡ c` at `s ∈ (−c, c)` has `M(t, s)` growing like `e^{√(c² − s²) t}`."
+       "statement": "Square integrability cannot be dropped at resonance-free points: for `f ≡ c > 0` the point `s = 1/2` (`c = 1`) lies in `R(f)` (§9.4), while `M(t, s)` grows like `e^{(√3/2)t}`."
       },
       {
-       "name": "freeCaseAndFor",
+       "name": "freeCaseForEvery",
        "kind": "degenerate",
-       "statement": "Free case: `f⌃ = 0` and `b(T, ·) = 0` for every `T`."
+       "statement": "Free case: `f⌃ = 0`, `b(T, ·) = 0` for every `T`, and `R(0) = ℝ`."
       }
      ]
     }
@@ -2939,13 +2978,23 @@
     "§0.23"
    ],
    "what": "Finite-order Hadamard factorization, used with order one for the phase representation of Hermite–Biehler functions (7.1)."
+  },
+  {
+   "roadmap": "AutomorphicSpectralTheory",
+   "sections": [
+    "§0.5"
+   ],
+   "what": "Subtracted-kernel Herglotz representation of holomorphic functions with nonnegative imaginary part on the upper half-plane, with its unique triple; consumed for nonnegative harmonic functions (2.2) and for Weyl functions (6.5)."
+  },
+  {
+   "roadmap": "OperatorTheory/UnboundedOperators",
+   "sections": [
+    "§4.8"
+   ],
+   "what": "Weyl's limit-point/limit-circle alternative for the two-component expression Ju′ + Vu with its independence of the spectral parameter, read through J = −Ω, V = −Q_q, λ = −z; consumed in 6.4 for the limit-point property at ∞."
   }
  ],
  "consumers": [
-  {
-   "roadmap": "UnboundedOperators",
-   "what": "§1.2 at a fixed parameter and §1.6 for Weyl's alternative in the L² realisation of Ju′ + Vu."
-  },
   {
    "roadmap": "PDE",
    "what": "§1.1, §1.2, §1.7 for Galerkin systems with time-integrable coefficients (§6.2 there)."

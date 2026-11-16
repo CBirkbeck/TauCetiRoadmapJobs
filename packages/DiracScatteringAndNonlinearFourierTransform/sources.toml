@@ -67,8 +67,8 @@ sha256 = "3e2115456571cc7b950c00ee4d93e62ab53949b188e22746d821cce6cc94e83b"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v14 read (OCR text of an image-only scan); all locators are to v14. Its §9 (subinterval calculus, insertion of zero intervals, Lemma 10) differs from the published version, whose Lemma 11 mnatsakanyan2022 v4 reports to be in error; formulas garbled by OCR are cross-checked against mauth2022 and recomputed in the design"
-cited_for = ["Conventions", "2.8", "3.1", "3.2", "3.3", "4.1", "4.3", "4.4", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "6.1", "6.2", "6.3", "6.5", "6.6", "6.8", "7.1", "7.2", "7.3", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9", "9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "9.7", "9.8"]
+version_note = "arXiv v14 read (OCR text of an image-only scan); all locators are to v14, which has Lemmas 1–10 and no Lemma 11. Its §9 (subinterval calculus, insertion of zero intervals, Lemma 10) differs from the argument through Lemma 11 of an earlier arXiv version, which mnatsakanyan2022 v4 cites as the 2021 e-print (its line 1812–1813) and in whose proof it reports an error; formulas garbled by OCR are cross-checked against mauth2022 and recomputed in the design"
+cited_for = ["Scope", "Conventions", "2.8", "3.1", "3.2", "3.3", "4.1", "4.3", "4.4", "5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "6.1", "6.2", "6.3", "6.5", "6.6", "6.8", "7.1", "7.2", "7.3", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9", "9.1", "9.2", "9.3", "9.4", "9.5", "9.6"]
 
 [[source]]
 id = "taothiele2012"
@@ -113,7 +113,7 @@ title = "On Pointwise convergence of the non-linear Fourier transform"
 year = 2022
 arxiv = "2210.12286v1"
 locator_scheme = "section"
-locator = "§1 Theorem 2; §2.1 Lemmas 1–11 (with page locators into Garnett); §2.2 Lemma 12; §2.3 Lemmas 13–20, Theorem 3; §3.1–3.2 Lemmas 21–23, Corollaries 3–6; §3.3 Corollary 7; §3.4 Lemmas 29, 32; §3.7 Lemmas 43, 45; §3.8 Theorem 6"
+locator = "§1 Theorem 2; §2.1 Lemmas 1–11 (with page locators into Garnett); §2.2 Lemma 12; §2.3 Lemmas 13–20, Theorem 3; §3.1–3.2 Lemmas 21–23, Corollaries 3–6; §3.3 Corollary 7; §3.4 Lemmas 29, 32; §3.7 Lemmas 43, 45; §3.4 the exceptional set S (line 1893–1894); §3.8 Theorem 5 and the proof of Theorem 2 (line 3851–3875)"
 url = "https://arxiv.org/abs/2210.12286v1"
 fetched_from = "https://arxiv.org/pdf/2210.12286v1"
 fetched_at = "2026-11-05T02:53:03Z"
@@ -122,7 +122,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v1"
-cited_for = ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "3.1", "3.2", "3.3", "4.1", "4.4", "5.2", "5.4", "5.5", "6.1", "6.2", "6.5", "6.8", "7.1", "7.2", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9", "9.3", "9.8"]
+cited_for = ["2.1", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8", "3.1", "3.2", "3.3", "4.1", "4.4", "5.2", "5.4", "5.5", "6.1", "6.2", "6.5", "6.8", "7.1", "7.2", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9", "9.3", "9.4", "9.5", "9.6"]
 
 [[source]]
 id = "garnett2007"
@@ -166,7 +166,7 @@ year = 2003
 venue = "Ann. of Math. (2), Vol. 158 (2003), no. 1, 253--321"
 arxiv = "math-ph/0112008v2"
 locator_scheme = "section"
-locator = "§5: definition (5.9), Lemma 5.1, Theorem 5.2, Corollary 5.3"
+locator = "§5: definition (5.9) and (5.10), Lemma 5.1, Theorem 5.2, Corollary 5.3"
 url = "https://arxiv.org/abs/math-ph/0112008v2"
 fetched_from = "https://arxiv.org/pdf/math-ph/0112008v2"
 fetched_at = "2026-11-06T18:20:33Z"
@@ -175,7 +175,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "published 2003 (Ann. of Math. 158); arXiv math-ph/0112008 first submitted December 2001, v2 read; locators are to that version"
-cited_for = ["6.7", "6.8"]
+cited_for = ["6.7"]
 
 [[source]]
 id = "mnatsakanyan2022"
@@ -184,7 +184,7 @@ title = "Some quantitative estimates for the nonlinear Fourier Transform"
 year = 2022
 arxiv = "2210.00309v4"
 locator_scheme = "section"
-locator = "abstract and §1 (line 9–13, 135–139 of the v4 text)"
+locator = "abstract and §1 (line 9–13, 135–139 of the v4 text); bibliography entry [Pol21] (line 1812–1813)"
 url = "https://arxiv.org/abs/2210.00309v4"
 fetched_from = "https://arxiv.org/pdf/2210.00309v4"
 fetched_at = "2026-11-06T18:20:50Z"
@@ -193,4 +193,22 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-06"
 version_note = "arXiv v4"
-cited_for = ["References and Layer 9 (choice of route)"]
+cited_for = ["Scope", "References (the error it reports in the proof of Lemma 11 of an earlier arXiv version of poltoratski2024)"]
+
+[[source]]
+id = "denisov2026"
+authors = "Sergey A. Denisov"
+title = "Pointwise behavior of SU(1,1) nonlinear Fourier transform"
+year = 2026
+arxiv = "2605.25108v2"
+locator_scheme = "section"
+locator = "§1.2: setting and normalisation (line 165–195), questions Q1R and Q2R (line 204–212), Theorem 1.4 (line 215–216)"
+url = "https://arxiv.org/abs/2605.25108v2"
+fetched_from = "https://arxiv.org/pdf/2605.25108v2"
+fetched_at = "2026-11-15T19:03:56Z"
+sha256 = "d5a2f35619d03fc2d5360be534234907406b9c97ba07a83f2299cde645a13d61"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-15"
+version_note = "arXiv v2"
+cited_for = ["Scope", "References"]
