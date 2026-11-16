@@ -215,6 +215,7 @@ ExcursionOperatorsAndSpectralActionPartII
 ClassicalGroupsPartII
 QWittVectors
 HabiroCohomologyFoundations
+QuasicoherentSheavesOnPrestacks
 CohomologyComparisonsPartII
 RootSystemsPartII
 HeckeStacksAndLocalShtukasPartII
