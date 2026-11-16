@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ShimuraVarietiesPartII~1",
+  "head": "53e61e396b4f889c5d501cfb63e8cef4fb2c19c8",
+  "pr": 2463,
+  "folder": "ShimuraVarietiesPartII",
+  "date": "2026-11-16",
+  "findings": 6,
+  "blocking": 3,
+  "notes": "Gate OK at 53e61e3 (all checks 0); depcheck: 261 roadmaps, 2598 edges, 0 problems; lake env lean on Suggested.lean exits 0 with no output (no declarations). Seeded sample: all 15 targets (1.1, 1.5, 1.8, 2.2, 2.5, 3.4, 3.5, 3.8, 4.4, 4.10, 4.13, 5.9, 6.1, 6.3, 7.5) verified against KZ, KPZ, HT, KP and K17 in the sources cache; 13 pinned Mathlib/Tau Ceti declarations opened at their cited lines; 28 supplier roadmaps resolved, 22 gap slugs present in plan.json and README. Findings: three gap contracts (component-specialization, hodge-cover-refinement, noot-coarse-comparison) are imprecise (P2); the Checks of section 2.3 restate hypotheses (P3); the PR description duplicates its summary block and misstates dependencies and validation (P3 x2).",
+  "text": "b3077f7dbfa11fda"
+ }
+}
