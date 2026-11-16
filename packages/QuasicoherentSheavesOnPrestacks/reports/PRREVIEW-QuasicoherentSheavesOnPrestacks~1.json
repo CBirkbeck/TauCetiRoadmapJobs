@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuasicoherentSheavesOnPrestacks~1",
+  "head": "6130027d61114f6f3c2be314997edbc19de5d98e",
+  "pr": 2450,
+  "folder": "QuasicoherentSheavesOnPrestacks",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Seeded sample of 15 targets checked against the cached texts: 137 locators (SAG 50, HA 29, HTT 19, GR-I 15, BZFN 9, Stacks ch. 36 10, HNR 3, HR-perf 1, SGA1 1); numbers and pages agree. One sampled locator (7.3, GR-I Cor 1.3.8) supports only the last clause (R01, P3). Opened 49 Mathlib and 14 Tau Ceti declarations at file:line. Resolved the citations of EnhancedDerivedSheaves, SchemeAndStackFoundations, DerivedModuleAlgebra, PrismaticCohomologyPartII 4.0, LanglandsParameterStacks 1.7-1.8, HabiroCohomologyFoundations 1.27-1.28, StableHomotopyKTheory 5.17 and InfinityCategoryTheory #2270. Worker gate OK; own depcheck 0 problems; no diff outside the folder. Suggested.lean elaborates with only the sorry warning; the one-tactic probe (simp, aesop, decide) fails. Both declared gaps are precise and not provided elsewhere; no second owner found. One summary sentence of the PR description misstates the descent route (R02, P3). Unchecked: 8 Stacks tags outside the cached chapter.",
+  "text": "d6ddbb33dc2b7225"
+ }
+}
