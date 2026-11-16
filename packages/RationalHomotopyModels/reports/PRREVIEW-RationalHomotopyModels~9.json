@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RationalHomotopyModels~9",
+  "head": "a27c21dee6f7d1f601e1fe997c9f4d36ce3e04a4",
+  "pr": 2298,
+  "folder": "RationalHomotopyModels",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 16 changed lines since 2178204 (the new provenance section and its References entry). Checked: the LeanPool claims at f8b9b72 (toolchain v4.35.0, Mathlib v4.35.0, licences, WhiteheadTheorem project); the Whitehead mapping against pinned Tau Ceti Whitehead.lean:243 and AlgebraicTopology 8.3/8.5 on main; apellis/dg-lean at 161db4e for overlap with 1.1, 1.3 and 7.1 (two P3 findings: the section omits dg-lean; the Whitehead sentence names the wrong sections and leaves out that Tau Ceti already proves the theorem). The previous review had no findings. Adversarial rows for Whitehead, 1.1 and 7.1. Gate rerun: all 0 except depcheck NOT IN ORDER (not a defect); the worker's gate passes, build included. Depcheck against the candidate order: 0 problems. Elaboration: 13 sorry warnings only. No change outside the folder. The seeded sample falls in no changed passage.",
+  "text": "ae3966996e0fe2c0"
+ }
+}
