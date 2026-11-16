@@ -1,10 +1,18 @@
 {
-  "review": {
-    "status": "needs_changes",
-    "reviewer": "independent-review-REV-PKG-ModularityAndLanglandsExtensionsPartII~2",
-    "date": "2026-11-10",
-    "findings": 17,
-    "blocking": 11,
-    "notes": "Reviewed nine previous repairs, all 109 numbered target blocks, all 15 seeded source locators, supplier contracts, overlap leads and pinned declarations. Computed adversarial evidence and precise repairs are in the round-2 report. Original Lean elaboration passed with only the expected sorry warning; both signatures retained their binders; all four one-tactic probes of the sole admitted theorem failed. Dependency check: 236 roadmaps, 2159 edges, 0 problems. Three original texts remain settled as uncertified. No package content or source-manifest entries were changed."
-  }
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-ModularityAndLanglandsExtensionsPartII~10",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-ModularityAndLanglandsExtensionsPartII~10",
+   "fix": "FIX-PKG-ModularityAndLanglandsExtensionsPartII~11",
+   "from": "02c1f076a95f776b179817f44a4d2628149f62c8",
+   "head": "669767713bc133cf61b22bfa68680f88d2ba2c9a",
+   "findings": 3,
+   "lines": 36
+  },
+  "notes": "every finding of `REV-PKG-ModularityAndLanglandsExtensionsPartII~10` (3) was P3 and `FIX-PKG-ModularityAndLanglandsExtensionsPartII~11` repaired them at `6697677`, changing 36 lines of the package; no further review round was filed"
+ }
 }
