@@ -206,7 +206,8 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimension
 /-- **Convexity functions near a strictly convex boundary point.** Let `ρ` be smooth on a
 Hausdorff boundaryless Riemannian manifold `N`, and `q` a zero of `ρ` at which the level set of
 `−ρ` is strictly concave from the superlevel sets (strict convexity of `∂{ρ ≥ 0}` at `q`). Then
-there are an open `U ∋ q` and a function `x̃`, smooth on `U`, with `x̃(q) = 0`, `dx̃_q = −dρ_q`,
+there is a convexity function at `q` for `ρ`, by which the roadmap means an open `U ∋ q` and a
+function `x̃`, smooth on `U`, with `x̃(q) = 0`, `dx̃_q = −dρ_q`,
 level sets strictly concave from the superlevel sets at every point of `U`, and
 `{y ∈ U : x̃(y) ≥ −c, ρ(y) ≥ 0}` compact for every `c ∈ [0, c₀]`, some `c₀ > 0` (README §4.5;
 Uhlmann–Vasy, `uhlmann-vasy2016` lines 30–32 and 504–524). -/

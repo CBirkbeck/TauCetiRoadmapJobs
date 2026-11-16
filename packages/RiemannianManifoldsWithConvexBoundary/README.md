@@ -150,7 +150,9 @@ Paternain–Salo–Uhlmann Lemma 3.1.13.
   for `n ≥ 1`, and the one-dimensional behaviour is recorded as a Check. `[T2Space M]` and
   `[SecondCountableTopology M]` are hypotheses of the statements that use partitions of unity;
   compactness, connectedness and non-trapping are hypotheses of the statements that need them,
-  never standing assumptions.
+  never standing assumptions. An isometry of Riemannian manifolds with boundary is a
+  `TauCeti.RiemannianIsometry`: a diffeomorphism whose differential preserves the metrics; it maps
+  `∂M` onto `∂M'` (1.1). A local Riemannian isometry is a `TauCeti.IsLocalRiemannianIsometry`.
 - **Metric.** `g` is a smooth Riemannian metric: `[Bundle.RiemannianBundle (fun x : M ↦
   TangentSpace (𝓡∂ (n+1)) x)]` with `[IsContMDiffRiemannianBundle (𝓡∂ (n+1)) ∞ (EuclideanSpace ℝ
   (Fin (n+1))) (fun x : M ↦ TangentSpace (𝓡∂ (n+1)) x)]`; `⟨·,·⟩ = g`. Distances are Mathlib's
@@ -187,7 +189,9 @@ Paternain–Salo–Uhlmann Lemma 3.1.13.
   strictly concave from the superlevel sets at `y` if `Hess x` is positive definite on `ker dx_y`.
   Witness: `x = |z|²` on `ℝⁿ⁺¹`, `Hess x = 2g`, `dx_y = 2y ≠ 0` for `y ≠ 0`; for `c > 0` the
   sublevel ball `{x ≤ c}` has `II = h/√c > 0` and the superlevel exterior `{x ≥ c}` has
-  `II = −h/√c`.
+  `II = −h/√c`. A convexity function at a boundary point (4.5) is a function near that point
+  whose level sets are strictly concave from the superlevel sets in this sense, normalised against
+  the defining function and with compact pieces `{x̃ ≥ −c} ∩ M`.
 - **Conformal change** is `ĝ = e^{2φ} g` (Tau Ceti `Bundle.ContMDiffRiemannianMetric.rescale` with
   factor `e^{2φ}`). Witness: `φ = log 2` turns the unit ball into a copy of the Euclidean ball of
   radius 2 and doubles `II`.
@@ -230,30 +234,47 @@ Paternain–Salo–Uhlmann Lemma 3.1.13.
 embedding that is a `Manifold.IsImmersion`, whose local normal forms use charts of the maximal
 atlas, so that it applies to a source with boundary); `Bundle.RiemannianBundle`,
 `IsContMDiffRiemannianBundle`, `Bundle.ContMDiffRiemannianMetric`, `IsRiemannianManifold`,
-`Manifold.pathELength`, `Manifold.riemannianEDist`; `CovariantDerivative.leviCivitaConnection`,
-`CovariantDerivative.isLeviCivitaConnection_leviCivitaConnection` and
-`CovariantDerivative.IsLeviCivitaConnection.uniqueness`, which assume `IsManifold I 2 M`, a `C¹`
-metric and finite dimension but no boundaryless model; `ContDiffAt.implicitFunction` and
+`Manifold.pathELength`, `Manifold.riemannianEDist`, `EMetricSpace.ofRiemannianMetric` (the
+distance `Manifold.riemannianEDist` as an emetric structure satisfying `IsRiemannianManifold`, on a
+`T3Space`, which a Hausdorff manifold is); `CovariantDerivative.leviCivitaConnection` and
+`CovariantDerivative.isLeviCivitaConnection_leviCivitaConnection`, which assume `IsManifold I 2 M`,
+a `C¹` metric and finite dimension but no boundaryless model; `ContDiffAt.implicitFunction` and
 `ContDiffAt.contDiffAt_implicitFunction`; `SmoothPartitionOfUnity`,
 `exists_contMDiffSection_forall_mem_convex_of_local` and
 `exists_contMDiff_zero_iff_one_iff_of_isClosed` (finite-dimensional, Hausdorff, σ-compact).
 
-**From Tau Ceti** (at the pin): the boundary manifold, with its atlas
-`TauCeti.boundaryChartedSpace` (`TauCeti/Geometry/Manifold/Boundary/Charts.lean`, the charts
-induced by the preferred ambient charts) and `TauCeti.isManifold_boundary`,
-`TauCeti.isSmoothEmbedding_subtypeVal_boundary`, `TauCeti.mfderiv_subtypeVal_boundary`,
-`TauCeti.ModelWithCorners.mem_boundary_euclideanHalfSpace_iff_of_mem_atlas`; pointing
-`TauCeti.IsOutwardPointing`, `TauCeti.isOutwardPointing_iff_tangentCoordChange`,
-`TauCeti.tangentCoordChange_normal_pos`, `TauCeti.exists_isOutwardPointingField`; metrics
+**From Tau Ceti** (at the pin): the boundary manifold, with its atlas `TauCeti.boundaryChartedSpace`
+(`TauCeti/Geometry/Manifold/Boundary/Charts.lean`, the charts induced by the preferred ambient
+charts) and `TauCeti.isManifold_boundary`, `TauCeti.isSmoothEmbedding_subtypeVal_boundary`,
+`TauCeti.mfderiv_subtypeVal_boundary`,
+`TauCeti.ModelWithCorners.mem_boundary_euclideanHalfSpace_iff_of_mem_atlas`; the product collar
+model `TauCeti.EuclideanHalfSpace.collarDiffeomorph`
+(`TauCeti/Geometry/Manifold/Boundary/Collar/Basic.lean`: the diffeomorphism `(y, t) ↦ (t, y)` from
+`ℝⁿ × [0, ∞)` with Mathlib's product model `(𝓡 n).prod (𝓡∂ 1)` onto `EuclideanHalfSpace (n+1)` with
+`𝓡∂ (n+1)`, which puts the normal coordinate in slot `0`); pointing `TauCeti.IsOutwardPointing`,
+`TauCeti.isOutwardPointing_iff_tangentCoordChange`, `TauCeti.tangentCoordChange_normal_pos`,
+`TauCeti.exists_isOutwardPointingField`; metrics
 `Bundle.ContMDiffRiemannianMetric.restrictBoundaryTangentSpace` (and its `_inner` lemma),
-`Bundle.ContMDiffRiemannianMetric.pullback`, `Bundle.ContMDiffRiemannianMetric.rescale`,
-`Bundle.ContMDiffRiemannianMetric.hessian_rescale`,
+`Bundle.ContMDiffRiemannianMetric.pullback` with `Bundle.ContMDiffRiemannianMetric.pullback_inner`
+(the pullback metric along a smooth immersion applies the target metric to the two differentials),
+`Bundle.ContMDiffRiemannianMetric.rescale`, `Bundle.ContMDiffRiemannianMetric.hessian_rescale`,
 `Bundle.ContMDiffRiemannianMetric.leviCivitaConnection_rescale_apply`,
 `TauCeti.Manifold.ContMDiffNondegenerateMetricFamily` with
 `TauCeti.Manifold.ContMDiffNondegenerateMetricFamily.contMDiffAt_christoffelSymbol` (joint
-smoothness in parameter and point, boundary points included); calculus on `M`
-`TauCeti.Manifold.mgradient`, `TauCeti.Manifold.inner_mgradient`, `TauCeti.Manifold.hessian`,
-`TauCeti.Manifold.hessian_symm`, `TauCeti.Manifold.hessian_apply_eq_mvfderiv_sub`,
+smoothness in parameter and point, boundary points included); isometries, for every model with
+corners (no boundaryless hypothesis): `TauCeti.RiemannianIsometry`
+(`TauCeti/Geometry/Manifold/Riemannian/Isometry/Basic.lean`: a diffeomorphism whose differential
+preserves the inner products) with `TauCeti.RiemannianIsometry.isGeodesicCurveOn_comp_iff` and
+`TauCeti.RiemannianIsometry.isGeodesicCurveOnFrom_comp_iff` (geodesics on a parameter set with
+unique derivatives, and their initial data, correspond under the isometry and its differential), and
+`TauCeti.IsLocalRiemannianIsometry` (`…/Riemannian/Isometry/Local.lean`: smooth, with invertible
+inner-product-preserving differential at every point, not necessarily injective) with
+`TauCeti.IsLocalRiemannianIsometry.mfderiv_leviCivitaConnection_mpullback` (the differential carries
+`∇ᴹ_v` of the pullback of a vector field `Y`, differentiable at the image point, to `∇ᴺ_{df v} Y`)
+and `TauCeti.IsLocalRiemannianIsometry.hessian_comp` (`Hess(u ∘ f) = Hess u` on differentials, for
+`u` of class `C²` at the image point); calculus on `M` `TauCeti.Manifold.mgradient`,
+`TauCeti.Manifold.inner_mgradient`, `TauCeti.Manifold.hessian`, `TauCeti.Manifold.hessian_symm`,
+`TauCeti.Manifold.hessian_apply_eq_mvfderiv_sub`,
 `CovariantDerivative.IsLeviCivitaConnection.inner_apply_eq_inner_mvfderiv` (Gauss formula into an
 inner product space); regular values `TauCeti.IsRegularValue`,
 `TauCeti.scalarRegularSublevelChartedSpace`, `TauCeti.isManifold_scalarRegularSublevel`,
@@ -261,33 +282,41 @@ inner product space); regular values `TauCeti.IsRegularValue`,
 `TauCeti.regularLevelChartedSpace`, `TauCeti.isManifold_regularLevel`,
 `TauCeti.isSmoothEmbedding_coe_regularLevel`; geodesics `TauCeti.Manifold.IsGeodesicCurveOn` and
 `TauCeti.Manifold.IsGeodesicCurveOnFrom` (defined for every model with corners; the velocity is
-`TauCeti.Manifold.curveVelocityWithin`, the derivative within the parameter set), the geodesic
-spray `TauCeti.Manifold.geodesicSpray` (`TauCeti/Geometry/Manifold/Riemannian/Geodesic/Spray.lean`:
-the vector field `(x, v) ↦ (v, −Γ_x(v, v))` on `TM`, defined for every model with corners, whose
-integral curves are the velocity lifts of geodesics),
-`TauCeti.Manifold.geodesicInterval`, `TauCeti.Manifold.maximalGeodesic`,
-`TauCeti.Manifold.riemannianExp`, `TauCeti.Manifold.expDomain`,
+`TauCeti.Manifold.curveVelocityWithin`, the derivative within the parameter set), the geodesic spray
+`TauCeti.Manifold.geodesicSpray` (`TauCeti/Geometry/Manifold/Riemannian/Geodesic/Spray.lean`: the
+vector field `(x, v) ↦ (v, −Γ_x(v, v))` on `TM`, defined for every model with corners, whose
+integral curves are the velocity lifts of geodesics), `TauCeti.Manifold.geodesicInterval`,
+`TauCeti.Manifold.maximalGeodesic`, `TauCeti.Manifold.riemannianExp`, `TauCeti.Manifold.expDomain`,
 `TauCeti.Manifold.exists_contMDiffAt_localGeodesicFlow`,
 `TauCeti.Manifold.contMDiffOn_maximalGeodesic`,
 `TauCeti.Manifold.isGeodesicallyCompleteAt_of_compactSpace` (boundaryless, Hausdorff); normal
 coordinates on a boundaryless Hausdorff base: the normal domains `TauCeti.Manifold.IsNormalDomain`,
 the normal coordinate fields `TauCeti.Manifold.normalCoordinateField` (the coordinate fields `∂_i`
 of the normal chart for a basis of `T_pN`),
-`TauCeti.Manifold.IsNormalDomain.mfderiv_inner_normalCoordinateField_self` (the first derivatives
-of the metric coefficients vanish at the centre) and
+`TauCeti.Manifold.IsNormalDomain.mfderiv_inner_normalCoordinateField_self` (the first derivatives of
+the metric coefficients vanish at the centre) and
 `TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self` (the coordinate
-fields are parallel at the centre, so the Christoffel symbols vanish there); the normal
-exponential `TauCeti.SmoothEmbedding.normalExp`,
+fields are parallel at the centre, so the Christoffel symbols vanish there); the distance on a
+normal ball, for an emetric structure satisfying `IsRiemannianManifold` on a boundaryless base:
+`TauCeti.Manifold.IsNormalDomain.edist_riemannianExp_eq_of_mem_ball` (`d(p, exp_p v) = |v|` for
+every `v` in an open tangent ball contained in a normal domain at `p`) and
+`TauCeti.Manifold.IsNormalDomain.image_riemannianExp_ball` (`exp_p` maps that tangent ball onto the
+open metric ball of the same radius); the normal exponential `TauCeti.SmoothEmbedding.normalExp`,
 `TauCeti.SmoothEmbedding.exists_partialDiffeomorph_normalExp_subset`,
-`TauCeti.SmoothEmbedding.exists_isClosedEmbedding_normalExp_norm_le_subset` (closed embedding
-into a boundaryless Hausdorff second-countable Riemannian manifold, no completeness); sphere
-bundles `TauCeti.sphereBundleChartedSpace`, `TauCeti.isManifold_sphereBundle`,
+`TauCeti.SmoothEmbedding.exists_isClosedEmbedding_normalExp_norm_le_subset` (closed embedding into a
+boundaryless Hausdorff second-countable Riemannian manifold, no completeness); sphere bundles
+`TauCeti.sphereBundleChartedSpace`, `TauCeti.isManifold_sphereBundle`,
 `TauCeti.isSmoothEmbedding_coe_sphereBundle` (boundaryless base); the Hadamard factorisation
 `ContDiff.sub_eq_hadamardFactor_apply`, `ContDiff.contDiff_hadamardFactor` and
-`TauCeti.contDiff_intervalIntegral`; the model spaces `TauCeti.sphereRoundMetric`,
-`TauCeti.UpperHalfSpace` with `TauCeti.UpperHalfSpace.hyperbolicMetric` and
-`TauCeti.UpperHalfSpace.hasConstantSectionalCurvature`; the second fundamental form of a map into
-an inner product space `TauCeti.secondFundamentalForm`
+`TauCeti.contDiff_intervalIntegral`; the parametric Morse lemma
+`TauCeti.exists_parametric_morse_chart` (`TauCeti/Analysis/Calculus/Morse/Parametric.lean`: a
+jointly smooth `f` on a product `P × E` of Banach spaces whose fibre derivative vanishes on the zero
+section near `(a, 0)` and whose fibre Hessian at `(a, 0)` is invertible has a chart `ψ` near
+`(a, 0)`, smooth with smooth inverse, preserving the parameter and fixing the zero section, with
+`f(b, v) = f(b, 0) + ½ D²_v f(b, 0)(ψ(b, v)₂, ψ(b, v)₂)`); the model spaces
+`TauCeti.sphereRoundMetric`, `TauCeti.UpperHalfSpace` with `TauCeti.UpperHalfSpace.hyperbolicMetric`
+and `TauCeti.UpperHalfSpace.hasConstantSectionalCurvature`; the second fundamental form of a map
+into an inner product space `TauCeti.secondFundamentalForm`
 (`TauCeti/Analysis/InnerProductSpace/SecondFundamentalForm.lean`: the projection of the second
 derivative onto the orthogonal complement of the range of the first). Every name in this paragraph
 is consumed, never restated.
@@ -354,9 +383,11 @@ compact when both pieces are and connected when both are connected and `∂M ≠
 manifolds are Hausdorff and second countable, the standing convention of GeometricTopology
 Layer 1. The collar extension is the case `N = ∂M × [0, 1)` with its product collar and
 `f(q) = (q, 0)`. Here `∂M × [0, 1)` is taken over `𝓡∂ (n+1)`, as 1.3's pieces are: its charts are
-the product charts of 1.1 (model `ℝⁿ × [0, ∞)`, the constrained coordinate last) followed by the
-linear reordering `(y, t) ↦ (t, y)`, which carries `ℝⁿ × [0, ∞)` onto `EuclideanHalfSpace (n+1)`
-(constrained coordinate `0`). The identity is a diffeomorphism between the two structures, the
+the product charts of 1.1 (model `ℝⁿ × [0, ∞)` with Mathlib's product model `(𝓡 n).prod (𝓡∂ 1)`,
+the constrained coordinate last) followed by Tau Ceti's
+`TauCeti.EuclideanHalfSpace.collarDiffeomorph`, the diffeomorphism `(y, t) ↦ (t, y)` of
+`ℝⁿ × [0, ∞)` onto `EuclideanHalfSpace (n+1)` with `𝓡∂ (n+1)` that puts the normal coordinate in
+slot `0`. The identity is a diffeomorphism between the two structures, the
 boundary is `∂M × {0}` in both, and the product collar is a collar for both, so 1.3 applies.
 
 **From TauCetiRoadmap.ComplexKahlerGeometry**: K5a (extension of smooth functions across a
@@ -727,10 +758,18 @@ Uhlmann–Vasy, lines 25–26; Paternain–Salo–Uhlmann, lines 2770–2772). P
   R7.9 applied to `ρ` restricted to a chart domain of `N`, which is second countable, gives them
   for every Hausdorff `N`), and `j` is a closed embedding: `D_ρ` carries the subspace topology and
   is closed in `N`, with `∂D_ρ = {ρ = 0}`.
-- Levi-Civita compatibility: for `x ∈ D_ρ`, `X ∈ T_x D_ρ` and a vector field `Y` on `N`
-  differentiable at `x`, `dj(∇^D_X Y_D) = ∇^N_{dj X} Y`, where `Y_D` is the pullback of `Y`;
-  consequently `Hess^D(f ∘ j) = Hess^N f` and `dj(grad^D(f ∘ j)) = grad^N f` on `D_ρ`, boundary
-  points included.
+- Levi-Civita compatibility: `j` is a local Riemannian isometry `(D_ρ, g_D) → (N, g)`
+  (`TauCeti.IsLocalRiemannianIsometry`): it is smooth with invertible differential at every point
+  by the first item, and `dj` preserves inner products by
+  `Bundle.ContMDiffRiemannianMetric.pullback_inner`. Tau Ceti's naturality theorems, which assume
+  no boundaryless model, then give, for `x ∈ D_ρ`, `X, X' ∈ T_x D_ρ`, a vector field `Y` on `N`
+  differentiable at `j(x)` and its pullback `Y_D`, `dj(∇^D_X Y_D) = ∇^N_{dj X} Y`
+  (`TauCeti.IsLocalRiemannianIsometry.mfderiv_leviCivitaConnection_mpullback`), and, for `f` of
+  class `C²` near `j(x)`, `Hess^D(f ∘ j)(X, X') = Hess^N f(dj X, dj X')`
+  (`TauCeti.IsLocalRiemannianIsometry.hessian_comp`), boundary points included; both are
+  consumed, not proved again. Prove `dj(grad^D(f ∘ j)) = grad^N f` on `D_ρ`: for every
+  `X ∈ T_x D_ρ`, `⟨dj grad^D(f ∘ j), dj X⟩ = d(f ∘ j)(X) = df(dj X) = ⟨grad^N f, dj X⟩`
+  (`TauCeti.Manifold.inner_mgradient`), and `dj` is onto.
 - `ρ ∘ j` is a global boundary defining function of `D_ρ`. A vector `v` at a boundary point is
   outward iff `dρ(dj v) < 0` (RiemannianGeometry R7.9's outward criterion for `φ = −ρ`, local as
   in the first item), so `dj(ν_in) = grad ρ/|grad ρ|` on `{ρ = 0}`: it is the unit vector
@@ -766,8 +805,11 @@ Uhlmann–Vasy, lines 25–26; Paternain–Salo–Uhlmann, lines 2770–2772). P
 of a regular sublevel, the outward criterion); Tau Ceti `TauCeti.IsRegularValue`,
 `TauCeti.scalarRegularSublevelChartedSpace`, `TauCeti.isManifold_scalarRegularSublevel`,
 `TauCeti.boundary_scalarRegularSublevel`, `TauCeti.interior_scalarRegularSublevel`,
-`Bundle.ContMDiffRiemannianMetric.pullback`; Mathlib
-`CovariantDerivative.IsLeviCivitaConnection.uniqueness`, `Manifold.pathELength`.
+`Bundle.ContMDiffRiemannianMetric.pullback`, `Bundle.ContMDiffRiemannianMetric.pullback_inner`,
+`TauCeti.IsLocalRiemannianIsometry`,
+`TauCeti.IsLocalRiemannianIsometry.mfderiv_leviCivitaConnection_mpullback`,
+`TauCeti.IsLocalRiemannianIsometry.hessian_comp`, `TauCeti.Manifold.inner_mgradient`; Mathlib
+`Manifold.pathELength`.
 
 ### 3.2 Sublevel sets and level sets concave from the superlevel sets
 
@@ -808,18 +850,18 @@ from the superlevel sets on `U` if this holds at every `y ∈ U` (so `dx ≠ 0` 
 
 ### 3.3 Defining functions on the collar extension and the double
 
-Let `M` be Hausdorff and second countable, `c : ∂M × [0, 1) → M` a smooth collar with open image
-`U` (GeometricTopology 1.1), and `int M` the interior with GeometricTopology 1.1's boundaryless
-structure, which the supplier contracts assume to be the open-submanifold one, for which
-`int M → M` is a smooth open embedding. Let `M̃` be the collar extension:
-GeometricTopology 1.3's glued manifold `M ∪_f N` for `N = ∂M × [0, 1)` with its product collar
-and `f(q) = (q, 0)`, with `N` over `𝓡∂ (n+1)` by the reordering `(y, t) ↦ (t, y)` of the supplier
-contracts. By GeometricTopology 1.3, `M̃` is a Hausdorff second-countable boundaryless
-manifold of dimension `n + 1`, `M` is a closed subset of `M̃` through its smooth embedding, and the
-union of the two collars is an open subset identified with `∂M × (−1, 1)`; write
-`c̃ : ∂M × (−1, 1) → M̃` for this open embedding, equal to `c` for `t ≥ 0`. Then `c̃(q, t) ∈ M` iff
-`t ≥ 0`: for `t < 0` the point `c̃(q, t)` is the image of the interior point `(q, −t)` of `N`, and the
-images of `M` and `N` meet only in `∂M`. Prove:
+Let `M` be Hausdorff and second countable, `c : ∂M × [0, 1) → M` a smooth collar with open image `U`
+(GeometricTopology 1.1), and `int M` the interior with GeometricTopology 1.1's boundaryless
+structure, which the supplier contracts assume to be the open-submanifold one, for which `int M → M`
+is a smooth open embedding. Let `M̃` be the collar extension: GeometricTopology 1.3's glued manifold
+`M ∪_f N` for `N = ∂M × [0, 1)` with its product collar and `f(q) = (q, 0)`, with `N` over
+`𝓡∂ (n+1)` by the reordering `TauCeti.EuclideanHalfSpace.collarDiffeomorph` of the supplier
+contracts. By GeometricTopology 1.3, `M̃` is a Hausdorff second-countable boundaryless manifold of
+dimension `n + 1`, `M` is a closed subset of `M̃` through its smooth embedding, and the union of the
+two collars is an open subset identified with `∂M × (−1, 1)`; write `c̃ : ∂M × (−1, 1) → M̃` for
+this open embedding, equal to `c` for `t ≥ 0`. Then `c̃(q, t) ∈ M` iff `t ≥ 0`: for `t < 0` the
+point `c̃(q, t)` is the image of the interior point `(q, −t)` of `N`, and the images of `M` and `N`
+meet only in `∂M`. Prove:
 
 - There is `ρ̃ ∈ C^∞(M̃)` with `0` a regular value, `ρ̃ > 0` on `int M`, `ρ̃ = 0` on `∂M`,
   `ρ̃ < 0` on `M̃ ∖ M`, and `ρ̃(c̃(q, t)) = t` on a neighbourhood of `∂M × {0}` in `∂M × (−1, 1)`,
@@ -834,7 +876,8 @@ images of `M` and `N` meet only in `∂M`. Prove:
 - Atlas comparison: the identity of `M` is a diffeomorphism from `M`'s atlas onto Tau Ceti's
   sublevel atlas of `{ρ̃ ≥ 0}`. At interior points both atlases consist of the charts of `int M`;
   near `∂M`, the bicollar chart restricted to `t ≥ 0` (the inverse of `c`, then a chart of `∂M` in
-  the first factor, then the reordering `(y, t) ↦ (t, y)`) is a chart of `M`'s maximal atlas in
+  the first factor, then the reordering `TauCeti.EuclideanHalfSpace.collarDiffeomorph`,
+  `(y, t) ↦ (t, y)`) is a chart of `M`'s maximal atlas in
   which `ρ̃ = t` is the normal coordinate `x⁰`, so the sublevel charts built from it are compatible
   with `M`'s half-space charts.
 - The double: if `M` is compact and `∂M ≠ ∅`, let `DM = M ∪_id M` be GeometricTopology 1.3's double
@@ -868,7 +911,8 @@ Smooth Manifolds*, Theorem 9.25, for the collar.)
   `M ⊔ M`, disconnected for nonempty `M`, which is why 3.5 does not use it then.
 
 *Needs:* GeometricTopology 1.1 (collars, the interior) and 1.3 (gluing along the boundary, the
-double); 3.1; Tau Ceti `TauCeti.isManifold_boundary`, `TauCeti.scalarRegularSublevelChartedSpace`;
+double); 3.1; Tau Ceti `TauCeti.isManifold_boundary`, `TauCeti.scalarRegularSublevelChartedSpace`,
+`TauCeti.EuclideanHalfSpace.collarDiffeomorph`;
 Mathlib `ModelWithCorners.isClosed_boundary`, `SmoothPartitionOfUnity`.
 
 ### 3.4 Extension of functions and metrics across the boundary
@@ -985,12 +1029,14 @@ the conformal ball as a domain in `(ℝⁿ⁺¹, e^{2φ} g)`.
 ### Dependencies
 
 3.1 uses 1.1–1.4, RiemannianGeometry R7.9 (the inclusion of a regular sublevel and its outward
-criterion) and Tau Ceti's sublevel atlas and pullback metric; 3.2 uses 1.3–1.4, 2.1 and 3.1;
-3.3 uses GeometricTopology 1.1 (collars, the interior) and 1.3 (the collar extension and the
-double as gluings along the boundary), Tau Ceti's sublevel atlas, Mathlib's partitions of unity
-and 3.1; 3.4 uses 3.1, ComplexKahlerGeometry K5a, DifferentialGeometry 12.1 and Mathlib's
-partitions of unity; 3.5 uses 3.1, 3.3–3.4, GeometricTopology 1.1 and 1.3 and, for the comparison
-of the compact case, RiemannianGeometry R5c; 3.6 uses 1.4–1.5, 3.1 and RiemannianGeometry R5a.
+criterion) and Tau Ceti's sublevel atlas, pullback metric and naturality of the Levi-Civita
+connection and the Hessian under local Riemannian isometries; 3.2 uses 1.3–1.4, 2.1 and 3.1; 3.3
+uses GeometricTopology 1.1 (collars, the interior) and 1.3 (the collar extension and the double as
+gluings along the boundary), Tau Ceti's sublevel atlas and product collar model, Mathlib's
+partitions of unity and 3.1; 3.4 uses 3.1, ComplexKahlerGeometry K5a, DifferentialGeometry 12.1 and
+Mathlib's partitions of unity; 3.5 uses 3.1, 3.3–3.4, GeometricTopology 1.1 and 1.3 and, for the
+comparison of the compact case, RiemannianGeometry R5c; 3.6 uses 1.4–1.5, 3.1 and RiemannianGeometry
+R5a.
 
 ## Layer 4: Geodesics at the boundary
 
@@ -1009,8 +1055,15 @@ Prove: for a nondegenerate interval `s` and `γ : ℝ → M`, `γ` is a geodesic
 - From `x ∈ int M` there is a geodesic of `M` on an open interval about `0`; from `q ∈ ∂M` with
   `v` inward there is one on `[0, ε)` for some `ε > 0`; from `q ∈ ∂M` with `v` outward there is
   none on any `[0, ε)`, `ε > 0`.
-- An `N`-geodesic segment lying in `M` depends only on `(M, g_M)`: two realisations of `(M, g)`
-  (3.5) have corresponding geodesic segments in `M`.
+- An `N`-geodesic segment lying in `M` depends only on `(M, g_M)`. For a Hausdorff
+  second-countable `(M, g)` and a realisation `Φ` of it onto a regular domain `{ρ̃ ≥ 0}` (3.5),
+  `Φ` is a `TauCeti.RiemannianIsometry` from `(M, g)` onto the domain with its pulled-back metric
+  (3.1), so geodesics of `(M, g)` on a parameter set, with their initial data, correspond to those
+  of the domain by `TauCeti.RiemannianIsometry.isGeodesicCurveOn_comp_iff` and
+  `TauCeti.RiemannianIsometry.isGeodesicCurveOnFrom_comp_iff`, and by the main statement to the
+  geodesic segments of the ambient manifold lying in the domain. Two realisations of `(M, g)`
+  therefore have corresponding geodesic segments, and the exit time `τ` (5.2) and the scattering
+  relation `α` (5.6) of `(M, g)` are those of any realisation.
 
 (Paternain–Salo–Uhlmann, lines 2646–2658 and 2763–2765.)
 
@@ -1024,7 +1077,9 @@ Prove: for a nondegenerate interval `s` and `γ : ℝ → M`, `γ` is a geodesic
   all of `ℝ` and lies in `∂M`.
 
 *Needs:* 3.1, 3.5; HopfRinow Layer 1; Tau Ceti `TauCeti.Manifold.IsGeodesicCurveOn`,
-`TauCeti.Manifold.IsGeodesicCurveOnFrom`, `TauCeti.Manifold.geodesicInterval`.
+`TauCeti.Manifold.IsGeodesicCurveOnFrom`, `TauCeti.Manifold.geodesicInterval`,
+`TauCeti.RiemannianIsometry`, `TauCeti.RiemannianIsometry.isGeodesicCurveOn_comp_iff`,
+`TauCeti.RiemannianIsometry.isGeodesicCurveOnFrom_comp_iff`.
 
 ### 4.2 Second-order contact with the boundary
 
@@ -1077,7 +1132,8 @@ Let `f ∈ C^∞(N)` have `0` as a regular value, `Σ := f⁻¹(0)` with Tau Cet
 grad f/|grad f|`, and `E_Σ(q, r) := exp_q(r ν_Σ(q))` on its open natural domain in `Σ × ℝ` (Tau
 Ceti `TauCeti.SmoothEmbedding.normalExp` through the trivialisation of the normal line bundle by
 `ν_Σ`). Prove (Stefanov–Uhlmann–Vasy, lines 99–100 and 220–221; Paternain–Salo–Uhlmann, Lemma
-3.1.10, lines 2766–2773; Lee, *Introduction to Riemannian Manifolds*, Ch. 5–6):
+3.1.10, lines 2766–2773; Lee, *Introduction to Riemannian Manifolds*, Ch. 5, "Tubular
+Neighborhoods and Fermi Coordinates", pp. 133–136, and Ch. 6 for the Gauss lemma):
 
 - Tube: there is a smooth `ε : Σ → (0, ∞)`, constant when `Σ` is compact, such that `E_Σ` is a
   diffeomorphism from `{(q, r) : |r| < ε(q)}` onto an open neighbourhood `W` of `Σ`, with
@@ -1148,7 +1204,8 @@ defining function in the compact connected case); Tau Ceti `TauCeti.regularLevel
 ### 4.4 Boundary normal coordinates
 
 With `ε` and `E := E_{∂M}` from 4.3 for `f = ρ`, prove (Stefanov–Uhlmann–Vasy, lines 20–22 and
-220–221; Lee, *Introduction to Riemannian Manifolds*, Ch. 5–6):
+220–221; Lee, *Introduction to Riemannian Manifolds*, Ch. 5, "Tubular Neighborhoods and Fermi
+Coordinates", pp. 133–136, and Ch. 6 for the Gauss lemma):
 
 - `E` restricted to `{(q, r) ∈ ∂M × ℝ : 0 ≤ r < ε(q)}` is a diffeomorphism onto the open
   neighbourhood `W ∩ M` of `∂M` in `M`, a smooth collar of `∂M` in the sense of GeometricTopology
@@ -1209,11 +1266,11 @@ uses no regular-value hypothesis away from `q`. Then:
 
 - There are an open `U₀ ∋ q` in `N` and `C₀, δ > 0` such that for `y ∈ U₀` and unit `v ∈ T_yN`,
   `|dρ(v)| < δ` implies `Hess ρ(v, v) ≤ −C₀`.
-- There are (`exists_convexityFunction`) an open `U ∋ q` in `N`, `x̃ ∈ C^∞(U)` and `c₀ > 0` with
-  `x̃(q) = 0`, `dx̃_q = −dρ_q`, `dx̃ ≠ 0` on `U`, the level sets of `x̃` strictly concave from the
-  superlevel sets on `U` (3.2), and `K_c := {y ∈ U : x̃(y) ≥ −c, ρ(y) ≥ 0}` compact for every
-  `0 ≤ c ≤ c₀`. In a chart `z` centred at
-  `q`, `x̃ = −ρ − ε|z|²` works for every sufficiently small `ε > 0`.
+- There is (`exists_convexityFunction`) a convexity function at `q` for `ρ`, by which this
+  roadmap means an open `U ∋ q` in `N`, a function `x̃ ∈ C^∞(U)` and `c₀ > 0` with `x̃(q) = 0`,
+  `dx̃_q = −dρ_q`, `dx̃ ≠ 0` on `U`, the level sets of `x̃` strictly concave from the superlevel
+  sets on `U` (3.2), and `K_c := {y ∈ U : x̃(y) ≥ −c, ρ(y) ≥ 0}` compact for every `0 ≤ c ≤ c₀`.
+  In a chart `z` centred at `q`, `x̃ = −ρ − ε|z|²` works for every sufficiently small `ε > 0`.
 - For `0 < c ≤ c₀`, `O_c := {x̃ > −c} ∩ M` is relatively open in `M` with closure in `K_c`.
 
 **Checks.**
@@ -1222,6 +1279,12 @@ uses no regular-value hypothesis away from `q`. Then:
   is positive for `ε < 1`, `dx̃_q = 2q = (0, −2) = −dρ_q`, and `K_c ⊆ {ε|z − q|² ≤ c}`.
 - For the exterior of the unit disc the same formula gives `Hess x̃ = −(2 + 2ε) g`: the hypothesis
   of strict convexity at `q` is what makes the construction work.
+- `−ρ` itself is not a convexity function at `q`: on the closed unit disc, with `U` the open disc
+  of radius `1/2` about `q = (0, −1)` and `x̃ = −ρ = |z|² − 1`, every clause holds except
+  compactness, since `K_0 = {y ∈ U : |y| = 1}` is an open arc of the unit circle and
+  `K_c = {y ∈ U : 1 − c ≤ |y|² ≤ 1}` reaches the frontier of `U` for every `c > 0`. The term
+  `−ε|z − q|²` bends the level sets so that, for `c ≤ c₀` small, `K_c` lies in the compact disc
+  `{ε|z − q|² ≤ c}` inside `U`.
 - Dimension one, `M = [0, 1]`, `q = 0`, `ρ = x`: `ker dx̃ = 0`, concavity is vacuous, `x̃ = −x − εx²`,
   and `K_c = {x ∈ [0, 1] : x + εx² ≤ c}` is a compact interval.
 
@@ -1276,11 +1339,11 @@ spherical caps in `S^{n+1}`, `n ≥ 1`, for enlargements.
 
 ### Dependencies
 
-4.1 uses 3.1, 3.5 and HopfRinow Layer 1; 4.2 uses 1.1, 1.3–1.4, 2.1–2.2, 3.1, 4.1 and HopfRinow
-Layer 1; 4.3 uses 1.3, 3.1, HopfRinow Layers 1–2, RiemannianGeometry R7.9 (the compact connected
-case) and Tau Ceti's normal exponential; 4.4 uses 1.4, 4.3, GeometricTopology 1.1 (smooth collars)
-and Mathlib's partitions of unity; 4.5 uses 2.1–2.2 and 3.1–3.2; 4.6 uses 1.3–1.4, 2.1, 2.3,
-3.1–3.2 and 4.3.
+4.1 uses 3.1, 3.5, HopfRinow Layer 1 and Tau Ceti's geodesics under Riemannian isometries; 4.2 uses
+1.1, 1.3–1.4, 2.1–2.2, 3.1, 4.1 and HopfRinow Layer 1; 4.3 uses 1.3, 3.1, HopfRinow Layers 1–2,
+RiemannianGeometry R7.9 (the compact connected case) and Tau Ceti's normal exponential; 4.4 uses
+1.4, 4.3, GeometricTopology 1.1 (smooth collars) and Mathlib's partitions of unity; 4.5 uses 2.1–2.2
+and 3.1–3.2; 4.6 uses 1.3–1.4, 2.1, 2.3, 3.1–3.2 and 4.3.
 
 ## Layer 5: Exit time and scattering relation
 
@@ -1365,7 +1428,7 @@ with `sup ∅ = 0`, the velocity at `0` being the one-sided derivative; `M` is n
 
 - Realisation formula: `τ(x, v)` is the supremum of the `T ≥ 0` such that `[0, T]` lies in the
   maximal interval of the `N`-geodesic from `(x, v)` and that geodesic maps `[0, T]` into `M`; hence
-  `τ` does not depend on `N`.
+  `τ` does not depend on `N` (4.1).
 - Homogeneity: `τ(x, λ v) = τ(x, v)/λ` for `λ > 0`; `τ(x, 0) = ∞`.
 - `τ(x, v) > 0` if `x ∈ int M` or `v` is inward; `τ = 0` on outward vectors at boundary points;
   `τ = 0` on `∂₀S_qM` if `∂M` is strictly convex at `q` (4.2), so then `τ = 0` on `∂₋S_qM`.
@@ -1392,13 +1455,22 @@ with `sup ∅ = 0`, the velocity at `0` being the one-sided derivative; `M` is n
 ### 5.3 Two lemmas of calculus
 
 Prove the fold normal form (Paternain–Salo–Uhlmann, Lemma 3.2.10, lines 2970–2982, proof lines
-2985–3026): let `h(t, y)` be smooth near `(0, y₀)` in `ℝ × ℝ^K` with `h(0, y₀) = 0`,
-`∂_t h(0, y₀) = 0` and `∂_t² h(0, y₀) < 0`. Then there are smooth `Q` near `(0, y₀)` in `ℝ × ℝ^K`
-and `a` near `y₀` such that `a(y) ≥ 0` whenever `h(0, y) ≥ 0`, `∂_r Q(0, y₀) > 0`, and for `(t, y)`
-near `(0, y₀)` with `h(0, y) ≥ 0`: `h(t, y) = 0` iff `t = Q(√a(y), y)` or `t = Q(−√a(y), y)`; moreover
-`Q(√a(y), y) ≥ Q(−√a(y), y)`. Route: the implicit function theorem for `∂_t h = 0`, Hadamard
-factorisation of `h` around the critical point, and the inverse function theorem for
-`r = s F(s, y)^{1/2}`.
+2985–3026): consider a smooth function `h(t, y)` on a neighbourhood of `(0, y₀)` in `ℝ × ℝ^K` with
+`h(0, y₀) = 0`, `∂_t h(0, y₀) = 0` and `∂_t² h(0, y₀) < 0`. Then there are smooth `Q` near `(0, y₀)`
+in `ℝ × ℝ^K` and `a` near `y₀` such that `a(y) ≥ 0` whenever `h(0, y) ≥ 0`, `∂_r Q(0, y₀) > 0`, and
+for `(t, y)` near `(0, y₀)` with `h(0, y) ≥ 0`: `h(t, y) = 0` iff `t = Q(√a(y), y)` or
+`t = Q(−√a(y), y)`; moreover `Q(√a(y), y) ≥ Q(−√a(y), y)`. Route: the implicit function theorem for
+`∂_t h = 0` gives a smooth critical time `g(y)` near `y₀` with `g(y₀) = 0`. The family
+`k(y, s) := h(s + g(y), y)`, made a smooth function on all of `ℝ^K × ℝ` by a cutoff equal to `1`
+near `(y₀, 0)`, has `∂_s k(y, 0) = 0` for `y` near `y₀` and `∂_s² k(y₀, 0) = ∂_t² h(0, y₀) < 0`, so
+Tau Ceti's parametric Morse lemma `TauCeti.exists_parametric_morse_chart` (base `ℝ^K`, fibre `ℝ`)
+gives a chart `ψ(y, s) = (y, ϑ(y, s))` near `(y₀, 0)`, smooth with smooth inverse and fixing the
+zero section, with `k(y, s) = k(y, 0) − c(y) ϑ(y, s)²` for `c(y) := −½ ∂_s² k(y, 0)`, positive near
+`y₀`; `∂_s ϑ(y₀, 0) ≠ 0` because `ψ` has a smooth inverse, and replacing `ϑ` by `−ϑ` if necessary it
+is positive. Set `a(y) := k(y, 0) = h(g(y), y)` and `Q(r, y) := g(y) + s₁`, where
+`ψ⁻¹(y, r/√c(y)) = (y, s₁)`. Then `h(t, y) = 0` iff `ϑ(y, t − g(y)) = ±√(a(y)/c(y))`, `h(0, y) ≥ 0`
+gives `a(y) ≥ c(y) ϑ(y, −g(y))² ≥ 0`, and `Q` is increasing in `r`, with
+`∂_r Q(0, y₀) = 1/(√c(y₀) ∂_s ϑ(y₀, 0)) > 0`.
 
 Prove the even-function lemma (Paternain–Salo–Uhlmann, Exercise 3.2.12, lines 3044–3045, used with
 parameters on lines 3039–3041): if `f(r, y)` is smooth near `(0, y₀)` in `ℝ × ℝ^K` and
@@ -1416,9 +1488,9 @@ half-space Seeley extension.
 - `K = 0` (no parameters) is allowed in both lemmas.
 
 *Needs:* Mathlib `ContDiffAt.implicitFunction`, `ContDiffAt.contDiffAt_implicitFunction`; Tau Ceti
-`ContDiff.sub_eq_hadamardFactor_apply`, `ContDiff.contDiff_hadamardFactor`,
-`TauCeti.contDiff_intervalIntegral`; ComplexKahlerGeometry K5a (extension across a smooth
-boundary: the half-space Seeley extension).
+`TauCeti.exists_parametric_morse_chart`, `ContDiff.sub_eq_hadamardFactor_apply`,
+`ContDiff.contDiff_hadamardFactor`, `TauCeti.contDiff_intervalIntegral`; ComplexKahlerGeometry K5a
+(extension across a smooth boundary: the half-space Seeley extension).
 
 ### 5.4 Regularity of the exit time
 
@@ -1446,8 +1518,9 @@ lines 3110–3113):
   `τ = Q(√a, ·)` with `Q(0, z₀) = 0`.
 - The odd extension `τ̃ : ∂SM → ℝ`, `τ̃ = τ` on `∂₊SM` and `τ̃(x, v) = −τ(x, −v)` on `∂₋SM` (both
   are `0` on `∂₀SM`), is smooth on the manifold `∂SM`, and `τ̃ = 0` exactly on `∂₀SM`.
-- `μ/τ̃` on `∂SM ∖ ∂₀SM` extends to a smooth positive function on `∂SM` whose value at
-  `(q, dι u) ∈ ∂₀SM` is `II_q(u, u)/2`.
+- On `∂SM ∖ ∂₀SM`, where `τ̃ ≠ 0` and `μ` and `τ̃` have the same sign, the quotient `μ/τ̃` is the
+  restriction of a smooth function on all of `∂SM`; that function is everywhere positive and
+  takes the value `II_q(u, u)/2` at each glancing `(q, dι u)`.
 - `σ := τ(x, v) − τ(x, −v)` and `T := τ(x, v) τ(x, −v)` are smooth on the manifold with boundary
   `SM`, `σ = τ̃` on `∂SM`, and `τ = (σ + √(σ² + 4T))/2`, the nonnegative root of
   `τ² − σ τ − T = 0`.
@@ -1559,7 +1632,7 @@ projection `P(x, v) := v − μ(x, v) ν_in(x) ∈ T_x∂M` on `∂SM`, and the 
   when `z` is glancing, and for non-glancing `z`, `α(z)` is outward exactly when `z` is not; and
   near every point of `∂SM`, `α` is the restriction to `∂SM` of a smooth map from an open subset of
   `TM` to `TM` (`exists_contMDiffOn_eq_scatteringRelation`).
-- `α` does not depend on the realisation `N`.
+- `α` does not depend on the realisation `N` (4.1).
 - `P` restricts to homeomorphisms `∂±SM → B∂M`, with inverse `w ↦ w ± √(1 − |w|²) ν_in`, and to
   diffeomorphisms of `∂±SM ∖ ∂₀SM` onto the open unit ball bundle.
 - `L` and `ℓ` are intrinsic to `(M, g)`; two metrics on `M` with the same induced metric `h` have
@@ -1571,6 +1644,23 @@ projection `P(x, v) := v − μ(x, v) ν_in(x) ∈ T_x∂M` on `∂SM`, and the 
 - Closed unit ball: `α(x, v) = (x − 2⟨x, v⟩ v, v)`; applying it twice returns `(x, v)` since
   `⟨x − 2⟨x, v⟩v, v⟩ = −⟨x, v⟩`; the fixed points are `⟨x, v⟩ = 0`, the glancing set.
 - Closed unit disc: `|L(x, w)| = |w|` (equal angles at entry and exit) and `ℓ(x, w) = 2√(1 − |w|²)`.
+- Lens data on the closed unit disc at `x = (0, −1)`, where `ν_in(x) = (0, 1)`, for `w = (c, 0)`,
+  `|c| ≤ 1`: the lift through `∂₊SM` is `v = (c, √(1 − c²))`, with `⟨x, v⟩ = −√(1 − c²)`, so
+  `τ(x, v) = 2√(1 − c²)` and the exit point is `y = (2c√(1 − c²), 1 − 2c²)`, of norm one. There
+  `ν_in(y) = −y` and `⟨v, y⟩ = √(1 − c²)`, so `L(x, w) = (y, v − ⟨v, y⟩ y)` with
+  `v − ⟨v, y⟩ y = (c(2c² − 1), 2c²√(1 − c²))`, whose squared norm is
+  `c²(2c² − 1)² + 4c⁴(1 − c²) = c²`. At `c = 0`, `L(x, 0) = ((0, 1), 0)` and `ℓ = 2`; at `|c| = 1`
+  the lift is the glancing `w` itself, fixed by `α`, so `L(x, w) = (x, w)` and `ℓ = 0`. Lifting
+  through `∂₋SM` instead, `w − √(1 − c²) ν_in = (c, −√(1 − c²))` is outward for `|c| < 1`, with
+  `τ = 0`, and would give `ℓ ≡ 0` rather than `2√(1 − c²)`.
+- Lens data in dimension one, `M = [a, b]`: `B∂M` consists of the two zero vectors,
+  `(P|_{∂₊SM})⁻¹(a, 0) = (a, +1)` and `(P|_{∂₊SM})⁻¹(b, 0) = (b, −1)`; then
+  `α(a, +1) = (b, +1)`, `α(b, −1) = (a, −1)`, and `P` sends both images to zero vectors, so
+  `L(a, 0) = (b, 0)`, `L(b, 0) = (a, 0)` and `ℓ = b − a` at both points.
+- Ball of radius `R > 0` centred at `0`, `x` on its boundary sphere, `ν_in(x) = −x/R`: the lift of
+  `w ∈ B∂M` is `v = w − √(1 − |w|²) x/R`, with `⟨x, v⟩ = −R√(1 − |w|²)`, so
+  `ℓ(x, w) = 2R√(1 − |w|²)` and `ℓ(x, 0) = 2R`, the diameter; the unit-disc formula
+  `2√(1 − |w|²)` is wrong for `R ≠ 1`.
 - `M = [a, b]`: `α(a, +1) = (b, +1)` with `τ̃ = b − a`, `α(b, +1) = (a, +1)` with `τ̃ = −(b − a)`, and
   `α` has no fixed points, matching `∂₀SM = ∅`.
 - The backward branch: on the closed unit disc at `x = (0, −1)` with the outward `v = (0, −1)`,
@@ -1609,9 +1699,10 @@ conformal ball with a totally geodesic inner sphere (trapping).
 ### Dependencies
 
 5.1 uses 1.1–1.2, 3.1, 3.5, HopfRinow Layer 1, Tau Ceti's sphere bundles and geodesic spray; 5.2
-uses 2.1, 4.1–4.2 and 5.1; 5.3 uses only calculus (Mathlib, Tau Ceti, ComplexKahlerGeometry K5a);
-5.4 uses 1.4, 2.1, 3.5, 4.2 and 5.1–5.3; 5.5 uses 2.1, 3.4–3.5, 4.2, 4.6, 5.1–5.2 and 5.4; 5.6 uses
-1.2, 2.1, 3.5, 4.1, 5.1, 5.2 and 5.4.
+uses 2.1, 4.1–4.2 and 5.1; 5.3 uses only calculus (Mathlib's implicit function theorem, Tau Ceti's
+parametric Morse lemma and Hadamard factorisation, ComplexKahlerGeometry K5a); 5.4 uses 1.4, 2.1,
+3.5, 4.2 and 5.1–5.3; 5.5 uses 2.1, 3.4–3.5, 4.2, 4.6, 5.1–5.2 and 5.4; 5.6 uses 1.2, 2.1, 3.5, 4.1,
+5.1, 5.2 and 5.4.
 
 ## Layer 6: Examples
 
@@ -1750,12 +1841,15 @@ regular value there, and the closed ball `B̄(p, R) = {d(p, ·)² ≤ R²}` is a
 of the open submanifold `B(p, r_p)` (Hausdorff, second countable and boundaryless, with the
 restricted metric), with defining function `R² − d(p, ·)²`; its boundary is strictly convex and it
 is non-trapping; on a compact set of centres `r_p` can be
-chosen uniformly (Lee, *Introduction to Riemannian Manifolds*, Ch. 6; the spherical-cap instance is
+chosen uniformly (Lee, *Introduction to Riemannian Manifolds*, Ch. 6, Lemma 6.16 and Theorem 6.17,
+uniformly normal neighbourhoods and geodesically convex balls; the spherical-cap instance is
 Paternain–Salo–Uhlmann, Example 3.1.4, lines 2677–2678). The ambient manifold of the regular
 domain is `B(p, r_p)`, not `N`: `d(p, ·)²` need not be smooth on all of `N`. Second countability is
 the standing hypothesis of Layer 5, whose non-trapping criterion 5.5 the route applies (it passes
 to the open submanifold `B(p, r_p)`), and of SmoothBundlesConnections B6.0. Route:
-in normal coordinates `z` at `p`, `d(p, ·) = |z|` (HopfRinow Layer 2); with the coordinate
+in normal coordinates `z` at `p`, `d(p, ·) = |z|` on the whole normal ball (HopfRinow Layer 2,
+there on a smaller ball; on every open tangent ball contained in a normal domain by Tau Ceti's
+`TauCeti.Manifold.IsNormalDomain.edist_riemannianExp_eq_of_mem_ball`); with the coordinate
 fields `∂_i` of an orthonormal basis of `T_pN` (`TauCeti.Manifold.normalCoordinateField`), the
 metric coefficients satisfy `g_ij = δ_ij + O(|z|²)`
 (`TauCeti.Manifold.IsNormalDomain.mfderiv_inner_normalCoordinateField_self`) and the
@@ -1770,7 +1864,12 @@ neighbourhood `K'` of `K`. On `W = {(x, v) ∈ TN : x ∈ int K', |v| < r}` the 
 `E(x, v) = (x, exp_x v)` is smooth (HopfRinow Layer 1), injective (each `exp_x` is injective on its
 normal ball) and has invertible differential (block-triangular, with diagonal blocks the identity
 and `d(exp_x)_v`, invertible on a normal domain), so it is a diffeomorphism of `W` onto
-`{(p, y) : p ∈ int K', d(p, y) < r}` (HopfRinow Layer 2's local distance identity), and
+`{(p, y) : p ∈ int K', d(p, y) < r}`: for each `p`, `exp_p` maps the tangent ball `B(0, r)` onto
+the metric ball `B(p, r)` (Tau Ceti `TauCeti.Manifold.IsNormalDomain.image_riemannianExp_ball`,
+with `d(p, exp_p v) = |v|` there by
+`TauCeti.Manifold.IsNormalDomain.edist_riemannianExp_eq_of_mem_ball`; both for the distance
+`Manifold.riemannianEDist`, which they read through their `IsRiemannianManifold` hypothesis, as
+for Mathlib's `EMetricSpace.ofRiemannianMetric`), and
 `F(p, y) = d(p, y)² = |E⁻¹(p, y)|²` is smooth in `(p, y)` there. So `Hess F(p, ·)` at `y`, evaluated
 on unit vectors `w ∈ T_yN`, is continuous in `(p, y, w)`; it equals `2` at `y = p`, and since the unit
 vectors over `K` form a compact set, there is `r_K ∈ (0, r]` such that `Hess F(p, ·)` is positive
@@ -1801,8 +1900,11 @@ definite Hessian.
 *Needs:* 1.3, 2.1, 3.1, 3.2, 5.2, 5.5; HopfRinow Layers 1–2; Tau Ceti
 `TauCeti.Manifold.IsNormalDomain`, `TauCeti.Manifold.normalCoordinateField`,
 `TauCeti.Manifold.IsNormalDomain.mfderiv_inner_normalCoordinateField_self`,
-`TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self`;
-SmoothBundlesConnections B6.0 (uniform normal radii on compact sets).
+`TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self`,
+`TauCeti.Manifold.IsNormalDomain.edist_riemannianExp_eq_of_mem_ball`,
+`TauCeti.Manifold.IsNormalDomain.image_riemannianExp_ball`; Mathlib
+`EMetricSpace.ofRiemannianMetric`; SmoothBundlesConnections B6.0 (uniform normal radii on compact
+sets).
 
 ### 6.5 Conformal and rotationally symmetric metrics on the ball
 
@@ -1851,7 +1953,8 @@ This layer is the roadmap's acceptance suite: every formula above is evaluated a
 map into an inner product space; 6.2 uses 1.4–1.5, 2.1, 3.1, 4.2 and 5.1–5.2;
 6.3 uses 1.4, 2.1, 3.1–3.2, 3.6, 5.2, 5.5, RiemannianGeometry R5a and Tau Ceti's round sphere and
 hyperbolic space; 6.4 uses 1.3, 2.1, 3.1–3.2, 5.2, 5.5, HopfRinow Layers 1–2, Tau Ceti's normal
-coordinate fields and SmoothBundlesConnections B6.0 (uniform normal radii); 6.5 uses 1.4, 1.6,
+coordinate fields and distance identity on normal balls and SmoothBundlesConnections B6.0 (uniform
+normal radii); 6.5 uses 1.4, 1.6,
 2.1, 3.1, 3.6 and RiemannianGeometry R5a.
 
 ## Downstream consumers
@@ -1890,8 +1993,10 @@ coordinate fields and SmoothBundlesConnections B6.0 (uniform normal radii); 6.5 
 - G. Uhlmann, A. Vasy, *The inverse problem for the local geodesic ray transform*, Invent. Math.
   205 (2016) (`uhlmann-vasy2016`): Section 1, lines 15–70 and 128–142; Section 3, lines 498–524.
 - J. M. Lee, *Introduction to Riemannian Manifolds*, 2nd ed., GTM 176, 2018
-  (`lee-riemannian2018`): Ch. 5–6 (normal neighbourhoods, Gauss lemma, Fermi coordinates), Ch. 7–8
-  (curvature, Riemannian submanifolds, second fundamental form, hypersurfaces).
+  (`lee-riemannian2018`): Ch. 5, "Tubular Neighborhoods and Fermi Coordinates", pp. 133–136;
+  Ch. 6 (Gauss lemma; Lemma 6.16 and Theorem 6.17, uniformly normal neighbourhoods and
+  geodesically convex balls); Ch. 7–8 (curvature, Riemannian submanifolds, second fundamental
+  form, hypersurfaces).
 - J. M. Lee, *Introduction to Smooth Manifolds*, 2nd ed., GTM 218, 2012 (`lee-smooth2012`):
   Theorem 9.25 (collar neighbourhoods), through GeometricTopology 1.1.
 - V. A. Sharafutdinov, *Integral Geometry of Tensor Fields*, VSP, 1994 (`sharafutdinov1994`):

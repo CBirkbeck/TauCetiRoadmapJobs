@@ -49,12 +49,12 @@ year = 2018
 venue = "Graduate Texts in Mathematics"
 doi = "10.1007/978-3-319-91755-9"
 locator_scheme = "chapter"
-locator = "Chapter 8 (second fundamental form, hypersurfaces); Chapter 5 (tubular neighbourhoods and Fermi coordinates)"
+locator = "Chapter 8 (second fundamental form, hypersurfaces); Chapter 5, section 'Tubular Neighborhoods and Fermi Coordinates', pp. 133-136; Chapter 6, Lemma 6.16 and Theorem 6.17"
 url = "https://doi.org/10.1007/978-3-319-91755-9"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["1.2, 1.4, 1.5, 3.6 Riemannian hypersurfaces, second fundamental form, Weingarten map, mean curvature, Gauss equation (Ch. 8)", "1.6 conformal change (Ch. 7-8)", "4.3, 4.4 tubular neighbourhoods, Gauss lemma, Fermi coordinates (Ch. 5-6)", "6.4 small geodesic balls (Ch. 6)"]
+cited_for = ["1.2, 1.4, 1.5, 3.6 Riemannian hypersurfaces, second fundamental form, Weingarten map, mean curvature, Gauss equation (Ch. 8)", "1.6 conformal change (Ch. 7-8)", "4.3, 4.4 tubular neighbourhoods and Fermi coordinates (Ch. 5, 'Tubular Neighborhoods and Fermi Coordinates', pp. 133-136), Gauss lemma (Ch. 6)", "6.4 small geodesic balls: uniformly normal neighbourhoods and geodesically convex balls (Ch. 6, Lemma 6.16 and Theorem 6.17)"]
 
 [[source]]
 id = "lee-smooth2012"
