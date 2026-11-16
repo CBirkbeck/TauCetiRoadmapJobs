@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IntegralLattices~44",
+  "head": "60aa3a4f37d0734962ec0ec7bdd8764f3f8bbfd5",
+  "pr": 1411,
+  "folder": "IntegralLattices",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 60aa3a4. Checked: the previous findings (R01 not repaired and raised again, P3: the description's list of passages revising #617 omits 'How to read the build' and the introduction of Layer 7; R02 repaired); the title and description against this head and against #617's head da24d08 (Suggested.lean differs in two docstrings, as stated); adversarial rows computed for the 3D non-classification pair and 7C's dictionary. Seeded sample B1-B8 falls in no changed passage. Gate passes every check, build included; depcheck 0 problems; lake env lean on Suggested.lean exits 0 with 15 sorry warnings only.",
+  "text": "f1bc7fefbe2616f5",
+  "carried": {
+   "from": "60aa3a4f37d0734962ec0ec7bdd8764f3f8bbfd5",
+   "head": "60aa3a4f37d0734962ec0ec7bdd8764f3f8bbfd5",
+   "findings": 1,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
