@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DeligneWeightsAndPurity~9",
+  "head": "ddbc25ae23b3d58b003bf3161ea26916092a5c67",
+  "pr": 929,
+  "folder": "DeligneWeightsAndPurity",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "incremental re-review of 36 changed lines since 82ab353. All five previous findings (R01-R05) are repaired. One new P2 in the rewritten smooth-divisor clause of 5.12: the equation of the divisor (Weil II 1.8.6) is dropped and the tame restriction sheaf has no supplier citation (LefschetzPencilsAndVanishingCycles 1.8). Checked: 12 source locators against the cached texts (WII, PW, Pet, Sun, BFP), the changed statements 2.15(i), 5.12, 8.9, 8.10 and the 8.24 source lines with computed instances, EtaleCohomologyFoundations F.6 and LefschetzPencilsAndVanishingCycles 0.2-0.8, 1.5, 1.8 resolved, the description against the head. None of the 15 seeded sample targets is a changed passage. Gate: every check zero, build passing; depcheck 0 problems; lake env lean on Suggested.lean gives 5 sorry warnings and no error; nothing changed outside the folder.",
+  "text": "337fd439e8bec920"
+ }
+}
