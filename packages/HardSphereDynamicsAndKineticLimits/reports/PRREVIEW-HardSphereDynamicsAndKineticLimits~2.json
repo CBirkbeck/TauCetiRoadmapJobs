@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HardSphereDynamicsAndKineticLimits~2",
+  "head": "53720278c25a055aa69bde327b2afc89222a6b3f",
+  "pr": 2448,
+  "folder": "HardSphereDynamicsAndKineticLimits",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 39 changed lines since 55781a9. R01 (BGSS2023 Theorem 1 restricted to continuous data) and R02 (unfinished sentences in the description) are both repaired. New locators checked against the cached texts: BGSS2023 lines 167-168 and 316-321; GST2013 line 668, lines 1314-1316 (with 1334-1335) and 2069-2080. Six adversarial rows with computed values, covering both directions of the (1.1.5) comparison, a discontinuous datum and d = 0. No seeded target falls in the changed passages. Gate OK (every check 0). Dependency check: 257 roadmaps, 0 problems. Elaboration: 11 sorry warnings only, and only docstrings changed. Pull-request title and description checked against the head. ClassicalErgodicTheory section 3.5 resolved at e3c5108. Shared 6-word-run scan of the changed passages against 3 sources: one stock phrase only.",
+  "text": "af9d417e7f4ca68c"
+ }
+}
