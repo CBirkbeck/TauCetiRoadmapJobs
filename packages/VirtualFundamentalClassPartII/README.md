@@ -613,6 +613,12 @@ For a separated dominant morphism `f : ℱ → 𝒢` of integral stacks, define 
 `deg(ℱ ×_𝒢 V/V)` for an étale `V → 𝒢` from an integral scheme, the generic rank of the pushforward of
 the structure sheaf when `ℱ ×_𝒢 V → V` is generically finite and `0` otherwise (vistoli1989 lines
 356–361); in general it is `deg(U/𝒢)/deg(U/ℱ)` for an étale `U → ℱ` from an integral affine scheme.
+Vistoli's representable morphisms are representable by schemes (vistoli1989 (7.11), lines
+2064–2066). For `f` representable by algebraic spaces only, `ℱ ×_𝒢 V` is an algebraic space,
+separated and of finite type over `V`; when it is generically finite over `V`, it is a scheme over a
+dense open `V° ⊆ V` (for affine `V` it has a dense open subscheme, stacks-chow-spaces Remark 7.2,
+lines 314–315, whose complement does not dominate `V`), and the rank and Vistoli's arguments for the
+statements below are read over `V°`.
 Prove:
 
 - the definition does not depend on `V` or `U`, and `deg(ℱ/ℋ) = deg(ℱ/𝒢) · deg(𝒢/ℋ)` for composable
@@ -860,11 +866,29 @@ with `N` the norm of the finite extension `k(𝒱)/k(f(𝒱))` (vistoli1989 (3.7
 the pushforward of rational equivalences is formed on étale atlases; there the generic degree is
 `deg(𝒱/f(𝒱))` of 1.3, which exceeds `[k(𝒱) : k(f(𝒱))]` by the factor `e(f(𝒱))/e(𝒱)`). The factor is
 an integer because a representable `f` embeds the automorphism group of a geometric generic point
-of `𝒱` into that of its image. The construction is integral and uses no proper cover. This extends
-VirtualFundamentalClass §2.2's proper pushforward, for representable morphisms, to integral
+of `𝒱` into that of its image. Vistoli's representable morphisms are representable by schemes
+(vistoli1989 (7.11), lines 2064–2066), so in that proof the atlas pullback `ℱ ×_𝒢 V → V` is a proper
+morphism of schemes. Here `f` is representable by algebraic spaces (Convention 2), and `ℱ ×_𝒢 V` is
+a quasi-separated algebraic space of finite type over `k`, proper over the scheme `V` and not always
+a scheme: for a proper algebraic space `P` over `k` that is not a scheme and `f : P → Spec k`, it is
+`P` itself. The steps of that proof on such a space are steps of this statement, read through 2.3:
+the pushforward of cycles along a proper morphism of such spaces, which is the definition above
+with `e = 1` (stacks-chow-spaces Definition 8.1, lines 347–353); its compatibility with flat
+pullback along an étale `V′ → V` (its Lemma 11.1, lines 590–606, on cycles; on rational functions
+it is the compatibility of norms with separable base change, the field-theoretic step in the proof
+of its Lemma 14.1, lines 784–787); the equality `p_* div(φ) = div(N(φ))` for a dominant proper
+morphism `p : 𝒲 → 𝒲′` of integral such spaces of the same dimension (its Lemma 14.1, lines
+726–730); and `p_* div(φ) = 0` when `dim 𝒲′ < dim 𝒲`, which is its Lemma 16.3 (lines 917–919)
+applied to `p : 𝒲 → 𝒲′`, since `𝒲′` has no integral closed subspace of dimension `dim 𝒲` and so no
+nonzero cycle of dimension `dim 𝒲 − 1` rationally equivalent to zero. These explicit formulas, not a
+statement on classes, are what descends from `V` to `𝒢`, étale pullback not being injective on
+integral Chow groups (3.1, last Check). The construction is integral and uses no proper cover. This
+extends VirtualFundamentalClass §2.2's proper pushforward, for representable morphisms, to integral
 coefficients and to stacks that are not separated. *Needs:* 1.2–1.3, 2.2; 2.3 (its statement on
-schemes, through which SchemeAndStackFoundations §5.2 applies); gap:closed-substacks-of-stacks;
-SchemeAndStackFoundations §5.2; Mathlib `AlgebraicGeometry.AlgebraicCycle.map`.
+schemes, through which SchemeAndStackFoundations §5.2 applies, and its statement on algebraic
+spaces, through which stacks-chow-spaces Definition 8.1 and Lemmas 11.1, 14.1 and 16.3 are read);
+gap:closed-substacks-of-stacks; SchemeAndStackFoundations §5.2; Mathlib
+`AlgebraicGeometry.AlgebraicCycle.map`.
 
 **API.**
 
@@ -897,12 +921,19 @@ SchemeAndStackFoundations §5.2; Mathlib `AlgebraicGeometry.AlgebraicCycle.map`.
 
 Prove the integral push–pull formula: for a 2-cartesian square with `f : ℱ → 𝒢` proper and
 representable, `ψ : 𝒢′ → 𝒢` flat of relative dimension `d`, `f′ : ℱ′ → 𝒢′` and `ψ′ : ℱ′ → ℱ`,
-`ψ^* f_* = f′_* ψ′^*` on cycles and on `A_*(ℱ)` (vistoli1989 Lemma 3.9 (i), lines 1049–1065). Prove the
+`ψ^* f_* = f′_* ψ′^*` on cycles and on `A_*(ℱ)` (vistoli1989 Lemma 3.9 (i), lines 1049–1065). That
+proof compares the two sides on the pullback of `f` to an atlas `V → 𝒢`, a proper morphism of schemes
+for Vistoli, by the statement for schemes (line 1065); for `f` representable by algebraic spaces
+only, the pullback `ℱ ×_𝒢 V → V` has a quasi-separated algebraic space of finite type over `k` as
+source (3.2), and the statement used in its place is the push–pull formula for a proper morphism of
+such spaces and a flat morphism of relative dimension `d` (stacks-chow-spaces Lemma 11.1, lines
+590–606), read through 2.3. Prove the
 localisation sequence: for a closed substack `i : 𝒵 → ℳ` with open complement `j : 𝒰 → ℳ`,
 `A_i(𝒵) → A_i(ℳ) → A_i(𝒰) → 0` is exact, by closures of integral substacks of `𝒰` and of their rational
 functions (stacks-chow-spaces Lemma 15.2, lines 813–818, for algebraic spaces; fulton1998
 Proposition 1.8 for schemes). Both statements are integral and use no proper cover.
-*Needs:* 3.1, 3.2; gap:closed-substacks-of-stacks.
+*Needs:* 3.1, 3.2; 2.3 (its statement on algebraic spaces, through which stacks-chow-spaces Lemma
+11.1 is read); gap:closed-substacks-of-stacks.
 
 **Checks.**
 
@@ -957,7 +988,8 @@ quasi-compact and that of `𝒢` quasi-separated (Convention 1).
 Prove homotopy invariance on algebraic spaces: for a vector bundle `p : N → U` of constant rank `c`
 over a quasi-separated algebraic space `U` of finite type over `k`, the flat pullback
 `p^* : A_j(U) → A_{j+c}(N)` of 3.1 is an isomorphism for every `j` (stacks-chow-spaces Lemma 27.3,
-lines 1986–1990, in its Situation 2.1 with `B = Spec k` and `δ = dim`, read through 2.3, under which
+lines 1986–1990, in its Situation 2.1 with `B = S = Spec k` and `δ = 0`, as in 2.3, so that the
+induced `δ_{U/B}` is the dimension of the closure of a point; read through 2.3, under which
 3.1's `p^*` is the flat pullback of its Definition 10.1, lines 484–494); `s^*` is its inverse. On
 schemes it is SchemeAndStackFoundations §5.2's `chow_affine_bundle`. Route, carried out on `A_*`
 through 2.3 as in the proof of stacks-chow-spaces Lemma 27.3 (lines 1991–2007): surjectivity by
