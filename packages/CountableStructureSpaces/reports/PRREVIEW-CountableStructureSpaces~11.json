@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CountableStructureSpaces~11",
+  "head": "f17c94781877f583cbe32c502e440d7d04ccd56e",
+  "pr": 1316,
+  "folder": "CountableStructureSpaces",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 145 changed lines since 27e4b31. Previous R01 and R02 repaired, R03 (sorry count in the description, now 36 against a stated 35) not repaired. Checked: the for-every-language route of 6.1 through a countable separating sublanguage (computed on instances, each library input opened at the pins), the two new Layer 4 negative-control Checks, the graph-event sentence of Layer 2, the three changed Lean signatures, the one-tactic probe on them (none closed), the source hypotheses behind the 6.1 locators (vaught1974, marker2013notes). Three P3 findings: 6.1's source sentence omits the sources' countability hypothesis; the supplier contracts lack TopologicalSpace.isOpen_iUnion_countable; the description's sorry count. Gate OK (all checks 0), depcheck 0 problems, elaboration exit 0 with 36 sorry warnings.",
+  "text": "04248d2deeaf2141"
+ }
+}
