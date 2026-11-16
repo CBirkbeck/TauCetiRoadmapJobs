@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsTheta~3",
+  "head": "fabbceab46d96ef1a1ef9c10f5b39195e2e9dc29",
+  "pr": 2252,
+  "folder": "SpecialFunctionsTheta",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "incremental re-review of 126 changed lines since 76a507d. Checked: the eleven previous findings (ten repaired, R03 partly: the proof route added to 7.6 states a generating set of the theta group that is false in genus 2, order 36 against 72 modulo 2); the three changed Lean statements (elaborated types, numerical instances in genus 1 and 2, one-tactic probes, none closes); the changed Checks of 7.2, 7.4, 7.6 recomputed; the ThetaSeries Layer 1 contract and the neighbouring citations resolved on main and at the open heads; the pull request title and description against the head. Seeded sample: only 6.2 falls in the changed passages (its Needs line, checked at the pin). Gate passes every check including the targeted build; depcheck 0 problems, no UPWARD or CYCLE; elaboration gives 36 sorry warnings and no error. Mumford's locators for 7.6 not verifiable (paywalled).",
+  "text": "d1fdcdc44039823d"
+ }
+}
