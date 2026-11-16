@@ -2367,13 +2367,13 @@
     },
     {
       "slug": "cyclotomic-p-class-fields",
-      "needs": "Construct H_q as the fixed field of the prime-to-p subgroup in the supplied cyclotomic Hilbert field, compatibly along the cyclotomic tower, and provide the local-p-split class-field comparison.",
+      "needs": "For the cyclotomic fields ℚ(ζ_(p^n)), n≥1, inside one algebraic closure of ℚ, embed their Tau Ceti `hilbertClassField`s compatibly along the tower ℚ(ζ_(p^n))⊂ℚ(ζ_(p^(n+1))), so that their maximal p-subextensions nest; and, for a number field F and a finite set S of its primes, identify the maximal abelian extension of F unramified at every place in which every prime of S splits completely with the subfield of `hilbertClassField` F fixed by the images under `hilbertClassArtinEquiv` of the classes of the primes of S.",
       "supplier": "ClassFieldTheory",
       "section": "Layers 11–13"
     },
     {
       "slug": "ppav-embedding-atlases",
-      "needs": "Provide the projective-embedding and Hilbert-polynomial pieces of the principally polarized stack atlas, their smooth descent and coherent product/selfadjoint-factor refinements used by the graded Čech model.",
+      "needs": "For each g≥0 provide the quasi-projective ℚ-schemes, one for each embedding dimension and Hilbert polynomial, parametrizing principally polarized abelian schemes (A,λ) of relative dimension g with a closed embedding into projective space under which O(1) restricts to the cube of the symmetric ample line bundle Δ*(1×λ)*𝒫, 𝒫 the Poincaré bundle; show that their forgetful maps to 𝔄_g⊗ℚ are smooth and jointly surjective; and provide maps of these atlases covering the product 𝔄_g×𝔄_h→𝔄_(g+h) and the splitting of a principally polarized abelian scheme by a Rosati-fixed idempotent, associative and unital up to specified isomorphisms.",
       "supplier": "PELModuli",
       "section": "§§M2.4, M6.3"
     },
@@ -2385,7 +2385,7 @@
     },
     {
       "slug": "relative-homology-edges",
-      "needs": "Provide relative chain quotients and long exact sequences and the finite and compact relative homological Hochschild–Serre edges for the arithmetic pairs used here.",
+      "needs": "For a finite, discrete or profinite group G, a closed subgroup H, a closed normal subgroup N with quotient Q=G/N, and a G-module M that is finite of p-power order or finite free over ℤ_p with continuous action (chains completed in the profinite case), provide the relative chains C_*(G,H;M)=C_*(G;M)/C_*(H;M) with their long exact sequence and naturality for maps of pairs; the homological Hochschild–Serre spectral sequence H_a(Q;H_b(N;M))⇒H_(a+b)(G;M); and, when HN=G, its relative form H_a(Q;H_b(N,N∩H;M))⇒H_(a+b)(G,H;M), natural in such data, whose edge map H₁(N,N∩H;M)_Q→H₁(G,H;M) is an isomorphism because relative H₀ vanishes.",
       "supplier": "ArithmeticGaloisDuality",
       "section": "R02.2"
     },
@@ -2415,13 +2415,13 @@
     },
     {
       "slug": "pontryagin-bockstein-cap",
-      "needs": "Provide the singular-homology coefficient Bockstein β_r:H_j(X;ℤ/p^r)→H_(j−1)(X;ℤ_p), the connecting map of 0→ℤ_p→ℤ_p→ℤ/p^r→0 with first map multiplication by p^r, natural in X, and show for X,Y with finitely generated integral homology that if u,v generate cyclic summands ℤ/p^r,ℤ/p^s of H_*(X;ℤ_p),H_*(Y;ℤ_p), d=min(r,s), and β_d(x)=p^(r−d)u, β_d(y)=p^(s−d)v, then β_d(x×y) maps under the Künneth Tor map to a generator of Tor₁(⟨u⟩,⟨v⟩)≅ℤ/p^d.",
+      "needs": "For spaces X,Y with finitely generated integral homology, with β_r:H_j(−;ℤ/p^r)→H_(j−1)(−;ℤ_p) the singular-homology connecting map of 0→ℤ_p→ℤ_p→ℤ/p^r→0 (first map multiplication by p^r) given by Tau Ceti's `CategoryTheory.ShortComplex.ShortExact.map_simplicialChains` and Mathlib's connecting map, show that if u,v generate cyclic summands ℤ/p^r,ℤ/p^s of H_*(X;ℤ_p),H_*(Y;ℤ_p), d=min(r,s), and x∈H_*(X;ℤ/p^d), y∈H_*(Y;ℤ/p^d) satisfy β_d(x)=p^(r−d)u and β_d(y)=p^(s−d)v, then β_d(x×y) maps under the Künneth Tor map to a generator of Tor₁(⟨u⟩,⟨v⟩)≅ℤ/p^d.",
       "supplier": "AlgebraicTopology",
       "section": "Stage 6"
     },
     {
       "slug": "graded-moore-realization",
-      "needs": "Provide a homotopy-coherent realization of the graded ppav Γ-diagrams preserving products, finite Moore smashing before completion at p=3, automorphisms, coefficient reductions and p-adic homotopy limits.",
+      "needs": "For a functor T↦Z(T) from finite pointed sets to simplicial ℚ-schemes, each value a specified coproduct of quasi-projective simplicial ℚ-schemes graded by a commutative monoid, the grading preserved by faces and degeneracies and pushed forward by the functoriality, with H^m_et(−⊗_ℚℂ;𝔽_p) finite-dimensional for every m on each grade: provide §6.6’s Et_p^gr and the §6.7 comparison zigzag as homotopy-coherent maps of Γ-spaces in T that preserve graded finite products, with §6.9’s Aut(ℂ)-naturality as a coherent action on the resulting Γ-space; the variant in which each grade, pointed by a ℚ-point, is smashed with a simplicial Moore space M(ℤ/p^n,2) before realization, compatible with chosen reductions M(ℤ/p^(n+1),2)→M(ℤ/p^n,2); and the compatibility of both with the homotopy limit over n.",
       "supplier": "EtaleHomotopyTypes",
       "section": "Layers 5–6"
     },
