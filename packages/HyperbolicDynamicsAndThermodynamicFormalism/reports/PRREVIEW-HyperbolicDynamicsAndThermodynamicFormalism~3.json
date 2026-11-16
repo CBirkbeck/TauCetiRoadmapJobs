@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HyperbolicDynamicsAndThermodynamicFormalism~3",
+  "head": "bfbca4f304b5fc1af42c6637816ecdc9e38f008e",
+  "pr": 2441,
+  "folder": "HyperbolicDynamicsAndThermodynamicFormalism",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 2,
+  "notes": "incremental re-review of 2 changed lines since 3d9508c. Previous R03 (README.md:336, the §5.2 Check) is repaired and recomputed: two copies of the full two-shift give a segment of measures of maximal entropy, weak specification fails at delta = 1/2; the two-shift beside the three-shift gives one. Previous R01 and R02 are not repaired: the board's design/plan.json still declares the gaps sphere-bundle-embedding and connection-map-jacobi-derivative, although the reply on the pull request reports them removed; both are re-raised (P2) and need a change to the board's plan, not to the roadmap folder, which has no finding. Gate: every check 0; depcheck 0 problems; lake env lean: 15 sorry warnings only; no change outside the folder; pull request text agrees with the head. No seeded-sample target falls in the changed passage.",
+  "text": "128d6ba3553b6c97"
+ }
+}
