@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuadraticFormsOverABase~11",
+  "head": "f56e7d00c4d58d18e603088f877402c583589c53",
+  "pr": 1930,
+  "folder": "QuadraticFormsOverABase",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 7 changed lines since c6ecaae. Previous R01 and R02 both repaired: README Provenance para 2 and the description's Provenance and Acceptance-test text. Checked the new registry claim against LeanPool f8b9b72: 6 file headers and 3 LeanPool/projects cards name the authors. Resolved GlobalQuadraticForms 5.5 and QuadraticFormInvariants Layer 6/6C on main e213fdd. Opened Tau Ceti hilbertSymbol and localHasse at the pin. Adversarial rows computed: the (-1,3)_v symbols for x^2+y^2-3z^2 and 2 invertible in Q_2. Seeded sample: none of the 15 targets lies in the changed passages. Worker gate OK with build=0. My rerun fails only on depcheck NOT IN ORDER against the public order; the candidate-order depcheck gives 0 problems. Elaboration exits 0 with 22 sorry warnings only. Pull request description checked against the head. Overlap check and source independence (changed passages only) done.",
+  "text": "64d8ab807c7ced3d"
+ }
+}
