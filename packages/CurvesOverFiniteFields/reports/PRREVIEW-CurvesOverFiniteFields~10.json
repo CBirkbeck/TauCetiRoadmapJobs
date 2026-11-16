@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CurvesOverFiniteFields~10",
+  "head": "6930552b8d0604378894f0b2907d18f284ed4fec",
+  "pr": 1729,
+  "folder": "CurvesOverFiniteFields",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 49 changed lines since 408a5d8. All five previous findings (R01-R05) repaired: the manifest pins Tau Ceti 2fd255d9 where every cited declaration resolves; maximal/minimal defined in 3.5; undeclared names unbackticked; card_frobeniusAngles restated for every P in Z[X] (8 instances computed, including P = 0 and non-monic); description matches the head (23 sections, no genus-2 interface). Gate rerun: all checks 0, OK; depcheck 0 problems; Suggested.lean elaborates with 22 sorry warnings only; one-tactic probe leaves the restated theorem open. Sample: of the seeded targets only 3.5 falls in the change; its Stichtenoth locators are paywalled and listed under Not verifiable. Source independence on changed passages only.",
+  "text": "f81a99611bbaf8ed"
+ }
+}
