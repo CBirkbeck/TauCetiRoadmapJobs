@@ -1,0 +1,30 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SiegelModularForms~16",
+  "head": "37392356f48a5eee2c59b99086d48946ae2a765c",
+  "pr": 1714,
+  "folder": "SiegelModularForms",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 34 changed lines since 61c6276. Previous R01 repaired: isHeckeTriple_gammaGSp and heckeRing_mul_comm are stated in Suggested.lean and named in README 7.1. Checked: both statements computed (IsHeckeTriple fields with Delta = top; the anti-involution on diag(1,2,4,2), scaling by c, involutivity), README generality (commutative semiring) equals the Lean binder and the pinned criterion; one-tactic probes on a scratch copy close neither; 3 vdg locators (Lemma 16.1, Proposition 16.2, p. 30 commutativity); 5 pinned declarations opened; seeded sample where it falls in the change (7.4 docstring bullet); pull request text not contradicted; worker's gate all 0 and build 0; depcheck 252 roadmaps, 0 problems; lake env lean exits 0 with 74 sorry warnings only; no change outside the folder; no overlaps. Deferred D01, D02 stand (board manifest, outside this folder).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "Unnumbered (*For the human reviewers*): the DOIs in these three records resolve to other works, and the records took their titles and authors from those works.",
+    "where": "board manifest packages/SiegelModularForms/sources.toml, records mizumoto1991, arakawa1983, satoh1986",
+    "raised": "PRREVIEW-SiegelModularForms~13"
+   },
+   {
+    "id": "D02",
+    "severity": "",
+    "title": "D01: In the board manifest, the three records `mizumoto1991`, `arakawa1983` and `satoh1986` need the titles and authors of the works the README cites in place of those of the unrelated works their DOI",
+    "where": "board manifest `packages/SiegelModularForms/sources.toml`, records `mizumoto1991`, `arakawa1983`, `satoh1986`",
+    "raised": "PRREVIEW-SiegelModularForms~15"
+   }
+  ],
+  "text": "3fdedcd1004641c0"
+ }
+}
