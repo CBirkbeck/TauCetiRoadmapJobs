@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IntegralLattices~42",
+  "head": "dfca92fc6ffa9f2008fa0d8b1e3ccac32e1e4515",
+  "pr": 1411,
+  "folder": "IntegralLattices",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full review. Previous R01 (conflict with main, no order with #617) repaired: clean merge-tree against main b885423, order with #617 stated. Three P3 findings: R01 the stabilizer index is proved in N0 and also listed as a target of 7C; R02 the description says the head contains #617's changes word for word, but 64 of the 1179 README lines #617 adds are revised here; R03 the description does not name the dropped suppliers Root Systems (6C, 6G) and RepresentationTheory/LieGroups (7E). Seeded sample B1-B8 recomputed (new B3 character table at 2, the count 2^mu of normalized ambiguous forms in all six cases, Checks at -8, -24, 45, 25; B5 rho-cycles at 12 and 8; B8 masses 1/12 and 3/4); changed Checks of 3C, 3E, 3G, N0 recomputed. Sources: allcock-gal-mark2016, voight2023, beli2010, boya-sudarshan-tilma2003 checked at their lines; Cox, Cohen, Cassels, Conway-Sloane, O'Meara not verifiable. The newly cited Tau Ceti declarations and 4 Mathlib declarations opened at the pins. Worker's gate passes; depcheck 0 problems; Suggested.lean elaborates with 15 sorry warnings only; one-tactic padding probe fails on all 15 theorems.",
+  "text": "d2b71f22e6c6d0c5",
+  "carried": {
+   "from": "dfca92fc6ffa9f2008fa0d8b1e3ccac32e1e4515",
+   "head": "f2c8a5ada023b90b3e8d8967bee71d02ecfd7b10",
+   "findings": 3,
+   "lines": 14,
+   "folders": [
+    "IntegralLattices"
+   ]
+  }
+ }
+}
