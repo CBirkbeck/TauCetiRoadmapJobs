@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalLanglandsCorrespondenceForG2~1",
+  "head": "8d99a61c175b4fa7260042240ee82d272e479b2e",
+  "pr": 2458,
+  "folder": "LocalLanglandsCorrespondenceForG2",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "Full review. Gate passes at the head; depcheck 0 problems (261 roadmaps, 2526 edges). Suggested.lean elaborates with sorry as the only warning; #check of all 6 declarations matches the README; one-tactic probe (simp, rfl, infer_instance, aesop, decide) closes none. Seeded sample of 15 targets (0.4, 0.6, 0.7, 1.1, 2.2, 3.5, 3.8, 4.3, 5.6, 6.2, 7.2, 8.1, 9.1, 10.6, 10.7) checked against GS, HD, CG, HKT, C and GS20: 46 locators verified; Griess and SpV not readable (uncertified). Findings: R01 P2 (10.7 lower-tower constancy has no route and no supplier input; GS leaves the case to the reader), R02 P3 (3.8 Needs omits ExceptionalThetaCorrespondencesForG2 Layer 1), R03 P3 (vacuous Checks in 6.6-6.7: S_phi is elementary abelian on diamond parameters). 27 declared gaps match plan.json and README, all with suppliers. Overlap with the closest roadmaps: no doubly owned object. Wording and arrangement independent of GS (111 of 179 locators).",
+  "text": "5c414e42b0ab5587"
+ }
+}
