@@ -55,9 +55,10 @@ fields. This roadmap starts exactly there.
   fields. Theorem 5.3 is CrystallineLocalGlobalCompatibilityCM §§9.7 and 9.9 with the protected
   places added to the Iwahori places; Theorem 6.1 is the preparation of its §9.11 with the
   protected places kept split at odd residue characteristic and kept protected above two.
-- Layer 7: the width-three multiplicative degeneration of `A_t`, the auxiliary-prime local opens,
-  the switch at five with retained auxiliary places (the parent's §0.3 `switch_five` with finitely
-  many further retained places), and the modular auxiliary curve over a CM field containing `μ₅`.
+- Layer 7: the multiplicative degeneration of `A_t` of type `I₃`, the auxiliary-prime local opens,
+  the solvable preparation and the switch at five with finitely many further places split completely
+  (the parent's §0.3 `solvable_preparation` and `switch_five` with that additional conclusion), and
+  the modular auxiliary curve over a CM field containing `μ₅`.
 - Layer 8: the headline over every CM field.
 
 **Imported, never re-planned.** The parent supplies the cover family, its degenerations, integral
@@ -107,7 +108,7 @@ not headlines, and are specified here as mathematics with their Checks.
 
 **Sources.** CaptainSude26, an unrefereed pseudonymous manuscript, is cited for the
 protected local condition, the detection of the exceptional class, the protected patching and the
-width-three degeneration; LeHung26, a discussion draft, is cited for making the auxiliary curve
+degeneration of type `I₃`; LeHung26, a discussion draft, is cited for making the auxiliary curve
 modular before the cyclotomic base change; the parent cites OpenAI26. Theorem 2.5 uses as
 lifting inputs only Caraiani–Newton's Theorems 5.2 and 6.1, through the parent's §§5.2–5.3.
 Theorem 8.1 uses Layers 3–7 only for fields containing `ζ₅`. The local and finite-group statements
@@ -123,9 +124,7 @@ of Layer 3 are proved by explicit computations recorded in their Checks.
 - The parent's notation is kept: `p > 100` is the prime of the parent's §7.2 (general number-field
   form), `n = 3p`, `F = K(μ_n)`, `U ⊂ 𝔸¹_K` is `switchParameterOpen`, `B_t: h(t)y² = h(x)`, `C_m(t)` the
   cyclic covers, `w` the reflection, `A_t = Pic⁰(C₃(t)/⟨w⟩)`, `V_θ` the character systems, `η, ψ`
-  characters of orders `3, p` and `χ = ηψ`. A *switch parameter* is a `t ∈ U(K)` produced by the
-  parent's §7.4 `simultaneous_specialization` for a finite set of places containing those above `3p`,
-  lying in the opens of the parent's §6.5 `local_type_opens` at every place above `3p`. The field
+  characters of orders `3, p` and `χ = ηψ`. Switch parameters are defined in the next bullet. The field
   `F = K(μ_n)` is meant in the Summary, Scope and ownership, How to read the build, Layers 2 and 8, §7.5
   and Layer 1 outside §1.2; §1.2, Layers 4–6 and §7.4 each introduce their own number field `F` in
   their statements, and Layer 3 uses only local fields `F_v` and their extensions `F'_w`. In the
@@ -147,6 +146,49 @@ of Layer 3 are proved by explicit computations recorded in their Checks.
   account of the switch, the Layer 1 Examples and Layers 2, 7 and 8; everywhere else it is a coefficient
   prime, odd in the coefficient conventions below, in Layer 3 and in the supplier obligations, and five
   where `p = 5` is written.
+- *Switch parameters.* Let `E/K` be geometrically non-CM over a number field `K`, with `p`, `n`, `F` and
+  `U` as above. A *switch parameter* for `(K, E, p)` is a point `t ∈ U(K)` with the following three
+  properties. (S1) For every place `v₀` of `K` above `3p`, `t` lies in an open `Ω_{v₀} ⊂ U(K_{v₀})` with
+  the property of the parent's §6.5 `local_type_opens`: for every `t' ∈ Ω_{v₀}` and every place `v` of
+  `F` above `v₀`, the Jacobian `J_{t'} = Pic⁰(C_n(t'))` has, after an extension of `F_v` independent of
+  `t'`, the potential reduction type of `E` (good ordinary, good supersingular or totally toric);
+  the parent's §6.6 `character_local_types` then gives the local types of the character systems at
+  `t` above `3p`. (S2) The residual conclusions of the parent's §7.4 `simultaneous_specialization` hold
+  at `t`: for each pair `(m, ℓ) ∈ {(3, p), (3, 5), (p, 3)}` and every character `θ` of order `m`, the
+  reduction of `V_θ` modulo `ℓ` is absolutely irreducible on `G_{F(ζ_ℓ)}` and decomposed generic over
+  `F`; the reduction of `V₁` modulo `p` is absolutely irreducible on `G_{F(ζ_p)}` and decomposed generic
+  over `F`; and `A_t` is geometrically non-CM. (S3) For the finite Galois field `D/ℚ` of the parent's
+  §7.4, the compositum of the normal closure of `K` with `ℚ(μ₃ₚ, ζ₅)`, the image of `G_D` on each
+  residual system of (S2) contains the image of the geometric monodromy of the parent's §7.1. The
+  parent's §7.4, applied to a finite set of finite places of `K` containing those above `3p`, with
+  opens inside opens having the property of (S1) at the places above `3p` and any nonempty opens at
+  the other places, yields one `t` in all the prescribed opens satisfying (S2) and (S3), hence a switch
+  parameter (its API gives the memberships, the image of `G_D`, the witness primes and non-CM for the
+  same `t`). So switch parameters exist for every number field `K`, every geometrically non-CM `E/K`
+  and every `p` of the parent's §7.2, and may be required to lie in finitely many further nonempty
+  local opens. Theorems 2.1(a) and 2.2 and §7.5(a) use (S2), the local alternatives of Theorem 2.2 use
+  (S1), §7.5(a) uses (S3), and Theorem 2.1(c), §7.5(c) and Theorem 8.1 use the non-CM clause of (S2);
+  none uses how `t` was found.
+
+  **Checks.**
+
+  - For imaginary quadratic `K`, the parameter of the parent's §8.2 (chosen by its §7.4 inside the
+    opens of its §6.5) is a switch parameter, and Theorem 2.2 is then the parent's §§8.3–8.4.
+  - A `t ∈ U(K)` with `A_t` geometrically CM is not a switch parameter: it fails the last clause of
+    (S2), and it fails (S3) for the pair `(3, 5)` as well, since the geometric monodromy there contains
+    the transvections `[[1, 3],[0, 1]]` and `[[1, 0],[3, 1]]` (§7.5), which do not commute
+    (`[[1,3],[0,1]]·[[1,0],[3,1]] = [[0,3],[3,1]]` against `[[1,0],[3,1]]·[[1,3],[0,1]] = [[1,3],[3,0]]`
+    over `𝔽₅`), whereas both, of order five, would lie in the abelian subgroup of index at most two of
+    the mod-five image of a CM curve.
+  - (S1) does not follow from (S2) and (S3): the parent's §7.4 accepts any nonempty opens above `3`.
+    At a place `v₀ | 3` where `E` has potentially good reduction and the data of §7.1(b) are defined
+    over `K_{v₀}`, an open near `R_*` gives `t` with `v₀(s)` large, so `v₀(j(A_t)) < 0` by §7.1(d);
+    then `A_t`, an isogeny factor of `J_t` through the quotient maps from `C_n(t)` to `C₃(t)` and on to
+    the curve whose Jacobian is `A_t`, is potentially multiplicative at `v₀` while `E` is not, and no
+    open containing `t` has the property of (S1).
+  - A switch parameter is not tied to the places at which it was prescribed: one lying also in the
+    opens of §7.2 above an auxiliary prime `q ∤ 3p` is still a switch parameter, and the parent's §7.4
+    with those opens added produces one; §7.5 uses exactly this.
 - Cohomological normalization as in the parent: `H¹` is étale `H¹`, its determinant is `ε_ℓ⁻¹`,
   `HT(ε_ℓ) = −1`, Frobenius in compatible systems is geometric and `rec^T(π_v) = rec(π_v ⊗ |det|^(−1/2))`.
   The residual representation of `H¹(A)` is the dual of `A[ℓ]`; dualizing inverts both eigenvalue
@@ -167,11 +209,12 @@ of Layer 3 are proved by explicit computations recorded in their Checks.
   `GL₂(k)`, its §7.9 `ResidualImage.adZeroRep`): the trace-zero `2×2` matrices with the conjugation
   action, with the standard basis `e = E₁₂`, `h = diag(1, −1)`, `f = E₂₁` (used in Layers 3–4 only,
   where the cubic `h` of the curve does not occur). The matrix `U = 1 + e = [[1,1],[0,1]]` occurs in
-  the Frobenius witness above and in Layers 3–6 only, the parameter open `U ⊂ 𝔸¹_K` in Layers 2 and 7
-  only. For `D = Ad(U)`: `D(e) = e`, `D(h) = h − 2e`, `D(f) = f + h − e`; `D` has this meaning in
-  Layer 3 only, while in Layer 7 `D_t` is the quotient curve of §7.1, and in Layer 7 and the parent's
-  supplier contract `G_D` is the absolute Galois group of the finite Galois field `D/ℚ` of the
-  parent's §7.4. The trace form `⟨X, Y⟩ = tr(XY)` has Gram matrix
+  the Frobenius witness above and in Layers 3–6 only, the parameter open `U ⊂ 𝔸¹_K` in the definition
+  of switch parameters and Layers 2 and 7 only. For `D = Ad(U)`: `D(e) = e`, `D(h) = h − 2e`,
+  `D(f) = f + h − e`; `D` has this meaning in Layer 3 only, while in Layer 7 `D_t` is the quotient
+  curve of §7.1, and in Layer 7, the definition of switch parameters and the parent's supplier
+  contract `G_D` is the absolute Galois group of the finite Galois field `D/ℚ` of the parent's §7.4.
+  The trace form `⟨X, Y⟩ = tr(XY)` has Gram matrix
   `[[0,0,1],[0,2,0],[1,0,0]]` in this basis, of determinant `−2`; it identifies `ad⁰` with its dual
   whenever `2` is invertible (the perfectness and splitting of §7.2 there) and is degenerate in
   characteristic two.
@@ -328,8 +371,8 @@ whose text states characteristic-zero comparisons only.
 - §2.5 `auxiliary_cm_extension_prescriptions`: over any number field, for every `N ≥ 1`, a cyclic
   extension of degree `N`, disjoint from a given finite Galois extension, in which a given finite set
   of places, real places included, splits completely, with the CM refinement over a CM base; §6.1
-  uses it over `ℚ` for the totally real degree step, and §§6.1 and 7.4 for trivial prescribed
-  completions.
+  uses it over `ℚ` for the totally real degree step, and for trivial prescribed completions at the
+  places below `P`.
 
 ### From TauCetiRoadmap.MordellLawrenceVenkatesh
 
@@ -353,6 +396,8 @@ Theorem 1.1.
   `H⁰(SL₂(k), ad⁰) = H¹(SL₂(k), ad⁰) = 0` for `k` finite of odd characteristic with `#k ≠ 5`;
   `H¹(SL₂(𝔽₅), ad⁰)` is one-dimensional; change of coefficient field, in particular
   `(M ⊗ k')^G = M^G ⊗ k'` for fields `k ⊆ k'` and `M` finite-dimensional).
+- §7.8 (`Sym^a(F̄_p²)` is absolutely irreducible for `SL₂(F)`, `F` finite of characteristic `p`,
+  `0 ≤ a ≤ p − 1`), used by §4.2 at `p = 5`, `a = 2`, and in a Check of §6.2 at `a = 1`.
 - §7.9 (`ResidualImage.adZeroRep`: the same adjoint for a homomorphism into `GL_n(k)`, on the trace
   kernel `LinearMap.ker (LinearMap.trace k (n → k))`).
 
@@ -420,6 +465,11 @@ irreducibility of `H¹` on `G_L`; used by §§2.1, 2.2 and 8.1.
 §3.1 (the semistable reduction predicate and toric rank), §3.12 (full level forces semistability),
 §5.1 (Néron–Ogg–Shafarevich), used by §7.2.
 
+### From TauCetiRoadmap.ShimuraVarieties
+
+§5.6 (a CM abelian variety over a number field, in particular a CM elliptic curve, has potentially
+good reduction at every finite place), used by §7.4 to exclude CM for a curve with a Tate place.
+
 ### From TauCetiRoadmap.EllipticCurves
 
 Layer 4 (reduction types, minimal discriminants, the Tate curve of parameter `q_E` with
@@ -448,7 +498,7 @@ seed comes from the parent's residual criterion over `K` followed by base change
 Theorem 2.5. Layers 3–6 build the lifting theorem at five with a protected place: the finite-group
 and local computations (Layer 3), the global Galois cohomology and Taylor–Wiles primes (Layer 4),
 the Hecke algebras and prepared patching (Layer 5) and the solvable preparation and descent
-(Layer 6). Layer 7 produces a protected place on the auxiliary curve from a width-three degeneration
+(Layer 6). Layer 7 produces a protected place on the auxiliary curve from a degeneration of type `I₃`
 of the cover family, retains it through the switch at five and proves the auxiliary curve modular
 when `μ₅ ⊂ K`. Layer 8 combines Layers 2 and 7 into the headline. Layers 1–2 are independent of
 Layers 3–7.
@@ -544,8 +594,9 @@ modular over `K`: there is a cuspidal weight-zero `π_A` of `PGL₂(𝔸_K)` rea
 weight-zero representation of `PGL₂(𝔸_F)` with `r_ι(π_{A,F}) ≅ V_η` under the parent's identification
 `V_η ≅ H¹(A_t)|G_F`. No assertion `ζ₅ ∉ F` is made or used.
 
-For (a), the parent's §7.4(1) for the pair `(3, 5)` gives absolute irreducibility on `G_{F(ζ₅)}` and
-decomposed genericity over `F` of the residual `V_η`, and §7.4(3) gives non-CM; transport to `H¹(A_t)`
+For (a), (S2) of the switch parameter `t` (the parent's §7.4(1) for the pair `(3, 5)`) gives absolute
+irreducibility on `G_{F(ζ₅)}` and decomposed genericity over `F` of the residual `V_η`, and its non-CM
+clause (the parent's §7.4(3)) gives non-CM; transport to `H¹(A_t)`
 by §4.2 and descend to `K` by Theorem 1.2. For (b), apply the parent's §5.3 `cm_modularity` over
 `L = K` with `ℓ = 5`, then §0.3 `modular_elliptic_all_coefficients`. For (c), `F` is CM by
 Theorem 1.1, `H¹(A_t)|G_F` is absolutely irreducible because `A_t` is non-CM, and
@@ -564,7 +615,8 @@ FaltingsFinitenessAndIsogenyTheorems R28.6.2–R28.6.3; AutomorphicGaloisReprese
 - For imaginary quadratic `K` the hypotheses hold and `ζ₅ ∉ F` also holds by the parent's §5.1, so
   the parent's order and this one give the same `π_{A,F}` by strong multiplicity one.
 - If `A_t` had CM, its base change could be non-cuspidal (PotentialAutomorphyInfrastructure §2.3,
-  second Check); the non-CM conclusion of §7.4(3) is what makes `π_{A,F}` cuspidal.
+  second Check); the non-CM clause of (S2), from the parent's §7.4(3), is what makes `π_{A,F}`
+  cuspidal.
 
 ### 2.2 Three lifts, descent and removal of the twist over a CM field
 
@@ -578,9 +630,10 @@ coefficient prime of `π_η` to `p` (§8.1 `character_automorphy_change_prime`).
 `V_η → V_χ` at `p`, `V_χ → V_ψ` at `3` and `V_ψ → V₁` at `p` with §5.2 `potentiallySemistableCM`,
 and before each later row move to its coefficient prime by the same §8.1 statement. In every row
 §4.1 supplies the determinant, the Hodge–Tate weights, potential semistability and the finiteness of
-the ramification set; §4.4 the residual isomorphism; §7.4(1)–(2) decomposed genericity over `F` and
-absolute irreducibility on `G_{F(ζ_ℓ)}`; §6.6 and §8.1 `character_automorphic_local_type` the local
-alternatives above `ℓ`. The lifting primes are `3` and `p > 100`, so the five-adic projective-field
+the ramification set; §4.4 the residual isomorphism; (S2) of the switch parameter (the parent's
+§7.4(1)–(2)) decomposed genericity over `F` and absolute irreducibility on `G_{F(ζ_ℓ)}`; (S1) with the
+parent's §6.6 and §8.1 `character_automorphic_local_type` the local alternatives above `ℓ`. The
+lifting primes are `3` and `p > 100`, so the five-adic projective-field
 clause of §5.2 never applies.
 This gives a cuspidal weight-zero realization of `V₁ = H¹(B_t)|G_F`. Since `B_t` is a quadratic twist
 of the non-CM `E`, `H¹(B_t)|G_F` is absolutely irreducible, and PotentialAutomorphyInfrastructure
@@ -597,8 +650,8 @@ AutomorphicGaloisRepresentationsPartII AG2.7.
 
 **Checks.**
 
-- The middle lift is at `3` with residual input from the order-`p` characters (§7.4 pair `(p, 3)`);
-  replacing it by a lift at `5` would require the five-adic projective-field clause, which can fail
+- The middle lift is at `3` with residual input from the order-`p` characters ((S2) for the pair
+  `(p, 3)`); replacing it by a lift at `5` would require the five-adic projective-field clause, which can fail
   when `ζ₅ ∈ F`.
 - If `h(t)` is a square in `K`, `χ_(h(t))` is trivial and `π_E = π_B`; twisting twice by
   `χ_(h(t))` returns `π_B`.
@@ -927,9 +980,13 @@ a nonzero `κ ∈ H_∅` if `ρ̄(σ)` is conjugate to `g` and the value at `σ`
 lies outside `(Ad ρ̄(σ) − 1)M`; this depends neither on the representative nor on `σ` within its
 conjugacy class. A detecting `σ` with `ρ̄(σ) = g` exists. On `G_{LC_N}`, which acts trivially on `M`,
 the cocycle is a homomorphism, nonzero by §4.1 and equivariant for conjugation by `G_F`; its values span
-a nonzero `ρ̄(G_F)`-stable subspace, which is `M` because `ad⁰` is absolutely irreducible for `SL₂(𝔽₅)`,
-so some `κ(γ)`, `γ ∈ G_{LC_N}`, lies outside `W`. Since `L ∩ C_N = F` there is `σ₀ ∈ G_{C_N}` with
-`ρ̄(σ₀) = g`, and `κ(γσ₀) = κ(γ) + κ(σ₀)`, so `σ₀` or `γσ₀` is detecting. In a finite Galois quotient
+a nonzero `ρ̄(G_F)`-stable subspace, which is `M` because `M` is absolutely irreducible: after a
+conjugation over `k̄`, `M ⊗ k̄` is the module `ad⁰ ⊗ k̄` of `SL₂(𝔽₅)`, which
+ArithmeticGaloisRepresentations §7.2 identifies with `(Sym² V)^∨ ⊗ det V = (Sym² V)^∨` for the standard
+representation `V`, and `Sym² V` is absolutely irreducible for `SL₂(𝔽₅)` by its §7.8 (`Sym^a` for
+`0 ≤ a ≤ p − 1`, here `a = 2 ≤ 4`), hence so is its dual. So some `κ(γ)`, `γ ∈ G_{LC_N}`, lies outside
+`W`. Since `L ∩ C_N = F` there is `σ₀ ∈ G_{C_N}` with `ρ̄(σ₀) = g`, and `κ(γσ₀) = κ(γ) + κ(σ₀)`, so
+`σ₀` or `γσ₀` is detecting. In a finite Galois quotient
 through which `κ`, `ρ̄` and `Gal(C_N/F)` factor, a place `w ∉ S` with Frobenius in the class of a
 detecting element has `q_w ≡ 1 mod 5^N`, distinct residual eigenvalues and `κ|G_{F_w} ≠ 0`, because an
 unramified class at `w` is its value at `Frob_w` modulo `(Ad ρ̄(Frob_w) − 1)M`; places with Frobenius in
@@ -941,7 +998,8 @@ subfield. A class of `H_{Q_N}` is trivial on `G_{F_w}` for `w ∈ Q_N`, so it is
 in `H_∅` with zero localizations at `Q_N`; it vanishes. (CaptainSude26, Lemma 3.4, lines 242–263;
 replaces AKT23, Lemma A.5, line 3979, and CrystallineLocalGlobalCompatibilityCM §9.3 in this case.)
 
-*Needs:* §4.1; GlobalGaloisDeformations §§3.6, 5.1, 5.6; Chebotarev Layer 10.
+*Needs:* §4.1; ArithmeticGaloisRepresentations §§7.2, 7.8; GlobalGaloisDeformations §§3.6, 5.1, 5.6;
+Chebotarev Layer 10.
 
 **Checks.**
 
@@ -953,6 +1011,11 @@ replaces AKT23, Lemma A.5, line 3979, and CrystallineLocalGlobalCompatibilityCM 
   trivial at every Taylor–Wiles prime, and `H_Q` never vanishes. Framing only part of `P` does no
   harm: at a protected place left unframed the inflated class is ramified (§4.1) and fails `L_v^⊥`.
 - For `H_∅ = 0` the padding class still yields exactly `r` primes; the size is independent of `N`.
+- Vanishing invariants do not give the spanning step: for the upper triangular subgroup `B` of
+  `SL₂(𝔽₅)`, `ad⁰` has no nonzero invariant (`U` fixes only `k e`, which `diag(2, 3)` scales by `4`), yet
+  `k e` is `B`-stable. For `SL₂(𝔽₅)` the transpose moves it: `Ad(Uᵀ)e = e − h − f` and
+  `Ad(Uᵀ)²e = e − 2h − 4f`, which with `e` have determinant `2 ≠ 0` in the basis `e, h, f`, so they
+  span `ad⁰`.
 
 ### 4.3 The relative presentation with unframed protected places
 
@@ -996,7 +1059,7 @@ so it is excluded from the dual Selmer group before any Taylor–Wiles prime is 
 
 ### Dependencies
 
-Layer 3; ArithmeticGaloisDuality R02.2; ArithmeticGaloisRepresentations §§4.3, 7.7;
+Layer 3; ArithmeticGaloisDuality R02.2; ArithmeticGaloisRepresentations §§4.3, 7.2, 7.7, 7.8;
 GlobalGaloisDeformations §§3.4, 3.6, 3.7, 5.1, 5.6; LocalGaloisDeformationRings §2.16; Chebotarev Layer 10.
 
 ## Layer 5: Hecke algebras and patching with a protected place
@@ -1308,7 +1371,8 @@ lines 264–498, with `μ₅ ⊂ F` at line 267; CN23, Theorem 5.2, lines 3849�
   equal, the projective field contains `F(ζ₅)` and (4) fails although `ζ₅ ∉ F`.
 - If `ζ₅ ∉ F` and `det ρ̄` has order four, (4) holds for every coefficient field: the projective image of
   `G_F` normalizes `PSL₂(𝔽₅)` in `PGL₂(k̄)`, whose normalizer is `PGL₂(𝔽₅)` (the centralizer is trivial
-  because `SL₂(𝔽₅)` is perfect and absolutely irreducible), so `[G_F:G] ≤ 120 < 240 = 4·60 = [G_F:H]`
+  because `SL₂(𝔽₅)` is perfect and its standard representation is absolutely irreducible,
+  ArithmeticGaloisRepresentations §7.8 at `a = 1`), so `[G_F:G] ≤ 120 < 240 = 4·60 = [G_F:H]`
   for the two projective kernels `G ⊇ H`.
 - For imaginary quadratic `F`, `ζ₅ ∉ F` since `[ℚ(ζ₅):ℚ] = 4`, so only the alternative (4) is available
   and the theorem is the parent's §5.2.
@@ -1330,25 +1394,31 @@ PotentialModularityAndCompatibleSystems §§2.12–2.16; AutomorphicGaloisRepres
 
 ## Layer 7: The protected auxiliary elliptic curve
 
-### 7.1 The width-three multiplicative degeneration
+### 7.1 The multiplicative degeneration of type I₃
 
 Let `K` be a number field (this section and §7.2 do not use that `K` is CM), `E/K: y² = h(x)`, `p > 3`
-prime, `n = 3p`, and `R_*` a point of exact order `2n` of the parameter cover with `[n]R_* = a/2` nonzero
-two-torsion, as in the parent's §2.1. Prove: (a) for `t ∈ U(K)` the image of the `K`-point `(O, 1)` of
-`C₃(t)` is a `K`-point of `D_t = C₃(t)/⟨w⟩`, so `D_t ≅ A_t` over `K`; (b) in the nodal model of the
-parent's §2.3 at `R_*` for `m = 3`, the reflection `w` fixes exactly one of the three nodes, acting by
-`−1` on both branches there, and exchanges the other two; (c) the quotient of the regular model by `w`
-has an `A₁` singularity `z₁z₂ = s²` at the image of the fixed node and an ordinary node of thickness one
-at the image of the exchanged pair, its components are rational, and after resolving the `A₁` point the
-fiber is a cycle of three rational curves: the families `D_t` and `A_t` have semistable reduction of
-type `I₃` in the smoothing parameter `s`; (d) `1/j(A_t)` has a zero of exact order three in `s`, and over a field
-containing the data of (b) the Tate parameter `q_A` of `A_t` is `s³λ(s)` for a power series `λ` with
-`λ(0) ≠ 0`. For (b): on the elliptic component `E' → E`, an étale cyclic triple cover, the lifts of
-`[−1]` are `Q ↦ −Q + c₀` with `c₀ ∈ ker(E' → E)`; the fiber over the two-torsion point is a coset
-`P₀ + ker`, and `2(P₀ + rT') = c₀` has exactly one solution `r ∈ ℤ/3` because two is invertible modulo
-three. For (d), the total thickness `2 + 1 = 3` equals `v(q_A)` per unit of `v(s)`; `R_*` is not
-two-torsion, so `x` is étale there and the `t`-parameter is a unit multiple of `s`. (CaptainSude26,
-Lemma 5.1, lines 503–532.)
+prime, `n = 3p`, and `R_*` a point of exact order `2n` of the parameter cover with `[n]R_* = a/2`
+nonzero two-torsion, as in the parent's §2.1. Prove: (a) for `t ∈ U(K)` the image of the `K`-point
+`(O, 1)` of `C₃(t)` is a `K`-point of `D_t = C₃(t)/⟨w⟩`, so `D_t ≅ A_t` over `K`; (b) the special fibre
+of the parent's §2.3 `nodalModel` at `R_*` for `m = 3` is the elliptic component `E'`, a rational
+component `Z` and three nodes of smoothing order one joining them, and on its nodes the reflection `w`
+has one orbit of size one, `{ν₀}`, and one of size two; in the chart `xy = s` of the parent's §2.1 at
+`ν₀`, `w` is `(x, y) ↦ (−x, −y)`; (c) the quotient `𝒟` of that regular model by `w` has special fibre
+the two curves `E'/w` and `Z/w`, both of genus zero, meeting in two points, so its dual graph is a cycle
+of length two: at the image of `ν₀` the invariants `z₁ = x²`, `z₂ = y²` satisfy `z₁z₂ = s²`, an edge of
+thickness two, and the orbit of size two has one image, an edge of thickness one. Blowing up the image
+of `ν₀` once replaces the thickness-two edge by a rational curve met in two points of thickness one, so
+the resulting regular model has special fibre a triangle of rational curves: `D_t`, and with it `A_t`,
+has semistable reduction of Kodaira type `I₃` in the smoothing parameter `s`; (d) `1/j(A_t)` has a zero
+of exact order three in `s`, and over a field containing the data of (b) the Tate parameter `q_A` of
+`A_t` is `s³λ(s)` for a power series `λ` with `λ(0) ≠ 0`. For (b): on the elliptic component `E' → E`,
+an étale cyclic triple cover, the lifts of `[−1]` are `Q ↦ −Q + c₀` with `c₀ ∈ ker(E' → E)`; the nodes
+on `E'` form the fiber `P₀ + ker` over the two-torsion point, and `2(P₀ + rT') = c₀` has exactly one
+solution `r ∈ ℤ/3` because two is invertible modulo three. For (c): `Q ↦ −Q + c₀` has the four fixed
+points `2Q = c₀`, so `E'/w` has genus zero, and `w` moves two nodes of `Z`, so acts on `Z` nontrivially
+with rational quotient. For (d), the total thickness `2 + 1 = 3` equals `v(q_A)` per unit of `v(s)`;
+`R_*` is not two-torsion, so `x` is étale there and the `t`-parameter is a unit multiple of `s`.
+(CaptainSude26, Lemma 5.1, lines 503–532.)
 
 *Needs:* EllipticCurveModularityImaginaryQuadratic §§1.3, 2.1, 2.3, 4.2; EllipticCurves Layer 4;
 SchemeAndStackFoundations §§4.13, 4.18.
@@ -1432,31 +1502,71 @@ EllipticCurveModularityImaginaryQuadratic §0.3; GL2AutomorphicRepresentationsAn
 Let `F` be a CM field, `ρ̄ : G_F → GL₂(𝔽₅)` continuous with `det ρ̄ = ε̄₅` and decomposed generic, a
 partition `S₅^st ⊔ S₅^ord ⊔ S₅^ss` of the places above five, a finite Galois `F_avoid/F`, a finite set `Σ`
 of finite places of `F` not above `2, 3, 5`, and nonempty opens `Ω_w ⊂ Y_ρ̄(F_w)` for `w ∈ Σ`, where
-`Y_ρ̄` is the fixed-pairing twist of the parent's §0.2. Prove: there are a finite solvable Galois CM
-extension `L/F` with `L ∩ F_avoid = F` in which every place of `Σ` splits completely, and a non-CM modular
-elliptic curve `A'/L`, such that `A'[5] ≅ ρ̄|G_L` symplectically, `A'` has split multiplicative, good
-ordinary or good supersingular reduction at every place above `S₅^st`, `S₅^ord`, `S₅^ss` respectively,
-`ρ̄|G_L` is decomposed generic, and for every `w ∈ Σ` and `w' | w` the point of
-`Y_ρ̄(L_{w'}) = Y_ρ̄(F_w)` given by `A'` lies in `Ω_w`. This is the parent's §0.3 `switch_five` with the
-places `Σ`: in the solvable preparation add trivial prescribed completions at the places of `F⁺` below
-`Σ` (GL2ModularityLifting §1.7, PotentialAutomorphyInfrastructure §2.5), and in the Hilbert selection
-add the opens `Ω_w` (the parent's §0.3 `hilbert_local_selection`, which allows finitely many nonempty
-opens); `Σ` avoids the mandatory conditions at `2, 3, 5`. Modularity is the parent's §0.3
-`seed_modular`, and the Tate places above `2` and `3` force `A'` to be non-CM. (CaptainSude26,
-Proposition 5.2 and proof, lines 538–603; CN23, Proposition 6.1.5, line 4574; CHT08, Lemma 4.1.2.)
+`Y_ρ̄` is the fixed-pairing twist of the parent's §0.2. Prove:
+
+(a) there is a finite extension `L/F` with every conclusion of the parent's §0.3 `solvable_preparation`
+for `p = 5`, `ρ̄` and `F_avoid` (solvable, Galois and CM, linearly disjoint from `F_avoid`; above `2`, `3`
+and `5` split over `L⁺` with `ρ̄` trivial on the decomposition groups; above five, local elliptic
+curves with good ordinary and with good supersingular reduction and all five-torsion rational; above
+two, `L_{w'}(√−1)/L_{w'}` unramified; a rational prime `q₀ > 5` witnessing the decomposed genericity
+of `ρ̄` split completely in `L`) in which, in addition, every place of `Σ` splits completely;
+
+(b) there are such an `L` and a non-CM modular elliptic curve `A'/L` with every conclusion of the
+parent's §0.3 `switch_five` for `ρ̄`, the partition and `F_avoid`: `L ∩ F_avoid = F`, `A'[5] ≅ ρ̄|G_L`
+symplectically, split multiplicative, good ordinary or good supersingular reduction at every place
+above `S₅^st`, `S₅^ord`, `S₅^ss` respectively, Tate reduction at every place above `2` and `3`, and
+`ρ̄|G_L` decomposed generic; and such that for every `w ∈ Σ` and `w' | w` the point of
+`Y_ρ̄(L_{w'}) = Y_ρ̄(F_w)` given by `A'` lies in `Ω_w`.
+
+For (a), choose a witness `q₀ > 5` for `ρ̄` (witnesses avoid any finite set:
+AutomorphicGaloisRepresentationsPartII AG2.7). Every conclusion of `solvable_preparation` other than
+linear disjointness is a condition on the completions of `L` at the finitely many places above `2`, `3`,
+`5` and `q₀`; realize them, together with the splitting at `Σ`, as completions of a totally real soluble
+extension of `F⁺`. At a place `u` of `F⁺` above `2`, `3` or `5` prescribe a finite Galois extension of
+`F⁺_u` containing, for every place `w` of `F` above `u`, the field `F_w`, the field cut out by
+`ρ̄|G_{F_w}`, above five the five-division fields over `F_w` of one good ordinary and one good
+supersingular curve (EllipticCurves Layer 4), and above two `√−1`. At the places of `F⁺` above `q₀` and
+below `Σ` prescribe the trivial extension, and `ℝ` at every real place; the places below `Σ` have
+residue characteristic other than `2, 3, 5`, and where one lies above `q₀` both prescriptions are
+trivial, so the prescriptions are compatible. GL2ModularityLifting §1.7 (CHT08, Lemma 4.1.2) gives a
+soluble Galois `L⁺/F⁺` with these completions, linearly disjoint over `F⁺` from the Galois closure of
+`F_avoid` over `F⁺`; `L⁺` is totally real, so `L = L⁺F` is a solvable Galois CM extension of `F` with
+`L ∩ F_avoid = F`. For `w | u` and `w' | w`, `L_{w'}` is the compositum of `L⁺_{u'}` and `F_w`: above
+`2, 3, 5` this is the prescribed field, which contains `F_w`, so the place of `L⁺` splits in `L` and
+`ρ̄|G_{L_{w'}}` is trivial; above `q₀` and `Σ` it is `F_w`. Since `q₀` splits completely in `F`, it
+splits completely in `L` and remains a witness for `ρ̄|G_L` (AutomorphicGaloisRepresentationsPartII
+AG2.7). For (b), run the parent's proof of `switch_five` with (a) in place of `solvable_preparation`:
+`Y_ρ̄` is an open of `ℙ¹` over `F` (the parent's §0.2 `fixed_pairing_twist_rational`), hence over `L`;
+the parent's §0.3 `hilbert_local_selection`, which uses of `L` only the conclusions of
+`solvable_preparation` and accepts finitely many nonempty opens, is applied over `L` with its conditions
+for `seed_modular` and for the five-adic partition and with `Ω_w` at every place of `L` above `w ∈ Σ`,
+places of residue characteristic other than `2, 3, 5` and so distinct from those carrying the other
+conditions. The selected `A'` is modular by the parent's §0.3 `seed_modular`, and is non-CM because it
+is a Tate curve above two while a CM elliptic curve has potentially good reduction everywhere
+(ShimuraVarieties §5.6). (CaptainSude26, Proposition 5.2 and proof, lines 538–603, for the prescriptions
+over `F⁺` at lines 549–563; CN23, Proposition 6.1.5 and proof, lines 4574–4611; CHT08, Lemma 4.1.2, p.
+116.)
 
 *Needs:* EllipticCurveModularityImaginaryQuadratic §0.2 (`fixed_pairing_twist`,
-`fixed_pairing_twist_rational`) and §0.3 (`solvable_preparation`, `hilbert_local_selection`,
-`seed_modular`, `switch_five`); GL2ModularityLifting §1.7; PotentialAutomorphyInfrastructure §2.5;
-AutomorphicGaloisRepresentationsPartII AG2.7.
+`fixed_pairing_twist_rational`) and §0.3 (`solvable_preparation` and `switch_five`, whose conclusions
+(a) and (b) keep, `hilbert_local_selection`, `seed_modular`); GL2ModularityLifting §1.7; EllipticCurves
+Layer 4; ShimuraVarieties §5.6; AutomorphicGaloisRepresentationsPartII AG2.7.
 
 **Checks.**
 
-- For `Σ = ∅` the statement is `switch_five`.
+- For `Σ = ∅`, (a) is `solvable_preparation` and (b) is `switch_five`.
+- The splitting at `Σ` is not a conclusion of `solvable_preparation`, and it is what keeps a protected
+  place protected: for `v | 11` in `Σ` with residual inertia `U` at `v`, an extension with
+  ramification index five above `v` would make residual inertia there generated by a power of
+  `U⁵ = 1` (§3.3, fourth Check), whereas under (a) `L_{w'} = F_v`.
 - A place of `Σ` above `2` would conflict with the mandatory Tate condition there; `Σ` avoids `2, 3, 5`.
-- Splitting completely at `w ∈ Σ` keeps `L_{w'} = F_w`, so `Ω_w` is meaningful at every `w' | w`; an
-  unramified quadratic completion would replace `F_w` by its quadratic extension and change the local
-  opens.
+- Trivial completion at the place `u` of `F⁺` below `w ∈ Σ` gives `L_{w'} = F_w` whether `u` splits in
+  `F` (then `L_{w'} = F⁺_u = F_w`) or not (then `L⁺_{u'} = F⁺_u` and `F` supplies the quadratic
+  extension `F_w`), so `Ω_w` is meaningful at every `w' | w`; an unramified quadratic completion of `L`
+  over `F_w` would change the local opens.
+- Over `ℚ₅`, `y² = x³ − x` has good ordinary reduction (`8` points over `𝔽₅`, trace `−2`) and
+  `y² = x³ + 1` good supersingular reduction (`6` points, trace `0`); completions above five containing
+  their five-division fields give the local curves of (a).
 
 ### 7.5 The modular auxiliary curve over a CM field containing μ₅
 
@@ -1464,21 +1574,23 @@ Let `K` be a CM field with `μ₅ ⊂ K` and `E/K` geometrically non-CM, with `p
 `q`, `v` as in §7.2 with `q` also prime to the bad reduction of `E`. Prove: there is a switch parameter
 `t ∈ U(K)` lying, in addition, in the opens of §7.2 at the places above `q`; for every such `t`: (a) the
 mod-five representation of `A_t` has image conjugate to `SL₂(𝔽₅)` over `K` and is decomposed generic;
-(b) `H¹(A_t)` is protected at `v` and unramified at `v^c`; (c) `A_t` is modular over `K`. For (a): in the
-parent's §7.4 the specialized image of `G_D` contains the geometric monodromy, which for `(m, ℓ) = (3, 5)`
-contains the opposite transvections `[[1, ±3],[0,1]]` and `[[1, 0],[±3, 1]]` (the parent's §7.1 with
-coefficient `3`); they generate `SL₂(𝔽₅)`, and `det = ε̄₅` is trivial on `G_K`; genericity descends from
-`F` by Theorem 1.2. Part (b) is §7.3. For (c): apply §7.4 to `ρ̄ = A_t[5]` with the partition given by the
-potential reduction types of `A_t` above five, `F_avoid` containing the field cut out by `ρ̄`, and `Σ` the
-places of `K` above `q`, with the open of curves of split multiplicative reduction whose minimal
-discriminant has valuation prime to five at `v` and the open of curves of good reduction at each other
-place above `q`; each is nonempty, since by the choice of `t` in the opens of §7.2 the curve `A_t`
-itself is a point of it. Over the resulting `L`, which contains
-`ζ₅` because `K` does, the protected alternative of Theorem 6.2 applies to `H¹(A_t)|G_L`, `π_{A'}` and `P`
-the places above `v`: clause (4) fails, the protected conditions hold by §7.3 and §7.4, the five-adic
-matching holds by the parent's §0.3 `auxiliary_local_types`. Descend along `L/K` by
-PotentialAutomorphyInfrastructure §2.3(2); the result is cuspidal because `A_t` is non-CM.
-(CaptainSude26, Proposition 2.3(3)–(4), lines 120–125, and Corollary 5.3, line 604.)
+(b) `H¹(A_t)` is protected at `v` and unramified at `v^c`; (c) `A_t` is modular over `K`. For (a): by
+the switch-parameter property (S3) the image of `G_D` contains the geometric monodromy, which for
+`(m, ℓ) = (3, 5)` contains the opposite transvections `[[1, ±3],[0,1]]` and `[[1, 0],[±3, 1]]` (the
+parent's §7.1 with coefficient `3`); they generate `SL₂(𝔽₅)`, and `det = ε̄₅` is trivial on `G_K`;
+genericity descends from `F` by Theorem 1.2. Part (b) is §7.3. For (c): apply §7.4(b) to `ρ̄ = A_t[5]`
+with the partition given by the potential reduction types of `A_t` above five, `F_avoid` containing the
+field cut out by `ρ̄`, and `Σ` the places of `K` above `q`, with the open of curves of split
+multiplicative reduction whose minimal discriminant has valuation prime to five at `v` and the open of
+curves of good reduction at each other place above `q`; each is nonempty, since by the choice of `t` in
+the opens of §7.2 the curve `A_t` itself is a point of it. Over the resulting `L`, which contains `ζ₅`
+because `K` does, the protected alternative of Theorem 6.2 applies to `H¹(A_t)|G_L`, `π_{A'}` and `P`
+the places above `v`: clause (4) fails, the protected conditions hold by §7.3 and the splitting of
+§7.4(a) at the places above `q`, the five-adic matching holds by the parent's §0.3
+`auxiliary_local_types`, which applies to `A'` because `A'` has every conclusion of `switch_five`
+(§7.4(b)). Descend along `L/K` by PotentialAutomorphyInfrastructure §2.3(2); the result is cuspidal
+because `A_t` is non-CM. (CaptainSude26, Proposition 2.3(3)–(4), lines
+120–125, and Corollary 5.3, line 604.)
 
 *Needs:* §§7.2, 7.3, 7.4, 6.2; Theorem 1.2; EllipticCurveModularityImaginaryQuadratic §§6.5, 7.1, 7.2,
 7.4, 0.3 (`auxiliary_local_types`, `modular_elliptic_all_coefficients`); PotentialAutomorphyInfrastructure
@@ -1506,8 +1618,8 @@ solvable CM extension, after which Theorem 6.2 and descent make `A_t` modular ov
 Layers 1, 3 and 6; EllipticCurveModularityImaginaryQuadratic §§0.2, 0.3, 1.3, 2.1–2.3, 4.2, 6.1, 6.3, 6.5,
 7.1, 7.2, 7.4; NeronModelsAndSemistableAbelianVarieties §§3.1, 3.12, 5.1; ArithmeticGaloisRepresentations
 §6.3; EllipticCurves Layer 4; SchemeAndStackFoundations §§4.13, 4.18; GL2ModularityLifting §1.7;
-PotentialAutomorphyInfrastructure §§2.3, 2.5; GL2AutomorphicRepresentationsAndTransfer R16.3.2;
-AutomorphicGaloisRepresentationsPartII AG2.7.
+ShimuraVarieties §5.6; PotentialAutomorphyInfrastructure §2.3; GL2AutomorphicRepresentationsAndTransfer
+R16.3.2; AutomorphicGaloisRepresentationsPartII AG2.7.
 
 ## Layer 8: Every elliptic curve over every CM field
 
@@ -1522,8 +1634,8 @@ archimedean parameter `complexInfinityParameter` at every complex place, and
 quadratic automorphic induction or the isobaric sum of Theorem 2.4. For geometrically CM `E` use
 Theorem 2.4. For non-CM `E`: if `ζ₅ ∉ K`, Theorem 2.5; if `ζ₅ ∈ K`, take `t` from §7.5, which makes
 `A_t` modular over `K`, and re-run the argument of Theorem 2.1(c), which does not use `ζ₅ ∉ K`:
-`F = K(μ₃ₚ)` is CM by Theorem 1.1; `A_t` is geometrically non-CM because its mod-five image
-`SL₂(𝔽₅)` (§7.5(a)) has no abelian subgroup of index at most two, so `H¹(A_t)|G_F` is absolutely
+`F = K(μ₃ₚ)` is CM by Theorem 1.1; `A_t` is geometrically non-CM by the last clause of (S2), `t`
+being a switch parameter (the parent's §7.4(3)), so `H¹(A_t)|G_F` is absolutely
 irreducible (FaltingsFinitenessAndIsogenyTheorems R28.6.2–R28.6.3); PotentialAutomorphyInfrastructure
 §2.3(1) gives the cuspidal weight-zero base change of `π_{A_t}` to `PGL₂(𝔸_F)`, which realizes `V_η`
 under the identification `V_η ≅ H¹(A_t)|G_F` of the parent's §4.2 `cubic_character_elliptic`. Then
@@ -1531,8 +1643,9 @@ apply Theorem 2.2 and Theorem 2.3. (CaptainSude26, Theorem 1.1, line 26, with it
 Remark 1.3.1, line 125.)
 
 *Needs:* Theorems 1.1, 2.1–2.5 and 7.5; EllipticCurveModularityImaginaryQuadratic §4.2
-(`cubic_character_elliptic`); PotentialAutomorphyInfrastructure §2.3; FaltingsFinitenessAndIsogenyTheorems
-R28.6.2–R28.6.3; Mathlib `WeierstrassCurve.localPolynomial`, `WeierstrassCurve.LSeries`.
+(`cubic_character_elliptic`) and §7.4; PotentialAutomorphyInfrastructure §2.3;
+FaltingsFinitenessAndIsogenyTheorems R28.6.2–R28.6.3; Mathlib `WeierstrassCurve.localPolynomial`,
+`WeierstrassCurve.LSeries`.
 
 **Checks.**
 
@@ -1552,7 +1665,7 @@ reducible. The biquadratic field `ℚ(√−1, √5)` does not contain `ζ₅` (
 
 ### Dependencies
 
-Layers 1, 2 and 7; EllipticCurveModularityImaginaryQuadratic §4.2; PotentialAutomorphyInfrastructure
+Layers 1, 2 and 7; EllipticCurveModularityImaginaryQuadratic §§4.2, 7.4; PotentialAutomorphyInfrastructure
 §2.3; FaltingsFinitenessAndIsogenyTheorems R28.6.2–R28.6.3; Mathlib's `L`-function of a Weierstrass
 curve.
 
