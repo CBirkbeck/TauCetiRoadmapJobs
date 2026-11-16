@@ -15,8 +15,8 @@ sha256 = "ddd5d34768ef1edd5c9e67271ed5c0191c8c937d1e49c68bcc1f1b88527c0367"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-version_note = "Preprint read from the author's page (193 pages, pdftotext). Not refereed; numbering is that of the file with the recorded sha256, and the design cites each statement by number, page and line of this file. The introduction and the body differ in wording for Theorem 1.19 versus Theorem 5.1.1(1) (prim with trivial codualizing complex versus 0-proper); the body statement is the locator. Collations of its outgoing citations: RC26a 3.2.27 is cited as a Theorem but is a Proposition in RC26a v3; Lazard's Chapitre III, (1.3.9) is cited as Corollary I.3.9; Remark 5.4.4 cites ABLB v2 Definition 3.2.8 as Lemma 3.2.8. Remark 6.1.5 writes the twistor stack of an unramified K as the untwisted product GSpec(K) × Div¹, which holds only for K = ℚ_p; the design states the Frobenius-twisted product (11.1)."
-cited_for = ["Scope", "Final targets T1–T14", "Risks", "Design: Layers 1–12"]
+version_note = "Preprint read from the author's page (193 pages, pdftotext). Not refereed; numbering is that of the file with the recorded sha256, and the roadmap cites each statement by number, page and line of this file. The introduction and the body differ in wording for Theorem 1.19 versus Theorem 5.1.1(1) (prim with trivial codualizing complex versus 0-proper); the body statement is the locator. Collations of its outgoing citations: RC26a 3.2.27 is cited as a Theorem but is a Proposition in RC26a v3; Lazard's Chapitre III, (1.3.9) is cited as Corollary I.3.9; Remark 5.4.4 cites ABLB v2 Definition 3.2.8 as Lemma 3.2.8. Remark 6.1.5 writes the twistor stack of an unramified K as the untwisted product GSpec(K) × Div¹, which holds only for K = ℚ_p; the roadmap states the Frobenius-twisted product (11.1)."
+cited_for = ["Conventions", "Exact supplier contracts", "Scope and ownership", "Summary", "Downstream consumers", "Layer 12 introduction", "0.5, 1.2, 1.6, 1.8, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 3.1, 3.4, 3.5, 3.6, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 5.1, 5.2, 5.3, 5.4, 6.1, 6.2, 6.4, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9, 10.1, 10.2, 10.3, 10.4, 10.5, 10.6, 10.7, 10.8, 10.9, 10.10, 10.11, 10.12, 11.1, 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8, 11.9, 11.10, 12.1, 12.2, 12.3, 12.4, 12.5, 12.6"]
 
 [[source]]
 id = "ABLB"
@@ -25,7 +25,7 @@ title = "Analytic de Rham stacks of Fargues-Fontaine curves"
 year = 2025
 arxiv = "2510.15196v2"
 locator_scheme = "theorem"
-locator = "Definitions 2.1.1, 2.2.3, 2.2.8, 2.2.19, 2.3.1, 3.1.1, 3.1.5, 3.1.15, 3.2.8, 3.3.1, 4.1.8, 4.1.11, 4.2.1, 4.2.6, 4.2.14, 4.3.1, 4.3.6, 4.7.2, 6.1.1, 6.1.2, 6.2.4; Lemmas 2.1.2, 3.1.8, 3.1.12, 3.1.14, 3.1.17, 4.2.11, 4.5.1, 6.2.9; Propositions 3.1.9, 3.2.10, 3.2.11, 4.4.7, 4.6.4, 5.1.4, 5.7.1; Corollary 4.4.10; Remarks 4.4.11 and 6.1.3; Theorems 4.8.7, 5.1.7, 5.6.6, 6.3.1, 7.1.1; Appendix A"
+locator = "Definitions 2.1.1, 2.2.3, 2.2.8, 2.2.19, 2.3.1, 3.1.1, 3.1.5, 3.1.15, 3.2.8, 3.3.1, 4.1.5, 4.1.8, 4.1.11, 4.2.1, 4.2.6, 4.2.14, 4.3.1, 4.3.6, 4.7.2, 6.1.1, 6.1.2, 6.2.4; Lemmas 2.1.2, 3.1.8, 3.1.12, 3.1.14, 3.1.17, 4.2.11, 4.4.3, 4.5.1, 6.2.9; Propositions 3.1.9, 3.2.10, 3.2.11, 4.4.7, 4.5.5, 4.6.4, 5.1.4, 5.7.1; Example 4.1.13; Corollary 4.4.10; Remarks 4.4.11 and 6.1.3; Theorems 4.8.7, 5.1.7, 5.6.6, 6.3.1, 7.1.1; Appendix A"
 url = "https://arxiv.org/abs/2510.15196v2"
 fetched_from = "https://arxiv.org/pdf/2510.15196v2"
 fetched_at = "2026-10-25T21:21:16Z"
@@ -33,8 +33,8 @@ sha256 = "863a6d227a9e9dcac5849b591894e52aac87587b95f664d40e4f81df539e8caf"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-version_note = "arXiv v2 (3 March 2026); locators are v2. ALRS cites an earlier numbering, collated in the design: the ALRS citations Definition 3.3.1, Definition 2.3.1, Lemma 3.6.2, Proposition 2.4.9 and Corollary 3.4.10 are v2 Definition 3.1.1, Definition 3.1.5, Lemma 3.1.17, Proposition 3.1.9 and Corollary 4.4.10, and the ALRS citation Lemma 3.2.8 is v2 Definition 3.2.8 (with Proposition 3.2.11)."
-cited_for = ["Scope", "Final targets T1–T2", "Risks", "Design: Layers 1–8, 10–12"]
+version_note = "arXiv v2 (3 March 2026); locators are v2. ALRS cites an earlier numbering, collated in the roadmap (References): the ALRS citations Definition 3.3.1, Definition 2.3.1, Lemma 3.6.2, Proposition 2.4.9 and Corollary 3.4.10 are v2 Definition 3.1.1, Definition 3.1.5, Lemma 3.1.17, Proposition 3.1.9 and Corollary 4.4.10, and the ALRS citation Lemma 3.2.8 is v2 Definition 3.2.8 (with Proposition 3.2.11)."
+cited_for = ["Conventions", "Exact supplier contracts", "Scope and ownership", "1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 3.1, 3.2, 3.3, 4.1, 6.1, 6.2, 6.3, 6.4, 7.4, 7.5, 10.7, 11.1, 12.2, 12.4, 12.5"]
 
 [[source]]
 id = "RCSolid"
@@ -51,8 +51,8 @@ sha256 = "6277c6a27f48b455e52239c0f2d36005ee3403631a0183ec2ece0a3db6eb7c1f"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
-version_note = "arXiv v1. Expanded seminar notes on the Clausen–Scholze analytic stacks course; used as the citable account of the unowned analytic-stack prerequisite."
-cited_for = ["Scope", "Suppliers: unowned analytic-stack prerequisite", "Risks", "Design: required contracts light-solid-analytic-rings, analytic-stack-topos, qcoh-six-functors, betti-realization, solid-cotangent-complex, algebraic-stacks-condensed, formal-cone-adic-filtration, regular-immersion-suave, solid-smooth-duality; 12.1"]
+version_note = "arXiv v1. Expanded seminar notes on the Clausen–Scholze analytic stacks course; used for the analytic-stack theory consumed from AnalyticStacks."
+cited_for = ["Exact supplier contracts", "12.1"]
 
 [[source]]
 id = "HM"
@@ -70,7 +70,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1"
-cited_for = ["Suppliers: unowned analytic-stack prerequisite", "Final targets T12", "Design: 2.2, 3.3, 12.2–12.4; required contracts qcoh-six-functors, suave-prim-calculus, classifying-stack-dualizing"]
+cited_for = ["Conventions", "Exact supplier contracts", "2.2, 3.3, 12.2, 12.3, 12.4"]
 
 [[source]]
 id = "SixFF"
@@ -88,7 +88,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2 (22 January 2026)"
-cited_for = ["Suppliers: unowned analytic-stack prerequisite", "Design: required contract qcoh-six-functors"]
+cited_for = ["Exact supplier contracts"]
 
 [[source]]
 id = "Gest"
@@ -96,7 +96,7 @@ authors = "Peter Scholze"
 title = "Geometry and higher category theory"
 year = 2026
 locator_scheme = "theorem"
-locator = "Definitions 6.5, 6.9 and 6.12; Propositions 6.6, 6.10, 6.13, 7.9 and 9.5; Corollary 9.8"
+locator = "Definitions 1.26, 2.7, 3.13, 6.1, 6.5, 6.9, 6.12, 6.16 and 6.19; Theorems 2.9 and 3.11; Example 3.12; Remarks 2.8, 3.14, 6.17 and 9.6; Warning 6.7; Lemmas 6.3 and 6.22; Propositions 4.4, 6.2, 6.4, 6.6, 6.10, 6.13, 6.14, 6.18, 6.20, 6.21, 7.9, 9.3, 9.4, 9.5 and 9.7; Corollary 9.8; §§8.1, 8.2, 8.6 and 8.8"
 url = "https://people.mpim-bonn.mpg.de/scholze/Gestalten.pdf"
 fetched_from = "https://people.mpim-bonn.mpg.de/scholze/Gestalten.pdf"
 fetched_at = "2026-10-25T21:24:43Z"
@@ -104,8 +104,8 @@ sha256 = "a993f882f753dc03cb9618538e26e1fcff8e43d40735c84c12255828d759532c"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
-version_note = "Author-page lecture notes (121 pages); the numbering cited by ALRS Construction 2.1.2 agrees with this file."
-cited_for = ["Scope", "Risks", "Design: Scope and ownership; 2.2, 2.7, 10.3, 12.1, 12.2; required contracts gestalten-affine-proper, gestalten-transmutation"]
+version_note = "Author-page lecture notes (121 pages) on joint work with G. Stefanich; the numbering cited by ALRS Construction 2.1.2 agrees with this file. The notes work with the cutoff cardinal ℵ₁; Layer 0 uses them for the uncountable regular cardinal κ of the Conventions, with countable read as κ-small, as the notes describe (line 2271–2273) and ALRS Construction 2.1.2 uses."
+cited_for = ["Conventions", "0.1, 0.2, 0.3, 0.4, 0.5, 2.2, 2.7, 10.3, 12.1, 12.2"]
 
 [[source]]
 id = "ALBM"
@@ -123,7 +123,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2. ALRS uses the light Gelfand-stack variant of this formalism (ALRS footnote 57)."
-cited_for = ["Final targets T2, T12", "Design: 6.2, 6.4"]
+cited_for = ["6.2, 6.4"]
 
 [[source]]
 id = "RC24"
@@ -141,7 +141,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1. Earlier construction of the analytic de Rham stack, superseded in ABLB §4; used for comparison and for the cotangent-complex conventions of ALRS Appendix A."
-cited_for = ["Final targets T1", "Design: 1.2, 1.3, 3.1, 4.2"]
+cited_for = ["1.2, 1.3, 3.1, 4.2"]
 
 [[source]]
 id = "FS"
@@ -159,7 +159,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v4. ALRS cites the Astérisque edition as [FS26]; the Chapter II proposition numbers cited by ALRS agree with v4 at the three locators checked."
-cited_for = ["Final targets T3–T4", "Design: 7.6, 8.1, 12.2"]
+cited_for = ["7.6, 8.1, 12.2"]
 
 [[source]]
 id = "RJRC22"
@@ -177,7 +177,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2; published in Represent. Theory 26 (2022). Locators are the arXiv numbering as announced in its introduction (Theorems 1.3, 1.5, 1.7); journal collation not checked."
-cited_for = ["Final targets T8", "Design: 10.2–10.4, 11.10"]
+cited_for = ["10.2, 10.3, 10.4, 11.10"]
 
 [[source]]
 id = "RJRC"
@@ -195,7 +195,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v5"
-cited_for = ["Final targets T8", "Design: 5.3, 5.4, 10.3"]
+cited_for = ["Exact supplier contracts", "5.3, 5.4, 10.3"]
 
 [[source]]
 id = "BC16"
@@ -214,7 +214,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1 (2014); published Ann. Sci. Éc. Norm. Supér. 49 (2016) 947–970. Locators use the arXiv numbering (announced in the introduction as Théorèmes 1.6–1.7); journal numbering not collated."
-cited_for = ["Final targets T8 (Checks)", "Design: 10.7, 10.9, 10.10 (Checks)"]
+cited_for = ["10.7, 10.9, 10.10"]
 
 [[source]]
 id = "RCSen"
@@ -232,7 +232,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v4; ALRS cites the J. Eur. Math. Soc. edition as [RC26b] with the same theorem numbers 1.0.3–1.0.4."
-cited_for = ["Final targets T10", "Design: 11.5, 11.10"]
+cited_for = ["11.5, 11.10"]
 
 [[source]]
 id = "Sch13"
@@ -250,7 +250,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2; published Forum Math. Pi 1 (2013). ALRS cites Theorem 7.6 for the Riemann–Hilbert functor, matching v2."
-cited_for = ["Final targets T5, T14", "Design: 9.5, 12.6"]
+cited_for = ["9.5, 12.6"]
 
 [[source]]
 id = "AHLB"
@@ -268,7 +268,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3. Integral Hodge–Tate stack description of semilinear C-representations; comparison context for ALRS Proposition 4.8.1."
-cited_for = ["Final targets T7 (Checks)", "Design: 9.7 (Check)"]
+cited_for = ["9.7"]
 
 [[source]]
 id = "Pan22"
@@ -286,7 +286,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3; published Forum Math. Pi 10 (2022). Background for geometric Sen operators and for future consumers; no target of this roadmap rests on it."
-cited_for = ["Consumers", "Design: Downstream consumers"]
+cited_for = ["Downstream consumers"]
 
 [[source]]
 id = "Hauck"
@@ -304,7 +304,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2. Defines the rational analytic syntomification on top of the Gelfand-stack framework; the natural Part II consumer, out of scope here."
-cited_for = ["Scope (out of scope)", "Consumers", "Design: Downstream consumers"]
+cited_for = ["Scope and ownership", "Downstream consumers"]
 
 [[source]]
 id = "RC26a"
@@ -322,7 +322,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3. ALRS cites the first statement as Theorem 3.2.27; it is Proposition 3.2.27 in v3."
-cited_for = ["Design: required contracts vector-group-cartier-duality, stacky-cartier-duality; 5.3"]
+cited_for = ["Exact supplier contracts", "0.4, 5.3, 11.5"]
 
 [[source]]
 id = "Zav"
@@ -340,7 +340,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v3; ALRS cites it as [Zav26]. The cited definitions and theorem carry the same numbers in v3."
-cited_for = ["Design: 6.3, 12.5 (theories of first Chern classes)"]
+cited_for = ["6.3, 12.5"]
 
 [[source]]
 id = "AM24"
@@ -358,7 +358,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v2"
-cited_for = ["Design: required contract nuclear-modules; 10.2"]
+cited_for = ["10.2"]
 
 [[source]]
 id = "Man26"
@@ -376,7 +376,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "arXiv v1 (2022), published in Res. Math. Sci. 13 (2026) and cited by ALRS as [Man26]; Lemmas 10.3 and 10.5 of v1 are the statements ALRS cites. Journal numbering not collated."
-cited_for = ["Design: 10.2"]
+cited_for = ["10.2"]
 
 [[source]]
 id = "Sch24"
@@ -393,7 +393,7 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Draft from the author's page (91 pages), prepared for a seminar; numbering is that of the file with the recorded sha256."
-cited_for = ["Design: 1.7, 2.3, 3.5; required contract fredholm-criteria (Fredholm property, !-descent of perfect amplitude)"]
+cited_for = ["Exact supplier contracts", "1.7, 3.5"]
 
 [[source]]
 id = "Laz65"
@@ -411,7 +411,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-25"
 version_note = "Numdam scan (216 pages, OCR text), pp. 5–219 of the journal. ALRS Theorem 5.2.14 cites this statement as Corollary I.3.9."
-cited_for = ["Design: 10.4"]
+cited_for = ["10.4"]
 
 [[source]]
 id = "And21"
@@ -429,4 +429,4 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-10-26"
 version_note = "arXiv v1"
-cited_for = ["Design: 1.7"]
+cited_for = ["1.7"]
