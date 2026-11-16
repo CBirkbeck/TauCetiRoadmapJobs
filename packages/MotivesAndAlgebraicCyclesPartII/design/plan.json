@@ -4822,7 +4822,19 @@
     },
     {
       "slug": "animated-group-completion",
-      "needs": "free animated commutative monoids and their group completions; the Breen–Deligne resolution of the group completion of a sheaf of animated commutative monoids by classifying spaces of products of its terms; and the augmentation-ideal filtration of the group algebra of a 1-connective animated abelian group, with graded pieces of increasing connectivity and convergence.",
+      "needs": "free animated commutative monoids and their group completions.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "§E5:animation"
+    },
+    {
+      "slug": "breen-deligne-resolution",
+      "needs": "the Breen–Deligne resolution of the group completion of a sheaf of animated commutative monoids by classifying spaces of products of its terms.",
+      "supplier": "EnhancedDerivedSheaves",
+      "section": "§E5:animation"
+    },
+    {
+      "slug": "augmentation-ideal-filtration",
+      "needs": "the augmentation-ideal filtration of the group algebra of a 1-connective animated abelian group, with graded pieces of increasing connectivity and convergence to the group algebra.",
       "supplier": "EnhancedDerivedSheaves",
       "section": "§E5:animation"
     },
@@ -4833,8 +4845,20 @@
       "section": "§E5:spectra-comparison"
     },
     {
-      "slug": "kh-excision-cdh-descent",
-      "needs": "homotopy K-theory `KH(R) = |K(R ⊗ ℤ[Δ^•])|` of rings and qcqs schemes, its extension to nonunital rings, excision for arbitrary ideals, and descent for abstract blowup squares on noetherian schemes of finite Krull dimension.",
+      "slug": "kh-simplicial-model",
+      "needs": "homotopy K-theory `KH(X) = |K(X × Δ^•_ℤ)|` of qcqs schemes, `Δ^r_ℤ = Spec ℤ[x₀, …, x_r]/(Σ_i x_i − 1)`, which for `X = Spec R` is `|K(R[Δ^•])|`.",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "§5.2"
+    },
+    {
+      "slug": "kh-excision",
+      "needs": "for a commutative ring `R`, an ideal `I ⊂ R` and a ring map `R → S` carrying `I` isomorphically onto an ideal of `S`, the map `fib(KH(R) → KH(R/I)) → fib(KH(S) → KH(S/I))` is an equivalence.",
+      "supplier": "SchemeKTheoryOperations",
+      "section": "Layer 5"
+    },
+    {
+      "slug": "kh-cdh-descent",
+      "needs": "`KH` carries every abstract blowup square of noetherian schemes of finite Krull dimension to a pullback square of spectra.",
       "supplier": "SchemeKTheoryOperations",
       "section": "Layer 5"
     },
