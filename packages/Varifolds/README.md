@@ -53,7 +53,8 @@ Owned here:
   first variation of a C² submanifold and its agreement with RiemannianGeometry R5a.2 for smooth
   ones; the intrinsic versus ambient comparison for an embedded submanifold M ⊆ ℝ^L;
 - monotonicity (Euclidean and Riemannian), densities, their measurability and upper
-  semicontinuity, the constancy theorem and the convex hull property;
+  semicontinuity, the constancy theorem and the convex hull property of varifolds stationary off
+  a compact set (6.5);
 - the semicontinuity of lower density bounds, Allard's rectifiability theorem, the compactness
   theorems for rectifiable and integral varifolds and Allard's multiplicity lemma, all for
   sequences of metrics converging in C² on compact sets;
@@ -85,6 +86,12 @@ Owned elsewhere and cited:
   (Scope and ownership, and 3.1) refers to G6 for monotonicity of stationary varifolds; G6 states it for the
   auxiliary varifold of an integral current, and the statement for every varifold of locally
   bounded first variation is 6.1–6.2 here, of which G6's is the case of 9.3.
+- The convex hull property of a compact smooth minimal submanifold of ℝ^m with boundary, proved
+  from the harmonicity of the coordinate functions without varifolds:
+  RiemannianGeometry/MinimalSurfaces 3.3. 6.5 here is the statement for every varifold on E with
+  compact support that is stationary off a compact set K, with no rectifiability or smoothness;
+  for an embedded Σ it gives 3.3 with V = [Σ ∖ ∂Σ] and K = ∂Σ, the varifold being stationary in
+  E ∖ ∂Σ by 5.1 applied on W = E ∖ ∂Σ, in which Σ ∖ ∂Σ is closed.
 - Immersion geometry, the second fundamental form B, the averaged mean curvature and the first
   volume variation of smooth immersions: RiemannianGeometry R5a and R5a.2. The Hessian comparison
   for the distance function: RiemannianGeometry R4, item 1. Smooth second variation and stability:
@@ -1530,6 +1537,14 @@ intersection of the closed balls containing it; for K = ∅ two disjoint balls g
 - `δ_{(0,P)}` is stationary in E ∖ {0} and its support {0} is the hull of K = {0}; for k ≥ 1 it is
   not rectifiable (its weight δ_0 charges the Hᵏ-null set {0}), so the rectifiable case does not
   cover it.
+- Agreement with the smooth convex hull property (RiemannianGeometry/MinimalSurfaces 3.3) on a
+  catenoid piece: in ℝ³ with ρ = √(x₁² + x₂²), let Σ = {ρ = cosh x₃, |x₃| ≤ h} (h > 0) and
+  K = ∂Σ, the two circles ρ = cosh h at heights x₃ = ±h. The catenoid is minimal, so
+  V = [Σ ∖ ∂Σ] is stationary in E ∖ K (5.1 on W = E ∖ K), with spt‖V‖ = Σ compact and
+  ‖V‖(E) = 2π(h + sinh h cosh h). The convex hull of K is the solid cylinder
+  {ρ ≤ cosh h, |x₃| ≤ h}, and Σ lies in it because cosh x₃ ≤ cosh h for |x₃| ≤ h; the neck circle
+  ρ = 1 at x₃ = 0 lies strictly inside. A rule that placed spt‖V‖ in K itself, or in the union of
+  the two flat discs bounded by K, fails on the neck.
 
 (Simon1983 line 3371–3400, rectifiable case.) *Needs:* Layer 4.1–4.4.
 
@@ -1598,14 +1613,21 @@ varifold C that is stationary in (T_xM, g_x), whose weight is dilation invariant
 ‖C‖(λA) = λ^k‖C‖(A) for λ > 0, and with ‖C‖(B_ρ(0)) = Θ^k(‖V‖, x) ω_k ρ^k for all ρ > 0, so that
 Θ^k(‖C‖, 0) = Θ^k(‖V‖, x). The set VarTan(V, x) of such limits is nonempty and compact; in E it
 consists of the limits of `(η_{x,λ_j})_#V` (Simon1983 line 7733–7774, 42.1–42.3; 3414–3430, 19.3,
-rectifiable case). For W open in E with the flat metric, with `V_{x,λ}` read on G_k(E) as in 3.2 and
-the hypotheses taken on W: membership C ∈ VarTan(V, x) (a Radon measure on G_k(E) that is the limit
-of `V_{x,λ_j}` along some λ_j ↓ 0) is `Euclidean.IsVarifoldTangent`, the existence of a convergent
-subsequence along every λ_j ↓ 0 is `Euclidean.exists_isVarifoldTangent`, and the stationarity of
-C, its ball masses and the dilation invariance of its weight are
+rectifiable case). The existence of subsequential limits uses only that Θ^k(‖V‖, x) exists and is
+finite: by 3.2, `‖V_{x,λ}‖(B_R(0)) = λ^{−k}‖V‖(B_{λR}(x))` (up to a factor 1 + o(1) on M) tends to
+Θ^k(‖V‖, x) ω_k R^k as λ ↓ 0, which bounds the masses over every compact set for small λ, and 1.4
+gives the subsequence (Simon1983 line 7738–7740, with Theorem 4.4 at line 1038–1045). The
+hypotheses on the first variation are what the stationarity of C, and through it the dilation
+invariance of its weight, need. For W open in E with the
+flat metric, with `V_{x,λ}` read on G_k(E) as in 3.2 and the hypotheses taken on W: membership
+C ∈ VarTan(V, x) (a Radon measure on G_k(E) that is the limit of `V_{x,λ_j}` along some λ_j ↓ 0) is
+`Euclidean.IsVarifoldTangent`; the existence of a convergent subsequence along every λ_j ↓ 0, for
+x ∈ W at which Θ^k(‖V‖, x) exists and is finite and with no hypothesis on δV, is
+`Euclidean.exists_isVarifoldTangent`; and the stationarity of C, its ball masses and the dilation
+invariance of its weight, under all three hypotheses of the first paragraph, are
 `Euclidean.IsVarifoldTangent.isStationary`.
 
-Route: 3.2 and 6.3 bound `‖V_{x,λ}‖(B_R(0))` uniformly; 1.4 gives subsequential limits; 4.5's blow-up form
+Route: the mass bound above and 1.4 give subsequential limits; 4.5's blow-up form
 and the hypothesis on ‖δV‖ give δ_gₓC = 0; the mass of C on balls about 0 is the limit of the
 density ratios (3.2), so ρ⁻ᵏ‖C‖(B_ρ(0)) = ω_k Θ^k(‖V‖, x) for every ρ > 0, and the stationary
 identity 6.1 for C at 0 forces `P_{S^⊥}(y) = 0` for C-a.e. (y, S). Dilation invariance of the weight
@@ -1633,8 +1655,16 @@ uses arbitrary homogeneous weights of degree zero for the same step.
   value of the invariant measure dr dϑ and the angular test cos ϑ separates them. The theorem is not
   contradicted: by the stationary identity and the step above, μ is not the weight of any stationary
   1-varifold on ℝ².
+- Existence needs no first-variation hypothesis, stationarity does. In ℝ² with k = 1 let V be the
+  vertical lift of H¹⌞(x-axis), every plane the vertical line. Then ‖V‖(B_ρ(0)) = 2ρ, so
+  Θ^1(‖V‖, 0) = 2ρ/(ω_1 ρ) = 1, and `V_{0,λ} = V` for every λ > 0: the push-forward of H¹⌞(x-axis)
+  along y ↦ y/λ is λ·H¹⌞(x-axis), which the factor λ⁻¹ cancels, and the planes are unchanged. So
+  every λ_j ↓ 0 gives the limit V, although V does not have locally bounded first variation (4.3)
+  and ‖δV‖(B_ρ(0)) = ∞ for every ρ. The limit is not stationary: for X(y) = φ(y) y_2 e_2 with
+  φ ∈ C¹_c(ℝ²), φ ≥ 0, φ(0) > 0, the integrand tr(P DX) at (t, 0) is ∂_2(φ y_2)(t, 0) = φ(t, 0), so
+  δV(X) = ∫ φ(t, 0) dt > 0.
 
-(Simon1983 line 7733–7774, 3414–3481.) *Needs:* Layer 1.4, Layer 3.2, Layer 4.5, Layer 6.1, Layer 6.3;
+(Simon1983 line 7733–7774, 3414–3481.) *Needs:* Layer 1.4, Layer 3.2, Layer 4.5, Layer 6.1;
 Mathlib `MeasureTheory.Measure.ext_of_integral_eq_on_compactlySupported`.
 
 ### 7.3 Allard's rectifiability theorem

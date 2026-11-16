@@ -113,6 +113,12 @@ noncomputable def weight {W : TopologicalSpace.Opens F} (V : Measure (W × grass
 
 end Euclidean
 
+/-- **Varifold convergence** (§1.4): `∫ f dV_i → ∫ f dV'` for every compactly supported
+continuous `f` (Simon1983, §38). -/
+def VarifoldTendsto {Y : Type*} [TopologicalSpace Y] [MeasurableSpace Y]
+    (V : ℕ → Measure Y) (V' : Measure Y) : Prop :=
+  ∀ f : C_c(Y, ℝ), Tendsto (fun i ↦ ∫ p, f p ∂V i) atTop (𝓝 (∫ p, f p ∂V'))
+
 /-! ## Layer 2: rectifiable and integral varifolds -/
 
 /-- A varifold on `(M, g)` is **rectifiable** (§2.2, in the `C¹`-piece form): there are countably
@@ -406,12 +412,6 @@ theorem constancy (hk : 1 ≤ k) (V : Measure (grassmannBundle I M k))
 
 /-! ## Layer 7: varifold tangents, rectifiability and compactness -/
 
-/-- **Varifold convergence** (§1.4): `∫ f dV_i → ∫ f dV'` for every compactly supported
-continuous `f` (Simon1983, §38). -/
-def VarifoldTendsto {Y : Type*} [TopologicalSpace Y] [MeasurableSpace Y]
-    (V : ℕ → Measure Y) (V' : Measure Y) : Prop :=
-  ∀ f : C_c(Y, ℝ), Tendsto (fun i ↦ ∫ p, f p ∂V i) atTop (𝓝 (∫ p, f p ∂V'))
-
 namespace Euclidean
 
 variable {W : TopologicalSpace.Opens F}
@@ -423,21 +423,23 @@ def IsVarifoldTangent (V : Measure (W × grassmannian F k)) (x : F)
   IsFiniteMeasureOnCompacts C ∧ ∃ s : ℕ → ℝ, (∀ j, 0 < s j) ∧ Tendsto s atTop (𝓝 0) ∧
     VarifoldTendsto (fun j ↦ blowUp V x (s j)) C
 
-/-- **Existence of varifold tangents** (§7.2). If `V` has locally bounded first variation in `W`,
-`Θ^k(‖V‖, x)` exists and is finite and `ρ^{1−k}‖δV‖(B_ρ(x)) → 0`, then every sequence `λ_j ↓ 0`
-has a subsequence along which `V_{x,λ_j}` converges to a Radon measure (Simon1983, 42.1–42.2). -/
+/-- **Existence of varifold tangents** (§7.2). If `Θ^k(‖V‖, x)` exists and is finite at `x ∈ W`,
+then every sequence `λ_j ↓ 0` has a subsequence along which `V_{x,λ_j}` converges to a Radon
+measure. Only the finiteness of the density is used: it bounds
+`‖V_{x,λ}‖(B_R(0)) = λ^{−k}‖V‖(B_{λR}(x))` for small `λ`, and the compactness of Radon measures
+under local mass bounds gives the subsequence; no first-variation hypothesis enters (Simon1983,
+42.1, with the compactness theorem 4.4). -/
 theorem exists_isVarifoldTangent (hk : 1 ≤ k) (V : Measure (W × grassmannian F k))
-    [IsFiniteMeasureOnCompacts V] (hV : HasLocallyBoundedFirstVariation V) {x : F}
+    [IsFiniteMeasureOnCompacts V] {x : F}
     (hx : x ∈ W) {θ : ℝ≥0∞} (hθ : θ ≠ ⊤) (hdens : HasDensity (weight V) k x θ)
-    (hδ : Tendsto (fun ρ : ℝ ↦ ENNReal.ofReal (ρ ^ (1 - (k : ℤ))) *
-      firstVariationMass V (Metric.ball x ρ)) (𝓝[>] 0) (𝓝 0))
     (s : ℕ → ℝ) (hs : ∀ j, 0 < s j) (hs0 : Tendsto s atTop (𝓝 0)) :
     ∃ φ : ℕ → ℕ, StrictMono φ ∧ ∃ C, IsFiniteMeasureOnCompacts C ∧
       VarifoldTendsto (fun j ↦ blowUp V x (s (φ j))) C := by
   sorry
 
-/-- **Varifold tangents are stationary with conical weight** (§7.2). Under the hypotheses of
-`exists_isVarifoldTangent`, every `C ∈ VarTan(V, x)` is stationary in `F`, has
+/-- **Varifold tangents are stationary with conical weight** (§7.2). If `V` has locally bounded
+first variation in `W`, `Θ^k(‖V‖, x)` exists and is finite at `x ∈ W` and
+`ρ^{1−k}‖δV‖(B_ρ(x)) → 0` as `ρ ↓ 0`, then every `C ∈ VarTan(V, x)` is stationary in `F`, has
 `‖C‖(B_ρ(0)) = Θ^k(‖V‖, x) ω_k ρ^k` for every `ρ > 0`, and has a dilation-invariant weight,
 `‖C‖(λA) = λ^k ‖C‖(A)` (Simon1983, 42.3). -/
 theorem IsVarifoldTangent.isStationary (hk : 1 ≤ k) {V : Measure (W × grassmannian F k)}
@@ -512,7 +514,9 @@ namespace Euclidean
 
 variable {W : TopologicalSpace.Opens F}
 
-/-- **Rectifiable tangent cones** (§8.1). Under the hypotheses of `exists_isVarifoldTangent`, if
+/-- **Rectifiable tangent cones** (§8.1). Under the hypotheses of
+`IsVarifoldTangent.isStationary` (locally bounded first variation, a finite density at `x` and
+`ρ^{1−k}‖δV‖(B_ρ(x)) → 0`), if
 moreover `ρ^{−k}‖V‖({y ∈ B_ρ(x) : Θ^{*k}(‖V‖, y) < 1}) → 0`, then every `C ∈ VarTan(V, x)` is
 rectifiable and a cone, `(η_{0,λ})_# C = C` for `λ > 0` (Simon1983, 42.6). -/
 theorem IsVarifoldTangent.isRectifiable (hk : 1 ≤ k) {V : Measure (W × grassmannian F k)}
@@ -528,7 +532,8 @@ theorem IsVarifoldTangent.isRectifiable (hk : 1 ≤ k) {V : Measure (W × grassm
   sorry
 
 /-- **Integral tangent cones** (§8.2). If `V` is integral and satisfies the hypotheses of
-`exists_isVarifoldTangent` at `x`, every `C ∈ VarTan(V, x)` is an integral, stationary cone
+`IsVarifoldTangent.isStationary` at `x` (locally bounded first variation, a finite density at `x`
+and `ρ^{1−k}‖δV‖(B_ρ(x)) → 0`), every `C ∈ VarTan(V, x)` is an integral, stationary cone
 (Simon1983, 42.6 and 42.8). -/
 theorem IsVarifoldTangent.isIntegral (hk : 1 ≤ k) {V : Measure (W × grassmannian F k)}
     [IsFiniteMeasureOnCompacts V] (hint : IsIntegral V) (hV : HasLocallyBoundedFirstVariation V)
