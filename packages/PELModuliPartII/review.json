@@ -1,10 +1,18 @@
 {
-  "review": {
-    "status": "needs_changes",
-    "reviewer": "independent-review-REV-PKG-PELModuliPartII~2",
-    "date": "2026-11-10",
-    "findings": 6,
-    "blocking": 5,
-    "notes": "Checked previous F01\u2013F05 repairs, all 75 targets, 15 seeded source locators, added local-model APIs and examples, pinned library declarations, supplier heads and ownership overlaps. Six findings: underlying dimension, ordinary comparison carrier/source scope, exotic irreducible components, fractional polarization ideal, integral generator, and missing CM-moduli API. Lean elaboration passed with no output; zero declarations means zero padding/signature probes. Dependency gate: 236 roadmaps, 2145 edges, 0 problems. Published Zhang21/LTXZZ22 page numbers remain unverified; detailed computed adversarial table is in the round-2 report."
-  }
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-PELModuliPartII~9",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-PELModuliPartII~9",
+   "fix": "FIX-PKG-PELModuliPartII~10",
+   "from": "bab55994838f3dd3e8f8f962dba0351839fe41d7",
+   "head": "107b660c6d25f5e30fb1bbb94b5e62f157f0c007",
+   "findings": 3,
+   "lines": 21
+  },
+  "notes": "every finding of `REV-PKG-PELModuliPartII~9` (3) was P3 and `FIX-PKG-PELModuliPartII~10` repaired them at `107b660`, changing 21 lines of the package; no further review round was filed"
+ }
 }
