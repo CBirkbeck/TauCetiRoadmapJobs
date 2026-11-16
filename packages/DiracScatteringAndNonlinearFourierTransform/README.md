@@ -8,7 +8,8 @@ resonance-free points, the conditional form of Poltoratski's non-linear Carleson
 extends Carathéodory's theory of linear differential equations to integrable coefficients
 depending holomorphically on a parameter. It then develops the function theory of the upper
 half-plane that the scattering theory consumes: Poisson integrals, Fatou's theorem, bounded
-holomorphic functions, the Hardy space `H²(ℂ₊)`, Paley–Wiener spaces and outer functions. On this
+holomorphic functions, the Hardy spaces `H^p(ℂ₊)` with the Hilbert space `H²(ℂ₊)`, Paley–Wiener spaces and
+outer functions. On this
 base it defines the Dirac system `ΩX′ = zX − Q_q X` with a locally integrable complex potential
 `q`, its fundamental matrix, its Hermite–Biehler functions `E`, `Ẽ` and its scattering functions
 `a`, `b`. It proves the SU(1,1) structure, the half-plane bounds `|a| ≥ 1` and `|b| < |a|`,
@@ -44,8 +45,8 @@ This roadmap owns, by layer:
 - Layer 2: Poisson integrals of Poisson-finite measures on `ℝ` (Tau Ceti's half-space Poisson
   integral takes bounded data only), positive harmonic functions on `ℂ₊`, nontangential maximal
   functions, Fatou's theorem for Poisson integrals, boundary values and uniqueness for bounded
-  holomorphic functions on `ℂ₊`, the Hardy space `H²(ℂ₊)`, the Paley–Wiener spaces `PW_t`, and
-  outer functions on `ℂ₊`;
+  holomorphic functions on `ℂ₊`, the Hardy spaces `H^p(ℂ₊)` for `1 < p < ∞` with the Hilbert space `H²(ℂ₊)`,
+  the Paley–Wiener spaces `PW_t`, and outer functions on `ℂ₊`;
 - Layer 3: the Dirac system with a locally integrable complex potential, its fundamental matrix,
   its Hermite–Biehler functions and the Hermite–Biehler property;
 - Layer 4: the scattering matrix `G`, the scattering functions `a`, `b` on a finite interval,
@@ -58,8 +59,8 @@ This roadmap owns, by layer:
   system, the isometric chain, Weyl functions, the Neumann and Dirichlet spectral measures, the
   entropy of the Poisson measure relative to a spectral measure and the Szegő condition for
   square-integrable potentials;
-- Layer 7: meromorphic inner functions, the phase-derivative representation of a Hermite–Biehler
-  function of exponential type, Poltoratski's zero-localisation lemma, and the Dirac inner
+- Layer 7: meromorphic inner functions and their Blaschke representation, the phase-derivative
+  representation of a Hermite–Biehler function, Poltoratski's zero-localisation lemma, and the Dirac inner
   functions with their Riccati equation and the motion of resonances;
 - Layer 8: universality of reproducing kernels at almost every real point and the
   approximation of the Hermite–Biehler functions near a real point;
@@ -91,8 +92,6 @@ It leaves to named owners:
   cases as Checks, Layer 2 states the Poisson integral of a Poisson-finite measure and records the
   pinned bounded-data case as a Check, and §6.7 computes the relative entropy of the Poisson measure
   with respect to a spectral measure;
-- finite-order Hadamard factorization to AnalyticNumberTheoryPartI §0.23, consumed in Layer 7
-  for entire functions of order at most one;
 - the subtracted-kernel Herglotz representation of a holomorphic `F` on `ℂ₊` with `Im F ≥ 0`,
   `F(z) = a + bz + ∫ ((x − z)⁻¹ − x/(1 + x²)) dν_F(x)` with its unique triple `(a, b, ν_F)`, to
   AutomorphicSpectralTheory §0.5, consumed in §2.2 and §6.5; §2.2 states the form for nonnegative
@@ -103,13 +102,15 @@ It leaves to named owners:
   of bounded symbols in `Analysis/Fourier/Hardy/`), and the further theory of those Toeplitz operators
   to OperatorTheory/ToeplitzOperators, Layers 2–5; harmonic Hardy spaces on Euclidean balls and the
   circle maximal function of a finite measure to StochasticCalculus S6.5; none of these is consumed,
-  since Layer 2 works on the half-plane with Lebesgue measure and the maximal function of a density;
+  since Layer 2 works on the half-plane with Lebesgue measure, holomorphic `H^p(ℂ₊)`, and the maximal
+  function of a density, reaching Poisson-finite measures in §2.3 by smoothing them into densities;
 - the minimal and maximal operators of the Dirac expression in `L²(ℝ₊; ℂ²)`, Green's formula, Weyl's
   limit-point/limit-circle alternative with its independence of the spectral parameter, and the
   self-adjoint realisations by boundary conditions to OperatorTheory/UnboundedOperators §4.8 (UO-D07),
   whose expression `Ju′ + Vu = λu` with `J = [[0, −1], [1, 0]]` and locally integrable Hermitian `V` is
-  the Dirac system here under `J = −Ω`, `V = −Q_q`, `λ = −z` (Conventions). §6.4 consumes the alternative
-  and adds that `∞` is a limit-point endpoint for every potential, the Weyl discs and the Weyl function.
+  the Dirac system here under `J = −Ω`, `V = −Q_q`, `λ = −z` (Conventions). None of this is consumed: §6.4
+  proves from `det M = 1` (§3.1) that `∞` is a limit-point endpoint for every potential, and builds the Weyl
+  discs and the Weyl function.
   §1.2 is the integral-equation theorem with values in a Banach space, an inhomogeneous term and explicit
   bounds; its case `E = ℂ²` at a fixed parameter is the local integral-equation existence and uniqueness
   stated there. The eigenfunction expansion of a self-adjoint Dirac operator, its unitary equivalence with
@@ -339,7 +340,11 @@ All at the pinned Mathlib; paths under `Mathlib/`.
   and convex on a closed convex set), `convexOn_exp` (`Analysis/Convex/SpecificFunctions/Basic.lean` line
   62), `MeasureTheory.lintegral_liminf_le` (`MeasureTheory/Integral/Lebesgue/Add.lean` line 237, Fatou's
   lemma for measurable `ℝ≥0∞`-valued functions) and `MeasureTheory.lintegral_lintegral_swap`
-  (`MeasureTheory/Measure/Prod.lean` line 1102, Tonelli for s-finite measures).
+  (`MeasureTheory/Measure/Prod.lean` line 1102, Tonelli for s-finite measures); for the point bound of
+  `H^p(ℂ₊)`, `DiffContOnCl.circleAverage` (`Analysis/Complex/MeanValue.lean` line 108: a function complex
+  differentiable on an open disc and continuous on its closure has circle average its value at the centre)
+  and `Complex.lintegral_comp_polarCoord_symm` (`Analysis/SpecialFunctions/PolarCoord.lean` line 215: the
+  lower Lebesgue integral over `ℂ` in polar coordinates, with the weight `r`).
 - For the isometric chain in §6.3: `MeasureTheory.intervalIntegral_integral_swap`
   (`MeasureTheory/Integral/Prod.lean` line 486: for an s-finite measure `μ` and `f : ℝ → α → E` integrable
   for the product of Lebesgue measure on the interval between `a` and `b` with `μ`,
@@ -474,14 +479,6 @@ All at the pinned Tau Ceti; paths under `TauCeti/`.
   `TauCeti.bijOn_sub_I_div_add_I_upperHalfPlaneSet` and `TauCeti.boundaryCayley`
   (`Analysis/Complex/UpperHalfPlane/Cayley.lean`).
 
-### From TauCetiRoadmap.AnalyticNumberTheoryPartI
-
-- §0.23 (finite-order Hadamard factorization): a nonzero entire function of order at most `ρ`, with
-  `n = ⌊ρ⌋` and `ρ < n + 1`, is `z^m exp(h(z)) ∏ E_n(z/α)` over its nonzero zeros with
-  multiplicity, `h` a polynomial of degree at most `n` and `Σ |α|^{−n−1} < ∞`. Layer 7 uses it with
-  `ρ = n = 1` for the Hermite–Biehler functions `E(t, ·)`, which have order at most one by
-  §3.1.
-
 ### From TauCetiRoadmap.AutomorphicSpectralTheory
 
 - §0.5 (Herglotz representation): a function `F` holomorphic on `ℂ₊` with `Im F ≥ 0` is
@@ -492,29 +489,11 @@ All at the pinned Tau Ceti; paths under `TauCeti/`.
   §2.2 consumes it for a holomorphic `F` with `Im F = u`, and §6.5 for the Weyl function `m`, whose triple is
   `(Re m(i), β, μ_q/π)`.
 
-### From TauCetiRoadmap.OperatorTheory/UnboundedOperators
-
-- §4.8 (UO-D07), the endpoint classification of the two-component expression `Ju′ + Vu` on an interval,
-  with `J = [[0, −1], [1, 0]]` and `V` locally integrable and Hermitian, built from its first-order integral
-  system: at each endpoint, either every solution of `Ju′ + Vu = λu` is square-integrable near it for every
-  complex `λ` (limit circle), or for every nonreal `λ` the solutions square-integrable near it form a line
-  (limit point), and which case holds does not depend on `λ`. This is the analogue for `Ju′ + Vu` of the
-  alternative that §4.8 states for Sturm–Liouville expressions. Under the dictionary of the Conventions
-  (`J = −Ω`, `V = −Q_q`, `λ = −z`), `V` is real symmetric and integrable on every `[0, t]`, and the endpoint
-  is `∞`. §6.4 consumes it.
-
-What OperatorTheory/UnboundedOperators must provide (gap:dirac-weyl-alternative): in §4.8 (UO-D07), for
-`Ju′ + Vu = λu` on `[0, ∞)` with `J = [[0, −1], [1, 0]]` and `V` Hermitian and integrable on every `[0, t]`,
-the limit-point/limit-circle alternative at `∞` written out as a statement, with its independence of
-`λ`: either every solution is square-integrable near `∞` for every complex `λ`, or for every nonreal `λ`
-the solutions square-integrable near `∞` form a line, as its API bullet states for Sturm–Liouville
-expressions.
-
 ## How to read the build
 
 Layer 1 is the analytic engine: integrable-coefficient linear systems, their propagators and their
-holomorphic dependence on a parameter. Layer 2 is the function theory of the upper half-plane at
-the generality the later layers use. Layer 3 applies Layer 1 to the Dirac system and proves the
+holomorphic dependence on a parameter. Layer 2 is the function theory of the upper half-plane. Layer 3
+applies Layer 1 to the Dirac system and proves the
 algebra and the Hermite–Biehler property of `E` and `Ẽ`. Layer 4 passes to the scattering
 functions `a`, `b` and proves, on a finite interval, the SU(1,1) structure, the composition laws, the
 half-plane bounds, outerness of `a` and the non-linear Plancherel identity. Layer 5 takes the limit
@@ -884,16 +863,30 @@ pp. 27, 55–56, uncertified). Its API:
   the same comparison with `A² = max(2, 1 + 2α²)`, which is `3` for `α = 1`.
 - Localisation: for `h ∈ L¹(Π)` and `R > 0` there is `C_R`, depending only on `R`, with
   `M_1 P[h](x) ≤ 3 · TauCeti.maximalFunction volume (h · 1_{[−R−2, R+2]}) x + C_R ‖h‖_{L¹(Π)}` for `|x| ≤ R`.
-- Weak type: `|{x ∈ [−R, R] : M_1 P[h](x) > λ}| ≤ C_R ‖h‖_{L¹(Π)}/λ` for `λ > 0`, so `√(M_1 P[|h|])` is
-  integrable on every bounded interval (mauth2022 Lemma 5 and Corollary 1, line 421–427).
-- Strong type: `‖M_∞ P[g]‖_{L²} ≤ C‖g‖_{L²}` for `g ∈ L²(ℝ)` with an absolute constant `C` (mauth2022
-  Lemma 6 line 430).
+- Weak type: for `R > 0` there is `C′_R`, depending only on `R`, with
+  `|{x ∈ [−R, R] : M_1 P[h](x) > λ}| ≤ C′_R ‖h‖_{L¹(Π)}/λ` for `h ∈ L¹(Π)` and `λ > 0`, and
+  `|{x ∈ [−R, R] : M_1 P[ν](x) > λ}| ≤ 2C′_R (∫ dν/(1 + x²))/λ` for every Poisson-finite `ν`; so `√(M_1 P[ν])` is
+  integrable on every bounded interval (mauth2022 Lemma 5 and Corollary 1, line 421–427, for Poisson-finite
+  measures).
+- Strong type: for `1 < p < ∞` and `g ∈ L^p(ℝ)`, `‖M_∞ P[g]‖_{L^p} ≤ C_p ‖g‖_{L^p}`, with `C_p = 3K_p^{1/p}` for the
+  constant `K_p` of Tau Ceti's strong type bound on `ℝ`, `∫ (M g)^p ≤ K_p ∫ |g|^p` (mauth2022 Lemma 6 line
+  430–432 states it for `M_∞ F` with `F ∈ H^p(ℂ₊)`, which is this bound for `g = F*` by §2.6).
 - Route: `|s − x| ≤ |s − x′| + y` gives `(s − x)² + y² ≤ 3((s − x′)² + y²)`, which is the distance
   hypothesis `|s − (x + iy)| ≤ √3 |s − (x′ + iy)|` of the pinned comparison. `P(x + iy, ·)` is radially
   decreasing about `x` with integral `1` (§2.1), so its integral against `|g|` is at most the maximal
-  function by the layer-cake formula; then Tau Ceti's weak and strong type bounds.
+  function by the layer-cake formula; then Tau Ceti's weak and strong type bounds, and for `g ∈ L^p(ℝ)` the
+  integral `P[|g|]` is finite because `P(z, ·) ∈ L^{p′}`. The weak type for a density follows from the
+  localisation bullet and Tau Ceti's weak type `(1,1)` bound applied to `h · 1_{[−R−2, R+2]}`, whose `L¹` norm is at
+  most `(1 + (R + 2)²)‖h‖_{L¹(Π)}`. For a measure `ν`, let `0 < ε ≤ 1` and
+  `h_ε(x) = P[ν](x + iε)`. The function `z ↦ P[ν](z + iε)` is nonnegative and harmonic on `ℂ₊` and continuous
+  up to `ℝ`, so by §2.2 its measure is `h_ε dx` (the vague limit of its horizontal slices) and its linear
+  coefficient is `lim P[ν](i(y + ε))/y = 0`: `P[h_ε](z) = P[ν](z + iε)`. Then
+  `‖h_ε‖_{L¹(Π)} = πP[ν](i(1 + ε)) = ∫ (1 + ε)/(x² + (1 + ε)²) dν ≤ 2∫ dν/(1 + x²)`. The cones are open, so
+  if `P[ν](z) > λ` at some `z ∈ Γ_1(x)`, then `z − iε ∈ Γ_1(x)` and `P[h_ε](z − iε) > λ` for all small `ε`; hence
+  `{M_1 P[ν] > λ}` lies in the lower limit of the sets `{M_1 P[h_{1/n}] > λ}`, whose measure in `[−R, R]` is at
+  most the lower limit of theirs.
 
-*Needs:* §2.1; Tau Ceti `TauCeti.halfSpacePoissonKernel_le_mul`, `TauCeti.maximalFunction`,
+*Needs:* §2.1, §2.2; Tau Ceti `TauCeti.halfSpacePoissonKernel_le_mul`, `TauCeti.maximalFunction`,
 `TauCeti.mul_measure_lt_maximalFunction_le`, `TauCeti.lintegral_rpow_maximalFunction_le`.
 
 **Checks.**
@@ -910,6 +903,14 @@ pp. 27, 55–56, uncertified). Its API:
 - The global maximal function of `h ∈ L¹(Π)` can be infinite (for `h ≡ 1` the averages over
   `B(x, r)` stay `1`, but for `h(x) = |x|^{1/2}` they grow like `√r`), which is why the bound is
   localised to `[−R − 2, R + 2]` with a tail term.
+- A measure without density, `ν = δ₀` (`∫ dν/(1 + x²) = 1`): for `0 < |x| < √2` the supremum of
+  `P[δ₀](x′ + iy) = y/(π(x′² + y²))` over `Γ_1(x)` is approached at `|x′| = |x| − y`, `y = |x|/√2`, so
+  `M_1 P[δ₀](x) = (1 + √2)/(2π|x|) ≈ 0.384/|x|`, above the value `1/(π|x|)` reached along `x′ = 0`. It is weak
+  `L¹` near `0` (`|{|x| ≤ 1 : 0.384/|x| > λ}| = 0.768/λ` for `λ ≥ 0.384`), not integrable, and its square root is
+  integrable; the weak-type bound for densities alone does not reach it.
+- `p > 1` is needed in the strong type: for `g = 1_{[0,1]}`, `M_∞ P[g](x) ≥ P[g](x + i|x|)`, which is
+  `≈ 1/(2π|x|)` for large `|x|` (`0.00160` against `1/(200π) ≈ 0.00159` at `x = 100`); this lies in `L^p` near infinity
+  for every `p > 1` but not in `L¹`, although `‖g‖_{L¹} = 1`.
 
 ### 2.4 Fatou's theorem for Poisson integrals
 
@@ -986,40 +987,52 @@ uncertified). Its API:
 - `F` constant `c`: `F* = c`; `F = (z − i)/(z + i)`: `|F*| = 1`, `log|F*| = 0`, and
   `log|F(i)| = −∞ ≤ 0`.
 
-### 2.6 The Hardy space `H²(ℂ₊)`
+### 2.6 Hardy spaces of the half-plane
 
-Define `H²(ℂ₊)` as the holomorphic `F` on `ℂ₊` with `‖F‖² = sup_{y>0} ∫ |F(x + iy)|² dx < ∞`
+For `1 < p < ∞` define `H^p(ℂ₊)` as the holomorphic `F` on `ℂ₊` with
+`‖F‖_p^p = sup_{y>0} ∫ |F(x + iy)|^p dx < ∞`, and write `H²(ℂ₊)` for `p = 2`, with `‖F‖ = ‖F‖_2`
 (mauth2022 line 337–358). Its API:
 
-- Boundary values: `F(· + iy) → F*` in `L²(ℝ)` as `y → 0`, `‖F*‖_{L²} = ‖F‖`, `y ↦ ‖F(· + iy)‖_{L²}` is
-  nonincreasing, `F → F*` nontangentially almost everywhere, and `F = P[F*]` (mauth2022 Lemma 1 line
-  359–369, for `H^p(ℂ₊)` with `1 < p < ∞`; garnett2007, Ch. II p. 55, uncertified).
+- Boundary values: for `F ∈ H^p(ℂ₊)`, `F(· + iy) → F*` in `L^p(ℝ)` as `y → 0`, `‖F*‖_{L^p} = ‖F‖_p`,
+  `y ↦ ‖F(· + iy)‖_{L^p}` is nonincreasing, `F → F*` nontangentially almost everywhere, and `F = P[F*]`
+  (mauth2022 Lemma 1 line 359–369; garnett2007, Ch. II p. 55, uncertified).
+- Point bound: `|F(z)|^p ≤ 2‖F‖_p^p/(π Im z)` for `F ∈ H^p(ℂ₊)` and `z ∈ ℂ₊` (mauth2022 Lemma 2 line
+  370–377). Route: for `0 < ρ < Im z`, `F(z)` is the circle average of `F` on the circle of radius `ρ` about `z`
+  (Mathlib `DiffContOnCl.circleAverage`), so Jensen's inequality for the convex function `|·|^p` gives
+  `|F(z)|^p ≤` the circle average of `|F|^p` there. Averaging over `ρ ∈ (0, r)` against `2ρ dρ/r²` (Mathlib
+  `Complex.lintegral_comp_polarCoord_symm`) bounds `|F(z)|^p` by the mean of `|F|^p` over the disc of radius
+  `r < Im z` about `z`. That disc lies in the strip `|Im ζ − Im z| < r`, on which `∫ |F|^p ≤ 2r‖F‖_p^p`, so
+  `|F(z)|^p ≤ 2‖F‖_p^p/(πr)`; let `r → Im z`.
+- Maximal bound: `‖M_∞ F‖_{L^p} ≤ C_p ‖F‖_p` for `F ∈ H^p(ℂ₊)`, with the constant `C_p` of §2.3, since
+  `M_∞ F = M_∞ P[F*]` (mauth2022 Lemma 6 line 430–432).
 - Paley–Wiener: the boundary map is an isometry of `H²(ℂ₊)` onto
   `{g ∈ L²(ℝ) : 𝓕g = 0 almost everywhere on (−∞, 0)}` (Mathlib's `𝓕`), and
   `F(z) = ∫₀^∞ φ(s) e^{isz} ds` with `φ ∈ L²(0, ∞)`, `‖F‖² = 2π‖φ‖²` (mauth2022 Lemma 9 line 469–471,
   which states the inclusion of that space in the boundary values;
   garnett2007 p. 84, uncertified); in particular `H²(ℂ₊)` is a Hilbert space.
-- Cauchy formula: `F(z) = (1/(2πi)) ∫ F*(x)/(x − z) dx` and `∫ F*(x)/(x − conj z) dx = 0` for `z ∈ ℂ₊`;
-  hence `|F(z)|² ≤ ‖F‖²/(4π Im z)` (mauth2022 Lemma 2 line 370–377 states a weaker constant).
+- Cauchy formula: for `F ∈ H²(ℂ₊)`, `F(z) = (1/(2πi)) ∫ F*(x)/(x − z) dx` and `∫ F*(x)/(x − conj z) dx = 0`
+  for `z ∈ ℂ₊`; hence `|F(z)|² ≤ ‖F‖²/(4π Im z)`, sharper at `p = 2` than the point bound, whose constant
+  is `2/π`.
 - Products: `∫ F*(x) G*(x) dx = 0` for `F, G ∈ H²(ℂ₊)`; bounded multipliers: `GF ∈ H²(ℂ₊)` with
   `‖GF‖ ≤ sup|G| ‖F‖` for bounded holomorphic `G`.
 - Logarithmic bound: if `F ∈ H²(ℂ₊)` and `F ≢ 0`, then `log|F*| ∈ L¹(Π)`, so `F* ≠ 0` almost everywhere,
   and `log|F(z)| ≤ P[log|F*|](z)` for every `z ∈ ℂ₊` (garnett2007, Ch. II §4, uncertified). Route: for
   `ε > 0` the translate `F(· + iε)` is holomorphic near the closed half-plane and bounded there by
-  `‖F‖/√(4πε)` (the point bound above). So §2.5 gives the bound for it, with boundary function
+  `‖F‖/√(4πε)` (the bound of the Cauchy formula above). So §2.5 gives the bound for it, with boundary function
   `F(· + iε)` on `ℝ`. As `ε → 0`, `log⁺|F(· + iε)| → log⁺|F*|` in `L¹(P(z, x) dx)`. This is because
   `|log⁺a − log⁺b| ≤ |a − b|` for `a, b ≥ 0`, `F(· + iε) → F*` in `L²(ℝ)`, and `∫ P(z, x)² dx = 1/(2π Im z)`.
   Take a sequence `εₙ → 0` along which `F(· + iεₙ) → F*` almost everywhere. Fatou's lemma for
   `log⁻|F(· + iεₙ)|` then gives the bound in the limit at every `z` with `F(z) ≠ 0`. At one such `z` it
   also gives the integrability of `log⁻|F*|`, while `log⁺|F*| ≤ |F*|²` is integrable.
 - Weak convergence `Fₙ ⇀ F` in `H²(ℂ₊)` implies locally uniform convergence on `ℂ₊`
-  (mauth2022 Lemma 11 line 487), and `‖M_∞ F‖_{L²} ≤ C‖F‖` (mauth2022 Lemma 6, via §2.3).
+  (mauth2022 Lemma 11 line 487).
 - `H²(ℂ₋)` is defined by reflection, and its boundary values are the complex conjugates of those of
   `H²(ℂ₊)`, orthogonal to them in `L²(ℝ)`.
 
 *Needs:* §2.1–§2.5; Mathlib `MeasureTheory.Lp.fourierTransformₗᵢ`, `Real.fourier_real_eq`,
 `MeasureTheory.lintegral_liminf_le`, `MeasureTheory.tendstoInMeasure_of_tendsto_eLpNorm`,
-`MeasureTheory.TendstoInMeasure.exists_seq_tendsto_ae`.
+`MeasureTheory.TendstoInMeasure.exists_seq_tendsto_ae`, `DiffContOnCl.circleAverage`, `ConvexOn.map_integral_le`,
+`Complex.lintegral_comp_polarCoord_symm`.
 
 **Checks.**
 
@@ -1032,6 +1045,11 @@ Define `H²(ℂ₊)` as the holomorphic `F` on `ℂ₊` with `‖F‖² = sup_{y
   by `Im z`: at `z = i` it is `−1 − log 2 ≈ −1.693 < −0.693`. For `F ≡ 0` the boundary function `log|F*|` is
   identically `−∞`, so `F ≢ 0` is needed.
 - `F ≡ 1` is not in `H²(ℂ₊)` (the integrals are infinite), and `1/(z − i)` is not holomorphic on `ℂ₊`.
+- `p ≠ 2`: `F(z) = (z + i)^{−1/2}` (principal branch, holomorphic on `ℂ₊` since `Im(z + i) > 1`) lies in `H³(ℂ₊)`
+  and not in `H²(ℂ₊)`. Substituting `x = (1 + y)u`, `∫ |F(x + iy)|³ dx = (1 + y)^{−1/2} ∫ (1 + u²)^{−3/4} du`, so
+  `‖F‖_3³ = √π Γ(1/4)/Γ(3/4) ≈ 5.244`, while `∫ (1 + u²)^{−1/2} du = ∞`. The point bound at `z = i` reads
+  `|F(i)|³ = 2^{−3/2} ≈ 0.354 ≤ 2 · 5.244/π ≈ 3.338`; at `p = 2` and `F = 1/(z + i)` it gives `|F(i)|² ≤ 2`, against
+  the attained Cauchy-formula value `1/4`.
 - Mathlib-convention witness: for `g(x) = 1/(x + i)`, closing the contour in the lower half-plane
   gives `𝓕g(w) = −2πi e^{−2πw}` for `w > 0`, and `𝓕g(w) = 0` for `w < 0`; the vanishing condition is
   on the negative frequencies, and a statement with `(0, ∞)` describes `H²(ℂ₋)`.
@@ -1124,7 +1142,7 @@ Mathlib (Bochner integration, harmonic functions, analyticity of holomorphic fun
 model of `ℂ` and the area of the disc, differentiation under the integral, the disc Poisson kernel and
 Poisson formula, Lebesgue differentiation and the Lebesgue decomposition, the `L²` Fourier transform,
 convergence in measure, Phragmén–Lindelöf, Banach–Alaoglu, Jensen's inequality, Fatou's lemma, Tonelli's
-theorem); Tau Ceti (the half-space Poisson kernel and Poisson integral, maximal function, half-plane
+theorem, the mean value property of holomorphic functions, polar coordinates); Tau Ceti (the half-space Poisson kernel and Poisson integral, maximal function, half-plane
 primitives, mean-value converse, F. and M. Riesz uniqueness, Jensen's bound for circle averages, Cayley
 transform, the dual of `L¹` of a finite measure); AutomorphicSpectralTheory §0.5 (the Herglotz
 representation) for §2.2.
@@ -1171,6 +1189,9 @@ fundamental systems agree at every `t ≥ 0` (`existsUnique_diracFundamentalSyst
   (romanov2014 (12) line 758).
 - For a real potential, `A(t, −z) = A(t, z)`, `D(t, −z) = D(t, z)`, `B(t, −z) = −B(t, z)`,
   `C(t, −z) = −C(t, z)`, and `M(t, 0) = diag(e^{F(t)}, e^{−F(t)})` with `F(t) = ∫₀ᵗ f`.
+- Conjugation by `Ω` changes the sign of the potential: `Ω Q_q Ω⁻¹ = −Q_q = Q_{−q}`, so `ΩX` solves the
+  system of `−q` whenever `X` solves that of `q`, and `M_{−q}(t, z) = Ω M_q(t, z) Ω⁻¹`; that is,
+  `A_{−q} = D_q`, `B_{−q} = −C_q`, `C_{−q} = −B_q`, `D_{−q} = A_q`, so `Θ_{−q} = ΩΦ_q` and `Φ_{−q} = −ΩΘ_q`.
 
 *Needs:* §1.2, §1.3, §1.4, §1.6; Mathlib `Matrix.det_fin_two`, `Matrix.toEuclideanCLM`,
 `EuclideanSpace.equiv`.
@@ -1188,6 +1209,10 @@ fundamental systems agree at every `t ≥ 0` (`existsUnique_diracFundamentalSyst
   `M(1, 0) = exp(ΩQ_q) = cosh(√2) · 1 + (sinh(√2)/√2) ΩQ_q ≈ [[3.5465, −1.3683], [−1.3683, 0.8099]]`.
   Its Euclidean operator norm is `e^{√2} ≈ 4.1133`, so the bound `exp(t|z| + ∫|q|)` is attained. Its
   maximum-row-sum norm is `≈ 4.9148`, so the bound fails for the sup-norm carrier `Fin 2 → ℂ`.
+- Conjugation by `Ω`: for `f = c` at `z = 0`, `Ω diag(e^{ct}, e^{−ct}) Ω⁻¹ = diag(e^{−ct}, e^{ct})`, the matrix of
+  the potential `−c` in the second Check. In the free case `M(t, z)` is a rotation and commutes with `Ω`,
+  as `−0 = 0` requires; reading the sign change as `M_{−q} = M_q⁻¹` would give the inverse rotation
+  `[[cos tz, sin tz], [−sin tz, cos tz]]` at `q = 0` instead.
 
 ### 3.2 The Hermite–Biehler functions `E` and `Ẽ`
 
@@ -1206,6 +1231,8 @@ mauth2022 line 182–183); for a fundamental system these are `DiracFundamentalS
   everywhere; for real potentials these are poltoratski2024 (2.6)–(2.7) (line 295–306) and
   mauth2022 Lemma 17 (line 646), and `φ(t, 0) = 0`.
 - Kernel identity: `(A(t, z) conj C(t, w) − C(t, z) conj A(t, w))/(conj w − z) = ∫₀ᵗ Θ(s, w)* Θ(s, z) ds`.
+- Sign of the potential: `E_{−q} = iẼ_q` and `Ẽ_{−q} = −iE_q`, by the conjugation by `Ω` of §3.1
+  (`E_{−q} = D_q + iB_q`, `Ẽ_{−q} = −C_q − iA_q`).
 
 *Needs:* §3.1.
 
@@ -1216,6 +1243,9 @@ mauth2022 line 182–183); for a fundamental system these are `DiracFundamentalS
   `e^{∫|q|} = e^{ct}` is attained, so the bound is sharp.
 - The reflection is needed in the equation: `∂ₜE = −izE + qE` (without `#`) would give
   `E(t, 0) = e^{ict}` for `q = ic`, while the solution of §3.1 gives `cosh ct + i sinh ct`.
+- Sign of the potential, `f = c` at `z = 0`: `E_{−c}(t, 0) = e^{−ct}` (the second Check, for `−c`) equals
+  `iẼ_c(t, 0) = i(−i e^{−ct})`, and `Ẽ_{−c}(t, 0) = −i e^{ct} = −iE_c(t, 0)`; the relation without the factor `i`,
+  `E_{−q} = Ẽ_q`, would give `−i e^{−ct}`.
 
 ### 3.3 The Hermite–Biehler property
 
@@ -1699,14 +1729,13 @@ Ch. 2, waived). Its API:
   `Im(conj u · v) = (|u − iv|² − |u + iv|²)/4` gives the second description, a disc because
   `|E(t, z)| > |E#(t, z)|` (§3.3); `u − iv` vanishes at `w = −Ẽ/E`, where `u + iv ≠ 0` because
   `(u, v) ≠ 0`, so that point lies inside the disc. Limit point: if `Θ(·, z₀) ∈ L²` for some `z₀ ∈ ℂ₊`,
-  then `Φ(·, z₀) ∈ L²` as well, since `Φ + wΘ` is square-integrable for `w` in the nonempty `⋂_t D_t(z₀)`.
-  So at `λ₀ = −z₀` the square-integrable solutions do not form a line, `∞` is a limit-circle endpoint by
-  the alternative of OperatorTheory/UnboundedOperators §4.8 (dictionary of the Conventions), and every
-  solution is square-integrable at every `z`, in particular at `z = 0`; there `det[Θ, Φ] = 1` gives
-  `1 ≤ |Θ||Φ|`, which is not integrable on `[0, ∞)`.
+  then `Φ(·, z₀) ∈ L²` as well, since `Φ + wΘ` is square-integrable for `w` in `⋂_t D_t(z₀)`, which is
+  nonempty as a decreasing family of closed discs. But `det M(t, z₀) = 1` (§3.1) and the Cauchy–Schwarz
+  inequality in `ℂ²` give `1 = |A D − B C| ≤ |Θ(t, z₀)| |Φ(t, z₀)|` for every `t ≥ 0`, while the right side is
+  integrable on `[0, ∞)` by the Cauchy–Schwarz inequality in `L²`, a contradiction. Uniqueness of `m(z)`: if
+  `Φ + wΘ` and `Φ + w′Θ` are square-integrable with `w ≠ w′`, so is `Θ`.
 
-*Needs:* §3.1, §3.2, §3.3; OperatorTheory/UnboundedOperators §4.8 (Weyl's alternative for `Ju′ + Vu` and
-its independence of the spectral parameter); Mathlib `TendstoLocallyUniformlyOn.differentiableOn`.
+*Needs:* §3.1, §3.2, §3.3; Mathlib `TendstoLocallyUniformlyOn.differentiableOn`.
 
 **Checks.**
 
@@ -1752,6 +1781,8 @@ and `E(t, ·)/Ẽ(t, ·)` for `μ̃_q`. Prove that both measures exist for every
 - Compact support: if `q = 0` on `(T, ∞)` then `β = 0`, `μ_q = dx/|E(T, x)|²` and `μ̃_q = dx/|Ẽ(T, x)|²`.
 - Free case: `μ = μ̃ = dx`.
 - `μ_q` and `μ̃_q` are determined by `m`, which depends only on `q` on `[0, ∞)`.
+- Sign of the potential: `m_{−q} = −1/m_q`, because `−Ẽ_{−q}/E_{−q} = E_q/Ẽ_q` (§3.2), whose limit is the
+  Dirichlet Weyl function `−1/m_q` of §6.4; hence `μ_{−q} = μ̃_q`, `μ̃_{−q} = μ_q` and `w_{−q} = w̃_q`.
 - Truncations: let `C = TauCeti.boundaryCayley`, let `μ_T = dx/|E(T, ·)|²` be the Neumann spectral measure of
   the truncation `q_T` (compact-support bullet) and `m_T = −Ẽ(T, ·)/E(T, ·)` its Weyl function (§6.4), and
   on Mathlib's `Circle`, written `X`, let `ν_T = C_*(μ_T/(π(1 + x²)))` and `ν = C_*(μ_q/(π(1 + x²))) + β δ₁`. Then
@@ -1769,7 +1800,7 @@ and `E(t, ·)/Ẽ(t, ·)` for `μ̃_q`. Prove that both measures exist for every
   for every continuous `g`, which is weak convergence (Mathlib
   `MeasureTheory.FiniteMeasure.tendsto_iff_forall_integral_rclike_tendsto`).
 
-*Needs:* §2.2, §2.4, §2.5, §6.4; AutomorphicSpectralTheory §0.5; Tau Ceti `TauCeti.boundaryCayley`,
+*Needs:* §2.2, §2.4, §2.5, §3.2, §6.4; AutomorphicSpectralTheory §0.5; Tau Ceti `TauCeti.boundaryCayley`,
 `MeasureTheory.Measure.herglotzTransform`, `MeasureTheory.Measure.herglotzTransform_zero`,
 `TauCeti.I_mul_herglotzTransform_cayley_eq`; Mathlib `span_fourier_closure_eq_top`,
 `AddCircle.homeomorphCircle'`, `MeasureTheory.FiniteMeasure.tendsto_iff_forall_integral_rclike_tendsto`.
@@ -1791,6 +1822,9 @@ and `E(t, ·)/Ẽ(t, ·)` for `μ̃_q`. Prove that both measures exist for every
   in `T` between `1/2` and `3/2` with period `π/√3` and has no limit, while the limit density is
   `w(2) = Im m(2 + i0) = √3/2 ≈ 0.866025`, its mean over a period. Convergence of the densities is not part
   of the statement and fails.
+- Sign of the potential, the second Check for `−c`: `m_{−c}(0) = i e^{2cT} = −1/(i e^{−2cT})`, so
+  `w_{−c}(0) = e^{2cT} = w̃_c(0)`; the relation `m_{−q} = m_q` would give `e^{−2cT}`, and `m_{−q} = −m_q` a
+  negative imaginary part.
 
 ### 6.6 The isometric embedding and uniqueness of the spectral measure
 
@@ -1910,7 +1944,7 @@ The measures `ν_T` converge weakly to `ν` and `ν_T(X) → ν(X)` (truncation 
 ### Dependencies
 
 Layer 1 (§1.2 for §6.3), Layer 2 (§2.1, §2.2, §2.4–§2.7), Layer 3, Layer 4 (§4.1–§4.4);
-OperatorTheory/UnboundedOperators §4.8 for §6.4; AutomorphicSpectralTheory §0.5 for §6.5; Tau Ceti (the
+AutomorphicSpectralTheory §0.5 for §6.5; Tau Ceti (the
 Herglotz transform on the circle and its Cayley identity, the boundary Cayley map and the Cayley
 pushforward, the relative entropy and its lower semicontinuity); Mathlib (absolutely continuous functions
 and their fundamental theorem of calculus, the exchange of an interval integral with an integral, locally
@@ -1925,21 +1959,34 @@ From here on the potential is real, `q = f`.
 
 Call a bounded holomorphic `θ` on `ℂ₊` inner when `|θ*| = 1` almost everywhere (§2.5), and meromorphic
 inner when it moreover extends to a meromorphic function on `ℂ`; for `λ ∈ ℂ₊` the Blaschke factor is
-`b_λ(z) = (z − λ)/(z − conj λ)` (poltoratski2024 line 307–331; mauth2022 line 446–453). Its API, for `E`
-Hermite–Biehler, entire of order at most one, with no real zeros:
+`b_λ(z) = (z − λ)/(z − conj λ)` (poltoratski2024 line 307–331; mauth2022 line 446–453). Its API:
 
-- `θ_E = E#/E` is meromorphic inner, and products of meromorphic inner functions are meromorphic inner.
+- Representation: every meromorphic inner `θ` is `θ(z) = α e^{icz} B(z)` with `|α| = 1`, `c ≥ 0` and `B` the
+  Blaschke product of the zeros `(ζₙ)` of `θ` in `ℂ₊`, counted with multiplicity: `B = ∏ₙ εₙ b_{ζₙ}` with
+  `εₙ = |ζₙ² + 1|/(ζₙ² + 1)` (`εₙ = 1` if `ζₙ = i`), so that each factor is nonnegative at `i`. The zeros satisfy
+  `Σₙ Im ζₙ/(1 + |ζₙ|²) < ∞` and, if there are infinitely many, `|ζₙ| → ∞`; `θ` has neither zeros nor poles on `ℝ`;
+  and `|θ′(x)| = c + Σₙ 2 Im ζₙ/|x − ζₙ|²` for every `x ∈ ℝ` (poltoratski2024 line 312–321, and line 335–346 in
+  the proof of Lemma 1).
+- Products of meromorphic inner functions are meromorphic inner.
+- For `E` Hermite–Biehler with no real zeros, `θ_E = E#/E` is meromorphic inner, and its zeros in `ℂ₊` are the
+  conjugates of the zeros of `E`.
 - Writing `E(x) = |E(x)| e^{−iψ(x)}` with `ψ` continuous on `ℝ`, so that `ψ = −arg E` (for `E = E(t, ·)`
   one may take `ψ = −φ(t, ·)`, the negative of the branch `φ` of §3.2), `θ_E(x) = e^{2iψ(x)}` and
-  `ψ′(x) = π K(x, x)/|E(x)|² > 0`, with `K` the kernel of §6.1.
-- If `(ζₙ)` are the zeros of `θ_E` in `ℂ₊` with multiplicity (the conjugates of the zeros of `E`), then
-  `Σ Im ζₙ/(1 + |ζₙ|²) < ∞` and there is `c ≥ 0` with `2ψ′(x) = |θ_E′(x)| = c + Σₙ 2 Im ζₙ/|x − ζₙ|²` for every
-  `x ∈ ℝ` (poltoratski2024 line 312–321 and the proof of Lemma 1, line 337–346).
-- Route: Hadamard factorisation of `E` with genus one (AnalyticNumberTheoryPartI §0.23) gives
-  `E′/E = β + Σₙ (1/(z − zₙ) + 1/zₙ)`; on `ℝ`, `θ_E′/θ_E = −2i Im(E′/E)`; the Hermite–Biehler inequality
-  `|θ_E| ≤ 1` on `ℂ₊`, evaluated along `iy`, forces the Blaschke condition and `c ≥ 0`.
+  `ψ′(x) = π K(x, x)/|E(x)|² > 0`, with `K` the kernel of §6.1; hence, by the representation,
+  `2ψ′(x) = |θ_E′(x)| = c + Σₙ 2 Im ζₙ/|x − ζₙ|²` for every `x ∈ ℝ`, with `(ζₙ)` the zeros of `θ_E` in `ℂ₊`.
+- Route for the representation: `θθ# = 1` almost everywhere on `ℝ`, hence identically, as meromorphic
+  functions; so the poles of `θ` are the points `conj ζₙ`, none is real, and the zeros of `θ ≢ 0` do not
+  accumulate in `ℂ`. For the first `N` zeros the finite Blaschke product `B_N` is continuous on the closed
+  half-plane, tends to a unimodular limit at `∞` and is unimodular on `ℝ`, so `θ/B_N` is bounded and
+  holomorphic on `ℂ₊` with unimodular boundary values, hence bounded by `1` (`F = P[F*]`, §2.5). At a point
+  `z₀` with `θ(z₀) ≠ 0` this gives `∏_{n ≤ N} |b_{ζₙ}(z₀)| ≥ |θ(z₀)| > 0` for every `N`, which is the Blaschke
+  condition; with `|ζₙ| → ∞` it makes `B_N → B` locally uniformly on `ℂ` off the points `conj ζₙ`. Then
+  `u = −log|θ/B|` is nonnegative and harmonic on `ℂ₊`, continuous up to `ℝ` and `0` on `ℝ`, so its measure in
+  §2.2, the vague limit of `u(x + iy) dx`, is `0`, and `u = c Im z` with `c ≥ 0`; `θ/(e^{icz}B)` is then a
+  holomorphic function of modulus `1`, a constant `α`. On `ℝ`, `θ′/θ = ic + Σₙ b′_{ζₙ}/b_{ζₙ}` with
+  `b′_ζ(x)/b_ζ(x) = 2i Im ζ/|x − ζ|²`, and `|θ| = 1` there.
 
-*Needs:* §2.5, §3.3, §6.1; AnalyticNumberTheoryPartI §0.23.
+*Needs:* §2.2, §2.5, §3.3, §6.1.
 
 **Checks.**
 
@@ -1949,13 +1996,23 @@ Hermite–Biehler, entire of order at most one, with no real zeros:
   `ψ′ = 1/(1 + x²) = π(1/π)/(1 + x²)`.
 - `e^{−i/z}` is inner but has an essential singularity at `0`, so it is not meromorphic inner; `e^{−iz}`
   is unbounded on `ℂ₊` (`|e^{−iz}| = e^{Im z}`), so the reflected convention `E/E#` is not inner.
+- A meromorphic inner function that is no `θ_E` with `E` of order at most one: the zeros `ζₙ = √n + i/n`, `n ≥ 1`, have
+  `Σ Im ζₙ/(1 + |ζₙ|²) ≤ Σ n^{−2} < ∞` and `|ζₙ| → ∞`, so their Blaschke product `B` is meromorphic inner with
+  `c = 0`, and `|B′(x)| = Σₙ (2/n)/((x − √n)² + n^{−2})` converges at every real `x` (its terms are `O(n^{−2})`).
+  Since `Σ |ζₙ|^{−2} = Σ n²/(n³ + 1) = ∞`, while the zeros of an entire function of order at most one have
+  `Σ |α|^{−2} < ∞`, no Hermite–Biehler `E` of order at most one has `θ_E = B`; the representation, and §7.2,
+  apply to `B` all the same.
+- Normalisation: for `ζ = 1 + i`, `ε = √5/(1 + 2i)` and `b_ζ(i) = 1/(1 − 2i)`, so `ε b_ζ(i) = √5/5 > 0`; the
+  representation of `θ = b_ζ` has `c = 0`, `B = ε b_ζ` and `α = (1 + 2i)/√5`, while `|θ′(x)| = 2/((x − 1)² + 1)` does
+  not see `α`.
 
 ### 7.2 Zeros near points where the phase derivative varies
 
-Let `θ` be meromorphic inner with the representation of §7.1, `0 < ε < 1` and `x, y ∈ ℝ` with
+Let `θ` be meromorphic inner, `0 < ε < 1` and `x, y ∈ ℝ` with
 `|θ′(x)| > (1 + ε)|θ′(y)|`. Prove that `θ` has a zero in the disc `{ζ : |ζ − x| < 3|y − x|/ε}`
 (poltoratski2024 Lemma 1 line 332–360; mauth2022 Lemma 29 line 1624–1627 with radius `4|y − x|/ε` for
-`0 < ε < ε₀` and a small fixed `ε₀`). Route: some summand satisfies the same inequality, which places `ζₙ`
+`0 < ε < ε₀` and a small fixed `ε₀`). Route: in the representation `|θ′| = c + Σₙ 2 Im ζₙ/|· − ζₙ|²` of §7.1
+some summand satisfies the same inequality, which places `ζₙ`
 inside an Apollonius circle with foci `x` and `y`: `|y − ζₙ| > √(1 + ε)|x − ζₙ|`, so
 `|x − ζₙ| < |y − x|/(√(1 + ε) − 1) = (√(1 + ε) + 1)|y − x|/ε < 3|y − x|/ε` for `0 < ε < 1`.
 
@@ -2000,7 +2057,7 @@ of a zero of `θ(t, ·)` (poltoratski2024 §4 line 361–468). Its API:
 
 ### Dependencies
 
-Layer 1 (§1.6), Layer 2 (§2.5), Layer 3, Layer 6 (§6.1); AnalyticNumberTheoryPartI §0.23.
+Layer 1 (§1.6), Layer 2 (§2.2, §2.5), Layer 3, Layer 6 (§6.1).
 
 ## Layer 8: Universality and the approximation of Hermite–Biehler functions
 
@@ -2009,6 +2066,17 @@ reproducing kernel of `B(E(t, ·))` (§6.2), so that `K(t, λ, z) = D(t, λ, z)/
 `D(t, λ, z) = A(t, z)C(t, λ) − C(t, z)A(t, λ)`; and `Sinc(t, λ, z) = sin(t(λ − z))/(π(λ − z))`, the free
 kernel, with numerator `sin(t(λ − z))` (poltoratski2024 (2.3) line 241–244 and (7.1) line 804–813;
 mauth2022 line 1200). `w`, `w̃` are the densities of §6.5.
+
+Each statement of §8.2–§8.6 is also a target for the Dirichlet data, with its own exceptional null set: with
+`Φ`, `Ẽ`, the kernel `K̃_t` of §6.2, `μ̃`, `w̃`, `T̃₀`, `T̃₁`, the numerator
+`D̃(t, λ, z) = B(t, z)D(t, λ) − D(t, z)B(t, λ)` and the Dirac inner function `θ̃(t, ·)` of §7.3 in place of `Θ`, `E`,
+`K_t`, `μ`, `w`, `T₀`, `T₁`, `D(t, λ, z)` and `θ(t, ·)`. It is the Neumann statement for the potential `−f`, which
+is again real and square-integrable. By the conjugation by `Ω` (§3.1, §3.2, §6.5), `Θ_{−f} = ΩΦ_f`, so
+`K_{t,−f} = K̃_{t,f}` (`Ω` is orthogonal) and `D_{−f} = D̃_f`; `μ_{−f} = μ̃_f` and `w_{−f} = w̃_f`; and
+`E_{−f} = iẼ_f`, so the sets `T₀`, `T₁` of `−f` are `T̃₀`, `T̃₁` and `θ_{−f} = −θ̃_f`. An approximation
+`E_{−f} ≈ α(…)` of §8.6, with `θ_{−f} ≈ conj(α)²(…)` and `α² ∂_zθ_{−f} = (…)`, is then the approximation
+`Ẽ_f ≈ α̃(…)`, `θ̃_f ≈ conj(α̃)²(…)`, `α̃² ∂_zθ̃_f = (…)` for the unimodular `α̃ = −iα`. Free case: `B = −sin tz`,
+`D = cos tz` and `D̃(t, λ, z) = sin(t(λ − z))`, the free numerator, with `w̃ = 1`.
 
 ### 8.1 Boxes and resonance sets
 
@@ -2141,7 +2209,7 @@ with the determinant identity (2.2). The error of §8.5 is a
 supremum over the box, and `sinh(2t y(t)) > sinh 2` when `t y(t) > 1`, so no estimate depends on which zero is
 chosen; continuity enters only through `β`, hence `α`.
 
-*Needs:* §3.2, §7.3, §8.2, §8.5.
+*Needs:* §3.2, §6.2, §7.3, §8.1, §8.2, §8.5.
 
 **Checks.**
 
@@ -2197,8 +2265,8 @@ functions for `E` and for `Ẽ` serves both. For `t ∈ T₀(s, C) ∩ T₁(s, C
 lies in the box of §8.6 below the height `−1/t`, and §8.6 gives the approximation with it, uniformly in the
 choice. For `t ∉ T₀(s, C)` the two-term form gives `E(t, ·)` within `o(1)` of `(a/|a|) e^{−itz}/√w(s)` on all of
 `Q(s, C/t)`, and `γ(2C) sin(t(z − u) + 2iC) = i e^{−it(z − u)} + O(e^{−3C})` there, so (1) holds with
-`z(t) = u − 2iC(t)/t` for any real `u` and `α = −i e^{−itu} a/|a|`. For `Ẽ = B − iD` the same argument runs with
-`B`, `D`, `μ̃` and `w̃` in place of `A`, `C`, `μ` and `w`.
+`z(t) = u − 2iC(t)/t` for any real `u` and `α = −i e^{−itu} a/|a|`. For `Ẽ` the same argument runs with the
+Dirichlet forms of §8.5 and §8.6 (introduction of this layer), that is, for the potential `−f`.
 
 Route of (3), with constant boxes: at an `s` where §8.5 holds and `w(s) > 0`, fix `δ > 0`, let `ε > 0` be
 such that every two-term form allowed by the route (`c₁`, `c₂` within the bounds it gives and
@@ -2210,7 +2278,7 @@ the factor `1 + ε` on `J_t` would give, by §7.2, a zero within `24π/(εt)` of
 the parameters are `δ`-close, `E` is within `O(δe^D) + o(1)` of `e^{itx₀} e^{−itz}/√w(s)` on `Q(s, D/t)`, and
 `δ` is arbitrary: `α = ie^{itx₀}`.
 
-*Needs:* §7.2, §8.5, §8.6; Tau Ceti `TauCeti.rouche_exists_eq_zero_iff` (Rouché's theorem).
+*Needs:* §3.2, §6.5, §7.2, §8.1, §8.5, §8.6; Tau Ceti `TauCeti.rouche_exists_eq_zero_iff` (Rouché's theorem).
 
 **Checks.**
 
@@ -2246,8 +2314,8 @@ be any zero of `E(t, ·)` in `Q(s, C(t)/t)`, and a unimodular `α(t)` with
 `p(t) > C(t)/t` for `t ∉ T₀(s, C)`, `p(t) ≤ C(t)/t` for `t ∈ T₀(s, C)`, and `cos(t(ũ(t) − u(t))) = √(w(s) w̃(s))`
 (poltoratski2024 Lemma 7 line 1028–1097, (8.1); mauth2022 Lemma 43 line 3140). Route: take `C(t)` no larger
 than a common function of §8.7(1) for `E` and `Ẽ` and with `e^{3C(t)}(η_{C(t)}(t) + η̃_{C(t)}(t)) → 0`, by the
-diagonal argument of §8.7, where `η_C` is the error of §8.5 on `Q(s, C/t)` and `η̃_C` the same error for the
-data `B`, `D`, `μ̃`, `w̃` of `Ẽ`. Let `t ∈ T₁(s, C) ∩ T̃₁(s, C)` be large. On `Q(s, C/t)`, where
+diagonal argument of §8.7, where `η_C` is the error of §8.5 on `Q(s, C/t)` and `η̃_C` the error of its Dirichlet
+form (introduction of this layer), for `D̃` and `w̃`. Let `t ∈ T₁(s, C) ∩ T̃₁(s, C)` be large. On `Q(s, C/t)`, where
 `|e^{∓itz}| ≤ e^C`, `E(t, ·)` is within `O(e^Cη_C)` of a form `T = a e^{−itz} + b e^{itz}`: for `t ∈ T₀(s, C)`
 the form of §8.6 at the chosen zero `z(t)` (its route gives this error, because
 `2|β|²w(s) = sinh(2tp) + O(η_C)` with `tp > 1`), otherwise the two-term form of §8.7's route; in both cases
@@ -2266,7 +2334,7 @@ and `ũ` read from the arguments of `a` and `ã`. In both cases the mean of `Im(
 `cos(t(ũ − u))/√(w w̃) = 1 + O(e^C(η_C + η̃_C) + e^{2−4C})`; since `√(w w̃) ≤ 1` (§6.5), a move of `tũ` by
 `O((e^C(η_C + η̃_C) + e^{2−4C})^{1/2}) = o(e^{−C})` makes the cosine relation exact.
 
-*Needs:* §3.2, §6.5, §8.5, §8.6, §8.7.
+*Needs:* §3.2, §6.5, §8.1, §8.5, §8.6, §8.7.
 
 **Checks.**
 
@@ -2430,7 +2498,7 @@ which needs no measurability, gives for each `N` that almost every `s ∈ G_N` l
 counted for `C′`. Hence the statement for `C = 1, 2, 3, …`, off the union of the corresponding null sets,
 gives it for every `C > 0`, by comparison with `C′ = ⌈C⌉`.
 
-*Needs:* §3.1, §3.2, §4.3, §6.8, §8.8, §8.9, §9.1, §9.2; Mathlib Borel–Cantelli
+*Needs:* §3.1, §3.2, §4.3, §6.8, §8.1, §8.8, §8.9, §9.1, §9.2; Mathlib Borel–Cantelli
 (`MeasureTheory.measure_limsup_atTop_eq_zero`, stated for outer measures).
 
 **Checks.**
@@ -2464,17 +2532,16 @@ system this is `DiracFundamentalSystem.IsResonanceFree` in `Suggested.lean`. Its
 
 - For `s ∈ R(f)` there is `C(t) → ∞` such that `Q(s, C(t)/t)` contains no zero of `E(t, ·)` or of `Ẽ(t, ·)`
   for all large `t`: with `T_k = max(k, T(s, 1), …, T(s, k))`, put `C(t) = k` for `T_k < t ≤ T_{k+1}`.
-- Conjugating the system by `Ω` changes the sign of the potential: `M_{−f}(t, z) = Ω M_f(t, z) Ω⁻¹`, that
-  is `A_{−f} = D_f`, `C_{−f} = −B_f`, `B_{−f} = −C_f`, `D_{−f} = A_f`. Hence `Ẽ_f(t, ·) = −i E_{−f}(t, ·)` and
-  `Ẽ_{−f}(t, ·) = −i E_f(t, ·)`, so `R(f) = R(−f)`; the Weyl function of `−f` is `−1/m_f`, so the density
-  `w_{−f}` of §6.5 is the Dirichlet density `w̃_f`.
+- `R(f) = R(−f)`: by the conjugation by `Ω` (§3.1, §3.2), `E_{−f}(t, ·) = iẼ_f(t, ·)` and
+  `Ẽ_{−f}(t, ·) = −i E_f(t, ·)`, so the sets `T₀(s, C)`, `T̃₀(s, C)` of `−f` are the sets `T̃₀(s, C)`, `T₀(s, C)` of
+  `f`; and the density `w_{−f}` of §6.5 is the Dirichlet density `w̃_f` (§6.5, `m_{−f} = −1/m_f`).
 - If `f` vanishes on `[T₀, ∞)` for some `T₀ > 0`, then `R(f) = ℝ`: for `t ≥ T₀`,
   `E(t, ·) = e^{−i(t−T₀)z} E(T₀, ·)` and `Ẽ(t, ·) = e^{−i(t−T₀)z} Ẽ(T₀, ·)` (the free equation), whose zeros are
   the fixed zeros of `E(T₀, ·)` and `Ẽ(T₀, ·)`, all in the open lower half-plane (§3.3); the finitely many in
   the compact box `Q(s, C/T₀)`, which contains `Q(s, C/t)` for `t ≥ T₀`, lie at a distance at least some
   `δ > 0` from `ℝ`, so `Q(s, C/t)`, where `|Im z| ≤ C/t`, contains none of them for `t > max(T₀, C/δ)`.
 
-*Needs:* §3.1, §3.3, §6.4, §6.5, §8.1.
+*Needs:* §3.1, §3.2, §3.3, §6.4, §6.5, §8.1.
 
 **Checks.**
 
@@ -2516,7 +2583,7 @@ exceptional null sets of §8.7(3) for `f` and for `−f` and of `{w w̃ = 0}` (�
 (§9.4), gives that of `Ẽ`. The determinant identity (2.2) on `ℝ` gives `(conj β − β)/√(w w̃) = 2i`, and
 continuity of `Ẽ(t, s)/E(t, s)` in `t` makes `β` constant.
 
-*Needs:* §3.2, §4.1, §6.5, §6.8, §8.7, §9.4.
+*Needs:* §3.2, §4.1, §6.5, §6.8, §8.1, §8.7, §9.4.
 
 **Checks.**
 
@@ -2596,8 +2663,11 @@ Layer 3, Layer 4, Layer 5 (§5.2, §5.5, §5.6), Layer 6 (§6.4, §6.5, §6.8), 
   fourth Check). This roadmap uses §9 for the subinterval
   calculus, Lemma 9 and the deduction (9.9)–(9.10), and states the theorem at resonance-free points.
 - **mauth2022** — L. Mauth, *On pointwise convergence of the non-linear Fourier transform*, arXiv:2210.12286
-  v1; the detailed account of poltoratski2024's earlier version, used for Layers 2, 3, 6 and 8 (§§2, 3.1–3.2,
-  3.7), whose dictionary (line 65–87) matches the numbering.
+  v1; the detailed account of poltoratski2024's earlier version, used mainly for Layers 2, 3, 6, 8 and 9 (§§2,
+  3.1–3.3, 3.7). Its dictionary (line 65–87) refers to that earlier version: it agrees with version 14 for
+  Theorem 1, Lemmas 1–6 and Corollaries 1–2, and from there on the pairs cited here are matched by content,
+  not by the dictionary (its Corollary 6, Lemma 43 and Lemma 45 are Corollary 3, Lemma 7 and Lemma 8 of
+  version 14, where the dictionary lists Corollary 4, Lemma 8 and Lemma 9).
 - **denisov2006** — S. A. Denisov, *Continuous analogs of polynomials orthogonal on the unit circle. Krein
   systems*, IMRS 2006, Art. ID 54517; arXiv:0908.4049 v1 (§9 Lemmas 9.1–9.2, (157)–(158); §11 Theorem
   11.1, (194); §13).
