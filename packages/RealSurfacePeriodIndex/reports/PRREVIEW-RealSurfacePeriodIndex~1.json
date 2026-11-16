@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RealSurfacePeriodIndex~1",
+  "head": "36cfe04ac267d3a2fc3c1a1ac7222d86d98e4535",
+  "pr": 2462,
+  "folder": "RealSurfacePeriodIndex",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 2,
+  "notes": "Full review at 36cfe04. Gate: every check 0, OK. Depcheck: 264 roadmaps, 2584 edges, 0 problems. lake env lean: 8 sorry warnings only; one-tactic probe closes none of the 8 theorems; #check @ on all 9 declarations keeps every binder. Seeded sample: all 15 targets verified against B19, CT05, EKM, BW20, VOI06 and MVH98 (48 locators); BCR and DK96 are uncertified and not verifiable. Source corrections E1-E6, E9, E10, E16, E17, E21, E23 and E24 confirmed. 37 Mathlib and 36 Tau Ceti declarations opened at the pins; about 75 cross-roadmap citations resolved. Findings: R01 (P2, re-raises FIX-PKG~4 F04): Tsen-Lang/C_i and real closures at an ordering are owned both here and in QuadraticFormInvariantsPartII. R02 (P2): the at2-stratified-pair-transport gap omits invariance of each stratum, so it is false as worded. R03 (P3): the PR description omits the EnriquesSurfaces (#1286) dependency. R04 (P3): Downstream consumers names Benoist-Wittenberg importers that do not exist.",
+  "text": "84a388d2c7c52582",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Tsen–Lang and real closures at an ordering have two owners",
+    "where": "QuadraticFormInvariantsPartII §§5.1, 5.4–5.6, §6.0 and its lines 57–60, 118, 2029",
+    "raised": "PRREVIEW-RealSurfacePeriodIndex~1"
+   }
+  ]
+ }
+}
