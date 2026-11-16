@@ -4040,6 +4040,29 @@
         "ShimuraVarietiesPartII:SV2.0/lift-independent-crystalline-tensors",
         "ShimuraVarietiesPartII:SV2.1/integral-crystalline-frames"
       ]
+    },
+    {
+      "slug": "fixer-stable-lattices",
+      "id": "gap:fixer-stable-lattices",
+      "supplier": "ReductiveGroupsPartII",
+      "section": "§RG2.3.5, stable lattices for full fixers (new target beside hodge-type-fixer-immersion)",
+      "needs": "For a connected reductive group G over a finite extension F of Q_p, a point x of its extended building with full fixer scheme G_x, and a finite-dimensional algebraic representation ρ: G → GL(V), prove that V contains an O_F-lattice Λ for which ρ extends to a morphism of O_F-group schemes G_x → GL(Λ), that is, by the extension principle of §RG2.3.1, a lattice stable under G_x(O_F̆); no tameness, minuscule or closed-immersion hypothesis or conclusion is involved (KZ §4.3.5, p.40, by the G(F̆)- and Galois-equivariant embedding of buildings and the lattice chain of the image point; equally by the stable-lattice argument for V as a comodule over the flat Hopf algebra of G_x).",
+      "stageId": "ShimuraVarietiesPartII",
+      "neededBy": [
+        "ShimuraVarietiesPartII:SV2.5/arbitrary-siegel-map"
+      ]
+    },
+    {
+      "slug": "rg3-r-smooth-central-quotient",
+      "id": "gap:rg3-r-smooth-central-quotient",
+      "supplier": "ReductiveGroupsPartIII",
+      "section": "Layer 2, central quotients of fixers (new target)",
+      "needs": "For a connected reductive group G over a finite extension F of Q_p whose centre Z_G is an R-smooth torus (Conventions), and a point x of its extended building with full fixer scheme G_x and image x_ad in the building of G^ad, prove that the Zariski closure Z of Z_G in G_x is smooth, that G_x/Z is a smooth affine group scheme with generic fibre G^ad, and that its neutral component is the parahoric group scheme of G^ad at x_ad; G_x/Z itself need not be the full fixer of x_ad (KZ Proposition 2.4.13, p.17, for the parahoric of a central extension with R-smooth torus kernel; KPZ §7.1.12, p.75, with KP Lemma 4.6.2(2), p.198, for the full fixer).",
+      "stageId": "ShimuraVarietiesPartII",
+      "neededBy": [
+        "ShimuraVarietiesPartII:SV2.3/adjoint-local-model-diagram",
+        "ShimuraVarietiesPartII:SV2.3/strong-adjoint-local-model-diagram"
+      ]
     }
   ],
   "integrationNotes": [
