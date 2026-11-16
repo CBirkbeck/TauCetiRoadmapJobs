@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IgusaVarietiesAndTorsionConcentrationPartII~3",
+  "head": "744b2d97f9a4a4b32f3e6dcda0f83499d060ff92",
+  "pr": 2439,
+  "folder": "IgusaVarietiesAndTorsionConcentrationPartII",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review at the head the previous review read (0 changed lines; that review had no finding to check). Seeded sample of 15 targets (8.3, 8.6, 8.7, 9.2, 9.3, 10.1-10.6, 11.5-11.8) plus every other section: 62 source locators checked against the cached texts (CS17 50, Shin11 6, Shin09 3, Shin12 1, Shin-BCU 2), all agree. Adversarial table of 30 rows with computed values. 14 library declarations opened at the pins. 137 cross-roadmap section citations resolved on main or at open heads, 30 bodies read. Gate at 744b2d9 passes; depcheck: 256 roadmaps, 2432 edges, 0 problem(s). Suggested.lean elaborates with two sorry warnings only; #check types agree with the README; one-tactic probe closes neither theorem. Overlap check and source-independence lines are in the report. Acceptance is conditional on the three declared gaps (division-algebra-unitary-base-change, auxiliary-character-finite-avoidance, unitary-discrete-local-comparison). 11 source issues in CS17 recorded for the errata register.",
+  "text": "1045811dfb25f489"
+ }
+}
