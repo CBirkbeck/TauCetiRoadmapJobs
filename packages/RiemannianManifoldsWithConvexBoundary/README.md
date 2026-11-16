@@ -22,7 +22,7 @@ characterisation of non-trapping by the geodesic vector field, the scattering re
 boundary lens data. Its end theorems are the Hessian characterisation of strict convexity, the
 realisation theorem, the second-order leaving of tangent geodesics, the existence of convexity
 functions near a strictly convex boundary point, the regularity of the exit time
-(Paternain–Salo–Uhlmann, Lemmas 3.2.3–3.2.11), Proposition 3.3.1 of the same book, and the
+(Paternain–Salo–Uhlmann, Lemmas 3.2.3 and 3.2.11), Proposition 3.3.1 of the same book, and the
 involution and fixed-point theorem for `α`; the acceptance examples are balls, spherical caps,
 hyperbolic domains, small geodesic balls, half-spaces, ball exteriors and a conformal metric that
 turns the boundary of the unit disc strictly concave.
@@ -1453,6 +1453,9 @@ lines 3110–3113):
   homogeneity of 5.2 this is the smoothness of `τ` on `SM ∖ ∂₀SM` and its continuity on `SM`. And
   there is a smooth `F` on `TM` equal to `σ` on `SM` with `XF = −2` on `SM`, `X` the geodesic spray
   of 5.1 (`exists_contMDiff_eq_exitTime_sub_exitTime_neg`); its restriction to `∂SM` is `τ̃`.
+  Likewise there is a smooth `G` on `TM` equal to `T` on `SM`
+  (`exists_contMDiff_eq_exitTime_mul_exitTime_neg`); with `F` it gives `τ = (F + √(F² + 4G))/2`
+  on `SM`.
 
 **Checks.**
 
@@ -1461,7 +1464,11 @@ lines 3110–3113):
 - Closed unit ball, for `(x, v) ∈ SM`: `τ(x, v) − τ(x, −v) = −2⟨x, v⟩`,
   `τ(x, v) τ(x, −v) = 1 − |x|²`, both smooth, and `d/dt(−2⟨x + tv, v⟩) = −2|v|² = −2`; Remark
   3.2.13's formula returns 6.1's unit-speed `τ`.
-- `M = [a, b]`: `τ(x, 1) − τ(x, −1) = a + b − 2x` and `X = d/dx` along the flow gives `−2`.
+- `M = [a, b]`: `τ(x, 1) − τ(x, −1) = a + b − 2x` and `X = d/dx` along the flow gives `−2`;
+  `τ(x, 1) τ(x, −1) = (b − x)(x − a)` is smooth and vanishes at both endpoints, as `T` does on all
+  of `∂SM` when `∂M` is strictly convex (there one of `τ(x, ±v)` is `0`, by 5.2); since
+  `σ² + 4T = (b − a)²`, Remark 3.2.13's formula gives `((a + b − 2x) + (b − a))/2 = b − x`,
+  which is `τ(x, 1)`.
 - Fold form on the closed unit ball (Remark 3.2.13), on `SM`: `a = 4(⟨x, v⟩² + 1 − |x|²)` and
   `Q(r, x, v) = (−2⟨x, v⟩ + r)/2`, so `Q(√a) = τ(x, v)` and `Q(−√a) = −τ(x, −v)`.
 

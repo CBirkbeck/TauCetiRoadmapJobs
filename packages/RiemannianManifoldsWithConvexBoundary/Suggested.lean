@@ -32,9 +32,9 @@ Stated here, in README order:
 * Layer 4: tangent geodesics leave a strictly convex boundary and nonconstant geodesics of a
   manifold with strictly convex boundary meet the boundary only at their endpoints (§4.2), and
   the existence of a convexity function near a strictly convex boundary point (§4.5);
-* Layer 5: the regularity of the exit time and the identity `Xσ = −2` (§5.4), the three
-  equivalent non-trapping conditions (§5.5), and the involution, fixed-point and smoothness
-  theorems of the scattering relation (§5.6).
+* Layer 5: the regularity of the exit time, the smoothness of `σ` and `T` and the identity
+  `Xσ = −2` (§5.4), the three equivalent non-trapping conditions (§5.5), and the involution,
+  fixed-point and smoothness theorems of the scattering relation (§5.6).
 
 The unit sphere bundle `SM` and its boundary `∂SM` carry no manifold structure at the pins (the
 tangent bundle of a manifold with boundary is modelled on a product, not on `𝓡∂`, and Tau Ceti's
@@ -274,7 +274,7 @@ noncomputable def scatteringRelation (z : TangentBundle (𝓡∂ (n + 1)) M) :
 /-- **Regularity of the exit time.** On a compact Hausdorff non-trapping `(M, g)` with strictly
 convex boundary, the exit time is smooth on the open set of nonzero tangent vectors that are not
 glancing, and continuous on the nonzero tangent vectors (README §5.4; Paternain–Salo–Uhlmann,
-Lemmas 3.2.3 and 3.2.6, Exercise 3.2.4). -/
+Lemma 3.2.3, Exercise 3.2.4). -/
 theorem contMDiffOn_exitTime [T2Space M] [CompactSpace M]
     [IsContMDiffRiemannianBundle (𝓡∂ (n + 1)) ∞ (EuclideanSpace ℝ (Fin (n + 1)))
       (fun x : M ↦ TangentSpace (𝓡∂ (n + 1)) x)]
@@ -288,8 +288,9 @@ theorem contMDiffOn_exitTime [T2Space M] [CompactSpace M]
 /-- **`σ` is smooth and `Xσ = −2`.** On a compact Hausdorff non-trapping `(M, g)` with strictly
 convex boundary, `σ(x, v) = τ(x, v) − τ(x, −v)` is, on the unit sphere bundle `SM`, the restriction
 of a smooth function `F` on `TM`, and the derivative of `F` along Tau Ceti's geodesic spray is `−2`
-on `SM`. On `∂SM`, `σ` is the odd extension `τ̃` (README §5.4; Paternain–Salo–Uhlmann, Lemmas 3.2.8,
-3.2.9 and 3.2.11, Exercise 3.3.3). -/
+on `SM`. On `∂SM`, `σ` is the odd extension `τ̃` (README §5.4; Paternain–Salo–Uhlmann, Lemma 3.2.11
+by the fold form of Lemma 3.2.9, Remark 3.2.7 and Lemma 3.2.6 for the restriction to `∂SM`,
+Exercise 3.3.3). -/
 theorem exists_contMDiff_eq_exitTime_sub_exitTime_neg [T2Space M] [CompactSpace M]
     [IsContMDiffRiemannianBundle (𝓡∂ (n + 1)) ∞ (EuclideanSpace ℝ (Fin (n + 1)))
       (fun x : M ↦ TangentSpace (𝓡∂ (n + 1)) x)]
@@ -300,6 +301,21 @@ theorem exists_contMDiff_eq_exitTime_sub_exitTime_neg [T2Space M] [CompactSpace 
           (exitTime (TotalSpace.mk z.proj (-z.snd) : TangentBundle (𝓡∂ (n + 1)) M)).toReal ∧
         mfderiv (𝓡∂ (n + 1)).tangent 𝓘(ℝ) F z
           (TauCeti.Manifold.geodesicSpray (𝓡∂ (n + 1)) M z) = (-2 : ℝ) := by
+  sorry
+
+/-- **`T` is smooth.** On a compact Hausdorff non-trapping `(M, g)` with strictly convex boundary,
+the product `T(x, v) = τ(x, v) τ(x, −v)` is, on the unit sphere bundle `SM`, the restriction of a
+smooth function `G` on `TM`. Together with `σ` it gives the exit time across the glancing set:
+`τ = (σ + √(σ² + 4T))/2` on `SM` (README §5.4; Paternain–Salo–Uhlmann, Lemma 3.2.11 and
+Remark 3.2.13). -/
+theorem exists_contMDiff_eq_exitTime_mul_exitTime_neg [T2Space M] [CompactSpace M]
+    [IsContMDiffRiemannianBundle (𝓡∂ (n + 1)) ∞ (EuclideanSpace ℝ (Fin (n + 1)))
+      (fun x : M ↦ TangentSpace (𝓡∂ (n + 1)) x)]
+    (hconv : IsStrictlyConvexBoundary n M) (htrap : IsNonTrapping n M) :
+    ∃ G : TangentBundle (𝓡∂ (n + 1)) M → ℝ, ContMDiff (𝓡∂ (n + 1)).tangent 𝓘(ℝ) ∞ G ∧
+      ∀ z : TangentBundle (𝓡∂ (n + 1)) M, ‖z.snd‖ = 1 →
+        G z = (exitTime z).toReal *
+          (exitTime (TotalSpace.mk z.proj (-z.snd) : TangentBundle (𝓡∂ (n + 1)) M)).toReal := by
   sorry
 
 /-- **Non-trapping criteria** (Paternain–Salo–Uhlmann, Proposition 3.3.1). For a compact Hausdorff
