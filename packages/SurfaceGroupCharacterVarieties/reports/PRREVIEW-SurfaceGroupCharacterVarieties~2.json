@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SurfaceGroupCharacterVarieties~2",
+  "head": "f6c8f48208b620afc1c9ab1e4b49d0520cbf2d7b",
+  "pr": 2430,
+  "folder": "SurfaceGroupCharacterVarieties",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 107 changed lines since 077c1ce. Previous R01-R04 all repaired: LieGroupsPartII 7.1 and 8.1 resolved at the head of #2427 (contract, scope bullet, 5.3 route, 5.4 comparison checked against its README and Suggested.lean lines 82 and 91). The 3 changed locators (BCGGO2024 467-470, Sikora2012 835-837, BohmLafuente2021 1021-1022) are correct. Adversarial rows computed for 5.3 (real and complex), the 5.4 comparison and symmetricPart, 5.2, and the two changed docstrings. Gate passes (depcheck 0 problems; LieGroupsPartII line 65, this roadmap 310); elaboration gives 13 sorry warnings only. One P3: the description's depends-on and merge-order blocks omit the new open supplier LieGroupsPartII (#2427).",
+  "text": "16f6b94a2adf675c",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "the description's dependency blocks omit the new supplier LieGroupsPartII",
+    "where": "the generated depends-on and merge-order blocks of the pull-request description",
+    "raised": "PRREVIEW-SurfaceGroupCharacterVarieties~2"
+   }
+  ]
+ }
+}
