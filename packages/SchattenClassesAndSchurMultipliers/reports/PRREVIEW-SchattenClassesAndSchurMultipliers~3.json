@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchattenClassesAndSchurMultipliers~3",
+  "head": "cc8b39de1e79e273cab879baca24ac5719cde07d",
+  "pr": 2421,
+  "folder": "SchattenClassesAndSchurMultipliers",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review at the head the previous review read; no finding. Accepted conditional on the two declared gaps (sigma-finite-hilbert-schmidt-kernels, semifinite-martingale-bmo-interpolation). Seeded sample of 15 targets checked against lafforgue-delasalle-2011, cgpt-2023, caspers-delasalle-2015, pisier-grothendieck-2012 and mei-2007 at their lines (about 105 locators, none wrong); 9 uncertified citations listed as not verifiable. Adversarial table: 27 rows with computed values, covering the sample and all 11 theorems of Suggested.lean. 46 Mathlib and 19 Tau Ceti declarations opened at the pins; 46 cross-roadmap citations resolved on main and at the open heads of AutomorphicSpectralTheory and BochnerSpaces. Gate passes (worker's run and rerun); depcheck: 240 roadmaps, 2252 edges, 0 problem(s). lake env lean: 11 sorry warnings only; #check on 19 declarations unchanged; one-tactic probe closes none. Four source issues recorded (3 misprints in lafforgue-delasalle-2011, 1 error in cgpt-2023). Three facts for the human reviewers, among them that the supplier NoncommutativeIntegration, Part II of the second gap does not exist yet.",
+  "text": "c814473c42cf6e65"
+ }
+}
