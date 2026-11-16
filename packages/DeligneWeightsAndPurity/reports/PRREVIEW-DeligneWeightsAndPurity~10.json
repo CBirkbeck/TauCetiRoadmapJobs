@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DeligneWeightsAndPurity~10",
+  "head": "ff93d18191c4507d86638e2037b548c9e5c5b606",
+  "pr": 929,
+  "folder": "DeligneWeightsAndPurity",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 15 changed lines since ddbc25a. The previous R01 is repaired: 5.12's divisor clause is stated with an equation t and the tame restriction of LefschetzPencilsAndVanishingCycles §1.8, cited in the Needs line, the contracts, the layer dependencies and the description. Checked: the Kummer-sheaf instance with equations t and ut (constant sheaf and its Kummer twist, both weight 0); WII (1.7.8), (1.7.10), (1.8.5)-(1.8.7) at their pages; the supplier's §1.8 and §1.1 at its open head; the description against the head. No seeded-sample target falls in the change. Gate: every check zero, build passing; depcheck 0 problems; lake env lean gives 5 sorry warnings and no error.",
+  "text": "f5e998907d0ec5a2"
+ }
+}
