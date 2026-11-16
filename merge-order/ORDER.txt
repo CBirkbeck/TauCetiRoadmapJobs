@@ -335,6 +335,7 @@ McKaySkewGroup
 LocalLanglandsCorrespondenceForG2
 K3SurfacesAndSymplecticBoundedness
 StableReductionPartII
+VirtualFundamentalClassPartII
 SheafConvolutionOnAbelianVarieties
 MordellLawrenceVenkateshPartII
 PeriodsAndSpecialValues
