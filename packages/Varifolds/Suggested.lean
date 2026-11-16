@@ -40,10 +40,14 @@ Not statable at the pins, and not stated:
   `T_yM` to the orthogonal projection onto its image in `T_xM`, and the `k`-Jacobian weight between
   the two fibres. The pins have the logarithm (`TauCeti.Manifold.riemannianLog`) but no
   push-forward of measures on Grassmann bundles along differentials;
-* the forms of §7.4 and §7.6 for metrics `g_i → g` in `C²`. Mathlib's Riemannian metric is the
-  instance `Bundle.RiemannianBundle` on the tangent bundle, so a sequence of metrics on one
-  manifold, each with its Grassmann bundle of `g_i`-orthogonal projections, and the canonical
-  identification of §1.2 between these bundles have no carrier;
+* the forms of §7.4 and §7.6 for metrics `g_i → g` in `C²`. A metric given as data is at the
+  pins (`Bundle.ContMDiffRiemannianMetric`), with the copy `TauCeti.WithMetric g` of `M` that
+  carries it as its `RiemannianBundle` instance, and with its Levi-Civita connection
+  (`TauCeti.Manifold.ContMDiffNondegenerateMetric.leviCivitaConnection`). Missing are an
+  `EMetricSpace` instance on these copies, over which the definitions of this file are stated (the
+  Riemannian distance of `IsRiemannianManifold`, the balls of `HasDensity`, the Hausdorff measure
+  of `IsRectifiable`), and the identification of §1.2 between the Grassmann bundles of two
+  metrics, through which `V_i → V` is read;
 * the comparison §5.2 for an embedded `M ⊆ ℝ^L`: the push-forward `ι_#` of §3.1 into
   `W × G(ℝ^L, k)` (the image-plane map `P ↦ dι P dι*`) and the second fundamental form of `M` as a
   tensor on `TM` are not at the pins (`TauCeti.secondFundamentalForm` is the form of a map out of
@@ -230,12 +234,6 @@ noncomputable def firstVariation (V : Measure (W × grassmannian F k)) (X : F �
 /-- A varifold on an open `W ⊆ F` is **stationary** in `W` (§4.3; Simon1983, 39.3). -/
 def IsStationary (V : Measure (W × grassmannian F k)) : Prop :=
   ∀ X : F → F, ContDiff ℝ 1 X → HasCompactSupport X → tsupport X ⊆ W → firstVariation V X = 0
-
-/-- A varifold on an open `W ⊆ F` has **locally bounded first variation** in `W` (§4.3;
-Simon1983, 39.3). -/
-def HasLocallyBoundedFirstVariation (V : Measure (W × grassmannian F k)) : Prop :=
-  ∀ K : Set F, IsCompact K → K ⊆ W → ∃ C : ℝ, ∀ X : F → F, ContDiff ℝ 1 X → tsupport X ⊆ K →
-    (∀ y, ‖X y‖ ≤ 1) → |firstVariation V X| ≤ C
 
 /-- The **total first variation** `‖δV‖(U)` of a set `U`, the supremum of `δV(X)` over `C¹`
 fields with compact support in `U ∩ W` and `|X| ≤ 1` (§4.3). -/
@@ -435,13 +433,13 @@ theorem exists_isVarifoldTangent (hk : 1 ≤ k) (V : Measure (W × grassmannian 
       VarifoldTendsto (fun j ↦ blowUp V x (s (φ j))) C := by
   sorry
 
-/-- **Varifold tangents are stationary with conical weight** (§7.2). If `V` has locally bounded
-first variation in `W`, `Θ^k(‖V‖, x)` exists and is finite at `x ∈ W` and
-`ρ^{1−k}‖δV‖(B_ρ(x)) → 0` as `ρ ↓ 0`, then every `C ∈ VarTan(V, x)` is stationary in `F`, has
-`‖C‖(B_ρ(0)) = Θ^k(‖V‖, x) ω_k ρ^k` for every `ρ > 0`, and has a dilation-invariant weight,
-`‖C‖(λA) = λ^k ‖C‖(A)` (Simon1983, 42.1–42.3). -/
+/-- **Varifold tangents are stationary with conical weight** (§7.2). If `Θ^k(‖V‖, x)` exists and
+is finite at `x ∈ W` and `ρ^{1−k}‖δV‖(B_ρ(x)) → 0` as `ρ ↓ 0` (so that `‖δV‖` is finite on small
+balls about `x`: `V` has bounded first variation near `x`), then every `C ∈ VarTan(V, x)` is
+stationary in `F`, has `‖C‖(B_ρ(0)) = Θ^k(‖V‖, x) ω_k ρ^k` for every `ρ > 0`, and has a
+dilation-invariant weight, `‖C‖(λA) = λ^k ‖C‖(A)` (Simon1983, 42.1–42.3). -/
 theorem IsVarifoldTangent.isStationary (hk : 1 ≤ k) {V : Measure (W × grassmannian F k)}
-    [IsFiniteMeasureOnCompacts V] (hV : HasLocallyBoundedFirstVariation V) {x : F}
+    [IsFiniteMeasureOnCompacts V] {x : F}
     (hx : x ∈ W) {θ : ℝ≥0∞} (hθ : θ ≠ ⊤) (hdens : HasDensity (weight V) k x θ)
     (hδ : Tendsto (fun ρ : ℝ ↦ ENNReal.ofReal (ρ ^ (1 - (k : ℤ))) *
       firstVariationMass V (Metric.ball x ρ)) (𝓝[>] 0) (𝓝 0))
@@ -513,12 +511,11 @@ namespace Euclidean
 variable {W : TopologicalSpace.Opens F}
 
 /-- **Rectifiable tangent cones** (§8.1). Under the hypotheses of
-`IsVarifoldTangent.isStationary` (locally bounded first variation, a finite density at `x` and
-`ρ^{1−k}‖δV‖(B_ρ(x)) → 0`), if
+`IsVarifoldTangent.isStationary` (a finite density at `x` and `ρ^{1−k}‖δV‖(B_ρ(x)) → 0`), if
 moreover `ρ^{−k}‖V‖({y ∈ B_ρ(x) : Θ^{*k}(‖V‖, y) < 1}) → 0`, then every `C ∈ VarTan(V, x)` is
 rectifiable and a cone, `(η_{0,λ})_# C = C` for `λ > 0` (Simon1983, 42.6). -/
 theorem IsVarifoldTangent.isRectifiable (hk : 1 ≤ k) {V : Measure (W × grassmannian F k)}
-    [IsFiniteMeasureOnCompacts V] (hV : HasLocallyBoundedFirstVariation V) {x : F}
+    [IsFiniteMeasureOnCompacts V] {x : F}
     (hx : x ∈ W) {θ : ℝ≥0∞} (hθ : θ ≠ ⊤) (hdens : HasDensity (weight V) k x θ)
     (hδ : Tendsto (fun ρ : ℝ ↦ ENNReal.ofReal (ρ ^ (1 - (k : ℤ))) *
       firstVariationMass V (Metric.ball x ρ)) (𝓝[>] 0) (𝓝 0))
@@ -530,11 +527,11 @@ theorem IsVarifoldTangent.isRectifiable (hk : 1 ≤ k) {V : Measure (W × grassm
   sorry
 
 /-- **Integral tangent cones** (§8.2). If `V` is integral and satisfies the hypotheses of
-`IsVarifoldTangent.isStationary` at `x` (locally bounded first variation, a finite density at `x`
-and `ρ^{1−k}‖δV‖(B_ρ(x)) → 0`), every `C ∈ VarTan(V, x)` is an integral, stationary cone
+`IsVarifoldTangent.isStationary` at `x` (a finite density at `x` and
+`ρ^{1−k}‖δV‖(B_ρ(x)) → 0`), every `C ∈ VarTan(V, x)` is an integral, stationary cone
 (Simon1983, 42.6 and 42.8). -/
 theorem IsVarifoldTangent.isIntegral (hk : 1 ≤ k) {V : Measure (W × grassmannian F k)}
-    [IsFiniteMeasureOnCompacts V] (hint : IsIntegral V) (hV : HasLocallyBoundedFirstVariation V)
+    [IsFiniteMeasureOnCompacts V] (hint : IsIntegral V)
     {x : F} (hx : x ∈ W) {θ : ℝ≥0∞} (hθ : θ ≠ ⊤) (hdens : HasDensity (weight V) k x θ)
     (hδ : Tendsto (fun ρ : ℝ ↦ ENNReal.ofReal (ρ ^ (1 - (k : ℤ))) *
       firstVariationMass V (Metric.ball x ρ)) (𝓝[>] 0) (𝓝 0))

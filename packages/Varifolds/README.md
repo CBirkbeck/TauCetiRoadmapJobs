@@ -1025,8 +1025,8 @@ V is stationary in W when δV(X) = 0 for every C¹ vector field X with compact s
 locally bounded first variation in W when for each compact K ⊆ W there is C_K with
 |δV(X)| ≤ C_K sup |X| for every such X with spt X ⊆ K (Simon1983 line 7474–7486, 39.3;
 AgnolettoCorreaHoyosDaSilvaNardulli2025 line 264–268). On (M, g) these are `IsStationary` and
-`HasLocallyBoundedFirstVariation`, and for W ⊆ E `Euclidean.IsStationary` and
-`Euclidean.HasLocallyBoundedFirstVariation`. For an open U ⊆ W write
+`HasLocallyBoundedFirstVariation`, and for W ⊆ E stationarity is `Euclidean.IsStationary`. For an
+open U ⊆ W write
 ‖δV‖(U) = sup{δV(X) : X of class C¹ with compact support in U, |X| ≤ 1} ∈ [0, ∞]
 (`firstVariationMass`, `Euclidean.firstVariationMass`); it is defined for every varifold, and the
 first bullet identifies it with the total variation measure when V has locally bounded first
@@ -1106,7 +1106,8 @@ put H_V = −f η and η_V = η on Z_V.
   unit circle, f_#V = [C] and at f(e_1) = e_2 the mean curvature is −e_2 = R(−e_1) = df(H_V(e_1)); a
   law without df, `H_{f_#V}(f(x)) = H_V(x)`, would give −e_1 at e_2, which is tangent to C there.
 
-(Simon1983 line 7486–7509; Allard1972 Section 4.) *Needs:* Layer 4.2, Layer 4.3; Mathlib `Measure.rnDeriv`,
+(Simon1983 line 7486–7509; Allard1972 Section 4.) *Needs:* Layer 3.1–3.2 (the isometry and dilation
+laws), Layer 4.2, Layer 4.3; Mathlib `Measure.rnDeriv`,
 `Measure.singularPart`, `ContMDiff.mpullback_vectorField`; Tau Ceti
 `TauCeti.IsLocalRiemannianIsometry.mfderiv_leviCivitaConnection_mpullback` and
 `Bundle.ContMDiffRiemannianMetric.restrictOpenTangentSpace` (the isometry law).
@@ -1626,8 +1627,10 @@ bound to V.
 
 ### 7.2 Varifold tangents
 
-Let V be a varifold on W ⊆ M with locally bounded first variation on a neighbourhood of x ∈ W, such that
-Θ^k(‖V‖, x) exists and is finite and ρ¹⁻ᵏ‖δV‖(B_ρ(x)) → 0 as ρ ↓ 0. Then
+Let V be a varifold on W ⊆ M and x ∈ W such that Θ^k(‖V‖, x) exists and is finite and
+ρ¹⁻ᵏ‖δV‖(B_ρ(x)) → 0 as ρ ↓ 0, with ‖δV‖ the total first variation of 4.3, which is defined for
+every varifold. The decay makes ‖δV‖(B_ρ(x)) finite for small ρ, so V has bounded first variation
+on a neighbourhood of x; nothing is assumed of δV away from x. Then
 every sequence λ_j ↓ 0 has a subsequence along which `V_{x,λ_j}` converges, as varifolds on T_xM, to a
 varifold C that is stationary in (T_xM, g_x), whose weight is dilation invariant,
 ‖C‖(λA) = λ^k‖C‖(A) for λ > 0, and with ‖C‖(B_ρ(0)) = Θ^k(‖V‖, x) ω_k ρ^k for all ρ > 0, so that
@@ -1637,15 +1640,15 @@ rectifiable case). The existence of subsequential limits uses only that Θ^k(‖
 finite: by 3.2, `‖V_{x,λ}‖(B_R(0)) = λ^{−k}‖V‖(B_{λR}(x))` (up to a factor 1 + o(1) on M) tends to
 Θ^k(‖V‖, x) ω_k R^k as λ ↓ 0, which bounds the masses over every compact set for small λ, and 1.4
 gives the subsequence (Simon1983 line 7738–7740, with Theorem 4.4 at line 1038–1045). The
-hypotheses on the first variation are what the stationarity of C, and through it the dilation
-invariance of its weight, need. For W open in E with the
-flat metric, with `V_{x,λ}` read on G_k(E) as in 3.2 and the hypotheses taken on W: membership
+decay of ‖δV‖ at x is what the stationarity of C, and through it the dilation invariance of its
+weight, needs. For W open in E with the
+flat metric, with `V_{x,λ}` read on G_k(E) as in 3.2: membership
 C ∈ VarTan(V, x) (a Radon measure on G_k(E) that is the limit of `V_{x,λ_j}` along some λ_j ↓ 0) is
 `Euclidean.IsVarifoldTangent`; the existence of a convergent subsequence along every λ_j ↓ 0, for
 x ∈ W at which Θ^k(‖V‖, x) exists and is finite and with no hypothesis on δV, is
 `Euclidean.exists_isVarifoldTangent`; and the stationarity of C, its ball masses and the dilation
-invariance of its weight, under all three hypotheses of the first paragraph, are
-`Euclidean.IsVarifoldTangent.isStationary`.
+invariance of its weight, under the two hypotheses of the first paragraph (the decay read with
+`Euclidean.firstVariationMass`), are `Euclidean.IsVarifoldTangent.isStationary`.
 
 Route: the mass bound above and 1.4 give subsequential limits; 4.5's blow-up form
 and the hypothesis on ‖δV‖ give δ_gₓC = 0; the mass of C on balls about 0 is the limit of the
@@ -1683,6 +1686,14 @@ uses arbitrary homogeneous weights of degree zero for the same step.
   and ‖δV‖(B_ρ(0)) = ∞ for every ρ. The limit is not stationary: for X(y) = φ(y) y_2 e_2 with
   φ ∈ C¹_c(ℝ²), φ ≥ 0, φ(0) > 0, the integrand tr(P DX) at (t, 0) is ∂_2(φ y_2)(t, 0) = φ(t, 0), so
   δV(X) = ∫ φ(t, 0) dt > 0.
+- The first-variation hypothesis is local at x. In ℝ² with k = 1 let L be the x-axis, V' the
+  vertical lift of H¹⌞{y_2 = 5} (every plane the vertical line), V = v(L, 1) + V' and x = 0. For
+  ρ < 5, ‖V‖(B_ρ(0)) = 2ρ, so Θ^1(‖V‖, 0) = 1, and ‖δV‖(B_ρ(0)) = 0, since a field supported in
+  B_ρ(0) vanishes on {y_2 = 5} and v(L, 1) is stationary; both hypotheses hold. V' has no locally
+  bounded first variation near {y_2 = 5} (4.3), so neither has V on ℝ², and a statement asking for
+  it on all of W would not apply. `V_{0,λ}` is v(L, 1) plus the vertical lift of H¹⌞{y_2 = 5/λ},
+  which leaves every compact set, so VarTan(V, 0) = {v(L, 1)}: stationary, with
+  ‖C‖(B_ρ(0)) = 2ρ = Θ^1(‖V‖, 0) ω_1 ρ.
 
 (Simon1983 line 7733–7774, 3414–3481.) *Needs:* Layer 1.4, Layer 3.2, Layer 4.5, Layer 6.1;
 Mathlib `MeasureTheory.Measure.ext_of_integral_eq_on_compactlySupported`.
@@ -1770,6 +1781,11 @@ on B_3(0) × G(ℝ^N, k) through 1.2) with locally bounded h-first variation and
 
 `‖V‖(B_3(0)) ≤ Λ,   ‖δ_h V‖(B_3(0)) < ε²,   ∫_{G_k(B_3(0))} ‖P_S − p‖ dV(y, S) < ε²`.
 
+The third quantity is called the tilt of V over B_3(0) (relative to ℝ^k × {0}) below. It is
+unsquared, with the operator norm of 1.1, and is not divided by a power of the radius; it is not the
+tilt-excess of Simon1983 §22 (line 3779–3798), which integrates the square of the distance
+between the planes over a ball and divides by the k-th power of its radius.
+
 Then there is a Borel set Z ⊆ spt‖V‖ ∩ B_2(0) with ‖V‖(Z) < δ such that, for every
 x ∈ B_1(0) ∩ (ℝ^k × {0}), the density Θ^k(‖V‖, y) for h exists at every point
 y ∈ (p⁻¹(x) ∩ spt‖V‖) ∖ Z with |q(y)| < ε, and the sum of these densities is at most
@@ -1837,8 +1853,9 @@ slabs, projections, balls and densities by factors 1 + O(ε²), which shrinking 
   is at least 4/(πρ) > ε: y lies in R, and in Z because its density is positive, so the density ½
   is never counted.
 - Two parallel planes ℝ^k × {±ε/2} with multiplicity 1: fibre sum 2 and mass ratio about 2.
-- A plane through 0 tilted by angle α has tilt excess |sin α| ‖V‖(B_3(0)) (the operator-norm
-  distance of 1.1), so the hypotheses fail once |sin α| ‖V‖(B_3(0)) ≥ ε²; the tilted plane through 0
+- A plane through 0 tilted by angle α in one coordinate 2-plane has tilt |sin α| ‖V‖(B_3(0)) (the
+  operator-norm distance of 1.1; integrating its square instead would give sin²α ‖V‖(B_3(0))), so the
+  hypotheses fail once |sin α| ‖V‖(B_3(0)) ≥ ε²; the tilted plane through 0
   still satisfies the conclusion, showing that the tilt hypothesis is used for the slab, not for
   single planes.
 - Parameter accounting (h = e): if ε = 1/10 (possible only when δ² > 1/10), the hypotheses ask for
@@ -1881,7 +1898,7 @@ charts gives, for ‖V‖-a.e. x, lim inf_i
 T_x with multiplicity θ(x) (7.4, 3.3); in g-normal coordinates at x a diagonal choice λ_i ↓ 0 gives
 the rescaled varifolds Ṽ_i of V_i at x with scale λ_i (4.5's blow-up form, with the chart exp_x of g
 and the metric g_i), integral varifolds for the metrics h_i(z) = (exp_x^* g_i)(λ_i z) → g_x in C², with
-Ṽ_i → θ(x) v(T_x, 1), first variation → 0 and tilt → 0 on B_3(0), where T_xM is identified with
+Ṽ_i → θ(x) v(T_x, 1), first variation → 0 and tilt (7.5) → 0 on B_3(0), where T_xM is identified with
 ℝ^N by a g_x-orthonormal basis taking T_x to ℝ^k × {0}, so that g_x = e. Fix δ ∈ (0, 1), take
 Λ = θ(x)ω_k 3^k + 1 and ε = ε(δ, Λ, k, N) of 7.5 with p, q as there, and write Ṽ_i = v(Γ_i, θ_i)
 with θ_i integer valued. For large i, Ṽ_i satisfies 7.5's hypotheses; let Z_i be its set Z. For
@@ -1952,7 +1969,7 @@ y ∈ T_yΓ_C.
 
 ### 8.2 Integral tangent cones
 
-If V is integral with locally bounded first variation and x satisfies 7.2's hypotheses, then every
+If V is integral and x satisfies 7.2's hypotheses, then every
 C ∈ VarTan(V, x) is an integral varifold, stationary in (T_xM, g_x), with `(η_{0,λ})_#C = C`, and
 Θ^k(‖V‖, x) = Θ^k(‖C‖, 0) ≥ 1 when x ∈ spt‖V‖ and ‖δV‖ ≤ Λ‖V‖ near x. If V is integral and stationary
 in W, the hypotheses hold at every x ∈ W, and VarTan(V, x) is a nonempty compact set of stationary
