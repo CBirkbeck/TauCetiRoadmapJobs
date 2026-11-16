@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassifyingTopoi~26",
+  "head": "6309116aaaeb318c359ede048c1a94e7e584be12",
+  "pr": 1997,
+  "folder": "ClassifyingTopoi",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 19 changed lines since 8ab628d. R01 and R02 of the previous review are repaired. The provenance passage was checked against AxiomMath at c496df0 (Topos listing of 62 files and 7 files read: the inverse-image ring functor is pullbackCommRingSheaf along f.inverseImage) and against Stacks 00XA (Def. 7.15.1), 00XC (Lemma 7.15.2) and 00YV (Prop. 7.44.3). The 1.4 ring case and the local-ring exclusion were recomputed (stalk germs; (Z/2)^2 under X -> X x X). GrothendieckTopoi 2.1, 2.2, 2.4 and its provenance section were resolved at its open head, and the description was checked against the head. Gate rerun: every check 0, OK, worker build=0. Depcheck: 257 roadmaps, 2432 edges, 0 problems. lake env lean: 28 sorry warnings, nothing else. Seeded sample: only 1.4 is cited by the change; its locators (Mac Lane-Moerdijk X.3, Elephant D1.2) are paywalled and not verifiable.",
+  "text": "1658e6bd261f10bc"
+ }
+}
