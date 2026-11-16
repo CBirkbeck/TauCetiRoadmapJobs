@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StableMatching~8",
+  "head": "c017fbad3ccf862548c6c7a7d7c758fc40284bbd",
+  "pr": 2346,
+  "folder": "StableMatching",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 11 changed lines since 9784d8d. Previous R01 and R02 are repaired. One new P3: the reuse rule says LeanPool's NOTICE names the authors of the code, but NOTICE:69 gives only the upstream repository; the author is named in the file headers and in LeanPool/projects/classical-graph-colouring.yaml:18-19 (lean-pool f8b9b72). Checked: the new provenance sentence against GaleShapley.lean:26-85 on a 2x2 market and a one-sided 1x1 market, the headers of the 4 Galvin files, and NOTICE lines 1-45 and 69. Gate rerun OK (the worker's gate reports build=0); depcheck 259 roadmaps, 2454 edges, 0 problems; lake env lean gives 10 sorry warnings only; Suggested.lean unchanged; no change outside the folder; description re-checked against the head; overlap lists empty; source independence on the changed passages only.",
+  "text": "3d47913158e8864e"
+ }
+}
