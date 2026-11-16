@@ -15,8 +15,9 @@ An equation of state is a pressure law on an open set of density–entropy pairs
 (`EquationOfState`); a fluid field is a map `U = (ρ, v, s) : ℝ × 𝔼 n → ℝ × 𝔼 n × ℝ`, and a
 classical solution of the full compressible Euler system is `EquationOfState.IsSolution`. A
 barotropic law `p(ρ)` on an open interval `I` is the equation of state with states `I × ℝ` and
-pressure `(ρ, s) ↦ p ρ`; its solutions are the full solutions of constant entropy (README §1.3),
-so every statement below about the full system contains the barotropic one. A quasilinear
+pressure `(ρ, s) ↦ p ρ`; its solutions are the full solutions of constant entropy, and entropy
+stays constant on slabs (README §1.3) and on developments (README §8.1), so every statement below
+about the full system contains the barotropic one. A quasilinear
 symmetric hyperbolic system is `QuasilinearSystem`. Causal curves, past-inextendibility, causal
 pasts and future domains of dependence of a cone field are the time-parametrised notions of
 README §§3.2–3.3, to which LorentzianGeometry §12.6 reduces its notions for the acoustical field;
@@ -29,8 +30,9 @@ Headline theorems stated here:
   domains of dependence (`QuasilinearSystem.eqOn_causalPast`, §6.2) for quasilinear symmetric
   hyperbolic systems;
 * local well-posedness of the quasilinear Cauchy problem in `Hᵏ_Λ`, `2k > n + 2`: existence on a
-  time depending only on the size of the data, uniqueness among classical solutions, continuity
-  in time and continuous dependence (`QuasilinearSystem.localWellPosedness`, §7.1), and the
+  time depending only on a bound for the `Hᵏ_Λ` norm of the data and a compact set of states
+  containing their values, uniqueness among classical solutions, continuity in time and
+  continuous dependence (`QuasilinearSystem.localWellPosedness`, §7.1), and the
   continuation criterion (`QuasilinearSystem.exists_extension_of_lintegral_lt_top`, §7.1);
 * local well-posedness of compressible Euler for non-vacuum `Hᵏ_Λ` data
   (`EquationOfState.localWellPosedness`, §7.2) and its continuation criterion

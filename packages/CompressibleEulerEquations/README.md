@@ -73,7 +73,10 @@ Boundaries:
   circle (`n = 1`, `Λ = Tℤ`, complex values): the continuous representatives of
   `TauCeti.CircleSobolev s A` for `s > 1/2`, the algebra property of that space, and the action
   of holomorphic functions on it. §§4.2–4.3 state the general forms, and the supplier contracts
-  say how each differs. Every statement of the PDE
+  say how each differs. The commutation `∂^αJ_εu = J_ε∂^αu` of a mollifier with weak derivatives
+  is already pinned for every smooth compactly supported kernel
+  (`TauCeti.HasWeakLineDerivOn.lineDeriv_convolution_right`); §4.4 consumes it and does not
+  restate it. Every statement of the PDE
   roadmap is scalar (elliptic, parabolic and dispersive theory, with the dyadic analysis of its
   Layer 7); it plans no hyperbolic system and no Moser estimate in `Hᵏ` (the product bounds of its
   §7.3 are paraproduct estimates in the Hölder–Zygmund spaces `𝒞^s`). Its §7.1–§7.2 plan the
@@ -84,7 +87,8 @@ Boundaries:
 - **Lorentzian geometry** is LorentzianGeometry's, and this roadmap imports what it uses of it.
   LorentzianGeometry §7.3 owns the acoustical form on `ℝ × Σ` (the form, its inverse, the
   material vector `B`, causal vectors, its Lorentzian character and the time orientation `[B]`),
-  §6.1 the Minkowski form and §6.3 the causal type of hyperplanes through the sign of the
+  §6.1 the Minkowski form (and §7.3's first Check the frame carrying the acoustical form of
+  constant `c`, `v` to it), and §6.3 the causal type of hyperplanes through the sign of the
   inverse form; §8.2 owns locally Lipschitz causal curves, their restriction and concatenation
   and the passage from piecewise `C¹` curves; §12.6 owns causal curves in an arbitrary subset,
   past-inextendibility, the future domain of dependence `D⁺_D(S)` in a subset, its monotonicity,
@@ -328,15 +332,28 @@ on `E`, no Lorentzian quadratic form with a time orientation and no causal curve
   nonnegative) as a contraction in the `Wkp` norm, commuting with the lower-order projection and
   with the iterated gradient, and converging strongly to the identity as the bump radii tend to
   `0`; `TauCeti.W1p.normedBumpL` (`TauCeti/Analysis/Sobolev/W1p/Mollification.lean:87`) is the
-  order-one case. These are the `Λ = 0` statements of §4.4 for the normalised-bump kernels
-  only; a general even nonnegative kernel (§4.4) need not be of this form, and its statements
-  are proved in §4.4 from the translations below.
+  order-one case. The contraction and the convergence are here the `Λ = 0` statements of §4.4
+  for the normalised-bump kernels only; a general even nonnegative kernel (§4.4) need not be of
+  this form, and for it these two statements are proved in §4.4 from the translations below.
+- `TauCeti.HasWeakLineDerivOn.lineDeriv_convolution_right` with
+  `TauCeti.HasWeakLineDerivOn.hasLineDerivAt_convolution_right`
+  (`TauCeti/Analysis/Sobolev/Mollification/Basic.lean:97,73`): for a locally integrable `u` with
+  a weak derivative `u′` in the direction `v` on an open `Ω`, an s-finite left-invariant measure
+  and a smooth compactly supported scalar kernel `ρ`, the convolution `u ⋆ ρ` (Mathlib's
+  `MeasureTheory.convolution` with the flipped scalar multiplication, `x ↦ ∫ ρ(x − y) u(y) dy`)
+  has directional derivative `(u′ ⋆ ρ)(x)` in the direction `v` at every `x` with
+  `x − tsupport ρ ⊆ Ω`. With `Ω = ⊤`, Lebesgue measure and `ρ = φ_ε`, applied successively to the
+  weak derivatives of §4.1, this is `∂^αJ_εu = J_ε∂^αu` of §4.4 for every admissible kernel and
+  every period group (the identity is pointwise, and a Λ-periodic `u` with finite norm is locally
+  integrable); it is consumed, not proved again.
 - `TauCeti.Wkp.translate`, `TauCeti.Wkp.lowerOrder_translate`,
   `TauCeti.Wkp.iteratedGradient_translate`, `TauCeti.Wkp.continuous_translate`,
   `TauCeti.Wkp.norm_translate` and `TauCeti.Wkp.translateLIE`
   (`TauCeti/Analysis/Sobolev/Wkp/Translation.lean:104,137,130,182,193,229`): translation of
   `W^{k,p}(ℝⁿ)` acts on the value and every weak derivative, is a linear isometric equivalence,
   and for finite `p` is continuous in the translation vector for each fixed element.
+  `TauCeti.Wkp.lowerOrder_translate` and `TauCeti.Wkp.iteratedGradient_translate` give the
+  translation invariance of the norm of §4.1 at `Λ = 0`; the others carry the route of §4.4.
 - `TauCeti.W1p.eLpNorm_value_comp_add_sub_value_le_mul_enorm_gradient`
   (`TauCeti/Analysis/Sobolev/Translation.lean:133`): for `1 ≤ p ≤ ∞`, an additive Haar measure
   `μ` on `E` and `u` in `TauCeti.w1p0Submodule μ ⊤ p`, the closure of the test functions in
@@ -407,8 +424,9 @@ on `E`, no Lorentzian quadratic form with a time orientation and no causal curve
 
 ### From TauCetiRoadmap.LorentzianGeometry
 
-- §6.1, `minkowskiForm E`: the Minkowski form `−τ² + |ξ|²` on `ℝ × E`, Lorentzian; §3.1 here
-  carries the acoustical form to it by an explicit frame.
+- §6.1, `minkowskiForm E`: the Minkowski form `−τ² + |ξ|²` on `ℝ × E`, Lorentzian; the frame
+  `(t, x) ↦ (ct, x − vt)` carrying the acoustical form of constant `c > 0`, `v` to it is §7.3's
+  first Check, which §3.1 uses and to which it adds the determinant.
 - §6.3: for a Lorentzian form and a nonzero covector `ζ`, the hyperplane `ker ζ` is spacelike,
   timelike or null according as the inverse form `g⁻¹(ζ, ζ)` is negative, positive or zero, with
   timelike meaning nondegenerate of index one, equivalently containing a timelike vector; used
@@ -440,7 +458,14 @@ on `E`, no Lorentzian quadratic form with a time orientation and no causal curve
 - §1.2: the structure `LinearSystem n N` (coefficients `A0`, `A`, `B` on `ℝ × E`, valued in real
   `N × N` matrices), its left-hand side `LinearSystem.apply` and the predicate
   `LinearSystem.IsSymmetricHyperbolic` (`A⁰` and every `Aʲ` symmetric in the sense of
-  `Matrix.IsSymm`, and `λ|ξ|² ≤ ξ·A⁰ξ` with `λ > 0`). These are the carrier of §5.1.
+  `Matrix.IsSymm`, and `λ|ξ|² ≤ ξ·A⁰ξ` with `λ > 0`). The structure and the predicate are the
+  carrier of §5.1. `LinearSystem.apply` is the classical left-hand side, built from the pointwise
+  `deriv` and `fderiv`, which are `0` where the map is not differentiable; it is used here only on
+  `C¹` maps, in the pointwise identity of §5.2. In §§5.1, 5.3 and 5.4, for
+  `W ∈ C¹([0, T]; L²_Λ) ∩ C([0, T]; H¹_Λ)`, `LW` denotes `A⁰∂_tW + Σᵢ Aⁱ∂ᵢW + BW` with `∂_tW` the
+  derivative of `t ↦ W(t)` in `L²_Λ` and `∂ᵢW` the weak derivative of §4.1; it lies in
+  `C([0, T]; L²_Λ)`, and when `W` is moreover `C¹` on `[0, T] × E`, for each `t ∈ (0, T)` the class
+  of `x ↦ LinearSystem.apply W t x` is `LW(t)`.
 - Conventions, *Propagation speed*: its notion of a speed `c ≥ 0`,
   `|ξ·(Σⱼ ωⱼAʲ)ξ| ≤ c ξ·A⁰ξ` for all `(t, x)` and `|ω| ≤ 1` (§1.2 gives the existence of one when
   the `Aʲ` are bounded). Compared in §5.2 with dominating cones, at a point.
@@ -594,8 +619,8 @@ field `v` and boundedness (ChristodoulouMiao2014 lines 530–544).
 
 - Every barotropic solution `(ρ, v)` with a constant `s₀` is a full solution for
   `P(ρ, s) = p(ρ)`, and conversely a full solution for this law with constant entropy is a
-  barotropic solution; with entropy propagation this is how every statement made for the full
-  system below (§7.2, Layer 8) contains the barotropic one.
+  barotropic solution; with entropy propagation (on slabs, here; on developments, §8.1) this is
+  how every statement made for the full system below (§7.2, Layer 8) contains the barotropic one.
 - Constant states, Λ-translates and restrictions are solutions.
 
 **Checks.**
@@ -759,9 +784,10 @@ Prove the following, which LorentzianGeometry §7.3 does not state:
 
 - *Determinant and frame.* In the standard basis the Gram matrix of `g` has determinant
   `det g = −c²`, so `√(−det g) = c` (ChristodoulouMiao2014 line 685), and its inverse is the
-  Gram matrix of the inverse form of LorentzianGeometry §7.3; the linear map
-  `(τ, ξ) ↦ (cτ, ξ − τv)`, of determinant `c`, carries `g` to the Minkowski form `−τ² + |ξ|²`
-  (LorentzianGeometry §6.1), whose Gram determinant is `−1`.
+  Gram matrix of the inverse form of LorentzianGeometry §7.3. The linear map
+  `(τ, ξ) ↦ (cτ, ξ − τv)` carries `g` to the Minkowski form `−τ² + |ξ|²` (LorentzianGeometry
+  §7.3, first Check, with §6.1's `minkowskiForm E`, whose Gram determinant is `−1`); stated here
+  is its determinant `c`, which gives `det g = c² · (−1)` again.
 - *Covectors.* `ζ` is future causal (`ζ(X) ≥ 0` for every future causal `X`) iff
   `ζ₀ + v·ζ′ ≥ c|ζ′|`, and future timelike (`g⁻¹(ζ, ζ) < 0` and `ζ(B) > 0`) iff
   `ζ₀ + v·ζ′ > c|ζ′|`; for `ζ ≠ 0` the hyperplane `ker ζ` is spacelike iff
@@ -777,8 +803,9 @@ Prove the following, which LorentzianGeometry §7.3 does not state:
   (barotropic with `n ≥ 2`, full for every `n`), `ζ₀ + v·ζ′ = 0`: the null cone of `g_U⁻¹` is the
   sound sheet of the characteristic variety, and the hyperplane `ζ₀ + v·ζ′ = 0`, characteristic
   for the material derivative `B`, is its other sheet, absent for the barotropic system with
-  `n = 1` (§2.2, the multiplicity-zero Check;
-  ChristodoulouMiao2014 lines 864–872; Christodoulou2019 lines 134–138).
+  `n = 1` (§2.2, the multiplicity-zero Check; the identification is proved here. For the sound
+  cones of a solution as its causal structure: ChristodoulouMiao2014 lines 869–872;
+  Christodoulou2019 lines 134–138).
 
 **Checks.**
 
@@ -1122,9 +1149,19 @@ as `t′ → t` in `I`. This is the Sobolev space of the quotient `E/Λ`; for
   squared is `‖cos 2πy‖²_{L²(𝕋)} = 1/2` for every `s`, in particular at `s = 1`, against `2π` for
   `‖cos x‖²_{H¹_Λ}`; the constant `1` has `1` against `2π`. The ratios `4π` and `2π` differ: the
   two norms are equivalent, not proportional.
+- Continuity in time, `n = 1`, `Λ = 0`, `k = 0`, `Ū = 0`, `w = 1_{[0, 1]}`, so that the squared
+  norm is `∫ |·|²`. Transport `U(t, x) = w(x − t)` is in `C([0, 1]; L²)`: the squared norm of
+  `U(t′) − U(t)` is the length of `[t′, t′ + 1] Δ [t, t + 1]`, which is `2|t′ − t|` for
+  `|t′ − t| ≤ 1`. The escaping bump `U(t, x) = w(x − 1/t)` for `t > 0`, `U(0, ·) = w`, has squared
+  norm `1` at every `t`, so its norm is continuous in `t`, but `U(t) − U(0)` has squared norm `2`
+  for `0 < t < 1` (the intervals `[1/t, 1/t + 1]` and `[0, 1]` are disjoint): it is not in
+  `C([0, 1]; L²)`, and a definition asking only for continuity of `t ↦ ‖U(t) − Ū‖` would admit
+  it. The finiteness clause is not implied by the continuity clause: `U ≡ 1` has
+  `U(t′) − U(t) = 0` for all `t, t′`, yet `U(t) − Ū = 1` has infinite squared norm on `Λ = 0`.
 
 *Needs:* Tau Ceti `TauCeti.HasWeakLineDerivOn`, `TauCeti.HasWeakFDerivOn`, `TauCeti.Wkp`,
-`MeasureTheory.Lp.memSobolev_natCast_iff_exists_wkp_value_eq`; Mathlib
+`MeasureTheory.Lp.memSobolev_natCast_iff_exists_wkp_value_eq`, `TauCeti.Wkp.lowerOrder_translate`
+and `TauCeti.Wkp.iteratedGradient_translate` (translations); Mathlib
 `MeasureTheory.IsAddFundamentalDomain`, `Finset.Nat.antidiagonalTuple`,
 `TemperedDistribution.MemSobolev`, `MeasureTheory.Lp`, `ContDiffBump`.
 
@@ -1287,7 +1324,7 @@ holomorphic `Φ`), up to the norm equivalence of §4.1.
 Construct, for `ε > 0`, `J_ε u = φ_ε ⋆ u` with `φ ∈ C_c^∞(E)` even, nonnegative, `∫ φ = 1`,
 `φ_ε = ε^{−n}φ(·/ε)` (Mathlib `MeasureTheory.convolution`). Prove: `J_ε` preserves
 Λ-periodicity and maps `Hᵏ_Λ` into `⋂_j Hʲ_Λ`; `‖J_εu‖_{Hᵏ_Λ} ≤ ‖u‖_{Hᵏ_Λ}`; `J_ε` is symmetric
-for the `L²_Λ` pairing; `∂ᵢJ_ε = J_ε∂ᵢ`; `J_εu → u` in `Hᵏ_Λ` as `ε → 0`;
+for the `L²_Λ` pairing; `J_εu → u` in `Hᵏ_Λ` as `ε → 0`;
 `‖J_εu‖_{Hᵏ⁺¹_Λ} ≤ C(1 + ε^{−1})‖u‖_{Hᵏ_Λ}` for every `ε > 0`, hence
 `‖J_εu‖_{Hᵏ⁺¹_Λ} ≤ 2Cε^{−1}‖u‖_{Hᵏ_Λ}` for `0 < ε ≤ 1` (the orders `≤ k` are bounded by the
 contraction and each derivative of order `k + 1`, `∂ᵢJ_ε∂^αu = ∫ ∂ᵢφ_ε(z) τ_z∂^αu dz`, by the
@@ -1302,11 +1339,14 @@ commutator Λ-periodic.
 
 The kernel class is the general one above. Tau Ceti's mollifiers are the special case of
 normalised bumps (`φ` the normalisation of a `ContDiffBump`, which is radial and positive at
-`0`), for which, at `Λ = 0` and in Tau Ceti's `Wkp` norm, the contraction, the commutation with
-derivatives and the convergence `J_εu → u` are `TauCeti.Wkp.norm_normedBumpL_le_one`,
-`TauCeti.Wkp.lowerOrder_normedBumpL` with `TauCeti.Wkp.iteratedGradient_normedBumpL`, and
-`TauCeti.Wkp.tendsto_normedBumpL` at `p = 2`. This section owns the extension of these three
-statements to every admissible kernel and every period group. Route: write
+`0`), for which, at `Λ = 0` and in Tau Ceti's `Wkp` norm, the contraction and the convergence
+`J_εu → u` are `TauCeti.Wkp.norm_normedBumpL_le_one` and `TauCeti.Wkp.tendsto_normedBumpL` at
+`p = 2` (with `TauCeti.Wkp.lowerOrder_normedBumpL` and `TauCeti.Wkp.iteratedGradient_normedBumpL`
+for the derivatives). This section owns the extension of these two statements to every
+admissible kernel and every period group. The commutation `∂^αJ_εu = J_ε∂^αu` is not restated:
+for every admissible kernel and every `Λ` it is Tau Ceti's
+`TauCeti.HasWeakLineDerivOn.lineDeriv_convolution_right` with `Ω = ⊤`, applied successively to
+the weak derivatives of §4.1 (supplier contracts), and it is used throughout below. Route: write
 `J_εu = ∫ φ(y) τ_{−εy}u dy`, a Bochner integral of the translates `τ_h = TauCeti.Wkp.translate h`
 (the sign convention of `τ` is immaterial because `φ` is even), which depend continuously on
 `y` (`TauCeti.Wkp.continuous_translate` at `p = 2`) and are isometries
@@ -1314,14 +1354,13 @@ statements to every admissible kernel and every period group. Route: write
 `φ ≥ 0` and `∫ φ = 1`: the norm of a Bochner integral is at most the integral of the norm
 (`MeasureTheory.norm_integral_le_integral_norm`), so `‖J_εw‖ ≤ ∫ φ(y)‖τ_{−εy}w‖ dy = ‖w‖` for
 every `w`, and in the multi-index norm of §4.1 this bound is applied to each `J_ε∂^αu = ∂^αJ_εu`;
-no separate convolution inequality is used. The commutation with derivatives follows from `TauCeti.Wkp.lowerOrder_translate` and
-`TauCeti.Wkp.iteratedGradient_translate`, because continuous linear maps commute with Bochner
-integrals; the strong convergence from `‖J_εu − u‖ ≤ ∫ φ(y)‖τ_{−εy}u − u‖ dy`, whose integrand is
-at most `2φ(y)‖u‖` and tends to `0` for each `y`, by dominated convergence. For `Λ ≠ 0` the same
-route runs in `Hᵏ_Λ`, with the translation isometries of §4.1 and their continuity in the
-translation vector obtained through the localisation of §4.1. On a normalised bump the route
-recovers the cited Tau Ceti statements. Proved here as well are the `ε^{−1}` gain and `ε` loss
-bounds, the `L²_Λ` symmetry and Friedrichs' lemma. The loss bound: for `|α| ≤ k − 1` the function
+no separate convolution inequality is used. The strong convergence follows from
+`‖J_εu − u‖ ≤ ∫ φ(y)‖τ_{−εy}u − u‖ dy`, whose integrand is at most `2φ(y)‖u‖` and tends to `0`
+for each `y`, by dominated convergence. For `Λ ≠ 0` the same route runs in `Hᵏ_Λ`, with the
+translation isometries of §4.1 and their continuity in the translation vector obtained through
+the localisation of §4.1. On a normalised bump the route recovers the cited Tau Ceti statements.
+Proved here as well are the `ε^{−1}` gain and `ε` loss bounds, the `L²_Λ` symmetry and
+Friedrichs' lemma. The loss bound: for `|α| ≤ k − 1` the function
 `w = ∂^αu` lies in `H¹_Λ`, `J_εw − w = ∫ φ(y)(τ_{−εy}w − w) dy` because `∫ φ = 1`, and for
 `Λ = 0` the translation estimate `‖τ_hw − w‖_{L²} ≤ |h|‖∇w‖_{L²}`
 (`TauCeti.W1p.eLpNorm_value_comp_add_sub_value_le_mul_enorm_gradient`, on all of `H¹(E)` by
@@ -1360,13 +1399,16 @@ so `C = √n ∫ |y|φ(y) dy` serves. For `Λ ≠ 0` the localisation of §4.1 g
   integral `1`, and has `φ(0) = 0`, while every normalised `ContDiffBump` is positive at `0`; so
   `J_ε` for this `φ` is not one of Tau Ceti's `TauCeti.Wkp.normedBumpL`. The translation route
   still applies: `J_εu = ½(τ_{2ε} + τ_{−2ε})(η_ε ⋆ u)`, a contraction, and
-  `‖J_εu − u‖ ≤ ∫ φ(y)‖τ_{−εy}u − u‖ dy → 0`.
+  `‖J_εu − u‖ ≤ ∫ φ(y)‖τ_{−εy}u − u‖ dy → 0`; and `∂ᵢJ_εu = J_ε∂ᵢu` is the pinned
+  `TauCeti.HasWeakLineDerivOn.lineDeriv_convolution_right`, `φ` being smooth with compact support,
+  while no `TauCeti.Wkp.normedBumpL` statement covers it.
 
 *Needs:* §4.1; Mathlib `MeasureTheory.convolution`, `ContDiffBump`, the Bochner integral with
 `MeasureTheory.norm_integral_le_integral_norm`, and dominated convergence; Tau Ceti `TauCeti.Wkp.translate`,
-`TauCeti.Wkp.continuous_translate`, `TauCeti.Wkp.norm_translate`, `TauCeti.Wkp.translateLIE`,
-`TauCeti.Wkp.lowerOrder_translate` and `TauCeti.Wkp.iteratedGradient_translate` for the
-general kernel; `TauCeti.W1p.eLpNorm_value_comp_add_sub_value_le_mul_enorm_gradient` and
+`TauCeti.Wkp.continuous_translate`, `TauCeti.Wkp.norm_translate` and `TauCeti.Wkp.translateLIE`
+for the general kernel; `TauCeti.HasWeakLineDerivOn.lineDeriv_convolution_right` (with
+`TauCeti.HasWeakLineDerivOn.hasLineDerivAt_convolution_right`) for `∂^αJ_εu = J_ε∂^αu`;
+`TauCeti.W1p.eLpNorm_value_comp_add_sub_value_le_mul_enorm_gradient` and
 `TauCeti.w1p0Submodule_top_eq_top` for the loss bound; `TauCeti.Wkp.normedBumpL`, `TauCeti.Wkp.norm_normedBumpL_le_one`,
 `TauCeti.Wkp.lowerOrder_normedBumpL`, `TauCeti.Wkp.iteratedGradient_normedBumpL`,
 `TauCeti.Wkp.tendsto_normedBumpL` for the normalised-bump case, and
@@ -1388,7 +1430,8 @@ Tau Ceti's Sobolev spaces and Mathlib; no earlier layer.
 
 A *linear symmetric hyperbolic operator* on `[0, T] × E` (Λ-periodic coefficients) is a linear
 system `LinearSystem n N` of SymmetricHyperbolicSystems §1.2,
-`LW = A⁰∂_tW + Σᵢ Aⁱ∂ᵢW + BW`, satisfying its `LinearSystem.IsSymmetricHyperbolic` with a
+`LW = A⁰∂_tW + Σᵢ Aⁱ∂ᵢW + BW`, with `∂_tW` the `L²_Λ`-valued time derivative and `∂ᵢW` the weak
+derivatives (supplier contracts), satisfying its `LinearSystem.IsSymmetricHyperbolic` with a
 constant `λ₀ > 0` (so `A⁰` and the `Aⁱ` take symmetric values and `A⁰ ≥ λ₀I`), whose
 coefficients are Λ-periodic and satisfy on `[0, T] × E`: `A⁰` bounded and of class `C¹` with
 bounded first derivatives, `Aⁱ` bounded and continuous with bounded continuous spatial
@@ -1432,6 +1475,14 @@ the quotient `E/Λ`, which is not compact unless `Λ` has full rank.
   `∫_{−R}^{R} A⁰W² = 2 asinh R → ∞`: the energy is infinite and the estimate in terms of
   `sup‖A⁰‖ = ∞` is empty. The bound on `A⁰` excludes it; with `A⁰ = 1` instead, `E = π` and both
   sides of the identity are `0`.
+- `L` acts through weak derivatives, not pointwise ones: `n = 2`, `N = 1`, `Λ = 0`, `A⁰ = A¹ = 1`,
+  `A² = 0`, `B = 0`, and `W(t, x) = h(x)` with `h = Σ_k 2^{−k} η(x − q_k) log log(1/|x − q_k|)`
+  (value `0` at the `q_k`), `η ≥ 0` smooth, supported in `B(0, 1/4)` and equal to `1` near `0`,
+  `(q_k)` dense in `ℝ²`. Each term is in `H¹(ℝ²)` with the same norm (`∫ dr/(r log²(1/r)) < ∞`
+  near `0`), so `h ∈ H¹(ℝ²)`; it is unbounded on every open set, hence differentiable nowhere,
+  and `LinearSystem.apply W` vanishes identically. But `LW = ∂₁h ≠ 0` (an `L²` function with
+  `∂₁h = 0` is `0`), and the solution with data `h` is `h(x₁ − t, x₂)`; read pointwise, `L` would
+  make the constant `W` a second solution and uniqueness would fail.
 
 *Needs:* SymmetricHyperbolicSystems §1.2 (the carrier and the predicate); §4.1 (integration by
 parts on `F`); Tau Ceti `TauCeti.le_mul_exp_of_le_add_mul_integral`.
@@ -1450,7 +1501,8 @@ and of their first derivatives on the closure of `{χ > 0}`, and `C₁`; in part
 (§2.1, difference bound; §6.1 makes the linearised operator an operator of §5.1 by a cutoff
 equal to `1` near the closure of `{χ > 0}`) the condition reads `σ(U₁; dχ) ≤ 0`, and for the
 Euler systems `∂_tχ + v₁·∇χ + c₁|∇χ| ≤ 0` almost everywhere on `{χ > 0}` (LukNotes line 724,
-Proposition 4.4, the localised energy of the wave equation on backward cones; Majda1984, Ch. 2, §2.3).
+Proposition 4.4, the localised energy of the wave equation on backward cones; Majda1984, Ch. 2,
+§2.1, the energy method, whose localised form is proved here).
 
 This extends SymmetricHyperbolicSystems §2.2, which is the case `Λ = 0`, `w = 0` (a static cone
 of a single speed), with a smoothed weight and `LW = 0` on the cone, to Lipschitz
@@ -1587,7 +1639,9 @@ unique `W ∈ C([0, T]; Hᵏ_Λ) ∩ C¹([0, T]; Hᵏ⁻¹_Λ)` with `LW = f`, `
 `dE_k/dt ≤ C E_k + C E_k^{1/2}‖f‖_{Hᵏ_Λ}`, `E_k = Σ_{|α|≤k} ∫_F ⟨A⁰∂^αW, ∂^αW⟩`, with `C` depending
 on `n`, `N`, `k`, `Λ`, `λ₀`, the constant matrices `Ā⁰, …, Āⁿ` (the spatial ones included),
 `sup_t ‖∂_tA⁰‖_∞`, `sup_t ‖A^μ − Ā^μ‖_{Hᵏ_Λ}` and `sup_t ‖B‖_{Hᵏ_Λ}` (Majda1984, Ch. 2, §2.1;
-Kato1975, Theorem I, both with `A⁰` Lipschitz in time; LukNotes line 1158, Theorem 5.3, proves the
+Kato1975, Theorem II, whose case of coefficients independent of the unknown gives the linear
+statement for `Λ = 0` on a short interval, carried to `[0, T]` by the estimate; both with `A⁰`
+Lipschitz in time; LukNotes line 1158, Theorem 5.3, proves the
 wave-equation analogue by
 duality). The time derivative of `A⁰` enters through the term `∫⟨∂_tA⁰ W, W⟩` of the energy identity
 of §5.1, so the hypothesis on `A⁰` is part of the statement; `Aⁱ` and `B` need no time derivative.
@@ -1653,9 +1707,13 @@ subset of `[t₁, t₂] × E` containing the closure of `L_φ`, with `φ` spacel
 `Λ = 0` periodicity is no condition). If `U₁ = U₂` on the base of `L_φ`, then `U₁ = U₂` on `L_φ`.
 Only the cones of `U₁` enter. At the points of `L_φ` where `φ` is not differentiable the
 derivative `dφ` is read as `0`, where the condition holds trivially; they form a null set by
-Rademacher's theorem. (Majda1984, Ch. 2, §2.3; LukNotes line 724, Proposition 4.4, for the wave
+Rademacher's theorem. (Majda1984, Ch. 2, §2.1, the energy method, whose localised form is proved
+here; LukNotes line 724, Proposition 4.4, for the wave
 equation; EperonReallSbierski2019 line 1178, Proposition 4.63, which quotes the standard local
-uniqueness; BarGinouxPfaffle2007 lines 3664–3668, Theorem 3.2.11, the linear wave analogue.)
+uniqueness; BarGinouxPfaffle2007 line 3365, Corollary 3.2.3, with Lemma 3.2.2 at line 3284, the
+linear wave analogue: on a small relatively compact causal domain with a spacelike Cauchy
+hypersurface, a solution vanishes at every point not causally related to the support of its
+data.)
 The proof applies §5.2 to `W = U₁ − U₂` with the weight `χ = φ₊`, using the difference bound
 of §2.1. Let `𝒩` be the common domain of `U₁`, `U₂` and `L̄` the closure of `L_φ`. Since `L̄`
 is compact modulo `Λ` and `𝒩` is Λ-invariant and relatively open, some `δ > 0` makes the closed
@@ -1747,7 +1805,8 @@ from `t₀` to `t_p` in steps `h`, applying §6.1 with `Λ = 0` (single moving c
 `(c(q) + 2ε, v(q))`
 at points `q` of the shrinking neighbourhoods; each step loses a margin `O(εh)`, so for `ε`
 small the total loss `O(ε(t_p − t₀))` stays below the distance from `J⁻_D(p)` to the complement
-of `N` (Majda1984, Ch. 2, §2.3; ChristodoulouMiao2014 lines 872–878; EperonReallSbierski2019
+of `N` (Majda1984, Ch. 2, §2.1, the energy method, whose localised form is proved here;
+ChristodoulouMiao2014 lines 872–878; EperonReallSbierski2019
 lines 1178–1189).
 
 - *Slab uniqueness.* Two classical solutions on `[t₀, t₁) × E` with the same data on `Σ_{t₀}`,
@@ -1826,7 +1885,7 @@ not a compact subset of `G`.
 - *Persistence:* if `U₀ − Ū ∈ Hᵏ′_Λ` with `k′ > k`, the solution stays in `Hᵏ′_Λ` on the same
   maximal interval.
 
-(Kato1975, Theorem I; Majda1984, Ch. 2, Theorem 2.1 and the continuation principle of §2.2;
+(Kato1975, Theorem II; Majda1984, Ch. 2, Theorem 2.1 and the continuation principle of §2.2;
 Dafermos2016, Ch. V, Theorem 5.1.1; LukNotes line 1239, Theorem 6.1, and line 1620,
 Theorem 6.10, for quasilinear wave equations.) Route: the iteration
 `A⁰(U^m)∂_tU^{m+1} + Σᵢ Aⁱ(U^m)∂ᵢU^{m+1} = F(U^m)` with mollified data
@@ -1911,7 +1970,17 @@ the full system `Ū = (ρ₀, v₀, s₀)`, which lies in `G` because `(ρ₀, s
 `K = {(ρ, v, s) : (ρ, s) ∈ L ∪ {(ρ₀, s₀)}, |v − v₀| ≤ CM}`); the bound `ρ ≥ ρ_*/2` by
 shrinking `T` to at most `ρ_*/(2C′)`, where `C′ > 0` bounds
 `‖∂_tρ‖_∞ = ‖v·∇ρ + ρ div v‖_∞` in terms of the bound `R(M, K)` of §7.1, `ρ₀` and `v₀`, by the
-embedding of §4.2 into `C¹_b` (`2k > n + 2`).
+embedding of §4.2 into `C¹_b` (`2k > n + 2`). For the continuation criterion §7.1 needs the
+values of the whole state in a compact subset of `G`, while the hypothesis bounds only `(ρ, s)`
+(only `ρ` for the barotropic system); the velocity is bounded as well. For `t₂ < t₀ + T`, `v` is
+bounded on `[t₀, t₂] × E`, because `t ↦ v(t) − v₀` is continuous into `C_b` (§4.2); so the
+material curves `ẋ = v(t, x)` through the points of `[t₀, t₂] × E` exist back to `t₀` (§1.3),
+and along them `Bv = −ρ⁻¹∇(P(ρ, s)) = −ρ⁻¹(∂_ρP ∇ρ + ∂_sP ∇s)` gives
+`sup_x |v(t, x)| ≤ sup_x |v(t₀, x)| + C_L ∫_{t₀}^{t} ‖∇(ρ, s)(r)‖_∞ dr` with
+`C_L = max_L (|∂_ρP| + |∂_sP|)/ρ`, finite because `L ⊆ 𝒪` is compact, `P` is smooth on `𝒪` and
+`ρ > 0` on `L`. With `V` the right-hand side at `t = t₀ + T`, finite by the hypothesis on the
+gradient, the values lie in the compact `{(ρ, v, s) : (ρ, s) ∈ L, |v| ≤ V} ⊆ G`, and §7.1
+applies.
 
 - For `Λ = 0` and `Λ = Λ_cyl` these are the Euclidean and cylinder carriers of the Conventions.
 - The solution is Galilean covariant: boosting the data by `w` boosts the solution.
@@ -1942,8 +2011,9 @@ embedding of §4.2 into `C¹_b` (`2k > n + 2`).
   compact, lies in `G` and contains it. That set is not convex, which the secant bound of §4.3
   allows.
 
-*Needs:* §§1.1–1.3 (the equations of state and the Euler systems the statement is about), §2.2,
-§4.1 (the space `Hᵏ_Λ`), §4.2 (the embeddings into `C_b` and `C¹_b`), §7.1.
+*Needs:* §§1.1–1.3 (the equations of state and the Euler systems the statement is about; the
+material curves of §1.3 for the velocity bound of the continuation criterion), §2.2, §4.1 (the
+space `Hᵏ_Λ`), §4.2 (the embeddings into `C_b` and `C¹_b`), §7.1.
 
 ### 7.3 Uniformly local data
 
@@ -1958,7 +2028,8 @@ such that for every `U₀ : E → K` with `U₀ − Ū ∈ Hᵏ_loc(E)` and
 `[0, T] × E` with `U(0) = U₀`. Its values lie in a compact subset of `G` depending only on `G`,
 `Ū` and `K`; `sup_y ‖χ(· − y)(U(t) − Ū)‖_{Hᵏ(E)}` is bounded on `[0, T]`; and `U` commutes with
 every translation of `E` that fixes `U₀`, so Λ-periodic data give Λ-periodic solutions for every
-period group (Kato1975, Theorem I).
+period group (Majda1984, Ch. 2, §2.3, uniformly local Sobolev spaces; Kato1975, Theorem II, whose
+coefficients are uniformly local; the localisation below is proved here).
 
 The localisation uses the *source-switched system* of the given system: the system on `G × ℝ`
 with states `(U, a)`, coefficient matrices `diag(A⁰(U), 1)` and `diag(Aⁱ(U), 0)`, and source
@@ -2076,6 +2147,17 @@ development `D(S)`; EperonReallSbierski2019 lines 1129–1144; Christodoulou2007
 - If `(D, U) ≤ (D′, U′)` then `J⁻_{D′}(p) ⊆ D` for every `p ∈ D`: a causal curve of `U′` leaving
   `D` would leave it at a time `> t₀` and give a past-inextendible curve in `D` that misses the
   data.
+- *Entropy on developments.* If `(D, U)` is a development of full data with `s̄ ≡ s₀` on `S`, then
+  `s ≡ s₀` on `D`. The material curve `ẋ = v(t, x)` through `p ∈ D` is a causal curve of the
+  acoustical field (`|ẋ − v| = 0 ≤ c`). Continue it backwards in `D` as far as possible: at a
+  lower end `a > t₀` where it has a limit in `D` it continues further by Picard–Lindelöf (`D` is
+  relatively open in `H_{t₀}`, so it is open in `𝔐` near points with `t > t₀`, and `v` is `C¹`
+  there), so the maximal continuation either has a limit at `t₀`, which lies in
+  `D ∩ Σ_{t₀} = {t₀} × S`, or is past-inextendible in `D` on an interval not containing `t₀`,
+  which `D = D⁺_D({t₀} × S)` excludes. Since `Bs = 0` along the curve, `s(p) = s₀`. Hence the
+  developments of barotropic data for `(I, p)` are exactly the full developments, for
+  `P(ρ, s) = p(ρ)` on `I × ℝ`, of the same data with constant entropy (the acoustical fields
+  agree, `c` not depending on `s`), and §§8.2–8.4 contain the barotropic statements.
 
 **Checks.**
 
@@ -2102,15 +2184,23 @@ Prove, for developments `(D₁, U₁)`, `(D₂, U₂)` of the same data:
   `W₁₂ = {p ∈ D₁ : J⁻_{D₁}(p) ⊆ D₂}`, with causal pasts for the field of `U₁`, carries `U₁ = U₂`,
   equals `W₂₁`, and with this solution is a development; it is the largest development below
   both. In particular `D₁ ⊆ D₂` implies
-  `(D₁, U₁) ≤ (D₂, U₂)`. Route: §6.2 with `D = D₁`, `O = D₂`, and the first-exit argument of §3.3.
+  `(D₁, U₁) ≤ (D₂, U₂)` (EperonReallSbierski2019 lines 1141–1144 and 1232–1240, the common and
+  the maximal common development of two developments of a quasilinear wave equation, and lines
+  1208–1210, its identification with the component of the intersection containing the data; the
+  description by causal pasts is proved here). Route: §6.2 with `D = D₁`, `O = D₂`, and the
+  first-exit argument of §3.3.
 - *Compatibility* (`EquationOfState.compatible_iff`). The developments are compatible iff
   `W₁₂ = D₁ ∩ D₂` iff they have a common upper bound; the union of any nonempty pairwise compatible family, with the glued solution, is
-  a development and the least upper bound of the family. (The empty family has union `∅`, a
-  development only when `S = ∅`, where `(∅, ∅)` is the unique development.)
+  a development and the least upper bound of the family (EperonReallSbierski2019 line 1228,
+  Theorem 4.64, and line 1330, Remark 4.67, the wave-equation analogue for a connected
+  intersection, and lines 1218–1223 on gluing along the maximal common development on a fixed
+  background). (The empty family has union `∅`, a development only when `S = ∅`, where
+  `(∅, ∅)` is the unique development.)
 - *Maximal developments* (`EquationOfState.exists_maximal_development`). Every development lies
   below a maximal one (`zorn_le_nonempty₀` started
   at the given development: every nonempty chain is a nonempty compatible family, whose union is
-  an upper bound).
+  an upper bound; EperonReallSbierski2019 lines 1010–1012, Remark 3.56, the same use of Zorn's
+  lemma for a quasilinear wave equation).
 - *Uniqueness criterion* (`EquationOfState.isGreatest_development_of_solution`). If the data on
   the Λ-invariant open `S` extend to a Λ-periodic classical solution `U_*` on all of `H_{t₀}`, then
   `(D⁺_{H_{t₀}}({t₀} × S), U_*)` is a development and every development is below it, which is
@@ -2174,7 +2264,7 @@ classical solution on `O` with `U(t₀, ·) = Ū` whose sound speed and velocity
 `[t₀, t₂] × E` for every `t₂ < t₀ + T` (as for the solutions of §7.2 and §7.3, whose values have
 compact closure in the set of states), then every development is compatible with `(O, U)`, and
 every maximal development contains the slab `O` (ChristodoulouMiao2014 lines 866–872;
-AbbresciaSpeck2022 lines 175–179; LuoYu2023b lines 417–419; Kato1975, Theorem I and Majda1984,
+AbbresciaSpeck2022 lines 175–179; LuoYu2023b lines 417–419; Kato1975, Theorem II and Majda1984,
 Ch. 2, for the slab). The bound makes `(O, U)` a development (§3.3, slabs) and `U` Λ-periodic
 (slab uniqueness, §6.2). Route: openness and idempotence of `D⁺` (§3.3), §6.2 for compatibility,
 §8.2.
@@ -2393,7 +2483,7 @@ Layers 1, 2 (§2.2), 3, 6 and 7; LorentzianGeometry §12.6 (concatenation, for �
 - Nirenberg1959 — L. Nirenberg, *On elliptic partial differential equations*, Ann. Sc. Norm.
   Sup. Pisa 13 (1959), 115–162, Lecture II.
 - Kato1975 — T. Kato, *The Cauchy problem for quasi-linear symmetric hyperbolic systems*, Arch.
-  Rational Mech. Anal. 58 (1975), Theorem I.
+  Rational Mech. Anal. 58 (1975), Theorem II.
 - Majda1984 — A. Majda, *Compressible Fluid Flow and Systems of Conservation Laws in Several Space
   Variables*, Springer, 1984, Ch. 2.
 - Dafermos2016 — C. M. Dafermos, *Hyperbolic Conservation Laws in Continuum Physics*, 4th ed.,
