@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LefschetzStructures~20",
+  "head": "e1fe84342e353f474d590eada1b4a97ecc5bfcad",
+  "pr": 1061,
+  "folder": "LefschetzStructures",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 47 changed lines since 2394d73 (README only: Provenance section 562-589, References header 593 and reflowed entries, notation at 392; Suggested.lean byte-identical; nothing outside the folder). R01-R04 of the previous review all repaired. Checked every changed Provenance claim against AxiomMath Stacks at c496df0 (README tiers and licence, lean-toolchain, lakefile, ClassicalTheory.lean with stacks 0FGV, ProjectionFormula/Formula.lean with stacks 0FGT) and AxiomMath Weil at 27cdb20 (all 11 Duality files, the unconditional exists_isFrobeniusDuality_rationalFrobenius and rationalFrobenius_top_constantSystem_eq_smul in PoincareDualityConstantSystem.lean, the IsFrobeniusDuality definition, README, LICENSE); Stacks Lemma 45.7.1 (0FGT) read at stacks.math.columbia.edu. P^2 counter-model recomputed: an existential q^d-pairing need not be L-compatible. Description re-read against the head: consistent. Gate: worker OK; re-run with --build against the candidate order OK (build=0); against the configured order only 'NOT IN ORDER' (candidate order lists it at line 100). depcheck 258 roadmaps, 2450 edges, 0 problems. lake env lean exits 0 with 12 sorry warnings only; 24 #check @name elaborate with binders matching signatures.md. Overlap check: MotivesAndAlgebraicCycles, DeligneWeightsAndPurity, PCurvature; nothing new shared.",
+  "text": "1dac0580330c81df"
+ }
+}
