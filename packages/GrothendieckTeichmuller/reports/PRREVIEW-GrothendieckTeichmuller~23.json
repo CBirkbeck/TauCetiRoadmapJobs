@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GrothendieckTeichmuller~23",
+  "head": "03c1ca75416d2b3ba0a7e8e2b908a43e49edcf21",
+  "pr": 1058,
+  "folder": "GrothendieckTeichmuller",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 27 changed lines since 40010b5. R01 (Tag 0BNB without connectedness) repaired: the README now assumes X connected, matching Stacks Tag 0BNB and the [ConnectedSpace X] binder of isGaloisCategory_finiteEtaleFiberFunctor in AxiomMath Stacks at c496df0. The new StacksCore/StacksFrontier clause was checked against that repository's README, and the v4.35.0 claim against its lean-toolchain. Adversarial rows cover the changed statements and the description. The description was read against the head. Gate rerun OK (the worker's run adds build=0). depcheck: 257 roadmaps, 2433 edges, 0 problems. lake env lean: exit 0, 15 sorry warnings. Seeded sample: no target lies in the changed passage. Overlap check: nothing shared.",
+  "text": "14a0712be886b19e"
+ }
+}
