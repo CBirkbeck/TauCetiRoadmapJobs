@@ -27,7 +27,7 @@ title = "Lie Groups and Lie Algebras"
 year = 2002
 doi = "10.1007/978-3-540-89394-3"
 locator_scheme = "section"
-locator = "Ch. IV §2, nos. 1–7; Ch. VI §1"
+locator = "Ch. IV §2, nos. 1–7; Ch. V §3, no. 3; Ch. VI §1"
 url = "https://doi.org/10.1007/978-3-540-89394-3"
 licence_class = "none"
 status = "uncertified"
@@ -60,7 +60,7 @@ url = "https://doi.org/10.1007/978-1-4757-2453-0"
 licence_class = "none"
 status = "uncertified"
 version_note = "2nd edition, Progress in Mathematics 140, Birkhäuser 2002; the DOI the service resolved is the record of the 1996 first edition; paywalled, cited by its locator without the text"
-cited_for = ["1.1", "1.2", "2.2", "2.3", "2.4", "2.5", "2.6", "3.1", "3.2", "3.3", "3.4", "3.5", "4.1", "4.2", "5.1", "6.2", "6.3", "7.1", "7.1c", "7.2", "7.2b", "7.2c", "7.2d", "7.3", "7.3b", "7.3c", "7.3d", "7.3f", "7.3g", "8.1"]
+cited_for = ["1.1", "1.2", "2.2", "2.3", "2.4", "2.5", "2.6", "3.1", "3.2", "3.3", "3.4", "3.5", "4.1", "4.2", "5.1", "6.2", "6.3", "7.1", "7.1c", "7.2", "7.2b", "7.2c", "7.2d", "7.3", "7.3b", "7.3c", "7.3d", "7.3f", "7.3g", "7.4", "8.1"]
 
 [[source]]
 id = "wallach1988"
@@ -74,7 +74,7 @@ url = "https://www.sciencedirect.com/bookseries/pure-and-applied-mathematics/vol
 licence_class = "none"
 status = "uncertified"
 version_note = "ISBN 978-0-12-732960-7; the chapter DOI first tried resolved to a different chapter record and was dropped; paywalled, cited by its locator without the text"
-cited_for = ["5.1", "7.1", "7.1b", "7.1c"]
+cited_for = ["5.1", "7.1", "7.1b", "7.1c", "7.4"]
 
 [[source]]
 id = "brown-fisher-hurtado2022"
@@ -114,12 +114,12 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
 version_note = "arXiv v2 read; section numbers are those of v2 (§1.2 'Facts from the structure of Lie groups'); published as Annals of Math. 196 (2022), no. 3, 941–981"
-cited_for = ["conventions", "7.3f", "consumers"]
+cited_for = ["conventions", "consumers"]
 
 [[source]]
 id = "bradlow-collier-garciaprada-gothen-oliveira2024"
 authors = "Steve Bradlow, Brian Collier, Oscar Garcia-Prada, Peter Gothen, André Oliveira"
-title = "A general Cayley correspondence and higher Teichmüller spaces"
+title = "A general Cayley correspondence and higher rank Teichmüller spaces"
 year = 2024
 doi = "10.4007/annals.2024.200.3.1"
 venue = "Annals of Mathematics 200 (2024), no. 3, 803–892"
@@ -133,5 +133,5 @@ sha256 = "c981234d6e1636c1d894834c3b545c35c8448e8a934db5120fa2b538fa6beaf8"
 licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-05"
-version_note = "arXiv v2 read (title there omits the words 'general' and 'rank'); published as Annals of Math. 200 (2024), no. 3, 803–892"
+version_note = "arXiv v2 read; its title agrees with the published one; published as Annals of Math. 200 (2024), no. 3, 803–892"
 cited_for = ["consumers"]
