@@ -33,8 +33,9 @@ headline, with the carrier its statement lacks:
   README §4.13): lacks the canonical Hodge tensors of a Shimura model, the group `I_x` and the
   finite-period crystalline centralizer it is compared with.
 * Density of the ordinary locus (Kisin–Madapusi Pera–Shin, Corollary 1.3.16, with the existence
-  of the ordinary class; README §4.7): lacks `B(G)`, the universal `G`-isocrystal on a Shimura
-  special fibre and its Newton strata.
+  of the ordinary class, README §4.7; for strongly acceptable models through a chosen Hodge
+  embedding, Kisin–Zhou, Theorem 4.4.4, README §5.4): lacks `B(G)`, the universal `G`-isocrystal
+  on a Shimura special fibre and its Newton strata.
 * Curves over the original residue field (Kisin–Zhou, Corollary 5.2.7; README §6.3): lacks
   integral Shimura models and their Kottwitz–Rapoport strata.
 -/
