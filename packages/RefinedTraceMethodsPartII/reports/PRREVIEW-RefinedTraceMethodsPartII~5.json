@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RefinedTraceMethodsPartII~5",
+  "head": "4e9063f7686003bd53ad320f45f1c16477c236ad",
+  "pr": 2410,
+  "folder": "RefinedTraceMethodsPartII",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 11 changed lines since 004cc58. Previous R01 (akn24 Proposition 2.11 wording, README 8.6) and R02 (akn-delta Definitions 2.2 and 9.2 wording, README 8.1) are repaired; the reworded 8.5 definitions, the 8.6 degeneration definition, the stated base of akn24 Theorem 2.20 and the new Check on the cosimplicial Breuil-Kisin rings were recomputed (9 table rows with values) and 16 locators re-read in akn-delta and akn24. Part (2) of Theorem 2.20 is stated over the reduction gr^0A/(I gr^0A), correcting the printed hypothesis (recorded under Source issues and for the human reviewers). Sampled targets in the change: 8.1, 8.5. Gate re-run: every check passes; depcheck 0 problems; Suggested.lean unchanged, elaborates with three sorry warnings only. Pull request text agrees with the head. Source independence checked on the changed passages only.",
+  "text": "02b3ae7efe525087"
+ }
+}
