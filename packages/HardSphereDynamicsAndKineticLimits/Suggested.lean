@@ -29,9 +29,10 @@ Stated here:
   under Lanford's theorem (`HardSphere.LanfordStatement.tendsto_empirical`).
 
 Every headline theorem of the roadmap is statable at the pins. Lanford's theorem itself is not a
-theorem of this roadmap: it is the proposition `HardSphere.LanfordStatement`, defined here and
-proved by the roadmap on the BBGKY hierarchy. The flat position space structure of the flat torus
-`FlatTorus L` (README §1.3) is not declared here: its fields (the lift and injectivity axioms at the
+theorem of this roadmap: it is the proposition `HardSphere.LanfordStatement d`, defined here for
+every `d`; for `d ≥ 2` it is the theorem of its sources, for `d = 0` it is false (README §10.4), and
+its proof (the BBGKY and Boltzmann hierarchies) is outside this roadmap. The flat position space
+structure of the flat torus `FlatTorus L` (README §1.3) is not declared here: its fields (the lift and injectivity axioms at the
 injectivity radius and the local measure axiom) are theorems of §1.3, and an instance with unproved
 fields is excluded. So `HardSphere.LanfordStatement` and its corollary take a structure
 `[FlatPositionSpace d (UnitFlatTorus d)]` as an instance argument; every such structure gives the
@@ -188,7 +189,9 @@ noncomputable def scatter (ν : EuclideanSpace ℝ (Fin d)) :
 /-! ## Layer 3: Phase space, contacts and free transport -/
 
 /-- The closed hard-core set `𝒟̄^ε_N` of configurations of `N` particles of diameter `ε` whose
-centres are pairwise at distance at least `ε` (GST2013 lines 839–841; BGSS2023 lines 137–142). -/
+centres are pairwise at distance at least `ε` (DengHaniMa2024 (1.1), lines 150–153; GST2013
+lines 839–841 and BGSS2023 lines 137–142 use the open set with strict inequalities, which differs
+from it by a null set for `0 < ε < ρ`). -/
 def hardCoreSet (ε : ℝ) (N : ℕ) : Set (Fin N → X × EuclideanSpace ℝ (Fin d)) :=
   {Z | ∀ i j, i ≠ j → ε ≤ ‖(Z i).1 - (Z j).1‖}
 
@@ -251,8 +254,10 @@ def goodSet (ε : ℝ) (N : ℕ) : Set (Fin N → X × EuclideanSpace ℝ (Fin d
   {Z | ∃ γ : ℝ → Fin N → X × EuclideanSpace ℝ (Fin d), IsTrajectory ε univ γ ∧ γ 0 = Z}
 
 /-- Uniqueness of hard-sphere trajectories: two trajectories on an interval `J` that agree at one
-time of `J` agree on `J`, for every diameter `ε` (DengHaniMa2024 lines 182–188; GST2013
-lines 848–854). -/
+time of `J` agree on `J`, for every diameter `ε`. This form, at every initial state, for every real
+`ε` and every interval, is proved from the definition and is stated in none of the sources;
+DengHaniMa2024 Proposition 1.2 (lines 182–183) gives uniqueness only off a closed Lebesgue-null set
+of initial data, on Euclidean space with `d ≥ 2`. -/
 theorem IsTrajectory.eqOn {ε : ℝ} {N : ℕ} {J : Set ℝ} (hJ : J.OrdConnected)
     {Z Z' : ℝ → Fin N → X × EuclideanSpace ℝ (Fin d)} (hZ : IsTrajectory ε J Z)
     (hZ' : IsTrajectory ε J Z') {t₀ : ℝ} (ht₀ : t₀ ∈ J) (h : Z t₀ = Z' t₀) : EqOn Z Z' J := by
@@ -392,7 +397,9 @@ theorem lintegral_sum_distinct_eq_correlation {ε : ℝ} (hε : 0 < ε)
 /-- The Boltzmann–Grad scaling of the mean particle number: for `d ≥ 1`, `0 < ε < ρ`,
 `μ_ε = ε^{−(d−1)}` and a probability density `f⁰`,
 `1 − ω_d ε ‖ρ⁰‖_∞ ≤ ε^{d−1} E[N] ≤ 1`, with `ω_d` the volume of the unit ball of `E` and
-`ρ⁰(x) = ∫ f⁰(x, v) dv` (BGSS2023 (1.1.8), lines 211–217; DengHaniMa2024 (1.12), lines 246–252). -/
+`ρ⁰(x) = ∫ f⁰(x, v) dv`. The limit `ε^{d−1} E[N] → 1` is the normalisation BGSS2023 (1.1.8),
+lines 211–217, and the error `O(ε)` is DengHaniMa2024 (1.12), lines 246–252; the two-sided bound
+with the constant `ω_d ‖ρ⁰‖_∞` is proved in the roadmap and is stated in neither source. -/
 theorem boltzmannGrad_scaling (hd : 1 ≤ d) {ε : ℝ} (hε : 0 < ε)
     (hερ : ENNReal.ofReal ε < FlatPositionSpace.radius d X)
     {f₀ : X × EuclideanSpace ℝ (Fin d) → ℝ≥0∞} (hf₀ : Measurable f₀) (hf₀1 : ∫⁻ z, f₀ z = 1) :
@@ -465,7 +472,8 @@ datum `f⁰` such that, in the scaling `μ_ε = ε^{−(d−1)}`, at every `t �
 functions `F^ε_n(t)`, `n ≥ 1`, converge to `f(t)^{⊗n}` against every bounded continuous function and
 almost everywhere along every sequence `ε_k → 0⁺`, and `F^ε_1(t) → f(t)` in essential supremum on
 every compact set. For `d ≥ 2` it is the theorem of BGSS2023 Theorem 1 (lines 316–321) and GST2013
-Theorem 8 (lines 2069–2080), proved by the roadmap on the BBGKY hierarchy (Lanford1975). -/
+Theorem 8 (lines 2069–2080) (Lanford1975), whose proof is outside this roadmap; for `d = 0` it is
+false (README §10.4). -/
 def LanfordStatement (d : ℕ) [FlatPositionSpace d (UnitFlatTorus d)] : Prop :=
   ∀ C₀ β₀ : ℝ, 1 ≤ C₀ → 0 < β₀ → ∃ T₀ : ℝ, 0 < T₀ ∧
     ∀ f₀ : UnitFlatTorus d × EuclideanSpace ℝ (Fin d) → ℝ, Continuous f₀ → (∀ z, 0 ≤ f₀ z) →
