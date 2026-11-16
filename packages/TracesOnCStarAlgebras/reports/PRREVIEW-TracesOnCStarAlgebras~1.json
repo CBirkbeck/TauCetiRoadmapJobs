@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TracesOnCStarAlgebras~1",
+  "head": "4b14cb02587d247a90ebd91d60b7bc6b91f70f7b",
+  "pr": 2464,
+  "folder": "TracesOnCStarAlgebras",
+  "date": "2026-11-16",
+  "findings": 6,
+  "blocking": 0,
+  "notes": "Full review. Gate at 4b14cb0 passes; depcheck 0 problems; Suggested.lean elaborates with 25 sorry warnings only. Sample: all 13 seeded targets (Tr1.1-Tr4.3); 25 source locators read in 6 sources (Dixmier 1963, Thomsen WTK and KMS, Kustermans-Vaes, Hochs-Kaad-Schemaitat, Kaad-Nest-Rennie), all supporting, one normalisation differing (R04); Roe's notes not opened. 22 supplier sections of 8 roadmaps resolved on main; 24 library declarations opened at the pins. Adversarial table: 24 rows, no statement refuted. Six P3 findings: README names no Lean declaration; traceIdeal_two is padding (closes by simp); adjoint invariance narrowed to semifinite lsc traces; tau-dagger normalisation vs Thomsen Theorem 4.2; a docstring source absent from the references; description omits two suppliers and one source.",
+  "text": "ac0fbbee74124893"
+ }
+}

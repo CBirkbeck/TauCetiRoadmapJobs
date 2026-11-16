@@ -1,0 +1,107 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TracesOnCStarAlgebras"
+
+[[source]]
+id = "thomsen-wtk"
+authors = "Klaus Thomsen"
+title = "On weights, traces and K-theory"
+year = 2022
+arxiv = "2211.03172v4"
+locator_scheme = "theorem"
+locator = "Theorem 4.2"
+url = "https://arxiv.org/abs/2211.03172v4"
+fetched_from = "https://arxiv.org/pdf/2211.03172v4"
+fetched_at = "2026-11-16T17:14:23Z"
+sha256 = "7a79c7507281aed2600441ba7aebf8acdb2acc27bbd11e31db09855d7d723c55"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v4"
+cited_for = ["Tr4.2"]
+
+[[source]]
+id = "thomsen-kms"
+authors = "Klaus Erik Thomsen"
+title = "An introduction to KMS weights"
+year = 2022
+arxiv = "2204.01125v6"
+locator_scheme = "theorem"
+locator = "Theorem 1.1.1"
+url = "https://arxiv.org/abs/2204.01125v6"
+fetched_from = "https://arxiv.org/pdf/2204.01125v6"
+fetched_at = "2026-11-16T17:21:56Z"
+sha256 = "87a710198999923632e7ed99815f4bd44c4f158b4eedfb345f9d929b5c0cdd3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v6"
+cited_for = ["Tr1.2"]
+
+[[source]]
+id = "kustermans-vaes"
+authors = "Johan Kustermans, Stefaan Vaes"
+title = "Weight theory for C*-algebraic quantum groups"
+year = 1999
+arxiv = "math/9901063v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.6"
+url = "https://arxiv.org/abs/math/9901063v1"
+fetched_from = "https://arxiv.org/pdf/math/9901063v1"
+fetched_at = "2026-11-16T17:22:01Z"
+sha256 = "13dbe2ca2c97fe8ab0cb0a0b757c653c4dea5fadcff721d52d863df2a682a390"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v1"
+cited_for = ["Tr1.2"]
+
+[[source]]
+id = "hks"
+authors = "Peter Hochs, Jens Kaad, André Schemaitat"
+title = "Algebraic $K$-theory and a semi-finite Fuglede-Kadison determinant"
+year = 2016
+venue = "Ann. K-Th. 3 (2018) 193-206"
+doi = "10.2140/akt.2018.3.193"
+arxiv = "1608.07395v1"
+locator_scheme = "section"
+locator = "6.2"
+url = "https://arxiv.org/abs/1608.07395v1"
+fetched_from = "https://arxiv.org/pdf/1608.07395v1"
+fetched_at = "2026-11-16T17:22:07Z"
+sha256 = "1f25e999fec2fa086bb90a1e1c13dba04f46a5aecb8027e8b836e8e446a25ad8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v1"
+cited_for = ["Tr3.1"]
+
+[[source]]
+id = "knr"
+authors = "Jens Kaad, Ryszard Nest, Adam Rennie"
+title = "KK-theory and Spectral Flow in von Neumann Algebras"
+year = 2007
+arxiv = "math/0701326v1"
+locator_scheme = "theorem"
+locator = "Definition 6.1"
+url = "https://arxiv.org/abs/math/0701326v1"
+fetched_from = "https://arxiv.org/pdf/math/0701326v1"
+fetched_at = "2026-11-16T17:23:51Z"
+sha256 = "8de1aeb813bd09618cd1e4d2a4a4e74879df2a869f496b2c8963fe01e6616bf7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v1"
+cited_for = ["Tr3.4"]
+
+[[source]]
+id = "dixmier1963"
+locator_scheme = "page"
+locator = "p. 224"
+url = "https://www.numdam.org/item/AIF_1963__13_1_219_0"
+fetched_from = "https://www.numdam.org/item/AIF_1963__13_1_219_0.pdf"
+fetched_at = "2026-11-16T17:23:52Z"
+sha256 = "b67bc52260c6bacb51a1bf0b2c055a9eb58f665bc91facd0dec8b23f2a18d65d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+cited_for = ["Tr1.1"]
