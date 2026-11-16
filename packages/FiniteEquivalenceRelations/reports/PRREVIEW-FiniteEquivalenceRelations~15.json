@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FiniteEquivalenceRelations~15",
+  "head": "26fb9cc70da00e613e8717b4ac2e47b308d97a07",
+  "pr": 1929,
+  "folder": "FiniteEquivalenceRelations",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 100 changed lines since 3286e73. All six previous findings (R01-R06, Provenance section) are repaired as proposed, in the README and in the description. The new Provenance text was checked against AxiomMath at c496df0: 10 Lean files plus README, lean-toolchain and manifest; every declaration name, namespace, file and hypothesis matches. Its Stacks locators were checked against the cached groupoids chapter (02V8, 022Q, 0232, 0233, 03BJ, 03BK, 03BM). The References change is line reflow plus one added directory (word-level diff). The adversarial table has 6 rows with computed values for the statements the changed text cites (0.2, 0.3, 1.2, 2.1, 4.2, 4.4). The gate rerun is OK (all counts 0; the worker's gate with targeted build is OK). Depcheck: 257 roadmaps, 2432 edges, 0 problems. lake env lean on Suggested.lean: exit 0, 22 sorry warnings only. Overlap check: GroupSchemesOverABase, nothing shared. Source independence: changed passages only, nothing shared.",
+  "text": "f83485cfdd162b14"
+ }
+}
