@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PELModuliPartII~5",
+  "head": "8a49f22c0647a84e57009e88e2cf77b4ae6bc18e",
+  "pr": 2453,
+  "folder": "PELModuliPartII",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 48 changed lines since d85737d. R01-R04 of the previous review are repaired and the repairs introduce no new problem: §6.5 (RZ17 (8.2) at an inert distinguished place for every CM type, signatures of Mihatsch type; recomputed at e=3, n=2: ranks (3,3) against Mih19 Lemma 2.10 (r,6-r), and (5,1)=P(1,1)), §5.4 (sigma(delta)=-(u^2/pi)delta recomputed, Q_3(sqrt(-3)) instance), the widened gap:unitary-multichain-stabilizer contract (RSZ21 Theorem A.1), §3.4 (PaRa09 n>=3, n=2 chart recomputed), and the dependent §§0.4, 7.6, 7.9, 9.7 and References notes. 17 source locators checked in RZ17, RSZ21, Mih19, Zhang21, LZ22, HLSY23, PaRa09; the seeded target §9.7 falls in a changed passage and was checked. Adversarial table has 12 rows with computed values. Gate passes (all checks 0), depcheck 262 roadmaps, 2545 edges, 0 problems; Suggested.lean elaborates with no message and declares nothing (unchanged). Pull request text agrees with the head. D01 stands (deferred). Remark for the board: plan.json still records the needs of gap:unitary-multichain-stabilizer with 'For p>2'; the README sentence is wider. Accepted conditional on the four declared gaps.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The LTXZZ22 §§4.2/5.2 integral models have two plans",
+    "where": "SelmerIwasawaCohomologyPartII gap:native-shimura must cite PELModuliPartII §§8.1–8.4, 8.7",
+    "raised": "PRREVIEW-PELModuliPartII~1"
+   }
+  ],
+  "text": "294401274af9e47a"
+ }
+}
