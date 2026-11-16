@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HyperbolicDynamicsAndThermodynamicFormalism~1",
+  "head": "3d9508cdcd1357991026b30a748ef46c7599f615",
+  "pr": 2441,
+  "folder": "HyperbolicDynamicsAndThermodynamicFormalism",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 2,
+  "notes": "Full review. Sample: all 15 seeded targets checked against the cached texts (66 locators in 8 sources; uncertified KatokHasselblatt1995 etc. not read). Gate OK (all checks 0); depcheck 248 roadmaps, 2375 edges, 0 problems; lake env lean: 15 sorry warnings only; one-tactic probe fails on all 15 theorems. Findings: two plan.json gaps (sphere-bundle-embedding, connection-map-jacobi-derivative) ask for what the pins or this roadmap's §9.3 already provide (P2); two pull-request text defects (P3). Adversarial table of 27 rows found no false statement in README or Suggested.lean.",
+  "text": "bd302127a55205cd"
+ }
+}
