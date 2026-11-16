@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HyperbolicDynamicsAndThermodynamicFormalism~2",
+  "head": "3d9508cdcd1357991026b30a748ef46c7599f615",
+  "pr": 2441,
+  "folder": "HyperbolicDynamicsAndThermodynamicFormalism",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 2,
+  "notes": "Full review at an unchanged head. Previous findings: R03 and R04 (pull-request text) repaired; R01 and R02 (plan.json gaps sphere-bundle-embedding and connection-map-jacobi-derivative, which ask for what the pins or README section 9.3 already provide) not repaired and re-raised (P2). New: one P3 Check in section 5.2 (disjoint union of two full shifts has a segment of maximal measures only for equal entropies). Sample: all 15 seeded targets checked against the cached texts (8 sources; KatokHasselblatt1995, Bowen1975 and the other uncertified texts not read). Gate OK (all checks 0); depcheck 252 roadmaps, 2396 edges, 0 problems; lake env lean: 15 sorry warnings only; #check of all 50 declarations; one-tactic probe fails on all 15 theorems. Adversarial table of 31 rows found no false theorem in README or Suggested.lean.",
+  "text": "128d6ba3553b6c97"
+ }
+}
