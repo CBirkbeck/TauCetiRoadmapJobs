@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComplexHessianEquations~1",
+  "head": "7fbebb57b7fd8b9033d7fe136e3d29e6f2d1cbcb",
+  "pr": 2440,
+  "folder": "ComplexHessianEquations",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Two P3 findings: README contract omits Mathlib's Matrix.IsHermitian.eigenvalues0, which eigenvalueVector reindexes; PR description's Dependencies paragraph names no supplier. Seeded sample: all 15 sections (1.2, 1.3, 1.5, 2.3, 2.4, 2.5, 3.3, 4.1, 5.4, 6.6, 7.2, 8.3, 8.4, 8.5, 8.6) verified against the cached texts; 90 of 132 locators opened, none wrong; uncertified texts (yau1978, szekelyhidi2014, tian1987, hormander1990, kolodziej1998, gilbarg-trudinger2001, cns1985, ckns1985) not verifiable. Gate passes (all checks 0); depcheck: 250 roadmaps, 2380 edges, 0 problem(s). Suggested.lean elaborates with 17 sorry warnings only; #check of all 31 declarations and 75 library names clean; one-tactic padding probe closes none of 17 theorems. Adversarial table: 25 rows. Declared gap weak-harnack-supersolutions is no longer used by the README (barrier route); flagged for human reviewers, not counted as a finding. 8 source issues recorded (spruck2005 x2, gpt2023 x6).",
+  "text": "6e177deb5775dd3a"
+ }
+}
