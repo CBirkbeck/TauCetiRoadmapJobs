@@ -360,7 +360,7 @@ functors by free actions of formally smooth group functors, with formally smooth
 §4.11 (for a free `Ĝ_m^γ`-action on `Sp R′` and a map `d` to `Ĝ_m^γ` with `d(λx) = λ²d(x)`, the fibre
 `Sp R = d^{−1}(1)` is a `Ĝ_m^γ[2]`-torsor over `Sp (R′)^{Ĝ_m^γ}`, finite flat of degree `2^γ` at `p = 2`).
 
-What GlobalGaloisDeformations must provide (gap:tensor-taylor-wiles-primes): in Layer G7, the Taylor–Wiles prime selection of Newton–Thorne 2026 §4 (nt26 pp. 29–30; Propositions 4.8–4.9, pp. 34–35): from rank-two large residual image and a perfect subgroup of the rank-`2r` tensor image containing an element with `2r` distinct eigenvalues, arbitrarily deep places `q_v ≡ 1 mod p^N` at which the tensor Frobenius has `2r` distinct ordered eigenvalues and which control the rank-two dual Selmer group, for simultaneous patching; together with Newton–Thorne II Lemmas 2.7 and 2.9 (nt21b pp. 14, 18) under `p^a > max(5, 2n − 1)`, including `p = 2`.
+What GlobalGaloisDeformations must provide (gap:tensor-taylor-wiles-primes): in Layer G7, the Taylor–Wiles prime selection of Newton–Thorne 2026 §4 (nt26 pp. 29–30; Propositions 4.8–4.9, pp. 34–36): from rank-two large residual image and a perfect subgroup of the rank-`2r` tensor image containing an element with `2r` distinct eigenvalues, arbitrarily deep places `q_v ≡ 1 mod p^N` at which the tensor Frobenius has `2r` distinct ordered eigenvalues and which control the rank-two dual Selmer group, for simultaneous patching; together with Newton–Thorne II Lemmas 2.7 and 2.9 (nt21b pp. 14, 18) under `p^a > max(5, 2n − 1)`, including `p = 2`.
 
 ### From TauCetiRoadmap.DeformationAndDerivedPatchingAlgebra
 
@@ -385,7 +385,7 @@ Layer 2 (§§2.5, 2.8: quaternionic Hecke modules at Taylor–Wiles levels and t
 Layer 3 (§§3.1–3.7: the arithmetic patching template), Layer 6 (§§6.1, 6.6, 6.7: dyadic patching
 with the free determinant torus action and the torsor structure).
 
-What GL2ModularityLifting must provide (gap:unobstructed-auxiliary-prime-and-slope-count): in Layer 3, the two inputs of Newton–Thorne I Proposition 8.3 and Newton–Thorne II Lemma 3.4 not covered by the template: unobstructedness of the local deformation problems at the ramified primes for all but finitely many `p` (Weston, wes04) together with an auxiliary prime `q_a > p` with formally smooth local lifting ring, giving patched modules of full support (nt21 pp. 92–95); and the dimension count of the slope-`(0,1)` part of quaternionic cohomology at level `U₀(p³)` (nt21b pp. 20–22).
+What GL2ModularityLifting must provide (gap:unobstructed-auxiliary-prime-and-slope-count): in Layer 3, the two inputs of Newton–Thorne I Proposition 8.3 and Newton–Thorne II Lemma 3.4 not covered by the template: unobstructedness of the local deformation problems at the ramified primes for all but finitely many `p` (Weston, wes04) together with an auxiliary prime `q_a > p` with formally smooth local lifting ring, giving patched modules of full support (nt21 pp. 92–96); and the dimension count of the slope-`(0,1)` part of quaternionic cohomology at level `U₀(p³)` (nt21b pp. 20–22).
 
 ### From TauCetiRoadmap.OrdinaryAutomorphicFormsAndModularityLifting
 
@@ -1537,7 +1537,8 @@ change `BC : τ ↦ π_τ`, where `π_τ ∈ A^θ_t(GL_n(F_ṽ))⁺` is the uniq
 (nt21 §1.8, Propositions 1.9–1.11, pp. 14–15). These are the local statements at inert places of
 Mok's classification (ModularityAndLanglandsExtensions §3.12) in Mœglin's explicit form.
 
-*Proof sketch.* For `θ`-discrete `π` (all `l_i = 1` and no `τ_k`) the existence and uniqueness of
+*Proof sketch.* For `θ`-discrete `π` (the extended parameter has finite centraliser in `GL_n(ℂ)`: all
+`l_i = 1`, no `σ_j` and no `τ_k`; nt21 p. 14) the existence and uniqueness of
 `π_τ` and the finiteness of fibres are Mœglin's (moe07 §§5.4, 5.7), extended to all tempered `π` by
 parabolic induction; the twisted character identity is Mœglin's for `θ`-discrete `π` (moe07 §5.5)
 and follows in general from constant terms and disjointness of Jordan–Hölder factors. These inputs
@@ -1559,6 +1560,12 @@ base change (§13.5).
   `F_ṽ^×`; packets are singletons, and the trivial character goes to the trivial character.
 - For `n = 2` a parameter `σ ⊕ σ′` with `σ`, `σ′` distinct conjugate self-dual characters of sign
   `(−1)^n = +1` does not extend to `^L U_2` (multiplicities `1` are odd).
+- For `n = 2` the parameter `σ ⊕ σ`, with `σ` a conjugate self-dual character of sign `+1`, does
+  extend (multiplicity `2` is even) but is not `θ`-discrete: `σ` has the sign opposite to
+  `(−1)^{n−1} = −1`, so the centraliser of the extension contains `Sp_2(ℂ)`. Its packet comes from
+  parabolic induction of `σ` from the Levi `Res GL_1` (the diagonal torus of the quasi-split
+  `U(1, 1)`), not from Mœglin's discrete case; a definition of `θ`-discreteness that only asked
+  for `l_i = 1` and no `τ_k` would wrongly include it.
 - `St_2(χ) ⊞ 1` with `χ` the non-trivial unramified quadratic character lies in
   `A^θ_t(GL_3(F_ṽ))⁺` and is the base change of the depth-zero supercuspidal `τ_v` of §4.4.
 
@@ -1578,7 +1585,7 @@ sixth root of unity modulo `p` and `θ : C(k(v)) → ℂ^×` of order `p`, defin
 `λ̃_ṽ(θ̃) = c-Ind_{F_ṽ^× GL_3(𝒪)}^{GL_3(F_ṽ)} λ̃(ṽ, θ̃)` (the finite type extended trivially on
 `F_ṽ^×`). Prove that `λ(v, θ)` and `λ̃(ṽ, θ̃)` are irreducible cuspidal, that `τ_v`, `λ_v(θ)` and
 `λ̃_ṽ(θ̃)` are irreducible supercuspidal, that `BC(τ_v) = St_2(χ) ⊞ 1` (`χ` the non-trivial
-unramified quadratic character) and `BC(λ_v(θ)) = λ̃_ṽ(θ̃)` (nt21 Proposition 1.12, pp. 15–16); and,
+unramified quadratic character) and `BC(λ_v(θ)) = λ̃_ṽ(θ̃)` (nt21 Proposition 1.12, p. 16); and,
 for `n = 2k + 1` and `π = St_2(χ) ⊞ 1 ⊞ (⊞_{i=1}^{2k−2} χ_i) ∈ A^θ_t(GL_n)⁺` with `χ_i|_{𝒪^×}` of
 order `2`, relabelled so that `χ_i = χ_{2k−1−i}^{w_c,∨}`, that `Π(π)` contains every irreducible
 subquotient of `χ_1 × ⋯ × χ_{k−1} × τ_v` (nt21 Corollary 1.13, pp. 16–17). The hypothesis
@@ -2990,7 +2997,7 @@ representation and local components at the places above `q_1`, `q_2`, `q_3` are 
 printed proof assigns to `τ_0 ⊗ |·|^{(n−2)/2} ιω_1 ω_0^{n−1}` (residually
 `ω̄_0^{n−1} ω̄_1 ⊗ Ind_{G_K}^{G_ℚ} ψ̄^{2k}`, an unramified Steinberg twist above `q_1`, and the
 `λ̃`-type and `ω(ṽ) ∘ det` conditions of §5.1 above `q_2`, `q_3`). Prove that the statement of §7.5
-holds in rank `n` (nt21 Proposition 7.4 and proof, pp. 85–89). The printed proof takes
+holds in rank `n` (nt21 Proposition 7.4 and proof, pp. 85–88). The printed proof takes
 `π_2 = τ_0 ⊗ |·|^{(n−2)/2} ιω_1 ω_0^{n−1}` with `τ_0` the base change of a form `τ` with
 `det r_{τ,ι} = ε^{−8k} δ_{K/ℚ}`; since `n − 1` is even and `ω_0 ω_0^c = ε³δ_{K/ℚ}`, this block differs
 from its required polarized dual by the non-trivial character `δ_{K/ℚ}|_{G_{F_0}}`, so Theorem 4.1
@@ -2999,7 +3006,7 @@ from its required polarized dual by the non-trivial character `δ_{K/ℚ}|_{G_{F
 *Proof sketch.* With `π_2` as hypothesised, `π_2 ⊞ π_{n−2}` is a
 level-raising datum (§5.1) with `T_1`, `T_2`, `T_3` the places above `q_1`, `q_2`, `q_3`; §5.4 raises
 the level to a cuspidal RACSDC representation with the types, and §6.4 to Steinberg above `q`;
-descend as in nt21 pp. 88–89. The weight of the output is that of the input, as §5.4 records.
+descend as in nt21 p. 88. The weight of the output is that of the input, as §5.4 records.
 
 **Checks.**
 
@@ -3026,7 +3033,7 @@ RACSDC ι-ordinary `Π` on `GL_n(𝔸_F)` with (a) `r̄_{Π,ι} ≅ ω̄^{n−1}
 (b) `HT_τ(r_{Π,ι}) = HT_τ(ω^{n−1}|_{G_F} ⊗ Sym^{n−1} r_{σ_0,ι}|_{G_F})` for all `τ`; (c) `Π_v` an
 unramified twist of Steinberg at some `v | q`. Prove that if `TS_m` holds for all such data, then
 `TS_{2^r m}` holds for all such data and every `r ≥ 0`; in particular `TS_{2^r}` holds for every
-`r ≥ 0` (nt21 Theorem 7.1, p. 83; proof, p. 89; Remark 7.5, p. 90; at20 Theorem 5.1, p. 19). With
+`r ≥ 0` (nt21 Theorem 7.1, p. 83; proof, pp. 89–90; Remark 7.5, p. 90; at20 Theorem 5.1, p. 19). With
 Layer 13 this gives `TS_n` for every `n ≥ 3` (§14.1), which is the statement of
 ModularityAndLanglandsExtensions §4.8.
 
@@ -3166,7 +3173,7 @@ Jacquet module at every prime `l`. Prove that there are `p`, `ι` and `π′` cu
 (1) `p > max(2(n + 1), (n − 1)k)`; (2) `r̄_{π,ι}(G_ℚ)` containing a conjugate of `SL_2(𝔽_p)`; (3)
 `π_p` and `π′_p` unramified; (4) `r̄_{π,ι} ≅ r̄_{π′,ι}`; (5) every `π′_l` of non-trivial Jacquet module
 and every accessible refinement of `π′_l` `n`-regular where `π′_l` is ramified (nt21 Proposition 8.3
-and proof, pp. 92–95). This proves ModularityAndLanglandsExtensions §4.10. The printed proof leaves
+and proof, pp. 92–96). This proves ModularityAndLanglandsExtensions §4.10. The printed proof leaves
 two points implicit, which are part of the argument here: the number of patching variables is
 `g = q_0 + |T| − 1`, and the auxiliary prime `q_a` is treated separately from the discriminant
 argument, which runs over `T = S − {p, q_a}`.
@@ -4565,8 +4572,13 @@ give `P_{(𝔭)} = E` at the automorphic characteristic-zero prime (PotentialAut
 Layer 9), and the patched specialisation gives regularity of `(P_∞)_{𝔭_∞}`, so `𝔭_∞` lies on a
 unique component of `Supp H_{G,∞}`. For odd `p` the rank-two patched support is irreducible and
 `H_{D,∞}` is faithful, so its image contains the target point on the same unitary component; for `p = 2`
-the torus action of rank `n + 4|S ∪ S_∞|` and the formal `Ĝ_m^γ[2]`-torsor act transitively on
-components and lift to both patched modules, giving the same conclusion (§9.7). Hence `t′` is
+the free action of `Ĝ_m^γ` on `Sp R′_∞` (`γ = 2 − |S ∪ S_∞| + q`, §12.6) and the `Ĝ_m^γ[2]`-torsor
+`Sp R_∞ = δ^{−1}(1)` make `Ĝ_m^γ[2](𝒪)` act transitively on the irreducible components of
+`Spec R_∞`, compatibly with its actions on `Spec P_∞` and on both patched modules; the unique
+component of `Spec P_∞` through `𝔭_∞` has dimension `qn + 4|S ∪ S_∞| = dim W′_∞` and lies in
+`Supp H_{G,∞}`, the component of `Spec R_∞` through the point of `t` maps into it and meets the orbit
+of the point of `t′`, and as `Supp H_{G,∞}` is stable under the group, the point of `t′` lies in it,
+as in §9.7. Hence `t′` is
 automorphic: `r_{π′_K} ⊗ r_{σ_K} ⊗ r_Y^{1−r}` comes from a RACSDC representation of `GL_n(𝔸_K)`;
 descend to `F` (PotentialAutomorphyInfrastructurePartII Layer 0).
 

@@ -5754,7 +5754,7 @@
     },
     {
       "slug": "tensor-taylor-wiles-primes",
-      "needs": "in Layer G7, the Taylor–Wiles prime selection of Newton–Thorne 2026 §4 (nt26 pp. 29–30; Propositions 4.8–4.9, pp. 34–35): from rank-two large residual image and a perfect subgroup of the rank-`2r` tensor image containing an element with `2r` distinct eigenvalues, arbitrarily deep places `q_v ≡ 1 mod p^N` at which the tensor Frobenius has `2r` distinct ordered eigenvalues and which control the rank-two dual Selmer group, for simultaneous patching; together with Newton–Thorne II Lemmas 2.7 and 2.9 (nt21b pp. 14, 18) under `p^a > max(5, 2n − 1)`, including `p = 2`.",
+      "needs": "in Layer G7, the Taylor–Wiles prime selection of Newton–Thorne 2026 §4 (nt26 pp. 29–30; Propositions 4.8–4.9, pp. 34–36): from rank-two large residual image and a perfect subgroup of the rank-`2r` tensor image containing an element with `2r` distinct eigenvalues, arbitrarily deep places `q_v ≡ 1 mod p^N` at which the tensor Frobenius has `2r` distinct ordered eigenvalues and which control the rank-two dual Selmer group, for simultaneous patching; together with Newton–Thorne II Lemmas 2.7 and 2.9 (nt21b pp. 14, 18) under `p^a > max(5, 2n − 1)`, including `p = 2`.",
       "supplier": "GlobalGaloisDeformations",
       "section": "Layer G7"
     },
@@ -5772,7 +5772,7 @@
     },
     {
       "slug": "unobstructed-auxiliary-prime-and-slope-count",
-      "needs": "in Layer 3, the two inputs of Newton–Thorne I Proposition 8.3 and Newton–Thorne II Lemma 3.4 not covered by the template: unobstructedness of the local deformation problems at the ramified primes for all but finitely many `p` (Weston, wes04) together with an auxiliary prime `q_a > p` with formally smooth local lifting ring, giving patched modules of full support (nt21 pp. 92–95); and the dimension count of the slope-`(0,1)` part of quaternionic cohomology at level `U₀(p³)` (nt21b pp. 20–22).",
+      "needs": "in Layer 3, the two inputs of Newton–Thorne I Proposition 8.3 and Newton–Thorne II Lemma 3.4 not covered by the template: unobstructedness of the local deformation problems at the ramified primes for all but finitely many `p` (Weston, wes04) together with an auxiliary prime `q_a > p` with formally smooth local lifting ring, giving patched modules of full support (nt21 pp. 92–96); and the dimension count of the slope-`(0,1)` part of quaternionic cohomology at level `U₀(p³)` (nt21b pp. 20–22).",
       "supplier": "GL2ModularityLifting",
       "section": "Layer 3"
     },
