@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Equidistribution~5",
+  "head": "6e18a2106dd343dabbac85c6d6f683d3bed83a20",
+  "pr": 2112,
+  "folder": "Equidistribution",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 10 changed lines since 1ceb674: the previous R01 (Hardy-Wright citations without a section) is repaired at README 429, 450-451, 460 and 482, and the References sentence now holds; adversarial rows with computed values for the four statements the changed locators attach to (sections 3.3, 3.4, 3.5); the worker's gate passes with the build, a rerun shows only the not-in-order line; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 17 sorry warnings only; supplier sections resolved on main; pull request text agrees with the head. Not verifiable: Hardy-Wright's text (no legal copy), section titles checked against a contents listing only.",
+  "text": "f2c6160418c66cc7"
+ }
+}
