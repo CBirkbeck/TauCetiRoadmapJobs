@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ConstructiveFieldTheoryPhi4~3",
+  "head": "f2bf69c6f147879aa94173b440c24101c79518c7",
+  "pr": 2432,
+  "folder": "ConstructiveFieldTheoryPhi4",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full review of an unchanged head. Two P3 findings, both locator scope: 3.2 (Peled-Spinka p. 13 and Sokal p. 327 state special cases) and 1.5 (Frohlich p. 13 gives the limit kernel, not the box convergence); replacement text given for each. Seeded sample of 15 targets and all 29 Lean theorems put through the adversarial pass with computed values; no false, vacuous or unowned statement found. 71 source locators read at the text in 7 sources (69 support their statements); 7 uncertified sources and the image-only equations of sokal-1982 and frohlich-1982 are listed as not verifiable. 60 library declarations opened at the pinned file and line, all present; 8 cross-roadmap citations resolved (5 on main, RelativisticQuantumFieldTheory 7.1, 7.3, 7.6 at its open head). Gate rerun: every check 0, OK; depcheck 248 roadmaps, 2377 edges, 0 problems; lake env lean exit 0 with 29 sorry warnings only; one-tactic padding probe closes 0 of 29; no binder lost in 62 signatures. Pull-request text agrees with the head. Overlap check and source-independence line are in the report. Four source errata recorded. For humans: ConstructiveFieldTheoryPhi4PartII exists nowhere; a public Lean formalisation of the Gaussian free field is cited by another roadmap and was not compared.",
+  "text": "29a0d8c2b4cd45e4",
+  "carried": {
+   "from": "f2bf69c6f147879aa94173b440c24101c79518c7",
+   "head": "cb89c6ff8179269c157ac582716c986a5098aa9d",
+   "findings": 2,
+   "lines": 74,
+   "folders": [
+    "ConstructiveFieldTheoryPhi4"
+   ]
+  }
+ }
+}
