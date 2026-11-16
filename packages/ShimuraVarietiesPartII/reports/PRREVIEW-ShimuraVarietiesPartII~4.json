@@ -1,0 +1,39 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ShimuraVarietiesPartII~4",
+  "head": "65db2be062db2bd60fec6cb43fae32078f2b26c3",
+  "pr": 2463,
+  "folder": "ShimuraVarietiesPartII",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Full review. Previous R01 (the splitting step of section 2.2) is repaired and recomputed on the S3 cubic example at p=7. One P3 finding: the locator of section 1.1 (KZ 4.1.7) stands under KZ 4.1.3 (A'),(B') while the statement is for the full fixer; add KZ Proposition 3.3.2 and KPZ proof of Theorem 7.1.3. Seeded sample of 15 targets (0.2, 1.1, 1.9, 3.3, 3.4, 4.4, 4.11, 4.12, 5.4, 5.9, 6.1, 6.2, 7.1, 7.2, 7.6) checked against KZ, HT, KPZ, KP and K17, 56 locators in all; 13 pinned library declarations opened at file and line; all 28 suppliers' cited sections resolved at main or open heads; 22 declared gaps checked for minimality. Gate: every check 0; depcheck 260 roadmaps, 2594 edges, 0 problems; lake env lean on Suggested.lean exits 0 with no output (the file declares nothing, seven headlines named as not statable). Deferred D01 and D02 stand. Not verifiable: Deligne 1979 2.3.10, Noot 2009, LMB Theoreme 6.3 (not in the sources cache).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "the description still has a second, unclosed summary marker (R05 partly repaired)",
+    "where": "the pull-request body, where the worker keeps the stray summary marker verbatim",
+    "raised": "PRREVIEW-ShimuraVarietiesPartII~2"
+   },
+   {
+    "id": "D02",
+    "severity": "",
+    "title": "D01: the description's second opening roadmap-summary marker has no closing marker; it sits after the AI-assistance paragraph.",
+    "where": "the pull-request description's marker comments, which the worker keeps",
+    "raised": "PRREVIEW-ShimuraVarietiesPartII~3"
+   }
+  ],
+  "text": "36d19466e4fa904a",
+  "carried": {
+   "from": "65db2be062db2bd60fec6cb43fae32078f2b26c3",
+   "head": "25f63cbf94ec0ef078d4587c72a88a6f9b518870",
+   "findings": 1,
+   "lines": 6,
+   "folders": [
+    "ShimuraVarietiesPartII"
+   ]
+  }
+ }
+}
