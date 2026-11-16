@@ -12,8 +12,9 @@ and `HH²` as the classes of `k`-split square-zero extensions); the bar resoluti
 `Aᵉ = A ⊗_k Aᵐᵒᵖ`, and `HH_n(A,M)`, for `k`-flat `A`, with `Tor_n^{Aᵉ}(M,A)`. The cup product makes
 `HH^•(A,A)` a graded `k`-algebra, equal up to sign to the Yoneda algebra. An explicit sign dictionary
 identifies these complexes with the Hochschild cochains and chains of DGAInfinity Layer 8 for
-`A` in degree zero; through it Gerstenhaber's homotopy formula gives graded commutativity, and
-the antisymmetrisation map of RefinedTraceMethods §1.9 acts on the classical complex. The end
+`A` in degree zero; Gerstenhaber's homotopy formula, proved on the classical complex, gives graded
+commutativity, and the antisymmetrisation map of RefinedTraceMethods §1.9 acts on the classical
+complex. The end
 theorems are: for `R` smooth and projective over an arbitrary commutative ring `k`, the map
 `D₁ ∧ ⋯ ∧ D_n ↦ [D₁ ∪ ⋯ ∪ D_n]` is an isomorphism of graded `R`-algebras
 `⋀^•_R Der_k(R) ≅ HH^•(R,R)`, equal to the duality isomorphism
@@ -45,8 +46,8 @@ This roadmap owns:
   computation of Yoneda products from cocycles on projective resolutions and the comparison of the
   cup product with the Yoneda product (Layer 5);
 - the comparison, with an explicit sign dictionary, between the ungraded complexes and the
-  Hochschild cochains and chains of DGAInfinity Layer 8 for an algebra in degree zero, the
-  resulting Gerstenhaber homotopy formula and graded commutativity of `HH^•(A,A)`, and the
+  Hochschild cochains and chains of DGAInfinity Layer 8 for an algebra in degree zero,
+  Gerstenhaber's homotopy formula and graded commutativity of `HH^•(A,A)`, and the
   description of the antisymmetrisation and projection maps of RefinedTraceMethods §1.9 on the
   classical complex (Layer 6);
 - the duality between cochains and chains of a commutative algebra, the bijectivity of the
@@ -171,7 +172,9 @@ Variants kept here, each differing in one stated respect from an existing object
   and by their homotopy equivalence with the full complex: the pinned cochains take `n + 1`
   arguments with values in a `k`-module `N`, and §2.2 identifies them, under currying of the first
   argument (`TauCeti.multilinearCurryFirstEquiv`), with the normalised cochains with coefficients
-  in the dual bimodule `A →ₗ[k] N`; NoncommutativeGeometry N1.Cyclic compares the normalised and
+  in the dual bimodule `A →ₗ[k] N`, and states that the pinned inclusion is a homotopy equivalence
+  over every `k` (`exists_homotopyEquiv_normalizedHochschildCochainComplexι`);
+  NoncommutativeGeometry N1.Cyclic compares the normalised and
   full scalar cochains of a unital complex algebra on cohomology for its cyclic theory, the case
   `k = N = ℂ`, and keeps that statement;
 - the normalisation theorem of Layer 2 is for ordinary algebras with arbitrary bimodule
@@ -244,7 +247,10 @@ canonical map, and the determinant map is identified as `n!` times it.
   is the symmetric bimodule with `m · r = r m`.
 - **Enveloping algebra.** `Aᵉ = A ⊗[k] Aᵐᵒᵖ`. A bimodule is a left `Aᵉ`-module through
   `TensorProduct.Algebra.module`, so `(a ⊗ op b) · m = a m b`, as in Ginz05 line 752. For `Tor`, a
-  bimodule is a right `Aᵉ`-module by `m · (a ⊗ op b) = b m a`, as in Ginz05 lines 963–966.
+  bimodule is a right `Aᵉ`-module by `m · (a ⊗ op b) = b m a`, as in Ginz05 lines 963–966. For
+  commutative `R`, `Rᵉ = R ⊗[k] Rᵐᵒᵖ` is a commutative ring, identified with `R ⊗[k] R` by
+  `Algebra.TensorProduct.congr` of the identity and `AlgEquiv.toOpposite` (`r ↦ op r`); elements of
+  `Rᵉ` such as `X_i ⊗ 1 − 1 ⊗ op X_i` are written `X_i ⊗ 1 − 1 ⊗ X_i` through it.
 - **Tensor powers.** `A^{⊗n}` is `⨂[k]^n A`. The chains are `C_n(A,M) = M ⊗[k] A^{⊗n}` and the
   cochains are `C^n(A,M) = MultilinearMap k (fun _ : Fin n ↦ A) M`, identified with
   `A^{⊗n} →ₗ[k] M` by `PiTensorProduct.lift`. `C_0(A,M) = M` and `C^0(A,M) = M`.
@@ -252,7 +258,9 @@ canonical map, and the determinant map is identified as `n!` times it.
   for `MultilinearMap k (fun _ : Fin n ↦ A) M`), the coboundary is Tau Ceti's
   `TauCeti.hochschildBimoduleCoboundary k A M n`, and the cocycles `hochschildBimoduleCocycles`, the
   coboundaries `hochschildBimoduleCoboundaries` and the cohomology `hochschildBimoduleCohomology`
-  are the submodules and the quotient `Z^n/B^n` of §1.2. `A` is a bimodule over itself through
+  are the submodules and the quotient `Z^n/B^n` of §1.2; the three definitions do not ask the two
+  actions to commute, the cohomology being the quotient of `Z^n` by `B^n ∩ Z^n`, which is `Z^n/B^n`
+  for a bimodule, and every statement uses them for bimodules only. `A` is a bimodule over itself through
   Mathlib's `Semiring.toOppositeModule` (`op b • x = x b`). For a commutative `R`, a symmetric
   bimodule is an `R`-module `M` with `Module Rᵐᵒᵖ M`, `IsCentralScalar R M` (so `op r • m = r • m`),
   `SMulCommClass R Rᵐᵒᵖ M`, `Module k M`, `IsScalarTower k R M` and `IsScalarTower k Rᵐᵒᵖ M`; every
@@ -355,7 +363,9 @@ canonical map, and the determinant map is identified as `n!` times it.
   `TensorPower.mulEquiv` (`⨂[R]^i M ⊗[R] ⨂[R]^j M ≅ ⨂[R]^(i + j) M`, the first factor in the first
   `i` slots), `TensorPower.algebraMap₀` (`R ≅ ⨂[R]^0 M`), `TensorPower.cast` (reindexing along
   `i = j`), `MultilinearMap`,
-  `Algebra.TensorProduct`, `MulOpposite`,
+  `Algebra.TensorProduct`, `Algebra.TensorProduct.congr` (`Mathlib/RingTheory/TensorProduct/Maps.lean`:
+  the tensor product of two algebra isomorphisms), `MulOpposite`, `AlgEquiv.toOpposite`
+  (`Mathlib/Algebra/Algebra/Opposite.lean`: `R ≃ₐ[k] Rᵐᵒᵖ` for a commutative `R`),
   `TensorProduct.Algebra.module` (a `Module (A ⊗[R] B) M` from commuting actions; not an instance),
   `instModuleTensorProductMop` (`Mathlib/Algebra/Azumaya/Defs.lean`: that structure on `A` itself,
   `Module (A ⊗[R] Aᵐᵒᵖ) A`, for every commutative `R` and `R`-algebra `A`; an abbreviation, not an
@@ -449,8 +459,8 @@ canonical map, and the determinant map is identified as `n!` times it.
   `MvPolynomial.span_X_image_eq_ker_aeval_ite_mem` (`Mathlib/RingTheory/MvPolynomial/Ideal.lean`:
   the ideal spanned by a set of variables is the kernel of the substitution killing them). Weak
   regularity of the variables themselves is Tau Ceti's (below); what neither library states is its
-  transport to the differences `t_i = X_i ⊗ 1 − 1 ⊗ X_i` of the two copies of the variables in
-  `R ⊗[k] R`, which is §8.1.
+  transport to the differences `t_i = X_i ⊗ 1 − 1 ⊗ op X_i` of the two copies of the variables in
+  `Rᵉ = R ⊗[k] Rᵐᵒᵖ`, which is §8.1.
 - **Multilinear maps, determinants and quotients** (the definitions of `Suggested.lean`).
   `LinearMap.ker`, `LinearMap.range`, `Submodule.comap`, the quotient module with
   `Submodule.Quotient.mk`; `MultilinearMap.domCoprod` (the tensor product of two multilinear maps
@@ -575,7 +585,9 @@ canonical map, and the determinant map is identified as `n!` times it.
   the submodule of cochains that vanish whenever some argument other than the zeroth is `1` (no
   condition in degree zero), the subcomplex they form, and its inclusion into the full complex.
   The pin has coefficients in a `k`-module only, and proves neither that the inclusion is a
-  homotopy equivalence nor that the cohomologies agree; §2.2 does both for every bimodule.
+  homotopy equivalence nor that the cohomologies agree; §2.2 does both for every bimodule, and
+  `Suggested.lean` states the first on these complexes
+  (`exists_homotopyEquiv_normalizedHochschildCochainComplexι`).
 - `TauCeti.multilinearCurryFirstEquiv` (`TauCeti/LinearAlgebra/Multilinear/Curry.lean`), the scoped
   instances `TauCeti.DualBimodule.instModule` and `TauCeti.DualBimodule.instModuleOp`, and
   `TauCeti.multilinearCurryFirstEquiv_hochschildCoboundary`
@@ -683,12 +695,12 @@ canonical map, and the determinant map is identified as `n!` times it.
 ### From TauCetiRoadmap.DGAInfinity
 
 - Standing conventions and Layer 0: cohomological grading, the degree `−1` suspension `s`, the
-  Koszul tensor-map rule `(f ⊗ g)(x ⊗ y) = (−1)^{|g||x|} f(x) ⊗ g(y)`, and the multiple brace
-  `F{G,H}` with the exact Koszul sign for substituting operations after the first inputs.
-  Assumed: Layer 0's single brace `F{G}` is the pinned `TauCeti.ReducedTensorWords.brace` (the
-  same Koszul sign), the multiple brace obeys the same rule, and the brace relation
-  `(F{G}){H} − F{G{H}} = F{G,H} + (−1)^{|G||H|} F{H,G}` holds; its antisymmetrisation in `(G,H)` is
-  the pinned pre-Lie identity `TauCeti.ReducedTensorWords.brace_brace_sub_smul_brace_brace`.
+  Koszul tensor-map rule `(f ⊗ g)(x ⊗ y) = (−1)^{|g||x|} f(x) ⊗ g(y)`, and the substitution (brace)
+  operations with the exact Koszul sign for substituting an operation after the first inputs, the
+  multiple brace `F{G,H}` among them. Assumed: Layer 0's single brace `F{G}` is the pinned
+  `TauCeti.ReducedTensorWords.brace` (the same Koszul sign), and the multiple brace obeys the same
+  rule. Only the comparison clauses of §6.1 use the multiple brace; no relation between braces is
+  consumed, §6.2 proving Gerstenhaber's formula directly on the classical complex.
 - Layer 1: an ordinary `k`-algebra is a DG algebra concentrated in degree zero with zero
   differential.
 - Layer 8: the Hochschild cochains of such an algebra as coderivation components
@@ -766,8 +778,8 @@ Layer 5 constructs the cup product, the graded algebra `HH^•(A,A)` and its com
 Yoneda product. Layer 6 compares the cochain complex with the pinned positive-arity Hochschild complex of
 Tau Ceti and DGAInfinity Layer 8, the chain complex with Layer 8's chains and, for flat
 algebras, with the derived chains of KTheoryFiniteLocalFields §4.0 through RefinedTraceMethods
-§1.1, proves Gerstenhaber's homotopy formula through the transported braces, and describes the
-antisymmetrisation of RefinedTraceMethods §1.9 on the classical complex. Layer 7 pairs cochains
+§1.1, proves Gerstenhaber's homotopy formula by a direct computation on the classical complex,
+and describes the antisymmetrisation of RefinedTraceMethods §1.9 on the classical complex. Layer 7 pairs cochains
 with chains, proves the evaluation pairing bijective below the first non-projective Hochschild
 homology group from Tau Ceti's Kronecker theorem, identifies the exterior-power pairing of a
 finite projective module with the exterior-bidual evaluation of EulerSystemsAndKolyvaginSystems
@@ -826,7 +838,9 @@ with `Y^n = MultilinearMap k (fun _ : Fin n ↦ A) M`, cofaces the pinned
 `TauCeti.hochschildBimoduleCoboundary k A M n`, the `n`-coboundaries `B^n(A,M)`
 (`hochschildBimoduleCoboundaries`) as `0` for `n = 0` and as the image of
 `TauCeti.hochschildBimoduleCoboundary k A M (n − 1)` for `n ≥ 1`, and Hochschild cohomology
-`HH^n(A,M)` (`hochschildBimoduleCohomology`) as the quotient `k`-module `Z^n(A,M)/B^n(A,M)`. The
+`HH^n(A,M)` (`hochschildBimoduleCohomology`) as the quotient `k`-module `Z^n(A,M)/B^n(A,M)`; the
+three are defined without `SMulCommClass A Aᵐᵒᵖ M`, the cohomology as the quotient of `Z^n` by
+`B^n ∩ Z^n`, which is `Z^n/B^n` exactly when `B^n ⊆ Z^n`, in particular for every bimodule. The
 coface identities are `TauCeti.hochschildBimoduleCoface_hochschildBimoduleCoface`; prove the
 cosimplicial identities involving the codegeneracies, that the differential of `C^•(A,M)` from
 degree `n` is `TauCeti.hochschildBimoduleCoboundary k A M n`, the coboundary `δ` of the conventions,
@@ -867,6 +881,11 @@ and the quotient module; Tau Ceti `TauCeti.hochschildBimoduleCoface`,
   that drops `δ⁰` leaves `m ↦ (a ↦ −m a)` in degree zero, whose kernel is `0` (evaluate at `a = 1`),
   so its degree-zero cocycles would be `0` instead of the centre: for `A = M = ℤ` the correct `Z⁰`
   is `ℤ` and the variant's is `0`, and for `Mat₂(k)` with `k` nonzero the scalar matrices are lost.
+- The two actions must commute for `B^n ⊆ Z^n`. Let `A = M = Mat₂(ℤ)` with `a • m = a m` and
+  `op b • m = bᵀ m`, a left `Aᵐᵒᵖ`-module since `(cb)ᵀ = bᵀ cᵀ`, whose action does not commute with
+  the left one. Then `δm(a) = a m − aᵀ m` and `δ(δm)(a,b) = (bᵀ a − a bᵀ) m`, which at
+  `a = b = E₁₂`, `m = 1` is `E₂₂ − E₁₁ ≠ 0`: the coboundary `δ1` is not a cocycle, so this `M` has no
+  Hochschild cochain complex, and the quotient of `Z¹` by `B¹ ∩ Z¹` is not its cohomology.
 
 ### 1.3 Functoriality
 
@@ -1048,6 +1067,13 @@ degeneracies becomes the intersection of the kernels of the codegeneracies.
   degree (both are everything in degree zero), hence of complexes
   `TauCeti.normalizedHochschildCochainComplex k A N ≅ N^•(A, A →ₗ[k] N)`, and the square formed with
   `TauCeti.normalizedHochschildCochainComplexι` and the inclusion `N^• → C^•` commutes.
+- On the pinned complexes the normalisation theorem reads: for every commutative ring `k`, every
+  `k`-algebra `A` and every `k`-module `N`, there is a homotopy equivalence from
+  `TauCeti.normalizedHochschildCochainComplex k A N` to `TauCeti.hochschildCochainComplex k A N`
+  whose underlying chain map is `TauCeti.normalizedHochschildCochainComplexι k A N`
+  (`exists_homotopyEquiv_normalizedHochschildCochainComplexι`); it is the homotopy equivalence
+  `N^•(A, A →ₗ[k] N) → C^•(A, A →ₗ[k] N)` transported along the two isomorphisms of the previous
+  bullet.
 
 **Checks.**
 
@@ -1057,6 +1083,13 @@ degeneracies becomes the intersection of the kernels of the codegeneracies.
   `δg(1,1) = 1`; for nonzero `k` it is a cocycle that is not normalised, and its class is that of
   `0 ∈ N²`.
 - For `A = k`, `N^n = 0` for `n ≥ 1` and `N⁰ = M`, in agreement with §1.2 Checks.
+- The pinned complexes for `A = N = k`: every term of `TauCeti.hochschildCochainComplex k k k` is
+  `k`, its differential from degree `n` is multiplication by `Σ_{i=0}^{n+1} (−1)^i`, that is
+  `0, 1, 0, 1, …`, and the pinned normalised complex is `k` in degree zero and `0` above (a
+  multilinear map on `k^{n+1}` that vanishes when `a₁ = 1` is `0`). The inclusion is a homotopy
+  equivalence, both complexes having cohomology `k` in degree zero and `0` above. Asking the
+  normalised cochains to vanish also when the zeroth argument is `1` would make the normalised
+  complex `0` and lose `H⁰ = k`.
 - Comparison with Tau Ceti for `A = k[x]`, `N = k` and nonzero `k`, with `∂ = ∂_x`: the pinned
   cochain `φ(a₀,a₁) = (a₀ ∂a₁)(0)` has `φ(a₀,1) = 0`, so it is normalised, and
   `bφ(a₀,a₁,a₂) = (a₀a₁∂a₂ − a₀∂(a₁a₂) + a₂a₀∂a₁)(0) = 0`. Its curried form `ψ(a₁)(y) = φ(y,a₁)` has
@@ -1360,7 +1393,11 @@ balanced tensor products (Ginz05 §4.2, lines 751–752, and §5.1, lines 934–
 
 - For `A = Mat₂(k)` with `k` nonzero and `M = A`, `(E₁₂ ⊗ op E₂₁) · E₂₂ = E₁₂ E₂₂ E₂₁ = E₁₁`, while
   the opposite ordering `a m b` read as `b m a` would give `E₂₁ E₂₂ E₁₂ = 0`.
-- For commutative `R`, `Rᵉ = R ⊗ R` and the multiplication map `R ⊗ R → R` is `Rᵉ`-linear.
+- For commutative `R`, `Rᵉ = R ⊗[k] Rᵐᵒᵖ ≅ R ⊗[k] R` through `AlgEquiv.toOpposite` on the second
+  factor (the conventions), and the multiplication map `R ⊗ R → R` is `Rᵉ`-linear:
+  `(a ⊗ op b) · (r s) = a r s b = μ((a ⊗ op b) · (r ⊗ s))`. For the noncommutative `A = Mat₂(k)` with
+  `k` nonzero there is no such identification compatible with the action: `a ↦ op a` is not
+  multiplicative, as `op (E₁₂ E₂₁) = op E₁₁` while `op E₁₂ · op E₂₁ = op (E₂₁ E₁₂) = op E₂₂`.
 - For `A = k`, `Aᵉ = k` and bimodules are `k`-modules with equal left and right actions.
 
 ### 4.2 The bar resolution
@@ -1614,6 +1651,20 @@ Ger63 §7).
   which equals `(δf ∪ g − f ∪ δg)(a,b,c)`; for `x ∈ C⁰`, `δ(x ∪ g) = δx ∪ g + x ∪ δg`.
 - The product on `HH^•` is natural for algebra isomorphisms and, for commutative `R`, `R`-bilinear.
 
+**Checks.**
+
+- For `A = k`, `HH^•(k,k)` is `k` in degree zero and `0` above (§1.2 Checks), and the product is
+  the multiplication of `k`.
+- For `R = k[x]` with `k` nonzero and `∂ = d/dx`, `HH⁰ = R`, `HH¹ = R·[∂]` and `HH^n = 0` for
+  `n ≥ 2` (§8.4). The product `HH⁰ × HH¹ → HH¹` is `[p] ∪ [∂] = [p∂]`, the `R`-module structure of
+  §1.5, and `[∂] ∪ [∂] = 0`, although the cochain `∂ ∪ ∂` takes the value `1` at `(x,x)` (§5.1
+  Checks): the product is one of classes, not of chosen representatives.
+- The product descends because cocycles are multiplied. For a central `x ∈ Z⁰` and `m ∈ A`,
+  `x ∪ δm = δ(xm)`, since `x(am − ma) = a(xm) − (xm)a`. For `A = Mat₂(k)` with `k` nonzero, the
+  non-central `x = E₁₁` and `m = E₁₂` give `δ(x ∪ δm) = δx ∪ δm` by the Leibniz rule, and
+  `(δx ∪ δm)(E₂₁, E₁₁) = (E₂₁E₁₁ − E₁₁E₂₁)(E₁₁E₁₂ − E₁₂E₁₁) = E₂₁E₁₂ = E₂₂ ≠ 0`: the product of the
+  cochain `x` with the coboundary `δm` is not even a cocycle.
+
 ### 5.3 Yoneda products computed on projective resolutions
 
 In an abelian category with enough projectives and `HasExt`, let `P` be a projective resolution
@@ -1622,11 +1673,13 @@ of `X` and `Q` one of `Y`, let `f : P_p → Y` and `g : Q_q → Z` be cocycles, 
 (such a family exists, and any two are homotopic, by the comparison theorem). Prove that
 `Abelian.Ext.comp (P.extMk f) (Q.extMk g) = s(p,q) · P.extMk (f̃_q ≫ g)`, where `s(p,q) ∈ {±1}` is a
 sign depending only on `p` and `q`, fixed by Mathlib's shift conventions for `Abelian.Ext`, with
-`s(p,0) = 1` (CE56 Chapter XI; HKR62 lines 425–431 for the products on `Ext`). The case `q = 0` is
-`CategoryTheory.ProjectiveResolution.extMk_comp_mk₀`; in general the composite is computed on the
-shifted morphisms of the derived category given by `extMk_hom` and `Ext.comp_hom`, and
-`CategoryTheory.ProjectiveResolution.mk₀_comp_extMk` is the corresponding statement when the
-first class has degree zero and its lift is a morphism of resolutions.
+`s(p,0) = 1` and `s(0,q) = 1` (CE56 Chapter XI; HKR62 lines 425–431 for the products on `Ext`). In
+degree zero the class `P.extMk f` of a cocycle `f : P_0 → Y` is `Ext.mk₀` of the map `X → Y` that
+`f` induces on `X = coker(P_1 → P_0)`, and for `p = 0` the family `f̃` is a morphism of resolutions
+over that map. So the case `q = 0` is `CategoryTheory.ProjectiveResolution.extMk_comp_mk₀` and the
+case `p = 0` is `CategoryTheory.ProjectiveResolution.mk₀_comp_extMk`, both stated without a sign,
+which gives `s(p,0) = s(0,q) = 1`; in general the composite is computed on the shifted morphisms of
+the derived category given by `extMk_hom` and `Ext.comp_hom`.
 
 *Needs:* Mathlib `CategoryTheory.Abelian.Ext.comp`, `CategoryTheory.Abelian.Ext.comp_hom`,
 `CategoryTheory.ProjectiveResolution.extMk`, `CategoryTheory.ProjectiveResolution.extMk_hom`,
@@ -1652,6 +1705,13 @@ lifts `f` along the bar resolution with strict commutation, and `f̃_q` followed
 - For `q = 0`, `g` is the class of a central element `y` and the identity reads
   `θ_p[f ∪ y] = Ext.comp (θ_p[f]) (mk₀ (· y))`, the case of
   `CategoryTheory.ProjectiveResolution.extMk_comp_mk₀`.
+- For `p = 0`, `f` is a central element `x` and the family is
+  `f̃_i(a₀ ⊗ a₁ ⊗ ⋯ ⊗ a_{i+1}) = a₀ x ⊗ a₁ ⊗ ⋯ ⊗ a_{i+1}`, left multiplication by `x` on the first
+  factor of `B_i(A)`: it is `Aᵉ`-linear, and it commutes with `b′` and lies over `· x : A → A`
+  because `x` is central (`a₀ x a₁ = a₀ a₁ x`). Followed by the homomorphism of `g`, `f̃_q` sends
+  `1 ⊗ a₁ ⊗ ⋯ ⊗ a_q ⊗ 1` to `x g(a₁,…,a_q) = (x ∪ g)(a₁,…,a_q)`, so the identity reads
+  `θ_q[x ∪ g] = Ext.comp (mk₀ (· x)) (θ_q[g])`, the case of
+  `CategoryTheory.ProjectiveResolution.mk₀_comp_extMk`: `s(0,q) = 1`, not `(−1)^q`.
 - In degree `(0,0)` both sides are composition in `Z(A) = End_{Aᵉ}(A)`: `θ₀[x ∪ y] = mk₀(· xy)` is
   `mk₀(· x)` followed by `mk₀(· y)`, as `Ext.comp` of degree-zero classes is composition.
 
@@ -1703,7 +1763,10 @@ cohomology is `Z¹(A,A) = Der_k(A)`, there being no arity-zero cochain to quotie
 extension of `{−,−}` to the degrees involving `HH¹` and `HH⁰` is the transport of Layer 8's
 bracket on the full complex, which identifies `HH^n(A,A)` with Layer 8's Hochschild cohomology of
 `A` in Gerstenhaber degree `n − 1` for every `n ≥ 0` (Ginz05 §6.6, lines 1351–1375; Ger63 §7; the
-sign dictionary follows from DGAInfinity's Koszul tensor-map rule and suspension square).
+sign dictionary follows from DGAInfinity's Koszul tensor-map rule and suspension square). The
+clauses with arity-zero cochains and the cup-product clause compare this roadmap's complex with
+DGAInfinity Layer 8's; no later section uses them, and §6.2 proves its formula on the classical
+complex without them.
 
 *Needs:* §§1.2, 5.1; Tau Ceti `TauCeti.AInfinity.IsSuspension`, `TauCeti.IsDGAlgebra`,
 `TauCeti.IsNonUnitalDGAlgebra.toAInfinityAlgebra`, `TauCeti.ReducedTensorWords.brace`,
@@ -1761,26 +1824,26 @@ Prove that for `f ∈ C^p(A,A)` and `g ∈ C^q(A,A)`,
 Proposition 6.6.4, line 1379; Loday98 §1.5). On cocycles `f ∈ Z^p(A,A)` and `g ∈ Z^q(A,A)` the
 second statement says that `g ∪ f − (−1)^{pq} f ∪ g`, the second term reindexed along
 `p + q = q + p` (`finCongr`), lies in `B^{p+q}(A,A)`; this is `cupProduct_graded_comm`, for every
-commutative `k` and every `k`-algebra `A`. One route transports the brace relation of DGAInfinity Layer 0
-through §6.1: with `D = [m, −]`, the relation gives
-`(DF){G} + (−1)^{|F|} F{DG} − D(F{G}) = m{F,G} + (−1)^{|F||G|} m{G,F}`, which §6.1's dictionary turns
-into the displayed identity. The multiple brace `m{F,G}` is not at the pin, so this step is
-Layer 0's; what the pin supplies is `[m, F] = m{F} − (−1)^{|F|} F{m}`
-(`TauCeti.AInfinityAlgebra.hochschildDifferential_eq_brace_sub`), the pre-Lie identity
-`TauCeti.ReducedTensorWords.brace_brace_sub_smul_brace_brace` (the antisymmetric part of the
-brace relation, in which the multiple braces cancel), and the Leibniz rule
-`D[F,G] = [DF,G] + (−1)^{|F|} [F,DG]`
-(`TauCeti.AInfinityAlgebra.hochschildDifferential_gerstenhaberBracket`), which is the
-antisymmetrisation of the displayed identity in `(f,g)` and the reason the bracket of §6.1
-descends to cohomology. The identity printed as Ginz05 (6.6.3), line 1368, does not hold with the
-coboundary of Ginz05 line 1058 (see the Checks); the form above is the one used.
+commutative `k` and every `k`-algebra `A`. One route is Gerstenhaber's direct computation: evaluate
+`δf ∘ g`, `δ(f ∘ g)` and `f ∘ δg` on `(a₁,…,a_{p+q})` with the coboundary and the composition of the
+conventions. The inner terms of `δ(f ∘ g)` cancel against the inner terms of `δg` in `f ∘ δg` when
+the product `a_j a_{j+1}` lies among the arguments of `g`, and against inner terms of `δf ∘ g`
+when it lies outside them; the inner terms of `δf ∘ g` that multiply `g(…)` by a neighbouring
+argument cancel against the outer terms of `δg` in `f ∘ δg`; the first outer term of `δf ∘ g`
+cancels against the first outer term of `δ(f ∘ g)` unless `g` fills the first slot of `δf`, and
+the last against the last unless `g` fills the last slot. The two terms that remain are `g ∪ f`
+and `f ∪ g`, with the signs of the display. This uses §§1.2 and 5.1 only. Under §6.1's dictionary
+the antisymmetrisation of the identity in `(f,g)` is the pinned Leibniz rule `D[F,G] = [DF,G] + (−1)^{|F|} [F,DG]` for
+`D = [m, −]` (`TauCeti.AInfinityAlgebra.hochschildDifferential_gerstenhaberBracket`, with
+`[m, F] = m{F} − (−1)^{|F|} F{m}` from
+`TauCeti.AInfinityAlgebra.hochschildDifferential_eq_brace_sub`), the reason the bracket of §6.1
+descends to cohomology (see the Checks); this comparison is not an input of the route. The
+identity printed as Ginz05 (6.6.3), line 1368, does not hold with the coboundary of Ginz05
+line 1058 (see the Checks); the form above is the one used.
 
-*Needs:* §§1.2, 5.1, 5.2, 6.1; Mathlib `finCongr`; DGAInfinity Layer 0 (the brace relation with the
-multiple brace);
-DGAInfinity Layer 8 (the cup product as `m{−,−}` and the arity-zero cochains); Tau Ceti
-`TauCeti.AInfinityAlgebra.hochschildDifferential_eq_brace_sub`,
-`TauCeti.AInfinityAlgebra.hochschildDifferential_gerstenhaberBracket`,
-`TauCeti.ReducedTensorWords.brace_brace_sub_smul_brace_brace`.
+*Needs:* §§1.2, 5.1, 5.2; Mathlib `finCongr`; for the comparison with the pinned Leibniz rule only,
+§6.1 and Tau Ceti `TauCeti.AInfinityAlgebra.hochschildDifferential_eq_brace_sub`,
+`TauCeti.AInfinityAlgebra.hochschildDifferential_gerstenhaberBracket`.
 
 **Checks.**
 
@@ -1882,7 +1945,8 @@ differential and positive-arity Hochschild complex (`TauCeti.ReducedTensorWords.
 `TauCeti.AInfinityAlgebra.PositiveHochschild.complex`); Mathlib's embedding of `ℕ`-indexed chain
 complexes into `ℤ`-indexed cochain complexes (§6.3), and flatness of smooth algebras, exterior
 powers with their universal property and Kähler differentials (§6.4);
-DGAInfinity Layers 0, 1 and 8;
+DGAInfinity Layers 0, 1 and 8 (§§6.1 and 6.3; §6.2 proves its formula on the classical complex
+and uses none of them);
 KTheoryFiniteLocalFields §4.0; RefinedTraceMethods §§1.1 and 1.9; gap:smooth-hkr-antisymmetrisation,
 used only in §6.4(d).
 
@@ -2025,8 +2089,11 @@ that it defines the unnormalised HKR map `T^n_{R/k} → C^n(R,R)`; that it is a 
 `r_i` and therefore a normalised Hochschild cocycle; that `⟨D⟩ = D` for `n = 1` and `⟨⟩ = 1` for
 `n = 0`; that `⟨D₁,…,D_n⟩ = Σ_{σ∈S_n} sgn(σ) D_{σ(1)} ∪ ⋯ ∪ D_{σ(n)}`; and that if `Ω¹_{R/k}` is finite
 projective, the unnormalised map is injective. When `n!` is invertible in `k`, define the
-normalised HKR map `Φ^n_HKR = (1/n!)⟨…⟩` (Ginz05 §9.2, lines 2101–2156; HKR62 lines 509–521; AV20
-lines 237–243).
+normalised HKR map `Φ^n_HKR = (1/n!)⟨…⟩`. The determinant cochain is `D₁ ∪ ⋯ ∪ D_n` composed with
+the alternation map `r₁ ⊗ ⋯ ⊗ r_n ↦ Σ_σ sgn(σ) r_{σ(1)} ⊗ ⋯ ⊗ r_{σ(n)}` of Ginz05 §9.2, line 2142,
+which names the resulting map from polyvector fields to cochains without a formula (lines
+2104–2113); HKR62 lines 509–521 for the alternating forms `h*(a)(D₁,…,D_n)` and the duality map
+they come from; AV20 lines 237–243 for the factor `n!`.
 
 *Needs:* §§1.2, 2.2, 5.1, 6.2, 6.4(a), 7.1, 7.4; Mathlib `Matrix.det`, `Matrix.detRowAlternating`,
 `MultilinearMap.restrictScalars`, `MultilinearMap.mkPiAlgebra`, `MultilinearMap.compLinearMap`,
@@ -2053,7 +2120,8 @@ lines 237–243).
 **Checks.**
 
 - On `k[x,y]`, `⟨∂_x, ∂_y⟩(x,y) = 1` and `⟨∂_x, ∂_y⟩(y,x) = −1`; the product cochain `∂_x ∪ ∂_y` takes
-  the values `1` and `0`, and for nonzero `k` is not alternating in the derivations:
+  the values `1` and `0`, so on the alternation `x ⊗ y − y ⊗ x` of `x ⊗ y` it gives `1 − 0 = 1`, the
+  value of `⟨∂_x, ∂_y⟩` at `(x,y)`; for nonzero `k` the product cochain is not alternating in the derivations:
   `(∂_x ∪ ∂_x)(x,x) = 1` while `⟨∂_x, ∂_x⟩ = 0`.
 - On `𝔽₂[x,y]`, `⟨∂_x, ∂_y⟩ = δ(∂_x ∂_y)`: `δ(D₁D₂)(a,b) = −(D₁a D₂b + D₂a D₁b)`, which in
   characteristic two is `det(D_j(r_i))`; the cocycle is nonzero but its class is zero.
@@ -2085,9 +2153,10 @@ Let `k` be a commutative ring and `R` a commutative `k`-algebra with `Algebra.Sm
 5. if `Ω¹_{R/k}` is generated by `d` elements, `HH^n(R,M) = 0` for every `n > d`.
 
 (HKR62 Theorem 5.1, line 522, Lemma 4.1, line 301, the product formula of line 495, and the
-deduction of lines 528–546 leading to Theorem 5.2, line 548; Loday98 §3.4, Theorem 3.4.4;
-Weibel94 §9.4, Theorem 9.4.7; AV20 Proposition 1.2, line 70; Ginz05 Theorem 9.1.3, line 2086, over
-an algebraically closed field of characteristic zero.)
+deduction of lines 528–546 leading to Theorem 5.2, line 548; Ginz05 Theorem 9.1.3, line 2086, over
+an algebraically closed field of characteristic zero. The homological form, which (1) dualises,
+is Loday98 §3.4, Theorem 3.4.4, Weibel94 §9.4, Theorem 9.4.7, over a field, and AV20
+Proposition 1.2, line 70, as a quasi-isomorphism over every `k`.)
 One route: `C_n(R,R) = R ⊗_k R^{⊗n}` is a projective `R`-module (§1.4 and
 `Module.Projective.tensorProduct`); `HH_n(R,R) ≅ Ω^n_{R/k}` through `ε^cl_n` (§6.4(d)) is finite
 projective (`exteriorPower.instFinite`, `exteriorPower.instProjective`); §7.2, that is Tau Ceti's
@@ -2144,25 +2213,27 @@ RefinedTraceMethods §1.9.
 ### 8.1 The diagonal of a polynomial algebra
 
 For `R = MvPolynomial (Fin m) k` over any commutative `k`, prove that the elements
-`t_i = X_i ⊗ 1 − 1 ⊗ X_i` of `Rᵉ = R ⊗[k] R` form a weakly regular sequence and generate the kernel of
-the multiplication map `Rᵉ → R` (the statement over every commutative `k` is proved by the route
+`t_i = X_i ⊗ 1 − 1 ⊗ op X_i` of `Rᵉ = R ⊗[k] Rᵐᵒᵖ`, written `X_i ⊗ 1 − 1 ⊗ X_i` (Conventions), form
+a weakly regular sequence and generate the kernel of the multiplication map `Rᵉ → R` (the statement over every commutative `k` is proved by the route
 below; Loday98 §3.2 for the Koszul resolution of a symmetric algebra; neither of the other sources
 names the `t_i`: HKR62 lines 268–271 obtain, by citation, a regular sequence generating a prime
 ideal with regular quotient of a regular local ring, and Ginz05 §9.3, lines 2193–2196, asserts
 without proof a regular sequence generating the ideal of the diagonal of a smooth variety over an
-algebraically closed field of characteristic zero). One route:
-`Rᵉ ≅ MvPolynomial (Fin m) R`, with the first factor `R ⊗ 1` as coefficients and the second copy of
-the variables replaced by `Y_i = 1 ⊗ X_i − X_i ⊗ 1 = −t_i`. Under it the multiplication map is
-evaluation at `Y = 0`, whose kernel is spanned by the `Y_i`
-(`MvPolynomial.span_X_image_eq_ker_aeval_ite_mem` for the set of all variables); Tau Ceti's
-`MvPolynomial.isWeaklyRegular_map_X` makes the `Y_i` weakly regular over the coefficient ring `R`,
-with no nontriviality hypothesis, and `LinearEquiv.isWeaklyRegular_congr'` transports this to `Rᵉ`.
+algebraically closed field of characteristic zero). One route: `Rᵉ ≅ R ⊗[k] R` by
+`Algebra.TensorProduct.congr` of the identity and `AlgEquiv.toOpposite` (`R` is commutative), and
+`R ⊗[k] R ≅ MvPolynomial (Fin m) R`, with the first factor `R ⊗ 1` as coefficients and the second
+copy of the variables replaced by `Y_i = 1 ⊗ X_i − X_i ⊗ 1 = −t_i`; both are ring isomorphisms.
+Under their composite the multiplication map is evaluation at `Y = 0`, whose kernel is spanned by
+the `Y_i` (`MvPolynomial.span_X_image_eq_ker_aeval_ite_mem` for the set of all variables); Tau
+Ceti's `MvPolynomial.isWeaklyRegular_map_X` makes the `Y_i` weakly regular over the coefficient
+ring `R`, with no nontriviality hypothesis, and `LinearEquiv.isWeaklyRegular_congr'` transports
+this to `Rᵉ` along the composite.
 Replacing each `Y_i` by `t_i = −Y_i` changes neither the ideals `(Y₁,…,Y_j)` nor the kernel of
 multiplication by `Y_{j+1}` on their quotients, so the `t_i` are weakly regular as well.
 
-*Needs:* Mathlib `MvPolynomial`, `Algebra.TensorProduct`, `RingTheory.Sequence.IsWeaklyRegular`,
-`LinearEquiv.isWeaklyRegular_congr'`, `MvPolynomial.span_X_image_eq_ker_aeval_ite_mem`; Tau Ceti
-`MvPolynomial.isWeaklyRegular_map_X`.
+*Needs:* Mathlib `MvPolynomial`, `Algebra.TensorProduct`, `Algebra.TensorProduct.congr`,
+`AlgEquiv.toOpposite`, `RingTheory.Sequence.IsWeaklyRegular`, `LinearEquiv.isWeaklyRegular_congr'`,
+`MvPolynomial.span_X_image_eq_ker_aeval_ite_mem`; Tau Ceti `MvPolynomial.isWeaklyRegular_map_X`.
 
 **Checks.**
 
@@ -2304,8 +2375,9 @@ unit `1 ∈ C⁰(k,k)` and the empty wedge is `1 ∈ T⁰`; for `m ≥ 1`, `R`-m
 the derivations (§7.5) gives the first-column form `g · ⟨∂₁, …, ∂_m⟩ = ⟨g∂₁, ∂₂, …, ∂_m⟩`. The
 determinant formula is the evaluation of the determinant cocycle of §7.5 at `∂₁, …, ∂_m`, its class
 identity is that of §7.5 with the product formula of HKR62 line 495, and the rank-one statement is
-the top degree of §8.4 (Ginz05 §9.2, lines 2142–2156; HKR62 Theorem 5.2, line 548, is the case of
-a perfect field `k`).
+the top degree of §8.4 (HKR62 Theorem 5.2, line 548, is the case of a perfect field `k`; the
+determinant cochain is the cup product composed with the alternation map of Ginz05 §9.2,
+line 2142, as in §7.5).
 
 *Needs:* §§7.5, 8.4.
 
@@ -2345,15 +2417,15 @@ equivalences of resolutions with their images under additive functors and on hom
 
 ## Downstream consumers
 
-No roadmap later in the merge order imports this one. The roadmaps that use Hochschild theory
-are earlier and import DGAInfinity Layer 8 directly: KTheoryFiniteLocalFields §4.0 and
+No other roadmap imports this one. The roadmaps that use Hochschild theory import DGAInfinity
+Layer 8 directly: KTheoryFiniteLocalFields §4.0 and
 RefinedTraceMethods §§1.9–1.10 (homological HKR and cyclic theory), LanglandsParameterStacks
 §1.17 (the Hochschild action on self-Ext), ZigzagPreprojective Layer 7 (bigraded Hochschild
 cohomology and `A∞` deformations), NoncommutativeGeometry N1 and BanachAlgebras Layer 6 (scalar and
 bounded variants). The comparison of Layer 6 lets each of them read its statements on the classical
-complex of this roadmap. A later roadmap on Gerstenhaber algebras, the Schouten–Nijenhuis bracket,
-Kontsevich formality and deformation quantisation of polynomial algebras would build on Layers 6–8;
-such a roadmap is outside this one.
+complex of this roadmap. Gerstenhaber algebras, the Schouten–Nijenhuis bracket, Kontsevich
+formality and deformation quantisation of polynomial algebras build on Layers 6–8 and lie outside
+this roadmap.
 
 ## Worked examples
 

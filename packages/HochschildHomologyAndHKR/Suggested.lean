@@ -3,6 +3,7 @@ module
 import Mathlib
 import TauCeti.RingTheory.HochschildCohomology.Coboundary
 import TauCeti.RingTheory.CyclicCohomology.Normalized.Chains
+import TauCeti.RingTheory.CyclicCohomology.Normalized.Basic
 
 /-!
 # Hochschild homology and the Hochschild–Kostant–Rosenberg theorem: target signatures
@@ -20,6 +21,10 @@ is `HH_•(R, R)`. The README carries every target, API list and Check.
 
 Stated here:
 
+* `exists_homotopyEquiv_normalizedHochschildCochainComplexι` (§2.2): over every `k`, the inclusion
+  of Tau Ceti's normalised Hochschild cochains into its Hochschild cochain complex
+  `TauCeti.hochschildCochainComplex k A N` is a homotopy equivalence, the case
+  `M = A →ₗ[k] N` (the dual bimodule) of the normalisation theorem for cochains;
 * `homology_one_linearEquiv_kaehler` (§3.4): for every commutative `R`, `HH₁(R, R) ≅ Ω¹_{R/k}`,
   the class of `r₀ ⊗ r₁` going to `r₀ dr₁`;
 * `nonempty_linearEquiv_ext` (§4.4): for `A` projective over `k`, `HHⁿ(A, M) ≅ Extⁿ_{Aᵉ}(A, M)`
@@ -56,16 +61,18 @@ Headline theorems that are not statable at the pins, and what each lacks:
   `C_•(A, M)` is the alternating face complex of a simplicial module whose simplicial identities
   are §1.1's theorem), and no `Tor` over the noncommutative ring `Aᵉ` (Mathlib's `Tor` is for
   commutative rings; the left derived functors of `M ⊗_{Aᵉ} −` are §4.5's construction);
-* the normalisation theorem over every `k` (§§2.1–2.2), that the normalised complexes are homotopy
-  equivalent to the full ones: the normalised complexes `N_•(A, M)` and `N^•(A, M)` with bimodule
-  coefficients are constructions whose differentials need the simplicial identities of §§1.1–1.2
-  (the pinned `TauCeti.normalizedHochschildCochainComplex` has coefficients in a dual bimodule
-  only);
+* the normalisation theorem for chains, and for cochains with coefficients in an arbitrary
+  bimodule (§§2.1–2.2), that the normalised complexes are homotopy equivalent to the full ones: the
+  pins have no unnormalised Hochschild chain complex (Tau Ceti's
+  `TauCeti.normalizedHochschildChains` is the normalised one) and no normalised cochain complex with
+  bimodule coefficients (Tau Ceti's `TauCeti.normalizedHochschildCochainComplex` has coefficients in
+  a dual bimodule only); `N_•(A, M)` and `N^•(A, M)` are constructions whose differentials need the
+  simplicial identities of §§1.1–1.2;
 * the description of the isomorphism of §4.4 as `ProjectiveResolution.extMk` on the bar
   resolution, its naturality in `M`, and the comparison of the cup product with the Yoneda product
   (§5.4): the bar resolution as a `ProjectiveResolution` of `A` in `ModuleCat Aᵉ` is §4.2's
-  construction, and the sign `s(p, q)` of §5.3 is fixed by Mathlib's shift conventions with no
-  closed form at the pins;
+  construction, and the sign `s(p, q)` of §5.3 for `p, q ≥ 1` is fixed by Mathlib's shift
+  conventions with no closed form at the pins;
 * the classification of `k`-split square-zero extensions by `HH²(A, M)` (§3.6): its carriers, the
   twisted extension `A ⊕_f M` as a `k`-algebra (whose associativity is the cocycle identity,
   §3.5) and the class of a `k`-split extension of a possibly noncommutative algebra (Tau Ceti's
@@ -82,7 +89,7 @@ universe u
 
 /-- The Hochschild `n`-cocycles `Zⁿ(A, M)` of a `k`-algebra `A` with coefficients in an
 `A`-bimodule `M` (a left `A`-module and a left `Aᵐᵒᵖ`-module, the right action of `a` being
-`op a • m`): the `k`-multilinear maps `Aⁿ → M` killed by the Hochschild coboundary
+`op a • m`; the definition does not ask the two actions to commute): the `k`-multilinear maps `Aⁿ → M` killed by the Hochschild coboundary
 `(δf)(a₁, …, aₙ₊₁) = a₁ f(a₂, …, aₙ₊₁) + Σᵢ (-1)ⁱ f(…, aᵢaᵢ₊₁, …) + (-1)ⁿ⁺¹ f(a₁, …, aₙ) aₙ₊₁`
 (README §1.2; Ginzburg, *Lectures on noncommutative geometry*, §5.2). -/
 def hochschildBimoduleCocycles (k A M : Type u) [CommRing k] [Ring A] [Algebra k A]
@@ -99,13 +106,32 @@ def hochschildBimoduleCoboundaries (k A M : Type u) [CommRing k] [Ring A] [Algeb
   | n + 1 => LinearMap.range (TauCeti.hochschildBimoduleCoboundary k A M n)
 
 /-- Hochschild cohomology `HHⁿ(A, M) = Zⁿ(A, M) / Bⁿ(A, M)` of a `k`-algebra `A` with coefficients
-in an `A`-bimodule `M`, the cohomology in degree `n` of the Hochschild cochain complex
-(README §1.2; Loday, *Cyclic homology*, §1.5). -/
+in an `A`-bimodule `M`, defined as the quotient of `Zⁿ` by `Bⁿ ∩ Zⁿ`. When the two actions commute
+(`SMulCommClass A Aᵐᵒᵖ M`, part of the bimodule convention of README §1.2), `Bⁿ ≤ Zⁿ` and this is
+the cohomology in degree `n` of the Hochschild cochain complex (README §1.2; Loday, *Cyclic
+homology*, §1.5); without that hypothesis `δ ∘ δ` need not vanish, and no statement below uses the
+definition there. -/
 abbrev hochschildBimoduleCohomology (k A M : Type u) [CommRing k] [Ring A] [Algebra k A]
     [AddCommGroup M] [Module k M] [Module A M] [Module Aᵐᵒᵖ M] [IsScalarTower k A M]
     [IsScalarTower k Aᵐᵒᵖ M] (n : ℕ) : Type u :=
   hochschildBimoduleCocycles k A M n ⧸
     (hochschildBimoduleCoboundaries k A M n).comap (hochschildBimoduleCocycles k A M n).subtype
+
+/-! ## Layer 2: Normalisation -/
+
+/-- The normalisation theorem on Tau Ceti's Hochschild cochains (README §2.2): for every commutative
+ring `k`, every `k`-algebra `A` and every `k`-module `N`, the inclusion of the normalised cochains
+(the multilinear maps in `n + 1` arguments that vanish whenever an argument other than the zeroth
+is `1`) into the full Hochschild cochain complex `TauCeti.hochschildCochainComplex k A N` is a
+homotopy equivalence. Under currying of the zeroth argument it is the inclusion
+`N^•(A, A →ₗ[k] N) → C^•(A, A →ₗ[k] N)` of the normalised cochains with coefficients in the dual
+bimodule (Loday, *Cyclic homology*, §§1.1 and 1.5). -/
+theorem exists_homotopyEquiv_normalizedHochschildCochainComplexι (k A N : Type u) [CommRing k]
+    [Ring A] [Algebra k A] [AddCommGroup N] [Module k N] :
+    ∃ e : HomotopyEquiv (TauCeti.normalizedHochschildCochainComplex k A N)
+        (TauCeti.hochschildCochainComplex k A N),
+      e.hom = TauCeti.normalizedHochschildCochainComplexι k A N := by
+  sorry
 
 /-! ## Layer 3: Low degrees and square-zero extensions -/
 
@@ -182,7 +208,8 @@ def cupDerivations (k R : Type u) [CommRing k] [CommRing R] [Algebra k R] {n : �
   (MultilinearMap.mkPiAlgebra k (Fin n) R).compLinearMap fun i ↦ (D i).toLinearMap
 
 /-- The determinant cochain `⟨D₁, …, Dₙ⟩ : (r₁, …, rₙ) ↦ det (Dⱼ(rᵢ))` of derivations of a
-commutative `k`-algebra `R` (README §7.5; Ginzburg, *Lectures on noncommutative geometry*, §9.2). -/
+commutative `k`-algebra `R` (README §7.5): `D₁ ∪ ⋯ ∪ Dₙ` evaluated on the alternation
+`Σ_σ sgn(σ) r_{σ(1)} ⊗ ⋯ ⊗ r_{σ(n)}` of Ginzburg, *Lectures on noncommutative geometry*, §9.2. -/
 def detCochain (k R : Type u) [CommRing k] [CommRing R] [Algebra k R] {n : ℕ}
     (D : Fin n → Derivation k R R) : (Fin n → R) →ₘₗ[k] R :=
   (Matrix.detRowAlternating.toMultilinearMap.restrictScalars k).compLinearMap
@@ -214,8 +241,8 @@ regarded as a symmetric bimodule, there is a `k`-linear isomorphism
 `HHⁿ(R, M) ≅ Hom_R(Ωⁿ_{R/k}, M)` sending the class of a cocycle `f` to the map
 `dr₁ ∧ ⋯ ∧ drₙ ↦ Σ_σ sgn(σ) f(r_{σ(1)}, …, r_{σ(n)})`, the evaluation of `f` on the
 antisymmetrised chain (Hochschild–Kostant–Rosenberg, *Differential forms on regular affine
-algebras*, Lemma 4.1, Theorem 5.1, and Theorem 5.2 over a perfect field; Loday, *Cyclic homology*,
-Theorem 3.4.4). -/
+algebras*, Lemma 4.1, Theorem 5.1, and Theorem 5.2 over a perfect field; the homological form,
+which this dualises, is Loday, *Cyclic homology*, Theorem 3.4.4). -/
 theorem cohomological_hkr_hom_kaehler (k R : Type u) [CommRing k] [CommRing R] [Algebra k R]
     [Algebra.Smooth k R] [Module.Projective k R] (M : Type u) [AddCommGroup M] [Module R M]
     [Module Rᵐᵒᵖ M] [IsCentralScalar R M] [SMulCommClass R Rᵐᵒᵖ M] [Module k M]
@@ -231,8 +258,8 @@ theorem cohomological_hkr_hom_kaehler (k R : Type u) [CommRing k] [CommRing R] [
 `k`-algebra `R` that is smooth and projective as a `k`-module, the polyvector fields
 `⋀ⁿ_R Der_k(R)` are isomorphic to `HHⁿ(R, R)` by `r · D₁ ∧ ⋯ ∧ Dₙ ↦ [r · (D₁ ∪ ⋯ ∪ Dₙ)]`
 (Hochschild–Kostant–Rosenberg, *Differential forms on regular affine algebras*, Theorem 5.2, for a
-regular affine algebra over a perfect field; Weibel, *An introduction to homological algebra*,
-Theorem 9.4.7). -/
+regular affine algebra over a perfect field; the homological form over a field is Weibel, *An
+introduction to homological algebra*, Theorem 9.4.7). -/
 theorem cohomological_hkr (k R : Type u) [CommRing k] [CommRing R] [Algebra k R]
     [Algebra.Smooth k R] [Module.Projective k R] (n : ℕ) :
     ∃ Ψ : ⋀[R]^n (Derivation k R R) ≃ₗ[k] hochschildBimoduleCohomology k R R n,
