@@ -93,12 +93,12 @@ year = 2019
 venue = "EMS Zurich Lectures in Advanced Mathematics"
 doi = "10.4171/200"
 locator_scheme = "chapter"
-locator = "Part II"
+locator = "Chapter 5 (Hyperbolicity), Chapter 8 (Anosov flows)"
 url = "https://doi.org/10.4171/200"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled (EMS Press, subscription required on the landing page); cited by its locator without the text"
-cited_for = ["6.5", "6.6", "7.2", "7.4", "7.7", "8.3", "8.5", "9.2", "9.3"]
+version_note = "paywalled (EMS Press, subscription required on the landing page); cited by its locator without the text; the chapter numbers and titles are those of the publisher's public table of contents (https://ems.press/books/zlam/170/contents)"
+cited_for = ["7.2"]
 
 [[source]]
 id = "KatokHasselblatt1995"
@@ -171,7 +171,7 @@ venue = "Adv. Math. 303 (2016), 745-799"
 doi = "10.1016/j.aim.2016.07.029"
 arxiv = "1505.03803v2"
 locator_scheme = "theorem"
-locator = "Theorem A, Theorem 5.5, Theorem 3.2, Propositions 3.3-3.4, Proposition 4.15, Lemma 4.16, Proposition 4.19, Lemma 6.13, Propositions 6.16, 6.17"
+locator = "Theorem A, Theorem 5.5, Theorem 3.2, Lemma 2.10, Propositions 3.3-3.4, Proposition 4.15, Lemma 4.16, Proposition 4.19, Lemma 6.13, Propositions 6.16, 6.17"
 url = "https://arxiv.org/abs/1505.03803v2"
 fetched_from = "https://arxiv.org/pdf/1505.03803v2"
 fetched_at = "2026-11-06T00:53:23Z"
@@ -208,7 +208,7 @@ year = 1971
 venue = "Transactions of the American Mathematical Society 154 (1971), 377-397"
 doi = "10.1090/S0002-9947-1971-0282372-0"
 locator_scheme = "theorem"
-locator = "Axiom A* (Section 2), Lemmas 2.3 and 2.5, Theorems 2.7 and 2.10, Proposition 4.2, Remark 4.4, Proposition 7.1, 8.1"
+locator = "Axiom A* (Section 2), Lemmas 2.3 and 2.5, Definitions 2.6 and 2.9, Theorems 2.7 and 2.10, Proposition 4.2, Remark 4.4, Proposition 7.1, 8.1"
 url = "https://www.ams.org/journals/tran/1971-154-00/S0002-9947-1971-0282372-0/S0002-9947-1971-0282372-0.pdf"
 fetched_from = "https://www.ams.org/journals/tran/1971-154-00/S0002-9947-1971-0282372-0/S0002-9947-1971-0282372-0.pdf"
 fetched_at = "2026-11-06T00:54:47Z"
@@ -216,7 +216,7 @@ sha256 = "d177e708e65d4a40d764c4ba7e3a421aff4408ac30e8fe26beadf1b25fb0ce71"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-06"
-cited_for = ["Scope and ownership", "Conventions", "6.1", "6.2", "6.3", "6.5", "6.8", "8.4", "9.1", "10.4"]
+cited_for = ["Scope and ownership", "Conventions", "6.1", "6.2", "6.3", "6.5", "6.8", "8.4", "10.4"]
 
 [[source]]
 id = "BowenGroupEndomorphisms1971"
