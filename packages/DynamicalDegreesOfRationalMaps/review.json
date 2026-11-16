@@ -1,0 +1,18 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-DynamicalDegreesOfRationalMaps~2",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-DynamicalDegreesOfRationalMaps~2",
+   "fix": "FIX-PKG-DynamicalDegreesOfRationalMaps~3",
+   "from": "df0ed8e0f33218fe4fe02741d237760444c63034",
+   "head": "6f5187e7eeb12825ee2824fa868cc8b1f54a5549",
+   "findings": 2,
+   "lines": 14
+  },
+  "notes": "every finding of `REV-PKG-DynamicalDegreesOfRationalMaps~2` (2) was P3 and `FIX-PKG-DynamicalDegreesOfRationalMaps~3` repaired them at `6f5187e`, changing 14 lines of the package; no further review round was filed"
+ }
+}
