@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsAppell~4",
+  "head": "6bb671269963977f9c8f1dcd1f33291b2e210d0e",
+  "pr": 2166,
+  "folder": "SpecialFunctionsAppell",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "Full review. Previous R01 and R02 (description) repaired. Gate at this head passes (all scanners 0, build OK); depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 59 sorry warnings only; one-tactic probe closes none of the 59 theorems. Seeded sample (1.2, 1.6, 1.7, 3.1, 3.3, 3.4, 3.5, 4.1, 4.2, 5.1, 5.2, 6.1, 6.2, 6.3, 7.1) and 6.4, 4.3, 5.3, 5.4, 7.2 recomputed numerically or exactly; all values agree with the README. 26 DLMF locators verified against the text; Matsumoto, Aomoto-Kita, Iwasaki et al. and Rao-Lakshminarayanan could not be read (paywalled) and are listed as not verifiable. Findings: R01 (P2) the contiguous relations of 1.6 cannot bring F2 into the region of its Euler integral, so the existence route of 5.1 lacks a relation; R02 (P3) 6.4 Lean statements omit the convergence conclusion and the hypothesis on c'; R03 (P3) SpecialFunctionsHypergeometric 1.1 consumed but not in the supplier contract; R04 (P3) description says every numbered formula is in regularized form.",
+  "text": "1b72513f6fe4098b"
+ }
+}
