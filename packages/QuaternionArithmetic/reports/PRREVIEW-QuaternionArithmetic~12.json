@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuaternionArithmetic~12",
+  "head": "0b75fee59867f41d68ee84f4b840e3b19c407dda",
+  "pr": 1722,
+  "folder": "QuaternionArithmetic",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 14 changed lines since 17a00a0: the three changed README passages (Tau Ceti supplier contract, first step of 0.6, Needs line of 0.6). Checked TauCeti.Algebra.isSplittingField_of_finrank_eq_deg at the pin 2fd255d (Algebra/CentralSimple/Subfield.lean:339, statement, variables, deg = 2 on a quaternion algebra, Invertible 2 for the central simple instances), that the pin has no converse, Voight Lemma 5.4.7 p. 73 and its char not 2 hypothesis against the text, the iff on five instances in both directions, the pull request's title and description against the head. The previous report had no finding. Gate rerun: all counters 0, OK; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 30 sorry warnings only; nothing changed outside the folder; no overlap.",
+  "text": "1a22700102f10761"
+ }
+}
