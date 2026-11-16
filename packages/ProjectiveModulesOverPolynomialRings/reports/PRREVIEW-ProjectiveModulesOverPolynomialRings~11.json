@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ProjectiveModulesOverPolynomialRings~11",
+  "head": "37e14278965eeef30deaa1f6b11cde011295f3f9",
+  "pr": 2295,
+  "folder": "ProjectiveModulesOverPolynomialRings",
+  "date": "2026-11-15",
+  "findings": 5,
+  "blocking": 0,
+  "notes": "incremental re-review of 26 changed lines since 4f4a2a8 (new Provenance section and one References entry). The previous review raised no finding. Checked: every claim of the new section against AxiomMath/Stacks at c496df0 (LICENSE, lean-toolchain, lake-manifest, README, the three cited files, the directory listings) and against Stacks tags 0BC3, 08KJ, 08KK, 0D2J, 0590, 0593, 058Y and 08KG. Found: Kaplansky.lean misdescribed (R01); StablyFree.lean and 5.1 versus 5.4 (R02); Tag 08KJ is not the patching equivalence (R03); MonicLocalization.lean, which defines monicSubmonoid and R<X> of 4.1, omitted (R04); the description names f5960d59 as the current head (R05). Also checked: AlgebraicKTheory Layer 6 on main; the pinned Mathlib Module.IsStablyFree and Module.free_of_flat_of_isLocalRing; worker gate pass; local gate fails only on depcheck NOT IN ORDER (public order, not a finding at this stage); depcheck against the candidate order gives 0 problems; lake env lean gives 18 sorry warnings and nothing else; the signature file elaborates; no change outside the folder.",
+  "text": "3e0081961c9bdf4e"
+ }
+}
