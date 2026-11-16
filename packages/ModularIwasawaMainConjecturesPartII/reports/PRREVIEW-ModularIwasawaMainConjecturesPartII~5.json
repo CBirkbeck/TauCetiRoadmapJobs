@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularIwasawaMainConjecturesPartII~5",
+  "head": "6fc649216bc635dd97a8a5a2ba7a3fe14ff692db",
+  "pr": 2281,
+  "folder": "ModularIwasawaMainConjecturesPartII",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 6fc6492. Checked the pull request's title, description and roadmap-summary block sentence by sentence against the head (no contradiction, no unstated change: the pull request adds the roadmap, 0 Lean declarations); supplier names against the README and main; NonordinaryCMSpecialValues sections 2.1-2.6 at its open head; two adversarial rows recomputed (section 4.2 class-number Check, section 2.3 squared-norm dictionary); depcheck 0 problems; gate rerun OK; lake env lean exits 0 without warnings; no change outside the folder. Itakura preprint input to section 4.2 remains not verifiable (for the human reviewers).",
+  "text": "d228f096a1ecd27a"
+ }
+}
