@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PELModuliPartII~3",
+  "head": "d85737dd729310c6a2bf39fa3bafe8cd2d2f2112",
+  "pr": 2453,
+  "folder": "PELModuliPartII",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 10 changed lines since d9b6dfa. Previous R01 is repaired: §6.7 now lists §7.6, §7.6 reads 'in the sense of §6.7' and its Needs names §6.7. §8.1 received the same wording and Needs line; that was checked against PELModuli §M4.7, whose CM objects are p-principal, and against Layer 8 Dependencies. 11 adversarial rows with computed values. 17 source locators checked in the changed passages (seeded §6.7; RSZ21, LZ22, Zhang21, RZ96, Stacks, LTXZZ22). D01 stands, outside this folder. Gate: every check passes. Dependency check: 0 problems. Suggested.lean elaborates with no messages. Nothing changed outside the folder.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The LTXZZ22 §§4.2/5.2 integral models have two plans",
+    "where": "SelmerIwasawaCohomologyPartII gap:native-shimura must cite PELModuliPartII §§8.1–8.4, 8.7",
+    "raised": "PRREVIEW-PELModuliPartII~1"
+   }
+  ],
+  "text": "294401274af9e47a"
+ }
+}
