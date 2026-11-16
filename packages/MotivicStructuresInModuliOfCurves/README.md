@@ -496,7 +496,7 @@ The genus-one cusp formula supplies the first non-tautological seeds. Symplectic
 
 ### 3.1 Symplectic local systems on curve moduli
 
-For `g ≥ 1` let `f : C → M_g` be the universal curve (for `g = 1`, over `M_{1,1}`) and `V = R¹f_*ℚ`, of rank `2g`, with the alternating cup-product pairing `V ⊗ V → ℚ(−1)`. For a partition `λ = (λ₁ ≥ … ≥ λ_g ≥ 0)` with at most `g` parts define `V_λ` as the summand of `V^{⊗|λ|}` cut out by the harmonic (contraction-free) tensors and the Young symmetrizer of `λ`, the irreducible local system of highest weight `λ` for the symplectic monodromy, of weight `|λ|` (CLP, §3, pp. 9–10; Petersen–Tavakol–Yin, §3.2; BFP, §11.4, pp. 1361–1362). Prove that the formation of `V_λ` commutes with pullback along morphisms of families of smooth curves, and that `V^{⊗n}` modulo the images of the `n(n−1)/2` insertions of the symplectic form is `⊕_{|λ|=n} V_λ ⊗ T_λ` when `S_n` permutes the tensor factors, and `⊕_{|λ|=n} V_λ ⊗ T_{λ^T}` when `σ ∈ S_n` acts by `sgn(σ)` times that permutation, the action on the `n`-fold tensor power of `V` placed in cohomological degree one with the Koszul sign rule, through which `S_n` acts on the Künneth summand `H¹ ⊗ ⋯ ⊗ H¹` of the fibre power `C^n` (Petersen–Tavakol–Yin, §3.2, pp. 10–11, and Remark 3.6, p. 14; SchurWeyl §9.7 for the two label conventions; CLP, proof of Lemma 3.1, p. 10, which uses the second action). The Young-symmetrizer definition of `V_λ` above uses the unsigned action.
+For `g ≥ 1` let `f : C → M_g` be the universal curve (for `g = 1`, over `M_{1,1}`) and `V = R¹f_*ℚ`, of rank `2g`, with the alternating cup-product pairing `V ⊗ V → ℚ(−1)`. For a partition `λ = (λ₁ ≥ … ≥ λ_g ≥ 0)` with at most `g` parts define `V_λ` as the summand of `V^{⊗|λ|}` cut out by the harmonic (contraction-free) tensors and the Young symmetrizer of `λ`, the irreducible local system of highest weight `λ` for the symplectic monodromy, of weight `|λ|` (CLP, §3, pp. 9–10; Petersen–Tavakol–Yin, §3.2; BFP, §11.4, p. 1362). Prove that the formation of `V_λ` commutes with pullback along morphisms of families of smooth curves, and that `V^{⊗n}` modulo the images of the `n(n−1)/2` insertions of the symplectic form is `⊕_{|λ|=n} V_λ ⊗ T_λ` when `S_n` permutes the tensor factors, and `⊕_{|λ|=n} V_λ ⊗ T_{λ^T}` when `σ ∈ S_n` acts by `sgn(σ)` times that permutation, the action on the `n`-fold tensor power of `V` placed in cohomological degree one with the Koszul sign rule, through which `S_n` acts on the Künneth summand `H¹ ⊗ ⋯ ⊗ H¹` of the fibre power `C^n` (Petersen–Tavakol–Yin, §3.2, pp. 10–11, and Remark 3.6, p. 14; SchurWeyl §9.7 for the two label conventions; CLP, proof of Lemma 3.1, p. 10, which uses the second action). The Young-symmetrizer definition of `V_λ` above uses the unsigned action.
 
 *Needs:* StableReductionPartII §2.248 (the universal curve over `M_g`); SchurWeyl, Layers 7 and 9 (Young symmetrizers, Brauer contractions and harmonic tensors for the alternating form); DeligneWeightsAndPurity §8.24 and MixedHodgeModulesAndIrregularHodgeTheory, gap:dm-stack-mixed-hodge (cohomology of local systems on DM stacks).
 
@@ -752,7 +752,7 @@ For each `k` prove that only finitely many isomorphism classes of simple rationa
 **Checks.**
 
 - The list depends on `k`; no finiteness across all degrees is asserted, and `S₁₂ L^m` occurs in degree `11 + 2m` for every `m ≥ 0`.
-- In degree eleven the list is `{S₁₂}`; in degree twelve it is `{L⁶}`.
+- In degree eleven the list is `{S₁₂}` (§§4.7 and 10.9); in degree thirteen it is `{L S₁₂}` and in degree fourteen `{L⁷}` (§12.9). Neither list is empty: `H¹³(M̄_{1,12})^ss ≅ (L S₁₂)^{⊕11}` (§3.6), and the top-degree class of `M̄_{0,10}`, of dimension seven, spans a copy of `L⁷` (§2.6).
 
 ### 4.12 Top-heaviness
 
@@ -1155,7 +1155,7 @@ For every `q` and `n ≤ 3` prove `#(M_{4,n} − H_{4,n})(𝔽_q) = Σ_• N^•
 
 ### 8.7 Nonreduced fibres and termination of the sieve
 
-Prove: the reduced singular locus of a nonreduced fibre of `C^con_n` is isomorphic to `ℙ¹`, with even Betti sum two; on `Q_nsp` it is a `(1,1)` curve, possibly with an isolated point, with even Betti sum at most four; on `Q_spl` it is a line of a ruling or a `(1,1)` curve, possibly with points, with even Betti sum at most five. Hence the signed configuration coefficients of these singular loci vanish in degrees above the Betti sum, and the Hasse–Weil sieve of WeilConjectures, WC.1 applies to each family (BFP, Examples 7.7–7.9, pp. 1338–1340). Nilpotent structure does not change the point counts or `ℓ`-adic cohomology used.
+Prove: the reduced singular locus of a nonreduced fibre of `C^con_n` is isomorphic to `ℙ¹`, with even Betti sum two; on `Q_nsp` it is a `(1,1)` curve, possibly with an isolated point, with even Betti sum at most four; on `Q_spl` it is a line of a ruling or a `(1,1)` curve, possibly with points, with even Betti sum at most five. Hence the signed configuration coefficients of these singular loci vanish in degrees above the Betti sum, and the Hasse–Weil sieve of WeilConjectures, WC.1 applies to each family (BFP, Examples 7.7–7.9, pp. 1339–1340). Nilpotent structure does not change the point counts or `ℓ`-adic cohomology used.
 
 *Needs:* §8.5; WeilConjectures, WC.1 (signed Frobenius configurations, termination for proper even cohomology, the Hasse–Weil sieve).
 
@@ -1221,7 +1221,7 @@ These are the precisions of §8.13; for `n = 3` the coefficient of `q⁶` merges
 
 ### 8.11 Sieve coefficients on the split quadric
 
-For `0 ≤ n ≤ 3`, `d ≤ 3` and every finite field `𝔽_q`, prove that `S_d(C^spl_n)` is a polynomial in `q` when `n = 0` or `d = 0`, and that for `1 ≤ n, d ≤ 3` it agrees with a polynomial in `q` up to `o(q⁶)` as `q` runs through prime powers (BFP, Propositions 8.6–8.7, pp. 1344–1346, which compute the sixteen terms one by one, the marked ones to that precision). Without markings prove `S_d(C^spl_0) = s_d(Q_spl)·p_{15−3d}`, that is `p₁₅`, `−(q + 1)²p₁₂`, `2(q³ + q² + q)p₉` and `−(q⁴ + 2q³ + q²)p₆`: two singularities impose six independent conditions, and three impose nine unless they lie on a line of a ruling, where they impose seven and contribute a multiple of `s₃(ℙ¹) = 0`. With markings prove `S₀(C^spl_n) = ((q + 1)²)_n p_{15−n}`. With `#Aut(Q_spl) = 2(q³ − q)²`, prove that `N^spl_{n,≤3}/#Aut(Q_spl)` equals the entry of the following table at the precisions of §8.10:
+For `0 ≤ n ≤ 3`, `d ≤ 3` and every finite field `𝔽_q`, prove that `S_d(C^spl_n)` is a polynomial in `q` when `n = 0` or `d = 0`, and that for `1 ≤ n, d ≤ 3` it agrees with a polynomial in `q` up to `o(q⁶)` as `q` runs through prime powers (BFP, Propositions 8.6–8.7, pp. 1345–1346, which compute the sixteen terms one by one, the marked ones to that precision). Without markings prove `S_d(C^spl_0) = s_d(Q_spl)·p_{15−3d}`, that is `p₁₅`, `−(q + 1)²p₁₂`, `2(q³ + q² + q)p₉` and `−(q⁴ + 2q³ + q²)p₆`: two singularities impose six independent conditions, and three impose nine unless they lie on a line of a ruling, where they impose seven and contribute a multiple of `s₃(ℙ¹) = 0`. With markings prove `S₀(C^spl_n) = ((q + 1)²)_n p_{15−n}`. With `#Aut(Q_spl) = 2(q³ − q)²`, prove that `N^spl_{n,≤3}/#Aut(Q_spl)` equals the entry of the following table at the precisions of §8.10:
 
 | `n` | `N^spl_{n,≤3}/#Aut(Q_spl)` |
 | --- | --- |
@@ -1244,7 +1244,7 @@ Route: as in §8.9; with markings, a singular `(1,1)` curve through two marked p
 
 ### 8.12 A signed count of four points in general position
 
-On `ℙ¹ × ℙ¹` over `𝔽_q` prove that the signed count of Frobenius-stable four-point configurations with no two points on a ruling and not all four on a `(1,1)` curve, each configuration weighted by `(−1)` to the number of its Frobenius orbits, equals `(q + 1)²q²(q − 1)² = #(PGL₂ × PGL₂)(𝔽_q)` (BFP, §8.4 and Remark 8.11, pp. 1348–1351). Route: subtract ruling and `(1,1)` configurations from the inverse-zeta coefficient `s₄`; independently, sum over the five Frobenius orbit types with their class sizes.
+On `ℙ¹ × ℙ¹` over `𝔽_q` prove that the signed count of Frobenius-stable four-point configurations with no two points on a ruling and not all four on a `(1,1)` curve, each configuration weighted by `(−1)` to the number of its Frobenius orbits, equals `(q + 1)²q²(q − 1)² = #(PGL₂ × PGL₂)(𝔽_q)` (BFP, §8.4 and Remark 8.11, pp. 1349–1351). Route: subtract ruling and `(1,1)` configurations from the inverse-zeta coefficient `s₄`; independently, sum over the five Frobenius orbit types with their class sizes.
 
 *Needs:* §8.8; WeilConjectures, WC.1 (signed configurations).
 
@@ -1411,7 +1411,7 @@ For every stable pair prove `H^k(M̄_{g,n}) = 0` for odd `k ≤ 9` (BFP, Theorem
 
 ### 9.9 Symmetric-group equivariant counts in genus four
 
-For `n = 2, 3` prove that the `S_n`-equivariant counts of `M̄_{4,n}` and `M_{4,n}` are given by the following Schur-coefficient polynomials; compact coefficients are classes of actual Betti representations and open coefficients are virtual (BFP, Theorem 11.1, p. 1356, and §11.3, pp. 1360–1361). Route: evaluate the twisted counts of §§8.14 and 9.2 and the equivariant boundary counts of §1.4 at each cycle type, invert the character tables, impose equivariant palindromicity (WeilConjectures, WC.5) and, for `n = 3`, the equivariant Euler characteristic of §9.1.
+For `n = 2, 3` prove that the `S_n`-equivariant counts of `M̄_{4,n}` and `M_{4,n}` are given by the following Schur-coefficient polynomials; compact coefficients are classes of actual Betti representations and open coefficients are virtual (BFP, Theorem 11.1, p. 1356, and §11.3, pp. 1361–1362). Route: evaluate the twisted counts of §§8.14 and 9.2 and the equivariant boundary counts of §1.4 at each cycle type, invert the character tables, impose equivariant palindromicity (WeilConjectures, WC.5) and, for `n = 3`, the equivariant Euler characteristic of §9.1.
 
 | Stack | Character | Polynomial |
 | --- | --- | --- |
@@ -1436,7 +1436,7 @@ For `n = 2, 3` prove that the `S_n`-equivariant counts of `M̄_{4,n}` and `M_{4,
 
 ### 9.10 Euler characteristics of local systems on `M₄`
 
-For each partition `λ` with `|λ| ≤ 3` listed below, prove that the alternating trace of geometric Frobenius on `H_c^*(M₄ ⊗ 𝔽̄_q, V_λ)` is the polynomial in the table, for every `q`; its weight-graded Euler characteristic is obtained by replacing `q` with `L` (BFP, Theorem 11.5, pp. 1362–1363). Route: relative Künneth for the fibre powers of the universal curve over `M₄` and the decomposition of tensor powers of `V` (§3.1) express `#^{S_m}M_{4,m}` for `m ≤ 3` through these traces with the Tate twists of the symplectic contractions; solve using §9.9.
+For each partition `λ` with `|λ| ≤ 3` listed below, prove that the alternating trace of geometric Frobenius on `H_c^*(M₄ ⊗ 𝔽̄_q, V_λ)` is the polynomial in the table, for every `q`; its weight-graded Euler characteristic is obtained by replacing `q` with `L` (BFP, Theorem 11.5, p. 1362). Route: relative Künneth for the fibre powers of the universal curve over `M₄` and the decomposition of tensor powers of `V` (§3.1) express `#^{S_m}M_{4,m}` for `m ≤ 3` through these traces with the Tate twists of the symplectic contractions; solve using §9.9.
 
 | Highest weight | Alternating compact-support trace |
 | --- | --- |
@@ -1594,9 +1594,9 @@ Graphical bases count independent morphisms from the rank-two seed `S₁₂`. Fo
 
 ### 11.1 Galois realizations in degrees thirteen and fifteen in genus two
 
-For every `n ≥ 0` prove that, as `ℚ_ℓ[G_ℚ]`-modules, `W₁₃H¹³(M_{2,n})^ss` and `H¹³(M̄_{2,n})^ss` are sums of copies of `L S₁₂`, and `W₁₅H¹⁵(M_{2,n})^ss` and `H¹⁵(M̄_{2,n})^ss` are sums of copies of `L² S₁₂`, multiplicities zero allowed (CLP, Proposition 2.8 and Corollary 2.9, p. 8). Route: the surjection `H^k(M̄_{2,n}) → W_kH^k(M_{2,n})` factors through the compact-type moduli space, whose cohomology decomposes into cohomology of symplectic local systems on `M₂^{ct}` and on `Sym² M_{1,1}` (Petersen, genus two, Theorem 2.1), the latter restricting to zero; local systems of odd weight have no cohomology because of the hyperelliptic involution, and for even weight Petersen's classification of the cohomology of local systems on the moduli of abelian surfaces (Petersen, abelian surfaces, Theorem 2.1) leaves only `L S₁₂` in pure weight thirteen and `L² S₁₂` in pure weight fifteen; boundary terms are controlled by §§4.7, 10.9, 9.8 and 10.1. The Hodge version of the degree-fifteen statement is §12.5.
+For every `n ≥ 0` prove that, as `ℚ_ℓ[G_ℚ]`-modules, `W₁₃H¹³(M_{2,n})^ss` and `H¹³(M̄_{2,n})^ss` are sums of copies of `L S₁₂`, and `W₁₅H¹⁵(M_{2,n})^ss` and `H¹⁵(M̄_{2,n})^ss` are sums of copies of `L² S₁₂`, multiplicities zero allowed (CLP, Proposition 2.8 and Corollary 2.9, p. 8). Route: the surjection `H^k(M̄_{2,n}) → W_kH^k(M_{2,n})` factors through the compact-type moduli space, whose cohomology decomposes into cohomology of symplectic local systems on `M₂^{ct}` and on `Sym² M_{1,1}` (Petersen, genus two, Theorem 2.1), the latter restricting to zero; local systems of odd weight have no cohomology because of the hyperelliptic involution, and for even weight Petersen's classification of the cohomology of local systems on the moduli of abelian surfaces (Petersen, abelian surfaces, Theorem 2.1) leaves only `L S₁₂` in pure weight thirteen and `L² S₁₂` in pure weight fifteen; boundary terms are controlled by §§4.7, 10.9, 9.8 and 10.1. In degree thirteen the normalized boundary contributes only `H¹¹` of genus-one factors. In degree fifteen it contributes `H¹¹` of a genus-one factor tensored with `H²` of the other factor, and `H¹³` of single factors. Genus-zero factors have no odd cohomology (§2.6), and a genus-two factor is covered by the degree-thirteen statement, proved first. A genus-one factor `M̄_{1,m}` has `W₁₃H¹³(M_{1,m}) = 0` by §3.2, since `S₁₄ = 0`, so by §0.4 its `H¹³` is a quotient of `H¹¹` of its own normalized boundary twisted by `L`, hence a sum of copies of `L S₁₂` by §§2.9 and 4.7. The Hodge version of the degree-fifteen statement is §12.5.
 
-*Needs:* §§3.1, 0.5, 0.4, 2.9, 4.7, 9.8, 10.1, 10.9.
+*Needs:* §§3.1, 0.5, 0.4, 2.6, 2.9, 3.2, 4.7, 9.8, 10.1, 10.9.
 
 **Checks.**
 
@@ -1839,14 +1839,15 @@ For every stable pair prove `H¹³(M̄_{g,n})^ss ≅ ⊕ L S₁₂` and `H¹⁴(
 
 ### 12.10 Cohomology of genus-three moduli through eleven markings
 
-For `n ≤ 11` prove that every `H^k(M̄_{3,n})^ss` is a finite direct sum of tensor products of powers of `L` and `S₁₂`, in both realizations; equivalently its class lies in the semiring generated by `L` and `S₁₂` (CLP, Theorem 1.9, p. 3, and its proof, p. 13). Route: by hard Lefschetz it suffices to treat `k ≤ d = 6 + n ≤ 17`; the boundary terms are products of groups `H^{k′}(M̄_{g′,n′})` with `k′ ≤ 15`, which are polynomials in `L` and `S₁₂` by §§12.9, 10.9, 9.8 and 10.1 and, for genus-one factors in degree fifteen, §3.6, the genus-one factors having at most twelve flags because `n ≤ 11`; the pure part `W_kH^k(M_{3,n})` is tautological by §§5.3–5.4.
+For `n ≤ 11` prove that every `H^k(M̄_{3,n})^ss` is a finite direct sum of tensor products of powers of `L` and `S₁₂`, in both realizations; equivalently its class lies in the semiring generated by `L` and `S₁₂` (CLP, Theorem 1.9, p. 3, and its proof, p. 13). Route: by hard Lefschetz it suffices to treat `k ≤ d = 6 + n ≤ 17`. The boundary terms are products of groups `H^{k′}(M̄_{g′,n′})` with `k′ ≤ 15` and `g′ ≤ 3`: the boundary divisors of `M̄_{3,n}` have normalizations `M̄_{2,n+2}`, `M̄_{1,a} × M̄_{2,b}` with `a ≤ n + 1 ≤ 12`, and `M̄_{0,a} × M̄_{3,m}` with `a ≥ 3` and `m ≤ n − 1`. These groups are polynomials in `L` and `S₁₂`. In odd degrees this follows from §§9.8, 4.7, 10.9 and 12.9; for genus-one factors in degree fifteen it follows from §3.6, using that they have at most twelve flags; genus-zero factors have no odd cohomology (§2.6). In even degrees the groups are tautological, hence sums of copies of a power of `L` (§0.1): by §2.6 in genus zero, §3.3 in genus one and §4.3 in genus two, whose range `2r ≤ 20` contains every even `k′ ≤ 14`. A genus-three factor `M̄_{3,m}`, `m < n`, is covered in every degree by induction on `n`, starting from `n ≤ 1`, where no such factor occurs. The pure part `W_kH^k(M_{3,n})` is tautological by §§5.3–5.4.
 
-*Needs:* §§0.4, 3.6, 5.3, 5.4, 9.8, 10.1, 10.4, 10.9, 12.9, 4.7; DeligneWeightsAndPurity, gap:dm-stack-hard-lefschetz; StableReductionPartII, gap:pointed-coarse-projectivity.
+*Needs:* §§0.1, 0.4, 2.6, 3.3, 3.6, 4.3, 4.7, 5.3, 5.4, 9.8, 10.9, 12.9; DeligneWeightsAndPurity, gap:dm-stack-hard-lefschetz; MotivesAndAlgebraicCycles, gap:dm-stack-cycle-class; StableReductionPartII, gap:pointed-coarse-projectivity.
 
 **Checks.**
 
 - The semiring permits products such as `S₁₂ ⊗ S₁₂`, but for `n ≤ 11` no boundary stratum produces one, and the theorem does not assert that every monomial occurs. Two genus-one vertices carrying `H¹¹` need at least `22` flags. A stable genus-three graph with exactly two genus-one vertices and `r` rational vertices has `b₁ = 1`, `r + 2` edges and at most `n + 4 − r ≤ 15` flags on the two; with three genus-one vertices it is a tree with at most `n + 3 − r ≤ 14` flags on any two of them. Outside this range, the separating genus-two graph joining two genus-one vertices with ten legs each, of type `(2, 20)`, carries `H¹¹ ⊗ H¹¹` on its normalization, in degree `11 + 11 + 2 = 24` after pushforward; nothing here asserts that this pushforward is nonzero.
 - The statement is about semisimplified realizations in a Grothendieck semiring, not a decomposition of Chow motives.
+- The even-degree inputs are needed: at `n = 11` and `k = 8` the loop divisor contributes `H⁶(M̄_{2,13})`, which is in no odd-degree input and above the degrees `≤ 3` of §10.1; it is `RH⁶(M̄_{2,13})` by §4.3 with `r = 3 ≤ 10`, a sum of copies of `L³`. Likewise at `n = 6` and `k = 8` the divisor `M̄_{0,3} × M̄_{3,5}` contributes `H⁶(M̄_{3,5})`, of dimension `d = 11`; it lies outside §§10.1–10.3 (degree six, genus below ten) and outside §10.4 (`2d − 6 = 16 > 14`), and is the case `n = 5` of the induction.
 - For `n ≤ 11` the genus-one factors of the boundary divisors of `M̄_{3,n}` have at most `n + 1 ≤ 12` flags, and by §3.6 their odd cohomology of degree at most fifteen is a sum of copies of `L^j S₁₂`, `S₁₆` first occurring with fifteen flags; genus-two factors `M̄_{2,n+2}` are covered for every number of markings by §§11.1 and 12.9.
 
 ### Examples
