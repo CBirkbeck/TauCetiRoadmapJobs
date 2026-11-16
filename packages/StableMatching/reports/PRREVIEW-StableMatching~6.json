@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StableMatching~6",
+  "head": "9784d8db87a3234ce980edee3ae0db0f5a1ce814",
+  "pr": 2346,
+  "folder": "StableMatching",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 16 changed lines since d789104 (the new Provenance section and its References entry). Checked: every claim of the section against lean-pool at f8b9b72 (GaleShapley.lean in full, Galvin.lean, Orientation.lean:212, the README, LICENSE, the toolchain, the manifest and the project card). Found: the induction is on the number of acceptable pairs, not on the number of men (R01), and the description repeats the error (R02). The reduction of 1.2 to the LeanPool statement was checked on 0.1's 1×1 Check, the 2×2 market and Roth 2008 Example 1. The previous review raised no finding. Gate rerun: OK. Depcheck: 0 problems. Elaboration: 10 sorry warnings only. Nothing changed outside the folder. Sample targets untouched by the diff stand as at d789104.",
+  "text": "5eaca838c11ac9ab"
+ }
+}
