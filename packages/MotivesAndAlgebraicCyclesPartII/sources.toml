@@ -109,3 +109,23 @@ status = "certified"
 accessed = "2026-11-10"
 version_note = "arXiv v4 of 11 January 2022, the version read; locators are to v4"
 cited_for = ["10.1", "10.2"]
+
+[[source]]
+id = "MR"
+authors = "Shubhodip Mondal, Emanuel Reinecke"
+title = "On Postnikov completeness for replete topoi"
+year = 2022
+venue = "Homology Homotopy Appl. 27 (2025), no. 1, 179-196"
+doi = "10.4310/HHA.2025.v27.n1.a10"
+arxiv = "2210.14146v2"
+locator_scheme = "theorem"
+locator = "Theorem A (p. 1; proof p. 11); Definition 3.5 (p. 8) (arXiv v2 pagination)"
+url = "https://arxiv.org/abs/2210.14146v2"
+fetched_from = "https://arxiv.org/pdf/2210.14146v2"
+fetched_at = "2026-11-16T12:52:48Z"
+sha256 = "c24235e7913c37475dc545287225633b9621ef2ecda476d0fd0257703169076b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v2 of 27 May 2024, the version read; locators are to v2, not to the journal's pagination"
+cited_for = ["0.7"]
