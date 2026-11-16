@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SmoothBundlesConnections~16",
+  "head": "c022e59bb9b280b844147e3638c0ea3228f06efa",
+  "pr": 2127,
+  "folder": "SmoothBundlesConnections",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 38 changed lines since c1d15cd (README only: scope sentence, the B1.4 characterization of principal bundles given by their total space as free proper quotients, its API bullet and three Checks). Checked: the three implications (a)=>(c)=>(b)=>(a) with the trivial group, the empty total space and x^3 as instances; the claim that every presented principal bundle meets the quotient hypotheses, against the Conventions; the SO(3), Hopf and non-free Checks recomputed; 4 Tau Ceti declarations opened at the pin; no second owner at the pins, on main or in open pull requests; pull request text against the head. The seeded sample falls outside the changed passages. Gate rerun: all counters 0, OK (worker build=0); depcheck 0 problems; Suggested.lean elaborates with 7 sorry warnings only. D01 stands (deferred).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Soft/fine-sheaf acyclicity has two owners: B6.1 here and ComplexKahlerGeometry 2.5",
+    "where": "ComplexKahlerGeometry 2.5, on main and in its open revision",
+    "raised": "PRREVIEW-SmoothBundlesConnections~13"
+   }
+  ],
+  "text": "6126208c89a7d318"
+ }
+}
