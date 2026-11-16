@@ -318,8 +318,9 @@ theorem messager_miracleSole (J : Sym2 V → ℝ) (hJ : 0 ≤ J) (ρ : Measure �
 
 /-- **3.7, the uniform second-moment bound.** For `λ > 0`, `b ∈ ℝ` and any coupling whose row sums
 `Σ_{y ≠ x} |J_{xy}|` are at most `K`, every `⟨φ_x²⟩` under the φ⁴ Gibbs measure is at most
-`[(2b₊ + K) + √((2b₊ + K)² + 16λ)] / (8λ)`, independently of `V` (Sokal, Section 3.1, (3.4)–(3.5);
-README §3.7). -/
+`[(2b₊ + K) + √((2b₊ + K)² + 16λ)] / (8λ)`, independently of `V` (derived from the
+integration-by-parts identity of Sokal, Section 3.1, (3.4)–(3.5), by Jensen's and the
+Cauchy–Schwarz inequalities; README §3.7). -/
 theorem phi4_secondMoment_le {lam : ℝ} (hlam : 0 < lam) (b : ℝ) (J : Sym2 V → ℝ) (K : ℝ)
     (hK : ∀ x, ∑ y ∈ Finset.univ.erase x, |J s(x, y)| ≤ K) (x : V) :
     ∫ φ, φ x ^ 2 ∂gibbsMeasure J (phi4Measure lam b) ≤
@@ -410,7 +411,8 @@ theorem phi4_uniform_expMoment (d : ℕ) (J : Sym2 (Fin d → ℤ) → ℝ) (hJ 
 
 /-- **4.3, the high-temperature bound.** The critical point of the nearest-neighbour Ising model on
 `ℤ^d` is at least `1/(2d)`: for `0 ≤ β < 1/(2d)` the susceptibility is at most `1/(1 − 2dβ)`
-(Simon–Lieb inequality of §3.5 with `Λ` a single site; README §4.3). -/
+(from the Simon–Lieb inequality of §3.5 with `Λ` a single site, in the finite-volume form of
+Aizenman–Duminil-Copin, Lemma 5.7 with footnote 5, p. 30; README §4.3). -/
 theorem criticalPoint_ising_ge (d : ℕ) :
     ((2 * d : ℝ≥0∞))⁻¹ ≤ criticalPoint d (nnCoupling d) isingMeasure := by
   sorry
