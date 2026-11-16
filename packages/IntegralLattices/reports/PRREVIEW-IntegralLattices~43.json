@@ -1,0 +1,21 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IntegralLattices~43",
+  "head": "60aa3a4f37d0734962ec0ec7bdd8764f3f8bbfd5",
+  "pr": 1411,
+  "folder": "IntegralLattices",
+  "date": "2026-11-16",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 14 changed lines since dfca92f. Checked: the three changed README passages (the repair of the previous R01, sound); the previous R01-R03 (R01, R03 repaired; R02 partly); the title and description against the head, main and #617's head da24d08 (two P3 findings: the list of passages revising #617 omits 'How to read the build' and the Layer 7 introduction; the summary block says 7C defines the local density, which is native and already on main). The 7C dictionary recomputed at p = 3. The seeded sample B1-B8 falls outside the changed passages. Worker's gate passes at 60aa3a4; depcheck 0 problems; Suggested.lean elaborates with 15 sorry warnings only.",
+  "text": "83d29b18a661085c",
+  "carried": {
+   "from": "60aa3a4f37d0734962ec0ec7bdd8764f3f8bbfd5",
+   "head": "60aa3a4f37d0734962ec0ec7bdd8764f3f8bbfd5",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  }
+ }
+}
