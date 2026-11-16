@@ -70,11 +70,14 @@ Library declarations are cited at the pinned Mathlib and Tau Ceti. A `gap:` cont
 - §3.14: the stalks of a qcqs pushforward at a geometric point are the cohomology of the fibre, and cohomology on a qcqs space is detected on rank-one points.
 - §3.17: the compact fibre theorem ([CS17] Theorem 4.4.4). For a PEL datum of type (A) or (C), unramified at `p` with `K_p` hyperspecial and proper integral model, `(R^iπ_HT* ℤ/ℓ^r)_x̄ ≅ H^i(Ig^b, ℤ/ℓ^r)` at every geometric point `x̄` of `Fℓ^b_{G,μ}`, compatibly with `G(𝔸_f^p)`. Its period map is that of PerfectoidShimuraVarieties §3.5, so it is applied only to data satisfying SV3 (§8.1).
 - §4.5: compact minimal-stratum concentration ([CS17] Corollary 6.1.4). It is stated for any subalgebra of `ℤ[G(𝔸_f^S)//K^S]` acting on `Rπ_HT*𝔽_ℓ`, with `p ∈ S`. It rests on the compact Hodge-type perversity of its §4.4, so it is applied only to data satisfying SV3.
+- §5.1: for the rank-`2n` Hecke algebras of that roadmap, the involution `ι` induced by `[K_qgK_q] ↦ [K_qg⁻¹K_q]`, the dual ideal `𝔪^∨ = ι(𝔪)` with the same residue field, and the dual Galois system, whose Frobenius eigenvalues at `v` are `q_v^{2n−1}α⁻¹` for the eigenvalues `α` of `ρ_𝔪`. Its eigenvalue lemma is stated in every rank `m`: for `q ∈ k^×` and `α : Fin m → k^×`, AutomorphicGaloisRepresentationsPartII AG2.7's local genericity predicate and its strong form hold for the tuple `(q^{m−1}α_i⁻¹)_i` exactly when they hold for `α`. §8.5 is the rank-`n` form of this section and uses that lemma at `m = n`.
+- §5.2: for `ℓ ≠ p` and `Λ = ℤ/ℓ^r` or `ℤ_ℓ`, Hecke-equivariant Poincaré duality on a finite-level Igusa variety `Ig` of dimension `d_b`, `RΓ_c(Ig, Λ)_{𝔪^∨} ≅ RHom_Λ(RΓ(Ig, Λ)_𝔪, Λ)[−2d_b](−d_b)`, with pullback on `RΓ` along the finite étale transition maps dual to trace on `RΓ_c`. §8.6(2) runs this argument for the data of this roadmap; it uses only that `I^b_{Mant,m}` is smooth of dimension `d_b` and the Hecke action away from `p`.
 - §5.5: splitting of generic local lifts ([CS17] Lemma 6.2.2) over every finite extension of `ℚ_p`.
 
 ### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
 
 - §1.8: the elliptic endoscopic data `G_n⃗` of unitary similitude groups, `n⃗ = (n)` or `(n₁, n₂)`, with the `ϖ`-twisted embeddings `η̃_n⃗`, Kottwitz's condition, and `|Out| = 2` exactly when `n₁ = n₂`. §1.16 is the norm correspondence of strongly regular classes.
+- §5.1: the discrete representations `ρ ⊠ b` of `GL_m(𝔸_F)`, for `ρ` unitary cuspidal on `GL_a(𝔸_F)` with `ab = m` and `ω_ρ^b` equal to the fixed unitary central character, with the existence, uniqueness and multiplicity one that the section takes from AutomorphicSpectralTheory §4.14a. Every discrete `GL` block of the Levi sums of §6.22 there is one of them, so they are the blocks of the discrete `Π_M` of §9.3.
 - §6.1: irreducibility of unitary parabolic induction for `GL_n`. §6.3: the Hecke character `ϖ` extending the quadratic character of `𝒦/ℚ`, which is an existence statement with finite `Ram_ℚ(ϖ)`.
 - §§6.6–6.10: the base-change groups and `L`-morphisms `BC`, `ζ̃`, the stable elliptic distribution `ST^H_e` with `ι(G, H)`, the unramified transfers, base-change transfer of test functions at every place, and archimedean Euler–Poincaré and twisted Lefschetz functions for arbitrary signature.
 - §§6.15, 6.18 and 6.21–6.23, 6.25. These are: no proper cuspidal subsets when `[F⁺:ℚ] ≥ 2`; Kottwitz's stabilization of elliptic terms; the simple twisted geometric and spectral sides; the simple trace formula for division-algebra unitary groups; and the stable–twisted identity. The stable–twisted identity holds for every rank, both parities and `G_ℝ` of arbitrary signature.
@@ -87,7 +90,7 @@ Library declarations are cited at the pinned Mathlib and Tau Ceti. A `gap:` cont
 
 ### From TauCetiRoadmap.AutomorphicGaloisRepresentationsPartII
 
-- AG2.0: algebraic weights, characters and the geometric-Frobenius normalization of Hecke polynomials.
+- AG2.0: the geometric-Frobenius normalization. Its «Automorphic specialization of the integral Hecke polynomial» matches `Σ_i (−1)^i q_v^{i(i−1)/2} t_{v,i} X^{n−i}` with the characteristic polynomial of a geometric Frobenius at `v`. With `Art_F` sending uniformizers to geometric Frobenius elements, its Galois character of `‖·‖` is the cyclotomic character, so `ε̄` takes the value `q_v⁻¹` on a geometric Frobenius at `v`. These fix the conventions of §§8.4 and 8.5.
 - AG2.2 «The Caraiani–Scholze discrete normalization». For the `θ`-stable isobaric `Π^n⃗` of the spectral expansion, with `Π^{S′} = ζ̃_{n⃗,*}(Π^n⃗)^{S′}` in the `S′`-unramified Igusa class, it gives `r_{Π^{S′},ℓ} = ⊕_i r_i ⊗ ε_i` with its labelled constituents and algebraic twists, unramified outside the places above `S′ ∪ {ℓ}`, with Frobenius polynomials at the places above `Spl_{𝒦/ℚ} ∖ (S′ ∪ {ℓ})`. It leaves the local normalization of [CS17] Remark 5.5.6 to a separate contract (gap:unitary-discrete-local-comparison).
 - AG2.3 «Arbitrary regular conjugate-self-dual existence»: Galois representations of regular algebraic conjugate self-dual cuspidal representations of `GL_m(𝔸_F)` of every rank.
 - AG2.5 «Caraiani’s full away-prime compatibility» and «Temperedness of regular unitary-type cuspidal forms»: local–global compatibility at every place not above `ℓ`.
@@ -109,7 +112,7 @@ Library declarations are cited at the pinned Mathlib and Tau Ceti. A `gap:` cont
 
 ### From TauCetiRoadmap.PELModuli
 
-- §§M0.2, M0.6, M0.7, M0.9, M0.13, M0.16–M0.17 and M0.27: Albert types, rational PEL data, the similitude group and `ker¹(ℚ, G)`, signatures, reflex fields and `τ`-parts at an unramified prime.
+- §§M0.2, M0.6, M0.7, M0.13, M0.16 and M0.27: Albert types, rational PEL data, the similitude group, signatures, the PEL reflex field and `τ`-parts at an unramified prime. §M0.9: the set `ker¹(ℚ, G)` of classes in `H¹(ℚ, G)` trivial at every place, and its finiteness for every linear algebraic group over `ℚ`. §M0.17: when `G` is connected and SV3 holds, the PEL reflex field equals the reflex field of the Shimura datum `(G, X)`.
 - §M0.12: the real conjugacy class `X` of `h`; when `G` is connected and `h` projects nontrivially to every `ℚ`-simple factor of `G^ad` (SV3), `(G, X)` is a Shimura datum of Hodge type. SV3 fails for wholly definite unitary data of rank at least two, where `X` is a point.
 - §M1.9: the characteristic-zero adelic moduli problem at an arbitrary compact open level. §M1.13: level change and the Hecke action. §§M2.8, M2.10 and M2.11: representability and smoothness, the Kodaira–Spencer isomorphism and relative dimension, and properness when `End_B(V)` is a division algebra.
 - §§M3.1 and M3.4: forms of the skew-hermitian module classified by `ker¹(ℚ, G)`, and `S_K(ℂ) = ⊔_a G^{(a)}(ℚ) ∖ (X × G(𝔸_f)/K) = ⊔_j Γ_j\X` over the inner forms; §M3.4 does not use SV3. §M3.3: arithmetic quotients; when the adjoint real group is compact, `X` is a point and the quotient is a finite set. §M4.3: for connected data satisfying SV3, the PEL generic fibres are canonical models, with the `ker¹` decomposition over the reflex field. §M5.5: unitary PEL data with prescribed signatures. §M6.1: level-forgetting and Hecke maps are finite étale.
@@ -192,7 +195,7 @@ The signatures `(p_τ, q_τ)`, the Hodge cocharacter `μ` and the reflex field `
 
 Thus `𝕋^S` (§8.4) depends on the datum and `S`, and `S_K` on the datum and `K`. Layers 9–11 also use other sets and levels of the same datum (`S ∪ {p}`, `S′ ⊇ S`, `K^pK′_p`, `K′ ⊂ K`).
 
-`S_K` is the PEL moduli problem over `E`. It is the disjoint union over `a ∈ ker¹(ℚ, G)` of open and closed pieces `S_K^{(a)}` with `S_K^{(a)}(ℂ) = G^{(a)}(ℚ) ∖ (X × G(𝔸_f)/K)`, where `X` is the `G(ℝ)`-conjugacy class of `h`, the `G^{(a)}` are locally isomorphic to `G` and the levels are transported through fixed local identifications (PELModuli §M3.4, which does not use SV3). When SV3 holds, `S_K^{(a)}` is the canonical model of the Shimura variety `Sh_{K^{(a)}}(G^{(a)}, X)` (PELModuli §M4.3). Put `d = dim S_K = Σ_{τ∈Φ} p_τq_τ`. Record the two cases as two constructors of one structure, so that every statement of Layers 9–11 names the case it uses. The rational PEL datum, its similitude group, signatures and reflex field come from PELModuli §§M0.6, M0.7, M0.13 and M0.16. Type (A) is the second-kind case of PELModuli §M0.2. The `ker¹` decomposition is PELModuli §§M3.1 and M3.4, with the canonical-model identification of §M4.3 under SV3, and the dimension formula is PELModuli §M2.10.
+`S_K` is the PEL moduli problem over `E`. It is the disjoint union over `a ∈ ker¹(ℚ, G)` of open and closed pieces `S_K^{(a)}` with `S_K^{(a)}(ℂ) = G^{(a)}(ℚ) ∖ (X × G(𝔸_f)/K)`, where `X` is the `G(ℝ)`-conjugacy class of `h`, the `G^{(a)}` are locally isomorphic to `G` and the levels are transported through fixed local identifications (PELModuli §M3.4, which does not use SV3). When SV3 holds, `S_K^{(a)}` is the canonical model of the Shimura variety `Sh_{K^{(a)}}(G^{(a)}, X)` (PELModuli §M4.3). Put `d = dim S_K = Σ_{τ∈Φ} p_τq_τ`. Record the two cases as two constructors of one structure, so that every statement of Layers 9–11 names the case it uses. The rational PEL datum, its similitude group, signatures and reflex field come from PELModuli §§M0.6, M0.7, M0.13 and M0.16. Type (A) is the second-kind case of PELModuli §M0.2. The index set `ker¹(ℚ, G)` is the finite set of PELModuli §M0.9. The `ker¹` decomposition is PELModuli §§M3.1 and M3.4, with the canonical-model identification of §M4.3 under SV3, where `E` is the reflex field of `(G, X)` (PELModuli §M0.17), and the dimension formula is PELModuli §M2.10.
 
 The API:
 
@@ -205,7 +208,7 @@ The API:
 - The moduli problem `S_K` is the disjoint union over `ker¹(ℚ, G)` of open and closed pieces with complex points `G^{(a)}(ℚ) ∖ (X × G(𝔸_f)/K)` (PELModuli §M3.4). When SV3 holds, these pieces are the canonical models of the Shimura varieties of the inner forms `G^{(a)}` (PELModuli §M4.3).
 - Two data are equal when their underlying rational PEL data (with the identification of the centre of `B` with `F`), subfields `𝒦 ⊂ F` and case tags agree, since every other field is a proposition: in Case 1, that `B` is a division algebra of degree `n` with an involution of the second kind and `V` is free of rank one over `B`; in Case 2, `B = F`, `* = c`, `F⁺ ≠ ℚ`, quasi-splitness, the ramification condition and anisotropy. The set `S` and the level `K` are parameters, not fields, and the rule says nothing about them.
 
-*Needs:* PELModuli §§M0.2, M0.6, M0.7, M0.12, M0.13, M0.16, M1.9, M2.10, M3.1, M3.4, M4.3, M5.5; Mathlib `NumberField.IsCMField`, `NumberField.maximalRealSubfield`.
+*Needs:* PELModuli §§M0.2, M0.6, M0.7, M0.9, M0.12, M0.13, M0.16, M0.17, M1.9, M2.10, M3.1, M3.4, M4.3, M5.5; Mathlib `NumberField.IsCMField`, `NumberField.maximalRealSubfield`.
 
 **Checks.**
 
@@ -273,7 +276,7 @@ The API:
 - Under the Satake isomorphism of SR.4.1 the image of `P_v` is `∏_j (X − q_v^{(n−1)/2} x_j)` in the Satake variables of `GL_n(F_v)`.
 - The prime-to-`p` action on Igusa cohomology is a `𝕋^{S∪{p}}`-action compatible with restriction of the finite-level action on `S_K`.
 
-*Needs:* SmoothRepresentationsOfLocalGroups SR.1.2, SR.4.1, SR.4.3; Mathlib `HeckeRing`; Tau Ceti `HeckeCosetModule.instRingHeckeRing`; IntegralHeckeAndGaloisDeterminants §3b.1; PELModuli §M1.13; this roadmap §8.1.
+*Needs:* SmoothRepresentationsOfLocalGroups SR.1.2, SR.4.1, SR.4.3; Mathlib `HeckeRing`; Tau Ceti `HeckeCosetModule.instRingHeckeRing`; IntegralHeckeAndGaloisDeterminants §3b.1; AutomorphicGaloisRepresentationsPartII AG2.0 «Automorphic specialization of the integral Hecke polynomial»; PELModuli §M1.13; this roadmap §8.1.
 
 **Checks.**
 
@@ -312,7 +315,7 @@ The API:
 - For `𝔪_3 = deg⁻¹(3ℤ)` in the same setting, `ℓ = 3 ∈ 𝔪_3`, `𝔪_3^∨ = 𝔪_3` and `P_v ≡ X² + 2` with roots `{1, 2}` in `𝔽_3`. The rule `λ ↦ 5λ⁻¹ = 2λ⁻¹` sends them to `{2, 1}`, the same multiset, as (2) predicts. Over `ℚ` the roots `{1, 5}` of `deg(P_v)` are exchanged by `λ ↦ 5λ⁻¹` as well.
 - The transport through `ῑ` matters even when `𝔪^∨ = 𝔪`. Take `n = 1`, `ℓ = 3`, and a character `χ : 𝕋^S → 𝔽_9` with values of order dividing `4` on the double cosets and `χ(T_{1,v}) = a`, where `a² = −1`. Since `χ ∘ ι` inverts these values and `x⁻¹ = x³` for `x⁴ = 1`, `χ ∘ ι` is `χ` followed by the Frobenius of `𝔽_9`, so `𝔪 = ker χ` satisfies `𝔪^∨ = 𝔪`, and `ῑ` is that Frobenius. Through `ῑ⁻¹` the root of `P_v` modulo `𝔪^∨` is `a⁻¹ = a³ = −a`, as (2) predicts; read through the identity of `κ(𝔪)` it would be `a ≠ −a`.
 
-*Needs:* IgusaVarietiesAndTorsionConcentration §5.1; Tau Ceti `HeckeAntiInvolution.ofAmbient`, `HeckeAntiInvolution.onHeckeCoset`; AutomorphicGaloisRepresentationsPartII AG2.7 «Dual and character-twist Hecke comparison», «Strong local decomposed genericity»; ArithmeticGaloisRepresentations §§1.8, 5.9; this roadmap §8.4.
+*Needs:* IgusaVarietiesAndTorsionConcentration §5.1; Tau Ceti `HeckeAntiInvolution.ofAmbient`, `HeckeAntiInvolution.onHeckeCoset`; AutomorphicGaloisRepresentationsPartII AG2.0, AG2.7 «Dual and character-twist Hecke comparison», «Strong local decomposed genericity»; ArithmeticGaloisRepresentations §§1.8, 5.9; this roadmap §8.4.
 
 ### 8.6 Hecke-equivariant Poincaré duality on S_K and on Mantovan's Igusa varieties
 
@@ -407,7 +410,7 @@ The other theorems of the layer have these degenerate and boundary cases.
 
 ### Dependencies
 
-PELModuli §§M0.2, M0.6, M0.7, M0.12, M0.13, M0.16, M0.27, M1.9, M1.13, M2.8, M2.10, M2.11, M3.1, M3.3, M3.4, M4.3, M5.5, M6.1; ShimuraCompactifications §§1.4, 7.3, 7.5, 7.18; IgusaVarietiesAndTorsionConcentration §§0.11, 0.12, 0.24, 1.1, 1.2, 1.3, 1.4, 1.4a, 1.6, 1.7, 5.1, 5.2; BunGAndNewtonStrata §§1.13, 1.23, 1.25, 1.26, 1.30; SmoothRepresentationsOfLocalGroups SR.1.2, SR.4.1, SR.4.3; IntegralHeckeAndGaloisDeterminants §§2.1–2.2, 3b.1; AutomorphicGaloisRepresentationsPartII AG2.0, AG2.7; ArithmeticGaloisRepresentations §§1.8, 5.1, 5.9; EtaleDualityAndPerverseSheaves §0.5; ArithmeticLocallySymmetricSpaces ALS.4.9, ALS.5a.2, ALS.5a.4; Mathlib `NumberField.IsCMField`, `HeckeRing`, `IsArithFrobAt`, `Module.Free`; Tau Ceti `HeckeCosetModule.instRingHeckeRing`, `HeckeAntiInvolution.ofAmbient`.
+PELModuli §§M0.2, M0.6, M0.7, M0.9, M0.12, M0.13, M0.16, M0.17, M0.27, M1.9, M1.13, M2.8, M2.10, M2.11, M3.1, M3.3, M3.4, M4.3, M5.5, M6.1; ShimuraCompactifications §§1.4, 7.3, 7.5, 7.18; IgusaVarietiesAndTorsionConcentration §§0.11, 0.12, 0.24, 1.1, 1.2, 1.3, 1.4, 1.4a, 1.6, 1.7, 5.1, 5.2; BunGAndNewtonStrata §§1.13, 1.23, 1.25, 1.26, 1.30; SmoothRepresentationsOfLocalGroups SR.1.2, SR.4.1, SR.4.3; IntegralHeckeAndGaloisDeterminants §§2.1–2.2, 3b.1; AutomorphicGaloisRepresentationsPartII AG2.0, AG2.7; ArithmeticGaloisRepresentations §§1.8, 5.1, 5.9; EtaleDualityAndPerverseSheaves §0.5; ArithmeticLocallySymmetricSpaces ALS.4.9, ALS.5a.2, ALS.5a.4; Mathlib `NumberField.IsCMField`, `NumberField.maximalRealSubfield`, `HeckeRing`, `IsArithFrobAt`, `Ideal.inertia`, `Ideal.primesOver`, `Ideal.LiesOver`, `Module.Free`; Tau Ceti `HeckeCosetModule.instRingHeckeRing`, `HeckeAntiInvolution.ofAmbient`, `HeckeAntiInvolution.onHeckeCoset`.
 
 ## Layer 9: Generic principal series and the μ-ordinary obstruction for the quasi-split datum
 

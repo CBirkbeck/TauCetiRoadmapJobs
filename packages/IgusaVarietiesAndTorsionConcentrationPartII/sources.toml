@@ -18,7 +18,7 @@ sha256 = "4f9449e5ecfd8fb8b43a04acef73060f531be995babaa9f744f3db36aaa5e61a"
 licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-10-26"
-cited_for = ["Summary", "Conventions", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9", "9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "10.1", "10.2", "10.3", "10.4", "10.5", "10.6", "11.1", "11.2", "11.3", "11.4", "11.5", "11.6", "11.7", "11.8", "Exact supplier contracts: gap unitary-discrete-local-comparison"]
+cited_for = ["Summary", "Conventions", "8.1", "8.2", "8.3", "8.4", "8.5", "8.6", "8.7", "8.8", "8.9", "9.1", "9.2", "9.3", "9.4", "9.5", "9.6", "10.1", "10.2", "10.3", "10.4", "10.5", "10.6", "11.1", "11.2", "11.3", "11.4", "11.5", "11.6", "11.7", "11.8", "Scope and ownership", "Exact supplier contracts"]
 
 [[source]]
 id = "Shin-BCU"
