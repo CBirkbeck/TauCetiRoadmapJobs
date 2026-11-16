@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RationalHomotopyModels~10",
+  "head": "22ad2c272bb1d143902c496fa628e574fcf0d479",
+  "pr": 2298,
+  "folder": "RationalHomotopyModels",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 46 changed lines since a27c21d. R01 (dg-lean provenance paragraph, References entry, description) and R02 (Whitehead sentence, description) repaired as proposed. Checked against dg-lean at its resolved full hash 161db4ede65f2dd359263a301c33ec39036988eb (FreeFormality.lean, Formality.lean, Minimal.lean, ChevalleyEilenbergAlgebra.lean, LICENSE, file tree: 9 claims, 0 contradicted), LeanPool at f8b9b72 (NOTICE line 328, 31 WhiteheadTheorem headers), Tau Ceti Whitehead.lean lines 236/243/263/345, AlgebraicTopology §8.5 on main. Adversarial rows computed for 1.1 vs DG.IsFreeGradedCommAlgebra, 7.1 IsFormal vs DG.IsFormal (M2(Q) differs as stated), DG.isFormal_of_isFreeGradedCommAlgebra, and Tau Ceti Whitehead. Seeded sample: no target falls in the changed passages; no source locator changed. Gate: worker gate passes all checks incl. build; rerun shows only the public-order NOT IN ORDER line; depcheck against the candidate order 0 problems, no UPWARD/CYCLE. lake env lean: 13 sorry warnings only; Suggested.lean unchanged; nothing outside the folder changed. PR text agrees with the head.",
+  "text": "fee01435678a87cc"
+ }
+}
