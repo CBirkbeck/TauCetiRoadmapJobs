@@ -1,0 +1,18 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-SurfaceGroupCharacterVarieties~3",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-SurfaceGroupCharacterVarieties~3",
+   "fix": "FIX-PKG-SurfaceGroupCharacterVarieties~4",
+   "from": "3e002bbdb9519adc479177d400cce34e5a4f8aef",
+   "head": "f78c7d9d61b6b5c1a373b9ad5eef65d1d063e3de",
+   "findings": 2,
+   "lines": 45
+  },
+  "notes": "every finding of `REV-PKG-SurfaceGroupCharacterVarieties~3` (2) was P3 and `FIX-PKG-SurfaceGroupCharacterVarieties~4` repaired them at `f78c7d9`, changing 45 lines of the package; no further review round was filed"
+ }
+}
