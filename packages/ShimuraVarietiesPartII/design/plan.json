@@ -3862,17 +3862,6 @@
       ]
     },
     {
-      "slug": "finite-field-bertini",
-      "id": "gap:finite-field-bertini",
-      "supplier": "AlgebraicModuliForArithmeticGeometry",
-      "section": "Layer 1",
-      "needs": "For a smooth geometrically irreducible finite-type F_q-scheme of positive dimension, a specified F_q-point and a dense open, supply a smooth geometrically connected curve over F_q through that point whose inverse image of the open is nonempty, as used in KZ Corollary 5.2.7.",
-      "stageId": "ShimuraVarietiesPartII",
-      "neededBy": [
-        "ShimuraVarietiesPartII:SV2.6/same-field-curves"
-      ]
-    },
-    {
       "slug": "rational-stack-presentation",
       "id": "gap:rational-stack-presentation",
       "supplier": "AlgebraicModuliForArithmeticGeometry",
