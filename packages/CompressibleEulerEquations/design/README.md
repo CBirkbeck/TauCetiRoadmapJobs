@@ -66,11 +66,14 @@ Boundaries:
 - **Mathlib and Tau Ceti** supply everything below this roadmap. The whole-space identification
   `Hᵏ = Wᵏ'²` and the embedding `Hᵏ(ℝⁿ) ⊆ C₀(ℝⁿ)` for `2k > n`, which the PDE roadmap on main
   lists among its §1.3–§1.4 material, are already pinned Tau Ceti declarations and are cited from
-  Tau Ceti directly; nothing else of the PDE roadmap is consumed. Tau Ceti also has three special
-  cases of Layer 4: the product on `W^{1,p}(ℝⁿ)` for `p > n` (at `p = 2`, the case `n = k = 1`,
-  `Λ = 0` of the algebra property), the scalar weak chain rule for a `C¹` function with bounded
-  derivative, and the additive interpolation inequality on `W^{2,p}(E)`; §§4.2–4.3 state the
-  general forms, and the supplier contracts say how each differs. Every statement of the PDE
+  Tau Ceti directly; nothing else of the PDE roadmap is consumed. Tau Ceti also has six special
+  cases of Layer 4. On `ℝⁿ`: the product on `W^{1,p}(ℝⁿ)` for `p > n` (at `p = 2`, the case
+  `n = k = 1`, `Λ = 0` of the algebra property), the scalar weak chain rule for a `C¹` function
+  with bounded derivative, and the additive interpolation inequality on `W^{2,p}(E)`. On the
+  circle (`n = 1`, `Λ = Tℤ`, complex values): the continuous representatives of
+  `TauCeti.CircleSobolev s A` for `s > 1/2`, the algebra property of that space, and the action
+  of holomorphic functions on it. §§4.2–4.3 state the general forms, and the supplier contracts
+  say how each differs. Every statement of the PDE
   roadmap is scalar (elliptic, parabolic and dispersive theory, with the dyadic analysis of its
   Layer 7); it plans no hyperbolic system and no Moser estimate in `Hᵏ` (the product bounds of its
   §7.3 are paraproduct estimates in the Hölder–Zygmund spaces `𝒞^s`). Its §7.1–§7.2 plan the
@@ -127,7 +130,21 @@ Boundaries:
   roadmap, nothing here uses that case, and the agreement is a Check of §4.1. For `n = 1` and a
   full-rank `Λ = Tℤ`, `Hᵏ_Λ` is likewise Tau Ceti's `TauCeti.CircleSobolev k ℂ`, the Fourier-side
   Sobolev space of `AddCircle T`, restricted to real functions and up to norm equivalence; this
-  case is not used here either, and the norm comparison is a Check of §4.1.
+  case is not used here either, and the norm comparison is a Check of §4.1. IncompressibleFlows
+  Layer 3 plans, on the unit torus, the DiPerna–Lions commutator estimate for transport by
+  `W^{1,p}` fields; at `p = ∞` and `L²` densities it covers, after the change of variable
+  `y = x/2π`, the case `Λ = (2πℤ)^n` of Friedrichs' lemma of §4.4, which is stated here for
+  period groups of every rank (`Λ = 0` and `Λ_cyl` included); nothing of it is consumed.
+- **Commutators with mollifiers on the Bessel scale.** ComplexKahlerGeometry §5.7 states, for a
+  chart-localised second-order operator `P` with smooth matrix coefficients and a convolution
+  regulariser `J_ε`, that `[P, J_ε]` is bounded from `H^r` to `H^{r−1}` uniformly for
+  `0 < ε ≤ 1` and every real `r`, and, for a smooth compactly supported matrix `f`, the multiplier
+  bound `‖fw‖_{H^s} ≤ sup‖f‖·‖w‖_{H^s} + C_{f,s}‖w‖_{H^{s−1}}`. Friedrichs' lemma of §4.4 is the
+  first-order `L²` statement on `E/Λ` for a coefficient that is only bounded and Lipschitz, and
+  the products of §4.3 are tame, with constants independent of the factors; the coefficients
+  `Mⁱ(U)` of §5.3 are `C¹` but in general not smooth (`a = |sin x|` on `Λ = 2πℤ` is bounded,
+  `1`-Lipschitz and periodic, so §4.4 applies to it, but it is not `C¹` at `0`). Neither
+  statement gives the other, and nothing of that roadmap is consumed.
 - **Flat finite propagation for Klein–Gordon** is RelativisticQuantumFieldTheory RQFT1; it is a
   second-order scalar statement on Minkowski space and is neither consumed nor restated.
 - Vacuum boundaries `ρ = 0`, weak and entropy solutions, Riemann solvers and numerical schemes
@@ -336,7 +353,25 @@ on `E`, no Lorentzian quadratic form with a time orientation and no causal curve
   `L²(AddCircle T)` for the probability Haar measure by `TauCeti.CircleSobolev.toLpₗᵢ`
   (`TauCeti/Analysis/Sobolev/Circle/Lp.lean:59`): for `n = 1`, `Λ = Tℤ` and integer `s = k` this
   is `Hᵏ_Λ` (real functions, complexified) up to norm equivalence; nothing here uses it, and the
-  norm comparison is a Check of §4.1.
+  norm comparison is a Check of §4.1. For `s > 1/2` the space carries three special cases of
+  Layer 4, none of them consumed. `TauCeti.CircleSobolev.toContinuousMap` with
+  `TauCeti.CircleSobolev.norm_toContinuousMap_le`
+  (`TauCeti/Analysis/Sobolev/Circle/Basic.lean:807,831`), the continuous representative as a
+  bounded linear map into `C(AddCircle T, E)`, is the embedding of §4.2 at `j = 0`.
+  `TauCeti.CircleSobolev.norm_mul_le` with `TauCeti.CircleSobolev.toContinuousMap_mul`
+  (`TauCeti/Analysis/Sobolev/Circle/Algebra.lean:288,300`), the bound `‖ab‖ ≤ C_s‖a‖‖b‖` for a
+  complete normed `ℂ`-algebra `A` with the product pointwise on representatives, is at `A = ℂ`
+  the algebra property of §4.3. `TauCeti.CircleSobolev.toContinuousMap_nemytskii` with
+  `TauCeti.CircleSobolev.analyticOnNhd_nemytskii`
+  (`TauCeti/Analysis/Sobolev/Circle/Nemytskii.lean:431,441`), by which, for `F` holomorphic on an
+  open `U ⊆ ℂ` and `u` with values in `U`, `F ∘ u` represents an element of the space and
+  `u ↦ F ∘ u` is analytic on the open set of such `u`, is the composition statement of §4.3 for
+  `N = 2` and holomorphic `Φ`, membership and continuity. At integer orders `s = k ≥ 1` these are
+  the case `n = 1`, `Λ = Tℤ`, complex values, of §§4.2–4.3, up to the norm equivalence of §4.1;
+  §§4.2–4.3 state the embeddings into `C^j_b` for `2k > n + 2j`, the tame bounds with `L^∞`
+  factors, every `n`, period groups of every rank, and real `Φ` that is only smooth on an open
+  `G ⊆ ℝ^N`, while the pinned statements also cover real orders `s > 1/2` and Banach-algebra
+  values.
 - `TauCeti.le_mul_exp_of_le_add_mul_integral` (`TauCeti/Analysis/ODE/Gronwall.lean:59`): the
   integral Grönwall inequality `φ(t) ≤ c + K∫ₐᵗ φ ⇒ φ(t) ≤ c e^{K(t−a)}` for continuous `φ` and
   `K ≥ 0`, the closure step of every energy estimate.
@@ -1050,7 +1085,9 @@ embedding is LukNotes line 1210, Theorem 5.5, for `Λ = 0`.
 `TauCeti.exists_norm_le_hasWeakLineDerivOn_of_frequently_eLpNorm_inv_mul_sub_le`; Mathlib
 Plancherel, `MeasureTheory.Lp.fourierTransformₗᵢ`, for the interpolation inequality on `E`
 (Tau Ceti `TauCeti.Wkp.norm_iteratedGradient_lowerOrder_le` is its case `j = 1`, `k = 2`,
-`Λ = 0`).
+`Λ = 0`; `TauCeti.CircleSobolev.toContinuousMap` with
+`TauCeti.CircleSobolev.norm_toContinuousMap_le` is the case `n = 1`, `Λ = Tℤ`, `j = 0`, complex
+values, of the embedding).
 
 ### 4.3 Gagliardo–Nirenberg interpolation and Moser estimates
 
@@ -1111,6 +1148,14 @@ segment from `Ū` leaves `G`. Every constant is independent of `u`, `f`, `g`.
   while every order-zero bound of `Φ_m` on `K` stays `1`: a constant controlled by `sup_K |Φ|`
   alone does not exist. With the first derivative (`K` is convex here, so the Lipschitz
   constant on `K` is `sup_K |Φ_m′| = m`) the bound reads `sin 1 ≤ m · m^{−1} = 1`.
+- The hypothesis `Ū ∈ K` is needed: `Λ = 2πℤ`, `n = N = 1`, `Φ(y) = y³`, `K = {0}`, `δ = 1`,
+  `u ≡ 0` and `Ū = a > 1`, so that `u − Ū = −a ∈ Hᵏ_Λ`. Then
+  `‖Φ(u) − Φ(Ū)‖_{Hᵏ_Λ}/‖u − Ū‖_{Hᵏ_Λ} = a³/a = a²` at every order (`100` at `a = 10`), unbounded
+  in `a`, while `Φ` on `K_δ = [−1, 1]`, and with it the order-zero constant
+  `max(sup_{[−1, 1]} 3y², 2 · 0) = 3` of `K`, does not change: no constant depending on `K` and
+  `Φ` on `K_δ` alone exists. For `K ∪ {Ū} = {0, 10}` the order-zero constant is
+  `max(3 · 11², 2 · 1000) = 2000 ≥ 100`; this enlargement is how §§5.3 and 7.1 meet the
+  hypothesis.
 - Order zero, interpolation: at `k = i = 0` the Gagliardo–Nirenberg exponents `2k/i` and `i/k`
   are `0/0`, and at `k = j = 0` the interpolation exponent `j/k` of §4.2 is `0/0`; the statements
   start at `k ≥ 1`, `i ≥ 1`, and the `k = 0` case of §4.2 is the identity on `L²_Λ`. At `k = 1`,
@@ -1146,7 +1191,10 @@ on bounded open sets to `u − Ū` and to `s ↦ Φ̃(Ū + s)`, gives the weak c
 derivatives of `Φ̃` of order at most `max(1, k)` are bounded by those of `Φ` on `K_δ` and powers
 of `δ^{−1}`, the dependence stated for the constants above. Tau
 Ceti `TauCeti.W1p.mul`, `TauCeti.W1p.norm_mul_le` and `TauCeti.W1p.mulL` are the case
-`Λ = 0`, `n = k = 1` of the algebra property.
+`Λ = 0`, `n = k = 1` of the algebra property; `TauCeti.CircleSobolev.norm_mul_le` and
+`TauCeti.CircleSobolev.toContinuousMap_nemytskii` are the case `n = 1`, `Λ = Tℤ`, integer order
+`s = k ≥ 1`, complex values, of the algebra property and of the composition statement (for
+holomorphic `Φ`), up to the norm equivalence of §4.1.
 
 ### 4.4 Friedrichs mollifiers
 
@@ -1380,7 +1428,7 @@ functions `LipschitzWith.integral_lineDeriv_mul_eq`; Tau Ceti
 ### 5.3 `Hᵏ` estimates for the linearised quasilinear system
 
 Fix a quasilinear symmetric hyperbolic system, `k` with `2k > n + 2`, a compact `K ⊆ G` and a
-constant state `Ū`; constants `C` below depend only on `K`, the system, `n`, `k` and `Λ`. For
+constant state `Ū ∈ K`; constants `C` below depend only on `K`, the system, `n`, `k` and `Λ`. For
 `U` with values in `K` and `U − Ū ∈ C([0, T]; Hᵏ_Λ) ∩ C¹([0, T]; Hᵏ⁻¹_Λ)`, and `W` in the same
 class solving `A⁰(U)∂_tW + Σᵢ Aⁱ(U)∂ᵢW = f` with `f ∈ C([0, T]; Hᵏ_Λ)`, prove that
 `E_k(t) = Σ_{|α|≤k} ∫_F ⟨A⁰(U)∂^αW, ∂^αW⟩` is `C¹` on `[0, T]` and that at every `t`
@@ -1656,9 +1704,9 @@ Layers 2, 3 and 5.
 ### 7.1 Local well-posedness for quasilinear symmetric hyperbolic systems
 
 Prove: let a quasilinear symmetric hyperbolic system be given, `Ū ∈ G` with `F(Ū) = 0`, a
-period group `Λ`, `k ∈ ℕ` with `2k > n + 2`, a compact `K ⊆ G` and `M > 0`. There are
-`T = T(M, K) > 0` and `R = R(M, K)` such that for every `U₀ : E → G` with `U₀ − Ū ∈ Hᵏ_Λ`,
-`‖U₀ − Ū‖_{Hᵏ_Λ} ≤ M` and `U₀(E) ⊆ K`:
+period group `Λ`, `k ∈ ℕ` with `2k > n + 2`, a compact `K ⊆ G` containing `Ū` and `M > 0`.
+There are `T = T(M, K) > 0` and `R = R(M, K)` such that for every `U₀ : E → G` with
+`U₀ − Ū ∈ Hᵏ_Λ`, `‖U₀ − Ū‖_{Hᵏ_Λ} ≤ M` and `U₀(E) ⊆ K`:
 
 - *existence:* there is a Λ-periodic `U` with `U − Ū ∈ C([0, T]; Hᵏ_Λ) ∩ C¹([0, T]; Hᵏ⁻¹_Λ)`,
   which is `C¹` on `[0, T] × E` and a classical solution with `U(0) = U₀`, and
@@ -1688,12 +1736,15 @@ solved by §5.4 (the iterate satisfies `U^m − Ū ∈ C([0, T]; Hᵏ_Λ) ∩ C�
 `A⁰(U^m) − A⁰(Ū)` has the time regularity `C¹([0, T]; Hᵏ⁻¹_Λ)` that §5.4 asks, by the
 composition and product estimates of §4.3 at order `k − 1`, where `2(k − 1) > n`);
 boundedness `‖U^m − Ū‖_{Hᵏ_Λ} ≤ R` on a uniform interval `[0, T]`, with `R` and `T` depending only
-on `M` and `K`, by §5.3 (whose coefficients depend on this bound; the forcing is
-`F(U^m) − F(Ū)`), contraction in `C([0, T]; L²_Λ)` by §5.1,
+on `M` and `K`, by §5.3 applied with the compact `K_δ`, which contains `Ū` (its coefficients
+depend on this bound; the forcing is `F(U^m) − F(Ū)`), contraction in `C([0, T]; L²_Λ)` by §5.1,
 convergence in `C([0, T]; Hᵏ⁻¹_Λ)` by §4.2 with the bound `R` passing to the limit by the lower
 semicontinuity of §4.2, top-order continuity and continuous dependence by the
 Bona–Smith regularisation of the data; continuation by the tame estimate of §5.3 and Grönwall.
 
+- The hypothesis `Ū ∈ K` is the one §5.3 and the composition estimate of §4.3 need, and it
+  costs no generality: for any compact `K ⊆ G`, the set `K ∪ {Ū}` is compact, lies in `G` and
+  contains the values of every datum whose values lie in `K`.
 - The solution of `Λ`-periodic data is unique among all solutions, hence Λ-periodic, by
   translation invariance of the system.
 - The data-to-solution map commutes with time translation; the solutions of a system and of its
@@ -1739,10 +1790,10 @@ and the range of `(ρ, s)` in `𝒪` in place of the range of `ρ` in `I`. (Abbr
 lines 172–179, the full system on `ℝ × 𝕋²` with non-vacuum `H³` data; ChristodoulouMiao2014 lines 866–868; LuoYu2023a
 lines 82–95; Majda1984, Ch. 2.) Route: §7.1 applied to the symmetrisers of §2.2, with `F = 0`,
 `Ū = (ρ₀, v₀)`, which lies in `G = I × E` because `ρ₀ ∈ I`, and the compact
-`K = [ρ_*, ρ^*] × B̄(v₀, CM) ⊆ G`, where `C` is the constant of the embedding `Hᵏ_Λ ⊆ C_b` of
-§4.2, so that `K` contains the values of every datum of the class (for the full system
-`Ū = (ρ₀, v₀, s₀)`, which lies in `G` because `(ρ₀, s₀) ∈ 𝒪`, and
-`K = {(ρ, v, s) : (ρ, s) ∈ L, |v − v₀| ≤ CM}`); the bound `ρ ≥ ρ_*/2` by
+`K = ([ρ_*, ρ^*] ∪ {ρ₀}) × B̄(v₀, CM) ⊆ G`, where `C` is the constant of the embedding
+`Hᵏ_Λ ⊆ C_b` of §4.2, so that `K` contains `Ū` and the values of every datum of the class (for
+the full system `Ū = (ρ₀, v₀, s₀)`, which lies in `G` because `(ρ₀, s₀) ∈ 𝒪`, and
+`K = {(ρ, v, s) : (ρ, s) ∈ L ∪ {(ρ₀, s₀)}, |v − v₀| ≤ CM}`); the bound `ρ ≥ ρ_*/2` by
 shrinking `T` to at most `ρ_*/(2C′)`, where `C′ > 0` bounds
 `‖∂_tρ‖_∞ = ‖v·∇ρ + ρ div v‖_∞` in terms of the bound `R(M, K)` of §7.1, `ρ₀` and `v₀`, by the
 embedding of §4.2 into `C¹_b` (`2k > n + 2`).
@@ -1767,7 +1818,14 @@ embedding of §4.2 into `C¹_b` (`2k > n + 2`).
   point of `G` and §7.1 cannot be applied at it; the background `(1, 0, 1/2)` lies in `G`, and the
   solution is the constant one. When `Λ` is not of full rank the condition holds automatically:
   `ρ̄ − ρ₀` and `s̄ − s₀` tend to `0` at infinity orthogonally to the span of `Λ` (§4.2), so
-  `(ρ₀, s₀)` lies in the closure of `(ρ̄, s̄)(E)`, inside `L`.
+  `(ρ₀, s₀)` lies in the closure of `(ρ̄, s̄)(E)`, inside `L`. For full-rank `Λ` the background
+  need not lie in `L`, nor `ρ₀` in `[ρ_*, ρ^*]`, which is why the route adjoins it to `K`: for
+  the data `(1, 0, 1/2)` above and `L = {(1, 1/2)}`, the background `(1, 0, 1/4)` has
+  `s̄ − 1/4 = 1/4 ∈ Hᵏ_Λ` and `(1, 1/4) ∈ 𝒪 \ L`; for the barotropic system with `I = (0, ∞)`,
+  the constant data `(1, 0)` and the background `(5, 0)` have `‖ρ̄ − 5‖²_{Hᵏ_Λ} = 16·2π = 32π` and
+  `[ρ_*, ρ^*] = [1, 1]`, so `{1} × B̄(0, CM)` misses `Ū = (5, 0)`, while `{1, 5} × B̄(0, CM)` is
+  compact, lies in `G` and contains it. That set is not convex, which the secant bound of §4.3
+  allows.
 
 *Needs:* §§1.1–1.3 (the equations of state and the Euler systems the statement is about), §2.2,
 §4.1 (the space `Hᵏ_Λ`), §4.2 (the embeddings into `C_b` and `C¹_b`), §7.1.
@@ -1804,7 +1862,8 @@ Route. The segment hull `K′ = {Ū + θ(U − Ū) : θ ∈ [0, 1], U ∈ K}` is
 dominating cone map `κ = (c_κ, w_κ)` of §2.1, and `m ≥ sup_{K₁} (c_κ + |w_κ|)`; then
 `κ_m = (max(m, c_κ + |w_κ|), 0)` is a continuous dominating cone map (§2.1, monotonicity) equal
 to `(m, 0)` on `K₁`. For `y ∈ E` the cut-off data `(Ū + χ(· − y)(U₀ − Ū), χ(· − y))` of the
-switched system take values in the compact `K′ × [0, 1]` because `0 ≤ χ ≤ 1`, lie within
+switched system take values in the compact `K′ × [0, 1]` because `0 ≤ χ ≤ 1` (a set containing
+`(Ū, 0)`, as §7.1 asks, since `θ = 0` gives `Ū ∈ K′` when `K` is nonempty), lie within
 `M + ‖χ‖_{Hᵏ(E)}` of `(Ū, 0)` in `Hᵏ(E)`, and equal `(U₀, 1)` on the ball `B(y, 1)`. Section 7.1
 with `Λ = 0`, applied to the switched system at the equilibrium `(Ū, 0)`, gives solutions
 `(U^y, a^y)` on a common interval `[0, T₀]` with a common bound `R` in `Hᵏ(E)`. While `U^y` takes

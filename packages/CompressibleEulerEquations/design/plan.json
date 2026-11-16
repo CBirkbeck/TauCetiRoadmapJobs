@@ -940,7 +940,8 @@
       "tauceti:TemperedDistribution.MemSobolev.exists_zeroAtInftyContinuousMap_ae_eq",
       "tauceti:TauCeti.exists_norm_le_hasWeakLineDerivOn_of_frequently_eLpNorm_inv_mul_sub_le",
       "mathlib:MeasureTheory.Lp.fourierTransformₗᵢ",
-      "tauceti:TauCeti.Wkp.norm_iteratedGradient_lowerOrder_le"
+      "tauceti:TauCeti.Wkp.norm_iteratedGradient_lowerOrder_le",
+      "tauceti:TauCeti.CircleSobolev.toContinuousMap"
      ],
      "tests": [
       {
@@ -1017,7 +1018,8 @@
       "target:4.4",
       "tauceti:TauCeti.W1p.mul",
       "tauceti:TauCeti.W1p.norm_mul_le",
-      "tauceti:TauCeti.W1p.mulL"
+      "tauceti:TauCeti.W1p.mulL",
+      "tauceti:TauCeti.CircleSobolev.norm_mul_le"
      ],
      "tests": [
       {
@@ -1051,7 +1053,8 @@
       "mathlib:HasFDerivAt.comp",
       "mathlib:HasFTaylorSeriesUpToOn.comp",
       "tauceti:TauCeti.W1p.hasWeakFDerivOn_comp",
-      "tauceti:TauCeti.W1p.contDiffComp"
+      "tauceti:TauCeti.W1p.contDiffComp",
+      "tauceti:TauCeti.CircleSobolev.toContinuousMap_nemytskii"
      ],
      "tests": [
       {
@@ -1073,6 +1076,11 @@
        "name": "approximants_leave_G",
        "kind": "non-example",
        "statement": "n = 3, N = 2, Λ = 0, k = 1 (2k ≤ n), G = {1/2 < |y| < 2}, K the unit circle, Ū = (1,0), u = (cos ϑ, sin ϑ) with ϑ = πβ(|x|)x₃/|x|, β = 1 on [0,1], 2 − r on [1,2], 0 beyond: u − Ū ∈ H¹(ℝ³) with ∫_{|x|≤1}|∇u|² = π²(4π − 4π/3) = 8π³/3; for a radial kernel supported in the unit ball and ε ≤ 1, J_εu(0) = (½∫₋₁¹cos πt dt, ½∫₋₁¹sin πt dt) = (0,0) ∉ G, so Φ(y) = 1/|y| has no value there while the cut-off Φ̃ = χΦ (δ = 1/4) gives Φ̃(0) = 0: the density route composes the approximants with Φ̃, not Φ"
+      },
+      {
+       "name": "background_outside_K",
+       "kind": "non-example",
+       "statement": "Λ = 2πℤ, n = N = 1, Φ(y) = y³, K = {0}, δ = 1, u ≡ 0, Ū = a > 1 ∉ K: ‖Φ(u) − Φ(Ū)‖/‖u − Ū‖ = a² at every order (100 at a = 10), unbounded while Φ on K_δ = [−1,1] and the order-zero constant max(sup_{[−1,1]}3y², 0) = 3 of K are fixed; for K ∪ {Ū} = {0,10} the constant is max(3·11², 2·1000) = 2000 ≥ 100, so Ū ∈ K is needed and costs nothing"
       }
      ]
     },
@@ -1297,10 +1305,11 @@
      "id": "5.3",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.Hk_estimate",
-     "statement": "For U with values in compact K, U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ), 2k > n + 2, and W in the same class with A⁰(U)∂_tW + ΣAⁱ(U)∂ᵢW = f, f ∈ C([0,T];Hᵏ_Λ): E_k is C¹ and dE_k/dt ≤ C(1 + ‖∂_tU‖_∞ + ‖U − Ū‖_{Hᵏ_Λ})E_k + C(1 + ‖U − Ū‖_{Hᵏ_Λ})E_k^{1/2}‖f‖_{Hᵏ_Λ}, C depending only on K, the system, n, k and Λ; when U solves the system with F(Ū) = 0, d/dt E_k(U − Ū) ≤ C(1 + ‖∇U‖_∞)E_k(U − Ū). For a classical solution with values in K, ‖∂_tU‖_∞ ≤ C(‖F(U)‖_∞ + ‖∇U‖_∞) ≤ C(1 + ‖∇U‖_∞), and ≤ C‖∇U‖_∞ when F = 0.",
+     "statement": "For a constant state Ū ∈ K and U with values in compact K, U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ), 2k > n + 2, and W in the same class with A⁰(U)∂_tW + ΣAⁱ(U)∂ᵢW = f, f ∈ C([0,T];Hᵏ_Λ): E_k is C¹ and dE_k/dt ≤ C(1 + ‖∂_tU‖_∞ + ‖U − Ū‖_{Hᵏ_Λ})E_k + C(1 + ‖U − Ū‖_{Hᵏ_Λ})E_k^{1/2}‖f‖_{Hᵏ_Λ}, C depending only on K, the system, n, k and Λ; when U solves the system with F(Ū) = 0, d/dt E_k(U − Ū) ≤ C(1 + ‖∇U‖_∞)E_k(U − Ū). For a classical solution with values in K, ‖∂_tU‖_∞ ≤ C(‖F(U)‖_∞ + ‖∇U‖_∞) ≤ C(1 + ‖∇U‖_∞), and ≤ C‖∇U‖_∞ when F = 0.",
      "hypotheses": [
       "2k > n + 2",
       "values of U in compact K ⊆ G",
+      "Ū ∈ K",
       "constants depend on K, the system, n, k, Λ only; the forcing coefficient also on ‖U − Ū‖_{Hᵏ_Λ}",
       "F(Ū) = 0 for the tame estimate"
      ],
@@ -1539,11 +1548,12 @@
      "id": "7.1",
      "kind": "theorem",
      "name": "SymmetricHyperbolic.localWellPosedness",
-     "statement": "For a quasilinear symmetric hyperbolic system, Ū ∈ G with F(Ū) = 0, a period group Λ, 2k > n + 2, a compact K ⊆ G and M > 0, there are T(M,K) > 0 and R(M,K) such that every U₀ with U₀ − Ū ∈ Hᵏ_Λ, ‖U₀ − Ū‖ ≤ M and U₀(E) ⊆ K has a unique Λ-periodic classical solution U on [0,T] × E with U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) and ‖U(t) − Ū‖_{Hᵏ_Λ} ≤ R on [0,T]; it is the only classical solution on [0,T) × E with this data (U([0,T] × E) has compact closure in G by 4.2, so κ ∘ U is bounded, and 6.2.1 needs one bounded cone field), depends continuously on the data within this class (if U₀^m → U₀ in Ū + Hᵏ_Λ with ‖U₀^m − Ū‖_{Hᵏ_Λ} ≤ M and U₀^m(E) ⊆ K, the solutions of the U₀^m, which exist on [0,T], converge to U in C([0,T];Hᵏ_Λ)), and persists in Hᵏ′_Λ for k′ > k on the same maximal interval.",
+     "statement": "For a quasilinear symmetric hyperbolic system, Ū ∈ G with F(Ū) = 0, a period group Λ, 2k > n + 2, a compact K ⊆ G containing Ū and M > 0, there are T(M,K) > 0 and R(M,K) such that every U₀ with U₀ − Ū ∈ Hᵏ_Λ, ‖U₀ − Ū‖ ≤ M and U₀(E) ⊆ K has a unique Λ-periodic classical solution U on [0,T] × E with U − Ū ∈ C([0,T];Hᵏ_Λ) ∩ C¹([0,T];Hᵏ⁻¹_Λ) and ‖U(t) − Ū‖_{Hᵏ_Λ} ≤ R on [0,T]; it is the only classical solution on [0,T) × E with this data (U([0,T] × E) has compact closure in G by 4.2, so κ ∘ U is bounded, and 6.2.1 needs one bounded cone field), depends continuously on the data within this class (if U₀^m → U₀ in Ū + Hᵏ_Λ with ‖U₀^m − Ū‖_{Hᵏ_Λ} ≤ M and U₀^m(E) ⊆ K, the solutions of the U₀^m, which exist on [0,T], converge to U in C([0,T];Hᵏ_Λ)), and persists in Hᵏ′_Λ for k′ > k on the same maximal interval.",
      "hypotheses": [
       "F(Ū) = 0",
       "2k > n + 2",
       "U₀(E) ⊆ K compact ⊆ G",
+      "Ū ∈ K (no loss: K ∪ {Ū} is compact in G)",
       "‖U₀ − Ū‖_{Hᵏ_Λ} ≤ M"
      ],
      "locator": {
@@ -1607,7 +1617,7 @@
      "id": "7.2",
      "kind": "theorem",
      "name": "CompressibleEuler.localWellPosedness",
-     "statement": "For a barotropic law (I,p), a period group Λ, 2k > n + 2, a background (ρ₀,v₀) ∈ I × E and data with ρ̄ − ρ₀, v̄ − v₀ ∈ Hᵏ_Λ and ρ_* ≤ ρ̄ ≤ ρ^* for [ρ_*,ρ^*] ⊆ I: there are T > 0 and a unique Λ-periodic classical solution on [t₀, t₀+T] × E with (ρ − ρ₀, v − v₀) ∈ C(Hᵏ_Λ) and ρ ≥ ρ_*/2; T depends only on (I,p), Λ, k, (ρ₀,v₀), [ρ_*,ρ^*] and a bound M ≥ ‖(ρ̄ − ρ₀, v̄ − v₀)‖_{Hᵏ_Λ}, and the solution depends continuously on the data within this class (data converging in (ρ₀,v₀) + Hᵏ_Λ with norm ≤ M and ρ_* ≤ ρ̄^m ≤ ρ^* have solutions on [t₀, t₀+T] converging in C([t₀, t₀+T];Hᵏ_Λ)); if the maximal time is finite then ∫‖∇(ρ,v)‖_∞ = ∞ or the closure of the range of ρ is not compact in I. The full system is analogous for an equation of state (𝒪,P), a background (ρ₀,v₀,s₀) with (ρ₀,s₀) ∈ 𝒪 and v₀ ∈ E, and data (ρ̄,v̄,s̄) with s̄ − s₀ ∈ Hᵏ_Λ as well and (ρ̄,s̄)(E) in a compact subset L of 𝒪 ((𝒪,P), (ρ₀,v₀,s₀) and L in place of (I,p), (ρ₀,v₀) and [ρ_*,ρ^*], ρ_* = min_L ρ, the triples with s − s₀ and ∇(ρ,v,s) in place of the pairs, the range of (ρ,s) in 𝒪 in place of that of ρ in I). Route: 7.1 with Ū = (ρ₀,v₀) ∈ G = I × E (full: Ū = (ρ₀,v₀,s₀) ∈ G since (ρ₀,s₀) ∈ 𝒪) and K = [ρ_*,ρ^*] × B̄(v₀, CM) (full: {(ρ,v,s) : (ρ,s) ∈ L, |v − v₀| ≤ CM}), C the embedding constant of 4.2; T shrunk to ≤ ρ_*/(2C′) with C′ > 0, C′ ≥ ‖v·∇ρ + ρ div v‖_∞, bounded in terms of R(M,K), ρ₀, v₀.",
+     "statement": "For a barotropic law (I,p), a period group Λ, 2k > n + 2, a background (ρ₀,v₀) ∈ I × E and data with ρ̄ − ρ₀, v̄ − v₀ ∈ Hᵏ_Λ and ρ_* ≤ ρ̄ ≤ ρ^* for [ρ_*,ρ^*] ⊆ I: there are T > 0 and a unique Λ-periodic classical solution on [t₀, t₀+T] × E with (ρ − ρ₀, v − v₀) ∈ C(Hᵏ_Λ) and ρ ≥ ρ_*/2; T depends only on (I,p), Λ, k, (ρ₀,v₀), [ρ_*,ρ^*] and a bound M ≥ ‖(ρ̄ − ρ₀, v̄ − v₀)‖_{Hᵏ_Λ}, and the solution depends continuously on the data within this class (data converging in (ρ₀,v₀) + Hᵏ_Λ with norm ≤ M and ρ_* ≤ ρ̄^m ≤ ρ^* have solutions on [t₀, t₀+T] converging in C([t₀, t₀+T];Hᵏ_Λ)); if the maximal time is finite then ∫‖∇(ρ,v)‖_∞ = ∞ or the closure of the range of ρ is not compact in I. The full system is analogous for an equation of state (𝒪,P), a background (ρ₀,v₀,s₀) with (ρ₀,s₀) ∈ 𝒪 and v₀ ∈ E, and data (ρ̄,v̄,s̄) with s̄ − s₀ ∈ Hᵏ_Λ as well and (ρ̄,s̄)(E) in a compact subset L of 𝒪 ((𝒪,P), (ρ₀,v₀,s₀) and L in place of (I,p), (ρ₀,v₀) and [ρ_*,ρ^*], ρ_* = min_L ρ, the triples with s − s₀ and ∇(ρ,v,s) in place of the pairs, the range of (ρ,s) in 𝒪 in place of that of ρ in I). Route: 7.1 with Ū = (ρ₀,v₀) ∈ G = I × E (full: Ū = (ρ₀,v₀,s₀) ∈ G since (ρ₀,s₀) ∈ 𝒪) and K = ([ρ_*,ρ^*] ∪ {ρ₀}) × B̄(v₀, CM) ∋ Ū (full: {(ρ,v,s) : (ρ,s) ∈ L ∪ {(ρ₀,s₀)}, |v − v₀| ≤ CM}), C the embedding constant of 4.2; T shrunk to ≤ ρ_*/(2C′) with C′ > 0, C′ ≥ ‖v·∇ρ + ρ div v‖_∞, bounded in terms of R(M,K), ρ₀, v₀.",
      "hypotheses": [
       "(ρ₀, v₀) ∈ I × E",
       "[ρ_*, ρ^*] ⊆ I",
@@ -1651,7 +1661,7 @@
       {
        "name": "full_background_outside_states",
        "kind": "non-example",
-       "statement": "Λ = 2πℤ, n = 1, 𝒪 = (0,∞) × (0,1), data (1, 0, 1/2): the triple (1, 0, 5) has s̄ − 5 = −9/2 ∈ Hᵏ_Λ (squared norm 81π/2) but (1, 5) ∉ 𝒪, so it is not in G and 7.1 does not apply; the background (1, 0, 1/2) ∈ G gives the constant solution; for Λ not of full rank (ρ₀, s₀) lies in the closure of (ρ̄, s̄)(E) ⊆ L automatically"
+       "statement": "Λ = 2πℤ, n = 1, 𝒪 = (0,∞) × (0,1), data (1, 0, 1/2): the triple (1, 0, 5) has s̄ − 5 = −9/2 ∈ Hᵏ_Λ (squared norm 81π/2) but (1, 5) ∉ 𝒪, so it is not in G and 7.1 does not apply; the background (1, 0, 1/2) ∈ G gives the constant solution; for Λ not of full rank (ρ₀, s₀) lies in the closure of (ρ̄, s̄)(E) ⊆ L automatically; for full-rank Λ the background need not lie in L or [ρ_*,ρ^*], so the route adjoins it to K: (1, 1/4) ∈ 𝒪 \\ L for L = {(1, 1/2)}, and barotropic data (1, 0) with background (5, 0) on I = (0,∞) have ‖ρ̄ − 5‖² = 32π, {1} × B̄(0, CM) ∌ (5, 0), while {1, 5} × B̄(0, CM) is compact in G and contains it (not convex, which the secant bound of 4.3.2 allows)"
       }
      ]
     },
