@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsConfluent~6",
+  "head": "d2983b2244d7c2b84728b9e7dbb0bbd96eaf72f9",
+  "pr": 1995,
+  "folder": "SpecialFunctionsConfluent",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "Full review. Previous R01 (LaguerreJacobi labels) repaired. Gate at d2983b2 passes (all counters 0, build OK); depcheck 0 problems, no UPWARD/CYCLE; lake env lean: 43 sorry warnings only; one-tactic probe closes none of 43 theorems. Adversarial pass computed at 30 digits from the Lean definitions for all 43 theorems and the README Checks of the 15 sampled sections: one false negative control (5.3, P2), one wrong digit (5.3, P3), README sentence on Suggested.lean contradicted by the file (P3), a target-order cycle 1.3/3.2/2.1 (P3). About 90 DLMF 1.2.8 locators and 7 Whittaker-Watson locators (1920 edition) read; eight books, Wimp and Gautschi not readable legally (Not verifiable). 36 cross-roadmap citations resolved at main or open heads. Six DLMF errata recorded under Source issues.",
+  "text": "dc5ea6f288aef936"
+ }
+}
