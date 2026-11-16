@@ -1,0 +1,18 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-RationalAnalyticPrismatization~4",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-RationalAnalyticPrismatization~4",
+   "fix": "FIX-PKG-RationalAnalyticPrismatization~5",
+   "from": "9111870c700755f220ee58b5b86b5d3a1d0a7d49",
+   "head": "61666d4c52d2232c64a38114afc72f6c5dace9e5",
+   "findings": 3,
+   "lines": 59
+  },
+  "notes": "every finding of `REV-PKG-RationalAnalyticPrismatization~4` (3) was P3 and `FIX-PKG-RationalAnalyticPrismatization~5` repaired them at `61666d4`, changing 59 lines of the package; no further review round was filed"
+ }
+}
