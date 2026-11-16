@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-VirtualFundamentalClassPartII~4",
+  "head": "e264265e9904c68f81960500498f89930e32fc5b",
+  "pr": 2446,
+  "folder": "VirtualFundamentalClassPartII",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Full review. Previous R01 (9.1 stable maps over every field) repaired. One P3 finding: Convention 4 says integral statements are exactly those of Layers 2-3, while 8.1's groups Z_*, W_*, the P-divisor operations and beta are integral. Seeded sample of 15 targets and all 12 headline theorems recomputed (table in the report); about 120 source locators checked against 11 cached texts, none wrong; gillet1984 and fulton1998 uncertified. Library declarations checked at the pins; cross-roadmap citations resolved at the #1996, #2429, #1841, #1998 heads and on main. Gate rerun: every check 0, OK; depcheck 0 problems, no UPWARD or CYCLE line; Suggested.lean elaborates silently with no declaration, no headline statable at the pins. Both declared gaps precise and not already supplied. Two source issues recorded (behrend1997 Proposition 4, kresch1999b Theorem 3.1).",
+  "text": "9fe76f2f84b255a5",
+  "carried": {
+   "from": "e264265e9904c68f81960500498f89930e32fc5b",
+   "head": "a2da2be1163728ba50e030f12a95a6a8dd2d92fa",
+   "findings": 1,
+   "lines": 17,
+   "folders": [
+    "VirtualFundamentalClassPartII"
+   ]
+  }
+ }
+}
