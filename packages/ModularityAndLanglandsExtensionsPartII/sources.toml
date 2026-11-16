@@ -161,7 +161,7 @@ url = "https://doi.org/10.1007/bf01389157"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
-cited_for = ["Layer 4 (§4.9)"]
+cited_for = ["Layer 4 (§4.9); supplier contracts (SpringerResolutionAndCharacteristicCycles gap)"]
 
 [[source]]
 id = "moe07"

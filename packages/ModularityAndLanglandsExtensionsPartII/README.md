@@ -31,19 +31,19 @@ newform of weight at least `2`, the statements this roadmap's Lean file records.
 |---|---|---|
 | 0 | Rigid spaces of pseudocharacters | analytic continuation along components, `𝒳_ps` with its irreducible locus, polarized lifts and tangent spaces |
 | 1 | Continuation between unitary eigenvarieties | non-critical and ordinary continuation, non-criticality of symmetric powers, automorphy along components of `ℰ_2` |
-| 2 | From the eigencurve to unitary eigenvarieties | the twin involution, trivialising character families, the base-change morphism, Theorem 2.33, the bad locus |
+| 2 | From the eigencurve to unitary eigenvarieties | the twin involution, trivialising character families, the base-change morphism, constancy of symmetric-power automorphy on eigencurve components, the bad locus |
 | 3 | Level one and ping-pong | Buzzard–Kilford annuli, boundary weights, twins, level-one refinements, local images, Theorem D |
 | 4 | Local representation theory for unitary level raising | unitary groups and inner twists, character identities, stable base change, depth-zero types, fixed-type rings, chamber-fixer Hecke algebras of ramified unitary groups, the Kazhdan–Lusztig modules and their signs |
-| 5 | Level raising to prescribed types | Newton–Thorne I Theorem 4.1 and Clozel–Thorne III Theorem 4.2 |
-| 6 | Level raising to Steinberg | Newton–Thorne I Theorem 6.1, Clozel–Thorne III Theorems 5.1 and 5.7, Thorne 2024 Theorem 6.11 |
+| 5 | Level raising to prescribed types | level raising to depth-zero types at inert places and to Iwahori-spherical components at ramified places, by the stabilised trace formula |
+| 6 | Level raising to Steinberg | Steinberg level raising for sums of characters, for two constituents, from a long Jordan block, and by `p`-adic methods |
 | 7 | Seeds | the CM form `σ₀`, residually CM symmetric powers with a Steinberg place, Theorem E in 2-power rank, `Sym^6` and `Sym^8` |
 | 8 | Killing ramification | the non-regular divisor, congruences to `n`-regular forms, Theorem B relative to a level-one seed |
-| 9 | Automorphy lifting for symmetric powers | the patching argument of Newton–Thorne II and its Theorem 2.1 |
-| 10 | Seasoned representations | removing supercuspidal primes, Newton–Thorne II Theorem 3.1 relative to a seed |
-| 11 | The untwisted tensor | Newton–Thorne 2026 Theorem 3.2 |
-| 12 | Tensor functoriality lifting | Newton–Thorne 2026 Theorem 4.1 |
-| 13 | Residual twisted tensors and the induction | Theorems 5.5 and 5.9, Proposition 6.3, Thorne's induction step, `SP_n` for all `n` |
-| 14 | Endpoints over `ℚ` | Theorems A, B, E for every rank, Newton–Thorne II Theorem A, holomorphy of `L(s, Sym^n f)` in level one and, away from the level, for non-CM newforms of weight at least `2` |
+| 9 | Automorphy lifting for symmetric powers | simultaneous patching of the rank-two deformation ring and the symmetric-power pseudodeformation ring, automorphy lifting for `Sym^{n−1}` |
+| 10 | Seasoned representations | removing supercuspidal primes, symmetric power functoriality for non-CM forms relative to a seed |
+| 11 | The untwisted tensor | automorphy of `r_π ⊗ Sym^{r−1} r_σ` by congruent special fibres and generic primes |
+| 12 | Tensor functoriality lifting | automorphy lifting for `r_π ⊗ r_σ` with `σ` fixed, by simultaneous patching |
+| 13 | Residual twisted tensors and the induction | large image from tamely dihedral places, residual witnesses for the coefficient-Frobenius twisted tensor, lifting from two ordinary blocks, `SP_n` for all `n` |
+| 14 | Endpoints over `ℚ` | Theorems A, B, E for every rank, symmetric power functoriality for every non-CM newform, holomorphy of `L(s, Sym^n f)` in level one and, away from the level, for non-CM newforms of weight at least `2` |
 
 ## Scope and ownership
 
@@ -85,7 +85,9 @@ It imports, by section and never re-plans:
   DeformationAndDerivedPatchingAlgebra; the eigencurve and eigenvariety machine of PadicFamilies;
   irreducible components of rigid spaces from AdicSpacesPartV Layer 1; unitary endoscopy,
   base change and the trace formula from EndoscopicTransferAndUnitaryTraceComparison; Iwahori–Hecke
-  algebras, induction and cuspidal support from SmoothRepresentationsOfLocalGroups; adequacy,
+  algebras, induction and cuspidal support from SmoothRepresentationsOfLocalGroups; the Springer
+  resolution and the Steinberg variety from SpringerResolutionAndCharacteristicCycles; algebraic
+  Jacobson–Morozov homomorphisms from NilpotentOrbits; adequacy,
   Clebsch–Gordan decompositions, Dickson's classification and enormous subgroups from
   ArithmeticGaloisRepresentations; the exponent-two ramification fields and the reciprocity of the
   two auxiliary splitting conditions from ArithmeticGaloisDuality §R02.3.5 (this is Newton–Thorne
@@ -206,10 +208,17 @@ Newton–Thorne II §3.
   `HeckeRing.GL2.Newform.prod_map_one_sub_mul_satakeParameters` is the factorisation
   `(1 − α_p x)(1 − β_p x) = 1 − a_p x + χ(p) p^{k−1} x²` used in §14.4. At a prime dividing the level
   the parameters are `a_p` and `0`, which is why §14.5 takes its product over `p ∤ N` only. No
-  Ramanujan–Deligne bound is supplied; §§14.4–14.5 use it only through their proof routes.
+  Ramanujan–Deligne bound is supplied and none is used: the half-plane of §§14.4–14.5 comes from
+  AutomorphicLFunctionsAndLocalFactors AL.3.6.1.
 - `CuspForm.hasEntireExtension_qExpansion_coeff`
   (`TauCeti/NumberTheory/ModularForms/LFunction/Basic.lean`): the `L`-series of a cusp form of positive
   weight has an entire extension; it is the case `n = 1` of §14.4.
+- `TauCeti.exists_isSl2Triple_of_isNilpotent_ad` and `IsSl2Triple.exists_isSl2Triple_iff_sub_mem`
+  (`TauCeti/Algebra/Lie/Sl2/JacobsonMorozov.lean`): over a field of characteristic zero, a nonzero
+  `ad`-nilpotent element of a finite-dimensional Lie algebra with nondegenerate Killing form is the
+  nilpositive element of an `sl_2`-triple, and the neutral elements of the triples with a given
+  nilpositive element `e` form an affine space under `ker(ad e) ∩ [e, L]`; used in §4.9 for
+  `s`-adapted homomorphisms.
 
 ### From TauCetiRoadmap.ModularityAndLanglandsExtensions
 
@@ -223,7 +232,11 @@ Newton–Thorne II §3.
   odd `l`, regular algebraic irreducible polarized lift, potentially diagonalizable above `l`,
   cyclotomically irreducible residual representation, `ζ_l ∉ F`, `l ≥ 2(d + 1)` for the maximal
   constituent dimension `d` on the Sylow-pro-`l`-generated subgroup, and an ordinary or potentially
-  diagonalizable automorphic residual pair), §2.13 (Moret–Bailly with prescribed local extensions),
+  diagonalizable automorphic residual pair), §2.25 (lifts with prescribed potentially diagonalizable
+  local components over imaginary CM fields: odd `l`, `ζ_l ∉ F`, a polarized
+  residual representation unramified outside a finite set of split places, cyclotomically
+  irreducible, `l ≥ 2(d + 1)`, and potentially diagonalizable local lifts with `n` distinct labelled
+  weights above `l`; no residual automorphy is assumed), §2.13 (Moret–Bailly with prescribed local extensions),
   §3.12 (Mok), §3.15 (local Arthur
   packets), §3.16 (Kaletha–Mínguez–Shin–White), §4.1 (enormous image and adjoint Selmer
   vanishing), §4.2 (ordinary lifting with several residual constituents, Allen–Newton–Thorne),
@@ -305,9 +318,7 @@ supplier's sections.
   inertial graded characters and genericity when identifying `H¹_g` with `H¹_f`. Adjoint Selmer
   vanishing is imported from ModularityAndLanglandsExtensions §4.1.
 
-What PotentialAutomorphyInfrastructurePartII must provide (gap:geometric-weak-primitive-auxiliary-finiteness): extend §8.16 (Layer 8), retaining the geometric weak-primitivity and all other §8.7 hypotheses, to the two deformation problems in Newton–Thorne 2026 Proposition 3.9 (nt26 pp. 20–21): finiteness first with the extra Steinberg condition at `v_2` and then with that condition replaced by the unrestricted one, without assuming that the cyclotomic restricted residual image has no nontrivial `l`-power quotient; §8.16 already supplies the non-scalar unobstructed auxiliary local/Hecke comparison, and only this hypothesis removal and two-application extension are requested.
-
-What PotentialAutomorphyInfrastructurePartII must provide (gap:dyadic-definite-unitary-forms): the Layer 3 constructions for `l = 2` used by Newton–Thorne II §2 and Newton–Thorne 2026 §4 at `p = 2`: algebraic modular forms on the definite unitary group, exactness and group-ring freeness at sufficiently small level, Taylor–Wiles level structures, and the Hecke-valued determinant of the localized Hecke algebra (the `𝒢_n`-valued lift is not needed), together with the potential diagonalizability of two-dimensional potentially Barsotti–Tate representations for `l = 2` in Layer 1 (§1.4).
+What PotentialAutomorphyInfrastructurePartII must provide (gap:dyadic-definite-unitary-forms): the Layer 3 constructions for `l = 2` used by Newton–Thorne II §2 and Newton–Thorne 2026 §4 at `p = 2`: algebraic modular forms on the definite unitary group, exactness and group-ring freeness at sufficiently small level, Taylor–Wiles level structures, and the Hecke-valued determinant of the localized Hecke algebra (the `𝒢_n`-valued lift is not needed).
 
 What PotentialAutomorphyInfrastructurePartII must provide (gap:auxiliary-place-reducible-lifting): beside §8.16 (Layer 8), the lifting form of its auxiliary-place variant (Thorne 2024 Theorem 7.5, th24 p. 44, proof p. 45): under the hypotheses of ModularityAndLanglandsExtensions §4.2 with its clause `F(ζ_l) ⊄ F̄^{ker ad(ρ̄^{ss})}` replaced by a place `w ∤ l` of `F` at which `ρ̄^{ss}` is unramified and `H⁰(G_{F_w}, ad ρ̄^{ss}(1)) = 0`, with weak primitivity tested over `k̄` and with `ρ̄^{ss}(G_{F(ζ_l)})` without nontrivial quotient of `l`-power order (the added hypothesis of §8.16), `ρ` is the Galois representation of an ι-ordinary RACSDC automorphic representation of `GL_n(𝔸_F)`; the finiteness of §8.16 and the route of ModularityAndLanglandsExtensions §4.2 are its inputs, and only this lifting conclusion is requested.
 
@@ -352,7 +363,7 @@ condition).
 
 Layer G7: §8.1 (polarized deformation problems), §8.3 (tangent and obstruction spaces), §8.4
 (presentations of polarized deformation rings over their local tensor ring), §8.5 (Taylor–Wiles
-places in rank `n` and the diamond action), §8.6 (Taylor–Wiles primes for enormous image); §§5.3–5.4
+places in rank `n` and the diamond action); §§5.3–5.4
 (linear disjointness for dyadic auxiliary primes; dyadic Taylor–Wiles sets and their generator
 counts), §5.5 (inertia at Taylor–Wiles places and the `Δ_Q`-module structure of the framed and trace
 rings), §5.7 (Taylor–Wiles primes for odd `p` in rank two); §4.6 (quotients of complete local
@@ -367,7 +378,7 @@ What GlobalGaloisDeformations must provide (gap:tensor-taylor-wiles-primes): in 
 §5.4 (the limit presentation and its actions), §5.6 (patching a ring and a based free module), §5.5
 (numerical depth), §6.1 (near faithfulness on native support, and support invariance under a group
 action transitive on minimal primes), §6.6 (connectedness dimension and arithmetic rank), §6.7 (generic and special
-components), §9.2 (codimension and concentration).
+components).
 
 What DeformationAndDerivedPatchingAlgebra must provide (gap:formal-torus-patching): in §5.4 and Layer 6, extend the rank-two free patched torus action of GL2ModularityLifting §§6.1, 6.6 and its determinant-one fibre and torsor of §6.7 and GlobalGaloisDeformations §4.11 to simultaneous patching with the pseudodeformation rings and both modules in Newton–Thorne II Proposition 2.8 and Newton–Thorne 2026 Proposition 4.9 (kw09 Proposition 9.3): assume the supplied compatible free action chunks on cofinal Artinian truncations of `Sp R′_N`, detecting every stabilizer on an Artinian test algebra, square-equivariant determinant maps whose fibre comparison kernels tend to zero, compatible `Ĝ_m^γ[2]`-actions on `Sp P_N` making `Sp R_N → Sp P_N` equivariant, and semilinear `Ĝ_m^γ[2](𝒪)`-actions on both finite-level modules commuting with their scalar and transition maps; retain these actions on `P_∞`, `H_{D,∞}` and `H_{G,∞}` in the simultaneous limit, and prove that if `R′_∞` is an `𝒪`-flat domain then `{±1}^γ` acts transitively on the irreducible components of `Spec R_∞`; the free rank-two action and its torsor are supplied inputs, not conclusions from square-equivariance alone.
 
@@ -385,7 +396,9 @@ Layer 2 (§§2.5, 2.8: quaternionic Hecke modules at Taylor–Wiles levels and t
 Layer 3 (§§3.1–3.7: the arithmetic patching template), Layer 6 (§§6.1, 6.6, 6.7: dyadic patching
 with the free determinant torus action and the torsor structure).
 
-What GL2ModularityLifting must provide (gap:unobstructed-auxiliary-prime-and-slope-count): in Layer 3, the two inputs of Newton–Thorne I Proposition 8.3 and Newton–Thorne II Lemma 3.4 not covered by the template: unobstructedness of the local deformation problems at the ramified primes for all but finitely many `p` (Weston, wes04) together with an auxiliary prime `q_a > p` with formally smooth local lifting ring, giving patched modules of full support (nt21 pp. 92–96); and the dimension count of the slope-`(0,1)` part of quaternionic cohomology at level `U₀(p³)` (nt21b pp. 20–22).
+What GL2ModularityLifting must provide (gap:unobstructed-auxiliary-prime): in Layer 3, the input of Newton–Thorne I Proposition 8.3 not covered by the template: unobstructedness of the local deformation problems at the ramified primes for all but finitely many `p` (Weston, wes04) together with an auxiliary prime `q_a > p` with formally smooth local lifting ring, giving patched modules of full support (nt21 pp. 92–96).
+
+What GL2ModularityLifting must provide (gap:slope-zero-one-dimension-count): in Layer 3, the dimension count of Newton–Thorne II Lemma 3.4 (nt21b pp. 20–22): for a definite or indefinite quaternion algebra over `ℚ`, a neat level and a non-Eisenstein maximal ideal `𝔪`, the localized cohomology at level `U₀(p³)` with coefficients twisted by characters `χ_1 ⊗ χ_2`, `χ_1/χ_2` of conductor `p³`, has a non-zero part of slope strictly between `0` and `1`, by Hida's comparison of the slope-`0` and slope-`1` parts with ordinary parts at level `U₀(p)` and the multiplicities of `χ_1 ⊗ χ_2` and `χ_2 ⊗ χ_1` in the induction from `U₀(p³)` to `U₀(p)`.
 
 ### From TauCetiRoadmap.OrdinaryAutomorphicFormsAndModularityLifting
 
@@ -414,8 +427,7 @@ Newton–Thorne 2026 Lemma 3.1), §10.10 (prescribed-type local-to-global liftin
 
 ### From TauCetiRoadmap.SerreWeightAndLevelOptimisation
 
-§2.4 (Diamond's level-raising criterion), §3.2 (supersingular residual local form: `a_p = 0`
-gives an irreducible local residual representation), §6.9 (quaternionic
+§2.4 (Diamond's level-raising criterion), §6.9 (quaternionic
 level raising), §6.11 (Khare–Wintenberger prescribed-local-type modular lifts).
 
 What SerreWeightAndLevelOptimisation must provide (gap:level-raising-prescribed-components): in Layer 2, level raising for `GL_2(𝔸_ℚ)` with simultaneously prescribed Steinberg components and supercuspidal components of given tame inertial type at auxiliary primes satisfying the level-raising congruences (Diamond–Taylor's non-optimal levels, as used in nt21, proof of Proposition 7.4, p. 86).
@@ -479,13 +491,12 @@ coefficient form on newforms is the predicate of §14.5).
 ### From TauCetiRoadmap.EndoscopicTransferAndUnitaryTraceComparison
 
 §2.8 (twisted transfer factors), §2.10 (Euler–Poincaré functions and pseudo-coefficients), §2.11
-(matching test functions), §2.14 (transfer at the real place), §2.15 (endoscopic transfer of
-pseudo-coefficients), §§4.9–4.10 (stable base change: fundamental lemma and transfer), §6.4
-(twisted characters), §6.9 (base-change transfer of test functions), §6.10 (archimedean
-Euler–Poincaré and twisted Lefschetz functions), §6.24 (strong cyclic base change for `GL_n`),
-§6.26 (cyclic automorphic induction), §6.27 (base change and descent between unitary groups and
-`GL_n`), §6.29 (Labesse's cohomological weak base change and descent), §11.2 (tempered local
-unitary packets), §§13.1, 13.3–13.5 (weak unitary base change, automorphic induction of a
+(matching test functions), §2.14 (transfer at the real place), §2.15 (transfer of Euler–Poincaré
+functions to endoscopic groups, used in §5.6), §§4.9–4.10 (stable base change: fundamental lemma and
+transfer), §6.4 (twisted characters), §6.10 (archimedean Euler–Poincaré and twisted Lefschetz
+functions), §6.24 (strong cyclic base change for `GL_n`), §6.27 (base change and descent between
+unitary groups and `GL_n`), §6.29 (Labesse's cohomological weak base change and descent), §11.2 (tempered local
+unitary packets), §§13.1, 13.3, 13.5 (weak unitary base change, automorphic induction of a
 quadratic Hecke character, local unitary base change).
 
 What EndoscopicTransferAndUnitaryTraceComparison must provide (gap:explicit-tempered-unitary-packets): in §11.2, Mœglin's explicit description of tempered representations of `p`-adic unitary groups at an inert place: the extended cuspidal support and stable base change with finite fibres (moe07 §§5.4, 5.7), the twisted character identity for `θ`-discrete parameters (moe07 §5.5) and its extension to all tempered parameters, the reducibility points of depth-zero supercuspidals in odd residue characteristic (Lust–Stevens, ls20 §8), and the hereditary Jacquet-module and socle computations of the induced representations used by Clozel–Thorne III §3.5 (ct17 pp. 24–27), including the full socle multiplicity of the induction after ct17 (3.9).
@@ -508,11 +519,23 @@ Iwahori subgroup with index `2`.
 
 What SmoothRepresentationsOfLocalGroups must provide (gap:iwahori-matsumoto-quasi-split): in SR.1.5, for a quasi-split connected reductive group `G` over a non-archimedean local field `F` with the affine Tits system `(G(F)_1, I, N(F)_1, S̃)` of ReductiveGroupsPartII §RG2.4.2 (`I` the Iwahori subgroup of an alcove, the integral points of the connected Bruhat–Tits model, and `G(F)_1` the subgroup generated by the parahoric subgroups), the Iwahori–Matsumoto presentation of `H(G(F)_1, I)` with parameters `q_s = [IsI : I]` (quadratic relations `(T_s − q_s)(T_s + 1) = 0` and braid relations, over `ℤ` with the positive braid monoid and over `ℤ[q_s^{−1}]` with the braid group) and the presentation of `H(G(F), I)` as its crossed product with the length-zero group `Ω`, in particular for the ramified quasi-split unitary groups `U_{2k+1}`, from which §4.8 derives the Hecke algebra of the chamber fixer.
 
+### From TauCetiRoadmap.SpringerResolutionAndCharacteristicCycles and NilpotentOrbits
+
+SpringerResolutionAndCharacteristicCycles §6.2 (the Springer resolution) and §6.4 (the reduced
+Steinberg variety), over `ℂ` for the complex dual group `G^∨` of §4.9. NilpotentOrbits N2 (item 1:
+the algebraic `SL_2`-homomorphism integrating an `sl_2`-triple, and the conjugacy of triples with a
+fixed nilpositive element under the centralizer), used in §4.9.
+
+What SpringerResolutionAndCharacteristicCycles must provide (gap:steinberg-equivariant-k-theory): in Layer 6, for a connected complex reductive group `G^∨` with simply connected derived group and the Steinberg variety `Z` of §6.4, the convolution algebra `K^{G^∨ × ℂ^×}(Z)` and its isomorphism with the affine Hecke algebra of the dual root datum, `q` being the coordinate of `ℂ^×`; for semisimple `s ∈ G^∨` and `q` not a root of unity, the standard modules `Hom_{A(s,u)}(ρ, H_*(ℬ_u^s, ℂ))` obtained by localisation at `(s, q)`; the theorem that the simple modules with central character `(s, q)` are exactly their unique simple quotients, indexed by the `Z_{G^∨}(s)`-classes of pairs `(u, ρ)` with `s u s^{−1} = u^q` and `ρ` occurring in `H_*(ℬ_u^s, ℂ)` (kl87 Theorem 7.12); and the irreducibility of the standard module when the factor `s₀` of an `s`-adapted homomorphism lies in a compact subgroup (kl87 §8).
+
 ### From TauCetiRoadmap.AutomorphicLFunctionsAndLocalFactors
 
-AL.2 ("Global Godement–Jacquet theory": for unitary cuspidal `π` of `GL_n(𝔸_K)` with `n ≥ 2` the
-completed standard `L`-function is entire, with its Euler product of unramified local factors),
-used in §§14.4–14.5; AL.3.7.1 (strong multiplicity one: cuspidal representations of `GL_n` whose
+AL.2.4.1 ("The global standard L-function": for unitary cuspidal `π` of `GL_n(𝔸_K)` with `n ≥ 2` the
+completed standard `L`-function is entire, its Euler product converging in some right half-plane),
+AL.3.3.8 (the Jacquet–Shalika bound: an unramified Satake parameter `α` of a unitary generic
+representation satisfies `q^{−1/2} < |α| < q^{1/2}`) and AL.3.6.1 (after the Rankin–Selberg pole
+criterion, the finite standard Euler product of a unitary cuspidal `π` of `GL_n`, `n ≥ 2`, converges
+absolutely for `Re s > 1`), used in §§14.4–14.5; AL.3.7.1 (strong multiplicity one: cuspidal representations of `GL_n` whose
 unramified components agree outside a finite set are isomorphic), used in §14.5 for the
 comparison of the self-twist predicate with the non-CM condition.
 
@@ -1413,16 +1436,16 @@ Mathlib `Nat.multiplicity_pow_two_sub_one`.
 
 ## Layer 4: local representation theory for unitary level raising
 
-At an inert place of a definite unitary group (Newton–Thorne I §1, nt21 pp. 8–23) this layer
-builds the quasi-split unitary groups and the pure inner twist, the endoscopic character identities
+At an inert place of a definite unitary group this layer builds the quasi-split unitary groups and
+the pure inner twist, the endoscopic character identities
 at archimedean, unramified and split places, stable base change with its `L`-packets, the
 depth-zero cuspidal representations of `U_3` and `GL_3`, the level-raising types and their
-congruence, the endoscopic transfer of the test function, and the fixed-type local lifting rings.
-At a ramified place (Clozel–Thorne III §§2–3, ct17 pp. 4–28) it identifies the Hecke algebra of the
+congruence, the endoscopic transfer of the test function, and the fixed-type local lifting rings
+(nt21 pp. 8–23). At a ramified place it identifies the Hecke algebra of the
 chamber fixer of `U_{2k+1}` (which contains the Iwahori subgroup with index `2`) with the
 Iwahori–Hecke algebra of `Sp_{2k}`, states the Kazhdan–Lusztig classification for split
 adjoint groups with its pullback to the simply connected cover, constructs the modules `X`, `Y`, `Z`
-with their integral structures, and computes their endoscopic signs.
+with their integral structures, and computes their endoscopic signs (ct17 pp. 4–28).
 
 ### 4.1 Quasi-split unitary groups and the pure inner twist of the definite group
 
@@ -1852,10 +1875,23 @@ for every `π` with central character `s`. The Clozel–Thorne construction appl
 of Theorem 2.5, p. 10).
 
 *Proof sketch.* The Iwahori block is equivalent to `H_B`-modules (SmoothRepresentationsOfLocalGroups
-SR.3.4), and `H_B` has the Bernstein presentation (SR.1.5). Kazhdan–Lusztig realise `H_B` in the
-equivariant `K`-theory of the Steinberg variety of `G^∨` and classify simple modules by standard
-modules in the homology of fixed-point varieties; temperedness is Casselman's criterion on the
-exponents of the standard module (SR.3.3). Pullback: (a) is the Iwahori–Matsumoto presentation of
+SR.3.4), and `H_B` has the Bernstein presentation (SR.1.5). The realisation of `H_B` in the
+`G^∨ × ℂ^×`-equivariant `K`-theory of the Steinberg variety of `G^∨`, the standard modules obtained
+by localisation at `(s, q)`, the classification of simple modules as their unique simple quotients and
+the irreducibility of tempered standard modules are supplied by SpringerResolutionAndCharacteristicCycles
+(gap:steinberg-equivariant-k-theory); temperedness is Casselman's criterion on the exponents of the
+standard module (SR.3.3). Adapted homomorphisms: for `u = 1` take `φ` trivial, so `s₀ = s`. For
+`u ≠ 1` put `e = log u`, so `Ad(s)e = qe`. By Jacobson–Morozov (Tau Ceti
+`TauCeti.exists_isSl2Triple_of_isNilpotent_ad`) `e` lies in a triple `(h_1, e, f_1)`, and the neutral
+elements of triples with nilpositive `e` form the affine space `h_1 + (ker(ad e) ∩ [e, 𝔤^∨])` (Tau Ceti
+`IsSl2Triple.exists_isSl2Triple_iff_sub_mem`). The Zariski closure `D` of `⟨s⟩` is diagonalizable and
+scales `e`, so `Ad(d)` carries this affine space to itself and the linear space `ker(ad e) ∩ [e, 𝔤^∨]`
+is a sum of `D`-weight spaces; as `Ad(d)h_1 − h_1` lies in it for every `d ∈ D`, so does every
+non-trivial weight component of `h_1`, and the weight-zero component `h` of `h_1` is a neutral element
+with `Ad(s)h = h`. The `f` completing `(h, e)` is unique, hence `Ad(s)f = q^{−1}f`. Integrate
+`(h, e, f)` to `φ : SL_2(ℂ) → G^∨` (NilpotentOrbits N2; `SL_2` is simply connected); then
+`φ(diag(q^{1/2}, q^{−1/2}))` acts on `e, h, f` by `q, 1, q^{−1}`, as `s` does, so `s₀` centralizes
+`φ(SL_2(ℂ))`. Pullback: (a) is the Iwahori–Matsumoto presentation of
 SR.1.5 for `G` and for `G_sc`, whose affine Weyl groups `p` identifies with their lengths; since the
 residue characteristic is prime to `|ker p|`, `I = T(𝒪_F) p(I_sc)`, so `p(I_sc) w p(I_sc)/p(I_sc) → IwI/I`
 is a surjection between sets of `q^{ℓ(w)}` elements, hence a bijection. (b) By SR.3.4 `π` embeds in an
@@ -1903,7 +1939,9 @@ Iwahori-spherical since `G_sc(F)` is transitive on alcoves; the Iwahori block of
   negative eigenvalues; the pullbacks keep `dim X^B = 1` and `dim Y^B = 7`.
 
 *Needs:* SmoothRepresentationsOfLocalGroups SR.1.5, SR.3.3, SR.3.4; ReductiveGroupsPartII
-§RG2.4.2.
+§RG2.4.2; SpringerResolutionAndCharacteristicCycles §§6.2, 6.4 (gap:steinberg-equivariant-k-theory);
+NilpotentOrbits N2; Tau Ceti `TauCeti.exists_isSl2Triple_of_isNilpotent_ad`,
+`IsSl2Triple.exists_isSl2Triple_iff_sub_mem`.
 
 ### 4.10 The Kazhdan–Lusztig modules X, Y, Z with parameter `St_{n−4} ⊞ St_3 ⊞ St_1`
 
@@ -2093,18 +2131,20 @@ socle of that induction and isolates its other constituent before assigning the 
 ModularityAndLanglandsExtensions §§3.12, 3.15; PotentialAutomorphyInfrastructurePartII Layer 3;
 EndoscopicTransferAndUnitaryTraceComparison §§2.8, 2.10, 2.11, 2.14, 4.9–4.10, 6.4, 6.10, 11.2,
 13.5; SmoothRepresentationsOfLocalGroups SR.1–SR.4; ReductiveGroupsPartII §§RG2.1.3, RG2.3.3,
-RG2.4.1–RG2.4.2; LocalGaloisDeformationRings §§1.1, 1.4, 2.18, 2.24; ArithmeticGaloisRepresentations
-§1.8; RepresentationTheory/CharacterTheory Layers 3, 9.
+RG2.4.1–RG2.4.2; SpringerResolutionAndCharacteristicCycles §§6.2, 6.4
+(gap:steinberg-equivariant-k-theory); NilpotentOrbits N2; LocalGaloisDeformationRings §§1.1, 1.4,
+2.18, 2.24; ArithmeticGaloisRepresentations §1.8; RepresentationTheory/CharacterTheory Layers 3, 9;
+Tau Ceti `TauCeti.exists_isSl2Triple_of_isNilpotent_ad`, `IsSl2Triple.exists_isSl2Triple_iff_sub_mem`.
 
 ## Layer 5: level raising to prescribed types on definite unitary groups
 
-Newton–Thorne I §4 (nt21 pp. 59–65) raises the level of an isobaric sum `π_2 ⊞ π_{n−2}` to a cuspidal
-representation with prescribed depth-zero types, by the stabilised trace formula and the congruence
-of types of §4.5; Clozel–Thorne III §§3–4 (ct17 pp. 21–37) raises the level at a ramified place by
-counting automorphic representations of a definite unitary group with given stable base change and
-an isotropy argument in the Iwahori–Hecke modules of §§4.10–4.12. Sections 5.1–5.4 prove the
-odd-rank level-raising statement of ModularityAndLanglandsExtensions §4.4; §§5.5–5.10 prove
-Clozel–Thorne III Theorem 4.2.
+This layer raises the level of an isobaric sum `π_2 ⊞ π_{n−2}` to a cuspidal representation with
+prescribed depth-zero types at inert places, by the stabilised trace formula and the congruence of
+types of §4.5 (nt21 Theorem 4.1, pp. 59–65), and raises the level at a ramified place by counting
+automorphic representations of a definite unitary group with given stable base change and an
+isotropy argument in the Iwahori–Hecke modules of §§4.10–4.12 (ct17 Theorem 4.2, pp. 21–37).
+Sections 5.1–5.4 prove the odd-rank level-raising statement of ModularityAndLanglandsExtensions
+§4.4; §§5.5–5.10 prove level raising for `l = 5` and `l = 7` at ramified places.
 
 ### 5.1 The level-raising datum: places, types and levels
 
@@ -2293,7 +2333,8 @@ holds when every place above `l` splits in `E` with `[F_v : ℚ_l]` even and the
 
 *Proof sketch.* Stabilise the trace formula for `G` with pseudo-coefficients at infinity and the
 chamber fixers `B_{v_i}` of §4.8 at the `v_i` (EndoscopicTransferAndUnitaryTraceComparison §§2.10,
-6.10, 6.29); at a finite place other than the `v_i` the extension `E/F` is unramified or split and
+6.10, 6.29), the endoscopic terms using the transfer of the archimedean Euler–Poincaré function to
+the elliptic endoscopic groups (§2.15 there); at a finite place other than the `v_i` the extension `E/F` is unramified or split and
 the local packet is a singleton (ct17 p. 29); insert the
 stable and endoscopic local identities of §4.12 with the character `μ` of §5.5 in the
 `L`-embedding; Mok's multiplicity formula (ModularityAndLanglandsExtensions §3.12) and
@@ -2319,7 +2360,7 @@ condition.
   trivial one, and contributes no `σ` with trivial `σ_∞`.
 
 *Needs:* §4.12; §5.5; ModularityAndLanglandsExtensions §§3.12, 3.16;
-EndoscopicTransferAndUnitaryTraceComparison §§2.10, 6.10, 6.29.
+EndoscopicTransferAndUnitaryTraceComparison §§2.10, 2.15, 6.10, 6.29.
 
 ### 5.7 Places, levels and algebraic modular forms for level raising at ramified places
 
@@ -2468,14 +2509,14 @@ contradiction. No self-pairing of `M` is used.
 
 Layer 4; ModularityAndLanglandsExtensions §§3.12, 3.16, 4.4; PotentialAutomorphyInfrastructurePartII
 Layer 0, Layer 3; AutomorphicGaloisRepresentationsPartII AG2.3;
-EndoscopicTransferAndUnitaryTraceComparison §§2.10, 6.4, 6.10, 6.29; ClassFieldTheory Layer 11.
+EndoscopicTransferAndUnitaryTraceComparison §§2.10, 2.15, 6.4, 6.10, 6.29; ClassFieldTheory Layer 11.
 
 ## Layer 6: level raising to Steinberg by residually reducible deformation theory
 
 Three level-raising theorems produce automorphic lifts that are Steinberg at a prescribed place:
-Newton–Thorne I Theorem 6.1 for residual representations that are sums of characters (nt21 §6,
-pp. 75–82), Clozel–Thorne III Theorems 5.1 and 5.7 for two residual constituents and a long Jordan
-block (ct17 §5, pp. 37–44), and Thorne 2024 Theorem 6.11 by `p`-adic methods (th24 §6, pp. 38–41).
+for residual representations that are sums of characters (nt21 Theorem 6.1, pp. 75–82), for two
+residual constituents and from a lift with a long Jordan block (ct17 Theorems 5.1 and 5.7,
+pp. 37–44), and by `p`-adic methods (th24 Theorem 6.11, pp. 38–41).
 The first two use the residually reducible deformation theory of
 PotentialAutomorphyInfrastructurePartII Layers 2, 7 and 8: deformation rings `R_D`, their
 pseudodeformation subrings `P_D`, ordinary Hecke algebras `𝕋_D` and the surjection `P_D → 𝕋_D` with
@@ -2878,15 +2919,15 @@ Chebotarev Layer 10.
 
 ## Layer 7: seeds — residually CM symmetric powers and one level-one form
 
-Newton–Thorne I §7 (nt21 pp. 82–91) produces a level-one form with automorphic `Sym^{n−1}` from the
-CM form `σ_0` of weight `5`: level raising for `GL_2` at a prime `q ≡ 3 mod 4`, a residually CM
-ordinary representation of `GL_n` with a Steinberg place (Theorem 7.1), residually reducible
-automorphy lifting, and two applications of §2.4. Theorem 7.1 is proved here in every rank of the
+This layer produces a level-one form with automorphic `Sym^{n−1}` from the CM form `σ_0` of weight
+`5` (nt21 pp. 82–91): level raising for `GL_2` at a prime `q ≡ 3 mod 4`, a residually CM ordinary
+representation of `GL_n` with a Steinberg place (nt21 Theorem 7.1), residually reducible automorphy
+lifting, and two applications of §2.4. Theorem 7.1 is proved here in every rank of the
 form `2^r m` from rank `m` (§7.5), hence unconditionally in rank `2^r`; the odd inductive step of
 the source needs a conjugate self-dual rank-two block that its construction does not provide, and
 is recorded with that block as a hypothesis (§7.4). Theorem 7.1 and Theorem E in every rank are
-obtained in Layer 14 from Layer 13. Clozel–Thorne III §6 (ct17 pp. 44–46) proves automorphy of
-`Sym^{l+1}` for `l ∈ {5, 7}` (§7.7), the input of ModularityAndLanglandsExtensions §4.31.
+obtained in Layer 14 from Layer 13. The layer also proves automorphy of `Sym^{l+1}` for
+`l ∈ {5, 7}` (§7.7; ct17 Theorem 6.2, pp. 44–46), the input of ModularityAndLanglandsExtensions §4.31.
 
 ### 7.1 The CM newform σ₀ of weight 5 and level Γ₁(4)
 
@@ -3130,11 +3171,11 @@ Layer 10; Mathlib `GaussianInt`.
 
 ## Layer 8: killing ramification with n-regular refinements
 
-Newton–Thorne I §8 (nt21 pp. 91–96) removes ramification relative to a level-one seed: a
-discriminant cuts out the non-regular locus of a local lifting ring (Lemma 8.4), patching produces
-congruences to forms with `n`-regular refinements (Proposition 8.3, the statement of
-ModularityAndLanglandsExtensions §4.10), and an induction on the conductor along eigencurves gives
-Theorem B relative to a seed (Proposition 8.2).
+This layer removes ramification relative to a level-one seed: a discriminant cuts out the
+non-regular locus of a local lifting ring (nt21 Lemma 8.4), patching produces congruences to forms
+with `n`-regular refinements (nt21 Proposition 8.3, the statement of ModularityAndLanglandsExtensions
+§4.10), and an induction on the conductor along eigencurves gives Theorem B relative to a seed
+(nt21 Proposition 8.2; nt21 pp. 91–96).
 
 ### 8.1 The non-regular locus of a local lifting ring is a principal divisor
 
@@ -3197,7 +3238,7 @@ primes holds because the inertial type is locally constant on the component and 
 - A form with a supercuspidal component is excluded by hypothesis: its Jacquet module is zero.
 
 *Needs:* §8.1; AutomorphicGaloisRepresentations §7.5; GL2ModularityLifting Layer 3
-(gap:unobstructed-auxiliary-prime-and-slope-count); DeformationAndDerivedPatchingAlgebra §§5.6, 6.1;
+(gap:unobstructed-auxiliary-prime); DeformationAndDerivedPatchingAlgebra §§5.6, 6.1;
 LocalGaloisDeformationRings Layer 2; ModularityAndLanglandsExtensions §1.1.
 
 ### 8.3 Theorem B relative to a level-one seed (Newton–Thorne I Proposition 8.2)
@@ -3242,13 +3283,13 @@ Layers 2–3; LocalGaloisDeformationRings §§1.1, 1.10, 2.13 and Layer 2; Autom
 
 ## Layer 9: automorphy lifting for symmetric powers
 
-Newton–Thorne II §2 (nt21b pp. 5–19) proves an automorphy lifting theorem for `Sym^{n−1}` of
-non-ordinary weight-two Hilbert modular forms with large projective image, valid for every `p`
+This layer proves an automorphy lifting theorem for `Sym^{n−1}` of non-ordinary weight-two Hilbert
+modular forms with large projective image (nt21b Theorem 2.1, pp. 5–19), valid for every `p`
 including `p = 2` and `p ≤ n`, without any vanishing of the dual Selmer group of the residual
 symmetric power: the rank-two deformation ring and the conjugate self-dual pseudodeformation ring of
 `Sym^{n−1}` are patched simultaneously, and regularity of the latter at an automorphic point
-transfers automorphy. This proves ModularityAndLanglandsExtensions §4.11 and is the template of
-Layer 12.
+transfers automorphy. This proves ModularityAndLanglandsExtensions §4.11; Layer 12 runs the same
+simultaneous patching for a tensor product with a fixed factor.
 
 ### 9.1 The setting: congruent non-ordinary weight-two forms with large projective image
 
@@ -3286,8 +3327,7 @@ sandwich hypothesis is stable under base change disjoint from the residual field
   `n = 2` the setting is a rank-two modularity lifting problem in weight two.
 
 *Needs:* ModularityAndLanglandsExtensions §§0.2, 1.7; PotentialAutomorphyInfrastructurePartII Layer
-0 ("Soluble base change and descent of polarized automorphy"), Layer 1 ("Two-dimensional potentially
-Barsotti–Tate representations are potentially diagonalizable");
+0 ("Soluble base change and descent of polarized automorphy");
 EndoscopicTransferAndUnitaryTraceComparison §6.24.
 
 ### 9.2 Symmetric powers of Barsotti–Tate lifts and the morphism P → R
@@ -3568,8 +3608,8 @@ and `GL_n`"); EndoscopicTransferAndUnitaryTraceComparison §6.29.
 
 ### Dependencies
 
-ModularityAndLanglandsExtensions §§0.2, 1.7; PotentialAutomorphyInfrastructurePartII Layers 0, 1,
-3, 4, 9; GlobalGaloisDeformations §§4.6, 4.11, 5.3–5.5, 5.7, 8.5; FiniteFlatGroupsAndIntegralPadicHodgeTheory
+ModularityAndLanglandsExtensions §§0.2, 1.7; PotentialAutomorphyInfrastructurePartII Layers 0, 3,
+4, 9 (gap:dyadic-definite-unitary-forms); GlobalGaloisDeformations §§4.6, 4.11, 5.3–5.5, 5.7, 8.5; FiniteFlatGroupsAndIntegralPadicHodgeTheory
 Layer R07.4; LocalGaloisDeformationRings §8.14; IntegralHeckeAndGaloisDeterminants §1.4;
 GL2ModularityLifting Layers 2, 3, 6; DeformationAndDerivedPatchingAlgebra §§5.4, 5.5, 5.6, 6.1, 6.7;
 EndoscopicTransferAndUnitaryTraceComparison §§6.24, 6.29; ArithmeticGaloisRepresentations §7.1;
@@ -3577,8 +3617,8 @@ ArithmeticGaloisDuality §R02.3.5; Chebotarev Layer 10.
 
 ## Layer 10: seasoned representations and the removal of supercuspidal primes
 
-Newton–Thorne II §3 (nt21b pp. 20–27) extends Theorem B to every non-CM modular form by an induction
-on the number of supercuspidal primes: seasoned representations have large residual image at every
+This layer extends Theorem B to every non-CM modular form by an induction on the number of
+supercuspidal primes (nt21b Theorem 3.1, pp. 20–27): seasoned representations have large residual image at every
 supercuspidal prime, a non-ordinary weight-two congruence removes one supercuspidal prime, and §9.8
 transfers automorphy. As in Layer 8, the theorems are stated relative to a level-one seed, discharged
 in Layer 14; the endpoint is the statement of ModularityAndLanglandsExtensions §4.29.
@@ -3644,7 +3684,7 @@ SerreWeightAndLevelOptimisation §6.9 for quaternionic level raising); non-ordin
 *Needs:* §10.1; PotentialModularityAndCompatibleSystems §10.10; PotentialAutomorphyInfrastructurePartII
 Layer 1 ("Strong connection and component deformation problems"; "Properties of strong connection;
 Choi's lemma and the filtration lemma"); PadicFamilies §5.8; SerreWeightAndLevelOptimisation §6.9;
-GL2ModularityLifting Layer 3 (gap:unobstructed-auxiliary-prime-and-slope-count).
+GL2ModularityLifting Layer 3 (gap:slope-zero-one-dimension-count).
 
 ### 10.3 Seasoned automorphic representations
 
@@ -3843,8 +3883,8 @@ Chebotarev Layer 10.
 
 ## Layer 11: the untwisted tensor product `r_π ⊗ Sym^{r−1} r_σ`
 
-Newton–Thorne 2026 §3 (nt26 pp. 12–25) proves automorphy of `r_π ⊗ Sym^{r−1} r_σ` for a weight-zero
-`π` and a congruent ordinary companion `σ` of weights `{0, 2}`, assuming `SP_{r−1}` and `SP_{r+1}`.
+This layer proves automorphy of `r_π ⊗ Sym^{r−1} r_σ` for a weight-zero `π` and a congruent ordinary
+companion `σ` of weights `{0, 2}`, assuming `SP_{r−1}` and `SP_{r+1}` (nt26 Theorem 3.2, pp. 12–25).
 The tensor is residually reducible (its residual representation is that of an isobaric sum of rank
 `r + 1` and `r − 1`); the proof compares deformation problems whose local conditions above an
 auxiliary place `v_0` have congruent reduced special fibres, uses Thorne's level raising (§6.9) for a
@@ -4086,23 +4126,44 @@ Assume `SP_{r−1}` and `SP_{r+1}` (ModularityAndLanglandsExtensions §1.12). Pr
 finite over `Λ_{F_2}`, and that there is an ι-ordinary RACSDC `Π` of `GL_n(𝔸_{K_2})`, unramified outside
 `S_{F_2}`, with `r̄_{Π,ι} ≅ s̄|_{G_{K_2}}` and `Π_ṽ` an unramified twist of Steinberg for each
 `v ∈ T_{F_2}` (nt26 Proposition 3.9 and proof, pp. 20–21). Primitivity is geometric weak primitivity
-with the common splitting field. Use PotentialAutomorphyInfrastructurePartII §8.16 for the
-non-scalar unobstructed auxiliary comparison. The additional no-`l`-power-quotient hypothesis
-on its cyclotomic restricted image is not assumed here: its removal for both applications
-is precisely gap:geometric-weak-primitive-auxiliary-finiteness.
+with the common splitting field. Finiteness is PotentialAutomorphyInfrastructurePartII §8.16 as
+stated, applied twice, with auxiliary place above `v_a` (non-scalar Frobenius is allowed there). Its
+added hypothesis, that `s̄(G_{K_2(ζ_p)})` has no non-trivial quotient of `p`-power order, holds. As
+`F_2` is `X_0`-split, `r̄_{π,ι}(G_{F_2}) = r̄_{π,ι}(G_F)`; after conjugation this group lies between
+`SL_2(𝔽_{p^b})` and `k^× GL_2(𝔽_{p^b})` for some `b ≥ a` and a finite field `k ⊇ 𝔽_{p^b}`, which
+we take to contain the values of `ȳ` (ArithmeticGaloisRepresentations §4.4, as in the last Check of
+§13.8). The group
+`A = r̄_{π,ι}(G_{K_2(ζ_p)})` has index at most `2` in a normal subgroup of `r̄_{π,ι}(G_F)` with abelian
+quotient, so it contains the perfect group `SL_2(𝔽_{p^b})`, and `[A, A] = SL_2(𝔽_{p^b})`. The image
+`H` of `(r̄_{π,ι}, ȳ)` on `G_{K_2(ζ_p)}` has `[H, H] = [A, A] × 1`, perfect, and `H/[H, H]` embeds in
+`A/SL_2(𝔽_{p^b}) × k^×`, of order dividing `(|k| − 1)²`, prime to `p`. A quotient of `H` of `p`-power
+order has trivial abelianization, hence is trivial, and `s̄(G_{K_2(ζ_p)})` is a quotient of `H`.
 
-*Proof sketch.* Choose `v_2 ∉ S ∪ X_0` with `q_{v_2} ≡ 1` modulo `p` and trivial residual
-representation, all other places of its residue characteristic unramified in the construction; raise
-the `GL_2`-level of `σ` at `v_2` (SerreWeightAndLevelOptimisation §2.4) and apply `SP_{r−1}`,
-`SP_{r+1}` to obtain ordinary automorphic lifts of both residual constituents (twists of `Sym^r r̄_σ`
-and `Sym^{r−2} r̄_σ`), Steinberg at the place above `v_2`. Apply residually reducible finiteness with
-the auxiliary Steinberg condition at `v_2` (PotentialAutomorphyInfrastructurePartII Layer 8,
-"Finiteness with an unobstructed auxiliary place", in the geometric weak-primitive form of the
-supplier contracts); the Khare–Wintenberger lifting argument and Thorne's level raising (§6.9)
-produce an ordinary automorphic lift `Π′` with the prescribed types, Steinberg at `T` and at `v_2`.
-Then remove the extra Steinberg condition: apply finiteness a second time with `Π′` as automorphic
-input to obtain finiteness of `R_{𝒮′_{F_2}}`, and extract `Π`. A single finiteness application does
-not justify this relaxation.
+*Proof sketch.* Choose by Chebotarev a place `v_2 ∉ S_{F_2} ∪ X_0` of `F_2`, split in `K_0`, whose
+residue characteristic differs from those of `X_0 ∪ {v_0}`, with `q_{v_2} ≡ 1` modulo `p` and
+`r̄_{π,ι}|_{G_{F_{2,v_2}}}`, `s̄|_{G_{K_{2,ṽ_2}}}` trivial. (1) Run the Khare–Wintenberger argument of
+§11.2 over `F_2`, prescribing in addition the unramified Steinberg component at `v_2` (non-empty, as
+`r̄` is trivial and `q_{v_2} ≡ 1` modulo `p` there), to obtain an ι-ordinary RAESDC `σ_2` of
+`GL_2(𝔸_{F_2})` with `HT_τ = {0, 2}`, determinant `ε^{−2}ω_p`, `r̄_{σ_2,ι} ≅ r̄_{σ,ι}|_{G_{F_2}}` and an
+unramified Steinberg twist at `v_2`; it is non-CM, being Steinberg at `v_2`. `SP_{r+1}`, `SP_{r−1}`,
+base change to `K_2` and the twists of §11.3 give ι-ordinary conjugate self-dual cuspidal `π′_1`,
+`π′_2` lifting the two constituents of `s̄|_{G_{K_2}}`, Steinberg at `ṽ_2`. (2) §6.9, applied to
+`π′_1 ⊞ π′_2` at `v_2` (genericity place from Lemma 3.3; the other places of the residue
+characteristic of `v_2` are unramified), gives an ι-ordinary RACSDC `Π_2` with
+`r̄_{Π_2,ι} ≅ s̄|_{G_{K_2}}`, Steinberg at `ṽ_2`. (3) With `Π_2` as automorphic input, §8.16 with
+Steinberg place `v_2` makes finite over `Λ_{F_2}` its ring, unrestricted at `T_{F_2}`, and hence its
+quotient with Steinberg conditions at `T_{F_2} ∪ {v_2}`. The crystalline ordinary weight-`0` quotient of
+the latter is non-zero (at `v | p`, `s̄` is scalar and `ζ_p ∈ F_{2,v}`, and a twist of
+`⊕_{i=0}^{n−1} ε^{−i}` is an ordinary lift), finite over `𝒪` and of Krull dimension at least one
+(PotentialAutomorphyInfrastructurePartII Layer 8, "Global lifts with prescribed local components
+(Schur form)"), so it has a characteristic-zero point. The auxiliary-place lifting theorem
+(gap:auxiliary-place-reducible-lifting, with `Π_2` as input) makes this point `r_{Π′_2,ι}` for an
+ι-ordinary RACSDC `Π′_2`, unramified outside `S_{F_2} ∪ {v_2}` and Steinberg at `T_{F_2} ∪ {v_2}`.
+(4) With `Π′_2` as input, §8.16 with its Steinberg place in `T_{F_2}` makes finite the ring of `𝒮′_{F_2}`
+enlarged by `v_2` with the unrestricted condition there, of which `R_{𝒮′_{F_2}}` is the quotient by the
+unramified condition at `v_2`; a second characteristic-zero point and the same lifting theorem, with
+`Π′_2` as input, give `Π`. A single finiteness application does not suffice: the automorphic input of
+§8.16 must be Steinberg at the Steinberg place of the problem, and `Π_2` is Steinberg only at `ṽ_2`.
 
 **Checks.**
 
@@ -4110,6 +4171,14 @@ not justify this relaxation.
   `q = 3`, `Φ = diag(1, 2)`.
   The adjoint-twist eigenvalues are `3, 3, 6, 5`, none `1`; non-scalar Frobenius is
   already allowed by PotentialAutomorphyInfrastructurePartII §8.16, and is not an extra gap.
+- The cyclotomic hypothesis of §8.16 in the `PGL_2` case, where `det r̄_{π,ι} = ε̄^{−1}` is trivial on
+  `G_{F(ζ_p)}`: for `p = 7`, a non-square `ν ∈ 𝔽_{7^a}` and `λ ∈ 𝔽_{7^{2a}}` with `λ² = ν^{−1}`, the
+  group `A` generated by `SL_2(𝔽_{7^a})` and `λ·diag(ν, 1)` lies in `SL_2(𝔽_{7^{2a}})` (the generator has
+  determinant `λ²ν = 1` and square `diag(ν, ν^{−1})`), has projective image `PGL_2(𝔽_{7^a})`,
+  `[A, A] = SL_2(𝔽_{7^a})` and `A/[A, A]` of order `2`; with `ȳ` of order `m` on `G_{K_2(ζ_7)}` (prime
+  to `7`, as `ȳ` takes values in the units of a finite field of characteristic `7`), the group
+  `H/[H, H]` has order dividing `2m`, prime to `7`. The upper unipotent
+  group of order `7` has a quotient of order `7`; the large image excludes it.
 - For `r = 2` the constituents are twists of `Sym² r̄_σ` and of a character; `SP_1` and `SP_3` hold
   unconditionally (ModularityAndLanglandsExtensions §1.15).
 - The Steinberg condition at `T_{F_2}` is possible because `q ≡ 1` modulo `p^N` and `r̄` is trivial
@@ -4117,10 +4186,14 @@ not justify this relaxation.
 - Without the auxiliary place `v_2` the residual constituents would need automorphic lifts Steinberg
   at `T` directly, which `SP_{r±1}` does not supply.
 
-*Needs:* §11.4; §6.9; SerreWeightAndLevelOptimisation §2.4; ModularityAndLanglandsExtensions §§1.12,
-1.15; PotentialAutomorphyInfrastructurePartII Layer 7 ("Weak primitivity over a splitting
-coefficient field"), Layer 8 ("Finiteness of ordinary locally Steinberg deformation rings"; "Finiteness with
-an unobstructed auxiliary place") (gap:geometric-weak-primitive-auxiliary-finiteness).
+*Needs:* §§11.1–11.4; §6.9; ModularityAndLanglandsExtensions §§1.12, 1.15;
+PotentialAutomorphyInfrastructurePartII Layer 0 ("Soluble base change and descent of polarized
+automorphy"), Layer 5 ("Finiteness of ordinary polarized deformation rings"; "Characteristic-zero
+lifts from finiteness and the dimension bound"; "Ordinary automorphy lifting"), Layer 7 ("Weak
+primitivity over a splitting coefficient field"), Layer 8 ("Finiteness of ordinary locally Steinberg
+deformation rings"; "Finiteness with an unobstructed auxiliary place"; "Global lifts with prescribed
+local components (Schur form)"; gap:auxiliary-place-reducible-lifting); LocalGaloisDeformationRings
+§2.26; ArithmeticGaloisRepresentations §4.4; Chebotarev Layer 10.
 
 ### 11.7 Generic primes on every component
 
@@ -4249,18 +4322,19 @@ change and descent of polarized automorphy"; "Automorphy of an induced represent
 
 ### Dependencies
 
-Layer 6; GL2AutomorphicRepresentationsAndTransfer §R16.3.7; ArithmeticGaloisRepresentations §§7.8,
-7.9; ArithmeticGaloisDuality §R02.3.5; ModularityAndLanglandsExtensions §§1.11, 1.12, 1.15, 2.13;
-PotentialAutomorphyInfrastructurePartII Layers 0, 1, 2, 3, 5, 7, 8;
-PotentialAutomorphyInfrastructure §2.5; DeformationAndDerivedPatchingAlgebra §6.6;
+Layer 6; GL2AutomorphicRepresentationsAndTransfer §R16.3.7; ArithmeticGaloisRepresentations §§4.4,
+7.8, 7.9; ArithmeticGaloisDuality §R02.3.5; ModularityAndLanglandsExtensions §§1.11, 1.12, 1.15, 2.13;
+PotentialAutomorphyInfrastructurePartII Layers 0, 1, 2, 3, 5, 7, 8
+(gap:auxiliary-place-reducible-lifting); PotentialAutomorphyInfrastructure §2.5;
+DeformationAndDerivedPatchingAlgebra §6.6;
 GlobalGaloisDeformations §8.1; LocalGaloisDeformationRings §§2.13, 2.18, 2.24, 2.26, 2.27;
 OrdinaryAutomorphicFormsAndModularityLifting §2.11; PotentialModularityAndCompatibleSystems §9.2;
-SerreWeightAndLevelOptimisation §2.4; Chebotarev Layer 10.
+Chebotarev Layer 10.
 
 ## Layer 12: functoriality lifting for tensor products
 
-Newton–Thorne 2026 §4 (nt26 pp. 25–37) proves that automorphy of `r_π ⊗ r_σ` passes to
-`r_{π′} ⊗ r_σ` for congruent `π`, `π′` with `σ` fixed, by the template of Layer 9: the rank-two
+This layer proves that automorphy of `r_π ⊗ r_σ` passes to `r_{π′} ⊗ r_σ` for congruent `π`, `π′`
+with `σ` fixed (nt26 Theorem 4.1, pp. 25–37), by the simultaneous patching of Layer 9: the rank-two
 deformation ring of `r̄_π` and the rank-`2r` conjugate self-dual pseudodeformation ring of the tensor
 are patched simultaneously, and regularity at the automorphic point (from characteristic-zero
 enormous image and adjoint Selmer vanishing) transfers automorphy. This proves the first paragraph
@@ -4613,8 +4687,8 @@ PadicHodgeTheory §4.4; ModularityAndLanglandsExtensions §§0.2, 4.1.
 
 ## Layer 13: residual twisted tensors and the induction on n
 
-Newton–Thorne 2026 §§5–6 (nt26 pp. 37–50) with Thorne 2024 §7 (th24 pp. 42–47) prove `SP_n` for every
-`n` over every totally real field. Write `n = p + r` with `n/2 < p < n` prime. Modulo `p`,
+This layer proves `SP_n` for every `n` over every totally real field (nt26 Theorem 6.4, pp. 37–50;
+th24 Theorems 7.1 and 7.6, pp. 42–47). Write `n = p + r` with `n/2 < p < n` prime. Modulo `p`,
 `(Sym^{p+r−1} r̄)^{ss} ≅ (φ_p r̄ ⊗ Sym^{r−1} r̄) ⊕ (det r̄)^r ⊗ Sym^{p−r−1} r̄`
 (ArithmeticGaloisRepresentations §7.8); Thorne's level raising (§6.9) and residually reducible lifting
 turn ordinary automorphic witnesses for the two blocks into automorphy of `Sym^{p+r−1}` (§13.8). The
@@ -4728,10 +4802,24 @@ meet in at most a quadratic extension; Goursat (ArithmeticGaloisRepresentations 
 `SL_2(q_π) × SL_2(q_σ)` in the joint linear image (a subgroup of `SL_2 × SL_2` surjecting onto the
 projective product, times the centre, is the whole perfect product, hence equals it). `G_{F(ζ_t)}` is
 normal with abelian quotient, so its joint image contains this perfect product, on which
-`Std ⊗ Sym^{r−1}` is absolutely irreducible since `r < t ≤ q_σ`. Choose `v_1` by Chebotarev outside the
-finite set over `p`, `t` and the ramification of `π`, `σ` and the coefficient conjugates; construct `σ′`
-with an order-`t` dihedral type at `v_1` and the original local connections elsewhere
-(PotentialModularityAndCompatibleSystems §10.10); at small `l` its projective field differs from each
+`Std ⊗ Sym^{r−1}` is absolutely irreducible since `r < t ≤ q_σ`. Take moreover `t ≡ 1` modulo `4` and
+split in the coefficient field of `σ`, so that `r̄_{σ,ι_t}(G_F)` lies between `SL_2(𝔽_t)` and
+`GL_2(𝔽_t)`. Choose `v_1` by Chebotarev outside the finite set over `p`, `t` and the ramification of
+`π`, `σ` and the coefficient conjugates, with `q_{v_1} ≡ −1` modulo `t` and `r̄_{σ,ι_t}(Frob_{v_1})` of
+eigenvalue ratio `−1`, which a lift of tamely dihedral type of order `t` at `v_1` requires (it exists
+as complex conjugation has projective image in `PSL_2(𝔽_t)` for `t ≡ 1` modulo `4`; nt26 p. 42).
+Construct `σ′` by the Khare–Wintenberger argument of §11.2 with potentially diagonalizable local
+conditions: over a quadratic CM extension `E/F` in which `t` and the prescribed places split, linearly
+disjoint from the field cut out by `r̄_{σ,ι_t}` over `F(ζ_t)`, ModularityAndLanglandsExtensions §2.25
+gives a lift of `r̄_{σ,ι_t}|_{G_E}` with the multiplier of `r_{σ,ι_t}` connecting, above `t`, to
+`r_{σ,ι_t}` itself (crystalline with labelled weights `{0, 2}` in the Fontaine–Laffaille range, as `t > 5`
+is unramified in `F`, hence potentially diagonalizable by ModularityAndLanglandsExtensions §2.1), at
+`v_1` to a lift of tamely dihedral type of order `t` (GL2AutomorphicRepresentationsAndTransfer
+§R16.3.7), and elsewhere to the local components of `r_{σ,ι_t}`; it is automorphic by
+ModularityAndLanglandsExtensions §2.16, the residual automorphy coming from `σ_E`, and descends to the
+RAESDC `σ′` over `F` (PotentialAutomorphyInfrastructurePartII Layer 0, "Soluble base change and
+descent of polarized automorphy"). A weight-two lifting theorem does not apply: it would change the
+weights `{0, 2}` above `t`. At small `l` the projective field of `σ′` differs from each
 `γπ` field by ramification at `v_1`, and Dickson gives field size `q ≥ t − 1 > 4r`. Potentially
 diagonalizable automorphy lifting over `F(ζ_t)` (ModularityAndLanglandsExtensions §2.16)
 gives the two comparisons, with coefficient conjugation (AutomorphicGaloisRepresentationsPartII
@@ -4746,9 +4834,20 @@ AG2.6).
 - For `r = 2`, `Std ⊗ Std` is irreducible of dimension `4` on `SL_2(q_π) × SL_2(q_σ)`, but on a
   diagonal `SL_2(q)` (as would occur if the two projective fields coincided) it splits as `Sym² ⊕ 1`:
   this is why the fields must be shown to be almost disjoint.
+- The weights of `σ′` above `t` must stay `{0, 2}`: §13.4 needs `HT(Sym^{r−1} σ′) = {0, 2, …, 2r − 2}`,
+  and a weight-two companion (labelled weights `{0, 1}`) would make `r_π ⊗ Sym^{r−1} r_{σ′}` irregular,
+  for `r = 2` `{0, 1} + {0, 1}` repeating `1`; with `{0, 2}` the sum `{0, 1} + {0, 2} = {0, 1, 2, 3}` is
+  regular.
+- The place `v_1` must have `q_{v_1} ≡ −1` modulo `t`: a tamely dihedral type of order `t` is induced
+  from a character of the unramified quadratic extension of order `t` on inertia that does not factor
+  through the norm, which requires `t | q_{v_1}² − 1` and `t ∤ q_{v_1} − 1`, i.e. `t | q_{v_1} + 1`; its
+  residual Frobenius ratio is `−1`. For `t = 13`, `q_{v_1} = 103 ≡ −1` modulo `13` qualifies, while
+  `q_{v_1} = 53 ≡ 1` gives only principal-series types.
 
-*Needs:* §§11.2, 11.10; PotentialModularityAndCompatibleSystems §10.10; AutomorphicGaloisRepresentations
-§7.4; ModularityAndLanglandsExtensions §2.16; AutomorphicGaloisRepresentationsPartII AG2.6 ("Complex and local
+*Needs:* §§11.2, 11.10; ModularityAndLanglandsExtensions §§2.1, 2.16, 2.25;
+GL2AutomorphicRepresentationsAndTransfer §R16.3.7; PotentialAutomorphyInfrastructurePartII Layer 0
+("Soluble base change and descent of polarized automorphy"); AutomorphicGaloisRepresentations
+§7.4; AutomorphicGaloisRepresentationsPartII AG2.6 ("Complex and local
 coefficient conjugation"); ArithmeticGaloisRepresentations §§4.4, 7.6, 7.8;
 FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.5.11; Chebotarev Layer 10.
 
@@ -5041,11 +5140,11 @@ ordinary since `π′` is Steinberg at `p`. §13.8 gives `Sym^{p+r−1} r_{π′
 ### Dependencies
 
 Layers 6, 11, 12; ArithmeticGaloisRepresentations §§4.4, 7.6, 7.8, 7.9; ArithmeticGaloisDuality
-§R02.3.5; GL2AutomorphicRepresentationsAndTransfer §R16.3.8; FiniteFlatGroupsAndIntegralPadicHodgeTheory
+§R02.3.5; GL2AutomorphicRepresentationsAndTransfer §§R16.3.7, R16.3.8; FiniteFlatGroupsAndIntegralPadicHodgeTheory
 §R07.5.11; AutomorphicGaloisRepresentations §7.4; AutomorphicGaloisRepresentationsPartII AG2.6;
 PotentialModularityAndCompatibleSystems §§9.2, 10.10; SerreWeightAndLevelOptimisation §6.11;
-PotentialAutomorphyInfrastructurePartII Layers 0, 1, 5–8 (gap:auxiliary-place-reducible-lifting); LocalGaloisDeformationRings §2.15; ModularityAndLanglandsExtensions §§1.11–1.15, 2.1, 4.15, 4.22;
-ClassFieldTheory Layers 12–14; Chebotarev Layer 10; Mathlib `NumberField.abs_discr_gt_two`,
+PotentialAutomorphyInfrastructurePartII Layers 0, 1, 5–8 (gap:auxiliary-place-reducible-lifting); LocalGaloisDeformationRings §2.15; ModularityAndLanglandsExtensions §§1.11–1.15, 2.1, 2.16, 2.25,
+4.15, 4.22; ClassFieldTheory Layers 12–14; Chebotarev Layer 10; Mathlib `NumberField.abs_discr_gt_two`,
 `Nat.exists_prime_lt_and_le_two_mul`.
 
 ## Layer 14: endpoints over ℚ
@@ -5067,11 +5166,19 @@ has this property (nt21 Theorems 7.1, 7.6, pp. 83, 90; nt26 Theorem 6.4, p. 50).
 
 *Proof sketch.* (2): level-one eigenforms are non-CM and regular algebraic, so §13.10 over `F = ℚ`
 gives `SP_n` for them. (1): choose an `X_0`-split soluble totally real `F⁺_1` with `F_1 = F⁺_1 K`
-(PotentialAutomorphyInfrastructure §2.5) such that at some place `v | q` of `F⁺_1` the residual
-representation `r̄_{σ_0,ι}` is trivial and `q_v ≡ 1` modulo `p`; raise the level of the base change
-of `σ_0` to `F⁺_1` at `v` to an unramified Steinberg twist, congruent modulo `p` and of the same
-weight (SerreWeightAndLevelOptimisation §6.9; the level-raising condition holds since `r̄` is
-trivial and `q_v ≡ 1` there), obtaining a non-CM ordinary `σ`; §13.10 over `F⁺_1` makes `Sym^{n−1} σ`
+(PotentialAutomorphyInfrastructure §2.5) in which `p` splits completely and such that at some place
+`v | q` of `F⁺_1` the residual representation `r̄_{σ_0,ι}` is trivial and `q_v ≡ 1` modulo `p`; raise
+the level of the base change of `σ_0` to `F⁺_1` at `v` to an unramified Steinberg twist, congruent
+modulo `p`, of the same weight and the same central character, unramified above `p`
+(SerreWeightAndLevelOptimisation §6.9, at level `GL_2(𝒪_w)` above `p`, where `σ_0` is unramified as
+`p ∤ 4`; the level-raising condition holds since `r̄` is trivial and `q_v ≡ 1` there), obtaining
+`σ`, non-CM because it is Steinberg at `v`. It is ι-ordinary: at each `w | p`, `F⁺_{1,w} = ℚ_p`,
+`r_{σ,ι}|_{G_{ℚ_p}}` is crystalline with Hodge–Tate weights `{0, 4}` and `4 ≤ p − 2`, and its reduction
+`r̄_{σ_0,ι}|_{G_{ℚ_p}}` is a sum of two characters because `p ≡ 1` modulo `4` splits in `K = ℚ(i)`; a
+non-ordinary crystalline representation of `G_{ℚ_p}` with such weights has irreducible reduction
+(FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.5.11), so `r_{σ,ι}` is ordinary at `w`, and `σ` is
+ι-ordinary (PotentialAutomorphyInfrastructurePartII Layer 0, the converse of "`ι`-ordinary automorphic
+representations have ordinary Galois representations"); §13.10 over `F⁺_1` makes `Sym^{n−1} σ`
 automorphic; base change to `F_1` and twist by `ω^{n−1}`. The result is RACSDC, ι-ordinary,
 Steinberg at the place above `v` (`Sym^{n−1}` of a Steinberg twist is a Steinberg twist), with
 residual representation `ω̄^{n−1} ⊗ Sym^{n−1} r̄_{σ_0,ι}` and the Hodge–Tate weights of (b). For `n = 2^r`
@@ -5084,11 +5191,19 @@ the seed route of §§7.5–7.6 gives (1) and (2) as well.
   `sp(n) ⊗ χ^{n−1}`, so the Steinberg place survives.
 - The level-raising condition at `v`: with `r̄|_{G_{F_v}}` trivial, `T_v ≡ 2` and `(q_v + 1)² ≡ 4`
   modulo `𝔪`, so `T_v² − (q_v + 1)² ψ(ϖ_v) ∈ 𝔪` when the residual central character is trivial at `v`.
+- Ordinarity needs `F⁺_{1,w} = ℚ_p`, not only `F⁺_{1,w}/ℚ_p` unramified. Over `ℚ_{p²}` with embeddings
+  `τ_1`, `τ_2`, the sum `ψ_1 ⊕ ψ_2` of crystalline characters with labelled weights `(4, 0)` and `(0, 4)`
+  is crystalline with labelled weights `{0, 4}` at each embedding and has reducible reduction, but has
+  no line of weights `(4, 4)` and is not ordinary. Over `ℚ_p`, with `n = 3` and `p = 577`
+  (`577 = 2 · 288 + 1` prime, `577 ≡ 1` modulo `4`), the reduction is `ψ̄ ⊕ ψ̄^c` and the criterion
+  applies, `4 ≤ 575`.
 
 *Needs:* §13.10; §§7.1, 7.5, 7.6; SerreWeightAndLevelOptimisation §6.9;
+FiniteFlatGroupsAndIntegralPadicHodgeTheory §R07.5.11;
 PotentialAutomorphyInfrastructure §2.5 ("Auxiliary soluble and cyclic extensions");
 PotentialAutomorphyInfrastructurePartII Layer 0 ("Soluble base change and descent of polarized
-automorphy"); ModularityAndLanglandsExtensions §1.15.
+automorphy"; the converse of "`ι`-ordinary automorphic representations have ordinary Galois
+representations"); ModularityAndLanglandsExtensions §1.15.
 
 ### 14.2 Theorem A in level one and Theorem B
 
@@ -5167,9 +5282,11 @@ does not depend on the ordering of the Satake parameters.
 representation of `GL_{n+1}(𝔸_ℚ)`, unramified at every prime, with Satake parameters
 `α_p^j β_p^{n−j} p^{−n(k−1)/2}` at `p`. Its finite standard `L`-function is entire, because the
 completed function is entire for cuspidal `Π` of `GL_m`, `m ≥ 2`, and the archimedean factor has no
-zeros (AutomorphicLFunctionsAndLocalFactors AL.2, "Global Godement–Jacquet theory"), and its Euler
-product converges absolutely for `Re s > 1`. The Euler product of the statement at `s` is
-`L(s − n(k − 1)/2, Π)`.
+zeros (AutomorphicLFunctionsAndLocalFactors AL.2.4.1). Its Euler product converges absolutely for
+`Re s > 1` (AL.3.6.1, the Jacquet–Shalika boundary after the Rankin–Selberg pole criterion), and no
+local factor vanishes or has a pole there, since `|α_p^j β_p^{n−j} p^{−n(k−1)/2}| < p^{1/2}` (AL.3.3.8);
+so the product of the inverted factors converges unconditionally. The Euler product of the statement
+at `s` is `L(s − n(k − 1)/2, Π)`.
 
 **Checks.**
 
@@ -5182,7 +5299,7 @@ product converges absolutely for `Re s > 1`. The Euler product of the statement 
   `(1 − α²x)(1 − αβx)(1 − β²x)` with `α + β = −24`, `αβ = 2^{11}`, that is
   `1 − (α² + αβ + β²)x + αβ(α² + αβ + β²)x² − (αβ)³x³` with `α² + αβ + β² = 576 − 2048 = −1472`.
 
-*Needs:* §14.2; AutomorphicLFunctionsAndLocalFactors AL.2; Tau Ceti `HeckeRing.GL2.Newform`,
+*Needs:* §14.2; AutomorphicLFunctionsAndLocalFactors AL.2.4.1, AL.3.3.8, AL.3.6.1; Tau Ceti `HeckeRing.GL2.Newform`,
 `HeckeRing.GL2.Newform.satakeParameters`, `HeckeRing.GL2.Newform.exists_satakeParameters_eq_pair`;
 Mathlib `HasProd`, `Differentiable`.
 
@@ -5209,8 +5326,9 @@ primitive Dirichlet character of `χ`, of conductor `M > 1`; comparing the Hecke
 newform adapter) gives `a_p ψ(p) = a_p`, so `HasQuadraticSelfTwist f`. Hence `π_f` is non-CM, and it is
 regular algebraic since `k ≥ 2`. By §14.3, `Π = Sym^n π_f` is a cuspidal automorphic representation
 of `GL_{n+1}(𝔸_ℚ)`, unramified at `p ∤ N` with Satake parameters `α_p^j β_p^{n−j} p^{−n(k−1)/2}`. Its
-finite `L`-function is entire and its Euler product converges absolutely for `Re s > 1`
-(AutomorphicLFunctionsAndLocalFactors AL.2). The product of the statement at `s` is
+finite `L`-function is entire (AutomorphicLFunctionsAndLocalFactors AL.2.4.1) and its Euler product
+converges absolutely for `Re s > 1` with non-zero factors (AL.3.6.1, AL.3.3.8). The product of the
+statement at `s` is
 `L(s − n(k − 1)/2, Π) ∏_{p | N} L_p(s − n(k − 1)/2, Π_p)^{−1}`, and each `L_p(·, Π_p)^{−1}` is a
 polynomial in `p^{−s}`, so the product extends to an entire function.
 
@@ -5266,7 +5384,8 @@ polynomial in `p^{−s}`, so the product extends to an entire function.
 - `n = 0` is excluded: the product is `ζ(s) ∏_{p | N} (1 − p^{−s})`, with a pole at `s = 1` because
   `∏_{p | N} (1 − p^{−1}) ≠ 0`.
 
-*Needs:* §14.3; §14.4 (`symPowerEulerFactor`); AutomorphicLFunctionsAndLocalFactors AL.2, AL.3.7.1;
+*Needs:* §14.3; §14.4 (`symPowerEulerFactor`); AutomorphicLFunctionsAndLocalFactors AL.2.4.1, AL.3.3.8,
+AL.3.6.1, AL.3.7.1;
 GL2AutomorphicRepresentationsAndTransfer §§R16.4.4, R16.4.6; Tau Ceti `HeckeRing.GL2.Newform`,
 `HeckeRing.GL2.Newform.satakeParameters`; Mathlib `DirichletCharacter`,
 `DirichletCharacter.changeLevel`, `UpperHalfPlane.qExpansion`, `HasProd`, `Differentiable`.
@@ -5282,7 +5401,7 @@ GL2AutomorphicRepresentationsAndTransfer §§R16.4.4, R16.4.6; Tau Ceti `HeckeRi
 
 Layers 3, 7, 8, 10, 13; SerreWeightAndLevelOptimisation §6.9; PotentialAutomorphyInfrastructurePartII
 Layer 0; PotentialAutomorphyInfrastructure §2.5; AutomorphicGaloisRepresentations §7.5;
-AutomorphicLFunctionsAndLocalFactors AL.2, AL.3.7.1;
+AutomorphicLFunctionsAndLocalFactors AL.2.4.1, AL.3.3.8, AL.3.6.1, AL.3.7.1;
 GL2AutomorphicRepresentationsAndTransfer §§R16.4.4, R16.4.6;
 ModularityAndLanglandsExtensions §§1.10, 1.15, 4.13, 4.15; Tau Ceti `HeckeRing.GL2.Newform`; Mathlib
 `DirichletCharacter`, `UpperHalfPlane.qExpansion`.

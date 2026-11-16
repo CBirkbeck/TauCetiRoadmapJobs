@@ -5735,16 +5735,10 @@
   ],
   "gaps": [
     {
-      "slug": "geometric-weak-primitive-auxiliary-finiteness",
-      "needs": "extend §8.16 (Layer 8), retaining the geometric weak-primitivity and all other §8.7 hypotheses, to the two deformation problems in Newton–Thorne 2026 Proposition 3.9 (nt26 pp. 20–21): finiteness first with the extra Steinberg condition at `v_2` and then with that condition replaced by the unrestricted one, without assuming that the cyclotomic restricted residual image has no nontrivial `l`-power quotient; §8.16 already supplies the non-scalar unobstructed auxiliary local/Hecke comparison, and only this hypothesis removal and two-application extension are requested.",
-      "supplier": "PotentialAutomorphyInfrastructurePartII",
-      "section": "§8.16 (Layer 8)"
-    },
-    {
       "slug": "dyadic-definite-unitary-forms",
-      "needs": "the Layer 3 constructions for `l = 2` used by Newton–Thorne II §2 and Newton–Thorne 2026 §4 at `p = 2`: algebraic modular forms on the definite unitary group, exactness and group-ring freeness at sufficiently small level, Taylor–Wiles level structures, and the Hecke-valued determinant of the localized Hecke algebra (the `𝒢_n`-valued lift is not needed), together with the potential diagonalizability of two-dimensional potentially Barsotti–Tate representations for `l = 2` in Layer 1 (§1.4).",
+      "needs": "the Layer 3 constructions for `l = 2` used by Newton–Thorne II §2 and Newton–Thorne 2026 §4 at `p = 2`: algebraic modular forms on the definite unitary group, exactness and group-ring freeness at sufficiently small level, Taylor–Wiles level structures, and the Hecke-valued determinant of the localized Hecke algebra (the `𝒢_n`-valued lift is not needed).",
       "supplier": "PotentialAutomorphyInfrastructurePartII",
-      "section": "Layer 3 and §1.4"
+      "section": "Layer 3"
     },
     {
       "slug": "components-under-field-extension",
@@ -5771,8 +5765,14 @@
       "section": "Layer R07.4"
     },
     {
-      "slug": "unobstructed-auxiliary-prime-and-slope-count",
-      "needs": "in Layer 3, the two inputs of Newton–Thorne I Proposition 8.3 and Newton–Thorne II Lemma 3.4 not covered by the template: unobstructedness of the local deformation problems at the ramified primes for all but finitely many `p` (Weston, wes04) together with an auxiliary prime `q_a > p` with formally smooth local lifting ring, giving patched modules of full support (nt21 pp. 92–96); and the dimension count of the slope-`(0,1)` part of quaternionic cohomology at level `U₀(p³)` (nt21b pp. 20–22).",
+      "slug": "unobstructed-auxiliary-prime",
+      "needs": "in Layer 3, the input of Newton–Thorne I Proposition 8.3 not covered by the template: unobstructedness of the local deformation problems at the ramified primes for all but finitely many `p` (Weston, wes04) together with an auxiliary prime `q_a > p` with formally smooth local lifting ring, giving patched modules of full support (nt21 pp. 92–96).",
+      "supplier": "GL2ModularityLifting",
+      "section": "Layer 3"
+    },
+    {
+      "slug": "slope-zero-one-dimension-count",
+      "needs": "in Layer 3, the dimension count of Newton–Thorne II Lemma 3.4 (nt21b pp. 20–22): for a definite or indefinite quaternion algebra over `ℚ`, a neat level and a non-Eisenstein maximal ideal `𝔪`, the localized cohomology at level `U₀(p³)` with coefficients twisted by characters `χ_1 ⊗ χ_2`, `χ_1/χ_2` of conductor `p³`, has a non-zero part of slope strictly between `0` and `1`, by Hida's comparison of the slope-`0` and slope-`1` parts with ordinary parts at level `U₀(p)` and the multiplicities of `χ_1 ⊗ χ_2` and `χ_2 ⊗ χ_1` in the induction from `U₀(p³)` to `U₀(p)`.",
       "supplier": "GL2ModularityLifting",
       "section": "Layer 3"
     },
@@ -5817,6 +5817,12 @@
       "needs": "beside §8.16 (Layer 8), the lifting form of its auxiliary-place variant (Thorne 2024 Theorem 7.5, th24 p. 44, proof p. 45): under the hypotheses of ModularityAndLanglandsExtensions §4.2 with its clause `F(ζ_l) ⊄ F̄^{ker ad(ρ̄^{ss})}` replaced by a place `w ∤ l` of `F` at which `ρ̄^{ss}` is unramified and `H⁰(G_{F_w}, ad ρ̄^{ss}(1)) = 0`, with weak primitivity tested over `k̄` and with `ρ̄^{ss}(G_{F(ζ_l)})` without nontrivial quotient of `l`-power order (the added hypothesis of §8.16), `ρ` is the Galois representation of an ι-ordinary RACSDC automorphic representation of `GL_n(𝔸_F)`; the finiteness of §8.16 and the route of ModularityAndLanglandsExtensions §4.2 are its inputs, and only this lifting conclusion is requested.",
       "supplier": "PotentialAutomorphyInfrastructurePartII",
       "section": "§8.16 (Layer 8)"
+    },
+    {
+      "slug": "steinberg-equivariant-k-theory",
+      "needs": "in Layer 6, for a connected complex reductive group `G^∨` with simply connected derived group and the Steinberg variety `Z` of §6.4, the convolution algebra `K^{G^∨ × ℂ^×}(Z)` and its isomorphism with the affine Hecke algebra of the dual root datum, `q` being the coordinate of `ℂ^×`; for semisimple `s ∈ G^∨` and `q` not a root of unity, the standard modules `Hom_{A(s,u)}(ρ, H_*(ℬ_u^s, ℂ))` obtained by localisation at `(s, q)`; the theorem that the simple modules with central character `(s, q)` are exactly their unique simple quotients, indexed by the `Z_{G^∨}(s)`-classes of pairs `(u, ρ)` with `s u s^{−1} = u^q` and `ρ` occurring in `H_*(ℬ_u^s, ℂ)` (kl87 Theorem 7.12); and the irreducibility of the standard module when the factor `s₀` of an `s`-adapted homomorphism lies in a compact subgroup (kl87 §8).",
+      "supplier": "SpringerResolutionAndCharacteristicCycles",
+      "section": "Layer 6"
     }
   ],
   "sourceIssues": [
