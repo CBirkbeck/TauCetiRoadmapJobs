@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NoncompactQuantumSymmetry~15",
+  "head": "73be053c01fe41be050219c67fc5fb9d07edf214",
+  "pr": 1015,
+  "folder": "NoncompactQuantumSymmetry",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 4 changed lines since 948432f: README :205 and :6265 now cite LaguerreJacobi Layers 1-2, resolved at that roadmap's open head 3e89142 (Layers 1 and 2, sections 1.3, 2.2-2.4); the radial unitary and the Laguerre parameter were recomputed; previous R01 (description) repaired; title and description checked against the head (ten layers, three files, suppliers on main, two open suppliers, two consumers); gate passes (my run and the worker's build), depcheck 0 problems, Suggested.lean elaborates with sorry warnings only; no source locator falls in the changed passages.",
+  "text": "29282dd9801cd9ad"
+ }
+}
