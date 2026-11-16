@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PadicHodgeTheoryPartII~3",
+  "head": "b7f4b9b44f887132198b7f8abd59954777ae302a",
+  "pr": 2412,
+  "folder": "PadicHodgeTheoryPartII",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Full review of an unchanged head. One P3 finding (R01): README:43 describes Mathlib Algebra.FormallyEtale.iff_exists_algEquiv_prod as giving finite separable factors; the pinned conclusion gives Algebra.IsSeparable only, and section 3.1 needs finiteness (Algebra.FormallyUnramified.finite_of_free, uncited). Sample: all 15 seeded targets (0.1, 0.4, 0.5, 0.6, 0.7, 1.1, 1.2, 1.6, 2.3, 2.4, 3.1, 3.4, 3.5, 4.1, 4.2) plus 1.5, 3.2, 3.3 recomputed with values in the adversarial table; 42 source locators checked against the cached GLX26, Chen14, Serre79, MilneiAG and Stacks texts; 36 library names #checked at the pins with file and line; 51 cross-roadmap ids in 16 roadmaps resolved at main or the open heads; both declared gaps precise, minimal and in plan.json. Gate OK (every check 0); depcheck 0 problems (236 roadmaps, 2232 edges); Suggested.lean elaborates with exit 0 and no output; it declares nothing, all six headlines being unstatable at the pins and named in the docstring. No overlap finding; no outside-folder change; pull-request text not contradicted. Three source issues recorded (GLX26 Proposition 5.7 and (5.34), Chen14 Lemme 3.3.5).",
+  "text": "7437177330344c26",
+  "carried": {
+   "from": "b7f4b9b44f887132198b7f8abd59954777ae302a",
+   "head": "ff399b038d892508556148caf2d529fdb98170b6",
+   "findings": 1,
+   "lines": 6,
+   "folders": [
+    "PadicHodgeTheoryPartII"
+   ]
+  }
+ }
+}
