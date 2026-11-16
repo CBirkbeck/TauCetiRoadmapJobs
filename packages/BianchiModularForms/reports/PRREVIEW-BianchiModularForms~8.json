@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BianchiModularForms~8",
+  "head": "722ea50326cfdd5c9720d7a29ef64239825a2e8b",
+  "pr": 1719,
+  "folder": "BianchiModularForms",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 70ba211. Checked: the pull request's title and description against the head (previous R01 and R02, both description-only, are repaired; counts of layers, sections, theorems, definitions and imports recounted; no sentence contradicted); gate rerun, all counters 0, OK, worker's targeted build OK; depcheck 0 problems, no UPWARD/CYCLE/moved; Suggested.lean elaborates with only the two sorry warnings; adversarial rows with computed values for finrank_H1_sub_cuspidal (Q(sqrt-5), Q(sqrt-3)) and cuspidalH1_sl2Image_eq_bot_iff (d=-20, -40); supplier citations re-resolved at open heads (MaassForms, KleinianGroups, ModularityAndLanglandsExtensions); overlap check of eight closest roadmaps, nothing owned twice; no outside-folder change against origin/main. Seeded sample: no target in a changed passage (folder unchanged); Swan 1971 uncertified.",
+  "text": "a644b7fcb539eaed"
+ }
+}
