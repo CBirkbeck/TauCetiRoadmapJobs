@@ -1,0 +1,38 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ModularIwasawaMainConjectures~5",
+  "head": "8f21cae59598539e0fb7904089cbdd99635866cc",
+  "pr": 1499,
+  "folder": "ModularIwasawaMainConjectures",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 8f21cae; this round read the pull request's title and description against the head. One P3 finding: the description says KatoEulerSystems and AutomorphicCongruences have no pull request (both are open, and its own depends-on block lists them) and names too few of the sections that wait on them. Gate rerun OK (worker's gate build=0); depcheck 234 roadmaps, 2232 edges, 0 problems; lake env lean on Suggested.lean exits 0 with three sorry warnings only; outside-folder diff empty. All cited KatoEulerSystems and AutomorphicCongruences sections resolved at their open heads. Seeded source sample: none falls in a changed passage. Previous R01 and R02 concern the board plan, are settled as not actionable in this package, and are passed to the human reviewers.",
+  "text": "97f6aaee1ae3af41",
+  "carried": {
+   "from": "8f21cae59598539e0fb7904089cbdd99635866cc",
+   "head": "4d87fc8b4890baa983025221cbdd1c55e591aee5",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "outside": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "R01: The `gaps` list of `packages/ModularIwasawaMainConjectures/design/plan.json` must gain entries for gap:tate-twisted-components and gap:central-critical-equality.",
+    "where": "board plan of this package, add two AutomorphicCongruences gap entries",
+    "raised": "PRREVIEW-ModularIwasawaMainConjectures~5"
+   },
+   {
+    "id": "D02",
+    "severity": "",
+    "title": "R02: The plan's `manin-period-comparison` entry must be reworded to what README lines 147–151 request: - a rational signed comparison with an explicit fractional ratio r_E^±; - a p-unit comparison onl",
+    "where": "board plan entry manin-period-comparison, reworded to the README's fractional comparison",
+    "raised": "PRREVIEW-ModularIwasawaMainConjectures~5"
+   }
+  ]
+ }
+}
