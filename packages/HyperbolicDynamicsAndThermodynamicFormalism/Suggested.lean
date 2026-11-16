@@ -29,9 +29,11 @@ Headline theorems of the README that are not stated here, with what each lacks a
   structure of locally maximal hyperbolic sets (README §§8.4–8.5), is stated;
 * the Anosov property of the geodesic flow of a compact manifold of negative sectional curvature
   (README §9.3): the geodesic flow of the unit tangent sphere bundle as a `Flow ℝ` on Tau Ceti's
-  sphere-bundle manifold is not available (Tau Ceti has the geodesic flow on the tangent bundle
-  and the sphere bundle as an embedded manifold, without the corestriction theorem or the
-  connection map that README §9.3 requests from its suppliers).
+  sphere-bundle manifold is not available (Tau Ceti has the maximal geodesic flow on its open
+  domain in the tangent bundle and the sphere bundle as an embedded manifold, into which Mathlib's
+  `ContMDiff.iff_comp_isImmersion` corestricts smooth maps; the restricted flow as a `Flow ℝ` is a
+  construction of README §9.3 whose existence rests on its theorems that the geodesic spray of a
+  compact manifold is complete and that the sphere bundle is invariant).
 -/
 
 noncomputable section
