@@ -213,11 +213,11 @@ year = 1973
 venue = "Mathematische Zeitschrift 131"
 doi = "10.1007/BF01174904"
 locator_scheme = "section"
-locator = "u-invariant of real fields"
+locator = "bound u(F) ≤ 6 when u(F(√−1)) = 4, as recalled in BEC05, §1, p. 1, and §3, p. 3"
 url = "https://doi.org/10.1007/BF01174904"
 licence_class = "none"
 status = "uncertified"
-version_note = "paywalled; cited by its locator without the text"
+version_note = "paywalled; cited by its locator without the text; the theorem number in EL73 is not recorded"
 cited_for = ["Layer 0"]
 
 [[source]]

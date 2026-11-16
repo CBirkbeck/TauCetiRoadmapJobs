@@ -59,7 +59,7 @@ namespace TauCetiRoadmap.RealSurfacePeriodIndex
 
 universe u v
 
-/-! ## Layer 0: real function fields -/
+/-! ## Layer 0: real function fields: orderings, real closures, Brauer index and the Elman–Lam invariant -/
 
 /-- A quadratic form `q` on a finite-dimensional vector space `V` over a field `K` (with `2`
 invertible) has **zero total signature**: for every real closed field `R` with a `K`-algebra
@@ -94,7 +94,7 @@ theorem index_dvd_two_mul_orderOf_of_isRealClosed (R : Type u) [Field R] [IsReal
     TauCeti.Algebra.index K A ∣ 2 * orderOf (TauCeti.BrauerGroup.mk A) := by
   sorry
 
-/-! ## Layer 7: period equals index, the u-invariant and quadratic forms -/
+/-! ## Layer 7: period equals index: the main theorems and the u-invariant -/
 
 /-- **Theorem 0.3.** If `K` is the function field of a real surface without real points, that is
 a finitely generated field extension of `ℝ` of transcendence degree `2` in which `-1` is a sum of
