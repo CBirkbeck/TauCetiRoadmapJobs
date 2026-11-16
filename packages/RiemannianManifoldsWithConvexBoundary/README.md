@@ -120,7 +120,7 @@ It leaves to other roadmaps, by section:
   `M̃`, connected when `M` is, the double when `∂M ≠ ∅` (3.5);
 - uniform normal radii on compact sets, strongly convex neighbourhoods and the strict convexity of
   the squared radial distance along sufficiently short geodesics: SmoothBundlesConnections B6.0;
-  6.4 consumes its uniform radii, and this roadmap owns the boundary geometry of small closed
+  6.4 consumes its uniform normal radii, and this roadmap owns the boundary geometry of small closed
   geodesic balls (strict convexity of their boundary, non-trapping);
 - the second fundamental form and the shape operator of a map into an inner product space (the
   normal part of its second derivative): already in Tau Ceti as `TauCeti.secondFundamentalForm`
@@ -353,7 +353,11 @@ compact when both pieces are and connected when both are connected and `∂M ≠
 `DM = M ∪_id M` (with `c_N = c_M`) is closed exactly when `M` is compact. Assumed: the glued
 manifolds are Hausdorff and second countable, the standing convention of GeometricTopology
 Layer 1. The collar extension is the case `N = ∂M × [0, 1)` with its product collar and
-`f(q) = (q, 0)`.
+`f(q) = (q, 0)`. Here `∂M × [0, 1)` is taken over `𝓡∂ (n+1)`, as 1.3's pieces are: its charts are
+the product charts of 1.1 (model `ℝⁿ × [0, ∞)`, the constrained coordinate last) followed by the
+linear reordering `(y, t) ↦ (t, y)`, which carries `ℝⁿ × [0, ∞)` onto `EuclideanHalfSpace (n+1)`
+(constrained coordinate `0`). The identity is a diffeomorphism between the two structures, the
+boundary is `∂M × {0}` in both, and the product collar is a collar for both, so 1.3 applies.
 
 **From TauCetiRoadmap.ComplexKahlerGeometry**: K5a (extension of smooth functions across a
 smooth boundary: the half-space Seeley extension), a step of K5a's construction of
@@ -363,9 +367,10 @@ function on the closed half-space `{x⁰ ≥ 0} ⊆ ℝⁿ⁺¹` that is smooth 
 
 **From TauCetiRoadmap.SmoothBundlesConnections**: B6.0, on a finite-dimensional Hausdorff
 second-countable boundaryless Riemannian manifold, for the given metric: positive uniform normal
-radii on compact sets, with `IsNormalDomain` on every tangent ball of that radius, and the strict
-convexity of the squared local radial distance from a point along sufficiently short geodesics,
-with uniform radius bounds on compact sets.
+radii on compact sets, with `IsNormalDomain` on every tangent ball of that radius (so that on it
+`exp_x` is injective with invertible differential at every vector). B6.0's strict convexity of the
+squared local radial distance along short geodesics is not consumed: 6.4 needs a positive definite
+Hessian, which it derives itself.
 
 ## How to read the build
 
@@ -598,8 +603,9 @@ the half-plane (slanted coordinate normal), and the conformal disc `e^{−2|x|²
 
 1.1 uses Tau Ceti's boundary charts and DifferentialGeometry 5.1; 1.2 uses DifferentialGeometry
 12.2 and 12.5 and 1.1; 1.3 uses 1.1–1.2, Tau Ceti's Hadamard factorisation and Mathlib's partitions of
-unity; 1.4 uses 1.1–1.3, Mathlib's Levi-Civita connection and Tau Ceti's Hessian; 1.5 uses 1.4 and
-the induced metric; 1.6 uses 1.2, 1.4–1.5 and Tau Ceti's conformal formulas.
+unity; 1.4 uses 1.1–1.3, DifferentialGeometry 12.3, Mathlib's Levi-Civita connection and Tau Ceti's
+Hessian; 1.5 uses 1.4 and the induced metric; 1.6 uses 1.2, 1.4–1.5 and Tau Ceti's conformal
+formulas.
 
 ## Layer 2: Convexity of the boundary
 
@@ -699,7 +705,7 @@ family `e^{−2s|x|²} g` (threshold `s = 1/2`).
 
 ### Dependencies
 
-2.1 uses Layer 1; 2.2 uses 1.3–1.4 and 2.1; 2.3 uses 1.4–1.6, 2.1 and Tau Ceti's metric families.
+2.1 uses 1.4–1.6; 2.2 uses 1.3–1.4 and 2.1; 2.3 uses 1.4–1.6, 2.1 and Tau Ceti's metric families.
 
 ## Layer 3: Regular domains and the extension across the boundary
 
@@ -807,7 +813,8 @@ Let `M` be Hausdorff and second countable, `c : ∂M × [0, 1) → M` a smooth c
 structure, which the supplier contracts assume to be the open-submanifold one, for which
 `int M → M` is a smooth open embedding. Let `M̃` be the collar extension:
 GeometricTopology 1.3's glued manifold `M ∪_f N` for `N = ∂M × [0, 1)` with its product collar
-and `f(q) = (q, 0)`. By GeometricTopology 1.3, `M̃` is a Hausdorff second-countable boundaryless
+and `f(q) = (q, 0)`, with `N` over `𝓡∂ (n+1)` by the reordering `(y, t) ↦ (t, y)` of the supplier
+contracts. By GeometricTopology 1.3, `M̃` is a Hausdorff second-countable boundaryless
 manifold of dimension `n + 1`, `M` is a closed subset of `M̃` through its smooth embedding, and the
 union of the two collars is an open subset identified with `∂M × (−1, 1)`; write
 `c̃ : ∂M × (−1, 1) → M̃` for this open embedding, equal to `c` for `t ≥ 0`. Then `c̃(q, t) ∈ M` iff
@@ -826,9 +833,10 @@ images of `M` and `N` meet only in `∂M`. Prove:
   (`φ₁ s` is smooth because the support of `φ₁` avoids `∂M`).
 - Atlas comparison: the identity of `M` is a diffeomorphism from `M`'s atlas onto Tau Ceti's
   sublevel atlas of `{ρ̃ ≥ 0}`. At interior points both atlases consist of the charts of `int M`;
-  near `∂M`, the bicollar chart restricted to `t ≥ 0` is `c` composed with a chart of `∂M`, a chart
-  of `M`'s maximal atlas in which `ρ̃ = t` is the normal coordinate, so the sublevel charts built
-  from it are compatible with `M`'s half-space charts.
+  near `∂M`, the bicollar chart restricted to `t ≥ 0` (the inverse of `c`, then a chart of `∂M` in
+  the first factor, then the reordering `(y, t) ↦ (t, y)`) is a chart of `M`'s maximal atlas in
+  which `ρ̃ = t` is the normal coordinate `x⁰`, so the sublevel charts built from it are compatible
+  with `M`'s half-space charts.
 - The double: if `M` is compact and `∂M ≠ ∅`, let `DM = M ∪_id M` be GeometricTopology 1.3's double
   (compact, and connected when `M` is), with bicollar `c̃ : ∂M × (−1, 1) → DM` equal to `c` into the
   first copy for `t ≥ 0` and to `(q, t) ↦ c(q, −t)` into the second copy for `t ≤ 0`. There is
@@ -979,10 +987,10 @@ the conformal ball as a domain in `(ℝⁿ⁺¹, e^{2φ} g)`.
 3.1 uses 1.1–1.4, RiemannianGeometry R7.9 (the inclusion of a regular sublevel and its outward
 criterion) and Tau Ceti's sublevel atlas and pullback metric; 3.2 uses 1.3–1.4, 2.1 and 3.1;
 3.3 uses GeometricTopology 1.1 (collars, the interior) and 1.3 (the collar extension and the
-double as gluings along the boundary), Tau Ceti's sublevel atlas and 3.1; 3.4 uses 3.1,
-ComplexKahlerGeometry K5a and DifferentialGeometry 12.1; 3.5 uses 3.1, 3.3–3.4, GeometricTopology
-1.1 and 1.3 and, for the comparison of the compact case, RiemannianGeometry R5c; 3.6 uses
-1.4–1.5, 3.1 and RiemannianGeometry R5a.
+double as gluings along the boundary), Tau Ceti's sublevel atlas, Mathlib's partitions of unity
+and 3.1; 3.4 uses 3.1, ComplexKahlerGeometry K5a, DifferentialGeometry 12.1 and Mathlib's
+partitions of unity; 3.5 uses 3.1, 3.3–3.4, GeometricTopology 1.1 and 1.3 and, for the comparison
+of the compact case, RiemannianGeometry R5c; 3.6 uses 1.4–1.5, 3.1 and RiemannianGeometry R5a.
 
 ## Layer 4: Geodesics at the boundary
 
@@ -1268,11 +1276,11 @@ spherical caps in `S^{n+1}`, `n ≥ 1`, for enlargements.
 
 ### Dependencies
 
-4.1 uses 3.1, 3.5 and HopfRinow Layer 1; 4.2 uses Layer 1, 2.1–2.2, 3.1 and 4.1; 4.3 uses 1.3, 3.1,
-HopfRinow Layers 1–2, RiemannianGeometry R7.9 (the compact connected case) and Tau Ceti's normal
-exponential; 4.4 uses 1.4, 4.3 and Mathlib's partitions
-of unity; 4.5 uses 2.1–2.2 and
-3.1–3.2; 4.6 uses 1.3–1.4, 2.1, 2.3, 3.1–3.2 and 4.3.
+4.1 uses 3.1, 3.5 and HopfRinow Layer 1; 4.2 uses 1.1, 1.3–1.4, 2.1–2.2, 3.1, 4.1 and HopfRinow
+Layer 1; 4.3 uses 1.3, 3.1, HopfRinow Layers 1–2, RiemannianGeometry R7.9 (the compact connected
+case) and Tau Ceti's normal exponential; 4.4 uses 1.4, 4.3, GeometricTopology 1.1 (smooth collars)
+and Mathlib's partitions of unity; 4.5 uses 2.1–2.2 and 3.1–3.2; 4.6 uses 1.3–1.4, 2.1, 2.3,
+3.1–3.2 and 4.3.
 
 ## Layer 5: Exit time and scattering relation
 
@@ -1528,9 +1536,9 @@ Assume `M` compact, `∂M` strictly convex and `M` non-trapping. Define the scat
 `α : ∂SM → ∂SM`, `α(z) := φ_{τ̃(z)}(z)`, equivalently `(γ_z(τ̃(z)), γ_z'(τ̃(z)))` with `γ_z` the
 geodesic of `M` (Paternain–Salo–Uhlmann, Definition 3.3.4, lines 3114–3117). Intrinsically:
 for `z ∈ TM` and `T ∈ ℝ` let `geodesicEndpoint z T` be the endpoint `(γ(T), γ'(T))` of a geodesic
-`γ` of `(M, g)` on `[0, T]` issuing from `z`, which does not depend on the choice of `γ` (4.1), and
-`z` itself when there is none; then `α(z)` (`scatteringRelation`) is `geodesicEndpoint z τ(z)` when
-`0 < τ(z) < ∞`, and otherwise `(y, −w)` for `(y, w) = geodesicEndpoint (x, −v) T′`, `z = (x, v)`,
+`γ` of `(M, g)` on `[0, T]` issuing from `z`, which, `M` being Hausdorff, does not depend on the
+choice of `γ` (4.1), and `z` itself when there is none; then `α(z)` (`scatteringRelation`) is
+`geodesicEndpoint z τ(z)` when `0 < τ(z) < ∞`, and otherwise `(y, −w)` for `(y, w) = geodesicEndpoint (x, −v) T′`, `z = (x, v)`,
 where `T′ = τ(x, −v)` when that is finite and `T′ = 0` when it is infinite.
 On `∂SM` this is `φ_{τ̃(z)}(z)`: inward vectors follow their geodesic to its exit, outward vectors
 follow theirs backwards to its entry, and glancing vectors, with `τ = 0` in both directions, are
@@ -1539,10 +1547,11 @@ projection `P(x, v) := v − μ(x, v) ν_in(x) ∈ T_x∂M` on `∂SM`, and the 
 `L := P ∘ α ∘ (P|_{∂₊SM})⁻¹` and `ℓ := τ ∘ (P|_{∂₊SM})⁻¹` on the closed unit ball bundle `B∂M` of
 `(∂M, h)` (Stefanov–Uhlmann–Vasy, lines 150–163, with their `∂±` interchanged).
 
-- `geodesicEndpoint z T` is `(γ(T), γ'(T))` for every geodesic `γ` of `(M, g)` on `[0, T]` issuing
-  from `z`; on a regular domain, for `T > 0`, it is `φ_T(z)` whenever `φ_t z` is defined for
-  `t ∈ [0, T]` and `t ↦ π(φ_t z)` maps `[0, T]` into `M`; for `T ≤ 0` it is `z`, since no geodesic
-  is defined on the empty set `[0, T]`, `T < 0`, or on `{0}`, which carries no derivative.
+- For Hausdorff `M`, `geodesicEndpoint z T` is `(γ(T), γ'(T))` for every geodesic `γ` of `(M, g)`
+  on `[0, T]` issuing from `z`; on a regular domain, for `T > 0`, it is `φ_T(z)` whenever `φ_t z` is
+  defined for `t ∈ [0, T]` and `t ↦ π(φ_t z)` maps `[0, T]` into `M`; for `T ≤ 0` it is `z`, since
+  no geodesic is defined on the empty set `[0, T]`, `T < 0`, or on `{0}`, which carries no
+  derivative.
 - `α` is a diffeomorphism of `∂SM`, `α ∘ α = id`, `α(∂±SM) = ∂∓SM`, the fixed-point set of `α` is
   exactly `∂₀SM`, and `τ̃ ∘ α = −τ̃` (Lemma 3.3.5 and Exercise 3.3.6, lines 3118–3127). Read on
   `TM`, for every compact Hausdorff non-trapping `(M, g)` with strictly convex boundary and
@@ -1576,6 +1585,12 @@ projection `P(x, v) := v − μ(x, v) ν_in(x) ∈ T_x∂M` on `∂SM`, and the 
   derivative, so the value is again `z`; for `T = −1` the parameter set `[0, −1]` is empty, so the
   value is `z`, not `φ_{−1}(z) = ((0, −2), (0, 1))`; and for the zero vector at `x` the constant
   curve gives `(x, 0)` for every `T > 0`.
+- The endpoint map without the Hausdorff property: on the half-line `[0, ∞)` with the point `1`
+  doubled (3.5, last Check) and the metric `dx²`, the curves `t ↦ t` through either copy of `1` are
+  geodesics on `[0, 2]` issuing from `(0, +1)`, and their endpoints at time `T = 1` lie over the two
+  different copies of `1`, while at `T = 2` they agree. The independence of the choice of `γ` uses
+  the Hausdorff property, which is a hypothesis of every theorem about `geodesicEndpoint` and
+  `scatteringRelation`.
 - The scattering relation off the unit vectors: for the zero vector `z = (x, 0)`, `τ = ∞` in both
   directions, so the first branch does not apply, `T′ = 0`, `geodesicEndpoint (x, 0) 0 = (x, 0)`,
   and the sign change returns `α(z) = (x, 0) = z`; at a boundary point this agrees with the zero
@@ -1595,7 +1610,7 @@ conformal ball with a totally geodesic inner sphere (trapping).
 
 5.1 uses 1.1–1.2, 3.1, 3.5, HopfRinow Layer 1, Tau Ceti's sphere bundles and geodesic spray; 5.2
 uses 2.1, 4.1–4.2 and 5.1; 5.3 uses only calculus (Mathlib, Tau Ceti, ComplexKahlerGeometry K5a);
-5.4 uses 1.4, 2.1, 3.5, 4.2 and 5.1–5.3; 5.5 uses 2.1, 3.4–3.5, 4.2, 4.6 and 5.1–5.4; 5.6 uses
+5.4 uses 1.4, 2.1, 3.5, 4.2 and 5.1–5.3; 5.5 uses 2.1, 3.4–3.5, 4.2, 4.6, 5.1–5.2 and 5.4; 5.6 uses
 1.2, 2.1, 3.5, 4.1, 5.1, 5.2 and 5.4.
 
 ## Layer 6: Examples
@@ -1746,15 +1761,33 @@ metric coefficients satisfy `g_ij = δ_ij + O(|z|²)`
 (`TauCeti.Manifold.IsNormalDomain.mfderiv_inner_normalCoordinateField_self`) and the
 Christoffel symbols vanish at `p`
 (`TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self`), so
-`Hess |z|²(∂_i, ∂_j) = 2δ_ij − 2 z_k Γ^k_ij = 2g_ij + O(|z|²)`, positive definite on a small
-ball; apply 3.2's sublevel statement on `U = B(p, r_p)` with `x = d(p, ·)²` and the regular value
-`c = R²` (`dx` vanishes at `p ∈ U`, which that statement allows), and 5.5's Hessian criterion
-with `u = d(p, ·)²` on `B(p, r_p)`; uniformity from SmoothBundlesConnections B6.0.
+`Hess |z|²(∂_i, ∂_j) = 2δ_ij − 2 z_k Γ^k_ij = 2g_ij + O(|z|²)`, equal to `2g` at `p` and positive
+definite on a small ball; apply 3.2's sublevel statement on `U = B(p, r_p)` with `x = d(p, ·)²` and
+the regular value `c = R²` (`dx` vanishes at `p ∈ U`, which that statement allows), and 5.5's
+Hessian criterion with `u = d(p, ·)²` on `B(p, r_p)`. The uniform choice on a compact set `K` of
+centres: let `r > 0` be SmoothBundlesConnections B6.0's uniform normal radius on a compact
+neighbourhood `K'` of `K`. On `W = {(x, v) ∈ TN : x ∈ int K', |v| < r}` the map
+`E(x, v) = (x, exp_x v)` is smooth (HopfRinow Layer 1), injective (each `exp_x` is injective on its
+normal ball) and has invertible differential (block-triangular, with diagonal blocks the identity
+and `d(exp_x)_v`, invertible on a normal domain), so it is a diffeomorphism of `W` onto
+`{(p, y) : p ∈ int K', d(p, y) < r}` (HopfRinow Layer 2's local distance identity), and
+`F(p, y) = d(p, y)² = |E⁻¹(p, y)|²` is smooth in `(p, y)` there. So `Hess F(p, ·)` at `y`, evaluated
+on unit vectors `w ∈ T_yN`, is continuous in `(p, y, w)`; it equals `2` at `y = p`, and since the unit
+vectors over `K` form a compact set, there is `r_K ∈ (0, r]` such that `Hess F(p, ·)` is positive
+definite on `B(p, r_K)` for every `p ∈ K`. The remaining requirements hold below the normal radius
+`r`, so `r_p := r_K` serves for every `p ∈ K`. A uniform normal radius alone gives no such bound
+(it does not control the constant in the `O(|z|²)` above), and neither does B6.0's strict
+convexity of the squared radial distance along short geodesics: strict convexity allows a
+vanishing second derivative, as `|y|⁴` on `ℝⁿ⁺¹` shows at `0`, while 3.2 and 5.5 need a positive
+definite Hessian.
 
 **Checks.**
 
 - Unit sphere `S^{n+1}`, `n ≥ 1`: geodesic balls are the caps of 6.3, strictly convex exactly for
-  `R < π/2`, so every admissible `r_p` is at most `π/2`. On `S¹` every `r_p ∈ (0, π]` is admissible:
+  `R < π/2`, so every admissible `r_p` is at most `π/2`, although the normal radius is `π`: with
+  `s = d(p, ·)`, `Hess s² = 2 ds² + 2s cot s (g − ds²)` has the eigenvalue `2s cot s` on the tangent
+  space of the geodesic sphere, `2` in the limit `s → 0` and negative for `π/2 < s < π`, so taking
+  `r_p` equal to the normal radius would fail. On `S¹` every `r_p ∈ (0, π]` is admissible:
   `d(p, ·)² = θ²` is smooth on `B(p, π)`, `R²` is a regular value for `0 < R < π`, and every arc
   `B̄(p, R)` is non-trapping with vacuously strictly convex boundary.
 - `ℝⁿ⁺¹` and hyperbolic space: every radius works (6.1, 6.3).
@@ -1765,11 +1798,11 @@ with `u = d(p, ·)²` on `B(p, r_p)`; uniformity from SmoothBundlesConnections B
   `dρ = −2z ≠ 0` on `|z| = 1/4` and `Hess |z|² = 2g`, so `II = 2h/(2 · 1/4) = 4h = h/R`; 5.5's bound
   with `u = |z|²/2`, `f(z, v) = ⟨z, v⟩`, `Xf = 1` gives `τ ≤ (1/4 − (−1/4))/1 = 1/2`, the diameter.
 
-*Needs:* 1.3, 2.1, 3.1, 3.2, 5.2, 5.5; HopfRinow Layer 2; Tau Ceti `TauCeti.Manifold.IsNormalDomain`,
-`TauCeti.Manifold.normalCoordinateField`,
+*Needs:* 1.3, 2.1, 3.1, 3.2, 5.2, 5.5; HopfRinow Layers 1–2; Tau Ceti
+`TauCeti.Manifold.IsNormalDomain`, `TauCeti.Manifold.normalCoordinateField`,
 `TauCeti.Manifold.IsNormalDomain.mfderiv_inner_normalCoordinateField_self`,
 `TauCeti.Manifold.IsNormalDomain.leviCivitaConnection_normalCoordinateField_self`;
-SmoothBundlesConnections B6.0.
+SmoothBundlesConnections B6.0 (uniform normal radii on compact sets).
 
 ### 6.5 Conformal and rotationally symmetric metrics on the ball
 
@@ -1814,17 +1847,22 @@ This layer is the roadmap's acceptance suite: every formula above is evaluated a
 
 ### Dependencies
 
-6.1 uses 1.4–1.5, 2.1, 3.1, 4.3, 5.1–5.2 and 5.4–5.6; 6.2 uses 1.4–1.5, 2.1, 3.1, 4.2 and 5.1–5.2;
+6.1 uses 1.4–1.5, 2.1, 3.1, 4.3, 5.1–5.2, 5.4–5.6 and Tau Ceti's second fundamental form of a
+map into an inner product space; 6.2 uses 1.4–1.5, 2.1, 3.1, 4.2 and 5.1–5.2;
 6.3 uses 1.4, 2.1, 3.1–3.2, 3.6, 5.2, 5.5, RiemannianGeometry R5a and Tau Ceti's round sphere and
-hyperbolic space; 6.4 uses 1.3, 2.1, 3.1–3.2, 5.2, 5.5, HopfRinow Layer 2, Tau Ceti's normal
-coordinate fields and SmoothBundlesConnections B6.0; 6.5 uses 1.4, 1.6, 2.1, 3.1, 3.6 and
-RiemannianGeometry R5a.
+hyperbolic space; 6.4 uses 1.3, 2.1, 3.1–3.2, 5.2, 5.5, HopfRinow Layers 1–2, Tau Ceti's normal
+coordinate fields and SmoothBundlesConnections B6.0 (uniform normal radii); 6.5 uses 1.4, 1.6,
+2.1, 3.1, 3.6 and RiemannianGeometry R5a.
 
 ## Downstream consumers
 
-- **PositiveMass**, 5.1–5.2: the boundary mean curvature `H = tr_h II/n`, `n ≥ 1`, for the inward
-  normal (1.5), identified with RiemannianGeometry R5a's `⟨B, ν_in⟩` by 3.6, with `H = 1` on the unit
-  sphere and `H = −1` on the boundary of the exterior of the unit ball.
+- A Part II of PositiveMass for manifolds whose boundary is given intrinsically: the boundary mean
+  curvature `H = tr_h II/n`, `n ≥ 1`, for the inward normal (1.5) and its identification with
+  RiemannianGeometry R5a's `⟨B, ν_in⟩` (3.6). PositiveMass itself (5.1–5.2) takes its mean
+  curvature from RiemannianGeometry R5b's `A(X, Y) = ⟨B(X, Y), ν⟩` and does not consume this
+  roadmap; the normalisations agree, its averaged `tr A/(dim M − 1)` for the inward normal being
+  the `H` of 1.5 by 3.6, with `H = 1` on the unit sphere and `H = −1` on the boundary of the
+  exterior of the unit ball in both.
 - A future Lorentzian geometry roadmap (domains with boundary): regular domains (3.1), the
   defining functions on the collar extension and the realisation (3.3–3.5) and the
   defining-function calculus (1.3), where the metric is Riemannian.

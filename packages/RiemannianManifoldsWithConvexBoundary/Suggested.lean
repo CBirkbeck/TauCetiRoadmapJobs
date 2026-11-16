@@ -246,9 +246,10 @@ def IsNonTrapping : Prop :=
 
 open Classical in
 /-- The endpoint `(γ(T), γ'(T))` in `TM` of a geodesic `γ` of `(M, g)` on `[0, T]` issuing from
-`z`, and `z` itself when there is none, as for every `T ≤ 0`; geodesics of `M` with the same
-initial data agree on a common interval (README §4.1), so the choice of `γ` does not matter
-(README §5.6). -/
+`z`, and `z` itself when there is none, as for every `T ≤ 0`. For Hausdorff `M`, geodesics of `M`
+with the same initial data agree on a common interval (README §4.1), so the choice of `γ` does not
+matter; without the Hausdorff property the value can depend on the choice (the half-line with a
+doubled point, README §5.6), and every theorem about this map assumes `[T2Space M]`. -/
 noncomputable def geodesicEndpoint (z : TangentBundle (𝓡∂ (n + 1)) M) (T : ℝ) :
     TangentBundle (𝓡∂ (n + 1)) M :=
   if h : ∃ γ : ℝ → M,
