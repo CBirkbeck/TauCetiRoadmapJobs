@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KanQuillen~3",
+  "head": "2a6d75e99edc129575a268f0a49e5741cffe2654",
+  "pr": 2269,
+  "folder": "ModelCategoryTheory/KanQuillen",
+  "date": "2026-11-16",
+  "findings": 6,
+  "blocking": 3,
+  "notes": "Full re-review. Previous findings: R03, R04, R05, R06, R07, R08 repaired; R02 partly (Scope still does not name GeneralizedCohomology G2.1's model structure and BordismFormalGroups F6.5); R01 not repaired (four Tau Ceti imports absent at pin 2fd255d, gate imports=4 build=9 FAIL). New: the route of 5.3.1 uses the Milnor lim^1 sequence, which no target, supplier or pinned declaration provides (P2, replacement route through 4.2.1 and 1.2.3 given); connectivity used for non-Kan simplicial sets without a definition (P3); 3.5.2 splits 3.5.1 from its route and is excluded by Scope (P3); a route sentence naming Part SimplicialCategories as second owner of a cylinder (P3). Checked: all 15 sampled sections and every headline with computed instances (table of 23 rows); Kerodon 90, Moss 14, HTT 12 locators against the fetched texts; Mathlib and Tau Ceti declarations at the pins; Part ModelCategories ids at this head and three roadmaps on main; description against the head (no finding). depcheck: 261 roadmaps, 2594 edges, 0 problems. Suggested.lean could not be elaborated at the pins; May, Goerss-Jardine, Quillen and Hirschhorn not read.",
+  "text": "3ff1a471061c0db6"
+ }
+}
