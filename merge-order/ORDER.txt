@@ -11,6 +11,7 @@ OperatorKTheory
 IndexTheory
 StringOrientation
 SmoothBundlesConnections
+RiemannianManifoldsWithConvexBoundary
 YangMillsConnectionsAndCaloricGauge
 PseudodifferentialOperators
 TangentialBordism
