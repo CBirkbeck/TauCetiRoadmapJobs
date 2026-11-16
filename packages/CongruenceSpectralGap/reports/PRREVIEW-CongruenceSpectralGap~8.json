@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CongruenceSpectralGap~8",
+  "head": "a40d0b852a3b2ff08066ff02e82dabcdd5abb647",
+  "pr": 1504,
+  "folder": "CongruenceSpectralGap",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 20 changed lines since 1f44022 (README only). Checked: the new supplier citations FourierDeligneTransform §§2.2–2.3, 2.5 and Conventions and DeligneWeightsAndPurity §2.13 at their open heads (5 resolved, trace/torsor convention recomputed over F3, F9, F2); no residue of the dropped additive-character-sheaf-weight contract or of SchemeAndStackFoundations; 4 katz-gkm locators in the changed passages; title and description against the head (0 contradicted); gate rerun OK (all counters 0, worker build=0); depcheck 0 problems, no UPWARD or CYCLE; elaboration gives only the three sorry warnings. The seeded sample does not fall in the changed passages. lrs95 uncertified, not read. Accepted conditional on the six declared supplier gaps.",
+  "text": "0ab6184dfe09afa9"
+ }
+}
