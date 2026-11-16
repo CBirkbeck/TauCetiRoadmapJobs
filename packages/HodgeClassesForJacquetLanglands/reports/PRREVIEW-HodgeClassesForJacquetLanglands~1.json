@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HodgeClassesForJacquetLanglands~1",
+  "head": "11238e8d3a0062fd7eb52949d0a7872c4caa0962",
+  "pr": 2436,
+  "folder": "HodgeClassesForJacquetLanglands",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "Gate passed at 11238e8; depcheck 248 roadmaps, 2377 edges, 0 problems; lake env lean elaborates with sorry warnings only; #check of all 4 declarations matches README generality; one-tactic probe (simp, rfl, infer_instance, exact?) fails on all 3 theorems, so no padding. Seeded sample of 15 targets (0.4, 1.3, 1.5, 2.3, 2.5, 2.6, 3.1, 3.2, 3.5, 4.1, 4.6, 5.1, 5.4, 8.1, 8.3) verified against IP23: content agrees, with locator slips in 5.1 and 5.4 (R01, R02). Layer 1 identities (existsUnique, comp_self, map_similitude) checked exactly over Q(i) with a non-diagonal Hermitian form and a non-scalar similitude. Also checked: 27 supplier roadmaps (about 110 section ids and 45 names resolved), 8 declared gaps consistent with plan.json, extra locators in Mil17, Wal85 and FM06. Overlap check and source independence passed. Findings: 2 locator fixes and 2 corrections to the PR description (R03 weight-two theorem needs Q(pi)=Q; R04 relation to hodgeStar/barHodgeStar); all P3.",
+  "text": "4c1ffbcc690ddafb"
+ }
+}
