@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CompressibleEulerEquations~2",
+  "head": "59271f0dbc63b61a628deb87068cef7abe99446a",
+  "pr": 2442,
+  "folder": "CompressibleEulerEquations",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 87 changed lines since 85b68bd. Previous findings: R01-R04 all repaired. Checked: the counterexample and quadraticLaw deleted, with #check giving unknown identifier; the four IsHalfSpaceDomain API bullets and four Checks, each computed; the Mathlib citations uniqueDiffOn_convex (TangentCone/Real.lean:80) and uniqueDiffWithinAt_inter (TangentCone/Basic.lean:128) at the pin; the corrected section 7.1 witness against TauCeti.HasWeakLineDerivOn (WeakDeriv/Basic.lean:212); the section 8.2 failure item and the section 6.2 Check that cites it; the headline count (14) in the README, the docstring and the description. Sample: the section 1.1 locators (ChristodoulouMiao2014 line 606, AbbresciaSpeck2022 lines 165-170, LuoYu2023a line 88) match; the section 7.1 Check is recomputed. Gate: every check OK; depcheck 0 problems; outside-folder diff empty. lake env lean: 14 sorry warnings and nothing else; #check run on all 35 declarations. Cross-roadmap citations resolved at the current heads. Source independence: changed passages only, none shared.",
+  "text": "ebb8fbe5ec85b7e7"
+ }
+}
