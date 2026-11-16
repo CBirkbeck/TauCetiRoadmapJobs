@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-VirtualFundamentalClass~6",
+  "head": "f5c3e22b3a2cdbc9fc64cc5ab00b2daed9d8fa55",
+  "pr": 1996,
+  "folder": "VirtualFundamentalClass",
+  "date": "2026-11-16",
+  "findings": 7,
+  "blocking": 2,
+  "notes": "Full re-review. Previous R01, R02, R04-R10 repaired; R03 partly (the new citation in 3.3 covers representable morphisms only, now R07). Seeded sample of 15 targets plus 6 end goals checked against Behrend-Fantechi arXiv v1, Kresch 1999, Vistoli 1989 (GDZ scan, OCR), Webb arXiv v2 and Stacks Tag 07B1: 31 locators. Two P2: normal cones of local immersions used in 1.6, 2.4, 2.5, 9.6 are not built in 1.5; relative functoriality in 9.5 is stated by reference to the source at a generality (singular base) that 2.5 does not supply. Five P3: direction of the comparison maps in the 7.3 route, unproved graph compatibility datum in 8.4, unstated theorems in 7.6, 8.2-8.5 and 9.4, missing locators, Webb citation scope. Worker gate OK (build=0), nothing outside the folder. Depcheck: 264 roadmaps, 2581 edges, 0 problems. lake env lean exit 0, no messages, 0 declarations; no end goal statable at the pins and the docstring names each. 13 pinned declarations and 18 cross-roadmap citations resolved. Pull-request text agrees with the head. Ownership: board package VirtualFundamentalClasses plans the same core (for the human reviewers); AlgebraicGromovWittenTheory files not given, not checked. Eight source issues recorded.",
+  "text": "24d301352525c406"
+ }
+}
