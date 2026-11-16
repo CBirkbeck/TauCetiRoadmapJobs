@@ -5370,10 +5370,10 @@
     "3.2",
     "10.2"
    ],
-   "detail": "Supply: ABLB Definition A.0.4 and Lemmas A.0.6–A.0.9 (ABLB line 6767, ABLB line 6781, ABLB line 6789). Descent of nuclear modules along descendable maps of Gelfand rings is 2.3.",
-   "needs": "Nuclear objects of D(A) for a solid ℚ_p-algebra A: the Hom criterion, closure under colimits and tensor products, ω₁-compact nuclear objects basic nuclear, and, for nuclear A, nuclearity tested on the underlying ℚ_p-module and on homotopy groups with closure under countable limits.",
+   "detail": "Supply: the Hom criterion of ABLB Definition A.0.4 (ABLB line 6767) and ABLB Lemmas A.0.7–A.0.8 (ABLB line 6789, ABLB line 6795). Closure under colimits and tensor products and the identification of ω₁-compact nuclear objects with basic nuclear ones (ABLB Lemma A.0.6, ABLB line 6781) are RefinedTraceMethods §4.3. Descent of nuclear modules along descendable maps of Gelfand rings is 2.3.",
+   "needs": "Nuclear objects of D(A) for a solid ℚ_p-algebra A, characterized by the Hom criterion, and, for nuclear A, nuclearity tested on the underlying ℚ_p-module and on homotopy groups, with closure under countable limits.",
    "supplier": "AnalyticStacks",
-   "section": "§4.3(1)–(2)"
+   "section": "§4.3 (opening and (1))"
   },
   {
    "slug": "fredholm-criteria",
