@@ -5779,12 +5779,11 @@
   "gaps": [
     {
       "slug": "stack-rational-chow",
-      "needs": "Rational Chow groups of finite-type algebraic stacks stratified by quotient stacks over a field, with proper (not necessarily representable) pushforward, flat and lci pullback, exterior products natural under product with every such stack, localization, affine-bundle homotopy invariance, projective- and Grassmann-bundle formulas, Chern classes, intersection products on smooth DM stacks with projection and excess formulas, and Grothendieck–Riemann–Roch for the universal curve over M̄_{g,n}.",
+      "needs": "For finite-type algebraic stacks over a field that are stratified by quotient stacks, a class closed under products that contains stacks which are neither Deligne–Mumford nor global quotients (such as the products X × Y with an arbitrary test stack Y), rational Chow groups extending those of Layer 5 on schemes, with flat and lci pullback, pushforward along proper morphisms of Deligne–Mumford type that need not be representable, exterior products natural under product with every such stack, the localization sequence, homotopy invariance for affine bundles, the projective- and Grassmann-bundle formulas, Chern classes of vector bundles, the intersection product on smooth such stacks with the projection formula, and Grothendieck–Riemann–Roch for the universal curve over M̄_{g,n}.",
       "supplier": "SchemeAndStackFoundations",
       "section": "Layer 5 (§§5.1–5.8)",
       "neededBy": [
-        "MotivicStructuresInModuliOfCurves §0.1",
-        "MotivicStructuresInModuliOfCurves §0.2",
+        "MotivicStructuresInModuliOfCurves §0.6",
         "MotivicStructuresInModuliOfCurves §5.1",
         "MotivicStructuresInModuliOfCurves §5.2",
         "MotivicStructuresInModuliOfCurves §5.3",
@@ -5796,10 +5795,19 @@
       ]
     },
     {
+      "slug": "equivariant-grr",
+      "needs": "For G smooth affine over a field, a G-equivariant projective morphism f : X → Y of smooth quasi-projective schemes with G-linearised ample invertible sheaves (Convention 5), and a G-equivariant vector bundle E on X whose higher direct images R^i f_*E are vector bundles, the Grothendieck–Riemann–Roch identity ch(Σ_i (−1)^i [R^i f_*E]) · td(T_Y) = f_*(ch(E) · td(T_X)) in the completed rational equivariant Chow ring ∏_c A^c_G(Y) ⊗ ℚ, obtained from SchemeAndStackFoundations §5.8 on the mixed spaces of §2.1; applied on the framed presentation of §6.3, the SL₂-lift of the tetragonal Hurwitz stack as the quotient of the smooth quasi-projective scheme of framed covers by SL₂ × GL_{g+6}, to the degree-four cover C → ℙ and the ℙ¹-fibration ℙ → H_{4,g,n}.",
+      "supplier": "EquivariantIntersectionTheory",
+      "section": "Layer 2 (§§2.1–2.2)",
+      "neededBy": [
+        "MotivicStructuresInModuliOfCurves §6.5"
+      ]
+    },
+    {
       "slug": "pointed-coarse-projectivity",
       "needs": "For every stable pair (g,n), projectivity over ℤ of the coarse space of M̄_{g,n} together with a rational combination of tautological divisor classes that is the pullback of an ample class on the coarse space.",
       "supplier": "StableReductionPartII",
-      "section": "MC.4",
+      "section": "§§4.1 and 4.14",
       "neededBy": [
         "MotivicStructuresInModuliOfCurves §4.12",
         "MotivicStructuresInModuliOfCurves §12.1",
@@ -5815,7 +5823,8 @@
       "neededBy": [
         "MotivicStructuresInModuliOfCurves §0.4",
         "MotivicStructuresInModuliOfCurves §2.3",
-        "MotivicStructuresInModuliOfCurves §5.4"
+        "MotivicStructuresInModuliOfCurves §5.4",
+        "MotivicStructuresInModuliOfCurves §12.7"
       ]
     },
     {
@@ -5834,7 +5843,7 @@
       "slug": "dm-stack-mixed-hodge",
       "needs": "For separated finite-type Deligne–Mumford stacks over ℂ, functorial graded-polarizable mixed Hodge structures on H^* and H_c^* with Künneth, finite-quotient invariants, Poincaré duality for smooth stacks, purity for smooth proper stacks, the weight spectral sequence of a normal crossings compactification with orientation characters, and hard Lefschetz for smooth proper stacks with projective coarse space.",
       "supplier": "MixedHodgeModulesAndIrregularHodgeTheory",
-      "section": "H.1/operations and H.0/projective-direct-image",
+      "section": "§§5.1 and 4.5",
       "neededBy": [
         "MotivicStructuresInModuliOfCurves §0.4",
         "MotivicStructuresInModuliOfCurves §0.5",
@@ -5847,18 +5856,22 @@
         "MotivicStructuresInModuliOfCurves §9.7",
         "MotivicStructuresInModuliOfCurves §12.1",
         "MotivicStructuresInModuliOfCurves §12.4",
-        "MotivicStructuresInModuliOfCurves §12.6"
+        "MotivicStructuresInModuliOfCurves §12.6",
+        "MotivicStructuresInModuliOfCurves §5.4",
+        "MotivicStructuresInModuliOfCurves §10.7",
+        "MotivicStructuresInModuliOfCurves §12.7"
       ]
     },
     {
       "slug": "dm-stack-cycle-class",
       "needs": "For smooth separated finite-type Deligne–Mumford stacks over ℂ and over finitely generated fields of characteristic zero, the cycle class map A^c(X) → W_{2c}H^{2c}(X)(c) in rational Betti and ℚ_ℓ-étale cohomology, compatible with exterior products, proper pushforward, Gysin maps, pullback and the Betti–étale comparison.",
       "supplier": "MotivesAndAlgebraicCycles",
-      "section": "Layer 2 (MC.2), §§2.4–2.7",
+      "section": "Layer 2, §§2.4–2.7",
       "neededBy": [
         "MotivicStructuresInModuliOfCurves §0.1",
         "MotivicStructuresInModuliOfCurves §5.3",
         "MotivicStructuresInModuliOfCurves §10.5",
+        "MotivicStructuresInModuliOfCurves §9.7",
         "MotivicStructuresInModuliOfCurves §12.9"
       ]
     },
@@ -5873,7 +5886,7 @@
     },
     {
       "slug": "complete-adams-series",
-      "needs": "The plethystic exponential and logarithm, as inverse bijections, over augmentation-complete series in a complete filtered rational special λ-algebra with continuous Adams operations on every coefficient and grading variable, extending the calculus of §5.1.",
+      "needs": "For a commutative ℚ-algebra with a special λ-structure, complete and separated for a decreasing multiplicative filtration F^•, whose Adams operations ψ_r are commuting continuous ring endomorphisms with ψ_r(F^a) ⊂ F^{ra} for all a ≥ 1 and r ≥ 1, the plethystic exponential Exp(x) = exp(Σ_{r≥1} ψ_r(x)/r) and logarithm Log(1 + y) = Σ_{r≥1} (μ(r)/r) ψ_r(log(1 + y)) as mutually inverse bijections F^1 → 1 + F^1 with Exp(x + y) = Exp(x)Exp(y), extending the augmentation-complete calculus of §5.1 with ψ_r(t_i) = t_i^r on augmentation variables; continuity alone does not make Σ ψ_r(x)/r converge (identity Adams operations on ℚ[[t]]).",
       "supplier": "HabiroNahmSeries",
       "section": "§5.1",
       "neededBy": [
