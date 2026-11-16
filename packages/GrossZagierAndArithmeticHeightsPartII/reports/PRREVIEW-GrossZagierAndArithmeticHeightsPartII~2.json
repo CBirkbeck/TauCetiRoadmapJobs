@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GrossZagierAndArithmeticHeightsPartII~2",
+  "head": "f94727177b4545f6b8bbe09e7ab6f675b125e94e",
+  "pr": 2457,
+  "folder": "GrossZagierAndArithmeticHeightsPartII",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 12 changed lines since eb24852. R02, R03 and R04 are repaired; R01 is deferred as D01, which stands because ComplexMultiplicationAndExplicitReciprocityPartII at 8c1992c still does not cite §12.6a(e). The §5.4 t = 6 case was checked by computation: the U(4) twisted-Coxeter constituents give eigenvalues 1, q², q⁴ in degrees 2–4, and χ_c = q⁶−q⁴−q²+1 matches the Hermitian-surface count. The §9.8 n = 2 instance over ℚ₃ has ∂Orb = −2 log 3 against Int = 2. 11 locators were checked against LL2, Zha12 and LZ. No seeded-sample target falls in the changed passages. Gate rerun: OK. Depcheck: 0 problems, position 380. lake env lean on Suggested.lean: exit 0, no output. The description matches this head. Acceptance is conditional on the eight declared supplier gaps.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Two owners for GSpin Kudla divisors and orthogonal Borcherds products over ℚ",
+    "where": "ComplexMultiplicationAndExplicitReciprocityPartII §§4.2–4.2a must cite GrossZagierAndArithmeticHeightsPartII §12.6a(e)",
+    "raised": "PRREVIEW-GrossZagierAndArithmeticHeightsPartII~1"
+   }
+  ],
+  "text": "94eedbd027dd43bf"
+ }
+}
