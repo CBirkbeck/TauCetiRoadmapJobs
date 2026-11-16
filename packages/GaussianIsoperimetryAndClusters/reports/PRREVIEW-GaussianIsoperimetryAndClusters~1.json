@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GaussianIsoperimetryAndClusters~1",
+  "head": "1bb9eabc2840eb1b0e191f191bd1beb19833a762",
+  "pr": 2420,
+  "folder": "GaussianIsoperimetryAndClusters",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Seeded sample: 14 of 15 targets (31 locators) verified against MilmanNeeman2022, CianchiFuscoMaggiPratelli2011, Ehrhard1983, Ledoux1993 and Ledoux1999, plus 12 further locators; Bobkov1997 OCR unreadable. Gate passes (depcheck 0 problems, outside-folder diff empty); Suggested.lean elaborates with 20 sorry warnings only; one-tactic probe closes none of 20 theorems; 108 library names and 6 cross-roadmap citations resolve; more than 40 Check values recomputed; adversarial table over 27 statements, none false. Findings: P3 Check gap for p_U (§6.4), and two P3 defects in the pull-request description (empty Dependencies paragraph, dangling list). Four source issues recorded (CianchiFuscoMaggiPratelli2011 (2.5), (4.8), (4.10); MilmanNeeman2022 Lemma 2.1 proof).",
+  "text": "0ad92b467cf8b488"
+ }
+}
