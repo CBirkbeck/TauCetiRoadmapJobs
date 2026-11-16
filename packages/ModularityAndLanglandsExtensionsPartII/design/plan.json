@@ -5735,12 +5735,6 @@
   ],
   "gaps": [
     {
-      "slug": "dyadic-definite-unitary-forms",
-      "needs": "the Layer 3 constructions for `l = 2` used by Newton–Thorne II §2 and Newton–Thorne 2026 §4 at `p = 2`: algebraic modular forms on the definite unitary group, exactness and group-ring freeness at sufficiently small level, Taylor–Wiles level structures, and the Hecke-valued determinant of the localized Hecke algebra (the `𝒢_n`-valued lift is not needed).",
-      "supplier": "PotentialAutomorphyInfrastructurePartII",
-      "section": "Layer 3"
-    },
-    {
       "slug": "components-under-field-extension",
       "needs": "in Layer 1, the behaviour of irreducible components of a quasi-separated rigid space over a complete field `E` under extension of the ground field to a finite extension and to `ℂ_p`: every component over `ℂ_p` lies in the base change of a component over `E`, and if there are finitely many components then after a finite extension `E′/E` all components are geometrically irreducible (Conrad, con99 Theorem 3.4.2, internal pp. 26–27).",
       "supplier": "AdicSpacesPartV",
