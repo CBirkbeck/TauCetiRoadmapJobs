@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RiemannianManifoldsWithConvexBoundary~2",
+  "head": "689d6f5a19c72869b211f90513cbf927f1590996",
+  "pr": 2451,
+  "folder": "RiemannianManifoldsWithConvexBoundary",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 45 changed lines since bde64ee. R01-R03 all repaired. Recomputed the new 4.5 parabola negative control (x = -rho fails for every U because K_0 is noncompact; x = -rho - eps(x^2+y^2) works with U = B(0,1/2), c0 = eps/8) and the disc positive control with U = R^2 minus 0, against the Lean signature of exists_convexityFunction (Icc 0 c0). New locators checked: paternain-salo-uhlmann2023 Prop 11.2.2 lines 10065-10077 p. 253 (compact M in a closed manifold) and stefanov-uhlmann-vasy2021 lines 99-100. The changed sections' suppliers (R7.9, GeometricTopology 1.1, HopfRinow Layers 1-2) resolve on main. Pull-request text read against this head. Full gate OK including the build; depcheck 0 problems; elaboration gives 11 sorry warnings only; outside-folder diff empty. Sampled targets fall outside the changed passages, so their rows stand from bde64ee.",
+  "text": "2a17ee181d34e620"
+ }
+}
