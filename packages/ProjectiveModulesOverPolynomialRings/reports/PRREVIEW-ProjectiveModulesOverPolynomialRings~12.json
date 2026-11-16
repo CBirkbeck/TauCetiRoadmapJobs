@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ProjectiveModulesOverPolynomialRings~12",
+  "head": "e1903e999d3377fc7d5adf927e5515557c694f32",
+  "pr": 2295,
+  "folder": "ProjectiveModulesOverPolynomialRings",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 88 changed lines since 37e1427. All five previous findings (R01-R05) are repaired and no new finding was raised. The rewritten provenance section was checked against AxiomMath/Stacks c496df0 (StablyFree, Kaplansky, MilnorPatching/ProjectiveModules and MonicLocalization files, README, lean-toolchain) and Stacks Tags 0BC5 and 08KK; the References change is a reflow plus one added directory. Seeded sample where the change touches it: 2.1, 4.3 and 5.4 locators checked against LombardiQuitte2015 (XVI.5 p. 919, XVI.4.7 p. 914, XVI.5.5 p. 920). Adversarial rows for 4.1, 4.3, 2.1, 5.4 and 3.6. Worker's gate passes every check; the local re-run reports only NOT IN ORDER from the public merge order; depcheck against the candidate order finds 0 problems. lake env lean gives 18 sorry warnings and nothing else; the 22 #check probes give 0 errors. Description checked against the head; overlap check and source independence (changed passages only) are clean.",
+  "text": "1526f99fd21c07fa"
+ }
+}
