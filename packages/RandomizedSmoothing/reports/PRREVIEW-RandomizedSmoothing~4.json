@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RandomizedSmoothing~4",
+  "head": "bbe15994234980ed9d0716ad081f224a1008c827",
+  "pr": 2428,
+  "folder": "RandomizedSmoothing",
+  "date": "2026-11-16",
+  "findings": 9,
+  "blocking": 1,
+  "notes": "incremental re-review of 3 changed lines since 7419977. The change (README line 38) repairs the previous R08 (pull-request link replaced by the roadmap's name) and introduces no problem; the other nine previous findings (R01-R07, R09, R10) are in unchanged text and are carried as R01-R09, each witness recomputed. Checked: the changed sentence against RobustnessCertificates at its open head; four pinned Tau Ceti declarations; depcheck 0 problems; gate passes with the build; Suggested.lean elaborates with sorry as the only warning; no change outside the folder; pull-request description still written for the first head.",
+  "text": "95b1b4a4ffc34117"
+ }
+}
