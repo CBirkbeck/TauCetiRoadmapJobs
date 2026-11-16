@@ -282,10 +282,10 @@ noncomputable def flow (ε : ℝ) {N : ℕ} (t : ℝ) (Z : Fin N → X × Euclid
   if h : ∃ γ : ℝ → Fin N → X × EuclideanSpace ℝ (Fin d), IsTrajectory ε univ γ ∧ γ 0 = Z
   then h.choose t else Z
 
-/-- The group law of the hard-sphere flow: `T_{s+t} = T_s ∘ T_t` for all real `s, t`, on the whole
-phase space. -/
-theorem flow_add {ε : ℝ} (hε : 0 < ε) (hερ : ENNReal.ofReal ε < FlatPositionSpace.radius d X)
-    {N : ℕ} (s t : ℝ) :
+/-- The group law of the hard-sphere flow: for every real diameter `ε`, `T_{s+t} = T_s ∘ T_t` for
+all real `s, t`, on the whole phase space (time translates of trajectories on `ℝ` are trajectories,
+and trajectories on `ℝ` are unique). -/
+theorem flow_add {ε : ℝ} {N : ℕ} (s t : ℝ) :
     (flow ε (s + t) : (Fin N → X × EuclideanSpace ℝ (Fin d)) → _) = flow ε s ∘ flow ε t := by
   sorry
 
@@ -302,10 +302,9 @@ theorem measurePreserving_flow {ε : ℝ} (hε : 0 < ε)
           (hardCoreSet ε N)) := by
   sorry
 
-/-- Reversibility of the hard-sphere flow: `T_t ∘ ℛ = ℛ ∘ T_{−t}` on the whole phase space, with
-`ℛ(X, V) = (X, −σ_M V)` the time reversal. -/
-theorem flow_reversal {ε : ℝ} (hε : 0 < ε) (hερ : ENNReal.ofReal ε < FlatPositionSpace.radius d X)
-    {N : ℕ} (t : ℝ) (Z : Fin N → X × EuclideanSpace ℝ (Fin d)) :
+/-- Reversibility of the hard-sphere flow: for every real diameter `ε`, `T_t ∘ ℛ = ℛ ∘ T_{−t}` on the
+whole phase space, with `ℛ(X, V) = (X, −σ_M V)` the time reversal. -/
+theorem flow_reversal {ε : ℝ} {N : ℕ} (t : ℝ) (Z : Fin N → X × EuclideanSpace ℝ (Fin d)) :
     flow ε t (reversal ε Z) = reversal ε (flow ε (-t) Z) := by
   sorry
 
@@ -327,7 +326,7 @@ theorem weak_liouville {ε : ℝ} (hε : 0 < ε)
     (hLφ : Measurable (Function.uncurry Lφ)) (hLφC : ∃ C, ∀ t Z, |Lφ t Z| ≤ C)
     (hderiv : ∀ t Z, HasDerivAt (fun r => φ (t + r) (freeFlow r Z)) (Lφ t Z) 0)
     (hspec : ∀ t Z, φ t (contactScatter ε Z) = φ t Z) :
-    ∫ t in Ioi (0 : ℝ), ∫ Z, W₀ (flow ε (-t) Z) * Lφ t Z + ∫ Z, W₀ Z * φ 0 Z = 0 := by
+    (∫ t in Ioi (0 : ℝ), ∫ Z, W₀ (flow ε (-t) Z) * Lφ t Z) + ∫ Z, W₀ Z * φ 0 Z = 0 := by
   sorry
 
 /-! ## Layer 9: Equilibria and grand canonical ensembles -/
@@ -356,10 +355,11 @@ noncomputable def grandCanonical (ε : ℝ) (μ : ℝ≥0) (f₀ : X × Euclidea
     ((volume : Measure (Fin N → X × EuclideanSpace ℝ (Fin d))).withDensity fun Z =>
       grandCanonicalDensity ε μ f₀ N Z / N.factorial).map (Sigma.mk N)
 
-/-- Invariance of the Maxwellian grand canonical measure: on a position space of finite measure,
-for `0 < ε < ρ`, the grand canonical measure with `f⁰(x, v) = c exp(−β|v − u|²/2)`, `β > 0`, is
-invariant under the componentwise hard-sphere flow (BGSS2023 lines 479–483). -/
-theorem grandCanonical_flow_invariant [IsFiniteMeasure (volume : Measure X)] {ε : ℝ} (hε : 0 < ε)
+/-- Invariance of the Maxwellian grand canonical measure: on every flat position space, for
+`0 < ε < ρ`, the grand canonical measure with `f⁰(x, v) = c exp(−β|v − u|²/2)`, `β > 0`, is invariant
+under the componentwise hard-sphere flow; when `μ_X(X) = ∞` and `μ c > 0` the partition function is
+infinite and the measure is zero (BGSS2023 lines 479–483). -/
+theorem grandCanonical_flow_invariant {ε : ℝ} (hε : 0 < ε)
     (hερ : ENNReal.ofReal ε < FlatPositionSpace.radius d X) (μ c : ℝ≥0) {β : ℝ}
     (hβ : 0 < β) (u : EuclideanSpace ℝ (Fin d)) (t : ℝ) :
     MeasurePreserving
