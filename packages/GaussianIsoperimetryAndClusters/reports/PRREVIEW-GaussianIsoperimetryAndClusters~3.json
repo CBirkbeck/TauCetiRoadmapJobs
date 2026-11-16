@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GaussianIsoperimetryAndClusters~3",
+  "head": "c490eeb6ddc894440a4aadc561eba4d97a28c4cc",
+  "pr": 2420,
+  "folder": "GaussianIsoperimetryAndClusters",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full review at an unchanged head; the previous review had no findings to re-check. Seeded sample of 15 targets: every Milman-Neeman, Cianchi-Fusco-Maggi-Pratelli, Ehrhard, Borell and Ledoux locator read at its lines and found to support the statement; Bobkov1997 unreadable (OCR), Maggi2012 only contents and synopsis, four sources settled as uncertified. Adversarial pass: every numerical Check recomputed (about 150 values, all agree to six places), all 20 Lean theorems checked at n = 0, 1, q = 0, 1, 2, non-PSD covariance, null and non-measurable sets. Gate passes; depcheck 0 problems; lake env lean gives 20 sorry warnings and no error; no theorem closes under the one-tactic probe; 37 #check signatures compared with the README. 108 pinned declarations and 8 cross-roadmap sections resolved. Three source issues recorded (one gap in MilmanNeeman2022, two errors in the CFMP preprint).",
+  "text": "baa76d028baf9cb1"
+ }
+}
