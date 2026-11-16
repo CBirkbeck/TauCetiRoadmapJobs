@@ -1128,9 +1128,18 @@ GlobalGaloisDeformations §5.5. (CaptainSude26, §4, lines 285–289; CN23, §5.
 - Its `T`-framed rings have the presentation of §4.3 over `R^loc_χ = ⊗̂_{v∈T} R_{v,χ}`, of dimension
   `1 + 3t + 2d`.
 - The coefficient module on `K^P` is `O(χ⁻¹)` at `R` and trivial at `P`.
+- The level at a Taylor–Wiles datum `Q` is the pair `K^P(Q)`: compact open subgroups
+  `K^P_1(Q) ⊆ K^P_0(Q) ⊆ K^P`, both equal to `K^P` at every place outside `Q`. For `w ∈ Q`, where
+  `K^P_w = PGL₂(O_{F_w})` because `w ∉ S`, `K^P_0(Q)_w = Iw_w` and `K^P_1(Q)_w` is the kernel of the
+  homomorphism `Iw_w → Δ_w` sending the class of `[[a, b],[c, d]]` to the image of `a/d mod ϖ_w`, where
+  `Δ_w` is the largest quotient of `k_w×` of five-power order; `a/d` is unchanged by scalars, so the map
+  is defined on `PGL₂`. Hence `K^P_0(Q)/K^P_1(Q) ≅ Δ_Q = ∏_{w∈Q} Δ_w`. These are the groups
+  `K₀(Q) ⊇ K₁(Q)` of CrystallineLocalGlobalCompatibilityCM §§9.6 and 9.9 for the level `K^P` (ACC23,
+  §6.5, p. 169, lines 6819–6824, taken in `PGL₂` as in CN23, line 4367), and an object at the level
+  `K^P(Q)` is the one that section builds from `C•(K^P_0(Q)/K^P_1(Q), O(χ⁻¹))`.
 
-*Needs:* §§3.4, 4.2, 4.3, 5.1; CrystallineLocalGlobalCompatibilityCM §§9.5, 9.8; GlobalGaloisDeformations
-§§3.4, 5.5; LocalGaloisDeformationRings §§2.15, 3.14, 4.14–4.15, 6.6.
+*Needs:* §§3.4, 4.2, 4.3, 5.1; CrystallineLocalGlobalCompatibilityCM §§9.5, 9.6, 9.8, 9.9;
+GlobalGaloisDeformations §§3.4, 5.5; LocalGaloisDeformationRings §§2.15, 3.14, 4.14–4.15, 6.6.
 
 **Checks.**
 
@@ -1150,16 +1159,23 @@ is the derived Hecke image of CrystallineLocalGlobalCompatibilityCM §9.9 at the
 the characteristic polynomials of Frobenius at `v ∉ S ∪ Q` with `P_v(X)`, compatible with reduction
 modulo `ϖ` from `χ` to `1` and with augmentation from `Q` to `∅` as in ACC23, §6.4.1. The route is the
 construction of CrystallineLocalGlobalCompatibilityCM §§9.7 and 9.9 with `R ∪ P` in the role of the
-Iwahori places `R` on the automorphic side. What `P` adds is this. For `v ∈ P` and `σ ∈ I_v`, local
-reciprocity sends `σ` to a unit `u ∈ O_{F_v}^×`; the coefficient module is trivial on `Iw_v`, so the
-torus operators of `diag(u, 1)` and `diag(1, u)` are the identity and the torus polynomial `P_{v,σ}` of
-the inertial comparison is `(X − 1)²`. The comparison thus gives `tr ρ(σ) = 2` and `det ρ(σ) = 1` for
-the representation `ρ` over the neat-level Hecke algebra modulo a nilpotent ideal. These are equalities of elements, carried by ring
-maps; the comparison of CrystallineLocalGlobalCompatibilityCM §8.6 passes from neat level to `K^P(Q)`
-through ring maps and finitely many nilpotent quotients, so they hold over `T_{χ,Q}/J_{χ,Q}`. There the
-local representation at `v`, over a ring that may be nonreduced, satisfies §3.4(i), and §3.4, which is
-stated over every object of `CNL_O`, makes it a point of the local problem at `v`. Since `P^c ∩ S = ∅`
-and `Q ∩ S^c = ∅`, no place of `P^c` lies in `S ∪ Q`, so `K^P(Q)` is hyperspecial on `P^c`. The inertial
+Iwahori places `R` on the automorphic side. What `P` adds is one verification at each `v ∈ P`: over
+`T_{χ,Q}/J_{χ,Q}`, `tr ρ(σ) = 2` and `det ρ(σ) = 1` for every `σ ∈ I_v`. For `2 × 2` matrices these two
+identities are condition (i) of §3.4, and §3.4 holds over every object of `CNL_O`, nonreduced ones
+included, so on each local factor of that finite `O`-algebra they are all that the local problem at `v`
+asks. An identity between ring elements persists along a ring homomorphism and descends along an
+injective one. So, as for the character-type condition at `R` in CrystallineLocalGlobalCompatibilityCM
+§9.7, it suffices to prove the two identities modulo a nilpotent ideal at a neat `GL₂` level, over the
+Hecke algebra enlarged by the torus operators (into which the original Hecke algebra embeds after a
+further nilpotent quotient), and to carry them to `K^P(Q)` along the ring maps and finitely many
+nilpotent quotients of CrystallineLocalGlobalCompatibilityCM §8.6. That section makes the level neat by
+shrinking it only at the places above two auxiliary rational primes, chosen outside
+`(S ∪ Q) ∪ (S ∪ Q)^c`, so the neat level is still `Iw_v` at `v` (CaptainSude26, lines 367–372). There
+the inertial comparison identifies `det(X − ρ(σ))` with the torus polynomial `P_{v,σ}`, built from the
+operators of `diag(u, 1)` and `diag(1, u)`, where `u ∈ O_{F_v}^×` corresponds to `σ` under local
+reciprocity. Both matrices lie in `Iw_v` and the coefficient module is trivial at `v` (§5.2), so both
+operators are the identity and `P_{v,σ} = (X − 1)²`. Since `P^c ∩ S = ∅` and `Q ∩ S^c = ∅`, no place
+of `P^c` lies in `S ∪ Q`, so `K^P(Q)` is hyperspecial on `P^c`. The inertial
 comparison (`gap:acc-torsion-inertial-comparison`) is applied with the conjugation-stable set
 `(S ∪ Q) ∪ (S ∪ Q)^c` and the Iwahori-type set `R ∪ P ∪ Q`; every conjugate of a place of `R ∪ P ∪ Q`
 that is not itself in `R ∪ P ∪ Q` lies outside `S ∪ Q` and has hyperspecial level, so the representation
@@ -1181,11 +1197,11 @@ Lemma 4.1, lines 291–408; CN23, Propositions 5.6.2–5.6.3, lines 4334–4390;
 - For `Q = ∅` the maps are those of the first construction, with `Δ_∅ = 1`.
 - The exclusion `Q ∩ S^c = ∅` is needed. A place `w = v^c` with `v ∈ P`, `q_w = 11` and
   `ρ̄(Frob_w) = diag(2, 3)` over `𝔽₅` meets the Taylor–Wiles conditions (`11 ≡ 1 mod 5`, determinant
-  `6 ≡ 1`, distinct eigenvalues), but putting it into `Q` replaces `PGL₂(O_{F_w})` at `w` by the
-  Iwahori subgroup, of index `q_w + 1 = 12`, and its diamond kernel, of index `12 · 5 = 60`; over
-  `𝔽₅[ε]/(ε²)` the inertia image `diag(1 + ε, 1 − ε)` has determinant `1 − ε² = 1`, commutes with
-  `diag(2, 3)` and equals its eleventh power `diag(1 + 11ε, 1 − 11ε)`, so `𝒮^P_{χ,Q}` would contain a
-  lift ramified at a place of `P^c`.
+  `6 ≡ 1`, distinct eigenvalues), but putting it into `Q` replaces `PGL₂(O_{F_w})` at `w` by
+  `K^P_0(Q)_w = Iw_w`, of index `q_w + 1 = 12`, and `K^P_1(Q)_w`, of index `12 · 5 = 60` (`#k_w× = 10`,
+  so `Δ_w` has order five); over `𝔽₅[ε]/(ε²)` the inertia image `diag(1 + ε, 1 − ε)` has determinant
+  `1 − ε² = 1`, commutes with `diag(2, 3)` and equals its eleventh power `diag(1 + 11ε, 1 − 11ε)`, so
+  `𝒮^P_{χ,Q}` would contain a lift ramified at a place of `P^c`.
 
 ### 5.4 The prepared protected lifting theorem
 
@@ -1248,16 +1264,20 @@ is a finite solvable Galois CM extension `F'/F`, linearly disjoint over `F` from
 `ρ̄`, in which every place of `P ∪ P^c` of odd residue characteristic splits completely and every place
 of `P ∪ P^c` above two has ramification index dividing four, such that `F'`, `S' = S'₅ ⊔ R' ⊔ P'` with
 `P'` the places above `P`, the base change `π_{F'}` and `ρ|G_{F'}` satisfy §5.1 and the hypotheses of
-§5.4. The route is the preparation of CrystallineLocalGlobalCompatibilityCM §9.11 (choice of test
-places; prescribed completions over `F⁺` through GL2ModularityLifting §1.7 and
-PotentialAutomorphyInfrastructure §2.5; the five-adic degree condition; then the three imaginary
-quadratic composita), whose construction does not use clause (15). Write `F₁` for the CM field reached
-before the degree condition and `F₁⁺` for its maximal totally real subfield. The degree condition comes
-from the composite `F₁E` with a totally real Galois extension `E/ℚ` of degree eight with solvable group,
-linearly disjoint from a finite Galois extension of `ℚ` containing `F₁` and the field cut out by `ρ̄`,
-in which five and every rational prime under a test place split completely
-(PotentialAutomorphyInfrastructure §2.5 applied over `ℚ` with the real place split gives a cyclic one;
-CaptainSude26 lines 582–588 uses a multiquadratic one). By linear disjointness
+§5.4. The route is the preparation of CrystallineLocalGlobalCompatibilityCM §9.11 (choice of its finite
+set `V` of auxiliary places of `F`: places prime to `10` at which `ρ` and `π` are unramified, containing
+every place above one rational prime witnessing the decomposed genericity of `ρ̄` and, for each
+extension `L' ≠ F` of `F` inside the field cut out by `ρ̄` (here `F(ζ₅) = F`), a place that does not
+split completely in `L'`, so that a finite Galois `F'/F` in which `V` splits completely keeps
+`ρ̄(G_{F'}) = ρ̄(G_F)` and that witness (CN23, lines 4455–4463); prescribed completions over `F⁺`
+through GL2ModularityLifting §1.7 and PotentialAutomorphyInfrastructure §2.5; the five-adic degree
+condition; then the three imaginary quadratic composita), whose construction does not use clause (15).
+Write `F₁` for the CM field reached before the degree condition and `F₁⁺` for its maximal totally real
+subfield. The degree condition comes from the composite `F₁E` with a totally real Galois extension
+`E/ℚ` of degree eight with solvable group, linearly disjoint from a finite Galois extension of `ℚ`
+containing `F₁` and the field cut out by `ρ̄`, in which five and every rational prime under a place of
+`V` split completely (PotentialAutomorphyInfrastructure §2.5 applied over `ℚ` with the real place
+split gives a cyclic one; CaptainSude26 lines 582–588 uses a multiquadratic one). By linear disjointness
 `[F₁⁺E:ℚ] = 8[F₁⁺:ℚ]`, and as `E ⊗ ℚ₅ ≅ ℚ₅⁸`, above each five-adic place `u` of `F₁⁺` lie eight
 places `w` of `F₁⁺E`, each with `(F₁⁺E)_w = (F₁⁺)_u`; so `[(F₁⁺E)_w:ℚ₅] ≤ [F₁⁺:ℚ] = [F₁⁺E:ℚ]/8`. The
 final field `F'` is CM and contains the totally real `F₁⁺E`, so `F₁⁺E ⊆ F'⁺`; for a place `w'` of `F'⁺`
@@ -1522,26 +1542,41 @@ For (a), choose a witness `q₀ > 5` for `ρ̄` (witnesses avoid any finite set:
 AutomorphicGaloisRepresentationsPartII AG2.7). Every conclusion of `solvable_preparation` other than
 linear disjointness is a condition on the completions of `L` at the finitely many places above `2`, `3`,
 `5` and `q₀`; realize them, together with the splitting at `Σ`, as completions of a totally real soluble
-extension of `F⁺`. At a place `u` of `F⁺` above `2`, `3` or `5` prescribe a finite Galois extension of
-`F⁺_u` containing, for every place `w` of `F` above `u`, the field `F_w`, the field cut out by
-`ρ̄|G_{F_w}`, above five the five-division fields over `F_w` of one good ordinary and one good
-supersingular curve (EllipticCurves Layer 4), and above two `√−1`. At the places of `F⁺` above `q₀` and
-below `Σ` prescribe the trivial extension, and `ℝ` at every real place; the places below `Σ` have
-residue characteristic other than `2, 3, 5`, and where one lies above `q₀` both prescriptions are
-trivial, so the prescriptions are compatible. GL2ModularityLifting §1.7 (CHT08, Lemma 4.1.2) gives a
-soluble Galois `L⁺/F⁺` with these completions, linearly disjoint over `F⁺` from the Galois closure of
-`F_avoid` over `F⁺`; `L⁺` is totally real, so `L = L⁺F` is a solvable Galois CM extension of `F` with
+extension of `F⁺`. First fix a target completion `N_u` for each place `u` of `F⁺` that carries a
+condition. If `u` has residue characteristic `2`, `3` or `5`, let `N_u/F⁺_u` be a finite Galois
+extension containing, for each place `w | u` of `F`, the field `F_w` and the fixed field of the kernel
+of `ρ̄|G_{F_w}`; containing `√−1` if `u | 2`; and, if `u | 5`, containing over each such `F_w` the
+five-division fields of one elliptic curve with good ordinary and one with good supersingular reduction
+(EllipticCurves Layer 4). The Galois closure over `F⁺_u` of the compositum of these finitely many finite
+extensions is such an `N_u`. If `u` lies below a place of `Σ` or above `q₀`, let `N_u = F⁺_u`; if `u` is
+real, let `N_u = ℝ`. Each `u` receives one value: the places below `Σ` and those above `q₀` have residue
+characteristic prime to `30`, and a place of both kinds receives `F⁺_u` twice. Write `F̃_avoid` for the
+Galois closure of `F_avoid` over `F⁺`; it contains `F`. GL2ModularityLifting §1.7 (CHT08, Lemma
+4.1.2), over the base `F⁺` with the local data `N_u` and the avoided field `F̃_avoid`, provides a soluble
+Galois `L⁺/F⁺`, linearly disjoint from `F̃_avoid` over `F⁺`, whose completion at every place above
+each such `u` is `N_u`. All its real completions are `ℝ`, so `L⁺` is totally real; as `F` is totally
+imaginary, `L⁺ ∩ F = F⁺`, so `L = L⁺F` is a totally imaginary quadratic extension of `L⁺`, hence CM, and
+`L/F` is Galois with group `Gal(L⁺/F⁺)`, which is soluble. By the linear disjointness,
+`Gal(L⁺F̃_avoid/F⁺) = Gal(L⁺/F⁺) × Gal(F̃_avoid/F⁺)`, in which the subgroups fixing `L` and `F̃_avoid`
+generate the subgroup `Gal(L⁺/F⁺) × Gal(F̃_avoid/F)` fixing `F`; so `L ∩ F̃_avoid = F` and
 `L ∩ F_avoid = F`. For `w | u` and `w' | w`, `L_{w'}` is the compositum of `L⁺_{u'}` and `F_w`: above
-`2, 3, 5` this is the prescribed field, which contains `F_w`, so the place of `L⁺` splits in `L` and
+`2, 3, 5` this is `N_u`, which contains `F_w`, so the place of `L⁺` splits in `L` and
 `ρ̄|G_{L_{w'}}` is trivial; above `q₀` and `Σ` it is `F_w`. Since `q₀` splits completely in `F`, it
 splits completely in `L` and remains a witness for `ρ̄|G_L` (AutomorphicGaloisRepresentationsPartII
 AG2.7). For (b), run the parent's proof of `switch_five` with (a) in place of `solvable_preparation`:
 `Y_ρ̄` is an open of `ℙ¹` over `F` (the parent's §0.2 `fixed_pairing_twist_rational`), hence over `L`;
 the parent's §0.3 `hilbert_local_selection`, which uses of `L` only the conclusions of
 `solvable_preparation` and accepts finitely many nonempty opens, is applied over `L` with its conditions
-for `seed_modular` and for the five-adic partition and with `Ω_w` at every place of `L` above `w ∈ Σ`,
-places of residue characteristic other than `2, 3, 5` and so distinct from those carrying the other
-conditions. The selected `A'` is modular by the parent's §0.3 `seed_modular`, and is non-CM because it
+for `seed_modular` and for the five-adic partition and with `Ω_w` at every place of `L` above `w ∈ Σ`.
+The places above `Σ` have residue characteristic prime to `30`, so none of them carries a Tate,
+discriminant or partition condition, all of which sit above `2`, `3` and `5`. The conditions for
+`seed_modular` include one further family, away from `2, 3, 5`: the decomposed genericity of the
+mod-three representation that `seed_modular` assumes is obtained by prescribing good reduction, with
+one fixed reduction over `𝔽_l`, at every place above an auxiliary rational prime `l > 5` (AKT23,
+Proposition 9.13, pp. 79–80, lines 3700–3706). Every sufficiently large prime `l` split completely in a
+fixed finite extension serves, so `l` is chosen after the other prescribed places and prime to all of
+them, in particular to the residue characteristics of `Σ` (AKT23, Lemma 9.7 and its proof, p. 75,
+lines 3488–3510). The selected `A'` is modular by the parent's §0.3 `seed_modular`, and is non-CM because it
 is a Tate curve above two while a CM elliptic curve has potentially good reduction everywhere
 (ShimuraVarieties §5.6). (CaptainSude26, Proposition 5.2 and proof, lines 538–603, for the prescriptions
 over `F⁺` at lines 549–563; CN23, Proposition 6.1.5 and proof, lines 4574–4611; CHT08, Lemma 4.1.2, p.
@@ -1560,6 +1595,16 @@ Layer 4; ShimuraVarieties §5.6; AutomorphicGaloisRepresentationsPartII AG2.7.
   ramification index five above `v` would make residual inertia there generated by a power of
   `U⁵ = 1` (§3.3, fourth Check), whereas under (a) `L_{w'} = F_v`.
 - A place of `Σ` above `2` would conflict with the mandatory Tate condition there; `Σ` avoids `2, 3, 5`.
+- A residue characteristic prime to `30` does not by itself separate `Σ` from every condition of the
+  selection. The mod-three seed prescribes good reduction, with a fixed reduction, at every place above
+  an auxiliary prime `l > 5` split completely in a finite extension `M` of `L` containing `ζ_{5⁷}` and
+  the field cut out by `ρ̄|G_L`, so `l ≡ 1 mod 5⁷` (AKT23, lines 3493 and 3507). If `ρ̄` is unramified at
+  the places of `Σ` and their residue characteristic `r` splits completely in `M`, then `r` meets every
+  requirement on `l` except primality to `Σ`; with `l = r`, an open `Ω_w` of curves of multiplicative
+  reduction and the good-reduction condition would fall on the same place, two disjoint opens, and the
+  selection would have no point. Choosing `l` prime to `Σ` excludes this. In §7.5 the clash cannot
+  arise: `ρ̄ = A_t[5]|G_L` is ramified at the places above `v | q` (§7.3), so `q` does not split
+  completely in `M`; and for `q = 11`, `11 ≢ 1 mod 5⁷` as well.
 - Trivial completion at the place `u` of `F⁺` below `w ∈ Σ` gives `L_{w'} = F_w` whether `u` splits in
   `F` (then `L_{w'} = F⁺_u = F_w`) or not (then `L⁺_{u'} = F⁺_u` and `F` supplies the quadratic
   extension `F_w`), so `Ω_w` is meaningful at every `w' | w`; an unramified quadratic completion of `L`
@@ -1575,10 +1620,15 @@ Let `K` be a CM field with `μ₅ ⊂ K` and `E/K` geometrically non-CM, with `p
 `t ∈ U(K)` lying, in addition, in the opens of §7.2 at the places above `q`; for every such `t`: (a) the
 mod-five representation of `A_t` has image conjugate to `SL₂(𝔽₅)` over `K` and is decomposed generic;
 (b) `H¹(A_t)` is protected at `v` and unramified at `v^c`; (c) `A_t` is modular over `K`. For (a): by
-the switch-parameter property (S3) the image of `G_D` contains the geometric monodromy, which for
-`(m, ℓ) = (3, 5)` contains the opposite transvections `[[1, ±3],[0,1]]` and `[[1, 0],[±3, 1]]` (the
-parent's §7.1 with coefficient `3`); they generate `SL₂(𝔽₅)`, and `det = ε̄₅` is trivial on `G_K`;
-genericity descends from `F` by Theorem 1.2. Part (b) is §7.3. For (c): apply §7.4(b) to `ρ̄ = A_t[5]`
+the switch-parameter property (S3), the image of `G_D` on the reduction of `V_η` modulo five contains
+the geometric monodromy, which for `(m, ℓ) = (3, 5)` contains the opposite transvections
+`[[1, ±3],[0,1]]` and `[[1, 0],[±3, 1]]` (the parent's §7.1 with coefficient `3`), and these generate
+`SL₂(𝔽₅)`. The parent's §4.2 `cubic_character_elliptic` identifies `V_η` with `H¹(A_t)|G_F`, whose
+reduction modulo five is the dual of `A_t[5]|G_F` (Conventions); `g ↦ (gᵀ)⁻¹` maps `SL₂(𝔽₅)` onto
+itself, so the image of `G_K ⊇ G_D` on `A_t[5]` contains `SL₂(𝔽₅)`, and it lies in `SL₂(𝔽₅)` because
+`det = ε̄₅` is trivial on `G_K`. In the same way (S2) gives the decomposed genericity of the reduction
+of `V_η` over `F`, which passes to `A_t[5]|G_F` through that identification and the dual, and descends
+from `F` to `K` by Theorem 1.2. Part (b) is §7.3. For (c): apply §7.4(b) to `ρ̄ = A_t[5]`
 with the partition given by the potential reduction types of `A_t` above five, `F_avoid` containing the
 field cut out by `ρ̄`, and `Σ` the places of `K` above `q`, with the open of curves of split
 multiplicative reduction whose minimal discriminant has valuation prime to five at `v` and the open of
@@ -1592,9 +1642,10 @@ the places above `v`: clause (4) fails, the protected conditions hold by §7.3 a
 because `A_t` is non-CM. (CaptainSude26, Proposition 2.3(3)–(4), lines
 120–125, and Corollary 5.3, line 604.)
 
-*Needs:* §§7.2, 7.3, 7.4, 6.2; Theorem 1.2; EllipticCurveModularityImaginaryQuadratic §§6.5, 7.1, 7.2,
-7.4, 0.3 (`auxiliary_local_types`, `modular_elliptic_all_coefficients`); PotentialAutomorphyInfrastructure
-§2.3; AutomorphicGaloisRepresentationsPartII AG2.7.
+*Needs:* §§7.2, 7.3, 7.4, 6.2; Theorem 1.2; EllipticCurveModularityImaginaryQuadratic §4.2
+(`cubic_character_elliptic`), §§6.5, 7.1, 7.2, 7.4 and §0.3 (`auxiliary_local_types`,
+`modular_elliptic_all_coefficients`); PotentialAutomorphyInfrastructure §2.3;
+AutomorphicGaloisRepresentationsPartII AG2.7.
 
 **Checks.**
 
@@ -1702,15 +1753,19 @@ versions below, with printed pages where given.
   pp. 27–28. The parent's source.
 - **CN23.** Ana Caraiani and James Newton, *On the modularity of elliptic curves over imaginary quadratic
   fields*, arXiv:2301.10509v3. Theorem 4.2.15, p. 71 (line 3749); Theorem 5.2, pp. 73–74 (line 3849);
-  §5.6 data (lines 4226–4260); Lemma 5.6.4, p. 85 (line 4397);
+  §5.6 data (lines 4226–4260); the Taylor–Wiles levels in `PGL₂` (lines 4362–4368); Lemma 5.6.4,
+  p. 85 (line 4397);
   Proposition 5.6.1 (line 4261); Propositions 5.6.2–5.6.3 (lines 4334–4390); the use of
   Taylor–Wiles primes (line 4404); end of the proof of Theorem 5.2 (lines 4433–4509); Theorem 6.1, p. 87
   (line 4513); Lemma 6.1.3, p. 88 (line 4545); Lemma 6.1.4, p. 88 (line 4562); Proposition 6.1.5,
   pp. 88–89 (line 4574).
 - **AKT23.** Patrick B. Allen, Chandrashekhar Khare and Jack A. Thorne, *Modularity of `GL₂(𝔽_p)`-representations
-  over CM fields*, arXiv:1910.12986v2. Lemma A.5, p. 86 (line 3979), replaced in this case by §4.2.
+  over CM fields*, arXiv:1910.12986v2. Lemma A.5, p. 86 (line 3979), replaced in this case by §4.2;
+  Lemma 9.7 and its proof, p. 75 (lines 3470–3510), and Proposition 9.13 and its proof, pp. 79–80
+  (lines 3684–3716), for the auxiliary prime of the mod-three seed in §7.4.
 - **ACC23.** P. B. Allen et al., *Potential automorphy over CM fields*, arXiv:1812.09999v2. §3.1 setting,
-  pp. 57–58 (lines 2309–2345); Theorem 3.1.1, p. 58 (line 2346); §6.4.1 (patching data); §6.5.12,
+  pp. 57–58 (lines 2309–2345); Theorem 3.1.1, p. 58 (line 2346); §6.4.1 (patching data); §6.5, p. 169
+  (the levels `K₀(Q) ⊇ K₁(Q)` at Taylor–Wiles places, lines 6819–6824); §6.5.12,
   p. 178 (auxiliary imaginary quadratic fields, lines 7163–7187).
 - **CHT08.** Laurent Clozel, Michael Harris and Richard Taylor, *Automorphy for some l-adic lifts of
   automorphic mod l Galois representations*, Publ. Math. IHÉS 108 (2008). Lemma 4.1.2, p. 116.
