@@ -302,6 +302,7 @@ ModularityAndLanglandsExtensionsPartII
 GSp4NonregularModularityLifting
 EllipticModularityEffectiveComparisons
 ArithmeticFuchsianGroups
+QuaternionArithmetic
 TeichmullerGeometry
 PositiveMass
 HodgeClassesForJacquetLanglands
