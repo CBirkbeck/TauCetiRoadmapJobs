@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DeligneWeightsAndPurity~8",
+  "head": "82ab35302c90fb333ffc9c7d692d93dd0440ba34",
+  "pr": 929,
+  "folder": "DeligneWeightsAndPurity",
+  "date": "2026-11-16",
+  "findings": 5,
+  "blocking": 3,
+  "notes": "Full review. Seeded sample of 15 targets checked against WII, WI, Lau, AV, BFP, KatzW and Yu (53 locators; 3 wrong pages or items, 1 unsupported statement). Findings: R01 P1 (2.15 (i) direct-sum identity false), R02 P2 (8.9-8.10 translate WII (6.2.5)), R03 P2 (5.12 drops the hypothesis of WII (1.8.5)), R04 P3 (8.24 source), R05 P3 (locators). Gate passes (all scanners zero, build ok); depcheck 0 problems; Suggested.lean elaborates with 5 sorry warnings; one-tactic probe closes 0 of 5; FourierDeligneTransform contract resolved at its open head; description agrees with the head.",
+  "text": "337fd439e8bec920"
+ }
+}
