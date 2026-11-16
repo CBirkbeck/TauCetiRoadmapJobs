@@ -127,8 +127,11 @@ It leaves to named owners, never planned again here; the sections a target uses 
   `TauCeti.reductiveCommHopfAlgProperty_iff_linearlyReductive`), the convolution groups of points
   (`AlgHom.convGroupOfSemiring`, functorial by `AlgHom.mapValue`) with their point topology
   (`TauCeti.PointTopology.instTopologicalSpaceWithConv`, a topological group by
-  `TauCeti.PointTopology.isTopologicalGroup` and locally compact for finite type over a locally
-  compact ring by `TauCeti.PointTopology.locallyCompactSpace_of_finiteType`), the Lie algebra as
+  `TauCeti.PointTopology.isTopologicalGroup` for a commutative topological semiring `R` of values,
+  and locally compact for a finite-type algebra over a commutative ring and a commutative
+  topological ring `R` of values that is T1 and locally compact
+  (`[IsTopologicalSemiring R] [T1Space R] [LocallyCompactSpace R]`) by
+  `TauCeti.PointTopology.locallyCompactSpace_of_finiteType`), the Lie algebra as
   counit derivations with the adjoint action of the points (`Derivation.adRepresentation`), the
   points of Weil restrictions (`TauCeti.Algebra.WeilRestriction.pointsMulEquiv`), and closed
   connected surfaces (`TauCeti.IsClosedConnectedSurface`): Tau Ceti at the pin;
@@ -375,7 +378,10 @@ reductive group is connected reductive, `Algebra/AlgebraicGroup/Reductive/Image.
 convolution) and `AlgHom.mapValue` (functoriality in the value algebra,
 `Algebra/AlgebraicGroup/FunctorOfPoints.lean`); `TauCeti.PointTopology.isTopologicalGroup` and
 `TauCeti.PointTopology.locallyCompactSpace_of_finiteType` (the points with the point topology form a
-topological group, locally compact for a finite-type algebra and a locally compact value ring);
+topological group for a commutative topological semiring of values, locally compact for a
+finite-type algebra over a commutative ring and a commutative topological value ring `R` that is T1
+and locally compact, `[IsTopologicalSemiring R] [T1Space R] [LocallyCompactSpace R]`,
+`Topology/Algebra/PointTopology/Group.lean` and `Topology/Algebra/PointTopology/Basic.lean`);
 `TauCeti.Bialgebra.CounitAlgebra` and `TauCeti.Bialgebra.CounitAlgebra.algEquivSelf` (the value
 algebra regarded as a module over the coordinate algebra through the counit), and
 `Derivation.adRepresentation` (the adjoint action `g ⋆ d ⋆ g⁻¹` of the points on the counit
@@ -1559,11 +1565,23 @@ with `G = K exp(𝔭)`. In an orthonormal basis of `V`, `G` is a global matrix m
 Layer 9 with covering `π = id`: it is closed in `GL(V)`, transpose-stable because
 `(k exp X)ᵀ = exp(X) k⁻¹` for `k ∈ K`, `X ∈ 𝔭`, and has finitely many components, being the image of
 `K × 𝔭` with `K = G ∩ O(V)` compact and `𝔭` connected; its Cartan involution `g ↦ (gᵀ)⁻¹` has fixed
-group `K` and `−1`-eigenspace `𝔭` on `𝔤`, which is how Layer 9 gives `G = K T K`. For an abelian `T`
-the orbits are coordinate tori and closed orbits are separated by explicit invariants, monomials with
-nonnegative real exponents each supported on one sign component of a coordinate stratum
-(BohmLafuente2021 Lemma 4.6, line 364, and lines 382–386), which gives (v) through Urysohn's lemma on
-their joint image. A non-closed orbit `G v` has a closed invariant subset `Y` of its closure disjoint from
+group `K` and `−1`-eigenspace `𝔭` on `𝔤`, which is how Layer 9 gives `G = K T K`. For an abelian `T`,
+choose an orthonormal basis `e_1, …, e_N` of `V` of simultaneous eigenvectors of `𝔱` and write
+`α_i(λ)` for the eigenvalue of `λ ∈ 𝔱` on `e_i`, a linear form on `𝔱`; then `exp(λ)` multiplies the
+`i`-th coordinate by `e^{α_i(λ)} > 0`, so a `T`-orbit is the image of the vector group `𝔱` under
+`λ ↦ exp(λ) v`, homeomorphic to a real vector space through the logarithms of the absolute values of
+its nonzero coordinates, and it keeps the sign of every coordinate (BohmLafuente2021 lines 261–267).
+Closed `T`-orbits are separated by finitely many continuous `T`-invariant functions: for a nonempty
+set `I` of coordinates and exponents `w_i > 0` for `i ∈ I` with `Σ_{i ∈ I} w_i = 1` and
+`Σ_{i ∈ I} w_i α_i = 0`, the function equal to `∏_{i ∈ I} v_i^{w_i}` on the vectors whose
+coordinates in `I` are all positive and to `0` elsewhere, together with its composites with the
+coordinate sign changes (BohmLafuente2021 lines 353–364, Lemma 4.6, lines 382–386, and Proposition
+4.8, line 396). The exponents must be positive on `I` for continuity and must satisfy
+`Σ w_i α_i = 0` for invariance. Their joint map `Φ : V → ℝ^L` is continuous, `T`-invariant and
+satisfies `‖v‖ ≤ C ‖Φ(v)‖` on the minimal vectors of `T` (Lemma 5.3, line 437); since every
+`T`-orbit closure contains a closed `T`-orbit (Corollary 4.2, line 300), `Φ` maps two disjoint closed
+`T`-invariant subsets of `V` to disjoint closed subsets of `ℝ^L`, and Urysohn's lemma on `ℝ^L` gives
+(v) (proof of Corollary 5.5, lines 448–460). A non-closed orbit `G v` has a closed invariant subset `Y` of its closure disjoint from
 it; separating `Y` from the `T`-orbits of `K v` and using compactness of `K` produces `α ∈ 𝔭` such
 that `lim_{t→∞} exp(tα) v` exists and lies in `Y`, hence outside `G v`. Convexity then shows that a
 minimal vector cannot have a non-closed orbit, which is (ii). For (iii) the same argument is run with
@@ -1585,7 +1603,14 @@ is not closed. The same separation gives the uniqueness in (iv).
   second, it is continuous because both formulas tend to `1/2` as `xy → 0`, and it is constant on the
   orbits `(λx, λ⁻¹y)`, which preserve `xy` and each quadrant. No function of the invariant `xy` alone
   separates them, both branches lying in `{xy = 1}`; a statement restricted to maximal abelian `𝔱`
-  would not cover this case of BohmLafuente2021 Corollary 5.5.
+  would not cover this case of BohmLafuente2021 Corollary 5.5. In the sketch's terms the weights are
+  `α_1(s·diag(1, −1)) = s` and `α_2 = −α_1`; a single coordinate admits no exponent (`w_1 α_1 = 0`
+  forces `w_1 = 0`), matching the non-closed half-axis orbits, and `I = {1, 2}` forces
+  `w = (1/2, 1/2)`. The resulting functions `(xy)^{1/2}` on the open first quadrant and its composite
+  with `(x, y) ↦ (−x, −y)`, each zero elsewhere, take the values `(1, 0)` and `(0, 1)` on the two
+  branches. The orbit of `(1, 1)` is `{(e^s, e^{−s})}`, a line rather than a torus; the exponent
+  `(1, 0)` on `I = {1, 2}`, that is `x` on the open first quadrant and `0` elsewhere, is neither
+  `T`-invariant nor continuous at `(1, 0)`.
 - `SL_n(ℝ)` on `M_n(ℝ)` by conjugation: an orbit is closed exactly when the matrix is diagonalizable
   over `ℂ`, and `[[1,1],[0,1]]` has the closed orbit of the identity in its closure
   (BohmLafuente2021 lines 179–193).
