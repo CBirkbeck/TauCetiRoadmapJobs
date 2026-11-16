@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RobustnessCertificates~1",
+  "head": "98e5d51c41dbf31847bd51049ef96689c0addd6c",
+  "pr": 2426,
+  "folder": "RobustnessCertificates",
+  "date": "2026-11-16",
+  "findings": 11,
+  "blocking": 3,
+  "notes": "Full review. Seeded sample: all 14 sections (1.1-6.2) recomputed, with the 6.2 radii, the Schur matrix diag(1,0) and the product-point feasibility checked by hand; 11 locators read in 6 sources (arXiv texts of Tsuzuku et al., Fazlyab et al. v2, Gowal et al., Wong-Kolter, Zhang et al., Szegedy et al.); Megretski-Rantzer not readable. Gate FAIL (imports, mathlib-subimports, no-import-mathlib, outside-folder), build passes; elaboration of the head and of a copy with the single Mathlib import gives sorry as the only warning; depcheck 0 problems. One-tactic probes close 5 declarations (padding). Blocking: an executable checker in 6.1, the multilayer LipSDP headline neither stated nor named, missing l <= u / 1 <= L hypotheses. Overlap: RandomizedSmoothing, StructuredBlockOperators, SpectralSteepestDescent, Neuromanifolds read; nothing shared.",
+  "text": "d0e66835d3794336"
+ }
+}
