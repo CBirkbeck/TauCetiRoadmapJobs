@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GrossZagierAndArithmeticHeightsPartII~1",
+  "head": "eb248529605dc3f99a62bacbb34382aef4de720b",
+  "pr": 2457,
+  "folder": "GrossZagierAndArithmeticHeightsPartII",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "Full review. Seeded sample: all 15 targets (0.1, 0.4, 0.8, 2.2, 2.3, 2.7, 5.4, 5.6, 9.5, 9.8, 12.6, 12.6a, 13.5, 13.6, 14.1) checked against the cached LZ, Z, LL2, Zha12, YZZ09, KM90, VZ84, Bor98, Bor99, MZ, K and Mih16 texts (79 locators); 2 locator defects (R02 at LL2 Lemma 2.32 type 6, R03 at Zha12 p. 206). Adversarial table: 24 rows with computed values; about 70 README Checks recomputed, all hold. Gate rerun: every check 0, OK; depcheck: 261 roadmaps, 2526 edges, 0 problems. lake env lean on Suggested.lean exits 0 with no warning and 0 declarations; no headline statable at the pins. 162 cross-roadmap section citations resolved; 8 gap slugs match plan.json. Blocking: R01 (P2), GSpin Kudla divisors and generic-fibre orthogonal Borcherds products also owned by ComplexMultiplicationAndExplicitReciprocityPartII sections 4.2-4.2a. P3: R02, R03, R04 (PR description says the Lean states definitions and theorems; it declares none).",
+  "text": "b1f53ec2d13262d0",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Two owners for GSpin Kudla divisors and orthogonal Borcherds products over ℚ",
+    "where": "ComplexMultiplicationAndExplicitReciprocityPartII §§4.2–4.2a must cite GrossZagierAndArithmeticHeightsPartII §12.6a(e)",
+    "raised": "PRREVIEW-GrossZagierAndArithmeticHeightsPartII~1"
+   }
+  ]
+ }
+}
