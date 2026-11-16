@@ -1976,12 +1976,6 @@
       "supplier": "AutomorphicLFunctionsAndLocalFactors",
       "section": "AL.3, Hecke, eigensystem and Rankin–Selberg data",
       "needs": "For unitary cuspidal π of GL_m over ℚ and each nonprincipal even character χ of prime conductor q>2 with q∤fπ, realize the twisted self-pair `rsDatum (π⊗χ) π∨` as an `LFunctions.AnalyticLFunctionData` record of TauCetiRoadmap.LFunctions Layer 0 meeting the hypotheses of ZerosOfLFunctions Layer 3, item 3: Dirichlet agreement with coefficients b(n)χ(n), empty polar divisor, finite-order entire completion, functional equation against its dual record with conductor fq^(m²) and root number τπχ(f)τ(χ)^(m²)(fq^(m²))^(−1/2), and the average coefficient bound."
-    },
-    {
-      "slug": "additive-character-sheaf-weight",
-      "supplier": "DeligneWeightsAndPurity",
-      "section": "7.12",
-      "needs": "For every finite field of characteristic p and every nontrivial additive character valued in a cyclotomic coefficient field, provide the rank-one Artin–Schreier sheaf on the affine line, pure of weight zero, whose geometric-Frobenius trace on every finite extension is the character composed with field trace, with tensor products corresponding to addition of phases."
     }
   ],
   "sourceIssues": [
