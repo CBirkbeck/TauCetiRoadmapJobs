@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BallQuotientsAndComplexHyperbolicLattices~3",
+  "head": "a4e5deee8f25753ecab7ccf85cbca2ba5de001eb",
+  "pr": 2425,
+  "folder": "BallQuotientsAndComplexHyperbolicLattices",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 1,
+  "notes": "Full review of an unchanged head (the previous review listed no finding). One finding, R01 (P2): README line 819 and the Summary claim Borel algebraicity for every variety while section 10.3 proves it for smooth V. Checked: the 15 sampled targets against 36 locators in the 8 cached texts; all 64 library locators at the pins; every cross-roadmap section and declaration of 24 roadmaps on main or at the open heads; both declared ComplexComparisonPartII gaps against design/plan.json and the supplier; the gate (all checks pass, build=0) and the dependency check (0 problems); lake env lean on Suggested.lean (7 sorry warnings only); #check comparison of 16 declarations and the one-tactic probe (all 7 theorems stay open); every README Check recomputed; wording scan and contents comparison with BaldiUllmo2023 (independent). One source error recorded (Mok2012 equations (5)-(6)). Uncertified or waived texts listed under Not verifiable.",
+  "text": "ef1f16e59b7248eb"
+ }
+}
