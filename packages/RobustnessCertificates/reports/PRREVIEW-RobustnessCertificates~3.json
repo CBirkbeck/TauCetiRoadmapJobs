@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RobustnessCertificates~3",
+  "head": "dfe018c945b11546fb7c5a82d35ec0780b15863f",
+  "pr": 2426,
+  "folder": "RobustnessCertificates",
+  "date": "2026-11-16",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 50 changed lines since 713a2ad (README only). All seven previous findings R01-R07 repaired, no new problem introduced. Checked: the changed passages of 1.3, 4.2, 5.1, 5.2, 6.1 and the supplier contract, with computed instances (affine radius at (1,0), (0,1), f=(0,0), constant, k=1; crownRelax on five inputs; LDL on a singular and a definite matrix); the changed Zhang locator against the text (Table 3 p. 5, section 3.2 p. 6); Mathlib LDL.lower_conj_diag and LDL.isLowerTriangular_lower at the pin; the RandomizedSmoothing deferral at its open head; the pull-request text against the head. Gate passes (all checks 0, build 0); depcheck 0 problems; elaboration gives 17 sorry warnings only.",
+  "text": "d0e66835d3794336"
+ }
+}
