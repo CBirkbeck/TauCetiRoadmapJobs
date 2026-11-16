@@ -1795,6 +1795,18 @@
    "needs": "The Borel-Tits theorem placing a closed unipotent subgroup and its normalizer in a parabolic whose unipotent radical contains it.",
    "supplier": "ReductiveGroups",
    "section": "Layer 7"
+  },
+  {
+   "slug": "adjoint-kernel",
+   "title": "The kernel of the adjoint representation is the centre",
+   "neededBy": [
+    "6.3",
+    "6.7"
+   ],
+   "detail": "For a connected affine group G of finite type over a field of characteristic zero, ker(Ad : G -> GL(Lie G)) = Z(G). Used in the route of 6.3 (R_u(Z^0) acts trivially on Lie G, hence lies in the centre, which has no nontrivial unipotent subgroup) and in the Layer 6 examples. Connectedness is needed: for O_2 the kernel of Ad is SO_2.",
+   "needs": "A proof that the kernel of the adjoint representation of a connected affine group of finite type over a field of characteristic zero is its centre.",
+   "supplier": "ReductiveGroups",
+   "section": "Layer 2"
   }
  ]
 }
