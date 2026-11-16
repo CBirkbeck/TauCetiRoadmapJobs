@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RandomizedSmoothing~3",
+  "head": "7419977a27c37295c1c3dbbfa6adc34ffb30942b",
+  "pr": 2428,
+  "folder": "RandomizedSmoothing",
+  "date": "2026-11-16",
+  "findings": 10,
+  "blocking": 1,
+  "notes": "Full re-review. Previous R01-R13 all repaired. Seeded sample 1.1-5.3 (15 targets) computed, table in the report; 13 source locators checked against CohenRosenfeldKolter2019 and SalmanEtAl2019 (both fetched through the sources service, which recorded them in the package sources.toml); Clopper-Pearson 1934 not readable. 12 pinned declarations opened; 3 cross-roadmap citations resolved. Gate passes (build included); depcheck 0 problems; Suggested.lean elaborates with sorry only; one-tactic probe closes none of the 14 theorems. One P2 (3.3 upper bound false at p = 1), nine P3 (Checks, Needs line, contract hypotheses, a pull-request link, heading order, stale description).",
+  "text": "95b1b4a4ffc34117"
+ }
+}
