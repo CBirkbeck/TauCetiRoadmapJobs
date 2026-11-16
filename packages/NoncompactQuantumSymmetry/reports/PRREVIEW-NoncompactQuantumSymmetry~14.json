@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NoncompactQuantumSymmetry~14",
+  "head": "948432f859330e4612a4b3a623ef98d535a579dc",
+  "pr": 1015,
+  "folder": "NoncompactQuantumSymmetry",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since 4e793e8. Gate passes (all counters 0, build=0 from the worker); depcheck 263 roadmaps, 2577 edges, 0 problems; Suggested.lean elaborates with five sorry warnings only. Previous R01 repaired by the merge of #1137 into main (D1.BorelPrefix, D1.TwistedBorel, D4.Harmonic now on main); the description still calls #1137 and #1145 open suppliers (R01, P3, description only). Previous R02 (size) not repaired and not carried: QuantumFoundations #1771 consumes the M5/M6 tail and 11 READMEs on main are larger; recorded for the human reviewers. Supplier citations re-resolved on main 11d488ea; no source locator reopened because no passage changed.",
+  "text": "a1ad4f09c00ef7ae",
+  "carried": {
+   "from": "948432f859330e4612a4b3a623ef98d535a579dc",
+   "head": "73be053c01fe41be050219c67fc5fb9d07edf214",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "NoncompactQuantumSymmetry"
+   ]
+  }
+ }
+}
