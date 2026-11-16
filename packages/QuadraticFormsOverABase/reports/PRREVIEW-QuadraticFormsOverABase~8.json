@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuadraticFormsOverABase~8",
+  "head": "5626f462ca27560f6cb2b41c232ffe847100b5a8",
+  "pr": 1930,
+  "folder": "QuadraticFormsOverABase",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 17 changed lines since 7cf144f (the new Provenance section and the LeanPool reference). Checked: the previous report (no findings to carry); every claim of the new section against LeanPool at f8b9b72 (toolchain, Mathlib v4.35.0, licence, HasseMinkowski Main/HilbertSymbol/HasseInvariant/Prod), which found that the section omits CompositionAlgebrasOverRings, overlapping 0.2, 2.1 and 5 (R01), and that its sentence about forms over a base is false of HasseMinkowski/Prod.lean (R02); the description against this head, where the Layer 4/5/6 bullets, '5.3', the Stacks tags and the single unstated headline are stale (R03, R04); a 6-row adversarial table with computed values. Gate: worker gate all 0 with build=0; my rerun flags only NOT IN ORDER against the public order; depcheck with the candidate order: 235 roadmaps, 2239 edges, 0 problems; lake env lean on Suggested.lean exits 0 with 22 sorry-only warnings; nothing changed outside the folder against origin/main.",
+  "text": "eafe64e2ebf4054a"
+ }
+}
