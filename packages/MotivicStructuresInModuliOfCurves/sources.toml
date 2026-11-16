@@ -481,3 +481,21 @@ status = "certified"
 accessed = "2026-11-15"
 version_note = "arXiv v1; its numbering and pages are the ones cited"
 cited_for = ["0.6"]
+
+[[source]]
+id = "graber-pandharipande"
+authors = "T. Graber, R. Pandharipande"
+title = "Constructions of nontautological classes on moduli spaces of curves"
+year = 2001
+arxiv = "math/0104057v2"
+locator_scheme = "theorem"
+locator = "Theorem 2, p. 3"
+url = "https://arxiv.org/abs/math/0104057v2"
+fetched_from = "https://arxiv.org/pdf/math/0104057v2"
+fetched_at = "2026-11-16T04:05:05Z"
+sha256 = "65f84984b10957e440a0d6d78aface6c25e908dc687a3503c6ef8806a8e05c08"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-16"
+version_note = "arXiv v2"
+cited_for = ["4.3"]
