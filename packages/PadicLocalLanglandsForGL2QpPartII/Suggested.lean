@@ -12,15 +12,15 @@ headline theorem, and the carrier it lacks, is listed below; the README states e
   `V` of `Gal(ℚ̄_p/ℚ_p)`, the multiplicity of `V` in the p-adic étale cohomology
   `H¹_ét(M^p_{n,C}, L(1))` of the p-central Drinfeld tower at level `n` is `Π(V)* ⊗ JL(M)` when
   `V ≅ V_{M,ℒ}` for a supercuspidal type `M` in `ΦNᵖ_n` (that is, `p` acts trivially on `JL(M)`
-  and `JL(M)` is trivial on `K_D(n) = 1 + ϖ_D^n O_D`), `(St^cont ⊗ δ∘det)* ⊗ δ∘Nrd` when `V = δ`
-  is a character with `Sp ⊗ δ` in `ΦNᵖ_n` (that is, `δ(p)² = 1` and `δ∘Nrd` is trivial on
-  `K_D(n)`), and `0` otherwise: in particular `0` when `dim V ≥ 3`, and `0` for `V ≅ V_{M,ℒ}` with
-  `M` of level at most `n` and `p` acting nontrivially on `JL(M)`. Here `W*` is the continuous
-  dual of a Banach space `W` with the topology of uniform convergence on compact subsets, on which
-  `G` acts continuously; it does not act continuously on the norm dual. It lacks the Drinfeld
-  tower as a rigid analytic space over `ℚ_p` with its `GL₂(ℚ_p) × D^× × Gal`-action, étale
-  cohomology of rigid analytic spaces, admissible unitary Banach representations of `GL₂(ℚ_p)` and
-  the correspondence `V ↦ Π(V)`.
+  and `JL(M)` is trivial on `K_D(n)`, where `K_D(0) = O_D^×` and `K_D(n) = 1 + ϖ_D^n O_D` for
+  `n ≥ 1`), `(St^cont ⊗ δ∘det)* ⊗ δ∘Nrd` when `V = δ` is a character with `Sp ⊗ δ` in `ΦNᵖ_n`
+  (that is, `δ(p)² = 1` and `δ∘Nrd` is trivial on `K_D(n)`), and `0` otherwise: in particular `0`
+  when `dim V ≥ 3`, and `0` for `V ≅ V_{M,ℒ}` with `M` of level at most `n` and `p` acting
+  nontrivially on `JL(M)`. Here `W*` is the continuous dual of a Banach space `W` with the
+  topology of uniform convergence on compact subsets, on which `G` acts continuously; it does not
+  act continuously on the norm dual. It lacks the Drinfeld tower as a rigid analytic space over
+  `ℚ_p` with its `GL₂(ℚ_p) × D^× × Gal`-action, étale cohomology of rigid analytic spaces,
+  admissible unitary Banach representations of `GL₂(ℚ_p)` and the correspondence `V ↦ Π(V)`.
 * The Banach multiplicities (README §§4.12–4.13) of an absolutely irreducible admissible unitary
   Banach representation `Π` in differentials and in étale cohomology of the tower, counted by
   continuous `G`-maps out of `Π*`. They lack the same carriers, and the continuous dual of a
