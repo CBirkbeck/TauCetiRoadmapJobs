@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CharacterSumsOverFiniteFields~11",
+  "head": "e06f143b8d4a430946cf0b041843d860d0363bd3",
+  "pr": 1712,
+  "folder": "CharacterSumsOverFiniteFields",
+  "date": "2026-11-16",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "incremental re-review of 51 changed lines since cbf32cf, all in the README's Provenance section. Checked: every sentence of the new LeanPool passage against the 38 files of LeanPool/KloostermanWeil at f8b9b72 (toolchain, Mathlib rev, licence, upstream commit, statements and hypotheses of the cited theorems); the widened sentence on Layers 0-2, 4.5, 5-7 against the full contents of AxiomMath/Weil at 27cdb20, AxiomMath/Stacks at 012108f and weil-conjectures at 55abf46. Three P3 findings in the changed lines: R01 the three repositories do have counterparts of Layer 0's additive characters (AddChar.compTrace and the shift theorem in weil-conjectures); R02 one extension-field sum of LeanPool has a parameter outside F_p; R03 the LeanPool Stepanov estimate also assumes p odd. Adversarial table with computed values for 4.1, 4.2, 4.4, 5.1, 5.4, 5.6, 7.4, 7.6. Gate OK on this head (every scanner 0, worker's build=0); depcheck 251 roadmaps, 0 problems; lake env lean on Suggested.lean: 35 sorry warnings only, file unchanged since cbf32cf; nothing changed outside the folder; pull-request text agrees with the head. The previous review had no finding. Seeded sample lies outside the changed lines.",
+  "text": "ff0c87b555c6a839",
+  "carried": {
+   "from": "e06f143b8d4a430946cf0b041843d860d0363bd3",
+   "head": "e5a47de6116b5cccf6af6a9adc5db3faa8d05b2f",
+   "findings": 3,
+   "lines": 19,
+   "folders": [
+    "CharacterSumsOverFiniteFields"
+   ]
+  }
+ }
+}
