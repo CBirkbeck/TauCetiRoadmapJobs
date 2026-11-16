@@ -22,16 +22,17 @@ The headline theorems are:
   gerbes, on stacks with quasi-compact inertia and on locally Noetherian stacks;
 * closed points (4.5): on a locally Noetherian stack a point is closed iff its residual gerbe is a
   closed immersion, and it is then the reduced induced closed substack on the point;
-* the residue field (5.3): on a decent stack the residual gerbe is a gerbe over the spectrum of a
-  field `κ(x)`, unique up to unique isomorphism;
+* the residue field (5.3): on a decent stack a residual gerbe, where it exists, is a gerbe over the
+  spectrum of a field `κ(x)`, unique up to unique isomorphism;
 * algebraicity of points (5.4): through every point of a decent stack with quasi-compact inertia
   passes an immersed gerbe over an integral affine scheme, quasi-compactly immersed when the
   diagonal is quasi-compact;
-* the residual gerbe at a representative (6.2, 6.3): `𝒵_x ×_{κ(x)} k ≃ BG_x` for every
-  representative `Spec k → 𝒳`, and `𝒵_x ≃ BG_x` exactly when `κ(x) → k` is an isomorphism;
+* the residual gerbe at a representative (6.2, 6.3): on a decent stack, `𝒵_x ×_{κ(x)} k ≃ BG_x`
+  for every representative `Spec k → 𝒳` of a point whose residual gerbe exists, and the canonical
+  morphism `BG_x → 𝒵_x` is an equivalence exactly when `κ(x) → k` is an isomorphism;
 * rational points (6.4): for a stack over a field `k` and a point `x` with `p ∘ x = id`, the
-  residual gerbe exists and is `BG_x`, closed in the stack when the stack is locally Noetherian and
-  the point is closed;
+  residual gerbe exists and the canonical morphism `BG_x → 𝒵_x` is an equivalence, with
+  `BG_x → 𝒳` a closed immersion when the stack is locally Noetherian and the point is closed;
 * the tangent–normal sequence (7.3): at a closed rational point with affine stabiliser of a stack
   locally of finite type over a field, `0 → T_{BG_x} → T_{𝒳,x} → N_x → 0` is exact, so the
   comparison map `T_{𝒳,x} → N_x` is an isomorphism iff `G_x` is smooth.

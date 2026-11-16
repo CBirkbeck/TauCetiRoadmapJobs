@@ -20,7 +20,7 @@ identification with `BG_x` (Layer 6); and the infinitesimal neighbourhoods, the 
 and its comparison with the tangent space at a closed rational point (Layer 7). The end theorems are the
 characterisation of finite type points (1.1, 4.1), the existence of residual gerbes (4.2–4.4), the
 residual gerbe as a gerbe over its residue field with `𝒵_x ×_{κ(x)} k ≃ BG_x` (5.3, 6.2, 6.3), the
-identification `𝒵_x ≃ BG_x` at every rational point of a stack over a field (6.4), the
+canonical identification `𝒵_x ≃ BG_x` at every rational point of a stack over a field (6.4), the
 closed-immersion criterion at closed points (4.5), and the exact sequence
 `0 → T_{BG_x} → T_{𝒳,x} → N_x → 0`, so that `T_{𝒳,x} ≅ N_x` exactly when `G_x` is smooth (7.3).
 
@@ -1191,9 +1191,10 @@ gap:reduced-regular-smooth-local.
 Prove that if `𝒵' → 𝒵` is a monomorphism and `𝒵` has a surjective, flat, locally finitely presented
 `Spec k → 𝒵`, then either `𝒵'` is empty or `𝒵' → 𝒵` is an equivalence (stacks-06ML lines 1199–1213,
 Lemma 100.11.4); and that a reduced one-point `𝒵` contains a unique substack `𝒵'` (Convention 4)
-which is a reduced, locally Noetherian one-point algebraic stack, with `𝒵' → 𝒵` a monomorphism, and
-for every surjective, flat `Spec k → 𝒵` locally of finite type, `𝒵' ≃ [Spec k/R]` with
-`R = Spec k ×_𝒵 Spec k` (stacks-06ML lines 1214–1237, Lemma 100.11.5)
+which is a reduced, locally Noetherian one-point algebraic stack, with `𝒵' → 𝒵` a monomorphism,
+called here the *locally Noetherian core* of `𝒵`, and for every surjective, flat `Spec k → 𝒵` locally
+of finite type, `𝒵' ≃ [Spec k/R]` with `R = Spec k ×_𝒵 Spec k` (stacks-06ML lines 1214–1237, Lemma
+100.11.5)
 (*Stacks.reducedNoetherianSingletonCore*). For the first, the pullback of `𝒵'` to `Spec k` is a
 nonempty algebraic space with a monomorphism to `Spec k`, hence `Spec k` by 0.2, and every object of
 `𝒵` is fppf-locally a pullback of the point. *Needs:* 0.2, 3.1; SchemeAndStackFoundations §1.21
@@ -1213,8 +1214,8 @@ Theorem 97.17.2); gap:stack-morphism-permanence (fppf-local essential surjectivi
   `Spec k → X` is locally of finite presentation, `X` not being locally Noetherian (3.1).
 - The monomorphism hypothesis is needed: `Spec k → BG` is nonempty, `BG` has the flat finitely
   presented point `Spec k`, and `Spec k → BG` is not an equivalence for `G ≠ 1`.
-- For `𝒵 = BG` with `G` flat and locally of finite presentation over `k`, the core is `BG` itself, and
-  for `𝒵 = Spec k` it is `Spec k`.
+- For `𝒵 = BG` with `G` flat and locally of finite presentation over `k`, the locally Noetherian core
+  is `BG` itself, and for `𝒵 = Spec k` it is `Spec k`.
 
 ### 3.3 Residual gerbes
 
@@ -1260,7 +1261,12 @@ exists, then `𝒵_x = 𝒵_{π(x)} ×_𝒴 𝒳` (stacks-06RD lines 4831–4839
 space `X`, `𝒵_x` is an algebraic space, the residual space of `X` at `x` (stacks-06ML lines 1308–1310;
 stacks-decent-spaces lines 1500–1540, Lemma 68.13.5 and Definition 68.13.6). *Needs:* 0.1, 0.2, 2.1,
 2.3, 2.4, 2.5, 3.1–3.3; SchemeAndStackFoundations §1.20 (`inertia`); gap:stack-separation-axioms;
-gap:stack-morphism-permanence; gap:reduced-regular-smooth-local.
+gap:stack-morphism-permanence; gap:reduced-regular-smooth-local; gap:inertia-of-presentations (the
+inertia is locally of finite type, Lemma 101.5.1, for the gerbe clause: its pullback to the flat,
+locally finitely presented point of 3.1 is then locally of finite type over a field); Mathlib
+`AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType` with SchemeAndStackFoundations
+§1.8 (`Spaces.EtaleLocal`) (locally of finite type over a field is locally of finite presentation, so
+2.4 applies).
 
 **Checks.**
 
@@ -1304,7 +1310,7 @@ non-decent one-point spaces `U/G` and `Spec ℚ(t)/ℤ`.
 Layers 0 and 2; SchemeAndStackFoundations §§1.8, 1.18–1.21; Mathlib
 `AlgebraicGeometry.LocallyOfFinitePresentation.iff_locallyOfFiniteType`;
 gap:stack-morphism-permanence, gap:stack-separation-axioms, gap:flat-groupoid-quotients,
-gap:reduced-regular-smooth-local.
+gap:reduced-regular-smooth-local, gap:inertia-of-presentations.
 
 ## Layer 4: existence of residual gerbes
 
@@ -1416,8 +1422,16 @@ in `U`); gap:flat-groupoid-quotients (`[u/R']` is algebraic for the groupoid in 
 
 Prove that for `𝒳` locally Noetherian and `x ∈ |𝒳|`, `x` is a closed point iff `𝒵_x → 𝒳` is a closed
 immersion, and then `𝒵_x` is the reduced induced closed substack on `{x}` and `𝒵_x → 𝒳` is locally of
-finite type (stacks-06RD lines 4870–4878, Lemma 101.51.4; Remark 101.51.3, lines 4866–4869).
-*Needs:* 0.3, 0.5, 1.2, 3.3, 4.1, 4.4; gap:stack-morphism-permanence.
+finite type (stacks-06RD lines 4870–4878, Lemma 101.51.4 and its proof). *Needs:* 0.3, 0.5, 1.2,
+3.3, 4.1, 4.4; gap:stack-morphism-permanence.
+
+The API consists of the following fact.
+
+- For `𝒳` locally Noetherian, `x` a closed point and `𝒴` reduced, every morphism `f : 𝒴 → 𝒳` with
+  `|f|(|𝒴|) ⊆ {x}` factors through `𝒵_x`, with no hypothesis on the inertia: `𝒵_x` is the reduced
+  induced closed substack on `{x}`, and 0.5's factorisation criterion applies (stacks-06RD lines
+  4866–4869, Remark 101.51.3). 5.2 proves the factorisation at every point of a decent or locally
+  Noetherian stack with quasi-compact inertia.
 
 **Checks.**
 
@@ -1455,11 +1469,11 @@ decent (stacks-06RD lines 4692–4698, Lemma 101.48.2); that if `𝒴` is decent
 either representable by schemes (`T ×_𝒴 𝒳` is a scheme for every morphism `T → 𝒴` from a scheme;
 Algebraic Stacks, Section 94.6, stacks-algebraic-stacks lines 106–112) or representable by
 algebraic spaces and quasi-separated (for example a monomorphism or an immersion), then `𝒳` is
-decent (lines 4699–4721, Lemma 101.48.3: the fibre of `f` over a representative of the image point
-is a scheme, respectively a quasi-separated and hence decent algebraic space, and a representative
-of a point of it is quasi-compact); that if `f` is quasi-compact and surjective and
-`𝒳` is decent then `𝒴` is decent (lines 4722–4731, Lemma 101.48.4); and that the base of a decent
-gerbe is decent (lines 4732–4735, Lemma 101.48.5). *Needs:* 0.2, 0.3, 2.5;
+decent (stacks-06RD lines 4699–4721, Lemma 101.48.3: the fibre of `f` over a representative of the
+image point is a scheme, respectively a quasi-separated and hence decent algebraic space, and a
+representative of a point of it is quasi-compact); that if `f` is quasi-compact and surjective and
+`𝒳` is decent then `𝒴` is decent (stacks-06RD lines 4722–4731, Lemma 101.48.4); and that the base
+of a decent gerbe is decent (stacks-06RD lines 4732–4735, Lemma 101.48.5). *Needs:* 0.2, 0.3, 2.5;
 SchemeAndStackFoundations §1.19 (`IsRepresentableBySpaces`, for both alternatives of Lemma
 101.48.3), §1.20 (`QuasiCompactStack`); gap:stack-morphism-permanence (base change and composition of
 quasi-compact morphisms); gap:stack-separation-axioms; gap:decent-algebraic-spaces (for an algebraic
@@ -1794,27 +1808,31 @@ decency the converse fails, the base not being a scheme (Checks). *Needs:* 2.1�
 Prove that if `𝒳` is an algebraic stack with a morphism `p : 𝒳 → Spec k` and `x ∈ 𝒳(k)` satisfies
 `p ∘ x = id`, then `x` is locally of finite type (by cancellation, `p ∘ x = id` being locally of
 finite type; stacks-06RD lines 1527–1528, Lemma 101.17.8, which puts no hypothesis on `p`), so the
-residual gerbe at `x` exists (4.1); `Spec k → 𝒵_x^♭` is an isomorphism and `𝒵_x ≃ BG_x`; and if
-moreover `𝒳` is locally Noetherian, for instance locally of finite type over `k`, and `x` is a closed
-point, `BG_x → 𝒳` is a closed immersion (4.5) (alper-moduli lines 6998–6999 and 7017–7024,
+residual gerbe at `x` exists (4.1); `Spec k → 𝒵_x^♭` is an isomorphism, so the canonical morphism
+`BG_x → 𝒵_x` of 6.3 is an equivalence; and if moreover `𝒳` is locally Noetherian, for instance
+locally of finite type over `k`, and `x` is a closed point, `BG_x → 𝒳` is a closed immersion (4.5) (alper-moduli lines 6998–6999 and 7017–7024,
 Proposition 4.5.16 (2), which assumes `𝒳` Noetherian, hence quasi-separated (alper-moduli lines
 6234–6236), and of finite type over `k`, and `G_x` smooth and affine; ahr2020 lines 475–478, for
 quasi-separated `𝒳`) (*Stacks.residualGerbe_rationalPoint*). For the proof, `𝒵_x → Spec k` factors
 through the base (2.1), so `Spec k → 𝒵_x^♭ → Spec k` is the identity; a section of `𝒵_x^♭ → Spec k`
-is a monomorphism, and 3.2 makes it an isomorphism. Neither smoothness nor affineness of `G_x`, nor
-quasi-separatedness of `𝒳` (neither 4.1 nor 4.5 assumes it), nor algebraic closedness of `k` is
-used. *Needs:* 0.2, 2.1, 3.2, 3.4, 4.1, 4.5, 6.3; gap:stack-morphism-permanence (cancellation of
+is a monomorphism; `𝒵_x^♭` is reduced, locally Noetherian and one-point (3.4), so it has a
+surjective, flat, locally finitely presented point (3.1), and 3.2 makes the section an isomorphism;
+6.3 then gives the equivalence. Neither smoothness nor affineness of `G_x`, nor quasi-separatedness
+of `𝒳` (neither 4.1 nor 4.5 assumes it), nor algebraic closedness of `k` is used. *Needs:* 0.2, 2.1, 3.1, 3.2, 3.4, 4.1, 4.5, 6.3; gap:stack-morphism-permanence (cancellation of
 local finite type for the section `x`; a stack locally of finite type over `k` is locally
 Noetherian, Lemma 101.17.5, as 4.5 requires).
 
 **Checks.**
 
-- For `k` algebraically closed, `𝒳` locally of finite type over `k` and `x ∈ 𝒳(k)`, `𝒵_x ≃ BG_x`, and
-  `BG_x → 𝒳` is a closed immersion when `x` is closed.
+- For `k` algebraically closed, `𝒳` locally of finite type over `k` and `x ∈ 𝒳(k)`, `BG_x → 𝒵_x` is an
+  equivalence, and `BG_x → 𝒳` is a closed immersion when `x` is closed.
 - The smoothness assumption of the source is not needed: for `𝒳 = Bμ_p` over `𝔽_p(t)` and the
   trivial torsor, `𝒵_x = Bμ_p = BG_x` with `G_x = μ_p` not smooth.
 - The section condition is needed: for `𝒳 = Spec κ` and `x : Spec k → 𝒳` with `k/κ` finite and
-  nontrivial, `𝒵_x = Spec κ` while `BG_x = Spec k`.
+  nontrivial, `G_x = 1`, `Spec k → 𝒵_x^♭ = Spec κ` is not an isomorphism and the canonical
+  `BG_x = Spec k → 𝒵_x = Spec κ` is not an equivalence (6.3). The two stacks can still be abstractly
+  isomorphic: for `κ = ℚ(t)` and `k = ℚ(s)` with `s² = t`, the extension has degree 2 while
+  `t ↦ s` is an isomorphism `κ ≅ k`; so the statement concerns the canonical morphism.
 - No finiteness of `𝒳` is needed for existence: `𝒳 = Spec k[x₀, x₁, …]` is not locally of finite
   type over `k`, yet the origin `x` is locally of finite type (a closed immersion, its ideal
   `(x₀, x₁, …)` not finitely generated, so `x` is not locally of finite presentation), and
@@ -1987,7 +2005,10 @@ Prove that for a smooth group scheme `G` over `k` acting on a scheme `V` locally
 orbit `G·x` (the reduced image of the orbit map) is closed in `V`, the image of `x` is a closed
 point of `[V/G]`, `G_x` is the stabiliser `Stab_G(x)`, `𝒵_x = [G·x/G]`, and
 `N_x ≅ T_{V,x}/T_{G·x,x}` as `G_x`-representations (ahr2020 lines 484–486, under the quasi-separated
-stack with affine stabilisers of lines 475–476; quasi-separatedness is not used). `G` itself need
+stack with affine stabilisers of lines 475–476; quasi-separatedness is not used). Here `Stab_G(x)`
+acts on `V` through `G` and fixes `x`, so it acts on `𝔪_x/𝔪_x²` and contragrediently on
+`T_{V,x} = (𝔪_x/𝔪_x²)^∨` (Convention 5: an element acts on `T_{V,x}` by the differential of its
+action on `V`), and `T_{G·x,x}` is a subrepresentation because `G·x` is `G`-stable. `G` itself need
 not be affine: the route below uses only that `V → [V/G]` is a smooth atlas, and affineness enters
 through `G_x` alone, in 7.3's embedding `G_x ⊆ GLₙ`. For the proof apply the chart computation of
 7.3 to the smooth atlas `V → [V/G]`: the base change of `x : Spec k → [V/G]` along `V → [V/G]` is
@@ -1995,16 +2016,36 @@ the orbit map `G → V`, so the preimage of the image of `x` in `|V|` is the ima
 and the point is closed exactly when the orbit is (the map `|V| → |[V/G]|` being open and
 surjective); and `W = V ×_{[V/G]} 𝒵_x` is a closed subscheme of `V` with that support which is
 smooth over `k` (as in 7.3: `W → BG_x` is a base change of the smooth atlas and `BG_x → Spec k` is
-smooth), hence reduced, hence `W = G·x`. *Needs:* 0.3, 4.5, 6.4, 7.2, 7.3; 1.3 (`G_x` is the
-stabilizer of the action groupoid at `x`, the presentation bullet, Lemma 101.5.7); 2.3
-(`BG_x → Spec k` is smooth); SchemeAndStackFoundations §1.20 (`Stacks.points`, `.baseChangeImage`,
-`.atlasOpenSurjective`), §1.21 (`actionQuotient`); Mathlib
+smooth), hence reduced, hence `W = G·x`. With `J` the ideal of `G·x` in `V`, the chart computation
+of 7.3 at `u = x` makes `J/J² ⊗ k(x) → 𝔪_x/𝔪_x²` injective, and its dual `T_{V,x} → N_x` surjective
+with kernel `T_{G·x,x}`, the annihilator of the image. This map respects the actions. Under
+*QCoh.presentationEquiv* for the action groupoid `G × V ⇉ V`, `ℐ` is `J` with its `G`-equivariant
+structure, and the descent datum of a quasi-coherent module on a quotient stack is its pullback
+isomorphism along the 2-isomorphism between the two composites `G × V ⇉ V → [V/G]`
+(stacks-sheaves-on-stacks lines 977–983, proof of Proposition 96.14.3), so it restricts along every
+morphism of groupoids over `[V/G]`. The point `x` defines such a morphism
+`(G_x ⇉ Spec k) → (G × V ⇉ V)`, `g ↦ (g, x)`; the morphism `BG_x = [Spec k/G_x] → [V/G]` it induces
+is `i`, both sending the trivial torsor to `x` and inducing the identity of `G_x`. It factors through
+the action groupoid `G_x × V ⇉ V` of the restricted action, so the comodule `x^*(ℐ/ℐ²) = J/J² ⊗ k(x)`
+of 7.2 is the one `J`, a `G_x`-equivariant ideal of `V`, induces at the fixed point `x`. The ideal
+`𝔪` of `x` is `G_x`-equivariant too and contains `J`, so `J/J² ⊗ k(x) → 𝔪/𝔪² ⊗ k(x) = 𝔪_x/𝔪_x²`
+is a morphism of `O(G_x)`-comodules, and so is its dual `T_{V,x} → N_x`. *Needs:* 0.3, 4.5, 6.4, 7.2,
+7.3; 1.3 (`G_x` is the stabilizer of the action groupoid at `x`, the presentation bullet, Lemma
+101.5.7); 2.3 (`BG_x → Spec k` is smooth); SchemeAndStackFoundations §1.20 (`Stacks.points`,
+`.baseChangeImage`, `.atlasOpenSurjective`), §1.21 (`actionQuotient`), §1.22
+(*QCoh.presentationEquiv* for `[V/G]` and for `BG_x`, for the equivariance); Mathlib
 `AlgebraicGeometry.Scheme.IdealSheafData.vanishingIdeal` (the reduced structure on the closed
 orbit); gap:stack-morphism-permanence (base change and composition of smooth morphisms).
 
 **Checks.**
 
-- For `GLₙ` acting on `𝔸ⁿ` and `x = 0`, the orbit is `{0}` and `N_0 = T_{𝔸ⁿ,0} = kⁿ`.
+- For `GLₙ` acting on `𝔸ⁿ` and `x = 0`, the orbit is `{0}` and `N_0 = T_{𝔸ⁿ,0} = kⁿ`, the standard
+  representation on both sides.
+- The isomorphism is one of representations, with the contragredient on tangent spaces: for `𝔾_m`
+  scaling `𝔸¹` and `x = 0`, `J = (t)` and `J/J² ⊗ k = k·t` has weight `−1` (Convention 5), so
+  `T_{𝔸¹,0}/T_{G·x,0} = T_{𝔸¹,0}` has weight `+1`, the differential of `t ↦ λt`, which is the
+  character `N_0` of 7.2's first Check. Giving `T_{𝔸¹,0}` the action of `𝔪_0/𝔪_0²` itself instead of
+  its contragredient would give weight `−1` and no equivariant isomorphism.
 - For `𝔾_m` acting on `𝔸¹` and `x = 1`, the orbit `𝔾_m` is not closed and the image of `1` is not a
   closed point of `[𝔸¹/𝔾_m]`: the closed-orbit hypothesis is needed.
 - In characteristic different from 2, for `SL₂` acting on binary quadratic forms and `x = uv`, the
@@ -2103,8 +2144,8 @@ over `Spec ℝ` with no real object, with `𝒳 ×_ℝ ℂ ≃ B(ℤ/2)_ℂ` at 
   Algebraic Stacks (Chapter 101): Sections 101.4–101.5, 101.7, 101.17–101.19, 101.28–101.29, 101.31,
   101.33, 101.48, 101.50 and 101.51.
 - [stacks-decent-spaces] The Stacks Project Authors, *The Stacks Project*, Decent Algebraic Spaces
-  (Chapter 68): Sections 68.6, 68.10 (Theorem 68.10.2, cited in gap:decent-space-schematic-locus),
-  68.11 and 68.13.
+  (Chapter 68): Sections 68.6–68.8, 68.10 (Theorem 68.10.2, cited in
+  gap:decent-space-schematic-locus), 68.11–68.13 and 68.15.
 - [stacks-morphisms-schemes] The Stacks Project Authors, *The Stacks Project*, Morphisms of Schemes
   (Chapter 29): Section 29.59, and Proposition 29.28.2, cited in gap:generic-flatness-spaces.
 - [stacks-criteria] The Stacks Project Authors, *The Stacks Project*, Criteria for Representability
@@ -2141,9 +2182,9 @@ over `Spec ℝ` with no real object, with `𝒳 ×_ℝ ℂ ≃ B(ℤ/2)_ℂ` at 
   gap:group-spaces-over-fields.
 - [ahr2020] J. Alper, J. Hall, D. Rydh, *A Luna étale slice theorem for algebraic stacks*, Ann. of
   Math. 191 (2020), read as arXiv:1504.06467v3: Theorems 1.1–1.2, §1.5, §3.1.
-- [alper-moduli] J. Alper, *Stacks and Moduli*, author's draft of 5 January 2026: §§4.5.2–4.5.3
-  (Definitions 4.5.7, 4.5.12–4.5.13, Propositions 4.5.10, 4.5.16), §7.4.5 (Proposition 7.4.39,
-  Exercises 7.4.40–7.4.42).
+- [alper-moduli] J. Alper, *Stacks and Moduli*, author's draft of 5 January 2026: §4.3.4
+  (Definition 4.3.21), §§4.5.2–4.5.3 (Definitions 4.5.7, 4.5.12–4.5.13, Propositions 4.5.10, 4.5.16,
+  Exercise 4.5.11), §7.4.5 (Proposition 7.4.39, Exercises 7.4.40–7.4.42).
 - [rydh2011] D. Rydh, *Étale dévissage, descent and pushouts of stacks*, J. Algebra 331 (2011), read
   as arXiv:1005.2171v2: Appendix B, Theorems B.1–B.2.
 - [sga3-vi-a] M. Demazure, A. Grothendieck (eds.), *Schémas en groupes* (SGA 3), Tome I, Exposé VI_A,
