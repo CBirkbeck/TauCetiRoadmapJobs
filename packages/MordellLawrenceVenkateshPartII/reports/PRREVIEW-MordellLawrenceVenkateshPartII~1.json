@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MordellLawrenceVenkateshPartII~1",
+  "head": "1be51aaedfeb8d7cde360ae3728162bbb26fa7fa",
+  "pr": 2461,
+  "folder": "MordellLawrenceVenkateshPartII",
+  "date": "2026-11-16",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "Full review at 1be51aa. Gate: every check passed; depcheck 263 roadmaps, 2570 edges, 0 problems; Suggested.lean elaborates with two sorry warnings only; 20 cited Tau Ceti/Mathlib declarations #check'd at the pins. Seeded sample of 15 targets verified against LS/LV text (0.2, 0.4, 1.3, 1.4, 1.7, 2.9, 3.1, 3.4, 4.3, 5.3, 5.9, 5.12, 7.5, 10.3, 10.8), plus 22 further locators including Beauville and Batyrev-Cox. About 120 supplier sections in 33 roadmaps resolved; ownership checked against all open heads. Adversarial table: 25 rows with computed values. Four P3 findings: undeclared griffiths-residue gap in plan.json; non-headline Eulerian lemma in Suggested.lean; Source corrections missing three LS defects; two LS locators over-attributed. Eight source issues recorded.",
+  "text": "390177a21e91eb63",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "`gap:griffiths-residue-hodge-filtration` is not declared in the plan",
+    "where": "board plan.json `gaps` of this package must declare the slug",
+    "raised": "PRREVIEW-MordellLawrenceVenkateshPartII~1"
+   }
+  ]
+ }
+}
