@@ -2,6 +2,7 @@ module
 
 import Mathlib
 import TauCeti.RingTheory.HochschildCohomology.Coboundary
+import TauCeti.RingTheory.CyclicCohomology.Normalized.Chains
 
 /-!
 # Hochschild homology and the Hochschild–Kostant–Rosenberg theorem: target signatures
@@ -12,10 +13,15 @@ real-bodied definitions those statements need: the Hochschild cocycles, cobounda
 cohomology `HHⁿ(A, M) = Zⁿ(A, M) / Bⁿ(A, M)` of an algebra with coefficients in a bimodule, built on
 Tau Ceti's coboundary `TauCeti.hochschildBimoduleCoboundary` (README §1.2); the cup product of
 cochains (§5.1); and, for a commutative algebra, the cup product of derivations and the
-determinant cochain (§7.5). The README carries every target, API list and Check.
+determinant cochain (§7.5). Hochschild homology with coefficients in the algebra is read on Tau
+Ceti's normalised chains `TauCeti.normalizedHochschildChains.chainComplex k R`, which §2.1 identifies
+with the normalised complex `N_•(R, R)`, homotopy equivalent to `C_•(R, R)`, so that their homology
+is `HH_•(R, R)`. The README carries every target, API list and Check.
 
 Stated here:
 
+* `homology_one_linearEquiv_kaehler` (§3.4): for every commutative `R`, `HH₁(R, R) ≅ Ω¹_{R/k}`,
+  the class of `r₀ ⊗ r₁` going to `r₀ dr₁`;
 * `nonempty_linearEquiv_ext` (§4.4): for `A` projective over `k`, `HHⁿ(A, M) ≅ Extⁿ_{Aᵉ}(A, M)`
   as `k`-modules, `Ext` taken in `ModuleCat (A ⊗[k] Aᵐᵒᵖ)`;
 * `cupProduct_graded_comm` (§6.2): the cup product on `HH^•(A, A)` is graded commutative;
@@ -23,12 +29,20 @@ Stated here:
   determinant cocycle `⟨D₁, …, Dₙ⟩` represents `n!` times the class of `D₁ ∪ ⋯ ∪ Dₙ`;
 * `cohomological_hkr_hom_kaehler` and `cohomological_hkr` (§7.6): for `R` smooth and projective
   over `k`, `HHⁿ(R, M) ≅ Hom_R(Ωⁿ_{R/k}, M)` with its explicit formula, and
-  `⋀ⁿ_R Der_k(R) ≅ HHⁿ(R, R)`, `D₁ ∧ ⋯ ∧ Dₙ ↦ [D₁ ∪ ⋯ ∪ Dₙ]`.
+  `⋀ⁿ_R Der_k(R) ≅ HHⁿ(R, R)`, `D₁ ∧ ⋯ ∧ Dₙ ↦ [D₁ ∪ ⋯ ∪ Dₙ]`;
+* `homological_hkr_mvPolynomial` (§8.4 in homology): for `R = MvPolynomial (Fin m) k` over every
+  `k`, the antisymmetrisation `r₀ dr₁ ∧ ⋯ ∧ drₙ ↦ [Σ_σ sgn(σ) r₀ ⊗ r_{σ(1)} ⊗ ⋯ ⊗ r_{σ(n)}]` is an
+  isomorphism `Ωⁿ_{R/k} ≅ HHₙ(R, R)`.
 
-The pins give `HHⁿ(R, M)` no `R`-module structure (§1.5 constructs it), so the two isomorphisms of
-§7.6 are stated as `k`-linear equivalences with prescribed values on generators, which determine
-them. Clauses (3)–(5) of §7.6 (the factor `n!`, the normalised HKR map when `n!` is invertible,
-and the vanishing above the number of generators of `Ω¹_{R/k}`) follow from these two and
+The pins give neither `HHⁿ(R, M)` nor the homology of the pinned normalised chains an `R`-module
+structure (§1.5 constructs it on the complexes of Layer 1), so the isomorphisms of §3.4, §7.6 and
+§8.4 are stated as `k`-linear equivalences with prescribed values on generators, which determine
+them; a class in homology is written as the image under `HomologicalComplex.homologyπ` of a cycle
+whose image under `HomologicalComplex.iCycles`, followed by the identification
+`TauCeti.normalizedHochschildChains.chainComplexXIso` of the terms with the normalised chains, is
+the given chain. Clauses (3)–(5) of §7.6 (the
+factor `n!`, the normalised HKR map when `n!` is invertible, and the vanishing above the number of
+generators of `Ω¹_{R/k}`) follow from `cohomological_hkr_hom_kaehler`, `cohomological_hkr` and
 `detCochain_sub_factorial_smul_cupDerivations_mem`; the polynomial case of the cohomological HKR
 theorem (§8.4 in cohomology) and the Jacobian determinant of §8.5 are the instances
 `R = MvPolynomial (Fin m) k` of `cohomological_hkr` and of
@@ -36,9 +50,8 @@ theorem (§8.4 in cohomology) and the Jacobian determinant of §8.5 are the inst
 
 Headline theorems that are not statable at the pins, and what each lacks:
 
-* `HHₙ(A, M) ≅ Torₙ^{Aᵉ}(M, A)` for `A` flat over `k` (§4.5), the low-degree identification
-  `HH₁(R, R) ≅ Ω¹_{R/k}` (§3.4) and the homology half of the polynomial computation (§8.4): the
-  pins have no Hochschild chain complex with bimodule coefficients (Tau Ceti's normalised chains
+* `HHₙ(A, M) ≅ Torₙ^{Aᵉ}(M, A)` for `A` flat over `k` (§4.5): the pins have no Hochschild chain
+  complex with bimodule coefficients (Tau Ceti's normalised chains
   `TauCeti.normalizedHochschildChains` have coefficients in `A` only, and the chain complex
   `C_•(A, M)` is the alternating face complex of a simplicial module whose simplicial identities
   are §1.1's theorem), and no `Tor` over the noncommutative ring `Aᵉ` (Mathlib's `Tor` is for
@@ -93,6 +106,25 @@ abbrev hochschildBimoduleCohomology (k A M : Type u) [CommRing k] [Ring A] [Alge
     [IsScalarTower k Aᵐᵒᵖ M] (n : ℕ) : Type u :=
   hochschildBimoduleCocycles k A M n ⧸
     (hochschildBimoduleCoboundaries k A M n).comap (hochschildBimoduleCocycles k A M n).subtype
+
+/-! ## Layer 3: Low degrees and square-zero extensions -/
+
+/-- Hochschild homology in degree one of a commutative algebra is the module of Kähler differentials
+(README §3.4): for every commutative `k`-algebra `R`, flat or not, there is a `k`-linear isomorphism
+from the first homology of the normalised Hochschild chains of `R` with coefficients in `R` (Tau
+Ceti's complex, whose homology is `HH_•(R, R)` by README §2.1) to `Ω¹_{R/k}`, sending the class of
+`r₀ ⊗ r₁`, the coefficient in slot `0`, to `r₀ dr₁`; every such tensor is a cycle, the degree-one
+boundary `r₀ ⊗ r₁ ↦ r₀r₁ − r₁r₀` being zero (Loday, *Cyclic homology*, §1.1; Ginzburg, *Lectures
+on noncommutative geometry*, §8.1). -/
+theorem homology_one_linearEquiv_kaehler (k R : Type u) [CommRing k] [CommRing R] [Algebra k R] :
+    ∃ e : (TauCeti.normalizedHochschildChains.chainComplex k R).homology 1 ≃ₗ[k] Ω[R⁄k],
+      ∀ r : Fin 2 → R, ∃ z : (TauCeti.normalizedHochschildChains.chainComplex k R).cycles 1,
+        ((TauCeti.normalizedHochschildChains.chainComplex k R).iCycles 1 ≫
+            (TauCeti.normalizedHochschildChains.chainComplexXIso k R 1).hom).hom z =
+            TauCeti.normalizedHochschildChains.tensor k R 1 r ∧
+          e (((TauCeti.normalizedHochschildChains.chainComplex k R).homologyπ 1).hom z) =
+            r 0 • KaehlerDifferential.D k R (r 1) := by
+  sorry
 
 /-! ## Layer 4: The bar resolution, Ext and Tor -/
 
@@ -208,6 +240,36 @@ theorem cohomological_hkr (k R : Type u) [CommRing k] [CommRing R] [Algebra k R]
         ∃ h : r • cupDerivations k R D ∈ hochschildBimoduleCocycles k R R n,
           Ψ (r • exteriorPower.ιMulti R n D) =
             Submodule.Quotient.mk ⟨r • cupDerivations k R D, h⟩ := by
+  sorry
+
+/-! ## Layer 8: Polynomial algebras through the Koszul resolution -/
+
+/-- The homological Hochschild–Kostant–Rosenberg theorem for polynomial algebras over every
+commutative ring (README §8.4): for `R = MvPolynomial (Fin m) k`, the antisymmetrisation
+`r₀ dr₁ ∧ ⋯ ∧ drₙ ↦ [Σ_σ sgn(σ) r₀ ⊗ r_{σ(1)} ⊗ ⋯ ⊗ r_{σ(n)}]` is a `k`-linear isomorphism from
+`Ωⁿ_{R/k} = ⋀ⁿ_R Ω¹_{R/k}` to the `n`-th homology of the normalised Hochschild chains of `R` with
+coefficients in `R` (Tau Ceti's complex, whose homology is `HH_•(R, R)` by README §2.1); the
+antisymmetrised chain, with the coefficient `r₀` in slot `0`, is a cycle. The route is the Koszul
+bimodule resolution of README §§8.1–8.3, with no smoothness input (Loday, *Cyclic homology*, §3.2;
+Hochschild–Kostant–Rosenberg, *Differential forms on regular affine algebras*, the Koszul
+computation in the proof of Theorem 3.1). -/
+theorem homological_hkr_mvPolynomial (k : Type u) [CommRing k] (m n : ℕ) :
+    ∃ e : ⋀[MvPolynomial (Fin m) k]^n Ω[MvPolynomial (Fin m) k⁄k] ≃ₗ[k]
+        (TauCeti.normalizedHochschildChains.chainComplex k (MvPolynomial (Fin m) k)).homology n,
+      ∀ (r₀ : MvPolynomial (Fin m) k) (r : Fin n → MvPolynomial (Fin m) k),
+        ∃ z : (TauCeti.normalizedHochschildChains.chainComplex k
+            (MvPolynomial (Fin m) k)).cycles n,
+          ((TauCeti.normalizedHochschildChains.chainComplex k
+              (MvPolynomial (Fin m) k)).iCycles n ≫
+              (TauCeti.normalizedHochschildChains.chainComplexXIso k
+                (MvPolynomial (Fin m) k) n).hom).hom z =
+              ∑ σ : Equiv.Perm (Fin n), Equiv.Perm.sign σ •
+                TauCeti.normalizedHochschildChains.tensor k (MvPolynomial (Fin m) k) n
+                  (Fin.cons r₀ (r ∘ σ)) ∧
+            e (r₀ • exteriorPower.ιMulti (MvPolynomial (Fin m) k) n
+                (fun i ↦ KaehlerDifferential.D k (MvPolynomial (Fin m) k) (r i))) =
+              ((TauCeti.normalizedHochschildChains.chainComplex k
+                (MvPolynomial (Fin m) k)).homologyπ n).hom z := by
   sorry
 
 end TauCetiRoadmap.HochschildHomologyAndHKR

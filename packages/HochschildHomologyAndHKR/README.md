@@ -246,9 +246,16 @@ canonical map, and the determinant map is identified as `n!` times it.
   bimodule is an `R`-module `M` with `Module Rᵐᵒᵖ M`, `IsCentralScalar R M` (so `op r • m = r • m`),
   `SMulCommClass R Rᵐᵒᵖ M`, `Module k M`, `IsScalarTower k R M` and `IsScalarTower k Rᵐᵒᵖ M`; every
   `R`-module is one in exactly one way. `Ext` over `Aᵉ` is a `k`-module through Mathlib's scoped
-  instance `ModuleCat.Algebra.instLinear`. The pins give `HH^n(R,M)` no `R`-module structure
-  (§1.5 adds it), so the isomorphisms of §7.6 are stated there as `k`-linear equivalences with
-  prescribed values on generators, which determine them.
+  instance `ModuleCat.Algebra.instLinear`. Hochschild homology of a commutative `R` with
+  coefficients in `R` is read on Tau Ceti's normalised chains
+  `TauCeti.normalizedHochschildChains.chainComplex k R`, whose homology is `HH_•(R,R)` by §2.1; a
+  class in it is the image under `HomologicalComplex.homologyπ` of a cycle whose image under
+  `HomologicalComplex.iCycles`, followed by the identification
+  `TauCeti.normalizedHochschildChains.chainComplexXIso` of the terms, is a combination of the
+  pinned tensors `TauCeti.normalizedHochschildChains.tensor k R n`, the coefficient in slot `0`.
+  The pins give neither `HH^n(R,M)` nor this homology an `R`-module structure (§1.5 adds it on the
+  complexes of Layer 1), so the isomorphisms of §§3.4, 7.6 and 8.4 are stated there as `k`-linear
+  equivalences with prescribed values on generators, which determine them.
 - **Hochschild boundary** (Ginz05 lines 973–976):
   `b(m ⊗ a₁ ⊗ ⋯ ⊗ a_n) = m a₁ ⊗ a₂ ⊗ ⋯ ⊗ a_n + Σ_{i=1}^{n−1} (−1)^i m ⊗ ⋯ ⊗ a_i a_{i+1} ⊗ ⋯ ⊗ a_n + (−1)^n a_n m ⊗ a₁ ⊗ ⋯ ⊗ a_{n−1}`.
   Witness: in degree one `b(m ⊗ a) = m a − a m`; for `A = M = Mat₂(k)`, `m = E₁₂`, `a = E₂₁` this is
@@ -312,7 +319,8 @@ canonical map, and the determinant map is identified as `n!` times it.
 ### From Mathlib
 
 - **Complexes and homology.** `HomologicalComplex`, `ChainComplex`, `CochainComplex`,
-  `HomologicalComplex.homology`, `HomologicalComplex.homologyMap`, `HomotopyEquiv`, `QuasiIso`;
+  `HomologicalComplex.homology`, `HomologicalComplex.cycles`, `HomologicalComplex.iCycles` (the
+  inclusion of the cycles into the term), `HomologicalComplex.homologyπ` (the class of a cycle), `HomologicalComplex.homologyMap`, `HomotopyEquiv`, `QuasiIso`;
   the long exact homology sequence `CategoryTheory.ShortComplex.ShortExact.δ` with
   `CategoryTheory.ShortComplex.ShortExact.homology_exact₁`, `homology_exact₂` and
   `homology_exact₃` (`Mathlib/Algebra/Homology/HomologySequence.lean`), its naturality
@@ -519,17 +527,21 @@ canonical map, and the determinant map is identified as `n!` times it.
   no module structure at the pin; §3.3 uses the `k`-submodule of `A →ₗ[k] M` of the underlying
   maps.
 - `TauCeti.degenerateHochschildChains`, `TauCeti.normalizedHochschildChains`,
-  `TauCeti.normalizedHochschildChains.b`, `TauCeti.normalizedHochschildChains.b_tensor` and
-  `TauCeti.normalizedHochschildChains.chainComplex`
+  `TauCeti.normalizedHochschildChains.tensor`, `TauCeti.normalizedHochschildChains.b`,
+  `TauCeti.normalizedHochschildChains.b_tensor`, `TauCeti.normalizedHochschildChains.chainComplex`
+  and `TauCeti.normalizedHochschildChains.chainComplexXIso`
   (`TauCeti/RingTheory/CyclicCohomology/Normalized/Chains.lean`): for a commutative ring `k` and a
   `k`-module `A` with an element `1`, the span in `⨂[k]^{n+1} A` (slots `0,…,n`) of the pure tensors
-  with `1` in some slot other than `0`, and the quotient by it, the normalised chains of degree `n`;
+  with `1` in some slot other than `0`, and the quotient by it, the normalised chains of degree `n`,
+  with the class `tensor k A n a` of the pure tensor of `a : Fin (n + 1) → A`;
   for a ring `A` with `Module k A`, `IsScalarTower k A A` and `SMulCommClass k A A` (all supplied by
   `Algebra k A`), the boundary `b` from degree `n + 1` to degree `n`, on a tensor
   `a₀ ⊗ ⋯ ⊗ a_{n+1}` the alternating sum of the faces `TauCeti.hochschildFace`: the `i`-th face,
   `i ≤ n`, multiplies `a_i a_{i+1}`, and the last, with sign `(−1)^{n+1}`, is
   `a_{n+1}a₀ ⊗ a₁ ⊗ ⋯ ⊗ a_n`; and the chain complex in `ChainComplex (ModuleCat k) ℕ` with these
-  terms and `b`. The coefficients are `A` itself, and the pinned file compares these chains neither
+  terms and `b`, with the identification `chainComplexXIso` of its degree-`n` term with the
+  normalised chains (the identity isomorphism). `Suggested.lean` states §3.4 and the homology half
+  of §8.4 on this complex. The coefficients are `A` itself, and the pinned file compares these chains neither
   with the unnormalised complex nor with `A ⊗ Ā^{⊗n}`; §2.1 does both over every `k`
   (NoncommutativeGeometry N1.Cyclic states the second comparison for unital complex algebras).
 - `TauCeti.hochschildCochainComplex`, its cocycles `TauCeti.hochschildCocycles`, coboundaries
@@ -1158,10 +1170,20 @@ For every commutative `k`-algebra `R`, flat or not, prove that `[r₀ ⊗ r₁] 
 `R`-linear isomorphism `HH₁(R,R) ≅ Ω¹_{R/k}` with inverse `r dr′ ↦ [r ⊗ r′]` (Ginz05 §8.1,
 lines 1914–1926; Loday98 §1.1). One route: the degree-one boundary is zero, `b(1 ⊗ a ⊗ c) =
 a ⊗ c − 1 ⊗ ac + c ⊗ a` shows that `a ↦ [1 ⊗ a]` is a derivation into `HH₁`, and
-`KaehlerDifferential.linearMapEquivDerivation` gives the inverse map.
+`KaehlerDifferential.linearMapEquivDerivation` gives the inverse map. On Tau Ceti's normalised
+chains, whose first homology is `HH₁(R,R)` by §2.1, the existence of a `k`-linear isomorphism
+from the first homology of `TauCeti.normalizedHochschildChains.chainComplex k R` to `Ω¹_{R/k}`
+sending the class of every tensor `r₀ ⊗ r₁` (each a cycle) to `r₀ dr₁` is
+`homology_one_linearEquiv_kaehler`; the same route proves it, the degenerate tensors `r₀ ⊗ 1` going
+to `r₀ d1 = 0`.
 
-*Needs:* §§1.1, 1.5; Mathlib `KaehlerDifferential`, `KaehlerDifferential.D`,
-`KaehlerDifferential.linearMapEquivDerivation`, `KaehlerDifferential.span_range_derivation`.
+*Needs:* §§1.1, 1.5; §2.1 (only to read the stated form, on Tau Ceti's normalised chains, as
+`HH₁(R,R)`); Mathlib `KaehlerDifferential`, `KaehlerDifferential.D`,
+`KaehlerDifferential.linearMapEquivDerivation`, `KaehlerDifferential.span_range_derivation`,
+`HomologicalComplex.iCycles`, `HomologicalComplex.homologyπ`; Tau Ceti
+`TauCeti.normalizedHochschildChains.chainComplex`,
+`TauCeti.normalizedHochschildChains.chainComplexXIso`, `TauCeti.normalizedHochschildChains.tensor`,
+`TauCeti.normalizedHochschildChains.b_tensor` (for the stated form).
 
 **Checks.**
 
@@ -1171,6 +1193,11 @@ a ⊗ c − 1 ⊗ ac + c ⊗ a` shows that `a ↦ [1 ⊗ a]` is a derivation int
 - For `k = ℤ` and `R = 𝔽_p`, `Ω¹ = 0`, and the classical `HH₁(𝔽_p,𝔽_p)` vanishes: every `C_n` is
   `𝔽_p` and `b_n` is multiplication by `Σ_{i=0}^{n}(−1)^i`, so `b₂` is surjective onto `C₁`.
 - For `R = k`, both sides vanish.
+- The coefficient sits in slot `0`: the class of `r₀ ⊗ r₁` goes to `r₀ dr₁`. The transposed
+  assignment `[r₀ ⊗ r₁] ↦ r₁ dr₀` is not well defined: for `R = k[x]` with `k` nonzero, `x ⊗ 1` is
+  zero in Tau Ceti's normalised chains (a `1` in slot `1`) and is the boundary `b(x ⊗ 1 ⊗ 1)` in
+  `C₁(R,R)`, but would go to `dx ≠ 0`. In the same example `b(1 ⊗ x ⊗ x) = 2x ⊗ x − 1 ⊗ x²`, so
+  `[1 ⊗ x²] = 2[x ⊗ x]`, matching `d(x²) = 2x dx`.
 
 ### 3.5 Twisted square-zero extensions
 
@@ -1277,7 +1304,9 @@ extension `k[t]/(t³) → k[x]/(x²)` represents a nonzero class of `HH²(k[x]/(
 
 ### Dependencies
 
-Layers 1–2; Mathlib's `TrivSqZeroExt`, Kähler differentials and centre; Tau Ceti's bimodule
+Layers 1–2; Mathlib's `TrivSqZeroExt`, Kähler differentials, centre, and cycles and homology
+classes of a complex (§3.4); Tau Ceti's normalised chains of an algebra with coefficients in itself
+(`TauCeti.normalizedHochschildChains.chainComplex`), the carrier of the stated form of §3.4; its bimodule
 derivations, the low-degree cocycle characterisations of its bimodule coboundary, its derivation
 Lie algebra, and its commutative square-zero extensions
 (`TauCeti/RingTheory/Extension/SquareZero/Basic.lean`) for the comparison of §3.6. No roadmap
@@ -2217,15 +2246,40 @@ is the statement of `cohomological_hkr` for `R = MvPolynomial (Fin m) k`, which 
 regular sequence generating the ideal, here the one of §8.1, and not the Noetherian and regularity
 hypotheses of the theorem's statement at line 210; Ginz05 Lemma 9.3.1, line 2187, for a regular
 sequence in a commutative algebra over an algebraically closed field of characteristic zero;
-Loday98 §3.2, symmetric algebras over any `k`; Weibel94 §9.4).
+Loday98 §3.2, symmetric algebras over any `k`; Weibel94 §9.4). In homology, on Tau Ceti's
+normalised chains, whose homology is `HH_•(R,R)` by §2.1 (the quotient map sends the antisymmetrised
+chain to its class, the antisymmetrised normalised chain), the existence of a `k`-linear isomorphism
+`Ω^n_{R/k} ≅ H_n(TauCeti.normalizedHochschildChains.chainComplex k R)` sending
+`r₀ dr₁ ∧ ⋯ ∧ dr_n` to the class of the cycle `Σ_σ sgn(σ) r₀ ⊗ r_{σ(1)} ⊗ ⋯ ⊗ r_{σ(n)}`, for every `m`,
+`n` and `k`, that is the bijectivity of `ε^cl_n` read on normalised chains, is
+`homological_hkr_mvPolynomial`.
 
-*Needs:* §§4.3, 4.4, 4.5, 6.2, 6.4(a), 7.1, 7.4, 7.5, 8.2, 8.3; Mathlib `MvPolynomial.pderiv`,
+*Needs:* §§4.3, 4.4, 4.5, 6.2, 6.4(a), 7.1, 7.4, 7.5, 8.2, 8.3; §2.1 (only to read the stated form,
+on Tau Ceti's normalised chains, as `HH_n(R,R)`); Tau Ceti
+`TauCeti.normalizedHochschildChains.chainComplex`,
+`TauCeti.normalizedHochschildChains.chainComplexXIso` and
+`TauCeti.normalizedHochschildChains.tensor`, with Mathlib `HomologicalComplex.iCycles`,
+`HomologicalComplex.homologyπ` and `exteriorPower.ιMulti` (for the stated form); Mathlib `MvPolynomial.pderiv`,
 `KaehlerDifferential.mvPolynomialBasis` and `Module.Basis.exteriorPower` (the basis `dX_I` of
 `Ω^n_{R/k}`, which `ε^cl_n` sends to the basis of `HH_n(R,R)`),
 `CategoryTheory.ProjectiveResolution.isoLeftDerivedObj`, `CategoryTheory.Functor.mapHomotopyEquiv`,
 `Homotopy.op`, `HomotopyEquiv.toHomologyIso` (the homotopy equivalence `ι` of §8.3 stays one after
 `R ⊗_{Rᵉ} −` and, through the opposite category, after `Hom_{Rᵉ}(−, R)`, so the Koszul complexes
 of §8.2 compute `HH_•` and `HH^•` through §§4.3 and 4.5).
+
+**Checks.**
+
+- `m = 1`, `n = 2`: `Ω²_{R/k} = ⋀²_R (R dX) = 0`, and `HH₂(k[X]) = 0`. The antisymmetrised chain
+  `1 ⊗ X ⊗ X² − 1 ⊗ X² ⊗ X` is a cycle (both terms have boundary `X ⊗ X² − 1 ⊗ X³ + X² ⊗ X`) and is
+  the boundary `b(1 ⊗ X ⊗ X ⊗ X)`, so its class is `0`, as `ε^cl₂(dX ∧ dX²) = 0` requires.
+- `m = 2`, `n = 2`, `k = 𝔽₂`: `dX₁ ∧ dX₂` goes to the class of `1 ⊗ X₁ ⊗ X₂ − 1 ⊗ X₂ ⊗ X₁`, which is
+  nonzero (it pairs to `1` with `∂₁ ∪ ∂₂`, §6.4 Checks), although `π^cl₂ ∘ ε^cl₂` is multiplication
+  by `2 = 0`: the inverse of the isomorphism is not `π^cl_n/n!`, which is undefined here.
+- The sign of `σ` is needed: when `2 ≠ 0` in `k`, the unsigned chain `1 ⊗ X₁ ⊗ X₂ + 1 ⊗ X₂ ⊗ X₁` has
+  boundary `2(X₁ ⊗ X₂ + X₂ ⊗ X₁ − 1 ⊗ X₁X₂)`, nonzero in the normalised chains of degree one, so it
+  is not a cycle and has no class.
+- `m = 0`: `R = k`, `Ω^0 = k ≅ HH₀(k,k)` by `r₀ ↦ [r₀]`, and both sides vanish for `n ≥ 1`
+  (`Ω¹_{k/k} = 0`, and the normalised chains of positive degree are `0` since `k̄ = 0`).
 
 ### 8.5 The top degree and the Jacobian determinant
 
@@ -2268,7 +2322,9 @@ Layers 1–7 (§6.4(a) for the antisymmetrisation map, not §6.4(d)); DerivedMod
 consumed through its pinned form, Tau Ceti's Koszul complex `TauCeti.koszulComplex` with its
 zeroth homology and its acyclicity for weakly regular sequences (§8.2); Tau Ceti's weak
 regularity of distinct variables `MvPolynomial.isWeaklyRegular_map_X` (§8.1) and
-`CategoryTheory.ProjectiveResolution.extLinearEquiv` (§8.2); Mathlib's polynomial rings and
+`CategoryTheory.ProjectiveResolution.extLinearEquiv` (§8.2); Tau Ceti's normalised chains
+`TauCeti.normalizedHochschildChains.chainComplex`, the carrier of the stated homology form of §8.4,
+read as `HH_•(R,R)` through §2.1; Mathlib's cycles and homology classes of a complex (§8.4), polynomial rings and
 partial derivatives, the basis of the Kähler differentials of a polynomial ring (§8.4), exterior
 powers of free modules with their bases of wedges (§§8.2–8.4), tensor products of algebras, regular
 sequences with their transport along equivalences, projective resolutions, `Ext` in degree zero,
