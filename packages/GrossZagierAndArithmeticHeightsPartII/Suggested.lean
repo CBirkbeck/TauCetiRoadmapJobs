@@ -16,12 +16,13 @@ The headline theorems are:
 * the exotic smooth Kudla–Rapoport identity in even rank (Li–Liu II, Theorem 2.7; README §6.8);
 * the Kudla–Rapoport identity for Krämer models (He–Li–Shi–Yang, Theorem 1.3; README §8.7),
   which in rank two is He–Shi–Yang's and Shi's computation (README §7.5a), in rank three is
-  He–Shi–Yang's theorem for `n = 3`, and in rank `n ≥ 4` is proved through the step README §8.6
-  for lattices whose largest fundamental invariant is odd, for which no published proof exists
-  (the published reduction, He–Li–Shi–Yang, Lemma 9.6, fails for these lattices);
+  He–Shi–Yang's theorem for `n = 3`, and in rank `n ≥ 4` is proved under the hypothesis
+  `(H_m)`, `4 ≤ m ≤ n`, of README §8.6, the identity for lattices whose largest fundamental
+  invariant is odd, for which no published proof exists (the published reduction,
+  He–Li–Shi–Yang, Lemma 9.6, fails for these lattices);
 * the unramified and the modified arithmetic Siegel–Weil formulas (Li–Zhang, Theorem 15.5.1;
   He–Li–Shi–Yang, Theorems 10.1–10.2; README §§13.8, 13.10), the latter at a ramified place of
-  dimension `n ≥ 4` through the same step README §8.6;
+  dimension `n ≥ 4` under the same hypothesis of README §8.6;
 * the Chow-valued modularity of the generating series of Kudla divisors on GSpin Shimura
   varieties, and of special divisors on unitary Shimura varieties, over every totally real field
   (Yuan–Zhang–Zhang, Theorem 1.3; Liu, Theorem 3.5; README §§12.6a, 12.6b, 12.7);
