@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GroupSchemesOverABase~24",
+  "head": "446fe51e4bcd95c3912dc2325034c231140a719d",
+  "pr": 1522,
+  "folder": "GroupSchemesOverABase",
+  "date": "2026-11-16",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 23 changed lines since 134ddbf. Checked: the rewritten provenance paragraph against the cited repository at c496df0 (7 directory listings, 6 files) and Stacks Tags 047L, 047N, 047P, 047R, 0B7P, 0B7Q, 040M; SGA 3 VI_B 1.4.2, 1.6.1, 3.9, 3.10 in the cache for the sampled 0.2 and 4.5; the description against the head (previous R02 repaired). One P3: the paragraph lists the reduced subgroup of 4.5 as absent though OverField/ReductionSubgroupGlue.lean states it (Tag 047R), and omits Tag 047O for 4.9 (previous R01 partly repaired). Gate: worker's gate passes, build=0; rerun without the candidate order shows only depcheck NOT IN ORDER. Dependency check: 235 roadmaps, 2239 edges, 0 problems. Elaboration: 25 sorry warnings only. Outside-folder diff against the merge base: empty.",
+  "text": "dc5e72081b4f0921"
+ }
+}
