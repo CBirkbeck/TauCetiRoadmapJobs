@@ -219,13 +219,14 @@ def AdmissiblePair.IsStructural {n : ℕ} (P : AdmissiblePair n) (γ : ℝ) : Pr
 
 /-- **The Hessian pair** (Guo–Phong–Tong 2023, §1 and Lemma 4). For `1 ≤ k ≤ n`,
 `(σ_k^{1/k}, Γ_k)` is a concave admissible pair with a convex cone, and it satisfies the
-structural condition with the constant `(binom(n, k)^{1/k}/n)^n`, which is attained at
-`λ = (1, …, 1)`. -/
+structural condition with the constant `(binom(n, k)^{1/k}/n)^n`. The constant is sharp: the
+product `∏_j ∂_j f` equals it at `λ = (1, …, 1)`, where each `∂_j f` is `binom(n, k)^{1/k}/n`. -/
 theorem exists_hessianPair {n k : ℕ} (hk : 1 ≤ k) (hkn : k ≤ n) :
     ∃ P : AdmissiblePair n, P.cone = hessianCone n k ∧
       P.f = (fun μ ↦ eval μ (esymm (Fin n) ℝ k) ^ (1 / (k : ℝ))) ∧
       Convex ℝ P.cone ∧ ConcaveOn ℝ P.cone P.f ∧
-      P.IsStructural (((n.choose k : ℝ) ^ (1 / (k : ℝ)) / n) ^ n) := by
+      P.IsStructural (((n.choose k : ℝ) ^ (1 / (k : ℝ)) / n) ^ n) ∧
+      ∏ j, fderiv ℝ P.f 1 (Pi.single j 1) = ((n.choose k : ℝ) ^ (1 / (k : ℝ)) / n) ^ n := by
   sorry
 
 end Garding

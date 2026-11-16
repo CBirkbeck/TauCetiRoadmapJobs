@@ -326,7 +326,7 @@ Prove that the following are admissible pairs, concave, with the stated structur
 
 - the Monge–Ampère pair `(σ_n^{1/n}, Γ_n)`, with `γ = n^{−n}`, an identity;
 - the Laplace pair `(σ_1, Γ_1)`, with `γ = 1`;
-- the Hessian pair `(σ_k^{1/k}, Γ_k)` for `1 ≤ k ≤ n`, with `γ = (binom(n, k)^{1/k}/n)^n`, which is sharp, attained at `λ = e` (`exists_hessianPair` in `Suggested.lean`). The proof uses Maclaurin and gpt2023 Lemma 4;
+- the Hessian pair `(σ_k^{1/k}, Γ_k)` for `1 ≤ k ≤ n`, with `γ = (binom(n, k)^{1/k}/n)^n`, which is sharp: `∏_j ∂_j f(e) = γ`, since `∂_j σ_k(e) = binom(n − 1, k − 1) = (k/n)·binom(n, k)` gives `∂_j f(e) = binom(n, k)^{1/k}/n` (`exists_hessianPair` in `Suggested.lean`). The proof of the bound uses Maclaurin and gpt2023 Lemma 4 (line 744–769);
 - the quotient pair `((σ_k/σ_l)^{1/(k−l)} + c·σ_p^{1/p}, Γ_{max(k,p)})` for `0 ≤ l < k ≤ n`, `1 ≤ p ≤ n` and `c > 0`, with `γ ≥ (c·binom(n, p)^{1/p}/n)^n`;
 - positive combinations of these on intersections of their cones (§2.4).
 
