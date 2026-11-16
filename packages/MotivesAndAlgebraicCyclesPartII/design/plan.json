@@ -4855,12 +4855,6 @@
       "needs": "for a complete algebraically closed nonarchimedean field `C` of residue characteristic `p`, the map `K(O_C)^∧_p → K(C)^∧_p` is an equivalence, including `p = 2`.",
       "supplier": "KTheoryFiniteLocalFields",
       "section": "§6.5"
-    },
-    {
-      "slug": "affinoid-line-bundles",
-      "needs": "finite projective modules over a strictly affinoid algebra over a complete nonarchimedean field satisfy effective descent along finite affinoid coverings, so that analytic line bundles on an affinoid space are the finite projective rank-one modules over its algebra.",
-      "supplier": "TropicalAndBerkovichArithmetic",
-      "section": "§§0.17, 0.20"
     }
   ],
   "coverage": [
