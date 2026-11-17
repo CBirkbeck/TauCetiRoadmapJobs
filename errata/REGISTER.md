@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-14755 mistakes recorded on the board: 8340 misprints, 3849 errors, 2068 gaps, 498 unparsed bullets.
+14757 mistakes recorded on the board: 8340 misprints, 3851 errors, 2068 gaps, 498 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -9166,6 +9166,8 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Error** at Remark 3 and Corollary 1.2, printed p. 2: the source says the `(n/d)`-th powers of any `n`-th order Hecke family form a `d`-th order family, and bounds the sieve for `χ^(n/2)`; it should be restricted to families whose powers still satisfy the primitivity axiom (a quadratic family read as fourth-order has trivial squares); affects a stated result. Found by QuasiRiemannHypothesis (#18769 at 7de8cf2, 2026-11-17, claude fable).
 - **Error** at Remark 3 and Corollary 1.2, printed p. 2: the source says the `(n/d)`-th powers of any `n`-th order Hecke family form a `d`-th order family, and bounds the sieve for the `n/2`-th powers; it should be restricted to families whose powers keep the primitivity axiom; affects a stated result. Found by QuasiRiemannHypothesis (#18769 at 5be56e1, 2026-11-17, claude fable).
+- **Error** at Remark 3 and Corollary 1.2, printed p. 2: the source says the `n/d`-th powers of an `n`-th order family always form a `d`-th order family; it should be assumed that the powers stay primitive within a class (a quadratic family read as fourth-order has trivial squares); affects a stated result. Found by QuasiRiemannHypothesis (#18800 at eba3543, 2026-11-17, claude fable).
+- **Error** at Remark 3 and Corollary 1.2, printed page 2: the source says the `n/d`-th powers of any `n`-th order Hecke family form a `d`-th order family and satisfy the quadratic sieve bound; it should be assume that the primitive characters inducing the powers satisfy the reciprocity and primitivity axioms (a quadratic family over `ℚ(i)` read as fourth-order has trivial squares); affects a stated result. Found by QuasiRiemannHypothesis (#18800 at eba3543, 2026-11-17, claude fable).
 
 ## Goncharov, Geometry of configurations, polylogarithms, and motivic cohomology, Adv. Math. (1995)
 
