@@ -954,7 +954,7 @@ and for the trivial character `ℒ(s) = (s − 1) ζ_K(s)/(s + 1)` with its remo
 For a squarefree integral ideal `𝔯` and complex `a_𝔭` with `|a_𝔭| ≤ 1` (`𝔭 ∣ 𝔯`) put
 `D_𝔯(s) = ∏_{𝔭 ∣ 𝔯} (1 − a_𝔭 N𝔭^(−s))`. Prove: for fixed `σ₀ > 0` and `ε > 0`,
 `|D_𝔯(s)| + |D_𝔯(s)|⁻¹ ≪_{K,σ₀,ε} N𝔯^ε` on `Re s ≥ σ₀`; for every real `σ`,
-`|D_𝔯(σ + it)| ≪_ε N𝔯^((−σ)₊ + ε)` uniformly in `t`; and `|D_𝔯'/D_𝔯(s)| ≪_{σ₀} log(2N𝔯)` on
+`|D_𝔯(σ + it)| ≪_{K,ε} N𝔯^((−σ)₊ + ε)` uniformly in `t`; and `|D_𝔯'/D_𝔯(s)| ≪_{σ₀} log(2N𝔯)` on
 `Re s ≥ σ₀`. Consequently, for `Z ≥ 1` and `B ≥ 0`, if `N𝔯 ≤ Z^B`, then `|D_𝔯(s)|` and `|D_𝔯(s)|⁻¹` are
 `≪_{K,σ₀,B,ε} Z^ε` on `Re s ≥ σ₀` for every `ε > 0` (`openai2026quasiRH` Lemma 4.10, p. 23). With
 `a_𝔭 = χ(𝔭)` this bounds Tau Ceti's `RayClassCharacter.eulerCorrection`.
@@ -969,6 +969,11 @@ For a squarefree integral ideal `𝔯` and complex `a_𝔭` with `|a_𝔭| ≤ 1
 - `B = 0` and `0 < Z < 1`: `N𝔯 ≤ 1` allows `𝔯 = 𝓞`, where `D = 1`, while `Z^ε → 0` as `Z → 0`; so the
   consequence needs `Z ≥ 1`, where `N𝔯^ε ≤ Z^(Bε)` turns the first bound into it (with `ε/B` for
   `ε` when `B > 0`).
+- `K` of degree `d` in which `2` splits completely (such fields exist in every degree), `𝔯` the
+  product of the `d` primes above `2`, `a_𝔭 = −1`: `D_𝔯(0) = 2^d = N𝔯` against `N𝔯^ε = 2^(dε)` in the
+  second bound (`σ = 0`), and `D_𝔯(σ₀) = (1 + 2^(−σ₀))^d` against `2^(dε)` in the first, which grows with
+  `d` once `2^ε < 1 + 2^(−σ₀)`; so both constants depend on `K`, while the logarithmic-derivative bound
+  `Σ log N𝔭/(N𝔭^(σ₀) − 1) ≤ log N𝔯/(2^(σ₀) − 1)` does not.
 
 *Needs:* the bound `ω(𝔯) ≪ log N𝔯/log log N𝔯` for the number of prime factors; Tau Ceti
 `eulerCorrection_ne_zero`.
@@ -1338,40 +1343,50 @@ zero-free discs of radius `2 − a − 2ε`; §5.1 for the deleted factors; the 
 
 ### 7.3 Pointwise dyadic estimates
 
-In the setting of §7.2 with a bin `(i, a)` and `δ = 2a − 1`, fix bounded ranges for `r, m ≥ 0`,
-profiles with uniformly bounded seminorms on a fixed annulus and norm twists of height at most
-`(3i + 1)T₁`. Prove: for every `ε > 0` there are `ε₀ > 0` and a finite height order `A` such that,
-when `(1 + T₁)^A ≤ U^(ε/10)`, `|M_r|² ≪ U^(δr + ε)` and `|S_m|² ≪ U^(δ min(m, 1 − m) + ε)` for
+In the setting of §7.2 with a bin `(i, a)` of parameter `ε` and `δ = 2a − 1`, fix `r_max ≥ 1` and the
+ranges `0 ≤ r, m ≤ r_max`, profiles with uniformly bounded seminorms on a fixed annulus and norm twists
+of height at most `(3i + 1)T₁`. Prove: for every `ε' > 0` there are `ε₀ > 0`, depending only on `ε'`
+and `r_max`, and a finite height order `A` such that, when the bin parameter satisfies `ε ≤ ε₀` and
+`(1 + T₁)^A ≤ U^(ε'/10)`, `|M_r|² ≪ U^(δr + ε')` and `|S_m|² ≪ U^(δ min(m, 1 − m) + ε')` for
 `ψ ∈ 𝒳`, the external tail order being chosen after `T₁` without changing `A`
 (`openai2026quasiRH` Lemma 8.2, p. 57). Route: §7.1's Mellin formulas, shifted on the portion of
 height at most a fraction of `T₁` to `Re s = a + 6ε` inside the zero-free rectangle, the tails left on
 `Re s = 2` and bounded by §3.2 ((4.10)–(4.11)); for `S_m` the better of the direct shift and the
-functional equation.
+functional equation. The bounds of §7.2, squared, give `|M_r|² ≪ U^(δr + 12εr + 2ε₁)` on the shifted
+line and `|S_m|² ≪ U^(δ(1 − m) + (24 − 12m)ε + 2ε₁) (3 + T₁)^(2C)` on the reflected one, so the bin
+parameter must be small in terms of the loss: `ε₀ = ε'/(48 r_max)`, `ε₁ = ε'/8` and `A ≥ 2C` give
+exponents at most `δr + ε'/2` and `δ(1 − m) + 3ε'/4`, and a height factor at most `9^C U^(ε'/10)`.
 
 *Needs:* §§7.1–7.2; §3.2.
 
 ### 7.4 Two saturated witnesses
 
-In the setting of §7.3 with `a > a₀`, prove: for every `t ∈ [1, 3/2]` and `ε > 0`, after the
-preliminary losses are reduced, there are `ψ ∈ 𝒳`, a zero `ρ` as in §7.2, dyadic lengths `U^r`,
-`U^m` and polynomials `M_r`, `S_m` of the same presentation `ψ` and the same twist height
-(`|v| ≤ cT₁`), with uniformly smooth annular profiles, such that
-`r ≤ t + O(1/log U)`, `r + m ≥ t − O(1/log U)`, `t − 1/2 − O(ε) ≤ r`, `0 ≤ m ≤ 1/2 + O(ε)`,
-`|M_r S_m|² ≫ U^(δ(r+m) − ε)`, `|M_r|² ≫ U^(δr − ε)` and `|S_m|² ≫ U^(δm − ε)`; the `O(ε)` constants
-are absolute and the dyadic pair is one of `O((log U)²)` (`openai2026quasiRH` Proposition 8.3,
+In the setting of §7.3 with `a > a₀`, prove: for every `t ∈ [1, 3/2]` and `ε' > 0`, when the bin
+parameter `ε` and the loss of §7.3 are small enough in terms of `ε'`, there are `ψ ∈ 𝒳`, a zero `ρ` as
+in §7.2, dyadic lengths `U^r`, `U^m` and polynomials `M_r`, `S_m` of the same presentation `ψ` and the
+same twist height (`|v| ≤ cT₁`), with uniformly smooth annular profiles, such that
+`r ≤ t + O(1/log U)`, `r + m ≥ t − O(1/log U)`, `t − 1/2 − O(ε') ≤ r`, `0 ≤ m ≤ 1/2 + O(ε')`,
+`|M_r S_m|² ≫ U^(δ(r+m) − ε')`, `|M_r|² ≫ U^(δr − ε')` and `|S_m|² ≫ U^(δm − ε')`; the `O(ε')`
+constants depend only on the floor `a₀` (they are `O(1/(2a₀ − 1))`, absolute at the source's
+`a₀ = 51/100`) and the dyadic pair is one of `O((log U)²)` (`openai2026quasiRH` Proposition 8.3,
 p. 59; `liu2026improved` Proposition 5.1). Route: the truncated inverse
 `C_ψ(s) = Σ μ(𝔩) ψ(𝔩) V(N𝔩/U^t) N𝔩^(−s)` inserted in `(2πi)⁻¹ ∫_{(2)} Y^z Γ(z) L^orig(ρ + z, ψ) C_ψ(ρ + z) dz`
 with `Y` a fixed power of `U`; the residue at `z = 0` vanishes at the zero; the shifted line is small
 by §§5.1–5.2; the coefficients of `L C_ψ` cancel up to length `U^t` except at `𝓞`; dyadic splitting
-gives the product lower bound, and comparison with §7.3 gives `m ≤ 1/2 + O(ε)` and the individual
-lower bounds (`maynardpratt2024` Appendix C; `guthmaynard2026` §13.1).
+gives the product lower bound, and comparison with the two bounds of §7.3 gives `2δ(m − 1/2)₊ ≪ ε'`,
+hence `m ≤ 1/2 + O(ε'/δ)` with `δ > 2a₀ − 1`, and the individual lower bounds (`maynardpratt2024`
+Appendix C; `guthmaynard2026` §13.1).
 
 *Needs:* §§7.1–7.3; §§5.1–5.2; Mathlib `Complex.Gamma`.
 
 ### Examples
 
-- With `t = 1` and `δ = 2a − 1 > 1/50` (the floor `51/100`), the witness `M_r` has `r ≥ 1/2 − O(ε)`
-  and `|M_r|² ≫ U^(δ/2 − ε)`, a power saving below the trivial size `U^r`.
+- With `t = 1` and `δ = 2a − 1 > 1/50` (the floor `51/100`), the witness `M_r` has `r ≥ 1/2 − O(ε')`
+  and `|M_r|² ≫ U^(δ/2 − O(ε'))`, since `δr − ε' ≥ δ/2 − (C'δ + 1)ε'` when `r ≥ 1/2 − C'ε'`: a power
+  saving below the trivial size `U^r`.
+- The comparison `2δ(m − 1/2)₊ ≤ C''ε'` of §7.4 gives `m − 1/2 ≤ C''ε'/(2δ)`: at the floor `51/100`,
+  `δ > 1/50` and `m − 1/2 < 25C''ε'`; at the floor `a₀ = 1/2 + 10⁻⁶`, `δ` may be as small as about
+  `2 · 10⁻⁶` and the bound is only `2.5 · 10⁵ C''ε'`, so the constants depend on the floor.
 - At the floor `a = a₀` the bin carries no witness, and its rows are counted by the trivial bound.
 
 ### Dependencies
@@ -1926,10 +1941,11 @@ For a nonzero sixth-power-free `u` prime to `S` put `𝒳_u = {ν(·) χ_·(u)^(
 `𝒳_u` can be principal only when `u` is supported on `S`, finitely many rows that are treated
 separately. Prove (`openai2026quasiRH` Proposition 9.2, p. 67; `liu2026improved` (6.2)): for a bounded
 dyad `U = Z^d`, `d_min ≤ d ≤ d_max`, a set `B` of retained rows with `q_u ≍ U` in one bin `(i, a)` of §7.2
-for the family `𝒳_u` with `a > 51/100`, and `δ = 2a − 1`: for every `ε > 0`, after reducing the losses of
-§7.4, `#B ≪ U^(R(δ) + ε) (1 + T₁)^A` with `R(δ) = min{1, max(1 − δ/2, 4/3 − δ)}` and a finite order `A`
-fixed before `T₁ = Z^τ`; the floor bin has `#B ≪ U`, agreeing with `R(1/50) = 1`. Route: §7.4 with `t = 1`
-gives `|M_u(D; W)|² ≫ U^(δr − ε)` with `1/2 − O(ε) ≤ r ≤ 1 + O(1/log U)`; fix the part of `u` with
+for the family `𝒳_u` with `a > 51/100`, and `δ = 2a − 1`: for every `ε' > 0`, with the bin parameter `ε`
+small enough in terms of `ε'` as in §7.4, `#B ≪ U^(R(δ) + ε') (1 + T₁)^A` with
+`R(δ) = min{1, max(1 − δ/2, 4/3 − δ)}` and a finite order `A` fixed before `T₁ = Z^τ`; the floor bin has
+`#B ≪ U`, agreeing with `R(1/50) = 1`. Route: §7.4 with `t = 1` and the floor `51/100`
+gives `|M_u(D; W)|² ≫ U^(δr − ε')` with `1/2 − O(ε') ≤ r ≤ 1 + O(1/log U)`; fix the part of `u` with
 valuations at least `2` and apply the sextic large sieve §6.5 to the squarefree part; compare with the
 trivial count by the size of the fixed part.
 
@@ -1977,8 +1993,15 @@ For the probe of §10.1 the data are `l_x = l_y = 1/2`, `ℓ = 0`, `h = 1/2`, `C
   nonempty and fixed before `Z`, and that at each retained point and for each `λ`, `𝓑` is partitioned into
   at most `C(1 + log Z)^D` sets `𝓑'`, each with real numbers `(R, g)` in a fixed bounded range, such that
   `Σ_{u ∈ 𝓑'} |L^S(w, χ_•(u)) 𝔥^(λ)_(η,u,Z)(x, w, z)| ≪_η U^(R+δ/2+ε_c) Z^(ℓ(z₀−1/2)+g+ε_c) (1 + T₁)^(A_η)`,
-  for fixed `ε_c ≥ 0` and finite `A_η`, uniformly, the external heights entering buffered arguments
-  being restricted as in `openai2026quasiRH` (10.14) so that they add at most `T₁/2`. Put
+  for fixed `ε_c ≥ 0` and finite `A_η`, uniformly in the retained point. Here the retained point is
+  restricted in height: wherever that bound evaluates a buffered `L`-function, its inverse or its
+  logarithmic derivative, the argument has imaginary part `γ_j + Σ_{k ≤ n_v} a_jk v_k`, with a fixed
+  real matrix `(a_jk)`, `|γ_j| ≤ (3i + 1)T₁` and external heights `v_1, …, v_(n_v)` (the three Mellin
+  heights among them, with zero coefficients where they do not occur), and these are restricted to
+  `|v_k| ≤ T₁/(2n_v(1 + max_j |a_jk|))` (`openai2026quasiRH` (10.14), p. 77); then
+  `|Σ_k a_jk v_k| < n_v · T₁/(2n_v) = T₁/2`, so every such argument has imaginary part of absolute
+  value below `(3i + 1)T₁ + T₁/2 < (3i + 2)T₁`, inside the zero-free rectangle of §7.2, and the
+  allowance `T₁/2` is not renewed between successive estimates. Put
   `E(d; R, g) = a − σ₀ + h(z₀ − 1/6) − a l_y − ℓ/2 + g + d(R + δ/2 − z₀)` and `E^max(d)` its supremum over the
   occurring pairs. Then for every `ε_d, ε_p > 0` the contribution of `𝓑` on the central contours is
   `≪_η Z^(C(σ₀) + E^max(d) + (16 − 6l_y)ε) Z^((1+d)ε_c + dε_d + ε_p) (1 + T₁)^(A_η)`, and the discarded
@@ -2017,6 +2040,11 @@ For the probe of §10.1 the data are `l_x = l_y = 1/2`, `ℓ = 0`, `h = 1/2`, `C
 - At the starting lines `(Re x, Re w, Re z) = (3, 3, 2)` the identity converges absolutely
   (`Re t = Re x + Re z − 1 = 4`, the line of §10.1), and the moved bin of Lemma 10.3 satisfies
   `Re x + Re w = 1 + 10ε` and `Re w = 1 − a − 6ε ≥ −6ε > −1/100`, inside `D₁(10ε)`.
+- The height restriction of the retained integral, for the three Mellin heights alone (`n_v = 3`) and
+  one argument with coefficients `(a_11, a_12, a_13) = (1, −3, 0)`: `|v_1| ≤ T₁/(2 · 3 · 2) = T₁/12`,
+  `|v_2| ≤ T₁/(2 · 3 · 4) = T₁/24` and `|v_3| ≤ T₁/6`, so `|v_1 − 3v_2| ≤ T₁/12 + T₁/8 = 5T₁/24 < T₁/2`;
+  without the factor `1 + max_j |a_jk|` (the bound `|v_k| ≤ T₁/6`) the same argument could move by
+  `T₁/6 + T₁/2 = 2T₁/3`, more than the allowance.
 
 *Needs:* §§10.3–10.4; §§7.2–7.3; §§3.2, 3.4; §§5.1–5.3; §1.3.
 
@@ -2206,9 +2234,9 @@ Dirichlet `L`-functions.
   fixed-modulus analogue, from §10.7 and the explicit formula.
 - **ZerosOfLFunctions, Part II**: over `F`, power savings in ray-class prime counts and abelian
   Chebotarev, and the removal of the exceptional-zero alternative right of `11/12`.
-- **SieveMethodsAndPrimePatterns** §2.9 and its successors: the bound on the least quadratic nonresidue
-  (§11.3).
-- **ExplicitMultiplicativeFunctions**: qualitative power savings `M(x) = O(x^(11/12+ε))`.
+- **SieveMethodsAndPrimePatterns, Part II**: the bound on the least quadratic nonresidue (§11.3), for
+  the function its §2.9 defines.
+- **ExplicitMultiplicativeFunctions, Part II**: qualitative power savings `M(x) = O(x^(11/12+ε))`.
 - The supplier blocks: Layer 6 (moments of `n`-th order twists, `bgl2014`; quadratic and sextic Hecke
   families over imaginary quadratic fields, `gaozhao2020`, `gaozhao2024`) and Layer 8 (the distribution
   of cubic Gauss sums, `dunnradziwill2024`).

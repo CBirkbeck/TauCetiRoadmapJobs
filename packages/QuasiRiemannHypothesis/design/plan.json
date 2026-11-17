@@ -108,7 +108,7 @@
      ],
      "locator": {
       "source": "openai2026quasiRH",
-      "where": "(2.1), p. 8"
+      "where": "(2.1), p. 8; liu2026improved (1.2)"
      },
      "prerequisites": [
       "target:1.1",
@@ -944,7 +944,7 @@
      "id": "5.1",
      "kind": "theorem",
      "name": "QuasiRiemann.deletedEulerFactor_bounds",
-     "statement": "For squarefree 𝔯 and |a_𝔭| ≤ 1, D_𝔯(s) = ∏(1 − a_𝔭 N𝔭^(−s)) satisfies |D_𝔯| + |D_𝔯|⁻¹ ≪ N𝔯^ε on Re s ≥ σ₀ > 0, |D_𝔯(σ+it)| ≪ N𝔯^((−σ)₊+ε), |D_𝔯'/D_𝔯| ≪ log(2N𝔯) on Re s ≥ σ₀; consequently, for Z ≥ 1 and B ≥ 0, |D_𝔯|, |D_𝔯|⁻¹ ≪_{K,σ₀,B,ε} Z^ε on Re s ≥ σ₀ when N𝔯 ≤ Z^B.",
+     "statement": "For squarefree 𝔯 and |a_𝔭| ≤ 1, D_𝔯(s) = ∏(1 − a_𝔭 N𝔭^(−s)) satisfies |D_𝔯| + |D_𝔯|⁻¹ ≪_{K,σ₀,ε} N𝔯^ε on Re s ≥ σ₀ > 0, |D_𝔯(σ+it)| ≪_{K,ε} N𝔯^((−σ)₊+ε), |D_𝔯'/D_𝔯| ≪_{σ₀} log(2N𝔯) on Re s ≥ σ₀; consequently, for Z ≥ 1 and B ≥ 0, |D_𝔯|, |D_𝔯|⁻¹ ≪_{K,σ₀,B,ε} Z^ε on Re s ≥ σ₀ when N𝔯 ≤ Z^B.",
      "hypotheses": [
       "σ₀ > 0, ε > 0",
       "Z ≥ 1 and B ≥ 0 for the consequence"
@@ -977,6 +977,11 @@
        "name": "small_Z",
        "kind": "degenerate",
        "statement": "B = 0, 0 < Z < 1: 𝔯 = 𝓞 gives D = 1 while Z^ε → 0 as Z → 0, so the consequence needs Z ≥ 1"
+      },
+      {
+       "name": "degree_dependence",
+       "kind": "non-example",
+       "statement": "K of degree d with 2 split completely, 𝔯 the product of the d primes above 2, a_𝔭 = −1: D_𝔯(0) = 2^d = N𝔯 against 2^(dε), and D_𝔯(σ₀) = (1 + 2^(−σ₀))^d, so the constants of the first two bounds depend on K; the log-derivative bound log N𝔯/(2^(σ₀) − 1) does not"
       }
      ]
     },
@@ -1469,9 +1474,11 @@
      "id": "7.3",
      "kind": "theorem",
      "name": "QuasiRiemann.pointwiseDyadicBounds",
-     "statement": "In a bin with δ = 2a − 1: |M_r|² ≪ U^(δr+ε), |S_m|² ≪ U^(δ min(m,1−m)+ε) once (1+T₁)^A ≤ U^(ε/10).",
+     "statement": "In a bin (i,a) of parameter ε with δ = 2a − 1: for every ε′ > 0 there are ε₀(ε′, r_max) > 0 and a height order A such that, when ε ≤ ε₀ and (1+T₁)^A ≤ U^(ε′/10), |M_r|² ≪ U^(δr+ε′) and |S_m|² ≪ U^(δ min(m,1−m)+ε′).",
      "hypotheses": [
-      "bounded r, m",
+      "0 ≤ r, m ≤ r_max with r_max ≥ 1",
+      "bin parameter ε ≤ ε₀(ε′, r_max)",
+      "(1+T₁)^A ≤ U^(ε′/10)",
       "uniformly smooth profiles",
       "twist heights ≤ (3i+1)T₁"
      ],
@@ -1491,10 +1498,11 @@
      "id": "7.4",
      "kind": "theorem",
      "name": "QuasiRiemann.twoSaturatedWitnesses",
-     "statement": "For t ∈ [1,3/2]: ψ ∈ 𝒳, a zero ρ, and M_r, S_m of the same presentation and twist with r ≤ t+O(1/log U), r+m ≥ t−O(1/log U), t−1/2−O(ε) ≤ r, 0 ≤ m ≤ 1/2+O(ε), |M_rS_m|² ≫ U^(δ(r+m)−ε), |M_r|² ≫ U^(δr−ε), |S_m|² ≫ U^(δm−ε).",
+     "statement": "For t ∈ [1,3/2] and ε′ > 0, with the bin parameter and the loss of 7.3 small in terms of ε′: ψ ∈ 𝒳, a zero ρ, and M_r, S_m of the same presentation and twist with r ≤ t+O(1/log U), r+m ≥ t−O(1/log U), t−1/2−O(ε′) ≤ r, 0 ≤ m ≤ 1/2+O(ε′), |M_rS_m|² ≫ U^(δ(r+m)−ε′), |M_r|² ≫ U^(δr−ε′), |S_m|² ≫ U^(δm−ε′); the O(ε′) constants are O(1/(2a₀−1)).",
      "hypotheses": [
       "a > a₀",
-      "hypotheses of 7.3"
+      "hypotheses of 7.3",
+      "bin parameter ε and loss of 7.3 small in terms of ε′"
      ],
      "locator": {
       "source": "openai2026quasiRH",
@@ -2166,10 +2174,11 @@
      "id": "10.4",
      "kind": "theorem",
      "name": "QuasiRiemann.Eisenstein.sexticRowEnvelope",
-     "statement": "#B ≪ U^(R(δ)+ε)(1+T₁)^A, R(δ) = min{1, max(1−δ/2, 4/3−δ)}, δ = 2a−1, for rows of one bin with a > 51/100.",
+     "statement": "#B ≪ U^(R(δ)+ε′)(1+T₁)^A, R(δ) = min{1, max(1−δ/2, 4/3−δ)}, δ = 2a−1, for rows of one bin with a > 51/100, the bin parameter ε small in terms of ε′.",
      "hypotheses": [
       "bounded dyad U = Z^d",
-      "𝒳_u = {ν χ_·(u)^(±1)}"
+      "𝒳_u = {ν χ_·(u)^(±1)}",
+      "bin parameter ε small in terms of ε′ as in 7.4"
      ],
      "locator": {
       "source": "openai2026quasiRH",
@@ -2205,7 +2214,8 @@
      "name": "QuasiRiemann.Eisenstein.highExpansionContours",
      "statement": "For the data of an exact high representation (l_x, l_y > 0, ℓ ≥ 0, h = 1 − l_x + ℓ > 0, C(s) = s − 5/6 + l_x/3 + ℓ/6, corrections 𝔥_(η,u,Z) holomorphic on D₁(ε₀), D₂ with polynomial majorants, and the high identity), σ₀ ∈ [7/8,1), β* > σ₀: external integrated and trace tails ≪ Z^B T^(−N) (Lemma 10.2); a fixed bin moves to Re x = a+16ε, Re w = 1−a−6ε, Re z = 17/50 up to O(Z^(B_η)T₁^(−N)) (Lemma 10.3); retained integrals ≪ Z^(C(σ₀)+E^max(d)+(16−6l_y)ε)Z^((1+d)ε_c+dε_d+ε_p)(1+T₁)^(A_η) (Lemma 10.4); 𝒫_η/(c_SA_η) − f_η ≪ Z^(C(β*)+(1+h)ε−l_y/20+ε′) + Z^(C(β*)+ε−h/600+ε′) [+ Z^(C(β*)+ε−μ+ε′)] (Lemma 10.5); small rows ≪ Z^(C(β*)+h(z₀−1/6)−l_y/2+ε+(63/50)d_min+ε′), large rows ≪ Z^(B₀+(h+ς)(1+ε′)−ςv+ε′) (Lemma 10.6).",
      "hypotheses": [
-      "data of Definition 10.1"
+      "data of Definition 10.1",
+      "retained heights: buffered arguments γ_j + Σ_k a_jk v_k with |γ_j| ≤ (3i+1)T₁ and |v_k| ≤ T₁/(2n_v(1 + max_j |a_jk|)), adding less than T₁/2"
      ],
      "locator": {
       "source": "openai2026quasiRH",
@@ -2239,6 +2249,11 @@
        "name": "moved_bin_region",
        "kind": "computation",
        "statement": "Re x + Re w = 1 + 10ε and Re w ≥ −6ε > −1/100: the moved bin lies in D₁(10ε)"
+      },
+      {
+       "name": "height_allowance",
+       "kind": "computation",
+       "statement": "n_v = 3 (the Mellin heights), coefficients (1, −3, 0): |v_1| ≤ T₁/12, |v_2| ≤ T₁/24, |v_1 − 3v_2| ≤ 5T₁/24 < T₁/2; without the factor 1 + max|a| the move could be 2T₁/3"
       }
      ]
     },
@@ -2623,11 +2638,11 @@
   },
   {
    "roadmap": "SieveMethodsAndPrimePatterns",
-   "what": "the bound on the least quadratic nonresidue"
+   "what": "a Part II with the bound on the least quadratic nonresidue"
   },
   {
    "roadmap": "ExplicitMultiplicativeFunctions",
-   "what": "qualitative power savings M(x) = O(x^(11/12+ε))"
+   "what": "a Part II with qualitative power savings M(x) = O(x^(11/12+ε))"
   }
  ],
  "gaps": []
