@@ -238011,10 +238011,26 @@
    "reported": "2026-11-17",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18769#issuecomment-6933308851"
+  },
+  {
+   "kind": "error",
+   "source": "goldmakherlouvel2013",
+   "locator": "Remark 3 and Corollary 1.2, printed p. 2",
+   "says": "the `(n/d)`-th powers of any `n`-th order Hecke family form a `d`-th order family, and bounds the sieve for `χ^(n/2)`",
+   "should": "restricted to families whose powers still satisfy the primitivity axiom (a quadratic family read as fourth-order has trivial squares)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "QuasiRiemannHypothesis",
+   "job": "REV-DESIGN-QuasiRiemannHypothesis~3",
+   "board_pr": 18769,
+   "head": "7de8cf2",
+   "reported": "2026-11-17",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18769#issuecomment-6936133708"
   }
  ],
- "scanned_to": "2026-11-17T00:06:40Z",
- "updated": "2026-11-17T00:09:28Z",
+ "scanned_to": "2026-11-17T02:28:38Z",
+ "updated": "2026-11-17T02:29:06Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
