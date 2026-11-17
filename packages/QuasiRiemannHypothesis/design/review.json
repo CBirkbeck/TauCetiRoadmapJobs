@@ -1,0 +1,18 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-DESIGN-QuasiRiemannHypothesis~5",
+  "date": "2026-11-17",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-DESIGN-QuasiRiemannHypothesis~5",
+   "fix": "FIX-DESIGN-QuasiRiemannHypothesis~6",
+   "from": "e07a8c35136dcd0082d91def1f183534edc63bfe",
+   "head": "bb43f9de3b578118252446616362580c5618c781",
+   "findings": 4,
+   "lines": 29
+  },
+  "notes": "every finding of `REV-DESIGN-QuasiRiemannHypothesis~5` (4) was P3 and `FIX-DESIGN-QuasiRiemannHypothesis~6` repaired them at `bb43f9d`, changing 29 lines of the design; no further review round was filed"
+ }
+}
