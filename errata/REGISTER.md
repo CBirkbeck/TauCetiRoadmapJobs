@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-14750 mistakes recorded on the board: 8337 misprints, 3847 errors, 2068 gaps, 498 unparsed bullets.
+14752 mistakes recorded on the board: 8338 misprints, 3848 errors, 2068 gaps, 498 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -7372,6 +7372,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at the discriminant of the E₄ family near Proposition 2.2: the source says the factor (u²−1)⁴; it should be 16u⁴(u²−1)² (921600 at u=4), as its own Proposition 2.2(3) minimal discriminant confirms; affects nothing. Found by  (#138 at , 2026-10-23, backfill from earlier reviews (claude opus)).
 
+## dunnradziwill2024
+
+- **Misprint** at Remark 5.1, printed p. 17: the source says the cubic symbols of `c` at `a` and at `d` are equal, after showing the symbol at `ad` is `1`; it should be that they are inverse, the symbol at `a` equalling that of `b` at `d`; affects nothing. Found by QuasiRiemannHypothesis (#18769 at 5be56e1, 2026-11-17, claude fable).
+
 ## Dupont1978
 
 - **Misprint** at §4, Example 3, p. 67 (Dupont1978 line 2185): the source says the Pfaffian transformation expansion omits the normalization from equation (4.12); it should be multiply the displayed sum, and its described coefficients, by 1/(2^(2m)π^m m!); affects the proof. Found by CharacteristicClasses (ERRATA-CharacteristicClasses at d077cb4, 2026-10-24, codex gpt-6-astra).
@@ -9161,6 +9165,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## goldmakherlouvel2013
 
 - **Error** at Remark 3 and Corollary 1.2, printed p. 2: the source says the `(n/d)`-th powers of any `n`-th order Hecke family form a `d`-th order family, and bounds the sieve for `χ^(n/2)`; it should be restricted to families whose powers still satisfy the primitivity axiom (a quadratic family read as fourth-order has trivial squares); affects a stated result. Found by QuasiRiemannHypothesis (#18769 at 7de8cf2, 2026-11-17, claude fable).
+- **Error** at Remark 3 and Corollary 1.2, printed p. 2: the source says the `(n/d)`-th powers of any `n`-th order Hecke family form a `d`-th order family, and bounds the sieve for the `n/2`-th powers; it should be restricted to families whose powers keep the primitivity axiom; affects a stated result. Found by QuasiRiemannHypothesis (#18769 at 5be56e1, 2026-11-17, claude fable).
 
 ## Goncharov, Geometry of configurations, polylogarithms, and motivic cohomology, Adv. Math. (1995)
 
