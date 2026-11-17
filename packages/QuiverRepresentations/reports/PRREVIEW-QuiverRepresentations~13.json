@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuiverRepresentations~13",
+  "head": "061509b0c8cd77da432e7267e47864b3b8484c75",
+  "pr": 2479,
+  "folder": "RepresentationTheory/QuiverRepresentations",
+  "date": "2026-11-17",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 42 changed lines since 5a4ca69. R01-R04 of the previous review all repaired. Checked: the 10 changed source locators against the cached texts (ARS II.3, II.4.1(c), II.4.6; BGP Lemma 2.1(1), 2.2(1), section 3 Note 1; Etingof v5 5.11, 5.13, 5.20, 5.21), all as stated; the pinned Tau Ceti declarations exists_iso_τ₃_eq, nonempty_iso_X₁, IsLeftAlmostSplit.isLocalRing_end, exists_isAlmostSplit_arTranslate, ModuleCat.nonempty_iso_arTranslate; adversarial table with computed values for the six changed passages (A2, dual numbers, Kronecker control); the pull request's title and description against origin/main...HEAD (no contradiction, nothing unstated); gate rerun OK with every counter 0; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry the only warning and is unchanged since 5a4ca69.",
+  "text": "8a9bf56628441da3"
+ }
+}
