@@ -293,6 +293,7 @@ ExplicitCharacterSumsAndSieves
 ExplicitMultiplicativeFunctions
 ExplicitNumberFields
 AnalyticNumberTheoryPartIII
+QuasiRiemannHypothesis
 EllipticCurveModularityPartII
 PolynomialGaloisGroupsPartII
 ArithmeticDynamicsPartII
