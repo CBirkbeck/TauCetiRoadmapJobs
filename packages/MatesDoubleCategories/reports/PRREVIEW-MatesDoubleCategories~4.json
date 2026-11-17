@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MatesDoubleCategories~4",
+  "head": "ed022504da466b22ec8e8f54db9e96e9abe1c74b",
+  "pr": 2299,
+  "folder": "MatesDoubleCategories",
+  "date": "2026-11-17",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "Full review. Previous R01-R03 repaired; previous R04 (pull-request description omits M1.4, and now the 2-cell dual) not repaired and is the one finding (P3). Sample: the 11 API blocks, 'Simplex categories and conventions' and 'Hom-category theorem' checked with computed values; 20 source locators read against FairbanksShulman, ChengGurskiRiehl, Schanuel-Street (Numdam) and Riehl-Verity (arXiv v4); KellyStreet uncertified, not read. Every backticked library name resolved by #check at the pins; the identity-adjunction mate formula and the FreeBicategory inequality proved in scratch; six one-tactic padding probes fail. Gate passes (all checks 0, targeted build); elaboration gives only the sorry warning; depcheck 0 problems; no cross-roadmap citations; overlap check found nothing shared.",
+  "text": "a9fde2b769e0eb7a"
+ }
+}
