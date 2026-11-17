@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MarkovDecisionProcesses~1",
+  "head": "6ca84836d373dba1fbd1aa92ea8695f4abe43db6",
+  "pr": 2481,
+  "folder": "MarkovDecisionProcesses",
+  "date": "2026-11-17",
+  "findings": 2,
+  "blocking": 1,
+  "notes": "Full review. Gate passes at this head; depcheck 0 problems; Suggested.lean elaborates with 33 sorry warnings only; one-tactic probe closes none of the 33 theorems; all 57 elaborated signatures compared with the README. Adversarial pass computed on every section (22 table rows). 24 library declarations opened at the pins. Sources: 14 of 37 locators checked against the text (Tsitsiklis 1994, Watkins-Dayan 1992, Sutton 1988, Kakade-Langford 2002, Jaakkola-Jordan-Singh 1994 in its technical-report version); Puterman 1994 (20 locators), Bertsekas-Tsitsiklis 1996, Howard 1960 and Singh-Yee 1994 could not be read legally. Findings: R01 (P2) Layers 1-3 restricted to finite S although nothing in them uses finiteness and the pinned Kernel.ofPMF is countable; R02 (P3) 1.1 does not state the conditional law of later actions that 1.3 and 2.1 use. Ownership against open pull requests checked with roadmaps grep: nothing shared.",
+  "text": "75c49aaa785ed7e1"
+ }
+}
