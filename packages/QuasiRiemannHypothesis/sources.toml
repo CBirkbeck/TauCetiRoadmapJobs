@@ -320,7 +320,7 @@ authors = "J. S. Milne"
 title = "Class Field Theory"
 year = 2020
 locator_scheme = "chapter"
-locator = "Chapter V, Theorem 3.5 and Remark 3.8, p. 158; Chapter VIII, 5.3 and 5.5, p. 245"
+locator = "Chapter V, Example 3.2, p. 157, Theorem 3.5 and Remark 3.8, p. 158, Example 3.10, p. 159; Chapter VIII, 5.3 and 5.5, p. 245"
 url = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
 fetched_from = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
 fetched_at = "2026-11-16T22:19:24Z"
@@ -329,7 +329,7 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-16"
 version_note = "Course notes, version 4.03 (6 August 2020), on the author's site."
-cited_for = ["2.1"]
+cited_for = ["2.1", "5.4"]
 
 [[source]]
 id = "kazhdanpatterson1984"

@@ -36,9 +36,9 @@ Stated here:
 
 Not stated here:
 
-* The continuation principle (1.3), the zero abscissa (1.2), the late choice of height (1.4), the
-  probe and its low and high estimates (Layer 10) and the zero detector (Layer 7) are the
-  mechanism of the proof and stay README targets, as do the arithmetic of Layers 2 and 4, the
+* The continuation principle (1.3), the zero abscissa (1.2), the choice of the height exponent
+  before the decay order (1.4), the probe and its low and high estimates (Layer 10) and the
+  detection of zeros by Dirichlet polynomials (Layer 7) are the mechanism of the proof and stay README targets, as do the arithmetic of Layers 2 and 4, the
   kernels of Layer 3 and the bounds of Layer 5.1–5.3.
 * The large sieves of Layer 6 are supplier results of the roadmap, not its headlines, and stay
   README targets; the large sieve for `n`-th order characters (6.4) would in addition need the
@@ -73,7 +73,8 @@ def ZeroFreeRightOf (σ : ℝ) (f : ℂ → ℂ) : Prop :=
 `σ₀ ≥ 0`. If the L-function of every primitive finite-order Hecke character of `K` is zero-free
 right of `σ₀`, then so is the L-function of every Dirichlet character, at every level. The route is
 the base-change factorization `L^S_K(s, χ ∘ N) = ∏_{ψ ∈ X(K)} L^S(s, χψ)` of 5.4 over the group
-`X(K)` of Dirichlet characters attached to `K` by Kronecker–Weber, whose factors other than
+`X(K)` of the primitive characters inducing the Dirichlet characters modulo the least `f` with
+`K ⊆ ℚ(ζ_f)` that are trivial on the subgroup fixing `K`, whose factors other than
 `L(s, χ)` have no pole off `s = 1`, with `L(1, χ) ≠ 0` for `χ ≠ 1` (`openai2026quasiRH`
 Proposition 11.3, p. 84, for `K = ℚ(√−3)`). -/
 theorem zeroFreeRightOf_LFunction_of_isAbelianGalois (K : Type*) [Field K] [NumberField K]
@@ -103,10 +104,10 @@ theorem zeroFreeRightOf_LFunction {N : ℕ} [NeZero N] (χ : DirichletCharacter 
     ZeroFreeRightOf (11 / 12) (DirichletCharacter.LFunction χ) := by
   sorry
 
-/-- **Layer 10.7, the Riemann zeta function.** `ζ(s) ≠ 0` for `Re s > 11/12` and `s ≠ 1`
-(`openai2026quasiRH` Theorem 3.1, p. 10). The point `s = 1`, where Mathlib's value is a junk
-value, is excluded. -/
-theorem riemannZeta_ne_zero_of_eleven_twelfths_lt_re {s : ℂ} (hs : 11 / 12 < s.re) (h1 : s ≠ 1) :
+/-- **Layer 10.7, the Riemann zeta function.** `ζ(s) ≠ 0` for `Re s > 11/12`
+(`openai2026quasiRH` Theorem 3.1, p. 10). At `s = 1` Mathlib's value `(γ − log 4π)/2` is not `0`
+(`riemannZeta_one_ne_zero`), so, as in `riemannZeta_ne_zero_of_one_le_re`, no point is excluded. -/
+theorem riemannZeta_ne_zero_of_eleven_twelfths_lt_re {s : ℂ} (hs : 11 / 12 < s.re) :
     riemannZeta s ≠ 0 := by
   sorry
 
