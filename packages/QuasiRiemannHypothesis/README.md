@@ -114,7 +114,7 @@ numerical constant of Layer 10 is a closed-form rational inequality stated with 
 - The count of the ideals of a ray class with norm at most `x`, with main term a multiple of the
   residue of `ζ_K` and error `O(x^(1 − 1/[K : ℚ]))`: Tau Ceti
   `TauCeti.GlobalNumberFields.isBigO_rayClassIdealCountingFunction_sub`; the residue itself:
-  Mathlib `NumberField.ideal.tendsto_norm_le_div_atTop`. §3.5 reads the ideal count of `ℤ[ω]` off
+  Mathlib `NumberField.Ideal.tendsto_norm_le_div_atTop`. §3.5 reads the ideal count of `ℤ[ω]` off
   them.
 - Bianchi groups, the hyperbolic quotient and cusps: BianchiModularForms §§0.3–0.4; the Laplacian
   on `ℍ³`: MaassForms §7.1. MaassForms §7.3 states the Fourier–Bessel expansion for `PSL₂(ℤ[i])` with
@@ -224,7 +224,7 @@ numerical constant of Layer 10 is a closed-form rational inequality stated with 
   (`Mathlib/Analysis/Complex/CauchyIntegral.lean`, Cauchy's theorem on a rectangle).
 - Kummer theory `autAdjoinRootXPowSubCEquiv` (`FieldTheory/KummerExtension.lean`): for `μ_n ⊆ K`
   the Galois group of `X^n − a` embeds in `μ_n`; `AlgHom.IsArithFrobAt`.
-- `IsAbelianGalois` (abelian extensions, §§5.4–5.5); `NumberField.ideal.tendsto_norm_le_div_atTop`
+- `IsAbelianGalois` (abelian extensions, §§5.4–5.5); `NumberField.Ideal.tendsto_norm_le_div_atTop`
   (the number of ideals of norm at most `x`, divided by `x`, tends to
   `2^(r₁) (2π)^(r₂) h R/(w √|d_K|)`); `riemannZeta_one` (Mathlib's value `ζ(1) = (γ − log 4π)/2`,
   which is not `0`); `DirichletCharacter.IsPrimitive`; `MulChar`.
@@ -376,17 +376,21 @@ for one average continue a reciprocal across the rightmost zeros. Layers 2–4 a
 and harmonic-analytic substrate: symbols at composite moduli of `ℤ[ω]` and their general forms
 over fields containing `μ_n` (Layer 2), smooth Mellin and Fourier kernels and the self-dual lattice
 `ℤ[ω]` (Layer 3), and Gauss sums modulo ideals with the sextic reciprocity phase (Layer 4, which
-uses Poisson summation from Layer 3). Layer 5 supplies the uniform analytic bounds for Hecke
-`L`-functions and the transfer from an abelian field to Dirichlet `L`-functions. Layers 6 (large
-sieves) and 8 (Kubota's character and theta functions) are self-contained supplier blocks: each
-needs only Layers 2–4 and the Hecke functional equation of LFunctions Layer 5, and neither needs
-Layers 7 or 9–11. Layer 7 detects zeros of Hecke `L`-functions by large values
-of short Dirichlet polynomials and needs Layers 3 and 5. Layer 9 transforms the completed sum of cubic
-Gauss coefficients by the cubic theta function and bounds its mean square; it needs Layers 3, 4, 6
-and 8. Layer 10 assembles the probe at `11/12`: the direct estimate (Layers 6 and 9), the Poisson
-representation with its Euler factors (Layers 3–5), the row count (Layers 6–7) and the contour
-estimates, and closes with the `11/12` half-plane through Layer 1 and the transfer of Layer 5.
-Layer 11 draws the consequences.
+uses the symbols and cubic reciprocity of Layer 2 and Poisson summation from Layer 3). Layer 5
+supplies the uniform analytic bounds for Hecke `L`-functions and the transfer from an abelian
+field to Dirichlet `L`-functions, and uses Layer 1 (§§1.1–1.2). Layers 6 (large sieves) and 8
+(Kubota's character and theta functions) are self-contained supplier blocks: of this roadmap's
+layers, Layer 6 needs Layers 2–4 and Layer 8 needs Layers 2 and 4; beyond them Layer 6 uses the
+Hecke functional equation of LFunctions Layer 5 and Poisson summation (ThetaSeries Layer 1), and
+Layer 8 the Bianchi groups, the Laplacian on `ℍ³`, the `K`-Bessel function and analytic Fredholm
+continuation (BianchiModularForms, MaassForms, AutomorphicFormsOnReductiveGroups,
+AutomorphicSpectralTheory); neither needs Layers 7 or 9–11. Layer 7 detects zeros of Hecke
+`L`-functions by large values of short Dirichlet polynomials and needs Layers 1 (§1.2), 3 and 5.
+Layer 9 transforms the completed sum of cubic Gauss coefficients by the cubic theta function and
+bounds its mean square; it needs Layers 2, 3, 4, 6 and 8. Layer 10 assembles the probe at `11/12`:
+the direct estimate (Layers 6 and 9), the Poisson representation with its Euler factors (Layers
+3–5), the row count (Layers 6–7) and the contour estimates, and closes with the `11/12` half-plane
+through Layer 1 and the transfer of Layer 5. Layer 11 draws the consequences from Layers 1, 5 and 10.
 
 ## Layer 1: zero-free half-planes and the continuation principle
 
@@ -633,7 +637,9 @@ Fix `S` and a generator `π_𝔭` of each `𝔭 ∈ S`. Prove that, on primary g
 `A ↦ χ_A(u ∏_{𝔭 ∈ S} π_𝔭^(v_𝔭))` for units `u` and exponents `v_𝔭 ≥ 0` depend only on `u` and the
 residues `v_𝔭 mod 6`, number at most `6^(|S|+1)`, and are ray class characters (through §2.1)
 with one common modulus supported on `S` (`openai2026quasiRH` Lemma 4.1, second assertion, p. 11).
-A numerator containing a moving good prime is not in this family.
+The family, the bound `6^(|S|+1)` and the common modulus are determined by `S` and the chosen
+generators alone; a numerator divisible by a good prime, for instance a prime that varies with the
+summation variable, lies outside the family.
 
 *Needs:* §§2.1, 2.3.
 
@@ -781,7 +787,7 @@ consumed, not proved here: the number of nonzero ideals of `𝓞` of norm at mos
 `πH/(3√3) + O(√H + 1)` for `H ≥ 0` (`openai2026quasiRH` §4.1, p. 11). It is Tau Ceti's
 `isBigO_rayClassIdealCountingFunction_sub` at the modulus `(1)` of `F`, whose ray class group is
 the class group, of order one, with error `O(H^(1 − 1/2))`; its main term is the residue of `ζ_F`
-at `1`, which Mathlib's `NumberField.ideal.tendsto_norm_le_div_atTop` evaluates as
+at `1`, which Mathlib's `NumberField.Ideal.tendsto_norm_le_div_atTop` evaluates as
 `2π h R/(w √3) = π/(3√3)` (`h = R = 1`, `w = 6`); for bounded `H` the count is bounded.
 
 **Checks.**
@@ -793,7 +799,7 @@ at `1`, which Mathlib's `NumberField.ideal.tendsto_norm_le_div_atTop` evaluates 
 
 *Needs:* ThetaSeries Layer 1 (1A); Mathlib `ZLattice.covolume`, `SchwartzMap`, `Real.fourier_eq`;
 for the ideal count, Tau Ceti `TauCeti.GlobalNumberFields.isBigO_rayClassIdealCountingFunction_sub`
-and Mathlib `NumberField.ideal.tendsto_norm_le_div_atTop`.
+and Mathlib `NumberField.Ideal.tendsto_norm_le_div_atTop`.
 
 ### Examples
 
@@ -803,7 +809,7 @@ and Mathlib `NumberField.ideal.tendsto_norm_le_div_atTop`.
 ### Dependencies
 
 Mathlib `mellin`, `SchwartzMap`, `VectorFourier.fourierIntegral`, `Real.fourier_eq`,
-`ZLattice.covolume`, `NumberField.ideal.tendsto_norm_le_div_atTop`; Tau Ceti
+`ZLattice.covolume`, `NumberField.Ideal.tendsto_norm_le_div_atTop`; Tau Ceti
 `TauCeti.GlobalNumberFields.isBigO_rayClassIdealCountingFunction_sub`; ThetaSeries Layer 1.
 
 ## Layer 4: Gauss sums modulo ideals and the sextic reciprocity phase
@@ -947,9 +953,11 @@ reciprocity (§2.5) gives the cubic part; induction on the number of prime facto
 
 For a finite abelian group `T` and `Φ : T → ℂ`, prove `Φ = Σ_{θ ∈ T̂} a_θ θ` with
 `a_θ = |T|⁻¹ Σ_t Φ(t) θ̄(t)` and `Σ |a_θ| ≤ |T|^(1/2) max |Φ|`; on `T × T` this writes `R(a, b)` as
-`Σ_{θ, θ' ∈ T̂} c_(θ,θ') θ(a) θ'(b)` with finitely many constants `c_(θ,θ')`, valid on noncoprime primary
-pairs because `R` is the bicharacter there; and `χ_n(p) · conj(χ_p(n)) = R(p, n) 1_{(n,p)=1}` for a good
-prime `p` and primary `n` outside `S` (`openai2026quasiRH` §4.2, p. 17): for coprime `n, p` it is the sextic reciprocity law
+`Σ_{θ, θ' ∈ T̂} c_(θ,θ') θ(a) θ'(b)` with finitely many constants `c_(θ,θ')`; since
+`R(a, b) = τ(a, b)` is read off the classes of `a` and `b` modulo `4` (§4.4) with no coprimality
+condition, the expansion holds for every pair of primary `a, b`, also when they have a common
+prime factor; and `χ_n(p) · conj(χ_p(n)) = R(p, n) 1_{(n,p)=1}` for a good prime `p` and primary
+`n` outside `S` (`openai2026quasiRH` §4.2, p. 17): for coprime `n, p` it is the sextic reciprocity law
 `χ_n(p) = R(p, n) χ_p(n)` of §4.5 multiplied by `conj(χ_p(n))`, of modulus one, and on the other pairs
 both sides vanish.
 
@@ -963,7 +971,7 @@ both sides vanish.
   `χ_n(p) · conj(χ_p(n)) = (−ω²) ω = −1 = τ(λ, λ) = R(p, n)`; without the conjugate the left side
   is `(−ω²)(ω²) = −ω`, which is `R(p, n) χ_p(n)²`, a cubic symbol times `R`.
 
-*Needs:* §4.5; Tau Ceti `TauCeti.LFunctions.sum_smul_rayClassCoeff` (orthogonality).
+*Needs:* §§4.4–4.5; Tau Ceti `TauCeti.LFunctions.sum_smul_rayClassCoeff` (orthogonality).
 
 ### Examples
 
@@ -1438,7 +1446,7 @@ Appendix C; `guthmaynard2026` §13.1).
 
 ### Dependencies
 
-Layer 5 (§§5.1–5.3); Layer 3 (§3.2); Layer 1 (§1.2); LFunctions Layer 5.
+Layer 5 (§§5.1–5.3); Layer 3 (§3.2); Layer 1 (§1.2); LFunctions Layers 5 and 7.
 
 ## Layer 8: Kubota's character, Eisenstein series on `ℍ³` and theta functions
 
@@ -1729,8 +1737,11 @@ no coprimality between `c` and `n` being imposed, with `ᾱ` the complex conjuga
 
 - All three series converge absolutely on `Re s > 1`, and
   `C_V(X; Ψ) = (2πi)⁻¹ ∫_{(a)} V̂(s − 1/2) X^(s−1/2) T(s, Ψ) ds` for `a > 1`.
-- The character acts on the whole index `cn³`; a primary index `A` is of the form `cn³` exactly when
-  every valuation of `A` is `0` or `1` modulo `3`, and then `c`, `n` are unique.
+- `ᾱ` and the zero-extended `Ψ` are completely multiplicative, so
+  `ᾱ(cn³) Ψ(cn³) = ᾱ(c) Ψ(c) (ᾱ(n) Ψ(n))³` also when `c` and `n` have a common prime factor, and
+  the Dirichlet series in the Mellin integrand of `C_V` is the product `T = L₀ D`; a primary index
+  `A` is of the form `cn³` exactly when every valuation of `A` is `0` or `1` modulo `3`, and then
+  `c`, `n` are unique.
 
 **Checks.**
 
@@ -1764,7 +1775,7 @@ primes not dividing `L`, exponents `j_p ∈ {0, …, 5}` and `Ψ = Ψ₀ ∏_p �
   the reduced denominator of `λ²h₀/L` (times a normalizing unit), and
   `B_p(x) = χ_p(x)^(−j_p−2)` (`j_p ≠ 0, 4`), `q_p^(−1/2)(−1 + q_p 1_{p ∣ x})` (`j_p = 4`),
   `q_p^(−1/2) χ_p(x)^(−2)` (`j_p = 0`, `p` active);
-- the scalar `ζ_t` does not depend on `μ`, has `|ζ_t| ≤ 1/81`, and its dependence on the moving primes
+- the scalar `ζ_t` does not depend on `μ`, has `|ζ_t| ≤ 1/81`, and its dependence on the primes of `P`
   is explicit: with `τ^±_(p,m) = q_p^(−1/2) Σ_{y mod p} χ_p(y)^m e(±y/p)` for `m ≢ 0 (mod 6)` (of modulus
   one, indices read modulo six), for each active `p` the units modulo `p`
   `σ_p = λ² c_t/p` and `ε_p = −((λ³ c_t/p) σ_p)⁻¹`, and
@@ -1861,8 +1872,8 @@ Define, for `X, Y, Z > 0`, fixed nonnegative nonzero annular `W₀, W₁` and `�
 character `ψ` modulo `c` extended by zero, `τ* = q_(b*)^(−1/2) g_ξ(b*, 1)`,
 `Ψ_(m,v,η)(A) = η(A) Ξ(A)⁻¹ R(A, v) χ_A(m)`, `Ξ(A) = ξ(A) χ_A(b*)` and
 `T_(m,v,η)(t) = Σ_{c sf, n} γ_2(c) ᾱ(cn³) Ψ_(m,v,η)(cn³) Ḡ(cn³) q_c^(−1/2−t) q_n^(−1−3t)`, with `ᾱ`, `Ḡ` the
-complex conjugates of `α` and of the phase `G` of §4.5 (`openai2026quasiRH` (6.1) and the corrected
-row, pp. 45–46; `liu2026improved` (4.5)).
+complex conjugates of `α` and of the phase `G` of §4.5 (`openai2026quasiRH` (6.1) and the display
+defining `T_(m,v,η)` before it, pp. 45–46; `liu2026improved` (4.5)).
 
 - Both sums are finite on the support of `W₀, W₁`, and the `t`-integral converges absolutely;
   `m = 0` is excluded by the annular `W₀`.
@@ -2049,8 +2060,8 @@ For the probe of §10.1 the data are `l_x = l_y = 1/2`, `ℓ = 0`, `h = 1/2`, `C
   heights among them, with zero coefficients where they do not occur), and these are restricted to
   `|v_k| ≤ T₁/(2n_v(1 + max_j |a_jk|))` (`openai2026quasiRH` (10.14), p. 77); then
   `|Σ_k a_jk v_k| < n_v · T₁/(2n_v) = T₁/2`, so every such argument has imaginary part of absolute
-  value below `(3i + 1)T₁ + T₁/2 < (3i + 2)T₁`, inside the zero-free rectangle of §7.2, and the
-  allowance `T₁/2` is not renewed between successive estimates. Put
+  value below `(3i + 1)T₁ + T₁/2 < (3i + 2)T₁`, inside the zero-free rectangle of §7.2; the successive
+  estimates share this single margin `T₁/2`, none of them being granted a margin of its own. Put
   `E(d; R, g) = a − σ₀ + h(z₀ − 1/6) − a l_y − ℓ/2 + g + d(R + δ/2 − z₀)` and `E^max(d)` its supremum over the
   occurring pairs. Then for every `ε_d, ε_p > 0` the contribution of `𝓑` on the central contours is
   `≪_η Z^(C(σ₀) + E^max(d) + (16 − 6l_y)ε) Z^((1+d)ε_c + dε_d + ε_p) (1 + T₁)^(A_η)`, and the discarded
@@ -2093,7 +2104,7 @@ For the probe of §10.1 the data are `l_x = l_y = 1/2`, `ℓ = 0`, `h = 1/2`, `C
   one argument with coefficients `(a_11, a_12, a_13) = (1, −3, 0)`: `|v_1| ≤ T₁/(2 · 3 · 2) = T₁/12`,
   `|v_2| ≤ T₁/(2 · 3 · 4) = T₁/24` and `|v_3| ≤ T₁/6`, so `|v_1 − 3v_2| ≤ T₁/12 + T₁/8 = 5T₁/24 < T₁/2`;
   without the factor `1 + max_j |a_jk|` (the bound `|v_k| ≤ T₁/6`) the same argument could move by
-  `T₁/6 + T₁/2 = 2T₁/3`, more than the allowance.
+  `T₁/6 + T₁/2 = 2T₁/3`, more than the margin `T₁/2`.
 
 *Needs:* §§10.3–10.4; §§7.2–7.3; §§3.2, 3.4; §§5.1–5.3; §1.3.
 
