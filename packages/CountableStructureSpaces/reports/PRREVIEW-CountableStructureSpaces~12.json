@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CountableStructureSpaces~12",
+  "head": "60f81ce31adf41a239588f20b8c7a22e03dff112",
+  "pr": 1316,
+  "folder": "CountableStructureSpaces",
+  "date": "2026-11-17",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 9 changed lines since f17c947. The three previous findings (R01 hypotheses of the 6.1 sources, R02 supplier row for TopologicalSpace.isOpen_iUnion_countable, R03 the description's sorry count) are repaired, with no new problem. Checked: vaught1974 lines 328, 350 and marker2013notes lines 922, 1721 against the rewritten 6.1 sentence; Mathlib Topology/Bases.lean:929 against the new supplier row and the 6.1 route; the every-language reduction computed on the uncountable unary-predicate instance; Suggested.lean:424-450 against README 897-925; the pull request's title and description against the head. Gate: every check 0, OK; depcheck 261 roadmaps, 0 problems; lake env lean exit 0 with 36 sorry warnings only; nothing changed outside the folder.",
+  "text": "364fd1a64861f73d"
+ }
+}
