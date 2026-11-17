@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-14754 mistakes recorded on the board: 8339 misprints, 3849 errors, 2068 gaps, 498 unparsed bullets.
+14755 mistakes recorded on the board: 8340 misprints, 3849 errors, 2068 gaps, 498 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -14387,6 +14387,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 ## openai2026quasiRH
 
+- **Misprint** at Lemma 6.2, proof, printed p. 49: the source says the source says, as the OCR text reads, the fractions are separated by `min(1, r₊)/Y`; it should be `min(1, 1/r₊)/Y`, which is what its inequality `1/|ss'| ≥ 1/(r₊Y)` gives; affects the proof. Found by QuasiRiemannHypothesis (#18800 at 73f7bcb, 2026-11-17, claude fable).
 - **Misprint** at Lemma 6.2, proof, printed page 49: the source says the source says, as extracted, that the fractions are separated by the minimum of one and the upper support bound, over Y; it should be the minimum of one and the reciprocal of that bound, over Y; affects nothing. Found by QuasiRiemannHypothesis (#18769 at 1260901, 2026-11-17, claude fable).
 - **Misprint** at the proof of Lemma 6.2, printed p. 49: the source says the source says, in the OCR text, that the fractions are separated by `min(1, r₊)/Y`; it should be `min(1, 1/r₊)/Y`, from the bound `1/(r₊Y)` just before; affects the proof. Found by QuasiRiemannHypothesis (#18769 at e07a8c3, 2026-11-17, claude fable).
 
