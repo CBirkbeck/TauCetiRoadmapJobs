@@ -238059,10 +238059,42 @@
    "reported": "2026-11-17",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18769#issuecomment-6937198563"
+  },
+  {
+   "kind": "misprint",
+   "source": "openai2026quasiRH",
+   "locator": "the proof of Lemma 6.2, printed p. 49",
+   "says": "the source says, in the OCR text, that the fractions are separated by `min(1, r₊)/Y`",
+   "should": "`min(1, 1/r₊)/Y`, from the bound `1/(r₊Y)` just before",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "QuasiRiemannHypothesis",
+   "job": "REV-DESIGN-QuasiRiemannHypothesis~5",
+   "board_pr": 18769,
+   "head": "e07a8c3",
+   "reported": "2026-11-17",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18769#issuecomment-6938023203"
+  },
+  {
+   "kind": "error",
+   "source": "kubota1968",
+   "locator": "§3, printed p. 265",
+   "says": "the source says, as extracted, that the poles of the Eisenstein series on `Re s ≥ 1` lie in the open interval `(1, 2)`",
+   "should": "`(1, 2]`, the trivial character having a pole at `2`",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "QuasiRiemannHypothesis",
+   "job": "REV-DESIGN-QuasiRiemannHypothesis~5",
+   "board_pr": 18769,
+   "head": "e07a8c3",
+   "reported": "2026-11-17",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18769#issuecomment-6938023203"
   }
  ],
- "scanned_to": "2026-11-17T03:26:58Z",
- "updated": "2026-11-17T03:29:08Z",
+ "scanned_to": "2026-11-17T04:10:25Z",
+ "updated": "2026-11-17T04:15:48Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
