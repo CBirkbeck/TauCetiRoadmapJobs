@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicGromovWittenTheory~6",
+  "head": "fcd29777fdabb256c461956bd4af4d5a5e95b889",
+  "pr": 1998,
+  "folder": "AlgebraicGromovWittenTheory",
+  "date": "2026-11-17",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 5 changed lines since cb8f1b1. Previous R01 repaired: the third Check of README 1.2 is now a computed test (P1 with O(1) and O(2): periods n and 2n, truncations at B and 2B agree, bounds 3/2 and 3 keep a0 + a1 Q), recomputed and checked against TauCeti NovikovSeries rescaleContinuousAlgEquiv and its coeff lemma at the pin (Equiv.lean:192, 196) and against the third Check of 1.1. No seeded sample target falls in the changed passage; no source locator changed. Worker gate passes every check including the build; depcheck 249 roadmaps, 2577 edges, 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean exits 0 with no output (file unchanged, no declarations). Pull-request title and description agree with the head; nothing changed outside the folder; overlaps list nothing shared. The added Check cites no source and was not compared with a source text this round.",
+  "text": "7c64630f0be1446e"
+ }
+}
