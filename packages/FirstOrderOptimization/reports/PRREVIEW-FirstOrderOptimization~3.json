@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FirstOrderOptimization~3",
+  "head": "a209c5ad6d7ada1cb7116fd3033695a55362f9e7",
+  "pr": 2474,
+  "folder": "FirstOrderOptimization",
+  "date": "2026-11-17",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full re-review. Previous R01-R06 all repaired. Three P3 findings: README 3.1 describes convexProjection differently from the Lean on sets with several nearest points; three unused TauCeti imports in Suggested.lean; two supplier-contract entries no target consumes. Seeded sample: 15 targets; 15 locators verified in 7 open sources (KNS16, BCN18, GL13, CP15, RKK18, KB15, WWB19); Nesterov 2018, Bauschke-Combettes 2017, Beck 2017, Beck-Teboulle 2009, Polyak 1964/1987, Bertsekas 1999, Robbins-Siegmund 1971 and Robbins-Monro 1951 not readable legally. Adversarial table: 26 rows with computed values, no statement refuted. Gate passes at a209c5a; depcheck 0 problems; Suggested.lean elaborates with 35 sorry warnings only; one-tactic probe closes 0 of 35; pull request text agrees with the head.",
+  "text": "19cc449f16f47f20"
+ }
+}
