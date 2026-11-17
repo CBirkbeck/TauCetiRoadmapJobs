@@ -37,8 +37,9 @@ Stated here:
 Not stated here:
 
 * The continuation principle (1.3), the zero abscissa (1.2), the choice of the height exponent
-  before the decay order (1.4), the probe and its low and high estimates (Layer 10) and the
-  detection of zeros by Dirichlet polynomials (Layer 7) are the mechanism of the proof and stay README targets, as do the arithmetic of Layers 2 and 4, the
+  before the decay order (1.4), the probe with its low estimate and its comparison with the Mellin
+  integral (Layer 10) and the detection of zeros by Dirichlet polynomials (Layer 7) are the
+  mechanism of the proof and stay README targets, as do the arithmetic of Layers 2 and 4, the
   kernels of Layer 3 and the bounds of Layer 5.1–5.3.
 * The large sieves of Layer 6 are supplier results of the roadmap, not its headlines, and stay
   README targets; the large sieve for `n`-th order characters (6.4) would in addition need the

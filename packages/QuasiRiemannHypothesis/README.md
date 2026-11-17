@@ -86,8 +86,8 @@ numerical constant of Layer 10 is a closed-form rational inequality stated with 
   `L`-function of a presented ray class character, its primitive comparison and Euler correction:
   Tau Ceti `TauCeti.LFunctions.heckeLFunctionC`, `PrimitiveRayClassCharacter`,
   `RayClassCharacter.eulerCorrection`; their continuation, functional equation with root number of
-  modulus one and nonvanishing on `Re s = 1`: [LFunctions](../LFunctions/README.md) Layers 4, 5
-  and 7.
+  modulus one and, for a nontrivial primitive character, nonvanishing on `Re s = 1`:
+  [LFunctions](../LFunctions/README.md) Layers 4, 5 and 7.
 - The continued `L`-function of a record and its value at the Hecke records, finite order of the
   completed Hecke functions, local zero counts, the Weil explicit formula for the two families and
   the prime ideal theorem: [ZerosOfLFunctions](../ZerosOfLFunctions/README.md) §§1.6, 3.1,
@@ -135,12 +135,14 @@ numerical constant of Layer 10 is a closed-form rational inequality stated with 
 
 ### Not owned here
 
-- The `7/8` half-plane, the compensated probe and its two moment inductions
-  (`openai2026quasiRH` Sections 12–20), the local sums at prime powers and finite correlations
-  (its Lemmas 13.2–13.4), masked primitive Poisson summation (its Lemma 17.5), the
-  quadratic–cubic norm estimate (its Lemma 14.2), the strip `1/8 ≤ Re ρ ≤ 7/8` and the
-  Landau–Siegel constant `(log 3)/8`: QuasiRiemannHypothesisPartII, which takes Layers 1–10 here
-  as its base.
+- The `7/8` half-plane and its proof (`openai2026quasiRH` Part II, Sections 12–20): a second probe
+  for the continuation principle of §1.3 at `(σ₀, C) = (7/8, s − 11/16)`, with the bound
+  `|J_η| ≪ Z^(C(σ₀)+ω)` and the comparison with `f_η` that §1.3 asks of it; the Gauss sums of the
+  sextic symbol modulo prime powers and the complete correlation sums of two sextic symbols (its
+  Lemmas 13.2–13.4); a mean-value bound for a bilinear form in quadratic and cubic residue symbols
+  (its Lemma 14.2); Poisson summation for a primitive finite-order character over the elements prime
+  to a fixed ideal (its Lemma 17.5); the strip `1/8 ≤ Re ρ ≤ 7/8` and the Landau–Siegel constant
+  `(log 3)/8`: QuasiRiemannHypothesisPartII, which takes Layers 1–10 here as its base.
 - Uniform exclusion of Landau–Siegel zeros with its own proof and constant:
   [AnalyticNumberTheoryPartI](../AnalyticNumberTheoryPartI/README.md) §0.34, which keeps its
   statement; §10.7 here implies a stronger bound and is not its supplier.
@@ -189,7 +191,7 @@ numerical constant of Layer 10 is a closed-form rational inequality stated with 
 - **Additive character and measure.** `e(z) = exp(2πi Tr_{F/ℚ}(z/λ))`, which on `ℂ` is
   `exp(4πi Im z/√3)`; `ě(z) = exp(2πi(z + z̄)) = e(λz)` is the character of `dunnradziwill2024` and
   `patterson1977`. The measure `dμ = (2/√3) dx dy` makes `𝓞` self-dual for `(x, y) ↦ e(xy)`, with
-  covolume `1` (§4.4). The Fourier transform on `ℂ` is `f̂(y) = ∫ f(x) e(−xy) dμ(x)`.
+  covolume `1` (§3.5). The Fourier transform on `ℂ` is `f̂(y) = ∫ f(x) e(−xy) dμ(x)`.
 - **Gauss sums.** For primary squarefree `c` prime to `6` and `j ∈ ℤ`,
   `γ_j(c) = q_c^(−1/2) Σ_{x mod c} χ_c(x)^j e(x/c)`, with `γ_j(1) = 1`.
 - **Zeros.** A function `f : ℂ → ℂ` has a zero at `ρ` when `0 < meromorphicOrderAt f ρ`; "no zero
@@ -212,7 +214,8 @@ numerical constant of Layer 10 is a closed-form rational inequality stated with 
 - `meromorphicOrderAt`, `meromorphicOrderAt_mul`, `meromorphicOrderAt_ne_top_iff` and
   `MeromorphicNFOn`: order is a germ invariant with values in `WithTop ℤ`, additive on products of
   meromorphic functions, `⊤` exactly on the germ of `0`. No regularity is read off a value.
-- `riemannZeta`, `riemannZeta_ne_zero_of_one_le_re`; `DirichletCharacter.LFunction`,
+- `riemannZeta`, `differentiableAt_riemannZeta` (analytic off `s = 1`),
+  `riemannZeta_ne_zero_of_one_le_re`; `DirichletCharacter.LFunction`,
   `DirichletCharacter.differentiableAt_LFunction` (analytic off `s = 1`, and at `1` for `χ ≠ 1`),
   `DirichletCharacter.LFunction_modOne_eq` (level one is `ζ`), `DirichletCharacter.LFunction_changeLevel`
   (imprimitive versus primitive, with the finite Euler correction),
@@ -294,8 +297,8 @@ gamma shift in `{0, 1}` per real place, one complex gamma shift `0` per complex 
 at `0` and `1` exactly for the trivial character), Layers 6 and 8 (`heckeData ψ` agrees off the
 coefficient at `0` with the record `grossencharacterData` of its Grossencharacter, which satisfies
 `HasDirichletAgreement`, `HasMeromorphicContinuation` and `HasFunctionalEquation`), Layer 7
-(nonvanishing of `heckeLFunctionC ψ.character` on
-`Re s = 1` for primitive `ψ`).
+(for a nontrivial primitive `ψ`, `heckeLFunctionC ψ.character` has no zero on `Re s = 1`; the layer
+makes no statement for the trivial character, whose `L`-function `ζ_K` has its pole at `1`).
 
 ### From TauCetiRoadmap.ZerosOfLFunctions
 
@@ -449,8 +452,11 @@ allowed. *Zero-free right of `σ`* is this predicate in prose. This is the readi
 - The function equal to `s − 2` off `s = 2` and to `1` at `s = 2` has a nonzero value at `2` and
   order `1` there: it is not zero-free right of `3/2`, while a definition through values would
   accept it.
-- `riemannZeta` is zero-free right of `1`: `riemannZeta_ne_zero_of_one_le_re` off `s = 1`, and
-  order `−1` at `s = 1`, where Mathlib's value is junk.
+- `riemannZeta` is zero-free right of `1`: on `Re s > 1` it is analytic
+  (`differentiableAt_riemannZeta`, since `s ≠ 1`) and nonzero (`riemannZeta_ne_zero_of_one_le_re`),
+  so its order there is `0`. The point `s = 1`, where the order is `−1`, has `Re s = 1` and lies
+  outside this half-plane; it enters only for `σ < 1` (§10.7), and there the predicate reads the
+  order `−1`, not Mathlib's value `ζ(1) = (γ − log 4π)/2`.
 
 *Needs:* Mathlib `meromorphicOrderAt`, `meromorphicOrderAt_mul`, `riemannZeta_ne_zero_of_one_le_re`,
 `DirichletCharacter.differentiableAt_LFunction`; Tau Ceti `heckeLFunctionC_eventuallyEq_primitive`,
@@ -1186,8 +1192,9 @@ non-abelian `K` the cofactor is an Artin `L`-function whose holomorphy is not kn
 - `χ = χ₋₃`, `K = F`: the cofactor `χχ₋₃` is the principal character modulo `3`, with a pole at `1`;
   a zero of `L(s, χ₋₃)` at `1` would be cancelled, and `L(1, χ₋₃) ≠ 0` excludes it.
 - `σ₀ = 1`: the conclusion is Mathlib's `DirichletCharacter.LFunction_ne_zero_of_one_le_re` read
-  through §1.1, and the hypothesis is LFunctions Layer 7, so the content of the statement lies in
-  `σ₀ < 1`.
+  through §1.1, and the hypothesis holds for every primitive `ψ`, the trivial one included, by the
+  Euler product on `Re s > 1`, where `heckeLFunctionC` is the series once LFunctions Layer 5 gives the
+  continuation, so the content of the statement lies in `σ₀ < 1`.
 - The bound `σ₀ ≥ 0` is what the route uses: the principal character modulo `4` has
   `L(s, χ₀) = ζ(s)(1 − 2^(−s))`, whose deleted factor vanishes at `s = 2πik/log 2` on `Re s = 0`,
   outside `Re s > σ₀`. For `σ₀ < 1/2` the hypothesis fails (`ζ_K = ζ · ∏_{ψ ≠ 1} L(s, ψ)` has the
@@ -1247,8 +1254,10 @@ ideals prime to `𝔠`. An *`n`-th order Hecke family with respect to `𝔠`* at
 subject to two axioms. The *reciprocity law*: for some finite group `G`, monoid homomorphism
 `𝔞 ↦ [𝔞]` from `I(𝔠)` to `G` and function `C` on `G × G` with values in `μ_n`, the identity
 `χ_𝔞(𝔟) = C([𝔞], [𝔟]) χ_𝔟(𝔞)` holds at every coprime pair of squarefree `𝔞, 𝔟 ∈ I(𝔠)`. The
-*primitivity axiom*: at every such pair with `[𝔞] = [𝔟]`, the conductor of `χ_𝔞 χ_𝔟` is `𝔞𝔟`
-(`goldmakherlouvel2013` Definition 1, p. 1).
+*primitivity axiom*: at every such pair with `[𝔞] = [𝔟]`, the primitive character inducing
+`χ_𝔞 χ̄_𝔟` has conductor `𝔞𝔟` (`goldmakherlouvel2013` Definition 1, pp. 1–2, read with the conjugate
+that its verification in §2, p. 5, computes; `bgl2014` Lemma 2.3, p. 7). For `n = 2` the values are
+real and `χ̄_𝔟 = χ_𝔟`; for `n ≥ 3` the conjugate is needed (§6.3, Checks).
 
 - For `d ∣ n` with `d > 1`, the primitive characters inducing the `χ_𝔞^(n/d)` have trivial infinite
   type and order dividing `d`, and they satisfy the reciprocity law with `C^(n/d)` at every coprime
@@ -1257,7 +1266,6 @@ subject to two axioms. The *reciprocity law*: for some finite group `G`, monoid 
   and the primitivity axiom; these are hypotheses, not consequences: the primitivity axiom fails
   when every `χ_𝔞` has order dividing `n/d` (`goldmakherlouvel2013` Remark 3, p. 2, states the
   passage to powers without them).
-- The Fisher–Friedberg characters of §6.3 form an `n`-th order Hecke family.
 - Over `ℤ[ω]`, the quadratic residue symbols `𝔞 ↦ χ_a(·)³` read at primary generators, extended to
   their primitive inducing characters (conductor `a` or `λa`), form a quadratic Hecke family with
   `G` the square classes modulo `4` and `C = R` of §4.5 (`openai2026quasiRH` §5.4, p. 36).
@@ -1266,8 +1274,8 @@ subject to two axioms. The *reciprocity law*: for some finite group `G`, monoid 
 
 - `k = ℚ`, `n = 2`, `𝔠 = (4)`: `χ_a = (a/·)` for odd squarefree `a > 0`, with `G = (ℤ/4)ˣ` and `C`
   the sign `(−1)^((a−1)(b−1)/4)`; for `a = 3`, `b = 7` (one class) `χ₃χ₇ = (21/·)` is primitive
-  modulo `21`, while for `a = 3`, `b = 5` (two classes) `(15/·)` has conductor `60`, which is why
-  primitivity is required only within a class.
+  modulo `21` (and equals `χ₃χ̄₇`, the values being real), while for `a = 3`, `b = 5` (two classes)
+  `(15/·)` has conductor `60`, which is why primitivity is required only within a class.
 - The trivial family `χ_𝔞 = 1` fails the primitivity axiom at `𝔞 ≠ 𝔟` in one class.
 - Over `ℤ[ω]`, `χ_p³` for `p = 1 + 3ω` has `χ_p(−1)³ = −1`, so its primitive inducing character is odd
   at `λ` and the conductor is `λp`, not `p`.
@@ -1310,6 +1318,10 @@ the primitive character that induces it (`bgl2014` Appendix II, p. 20, and §2; 
   `n`-th power free the conductor lies between `𝔞₀` and `𝔠𝔞₀`, `𝔞₀` the squarefree kernel of `𝔞₁`;
   `χ_𝔞(𝔟) χ_𝔟(𝔞)⁻¹` depends only on `[𝔞], [𝔟] ∈ R_𝔠` (`bgl2014` Lemma 2.1, p. 6).
 - For squarefree `𝔞`, every prime of `𝔞` divides the conductor, so `χ_𝔞(𝔟) = 0` when `𝔟` meets `𝔞`.
+- The `χ_𝔞` at squarefree `𝔞` prime to `S` form an `n`-th order Hecke family with respect to `𝔠`
+  (§6.2), with `G = R_𝔠` and `[·]` the projection of `I(𝔠)` onto it: the reciprocity law is the last
+  clause of the second bullet, and the primitivity axiom, for `χ_𝔞 χ̄_𝔟` with `[𝔞] = [𝔟]`, is `bgl2014`
+  Lemma 2.3 at `j = 1` (p. 7; `goldmakherlouvel2013` §2, pp. 4–5).
 
 **Checks.**
 
@@ -1320,6 +1332,17 @@ the primitive character that induces it (`bgl2014` Appendix II, p. 20, and §2; 
   a power is `1`.
 - A choice of a different set `ℰ` changes `χ_𝔞` by a character depending only on `[𝔞]`; the large
   sieve of §6.4 is insensitive to this.
+- The conjugate in the primitivity axiom: `K = F`, `n = 3`, `S = {(λ)}`, `𝔠 = (9)`, `𝔞 = (−2)` and
+  `𝔟 = (7)` are squarefree, coprime and prime to `λ`, and `−2 ≡ 7 (mod 9)` puts them in one class of
+  `R_𝔠`, so `(−2) = (x_a) E 𝔤_a³` and `(7) = (x_b) E 𝔤_b³` with one `E` and `x_a ≡ x_b ≡ 1 (mod 9)`.
+  The character `χ_𝔞 χ̄_𝔟` is the cubic symbol of `x_a/x_b ≡ 1 (mod 9)`, a cube in `F_λ`, so it is
+  unramified at `λ` and has conductor `(2)(7) = (14) = 𝔞𝔟`. The product `χ_𝔞 χ_𝔟` is the cubic
+  symbol of `x_a x_b m_E² = 14 w λ^(2k) h³` with `w` a unit, `(m_E) = E λ^k` and `h` prime to `λ`. A
+  Kummer extension `F_λ(∛y)/F_λ` is unramified only when `3 ∣ v_λ(y)` and
+  `y λ^(−v_λ(y)) ≡ ±1 (mod λ³)`, and the cube of a unit of `F_λ` is `≡ ±1 (mod λ³)`; so `χ_𝔞 χ_𝔟` is
+  unramified at `λ` only if `14 ≡ ζ (mod λ³)` for one of the six units `ζ`. But `14 ≡ 5 (mod λ³)`, and
+  `v_λ(5 + 1) = v_λ(6) = 2`, `v_λ(5 + ω) = v_λ(5 + ω²) = 1`, while `5 − 1`, `5 − ω`, `5 − ω²` are units.
+  So `λ` divides the conductor of `χ_𝔞 χ_𝔟`, and the axiom stated with `χ_𝔞 χ_𝔟` fails for this family.
 
 *Needs:* §§2.1, 6.2.
 
@@ -1444,7 +1467,8 @@ equation (LFunctions Layer 5) and §5.2 on the reflected line.
   `a ≤ M_1 < a + ε` and `M_2 = M_1 < a + 2ε`, whatever the value of `M_1`.
 - The count `I = ⌈1/ε⌉ + 2` suffices: if every `i ≤ I − 1` failed, each failure gives
   `M_(i+1) ≥ a_i + 2ε > M_i + ε`, so `M_I > a₀ + (I − 1)ε ≥ a₀ + 1 + ε > 1`, while `M_j < 1` because a
-  nonprincipal primitive Hecke `L`-function has no zero on `Re s ≥ 1` (LFunctions Layer 7).
+  nonprincipal primitive Hecke `L`-function has no zero on `Re s > 1` (Euler product) nor on `Re s = 1`
+  (LFunctions Layer 7, which is stated for nontrivial primitive characters, as the members of `𝒳` are).
 
 *Needs:* §§5.1–5.3; LFunctions Layers 5 and 7; Layer 1 (§1.2).
 
@@ -2193,20 +2217,30 @@ below at `d = h`, and the range beyond `h` has length `ς` (`openai2026quasiRH` 
 `Re w = 19/20`, which lies `l_y/20 = 1/40` below, and its `z`-integral on `Re z = 33/200 = 1/6 − 1/600`,
 which lies `h/600 = 1/1200` below. The rows with `q_u ≤ Z^(1/63)` lie `43/300` below, and those with
 `q_u > Z^(501/1000)`, estimated on `Re z = 4000`, more than `1` below (`openai2026quasiRH` §11, p. 82).
-With `m₀ = 1/1200`, the least of the five, and the common loss `E* = 10⁻⁶`, the central losses are at
-most `46E* < m₀/4`, every piece keeps at least `3m₀/4 = 1/1600`, and §1.4 with `m = 1/2400` gives
-`m/2 = 1/4800`.
+With `m₀ = 1/1200`, the least of the five, fix before the target the loss budget `ε_b = 10⁻⁶`: the bin
+parameter `ε < ε_b` of §10.5; the losses `ε_r` of the row count (the `ε'` of §10.4), `ε_n` of the
+numerator `L^S(w, χ_•(u))` on the reflected line (the `ε₁` of §7.2) and `ε_H` of the correction
+(`H_(η,u) ≪ q_u^(ε_H)` of §10.3), each equal to `ε_b`; the losses `ε_d`, `ε_p` of §10.5 and the loss of
+summing the `O(log Z)` dyads, each at most `ε_b`. The shifted integral of a bin (§10.5) then holds with
+`ε_c = 12ε + ε_r + ε_n + ε_H ≤ 15ε_b`, the `12ε` coming from the reflected-line bound of §7.2
+(`openai2026quasiRH` §10.5, p. 75). With `l_y = 1/2` and `d ≤ 501/1000 < 1`, the losses
+`(16 − 6l_y)ε + (1 + d)ε_c + dε_d + ε_p` of §10.5 and the dyadic sum come to at most
+`13ε_b + 2 · 15ε_b + ε_b + ε_b + ε_b = 46ε_b < m₀/4` (`openai2026quasiRH` proof of Proposition 11.2,
+p. 83); every piece keeps at least `3m₀/4 = 1/1600`, and §1.4 with `m = 1/2400` gives `m/2 = 1/4800`.
 
 **Checks** (the closed-form inequalities).
 
-- `46 · 10⁻⁶ = 4.6 · 10⁻⁵ < (1/1200)/4 ≈ 2.08 · 10⁻⁴`.
+- `46ε_b = 46 · 10⁻⁶ = 4.6 · 10⁻⁵ < (1/1200)/4 ≈ 2.08 · 10⁻⁴`; the count `46 = 13 + 30 + 3` is the
+  `13ε` of the bin parameter, `(1 + d)ε_c ≤ 2 · 15ε_b`, and `ε_d`, `ε_p` and the dyadic sum. Taking
+  `ε_c = ε_b`, as if the row count were the only loss in it, would give `13 + 2 + 3 = 18` and hide the
+  `12ε` that the reflected-line bound of §7.2 puts into every bin.
 - `3m₀/4 = 1/1600`, and `1/1600 > 1/2400 = m`.
 - The least of the five is `1/1200 < 1/40 < 1021/25000 < 43/300`: the `z`-integral of the row `u = 1`
   fixes `m₀`.
 - `1/24 − 62/75000 = (3125 − 62)/75000 = 3063/75000 = 1021/25000`; the shift `1/6 − 33/200 = 1/600`
   times `h = 1/2` is `1/1200`, and `(1 − 19/20) l_y = 1/40`.
 
-*Needs:* §§1.4, 10.5.
+*Needs:* §§1.4, 10.5; for the loss budget, §§7.2, 10.3 and 10.4.
 
 ### 10.7 The zero-free half-plane `Re s > 11/12`
 
@@ -2217,8 +2251,10 @@ and every `χ : DirichletCharacter ℂ N`, `DirichletCharacter.LFunction χ` is 
 (`zeroFreeRightOf_LFunction`); in particular `riemannZeta s ≠ 0` for every `s` with `Re s > 11/12`
 (`riemannZeta_ne_zero_of_eleven_twelfths_lt_re`; at `s = 1` Mathlib's value `(γ − log 4π)/2` is not `0`,
 `riemannZeta_one_ne_zero`, so no point needs excluding, as in `riemannZeta_ne_zero_of_one_le_re`).
-Route: the primitive family of `F` is zero-free right of `1` (Euler product and LFunctions Layer 7);
-suppose its zero abscissa `β*` exceeds `11/12` and apply §1.3 with `σ₀ = 11/12`, `c = −2/3`,
+Route: the primitive family of `F`, the trivial character included, is analytic and zero-free on
+`Re s > 1` (Euler product; there `heckeLFunctionC` is the series by the continuation of LFunctions
+Layer 5), so it is zero-free right of `1` and satisfies the hypothesis of §1.3; suppose its zero
+abscissa `β*` exceeds `11/12` and apply §1.3 with `σ₀ = 11/12`, `c = −2/3`,
 `ω = (β* − 11/12)/2`, `σ = 1/4800`, `J_η = J_(I,η)`, `H_η` of §10.3 and `D_η` the Euler factors at `S`:
 §10.2 gives `|J_η| ≪ Z^(1/4 + ε)` with `C(11/12) = 1/4` and `ε < ω`, and §10.6 the comparison. Hence
 `β* ≤ 11/12`, and §5.5 with `K = F` (abelian, `X(F) = {1, χ₋₃}`) transfers the half-plane to every
@@ -2226,7 +2262,7 @@ presentation and to every Dirichlet `L`-function. A second proof, through the me
 sextic-twisted Möbius sums `Σ μ(𝔫) η(𝔫) χ_n(u) W(N𝔫/D)` and Littlewood's criterion, is
 `openai2026quasiRHalt` Proposition 3.1 and Section 3.
 
-*Needs:* §§1.2–1.3, 5.5, 10.2, 10.3, 10.6; LFunctions Layers 5 and 7; Tau Ceti `heckeLFunctionC`,
+*Needs:* §§1.2–1.3, 5.5, 10.2, 10.3, 10.6; LFunctions Layer 5; Tau Ceti `heckeLFunctionC`,
 `PrimitiveRayClassCharacter`; Mathlib `DirichletCharacter.LFunction`, `riemannZeta`,
 `riemannZeta_one_ne_zero`.
 
@@ -2262,8 +2298,12 @@ Route: for `0 < Re ρ < 1` the gamma factors (`Γ_ℝ(s + a)` with `a ∈ {0, 1}
 and nonzero, and the poles at `0` and `1` of the completion of the trivial character lie outside the
 strip, so `L(ρ, χ) = 0` gives `L(1 − ρ̄, χ) = 0` by the functional equation
 (`DirichletCharacter.IsPrimitive.completedLFunction_one_sub`, LFunctions Layer 5 for `K`) and complex
-conjugation; `Re ρ ≥ 1` is excluded by `DirichletCharacter.LFunction_ne_zero_of_one_le_re` and
-LFunctions Layer 7; `Re ρ > 0` excludes the trivial zeros (`DirichletCharacter.LFunction_eq_zero_iff_of_re_nonpos`).
+conjugation; `Re ρ > θ`, which contains `Re ρ ≥ 1`, is excluded by the hypothesis itself, read
+through §1.1: a Dirichlet `L`-function is analytic off `s = 1` and at `1` for `χ ≠ 1`
+(`DirichletCharacter.differentiableAt_LFunction`), so a zero of its value there has positive order,
+and at level `1` the value at `1` is `riemannZeta 1 ≠ 0` (`DirichletCharacter.LFunction_modOne_eq`,
+`riemannZeta_one_ne_zero`); `Re ρ > 0` excludes the trivial zeros
+(`DirichletCharacter.LFunction_eq_zero_iff_of_re_nonpos`).
 The instance `θ = 11/12` (§10.7) gives `1/12 ≤ Re ρ ≤ 11/12` (`openai2026quasiRH` proof of Corollary 1.2,
 p. 7, at `7/8`): for a primitive Dirichlet character, at a zero `ρ` of the value with `Re ρ > 0`
 (`re_mem_Icc_of_LFunction_eq_zero`; a primitive character of level `N ≥ 2` is nontrivial, so its
@@ -2284,8 +2324,8 @@ finite-order Hecke character of `F`, at a point `ρ` with `Re ρ > 0` and
   `Γ_ℝ(s)²` against the simple pole of the completion there; real part `0`, excluded by `Re ρ > 0`.
 
 *Needs:* §1.1; Mathlib `DirichletCharacter.IsPrimitive.completedLFunction_one_sub`,
-`DirichletCharacter.LFunction_ne_zero_of_one_le_re`, `DirichletCharacter.LFunction_eq_zero_iff_of_re_nonpos`;
-LFunctions Layers 5 and 7.
+`DirichletCharacter.differentiableAt_LFunction`, `DirichletCharacter.LFunction_modOne_eq`,
+`riemannZeta_one_ne_zero`, `DirichletCharacter.LFunction_eq_zero_iff_of_re_nonpos`; LFunctions Layer 5.
 
 ### 11.2 Least character values under a zero-free half-plane
 
@@ -2372,13 +2412,13 @@ below the bound has `jacobiSym n p = −1` (`exists_jacobiSym_eq_neg_one_le_log_
 
 ### Dependencies
 
-Layers 1, 5 and 10; ZerosOfLFunctions §§4.4–4.5, 8.4–8.6; SieveMethodsAndPrimePatterns §2.9; Mathlib
-Dirichlet `L`-functions.
+Layers 1, 5 and 10; LFunctions Layer 5; ZerosOfLFunctions §§4.4–4.5, 8.4–8.6; SieveMethodsAndPrimePatterns
+§2.9; Mathlib Dirichlet `L`-functions.
 
 ## Downstream consumers
 
-- **QuasiRiemannHypothesisPartII**: the `7/8` half-plane by the compensated probe (`openai2026quasiRH`
-  Sections 12–20), consuming Layers 1–10: the continuation principle and the choice of the height
+- **QuasiRiemannHypothesisPartII**: the `7/8` half-plane by the second probe of `openai2026quasiRH`
+  Part II (Sections 12–20), consuming Layers 1–10: the continuation principle and the choice of the height
   exponent before the decay order (§§1.3–1.4), the reflection (§9.2), the sieves (§§6.2, 6.5), the zero
   detection (§§7.2–7.4), the Poisson identity and principal correction (§10.3) and the `11/12` bound
   itself (§10.7), which enters through `κ = 2β* − 1 ≤ 5/6`; then the strip `1/8 ≤ Re ρ ≤ 7/8` (§11.1 at
