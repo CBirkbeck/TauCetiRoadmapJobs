@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DenoisingDiffusion~2",
+  "head": "afd86298891e86f03c0a91669aa5f8a029efb46a",
+  "pr": 2476,
+  "folder": "DenoisingDiffusion",
+  "date": "2026-11-17",
+  "findings": 3,
+  "blocking": 0,
+  "notes": "Full re-review. Previous R01-R05 all repaired. Three P3 findings: 4.1 'for every β' is vacuous for forwardPath_reverse and klDiv_forwardPath_eq (IsReverseKernel unsatisfiable off schedules; witness β 1 = 1/2, β 2 = -1); 'How to read the build' lacks the layer order; Vincent locator uses the technical report's numbering. Seeded sample 1.1-4.3 all computed (adversarial table). 13 of 14 source locators checked against the texts (Robbins 1956 unreadable: block page). 22 library declarations opened at the pins; supplier MathematicalStatisticsNonparametric 1.3 resolved on main. Gate passes; depcheck 0 problems; Suggested.lean elaborates with 24 sorry warnings only; one-tactic probe closed 0 of 24; pull request text agrees with the head.",
+  "text": "4e385778dc7172f9"
+ }
+}
