@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PurityForFlatCohomology~19",
+  "head": "64dca7d37dbe1d83e69a6fef387cafd40cf5027f",
+  "pr": 1840,
+  "folder": "PurityForFlatCohomology",
+  "date": "2026-11-17",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full review of the head. Two P3 findings, both in the passages rewritten to cite GroupSchemesOverABase: the definition of the type in section 7.12d has two Checks (R01), and section 7.12b states no target (R02). The previous review had no finding; its ownership question is settled (GroupSchemesOverABase is on main and cited by section). Seeded sample: all 15 targets read against CS24, C19, ILO14 and Poo17 (31 locators); SGA3 and Aus62 are uncertified and listed as not verifiable. Adversarial table: 28 rows with computed values. Gate at 64dca7d: every counter 0, OK; depcheck 240 roadmaps, 2530 edges, 0 problems; outside-folder diff empty. Suggested.lean elaborates with sorry as the only warning (15), is unchanged since a825987, and the one-tactic probe closes 0 of 15 theorems. No declared gap is raised. Three source issues recorded for CS24.",
+  "text": "0a1516b5745008b7",
+  "carried": {
+   "from": "64dca7d37dbe1d83e69a6fef387cafd40cf5027f",
+   "head": "11b433b95571a8f6835b5a3a6401a1299eaab8d9",
+   "findings": 2,
+   "lines": 32,
+   "folders": [
+    "PurityForFlatCohomology"
+   ]
+  }
+ }
+}
