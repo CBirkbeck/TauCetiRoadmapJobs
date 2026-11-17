@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FunctorOfPoints~1",
+  "head": "1ba6596cb95bfecea68499fd016c1d4f5ff96603",
+  "pr": 2465,
+  "folder": "FunctorOfPoints",
+  "date": "2026-11-17",
+  "findings": 21,
+  "blocking": 8,
+  "notes": "Full review. Gate at this head fails (residue 1, statement-hygiene 3, readme-ids-missing 7; build and depcheck pass, no UPWARD or CYCLE). Suggested.lean elaborates with sorry the only warning; 14 elaborated signatures compared with the README; one-tactic probe run on a scratch copy (one theorem closes by rfl); replacement statements for the front door, closed immersions, the DVR criterion and the Grassmannian elaborated. Seeded sample of 15 targets computed in the adversarial table. Sources read: Stacks tags 03O1, 0CM1 (0CM2, 0207, 0208, 05JY), 00PH, 0B28/0B2E, 023T, 01BG, 0GN7, 02H0, 02HG; EGA II 7.3.8; Strickland; Toen-Vaquie. Not readable legally: Demazure-Gabriel, Jantzen, Eisenbud-Harris, Bosch-Luetkebohmert-Raynaud, Milne. Cross-roadmap citations resolved against main and the open heads of SemiringSchemes and QuasicoherentSheavesOnPrestacks. Blocking: one vacuous target (6.4), the absolute case typed only in universe 0, the front door stated through a stand-in, statable headlines absent, six supplier declarations absent at the pins, an unsupported proof route in 4.2, suppliers listed as consumers, and a generic layer also owned by SemiringSchemes.",
+  "text": "f4698fa925355264"
+ }
+}
