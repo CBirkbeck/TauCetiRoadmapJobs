@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuiverRepresentations~12",
+  "head": "5a4ca694e4c2758e71980c729c2a9f8cb0a1a069",
+  "pr": 2479,
+  "folder": "RepresentationTheory/QuiverRepresentations",
+  "date": "2026-11-17",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "Full review. Gate rerun OK (all counters 0); depcheck 0 problems; Suggested.lean elaborates with only the four sorry warnings; one-tactic probe closes nothing. All 14 sampled targets and 47 source locators checked against the cached texts (ass, ars, bgp, etingof, cbquiv); every backticked library name resolved at the pins. The changed contract passage is correct at the pin. Four P3 findings: the Scope sentence and section 6.3 (statement and Needs) still carry the locality hypothesis the pull request removes from the contract; ARS II.4.1 and BGP section 2 locators do not contain the statements they are cited for.",
+  "text": "53b5649979dfd1ab",
+  "carried": {
+   "from": "5a4ca694e4c2758e71980c729c2a9f8cb0a1a069",
+   "head": "061509b0c8cd77da432e7267e47864b3b8484c75",
+   "findings": 4,
+   "lines": 42,
+   "folders": [
+    "RepresentationTheory/QuiverRepresentations"
+   ]
+  }
+ }
+}
