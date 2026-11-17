@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FunctorOfPoints~2",
+  "head": "21835185656483cb06595b68e05884e7b6b6addd",
+  "pr": 2465,
+  "folder": "FunctorOfPoints",
+  "date": "2026-11-17",
+  "findings": 12,
+  "blocking": 3,
+  "notes": "Full re-review. Previous findings: R01-R05, R07-R12, R19-R21 repaired; R06 and R13-R18 not repaired (raised again as R01, R04-R09). New: isOpenSubfunctor_iff fails on the affine site (P2), infinitesimal linearity too weak for the module axioms (P2), missing locators, 'full rank' wording, large-site constructions (P3). Sample: 15 seeded targets; 11 source locators read (Strickland Def 2.42, Prop 3.3; Stacks 03O1, 0B2E, 0207, 0208, 05JY, 05JX, 0CM2, 00PH, 01JJ, 089R); Demazure-Gabriel, Jantzen, Eisenbud-Harris, BLR not readable. Gate FAIL: residue 1, statement-hygiene 2, readme-ids-missing 7; build and depcheck pass (0 problems). Suggested.lean elaborates with sorry the only warning; one-tactic probe run on a scratch copy.",
+  "text": "ac94c6a40bd5e565"
+ }
+}
