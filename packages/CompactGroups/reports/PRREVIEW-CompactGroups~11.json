@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompactGroups~11",
+  "head": "2f447dbaa0988eead593b224438317c6ba770b79",
+  "pr": 2480,
+  "folder": "RepresentationTheory/CompactGroups",
+  "date": "2026-11-17",
+  "findings": 16,
+  "blocking": 6,
+  "notes": "The one changed line (README.md:307, Schur orthogonality with the conjugate on the first factor) was recomputed correct against a 1-dim witness and Knapp Cor. 4.10(b). The worker's gate fails on text identical to main: set_option 1, tex 3, sorry-data 10, readme-ids-missing 1, build 41 linter warnings. Dependency check: 237 roadmaps, 2526 edges, 0 problems. lake env lean exits 0 with 48 sorry and 45 linter warnings, and with line 44 deleted the result is identical. Signature check with #check on 26 declarations. One-tactic probe on 7 targets: 3 close. Sampled 'Haar measure', 'Two neighbouring roadmaps' and 'Separable deliverables'. Knapp read from the author page (Prop 4.6, Cor 4.10, Cor 4.16, Thm 4.20, Ch. IV contents); Bump and Broecker-tom Dieck contents read on the publisher pages. P1: four Lean statements lack continuity of g -> pi g and are false (Circle with a discontinuous additive phi). P2: Tau Ceti at 2fd255d proves every target; sorry'd data; set_option; absent headlines; separability overclaim. A repair scratch importing 11 Tau Ceti modules and pinning 13 declarations elaborates.",
+  "text": "a9ed56c2c2e0ccaf"
+ }
+}
