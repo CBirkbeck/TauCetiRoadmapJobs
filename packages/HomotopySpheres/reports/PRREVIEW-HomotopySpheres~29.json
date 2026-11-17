@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HomotopySpheres~29",
+  "head": "a54da7945e3f4b475ba0819f519b549dd974765e",
+  "pr": 284,
+  "folder": "HomotopySpheres",
+  "date": "2026-11-17",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 97 changed lines since 64bdd7e. All seven previous findings (R01-R07) repaired: 3A.4 takes the sphere suspension range from RiemannianGeometry R3 item 4 with no GeneralizedCohomology G2 item 5 edge (no cycle; G2 consumes Stage 3A on main); the unoriented corollary text matches the Lean binders (Hausdorff only); contracts added for IntegralLattices 1I/6A, MorseTheory M3/M5, CharacteristicClasses C2.0, GeneralizedCohomology G4 item 2; 'uncertified' removed; 3C.5 cites CliffordAlgebra.monomialGroup and finite_monomialGroup (opened at the pin, lines 165 and 804); Hatcher 3C.8 p.288 and 4J.1 p.471 and Ranicki pp.5-7 checked against the text; the description names IntegralLattices. Gate at a54da79: every check 0, OK. depcheck rerun: 254 roadmaps, 2595 edges, 0 problems. lake env lean on Suggested.lean: exit 0, 20 sorry warnings only; the diff changes two docstrings and no statement. Adversarial table of 10 rows with computed values for the changed passages. Not verifiable: the new James 1955 locator (Theorems 1.11-1.12, 5.6; paywalled), Toda, Gray and the other paywalled texts as before. Two remarks that ask for no change.",
+  "text": "814a75fb47bc33ae"
+ }
+}
