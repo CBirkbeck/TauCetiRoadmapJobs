@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MatesDoubleCategories~3",
+  "head": "ac07d7d91103854274a705c23c443e0a952205cc",
+  "pr": 2299,
+  "folder": "MatesDoubleCategories",
+  "date": "2026-11-17",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "Full review at ac07d7d. Previous findings R01-R04 repaired, R05 (pull-request description) not. Four P3 findings: the 2-cell dual of a bicategory is a conditional target (absent at the pinned Mathlib); the mate under two identity adjunctions has no formula, Check or owner (formula proved in a scratch file); M2.1 and M2.2 lack Checks and the supplier contracts follow the layers; the description omits M1.4. Sample: all 13 seeded targets plus the headlines, 20 source locators read in FairbanksShulman, ChengGurskiRiehl, Schanuel-Street and Riehl-Verity (arXiv v4); KellyStreet uncertified, not read. Gate passes (all checks 0, targeted build); depcheck 248 roadmaps, 2566 edges, 0 problems; Suggested.lean elaborates with sorry as the only warning; six one-tactic probes on representable_of_representation fail; negative control (one object, empty quivers) proved in scratch. No overlap with HomotopyTheoryOfCategories or Foams; no other owner of double categories or the walking adjunction on main or at the open heads.",
+  "text": "a9fde2b769e0eb7a"
+ }
+}
