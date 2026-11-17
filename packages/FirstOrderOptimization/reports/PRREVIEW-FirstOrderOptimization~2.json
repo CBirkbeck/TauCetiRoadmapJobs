@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FirstOrderOptimization~2",
+  "head": "e65132c473ed019c3fa23300f262150ad28ca4d9",
+  "pr": 2474,
+  "folder": "FirstOrderOptimization",
+  "date": "2026-11-17",
+  "findings": 6,
+  "blocking": 1,
+  "notes": "Full re-review. Previous R01-R15: 14 repaired, R03 partly (docstring, now R02). Findings: R01 (P2) nearest-point projection also owned by MathematicalStatisticsNonparametric 6.5 on main; R02-R06 (P3) module docstring, two padding declarations, the reduction route of 5.1, README/Lean generality in 1.3, a supplier missing from the description. Sample: 15 locators in 7 readable sources verified (KNS16, BCN18, GL13, CP15, RKK18, KB15, WWB19); Nesterov 2018, Bauschke-Combettes 2017, Beck 2017, Beck-Teboulle 2009, Polyak, Bertsekas, Robbins-Siegmund, Robbins-Monro not readable legally. 17 pinned declarations opened. Gate passes at e65132c; depcheck 0 problems; Suggested.lean elaborates with 39 sorry warnings only; one-tactic probe closes 0 of 39; adversarial table has 26 rows with computed values.",
+  "text": "19a218c1a968f804"
+ }
+}
