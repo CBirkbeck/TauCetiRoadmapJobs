@@ -238107,10 +238107,42 @@
    "reported": "2026-11-17",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18800#issuecomment-6939342487"
+  },
+  {
+   "kind": "error",
+   "source": "goldmakherlouvel2013",
+   "locator": "Remark 3 and Corollary 1.2, printed p. 2",
+   "says": "the `n/d`-th powers of an `n`-th order family always form a `d`-th order family",
+   "should": "assumed that the powers stay primitive within a class (a quadratic family read as fourth-order has trivial squares)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "QuasiRiemannHypothesis",
+   "job": "RT-QuasiRiemannHypothesis~1b",
+   "board_pr": 18800,
+   "head": "eba3543",
+   "reported": "2026-11-17",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18800#issuecomment-6940510396"
+  },
+  {
+   "kind": "error",
+   "source": "goldmakherlouvel2013",
+   "locator": "Remark 3 and Corollary 1.2, printed page 2",
+   "says": "the `n/d`-th powers of any `n`-th order Hecke family form a `d`-th order family and satisfy the quadratic sieve bound",
+   "should": "assume that the primitive characters inducing the powers satisfy the reciprocity and primitivity axioms (a quadratic family over `ℚ(i)` read as fourth-order has trivial squares)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "QuasiRiemannHypothesis",
+   "job": "RT-QuasiRiemannHypothesis~1a",
+   "board_pr": 18800,
+   "head": "eba3543",
+   "reported": "2026-11-17",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18800#issuecomment-6940555700"
   }
  ],
- "scanned_to": "2026-11-17T05:19:17Z",
- "updated": "2026-11-17T05:28:44Z",
+ "scanned_to": "2026-11-17T06:24:31Z",
+ "updated": "2026-11-17T06:25:51Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
