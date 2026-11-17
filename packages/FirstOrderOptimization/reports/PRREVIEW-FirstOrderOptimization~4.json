@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FirstOrderOptimization~4",
+  "head": "36119b20dff9b66f3041574937924ff7c7a26579",
+  "pr": 2474,
+  "folder": "FirstOrderOptimization",
+  "date": "2026-11-17",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 24 changed lines since a209c5a. Previous R01, R02, R03 all repaired, no new problem introduced. Checked: the four changed README passages and the import and docstring changes of Suggested.lean; the 3.1 definition recomputed on C = {-1, 1}, the empty set, the unit ball and an interval against the Lean body and metricProj on main; 3 pinned declarations and 1 cross-roadmap citation resolved; seeded sample falls on 3.1 only (Bauschke-Combettes 2017, paywalled, not verifiable); gate passes at 36119b2; depcheck 0 problems; Suggested.lean elaborates with 35 sorry warnings and nothing else; pull request text not contradicted by the head.",
+  "text": "19cc449f16f47f20"
+ }
+}
