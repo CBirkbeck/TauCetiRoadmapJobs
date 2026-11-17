@@ -238027,10 +238027,42 @@
    "reported": "2026-11-17",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18769#issuecomment-6936133708"
+  },
+  {
+   "kind": "misprint",
+   "source": "dunnradziwill2024",
+   "locator": "Remark 5.1, printed p. 17",
+   "says": "the cubic symbols of `c` at `a` and at `d` are equal, after showing the symbol at `ad` is `1`",
+   "should": "that they are inverse, the symbol at `a` equalling that of `b` at `d`",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "QuasiRiemannHypothesis",
+   "job": "REV-DESIGN-QuasiRiemannHypothesis~4",
+   "board_pr": 18769,
+   "head": "5be56e1",
+   "reported": "2026-11-17",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18769#issuecomment-6937198563"
+  },
+  {
+   "kind": "error",
+   "source": "goldmakherlouvel2013",
+   "locator": "Remark 3 and Corollary 1.2, printed p. 2",
+   "says": "the `(n/d)`-th powers of any `n`-th order Hecke family form a `d`-th order family, and bounds the sieve for the `n/2`-th powers",
+   "should": "restricted to families whose powers keep the primitivity axiom",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "QuasiRiemannHypothesis",
+   "job": "REV-DESIGN-QuasiRiemannHypothesis~4",
+   "board_pr": 18769,
+   "head": "5be56e1",
+   "reported": "2026-11-17",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18769#issuecomment-6937198563"
   }
  ],
- "scanned_to": "2026-11-17T02:28:38Z",
- "updated": "2026-11-17T02:29:06Z",
+ "scanned_to": "2026-11-17T03:26:58Z",
+ "updated": "2026-11-17T03:29:08Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
