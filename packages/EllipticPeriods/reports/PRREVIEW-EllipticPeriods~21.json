@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllipticPeriods~21",
+  "head": "d3006692e64de14d8dace553af4e0aab2fc1d9fd",
+  "pr": 1059,
+  "folder": "EllipticPeriods",
+  "date": "2026-11-17",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since d300669. Title and description read sentence by sentence against the head: one P3 (R01), where Scope item 4 states the CM bound <= 2 without algebraic invariants; the counterexample is c * (1, i*sqrt2) with b = 2.99107i computed. No previous findings to carry. Gate rerun with --build and the candidate order: all counters 0, build OK (with the configured order only NOT IN ORDER, not a finding). depcheck --movable: 0 problems. Elaboration: exit 0, 27 sorry warnings. ModularCurvesPartII (now on main) sections 1.1 and 1.4a, DiophantineApproximationAndTranscendence 5.6 and ModularForms 10D re-resolved; Tau Ceti names in the description opened at the pin. Adversarial rows computed for 4.4, 5.2, 3.1 and 2.4. Seeded sample: no sampled target in changed text.",
+  "text": "ba29ad1d898bec92"
+ }
+}
