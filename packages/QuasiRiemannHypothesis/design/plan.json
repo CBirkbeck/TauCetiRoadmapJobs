@@ -247,6 +247,11 @@
        "statement": "K = ℚ, n = 2, a = 5: ψ(3) = −1 = (3/5), conductor 5"
       },
       {
+       "name": "F_sextic",
+       "kind": "computation",
+       "statement": "K = F, n = 6, a = −1: value −1 at the prime of norm 7, +1 at norm 13; (2) of norm 4 divides n and is excluded"
+      },
+      {
        "name": "nth_power",
        "kind": "degenerate",
        "statement": "a = bⁿ gives the trivial character on ideals prime to n b"
@@ -783,6 +788,11 @@
        "name": "j6",
        "kind": "non-example",
        "statement": "|γ_6(p)| = 1/√7"
+      },
+      {
+       "name": "conj_forced",
+       "kind": "non-example",
+       "statement": "p = 1+3ω: χ_p(4) = ω², γ_3 = i, γ_1γ_2 = −α(p)ωi ≈ −0.6547+0.7559i, while −α(p)ω²i ≈ −0.3273−0.9449i"
       }
      ]
     },
@@ -934,9 +944,10 @@
      "id": "5.1",
      "kind": "theorem",
      "name": "QuasiRiemann.deletedEulerFactor_bounds",
-     "statement": "For squarefree 𝔯 and |a_𝔭| ≤ 1, D_𝔯(s) = ∏(1 − a_𝔭 N𝔭^(−s)) satisfies |D_𝔯| + |D_𝔯|⁻¹ ≪ N𝔯^ε on Re s ≥ σ₀ > 0, |D_𝔯(σ+it)| ≪ N𝔯^((−σ)₊+ε), |D_𝔯'/D_𝔯| ≪ log(2N𝔯) on Re s ≥ σ₀; consequently |D_𝔯|, |D_𝔯|⁻¹ ≪_{K,σ₀,B,ε} Z^ε on Re s ≥ σ₀ when N𝔯 ≤ Z^B.",
+     "statement": "For squarefree 𝔯 and |a_𝔭| ≤ 1, D_𝔯(s) = ∏(1 − a_𝔭 N𝔭^(−s)) satisfies |D_𝔯| + |D_𝔯|⁻¹ ≪ N𝔯^ε on Re s ≥ σ₀ > 0, |D_𝔯(σ+it)| ≪ N𝔯^((−σ)₊+ε), |D_𝔯'/D_𝔯| ≪ log(2N𝔯) on Re s ≥ σ₀; consequently, for Z ≥ 1 and B ≥ 0, |D_𝔯|, |D_𝔯|⁻¹ ≪_{K,σ₀,B,ε} Z^ε on Re s ≥ σ₀ when N𝔯 ≤ Z^B.",
      "hypotheses": [
-      "σ₀ > 0, ε > 0"
+      "σ₀ > 0, ε > 0",
+      "Z ≥ 1 and B ≥ 0 for the consequence"
      ],
      "locator": {
       "source": "openai2026quasiRH",
@@ -961,6 +972,11 @@
        "name": "negative_sigma",
        "kind": "computation",
        "statement": "K = ℚ, 𝔯 = (p), σ = −1: |D(−1)| = p − 1, of size N𝔯^((−σ)₊)"
+      },
+      {
+       "name": "small_Z",
+       "kind": "degenerate",
+       "statement": "B = 0, 0 < Z < 1: 𝔯 = 𝓞 gives D = 1 while Z^ε → 0 as Z → 0, so the consequence needs Z ≥ 1"
       }
      ]
     },
@@ -968,22 +984,23 @@
      "id": "5.2",
      "kind": "theorem",
      "name": "QuasiRiemann.heckeL_strip_growth",
-     "statement": "|ℒ(σ+it)| ≪_K (Q(3+|t|)^d)^(3/5) on −1/10 ≤ σ ≤ 11/10 for primitive finite-order ψ of conductor norm Q (ℒ = L(·,ψ), or (s−1)ζ_K(s)/(s+1) for ψ = 1).",
+     "statement": "|ℒ(σ+it)| ≤ C_K (Q(3+|t|)^d)^(3/5), C_K = 3|d_K|^(3/5) ζ(11/10)^d, on −1/10 ≤ σ ≤ 11/10 for primitive finite-order ψ of conductor norm Q (ℒ = L(·,ψ), or (s−1)ζ_K(s)/(s+1) for ψ = 1): the instance of ExplicitZetaBounds §3.2 (Rademacher's convexity bound) at η = 1/10 and the record heckeData ψ, whose continuedL is heckeLFunctionC ψ.character.",
      "hypotheses": [
       "K of degree d",
       "ψ primitive finite-order",
-      "route: Phragmén–Lindelöf for Q^(−3/5) ℒ(s)(s+2)^(−3d/5) with edge bounds on Re s = 11/10 (Euler product) and Re s = −1/10 (functional equation and Stirling)"
+      "route: ExplicitZetaBounds §3.2 at η = 1/10 and heckeData ψ (degree d, conductor |d_K|Q); finite-order type from the three predicates (LFunctions Layers 6 and 8), IsFiniteOrder (ZerosOfLFunctions §3.1) and the majorant Σ|a_m|m^(−σ) ≤ ζ_K(σ) ≤ ζ(σ)^d; exponent (11/10 − σ)/2 ∈ [0, 3/5], |1+s|/(2π) ≤ 3+|t|, |(s−1)/(s+1)|·3|(1+s)/(1−s)| = 3 for ψ = 1"
      ],
      "locator": {
       "source": "openai2026quasiRH",
-      "where": "Lemma 4.8, p. 21 (K = F)"
+      "where": "Lemma 4.8, p. 21 (K = F); the bound itself is ExplicitZetaBounds §3.2"
      },
      "prerequisites": [
+      "roadmap:ExplicitZetaBounds §3.2",
       "roadmap:LFunctions Layer 5",
-      "roadmap:ZerosOfLFunctions §1.3",
-      "roadmap:ZerosOfLFunctions §3.1",
-      "roadmap:ZerosOfLFunctions §3.4",
-      "mathlib:PhragmenLindelof.vertical_strip"
+      "roadmap:LFunctions Layer 6",
+      "roadmap:LFunctions Layer 8",
+      "roadmap:ZerosOfLFunctions §1.6",
+      "roadmap:ZerosOfLFunctions §3.1"
      ],
      "api": [],
      "tests": [
@@ -991,6 +1008,11 @@
        "name": "Q_trivial_edge",
        "kind": "computation",
        "statement": "K = ℚ, ψ = 1: |ζ(−1/10+it)| ≍ |t|^(3/5), the exponent 3d/5 attained at the edge"
+      },
+      {
+       "name": "Q_trivial_value",
+       "kind": "computation",
+       "statement": "K = ℚ, ψ = 1, s = −1/10: |ℒ| = 0.5099 ≤ 3(0.9/(2π))^(3/5)ζ(11/10) = 9.895 ≤ C_ℚ·3^(3/5) = 61.385, ζ(11/10) = 10.5844"
       },
       {
        "name": "F_case",
@@ -1078,7 +1100,7 @@
       {
        "name": "real_places",
        "kind": "non-example",
-       "statement": "K = ℚ(√2), χ odd: N(1+√2) = −1 forces real places in the modulus"
+       "statement": "K = ℚ(√2), χ = (·/3): α = 1+3√2 ≡ 1 (mod 3) has N(α) = −17 and χ(N(α𝓞)) = χ(17) = −1, so χ∘N is not trivial on the principal ray mod 3 without the real places; the unit 1+√2 tests nothing"
       }
      ]
     },
@@ -1167,14 +1189,15 @@
      "id": "6.2",
      "kind": "definition",
      "name": "QuasiRiemann.HeckeFamily",
-     "statement": "An n-th order Hecke family w.r.t. 𝔠: primitive Hecke characters χ_𝔞 of trivial infinite type, 𝔞 squarefree prime to 𝔠, of order dividing n, with a finite group G, [·], C : G×G → μ_n, χ_𝔞(𝔟) = χ_𝔟(𝔞)C([𝔞],[𝔟]) for coprime 𝔞,𝔟, and χ_𝔞χ_𝔟 primitive mod 𝔞𝔟 when [𝔞] = [𝔟]; quadratic large sieve Σ*_{N𝔞≤M}|Σ*_{N𝔟≤N} λ_𝔟χ_𝔟(𝔞)|² ≪ (MN)^ε(M+N)Σ*|λ_𝔟|²; Corollary 1.2 for χ^(n/2).",
+     "statement": "An n-th order Hecke family w.r.t. 𝔠: primitive Hecke characters χ_𝔞 of trivial infinite type, 𝔞 squarefree prime to 𝔠, of order dividing n, with a finite group G, [·], C : G×G → μ_n, χ_𝔞(𝔟) = χ_𝔟(𝔞)C([𝔞],[𝔟]) for coprime 𝔞,𝔟, and χ_𝔞χ_𝔟 primitive mod 𝔞𝔟 when [𝔞] = [𝔟]; quadratic large sieve Σ*_{N𝔞≤M}|Σ*_{N𝔟≤N} λ_𝔟χ_𝔟(𝔞)|² ≪ (MN)^ε(M+N)Σ*|λ_𝔟|²; the same bound for χ_𝔟^(n/2) (n ≥ 4 even) when the primitive characters inducing the n/2-th powers form a quadratic Hecke family w.r.t. 𝔠 (a hypothesis Corollary 1.2 omits).",
      "hypotheses": [
       "k ⊇ μ_n",
-      "𝔠 integral ideal"
+      "𝔠 integral ideal",
+      "corollary: n ≥ 4 even and the n/2-th powers (primitive inducing characters) form a quadratic Hecke family"
      ],
      "locator": {
       "source": "goldmakherlouvel2013",
-      "where": "Definition 1, Theorem 1.1, Corollary 1.2, pp. 1–2"
+      "where": "Definition 1, Remark 3, Theorem 1.1, Corollary 1.2, pp. 1–2; bgl2014 Lemmas 2.1, 2.3 and p. 11"
      },
      "prerequisites": [
       "target:4.5",
@@ -1186,7 +1209,7 @@
       {
        "name": "pow",
        "role": "restriction",
-       "statement": "{χ_𝔞^(n/d)} is a d-th order Hecke family"
+       "statement": "for d ∣ n, d > 1, the primitive characters inducing χ_𝔞^(n/d) have trivial infinite type, order dividing d, and the reciprocity law with C^(n/d) at coprime pairs each prime to the other's conductor; they form a d-th order family only under the remaining reciprocity and the primitivity axiom, which fails when every χ_𝔞 has order dividing n/d"
       },
       {
        "name": "ff_isHeckeFamily",
@@ -1214,6 +1237,11 @@
        "name": "conductor_lambda",
        "kind": "computation",
        "statement": "χ_p³ for p = 1+3ω is odd at λ: conductor λp"
+      },
+      {
+       "name": "quadratic_as_quartic",
+       "kind": "non-example",
+       "statement": "a quadratic family over ℚ(i) read as fourth-order: its squares are induced by 1 and fail primitivity; λ_𝔟 = 1, M = N: the double sum is ≫ N³ against N^(2+ε)"
       }
      ]
     },
@@ -1275,7 +1303,8 @@
      "statement": "Σ*_{N𝔞≤M}|Σ*_{N𝔟≤N} λ_𝔟 χ_𝔞(𝔟)|² ≪_ε (MN)^ε (M + N + (MN)^(2/3)) Σ*|λ_𝔟|² for the Fisher–Friedberg characters, n ≥ 3, M, N ≥ 1/2.",
      "hypotheses": [
       "n ≥ 3",
-      "sums over squarefree ideals prime to S"
+      "sums over squarefree ideals prime to S",
+      "route, even n: the corollary of 6.2 for χ^(n/2), its hypothesis from bgl2014 Lemmas 2.1 and 2.3 at j = n/2 (p. 11)"
      ],
      "locator": {
       "source": "bgl2014",
@@ -1688,7 +1717,23 @@
       "roadmap:AutomorphicSpectralTheory §0.16"
      ],
      "api": [],
-     "tests": []
+     "tests": [
+      {
+       "name": "trivial_pole",
+       "kind": "degenerate",
+       "statement": "χ trivial: the residue at s = 2 is constant, eigenvalue 2(2 − 2) = 0; an interval (1, 2) would omit it"
+      },
+      {
+       "name": "kubota_pole",
+       "kind": "computation",
+       "statement": "(Γ₂, κ_P): the pole of interest is 4/3 ∈ (1, 2), eigenvalue 8/9"
+      },
+      {
+       "name": "unitary_line",
+       "kind": "compatibility",
+       "statement": "no pole on Re s = 1 and |φ_ii(1+it)| ≤ 1 by unitarity"
+      }
+     ]
     },
     {
      "id": "8.5",
@@ -1726,6 +1771,11 @@
        "name": "conjugate",
        "role": "convention",
        "statement": "the theta function of κ̄ is the conjugate of that of κ; Patterson's κ_P restricts to κ̄ on Γ(N) ∩ SL₂(𝓞), so §8.7 is stated for (Γ₂, κ_P)"
+      },
+      {
+       "name": "residual_space",
+       "role": "residues at all essential cusps",
+       "statement": "the square-integrable limits at 1+1/n of Σ w_i(s)E_i(w,s,κ), w_i entire, form a finite-dimensional space of Δ₃-eigenfunctions with character κ (kubota1969 §6, p. 49), no dimension bound asserted, θ its element at ∞; for (Γ₁(3), κ_P) the residues at the essential cusps ∞, 0, ±1 are proportional to the cubic theta function (patterson1977 §2, pp. 126–127; Theorem 8.1, p. 152)"
       }
      ],
      "tests": [
@@ -1743,6 +1793,11 @@
        "name": "not_one",
        "kind": "non-example",
        "statement": "a residue at 1 would have eigenvalue 1"
+      },
+      {
+       "name": "patterson_cusps",
+       "kind": "computation",
+       "statement": "Γ₁(3): index 648/2 = 324 in PSL₂(𝓞), stabilizer index 3·9 = 27, so 12 cusp classes, 4 essential (∞, 0, ±1)"
       }
      ]
     },
@@ -1787,7 +1842,7 @@
      "id": "8.7",
      "kind": "theorem",
      "name": "QuasiRiemann.cubicTheta",
-     "statement": "θ on ℍ³, automorphic under Γ₂ with κ_P, proportional to the residues at 4/3, with θ = σv^(2/3) + Σ τ(μ)vK_(1/3)(4π|μ|v)ě(μz), σ² = 3⁵/4, τ given by Patterson's (8.1) with conjugated Gauss sums conj g(r, c); θ̄ (character κ̄_P) has expansions at H_j∞, (t₀,t₁,t₂) = (0,ω²,ω), with C₀ = σv^(2/3), C₁ = C₂ = 0 and d_j(μ) the conjugate of the coefficient of θ∘H_j at −μ (from τ, τ₁, τ₂); supp d_j ⊆ {uλ^k n b³ : k ≥ −4}, |d_j(μ)| ≤ 27·3^(k/6)|b|.",
+     "statement": "θ on ℍ³, automorphic under Γ₂ with κ_P, proportional to the residues at 4/3 of the Eisenstein series of (Γ₁(3), κ_P) at its essential cusps ∞, 0, ±1, with θ = σv^(2/3) + Σ τ(μ)vK_(1/3)(4π|μ|v)ě(μz), σ² = 3⁵/4, τ given by Patterson's (8.1) with conjugated Gauss sums conj g(r, c); θ̄ (character κ̄_P) has expansions at H_j∞, (t₀,t₁,t₂) = (0,ω²,ω), with C₀ = σv^(2/3), C₁ = C₂ = 0 and d_j(μ) the conjugate of the coefficient of θ∘H_j at −μ (from τ, τ₁, τ₂); supp d_j ⊆ {uλ^k n b³ : k ≥ −4}, |d_j(μ)| ≤ 27·3^(k/6)|b|.",
      "hypotheses": [],
      "locator": {
       "source": "patterson1977",
@@ -2086,6 +2141,21 @@
      "api": [],
      "tests": [
       {
+       "name": "u_one",
+       "kind": "computation",
+       "statement": "u = 1: F_(η,1) = ζ^S_F(6z)ζ^S_F(w)L^S(x,η)⁻¹H_(η,1); the poles at w = 1 and z = 1/6 give the principal signal with 1/L^S(x,η)"
+      },
+      {
+       "name": "D2_point",
+       "kind": "compatibility",
+       "statement": "(s, 1, 1/6) ∈ D₂ for Re s > 7/8: 1/6 ≥ 33/200 and 1 ≥ 19/20; a residue point below 33/200 would fail"
+      },
+      {
+       "name": "nonprincipal_u",
+       "kind": "non-example",
+       "statement": "a nontrivial unit u or a good prime dividing u makes χ_•(u) nonprincipal: no pole at w = 1 for u ≠ 1"
+      },
+      {
        "name": "conj_in_D",
        "kind": "non-example",
        "statement": "j = 0: J_0 ∋ −η(p)ρ̄_p q_p^(−x) = −D_p cancels the first-order term of (1 − D_p)⁻¹; without the conjugate η(p)(χ_p(u) − χ̄_p(u))q_p^(−x) ≍ q_p^(−7/8) survives on D₂"
@@ -2111,7 +2181,23 @@
       "target:6.5"
      ],
      "api": [],
-     "tests": []
+     "tests": [
+      {
+       "name": "R_small",
+       "kind": "computation",
+       "statement": "δ = 1/50: max(1 − 1/100, 4/3 − 1/50) > 1, so R = 1, the trivial count"
+      },
+      {
+       "name": "R_one",
+       "kind": "computation",
+       "statement": "δ = 1: max(1/2, 1/3) = 1/2, so R(1) = 1/2"
+      },
+      {
+       "name": "R_kink",
+       "kind": "computation",
+       "statement": "δ = 2/3: both branches give 2/3, the kink of R"
+      }
+     ]
     },
     {
      "id": "10.5",
@@ -2166,7 +2252,7 @@
      ],
      "locator": {
       "source": "openai2026quasiRH",
-      "where": "Proposition 11.2 and the margin table of §11, pp. 82–84"
+      "where": "Proposition 11.2, pp. 83–84; §11, p. 82; (10.12), p. 76"
      },
      "prerequisites": [
       "target:10.5",
@@ -2187,7 +2273,12 @@
       {
        "name": "min_margin",
        "kind": "computation",
-       "statement": "1/1200 is the least listed saving"
+       "statement": "1/1200 < 1/40 < 1021/25000 < 43/300: the z-integral of the row u = 1 fixes m₀"
+      },
+      {
+       "name": "savings_values",
+       "kind": "computation",
+       "statement": "1/24 − 62/75000 = 1021/25000; (1/6 − 33/200)·h = 1/1200; (1 − 19/20)·l_y = 1/40"
       }
      ]
     },
@@ -2283,21 +2374,24 @@
      "id": "11.2",
      "kind": "definition",
      "name": "QuasiRiemann.leastNonOne",
-     "statement": "leastNonOne χ = least n ≥ 1 with χ(n) ∉ {0,1} for nonprincipal χ; conditional theorem: zero-free right of θ ∈ [1/2,1) ⇒ leastNonOne χ ≤ C_θ (log q)^(1/(1−θ)); Hecke analogue with N𝔭 ≤ C_{K,θ}(log N𝔣 + 2)^(1/(1−θ)).",
+     "statement": "leastNonOne χ = least n ≥ 1 with χ(n) ∉ {0,1} for nonprincipal χ; conditional theorem: zero-free right of θ ∈ [1/2,1) ⇒ leastNonOne χ ≤ C_θ (log q)^(1/(1−θ)); Hecke analogue: for a modulus 𝔪 of K and nontrivial η : RayClassCharacter 𝔪 (zero off ideals prime to 𝔪) with heckeLFunctionC η zero-free right of θ, some prime 𝔭 with η(𝔭) ∉ {0,1} has N𝔭 ≤ C_{K,θ}(log N𝔪₀ + 2)^(1/(1−θ)), 𝔪₀ the finite part of 𝔪 (the conductor norm for primitive η).",
      "hypotheses": [
-      "χ nonprincipal mod q ≥ 2"
+      "χ nonprincipal mod q ≥ 2",
+      "Hecke: 𝔪 a modulus of K, η : RayClassCharacter 𝔪 nontrivial, heckeLFunctionC η zero-free right of θ"
      ],
      "locator": {
       "source": "lamzourilisound2015",
       "where": "Lemma 2.2 and Theorem 1.1 (θ = 1/2)"
      },
      "prerequisites": [
+      "target:1.1",
       "roadmap:ZerosOfLFunctions §4.4",
       "roadmap:ZerosOfLFunctions §4.5",
       "roadmap:ZerosOfLFunctions §8.4",
       "roadmap:ZerosOfLFunctions §8.5",
       "roadmap:ZerosOfLFunctions §8.6",
-      "mathlib:DirichletCharacter.LFunction_changeLevel"
+      "mathlib:DirichletCharacter.LFunction_changeLevel",
+      "tauceti:TauCeti.LFunctions.heckeLFunctionC"
      ],
      "api": [
       {
@@ -2331,6 +2425,21 @@
        "name": "zero_values",
        "kind": "non-example",
        "statement": "χ mod 12 induced by (·/3): value 5; counting 0 as non-one gives 2"
+      },
+      {
+       "name": "hecke_presentation",
+       "kind": "non-example",
+       "statement": "K = ℚ, η mod 3∏_{p≤y}p induced by (·/3): conductor 3 but η(p) = 0 for p ≤ y; the least admissible prime exceeds y, so a bound in log N𝔣 fails, while log N𝔪₀ ≍ y"
+      },
+      {
+       "name": "hecke_Qi",
+       "kind": "computation",
+       "statement": "K = ℚ(i), η = (·/3)∘N modulo (3): (1+i) has η = (2/3) = −1, least norm 2"
+      },
+      {
+       "name": "trivial_excluded",
+       "kind": "non-example",
+       "statement": "the trivial character of a modulus of F satisfies the hypothesis at 11/12 (§10.7) and has η(𝔭) ∈ {0,1} everywhere"
       }
      ]
     },
@@ -2377,23 +2486,31 @@
    "sections": [
     "Layer 4",
     "Layer 5",
-    "Layer 7"
+    "Layer 6",
+    "Layer 7",
+    "Layer 8"
    ],
-   "what": "continued Dirichlet and Hecke L-functions, functional equations with root numbers, Gauss sums of residue characters (gaussSum), nonvanishing on Re s = 1, cyclotomic factorization"
+   "what": "continued Dirichlet and Hecke L-functions, functional equations with root numbers, Gauss sums of residue characters (gaussSum), the record heckeData with its three predicates (through grossencharacterData), nonvanishing on Re s = 1, cyclotomic factorization"
   },
   {
    "roadmap": "ZerosOfLFunctions",
    "sections": [
-    "§1.3",
+    "§1.6",
     "§3.1",
-    "§3.4",
     "§4.4",
     "§4.5",
     "§8.4",
     "§8.5",
     "§8.6"
    ],
-   "what": "Stirling on vertical strips, finite order of one record on a strip, local zero counts, Weil explicit formula for the two families, prime ideal theorem"
+   "what": "the continued L-function of a record (continuedL (heckeData ψ) = heckeLFunctionC ψ.character), finite order of the Hecke completions, local zero counts, Weil explicit formula for the two families, prime ideal theorem"
+  },
+  {
+   "roadmap": "ExplicitZetaBounds",
+   "sections": [
+    "§3.2"
+   ],
+   "what": "Rademacher's convexity bound on records of finite-order type (norm_continuedL_le_rademacher), instanced in 5.2"
   },
   {
    "roadmap": "ClassicalArithmeticCompletion",

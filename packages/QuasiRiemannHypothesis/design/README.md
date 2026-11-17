@@ -53,7 +53,8 @@ numerical constant of Layer 10 is a closed-form rational inequality stated with 
   four-term formula, sextic
   reciprocity with its finite phase, the squarefree Gauss identities and finite Fourier expansions
   on ray class groups (Layer 4);
-- deleted Euler factors, strip growth uniform in the conductor and logarithmic control in a
+- deleted Euler factors, the strip bound `(Q (3 + |t|)^d)^(3/5)` (the instance of ExplicitZetaBounds
+  §3.2 at the Hecke records, with the pole of `ζ_K` cleared) and logarithmic control in a
   zero-free disc for the finite-order Hecke `L`-functions of any number field, the norm-composed
   characters of an abelian field, the base-change factorization and the transfer of zero-free
   half-planes to Dirichlet `L`-functions (Layer 5);
@@ -81,10 +82,13 @@ numerical constant of Layer 10 is a closed-form rational inequality stated with 
   `RayClassCharacter.eulerCorrection`; their continuation, functional equation with root number of
   modulus one and nonvanishing on `Re s = 1`: [LFunctions](../LFunctions/README.md) Layers 4, 5
   and 7.
-- Stirling's formula on vertical strips, finite order of the completed and pole-cleared
-  functions of one record, local zero counts, the Weil explicit formula for the two families and
-  the prime ideal theorem: [ZerosOfLFunctions](../ZerosOfLFunctions/README.md) §§1.3, 3.1, 3.4,
+- The continued `L`-function of a record and its value at the Hecke records, finite order of the
+  completed Hecke functions, local zero counts, the Weil explicit formula for the two families and
+  the prime ideal theorem: [ZerosOfLFunctions](../ZerosOfLFunctions/README.md) §§1.6, 3.1,
   4.4–4.5, 8.4–8.6.
+- Rademacher's convexity bound on records of finite-order type:
+  [ExplicitZetaBounds](../ExplicitZetaBounds/README.md) §3.2; §5.2 here is its instance at the
+  Hecke records `heckeData ψ`, written in `Q (3 + |t|)^d` with the pole of `ζ_K` cleared.
 - The `n`-th power residue symbol at primes and ideals, the Frobenius action on `n`-th roots, the
   `n`-th Hilbert symbol at a place not dividing `n` and Hilbert's product formula, primary associates,
   prime cubic reciprocity and the supplement at `1 − ω`:
@@ -206,10 +210,7 @@ numerical constant of Layer 10 is a closed-form rational inequality stated with 
   `gaussSum_mul_gaussSum_eq_card` (over a finite field).
 - `Complex.borelCaratheodory`; `Complex.HadamardThreeLines.norm_le_interp_of_mem_verticalClosedStrip'`
   (Hadamard's three-lines theorem, which gives the three-circles inequality through the exponential
-  map); `PhragmenLindelof.vertical_strip` (a function holomorphic on an open vertical strip,
-  continuous on its closure, of growth at most `exp(B exp(c|Im s|))` with `c < π/width`, and
-  bounded by `C` on both edges is bounded by the same `C` on the closed strip);
-  `Complex.integral_boundary_rect_eq_zero_of_differentiableOn`
+  map); `Complex.integral_boundary_rect_eq_zero_of_differentiableOn`
   (`Mathlib/Analysis/Complex/CauchyIntegral.lean`, Cauchy's theorem on a rectangle).
 - Kummer theory `autAdjoinRootXPowSubCEquiv` (`FieldTheory/KummerExtension.lean`): for `μ_n ⊆ K`
   the Galois group of `X^n − a` embeds in `μ_n`; `AlgHom.IsArithFrobAt`.
@@ -250,22 +251,36 @@ three readings: on `Re s > 1`, as germs, and pointwise away from `1`), Layer 5 (
 the completed function with root number of modulus one and the functional equation
 `Λ(χ, s) = W(χ) Λ(χ⁻¹, 1 − s)`; the Gauss sum `gaussSum` of a residue character against
 `x ↦ e^(2πi Tr(xy))` for `y ∈ 𝔪₀⁻¹𝔡⁻¹`, the domain on which this additive character is defined
-on `𝓞/𝔪₀`, with `gaussSum_mul` and `norm_gaussSum` under `y 𝔪₀ 𝔡` prime to `𝔪₀`), Layer 7
+on `𝓞/𝔪₀`, with `gaussSum_mul` and `norm_gaussSum` under `y 𝔪₀ 𝔡` prime to `𝔪₀`; the analytic
+record `heckeData ψ` of a primitive character: degree `[K : ℚ]`, conductor `|d_K| N𝔣`, one real
+gamma shift in `{0, 1}` per real place, one complex gamma shift `0` per complex place, simple poles
+at `0` and `1` exactly for the trivial character), Layers 6 and 8 (`heckeData ψ` agrees off the
+coefficient at `0` with the record `grossencharacterData` of its Grossencharacter, which satisfies
+`HasDirichletAgreement`, `HasMeromorphicContinuation` and `HasFunctionalEquation`), Layer 7
 (nonvanishing of `heckeLFunctionC ψ.character` on
 `Re s = 1` for primitive `ψ`).
 
 ### From TauCetiRoadmap.ZerosOfLFunctions
 
-§1.3 (Stirling's formula `log ‖Γ(σ + it)‖ = (σ − 1/2) log |t| − π|t|/2 + O(1)` uniformly on compact
-ranges of `σ`, applied to each factor of a gamma factor), §3.1 and §3.4 (finite order of the
-entire completion and of the pole-cleared continued `L`-function on a strip, for one record; the
-strip bound of §3.4 is not consumed: its constant is stated for one record and independent of the
-arithmetic conductor only at `σ = 1/2`, so the bound uniform in the conductor is this roadmap's
-§5.2),
+§1.6 (*continuedL* `d`, the uncompleted `L`-function of a record, with
+`continuedL (heckeData ψ) = heckeLFunctionC ψ.character`), §3.1 (finite order of the entire
+completion of `heckeData ψ` for primitive `ψ`: *IsFiniteOrder* holds),
 §§4.4–4.5 (zeros in unit windows
 `≪ log(N𝔣 (|T| + 2))` and the counting functions, uniformly in the conductor), §§8.4 and 8.6 (the
 Weil explicit formula for primitive finite-order Hecke characters of any number field, test class
-`ContDiff ℝ ∞` with compact support in `(0, ∞)`, zero side summable).
+`ContDiff ℝ ∞` with compact support in `(0, ∞)`, zero side summable), §8.5 (the prime ideal
+theorem).
+
+### From TauCetiRoadmap.ExplicitZetaBounds
+
+§3.2 (Rademacher's convexity bound `norm_continuedL_le_rademacher`): for a record `d` of
+finite-order type — the three predicates of LFunctions Layer 0, real gamma shifts in `{0, 1}` and
+complex gamma shifts `0`, polar divisor supported in `{0, 1}` with order at most one and a pole of
+the gamma factor at `0` when the completion has one there, `s (s − 1) Λ(s)` of finite order, and the
+coefficient majorant `Σ_m |a_m| m^(−σ) ≤ ζ(σ)^n` for real `σ > 1` — and for `0 < η ≤ 1/2`,
+`−η ≤ σ ≤ 1 + η`, `s ≠ 1`: `‖continuedL d s‖ ≤ P(s) (N (|1 + s|/(2π))^n)^((1+η−σ)/2) ζ(1 + η)^n`, where
+`n` is the degree, `N` the conductor, and `P(s) = 3 |(1 + s)/(1 − s)|` when the completion has a pole
+at `1` and `P(s) = 1` otherwise. Consumed in §5.2 at `η = 1/10` and the Hecke records.
 
 ### From TauCetiRoadmap.ClassicalArithmeticCompletion
 
@@ -940,7 +955,7 @@ For a squarefree integral ideal `𝔯` and complex `a_𝔭` with `|a_𝔭| ≤ 1
 `D_𝔯(s) = ∏_{𝔭 ∣ 𝔯} (1 − a_𝔭 N𝔭^(−s))`. Prove: for fixed `σ₀ > 0` and `ε > 0`,
 `|D_𝔯(s)| + |D_𝔯(s)|⁻¹ ≪_{K,σ₀,ε} N𝔯^ε` on `Re s ≥ σ₀`; for every real `σ`,
 `|D_𝔯(σ + it)| ≪_ε N𝔯^((−σ)₊ + ε)` uniformly in `t`; and `|D_𝔯'/D_𝔯(s)| ≪_{σ₀} log(2N𝔯)` on
-`Re s ≥ σ₀`. Consequently, if `N𝔯 ≤ Z^B` with `B` bounded, then `|D_𝔯(s)|` and `|D_𝔯(s)|⁻¹` are
+`Re s ≥ σ₀`. Consequently, for `Z ≥ 1` and `B ≥ 0`, if `N𝔯 ≤ Z^B`, then `|D_𝔯(s)|` and `|D_𝔯(s)|⁻¹` are
 `≪_{K,σ₀,B,ε} Z^ε` on `Re s ≥ σ₀` for every `ε > 0` (`openai2026quasiRH` Lemma 4.10, p. 23). With
 `a_𝔭 = χ(𝔭)` this bounds Tau Ceti's `RayClassCharacter.eulerCorrection`.
 
@@ -951,43 +966,52 @@ For a squarefree integral ideal `𝔯` and complex `a_𝔭` with `|a_𝔭| ≤ 1
   reciprocal bound needs `σ₀ > 0`; at `σ₀ = 1`, `|D(s)|⁻¹ ≤ (1 − 1/2)⁻¹ = 2`.
 - `K = ℚ`, `𝔯 = (p)`, `a_p = 1`, `σ = −1`: `D(−1) = 1 − p`, of size `N𝔯^1 = N𝔯^((−σ)₊)`, so the exponent
   `(−σ)₊` of the second bound cannot be lowered.
+- `B = 0` and `0 < Z < 1`: `N𝔯 ≤ 1` allows `𝔯 = 𝓞`, where `D = 1`, while `Z^ε → 0` as `Z → 0`; so the
+  consequence needs `Z ≥ 1`, where `N𝔯^ε ≤ Z^(Bε)` turns the first bound into it (with `ε/B` for
+  `ε` when `B > 0`).
 
 *Needs:* the bound `ω(𝔯) ≪ log N𝔯/log log N𝔯` for the number of prime factors; Tau Ceti
 `eulerCorrection_ne_zero`.
 
 ### 5.2 Strip growth uniform in the conductor
 
-Prove `|ℒ(σ + it)| ≪_K (Q (3 + |t|)^d)^(3/5)` for `−1/10 ≤ σ ≤ 11/10` and all `t`, the constant
-depending on `K` only (`openai2026quasiRH` Lemma 4.8, p. 21, for `K = F`, where it is stated with the
-weaker factor `Q^(3/5) (3 + |t|)²`). Route (the Phragmén–Lindelöf argument of `openai2026quasiRH`
-Lemma 4.8, p. 21, with the exponent of `s + 2` matched to the edge): on `Re s = 11/10`,
-`|ℒ| ≤ ζ_K(11/10)` by the Euler product, using `|(s − 1)/(s + 1)| ≤ 1` on `Re s ≥ 0` for the trivial
-character; on `Re s = −1/10` the functional equation (LFunctions Layer 5, root number of modulus
-one, conductor `|d_K| Q`) and Stirling's formula (ZerosOfLFunctions §1.3) for the gamma quotient give
-`|ℒ(−1/10 + it)| ≤ C_K Q^(3/5) (3 + |t|)^(3d/5)`, the conductor entering with exponent `1/2 − σ = 3/5`
-and the gamma quotient with `|t|^((d/2)(1 − 2σ)) = |t|^(3d/5)`; the gamma factor of a finite-order character of `K` is one of finitely
-many, fixed by the signs at the real places, and its quotient is continuous on that line, so `C_K`
-covers bounded heights too. Apply Mathlib `PhragmenLindelof.vertical_strip` on `[−1/10, 11/10]` to
-`H(s) = Q^(−3/5) ℒ(s) (s + 2)^(−3d/5)` (principal branch, `Re(s + 2) > 0`, so
-`|(s + 2)^(−3d/5)| = |s + 2|^(−3d/5)`): it is bounded on both edges by a constant depending on `K`
-only, and for each fixed `ψ` it has finite order on the strip (ZerosOfLFunctions §§3.1, 3.4), which
-is the growth hypothesis. Hence `|ℒ(s)| ≤ C'_K Q^(3/5) |s + 2|^(3d/5)` on the strip. Dividing by
-`(s + 2)^(6d/5)` instead would prove only `Q^(3/5) (3 + |t|)^(6d/5)`.
+Prove `|ℒ(σ + it)| ≤ C_K (Q (3 + |t|)^d)^(3/5)` for `−1/10 ≤ σ ≤ 11/10` and all `t`, with
+`C_K = 3 |d_K|^(3/5) ζ(11/10)^d` depending on `K` only (`openai2026quasiRH` Lemma 4.8, p. 21, for
+`K = F`, where it is stated with the weaker factor `Q^(3/5) (3 + |t|)²`). This is Rademacher's convexity
+bound, ExplicitZetaBounds §3.2 (`norm_continuedL_le_rademacher`), at `η = 1/10` and the record
+`heckeData ψ` of LFunctions Layer 5: degree `d`, conductor `N = |d_K| Q`, real gamma shifts in
+`{0, 1}`, complex gamma shifts `0`, and simple poles at `0` and `1` exactly when `ψ = 1`, the pole at
+`0` then meeting the pole of the gamma factor at `0`; its *continuedL* is `heckeLFunctionC ψ.character`
+(ZerosOfLFunctions §1.6). Route: the other conditions of finite-order type are the three predicates
+of the record (LFunctions Layers 6 and 8: `heckeData ψ` agrees, off the coefficient at `0`, with the
+record `grossencharacterData` of its Grossencharacter), finite order of its completion
+(ZerosOfLFunctions §3.1), and the majorant `Σ_m |a_m| m^(−σ) ≤ ζ(σ)^d` for real `σ > 1`, which holds
+because `|a_m|` is at most the number of ideals of norm `m` and, prime by prime,
+`∏_{𝔭 ∣ p} (1 − p^(−f_𝔭 σ))⁻¹ ≤ (1 − p^(−σ))^(−d)`, from `(1 − x)^f ≤ 1 − x^f` for `0 < x < 1` and
+`Σ_{𝔭 ∣ p} f_𝔭 ≤ d`. On the strip the exponent `(11/10 − σ)/2` lies in `[0, 3/5]`, and
+`x = N (|1 + s|/(2π))^d ≤ N (3 + |t|)^d` because `|1 + s| ≤ 21/10 + |t|`; so
+`x^((11/10 − σ)/2) ≤ max(1, x)^(3/5) ≤ (N (3 + |t|)^d)^(3/5)`. For `ψ ≠ 1` the pole factor `P(s)` of
+§3.2 is `1`; for `ψ = 1` it is `3 |(1 + s)/(1 − s)|`, so `|(s − 1)/(s + 1)| P(s) = 3` for `s ≠ 1`, and the
+bound passes to the removable value of `ℒ` at `s = 1` by continuity.
 
 **Checks.**
 
 - `K = ℚ`, `ψ = 1`: `ℒ(s) = (s − 1) ζ(s)/(s + 1)`, and on `σ = −1/10` the functional equation gives
   `|ζ(−1/10 + it)| ≍ |t|^(3/5)`, so the exponent `(3 + |t|)^(3d/5)` with `d = 1` is attained at that
   edge.
+- `K = ℚ`, `ψ = 1`, `s = −1/10`: `|ℒ(−1/10)| = 0.5099`; §3.2 gives
+  `3 (0.9/(2π))^(3/5) ζ(11/10) = 9.895`, with `ζ(11/10) = 10.5844`, and the stated bound is
+  `C_ℚ 3^(3/5) = 3 · 10.5844 · 1.9332 = 61.385`. Without the clearing factor the bound for `ζ` alone
+  would carry the unbounded `|(1 + s)/(1 − s)|` near `s = 1`.
 - `K = F` (`d = 2`): the edge bound `Q^(3/5) (3 + |t|)^(6/5)` is `openai2026quasiRH` (4.14)'s line
   `Re s = −1/10`, and the statement improves its strip factor `(3 + |t|)²` to `(3 + |t|)^(6/5)`.
 - At `σ = 11/10` the bound `(Q (3 + |t|)^d)^(3/5) ≥ 1` is weak but true, `|ℒ| ≤ ζ_K(11/10)` being
   uniform in `Q`; at `s = 1` for `ψ = 1` the removable value `Res_{s=1} ζ_K/2` is finite, so the
   clearing factor `(s − 1)` is needed.
 
-*Needs:* LFunctions Layer 5 (functional equation and root numbers); ZerosOfLFunctions §§1.3, 3.1, 3.4
-(Stirling's formula and finite order of one record on the strip); Mathlib
-`PhragmenLindelof.vertical_strip`.
+*Needs:* ExplicitZetaBounds §3.2 (Rademacher's convexity bound); LFunctions Layers 5, 6 and 8
+(`heckeData` and its three predicates); ZerosOfLFunctions §§1.6, 3.1 (*continuedL* of the Hecke
+records and finite order of their completions).
 
 ### 5.3 Logarithmic control in a zero-free disc
 
@@ -1027,8 +1051,11 @@ Define the *norm-composed character* `χ ∘ N_{K/ℚ}`: the ray class character
   it is `χ(2)² = χ(4)`.
 - `K = ℚ(i)`, `χ` modulo `5` with `χ(2) = i`: at the prime `(1 + i)` of norm `2` the value is
   `χ(2) = i`, and at the inert prime `(3)` of norm `9` it is `χ(3)² = χ(9) = χ(4) = −1`.
-- `K = ℚ(√2)` (real), `χ` odd: `N(1 + √2) = −1` and `χ(−1) = −1`, so the real places are needed in the
-  modulus for `χ ∘ N` to be a ray class character.
+- `K = ℚ(√2)` (real), `χ` the odd character modulo `3`: `α = 1 + 3√2 ≡ 1 (mod 3)` has
+  `N_{K/ℚ}(α) = 1 − 18 = −17`, and `χ(N(α𝓞_K)) = χ(17) = χ(2) = −1 ≠ 1`, so `χ ∘ N` is not trivial on
+  the principal ray modulo `3𝓞_K` without the real places, and the real places are needed in the
+  modulus. A unit such as `1 + √2`, of norm `−1`, tests nothing: its ideal is `𝓞_K`, of norm `1`, and
+  it is not `≡ 1` modulo any `q > 1`.
 
 Prove the base-change factorization: with `S` the primes dividing `q d_K`,
 `L^S_K(s, χ ∘ N) = ∏_{ψ ∈ X(K)} L^S(s, χψ)` on `Re s > 1`, as germs at every point, and pointwise
@@ -1078,9 +1105,9 @@ non-abelian `K` the cofactor is an Artin `L`-function whose holomorphy is not kn
 
 ### Dependencies
 
-ZerosOfLFunctions §§1.3, 3.1, 3.4; LFunctions Layers 4–5; ClassFieldTheory §13.1;
-AnalyticNumberTheoryPartIII §8.2; Mathlib Borel–Carathéodory, three-lines and
-`PhragmenLindelof.vertical_strip`; Tau Ceti Hecke `L`-functions and Euler corrections; Layer 1.
+ExplicitZetaBounds §3.2; ZerosOfLFunctions §§1.6, 3.1; LFunctions Layers 4–6 and 8; ClassFieldTheory
+§13.1; AnalyticNumberTheoryPartIII §8.2; Mathlib Borel–Carathéodory and three-lines; Tau Ceti Hecke
+`L`-functions and Euler corrections; Layer 1.
 
 ## Layer 6: large sieves over number fields
 
@@ -1115,7 +1142,13 @@ homomorphism `[·]` from the ideals prime to `𝔠` to `G` and a map `C : G × G
 `χ_𝔞(𝔟) = χ_𝔟(𝔞) C([𝔞], [𝔟])` for coprime `𝔞, 𝔟`, and such that `χ_𝔞 χ_𝔟` is primitive modulo `𝔞𝔟`
 whenever `𝔞, 𝔟` are coprime with `[𝔞] = [𝔟]` (`goldmakherlouvel2013` Definition 1, p. 1).
 
-- For `d ∣ n` with `d > 1`, `{χ_𝔞^(n/d)}` is a `d`-th order Hecke family.
+- For `d ∣ n` with `d > 1`, the primitive characters inducing the `χ_𝔞^(n/d)` have trivial infinite
+  type and order dividing `d`, and they satisfy the reciprocity law with `C^(n/d)` at every coprime
+  pair `𝔞, 𝔟` with `𝔟` prime to the conductor of `χ_𝔞` and `𝔞` prime to that of `χ_𝔟`. They form a
+  `d`-th order Hecke family when they also satisfy the reciprocity law at the other coprime pairs
+  and the primitivity axiom; these are hypotheses, not consequences: the primitivity axiom fails
+  when every `χ_𝔞` has order dividing `n/d` (`goldmakherlouvel2013` Remark 3, p. 2, states the
+  passage to powers without them).
 - The Fisher–Friedberg characters of §6.3 form an `n`-th order Hecke family.
 - Over `ℤ[ω]`, the quadratic residue symbols `𝔞 ↦ χ_a(·)³` read at primary generators, extended to
   their primitive inducing characters (conductor `a` or `λa`), form a quadratic Hecke family with
@@ -1130,11 +1163,21 @@ whenever `𝔞, 𝔟` are coprime with `[𝔞] = [𝔟]` (`goldmakherlouvel2013`
 - The trivial family `χ_𝔞 = 1` fails the primitivity axiom at `𝔞 ≠ 𝔟` in one class.
 - Over `ℤ[ω]`, `χ_p³` for `p = 1 + 3ω` has `χ_p(−1)³ = −1`, so its primitive inducing character is odd
   at `λ` and the conductor is `λp`, not `p`.
+- A quadratic Hecke family over `ℚ(i)` (for instance the Fisher–Friedberg family of
+  `goldmakherlouvel2013` §2 with `n = 2`) is also a fourth-order family, its orders dividing `4`
+  and `C` taking values in `μ_2 ⊂ μ_4`; its squares are induced by the trivial character, so they
+  fail the primitivity axiom.
+  With `λ_𝔟 = 1` and `M = N` the squares `χ_𝔟(𝔞)²` are `1` whenever `𝔞` is prime to the conductor of
+  `χ_𝔟`, the double sum of the corollary below is `≫ N³`, and its right side is `≍ N^(2+ε)`: the
+  corollary needs the primitivity of the powers.
 
 Prove the quadratic large sieve: for a quadratic Hecke family with respect to `𝔠`, `ε > 0`, `M, N ≥ 1`
 and complex `λ_𝔟`, `Σ*_{N𝔞 ≤ M} |Σ*_{N𝔟 ≤ N} λ_𝔟 χ_𝔟(𝔞)|² ≪_{k,𝔠,ε} (MN)^ε (M + N) Σ*_{N𝔟 ≤ N} |λ_𝔟|²`,
-`Σ*` over squarefree ideals prime to `𝔠`; and for an `n`-th order family with `n ≥ 3` even the same
-bound for `χ_𝔟^(n/2)` (`goldmakherlouvel2013` Theorem 1.1 and Corollary 1.2, p. 2). Over `ℤ[ω]`:
+`Σ*` over squarefree ideals prime to `𝔠`; and, for an `n`-th order family with `n ≥ 4` even whose
+`n/2`-th powers (through their primitive inducing characters) form a quadratic Hecke family with
+respect to `𝔠`, the same bound for `χ_𝔟^(n/2)` (`goldmakherlouvel2013` Theorem 1.1 and Corollary 1.2,
+p. 2; the corollary there omits the hypothesis on the powers, which `bgl2014` p. 11 verifies for the
+Fisher–Friedberg characters through its Lemmas 2.1 and 2.3). Over `ℤ[ω]`:
 `Σ_{a sf, q_a ≤ U} |Σ_{b sf, q_b ≤ V} c_b χ_a(b)³|² ≪_ε (UV)^ε (U + V) Σ |c_b|²` on squarefree primary
 good indices (`openai2026quasiRH` (5.26)). At `k = ℚ` this is implied by AnalyticNumberTheoryPartII
 §5.29.
@@ -1178,8 +1221,13 @@ For `n ≥ 3`, the Fisher–Friedberg characters of §6.3, `M, N ≥ 1/2`, compl
 `Σ*_{N𝔞 ≤ M} |Σ*_{N𝔟 ≤ N} λ_𝔟 χ_𝔞(𝔟)|² ≪_{n,K,S,𝔠,ε} (MN)^ε (M + N + (MN)^(2/3)) Σ*_{N𝔟 ≤ N} |λ_𝔟|²`,
 `Σ*` over squarefree ideals prime to `S` (`bgl2014` Theorem 1.3, p. 4). Route: the norm recursion
 of `bgl2014` §3 (Lemmas 3.1–3.5), with the Poisson–Voronoi formula `bgl2014` Lemma 2.2 for
-`χ_𝔟₁^j χ̄_𝔟₂^j` (Lemma 2.3: primitive of conductor `𝔟₁𝔟₂` in a common class), and §6.2 for the even
-powers `χ^(n/2)`.
+`χ_𝔟₁^j χ̄_𝔟₂^j` (Lemma 2.3: primitive of conductor `𝔟₁𝔟₂` in a common class), and, for even `n`, the
+corollary of §6.2 for the powers `χ^(n/2)`. Its hypothesis holds here: the primitive characters
+inducing the `χ_𝔞^(n/2)` satisfy the reciprocity law with `C^(n/2)` at every coprime pair of
+squarefree ideals prime to `S`, since each conductor lies between the index and `𝔠` times it
+(`bgl2014` Lemma 2.1), and the primitivity axiom, by `bgl2014` Lemma 2.3 at `j = n/2`, where
+`χ̄^(n/2) = χ^(n/2)` because the values are `0` and `±1` (`bgl2014` p. 11 applies the corollary in
+this way).
 
 *Needs:* §§6.2–6.3; LFunctions Layer 5 (functional equation and root numbers of primitive finite-order
 characters); Layer 3 (§§3.2, 3.5).
@@ -1476,8 +1524,16 @@ simple and the residue is nonzero, square integrable, automorphic with character
 
 - The constant term of `θ` at `∞` is a multiple of `v^(1 − 1/n)`, and its nonconstant terms are
   `v K_(1/n)(4π|μ|v) ě(μz)`.
-- `θ` is the residue, up to a nonzero constant, at every essential cusp (`patterson1977` Theorem 8.1,
-  p. 152, for `n = 3`).
+- The square-integrable limits at `s = 1 + 1/n` of the combinations `Σ_i w_i(s) E_i(w, s, κ)` with
+  entire `w_i`, among them the residues of the Eisenstein series at the essential cusps, form a
+  finite-dimensional space of automorphic `Δ₃`-eigenfunctions with character `κ` and eigenvalue
+  `(1 + 1/n)(1 − 1/n)` (`kubota1969` §6, p. 49); `θ` is the element given by the cusp `∞`, and no
+  bound on the dimension of this space is asserted. For `K = F`, `n = 3` and Patterson's pair
+  `(Γ₁(3), κ_P)` of §8.1, the essential cusp classes are those of `∞, 0, 1, −1` among the twelve
+  classes `∞, 0, ±1, ±ω, ±ω², ±(1 − ω), ±(1 − ω)⁻¹` (`patterson1977` §2, pp. 126–127), and the
+  residues at `4/3` of the Eisenstein series at these four cusps are all proportional to the cubic
+  theta function of §8.7 (`patterson1977` Theorem 8.1, p. 152); the four are `SL₂(ℤ)`-translates of
+  `∞`, hence one class under `Γ₂`.
 - The theta function of `κ̄` is the complex conjugate of that of `κ`: `E(w, s, κ̄) = conj E(w, s̄, κ)`.
   For `K = F`, `n = 3`, Patterson's `κ_P` of §8.1 restricts on `Γ(N) ∩ SL₂(𝓞)` to `κ̄` (§8.1, `9 ∣ N`),
   so the cubic theta function of §8.7, restricted to that group, is automorphic with the character of
@@ -1490,6 +1546,11 @@ simple and the residue is nonzero, square integrable, automorphic with character
 - `n = 2`: the pole is at `3/2`, eigenvalue `3/4`, Bessel order `1/2`, where `K_(1/2)` is elementary.
 - A pole at `s = 1` would give eigenvalue `1` and the order-zero Bessel function; the residue at
   `1 + 1/n` is not at `1`.
+- Cusp count for Patterson's pair: `−I ∉ Γ₁(3)`, so its image in `PSL₂(𝓞)` has index `648/2 = 324`;
+  the stabilizer of `∞` in `PSL₂(𝓞)` meets it with index `3 · |𝓞/3𝓞| = 27` (no unit `≠ 1` is
+  `≡ 1 (mod 3)`), so `Γ₁(3)` has `324/27 = 12` cusp classes, of which `4` are essential. The
+  proportionality of the residues is a statement about these four; at the eight others no
+  Eisenstein series is defined (§8.3).
 
 *Needs:* §§8.1, 8.4.
 
@@ -1541,7 +1602,8 @@ completed series into the transformation of the two attached Bessel expansions u
 ### 8.7 The cubic theta function of `ℚ(ω)` and its expansions at three cusps
 
 Prove that there is a smooth `θ` on `ℍ³`, automorphic under `Γ₂` with character `κ_P` (§8.1), proportional to the
-residue at `4/3` of the Eisenstein series at every essential cusp, with expansion at `∞`
+residue at `4/3` of the Eisenstein series of `(Γ₁(3), κ_P)` at each of its essential cusps `∞, 0, 1, −1`
+(§8.5), with expansion at `∞`
 `θ(w) = σ v^(2/3) + Σ_{0 ≠ μ ∈ λ⁻³𝓞} τ(μ) v K_(1/3)(4π|μ|v) ě(μz)`, where `σ² = 3⁵/4` and, for primary
 `c, d` with `c` squarefree, `g(r, c) = Σ_{x mod c} (x/c)_3 ě(rx/c)` and `conj` the complex conjugate:
 `τ(±λ^(3n−4) c d³) = conj g(λ², c) |d/c| 3^(n/2 + 2)`,
@@ -1963,18 +2025,28 @@ For the probe of §10.1 the data are `l_x = l_y = 1/2`, `ℓ = 0`, `h = 1/2`, `C
 With `J_(I,η)(Z) = I_η(Z^(1/2), Z^(1/2), Z)/c_S`, `C_I(s) = s − 2/3` and `f_(I,η)` the `f_η` of §1.3 for `C_I`,
 prove: if `β* > 11/12`, then `|J_(I,η)(Z) − f_(I,η)(Z)| ≪_η Z^(C_I(β*) − 1/4800)` for every target `η`
 and large `Z`, the saving being independent of `η` (`openai2026quasiRH` Proposition 11.2, p. 83). Route:
-the savings relative to `C_I(β*)` before adjustable losses are `1021/25000` (intermediate rows), `1/40`
-(unresidued principal `w`-integral), `1/1200` (remaining principal `z`-integral), `43/300` (small
-rows) and more than `1` (large rows, with the fixed line `Re z = v = 4000`); with `m₀ = 1/1200` and the
-common loss `E* = 10⁻⁶`, the central losses are at most `46E* < m₀/4`, every saving keeps at least
-`3m₀/4 = 1/1600`, and §1.4 with `m = 1/2400` gives `m/2 = 1/4800`.
+§10.5 at the data of the probe (`l_x = l_y = h = 1/2`, `ℓ = 0`, `d_min = 1/63`, `ς = 1/1000`, `v = 4000`)
+bounds five pieces of the identity by powers of `Z` below `C_I(β*)`, each before the losses chosen
+afterwards. The rows with `Z^(1/63) < q_u ≤ Z^(501/1000)`, through the retained integral of §10.5 and
+the row count of §10.4, lie `1/24 − (62/75)(1/1000) = 1021/25000` below: the exponent grows with the
+dyad exponent `d` at a rate between `33/50` and `62/75`, is at least `1/24` below at `d = h`, and the
+range beyond `h` has length `ς` (`openai2026quasiRH` (10.12), p. 76). The row `u = 1` leaves, besides
+its residue at `w = 1`, `z = 1/6` (the principal signal), its `w`-integral on `Re w = 19/20`, which lies
+`l_y/20 = 1/40` below, and its `z`-integral on `Re z = 33/200 = 1/6 − 1/600`, which lies
+`h/600 = 1/1200` below. The rows with `q_u ≤ Z^(1/63)` lie `43/300` below, and those with
+`q_u > Z^(501/1000)`, estimated on `Re z = 4000`, more than `1` below (`openai2026quasiRH` §11, p. 82).
+With `m₀ = 1/1200`, the least of the five, and the common loss `E* = 10⁻⁶`, the central losses are at
+most `46E* < m₀/4`, every piece keeps at least `3m₀/4 = 1/1600`, and §1.4 with `m = 1/2400` gives
+`m/2 = 1/4800`.
 
 **Checks** (the closed-form inequalities).
 
 - `46 · 10⁻⁶ = 4.6 · 10⁻⁵ < (1/1200)/4 ≈ 2.08 · 10⁻⁴`.
 - `3m₀/4 = 1/1600`, and `1/1600 > 1/2400 = m`.
-- The smallest listed saving is `1/1200 < 1/40 < 1021/25000 < 43/300`: the remaining principal
-  `z`-integral fixes `m₀`.
+- The least of the five is `1/1200 < 1/40 < 1021/25000 < 43/300`: the `z`-integral of the row `u = 1`
+  fixes `m₀`.
+- `1/24 − 62/75000 = (3125 − 62)/75000 = 3063/75000 = 1021/25000`; the shift `1/6 − 33/200 = 1/600`
+  times `h = 1/2` is `1/1200`, and `(1 − 19/20) l_y = 1/40`.
 
 *Needs:* §§1.4, 10.5.
 
@@ -2061,16 +2133,35 @@ For a nonprincipal Dirichlet character `χ` modulo `q` define *leastNonOne* `χ`
 
 Prove: for every `θ ∈ [1/2, 1)` there is `C_θ` such that for every `q ≥ 2` and every nonprincipal
 `χ` modulo `q` whose `L`-function is zero-free right of `θ`, *leastNonOne* `χ ≤ C_θ (log q)^(1/(1−θ))`.
-Prove the Hecke analogue: for a number field `K`, `θ ∈ [1/2, 1)` and a nontrivial finite-order Hecke
-character `η` of `K` of conductor `𝔣` whose primitive `L`-function is zero-free right of `θ`, some prime
-ideal `𝔭` with `η(𝔭) ∉ {0, 1}` has `N𝔭 ≤ C_{K,θ} (log N𝔣 + 2)^(1/(1−θ))`. Route: if `χ(n) ∈ {0, 1}` for
+Prove the Hecke analogue: for a number field `K`, `θ ∈ [1/2, 1)`, a modulus `𝔪` of `K` and a
+nontrivial `η : RayClassCharacter 𝔪`, read on ideals with the value `0` on those not prime to `𝔪`,
+whose `L`-function `heckeLFunctionC η` is zero-free right of `θ` (equivalently, by §1.1, that of its
+primitive character), some prime ideal `𝔭` with `η(𝔭) ∉ {0, 1}` has
+`N𝔭 ≤ C_{K,θ} (log N𝔪₀ + 2)^(1/(1−θ))`, where `𝔪₀` is the finite part of `𝔪`; for primitive `η` this is
+the bound in the norm of the finite part of the conductor. As for Dirichlet characters, the bound
+is in the presentation modulus, not the conductor. Route: if `χ(n) ∈ {0, 1}` for
 `n ≤ x`, compare the Weil formula (ZerosOfLFunctions §§8.4, 8.6) for `χ*` and for `ζ` (or `ζ_K`) with a
 fixed nonnegative test supported in `[1/2, 1]` at scale `x`: the prime sides differ by
-`O(log q log x)`, the zero side of `χ*` is `O(x^θ log q)` by the counts of §§4.4–4.5, the archimedean
+`O(log q log x)` (by `O(log N𝔪₀ log x)` over `K`, from the primes dividing `𝔪₀`), the zero side of
+`χ*` is `O(x^θ log q)` by the counts of §§4.4–4.5, the archimedean
 term is `O(x^(1/2) log x)`, and the `ζ` side is `x φ̃(1)(1 + o(1))` (§8.5); so `x^(1−θ) ≪ log q`
 (`lamzourilisound2015` Lemma 2.2 and Theorem 1.1, the case `θ = 1/2`).
 
-*Needs:* ZerosOfLFunctions §§4.4–4.5, 8.4–8.6; Mathlib `DirichletCharacter.LFunction_changeLevel`.
+**Checks** (the Hecke analogue).
+
+- `K = ℚ`, `η` the character modulo `3 ∏_{p ≤ y} p` induced by `(·/3)`: its conductor is `3`, but
+  `η(p) = 0` for every `p ≤ y`, so the least prime with `η(p) ∉ {0, 1}` is the least `p > y` with
+  `p ≡ 2 (mod 3)`, which exceeds `y`. A bound in `log N𝔣 = log 3` would be false for large `y`; the
+  stated bound has `log N𝔪₀ = log 3 + Σ_{p ≤ y} log p ≍ y`, so it is `≫ y²`, while that prime is at
+  most `2y` for large `y` (the prime number theorem in progressions modulo `3`).
+- `K = ℚ(i)`, `𝔪 = (3)`, `η = (·/3) ∘ N`, of order `2` (§5.4, with no infinite part): the prime `(1 + i)`
+  of norm `2` has `η = (2/3) = −1`, so the least such prime has norm `2`.
+- The trivial character of a modulus is excluded: `η(𝔭) ∈ {0, 1}` at every prime, while for `K = F`
+  its `L`-function, `ζ_F` without its Euler factors at `𝔪`, is zero-free right of `11/12` by
+  §10.7, so the hypothesis holds and the conclusion fails.
+
+*Needs:* §1.1 (presented versus primitive); ZerosOfLFunctions §§4.4–4.5, 8.4–8.6; Mathlib
+`DirichletCharacter.LFunction_changeLevel`; Tau Ceti `heckeLFunctionC`, `RayClassCharacter`.
 
 ### 11.3 The least quadratic nonresidue
 
@@ -2142,7 +2233,8 @@ Dirichlet `L`-functions.
 - `dunnradziwill2024` — A. Dunn, M. Radziwiłł, *Bias in cubic Gauss sums: Patterson's conjecture*,
   Ann. of Math. 200 (2024); (1.4)–(1.8), §5.1, Appendix A (arXiv v3 numbering).
 - `goldmakherlouvel2013` — L. Goldmakher, B. Louvel, *A quadratic large sieve inequality over number
-  fields*, Math. Proc. Cambridge Philos. Soc. 154 (2013); Definition 1, Theorem 1.1, Corollary 1.2.
+  fields*, Math. Proc. Cambridge Philos. Soc. 154 (2013); Definition 1, Remark 3, Theorem 1.1, Corollary 1.2,
+  §2.
 - `bgl2014` — V. Blomer, L. Goldmakher, B. Louvel, *L-functions with n-th-order twists*, IMRN 2014;
   Theorem 1.3, Lemmas 2.1–2.3, §3, Appendix II.
 - `heathbrown2000` — D. R. Heath-Brown, *Kummer's conjecture for cubic Gauss sums*, Israel J. Math. 120
