@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CountableModelCounting~9",
+  "head": "b79bc76c702d014e47daf3c351561c2af883b28d",
+  "pr": 2012,
+  "folder": "CountableModelCounting",
+  "date": "2026-11-17",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 13 changed lines since 6f3a7b4. Previous findings R01-R03 all repaired (third, positive Check for MinimallyUnboundedOn; uncountable-language control at the Layer 0 acceptance check; description states the Layer 0 block left Suggested.lean). Both added passages recomputed (2^c one-element models for continuum many unary predicates; a non-invariant rank cofinal in omega_1 on one isomorphism class is minimally unbounded, and the equivalence with MinimallyUncountableOn then fails, so the isolating hypothesis is needed); 5 pinned Tau Ceti declarations opened. Seeded sample checked where it falls in the changed passages (Layer 0 acceptance check, minimally uncountable sentences); no source locator added. Gate passes at b79bc76 with the targeted build; lake env lean gives 33 sorry warnings and nothing else; depcheck 0 problems; no change outside the folder; description agrees with the head.",
+  "text": "feb3a3386c7c57b9"
+ }
+}
