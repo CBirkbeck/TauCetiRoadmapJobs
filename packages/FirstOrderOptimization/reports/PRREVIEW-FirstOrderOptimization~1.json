@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FirstOrderOptimization~1",
+  "head": "0ba9f281cfbe0697710b7f1fc8cf2794ea7bdc36",
+  "pr": 2474,
+  "folder": "FirstOrderOptimization",
+  "date": "2026-11-17",
+  "findings": 15,
+  "blocking": 4,
+  "notes": "Full review. Gate fails on readme-ids-missing=6 only (build passes, depcheck 0 problems, nothing outside the folder). Seeded sample of 15 targets recomputed; 14 locators read in 7 open-access sources (KNS16, KB15, RKK18, WWB19, BCN18, GL13, CP15); Nesterov 2018, Beck 2017, Beck-Teboulle 2009, Bauschke-Combettes 2017, Polyak 1964/1987 and Robbins-Siegmund 1971 could not be read legally and are listed as not verifiable. 14 library declarations opened at the pins; one cited Tau Ceti declaration (ConvexOn.inner_gradient_sub_le) is absent (P1). Suggested.lean elaborates with 26 sorry warnings only; one-tactic probe closes 0 of 26. Reddi iteration, Adam bound, heavy ball and the PL example checked numerically. P2: Robbins-Siegmund stated below its source's generality; two statable headlines (4.3 rate, 6.4 regret) absent from Suggested.lean; 1.4 bullet missing mu > 0. Overlap read against ManifoldOptimization, SpectralSteepestDescent, OptimalTransport, MathematicalStatisticsHighDimensional, MathematicalStatisticsNonparametric.",
+  "text": "19a218c1a968f804"
+ }
+}
