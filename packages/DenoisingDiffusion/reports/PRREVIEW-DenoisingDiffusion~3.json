@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DenoisingDiffusion~3",
+  "head": "20b3f6ba2f031c346ef26657035fb7eb88720746",
+  "pr": 2476,
+  "folder": "DenoisingDiffusion",
+  "date": "2026-11-17",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 42 changed lines since afd8629. Previous R01 and R03 repaired, R02 partly repaired: the new first sentence of 'How to read the build' says every later layer uses Layer 1, which Layer 3 does not (one P3 finding, replacement sentence given). Checked: the two restated 4.1 theorems with hβ on computed instances (T=0, T=1, T=2, the previous off-schedule witness now excluded), the Vincent2011 locator at lines 12, 271, 290, 513, three Tau Ceti declarations at the pin, the reduced imports, the pull request text against the head. Gate passes; depcheck 0 problems; Suggested.lean elaborates with 24 sorry warnings and nothing else.",
+  "text": "4e385778dc7172f9"
+ }
+}
