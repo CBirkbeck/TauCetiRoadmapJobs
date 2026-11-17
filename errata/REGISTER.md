@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-14752 mistakes recorded on the board: 8338 misprints, 3848 errors, 2068 gaps, 498 unparsed bullets.
+14754 mistakes recorded on the board: 8339 misprints, 3849 errors, 2068 gaps, 498 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -12203,6 +12203,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 
 - **Misprint** at Lemma 6.25(5), printed p.41: the source says the Hecke place is outside a set containing itself; it should be exclude the distinguished local place w instead; affects a stated result. Found by AutomorphyLiftingBeyondTaylorWiles (#999 at d2816a2, 2026-10-28, codex gpt-6-astra).
 
+## kubota1968
+
+- **Error** at §3, printed p. 265: the source says the source says, as extracted, that the poles of the Eisenstein series on `Re s ≥ 1` lie in the open interval `(1, 2)`; it should be `(1, 2]`, the trivial character having a pole at `2`; affects a stated result. Found by QuasiRiemannHypothesis (#18769 at e07a8c3, 2026-11-17, claude fable).
+
 ## kudla_rapoport
 
 - **Misprint** at Proposition 9.3(i), printed p. 34, and its proof, printed p. 38, kudla_rapoport line 1589: the source says the derivative factor is log p; it should be log(p²), as explicitly noted in li_zhang line 695; affects nothing. Found by FunctionFieldArithmetic (#142 at 2812784, 2026-10-23, codex gpt-6-astra).
@@ -14384,6 +14388,7 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 ## openai2026quasiRH
 
 - **Misprint** at Lemma 6.2, proof, printed page 49: the source says the source says, as extracted, that the fractions are separated by the minimum of one and the upper support bound, over Y; it should be the minimum of one and the reciprocal of that bound, over Y; affects nothing. Found by QuasiRiemannHypothesis (#18769 at 1260901, 2026-11-17, claude fable).
+- **Misprint** at the proof of Lemma 6.2, printed p. 49: the source says the source says, in the OCR text, that the fractions are separated by `min(1, r₊)/Y`; it should be `min(1, 1/r₊)/Y`, from the bound `1/(r₊Y)` just before; affects the proof. Found by QuasiRiemannHypothesis (#18769 at e07a8c3, 2026-11-17, claude fable).
 
 ## Orr, arXiv:1609.01315v2
 
