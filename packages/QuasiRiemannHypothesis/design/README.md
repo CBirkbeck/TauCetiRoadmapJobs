@@ -6,7 +6,7 @@ included, and every finite-order Hecke `L`-function of `F = ℚ(√−3)` has no
 argument is the first stage of the cubic-theta method of `openai2026quasiRH` (its Part I): a
 smoothed average of cubic Gauss sums is bounded directly through the automorphy of Kubota's cubic
 theta function and a quadratic large sieve, and is compared, after Poisson summation, with a Mellin
-integral containing the reciprocal of the target `L`-function; zero detection and a sextic large
+integral whose integrand carries `1/L` of the target character; zero detection and a sextic large
 sieve control the remaining rows, and an abstract continuation principle turns the two estimates
 into the half-plane. On the way the roadmap builds the general library the argument needs: zero-free
 half-planes and the continuation principle for an abstract family of Euler products; power residue
@@ -86,9 +86,10 @@ numerical constant of Layer 10 is a closed-form rational inequality stated with 
   the prime ideal theorem: [ZerosOfLFunctions](../ZerosOfLFunctions/README.md) §§1.3, 3.1, 3.4,
   4.4–4.5, 8.4–8.6.
 - The `n`-th power residue symbol at primes and ideals, the Frobenius action on `n`-th roots, the
-  general power reciprocity law with its Hilbert symbols, prime cubic reciprocity and the
-  supplement at `1 − ω`: [ClassicalArithmeticCompletion](../ClassicalArithmeticCompletion/README.md)
-  §§1.12, 1.23, 1.33, 1.34, 1.59, 1.72, 1.75, as Tau Ceti realizes them
+  `n`-th Hilbert symbol at a place not dividing `n` and Hilbert's product formula, primary associates,
+  prime cubic reciprocity and the supplement at `1 − ω`:
+  [ClassicalArithmeticCompletion](../ClassicalArithmeticCompletion/README.md)
+  §§1.12, 1.23, 1.33, 1.34, 1.38, 1.43, 1.52, 1.72, 1.75, as Tau Ceti realizes them
   (`Ideal.powerResidueSymbol`, `Ideal.powerResidueSymbolIdeal`,
   `TauCeti.IsPrimaryEisenstein.cubic_reciprocity`).
 - Global Artin reciprocity and ray class fields: [ClassFieldTheory](../ClassFieldTheory/README.md)
@@ -102,7 +103,9 @@ numerical constant of Layer 10 is a closed-form rational inequality stated with 
   [LFunctions](../LFunctions/README.md) Layer 5 (`gaussSum`, `gaussSum_mul`, `norm_gaussSum`).
 - Poisson summation for a full-rank lattice: [ThetaSeries](../ThetaSeries/README.md) Layer 1 (1A).
 - Bianchi groups, the hyperbolic quotient and cusps: BianchiModularForms §§0.3–0.4; the Laplacian
-  on `ℍ³`: MaassForms §7.1; the `K`-Bessel function:
+  on `ℍ³`: MaassForms §7.1. MaassForms §7.3 states the Fourier–Bessel expansion for `PSL₂(ℤ[i])` with
+  trivial character; §8.2 here is the expansion for a cofinite `Γ` with a unitary character at an
+  essential cusp, and agrees with it under `μ = n/2`. The `K`-Bessel function:
   [AutomorphicFormsOnReductiveGroups](../AutomorphicFormsOnReductiveGroups/README.md) §4.5;
   analytic Fredholm continuation: AutomorphicSpectralTheory §0.16.
 - The least quadratic nonresidue `SieveApplications.leastNonresidue`:
@@ -267,18 +270,24 @@ Weil explicit formula for primitive finite-order Hecke characters of any number 
 ### From TauCetiRoadmap.ClassicalArithmeticCompletion
 
 §1.12 (primary Eisenstein integers, `≡ 2 mod 3`), §1.23 and §1.33 (the symbol at primes and at
-ideals prime to `n`), §1.34 (an arithmetic Frobenius acts on `n`-th roots by the symbol), §1.59
-(the general power reciprocity law `(a/b)_n (b/a)_n⁻¹ = ∏_{v | n∞} (a, b)_v` for pairwise coprime
-`(a)`, `(b)`, `(n)`), §1.72 (cubic reciprocity at primes), §1.75 (Eisenstein's supplement at
-`1 − ω`).
+ideals prime to `n`), §1.34 (an arithmetic Frobenius acts on `n`-th roots by the symbol), §1.38 (every
+Eisenstein prime of norm other than `3` has exactly one primary associate), §1.43 (the degree-`n`
+Hilbert symbol `(a, b)_v = Art_v(a)(ⁿ√b)/ⁿ√b` at a finite place `v ∤ n` is
+`((−1)^(v(a)v(b)) b^(v(a)) a^(−v(b)) mod 𝔭_v / 𝔭_v)_n`), §1.52 (Hilbert's product formula
+`∏_v (a, b)_v = 1` for `a, b ∈ K^×`, complex places contributing `1`), §1.72 (cubic reciprocity at
+primes), §1.75 (Eisenstein's supplement at `1 − ω`).
 
 ### From TauCetiRoadmap.ClassFieldTheory
 
 Layer 11 (global Artin reciprocity: the Artin map of a finite abelian extension factors through
 the ray class group of an admissible modulus) and §13.1, as Tau Ceti realizes them (`TauCeti.ClassFieldTheory.rayClassField`,
-`TauCeti.ClassFieldTheory.isAdmissibleModulus_iff_le_rayClassField`,
-`TauCeti.ClassFieldTheory.IsAdmissibleModulus.mem_support_of_ramified`: a prime in the conductor
-ramifies; `TauCeti.ClassFieldTheory.kroneckerWeber`).
+`TauCeti.ClassFieldTheory.isAdmissibleModulus_iff_le_rayClassField`;
+`TauCeti.ClassFieldTheory.abelianConductor`, the least admissible modulus, with
+`TauCeti.ClassFieldTheory.isAdmissibleModulus_abelianConductor` (it is admissible) and
+`TauCeti.ClassFieldTheory.isAdmissibleModulus_iff_abelianConductor_dvd` (the admissible moduli are its
+multiples); `TauCeti.ClassFieldTheory.conductorExponent_eq_zero_of_isUnramified`: an unramified
+extension of local fields has conductor exponent `0`, so its norms contain the local units;
+`TauCeti.ClassFieldTheory.kroneckerWeber`).
 
 ### From TauCetiRoadmap.ThetaSeries
 
@@ -493,9 +502,14 @@ Route: `L = K(a^(1/n))` is the splitting field of `X^n − a`, abelian over `K` 
 `Gal(L/K) ↪ μ_n` (Mathlib's Kummer theory), unramified outside `n a` (the discriminant of
 `X^n − a` divides `n^n a^(n−1)`). At a prime `𝔭 ∤ n a` an arithmetic Frobenius acts on `a^(1/n)` by
 `(a/𝔭)_n` (ClassicalArithmeticCompletion §1.34); the Artin map is multiplicative; global Artin
-reciprocity factors it through the ray class group of an admissible modulus, and every prime of
-that modulus ramifies in `L` (ClassFieldTheory Layer 11, §13.1). A field containing `μ_n` with
-`n ≥ 3` has no real place.
+reciprocity factors it through the ray class group of the conductor `abelianConductor K L`, which is
+admissible (ClassFieldTheory Layer 11, §13.1). The conductor has exponent `0` at every finite place
+`v ∤ n a`: there `L/K` is unramified, so the local units at `v` are norms from `L_w`
+(`conductorExponent_eq_zero_of_isUnramified`), an idele that is such a norm at `v` and `1` elsewhere is an
+idele norm from `L`, so the conductor with its `v`-exponent lowered to `0` is still admissible and, the
+conductor dividing every admissible modulus (`isAdmissibleModulus_iff_abelianConductor_dvd`), its
+`v`-exponent is `0` (`milnecft2020` Chapter V, Theorem 3.5 and Remark 3.8, p. 158). A field containing
+`μ_n` with `n ≥ 3` has no real place.
 
 - For nonzero `a, b`: `ψ_(ab) = ψ_a ψ_b` and `ψ_(a c^n) = ψ_a` on ideals prime to `n a b c`.
 - `ψ_a` is trivial when `a` is an `n`-th power in `𝓞 K`.
@@ -514,7 +528,9 @@ that modulus ramifies in `L` (ClassFieldTheory Layer 11, §13.1). A field contai
 *Needs:* Tau Ceti `Ideal.powerResidueSymbolIdeal`, `Ideal.powerResidueSymbolIdeal_mul_right`;
 ClassicalArithmeticCompletion §§1.33, 1.34; ClassFieldTheory Layer 11 and §13.1
 (`TauCeti.ClassFieldTheory.isAdmissibleModulus_iff_le_rayClassField`,
-`TauCeti.ClassFieldTheory.IsAdmissibleModulus.mem_support_of_ramified`);
+`TauCeti.ClassFieldTheory.isAdmissibleModulus_abelianConductor`,
+`TauCeti.ClassFieldTheory.isAdmissibleModulus_iff_abelianConductor_dvd`,
+`TauCeti.ClassFieldTheory.conductorExponent_eq_zero_of_isUnramified`);
 Mathlib `autAdjoinRootXPowSubCEquiv`, `AlgHom.IsArithFrobAt`.
 
 ### 2.2 Primary elements of `ℤ[ω]`
@@ -661,8 +677,9 @@ bound `∫_{|t| > T₁} |ŵ(t)| (1 + |t|)^J dt ≤ (2π)^d T₁^(−N) ‖w‖_{
 bound `|MW(σ + iT)| ≪_{I,N} (1 + |T|)^(−N) Σ_{j ≤ N} ∫₀^∞ y^σ |(y∂_y)^j W(y)| dy/y` uniformly for
 `σ` in a compact `I` and `T ∈ ℝ`, whenever the integrals converge and the boundary terms of `N`
 logarithmic integrations by parts vanish (annular `W`, or `W` smooth at `0` and Schwartz at `∞`
-with `I ⊂ (0, ∞)`); and the joint bound for a Gaussian in the sum of two heights against two
-rapidly decreasing Mellin transforms (`openai2026quasiRH` Lemma 4.5 and (4.9)–(4.12), pp. 17–19).
+with `I ⊂ (0, ∞)`); and the joint bound: for measurable `a, b` on `ℝ`, integers `J, N ≥ 0` and `T ∈ ℝ`,
+`∫∫_{ℝ²} e^(−(T+u)²) |a(u) b(w)| (1 + |T| + |u| + |w|)^J du dw ≪_{J,N} (1 + |T|)^(−N) sup_u (1 + |u|)^(J+N) |a(u)| · ∫_ℝ (1 + |w|)^J |b(w)| dw`
+whenever the right side is finite (`openai2026quasiRH` Lemma 4.5 and (4.9)–(4.12), pp. 17–19).
 
 *Needs:* §3.1; Mathlib `mellin`, integration by parts, the Fourier transform on `ℝ^d`.
 
@@ -689,7 +706,7 @@ Define `W_G(y) = (2√π)⁻¹ exp(−(log y)²/4)` on `(0, ∞)` (`openai2026qu
 
 ### 3.4 Finite seminorms for Fourier and Mellin kernels
 
-For a Schwartz `f` on `ℝ^d` put `s_j(f) = Σ_{|α|,|β| ≤ j} ‖x^α ∂^β f‖_{L¹}`. Prove
+Let `f` be a Schwartz function on `ℝ^d` and `s_j(f) = Σ_{|α|,|β| ≤ j} ‖x^α ∂^β f‖_{L¹}`. Prove
 `sup (1 + |ξ|)^A |∂^β f̂(ξ)| ≪_{A,β,d} s_{⌈A⌉+|β|}(f)`, for every fixed nondegenerate linear Fourier
 pairing and for radial transforms. For `m` holomorphic on a closed vertical strip with
 `|m(σ + it)| ≤ C (1 + |t|)^h` and `K_W(x) = (2πi)⁻¹ ∫_{(σ)} MW(−s) m(s) x^(−s) ds`, prove
@@ -876,10 +893,10 @@ reciprocity (§2.5) gives the cubic part; induction on the number of prime facto
 ### 4.6 Finite Fourier expansions on ray class groups
 
 For a finite abelian group `T` and `Φ : T → ℂ`, prove `Φ = Σ_{θ ∈ T̂} a_θ θ` with
-`a_θ = |T|⁻¹ Σ_t Φ(t) θ̄(t)` and `Σ |a_θ| ≤ |T|^(1/2) max |Φ|`; on `T × T` this separates `R(a, b)`
-as a finite sum of products of characters, valid on noncoprime primary pairs because `R` is the
-bicharacter there; and `χ_n(p) · conj(χ_p(n)) = R(p, n) 1_{(n,p)=1}` for a good prime `p` and primary
-`n` outside `S` (`openai2026quasiRH` §4.2, p. 17): on coprime pairs this is sextic reciprocity
+`a_θ = |T|⁻¹ Σ_t Φ(t) θ̄(t)` and `Σ |a_θ| ≤ |T|^(1/2) max |Φ|`; on `T × T` this writes `R(a, b)` as
+`Σ_{θ, θ' ∈ T̂} c_(θ,θ') θ(a) θ'(b)` with finitely many constants `c_(θ,θ')`, valid on noncoprime primary
+pairs because `R` is the bicharacter there; and `χ_n(p) · conj(χ_p(n)) = R(p, n) 1_{(n,p)=1}` for a good
+prime `p` and primary `n` outside `S` (`openai2026quasiRH` §4.2, p. 17): for coprime `n, p` it is the sextic reciprocity law
 `χ_n(p) = R(p, n) χ_p(n)` of §4.5 multiplied by `conj(χ_p(n))`, of modulus one, and on the other pairs
 both sides vanish.
 
@@ -923,9 +940,9 @@ For a squarefree integral ideal `𝔯` and complex `a_𝔭` with `|a_𝔭| ≤ 1
 `D_𝔯(s) = ∏_{𝔭 ∣ 𝔯} (1 − a_𝔭 N𝔭^(−s))`. Prove: for fixed `σ₀ > 0` and `ε > 0`,
 `|D_𝔯(s)| + |D_𝔯(s)|⁻¹ ≪_{K,σ₀,ε} N𝔯^ε` on `Re s ≥ σ₀`; for every real `σ`,
 `|D_𝔯(σ + it)| ≪_ε N𝔯^((−σ)₊ + ε)` uniformly in `t`; and `|D_𝔯'/D_𝔯(s)| ≪_{σ₀} log(2N𝔯)` on
-`Re s ≥ σ₀`. In particular a deletion of norm `N𝔯 ≤ Z^B`, `B` bounded, costs any prescribed
-positive power of `Z` on a fixed half-plane `Re s ≥ σ₀ > 0` (`openai2026quasiRH` Lemma 4.10,
-p. 23). With `a_𝔭 = χ(𝔭)` this bounds Tau Ceti's `RayClassCharacter.eulerCorrection`.
+`Re s ≥ σ₀`. Consequently, if `N𝔯 ≤ Z^B` with `B` bounded, then `|D_𝔯(s)|` and `|D_𝔯(s)|⁻¹` are
+`≪_{K,σ₀,B,ε} Z^ε` on `Re s ≥ σ₀` for every `ε > 0` (`openai2026quasiRH` Lemma 4.10, p. 23). With
+`a_𝔭 = χ(𝔭)` this bounds Tau Ceti's `RayClassCharacter.eulerCorrection`.
 
 **Checks.**
 
@@ -977,11 +994,12 @@ is the growth hypothesis. Hence `|ℒ(s)| ≤ C'_K Q^(3/5) |s + 2|^(3d/5)` on th
 Fix `a ∈ [1/2, 1]` and `0 < ε < 10⁻³`. If `ℒ` has no zero in the open disc of radius `2 − a − 2ε`
 about `2 + it`, prove that on the closed disc of radius `2 − a − 6ε` about the same centre,
 `|ℒ(s)| + |ℒ(s)|⁻¹ ≪_{K,ε,ε₁} (2Q(3 + |t|)^d)^(ε₁)` for every `ε₁ > 0`, and that on the disc of radius
-`2 − a − 8ε`, `|ℒ'/ℒ(s)| ≪_{K,ε} log(2Q(3 + |t|))`. In particular, for `b` at least the zero
-abscissa of the primitive finite-order Hecke family of `K` and `ν > 0`, these bounds hold on
-`Re s ≥ b + ν` with constants depending on `ν` and `ε₁`; in the principal case the reciprocal bound
-passes to `1/ζ_K`, because `|(s − 1)/(s + 1)| ≤ 1` on `Re s ≥ 0` (`openai2026quasiRH` Lemma 4.9,
-p. 22, for `K = F`). Route: a holomorphic logarithm `g` of `ℒ` on the zero-free disc, normalized
+`2 − a − 8ε`, `|ℒ'/ℒ(s)| ≪_{K,ε} log(2Q(3 + |t|))`. Consequently both bounds hold throughout
+`Re s ≥ b + ν`, with `t = Im s`, whenever `ν > 0` and `b` is at least the zero abscissa of the
+primitive finite-order Hecke family of `K`, the constants then depending on `ν` and `ε₁` too. For the
+trivial character `|1/ζ_K(s)| ≤ |ℒ(s)|⁻¹` on `Re s ≥ 0`, since `|(s − 1)/(s + 1)| ≤ 1` there, so the bound
+for `|ℒ|⁻¹` bounds `1/ζ_K` (`openai2026quasiRH` Lemma 4.9, p. 22, for `K = F`). Route: a holomorphic
+logarithm `g` of `ℒ` on the zero-free disc, normalized
 by the Euler logarithm at the centre; `Re g ≪ log C` from §5.2 and the Euler product right of
 `11/10`; Borel–Carathéodory between two radii; Hadamard's three-circles inequality against the
 disc of radius `49/100`, where the Euler logarithm is bounded; `exp(C (log C)^θ) ≪_ε C^ε` for
@@ -1000,7 +1018,7 @@ Define the *norm-composed character* `χ ∘ N_{K/ℚ}`: the ray class character
 
 - At a prime `𝔭 ∤ q` of residue degree `f` over `p`, the value is `χ(p)^f`.
 - `χ₁ ∘ N · χ₂ ∘ N = (χ₁χ₂) ∘ N`, and `1 ∘ N` is the trivial character of that modulus.
-- For `K` totally complex the modulus has no infinite part, `N_{F/ℚ}` being positive on `F^×`.
+- For `K` totally complex the modulus has no infinite part, `N_{K/ℚ}` being positive on `K^×`.
 
 **Checks.**
 
@@ -1132,8 +1150,8 @@ Let `K ⊇ μ_n` with `n ≥ 3`. Fix a finite set `S` of finite places containin
 `ord_𝔭(a − 1) ≥ e_𝔭` makes `a` an `n`-th power in `K_𝔭`, a set `ℰ` of ideals prime to `S`
 representing `R_𝔠 = H_𝔠 ⊗ ℤ/n` built from chosen generators with chosen `m_E ∈ K^×` generating `E` as
 `𝓞_S`-ideals, `m_(1) = 1`. For coprime ideals `𝔞, 𝔟` prime to `S` write `𝔞 = (x) E 𝔤^n` with
-`x ≡ 1 (mod 𝔠)`, `E ∈ ℰ`, `(𝔤, 𝔟) = 1`, and define `χ_𝔞(𝔟) = (x m_E/𝔟)_n`; `χ_𝔞` is then replaced by
-its primitive inducing character (`bgl2014` Appendix II, p. 20, and §2; `goldmakherlouvel2013` §2).
+`x ≡ 1 (mod 𝔠)`, `E ∈ ℰ`, `(𝔤, 𝔟) = 1`, and define `χ_𝔞(𝔟) = (x m_E/𝔟)_n`; from then on `χ_𝔞` denotes
+the primitive character that induces it (`bgl2014` Appendix II, p. 20, and §2; `goldmakherlouvel2013` §2).
 
 - `χ_𝔞` is well defined, a primitive `n`-th order Hecke character of trivial infinite type, and
   `χ_𝔞 = (a/·)_n` on ideals prime to `𝔠𝔞` when `𝔞 = (a)` with `a ≡ 1 (mod 𝔠)`.
@@ -1321,9 +1339,13 @@ Let `K` be a totally imaginary number field containing `μ_n` and `N` a natural 
 define `κ(σ) = (c/d)_n` if `c ≠ 0` and `κ(σ) = 1` if `c = 0`. Prove that `κ` is a homomorphism
 `Γ(N) → μ_n` (`kubota1969` §3, Propositions 1–2, pp. 24–25), and that on `Γ(N) ∩ SL₂(𝓞_K)` it is also
 `κ(σ) = (c/a)_n⁻¹` for `c ≠ 0`. Route for the second statement: `ad = 1 + bc`, so
-`(c/a)_n (c/d)_n = (c/(1 + bc))_n`, and the product formula for the `n`-th Hilbert symbol gives
-`(c/(1 + bc))_n = 1`, because `1 + bc ≡ 1 (mod c)` and `1 + bc ≡ 1 (mod N²)` is a local `n`-th power
-at every prime above `n` (`n² ∣ N`, Hensel's lemma), the places at infinity being complex.
+`(c/a)_n (c/d)_n = (c/(1 + bc))_n`, and Hilbert's product formula `∏_v (c, 1 + bc)_v = 1` gives
+`(c/(1 + bc))_n = 1`, place by place: at `v ∣ 1 + bc` (so `v ∤ nc`) the tame formula gives
+`(c/𝔭_v)_n^(−v(1+bc))`, whose product is `(c/(1 + bc))_n⁻¹`; at `v ∣ c`, `v ∤ n`, the tame symbol is
+`((1 + bc)/𝔭_v)_n^(v(c)) = 1`, because `1 + bc ≡ 1 (mod c)`; at `v ∣ n` the symbol is `1` because
+`1 + bc ≡ 1 (mod N²)`, hence `≡ 1 (mod n⁴)`, is a local `n`-th power (Hensel's lemma, `4 v(n) ≥ 2 v(n) + 1`);
+at the other finite places both entries are units, and the places at infinity are complex. The
+pairwise-coprime reciprocity law does not apply, since `n ∣ c`.
 
 For `K = F` and `n = 3` the cubic theta function uses Patterson's character `κ_P`, a different
 object: on `Γ₁(3) = {γ ∈ SL₂(𝓞) : γ ≡ I (mod 3)}`, of level `3`, which `n² = 9` does not divide,
@@ -1355,8 +1377,8 @@ not instances of Kubota's.
   by `(c/a)_3` on all of `Γ₂` would be undefined there (`a = 0`).
 
 *Needs:* §2.3; §2.5 (cubic reciprocity, for `κ_P = (b/d)_3` on `Γ₁(3)`); Tau Ceti
-`Ideal.powerResidueSymbolIdeal`; ClassicalArithmeticCompletion §1.59 (Hilbert symbols and their
-product formula).
+`Ideal.powerResidueSymbolIdeal`, `Ideal.powerResidueSymbolIdeal_mul_right`; ClassicalArithmeticCompletion
+§1.52 (Hilbert's product formula) and §1.43 (the symbol at a place not dividing `n`).
 
 ### 8.2 Automorphic functions on `ℍ³` with a unitary character
 
@@ -1378,6 +1400,11 @@ when `χ` is trivial on its stabilizer `Γ_c`. Define the automorphic functions 
 - `Γ₂` with `κ_P`: `∞` is essential (`κ_P = 1` on the upper triangular elements of `Γ₂`).
 - `Δ₃ (v K_{1/3}(4π|μ|v) ě(μz)) = (8/9) · (v K_{1/3}(4π|μ|v) ě(μz))`: order `s − 1 = 1/3` gives
   `s(2 − s) = 8/9`; the order `1/3` with eigenvalue `1 − 1/9` is the theta eigenvalue of §8.5.
+- `Γ = PSL₂(ℤ[i])`, `χ = 1`, the cusp `∞`: the translation lattice is `ℤ[i]`, of covolume one, and its
+  dual `{μ : Tr(μb) ∈ ℤ for all b ∈ ℤ[i]}` is `(1/2)ℤ[i]`; at `μ = n/2` with `n ∈ ℤ[i]`,
+  `ě(μz) = exp(4πi Re(nz/2)) = e(Re(nz))` and `4π|μ| = 2π|n|`, and `K_{s−1} = K_{ir}` at `s = 1 + ir`, so
+  the expansion is MaassForms §7.3's `y K_{ir}(2π|n|y) e(Re(n x))`; taking the dual lattice to be `ℤ[i]`
+  would keep only the even frequencies `n ∈ 2ℤ[i]`.
 
 *Needs:* BianchiModularForms §§0.3–0.4; MaassForms §7.1; AutomorphicFormsOnReductiveGroups §4.5.
 
@@ -1389,20 +1416,29 @@ p. 129).
 
 - It converges absolutely and locally uniformly for `Re s > 2`, is holomorphic in `s` there,
   satisfies `E_i(γw, s, χ) = χ(γ) E_i(w, s, χ)` and `Δ₃ E_i = s(2 − s) E_i`.
-- At an essential cusp `κ_j` its constant term is `δ_ij v^s + φ_ij(s, χ) v^(2−s)`, with
-  `φ_ij(s, χ) = (π/(s − 1)) Σ_{(c,d)} χ_ij(c, d) |c|^(−2s)` over the pairs of the double coset
-  `σ_i⁻¹ Γ σ_j` with `c ≠ 0`, `d` modulo `c` times the lattice; its nonconstant coefficients are
-  Dirichlet series `Σ_{(c,d)} χ_ij(c, d) ě(μd/c) |c|^(−2s)` times `v K_{s−1}(4π|μ|v)` and an explicit
-  gamma factor (`kubota1968` (16)–(17), (22)–(25); `kubota1969` (36)–(42), pp. 43–47).
+- For essential cusps `κ_i`, `κ_j` and `γ ∈ σ_i⁻¹ Γ σ_j` with bottom row `(c, d)` put
+  `χ_ij(c, d) = χ(σ_i γ σ_j⁻¹)`; it depends only on
+  `(c, d)`, and is unchanged by `d ↦ d + cℓ` for `ℓ` in the translation lattice `Λ_j` of `σ_j⁻¹ Γ_j σ_j`
+  and by `(c, d) ↦ u(c, d)` for `u` in the finite group `U_i` of the `u ∈ ℂ^×` with some
+  `(u x; 0 u⁻¹) ∈ σ_i⁻¹ Γ_i σ_i`, because `χ` is trivial on `Γ_i` and `Γ_j` (`U_i ∋ −1` when `−1 ∈ Γ`).
+  At an essential cusp `κ_j` the constant term of `E_i(σ_j w, s, χ)` is `δ_ij v^s + φ_ij(s, χ) v^(2−s)`, with
+  `φ_ij(s, χ) = (π/(s − 1)) |U_i|⁻¹ Σ_{(c,d)} χ̄_ij(c, d) |c|^(−2s)`, the sum over the bottom rows `(c, d)`
+  with `c ≠ 0` of the elements of `σ_i⁻¹ Γ σ_j`, `d` taken modulo `c Λ_j`; its nonconstant coefficients
+  are `|U_i|⁻¹ Σ_{(c,d)} χ̄_ij(c, d) ě(μd/c) |c|^(−2s)`, over the same rows, times `v K_{s−1}(4π|μ|v)` and an
+  explicit gamma factor (`kubota1968` (12), (16)–(17), (22)–(25), pp. 264–267, where the cusp stabilizers
+  are `±` a lattice, `U_i = {±1}` and `|U_i|⁻¹ = 1/2`; `kubota1969` (36)–(42), pp. 43–47).
 
 **Checks.**
 
 - `Γ = SL₂(ℤ[i])`, `χ = 1`, `Re s > 2`: the series is `Σ v^s/(|cz + d|² + |c|²v²)^s` over coprime
-  pairs up to units, and the constant term at `∞` is `v^s + φ(s) v^(2−s)` with `φ` a ratio of Dedekind
-  zeta values of `ℚ(i)`.
+  pairs up to the four units, since `diag(i, −i)` fixes `∞`.
 - At a nonessential cusp the series would be ill defined: a stabilizer element with `χ ≠ 1`
   changes a term by a nontrivial root of unity.
-- `s = 3`: `|v(σw)^3| ≤ v(σw)^3`, the absolutely convergent case.
+- `Γ = SL₂(ℤ[i])`, `χ = 1`, one cusp, `Λ = ℤ[i]` of covolume one, `U = {±1, ±i}`: there are
+  `#(ℤ[i]/c)^×` classes `d mod c` prime to `c`, and `Σ_{c ≠ 0} #(ℤ[i]/c)^× N(c)^(−s) = 4 ζ_K(s − 1)/ζ_K(s)`
+  with `K = ℚ(i)`, so
+  `φ(s) = (π/(s − 1)) ζ_K(s − 1)/ζ_K(s)` and `φ(1) = π ζ_K(0)/Res_{s=1} ζ_K = π(−1/4)/(π/4) = −1`, of modulus
+  one as §8.4 requires; Kubota's factor `1/2`, which counts rows only up to `±1`, would give `−2`.
 
 *Needs:* §8.2.
 
@@ -1507,16 +1543,21 @@ completed series into the transformation of the two attached Bessel expansions u
 Prove that there is a smooth `θ` on `ℍ³`, automorphic under `Γ₂` with character `κ_P` (§8.1), proportional to the
 residue at `4/3` of the Eisenstein series at every essential cusp, with expansion at `∞`
 `θ(w) = σ v^(2/3) + Σ_{0 ≠ μ ∈ λ⁻³𝓞} τ(μ) v K_(1/3)(4π|μ|v) ě(μz)`, where `σ² = 3⁵/4` and, for primary
-`c, d` with `c` squarefree and `g(r, c) = Σ_{x mod c} (x/c)_3 ě(rx/c)`:
-`τ(±λ^(3n−4) c d³) = g(λ², c) |d/c| 3^(n/2 + 2)`,
-`τ(±ωλ^(3n−4) c d³) = e^(−2πi/9) g(ωλ², c) |d/c| 3^(n/2 + 2)`,
-`τ(±ω²λ^(3n−4) c d³) = e^(2πi/9) g(ω²λ², c) |d/c| 3^(n/2 + 2)` for `n ≥ 1`,
-`τ(±λ^(3n−3) c d³) = g(1, c) |d/c| 3^(n/2 + 5/2)` for `n ≥ 0`, and `τ(μ) = 0` otherwise
+`c, d` with `c` squarefree, `g(r, c) = Σ_{x mod c} (x/c)_3 ě(rx/c)` and `conj` the complex conjugate:
+`τ(±λ^(3n−4) c d³) = conj g(λ², c) |d/c| 3^(n/2 + 2)`,
+`τ(±ωλ^(3n−4) c d³) = e^(−2πi/9) conj g(ωλ², c) |d/c| 3^(n/2 + 2)`,
+`τ(±ω²λ^(3n−4) c d³) = e^(2πi/9) conj g(ω²λ², c) |d/c| 3^(n/2 + 2)` for `n ≥ 1`,
+`τ(±λ^(3n−3) c d³) = conj g(1, c) |d/c| 3^(n/2 + 5/2)` for `n ≥ 0`, and `τ(μ) = 0` otherwise
 (`patterson1977` Theorem 8.1 and (8.1)–(8.3), pp. 152–153; `dunnradziwill2024` (5.6)–(5.8), where
-`σ = 3^(5/2)/2`). Prove the expansions at the cusps `H_j ∞` for `H_j = (1 0; t_j 1)`,
-`(t₀, t₁, t₂) = (0, ω², ω)`: `θ(H_j(z, v)) = C_j(v) + Σ_{0 ≠ μ ∈ λ⁻⁴𝓞} d_j(μ) v K_(1/3)(4π|μ|v) ě(μz)` with
-`C₀ = σ v^(2/3)`, `C₁ = C₂ = 0` and `d_j` given by `τ`, `τ₁`, `τ₂` (`patterson1977` (8.8)–(8.9), p. 154, and
-Table III, p. 151; `dunnradziwill2024` (5.9), (5.12)–(5.16) and Appendix A, rows 1, 10, 19). The support and size:
+`σ = 3^(5/2)/2`); write `g̃(c) = g(1, c)/|c|` for the normalized sum (`dunnradziwill2024` (1.7)). Layer 9
+uses the conjugate function `θ̄`, automorphic under `Γ₂` with the character `κ̄_P`. Prove its expansions
+at the cusps `H_j ∞` for `H_j = (1 0; t_j 1)`, `(t₀, t₁, t₂) = (0, ω², ω)`:
+`θ̄(H_j(z, v)) = C_j(v) + Σ_{0 ≠ μ ∈ λ⁻⁴𝓞} d_j(μ) v K_(1/3)(4π|μ|v) ě(μz)`, where `d_j(μ)` is the complex
+conjugate of the coefficient of `θ ∘ H_j` at `−μ` (`ě(μz)` has conjugate `ě(−μz)` and `K_(1/3)` is real),
+`C₀ = σ v^(2/3)`, `C₁ = C₂ = 0`, and the coefficients of `θ ∘ H_j` are given by `τ`, `τ₁`, `τ₂`
+(`patterson1977` (8.8)–(8.9), p. 154, which carry the same conjugation bars as Theorem 8.1, and Table III,
+p. 151; `dunnradziwill2024` (5.9), (5.12)–(5.16) and Appendix A, rows 1, 10, 19; `openai2026quasiRH`
+(5.7), p. 27). The support and size:
 `d_j(μ) = 0` unless `μ = uλ^k n b³` with a unit `u`, `k ≥ −4`, `n, b` primary and `n` squarefree, and
 then `|d_j(μ)| ≤ 27 · 3^(k/6) |b|`, with no coprimality between `n` and `b`
 (`openai2026quasiRH` (5.2), p. 26). Route: Patterson's Dirichlet series of Gauss sums (the Fourier
@@ -1527,18 +1568,21 @@ squarefree primary `c` and `r` prime to `c`.
 
 **Checks.**
 
-- `μ = λ⁻³ c d³` (`n = 0`): `τ(μ) = 3^(5/2) |d| g(1, c)/|c| = 3^(5/2) |d| g̃(c)`, the coefficient
-  `d₁(λ⁻³nb³) = 3^(5/2)|b| g̃₃(n)` of `openai2026quasiRH` (5.9); with `k = −3` the bound is
-  `27 · 3^(−1/2) |d| = 3^(5/2) |d|`, attained.
+- `μ = λ⁻³ c d³` (`n = 0`): `τ(μ) = 3^(5/2) |d| conj g(1, c)/|c| = 3^(5/2) |d| conj g̃(c)`, and `τ` is even,
+  so `d₀(λ⁻³nb³) = conj τ(−λ⁻³nb³) = 3^(5/2)|b| g̃(n)`, the coefficient of `openai2026quasiRH` (5.9); with
+  `k = −3` the bound is `27 · 3^(−1/2) |d| = 3^(5/2) |d|`, attained. At `c = 1 + 3ω` (norm `7`),
+  `g̃(c) ≈ 0.8960 − 0.4441i` with `g̃(c)³ = −α(c) ≈ 0.1890 − 0.9820i`, not real, so `|g̃(c) − conj g̃(c)| ≈ 0.888`
+  and dropping the bar changes the value.
 - `μ = λ^(3n−4) c d³`: `|τ(μ)| = 3^(n/2+2) |d|`, below `27 · 3^((3n−4)/6) |d| = 3^(n/2 + 7/3) |d|`.
 - The cusp coefficients `τ₁`, `τ₂` have modulus `9|d|` at `k = −4`, below `27 · 3^(−2/3) |d| ≈ 12.98 |d|`;
-  a bound `27 · 3^(k/6)` without the factor `|b|` fails at `d = 2`.
+  a bound `27 · 3^(k/6)` without the factor `|b|` fails at the primary `d = −2`, where `9|d| = 18`.
 
 *Needs:* §§8.4–8.6; §§4.1, 4.3; §2.5.
 
 ### Examples
 
-- The coefficient of `θ` at `μ = λ⁻³` (`c = d = 1`): `τ = 3^(5/2) g(1, 1) = 3^(5/2)`.
+- The coefficient of `θ` at `μ = λ⁻³` (`c = d = 1`): `τ = 3^(5/2) conj g(1, 1) = 3^(5/2)`, real, so `θ` and
+  `θ̄` share it.
 - `g̃(c)³ = μ(c) c/|c|` (`dunnradziwill2024` (1.8)) and §4.3 agree: `γ_2(c) = χ_c(λ)² g̃(c)`.
 
 ### Dependencies
@@ -1577,7 +1621,7 @@ no coprimality between `c` and `n` being imposed, with `ᾱ` the complex conjuga
 
 ### 9.2 The completed cubic reflection
 
-Fix a finite family `𝒳` of finite-ray characters with conductors supported on `S`, a modulus `𝔈`
+Fix a finite family `𝒳` of finite-ray characters, each of conductor divisible only by primes of `S`, a modulus `𝔈`
 with support exactly `S` divisible by each conductor, and `L ∈ 𝓞` with support `S`, `18 ∣ L`, `λ ∣ L`,
 such that for every `Ψ₀ ∈ 𝒳` the function `Φ(x) = χ_x(λ)² Ψ₀(x)` on primary `x` prime to `𝔈` (and `0`
 elsewhere) is `L`-periodic (possible by §2.5 and ray periodicity). For a finite set `P` of primary good
@@ -1628,8 +1672,8 @@ primes not dividing `L`, exponents `j_p ∈ {0, …, 5}` and `Ψ = Ψ₀ ∏_p �
   which is the weight `(1 + |u|)^(⌈4A⌉)` in `𝓜_{A,⌈4A⌉+j+2}`.
 
 Route: express the masks by finite Fourier inversion with the zero extensions kept
-(`openai2026quasiRH` (5.11)–(5.12)) as finite sums of translated theta values; move each rational cusp
-to one of the three cusps of §8.7 by the automorphy of §8.1; compute the multipliers and local Fourier
+(`openai2026quasiRH` (5.11)–(5.12)) as finite sums of translated values of `θ̄`; move each rational cusp
+to one of the three cusps of §8.7 by the automorphy of `θ̄` (character `κ̄_P`, §§8.1, 8.7); compute the multipliers and local Fourier
 factors; compare Mellin transforms with the gamma factor of the theta expansion.
 
 *Needs:* §§8.1, 8.7; §§4.1–4.5; §2.5; §§3.2–3.4; Mathlib `Complex.Gamma`, `mellin`.
@@ -1641,8 +1685,8 @@ Prove: (Lemma 5.2) for a fixed finite family of base characters, the twisted cha
 `6`, its unit and the ray class of `m_good`, into finitely many sectors on each of which one pair
 `(𝔈, L)` of §9.2 and one choice of `d_t`, `ϑ_t` serve; (Lemma 5.3) the transforms `V♯` of the annular
 pieces of a common profile form a uniformly smooth family with seminorms bounded by `𝓜_{A,J}`; (Lemma
-5.4) for `A = 𝓞` or `λ⁻⁴𝓞` and `|K(x)| ≤ C_A x^(−A)` on `x ≥ 1` with `A > 1`,
-`Σ_{μ ∈ A, a q_μ > U} |K(a q_μ)| ≪_A C_A (1 + a⁻¹) U^(1−A)` for `a > 0`, `U ≥ 1`, and `C_A ≪ 𝓜_{A,⌈4A⌉+2}(V)` for
+5.4) for the lattice `Λ = 𝓞` or `λ⁻⁴𝓞` and `|K(x)| ≤ C_A x^(−A)` on `x ≥ 1` with `A > 1`,
+`Σ_{μ ∈ Λ, a q_μ > U} |K(a q_μ)| ≪_A C_A (1 + a⁻¹) U^(1−A)` for `a > 0`, `U ≥ 1`, and `C_A ≪ 𝓜_{A,⌈4A⌉+2}(V)` for
 `K = V♯` (`openai2026quasiRH` Lemmas 5.2–5.4, pp. 34–36).
 
 *Needs:* §9.2; §2.4; §3.2; §3.5.
@@ -1679,8 +1723,8 @@ Layers 2–4, 6 (§6.2) and 8 (§§8.1, 8.7).
 
 Throughout, `η` is a primitive finite-order Hecke character of `F` (the *target*), `T` a finite ray
 group (independent of `η`) through which `R`, `G` and the primary phases of §4.5 factor,
-`Θ = ⟨η, T̂⟩`, `S` the excluded set for the family `{ηθ : θ ∈ T̂}` containing every prime of norm at most
-a fixed `P₀`, `b*` the squarefree product of the primes of `S` and `ξ` a primitive character modulo
+`Θ = ⟨η, T̂⟩`, `S` the excluded set for the family `{ηθ : θ ∈ T̂}`, which contains all primes of norm
+`≤ P₀` for a fixed `P₀`, `b*` the squarefree product of the primes of `S` and `ξ` a primitive character modulo
 `b*` of order dividing `6`, nonprincipal at each prime of `S`.
 
 ### 10.1 The probe
@@ -1853,7 +1897,7 @@ For the probe of §10.1 the data are `l_x = l_y = 1/2`, `ℓ = 0`, `h = 1/2`, `C
 `β* > σ₀` (which contains `σ₀ = 11/12`), `0 < ε < 10⁻³`, `z₀ = 17/50`, and `T₁ = Z^τ ≥ 2` with
 `0 < τ ≤ d_min/100`. Prove (`openai2026quasiRH` §10, pp. 72–82):
 
-- **External tails** (Lemma 10.2, p. 73). Let `m ≥ 2`, `𝒦` a compact set of real contour parameters `r`,
+- **External tails** (Lemma 10.2, p. 73). Let `m ≥ 2`, `𝒦 ⊂ ℝ` a compact set of contour parameters `r`,
   and for `r ∈ 𝒦`, `Z ≥ 2` let `K_(r,Z) ≥ 0` be a kernel on `ℝ^m`, Borel in `(r, t)`, with
   `K_(r,Z)(t) ≪_L (1 + |t|)^(−L)` for every `L` uniformly in `r, Z, t`; let `𝒟 ⊆ ℝ^m` be Borel and
   `|F_Z(t)| ≤ C Z^B (1 + |t|)^J` on `𝒟`, with `B, J, C` independent of `Z` and `N`. Then uniformly for
@@ -2001,7 +2045,9 @@ LFunctions Layers 5 and 7.
 For a nonprincipal Dirichlet character `χ` modulo `q` define *leastNonOne* `χ` as the least `n ≥ 1` with
 `χ(n) ∉ {0, 1}`; it is at most `q`.
 
-- It is unchanged by passing to the primitive character on `n` prime to `q`, and is at least `2`.
+- It is at least `2`. For the primitive character `χ*` inducing `χ`, `χ(n) = χ*(n)` for `n` prime to `q`,
+  and the least `n` with `χ(n) ∉ {0, 1}` is prime to `q`, so *leastNonOne* `χ* ≤` *leastNonOne* `χ`;
+  equality can fail (modulo `12`: `2` against `5`).
 - For a real `χ` and `n` below it, `χ(n) ∈ {0, 1}`.
 - For the Legendre character modulo an odd prime `p`, it is `SieveApplications.leastNonresidue p`.
 
@@ -2010,7 +2056,8 @@ For a nonprincipal Dirichlet character `χ` modulo `q` define *leastNonOne* `χ`
 - `χ` the character modulo `5` with `χ(2) = i`: the value is `2`.
 - `χ = (·/7)`: `(2/7) = 1`, `(3/7) = −1`, so the value is `3`, the least nonresidue modulo `7`.
 - `χ` modulo `12` induced by `(·/3)`: `χ(2) = χ(3) = χ(4) = 0`, `χ(5) = (5/3) = −1`, so the value is `5`;
-  reading `0` as a value outside `{0, 1}` would give `2`.
+  reading `0` as a value outside `{0, 1}` would give `2`, and so does the primitive `(·/3)`, with
+  `(2/3) = −1`.
 
 Prove: for every `θ ∈ [1/2, 1)` there is `C_θ` such that for every `q ≥ 2` and every nonprincipal
 `χ` modulo `q` whose `L`-function is zero-free right of `θ`, *leastNonOne* `χ ≤ C_θ (log q)^(1/(1−θ))`.
@@ -2110,7 +2157,8 @@ Dirichlet `L`-functions.
   Appendix C.
 - `guthmaynard2026` — L. Guth, J. Maynard, *New large value estimates for Dirichlet polynomials*, Ann. of
   Math. 203 (2026); §13.1.
-- `milnecft2020` — J. S. Milne, *Class Field Theory*, v4.03 (2020); Chapter VIII, 5.3 and 5.5, p. 245.
+- `milnecft2020` — J. S. Milne, *Class Field Theory*, v4.03 (2020); Chapter V, Theorem 3.5 and Remark 3.8,
+  p. 158; Chapter VIII, 5.3 and 5.5, p. 245.
 - `lamzourilisound2015` — Y. Lamzouri, X. Li, K. Soundararajan, *Conditional bounds for the least
   quadratic non-residue and related problems*, Math. Comp. 84 (2015); Lemma 2.2, Theorem 1.1.
 - `tao2015` — T. Tao, *The Elliott–Halberstam conjecture implies the Vinogradov least quadratic

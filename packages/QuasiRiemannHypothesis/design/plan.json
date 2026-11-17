@@ -218,7 +218,7 @@
      ],
      "locator": {
       "source": "milnecft2020",
-      "where": "Chapter VIII, 5.3 and 5.5, p. 245; openai2026quasiRH Lemma 4.1, p. 11"
+      "where": "Chapter VIII, 5.3 and 5.5, p. 245, and Chapter V, Theorem 3.5 and Remark 3.8, p. 158; openai2026quasiRH Lemma 4.1, p. 11"
      },
      "prerequisites": [
       "tauceti:Ideal.powerResidueSymbolIdeal",
@@ -228,7 +228,9 @@
       "roadmap:ClassFieldTheory Layer 11",
       "roadmap:ClassFieldTheory §13.1",
       "tauceti:TauCeti.ClassFieldTheory.isAdmissibleModulus_iff_le_rayClassField",
-      "tauceti:TauCeti.ClassFieldTheory.IsAdmissibleModulus.mem_support_of_ramified",
+      "tauceti:TauCeti.ClassFieldTheory.isAdmissibleModulus_abelianConductor",
+      "tauceti:TauCeti.ClassFieldTheory.isAdmissibleModulus_iff_abelianConductor_dvd",
+      "tauceti:TauCeti.ClassFieldTheory.conductorExponent_eq_zero_of_isUnramified",
       "mathlib:autAdjoinRootXPowSubCEquiv",
       "mathlib:AlgHom.IsArithFrobAt"
      ],
@@ -932,7 +934,7 @@
      "id": "5.1",
      "kind": "theorem",
      "name": "QuasiRiemann.deletedEulerFactor_bounds",
-     "statement": "For squarefree 𝔯 and |a_𝔭| ≤ 1, D_𝔯(s) = ∏(1 − a_𝔭 N𝔭^(−s)) satisfies |D_𝔯| + |D_𝔯|⁻¹ ≪ N𝔯^ε on Re s ≥ σ₀ > 0, |D_𝔯(σ+it)| ≪ N𝔯^((−σ)₊+ε), |D_𝔯'/D_𝔯| ≪ log(2N𝔯) on Re s ≥ σ₀.",
+     "statement": "For squarefree 𝔯 and |a_𝔭| ≤ 1, D_𝔯(s) = ∏(1 − a_𝔭 N𝔭^(−s)) satisfies |D_𝔯| + |D_𝔯|⁻¹ ≪ N𝔯^ε on Re s ≥ σ₀ > 0, |D_𝔯(σ+it)| ≪ N𝔯^((−σ)₊+ε), |D_𝔯'/D_𝔯| ≪ log(2N𝔯) on Re s ≥ σ₀; consequently |D_𝔯|, |D_𝔯|⁻¹ ≪_{K,σ₀,B,ε} Z^ε on Re s ≥ σ₀ when N𝔯 ≤ Z^B.",
      "hypotheses": [
       "σ₀ > 0, ε > 0"
      ],
@@ -1006,7 +1008,7 @@
      "id": "5.3",
      "kind": "theorem",
      "name": "QuasiRiemann.heckeL_logControl",
-     "statement": "If ℒ has no zero in the open disc of radius 2 − a − 2ε about 2+it, then |ℒ| + |ℒ|⁻¹ ≪ (2Q(3+|t|)^d)^(ε₁) on the closed disc of radius 2 − a − 6ε and |ℒ'/ℒ| ≪ log(2Q(3+|t|)) on radius 2 − a − 8ε; consequently on Re s ≥ b + ν for b ≥ the zero abscissa.",
+     "statement": "If ℒ has no zero in the open disc of radius 2 − a − 2ε about 2+it, then |ℒ| + |ℒ|⁻¹ ≪ (2Q(3+|t|)^d)^(ε₁) on the closed disc of radius 2 − a − 6ε and |ℒ'/ℒ| ≪ log(2Q(3+|t|)) on radius 2 − a − 8ε; consequently on Re s ≥ b + ν (t = Im s) for b ≥ the zero abscissa; |1/ζ_K| ≤ |ℒ|⁻¹ on Re s ≥ 0 for the trivial character.",
      "hypotheses": [
       "a ∈ [1/2,1]",
       "0 < ε < 10⁻³",
@@ -1219,7 +1221,7 @@
      "id": "6.3",
      "kind": "definition",
      "name": "QuasiRiemann.fisherFriedbergCharacter",
-     "statement": "For K ⊇ μ_n (n ≥ 3), S with 𝓞_S of class number one containing the places above n, 𝔠 = ∏𝔭^(e_𝔭) and representatives ℰ of R_𝔠: χ_𝔞(𝔟) = (x m_E/𝔟)_n for 𝔞 = (x)E𝔤^n, x ≡ 1 mod 𝔠, then replaced by its primitive inducing character.",
+     "statement": "For K ⊇ μ_n (n ≥ 3), S with 𝓞_S of class number one containing the places above n, 𝔠 = ∏𝔭^(e_𝔭) and representatives ℰ of R_𝔠: χ_𝔞(𝔟) = (x m_E/𝔟)_n for 𝔞 = (x)E𝔤^n, x ≡ 1 mod 𝔠, and χ_𝔞 then denotes the primitive character that induces it.",
      "hypotheses": [
       "n ≥ 3"
      ],
@@ -1501,7 +1503,9 @@
      "prerequisites": [
       "target:2.3",
       "tauceti:Ideal.powerResidueSymbolIdeal",
-      "roadmap:ClassicalArithmeticCompletion §1.59",
+      "roadmap:ClassicalArithmeticCompletion §1.52",
+      "roadmap:ClassicalArithmeticCompletion §1.43",
+      "tauceti:Ideal.powerResidueSymbolIdeal_mul_right",
       "target:2.5"
      ],
      "api": [
@@ -1600,6 +1604,11 @@
        "name": "eigenvalue",
        "kind": "computation",
        "statement": "order 1/3 gives eigenvalue 8/9"
+      },
+      {
+       "name": "picard_maass",
+       "kind": "compatibility",
+       "statement": "PSL₂(ℤ[i]), χ = 1: dual lattice (1/2)ℤ[i]; at μ = n/2, ě(μz) = e(Re(nz)), 4π|μ| = 2π|n|: MaassForms §7.3's expansion; dual ℤ[i] would keep only n ∈ 2ℤ[i]"
       }
      ]
     },
@@ -1607,13 +1616,13 @@
      "id": "8.3",
      "kind": "definition",
      "name": "QuasiRiemann.eisensteinSeriesWithCharacter",
-     "statement": "E_i(w,s,χ) = Σ_{σ ∈ Γ_i\\Γ} χ̄(σ) v(σ_i⁻¹σw)^s at an essential cusp κ_i.",
+     "statement": "E_i(w,s,χ) = Σ_{σ ∈ Γ_i\\Γ} χ̄(σ) v(σ_i⁻¹σw)^s at an essential cusp κ_i; χ_ij(c,d) = χ(σ_iγσ_j⁻¹) for γ ∈ σ_i⁻¹Γσ_j with bottom row (c,d); U_i the finite group of diagonal parts u of σ_i⁻¹Γ_iσ_i.",
      "hypotheses": [
       "Re s > 2"
      ],
      "locator": {
       "source": "kubota1968",
-      "where": "(8), (18), pp. 263, 266; patterson1977 (3.1)"
+      "where": "(8), (12), (16)–(18), (22)–(25), pp. 263–267; patterson1977 (3.1)"
      },
      "prerequisites": [
       "target:8.2"
@@ -1632,19 +1641,19 @@
       {
        "name": "constantTerm",
        "role": "constant term",
-       "statement": "δ_ij v^s + φ_ij(s,χ)v^(2−s) with φ_ij = (π/(s−1))Σ χ_ij(c,d)|c|^(−2s)"
+       "statement": "δ_ij v^s + φ_ij(s,χ)v^(2−s) with φ_ij = (π/(s−1))|U_i|⁻¹ Σ χ̄_ij(c,d)|c|^(−2s), rows (c,d) of σ_i⁻¹Γσ_j with c ≠ 0, d mod cΛ_j"
       },
       {
        "name": "coefficients",
        "role": "Fourier coefficients",
-       "statement": "Dirichlet series Σ χ_ij(c,d) ě(μd/c)|c|^(−2s) times v K_{s−1}(4π|μ|v)"
+       "statement": "|U_i|⁻¹ Σ χ̄_ij(c,d) ě(μd/c)|c|^(−2s) times v K_{s−1}(4π|μ|v) and a gamma factor"
       }
      ],
      "tests": [
       {
        "name": "gauss_picard",
        "kind": "compatibility",
-       "statement": "SL₂(ℤ[i]), χ = 1: constant term a ratio of Dedekind zeta values"
+       "statement": "SL₂(ℤ[i]), χ = 1: the series runs over coprime pairs up to the four units (diag(i, −i) fixes ∞)"
       },
       {
        "name": "nonessential",
@@ -1652,9 +1661,9 @@
        "statement": "at a nonessential cusp the series is ill defined"
       },
       {
-       "name": "s_three",
-       "kind": "degenerate",
-       "statement": "s = 3: absolutely convergent"
+       "name": "scattering_at_one",
+       "kind": "computation",
+       "statement": "SL₂(ℤ[i]), χ = 1, U = {±1, ±i}: φ(s) = (π/(s−1))ζ_K(s−1)/ζ_K(s), φ(1) = π(−1/4)/(π/4) = −1; the factor 1/2 (rows up to ±1) gives −2"
       }
      ]
     },
@@ -1778,11 +1787,11 @@
      "id": "8.7",
      "kind": "theorem",
      "name": "QuasiRiemann.cubicTheta",
-     "statement": "θ on ℍ³, automorphic under Γ₂ with κ_P, proportional to the residues at 4/3, with θ = σv^(2/3) + Σ τ(μ)vK_(1/3)(4π|μ|v)ě(μz), σ² = 3⁵/4, τ given by Patterson's (8.1); expansions at H_j∞, (t₀,t₁,t₂) = (0,ω²,ω), with C₀ = σv^(2/3), C₁ = C₂ = 0 and d_j from τ, τ₁, τ₂; supp d_j ⊆ {uλ^k n b³ : k ≥ −4}, |d_j(μ)| ≤ 27·3^(k/6)|b|.",
+     "statement": "θ on ℍ³, automorphic under Γ₂ with κ_P, proportional to the residues at 4/3, with θ = σv^(2/3) + Σ τ(μ)vK_(1/3)(4π|μ|v)ě(μz), σ² = 3⁵/4, τ given by Patterson's (8.1) with conjugated Gauss sums conj g(r, c); θ̄ (character κ̄_P) has expansions at H_j∞, (t₀,t₁,t₂) = (0,ω²,ω), with C₀ = σv^(2/3), C₁ = C₂ = 0 and d_j(μ) the conjugate of the coefficient of θ∘H_j at −μ (from τ, τ₁, τ₂); supp d_j ⊆ {uλ^k n b³ : k ≥ −4}, |d_j(μ)| ≤ 27·3^(k/6)|b|.",
      "hypotheses": [],
      "locator": {
       "source": "patterson1977",
-      "where": "Theorem 8.1, (8.1)–(8.3), (8.8)–(8.9), Table III; dunnradziwill2024 (5.6)–(5.16), Appendix A; openai2026quasiRH (5.2)"
+      "where": "Theorem 8.1, (8.1)–(8.3), (8.8)–(8.9), Table III; dunnradziwill2024 (1.7), (5.6)–(5.16), Appendix A; openai2026quasiRH (5.2), (5.7), (5.9)"
      },
      "prerequisites": [
       "target:8.4",
@@ -1797,7 +1806,7 @@
       {
        "name": "n0_coefficient",
        "kind": "compatibility",
-       "statement": "τ(λ⁻³cd³) = 3^(5/2)|d|g̃(c), attaining 27·3^(−1/2)|d|"
+       "statement": "τ(λ⁻³cd³) = 3^(5/2)|d| conj g̃(c), so d₀(λ⁻³nb³) = 3^(5/2)|b| g̃(n), attaining 27·3^(−1/2)|b|; at c = 1+3ω, g̃(c) ≈ 0.8960 − 0.4441i, g̃³ = −α(c) not real, |g̃ − conj g̃| ≈ 0.888"
       },
       {
        "name": "n_ge1",
@@ -1807,7 +1816,7 @@
       {
        "name": "cusp_coeff",
        "kind": "non-example",
-       "statement": "|τ₁| = 9|d| at k = −4; a bound without |b| fails at d = 2"
+       "statement": "|τ₁| = 9|d| at k = −4; a bound without |b| fails at the primary d = −2 (18 > 12.98)"
       }
      ]
     }
@@ -2298,8 +2307,8 @@
       },
       {
        "name": "primitive",
-       "role": "invariance",
-       "statement": "unchanged on passing to the primitive character on n prime to q; at least 2"
+       "role": "comparison",
+       "statement": "χ = χ* on n prime to q, so leastNonOne χ* ≤ leastNonOne χ (equality fails mod 12: 2 against 5); at least 2"
       },
       {
        "name": "legendre",
@@ -2394,11 +2403,12 @@
     "§1.33",
     "§1.34",
     "§1.38",
-    "§1.59",
+    "§1.43",
+    "§1.52",
     "§1.72",
     "§1.75"
    ],
-   "what": "power residue symbols, Frobenius on n-th roots, general power reciprocity, prime cubic reciprocity and supplements"
+   "what": "power residue symbols, Frobenius on n-th roots, primary associates, the tame Hilbert symbol and Hilbert's product formula, prime cubic reciprocity and supplements"
   },
   {
    "roadmap": "ClassFieldTheory",
