@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-VirtualFundamentalClass~9",
+  "head": "21398f9a8dfa44a82643c59d20f761da0d176c10",
+  "pr": 1996,
+  "folder": "VirtualFundamentalClass",
+  "date": "2026-11-17",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 37 changed lines since d899863. The three previous findings (R01 curvilinear criterion over an algebraically closed field, R02 Vistoli pages, R03 missing locators) are repaired; the §6.6 statement and its new Check were recomputed over C and R; 11 locators checked against BehrendFantechi1997, Vistoli1989 and Stacks Tags 0AFM/0AFN/0AFP (seeded sample: §§3.5, 4.3, 6.6). Worker gate OK with build=0; depcheck with the candidate order 0 problems; Suggested.lean elaborates with no message and declares nothing (no headline statable at the pins, docstring names each); pull-request text agrees with the head; nothing changed outside the folder.",
+  "text": "24d301352525c406"
+ }
+}
