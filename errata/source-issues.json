@@ -238139,10 +238139,26 @@
    "reported": "2026-11-17",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18800#issuecomment-6940555700"
+  },
+  {
+   "kind": "error",
+   "source": "goldmakherlouvel2013",
+   "locator": "Remark 3 and Corollary 1.2, printed page 2",
+   "says": "the `n/d`-th powers of every `n`-th order Hecke family form a `d`-th order family",
+   "should": "assume the primitivity axiom for the powers (a quadratic family read as fourth-order has trivial squares)",
+   "affects": "a stated result",
+   "note": "",
+   "roadmap": "QuasiRiemannHypothesis",
+   "job": "RT-QuasiRiemannHypothesis~2a",
+   "board_pr": 18800,
+   "head": "9c220cb",
+   "reported": "2026-11-17",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18800#issuecomment-6941537847"
   }
  ],
- "scanned_to": "2026-11-17T06:24:31Z",
- "updated": "2026-11-17T06:25:51Z",
+ "scanned_to": "2026-11-17T07:20:52Z",
+ "updated": "2026-11-17T07:21:33Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
