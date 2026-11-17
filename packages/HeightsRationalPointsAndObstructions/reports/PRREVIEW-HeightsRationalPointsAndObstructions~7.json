@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HeightsRationalPointsAndObstructions~7",
+  "head": "0d7387680989b854259ab10f9737b6124ec7ac57",
+  "pr": 1017,
+  "folder": "HeightsRationalPointsAndObstructions",
+  "date": "2026-11-17",
+  "findings": 1,
+  "blocking": 0,
+  "notes": "incremental re-review of 36 changed lines since 3dc9d71. Checked: the new GroupSchemesOverABase contract and the rewritten Picard step of sections 3.8e-f against GroupSchemesOverABase Convention 7 and sections 6.1-6.2 on main, with the SL2, PGL2, GL2 and torus values and the sign of the pullback along g -> g^-1 B^- computed; the three remaining Sansuc 1981 locators against the cached text; the new Provenance section against AxiomMath/Mordell at its pinned commit (licence, file counts, one declaration); the title and description against the head. One P3 finding: the isomorphism theorem is cited at ReductiveGroups Layer 8 but is Layer 9D on main (README lines 120 and 1591). Gate passes (all counters 0), depcheck 0 problems, Suggested.lean elaborates with sorry as the only warning; seeded sample falls in no changed passage.",
+  "text": "295a6d035e4a5b33",
+  "carried": {
+   "from": "0d7387680989b854259ab10f9737b6124ec7ac57",
+   "head": "aa448b05d8cf5eefe7439f93c2b3412152b7c628",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "HeightsRationalPointsAndObstructions"
+   ]
+  }
+ }
+}
