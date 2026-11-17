@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SemiringSchemes~2",
+  "head": "04744a3015dbef7f9b51eff7ba8b1f30e0cf01b2",
+  "pr": 2466,
+  "folder": "SemiringSchemes",
+  "date": "2026-11-17",
+  "findings": 9,
+  "blocking": 2,
+  "notes": "Full re-review. Previous review: R01-R06, R08, R10, R11 repaired; R07 not; R09, R12, R13, R14 partly. Seeded sample of 15 targets (0.4, 1.1, 3.2, 3.3, 4.1-4.4, 5.1-5.4, 6.1-6.3) checked against TV05, BJ24, DiklichZelich2026, GG13, Mar07 (61 locators); adversarial table of 23 rows with computed values. Gate at 04744a3 fails on readme-ids-missing=9 only; build passes; depcheck 0 problems. Suggested.lean elaborates with 11 sorry warnings; one-tactic probe closes none of the 11 theorems. Blocking: Layer G restates internal-module theory present in the pinned Tau Ceti (R01); the congruence/categorical finite-presentation comparison is statable at the pins and absent (R02). Demazure-Gabriel, Golan, Katsov and Katsov-Nam-Zumbraegel not read.",
+  "text": "5b43053225292252"
+ }
+}
