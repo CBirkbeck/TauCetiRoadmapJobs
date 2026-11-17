@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KleinianGroups~2",
+  "head": "4eec6e26dd10f477a23e36af70e5a6d5b2b1f453",
+  "pr": 432,
+  "folder": "KleinianGroups",
+  "date": "2026-11-17",
+  "findings": 13,
+  "blocking": 3,
+  "notes": "Full re-review. Gate fails on readme-ids-missing=4 only (build, sorry-data, imports, set_option pass); depcheck 261 roadmaps, 2600 edges, 0 problems; no change outside the folder. Previous R01, R02, R04, R05, R07 repaired; R03, R06, R08 partly; R09 and three bullets of R10 not. Seeded sample (What to build, Deliverables, API, Design note, The finite approximation of layers 0-5) recomputed: Moebius formula and factorisation, both Bianchi floors and the disjointness argument, indices 60 and 168, the (5) example, the log-sine integrals, both covolumes against Humbert, the N=2000 enclosure and Farey pair. Sources read: thurston1982, milley2009, millichap2017, milnor1982, neumannyang1999; Elstrodt-Grunewald-Mennicke, Maclachlan-Reid, Ratcliffe and Humbert 1919 not readable. Probe copy elaborated at the pins (43 sorry warnings, padding and repair statements tested). Blocking: R01 two-discriminant narrowing of Humbert's formula, R02 second owner (Polylogarithms 2.4) of the Moebius action and Lobachevsky function, R03 statable headlines absent.",
+  "text": "396c85e24e33d11e"
+ }
+}
