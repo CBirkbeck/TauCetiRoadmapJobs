@@ -1,0 +1,114 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "VirtualFundamentalClass"
+
+[[source]]
+id = "BehrendFantechi1997"
+authors = "K. Behrend, B. Fantechi"
+title = "The intrinsic normal cone"
+year = 1996
+doi = "10.1007/s002220050136"
+arxiv = "alg-geom/9601010v1"
+locator_scheme = "theorem"
+locator = "Prop. 5.3"
+url = "https://arxiv.org/abs/alg-geom/9601010v1"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9601010v1"
+fetched_at = "2026-11-17T11:43:18Z"
+sha256 = "897170a45ba22077cda76b1c9c6865e7d37215d003f3d102b35edee8c452bd0a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-17"
+version_note = "arXiv v1"
+cited_for = ["7.3"]
+
+[[source]]
+id = "Vistoli1989"
+authors = "Angelo Vistoli"
+title = "Intersection theory on algebraic stacks and on their moduli spaces"
+year = 1989
+venue = "Inventiones Mathematicae 97"
+doi = "10.1007/BF01388892"
+locator_scheme = "section"
+locator = "(3.6)"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0097/LOG_0033.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0097/LOG_0033.pdf"
+fetched_at = "2026-11-17T11:48:23Z"
+sha256 = "b73ebcdad99f23e97279e3c3c171108a938d7abab293b8d08d2a0cd981a91c53"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-17"
+cited_for = ["2.2"]
+
+[[source]]
+id = "Kresch1999"
+authors = "Andrew Kresch"
+title = "Canonical rational equivalence of intersections of divisors"
+year = 1997
+arxiv = "alg-geom/9710011v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://arxiv.org/abs/alg-geom/9710011v2"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9710011v2"
+fetched_at = "2026-11-17T11:43:26Z"
+sha256 = "ed76099bb4fb561514b36fc5d10f040cb5735f6a571604b900c094670d42b7ff"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-17"
+version_note = "arXiv v2"
+cited_for = ["2.5"]
+
+[[source]]
+id = "KreschCycle1999"
+authors = "Andrew Kresch"
+title = "Cycle groups for Artin stacks"
+year = 1998
+doi = "10.1007/s002220050351"
+arxiv = "math/9810166v1"
+locator_scheme = "section"
+locator = "2.5"
+url = "https://arxiv.org/abs/math/9810166v1"
+fetched_from = "https://arxiv.org/pdf/math/9810166v1"
+fetched_at = "2026-11-17T11:43:33Z"
+sha256 = "d8c2fca1493871667f2aa63124b053c45d303f51df388ffef0a76e44c5102a48"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-17"
+version_note = "arXiv v1"
+cited_for = ["2.3"]
+
+[[source]]
+id = "Webb2022"
+authors = "Rachel Webb"
+title = "The Moduli of Sections Has a Canonical Obstruction Theory"
+year = 2021
+venue = "Forum of Mathematics, Sigma, Volume 10, 2022, Art. No. E78"
+doi = "10.1017/fms.2022.61"
+arxiv = "2109.03377v2"
+locator_scheme = "theorem"
+locator = "Example B.8"
+url = "https://arxiv.org/abs/2109.03377v2"
+fetched_from = "https://arxiv.org/pdf/2109.03377v2"
+fetched_at = "2026-11-17T11:43:39Z"
+sha256 = "e0c08b91e6dd20ff5f1a919e3fd0417bc7c6b77f7a73644b96617146546abede"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-17"
+version_note = "arXiv v2"
+cited_for = ["3.3"]
+
+[[source]]
+id = "Gross2017"
+authors = "Philipp Gross"
+title = "Tensor generators on schemes and stacks"
+year = 2013
+arxiv = "1306.5418v2"
+locator_scheme = "theorem"
+locator = "Theorem B"
+url = "https://arxiv.org/abs/1306.5418v2"
+fetched_from = "https://arxiv.org/pdf/1306.5418v2"
+fetched_at = "2026-11-17T11:43:45Z"
+sha256 = "5d3f653cc9970bdf672f9a749ef2ee0a95148892c0e0820b2006b9b093bde7a6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-17"
+version_note = "arXiv v2"
+cited_for = ["7.6"]

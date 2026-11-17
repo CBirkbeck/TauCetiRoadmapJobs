@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-VirtualFundamentalClass~7",
+  "head": "387d55efbbd3e333dc4afa8865e837feccd69e0b",
+  "pr": 1996,
+  "folder": "VirtualFundamentalClass",
+  "date": "2026-11-17",
+  "findings": 8,
+  "blocking": 4,
+  "notes": "Full review. Previous findings R01-R05 and R07 repaired, R06 partly. Seeded sample (1.4, 2.3, 2.4, 4.1, 4.2, 5.1, 5.5, 6.4, 6.5, 7.3, 7.4, 7.7, 8.4, 9.3, 9.4) checked against BehrendFantechi1997 (arXiv v1, read in full), Vistoli1989 (GDZ scan, OCR), Kresch1999, KreschCycle1999, Gross2017, Webb2022 and Stacks tags: 44 locators. 13 pinned Tau Ceti declarations opened, 19 cross-roadmap citations resolved on main. Gate OK (all checks 0, build 0); depcheck 250 roadmaps, 2585 edges, 0 problems; Suggested.lean elaborates with no message and has 0 declarations (no end goal statable at the pins, each named in the docstring). Findings: P2 representability of v against the graph factorization (Layer 8, 9.5); P2 missing hypotheses for the class on Y'xX (8.4, 9.5); P2 Vistoli's proper-cover hypothesis unowned (2.1-2.2); P2 2.3 routed through Kresch's groups, not constructed; P3 Kresch locators absent from the linked text; P3 Gross Theorem B should be Theorem A; P3 missing or short locators (4.1, 6.4, 1.4, 2.4); P3 relative theories used in 6.4 before 9.2. Fulton, Illusie, Laumon-Moret-Bailly and the published Kresch numbering not verifiable.",
+  "text": "24d301352525c406"
+ }
+}
