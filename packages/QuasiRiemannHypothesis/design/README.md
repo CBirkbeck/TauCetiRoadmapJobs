@@ -668,8 +668,9 @@ form `w_log(u) = w(e^(u₁), …, e^(u_d))` is smooth with support in `Ω`. Defi
   measure common to every row.
 - A norm twist translates the transform: for `w'(x) = x^(iτ) w(x)` (`d = 1`), `ŵ'(t) = ŵ(t − τ)` and
   `‖w'‖_{J,sep} ≤ (1 + |τ|)^J ‖w‖_{J,sep}`.
-- Rescaling, `w_k(x) = w(e^k x)` (`d = 1`), multiplies `ŵ` by the unit phase `e^(ikt)`
-  (`(w_k)_log(u) = w_log(u + k)`) and leaves `‖·‖_{J,sep}` unchanged.
+- Rescaling, `w_k(x) = w(e^k x)` (`d = 1`), gives a profile for the translated set `Ω − k`
+  (`(w_k)_log(u) = w_log(u + k)`), multiplies `ŵ` by the unit phase `e^(ikt)` and leaves `‖·‖_{J,sep}` and
+  every `p_j` unchanged, so the constant `≪_{J,d,Ω}` of §3.2 is the same for `Ω` and `Ω − k`.
 
 **Checks.**
 
@@ -1513,9 +1514,11 @@ function of `s ∈ ℂ`; with `ℰ = (E_1, …, E_h)` and `Φ(s, χ) = (φ_ij(s,
 `χ` is trivial (residue a constant), `Φ(1 + it, χ)` is unitary, `Φ(s, χ) Φ(2 − s, χ) = I` and
 `ℰ(w, s, χ) = Φ(s, χ) ℰ(w, 2 − s, χ)`; the residue of `ℰ` at a pole in `(1, 2]` is square integrable on
 `Γ \ ℍ³` and a `Δ₃`-eigenfunction with eigenvalue `s(2 − s)` (`kubota1968` §3, p. 265, and §4, (28)–(29), p. 268;
-`patterson1977` §3, (3.9)–(3.11), pp. 130–131). Route: the Maass–Selberg relations for truncated
-Eisenstein series (`patterson1977` (3.9)–(3.10)) and analytic Fredholm continuation of the resolvent
-of the Laplacian on `L²(Γ \ ℍ³, χ)` (AutomorphicSpectralTheory §§0.15–0.16), as in Selberg's method.
+`patterson1977` §3, (3.9)–(3.11), pp. 130–131; `kubota1968` p. 265 writes the open interval `1 < s < 2`,
+and the pole at `s = 2` for trivial `χ` is the one of §8.3's example, where `ζ_K(s − 1)` has its pole).
+Route: the Maass–Selberg relations for truncated Eisenstein series (`patterson1977` (3.9)–(3.10)) and
+analytic Fredholm continuation of the resolvent of the Laplacian on `L²(Γ \ ℍ³, χ)`
+(AutomorphicSpectralTheory §§0.15–0.16), as in Selberg's method.
 For trivial `χ` on a congruence subgroup of `SL₂(𝓞_K)` the statement is the classical form of the
 continuation of AutomorphicSpectralTheory §1.15a for `SL₂` over `K` and its Borel subgroup; for a
 Kubota character, whose kernel is not a congruence subgroup, it is not covered there.
@@ -2203,9 +2206,11 @@ in the form of `tao2015` Conjecture 1.1 (`openai2026quasiRH` Corollary 1.2, p. 7
 
 - `θ = 1/2` in §11.2 gives exponent `2`, Ankeny's `O((log q)²)` under GRH.
 - The route of `bimsissac2017` (Conjecture 6.3, Theorem 6.7, exponent `4/(1 − 2ϵ)`) needs the open strip
-  `1/2 − ϵ < Re ρ < 1/2 + ϵ`; since §11.1 gives the closed strip `[1/12, 11/12]`, it takes `ϵ = 11/24` and
-  gives exponent `48`, against `12` here; at `7/8` it takes `ϵ = 7/16` and gives `32`. Its proof also uses
-  `ψ(x)`, which must be read through `ζ`, the character modulo `1`.
+  `1/2 − ϵ < Re ρ < 1/2 + ϵ` for some `ϵ < 1/2`; since §11.1 gives the closed strip `[1/12, 11/12]`, every
+  `ϵ` with `5/12 < ϵ < 1/2` is admissible and that route gives every exponent above `4/(1 − 5/6) = 24`
+  (`48` at `ϵ = 11/24`), against `12` here; at `7/8` it admits every `ϵ` with `3/8 < ϵ < 1/2` and gives
+  every exponent above `16` (`32` at `ϵ = 7/16`, the choice of `openai2026quasiRH`
+  Corollary 1.2). Its proof also uses `ψ(x)`, which must be read through `ζ`, the character modulo `1`.
 - `p = 7`: the least nonresidue is `3 ≤ C (log 7)^12` for any `C ≥ 1`.
 
 *Needs:* §§10.7, 11.2; SieveMethodsAndPrimePatterns §2.9.
@@ -2230,7 +2235,7 @@ Dirichlet `L`-functions.
   the exponent `8` in §11.3 and the Landau–Siegel constant `(log 3)/8`.
 - **ExplicitPrimeCounting, Part II**: conditional bounds under a zero-free half-plane, unconditional
   at `11/12` by §10.7.
-- **AnalyticNumberTheoryPartI or AnalyticNumberTheoryPartIII, Part II**: `ψ(x) − x ≪ x^(11/12+ε)` and its
+- **AnalyticNumberTheoryPartIII, Part II**: `ψ(x) − x ≪ x^(11/12+ε)` and its
   fixed-modulus analogue, from §10.7 and the explicit formula.
 - **ZerosOfLFunctions, Part II**: over `F`, power savings in ray-class prime counts and abelian
   Chebotarev, and the removal of the exceptional-zero alternative right of `11/12`.

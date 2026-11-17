@@ -482,7 +482,7 @@
       {
        "name": "rescale",
        "role": "invariance",
-       "statement": "w_k(x) = w(e^k x) has (w_k)_log(u) = w_log(u + k), so ŵ_k = e^(ikt) ŵ and the separation norm is unchanged"
+       "statement": "w_k(x) = w(e^k x) has (w_k)_log(u) = w_log(u + k), so w_k is a profile for the translated set Ω − k, ŵ_k = e^(ikt) ŵ, and the separation norm and every p_j are unchanged; the constant of 3.2 is the same for Ω and Ω − k"
       }
      ],
      "tests": [
@@ -1714,7 +1714,7 @@
      ],
      "locator": {
       "source": "kubota1968",
-      "where": "§3, p. 265; §4, (28)–(29), p. 268; patterson1977 §3, (3.9)–(3.11)"
+      "where": "§3, p. 265; §4, (28)–(29), p. 268; patterson1977 §3, (3.9)–(3.11); kubota1968 p. 265 writes the open interval 1 < s < 2, and the pole at s = 2 for trivial χ is the one of 8.3's example, where ζ_K(s − 1) has its pole"
      },
      "prerequisites": [
       "target:8.2",
@@ -2483,7 +2483,7 @@
       {
        "name": "bims",
        "kind": "computation",
-       "statement": "the bimsissac2017 route needs ϵ = 11/24 and gives 48"
+       "statement": "the bimsissac2017 route admits every ϵ with 5/12 < ϵ < 1/2 and gives every exponent above 24 (48 at ϵ = 11/24), against 12; at 7/8 it admits every ϵ with 3/8 < ϵ < 1/2 and gives every exponent above 16 (32 at ϵ = 7/16)"
       },
       {
        "name": "p7",
