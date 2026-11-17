@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-VirtualFundamentalClass~8",
+  "head": "d89986347da083a9ffaae05a9eff01969169b8df",
+  "pr": 1996,
+  "folder": "VirtualFundamentalClass",
+  "date": "2026-11-17",
+  "findings": 3,
+  "blocking": 1,
+  "notes": "Full re-review. All eight findings of the previous review are repaired. New: R01 (P2) §6.6 curvilinear criterion needs k algebraically closed (counterexample over the reals); R02 (P3) Vistoli (3.8)-(3.9) page numbers; R03 (P3) §§0.2, 3.5, 4.3 without locators. Seeded sample of 15 sections checked against BehrendFantechi1997, Vistoli1989, Kresch1999, KreschCycle1999, Gross2017, Webb2022 and Stacks tags (47 locators); 16 pinned declarations and 20 cross-roadmap citations resolved. Gate OK (build=0); depcheck 0 problems; Suggested.lean elaborates silently and has no declaration (no headline statable at the pins, each named in the docstring). Laumon-Moret-Bailly, Illusie and Fulton not readable.",
+  "text": "24d301352525c406"
+ }
+}
