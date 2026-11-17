@@ -1,0 +1,18 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-REV-PKG-QuasiRiemannHypothesis",
+  "date": "2026-11-17",
+  "findings": 0,
+  "blocking": 0,
+  "settled": {
+   "review": "REV-PKG-QuasiRiemannHypothesis",
+   "fix": "FIX-PKG-QuasiRiemannHypothesis~2",
+   "from": "73f7bcb60ecd0056ce5ff6522c6e8f5b9b74f29a",
+   "head": "eba3543bd348ddb197b82d96e7b2d38afbc0f035",
+   "findings": 4,
+   "lines": 71
+  },
+  "notes": "every finding of `REV-PKG-QuasiRiemannHypothesis` (4) was P3 and `FIX-PKG-QuasiRiemannHypothesis~2` repaired them at `eba3543`, changing 71 lines of the package; no further review round was filed"
+ }
+}
