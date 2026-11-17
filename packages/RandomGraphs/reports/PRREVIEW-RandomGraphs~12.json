@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RandomGraphs~12",
+  "head": "74db85eeb506592d687bbe4de2dd9a04a6a05b18",
+  "pr": 1223,
+  "folder": "RandomGraphs",
+  "date": "2026-11-17",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "incremental re-review of 58 changed lines since f297bb0. Checked: the four previous findings (R01 partly repaired, R02-R04 not repaired, all P3); the changed passage README 729-761 and three Suggested.lean docstrings; the fenced radoQE/decideRado contracts against the two Lean existence theorems, with a scratch probe showing a Classical.choose definition satisfies all four contracts; names radoQE/decideRado searched in the pins, main and open heads (none); seeded sample target 5.2 (changed sentences carry no locator); pull request text against the head (agrees); gate OK with every count 0; depcheck 0 problems; elaboration exit 0 with 75 sorry warnings only.",
+  "text": "219afcf60f406e78"
+ }
+}
