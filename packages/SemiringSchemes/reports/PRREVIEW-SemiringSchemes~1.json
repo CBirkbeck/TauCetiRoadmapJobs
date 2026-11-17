@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SemiringSchemes~1",
+  "head": "851ac8996c5a578a47f580d20190236e0c615ffe",
+  "pr": 2466,
+  "folder": "SemiringSchemes",
+  "date": "2026-11-17",
+  "findings": 14,
+  "blocking": 6,
+  "notes": "Full review. Gate at 851ac89 fails (sorry-data=5, residue=2, readme-ids-missing=9; build passes; depcheck 0 problems). All 15 sampled targets read against TV05, BJ24, DiklichZelich2026, GG13 and Mar07 (56 locators); Demazure-Gabriel, Golan and Katsov not read. Over 50 library declarations checked at the pins. Suggested.lean elaborates with sorry warnings only; a repaired copy (no instances, real bodies for Ideal.toRingCon and RingCon.zeroIdeal, plain import) and a statement of the topology-equality headline were elaborated in scratch. One-tactic probe closes no theorem. Blocking: sorry'd data (R01), statable headline absent (R02), false equivalence in 2.3 (R03), undetermined HasDescent (R04), two-way hand-off with FunctorOfPoints (R05), zero-semiring case in 4.3 (R06). Seven FunctorOfPoints citations resolve at its open head.",
+  "text": "c2e714a0e2217f93"
+ }
+}
