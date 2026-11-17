@@ -237995,10 +237995,26 @@
    "reported": "2026-11-16",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/13091#issuecomment-6918723927"
+  },
+  {
+   "kind": "misprint",
+   "source": "openai2026quasiRH",
+   "locator": "Lemma 6.2, proof, printed page 49",
+   "says": "the source says, as extracted, that the fractions are separated by the minimum of one and the upper support bound, over Y",
+   "should": "the minimum of one and the reciprocal of that bound, over Y",
+   "affects": "nothing",
+   "note": "",
+   "roadmap": "QuasiRiemannHypothesis",
+   "job": "REV-DESIGN-QuasiRiemannHypothesis",
+   "board_pr": 18769,
+   "head": "1260901",
+   "reported": "2026-11-17",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18769#issuecomment-6933308851"
   }
  ],
- "scanned_to": "2026-11-16T14:08:10Z",
- "updated": "2026-11-16T14:27:57Z",
+ "scanned_to": "2026-11-17T00:06:40Z",
+ "updated": "2026-11-17T00:09:28Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
