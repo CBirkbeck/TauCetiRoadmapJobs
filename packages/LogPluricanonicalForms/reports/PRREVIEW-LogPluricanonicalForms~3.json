@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LogPluricanonicalForms~3",
+  "head": "127e224abaafa1742fefc7ffc54d390ef060936e",
+  "pr": 2122,
+  "folder": "LogPluricanonicalForms",
+  "date": "2026-11-17",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 135 changed lines since 3d4fd65. All six findings of the previous review (R01-R06) are repaired and no repair introduced a problem. Checked: the open-set headline negLogKodaira_of_general_fiber (degenerate cases computed; lake env lean with #check @ on the 4 declarations, sorry the only warning, no lost binder; five one-tactic probes fail; open form implies the very-general form, proved in scratch); the 1.1 comparison with AdicSpacesPartIV R4.7 SmoothPair.AlgebraicSmoothPair in both directions on D = unit ideal, 0, V(xy), (x^2), nodal cubic; the new locators Stacks 0CBP (Etale Morphisms Lemma 21.3, pp. 26-27) and 02GU (Morphisms Lemma 37.15, pp. 80-81) against the text; the new 4.1 Check (omega_X(E) = pr2^*O(1)); seeded sample targets 1.1, 4.1, 4.2 where the diff touches them; the pull request text against the head. Gate: all checks 0, OK; depcheck 243 roadmaps, 2549 edges, 0 problems; nothing changed outside the folder. Three items for the human reviewers: the headline's source is an unrefereed 2026 preprint, the Apache 2.0 adaptation sentence in the References, and the stated AI-assisted authorship.",
+  "text": "0dc141143b513241"
+ }
+}
