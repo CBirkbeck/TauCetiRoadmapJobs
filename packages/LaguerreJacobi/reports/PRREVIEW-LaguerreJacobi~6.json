@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LaguerreJacobi~6",
+  "head": "7db30a3f61545185a80ca698fb543f8418370d75",
+  "pr": 117,
+  "folder": "LaguerreJacobi",
+  "date": "2026-11-17",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 17 changed lines since 7789316. Previous R01 repaired (restrict_pi_pi and volume_pi now in the supplier contracts, the Needs line and the Layer 5 dependencies). Checked: both library declarations at the pinned Mathlib (Constructions/Pi.lean lines 417 and 660); the Layer 5 measure identification proved at the pin by rw [volume_pi, Measure.restrict_pi_pi] for Ioi 0 and Ioo (-1) 1, and failing without volume_pi; a computed instance of exists_hilbertBasis_pi_laguerreFunction; the pull request text against the head. No seeded-sample section falls in a changed passage. Gate passes (every rule 0, targeted build); depcheck 0 problems, no UPWARD or CYCLE; lake env lean gives 44 sorry warnings only.",
+  "text": "0aae92e0e0ee397a"
+ }
+}
