@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HeegaardFloer~12",
+  "head": "b4167f57503c82562317134981d8bf412c9d61ba",
+  "pr": 2477,
+  "folder": "HeegaardFloer",
+  "date": "2026-11-17",
+  "findings": 10,
+  "blocking": 2,
+  "notes": "Full review. Gate FAIL on dropped=3 only (README lines 56, 2516, 4917); build passes; depcheck 239 roadmaps, 2530 edges, 0 problems. Suggested.lean elaborates with seven sorry warnings; one-tactic probe closes sphereAut_existsUnique_map_triple with the pinned OnePoint.existsUnique_psl_smul_zero_one_infty_eq. New section 1.0c: 'All pairs' and its corollary are false for infinitely many critical points (P1); 'Single pair' lacks a support hypothesis on h (P2). Seeded sample of 15 targets: 44 locators checked in 12 sources, all agree; Smale 1965, McDuff-Salamon, Lee, Robbin-Salamon, FHS and Oh not readable. Overlap check: nothing shared.",
+  "text": "3ae51fad9ded7eb9"
+ }
+}
