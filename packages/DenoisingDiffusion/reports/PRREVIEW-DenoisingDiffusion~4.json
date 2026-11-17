@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DenoisingDiffusion~4",
+  "head": "5e5e14f130af62b958a0ebe1c254583e6182af00",
+  "pr": 2476,
+  "folder": "DenoisingDiffusion",
+  "date": "2026-11-17",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 2 changed lines since 20b3f6b: the one changed README sentence (How to read the build) checked against every Needs line and the layer Dependencies; previous R01 repaired; adversarial rows computed for that sentence and for 1.1 (0.09657 on both sides, u=v, d=0); gate passes (every check), depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 24 sorry warnings only; pull request text agrees with the head; no change outside the folder. Robbins1956 remains unreadable (one locator, 3.2, unchecked).",
+  "text": "4e385778dc7172f9"
+ }
+}
