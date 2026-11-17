@@ -1,0 +1,90 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DenoisingDiffusion"
+
+[[source]]
+id = "HoJainAbbeel2020"
+authors = "Jonathan Ho, Ajay Jain, Pieter Abbeel"
+title = "Denoising Diffusion Probabilistic Models"
+year = 2020
+arxiv = "2006.11239v2"
+locator_scheme = "equation"
+locator = "(4), (6), (7), (10)"
+url = "https://arxiv.org/abs/2006.11239v2"
+fetched_from = "https://arxiv.org/pdf/2006.11239v2"
+fetched_at = "2026-11-17T21:22:46Z"
+sha256 = "aee5e07a802e8dfd2a386374c94fd61d1d056cb7e1e0fec4f28e8120ff5d8505"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-17"
+version_note = "arXiv v2"
+cited_for = ["2.2"]
+
+[[source]]
+id = "SohlDickstein2015"
+authors = "Jascha Sohl-Dickstein, Eric A. Weiss, Niru Maheswaranathan, Surya Ganguli"
+title = "Deep Unsupervised Learning using Nonequilibrium Thermodynamics"
+year = 2015
+arxiv = "1503.03585v8"
+locator_scheme = "equation"
+locator = "(14)"
+url = "https://arxiv.org/abs/1503.03585v8"
+fetched_from = "https://arxiv.org/pdf/1503.03585v8"
+fetched_at = "2026-11-17T21:22:52Z"
+sha256 = "17a29449579ceb4fb906f2f3d5643eb22cea54e5975017ff8788ddf73d8b44ad"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-17"
+version_note = "arXiv v8"
+cited_for = ["4.2"]
+
+[[source]]
+id = "Hyvarinen2005"
+locator_scheme = "equation"
+locator = "(2)"
+url = "https://www.jmlr.org/papers/volume6/hyvarinen05a/hyvarinen05a.pdf"
+fetched_from = "https://www.jmlr.org/papers/volume6/hyvarinen05a/hyvarinen05a.pdf"
+fetched_at = "2026-11-17T21:23:09Z"
+sha256 = "3e03b415e50cf85708eeb1cd13b62b9c1680faaad715584926475953b2380782"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-17"
+cited_for = ["3.3"]
+
+[[source]]
+id = "Robbins1956"
+locator_scheme = "page"
+locator = "157-163"
+url = "https://projecteuclid.org/ebooks/berkeley-symposium-on-mathematical-statistics-and-probability/Proceedings-of-the-Third-Berkeley-Symposium-on-Mathematical-Statistics-and-Probability/chapter/An-Empirical-Bayes-Approach-to-Statistics/bsmsp/1200501653.pdf"
+fetched_from = "https://projecteuclid.org/ebooks/berkeley-symposium-on-mathematical-statistics-and-probability/Proceedings-of-the-Third-Berkeley-Symposium-on-Mathematical-Statistics-and-Probability/chapter/An-Empirical-Bayes-Approach-to-Statistics/bsmsp/1200501653.pdf"
+fetched_at = "2026-11-17T21:25:14Z"
+sha256 = "4d05e8172fb34b809e30b52ff4743bfcc3ad9b8e95055a852789c6393e69b2de"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-17"
+cited_for = ["3.2"]
+
+[[source]]
+id = "Efron2011"
+locator_scheme = "section"
+locator = "Section 2"
+url = "https://efron.ckirby.su.domains/papers/2011TweediesFormula.pdf"
+fetched_from = "https://efron.ckirby.su.domains/papers/2011TweediesFormula.pdf"
+fetched_at = "2026-11-17T21:23:12Z"
+sha256 = "af27a444711d8d8c775ff8e6e3a19f7af32efe003fdb6ea9014af9782f2754c9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-17"
+cited_for = ["3.2"]
+
+[[source]]
+id = "Vincent2011"
+locator_scheme = "section"
+locator = "Section 4"
+url = "https://www.iro.umontreal.ca/~vincentp/Publications/smdae_techreport.pdf"
+fetched_from = "https://www.iro.umontreal.ca/~vincentp/Publications/smdae_techreport.pdf"
+fetched_at = "2026-11-17T21:23:14Z"
+sha256 = "dece7f35a98de04206b49fdca1d4bcc5568326ec736ee903872b58bff1013562"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-17"
+cited_for = ["3.3"]
