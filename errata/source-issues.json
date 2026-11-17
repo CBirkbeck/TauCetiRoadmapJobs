@@ -238091,10 +238091,26 @@
    "reported": "2026-11-17",
    "reporter": "claude fable",
    "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18769#issuecomment-6938023203"
+  },
+  {
+   "kind": "misprint",
+   "source": "openai2026quasiRH",
+   "locator": "Lemma 6.2, proof, printed p. 49",
+   "says": "the source says, as the OCR text reads, the fractions are separated by `min(1, r₊)/Y`",
+   "should": "`min(1, 1/r₊)/Y`, which is what its inequality `1/|ss'| ≥ 1/(r₊Y)` gives",
+   "affects": "the proof",
+   "note": "",
+   "roadmap": "QuasiRiemannHypothesis",
+   "job": "REV-PKG-QuasiRiemannHypothesis",
+   "board_pr": 18800,
+   "head": "73f7bcb",
+   "reported": "2026-11-17",
+   "reporter": "claude fable",
+   "comment": "https://github.com/TauCetiProject/TauCetiRoadmapJobs/pull/18800#issuecomment-6939342487"
   }
  ],
- "scanned_to": "2026-11-17T04:10:25Z",
- "updated": "2026-11-17T04:15:48Z",
+ "scanned_to": "2026-11-17T05:19:17Z",
+ "updated": "2026-11-17T05:28:44Z",
  "covered": [
   {
    "job": "ERRATA-TemperleyLieb",
