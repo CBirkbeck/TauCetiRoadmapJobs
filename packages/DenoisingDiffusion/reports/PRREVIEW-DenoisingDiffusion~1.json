@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DenoisingDiffusion~1",
+  "head": "23ba0a560ce2c1f836c7c4e9c8d109a37081784d",
+  "pr": 2476,
+  "folder": "DenoisingDiffusion",
+  "date": "2026-11-17",
+  "findings": 5,
+  "blocking": 1,
+  "notes": "Full review. Gate passed at this head and depcheck shows 0 problems, but elaboration with #check on a scratch copy shows 9 of the 24 sorried theorems are never added to the environment and 5 more carry sorry in their types (section variables written through the local notation E); repair tested (24 sorry warnings, 42 #check succeed, no sorry in any type). All 11 sampled targets recomputed (adversarial table); one-tactic padding probe closed none. Sources: Ho-Jain-Abbeel, Sohl-Dickstein, Efron, Hyvarinen read and all their locators confirmed; Vincent read in the author's technical report; Robbins 1956 not readable. Supplier MathematicalStatisticsNonparametric 1.3 resolved on main; 17 pinned declarations opened. No overlap with open or main roadmaps.",
+  "text": "c171a744dc97347e"
+ }
+}
