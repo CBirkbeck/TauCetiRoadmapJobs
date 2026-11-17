@@ -2,7 +2,7 @@
 
 Reviewers, red-team passes and errata jobs record every mistake they find in a source while checking a roadmap's locators: misprints (slips whose intended meaning is clear), errors (a false statement or proof step) and gaps (a step the source does not justify), each with the roadmap, the board pull request or errata job and the head that reported it. Collected by the board sync from the `## Source issues` sections of review, red-team and errata comments; the data is in `errata/source-issues.json`.
 
-14748 mistakes recorded on the board: 8336 misprints, 3846 errors, 2068 gaps, 498 unparsed bullets.
+14749 mistakes recorded on the board: 8337 misprints, 3846 errors, 2068 gaps, 498 unparsed bullets.
 Errata jobs have read the cited sources of 60 roadmaps; in those of 2 they found no mistake.
 The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explorer/`: 1525 awaiting review, 13582 confirmed, 228 rejected.
 
@@ -14371,6 +14371,10 @@ The explorer's register (to 2026-10-21) holds 15335 more, kept in `errata/explor
 - **Misprint** at proof of Proposition 3.4(2), p.6: the source says the preimage points and connecting path lie in the image block U; it should be place them in its source basic block V; affects the proof. Found by LogicAndDefinabilityInNumberTheory (#164 at 888e10d, 2026-10-25, codex gpt-6-astra).
 - **Misprint** at the headings of §§4–5, pp.6–7: the source says "Proof of Theorem 1.3" and "proof of Theorem 1.2"; it should be Theorems 1.7 and 1.6; affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at d36cfa5, 2026-10-25, claude opus).
 - **Misprint** at the proof of Proposition 3.4(2), p.6: the source says the preimages P, Q are taken in U; it should be in the basic block V; affects nothing. Found by LogicAndDefinabilityInNumberTheory (#164 at 3062436, 2026-10-25, claude opus).
+
+## openai2026quasiRH
+
+- **Misprint** at Lemma 6.2, proof, printed page 49: the source says the source says, as extracted, that the fractions are separated by the minimum of one and the upper support bound, over Y; it should be the minimum of one and the reciprocal of that bound, over Y; affects nothing. Found by QuasiRiemannHypothesis (#18769 at 1260901, 2026-11-17, claude fable).
 
 ## Orr, arXiv:1609.01315v2
 
