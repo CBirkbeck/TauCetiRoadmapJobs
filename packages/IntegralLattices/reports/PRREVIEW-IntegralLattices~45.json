@@ -1,0 +1,30 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IntegralLattices~45",
+  "head": "da24d08da257bfbffa14b0ee83aff5f361de2b44",
+  "pr": 617,
+  "folder": "IntegralLattices",
+  "date": "2026-11-17",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since dec9d6b. Folder README.md and Suggested.lean byte-identical to dec9d6b, pins unchanged. Gate rerun: every scanner 0 except outside-folder=5 (R01, carried: five Completed/ files). Depcheck: 248 roadmaps, 2587 edges, 0 problems. Suggested.lean elaborates with 15 sorry warnings only. #1215 is now on main, so the description's summary block and merge-order prose are stale (R02, P3). Citations of GlobalQuadraticForms resolved again on main 2bfb0f3. Adversarial rows recomputed for 5G (Nikulin 1.12.4) and the Hasse-Minkowski supplier; other rows stand as at dec9d6b. Seeded sample B1-B8 falls in no changed passage; its sources are uncertified or waived.",
+  "text": "84a914778b43f649",
+  "carried": {
+   "from": "da24d08da257bfbffa14b0ee83aff5f361de2b44",
+   "head": "da24d08da257bfbffa14b0ee83aff5f361de2b44",
+   "findings": 2,
+   "lines": 0,
+   "folders": []
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "Gate `outside-folder`: five files under `Completed/` change in this pull request",
+    "where": "split the pull request, or register the `Completed/` folders as its own",
+    "raised": "PRREVIEW-IntegralLattices~45"
+   }
+  ]
+ }
+}
