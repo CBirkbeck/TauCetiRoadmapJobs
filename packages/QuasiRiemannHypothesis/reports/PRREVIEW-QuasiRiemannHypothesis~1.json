@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuasiRiemannHypothesis~1",
+  "head": "a0f54a308cb451b34cdc5c14f04dc8336bdd346b",
+  "pr": 2468,
+  "folder": "QuasiRiemannHypothesis",
+  "date": "2026-11-17",
+  "findings": 4,
+  "blocking": 1,
+  "notes": "Full review. Gate: all checks pass; depcheck 260 roadmaps, 2601 edges, 0 problems; Suggested.lean elaborates with 10 sorry warnings only; #check of all 11 declarations matches the README; one-tactic padding probe fails on all 10 theorems. Seeded sample of 15 targets (2.3, 3.3, 3.4, 4.5, 5.2, 5.3, 7.1, 7.4, 8.1, 8.7, 9.3, 10.1, 10.6, 11.2, 11.3) checked against the cached texts: 106 locators in 12 sources, all at the stated theorem and page except R03 (9.3 looser than Lemma 5.3) and R04 (5.2 Check cites (4.14) for a bound in the proof of Lemma 4.8). 73 library declarations checked at the pins; 47 cross-roadmap citations resolved on main and at open heads (#1712, #1717, #1719, #925). About 60 numerical Checks recomputed, including Gauss sums at 1+3w and Kubota symbols on a Gamma(9) matrix. Findings: R01 P2 Kubota's homomorphism owned by KTheoryLowDegrees sections 10.2 and 11.2 (main); R02 P3 the 5.4 base-change factorization does not cite AnalyticNumberTheoryPartI 2.18a; R03 P3; R04 P3. No copied wording (longest non-bibliographic shared run 10 words); arrangement independent of openai2026quasiRH. Source issues: Goldmakher-Louvel Definition 1(3), Remark 3 and Corollary 1.2.",
+  "text": "89c7ea794808e4a9"
+ }
+}
