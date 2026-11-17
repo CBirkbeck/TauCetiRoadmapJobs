@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BoltzmannGradLimitAndLanford~1",
+  "head": "6b413f7b36805d2b2c4b8678667c531ddd8da05a",
+  "pr": 2467,
+  "folder": "BoltzmannGradLimitAndLanford",
+  "date": "2026-11-17",
+  "findings": 14,
+  "blocking": 6,
+  "notes": "Seeded sample: all ten targets 1.1-5.2 checked against GST2013 and BGSS2023 (arXiv v2, fetched with a scratch manifest; no package manifest edited); the README's 11 source locators verified, plus 24 numbered statements opened for witnesses. Gate: the worker's gate passes at the head; the rerun flags only NOT IN ORDER (design stage); depcheck with the candidate order shows 0 problems; nothing changes outside the folder. Suggested.lean elaborates with no messages and has no declarations (no headline statable without the supplier's carriers). Cross-roadmap: 17 ids and 9 Lean names of HardSphereDynamicsAndKineticLimits resolve at its open head. Findings: P1 x3 (free transport in place of the hard-sphere flow in 1.2; the mild solution and hierarchy uniqueness are unowned; Layer 5 lacks the truncation bounds and the local uniform clause), P2 x3 (4.2 lacks a good-configuration hypothesis; the 2.1 zero-distance operator vanishes; ess-sup spaces carry no traces), P3 x8 (locators, Checks, instance argument, shape).",
+  "text": "0d74f52382ad45ad"
+ }
+}
