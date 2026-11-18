@@ -107,3 +107,18 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["4.2"]
+
+[[source]]
+id = "ziller-free-loop"
+authors = "W. Ziller"
+title = "The free loop space of globally symmetric spaces"
+year = 1977
+venue = "Inventiones Mathematicae 41"
+doi = "10.1007/bf01390161"
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://doi.org/10.1007/bf01390161"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.1"]

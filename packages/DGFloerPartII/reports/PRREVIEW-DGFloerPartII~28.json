@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DGFloerPartII~28",
+  "head": "1db0bb939852bfffe9eef7c5347add7e47dafad9",
+  "pr": 1799,
+  "folder": "DGFloerPartII",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample (1.0, 1.3, 1.4, 2.1-2.6, 3.2, 3.3, 4.1, 4.3, 4.5, 4.6) and every Suggested.lean statement recomputed; 38 source locators read in bdho-cotangent, strickland-cgwh, rezk-cg-spaces and hatcher-at; library declarations opened at the pins; cross-roadmap citations resolved on main and at the open heads of DGFloer and GeneralAlgebraicKTheoryPartII. Finding: section 1.0 and compactlyGeneratedToTop_isLeftAdjoint duplicate AlgebraicTopology Stage 4 item 8 (section 4.8) on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; one-tactic probes fail on both Layer 1 statements; nothing changes outside the folder. Not verifiable: Ziller 1977, Munkres section 22. Four source issues recorded.",
+  "text": "1b26bcd3d4a7b8f7"
+ }
+}
