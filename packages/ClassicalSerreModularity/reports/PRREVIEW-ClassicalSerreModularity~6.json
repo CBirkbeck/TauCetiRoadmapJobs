@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassicalSerreModularity~6",
+  "head": "4a4f50e8fd754f7cb3562ab7fdaa7178befcace9",
+  "pr": 1020,
+  "folder": "ClassicalSerreModularity",
+  "date": "2026-11-18",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 9,
+  "format_notes": 2,
+  "notes": "Full review of the cut head. Seeded sample of 15 targets and 7 further statements checked against the text: 46 locators in 15 sources (Moret-Bailly, Khare-Wintenberger I, II and Annals, Khare, Skinner-Wiles 1999 and 2001, Boeckle, Kisin's finite flat paper, Tung A and B, Pan, Dieulefait-Pacetti, BLGGT, Ribet); Kisin's Durham paper and the dyadic Barsotti-Tate paper could not be read. Findings: R01 the pseudo-deformation target misstates Skinner-Wiles' Main Theorem; R02 the twist-two vanishing has no proving source and an insufficient Needs line; R03 the same vanishing is a target of the open roadmap AnabelianGeometryAndNonabelianChabauty. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe does not close lemma_8_2; no previous finding was open.",
+  "text": "ec19fa61d9d71638"
+ }
+}
