@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MordellLawrenceVenkatesh~8",
+  "head": "32a0090d21ec30f9f090747f1c57e54f06ec384a",
+  "pr": 1231,
+  "folder": "MordellLawrenceVenkatesh",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "incremental re-review of 24 changed lines since 3e917e8. Checked: the four small corrections of the previous review (all repaired); the new sentence of 0.14 and the new Tau Ceti contract against the pinned symplecticTransvection and its six lemmas (formula, sign, c^2 rescaling, conjugation recomputed); the replaced locators of 3.4 and 3.5; the pointers of 8.6 (seeded sample 8.14, LV20 (5.5) read at its locator), 8.7, 10.5 and the supplier contracts; the pull request's title and description against the head (no contradiction, nothing unstated); cited supplier sections resolved on main and at open heads. Dependency check: 0 problems, no UPWARD or CYCLE. Automatic checks all passed. Elaboration: sorry the only warning. Three format notes carried from the previous review; two points for the human reviewers.",
+  "text": "00a60b4fe4ae9641"
+ }
+}
