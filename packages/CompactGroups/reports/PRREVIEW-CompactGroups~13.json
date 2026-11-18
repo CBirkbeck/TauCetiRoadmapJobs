@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompactGroups~13",
+  "head": "50918447bb0a36759c59b7e5ce0b91a6945e3933",
+  "pr": 2480,
+  "folder": "RepresentationTheory/CompactGroups",
+  "date": "2026-11-18",
+  "findings": 4,
+  "blocking": 0,
+  "notes": "Full re-review (224 changed lines since 9c8fbb0). All seven r12 findings repaired (R01 character conjugate and block kernel, R02 irreducible rho, R03 Banach G-finite scope, R04 locators, R05 names, R06 API bullets, R07 description). Gate rerun at this head: all scanners 0, OK; depcheck 235 roadmaps, 2499 edges, 0 problems. lake env lean on Suggested.lean exits 0, no warnings, 26 #check signatures, each compared with its README statement. 119 README Lean names probed at the pins; only the three namespace-less integral identities of section 0.2 fail (R04). Seeded sample checked against the texts: 23 Knapp and 7 Kowalski locators, including 1.2, 2.1, 2.2, 4.1, 5.1, 5.4, 5.5, 6.1, 6.2, 6.4 and 6.5; 1.1, 2.4, 3.1 and 3.2 are definitions or elementary comparisons. Adversarial table: 25 rows, all statements true. Four P3 findings: E.2 Needs omits E.3's torus character (build order); section 6.2's general distinct relation exceeds Knapp Cor. 4.16 and section 4.2 (cite schur_orthogonality_distinct and Kowalski 5.5.1(3)); section 5.2 density and separation lack theorem-level locators (Kowalski Cor. 5.4.8); three Mathlib names in section 0.2 lack MeasureTheory. Bump and Brocker-tom Dieck are uncertified and were not read.",
+  "text": "127f6628a09e4b57"
+ }
+}
