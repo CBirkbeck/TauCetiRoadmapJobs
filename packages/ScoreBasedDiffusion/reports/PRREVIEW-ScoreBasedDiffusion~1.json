@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ScoreBasedDiffusion~1",
+  "head": "44822b3e88c738725b603d2fcad2e4e1d6dafbfb",
+  "pr": 2509,
+  "folder": "ScoreBasedDiffusion",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full review. Sample: 1.1, 1.2, 1.3, 2.1, 2.2, 2.3, 3.1, 3.2, all recomputed by hand; the numerical Check of 3.2, the Cauchy counterexample of 1.2 and the constants of 2.2 and 2.3 recomputed by quadrature. 14 of 14 source locators read in the four arXiv texts; 27 library declarations opened at the pins; DenoisingDiffusion, StochasticCalculus and OptimalTransport citations resolved on main. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the eight theorems; dependency check reports 0 problems; the worker's automatic checks all passed. Overlap read against FlowMatching, LangevinAndHamiltonianMonteCarlo, DenoisingDiffusion, OptimalTransport, StochasticCalculus: nothing shared. One small correction (Mathlib's ProbabilityTheory.posterior not cited in 3.1) and three format notes.",
+  "text": "083650c7821e29f1"
+ }
+}
