@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MetaplecticAutomorphicForms~4",
+  "head": "bc0cc87705f284ec557e88acd91e2d3c26abbcdb",
+  "pr": 1063,
+  "folder": "MetaplecticAutomorphicForms",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 126 changed lines since 1dab48e: the new opening overview checked statement by statement against 1.1, 1.2, 1.3, 2.4b, 3.4, 3.5, 3.7 and 8.24 and against Suggested.lean (theta inversion recomputed at Z=iI2, a=1: both sides 1.00748372); the moved scope and supplier-contract sections compared with the previous head (identical text) and their directional pointers read; the three changed reference links opened (BFH90 scan: 77 physical pages with a cover sheet, consistent with the PDF locators; Weil64 DOI redirects to Project Euclid; arXiv:1909.02697 is Z21). The previous report had no finding to carry. Automatic checks rerun: all pass, targeted build included; elaboration gives four sorry warnings only; dependency check 0 problems, no UPWARD or CYCLE. Seeded sample: no sampled target lies in a changed passage. One small correction (the consumer RankZeroOneBSD named in the overview exists nowhere; RankOneConverse section 4.1 is the consumer of 8.85-8.87) and one format note (normalisation of the Jacobi theta function in the overview).",
+  "text": "167b29645862c21b",
+  "carried": {
+   "from": "bc0cc87705f284ec557e88acd91e2d3c26abbcdb",
+   "head": "06397932965bcfbfd2dcb043710f396ed9f7b8da",
+   "findings": 1,
+   "lines": 10,
+   "folders": [
+    "MetaplecticAutomorphicForms"
+   ],
+   "corrections": true
+  }
+ }
+}
