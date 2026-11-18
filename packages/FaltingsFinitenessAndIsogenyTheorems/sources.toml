@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FaltingsFinitenessAndIsogenyTheorems"
+
+[[source]]
+id = "faltings-1984"
+authors = "Gerd Faltings"
+title = "Erratum: Endlichkeitssätze für abelsche Varietäten über Zahlkörpern"
+year = 1984
+venue = "Invent. Math. 75 (1984), 381"
+doi = "10.1007/BF01388572"
+locator_scheme = "page"
+locator = "p. 381, parts a) and b)"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0075/LOG_0027.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0075/LOG_0027.pdf"
+fetched_at = "2026-11-18T18:10:20Z"
+sha256 = "c3a71300e1806f71a71b006e0b1d68d126c62af38c0fbf1e325b5aefc857d455"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["R28.3"]
