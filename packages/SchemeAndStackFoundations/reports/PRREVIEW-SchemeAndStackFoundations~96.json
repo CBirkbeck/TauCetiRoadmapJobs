@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~96",
+  "head": "6c65b0139f5ee27de28f9186b163bea3c4cc65b4",
+  "pr": 2489,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review at the same head as the previous review. Seeded sample of fifteen sections (0.3, 0.7a, 0.17, 0.24, 0.25, 1.1, 1.5, 1.14, 2.18, 3.2, 3.4, 4.15, 4.16, 4.18, 5.9) and the new 1.22a recomputed; 100 Stacks tags and locators in Bhatt-Scholze 2017, Zhu 2017, Deligne 1985, Deligne-Mumford 1969, Milne, Cheng-Lian-Murayama and Alper 2013 read against the texts; de Jong 1996, Hartshorne, Fulton, Liu and Knudsen not read. Library declarations of 0.3, 0.7a, 0.9 and 1.22a opened at the pins. Automatic checks all pass on a rerun; dependency check 0 problems; Suggested.lean elaborates with 48 sorry warnings only; one-tactic probe closes nothing. Two small corrections (Mathlib declarations for the route of integral_point_descent, carried over; the Needs line of 1.22a), no finding. One licence question for the human reviewers (host of the Knudsen link).",
+  "text": "323aa09504789e50",
+  "carried": {
+   "from": "6c65b0139f5ee27de28f9186b163bea3c4cc65b4",
+   "head": "5680cc462c47718fa483efaa1f8fb34ac336d00f",
+   "findings": 2,
+   "lines": 15,
+   "folders": [
+    "SchemeAndStackFoundations"
+   ],
+   "corrections": true
+  }
+ }
+}
