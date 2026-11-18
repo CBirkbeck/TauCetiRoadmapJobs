@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-YoungIntegrationAndRoughPaths~1",
+  "head": "1826128a8de7f7aebcb424ea2dd50ab4a18cd77e",
+  "pr": 2497,
+  "folder": "YoungIntegrationAndRoughPaths",
+  "date": "2026-11-18",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 5,
+  "format_notes": 3,
+  "notes": "Full review. Every statement of Suggested.lean and the README recomputed by hand (adversarial table, 35 rows, including the 15 sampled targets). Elaboration exit 0 with 37 sorry warnings only; #check of all 83 declarations; one-tactic probe (rEVariationOn_one closes by simp). Dependency check: 0 problems. Suppliers StochasticCalculus 1.1-1.2 and PDE 7.1-7.3 resolved on main; pinned Mathlib and Tau Ceti declarations opened. The automatic checks' two form hits (Mathlib pull-request numbers, an empty section header) are format notes; one citation lead set aside as a false positive. None of the three cited books could be read legally: no source locator was verified, and the three texts are requested; the constant of the extension theorem is left as a question.",
+  "text": "de8aa5801e614017"
+ }
+}
