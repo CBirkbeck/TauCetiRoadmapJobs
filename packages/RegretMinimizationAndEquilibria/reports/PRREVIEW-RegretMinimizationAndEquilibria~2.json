@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RegretMinimizationAndEquilibria~2",
+  "head": "c604afe8955b9d32a4c9de708045665ceed3abb5",
+  "pr": 2482,
+  "folder": "RegretMinimizationAndEquilibria",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 29 changed lines since ee8c93c. R01 and R02 of the previous review are both repaired. Checked: the replacement citation Hart and Mas-Colell 2000 Section 4(c) against the text (lines 464-476, p. 1139, attributes the property to Hannan); the six new Checks of 3.3 and 4.1 recomputed (empirical distribution 1/2,0,0,1/2 vs 1/4; deviation payoff (1,-1) and -1/2; sequence form (1;1/2,1/2;1/8,3/8), the zero-reach case, and (1;2,-1) outside Q); the Kuhn value -1/18 recomputed exactly against all pure replies on both sides. Gate passes at this head; depcheck 236 roadmaps, 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged and elaborates with 29 sorry warnings only; nothing changed outside the folder; pull request text still agrees with the head. Adversarial table has 7 rows with computed values. For the humans: the references to Kuhn 1950, Moulin-Vial 1978 and Hannan 1957 were removed rather than located.",
+  "text": "a39ca59a2aec7c2f"
+ }
+}
