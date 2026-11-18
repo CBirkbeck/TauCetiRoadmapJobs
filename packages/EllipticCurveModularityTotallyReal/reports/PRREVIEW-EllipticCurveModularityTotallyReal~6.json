@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularityTotallyReal~6",
+  "head": "77d2100fbfe8c8a092a13466374c412ac55bd18c",
+  "pr": 2185,
+  "folder": "EllipticCurveModularityTotallyReal",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample: all 15 targets (1.1-1.5, 2.1-2.5, 3.1-3.3, 4.1, 4.3) checked against LeHung26, FLHS15, OpenAI26, BD14, with 51 locators read at their lines and pages, plus BLGG12, BLGG13II, Kisin09, BCDT01, SW99. Adversarial table of 22 rows with computed values. Over 80 cross-roadmap citations resolved at main or the open heads; 27 library declarations opened at the pins. Suggested.lean elaborates with sorry only; one-tactic probe closes neither theorem. Dependency check: 0 problems. Automatic checks all passed. Accepted conditional on the three declared supplier contracts (gap:totally-real-weight-two-lifting, gap:totally-real-solvable-residual-cohomological-weight, gap:cm-elliptic-endomorphism-field). Three small corrections (JacobianChallenge rational-point hypothesis misdescribed; consumer claim about ModularityAndLanglandsExtensions; description omits the supplier contracts) and one format note. For the humans: main sources are unrefereed 2026 preprints, host licence of LeHung26, the lifting table of 3.3, conditional acceptance.",
+  "text": "0a93a7437fbd35df",
+  "carried": {
+   "from": "77d2100fbfe8c8a092a13466374c412ac55bd18c",
+   "head": "4588f9334da814cb4dec62296dc6e8649437140f",
+   "findings": 3,
+   "lines": 12,
+   "folders": [
+    "EllipticCurveModularityTotallyReal"
+   ],
+   "corrections": true
+  }
+ }
+}
