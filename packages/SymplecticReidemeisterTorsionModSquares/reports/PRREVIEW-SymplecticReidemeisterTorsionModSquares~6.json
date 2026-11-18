@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SymplecticReidemeisterTorsionModSquares~6",
+  "head": "172adf790a765417532b148f626ae31c6f237df2",
+  "pr": 1645,
+  "folder": "SymplecticReidemeisterTorsionModSquares",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review of the repaired head. Sample: all 15 seeded targets read in AV-v1 at their locators, plus JRV Theorem 5.1 and Thom IV.13 (over 30 locators in all); journal data of the three references confirmed with publishers' records. Recomputed: the two genus-two Gaussian systems of 4.8 in exact arithmetic (characteristic polynomials, determinants 4/2 and 8/2, relator images, order of composition), closedness and symmetry of the boundary pairing of 0.3 on 21 complexes, the Zassenhaus Checks, the family example over Q[s]_(s), the density arithmetic of 6.3-6.4 and 7.1. Automatic checks all passed and none was set aside; dependency check 0 problems; elaboration gives sorry as the only warning; one-tactic probe closes nothing. 14 supplier roadmaps and every cited section id resolved; acceptance is conditional on the 14 declared supplier gaps. One small correction (Dehn twists cited to GeometricTopology Layer 3 instead of Layer 1.7.2), one format note, one question for the author on the joint consequence of the sign laws of 2.5, 2.6 and 2.8 when the semicharacteristic is odd; ten source issues recorded.",
+  "text": "cbd8f68fa2e4e73d",
+  "carried": {
+   "from": "172adf790a765417532b148f626ae31c6f237df2",
+   "head": "a7c7f773fd8c189b1a636598f2a8cc060cfdc213",
+   "findings": 1,
+   "lines": 6,
+   "folders": [
+    "SymplecticReidemeisterTorsionModSquares"
+   ],
+   "corrections": true
+  }
+ }
+}
