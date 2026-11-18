@@ -48,3 +48,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Layers 5-6 and the SU(2) engine"]
+
+[[source]]
+id = "kowalski"
+authors = "Emmanuel Kowalski"
+title = "Representation theory"
+year = 2017
+venue = "lecture notes, ETH Zürich"
+locator_scheme = "theorem"
+locator = "Thm. 5.2.11 (p. 221), Thm. 5.5.1 (p. 237), proof of Lemma 5.5.2 (p. 238), Thm. 5.6.3 (p. 243), Thm. 6.2.3 (p. 253)"
+version_note = "author's lecture notes, version of February 17, 2017; the numbering and pages cited are those of the notes, not of the book An Introduction to the Representation Theory of Groups (AMS, 2014)"
+url = "https://people.math.ethz.ch/~kowalski/representation-theory.pdf"
+fetched_from = "https://people.math.ethz.ch/~kowalski/representation-theory.pdf"
+fetched_at = "2026-11-18T00:36:36Z"
+sha256 = "f63d9c26ec965b9cfdf892e6c571c1524ce2a1ca720b43d242f27fc7f6ac8f2a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["1.2", "5.5", "6.3", "6.5", "E.2"]

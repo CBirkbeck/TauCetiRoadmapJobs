@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompactGroups~12",
+  "head": "9c8fbb0b937a14ca234d55040258a2294a4a1474",
+  "pr": 2480,
+  "folder": "RepresentationTheory/CompactGroups",
+  "date": "2026-11-18",
+  "findings": 7,
+  "blocking": 2,
+  "notes": "Full re-review. r11: 13 findings repaired, R13/R14 partly. Gate rerun OK; depcheck 236 roadmaps, 2516 edges, 0 problems; Suggested.lean elaborates with exit 0 and no warning (26 Tau Ceti #check pins); 57-declaration signature probe. Sample: all 15 seeded targets; 19 Knapp locators verified at the text; Bump and Brocker-tom Dieck are uncertified, not read. P1: README 6.1/5.5 treat the character as the sum of the diagonal coefficients, but under the README convention it is their conjugate (Tau Ceti star_character). P2: 4.2 omits irreducibility of rho. P3: gap:banach-gfinite-density owner unstated, locators, names, API bullets, stale PR summary.",
+  "text": "d6baf7c1c9ecda55"
+ }
+}
