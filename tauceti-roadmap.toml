@@ -149,10 +149,10 @@ independent_of_fix_rounds = false
 daily_cap = 20   # 2026-11-06: sixteen spent by late afternoon with the Fourier–Deligne design still waiting
 
 # AI review of every open roadmap pull request (any author): one PRREVIEW job per new head, the
-# `ai-approved` label while the latest review accepts the current head; a human still approves and merges.
+# `ai-found-no-errors` label while the latest review accepts the current head; a human still approves and merges.
 [prreview]
 enabled = true
-label = "ai-approved"
+label = "ai-found-no-errors"
 dependency_label = "awaiting-dependencies"   # checks of an accepted head's text go first to the pull requests that wait for nothing
 per_run = 40   # eight Fable loops now serve reviews; 20 per sync left the newest pull requests unfiled behind the backlog (2026-11-04)
 text_per_run = 5   # of per_run: checks of an accepted head's text; ten a run filled the review queue faster than the reviewers could clear it. A head a human has approved gets none (a repair's push would dismiss the approval)
@@ -165,16 +165,16 @@ max_folders = 20   # a pull request that repairs the dependency loops of main to
 repair_pool = true
 # Fable reviews, Opus repairs (user 2026-11-11): a worker that reviews with fable runs the repair with Opus.
 repair_models = { fable = "claude-opus-5-5" }
-# Small repairs (the P3 findings of an accepting review) pushed onto an accepted head keep `ai-approved` and get no
+# Small repairs (the P3 findings of an accepting review) pushed onto an accepted head keep `ai-found-no-errors` and get no
 # re-review when a reply records `tauceti-roadmap-carried {from, head}` and the folders changed by at most
 # small_change_lines lines (owner decision 2026-11-04).
 carry_accept = true
 # A chore (a `chore:` title, or more than max_folders roadmap folders: a pin bump) gets no folder review; it carries
-# `ai-approved` while a pool member's comment records an accepting chore review of its current head
+# `ai-found-no-errors` while a pool member's comment records an accepting chore review of its current head
 # (`tauceti-roadmap-chore-review {head, status}`), the AI review of the whole change (owner request 2026-11-05).
 chore_review = true
 small_change_lines = 150
-# A review whose findings are all P3 ends with its repair: the repaired head keeps or gains `ai-approved` and the folder
+# A review whose findings are all P3 ends with its repair: the repaired head keeps or gains `ai-found-no-errors` and the folder
 # gets no further review, while the repair changed at most small_change_lines lines of it (owner decision 2026-11-11).
 carry_minor = true
 # A finding the repair cannot act on because it lies outside the folder under review is recorded once in the verdict
@@ -182,7 +182,7 @@ carry_minor = true
 defer_outside = true
 # Passes before the final review (owner decision 2026-11-15): the first rounds of a new roadmap folder of a pull request
 # the pool repairs run on Opus, each ending with its repair. After three, or when one leaves the head where it was, a
-# review on the lane's review model follows, and that review alone decides ai-approved.
+# review on the lane's review model follows, and that review alone decides ai-found-no-errors.
 pre_passes = 3
 pre_agent = "claude"
 pre_model = "claude-opus-5-5"
