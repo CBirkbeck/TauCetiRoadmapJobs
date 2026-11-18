@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GaussianLinearModels~1",
+  "head": "4bd9bf20f5e3b9c2011c593c7d95812e1ba46fca",
+  "pr": 2510,
+  "folder": "GaussianLinearModels",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review. All 26 source locators (Chua 19, Shalizi 7) read at the text, covering the seeded sample 1.1, 1.3, 1.4, 2.1-2.3, 3.2-3.7, 4.2-4.4; two page ranges corrected (C01). Adversarial pass computed for every section (21 table rows), no statement failed. 42 library declarations opened at the pins; cross-roadmap citations resolved on main; dependency check 0 problems; Suggested.lean elaborates with sorry only and no theorem closes under the one-tactic probe; automatic checks all passed. Left to humans: unrefereed sources, licence of the two author-page texts, no comparison with outside formalisations.",
+  "text": "70df2a753ea6f314"
+ }
+}
