@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GL2ModularityLifting~9",
+  "head": "308c1fa7f25135452e9dc2330fc54c5538ee229f",
+  "pr": 1071,
+  "folder": "GL2ModularityLifting",
+  "date": "2026-11-18",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review of the head. Findings: R01 (P2) Khare-Wintenberger Theorem 4.1, Kisin's potentially Barsotti-Tate theorem and Hypothesis (H) are also owned by ClassicalSerreModularity I.2 at its head; R02 (P2) the Summary's dyadic theorem omits total oddness; R03 (P2) the statements of 5.18 and 6.16 reproduce KW I Theorem 4.1 almost verbatim. Corrections: LC is proved for every odd p by the cited supplier target; 10.14 names LC but not its CC hypotheses; Scope still names BCDT; the description lists a dropped supplier. Seeded sample: all 15 targets read against the text (5.1 and 8.1 in the published texts, the DVI page numbers not checkable). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with two sorry warnings only; adversarial table with computed values in the report. Not readable: Kisin's 2-adic Barsotti-Tate and Durham papers.",
+  "text": "26de6317735e6774"
+ }
+}
