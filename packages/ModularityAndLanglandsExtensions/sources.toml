@@ -36,3 +36,183 @@ status = "certified"
 accessed = "2026-11-15"
 version_note = "arXiv v2"
 cited_for = ["4.22"]
+
+[[source]]
+id = "newton-thorne-II"
+authors = "James Newton, Jack A. Thorne"
+title = "Symmetric power functoriality for holomorphic modular forms, II"
+year = 2020
+arxiv = "2009.07180v2"
+locator_scheme = "theorem"
+locator = "Theorem 2.1"
+url = "https://arxiv.org/abs/2009.07180v2"
+fetched_from = "https://arxiv.org/pdf/2009.07180v2"
+fetched_at = "2026-11-18T14:13:18Z"
+sha256 = "0f08214ebe03344c2e2851be76c49213dc4adf7928ff561610b674c423a2a6bf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v2"
+cited_for = ["1.7"]
+
+[[source]]
+id = "blggt-2014-v4"
+authors = "Thomas Barnet-Lamb, Toby Gee, David Geraghty, Richard Taylor"
+title = "Potential automorphy and change of weight"
+year = 2010
+arxiv = "1010.2561v4"
+locator_scheme = "theorem"
+locator = "Theorem 4.5.1"
+url = "https://arxiv.org/abs/1010.2561v4"
+fetched_from = "https://arxiv.org/pdf/1010.2561v4"
+fetched_at = "2026-11-18T14:13:25Z"
+sha256 = "c953df6229ba8d8b4ae25b1a00cf11592864c74692859d324ff10d3eef645d24"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v4"
+cited_for = ["2.26"]
+
+[[source]]
+id = "qian-2023"
+authors = "Lie Qian"
+title = "Potential Automorphy for $GL_n$"
+year = 2021
+arxiv = "2104.09761v1"
+locator_scheme = "theorem"
+locator = "Lemma 4.3"
+url = "https://arxiv.org/abs/2104.09761v1"
+fetched_from = "https://arxiv.org/pdf/2104.09761v1"
+fetched_at = "2026-11-18T14:13:29Z"
+sha256 = "4110023d4691d628adbc96842793696978de962b6109044e5d32779160835415"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v1"
+cited_for = ["2.20"]
+
+[[source]]
+id = "bcgp-2021"
+authors = "George Boxer, Frank Calegari, Toby Gee, Vincent Pilloni"
+title = "Abelian Surfaces over totally real fields are Potentially Modular"
+year = 2018
+arxiv = "1812.09269v3"
+locator_scheme = "theorem"
+locator = "Proposition 10.1.3"
+url = "https://arxiv.org/abs/1812.09269v3"
+fetched_from = "https://arxiv.org/pdf/1812.09269v3"
+fetched_at = "2026-11-18T14:13:42Z"
+sha256 = "7c8d74b0628d8b9cc841a853372ca2d0bc18c086ab46d138f75afd15f35689ed"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v3"
+cited_for = ["1.9"]
+
+[[source]]
+id = "kss-2021"
+authors = "Robert Kurinczuk, Daniel Skodlerack, Shaun Stevens"
+title = "Endo-parameters for p-adic classical groups"
+year = 2016
+arxiv = "1611.02667v3"
+locator_scheme = "theorem"
+locator = "§1.20"
+url = "https://arxiv.org/abs/1611.02667v3"
+fetched_from = "https://arxiv.org/pdf/1611.02667v3"
+fetched_at = "2026-11-18T14:13:48Z"
+sha256 = "1cbcbb779d8d4ba8f3339d749b3dd7bc3d2555e6792491338a861d45009d9092"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v3"
+cited_for = ["3.13"]
+
+[[source]]
+id = "cg-2020"
+authors = "Frank Calegari, David Geraghty"
+title = "Minimal modularity lifting for non-regular symplectic representations"
+year = 2019
+venue = "Duke Math. J. 169, no. 5 (2020), 801-896"
+doi = "10.1215/00127094-2019-0044"
+arxiv = "1907.08691v1"
+locator_scheme = "theorem"
+locator = "Lemma 6.9"
+url = "https://arxiv.org/abs/1907.08691v1"
+fetched_from = "https://arxiv.org/pdf/1907.08691v1"
+fetched_at = "2026-11-18T14:13:53Z"
+sha256 = "39aa93a83c77ce93884db6352e4c63f80e881197f4213dd699cdf7d77cfbb059"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v1"
+cited_for = ["3.30"]
+
+[[source]]
+id = "gee-taibi-2019"
+authors = "Toby Gee, Olivier Taïbi"
+title = "Arthur's multiplicity formula for GSp$_4$ and restriction to Sp$_4$"
+year = 2018
+arxiv = "1807.03988v1"
+locator_scheme = "theorem"
+locator = "Remark 6.1.4"
+url = "https://arxiv.org/abs/1807.03988v1"
+fetched_from = "https://arxiv.org/pdf/1807.03988v1"
+fetched_at = "2026-11-18T14:13:59Z"
+sha256 = "4c77cbb417103bba447dec8c48412d2d1b550dab2cc9cd9fcc7d200b675eaca8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v1"
+cited_for = ["3.9"]
+
+[[source]]
+id = "qian-thesis-2023"
+locator_scheme = "theorem"
+locator = "Lemma 4.0.3"
+url = "https://stacks.stanford.edu/file/druid:yn815wp7042/Thesis%20Final%20Version-augmented.pdf"
+fetched_from = "https://stacks.stanford.edu/file/druid:yn815wp7042/Thesis%20Final%20Version-augmented.pdf"
+fetched_at = "2026-11-18T14:14:34Z"
+sha256 = "22a4ae5094188762e36b3ffb13415662f21029767f78703941e9087350fe5ab8"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["2.20"]
+
+[[source]]
+id = "kedlaya-ant-2025"
+locator_scheme = "section"
+locator = "§24"
+url = "https://kskedlaya.org/papers/ant-ptx.pdf"
+fetched_from = "https://kskedlaya.org/papers/ant-ptx.pdf"
+fetched_at = "2026-11-18T14:14:39Z"
+sha256 = "7a934fce8272cedd36ad609f79bbe79af0056320bb1e0bc690c87af990f305be"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["4.34"]
+
+[[source]]
+id = "pilloni-stroh-2016"
+locator_scheme = "theorem"
+locator = "Theorem 0.3"
+url = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/Artinfinal.pdf"
+fetched_from = "https://www.imo.universite-paris-saclay.fr/~vincent.pilloni/Artinfinal.pdf"
+fetched_at = "2026-11-18T14:14:42Z"
+sha256 = "8a730612cb2aff7d334187174d1e7688dbc118d8394f2d37681aaf597952735f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["1.9"]
+
+[[source]]
+id = "martin-watkins-2006"
+locator_scheme = "section"
+locator = "§4.2"
+url = "https://magma.maths.usyd.edu.au/~watkins/papers/antsVII.pdf"
+fetched_from = "https://magma.maths.usyd.edu.au/~watkins/papers/antsVII.pdf"
+fetched_at = "2026-11-18T14:14:53Z"
+sha256 = "ea2aaf25330c562ff2a8c5997f74e8623ef524139769622d871ff1abe9e20e7f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["4.17"]
