@@ -154,6 +154,7 @@ daily_cap = 20   # 2026-11-06: sixteen spent by late afternoon with the Fourierâ
 enabled = true
 label = "ai-found-no-errors"
 dependency_label = "awaiting-dependencies"   # checks of an accepted head's text go first to the pull requests that wait for nothing
+approval_label = "awaiting-human-approval"   # kept by the same run as the dependency label: an accepted pull request that waits for nothing and needs only a human approval
 per_run = 40   # eight Fable loops now serve reviews; 20 per sync left the newest pull requests unfiled behind the backlog (2026-11-04)
 text_per_run = 5   # of per_run: checks of an accepted head's text; ten a run filled the review queue faster than the reviewers could clear it. A head a human has approved gets none (a repair's push would dismiss the approval)
 authors = []
