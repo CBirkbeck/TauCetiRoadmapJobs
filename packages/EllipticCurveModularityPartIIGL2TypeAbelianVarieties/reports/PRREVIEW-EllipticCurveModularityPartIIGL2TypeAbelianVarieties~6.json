@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularityPartIIGL2TypeAbelianVarieties~6",
+  "head": "db8093791329025a7fbf46375322ce3311dd7ab0",
+  "pr": 1036,
+  "folder": "EllipticCurveModularityPartIIGL2TypeAbelianVarieties",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 5,
+  "notes": "incremental re-review of 27 changed lines since d30b928. Checked: the eight small corrections of the previous review (all repaired) and its four format notes (carried); the new step 4 of 1.3 recomputed on B x B with Q(i); the J0(23) Eisenstein prime above 11 recomputed; Ribet92 Theorem 4.4 (pp. 8-9) and Ribet80 Corollary 4.2 (p. 51) read at their locators; the two named consumers resolved at their open heads; the title and description read against the head (two small corrections); automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with three sorry warnings only.",
+  "text": "2f8ac250cff15c24",
+  "carried": {
+   "from": "db8093791329025a7fbf46375322ce3311dd7ab0",
+   "head": "db8093791329025a7fbf46375322ce3311dd7ab0",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
