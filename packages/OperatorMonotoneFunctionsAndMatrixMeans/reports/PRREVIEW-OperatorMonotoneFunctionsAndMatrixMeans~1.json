@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-OperatorMonotoneFunctionsAndMatrixMeans~1",
+  "head": "0cd92f43573bc3bf872303624d391b644aff06a8",
+  "pr": 2496,
+  "folder": "OperatorMonotoneFunctionsAndMatrixMeans",
+  "date": "2026-11-18",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 6,
+  "format_notes": 3,
+  "notes": "Full review. Suggested.lean elaborated at the pins (exit 0, 44 sorry warnings, nothing else); one-tactic probe on a scratch copy closed none of the 44 theorems; signatures printed with #check and compared with the README. All README Checks and the 15 sampled targets recomputed (2x2 numerics and by hand); headline inequalities stress-tested on random 2x2 matrices. Dependency check: 0 problems. Supplier citations resolved on main (Majorization, PolarDecomposition, CStarAlgebras, RandomMatrices, OptimalTransport) and library names opened at the pins. None of the seven cited books could be read legally, so no locator or wording was checked against a source text. Automatic checks: the pull-request-number hit is a format note; the section-header hit is set aside as a false positive.",
+  "text": "e4e286db70fe5077"
+ }
+}
