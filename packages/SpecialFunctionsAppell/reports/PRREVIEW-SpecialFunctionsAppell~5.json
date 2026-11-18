@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsAppell~5",
+  "head": "59ba724fb00a786939226c906c96f806d139cb7b",
+  "pr": 2166,
+  "folder": "SpecialFunctionsAppell",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 68 changed lines since 6bb6712. All four previous findings repaired (R01 raising relations in 1.6 and step counts in 3.1, 4.1, 5.1; R02 hc' and absolute convergence in the two 6.4 theorems; R03 supplier contract for SpecialFunctionsHypergeometric 1.1; R04 description). Checked: the three new contiguous relations coefficient by coefficient and numerically (also at poles of 1/Gamma), the new Check value of 1.6, the shift-count arguments, absolute convergence of the fibre sum at two points of the domain, the elaborated types of the two changed theorems against 6.4, SpecialFunctionsHypergeometric 1.1 on main, the pull request text against the head. Seeded sample: 1.6 falls in the change and was checked in full; the other sampled sections are untouched. Automatic checks all pass; dependency check 0 problems; lake env lean gives 59 sorry warnings and no error. Matsumoto (25 of 58 locators) remains unreadable: flagged to the human reviewers.",
+  "text": "d4ec1f850de29da5"
+ }
+}
