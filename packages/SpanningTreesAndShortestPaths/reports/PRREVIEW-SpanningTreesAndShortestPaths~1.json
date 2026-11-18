@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpanningTreesAndShortestPaths~1",
+  "head": "2857d0c71bb5a74ba48bb956f4a4df818b3ee0b1",
+  "pr": 2512,
+  "folder": "SpanningTreesAndShortestPaths",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All 17 source locators read at the text (Schrijver, Erickson, Diestel by OCR of the free preview, Keller-Trotter), covering the 15 sampled targets; one wrong theorem number. Adversarial pass computed on every statement and Check, none false. 53 library names of the contracts and scope section opened at the pins; one uncited Tau Ceti lemma proves the duality target of 1.2 (R01). Suggested.lean elaborates with sorry only; one-tactic probe closes nothing; dependency check 0 problems; automatic checks all passed; cross-roadmap citations resolve on main.",
+  "text": "ad899f00704973d1"
+ }
+}
