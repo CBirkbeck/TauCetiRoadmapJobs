@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularityAndLanglandsExtensionsPartII~7",
+  "head": "47ed7facd806f072cc297c42dc0efb1acc1e55f4",
+  "pr": 2449,
+  "folder": "ModularityAndLanglandsExtensionsPartII",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 120 changed lines since 141d7bd. Checked: each previous point (R01 deferred as D01, stands; C01-C04, N01, N02 repaired); the changed passages against th24 (Cor. 6.6, Prop. 6.7, Cor. 6.8, Lemma 6.9, Thm 7.5 pp. 44-45) and nt26 (pp. 23, 38); the supplier sections cited by the changes (PotentialAutomorphyInfrastructurePartII ANT set-up, 3.10, 8.16; ArithmeticGaloisDuality R02.3.5; parent 1.12, 1.15, 4.2); the sampled targets the diff touches (12.7, 13.1, 13.6, 14.1, 14.2) and those that use the changed request (11.6, 13.8); title and description against the head. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry at lines 93 and 112 the only warnings and is unchanged. Acceptance does not count D01, which a change to ModularityAndLanglandsExtensions settles.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The roadmap and its parent supply each other: the parent states the theorems proved here as its own targets and then consumes them",
+    "where": "ModularityAndLanglandsExtensions: drop §§4.9, 4.12, 4.20, 4.23, 4.29, 4.30; reroute or move §§4.34–4.37",
+    "raised": "PRREVIEW-ModularityAndLanglandsExtensionsPartII~6"
+   }
+  ],
+  "text": "cb77cf978bdf0a10"
+ }
+}
