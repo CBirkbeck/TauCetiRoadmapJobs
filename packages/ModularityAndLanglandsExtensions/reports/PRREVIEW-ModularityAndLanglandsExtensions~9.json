@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ModularityAndLanglandsExtensions~9",
+  "head": "4c191e88c0c08cf2518334dff247f3ba5a4c8b8e",
+  "pr": 1180,
+  "folder": "ModularityAndLanglandsExtensions",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review of the repaired head. Previous R01, C01, C02 and N01-N04 repaired. Whole README read. Seeded sample of 15 targets (0.2, 1.12, 2.1, 2.16, 2.24, 2.29, 2.45, 2.51, 3.3, 3.28, 3.30, 4.21, 4.24, 4.39, 4.42) checked against the source texts: 42 locators in 12 sources, all agree. R01 (P2): section 2.52 with section 2.30 restates, under the extra hypothesis that X0(15)(F) is finite, the modularity theorem that EllipticCurveModularityImaginaryQuadratic (a supplier, earlier in the merge order) states for every imaginary quadratic field. Three small corrections (bound on N2 in 2.31 against its locator; 2.13 against PotentialModularityAndCompatibleSystems 2.20; attribution of cyclic base change to ET 6.24) and one format note. Automatic checks all passed; dependency check 213 roadmaps, 2324 edges, 0 problems; Suggested.lean elaborates with the single sorry warning; one-tactic probes (simp, rfl, infer_instance, exact tendsto_const_nhds, aesop) all fail on satoTate_elliptic; 20 cited library declarations found at the pins. Pull request text agrees with the head. Four points left for the human reviewers.",
+  "text": "3ab7e25f94f7158e"
+ }
+}

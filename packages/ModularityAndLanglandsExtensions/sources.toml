@@ -234,3 +234,39 @@ status = "certified"
 accessed = "2026-11-18"
 version_note = "arXiv v2"
 cited_for = ["2.31"]
+
+[[source]]
+id = "blght-2011"
+authors = "Thomas Barnet-Lamb, David Geraghty, Michael Harris, Richard Taylor"
+title = "A family of Calabi-Yau varieties and potential automorphy II"
+year = 2011
+doi = "10.2977/PRIMS/31"
+locator_scheme = "theorem"
+locator = "Theorem 6.4"
+url = "https://math.stanford.edu/~rltaylor/cy2fin.pdf"
+fetched_from = "https://math.stanford.edu/~rltaylor/cy2fin.pdf"
+fetched_at = "2026-11-18T17:48:39Z"
+sha256 = "225cab84210837ca6130c1c76a5eababeffeaa8d1594b6267e853ce0ae8eabb3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "author's final version; theorem numbering as in Publ. RIMS 47 (2011), 29–98"
+cited_for = ["2.31"]
+
+[[source]]
+id = "caraiani-newton-2023"
+authors = "Ana Caraiani, James Newton"
+title = "On the modularity of elliptic curves over imaginary quadratic fields"
+year = 2023
+arxiv = "2301.10509v3"
+locator_scheme = "theorem"
+locator = "Theorem 6.1"
+url = "https://arxiv.org/abs/2301.10509v3"
+fetched_from = "https://arxiv.org/pdf/2301.10509v3"
+fetched_at = "2026-11-18T17:51:10Z"
+sha256 = "57abc79ad46875b0ea432ce1193f517b8dbb0ad0448cb51942bc20ed95ffd0c3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v3"
+cited_for = ["2.6", "2.29"]
