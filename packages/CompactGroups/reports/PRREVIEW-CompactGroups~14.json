@@ -1,0 +1,23 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompactGroups~14",
+  "head": "e511bc26fb4c353c26c5d572d5ab8d09ca94a04e",
+  "pr": 2480,
+  "folder": "RepresentationTheory/CompactGroups",
+  "date": "2026-11-18",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full review. The four r13 findings are repaired (R02's repair left Layer 4's Dependencies line behind: R01). Two P3 findings: Layer 4 Dependencies omit Compact/Intertwiner/Basic.lean; README:106-109 gives the wrong Mathlib file for MeasureTheory.Lp and ContinuousMap.toLp and none for IsHilbertSum. Gate rerun OK (build included), depcheck 0 problems, Suggested.lean elaborates with no warning (26 pins, each signature compared with the README). 109 backticked library names elaborate at the pins; 85 Tau Ceti and 29 Mathlib names matched to their cited files. Seeded sample of 15 targets checked: 19 Knapp and Kowalski locators read at the text, all pages correct; the six sampled targets without a source locator checked against pinned declarations. Adversarial table of 22 rows with computed values. Bump and Broecker-tom Dieck uncertified, not read. Pull-request text agrees with the head.",
+  "text": "e80d0c6f65174011",
+  "carried": {
+   "from": "e511bc26fb4c353c26c5d572d5ab8d09ca94a04e",
+   "head": "b0ed9af7effecbe0c12efa30fa1a076887980c85",
+   "findings": 2,
+   "lines": 10,
+   "folders": [
+    "RepresentationTheory/CompactGroups"
+   ]
+  }
+ }
+}
