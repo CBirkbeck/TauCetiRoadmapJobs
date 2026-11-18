@@ -1,0 +1,66 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MultiArmedBandits"
+
+[[source]]
+id = "LattimoreSzepesvari2020"
+locator_scheme = "theorem"
+locator = "Theorem 7.1"
+url = "https://tor-lattimore.com/downloads/book/book.pdf"
+fetched_from = "https://tor-lattimore.com/downloads/book/book.pdf"
+fetched_at = "2026-11-18T15:02:54Z"
+sha256 = "b71acb03034d73ca0ea148c9c6a91c34a88dd8c7ab8471af38035b34399bad9f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["3.2"]
+
+[[source]]
+id = "BubeckCesaBianchi2012"
+authors = "Sébastien Bubeck, Nicolò Cesa-Bianchi"
+title = "Regret Analysis of Stochastic and Nonstochastic Multi-armed Bandit Problems"
+year = 2012
+arxiv = "1204.5721v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://arxiv.org/abs/1204.5721v2"
+fetched_from = "https://arxiv.org/pdf/1204.5721v2"
+fetched_at = "2026-11-18T15:03:03Z"
+sha256 = "52e871fa30c9aaa2eb8292df169a681b89976e22db899563879225d5755e16a2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v2"
+cited_for = ["5.3"]
+
+[[source]]
+id = "GarivierMenardStoltz2019"
+authors = "Aurélien Garivier, Pierre Ménard, Gilles Stoltz"
+title = "Explore First, Exploit Next: The True Shape of Regret in Bandit Problems"
+year = 2016
+arxiv = "1602.07182v3"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1602.07182v3"
+fetched_from = "https://arxiv.org/pdf/1602.07182v3"
+fetched_at = "2026-11-18T15:03:10Z"
+sha256 = "ee66c9625e2843f1478fc69bfca95bd2c94d24385e9b95554624d5204cacb21d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v3"
+cited_for = ["4.3"]
+
+[[source]]
+id = "AuerCesaBianchiFischer2002"
+authors = "Peter Auer, Nicolò Cesa-Bianchi, Paul Fischer"
+title = "Finite-time Analysis of the Multiarmed Bandit Problem"
+year = 2002
+venue = "Machine Learning 47"
+doi = "10.1023/A:1013689704352"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://doi.org/10.1023/A:1013689704352"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.2"]
