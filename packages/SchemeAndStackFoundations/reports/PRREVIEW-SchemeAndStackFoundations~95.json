@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~95",
+  "head": "6c65b0139f5ee27de28f9186b163bea3c4cc65b4",
+  "pr": 2489,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 103 changed lines since e101833. Checked: all six previous remarks (R01, C01-C04, N01), all repaired; the changed passages of §0.9, §1.20, §1.22a, §1.23 and the supplier contracts, with 10 new or re-cited locators read in the cached texts (Stacks 03GN, 0ABS, 04YW; EGA IV3 8.11.1 p. 41; Klevdal-Patrikis fn. 8 p. 21; Alper 2013 §2, Prop. 3.3/Rem. 3.4, proof of 3.10(iv); Rydh 2015 (8.7) and the remark on p. 30); 11 library declarations opened at the pins; an adversarial table of 10 rows for the changed statements. No seeded sample target lies in the changed passages. Gate rerun all counters zero; depcheck 214 roadmaps, 2371 edges, 0 problems; lake env lean Suggested.lean exit 0, 48 sorry warnings only; Suggested.lean unchanged since e101833. One small correction (C01: §0.9 route should name Mathlib's UniversallyClosed.of_comp_surjective and IsFinite.of_isProper_of_locallyQuasiFinite).",
+  "text": "323aa09504789e50"
+ }
+}
