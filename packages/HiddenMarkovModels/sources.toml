@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HiddenMarkovModels"
+
+[[source]]
+id = "vanHandel2008"
+locator_scheme = "theorem"
+locator = "Theorem 5.4"
+url = "https://web.math.princeton.edu/~rvan/orf557/hmm080728.pdf"
+fetched_from = "https://web.math.princeton.edu/~rvan/orf557/hmm080728.pdf"
+fetched_at = "2026-11-18T15:01:25Z"
+sha256 = "d714945c67ec7647d3ed458c72adf7fd1818a126d1a78b29d39631c0856808a5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["6.2"]
