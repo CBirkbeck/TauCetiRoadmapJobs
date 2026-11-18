@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MeansMajorizationAndDiscreteInequalities~1",
+  "head": "f3fdd95682612948d4acd00209b088a5579984f4",
+  "pr": 2500,
+  "folder": "MeansMajorizationAndDiscreteInequalities",
+  "date": "2026-11-18",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 2,
+  "format_notes": 4,
+  "notes": "Full review. Every statement of the README and all 44 theorems of Suggested.lean were instantiated and computed (adversarial table in the report); the stated results hold, but three proof routes assert false steps (4.4 majorized upper bound, 6.1 monotone approximation, 1.2 Hoelder step) and the zero-convention target of 6.3 is Mathlib's InformationTheory.mul_log_le_klDiv at the pin. Sampled sections 1.2, 1.3, 2.1-2.3, 3.1-3.4, 4.2-4.4, 5.1, 5.3, 6.2 were checked mathematically; none of the 70 source locators could be verified because none of the seven cited books is legally readable (listed under Not verifiable). Library contracts opened at the pins; six cross-roadmap citations resolved on main; dependency check 0 problems; lake env lean exits 0 with only sorry warnings; one-tactic probe closed 0 of 44 theorems. The one automatic check that failed (a section header with no declaration under it) is real and is a format note; none set aside. Pull-request text agrees with the head.",
+  "text": "07279a0ee949f0ab"
+ }
+}
