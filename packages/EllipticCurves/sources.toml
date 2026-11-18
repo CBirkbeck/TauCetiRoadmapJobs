@@ -37,3 +37,20 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-18"
 cited_for = ["Layer 7"]
+
+[[source]]
+id = "Sutherland18783"
+authors = "Andrew V. Sutherland"
+title = "18.783 Elliptic Curves, Lecture 14: Ordinary and supersingular elliptic curves"
+year = 2017
+venue = "MIT lecture notes, Spring 2017"
+locator_scheme = "theorem"
+locator = "14.2"
+url = "https://math.mit.edu/classes/18.783/2017/LectureNotes14.pdf"
+fetched_from = "https://math.mit.edu/classes/18.783/2017/LectureNotes14.pdf"
+fetched_at = "2026-11-18T05:44:16Z"
+sha256 = "49b1366751728a904cf27c5365046e2f20c7f4ccc9a16cceec3c1967fffc566f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["Layer 3"]

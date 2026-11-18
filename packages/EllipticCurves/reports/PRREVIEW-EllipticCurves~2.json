@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurves~2",
+  "head": "ccbf0859d4ca994d44719abddf7975c9c901bbdb",
+  "pr": 2483,
+  "folder": "EllipticCurves",
+  "date": "2026-11-18",
+  "findings": 6,
+  "blocking": 0,
+  "notes": "Full re-review. Previous R01-R17 repaired, R04 and R18 partly (now R01, R05). Six P3 findings: stale 'pending' sentences against the pin, canonical-height limUnder claim, four undeclared backticked names, missing locator for LFunction_eq_of_isogeny, README shape (Checks, per-layer examples and dependencies), stale description summary block. Gate passes (all checks 0, build 0); lake env lean on Suggested.lean gives three sorry warnings only; one-tactic probe closes none of the three headlines; depcheck 236 roadmaps, 0 problems. Sample: every name of the 'Already in Tau Ceti' list found in its stated file at the pin; MilneADT I.7.1, I.7.3 and BHKSSW sections 1, 2.1 read; AEC (Weil pairing III.8.1, function fields II.2.4) not readable legally, listed under Not verifiable; pinned-source revisions not re-resolved this round.",
+  "text": "5e5478f2cc604d89"
+ }
+}
