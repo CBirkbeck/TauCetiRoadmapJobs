@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsGeneralizedHypergeometric~7",
+  "head": "28a94e31074f29bbe1b671d4f12cc437be8e17b3",
+  "pr": 2136,
+  "folder": "SpecialFunctionsGeneralizedHypergeometric",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 84 changed lines since 89aa877. Previous R01 and R02 both repaired. Recomputed: the Thomae group (order 120, element orders, trivial centre, derived subgroup of order 60, so S5; subgroup orders of the new Checks), the invariant at all 120 images of a complex point, Dougall's bilateral sum at four points including a zero denominator, and the limit of Whipple's transformation that gives Sheppard's. Seeded sample: 4.5 falls in the changed passages; DLMF 16.4.14, 16.4.16, 16.4.17 read at their locators; book locators not readable. Elaboration: exit 0, 64 sorry warnings only; one-tactic probe on the four new theorems; elaborated types of the seven new declarations compared with the README. Automatic checks all passed; dependency check 0 problems; no change outside the folder; title and description checked against the head (one small correction).",
+  "text": "1277e02b9cb3feca"
+ }
+}
