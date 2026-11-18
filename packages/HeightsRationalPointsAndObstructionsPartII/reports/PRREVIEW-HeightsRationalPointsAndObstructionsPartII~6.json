@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HeightsRationalPointsAndObstructionsPartII~6",
+  "head": "79be7522cae8bbb80458bf7a22141f0b6608f00f",
+  "pr": 1821,
+  "folder": "HeightsRationalPointsAndObstructionsPartII",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review of the whole README (Layers 0-7, 9-11, contracts) and Suggested.lean. Seeded sample of 15 targets and 21 further locators read in ggk-2026, dgh-2021, kuhne-2021, xy-2022, yuan-2026, dky-2020: all match. 18 library declarations opened at the pins; cited sections resolved in 15 supplier roadmaps (10 on main, 5 at open heads); seven declared gaps checked as not already provided. Automatic checks all passed; dependency check 0 problems; elaboration exits 0 with three sorry warnings only; one-tactic probe closes none of the three headlines. One P2 finding: a Conventions example false in characteristic two. Two small corrections (a pointer to a removed section 6.12; an unexplained Hilbert-irreducibility edge) and one format note (four library line numbers). Eight source issues recorded, including an error in the function-field statement of Yuan's Theorem 1.1 that the README already corrects.",
+  "text": "5089f8e9af5fbdd8"
+ }
+}
