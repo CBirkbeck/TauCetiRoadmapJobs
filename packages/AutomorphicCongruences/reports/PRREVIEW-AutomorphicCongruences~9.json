@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicCongruences~9",
+  "head": "7b2fc66caa8c85c3fa6e905273acb4bec008ca17",
+  "pr": 1816,
+  "folder": "AutomorphicCongruences",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All fifteen seeded targets (2.3, 2.6, 2.8, 2.11, 2.12, 3.6, 3.7, 3.8, 4.4, 4.10, 5.6, 5.8, 6.2, 7.9, 8.1) and the headline statements (0.7, 1.10, 1.11, 2.7, 2.14, 4.3, 4.5, 5.10, 6.6, 7.8, 7.10) checked against CLW, CLW-addendum, FW, NAK, Wan-2015, BCS and SU at their locators, with every worked value recomputed; about 75 locators, 56 cross-roadmap citations and 9 library declarations resolved. Automatic checks rerun: all pass, targeted build included; Suggested.lean elaborates with no output (no declaration); dependency check 0 problems. One small correction (Wan-2015 prints p >= 5 and kappa0 >= 2; the extracted text lost the sign), two format notes. Journal pagination of BCS not verifiable; five points for the human reviewers, among them that section 2.12 is a theorem not in the literature.",
+  "text": "2d0069629ff382de",
+  "carried": {
+   "from": "7b2fc66caa8c85c3fa6e905273acb4bec008ca17",
+   "head": "71eeefc89ac395b9476ef95c88ce9256ddb38fee",
+   "findings": 1,
+   "lines": 13,
+   "folders": [
+    "AutomorphicCongruences"
+   ],
+   "corrections": true
+  }
+ }
+}
