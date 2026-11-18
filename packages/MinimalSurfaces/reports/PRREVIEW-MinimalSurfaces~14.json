@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MinimalSurfaces~14",
+  "head": "cd32a39497b61f97f6d72e5dbd99a9f708546eea",
+  "pr": 2491,
+  "folder": "RiemannianGeometry/MinimalSurfaces",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review at an unchanged head; the previous review raised nothing. All 15 seeded targets recomputed (39 adversarial rows with values); 31 locators read against Chodosh (author page, 15 Sep 2025), White (arXiv:1308.3325v4), Simon23 and Simon21 (arXiv v2), all matching. Not readable: CM, ChoiSchoen, SY, Simons, Schoen. Automatic checks all pass; depcheck 210 roadmaps, 2262 edges, 0 problems; nothing outside the folder changes. Suggested.lean elaborates with 5 sorry warnings only; #check of 7 declarations, no lost binder; one-tactic probe closes none of the 5 theorems. Supplier citations resolved on main; overlap scopes read. One format note: 4.2 and 5.1 in Lean omit T2Space (statements remain true). Four facts for the human reviewers (licence class of Chodosh's page, Lynch preprint, no consumer of 7.8, CM untested).",
+  "text": "f9414966a5ade948"
+ }
+}
