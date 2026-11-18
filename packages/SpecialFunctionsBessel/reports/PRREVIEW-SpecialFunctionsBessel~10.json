@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsBessel~10",
+  "head": "8e37c6445f92623734056c35eb5d27fe7c8b6d0c",
+  "pr": 1987,
+  "folder": "SpecialFunctionsBessel",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 0,
+  "notes": "Full review. The eight findings of the previous review are repaired (the renumbering map only in the description). One P2 finding: 10.6 states DLMF 10.21.49 with 10.21.52 for nu >= 0, false at nu = 0 (index off by one, computed at lambda = 1.5 and 2). Sample: the 15 seeded targets, each recomputed with mpmath and read against 33 fetched DLMF sections; all 50 Lean theorems recomputed on instances. The six cited books could not be read legally. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 50 sorry warnings and no error; one-tactic probe closes none.",
+  "text": "c0d3e0fea42a8280"
+ }
+}
