@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MordellLawrenceVenkatesh~7",
+  "head": "3e917e803bd364852798406c645f22c65dd9e575",
+  "pr": 1231,
+  "folder": "MordellLawrenceVenkatesh",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review of the whole README (2855 lines) and Suggested.lean. Seeded sample of 15 targets verified: 19 LV20 locators against arXiv v3, 7 FM12 locators, 1 Mil-AV locator; GX13 readable only as a 28-page excerpt (not verifiable). Every Check and worked example of Layers 0-10 recomputed; adversarial table with computed values for the 15 sampled targets, the headline theorems 0.4, 4.5, 7.9, 10.10 and the targets the remarks touch. Library names of both contracts found at the pins (Mathlib 1b1ccf4, Tau Ceti 2fd255d), 9 opened by statement. 36 supplier roadmaps resolved by section (33 on main, 3 at open heads). Automatic checks: all passed; depcheck 213 roadmaps, 2304 edges, 0 problems; elaboration gives one sorry warning only; one-tactic probe does not close the theorem. Small corrections: stale pull request text, LV20 Lemma 6.4 cited for 3.4-3.5, pinned symplecticTransvection not cited in 0.14, four stale pointers. Format notes: LV.7 heading equals LV20 section 6 title, five targets without Needs, a suggested Check on the genus hypothesis.",
+  "text": "e1e7b5c71b1ef2cc",
+  "carried": {
+   "from": "3e917e803bd364852798406c645f22c65dd9e575",
+   "head": "32a0090d21ec30f9f090747f1c57e54f06ec384a",
+   "findings": 4,
+   "lines": 24,
+   "folders": [
+    "MordellLawrenceVenkatesh"
+   ],
+   "corrections": true
+  }
+ }
+}
