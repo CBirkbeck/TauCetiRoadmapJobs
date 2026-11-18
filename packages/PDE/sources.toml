@@ -9,3 +9,78 @@ locator = "Theorem 1.2"
 licence_class = "none"
 status = "waived"
 resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/3180#issuecomment-6632670027"
+
+[[source]]
+id = "bauer-pauly-schomburg"
+authors = "Sebastian Bauer, Dirk Pauly, Michael Schomburg"
+title = "The Maxwell Compactness Property in Bounded Weak Lipschitz Domains with Mixed Boundary Conditions"
+year = 2015
+venue = "SIAM J. Math. Anal., 48(4):2912-2943, 2016"
+arxiv = "1511.06697v4"
+locator_scheme = "theorem"
+locator = "Lemma 3.1"
+url = "https://arxiv.org/abs/1511.06697v4"
+fetched_from = "https://arxiv.org/pdf/1511.06697v4"
+fetched_at = "2026-11-18T08:58:17Z"
+sha256 = "5a3ef33c3d56efc156caec2a24023072dcbdb25bd3a80b629be6aa4b23b11f0b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v4"
+cited_for = ["1.8"]
+
+[[source]]
+id = "meyers-1963"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://www.numdam.org/item/ASNSP_1963_3_17_3_189_0/"
+fetched_from = "https://www.numdam.org/item/ASNSP_1963_3_17_3_189_0.pdf"
+fetched_at = "2026-11-18T09:02:53Z"
+sha256 = "51b7427520177d7b631bf725be4d2499956ad433e8b06dc557a426136f11f4c7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["5.2"]
+
+[[source]]
+id = "tao-dispersive"
+locator_scheme = "theorem"
+locator = "Theorem 2.3"
+url = "https://www.math.ucla.edu/~tao/preprints/chapter.pdf"
+fetched_from = "https://www.math.ucla.edu/~tao/preprints/chapter.pdf"
+fetched_at = "2026-11-18T09:03:02Z"
+sha256 = "7109de5b84fa92fe2109809e0b720903912b2f72a7796a725fb217df7e938a8f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["8.2"]
+
+[[source]]
+id = "krylov-vmo"
+arxiv = "math/0511731"
+locator_scheme = "theorem"
+locator = "Theorem 2.8"
+url = "https://arxiv.org/abs/math/0511731"
+fetched_from = "https://arxiv.org/pdf/math/0511731"
+fetched_at = "2026-11-18T09:03:33Z"
+sha256 = "d7e4da9c934c64969a8f2a516cdce7c3f093efe200f5753f02637423ee86bf61"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv, latest version"
+cited_for = ["5.2"]
+
+[[source]]
+id = "armstrong-kempe"
+arxiv = "2604.05984"
+locator_scheme = "theorem"
+locator = "holder_Moser"
+url = "https://arxiv.org/abs/2604.05984"
+fetched_from = "https://arxiv.org/pdf/2604.05984"
+fetched_at = "2026-11-18T09:03:52Z"
+sha256 = "5bb963f996132b4a183b4d053dba65cbf9d8a7925064335ff72292cfb1a2f38f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv, latest version"
+cited_for = ["5.4"]

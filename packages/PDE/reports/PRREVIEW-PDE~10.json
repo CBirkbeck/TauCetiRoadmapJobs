@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PDE~10",
+  "head": "96715846be1fccac5144c400c2eb9850ea4884b4",
+  "pr": 1614,
+  "folder": "PDE",
+  "date": "2026-11-18",
+  "findings": 7,
+  "blocking": 3,
+  "notes": "Full review. Previous R01 repaired (the bullet is gone), previous R02 (description) not repaired and raised again as R07. Findings: R01 P2 Poincare-Friedrichs and the coercive mixed problem are statable at the pins and absent, and the docstring's reason is false (TauCeti.W1p.frontierTrace exists at the pin); R02 P2 an API bullet of 1.8 false for a boundary part meeting the domain; R03 P2 the trace-characterization route uses a bi-Lipschitz change of variables nothing supplies; R04 P3 w1pVanishingOnSubmodule_empty restates a pinned theorem; R05 P3 Checks; R06 P3 locators missing in 1.8, 4.5, 4.6; R07 P3 description. Seeded sample of 15 targets computed in the adversarial table; 11 locators checked against bauer-pauly-schomburg, meyers-1963, tao-dispersive, krylov-vmo, armstrong-kempe; the books (Evans, Gilbarg-Trudinger, Stein, Grafakos and others) not verifiable. Gate passes (all checks 0); depcheck 0 problems; Suggested.lean elaborates with sorry the only warning (19); one-tactic probe closes none; both repair statements of R01 elaborate. For the humans: main's README names the Tau Ceti pin 358314d while the manifest pins 2fd255d, and main's 1.5-1.6 headlines have pinned counterparts; not this pull request's text.",
+  "text": "4b41d21eef82cf77"
+ }
+}
