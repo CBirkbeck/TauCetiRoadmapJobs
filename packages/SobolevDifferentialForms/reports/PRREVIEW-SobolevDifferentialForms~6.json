@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SobolevDifferentialForms~6",
+  "head": "e38f0b56c619d42575b357427502bddcdc85487d",
+  "pr": 1609,
+  "folder": "SobolevDifferentialForms",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 5 changed lines since e8a0ed0. Previous R01 repaired (K5a sentence deleted; no K5a or ComplexKahlerGeometry mention remains). Checked: the shortened Tau Ceti paragraph against Scope, section 1.2 and the codifferential convention (n=2, k=1 values in the table); pull request title and description against the head; gate all checks 0 OK; depcheck 0 problems, no UPWARD/CYCLE; lake env lean on Suggested.lean: 5 sorry warnings only; nothing changed outside the folder; overlap neighbours' scopes read, nothing shared. Seeded sample: only 1.1 and 1.2 depend on the change, via supplier names; no source locator added.",
+  "text": "3244ca4f1059f55d"
+ }
+}
