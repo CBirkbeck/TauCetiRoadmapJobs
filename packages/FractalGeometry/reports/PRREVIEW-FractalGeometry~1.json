@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FractalGeometry~1",
+  "head": "35491a70ba5f97f74be427d0db80cf64ebd596fe",
+  "pr": 2511,
+  "folder": "FractalGeometry",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review. Sources: both cited texts fetched from the authors' pages and all 51 locators read at the text (34 Bishop and Peres draft of 1 December 2015, 17 Hutchinson 1981 retyped), including the 15 sampled sections. Adversarial pass over every statement, Check and proof sketch with computed values (numerical Checks recomputed: 71 and 148 points for the harmonic set, 33 for the squares, 34 words and bound 64.04 for ratios (1/2, 1/4)). One finding (P2): the potential bound in the converse bullet of 3.3 is false for the normalised measure (K = [0, 1/10], s = 1: 1 against 1/4). One small correction: the Frostman route of 3.2 uses positivity of the Hausdorff content without naming it as an input. Library: 63 cited Mathlib names elaborated with #check at the pin, none unknown; no duplicate of the roadmap's objects in Mathlib, Tau Ceti, main or the open roadmap pull requests. Suggested.lean elaborates with 26 sorry warnings only; one-tactic probe closed 0 of 26 theorems; all summary headlines are stated. Automatic checks all passed; dependency check: 0 problems, Mathlib-only. Pull request text agrees with the head; no change outside the folder. For the human reviewers: the main source is a 2015 draft of a since-published book.",
+  "text": "9074a39b9a76c41c"
+ }
+}
