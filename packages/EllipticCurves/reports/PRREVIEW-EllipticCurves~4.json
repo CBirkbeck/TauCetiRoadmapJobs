@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurves~4",
+  "head": "2af7515b0a7cf528a14d4397e223145851b37b63",
+  "pr": 2483,
+  "folder": "EllipticCurves",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 93 changed lines since 1fe14b8. The three previous findings (R01 Tate uniformisation headline, R02 split reduction off discrete valuation rings, R03 Layer 4/5 order) are repaired with no new problem. Checked: the new headline tateUniformization_bijective_and_map_mul against the pinned TateCurve files (definition, coordinates, injectivity, equivariance, reduction under a DVR), its 2-torsion on Q_p and F_2((t)), its elaborated binders and one-tactic probes (not padding); the equation-level reduction of E_q (norms of a4, a6, c4, Delta, j; tangents of the node); the four cited pin names of the sampled 'Already in Tau Ceti' lines; ownership of the uniformisation across open and main roadmaps; the pull request's title and description against the head. Gate passes (all checks 0, build 0); lake env lean gives four sorry warnings only; depcheck 234 roadmaps, 2510 edges, 0 problems. Sources of the changed passages (ATAEC, Tate 1995, Roquette 1970) could not be read and are listed as not verifiable.",
+  "text": "f659af440160d186"
+ }
+}
