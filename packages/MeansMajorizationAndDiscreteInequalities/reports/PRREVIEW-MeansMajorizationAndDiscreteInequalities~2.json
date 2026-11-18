@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MeansMajorizationAndDiscreteInequalities~2",
+  "head": "8dc3a74e95bab35778760d2f8b820eb263dc14c1",
+  "pr": 2500,
+  "folder": "MeansMajorizationAndDiscreteInequalities",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 75 changed lines since f3fdd95. Checked: the four previous findings (R01-R04), two corrections and four format notes against this head, each repaired route recomputed on an instance (Hölder pair of 1.2, the maximal-total argument of 4.4, supporting-line approximation of 6.1, the klDiv form of 6.3 at the pinned Mathlib, Basic.lean lines 341 and 355); the three majorization definitions after the dropped section binder; the pull request's text against the head; automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with 44 sorry warnings only. No source could be read legally (all seven books paywalled), so no locator was verified. One small correction: the symbol for the affine minorant in the strong-form route of 6.1 lost its definition.",
+  "text": "07279a0ee949f0ab"
+ }
+}
