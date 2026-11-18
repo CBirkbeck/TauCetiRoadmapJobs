@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SerreModularityByCompatibleSystems~1",
+  "head": "40c8abe41b9fc9be0c3ad29f6343a472371dee0d",
+  "pr": 2514,
+  "folder": "SerreModularityByCompatibleSystems",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample of 15 targets checked against DP (arXiv v2), KW-I (authors' preprint), Khare level one (arXiv v1) and Serre 1987, plus the Pan, Tung (dyadic), Hu-Tan and Kisin locators of the dependency audit: all hold except Kisin's (2.2.17), which is a Corollary (C01). Khare 1997 could not be read legally. Adversarial table with computed values for every sampled target, the four Lean theorems and the overview. Finding R01 (P2): the overview's finite-flat, level-one and regular-systems sentences drop absolute irreducibility, oddness and the twist, with counterexamples 1+chi_p at N=1, the even S3 representation from Q(sqrt 229) mod 229, and a Tate twist. Dependency check: 0 problems. Suggested.lean elaborates with only sorry warnings; #check signatures match the README; the one-tactic probe closes nothing. The worker's automatic checks all passed. The citation resolver's 'no R15.4' lead was set aside (R15.4 is AlgebraicModularFormsAndSerreWeights Layer 4 by its numbering note). Ownership checked against the open heads of ClassicalSerreModularity, GL2ModularityLifting, CompletedCohomologyAndLocalGlobalCompatibility, PotentialModularityAndCompatibleSystems, ModularityAndLanglandsExtensions, #2517 and #2518.",
+  "text": "c4aad106e19f0009"
+ }
+}
