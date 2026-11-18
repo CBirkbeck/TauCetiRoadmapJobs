@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularityAndLanglandsExtensions~10",
+  "head": "123b48a7583c1b3926f78ada3b5709e9364161a4",
+  "pr": 1180,
+  "folder": "ModularityAndLanglandsExtensions",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 122 changed lines since 4c191e8. Checked: the previous R01, C01-C03 and N01, all repaired (sections 2.30 and 2.52 removed and mapped to EllipticCurveModularityImaginaryQuadratic 8.6 and its second part 2.5; the N2 bound read in BLGHT Theorem 6.4; the comparison with PotentialModularityAndCompatibleSystems 2.20; cyclic base change repointed to AutomorphicSpectralTheory 7.1; Lemma 8.3.2). Sampled targets falling in the change (2.13, 3.14, 4.33) read against BLGGT Prop. 3.1.1, BCGP and BCGNT Thm. 7.2.1; the new citations of SerreModularityByCompatibleSystems (four ids), AlgebraicModularFormsAndSerreWeights 5.10 and AutomorphicSpectralTheory 7.0a-7.1 resolved on main or at open heads; leftovers of the removed sections searched. Automatic checks all pass; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry the only warning; no change outside the folder. One small correction: the description does not state the removal of 2.30 and 2.52, which two open roadmaps still cite.",
+  "text": "3ab7e25f94f7158e",
+  "carried": {
+   "from": "123b48a7583c1b3926f78ada3b5709e9364161a4",
+   "head": "123b48a7583c1b3926f78ada3b5709e9364161a4",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
