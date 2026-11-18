@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MinimalSurfaces~12",
+  "head": "89b898c9cfc9803d3e41a9f2998df4861f73c604",
+  "pr": 2491,
+  "folder": "RiemannianGeometry/MinimalSurfaces",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review of the new 7.8 and the seeded sample. Locators read against the text: Simon23 (p. 3, 1.2, 4.12), Simon21 (1.1-1.5, 1.4, §3 p. 8), Chodosh (2.3, 3.3, 4.1, 6.1, 6.3, 6.4, 7.7, 8.1, 10.2, 10.4, 10.5, Prop. 26.1), Lynch (7.4), YangYau (10.4), CM4 (3.4). Not readable: CM, Simons, FCS, SY, ChoiSchoen, ChoiWang. Adversarial table: 41 rows with computed values. R01: the Reduction of 7.8 gives a negative or undefined kappa when c0 < 0 (totally geodesic H^2 in H^3, w = 1, c0 = -2, lambda = 1). Gate: all checks 0; depcheck 215 roadmaps, 2310 edges, 0 problems; Suggested.lean elaborates with 5 sorry warnings only; 7 signatures unchanged, no binder lost. Previous review (of another PR's head) had no findings.",
+  "text": "97625c652e93110f"
+ }
+}
