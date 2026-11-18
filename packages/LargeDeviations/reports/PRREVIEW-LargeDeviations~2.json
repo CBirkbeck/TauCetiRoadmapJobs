@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LargeDeviations~2",
+  "head": "34e511e60e10b4dec7a93053d573b23cafcb3f78",
+  "pr": 2499,
+  "folder": "LargeDeviations",
+  "date": "2026-11-18",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full re-review. The three findings and seven minor remarks of the previous review are repaired. Two new P2 findings: two Checks name the bound that holds as the one that fails (Layer 1 delta_0 Check, Layer 4 Cauchy Check), and the README states 2.1-2.5, 3.1 and the Polish half of 1.5 without the measurability of open sets that Suggested.lean assumes (2.1 is false without it; counterexample computed). Sample: all 15 seeded targets recomputed in the adversarial table; 9 locators into Anderson-Guionnet-Zeitouni Appendix D read and confirmed; Dembo-Zeitouni, Kallenberg, Klenke, Ellis (uncertified) and Dupuis-Ellis (no legal copy) not verifiable. Cited Tau Ceti and Mathlib declarations opened at the pins; cross-roadmap citations resolved on main and at the ConvexAnalysisAndDuality head. Dependency check: 0 problems, no UPWARD or CYCLE. Suggested.lean elaborates with 36 sorry warnings only; one-tactic probe closes none of the 36 theorems. Automatic checks: one form check (section comment with only #check lines under it) set aside as a false positive.",
+  "text": "ab17472f23ad26a8"
+ }
+}
