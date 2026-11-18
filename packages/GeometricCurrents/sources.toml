@@ -1,0 +1,55 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GeometricCurrents"
+
+[[source]]
+id = "LeuzingerYoung2017"
+authors = "Enrico Leuzinger, Robert Young"
+title = "Filling functions of arithmetic groups"
+year = 2017
+arxiv = "1710.00732v1"
+locator_scheme = "section"
+locator = "§2.4"
+url = "https://arxiv.org/abs/1710.00732v1"
+fetched_from = "https://arxiv.org/pdf/1710.00732v1"
+fetched_at = "2026-11-18T14:51:43Z"
+sha256 = "6f9518e36ffc66b53bb3403605a8095714e84e6304b8fd7341a6d5f40b2f1f97"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v1"
+cited_for = ["G3a"]
+
+[[source]]
+id = "RiedwegSchaeppi2009"
+authors = "Christian Riedweg, Daniel Schäppi"
+title = "Singular (Lipschitz) homology and homology of integral currents"
+year = 2009
+arxiv = "0902.3831v1"
+locator_scheme = "theorem"
+locator = "Definition 2.4"
+url = "https://arxiv.org/abs/0902.3831v1"
+fetched_from = "https://arxiv.org/pdf/0902.3831v1"
+fetched_at = "2026-11-18T14:51:48Z"
+sha256 = "a01c49a4cb8c4b219cf238718c22c99dc2fabb4c3cfae4d18cfa2ed672aff099"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v1"
+cited_for = ["G3a"]
+
+[[source]]
+id = "AmbrosioKirchheim2000"
+authors = "Luigi Ambrosio, Bernd Kirchheim"
+title = "Currents in metric spaces"
+year = 2000
+locator_scheme = "section"
+locator = "§9"
+url = "https://files-www.mis.mpg.de/mpi-typo3/preprints/2000/preprint2000_21.pdf"
+fetched_from = "https://files-www.mis.mpg.de/mpi-typo3/preprints/2000/preprint2000_21.pdf"
+fetched_at = "2026-11-18T15:29:14Z"
+sha256 = "0c9e3d4a25cf856d254ecd16ad898a6dd3f3085c328109a16761ffb033121165"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "Max Planck Institute MiS preprint no. 21/2000; section and formula numbers are those of this preprint"
+cited_for = ["G3a"]
