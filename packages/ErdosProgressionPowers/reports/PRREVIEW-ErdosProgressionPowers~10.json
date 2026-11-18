@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ErdosProgressionPowers~10",
+  "head": "a10fa87b929fcd93d8c7c8293efd10f2343346a8",
+  "pr": 1336,
+  "folder": "ErdosProgressionPowers",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review. Previous review raised no finding. Seeded sample of 15 targets and 8 headline theorems checked with computed values; 31 source locators read (BS20, ErdosSelfridge1975, DG95, Faltings1983, Platt2013v1, OpenAI2026); 38 library declarations opened at the pins; citations into 19 roadmaps resolved on main or at open heads. Erdős–Selfridge finite-range inequalities (17)-(20) recomputed for every k. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with eight sorry warnings only; one-tactic probe closes none. R01 (P2): the four declared gaps against AnalyticNumberTheoryPartI are owned by ExplicitPrimeCounting sections 3.2, 3.5, 4.3, 6.1 on main. Two source misprints recorded. Two scope questions for the human reviewers.",
+  "text": "b5c2e49deb4fa786"
+ }
+}
