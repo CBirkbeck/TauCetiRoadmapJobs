@@ -1,0 +1,32 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IgusaVarietiesAndTorsionConcentration~6",
+  "head": "24ecf8d3e53a773010f394c2a3a86dcb3805b547",
+  "pr": 1090,
+  "folder": "IgusaVarietiesAndTorsionConcentration",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 37 changed lines since 25763ac. Checked: R02 repaired (3.4 (3) upper semicontinuous, against cs17 Proposition 3.5.7 and Corollary 3.5.9); R01 deferred as D01 (the implication is removed from 7.2 and the scope section says it is not proved here); D01 and D02 stand; the previous C01, C03, C04, C05, N01, N02 are made. Sampled target in the change: 0.2 (split decomposition, computed). Changed locators read in cs17 (p. 728), csnc (Remarks 1.6-1.7) and ltxzz (D.1.1-D.1.3, arXiv pagination; published pages not verifiable). New supplier citations of 7.2 resolved on main (EndoscopicTransferAndUnitaryTraceComparison 13.1, ShimuraVarieties 6.7, SmoothRepresentationsOfLocalGroups SR.1). Automatic checks all pass; dependency check 0 problems; lake env lean on Suggested.lean gives no output (the file declares nothing). Adversarial table: 9 rows with computed values for the changed statements. Pull request text read against the head: nothing contradicted.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P1",
+    "title": "The implication of 7.2 from a decomposed-generic witness to cohomological genericity has no owner for its proof",
+    "where": "IgusaVarietiesAndTorsionConcentrationPartII target; SelmerIwasawaCohomologyPartII contract re-citation",
+    "raised": "PRREVIEW-IgusaVarietiesAndTorsionConcentration~5"
+   },
+   {
+    "id": "D02",
+    "severity": "",
+    "title": "C02: IgusaVarietiesAndTorsionConcentrationPartII's Scope and ownership (its README line 622) has to drop \"5.4\" and \"the rational constituent\", and also \"in the trace-comparison setting\", which H04 mak",
+    "where": "IgusaVarietiesAndTorsionConcentrationPartII, Scope and ownership sentence on the parent's §§5.1–5.4",
+    "raised": "PRREVIEW-IgusaVarietiesAndTorsionConcentration~5"
+   }
+  ],
+  "text": "b742a6ad91be5143"
+ }
+}
