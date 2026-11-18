@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LargeDeviations~1",
+  "head": "91b10e4b04a5951be68e470f222dd7f2f2652de8",
+  "pr": 2499,
+  "folder": "LargeDeviations",
+  "date": "2026-11-18",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review. Adversarial pass computed by hand over all 36 theorems and 12 definitions. Elaboration: 36 sorry warnings, no error. One-tactic probe on all 36 theorems: none closes with the file's imports; the 6.2 Borel statement closes by infer_instance once two pinned Tau Ceti modules are imported (R02). Dependency check: 0 problems. Sources: of the seeded sample only the Anderson-Guionnet-Zeitouni locators (Appendix D, 9 locators) could be read; Dembo-Zeitouni, Kallenberg, Klenke, Ellis are paywalled and Dupuis-Ellis was not found, so their locators are unverified. The sources service recorded five manifest entries while fetching. One automatic form check (section comment without a declaration) set aside as a false positive. Ownership searched on main and at the open heads by object.",
+  "text": "0549cf6ed69ccf4f"
+ }
+}

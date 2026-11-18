@@ -1,0 +1,75 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LargeDeviations"
+
+[[source]]
+id = "AGZ"
+locator_scheme = "theorem"
+locator = "Theorem D.4"
+url = "https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf"
+fetched_from = "https://www.wisdom.weizmann.ac.il/~zeitouni/cupbook.pdf"
+fetched_at = "2026-11-18T17:17:44Z"
+sha256 = "f4a7357f092445d4e8f2e8a97e6c1d9e08982259f00142986f4cdb0fa9a30cf6"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["1.5"]
+
+[[source]]
+id = "DemboZeitouni"
+authors = "Amir Dembo, Ofer Zeitouni"
+title = "Large Deviations Techniques and Applications"
+year = 2010
+venue = "Stochastic Modelling and Applied Probability"
+doi = "10.1007/978-3-642-03311-7"
+locator_scheme = "theorem"
+locator = "Theorem 2.2.3"
+url = "https://doi.org/10.1007/978-3-642-03311-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.3"]
+
+[[source]]
+id = "Kallenberg"
+authors = "Olav Kallenberg"
+title = "Foundations of Modern Probability"
+year = 2021
+venue = "Probability Theory and Stochastic Modelling"
+doi = "10.1007/978-3-030-61871-1"
+locator_scheme = "theorem"
+locator = "Theorem 24.10"
+url = "https://doi.org/10.1007/978-3-030-61871-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.2"]
+
+[[source]]
+id = "Klenke"
+authors = "Achim Klenke"
+title = "Probability Theory"
+year = 2020
+venue = "Universitext"
+doi = "10.1007/978-3-030-56402-5"
+locator_scheme = "theorem"
+locator = "Theorem 23.11"
+url = "https://doi.org/10.1007/978-3-030-56402-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.3"]
+
+[[source]]
+id = "Ellis"
+authors = "Richard S. Ellis"
+title = "Entropy, Large Deviations, and Statistical Mechanics"
+year = 2006
+venue = "Classics in Mathematics"
+doi = "10.1007/3-540-29060-5"
+locator_scheme = "theorem"
+locator = "Theorem II.3.3"
+url = "https://doi.org/10.1007/3-540-29060-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.2"]
