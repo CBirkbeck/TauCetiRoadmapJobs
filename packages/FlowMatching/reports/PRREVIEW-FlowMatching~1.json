@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FlowMatching~1",
+  "head": "2a73dce59b4940cc34085c41ff5816bf9e1b9987",
+  "pr": 2501,
+  "folder": "FlowMatching",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. All 14 sampled targets and the 4 headline theorems instantiated on degenerate and closed-form cases (adversarial table in the report); 11 of 11 source locators read in 6 arXiv texts, one misprint in albergo2023 (28) confirmed; 13 Mathlib and 15 Tau Ceti declarations opened at the pins; supplier sections of OptimalTransport, DenoisingDiffusion, DiracScatteringAndNonlinearFourierTransform, StochasticCalculus and DifferentialGeometry resolved on main; dependency check 0 problems; Suggested.lean elaborates with 16 sorry warnings only; one-tactic probe closes none of the 16 theorems; automatic checks all passed, none set aside. Small corrections: digits of the numerical Check of 5.2, joint measurability of the score in 3.1, the Gronwall lemma cited in 1.1 and 1.2. For the humans: scope (machine-learning sources), overlap with open IncompressibleFlows on Liouville's formula, the author's repository named as provenance.",
+  "text": "c749738701002de5"
+ }
+}

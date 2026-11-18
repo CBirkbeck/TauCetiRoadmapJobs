@@ -1,0 +1,110 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FlowMatching"
+
+[[source]]
+id = "lipman2023"
+authors = "Yaron Lipman, Ricky T. Q. Chen, Heli Ben-Hamu, Maximilian Nickel, Matt Le"
+title = "Flow Matching for Generative Modeling"
+year = 2022
+arxiv = "2210.02747v2"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/2210.02747v2"
+fetched_from = "https://arxiv.org/pdf/2210.02747v2"
+fetched_at = "2026-11-18T17:37:20Z"
+sha256 = "5eeb39ba516396924aba4787452f9d0abdee88467a4d0c264d9f66cad0c5ee14"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v2"
+cited_for = ["2.1"]
+
+[[source]]
+id = "liu2022"
+authors = "Xingchao Liu, Chengyue Gong, Qiang Liu"
+title = "Flow Straight and Fast: Learning to Generate and Transfer Data with Rectified Flow"
+year = 2022
+arxiv = "2209.03003v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.3"
+url = "https://arxiv.org/abs/2209.03003v1"
+fetched_from = "https://arxiv.org/pdf/2209.03003v1"
+fetched_at = "2026-11-18T17:37:26Z"
+sha256 = "d81790cb6988ef480002adcc84000d4f44855b11fb868001fd53aad133bc3a74"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v1"
+cited_for = ["3.2"]
+
+[[source]]
+id = "albergo2023"
+authors = "Michael S. Albergo, Eric Vanden-Eijnden"
+title = "Building Normalizing Flows with Stochastic Interpolants"
+year = 2022
+arxiv = "2209.15571v3"
+locator_scheme = "theorem"
+locator = "Proposition 4"
+url = "https://arxiv.org/abs/2209.15571v3"
+fetched_from = "https://arxiv.org/pdf/2209.15571v3"
+fetched_at = "2026-11-18T17:37:32Z"
+sha256 = "73875aac701bc4ab7c0250afc898ef75dd21ee1b97d9a838cc8b48d8fbc42124"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v3"
+cited_for = ["3.1"]
+
+[[source]]
+id = "benton2024"
+authors = "Joe Benton, George Deligiannidis, Arnaud Doucet"
+title = "Error Bounds for Flow Matching Methods"
+year = 2023
+arxiv = "2305.16860v2"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/2305.16860v2"
+fetched_from = "https://arxiv.org/pdf/2305.16860v2"
+fetched_at = "2026-11-18T17:37:36Z"
+sha256 = "507c441bc918b1a556b4b2a9bbb3634d14ee4dddda4aff868ec37c2016dc14ea"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v2"
+cited_for = ["5.2"]
+
+[[source]]
+id = "chen2018"
+authors = "Ricky T. Q. Chen, Yulia Rubanova, Jesse Bettencourt, David Duvenaud"
+title = "Neural Ordinary Differential Equations"
+year = 2018
+arxiv = "1806.07366v6"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1806.07366v6"
+fetched_from = "https://arxiv.org/pdf/1806.07366v6"
+fetched_at = "2026-11-18T17:39:08Z"
+sha256 = "32195e2c86f3886279395e93b8b99f2e5d242cb6306eaf2b239ed68b66bce151"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v6"
+cited_for = ["1.5"]
+
+[[source]]
+id = "song2021"
+authors = "Yang Song, Jascha Sohl-Dickstein, Diederik P. Kingma, Abhishek Kumar, Stefano Ermon, Ben Poole"
+title = "Score-Based Generative Modeling through Stochastic Differential Equations"
+year = 2020
+arxiv = "2011.13456v2"
+locator_scheme = "theorem"
+locator = "Appendix D.1"
+url = "https://arxiv.org/abs/2011.13456v2"
+fetched_from = "https://arxiv.org/pdf/2011.13456v2"
+fetched_at = "2026-11-18T17:39:15Z"
+sha256 = "b244b740e60628d01bc3d4b98d721c2343be1fb9b67ad22593c8555e66f4d4a6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v2"
+cited_for = ["4.1"]
