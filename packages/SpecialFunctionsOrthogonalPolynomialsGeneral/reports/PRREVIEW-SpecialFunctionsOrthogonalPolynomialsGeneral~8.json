@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsOrthogonalPolynomialsGeneral~8",
+  "head": "0925e01cacb3ae98346b787923afd8eb18aeddce",
+  "pr": 2192,
+  "folder": "SpecialFunctionsOrthogonalPolynomialsGeneral",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 94 changed lines since 94e88bc. Checked: the five previous findings (R01-R04 repaired, R05 partly: Szegő cited without page, now a format note); the changed passages of 1.3, 2.3, 3.3, 5.3, 5.5, 5.6, 5.7, 8.1, 9.3, 10.2 recomputed (seven adversarial rows with values); DLMF 18.2(xii) read at the text for the new sentence of 5.7; seeded sample where it falls in the change (1.3, 2.3); automatic checks all pass; dependency check 0 problems; elaboration gives 71 sorry warnings and nothing else; pull-request text against the head (two small corrections: LaguerreJacobi is on main, Szegő missing from the source list). Szegő (1975) and the cited books were not legally readable.",
+  "text": "de5ee4027fbf6cb6"
+ }
+}
