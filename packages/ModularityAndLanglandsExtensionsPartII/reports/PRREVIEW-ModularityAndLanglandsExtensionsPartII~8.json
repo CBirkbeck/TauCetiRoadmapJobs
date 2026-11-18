@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularityAndLanglandsExtensionsPartII~8",
+  "head": "bd1490f26e0f3fc5afebdf42e09c49fcb983c705",
+  "pr": 2449,
+  "folder": "ModularityAndLanglandsExtensionsPartII",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "incremental re-review of 145 changed lines since 47ed7fa. Checked the four new targets (13.11-13.13, 14.6) against nt26 Theorem A and Theorem 6.5 with proof, th24 Theorem 8.1 and Proposition 8.3, nt21b Corollary B, nt21 Corollary C and ct17 Proposition 7.6; the seeded sample where it falls in the change (13.12); the newly cited supplier sections at their heads or on main (ModularityAndLanglandsExtensions 4.15, 4.17, 4.22, 4.42; AutomorphicGaloisRepresentations 3.10-3.14, 4.3-4.7; EllipticCurveModularity R29.6; EndoscopicTransferAndUnitaryTraceComparison 6.24, 6.26-6.29; AutomorphicLFunctionsAndLocalFactors AL.2.4.1). Deferred finding D01 is resolved at the parent's open head, which no longer states the theorems proved here. Automatic checks all passed; dependency check 0 problems; Suggested.lean unchanged and elaborates with sorry as the only warning; no change outside the folder. Four small corrections: stale sentence of the description about the parent, missing twist step in the sketch of 13.12, pointer 4.42 for 4.33, Lean docstring omits the new non-statable headlines.",
+  "text": "a8a841a2fe30e129",
+  "carried": {
+   "from": "bd1490f26e0f3fc5afebdf42e09c49fcb983c705",
+   "head": "285d1db4893b30b32c425047dafd5d4b1a71dc92",
+   "findings": 4,
+   "lines": 21,
+   "folders": [
+    "ModularityAndLanglandsExtensionsPartII"
+   ],
+   "corrections": true
+  }
+ }
+}
