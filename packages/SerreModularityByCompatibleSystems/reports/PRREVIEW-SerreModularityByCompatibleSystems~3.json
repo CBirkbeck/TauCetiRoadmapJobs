@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SerreModularityByCompatibleSystems~3",
+  "head": "272ffeb990bb0c7b0e8f2f8285dee349b0d51c8c",
+  "pr": 2514,
+  "folder": "SerreModularityByCompatibleSystems",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review at the head the previous review read. The 15 sampled targets were read against Dieulefait-Pacetti (arXiv v2), Khare-Wintenberger I (authors' preprint), Khare (arXiv v1) and Serre 1987 at their locators; the cited forms of the lifting theorems were opened in Kisin, Hu-Tan, Tung, Paskunas and Pan. 38 source locators correct. Adversarial table of 25 rows with computed values (weights p+3, 9, 3; N = 406561 prime with its congruences; the order-three lattice matrices; tau(11) mod 11; N' convention). 85 cross-roadmap citations resolved at the open heads of ClassicalSerreModularity, GL2ModularityLifting, CompletedCohomologyAndLocalGlobalCompatibility and on main. Dependency check: 0 problems. Automatic checks all passed. Suggested.lean elaborates with only the four sorry warnings; #check of all 16 declarations matches the README; one-tactic probe closes none of the four theorems. Small corrections: description omits the twist in Theorem 10.1(i) (open since the previous review); the general Theorem 1.9(4) is attributed to ClassicalSerreModularity I.3, which states only Khare-Wintenberger's four prescriptions (sufficient for every use); 'repeats unchanged' holds for four of twelve Lean names. Format note: 'Definition 2.1' is Khare-Wintenberger's. Not read: Kh97, KW-II, Skinner-Wiles. One licence question for the human reviewers.",
+  "text": "f6ea3eca8b0f6564",
+  "carried": {
+   "from": "272ffeb990bb0c7b0e8f2f8285dee349b0d51c8c",
+   "head": "1e6aeecb1d8febfe378b79d9033a4c4d8b1af40d",
+   "findings": 3,
+   "lines": 13,
+   "folders": [
+    "SerreModularityByCompatibleSystems"
+   ],
+   "corrections": true
+  }
+ }
+}

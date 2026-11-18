@@ -1,0 +1,159 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SerreModularityByCompatibleSystems"
+
+[[source]]
+id = "DP"
+authors = "Luis Victor Dieulefait, Ariel Martín Pacetti"
+title = "A simplified proof of Serre's Conjectures"
+year = 2021
+arxiv = "2108.07577v2"
+locator_scheme = "theorem"
+locator = "sample"
+url = "https://arxiv.org/abs/2108.07577v2"
+fetched_at = "2026-11-18T21:16:31Z"
+sha256 = "0c6850dafda032f7a4008947c519b5aef8cc13762207bb67c36810170a8eebe6"
+licence_class = "operator-local"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["sample"]
+
+[[source]]
+id = "Kh"
+authors = "Chandrashekhar Khare"
+title = "On Serre's modularity conjecture for 2-dimensional mod p representations of G_Q unramified outside p"
+year = 2005
+arxiv = "math/0504080v1"
+locator_scheme = "theorem"
+locator = "sample"
+url = "https://arxiv.org/abs/math/0504080v1"
+fetched_from = "https://arxiv.org/pdf/math/0504080v1"
+fetched_at = "2026-11-18T21:16:37Z"
+sha256 = "3012a51759ad10695792bc8a2d1af75890f38d6ebacd37fb61e01bfdb89c9c2f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v1"
+cited_for = ["sample"]
+
+[[source]]
+id = "KW-I"
+locator_scheme = "theorem"
+locator = "sample"
+url = "https://www.math.ucla.edu/~shekhar/papers/results.pdf"
+fetched_from = "https://www.math.ucla.edu/~shekhar/papers/results.pdf"
+fetched_at = "2026-11-18T21:16:40Z"
+sha256 = "3c389dc33e09fe847f5d8189ffd8915b5c1a73424e64e4fed6769829883bad82"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["sample"]
+
+[[source]]
+id = "Se87"
+locator_scheme = "theorem"
+locator = "sample"
+url = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL5835292064138487263_Serre_Repr.modulaires_Galois.pdf"
+fetched_from = "https://www.college-de-france.fr/media/jean-pierre-serre/UPL5835292064138487263_Serre_Repr.modulaires_Galois.pdf"
+fetched_at = "2026-11-18T21:20:19Z"
+sha256 = "8048919db24dcb972435aaaa2a74d1168d0fe533af3aa26c6c809b12ddaee038"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["S1"]
+
+[[source]]
+id = "KiFM"
+locator_scheme = "theorem"
+locator = "sample"
+url = "https://www.ams.org/journals/jams/2009-22-03/S0894-0347-09-00628-6/S0894-0347-09-00628-6.pdf"
+fetched_from = "https://www.ams.org/journals/jams/2009-22-03/S0894-0347-09-00628-6/S0894-0347-09-00628-6.pdf"
+fetched_at = "2026-11-18T21:20:21Z"
+sha256 = "0bb3747bfa3f4738160be3addf9e61aab98945e8ff232e313bba8a0017c2c2a1"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["S1"]
+
+[[source]]
+id = "HT"
+authors = "Yongquan Hu, Fucheng Tan"
+title = "The Breuil-Mezard conjecture for non-scalar split residual representations"
+year = 2013
+arxiv = "1309.1658v2"
+locator_scheme = "theorem"
+locator = "sample"
+url = "https://arxiv.org/abs/1309.1658v2"
+fetched_at = "2026-11-18T21:20:23Z"
+sha256 = "d36f237d7269e9dac7d32d80f1e4d6fe5c20b210ae067075b2dedb51e73d9bb2"
+licence_class = "operator-local"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["S1"]
+
+[[source]]
+id = "TuA"
+authors = "Shen-Ning Tung"
+title = "On the automorphy of 2-dimensional potentially semi-stable deformation rings of $G_{\\mathbb{Q}_p}$"
+year = 2018
+arxiv = "1803.07451v4"
+locator_scheme = "theorem"
+locator = "sample"
+url = "https://arxiv.org/abs/1803.07451v4"
+fetched_at = "2026-11-18T21:20:25Z"
+sha256 = "22017bc9beb585c2aae5421d2fe1a8a9049d8a93e4f8bb8cf684149616db1ba2"
+licence_class = "operator-local"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["S1"]
+
+[[source]]
+id = "Paš16"
+authors = "Vytautas Paskunas"
+title = "On 2-dimensional 2-adic Galois representations of local and global fields"
+year = 2015
+venue = "Algebra Number Theory 10 (2016) 1301-1358"
+doi = "10.2140/ant.2016.10.1301"
+arxiv = "1509.00332v2"
+locator_scheme = "theorem"
+locator = "sample"
+url = "https://doi.org/10.2140/ant.2016.10.1301"
+fetched_at = "2026-11-18T21:20:29Z"
+sha256 = "727addeb49ee302052a493cf097a868a70c340286981598b5e7382fcd8f86749"
+licence_class = "operator-local"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["S1"]
+
+[[source]]
+id = "TuB"
+authors = "Shen-Ning Tung"
+title = "On the modularity of 2-adic potentially semi-stable deformation rings"
+year = 2019
+venue = "Math. Z. (2020)"
+doi = "10.1007/s00209-020-02588-4"
+arxiv = "1908.06174v3"
+locator_scheme = "theorem"
+locator = "sample"
+url = "https://doi.org/10.1007/s00209-020-02588-4"
+fetched_at = "2026-11-18T21:20:32Z"
+sha256 = "a601da3762c35dab9ebdac5fb5106f1e3f627304dfc2390ac43fe2ac862c6de8"
+licence_class = "operator-local"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["S1"]
+
+[[source]]
+id = "Pan"
+authors = "Lue Pan"
+title = "The Fontaine-Mazur conjecture in the residually reducible case"
+year = 2019
+arxiv = "1901.07166v2"
+locator_scheme = "theorem"
+locator = "sample"
+url = "https://arxiv.org/abs/1901.07166v2"
+fetched_at = "2026-11-18T21:20:38Z"
+sha256 = "590171129d28a65749cf92b1f6099dbacaa90cc6698828f0a4dfd3da943f4824"
+licence_class = "operator-local"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["S1"]
