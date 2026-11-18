@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComparisonSortingAndSelection~1",
+  "head": "c77dad1fe8070aa789516f4f8549fdb9c01a8719",
+  "pr": 2522,
+  "folder": "ComparisonSortingAndSelection",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample of 15 targets plus all headline theorems recomputed (values in the table); 23 locators read in Erickson Lectures 12-13, CMU 15-451 Lectures 5-6 and Lang's four pages, all supporting the statements; Knuth and the four primary papers not read (listed under Not verifiable). 26 library declarations opened at the pins. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 22 theorems; definitions evaluated on the README's Checks. Dependency check: 0 problems. Automatic checks all passed; none set aside. The sources service recorded eight entries in the package's sources.toml when the texts were fetched. One P2 finding: a false justification in the route of 4.4 (the theorem itself holds).",
+  "text": "10b12e534828bbdc"
+ }
+}

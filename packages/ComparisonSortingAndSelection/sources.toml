@@ -1,0 +1,106 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ComparisonSortingAndSelection"
+
+[[source]]
+id = "Erickson12"
+locator_scheme = "section"
+locator = "12.5"
+url = "https://jeffe.cs.illinois.edu/teaching/algorithms/notes/12-lowerbounds.pdf"
+fetched_from = "https://jeffe.cs.illinois.edu/teaching/algorithms/notes/12-lowerbounds.pdf"
+fetched_at = "2026-11-18T23:33:03Z"
+sha256 = "0269c477c7dbca41671813bc1949912f15e92a07836ec6c6c83547c55870137f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["2.1"]
+
+[[source]]
+id = "Erickson13"
+locator_scheme = "section"
+locator = "13.7"
+url = "https://jeffe.cs.illinois.edu/teaching/algorithms/notes/13-adversary.pdf"
+fetched_from = "https://jeffe.cs.illinois.edu/teaching/algorithms/notes/13-adversary.pdf"
+fetched_at = "2026-11-18T23:33:04Z"
+sha256 = "8d899d7172c16c7e9bde5b1d11a08dd5ff7052835a7982f00f8679ee7899dadc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["3.2"]
+
+[[source]]
+id = "CMU451L5"
+locator_scheme = "section"
+locator = "Theorem 5.1"
+url = "https://www.cs.cmu.edu/~avrim/451f11/lectures/lect0913.pdf"
+fetched_from = "https://www.cs.cmu.edu/~avrim/451f11/lectures/lect0913.pdf"
+fetched_at = "2026-11-18T23:33:06Z"
+sha256 = "943e817cbf27474d3a78fa704e34fcf3ffa42cfbc17766227a072751ef6367e9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["2.1"]
+
+[[source]]
+id = "CMU451L6"
+locator_scheme = "section"
+locator = "6.4"
+url = "https://www.cs.cmu.edu/~avrim/451f11/lectures/lect0915.pdf"
+fetched_from = "https://www.cs.cmu.edu/~avrim/451f11/lectures/lect0915.pdf"
+fetched_at = "2026-11-18T23:33:08Z"
+sha256 = "14827b5c48f45d66bf621b317f8635f9220e84791776a68b5ff1637bd82055d9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["3.3"]
+
+[[source]]
+id = "LangNetworks"
+locator_scheme = "section"
+locator = "definitions"
+url = "https://hwlang.de/algorithmen/sortieren/networks/sortieren.htm"
+fetched_from = "https://hwlang.de/algorithmen/sortieren/networks/sortieren.htm"
+fetched_at = "2026-11-18T23:33:37Z"
+sha256 = "fc78d1c5ebf2b19a6af744b94dc3497d4dee651c66ede8a10368eb5964128865"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["4.1"]
+
+[[source]]
+id = "LangZeroOne"
+locator_scheme = "section"
+locator = "Theorem"
+url = "https://hwlang.de/algorithmen/sortieren/networks/nulleinsen.htm"
+fetched_from = "https://hwlang.de/algorithmen/sortieren/networks/nulleinsen.htm"
+fetched_at = "2026-11-18T23:33:37Z"
+sha256 = "58f87d7b04a7758aeffe11803de493d13b02da25cbd9a43a0f6c3c1db3a0c511"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["4.2"]
+
+[[source]]
+id = "LangOETS"
+locator_scheme = "section"
+locator = "Proposition"
+url = "https://hwlang.de/algorithmen/sortieren/networks/oetsen.htm"
+fetched_from = "https://hwlang.de/algorithmen/sortieren/networks/oetsen.htm"
+fetched_at = "2026-11-18T23:33:37Z"
+sha256 = "b1efb1fa99331716818f5493bbce262783b0f0acd68ad3e6dff799c44cf35155"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["5.3"]
+
+[[source]]
+id = "LangOEM"
+locator_scheme = "section"
+locator = "Correctness"
+url = "https://hwlang.de/algorithmen/sortieren/networks/oemen.htm"
+fetched_from = "https://hwlang.de/algorithmen/sortieren/networks/oemen.htm"
+fetched_at = "2026-11-18T23:33:37Z"
+sha256 = "c6010da1ba78542fab4fff6b15ca2c9dc85858311bcfbe10f4801d03eb6d2946"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["4.5"]
