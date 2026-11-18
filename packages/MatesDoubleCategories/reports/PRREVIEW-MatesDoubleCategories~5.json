@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MatesDoubleCategories~5",
+  "head": "ed022504da466b22ec8e8f54db9e96e9abe1c74b",
+  "pr": 2299,
+  "folder": "MatesDoubleCategories",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "incremental re-review of 0 changed lines since ed02250. The files are unchanged; the rewritten pull-request title and description were checked claim by claim against the head and repair the previous R01 (walking adjunction, 2-cell dual, sources, simplex suppliers now stated). Computed: endpoint-preserving hom counts and the cut map against SimplexCategory.II.map' in Lean; the identity-adjunction mate formula proved in a scratch file; absence of the 2-cell dual at the Mathlib pin (Bicategory/Opposites.lean 23-29); M1.4 not a prerequisite of M3. Gate: every check 0, targeted build passes; depcheck 0 problems; elaboration: sorry the only warning. Not verified: the linked GitHub run and the author's local FreeBicategory check; Kelly-Street uncertified.",
+  "text": "1bf9647a3b2b58b2"
+ }
+}
