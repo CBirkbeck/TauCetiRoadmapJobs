@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeometricCurrents~3",
+  "head": "e520d0770997fdce7f899a1ec10c038524f8e97b",
+  "pr": 2490,
+  "folder": "GeometricCurrents",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 95 changed lines since e612e6f. Checked: the previous R01 (FV Lipschitz bound now for L > 0, with a degree-one Check), C01 (CalibratedGeometry anchor), C02 (G1 cites Tau Ceti's constancy theorem and criterion) and N01 (GeometricTopology Layer 11.3), all repaired and resolved at the pins and on main; the new Bombieri-De Giorgi-Giusti statement perimeter_simonsRegion_le and simonsRegion, elaborated with only the sorry warning, #check @ compared with the README, the one-tactic probe, and the degenerate cases computed; ownership searched by object on main, at the open heads and in Tau Ceti; seeded sample: the filling-volume locator LeuzingerYoung2017 p. 16 re-read, the chains and mass locators unchanged; the gate and the dependency check rerun (all pass, 0 problems); wording of the added lines compared with the three cached sources. One small correction: the BDG theorem has no source citation.",
+  "text": "4eeaf2deaf60eb9d"
+ }
+}
