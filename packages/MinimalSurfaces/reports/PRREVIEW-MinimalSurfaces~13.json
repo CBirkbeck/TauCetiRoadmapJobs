@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MinimalSurfaces~13",
+  "head": "cd32a39497b61f97f6d72e5dbd99a9f708546eea",
+  "pr": 2491,
+  "folder": "RiemannianGeometry/MinimalSurfaces",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 28 changed lines since 89b898c. All six earlier remarks are repaired (R01, C01-C04, N01). R01: the 7.8 Reduction now assumes c0 >= 0, checked on totally geodesic H2 in H3 (kappa = 1/2 with c0 = 0, lambda = 2), on the Simons cone (kappa = 1/50) and on the hyperplane (kappa = 1/8 <= 1/5); no generality lost. C01: the without-boundary convention was checked against Simon23 p. 3 and on the half-plane Check. C02/C03: Chodosh Proposition 26.1 (p. 64) and Theorem 23.2 (p. 60) were read in the author's notes; their normalisation and terms match. The description was checked against the head and is correct. Gate OK, all checks 0; depcheck: 214 roadmaps, 2297 edges, 0 problems; lake env lean: 5 sorry warnings only; #check of the 7 declarations is unchanged. Ownership of strict stability and the cone criterion was re-searched on main and the open heads: single owner.",
+  "text": "f9414966a5ade948"
+ }
+}
