@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularity~7",
+  "head": "ed6ed861636cbf17914c4818e458c2d7fe21d0b9",
+  "pr": 1018,
+  "folder": "EllipticCurveModularity",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 5,
+  "notes": "Full review of the folder. Seeded sample (Hauptmodul relations, 15-isogeny boundary, curve-level residual attachment, conductor specialization, R29.1, exhaustive Gamma0 decomposition, elliptic coefficient summability) verified at 21 locators in 9 sources; Cremona Chapter II and Carayol were fetched from legal open copies; Silverman, Faltings and Miyake were not read. Adversarial table of 19 rows with recomputed values (model table, j-values, point counts, 7-division polynomial of 162b1, number-field coefficients). 19 library declarations opened at the pins; supplier sections of 16 roadmaps resolved, the load-bearing ones read. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 12 theorems. Dependency check: 0 problems, no UPWARD or CYCLE. All automatic checks passed at this head; none set aside. Left to the human reviewers: existence rests only on EllipticCurveModularityTotallyReal 4.4, whose main sources are unrefereed drafts of October 2026; the Provenance section's external formalisation was not opened.",
+  "text": "3cf7e72594c2efcc",
+  "carried": {
+   "from": "ed6ed861636cbf17914c4818e458c2d7fe21d0b9",
+   "head": "03423203f81c9ff3b6fdc2a9c7721623dcc1c3db",
+   "findings": 5,
+   "lines": 23,
+   "folders": [
+    "EllipticCurveModularity"
+   ],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C02: at its open head (`b6dc827`), `TauCetiRoadmap/EllipticCurveModularityTotallyReal/README.md` lines 38–41 (\"obtains from classical Serre modularity; that roadmap does not use this case\") and lines ",
+    "where": "EllipticCurveModularityTotallyReal README, its Summary and \"Outside this roadmap\" paragraph",
+    "raised": "PRREVIEW-EllipticCurveModularity~7"
+   }
+  ]
+ }
+}
