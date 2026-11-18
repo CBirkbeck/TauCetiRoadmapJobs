@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsTheta~4",
+  "head": "33b0c5febb4518eae228160e882dbf847d715c99",
+  "pr": 2252,
+  "folder": "SpecialFunctionsTheta",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 39 changed lines since fabbcea. Both previous points (R01 the 7.6 generating set, R02 the layer dependency lines) are repaired. Recomputed in genus 2 at the README's test point: the law for theta[M#m] over Sp4(Z) on all 16 characteristics (160 cases, eighth powers 1 to 2.5e-14), the action M# modulo 1 (1600 cases), the new Check (quotient e^{-i pi/4}, det 0.3+1.2i), the orders 36, 72 and 720 modulo 2, and the genus-one S and T cases. Automatic checks all pass, targeted build included; depcheck 0 problems; Suggested.lean elaborates with 36 sorry warnings and no error; library names of the new dependency lines opened at the pins; title and description agree with the head. Seeded sample: no target falls in the changed passages. Not verifiable: Mumford Ch. II Prop. A4 p. 208 and Prop. A5 p. 210 (paywalled); the README's statement about Prop. A4 is put to the author as a question and to the human reviewers.",
+  "text": "d1fdcdc44039823d"
+ }
+}
