@@ -1,0 +1,51 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MordellLawrenceVenkatesh"
+
+[[source]]
+id = "LV20"
+authors = "Brian Lawrence, Akshay Venkatesh"
+title = "Diophantine problems and $p$-adic period mappings"
+year = 2018
+arxiv = "1807.02721v3"
+locator_scheme = "theorem"
+locator = "Theorem 8.1"
+url = "https://arxiv.org/abs/1807.02721v3"
+fetched_from = "https://arxiv.org/pdf/1807.02721v3"
+fetched_at = "2026-11-18T17:24:31Z"
+sha256 = "e3013516c1123635f0373cd5b623eafa3d816f043ee54760dec724d329bc6b9b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v3"
+cited_for = ["10.9"]
+
+[[source]]
+id = "Mil-AV"
+locator_scheme = "theorem"
+locator = "Chapter I, Proposition 10.1"
+url = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/AV.pdf"
+fetched_at = "2026-11-18T17:32:41Z"
+sha256 = "f5ca4e63e5092a4b102daad1470e4cbed5fe8f82115e3a28c8881e3f67f6aaef"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["8.9"]
+
+[[source]]
+id = "GX13"
+authors = "Jean Gallier, Dianna Xu"
+title = "The Classification Theorem for Compact Surfaces"
+year = 2013
+venue = "Geometry and Computing"
+doi = "10.1007/978-3-642-34364-3_6"
+locator_scheme = "theorem"
+locator = "Theorem 6.1"
+url = "https://www.cis.upenn.edu/~jean/surfclass-n.pdf"
+fetched_from = "https://www.cis.upenn.edu/~jean/surfclass-n.pdf"
+fetched_at = "2026-11-18T17:33:02Z"
+sha256 = "2097a30ed2950e155044344ee4c55cf3bb410b930c0b42e81b82d677a9fb9e0d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["5.4"]
