@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsBessel~11",
+  "head": "862c4860114293ddef7f31f45ac1c90059183379",
+  "pr": 1987,
+  "folder": "SpecialFunctionsBessel",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 70 changed lines since 8e37c64. Checked: the previous finding R01 (10.6, cross-product zeros at nu = 0) and small corrections C01-C05, all repaired; the corrected 10.6 recomputed with mpmath at nu = 0, 0.01, 0.3, 5, 10 and lambda = 1.1, 1.5, 2, 3; DLMF 9.12.22-9.12.23 recomputed, the latter as a principal value; DLMF 10.18, 10.21(x), 9.12(vii) read at the cited equations; the changed citations of SpecialFunctionsParabolicCylinder 9.6, SpecialFunctionsAiry, SpecialFunctionsHypergeometric and SpecialFunctionsLegendre resolved; the Former numbering table checked row by row; the pull request text read against the head. The seeded sample does not fall in the changed passages. Automatic checks all passed; dependency check 0 problems; Suggested.lean (unchanged) elaborates with 50 sorry warnings and no error. Six cited books not readable legally (left to the human reviewers).",
+  "text": "503bb391e409308e"
+ }
+}
