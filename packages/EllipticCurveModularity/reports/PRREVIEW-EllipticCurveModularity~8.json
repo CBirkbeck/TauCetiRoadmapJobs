@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularity~8",
+  "head": "03423203f81c9ff3b6fdc2a9c7721623dcc1c3db",
+  "pr": 1018,
+  "folder": "EllipticCurveModularity",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 6,
+  "notes": "incremental re-review of 23 changed lines since ed6ed86. Checked: the four changed README passages and the removal of two unused definitions from Suggested.lean; the previous C03, C04, C05 repaired, C01 repaired in the description, C02/D01 resolved at the supplier's head 4588f93; title and description read against the head (one paragraph out of date, C01); seven model-table rows and the 5-isogeny parameters of 11a1, 11a2, 11a3 recomputed; dependency check 0 problems; Suggested.lean elaborates with 12 sorry warnings only; automatic checks all passed. Seeded sample falls outside the changed passages except the cyclic-subgroup passage of R29.1, checked.",
+  "text": "a35e08540ab19376",
+  "carried": {
+   "from": "03423203f81c9ff3b6fdc2a9c7721623dcc1c3db",
+   "head": "03423203f81c9ff3b6fdc2a9c7721623dcc1c3db",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
