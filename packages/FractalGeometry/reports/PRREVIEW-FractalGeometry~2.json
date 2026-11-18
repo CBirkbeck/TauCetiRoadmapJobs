@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FractalGeometry~2",
+  "head": "796bb9a75d63d1670e7b16a2e81c5d1cdb8376ae",
+  "pr": 2511,
+  "folder": "FractalGeometry",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 17 changed lines since 35491a7. Checked: R01 repaired (potential bound of 3.3 recomputed on K = [0, 1/10] and K = [0, 1] with s = 1, t = 1/2; range k >= k0, t = 0 and one-point cases); C01 repaired (new cover bullet of 3.2 checked for s > 0 and s = 0 and against the route). Both locators of the changed passages (Bishop and Peres, Proposition 1.2.6 and Theorem 3.4.2(i)) read in the draft's text. No duplication at the pins or in other roadmaps. Automatic checks all passed; dependency check 0 problems; Suggested.lean (unchanged) elaborates with 26 sorry warnings only. Pull request text agrees with the head; nothing changed outside the folder.",
+  "text": "9074a39b9a76c41c"
+ }
+}
