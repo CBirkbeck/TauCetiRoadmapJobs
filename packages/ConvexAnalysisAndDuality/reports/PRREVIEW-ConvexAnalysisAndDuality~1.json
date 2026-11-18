@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ConvexAnalysisAndDuality~1",
+  "head": "28da47706003b9c920ab797ee4b4f76731f9e328",
+  "pr": 2498,
+  "folder": "ConvexAnalysisAndDuality",
+  "date": "2026-11-18",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 4,
+  "format_notes": 4,
+  "notes": "Full review. Adversarial pass over all 45 theorems and 15 definitions with computed instances; the first conjunct of 3.7 refuted in Lean at the pins on [0,1] in R (Mathlib's tangentConeAt is two-sided). Seeded sample: 14 locators into Boyd-Vandenberghe and Rockafellar-Wets read at the text (author-hosted copies) and agree; the seven other books (Bauschke-Combettes, Borwein-Lewis, Borwein-Vanderwerff, Hiriart-Urruty-Lemarechal I and II, Schneider, Simon) had no legal copy and are listed as not verifiable. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes no theorem; dependency check reports 0 problems; no change outside the folder. Duplication audit found Minkowski-Weyl for cones on main (ScatteringDiagrams 1.1) and a second definition of essential smoothness in the open LargeDeviations roadmap. Two automatic form checks flagged (a pull-request number in the README, a heading over #check lines), both real, reported as format notes.",
+  "text": "1b87232faf40fad7"
+ }
+}
