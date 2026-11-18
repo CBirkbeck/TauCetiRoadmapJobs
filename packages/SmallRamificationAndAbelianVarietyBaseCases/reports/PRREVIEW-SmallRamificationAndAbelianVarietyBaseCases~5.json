@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SmallRamificationAndAbelianVarietyBaseCases~5",
+  "head": "31d7cdb5dcf3ba9b89fd945f1e9128bfe60375cc",
+  "pr": 2517,
+  "folder": "SmallRamificationAndAbelianVarietyBaseCases",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample (1.2, 1.5, 1.6, 2.0, 3.2, 3.3, 3.4, 4.7, 5.1, 5.2, 5.3, 5.6, 5.7, 5.10, 6.1): 54 README locators checked in 14 sources (Schoof, Dieulefait-Pacetti, Snowden, Khare-Wintenberger preprint and Annals, Odlyzko survey with page 122 rendered, Fontaine, Khare, Moon-Taguchi, Mazur, Jones, Fesenko-Vostokov, Ghitza-Yamauchi, Faber), with Poitou's DPP expose also read for the 1.5 remark. Adversarial pass with computed values: Poitou bound and all 13 rows of the 1.9 degree table recomputed numerically, the Minkowski thresholds, the char-2/char-3 different bounds and their sharp examples, the five field criteria, and the 5.10 Serre-weight cases checked against AlgebraicModularFormsAndSerreWeights 4.3. Automatic checks all passed; depcheck 211 roadmaps, 2271 edges, 0 problems; lake env lean gives only the 13 sorry warnings; 31 signatures compared with the README. Consumer citations checked at the open heads of SerreModularityByCompatibleSystems and ClassicalSerreModularity. Corrections: incomplete notes on later users (S3 needs 5.6, S4 needs 5.9; 5.0d and 5.1 have further users) and two over-broad sentences in the description. Format note: the code-font name RankTwoOrdinaryEndpoints is declared nowhere. Human question: licence of the Annals PDF host.",
+  "text": "bf7671b3a7cfec5b"
+ }
+}
