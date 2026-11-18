@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassicalSerreModularity~7",
+  "head": "1123d34ce6089d79b37f6b87271a941ddda8de09",
+  "pr": 1020,
+  "folder": "ClassicalSerreModularity",
+  "date": "2026-11-18",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review of a repaired head. The three findings of the previous review are repaired; three new findings, all P2 and all about ownership: the twist-two vanishing is a target of AnabelianGeometryAndNonabelianChabauty on main, the nearly ordinary Hecke algebras are also planned in the open PadicFamilies, and the soluble base change is the totally real case of a lemma GL2ModularityLifting states in general. Seeded sample of 15 targets checked against the texts of 16 sources (52 locators); Kisin's Durham paper could not be read. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with the sorry warning only; lemma_8_2 closes under no one-tactic probe; library declarations and cross-roadmap citations resolved at the pins, on main and at open heads.",
+  "text": "22bbec5e013285c0"
+ }
+}

@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ClassicalSerreModularity"
+
+[[source]]
+id = "CHT"
+authors = "Laurent Clozel, Michael Harris, Richard Taylor"
+title = "Automorphy for some l-adic lifts of automorphic mod l Galois representations"
+year = 2008
+venue = "Publications Mathématiques de l'IHÉS 108, 1–181"
+doi = "10.1007/s10240-008-0016-1"
+locator_scheme = "theorem"
+locator = "Lemma 4.1.2"
+url = "https://www.numdam.org/item/10.1007/s10240-008-0016-1.pdf"
+fetched_from = "https://www.numdam.org/item/10.1007/s10240-008-0016-1.pdf"
+fetched_at = "2026-11-18T23:18:57Z"
+sha256 = "9d3b7079440d8cd3167812bb11c25ae4b51ada973b2e98f0928624254a60156c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["I.0/soluble-totally-real-base-change"]
