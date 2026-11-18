@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsHigherOrderAndResampling~1",
+  "head": "8d88927df2236ae4d7f1e7561c6c9647f61b736f",
+  "pr": 2504,
+  "folder": "MathematicalStatisticsHigherOrderAndResampling",
+  "date": "2026-11-18",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. R01 (P1): the subsampling coverage theorem of 7.2 is false under continuity of J at its quantile alone (explicit counterexample). R02 (P2): the Kolmogorov distance of 1.1 is also built by ArithmeticStatisticsPartVIII section 5.14 (open pull request #1179, earlier in the merge order). Seeded sample of 15 targets: the Durrett locators of 2.1, 2.2, 2.3 (and 3.1) were read in the author's online copy and agree, printed pages not checkable; all other cited books are paywalled and listed under Not verifiable, their statements checked by computation. Adversarial table of 32 rows with computed values; about fifty numerical Checks recomputed. Automatic checks: dependency check 0 problems, Suggested.lean elaborates with 50 sorry warnings only, no set_option, no change outside the folder; the one form check that failed (a section header over #check lines only) is format note N01; none set aside. One-tactic probe run on a scratch copy. Supplier sections of MathematicalStatisticsFoundations and MathematicalStatisticsAsymptotic resolved on main. Two points for the human reviewers (Hall unreadable; relation to the author's lean-CKSD).",
+  "text": "9d3c7a9021bd33e2"
+ }
+}
