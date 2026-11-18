@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LangevinAndHamiltonianMonteCarlo~1",
+  "head": "8c1ebcdfa5910df12d6c9a3a24c60f83779e834b",
+  "pr": 2503,
+  "folder": "LangevinAndHamiltonianMonteCarlo",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Sample: all 15 seeded sections plus every other statement, each recomputed by hand (adversarial table, 20 rows). 31 source locators read in six sources (five arXiv preprints, Tierney's technical report), all agree. 36 cited library declarations opened at the pins. Cross-roadmap citations resolved on main. Dependency check: 0 problems. Automatic checks all passed; Suggested.lean elaborates with 23 sorry warnings only; one-tactic probe closes none of the 23 theorems. Numerical Checks recomputed: one value in the third Check of 4.1 is false (R01, P2), the only finding. One small correction (uncited Tau Ceti symplectic Hamiltonian-flow declarations), two format notes, two items for the human reviewers.",
+  "text": "141c268307cc223a"
+ }
+}
