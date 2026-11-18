@@ -1,0 +1,45 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "BooleanFunctionAnalysis"
+
+[[source]]
+id = "ODonnell"
+arxiv = "2105.10386"
+locator_scheme = "theorem"
+locator = "Theorem 9.28"
+url = "https://arxiv.org/abs/2105.10386"
+fetched_from = "https://arxiv.org/pdf/2105.10386"
+fetched_at = "2026-11-18T23:03:22Z"
+sha256 = "624b33577351086b7d8140d288af81ea9d60150ee1e56c5645060a45b4c9acb6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv, latest version"
+cited_for = ["5.4"]
+
+[[source]]
+id = "GarbanSteif"
+arxiv = "1102.5761"
+locator_scheme = "theorem"
+locator = "Theorem I.2"
+url = "https://arxiv.org/abs/1102.5761"
+fetched_from = "https://arxiv.org/pdf/1102.5761"
+fetched_at = "2026-11-18T23:03:40Z"
+sha256 = "fb1c1b1381c6cfe089b5038832f8c98e9800b09241835b69e931f7cfee822ea1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv, latest version"
+cited_for = ["5.3"]
+
+[[source]]
+id = "deWolf"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://theoryofcomputing.org/articles/gs001/gs001.pdf"
+fetched_from = "https://theoryofcomputing.org/articles/gs001/gs001.pdf"
+fetched_at = "2026-11-18T23:04:16Z"
+sha256 = "d407329baa25c3ff37d39d180006432361c8ee091ad238859f817c6d2ba0a56d"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["4.2"]
