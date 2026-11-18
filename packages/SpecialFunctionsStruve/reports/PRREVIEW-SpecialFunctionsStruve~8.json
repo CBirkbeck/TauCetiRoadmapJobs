@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsStruve~8",
+  "head": "912afcdf9b10af01e53a2fc2cd2eb8cecec8ef22",
+  "pr": 2129,
+  "folder": "SpecialFunctionsStruve",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "incremental re-review of 87 changed lines since 9961786. Checked: the four previous findings (all repaired); the two new Suggested.lean statements, numerically at regular and exceptional parameters (Lommel recurrence in mu for S, the S_{0,nu} integral), their elaborated signatures against README 2.2 and 3.3, and a one-tactic padding probe; the new supplier contract against SpecialFunctionsGeneralizedHypergeometric 1.3-1.4 at its open head (no cycle); the pull request description against the head; automatic checks all pass; dependency check 0 problems; elaboration exit 0 with 28 sorry warnings only. Seeded sample: its targets 1.2, 1.3, 2.2, 3.3 fall in the change only through Needs lines and suggested names; book locators remain unreadable (not verifiable). Two small corrections, none blocking.",
+  "text": "48cd945921b818de"
+ }
+}
