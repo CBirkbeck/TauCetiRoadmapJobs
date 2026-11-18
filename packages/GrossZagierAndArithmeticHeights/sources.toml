@@ -582,3 +582,126 @@ status = "certified"
 accessed = "2026-10-22"
 version_note = "Published IMRN version; institutional EPFL copy. The CDN fetch URL is recorded without its expiring query."
 cited_for = ["0a.5", "9.4", "9.6", "9.7", "9.8", "9.9", "9.10", "9.11", "9.16", "Dependencies"]
+
+[[source]]
+id = "YZZ09"
+authors = "Xinyi Yuan, Shou-Wu Zhang and Wei Zhang"
+title = "The Gross–Kohnen–Zagier theorem over totally real fields"
+year = 2009
+venue = "Compositio Mathematica 145 (2009), 1147–1162"
+doi = "10.1112/S0010437X08003734"
+locator_scheme = "theorem"
+locator = "Theorem 1.3, p. 1150; Proposition 3.1, pp. 1157–1158; §4.1, pp. 1158–1159"
+url = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/355/9138-GKZ.pdf"
+fetched_from = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/355/9138-GKZ.pdf"
+fetched_at = "2026-11-18T21:04:29Z"
+sha256 = "e9b686d8cf4be822c45eed63a6fdff024099abbc163a91f920c3403fb9b5f82b"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["6.20a"]
+
+[[source]]
+id = "KM90"
+authors = "Stephen S. Kudla and John J. Millson"
+title = "Intersection numbers of cycles on locally symmetric spaces and Fourier coefficients of holomorphic modular forms in several complex variables"
+year = 1990
+venue = "Publications Mathématiques de l'IHÉS 71 (1990), 121–172"
+locator_scheme = "theorem"
+locator = "Theorem 2, p. 126"
+url = "http://www.numdam.org/item/PMIHES_1990__71__121_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1990__71__121_0.pdf"
+fetched_at = "2026-11-18T21:04:30Z"
+sha256 = "10fb9322b4e24c502ed69580e5b16167d6b96b7a4c28caf5fc1a77daff2cb44c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["6.20a"]
+
+[[source]]
+id = "VZ84"
+authors = "David A. Vogan and Gregg J. Zuckerman"
+title = "Unitary representations with nonzero cohomology"
+year = 1984
+venue = "Compositio Mathematica 53 (1984), 51–90"
+locator_scheme = "theorem"
+locator = "Theorem 8.1, p. 88"
+url = "http://www.numdam.org/item/CM_1984__53_1_51_0/"
+fetched_from = "https://www.numdam.org/item/CM_1984__53_1_51_0.pdf"
+fetched_at = "2026-11-18T21:04:31Z"
+sha256 = "ccaaf5ad243ccb85d3db629ff7677ca5b80b7e2d71e502d21fa1b773863b78a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["6.20a"]
+
+[[source]]
+id = "Bor98"
+authors = "Richard E. Borcherds"
+title = "Automorphic forms with singularities on Grassmannians"
+year = 1996
+venue = "Invent. Math. 132, 491-562 (1998)"
+doi = "10.1007/s002220050232"
+arxiv = "alg-geom/9609022v2"
+locator_scheme = "theorem"
+locator = "Theorem 13.3, p. 48 (arXiv v2 pagination)"
+url = "https://arxiv.org/abs/alg-geom/9609022v2"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9609022v2"
+fetched_at = "2026-11-18T21:04:44Z"
+sha256 = "f0e76c70f57e63bb145b36ca97635312bb906787f4c521015acc03781c7702ba"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v2"
+cited_for = ["6.20a"]
+
+[[source]]
+id = "Bor99"
+authors = "Richard E. Borcherds"
+title = "The Gross-Kohnen-Zagier theorem in higher dimensions"
+year = 1997
+venue = "Duke mathematical journal, vol 97 no. 2 (1999) 219-233, Correction Duke math journal vol 105 No. 1 (2000) p.183-184."
+arxiv = "alg-geom/9710002v3"
+locator_scheme = "theorem"
+locator = "§2, p. 3; Theorem 3.1, p. 5; Theorem 4.1 and its proof, pp. 7–8; Lemmas 4.3–4.4, pp. 8–9; Theorem 4.5, p. 9; remark on the central action, p. 10 (arXiv v3 pagination)"
+url = "https://arxiv.org/abs/alg-geom/9710002v3"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9710002v3"
+fetched_at = "2026-11-18T21:04:49Z"
+sha256 = "0a7a76a69aa2532534b72d97a1bb9fad89cab8167f1449dad0363510feb2fc5d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v3"
+cited_for = ["6.20a"]
+
+[[source]]
+id = "McGraw03"
+authors = "William J. McGraw"
+title = "The rationality of vector valued modular forms associated with the Weil representation"
+year = 2003
+venue = "Mathematische Annalen 326"
+doi = "10.1007/s00208-003-0413-1"
+locator_scheme = "theorem"
+locator = "Main theorem, pp. 105–122"
+url = "https://doi.org/10.1007/s00208-003-0413-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.20a"]
+
+[[source]]
+id = "Del79"
+authors = "Pierre Deligne"
+title = "Variétés de Shimura: interprétation modulaire, et techniques de construction de modèles canoniques"
+year = 1979
+venue = "Automorphic Forms, Representations and L-functions, Proc. Sympos. Pure Math. 33, part 2, Amer. Math. Soc. (1979), 247–290"
+locator_scheme = "theorem"
+locator = "Proposition 2.3.10, pp. 272–273"
+url = "https://publications.ias.edu/sites/default/files/34_VarietesdeShimura.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/34_VarietesdeShimura.pdf"
+fetched_at = "2026-11-18T21:07:03Z"
+sha256 = "591ee837c4c87e5263b76427b393742e111d615c6e098c940f132519a0861922"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["6.20a"]

@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GrossZagierAndArithmeticHeights~10",
+  "head": "9489bba0cfb01be469b3f4da30120a86b0443bcb",
+  "pr": 1487,
+  "folder": "GrossZagierAndArithmeticHeights",
+  "date": "2026-11-18",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review. Seeded sample of 15 targets read at their locators (47 locators in 15 sources, five of them fetched for the new section 6.20a); adversarial table with computed values for the sample, the headline formulas and 6.20a. Findings: R01 (P2) canonical model of the GSpin datum over F0 != Q cited to a Hodge-type section; R02 (P2) orthogonal Borcherds product also owned by ComplexMultiplicationAndExplicitReciprocityPartII 4.2a (pull request 1695). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe does not close the single theorem. Not read: yzz-book and yzz-draft (waived), argos and blr (uncertified), McGraw03 (paywalled).",
+  "text": "fcd3240444cbf943"
+ }
+}
