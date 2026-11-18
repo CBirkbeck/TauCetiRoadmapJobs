@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurves~3",
+  "head": "1fe14b8f49f9bc1a80a7acb19296d395066e9e94",
+  "pr": 2483,
+  "folder": "EllipticCurves",
+  "date": "2026-11-18",
+  "findings": 3,
+  "blocking": 2,
+  "notes": "Full review. All six findings of the previous review are repaired. Gate at this head: every check 0, build OK; Suggested.lean elaborates with three sorry warnings only; depcheck 236 roadmaps, 2534 edges, 0 problems. Seeded sample checked: Weil pairing (orientation value recomputed over F4, pin convention read), function-field foundation, No schemes / Out of scope / Complex uniformisation, Already in Tau Ceti (355 backticked names and 101 paths looked up at the pins); Pinned sources and the mathlib pull requests not looked up. Source locators read: Sutherland18783, MilneADT, BHKSSW (11 locators); AEC not readable. Findings: R01 (P2) the Tate uniformisation is called proved at the pin, which proves neither additivity nor surjectivity, and the statable headline is absent; R02 (P2) split reduction of the Tate curve over a non-discrete field rests on reduction predicates no layer owns ('upstream prerequisite'); R03 (P3) Layer 4 Dependencies name a dependency on Layer 5 with no consuming target, against 'dependency order'. One-tactic probes close none of the three declarations.",
+  "text": "5fc478ea3eda8877"
+ }
+}
