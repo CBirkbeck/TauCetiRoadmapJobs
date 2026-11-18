@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HiddenMarkovModels~1",
+  "head": "bac618741c05d7d0b5bc32ebca68b08a4628d7f6",
+  "pr": 2495,
+  "folder": "HiddenMarkovModels",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. Sample: all 15 sections 1.1-6.2; 30 of 30 van Handel 2008 locators read at the text, Rabiner 1989 (12 locators) paywalled and not verifiable. Every README Check recomputed in exact arithmetic; theorems of Layers 2-6 tested on about 7000 random models with zero probabilities. 50 library declarations opened at the pins; 4 cross-roadmap citations resolved on main. Suggested.lean elaborates with only sorry warnings (24); one-tactic probe closes none; signatures compared. Dependency check: 0 problems. Automatic checks all passed. One source gap recorded (van Handel, proof of Theorem 5.4).",
+  "text": "8520a8f09c185211"
+ }
+}
