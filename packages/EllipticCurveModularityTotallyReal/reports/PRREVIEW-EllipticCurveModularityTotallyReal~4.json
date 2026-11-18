@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularityTotallyReal~4",
+  "head": "b6dc827ec85f2cce1f9b9d34c532592c4cd6839c",
+  "pr": 2185,
+  "folder": "EllipticCurveModularityTotallyReal",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 24 changed lines since a433195. Checked: R01 of the previous report (the four passages about EllipticCurveModularity) is repaired and agrees with that roadmap's open head (existence from ClassicalSerreModularity R27.6 via R29.2-R29.3, local factors R29.4, parametrisation and functional equation R29.5-R29.6, no mention of this roadmap); the previous small correction to the description is repaired; BCDT01 line 15 and LeHung26 line 86 read at their locators; the case K = Q of 4.4 recomputed (d = 1, p = 101, n = 303, degree 100). Automatic checks rerun: all pass; dependency check 0 problems; targeted build and direct elaboration succeed with two sorry warnings only (the worker's build had been killed by a signal, set aside). Acceptance conditional on the three declared supplier gaps; scope and licence of the two unrefereed main sources left to the human reviewers.",
+  "text": "f0c718d1c4ec0501"
+ }
+}
