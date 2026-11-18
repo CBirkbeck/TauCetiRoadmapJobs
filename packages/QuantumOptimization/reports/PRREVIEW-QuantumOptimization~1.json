@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuantumOptimization~1",
+  "head": "ebff77f025e30f67bc98a3fb3267a1d4ec273b54",
+  "pr": 2505,
+  "folder": "QuantumOptimization",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample of 15 targets plus the headline theorems recomputed by hand and by exact state-vector simulation (closed form of 5.5 on 40 random graphs, 5.6 on five 3-regular graphs, locality at depths 1-3, penalty thresholds by brute force, the Goemans-Williamson constant). 31 source locators read in six texts (Lucas, Williamson-Shmoys web edition, Jansen-Ruskai-Seiler v3, Farhi-Goldstone-Gutmann v1, Wang et al. v2, Childs et al. v3); Goemans-Williamson 1995, Kato 1950 and Rosenberg 1975 could not be read. 38 library declarations opened at the pins. Suggested.lean elaborates with 32 sorry warnings only; the one-tactic probe closes none. Dependency check: 0 problems. The automatic checks all passed and none was set aside. The single finding (P2) is a false sentence in the proof sketch of 2.2 for u = -v; no stated result is affected.",
+  "text": "04f2cf3a4e28c87f"
+ }
+}
