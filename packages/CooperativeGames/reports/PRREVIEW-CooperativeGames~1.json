@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CooperativeGames~1",
+  "head": "bf2aa321115dc6472af4b90b982340941f6add73",
+  "pr": 2492,
+  "folder": "CooperativeGames",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. All 28 source locators read at their place in 7 sources (the fifteen sampled sections included; three RAND scans read by OCR from archived publisher copies). Every theorem and Check recomputed, with brute-force checks on small games (convexity equivalence, dividend formulas, core of 0-1 set functions, Shapley-Shubik and Banzhaf values) and degenerate cases (empty player set, v(empty) nonzero, m = 0, a = b). 20 supplier declarations opened at the pins. Dependency check: 0 problems. Suggested.lean elaborates with 22 sorry warnings only; one-tactic probe closes none. Automatic checks all passed. Two small corrections (oscillation bound in 6.2 off by a factor 2; named results without references), two format notes, four notes for the human reviewers.",
+  "text": "157d56a8c325d51c"
+ }
+}
