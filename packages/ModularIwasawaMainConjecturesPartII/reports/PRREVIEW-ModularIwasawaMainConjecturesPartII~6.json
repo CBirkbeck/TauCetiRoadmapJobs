@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ModularIwasawaMainConjecturesPartII~6",
+  "head": "953523b76bbfcb35729ad207526fdffdd49d1546",
+  "pr": 2281,
+  "folder": "ModularIwasawaMainConjecturesPartII",
+  "date": "2026-11-18",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review of the repaired head. Seeded sample of 15 targets (0.2, 1.2, 1.4, 2.3, 2.4, 2.5, 4.1, 4.2, 4.4, 4.5, 4.8, 6.2, 7.3, 7.6, 8.1) checked against BT, JLK, Kato and Rubin91 at their locators; about 50 locators read; the Kronecker Check of 2.3 recomputed numerically; 78 cross-roadmap citations and 14 library declarations resolved at main, the open heads and the pins. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates and has no declaration. R01 (P1): Euler factor of 4.6 twisted opposite to the smoothing factor of 4.5. R02 (P2): Check of 4.5 on J_chi at the trivial character false when the cyclotomic character is nontrivial on Delta. Not verifiable: Itakura 3.1 (Tamagawa number statement at p = 2).",
+  "text": "653ab70f4ec55329"
+ }
+}
