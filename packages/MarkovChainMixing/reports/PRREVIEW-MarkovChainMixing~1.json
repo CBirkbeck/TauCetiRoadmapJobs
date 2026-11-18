@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MarkovChainMixing~1",
+  "head": "dbbd41068ee1496020e4ab06e2eae32c0c6f5344",
+  "pr": 2502,
+  "folder": "MarkovChainMixing",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. All 33 source locators (Levin-Peres, second edition, authors' copy) read against the text, including the 15 sampled targets; every theorem, definition and Check recomputed on degenerate and small cases (exact rational arithmetic for the cycle, hypercube, top-to-random and colouring chains); 37 library declarations opened at the pins; 10 cross-roadmap citations resolved on main; Suggested.lean elaborates with sorry as the only warning; all 56 elaborated signatures compared with the README; one-tactic probe closes none of the 38 theorems; dependency check 0 problems; automatic checks all passed, none set aside. Two small corrections (one sentence of the description; the Needs line of 6.4) and two format notes. For humans: single-source roadmap; source read from the authors' page.",
+  "text": "fdfdedc6e727dac3"
+ }
+}
