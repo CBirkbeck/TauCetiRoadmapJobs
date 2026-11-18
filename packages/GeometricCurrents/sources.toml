@@ -53,3 +53,37 @@ status = "certified"
 accessed = "2026-11-18"
 version_note = "Max Planck Institute MiS preprint no. 21/2000; section and formula numbers are those of this preprint"
 cited_for = ["G3a"]
+
+[[source]]
+id = "BombieriDeGiorgiGiusti1969"
+authors = "Enrico Bombieri, Ennio De Giorgi, Enrico Giusti"
+title = "Minimal cones and the Bernstein problem"
+year = 1969
+doi = "10.1007/BF01404309"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0007/LOG_0026.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0007/LOG_0026.pdf"
+fetched_at = "2026-11-18T22:22:58Z"
+sha256 = "1254f8a3e4c4af4f3b455e89ea4c50e4b843b9456f670694061caebca7220bc3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["G7"]
+
+[[source]]
+id = "DePhilippisPaolini2009"
+authors = "Guido De Philippis, Emanuele Paolini"
+title = "A short proof of the minimality of Simons cone"
+year = 2009
+doi = "10.4171/RSMUP/121-14"
+locator_scheme = "theorem"
+locator = "Proposition 2.1"
+url = "https://numdam.org/item/RSMUP_2009__121__233_0/"
+fetched_from = "https://www.numdam.org/item/RSMUP_2009__121__233_0.pdf"
+fetched_at = "2026-11-18T22:23:17Z"
+sha256 = "8bd4be371246fb9dd55f3288e13a17066f6c5c288740a44d2eb2ea5d77f7b6aa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["G7"]
