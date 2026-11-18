@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FaltingsFinitenessAndIsogenyTheorems~6",
+  "head": "d663a7761c26d15ad795994b3619afa125956a6e",
+  "pr": 1004,
+  "folder": "FaltingsFinitenessAndIsogenyTheorems",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 7,
+  "format_notes": 3,
+  "notes": "Full review. Sample: the five seeded targets checked at their locators in Milne's notes, Yu's paper and Deligne-Mumford (all pages right; Milne III 6.6 covers only pointed curves), plus 12 Faltings 1983 page locators from the OCR text; the 1984 erratum and the other sources were not read. Adversarial pass computed on 23 statements. All supplier citations resolved on main or at the open head of AbelianSchemesAndArithmeticModuliPartII; R01 is a double ownership with ArakelovGeometryAndAbelianHeights sections 5.5, 5.6, 6.4 on main. Automatic checks all passed and none was set aside; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; the one-tactic probe closes none of the 10 theorems.",
+  "text": "2435f2a9abde7018"
+ }
+}
