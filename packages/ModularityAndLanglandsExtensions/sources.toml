@@ -216,3 +216,21 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-18"
 cited_for = ["4.17"]
+
+[[source]]
+id = "cg-2018"
+authors = "Frank Calegari, David Geraghty"
+title = "Modularity Lifting beyond the Taylor-Wiles Method"
+year = 2012
+arxiv = "1207.4224v2"
+locator_scheme = "section"
+locator = "§10, proof of Theorem 1.1"
+url = "https://arxiv.org/abs/1207.4224v2"
+fetched_from = "https://arxiv.org/pdf/1207.4224v2"
+fetched_at = "2026-11-18T15:59:20Z"
+sha256 = "67896c853258801967270f8927e5bb33c0315989d3a4188d53435a9305993ebb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v2"
+cited_for = ["2.31"]
