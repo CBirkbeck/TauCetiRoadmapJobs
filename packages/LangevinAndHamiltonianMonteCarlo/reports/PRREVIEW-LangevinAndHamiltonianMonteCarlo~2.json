@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LangevinAndHamiltonianMonteCarlo~2",
+  "head": "fec023a2729808bdbe15913c62bf72901ff4f1b5",
+  "pr": 2503,
+  "folder": "LangevinAndHamiltonianMonteCarlo",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 36 changed lines since 8c1ebcd. Previous R01 repaired: the flow value of the third Check of 4.1 recomputed by quadrature (0.5043097 for both flows, acceptance 0.75098). Previous C01, N01, N02 repaired: the five Tau Ceti symplectic declarations now cited were opened at the pin and agree in name, file and hypotheses; no measure-preservation statement for Hamiltonian flows at the pin. Automatic checks all passed; Suggested.lean elaborates with 23 sorry warnings only; dependency check 0 problems; no change outside the folder; pull request text consistent with the head. Two facts left for the human reviewers (Liouville's theorem also in the open HamiltonianSystems; the author's linked repository).",
+  "text": "141c268307cc223a"
+ }
+}
