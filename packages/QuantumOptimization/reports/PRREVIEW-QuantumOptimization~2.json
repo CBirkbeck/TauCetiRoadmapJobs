@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuantumOptimization~2",
+  "head": "ddd83af1f5d778f5864234ee2749076bc40d58c5",
+  "pr": 2505,
+  "folder": "QuantumOptimization",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 18 changed lines since ebff77f. Checked: the previous finding R01 (proof sketch of 2.2) is repaired, recomputed at theta = pi/3, u = v and u = -v; the previous small correction and two of the three format notes are repaired (the 1.4 sentence recomputed on a path with A = 2, B = 1; BanachAlgebras 2.1 read on main; the sentence on splitting schemes checked by a search of every roadmap on main). Seeded sample where it falls in the change: 2.2 (Williamson-Shmoys locators unchanged, the web edition could not be extracted this round, they stand as read before) and the Lucas locator of 1.4 read at Section 4.2, equations (30)-(32). Automatic checks all passed, none set aside; dependency check 0 problems; Suggested.lean (unchanged) elaborates with 32 sorry warnings only. Overlap lists read, including the newly listed ApproximationGuarantees: its cut weight on Sym2-weighted graph edges is a different form in a later pull request, reported to the human reviewers. One small correction (the description's list of boundaries omits BanachAlgebras 2.1) and one format note carried over, neither blocking.",
+  "text": "04f2cf3a4e28c87f"
+ }
+}
