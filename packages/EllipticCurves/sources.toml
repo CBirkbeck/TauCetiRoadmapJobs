@@ -1,0 +1,39 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EllipticCurves"
+
+[[source]]
+id = "BHKSSW"
+authors = "Jennifer S. Balakrishnan, Wei Ho, Nathan Kaplan, Simon Spicer, William Stein, James Weigandt"
+title = "Databases of elliptic curves ordered by height and distributions of Selmer groups and ranks"
+year = 2016
+venue = "LMS J. Comput. Math. 19 (2016) 351-370"
+doi = "10.1112/S1461157016000152"
+arxiv = "1602.01894v2"
+locator_scheme = "section"
+locator = "2"
+url = "https://arxiv.org/abs/1602.01894v2"
+fetched_from = "https://arxiv.org/pdf/1602.01894v2"
+fetched_at = "2026-11-18T04:20:19Z"
+sha256 = "f6f453a1cdb680e1b9da523380d10c12bf79d64e784ad114d1ef5eae40ba74fa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+version_note = "arXiv v2"
+cited_for = ["Layer 8"]
+
+[[source]]
+id = "MilneADT"
+authors = "J. S. Milne"
+title = "Arithmetic Duality Theorems"
+year = 2006
+venue = "2nd ed., BookSurge (2006); author's online edition"
+locator_scheme = "theorem"
+locator = "I.7.3"
+url = "https://www.jmilne.org/math/Books/ADTnot.pdf"
+fetched_from = "https://www.jmilne.org/math/Books/ADTnot.pdf"
+fetched_at = "2026-11-18T04:35:40Z"
+sha256 = "2c6195ec76a974f3f336c77cb71cc3845b018aad2d43136716b3477a3bc5fb31"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["Layer 7"]

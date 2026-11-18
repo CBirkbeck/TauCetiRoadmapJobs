@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurves~1",
+  "head": "fe8e46300e1a9319509fd8d4f17bc83a00267485",
+  "pr": 2483,
+  "folder": "EllipticCurves",
+  "date": "2026-11-18",
+  "findings": 18,
+  "blocking": 5,
+  "notes": "Full review. Gate at this head FAILS (tex=1, prnum=2, sorry-data=11, residue=4, statement-hygiene=2, readme-ids-missing=1; build passes); depcheck 0 problems; Suggested.lean elaborates with 50 sorry warnings only. The 12 changed README lines (discriminant versus classical Nagell-Lutz) were recomputed on y^2 = x^3 + 1 and carry no finding; the findings are on text identical to main, except that R02 asks for a Lean statement of the classical form this pull request adds. Blocking: 11 sorry'd definitions (5 lose section binders); two open headlines statable at the pins but absent (Cassels over Q, classical Nagell-Lutz; both probes elaborate); IsSupersingular/IsOrdinary lose [Fact p.Prime] [CharP K p]; targets restated that pinned Tau Ceti proves; Layer 6 plans the point height pinned Mathlib has. Sample: pinned-source revisions and mathlib pull requests resolved; BHKSSW read (arXiv v2); Silverman's AEC (50 of 59 locators) could not be read legally, so its locators and the wording comparison are not verified. One-tactic probes found 5 padding declarations.",
+  "text": "e0bd3c809de19620"
+ }
+}
