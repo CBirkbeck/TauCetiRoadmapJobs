@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GlobalGaloisDeformationsPartII~15",
+  "head": "715711271177dd511252cca418061c2946626664",
+  "pr": 1837,
+  "folder": "GlobalGaloisDeformationsPartII",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. The previous review had no finding. Seeded sample of 15 targets verified against FKP22, FKP19, Lazard65 and BLGGT14 (45 locators read, all hold); adversarial table of 24 rows with computed values; 25 library declarations opened at the pins; cited sections of 25 supplier roadmaps resolved on main or at their open heads, including the new SerreModularityByCompatibleSystems S6 citation; dependency check 0 problems; automatic checks rerun, all pass; Suggested.lean elaborates with sorry as the only warning and neither theorem closes in one tactic. One small correction (the ANT supplier paragraph describes sections PotentialAutomorphyInfrastructurePartII no longer has; the theorem is ModularityAndLanglandsExtensions 4.2) and one format note. Six source issues in FKP22 recorded. One arrangement observation for the human reviewers. Gur99, NSW08 and BC14 are uncertified and were not read.",
+  "text": "4b92cf7dd0197031",
+  "carried": {
+   "from": "715711271177dd511252cca418061c2946626664",
+   "head": "7e84ea77ccebdde45a46a5cbceaa79495b54283e",
+   "findings": 1,
+   "lines": 14,
+   "folders": [
+    "GlobalGaloisDeformationsPartII"
+   ],
+   "corrections": true
+  }
+ }
+}
