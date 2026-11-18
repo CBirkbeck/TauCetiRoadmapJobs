@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsRationalPointsAndObstructions~8",
+  "head": "b30550a014b97a2f5faec616595a715becfad343",
+  "pr": 1017,
+  "folder": "HeightsRationalPointsAndObstructions",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 133 changed lines since 0d73876. Checked: R01 of the previous report (repaired, ReductiveGroups Layer 9D on main); the new opening summary against the layers; Mordell as the curve case of §5.9 (genus 0, 1, 2, empty point set, stabilizer, Abel–Jacobi closed immersion from JacobianChallenge Layer F) and the build order after the removal of §§4.1, 4.4, 4.5, 5.12 (acyclic); citations of the removed ids on main and at open heads (§5.12 cited by MordellLawrenceVenkatesh and ErdosProgressionPowers: small correction); Poonen Theorems 9.5.1 and 9.5.10 at their locators; the seeded sample falls in no changed passage. Automatic checks all pass, dependency check 0 problems, elaboration gives sorry warnings only; no Lean statement changed.",
+  "text": "e45f7ad3ff1d55c2",
+  "carried": {
+   "from": "b30550a014b97a2f5faec616595a715becfad343",
+   "head": "25ef4f1e43f25f50b23af8c5a5f92d3efa4f33bd",
+   "findings": 2,
+   "lines": 6,
+   "folders": [
+    "HeightsRationalPointsAndObstructions"
+   ],
+   "corrections": true
+  }
+ }
+}
