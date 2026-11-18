@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ModularityAndLanglandsExtensions~7",
+  "head": "73b52a7254087e94ba0a4e5f3cfd0820ef14b92a",
+  "pr": 1180,
+  "folder": "ModularityAndLanglandsExtensions",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. R01 (P1): sections 4.23 and 4.30 and the targets reduced to 4.30 are proved only in ModularityAndLanglandsExtensionsPartII (merge order line 305, this roadmap line 210), which imports this roadmap; seven proof routes cite it. Seeded sample: all 15 targets checked; 24 locators read in 13 sources (bcgnt-2025, newton-thorne-hilbert, newton-thorne-II, blggt-2014-v4, qian-2023, qian-thesis-2023, bcgp-2021, pilloni-stroh-2016, kedlaya-ant-2025, kss-2021, cg-2020, gee-taibi-2019, martin-watkins-2006); dmw-2009 not readable (host unclassified). Adversarial table: 21 rows with computed values. Automatic checks: all passed; depcheck 0 problems (it does not see the Part II citations, which are in proof-route sentences). lake env lean on Suggested.lean: only the sorry warning at line 64; one-tactic probe (simp, rfl, infer_instance, exact tendsto_const_nhds) does not close satoTate_elliptic. No change outside the folder. Layers 2, 3 and 5 outside the sample were read at statement, locator and Needs level only.",
+  "text": "1310c55a66859c17"
+ }
+}
