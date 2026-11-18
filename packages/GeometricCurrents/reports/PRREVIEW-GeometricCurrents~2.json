@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GeometricCurrents~2",
+  "head": "e612e6f1834049b86e4ceb8eb853b3b81ae6322d",
+  "pr": 2490,
+  "folder": "GeometricCurrents",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full re-review. All ten remarks of the previous review are repaired. Seeded sample checked against the texts: Lipschitz chains (RiedwegSchaeppi2009 Def 2.4 pp. 4-5; LeuzingerYoung2017 §2.4 p. 15), volume and mass (LeuzingerYoung2017 pp. 15-16), filling volume (LeuzingerYoung2017 p. 16), and AmbrosioKirchheim2000 §9 item (2). Adversarial pass over G3a and the six headlines; R01: FV_d(f_#α) ≤ L^d FV_d(α) fails for d = 1, L = 0 (∞ vs 0·∞ = 0). Tau Ceti and Mathlib names checked at the pins; cross-roadmap citations resolved on main. Automatic checks all pass on this head; dependency check 0 problems; Suggested.lean elaborates with no message (no declarations). Perimeter form of the dimension-8 sharpness is statable at the pins (question to the author).",
+  "text": "7e3bf38ea54c9076"
+ }
+}
