@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MultiArmedBandits~2",
+  "head": "eaccbc79d0d75ce143a3f8715ec37bced43e5196",
+  "pr": 2493,
+  "folder": "MultiArmedBandits",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 48 changed lines since 47eba90. Checked: the repair of R01 (envLaw_congr true by induction with Measure.compProd_congr and IsProjectiveLimit.unique, both opened at the pin; the reworded second Check and the negative control of 3.1 recomputed) and of N01; the new Check of 1.1 and the new source-policy paragraph of 3.1 (two small corrections, with computed counterexamples); Lattimore-Szepesvari Algorithm 1, Theorem 6.1 and Proposition 4.8 read at their locators for the sampled targets 1.1 and 3.1; the pull request text against the head; no file changed outside the folder. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning (13 theorems); one-tactic probe does not close envLaw_congr.",
+  "text": "2adf24b3a1229e5d"
+ }
+}
