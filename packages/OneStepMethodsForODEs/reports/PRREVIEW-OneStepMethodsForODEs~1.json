@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OneStepMethodsForODEs~1",
+  "head": "4274b3419e2994451b1c6ea94ca7c5ff75690a5a",
+  "pr": 2494,
+  "folder": "OneStepMethodsForODEs",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All 15 sampled targets and every headline theorem recomputed (adversarial table in the report); 31 source locators read in the four sources (Suli2022, Mirzaei2024, Butcher2007, SanzSerna2015), all hold; 28 library declarations opened at the pins; 3 cross-roadmap boundary citations resolved on main; no duplication in Mathlib, Tau Ceti or other roadmaps. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 27 sorry warnings only; one-tactic probe closes none of the 27 theorems; instance binders kept. One small correction (a scope sentence false as written), two format notes. For the humans: sources are mostly lecture notes and a Scholarpedia article; two hosts unclassified; the Isabelle AFP entry named as provenance was not opened.",
+  "text": "65ff914ce99c4d9c"
+ }
+}
