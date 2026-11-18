@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StatisticalLearningTheory~1",
+  "head": "e974000ce53759ecd76964e55cc1582c95c98bb7",
+  "pr": 2515,
+  "folder": "StatisticalLearningTheory",
+  "date": "2026-11-18",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 9,
+  "format_notes": 4,
+  "notes": "Full review. Every statement recomputed at small cases (adversarial table in the report). Seeded sample of 15 targets: 1.2, 2.4, 5.1, 7.1, 7.2, 7.4 verified against the texts (Devroye-Gyorfi-Lugosi, Dwork-Roth, Lei et al., Duchi-Jordan-Wainwright); 1.3, 2.2, 3.1, 3.2, 3.4, 4.1, 5.4, 6.2, 8.2 not verifiable (Mohri-Rostamizadeh-Talwalkar unreadable through the sources service, the others paywalled). 41 locators checked in four books, all correct. Suggested.lean elaborates with 45 sorry warnings and nothing else; one-tactic probes run; three absent headlines elaborated on a scratch copy. Dependency check: 0 problems. Automatic checks: one form check failed (a section header with no declaration under it), kept as a format note; none set aside. Findings: a false Check in 3.1 (P2); statable headlines absent from Suggested.lean with no list of the non-statable ones (P2).",
+  "text": "55f2a5b98da21ee4"
+ }
+}
