@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~94",
+  "head": "e1018339e93045308ecedc99eac3908b87222007",
+  "pr": 2489,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review of head e101833 (adds §1.22a, cohomologically affine morphisms and linear reductivity over a base). Previous report (7fb5df9, another PR on this roadmap) had no open finding. Finding R01 (P2): IsCohomologicallyAffine.iff_isAffine and .baseChange_scheme (hence Groups.IsLinearlyReductive.baseChange and the converse in the fifth Check) drop the quasi-separatedness that Alper 2013 (§2 p.2353 convention; proof of 3.10(iv) p.2360), Rydh 2015 (8.7) p.29 and Stacks 0F83 assume, and the README routes use it. Corrections: C01 Isom of torsors is an algebraic space, not a scheme, for non-affine G; C02 §1.22a Needs cites the later §1.23; C03 StackPointsAndResidualGerbes gap asks §1.20 for the quasi-separated definition now in §1.22a; C04 §0.9 integral_point_descent source covers only the Dedekind/Galois case. Format note N01: supplier contracts lack §1.22a's new inputs. Sample checked: 0.8, 0.9, 0.12, 0.17, 0.20, 0.27, 0.30, 1.16, 1.18, 1.23, 2.7, 2.16, 2.22, 3.8, 4.12 (170 Stacks tag-number pairs resolved, 0 mismatches; EGA IV3, Poonen, Brauer I/II, Milne AV, Klevdal-Patrikis, Harari, AOV, Rydh 2013, Conrad read at locators). Automatic checks: gate rerun all counters 0 (OK); depcheck 218 roadmaps, 2431 edges, 0 problems; lake env lean Suggested.lean exit 0, 48 sorry warnings only; one-tactic probe 48/48 fail. Source issue: Milne AV III Prop 2.2 leaves a diagram as an exercise.",
+  "text": "2f7902ad5a04d5cc"
+ }
+}
