@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PDE~11",
+  "head": "1e5dbd6308379451df9653837e0315e809f37b08",
+  "pr": 1614,
+  "folder": "PDE",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review. Previous findings R01-R06 repaired, R07 (description) not (now C03). One P2: the off-diagonal Marcinkiewicz target of 2.2 is false when q0 = q1 (rank-one witness computed). Seeded sample of 15 sections recomputed; 10 locators read in bauer-pauly-schomburg, meyers-1963 and krylov-vmo; Brezis and the textbooks not readable legally. Pinned Tau Ceti declarations opened at 2fd255d. Automatic checks pass; depcheck 0 problems; Suggested.lean elaborates with 20 sorry warnings only; one-tactic probe closes none of the 20.",
+  "text": "4b41d21eef82cf77"
+ }
+}
