@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GrossZagierAndArithmeticHeightsPartII~4",
+  "head": "5bccce05e5793b00f35d37a219e9bf18fe8e8008",
+  "pr": 2457,
+  "folder": "GrossZagierAndArithmeticHeightsPartII",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review of the head. Both findings of the previous review are repaired; deferred finding D01 is resolved (the GSpin section moved to GrossZagierAndArithmeticHeights 6.20a, read at its open head). Seeded sample of fifteen targets (0.1, 0.2, 0.9, 2.7, 5.2, 6.2, 6.9, 9.2, 9.4, 12.1, 12.2, 12.5, 13.3, 13.9, 14.4) checked against LZ, Z, LL2, K, LL1, BHKRY, Bor98, Bor99 and Liu11a: about 95 locators, one pair wrong (Z has no subsections 10.1 and 10.2; small correction). Adversarial table of 33 rows with computed values, covering the eight headline theorems. Cross-roadmap citations resolved on main and at the open heads; six pinned declarations opened. Automatic checks rerun: all pass; dependency check 0 problems; Suggested.lean elaborates with no output and declares nothing, each headline being named in its docstring as not statable. Lusztig76 not readable (uncertified). Small corrections: the Z section locator, the supplier of the orthogonal Borcherds product not named in 12.5, text left over from the moved section. Format note: pagination of Z.",
+  "text": "8daca0895635786c",
+  "carried": {
+   "from": "5bccce05e5793b00f35d37a219e9bf18fe8e8008",
+   "head": "c4abe57171d4750971ea05e17f8229b2df86e74c",
+   "findings": 3,
+   "lines": 18,
+   "folders": [
+    "GrossZagierAndArithmeticHeightsPartII"
+   ],
+   "corrections": true
+  }
+ }
+}
