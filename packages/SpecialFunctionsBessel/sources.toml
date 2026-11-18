@@ -1,0 +1,41 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SpecialFunctionsBessel"
+
+[[source]]
+id = "DLMF-10.18"
+locator_scheme = "section"
+locator = "§10.18"
+url = "https://dlmf.nist.gov/10.18"
+fetched_from = "https://dlmf.nist.gov/10.18"
+fetched_at = "2026-11-18T13:00:29Z"
+sha256 = "847b459324fd9a0beee581ea37a5b92a5e5c6a7460a5959371ca100b907a8b35"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["10.6"]
+
+[[source]]
+id = "DLMF-10.21"
+locator_scheme = "section"
+locator = "§10.21"
+url = "https://dlmf.nist.gov/10.21"
+fetched_from = "https://dlmf.nist.gov/10.21"
+fetched_at = "2026-11-18T13:00:30Z"
+sha256 = "2eda39fcd636219f6e1c0da3f018586e857eeaf5d0d4a4e1e688a05360991469"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["10.6"]
+
+[[source]]
+id = "DLMF-9.12"
+locator_scheme = "section"
+locator = "§9.12"
+url = "https://dlmf.nist.gov/9.12"
+fetched_from = "https://dlmf.nist.gov/9.12"
+fetched_at = "2026-11-18T13:00:30Z"
+sha256 = "725bb82c48ceb025c6388da2bb89290856a2fa9bb4089e01a712a197e5b65511"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-18"
+cited_for = ["10.6"]
