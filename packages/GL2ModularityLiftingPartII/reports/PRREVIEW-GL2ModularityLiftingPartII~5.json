@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GL2ModularityLiftingPartII~5",
+  "head": "330f0af1a358bd4dfc20508258b066e5400ec54f",
+  "pr": 2137,
+  "folder": "GL2ModularityLiftingPartII",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full re-review. Previous review (fdda916) had no finding. Whole README read and every Check recomputed; seeded sample of 15 targets (0.5, 0.6, 0.9, 0.10, 1.1, 1.2, 1.7, 2.3, 4.6, 6.1, 6.6, 6.8, 8.2, 8.4, 8.5) verified at the text: 31 locators in cg18, wiese07 Corollary 4.4, wiese14 Proposition 4.4, scholze15 Theorem V.4.1 and Corollary V.4.4; cg22 uncertified, cg20 not reopened. 17 library declarations opened at the pins; 53 cross-roadmap citations resolved on main or at open heads, including the new supplier SerreModularityByCompatibleSystems S5/qualitative-serre-theorem. Dependency check: 199 roadmaps, 2183 edges, 0 problems. Elaboration: sorry the only warning (lines 141, 183); one-tactic probe closes neither headline. Automatic checks all passed. Acceptance conditional on the 20 declared supplier gaps, Conjecture A at every auxiliary level and H3(3) at p = 3. One small correction (hres implied by htwres and the hypotheses on the twisting character), one format note (line length).",
+  "text": "33be663778e31dfa",
+  "carried": {
+   "from": "330f0af1a358bd4dfc20508258b066e5400ec54f",
+   "head": "bced74cffca69d5939bdf1812f55b0c5f8679f5c",
+   "findings": 1,
+   "lines": 18,
+   "folders": [
+    "GL2ModularityLiftingPartII"
+   ],
+   "corrections": true
+  }
+ }
+}
