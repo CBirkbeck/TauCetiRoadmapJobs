@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MatroidOptimization~1",
+  "head": "6c79158cfd70f2f4c5ef703b3238a4d0f4eb25cc",
+  "pr": 2520,
+  "folder": "MatroidOptimization",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review. Adversarial pass over every statement of the five layers with computed instances (table in the report). All 26 source locators checked against the texts of Bach, Schrijver, Goemans (two handouts), Oxley and Krause-Golovin, fetched from arXiv and author pages; the 15 sampled targets are covered (1.1 to 1.4, 4.6 and 5.1 carry no locator: correction C01). 60 cited Mathlib and Tau Ceti declarations resolved at the pins. GraphConnectivityAndFlows 4.1, 6.7, 6.8 resolved on main; ApproximationGuarantees, SpanningTreesAndShortestPaths and CooperativeGames read at their open heads (C02). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry only; one-tactic probe closes none of the 21 theorems. Original papers attributed in prose were not read.",
+  "text": "9282863d9c7f0c53"
+ }
+}
