@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SmallRamificationAndAbelianVarietyBaseCases~6",
+  "head": "31d7cdb5dcf3ba9b89fd945f1e9128bfe60375cc",
+  "pr": 2517,
+  "folder": "SmallRamificationAndAbelianVarietyBaseCases",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review at the same head as the previous one. Seeded sample (1.5, 1.6, 2.0, 2.1, 2.4, 3.2, 3.3, 3.5, 4.2, 4.8, 5.3, 5.5, 5.9, 5.12, 6.1) read at its locators in Schoof, Odlyzko (page 122 rendered), Mazur, Fontaine, Dieulefait-Pacetti, Khare, Snowden, Khare-Wintenberger (preprint), Faber and Brumer-Kramer: 47 locators, all supporting the statements. Adversarial pass recomputed the kernel values, the Poitou bounds, the 13 rows of the degree table, the 2-adic and 3-adic different bounds, the Minkowski and class-number bounds, the five field criteria and the weight-14 table at 11. Automatic checks all passed; Suggested.lean elaborates with 13 sorry warnings only; dependency check 0 problems, no UPWARD or CYCLE. Three small corrections (consumer notes incomplete; two sentences of the description; the Paso 6 target is empty by section 5.11), two format notes, one licence question for a human. The Khare-Wintenberger version of record was not reopened this round.",
+  "text": "bf7671b3a7cfec5b",
+  "carried": {
+   "from": "31d7cdb5dcf3ba9b89fd945f1e9128bfe60375cc",
+   "head": "2deaafced4200e8ae2543c5915775d526d52b5cd",
+   "findings": 3,
+   "lines": 27,
+   "folders": [
+    "SmallRamificationAndAbelianVarietyBaseCases"
+   ],
+   "corrections": true
+  }
+ }
+}
