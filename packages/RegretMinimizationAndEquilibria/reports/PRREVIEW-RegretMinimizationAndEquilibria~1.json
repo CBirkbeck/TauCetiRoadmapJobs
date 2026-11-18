@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RegretMinimizationAndEquilibria~1",
+  "head": "ee8c93cd4a11f79e86ba3716e06369f974f8763f",
+  "pr": 2482,
+  "folder": "RegretMinimizationAndEquilibria",
+  "date": "2026-11-18",
+  "findings": 2,
+  "blocking": 0,
+  "notes": "Full review. Gate passes at this head; depcheck 0 problems; Suggested.lean elaborates with 29 sorry warnings only; one-tactic probe closes 0 of 29 theorems. Adversarial table: 16 rows with computed values over all 15 sampled sections, all statements hold (Kuhn value -1/18, equilibrium family and the 1000-round CFR figures reproduced numerically). 23 of 37 source locators checked against the text in 11 sources; Cesa-Bianchi-Lugosi 2006, Nash 1951, von Neumann 1928, Aumann 1974, Koller-Megiddo-von Stengel 1994, Moulin-Vial 1978, Hannan 1957 and Kuhn 1950 not readable. 15 supplier declarations opened at the pins; 3 cross-roadmap citations resolved; no duplication at the pins or in other roadmaps. Findings: R01 (P3) three citations without a locator; R02 (P3) three definitions with fewer than three discriminating Checks.",
+  "text": "a39ca59a2aec7c2f"
+ }
+}
