@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComplexMultiplicationAndExplicitReciprocityPartII~7",
+  "head": "87d95d39779785b969062c613eb3948c4c0f481b",
+  "pr": 1695,
+  "folder": "ComplexMultiplicationAndExplicitReciprocityPartII",
+  "date": "2026-11-18",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review of the head after the removal of Layers 5-8. Previous review had no finding; D01 stands. Seeded sample of 15 targets read against sources A, T, T12, PT14, MZ and C (31 locators, all on the cited statement); every formula and Check recomputed (adversarial table in the report). 27 library declarations opened at the pins; supplier sections of 24 roadmaps resolved on main or at open heads. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with two sorry warnings only; one-tactic probe leaves both theorems open. Findings: R01 Borcherds lift of 4.2a duplicates GrossZagierAndArithmeticHeights 6.20a(e); R02 the heading cited in AutomorphicLFunctionsAndLocalFactors AL.1 does not exist, owners are AnalyticNumberTheoryPartI 2.22a and 2.2a. PT locators of Layer 13 not opened this round.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "The plan still points the absolute-Hodge gap at §B1.3",
+    "where": "board `design/plan.json`, gap `absolute-hodge-padic-comparison`, field `section`",
+    "raised": "PRREVIEW-ComplexMultiplicationAndExplicitReciprocityPartII~4"
+   }
+  ],
+  "text": "86753a5f86c1e44e"
+ }
+}
