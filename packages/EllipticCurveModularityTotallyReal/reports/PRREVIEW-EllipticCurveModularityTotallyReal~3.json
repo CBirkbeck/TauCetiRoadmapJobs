@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularityTotallyReal~3",
+  "head": "a433195504e1df0ece885f4bdeb2dd4dabe08c77",
+  "pr": 2185,
+  "folder": "EllipticCurveModularityTotallyReal",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review of a repaired head (previous review had no findings). One P2 finding: four sentences say EllipticCurveModularity derives its newform, parametrisation and L-function from the case K = Q of section 4.4, but that roadmap's open head proves existence from ClassicalSerreModularity R27.6, never cites this roadmap and is earlier in the merge order. One small correction: the same sentence in the description. Checked: all 15 seeded sample sections and 31 source locators against the texts of LeHung26, FLHS15, BD14, OpenAI26, BLGG12, BLGG13II, Kisin09, BCDT01; every worked example recomputed (adversarial table, 18 rows); 14 library declarations opened at the pins; cross-roadmap citations resolved at main or the open heads; the three declared gaps match the plan; dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with two sorry warnings only, #check on both declarations, one-tactic probes close neither; no change outside the folder. Conditional on the three declared supplier gaps once R01 is repaired.",
+  "text": "ed5031290abd62ce"
+ }
+}
