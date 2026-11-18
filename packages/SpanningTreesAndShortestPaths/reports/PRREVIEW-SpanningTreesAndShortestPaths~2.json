@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpanningTreesAndShortestPaths~2",
+  "head": "96181f73e23f59c6938d742051380b3f76248699",
+  "pr": 2512,
+  "folder": "SpanningTreesAndShortestPaths",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 30 changed lines since 2857d0c. Checked: previous R01 (duality of 1.2 now cited from the pinned Tau Ceti; statement compared with the declaration at the pin, and its propagation to Needs lines, Layer 1 dependencies, scope list and supplier contracts), previous C01, N01, N02 (all repaired); the three Tau Ceti declarations opened at the pin; the seeded sample where it falls in the change (5.2: Keller-Trotter locator read in the 2017 text and in the current online text; 3.1: the new library input); adversarial rows with computed values for the four touched statements; Suggested.lean unchanged and elaborates with sorry as the only warning (30); all automatic checks pass; dependency check 0 problems, no UPWARD or CYCLE; nothing changed outside the folder; pull-request text read against the head (one small correction). One format note on edition numbering.",
+  "text": "ad899f00704973d1"
+ }
+}
