@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KernelsAndSpectralMethods~1",
+  "head": "f4ea4730b553b5948f6dad566686a229069cf2d1",
+  "pr": 2516,
+  "folder": "KernelsAndSpectralMethods",
+  "date": "2026-11-18",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 6,
+  "format_notes": 3,
+  "notes": "Full review. Every Check and worked example recomputed by hand against its section; Suggested.lean elaborated (sorry the only warning) and a one-tactic probe run on a copy. Seeded sample of 15 targets: locators read in Chung ch. 1-2 (author's revised copy), von Luxburg 2007, Gorham-Mackey 2017, Sriperumbudur et al. 2010, Sriperumbudur 2016, Sejdinovic et al. 2013, Szekely-Rizzo-Bakirov 2007, Gretton et al. 2012, Sutherland-Schneider 2015; the other thirteen books had no legal copy and are listed as not verifiable. Library definitions opened at the pins (tvDist, eLpNorm, wassersteinEDist, fourierAtom, empiricalFiniteMeasure, PosSemidef, Hoffman-Wielandt). Cross-roadmap citations resolved on main; dependency check 0 problems; no change outside the folder. Findings: missing separability in dudleyDist_le; false covering step in the 5.4 route; wrong net in the 11.4 route; 5.4 shared with TopologicalDataAnalysis 8.4; 3.2 and 4.1 handed both ways with MarkovChainMixing. One automatic check (section header over the #check block) set aside as a false positive.",
+  "text": "40810abc62c5b299"
+ }
+}
