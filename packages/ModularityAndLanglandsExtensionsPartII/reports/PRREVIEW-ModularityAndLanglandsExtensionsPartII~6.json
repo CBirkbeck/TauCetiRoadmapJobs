@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ModularityAndLanglandsExtensionsPartII~6",
+  "head": "141d7bd8e3d378974d97675e79858c2d0723639c",
+  "pr": 2449,
+  "folder": "ModularityAndLanglandsExtensionsPartII",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. Sample: the 15 seeded targets (9.2, 9.3, 9.6, 9.7, 11.2, 11.4, 11.5, 11.6, 11.8, 11.9, 12.6, 13.1, 13.2, 13.7, 13.8) and Layer 14 read against nt21b, nt26, th24 and nt21 at their locators (about 60 locators, all at the cited pages); 140 cross-roadmap section ids resolved on main or at open heads; 14 library declarations opened at the pins; adversarial table with computed values for 27 statements. Automatic checks: all passed, none set aside; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning, no binder lost, one-tactic probe closes neither theorem. One finding (P2): the roadmap and its parent ModularityAndLanglandsExtensions supply each other. Four small corrections, two format notes. bbm82 and kw09 not readable (uncertified).",
+  "text": "5712ec2118c1ee87",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The roadmap and its parent supply each other: the parent states the theorems proved here as its own targets and then consumes them",
+    "where": "ModularityAndLanglandsExtensions: drop §§4.9, 4.12, 4.20, 4.23, 4.29, 4.30; reroute or move §§4.34–4.37",
+    "raised": "PRREVIEW-ModularityAndLanglandsExtensionsPartII~6"
+   }
+  ]
+ }
+}
