@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MarkovDecisionProcesses~2",
+  "head": "5ee1415919dbc002ccd60658af9009f89396842e",
+  "pr": 2481,
+  "folder": "MarkovDecisionProcesses",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "notes": "Full re-review. Both findings of the previous review (R01 countable state space, R02 conditional law of later actions) are repaired. Adversarial table of 22 rows with computed values over every section and all headline theorems. Source locators: 13 of 37 checked against the text (Tsitsiklis 1994, Watkins-Dayan 1992, Sutton 1988, Kakade-Langford 2002, Jaakkola-Jordan-Singh 1994 in its technical-report version); Puterman 1994 (20 locators), Bertsekas-Tsitsiklis 1996, Howard 1960 and Singh-Yee 1994 could not be read legally and are listed as not verifiable. 27 library declarations opened at the pins. Gate at this head passes; depcheck 0 problems; Suggested.lean elaborates with 36 sorry warnings only; all 64 elaborated signatures compared with the README; one-tactic probe closes none of the 36 theorems. Overlap check against FirstOrderOptimization, DenoisingDiffusion, PointProcesses, MarkovChainsAndRenewal, StochasticCalculus, OptimalTransport: nothing shared. Pull-request text agrees with the head.",
+  "text": "eb58f41709f2db91"
+ }
+}
