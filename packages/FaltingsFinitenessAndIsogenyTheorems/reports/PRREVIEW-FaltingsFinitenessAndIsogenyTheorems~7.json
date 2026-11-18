@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FaltingsFinitenessAndIsogenyTheorems~7",
+  "head": "6e7829800dbe3f7b16c9511b32756da5d3a9444e",
+  "pr": 1004,
+  "folder": "FaltingsFinitenessAndIsogenyTheorems",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full review of a repaired head. The previous review's finding (double plan of Satz 1 against ArakelovGeometryAndAbelianHeights 5.5, 5.6, 6.4), its seven small corrections and three format notes are all repaired. Sample: the three seeded targets checked at their locators in Milne's notes (Theorem 15.5 is on p. 65, not pp. 65-66; the rest right), plus 30 further Milne locators and 16 Faltings 1983 locators from the OCR text; the 1984 erratum and the other sources were not read. Adversarial pass computed on 23 statements, including the quaternion matrix against the pinned Tau Ceti declaration and the normalisation of the supplier's height. All supplier citations resolved on main or at the open head of AbelianSchemesAndArithmeticModuliPartII; 18 supplier statements read in full. Automatic checks all passed and none was set aside; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; the one-tactic probe closes none of the 10 theorems; the description agrees with the head. One question for the author (attribution of the error in Satz 2 to Katz and Gabber); four points left to the human reviewers.",
+  "text": "ee67bcea66964e4c",
+  "carried": {
+   "from": "6e7829800dbe3f7b16c9511b32756da5d3a9444e",
+   "head": "a5da3768dd32054f2cf9192f8c25b82b671a224e",
+   "findings": 1,
+   "lines": 7,
+   "folders": [
+    "FaltingsFinitenessAndIsogenyTheorems"
+   ],
+   "corrections": true
+  }
+ }
+}
