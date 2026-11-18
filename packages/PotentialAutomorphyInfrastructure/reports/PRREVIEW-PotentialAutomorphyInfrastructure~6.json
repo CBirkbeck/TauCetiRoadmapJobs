@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PotentialAutomorphyInfrastructure~6",
+  "head": "5b0a4d98068e3eccf2b428a7cee14cea37e08569",
+  "pr": 1081,
+  "folder": "PotentialAutomorphyInfrastructure",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 3,
+  "notes": "Full review of the whole README (2347 lines) and Suggested.lean at 5b0a4d9. Seeded sample (2.5, 2.15, 2.19, 2.26, 3.15, 3.35, 3.38, 3.39, 3.41b, 4.8, 4.9, 5.4, 5.6, 5.12, 5.16) read at the locators in ACC, Qian, BCGNT, BCGP, BLGGT and Khare-Thorne; 34 locators in 7 sources in all, with Caraiani-Scholze. The passages changed since the previous head (0.13, 1.0, supplier rows) checked against IgusaVarietiesAndTorsionConcentration IG.5.1, 6.6a, 6.6b, 7.4, 7.6, 7.14, 7.15 at its open head. Adversarial table of 40 rows with computed values. Automatic checks all passed; lake env lean exit 0 with no output; depcheck 206 roadmaps, 2253 edges, 0 problems; nothing changed outside the folder. Suggested.lean declares nothing and no headline is statable at the pins. Small corrections: supplier export names absent from the suppliers, stale pin hashes in the supplier contracts, a restriction to n>=2 that hides the n=1 case, one description sentence, two hypotheses the new route does not need. Not verified: Koshikawa and Caraiani-Newton (read only through the supplier), the books, and sources outside the sample.",
+  "text": "2bb5dd1ccc707fac",
+  "carried": {
+   "from": "5b0a4d98068e3eccf2b428a7cee14cea37e08569",
+   "head": "584324b7ce79066addcede95068810f9a30dfff1",
+   "findings": 5,
+   "lines": 34,
+   "folders": [
+    "PotentialAutomorphyInfrastructure"
+   ],
+   "corrections": true
+  }
+ }
+}
