@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-YoungIntegrationAndRoughPaths~2",
+  "head": "6fcd7ea6b2a126b4e9473b361b0dbd00c272acf6",
+  "pr": 2497,
+  "folder": "YoungIntegrationAndRoughPaths",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 134 changed lines since 1826128: both previous findings (R01, R02) and the five small corrections verified repaired by recomputation; changed statements (tendsto_isYoungSolution, lyonsBeta, rEVariationOn_one, the prose targets of 1.1, 1.2, 3.2, 4.1, 4.2) recomputed with values; sampled sections 1.1, 4.1, 4.2 fall in the change, their book locators unreadable (no legal copy), the neo-classical constant confirmed in Hara-Hino arXiv:1001.1775; elaboration exit 0 with 36 sorry warnings only; dependency check 0 problems; automatic checks: two form hits, written as format notes; pull-request text agrees with the head; nothing changed outside the folder.",
+  "text": "de8aa5801e614017"
+ }
+}
