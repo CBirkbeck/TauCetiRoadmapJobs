@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PopulationDynamics~1",
+  "head": "61cf2e95808c83a08c70b975dc9475c698e523b4",
+  "pr": 2513,
+  "folder": "PopulationDynamics",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. All 51 source locators read at the text (Lyons-Peres 12, Durrett PTE 13, Durrett DNA 12, Teschl 6, Weiss 8), covering the fifteen sampled sections; every formula, Check and worked example recomputed (exact arithmetic, a linear solve for the Moran absorption time, numerical integration for the Lotka-Volterra period and the SIR values); 49 cited library declarations located at the pins and 38 statements read; four cross-roadmap citations resolved on main; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe (rfl, simp) closes none of the 32 theorems; automatic checks all passed. One P2 finding: the list of equilibria in 2.4 is false when a b = 1 and K1 = a K2. One format note. Not verified: the Isabelle AFP claim in the provenance section.",
+  "text": "7b53d0e93669c344"
+ }
+}
