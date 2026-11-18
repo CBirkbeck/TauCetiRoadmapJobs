@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdelicImagesAndModularCurves~8",
+  "head": "00b60e087422d5953cd90c75617e6ac529196248",
+  "pr": 1727,
+  "folder": "AdelicImagesAndModularCurves",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 14 changed lines since e4f956a: the supplier of Serre's modularity conjecture (strong form) moved from ClassicalSerreModularity R27.6 to SerreModularityByCompatibleSystems Layer S6 in seven places; the new citation was resolved at the supplier's open head (target S6/strong-form-of-serre-conjecture, same statement), merge order downward (line 266 before 389), depcheck 0 problems, gate all counts 0, Suggested.lean elaborates with 25 sorry warnings only, nothing changed outside the folder, pull request text agrees with the head; no seeded sample target falls in the changed passages; previous review had no findings.",
+  "text": "014428bef05ffa29"
+ }
+}
