@@ -1,0 +1,32 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IgusaVarietiesAndTorsionConcentration~5",
+  "head": "25763aced3051fdd9dc027dd277b72ae5f7edf7a",
+  "pr": 1090,
+  "folder": "IgusaVarietiesAndTorsionConcentration",
+  "date": "2026-11-18",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review of the whole README and Suggested.lean. Seeded sample of fifteen targets (0.6, 0.7, 0.12, 0.13, 1.8, 2.6, 2.12, 2.14, 3.6, 3.16, 4.0a, 4.3, 4.6a, 4.7, 7.12) checked against csnc, cs17 (published), kos21, nie15, box15, hs-relative and bh, plus the rewritten Layer 7 against kos21 and cn23 and 7.2 against ltxzz: 41 locators. R01 (P1): the implication of 7.2 from a decomposed-generic witness to cohomological genericity rests on the compact Igusa trace argument, owned by no layer or supplier. R02 (P2): 3.4(3) says lower semicontinuous where the map is upper semicontinuous. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no output and declares nothing; pins and supplier citations resolved; no change outside the folder; previous review had no finding. Six source issues recorded.",
+  "text": "b742a6ad91be5143",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P1",
+    "title": "The implication of 7.2 from a decomposed-generic witness to cohomological genericity has no owner for its proof",
+    "where": "IgusaVarietiesAndTorsionConcentrationPartII target; SelmerIwasawaCohomologyPartII contract re-citation",
+    "raised": "PRREVIEW-IgusaVarietiesAndTorsionConcentration~5"
+   },
+   {
+    "id": "D02",
+    "severity": "",
+    "title": "C02: IgusaVarietiesAndTorsionConcentrationPartII's Scope and ownership (its README line 622) has to drop \"5.4\" and \"the rational constituent\", and also \"in the trace-comparison setting\", which H04 mak",
+    "where": "IgusaVarietiesAndTorsionConcentrationPartII, Scope and ownership sentence on the parent's §§5.1–5.4",
+    "raised": "PRREVIEW-IgusaVarietiesAndTorsionConcentration~5"
+   }
+  ]
+ }
+}
