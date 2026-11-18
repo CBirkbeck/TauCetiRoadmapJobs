@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CooperativeGames~2",
+  "head": "14648b3ddab492008c9824c0ffbb7fb5fb5adeee",
+  "pr": 2492,
+  "folder": "CooperativeGames",
+  "date": "2026-11-18",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 8 changed lines since bf2aa32. Checked: the one changed passage (6.2, range of the marginal contributions of the baseline game) recomputed on the README's two-coordinate example (marginals 1 and -1, oscillation 1) and against the Hoeffding bound of 6.1 (m=1, eps=1: fraction 1 <= 1.21; the former range would give 0.27); previous C01 repaired, C02, N01, N02 carried over unrepaired (non-blocking). Suggested.lean unchanged and elaborates with 22 sorry warnings only; dependency check 0 problems; automatic checks all passed; no change outside the folder; pull request text still agrees with the head; no overlap with open pull requests.",
+  "text": "157d56a8c325d51c"
+ }
+}
