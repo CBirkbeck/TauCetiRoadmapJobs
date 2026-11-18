@@ -1,0 +1,14 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RelativeFarguesFontainePartII~4",
+  "head": "f4f1d10d9139afae9f35ac0e76657a628755184a",
+  "pr": 1825,
+  "folder": "RelativeFarguesFontainePartII",
+  "date": "2026-11-18",
+  "findings": 7,
+  "blocking": 4,
+  "notes": "Full review. Previous finding (sections 1.8-1.10) repaired. Seeded sample of 15 targets read against FF17 at the cited pages, plus KT16, Poonen93, Berger08 and ST02 for the headline theorems: 74 locators read, all agree; 8 source issues recorded. Findings: R01 (P1) sections 9.3-9.4 false at intervals containing 0 for the stated Banach norm; R02 (P2) section 8.4 re-plans the general Frechet-Stein theory owned by LocallyAnalyticDistributionsPartII 1.4 on main; R03 (P2) the A[1/p] non-Bezout headline of section 11.1 is statable at the pins and absent; R04 (P2) the Lubin-Tate gap asks for what the supplier states; R05-R07 (P3) stale library line locators and a deprecated name, preface authorship, description wording. Gate (worker's run on this head): all checks 0, OK. Dependency check: 0 problems, no UPWARD or CYCLE. Elaboration: three sorry warnings only; one-tactic probe closes nothing; signatures match the README.",
+  "text": "17f9b9ec0909915b"
+ }
+}
