@@ -146,3 +146,22 @@ status = "certified"
 accessed = "2026-11-19"
 version_note = "arXiv v3"
 cited_for = ["3.5"]
+
+[[source]]
+id = "Toen2007"
+authors = "Bertrand Toën"
+title = "The homotopy theory of dg-categories and derived Morita theory"
+year = 2007
+venue = "Inventiones Mathematicae 167 (2007), 615-667"
+arxiv = "math/0408337v7"
+locator_scheme = "theorem"
+locator = "Definition 7.1, Theorem 7.2(2)"
+url = "https://arxiv.org/abs/math/0408337v7"
+fetched_from = "https://arxiv.org/pdf/math/0408337v7"
+fetched_at = "2026-11-19T18:37:07Z"
+sha256 = "09c523e48f37584417d43ddd2150e19c2b11616d7a88a3eef7dffa7892a52d53"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v7; numbering as in arXiv v7"
+cited_for = ["6.5"]
