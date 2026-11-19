@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HyperbolicDynamicsAndThermodynamicFormalism~10",
+  "head": "634c1269d37b1e71746011f40194e5673a500af3",
+  "pr": 2441,
+  "folder": "HyperbolicDynamicsAndThermodynamicFormalism",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since 634c126; this round read the pull request's title and description against the head: supplier sections resolved at the open heads of ClassicalErgodicTheory and ArithmeticDynamics and on main for the six other suppliers, the end theorems of the prose compared with README sections 2.2, 5.2-5.3, 10.2-10.4, 11.6, the previous small correction (summary sentence on geodesic flows and Jacobi fields) repaired; no file changed outside the folder; automatic checks all pass, none set aside; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 16 sorry warnings only; seeded sample falls in no changed passage; adversarial rows computed for the swap of two points, the cat map, the zero-entropy exceptions and the supplier sentences; one point for the human reviewers carried over.",
+  "text": "854130a7b70dc080"
+ }
+}
