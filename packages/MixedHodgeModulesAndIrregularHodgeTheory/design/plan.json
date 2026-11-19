@@ -4273,9 +4273,15 @@
     },
     {
       "slug": "regular-holonomic-stability",
-      "needs": "Stability of the bounded derived category with regular holonomic cohomology under f_+, f_!, f^†, duality, external product and restriction to the diagonal, for algebraic maps of smooth complex varieties.",
+      "needs": "Stability of the bounded derived category with regular holonomic cohomology under f_+, f_!, f^†, external product and restriction to the diagonal, for algebraic maps of smooth complex varieties.",
       "supplier": "SpringerResolutionAndCharacteristicCycles",
       "section": "Layer H (transfer-and-duality, regular-holonomic)"
+    },
+    {
+      "slug": "rational-complex-local-system-dictionary",
+      "needs": "For Λ = ℚ or ℂ and a locally path-connected semilocally simply connected space S, an equivalence between locally constant sheaves of finite-dimensional Λ-vector spaces and the full subcategory of TauCeti.LocalCoefficientSystem Λ S with finite-dimensional values, identifying sheaf stalks with functor values and path transport with native transport, naturally under pullback. On a point the rank-one stalk is Λ, of vector-space dimension one and infinite cardinality; it is outside the finite-ring, finite-stalk contract.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "§C6.1"
     },
     {
       "slug": "toric-normal-fan",
@@ -4288,6 +4294,12 @@
       "needs": "For a smooth complete toric variety X_Σ and a nef torus-invariant ℚ-divisor D, the vanishing H^i(X_Σ, O(⌊D⌋)) = 0 for every i > 0.",
       "supplier": "AnalyticToricGeometryPartII",
       "section": "§0.3"
+    },
+    {
+      "slug": "normal-semigroup-cohen-macaulay",
+      "needs": "For every field k and every finitely generated additive submonoid S of a finite free abelian group that is saturated in the group it generates, the monoid algebra k[S] is Cohen–Macaulay in the sense of TauCeti.Ring.IsCohenMacaulay (Hochster's theorem).",
+      "supplier": "GroebnerGeometry",
+      "section": "§G2"
     }
   ],
   "restructure": [
