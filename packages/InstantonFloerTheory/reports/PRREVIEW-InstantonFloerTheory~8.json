@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InstantonFloerTheory~8",
+  "head": "82fa49f9b8da28c9cf91bc95ff5989cd495635c2",
+  "pr": 2596,
+  "folder": "InstantonFloerTheory",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 0,
+  "notes": "Full review of a template update of a roadmap on main. Seeded sample of 15 sections checked: 41 locators verified against km0807, scaduto1401, cs1612, froyshov9903, dfl07032 and dfl07038, plus arXiv:0907.4639v2 section 2.2. Donaldson and Donaldson-Kronheimer are not openly readable. Adversarial table: 27 rows with computed values. 26 Mathlib/Tau Ceti declarations elaborated with #check at the pins. 14 supplier roadmaps resolved on main and at the open revisions. Gate OK (all counters 0); depcheck 0 problems; lake env lean on Suggested.lean exits 0 with no output (no declarations). Description checked against the head. Previous review R01/R02 already repaired. Small corrections: Froyshov Thm 9 vs Thm 10 locator; generalized excision sectors locator; old IFk labels cited by four main roadmaps without a mapping; missing bundle hypothesis in the overview; sign of the boundary form in the 9.3 prose.",
+  "text": "0d30dcf560d849c7"
+ }
+}
