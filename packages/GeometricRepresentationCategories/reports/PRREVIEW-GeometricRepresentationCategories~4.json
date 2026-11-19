@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeometricRepresentationCategories~4",
+  "head": "3e11d5bb991634bd5bc3441010530374f1b9e9a6",
+  "pr": 2579,
+  "folder": "GeometricRepresentationCategories",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 4,
+  "notes": "incremental re-review of 17 changed lines since 4ae6385. Checked: the repair of the previous small correction in §3.4 (covariance isomorphism and coherence now stated as consequences of the family's mapComp cells): the two factorizations in the semidirect product computed from Mathlib's product law, the composition order of ActionCategory and the direction of Pseudofunctor.mapComp read at the pin, the transport of TauCeti.discreteCentralCharacterFamily read at the pin, the character equation on the semidirect product derived, AffineLieAlgebras A8.3 and A4.2 read on main. Sampled target in the change: §3.4 (no source locator in it). Previous format notes N01-N03 not repaired and carried, N04 an offer. Pull-request description read against the head: no contradiction, nothing unstated. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no message (no declarations).",
+  "text": "2e8b3f9b1928175a"
+ }
+}
