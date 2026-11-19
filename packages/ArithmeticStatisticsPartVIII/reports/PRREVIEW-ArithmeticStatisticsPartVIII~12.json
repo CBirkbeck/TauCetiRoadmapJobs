@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartVIII~12",
+  "head": "e223db6f3ad48d106bd2a009fe429d1e56a921a7",
+  "pr": 1179,
+  "folder": "ArithmeticStatisticsPartVIII",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 6 changed lines since 7a814c7: the three changed README sentences checked against the Needs lines of 5.22, the consumer's section 4.10 at its open head and the citing passages on main; previous small corrections C01-C04 repaired, format notes N01-N02 carried; title and description read against the head, no discrepancy; automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates with sorry as the only warning; no source locator falls in the changed passages.",
+  "text": "deb3bf7f641b1b28"
+ }
+}
