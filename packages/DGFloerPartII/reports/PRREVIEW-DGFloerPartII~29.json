@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DGFloerPartII~29",
+  "head": "79b6376700f50285c767e1db2c02bbcdb07881b6",
+  "pr": 1799,
+  "folder": "DGFloerPartII",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. One finding (P2): the reduced cone of 1.0 is owned by HomotopySpheres 3A.2 on main, in the opposite convention, and is used nowhere here. The previous review's finding (1.0 against AlgebraicTopology Stage 4 item 8) and its four corrections and format note are repaired at this head. Seeded sample 1.1, 1.3, 1.4, 2.1-2.6, 3.2, 3.3, 4.1, 4.4, 4.5, 4.6 and every other section recomputed: 41 source locators read (bdho-cotangent, strickland-cgwh, rezk-cg-spaces, hatcher-at), cross-roadmap citations resolved on main and at the open heads, library declarations opened at the pins. Suggested.lean elaborates with sorry as the only warning; one-tactic probe on the Layer 1 statement fails; dependency check 0 problems; automatic checks all passed; nothing changes outside the folder. One small correction (4.3 Needs omits 4.1), one format note. For the humans: ownership hand-over from DGFloer on main through its open revision, preprint status of the main source, the order of Layer 4's sections beside the source's, the James construction stated by two roadmaps, Ziller not read.",
+  "text": "6237101bbcf4b38e"
+ }
+}
