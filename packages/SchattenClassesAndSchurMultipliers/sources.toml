@@ -265,3 +265,22 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["10.4"]
+
+[[source]]
+id = "randrianantoanina-2021"
+authors = "N. Randrianantoanina"
+title = "Interpolation between noncommutative martingale Hardy and BMO spaces: the case 0 < p < 1"
+year = 2021
+venue = "Canadian Journal of Mathematics (2021)"
+arxiv = "2108.06341v1"
+locator_scheme = "theorem"
+locator = "Proposition 3.18 (line 1440), with lines 1335-1346 and 1460"
+url = "https://arxiv.org/abs/2108.06341v1"
+fetched_from = "https://arxiv.org/pdf/2108.06341v1"
+fetched_at = "2026-11-19T03:55:23Z"
+sha256 = "47062bb2249d22342386136a4fbe8de6b1b29105e949dc0d90eb23ba0e6d06e7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1 read (2021); locators cite its line numbers and its numbering; published in Canad. J. Math., numbering not compared"
+cited_for = ["10.4"]
