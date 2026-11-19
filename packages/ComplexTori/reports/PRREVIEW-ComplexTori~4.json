@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexTori~4",
+  "head": "88225db687a2d85329928fe39f06f12b97d32b96",
+  "pr": 2550,
+  "folder": "ComplexTori",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 31 changed lines since e4cd103. Checked: the three small corrections of the previous review (Convention 7, the overview gauge sentence, the value of §6.6) are repaired and its format note is not (carried as N01); the new §6.6 statement recomputed from the formula for G⁻¹ of §6.3 (meridian to +λ/m, fibre classes fixed, m = 1, 2, 3); BogomolovTschinkel2003 lines 104–109 read for the changed locator; of the seeded sample only §6.5 falls in the changed passages; the description read against the head and the change from main (counts, suppliers, removed declarations), nothing contradicted; all automatic checks passed, depcheck 0 problems, Suggested.lean elaborates with sorry the only warning; two paywalled textbooks not readable.",
+  "text": "1c581e20b5a44fb6"
+ }
+}
