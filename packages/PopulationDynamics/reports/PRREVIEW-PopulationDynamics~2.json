@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PopulationDynamics~2",
+  "head": "bcd1173397bff2a30d229a6a1fae51db76142aef",
+  "pr": 2513,
+  "folder": "PopulationDynamics",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 13 changed lines since 61cf2e9. Checked: previous R01 (equilibria of the competition system in 2.4) repaired, recomputed for a b != 1 (interior, boundary and outside intersection) and a b = 1 (disjoint and coincident lines); previous N01 (attribution year in 3.1) repaired; the changed passage against the three Lean competition statements and against Teschl Theorem 7.4 and Section 7.1; pull-request text against the head; no change outside the folder. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 32 sorry warnings only. Source independence compared on changed passages only.",
+  "text": "7b53d0e93669c344"
+ }
+}
