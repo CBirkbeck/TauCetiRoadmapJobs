@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GL2ModularityLifting~11",
+  "head": "0ba9e9abf04e1330f372b0fd89e87524f2daa814",
+  "pr": 1071,
+  "folder": "GL2ModularityLifting",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Previous finding (wording of 6.15, 8.6, 8.7), small correction (5.9) and format note repaired. Seeded sample of 15 targets read against kw2, cht, dp, pan, tung-dyadic, tung-odd, paskunas-2adic, hu-tan, emerton-lgc, kisin-fm (31 locators); Kisin 2-adic (6.7a), Gee 5.6 (3.4a) and the SW99 scan (11.1) not read at the locator. R01 (P2): 1.7 and cht_soluble_prescribed_completions duplicate ClassicalSerreModularity I.0/soluble-totally-real-base-change, which at its head states the number-field form with archimedean places, declares soluble_prescribed_completions and claims ownership; completionAt equals pinned TauCeti Place.Completion (cases v <;> rfl). Automatic checks all passed; depcheck 0 problems; lake env lean on Suggested.lean gives two sorry warnings only; simp probe does not close the stated theorem.",
+  "text": "739794b97ac9e4f2"
+ }
+}
