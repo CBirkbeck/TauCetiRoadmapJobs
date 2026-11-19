@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CircleMethodThreePrimes~8",
+  "head": "96f5e8c2994563514f36a7c9fe655d028697a25e",
+  "pr": 2543,
+  "folder": "CircleMethodThreePrimes",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 23 changed lines since 0e859d6. Checked: the three previous small corrections (2.2 remark, three docstrings, build guide and description sentence) are repaired, the two previous format notes are not and are restated; psi(19)=19.2657 and psi(113)=117.3867 recomputed; the build guide against every Needs line and source of Layers 0, 1 and 4; the three reworded docstrings against their unchanged types and helfgott2015 lines 327-384; supplier siegel_walfisz on main; the description against the head (15 Checks, Suggested.lean changed in three docstrings only, one unstated heading change, C01). Automatic checks all pass; depcheck 0 problems; Suggested.lean elaborates with 18 sorry warnings only; nothing changed outside the folder.",
+  "text": "071eadb17938cca9",
+  "carried": {
+   "from": "96f5e8c2994563514f36a7c9fe655d028697a25e",
+   "head": "96f5e8c2994563514f36a7c9fe655d028697a25e",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
