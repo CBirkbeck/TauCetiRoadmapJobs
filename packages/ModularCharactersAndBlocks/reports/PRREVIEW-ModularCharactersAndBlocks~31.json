@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularCharactersAndBlocks~31",
+  "head": "c59fc361c7e55bf8e0dc950d5d511bf225875890",
+  "pr": 2534,
+  "folder": "RepresentationTheory/ModularCharactersAndBlocks",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review at the head the previous review read (no change in the folder; the previous review had no findings to repair). Seeded sample of 15 sections: 84 locators checked at their pages in webb, martinez and sambale, 34 statements read in full; navarro and serre uncertified, craven and the AxiomMath/CFSG files not opened. Adversarial table of 28 rows with computed values covering all 15 Lean statements. Automatic checks all passed; dependency check rerun: 200 roadmaps, 2201 edges, 0 problems. Suggested.lean elaborates with 15 sorry warnings only; a one-tactic probe (rfl, simp) closes none of the 15 statements. Supplier citations resolved on main; overlap read against ModularCharactersAndBlocksPartII, GlaubermanZStar and LocalFiniteGroupTheory. Pull-request text agrees with the head. Two small corrections (blockCharacters unused by any statement; module docstring's reason for omitting the spanning half) and one format note (the Needs lines of 2.1 and 2.3 cite each other). Two licence questions for the human reviewers.",
+  "text": "f52f05926d6877fb",
+  "carried": {
+   "from": "c59fc361c7e55bf8e0dc950d5d511bf225875890",
+   "head": "7a37125ea0d35591d402d50d19acbe0725144045",
+   "findings": 2,
+   "lines": 32,
+   "folders": [
+    "RepresentationTheory/ModularCharactersAndBlocks"
+   ],
+   "corrections": true
+  }
+ }
+}
