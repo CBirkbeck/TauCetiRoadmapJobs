@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GaloisSectionsPadicPeriodMaps~5",
+  "head": "5fdc42d19072061bc7478f9a481301ce5836d111",
+  "pr": 1739,
+  "folder": "GaloisSectionsPadicPeriodMaps",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 5,
+  "notes": "Full review of the head. Seeded sample of fifteen sections (0.3, 0.5, 1.4, 3.1, 4.1, 4.3, 5.1, 6.4, 6.7, 7.4, 7.6, 7.7, 8.1, 9.5, 9.6) verified against bs, hs, stoll and stix08 at their locators (about 60 locators, all agree); adversarial table with computed values for every layer and headline; 15 library declarations opened at the pins (one file path out of date, C01); every cited section of 23 supplier roadmaps resolved on main or at the open heads; the eight declared supplier gaps checked for precision and against existing owners; dependency check 0 problems, no change outside the folder; Suggested.lean elaborates with no output and states no declaration (fourteen headline items named as not statable); all automatic checks passed; pull request text agrees with the head. Five source issues recorded. One question for the human reviewers (statability of 9.4 on the pinned fundamental group).",
+  "text": "0b1800b5acbe9828",
+  "carried": {
+   "from": "5fdc42d19072061bc7478f9a481301ce5836d111",
+   "head": "369f1628b496f7ea555ccb00412bc32289db2297",
+   "findings": 2,
+   "lines": 4,
+   "folders": [
+    "GaloisSectionsPadicPeriodMaps"
+   ],
+   "corrections": true
+  }
+ }
+}
