@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HochschildHomologyAndHKR~4",
+  "head": "e98ebdbe55fe5042f71f64d51ab94c04b0fef792",
+  "pr": 2447,
+  "folder": "HochschildHomologyAndHKR",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review of the repaired head (previous review had no finding). Whole README read and every Check recomputed; seeded sample of 15 targets checked against Ginz05, HKR62 and AV20 (34 locators; Loday98, Weibel94, CE56, Ger63, Mat86 cited by locator only, so the sources of 1.3 were not verifiable). New Layer 9: route inputs opened at the pinned Mathlib (13 declarations) and RefinedTraceMethods 1.8 read at its open head. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 10 sorry warnings only; one-tactic probe closes 0 of 10 theorems. No gap is declared in the README; the plan's gap smooth-hkr-antisymmetrisation is superseded by 9.1 (C01). C02: the pull request description predates Layer 9. For the human reviewers: overlap of 9.1 with KTheoryFiniteLocalFields 4.0 on main, stated as a kept variant.",
+  "text": "20854baeffbbf5c6",
+  "carried": {
+   "from": "e98ebdbe55fe5042f71f64d51ab94c04b0fef792",
+   "head": "b473aca75fbef32ab88968020352696fdc307d44",
+   "findings": 2,
+   "lines": 11,
+   "folders": [
+    "HochschildHomologyAndHKR"
+   ],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C01: its second point.",
+    "where": "the board's design plan: its targets 6.4 and 7.6 and its gaps list",
+    "raised": "PRREVIEW-HochschildHomologyAndHKR~4"
+   }
+  ]
+ }
+}
