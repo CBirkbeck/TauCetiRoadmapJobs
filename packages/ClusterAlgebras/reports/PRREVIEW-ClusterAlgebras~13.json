@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClusterAlgebras~13",
+  "head": "04af438e7be1c3dd683c357f5a06c76ec2d693cf",
+  "pr": 2524,
+  "folder": "ClusterAlgebras",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full review. Automatic checks all passed at this head; dependency check 200 roadmaps, 2185 edges, 0 problems, no UPWARD or CYCLE line; lake env lean on Suggested.lean gives 12 sorry warnings and no error; one-tactic probe closes none of the 12 theorems. The change is 86 lines of README.md (ice quivers and amalgamation in 1.1, double-word quivers in 6.2), nothing outside the folder. Sample: all 15 seeded subsections; 121 locators located in 20 sources, all resolving, those of the sample read against their statements. New mathematics checked by hand (symmetrizer, integrality, mutation and amalgamation laws) and by computation: the mutable columns of Q(w) equal BFZ III Remark 2.4 on 125,887 entries for 2,800 random double reduced words in types A2, B2, G2, A3, B3, C3, A1xA1, and the untransposed variant fails on 39,951. README worked examples in 0.7, 1.2, 1.5, 2.1, 2.4, 2.6, 3.1, 5.3 recomputed with exact rational arithmetic. Previous review had no findings. One small correction (the description omits the removed arrow-count ice-quiver bijection, block-diagonal statement and Check) and three format notes. Two licence-class points for the human reviewers.",
+  "text": "0f6eddce832d3f82"
+ }
+}
