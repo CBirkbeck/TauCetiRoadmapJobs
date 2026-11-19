@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PDE~13",
+  "head": "2c19c3f6f69829a70fa06cf9126beadccceb35d8",
+  "pr": 1614,
+  "folder": "PDE",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full re-review. Previous finding R01 (off-diagonal Marcinkiewicz) repaired; earlier C02, C04, C05, N01, N02 repaired, C01 partly, C03 (description) not. New findings: R01 the proof sketch of finite_connectedComponents_of_isLipschitzDomain in 4.6 asserts that Omega inside a chart cylinder is connected, refuted by an explicit two-component polygonal domain; R02 two headline targets are theorems at the pin 2fd255d (Wkp.dense_contDiffOn_representatives closes dense_contDiffOn_representatives_wkp by exact; UniformlyEllipticOn.exists_lowerOrder_eq_restrictL_of_locallyLipschitzOn gives exists_wkp_two_of_lipschitz_coefficients). Seeded sample of 15 targets recomputed; 14 locators read in 6 sources (Tao, Armstrong-Kempe, Bauer-Pauly-Schomburg, Rosales, Sarason, Lunardi); textbooks and three papers not readable. Automatic checks all pass; dependency check 0 problems; lake env lean gives 28 sorry warnings only; one-tactic probe closes none, one-lemma exact closes one. Overlap check read six closest roadmaps, nothing shared. Four points for the human reviewers (R02 and C01 concern main's text; two Lipschitz-domain predicates; largest-share sources unread; one licence).",
+  "text": "4b41d21eef82cf77"
+ }
+}
