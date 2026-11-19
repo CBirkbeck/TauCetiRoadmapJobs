@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PseudoholomorphicCurveAnalysis~8",
+  "head": "8bc8c195b3cfa849b5ac30936a48f81473e930e8",
+  "pr": 2528,
+  "folder": "PseudoholomorphicCurveAnalysis",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. Two P2 findings, both false sentences in Checks: the sign of the weak identity for J = i in 3.4 (computed witness xi = z, phi radial cutoff) and the 6.1 example log log(2/|1-z|), which is not W^{1,2} on the disc (blows up at z = -1). The pull request's change (citations moved from CharacteristicClasses C3.2 to C3.0, 7.2 step 2 through the determinant line) verified against C3.0 at this head. Seeded sample of 15 targets recomputed; Wendl Theorems 2.62, 2.73, 2.78, 2.89, 3.22 read at their locators; McDuff-Salamon not readable (cited by locator). 24 library declarations opened at the pins (Tau Ceti 2fd255d99): the README's Tau Ceti contract is written against an older pin (small corrections C01, C02). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning, 11 signatures compared, one-tactic probe closes none. Open heads of the HeegaardFloer and AnalyticStableMaps revisions were not available.",
+  "text": "615ef900d58c65a4"
+ }
+}
