@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StatisticalLearningTheory~3",
+  "head": "0a66c85b0219a20050c950435651a9035db76c8e",
+  "pr": 2515,
+  "folder": "StatisticalLearningTheory",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 0a66c85; checked the pull request's title and description sentence by sentence against the head (layers, suppliers and sections, Mathlib and Tau Ceti lists, ownership, the 49 admitted theorems, the numerical claims recomputed: 4.683, delta(eps) = 0.405, sqrt(2 log 12.5) = 2.2475): one sentence on the prior formalization to correct (C01). Previous report had no finding; its two small corrections and two format notes are carried over unrepaired. Elaboration: 49 sorry warnings, nothing else. Dependency check: 0 problems. Automatic checks: one form check failed (empty section header, N01). Seeded sample not reread: no passage changed.",
+  "text": "bbfe722e9b579217"
+ }
+}
