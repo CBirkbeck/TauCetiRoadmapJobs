@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PlanarTopology~4",
+  "head": "a994be463c2f8d08bfbfaa01bf0f866cf8c835f9",
+  "pr": 271,
+  "folder": "PlanarTopology",
+  "date": "2026-11-19",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review. Previous findings checked one by one (R01-R03, R05-R08, R13 repaired; R04 not repaired, now R01/R02; R09, R10 partly). Sources read at their locators: Epstein 1966 (12 locators), Thomassen 1992 (6), Kulpa 1998 (3); Moise, Pachner, Munkres, Whitehead, Kuiper, Rourke-Sanderson, Newman, Cannon not readable. Library declarations read at the branch's pin (Tau Ceti 358314d, Mathlib f6090c7) and, for the ownership findings, at main's pin (Tau Ceti 2fd255d). Ownership compared with ConformalMapping, AlgebraicTopology, GeometricTopology and MathematicalBilliards on main and with the open TeichmullerGeometry. Dependency check: 0 problems. Elaboration not run: the package directory for the branch's pin is absent on this worker, so the automatic build failure is an environment failure and was set aside; signatures and padding were judged by reading. The automatic list of SurfaceTopology mentions was set aside (companion roadmap of the same pull request, named as a consumer).",
+  "text": "96e177cf8e61b0a8"
+ }
+}
