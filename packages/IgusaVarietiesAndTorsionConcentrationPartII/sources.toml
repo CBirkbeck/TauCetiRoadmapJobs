@@ -89,3 +89,22 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-10"
 cited_for = ["10.1"]
+
+[[source]]
+id = "LTXZZ"
+authors = "Yifeng Liu, Yichao Tian, Liang Xiao, Wei Zhang, Xinwen Zhu"
+title = "On the Beilinson-Bloch-Kato conjecture for Rankin-Selberg motives"
+year = 2022
+doi = "10.1007/s00222-021-01088-4"
+arxiv = "1912.11942"
+version_note = "Published Inventiones pagination (journal pages 107-375) is cited, read from the NSF public-access copy of the published article; line numbers refer to that text"
+locator_scheme = "theorem"
+locator = "Definitions D.1.1-D.1.2, Proposition D.1.3 and proof, Corollary D.1.4 and proof, pp. 365-368"
+url = "https://par.nsf.gov/servlets/purl/10323568"
+fetched_from = "https://par.nsf.gov/servlets/purl/10323568"
+fetched_at = "2026-11-19T02:30:55Z"
+sha256 = "dd821abd2b06233cb69cdc88de242b689686d5f2ce0c2072128abcd54ec89d97"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["Summary", "11.9", "Scope and ownership", "Exact supplier contracts"]
