@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsParabolicCylinder~9",
+  "head": "18682aaf0c42489b218f370c62d2f386d3f7d789",
+  "pr": 2551,
+  "folder": "SpecialFunctionsParabolicCylinder",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review of a README-only revision (attributions to seven further texts, ten renamed headings; statements and Suggested.lean unchanged). Previous review had no finding. Seeded sample of 15 targets (2.3, 2.4, 3.3, 3.5, 4.1, 4.2, 4.4, 5.1, 5.4, 6.2, 6.4, 6.6, 7.1, 9.6, 9.7) recomputed numerically from the pinned definitions, with further headline rows (1.4, 6.1, 8.1, 8.2, 8.3, 9.1-9.3); all hold. 51 DLMF locators and all 10 Whittaker-Watson locators read in the text (Whittaker-Watson in the 1920 third edition, same pagination); about 85 locators into Lebedev, Magnus-Oberhettinger-Soni, Beals-Wong, Temme, Olver and Andrews-Askey-Roy could not be read legally and are listed as not verifiable and flagged to the human reviewers. Automatic checks pass (rerun), dependency check 0 problems, Suggested.lean elaborates with 70 sorry warnings only, one-tactic padding probe closes none of the 70 theorems, 36 library declarations opened at the pins, cross-roadmap citations and cited anchors resolved. One small correction (attribution in 2.5), two format notes, two questions; one source error recorded (DLMF 12.13.5, already corrected in 8.3).",
+  "text": "9ac75720591a7ae4"
+ }
+}
