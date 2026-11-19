@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularityAndLanglandsExtensions~11",
+  "head": "6d60dea794421576b831196be35d388920c6cc24",
+  "pr": 1180,
+  "folder": "ModularityAndLanglandsExtensions",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 2 changed lines since 123b48a: the one changed scope sentence checked against ModularityAndLanglandsExtensionsPartII §§13.11-13.13 and 14.6 at its open head and against newton-thorne-hilbert Theorems 6.4-6.5 and newton-thorne-II Corollary B; sampled §4.17 recomputed at n=0,1; no target here uses the all-rank theorem or its consequences; previous C01 repaired in the description; automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry the only warning; no change outside the folder.",
+  "text": "afdafe57e0ad6278"
+ }
+}
