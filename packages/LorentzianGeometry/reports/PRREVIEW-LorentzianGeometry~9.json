@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LorentzianGeometry~9",
+  "head": "42109b863695bdce64731f04dfe66149be755c07",
+  "pr": 2232,
+  "folder": "LorentzianGeometry",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since 42109b8; this round read the pull request's title and description against the head: every sentence agrees (supplier list of nine, consumer sections, 48 targets, stated and not-statable headline lists), and the previous small correction C01 is repaired. Adversarial rows computed for Hawking's theorem (Milne past region, H = -n/s0, bound s0, sign control) and for the time-cone transitivity theorem (with a negative-definite control). No seeded-sample target lies in a changed passage. Automatic checks all passed at this head; dependency check rerun with 0 problems; Suggested.lean elaborates with 8 sorry warnings and nothing else. 'Annals definitions 50 and 51' in the description and oneill1983 Theorem 14.55A could not be verified.",
+  "text": "f8881fdc9deca484"
+ }
+}
