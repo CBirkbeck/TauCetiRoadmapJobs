@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComputabilityTheory~1",
+  "head": "8b454b11bed11e2fae58d9b124dcf9ebd8e5f20c",
+  "pr": 2554,
+  "folder": "ComputabilityTheory",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Seeded sample of 15 targets: the source [S] (Soare 1987) is paywalled (uncertified), so none of its 31 locators could be checked against the text; the statements were checked mathematically instead (23 rows in the adversarial table). The worker's automatic checks all passed; the dependency check reported 0 problems. Suggested.lean elaborates with only sorry warnings (103); about 300 cited Mathlib and Tau Ceti names resolve at the pin. One-tactic probe: 13 attempts, 9 closed. The headlines were elaborated on Tau Ceti carriers in a separate test file. The citation scanner's 26 'found nowhere' names are all declared in Suggested.lean under its Oracle.Single.Code and Examples namespaces. Overlap with open pull requests checked: none.",
+  "text": "9141ae31192fe048"
+ }
+}
