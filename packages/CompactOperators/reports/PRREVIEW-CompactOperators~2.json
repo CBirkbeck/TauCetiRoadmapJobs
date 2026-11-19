@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CompactOperators~2",
+  "head": "dec33f7e0c4d21d7a5c9be56309c61d9d3e0208d",
+  "pr": 2546,
+  "folder": "CompactOperators",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full re-review. Earlier R01, R02, C02-C05 and N01-N03 repaired; C01 settled by the stated reason. Seeded sample (0.4, 1.1-1.3, 1.5-1.7, 2.1, 2.2, 2.4, 3.3, 3.4, 4.2, 4.4, 4.5) recomputed; 20 locators checked in Serre1962, JohanssonNewton, Kedlaya2007, Schikhof, DeGrandeDeKimpe1982; Coleman1997 uncertified. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 23 sorry warnings only; #check @ on all 39 declarations; one-tactic probes (colemanDBounded_succ closes by a Tau Ceti lemma).",
+  "text": "deb15e98e85a01e7"
+ }
+}
