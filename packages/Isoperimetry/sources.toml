@@ -140,3 +140,41 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-19"
 cited_for = ["6.1", "6.2", "6.3"]
+
+[[source]]
+id = "FuscoMaggiPratelli2007SobolevBV"
+authors = "Nicola Fusco, Francesco Maggi, Aldo Pratelli"
+title = "The sharp quantitative Sobolev inequality for functions of bounded variation"
+year = 2007
+venue = "J. Funct. Anal. 244 (2007) 315-341"
+version_note = "author preprint on cvgmt; inequality (1.4) and the equality statement after it are in §1, Theorem 1.1 is the quantitative form"
+locator_scheme = "equation"
+locator = "(1.4)"
+url = "https://cvgmt.sns.it/media/doc/paper/1414/p1_final.pdf"
+fetched_from = "https://cvgmt.sns.it/media/doc/paper/1414/p1_final.pdf"
+fetched_at = "2026-11-19T22:55:21Z"
+sha256 = "5a312703aa89a850886ce9bbca66f0404260eaf5363700b9996b4c1d4589f264"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["5.5"]
+
+[[source]]
+id = "CufiVerdera2015GreenFormula"
+authors = "Julia Cufi, Joan Verdera"
+title = "A general form of Green Formula and Cauchy Integral Theorem"
+year = 2013
+venue = "Proc. Amer. Math. Soc. 143 (2015)"
+doi = "10.1090/S0002-9939-2014-12418-X"
+arxiv = "1306.6832v1"
+locator_scheme = "theorem"
+locator = "Theorem of §1 (unnumbered)"
+url = "https://arxiv.org/abs/1306.6832v1"
+fetched_from = "https://arxiv.org/pdf/1306.6832v1"
+fetched_at = "2026-11-19T22:55:44Z"
+sha256 = "5956d277c46b2fa723600332a6ad15fb5dc609a22b7202b8806b98d8bf170fc6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1; cited by the unnumbered Theorem of §1 of this version"
+cited_for = ["3.1"]
