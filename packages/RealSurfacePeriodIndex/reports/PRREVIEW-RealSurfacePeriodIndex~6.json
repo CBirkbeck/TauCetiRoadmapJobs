@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RealSurfacePeriodIndex~6",
+  "head": "9a4f307f167fbad8c6b4269f695ae15ac205ebc7",
+  "pr": 2462,
+  "folder": "RealSurfacePeriodIndex",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 2 changed lines since f569636, and a first check of the pull request's title and description against this head. The added scope paragraph was checked at its locators (B19 Theorem 0.1 and section 0.6 p. 68, BW20 Example 2.5) and against QuadraticFormInvariantsPartII on main (its Layer PI.0 pointer): true, and it repairs the previous C02 and C03; the previous C01 (description) is repaired. Description read sentence by sentence against the head: one small correction (the three statements asked of ComplexComparisonPartII C6.3, MotivesAndAlgebraicCycles 7.8 and AlgebraicTopologyPartII 16.2, still not stated on main, are not mentioned). One format note carried (Corollary 2.5 attributed to a roadmap section). Elaboration: sorry the only warning (8). Dependency check: 199 roadmaps, 2189 edges, 0 problems; no change outside the folder. Automatic checks all passed. The seeded sample falls outside the changed passage and stands as in the previous review. For humans: arrangement against B19, characteristic-zero scope, unread sources, the level of a field without an owner, the claim that B19 Proposition 4.4 is false as printed.",
+  "text": "8e9489e49a43389b",
+  "carried": {
+   "from": "9a4f307f167fbad8c6b4269f695ae15ac205ebc7",
+   "head": "9a4f307f167fbad8c6b4269f695ae15ac205ebc7",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
