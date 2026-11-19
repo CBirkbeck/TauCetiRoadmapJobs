@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HardSphereDynamicsAndKineticLimits~4",
+  "head": "6ffdf49d8d151813a52382b8d02a6ee4772cb23d",
+  "pr": 2448,
+  "folder": "HardSphereDynamicsAndKineticLimits",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full review of a repaired head (README only changed; the previous review was an acceptance with no finding). Seeded sample of 15 sections verified against GST2013, BGSS2023 and DengHaniMa2024 (all 73 line ranges of the README and the 27 rows of its page table, all hold); Alexander1976 and Lanford1975 uncertified, not read. Adversarial table of 25 rows with computed values, including the new structure independence of the Lanford proposition, the Borel route of 6.4 and the symmetries for every real diameter. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 11 sorry warnings only; padding probe closes none of the 11 theorems; 58 Mathlib and 10 Tau Ceti declarations opened at the pins; 9 cross-roadmap citations resolved (BoltzmannGradLimitAndLanford and ClassicalErgodicTheory at their open heads). Three small corrections: interval hypothesis in the conservation bullet of 5.1, standing hypothesis in the overview, one out-of-date sentence of the description.",
+  "text": "af9d417e7f4ca68c",
+  "carried": {
+   "from": "6ffdf49d8d151813a52382b8d02a6ee4772cb23d",
+   "head": "5619cb5a6c276a966eaf0cb6a557e66f37fafc29",
+   "findings": 3,
+   "lines": 4,
+   "folders": [
+    "HardSphereDynamicsAndKineticLimits"
+   ],
+   "corrections": true
+  }
+ }
+}
