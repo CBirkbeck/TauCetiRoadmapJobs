@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LargeDeviations~3",
+  "head": "deea490d42198af5ea8bbbf82f1b2bb811b248aa",
+  "pr": 2499,
+  "folder": "LargeDeviations",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 33 changed lines since 34e511e. Checked: each previous remark against this head (R01, C01, C02, C03, N01 repaired; R02 partly repaired and written again as R01; N02 dropped, the module header being in use on main); the new Conventions paragraph against the binders of every Lean theorem and by computation under the trivial sigma-algebra (2.1 fails as the paragraph says; the moment condition of 2.2, which the paragraph exempts, fails too); the two corrected Checks, the Checks of 3.2 and the route of 4.3 recomputed; ConvexAnalysisAndDuality 4.3 resolved at its open head; the pull request text against the head. Dependency check: 0 problems. Elaboration: 36 sorry warnings, no error. One automatic form check set aside as a false positive. Seeded sample: no locator changed; Dembo-Zeitouni Lemma 2.2.5(b) in the changed route of 4.3 is not readable.",
+  "text": "3492a62c01bdb439"
+ }
+}
