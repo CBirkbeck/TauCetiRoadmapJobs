@@ -5329,7 +5329,7 @@
     },
     {
       "slug": "full-fixer-cutting-tensors",
-      "needs": "For the specified smooth affine full fixer models, provide finite scheme-theoretically cutting mixed tensor families and their base-change identification, for every faithful finite-free realization of these fixers; the ordinary-Levi intersection is the separate contract below.",
+      "needs": "For a mixed-characteristic discrete valuation ring O, a finite free O-module Λ and a closed O-flat subgroup scheme 𝒢⊂GL(Λ) with reductive generic fibre, give a finite family of tensors in `Λ^⊗=⊕_{m,n≥0} Λ^{⊗m}⊗(Λ^∨)^{⊗n}`, formed with tensor products and duals only, whose fixer in GL(Λ⊗_O R) is 𝒢(R) for every O-algebra R (Kisin17, footnote 7, p.7; Kisin17 lines 320–324, recording Kisin's Proposition 1.3.2 with symmetric and exterior powers and Deligne's argument with tensor products and duals only; P23, arXiv v4 §3.2.1 and footnote 3, pp.15–16; P23 lines 681–690; KPZ26, §§5.2–5.2.1, pp.52–53; KPZ26 lines 2292–2297 and 2317).",
       "supplier": "ReductiveGroupsPartII",
       "section": "RG2.3.5"
     },
@@ -5347,9 +5347,33 @@
     },
     {
       "slug": "ordinary-levi-full-fixer",
-      "needs": "Under the ordinary σ-straight normalization and the assumption that the ambient full fixer equals its connected parahoric, prove that the Newton-Levi model satisfies 𝒨(W)=M(K₀)∩𝒢(W) and that its full fixer equals its connected parahoric.",
+      "needs": "Let G be a connected reductive group over ℚ_p, W=W(F̄_p), K₀=W[1/p], S a maximal K₀-split torus of G defined over ℚ_p, and x a point of B(G,ℚ_p) in the apartment of S whose Bruhat–Tits stabilizer scheme 𝒢 equals its connected parahoric. Let t be a σ-straight translation element of the Iwahori–Weyl group of G over K₀ relative to S, and M the centralizer in G of the Newton cocharacter of t, a semistandard Levi subgroup defined over ℚ_p. Prove that M(K₀)∩𝒢(W) is the group of W-points of the parahoric group scheme 𝒨 of M attached to x through the identification of the apartments of S for M and for G, that 𝒨 is defined over ℤ_p, and that the Bruhat–Tits stabilizer scheme of x for M equals 𝒨 (KZ25, §3.4.2, p.26; KZ25 lines 1152–1165).",
       "supplier": "ReductiveGroupsPartII",
       "section": "RG2.3.3"
+    },
+    {
+      "slug": "scheme-local-model-representative",
+      "needs": "For a local-model triple (G,{μ},𝒢) over a finite extension F/ℚ_p satisfying the standard assumptions, namely p>2, (G,μ) of local abelian type and G essentially tame and classical with triality excluded, the scheme `Mloc_{𝒢,μ}` of KPZ26 (3.2.13), built from an auxiliary Hodge-type pair (G′,μ′) whose adjoint pair is the product of the factors of (G^ad,μ^ad) on which μ^ad is nontrivial, is flat, projective and normal over O_E, with generic fibre G/P_μ and reduced special fibre, and it represents the integral v-sheaf local model of §4.17 attached to 𝒢°; hence it is independent of the auxiliary choices up to unique isomorphism. Retain its comparison isomorphisms along maps of local-model triples that induce an isomorphism of adjoint pairs, and its compatibility with a common reflex-field base change (KPZ26, Theorem 3.2.9, §3.2.12, Theorem 3.2.15 and §3.4.2, pp.19–20 and 28; KPZ26 lines 859, 883–897 and 1214–1231).",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "4.17"
+    },
+    {
+      "slug": "scheme-local-model-hodge-immersion",
+      "needs": "Let (G,{μ},𝒢) be a local-model triple over F with G=∏ᵢ Res_(K_i/F) H_i quasi-tame, each H_i split over a tame extension of K_i and of classical type, p odd, and let ρ be a Hodge embedding of the product form KPZ26 (3.3.24). After replacing ρ by a repeated sum ρ^⊕m with m≥1, there are a lattice Λ⊂V and a quasi-parahoric 𝒢′ with (𝒢′)°=𝒢° such that ρ extends to a closed immersion 𝒢′↪GL(Λ) and the induced map from the local model `M_{𝒢,μ}` of KPZ26 Definition 3.2.6 and §3.2.8 to Gr(d,Λ) over O_E is a closed immersion extending the generic map. When moreover p∤|π₁(G^der)|, `M_{𝒢,μ}` is normal with reduced special fibre and equals `Mloc_{𝒢,μ}` (KPZ26, Theorem 3.2.9 and Lemma 3.4.1, pp.19 and 27–28; KPZ26 lines 859 and 1195–1212). One may take 𝒢′=𝒢 when π₁(G)_I is torsion-free, and also when 𝒢 is the stabilizer of a point generic in its facet and no anisotropic factor comes from a division algebra of degree divisible by p (KPZ26, Theorem 3.3.25 and Remark 3.3.26, p.26; KPZ26 lines 1125–1137). In the tame-descent case G=Res_(K/F)H, with p∤|π₁(G^der)|, 𝒢 the stabilizer of a point generic in its facet and no division-algebra factor of H^ad of index divisible by p, let K̃/K be a tame Galois extension with group Γ over which the point becomes hyperspecial, H₀ the split form and Λ̃ a Γ-stable lattice on which ρ⊗K̃ extends to a closed immersion of H₀⊗O_K̃. Then the local-model map of the composite 𝒢↪Res_(O_K̃/O_F)(H₀⊗O_K̃)↪GL(Λ̃) is a closed immersion, 𝒢 is the scheme-theoretic intersection of Res_(O_K̃/O_F)(H₀⊗O_K̃) with the stabilizer of the Γ-action and O_K̃-multiplication endomorphisms of Λ̃, and the maps to the local models of the chain {(π̃ⁱΛ̃)^Γ} and of its total lattice are closed immersions (KPZ26, §3.4.5, Proposition 3.4.6 and Remark 3.4.7, pp.29–30; KPZ26 lines 1257–1315).",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "4.17"
+    },
+    {
+      "slug": "schubert-curve-spanned-tangents",
+      "needs": "Let k be an algebraically closed field of characteristic p, here k=F̄_p, G a split connected reductive group over k and μ a dominant cocharacter with (G,μ) of mod-p abelian type: every simple factor of (G^ad,μ^ad) is of type A, B or C with μ a sum of minuscule coweights, or of type D_n with μ=rϖ₁^∨ (type Dᴿ) or μ=sϖ_(n−1)^∨+tϖ_n^∨ (type Dᴴ), r,s,t≥0. If p∤|π₁(G^der)| and no factor is of type Dᴴ, then at every k-point x of the affine Schubert variety S_μ in the affine Grassmannian of G over k((t)), the tangent space T_x(S_μ) is spanned by the tangent images of k-morphisms Spec k[[t]]→S_μ sending the closed point to x (KPZ26, Definitions 4.1.2 and 4.1.4 and Theorem 4.1.6, p.31; KPZ26 lines 1325, 1338–1349 and 1363–1365).",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "0.29"
+    },
+    {
+      "slug": "local-model-curve-spanned-tangents",
+      "needs": "Let k=F̄_p and let (G,{μ},𝒢) be a local-model triple over O_F, for F/ℚ_p finite, satisfying KPZ26 Standard assumptions 3.1.5: p>2, (G,μ) of local abelian type, and G essentially tame and classical, triality excluded. Assume 𝒢≅Res_(O_K/O_F)ℋ for a finite extension K/F and a reductive group scheme ℋ over O_K, and let `Mloc_{𝒢,μ}` be the scheme local model of KPZ26 (3.2.13), whose special fibre `Mloc_{𝒢,μ}⊗k` is isomorphic to the affine Schubert variety S_μ′ of a split pair (G′,μ′) over k of mod-p abelian type. At every k-point x of the minimal stratum (the Schubert cell of the dominance-minimal dominant coweight ν⪯μ′), and at every k-point x when G has no factor of type Dᴴ, the tangent space of `Mloc_{𝒢,μ}⊗k` at x is spanned by the tangent images of k-morphisms Spec k[[s]]→`Mloc_{𝒢,μ}⊗k` sending the closed point to x (KPZ26, Standard assumptions 3.1.5, Definition 4.1.4, Theorem 4.3.2, Lemma 4.4.2 and Theorem 4.4.3, pp.16, 31, 40 and 46–47; KPZ26 lines 717–720, 1347–1349, 1748–1754, 2002–2006 and 2049–2055).",
+      "supplier": "GeometricSatakeAndFusion",
+      "section": "4.17"
     },
     {
       "slug": "integral-hodge-realization-extension",
