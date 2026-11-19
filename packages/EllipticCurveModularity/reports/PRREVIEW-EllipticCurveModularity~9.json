@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularity~9",
+  "head": "03423203f81c9ff3b6fdc2a9c7721623dcc1c3db",
+  "pr": 1018,
+  "folder": "EllipticCurveModularity",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 6,
+  "notes": "incremental re-review of 0 changed lines since 0342320; this round checked the pull request's title and description against the head: the previous small correction (an out-of-date paragraph on EllipticCurveModularityTotallyReal) is repaired, no sentence is contradicted; the three open suppliers' sections resolved at their heads, the 13 other suppliers found on main; the seeded sample falls in no changed passage; automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with 12 sorry warnings only; six format notes carried over",
+  "text": "fac4cc32f2175f7a"
+ }
+}
