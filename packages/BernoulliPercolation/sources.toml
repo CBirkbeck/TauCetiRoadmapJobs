@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "BernoulliPercolation"
+
+[[source]]
+id = "DuminilCopin2018"
+locator_scheme = "page"
+locator = "p. 2"
+url = "https://www.ihes.fr/~duminil/publi/2017percolation.pdf"
+fetched_from = "https://www.ihes.fr/~duminil/publi/2017percolation.pdf"
+fetched_at = "2026-11-19T16:57:55Z"
+sha256 = "b28456c09594b50f6766aa862d54293723584e9e95f34b443505c85d610bfa61"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["1.4"]
