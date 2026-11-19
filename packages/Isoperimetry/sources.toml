@@ -1,0 +1,142 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "Isoperimetry"
+
+[[source]]
+id = "CagnettiColomboDePhilippisMaggi2014"
+authors = "Filippo Cagnetti, Maria Colombo, Guido De Philippis, Francesco Maggi"
+title = "Rigidity of equality cases in Steiner's perimeter inequality"
+year = 2013
+venue = "Anal. PDE 7 (2014) 1535-1593"
+doi = "10.2140/apde.2014.7.1535"
+arxiv = "1309.1639v1"
+locator_scheme = "theorem"
+locator = "Theorem C"
+url = "https://arxiv.org/abs/1309.1639v1"
+fetched_from = "https://arxiv.org/pdf/1309.1639v1"
+fetched_at = "2026-11-19T21:47:28Z"
+sha256 = "37b975fc8535a5b6cb76a7eed812f7c84574b98ece4a70051622804b629debf2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["4.1", "4.2", "4.3"]
+
+[[source]]
+id = "Maggi2012"
+authors = "Francesco Maggi"
+title = "Sets of Finite Perimeter and Geometric Variational Problems"
+year = 2012
+venue = "Cambridge Studies in Advanced Mathematics 135, Cambridge University Press"
+version_note = "open extract: contents, preface, introduction, bibliography and index; section locators read from the contents"
+locator_scheme = "section"
+locator = "§14.2"
+url = "https://cvgmt.sns.it/media/doc/paper/1880/Maggi_extract.pdf"
+fetched_from = "https://cvgmt.sns.it/media/doc/paper/1880/Maggi_extract.pdf"
+fetched_at = "2026-11-19T21:48:00Z"
+sha256 = "97bf03908209b4dd89c58107ba745a67fb66b78bdb8bfaec5d1d5bb22d0dffbe"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["2.1", "4.1", "4.3", "4.4", "4.5", "4.6"]
+
+[[source]]
+id = "Volcic2009RandomSymmetrizations"
+authors = "Aljosa Volcic"
+title = "Random symmetrizations of measurable sets"
+year = 2009
+arxiv = "0902.0462v1"
+locator_scheme = "theorem"
+locator = "Theorems 3.4 and 3.5"
+url = "https://arxiv.org/abs/0902.0462v1"
+fetched_from = "https://arxiv.org/pdf/0902.0462v1"
+fetched_at = "2026-11-19T21:58:30Z"
+sha256 = "a6eb34df7d4059dcd5b2496966985a32f8cc8414af859ebd784a9967b46367ec"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["2.2"]
+
+[[source]]
+id = "Burchard2009Rearrangement"
+authors = "Almut Burchard"
+title = "A Short Course on Rearrangement Inequalities"
+year = 2009
+locator_scheme = "theorem"
+locator = "Theorem 4.7"
+url = "https://www.math.toronto.edu/almut/rearrange.pdf"
+fetched_from = "https://www.math.toronto.edu/almut/rearrange.pdf"
+fetched_at = "2026-11-19T21:58:32Z"
+sha256 = "2aeb04bd85a3a155afde3d0222ae7753763e7ca260c66b5bce36fcc5e8ffeb19"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["5.1"]
+
+[[source]]
+id = "BianchiGardnerGronchiKiderlen2022"
+authors = "Gabriele Bianchi, Richard J. Gardner, Paolo Gronchi, Markus Kiderlen"
+title = "The Pólya-Szegő inequality for smoothing rearrangements"
+year = 2022
+venue = "J. Funct. Anal. (2024)"
+doi = "10.1016/j.jfa.2024.110422"
+arxiv = "2206.09833v1"
+locator_scheme = "theorem"
+locator = "Theorem 5.8"
+url = "https://arxiv.org/abs/2206.09833v1"
+fetched_from = "https://arxiv.org/pdf/2206.09833v1"
+fetched_at = "2026-11-19T21:58:37Z"
+sha256 = "993b5acdb92d264f256263bb86fca124a96bf22eb8748965cf6c81f185f1c171"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["5.2", "5.3", "5.4"]
+
+[[source]]
+id = "Tao2011BrunnMinkowskiNilpotent"
+authors = "Terence Tao"
+title = "The Brunn-Minkowski inequality for nilpotent groups"
+year = 2011
+locator_scheme = "section"
+locator = "post"
+url = "https://terrytao.wordpress.com/2011/09/16/the-brunn-minkowski-inequality-for-nilpotent-groups/"
+fetched_from = "https://terrytao.wordpress.com/2011/09/16/the-brunn-minkowski-inequality-for-nilpotent-groups/"
+fetched_at = "2026-11-19T21:58:37Z"
+sha256 = "c740157da7ef772a40ad059fa307bdad96de386f3c9144c1a207193821189ff3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["1.1"]
+
+[[source]]
+id = "Tropp2018ConvexGeometry"
+authors = "Joel A. Tropp"
+title = "Lectures on Convex Geometry"
+year = 2018
+locator_scheme = "chapter"
+locator = "Lecture 8"
+url = "https://tropp.caltech.edu/notes/Tro18-Lectures-Convex-LN.pdf"
+fetched_from = "https://tropp.caltech.edu/notes/Tro18-Lectures-Convex-LN.pdf"
+fetched_at = "2026-11-19T21:58:44Z"
+sha256 = "cfd8430b52a67c2c8c0d32bb49717c6003b529ca423365973e141f4f935a3967"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["2.3"]
+
+[[source]]
+id = "Wiedijk100"
+authors = "Freek Wiedijk"
+title = "Formalizing 100 Theorems in HOL Light, entry 43: The Isoperimetric Theorem"
+year = 2026
+locator_scheme = "section"
+locator = "43"
+url = "https://www.cs.ru.nl/~freek/100/hol.html"
+fetched_from = "https://www.cs.ru.nl/~freek/100/hol.html"
+fetched_at = "2026-11-19T21:58:45Z"
+sha256 = "37ca26ea42a36336a7415560d79f16bc45b2b140f0e840f3c7c7dedb7caef288"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["6.1", "6.2", "6.3"]
