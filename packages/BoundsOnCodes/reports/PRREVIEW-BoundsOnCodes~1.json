@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BoundsOnCodes~1",
+  "head": "ca816da501d94894d4d99fd60a91ae0bb36bd9f8",
+  "pr": 2563,
+  "folder": "BoundsOnCodes",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. All 15 sampled targets and every other locator (22 citing passages, one source) read against the August 2025 draft of Guruswami-Rudra-Sudan at their printed pages; every statement recomputed in degenerate cases (empty and one-letter alphabets, n = 0, k = 0, zero code, infinite field, d = 0, delta <= 1, delta > n) and every number in a Check recomputed; 49 cited library declarations opened at the pins (21 Mathlib, 28 Tau Ceti); Suggested.lean elaborates with 24 sorry warnings only; one-tactic probe closes none of the 24 theorems; dependency check 0 problems; automatic checks all passed; no shared object with AlgebraicCodingTheory, Rank24LatticeConstructions, CoboundaryExpansion, MathematicalStatisticsNonparametric or the open LinearAlgebraMethodInCombinatorics.",
+  "text": "e6e38ab40ad2f376"
+ }
+}
