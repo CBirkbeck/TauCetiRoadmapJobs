@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GroebnerGeometry~3",
+  "head": "ab404d0eb4674e19f71c217734b5377772dce3d3",
+  "pr": 2587,
+  "folder": "GroebnerGeometry",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review at an unchanged head. All 15 sampled targets and all 11 headline theorems tested on computed instances (adversarial table in the report); proof routes checked for the lifted-relation presentation, the flat weight degeneration and the Rees special fibre. 24 source locators read in 12 sources; Miller-Sturmfels, Eisenbud's Commutative Algebra and Cox-Little-O'Shea are uncertified and were not read. 22 library declarations opened at the pins, 13 cross-roadmap citations resolved on main. Automatic checks all passed, none set aside; dependency check: 0 problems; Suggested.lean elaborates with 11 sorry warnings only; one-tactic probes close none. Five small corrections (the Noetherian hypothesis of section 4.10 with a counterexample, Convention 1, the Hashimoto locator, a pointer in 6.2, the downstream list) and one format note. D01 stands. One question for the human reviewers: the most-cited source could not be read.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C05: those three READMEs on main must link `README.md#layer-4-rees-algebras-and-flat-initial-families` instead of `#g4-rees-algebras-and-flat-initial-families`.",
+    "where": "DeformationAndDerivedPatchingAlgebra(PartII) and ResolutionOfSingularitiesCharacteristicZero links to the G4 anchor",
+    "raised": "PRREVIEW-GroebnerGeometry~1"
+   }
+  ],
+  "text": "2746dc70b98f8445",
+  "carried": {
+   "from": "ab404d0eb4674e19f71c217734b5377772dce3d3",
+   "head": "2ff480655ec73341119d3afdab0937160b06ea9f",
+   "findings": 5,
+   "lines": 55,
+   "folders": [
+    "GroebnerGeometry"
+   ],
+   "corrections": true
+  }
+ }
+}
