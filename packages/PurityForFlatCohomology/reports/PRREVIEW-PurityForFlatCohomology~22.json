@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PurityForFlatCohomology~22",
+  "head": "06dec787bd3d0ae671c92e78e22927b33af3719c",
+  "pr": 1840,
+  "folder": "PurityForFlatCohomology",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Previous finding R01 repaired (local Lefschetz now taken from EtaleDualityAndPerverseSheavesPartII §7.3, read on main); previous C01-C04, N01-N02 repaired. Seeded sample of 15 targets (1.1, 1.6, 1.7, 3.2, 5.1, 5.3, 5.6, 7.3, 7.4, 7.7, 7.12, 8.3, 8.5, 8.9, 8.17) checked against CS24, C19, SGA2, Kat73 and Stacks tags 0DXR, 0DX9, 0EHC, 0EJP: 41 locators agree. Adversarial table with computed values in the report. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 15 sorry warnings only; one-tactic probe closes none of the 15 theorems. One small correction (the Heights bullet stands under 'consumed here' though nothing consumes it), one format note. For the humans: SchemeAndStackFoundations §2.9a exists only at the head of an open pull request; the merge-order file lists EtaleDualityAndPerverseSheavesPartII after this roadmap; Aus62 not read.",
+  "text": "2c67dc14a93fc58e",
+  "carried": {
+   "from": "06dec787bd3d0ae671c92e78e22927b33af3719c",
+   "head": "944b9ee257c6186f88a0f850351845c4bdb4b235",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "PurityForFlatCohomology"
+   ],
+   "corrections": true
+  }
+ }
+}
