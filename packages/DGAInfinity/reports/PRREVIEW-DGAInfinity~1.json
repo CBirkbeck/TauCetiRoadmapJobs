@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DGAInfinity~1",
+  "head": "56b426c75c1397c46f31f67a0790fcc235848b76",
+  "pr": 2574,
+  "folder": "DGAInfinity",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 9,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample (1.2, 1.3, 3.1, 5.2-5.5, 6.5, 7.1, 7.4, 8.1, 9.1, 9.3, 10.3, 10.4) checked against Keller Introduction, Keller 2006, Keller 1994 (Numdam), Drinfeld, Keller ICM, Keller CY completions, Toen, Shklyarov and BGS (AMS open archive); two wrong locators (Keller 1994 Theorem 8.0, Keller ICM Section 5). Headlines: Kadeishvili, A-infinity Whitehead, unit strictification, Keller Morita, relative Koszul duality; the three Lean theorems elaborate with sorry only, match their sources, and resist the one-tactic probe. Automatic checks all passed; dependency check 0 problems, but the new HopfologicalAlgebra and GeneralAlgebraicKTheory supplier contracts make supply run both ways at roadmap level (R01). Adversarial pass found the 9.2 symmetric-algebra Check false for semisimple algebras (R02). Overlap: no shared ownership with HochschildHomologyAndHKR, ZigzagPreprojective, RationalHomotopyModels, StablePeriodicCurved, GrothendieckEulerForms, DerivedInfinityCategories.",
+  "text": "aa8ae6e15f10f337"
+ }
+}
