@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~98",
+  "head": "5f13b01d6d750fd6746870c6e500e357c6825594",
+  "pr": 2531,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full re-review. Previous findings R01, R02 and C01-C05, N01 repaired; R03 deferred as D01, which stands. Seeded sample of 15 sections checked against the July 2026 Stacks book, Milne AG, AG11 and CA, Cesnavicius-Scholze and Cesnavicius 2018 (about 190 Stacks tags); one wrong locator in 0.20 (C01). Adversarial pass over the four new subsections, with Lean probes of the 2.9a universe claims. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 48 sorry warnings only; one-tactic probe closes none of the 48. New finding R01: 1.1a re-plans Stacks 0245, owned by ModularCurves Layer 0.5 on main and assigned to it by this README's scope.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Fppf cohomology with supports gets a second owner: PurityForFlatCohomology §0.2 (open) plans the same construction, long exact sequence, open excision and triple sequence",
+    "where": "PurityForFlatCohomology §0.2 and SchemeAndStackFoundationsPartII line 369 cite §2.9a",
+    "raised": "PRREVIEW-SchemeAndStackFoundations~97"
+   }
+  ],
+  "text": "304ebd6ae228b14e"
+ }
+}
