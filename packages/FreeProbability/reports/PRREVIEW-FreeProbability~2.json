@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FreeProbability~2",
+  "head": "87d99bf9d5073f862348ec78cd84db2b851d1964",
+  "pr": 2575,
+  "folder": "FreeProbability",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full re-review. Earlier R01, R02, C01-C04, N01-N02 all repaired. Seeded sample of 15 sections plus the 8 Suggested.lean theorems recomputed (adversarial table). 23 locators verified in 8 sources: Dyk97, HR16, Kes59, KM15, Spe19, Col02, CS04 and Blanchard-Dykema (arXiv math/9911012v2, read via a scratch manifest copy). Nica-Speicher, Voiculescu-Dykema-Nica and Biane are not legally readable. All gate checks passed; depcheck 200 roadmaps, 2200 edges, 0 problems. lake env lean: 8 sorry warnings only; #check of all 12 declarations matches the README; the one-tactic probe closes nothing. Overlap with RandomMatrices Layer 6 is now settled in both READMEs.",
+  "text": "5896f40a9f9ff1f3"
+ }
+}
