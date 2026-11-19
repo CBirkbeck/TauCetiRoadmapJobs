@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComplexCurveModuli~3",
+  "head": "6d2746701ba926e81fda1079a526a81e23eb0a3a",
+  "pr": 2548,
+  "folder": "ComplexCurveModuli",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "Full re-review. Previous findings R01-R04, C01, C02, N01, N02 and the numbering question are repaired; C03 is deferred (D01 stands). Seeded sample of 15 sections checked: 17 Robbin-Salamon 2006 arXiv v4 locators and Wendl v3.2 section 4.2.4 read at their lines, and supplier sections resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with four sorry warnings only. Probes show that bordered uniformization and punctured uniqueness elaborate at the pins (R01). One-tactic probes close no headline. Overlap with seven closest roadmaps: nothing shared.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C03: ConformalMappingPartII's link has to change its fragment `#d0-smooth-curves-finite-type-and-the-classification-floor` to `#layer-0-smooth-surfaces-compact-riemann-surfaces-and-uniformization`.",
+    "where": "ConformalMappingPartII README line 25, link fragment to Layer 0",
+    "raised": "PRREVIEW-ComplexCurveModuli~2"
+   }
+  ],
+  "text": "be9d9a192f193990"
+ }
+}
