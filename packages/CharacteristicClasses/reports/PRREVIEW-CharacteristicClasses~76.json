@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CharacteristicClasses~76",
+  "head": "8bc8c195b3cfa849b5ac30936a48f81473e930e8",
+  "pr": 2528,
+  "folder": "CharacteristicClasses",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "Full review. Sample: C1.0, C2.0, C3.0, C5a.1-C5a.7, C7.AdjointHopfObstruction recomputed (21-row table); 7 locators read in 4 cached sources; Milnor-Stasheff, Bott-Tu and Milnor uncertified and not read. R01: C3.0 cites four Tau Ceti declarations/files absent at the pin 2fd255d. R02: Suggested.lean docstring wrongly says the pin has no Thom or Euler class, so statable C2 headlines are absent. Dependency check: 0 problems. Suggested.lean elaborates with two sorry warnings only; one-tactic probe closes neither theorem. Four of five dropped-name hits are real (small correction C02), one set aside. Previous review's locator findings not repaired (now small correction C06). Ownership against the conflicting open revision of this folder not checked: its files were not available.",
+  "text": "615ef900d58c65a4"
+ }
+}
