@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompactOperators~1",
+  "head": "5c8e02a14d35edbda5a91ec818a7d2e6fa513c6e",
+  "pr": 2546,
+  "folder": "CompactOperators",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 5,
+  "format_notes": 3,
+  "notes": "Seeded sample of 15 targets checked; most carry only cross-roadmap supplier citations, all resolved on main 1b7b481. Source locators verified in Serre 1962, Johansson-Newton v4, Schikhof, De Grande-De Kimpe and Kedlaya; Coleman 1997 is paywalled and unchecked. Adversarial table recomputes every Check and headline. Automatic checks all passed; depcheck reports 0 problems. Suggested.lean elaborates with sorry warnings only; #check of all 49 signatures compared with the README. Scratch probes confirm the padding (C01), the Tau Ceti-import repair (R02), and that the missing Riesz-Coleman and index-zero headlines are statable at the pins (R01).",
+  "text": "f4d9cc2a34cb7735"
+ }
+}

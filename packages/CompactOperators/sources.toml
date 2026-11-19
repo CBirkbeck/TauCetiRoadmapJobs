@@ -1,0 +1,101 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CompactOperators"
+
+[[source]]
+id = "Serre1962"
+authors = "Jean-Pierre Serre"
+title = "Endomorphismes complètement continus des espaces de Banach p-adiques"
+year = 1962
+locator_scheme = "theorem"
+locator = "§3 Prop. 4; §5 Props. 7-8; §6 Prop. 10; §7 Props. 11-12"
+url = "https://www.numdam.org/item/PMIHES_1962__12__69_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1962__12__69_0.pdf"
+fetched_at = "2026-11-19T14:09:02Z"
+sha256 = "67a032c129ad2a36adeeadc4b4ccb3c0ab17c5a1ef8de83f7dda85f2115fe402"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["0.5", "1.2", "1.3", "1.4", "2.4", "2.5", "3.1", "3.2"]
+
+[[source]]
+id = "JohanssonNewton"
+authors = "Christian Johansson, James Newton"
+title = "Extended eigenvarieties for overconvergent cohomology"
+year = 2016
+venue = "Alg. Number Th. 13 (2019) 93-158"
+doi = "10.2140/ant.2019.13.93"
+arxiv = "1604.07739v4"
+locator_scheme = "theorem"
+locator = "§2.1; Thm 2.2.2"
+url = "https://arxiv.org/abs/1604.07739v4"
+fetched_from = "https://arxiv.org/pdf/1604.07739v4"
+fetched_at = "2026-11-19T14:09:40Z"
+sha256 = "7d0aac739943661097269367fbae7f97a2cf7dcb1323fec9409426c9578a955e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v4"
+cited_for = ["0.2", "1.5", "3.2", "3.4"]
+
+[[source]]
+id = "Kedlaya2007"
+authors = "Kiran S. Kedlaya"
+title = "A little p-adic numerical analysis"
+year = 2007
+locator_scheme = "theorem"
+locator = "§3 Thm 16"
+url = "https://kskedlaya.org/18.787/numerical.pdf"
+fetched_from = "https://kskedlaya.org/18.787/numerical.pdf"
+fetched_at = "2026-11-19T14:09:42Z"
+sha256 = "de8fea58811c1283f101537dccf713d5da3064ea923d340960309783153d4bab"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4.4"]
+
+[[source]]
+id = "Coleman1997"
+authors = "Robert F. Coleman"
+title = "P-adic Banach spaces and families of modular forms"
+year = 1997
+venue = "Inventiones mathematicae 127"
+doi = "10.1007/s002220050127"
+locator_scheme = "section"
+locator = "Appendix A3-A4"
+url = "https://doi.org/10.1007/s002220050127"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.4", "3.3", "3.4"]
+
+[[source]]
+id = "DeGrandeDeKimpe1982"
+authors = "N. De Grande-De Kimpe"
+title = "Non-archimedean nuclearity"
+year = 1982
+locator_scheme = "section"
+locator = "§§1.1, 2.1-2.3"
+url = "https://www.numdam.org/item/GAU_1981-1982__9_3_A5_0.pdf"
+fetched_from = "https://www.numdam.org/item/GAU_1981-1982__9_3_A5_0.pdf"
+fetched_at = "2026-11-19T14:23:21Z"
+sha256 = "6f514091f0429020bfd01593952157013744d1fac9670a8479ee10644d7f6e19"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["0.5"]
+
+[[source]]
+id = "Schikhof"
+authors = "W. H. Schikhof"
+title = "Banach spaces over nonarchimedean valued fields"
+year = 1999
+locator_scheme = "section"
+locator = "§§2.4, 2.7, 2.13, 2.15"
+url = "https://topology.nipissingu.ca/tp/reprints/v24/tp24224.pdf"
+fetched_from = "https://topology.nipissingu.ca/tp/reprints/v24/tp24224.pdf"
+fetched_at = "2026-11-19T14:23:23Z"
+sha256 = "0efeebf89031ac7b460a2ee54218c366aa15b3f2c1dc470ae6144c0d86775d3f"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["0.5"]
