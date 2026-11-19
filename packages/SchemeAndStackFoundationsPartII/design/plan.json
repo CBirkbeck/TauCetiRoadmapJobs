@@ -3334,6 +3334,16 @@
       "source": "CS24 Lemma 5.6.4 and its proof, pp.72–73"
     },
     {
+      "slug": "classical-affine-group-adapter",
+      "supplier": "SchemeAndStackFoundations",
+      "section": "Layer 1 §1.15",
+      "needs": "For an ordinary ring R and a commutative finite locally free R-group G with native Cartier dual G*, identify native Cartier bidual evaluation, under the pinned point comparison, with the character inclusion G→H=Res_(G*/R)𝔾_m in the ambient category of affine commutative R-groups. On each R-algebra A, the map sends g to the unit function χ↦χ(g) on G*_A, viewed in H(A)≃(O(G*)⊗_R A)^×. Require naturality in A and in homomorphisms G→G′ (by pullback along G′*→G*), compatibility with arbitrary base change R→R′ through the native Cartier-dual and Weil-restriction comparisons, and agreement of the coordinate and scheme coboundaries H→Res_(G*×_R G*/R)𝔾_m, f↦((χ,ψ)↦f(χ)f(ψ)/f(χψ)); their kernel is the displayed image of G. In the Bégueri sequence of gap:begueri-resolution, G is finite locally free and H,Q are smooth; G is not required to be smooth.",
+      "nodes": [
+        "gap:begueri-resolution"
+      ],
+      "source": "BG80 Proposition 2.2.1 and proof, pp.25–27; CS24 §1.4, p.8"
+    },
+    {
       "slug": "complete-module-hyperdescent",
       "supplier": "DerivedModuleAlgebra",
       "section": "§1.9",
