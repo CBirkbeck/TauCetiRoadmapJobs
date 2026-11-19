@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AnalyticStableMaps~12",
+  "head": "1da2f126c9c2fe1bd0831ead00cc71015480ca34",
+  "pr": 2529,
+  "folder": "AnalyticStableMaps",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review of the same head the previous review accepted. One P2 finding: the statement of the topological regularity theorem in section 7.3 puts the submersion on all of X_I^reg and onto E_I/E_J, where Pardon Theorem B.1.1 and Proposition 9.2.6 give it for I contained in J, onto E_J/E_I, near the preimage of X_I^reg in X_J; the product curve of section 2.23 is a counterexample to the sentence as written. The sentence is unchanged from main and not in this pull request's diff (flagged to the human reviewers). Seeded sample of 15 sections checked: 21 source locators read in pardon13, wendl, wendl10 and wendl23; 24 pinned declarations opened; supplier sections resolved on main. All automatic checks passed; dependency check 0 problems; Suggested.lean elaborates with three sorry warnings only; no padding. The eight repairs of the previous round stand. McDuff-Salamon, Ivashkovich-Shevchishin 1999 and Robbin-Ruan-Salamon are cited by locator and could not be read.",
+  "text": "dcb6cabfb9ce582d"
+ }
+}
