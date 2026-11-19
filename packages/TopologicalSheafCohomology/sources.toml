@@ -1,0 +1,35 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TopologicalSheafCohomology"
+
+[[source]]
+id = "stacks-cohomology"
+locator_scheme = "tag"
+locator = "09V2"
+url = "https://stacks.math.columbia.edu/download/cohomology.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/cohomology.pdf"
+fetched_at = "2026-11-19T07:19:33Z"
+sha256 = "23fbd6af99fe8f0b36a010c0b69ebb0f0f54761f53b530c685b1375001bb5893"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["1.3"]
+
+[[source]]
+id = "pardon"
+authors = "John Pardon"
+title = "An algebraic approach to virtual fundamental cycles on moduli spaces of pseudo-holomorphic curves"
+year = 2013
+venue = "Geom. Topol. 20 (2016) 779-1034"
+doi = "10.2140/gt.2016.20.779"
+arxiv = "1309.2370v6"
+locator_scheme = "theorem"
+locator = "Lemma A.4.4"
+url = "https://arxiv.org/abs/1309.2370v6"
+fetched_from = "https://arxiv.org/pdf/1309.2370v6"
+fetched_at = "2026-11-19T07:19:56Z"
+sha256 = "2e5f1a6741e52436ba36661586f25dbb78325043f9fa28eb71f8b4ea7f1221ac"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v6"
+cited_for = ["1.2"]
