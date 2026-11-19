@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GraphConnectivityAndFlows~2",
+  "head": "44f517cf3f221ca215817543375c30e2d94b80bc",
+  "pr": 2582,
+  "folder": "GraphConnectivityAndFlows",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Sample: all 15 seeded sections plus the locators of the Suggested.lean docstrings, checked against Diestel 6th ed. (author's preview, OCR), Bang-Jensen-Gutin 1st ed. (authors' PDF), Schrijver's course notes, Bertsekas LNO, Papamanthou-Tollis, the Picard-Queyranne report and Frank-Gyarfas (58 locators, all hold). Adversarial pass over all 11 theorems and all 27 README Checks, with computed values. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with only sorry warnings; #check pass and one-tactic probe show no lost binders and no padding. Overlap: the four closest open roadmaps defer to this one. C01: the PR description overstates what the pin proves. N01, N02: supplier-contract and locator omissions. Two source issues recorded (Diestel Thm 3.3.6, Bertsekas Ex. 2.6).",
+  "text": "fa1002987d4d51d0"
+ }
+}
