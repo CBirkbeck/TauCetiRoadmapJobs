@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CrystallineCohomology~6",
+  "head": "45263ea1ef1645f58d01e0c2e77f00b50030b3d8",
+  "pr": 2532,
+  "folder": "CrystallineCohomology",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review of a one-sentence revision of the roadmap on main. Previous R01 still repaired, R02 not applicable (description of the earlier pull request). The changed scope sentence was checked against CrystallineCohomologyPartII README:9 and :11, PadicDifferentialEquationsAndRigidCohomology RD.3.33 and RD.5.8c, and PCurvature :53 and :733 (C01). All 15 seeded targets were verified at their locators: Stacks Crystalline Cohomology and Cohomology on Sites, Bhatt-Lurie-Mathew arXiv v3, Hyodo-Kato (Numdam), Disegni-Liu arXiv v3, Grosse-Klonne arXiv v1, Kedlaya, Du-Moon-Shimizu, Beilinson 1111.3316v4 and Langer-Zink; 52 locators in all. Adversarial table: 19 rows with computed values, including both Suggested.lean theorems. Gate rerun OK; depcheck 200 roadmaps, 2194 edges, 0 problems; Suggested.lean elaborates with two sorry warnings only, and its signatures match the README. Overlap check: 11 roadmaps read, all consumers. One question for the author (source for the absolute comparison in CR.6.1). Eight source issues recorded (Stacks 07N4, 07MU, 07MN, 07I9, 0FPM, 0H9A; Langer-Zink Def 1.4(i) and (1.16)).",
+  "text": "7fd849640a762f37"
+ }
+}
