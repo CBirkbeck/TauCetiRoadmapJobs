@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ReflectionInvariantTheory~1",
+  "head": "43615d1163863cbfa2d17390e1ffc6c58b5ff268",
+  "pr": 2539,
+  "folder": "ReflectionInvariantTheory",
+  "date": "2026-11-19",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample of 15 targets: the README gives no locator for any of them, so each was checked by computation; 2.5 and 3.4 also against Steinberg 1964 (Thms 1.2(c), 1.3(e'), 1.5), and 1.1 against Fogarty 2001 section 2. Adversarial table: 22 rows. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning; #check of all 13 declarations matches the README. Cross-roadmap citations resolved on main. Findings: no locators anywhere (R01); false 'm = dim V' in 1.2 (R02); wrong sign of the S3 Jacobian in a Check of 2.2 (R03).",
+  "text": "22ea3bda4e4b6eaf",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C01: the links in LieHighestWeight (lines 120 and 902) should point at `#layer-2-pseudoreflection-groups-and-the-shephardtodd-theorem`, and the link in RootSystems (line 57) at `#layer-4-the-crystallo",
+    "where": "LieHighestWeight and RootSystems READMEs on main, links to the new Layer headings",
+    "raised": "PRREVIEW-ReflectionInvariantTheory~1"
+   }
+  ]
+ }
+}
