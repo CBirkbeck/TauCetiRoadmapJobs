@@ -3056,10 +3056,10 @@
       "needs": "for a finite-dimensional continuous `𝔽`-representation `W` of `G_K` that becomes upper triangular over an unramified extension `K′/K` of degree prime to `p` with `H⁰(G_{K′}, (W|_{G_{K′}})^ss ⊗ ω^{−1}) = 0`, the restriction `H⁰(G_K, W) → H⁰(G_{K∞}, W)` is bijective (BHHMS23, Lemma 3.2.8 and its source LLHLM23, Lemma 7.2.10(3))."
     },
     {
-      "slug": "rank-two-descent-kisin-modules",
+      "slug": "descent-kisin-modules",
       "supplier": "LocalGaloisDeformationRings",
       "section": "§6.9",
-      "needs": "the §6.9 construction in rank two for `K′/K` of degree `r ∈ {1,2}` and every height `h`, over every complete Noetherian local `𝒪`-algebra `R` with residue field `𝔽`: the category `Y^{[0,h],τ}(R)` of rank-two Kisin modules with descent of type `τ`, eigenbases, `T*_dd`, coefficient base change and the eigenbasis transformation law, together with the Hodge-bound subfunctor `Y^{≤λ,τ}` and its minor criterion on `𝒪`-flat `p`-complete `R` (the `i × i` minors of the Frobenius matrix are divisible by `(v+p)` to the sum of the `i` smallest entries of `λ_j`)."
+      "needs": "the §6.9 construction in every rank `n` for `K′/K` unramified of degree `r = ord(s_τ)` and every height `h`, over every complete Noetherian local `𝒪`-algebra `R` with residue field `𝔽`: the category `Y^{[0,h],τ}(R)` of rank-`n` Kisin modules with descent of type `τ`, eigenbases, the contravariant realization `T*_dd` of the étale descent (over `R = 𝔽` it is the functor `V*_K` of 3.3 applied to the étale `φ`-module over `k((v)) ⊗ 𝔽`), coefficient base change and the eigenbasis transformation law, together with the Hodge-bound subfunctor `Y^{≤λ,τ}` and its minor criterion on `𝒪`-flat `p`-complete `R` (for `1 ≤ i ≤ n` the `i × i` minors of the Frobenius matrix are divisible by `(v+p)` to the sum of the `i` smallest entries of `λ_j`)."
     },
     {
       "slug": "ghls-existence",
