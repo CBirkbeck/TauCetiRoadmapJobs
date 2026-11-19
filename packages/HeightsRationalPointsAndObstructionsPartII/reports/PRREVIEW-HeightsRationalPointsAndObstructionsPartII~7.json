@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsRationalPointsAndObstructionsPartII~7",
+  "head": "e9582e03b02e607d5d696db1a5b9cf75e2c6ebf9",
+  "pr": 1821,
+  "folder": "HeightsRationalPointsAndObstructionsPartII",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 18 changed lines since 79be752: the four previous points (R01 characteristic-two fibre square, C01 pointer to a missing 6.12, C02 unused IG.2 edge, N01 four Mathlib line numbers) are each repaired; the two changed fibre-square sentences recomputed (4 geometric components iff characteristic not 2); the four corrected library lines opened at the pin; no residual citation of InverseGaloisAndArithmeticFundamentalGroups or of the removed contract heading; no sampled target falls in a changed passage and Suggested.lean is unchanged; automatic checks all passed, depcheck 0 problems, elaboration exits 0 with sorry the only warning; pull request text read against the head.",
+  "text": "5089f8e9af5fbdd8"
+ }
+}
