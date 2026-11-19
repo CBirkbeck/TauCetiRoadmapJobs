@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartVIII~10",
+  "head": "500bbc0f1d1377da4410edca32ebbc8edc234648",
+  "pr": 1179,
+  "folder": "ArithmeticStatisticsPartVIII",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review. Previous finding (double-complex spectral sequence cited from DerivedModuleAlgebra S.1) repaired. One P2: section 5.16 re-plans the Hurwitz homological stability and uniform Betti bounds owned by InverseGaloisAndArithmeticFundamentalGroupsPartII on main. Seeded sample 5.12-5.22: 62 source locators read at the text, none wrong; 8 source errata recorded. Adversarial pass with computed values: local-density moments, two-point count, strata and Hensel bounds brute-forced in up to 11 parameter sets; the level-9 lifting counterexample (order 24, index 27) and the K-complex homotopy Check (351/144/132) recomputed by script; remaining Checks recomputed by hand. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with five sorry warnings only; one-tactic probe closes none of the five theorems. Weibel (uncertified) and published page numbers beside arXiv locators not verifiable.",
+  "text": "5a4838ea2c65ed67"
+ }
+}
