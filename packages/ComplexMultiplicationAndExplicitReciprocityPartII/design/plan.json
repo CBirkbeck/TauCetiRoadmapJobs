@@ -4278,7 +4278,7 @@
       "slug": "absolute-hodge-padic-comparison",
       "needs": "For an abelian variety A over a number field K, every finite place v of K and every rational absolute Hodge tensor on A in a tensor construction of H¹, its dual and Tate twists whose de Rham and p-adic étale realizations are defined over K, prove that the B_dR comparison of A over K_v carries the étale realization to the algebraic de Rham realization, compatibly with tensor operations, Tate twists and finite base extension, and, where A has good reduction at v, with the B_cris comparison.",
       "supplier": "AutomorphicBundles",
-      "section": "§B1.3"
+      "section": "§1.3"
     }
   ],
   "sourceIssues": [
