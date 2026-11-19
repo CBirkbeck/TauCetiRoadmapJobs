@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~99",
+  "head": "821ec839f1fd45530abf303f94530e49bdaa7299",
+  "pr": 2531,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 111 changed lines since 5f13b01. Checked the repair of every previous point (R01, C01-C05, N01): all repaired. Checked: §1.1a affine bullet against ModularCurves Layer 0.5 on main and Tau Ceti Descent/MorphismProperty.lean:122; the reduction of the lfp case; the new 02W5 target, with computed instances and against Stacks 35.39.1 (C01: the locator excludes fpqc); the §1.9a image route against the proof of 03XW; the s^-1(u) hypothesis against 03FL (6); 032H; the §§2.7 and 2.11 sentences; the pull-request text. Stacks locators read in the cached book: 12. Gate: all checks pass. Depcheck: 0 problems. Elaboration: exit 0, 48 sorry warnings, Suggested.lean unchanged. D01 deferred, stands.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Fppf cohomology with supports gets a second owner: PurityForFlatCohomology §0.2 (open) plans the same construction, long exact sequence, open excision and triple sequence",
+    "where": "PurityForFlatCohomology §0.2 and SchemeAndStackFoundationsPartII line 369 cite §2.9a",
+    "raised": "PRREVIEW-SchemeAndStackFoundations~97"
+   }
+  ],
+  "text": "7112c5f71701c79a"
+ }
+}
