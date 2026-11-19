@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AmenableGroups~2",
+  "head": "2183ddc005f9855b0390999115261eb1bee9dd66",
+  "pr": 2542,
+  "folder": "AmenableGroups",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full re-review; all 8 remarks of the previous review repaired. Seeded sample of 15 sections checked; 31 source locators read (Garrido 16, BDHV 11 from the Geneva archive copy because the Rennes link timed out, CGH 3, Fremlin 443M 1). 431 README declaration names resolved at the pins (342 by #check, 82 by source search). 55 library signatures compared with the README. Suggested.lean elaborates with only the sorry warning, and its single headline matches the README. Dependency check: 0 problems; full gate OK; no change outside the folder. Overlap check against ClassicalErgodicTheory, BanachSpaceTheory, AmenableTracesOnCStarAlgebras, OperatorAlgebraDynamics and CompactQuantumMetricSpaces: nothing shared.",
+  "text": "acb7ea87c0b5c17c"
+ }
+}
