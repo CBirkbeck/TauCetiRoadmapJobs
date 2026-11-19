@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BernoulliPercolation~1",
+  "head": "893c935029f1e790981ffe1b88dcd6252dde8a6a",
+  "pr": 2567,
+  "folder": "BernoulliPercolation",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Adversarial pass over all 17 theorems and 7 definitions with computed values (d = 0, 1, 2; n = 0, 1, 2; p in {0, 1}; Peierls constants 9/160 and m = 7; cycle and self-avoiding-walk counts). Sample: all fifteen seeded targets; 13 of 31 locators verified in Duminil-Copin's notes; the 18 locators into Grimmett's Probability on Graphs were not readable (author's server certificate fault) and are listed as not verifiable. 38 library declarations opened at the pins; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 17 theorems; dependency check 0 problems; automatic checks all passed, none set aside; no duplicate owner on main or at the open heads.",
+  "text": "fa2ff832d594e14c"
+ }
+}
