@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TopologicalDataAnalysis~1",
+  "head": "46bedc4d4b7ebdb70c1acaa49a8122ca287827ce",
+  "pr": 2525,
+  "folder": "TopologicalDataAnalysis",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 9,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample of 15 targets: locators checked in Dey-Wang (author copy, 15 passages) and Chazal-de Silva-Glisse-Oudot (arXiv, 5 passages); Oudot, Edelsbrunner-Harer and Carlsson-Vejdemo-Johansson could not be read. Adversarial pass over every statement with computed values (26 rows). Suggested.lean elaborates with 42 sorry warnings only; one-tactic probe closes none; dependency check 0 problems; 8 cross-roadmap citations resolved on main; one automatic form check (a section comment over #check lines only) kept as a format note. R01 (P1): rankE at infinite arguments makes rankDiagram lose infinite bars, falsifying the diagram-of-decomposition and isometry theorems. R02 (P2): Cech = offset persistence lacks nonemptiness.",
+  "text": "aa84cad1b1087e11"
+ }
+}
