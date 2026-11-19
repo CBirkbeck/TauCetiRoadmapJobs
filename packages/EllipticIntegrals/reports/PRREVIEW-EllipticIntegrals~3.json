@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticIntegrals~3",
+  "head": "1d029f44f8927863a56733bbed433774724f4f8f",
+  "pr": 2556,
+  "folder": "EllipticIntegrals",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review of an unchanged head. All 13 sampled targets and all 11 Lean statements recomputed from the defining integrals in independent pure-Python quadrature (Legendre, Carlson with complex arguments including x = 0 and near the cut, Jacobi functions by inversion, pendulum against RK4, cubic integrals, real periods, AGM series). 36 source locators read at the text: DLMF 19.2, 19.4-19.8, 19.12, 19.16, 19.25, 19.26, 19.30, 22.4, 22.5, 22.8, 22.19; Salamin Theorem 1b p. 567; Carlson 1995 sec. 2 (8)-(11); Cremona sec. 3.7. 456 backticked identifiers resolved at the pins, 34 declarations opened and compared. Elaboration: 11 sorry warnings only; one-tactic probe fails on all 11; signatures compared. depcheck 0 problems; automatic checks all passed; nothing changed outside the folder; description read against the head. Remaining: five small corrections (quadratic bound useless for k' <= 1/9 in the route of 2.1; Hartogs wording in 3.1; DLMF 19.16.3 and 19.2.19-20 locators; Milestone 5.2 pointer; Cremona cited for K forms in two docstrings) and two format notes. Not verifiable: Carlson 1977 Ch. 9, Byrd-Friedman 236.00/239.00, the Zulip permission.",
+  "text": "e951c2e55b6de29d",
+  "carried": {
+   "from": "1d029f44f8927863a56733bbed433774724f4f8f",
+   "head": "81b06b4762adce24dfda6dda7218d5ad64834566",
+   "findings": 5,
+   "lines": 34,
+   "folders": [
+    "EllipticIntegrals"
+   ],
+   "corrections": true
+  }
+ }
+}
