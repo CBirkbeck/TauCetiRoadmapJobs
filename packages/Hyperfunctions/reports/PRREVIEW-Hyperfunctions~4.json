@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Hyperfunctions~4",
+  "head": "6caa42c42060ae1069248c367820f3dce0fed246",
+  "pr": 2592,
+  "folder": "Hyperfunctions",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 4,
+  "notes": "incremental re-review of 63 changed lines since 73360bc. Checked: the four small corrections of the previous review (all repaired); the seven new source locators read at their texts (Honda-Izawa-Suwa Prop 2.4 and Thm 2.14(1), Serre Theoreme 3, Tillmann Satz 3 and 5, Kashiwara-Schapira (9.1.2)), covering the sampled targets 1.3, 2.0f and 4.2 that fall in the change; the two Downstream-consumers notes against ComplexComparisonPartII on main; five library paths at the pins; the pull request's description against the head and the change from main (no correction needed); automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 7 sorry warnings only. Four format notes carried over, none blocking.",
+  "text": "91e5fab4f7c7792d"
+ }
+}
