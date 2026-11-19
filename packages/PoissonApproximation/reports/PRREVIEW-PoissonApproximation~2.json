@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PoissonApproximation~2",
+  "head": "1a6eef39496002f1aaf9c90603fd140934813550",
+  "pr": 2569,
+  "folder": "PoissonApproximation",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All 11 sampled targets checked against the four cited texts, each read at its locator (Ross arXiv:1109.1880v1; Arratia-Goldstein-Gordon 1989, author-page copy; Le Cam 1960, publisher archive; Levin-Peres 2nd ed., author page). Every Check with a stated value recomputed numerically (Stein solution and both bounds for ten rates, Barbour-Hall, equal indicators, runs on 264 cases, birthdays, fixed points n<=8, empty boxes); all agree. 28 pinned Mathlib and Tau Ceti declarations located by file and line (9 statements read in full); 5 cross-roadmap citations resolved (MarkovChainMixing 1.1 at its open head, four on main). Dependency check: 0 problems. Suggested.lean elaborates with sorry as the only warning (11); one-tactic probe closes none of the 11 theorems. The worker's automatic checks all passed. Three slips found in Ross's survey are listed as source issues.",
+  "text": "047aab2a55135d64"
+ }
+}
