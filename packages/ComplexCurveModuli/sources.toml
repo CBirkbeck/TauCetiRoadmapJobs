@@ -1,0 +1,76 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ComplexCurveModuli"
+
+[[source]]
+id = "RobbinSalamon2006"
+authors = "Joel W. Robbin, Dietmar A. Salamon"
+title = "A construction of the Deligne-Mumford orbifold"
+year = 2006
+venue = "Journal of the European Mathematical Society 8 (2006), 611-699"
+doi = "10.4171/JEMS/69"
+arxiv = "math/0407090v4"
+locator_scheme = "theorem"
+locator = "Theorems 5.3-5.6"
+url = "https://arxiv.org/abs/math/0407090v4"
+fetched_from = "https://arxiv.org/pdf/math/0407090v4"
+fetched_at = "2026-11-19T14:14:28Z"
+sha256 = "8e593b63e1eddc29dc953c35020744702f3a2f6ece747d58e17659328aa49d4c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v4 (12 October 2005) read; the README's numbered locators are to arXiv v4, whose numbering differs from the journal's (arXiv Lemma 10.2 is the journal's Lemma 8.2, per the corrigendum's published abstract); the journal text was not read"
+cited_for = ["0.3", "0.4", "0.5", "3.5", "3.6", "4.1", "4.2", "4.4", "5.4", "5.6", "6.2", "6.3"]
+
+[[source]]
+id = "Wendl"
+authors = "Chris Wendl"
+title = "Lectures on Holomorphic Curves in Symplectic and Contact Geometry"
+year = 2010
+arxiv = "1011.1690v2"
+locator_scheme = "section"
+locator = "4.2-4.3"
+url = "https://arxiv.org/abs/1011.1690v2"
+fetched_from = "https://arxiv.org/pdf/1011.1690v2"
+fetched_at = "2026-11-19T14:28:40Z"
+sha256 = "d83d338539f04991aa6cd4218a955c51d86630df3be094244e30774fa8ee1a5b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v2 is version 3.2 of the notes (Chapter 4: 4.2 classification of pointed Riemann surfaces, 4.3 Fredholm regularity and the implicit function theorem); the README cites version 3.3, which was not read"
+cited_for = ["3.5"]
+
+[[source]]
+id = "RobbinRuanSalamon2012"
+authors = "Joel Robbin, Yongbin Ruan, Dietmar Salamon"
+title = "The moduli space of regular stable maps"
+year = 2012
+venue = "Mathematische Zeitschrift, Volume 259 (2008), pages 525-574"
+doi = "10.1007/s00209-007-0237-x"
+arxiv = "1205.1662v1"
+locator_scheme = "section"
+locator = "1"
+url = "https://arxiv.org/abs/1205.1662v1"
+fetched_from = "https://arxiv.org/pdf/1205.1662v1"
+fetched_at = "2026-11-19T14:28:46Z"
+sha256 = "75426b3862d2f695e3326e16f52f61271cd66501461c0149dcc44c19565c324c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["References"]
+
+[[source]]
+id = "RobbinSalamon2007Corrigendum"
+authors = "Joel W. Robbin, Dietmar A. Salamon"
+title = "Corrigendum: A construction of the Deligne-Mumford orbifold"
+year = 2007
+venue = "Journal of the European Mathematical Society 9 (2007), 901-905"
+doi = "10.4171/JEMS/101"
+locator_scheme = "theorem"
+locator = "Lemmas A-B"
+url = "https://doi.org/10.4171/JEMS/101"
+licence_class = "none"
+status = "uncertified"
+accessed = "2026-11-19"
+version_note = "behind a subscription at EMS Press; only the publisher's abstract was read (it calls the corrected result Lemma 8.2 of the 2006 paper)"
+cited_for = ["3.6"]

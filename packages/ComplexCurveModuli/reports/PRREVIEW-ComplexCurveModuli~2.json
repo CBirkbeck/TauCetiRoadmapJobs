@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComplexCurveModuli~2",
+  "head": "1463ff2e58238868bccb942c98547aa7638f3357",
+  "pr": 2548,
+  "folder": "ComplexCurveModuli",
+  "date": "2026-11-19",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review of README.md and Suggested.lean. Seeded sample of 15 sections (0.1f, 0.1g, 1.4, 3.2, 3.5, 3.6, 4.5, 4.7, 5.1, 5.2, 6.2, 6.3, 7.3, 7.4, 8.3): the Robbin-Salamon 2006 locators were checked by content against arXiv v4 (the journal text and the corrigendum are behind a subscription; the corrigendum was read through its abstract only), Wendl against v3.2. All 55 Checks were evaluated (one false, in 2.2; one with an invalid reason, in 0.4). The Tau Ceti and Mathlib declarations were opened at the pins: 0.1f, 1.3 and 1.4 restate pinned results. Every cross-roadmap citation was resolved on main. Suggested.lean elaborates with sorry as the only warning; one-tactic probes close none of its three theorems; a probe shows that punctured uniformization is statable at the pins. Automatic checks all passed. Dependency check: 0 problems.",
+  "text": "2ec6abf32658d29d",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C03: ConformalMappingPartII's link has to change its fragment `#d0-smooth-curves-finite-type-and-the-classification-floor` to `#layer-0-smooth-surfaces-compact-riemann-surfaces-and-uniformization`.",
+    "where": "ConformalMappingPartII README line 25, link fragment to Layer 0",
+    "raised": "PRREVIEW-ComplexCurveModuli~2"
+   }
+  ]
+ }
+}
