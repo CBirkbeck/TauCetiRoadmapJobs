@@ -1,0 +1,63 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ComplexTori"
+
+[[source]]
+id = "BogomolovTschinkel2003"
+authors = "Fedor Bogomolov, Yuri Tschinkel"
+title = "Special elliptic fibrations"
+year = 2003
+arxiv = "math/0303044v1"
+locator_scheme = "page"
+locator = "§3, pp. 3-4"
+url = "https://arxiv.org/abs/math/0303044v1"
+fetched_from = "https://arxiv.org/pdf/math/0303044v1"
+fetched_at = "2026-11-19T17:41:15Z"
+sha256 = "5dcae5084c22e24c388148a3a5d66a5671e72318423957b9ed9bc4a782d25086"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["6.2"]
+
+[[source]]
+id = "MilneCFT"
+locator_scheme = "theorem"
+locator = "II Example 1.20"
+url = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
+fetched_from = "https://www.jmilne.org/math/CourseNotes/CFT.pdf"
+fetched_at = "2026-11-19T17:41:20Z"
+sha256 = "50d79af78250a9f1117ad9d337e0b231704a533fc707966ed1bfa52e13d498f5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4"]
+
+[[source]]
+id = "BirkenhakeLange2004"
+authors = "Birkenhake"
+title = "Abelian Varieties"
+year = 2004
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-662-06307-1_6"
+locator_scheme = "chapter"
+locator = "Chapter 1"
+url = "https://doi.org/10.1007/978-3-662-06307-1_6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1"]
+
+[[source]]
+id = "BHPV2004"
+authors = "Barth"
+title = "Compact Complex Surfaces"
+year = 2004
+venue = "Ergebnisse der Mathematik und ihrer Grenzgebiete. 3. Folge / A Series of Modern Surveys in Mathematics"
+doi = "10.1007/978-3-642-57739-0"
+locator_scheme = "page"
+locator = "Chapter V, p. 216"
+url = "https://doi.org/10.1007/978-3-642-57739-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5"]
