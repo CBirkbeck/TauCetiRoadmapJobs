@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InertAnticyclotomicCMMainConjecture~6",
+  "head": "069a1857d9517549ab46a56580dc628efabc43c8",
+  "pr": 2435,
+  "folder": "InertAnticyclotomicCMMainConjecture",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All 15 sampled targets and the headline theorems checked against BKO21, AHII05, AHI06, RUB91 and BIL86 at their locators (46 locators); every Check recomputed (adversarial table of 31 rows with values); 36 library declarations opened at the pins; cited sections of 13 supplier roadmaps resolved and the main ones read; four declared supplier gaps confirmed precise and not already provided (acceptance conditional on them); dependency check 0 problems; Suggested.lean elaborates with no message and correctly states nothing, its docstring naming the four unstatable headlines; automatic checks all passed, none set aside. One small correction (description summary says six requested inputs, head has four), two format notes. BRU67 waived and not read; BIL86 displayed formulas not in the extraction.",
+  "text": "2dcc5f8e0561fb71",
+  "carried": {
+   "from": "069a1857d9517549ab46a56580dc628efabc43c8",
+   "head": "069a1857d9517549ab46a56580dc628efabc43c8",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
