@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GroupActionsOnRiemannSurfaces~7",
+  "head": "d2b5f96f1735faf9ce8440d95e57892a2a250b49",
+  "pr": 1728,
+  "folder": "GroupActionsOnRiemannSurfaces",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since d2b5f96; this round checked the pull request's title and description against the head: layer and milestone counts (9, 48), files, suppliers (3 open, 12 on main), consumer sentence and the cited sections all agree; the previous small correction C01 (CanonicalModelsAndGonality presented as consumer) is repaired. Dependency check: 0 problems. Automatic checks all passed; Suggested.lean elaborates with nine sorry warnings only. Adversarial rows computed for the Hurwitz, Wiman and Harvey statements the description names. Seeded sample: no changed passage, so nothing falls in the change.",
+  "text": "bdd35b49f5d0769a"
+ }
+}
