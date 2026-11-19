@@ -56,3 +56,54 @@ status = "certified"
 accessed = "2026-11-07"
 version_note = "arXiv v1"
 cited_for = ["3.7"]
+
+[[source]]
+id = "wendl10"
+authors = "Chris Wendl"
+title = "Automatic Transversality and Orbifolds of Punctured Holomorphic Curves in Dimension Four"
+year = 2008
+arxiv = "0802.3842v4"
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://arxiv.org/abs/0802.3842v4"
+fetched_from = "https://arxiv.org/pdf/0802.3842v4"
+fetched_at = "2026-11-19T01:41:09Z"
+sha256 = "05531a3ebc6fd81edff6ccb851c72bbbe2debe711cd10ffad5ff0c1a1fcb097d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v4"
+cited_for = ["2.24"]
+
+[[source]]
+id = "wendl23"
+authors = "Chris Wendl"
+title = "Transversality and super-rigidity for multiply covered holomorphic curves"
+year = 2016
+arxiv = "1609.09867v7"
+locator_scheme = "theorem"
+locator = "Definition 2.3"
+url = "https://arxiv.org/abs/1609.09867v7"
+fetched_from = "https://arxiv.org/pdf/1609.09867v7"
+fetched_at = "2026-11-19T01:41:19Z"
+sha256 = "cf9e6756ab9edd358287107940615f0167efcc411eb6f62e84f8428c33cf53da"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v7"
+cited_for = ["2.24"]
+
+[[source]]
+id = "is99b"
+authors = "S. Ivashkovich, V. Shevchishin"
+title = "Structure of the moduli space in a neighborhood of a cusp-curve and meromorphic hulls"
+year = 1999
+venue = "Inventiones Mathematicae 136"
+doi = "10.1007/s002220050319"
+locator_scheme = "section"
+locator = "§1"
+url = "https://doi.org/10.1007/s002220050319"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["0.6"]
