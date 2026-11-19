@@ -3086,7 +3086,7 @@
     },
     {
       "slug": "geomtop-marked-disc-diffeomorphisms",
-      "needs": "The closed subgroup of Diff(D, ∂D) preserving a finite set of interior points setwise, and the identification of its group of components with the topological mapping class group of the marked disc relative to the boundary.",
+      "needs": "The closed subgroup Diff(D, P; ∂D) of Diff(D, ∂D) = TauCeti.DiscDiff 2 preserving a finite set P of interior points setwise.",
       "supplier": "GeometricTopology",
       "section": "Layer 3"
     },
