@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassicalSerreModularity~8",
+  "head": "71ddfdb4059425db3d29b2def61f85281261d2f9",
+  "pr": 1020,
+  "folder": "ClassicalSerreModularity",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 106 changed lines since 1123d34. Checked: the three previous findings (all repaired) and the previous corrections and format notes (all repaired); the changed passages against the sources (cht Lemma 4.1.2 and proof, sw99 section 3.2 with Proposition 3.3 and Corollary 3.4, sw01 Lemma 2.2), which cover the seeded-sample targets the change touches (nearly ordinary Hecke algebras, twist-two vanishing; the prescribed lifts, families and residual links gained only Needs lines, whose ids all resolve); the supplier sections now cited (AnabelianGeometryAndNonabelianChabauty 7.0 on main, ArithmeticGaloisDuality R02.1.2 and R02.4.4) and the open heads of PadicFamilies and GL2ModularityLifting; the Tau Ceti and Mathlib declarations of the new Lean theorem at the pin; an adversarial table of eight rows with computed values; six one-tactic probes on the new theorem, none closing it; elaboration (two sorry warnings only); the automatic checks (all pass) and the dependency check (0 problems, no UPWARD or CYCLE); the pull request's title and description against the head. One small correction (the README does not record that GL2ModularityLifting 1.7 is now this target) and one format note; not verifiable: [Ki], [Ki2], Skinner's unpublished correction.",
+  "text": "00aae14e7b02511d",
+  "carried": {
+   "from": "71ddfdb4059425db3d29b2def61f85281261d2f9",
+   "head": "e9b3ac867429210f9297884a8474d6f0a40f892f",
+   "findings": 1,
+   "lines": 1,
+   "folders": [
+    "ClassicalSerreModularity"
+   ],
+   "corrections": true
+  }
+ }
+}
