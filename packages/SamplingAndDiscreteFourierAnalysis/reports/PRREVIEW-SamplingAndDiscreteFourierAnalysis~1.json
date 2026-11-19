@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SamplingAndDiscreteFourierAnalysis~1",
+  "head": "7f1950303372b8955ed8c3096d83446d2cb89e4b",
+  "pr": 2571,
+  "folder": "SamplingAndDiscreteFourierAnalysis",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. All 15 sampled targets and the remaining statements recomputed (adversarial table in the report); 20 source locators read in tao2003, vkg2014 and unser2000 (the displayed formulas of unser2000 unreadable in the extraction, prose compared); 43 library declarations opened at the pins, 18 by #check; 4 cross-roadmap citations resolved on main; Suggested.lean elaborates with sorry as the only warning; no theorem closes in the one-tactic probe; dependency check 0 problems; automatic checks all passed; pull-request text agrees with the head. One format note (an open roadmap, StructuredBlockOperators Layer 6, also names circulant diagonalization; this roadmap is the owner).",
+  "text": "65b0ee3ebab1fdd2"
+ }
+}
