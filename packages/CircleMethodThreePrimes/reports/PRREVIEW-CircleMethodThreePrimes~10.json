@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CircleMethodThreePrimes~10",
+  "head": "96f5e8c2994563514f36a7c9fe655d028697a25e",
+  "pr": 2543,
+  "folder": "CircleMethodThreePrimes",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 96f5e8c. This round read the pull request's description against the head and the change from main: the previous small correction (the description omitted the wider §0.2) is repaired; heading changes, Check counts (9 on main, 15 at head), the Ramanujan, primeExpSum and singular-series values, the §4.6/§4.7 error terms, the per-section quantifier changes, the three docstring edits and the count of 28 declarations were recomputed and agree. Two format notes carried (folder unchanged). Automatic checks all pass; depcheck 0 problems; Suggested.lean elaborates with 18 sorry warnings only; three supplier citations resolved on main; Abel summation opened at the pin. Seeded source sample not repeated: no passage changed; closed sources listed as not verifiable.",
+  "text": "2dbe044ae458ae8c"
+ }
+}
