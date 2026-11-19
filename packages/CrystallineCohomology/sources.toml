@@ -32,3 +32,19 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-15"
 cited_for = ["CR.5.3–CR.5.4"]
+
+[[source]]
+id = "Illusie2002"
+authors = ["Luc Illusie"]
+title = "An overview of the work of K. Fujiwara, K. Kato, and C. Nakayama on logarithmic étale cohomology"
+year = 2002
+locator_scheme = "section"
+locator = "§1.6, pp. 274–275; §2.1, p. 276"
+url = "https://www.numdam.org/item/AST_2002__279__271_0/"
+fetched_from = "https://www.numdam.org/item/AST_2002__279__271_0.pdf"
+fetched_at = "2026-11-19T06:13:07Z"
+sha256 = "9d708353a45f30e7db0e41605f827e36065d3e7a1ee2a0c2490694a4d15661d0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["CR.5:log-algebra.2"]
