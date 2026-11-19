@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexCurveModuli~5",
+  "head": "4b53f572d66899577067a18626c66b11ac4d88c4",
+  "pr": 2548,
+  "folder": "ComplexCurveModuli",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review of an unchanged head. README read in full; every Check and worked example recomputed by hand, none false. Seeded sample (0.1c, 0.1d, 1.4, 2.0, 2.1, 2.4, 3.6, 4.2, 4.6, 4.7, 5.2, 5.5, 6.1, 7.1, 7.2) checked against the pinned Tau Ceti and Mathlib declarations, the suppliers on main and the source; all Robbin-Salamon locators (arXiv v4) read at the text; Wendl read in version 3.2 (README cites 3.3: one question); corrigendum uncertified, not read. Suggested.lean elaborates with seven sorry warnings only; one-tactic probe closes none of the seven; elaborated types match the README. Dependency check: 0 problems; all sixteen suppliers on main; no change outside the folder. Automatic checks all passed, none set aside. Overlap read against AnalyticStableMaps, GromovWittenTheory, HeegaardFloer, TeichmullerGeometry, FuchsianOrbifoldsPartII: nothing shared. One small correction (C01, carried over: cite RiemannianManifoldsWithConvexBoundary 1.4 for the geodesic-boundary condition). Deferred D01 stands. One source issue recorded (gap in Lemma 10.2, corrected by the corrigendum).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C03: ConformalMappingPartII's link has to change its fragment `#d0-smooth-curves-finite-type-and-the-classification-floor` to `#layer-0-smooth-surfaces-compact-riemann-surfaces-and-uniformization`.",
+    "where": "ConformalMappingPartII README line 25, link fragment to Layer 0",
+    "raised": "PRREVIEW-ComplexCurveModuli~2"
+   }
+  ],
+  "text": "32a45097f76bbcc4",
+  "carried": {
+   "from": "4b53f572d66899577067a18626c66b11ac4d88c4",
+   "head": "539eb83584d5130fcbb0858dc54fbedfe1e79a4a",
+   "findings": 1,
+   "lines": 22,
+   "folders": [
+    "ComplexCurveModuli"
+   ],
+   "corrections": true
+  }
+ }
+}
