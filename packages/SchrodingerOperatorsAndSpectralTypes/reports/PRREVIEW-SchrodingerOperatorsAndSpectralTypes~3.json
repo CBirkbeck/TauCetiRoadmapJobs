@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchrodingerOperatorsAndSpectralTypes~3",
+  "head": "02dfa40e6c65c1ef1cc9f8a3d9c935396ef99ebd",
+  "pr": 2424,
+  "folder": "SchrodingerOperatorsAndSpectralTypes",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review of the repaired head (previous review accepted with no finding). Whole README and Suggested.lean read and recomputed, including the new section 3.11 (rotation identity, Hardy inequality, compactness of the truncated complement). Seeded sample of 15 targets checked against the cached texts: 47 line ranges in 8 sources, all locators and pages match; 13 uncertified sources not readable. Supplier ids resolved on main and at the open heads of QuantumFoundations and MaassForms. Automatic checks all passed; dependency check 0 problems; no change outside the folder. lake env lean: 13 sorry warnings only; one-tactic probe closes none of the 13 theorems; no lost binder. Accepted conditional on the declared gaps weyl-criterion and spectral-integral-resolvent (UnboundedOperators UO-C02, UO-A02). Small corrections: description predates 3.11 (twelve vs thirteen theorems, AutomorphicSpectralTheory now on main); Hide-Magee worked example cites Layer 3 Examples beyond what they cover; a parenthesis in the route of 1.6 omits the lower bound. One format note on line length.",
+  "text": "6855650d6f56c80a",
+  "carried": {
+   "from": "02dfa40e6c65c1ef1cc9f8a3d9c935396ef99ebd",
+   "head": "9ffa8055e464a64c83432cd078abfb69a7a1d7c0",
+   "findings": 3,
+   "lines": 14,
+   "folders": [
+    "SchrodingerOperatorsAndSpectralTypes"
+   ],
+   "corrections": true
+  }
+ }
+}
