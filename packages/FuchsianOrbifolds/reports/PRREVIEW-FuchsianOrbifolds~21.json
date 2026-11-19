@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FuchsianOrbifolds~21",
+  "head": "090b0436d7ee4cd9632fe7c4f5ef596c7f5d46a4",
+  "pr": 2576,
+  "folder": "FuchsianOrbifolds",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full re-review. The previous finding R01 and corrections C01-C04 and N02 are repaired, N01 in part. Seeded sample of 15 sections recomputed against the pinned declarations; its locators are into uncertified texts or texts without a manifest entry, so they could not be opened. Martin2013 Theorems 2.1-2.2 were read at their locators. Gate rerun: every check 0 (OK). Depcheck: 200 roadmaps, 2195 edges, 0 problems. Suggested.lean elaborates with 8 sorry warnings only; one-tactic probe closes 0 of 8; #check types match the README. Overlap read for 8 roadmaps; C01 records that the congruence genus formula in 5.6 is owned by ModularForms 10A and NoncongruenceModularForms.",
+  "text": "492f08f87e6c5528"
+ }
+}
