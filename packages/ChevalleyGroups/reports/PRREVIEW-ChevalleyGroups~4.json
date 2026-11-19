@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ChevalleyGroups~4",
+  "head": "d035f185853e8774a5c74baf7e500d21e4198308",
+  "pr": 2544,
+  "folder": "ChevalleyGroups",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full re-review. Previous findings R01, R02, C01, C03, N01-N03 repaired, C02 partly (now C03). Sample: all 15 seeded targets recomputed; Conrad2014 locators (Thm 5.1.13, Thm 6.1.16(1), proof of Thm 1.1.19, Cor 1.4.14) read in the cached text; 13 Steinberg Lectures locators not verifiable. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 4 sorry warnings; #check types match README; padding probe (simp, rfl, infer_instance, exact?) closes nothing. New finding: simply connected smoothness and generation elaborate at the pins with the nilpotency of 1.1 as hypothesis (probe file elaborated at the pins), contrary to the docstring.",
+  "text": "dcb7e266ac870e4c"
+ }
+}
