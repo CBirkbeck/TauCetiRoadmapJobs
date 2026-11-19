@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HyperbolicDynamicsAndThermodynamicFormalism~8",
+  "head": "842acc3cb3d1bce38098c8d7166af3177597370b",
+  "pr": 2441,
+  "folder": "HyperbolicDynamicsAndThermodynamicFormalism",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review of the repaired head. Previous review had no open finding. R01 (P2): the smooth global geodesic flow on the unit sphere bundle is a target of RiemannianManifoldsWithConvexBoundary 5.1 on main and section 9.3 builds it again without citing it. Sample: 15 seeded sections plus every headline, recomputed (table in the report); 65 source locators read in 9 sources, including the newly cited DKRH2024; KatokHasselblatt1995 and six other uncertified sources not readable. Automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with 16 sorry warnings only; one-tactic probe closes none of the 16 theorems. Cross-roadmap citations resolved on main and at the open heads of ClassicalErgodicTheory and ArithmeticDynamics. One small correction (description lists GeometryOfNumbersAndQuadraticArithmetic as open; it is on main), one format note (DKRH2024 missing from the source manifest).",
+  "text": "128d6ba3553b6c97"
+ }
+}
