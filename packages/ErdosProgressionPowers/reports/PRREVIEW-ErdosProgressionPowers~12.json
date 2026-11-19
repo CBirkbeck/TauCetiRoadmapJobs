@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ErdosProgressionPowers~12",
+  "head": "4449dabebc784527750cd6ddf071f51bd577fe8c",
+  "pr": 1336,
+  "folder": "ErdosProgressionPowers",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review. Previous R01 (headline theorems unconditional) and C01 repaired; N01 (depends-on block) not repaired and kept as a format note. Seeded sample of 15 targets verified against BS20 (publisher's version, pp. 355-388), with DG95, ErdosSelfridge1975, Faltings1983, Lemos2017v2, Platt2013v1 and OpenAI2026 also read; Kraus1997 not readable. Every Check recomputed; adversarial table of 30 rows with values. 19 suppliers resolved (15 on main, 4 at open heads); 62 library declarations opened at the pins. Dependency check: 0 problems. Elaboration: eight sorry warnings only; one-tactic probe closes none of the eight theorems. All automatic checks passed. Four small corrections (deletionLevel owner not named; three unused supplier sections; an ambiguous API bullet in 1.7; three imprecise locators in 6.4) and one format note. Four source issues recorded (three in BS20, one in DG95).",
+  "text": "f0043c77d3bf5919",
+  "carried": {
+   "from": "4449dabebc784527750cd6ddf071f51bd577fe8c",
+   "head": "62ce3611fea395a5d9b95d0c81d82c533c53e1b6",
+   "findings": 4,
+   "lines": 33,
+   "folders": [
+    "ErdosProgressionPowers"
+   ],
+   "corrections": true
+  }
+ }
+}
