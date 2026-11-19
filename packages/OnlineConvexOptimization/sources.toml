@@ -1,0 +1,70 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "OnlineConvexOptimization"
+
+[[source]]
+id = "Orabona"
+authors = "Francesco Orabona"
+title = "Online Learning: A Modern Introduction Using Convex Optimization"
+year = 2019
+arxiv = "1912.13213v10"
+locator_scheme = "theorem"
+locator = "Theorem 2.13"
+url = "https://arxiv.org/abs/1912.13213v10"
+fetched_from = "https://arxiv.org/pdf/1912.13213v10"
+fetched_at = "2026-11-19T16:46:41Z"
+sha256 = "cef4edfa97a6e063e53e9c532717c50aa156e5bc782ea49f969b3385011a1b17"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v10"
+cited_for = ["2.1"]
+
+[[source]]
+id = "Hazan"
+authors = "Elad Hazan"
+title = "Introduction to Online Convex Optimization"
+year = 2019
+arxiv = "1909.05207v3"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://arxiv.org/abs/1909.05207v3"
+fetched_from = "https://arxiv.org/pdf/1909.05207v3"
+fetched_at = "2026-11-19T16:46:47Z"
+sha256 = "0c0678244a56006734f9114dc57b0fa9d5ff06ad62cbe4ca3222b6c61acd4e9e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v3"
+cited_for = ["2.2"]
+
+[[source]]
+id = "Bubeck"
+authors = "Sébastien Bubeck"
+title = "Convex Optimization: Algorithms and Complexity"
+year = 2014
+venue = "In Foundations and Trends in Machine Learning, Vol. 8: No. 3-4, pp 231-357, 2015"
+arxiv = "1405.4980v2"
+locator_scheme = "theorem"
+locator = "Lemma 3.1"
+url = "https://arxiv.org/abs/1405.4980v2"
+fetched_from = "https://arxiv.org/pdf/1405.4980v2"
+fetched_at = "2026-11-19T16:46:52Z"
+sha256 = "4d5cd5428a8e627fa2b7ee80791259c2f17e6ae5bf68cf7c78aee1fcefdc05f2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v2"
+cited_for = ["1.2"]
+
+[[source]]
+id = "Zinkevich"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://cdn.aaai.org/ICML/2003/ICML03-120.pdf"
+fetched_from = "https://cdn.aaai.org/ICML/2003/ICML03-120.pdf"
+fetched_at = "2026-11-19T16:48:23Z"
+sha256 = "16b3b5dacd96138f705e633dbbf488dcb43c012de51e7f06332d11b701073dd1"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["2.2"]
