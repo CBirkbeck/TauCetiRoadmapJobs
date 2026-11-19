@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RealSurfacePeriodIndex~5",
+  "head": "f569636e45aa63748d9be49b9f8a2de19197b4e3",
+  "pr": 2462,
+  "folder": "RealSurfacePeriodIndex",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review of the README (all ten layers read and recomputed) and of Suggested.lean. Sample: the 15 seeded targets checked against the texts (B19, EKM, CT05, VOI06, MVH98, BEC05; 74 locators, all agree); BCR Theorem 12.4.11 behind 6.5 and the other 12 uncertified sources not readable. Source corrections E3, E10, E20, E23 recomputed and found right. 66 pinned library declarations opened at file and line; 81 cited sections of 24 roadmaps and 30 named declarations resolved on main or at the open heads; three declared gaps precise and minimal. Elaboration: sorry the only warning (8), elaborated types agree with the README; one-tactic probe closes none of the 8 theorems. Dependency check: 0 problems; no change outside the folder. Automatic checks all passed. Small corrections: description's dependency paragraph out of date; main's QuadraticFormInvariantsPartII assigns the level computations to this roadmap, which does not plan them; scope silent on de Jong in positive characteristic. For humans: arrangement against the single article B19, characteristic-zero scope, unread sources, the claim that B19 Proposition 4.4 is false as printed.",
+  "text": "c701a1ee2fea35bd",
+  "carried": {
+   "from": "f569636e45aa63748d9be49b9f8a2de19197b4e3",
+   "head": "9a4f307f167fbad8c6b4269f695ae15ac205ebc7",
+   "findings": 3,
+   "lines": 2,
+   "folders": [
+    "RealSurfacePeriodIndex"
+   ],
+   "corrections": true
+  }
+ }
+}
