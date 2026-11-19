@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FormalLaurentPuiseux~2",
+  "head": "234a7fda69b732ffd2f380bdfb9d492486666886",
+  "pr": 2558,
+  "folder": "FormalLaurentPuiseux",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 5,
+  "notes": "Full review of an unchanged head. One P2 finding: the Check of 1.5 (2-jet group not commutative) is false over F_2. All 54 Checks and the examples recomputed; the 15 sampled targets and the headline theorems are in the adversarial table with values; all 12 inline source locators read in FrenkelLoop and MannaaCoquand2013; 465 backticked identifiers and 93 file paths checked at the pins by elaboration; Suggested.lean elaborates with no error or warning; remaining targets confirmed absent at the pinned Tau Ceti; cross-roadmap citations resolved on main; dependency check 0 problems; automatic checks all passed, none set aside. The earlier review had no findings; its small corrections and format notes are still open.",
+  "text": "beaf1e944ad16607",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C02: ClassicalArithmeticCompletion's README (main, line 5499, §3.18) must link `FormalLaurentPuiseux/README.md#layer-5-newton-polygons-and-formal-newtonpuiseux` instead of `#l5-newton-polygons-and-for",
+    "where": "ClassicalArithmeticCompletion README, §3.18 *Needs:* link anchor",
+    "raised": "PRREVIEW-FormalLaurentPuiseux~2"
+   }
+  ]
+ }
+}
