@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComparisonSortingAndSelection~2",
+  "head": "90604ddf77dfe292f45753db383a9947e5dd2822",
+  "pr": 2522,
+  "folder": "ComparisonSortingAndSelection",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 10 changed lines since c77dad1: the previous finding R01 (route of 4.4) and format note are repaired; the new depth argument was recomputed on 28773 standardising steps and the full reduction on 10885 random sorting networks on 2 to 5 wires (0 failures); the Erickson file names agree with the source headers; seeded sample checked where it falls in the change (4.4); automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates with 22 sorry warnings only; pull-request text read against the head, nothing contradicted; one format note on wording.",
+  "text": "10b12e534828bbdc"
+ }
+}
