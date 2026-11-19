@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelmerIwasawaCohomologyPartII~6",
+  "head": "211b108a4247589ed148fd429c1d717c0e50c2d5",
+  "pr": 1403,
+  "folder": "SelmerIwasawaCohomologyPartII",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "incremental re-review of 88 changed lines since 365ec42. Checked: both previous findings (R01 models and strata, R02 rigid R=T and eventual rigidity) and the four previous small corrections and two format notes, all repaired; the changed passages of the Summary, Conventions, sections 2.1-2.3, 2.6, 3.3, 3.6, 5.1, 7.4, Downstream consumers, Scope and the supplier contracts against ltxzz (12 locators) and ltxzz-deformation (5 locators), and against PELModuliPartII sections 8.1-8.5, 8.7, PotentialAutomorphyInfrastructurePartII sections 10.2-10.3 and PeriodsAndSpecialValues PS.6.6-PS.6.7 at their open heads and LocalGaloisDeformationRings 2.12, 2.20, GlobalGaloisDeformations 3.4-3.5 on main; the seeded sample where it falls in changed text (2.3 and 2.6; the other thirteen targets are unchanged); adversarial table with computed ranks and hypothesis comparisons for every changed statement; dependency check 0 problems, no UPWARD or CYCLE; all automatic checks pass; Suggested.lean elaborates with exit 0 and no output (no declaration); pull request text read against the head (one small correction: the generated depends-on and merge-order blocks omit the two new suppliers). Two small corrections, none blocking; three facts for the human reviewers.",
+  "text": "11192fb29bfb7dcd",
+  "carried": {
+   "from": "211b108a4247589ed148fd429c1d717c0e50c2d5",
+   "head": "980d7b883f3d4c248cdd4e8247123a6547c714cf",
+   "findings": 2,
+   "lines": 2,
+   "folders": [
+    "SelmerIwasawaCohomologyPartII"
+   ],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C01: the two blocks are generated and are not edited here; they need to be regenerated at this head.",
+    "where": "the description's generated depends-on and merge-order blocks",
+    "raised": "PRREVIEW-SelmerIwasawaCohomologyPartII~6"
+   }
+  ]
+ }
+}
