@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-Hyperfunctions~1",
+  "head": "5598880a7a2629dcb1d48cf707204039fee97c68",
+  "pr": 2592,
+  "folder": "Hyperfunctions",
+  "date": "2026-11-19",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review of README.md and Suggested.lean. Seeded sample (1.1, 1.3, 1.4, 2.0a, 2.0d, 2.0f, 2.1b, 2.2, 2.3, 3.2, 3.3, 4.2, 5.1, 5.2, 5.3): most carry no locator (R03); content checked against Honda-Izawa-Suwa arXiv 1807.01831v4 (Thm 2.14, (4.5), (6.2), (6.4), Thm 6.10, Cor 6.12, Def 6.13, Ex 7.14, Thm 8.1, (8.8)) and Komatsu 1967 (Thms 6', 12, 19, read on J-STAGE); Ito 1986 not readable. All 30 Checks and the Layer examples recomputed. 75 library names #check'd at the pins (all resolve but bare dsupport); 26 cross-roadmap ids resolved on main. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with only sorry warnings; one-tactic probes fail on all 7 theorems. Findings: duplicated ownership of 3a.1 compact-support functors (pins + ComplexComparisonPartII C6.1), sign of the Layer 0 relative-to-quotient example, missing locators for headline theorems.",
+  "text": "34125ad77d90b415"
+ }
+}
