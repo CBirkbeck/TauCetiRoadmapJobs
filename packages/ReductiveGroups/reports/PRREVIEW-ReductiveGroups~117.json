@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ReductiveGroups~117",
+  "head": "7e741b5aff877180c0514e8ffaa8409821a0ab06",
+  "pr": 2530,
+  "folder": "ReductiveGroups",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 98 changed lines since 339f91a. Previous R01 (rank-0 quotient) and R02 (mutual supply with ArithmeticGaloisRepresentations) are repaired, as are C01-C03 and N01-N02. Checked by computation: the GSp2m Hopf ideal and its agreement with ArithmeticGaloisRepresentations 7.3, the similitude Dickson invariant and GSO = {det g = c^n} over R[1/2], the fppf splitting through the LefschetzPencilsAndVanishingCycles 2.1 normal form, and the spinor norm through GSpin lifts. Locators checked: conrad-rgs Lemma C.2.1 and Remark C.3.11. The seeded sample (1.1, 8.1, 8.2) is untouched and stands as in the previous review. Gate: all checks pass; depcheck 200 roadmaps, 2230 edges, 0 problems. Elaboration exits 0 with 11 sorry warnings; Suggested.lean is unchanged. The pull request text agrees with the head. One small correction (ArithmeticGaloisRepresentations 7.3 missing from Downstream consumers) and one format note (locator for the similitude Dickson invariant).",
+  "text": "f0da304577744169"
+ }
+}
