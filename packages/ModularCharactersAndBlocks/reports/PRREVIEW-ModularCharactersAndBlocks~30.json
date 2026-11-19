@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularCharactersAndBlocks~30",
+  "head": "c59fc361c7e55bf8e0dc950d5d511bf225875890",
+  "pr": 2534,
+  "folder": "RepresentationTheory/ModularCharactersAndBlocks",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full re-review. All findings and notes of the previous review are repaired (R01 ownership now imported from GL2AutomorphicRepresentationsAndTransfer §R17.5.11 with §2.1 as its extension; R02 route corrected; C01-C05, N01-N02). Seeded sample 0.1-8.4 checked: 89 locators against webb (37), martinez (33), sambale (13) and craven (6), all supporting. Adversarial table: 31 rows with computed values. Automatic checks all passed; depcheck 0 problems; lake env lean exit 0 with 15 sorry warnings; #check @ on all 25 declarations matches the README; one-tactic probes do not close. Overlap: PartII, GlaubermanZStar, SemisimpleAlgebras (open), ModularInduction, CharacterTheory, OddOrderTheorem, GL2AutomorphicRepresentationsAndTransfer (main); single owner for each shared object. Small corrections: blockCharacters unused by any stated theorem; misleading module-docstring reason for the spanning half. Format note: §2.1/§2.3 Needs lines point at each other.",
+  "text": "f52f05926d6877fb"
+ }
+}
