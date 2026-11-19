@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GeometricRepresentationCategories~1",
+  "head": "d953859d8a194ab306eda75df544356129a9a0bb",
+  "pr": 2579,
+  "folder": "GeometricRepresentationCategories",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review of README.md and Suggested.lean. Sample: all 15 seeded targets plus every README locator, checked in Frenkel's book (author-page copy) and Frenkel-Gaitsgory arXiv math/0508382v3; all 28 Checks recomputed. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no messages (no declarations; docstring names all five headlines as not statable, verified at the pins); 220 README library names #check'ed at the pins; supplier sections of AffineLieAlgebras and FormalConnectionsOpers resolved on main and at their open revision. Findings: R01 coordinate character equation owned by both this roadmap (3.3) and AffineLieAlgebras A8.3; R02 Summary sentence equating the groupoids of opers and of local systems.",
+  "text": "11246c8d852985c4"
+ }
+}
