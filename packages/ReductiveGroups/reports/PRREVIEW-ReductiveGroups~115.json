@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ReductiveGroups~115",
+  "head": "c90e3702995e67665a6eb3765bcfd37829b70ec7",
+  "pr": 2530,
+  "folder": "ReductiveGroups",
+  "date": "2026-11-19",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review of the new sections 9B.5-9B.8 plus the seeded sample. Seeded sample 1.1, 8.1, 8.2 verified against jantzen-1985 (2.8 p.36, 2.10 p.41, 3.9 p.60, 4.2 p.69) and conrad-rgs (Def 5.1.1 p.136; Def 6.1.1, Rem 6.1.2 pp.186-187). Dagger locators: Cai-Friedberg-Kaplan section 1 verified on arXiv v5; Conrad Appendix C checked (no Proposition C.4.4; Corollary C.3.2 and Theorem C.2.11 are the right locators); Asgari-Shahidi and Hundley-Sayag read on arXiv with locator corrections; Knus, KMRT and Asgari 2002 not readable. R01: field-points identification with lipschitzGroup/spinGroup refuted at rank 0 and over F2 in rank 4 (18 vs 36 elements, computed). R02: centre of GSpin_2n is Gm x mu2, connected in characteristic two; Spin = mu2 is not smooth for l <= 1. R03: other planned owners of the same objects (LefschetzPencilsAndVanishingCycles 2.1-2.2 on main; QuadraticFormsOverABase, OrthogonalTamagawaAndLatticeMass, ClassicalGroupsPartII open) not named in scope. Automatic checks all pass; dependency check 0 problems; Suggested.lean unchanged, elaborates with exactly 11 sorry warnings, #check of all 22 declarations matches the signatures.",
+  "text": "6d6b640c7c9cb66c"
+ }
+}
