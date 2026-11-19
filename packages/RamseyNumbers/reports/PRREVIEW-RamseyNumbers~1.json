@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RamseyNumbers~1",
+  "head": "43ab2af81073a5d557140971019fb5f08803b271",
+  "pr": 2566,
+  "folder": "RamseyNumbers",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. All 34 source locators (Greenwood-Gleason 1955, Erdos 1947, Radziszowski DS1 rev. 18, Diestel 6th ed. Ch. 9 and 11) read at the text, covering the whole seeded sample 1.1-6.1; Ramsey 1930 and Schur 1916 carry no locator and were not read. Adversarial pass computed for all 14 theorems and 4 definitions (degenerate colours and demands, small values, extremal colourings on Z/5, Z/8, Z/13, Z/17, GF(16)). 27 Mathlib declarations opened at the pin; no Ramsey number at the pins or in another roadmap. Dependency check: 0 problems. Automatic checks all passed; Suggested.lean elaborates with only sorry warnings; one-tactic probe closes none of the 14 theorems. One source misprint recorded; two licence facts left to the human reviewers.",
+  "text": "3507281faace27e0"
+ }
+}
