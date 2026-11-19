@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsHeun~1",
+  "head": "9cde41460214942c90c83548061efc9e4818e5c6",
+  "pr": 2540,
+  "folder": "SpecialFunctionsHeun",
+  "date": "2026-11-19",
+  "findings": 6,
+  "blocking": 6,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review. All 15 sampled targets and every other section recomputed by hand and numerically (local solutions, the corrected 31.3.10-11, 31.10.8, the 192 orbit over Q, confluence limits, reductions 31.7.1-4). Locators checked against the online DLMF Chapter 31 (31 equations) and Maier 2005, 2007; Ronveaux, Kristensson, Haraoka, IKSY, Olver and Whittaker-Watson could not be read and are listed as not verifiable. Supplier sections resolved on main; dependency check 0 problems; Suggested.lean elaborates with 36 sorry warnings only; one-tactic probe closes none. Findings: two false targets (5.4 Type I for (0,1)-Heun functions; 6.4 exponents of 31.10.9), four transformation theorems false when U contains another singular point (counterexample computed), three auxiliary results already owned on main (Pincherle, Darboux, recessive solutions), two false sentences (Kummer classes, confluent hypergeometric example). One automatic check (section comment above the #check pins) set aside as a false positive.",
+  "text": "36450dae91c8e84e"
+ }
+}
