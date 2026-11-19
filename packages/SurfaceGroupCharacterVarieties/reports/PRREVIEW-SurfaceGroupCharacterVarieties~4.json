@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SurfaceGroupCharacterVarieties~4",
+  "head": "9f6200e5e39f7ed803ff4d6641117c96ce88b98d",
+  "pr": 2430,
+  "folder": "SurfaceGroupCharacterVarieties",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review of the whole folder at this head. Seeded sample of 15 sections plus all 13 Lean theorems recomputed (adversarial table in the report). 47 source locators checked in the five readable texts, all hold; FarbMargalit2012, RichardsonSlodowy1990, Knapp2002, Richardson1988 and Goldman1984 are waived or uncertified and not verifiable. Supplier sections resolved at the open heads of MordellLawrenceVenkatesh, TeichmullerGeometry, MappingClassGroupsAndCanonicalRepresentations, NonabelianLevelStructures and on main; pinned Mathlib and Tau Ceti declarations checked. Automatic checks all pass; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 13 theorems. One small correction (the Check of 2.2 does not show Mod_{0,2} has order two) and one format note (locator of 1.3).",
+  "text": "16f6b94a2adf675c",
+  "carried": {
+   "from": "9f6200e5e39f7ed803ff4d6641117c96ce88b98d",
+   "head": "9210ba33b66587436837ef091cd2290c865815eb",
+   "findings": 1,
+   "lines": 10,
+   "folders": [
+    "SurfaceGroupCharacterVarieties"
+   ],
+   "corrections": true
+  }
+ }
+}
