@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CFSGBasicProperties~7",
+  "head": "9803de263176b1c34ad42384d1e29143a4a590d7",
+  "pr": 2541,
+  "folder": "CFSGBasicProperties",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 81 changed lines since c2f6158. Checked: the four previous points (R01, C01, C02, N01), all repaired; the §8.2 Co0 passage against the pinned Tau Ceti lattice-isometry declarations (Isometry, Group instance, mul_apply, Isometry.neg, IsPosDef.finite_isometry, isPosDef_leechLattice) and the §4.2 double-coset finite-index and index-bound theorems, all opened at the pin and elaborated in a probe; the Scope and contract bullets the change edits; the description against the head. No seeded-sample target lies in the changed passages. The automatic checks all pass on a rerun; depcheck gives 0 problems; Suggested.lean is unchanged and elaborates with ten sorry warnings only; nothing changed outside the folder.",
+  "text": "c836d6e385c3d6c1"
+ }
+}
