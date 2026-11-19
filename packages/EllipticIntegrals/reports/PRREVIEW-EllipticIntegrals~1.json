@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllipticIntegrals~1",
+  "head": "18695ffd8a2534be20492f962d9cfd972db7c08c",
+  "pr": 2556,
+  "folder": "EllipticIntegrals",
+  "date": "2026-11-19",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample: all 13 sections (1.1-5.3) checked; 14 locators read at the text (DLMF 19.8.6, 19.8.12, 19.12.1, 19.25.1, 19.26.18, 19.30.5, Tables 22.4.1/22.5.3/22.5.4, 22.8.1-3, 22.19.1-2; Salamin Thm 1b; Cremona 3.7; Carlson 1995 sec. 2). Carlson 1977 ch. 9 and Byrd-Friedman 236.00/239.00 not readable (checked numerically instead). Every Check and statement recomputed with independent quadrature/AGM/Carlson code; one Check value wrong (R03). Automatic checks: all passed; depcheck 0 problems; elaboration: 11 sorry warnings only; one-tactic probe fails on all 11. Overlap scan reported no dropped ids cited elsewhere, but PeriodsAndSpecialValues (open) cites 'EllipticIntegrals Milestone 1/3' (C01): the scanner missed milestone-style ids. Tau Ceti d2083f0 (newer than the pin) already declares most targets; flagged to humans, not a finding (rules check at the pin).",
+  "text": "34d048344f4dced9"
+ }
+}

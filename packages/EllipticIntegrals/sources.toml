@@ -1,0 +1,56 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EllipticIntegrals"
+
+[[source]]
+id = "salamin1976"
+authors = "Eugene Salamin"
+title = "Computation of π using arithmetic-geometric mean"
+year = 1976
+venue = "Math. Comp. 30 (1976), 565–570"
+doi = "10.1090/S0025-5718-1976-0404124-9"
+locator_scheme = "theorem"
+locator = "Theorem 1b, p. 567"
+url = "https://www.ams.org/journals/mcom/1976-30-135/S0025-5718-1976-0404124-9/S0025-5718-1976-0404124-9.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/1976-30-135/S0025-5718-1976-0404124-9/S0025-5718-1976-0404124-9.pdf"
+fetched_at = "2026-11-19T16:58:56Z"
+sha256 = "536a2a475510c8a3eb0f4062dc2b51c8525b0ed67b299628700c5f65422ff53e"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["2.2"]
+
+[[source]]
+id = "carlson1995"
+authors = "Bille C. Carlson"
+title = "Numerical computation of real or complex elliptic integrals"
+year = 1994
+doi = "10.1007/BF02198293"
+arxiv = "math/9409227v1"
+locator_scheme = "section"
+locator = "§2, equations (8)–(11)"
+url = "https://arxiv.org/abs/math/9409227v1"
+fetched_from = "https://arxiv.org/pdf/math/9409227v1"
+fetched_at = "2026-11-19T16:59:00Z"
+sha256 = "f96f7c6c79c782fc3c134f7ccf826cea9bef5595a138f881eedd33e806898a50"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1; published in Numer. Algorithms 10 (1995), 13–26; the README cites the equation numbers of the arXiv version"
+cited_for = ["3.2"]
+
+[[source]]
+id = "dlmf-19"
+authors = "NIST"
+title = "NIST Digital Library of Mathematical Functions, Chapter 19"
+year = 2026
+version_note = "release of 2026-09-15"
+locator_scheme = "equation"
+locator = "19.26.18"
+url = "https://dlmf.nist.gov/19.26"
+fetched_from = "https://dlmf.nist.gov/19.26"
+fetched_at = "2026-11-19T16:59:34Z"
+sha256 = "31c8ce231c4d61656aa4a6b24b9dd0084c7c56d7c8c825bc1290bb3a971f1d1a"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["3.2"]
