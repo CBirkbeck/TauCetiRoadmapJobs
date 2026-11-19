@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ReflectionInvariantTheory~5",
+  "head": "e5085754cc3899e1af4b83ef8540bbe5adb53e34",
+  "pr": 2539,
+  "folder": "ReflectionInvariantTheory",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 8 changed lines since 7001076. Checked: previous R01 (overview now says 'reduced') and C01 (description) both repaired; D01 deferred and standing. The new BC1 Check of 4.5 recomputed (degree 2, exponent 1, height 2 vs 0 exponents >= 2, order 2 vs |Phi|/r = 4) and its claim that Mathlib's RootPairing.Base gives BC1 no base verified against Base.lean:68-76 at the pin. Description's '64 Checks in 26 sections' counted. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with eleven sorry warnings only. No source locator in the changed passages; seeded sample not reread (untouched text).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C01: the links in LieHighestWeight (lines 120 and 902) should point at `#layer-2-pseudoreflection-groups-and-the-shephardtodd-theorem`, and the link in RootSystems (line 57) at `#layer-4-the-crystallo",
+    "where": "LieHighestWeight and RootSystems READMEs on main, links to the new Layer headings",
+    "raised": "PRREVIEW-ReflectionInvariantTheory~1"
+   }
+  ],
+  "text": "f0895d0c3d0fdc1b"
+ }
+}
