@@ -1,0 +1,94 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CombinatorialHeegaardFloer"
+
+[[source]]
+id = "OSSBOOK"
+authors = "Peter Ozsváth, András I. Stipsicz, Zoltán Szabó"
+title = "Grid Homology for Knots and Links"
+year = 2015
+venue = "AMS Mathematical Surveys and Monographs 208"
+version_note = "authors' version on the author page; README locators use its numbering"
+locator_scheme = "theorem"
+locator = "Theorem 5.3.1"
+url = "https://web.math.princeton.edu/~petero/GridHomologyBook.pdf"
+fetched_from = "https://web.math.princeton.edu/~petero/GridHomologyBook.pdf"
+fetched_at = "2026-11-19T14:04:26Z"
+sha256 = "f914fc3181dcbd086577750e3c3f5325f653531aef93d3374fec1e965bf51ed9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["1.3", "2.1", "2.2", "2.3", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8", "3.9", "3.10"]
+
+[[source]]
+id = "OSS09"
+authors = "Peter S. Ozsvath, Andras I. Stipsicz, Zoltan Szabo"
+title = "Combinatorial Heegaard Floer homology and nice Heegaard diagrams"
+year = 2009
+arxiv = "0912.0830v3"
+locator_scheme = "theorem"
+locator = "Definition 1.2"
+url = "https://arxiv.org/abs/0912.0830v3"
+fetched_from = "https://arxiv.org/pdf/0912.0830v3"
+fetched_at = "2026-11-19T14:04:34Z"
+sha256 = "85fb72112751c7ba577d96d3effceeadaf5994c402949f8d9ab09f40930777b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v3"
+cited_for = ["5.1", "5.2", "5.3", "5.5"]
+
+[[source]]
+id = "OSS12"
+authors = "Peter Ozsváth, András I. Stipsicz, Zoltán Szabó"
+title = "A spectral sequence on lattice homology"
+year = 2012
+arxiv = "1206.1654v1"
+locator_scheme = "equation"
+locator = "§3, equations (3.2)–(3.3)"
+url = "https://arxiv.org/abs/1206.1654v1"
+fetched_from = "https://arxiv.org/pdf/1206.1654v1"
+fetched_at = "2026-11-19T14:04:38Z"
+sha256 = "e38819718e5890fbe9e4b8488e1f23e81c0583ae1ece1efbde8acd8d328ce8c9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["4.3"]
+
+[[source]]
+id = "Zem21"
+authors = "Ian Zemke"
+title = "The equivalence of lattice and Heegaard Floer homology"
+year = 2021
+venue = "Duke Math. J. 174, no. 5 (2025), 857-910"
+doi = "10.1215/00127094-2024-0044"
+arxiv = "2111.14962v4"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2111.14962v4"
+fetched_from = "https://arxiv.org/pdf/2111.14962v4"
+fetched_at = "2026-11-19T14:04:45Z"
+sha256 = "4778e9f536f84ea05099063b53c7f17a4246295b90da63dc6a585c04beed35bd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v4"
+cited_for = ["4.3", "4.5"]
+
+[[source]]
+id = "Nem07"
+authors = "Andras Nemethi"
+title = "Lattice cohomology of normal surface singularities"
+year = 2007
+arxiv = "0709.0841v1"
+locator_scheme = "theorem"
+locator = "Proposition 3.4.2"
+url = "https://arxiv.org/abs/0709.0841v1"
+fetched_from = "https://arxiv.org/pdf/0709.0841v1"
+fetched_at = "2026-11-19T14:04:50Z"
+sha256 = "96c01a1feb01128a4c6ee9aead9eda54e3e3b9bd5835af6713a07dfa9493ce92"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["4.1", "4.2", "4.6"]

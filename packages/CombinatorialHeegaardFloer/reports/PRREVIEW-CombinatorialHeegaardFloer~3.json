@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CombinatorialHeegaardFloer~3",
+  "head": "83dab881a9e342961cc877757490ab6f1c26a67e",
+  "pr": 2545,
+  "folder": "CombinatorialHeegaardFloer",
+  "date": "2026-11-19",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 8,
+  "format_notes": 0,
+  "notes": "Full review. Seeded sample (1.2, 1.3, 2.2, 2.3, 3.2, 3.3, 3.5, 3.6, 3.7, 4.1, 4.2, 4.3, 4.4, 5.1, 5.2) checked against the Ozsvath-Stipsicz-Szabo book (author-page copy), Nemethi arXiv:0709.0841, Zemke arXiv:2111.14962, OSS arXiv:1206.1654 and arXiv:0912.0830, and Sarkar arXiv:1011.5265. Every automatic check passed and the rerun agrees; the dependency check reports 0 problems; Suggested.lean elaborates with six sorry warnings only, and one-tactic probes found no padding among the sorried headlines. Previous R01 repaired, previous R02 not (C01). Findings: HF-hat-st equivalence forgets the basepoint count (P1); multivariable Alexander polynomial unowned, GeometricTopology 4.4 lacks it (P1); HF-hat-st defined via convenient diagrams without the no-S1xS2-summand restriction, with Checks on non-convenient diagrams (P2); a 3.2 bullet calls (n-l)/2 invariant under stabilization (P2).",
+  "text": "c309e2ac172f05b0"
+ }
+}
