@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ModularCharactersAndBlocksPartII~4",
+  "head": "f198e03aee4ce77d11a780c509b28109548de65b",
+  "pr": 2411,
+  "folder": "ModularCharactersAndBlocksPartII",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. One P2: blockCharacters, the defect of a block and the Brauer correspondent are owned here and by the open revision of ModularCharactersAndBlocks (pull request 2534). Seeded sample of 15 targets verified against the cached texts (69 locators: glauberman, martinez, reynolds, sambale, hartley-turull, spath-vallejo, geck, mnst); isaacs, navarro-1998, navarro-2018 and feit are uncertified and cited by locator. Adversarial table with computed values for the 15 sampled targets, the 16 headlines and the new section 2.5. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 16 sorry warnings only; one-tactic probe closes 0 of 16; 20 signatures compared with the README. Deferred D01 resolved. Two small corrections to the description (a gap the head no longer declares; two suppliers now on main) and one format note (a page). The declared gap is no longer used by the head.",
+  "text": "8b96d93f46e09b72"
+ }
+}
