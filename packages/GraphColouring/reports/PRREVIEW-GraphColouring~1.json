@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GraphColouring~1",
+  "head": "2eda8fd287d35dfbf09a5d6c390e2bcbcb29e475",
+  "pr": 2559,
+  "folder": "GraphColouring",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Sample: all twelve sections (1.1-5.2); 21 locators read in Bondy-Murty chapters 6, 8, 10 (archived author scans, OCR) and Diestel chapter 5 preview, all supporting the statements; one wrong section number in the References (C01). Adversarial pass computed on degenerate and small cases for every statement (table in the report); every number in the Checks recomputed. 39 library declarations opened at the pins. Suggested.lean elaborates with 14 sorry warnings only; one-tactic probe leaves all 14 open. Dependency check: 0 problems. Automatic checks all passed; none set aside. Overlap read against HamiltonianCycles, RamseyNumbers, SpanningTreesAndShortestPaths, GraphConnectivityAndFlows, ZigzagPreprojective: nothing shared. Left to humans: scope (textbook results, several at exercises) and closeness of two proof routes to Diestel's proofs.",
+  "text": "ea6c3a3dbd6f9c59"
+ }
+}
