@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Hyperfunctions~2",
+  "head": "73360bc506d8b96121a69be7ca48d1e589fcf7b5",
+  "pr": 2592,
+  "folder": "Hyperfunctions",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full re-review. Previous findings: R01 and R02 repaired, R03 partly repaired (remainder is C02); all previous small corrections and format notes repaired. Seeded sample of 15 targets checked: 18 source locators verified against Honda-Izawa-Suwa (arXiv v4), Komatsu 1967 and Malgrange 1957; Ito 1986, Sato-Kawai-Kashiwara and Kashiwara-Schapira not readable. 133 cited declarations #check'ed at the pins (10 Tau Ceti modules built first), all resolve; 27 cross-roadmap ids resolved on main. Suggested.lean elaborates with only 7 sorry warnings; 11 signatures compared with README, no lost binder; one-tactic probes fail on all 7 theorems. Automatic checks all passed; depcheck 200 roadmaps, 2200 edges, 0 problems. Adversarial table: 38 rows with computed values. Main small correction: ComplexComparisonPartII §C6.1 and LocallyConvexDuality still cite former ids for content this revision moved out, so §3a.1 and §C6.1 cite each other.",
+  "text": "2a8db3791cbdf5ad"
+ }
+}
