@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeegaardFloer~13",
+  "head": "c2fa65e5258e28089e657b8eef69882b56291b78",
+  "pr": 2477,
+  "folder": "HeegaardFloer",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 3,
+  "notes": "incremental re-review of 77 changed lines since b4167f5. Checked: the ten previous findings (R01, R02, R06, R07, R08 repaired; R03, R04, R05, R09, R10 unchanged and carried as small corrections or format notes); the changed passages of section 1.0c against the pinned Tau Ceti (8 declarations opened) and against Audin-Damian Theorem 2.2.5 and Lemma 2.2.8 in the authors' English draft (French page numbers not verifiable); the seeded sample where it falls in the change (1.0c); adversarial rows with computed values for every changed statement; the pull request text (one small correction); dependency check 0 problems; elaboration of Suggested.lean with sorry the only warning; automatic checks pass except three mentions of a dropped roadmap name (small correction). One question for the author on compactness in the single-pair step.",
+  "text": "3ae51fad9ded7eb9"
+ }
+}
