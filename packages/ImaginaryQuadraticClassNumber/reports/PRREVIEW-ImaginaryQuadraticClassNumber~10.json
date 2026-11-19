@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ImaginaryQuadraticClassNumber~10",
+  "head": "1eb5b47a4c2090b20e5f74a78e1721cfd2cf3db4",
+  "pr": 2593,
+  "folder": "ImaginaryQuadraticClassNumber",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 15 changed lines since 11adb83: the previous small correction (redundant generation hypothesis of the radicand-form theorem) is repaired and the new statement was checked on d = -1, -5, -163, 0, 1, -4 and for equivalence with the old one; README section 3.6 and the docstring agree with the signature; Suggested.lean elaborates with six sorry warnings only; one-tactic probe closes nothing; dependency check 0 problems; automatic checks all passed; pull-request title and description read against the head, nothing contradicted or unstated; no source locator lies in the changed passages (seeded sample in untouched text, verified in the previous review); one format note carried (old section 3.1 anchor).",
+  "text": "1b363958fd07b37c"
+ }
+}
