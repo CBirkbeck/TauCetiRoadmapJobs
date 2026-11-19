@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SurfaceTopology~4",
+  "head": "a994be463c2f8d08bfbfaa01bf0f866cf8c835f9",
+  "pr": 271,
+  "folder": "SurfaceTopology",
+  "date": "2026-11-19",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 7,
+  "format_notes": 2,
+  "notes": "Full review. Earlier findings rechecked one by one (repaired, two reduced to notes). Sources: 20 locators checked in Gallier-Xu, Epstein, Moffatt-Oh and the contents of Damiand-Lienhardt; Mohar-Thomassen, Tutte, Fary, Whitney, Lickorish not readable. Suppliers resolved on main and at the PlanarTopology head; GeometricTopology layer 11 lacks the cited chain complex and its sections 1.7 and 1.7.2 own the classification and mapping class groups. 18 pinned declarations opened. Dependency check: 0 problems. Suggested.lean elaborates with eight sorry warnings only; 26 signatures checked, no binder lost; one-tactic probe closes none; Riemann-Hurwitz elaborated on a copy against the pinned TauCeti.eulerChar. Adversarial table of 44 rows. The dropped-name hits for PlanarTopology set aside as false positives.",
+  "text": "96e177cf8e61b0a8"
+ }
+}
