@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LorentzianGeometry~8",
+  "head": "42109b863695bdce64731f04dfe66149be755c07",
+  "pr": 2232,
+  "folder": "LorentzianGeometry",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 47 changed lines since fc070ae. Checked: the previous report has no finding; the new second-countable reduction of §2.7 step by step with an instance (long ray) and a disconnected control, against IsInextendible in Suggested.lean; §12.4's use of it against the Lean hypotheses; the §12.2 locator (minguzzi2019 Theorem 3.45, p. 99, the one seeded-sample target in a changed passage) with a computed diamond; RiemannianGeometry R4.7 on main; CompressibleEulerEquations and SymmetricHyperbolicSystems at their open heads (consumer and scope statements agree on both sides, no shared owner); RelativisticQuantumFieldTheory §1.1 at its new head. Automatic checks all passed at this head; dependency check 0 problems, no UPWARD or CYCLE; elaboration 0 errors, 8 sorry warnings. One small correction: the description still says 'a hyperbolic-PDE roadmap' where the README now names CompressibleEulerEquations and SymmetricHyperbolicSystems.",
+  "text": "f659651d97f60c58",
+  "carried": {
+   "from": "42109b863695bdce64731f04dfe66149be755c07",
+   "head": "42109b863695bdce64731f04dfe66149be755c07",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
