@@ -306,3 +306,21 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["10.1"]
+
+[[source]]
+id = "DKRH2024"
+authors = "Dmitry Dolgopyat, Adam Kanigowski, Federico Rodriguez-Hertz"
+title = "Exponential mixing implies Bernoulli"
+year = 2021
+arxiv = "2106.03147v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1; Section 10"
+url = "https://arxiv.org/abs/2106.03147v1"
+fetched_from = "https://arxiv.org/pdf/2106.03147v1"
+fetched_at = "2026-11-19T04:22:51Z"
+sha256 = "e8116ac99103ee7d1d94c49cda48dad55f7cb0cc05fc6f8739ed1575fc91a582"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["Downstream consumers"]
