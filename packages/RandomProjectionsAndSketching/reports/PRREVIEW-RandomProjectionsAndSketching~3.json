@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RandomProjectionsAndSketching~3",
+  "head": "03644e24d0a6ec555bd86910cf23fa12c4f97761",
+  "pr": 2572,
+  "folder": "RandomProjectionsAndSketching",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 03644e2; checked: the pull request's title and description sentence by sentence against the head (one new small correction: the sample bound 12 eps^-2 log(2/delta) needs eps <= 1, computed at eps = 1.2); the previous report had no findings, its description correction is repaired and its three README corrections and two format notes are carried unchanged; the Tau Ceti covariance theorem the description names opened at the pin; 8 cross-roadmap citations resolved; Suggested.lean elaborated (12 sorry warnings, no error); dependency check 0 problems; automatic checks all passed; no file changed outside the folder.",
+  "text": "264aaaacc17c0e70"
+ }
+}
