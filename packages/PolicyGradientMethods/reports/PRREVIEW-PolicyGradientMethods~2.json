@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PolicyGradientMethods~2",
+  "head": "bca8dc262fc143382da5ed37126d2d428287f55d",
+  "pr": 2565,
+  "folder": "PolicyGradientMethods",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 10 changed lines since 7a5357d. Checked: both previous findings (R01 on the least constant in 2.1, R02 on softmax as a policy in 3.1) are repaired; the new Check of 4.1 recomputed at t = 0, 1.3, -2 (Fisher matrix, Penrose identities, F-dagger gradient = (1/2, -1/2), advantage, and the step against the multiplicative-weights update); AKLM2021 re-opened at the locators the changed passages touch; pull request text read against the head; automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 8 sorry warnings only. One format note (S empty in the 2.1 remark).",
+  "text": "8013050ac0a86573"
+ }
+}
