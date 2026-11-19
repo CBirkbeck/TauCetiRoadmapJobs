@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CircleMethodThreePrimes~7",
+  "head": "0e859d655b4d1e005c1bba1f80636e8d348a76a5",
+  "pr": 2543,
+  "folder": "CircleMethodThreePrimes",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review of an unchanged head (same commit as the previous review, which had no finding; its three small corrections and one format note are restated). All 15 sampled sections recomputed (Ramanujan sums for q <= 60, singular series values, r and R, psi values, error budgets of 4.3, 4.6, 4.7); 1 of 12 source locators read (helfgott2015 for 4.8), 11 not verifiable (closed texts); 9 Mathlib declarations opened at the pin; 3 supplier sections resolved on main; dependency check 0 problems; automatic checks all pass; Suggested.lean elaborates with 18 sorry warnings only; one-tactic probe closes none of the 18 theorems.",
+  "text": "88ebd7dd4428f347",
+  "carried": {
+   "from": "0e859d655b4d1e005c1bba1f80636e8d348a76a5",
+   "head": "96f5e8c2994563514f36a7c9fe655d028697a25e",
+   "findings": 3,
+   "lines": 23,
+   "folders": [
+    "CircleMethodThreePrimes"
+   ],
+   "corrections": true
+  }
+ }
+}
