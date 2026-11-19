@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsMathieu~1",
+  "head": "f0797e5dc61f349885755a9be9ecd3861e127280",
+  "pr": 2538,
+  "folder": "SpecialFunctionsMathieu",
+  "date": "2026-11-19",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. Sample: the 15 seeded targets (1.1, 2.3, 3.5, 4.1, 4.3, 4.4, 5.2, 6.1, 6.2, 7.1, 7.2, 7.3, 7.4, 8.1, 8.3) checked against 13 DLMF sections read online; the eight cited books could not be read legally and are listed as not verifiable. Adversarial pass over all 43 theorems and the conventions, with the numerical Checks of Layers 1-4 and 7 recomputed by an independent integrator. Findings: a false Example on the pole of Hill's determinant (R01), a false inequality in the proof sketch of the gap theorem (R02), two auxiliary results owned on main restated as owned here (R03). Elaboration of Suggested.lean: exit 0, 43 sorry warnings only; one-tactic probe closes none. Dependency check: 0 problems, no UPWARD or CYCLE line. One automatic check (a section heading over the #check lines) set aside as a false positive.",
+  "text": "1232f97e9e639283"
+ }
+}
