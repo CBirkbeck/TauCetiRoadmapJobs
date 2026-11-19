@@ -550,3 +550,58 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (publisher landing page HTTP 403, no open copy found); cited by its locator without the text"
 cited_for = ["6"]
+
+[[source]]
+id = "cai-friedberg-kaplan"
+authors = "Yuanqing Cai, Solomon Friedberg, Eyal Kaplan"
+title = "Doubling constructions: global functoriality for non-generic cuspidal representations"
+year = 2024
+venue = "Ann. of Math. 200 (2024)"
+arxiv = "1802.02637v5"
+locator_scheme = "section"
+locator = "§1, pp. 6–8"
+url = "https://arxiv.org/abs/1802.02637v5"
+fetched_from = "https://arxiv.org/pdf/1802.02637v5"
+fetched_at = "2026-11-19T02:33:42Z"
+sha256 = "dd49d944ca050d518fcb28dae9392b2b02d67710a4dff961800b47815f0c16ef"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v5; the published numbering was not checked, the README cites the arXiv numbering"
+cited_for = ["9B.5", "9B.6", "9B.7", "9B.8"]
+
+[[source]]
+id = "asgari-shahidi"
+authors = "Mahdi Asgari, Freydoon Shahidi"
+title = "Generic Transfer for General Spin Groups"
+year = 2004
+arxiv = "math/0411035v1"
+locator_scheme = "theorem"
+locator = "Definition 2.1, pp. 5–6"
+url = "https://arxiv.org/abs/math/0411035v1"
+fetched_from = "https://arxiv.org/pdf/math/0411035v1"
+fetched_at = "2026-11-19T02:34:30Z"
+sha256 = "e68dfcbf520bdd38efa4f18eb24d906a87504f990780b869c9d0cbd56dd90e90"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1 of Duke Math. J. 132 (2006); the published numbering was not checked, the README cites the arXiv numbering"
+cited_for = ["9B.7"]
+
+[[source]]
+id = "hundley-sayag"
+authors = "Joseph Hundley, Eitan Sayag"
+title = "Descent Construction for GSpin Groups"
+year = 2011
+arxiv = "1110.6788v2"
+locator_scheme = "section"
+locator = "§§4.1–4.2, Lemmas 4.1–4.2, Definition 4.3, pp. 11–12"
+url = "https://arxiv.org/abs/1110.6788v2"
+fetched_from = "https://arxiv.org/pdf/1110.6788v2"
+fetched_at = "2026-11-19T02:34:51Z"
+sha256 = "3b75284bb5e0c21640d91d4962398dafa17d2ea78750b331b955340745df622e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v2 of Mem. Amer. Math. Soc. 243 (2016); the published numbering was not checked, the README cites the arXiv numbering"
+cited_for = ["9B.7", "9B.8"]
