@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HamiltonianFloerOperations~1",
+  "head": "47bba364df5ea5272c969d001e273efba4fe792d",
+  "pr": 2590,
+  "folder": "HamiltonianFloerOperations",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample of 15 sections (1.1, 1.2, 2.2, 3.1, 3.4, 4.1, 4.3, 4.5, 5.1, 6.2, 6.4, 7.2, 7.4, 8.2, 8.5): none carries a source locator, and the README has 0 locators and one reference, PSS 1996, cited without a theorem or page and not legally readable (R01). All 23 Checks and the sign, degree and normalisation conventions were recomputed and hold. The ℂPⁿ line count in §8.4 is unowned (R02). All 103 dotted Lean names resolve at the pins, and key Tau Ceti declarations were opened. Cross-roadmap sections resolve on main. Dependency check: 0 problems. Every automatic check passed. Suggested.lean elaborates with no output and declares nothing; no headline is statable at the pins. Lu 2004 and Pardon 2016 were read from arXiv for the repair suggestions.",
+  "text": "24ad3bd0038c1fde"
+ }
+}
