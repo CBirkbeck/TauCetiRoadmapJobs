@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeneralizedCohomology~67",
+  "head": "aa14dec7adbff8e970d2e321906d6f355b15948f",
+  "pr": 2535,
+  "folder": "GeneralizedCohomology",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review of an unchanged head. Whole README read and its Checks recomputed; the 15 sampled sections (1.3, 1.5, 1.7, 2.2, 2.3, 2.8, 3.4, 3.5, 3.6, 3.10, 4.2, 4.6, 5.3, 5.4, 5.5) verified at 64 locators in 11 sources; Joachim, Segal and McDuff-Segal are uncertified and were not read. Suggested.lean elaborates with seven sorry warnings only; one-tactic probes close nothing; the universe-polymorphic rationalHurewicz elaborates. Automatic checks and the dependency check pass (0 problems). The previous review's small correction C01 is not repaired. Open pull requests #2269 and #2270 plan objects G2.11 owns without citing it: recorded for the human reviewers, not a finding against this folder.",
+  "text": "467fa6a2abf9ba84",
+  "carried": {
+   "from": "aa14dec7adbff8e970d2e321906d6f355b15948f",
+   "head": "8d8d4110a9d1666ccdec725e7788259559f88307",
+   "findings": 2,
+   "lines": 16,
+   "folders": [
+    "GeneralizedCohomology"
+   ],
+   "corrections": true
+  }
+ }
+}
