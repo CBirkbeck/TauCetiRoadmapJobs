@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ImaginaryQuadraticClassNumber~8",
+  "head": "11adb8323335000651ff60fffa9e6cc419dfe50a",
+  "pr": 2593,
+  "folder": "ImaginaryQuadraticClassNumber",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 147 changed lines since 2592125. Previous R01 (two owners of complex uniformisation), C01-C04 and N01 all repaired. The consumed statements were checked against ModularForms §10D and ModularCurvesPartII §1.1 on main, with homogeneity and the curve equation computed on Z[i]. The 11 new or moved Shin locators were checked in shin2010 (Propositions 2.1, 2.3(i)(ii)(vi), 2.5, Remark 2.2, W_(N,tau_K), Lemma 4.1(ii), Theorem 4.8, §2 pp. 2-3), all correct. The effective-bound wording was checked against AnalyticNumberTheoryPartI and EffectiveClassNumbers, and consumers of §3.1 were checked for the dropped uniformisation target. Gate rerun: all checks pass; depcheck 0 problems. Suggested.lean is unchanged and elaborates with 6 sorry warnings. The pull-request description matches this head. One format note (old §3.1 anchor linked from two open roadmaps).",
+  "text": "890284967e48ea6e"
+ }
+}
