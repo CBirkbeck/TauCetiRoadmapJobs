@@ -2803,8 +2803,8 @@
     },
     {
       "slug": "qbc-pairs",
-      "needs": "Extend finite BC theory to the natural TVS category on sympathetic algebras, torsion B_dR⁺-Pairs and qBC objects, with signed additive height, dense finite-torsion presentations of every torsion B_dR⁺-Pair (CN25 Theorem 9.8 proof, line 2834), uniqueness of the curvature filtration of a qBC whose middle Pair is reasonable (CN25 Proposition 4.26, line 1432) and compatibility with finite BC.",
-      "supplier": "VectorBundlesAndIsocrystals",
+      "needs": "For every torsion period Pair represented by W₁→W₂, supply the dense finite-length period-Module presentations of its model terms after completed base change to sympathetic algebras, with continuous natural transition maps, so that vanishing on the finite-length pieces tests vanishing of continuous natural maps from the Pair to B_dR or B_st. No reasonableness assumption is imposed. This is the presentation input to geometric recovery (CN25 Theorem 9.8 proof, p.57, CN25 lines 2829–2835); the TVS, Pair and qBC constructions themselves are the sections specified above.",
+      "supplier": "VectorBundlesAndIsocrystalsPartII",
       "section": "VB3, Sympathetic algebras and the classical category; Curvature, the tilted coherent heart and HN invariants"
     },
     {
@@ -2815,8 +2815,8 @@
     },
     {
       "slug": "natural-period-hom",
-      "needs": "Provide vanishing of natural VS Ext¹ into B_dR from finite BC objects of curvature ≤0, in particular from finite-length B_dR⁺-modules (CN25 Lemma 3.26(i)), the rank-equals-height theorem for natural VS Hom into B_dR from finite BC objects of curvature ≤0 (CN25 Proposition 3.27(i)), and the comparison of VS Hom with TVS Hom on the objects used in geometric recovery.",
-      "supplier": "VectorBundlesAndIsocrystals",
+      "needs": "For finite BC W with its natural TVS realization and P=B_dR or B_st, prove that forgetting topology induces Hom_TVS(W,P)≅Hom_VS(W,P), compatible with evaluation and period scalar multiplication. This includes the eigenspaces and bounded kernels of §§0.5–0.8 and the finite-length period Modules used in geometric recovery; the VS Ext vanishing and rank formula are §§6.6–6.7 (CN25 Proposition 5.20, p.38, CN25 line 1896; Theorem 9.8 proof, p.57, CN25 lines 2841–2853).",
+      "supplier": "VectorBundlesAndIsocrystalsPartII",
       "section": "VB3, Period modules and curvature calculus"
     },
     {
