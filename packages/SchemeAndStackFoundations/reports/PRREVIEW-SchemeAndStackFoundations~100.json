@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~100",
+  "head": "821ec839f1fd45530abf303f94530e49bdaa7299",
+  "pr": 2531,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review of an unchanged head. Seeded sample of 15 sections (0.2, 0.7, 0.12, 1.11, 1.17, 2.1, 2.2, 2.7, 2.18, 3.1, 4.2, 4.3, 4.15, 4.16, 5.11) and the four new subsections (0.2a, 1.1a, 1.9a, 2.9a) read against the Stacks book, rydh-2013, deligne-1985 and Milne AG ch. 11; Tau Ceti and Mathlib declarations opened at the pins; ModularCurves 0C/0E citations resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 48 sorry warnings only; one-tactic probe closes none of the 48 theorems. Deferred D01 stands. Not read: Brauer III, Cheng-Lian-Murayama, Deligne-Mumford 1969, Knudsen II, de Jong 1996.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Fppf cohomology with supports gets a second owner: PurityForFlatCohomology §0.2 (open) plans the same construction, long exact sequence, open excision and triple sequence",
+    "where": "PurityForFlatCohomology §0.2 and SchemeAndStackFoundationsPartII line 369 cite §2.9a",
+    "raised": "PRREVIEW-SchemeAndStackFoundations~97"
+   }
+  ],
+  "text": "7112c5f71701c79a",
+  "carried": {
+   "from": "821ec839f1fd45530abf303f94530e49bdaa7299",
+   "head": "2fdb6a3fbd0f9e2562641fbdd5c59acd022f17fc",
+   "findings": 2,
+   "lines": 15,
+   "folders": [
+    "SchemeAndStackFoundations"
+   ],
+   "corrections": true
+  }
+ }
+}
