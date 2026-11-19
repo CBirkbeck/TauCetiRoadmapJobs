@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Neuromanifolds~1",
+  "head": "0358bb8856385c06a651ecddce818b5891f9747c",
+  "pr": 2607,
+  "folder": "Neuromanifolds",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Seeded sample of 15 sections (1.1, 1.2, 1.4, 2.1, 2.2, 3.2, 3.3, 3.4, 3.6, 3.7, 4.1-4.5) checked against arXiv:2501.18915v2, 2401.16613v1 and 2408.04569v4 and against the pinned Tau Ceti; every source locator verified; all 275 backticked library names elaborated at the pin; Suggested.lean elaborates with only the sorry warning and its theorem resists simp, rfl and exact?; all Checks recomputed; gate rerun with every check passing; dependency check 0 problems. Corrections: old Milestone numbering cited by RobustnessCertificates has no map in the README; section 3.6 lacks a source locator.",
+  "text": "930e4f877f63c64a"
+ }
+}
