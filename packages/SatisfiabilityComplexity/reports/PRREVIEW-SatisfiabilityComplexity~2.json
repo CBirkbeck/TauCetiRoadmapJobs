@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SatisfiabilityComplexity~2",
+  "head": "4ddeaa786a03e48ce5e84d6b58eef9e63d86dabc",
+  "pr": 2521,
+  "folder": "SatisfiabilityComplexity",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 46 changed lines since 044d483: previous R01 (second owner of the composition of polynomial-time machines) repaired, checked against CertifiedPermutationComputation 1.2 at its head; previous C02, N01, N02 repaired, C01 partly (sequence form for 3.3 missing, kept as a small correction). The new subsumption bullet of 3.1 proved by hand and brute-forced on 4963 instances with 0 failures; the changed Checks of 1.3 and 5.2 recomputed. Seeded sample checked where it falls in the change (1.3, 3.1, 3.2, 3.3, 5.2); no locator changed. Automatic checks all passed; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged and elaborates with 17 sorry warnings only. Title and description agree with the head.",
+  "text": "431f6608f44de643"
+ }
+}
