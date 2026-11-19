@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexMultiplicationAndExplicitReciprocityPartII~8",
+  "head": "f4a8e921255e48765d444cf353bbe9864b50a633",
+  "pr": 1695,
+  "folder": "ComplexMultiplicationAndExplicitReciprocityPartII",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 56 changed lines since 87d95d3. Checked: both previous findings (R01 Borcherds ownership, R02 conductor and completion citations) repaired, and the three earlier corrections and one format note taken up; the changed passages of sections 0.1, 0.3, 3.4, 3.5, 4.2, 4.2a, 4.2b, 4.5, the scope and the supplier contracts read against GrossZagierAndArithmeticHeights 6.20a(e)-(f) at its open head, AnalyticNumberTheoryPartI 2.2a, 2.18a, 2.22a, QSeriesPartitionsAndMockModularForms 8.3, 8.5 and OrthogonalSpinGroups 1A-1C on main; source A opened at Theorem 4.8.1, section 4.7 and Theorem 9.5.6; sample target 0.1 checked where the diff touches it; adversarial table with computed values for every changed statement; automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates with two sorry warnings only; pull request text agrees with the head. One small correction (level hypothesis in 4.2a). Deferred D01 stands. Accepted conditional on the six declared supplier gaps.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P3",
+    "title": "The plan still points the absolute-Hodge gap at §B1.3",
+    "where": "board `design/plan.json`, gap `absolute-hodge-padic-comparison`, field `section`",
+    "raised": "PRREVIEW-ComplexMultiplicationAndExplicitReciprocityPartII~4"
+   }
+  ],
+  "text": "f81462d07e8a8888",
+  "carried": {
+   "from": "f4a8e921255e48765d444cf353bbe9864b50a633",
+   "head": "45fe7d4d8c9524da17999de67267f2b7926706a7",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "ComplexMultiplicationAndExplicitReciprocityPartII"
+   ],
+   "corrections": true
+  }
+ }
+}
