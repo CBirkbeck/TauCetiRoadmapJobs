@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TopologicalSheafCohomology~6",
+  "head": "c3606745a4eb5cb3c8c0b62e5a6538585c67db01",
+  "pr": 2533,
+  "folder": "TopologicalSheafCohomology",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample: all seven targets (0.1, 0.2, 1.1, 1.2, 1.3, 1.4, 2.1) checked against stacks-cohomology, stacks-derived and pardon v6; 30 locators verified. Dependency check: 0 problems. Suggested.lean elaborates with two sorry warnings; #check of all three declarations matches the README. Probes: properFiniteFiberStalk closes with one term from TopCat.Presheaf.isIso_fiberStalkMap (C01); the 1.3 headline is statable against TauCeti.Topology.cechCohomology (R01). The one automatic-check hit (Nonempty conclusion) is kept as N01. Supplier drift found in SchemeAndStackFoundations 2.5 (R02). The PR text and the two rewritten passages were checked against ImplicitAtlases on main.",
+  "text": "fd3d7092c0046b50"
+ }
+}
