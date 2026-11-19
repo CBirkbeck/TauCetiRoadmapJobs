@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexTori~2",
+  "head": "e4cd103932fec3cfb8b955331361858709e6f073",
+  "pr": 2550,
+  "folder": "ComplexTori",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full re-review. Previous R01 repaired (holomorphic local triviality of §2.3 now stated in Suggested.lean); previous C01 partly repaired, C02/N01/N02 repaired. Seeded sample 1.1, 1.3, 1.4, 2.2, 3.2, 3.3, 4.2, 4.3, 4.5, 5.2, 5.5, 6.2, 6.3, 6.4, 6.6 checked against the pinned declarations; locators verified in MilneCFT (Ex. 1.20, Rem. 1.21 p. 66, Prop. 3.4 p. 81) and BogomolovTschinkel2003 §3 pp. 3-4; Birkenhake-Lange and BHPV paywalled (not verifiable). All 172 README declaration names resolve at the pins; Suggested.lean elaborates with only the sorry warning; one-tactic probe fails; depcheck 0 problems; automatic checks all passed (two tool false positives set aside: DiscretePreimage module, phantom declaration 'of').",
+  "text": "9952162ff9d1b656"
+ }
+}
