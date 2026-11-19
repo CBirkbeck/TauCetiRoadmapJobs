@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchattenClassesAndSchurMultipliers~5",
+  "head": "7a68d30daed0be48c8bb9bf14fd57daccf04372a",
+  "pr": 2421,
+  "folder": "SchattenClassesAndSchurMultipliers",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 47 changed lines since 4faf86f. Checked: the previous C01-C03 and N01 repaired, N02 carried as a format note; the new kernel unitary of §2.1 recomputed (rank-one inner products on both sides, with a conjugation witness) against VonNeumannAlgebras V2.RectangularL2 and OperatorIdeals OI-B32-OI-B35 on main; the new locators of §10.4 read in randrianantoanina-2021 (lines 1335-1346, 1440-1445, 1460) and cgpt-2023 (lines 471-484), uniformity of the constant rests on cgpt-2023 line 481 and is reported to the human reviewers; the pull request title and description read against the head, no contradiction; automatic checks all pass; dependency check 0 problems; Suggested.lean (unchanged) elaborates with 11 sorry warnings only; nothing changed outside the folder.",
+  "text": "d7f55fa23fd10d43"
+ }
+}
