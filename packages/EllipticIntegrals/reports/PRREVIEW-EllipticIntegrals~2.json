@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticIntegrals~2",
+  "head": "1d029f44f8927863a56733bbed433774724f4f8f",
+  "pr": 2556,
+  "folder": "EllipticIntegrals",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 127 changed lines since 18695ff. All eight previous points (R01-R03, C01-C02, N01-N03) were verified as repaired. Checked: joint holomorphy of R_F (domination bound, numerical linearisation, Cauchy-Riemann for the duplication composite), the duplication theorem at four triples and 20000 random ones, the pendulum's uniqueness and least period (formula vs RK4), the corrected 2.1 Check value, and the milestone table against main's README and the two citing open heads. Sources: Salamin Thm 1b p. 567, Carlson 1995 sec. 2 eqs (8)-(11), DLMF 19.26 assumption. Mathlib/Tau Ceti declarations opened at the pins. Elaboration gave 11 sorry warnings only; #check and one-tactic probes run; depcheck 0 problems; gate OK; nothing changed outside the folder. Remaining: two small corrections (the Hartogs wording in 3.1, the Milestone 5.2 pointer) and one format note (Lean line length).",
+  "text": "e951c2e55b6de29d"
+ }
+}
