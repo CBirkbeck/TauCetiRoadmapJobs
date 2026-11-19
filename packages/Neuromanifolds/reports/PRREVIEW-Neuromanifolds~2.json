@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Neuromanifolds~2",
+  "head": "0358bb8856385c06a651ecddce818b5891f9747c",
+  "pr": 2607,
+  "folder": "Neuromanifolds",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review at an unchanged head. Seeded sample (15 targets) and all headlines recomputed, values in the adversarial table; all 15 source locators read in the three arXiv texts; every backticked library name elaborated with #check at the pins and 53 types read; Suggested.lean elaborates with sorry as the only warning and its theorem resists simp, rfl, exact?, aesop; all automatic checks passed; depcheck 0 problems, no UPWARD or CYCLE; previous review's two small corrections and three format notes not repaired (head unchanged) and repeated.",
+  "text": "930e4f877f63c64a",
+  "carried": {
+   "from": "0358bb8856385c06a651ecddce818b5891f9747c",
+   "head": "93c789071ccc9130b2f2ed005d7392c805cd44ab",
+   "findings": 2,
+   "lines": 14,
+   "folders": [
+    "Neuromanifolds"
+   ],
+   "corrections": true
+  }
+ }
+}
