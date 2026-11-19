@@ -1537,7 +1537,7 @@
     },
     {
       "slug": "pm-remove-inverse-e",
-      "needs": "For every finite Galois L/K over a complete mixed-characteristic DVR with perfect residue field and every real c>0, Pₘ(L/K) for all real m>c implies Fontaine’s shifted upper break u(L/K)≤c, including the refinement removing the 1/e loss in §R07.6.3.",
+      "needs": "For every finite Galois L/K over a complete mixed-characteristic discretely valued field K with perfect residue field of characteristic p, and every real c≥1 with (p−1)c∈ℤ, Pₘ(L/K) for all real m>c implies Fontaine’s shifted upper break u(L/K)≤c. The route is the integrality step of §R07.6.4(c) at this c: §R07.6.3(ii) gives u(L/K)≤c+1/e(L/K); an unramified L/K has u=0 and a tamely ramified one has u=1≤c; when p divides e(L/K), the integer e(L/K)·u(L/K) is the sum of the orders of Serre’s lower ramification groups G_j over 0≤j<i_G, with i_G the largest lower index, so e(L/K)(p−1)u(L/K) and e(L/K)(p−1)c are both multiples of p, and the first exceeds the second by at most p−1.",
       "supplier": "FiniteFlatGroupsAndIntegralPadicHodgeTheory",
       "section": "§R07.6.3"
     },
