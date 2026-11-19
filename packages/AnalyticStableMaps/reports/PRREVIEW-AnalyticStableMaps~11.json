@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticStableMaps~11",
+  "head": "1da2f126c9c2fe1bd0831ead00cc71015480ca34",
+  "pr": 2529,
+  "folder": "AnalyticStableMaps",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 59 changed lines since 19aa153. Checked: every finding of the previous review (R01-R03, C01-C03, N01-N02), all repaired. The new Tau Ceti citations were opened at pin 2fd255d (IsSubbundleFrameOn, subbundleTopology, trivialization, contMDiffOn_coordChangeL, rangeQuotientMap/Homeomorph). PseudoholomorphicCurveAnalysis PH6.2, ComplexKahlerGeometry 4.1-4.2 and HeegaardFloer F2.6e (with its normalization) were checked on main, and the open HF #2477 and CKG #2536 heads were checked too. The seeded sample's 0.8 was checked against wendl23 3.2/Ex. 3.9, and the 2.24 and References locators against wendl10 3.2/3.4. Adversarial rows were recomputed for each changed statement: real-frame pullback well-definedness, the F2.6e index 2+2A.A on both sides, the chart comparison sign, and the J-invariant complement. Gate passed; depcheck 0 problems; lake env lean on Suggested.lean exit 0 with 3 sorry warnings; no change outside the folder; PR text consistent with head.",
+  "text": "dcb6cabfb9ce582d"
+ }
+}
