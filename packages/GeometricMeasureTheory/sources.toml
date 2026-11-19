@@ -1,0 +1,69 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GeometricMeasureTheory"
+
+[[source]]
+id = "Simon1983"
+authors = "Leon Simon"
+title = "Lectures on Geometric Measure Theory (Proceedings of the Centre for Mathematical Analysis, Australian National University, vol. 3)"
+year = 1983
+locator_scheme = "theorem"
+locator = "14.3"
+url = "https://maths.anu.edu.au/files/CMAProcVol3-Complete_1.pdf"
+fetched_from = "https://maths.anu.edu.au/files/CMAProcVol3-Complete_1.pdf"
+fetched_at = "2026-11-19T19:26:01Z"
+sha256 = "833fc8e3f19dd65d835f12ff0e2fa788d2861e6f205ab2020386225fb07907ae"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["2.1", "2.2", "2.3", "2.4", "3.1", "4.2", "4.3", "5.2", "5.3", "6.1"]
+
+[[source]]
+id = "Maggi2012"
+authors = "Francesco Maggi"
+title = "Sets of Finite Perimeter and Geometric Variational Problems"
+year = 2012
+doi = "10.1017/CBO9781139108133"
+version_note = "The open copy is the author's extract (contents, synopses, references, index); the locators are the chapter, section and page numbers it gives."
+locator_scheme = "chapter"
+locator = "16"
+url = "https://cvgmt.sns.it/document/1795/"
+fetched_from = "https://cvgmt.sns.it/document/1795/"
+fetched_at = "2026-11-19T19:26:02Z"
+sha256 = "97bf03908209b4dd89c58107ba745a67fb66b78bdb8bfaec5d1d5bb22d0dffbe"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["5.1", "5.4"]
+
+[[source]]
+id = "AnzellottiGiaquinta1978"
+authors = "Gabriele Anzellotti, Mariano Giaquinta"
+title = "Funzioni BV e tracce (Rend. Sem. Mat. Univ. Padova 60, 1-21)"
+year = 1978
+locator_scheme = "theorem"
+locator = "Teorema 1"
+url = "http://www.numdam.org/item/RSMUP_1978__60__1_0/"
+fetched_from = "https://www.numdam.org/item/RSMUP_1978__60__1_0.pdf"
+fetched_at = "2026-11-19T19:26:03Z"
+sha256 = "9ba270d5d021b7be061673ae9ccc8c01b74f47c4404441dd7db4ccfbc0d009ee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4.1", "6.2", "6.3"]
+
+[[source]]
+id = "Federer1958"
+authors = "Herbert Federer"
+title = "A note on the Gauss-Green theorem (Proc. Amer. Math. Soc. 9, 447-451)"
+year = 1958
+doi = "10.1090/S0002-9939-1958-0095245-2"
+locator_scheme = "page"
+locator = "450"
+url = "https://www.ams.org/journals/proc/1958-009-03/S0002-9939-1958-0095245-2/S0002-9939-1958-0095245-2.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1958-009-03/S0002-9939-1958-0095245-2/S0002-9939-1958-0095245-2.pdf"
+fetched_at = "2026-11-19T19:26:04Z"
+sha256 = "f31765acea1aa3f71cb3c2ad0b144f4fc82796aaddbc1381b0edf4c70ecaa2ab"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["6.4"]

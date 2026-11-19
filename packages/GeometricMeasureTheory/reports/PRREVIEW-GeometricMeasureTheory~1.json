@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GeometricMeasureTheory~1",
+  "head": "4f5daa99dae7a46bd741b7300125c178ae5326e9",
+  "pr": 2581,
+  "folder": "GeometricMeasureTheory",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Sample: all 15 seeded sections; Simon-attributed 2.1, 2.3, 2.4 verified against Simon 1983 (Def 11.2, Thm 11.6, 12.1-12.7, 10) and the 2014 notes; Maggi 2012 not legally readable beyond its contents/index extract, so its attributions are listed as not verifiable; 1.1, 3.1-3.4, 4.2, 6.3, 6.4 cite no source. Automatic checks: all passed; depcheck 0 problems; Suggested.lean elaborates with 13 sorry warnings only; #check @ on all 14 declarations matched the README; tangential-area probe elaborates (R02); adversarial table of 20 rows recomputed, no false statement found.",
+  "text": "37bb49eb2a1af5bb"
+ }
+}
