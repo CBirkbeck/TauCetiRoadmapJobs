@@ -1,0 +1,133 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FreeProbability"
+
+[[source]]
+id = "Kes59"
+authors = "Harry Kesten"
+title = "Symmetric random walks on groups"
+year = 1959
+venue = "Trans. Amer. Math. Soc. 92 (1959), 336-354"
+doi = "10.1090/S0002-9947-1959-0109367-6"
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://www.ams.org/journals/tran/1959-092-02/S0002-9947-1959-0109367-6/S0002-9947-1959-0109367-6.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1959-092-02/S0002-9947-1959-0109367-6/S0002-9947-1959-0109367-6.pdf"
+fetched_at = "2026-11-19T18:01:32Z"
+sha256 = "a5b7f7c67bc7d584acf57431a7f65508cb3c750eb0468fde54e6232bf0e7bb2a"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["3.6"]
+
+[[source]]
+id = "KM15"
+authors = "Igor Kortchemski, Cyril Marzouk"
+title = "Simply generated non-crossing partitions"
+year = 2015
+venue = "Combinatorics, Probability and Computing, 26(4), 560-592 (2017)"
+doi = "10.1017/S0963548317000050"
+arxiv = "1503.09174v1"
+locator_scheme = "theorem"
+locator = "Proposition 4"
+url = "https://arxiv.org/abs/1503.09174v1"
+fetched_from = "https://arxiv.org/pdf/1503.09174v1"
+fetched_at = "2026-11-19T18:01:40Z"
+sha256 = "2b1dc3646a65bdce7c1778b4cfcd2645846958af0bdd839363d23decb4cae5a8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["2.1"]
+
+[[source]]
+id = "HR16"
+authors = "Cyril Houdayer, Sven Raum"
+title = "Locally compact groups acting on trees, the type I conjecture and non-amenable von Neumann algebras"
+year = 2016
+arxiv = "1610.00884v2"
+locator_scheme = "theorem"
+locator = "Proposition 2.22"
+url = "https://arxiv.org/abs/1610.00884v2"
+fetched_from = "https://arxiv.org/pdf/1610.00884v2"
+fetched_at = "2026-11-19T18:01:44Z"
+sha256 = "e6d421a8ef397e98cf70dbf552bf0f4a307376c581ceef040651be07edbf8793"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v2"
+cited_for = ["1.2", "4.7"]
+
+[[source]]
+id = "Spe19"
+authors = "Roland Speicher"
+title = "Lecture Notes on \"Free Probability Theory\""
+year = 2019
+arxiv = "1908.08125v2"
+locator_scheme = "theorem"
+locator = "Theorem 7.5"
+url = "https://arxiv.org/abs/1908.08125v2"
+fetched_from = "https://arxiv.org/pdf/1908.08125v2"
+fetched_at = "2026-11-19T18:01:51Z"
+sha256 = "a61b7b25a0c0d999f14a1d469f6f7c3f3612b5bf42a78529d95aa45e6f431920"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v2"
+cited_for = ["6.6", "8.6", "8.7"]
+
+[[source]]
+id = "Dyk97"
+authors = "Kenneth J. Dykema"
+title = "Faithfulness of free product states"
+year = 1997
+arxiv = "funct-an/9702014v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/funct-an/9702014v1"
+fetched_from = "https://arxiv.org/pdf/funct-an/9702014v1"
+fetched_at = "2026-11-19T18:01:56Z"
+sha256 = "1b2d8d61fb8bff6726df1a99555f9c89d228a12132fabb3823d8e40d051e7590"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["3.5"]
+
+[[source]]
+id = "Col02"
+authors = "Benoit Collins"
+title = "Moments and Cumulants of Polynomial random variables on unitary groups, the Itzykson-Zuber integral and free probability"
+year = 2002
+venue = "Int. Math. Res. Not., (17):953-982, 2003."
+arxiv = "math-ph/0205010v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://arxiv.org/abs/math-ph/0205010v2"
+fetched_from = "https://arxiv.org/pdf/math-ph/0205010v2"
+fetched_at = "2026-11-19T18:02:02Z"
+sha256 = "34edb9ddd0d517c2efecbec987631e7db7badfc604878fc0d443bbb8a5a162c1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v2"
+cited_for = ["8.6"]
+
+[[source]]
+id = "CS04"
+authors = "Benoit Collins, Piotr Sniady"
+title = "Integration with respect to the Haar measure on unitary, orthogonal and symplectic group"
+year = 2004
+venue = "Commun. Math. Phys. 264 (2006), no. 3, 773--795"
+doi = "10.1007/s00220-006-1554-3"
+arxiv = "math-ph/0402073v1"
+locator_scheme = "theorem"
+locator = "Corollary 2.7"
+url = "https://arxiv.org/abs/math-ph/0402073v1"
+fetched_from = "https://arxiv.org/pdf/math-ph/0402073v1"
+fetched_at = "2026-11-19T18:02:08Z"
+sha256 = "d8984bb165ef0f18187101ab8ee15ca82bd5cfdd0122b2a12b17da8ee5ad38c4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["8.5"]
