@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SelmerIwasawaCohomologyPartII~5",
+  "head": "365ec420f64e4a5499657372a7b7b7c7de457328",
+  "pr": 1403,
+  "folder": "SelmerIwasawaCohomologyPartII",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample of 15 targets (2.1, 2.4, 2.5, 2.6, 3.3, 3.6, 4.2, 4.5, 5.2, 5.5, 6.2, 7.1, 8.1, 8.4, 8.5) read against ltxzz, ltxzz-published, liu-tian and the two Stacks chapters at their locators: all agree. Adversarial table with computed values for 29 statements, including the blowup Chern relations of 2.6 and the numerical Checks of 1.5, 1.6, 2.5, 5.1, 6.1, 7.2, 7.3. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with no output (no declaration). 26 library declarations opened at the pins; supplier section headings resolved on main and at open heads. Findings: two ownership conflicts of declared gaps with open roadmaps earlier in the merge order (PELModuliPartII for native-shimura; PotentialAutomorphyInfrastructurePartII for rigid-r-equals-t and eventual-rigidity). Accepted mathematics is conditional on the remaining declared gaps.",
+  "text": "c4ccc73aae81fb24"
+ }
+}
