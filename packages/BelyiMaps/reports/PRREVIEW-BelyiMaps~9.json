@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BelyiMaps~9",
+  "head": "a370b60f03635b2247e70a9cf36771bddd209d7d",
+  "pr": 1791,
+  "folder": "BelyiMaps",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 6,
+  "format_notes": 2,
+  "notes": "Full review of the folder at a370b60 (README 5743 lines read in full, Suggested.lean 101 lines). Both findings are on what this pull request adds: R01 (P1) the 7.7 adapter and the Boundaries paragraph name SurfaceTopology and PlanarTopology, which are only in open pull request 271 and consume BelyiMaps, as suppliers of a roadmap on main; R02 (P2) the pull request edits Completed/ConformalMapping/README.md. The 38 findings of the previous review were checked one by one: 33 repaired by main's rewritten text, the rest carried as R01, R02, C03, C06, N01 or left to the humans (Layers 3.1 and 14). Automatic checks: two failed and both are real (the two findings); the targeted build passes. Dependency check: 200 roadmaps, 2198 edges, 0 problems (it has no position for the two roadmaps). Suggested.lean elaborates with one sorry warning; the one-tactic probe does not close the 13.5 statement; conjugation_transfer duplicates TauCeti.map_conj_eq_conj_of_map_eq_conj (C01). Adversarial pass recomputed by script on all 617 triples of degree at most 4 and by hand for Layers 3 to 13. Seeded sample of 15 targets: 13 checked against the pinned libraries, main's roadmaps or kock2004; Corollary 1.93(iv) and Corollary 2.70 of Girondo-Gonzalez-Diez are paywalled and stay under Not verifiable, as do Szamuely and Lando-Zvonkin. Sources read: kock2004 (arXiv math/0108222v2), mssv2019 (arXiv 1805.07751v3).",
+  "text": "ba4b3eafa6410c2b"
+ }
+}
