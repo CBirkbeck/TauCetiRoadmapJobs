@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularCharactersAndBlocks~32",
+  "head": "7a37125ea0d35591d402d50d19acbe0725144045",
+  "pr": 2534,
+  "folder": "RepresentationTheory/ModularCharactersAndBlocks",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 32 changed lines since c59fc36. Checked: the new theorem blockCharacters_partition (computed on S3 and C3 over Z2[zeta3], residue characteristic 0, n = 0; read against Martinez Definition 2.1 p. 9 and Theorems 2.11-2.12 p. 15 and against its README bullet); the corrected module-docstring reason for the spanning half; previous C01 and C02 repaired, N01 carried as a format note; the pull request's title and description against this head (nothing to correct); automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with exit 0 and 16 sorry warnings only; the one-tactic probe does not close the new theorem; no change outside the folder.",
+  "text": "2c5157c858e22042"
+ }
+}
