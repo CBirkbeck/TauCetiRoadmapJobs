@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MappingClassGroupsAndCanonicalRepresentations~3",
+  "head": "b09679ca4130cce28ec12b627ae5fcbbad62b6b0",
+  "pr": 2266,
+  "folder": "MappingClassGroupsAndCanonicalRepresentations",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review of the whole folder (README 3555 lines, Suggested.lean 278 lines). The previous review had no findings. Seeded sample of 15 targets checked at their locators where the text is readable (LL24, LL22, LL-P04, CH19, KP20, Sik12, BGMW17, Kor02, Sch19, AS16, Mor89, KS16: about 95 locators, all agree); Farb-Margalit, Nielsen and Magnus-Karrass-Solitar are cited by locator only and listed as not verifiable. Adversarial table of 25 rows with computed values. About 100 cross-roadmap citations resolved on main or at open heads; dependency check: 0 problems, no UPWARD or CYCLE. Suggested.lean elaborates with six sorry warnings only; one-tactic probe closes none of the six theorems; signatures compared with the README. Automatic checks all passed. Two small corrections (attribution of the non-flatness statement in section 11.6 to the erratum; SurfaceGroupCharacterVarieties missing from the consumer list and the description), one question on a Farb-Margalit sign. For the humans: status of the authors' erratum page; the roadmap corrects two statements of a published paper.",
+  "text": "5fa9702baec9e3d3",
+  "carried": {
+   "from": "b09679ca4130cce28ec12b627ae5fcbbad62b6b0",
+   "head": "9acc4f0617a936298e41b6c45dca2ece7179b287",
+   "findings": 2,
+   "lines": 11,
+   "folders": [
+    "MappingClassGroupsAndCanonicalRepresentations"
+   ],
+   "corrections": true
+  }
+ }
+}
