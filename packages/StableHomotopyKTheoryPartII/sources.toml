@@ -185,6 +185,9 @@ cited_for = ["PO.1/steenrod-algebra; PO.1/milnor-dual"]
 
 [[source]]
 id = "stacks-algebra"
+authors = "The Stacks project authors"
+title = "The Stacks project, Commutative Algebra"
+year = 2026
 locator_scheme = "tag"
 locator = "04GK"
 url = "https://stacks.math.columbia.edu/tag/04GK"
