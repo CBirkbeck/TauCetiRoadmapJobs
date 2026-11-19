@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MappingClassGroupsAndCanonicalRepresentations~4",
+  "head": "9acc4f0617a936298e41b6c45dca2ece7179b287",
+  "pr": 2266,
+  "folder": "MappingClassGroupsAndCanonicalRepresentations",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 11 changed lines since b09679c: the two small corrections of the previous review (C01 the erratum attribution in 11.6 and the corrections list, C02 SurfaceGroupCharacterVarieties in the consumer list and the description) are repaired; changed passages checked against LL24 lines 2071-2076 and LL-P04 lines 2889-2891 and against SurfaceGroupCharacterVarieties at its open head; sampled target 11.6 recomputed; title and description read against the head (adds the roadmap, supplier and consumer lists, six Lean theorems) with no contradiction; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with six sorry warnings only; automatic checks all passed; no change outside the folder.",
+  "text": "ccd340bd42087cce"
+ }
+}
