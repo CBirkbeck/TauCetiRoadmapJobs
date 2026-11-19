@@ -1,0 +1,245 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GroebnerGeometry"
+
+[[source]]
+id = "BrunsConcaLembo"
+authors = "Winfried Bruns, Aldo Conca, Francesca Lembo"
+title = "Sagbi bases, defining ideals and algebra of minors"
+year = 2025
+venue = "Bollettino dell'Unione Matematica Italiana Volume 19, pages 235-261 (2026)"
+arxiv = "2504.10019v3"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://arxiv.org/abs/2504.10019v3"
+fetched_from = "https://arxiv.org/pdf/2504.10019v3"
+fetched_at = "2026-11-19T20:00:46Z"
+sha256 = "4de69eaa669b5dee6b0c25571fbb5ea65c1dea4d679f5cd13c0a39bb8df65378"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v3"
+cited_for = ["3.4", "3.5", "3.7"]
+
+[[source]]
+id = "KoganMiller"
+authors = "Mikhail Kogan, Ezra Miller"
+title = "Toric degeneration of Schubert varieties and Gel'fand-Cetlin polytopes"
+year = 2003
+arxiv = "math/0303208v2"
+locator_scheme = "theorem"
+locator = "Theorem 5"
+url = "https://arxiv.org/abs/math/0303208v2"
+fetched_from = "https://arxiv.org/pdf/math/0303208v2"
+fetched_at = "2026-11-19T20:00:52Z"
+sha256 = "0ea488bcc68eb55039d84c4e5131e78d7e060860c7d17a61f88e0fb70ea3d423"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v2"
+cited_for = ["5.3"]
+
+[[source]]
+id = "ThieryThomasse"
+authors = "Nicolas M. Thiéry, Stéphan Thomassé"
+title = "Convex cones and SAGBI bases of permutation invariants"
+year = 2006
+venue = "Invariant theory in all characteristics, volume 35 of CRM Proc. Lecture Notes, pages 259-263, Amer. Math. Soc., Providence, RI, 2004"
+arxiv = "math/0607380v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/math/0607380v1"
+fetched_from = "https://arxiv.org/pdf/math/0607380v1"
+fetched_at = "2026-11-19T20:01:17Z"
+sha256 = "ca07485c1e49c8452b74c02ceb74de71a0a12368ade8fd13993d5e491c2cfef2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["5.6"]
+
+[[source]]
+id = "Reichstein"
+locator_scheme = "theorem"
+locator = "Theorem 1.7"
+url = "https://personal.math.ubc.ca/~reichst/sagbi.pdf"
+fetched_from = "https://personal.math.ubc.ca/~reichst/sagbi.pdf"
+fetched_at = "2026-11-19T20:01:20Z"
+sha256 = "737e75453a731a2ad3ed07ec91285275ac6ff5d22b7621f273109790a2c0270d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["5.6"]
+
+[[source]]
+id = "BorovikHibi"
+authors = "Viktoriia Borovik, Takayuki Hibi"
+title = "Elimination ideals of Plücker ideals and algebras with straightening laws"
+year = 2026
+arxiv = "2601.06897v1"
+locator_scheme = "section"
+locator = "§1"
+url = "https://arxiv.org/abs/2601.06897v1"
+fetched_from = "https://arxiv.org/pdf/2601.06897v1"
+fetched_at = "2026-11-19T20:01:24Z"
+sha256 = "8e8a8256ceefce0aff776923eefd5e2c3812b4290b0d421a0c339e9bf31007e6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["5.2"]
+
+[[source]]
+id = "SturmfelsToricEquations"
+authors = "Bernd Sturmfels"
+title = "Equations Defining Toric Varieties"
+year = 1996
+arxiv = "alg-geom/9610018v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.4"
+url = "https://arxiv.org/abs/alg-geom/9610018v1"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9610018v1"
+fetched_at = "2026-11-19T20:15:10Z"
+sha256 = "b13af5a03d1b2cf75e44873266e0355a97dd6382bcaa9a985522adfde3be6825"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["2.5", "2.7", "6.4"]
+
+[[source]]
+id = "SpeyerSturmfels"
+authors = "David Speyer, Bernd Sturmfels"
+title = "The Tropical Grassmannian"
+year = 2003
+arxiv = "math/0304218v3"
+locator_scheme = "theorem"
+locator = "Theorem 3.4"
+url = "https://arxiv.org/abs/math/0304218v3"
+fetched_from = "https://arxiv.org/pdf/math/0304218v3"
+fetched_at = "2026-11-19T20:15:16Z"
+sha256 = "335e576dd6370b6ffcd189426752b499ed253f26529824fdd4c99ea1419571c0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v3"
+cited_for = ["6.4", "6.5", "6.6"]
+
+[[source]]
+id = "Hashimoto"
+authors = "Mitsuyasu Hashimoto"
+title = "Another proof of theorems of De Concini and Procesi"
+year = 2004
+venue = "J. Math. Kyoto Univ. 45 (2005), 701--710"
+arxiv = "math/0408429v1"
+locator_scheme = "theorem"
+locator = "Theorem 17"
+url = "https://arxiv.org/abs/math/0408429v1"
+fetched_from = "https://arxiv.org/pdf/math/0408429v1"
+fetched_at = "2026-11-19T20:15:22Z"
+sha256 = "99dce80140e28f7efd4ee8b0ad49ef12fd60ad2638238d3893cdc18ad115aaa9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["5.5"]
+
+[[source]]
+id = "Bossinger"
+authors = "Lara Bossinger"
+title = "A survey on toric degenerations of projective varieties"
+year = 2023
+arxiv = "2301.02545v1"
+locator_scheme = "section"
+locator = "§2.2"
+url = "https://arxiv.org/abs/2301.02545v1"
+fetched_from = "https://arxiv.org/pdf/2301.02545v1"
+fetched_at = "2026-11-19T20:15:28Z"
+sha256 = "2a635054c67b990ea1685930f1d5a43fab7571088ce4f04e268e9d66ce79b770"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["1.9", "4.3", "4.4"]
+
+[[source]]
+id = "WeibelKBook"
+locator_scheme = "theorem"
+locator = "Theorem II.8.6"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.ii.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.ii.pdf"
+fetched_at = "2026-11-19T20:15:32Z"
+sha256 = "83356b7bcbafcb91b66546f99ac180470a84e69fc35304ed031462543c908ffe"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4.11"]
+
+[[source]]
+id = "EisenbudSyzygyLectures"
+locator_scheme = "theorem"
+locator = "Theorem 1.3"
+url = "https://library.slmath.org/books/Book51/files/04eisenbud.pdf"
+fetched_from = "https://library.slmath.org/books/Book51/files/04eisenbud.pdf"
+fetched_at = "2026-11-19T20:15:34Z"
+sha256 = "f0a87b1d601d6a0afd351e554509e418e7c9dff01f4c341e28c0b3ea5b33d257"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4.9", "4.10"]
+
+[[source]]
+id = "StacksProject"
+locator_scheme = "tag"
+locator = "0BXF"
+url = "https://stacks.math.columbia.edu/tag/0BXF"
+fetched_from = "https://stacks.math.columbia.edu/download/coherent.pdf#nameddest=0BXF"
+fetched_at = "2026-11-19T20:15:47Z"
+sha256 = "b4980a08a8cce98fed6a420364b18c119364a9436577031b28a16863bcbdbfb8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4.10"]
+
+[[source]]
+id = "EisenbudCommutativeAlgebra"
+authors = "David Eisenbud"
+title = "Commutative Algebra"
+year = 1995
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-5350-1"
+locator_scheme = "theorem"
+locator = "Theorem 15.17"
+url = "https://doi.org/10.1007/978-1-4612-5350-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.3", "4.4"]
+
+[[source]]
+id = "MillerSturmfels"
+title = "Combinatorial Commutative Algebra"
+year = 2005
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/b138602"
+locator_scheme = "theorem"
+locator = "Theorem 14.11"
+url = "https://doi.org/10.1007/b138602"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.3", "5.1", "5.2", "5.3", "4.5"]
+
+[[source]]
+id = "CoxLittleOShea"
+authors = "David A. Cox, John Little, Donal O’Shea"
+title = "Ideals, Varieties, and Algorithms"
+year = 2015
+venue = "Undergraduate Texts in Mathematics"
+doi = "10.1007/978-3-319-16721-3"
+locator_scheme = "section"
+locator = "Chapter 2, §3"
+url = "https://doi.org/10.1007/978-3-319-16721-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.1", "1.4", "1.7"]
