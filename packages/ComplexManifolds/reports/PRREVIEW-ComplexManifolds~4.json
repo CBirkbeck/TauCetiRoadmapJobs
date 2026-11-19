@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexManifolds~4",
+  "head": "d33ec3da9b63778888c3f74956d2ff754048b16b",
+  "pr": 2549,
+  "folder": "ComplexManifolds",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 65 changed lines since 6611a6e. Checked: the three previous remarks (R01 Hausdorff in §7.6 and the Suggested.lean docstring, C01 §1.4/§4.5 by definition, N01 the §7.4 direction Check), all repaired; the new Checks of §7.4 (line in P², O(1) against O(−1)) and §7.6 (torus with doubled 2-torsion) recomputed; the newly cited declarations opened at the pins (ContinuousLinearEquiv.contMDiffConstSMul_transContinuousLinearEquiv_iff, MulAction.instChartedSpaceQuotient, ContinuousLinearEquiv.toTransContinuousLinearEquiv, TopologicalSpace.Opens.instChartedSpace) and a probe of the transported-model quotient elaborated; seeded sample where it falls in the change (§4.5, §7.6; Demailly pp. 261, 271, 357 read); the automatic checks all pass, Suggested.lean elaborates with no output, dependency check 0 problems, nothing changed outside the folder; pull-request description agrees with the head. Deferred D01 stands. Seven paywalled textbooks not readable (for the human reviewers).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "N01: MorseTheory's link `../ComplexManifolds/README.md#milestone-1-restriction-of-scalars-and-atlas-transport` has to point at `#layer-1-restriction-of-scalars-and-atlas-transport`.",
+    "where": "MorseTheory README line 1216, link fragment",
+    "raised": "PRREVIEW-ComplexManifolds~1"
+   }
+  ],
+  "text": "1ae8ebb07a61a22b"
+ }
+}
