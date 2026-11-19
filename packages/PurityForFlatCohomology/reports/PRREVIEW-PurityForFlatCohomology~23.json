@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PurityForFlatCohomology~23",
+  "head": "261d3fe863c07bb949dd2c0164216be644967cba",
+  "pr": 1840,
+  "folder": "PurityForFlatCohomology",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 109 changed lines since 06dec78. Checked: the previous small correction (repaired) and format note (not repaired, written again); the changed passages of Scope, Convention 3, the Mathlib and supplier contracts and section 0.2 (RΓ_Z as a right derived functor with its triangle, local groups, Mayer–Vietoris through excision, comparison with étale supports), each recomputed on degenerate cases; the Mathlib and Tau Ceti declarations they name opened at the pins; EtaleCohomologyFoundations §0.7 on main and SchemeAndStackFoundations §2.9a at the head of its open revision; of the seeded sample only 0.2 falls in the change, its locators read in CS24 and BC22; the pull request's text against the head; automatic checks all passed, dependency check 0 problems, elaboration with 15 sorry warnings only (Lean file unchanged).",
+  "text": "2c67dc14a93fc58e",
+  "carried": {
+   "from": "261d3fe863c07bb949dd2c0164216be644967cba",
+   "head": "ea95fba609fd94477d15941e5da061ab4f6983ce",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "PurityForFlatCohomology"
+   ],
+   "corrections": true
+  }
+ }
+}
