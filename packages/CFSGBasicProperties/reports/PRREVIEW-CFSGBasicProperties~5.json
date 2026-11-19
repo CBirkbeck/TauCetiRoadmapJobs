@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CFSGBasicProperties~5",
+  "head": "f6f732d9f8282aae665234258fa2bba3e7741bcb",
+  "pr": 2541,
+  "folder": "CFSGBasicProperties",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 7,
+  "format_notes": 2,
+  "notes": "Full review at Tau Ceti 2fd255d9 and Mathlib 1b1ccf4b. Findings: R01, the soundness of coset tables, covering bounds and stabilizer-chain sifting (Layer 4) is already proved in Tau Ceti's Coset/Table, Subgroup/Closure and Stabilizer/Sift; R02, the classification and count of the Leech minimal vectors (section 8.2) is already in Tau Ceti's Rank24/Leech/MinimalVectors. Earlier findings R01-R04 repaired. Seeded sample checked: 1.1 (conrad-tits Thm 2.4), 2.4, 3.1, 4.1, 4.2, 4.5, 6.1 (26 orders recomputed), 6.3, 6.4, 7.1 (relator counts against the pin), 7.7 (Kim-Michler Lemma 6.2 and Thm 6.3, fetched), 7.10 (Havas-Soicher-Wilson Thm 3.1, fetched), 7.11, 11.3 (bmw-monster section 2 and Prop 1), 11.4. Automatic checks: all passed; depcheck 0 problems; Suggested.lean elaborates with 11 sorry warnings only; one-tactic probe negative except validLieTypeIndex_finite, which restates the pinned theorem (C01). No manifest edited.",
+  "text": "b1ca7a441ec28ea0"
+ }
+}
