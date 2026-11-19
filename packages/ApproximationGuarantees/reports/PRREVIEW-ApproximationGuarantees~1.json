@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ApproximationGuarantees~1",
+  "head": "63e5c30f8fb36907d6ff5c637c76dd9da46fd125",
+  "pr": 2523,
+  "folder": "ApproximationGuarantees",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Sample: all 15 seeded targets (1.1-1.4, 2.1-2.4, 3.1-3.4, 4.2-4.4) plus 3.5 and 4.1; 20 of 20 source locators read at the cited pages (Williamson-Shmoys, Erickson, Schrijver); the original papers are attributed in prose only and were not read. Adversarial table with computed values for every statement; both tightness families of 4.2 enumerated over every tie-break for m up to 5. 38 Mathlib declarations opened at the pin; no pinned declaration states a target. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning (19); one-tactic probe closes 0 of 19 theorems. Pull request text agrees with the head. One small correction (relation of the cut weight of 2.4 to GraphConnectivityAndFlows 1.2 and QuantumOptimization 1.3), one format note.",
+  "text": "2fca513521347a5f"
+ }
+}
