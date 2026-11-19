@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TopologicalSheafCohomology~8",
+  "head": "7b1730fadb840e707fac8082234d1591f364af97",
+  "pr": 2533,
+  "folder": "TopologicalSheafCohomology",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review at the same head as the previous one. Sample: all seven sections (0.1, 0.2, 1.1, 1.2, 1.3, 1.4, 2.1); 25 locators read in the Stacks Cohomology and Derived Categories chapters and Pardon arXiv:1309.2370v6, all on the stated pages. Adversarial table with computed values for the three headlines and every sampled section. 23 pinned declarations opened; cross-roadmap citations resolved on main. Suggested.lean elaborates with three sorry warnings; one-tactic probes fail on the two open headlines, the stalk theorem closes from the pinned lemma as its docstring states. Automatic checks all passed; dependency check 0 problems. One small correction carried over (pinned Tau Ceti declarations for the section 0.1 equivalence and two results of sections 1.2-1.3 not named). Three source misprints recorded.",
+  "text": "14aa958bf9e5ab75",
+  "carried": {
+   "from": "7b1730fadb840e707fac8082234d1591f364af97",
+   "head": "9a2bf74e08187ecdff1450560f5795a9b716fd95",
+   "findings": 1,
+   "lines": 13,
+   "folders": [
+    "TopologicalSheafCohomology"
+   ],
+   "corrections": true
+  }
+ }
+}
