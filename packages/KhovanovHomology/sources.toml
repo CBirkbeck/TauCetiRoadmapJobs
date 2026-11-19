@@ -1,0 +1,100 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "KhovanovHomology"
+
+[[source]]
+id = "Kho99"
+authors = "Mikhail Khovanov"
+title = "A categorification of the Jones polynomial"
+year = 1999
+venue = "Duke Math. J. 101 (2000), no. 3, 359--426"
+arxiv = "math/9908171v2"
+locator_scheme = "theorem"
+locator = "Proposition 28"
+url = "https://arxiv.org/abs/math/9908171v2"
+fetched_from = "https://arxiv.org/pdf/math/9908171v2"
+fetched_at = "2026-11-19T22:22:48Z"
+sha256 = "e10d8cc5c7024f54515e7345bb4139ab8d27651d050d22cba9079f16f1613420"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v2"
+cited_for = ["5.5"]
+
+[[source]]
+id = "Bar02"
+authors = "Dror Bar-Natan"
+title = "On Khovanov's categorification of the Jones polynomial"
+year = 2002
+venue = "Algebr. Geom. Topol. 2 (2002) 337-370"
+doi = "10.2140/agt.2002.2.337"
+arxiv = "math/0201043v3"
+locator_scheme = "section"
+locator = "§3.1, Definitions 3.2–3.3"
+url = "https://arxiv.org/abs/math/0201043v3"
+fetched_from = "https://arxiv.org/pdf/math/0201043v3"
+fetched_at = "2026-11-19T22:24:15Z"
+sha256 = "a1172ca5b4928e4b6a45a83c6b3aafa4e1f6601f4ceb9e9b440c1c8dc8549ff0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v3"
+cited_for = ["Conventions"]
+
+[[source]]
+id = "KhovanovPatterns"
+authors = "Mikhail Khovanov"
+title = "Patterns in knot cohomology I"
+year = 2002
+venue = "Experimental mathematics 12 (2003) no.3, 365--374"
+arxiv = "math/0201306v1"
+locator_scheme = "section"
+locator = "§3"
+url = "https://arxiv.org/abs/math/0201306v1"
+fetched_from = "https://arxiv.org/pdf/math/0201306v1"
+fetched_at = "2026-11-19T22:34:31Z"
+sha256 = "ce6829be37302557fd812a26305b93167e3b8f18f10dfe5548b4604ad1869a17"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["5.8"]
+
+[[source]]
+id = "BarNatan05"
+authors = "Dror Bar-Natan"
+title = "Khovanov's homology for tangles and cobordisms"
+year = 2004
+venue = "Geom. Topol. 9 (2005) 1443-1499"
+doi = "10.2140/gt.2005.9.1443"
+arxiv = "math/0410495v2"
+locator_scheme = "section"
+locator = "§4.1–4.3, §5, §7, §8, §9.1"
+url = "https://arxiv.org/abs/math/0410495v2"
+fetched_from = "https://arxiv.org/pdf/math/0410495v2"
+fetched_at = "2026-11-19T22:34:41Z"
+sha256 = "7e8d5aad36eb62256206da2690cf3b59655793dab75d78e6229aeb62774cc6b1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v2"
+cited_for = ["2.7"]
+
+[[source]]
+id = "Jacobsson04"
+authors = "Magnus Jacobsson"
+title = "An invariant of link cobordisms from Khovanov homology"
+year = 2002
+venue = "Algebr. Geom. Topol. 4 (2004) 1211-1251"
+doi = "10.2140/agt.2004.4.1211"
+arxiv = "math/0206303v2"
+locator_scheme = "section"
+locator = "§3.2; §4.2, Theorem 2"
+url = "https://arxiv.org/abs/math/0206303v2"
+fetched_from = "https://arxiv.org/pdf/math/0206303v2"
+fetched_at = "2026-11-19T22:34:46Z"
+sha256 = "1bc35818c71cd9f34b9d1dd14acfd913f7885f4f8d9e9eaf8e3da7d2439a3a18"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v2"
+cited_for = ["7.5"]
