@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexKahlerGeometry~99",
+  "head": "4a51aa51ce4b7ca5dd7b55cd0611af0d928818b6",
+  "pr": 2536,
+  "folder": "ComplexKahlerGeometry",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review of an unchanged head. All layers read; every Check and worked value recomputed (33 rows in the adversarial table). Seeded sample 1.1, 1.2, 1.4, 2.4, 2.5, 3.5, 4.2, 4.5, 5.8, 6.1, 6.3, 7.1, 7.3, 7.7, 8.1: 52 demailly-agbook locators and ballmann-kahler Theorem 4.17 checked against the text; webster-nn and koszul-malgrange are uncertified and were not read. 58 library declarations opened at the pins. Dependency check: 200 roadmaps, 2206 edges, 0 problems. Automatic checks all passed. Suggested.lean elaborates with 27 sorry warnings only; elaborated types compared with the README; the one-tactic probe closes none. One small correction carried from the previous review (2.5 does not name the pinned Cech long exact sequence, finite-cover Leray theorem and compact-normal shrinking lemma). Pull-request text agrees with the head. Two licence questions for the human reviewers.",
+  "text": "9ed1b37d0985a3b9",
+  "carried": {
+   "from": "4a51aa51ce4b7ca5dd7b55cd0611af0d928818b6",
+   "head": "6de659d3017ad0e8d9045fa583a4a0bf79f8d397",
+   "findings": 1,
+   "lines": 37,
+   "folders": [
+    "ComplexKahlerGeometry"
+   ],
+   "corrections": true
+  }
+ }
+}
