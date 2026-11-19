@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IgusaVarietiesAndTorsionConcentrationPartII~6",
+  "head": "b73d2bf091b11feda2fedddf6696c24ee8e4d06c",
+  "pr": 2439,
+  "folder": "IgusaVarietiesAndTorsionConcentrationPartII",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since b73d2bf. Checked: the pull request's title and description against the head (summary block and prose; the previous C01 on the summary block is repaired; one small correction, the paragraph on §11.9 omits the infinitely-many hypothesis of §11.9(2)); the automatic checks (all passed), the dependency check run again (0 problems, no UPWARD or CYCLE), the elaboration of Suggested.lean run again (sorry the only warning, lines 89 and 104); nothing changed outside the folder; the four declared gaps agree with the README; adversarial table with computed values for §11.9(2), its Check, and three claims of the description. The seeded sample falls in no changed passage.",
+  "text": "2737d57d211229a6",
+  "carried": {
+   "from": "b73d2bf091b11feda2fedddf6696c24ee8e4d06c",
+   "head": "b73d2bf091b11feda2fedddf6696c24ee8e4d06c",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
