@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsRationalPointsAndObstructions~9",
+  "head": "3d8c7efcea032dfce6ba957309199a49c2c2777f",
+  "pr": 1017,
+  "folder": "HeightsRationalPointsAndObstructions",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 24 changed lines since b30550a: previous C01 and C02 repaired, N01 carried; new citations of JacobianChallengePartII 3.2, 3.3, 3.9 and AbelianSchemesAndArithmeticModuli A1.4, A1.5, A2.2 resolved on main; the 0.10 constant-field Check, the 0.19 cube scaling and the 5.10 genus-one normalization computed; pins compared with lake-manifest.json; automatic checks all pass, depcheck 0 problems, Suggested.lean elaborates with sorry as the only warning; the seeded sample falls in no changed passage; no source text opened this round.",
+  "text": "e45f7ad3ff1d55c2"
+ }
+}
