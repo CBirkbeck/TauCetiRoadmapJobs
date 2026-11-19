@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DGFloer~39",
+  "head": "4144d778049bca10513c967c01283cc6e9f40c66",
+  "pr": 1798,
+  "folder": "DGFloer",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Since the previous head the layers are unchanged line for line (sections reordered, opening overview rewritten); the overview's statements were compared with their layers. Seeded sample (1.3, 5.1, 5.3, 7.3, 7.4, 8.2-8.5, 8.7, 9.3, 10.1-10.3, 10.5): about 80 locators read in 8 cached sources, all supporting the statements; Weibel 5.5.1 and 5.5.10 not readable. Adversarial table of 23 rows with computed values, including the extension of Theorem K by good truncations and the mod-2 vanishing replacement of the source's non-Serre class. Suggested.lean elaborates with seven sorry warnings only; #check of all seven signatures and a one-tactic probe (all fail, no padding). Dependency check: 0 problems; every supplier on main; cross-roadmap citations resolved on main and at the open head of DGFloerPartII. Automatic checks all passed; nothing outside the folder. One small correction (the description's Shape sentence lists the old section order), one format note. Five source issues recorded. Three points for the human reviewers (preprint status of the main source, overlap of Layer 6.0 with the open HamiltonianSystems roadmap, licence of the prior formalization).",
+  "text": "06723b6accdd2464",
+  "carried": {
+   "from": "4144d778049bca10513c967c01283cc6e9f40c66",
+   "head": "4144d778049bca10513c967c01283cc6e9f40c66",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}

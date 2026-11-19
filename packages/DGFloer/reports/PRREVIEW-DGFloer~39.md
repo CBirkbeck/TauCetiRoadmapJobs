@@ -1,0 +1,79 @@
+# Review of DGFloer (pull request #1798 at 4144d77)
+
+**Verdict:** accepted
+
+**Summary.** Accepted: no finding. Since the head the previous review read, the README's layers are unchanged line for line; the sections were reordered and the opening overview rewritten, and every statement of the new overview (the fibration theorem, Theorem K for every DG local system, Theorems A and C, the torus criterion) agrees in hypotheses with its layer. The sampled locators were read in the cached texts and support the statements; the extension of Theorem K beyond bounded-below `H_*(𝓕)` and the replacement of the source's mod-2 "Serre class" were recomputed and hold. There is one small correction (the description's **Shape** sentence) and one format note, neither blocking; three points are left to the human reviewers.
+
+## C01 — The description's **Shape** paragraph lists the README's sections in an order the head no longer has, and omits the opening overview
+
+A reader who goes from the description to the file looks for the scope and the supplier contracts near the top and does not find them. The sentence reads: "The README is rewritten in the house form: scope and ownership, conventions, exact supplier contracts, how to read the build, layers with numbered subsections, …". At this head the README opens with a several-paragraph overview (`README.md` lines 3–52), then "How to read the build" (line 66), "Conventions" (line 89), the layers, "Downstream consumers", "Worked examples", "Source coverage", "Provenance", and only then "Scope and ownership" (line 3945), "Exact supplier contracts" (line 4152) and "References".
+
+Text that would be right: "The README is rewritten in the house form: an opening overview with the headline theorems, how to read the build, conventions, layers with numbered subsections, Checks, examples and dependencies, downstream consumers, worked examples, source coverage, the provenance of the prior formalization, scope and ownership with the numbering note, exact supplier contracts, and references."
+
+## N01 — Five layer headings lost their preceding blank line, and one line of the guide is unwrapped
+
+`## Layer 0`, `## Layer 4`, `## Layer 7`, `## Layer 9` and `## Layer 10` (lines 234, 904, 1752, 3157, 3321) follow the last line of the previous section directly, and line 75 of "How to read the build" runs to about 190 characters where the rest is wrapped near 100. Both read correctly once rendered; a blank line before each heading and a rewrap would restore the file's own style.
+
+## Verified sound
+
+| Statement | Instances tried | Values computed on each side | Result | Change |
+| --- | --- | --- | --- | --- |
+| 1.3 regrading of the filtered-complex spectral sequence | homological `(p, q) = (1, 0)`; cohomological `(p, q) = (1, 0)`; `F_p C = C` for all `p` | `(a, b) = (−1, 0)`, degree `−1`, quotient `F₁/F₀`; `(a, b) = (3, −2)`, degree `1`, quotient `F¹/F²`; all pages `0` while `H(C)` arbitrary | formulas agree with the first page `H^{a+b}(F_{b+1}/F_b)`; lower bound needed | none |
+| 5.1 representing chain systems | index difference `1`, `2`; height function on `S¹`; constant function | sign `(−1)^{ind x − ind z} = −1` in difference `2`, as in `bdho-morse-dg` line 1648; two signed points; empty system | agrees with Proposition 5.2.6 | none |
+| 5.3 `f_* f_! = d · Id` | double cover of `S¹`; collapse `T² → S²`; `ℝP²` | `f_* f_![pt] = 2[pt]`, `f_* f_![S¹] = 2[S¹]`; `f_! f_* = 0` on `H₁(T²) = ℤ²`; `H_*(ℝP²; ℤ) = ℤ, ℤ/2, 0` | holds; the other composite is not `d · Id` | none |
+| 5.4 fibration theorem (headline; overview) | path-loop over `S²`; double cover of `S¹`; trivial action | twisted: `H_*(pt)`; `H_*(S¹; ℤ[ℤ/2]) = ℤ, ℤ`; untwisted ranks `1, 1, 2, 2, …` for `H_*(S²) ⊗ H_*(ΩS²)` | holds; trivial action excluded; overview equals 5.4 | none |
+| 7.3 gluing sign and coherent orientations | `dim V₂ = 0`; `S¹` height function with opposite and with equal signs | sign `+1`; opposite: `∂ max = 0`, `H = ℤ, ℤ`; equal: `H₀ = ℤ/2`, `H₁ = 0` | Lemma 3.1 and Proposition 3.3 as cited; homology pins the signs | none |
+| 7.4 action estimate of continuation | `H + ε(s)`, `H − ε(s)`, `ε : 0 → δ`; bump `ε` | actions change by `−δ`, `+δ`, `0`; bounds `∫max(H₋ − H₊) = −δ`, `+δ`; source's unexchanged `−δ` would forbid the rise | exchange of ends against Proposition 3.22 is right | none |
+| 8.2 twisting cocycle | worked example `m_{x,z} = a`, `m_{z,y} = b`, `m_{x,y} = c`, `∂c = −ab` | twisting equation: `∂c = (−1)¹ ab`; `D²(1 ⊗ x) = (ab + ∂c) ⊗ y = 0` | holds with the stated signs | none |
+| 8.3 DG Floer complex | `𝓕` in degree `0`; `𝓕 = C_*(Ω𝓛X)` | classical complex with local coefficients; regular module twisted by the cocycle | Definition 3.12 as cited | none |
+| 8.4 continuation | `ε` rising `0 → 2δ` then falling to `δ` | bound `ε(−∞) − ε(+∞) = −δ` although `∂_s H < 0` on the fall | one-sided estimate as stated | none |
+| 8.5 homotopies | constant family of data | `h = 0` and `Ψ¹ − Ψ⁰ = 0` | `Ψ¹ − Ψ⁰ = D⁻h + hD⁺` consistent | none |
+| 8.6 Theorem J and the comparison (headline) | `T²`, `n = 1`, height function | indices `+1, 0, 0, −1` against `H₂, H₁, H₀` of ranks `1, 2, 1` | shift `n` correct; `S²` rightly excluded | none |
+| 8.7 symplectic homology with DG coefficients | `D²ⁿ`; `𝓕 = ⊕_k ℤ[k]` | `E² = 0`; neither (A) nor (B) holds, vanishing by Künneth; `SH^{>0}_*(D²ⁿ) = ℤ` in degree `n + 1` | convergence hypotheses as in Theorem 3.49(ii) | none |
+| 9.3 Theorem K for every `𝓕` (headline; overview) | `Q = S³`, `𝓕 = ⊕_k ℤ[k]`; `τ_{≥m}𝓕`; `𝓕_{≤k}` | `H_p(𝓛S³) = ℤ` for `p = 0`, `p ≥ 2`; degree `n`: `⊕_{0≤p≤n−m} H_p`, colimit `⊕_{p≥0} H_p`; unit times degree-2 cycle leaves `𝓕_{≤k}` | `τ_{≥k}` is a sub-DG module (degree-0 chains are cycles); extension holds | none |
+| 9.1 `η₀` (overview: trivial for orientable spin `Q`) | `Q` orientable spin; `ℝP²`, orientation-reversing component | `σ`, `o_Q`, `w` all trivial; `o⁻¹ ⊗ o⁺¹` trivial, `η₀ = σ`, monodromy `+1` | agrees with `bdho-cotangent` lines 2995–3007 | none |
+| 10.1 Theorem L (headline) | `W = D²ⁿ`, `𝓕 = ℤ`, `α = [W, ∂W]` | `i_{W*}α ∈ SH_n(D²ⁿ) = 0`; `j_{U!}α = [U, ∂U] ≠ 0` | criterion applies; degrees `H_{*+n} → SH_*` consistent | none |
+| 10.2 Theorem M (headline) | `Q = T^r`; `Q = S²`, degree-0 class | `i_Q` a homotopy equivalence, kernel `0`, capacity `∞`; `j_!α ∈ H_{−2} = 0` | hypothesis fails where the conclusion fails | none |
+| 10.3 cotangent criterion | tube around a graph in `T*S³`; `T^r` | `ker π_{U!}` is 1-torsion, so `0`; `ker i_{Q*} ⊇ H₁(Ω²S³) = ℤ`; torus kernel `0` | applies off the zero section; silent on tori | none |
+| 10.5 Theorem 5.10 and Theorem A, Lean forms (headline; overview) | `d = ±1`; `d = 2` with `π₃ = ℤ/3`, `ℤ/2`; `T³`; `S = ∅`; `dim Q = 0` | `a^{±1} ≠ 1 ⇔ a ≠ 1`; `a² = a⁻¹ ≠ 1`; `a² = 1` and killed by `2¹`; all alternatives fail; `0 = d•[Q]` impossible; point aspherical | three alternatives match Proposition 5.11; no vacuous instance; level nonempty since `T*Q` connected, noncompact | none |
+| 10.5 Theorems 5.15 and C, Lean forms (headline; overview) | `ℝP²`; Klein bottle; `π₂ = ℤ/3`; `S = ℝP² ⊔ ℝP²` | squaring on `π₂ = ℤ` not onto, `H₂(−; ℤ/2)` map the identity; `π_ℓ = 0`; squaring bijective but `π₂` nontrivial; `(a, b) ↦ a + b ≠ 0` | 5.15 strictly wider than C; hypothesis reads the mod-2 degree | none |
+| 1.4 mod-2 vanishing (headline) | point; `M(ℤ/3, 2)`; `S³`; class `{G ⊗ ℤ/2 = 0}` | trivial; `π₂ = ℤ/3`, squaring bijective; `H₃(S³; ℤ/2) ≠ 0`, `π₃ = ℤ`; `ℚ` in the class, `ℤ ⊂ ℚ` not | holds; the source's class is not a Serre class, so the replacement is needed | none |
+| 11.3 torus criterion (headline; overview) | `G = 1`, `S¹`, `SO(3)`, `U(2)`; `ℕ → S¹` | `r = 0`, `r = 1` both sides hold; `π₃ = ℤ` both fail; 2-torsion `(ℤ/2)^ℕ` uncountable against `2^r` | holds; Lie hypothesis needed | none |
+| 1.5 sign of the collapse | `T²`, `N = S¹ × pt`, `n = k = 1` | `⟨α, [T²] ⌢ β⟩ = (β ⌣ α)[T²] = −1`, so `[T²] ⌢ β = −a = (−1)^{nk} i_*[N]` | sign `(−1)^{nk}` confirmed | none |
+| Conventions, 6.0, 6.1 | `(ℝ², dq ∧ dp)`; `T*ℝ`, `H = p²/2`; `H_t = tq` | `X_q = −∂_p`, `X_p = ∂_q`, `{q, p} = 1`; `ι_{p∂_q}(dq ∧ dp) = p dp`; flow `p − (t² − s²)/2` | `ι_X ω = dH` convention consistent throughout | none |
+
+- Change since the head the previous review read: as multisets of lines, 19 lines left and 50 entered, all in the overview (lines 3–52); everything else is a reordering. The previous review had no open finding.
+- Source locators read in the cached texts: about 80 in 8 sources (`bdho-cotangent` about 50, `bdho-morse-dg` 12, `salamon-lectures` 6, `abouzaid-viterbo` 6, `hatcher-at` 3, `seidel-biased` 2, `abbondandolo-schwarz` 1, `bott-lie-groups` 1); every sampled target's locator is among them except Weibel's.
+- Library declarations opened at the pins: `TauCeti.SmoothTwoForm.HasContractibleAlmostExistence` (`Geometry/Symplectic/Hamiltonian/AlmostExistence.lean:167`, with `HasContractibleClosedCharacteristic` at `:96`: nonconstant periodic orbit, contractible in `W`); `TauCeti.IsAspherical` (`AlgebraicTopology/EilenbergMacLane/Basic.lean:59`, path-connected and `π_{n+2}` trivial, no CW hypothesis); `TauCeti.isAspherical_iff_doubleLoopSpace_singularHomology` (`AlgebraicTopology/Homotopy/LoopSpace/Aspherical.lean:229`); `TauCeti.isUniquelyTwoDivisible_homotopyGroup_of_isZero_mod_two` (`AlgebraicTopology/Homotopy/Hurewicz/TwoDivisible.lean:43`, the one-step case in `Type` only, so the headline is not already proved); Mathlib `IsMulTorsion` (`GroupTheory/Torsion.lean:56`); and 25 further names located by search, none missing.
+- Cross-roadmap citations resolved on main: AlgebraicTopology §§4.4, 4.10, 5.0, 5.1, 5.5, 6.3, 8.3, 8.8, 8.8c, 8.8d; HeegaardFloer F1.4, F1.5, F2.1, F2.6c, Lane M; AnalyticStableMaps §§3.2, 3.4, 3.7, 11.1; ContactGeometry CG4; LieGroups Layers 4, 5A, 6; CompactGroups Layer 0; DGAInfinity Layers 4–5; MorseNovikov N1, N4; RiemannianGeometry R2–R3; SmoothBundlesConnections B6.0; HamiltonianReduction R1a.2; SymplecticGeometry S0; MorseTheory M4; CharacteristicClasses C3.2; GeometricTopology Layer 1; DifferentialGeometry 0.4 and Layer 5; PseudoholomorphicCurveAnalysis PH2.2, PH3.1, PH3.4, PH7. At the open head of DGFloerPartII: §§1.3, 1.4, Layer 2, 3.2, 3.3, 4.1–4.6.
+- Dependency check, rerun: `depcheck: 199 roadmaps, 2190 edges, 0 problem(s)`; no UPWARD, CYCLE or `moved:` line. Every supplier named is on main; DGFloerPartII is named only as a consumer and as the new owner of moved ids.
+- Elaboration of `TauCetiRoadmap/DGFloer/Suggested.lean`: seven `sorry` warnings (lines 83, 109, 142, 165, 195, 218, 244), nothing else. `#check @name` on all seven: every binder of the README statements is present. One-tactic probe (`rfl`, `infer_instance`, `simp`, `simp_all`, `exact?`) on a copy: all seven fail; nothing is padding.
+- Outside the folder: the pull request changes nothing. The worker's automatic checks all passed.
+- Headline theorems: stated in Lean are mod-2 vanishing, Theorems 5.10, A (two cases), 5.15, C and the torus criterion; named in the docstring as not statable, each with its missing carrier, are the fibration theorem, Theorem J, Theorem K, Theorems L and M, the Arnold bound and the Floer–Novikov torsion.
+
+Overlap check: read DGFloerPartII, HeegaardFloer, HamiltonianSystems, AnalyticStableMaps and MorseNovikov (open) and FukayaTheory, HamiltonianFloerOperations and HeegaardFloer (main). Moved applications: DGFloerPartII, by the numbering note. Lagrangian polygon operations: FukayaTheory; the graph-diagonal strip of 7.G: here, as FukayaTheory says. Capped branch 7.C: here, consumed by HamiltonianFloerOperations. Stable-map compactness: AnalyticStableMaps, through the declared contract. Hamiltonian vector fields of weak forms, Poisson bracket and symplectic flows beyond the pins (6.0): here; the open HamiltonianSystems plans the same objects, may not be cited, and as the open roadmap is the one that cites or narrows (reported to the human reviewers).
+
+Source independence: 18 passages compared with 4 sources (`bdho-cotangent`, `bdho-morse-dg`, `salamon-lectures`, `abouzaid-viterbo`), none reproduced; the longest shared run is 9 words, the conclusion of Theorem 5.10 at `bdho-cotangent` lines 4148–4150, a statement with one natural wording. Largest share `bdho-cotangent`, 28 of 53 line-cited locators. Contents compared with `bdho-cotangent`: independent. Layers 0–7 and 11 have no counterpart in its order; Layer 10 merges its §§5–6 out of order; Layer 8 items 4–7 run parallel to §§3.4–3.7, an order the *Needs:* lines force (8.4 needs 8.1–8.3, 8.5 needs 8.4, 8.6 needs 8.3–8.5, 8.7 needs 8.3–8.6), with Proposition 3.36 moved into 8.6.
+
+Research link: The headline targets are Theorems A, C, J, K, L and M of Barraud–Damian–Humilière–Oancea (2024), built on their DG Morse homology (2023, Birkhäuser 2025), on Barraud–Cornea (2007) and on Abouzaid's Viterbo theorem (2015); DGFloerPartII continues to their Theorems B, G, H, I. Rests on the README's references and the texts read.
+
+## Not verifiable
+
+- Weibel, Theorems 5.5.1(2) and 5.5.10 (1.3, a sampled target): the text is not among those held and is not openly available; the regrading formulas of 1.3 were recomputed instead.
+- Serre 1951, Chapter II, and Serre 1953, Theorem 1 (1.2, 1.4): not among the texts held.
+- The texts settled as cited by locator alone: Palais 1960, Hofer–Zehnder, Struwe 1990, Bröcker–tom Dieck, Massey, Whitehead, Hofer–Salamon.
+- McDuff–Salamon §3.1, Abraham–Marsden Chapter 3, Chernoff–Marsden, Hartman Chapter V Theorem 3.1, Floer–Hofer–Salamon Lemma 6.5, Piunikhin–Salamon–Schwarz §4 (6.0, 7.C): not among the texts held; none belongs to a sampled target.
+
+## Source issues
+
+- **Error** in bdho-cotangent at the proof of Theorem 5.15, printed page 99 (lines 4322–4324): the source says the abelian groups `G` with `G ⊗ ℤ/2 = 0` form a class in Serre's sense; it should be noted that `ℚ` belongs and its subgroup `ℤ` does not, so another argument is needed; affects the proof.
+- **Gap** in bdho-cotangent at Lemma 4.5(1), printed pages 71–72 (lines 3137–3166): the source says unit-speed Moore loops of length at most `L` are a strong deformation retract, with no topology fixed; it should be restricted to compact families, since unit-speed loops are not closed in the compact-open topology; affects the proof.
+- **Gap** in bdho-cotangent at Corollary 4.17, printed page 87 (line 3772): the source says the corollary holds for every DG local system and deduces it from Theorem K; it should carry Theorem K's bounded-below hypothesis or an extension argument; affects a stated result.
+- **Misprint** in bdho-cotangent at Theorem 3.49(ii), printed page 67 (line 2967): the source says the spectral sequence converges to the symplectic homology of `W` without coefficients; it should be `SH_*(W; 𝓕)`; affects nothing.
+- **Misprint** in bdho-cotangent at the proof of Theorem A, printed page 98 (lines 4261–4262): the source says that for `d = ±1` non-asphericity is equivalent to condition 1 of Theorem 5.10; it should be equivalent to `π₂(Q) ≠ 0` or condition 1; affects nothing.
+
+## For the human reviewers
+
+- Scope: the source with the largest share of the locators is cited as an arXiv preprint only (`README.md` References, first entry, arXiv:2404.07953 version 3); no journal reference is given. Its companion is published (Progress in Mathematics 360, 2025).
+- Ownership: Layer 6 item 0 owns Hamiltonian vector fields of weakly nondegenerate forms, the Poisson bracket and symplectic flows; the open new-roadmap pull request HamiltonianSystems (#480), Layers 1–2, plans the same objects and may not be cited as a supplier.
+- Licence: `README.md` "Provenance: prior formalization" proposes porting from the public repository `t4v1/damian_formalizare`; its licence was not read. No declaration of `Suggested.lean` is taken from it.
