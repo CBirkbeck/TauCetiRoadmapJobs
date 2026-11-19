@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StatisticalLearningTheory~2",
+  "head": "0a66c85b0219a20050c950435651a9035db76c8e",
+  "pr": 2515,
+  "folder": "StatisticalLearningTheory",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full re-review. Both previous findings (R01, R02) and all nine previous small corrections are repaired. Every statement recomputed at small cases (adversarial table, 34 rows). Seeded sample: 15 targets; 38 locators read at their pages in Devroye-Gyorfi-Lugosi, Dwork-Roth, Hardt-Recht and Lipton-Wang-Smola; Mohri-Rostamizadeh-Talwalkar, Anthony-Bartlett, Breiman et al. and Quinonero-Candela et al. could not be read legally and are listed as not verifiable. Suggested.lean elaborates with 49 sorry warnings only; signatures of all 97 declarations checked on a copy; three one-tactic probes, none closes. Dependency check: 0 problems; no change outside the folder. One automatic check failed (a section header with no declaration under it), kept as a format note; none set aside. 10 cross-roadmap citations resolved on main; overlap with the eight closest roadmaps read, nothing shared.",
+  "text": "c57257b015956d7f"
+ }
+}
