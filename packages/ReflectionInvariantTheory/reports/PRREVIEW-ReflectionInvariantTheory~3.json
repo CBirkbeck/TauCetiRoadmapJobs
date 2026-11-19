@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ReflectionInvariantTheory~3",
+  "head": "4a4d440d44a75ff8b5e949ee1b5442ecdab13e1c",
+  "pr": 2539,
+  "folder": "ReflectionInvariantTheory",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full re-review. All six findings of the previous review are repaired; D01 is deferred and stands. Seeded sample (1.1, 1.2, 2.2, 3.2, 3.3, 3.4, 3.5, 3.7, 4.1, 4.2, 4.4, 4.6, 4.7, 5.2, 5.3) checked against Fogarty2001, Smith1997, Stanley1979, Steinberg1959, Steinberg1964, Springer1974, Macdonald1972, Bott1956 and SGA1: all locators match. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 11 sorry warnings only; #check of all 13 declarations matches the README; one-tactic probe closes none. R01 (P2): Convention 7's 'irreducible' (P.IsIrreducible) admits the rootless pairing on a line, for which section 4.4's h = |Phi|/r and exponents in [1, h-1] fail; Lean already has [Nonempty iota]. C01: Convention 8 scope omits section 2.1. C02: section 4.5 route relies on Macdonald's product formula, which nothing provides.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C01: the links in LieHighestWeight (lines 120 and 902) should point at `#layer-2-pseudoreflection-groups-and-the-shephardtodd-theorem`, and the link in RootSystems (line 57) at `#layer-4-the-crystallo",
+    "where": "LieHighestWeight and RootSystems READMEs on main, links to the new Layer headings",
+    "raised": "PRREVIEW-ReflectionInvariantTheory~1"
+   }
+  ],
+  "text": "0c6e64014588c7fd"
+ }
+}
