@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundationsPartII~6",
+  "head": "de801473bd6087f2ebfc40fddf5a7083237812b0",
+  "pr": 2272,
+  "folder": "SchemeAndStackFoundationsPartII",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. Sample: targets 1.1, 1.3-1.7, 2.0-2.6, 3.1, 3.2 verified against CS24, BC22 and the Stacks project at their locators, plus 1.2 and the gap locators (41 locators; three imprecise, format note). All Checks recomputed. 33 pinned declarations opened at file and line. 10 supplier roadmaps resolved (SchemeAndStackFoundations 2.9a at the head of its open revision, named in the description). Dependency check: 0 problems, no UPWARD or CYCLE. Suggested.lean elaborates with sorry as the only warning; six signatures compared with the README; one-tactic probe closes neither theorem. Automatic checks all passed; none set aside. Accepted conditional on the 20 declared supplier gaps (same slugs in README and plan). Left to humans: sections parallel CS24 5.6-5.7 in dependency-forced order; the opening says it follows that article (small correction).",
+  "text": "6bf5ae1564f22214",
+  "carried": {
+   "from": "de801473bd6087f2ebfc40fddf5a7083237812b0",
+   "head": "4665564329a208e726a9ed43b016347cfb79a293",
+   "findings": 3,
+   "lines": 10,
+   "folders": [
+    "SchemeAndStackFoundationsPartII"
+   ],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C02: the generated blocks should drop FunctorOfPoints (#2465) and should list the SchemeAndStackFoundations revision #2531 as an open pull request that must merge first.",
+    "where": "the description's generated depends-on and merge-order blocks",
+    "raised": "PRREVIEW-SchemeAndStackFoundationsPartII~6"
+   }
+  ]
+ }
+}
