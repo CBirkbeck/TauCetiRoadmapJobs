@@ -1,0 +1,64 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PolicyGradientMethods"
+
+[[source]]
+id = "MXSS2020"
+authors = "Jincheng Mei, Chenjun Xiao, Csaba Szepesvari, Dale Schuurmans"
+title = "On the Global Convergence Rates of Softmax Policy Gradient Methods"
+year = 2020
+arxiv = "2005.06392v3"
+locator_scheme = "theorem"
+locator = "Lemma 8"
+url = "https://arxiv.org/abs/2005.06392v3"
+fetched_from = "https://arxiv.org/pdf/2005.06392v3"
+fetched_at = "2026-11-19T16:46:07Z"
+sha256 = "5afa9725299089f7aa087d0c7448d67249ae55a4195154c9d0211a128fcd6f54"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v3"
+cited_for = ["3.2"]
+
+[[source]]
+id = "AKLM2021"
+authors = "Alekh Agarwal, Sham M. Kakade, Jason D. Lee, Gaurav Mahajan"
+title = "On the Theory of Policy Gradient Methods: Optimality, Approximation, and Distribution Shift"
+year = 2021
+arxiv = "1908.00261v5"
+version_note = "locators are to J. Mach. Learn. Res. 22 (2021); arXiv v5 numbers Theorem 16 as Theorem 5.3"
+locator_scheme = "theorem"
+locator = "Theorem 16"
+url = "https://jmlr.org/papers/volume22/19-736/19-736.pdf"
+fetched_from = "https://jmlr.org/papers/volume22/19-736/19-736.pdf"
+fetched_at = "2026-11-19T16:46:22Z"
+sha256 = "4200e3b5cc1f0849dab3cc50883d3ed98e24a8388a4b8852c0579be48bc458db"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4.3"]
+
+[[source]]
+id = "Kakade2001"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://proceedings.neurips.cc/paper_files/paper/2001/file/4b86abe48d358ecf194c56c69108433e-Paper.pdf"
+fetched_from = "https://proceedings.neurips.cc/paper_files/paper/2001/file/4b86abe48d358ecf194c56c69108433e-Paper.pdf"
+fetched_at = "2026-11-19T16:46:29Z"
+sha256 = "f015ab6b5ccce23f71a5e6ca19f216d758cd1ba532c7e42f4cff4c038194b3cd"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4.1"]
+
+[[source]]
+id = "SMSM1999"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://proceedings.neurips.cc/paper_files/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf"
+fetched_from = "https://proceedings.neurips.cc/paper_files/paper/1999/file/464d828b85b0bed98e80ade0a5c43b0f-Paper.pdf"
+fetched_at = "2026-11-19T16:46:32Z"
+sha256 = "a7b400e47be17013611cc945455e03e4b973d52cca6bc487bcfe03fe64514a77"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["1.2"]

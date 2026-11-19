@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PolicyGradientMethods~1",
+  "head": "7a5357d3d9c38656a3198606e7584d9064cfdcb2",
+  "pr": 2565,
+  "folder": "PolicyGradientMethods",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. Sample: all eight sampled targets (1.1, 1.2, 2.1, 3.1, 3.2, 4.1, 4.2, 4.3) and all 17 source locators read in the open texts (AKLM2021 JMLR and arXiv v5, MXSS2020 arXiv v3, Kakade2001, SMSM1999). Adversarial pass computed for every statement and Check (signs of C, mu, rho; A empty; T = 0; the 3-state values 18.05, 6.7682, 676.82 recomputed). 13 library declarations opened at the pins; supplier citations resolved on main and at the open revision; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; one-tactic probe closes none of the 8 theorems. Automatic checks all passed, none set aside. Two P2 findings, both false sentences of prose repaired by a few words (2.1 least-C remark for mu with a negative entry; 3.1 softmax a policy when A is empty); no Lean change needed. The sources service recorded the four texts in the package manifest (one key per work).",
+  "text": "8013050ac0a86573"
+ }
+}
