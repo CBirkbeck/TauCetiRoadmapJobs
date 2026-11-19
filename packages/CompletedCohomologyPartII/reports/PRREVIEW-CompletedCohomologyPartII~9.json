@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CompletedCohomologyPartII~9",
+  "head": "393e53eb9859fb493fa36834250f63df74eab3a0",
+  "pr": 2547,
+  "folder": "CompletedCohomologyPartII",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review of the same head the previous review read (0 changed lines). Whole README read and every Check and worked example recomputed; adversarial table of 26 rows with computed values. Seeded sample (1.5, 2.4, 2.5, 3.17, 4.6, 5.2, 6.2, 6.6, 6.7, 7.2, 8.4, 8.7, 8.8, 8.12, 8.13) and the four headline theorems checked at 46 locators in 9 fetched sources (E06, CE, GN, Pan22 arXiv v3, LLHLM, BCGP, Scholze, MilneEC, CEbounds): all agree; Pan22 published pagination not readable (arXiv v3 read). Source corrections E1-E5 confirmed in the texts. 94 supplier section headings in 17 roadmaps resolved on main 1b7b481; 32 Mathlib names by #check and 52 Tau Ceti names opened in the pinned sources. Gate rerun: every check 0; depcheck 200 roadmaps, 2207 edges, 0 problems. Suggested.lean elaborates with sorry the only warning; elaborated type compared with README 8.11; one-tactic probes (simp, rfl, infer_instance, aesop, simp_all, exact?) all fail. Overlaps: none; closest roadmaps read, nothing shared. Two small corrections: the previous review's displaced referent in the PadicLocalLanglandsForGL2Qp contract (not repaired, head unchanged) and the range LocallyAnalyticDistributions 0.0-0.3 in 6.7 against its Needs line. One format note. One licence question (E11, unpublished manuscript) for the human reviewers.",
+  "text": "453cfedb875b9a70",
+  "carried": {
+   "from": "393e53eb9859fb493fa36834250f63df74eab3a0",
+   "head": "155b20443bf7059f66d939cda74fdbb00da84605",
+   "findings": 2,
+   "lines": 4,
+   "folders": [
+    "CompletedCohomologyPartII"
+   ],
+   "corrections": true
+  }
+ }
+}
