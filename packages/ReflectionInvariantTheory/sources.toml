@@ -1,0 +1,195 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ReflectionInvariantTheory"
+
+[[source]]
+id = "Stanley1979"
+authors = "Richard P. Stanley"
+title = "Invariants of finite groups and their applications to combinatorics"
+year = 1979
+venue = "Bull. Amer. Math. Soc. (N.S.) 1"
+doi = "10.1090/S0273-0979-1979-14597-X"
+locator_scheme = "theorem"
+locator = "p. 481 (h.s.o.p.); Prop. 3.1, Thm. 3.2; Lemma 3.3; Thm. 4.1; Cor. 4.4; Prop. 4.8; Prop. 4.9, Cor. 4.10, p. 489"
+url = "https://www.ams.org/journals/bull/1979-01-03/S0273-0979-1979-14597-X/S0273-0979-1979-14597-X.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1979-01-03/S0273-0979-1979-14597-X/S0273-0979-1979-14597-X.pdf"
+fetched_at = "2026-11-19T11:03:01Z"
+sha256 = "7a9d09fa276e1bfe7123db9a8b5a36cd63564b10919a4cc5bb366d839dfceabb"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["1.2", "2.2", "2.4", "3.4", "3.5", "3.6", "5.1"]
+
+[[source]]
+id = "Steinberg1959"
+authors = "Robert Steinberg"
+title = "Finite reflection groups"
+year = 1959
+venue = "Trans. Amer. Math. Soc. 91"
+doi = "10.1090/S0002-9947-1959-0106428-2"
+locator_scheme = "theorem"
+locator = "§1 p. 493; Thm. 1.4, Lemmas 2.2–2.3 p. 494; 4.1, Thm. 4.2 p. 497; Cor. 4.3 p. 498; Thm. 6.3 p. 500; Thm. 8.4 p. 503"
+url = "https://www.ams.org/journals/tran/1959-091-03/S0002-9947-1959-0106428-2/S0002-9947-1959-0106428-2.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1959-091-03/S0002-9947-1959-0106428-2/S0002-9947-1959-0106428-2.pdf"
+fetched_at = "2026-11-19T11:03:03Z"
+sha256 = "b1cd931525d6fba39f74feb1d16747df15803d6e31c447865b1f234401ac1b93"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["3.1", "4.2", "4.4", "4.5", "4.6", "5.2"]
+
+[[source]]
+id = "Steinberg1964"
+authors = "Robert Steinberg"
+title = "Differential equations invariant under finite reflection groups"
+year = 1964
+venue = "Trans. Amer. Math. Soc. 112"
+doi = "10.1090/S0002-9947-1964-0167535-3"
+locator_scheme = "theorem"
+locator = "Thms. 1.2, 1.3 p. 393; Thms. 1.4, 1.5 p. 394; Lemma 3.1 p. 396"
+url = "https://www.ams.org/journals/tran/1964-112-03/S0002-9947-1964-0167535-3/S0002-9947-1964-0167535-3.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1964-112-03/S0002-9947-1964-0167535-3/S0002-9947-1964-0167535-3.pdf"
+fetched_at = "2026-11-19T11:03:04Z"
+sha256 = "4db1be03da0fa4416106c1b243accb0df204fd63e7f270ad8847d5f75ef213da"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["2.2", "2.4", "2.5", "3.4"]
+
+[[source]]
+id = "Fogarty2001"
+authors = "John Fogarty"
+title = "On Noether's bound for polynomial invariants of a finite group"
+year = 2001
+venue = "Electron. Res. Announc. Amer. Math. Soc. 7"
+doi = "10.1090/S1079-6762-01-00088-9"
+locator_scheme = "section"
+locator = "§2, (1)–(3), pp. 6–7"
+url = "https://www.ams.org/journals/era/2001-07-02/S1079-6762-01-00088-9/S1079-6762-01-00088-9.pdf"
+fetched_from = "https://www.ams.org/journals/era/2001-07-02/S1079-6762-01-00088-9/S1079-6762-01-00088-9.pdf"
+fetched_at = "2026-11-19T11:03:05Z"
+sha256 = "797cda2887253b31300564bd2a2471b1a39f291729e38f87f3cfebf4c1d7226c"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["1.1"]
+
+[[source]]
+id = "Smith1997"
+authors = "Larry Smith"
+title = "Polynomial invariants of finite groups. A survey of recent developments"
+year = 1997
+venue = "Bull. Amer. Math. Soc. (N.S.) 34"
+doi = "10.1090/S0273-0979-97-00724-6"
+locator_scheme = "theorem"
+locator = "Theorem 1.6, p. 220"
+url = "https://www.ams.org/journals/bull/1997-34-03/S0273-0979-97-00724-6/S0273-0979-97-00724-6.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1997-34-03/S0273-0979-97-00724-6/S0273-0979-97-00724-6.pdf"
+fetched_at = "2026-11-19T11:03:07Z"
+sha256 = "dc676b755fddff6463cf5dd2780f8c28b8344b21401848a805841417d9153568"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["1.2"]
+
+[[source]]
+id = "Macdonald1972"
+authors = "I. G. Macdonald"
+title = "The Poincaré series of a Coxeter group"
+year = 1972
+venue = "Math. Ann. 199"
+doi = "10.1007/BF01431421"
+locator_scheme = "equation"
+locator = "§2.1, (2.2) p. 163; Cor. (2.5), (2.6), Cor. (2.7) p. 164"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0199/LOG_0033.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0199/LOG_0033.pdf"
+fetched_at = "2026-11-19T11:03:45Z"
+sha256 = "e0bebfbf1ea3c213b93bc03ab7ad8e0ff49ddc3d4b4a468a96e92ae94d62528e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["3.2", "3.5", "4.1", "4.5"]
+
+[[source]]
+id = "Springer1974"
+authors = "T. A. Springer"
+title = "Regular elements of finite reflection groups"
+year = 1974
+venue = "Invent. Math. 25"
+doi = "10.1007/BF01390173"
+locator_scheme = "theorem"
+locator = "Prop. 2.3 p. 162; Prop. 4.1, Thm. 4.2 p. 170; p. 171; Prop. 4.7 p. 172"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0025/LOG_0025.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0025/LOG_0025.pdf"
+fetched_at = "2026-11-19T11:05:23Z"
+sha256 = "690a942eedaf7d30c1d2232226a41ba6c6f75ec5db7100f72a6357857ba87555"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["2.1", "2.5", "4.3", "4.4", "4.6"]
+
+[[source]]
+id = "Bott1956"
+authors = "Raoul Bott"
+title = "An application of the Morse theory to the topology of Lie-groups"
+year = 1956
+venue = "Bull. Soc. Math. France 84"
+doi = "10.24033/bsmf.1472"
+locator_scheme = "theorem"
+locator = "Theorem B′ 2°, pp. 252–253"
+url = "https://doi.org/10.24033/bsmf.1472"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.1472.pdf"
+fetched_at = "2026-11-19T11:05:25Z"
+sha256 = "78d429bd4df018dc0ebea2bf84187c3226343f68fe38e469b6a9efd2a903494d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["3.8"]
+
+[[source]]
+id = "SGA1"
+authors = "A. Grothendieck et al."
+title = "Revêtements étales et groupe fondamental (SGA 1)"
+year = 1971
+venue = "Lecture Notes in Math. 224; recomposed edition arXiv:math/0206203"
+arxiv = "math/0206203"
+locator_scheme = "theorem"
+locator = "Exp. V, Prop. 2.2(i); Exp. XIII, Cor. 2.12"
+url = "https://arxiv.org/abs/math/0206203v2"
+fetched_from = "https://arxiv.org/pdf/math/0206203v2"
+fetched_at = "2026-11-19T11:05:40Z"
+sha256 = "8e64218d356456c534eebf996940f0f957e43b54f1a080241debe12cbaf60d3c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "read in the recomposed SMF edition (arXiv v2), which carries the 1971 page numbers in its margin"
+cited_for = ["2.3", "2.5"]
+
+[[source]]
+id = "Fleischmann2000"
+authors = "Peter Fleischmann"
+title = "The Noether bound in invariant theory of finite groups"
+year = 2000
+venue = "Adv. Math. 156"
+doi = "10.1006/aima.2000.1952"
+locator_scheme = "theorem"
+locator = "main theorem (Noether's bound when |G| is invertible), as Fogarty 2001, p. 5, records"
+url = "https://doi.org/10.1006/aima.2000.1952"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.1"]
+
+[[source]]
+id = "Bourbaki2002"
+authors = "N. Bourbaki"
+title = "Lie Groups and Lie Algebras, Chapters 4–6"
+year = 2002
+venue = "Springer"
+doi = "10.1007/978-3-540-89394-3"
+locator_scheme = "chapter"
+locator = "Chapters 4–6"
+url = "https://doi.org/10.1007/978-3-540-89394-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["References"]
