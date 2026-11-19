@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CrystallineCohomology~7",
+  "head": "45263ea1ef1645f58d01e0c2e77f00b50030b3d8",
+  "pr": 2532,
+  "folder": "CrystallineCohomology",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review of an unchanged head. All 15 sampled targets read against their sources at the locators (41 locators in 15 texts: Stacks ch. 60, Bhatt-Lurie-Mathew, Kato, Grosse-Kloenne, Illusie, Shiho, Clausen-Mathew-Morrow, BMS1, BMS2, Temkin, Binda-Kato-Vezzani, Du-Moon-Shimizu, Beilinson, Esnault-Groechenig, Illusie's overview). Adversarial table with computed values for every sampled target and both Lean headlines. Automatic checks all pass; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry the only warning; one-tactic probes (simp, rfl, infer_instance, decide) fail on both theorems. Pull request text matches the head. Corrections: three carried from the previous review (scope sentence, undefined symbols in CR.7.3 base change, pointer in cup products), two new (Kummer definition cited to Temkin, which lacks it; log smooth base change stated for the ordinary log fibre product). No finding, nothing for a human to decide.",
+  "text": "7fd849640a762f37",
+  "carried": {
+   "from": "45263ea1ef1645f58d01e0c2e77f00b50030b3d8",
+   "head": "66a2f7dd230c3b7e2a7ffc4955b13377164c3b78",
+   "findings": 5,
+   "lines": 57,
+   "folders": [
+    "CrystallineCohomology"
+   ],
+   "corrections": true
+  }
+ }
+}
