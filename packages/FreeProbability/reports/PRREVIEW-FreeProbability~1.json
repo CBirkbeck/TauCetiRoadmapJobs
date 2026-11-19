@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FreeProbability~1",
+  "head": "22567563f1a95d1d16dbf9c101a67d8814c1db6a",
+  "pr": 2575,
+  "folder": "FreeProbability",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample of 15 sections checked: open-source locators verified in the text (Dykema Thm 1.1; Abadie-Dykema sec. 4; Blanchard-Dykema Thms 1.3, 2.2, Construction 3.1, Lemmas 3.3-3.6; Collins Thm 3.1, Props 3.2-3.3; Collins-Sniady Prop 2.2, Cor 2.4, Prop 2.6, Cor 2.7; Catterall Thm 2.2.2). Nica-Speicher and Voiculescu-Dykema-Nica have no legal copy and are listed as not verifiable; sections 2.1 and 8.7 have no locator. Adversarial pass recomputed every Check and the five Lean headlines; nothing false found. Gate: all checks passed; depcheck 0 problems; Suggested.lean elaborates with sorry warnings only; nine signatures compared. Intrinsic Dykema and free Levy-Khintchine statements elaborated at the pins (R02). Dual ownership with RandomMatrices Layer 6 (R01). Overlap with open pull requests checked across 394 heads.",
+  "text": "26d099c3bcb665db"
+ }
+}
