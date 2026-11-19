@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "BoundsOnCodes"
+
+[[source]]
+id = "GRS"
+locator_scheme = "theorem"
+locator = "Theorem 1.7.2"
+url = "https://cse.buffalo.edu/faculty/atri/courses/coding-theory/book/web-coding-book.pdf"
+fetched_from = "https://cse.buffalo.edu/faculty/atri/courses/coding-theory/book/web-coding-book.pdf"
+fetched_at = "2026-11-19T16:07:34Z"
+sha256 = "4777d44223362430b0e2c0097633158879875c47928b40d764cab0daf1e1904c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["1.2"]
