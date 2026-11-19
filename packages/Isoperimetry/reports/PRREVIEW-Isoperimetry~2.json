@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-Isoperimetry~2",
+  "head": "dd8a03c241be5a14e724365a01799ca00186afc7",
+  "pr": 2597,
+  "folder": "Isoperimetry",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full re-review. 12 of the 13 earlier findings are repaired; the locator correction is partly repaired. One P2 finding: two commentary sentences are false in a degenerate case (Layer 1 nonemptiness example; the §2.3 remark in codimension >= 2). Seeded sample checked at its locators: Maggi2012 (contents and synopsis only), CCDM §1.2, Theorems A and C, Volcic Theorems 3.4-3.5, Tropp Lecture 8, Burchard Theorem 4.7, BGGK Theorems 5.8 and 6.3 and Corollary 6.5, Tao Theorem 2, Wiedijk entry 43. Automatic checks all passed; depcheck 200 roadmaps, 2195 edges, 0 problems. Suggested.lean elaborates with 9 sorry warnings only; #check types match the README; one-tactic probe fails on all 9. All 195 backticked README names resolve at the pins.",
+  "text": "64db2ba410fed7c2"
+ }
+}
