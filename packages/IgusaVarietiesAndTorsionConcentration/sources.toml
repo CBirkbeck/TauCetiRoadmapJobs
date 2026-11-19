@@ -13,3 +13,20 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-15"
 cited_for = ["3.6a"]
+
+[[source]]
+id = "hkw21"
+authors = ["David Hansen", "Tasho Kaletha", "Jared Weinstein"]
+title = "On the Kottwitz conjecture for local shtuka spaces"
+year = 2021
+version_note = "Author version dated 7 May 2021; locators refer to its printed page numbers."
+locator_scheme = "theorem"
+locator = "Theorem 6.5.2"
+url = "https://www.math.uni-bonn.de/people/kaletha/fp.pdf"
+fetched_from = "https://www.math.uni-bonn.de/people/kaletha/fp.pdf"
+fetched_at = "2026-11-19T03:10:42Z"
+sha256 = "89a8554beec657069838b6a84dcf37179319b221af92200f6aaf7c233300b3b0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["7.9b"]
