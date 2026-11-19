@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GaugeQuiltFieldTheory~9",
+  "head": "e5a7b3191fd7b4aea999a1d8b8012b71a3cc19b3",
+  "pr": 2577,
+  "folder": "GaugeQuiltFieldTheory",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review at an unchanged head. All 15 seeded targets checked against the source texts (38 locators read in 8 sources); 19 library declarations opened at the pins; all supplier citations resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with three sorry warnings only; one-tactic probes close nothing. One P2 finding: the third Check of 4.4 asserts [id] and [S_C^4] are distinct, false for the zero category and for the grading shift on a fourfold Maslov cover, and S_C is never defined. Three small corrections (cylinder hypothesis of the extension principle, Wehrheim-Woodward Theorem 4.2.1 as the locator of the categorical field theory, ambient space of the codimension-one stratum) and one format note. Three source issues recorded for ww-coprime.",
+  "text": "203c649c70b44cad"
+ }
+}
