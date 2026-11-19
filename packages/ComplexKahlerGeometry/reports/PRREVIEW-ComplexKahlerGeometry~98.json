@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexKahlerGeometry~98",
+  "head": "4a51aa51ce4b7ca5dd7b55cd0611af0d928818b6",
+  "pr": 2536,
+  "folder": "ComplexKahlerGeometry",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 31 changed lines since 1b8217e. Previous R01, C01 and C02 are all repaired. Checked: 2.5's consumption of Tau Ceti's cechComplexMap, cechComplexMapHomotopy, cechComplexHomologyMap_eq, cechCohomologyDiagram and cechCohomology against Basic.lean and Colimit.lean at the pin, including hypotheses, directions and the two-index point-cover homotopy; K4.P's refinement action on frame cocycles against the convention e_j=e_i g_ij; the new Tau Ceti contract entry; Demailly IV (5.17) and (5.19)-(5.21) and V (8.2) at their pages; the description against this head. One small correction: the pin's cover-colimit long exact sequence, finite-cover Leray and compact-normal shrinking are not named. The seeded sample falls outside the changed passages. Gate rerun OK, depcheck 0 problems, Suggested.lean elaborates with 27 sorry warnings only, no changes outside the folder.",
+  "text": "9ed1b37d0985a3b9"
+ }
+}
