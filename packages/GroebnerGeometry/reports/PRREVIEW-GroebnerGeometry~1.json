@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GroebnerGeometry~1",
+  "head": "02a8db622ca03c8ce36a5700e0092c35ba073d44",
+  "pr": 2587,
+  "folder": "GroebnerGeometry",
+  "date": "2026-11-19",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 7,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample of 15 sections checked; most carry no locator and were checked by computation. Locators read: Bruns-Conca-Lembo Thm 2.2, Prop 2.4 and pp. 3, 5 (arXiv v1 and v3); Reichstein Thm 1.7; Thiery-Thomasse Thm 1.2; Borovik-Hibi section 1; Kogan-Miller Thm 5. Miller-Sturmfels, Cox-Little-O'Shea and Sturmfels GBCP not legally readable; the Miller-Sturmfels table of contents was read from the author's page. All automatic checks passed. Dependency check: 0 problems. Suggested.lean elaborates with only sorry warnings; 23 #check types compared with the README; one-tactic probe closes nothing. Probes show the SL2-invariant and Catalan-degree headlines are statable. Adversarial table has 32 rows with computed values.",
+  "text": "8f31ab5105bc27a4",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C05: those three READMEs on main must link `README.md#layer-4-rees-algebras-and-flat-initial-families` instead of `#g4-rees-algebras-and-flat-initial-families`.",
+    "where": "DeformationAndDerivedPatchingAlgebra(PartII) and ResolutionOfSingularitiesCharacteristicZero links to the G4 anchor",
+    "raised": "PRREVIEW-GroebnerGeometry~1"
+   }
+  ]
+ }
+}
