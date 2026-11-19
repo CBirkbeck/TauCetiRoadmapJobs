@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DGFloer~40",
+  "head": "4144d778049bca10513c967c01283cc6e9f40c66",
+  "pr": 1798,
+  "folder": "DGFloer",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 4144d77. Checked: the pull request's title and description sentence by sentence against the head and the change from main (suppliers dropped and added counted in both READMEs, the numbering note, AlgebraicTopology sections 4.8, 4.10, 5.0, 5.5, 8.8c, 8.8d on main, StringOrientation's citation of Layer 11 item 3, the imports and seven statements of Suggested.lean); the previous small correction C01 is repaired, format note N01 carried, one new format note on the generated depends-on block. No passage changed, so the seeded sample falls in no changed passage and no source locator was reopened. Adversarial rows recomputed for the torus criterion and mod-2 vanishing. Elaboration rerun: seven sorry warnings only. Dependency check rerun: 0 problems; automatic checks rerun: all pass.",
+  "text": "26e539d07e76548e"
+ }
+}
