@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GraphConnectivityAndFlows~4",
+  "head": "44f517cf3f221ca215817543375c30e2d94b80bc",
+  "pr": 2582,
+  "folder": "GraphConnectivityAndFlows",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 44f517c. Checked the pull request's description against the head and the base: headline theorems, Needs lines, kept section numbers, 27 Checks in 22 sections, the old file's 2478 lines and 34 sorry'd data definitions, the 11 theorems and 3 definitions of the new Suggested.lean, the renamed-id correspondences, the supplier ZigzagPreprojective 0.2; the previous C01 is repaired in the description, N01 and N02 stand as format notes. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with eleven sorry warnings only; adversarial rows recomputed for Whitney's ear theorem and the 2-edge-connectivity ear theorem.",
+  "text": "e0d2c1095e99922d"
+ }
+}
