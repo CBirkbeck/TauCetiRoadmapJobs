@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IgusaVarietiesAndTorsionConcentration~8",
+  "head": "d2bd36d8e44e36d5ca89be4444c259281e4c7dd7",
+  "pr": 1090,
+  "folder": "IgusaVarietiesAndTorsionConcentration",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 10 changed lines since 77b0bf0: the previous finding R01 and both small corrections are repaired; the 19 imported sections of VStackSheavesAndLisseCategoriesPartII were read at its open head against the contract bullet; 8 new locators into hkw21 checked at their printed pages, all correct; the two steps of the rational passage checked against HKW 6.4.9, 6.5.3, 6.5.5; no seeded-sample target lies in the changed passages; automatic checks all pass, dependency check 0 problems, Suggested.lean elaborates with no output; deferred findings D01 and D02 found resolved at the head of IgusaVarietiesAndTorsionConcentrationPartII; one format note.",
+  "text": "6ba7b614be323b71"
+ }
+}
