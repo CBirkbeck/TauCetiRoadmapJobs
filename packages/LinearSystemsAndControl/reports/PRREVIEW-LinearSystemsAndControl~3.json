@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LinearSystemsAndControl~3",
+  "head": "0df8d12bf2ed804f7a4ce18aaf82fc8dfb163d4c",
+  "pr": 2568,
+  "folder": "LinearSystemsAndControl",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 0df8d12. Checked: the pull request's title and description sentence by sentence against the README and Suggested.lean at this head (targets, counts of 22 theorems and 9 definitions, suppliers, exclusions, the list of Sontag locators: Corollary 6.2.4 is missing from that list, a small correction); the previous report's corrections (the description's sentence on the dependency is repaired; the two README sentences and the format note are unchanged and written again); the supplier citation IterativeMethodsForLinearSystems 1.2 and 4.1 at the head of its open pull request; six Tau Ceti declarations at the pin; the dependency check (0 problems, no UPWARD or CYCLE); the elaboration of Suggested.lean (22 sorry warnings only); the automatic checks (all passed); adversarial rows recomputed for Ackermann's formula and the Schur citation. The seeded sample falls in no changed passage; its rows stand as in the previous review.",
+  "text": "b618bc361f3e6ac3"
+ }
+}
