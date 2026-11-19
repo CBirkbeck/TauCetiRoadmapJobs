@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ChevalleyGroups~5",
+  "head": "d7d40406bf07c0096d49450fa5013d87803b7de7",
+  "pr": 2544,
+  "folder": "ChevalleyGroups",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full re-review. Previous R01, C01, C02 repaired; C03 partly (now C01); edition question re-asked. Sample: all 15 seeded targets recomputed; 9 Conrad2014 sites read in the cached text (Thm 5.1.13, Cor 5.1.11, Prop 5.1.6, Prop 1.4.4, Cor 1.4.14, Thm 6.1.16(1), proof of Thm 1.1.19), all correct; 11 Steinberg Lectures sites not verifiable (no legal copy). Commutator Checks of 3.1 (Sp4, G2 both orders) verified as exact polynomial identities. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 8 sorry warnings; types match README; one-tactic padding probe closes nothing. New findings: the sc-to-Geck comparison morphism matching numbered root subgroups elaborates at the pins (probe), contrary to the docstring (R01); Convention 5, the Layer 5 introduction and a scope sentence assert torus facts for every field that fail for E8/F4/G2, over F2 and for adjoint A1 over F4 (R02).",
+  "text": "509fe91fefd014f7"
+ }
+}
