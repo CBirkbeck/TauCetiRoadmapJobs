@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TopologicalDataAnalysis~3",
+  "head": "dd32e66b5f0ee6bc15a9b13a26cb11c71dca17e3",
+  "pr": 2525,
+  "folder": "TopologicalDataAnalysis",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 4,
+  "notes": "incremental re-review of 0 changed lines since dd32e66; the files are unchanged and the title and description were rewritten. Checked: the previous finding R01 against the README (lines 447-449 unchanged, recomputed on Icc 0 1 at eps = 1/2 and on Ico 0 1 against Icc 0 1 at eps = 0: not repaired, carried as R01 P2); previous C01-C04 and N01-N04 against the unchanged files (carried); previous C05 against the rewritten description (repaired, one residue as new C05: a fallback exchange argument the README does not contain). Every claim of the description checked against the head: layer sentences, supplier lists, ownership, 43 theorems, three open pull requests' sections resolved at their heads, four links to main. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 43 sorry warnings only; no change outside the folder. Oudot2015 and EdelsbrunnerHarer2010 unread, as before.",
+  "text": "2a592caa4e979780"
+ }
+}
