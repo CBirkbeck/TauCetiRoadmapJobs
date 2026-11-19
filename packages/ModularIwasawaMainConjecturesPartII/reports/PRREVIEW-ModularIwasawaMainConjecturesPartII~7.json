@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ModularIwasawaMainConjecturesPartII~7",
+  "head": "b9017b495b330f75722ec145b4a244c370bae1eb",
+  "pr": 2281,
+  "folder": "ModularIwasawaMainConjecturesPartII",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 24 changed lines since 953523b. Checked: the four previous remarks (R02, C01, N01 repaired; R01 partly: Euler factors of 4.1, 4.6, 6.1 and the scalar of 4.3 now consistent with the twist of 1.1, but 4.3 pairs the scalar N(a) - eta(sigma_a) with L'(eta,0) where the imported Kronecker formula gives L'(eta^-1,0), carried as R01 P2); the changed Checks of 4.1, 4.5, 4.6 recomputed; six JLK locators read; seeded sample target 4.1 in the changed passages; automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with no output (no declarations); pull request text not contradicted.",
+  "text": "653ab70f4ec55329"
+ }
+}
