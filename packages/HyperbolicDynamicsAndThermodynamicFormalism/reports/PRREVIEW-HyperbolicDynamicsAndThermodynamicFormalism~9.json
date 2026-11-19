@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HyperbolicDynamicsAndThermodynamicFormalism~9",
+  "head": "634c1269d37b1e71746011f40194e5673a500af3",
+  "pr": 2441,
+  "folder": "HyperbolicDynamicsAndThermodynamicFormalism",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 27 changed lines since 842acc3. Checked: previous R01 (geodesic flow of the unit sphere bundle now imported from RiemannianManifoldsWithConvexBoundary §5.1, resolved on main at its lines 1404-1421, hypotheses matched, recomputed on the flat torus and the round sphere), previous C01 and N01 repaired; the changed §9.3 paragraph, Needs line, scope, supplier contracts and module docstring; removed contract lines leave no dangling name; pinned declarations opened in Tau Ceti and Mathlib; automatic checks all pass; depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean gives 16 sorry warnings only; no Lean statement changed; the seeded sample falls outside the changed passages. One small correction (description summary sentence on where geodesic flows come from).",
+  "text": "7d211ba4de8fa930",
+  "carried": {
+   "from": "634c1269d37b1e71746011f40194e5673a500af3",
+   "head": "634c1269d37b1e71746011f40194e5673a500af3",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
