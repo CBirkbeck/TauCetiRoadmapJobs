@@ -377,7 +377,6 @@ LubinTateFormalModulesAndQuasiCanonicalLifts
 NonordinaryCMSpecialValues
 RelativeFarguesFontainePartII
 AnticyclotomicLocalUnits
-InertAnticyclotomicCMMainConjecture
 ColemanPowerSeriesPartII
 GrossZagierAndArithmeticHeightsPartII
 EllipticCurveModularityWild3Adic
@@ -408,6 +407,7 @@ ModularIwasawaMainConjectures
 HeegnerPointEulerSystems
 RankOneConverse
 ModularIwasawaMainConjecturesPartII
+InertAnticyclotomicCMMainConjecture
 CMRankZeroConverse
 RankZeroOneBSDPartII
 MotivesAndAlgebraicCyclesPartII
