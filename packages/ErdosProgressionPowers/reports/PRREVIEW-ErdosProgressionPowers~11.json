@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ErdosProgressionPowers~11",
+  "head": "e20c754694692930cbff40afca5b76bf6111f4f7",
+  "pr": 1336,
+  "folder": "ErdosProgressionPowers",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 123 changed lines since a10fa87. All six previous points (R01, C01-C04, N01) are repaired. Checked: the new ExplicitPrimeCounting contract against that roadmap on main (sections 3.2, 3.5, 4.3, 6.1 and the named hypotheses), the repointed EllipticCurveModularityPartII 2.0/5.1 citations at its open head, the seeded sample target 0.9 where the diff touches it, the arithmetic of the four inputs, the pull request text. One new finding from the repair: six headline theorems are stated without the recorded-verification hypotheses the README now says they depend on. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with eight sorry warnings only; no change outside the folder.",
+  "text": "61ce994128aea81c"
+ }
+}
