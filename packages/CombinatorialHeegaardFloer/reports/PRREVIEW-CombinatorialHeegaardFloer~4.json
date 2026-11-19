@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CombinatorialHeegaardFloer~4",
+  "head": "cc2fe8d7885985c56dbc584e0ceba8796c37394b",
+  "pr": 2545,
+  "folder": "CombinatorialHeegaardFloer",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full re-review. All findings and corrections of the previous review (R01-R04, C01-C08) are repaired. Seeded sample checked against the texts: 1.4, 3.1, 3.2, 3.3, 3.4, 3.9, 3.10, 4.1, 4.2, 4.5, 4.6, 4.7, 5.1, 5.2, 5.5. Sources: OSSBOOK, OSS09, Nem07, OSS12, Zem21, and MOST (arXiv:math/0610559v2, fetched from arXiv this round). New finding (P2): the 3.9 target that the grid polytope bounds the Thurston norm has no locator and no supplier for the norm; the book proves combinatorially only Proposition 11.7.1 and states Theorem 11.9.9 without proof (holomorphic, Ozsvath-Szabo 2008). Automatic checks rerun: all pass; depcheck 200 roadmaps, 2195 edges, 0 problems. Elaboration of a copy with #check @ and nine probes: only the six sorry warnings; every one-tactic probe fails; no binder lost. Overlap check: RibbonKnots, HeegaardFloer, GeometricTopology, KhovanovHomology; no object with two owners.",
+  "text": "04c596d9ff02bb59"
+ }
+}
