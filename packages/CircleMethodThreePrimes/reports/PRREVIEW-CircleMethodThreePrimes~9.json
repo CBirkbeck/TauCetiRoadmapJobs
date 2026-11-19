@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CircleMethodThreePrimes~9",
+  "head": "96f5e8c2994563514f36a7c9fe655d028697a25e",
+  "pr": 2543,
+  "folder": "CircleMethodThreePrimes",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 96f5e8c; this round read the pull request's description against the head and the change from main. Checked: the previous small correction (description now states the retitled 3.1) is repaired; the two carried format notes stand; Check bullets counted (9 on main, 15 at head); the values the description quotes recomputed (Ramanujan sums at q = 12 and 9, log 12, singular series 2.3010 and 1.5340, the 4.6/4.7 exponents, psi(19), psi(113), r(7), R(9)); Suggested.lean diff against main is 9 docstring lines, no declaration changed; six Mathlib declarations opened at the pin; three supplier citations resolved on main; one small correction (the description omits that 0.2 now covers q = 0). Automatic checks rerun: all pass; dependency check 0 problems, no UPWARD or CYCLE; elaboration gives 18 sorry warnings and nothing else. Seeded source sample not rerun: no passage of the folder changed and the closed sources remain unread, as recorded for the human reviewers.",
+  "text": "f5cfaa92a3dd6480",
+  "carried": {
+   "from": "96f5e8c2994563514f36a7c9fe655d028697a25e",
+   "head": "96f5e8c2994563514f36a7c9fe655d028697a25e",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
