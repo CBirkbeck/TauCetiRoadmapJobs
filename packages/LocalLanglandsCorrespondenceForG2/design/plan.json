@@ -4648,6 +4648,16 @@
       ]
     },
     {
+      "slug": "symplectic-packets-central-character",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "Layer 3, §3.15",
+      "needs": "for Sp₂ₙ over F with n ≥ 1 and a parameter φ : WD_F → SO₂ₙ₊₁(ℂ) of Sp₂ₙ that lifts through the double cover Spin₂ₙ₊₁(ℂ) → SO₂ₙ₊₁(ℂ) to a homomorphism WD_F → Spin₂ₙ₊₁(ℂ), every irreducible representation of Sp₂ₙ(F) with parameter φ (§3.15(c) on tempered representations, extended to all irreducible representations by the Langlands classification as in §2.0) is trivial on the centre Z(Sp₂ₙ)(F) = {±1}, so that it is a representation of the image of Sp₂ₙ(F) in PGSp₂ₙ(F) (GS, §7, p. 22, identifies the two conditions at n = 3, and the proofs of Proposition 6.1, p. 21, and Theorem 12.7(i), p. 39, use it); used in §§6.1 and 10.5.",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:6.1",
+        "LocalLanglandsCorrespondenceForG2:10.5"
+      ]
+    },
+    {
       "slug": "symplectic-steinberg-generic-parameter",
       "supplier": "ModularityAndLanglandsExtensions",
       "section": "Layer 3, §§3.8, 3.15, 3.17",
@@ -4660,6 +4670,15 @@
         "LocalLanglandsCorrespondenceForG2:6.4",
         "LocalLanglandsCorrespondenceForG2:8.1",
         "LocalLanglandsCorrespondenceForG2:10.6"
+      ]
+    },
+    {
+      "slug": "pgsp6-lower-tower-xu-packets",
+      "supplier": "ModularityAndLanglandsExtensions",
+      "section": "Layer 3, §3.19",
+      "needs": "let φ_τ : WD_F → SL₄(ℂ) be such that 1 ⊕ Λ²φ_τ is a discrete parameter of Sp₆ (this forces φ_τ to be irreducible), τ the discrete series of PGL₄(F) with parameter φ_τ (EndoscopicTransferAndUnitaryTraceComparison §10.30) and JL(τ) its Jacquet–Langlands transfer to PGL₂(D), D the quaternion division algebra over F (EndoscopicTransferAndUnitaryTraceComparison §4.7a). Then the nonzero similitude theta lifts to PGSp₆(F) (MetaplecticAutomorphicForms §3.34) of the irreducible representations of split PGO₆(F) whose restriction to PGSO₆(F) ≅ PGL₄(F) contains τ, and of those of PGO₅,₁(F) whose restriction to PGSO₅,₁(F) ≅ PGL₂(D) contains JL(τ), form exactly one of Xu's packets over 1 ⊕ Λ²φ_τ (§3.19, at n = 3 with trivial central character) (GS, Theorem 12.7(ii), p. 39, whose proof leaves this case to the reader); used in §10.7.",
+      "neededBy": [
+        "LocalLanglandsCorrespondenceForG2:10.7"
       ]
     },
     {
