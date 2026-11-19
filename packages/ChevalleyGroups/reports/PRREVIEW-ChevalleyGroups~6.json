@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ChevalleyGroups~6",
+  "head": "8b4e3f40ec5c7cdd53caaa37768e8ad4836771c0",
+  "pr": 2544,
+  "folder": "ChevalleyGroups",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review. Previous findings: R01 repaired on points (scheme-level form offered as C01), R02 not repaired (now R01), C01 partly repaired (now C02). Seeded sample of 15 targets checked: 13 Conrad2014 locators read at their lines and all support the claims; 14 Steinberg locators not verifiable (no legal copy). Adversarial table with computed values for every sampled target and headline, including an exact recomputation of the G2 commutator Check and the characteristic-three sign argument of 7.1. Suggested.lean elaborates with 9 sorry warnings and no error; one-tactic probe closes none; the scheme-level comparison statement elaborates in a probe. 16 pinned declarations opened; cross-roadmap citations resolved on main. Automatic checks all passed; depcheck: 200 roadmaps, 2197 edges, 0 problem(s). Nothing changed outside the folder; pull request description agrees with the head.",
+  "text": "0f5994f2b0d7b668"
+ }
+}
