@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GroebnerGeometry~2",
+  "head": "ab404d0eb4674e19f71c217734b5377772dce3d3",
+  "pr": 2587,
+  "folder": "GroebnerGeometry",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full re-review. All 15 seeded sample targets were checked against the cached texts at their locators (Sturmfels, Bruns-Conca-Lembo, Bossinger, Eisenbud lectures, Kogan-Miller, Reichstein, Thiery-Thomasse, Hashimoto, Speyer-Sturmfels, Weibel, Stacks, Borovik-Hibi). Miller-Sturmfels, Eisenbud CA and Cox-Little-O'Shea are uncertified and were not read; the Miller-Sturmfels table of contents was read from the author's page. The adversarial table covers the 11 Suggested.lean theorems and the pinned headlines. Every automatic check passed and none was set aside. Depcheck reports 0 problems. lake env lean gives sorry warnings only. #check signatures were compared with the README, with no binder lost. 55 one-tactic probes closed none. Previous findings R01-R04 are repaired; C05 is deferred as D01, which stands.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C05: those three READMEs on main must link `README.md#layer-4-rees-algebras-and-flat-initial-families` instead of `#g4-rees-algebras-and-flat-initial-families`.",
+    "where": "DeformationAndDerivedPatchingAlgebra(PartII) and ResolutionOfSingularitiesCharacteristicZero links to the G4 anchor",
+    "raised": "PRREVIEW-GroebnerGeometry~1"
+   }
+  ],
+  "text": "2746dc70b98f8445"
+ }
+}
