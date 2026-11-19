@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FreeProbability~3",
+  "head": "87d99bf9d5073f862348ec78cd84db2b851d1964",
+  "pr": 2575,
+  "folder": "FreeProbability",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 5,
+  "notes": "Full review of the same head the previous review read: it had no findings, and its four small corrections and two format notes stand unrepaired (C02-C05, N01, N02 here); C01 (a target of 2.2 already proved at the Tau Ceti pin), C06 and N03-N05 are new. Seeded sample of 15 sections plus the 8 Suggested.lean theorems recomputed (adversarial table). 24 locators verified in 10 sources: Dyk97, HR16, Kes59, KM15, Spe19, Col02, CS04, Blanchard-Dykema, Abadie-Dykema, Catterall. Nica-Speicher, Voiculescu-Dykema-Nica and Biane are not legally readable. All automatic checks passed; depcheck 200 roadmaps, 2200 edges, 0 problems. lake env lean: 8 sorry warnings only; elaborated types of all 12 declarations match the README; the one-tactic probe closes nothing. All suppliers are on main; ownership against RandomMatrices Layer 6 agrees in both READMEs.",
+  "text": "5896f40a9f9ff1f3",
+  "carried": {
+   "from": "87d99bf9d5073f862348ec78cd84db2b851d1964",
+   "head": "37bca011b21b70ed89390a6ada55d74a18658d3c",
+   "findings": 6,
+   "lines": 99,
+   "folders": [
+    "FreeProbability"
+   ],
+   "corrections": true
+  }
+ }
+}

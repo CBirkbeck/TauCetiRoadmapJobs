@@ -131,3 +131,36 @@ status = "certified"
 accessed = "2026-11-19"
 version_note = "arXiv v1"
 cited_for = ["8.5"]
+
+[[source]]
+id = "Bia97"
+authors = "Philippe Biane"
+title = "Some properties of crossings and partitions"
+year = 1997
+venue = "Discrete Mathematics 175"
+doi = "10.1016/S0012-365X(96)00139-2"
+locator_scheme = "page"
+locator = "41–53"
+url = "https://doi.org/10.1016/S0012-365X(96)00139-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.2"]
+
+[[source]]
+id = "BD99"
+authors = "Etienne Blanchard, Ken Dykema"
+title = "Embeddings of reduced free products of operator algebras"
+year = 1999
+arxiv = "math/9911012v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.3"
+url = "https://arxiv.org/abs/math/9911012v2"
+fetched_from = "https://arxiv.org/pdf/math/9911012v2"
+fetched_at = "2026-11-19T19:59:26Z"
+sha256 = "d3add81e01c4e71d54a2d41fba68f2ffbdf75c0e8114d8a8631cfc8f189487dd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v2"
+cited_for = ["4.5"]
