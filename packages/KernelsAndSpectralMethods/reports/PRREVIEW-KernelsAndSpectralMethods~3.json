@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KernelsAndSpectralMethods~3",
+  "head": "ec81a1a7966c8acd0b19d301fac182f462162c4e",
+  "pr": 2516,
+  "folder": "KernelsAndSpectralMethods",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 5,
+  "format_notes": 4,
+  "notes": "incremental re-review of 0 changed lines since ec81a1a: the folder is unchanged and only the pull request's title and description were rewritten. Both previous findings (11.3 consequence without the representability hypothesis; E mmdU = MMD^2 at n <= 1) were recomputed against the files and are not repaired. Every claim of the rewritten description was checked against the head (books, layer items, supplier sections on main and at the open heads of TopologicalDataAnalysis and MarkovChainMixing, theorem counts); two small corrections to the description. Chung Lemma 1.7, Lemma 2.1, Theorems 2.2-2.3, (1.2), (1.4) and Genovese et al. Theorems 2-3 read again. Dependency check: 0 problems; no change outside the folder; elaboration: 49 sorry warnings, no error; one form check set aside as a false positive.",
+  "text": "16a3cdcdb5e703a4"
+ }
+}
