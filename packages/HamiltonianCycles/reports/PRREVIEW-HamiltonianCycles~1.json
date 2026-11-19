@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HamiltonianCycles~1",
+  "head": "bf213f213c3c0f47126d23beff88d98c9c462f80",
+  "pr": 2526,
+  "folder": "HamiltonianCycles",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review. Sample: all 14 sections (1.1-5.3); all 37 source locators read in Bondy-Murty (chapter 4, author's posted scan via Internet Archive), Diestel (author's preview, chapter 10) and Moon (Project Gutenberg eBook 42833), all agreeing. Adversarial pass computed by hand on every statement, Check and route, with enumeration of all labelled tournaments on at most 5 vertices and of the graphs C(m, n) for n <= 13. 31 library declarations opened at the pins. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning (18); one-tactic probes close none of the 18 theorems; 25 signatures compared with the README. Overlap: GraphConnectivityAndFlows, SpanningTreesAndShortestPaths, ApproximationGuarantees read, nothing shared. Two small corrections (a pointer to the wrong Check in 5.2; a redundant 3 <= n in the two theorems of 3.5). Three source issues recorded (one gap in Bondy-Murty's proof of Theorem 4.5, two misprints in Moon's proof of Theorem 14). For the humans: licence status of the copies read, primary papers not consulted.",
+  "text": "1b4d75d1a316c6c8"
+ }
+}
