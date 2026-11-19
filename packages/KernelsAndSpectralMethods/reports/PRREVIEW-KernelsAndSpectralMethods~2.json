@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KernelsAndSpectralMethods~2",
+  "head": "ec81a1a7966c8acd0b19d301fac182f462162c4e",
+  "pr": 2516,
+  "folder": "KernelsAndSpectralMethods",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 4,
+  "notes": "Full re-review. The five findings of the previous review are repaired. Sample: the 15 seeded targets; locators read in Chung (revised chapters 1-2), Gretton et al. 2012, Sutherland-Schneider 2015, Sriperumbudur et al. 2010, Gorham-Mackey 2017, Genovese et al. 2012; sixteen books not readable (listed under Not verifiable). Adversarial pass over every statement with computed values (28 rows). Automatic checks: dependency check 0 problems, elaboration 49 sorry and no error, one-tactic probe on six theorems (none closes), one form check set aside as a false positive. Findings: two prose targets lack a hypothesis and are false without it (11.3 operator form, counterexample computed; 10.1 unbiasedness at n = 1).",
+  "text": "30bbbde218b57ef3"
+ }
+}
