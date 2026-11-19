@@ -25,10 +25,22 @@
       "needs": "Supply independently stated reverse bounds, universal zeta and regular-base/elliptic endpoints on earlier carriers with no imports from this roadmap."
     },
     {
+      "slug": "tate-twisted-components",
+      "supplier": "AutomorphicCongruences",
+      "section": "§§4.5 and 2.21",
+      "needs": "the pointwise output of §4.5, and the reverse bound of §2.21, are stated on the untwisted trivial tame component, KMC^1(T_K) of §0.7. The comparisons here use Tate-twisted components. In the residual range of its §4.5 the contract requires the equality on the trivial tame component of T_K(r) for r=1 and r=k−1, with zeta module φ_r(Z(f,T_K)): this is Fouquet–Wan's Conjecture 1.5 for the motive M(f)(r), the proposition KMC^1(T_K(r)). In the range of its §2.21 it requires the reverse divisibility char(H²)⊆char(H¹/Z) on the trivial tame component of T_K(1). By KMC.twist these are statements about the ω^(−r)-components of T_K, with γ transported by Tw_r; for odd p and r≢0 mod p−1 that transport does not derive them from the untwisted statement, which concerns another component. The ordinary comparison of §0.10 uses r=1 and the signed comparison of §0.13 uses r=k−1; the central-critical twist r=k/2 is AutomorphicCongruences (gap:central-critical-equality). For k=2 all three twists are r=1, so in weight two this contract and the central-critical equality are the same equality, for T_K(1)=T_pE."
+    },
+    {
+      "slug": "central-critical-equality",
+      "supplier": "AutomorphicCongruences",
+      "section": "§4.5",
+      "needs": "for f satisfying §2.2 with p∤N and r=k/2, supply the integral equality char_Λ(H²_Iw(T_cc))=char_Λ(H¹_Iw(T_cc)/Z_cc), equivalently the trivialization of the fundamental line of C_cc by its transported zeta morphism, on the trivial tame component of T_cc=T(f)(r). Here Z_cc is the image of that morphism with Betti factor T(f)(r−1)^+, and all local Euler-correction lines are retained. Before transport this is the ω^(−r)-component of T(f), with specialization at κ^(−r), using the conventions of §2.1 (Fouquet–Wan Conjecture 1.5, p.6; §3.1.1, equations (3.1.1)–(3.1.5), pp.21–22; Corollary 5.3, p.69). The equality is an automorphic input; the full-tower maps, reciprocity and discrete Selmer control are the distinct KatoEulerSystems contract gap:central-critical-specialization."
+    },
+    {
       "slug": "manin-period-comparison",
       "supplier": "GrossZagierAndArithmeticHeights",
       "section": "Layer 3 saturated period comparison",
-      "needs": "Supply, for an X₀(N)-optimal parametrization and every odd p, the comparison of the saturated f_E-line of H¹(X_0(N),ℤ_(p)) with the saturated modular-symbol period line of ModularSymbolsPadicLFunctions §1.1 up to ℤ_(p)^×."
+      "needs": "compare the absolute/parabolic lattice of an X₀(N)-optimal elliptic quotient with the full cusp-divisor symbol lattice of ModularSymbolsPadicLFunctions §§0.4, 1.1. Supply the rational signed comparison, its explicit nonzero fractional period ratio `r_E^±=P_{f_E}^±/P_abs^±,` and its behaviour under isogenies and X₁(N) → X₀(N), retaining the cusp/boundary indices. In weight two, at odd good ordinary or multiplicative p with E[p] irreducible, supply the p-unit comparison with the Néron period: localize the integral boundary exact sequence at the residual maximal ideal, use residual irreducibility to exclude the boundary Hecke support, and compare the resulting saturated line with the optimal X₁(N) quotient (Skinner §3.3 and note 8, p.25; ModularSymbolsPadicLFunctions §0.4). At Eisenstein primes no unit assertion follows from optimality or p ∤ c_φ. GrossZagierAndArithmeticHeights §§3.5, 3.7, 3.10 supplies the Manin and isogeny factors; the additional full-symbol comparison remains with that period owner. Colmez Theorems 0.8 and 0.20 supply the Néron-normalized distribution and rational modular comparison, not an unrestricted integral boundary comparison."
     },
     {
       "slug": "approximant-period-units",
