@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexCurveModuli~4",
+  "head": "4b53f572d66899577067a18626c66b11ac4d88c4",
+  "pr": 2548,
+  "folder": "ComplexCurveModuli",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 124 changed lines since 6d27467. Checked: the repair of R01 (punctured uniqueness, HasGeodesicBoundary, bordered existence and uniqueness) against the pinned HyperbolicMetric (completeness field), IsGeodesicCurve, Mathlib's Levi-Civita connection and ModelWithCorners.boundary, all defined at boundary points; RobbinSalamon2006 17.1-17.3 (arXiv v4, lines 3298-3325) against the new boundary paragraph; the two changed Checks recomputed; adversarial rows for the four new declarations and for the sample section 6.2, which cites them; one-tactic probes close none of the new theorems; elaboration gives seven sorry warnings and nothing else; automatic checks all pass; depcheck 0 problems; no change outside the folder; overlap with RiemannianManifoldsWithConvexBoundary (C01: cite its section 1.4), TeichmullerGeometry and FuchsianOrbifoldsPartII (consumers); the description matches the head; D01 stands.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C03: ConformalMappingPartII's link has to change its fragment `#d0-smooth-curves-finite-type-and-the-classification-floor` to `#layer-0-smooth-surfaces-compact-riemann-surfaces-and-uniformization`.",
+    "where": "ConformalMappingPartII README line 25, link fragment to Layer 0",
+    "raised": "PRREVIEW-ComplexCurveModuli~2"
+   }
+  ],
+  "text": "32a45097f76bbcc4"
+ }
+}
