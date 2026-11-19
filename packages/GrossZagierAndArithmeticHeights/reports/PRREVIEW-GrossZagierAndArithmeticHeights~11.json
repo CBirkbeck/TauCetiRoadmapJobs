@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GrossZagierAndArithmeticHeights~11",
+  "head": "a638fad37c4ff34e4e7348cc3199f693fc441426",
+  "pr": 1487,
+  "folder": "GrossZagierAndArithmeticHeights",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 19 changed lines since 9489bba. Checked: R01 (6.20a now on ShimuraVarieties §6.7, abelian type via Del79 Proposition 2.3.10, read at pp. 272-273; types computed for p = 1, 2, 4, 6; weight not rational for F0 != Q) and R02 (Borcherds product owned by 6.20a(e), integral extension left to ComplexMultiplicationAndExplicitReciprocityPartII §4.2a, read at its open head) both repaired; the two earlier small corrections repaired (erratum items 2 and 5 read; ShimuraVarieties §4.4 CanonicalModel resolved on main). One new small correction (centre of GSpin for even p). No seeded-sample target falls in a changed passage. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning; no change outside the folder; pull request text still describes the head.",
+  "text": "fcd3240444cbf943",
+  "carried": {
+   "from": "a638fad37c4ff34e4e7348cc3199f693fc441426",
+   "head": "9e57de187120b3ede1f981ad8e8f74c6378221b9",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "GrossZagierAndArithmeticHeights"
+   ],
+   "corrections": true
+  }
+ }
+}
