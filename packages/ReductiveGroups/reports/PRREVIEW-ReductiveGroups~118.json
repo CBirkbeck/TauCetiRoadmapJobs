@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ReductiveGroups~118",
+  "head": "7e741b5aff877180c0514e8ffaa8409821a0ab06",
+  "pr": 2530,
+  "folder": "ReductiveGroups",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review of an unchanged head. Seeded sample (1.1, 8.1, 8.2) verified against jantzen and conrad at their locators; Conrad Appendix C, Asgari-Shahidi Definition 2.1 and Cai-Friedberg-Kaplan section 1 locators of sections 9B.5-9B.8 verified. Every formula and Check of 9B.5-9B.8 recomputed by hand (adversarial table in the report). Automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with 11 sorry warnings only and is unchanged against main. New library names and cross-roadmap citations resolved at the pins and on main. Two dagger-marked locators (Asgari 2002, Book of Involutions) not verifiable.",
+  "text": "f0da304577744169",
+  "carried": {
+   "from": "7e741b5aff877180c0514e8ffaa8409821a0ab06",
+   "head": "37a0ae5c46aa7de8081403a2c73194f763e612f1",
+   "findings": 1,
+   "lines": 6,
+   "folders": [
+    "ReductiveGroups"
+   ],
+   "corrections": true
+  }
+ }
+}
