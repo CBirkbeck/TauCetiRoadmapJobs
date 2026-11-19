@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LinearSystemsAndControl~2",
+  "head": "0df8d12bf2ed804f7a4ce18aaf82fc8dfb163d4c",
+  "pr": 2568,
+  "folder": "LinearSystemsAndControl",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. All 15 sampled targets and the remaining sections recomputed by hand (adversarial table, 19 rows); pole shifting re-enumerated over F2 and F3 (44,522 pairs, 0 mismatches). 35 Sontag and 4 Astrom-Murray locators read at the text, all correct. 27 Mathlib and 7 Tau Ceti declarations opened at the pins. Supplier IterativeMethodsForLinearSystems 1.2 and 4.1 resolved at its open head; dependency check shows no UPWARD or CYCLE line. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 22 theorems. Automatic checks all passed. Three small corrections (build-order sentence, one description sentence, feedback-sign convention) and one format note.",
+  "text": "65a10f2acc55711f"
+ }
+}
