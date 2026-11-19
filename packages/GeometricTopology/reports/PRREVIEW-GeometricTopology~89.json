@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GeometricTopology~89",
+  "head": "a370b60f03635b2247e70a9cf36771bddd209d7d",
+  "pr": 1791,
+  "folder": "GeometricTopology",
+  "date": "2026-11-19",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. The 13 added lines read against SurfaceTopology and PlanarTopology at the head of #271 (supply direction and ownership); the change outside the folder (Completed/ConformalMapping) confirmed. Seeded sample of 15 sections recomputed (1.2, 1.3, 3.4, 4.2.6, 4.3.2, 4.4.5, 4.4.8, 4.5.2, 4.5.7, 4.6.1, 4.7.2, 4.10.1, 4.12, 4.12.1, 6.2.1) with 14 source locators read (Smale, Watanabe, Hatcher, Pyronneau, Jones, Hoste, Marin, Burton et al., Lickorish-Millett, Ng, Kauffman); Layers 1, 3.4, 5.3, 6.1, 7.4, 8.1, 8.2, 8.5, 8.6, 9, 11.2, 11.2.1, 11.5 read in full, the remaining sections of Layer 4 and Layers 5-7, 10 for statements and supplier lines only. Suggested.lean elaborates with sorry the only warning (26 declarations, no padding found, pinned propositions opened at Tau Ceti 2fd255d9). Dependency check: 200 roadmaps, 2202 edges, 0 problems (it does not see roadmaps that are neither on main nor in the merge order). Automatic checks: both flagged items are real (the dropped-name citations, the outside-folder edit); none set aside. Kirby's problem list and the uncertified books were not readable.",
+  "text": "ba4b3eafa6410c2b"
+ }
+}

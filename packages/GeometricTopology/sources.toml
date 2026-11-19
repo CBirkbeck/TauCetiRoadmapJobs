@@ -742,3 +742,137 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["4.3.1", "6.2.1"]
+
+[[source]]
+id = "burton2021"
+authors = "Benjamin A. Burton, Hsien-Chih Chang, Maarten Löffler, Arnaud de Mesmay, Clément Maria, Saul Schleimer, Eric Sedgwick, Jonathan Spreer"
+title = "Hard Diagrams of the Unknot"
+year = 2021
+arxiv = "2104.14076v1"
+locator_scheme = "section"
+locator = "§§1.1–1.2"
+url = "https://arxiv.org/abs/2104.14076v1"
+fetched_from = "https://arxiv.org/pdf/2104.14076v1"
+fetched_at = "2026-11-19T09:30:15Z"
+sha256 = "dc22e10800dbc74c46d0d0572d986dbf797f6d4f9e33c96b768bb9918a6cbe8b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["4.2.6"]
+
+[[source]]
+id = "hoste2019"
+authors = "Jim Hoste"
+title = "A Note on Alexander Polynomials of 2-Bridge Links"
+year = 2019
+arxiv = "1907.03812v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1907.03812v1"
+fetched_from = "https://arxiv.org/pdf/1907.03812v1"
+fetched_at = "2026-11-19T09:30:20Z"
+sha256 = "70ddcdf9346fcf836fb088ae7dcbd4e5e326d1e76b808e00d19805ab8a7c0312"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["4.4.8"]
+
+[[source]]
+id = "marin2012"
+authors = "Ivan Marin"
+title = "The cubic Hecke algebra on at most 5 strands"
+year = 2011
+arxiv = "1110.6621v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/1110.6621v1"
+fetched_from = "https://arxiv.org/pdf/1110.6621v1"
+fetched_at = "2026-11-19T09:30:28Z"
+sha256 = "b37a702a09179e6ce7d636d26753e90070e5ba464f70ee0d491ed6ef3bed435e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["4.5.7"]
+
+[[source]]
+id = "meilhan2018"
+authors = "Jean-Baptiste Meilhan"
+title = "Linking number and Milnor invariants"
+year = 2018
+arxiv = "1812.03319v1"
+locator_scheme = "section"
+locator = "§§3.1–3.3"
+url = "https://arxiv.org/abs/1812.03319v1"
+fetched_from = "https://arxiv.org/pdf/1812.03319v1"
+fetched_at = "2026-11-19T09:30:33Z"
+sha256 = "725929e3dd2b3f17df3f43b14ae19b0b9f1fe8667680e3a159d170cd129cd329"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["4.12.1"]
+
+[[source]]
+id = "conway2019"
+authors = "Anthony Conway"
+title = "The Levine-Tristram signature: a survey"
+year = 2019
+arxiv = "1903.04477v1"
+locator_scheme = "section"
+locator = "§§2.1–2.4"
+url = "https://arxiv.org/abs/1903.04477v1"
+fetched_from = "https://arxiv.org/pdf/1903.04477v1"
+fetched_at = "2026-11-19T09:30:39Z"
+sha256 = "5e09eca40abd18a1ced22bf9b2799d2e8d28698935fd4952e2d85c08f7b3fdb2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["6.2.1"]
+
+[[source]]
+id = "powell2017"
+authors = "Mark Powell"
+title = "The four genus of a link, Levine-Tristram signatures and satellites"
+year = 2016
+arxiv = "1605.06833v3"
+locator_scheme = "section"
+locator = "§§3–5"
+url = "https://arxiv.org/abs/1605.06833v3"
+fetched_from = "https://arxiv.org/pdf/1605.06833v3"
+fetched_at = "2026-11-19T09:30:45Z"
+sha256 = "85594193916935bed255b35c0ffd39f260dbc3693e9afd2a022efa0d88be5235"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v3"
+cited_for = ["6.2.1"]
+
+[[source]]
+id = "lickorish-millett1987"
+locator_scheme = "section"
+locator = "Example 16"
+url = "https://web.math.ucsb.edu/~millett/Papers/1987Millett9LickorishTopology.pdf"
+fetched_from = "https://web.math.ucsb.edu/~millett/Papers/1987Millett9LickorishTopology.pdf"
+fetched_at = "2026-11-19T09:31:20Z"
+sha256 = "358eb4a9c31367299f1074fac18eaab00cfb4e8b068eddb3ff93d7e7a8ee6979"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4.6.1"]
+
+[[source]]
+id = "jones1985"
+locator_scheme = "theorem"
+locator = "Theorem 7, p. 106"
+url = "https://www.ams.org/journals/bull/1985-12-01/S0273-0979-1985-15304-2/S0273-0979-1985-15304-2.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1985-12-01/S0273-0979-1985-15304-2/S0273-0979-1985-15304-2.pdf"
+fetched_at = "2026-11-19T09:31:50Z"
+sha256 = "bcae6367fee9babd50989066ebe22af3ac776c26eba38061fdd5799390ff9408"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4.5.7"]
