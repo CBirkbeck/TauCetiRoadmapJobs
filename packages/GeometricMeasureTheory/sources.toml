@@ -67,3 +67,17 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-19"
 cited_for = ["6.4"]
+
+[[source]]
+id = "Federer1969"
+authors = "Herbert Federer"
+title = "Geometric Measure Theory (Die Grundlehren der mathematischen Wissenschaften 153)"
+year = 1969
+doi = "10.1007/978-3-642-62010-2"
+version_note = "Paywalled, cited by its locator without the text. The DOI is the 1996 Classics in Mathematics reprint of the 1969 edition, which keeps its numbering."
+locator_scheme = "section"
+locator = "4.5.11"
+url = "https://doi.org/10.1007/978-3-642-62010-2"
+licence_class = "none"
+status = "uncertified"
+cited_for = ["5.4"]

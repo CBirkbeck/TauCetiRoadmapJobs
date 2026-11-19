@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeometricMeasureTheory~3",
+  "head": "df9d9fa313cb8391af17b997deaf424bcbfeb41c",
+  "pr": 2581,
+  "folder": "GeometricMeasureTheory",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review at an unchanged head. Every theorem, Check and example recomputed (adversarial table of 24 rows); all 15 sampled targets and all 18 README locators checked: 16 read at their pages in Simon1983, AnzellottiGiaquinta1978 and Federer1958, Maggi2012's 2 against its public contents only. Library definitions opened at the pins (Tau Ceti 2fd255d, Mathlib 1b1ccf4). Suggested.lean elaborates with 14 sorry warnings and nothing else; #check on all 16 declarations agrees with the README; the one-tactic probe closes none of the 14 theorems. Dependency check: 0 problems; automatic checks all passed; no change outside the folder. Cross-roadmap citations resolved on main; ownership compared with Isoperimetry, GaussianIsoperimetryAndClusters, Varifolds, GeometricCurrents, PDE, DifferentialGeometry, RiemannianGeometry: no shared owner. Small corrections: four headline theorems without a source locator (unrepaired from the previous round), the dimension-one sentence of 5.2 (unrepaired), redundant hypotheses in the two De Giorgi statements. Format note: three anchored links from RiemannianGeometry will dangle.",
+  "text": "7dfe12dfa304ad5e",
+  "carried": {
+   "from": "df9d9fa313cb8391af17b997deaf424bcbfeb41c",
+   "head": "69b050edb1675c589784b43451abbb1ea2c8504b",
+   "findings": 3,
+   "lines": 76,
+   "folders": [
+    "GeometricMeasureTheory"
+   ],
+   "corrections": true
+  }
+ }
+}
