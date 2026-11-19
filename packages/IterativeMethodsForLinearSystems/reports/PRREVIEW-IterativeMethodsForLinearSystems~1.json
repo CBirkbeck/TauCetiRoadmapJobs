@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IterativeMethodsForLinearSystems~1",
+  "head": "ad5c14a6ffc54807996acdf31b619079e0669a97",
+  "pr": 2561,
+  "folder": "IterativeMethodsForLinearSystems",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review. Sample: all 15 seeded targets plus 1.3, 2.4, 4.4 and 5.3, each recomputed on small instances (adversarial table in the report). 22 locators read in Saad's text and 3 in Shewchuk's by page and equation number (formulas garbled in extraction). 54 library declarations opened at the pins, none missing. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 22 sorry warnings only; one-tactic probe closes none of the 22 theorems. One finding (P2): the real case of 1.2 is the same theorem as isSchurStable_iff_tendsto_pow of the open roadmap LinearSystemsAndControl 5.1, with no owner named. One small correction (wording in 2.4). Three source issues in Saad recorded.",
+  "text": "64eea983e31666a2"
+ }
+}

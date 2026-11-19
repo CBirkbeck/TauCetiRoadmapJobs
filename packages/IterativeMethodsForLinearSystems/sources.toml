@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "IterativeMethodsForLinearSystems"
+
+[[source]]
+id = "Saad2003"
+locator_scheme = "theorem"
+locator = "Theorem 4.9"
+url = "https://www-users.cse.umn.edu/~saad/IterMethBook_2ndEd.pdf"
+fetched_from = "https://www-users.cse.umn.edu/~saad/IterMethBook_2ndEd.pdf"
+fetched_at = "2026-11-19T15:42:42Z"
+sha256 = "3bdc9abb7a862d06e75244f9343f0915f3db133e7f9863b3cb555ff1dfd00f37"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["2.2"]
+
+[[source]]
+id = "Shewchuk1994"
+locator_scheme = "section"
+locator = "§9.2"
+url = "https://www.cs.cmu.edu/~quake-papers/painless-conjugate-gradient.pdf"
+fetched_from = "https://www.cs.cmu.edu/~quake-papers/painless-conjugate-gradient.pdf"
+fetched_at = "2026-11-19T15:42:56Z"
+sha256 = "368110e5592d0d3e0b62884bcfffae00eb4a1ca9f850961ca1b594c3a32313e0"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4.5"]
