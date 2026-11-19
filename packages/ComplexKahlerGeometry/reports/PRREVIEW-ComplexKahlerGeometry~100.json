@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexKahlerGeometry~100",
+  "head": "6de659d3017ad0e8d9045fa583a4a0bf79f8d397",
+  "pr": 2536,
+  "folder": "ComplexKahlerGeometry",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 37 changed lines since 4a51aa5. Checked: the previous small correction C01 (repaired); the seven newly cited Tau Ceti declarations opened at the pin with their hypotheses (finite index for Leray, compact normal space for the shrinking lemma, short exact Cech complexes and exact colimits for the long exact sequence, presheaves of modules for the vanishing); Demailly IV (5.17), (5.19)-(5.21) and (6.13)-(6.15) at their pages (the part of the seeded sample in the changed passages, section 2.5); the pull request's title and description against the head and the diff from the base (they agree); SmoothBundlesConnections B6.1 and TopologicalSheafCohomology's scope on main. Automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with 27 sorry warnings only. Adversarial table: five rows for the changed passages of 2.5 and one for the pull request's text.",
+  "text": "c7bd6385ce6fe4fc"
+ }
+}
