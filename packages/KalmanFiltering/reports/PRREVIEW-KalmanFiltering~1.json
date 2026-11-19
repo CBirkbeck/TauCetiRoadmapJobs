@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KalmanFiltering~1",
+  "head": "c8c8f85ca0ff871add69c77387a9164020dc1efd",
+  "pr": 2564,
+  "folder": "KalmanFiltering",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full review. All 15 sampled targets and 31 locators verified against the fetched texts of Anderson-Moore 1979 and Sarkka 2013. Every Check recomputed by hand; filter, prediction, innovation and smoother statements confirmed in exact rational arithmetic against direct Gaussian conditioning on 120 random and degenerate models, Layer 1 on 400 instances. 28 library declarations opened at the pins. Suggested.lean elaborates with 15 sorry warnings only; #check of all 34 declarations compared with the README; one-tactic probe closes none. Dependency check: 0 problems. Automatic checks all passed. Overlap read against six closest roadmaps: nothing shared.",
+  "text": "bf9e0fab976969bb"
+ }
+}
