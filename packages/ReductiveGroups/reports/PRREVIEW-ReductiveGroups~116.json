@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ReductiveGroups~116",
+  "head": "339f91ab61f14d5fa16939289ad2b6e816f416cb",
+  "pr": 2530,
+  "folder": "ReductiveGroups",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full re-review. The previous round's findings R01-R03, corrections C01-C04 and notes N01-N03 are all repaired. Seeded sample checked against the texts: 1.1 (jantzen-1985 §§2.8, 2.10, 3.9, 4.2, 4.14-4.16; printed page = PDF page - 5), 8.1 (conrad-rgs Def. 5.1.1, p. 136) and 8.2 (Def. 6.1.1 and Rem. 6.1.2, pp. 186-187). All new Conrad Appendix C locators were checked, plus asgari-shahidi Def. 2.1, cai-friedberg-kaplan §1 and hundley-sayag §§4.1-4.2. Asgari 2002 and the Book of Involutions could not be read. The 𝔽₂ rank-4 Check was recomputed by enumerating GL₄(𝔽₂): 72, 36, 36, 18. Automatic checks all pass and the depcheck reports 0 problems; the ArithmeticGaloisRepresentations <-> ReductiveGroups mutual supply (R02) was found by reading both Needs lines. Elaboration exits 0 with 11 sorry warnings, and #check @ of all 22 declarations matches. Findings: R01, §9B.6 O/SO ≅ ℤ/2 is false at l = 0; R02, §9B.5 consumes AGR §7.3 while AGR §7.3 consumes ReductiveGroups Layer 9.",
+  "text": "5a590d1cb162a535"
+ }
+}
