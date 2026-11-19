@@ -1,0 +1,58 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "NewtonAndQuasiNewtonMethods"
+
+[[source]]
+id = "FerreiraSvaiter"
+arxiv = "1209.5704v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1209.5704v1"
+fetched_from = "https://arxiv.org/pdf/1209.5704v1"
+fetched_at = "2026-11-19T17:24:47Z"
+sha256 = "606b5e8f9dbed37e0948093ad00e2dab10fd626665d77533ef2aeed75e1b663e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["2.1"]
+
+[[source]]
+id = "Ferreira"
+arxiv = "1002.4534v1"
+locator_scheme = "theorem"
+locator = "Theorem 13"
+url = "https://arxiv.org/abs/1002.4534v1"
+fetched_from = "https://arxiv.org/pdf/1002.4534v1"
+fetched_at = "2026-11-19T17:24:53Z"
+sha256 = "386bafdfa7a1f6cccedfe56ff42e4389d650db35fe9ec1870a44203b9cad7288"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v1"
+cited_for = ["1.3"]
+
+[[source]]
+id = "DennisMore1977"
+locator_scheme = "theorem"
+locator = "Theorem 7.3"
+url = "https://hal.science/hal-01495720"
+fetched_from = "https://hal.science/hal-01495720/document"
+fetched_at = "2026-11-19T17:25:03Z"
+sha256 = "e89f74b358f4e89d24250e4082a66c14be28e6e6e0e6aa2381d9809f3e103c30"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["3.4"]
+
+[[source]]
+id = "DennisMore1974"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://www.ams.org/journals/mcom/1974-28-126/S0025-5718-1974-0343581-1/S0025-5718-1974-0343581-1.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/1974-28-126/S0025-5718-1974-0343581-1/S0025-5718-1974-0343581-1.pdf"
+fetched_at = "2026-11-19T17:25:14Z"
+sha256 = "38b7627f84dca1498d8d3c942491f1e9365345e5e46395e8e2398ec9578704d8"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4.1"]

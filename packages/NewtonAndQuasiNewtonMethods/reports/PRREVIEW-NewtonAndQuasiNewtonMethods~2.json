@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NewtonAndQuasiNewtonMethods~2",
+  "head": "f09f9baeddd7300d7239c28cefad3ee0483c6812",
+  "pr": 2573,
+  "folder": "NewtonAndQuasiNewtonMethods",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. All 13 sampled targets (1.1-5.2) checked against the four sources read through the sources service (29 locators; the fetch recorded the four entries in the package's sources.toml). Every Check recomputed: matrix statements in exact rational arithmetic (including 300 random quadratic-termination runs, 200 least-change instances, 241 non-symmetric inverse instances), Newton and Kantorovich values by hand. 34 library declarations opened at the pins. Dependency check: 0 problems. Suggested.lean elaborates with sorry as the only warning; #check of all 24 declarations compared with the README; one-tactic probe closes none of the 13 theorems. The automatic checks all passed. One P2: a false sentence in the Layer 1 Examples (positive definite Hessian on a Hilbert space is not invertible in infinite dimensions). Not verifiable from the extraction: the inequality sign in Dennis-More 1977 Theorem 8.1 and three displayed equations.",
+  "text": "c048fa7e621877e4"
+ }
+}
