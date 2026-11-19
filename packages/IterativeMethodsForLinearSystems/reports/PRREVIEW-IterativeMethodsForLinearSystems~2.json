@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IterativeMethodsForLinearSystems~2",
+  "head": "8d74536b5578724fbbd0739bd862940f406ceb86",
+  "pr": 2561,
+  "folder": "IterativeMethodsForLinearSystems",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 11 changed lines since ad5c14a: both previous points (R01 ownership of the powers criterion of 1.2, C01 wording of 2.4) verified repaired; Saad2003 Theorem 4.10 read again at its locator; LinearSystemsAndControl 5.1 read at its open head and found to cite 1.2 without restating it; two adversarial rows with computed values (1.2 real case as Schur stability, 2.4 against the source); dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with 22 sorry warnings only; pull request text agrees with the head; one format note (a dated parenthesis in the scope section).",
+  "text": "d96ec5d69e9e1806"
+ }
+}
