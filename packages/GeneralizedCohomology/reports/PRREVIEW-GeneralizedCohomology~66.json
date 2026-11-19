@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeneralizedCohomology~66",
+  "head": "aa14dec7adbff8e970d2e321906d6f355b15948f",
+  "pr": 2535,
+  "folder": "GeneralizedCohomology",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review. Changed G3.9 sentence checked against BordismFormalGroups F2.2 on main (consistent; true, KU separates the two completions). Seeded sample of 15 sections (G1.6, G2.5, G2.6, G3.1, G3.5, G3.9, G3.10, G4.1, G4.3, G4.4, G5.0, G5.1, G5.4, G5.6, G5.7): 43 locators verified in HatcherAT, HSS, Cohen, May, HatcherVBKT, HatcherSSAT, SchwedeSymSpec, LurieHTT; all agree. Adversarial table over the sample and the seven Lean headlines. Automatic checks all pass (worker and own run); depcheck 0 problems; Suggested.lean elaborates with seven sorry warnings only; #check signatures match the README; one-tactic probes fail. One small correction: rationalHurewicz fixed at universe 0 (a Type u form elaborates). Previous review had no findings.",
+  "text": "467fa6a2abf9ba84"
+ }
+}
