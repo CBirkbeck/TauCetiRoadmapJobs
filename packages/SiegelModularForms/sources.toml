@@ -3,14 +3,14 @@ roadmap = "SiegelModularForms"
 
 [[source]]
 id = "mizumoto1991"
-authors = "Kari Astala, Michel Zinsmeister"
-title = "Teichm�ller spaces and BMOA"
+authors = "S. Mizumoto"
+title = "Poles and residues of standard L-functions attached to Siegel modular forms"
 year = 1991
 venue = "Mathematische Annalen 289"
-doi = "10.1007/BF01446592"
+doi = "10.1007/BF01446591"
 locator_scheme = "theorem"
 locator = "Theorem"
-url = "https://doi.org/10.1007/BF01446592"
+url = "https://doi.org/10.1007/BF01446591"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
@@ -51,14 +51,14 @@ cited_for = ["8.3"]
 
 [[source]]
 id = "arakawa1983"
-authors = "Andrew Bremner, Patrick Morton"
-title = "A new characterization of the integer 5906"
+authors = "T. Arakawa"
+title = "Vector valued Siegel's modular forms of degree two and the associated Andrianov L-functions"
 year = 1983
 venue = "Manuscripta Mathematica 44"
-doi = "10.1007/BF01166081"
+doi = "10.1007/BF01166080"
 locator_scheme = "theorem"
 locator = "Theorem p. 157"
-url = "https://doi.org/10.1007/BF01166081"
+url = "https://doi.org/10.1007/BF01166080"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
@@ -134,14 +134,14 @@ cited_for = ["10.1"]
 
 [[source]]
 id = "satoh1986"
-authors = "Robert E. Gompf"
-title = "An exotic orientable 4-manifold"
+authors = "T. Satoh"
+title = "On certain vector valued Siegel modular forms of degree two"
 year = 1986
 venue = "Mathematische Annalen 274"
-doi = "10.1007/BF01457068"
+doi = "10.1007/BF01457078"
 locator_scheme = "theorem"
 locator = "Theorem 2.2"
-url = "https://doi.org/10.1007/BF01457068"
+url = "https://doi.org/10.1007/BF01457078"
 licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
