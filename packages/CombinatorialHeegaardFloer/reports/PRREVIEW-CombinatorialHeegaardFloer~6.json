@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CombinatorialHeegaardFloer~6",
+  "head": "075075839ea97a21064ebe02f69bbb71bdfc4bda",
+  "pr": 2545,
+  "folder": "CombinatorialHeegaardFloer",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "Full review of the same head the previous review read. All 15 sampled targets checked against the cached texts (the book, arXiv:0912.0830, 1206.1654, 2111.14962, 0709.0841): 73 locators read, all support the statements. Adversarial table of 26 rows with computed values. Automatic checks all pass; dependency check 200 roadmaps, 2195 edges, 0 problems; Suggested.lean elaborates with six sorry warnings only; one-tactic probes close none of the six theorems. Cross-roadmap citations resolved on main and at the open GeometricTopology and HeegaardFloer heads. Six small corrections (four carried over unrepaired from the previous review, two new: the collapsed link module of 3.6 and the owner named in Downstream consumers) and one format note. Not opened: Torres 1953 (paywalled) and six arXiv papers outside the sample. One arrangement question and one numbering question left to the human reviewers.",
+  "text": "4eb0e3ab8d7170b7",
+  "carried": {
+   "from": "075075839ea97a21064ebe02f69bbb71bdfc4bda",
+   "head": "8be14e7c44828cb52c0363c53058637931ee88af",
+   "findings": 6,
+   "lines": 72,
+   "folders": [
+    "CombinatorialHeegaardFloer"
+   ],
+   "corrections": true
+  }
+ }
+}
