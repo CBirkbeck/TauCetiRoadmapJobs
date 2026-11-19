@@ -112,3 +112,40 @@ status = "certified"
 accessed = "2026-11-07"
 version_note = "arXiv v1"
 cited_for = ["GQ2a"]
+
+[[source]]
+id = "cerf-stratification"
+authors = "Jean Cerf"
+title = "La stratification naturelle des espaces de fonctions différentiables réelles et le théorème de la pseudo-isotopie"
+year = 1970
+venue = "Publ. Math. IHÉS 39 (1970)"
+locator_scheme = "section"
+locator = "Chapter I, §3.1, p. 24"
+url = "http://www.numdam.org/item/PMIHES_1970__39__5_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1970__39__5_0.pdf"
+fetched_at = "2026-11-19T18:00:00Z"
+sha256 = "491db345340039f72f768e19ff3fada9eb1d468652e5368541a70d0edb8a686c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["3.1"]
+
+[[source]]
+id = "gay-kirby-morse2"
+authors = "David T. Gay, Robion Kirby"
+title = "Indefinite Morse 2-functions; broken fibrations and generalizations"
+year = 2011
+venue = "Geom. Topol. 19 (2015) 2465-2534"
+doi = "10.2140/gt.2015.19.2465"
+arxiv = "1102.0750v5"
+locator_scheme = "theorem"
+locator = "Theorem 1.4"
+url = "https://arxiv.org/abs/1102.0750v5"
+fetched_from = "https://arxiv.org/pdf/1102.0750v5"
+fetched_at = "2026-11-19T18:00:05Z"
+sha256 = "f01e55a07c901ba6ec98c2ec83708b033387884464d40d7bed11a08122f60845"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v5"
+cited_for = ["3.1"]
