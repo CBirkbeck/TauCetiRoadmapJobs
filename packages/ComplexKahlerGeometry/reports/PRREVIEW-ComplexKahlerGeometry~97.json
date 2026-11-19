@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComplexKahlerGeometry~97",
+  "head": "1b8217edfb28e1bc31d551441630ba2e5600112d",
+  "pr": 2536,
+  "folder": "ComplexKahlerGeometry",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review at 1b8217e. Previous review's R01-R02 repaired, R03-R05 (description of the merged earlier pull request) not applicable. Seeded sample of 15 sections checked: 49 locators against the cached texts (demailly-agbook, hormann-steinbauer, rainer, ballmann, lojasiewicz, knutson), all correct; Tau Ceti and Mathlib names opened at the pins. Soft-sheaf move checked against SmoothBundlesConnections B6.1 on main: sound. R01 (P2): 2.5 still plans Cech refinement maps and homotopy independence that Tau Ceti pins (cechComplexMap, cechComplexMapHomotopy, cechComplexHomologyMap_eq, cechCohomologyDiagram) and TopologicalSheafCohomology 1.1-1.2 owns. Gate rerun: all scanners 0, OK; depcheck 0 problems; lake env lean exit 0 with 27 sorry warnings; #check of all 34 declarations; one-tactic probe closes none. Citation-scan leads DeltaSeries and Eigenbundle are module paths that exist (set aside).",
+  "text": "e64822e126eebc69"
+ }
+}
