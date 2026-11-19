@@ -1,0 +1,35 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ComplexManifolds"
+
+[[source]]
+id = "demailly-agbook"
+authors = "Jean-Pierre Demailly"
+title = "Complex Analytic and Differential Geometry"
+year = 2012
+locator_scheme = "theorem"
+locator = "Chapter V, §6, p. 261; Chapter V, (13.5), p. 271; Chapter VII, (3.4), p. 334; Chapter VII, Proposition (12.4) a) and its proof, p. 357 (author's version of 21 June 2012)"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_at = "2026-11-19T14:50:41Z"
+sha256 = "d7c7654a7417e8322e5dcf8fe8ec818b4c1a18cf280b41f2df5a871b776d89a1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "author's online version of 21 June 2012; page numbers are those of that version"
+cited_for = ["7.4", "7.5", "7.6"]
+
+[[source]]
+id = "mathlib4-pr-40727"
+authors = "Michael Rothgang, Pepa Montero, Archibald Browne, Enrique Díaz, Juan José Madrigal"
+title = "Quotients of manifolds (mathlib4 pull request 40727)"
+year = 2025
+locator_scheme = "section"
+locator = "Mathlib/Geometry/Manifold/Instances/Quotient.lean at revision 9da60c2: instChartedSpaceQuotient (lines 57-59), orbitRel.Quotient.localInverseAt (lines 69-74)"
+url = "https://raw.githubusercontent.com/pepamontero/mathlib4/9da60c2df334c05bcf3b745a17854c9404bb0518/Mathlib/Geometry/Manifold/Instances/Quotient.lean"
+fetched_from = "https://raw.githubusercontent.com/pepamontero/mathlib4/9da60c2df334c05bcf3b745a17854c9404bb0518/Mathlib/Geometry/Manifold/Instances/Quotient.lean"
+fetched_at = "2026-11-19T14:51:01Z"
+sha256 = "3757a5d49de8d23a3e23929dafdfeaec7fa35dcc7d2427d1050a82fb1b439f6c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4.1"]
