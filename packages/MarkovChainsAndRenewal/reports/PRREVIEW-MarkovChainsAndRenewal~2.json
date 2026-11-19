@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MarkovChainsAndRenewal~2",
+  "head": "1508422f27c8282690adba26107d1437edee35db",
+  "pr": 2605,
+  "folder": "MarkovChainsAndRenewal",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 8,
+  "format_notes": 2,
+  "notes": "Full review at the head the previous review read (no finding to repair; its 7 small corrections and 2 format notes stand, one correction added: the null-recurrent Check of 3.5 is a period-2 chain outside the theorem's aperiodicity hypothesis). Sample: the 15 seeded sections checked against Tassion2025, 47 numbered statements opened; Norris, Feller and Last-Penrose not readable legally (listed under Not verifiable). Adversarial table of 32 rows with computed values, covering all 12 theorems and 4 definitions of Suggested.lean. Library definitions opened at the pinned Mathlib and Tau Ceti; no headline is proved at the pins; the infinite-mean strong law asked for in 2.4 is at the Tau Ceti pin (small correction). Automatic checks all passed; dependency check: 200 roadmaps, 2196 edges, 0 problems, no UPWARD or CYCLE line; no change outside the folder. lake env lean on Suggested.lean: 12 sorry warnings, no error; one-tactic probe (rfl, simp, infer_instance) closes nothing. Overlap read against MarkovChainMixing, PopulationDynamics, PoissonApproximation, PointProcesses, StochasticCalculus, MarkovDecisionProcesses, MathematicalStatisticsFoundations. For humans: licence class of the notes' host, the unpublished main source, and the layer/chapter parallel.",
+  "text": "a4296c9727257fac",
+  "carried": {
+   "from": "1508422f27c8282690adba26107d1437edee35db",
+   "head": "710d7e5b1c9861679ce43b23a3e45117acd3d1b2",
+   "findings": 8,
+   "lines": 141,
+   "folders": [
+    "MarkovChainsAndRenewal"
+   ],
+   "corrections": true
+  }
+ }
+}

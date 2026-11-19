@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MarkovChainsAndRenewal"
+
+[[source]]
+id = "Tassion2025"
+authors = "Vincent Tassion"
+title = "Applied Stochastic Processes (lecture notes, ETH Zürich, Spring 2025, revision of June 20, 2025)"
+year = "2025"
+locator_scheme = "theorem"
+locator = "Theorems 2.2, 2.6, 3.4, 4.2, 4.15, 5.6, 6.7, 9.3"
+url = "https://metaphor.ethz.ch/x/2025/fs/401-3602-00L/sc/script.pdf"
+fetched_from = "https://metaphor.ethz.ch/x/2025/fs/401-3602-00L/sc/script.pdf"
+fetched_at = "2026-11-19T23:15:42Z"
+sha256 = "17eb2b6302b65a7e3932c069005f6b63620511f32f6e9cb8d4f7b42a7fa49e8b"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["Layers 0-7"]
