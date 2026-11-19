@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DGAInfinity~4",
+  "head": "9f84816fe34adebe71f532dd3907b029db6bb924",
+  "pr": 2574,
+  "folder": "DGAInfinity",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review of an unchanged head. All 15 sampled targets and the headline theorems recomputed (adversarial table with values); 27 source locators read in 11 texts (Shklyarov and Keller's Calabi-Yau paper fetched from arXiv; Getzler-Jones, Beilinson-Ginzburg-Soergel and Bondal-Kapranov not readable); 332 library names resolved at the pins, 14 opened; cross-roadmap citations resolved on main; dependency check 0 problems; automatic checks all pass; Suggested.lean elaborates with only three sorry warnings and no theorem closes with one tactic. One small correction (D_infinity in 5.1), two format notes. Two ownership facts left to the human reviewers.",
+  "text": "cad39d96c2773a7c",
+  "carried": {
+   "from": "9f84816fe34adebe71f532dd3907b029db6bb924",
+   "head": "10c8e92af510de84e7226b34114cbfc76cbccfb8",
+   "findings": 1,
+   "lines": 7,
+   "folders": [
+    "DGAInfinity"
+   ],
+   "corrections": true
+  }
+ }
+}
