@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularCharactersAndBlocksPartII~5",
+  "head": "765678cbaa7b84c3c445bfc9abb7b73bf6b1cd8a",
+  "pr": 2411,
+  "folder": "ModularCharactersAndBlocksPartII",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 121 changed lines since f198e03. R01 (two owners of the block characters, the defect and the Brauer correspondent) repaired: the three are cited from base §4.2, §6.2, §§6.2 and 7.1, each resolved on main and read at the head of the base's open revision; C01, C02 (description) and N01 (Glauberman Lemma 3 pages, checked in the text) repaired. No Lean statement changed. Adversarial rows computed for blockCharacters, IsDefectGroup, the defect and the Brauer correspondent on S3. Automatic checks all passed; depcheck 0 problems; lake env lean gives 16 sorry warnings only; no change outside the folder. Three points for the human reviewers.",
+  "text": "007c12710a43e5dd"
+ }
+}
