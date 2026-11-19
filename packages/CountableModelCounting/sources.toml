@@ -1,0 +1,52 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CountableModelCounting"
+
+[[source]]
+id = "Montalban-CSTpart2"
+authors = ["Antonio Montalbán"]
+title = "Computable Structure Theory: Beyond the Arithmetic, Part 2 (draft compiled 22 April 2025)"
+year = 2025
+locator_scheme = "theorem"
+locator = "§XII.1, p. 216; Theorem XI.3, p. 207; Lemmas XII.5–XII.6, p. 218; Theorem XII.7, pp. 219–220"
+url = "https://math.berkeley.edu/~antonio/CSTpart2.pdf"
+fetched_from = "https://math.berkeley.edu/~antonio/CSTpart2.pdf"
+fetched_at = "2026-11-19T16:54:47Z"
+sha256 = "a1c43f5cc6526ac023e06d1865e6921d3cb698b2a741f3448bc47fe2e82d9ae4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["3.3", "2.1", "5.7", "5.8", "5.9"]
+
+[[source]]
+id = "AGHKM-Scattered"
+authors = ["Uri Andrews", "Isaac Goldbring", "Sherwood Hachtman", "H. Jerome Keisler", "David Marker"]
+title = "Scattered sentences have few separable randomizations"
+year = 2016
+version_note = "preprint on Keisler's page; the year is that of the preprint (it reports a discussion of April 2016)"
+locator_scheme = "section"
+locator = "§1, p. 1"
+url = "https://people.math.wisc.edu/~hkeisler/scatteredfew13.pdf"
+fetched_from = "https://people.math.wisc.edu/~hkeisler/scatteredfew13.pdf"
+fetched_at = "2026-11-19T16:54:49Z"
+sha256 = "0e6e579d2991e4db033b0a1acafcefb682cbc99002e26a351ea58457e29b802e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["5.3"]
+
+[[source]]
+id = "BFKL-RedHerrings"
+authors = ["John Baldwin", "Sy-David Friedman", "Martin Koerwien", "Michael C. Laskowski"]
+title = "Three red herrings around Vaught's conjecture"
+year = 2016
+version_note = "published in Trans. Amer. Math. Soc. 368 (2016), 3673-3694; page numbers are those of the preprint of 17 September 2014 on Laskowski's page"
+locator_scheme = "theorem"
+locator = "Theorem 3.3, p. 12; Lemma 3.4, p. 13 (preprint of 17 September 2014)"
+url = "https://www.math.umd.edu/~laskow/Pubs/redherringsaug2814.pdf"
+fetched_from = "https://www.math.umd.edu/~laskow/Pubs/redherringsaug2814.pdf"
+fetched_at = "2026-11-19T16:54:51Z"
+sha256 = "49a67d8106c5242627b9b990b65c49910fefb16e5feda9f67d705fc798da7d77"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4.2", "4.5"]
