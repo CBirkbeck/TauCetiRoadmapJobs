@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompletedCohomologyPartII~7",
+  "head": "3da95817e7a4abd33129098b9aa034ca6bdc384f",
+  "pr": 2547,
+  "folder": "CompletedCohomologyPartII",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full review. Seeded sample of 15 targets checked against E06, CE, GN, ST, Venjakob, E11, Nakamura, Pan22, LLHLM, Fu and MilneSV (about 45 locators); all hold except the CE p.8 gloss at 7.4 and 7.5 (C01). Corrections E1-E5 confirmed in the source texts. Gate rerun OK; depcheck with --movable: 200 roadmaps, 2207 edges, 0 problems; Suggested.lean elaborates with one sorry warning; all 83 library names resolve at the pins. R01: completedHeckeLocalTopology duplicates Mathlib's Localization.ringTopology instance (not defeq; #synth picks the roadmap instance; the file elaborates without it). R02: F.4 re-owns locally analytic vectors of Banach representations owned by PadicLocalLanglandsForGL2Qp section 0.1 on main. The previous review's ALS.5 remark is repaired. The change summary's added declaration 'for' is a docstring word, a scanner false positive.",
+  "text": "1abeb955e15ed564"
+ }
+}
