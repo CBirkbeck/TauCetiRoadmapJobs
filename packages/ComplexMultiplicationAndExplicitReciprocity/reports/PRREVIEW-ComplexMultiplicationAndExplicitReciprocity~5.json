@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexMultiplicationAndExplicitReciprocity~5",
+  "head": "e52ac01a7f055aebe9e43955d87307f851852692",
+  "pr": 1254,
+  "folder": "ComplexMultiplicationAndExplicitReciprocity",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review of the head. All 15 sampled sections checked: 74 locators located in 16 sources, 43 read in full (Streng, KS, MilneCM, YZ, Tsimerman, CRT, Endo, Yang, MIT21, MIT22, GZ, BT); Deuring paywalled and BKO unreachable. Adversarial table of 25 rows with recomputed values. Supplier citations resolved on main and at open heads; three ArithmeticStatisticsPartVII labels are absent at its head although the cited content is there (C01). Dependency check: 0 problems. Suggested.lean elaborates with only the two sorry warnings; one-tactic probe closes neither theorem; 32 pinned declarations opened. The worker's automatic checks all passed; none set aside. Previous review had no finding.",
+  "text": "9db1969c5e8ed1e6",
+  "carried": {
+   "from": "e52ac01a7f055aebe9e43955d87307f851852692",
+   "head": "bfb666bf57e3caac7c6cb60b9a70392f03988d10",
+   "findings": 1,
+   "lines": 16,
+   "folders": [
+    "ComplexMultiplicationAndExplicitReciprocity"
+   ],
+   "corrections": true
+  }
+ }
+}
