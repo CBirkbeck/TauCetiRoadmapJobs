@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SatisfiabilityComplexity~1",
+  "head": "044d483b6d899f97a62362c7cdf82491cf5f782e",
+  "pr": 2521,
+  "folder": "SatisfiabilityComplexity",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. All 15 sampled targets and 22 source locators checked against the four cited texts (Arora-Barak 2007 draft, Ben-Sasson-Wigderson TR99-022 by OCR, Beame-Karp-Pitassi-Saks 2002, Chen 2006), all correct. Adversarial pass computed on every statement; small-instance values of the Checks recomputed by brute force (tree sizes 7, 15, 55, 21; widths 2, 3, 4, 2; 31 codes of length at most 10). Suggested.lean elaborates with 17 sorry warnings only; one-tactic probe closes nothing. Automatic checks all passed; dependency check 0 problems. Supplier citations resolved at the head of the PropositionalSatisfiability pull request. One P2 finding: target 4.1 (composition of polynomial-time stack machines) is also planned by CertifiedPermutationComputation 1.2 (pull request 717) with no citation either way.",
+  "text": "ae85069a86b43f59"
+ }
+}
