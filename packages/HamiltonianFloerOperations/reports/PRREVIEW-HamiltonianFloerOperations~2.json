@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HamiltonianFloerOperations~2",
+  "head": "662b427b9f1b91d425bb293efc5509b3d8d12c11",
+  "pr": 2590,
+  "folder": "HamiltonianFloerOperations",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full re-review. Earlier findings: R02, C01-C05 and N01 repaired; R01 partly repaired (remainder is C01). Locators verified against the cached texts: 13 of 14 (FOOO2017 6, FultonPandharipande1996 3, Lu2004 2, Pardon2016 2); PSS1996 Theorem 5.1 not readable. Seeded sample: 2.4, 3.1, 3.2, 3.4, 4.2, 4.3, 4.5, 5.3, 6.1, 6.2, 6.5, 7.2, 7.4, 8.3, 8.5; those without locators were recomputed. Adversarial table: 35 rows. Gate: all checks pass. Depcheck: 200 roadmaps, 2199 edges, 0 problems. lake env lean Suggested.lean exits 0; no declarations. All 107 library names resolve at the pins. Cross-roadmap citations resolved on main and at the open DGFloer and GromovWittenTheory heads. Overlap with open heads checked by search.",
+  "text": "9d88bb0c4f95f4dd"
+ }
+}
