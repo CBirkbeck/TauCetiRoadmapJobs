@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OnlineConvexOptimization~1",
+  "head": "806dd2c8f888ca7cc8bdbac472898087d2a1ac13",
+  "pr": 2570,
+  "folder": "OnlineConvexOptimization",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample (1.1, 1.2, 2.1, 2.2, 2.3, 3.1, 3.2, 4.1, 4.2, 5.1, 6.1, 6.2) and all 13 Lean theorems recomputed with values in the adversarial table; 37 of 37 source locators read in the texts (Orabona arXiv v10, Hazan arXiv v3, Bubeck arXiv v2, Zinkevich ICML 2003); 39 library declarations opened at the pins; 6 cross-roadmap citations resolved and the five restated definitions compared with their owners; Suggested.lean elaborates with 13 sorry warnings only; one-tactic probe closes 0 of 13; dependency check 0 problems; automatic checks all passed, none set aside. One small correction (unneeded positivity hypotheses in Layer 2), two format notes.",
+  "text": "12bfae995534dfd1"
+ }
+}
