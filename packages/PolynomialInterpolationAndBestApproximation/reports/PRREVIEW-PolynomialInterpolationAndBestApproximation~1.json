@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PolynomialInterpolationAndBestApproximation~1",
+  "head": "c715e3e2e779e74039bba545dd6af6464262657e",
+  "pr": 2562,
+  "folder": "PolynomialInterpolationAndBestApproximation",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample: all 15 sampled targets (1.1-1.3, 2.1-2.4, 3.2, 3.3, 4.1-4.3, 5.1-5.3) plus 3.1, each instantiated on degenerate cases with recomputed values; 18 of 18 source locators read in the three sources (3 off by one page); 65 Mathlib declarations and 1 Tau Ceti declaration opened at the pins; 5 cross-roadmap citations resolved on main; automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 14 sorry warnings only; one-tactic probe closes 0 of 14 theorems. Not recomputed: E_n(|x|) for n = 4, 8, 10 and the full ranges n <= 200 and n <= 2000 of the Checks of 3.3.",
+  "text": "1ee85b40e7469679"
+ }
+}
