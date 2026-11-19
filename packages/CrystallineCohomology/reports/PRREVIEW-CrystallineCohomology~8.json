@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CrystallineCohomology~8",
+  "head": "66a2f7dd230c3b7e2a7ffc4955b13377164c3b78",
+  "pr": 2532,
+  "folder": "CrystallineCohomology",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 57 changed lines since 45263ea. Checked: the five small corrections of the previous review (all repaired) and its two format notes (not repaired, carried); the changed passages (scope sentence, Crystalline cup products, the multiplicativity route of CR.DDR.4.1, Kummer morphisms, Kummer etale morphisms, Base change of logarithmic morphisms, Proper smooth crystalline base change) with computed instances; new locators read at the text (Illusie overview 1.6 pp.274-275 and 2.1 p.276, Kato (2.8) p.199, Stacks Remark 60.24.11); the sampled target Smooth-lift comparison and PD filtration, cited by a changed passage; the pull request's title and description against the head (no contradiction); automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning and is unchanged.",
+  "text": "753ed5e447a418df"
+ }
+}
