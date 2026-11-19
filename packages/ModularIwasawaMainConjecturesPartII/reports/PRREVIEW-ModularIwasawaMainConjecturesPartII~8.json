@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularIwasawaMainConjecturesPartII~8",
+  "head": "a2bff3ee57a88f880b8fa6690f5e0d803ef17e6a",
+  "pr": 2281,
+  "folder": "ModularIwasawaMainConjecturesPartII",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 11 changed lines since b9017b4: previous R01 (L-value beside the scalar of 4.3) repaired; changed passages of 2.5, 4.2, 4.3 checked against JLK lines 104-110 and 726-733, BT lines 141-145 and NonordinaryCMSpecialValues 2.2 at its open head; the six values of the new cubic Check recomputed; seeded sample checked where it falls in the change (2.5, 4.3); automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates silently (no declarations); pull request text consistent with the head; nothing changed outside the folder.",
+  "text": "653ab70f4ec55329"
+ }
+}
