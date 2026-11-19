@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsHypergeometric~5",
+  "head": "6d4b80b91ce9da2406f3b8364c991fa91683870d",
+  "pr": 2552,
+  "folder": "SpecialFunctionsHypergeometric",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review of a README-only revision (locators into seven books added, headings retitled, no statement changed). All 15 sampled targets recomputed numerically with an independent double-precision implementation; values agree with the README, including its corrections to DLMF 15.16.5 and 15.10.25. All 17 Whittaker-Watson locators read at the text (third edition) and the DLMF formulas of 15.4, 15.16, 15.2(i) read at the text; the locators into Andrews-Askey-Roy, Lebedev, Olver, Temme, Beals-Wong and Duverney (about 130) could not be read legally and are listed as not verifiable. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 61 sorry warnings only. Small corrections: three renamed anchors linked by the open SpecialFunctionsHeun pull request with no mapping; three sentences of the description. Format note: Lean section comments keep the old layer titles.",
+  "text": "2e8370c042c64a39"
+ }
+}
