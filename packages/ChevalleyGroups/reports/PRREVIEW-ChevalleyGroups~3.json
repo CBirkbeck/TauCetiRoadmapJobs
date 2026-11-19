@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ChevalleyGroups~3",
+  "head": "91fcf6f834b7785315a24ca77835ac7e60f911f8",
+  "pr": 2544,
+  "folder": "ChevalleyGroups",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review. Automatic checks all passed; depcheck 0 problems (200 roadmaps, 2197 edges). Suggested.lean elaborated at the pins: two sorry warnings only; #check signatures match README 4.5 and 5.4. Seeded sample of 15 targets read; Steinberg's Lectures (12 of 14 locator sites) has no legal copy (sources service, publisher pages refused, web search), so those locators are listed as not verifiable; Conrad Theorem 1.1.19 proof (p. 15) verified for 5.1. Every Check recomputed, the commutator Checks for A2, Sp4 and G2 in exact rational arithmetic. R01: 4.2-4.3, 6.3 and 7.1 re-plan ReductiveGroups 9B.1, 9B.2 and its special isogenies for the group that 2.9 identifies with 9B's. R02: smoothness over Z and the trivial centre are statable on geckGroupScheme/geckPoints (probe elaborated) and are absent from Suggested.lean. Adversarial table: 33 rows with computed values.",
+  "text": "30a32569f9cbe7fd"
+ }
+}

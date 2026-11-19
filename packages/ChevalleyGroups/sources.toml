@@ -1,0 +1,19 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ChevalleyGroups"
+
+[[source]]
+id = "Conrad2014"
+authors = "Brian Conrad"
+title = "Reductive group schemes, in Autour des schémas en groupes I, Panoramas et Synthèses 42/43"
+year = 2014
+locator_scheme = "theorem"
+locator = "Theorem 5.1.13, p. 143; Theorem 6.1.16(1), p. 196"
+version_note = "Theorem and page numbers are those of the author's version fetched from the author page; the README cites that version."
+url = "https://math.stanford.edu/~conrad/papers/luminysga3.pdf"
+fetched_from = "https://math.stanford.edu/~conrad/papers/luminysga3.pdf"
+fetched_at = "2026-11-19T13:25:57Z"
+sha256 = "1a63a17e4ccb7e23263d65f05d93a6651262861e978e9eb0c1c53a01fd59140a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["3.2", "4.2", "4.3", "6.3"]
