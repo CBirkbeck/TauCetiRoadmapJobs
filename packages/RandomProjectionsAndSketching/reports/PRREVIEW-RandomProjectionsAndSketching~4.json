@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RandomProjectionsAndSketching~4",
+  "head": "03644e24d0a6ec555bd86910cf23fa12c4f97761",
+  "pr": 2572,
+  "folder": "RandomProjectionsAndSketching",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 03644e2. Checked: the pull request's title and description sentence by sentence against the head (the earlier correction on the trace-estimator sample bound is repaired; values recomputed at eps = 1/2 and eps = 1); 8 cross-roadmap citations resolved on main and at open heads; 1 Tau Ceti declaration opened at the pin; elaboration of Suggested.lean (12 sorry warnings, no error); dependency check (0 problems, no UPWARD or CYCLE); automatic checks all passed. Three small corrections and two format notes carried on unchanged README text. No source locator reopened; Achlioptas' paper not readable legally.",
+  "text": "7779976e1ef14b35"
+ }
+}
