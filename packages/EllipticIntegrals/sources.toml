@@ -54,3 +54,21 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-19"
 cited_for = ["3.2"]
+
+[[source]]
+id = "cremona1997"
+authors = "J. E. Cremona"
+title = "Algorithms for Modular Elliptic Curves"
+year = 1997
+venue = "2nd edition, Cambridge University Press, 1997"
+version_note = "the author's full text of the 2nd edition, chapter III; page numbers as in the book"
+locator_scheme = "section"
+locator = "§3.7, pp. 97–98"
+url = "https://johncremona.github.io/book/fulltext/chapter3.pdf"
+fetched_from = "https://johncremona.github.io/book/fulltext/chapter3.pdf"
+fetched_at = "2026-11-19T19:05:12Z"
+sha256 = "c4843b80ae1b6b91795b9952d782912542dd8d6b17c1940cd1a881fa6fdd9c26"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["5.3"]
