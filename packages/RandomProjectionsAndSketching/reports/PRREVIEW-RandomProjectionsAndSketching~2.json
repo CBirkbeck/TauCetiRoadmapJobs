@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RandomProjectionsAndSketching~2",
+  "head": "03644e24d0a6ec555bd86910cf23fa12c4f97761",
+  "pr": 2572,
+  "folder": "RandomProjectionsAndSketching",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. Sources: all 12 sampled targets checked; 9 locators read in the text (Dasgupta-Gupta Thm 2.1 and Lemma 2.2, Avron-Toledo Lemmas 1, 9 and Thm 10, Woodruff Def 1, Thm 14, Thm 21, Cor 22); Achlioptas not readable legally (cited without locators). Adversarial pass with computed values for every statement and Check (exact chi-squared tails for even k up to 200, the lower-tail inequality of 2.2 on (0,1], enumeration for Hutchinson and CountSketch). 27 library declarations opened at the pins. Suggested.lean elaborates with 12 sorry warnings and no error; the one-tactic probe closes none of the 12 theorems. Dependency check: 0 problems, no UPWARD or CYCLE. Automatic checks all passed. Two source issues recorded for Woodruff.",
+  "text": "f81f9c02a1103199"
+ }
+}
