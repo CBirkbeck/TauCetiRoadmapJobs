@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~97",
+  "head": "91398031aaa04ef3e19b3cec1f69027f55835448",
+  "pr": 2531,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-19",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. Sample: the fifteen seeded sections (0.17, 0.19, 0.20, 0.28, 1.1, 1.5, 1.11, 1.20, 2.9, 2.10, 2.12, 2.21, 4.14, 4.17, 5.2) plus the four new subsections 0.2a, 1.1a, 1.9a, 2.9a; about 140 Stacks tags read in the July 2026 book and the current More on Morphisms and Groupoids chapters, plus Cesnavicius 2021 and 2018, Morel-Voevodsky and Nitsure. Every name the pull request adds was searched at the Mathlib pin 1b1ccf4b and the Tau Ceti pin 2fd255d: 16 Tau Ceti declarations and 7 files exist only at Tau Ceti 91942aa9ff (R01). Counterexample Spec k[Q] -> G_m refutes exactness of the fpqc-to-fppf lift (R02). PurityForFlatCohomology section 0.2 (#1840) also owns fppf cohomology with supports (R03). Lean: Suggested.lean (unchanged) elaborates with 48 sorry warnings only; one-tactic probe closes nothing; probe of the 2.9a universe claims confirms them. Dependency check: 200 roadmaps, 2262 edges, 0 problems. Automatic checks: the single form flag (Scheme.fppfTopology_le_fpqcTopology) is a false positive, a Mathlib name. Previous review r96 (of #2489) had no findings; its corrections concern #2489's text, absent here.",
+  "text": "3e5dcefb080af0d5",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Fppf cohomology with supports gets a second owner: PurityForFlatCohomology §0.2 (open) plans the same construction, long exact sequence, open excision and triple sequence",
+    "where": "PurityForFlatCohomology §0.2 and SchemeAndStackFoundationsPartII line 369 cite §2.9a",
+    "raised": "PRREVIEW-SchemeAndStackFoundations~97"
+   }
+  ]
+ }
+}
