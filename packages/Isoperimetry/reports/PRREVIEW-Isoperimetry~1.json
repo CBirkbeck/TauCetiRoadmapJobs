@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-Isoperimetry~1",
+  "head": "d813130e4d5ee39f79adc953fb41f8f0bbe4ae34",
+  "pr": 2597,
+  "folder": "Isoperimetry",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 7,
+  "format_notes": 1,
+  "notes": "Full review. Sample: all 15 seeded targets (1.1, 2.1, 2.3, 3.1, 4.1-4.5, 5.2, 5.5, 6.1-6.4), plus the 8 Suggested.lean declarations. Sources read at their locators: CCDM 2014 (section 1.2, Theorems A and C), BGGK 2022 (Theorems 5.8 and 6.3, Corollary 6.5), Tao 2011 (Theorem 2), Tropp (Lecture 8), Wiedijk (entry 43); for Maggi 2012 only the open contents and introduction. Automatic checks: all passed. Dependency check: 0 problems. Suggested.lean elaborates with only sorry warnings, and the #check types match the README. The one-tactic probe found no padding. 29 Tau Ceti declarations opened at the pin. Findings: R01, four sentences false in an omitted degenerate case (Layer 2 and 3 library recalls and a section 4.3 Check); R02, the parametrized planar equality is missing from Suggested.lean.",
+  "text": "eb2a38f46602443d"
+ }
+}
