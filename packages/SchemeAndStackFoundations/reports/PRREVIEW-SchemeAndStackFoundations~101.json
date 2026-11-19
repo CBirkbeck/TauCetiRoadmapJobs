@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~101",
+  "head": "2fdb6a3fbd0f9e2562641fbdd5c59acd022f17fc",
+  "pr": 2531,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 15 changed lines since 821ec83. Checked: both previous small corrections repaired (02W5 topologies stated; §0.7 semicontinuity clauses match Stacks Lemmas 29.29.3-29.29.6, read in the Morphisms chapter text; 02W5 and its footnote read in the Descent chapter text); previous format note carried as N01; adversarial rows with computed values for the changed clauses; title and description read against the head and the change against main, nothing contradicted; automatic checks rerun, all pass; depcheck 0 problems; Suggested.lean elaborates with 48 sorry warnings only; deferred D01 stands.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Fppf cohomology with supports gets a second owner: PurityForFlatCohomology §0.2 (open) plans the same construction, long exact sequence, open excision and triple sequence",
+    "where": "PurityForFlatCohomology §0.2 and SchemeAndStackFoundationsPartII line 369 cite §2.9a",
+    "raised": "PRREVIEW-SchemeAndStackFoundations~97"
+   }
+  ],
+  "text": "591a07d31ad7574c"
+ }
+}
