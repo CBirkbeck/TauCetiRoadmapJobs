@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GroupActionsOnRiemannSurfaces~6",
+  "head": "d2b5f96f1735faf9ce8440d95e57892a2a250b49",
+  "pr": 1728,
+  "folder": "GroupActionsOnRiemannSurfaces",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 22 changed lines since 3d4ce69 (README only). Checked: the new supplier citations CanonicalModelsAndGonality 5.2(f) and 6.6 resolved on main with matching hypotheses (perfect field, genus at least five) and no cycle; the uniqueness and normality claim of 6.4 recomputed (Castelnuovo bound 4, a genus-four curve with two cyclic trigonal subgroups, the C3xC3 genus-ten Check); dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with only nine sorry warnings; no seeded sample target lies in a changed passage; the previous report had no finding. One small correction: the description still names CanonicalModelsAndGonality as a consumer.",
+  "text": "3fb2bd9182e4487f",
+  "carried": {
+   "from": "d2b5f96f1735faf9ce8440d95e57892a2a250b49",
+   "head": "d2b5f96f1735faf9ce8440d95e57892a2a250b49",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
