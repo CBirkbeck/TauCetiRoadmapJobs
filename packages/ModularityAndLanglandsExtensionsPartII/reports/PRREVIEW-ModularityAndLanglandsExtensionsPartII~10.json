@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularityAndLanglandsExtensionsPartII~10",
+  "head": "6a39600dc2f0935e09753db387cc2a689e84c926",
+  "pr": 2449,
+  "folder": "ModularityAndLanglandsExtensionsPartII",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 135 changed lines since 285d1db. Checked: the comparison of the self-twist and induced-form CM predicates in the Conventions against GL2AutomorphicRepresentationsAndTransfer R16.4.6, R17.4.13, R17.4.16 (main) and AutomorphicGaloisRepresentations 3.15, 7.4, 7.5 (open head); the unitary and regular algebraic normalisations of pi_f in 14.4 and 14.5 against R16.4.5, R16.6.1, R16.6.6, with exponents recomputed; the primitive-twist reading of HasQuadraticSelfTwist against four declarations of the pinned Tau Ceti Newforms/Twist.lean; ModularForms 9.2; the nt26 reference on the publisher's page. Seeded sample: 14.4 is the one sampled target in the changed passages (nt21 Theorem A, Corollary C and footnote 1 read at p. 2). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry at lines 103 and 123 the only warnings (docstrings only changed); no change outside the folder; title and description agree with the head. The previous report had no remark of its own. One point for the human reviewers carried over (14 declared supplier requests in the plan, 5 used by the README).",
+  "text": "3ab72912f3619f89"
+ }
+}
