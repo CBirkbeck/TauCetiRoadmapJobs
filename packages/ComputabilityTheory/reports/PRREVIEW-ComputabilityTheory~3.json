@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComputabilityTheory~3",
+  "head": "0a577c0f9460893f34e7d18721ed613b7a60fefd",
+  "pr": 2554,
+  "folder": "ComputabilityTheory",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Same head as the previous review; its one small correction and one format note are unrepaired and carried over. Full adversarial pass over the README and the 15 sorried statements of Suggested.lean (28 table rows with computed values), nothing false. Seeded sample of 15 targets: mathematics checked, the Soare 1987 locators not verifiable (paywalled; 0 of 36 locators read). Automatic checks all passed; elaboration exit 0 with 15 sorry warnings only; one-tactic probe closed none of the 15 theorems; 50 library names of the sampled Needs lines resolve at the pins; dependency check 0 problems; no cross-roadmap citations and no shared objects with open roadmaps. For the humans: the unread main source and licence questions on three external formalisations.",
+  "text": "1b948ad7799bc746",
+  "carried": {
+   "from": "0a577c0f9460893f34e7d18721ed613b7a60fefd",
+   "head": "0a577c0f9460893f34e7d18721ed613b7a60fefd",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
