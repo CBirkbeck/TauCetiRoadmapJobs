@@ -4654,6 +4654,12 @@
       "needs": "for an algebraic group `G` over a field of characteristic zero whose identity component is reductive, a closed subgroup `H ⊂ G` is G-completely reducible, all R-parabolics of §2.3 being tested, exactly when its identity component `H°` is reductive (Serre for connected `G`; Bate–Martin–Röhrle for reductive identity component; LS, Lemma 5.37, p. 56, LS lines 2574–2577).",
       "supplier": "LanglandsParameterStacks",
       "section": "§2.3"
+    },
+    {
+      "slug": "griffiths-residue-hodge-filtration",
+      "needs": "for a smooth hypersurface `X = {F = 0}` of degree `d` in `ℙ^(m+1)_ℂ`, `m ≥ 1`, and `0 ≤ q ≤ m`, the Poincaré residue of the forms `P·Ω₀/F^(q+1)`, with `Ω₀ = Σ_i (−1)^i X_i dX₀ ∧ ⋯ ∧ dX_i^ ∧ ⋯ ∧ dX_(m+1)` (the factor `dX_i` omitted) and `P` homogeneous of degree `(q + 1)d − m − 2`, induces an isomorphism from the degree-`((q + 1)d − m − 2)` piece of the Jacobian ring `ℂ[X₀, …, X_(m+1)]/(∂F/∂X₀, …, ∂F/∂X_(m+1))` onto `gr_F^(m−q) H^m(X, ℂ)_prim` (Griffiths; Batyrev–Cox, Theorem 10.13, PDF p. 34, BC line 1344, in the toric generality). Consumed in §8.6 with `m = n − 1`. For the quartic surface (`m = 2`, `d = 4`) the degrees `0, 4, 8` give the pieces `gr_F², gr_F¹, gr_F⁰` of dimensions `1, 19, 1`.",
+      "supplier": "ComplexComparisonPartII",
+      "section": "§C5.3"
     }
   ],
   "sourceIssues": [
