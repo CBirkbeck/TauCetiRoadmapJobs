@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComplexManifolds~3",
+  "head": "6611a6e68a5b1078363359c40e798e9ab71c0222",
+  "pr": 2549,
+  "folder": "ComplexManifolds",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review at an unchanged head. One P2 finding: §7.6 and the Suggested.lean docstring omit the Hausdorff hypothesis that the Summary and Layer 4 carry (counterexample: a torus with doubled 2-torsion points and z -> -z). One small correction (§1.4 open restriction and the realification half of §4.5 hold by rfl at the pins, probe elaborated), one format note carried over (§7.4 Check). Seeded sample (1.1, 1.2, 2.4, 3.4, 4.3, 4.5, 5.1, 5.3, 5.4, 6.2, 6.3, 6.4, 6.6, 7.3, 7.6) checked against pinned declarations and by computation; only §7.6 cites a readable text (Demailly V §6 p. 261, read, with the three other Demailly locators and mathlib4#40727 at 9da60c2); seven textbooks paywalled and not cached. All 274 README identifiers accounted for (168 by #check, 73 read at the pins, 33 variables or names of the cited Mathlib pull requests). Automatic checks all passed; Suggested.lean elaborates clean and declares nothing; dependency check 0 problems; description agrees with the head. Overlap check against ComplexTori, ComplexKahlerGeometry, SmoothBundlesConnections, ComplexCurveModuli, QuasiregularMaps: nothing doubly owned. D01 stands.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "N01: MorseTheory's link `../ComplexManifolds/README.md#milestone-1-restriction-of-scalars-and-atlas-transport` has to point at `#layer-1-restriction-of-scalars-and-atlas-transport`.",
+    "where": "MorseTheory README line 1216, link fragment",
+    "raised": "PRREVIEW-ComplexManifolds~1"
+   }
+  ],
+  "text": "1379b86d1cd0f478"
+ }
+}
