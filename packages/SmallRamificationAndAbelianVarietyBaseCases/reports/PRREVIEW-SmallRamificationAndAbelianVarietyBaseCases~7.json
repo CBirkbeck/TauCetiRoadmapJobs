@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SmallRamificationAndAbelianVarietyBaseCases~7",
+  "head": "2deaafced4200e8ae2543c5915775d526d52b5cd",
+  "pr": 2517,
+  "folder": "SmallRamificationAndAbelianVarietyBaseCases",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 27 changed lines since 31d7cdb. Checked: the three small corrections of the previous review are repaired (later users against the Needs lines of SerreModularityByCompatibleSystems S3 and S4 and ClassicalSerreModularity at their open heads and of the two Part II roadmaps on main; the new sentence of 5.12 and the Paso 6 row recomputed against 2.1, 5.0d and 5.11, no circularity); the two format notes are carried over; title and description read against the head and the diff (33 insertions, 20 deletions, README only), no sentence contradicted. The seeded sample falls outside the changed passages except 5.12's neighbours; no locator changed. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 13 sorry warnings only. Adversarial table: 8 rows with computed values for the changed passages; the rest stand as in the previous review.",
+  "text": "f22ba34cb358e5d3"
+ }
+}
