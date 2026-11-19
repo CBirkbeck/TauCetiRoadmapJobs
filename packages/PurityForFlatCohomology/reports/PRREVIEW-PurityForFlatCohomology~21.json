@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PurityForFlatCohomology~21",
+  "head": "dcbce5fa61d33d435bb5d266cece5d68fcabbd2d",
+  "pr": 1840,
+  "folder": "PurityForFlatCohomology",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review of README.md and Suggested.lean. One finding (P2): sections 1.4-1.5 (local etale duality, local Lefschetz) are owned by EtaleDualityAndPerverseSheavesPartII on main. Sample: all 15 seeded targets checked against CS24, C19, SGA2, Gro66, dJ02 (49 locators read); Stacks tags of 1.7 and the uncertified sources not readable. Every Check and example recomputed; adversarial table has 28 rows. Automatic checks all passed, none set aside; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 15 theorems; 339 backticked library names found at the pins; 23 supplier citations resolved on main, SchemeAndStackFoundations 2.9a at its open revision head. Four small corrections (unnamed overlap with HeightsRationalPointsAndObstructions, a stale consumer bullet, two nonexistent lemma names, one sentence of the description) and three format notes.",
+  "text": "bd60fa8197dbe713"
+ }
+}
