@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GraphConnectivityAndFlows~3",
+  "head": "44f517cf3f221ca215817543375c30e2d94b80bc",
+  "pr": 2582,
+  "folder": "GraphConnectivityAndFlows",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review at an unchanged head. All 15 sampled sections and the locators of the Suggested.lean docstrings read in the texts (Diestel 6th ed. preview by OCR, Bang-Jensen-Gutin 1st ed., Schrijver's notes, Bertsekas, Papamanthou-Tollis, Frank-Gyarfas); Picard-Queyranne, Gusfield and Korte-Vygen not read. All 27 README Checks recomputed. 11 theorems tested on degenerate cases against the pinned definitions; one-tactic probe closed none; elaboration gives 11 sorry warnings only. Automatic checks all passed; dependency check 0 problems; no outside change; no overlap with open pull requests. The previous review's small correction and two format notes still stand (head unchanged).",
+  "text": "fa1002987d4d51d0",
+  "carried": {
+   "from": "44f517cf3f221ca215817543375c30e2d94b80bc",
+   "head": "44f517cf3f221ca215817543375c30e2d94b80bc",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
