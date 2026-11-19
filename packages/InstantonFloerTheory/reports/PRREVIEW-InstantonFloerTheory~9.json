@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InstantonFloerTheory~9",
+  "head": "82fa49f9b8da28c9cf91bc95ff5989cd495635c2",
+  "pr": 2596,
+  "folder": "InstantonFloerTheory",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "Full review at an unchanged head. Previous review had no finding; its five small corrections are unrepaired and carried over, with one new correction (a Check in 7.3) and one format note (docstring and Tau Ceti curvature). Seeded sample of 15 sections and the four headlines recomputed; 38 source locators read in km0807, scaduto1401, froyshov9903, cs1612 and dfl07032; Donaldson and Donaldson-Kronheimer have no open copy and were not checked. 24 library declarations elaborated at the pins; 14 suppliers' section labels resolved on main. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with no output and declares nothing; no change outside the folder.",
+  "text": "0d30dcf560d849c7",
+  "carried": {
+   "from": "82fa49f9b8da28c9cf91bc95ff5989cd495635c2",
+   "head": "8507d4be2b83b5f31c4110a954ad871f18b93858",
+   "findings": 6,
+   "lines": 36,
+   "folders": [
+    "InstantonFloerTheory"
+   ],
+   "corrections": true
+  }
+ }
+}
