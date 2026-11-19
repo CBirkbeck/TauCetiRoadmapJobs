@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ReflectionInvariantTheory~2",
+  "head": "80547df1869792c325a71885ff4141dbf99168e1",
+  "pr": 2539,
+  "folder": "ReflectionInvariantTheory",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full re-review. Earlier findings: R01-R03, C02-C04, N01 repaired; C01 deferred (D01, stands); C05 withdrawn (title fixed by the project). All 40 README source locators checked against the cached texts (Stanley1979, Steinberg1959, Steinberg1964, Springer1974, Macdonald1972, Fogarty2001, Smith1997, Bott1956, SGA1), covering the 15 seeded sample targets. Adversarial table with computed values for every sampled target and all 13 Suggested.lean declarations. Automatic checks all passed, none set aside; depcheck 200 roadmaps, 2197 edges, 0 problems. lake env lean: 11 sorry warnings only; #check @ of all 13 declarations matches the README; one-tactic probe closed none. Cross-roadmap citations resolved on main 1b7b481. Finding R01 (P2): the §3.2 claim that the open dominant chamber is a chamber of §3.1 fails when the roots do not span M.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C01: the links in LieHighestWeight (lines 120 and 902) should point at `#layer-2-pseudoreflection-groups-and-the-shephardtodd-theorem`, and the link in RootSystems (line 57) at `#layer-4-the-crystallo",
+    "where": "LieHighestWeight and RootSystems READMEs on main, links to the new Layer headings",
+    "raised": "PRREVIEW-ReflectionInvariantTheory~1"
+   }
+  ],
+  "text": "762398bcf2ba0737"
+ }
+}
