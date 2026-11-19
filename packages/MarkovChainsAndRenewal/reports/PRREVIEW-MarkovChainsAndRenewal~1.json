@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MarkovChainsAndRenewal~1",
+  "head": "1508422f27c8282690adba26107d1437edee35db",
+  "pr": 2605,
+  "folder": "MarkovChainsAndRenewal",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 7,
+  "format_notes": 2,
+  "notes": "Seeded sample of 15 sections verified against Tassion2025 at theorem level (pp. 9-95); Norris1997, Feller1971 and LastPenrose2017 not readable legally (listed as not verifiable). Automatic checks rerun: all pass; dependency check 200 roadmaps, 2196 edges, 0 problems. Suggested.lean elaborates with 12 sorry warnings only; #check of all 16 declarations compared with the README; one-tactic probe closes none. 205 cited library names resolve at the pins; no headline proved at the Tau Ceti pin. Adversarial table: 32 rows with computed values; all 42 Checks true. Overlap: no second owner; StochasticCalculus 0.6 restart corollary noted as a correction. Source independence: longest shared prose run 8 words; arrangement parallels Tassion chapters in a dependency-forced order inherited from main.",
+  "text": "a4296c9727257fac"
+ }
+}
