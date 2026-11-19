@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AbelianSurfacesModularity~8",
+  "head": "081ea3d85835eef20d09975030e03397142a8add",
+  "pr": 1746,
+  "folder": "AbelianSurfacesModularity",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 30 changed lines since cfb92db: the earlier small corrections C01 (three supplier pointers) and C02 (near adequacy cited to its owner) are repaired, N01 (four Mathlib line numbers) is carried over; the new citations GL2ModularityLifting 1.7, OrdinaryAutomorphicFormsAndModularityLiftingPartII 1.3 and EllipticCurveModularityPartIIGL2TypeAbelianVarieties 3.6 were opened at the suppliers' open heads and state what is consumed; the seeded sample was checked where it falls in the changed passages (3.1 against BCGP25 Lemma 8.3.1, 7.3 against Theorem 10.2.1); adversarial rows with computed values for 2.5, 3.1, 7.3 and 0.3; the automatic checks rerun (all 0, OK), the dependency check (0 problems, no UPWARD or CYCLE), Suggested.lean elaborated (exit 0, no declarations); the title and description read against the head, nothing contradicted. One small correction (two references left dangling by the repair). Accepted conditional on the 14 declared supplier gaps, unchanged.",
+  "text": "01d58d52181ff7d2",
+  "carried": {
+   "from": "081ea3d85835eef20d09975030e03397142a8add",
+   "head": "27ba1d85d652583bb27423d261434b9d110e0714",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "AbelianSurfacesModularity"
+   ],
+   "corrections": true
+  }
+ }
+}
