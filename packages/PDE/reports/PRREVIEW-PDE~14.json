@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PDE~14",
+  "head": "f71f9949868acaa84cde3f43301fe373f8e5df7b",
+  "pr": 1614,
+  "folder": "PDE",
+  "date": "2026-11-19",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "Full review. Previous findings R01 and R02 repaired. Whole README read; the 15 sampled sections recomputed; 10 source locators checked in tao-dispersive, meyers-1963, krylov-vmo and bauer-pauly-schomburg; about 30 Tau Ceti declarations opened at the pin 2fd255d. Findings: the pinned library already proves, on its own carriers, the Lipschitz-domain trace, extension, Rellich and Poincare-Wirtinger theorems (R01) and the Calderon-Zygmund bounds (R02) that Suggested.lean lists as headlines, and five 'not statable' entries are false at the pin (R03); all three concern text of main. Automatic checks all pass; depcheck 0 problems; Suggested.lean elaborates with 26 sorry warnings only; one-tactic probe closes none; no change outside the folder.",
+  "text": "4b41d21eef82cf77"
+ }
+}
