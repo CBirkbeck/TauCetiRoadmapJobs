@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InstantonFloerTheory~10",
+  "head": "8507d4be2b83b5f31c4110a954ad871f18b93858",
+  "pr": 2596,
+  "folder": "InstantonFloerTheory",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 36 changed lines since 82fa49f. Checked: the six small corrections of the previous review (all repaired: Froyshov Theorem 10 and Corollary 3 at p. 24 and Theorem 9 at p. 20 read in froyshov9903; Kronheimer-Mrowka Definition 7.3 and Theorem 7.7 read in km0807; Chen-Scaduto Theorem 1 read in cs1612; Omega = -d(theta) recomputed; the B(I) Check recomputed; the IFk label mapping checked against the headings and the seven citing lines on main); the previous format note on the module docstring is carried. Sampled sections 7.3 and 7.6 fall in the changed passages and were checked. Pull-request description read against the head: 84 Checks counted, supplier subsections, items 7, 8, 11 and the Suggested.lean paragraph match; no contradiction. Automatic checks rerun: all pass; depcheck 0 problems, no UPWARD or CYCLE; no change outside the folder; lake env lean on Suggested.lean exits 0 with no output (no declaration, docstring-only change). Adversarial table: 7 rows with computed values for the changed statements.",
+  "text": "9867081bf8634b44"
+ }
+}
