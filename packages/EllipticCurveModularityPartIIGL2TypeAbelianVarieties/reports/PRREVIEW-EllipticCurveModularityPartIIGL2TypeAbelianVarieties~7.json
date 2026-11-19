@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurveModularityPartIIGL2TypeAbelianVarieties~7",
+  "head": "db8093791329025a7fbf46375322ce3311dd7ab0",
+  "pr": 1036,
+  "folder": "EllipticCurveModularityPartIIGL2TypeAbelianVarieties",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 5,
+  "notes": "incremental re-review of 0 changed lines since db80937; this round read the pull request's title and description against the head: both earlier small corrections (ℚ-simple restriction; attribution of the route) are repaired and no sentence is contradicted (checked against §§3.6, 3.8, 3.9, 4.1, 4.2, 6.3, 6.4 and the supplier contracts, with computed instances X₀(11), J₀(23), J₁(13), B×B). No sampled target falls in a changed passage. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with three sorry warnings only; no change outside the folder. Five format notes carried over.",
+  "text": "59950259533fe194"
+ }
+}
