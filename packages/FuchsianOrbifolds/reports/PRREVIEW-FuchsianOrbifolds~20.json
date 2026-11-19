@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FuchsianOrbifolds~20",
+  "head": "a2aac07b09d1be57038bf44f68f671b271dc2228",
+  "pr": 2576,
+  "folder": "FuchsianOrbifolds",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample of 15 sections: statements checked against the pinned declarations; their locators (Beardon, Katok, Farkas-Kra, Miranda, Diamond-Shurman, Forster, Serre) are uncertified or have no manifest key and were not verifiable; Martin2013 Theorems 2.1-2.2 read. Gate rerun all 0 OK; depcheck 200 roadmaps, 2195 edges, 0 problems; no change outside the folder; Suggested.lean elaborates with 8 sorry warnings only; one-tactic probe closes 0 of 8; 214 README names resolved at the pins; pins-lack claims confirmed by instance search. One P2 finding: the summary's clause on PSL(2,R) point stabilizers is false as written.",
+  "text": "91663ac47f5749b8"
+ }
+}
