@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CombinatorialHeegaardFloer~7",
+  "head": "8be14e7c44828cb52c0363c53058637931ee88af",
+  "pr": 2545,
+  "folder": "CombinatorialHeegaardFloer",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 72 changed lines since 0750758. Checked: the six small corrections of the previous review (all repaired) and its format note (stands); the changed passages of sections 2.3, 3.6, 3.8, 3.9, 5.4 and Downstream consumers against OSSBOOK (11 locators) and OSS09 (4 locators), with the sampled targets 3.6 and 3.8 among them; three Tau Ceti declarations opened at the pin; GeometricTopology on main for the Part II owner; the description against the head (Check count, suppliers, imports, Lean declarations); automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with six sorry warnings only; adversarial table of six rows with computed values. Torres (1953) not readable (paywall).",
+  "text": "f84934eef17cb13a"
+ }
+}
