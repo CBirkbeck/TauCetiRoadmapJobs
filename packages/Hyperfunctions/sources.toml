@@ -1,0 +1,84 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "Hyperfunctions"
+
+[[source]]
+id = "HondaIzawaSuwa2018"
+authors = "Naofumi Honda, Takeshi Izawa, Tatsuo Suwa"
+title = "Sato hyperfunctions via relative Dolbeault cohomology"
+year = 2018
+arxiv = "1807.01831v4"
+locator_scheme = "theorem"
+locator = "Theorem 2.14"
+url = "https://arxiv.org/abs/1807.01831v4"
+fetched_from = "https://arxiv.org/pdf/1807.01831v4"
+fetched_at = "2026-11-19T20:49:43Z"
+sha256 = "b42375c6b25897300896386907c495f65b7e89d0db28dd289992926ad2636679"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v4"
+cited_for = ["Layer 0", "Layer 1", "Layer 2", "Layer 3", "Layer 4"]
+
+[[source]]
+id = "Komatsu1967"
+authors = "Hikosaburo Komatsu"
+title = "Projective and injective limits of weakly compact sequences of locally convex spaces"
+year = 1967
+doi = "10.2969/jmsj/01930366"
+locator_scheme = "theorem"
+locator = "Theorem 19"
+url = "https://www.jstage.jst.go.jp/article/jmath1948/19/3/19_3_366/_pdf"
+fetched_from = "https://www.jstage.jst.go.jp/article/jmath1948/19/3/19_3_366/_pdf"
+fetched_at = "2026-11-19T20:51:37Z"
+sha256 = "fc8d3f46995fdcc3b15b6a9f92481f1c6a05237e7c1336f92aed5d06e7d74339"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["2.0e"]
+
+[[source]]
+id = "Malgrange1957"
+authors = "Bernard Malgrange"
+title = "Faisceaux sur des variétés analytiques réelles"
+year = 1957
+venue = "Bulletin de la Société Mathématique de France 85, 231–237"
+locator_scheme = "theorem"
+locator = "Lemme 3, part a"
+url = "http://www.numdam.org/item/BSMF_1957__85__231_0/"
+fetched_from = "https://www.numdam.org/item/BSMF_1957__85__231_0.pdf"
+fetched_at = "2026-11-19T20:53:27Z"
+sha256 = "e38a31de085f31a311832c8d58d61090e3b4d2ccc97a59897828554ea88e1be5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["2.0a"]
+
+[[source]]
+id = "KashiwaraSchapira1990"
+authors = "Masaki Kashiwara, Pierre Schapira"
+title = "Sheaves on Manifolds"
+year = 1990
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-662-02661-8"
+locator_scheme = "chapter"
+locator = "Chapters III–IV"
+url = "https://doi.org/10.1007/978-3-662-02661-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 3a"]
+
+[[source]]
+id = "SatoKawaiKashiwara1973"
+authors = "Mikio Sato, Takahiro Kawai, Masaki Kashiwara"
+title = "Microfunctions and pseudo-differential equations"
+year = 1973
+venue = "Hyperfunctions and Pseudo-Differential Equations (H. Komatsu, ed.), Lecture Notes in Mathematics 287; DOI of the volume"
+doi = "10.1007/BFb0068143"
+locator_scheme = "page"
+locator = "pp. 265–529"
+url = "https://doi.org/10.1007/BFb0068143"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["Layer 3a"]
