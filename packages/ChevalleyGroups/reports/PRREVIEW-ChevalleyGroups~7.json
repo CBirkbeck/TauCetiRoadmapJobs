@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ChevalleyGroups~7",
+  "head": "bc5204364759c7d5718b4821b918d0a12f525326",
+  "pr": 2544,
+  "folder": "ChevalleyGroups",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 91 changed lines since 8b4e3f4. Previous R01 (adjoint torus and scope sentences), C01 (comparison over Z) and C02 (attribution of 5.8, 6.2) all repaired; no new problem. Changed passages recomputed (adjoint A1 over Q, F2, algebraically closed fields, G2; Frobenius over an imperfect field); new statement exists_scGroupScheme_hom_geckGroupScheme checked against the pinned kostantRootSubgroupToToral, geckRootSubgroup, geckGroupScheme and Conrad2014 Theorem 6.1.16(1). Seeded sample: 5.8 and 6.2 fall in the change (own arguments, no locator). Automatic checks all pass; dependency check 200 roadmaps, 2197 edges, 0 problems; Suggested.lean elaborates with 10 sorry warnings and no error; one-tactic probe does not close the new statement. Pull request description agrees with the head. Steinberg's Lectures (14 of 27 locators) not readable: left to the human reviewers.",
+  "text": "cc2113b632fe9554"
+ }
+}
