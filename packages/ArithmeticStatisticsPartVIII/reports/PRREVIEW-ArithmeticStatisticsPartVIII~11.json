@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticStatisticsPartVIII~11",
+  "head": "7a814c751f3267f45349eeb2af61c78cae556093",
+  "pr": 1179,
+  "folder": "ArithmeticStatisticsPartVIII",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review of the repaired head. Previous R01 (re-planned Hurwitz stability and Betti bounds) repaired: §5.16 imports InverseGaloisAndArithmeticFundamentalGroupsPartII §§0.2 and 5.3. Sample: all of §§5.12-5.22; 66 source locators read in 10 sources, none wrong; adversarial table with recomputed values (brute-force local-density moments in 10 cases, the order-24 subgroup of SL2(Z/9), point counts, constants). Cross-roadmap citations resolved on main and at the open head of ArithmeticStatisticsPartVII. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes no theorem; nine signatures compared with the README. Small corrections: titles of removed §5.16 targets still cited on main, the named downstream consumers, a guide sentence on §5.22, one sentence of the description.",
+  "text": "58cd4723cc25bfca",
+  "carried": {
+   "from": "7a814c751f3267f45349eeb2af61c78cae556093",
+   "head": "e223db6f3ad48d106bd2a009fe429d1e56a921a7",
+   "findings": 4,
+   "lines": 6,
+   "folders": [
+    "ArithmeticStatisticsPartVIII"
+   ],
+   "corrections": true
+  }
+ }
+}
