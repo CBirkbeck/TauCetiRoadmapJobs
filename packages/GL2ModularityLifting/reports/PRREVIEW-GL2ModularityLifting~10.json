@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GL2ModularityLifting~10",
+  "head": "53ba61a2020e7e2cfd27da027394ff740de0dd7b",
+  "pr": 1071,
+  "folder": "GL2ModularityLifting",
+  "date": "2026-11-18",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Previous findings R01-R03, C01-C04, N01 checked against this head: all repaired (C04 in the prose; the generated depends-on block still lists a dropped supplier). Seeded sample of 15 targets verified at the source text (42 locators in 12 sources), except Kisin's Durham paper (no readable legal copy; section 5.16 checked against the supplier target it imports). Adversarial table of 27 rows with computed values. Nine ClassicalSerreModularity targets and the main-branch supplier sections resolved; 20 library declarations opened at the pins. Dependency check: 0 problems, no UPWARD or CYCLE. Automatic checks all passed; lake env lean gives two sorry warnings only; one-tactic probe closes neither theorem; no binder lost. Wording scan of README and docstrings against 18 source texts: three statements (6.15, 8.6, 8.7) follow their source theorem clause by clause (R01, P2). One small correction (5.9 cites a supplier target stated over Q for a totally real statement) and one format note.",
+  "text": "739794b97ac9e4f2"
+ }
+}
