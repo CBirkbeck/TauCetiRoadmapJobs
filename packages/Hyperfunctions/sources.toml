@@ -82,3 +82,55 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["Layer 3a"]
+
+[[source]]
+id = "Serre1955"
+authors = "Jean-Pierre Serre"
+title = "Un théorème de dualité"
+year = 1955
+venue = "Commentarii Mathematici Helvetici 29"
+doi = "10.1007/BF02564268"
+locator_scheme = "theorem"
+locator = "Théorème 3"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0029/LOG_0005.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0029/LOG_0005.pdf"
+fetched_at = "2026-11-19T23:01:41Z"
+sha256 = "cb404387daa99bafdf913450a3c5b09f7c2356e3d58b9700f3d249b9573a1234"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["2.0f"]
+
+[[source]]
+id = "Tillmann1961"
+authors = "Heinz-Günther Tillmann"
+title = "Distributionen als Randverteilungen analytischer Funktionen. II"
+year = 1961
+venue = "Mathematische Zeitschrift 76, 5–21"
+locator_scheme = "theorem"
+locator = "Satz 3 and Satz 5"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN266833020_0076/LOG_0008.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN266833020_0076/LOG_0008.pdf"
+fetched_at = "2026-11-19T23:08:45Z"
+sha256 = "624d1ee9ddb33d42496c6a2263330ad5a622333278decf9fb30dc73c179be343"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["4.2"]
+
+[[source]]
+id = "KashiwaraSchapira1985"
+authors = "Masaki Kashiwara, Pierre Schapira"
+title = "Microlocal study of sheaves"
+year = 1985
+venue = "Astérisque 128"
+locator_scheme = "equation"
+locator = "(9.1.2)"
+url = "https://www.numdam.org/item/AST_1985__128__1_0/"
+fetched_from = "https://www.numdam.org/item/AST_1985__128__1_0.pdf"
+fetched_at = "2026-11-19T23:08:51Z"
+sha256 = "7376853891d9c22e99b45fd2b10817ac57a8f5699a6e232381533401f3be59e1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+cited_for = ["3a.3"]

@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Hyperfunctions~3",
+  "head": "73360bc506d8b96121a69be7ca48d1e589fcf7b5",
+  "pr": 2592,
+  "folder": "Hyperfunctions",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 4,
+  "notes": "Full review at the same head as the previous round. Seeded sample of 15 targets checked: 18 source locators read against the texts (14 Honda-Izawa-Suwa, Komatsu Theorems 6', 12, 19, Malgrange Lemme 3 a), all matching; targets without a locator checked by computation. Adversarial table of 36 rows with computed values. 142 library names #checked at the pins; all cross-roadmap section citations resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; one-tactic probes fail on all 7 theorems. Not read: Ito 1986, Sato-Kawai-Kashiwara 1973, Kashiwara-Schapira (uncertified).",
+  "text": "2a8db3791cbdf5ad",
+  "carried": {
+   "from": "73360bc506d8b96121a69be7ca48d1e589fcf7b5",
+   "head": "6caa42c42060ae1069248c367820f3dce0fed246",
+   "findings": 4,
+   "lines": 63,
+   "folders": [
+    "Hyperfunctions"
+   ],
+   "corrections": true
+  }
+ }
+}
