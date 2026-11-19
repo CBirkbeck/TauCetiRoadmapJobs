@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SerreWeightAndLevelOptimisation~7",
+  "head": "79248cff704f4f42e11bbfa34d5b2a7960c82713",
+  "pr": 2518,
+  "folder": "SerreWeightAndLevelOptimisation",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 16 changed lines since 514db70. Checked: the six small corrections and the format note of the previous review (four repaired, C02 and N01 partly); the changed passages of §2.11, §5.8 and §6.10 against Ribet (4.5), Buzzard Theorem 3.1 case (iii) and Khare-Wintenberger's proof of Theorem 8.4, read at their locators; the four supplier headings of HilbertModularVarietiesAndShimuraCurves on main; the consumer paragraphs against SerreModularityByCompatibleSystems and ClassicalSerreModularity at their open heads (the first has changed and now cites §2.13 and §§5.9-5.10, so the README sentence and the description are out of date: two small corrections; deferred D01 resolved); the title and description against the head; the automatic checks (all pass), the dependency check (0 problems) and the elaboration of Suggested.lean (four sorry warnings only). The Gross scan's licence is left to the human reviewers.",
+  "text": "9601b81ed5df49d8",
+  "carried": {
+   "from": "79248cff704f4f42e11bbfa34d5b2a7960c82713",
+   "head": "ff782c8894c36c9fedf5da4e306cc7c59a2d69a7",
+   "findings": 2,
+   "lines": 2,
+   "folders": [
+    "SerreWeightAndLevelOptimisation"
+   ],
+   "corrections": true
+  }
+ }
+}
