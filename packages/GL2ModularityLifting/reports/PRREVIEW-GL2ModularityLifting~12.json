@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GL2ModularityLifting~12",
+  "head": "647d6aa2ed0b7027803cd5bfaabc701b5fc7fb3a",
+  "pr": 1071,
+  "folder": "GL2ModularityLifting",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 142 changed lines since 0ba9e9a. Checked: the previous R01 (repaired: §1.7 imports ClassicalSerreModularity I.0/soluble-totally-real-base-change, read at that roadmap's open head with its Lean theorem soluble_prescribed_completions; the duplicate theorem and completion declarations are removed), C01 (partly repaired, written again as C01: the §12.2 Check gives both Paso 4 lifts weights {0,1}), N01 and N02 (repaired); the changed passages of §§1.7, 1.8, 5.3, 12.2, the supplier contracts and Downstream consumers; the seeded sample where it falls in the change (§§1.7, 7.1, 12.3) against cht, dp, pan and gee-mlt (9 locators in 4 sources); the ClassFieldTheory layers on main; the pull request text against the head. Automatic checks all pass; dependency check 0 problems, no UPWARD or CYCLE line; lake env lean on Suggested.lean gives one sorry warning only; #check and the one-tactic probe run on a copy. Adversarial table: 8 rows with computed values.",
+  "text": "c86f63407e195b78",
+  "carried": {
+   "from": "647d6aa2ed0b7027803cd5bfaabc701b5fc7fb3a",
+   "head": "1cca9ea3a4a1ecb5f4da8d151af8625ddd052909",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "GL2ModularityLifting"
+   ],
+   "corrections": true
+  }
+ }
+}
