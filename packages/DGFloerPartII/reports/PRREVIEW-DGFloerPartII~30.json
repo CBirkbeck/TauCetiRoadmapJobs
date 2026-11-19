@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DGFloerPartII~30",
+  "head": "e70436974015aab5f5c4fa81b70a7b135118ccb1",
+  "pr": 1799,
+  "folder": "DGFloerPartII",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 28 changed lines since 79b6376. Previous R01 (reduced cone owned by HomotopySpheres 3A.2), C01 (4.3 Needs omits 4.1) and N01 (IsAspherical under two names) all repaired; no new problem. Checked: the three changed passages and what cites them (no remaining use of the cone; 4.1 does not need 4.3, so no cycle; the three namespaced Tau Ceti names opened at the pin); the sampled section 4.3 against bdho-cotangent Definitions 6.11, 6.26, 6.32 and Propositions 6.29, 6.33; the pull request description against the head; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry the only warning; the automatic checks all passed. Adversarial table: 3 rows with computed values; untouched rows stand as in the previous review.",
+  "text": "69acc58a109092b6"
+ }
+}
