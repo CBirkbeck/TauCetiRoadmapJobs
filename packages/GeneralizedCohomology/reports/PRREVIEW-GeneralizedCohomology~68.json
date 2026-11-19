@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeneralizedCohomology~68",
+  "head": "8d8d4110a9d1666ccdec725e7788259559f88307",
+  "pr": 2535,
+  "folder": "GeneralizedCohomology",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 16 changed lines since aa14dec. Checked: both small corrections of the previous review are repaired (rationalHurewicz in every universe; the closing sentence of G3.9 names the formulas it supplies, each proved in G3.9); the changed G3.9 sentence against BordismFormalGroups F2.2 and TangentialBordism's citations on main; the sampled section G5.6 at its two Hatcher locators; adversarial rows with computed values for the three changed statements; Suggested.lean elaborates with seven sorry warnings only, #check of rationalHurewicz, one-tactic probes fail; automatic checks all pass; dependency check 0 problems; title and description agree with the head; nothing changed outside the folder.",
+  "text": "ced892ddb692b7fc"
+ }
+}
