@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpanningTreesAndShortestPaths~3",
+  "head": "96181f73e23f59c6938d742051380b3f76248699",
+  "pr": 2512,
+  "folder": "SpanningTreesAndShortestPaths",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 96181f7; this round checked the pull request's title and description against the head: no sentence contradicted, and the previous small correction (duality listed as a target, two Tau Ceti lemmas unstated) is repaired in the description. Checked: counts of 30 theorems and 12 definitions and the two imports; the hypotheses the description names against the Lean sections; the two Tau Ceti declarations at the pin; the three cross-roadmap citations on main; adversarial rows with computed values for the exchange criterion, Euler's theorem and the Prüfer correspondence. No seeded-sample target falls in a changed passage. Automatic checks all pass; Suggested.lean elaborates with sorry the only warning (30); dependency check 0 problems; no change outside the folder. One format note carried over (Keller-Trotter theorem numbering by edition).",
+  "text": "f26f9bfc562f4544"
+ }
+}
