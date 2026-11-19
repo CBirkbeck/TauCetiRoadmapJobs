@@ -1397,7 +1397,6 @@
       "target:3.4",
       "target:6.3",
       "roadmap:RefinedTraceMethods §1.9",
-      "gap:smooth-hkr-antisymmetrisation",
       "mathlib:Algebra.Smooth.flat",
       "mathlib:exteriorPower.alternatingMapLinearEquiv",
       "mathlib:KaehlerDifferential.linearMapEquivDerivation",
@@ -1762,7 +1761,7 @@
       "target:7.3",
       "target:7.4",
       "target:7.5",
-      "gap:smooth-hkr-antisymmetrisation",
+      "gap:etale-base-change-map",
       "mathlib:Algebra.Smooth",
       "mathlib:Algebra.Smooth.flat",
       "mathlib:Module.Projective.tensorProduct",
@@ -2110,16 +2109,15 @@
  "consumers": [],
  "gaps": [
   {
-   "slug": "smooth-hkr-antisymmetrisation",
-   "title": "The smooth HKR isomorphism is the antisymmetrisation map",
+   "slug": "etale-base-change-map",
+   "title": "The étale base change of Hochschild homology is induced by the map of algebras",
    "neededBy": [
-    "6.4",
     "7.6"
    ],
-   "detail": "RefinedTraceMethods §1.9 names ε_n and proves π_n ε_n = n! and that ε₁ is an isomorphism; KTheoryFiniteLocalFields §4.0 asserts HH_n(A/k) ≅ Ω^n_{A/k} for smooth A without naming the map. The cohomological HKR theorem needs ε_n itself to be an isomorphism over every commutative base, which in characteristic p ≤ n does not follow from π_n ε_n = n!.",
-   "needs": "A statement that ε_n : Ω^n_{A/k} → HH_n(A/k) is an isomorphism for every n, every commutative ring k and every smooth commutative k-algebra A, identified with the smooth HKR comparison of KTheoryFiniteLocalFields §4.0.",
+   "detail": "RefinedTraceMethods §1.8 states HH_n(B/k) ≅ B ⊗_A HH_n(A/k) for an étale map A → B of commutative k-algebras flat over k, without naming the map. The homological HKR theorem for smooth algebras, which the cohomological HKR theorem uses, reduces to polynomial algebras by étale localisation, and that reduction needs the B-linear extension B ⊗_A HH_n(A/k) → HH_n(B/k) of the map induced by A → B to be bijective: the naturality of the antisymmetrisation that carries B ⊗_A ε_{A,n} to ε_{B,n} is along this map.",
+   "needs": "That the isomorphism of §1.8 is inverse to the B-linear extension B ⊗_A HH_n(A/k) → HH_n(B/k) of the map induced by A → B, A and B acting through the zeroth factor of the cyclic bar complex.",
    "supplier": "RefinedTraceMethods",
-   "section": "§1.9"
+   "section": "§1.8"
   }
  ]
 }
