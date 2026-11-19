@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ImaginaryQuadraticClassNumber~9",
+  "head": "11adb8323335000651ff60fffa9e6cc419dfe50a",
+  "pr": 2593,
+  "folder": "ImaginaryQuadraticClassNumber",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review of an unchanged head. All 14 sampled sections read; all 45 Checks and the layer examples recomputed by hand (class numbers of orders, character values, L-values, Siegel-function values at i, level-two norms at D=-7,-8, the 0.965 and 0.931 bounds, heegnerGamma at six points, fourth-power cubics). 14 Shin locators verified against the text; Davenport, Stark and Cox not readable (uncertified). Key library declarations opened at the pins and every backticked library name resolved. Cross-roadmap citations resolved on main. Dependency check: 0 problems. Automatic checks all pass. Suggested.lean elaborates with six sorry warnings only; simp closes none of the six. One small correction (redundant generation hypothesis in the radicand-form theorem), one format note (old section 3.1 anchor linked from two open roadmaps).",
+  "text": "890284967e48ea6e",
+  "carried": {
+   "from": "11adb8323335000651ff60fffa9e6cc419dfe50a",
+   "head": "1eb5b47a4c2090b20e5f74a78e1721cfd2cf3db4",
+   "findings": 1,
+   "lines": 15,
+   "folders": [
+    "ImaginaryQuadraticClassNumber"
+   ],
+   "corrections": true
+  }
+ }
+}
