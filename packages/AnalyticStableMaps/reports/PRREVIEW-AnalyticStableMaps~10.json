@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AnalyticStableMaps~10",
+  "head": "19aa1535031400f13742d939f0ef635c994e156b",
+  "pr": 2529,
+  "folder": "AnalyticStableMaps",
+  "date": "2026-11-19",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review at 19aa153. The new sections (0.6-0.8, 2.24) were recomputed in full; all index identities, Checks and examples hold. Seeded sample of 15 targets plus every new Wendl 2010 and 2023 locator checked against the texts (26 locators); Ivashkovich-Shevchishin 1999 (Invent.) paywalled. Findings: Tau Ceti declarations cited by 0.6-0.8 absent at the pin 2fd255d (present on Tau Ceti main 91942aa); 0.7 duplicates HeegaardFloer F2.6e's embedded-sphere normal operator without identification; 0.6 restates ComplexKahlerGeometry 4.2's finite-rank frames. Automatic checks all passed; depcheck 0 problems; lake env lean exit 0 with 3 sorry warnings; #check @ of 4 declarations unchanged.",
+  "text": "c7803487355b71fe"
+ }
+}
