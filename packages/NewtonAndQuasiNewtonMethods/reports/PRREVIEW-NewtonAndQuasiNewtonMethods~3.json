@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NewtonAndQuasiNewtonMethods~3",
+  "head": "3a822744fc96b203813f11e44f3c069403128bbc",
+  "pr": 2573,
+  "folder": "NewtonAndQuasiNewtonMethods",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "incremental re-review of 15 changed lines since f09f9ba. Checked: the previous finding R01 (repaired: coercive Hessian, with the l2 counterexample recomputed); the three changed passages (summary clause on H_n against 5.2, the Lean statement and DennisMore1977 Theorem 8.1, recomputed in exact arithmetic on two quadratics; the Layer 1 example; the Mathlib file names at the pin); the pull request text against the head; the automatic checks (all passed), the dependency check (0 problems) and the elaboration of Suggested.lean (13 sorry warnings only). Three small corrections (one new, two carried) and one format note, none blocking.",
+  "text": "440a5c552fc5d8ac"
+ }
+}
