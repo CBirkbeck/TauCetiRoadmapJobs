@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CircleMethodThreePrimes~6",
+  "head": "0e859d655b4d1e005c1bba1f80636e8d348a76a5",
+  "pr": 2543,
+  "folder": "CircleMethodThreePrimes",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Previous review left no open finding. Seeded sample (0.1, 0.2, 1.1, 2.1, 2.2, 3.1, 3.2, 4.1, 4.2, 4.4-4.9) checked by computation: Ramanujan sums (q<60, all coprime pairs <20 incl. (0,1)), psi(19), psi(113), sum Lambda^2 <= N log N up to 2e7 (max ratio 0.940), S(1)=2.30096, S(3)=(2/3)S(1), r(N)/R(N) values, error budgets of 4.3, 4.6, 4.7. Source locators: helfgott2015 Ch. 1 (lines 327, 362-384) supports 4.8; Davenport, Iwaniec-Kowalski, Vaughan closed (not verifiable). Supplier citations resolved on main: AnalyticNumberTheoryPartI 0.32, SieveMethodsAndPrimePatterns 2.4, AutomorphicSpectralTheory 1.16. Mathlib declarations opened at the pin (8). Gate on head: all checks 0, OK; depcheck 0 problems, no UPWARD/CYCLE. Elaboration: 18 sorry warnings only; 28 signatures agree with README; one-tactic probe closed none. Corrections: 2.2 constant-1 remark ambiguous; three docstrings call threshold/constant ineffective; build guide and description overstate that every section has a source and that Layer 0 needs only Mathlib. Format note: consumed-bullet wording for AutomorphicSpectralTheory 1.16.",
+  "text": "88ebd7dd4428f347"
+ }
+}
