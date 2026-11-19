@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FormalLaurentPuiseux~4",
+  "head": "5b5d5305a20db13a0a5e16a79e4d25b054d1dd0d",
+  "pr": 2558,
+  "folder": "FormalLaurentPuiseux",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 9 changed lines since d8a98b4. Checked: the previous small correction (Lemma 1.13 of Mannaa-Coquand miscited in 5.4) is repaired, Corollary 1.10 read in the source at p. 7 (MannaaCoquand2013 lines 219-220); the sampled target 5.4 where the change falls; the pull request's description against the head and the change from main (counts of Checks, imports, pinned declarations, contract declarations and old sorry bodies recomputed; remaining-targets and locator lists compared), nothing contradicted or unstated; automatic checks rerun, all pass; supplier-order check over 200 roadmaps and 2197 edges, no problem; Suggested.lean elaborates with eight #check outputs, no error or warning; no change outside the folder. One format note carried (four remaining targets without locators). D01 stands.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C02: ClassicalArithmeticCompletion's README (main, line 5499, §3.18) must link `FormalLaurentPuiseux/README.md#layer-5-newton-polygons-and-formal-newtonpuiseux` instead of `#l5-newton-polygons-and-for",
+    "where": "ClassicalArithmeticCompletion README, §3.18 *Needs:* link anchor",
+    "raised": "PRREVIEW-FormalLaurentPuiseux~2"
+   }
+  ],
+  "text": "dc2ce0615322e9ca"
+ }
+}
