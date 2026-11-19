@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CFSGBasicProperties~8",
+  "head": "9803de263176b1c34ad42384d1e29143a4a590d7",
+  "pr": 2541,
+  "folder": "CFSGBasicProperties",
+  "date": "2026-11-19",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "Full review of an unchanged head. All 15 seeded targets checked: hohnseysen, bmw-monster, bmw-baby and conrad-tits read at their locators (17 locators); ATLAS J3/J4 files, the tcenum Ru file, the Group Presentations Library records and the FiniteSimpleGroups page read online; Steinberg, Ivanov, Griess, Bolt-Bray-Curtis not readable. Every order identity and all 37 Checks recomputed; validity predicate read at the pin against the small-field cases of 3.1. 194 code-font names resolved at the pins, 14 opened. Suggested.lean elaborates with ten sorry warnings only; one-tactic probe closed none. Automatic checks all passed; depcheck 0 problems. Three questions for the author, two source misprints, four notes for the human reviewers.",
+  "text": "c836d6e385c3d6c1"
+ }
+}
