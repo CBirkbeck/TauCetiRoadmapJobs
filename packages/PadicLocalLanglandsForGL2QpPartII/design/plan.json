@@ -2083,7 +2083,7 @@
   },
   {
    "slug": "continuous-galois-tensor-comparison",
-   "needs": "For X = C⊗_ℚ_p V^∨ with V any finite-dimensional continuous L-representation of G_ℚ_p, supply Hausdorff finite-dimensional continuous H¹ and a strict cohomology model proving H¹(X)⊗̂_L B ≅ H¹(X⊗̂_L B) for trivial Banach L-spaces B, compatible with d and the inverse limits defining the rational Drinfeld function and differential spaces without an extra derived-limit term.",
+   "needs": "in §4.4, for every finite L/ℚ_p and finite-dimensional continuous L-representation V of G_ℚ_p, put X = C⊗_ℚ_p V^∨. Prove that continuous H¹(G_ℚ_p,X) is Hausdorff and finite-dimensional over L, and provide a strict continuous-cohomology model giving, for every Fréchet L-space F with trivial action, written as a countable inverse limit of Banach L-spaces, the natural topological isomorphism H¹(G_ℚ_p,X)⊗_L F ≅ H¹(G_ℚ_p,X⊗̂_L F), so that the inverse limit contributes no derived-limit term, natural in continuous linear maps F → F′. The Sen and differential realisations of §4.4 alone do not assert this cohomological comparison; it is the additional input used in CDN20 Proposition 2.4 (lines 844–853).",
    "supplier": "PadicHodgeTheory",
    "section": "4.4"
   },
