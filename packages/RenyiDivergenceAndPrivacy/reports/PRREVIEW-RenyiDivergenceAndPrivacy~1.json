@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RenyiDivergenceAndPrivacy~1",
+  "head": "8dd2c34c24f52395cbee600a9be58beb432bbaa9",
+  "pr": 2658,
+  "folder": "RenyiDivergenceAndPrivacy",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 3,
+  "notes": "Full review. All 13 sampled sections checked: 28 locators read in arXiv:1206.2459v2 and arXiv:1702.07476v3, all agree. Adversarial pass: every theorem brute-forced on 3000 random finite instances with the ENNReal conventions of the Lean definitions (12 orders on both sides of 1), every numerical Check recomputed. 27 Mathlib and 4 Tau Ceti declarations opened at the pins. Citations of MathematicalStatisticsNonparametric (main) and StatisticalLearningTheory (open head) resolved. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 12 sorry warnings only; one-tactic probe closes none of the 12 theorems. No automatic check set aside. One scope question for the human reviewers.",
+  "text": "ba8760b0c0b48d65"
+ }
+}
