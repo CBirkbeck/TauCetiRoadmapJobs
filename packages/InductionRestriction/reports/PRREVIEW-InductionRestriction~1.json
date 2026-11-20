@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-InductionRestriction~1",
+  "head": "b28b20c3263b9402ab0b92b471e99ff490395cf2",
+  "pr": 2639,
+  "folder": "RepresentationTheory/InductionRestriction",
+  "date": "2026-11-20",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 11,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample 0.1, 2.1, 3.1, 4.2-4.4, 5.3, 7.1-7.8: Serre locators were checked against the publisher's public contents (wrong part); every other cited text is paywalled or unidentified and is listed as not verifiable. Automatic checks all passed. The dependency check reports 0 problems and there are no roadmap suppliers. Suggested.lean elaborates with sorry warnings only, and #check of all 48 declarations elaborates. One-tactic probes and a statability probe for section 7.7 were run against the pins. Tau Ceti Clifford, factor-set, pairing and multiplicity-functor declarations were opened at the pin. Overlap check: seven neighbouring roadmaps were read, nothing shared.",
+  "text": "6950092a72f4ec76"
+ }
+}
