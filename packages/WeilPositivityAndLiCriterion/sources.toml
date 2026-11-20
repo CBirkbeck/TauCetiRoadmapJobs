@@ -1,0 +1,21 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "WeilPositivityAndLiCriterion"
+
+[[source]]
+id = "lagarias-li-automorphic"
+authors = "Jeffrey C. Lagarias"
+title = "Li Coefficients for Automorphic L-Functions"
+year = 2004
+venue = "Annales Institut Fourier 57 (2007), 1689-1740."
+arxiv = "math/0404394v4"
+locator_scheme = "equation"
+locator = "(1.6)"
+url = "https://arxiv.org/abs/math/0404394v4"
+fetched_from = "https://arxiv.org/pdf/math/0404394v4"
+fetched_at = "2026-11-20T21:00:59Z"
+sha256 = "86f3d3c49f5a889f121bb1f04f67694cb9066dc8360f6988165788679594a4a7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v4"
+cited_for = ["2.1"]
