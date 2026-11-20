@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FlowMatching~2",
+  "head": "09a99b6760f1b79f2ee965024df6a631511ffd49",
+  "pr": 2501,
+  "folder": "FlowMatching",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "incremental re-review of 13 changed lines since 2a73dce: the added citation of DiracScatteringAndNonlinearFourierTransform 1.7 in 1.1, its Needs line, the Layer 1 Dependencies and the supplier contract were read against that section on main and its hypotheses checked on the fields of 1.1 (computed row for exists_isFlowOn); the previous report had no finding, its three small corrections and two format notes are carried; description checked against the head (one omission); dependency check 0 problems; Suggested.lean unchanged and elaborates with sorry warnings only; automatic checks all passed; no change outside the folder.",
+  "text": "c749738701002de5"
+ }
+}
