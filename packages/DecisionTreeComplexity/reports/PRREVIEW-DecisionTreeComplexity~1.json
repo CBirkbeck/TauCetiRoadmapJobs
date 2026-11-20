@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DecisionTreeComplexity~1",
+  "head": "2a42d5ba919e2286f1ebb776942ab5fd120bf365",
+  "pr": 2746,
+  "folder": "DecisionTreeComplexity",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All 15 sampled targets and 4.4 checked: 26 source locators read in the three texts (Buhrman-de Wolf preprint, Huang arXiv v1 and v2, Beals et al. arXiv v3); every measure, inequality and exhaustive Check recomputed by brute force on all 65814 Boolean functions on at most four variables, Huang's theorem exhaustively for n <= 4; routes of 3.2, 4.1-4.4, 5.1, 5.2 checked by hand; 35 Mathlib declarations opened at the pin; supplier citation PolynomialInterpolationAndBestApproximation 4.3 resolved at its open head; dependency check 0 problems; Suggested.lean elaborates with 17 sorry warnings only; one-tactic probe closes none; automatic checks all passed; pull-request text agrees with the head. One small correction (Huang Theorem 1.5 differs between preprint versions), one format note (file-level open scoped Classical).",
+  "text": "8405cd5dfa832346"
+ }
+}
