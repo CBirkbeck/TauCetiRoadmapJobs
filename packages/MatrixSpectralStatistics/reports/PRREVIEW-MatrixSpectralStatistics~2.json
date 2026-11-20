@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MatrixSpectralStatistics~2",
+  "head": "7201685f1acfb31b65bb132ed20772e8fab5d347",
+  "pr": 2611,
+  "folder": "OperatorTheory/MatrixSpectralStatistics",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review at the head the previous review read; its five small corrections and one format note rechecked and unrepaired, no finding. All 106 library names of the README elaborated at the pins and every Tau Ceti type compared with its prose statement; all 21 Checks and the worked examples recomputed (adversarial table of 22 rows). Seeded sample 1.1-3.4 covered. Suggested.lean elaborates with no warning. Automatic checks all passed; dependency check 0 problems; no change outside the folder. Vershynin (first edition, author's page) read at its locators; Horn-Johnson, Bhatia and Cox-Cox paywalled and listed as not verifiable. Ownership checked against RandomMatrices, PolarDecomposition, SpectralSubspacePerturbation, MathematicalStatisticsHighDimensional, KernelsAndSpectralMethods, RandomProjectionsAndSketching, OperatorMonotoneFunctionsAndMatrixMeans.",
+  "text": "6b350dbff9f55650",
+  "carried": {
+   "from": "7201685f1acfb31b65bb132ed20772e8fab5d347",
+   "head": "4e8a8e08cb7e3a8273133c7284fe48b415d26c80",
+   "findings": 5,
+   "lines": 96,
+   "folders": [
+    "OperatorTheory/MatrixSpectralStatistics"
+   ],
+   "corrections": true
+  }
+ }
+}
