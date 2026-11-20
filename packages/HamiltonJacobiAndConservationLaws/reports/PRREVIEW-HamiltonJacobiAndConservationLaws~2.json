@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HamiltonJacobiAndConservationLaws~2",
+  "head": "03ebab414928f30ce0027a15d1d90fe064c4dc5a",
+  "pr": 2801,
+  "folder": "HamiltonJacobiAndConservationLaws",
+  "date": "2026-11-20",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Adversarial pass over every section with computed values (28 table rows). Sample: the 8 Crandall-Ishii-Lions locators were read against the arXiv text and are correct; Evans (37 of 52 locators), Crandall-Evans-Lions, Ishii, Kruzkov, Bardi-Capuzzo-Dolcetta and Bardi-Evans could not be read legally and are listed as not verifiable. 15 library declarations opened at the pins; cited sections of OptimalTransport, PDE, GeometricMeasureTheory resolved on main. Dependency check: 0 problems. Automatic checks all passed; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes nothing. Findings: N-wave rate false for a C2 flux; C-infinity test class not equivalent without semicontinuity; Lax condition equivalence fails at equal limits; double ownership with open roadmap OptimalControlAndHamiltonJacobi; statable headlines absent from Suggested.lean.",
+  "text": "48737884adc03894"
+ }
+}
