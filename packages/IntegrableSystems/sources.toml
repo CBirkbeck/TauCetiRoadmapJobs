@@ -233,3 +233,40 @@ status = "certified"
 accessed = "2026-11-20"
 version_note = "arXiv v4"
 cited_for = ["1.4"]
+
+[[source]]
+id = "zung2003"
+authors = "Nguyen Tien Zung"
+title = "Symplectic Topology of Integrable Hamiltonian Systems, II: Topological Classification"
+year = 2000
+arxiv = "math/0010181v2"
+locator_scheme = "section"
+locator = "§2.3"
+url = "https://arxiv.org/abs/math/0010181v2"
+fetched_from = "https://arxiv.org/pdf/math/0010181v2"
+fetched_at = "2026-11-20T11:39:52Z"
+sha256 = "6019c8591b3f64ae35dc93ed9afaf8acd33532dc32a7c7e7db20c9197b3b4ee5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["2.6"]
+
+[[source]]
+id = "sjamaar2011"
+authors = "Reyer Sjamaar"
+title = "Hans Duistermaat's contributions to Poisson geometry"
+year = 2011
+venue = "Bull. Braz. Math. Soc. (N.S.) 42 (2011), no. 4, 783–803"
+arxiv = "1110.5627v1"
+locator_scheme = "page"
+locator = "pp. 6, 8–10"
+url = "https://arxiv.org/abs/1110.5627v1"
+fetched_from = "https://arxiv.org/pdf/1110.5627v1"
+fetched_at = "2026-11-20T11:40:04Z"
+sha256 = "2c4b985d9bf579d5b48a543337d4f6968cceca848d1a0ebd48144ffe8c318abc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["2.6", "2.7"]
