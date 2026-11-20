@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsMathieu~4",
+  "head": "c287391507c5fcb35264b76295e39bd87dc54749",
+  "pr": 2538,
+  "folder": "SpecialFunctionsMathieu",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full re-review. The previous review's finding (region of 28.28.11) and its three small corrections are repaired. One P2 finding: the classification of the point at infinity of DLMF 28.2.2 in README 1.4 is false at q = 0 and its 'rank one' has coincident characteristic roots, outside AsymptoticExpansions 10.4. Sample: the fifteen seeded targets, their DLMF locators read online in sections 28.2, 28.4, 28.6, 28.7, 28.10, 28.12, 28.14, 28.17, 28.20, 28.29, 28.30, 28.31; the eight books could not be read. Adversarial table with computed values for every sampled target and every Lean theorem group; numerical Checks of 1.2, 2.3, 3.4, 3.5, 7.3 and the Layer 2 Example recomputed. Elaboration: 48 sorry warnings, no error; one-tactic probe closes none of the 48 theorems. Dependency check: 0 problems. Automatic checks: one form report (a section heading over the #check lines) set aside as a false positive. Nothing changed outside the folder; the description agrees with the head.",
+  "text": "f7eecfbaf04f1894"
+ }
+}
