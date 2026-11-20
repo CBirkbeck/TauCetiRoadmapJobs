@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NoncommutativeFlatness~2",
+  "head": "e522272163c7daaf1468e036e1a651afdb7572f4",
+  "pr": 2618,
+  "folder": "NoncommutativeFlatness",
+  "date": "2026-11-20",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full re-review. Earlier findings: R01 (Morita n = 0) repaired, R03 (mod C owner) repaired, R02 (sorry definitions) partly repaired: 35 definitions still have sorry as their whole body and two helpers (addToLin, Bimod.liftAct) carry a false sorry obligation. Sample of 15 targets: locators read in Bass, Auslander 1955, Lazard, Chase, Krause, Stacks (24, all correct); Mitchell, Oberst-Rohrl, Stenstrom, Simson, Harada, Crawley-Boevey, Lambek and the books not readable, those statements checked by computation. Adversarial table of 32 rows with computed values. Elaboration at the pins: no errors, 207 sorry warnings. Dependency check: 0 problems. 46 Tau Ceti names resolved at the pin. Automatic checks: undeclared-name, TeX and layer-heading reports set aside as false positives; the sorry-in-definition report is real for the 35 whole-body cases.",
+  "text": "6e927956ff0f7d8b"
+ }
+}
