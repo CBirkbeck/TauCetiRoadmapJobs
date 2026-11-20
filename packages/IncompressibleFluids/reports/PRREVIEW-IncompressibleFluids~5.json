@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IncompressibleFluids~5",
+  "head": "f9143b335c426554d7bb99c4daeea29d9951c9c7",
+  "pr": 2630,
+  "folder": "IncompressibleFluids",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 60 changed lines since e704bba. Checked: the previous review's four small corrections and two format notes (all repaired); the new Lean Helmholtz-Weyl statement (true in d = 0, 1 and d >= 2, definition of HasWeakFDerivOn read at the pin) and the restated Ladyzhenskaya inequality (dilation, constant); the 10 locators the change adds, read in Ozanski-Pooley (arXiv:1708.09787) and Tao's Notes 1 and 2, all found with the stated restrictions; the pull request's description against the head; elaboration (sorry the only warning, 8 theorems); one-tactic probe on the two changed theorems; dependency check 0 problems; the automatic checks' five hits set aside as false positives. Not read: Simon 1987, Lemarie-Rieusset and the books of the previous review.",
+  "text": "02b45ceebb975054"
+ }
+}

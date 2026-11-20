@@ -1,0 +1,48 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "IncompressibleFluids"
+
+[[source]]
+id = "OP17"
+authors = "Wojciech S. Ożański, Benjamin C. Pooley"
+title = "Leray's fundamental work on the Navier-Stokes equations: a modern review of \"Sur le mouvement d'un liquide visqueux emplissant l'espace\""
+year = 2017
+venue = "Partial Differential Equations in Fluid Mechanics, London Math. Soc. Lecture Note Ser., 452, pp. 113-203, Cambridge Univ. Press, 2018"
+doi = "10.1017/9781108610575.007"
+arxiv = "1708.09787v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.1"
+url = "https://arxiv.org/abs/1708.09787v1"
+fetched_from = "https://arxiv.org/pdf/1708.09787v1"
+fetched_at = "2026-11-20T21:40:10Z"
+sha256 = "b9eeecd992f01c8e117b4db15284eb18eb6aac791f3ba305067cd408a0c85696"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["2.3"]
+
+[[source]]
+id = "TaoNotes1"
+locator_scheme = "theorem"
+locator = "Exercise 27"
+url = "https://terrytao.wordpress.com/2018/09/16/254a-notes-1-local-well-posedness-of-the-navier-stokes-equations/"
+fetched_from = "https://terrytao.wordpress.com/2018/09/16/254a-notes-1-local-well-posedness-of-the-navier-stokes-equations/"
+fetched_at = "2026-11-20T21:40:42Z"
+sha256 = "2a83cb920b5a1c07d4b1a2f1b6a922b35e7a1ed8307ea66530ef93dc03725195"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["2.3"]
+
+[[source]]
+id = "TaoNotes2"
+locator_scheme = "theorem"
+locator = "Proposition 20"
+url = "https://terrytao.wordpress.com/2018/10/02/254a-notes-2-weak-solutions-of-the-navier-stokes-equations/"
+fetched_from = "https://terrytao.wordpress.com/2018/10/02/254a-notes-2-weak-solutions-of-the-navier-stokes-equations/"
+fetched_at = "2026-11-20T21:40:43Z"
+sha256 = "6aba97846a7ca573b4d58b5a191c98f482ecd68d1b87e447f276fbcedcaa27ec"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["5.3"]
