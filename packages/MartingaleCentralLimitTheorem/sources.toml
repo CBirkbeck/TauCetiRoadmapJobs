@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MartingaleCentralLimitTheorem"
+
+[[source]]
+id = "Durrett-PTE5"
+locator_scheme = "theorem"
+locator = "Theorem 8.2.4"
+url = "https://sites.math.duke.edu/~rtd/PTE/PTE5_011119.pdf"
+fetched_from = "https://sites.math.duke.edu/~rtd/PTE/PTE5_011119.pdf"
+fetched_at = "2026-11-20T09:06:52Z"
+sha256 = "aeac36cbf5e44c53d69fa60a2d29a393e2d0e8c955ee103bd845d925fd910886"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["2.3"]
