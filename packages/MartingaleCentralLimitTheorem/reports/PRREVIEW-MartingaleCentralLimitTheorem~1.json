@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MartingaleCentralLimitTheorem~1",
+  "head": "062c1b474b9699f0abedb5c8186b80fbbf19cd51",
+  "pr": 2685,
+  "folder": "MartingaleCentralLimitTheorem",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample 1.1, 1.2, 1.3, 2.1, 2.2, 2.3, 3.1, 3.2, 4.1: all 8 Durrett locators read at the text (author-page copy), every route and Check recomputed (exact arithmetic for the Markov chain values), no mathematical defect. 17 library declarations opened at the pins. Dependency check: 0 problems. Automatic checks all passed; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes nothing. The one finding (P2): the supplier citations 'MarkovChainsAndRenewal Layer 2, items 3 and 4, Layer 3, item 2' use item ids that the open revision #2605 of that roadmap replaces by sections 2.3, 2.4, 3.2 with no old-to-new map. McLeish 1974, Brown 1971 and Hall-Heyde 1980 could not be read (attributions without locators). The sources service recorded Durrett-PTE5 in the package manifest when it fetched the text.",
+  "text": "a149ad0fd3da18ee"
+ }
+}
