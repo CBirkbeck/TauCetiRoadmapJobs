@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ContactGeometry~1",
+  "head": "b74d3565027f49b653dcb476ffe99bf2d8587a35",
+  "pr": 2684,
+  "folder": "SymplecticGeometry/ContactGeometry",
+  "date": "2026-11-20",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 7,
+  "format_notes": 1,
+  "notes": "Seeded sample of 15 targets (1.2, 1.4, 2.1, 2.2, 2.3, 3.2, 3.3, 4.2, 4.3, 5.1, 5.3, 5.4, 5.5, 6.1, 6.4) checked by computation; locators checked in the Courte-Guillermou notes (8 citations, pp. 33-38) and Kriegl-Michor Prop. 43.18 (pp. 471-474); Geiges 2008 and Gray 1959 paywalled, Geiges survey arXiv math/0307242 read instead. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 6 sorry warnings; all 122 cited library names resolve at the pin; a relative Gray statement elaborates at the pins (R02). Findings: false front-determination example (R01), statable relative Gray headline absent (R02), Grenoble locator unsupported for 4.1/2.1/2.3/1.2 (R03), CotangentLagrangian C1/C2.2 dropped by open revision #2687 without mapping (R04).",
+  "text": "b0bde3d4a7b73075",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C06: `TauCetiRoadmap/SymplecticGeometry/README.md`, lines 70–76, must point its `#cg1--…`, `#cg4--…`, `#cg5--…` and `#cg6--…` links at the Layer 1, 4, 5 and 6 headings of this README.",
+    "where": "SymplecticGeometry family README links to removed CGk heading anchors",
+    "raised": "PRREVIEW-ContactGeometry~1"
+   }
+  ]
+ }
+}

@@ -1,0 +1,55 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ContactGeometry"
+
+[[source]]
+id = "CourteGuillermouNotes"
+authors = "Sylvain Courte and Stéphane Guillermou"
+title = "Introduction to symplectic and contact geometry"
+year = 2018
+venue = "Course notes, Université Grenoble Alpes"
+locator_scheme = "page"
+locator = "34-38"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~courtes/cours.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~courtes/cours.pdf"
+fetched_at = "2026-11-20T09:11:11Z"
+sha256 = "553e21d5515b49293913cec6f05c32e551de83f6d4db340f5e40c5ae28b26eca"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["1.1", "1.3", "2.2", "3.1", "3.2", "3.3", "3.4", "5.1", "5.3", "5.5", "6.2"]
+
+[[source]]
+id = "GeigesHandbook"
+authors = "Hansjörg Geiges"
+title = "Contact geometry"
+year = 2003
+venue = "Handbook of Differential Geometry vol. 2 (F.J.E. Dillen and L.C.A. Verstraelen, eds.), North-Holland, Amsterdam (2006), pp. 315-382"
+arxiv = "math/0307242v2"
+locator_scheme = "theorem"
+locator = "Theorem 2.27"
+url = "https://arxiv.org/abs/math/0307242v2"
+fetched_from = "https://arxiv.org/pdf/math/0307242v2"
+fetched_at = "2026-11-20T09:11:16Z"
+sha256 = "e2c1c1789b6b8e005bd2293766738c09ec86eb3dd8ebb59e734eba22d50207bf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["1.2", "1.3", "3.2", "3.4", "5.1", "5.2", "Layer 5 Examples"]
+
+[[source]]
+id = "KrieglMichor1997"
+authors = "Andreas Kriegl and Peter W. Michor"
+title = "The Convenient Setting of Global Analysis"
+year = 1997
+venue = "American Mathematical Society"
+locator_scheme = "theorem"
+locator = "Proposition 43.18"
+url = "https://www.mat.univie.ac.at/~michor/apbook.pdf"
+fetched_from = "https://www.mat.univie.ac.at/~michor/apbook.pdf"
+fetched_at = "2026-11-20T09:12:31Z"
+sha256 = "261a253178b431534b986f7421e85511ed6efd26a6ec64059136fd7c90dfaa14"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["5.3", "5.4"]
