@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IntegrableSystems~24",
+  "head": "3bea9757701fb907839850b36e1717d67956b72a",
+  "pr": 2691,
+  "folder": "SymplecticGeometry/IntegrableSystems",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full re-review. The previous round's findings are repaired except the Duistermaat locator (partly). One finding (P2): the section 5.4 cup-length bound lacks nonemptiness and is false for an empty S. Seeded sample checked against lmv Thm 2.1/Rem 2.2, miranda-zung 2.1-2.3, cds Thms 18.12/20.10/24.1, egms II.A/III.B (p. 10), lecalvez-wang Thm 1, smale1959 Thm B, gramain1973 Thm 1; arnold-mmcm, Marsden-Ratiu, Duistermaat, Conley-Zehnder, Epstein and Spanier are uncertified. 139 library names resolved at the pins (96 by #check, 43 read at source). Cross-roadmap citations resolved on main and at the CotangentLagrangian #2687 and HamiltonianReduction #2690 heads. Automatic checks all passed; depcheck 0 problems; elaboration gives 4 sorry warnings only; one-tactic probe closes nothing; adversarial table with computed values in the report.",
+  "text": "6ca96480b5aaf4ee",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "N01: these two blocks are generated, not written in the description's prose.",
+    "where": "the tool that generates the description's depends-on and merge-order blocks",
+    "raised": "PRREVIEW-IntegrableSystems~24"
+   }
+  ]
+ }
+}
