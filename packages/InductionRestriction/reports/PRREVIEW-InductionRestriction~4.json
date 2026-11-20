@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-InductionRestriction~4",
+  "head": "61fab9de50ab9a472b413779b5a47d33ae3dc0d7",
+  "pr": 2639,
+  "folder": "RepresentationTheory/InductionRestriction",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 3,
+  "notes": "Full review of the same head the previous round read. One P2 finding: the almost-conjugacy criterion of 2.1 omits the finiteness of G (counterexample: finitary symmetric and alternating groups, Nat.card junk values). Seeded sample (0.1, 2.1, 2.3, 3.1, 4.1-4.4, 5.1, 5.2, 7.3, 7.4, 7.6-7.8) and all other sections recomputed by hand; Weibel2013 read at its locators (lines 1932-1981); Isaacs, Curtis-Reiner, Serre, Alperin-Bell and Mackey 1951 not readable legally (chapter titles of Isaacs and Serre confirmed from public listings; the Alperin-Bell chapter number does not match its listing). About 35 pinned declarations opened in Tau Ceti and Mathlib. Suggested.lean elaborates with 14 sorry warnings only; one-tactic probe: none of the 14 closes by rfl, simp or infer_instance, ker_projection_eq_map closes by QuotientGroup.ker_lift; three further probes (finite biproducts in Rep, the 7.4 corollary, the finite-index form of the correspondence) elaborated. Dependency check: 0 problems. Automatic checks all passed; three leads set aside as false positives. Previous round's C01 and N01 unrepaired and carried over. No change outside the folder.",
+  "text": "11a9aa2bef4a8366"
+ }
+}
