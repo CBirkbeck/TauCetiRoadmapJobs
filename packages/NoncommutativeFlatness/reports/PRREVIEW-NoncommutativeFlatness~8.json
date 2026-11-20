@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NoncommutativeFlatness~8",
+  "head": "977517738bdf360c6ea62254ce4f2c6dcc1cf316",
+  "pr": 2618,
+  "folder": "NoncommutativeFlatness",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review of a head that only reorders the README (sorted lines differ in three heading/link lines; Suggested.lean unchanged). All 34 subsections read; Checks and worked examples recomputed; adversarial table of 33 rows covering the 15 sampled targets and the headline theorems. Source locators read: Bass, Auslander 1955, Lazard, Chase, Sandomierski, Krause (arXiv), Stacks 058D, Cortes-Izurdiaga (21 locators, all correct); the other sources could not be read from accepted hosts and are listed as not verifiable. Suggested.lean elaborates at the pins with 203 sorry warnings and no error; one-tactic probe: one sorry instance closes by inferInstance (C01). Dependency check: 0 problems. Cross-roadmap citations resolved on main (ArtinAlgebras, SpectralSequencesAndConvergencePartII, OperatorKTheory, DerivedModuleAlgebra). Automatic check hits examined and set aside as false positives (code spans wrapping lines, Prop-valued instances, proof-field sorries, a subsection heading); letI in two statements kept as a format note. One question for the author on the generality of the Small-Fisher step in 4.3; four points for the human reviewers.",
+  "text": "6ade501feefaf82e"
+ }
+}
