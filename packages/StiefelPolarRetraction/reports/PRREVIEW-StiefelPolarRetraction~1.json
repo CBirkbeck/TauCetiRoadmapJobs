@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StiefelPolarRetraction~1",
+  "head": "6e228ccf5a3c08f579348e6b6543539613a97c2a",
+  "pr": 2815,
+  "folder": "StiefelPolarRetraction",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All 15 sampled targets plus 4.2 recomputed by hand and numerically (random real and complex instances, both iterations at their step-size limits); all hold. One P2: the scope section's claim that the quintic Newton-Schulz map converges only on (0, 1] is false. Locators read in Boumal 2023 (5), Boumal-Absil-Cartis arXiv v2 (4) and Su-Huang arXiv v1 (8); Li's report could not be read from a legal place (0 of 8), listed as not verifiable. Supplier citations resolved on main and at the open heads; dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with 12 sorry warnings only; one-tactic probe closes none of the 12 theorems.",
+  "text": "8f2b4fcc3e10eee4"
+ }
+}

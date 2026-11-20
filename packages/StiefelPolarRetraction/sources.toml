@@ -1,0 +1,52 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "StiefelPolarRetraction"
+
+[[source]]
+id = "BoumalAbsilCartis2019"
+authors = "Nicolas Boumal, P. -A. Absil, Coralia Cartis"
+title = "Global rates of convergence for nonconvex optimization on manifolds"
+year = 2016
+doi = "10.1093/imanum/drx080"
+arxiv = "1605.08101v2"
+locator_scheme = "theorem"
+locator = "Lemma 4"
+url = "https://arxiv.org/abs/1605.08101v2"
+fetched_from = "https://arxiv.org/pdf/1605.08101v2"
+fetched_at = "2026-11-20T23:29:57Z"
+sha256 = "9957d7ebd08f03d2eaa90022c2b81748bdbcf505731c95077c211377e22e3420"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["3.1"]
+
+[[source]]
+id = "SuHuang2026"
+authors = "Yuqiu Su, Wen Huang"
+title = "An Inexact Riemannian Gradient Descent Algorithm on the Stiefel Manifold with One Newton-Schulz Iteration"
+year = 2026
+arxiv = "2608.22774v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.8"
+url = "https://arxiv.org/abs/2608.22774v1"
+fetched_from = "https://arxiv.org/pdf/2608.22774v1"
+fetched_at = "2026-11-20T23:30:05Z"
+sha256 = "e336a4b487b5edaef2ac56f20e45906628e208a5ff3229e4d2713e839f19e599"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["5"]
+
+[[source]]
+id = "Boumal2023"
+locator_scheme = "equation"
+locator = "(7.24)"
+url = "https://www.nicolasboumal.net/book/IntroOptimManifolds_Boumal_2023.pdf"
+fetched_from = "https://www.nicolasboumal.net/book/IntroOptimManifolds_Boumal_2023.pdf"
+fetched_at = "2026-11-20T23:30:18Z"
+sha256 = "95e9c219298bcf718493885ba6f00cbcc95474e34fa8e4b0bf363e6e07f1b71b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["1.1"]
