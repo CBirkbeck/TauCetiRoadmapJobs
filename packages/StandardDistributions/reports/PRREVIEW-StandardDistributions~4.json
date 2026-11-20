@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StandardDistributions~4",
+  "head": "44508075e1740475e8bcb4f2bafb073b857da3b7",
+  "pr": 2682,
+  "folder": "StandardDistributions",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 125 changed lines since b0d099d (README only: chapter and section locators, the R documentation locator of 10.17, the Pareto natural moments of 1.11 as a corollary, three sentences on sources). Previous small corrections: C02 and C03 repaired, C01 partly (34 book citations still without chapter or section; carried as a small correction). Changed passages recomputed with values (Pareto t=2, r=4: 8/3, 8, 32, divergence at n=4; LKJ block shape; tilting; the sampled sections 1.7, 1.10, 3.8, 3.10, 10.5, 10.9, 13.3, 13.5 where the diff touches them); the pinned Pareto theorems and Real.rpow_natCast opened; RNoncentralBetaDoc lines 85-88 and 122-123 read. Added chapter numbers into books not in the sources cache are listed as not verifiable. Automatic checks all passed, none set aside; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged and elaborates with 13 sorry warnings only. The pull request's description was checked against the head (counts of Checks, sections, imports, library names, Lean declarations kept and added, open targets): no contradiction, nothing unstated.",
+  "text": "412372a2ae29d32e",
+  "carried": {
+   "from": "44508075e1740475e8bcb4f2bafb073b857da3b7",
+   "head": "b35df6e97609925a2a10cf5e01b122231b86c543",
+   "findings": 1,
+   "lines": 86,
+   "folders": [
+    "StandardDistributions"
+   ],
+   "corrections": true
+  }
+ }
+}
