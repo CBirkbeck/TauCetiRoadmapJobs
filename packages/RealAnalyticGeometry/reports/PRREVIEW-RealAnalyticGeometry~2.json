@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RealAnalyticGeometry~2",
+  "head": "63e5e5d930c3d9422d2dee8673600da503c51639",
+  "pr": 2634,
+  "folder": "RealAnalyticGeometry",
+  "date": "2026-11-20",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "Full re-review; all eleven earlier findings repaired except the deferred anchor link (D01, stands). Seeded sample of 15 targets checked against the Lojasiewicz1964 text and page images, Demailly VIII Th. 3.2 and 4.5, Forstneric2018 section 2.1 and Whitney-Bruhat section 1 Prop. 1. Automatic checks all passed; depcheck 0 problems; no change outside the folder. Suggested.lean elaborated (six sorry warnings only), #check of all 20 declarations, one-tactic probe closed nothing. A probe stating Cartan A/B at the pins elaborated (R02). All 182 dotted library names resolve at the pins. Grauert 1958 and both Hormander texts are uncertified and were not read.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C05: ComplexComparisonPartII's link (README line 245 on main, line 4744 at the head of its open revision) should point at `../RealAnalyticGeometry/README.md#31-weighted-estimates-stein-criteria-and-ap",
+    "where": "ComplexComparisonPartII README's link to RealAnalyticGeometry §3.1 anchor",
+    "raised": "PRREVIEW-RealAnalyticGeometry~1"
+   }
+  ],
+  "text": "bec61dd837677f4a"
+ }
+}
