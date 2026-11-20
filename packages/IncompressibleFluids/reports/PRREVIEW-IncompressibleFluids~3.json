@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IncompressibleFluids~3",
+  "head": "e704bbaebab630c12a3a231e3b205e603963fa3e",
+  "pr": 2630,
+  "folder": "IncompressibleFluids",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full re-review. The four findings of the previous review are repaired (locators added, overlap with IncompressibleFlows stated, Aubin-Lions stated in Lean, no sorry inside a definition or instance); the remainder of the locator finding is a small correction. Adversarial pass over all 24 sections and the conventions with computed values; no false statement found. Sources: 19 of 46 locators read at the text (Ozanski-Pooley, Tao's Notes 1-3, Constantin-Seregin, Grafakos-Oh, Crippa-Stefani); Bedrossian-Vicol, Majda-Bertozzi, Lemarie-Rieusset, Lions, Grafakos, Galdi, Wang and Danchin could not be read legally. 36 library declarations opened at the pins; PDE, OneParameterSemigroups and CompressibleEulerEquations citations resolved. Dependency check: 0 problems. Suggested.lean elaborates with sorry the only warning (7 theorems); one-tactic probe closes none. Two automatic checks set aside as false positives (a code span wrapped over a line break; a scope bullet naming IncompressibleFlows without citing it). For the humans: single ownership against the open IncompressibleFlows, and the unread sources.",
+  "text": "f0d9794284c28251"
+ }
+}
