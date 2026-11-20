@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CotangentLagrangian~26",
+  "head": "1aad4171a55d77daa842605f28b4c94563537e2e",
+  "pr": 2687,
+  "folder": "SymplecticGeometry/CotangentLagrangian",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 2 changed lines since 39183a0. Checked: the changed consumer citation (IntegrableSystems I5.2) resolved on main and against the former-numbering mapping of that roadmap's open revision; the sign-change claim of the bullet computed on S = qQ; the previous small correction (anchors sentence of the description) repaired; the description against this head (one sentence out of date, C01); the two format notes carried over. No seeded-sample target falls in the changed line. Automatic checks rerun, all pass; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with eight sorry warnings only; no change outside the folder.",
+  "text": "6f2d280e6d17bc9f",
+  "carried": {
+   "from": "1aad4171a55d77daa842605f28b4c94563537e2e",
+   "head": "1aad4171a55d77daa842605f28b4c94563537e2e",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
