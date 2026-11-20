@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OptimalControlAndHamiltonJacobi~2",
+  "head": "102e2f49fb2ab1c7dcb92695367edc80406b0760",
+  "pr": 2733,
+  "folder": "OptimalControlAndHamiltonJacobi",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "incremental re-review of 66 changed lines since 3145b94. Checked: R01 repaired (1.2 and the first estimate of 1.3 reduced to DiracScatteringAndNonlinearFourierTransform §1.7, read on main and at its open head; hypotheses of the reduction recomputed on five instances), previous C01 and N01 repaired (both Checks recomputed); 7 adversarial rows with values; 3 library declarations opened at the pins; the changed passages contain no source locator; dependency check 0 problems; automatic checks all pass; Suggested.lean unchanged and elaborates with 9 sorry warnings only; pull request text agrees with the head. Two small corrections: stale ODE.picard in the Layer 1 Dependencies and Mathlib contract, and the integrability of the velocity dropped from the route of 1.2.",
+  "text": "d9e51507f73d1a81"
+ }
+}
