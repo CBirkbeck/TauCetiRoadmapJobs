@@ -69,3 +69,20 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["1.1", "1.2", "1.3", "3.1", "3.2", "3.3", "3.4", "3.6", "5.3", "6.1", "6.4", "6.7", "6.8"]
+
+[[source]]
+id = "hecke-zetafunktionen-ii"
+authors = "Erich Hecke"
+title = "Eine neue Art von Zetafunktionen und ihre Beziehungen zur Verteilung der Primzahlen (Zweite Mitteilung)"
+year = 1920
+venue = "Mathematische Zeitschrift 6 (1920), 11-51"
+locator_scheme = "section"
+locator = "§6, (45), p. 35; §7, (46), p. 35; §9, p. 44"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN266833020_0006/LOG_0008.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN266833020_0006/LOG_0008.pdf"
+fetched_at = "2026-11-20T04:22:56Z"
+sha256 = "2318a0849a0c0084e0c8bc8be09a26c681efbcbf560df27d148326dc9c494759"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["5.4", "6.9", "7.3", "7.4", "7.5"]
