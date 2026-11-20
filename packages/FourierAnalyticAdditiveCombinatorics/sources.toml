@@ -1,0 +1,33 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FourierAnalyticAdditiveCombinatorics"
+
+[[source]]
+id = "Zhao2023"
+locator_scheme = "theorem"
+locator = "Remark 6.2.2"
+url = "https://yufeizhao.com/gtacbook/gtacbook.pdf"
+fetched_from = "https://yufeizhao.com/gtacbook/gtacbook.pdf"
+fetched_at = "2026-11-20T21:31:36Z"
+sha256 = "51bc7423e358a1bd0f327d63633b81061ca45cc7ec481c876374ba3f08592b50"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["2.2"]
+
+[[source]]
+id = "CrootLevPach2016"
+authors = "Ernie Croot, Vsevolod Lev, Peter Pach"
+title = "Progression-free sets in Z_4^n are exponentially small"
+year = 2016
+arxiv = "1605.01506v2"
+locator_scheme = "theorem"
+locator = "Lemma 1"
+url = "https://arxiv.org/abs/1605.01506v2"
+fetched_from = "https://arxiv.org/pdf/1605.01506v2"
+fetched_at = "2026-11-20T21:34:15Z"
+sha256 = "52f25ee520e410de96e5170b3b75a54dc73359d883e0ef953e778f4d7f8a5ef6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["3.2"]
