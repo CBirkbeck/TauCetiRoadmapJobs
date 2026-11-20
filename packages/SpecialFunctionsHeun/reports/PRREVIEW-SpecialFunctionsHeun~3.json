@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsHeun~3",
+  "head": "05d48bda0a478324ce1e4d5e39d7addc6721bffd",
+  "pr": 2540,
+  "folder": "SpecialFunctionsHeun",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review of a repaired head. All earlier findings (R01-R06, C01-C05, N01-N02) are repaired. One new P2: the first two bullets of 5.3 fail when alpha or beta is a nonpositive integer (witness at a=3, alpha=-1, q=-12.2827). Sample of 15 targets checked: 78 DLMF equations and five Maier statements read at their locators; Ronveaux, Kristensson, Haraoka, IKSY, Olver and Whittaker-Watson could not be read legally. Every sampled target, headline and Check recomputed numerically (local solutions, transformations, 192-orbit over Q, eigenvalues with zero counts, orthogonality quadratures, kernel equation, confluence limit, reductions). Suggested.lean elaborates with 36 sorry warnings only; one-tactic probe closes none; dependency check 0 problems; one automatic check set aside as a false positive (the section comment above the #check lines). Two source errors in DLMF recorded (31.10.8; the Kummer count in 31.3(iii)).",
+  "text": "bf08531fc5d96d97"
+ }
+}
