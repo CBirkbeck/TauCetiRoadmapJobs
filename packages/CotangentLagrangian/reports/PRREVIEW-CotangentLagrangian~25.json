@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CotangentLagrangian~25",
+  "head": "39183a0b5b11218989276198892d7fa3793e92c7",
+  "pr": 2687,
+  "folder": "SymplecticGeometry/CotangentLagrangian",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 75 changed lines since 2544fed. Checked: the five small corrections of the previous review, all repaired (former-numbering paragraph against the README on main; Gotay Local Uniqueness Theorem at p. 111 and its proof at p. 113 and Cannas da Silva Thm. 8.6 read in the texts; the four relative Poincare declarations opened in the pinned Tau Ceti; consumer citations resolved in HamiltonianReduction and IntegrableSystems on main and at the open head); the restored anchors against the family index, which settles deferred D01; the description against the head (one sentence out of date); the automatic checks rerun, all pass; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning. The seeded sample fell in the changed passages at 4.1 and 4.8, both checked with computed instances.",
+  "text": "2730a294d8cdc218",
+  "carried": {
+   "from": "39183a0b5b11218989276198892d7fa3793e92c7",
+   "head": "39183a0b5b11218989276198892d7fa3793e92c7",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
