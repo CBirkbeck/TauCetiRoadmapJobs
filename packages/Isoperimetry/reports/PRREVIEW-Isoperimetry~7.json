@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Isoperimetry~7",
+  "head": "ec70c4707a4327b8a08e28991ea1658102479f78",
+  "pr": 2597,
+  "folder": "Isoperimetry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since ec70c47. Checked the pull request's description sentence by sentence against the head and against the roadmap on main: the form, the kept Layer 6 anchor and RiemannianGeometry's two links, the counts (50 Checks in 20 sections, 18 examples, 159 Tau Ceti declarations named), the quoted Checks (recomputed: nested balls sqrt(12 pi) < 4 sqrt(pi); Cantor circle pi/2 against pi; punctured ball), the locators by section, the suppliers and consumers, the eight restated statements, and the Suggested.lean account (six Tau Ceti imports, periodic_wirtinger removed with TauCeti.integral_norm_sub_average_sq_le at the pin, five declarations added, one restated, three kept verbatim). The previous small correction C01 is repaired. Automatic checks all passed; dependency check 182 roadmaps, 2068 edges, 0 problems; nothing changed outside the folder; Suggested.lean elaborates with nine sorry warnings only. The seeded sample falls in no changed passage. Licence questions on the cited prior formalizations and the Maggi extract are left to the human reviewers.",
+  "text": "9c559aae50c2d463"
+ }
+}
