@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LieGroups~7",
+  "head": "244e7821d8c031013ab0cd5c062c931070eb7a90",
+  "pr": 2642,
+  "folder": "RepresentationTheory/LieGroups",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "Full re-review: every point of the previous review (R01, R02, C01-C06, N01, N02) is repaired. Seeded sample checked: 0.1, 0.4, 3.1, 3.2, 3.3, 4.1, 4.3, 5.2, 6.1, 6.5, 6.6, 7.12, 8.2, 8.4, 9.2. Locators checked against kirillov2008, neeb2015, knapp2002 and heins2025; Bump, Brocker-tom Dieck, Hall and Humphreys are uncertified. Gate passes (worker run and own rerun); depcheck reports 0 problems; Suggested.lean elaborates with 22 sorry warnings only; the one-tactic probe closes nothing; a separate probe shows exists_holomorphic_extension follows from its hypothesis applied to GL(V). Adversarial table: 36 rows with computed values.",
+  "text": "f24530ffb0e5497b"
+ }
+}
