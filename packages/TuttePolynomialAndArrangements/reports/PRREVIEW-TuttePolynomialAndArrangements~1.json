@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TuttePolynomialAndArrangements~1",
+  "head": "e696d2dfe1714e7d38b312155c76be8d6073ded4",
+  "pr": 2729,
+  "folder": "TuttePolynomialAndArrangements",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review. All 15 sampled sections recomputed by hand (adversarial table in the report). 23 locators read in the text (12 in Ardila arXiv:1409.2562v2, 11 in Ellis-Monaghan-Merino arXiv:0803.3079v2), all supporting the statements; the 17 locators into Stanley's notes could not be read through a legal source and are listed as not verifiable. About 35 Mathlib and Tau Ceti declarations opened at the pins, all present as described. Cross-roadmap scope statements resolved on main (GeometricTopology 4.4.5, GraphConnectivityAndFlows 7.4 and 8.1-8.5) and at the open heads of SpanningTreesAndShortestPaths, MatroidOptimization, GraphColouring and PseudolineArrangementsAndOrientedMatroids. Automatic checks all passed; dependency check: 0 problems; Suggested.lean elaborates with 18 sorry warnings only; none of the 18 theorems closes with rfl, simp (with the definitions unfolded) or infer_instance. No change outside the folder.",
+  "text": "14e6b9a85c691698"
+ }
+}
