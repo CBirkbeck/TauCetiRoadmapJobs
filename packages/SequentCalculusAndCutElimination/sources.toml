@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SequentCalculusAndCutElimination"
+
+[[source]]
+id = "Buss1998"
+locator_scheme = "theorem"
+locator = "Theorem 2.4.2"
+url = "https://mathweb.ucsd.edu/~sbuss/ResearchWeb/handbookI/ChapterI.pdf"
+fetched_from = "https://mathweb.ucsd.edu/~sbuss/ResearchWeb/handbookI/ChapterI.pdf"
+fetched_at = "2026-11-20T14:22:09Z"
+sha256 = "dc46c72c5e3f821b6cbcf52f9bf2d04f867c5e7f9b382d3dbae494369caa6021"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.3"]

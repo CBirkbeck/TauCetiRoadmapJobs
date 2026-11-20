@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SequentCalculusAndCutElimination~1",
+  "head": "8bb38944fefd3d11b379daaf5afd5a90392cdb7d",
+  "pr": 2724,
+  "folder": "SequentCalculusAndCutElimination",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All 14 sampled targets recomputed (reduction lemma, one-rank step, tower bound, consistency-property clauses against the pinned Tau Ceti structure, Herbrand in both forms); propositional height Checks reproduced by an independent exhaustive search over 65,536 sequents; 10 Buss locators read at the text; 13 Gallier locators and the Negri-von Plato attribution not verifiable (no accepted copy), listed for the human reviewers. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 7 theorems; 21 signatures compared with the README.",
+  "text": "2d2d201dc74ed681"
+ }
+}
