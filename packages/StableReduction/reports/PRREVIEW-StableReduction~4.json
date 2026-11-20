@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StableReduction~4",
+  "head": "d56ae5b9f3e534de2e6cd8447fd732c42ae06215",
+  "pr": 2669,
+  "folder": "StableReduction",
+  "date": "2026-11-20",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full re-review; all previous findings repaired. Seeded sample of 15 targets checked against Stacks Ch. 31, 53, 54, 55, 109, Knudsen II, Behrend-Manin, Deligne-Mumford, Fulton-Pandharipande and SGA 1 (57 locators). Findings: relative Proj base change/affine charts/Veronese owned twice (here and SchemeAndStackFoundations 0.3 on main); 2.2 genus invariance without H0 = kappa(s) (twisted-cubic flat limit); 5.3 prestable-model criterion without properness; Summary tail/bridge gloss counts self-nodal rational components. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with only sorry warnings; no change outside the folder.",
+  "text": "ed05af981edd56ae",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "The review's second item for the human reviewers (it has no F, C or N number): NeronModelsAndSemistableAbelianVarieties on main (§6.14, README lines 4524–4531, and the consumer entry at line 4600) cit",
+    "where": "NeronModelsAndSemistableAbelianVarieties README, §6.14 and its StableReduction consumer entry",
+    "raised": "PRREVIEW-StableReduction~4"
+   }
+  ]
+ }
+}
