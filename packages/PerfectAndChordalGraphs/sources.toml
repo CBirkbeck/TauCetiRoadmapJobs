@@ -1,0 +1,41 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PerfectAndChordalGraphs"
+
+[[source]]
+id = "VandenbergheAndersen2014"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://www.seas.ucla.edu/~vandenbe/publications/chordalsdp.pdf"
+fetched_from = "https://www.seas.ucla.edu/~vandenbe/publications/chordalsdp.pdf"
+fetched_at = "2026-11-20T10:59:17Z"
+sha256 = "4adfe6c2a014d0ed2ff4ca6ee629b3bd9aa48b6a597fb42d1b0401a79d89d55c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["1.2"]
+
+[[source]]
+id = "Diestel6Ch5"
+locator_scheme = "theorem"
+locator = "Theorem 5.5.4"
+url = "https://www.math.uni-hamburg.de/%68ome/diestel/books/graph.theory/preview/Ch5.pdf"
+fetched_from = "https://www.math.uni-hamburg.de/%68ome/diestel/books/graph.theory/preview/Ch5.pdf"
+fetched_at = "2026-11-20T10:59:35Z"
+sha256 = "d6aa599b28b33ba4ccd8090e7ae53cfad6b30b215d9217d072c7ee8fb338f24d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["4.2"]
+
+[[source]]
+id = "Diestel6Contents"
+locator_scheme = "page"
+locator = "contents"
+url = "https://www.math.uni-hamburg.de/%68ome/diestel/books/graph.theory/preview/Contents.pdf"
+fetched_from = "https://www.math.uni-hamburg.de/%68ome/diestel/books/graph.theory/preview/Contents.pdf"
+fetched_at = "2026-11-20T10:59:47Z"
+sha256 = "d90ea7fcbc19b1a187c7b6193b9e2aa65cd5a50289bab902f88ce643b76534ed"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["arrangement"]
