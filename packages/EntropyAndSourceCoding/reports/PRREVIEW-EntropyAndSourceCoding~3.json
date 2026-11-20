@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EntropyAndSourceCoding~3",
+  "head": "2d8993b516ffbc587518495eb388a58e6315beab",
+  "pr": 2719,
+  "folder": "EntropyAndSourceCoding",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since 2d8993b; this round checked the pull request's title and description against the head: every sentence, count (15 theorems, 9 definitions, single Mathlib import), locator list and roadmap citation agrees with the README and Suggested.lean, and the previous C01 (the Shearer boundary with ClassicalErgodicTheory 4.6 missing from the description) is repaired. Adversarial rows recomputed for six statements the description cites. Seven cross-roadmap citations resolved on main or at open heads; DifferentialEntropyAndEntropyPower read for overlap, nothing shared. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 15 sorry warnings only; no file changed outside the folder. Polyanskiy-Wu locators (6 of 21) remain unread.",
+  "text": "ac93d2dfad5be766"
+ }
+}
