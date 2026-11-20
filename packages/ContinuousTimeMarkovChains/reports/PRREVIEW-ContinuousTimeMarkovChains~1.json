@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ContinuousTimeMarkovChains~1",
+  "head": "1a4c43272b663b25329393843331857e95bcff36",
+  "pr": 2688,
+  "folder": "ContinuousTimeMarkovChains",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All 12 sampled targets (1.1 to 5.2) recomputed with degenerate cases; adversarial table in the report. 11 locators read at the text (Levin-Peres section 20.1 and Theorem 20.1 with Remark 20.2; Kelly section 1.1, Theorems 1.3, 1.7, 1.8); Norris not readable legally and listed as not verifiable. 24 library declarations opened at the pins. Dependency check: 0 problems. Automatic checks all passed; Suggested.lean elaborates with 12 sorry warnings only; one-tactic probe closes none of the 12 theorems. The sources service, run as prescribed to fetch the two texts, created packages/ContinuousTimeMarkovChains/sources.toml with entries LPW and Kelly (Kelly from the Internet Archive copy of the author's page, classed author-page by the reviewer): a human may wish to confirm that class.",
+  "text": "3314a08788d966b3"
+ }
+}

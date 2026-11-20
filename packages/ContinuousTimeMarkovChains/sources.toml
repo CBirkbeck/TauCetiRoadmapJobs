@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ContinuousTimeMarkovChains"
+
+[[source]]
+id = "LPW"
+locator_scheme = "section"
+locator = "§20.1"
+url = "https://pages.uoregon.edu/dlevin/MARKOV/mcmt2e.pdf"
+fetched_from = "https://pages.uoregon.edu/dlevin/MARKOV/mcmt2e.pdf"
+fetched_at = "2026-11-20T09:19:50Z"
+sha256 = "9ef39f9467d9647ff3f5e8747b9ce24b7a90d13be2f8156fbd827b95b661a772"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["1.3"]
+
+[[source]]
+id = "Kelly"
+locator_scheme = "theorem"
+locator = "Theorem 1.8"
+url = "https://web.archive.org/web/2023/http://www.statslab.cam.ac.uk/~frank/BOOKS/book/ch1.pdf"
+fetched_from = "https://web.archive.org/web/20240416143224/http://www.statslab.cam.ac.uk/~frank/BOOKS/book/ch1.pdf"
+fetched_at = "2026-11-20T09:21:34Z"
+sha256 = "cf9f254e0586753ded6efd000a1ab2045f2adbb296b4a7b6522eab187e03b5fe"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["5.2"]
