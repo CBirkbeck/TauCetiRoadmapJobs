@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsHigherOrderAndResampling~2",
+  "head": "9af2fe3fb804a26ac31fe03b95a97e5aa81c2f90",
+  "pr": 2504,
+  "folder": "MathematicalStatisticsHigherOrderAndResampling",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full re-review. Both findings and all five small corrections of the previous review are repaired. One new finding (P2): the three Layer 8 theorems of Suggested.lean assume ContDiffOn with index top of WithTop ENat, which is analyticity at the pin, where README 8.1 assumes smoothness. Seeded sample of 15 targets checked by computation; only Durrett could be read (6 locators, statements agree, pages are those of the online copy); Hall and the other books are paywalled. Automatic checks all passed; elaboration gives 50 sorry warnings and no other; dependency check 0 problems; one-tactic probe run on a scratch copy; cross-roadmap citations resolved at ArithmeticStatisticsPartVIII's open head and on main; overlap with the open LocalLimitTheorems roadmap read, nothing doubly owned.",
+  "text": "72f673abca295919"
+ }
+}
