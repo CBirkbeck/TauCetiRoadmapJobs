@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LyapunovStabilityOfODEs~1",
+  "head": "f5e719888c208c1b4eb866ba112a8e9a4c75a112",
+  "pr": 2748,
+  "folder": "LyapunovStabilityOfODEs",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Full review. All 14 sampled targets recomputed (degenerate cases, Lie derivatives, matrix identities, numerical Checks); adversarial table in the report. Sontag read at all 11 locators, all agree; Teschl (14 of 23 locators) not readable through the sources service, listed under Not verifiable and flagged to the human reviewers. 37 library declarations opened at the pins; supplier citations (PopulationDynamics 2.1, 2.3; LinearSystemsAndControl 5.1, 5.2) resolved at their open heads; dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with sorry only, one-tactic probe closes nothing.",
+  "text": "61c9f70a0d787606"
+ }
+}
