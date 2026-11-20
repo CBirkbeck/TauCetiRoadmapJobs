@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FlowMatching~5",
+  "head": "4abc8bda19b7a595268f7f9249ec49b03564ad0e",
+  "pr": 2501,
+  "folder": "FlowMatching",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 4 changed lines since c639a57: the previous C01 (the sentence of 3.1 on the measurability of the score assumed a continuous schedule) is repaired and the new wording was verified (domination bounds recomputed, a Dirac instance with a step schedule, DenoisingDiffusion 3.1 resolved on main); seeded sample checked where the diff falls (3.1); title and description agree with the head; nothing changed outside the folder; automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates, exit 0, 16 sorry warnings only.",
+  "text": "99f5b8af55281956"
+ }
+}
