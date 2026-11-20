@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SeibergWittenTheory~1",
+  "head": "609b5a79e0bab53bacaa153dce4e4ad8a69799f7",
+  "pr": 2651,
+  "folder": "SeibergWittenTheory",
+  "date": "2026-11-20",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample of 15 sections checked: 10 cite no source, 5 cite a work by title only, so none had an exact locator to verify (R01). Okonek-Teleman (alg-geom/9603003) and Booss-Bavnbek-Marcolli-Wang (math/0203171) were read at 18 locators, with Witten (hep-th/9411102) read for suggested locators; Taubes 1995 was not legally readable (publisher HTTP 403). The worker's automatic checks all passed; the dependency check reports 0 problems; Suggested.lean elaborates with no messages and declares nothing. All 59 Checks were recomputed, 113 library names resolved at the pins and every supplier section resolved on main. Findings: missing locators (R01), the wall-crossing headline in the Suggested.lean docstring missing its degree and parity range (R02), and a reversed double cover in a Check of section 4.3 (R03).",
+  "text": "67751e45103a39ef"
+ }
+}

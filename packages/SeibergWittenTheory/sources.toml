@@ -1,0 +1,58 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SeibergWittenTheory"
+
+[[source]]
+id = "OkonekTeleman1996"
+authors = "Christian Okonek, Andrei Teleman"
+title = "Seiberg-Witten invariants for manifolds with $b_+=1$, and the universal wall crossing formula"
+year = 1996
+arxiv = "alg-geom/9603003v4"
+locator_scheme = "theorem"
+locator = "Theorem 16"
+url = "https://arxiv.org/abs/alg-geom/9603003v4"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9603003v4"
+fetched_at = "2026-11-20T06:33:52Z"
+sha256 = "c31a5b6e2a882427fd835e87d1bf94ba8e28315e5f8ea2bdff31287154d5f9e3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v4"
+cited_for = ["5.4", "6.1", "6.2", "6.3", "7.1", "7.2", "7.3", "8.2", "8.3", "9.1", "9.4", "10.1", "10.2", "10.3", "10.4"]
+
+[[source]]
+id = "BBMW2002"
+authors = "B. Booss-Bavnbek, M. Marcolli, B. L. Wang"
+title = "Weak UCP and perturbed monopole equations"
+year = 2002
+venue = "Int.J.Math. 13 (2002) 987-1008"
+arxiv = "math/0203171v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.7"
+url = "https://arxiv.org/abs/math/0203171v1"
+fetched_from = "https://arxiv.org/pdf/math/0203171v1"
+fetched_at = "2026-11-20T06:33:58Z"
+sha256 = "293ba84133395620ba8c7321a7322307468900f040cea05c620df53f24c61ce4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["5.1"]
+
+[[source]]
+id = "Witten1994"
+authors = "Edward Witten"
+title = "Monopoles and Four-Manifolds"
+year = 1994
+venue = "Math.Res.Lett.1:769-796,1994"
+arxiv = "hep-th/9411102v1"
+locator_scheme = "equation"
+locator = "(2.5)"
+url = "https://arxiv.org/abs/hep-th/9411102v1"
+fetched_from = "https://arxiv.org/pdf/hep-th/9411102v1"
+fetched_at = "2026-11-20T06:34:04Z"
+sha256 = "72c604552584f28c360dd394d6aed0c8aacc20153e0026e55234a4332109a42c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["3.2", "3.3", "3.4", "3.5", "5.2", "11.1"]
