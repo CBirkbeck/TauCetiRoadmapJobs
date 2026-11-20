@@ -30,3 +30,40 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-04"
 cited_for = ["H5.TorusLineSections, H5.TorusFiniteRankSections"]
+
+[[source]]
+id = "kaadLesch12"
+authors = "Jens Kaad, Matthias Lesch"
+title = "A local global principle for regular operators in Hilbert C*-modules"
+year = 2011
+venue = "J. Funct. Anal. 262 (2012), 4540-4569"
+doi = "10.1016/j.jfa.2012.03.002"
+arxiv = "1107.2372v3"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://arxiv.org/abs/1107.2372v3"
+fetched_from = "https://arxiv.org/pdf/1107.2372v3"
+fetched_at = "2026-11-20T21:03:25Z"
+sha256 = "e0da66ff14444a2845089138c81a3808be721302c7d16f1c92c1a064dc54739a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v3"
+cited_for = ["6.1", "7.2", "7.3", "7.4", "7.5"]
+
+[[source]]
+id = "dixmierDouady63"
+authors = "Jacques Dixmier, Adrien Douady"
+title = "Champs continus d'espaces hilbertiens et de C*-algèbres"
+year = 1963
+venue = "Bull. Soc. Math. France 91 (1963), 227-284"
+locator_scheme = "theorem"
+locator = "Proposition 3"
+url = "https://www.numdam.org/article/BSMF_1963__91__227_0.pdf"
+fetched_from = "https://www.numdam.org/article/BSMF_1963__91__227_0.pdf"
+fetched_at = "2026-11-20T21:03:31Z"
+sha256 = "c56129e01077f0170b15360c355bbb63e2a2d6e15df6ecbe54e920af9d326c73"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["5.3"]
