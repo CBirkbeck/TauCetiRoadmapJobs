@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsMathieu~3",
+  "head": "ef3be5977155413b85d5c7723fad90e9195b503f",
+  "pr": 2538,
+  "folder": "SpecialFunctionsMathieu",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full re-review. The three findings of the previous review are repaired. One new finding (P2): DLMF 28.28.11 at integer order (README 8.5, integral_exp_mul_mathieuCe) is false on part of the region 28.28.10 allows, since the hypothesis depends only on cosh z and Mc3_n is not even; witness n=0, h=1, z0=1+0.5i and -z0. Sample: the fifteen seeded targets, their DLMF locators read online in 12 sections (28.2, 28.5, 28.6, 28.12, 28.19, 28.20, 28.22, 28.23, 28.28, 28.29, 28.30, 28.31); the eight books could not be read legally. Numerical Checks of 1.1, 1.2, Layer 2, 3.3-3.5, 4.1, 4.3, 7.1-7.3 recomputed and agree. Elaboration: 46 sorry warnings, no error; one-tactic probe closes none of the 46 theorems. Dependency check: 187 roadmaps, 2142 edges, 0 problems. Automatic check set aside as a false positive: the section heading over the #check lines. Cross-roadmap citations resolved on main; no second owner found.",
+  "text": "c1674513305b93a7"
+ }
+}
