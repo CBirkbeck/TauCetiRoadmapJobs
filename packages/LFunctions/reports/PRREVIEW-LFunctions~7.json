@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LFunctions~7",
+  "head": "1afcbdca1f3e4f23917ddb7632842cdf5802aacb",
+  "pr": 2626,
+  "folder": "LFunctions",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review of an unchanged head. One P2 finding: unitaryPartialCompletion_eq_mellin and heckeMellinTotal_congr (README 6.8) lack the hypothesis that the presentation is at its conductor; instance over Q, trivial character at (2), ideal (2): pi/8 against 0. Seeded sample 2.2, 3.5, 4.1, 4.2, 5.1, 5.4, 6.1, 6.3, 6.4, 6.6, 6.9, 7.1, 7.2, 7.3, 7.5 recomputed; Hecke 1920 (45), (46), section 9, Lebacque Theorem 5 and Propositions 2-3, Loeffler-Stoll section 6 read at their locators; Neukirch and Washington uncertified and not read. Automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with 111 sorry warnings only; one-tactic probe closes none. Previous review's C01 and C02 stand; its C03 is withdrawn (the two names are on main).",
+  "text": "252157dfdd5da19e"
+ }
+}
