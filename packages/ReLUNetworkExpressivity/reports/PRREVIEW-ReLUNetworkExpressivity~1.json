@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ReLUNetworkExpressivity~1",
+  "head": "e283cc237ca8546fd8ca75cf90b3d6c71665b2a3",
+  "pr": 2674,
+  "folder": "ReLUNetworkExpressivity",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All 15 sampled targets and every other statement recomputed by hand (degenerate depths and widths, the Radon pairing of 2.1, constants of 5.2, 5.3, 6.1, 6.3); 42 locators read in five sources (Arora et al., Hertrich et al., Telgarsky's article and lecture notes, Yarotsky), all correct; the three source slips the README records confirmed, four more recorded. Library citations opened at the pins. Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 12 theorems; dependency check 0 problems; automatic checks all passed; no change outside the folder. Overlap read against UniversalApproximation, RobustnessCertificates, Neuromanifolds: nothing shared. One question for the author on the layer convention of the separation theorem; scope and an unpublished source left to the human reviewers.",
+  "text": "45df8e1351b7e7e9"
+ }
+}
