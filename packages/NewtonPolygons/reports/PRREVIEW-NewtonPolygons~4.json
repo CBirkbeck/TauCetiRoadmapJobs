@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NewtonPolygons~4",
+  "head": "623562372f70b78a546e11f7d2f18ef94358cce1",
+  "pr": 2609,
+  "folder": "NewtonPolygons",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 86 changed lines since 5007ca6. Checked: the previous finding R01 (Eisenstein degree, repaired with d >= 1 and a negative-control Check), the four small corrections and the format note (all repaired); the changed passages of sections 0.6, 2.3, 2.4, 4.3, 5.2, 5.3, 6.1 and the supplier citations, with computed instances; 4 Lazard locators read at the text; 4 library declarations opened at the pin; RestrictedPowerSeries sections 2.1-2.3 and 7.1-7.2 resolved on main; the description against the head (19 Checks, 28 examples). Automatic checks all passed on rerun; depcheck 0 problems; Suggested.lean elaborates with six sorry warnings only; no change outside the folder. Koblitz and BGR not readable. Two points for the human reviewers (licence of a named repository, the pin).",
+  "text": "00c21000f093e82e"
+ }
+}
