@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ContactGeometry~3",
+  "head": "71e7c7ebbe20fc893ea7894471c1042d02880aea",
+  "pr": 2684,
+  "folder": "SymplecticGeometry/ContactGeometry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 0,
+  "notes": "incremental re-review of 8 changed lines since dade1f8: the four added anchors (cg1, cg4, cg5, cg6) were compared with the links of the SymplecticGeometry family README and CotangentLagrangian on main (all resolve; deferred D01 resolved); the three small corrections of the previous round were rechecked at this head (not repaired, carried as C02-C04, with KrieglMichor1997 43.15 and GeigesHandbook Theorem 2.22 reread and LieGroupoidsPoisson G0.1 opened on main); the description was read against the head (C01) and the family README paragraph the anchors serve (C05); the seeded sample falls outside the changed passages. The automatic gate is OK on every check, the dependency check reports 0 problems, and lake env lean on Suggested.lean gives 8 sorry warnings and no error.",
+  "text": "0708f0a9a422ab16"
+ }
+}
