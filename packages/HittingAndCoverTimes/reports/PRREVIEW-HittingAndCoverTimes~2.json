@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HittingAndCoverTimes~2",
+  "head": "b90373a4734726c0ac2d6b623515cf90f9cd45ea",
+  "pr": 2796,
+  "folder": "HittingAndCoverTimes",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "incremental re-review of 24 changed lines since 60a3301. Checked: each of the five remarks of the previous review (C01, C03, N01, N02 repaired; C02 partly repaired, the new Norris section locator being unread and absent from the References, raised again as a small correction); the changed passages of sampled targets 1.2, 1.4 and 4.3, with Lyons-Peres Proposition 2.20 read at the text (target set Z confirmed), Matrix.trace opened at the pin (Trace.lean line 43), the Conventions paragraph of MarkovChainsAndRenewal on main and section 2.1 of ElectricalNetworksAndRandomWalks at its open head resolved; three adversarial rows with computed values; the pull request's description against the head (one small correction: it predates the Norris citation). Automatic checks all pass; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged, elaborates with ten sorry warnings only. Norris section 1.3 could not be read legally (not verifiable). For humans: Aldous-Fill is an unpublished monograph; three suppliers are open pull requests; the 1.2 locator is unread.",
+  "text": "dae93a1f922d67ef"
+ }
+}
