@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ImaginaryQuadraticClassNumber~12",
+  "head": "be58763bb91f8a6e330a9b12b29433a19219479b",
+  "pr": 2593,
+  "folder": "ImaginaryQuadraticClassNumber",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 2 changed lines since 1eb5b47: the added inline anchor before §3.1 was compared with the old heading id on main and with the 11 links to it in two open roadmaps (all resolve; previous N01 repaired); the pull request's description was read against the head (one out-of-date sentence, C01); two Checks of §3.1 recomputed for the adversarial table; Suggested.lean elaborated (six sorry warnings only); dependency check 0 problems; automatic checks all passed; no source locator in the changed passage, the seeded sample falls in untouched text verified earlier.",
+  "text": "b50e55a58625e924",
+  "carried": {
+   "from": "be58763bb91f8a6e330a9b12b29433a19219479b",
+   "head": "be58763bb91f8a6e330a9b12b29433a19219479b",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
