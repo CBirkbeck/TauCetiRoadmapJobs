@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NoncommutativeFlatness~4",
+  "head": "7fd388dad0b9895889d1fc0484e8c15c74b734c9",
+  "pr": 2618,
+  "folder": "NoncommutativeFlatness",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. Earlier findings: the sorry-definition finding and both earlier corrections repaired; the false-obligation finding partly repaired (one helper left, R01). Source sample: 23 locators read in Bass, Auslander 1955, Lazard, Chase, Krause (arXiv) and Stacks 058D, all correct; the other sampled sources could not be fetched and are listed as not verifiable. Adversarial table of 31 rows with computed values. Suggested.lean elaborates at the pins with 204 sorry warnings and nothing else; one-tactic probes run on a copy of the file; 44 library names resolved at the pins; cross-roadmap citations resolved on main; dependency check 0 problems; no change outside the folder. Automatic checks: TeX, undeclared-name, layer-heading and dropped-binder reports set aside as false positives; the sorry-in-definition report reduced to the one false obligation.",
+  "text": "73756b536bc5b018"
+ }
+}
