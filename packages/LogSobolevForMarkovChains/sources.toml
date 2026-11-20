@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LogSobolevForMarkovChains"
+
+[[source]]
+id = "AldousFill"
+locator_scheme = "theorem"
+locator = "Chapter 8, Theorem 24"
+url = "https://www.stat.berkeley.edu/~aldous/RWG/Chap08.pdf"
+fetched_from = "https://www.stat.berkeley.edu/~aldous/RWG/Chap08.pdf"
+fetched_at = "2026-11-20T15:51:24Z"
+sha256 = "0290f8b160d0022319d078aeddb29f61d88628967f249231dcf6ce4aba7e8e2b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.2"]
+
+[[source]]
+id = "ChenLiuSaloffCoste"
+locator_scheme = "page"
+locator = "Example (E6), p. 242"
+url = "http://www.numdam.org/item/AFST_2008_6_17_2_239_0/"
+fetched_from = "https://www.numdam.org/item/AFST_2008_6_17_2_239_0.pdf"
+fetched_at = "2026-11-20T15:51:39Z"
+sha256 = "c831287d7d0b2d1c2269a98c8c846742072936cc65e52bc7c52ba0b73a9c5bf2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["2.2"]

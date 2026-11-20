@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LogSobolevForMarkovChains~1",
+  "head": "a58a4f2e336cb7d6b6a35c9fdbef3daac5a69f7f",
+  "pr": 2737,
+  "folder": "LogSobolevForMarkovChains",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. Sample: all eight sections 1.1 to 3.3; 14 locators read in Aldous-Fill Chapter 8 (authors' page) and 1 in Chen-Liu-Saloff-Coste (Numdam); Diaconis-Saloff-Coste 1996 not reachable (attribution only). Every theorem and Check recomputed, with numerical minimisation for the two-point, redrawing and product constants. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 7 theorems. One P2 finding: the Layer 3 Examples line gives (n/4) log n for the cube where 3.3 gives (n/2) log(n log 2) + cn. The sources service recorded the two fetched texts in the package's sources.toml.",
+  "text": "2628d9ef2f1c3bf4"
+ }
+}
