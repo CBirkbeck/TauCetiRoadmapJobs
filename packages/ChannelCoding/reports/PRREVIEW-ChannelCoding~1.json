@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ChannelCoding~1",
+  "head": "3ee689ed4ce39d6543f408963914b5fff508a517",
+  "pr": 2799,
+  "folder": "ChannelCoding",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review. All 12 sampled targets (1.1-1.5, 2.1-2.4, 3.1-3.3) recomputed by hand, including every number in a Check and the degenerate cases (empty alphabets, n = 0, M = 0 and 1, negative gamma and delta). Suggested.lean elaborates with sorry as the only warning (11 theorems); one-tactic probe closes none of the 11. 26 Mathlib and 2 Tau Ceti declarations opened at the pins; supplier sections of ProbabilisticAndMetricNumberTheory (5.1a, 5.2, main), EntropyAndSourceCoding (1.3, open head) and MathematicalStatisticsNonparametric (2.4, main) read. Dependency check: 0 problems. Automatic checks all passed. MacKay read at its 3 locators; Polyanskiy-Wu, which carries 19 of the 22 locators, could not be read through a legal channel, so its locators, wording and table of contents are not verified (request recorded).",
+  "text": "fb60f691c871c005"
+ }
+}

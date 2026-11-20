@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ChannelCoding"
+
+[[source]]
+id = "MacKay"
+locator_scheme = "page"
+locator = "p. 150"
+url = "https://www.inference.org.uk/mackay/itprnn/book.pdf"
+fetched_from = "https://www.inference.org.uk/mackay/itprnn/book.pdf"
+fetched_at = "2026-11-20T21:44:12Z"
+sha256 = "868adc5f0ef6630366b122d88d691acfbe8339978b4ec3f38fca5e231f135791"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["1.3"]
