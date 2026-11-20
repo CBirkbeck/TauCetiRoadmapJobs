@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OperatorIdeals~4",
+  "head": "2e05baab26ba03d043358c3123de4063217fb8c5",
+  "pr": 2614,
+  "folder": "OperatorTheory/OperatorIdeals",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 37 changed lines since 548eeea. Checked: previous R01 (OI-A55 last clause now over R or C; matches [RCLike] in lp.exists_singularValue_diagonalCLM_eq at the pin) repaired; C02 (Ullrich: real or complex Banach spaces, Ull24 lines 21, 36-40) repaired; C03 (OI-A56 now via OI-A27 over a locally compact field, pinned Compact.lean 115-121) repaired; C01 (classical sources cited by title only) carried over as a small correction. Changed Check of 1.2 and Layer 1 Examples recomputed (Q_3 and C_p controls, harmonic Ky Fan values). Sample targets 1.1, 1.2, 1.6 checked where the diff falls in them. Automatic checks all pass; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry as the only warning; nothing changed outside the folder; pull-request description still accurate.",
+  "text": "30fc0c79834a7c6d",
+  "carried": {
+   "from": "2e05baab26ba03d043358c3123de4063217fb8c5",
+   "head": "da3bc29c2146a3cdb6f723ab216ad1846dcda3fc",
+   "findings": 1,
+   "lines": 45,
+   "folders": [
+    "OperatorTheory/OperatorIdeals"
+   ],
+   "corrections": true
+  }
+ }
+}
