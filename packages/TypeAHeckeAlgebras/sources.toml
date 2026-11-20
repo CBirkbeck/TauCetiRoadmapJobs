@@ -1,0 +1,93 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TypeAHeckeAlgebras"
+
+[[source]]
+id = "Wenzl1988"
+authors = "Hans Wenzl"
+title = "Hecke algebras of type A_n and subfactors"
+year = 1988
+venue = "Inventiones Mathematicae 92 (1988), 349-383"
+doi = "10.1007/BF01404457"
+locator_scheme = "theorem"
+locator = "Theorem 3.6"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0092/LOG_0021.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0092/LOG_0021.pdf"
+fetched_at = "2026-11-20T13:12:43Z"
+sha256 = "a6a55b6166edba2fa05cbcac318d0ce446b1981b8c919029081165585b115c61"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["1.2", "3.5", "3.6", "3.7", "4.2", "4.12"]
+
+[[source]]
+id = "HOMFLY1985"
+authors = "P. Freyd, D. Yetter, J. Hoste, W. B. R. Lickorish, K. Millett, A. Ocneanu"
+title = "A new polynomial invariant of knots and links"
+year = 1985
+venue = "Bulletin of the American Mathematical Society 12 (1985), 239-246"
+doi = "10.1090/S0273-0979-1985-15361-3"
+locator_scheme = "page"
+locator = "p. 245"
+url = "https://www.ams.org/journals/bull/1985-12-02/S0273-0979-1985-15361-3/S0273-0979-1985-15361-3.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1985-12-02/S0273-0979-1985-15361-3/S0273-0979-1985-15361-3.pdf"
+fetched_at = "2026-11-20T13:12:44Z"
+sha256 = "bf76c6c1bda967e5f0cf46ef7d498d916b281a8fd59fe8fac88f68c21d26a06d"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["2.5", "3.3", "3.8", "4.17"]
+
+[[source]]
+id = "Neretin2021"
+authors = "Yury A. Neretin"
+title = "Some remarks on traces on the infinite-dimensional Iwahori--Hecke algebra"
+year = 2021
+arxiv = "2101.02133v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2101.02133v1"
+fetched_from = "https://arxiv.org/pdf/2101.02133v1"
+fetched_at = "2026-11-20T13:12:48Z"
+sha256 = "c110ca8359206a14cde577ca143b95253c2dad683858f22271596a4a318e53bf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["1.5", "3.6", "3.13", "4.8"]
+
+[[source]]
+id = "FerayMeliot2012"
+authors = "Valentin Feray, Pierre-Loïc Méliot"
+title = "Asymptotics of q-Plancherel measures"
+year = 2010
+venue = "Probability Theory and Related Fields 152, 3-4 (2012) 589-624"
+arxiv = "1001.2180v2"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1001.2180v2"
+fetched_from = "https://arxiv.org/pdf/1001.2180v2"
+fetched_at = "2026-11-20T13:12:54Z"
+sha256 = "f4225d7b024940aa3f6c183ce1aefeac7b1675c5272732c6c1827a4cd813d52f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["4.9"]
+
+[[source]]
+id = "Ram1991"
+authors = "Arun Ram"
+title = "A Frobenius formula for the characters of the Hecke algebras"
+year = 1991
+venue = "Inventiones Mathematicae 106"
+doi = "10.1007/BF01243921"
+locator_scheme = "theorem"
+locator = "Theorem 4.14"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0106/LOG_0045.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0106/LOG_0045.pdf"
+fetched_at = "2026-11-20T13:18:49Z"
+sha256 = "233c539cb2af08bfc5b0f302037b6347f5619beb6df3b53cb63065a34813f0eb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["1.7"]
