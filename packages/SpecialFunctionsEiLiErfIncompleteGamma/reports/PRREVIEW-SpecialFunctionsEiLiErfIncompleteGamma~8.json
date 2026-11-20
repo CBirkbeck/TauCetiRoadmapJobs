@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsEiLiErfIncompleteGamma~8",
+  "head": "ec2023fd561f1d2ffaed3553d4644106127f2469",
+  "pr": 2553,
+  "folder": "SpecialFunctionsEiLiErfIncompleteGamma",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 31 changed lines since 54c9507. Previous R01 (Re a < 1 for DLMF 8.21.12-8.21.13 in 10.3), C01 (chi is DLMF 9.7.3) and N01 (source lists) all repaired; the repaired limits recomputed for a = 1/2, 0.9, -1/2, 1/2+2i with controls a = 1, 3/2 (adversarial table in the report); 9.7.3 read at DLMF-9.7 lines 149-151; source lists checked against the layers. No sampled target falls in a changed passage. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean (byte-identical to main) elaborates with 69 sorry warnings and nothing else; nothing changes outside the folder; pull request text agrees with the head. Book locators remain unread (no legal copy): left to the human reviewers.",
+  "text": "20429ccc39bebbd1"
+ }
+}
