@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SeibergWittenTheory~2",
+  "head": "83f8b330795205fb556950248407fa94ace92479",
+  "pr": 2651,
+  "folder": "SeibergWittenTheory",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full re-review. Previous findings: R01 partly repaired (headline and Okonek-Teleman/Witten/BBMW results now located; residual unlocated sections are C01), R02, R03, C01, C02 and N01 repaired, N02 partly; the FourManifolds carrier question answered. Seeded sample of 15 sections (1.3, 2.2, 3.1, 3.3a, 4.3, 4.4, 4.5, 6.1, 7.2, 7.3, 8.1, 8.3, 9.2, 9.3, 9.4) checked: 36 locators verified against OkonekTeleman1996 (26), Witten1994 (6) and BBMW2002 (4); Taubes 1995 unreadable (HTTP 403 at the DOI), six title-only citations not verified. All 59 Checks and the four headlines recomputed; adversarial table with values in the board report. Automatic checks all passed, none set aside; depcheck 0 problems; lake env lean on Suggested.lean exits 0 with no messages (file declares nothing). All 118 README Lean names resolve at the pins; all 14 suppliers and cited sections resolve on main. Overlap check against SpinGeometry, IndexTheory, FourManifolds, TaubesGromov, InstantonFloerTheory, SpectralManifolds: no object owned twice; two restatements recorded as small corrections (SpinGeometry 6.1, IndexTheory 6.3).",
+  "text": "a36c0c0348a00946"
+ }
+}
