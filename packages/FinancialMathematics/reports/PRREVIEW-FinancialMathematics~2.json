@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FinancialMathematics~2",
+  "head": "4a9abde676d59a419c3990712e51b6613d2abd08",
+  "pr": 2557,
+  "folder": "FinancialMathematics",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "incremental re-review of 101 changed lines since 87112b8. Checked: previous R01 (terminal hedge positions in §3.2 and §4.1) repaired, verified numerically and for predictability; previous C02-C07 and N01 repaired; C01 (no source locators) not repaired and carried. Changed passages: §1.1 citations checked against StochasticCalculus §9.4 on main; the §1.2 simple-strategy equivalence against IsSelfFinancing at the pinned Tau Ceti; the overview and Suggested.lean docstring against §3.2; the Tau Ceti contract pointer against the declaration files at the pin. Sample: no target carries a locator, so none was verifiable; the four references were not legally readable in the previous round. Automatic checks all passed (gate OK; depcheck 0 problems; no change outside the folder); lake env lean gives two sorry warnings only. Description checked against the head: consistent.",
+  "text": "845261b03c211574"
+ }
+}
