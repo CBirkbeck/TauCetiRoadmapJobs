@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Regularity~4",
+  "head": "42247a3b6b39832cf5c9c058042a509083b503e5",
+  "pr": 2631,
+  "folder": "Regularity",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review of the head the previous review read (no change in the folder). Seeded sample 0.1, 8.1, 8.2, 9.4: all Checks and Examples of 0.1 recomputed by brute force; the Checks of 8.1, 8.2 and 9.4 and the worked examples recomputed by hand against the library definitions; 14 source locators read in the authors' versions of Rodl-Schacht (regularity and counting papers) and Nagle-Rodl-Schacht, in Terry arXiv:2404.02030v3 and Lovasz-Szegedy arXiv:math/0408173v2. 24 Tau Ceti declarations opened at 2fd255d; all 332 backticked library names searched at the pins. Suggested.lean elaborates with only the sorry warning on line 69; elaborated types compared with the README; one-tactic probe closes nothing. Automatic checks rerun: all passed; depcheck 0 problems; nothing changed outside the folder. Previous small correction (description of the second term of exceptional_route_prediction_mass_le) not repaired and raised again as C01. Pull request description agrees with the head. Not verifiable: printed journal numbering (paywalled), the external regularity-lemmata library's files.",
+  "text": "1b5a9a821db84622",
+  "carried": {
+   "from": "42247a3b6b39832cf5c9c058042a509083b503e5",
+   "head": "857d396451ee74abc8ce4c7915764ef7fae57785",
+   "findings": 1,
+   "lines": 7,
+   "folders": [
+    "Regularity"
+   ],
+   "corrections": true
+  }
+ }
+}
