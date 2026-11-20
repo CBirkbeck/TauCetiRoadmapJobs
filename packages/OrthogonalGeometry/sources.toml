@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "OrthogonalGeometry"
+
+[[source]]
+id = "ChienWaldron2016"
+authors = "Tuan-Yow Chien, Shayne Waldron"
+title = "A characterisation of projective unitary equivalence of finite frames"
+year = 2013
+arxiv = "1312.5393v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.2(1), pp. 4-5 (arXiv v1)"
+url = "https://arxiv.org/abs/1312.5393v1"
+fetched_from = "https://arxiv.org/pdf/1312.5393v1"
+fetched_at = "2026-11-20T00:57:23Z"
+sha256 = "570e7828d8513e55aeccfdab7cf55f69a36030ff61277af865b6a8b66fbd8c4e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["Layer 1"]
