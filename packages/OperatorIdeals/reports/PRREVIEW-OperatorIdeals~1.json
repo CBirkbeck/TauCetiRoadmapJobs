@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-OperatorIdeals~1",
+  "head": "9869dd1be79e9e9a0fa900e3dda178f2e31664a0",
+  "pr": 2614,
+  "folder": "OperatorTheory/OperatorIdeals",
+  "date": "2026-11-20",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Sample: all fifteen sections 1.1-3.3, verified against the pinned libraries. All 278 README Lean names were checked at the pins (256 by #check, 22 in unbuilt modules by reading source), with hypotheses compared to the README. Every Check and example was recomputed. Sources: only Ullrich 2024 (arXiv 2405.05509v2) is legally readable and was checked against Convention 3 and the 1.1 laws; the other cited books and articles are paywalled. Automatic checks: every check passed; dependency check 0 problems; Suggested.lean elaborates with only the sorry warning; the one-tactic probe does not close the theorem. Findings: the universe-general OI-B72 route lacks a Hilbert space over the scalars in an arbitrary universe (none at the pins); the overview's field-generality sentence is false for OI-A24 over Q; the Layer 1 example gives rank(l2) = aleph0; MAJ-A26/B01/B31 are dropped without mapping by Majorization's open revision 591e977. The automatic overlap scan missed that last one, so the scanner may need fixing.",
+  "text": "7496defcdc34a832"
+ }
+}
