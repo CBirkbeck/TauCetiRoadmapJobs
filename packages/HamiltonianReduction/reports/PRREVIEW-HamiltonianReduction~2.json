@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HamiltonianReduction~2",
+  "head": "2aba5a6ee3a3c58f6aeace6ab62dd0a0c27e7a70",
+  "pr": 2696,
+  "folder": "SymplecticGeometry/HamiltonianReduction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "The folder's change is a ten-line Suggested.lean patch: HasHamiltonianField replaced by TauCeti.SmoothTwoForm.IsHamiltonianVectorField, whose body is the same (checked at the pin), plus new import lines. It elaborates with only five sorry warnings; #check @ was run on all 13 declarations; one-tactic probes found one padding statement (C01). The README is main's text, which the open revision #2690 (ordered first, conflicting) replaces, so its defects were not restated. Earlier review: R02 repaired by the suppliers' former-numbering paragraphs; R01 and C03 belong to the revision. Adversarial pass: 23 README statements sampled across R1-R5 with computed values, all hold. Sources: Cannas da Silva Def 22.1, Thm 23.1, 24.4, 25.3-25.4 and Huebschmann 2.18-2.32 read; Atiyah-Bott, Sjamaar-Lerman and Marsden-Ratiu not read. Dependency check: 0 problems. Automatic checks rerun: README hits are in main's text; the outside-folder hit (the family index) was set aside.",
+  "text": "6df492f3469bea18"
+ }
+}
