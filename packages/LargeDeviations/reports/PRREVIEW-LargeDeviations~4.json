@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LargeDeviations~4",
+  "head": "63f97fb75002b73622d4eab8113b8ec166c72c49",
+  "pr": 2499,
+  "folder": "LargeDeviations",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 26 changed lines since deea490: the previous R01 (moment condition of 2.2 without measurability) is repaired by the hypothesis Measurable φ in README and Suggested.lean; the statement was recomputed as true with it and the new Conventions counterexample (trivial σ-algebra, δ₀, φ = |x|, γ = 2) recomputed as correct; elaborated type compared with the README; Suggested.lean elaborates with 36 sorry warnings and no error; dependency check 0 problems, no UPWARD or CYCLE; no change outside the folder; pull request text not contradicted; one automatic form check set aside as a false positive; sampled locators lie outside the changed passages and the Dembo–Zeitouni locators remain unverified (paywalled).",
+  "text": "3492a62c01bdb439"
+ }
+}
