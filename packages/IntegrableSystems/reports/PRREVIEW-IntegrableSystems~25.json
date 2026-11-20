@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IntegrableSystems~25",
+  "head": "bf1b893aa89b38e56dd50ce1db1b4d9212d6f950",
+  "pr": 2691,
+  "folder": "SymplecticGeometry/IntegrableSystems",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 92 changed lines since 3bea975. Checked: previous R01 (nonempty cup-length bound) and C01-C04 repaired, N01 deferred as D01 (stands); the new section 2.6-2.7 locators against sjamaar2011 pp. 6-10 and zung2003 section 2.3; section 3.3 against the pinned Tau Ceti poissonBracket_eq_zero_iff, isEquivariantMomentMap_momentMap and isSymplectic_symplecticForm; the section 5.4 bound with its empty-flow control; seeded sample targets 2.6, 2.7 and 3.3 (the others unchanged); description against the head; automatic checks and dependency check pass (0 problems); Suggested.lean, unchanged, elaborates with four sorry warnings. Two format notes, none blocking.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "N01: these two blocks are generated, not written in the description's prose.",
+    "where": "the tool that generates the description's depends-on and merge-order blocks",
+    "raised": "PRREVIEW-IntegrableSystems~24"
+   }
+  ],
+  "text": "6b6f18362961e607"
+ }
+}
