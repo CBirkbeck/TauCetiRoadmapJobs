@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StandardDistributions~2",
+  "head": "b0d099dd3c86c60f606a62e4be5862ebf3b57eb1",
+  "pr": 2682,
+  "folder": "StandardDistributions",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "incremental re-review of 109 changed lines since 50d92b1. Checked: the seven earlier points (R01, R02, R03, C01, N01 and N02 repaired; C02 partly repaired and carried as C01); the changed passages (§6.2 and §12.1 Checks recomputed; §7.2 uniform-law quantile identity against Uniform/Basic.lean:117, NullSingletonClass.lean:138 and Quantile.lean:858; Wick-Isserlis ownership against RandomMatrices §2.5 on main and three open citing heads; the Layer 7 Scope list); the new Nolan2020 locators Def. 1.7, (1.7), Lemma 1.10, Thm 1.12, p. 15 and Problem 1.11, Prop. 1.13 and p. 16; the RNoncentralBetaDoc locators (a section slip, C02). Seeded sample in changed text: 15.1 (S0 exponent and S1 location recomputed against Nolan (1.4), (1.6), (1.7)), 15.6 and 5.3. Automatic checks: all passed and were rerun (gate OK; depcheck 191 roadmaps, 2122 edges, 0 problems; no change outside the folder). Elaboration: 13 sorry warnings only; #check @ on all 14 declarations matches the README. The PR description agrees with the head.",
+  "text": "105259bbc621c623"
+ }
+}
