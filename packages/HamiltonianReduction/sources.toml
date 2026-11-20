@@ -145,3 +145,40 @@ status = "certified"
 accessed = "2026-11-20"
 version_note = "arXiv v1"
 cited_for = ["5.8"]
+
+[[source]]
+id = "Huebschmann1996"
+authors = "Johannes Huebschmann"
+title = "The singularities of Yang-Mills connections for bundles on a surface. II. The stratification"
+year = 1994
+venue = "Math. Z. 221 (1996), 83-92"
+arxiv = "dg-ga/9411007v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.3, Lemma 2.4"
+url = "https://arxiv.org/abs/dg-ga/9411007v1"
+fetched_from = "https://arxiv.org/pdf/dg-ga/9411007v1"
+fetched_at = "2026-11-20T14:32:57Z"
+sha256 = "b8f0b74730ba31db83e05cdba8d1f5b2b3be8b519c2acae45d5acb1094dc3a63"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["5.4"]
+
+[[source]]
+id = "Feehan2020"
+authors = "Paul M. N. Feehan"
+title = "Optimal Lojasiewicz-Simon inequalities and Morse-Bott Yang-Mills energy functions"
+year = 2017
+arxiv = "1706.09349v7"
+locator_scheme = "theorem"
+locator = "Theorem 2.3"
+url = "https://arxiv.org/abs/1706.09349v7"
+fetched_from = "https://arxiv.org/pdf/1706.09349v7"
+fetched_at = "2026-11-20T14:33:04Z"
+sha256 = "3a4132eed308604bca03079e3da16c3cc49d58ac7a25eecf9d095a1fad92b398"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v7"
+cited_for = ["5.3"]
