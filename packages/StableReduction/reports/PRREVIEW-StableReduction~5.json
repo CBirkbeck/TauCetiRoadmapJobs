@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StableReduction~5",
+  "head": "efe18191d8cbef6dc8f3739228f8772df91bfc61",
+  "pr": 2669,
+  "folder": "StableReduction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "incremental re-review of 119 changed lines since d56ae5b. Checked: the eight remarks of the previous review (R01-R04, C01-C03, N01), all repaired; D01 stands. Read every changed passage and its 22 new or changed locators against the cached texts (Stacks Ch. 27, 31, 53, 55, 109; SGA 1 VIII 7.8; Deligne-Mumford 2.7; Knudsen II 2.7; Behrend-Manin 1.9, 3.2; Fulton-Pandharipande 1.1). The diff touches two sample targets, 3.9 and 10.3; both checked. Opened Tau Ceti relativeProj and NumericalType torsion/topologicalGenus at the pin, and SchemeAndStackFoundations 0.3 on main and at its open heads. Gate: all checks passed. Depcheck: 0 problems. Elaboration: three sorry warnings only. Two small corrections: the affine comparison is the pinned chart square; the twisted-cubic Check needs characteristic not 2.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "The review's second item for the human reviewers (it has no F, C or N number): NeronModelsAndSemistableAbelianVarieties on main (§6.14, README lines 4524–4531, and the consumer entry at line 4600) cit",
+    "where": "NeronModelsAndSemistableAbelianVarieties README, §6.14 and its StableReduction consumer entry",
+    "raised": "PRREVIEW-StableReduction~4"
+   }
+  ],
+  "text": "641e176d74d02b41"
+ }
+}
