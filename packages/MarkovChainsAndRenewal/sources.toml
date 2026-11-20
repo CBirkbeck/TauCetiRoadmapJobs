@@ -16,3 +16,20 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-19"
 cited_for = ["Layers 0-7"]
+
+[[source]]
+id = "LastPenrose2017"
+authors = "Günter Last, Mathew Penrose"
+title = "Lectures on the Poisson Process"
+year = "2017"
+locator_scheme = "theorem"
+locator = "Definition 3.1, Theorem 3.3, Proposition 5.5, Corollary 5.9, Proposition 6.9, Section 7.1"
+url = "https://stoch.math.kit.edu/img/Last/lastpenrose2017.pdf"
+fetched_from = "https://stoch.math.kit.edu/img/Last/lastpenrose2017.pdf"
+fetched_at = "2026-11-20T00:11:27Z"
+sha256 = "04423f7ad07ca1d07178c307c14558df7d6a309519759a4229396c11945d9c3e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["Layer 7", "7.4"]
+version_note = "authors' version of 21 August 2017; the locators are those of this version"
