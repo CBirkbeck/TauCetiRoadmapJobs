@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ImportanceSamplingAndVarianceReduction~1",
+  "head": "71ba8e45832cb39498d4036ae6ea75f9143fcc55",
+  "pr": 2697,
+  "folder": "ImportanceSamplingAndVarianceReduction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 4,
+  "notes": "Full review. Sample: all 15 seeded targets plus 4.1 and the Conventions; every statement recomputed on degenerate instances and every numerical Check recomputed (adversarial table of 22 rows). Sources: 17 Owen locators (chapters 8 and 9, author's page) and Chatterjee-Diaconis Theorem 1.1 with its proof (arXiv v3) read at their pages; all support the statements. 33 Mathlib declarations and TauCeti.covMatrix opened at the pins; supplier sections of MathematicalStatisticsFoundations and MathematicalStatisticsNonparametric resolved on main. Automatic checks all passed, none set aside; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 20 theorems. Corrections: variance convention fails for non-measurable functions; PACBayesBounds does not exist; one sentence of the description. For humans: main source is an unpublished author-hosted manuscript carrying a no-redistribution notice.",
+  "text": "1748d38a6822956b"
+ }
+}
