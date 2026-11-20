@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EntropyAndSourceCoding~2",
+  "head": "2d8993b516ffbc587518495eb388a58e6315beab",
+  "pr": 2719,
+  "folder": "EntropyAndSourceCoding",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 18 changed lines since f4d0f55. Checked the three changed README passages: the repaired route of 2.4 (least-total-length optimal code, recomputed with the (1/2,1/2,0) example and the swap step), the route attribution of 1.2 against Galvin section 2.8, and the scope sentence on ClassicalErgodicTheory 4.6 against its open head. R01 repaired; earlier C01 repaired in the README and carried as one small correction on the pull request description; earlier C02 repaired. 3 source locators read in the changed passages (Gallager, Galvin); Polyanskiy-Wu still unread. Automatic checks all passed; dependency check 0 problems; Suggested.lean (unchanged) elaborates with 15 sorry warnings and nothing else; no change outside the folder.",
+  "text": "b53311c34e7ed147"
+ }
+}
