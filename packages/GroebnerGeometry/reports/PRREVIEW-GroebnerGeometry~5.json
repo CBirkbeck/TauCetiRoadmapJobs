@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GroebnerGeometry~5",
+  "head": "5c81ce73c50654e15afc7a96d9e370ee6800c9ae",
+  "pr": 2587,
+  "folder": "GroebnerGeometry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 5c81ce7. This round checked the pull request's description against the head and against main: section and Check counts (49; 52 in 35 blocks), imports, the kept, removed and added declarations, the suppliers, the content-changed bullets and the enumerated Checks all agree; the earlier correction about the G4 anchor is repaired; one omission (AnalyticToricGeometry Layer 0 no longer a named supplier) is a small correction; the format note on section 1.1 is carried. Recomputed: the Hilbert polynomial of the Plucker algebra for n = 2, 3, 4, the F_2 invariant of section 5.5, the flag count 8; Hashimoto Theorem 17 reread. Automatic checks all passed, none set aside; dependency check 0 problems; Suggested.lean elaborates with 11 sorry warnings only. Seeded sample: no changed passage to check it in.",
+  "text": "f3945c7d3950afb5",
+  "carried": {
+   "from": "5c81ce73c50654e15afc7a96d9e370ee6800c9ae",
+   "head": "5c81ce73c50654e15afc7a96d9e370ee6800c9ae",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
