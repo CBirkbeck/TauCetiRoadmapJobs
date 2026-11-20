@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BochnerSpaces~11",
+  "head": "975b04d1bb68e6be2f9b5fedbe8dd90edb3fa8a8",
+  "pr": 2249,
+  "folder": "BochnerSpaces",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Previous review had no finding; its earlier R01 stays repaired. Adversarial table: 27 rows with computed values over all 15 sampled targets, the headline theorems and the one remark. Source sample: 0 locators certified, HvNVW, Diestel-Uhl and Ryan are paywalled and the errata host timed out (listed under Not verifiable and for the human reviewers). Library: 31 Mathlib and 14 Tau Ceti declarations opened at the pins, 12 Tau Ceti declarations at the later commit the README names. 7 cross-roadmap citations resolved on main. Dependency check 0 problems, no UPWARD or CYCLE. Suggested.lean elaborates with 27 sorry warnings only; one-tactic probe closed none. Automatic checks: one form rule flagged (commit-pinned links into the roadmap repository), real, reported as a format note. Pull request text agrees with the head.",
+  "text": "9bc386be5e678c94"
+ }
+}
