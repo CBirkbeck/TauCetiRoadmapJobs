@@ -1,0 +1,33 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LieGroups~9",
+  "head": "618e56bb5cdd72d90c3f70e559af6eafda577818",
+  "pr": 2642,
+  "folder": "RepresentationTheory/LieGroups",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 121 changed lines since 244e782. Checked: each of the previous review's seven small corrections (all repaired) and its format note (not repaired, carried); the four changed Kirillov locators against kirillov2008; the eight Tau Ceti declarations the change cites, opened at the pin with their hypotheses; the IwasawaData change against kakDecomposition and iwasawaDecomposition with computed instances (SL2(R), R x {+-1}, compact G); the sampled targets 6.3 and 9.5 where the change touches them (6.3's new locator is to an uncertified book and was not read); elaboration of Suggested.lean (21 sorry warnings, nothing else); the dependency check (196 roadmaps, 0 problems, no UPWARD or CYCLE); the automatic checks, all passed; no change outside the folder; the pull request's description against the head (one sentence about the BCH module name is out of date). Small corrections: CotangentLagrangian C2.0/C2.1 are renumbered by the open revision #2687 with no old-to-new mapping; the description's BCH module sentence. Format note: Varadarajan and Serre listed but uncited.",
+  "text": "508ef83f79963dac",
+  "carried": {
+   "from": "618e56bb5cdd72d90c3f70e559af6eafda577818",
+   "head": "618e56bb5cdd72d90c3f70e559af6eafda577818",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C01: the open CotangentLagrangian revision (#2687) has to keep the ids C2.0 and C2.1 or say in its README that they are now §2.0 and §2.1 (for instance \"C2.0 and C2.1 are now §2.0 and §2.1\"), because ",
+    "where": "CotangentLagrangian's open revision README, a sentence mapping C2.0, C2.1 to §§2.0, 2.1",
+    "raised": "PRREVIEW-LieGroups~9"
+   }
+  ]
+ }
+}
