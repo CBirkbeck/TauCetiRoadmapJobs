@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaSeries~2",
+  "head": "c969dbd0f7dfbc8483d0466f901b194c2cb02bfd",
+  "pr": 2725,
+  "folder": "ThetaSeries",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 114 changed lines since cf64845. Previous R01 (false remark that the level need not divide D_L) and C01-C05 repaired, N01 partly repaired (carried as a format note). Checked: section 6.2 without coprimality numerically at 40 non-coprime pairs on five even lattices (sqrt2 Z^2, A2, two binary forms, D4) and the m^(2k) reduction; the section 6.6 remark and docstring (D4: |D_L| = 4, N = 2); section 5.3 against the pinned Tau Ceti declarations; the section 1.2 commentary against the pin's Poisson summation route; the lettered-label table against main's README; the former Lean names against main's Suggested.lean and the citations of LFunctions (main) and HalfIntegralWeightModularForms (open head). Seeded sample checked where it falls in the change (1.2, 5.3, 6.2, 6.6); untouched sample rows stand as in the review of cf64845. Turaev 1998 section 1.3 not verifiable (no legal copy). Automatic checks all passed (rerun); depcheck 0 problems; lake env lean gives only the 10 sorry warnings; one-tactic probe does not close the changed statement; no change outside the folder; PR description matches the head.",
+  "text": "af8da140d84e3f5d"
+ }
+}
