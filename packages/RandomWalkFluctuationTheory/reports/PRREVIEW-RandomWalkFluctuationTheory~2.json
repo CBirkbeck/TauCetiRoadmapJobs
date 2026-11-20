@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RandomWalkFluctuationTheory~2",
+  "head": "9bdfdf4227d8d7faaea8eedec1081509c91f1a01",
+  "pr": 2693,
+  "folder": "RandomWalkFluctuationTheory",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 49 changed lines since 480b7ad. Checked: R01, C01, C02, N01 of the previous review, all repaired; the generalised return criterion of 3.2 on five step laws (asymmetric walk: Green sum 3, return probability 2/3; point masses; d = 0; simple walk) and the new Rademacher comparison of 1.1; the Tau Ceti declarations the change names, opened at the pin; Lyons-Peres pp. 38 and 41 read in the copy of 8 November 2016; Durrett not reopened this round (sources service refused the address; read at the page in the previous review). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 7 sorry warnings only and is unchanged. One small correction: the pull request's description (out-of-scope sentence, Lyons-Peres date).",
+  "text": "4b254d2a31f84d15"
+ }
+}
