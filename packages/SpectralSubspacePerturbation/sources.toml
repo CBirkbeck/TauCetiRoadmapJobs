@@ -1,0 +1,124 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SpectralSubspacePerturbation"
+
+[[source]]
+id = "AlbeverioMakarovMotovilov2003"
+authors = "Sergio Albeverio, Konstantin A. Makarov, Alexander K. Motovilov"
+title = "Graph Subspaces and the Spectral Shift Function"
+year = 2001
+venue = "Canadian Journal of Mathematics, Vol. 55 (3), 2003, pp. 449-503"
+doi = "10.4153/CJM-2003-020-7"
+arxiv = "math/0105142v3"
+locator_scheme = "theorem"
+locator = "Theorem 2.7; Remark 2.8; Lemma 2.5"
+url = "https://arxiv.org/abs/math/0105142v3"
+fetched_from = "https://arxiv.org/pdf/math/0105142v3"
+fetched_at = "2026-11-20T02:31:16Z"
+sha256 = "3fcb90a3f4cfb082bb1de740a245c490e4838d7e0cd6b6c4d6388bbe913bab4b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v3"
+cited_for = ["2.12", "2.16", "2.17", "2.19"]
+
+[[source]]
+id = "Seelmann2014"
+authors = "Albrecht Seelmann"
+title = "Notes on the sin2Θ theorem"
+year = 2013
+venue = "Integral Equations and Operator Theory 79 (2014), 579--597"
+doi = "10.1007/s00020-014-2127-z"
+arxiv = "1310.2036v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.1; Proposition 2.4"
+url = "https://arxiv.org/abs/1310.2036v1"
+fetched_from = "https://arxiv.org/pdf/1310.2036v1"
+fetched_at = "2026-11-20T02:31:21Z"
+sha256 = "34117a047d524c64ddb3ae6e56d7f936dae76f1abaf13dec72929472bd94cd45"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["2.16", "2.17", "4.15"]
+
+[[source]]
+id = "YuWangSamworth2015"
+authors = "Yi Yu, Tengyao Wang, Richard J. Samworth"
+title = "A useful variant of the Davis--Kahan theorem for statisticians"
+year = 2014
+arxiv = "1405.0680v1"
+locator_scheme = "theorem"
+locator = "Theorem 2, inequality (3); Corollary 3; Theorem 4 and the remark after it"
+url = "https://arxiv.org/abs/1405.0680v1"
+fetched_from = "https://arxiv.org/pdf/1405.0680v1"
+fetched_at = "2026-11-20T02:45:45Z"
+sha256 = "6f4bc8b6a3cc768097102e54379ca894e92302ab5f9a9516fb55b71116ae0cd4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["4.17", "4.18", "4.19"]
+
+[[source]]
+id = "KostrykinMakarovMotovilov2004"
+authors = "Vadim Kostrykin, Konstantin A. Makarov, Alexander K. Motovilov"
+title = "A generalization of the $tan 2Θ$ Theorem"
+year = 2003
+venue = "Operator Theory: Advances and Applications, Vol. 149, 2004, pp. 349 - 372."
+arxiv = "math/0302020v1"
+locator_scheme = "equation"
+locator = "(1.2) and (1.4)"
+url = "https://arxiv.org/abs/math/0302020v1"
+fetched_from = "https://arxiv.org/pdf/math/0302020v1"
+fetched_at = "2026-11-20T02:45:51Z"
+sha256 = "5043049920eb90408c3c734c2fd42eae4e3ff52e7c73ba9d99e92131c9cdad6f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["3.31"]
+
+[[source]]
+id = "BhatiaDavisMcIntosh1983"
+authors = "Rajendra Bhatia, Chandler Davis, Alan McIntosh"
+title = "Perturbation of spectral subspaces and solution of linear operator equations"
+year = 1983
+venue = "Linear Algebra and its Applications 52-53"
+doi = "10.1016/0024-3795(83)80007-x"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://doi.org/10.1016/0024-3795(83)80007-x"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.16"]
+
+[[source]]
+id = "Davis1963"
+authors = "Chandler Davis"
+title = "The rotation of eigenvectors by a perturbation"
+year = 1963
+venue = "Journal of Mathematical Analysis and Applications 6"
+doi = "10.1016/0022-247X(63)90001-5"
+locator_scheme = "page"
+locator = "159–173"
+url = "https://doi.org/10.1016/0022-247X(63)90001-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["References"]
+
+[[source]]
+id = "Bhatia1997"
+authors = "Rajendra Bhatia"
+title = "Matrix Analysis"
+year = 1997
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-0653-8"
+locator_scheme = "theorem"
+locator = "Theorem VII.2.3"
+url = "https://doi.org/10.1007/978-1-4612-0653-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.7"]
