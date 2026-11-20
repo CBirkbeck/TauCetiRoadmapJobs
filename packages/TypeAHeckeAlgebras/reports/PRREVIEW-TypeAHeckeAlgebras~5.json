@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TypeAHeckeAlgebras~5",
+  "head": "e2495244512d78942ba5125c60d26288128f381e",
+  "pr": 2716,
+  "folder": "TypeAHeckeAlgebras",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 67 changed lines since 4571a5d. Checked: the three small corrections of the previous review (all repaired); the new citations against the text (Andersen-Stroppel-Tubbenhauer Theorem 5.1 with its convention on q and its quadratic relation; Mathas Example 2.15 with its base ring, its Jucys-Murphy elements and its q-integers, where a misprint for negative contents was found and is already corrected in the README; Wenzl Proposition 2.9 and Theorem 3.6(b) with their printed pages); the sampled sections 1.6, 3.5 and 3.6 where the diff touches them; the split Needs lines of 3.6 and 3.14; parabolicEigenSum at the pin; TemperleyLieb Layer 5 on main and at its open head; the description against the head (counts of Checks, suppliers, Lean declarations, citations). Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with five sorry warnings only; nothing changed outside the folder. One small correction (Mathas does not print the elements of Murphy's basis). Jones 1987 and Sawin 1995 remain unread (paywalled).",
+  "text": "05a491322201117b",
+  "carried": {
+   "from": "e2495244512d78942ba5125c60d26288128f381e",
+   "head": "b33d6410da1ce96ebb92db772456735e320f9b5e",
+   "findings": 1,
+   "lines": 7,
+   "folders": [
+    "TypeAHeckeAlgebras"
+   ],
+   "corrections": true
+  }
+ }
+}
