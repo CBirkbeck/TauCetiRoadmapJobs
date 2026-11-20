@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FormalLanguagesAndAutomata"
+
+[[source]]
+id = "Watrous2020"
+locator_scheme = "theorem"
+locator = "Lemma 10.1"
+url = "https://cs.uwaterloo.ca/~watrous/ToC-notes/ToC-notes.pdf"
+fetched_from = "https://cs.uwaterloo.ca/~watrous/ToC-notes/ToC-notes.pdf"
+fetched_at = "2026-11-20T13:45:01Z"
+sha256 = "cabcf447f55674cd7dd34f3227122a9398b598f44437d2b7de0a96c42cb2e4eb"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.2"]

@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FormalLanguagesAndAutomata~2",
+  "head": "defb2e4ad1db403c9c2a7d486e127db33f49e1f4",
+  "pr": 2712,
+  "folder": "FormalLanguagesAndAutomata",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 11 changed lines since 05c0d0e. Previous R01 (strict inclusion over every finite alphabet) and C01 (longest path in the pumping route) are repaired; both repairs recomputed: tree bound 2^(m-1) < 2^m and subtree bound 2^m against Watrous2020 lines 3444-3477; unary pumping languages enumerated for p = 1, 2, 3 (3, 31, 794 languages, none violating period p!); regular pumping of 0^p 1^p for p <= 6. Seeded sample checked where it falls in the change (3.2, 3.3). Automatic checks all pass; dependency check 0 problems; Suggested.lean unchanged, elaborates with 19 sorry warnings only. N01 and N02 carried as format notes. Gallier-Quaintance locators remain unverifiable; four questions for the human reviewers carried over.",
+  "text": "e3a76c6a8c26a6ff"
+ }
+}
