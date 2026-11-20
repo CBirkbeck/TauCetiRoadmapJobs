@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RandomWalkFluctuationTheory"
+
+[[source]]
+id = "LyonsPeres"
+locator_scheme = "section"
+locator = "§2.5"
+url = "https://rdlyons.pages.iu.edu/prbtree/book_online.pdf"
+fetched_from = "https://rdlyons.pages.iu.edu/prbtree/book_online.pdf"
+fetched_at = "2026-11-20T13:13:06Z"
+sha256 = "9c7978725605fb035e2a67e964b9ce1392b8ed413f5853b3194279f58bf84d69"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.3"]
