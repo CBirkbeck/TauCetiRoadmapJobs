@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SteinsMethodForNormalApproximation"
+
+[[source]]
+id = "Ross2011"
+authors = "Nathan Ross"
+title = "Fundamentals of Stein's method"
+year = 2011
+arxiv = "1109.1880v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.5"
+url = "https://arxiv.org/abs/1109.1880v1"
+fetched_from = "https://arxiv.org/pdf/1109.1880v1"
+fetched_at = "2026-11-20T20:45:32Z"
+sha256 = "78cb3b0b439fea213c638d69d80b629123298b5e673683d2338d4b8da394115b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["1.1"]
