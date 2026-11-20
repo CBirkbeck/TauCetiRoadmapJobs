@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpectralGraphBounds~1",
+  "head": "a2d53c022caa3994d3fd49e21de7d325827b8804",
+  "pr": 2722,
+  "folder": "SpectralGraphBounds",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "All 11 sampled targets and all 16 Lean theorems recomputed by hand and by an independent exhaustive computation (1099 labelled graphs on 1-5 vertices; 18 Quenell instances; 55 cases of the tree recurrence); every Check value recomputed. 42 library declarations opened at the pins; RandomMatrices 1.2 and GeometricTopology 4.4.5 resolved on main; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; simp probe closes nothing. Automatic checks all passed. Source locators NOT verified: neither Brouwer-Haemers nor Quenell could be read through the sources service (see Not verifiable and For the human reviewers).",
+  "text": "eb92aa4debfa9af2"
+ }
+}
