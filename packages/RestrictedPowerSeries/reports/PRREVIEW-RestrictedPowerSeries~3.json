@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RestrictedPowerSeries~3",
+  "head": "c995602a20704b7918b47faf5d8d3b28e5867aca",
+  "pr": 2656,
+  "folder": "RestrictedPowerSeries",
+  "date": "2026-11-20",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Gate: every check passed. Dependency check: 200 roadmaps, 2200 edges, 0 problems. Suggested.lean elaborates at the pins with no message and declares nothing; the docstring's 20 pinned names were checked, all present in sorry-free modules. All 457 README names resolved at Tau Ceti 2fd255d and Mathlib 1b1ccf4b; about 45 signatures compared. Seeded sample (0.1-0.3, 1.2, 2.1, 3.1-3.2, 4.4, 5.1-5.2, 6.1-6.3, 7.1-7.2): 33 locators checked in martin, bosch, wedhorn, ega, colmez and gk; bgr, coleman and huber are uncertified and were not read. Findings: two-way supply with AdicSpacesPartIV (R01); unit-radius Tate noetherianity owned twice, with AdicSpaces 0.5 (R02); completeness missing in the 2.1 module form and 7.1 translation (R03); 7.1 non-surjectivity stated without the over-Q_p qualifier (R04).",
+  "text": "ef0e05a6bbe70e58"
+ }
+}
