@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StablePeriodicCurved~4",
+  "head": "14176fa05c5f5ccced296d704ec8d80bf072ce20",
+  "pr": 2668,
+  "folder": "StablePeriodicCurved",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 24 changed lines since 041f6c6. Checked: the four small corrections of the previous review are repaired (Orlov section 3.1 and Theorem 3.9 read in arXiv math/0302304v2; Buchweitz sections 1.1 and 8.1 read in the 1986 manuscript; brutal truncation recomputed in section 4.5, the Layer 4 and Layer 7 Examples and section 8.2; the description's line count); the previous format note on a locator for minimal free resolutions is carried. Seeded sample checked where it falls in the changed passages (7.5, 8.2). Title and description read against the head: no contradiction. Automatic checks all passed, gate rerun clean, depcheck 0 problems, Suggested.lean elaborates with nine sorry warnings only; no change outside the folder.",
+  "text": "f0eb9422fad73182"
+ }
+}
