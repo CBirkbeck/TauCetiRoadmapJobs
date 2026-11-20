@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EigenvalueIterations"
+
+[[source]]
+id = "Saad2011"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://www-users.cse.umn.edu/~saad/eig_book_2ndEd.pdf"
+fetched_from = "https://www-users.cse.umn.edu/~saad/eig_book_2ndEd.pdf"
+fetched_at = "2026-11-20T23:44:37Z"
+sha256 = "82ed96b07eeddc231b58fd666bfd83839fcb3c85901a6cfbbd0f7c46ef83c8f4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["1.2"]
+
+[[source]]
+id = "Arbenz2016"
+locator_scheme = "theorem"
+locator = "Theorem 7.6"
+url = "https://people.inf.ethz.ch/arbenz/ewp/Lnotes/lsevp.pdf"
+fetched_from = "https://people.inf.ethz.ch/arbenz/ewp/Lnotes/lsevp.pdf"
+fetched_at = "2026-11-20T23:44:52Z"
+sha256 = "eab47684faae1da6fce5280b287f5b17d1808a7b07f9d6fc36683255f67504a5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["2.1"]
