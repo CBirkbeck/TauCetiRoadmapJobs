@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IntegrableSystems~27",
+  "head": "b06cb2728dbb01f4a0868d830e8cee39e6456610",
+  "pr": 2691,
+  "folder": "SymplecticGeometry/IntegrableSystems",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 4,
+  "notes": "incremental re-review of 45 changed lines since bf1b893: the three changed passages (Hausdorff in 1.2 and 2.6, the collar cut-off of 5.1) checked, the 5.1 determinant bound recomputed (b_min = 1/4, R = 5 gives 1/16; a bump gives 2b - 1 < 0), Smale Thm. B read at its locator; previous small corrections C01 and C02 repaired, format notes N01-N03 carried; the pull request's description read against the head (one small correction: Arnold cited by section, not only by chapter); supplier citations resolved at main and at the open heads of CotangentLagrangian and HamiltonianReduction; all automatic checks pass, depcheck 0 problems, Suggested.lean elaborates with four sorry warnings only.",
+  "text": "0948635e365ed552",
+  "carried": {
+   "from": "b06cb2728dbb01f4a0868d830e8cee39e6456610",
+   "head": "b06cb2728dbb01f4a0868d830e8cee39e6456610",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
