@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-OrthogonalGeometry~1",
+  "head": "dd6c846a65ec86798cda349e2101f713963f566a",
+  "pr": 2615,
+  "folder": "OperatorTheory/OrthogonalGeometry",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Sample: §1.1, §2.1 and §3.1 carry no source locator; each was verified by hand computation and by Lean probes against the pins. Chien–Waldron Theorem 2.2(1) was read in arXiv v1 and supports the Gram characterization. Automatic checks: all passed; dependency check reports 0 problems; Suggested.lean elaborates with no warnings. Finding R01: §2.1 duplicates Tau Ceti's Orthonormal.synthesisMapIsometry at Fin d.",
+  "text": "51a096f1b4933e24"
+ }
+}
