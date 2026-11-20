@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexManifolds~5",
+  "head": "fc445b9673071bef5367820d4f996a1da1d22949",
+  "pr": 2549,
+  "folder": "ComplexManifolds",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 2 changed lines since d33ec3d: the change is one HTML anchor keeping the old Milestone 1 fragment before the Layer 1 heading. Checked: the anchor id equals MorseTheory's link fragment on main (line 1216) and at its open head, and no other fragment links into this README, so deferred finding D01 is resolved; the previous report had no open finding; no statement, supplier or Lean declaration changed (adversarial table has rows for the anchor and the adjacent 1.1/1.2 statements, with pinned declarations opened). Automatic checks rerun, all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with no output; nothing changed outside the folder. One small correction: the description's sentence that MorseTheory's link resolves only after MorseTheory changes is contradicted by the head. Seeded sample not in the changed lines; seven textbooks remain unreadable (for the human reviewers).",
+  "text": "1ae8ebb07a61a22b",
+  "carried": {
+   "from": "fc445b9673071bef5367820d4f996a1da1d22949",
+   "head": "fc445b9673071bef5367820d4f996a1da1d22949",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
