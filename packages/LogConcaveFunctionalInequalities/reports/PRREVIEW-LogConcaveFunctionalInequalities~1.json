@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LogConcaveFunctionalInequalities~1",
+  "head": "32900ddf8f4e675f9781e868fd85401950915a11",
+  "pr": 2778,
+  "folder": "LogConcaveFunctionalInequalities",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample 1.1-1.3, 2.1-2.4, 3.1, 4.1, 4.2: every statement tested on degenerate instances and every number in a Check recomputed by quadrature (all agree). Source locators: 10 in Gozlan-Leonard arXiv:1003.3852v1 and 2 in Bakry-Emery (Numdam) read and confirmed; 2 in van Handel's lecture notes not readable through the sources service (listed as not verifiable, flagged to the human reviewers). 20 library declarations opened at the pins; 14 supplier sections on main and 3 open-head sections resolved. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 8 theorems; pull-request text agrees with the head.",
+  "text": "fe5cc5f3458f6843"
+ }
+}
