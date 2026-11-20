@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuantumErrorCorrection~1",
+  "head": "e5ad54a63cce3984a9fe2c68540be596d01e57c6",
+  "pr": 2732,
+  "folder": "QuantumErrorCorrection",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Full review. Sample: all 14 sections 1.1-5.2, each recomputed on degenerate and small instances (adversarial table in the report). All 19 source locators read in the three arXiv texts (Gottesman 0904.2557v1, Knill-Laflamme quant-ph/9604034v1, Calderbank-Rains-Shor-Sloane quant-ph/9608006v5), fetched through the sources service, which recorded them in the package manifest. 27 Mathlib and 8 Tau Ceti declarations opened at the pins. Automatic checks all passed; dependency check re-run: 0 problems. Suggested.lean elaborated: 14 sorry warnings only; one-tactic probe closes no theorem. Duplication searched by object in the pinned libraries and all roadmaps (main and open heads): none. One source error recorded (Knill-Laflamme Theorem 5.1 for k = 1). Two format notes; two items for the human reviewers.",
+  "text": "82f1dc6d58e8c5f6"
+ }
+}
