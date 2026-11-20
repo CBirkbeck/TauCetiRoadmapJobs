@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NilpotentOrbits~3",
+  "head": "f010181e0797685cc1694df51d54af95ce86c5f2",
+  "pr": 2628,
+  "folder": "NilpotentOrbits",
+  "date": "2026-11-20",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full re-review. All five earlier remarks repaired. Seeded sample (0.4, 1.2, 1.3, 2.2, 2.4, 3.2, 5.0, 6.2, 7.1, 7.2, 8.1, 8.2, 8.3, 9.1, 9.2) checked: 29 of 31 locators read in the open sources (Yun16, LNS10, BMIY22, DG07, GHR06), all support their claims; Slo80 uncertified. Every README Check recomputed. The new Brieskorn-Slodowy statements were checked against Tau Ceti DynkinType/HasCartanType and Mathlib CartanMatrix conventions: the B/C orientation is consistent. Elaboration: nine sorry warnings only. Automatic checks all passed; depcheck 0 problems. Overlap with LieHighestWeightPartII, LieHighestWeight, ReflectionInvariantTheory, AdoIwasawa, RealSemisimpleLieGroups, ReductiveGroups, McKaySkewGroup, K3SurfacesAndSymplecticBoundedness and SpringerResolutionAndCharacteristicCycles: nothing doubly owned. Findings: two false docstring sentences (basePointIdeal maximality; subregularEquation outside the valid ranges). Correction: smoothness of projective orbit schemes is already proved at the pin.",
+  "text": "d5ff5eb260e80ead"
+ }
+}
