@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KleinianGroups~5",
+  "head": "e85a4072f573c950fce392ad935b33bd4c5cc1cd",
+  "pr": 432,
+  "folder": "KleinianGroups",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full re-review. Previous findings R01-R03 repaired. One finding: Layer 2 duplicates the pinned TauCeti.dirichletDomain and TauCeti.isFundamentalDomain_dirichletDomain (equal by rfl on a probe copy). All statements and Checks recomputed (table in the report); seeded sample read against thurston1982, milley2009, millichap2017, milnor1982, borel1981; Elstrodt-Grunewald-Mennicke and Cao-Meyerhoff not readable. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 44 sorry warnings only; one-tactic probes found no padding.",
+  "text": "2f5bed4baf735912"
+ }
+}
