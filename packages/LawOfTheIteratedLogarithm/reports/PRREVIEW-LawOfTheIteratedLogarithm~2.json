@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LawOfTheIteratedLogarithm~2",
+  "head": "cc4c2b83be7452be10cf0f68243d36ebb782fa99",
+  "pr": 2689,
+  "folder": "LawOfTheIteratedLogarithm",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 50 changed lines since 9937b6a. Checked: R01 repaired (hypothesis eps <= 1 in README 1.1, summary and Suggested.lean; last step of the route recomputed, 1.959 <= 2 at delta = 1/8, threshold 0.14446); C01 and N01 of the previous report repaired (N01 partly, kept as a format note). Recomputed every number of the three new Checks of 1.1 with exact binomial tails (-5005.524, -5560.796, -285.341). Seeded sample where it falls in the change: 1.1 against Kolmogorov1929 (OCR text, statement and final display) and 3.2 against Durrett2019 lines 19930, 19950. Two small corrections: the two negative controls of 1.1 now also violate eps <= 1; omega < 1/256 is implied by eps <= 1. Automatic checks all passed; dependency check 0 problems; elaboration gives five sorry warnings only; one-tactic probe leaves the changed theorem open; pull request text agrees with the head; no change outside the folder.",
+  "text": "85b5097046d21df7"
+ }
+}
