@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InductionRestriction~5",
+  "head": "5cf368c1317c747e2b2d1b1decb7683c32d266e9",
+  "pr": 2639,
+  "folder": "RepresentationTheory/InductionRestriction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Full re-review. All nine remarks of the previous review (R01, C01-C05, N01-N03) are repaired at this head. Seeded sample (0.1, 2.1, 2.3, 3.1, 4.1-4.4, 5.1, 5.2, 6.1, 7.1, 7.3, 7.7, 7.8) and the four headline theorems recomputed, with the Clifford correspondence checked under finite index of the inertia group for infinite G; adversarial table with values in the report. Weibel2013 read at its locators (lines 1941-1981) and supports 7.1; Isaacs, Curtis-Reiner, Serre and Mackey are paywalled and not read (listed under Not verifiable; Isaacs has the largest share of locators, flagged for the human reviewers). Pinned Tau Ceti and Mathlib declarations opened for every relied-on hypothesis. Suggested.lean elaborates with 13 sorry warnings only; one-tactic probe closes none. Dependency check: 0 problems; automatic checks all passed; no change outside the folder. Overlap check done against six closest roadmaps: nothing shared. Three automatic leads set aside as false positives (own declared names, mapped anchors, a binder not needed).",
+  "text": "07b96762921a254e"
+ }
+}
