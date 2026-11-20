@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InductionRestriction~6",
+  "head": "67fee23e268d47eaefff570e643a7846386b8b50",
+  "pr": 2639,
+  "folder": "RepresentationTheory/InductionRestriction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 4 changed lines since 5cf368c: the two explicit anchors before §2.1 and §7.1 were compared with the fragments linked from PseudodifferentialOperators and StableHomotopyKTheory on main (identical, no collision with heading anchors); the Layer 0, 3, 6 fragments rechecked; no statement changed, no seeded-sample locator falls in the changed lines; adversarial rows computed for §2.1 and §7.1; automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 13 sorry warnings only; no change outside the folder; one small correction (the description still says the two anchors change), two format notes carried.",
+  "text": "07b96762921a254e",
+  "carried": {
+   "from": "67fee23e268d47eaefff570e643a7846386b8b50",
+   "head": "67fee23e268d47eaefff570e643a7846386b8b50",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
