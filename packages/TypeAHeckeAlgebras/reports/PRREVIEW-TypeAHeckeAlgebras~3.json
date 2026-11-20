@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TypeAHeckeAlgebras~3",
+  "head": "4571a5d63c2fe00b734d678a90a1a21970b68bac",
+  "pr": 2716,
+  "folder": "TypeAHeckeAlgebras",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full re-review. Previous findings: R01 and R02 repaired, C02 and C03 repaired, C01 carried as C01. Seeded sample checked against the texts: Wenzl1988 (Thm 2.2, Thm 3.6(a)(b), (3.5), Thm 3.7), Neretin2021 (§1.4, Thm 1.1 with (1.7)-(1.8), the Remark on p. 6, §§1.6-1.7, §3.1, §3.3), FerayMeliot2012 (Thm 1, §4.3) and HOMFLY1985 (pp. 245-246); 19 locators. Jones 1987 (§3.2) and Sawin 1995 are behind the JSTOR paywall and were checked by computation only. Adversarial table with 24 rows. Automatic checks all passed; dependency check 0 problems with no UPWARD or CYCLE line; Suggested.lean elaborates with five sorry warnings only; #check @ of all declarations matches the README; simp does not close the new headline; norm_num confirms five wenzlParameter values. Two small corrections: missing locators for the Murphy basis, the criterion and JM triangularity in §§1.2 and 1.6; the Needs cycle between §§3.6 and 3.14.",
+  "text": "dd2840fe6c42fc41"
+ }
+}
