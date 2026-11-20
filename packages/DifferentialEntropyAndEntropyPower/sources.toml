@@ -1,0 +1,61 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DifferentialEntropyAndEntropyPower"
+
+[[source]]
+id = "Rioul2011"
+authors = "Olivier Rioul"
+title = "Information Theoretic Proofs of Entropy Power Inequalities"
+year = 2007
+doi = "10.1109/TIT.2010.2090193"
+arxiv = "0704.1751v2"
+locator_scheme = "equation"
+locator = "Proposition 2"
+url = "https://arxiv.org/abs/0704.1751v2"
+fetched_from = "https://arxiv.org/pdf/0704.1751v2"
+fetched_at = "2026-11-20T15:29:05Z"
+sha256 = "d77b1c50912b267acdedac98566ddd950070ba3d3809809c2d981819a8d65a4b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["4.2"]
+
+[[source]]
+id = "MadimanBarron2007"
+authors = "Mokshay Madiman, Andrew Barron"
+title = "Generalized Entropy Power Inequalities and Monotonicity Properties of Information"
+year = 2006
+venue = "IEEE Transactions on Information Theory, Vol. 53(7), pp. 2317-2329, July 2007"
+doi = "10.1109/TIT.2007.899484"
+arxiv = "cs/0605047v2"
+locator_scheme = "theorem"
+locator = "Lemma 1"
+url = "https://arxiv.org/abs/cs/0605047v2"
+fetched_from = "https://arxiv.org/pdf/cs/0605047v2"
+fetched_at = "2026-11-20T15:29:10Z"
+sha256 = "efc95ee050099f735fa77c00718aca1c2f687de95655f2f6e24a67e018f92a27"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["3.1"]
+
+[[source]]
+id = "MadimanMelbourneXu2017"
+authors = "Mokshay Madiman, James Melbourne, Peng Xu"
+title = "Forward and Reverse Entropy Power Inequalities in Convex Geometry"
+year = 2016
+venue = "Book chapter in \"Convexity and Concentration\", E. Carlen, M. Madiman, E. Werner (eds.), The IMA Volumes in Mathematics and its Applications, Vol. 161, pp. 427-485, Springer, 2017"
+doi = "10.1007/978-1-4939-7005-6_14"
+arxiv = "1604.04225v2"
+locator_scheme = "theorem"
+locator = "Theorem 2.5"
+url = "https://arxiv.org/abs/1604.04225v2"
+fetched_from = "https://arxiv.org/pdf/1604.04225v2"
+fetched_at = "2026-11-20T15:29:16Z"
+sha256 = "77119166c213ba914b94a31f5d4c289d75b5d02ffa13ed7fe065e2ca9b744e0d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["4.2"]
