@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SNumbers~5",
+  "head": "2322e11af45400afe965d1d5e6d07a0d05685aae",
+  "pr": 2648,
+  "folder": "SNumbers",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 2,
+  "notes": "Full review of an unchanged head. Seeded sample of 15 targets: locators read in Pietsch 1974, Ullrich 2026 and the Lean-SNumbers blueprint; Pietsch 1987, Pietsch 1980 and Carl-Stephani 1990 not readable (listed under Not verifiable). Adversarial table of 32 rows with computed values. 38 Tau Ceti and 20 Mathlib declarations located at the pins. Suppliers BanachSpaceTheory B4, B6, B7 and OperatorIdeals resolved on main. Automatic checks all passed, none set aside; dependency check 0 problems. Suggested.lean elaborates with 56 sorry warnings only; one-tactic probe closes none of the 56 theorems. Pull request description agrees with the head. One licence question for the human reviewers.",
+  "text": "66bd2d011455e309",
+  "carried": {
+   "from": "2322e11af45400afe965d1d5e6d07a0d05685aae",
+   "head": "8c8ec43d9bab42c800a6c9621c79920693e2512e",
+   "findings": 6,
+   "lines": 134,
+   "folders": [
+    "SNumbers"
+   ],
+   "corrections": true
+  }
+ }
+}
