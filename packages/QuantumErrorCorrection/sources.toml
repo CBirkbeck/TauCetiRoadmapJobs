@@ -1,0 +1,58 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "QuantumErrorCorrection"
+
+[[source]]
+id = "Gottesman2009"
+authors = "Daniel Gottesman"
+title = "An Introduction to Quantum Error Correction and Fault-Tolerant Quantum Computation"
+year = 2009
+arxiv = "0904.2557v1"
+locator_scheme = "theorem"
+locator = "Theorem 5"
+url = "https://arxiv.org/abs/0904.2557v1"
+fetched_from = "https://arxiv.org/pdf/0904.2557v1"
+fetched_at = "2026-11-20T14:52:27Z"
+sha256 = "2d53b60b7616defa1af51a1ad623c0febec565e583b7c1584212436226b3be29"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["review"]
+
+[[source]]
+id = "KnillLaflamme1997"
+authors = "Emanuel Knill, Raymond Laflamme"
+title = "A Theory of Quantum Error-Correcting Codes"
+year = 1996
+venue = "Phys.Rev.Lett.84:2525-2528,2000"
+doi = "10.1103/PhysRevLett.84.2525"
+arxiv = "quant-ph/9604034v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.2"
+url = "https://arxiv.org/abs/quant-ph/9604034v1"
+fetched_from = "https://arxiv.org/pdf/quant-ph/9604034v1"
+fetched_at = "2026-11-20T14:52:32Z"
+sha256 = "756239de9df3e2b29024248fe2681ecd9dd658f28f673a209a1ebd701b8c1950"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["review"]
+
+[[source]]
+id = "CRSS1998"
+authors = "A. R. Calderbank, E. M Rains, P. W. Shor, N. J. A. Sloane"
+title = "Quantum Error Correction via Codes over GF(4)"
+year = 1996
+arxiv = "quant-ph/9608006v5"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/quant-ph/9608006v5"
+fetched_from = "https://arxiv.org/pdf/quant-ph/9608006v5"
+fetched_at = "2026-11-20T14:52:39Z"
+sha256 = "87a2685bc922ad8e77e8232eda540674e68ee24ddbd76156c9c2a297fe755ef3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v5"
+cited_for = ["review"]
