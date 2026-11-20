@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NewtonPolygons~2",
+  "head": "5007ca64ebf3fa8604bb2f82f5057d545138f1dd",
+  "pr": 2609,
+  "folder": "NewtonPolygons",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 140 changed lines since cfeb3c3. All five earlier points (R01 radius hypothesis, C01 book-level locators, C02 description sentence, N01 bounded domain, N02 Mathlib proposal numbers) are repaired. The changed passages were reviewed in full: the radius sentences against the pinned Tau Ceti radius theorems; the new locators against the text of Lazard (p. 48; Propositions 2 and 4) and Kedlaya (Corollary 3, Theorem 7, section 5); the seeded sample where it falls in the change (0.2, 4.2, 5.2, 6.1, 6.2, 6.5). The adversarial table has 14 computed rows. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with only sorry warnings, and only its docstrings changed. One format note: two locators sit one bullet away from the claim they support.",
+  "text": "a15796835831f078"
+ }
+}
