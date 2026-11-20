@@ -1,0 +1,52 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SubspaceTheorem"
+
+[[source]]
+id = "Evertse2010"
+authors = "Jan-Hendrik Evertse"
+title = "On the Quantitative Subspace Theorem"
+year = 2010
+venue = "Zapiski Nauchnyk Seminarov POMI 377 (2010), 217-240; J. Math. Sciences 171 (2010), 824-837"
+arxiv = "1008.2268v1"
+locator_scheme = "section"
+locator = "§2"
+url = "https://arxiv.org/abs/1008.2268v1"
+fetched_from = "https://arxiv.org/pdf/1008.2268v1"
+fetched_at = "2026-11-20T14:04:02Z"
+sha256 = "db1b7d64130842f3f79540e6b55d6e0ffbee081bd71404dee350dfe4438e31c9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["9.1"]
+
+[[source]]
+id = "Schlickewei1990"
+authors = "H. P. Schlickewei"
+title = "S-unit equations over number fields"
+year = 1990
+venue = "Inventiones Mathematicae 102"
+doi = "10.1007/bf01233421"
+locator_scheme = "section"
+locator = "§3"
+url = "https://doi.org/10.1007/bf01233421"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.7"]
+
+[[source]]
+id = "E19-ch7"
+authors = "Jan-Hendrik Evertse"
+title = "Diophantine Approximation (lecture notes for the Leiden/Mastermath course), Chapter 7"
+year = 2019
+locator_scheme = "theorem"
+locator = "Theorems 7.7 and 7.8"
+url = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-7.pdf"
+fetched_from = "https://pub.math.leidenuniv.nl/~evertsejh/dio19-7.pdf"
+fetched_at = "2026-11-20T14:18:42Z"
+sha256 = "8535b816bfc2899719849ab531686f2a7d812d0427ac9042b4ee7c86fe726610"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["7.1"]
