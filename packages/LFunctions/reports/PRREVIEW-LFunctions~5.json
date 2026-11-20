@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LFunctions~5",
+  "head": "966e5f88ddc7a382f001f511b398fd8a8965248e",
+  "pr": 2626,
+  "folder": "LFunctions",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full re-review: the earlier R02, C01-C04, C06-C08 and N01 are repaired; R01 and C05 are partly repaired. Sample: Lebacque Thm 5 (NF), Props 2-3 and Loeffler-Stoll section 6 p. 54 read at their locators. Neukirch (54 of 68 mentions) and Washington are uncertified, so their locators were checked by computation only. Automatic checks all passed; depcheck: 200 roadmaps, 2196 edges, 0 problems. lake env lean: 111 sorry warnings, nothing else. The one-tactic probe (rfl/simp/infer_instance) closed nothing; #check @ on all 179 declarations keeps K, NumberField K and the hypotheses. Overlap: AnalyticNumberTheoryPartI section 2.3a, ExplicitNumberFields, QuasiRiemannHypothesis and ZerosOfLFunctions are consumers; nothing is owned twice. Blocking: the section 7.3 route splits on the order of the Hecke character, and its infinite-order branch is false for chi4*N over Q.",
+  "text": "9112e908a878b476"
+ }
+}
