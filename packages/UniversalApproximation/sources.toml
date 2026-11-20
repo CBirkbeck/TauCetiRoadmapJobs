@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "UniversalApproximation"
+
+[[source]]
+id = "Pinkus1999"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://pinkus.net.technion.ac.il/files/2021/02/acta.pdf"
+fetched_from = "https://pinkus.net.technion.ac.il/files/2021/02/acta.pdf"
+fetched_at = "2026-11-20T07:30:44Z"
+sha256 = "16646d20a6588ecb9ca6a4dee8818aeea650263d8278666a559ec485a59f7d0b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.4"]
+
+[[source]]
+id = "Telgarsky2021"
+locator_scheme = "theorem"
+locator = "Lemma 3.1"
+url = "https://mjt.cs.illinois.edu/dlt/index.pdf"
+fetched_from = "https://mjt.cs.illinois.edu/dlt/index.pdf"
+fetched_at = "2026-11-20T07:30:49Z"
+sha256 = "6045f88e2eca91a2fd7dcdbdec991cfc9b569567ffcfd490a729fc6bd24c798f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["4.1"]

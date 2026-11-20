@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-UniversalApproximation~1",
+  "head": "b863d909ca7847e54536cafbb823517764d54f1c",
+  "pr": 2671,
+  "folder": "UniversalApproximation",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review. All 15 sampled targets and the 7 headline theorems checked with computed values (adversarial table in the report); every numerical Check recomputed. 18 source locators read at their place (14 Pinkus 1999, 4 Telgarsky 2021); Barron 1993 could not be read (not verifiable, attributed without locator in the README). All 31 cited Mathlib declarations and 4 Tau Ceti declarations opened at the pins. Suggested.lean elaborates with seven sorry warnings only; one-tactic probe closes none. Dependency check: 0 problems, no UPWARD or CYCLE. Automatic checks all passed; none set aside. Overlap read against ReLUNetworkExpressivity, RobustnessCertificates, Neuromanifolds, PolynomialInterpolationAndBestApproximation: nothing shared. One source issue recorded (Telgarsky, Example 3.1 item 2, quantifier order). Two questions left for the human reviewers (unpublished lecture notes as located source for Layer 4; Barron 1993 not compared).",
+  "text": "cf64aa5995936fc9"
+ }
+}
