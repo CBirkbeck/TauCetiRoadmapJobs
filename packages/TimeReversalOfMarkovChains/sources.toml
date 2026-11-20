@@ -1,0 +1,33 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TimeReversalOfMarkovChains"
+
+[[source]]
+id = "CampbellEtAl2022"
+authors = "Andrew Campbell, Joe Benton, Valentin De Bortoli, Tom Rainforth, George Deligiannidis, Arnaud Doucet"
+title = "A Continuous Time Framework for Discrete Denoising Models"
+year = 2022
+arxiv = "2205.14987v2"
+locator_scheme = "theorem"
+locator = "Proposition 1"
+url = "https://arxiv.org/abs/2205.14987v2"
+fetched_from = "https://arxiv.org/pdf/2205.14987v2"
+fetched_at = "2026-11-20T20:18:51Z"
+sha256 = "8c1164c723aee37d36465999f9b3647082d01bcb23637a54ed10077113455d3b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["4.1"]
+
+[[source]]
+id = "LPW"
+locator_scheme = "theorem"
+locator = "Proposition 1.23"
+url = "https://pages.uoregon.edu/dlevin/MARKOV/mcmt2e.pdf"
+fetched_from = "https://pages.uoregon.edu/dlevin/MARKOV/mcmt2e.pdf"
+fetched_at = "2026-11-20T20:19:23Z"
+sha256 = "9ef39f9467d9647ff3f5e8747b9ce24b7a90d13be2f8156fbd827b95b661a772"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["1.2"]

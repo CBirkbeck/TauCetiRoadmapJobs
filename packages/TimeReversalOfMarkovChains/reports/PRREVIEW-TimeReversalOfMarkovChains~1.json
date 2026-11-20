@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TimeReversalOfMarkovChains~1",
+  "head": "456c48bec615687568e92a6435d000fe87ed277c",
+  "pr": 2788,
+  "folder": "TimeReversalOfMarkovChains",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Sample: all ten sections 1.1-4.2 and the worked example recomputed (adversarial table in the report); 9 source locators read in LPW (author page) and arXiv:2205.14987v2; 27 library declarations opened at the pins; 17 cross-roadmap citations resolved on main and at open heads. Automatic checks all passed; Suggested.lean elaborates with nine sorry warnings only; one-tactic probe closes none of the nine theorems; dependency check 0 problems. Small corrections: Mathlib's Measure.condKernel_apply_of_ne_zero not cited in 1.3; misattributed reason in a Check of 4.1. Format note: title capitalisation. Two scope facts left for the human reviewers.",
+  "text": "f5a5078cebd8658d"
+ }
+}
