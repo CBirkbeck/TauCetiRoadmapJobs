@@ -1,0 +1,22 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "Neuromanifolds"
+
+[[source]]
+id = "FinkelRodriguezWuYahl2024"
+authors = "Bella Finkel, Jose Israel Rodriguez, Chenxi Wu, Thomas Yahl"
+title = "Activation degree thresholds and expressiveness of polynomial neural networks"
+year = 2024
+venue = "Alg. Stat. 16 (2025) 113-130"
+doi = "10.2140/astat.2025.16.113"
+arxiv = "2408.04569v4"
+locator_scheme = "section"
+locator = "§1.1, display (3) and the paragraph introducing it"
+url = "https://arxiv.org/abs/2408.04569v4"
+fetched_from = "https://arxiv.org/pdf/2408.04569v4"
+fetched_at = "2026-11-19T23:53:27Z"
+sha256 = "64a4e18d271d9a22a473447908760ee8aa70dce68a153c9a3b81b4ea1707bbff"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-19"
+version_note = "arXiv v4"
+cited_for = ["3.6"]
