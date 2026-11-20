@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HittingAndCoverTimes~1",
+  "head": "60a3301214dc3abe6d994a5c083b34d3cc29d940",
+  "pr": 2796,
+  "folder": "HittingAndCoverTimes",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. All 12 sampled targets (1.1-1.4, 2.1-2.4, 3.1, 4.1-4.3) checked: 24 source locators read at the text (Levin-Peres 2nd ed., Lyons-Peres versions of 2016-11-08 and 2026-08-19, Aldous-Fill 2014 recompilation), all agree; every Check recomputed exactly (including d(22)=1495409/5767168 and t_mix=23 for the lazy rotation on Z/11, cover times of cycle, complete graph, path, star); 19 library declarations opened at the pins; supplier citations resolved on main and at the open heads of ElectricalNetworksAndRandomWalks, MarkovChainMixing, MCMCAsymptoticVariance; the 12 copied definitions are verbatim. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with ten sorry warnings only; one-tactic probe closes none of the ten theorems. Three small corrections (set version of the hitting time identity not mentioned, no locator for 1.2, a citation of a numbering only an open revision defines) and two format notes. For humans: Aldous-Fill is an unpublished monograph; three suppliers are open pull requests.",
+  "text": "dae93a1f922d67ef"
+ }
+}
