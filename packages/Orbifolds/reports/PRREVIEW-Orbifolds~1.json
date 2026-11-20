@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-Orbifolds~1",
+  "head": "ea71841c6ab2756a51abc1b4094f12b1e35295a5",
+  "pr": 2624,
+  "folder": "Orbifolds",
+  "date": "2026-11-20",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample of 15 sections: 13 cite no source text (checked by computation); 3.5 cites DifferentialGeometry 5.1 (resolved); 7.4 cites FuchsianOrbifolds without a section. Sources read: Yang1963 (Theorem p. 407, no finite-stabilizer hypothesis), Moerdijk2002 (2.7, 3.4, 4.4), MoerdijkPronk1999 (1.2), vandenBergMoerdijk2018 (2.3); Adem-Leida-Ruan, Cairns 1941 and Moerdijk-Pronk 1997 not legally readable. Gate rerun passes; dependency check 0 problems (the two-way supply with HamiltonianReduction and ConvexityToric on main found by reading). Suggested.lean elaborates with sorry warnings only; #check comparison unchanged; one-tactic probe run. About 65 Tau Ceti declarations and about 40 cross-roadmap sections resolved at the pins and on main.",
+  "text": "37f046384ec50e49"
+ }
+}

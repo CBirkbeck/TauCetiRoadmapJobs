@@ -1,0 +1,71 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "Orbifolds"
+
+[[source]]
+id = "Yang1963"
+authors = "C. T. Yang"
+title = "The triangulability of the orbit space of a differentiable transformation group"
+year = 1963
+locator_scheme = "page"
+locator = "p. 407, Theorem"
+url = "https://www.ams.org/journals/bull/1963-69-03/S0002-9904-1963-10947-7/S0002-9904-1963-10947-7.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1963-69-03/S0002-9904-1963-10947-7/S0002-9904-1963-10947-7.pdf"
+fetched_at = "2026-11-20T02:32:16Z"
+sha256 = "bd5f97756cd6bc479dd2906a2ed08df23ac2cc283354ee2f2486cdb75c6c72e9"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.1"]
+
+[[source]]
+id = "Moerdijk2002"
+authors = "Ieke Moerdijk"
+title = "Orbifolds as Groupoids: an Introduction"
+year = 2002
+arxiv = "math/0203100v1"
+locator_scheme = "section"
+locator = "§§2.7, 3.4, 4.4"
+url = "https://arxiv.org/abs/math/0203100v1"
+fetched_from = "https://arxiv.org/pdf/math/0203100v1"
+fetched_at = "2026-11-20T02:32:20Z"
+sha256 = "54648d1acdffdcef7592f6d1d71028eb24f2b5c4b76dad5404cde37933a047b0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["1.1", "2.1", "4.4"]
+
+[[source]]
+id = "vandenBergMoerdijk2018"
+authors = "Benno van den Berg, Ieke Moerdijk"
+title = "Univalent completion"
+year = 2018
+doi = "10.1007/s00208-017-1614-3"
+locator_scheme = "section"
+locator = "§2.3"
+url = "https://eprints.whiterose.ac.uk/127339/1/s00208-017-1614-3.pdf"
+fetched_from = "https://eprints.whiterose.ac.uk/id/eprint/127339/1/s00208-017-1614-3.pdf"
+fetched_at = "2026-11-20T02:35:23Z"
+sha256 = "2624069fc4d02d4980ff66dad9f7d0c4522ff59ab5a089e9aec07b09ef738585"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["4.9"]
+
+[[source]]
+id = "MoerdijkPronk1999"
+authors = "Ieke Moerdijk, Dorette A Pronk"
+title = "Simplicial cohomology of orbifolds"
+year = 1997
+arxiv = "q-alg/9708021v1"
+locator_scheme = "section"
+locator = "§1.2"
+url = "https://arxiv.org/abs/q-alg/9708021v1"
+fetched_from = "https://arxiv.org/pdf/q-alg/9708021v1"
+fetched_at = "2026-11-20T02:35:29Z"
+sha256 = "cce44b53f15175259260fbc41d9d87e4863a3d85114700070064d4fd8f86e629"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["3.2"]
