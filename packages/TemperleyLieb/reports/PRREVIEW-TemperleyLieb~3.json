@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TemperleyLieb~3",
+  "head": "6459425fb38fab0ddc29d25e6a78773526a9c4b1",
+  "pr": 2711,
+  "folder": "TemperleyLieb",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full re-review: previous R01 and C01-C04 all repaired. Seeded sample of 15 sections checked; 46 numbered locators verified against chen-tl-categories, ridout-saint-aubin, goodman-wenzl-ideals, morrison-jw-formula and tingley-minus-sign (sections 2.2, 2.5, 3.7, 7.1, 7.2 carry no locator and were checked against Tau Ceti and Mathlib at the pins). Every automatic check passed; depcheck 182 roadmaps, 2068 edges, 0 problems; Suggested.lean elaborates with five sorry warnings only; #check of all five matches the README; one-tactic probes fail on all five. Not verifiable: Graham-Lehrer, Westbury, Kauffman-Lins, Wenzl (no legal copy in the cache).",
+  "text": "a58a3202f6986e83"
+ }
+}
