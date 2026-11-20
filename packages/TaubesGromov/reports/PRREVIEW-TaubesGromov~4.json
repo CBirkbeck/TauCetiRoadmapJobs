@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TaubesGromov~4",
+  "head": "bf96c5c17118b934280f48d515a04e570f30ac1d",
+  "pr": 2699,
+  "folder": "TaubesGromov",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review of the same head as the previous round. One P2: the Layer 6 Example calls the Kahler limit cycle for E = K a canonical divisor, false when b1 > 0 (C1 x C2, h0(K tensor L) = (g1-1)g2 > 0). Sample: 0.1, 1.1, 4.4, 5.4, 5.5, 5.6, 7.1, 7.17, 7.18, 7.19, 7.21, 7.28, 7.34, 10.2, 11.3; 27 locators confirmed in Tau96SWGr, IP97, McD96, Bal03; the three J. Differential Geom. papers of Taubes are not readable legally (to the human reviewers). All 45 Checks recomputed. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probes fail on the three theorems; 18 suppliers all on main; no change outside the folder.",
+  "text": "ff37cfcde3c4a667"
+ }
+}
