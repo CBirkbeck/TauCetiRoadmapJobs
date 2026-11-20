@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsHeun~4",
+  "head": "02742670cdd5ceda3357b1df498766d673a9c0ea",
+  "pr": 2540,
+  "folder": "SpecialFunctionsHeun",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review of the repaired head. The previous review's finding (5.3 at nonpositive integer alpha or beta) and its five corrections, note and question are all repaired. Sample: 1.2, 1.3, 1.4, 3.1, 3.3, 3.5, 4.2, 4.3, 5.1, 5.2, 5.4, 7.1, 7.3, 7.4, 8.1, checked against DLMF Chapter 31 (sections 31.2-31.5, 31.7, 31.9-31.12, 31.14) and Maier 2005, 2007; Ronveaux, Kristensson, Haraoka, IKSY, Olver and Whittaker-Watson could not be read legally and are listed as not verifiable. Adversarial table recomputed by hand and numerically (local solutions, eigenvalues with zero counts, polynomial eigenvalues, the corrected kernel equation 31.10.8, confluence limits, reductions). Elaboration of Suggested.lean: exit 0, 36 sorry warnings only; one-tactic probe closes none of the 36 theorems. Dependency check: 0 problems, no UPWARD or CYCLE. No change outside the folder. One automatic check (a section comment over the #check pins) set aside as a false positive. One small correction (the spheroidal example of Layer 7 needs a prefactor to reach 31.12.1) and two format notes. For the humans: the declared reuse of the author's lean-DLMF design, and Ronveaux not readable.",
+  "text": "bf08531fc5d96d97"
+ }
+}
