@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ContactGeometry~5",
+  "head": "b79bb2ab18c02dcbbb6e0211238a18b4052e3424",
+  "pr": 2684,
+  "folder": "SymplecticGeometry/ContactGeometry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 74 changed lines since 71e7c7e. Checked: the six small corrections of the previous review (five repaired, one deferred as D01); the new §2.3 equivalence recomputed on three Hamiltonians; the two new §6.1 locators (Kriegl–Michor 43.15, Geiges Theorem 2.22) read at the text; the three Tau Ceti distribution-bundle declarations opened at the pin; LieGroupoidsPoisson §G0.1 read on main, no cycle; the pull request's description read against the head (38 Checks, four Tau Ceti imports, anchors, suppliers, sources all agree). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning (8).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C05: in `TauCetiRoadmap/SymplecticGeometry/README.md` (and the same clauses in the family README's open revision), \"CG1 owns the contact predicate\" and \"CG4 and CG5 consume the cosphere application\" s",
+    "where": "SymplecticGeometry family README, lines 70–75, and its open revision",
+    "raised": "PRREVIEW-ContactGeometry~4"
+   }
+  ],
+  "text": "f8294809e5866d4f"
+ }
+}
