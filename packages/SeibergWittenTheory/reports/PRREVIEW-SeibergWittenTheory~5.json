@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SeibergWittenTheory~5",
+  "head": "a8315573de94fc7e6e34ad752970907274129a75",
+  "pr": 2651,
+  "folder": "SeibergWittenTheory",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "incremental re-review of 33 changed lines since e8d937f: the one added passage, a table of 28 former labels in Scope and ownership, checked row by row against the old README on main and the headings at this head (all correct) and against the labels other roadmaps cite on main and at open heads (five cited labels have no row: small correction); previous small correction on the description repaired, three format notes carried; no statement, locator or supplier changed, so the seeded sample falls in unchanged text; one adversarial row recomputed for §11.2 on CP^2; gate all pass, depcheck 0 problems, Suggested.lean elaborates with no message and declares nothing; nothing changed outside the folder.",
+  "text": "83be6446d6c5a60c",
+  "carried": {
+   "from": "a8315573de94fc7e6e34ad752970907274129a75",
+   "head": "8312f644c9c1b914178f810d0ab4a70fb56f7dd9",
+   "findings": 2,
+   "lines": 5,
+   "folders": [
+    "SeibergWittenTheory"
+   ],
+   "corrections": true
+  }
+ }
+}
