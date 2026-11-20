@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpectralSubspacePerturbation~2",
+  "head": "828f7520911d568028ca58735520f8b240d3843f",
+  "pr": 2622,
+  "folder": "OperatorTheory/SpectralSubspacePerturbation",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 129 changed lines since 1875d20. All seven earlier points (R01, R02, C01-C03, N01, N02) are repaired. Locators checked against the text: AlbeverioMakarovMotovilov2003 Lemma 2.5, Theorem 2.7, (2.12) and Remark 2.8; Seelmann2014 Proposition 2.4 and Theorem 3.1; KostrykinMakarovMotovilov2004 (1.2) and (1.4); YuWangSamworth2015 Theorem 2 (3), Corollary 3, Theorem 4 with its remark and (10)-(11). Seeded targets in the changed passages recomputed: 1.16, 2.12, 2.16, 2.17, 2.19, 3.28, 3.29, 3.31, 4.15, 4.17, 4.18, 4.19. Davis-Kahan 1970, Rosenblum 1956 and BDM 1983 are not verifiable (no open copy). Tau Ceti Intertwines and CorrespondingEigenblocks opened at the pin. Elaboration: five sorry warnings only; #check signatures match the README. Automatic checks all pass; depcheck 0 problems; no change outside the folder.",
+  "text": "8861a96f907f7749"
+ }
+}
