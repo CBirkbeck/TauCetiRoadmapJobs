@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexManifolds~6",
+  "head": "fc445b9673071bef5367820d4f996a1da1d22949",
+  "pr": 2549,
+  "folder": "ComplexManifolds",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since fc445b9; this round checked the pull request's description against the head and against the README on main (Milestones 1-7 against Layers 1-7, the counts of Checks, imports and removed declarations, 26 named declarations located at the pins). Previous C01 (MorseTheory anchor sentence) repaired. One small correction: the description does not list that 6.3 became an equivalence over a nonempty index type (and 4.4 gained its converse). Automatic checks rerun, all passed; depcheck 0 problems; Suggested.lean elaborates with no output and declares nothing. Adversarial rows computed for 6.3, 4.4, 6.2, 2.3 and the kept anchor. No source locator falls in a changed passage.",
+  "text": "7943f6b0e35871fd",
+  "carried": {
+   "from": "fc445b9673071bef5367820d4f996a1da1d22949",
+   "head": "fc445b9673071bef5367820d4f996a1da1d22949",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
