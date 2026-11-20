@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DifferentialEntropyAndEntropyPower~1",
+  "head": "a540a82bf2704e2adf9475069ba9262057ba9a80",
+  "pr": 2735,
+  "folder": "DifferentialEntropyAndEntropyPower",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. Sample: all twelve sections 1.1-4.2, each with computed values (degenerate cases d = 0, h = +-infinity, lambda in {0,1}, Dirac and singular laws; every number in a Check recomputed by numerical integration and found to agree). Sources: 27 of 38 locators checked against the text (Rioul arXiv:0704.1751v2, Madiman-Barron arXiv:cs/0605047v2, Madiman-Melbourne-Xu arXiv:1604.04225v2); the 11 locators into Polyanskiy-Wu could not be read legally and are listed as not verifiable and for the human reviewers. 31 library declarations opened at the pins; all cross-roadmap citations resolved on main or at the open head of ScoreBasedDiffusion. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 11 theorems; #check of all 15 declarations compared with the README. Pull request text agrees with the head.",
+  "text": "eabb15f01618761e"
+ }
+}
