@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ImaginaryQuadraticClassNumber~11",
+  "head": "1eb5b47a4c2090b20e5f74a78e1721cfd2cf3db4",
+  "pr": 2593,
+  "folder": "ImaginaryQuadraticClassNumber",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 1eb5b47; this round read the pull request's description against the head, the README on main and the pins: 45 Checks, 14 Needs lines, Convention 9, the five supplier subsections, the six Lean theorems and the dropped hypothesis hgen all as described; 12 library declarations named in the description opened at the pin; 3 cross-roadmap citations resolved on main; adversarial rows computed for the radicand theorem, the thirteen orders and the Examples; Suggested.lean elaborates with six sorry warnings only; gate and dependency check pass (0 problems); no path outside the folder changed; seeded sample falls in untouched text verified earlier; one format note carried (old §3.1 anchor).",
+  "text": "b50e55a58625e924"
+ }
+}
