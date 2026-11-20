@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularInduction~3",
+  "head": "49e795f08e8f3df48608b00d8e13c497dda0105b",
+  "pr": 2644,
+  "folder": "RepresentationTheory/ModularInduction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 19 changed lines since b7edb4f. Checked: the seven small corrections of the previous review (all repaired; the optional rename of its format note not taken up and not raised again); the changed passages of sections 2.1, 4 (introduction), 4.6, Downstream consumers and Scope against the pinned Tau Ceti (4 declarations opened), InductionRestriction and ClassFieldTheory on main, and Milne ADT I Lemma 2.10 (the seeded sample where it falls in the change: 4.5, 4.6, 4.7); the title and description against the head and the merge base (Check counts, remaining targets, removed declarations, dropped supplier): nothing contradicted or unstated. Automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; no change outside the folder. NSW and Serre not readable.",
+  "text": "0eaf5a4b70a7dc61"
+ }
+}
