@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ThetaSeries~1",
+  "head": "cf64845547ca910a33780a6705e8871eb09ec658",
+  "pr": 2725,
+  "folder": "ThetaSeries",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample (1.2, 2.9, 3.4, 5.3, 6.2, 6.3, 6.5, 6.6, 7.1, 7.3-7.6, 8.6) recomputed in the adversarial table. None of the 9 cited sources is legally readable (paywalled or no legal copy found), so no locator was checked against its text. Automatic checks all passed; dependency check reports 0 problems. Suggested.lean elaborates with only sorry warnings; the one-tactic probe closes none of the 10 theorems; 338 of the 352 extracted README names resolve with #check at the pins, and the other 14 are not library names. Finding R01: the claim that the level need not divide D_L is false in even rank (2-adic proof, plus 7,384 sampled Gram matrices). Corrections: no old-to-new mapping for the lettered ids and renamed Lean names other roadmaps cite; the motivation of 1.2 is out of date; coprimality in 6.2 is unneeded; 5.3 bullets are thin; two description slips.",
+  "text": "ab852b3377b93dd3"
+ }
+}
