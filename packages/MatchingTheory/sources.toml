@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MatchingTheory"
+
+[[source]]
+id = "Goemans-L3"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://math.mit.edu/~goemans/18438F09/lec3.pdf"
+fetched_from = "https://math.mit.edu/~goemans/18438F09/lec3.pdf"
+fetched_at = "2026-11-20T12:39:32Z"
+sha256 = "6aa5ceb07e117e41ba72c85a6a6bca78d5971902fcca80bb719aa7dd47d67fc7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["4.3"]
