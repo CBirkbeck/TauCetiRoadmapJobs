@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InductionRestriction~3",
+  "head": "61fab9de50ab9a472b413779b5a47d33ae3dc0d7",
+  "pr": 2639,
+  "folder": "RepresentationTheory/InductionRestriction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 101 changed lines since 20870e7. Checked: the six remarks of the previous report (R01, C01-C03, N01-N02), all repaired; the changed passages (the 5.2 and 5.3 citations and clauses, the 7.1 perfection step and Weibel remark, the 7.5 tensor-factorization target and route, the From Mathlib and From Tau Ceti contracts, the Serre reference) against the pinned Tau Ceti and Mathlib, with #check of the 28 Suggested.lean declarations and the 15 supplier names the change adds; Weibel2013 lines 1949-1981; the seeded targets 5.3 and 7.5 (Isaacs and Curtis-Reiner unreadable); the description against the head. Automatic checks all passed; depcheck 199 roadmaps, 2195 edges, 0 problems; Suggested.lean elaborates with 14 sorry warnings only. One small correction (the tensorRepEquiv hypotheses in the supplier contract) and one format note (the 7.5 Needs line).",
+  "text": "11a9aa2bef4a8366"
+ }
+}
