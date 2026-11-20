@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ScatteringDiagrams~7",
+  "head": "de3257f2b789df574bab3df2c560b25b01afab2a",
+  "pr": 2650,
+  "folder": "ScatteringDiagrams",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review of the README and Suggested.lean at de3257f. Seeded sample verified against arXiv texts: 0.1 (BRI 2.1, MAN 2.1), 0.3 (Mathlib AdicCompletion, toAdicCompletionAlgEquiv at the pin), 0.4 (PET Theorem 8.1, Corollary 8.1, Theorem 8.2), 0.6, 0.8 (MAN 2.2, GHS Definitions 3.1-3.3), 1.3, 2.3 (BRI Lemmas 3.1-3.2, Propositions 3.3-3.4), 2.4, 3.3 (MAN Theorem 2.6 and Lemma 2.9, GHKK Theorem 1.21(3) and Construction C.1, KS Proposition 3.3.2), 4.3 (MAN Example 2.1(iii), NQ (2.14), (2.21)), 5.3 (CPS, N23, GHS), 5.6, 6.1, 6.2, 6.3 (GS 2.2-2.3, GHS); 64 locators in 12 sources. All Checks and examples recomputed. Automatic checks: worker gate passed; rerun gate OK; depcheck 0 problems; lake env lean five sorry warnings only; #check @ of 14 declarations keeps all binders; simp probe closes none. Previous R01 (layer Examples/Dependencies) repaired. Corrections: 'This section follows' sentences in nine sections; description wrong about Comma.initial_snd and about moving Sources lists. Format note: h_II/h_III labels.",
+  "text": "941c834382bda571"
+ }
+}
