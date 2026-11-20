@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NewtonPolygons~3",
+  "head": "5007ca64ebf3fa8604bb2f82f5057d545138f1dd",
+  "pr": 2609,
+  "folder": "NewtonPolygons",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review at the head the previous review read (no change in the folder). One P2: the Eisenstein target of 6.1 is false for f = 1 (degree 0), which satisfies Mathlib's Polynomial.IsEisensteinAt. All 15 seeded sample targets recomputed; 13 source locators read in Lazard, Kedlaya and KedlayaNumerical; Koblitz, Neukirch, BGR, Washington and NSW not readable. 13 library declarations opened at the pins. Suggested.lean elaborates with six sorry warnings only; #check comparison of all six types with the README unchanged; one-tactic probe closes none. Dependency check: 0 problems. Automatic checks all passed; one citation-resolver lead (a source key read as a roadmap) set aside. Two points for the human reviewers (licence of the repository named under Provenance; the pin against the folder's STATUS.md).",
+  "text": "12c7c757d5add95a"
+ }
+}
