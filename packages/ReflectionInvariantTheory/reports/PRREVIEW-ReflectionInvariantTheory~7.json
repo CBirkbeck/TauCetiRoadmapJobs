@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ReflectionInvariantTheory~7",
+  "head": "e113278bab308b37a2fc2369174d8235cb799fd8",
+  "pr": 2539,
+  "folder": "ReflectionInvariantTheory",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since e113278. Checked: the pull request's description against the head and against the change from main (headline bullets, the count of 64 Checks in 26 sections, sections without a source, supplier lists, each quotation of the old text, the Suggested.lean paragraph, the library claims at the pins); the previous small correction C01 is repaired; two small corrections to the description (a citing roadmap missing from its list; two items listed as Checks that are Examples). Adversarial rows computed for the coinvariant Hilbert series without faithfulness, the degree identities and regular representation with it, the height partition and the non-faithful converse. Automatic checks all passed when rerun; dependency check 0 problems; elaboration gives eleven sorry warnings only. Seeded source sample not reread: no changed passage.",
+  "text": "d54b1fa4776304be",
+  "carried": {
+   "from": "e113278bab308b37a2fc2369174d8235cb799fd8",
+   "head": "e113278bab308b37a2fc2369174d8235cb799fd8",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
