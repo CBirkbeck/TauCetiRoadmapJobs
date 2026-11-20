@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FourierAnalyticAdditiveCombinatorics~2",
+  "head": "f165242b26e9fe062df6507503635933e1ab8158",
+  "pr": 2782,
+  "folder": "FourierAnalyticAdditiveCombinatorics",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 116 changed lines since 5ee9b87. Checked: R01 repaired (2.1 and 2.2 over Fin n → ZMod p for every prime p, README and Lean), N01 and N02 repaired; the generalised route of 2.1 and 2.2 recomputed (p = 2, odd p, log_p ≤ log₃, constant 6); the new Check in 𝔽₅² confirmed by exhaustive search (maximum 6) and the increment tested on random maximal sets in 𝔽₅³, 𝔽₅⁴, 𝔽₇³; seeded sample where it falls in the changed passages (2.1, 2.2) with Zhao Remark 6.2.2 and Theorem 6.2.1 read at their locators; four library declarations opened at the pin; automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 12 sorry warnings only; one-tactic probe closes neither restated theorem; title and description agree with the head apart from one small correction.",
+  "text": "185e4dcb3fc6a9ed"
+ }
+}
