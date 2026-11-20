@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SeriesOfIndependentRandomVariables~1",
+  "head": "e87d7fbfb34f3754ae1dff7e1bc7736095fd241c",
+  "pr": 2686,
+  "folder": "SeriesOfIndependentRandomVariables",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample (1.1, 2.1, 2.2, 3.1, 3.2, 3.3, 3.4, 4.1, 4.2): all 25 source locators read at the text (Durrett 14, Moshayedi 6, Ito-Nisio 5), all correct. Adversarial pass on all ten theorems with computed values (degenerate n, negative levels, junk division, non-integrable and dependent instances; exact enumeration of both maximal inequalities, 36000 cases, no violation; every number printed in a Check recomputed). 23 library declarations opened at the pins; 3 cross-roadmap citations resolved on main; no duplicate in Mathlib, Tau Ceti or another roadmap. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the ten theorems. Two small corrections (scope does not name NoncommutativeIntegration 6.2; two results without a locator) and one format note (irreproducible enumeration Checks). Four source issues recorded for Moshayedi. Nothing not verifiable beyond primary papers cited without a locator.",
+  "text": "68cbc0b9b3aaa8a7"
+ }
+}
