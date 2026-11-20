@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CotangentLagrangian~23",
+  "head": "2544fed1dde784959149ea08de991dce188d9b1b",
+  "pr": 2687,
+  "folder": "SymplecticGeometry/CotangentLagrangian",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review at the head the previous review read (no change in the folder); its three small corrections stand unrepaired and it had no findings. Checked: all 15 locator sites of the README and the eight docstring locators against the Cannas da Silva text, including the 15 seeded sections; every Check recomputed; an adversarial table of 28 rows with computed values covering the eight headline statements; pinned Tau Ceti and Mathlib definitions opened for each headline; cross-roadmap citations resolved on main and at open heads; worker's automatic checks all passed; dependency check 186 roadmaps, 2087 edges, 0 problems; lake env lean exit 0 with eight sorry warnings; #check of 11 declarations unchanged; one-tactic probe closes nothing. New small corrections: the pinned relative Poincare lemma (Analysis/Calculus/DifferentialForm/Relative.lean) is not cited by section 4.1, and the consumer citation IntegrableSystems I5.2 is renumbered by that roadmap's open revision. One format note on targets without locators.",
+  "text": "6efb86ad56b16112",
+  "carried": {
+   "from": "2544fed1dde784959149ea08de991dce188d9b1b",
+   "head": "26bf917da8ede036f246e85b375ba3a9f3f7a68e",
+   "findings": 5,
+   "lines": 67,
+   "folders": [
+    "SymplecticGeometry/CotangentLagrangian"
+   ],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C01: in the family index `TauCetiRoadmap/SymplecticGeometry/README.md`, the links `#c21-compact-intersections-and-group-applications` (line 35), `#c20-elementary-matrix-polar-package` (line 35) and `#",
+    "where": "TauCetiRoadmap/SymplecticGeometry/README.md links at its lines 35 and 72",
+    "raised": "PRREVIEW-CotangentLagrangian~23"
+   }
+  ]
+ }
+}
