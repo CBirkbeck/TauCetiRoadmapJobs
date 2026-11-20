@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-InductionRestriction~2",
+  "head": "20870e76556ee85b7ba2bf55d3b4ef794768abc9",
+  "pr": 2639,
+  "folder": "RepresentationTheory/InductionRestriction",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full re-review: all four previous findings (R01-R04) and C01-C11, N01 repaired or settled. One new P2: the section 7.5 tensor-factorization target restates Tau Ceti's tensorRep and isProjectiveRep_homAction, which hold over every commutative ring at the pin, and misstates their hypotheses in the supplier contract. Seeded sample: Weibel2013 locators for 7.1 checked against the text (correct); Serre section locators checked against published section titles; Isaacs, Curtis-Reiner, Alperin-Bell and Mackey 1951 unreadable (paywalled). Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 14 sorry warnings only; #check of all 29 declarations matches the README; one-tactic probe closes nothing; adversarial table has 21 rows with computed values.",
+  "text": "4891614dad83a778"
+ }
+}
