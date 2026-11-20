@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TracesOnCStarAlgebras~6",
+  "head": "9cb51bac81f107f2844187f1bdca512db4966788",
+  "pr": 2464,
+  "folder": "TracesOnCStarAlgebras",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 66 changed lines since 1d9b51d. Checked: R01, C01, C02 and N01 of the previous review, all repaired with no new problem; the changed passages (Summary sentences on Tr3 and Tr4, the Combes attribution in Tr1.2, the Dixmier-trace Check of Tr4.2 and its Examples line) against thomsen-kms Theorem 1.1.1 and kustermans-vaes Theorem 1.6 at their locators, TauCeti.dixmierTrace and GeneralizedLimit.IsDilationInvariant at the pin, and NoncommutativeGeometry N4 on main; seeded sample where it falls in the change (1.2, 4.2); adversarial table with computed values for the four changed statements; the pull request's title and description against the head; automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged and elaborates with 25 sorry warnings only; no change outside the folder. One licence question (host of Roe's lecture notes) carried for the human reviewers.",
+  "text": "ee4cc0ccb4ef5346"
+ }
+}
