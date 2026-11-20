@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NilpotentOrbits~2",
+  "head": "f321adff91138f9627acbb9e2a44487a50e78ec1",
+  "pr": 2628,
+  "folder": "NilpotentOrbits",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "Full re-review. All eight remarks of the previous review are repaired (R04 with one locator narrower than its claim). Seeded sample of 15 targets checked, and all 23 README locators were read against Yun16, BMIY22, LNS10, DG07 and GHR06 in the sources cache. Suggested.lean elaborates with sorry warnings only; #check of all 8 declarations matches the README; no padding. A probe stating the slice-surface part of the Brieskorn-Slodowy headline (normal surface, isolated singularity, ADE completed local ring) elaborates against the pins, so the docstring's claim that it is not statable fails (R01, P2). Dependency check: 200 roadmaps, 2203 edges, 0 problems. Worker's automatic checks all passed. Overlap check done against LieHighestWeightPartII, LieHighestWeight, ReductiveGroups, ReflectionInvariantTheory, RealSemisimpleLieGroups, AdoIwasawa and the consumers; no doubly-owned object. Small corrections: unsupported ReductiveGroups consumer claim, §7.3 locator only simply laced, unused Tau Ceti representability of G/B, a misplaced pointer in the description.",
+  "text": "261358a2aa1a0607"
+ }
+}
