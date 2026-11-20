@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NoncommutativeFlatness~1",
+  "head": "b72356acaf61c05aca3436f801ab22679a9c0f36",
+  "pr": 2618,
+  "folder": "NoncommutativeFlatness",
+  "date": "2026-11-20",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review. README read in full and every Check and worked example recomputed by hand; Suggested.lean read in full and elaborated at the pins (no errors, 187 sorry warnings); one separate probe proving the n = 0 instance of the corner clause of isMoritaEquivalent_tfae. Sources: Bass 1960 and Chase 1960 read at 12 locators, all correct; the other sampled locators (Mitchell, Oberst-Roehrl, Stenstroem, Simson, Harada, Lambek, Jensen, Auslander, Crawley-Boevey, Eilenberg, the books) could not be read legally and are listed as not verifiable. 34 library names resolved at the pins; cross-roadmap citations resolved on main (ArtinAlgebras, OperatorKTheory, DerivedModuleAlgebra). Dependency check: 0 problems; no change outside the folder. Automatic checks: the sorry-bodied definitions are a real failure (R02); undeclared-name and TeX reports mostly false positives, set aside in the report.",
+  "text": "1ad9e954a507b97e"
+ }
+}
