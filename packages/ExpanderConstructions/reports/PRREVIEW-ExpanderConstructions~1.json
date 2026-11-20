@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ExpanderConstructions~1",
+  "head": "eda9271e6fa324ad513c25c0cce6d23922a559b1",
+  "pr": 2812,
+  "folder": "ExpanderConstructions",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All eight sampled targets and every other locator of the README read against the two sources (RVW02 from arXiv, HLW06 from the publisher's open copy; the sources service recorded both in the package manifest). Every Check value recomputed numerically; the seven theorems tested on 600 random involutive rotation maps and in the degenerate cases (no ports, no vertices, one vertex). Suggested.lean elaborates with sorry as the only warning; the one-tactic probe closes none of the seven theorems. All 23 cited library declarations opened at the pins; the dependency check reports 0 problems; the automatic checks all passed and none was set aside. Two source errors recorded (RVW Theorem 6.4 as printed; a remark in HLW section 9.3).",
+  "text": "ae1dc9662426de63"
+ }
+}

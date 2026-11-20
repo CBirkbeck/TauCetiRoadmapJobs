@@ -1,0 +1,34 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ExpanderConstructions"
+
+[[source]]
+id = "RVW02"
+authors = "Omer Reingold, Salil Vadhan, Avi Wigderson"
+title = "Entropy waves, the zig-zag graph product, and new constant-degree"
+year = 2004
+venue = "Ann. of Math. (2), Vol. 155 (2002), no. 1, 157--187"
+arxiv = "math/0406038v1"
+locator_scheme = "theorem"
+locator = "Theorem 4.3"
+url = "https://arxiv.org/abs/math/0406038v1"
+fetched_from = "https://arxiv.org/pdf/math/0406038v1"
+fetched_at = "2026-11-20T23:24:36Z"
+sha256 = "a4b9d003a7901be6124df157e3dbe46991c8aef1d56cb09842bb772f9f401fe7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["3.1"]
+
+[[source]]
+id = "HLW06"
+locator_scheme = "theorem"
+locator = "Theorem 9.1"
+url = "https://www.ams.org/journals/bull/2006-43-04/S0273-0979-06-01126-8/S0273-0979-06-01126-8.pdf"
+fetched_from = "https://www.ams.org/journals/bull/2006-43-04/S0273-0979-06-01126-8/S0273-0979-06-01126-8.pdf"
+fetched_at = "2026-11-20T23:25:05Z"
+sha256 = "e54f5f1383bda149d4bfd9aef2026392c4f3b9a2aff0623a02621711e55d744d"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.1"]
