@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsGroupModels~3",
+  "head": "6d8414035630ac23a84c452a14a592fb154c1248",
+  "pr": 2694,
+  "folder": "SpecialFunctionsGroupModels",
+  "date": "2026-11-20",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full re-review. All five findings and six small corrections of the previous review are repaired. Two new P2 findings: a Check of 3.3 has the weight of the left regular representation of the circle with the wrong sign, and the Lean statement of the weight decomposition is weaker than the README's (it needs a Hilbert basis containing weight vectors). Computed pass over every subsection, including the 15 sampled ones: every numerical Check recomputed, the compact-picture identity tested on 3000 random inputs. Suggested.lean elaborates with 79 sorry warnings and no error; one-tactic probe on ten statements, one closed. Dependency check: 0 problems; no change outside the folder. Cross-roadmap citations resolved on main and at the open head of SpecialFunctionsSU2MatrixElements. No source locator verified: none of the six books is readable from a legal copy (three paywalled, three requested). The automatic hit on four sorried instances was set aside (proposition-valued classes); the hit on definitions by choice is a format note.",
+  "text": "79b088548a574933"
+ }
+}
