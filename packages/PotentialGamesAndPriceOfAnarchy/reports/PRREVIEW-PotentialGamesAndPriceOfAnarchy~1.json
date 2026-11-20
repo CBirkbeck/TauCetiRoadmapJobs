@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PotentialGamesAndPriceOfAnarchy~1",
+  "head": "ceb07d87a5904be2e96b88e52acec4e464fe53d1",
+  "pr": 2717,
+  "folder": "PotentialGamesAndPriceOfAnarchy",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review. All 12 sampled sections and all 15 Lean theorems re-derived by hand under the elaborated signatures; Checks with definite values recomputed (the 5/2 example on all 8 profiles, the inequality for y,z<60, Pigou, Braess, the sign and continuity counterexamples). 29 locators read in the three Roughgarden texts fetched from the author's page (robustness paper, thesis, CS364A lectures 11-14); the seven primary papers have no locators and were not opened. 11 Mathlib declarations opened at the pin; supplier RegretMinimizationAndEquilibria resolved on main (Conventions, 3.1-3.3). Dependency check: 0 problems. Suggested.lean elaborates with 15 sorry warnings only; one-tactic probe closes none. Automatic checks all passed; none set aside. Two small corrections (docstring attribution; affine hypotheses on a larger domain than needed), three format notes.",
+  "text": "f0d4a5c89a07a19d"
+ }
+}
