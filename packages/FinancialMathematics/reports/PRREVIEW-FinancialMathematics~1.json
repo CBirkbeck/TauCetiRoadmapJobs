@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FinancialMathematics~1",
+  "head": "87112b80b5dc0f997116aee5e865dbdec5d75bac",
+  "pr": 2557,
+  "folder": "FinancialMathematics",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 7,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample (1.1-4.2): no target carries a source locator, so none could be verified; the four references (Black-Scholes 1973, Harrison-Pliska 1981, Karatzas-Shreve 1998, Shreve 2004) were tried through the sources service and none was legally readable. All 25 Checks and the worked examples were recomputed (numerical values reproduced). All 107 qualified Mathlib/Tau Ceti names resolved at the pins, with hypotheses read for more than 40. StochasticCalculus and PDE section citations were resolved on main, and the M0.x labels MarketImpact cites are kept. Automatic checks all passed; depcheck reported 0 problems. Suggested.lean elaborates with two sorry warnings only; #check signatures match README 4.2; the one-tactic probe (simp, rfl, infer_instance, aesop) fails on both, and neither theorem is at the pinned Tau Ceti. Finding R01: the 4.1 hedges take 'any values at t = T', which falsifies the terminal payoff and self-financing claims; 3.2 has the same gap at T.",
+  "text": "25f6c89309b5aa73"
+ }
+}
