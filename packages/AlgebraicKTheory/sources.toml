@@ -122,13 +122,9 @@ title = "Dimension Theory"
 year = 1978
 locator_scheme = "theorem"
 locator = "§3.1; Theorems 3.1.4, 3.1.8, 3.2.10"
-url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/engelking.pdf"
-fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/engelking.pdf"
-fetched_at = "2026-11-07T14:01:51Z"
-sha256 = "54e65f27cb7ea972a36862d0479b8ac4f5d08f2b4b076fb3795080c35e892c53"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-07"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["4.3 4.4"]
 
 [[source]]

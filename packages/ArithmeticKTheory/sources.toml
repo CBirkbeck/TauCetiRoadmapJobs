@@ -15,7 +15,7 @@ resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/153#is
 
 [[source]]
 id = "mitchell"
-title = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Mitchell-LQ.pdf"
+title = "On the Lichtenbaum-Quillen conjectures from a stable homotopy-theoretic viewpoint"
 locator_scheme = "theorem"
 locator = "Theorem 3.4"
 licence_class = "none"
@@ -24,7 +24,7 @@ resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/154#is
 
 [[source]]
 id = "quillen"
-title = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/bass-seattle.pdf"
+title = "Higher algebraic K-theory: I"
 locator_scheme = "theorem"
 locator = "Theorem 1"
 licence_class = "none"
@@ -33,7 +33,7 @@ resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/154#is
 
 [[source]]
 id = "bass-tate"
-title = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/SLN342.pdf"
+title = "The Milnor ring of a global field"
 locator_scheme = "theorem"
 locator = "Theorem 3.1"
 licence_class = "none"
@@ -42,7 +42,7 @@ resolution = "https://github.com/TauCetiProject/TauCetiRoadmapJobs/issues/154#is
 
 [[source]]
 id = "serre"
-title = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Serre-HSEF.pdf"
+title = "Homologie singuliere des espaces fibres. Applications"
 locator_scheme = "section"
 locator = "V §§1-2"
 licence_class = "none"

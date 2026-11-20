@@ -5,13 +5,9 @@ roadmap = "LieGroups"
 id = "knutson-construction11"
 locator_scheme = "page"
 locator = "p. 1"
-url = "https://pi.math.cornell.edu/~allenk/courses/16spring/Construction11.pdf"
-fetched_from = "https://pi.math.cornell.edu/~allenk/courses/16spring/Construction11.pdf"
-fetched_at = "2026-11-03T13:33:21Z"
-sha256 = "48d50fa5efc8c38e43bbc721907d85a446bd149cb173cece5b3716a735dca082"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-11-03"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["Layer 6 space of maximal tori"]
 
 [[source]]

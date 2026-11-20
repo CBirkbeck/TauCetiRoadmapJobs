@@ -36,13 +36,9 @@ title = "Heegner points and derivatives of L-series"
 year = 1986
 locator_scheme = "section"
 locator = "I §§3–8 pp. 227–232; II §1 pp. 234–236"
-url = "https://wstein.org/papers/bib/Gross-Zagier_Heegner_points_and_derivatives_of_Lseries.pdf"
-fetched_from = "https://wstein.org/papers/bib/Gross-Zagier_Heegner_points_and_derivatives_of_Lseries.pdf"
-fetched_at = "2026-10-21T10:50:34Z"
-sha256 = "a9a52cb8662e03f19ace81dcfbf24bf873bf9c46ba89a8c890727b9541abdbf5"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-10-21"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["2.8, 2.11–2.13, 3.7, 4.1–4.9, 5.8"]
 
 [[source]]

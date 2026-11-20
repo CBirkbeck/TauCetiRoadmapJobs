@@ -520,14 +520,9 @@ title = "p-adic L-functions and p-adic periods of modular forms"
 year = 1993
 locator_scheme = "theorem"
 locator = "Theorems 5.13 and 7.1, printed pp.438 and 444; p≥5 in Theorem 7.1"
-url = "https://math.stanford.edu/~conrad/DarmonCM/2011Refs/GSpadic.pdf"
-fetched_from = "https://math.stanford.edu/~conrad/DarmonCM/2011Refs/GSpadic.pdf"
-fetched_at = "2026-10-22T21:57:03Z"
-sha256 = "3e3ac58749812f292950810d3c0ba74f01da92796c011bd39c636b159e504ac2"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-10-22"
-version_note = "Institutionally hosted journal scan recognized by OCR; printed pagination."
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["Exact supplier contracts", "5.7"]
 
 [[source]]

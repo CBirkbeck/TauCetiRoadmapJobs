@@ -28,13 +28,9 @@ title = "Nilpotence and stable homotopy theory II"
 year = 1998
 locator_scheme = "section"
 locator = "Theorems 3,7,9,11, pp.2–6; preliminaries, p.9; §1.1–1.4, pp.10–14; Lemma 2.1 and §2.1–2.2, pp.15–19; Lemmas 3.5–3.6 and Corollaries 3.7–3.8, p.21."
-url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/HS.pdf"
-fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/HS.pdf"
-fetched_at = "2026-10-23T19:35:30Z"
-sha256 = "529a2060ea7c0e10b696db45fed3804c0893929a4f191d8f5811e220a2b2d863"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-10-23"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["Layer 0; Layer 2"]
 
 [[source]]
@@ -313,13 +309,10 @@ year = 1996
 doi = "10.1007/BF02621873"
 locator_scheme = "section"
 locator = "§2, Corollary 2.4, p.400; §1, Corollary 1.4, p.395; §4 proof, p.402"
-url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/greenlees-sadofsky.pdf"
-fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/greenlees-sadofsky.pdf"
-fetched_at = "2026-10-23T19:57:57Z"
-sha256 = "5f541888c4eb64266666183b14d6cbefb8561dc1b55e9938e08882b22ca53d5a"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-10-23"
+url = "https://doi.org/10.1007/BF02621873"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["9.5"]
 
 [[source]]
@@ -330,13 +323,10 @@ year = 2018
 doi = "10.4171/OWR/2018/15"
 locator_scheme = "page"
 locator = "Oberwolfach Report 15/2018, contribution pp.838–845, especially the KU Tate formula on p.844"
-url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/hesselholt-scholze.pdf"
-fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/hesselholt-scholze.pdf"
-fetched_at = "2026-10-23T19:58:00Z"
-sha256 = "6d8bde5346cbe1a166d2bf367b6813449348cae981d45a68066a700dcfd42880"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-10-23"
+url = "https://doi.org/10.4171/OWR/2018/15"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["9.5"]
 
 [[source]]
@@ -366,14 +356,10 @@ venue = "Pacific Journal of Mathematics 92 (1981), 365–383"
 doi = "10.2140/pjm.1981.92.365"
 locator_scheme = "section"
 locator = "Theorem 6.3, p.382, with its correction in mahowald-addendum §2"
-url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Mahowald-bo.pdf"
-fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Mahowald-bo.pdf"
-fetched_at = "2026-10-25T13:30:14Z"
-sha256 = "bb31b3b645bdd765979950bc5f87044a5d4645994ef1400f695b24c3f8aafe47"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-10-25"
-version_note = "Theorem 6.3 is read with the corrected proof in mahowald-addendum §2; Theorem 1.1(c) and its vanishing line are corrected there in §§1 and 3."
+url = "https://doi.org/10.2140/pjm.1981.92.365"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["8.3 height-one telescope equality at p=2"]
 
 [[source]]

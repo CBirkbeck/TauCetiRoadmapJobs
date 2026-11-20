@@ -290,13 +290,9 @@ title = "Spin Geometry and Seiberg-Witten Invariants"
 year = 1999
 locator_scheme = "section"
 locator = "§5.2, Theorem 5.8, pp. 157–160"
-url = "https://pagine.dm.unipi.it/~a019210/Salamon_Spin%20geometry%20and%20SW%20invariants.pdf"
-fetched_from = "https://pagine.dm.unipi.it/~a019210/Salamon_Spin%20geometry%20and%20SW%20invariants.pdf"
-fetched_at = "2026-11-15T03:32:30Z"
-sha256 = "14c6991612bd80a45657045a98b5c093f71380b2c859f75f84ce41e6fed93c36"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-15"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["§4.1"]
 
 [[source]]

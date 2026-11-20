@@ -266,13 +266,9 @@ title = "Sur la topologie des variétés algébriques en caractéristique p"
 year = 1958
 locator_scheme = "theorem"
 locator = "§1, n° 3 (Opérations de Bockstein), pp. 27–29"
-url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/mexico.pdf"
-fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/mexico.pdf"
-fetched_at = "2026-10-25T14:56:41Z"
-sha256 = "63516b0190e598ed8581503ef1cdf0d905457cf0322db30bf2323d1186094f25"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-10-25"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["§6.8"]
 
 [[source]]

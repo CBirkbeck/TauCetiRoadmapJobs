@@ -77,13 +77,9 @@ title = "Archimedean Zeta Integrals for Unitary Groups"
 year = 2006
 locator_scheme = "section"
 locator = "Sections 1–2, internal pages 1–4"
-url = "https://math.nyu.edu/~tschinke/princeton/papers/.aim05/submitted/garrett.pdf"
-fetched_from = "https://math.nyu.edu/~tschinke/princeton/papers/.aim05/submitted/garrett.pdf"
-fetched_at = "2026-10-23T22:11:21Z"
-sha256 = "af6b0264e0f7d6ad8ebd702b445e063487c3667b316773ff2ca35ae85b66d470"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-10-23"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["Layer 4"]
 
 [[source]]

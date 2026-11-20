@@ -174,13 +174,9 @@ title = "The Steenrod algebra and its dual"
 year = 1958
 locator_scheme = "section"
 locator = "2–3, pp.153–156, Theorem 1; 5 Theorems 2–3 and triangular-pairing proof, pp.159–162; 8 Proposition 2, pp.169–170; Appendix 1, p.171"
-url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Milnor-A.pdf"
-fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Milnor-A.pdf"
-fetched_at = "2026-10-25T11:07:39Z"
-sha256 = "407cc2db0514af4f63a6be5f1e2adca122054a25dc6ea13ce4f8cd9927d29ff0"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-10-25"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["PO.1/steenrod-algebra; PO.1/milnor-dual"]
 
 [[source]]

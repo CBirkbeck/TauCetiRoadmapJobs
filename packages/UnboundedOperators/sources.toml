@@ -41,13 +41,9 @@ year = 2015
 venue = "lecture notes, version of 13 November 2015"
 locator_scheme = "theorem"
 locator = "Exercises 12.1.11(ii), 12.1.15"
-url = "https://cdn.vanderbilt.edu/t2-my/my-prd/wp-content/uploads/sites/3392/2020/10/vonNeumann2015.pdf"
-fetched_from = "https://cdn.vanderbilt.edu/t2-my/my-prd/wp-content/uploads/sites/3392/2020/10/vonNeumann2015.pdf"
-fetched_at = "2026-11-08T16:05:33Z"
-sha256 = "781c6912b7d7b9a425d1e03fbaca251dd9a8ef229db280b040ca60ad57369886"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-08"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["5.1"]
 
 [[source]]

@@ -72,39 +72,27 @@ cited_for = ["2.3"]
 id = "HuberCV"
 locator_scheme = "theorem"
 locator = "Theorem 4.1"
-url = "https://virtualmath1.stanford.edu/~conrad/Perfseminar/refs/Hubercontval.pdf"
-fetched_from = "https://virtualmath1.stanford.edu/~conrad/Perfseminar/refs/Hubercontval.pdf"
-fetched_at = "2026-11-05T12:46:38Z"
-sha256 = "d25d026189b14c09743b676b36e8aacd12bf84a4f07168bc2cfb6d93a2a97379"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-05"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["8.2"]
 
 [[source]]
 id = "HuberFR"
 locator_scheme = "theorem"
 locator = "Proposition 4.5"
-url = "https://virtualmath1.stanford.edu/~conrad/Perfseminar/refs/Huberformalrigid.pdf"
-fetched_from = "https://virtualmath1.stanford.edu/~conrad/Perfseminar/refs/Huberformalrigid.pdf"
-fetched_at = "2026-11-05T12:46:42Z"
-sha256 = "2cdec78452fe2f7b1d22a074679327c5ed7a4b0490cc65dff03de9031a3b6623"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-05"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["8.3"]
 
 [[source]]
 id = "Bosch"
 locator_scheme = "theorem"
 locator = "Section 6.3"
-url = "https://www.math.purdue.edu/~tongliu/seminar/rigid/Bosch.pdf"
-fetched_from = "https://www.math.purdue.edu/~tongliu/seminar/rigid/Bosch.pdf"
-fetched_at = "2026-11-05T12:46:51Z"
-sha256 = "2f39e9e9bc71e34ce255278f09291412d7e0a9dadff673e4a2b8484df4685d7f"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-05"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["6.3"]
 
 [[source]]

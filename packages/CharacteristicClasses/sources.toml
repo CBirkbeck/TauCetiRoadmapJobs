@@ -31,26 +31,18 @@ cited_for = ["C7.AdjointHopfObstruction"]
 id = "tomdieck-at"
 locator_scheme = "section"
 locator = "14.4"
-url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/diecktop.pdf"
-fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/diecktop.pdf"
-fetched_at = "2026-11-03T16:36:11Z"
-sha256 = "86f937483ca46262eec9537665513eed45553fe9fef2be9ffb63a2067585be79"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-11-03"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["C1.1b"]
 
 [[source]]
 id = "dupont-ccc"
 locator_scheme = "section"
 locator = "8"
-url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/dupont2.pdf"
-fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/dupont2.pdf"
-fetched_at = "2026-11-03T16:36:13Z"
-sha256 = "60cee56d60b4afc0f917508023507f05769f4fb933c51188a950ebb6c68e93c2"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-11-03"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["C5.2"]
 
 [[source]]
@@ -70,13 +62,9 @@ cited_for = ["C4"]
 id = "may-concise"
 locator_scheme = "chapter"
 locator = "16"
-url = "https://www.irif.fr/~mellies/mpri/mpri-ens/biblio/Peter-May-A-Concise-Course-In-Algebraic-Topology.pdf"
-fetched_from = "https://www.irif.fr/~mellies/mpri/mpri-ens/biblio/Peter-May-A-Concise-Course-In-Algebraic-Topology.pdf"
-fetched_at = "2026-11-03T16:36:41Z"
-sha256 = "1686c69552de68b6bf8f7dfe6fdec9730d865ea37349e79966eb7f3f95b46498"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-11-03"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["C1.2b"]
 
 [[source]]

@@ -203,13 +203,9 @@ title = "Nonabelian H² in Galois cohomology"
 year = 1966
 locator_scheme = "theorem"
 locator = "Theorem 3.5, p.179, SPR66 line 6739; in the institutional proceedings scan"
-url = "https://www-fourier.univ-grenoble-alpes.fr/~panchish/ETE%20LAMA%202018-AP/Borel_Algebraic%20Groups%20and%20Discontinuous%20Subgroups.pdf"
-fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~panchish/ETE%20LAMA%202018-AP/Borel_Algebraic%20Groups%20and%20Discontinuous%20Subgroups.pdf"
-fetched_at = "2026-10-23T14:15:34Z"
-sha256 = "962203f9e47e9c3c43fc1049a38e28c751aa42beb7ee5250a095a132e215a5d4"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-10-23"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["1.6"]
 
 [[source]]

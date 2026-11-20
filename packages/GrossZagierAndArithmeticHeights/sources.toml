@@ -44,13 +44,9 @@ title = "Heegner points on X₀(N)"
 year = 1984
 locator_scheme = "theorem"
 locator = "§I.4, (4.1)–(4.2), pp.89–90, for conjugation, ring-class rationality and arithmetic Artin action; the tower square is the order-inclusion specialization of the cited class-field functoriality; §§I.1–I.4, pp.87–90, especially the lattice construction in I.2 and (4.2); §§I.1–I.3, pp.87–89, lattice and quadratic-equation descriptions; §I.5, (5.1)–(5.2), p.90; Benedict H. Gross; in *Modular Forms*, Ellis Horwood (1984), pp.87–105; §§I.1–I.5, pp.87–90 supply the proper-ideal cyclic pairs and Artin convention."
-url = "https://www.wstein.org/papers/bib/gross-heegner_points_on_X0N.pdf"
-fetched_from = "https://www.wstein.org/papers/bib/gross-heegner_points_on_X0N.pdf"
-fetched_at = "2026-10-22T18:07:03Z"
-sha256 = "3779965e64fa6d0bfbe27f8499d11748945a2badffdbdfcd2be24201dd7d5432"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-10-22"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["0a.1", "0a.2", "0a.3", "0.12", "Dependencies"]
 
 [[source]]
@@ -592,13 +588,10 @@ venue = "Compositio Mathematica 145 (2009), 1147–1162"
 doi = "10.1112/S0010437X08003734"
 locator_scheme = "theorem"
 locator = "Theorem 1.3, p. 1150; Proposition 3.1, pp. 1157–1158; §4.1, pp. 1158–1159"
-url = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/355/9138-GKZ.pdf"
-fetched_from = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/355/9138-GKZ.pdf"
-fetched_at = "2026-11-18T21:04:29Z"
-sha256 = "e9b686d8cf4be822c45eed63a6fdff024099abbc163a91f920c3403fb9b5f82b"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-18"
+url = "https://doi.org/10.1112/S0010437X08003734"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["6.20a"]
 
 [[source]]

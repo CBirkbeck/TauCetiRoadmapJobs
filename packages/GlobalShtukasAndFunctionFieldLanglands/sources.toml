@@ -525,13 +525,9 @@ title = "Chevalley groups over function fields and automorphic forms"
 year = 1974
 locator_scheme = "theorem"
 locator = "§§3.1–3.3, especially Theorem 3.2.2 and the Tamagawa computation, pp. 298–305"
-url = "https://campuscore.ariel.ac.il/wp/yuval-flicker/wp-content/uploads/sites/316/2026/03/HarderChevalleyGpsFunFields1974.pdf"
-fetched_from = "https://campuscore.ariel.ac.il/wp/yuval-flicker/wp-content/uploads/sites/316/2026/03/HarderChevalleyGpsFunFields1974.pdf"
-fetched_at = "2026-11-03T08:10:47Z"
-sha256 = "a6e654188e504f21a2caa11888160499e7c86fa9b7f0e4bfd92535835d423bfa"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-03"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["0.13"]
 
 [[source]]

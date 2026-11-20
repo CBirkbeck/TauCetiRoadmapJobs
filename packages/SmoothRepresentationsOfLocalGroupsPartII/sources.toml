@@ -304,13 +304,9 @@ title = "Representations of p-adic groups (Harvard lectures, Fall 1992)"
 year = 1992
 locator_scheme = "section"
 locator = "Ch. II §2.1, Proposition 22, p. 39; extracted line 1281; Definition 27 and Proposition 40, PDF p. 83; extracted line 2853; Lemma 38, PDF p. 84; extracted line 2887; Proposition 41, PDF p. 86; extracted line 2934; Proposition 38, PDF p. 84; extracted line 2861"
-url = "https://personal.math.ubc.ca/~cass/research/pdf/bernstein.pdf"
-fetched_from = "https://personal.math.ubc.ca/~cass/research/pdf/bernstein.pdf"
-fetched_at = "2026-10-25T11:54:09Z"
-sha256 = "a594282d1ab35ad49e04eef571e59d620be535a98954c64e3a35205d206311c7"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-10-25"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["SRU.2", "SRU.4"]
 
 [[source]]

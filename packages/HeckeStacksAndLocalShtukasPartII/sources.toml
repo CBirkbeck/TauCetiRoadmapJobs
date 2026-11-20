@@ -134,13 +134,9 @@ title = "Minimal length elements of extended affine Weyl groups"
 year = 2014
 locator_scheme = "section"
 locator = "Proposition 2.7, PDF p. 10; Theorem 2.9 and Corollary 2.10, PDF pp. 10–11; class-polynomial Theorem 5.3, PDF pp. 25–26; cocenter basis Theorem 6.7, PDF p. 29"
-url = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/315/8989-affmin-2.pdf"
-fetched_from = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/315/8989-affmin-2.pdf"
-fetched_at = "2026-10-24T09:58:00Z"
-sha256 = "370abc45c00d91279f69d115ba10da758a23dfe3b56d1245d0a5370372807e09"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-10-24"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["gap:twisted-redmin", "gap:straight-finite-parabolic", "gap:twisted-affine-cocenter"]
 
 [[source]]

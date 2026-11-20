@@ -409,13 +409,9 @@ title = "Algebraic Surfaces in Positive Characteristic"
 authors = "Christian Liedtke"
 locator_scheme = "section"
 locator = "§4, Corollary 4.2 and Definition 4.3, pp.20–21, lines 749–767; §8, Theorem 8.3, p.34, lines 1326–1335; 55-page author notes, numbering as read"
-url = "https://cims.nyu.edu/~tschinke/books/simons12/lectures.pdf"
-fetched_from = "https://cims.nyu.edu/~tschinke/books/simons12/lectures.pdf"
-fetched_at = "2026-10-21T05:36:38Z"
-sha256 = "1f59795f87151b34d8d5c6a31a858592dad57d55ed0bf127cc5b1bf78e18e861"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-10-21"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["gap:elliptic-surface-geometry"]
 
 [[source]]

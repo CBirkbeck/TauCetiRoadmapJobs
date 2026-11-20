@@ -384,14 +384,10 @@ venue = "Compositio Mathematica 145 (2009), 1147-1162"
 doi = "10.1112/S0010437X08003734"
 locator_scheme = "theorem"
 locator = "Theorem 1.3 (p. 1150); Proposition 3.1 (pp. 1157-1158); §4.1 (pp. 1158-1159)"
-url = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/355/9138-GKZ.pdf"
-fetched_from = "https://archive.ymsc.tsinghua.edu.cn/pacm_download/355/9138-GKZ.pdf"
-fetched_at = "2026-11-11T04:17:17Z"
-sha256 = "e9b686d8cf4be822c45eed63a6fdff024099abbc163a91f920c3403fb9b5f82b"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-11"
-version_note = "published version with the journal pagination"
+url = "https://doi.org/10.1112/S0010437X08003734"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["12.6a", "12.7"]
 
 [[source]]
