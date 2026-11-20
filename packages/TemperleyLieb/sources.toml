@@ -1,0 +1,92 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TemperleyLieb"
+
+[[source]]
+id = "chen-tl-categories"
+authors = "Joshua Chen"
+title = "The Temperley-Lieb categories and skein modules"
+year = 2014
+arxiv = "1502.06845v1"
+locator_scheme = "theorem"
+locator = "Remark 2.1.3; Definitions 2.1.5-2.1.7, 2.2.1; Remark 2.2.3; Theorem 2.3.2; Remarks 2.3.3-2.3.5; Proposition 2.3.6; Corollary 2.4.7; Lemma 4.0.7; Theorem 4.0.8; Section 5.1; Lemmas 5.1.5, 5.2.2, 5.3.2; Theorems 5.4.4-5.4.5"
+url = "https://arxiv.org/abs/1502.06845v1"
+fetched_from = "https://arxiv.org/pdf/1502.06845v1"
+fetched_at = "2026-11-20T12:43:22Z"
+sha256 = "fe11792b276d4be9fbab17524bf5f9387a9aecbb28765e99c7afb032fc911d8d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["3.1", "3.2", "3.3", "4.1", "4.2", "4.4", "5.5", "6.1", "6.4", "6.5", "7.4", "7.5"]
+
+[[source]]
+id = "ridout-saint-aubin"
+authors = "David Ridout, Yvan Saint-Aubin"
+title = "Standard Modules, Induction and the Temperley-Lieb Algebra"
+year = 2012
+arxiv = "1204.4505v4"
+locator_scheme = "theorem"
+locator = "Proposition 2.3; Theorem 2.4; equation (2.9); Section 3, Lemma 3.1; Theorem 4.7; Corollary 4.8"
+url = "https://arxiv.org/abs/1204.4505v4"
+fetched_from = "https://arxiv.org/pdf/1204.4505v4"
+fetched_at = "2026-11-20T12:43:29Z"
+sha256 = "126aa444fd2076b960398eb3c1bf8790517a74f021832ecfb2d8acd8a4182ead"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v4"
+cited_for = ["1.2", "4.2", "5.2", "5.3", "5.4"]
+
+[[source]]
+id = "morrison-jw-formula"
+authors = "Scott Morrison"
+title = "A Formula for the Jones-Wenzl Projections"
+year = 2015
+arxiv = "1503.00384v1"
+locator_scheme = "theorem"
+locator = "Proposition 3.3; Propositions 4.1 and 5.1"
+url = "https://arxiv.org/abs/1503.00384v1"
+fetched_from = "https://arxiv.org/pdf/1503.00384v1"
+fetched_at = "2026-11-20T12:43:35Z"
+sha256 = "9ccfbd064a88ff910a1829f905e3b78e880fa8757b484ae4575346b08dcb1770"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["6.2", "6.3"]
+
+[[source]]
+id = "goodman-wenzl-ideals"
+authors = "Frederick M. Goodman, Hans Wenzl"
+title = "Ideals in the Temperley Lieb Category"
+year = 2002
+arxiv = "math/0206301v1"
+locator_scheme = "theorem"
+locator = "Section 1.3; Propositions 1.1 and 2.1; Corollary 3.2; Theorem 3.3"
+url = "https://arxiv.org/abs/math/0206301v1"
+fetched_from = "https://arxiv.org/pdf/math/0206301v1"
+fetched_at = "2026-11-20T12:43:39Z"
+sha256 = "5d1b6659ccb28a53a1239e547a53077b2e845b3252e7f9bd6606ea67c1cc989d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["5.5", "6.5", "6.6", "6.7", "6.8"]
+
+[[source]]
+id = "tingley-minus-sign"
+authors = "Peter Tingley"
+title = "A minus sign that used to annoy me but now I know why it is there"
+year = 2010
+arxiv = "1002.0555v2"
+locator_scheme = "theorem"
+locator = "Definition 2.1 and relation (1); Theorem 4.2 and equation (18); Corollary 4.5"
+url = "https://arxiv.org/abs/1002.0555v2"
+fetched_from = "https://arxiv.org/pdf/1002.0555v2"
+fetched_at = "2026-11-20T12:43:45Z"
+sha256 = "73e33c4476121ac2abbfc657eb7e32818e82f83abb685733ffe33f755335a669"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["Conventions", "3.5", "3.6"]

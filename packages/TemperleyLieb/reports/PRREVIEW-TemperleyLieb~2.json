@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TemperleyLieb~2",
+  "head": "e774e410f0344909c6f56a7806bb0dc0883c9457",
+  "pr": 2711,
+  "folder": "TemperleyLieb",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "Full review. Automatic checks: all passed; depcheck 182 roadmaps, 2068 edges, 0 problems (--movable); no change outside the folder. Suggested.lean elaborates with five sorry warnings only; one-tactic probes fail on all five statements (no padding); the new Graham-Lehrer criterion checked against Tau Ceti's CellularBasis definition and by examples (Z, K[x]/(x^2), M2(K)). Seeded sample (2.2, 3.2, 3.5, 3.6, 4.2-4.5, 4.7, 5.4, 6.6, 7.1, 7.3-7.5) checked against chen-tl-categories (arXiv 1502.06845v1), ridout-saint-aubin (1204.4505v4, Thm 4.7 p20, remarks after Cor 4.8 p21), morrison-jw-formula (1503.00384v1, Props 4.1, 5.1), goodman-wenzl-ideals (math/0206301v1, Prop 1.1 p4, Prop 2.1 p8, Thm 3.3 p10), tingley-minus-sign (1002.0555v2), edie-michell-morrison (1710.07362v1); 27 locators read. Graham-Lehrer and Westbury paywalled (uncertified), Kauffman-Lins and Wenzl 1987 not available. All 163 cited library names resolved at Tau Ceti 2fd255d997 / Mathlib 1b1ccf4b; no README target is already proved at the pin. Adversarial table: 31 rows with computed values. Ownership: TemperleyLiebOperatorAlgebras, QuantumGroups, PivotalSpherical, PresentationsOfMonoidalCategories, CategoricalOperatorAlgebras read; nothing shared. R01 (P2): fourteen new author-only (Chen) attributions, six (2.1, 2.6, 2.7, 3.4, 3.6, 5.6) for results Chen's thesis does not contain. Earlier review: 3 of 4 notes repaired.",
+  "text": "06659f19f2e4bf83"
+ }
+}
