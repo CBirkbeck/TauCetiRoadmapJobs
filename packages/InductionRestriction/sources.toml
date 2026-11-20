@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "InductionRestriction"
+
+[[source]]
+id = "Weibel2013"
+authors = "Charles A. Weibel"
+title = "The K-book: an Introduction to Algebraic K-theory"
+year = 2013
+venue = "Graduate Studies in Mathematics 145, American Mathematical Society"
+version_note = "cited from the chapter files on the author's web page"
+locator_scheme = "theorem"
+locator = "Ch. III, Lemmas 5.3.2-5.3.3, Example 5.3.4, Theorem 5.4"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.III.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.III.pdf"
+fetched_at = "2026-11-20T04:56:31Z"
+sha256 = "ba1bc2d25680ab25c4baadc5ab28e39d1077dc66bb12ca4e2174b6cb55f81307"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["7.1"]
