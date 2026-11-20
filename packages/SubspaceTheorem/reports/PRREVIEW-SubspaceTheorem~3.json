@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SubspaceTheorem~3",
+  "head": "c0ff5887035c68ad5442faf2ac7c61dd70b62066",
+  "pr": 2678,
+  "folder": "SubspaceTheorem",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review of the README (all ten layers, every Check and example recomputed) and of Suggested.lean. One P2: the remark of 3.5 on the factor contributed by the primes of p and q is false when the nearest integer shares a prime with q (1/72 against 1/36 at (3,2,2)); the description repeats it. Three small corrections (6.2 lacks the former name another roadmap cites; 9.1's normalization lacks 0 < prod C used by 9.2; two cited works missing from the References) and one format note. The previous review's open question on the Jensen constant of 2.2 is settled (Bernstein plus Jensen on the unit circle). Seeded sample of 15 targets: locators checked against Evertse2010, Evertse1996, AdamczewskiBugeaud2007 and Schlickewei1992 (17 locators); Bombieri-Gubler, Mahler 1957, Ridout 1958, Davenport-Roth 1955, Vojta 1987, Corvaja-Zannier 2003 and Evertse-Schlickewei 2002 could not be read and are listed as not verifiable. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 38 sorry warnings only; simp probe closes none of the 38 theorems. Three source issues recorded for Evertse2010. For the humans: the licence of the cited formalization, and Bombieri-Gubler not read beyond its chapter list. The sources service recorded an entry for Evertse2010 in the package manifest when the text was fetched.",
+  "text": "fd71358cc2f25f97"
+ }
+}
