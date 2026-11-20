@@ -1,0 +1,147 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HamiltonianReduction"
+
+[[source]]
+id = "CannasDaSilva2001"
+authors = "Ana Cannas da Silva"
+title = "Lectures on Symplectic Geometry"
+year = 2001
+venue = "Lecture Notes in Mathematics 1764, Springer, 2001"
+version_note = "author's revised version, January 2006"
+locator_scheme = "theorem"
+locator = "Definition 22.1; §22.4; Homework 17; Theorems 23.1, 23.4; §23.2; §§24.3-24.4; §§25.3-25.4"
+url = "https://people.math.ethz.ch/~acannas/Papers/lsg.pdf"
+fetched_from = "https://people.math.ethz.ch/~acannas/Papers/lsg.pdf"
+fetched_at = "2026-11-20T10:00:53Z"
+sha256 = "0b1c3a1f303b2fac4388d3b66019b42fc34196570225776c2448f797439e458b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["1.1", "1.2", "1.3", "2.2", "3", "3.0a", "3.0b", "3.0c", "5"]
+
+[[source]]
+id = "Meinrenken2024"
+authors = "Eckhard Meinrenken"
+title = "Symplectic Geometry (Fall 2024)"
+year = 2024
+venue = "lecture notes, University of Toronto"
+locator_scheme = "theorem"
+locator = "Remarks 7.13; Propositions 7.18, 7.20; Theorems 7.25, 7.46; Theorem 8.3, Remark 8.4; Proposition 8.6; Example 8.9; Proposition 8.13"
+url = "https://www.math.utoronto.ca/mein/teaching/LectureNotes/symplectic.pdf"
+fetched_from = "https://www.math.utoronto.ca/mein/teaching/LectureNotes/symplectic.pdf"
+fetched_at = "2026-11-20T10:00:57Z"
+sha256 = "b1c8c4143c4ae740badf07ae0ea6a94dad73c044c82c514e15347cb296433edb"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["Conventions", "1.2", "1.3", "2.2", "3.0a", "3.0b", "3.0c", "4.1", "5"]
+
+[[source]]
+id = "Banyaga1978"
+authors = "Augustin Banyaga"
+title = "Sur la structure du groupe des difféomorphismes qui préservent une forme symplectique"
+year = 1978
+venue = "Comment. Math. Helv. 53 (1978), 174-227"
+doi = "10.1007/BF02566074"
+locator_scheme = "theorem"
+locator = "Propositions II.1.1, II.3.1, II.3.3; Remarque II.1.2; pp. 184, 191; §III.6, Lemme III.6.1"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0053/LOG_0017.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0053/LOG_0017.pdf"
+fetched_at = "2026-11-20T10:03:58Z"
+sha256 = "181c2fb82d5fa556835656571130ca2727a0b4874e1328fbfc20da962f751192"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["1a.0", "1a.1", "1a.2", "1a.3", "1a.4"]
+
+[[source]]
+id = "Bott1956"
+authors = "Raoul Bott"
+title = "An application of the Morse theory to the topology of Lie-groups"
+year = 1956
+venue = "Bull. Soc. Math. France 84 (1956), 251-281"
+doi = "10.24033/bsmf.1472"
+locator_scheme = "theorem"
+locator = "Propositions 11.4-11.5, Theorem III"
+url = "https://www.numdam.org/item/BSMF_1956__84__251_0"
+fetched_from = "https://www.numdam.org/item/BSMF_1956__84__251_0.pdf"
+fetched_at = "2026-11-20T10:03:59Z"
+sha256 = "78d429bd4df018dc0ebea2bf84187c3226343f68fe38e469b6a9efd2a903494d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["2a.3", "2a.4"]
+
+[[source]]
+id = "AlexandrinoBettiol2010"
+authors = "Marcos M. Alexandrino, Renato G. Bettiol"
+title = "Introduction to Lie groups, isometric and adjoint actions and some generalizations"
+year = 2009
+arxiv = "0901.2374v3"
+locator_scheme = "theorem"
+locator = "§4.3: remark after Definition 4.28, Lemma 4.26, Theorem 4.31"
+url = "https://arxiv.org/abs/0901.2374v3"
+fetched_from = "https://arxiv.org/pdf/0901.2374v3"
+fetched_at = "2026-11-20T10:04:07Z"
+sha256 = "6381a6ae6854c15ef7251443d721b7ede2781da01b51e5a5c70356ea398cc28a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v3"
+cited_for = ["2.4", "2.5"]
+
+[[source]]
+id = "BatesLerman1997"
+authors = "L. Bates, E. Lerman"
+title = "Proper group actions and symplectic stratified spaces"
+year = 1994
+venue = "Pacific J. Math. 181 (1997), no. 2, 201-229"
+arxiv = "dg-ga/9407003v1"
+locator_scheme = "theorem"
+locator = "§2; Theorems 7, 9, 15; Corollaries 10, 12, 14; Proposition 11 (arXiv v1 numbering)"
+url = "https://arxiv.org/abs/dg-ga/9407003v1"
+fetched_from = "https://arxiv.org/pdf/dg-ga/9407003v1"
+fetched_at = "2026-11-20T10:04:11Z"
+sha256 = "304edba408d6d92b4ea42ff5a159fdbe0e78410c4829540227a28acb7468fd71"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1; the README cites the numbering and pages of this version"
+cited_for = ["Conventions", "3.0b", "3.1", "3.2"]
+
+[[source]]
+id = "OrtegaRatiu2005"
+authors = "Juan-Pablo Ortega, Tudor S. Ratiu"
+title = "Cotangent bundle reduction"
+year = 2005
+arxiv = "math/0508636v1"
+locator_scheme = "page"
+locator = "pp. 1-3"
+url = "https://arxiv.org/abs/math/0508636v1"
+fetched_from = "https://arxiv.org/pdf/math/0508636v1"
+fetched_at = "2026-11-20T10:04:23Z"
+sha256 = "e994dbad24b9dcafbe4b096b11c91697cdd1912f1d41379e81534c6147d9c36a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["4.1"]
+
+[[source]]
+id = "Huebschmann1995"
+authors = "Johannes Huebschmann"
+title = "The singularities of Yang-Mills connections for bundles on a surface. I. The local model"
+year = 1994
+venue = "Math. Z. 220 (1995), 595-609"
+arxiv = "dg-ga/9411006v1"
+locator_scheme = "section"
+locator = "§§2.18-2.32"
+url = "https://arxiv.org/abs/dg-ga/9411006v1"
+fetched_from = "https://arxiv.org/pdf/dg-ga/9411006v1"
+fetched_at = "2026-11-20T10:04:35Z"
+sha256 = "29f1771629f1fcc0810dae76f3cf8e6b34cf277a8c95f3d8425e4f4c4d2c20a2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["5.8"]

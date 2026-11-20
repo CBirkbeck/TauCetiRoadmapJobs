@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HamiltonianReduction~1",
+  "head": "ebc4543c2483556666a52739b06e5d793bf731bb",
+  "pr": 2690,
+  "folder": "SymplecticGeometry/HamiltonianReduction",
+  "date": "2026-11-20",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full review. Sample: all 15 seeded targets; Cannas da Silva (Def. 22.1, 22.3-22.4, Homework 17, Thm 23.1, 23.2, 24.4-24.5) and Huebschmann 2.18-2.32 (arXiv v1) read; Sjamaar-Lerman, Atiyah-Bott, Marsden-Ratiu and Broecker-tom Dieck not legally readable. Adversarial table of 28 rows with computed values; no false statement found. Automatic checks: all passed; dependency check 0 problems; Suggested.lean elaborates with two sorry warnings only, #check @ signatures match the README, one-tactic probes fail. Findings: headline theorems lack supporting locators (R01); IntegrableSystems I2.0 and CotangentLagrangian C4 are renumbered without mapping by their open revisions (R02).",
+  "text": "37e0d998a9eaf38e"
+ }
+}
