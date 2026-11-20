@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MatchingPolynomial~1",
+  "head": "ff9f4117cd266863e92f409ced6af0a4ce2114e1",
+  "pr": 2702,
+  "folder": "MatchingPolynomial",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample (1.1, 1.2, 2.1, 2.2, 3.1, 3.2, 4.1, 4.2): every theorem recomputed on all labelled graphs with at most 5 vertices and the 156 graphs with 6, root bound also on all 7-vertex graphs; every printed value in the Checks reproduced. 16 locators into Marcus-Spielman-Srivastava (arXiv v2) and Spielman's Lecture 26 read at the text, one page range corrected; Godsil 1995 could not be read through the sources service and is listed as not verifiable. 30 Mathlib declarations opened at the pin; RandomMatrices 1.2 on main resolved. Suggested.lean elaborates with 10 sorry warnings only; one-tactic probe closes nothing; all headlines stated. Automatic checks all passed; dependency check 0 problems; no overlap with open or main roadmaps.",
+  "text": "d8f3839bef17d3bc"
+ }
+}
