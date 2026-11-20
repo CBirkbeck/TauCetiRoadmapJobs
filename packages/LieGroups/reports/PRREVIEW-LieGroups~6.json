@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LieGroups~6",
+  "head": "35f6f016a116dfc4024966157a41c65847f2bb2f",
+  "pr": 2642,
+  "folder": "RepresentationTheory/LieGroups",
+  "date": "2026-11-20",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 6,
+  "format_notes": 2,
+  "notes": "Full review. Previous review: covering-comparison citation repaired; universe point partly repaired (redundant hypothesis kept, C04); SchubertGeometry line-bundle point not repaired (C03). Seeded sample of 15 sections checked: kirillov2008 supports 0.1, 1.1, 4.2, 5.2 and 5.3; knapp2002 VI.4 supports 9.4. Kirillov's chapters do not contain 2.1 (non-closed subgroups) or the group complexification of 7.2/7.5/7.6/7.11 (C02). Bump, Broecker-tom Dieck, Humphreys, Hall and Varadarajan are settled as uncertified. Adversarial table: 33 rows with computed values. Automatic checks: worker gate passed; depcheck 199 roadmaps, 2201 edges, 0 problems; lake env lean exit 0 with 22 sorry warnings only; one-tactic probe closes 0 of 22 theorems; #check signatures compared with the README. Findings: R01, the 7.6 Sp(n) Lie-algebra half is attributed to the split sp(2l,R) complexification at the Tau Ceti pin; R02, two owners of the complex Lie group G(C) with ReductiveGroups 3A.5e on main. Overlap check read LieGroupsPartII, RealSemisimpleLieGroups and ReductiveGroups on main and CompactGroupsPartII at its open head; ownership against the open heads of LieGroupsPartII, RealSemisimpleLieGroups, LieGroupoidsPoisson and AdoIwasawa was not checked.",
+  "text": "b762721bf720337c"
+ }
+}
