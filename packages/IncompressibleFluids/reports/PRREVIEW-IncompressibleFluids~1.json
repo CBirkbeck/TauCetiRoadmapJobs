@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IncompressibleFluids~1",
+  "head": "f380b14a946d9c28484caee7b274bbc5001f3a24",
+  "pr": 2630,
+  "folder": "IncompressibleFluids",
+  "date": "2026-11-20",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. All 15 sampled targets and every other section recomputed by hand (symbols, constants, exponents, scalings, Checks): no false mathematics found. The README has no source locators, so no locator could be verified; four statements of 4.2 and 5.4 were compared with Ozanski-Pooley arXiv:1708.09787; the primary papers and the books are paywalled or unreadable. 36 cited library declarations opened at the pins (9 further Tau Ceti names are not at the pin). PDE and OneParameterSemigroups citations resolved on main. Dependency check: 0 problems, no UPWARD or CYCLE. Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 7 theorems; an Aubin-Lions statement and a sorry-free form of the projection instance were elaborated in a scratch copy. Automatic checks: the sorry-in-definition report is real (R04); the TeX-subscript report in 4.2 is a false positive (code span wrapping a line). Overlap read against IncompressibleFlows, PDE, CompressibleEulerEquations, YangMillsConnectionsAndCaloricGauge, SobolevPolynomialApproximation.",
+  "text": "de1667b6f0f9dd1b"
+ }
+}
