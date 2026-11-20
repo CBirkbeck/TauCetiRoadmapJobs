@@ -1,0 +1,52 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "OperatorIdeals"
+
+[[source]]
+id = "Ull24"
+authors = "Mario Ullrich"
+title = "Inequalities between s-numbers"
+year = 2024
+venue = "Advances in Operator Theory 9:82 (2024)"
+doi = "10.1007/s43036-024-00386-x"
+arxiv = "2405.05509v2"
+locator_scheme = "page"
+locator = "p. 2"
+url = "https://arxiv.org/abs/2405.05509v2"
+fetched_from = "https://arxiv.org/pdf/2405.05509v2"
+fetched_at = "2026-11-20T01:13:40Z"
+sha256 = "e1f7502d1e18dd260dac054fb6859738fc6f289b05914e4a3c6b31d138e8bb29"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2; published as Adv. Oper. Theory 9 (2024), art. 82; README page numbers refer to arXiv v2"
+cited_for = ["1.1", "1.2"]
+
+[[source]]
+id = "EY36"
+authors = "Carl Eckart, Gale Young"
+title = "The Approximation of One Matrix by Another of Lower Rank"
+year = 1936
+venue = "Psychometrika 1"
+doi = "10.1007/BF02288367"
+locator_scheme = "page"
+locator = "pp. 211-218"
+url = "https://doi.org/10.1007/BF02288367"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.5"]
+
+[[source]]
+id = "Bha97"
+authors = "Rajendra Bhatia"
+title = "Matrix Analysis"
+year = 1997
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-0653-8"
+locator_scheme = "chapter"
+locator = "the chapters on variational principles and symmetric norms"
+url = "https://doi.org/10.1007/978-1-4612-0653-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.5", "2.3", "2.5"]
