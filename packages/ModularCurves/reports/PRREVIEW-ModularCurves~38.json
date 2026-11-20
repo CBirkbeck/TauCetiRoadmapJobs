@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularCurves~38",
+  "head": "271d965c5361fdd960d2c1ea3d12e1a601ad9582",
+  "pr": 2627,
+  "folder": "ModularCurves",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review of an unchanged head: README (5586 lines) and Suggested.lean read in full, every numerical Check recomputed. Sample of 15 sections checked against Cesnavicius (arXiv v2), Mazur 1977, Stacks tags 04HN/0BFD/0BFG/00R4, Oda, EGM, Conrad and Loeffler (68 locators, all match); Katz-Mazur, Deligne-Rapoport and Katz are not legally readable and are listed as not verifiable. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 32 sorry warnings only; one-tactic probe closes none of the 32 statements. Cross-roadmap citations resolved on main. Two small corrections (prose of IsHenselization.bijective_of_comp_eq in section 0.9; Needs line of section 2.2 naming JacobianChallenge for the norm of invertible sheaves) and one format note.",
+  "text": "a9e6b7f3ab0af8bd",
+  "carried": {
+   "from": "271d965c5361fdd960d2c1ea3d12e1a601ad9582",
+   "head": "b7e5c3622f59432de7a2986ddd33678248593ead",
+   "findings": 2,
+   "lines": 7,
+   "folders": [
+    "ModularCurves"
+   ],
+   "corrections": true
+  }
+ }
+}
