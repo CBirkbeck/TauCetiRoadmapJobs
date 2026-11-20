@@ -1,0 +1,38 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ExponentialIntegrators"
+
+[[source]]
+id = "lu2022dpmsolver"
+authors = "Cheng Lu, Yuhao Zhou, Fan Bao, Jianfei Chen, Chongxuan Li, Jun Zhu"
+title = "DPM-Solver: A Fast ODE Solver for Diffusion Probabilistic Model Sampling in Around 10 Steps"
+year = 2022
+arxiv = "2206.00927v3"
+locator_scheme = "theorem"
+locator = "Theorem 3.2"
+url = "https://arxiv.org/abs/2206.00927v3"
+fetched_from = "https://arxiv.org/pdf/2206.00927v3"
+fetched_at = "2026-11-20T19:37:46Z"
+sha256 = "4a14cb652bb4996c6bfdd717b0bf71d6a5c92cf9e09abdc3173106213f4fd671"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v3"
+cited_for = ["5.3"]
+
+[[source]]
+id = "song2021ddim"
+authors = "Jiaming Song, Chenlin Meng, Stefano Ermon"
+title = "Denoising Diffusion Implicit Models"
+year = 2020
+arxiv = "2010.02502v4"
+locator_scheme = "equation"
+locator = "(12)"
+url = "https://arxiv.org/abs/2010.02502v4"
+fetched_from = "https://arxiv.org/pdf/2010.02502v4"
+fetched_at = "2026-11-20T19:37:50Z"
+sha256 = "07cb8796d7c100bf7c02bc575f16aab72c32630a8f85abd54ad45dc4f63e80fb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v4"
+cited_for = ["5.2"]
