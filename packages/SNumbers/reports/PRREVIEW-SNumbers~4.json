@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SNumbers~4",
+  "head": "2322e11af45400afe965d1d5e6d07a0d05685aae",
+  "pr": 2648,
+  "folder": "SNumbers",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review at 2322e11. Seeded sample of 15 targets checked against pietsch1974 (ICM open archive, OCR), ullrich2026 (arXiv) and the lean-snumbers blueprint (author page): 8 of the 9 cited locators read at the text, Pietsch 1987 unreadable for 3.1, 6 targets without locator (C02). Adversarial table of 30 rows with computed values. Gate: every check passed; depcheck 0 problems. Suggested.lean elaborates with 56 sorry warnings only; the one-tactic probe closes none; #check of 25 declarations matches the README. Earlier findings: locators partly repaired, shape repaired. Wording and Lean names shared with Lean-SNumbers (Apache-2.0) referred to the human reviewers.",
+  "text": "66bd2d011455e309"
+ }
+}
