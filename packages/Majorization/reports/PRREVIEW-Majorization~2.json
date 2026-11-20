@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Majorization~2",
+  "head": "591e977fb671444e0da06b2a1b283baed25e0e7c",
+  "pr": 2612,
+  "folder": "OperatorTheory/Majorization",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review at the head the previous review read (folder unchanged). All 11 sampled sections and every headline recomputed (adversarial table with values); the progress step of 1.2 and the singular-pair statement of 1.4 proved by hand. 203 README library names checked at the pins: 190 elaborated by #check, the 13 in two unbuilt Tau Ceti modules read in source. Cross-roadmap ids resolved on main. Automatic checks all pass; depcheck 0 problems; Suggested.lean elaborates with no error or warning. No source text was readable (0 of 13 locators checked): Bhatia and Marshall-Olkin-Arnold uncertified, Fan 1949, Mirsky 1960 and Schur 1923 not obtained.",
+  "text": "fd6f6c9869bd8939",
+  "carried": {
+   "from": "591e977fb671444e0da06b2a1b283baed25e0e7c",
+   "head": "c754e3c1b2d6946f02ca88ecee11c27f7c49e190",
+   "findings": 5,
+   "lines": 51,
+   "folders": [
+    "OperatorTheory/Majorization"
+   ],
+   "corrections": true
+  }
+ }
+}
