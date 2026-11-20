@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpectralManifolds~7",
+  "head": "898e0832b57f239fd521a10f75c1a6f3f39e4bd6",
+  "pr": 2657,
+  "folder": "SpectralManifolds",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full re-review. All previous remarks (R01, C01-C07, N01-N03) repaired. Seeded sample checked against the texts: Connes 2008 (Lemma 2.1, Props 2.4, 5.11, 6.5, Remark 5.12, Thms 5.13, 9.9, 11.3-11.5, 14.9, Lemma 9.1, 12.2, Cor 14.10), Voiculescu 1979 (Lemma 4.3, Thm 4.5), Cacic 2011 (Defs 2.7, 2.9, Cor 2.19), Cacic 2012 (Def 2.5, Cor 2.7, Ex 2.9, Prop 2.16, Thm 2.18, Prop 2.24), Plymen 1986 (Def 2.2, 2.9-2.11), Dabrowski-Dossena (Table 6, sections 4-5), Swan 1962 Thm 2; books (Rudin, Nestruev, Loday, Treves) and Ando 1988 not verifiable. Adversarial pass recomputed all 64 real-product sign pairs, swap phases, shuffle and orientation constants, circle/torus/NC-torus Weyl and Dixmier constants. Automatic checks all passed; depcheck 182 roadmaps, 2098 edges, 0 problems; lake env lean exits 0 with two sorry warnings, #check shows all binders; one-tactic probe fails on both theorems; description matches head (68 sections, 65 Check blocks, 110 Checks).",
+  "text": "c7e5dcc0124a0315"
+ }
+}
