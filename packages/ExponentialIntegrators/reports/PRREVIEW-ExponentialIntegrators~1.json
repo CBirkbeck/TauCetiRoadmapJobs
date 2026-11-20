@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ExponentialIntegrators~1",
+  "head": "5b50f8f91d8fce80fc1d42126e9adba3def3b0ef",
+  "pr": 2780,
+  "folder": "ExponentialIntegrators",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. All 13 sampled targets recomputed (constants of 3.2, 3.3, 4.2, 4.3, 5.3 re-derived; every number in a Check recomputed). Source locators: 11 verified against lu2022dpmsolver and song2021ddim (arXiv); the 18 locators of Hochbruck-Ostermann 2010 (targets 1.1-4.3) not verifiable, no legally readable copy through the source service. 8 Mathlib and 14 Tau Ceti declarations opened at the pins; supplier sections resolved on main and at the open heads of OneStepMethodsForODEs, ScoreBasedDiffusion, FlowMatching. Dependency check: 0 problems. Suggested.lean elaborates with 9 sorry warnings only; one-tactic probe closes none. Automatic checks all passed. Two small corrections (half-log-SNR wording; real-valued substitution lemma cited for an operator-valued integral), one format note.",
+  "text": "0ed68be784bb415a"
+ }
+}
