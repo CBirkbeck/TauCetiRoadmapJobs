@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NilpotentOrbits~5",
+  "head": "a91852e9ac3fe22f9647fead13500afd9e599311",
+  "pr": 2628,
+  "folder": "NilpotentOrbits",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 41 changed lines since a982a9c. Checked: the previous small correction C01 (repaired: section 2.2, its Needs line, the Tau Ceti contracts and the scope paragraphs now cite the pinned open-orbit and conjugacy declarations); the four cited Tau Ceti declarations opened at the pin with their hypotheses; DG07 lines 92-94 and 143-153 read at the locator; the remaining targets of 2.2 computed on sl2 and sl3; the pull request description read against the head (no contradiction, nothing unstated); automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with nine sorry warnings only; no change outside the folder; overlaps none.",
+  "text": "6413b4023f29f01a"
+ }
+}
