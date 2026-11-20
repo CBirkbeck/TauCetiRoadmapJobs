@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Regularity~3",
+  "head": "42247a3b6b39832cf5c9c058042a509083b503e5",
+  "pr": 2631,
+  "folder": "Regularity",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 101 changed lines since 4d44900. Previous R01 (§8.2 Check 1) repaired and recomputed (t0 = 1 on the empty host; nonempty palette forces B >= t0); previous C01-C03 repaired. Checked the new §8.2 route step (single reversal-fixed color, mass of changed polyads) and its source, Rodl-Schacht Lemma 25 at k = 2 (author version, lines 473-489, 1424-1426). Checked the rewritten Scope table entries and the paragraph after it against Tau Ceti 2fd255d (PlacedCounting l.490, InducedCounting l.77, SparseCounting l.135, ExceptionalPrediction l.182, FriezeKannan l.187, StrongRegularity l.222, Subpolyad l.196, Stability l.169, Triadic/Basic l.434); one imprecise description, C01. Checked the numbering note against the counting papers' author versions, and the DenseGraphLimits item against its Layer 9a on main and at its open revision. Automatic checks rerun: all passed; depcheck 0 problems; no change outside the folder; Suggested.lean unchanged and elaborates with only the sorry warning. PR description agrees with the head.",
+  "text": "1b5a9a821db84622"
+ }
+}
