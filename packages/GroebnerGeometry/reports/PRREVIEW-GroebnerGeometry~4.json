@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GroebnerGeometry~4",
+  "head": "5c81ce73c50654e15afc7a96d9e370ee6800c9ae",
+  "pr": 2587,
+  "folder": "GroebnerGeometry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 68 changed lines since ab404d0. Checked: the five small corrections of the previous review (all repaired) and its format note (unchanged); the reduction of the SL2 invariant theorem from n <= 3 to four rows, recomputed, and Hashimoto Theorem 17 with its setting read at the locator; the restated hypotheses of section 4.10 against the non-Noetherian counterexample; Convention 1 against the pinned normal-form declaration; the section 6.2 pointer and the three new downstream bullets against the cited roadmaps on main; the restored G4 anchor and the former-label table (deferred D01 resolved inside the folder). Seeded sample checked where it falls in the changed passages (4.10, 6.2). Automatic checks all passed, none set aside; dependency check 0 problems; Suggested.lean elaborates with 11 sorry warnings only, no signature changed. One small correction (the description's sentence on the G4 anchor is out of date) and one format note.",
+  "text": "2746dc70b98f8445",
+  "carried": {
+   "from": "5c81ce73c50654e15afc7a96d9e370ee6800c9ae",
+   "head": "5c81ce73c50654e15afc7a96d9e370ee6800c9ae",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
