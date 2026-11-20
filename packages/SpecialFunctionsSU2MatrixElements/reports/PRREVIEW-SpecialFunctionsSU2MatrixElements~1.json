@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsSU2MatrixElements~1",
+  "head": "4721df16ea2484f856688389d097b8cd3c2a6256",
+  "pr": 2692,
+  "folder": "SpecialFunctionsSU2MatrixElements",
+  "date": "2026-11-20",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 6,
+  "format_notes": 3,
+  "notes": "Full review. Every theorem of Suggested.lean and every numerical Check recomputed from the Lean definitions (d <= 6); none failed. Sample: the 15 seeded targets; only the DLMF locators (9) could be read, the six books are not legally readable and are listed as not verifiable. Elaboration at the pins: no error, 76 sorry warnings. Dependency check: 0 problems. One-tactic probe: 3 of 9 close. Automatic checks: one form check set aside as a false positive. Findings: dual ownership of the spherical harmonics with the open SpecialFunctionsLegendre and RiemannianGeometry R8.2; one false sentence in the proof route of 1.3.",
+  "text": "48e181021b390b53"
+ }
+}
