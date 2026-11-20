@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StandardDistributions~3",
+  "head": "b0d099dd3c86c60f606a62e4be5862ebf3b57eb1",
+  "pr": 2682,
+  "folder": "StandardDistributions",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full review of an unchanged head. Seeded sample of 15 sections (0.1, 1.11, 3.2, 3.8, 4.4, 5.2, 5.7, 7.6, 7.8, 7.9, 10.1, 10.3, 10.9, 10.10, 10.18) recomputed, plus every headline of Layers 5, 6, 14 and 15; adversarial table of 30 rows with values. 10 source locators checked against the text (Nolan2020, RNoncentralBetaDoc); the handbooks cited by the sampled sections are not readable and are listed as not verifiable. 38 pinned declarations opened; none of the 13 sorried headlines is at the pin or closes in one tactic. Suggested.lean elaborates with 13 sorry warnings only. Automatic checks all passed, none set aside; dependency check 0 problems. Overlap: the real Wick-Isserlis formula is listed both here (owner, supplier side) and in RandomMatrices 2.5 on main, as on main before this pull request. Three small corrections (whole-book locators; the 10.17 locator; the Pareto natural-moment target is a cast of pinned theorems); four notes for the human reviewers.",
+  "text": "105259bbc621c623",
+  "carried": {
+   "from": "b0d099dd3c86c60f606a62e4be5862ebf3b57eb1",
+   "head": "44508075e1740475e8bcb4f2bafb073b857da3b7",
+   "findings": 3,
+   "lines": 125,
+   "folders": [
+    "StandardDistributions"
+   ],
+   "corrections": true
+  }
+ }
+}
