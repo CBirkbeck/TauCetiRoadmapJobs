@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PerfectAndChordalGraphs~1",
+  "head": "b85bfdd18860ecedbd63228311f616cb22696f06",
+  "pr": 2701,
+  "folder": "PerfectAndChordalGraphs",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All 12 sampled targets and all 10 headline theorems recomputed on degenerate and infinite instances (adversarial table in the report); every Check recomputed by hand. 13 of 13 locators into Vandenberghe-Andersen confirmed against the author copy; Diestel's Chapter 5 preview could not be opened for reading (encrypted file), so its locators are listed as not verifiable, with only the page range of section 5.5 confirmed from the contents page. 22 Mathlib declarations opened at the pin; the supplier QuiverRepresentationsPartII 4.3 finite_dilworth resolved on main; no duplicate owner in Mathlib, Tau Ceti, main or the open heads. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 10 sorry warnings only; one-tactic probe closes none of the 10 theorems. Pull request text agrees with the head.",
+  "text": "6507a5907775f01c"
+ }
+}
