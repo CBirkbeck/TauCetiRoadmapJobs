@@ -1,0 +1,21 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "StochasticApproximationAveraging"
+
+[[source]]
+id = "CutlerDiazDrusvyatskiy"
+authors = "Joshua Cutler, Mateo Díaz, Dmitriy Drusvyatskiy"
+title = "Stochastic Approximation with Decision-Dependent Distributions: Asymptotic Normality and Optimality"
+year = 2022
+venue = "Journal of Machine Learning Research, 25(90):1-49, 2024"
+arxiv = "2207.04173v3"
+locator_scheme = "theorem"
+locator = "Theorem B.1"
+url = "https://arxiv.org/abs/2207.04173v3"
+fetched_from = "https://arxiv.org/pdf/2207.04173v3"
+fetched_at = "2026-11-20T17:22:06Z"
+sha256 = "0bdf51a38748769c3050434e2423cb6009971f7402addcd871450a42ee4347b0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v3"
+cited_for = ["3.1"]

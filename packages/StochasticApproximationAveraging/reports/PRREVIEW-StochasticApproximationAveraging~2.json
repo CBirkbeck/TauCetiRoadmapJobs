@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StochasticApproximationAveraging~2",
+  "head": "47fef5eef1de714df693a19689ccb95272cae045",
+  "pr": 2744,
+  "folder": "StochasticApproximationAveraging",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 7 changed lines since 687b64b. Checked: R01 repaired (gain norms of the third Check of 1.2 recomputed at 60, 120 and 200 digits: 4.51615e35, 9.03928e40, 9.12831e38, 1.24075e21; double precision gives 9.38e25 at t = 4000; largest partial product 1.30e41 at index 1252); C01 repaired (clause on the deterministic start in 3.1 read against the source at the start of iteration (40) and against the route and the Lean hypothesis); N01 and N02 not repaired, carried as format notes. Seeded sample: 1.2 and 3.1 fall in the changed passages, locators unchanged. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged and elaborates with four sorry warnings only; no change outside the folder; pull request text agrees with the head.",
+  "text": "256dc6ed88fd51bf"
+ }
+}
