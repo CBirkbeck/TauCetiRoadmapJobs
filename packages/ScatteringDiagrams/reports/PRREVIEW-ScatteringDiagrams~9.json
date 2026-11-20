@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ScatteringDiagrams~9",
+  "head": "77c1a4182543be9f68e57645a98196cb6ab7cc11",
+  "pr": 2650,
+  "folder": "ScatteringDiagrams",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 4,
+  "notes": "incremental re-review of 48 changed lines since de3257f. Checked: the four small corrections of the previous review, all repaired; the new Dynkin form of bchElement in 0.4, recomputed against log(exp X exp Y) and the Dynkin-Specht-Wever bracketing through degree 5 with exact arithmetic; the changed locators MAN (3)-(4) and MAN (5) read in the source; FreeLieAlgebra.universalEnvelopingEquivFreeAlgebra opened at the pinned Mathlib; the LieGroups Layer 3 citation resolved on main and at its open revision; the pull request description read against the head (no contradiction). Automatic checks all pass on rerun; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only. Three format notes carried over, one new (no locator on the Dynkin fact).",
+  "text": "2c308eef848bc827"
+ }
+}
