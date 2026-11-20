@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StablePeriodicCurved~2",
+  "head": "041f6c626ce71ff871b623699a4201e029924c29",
+  "pr": 2668,
+  "folder": "StablePeriodicCurved",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full re-review: all nine remarks of the previous review (R01, R02, C01-C06, N01) repaired. Seeded sample of 15 sections plus all 9 headline theorems checked: locators read in Stai arXiv v1, Positselski arXiv v5, Buchweitz 1986 manuscript, Eisenbud 1980, Orlov arXiv v2, Keller 1990 and 2005, Buhler arXiv v2, FKS, ABI; Keller-Vossieck by OCR; Happel unreadable (paywall). Automatic checks all passed (gate rerun OK); depcheck 182 roadmaps, 2089 edges, 0 problems; lake env lean on Suggested.lean gives 9 sorry warnings only; one-tactic probes fail on all nine theorems. Corrections: brutal vs canonical truncation in 4.5 and echoes, two locators (Buchweitz 4 in 2.6, Buhler 7,10-13 in 0.3), stale 212-line count in the description.",
+  "text": "95d0f4237defc93f"
+ }
+}
