@@ -1,0 +1,58 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PACBayesBounds"
+
+[[source]]
+id = "alquier2021"
+authors = "Pierre Alquier"
+title = "User-friendly introduction to PAC-Bayes bounds"
+year = 2021
+arxiv = "2110.11216v5"
+locator_scheme = "theorem"
+locator = "Theorem 2.1"
+url = "https://arxiv.org/abs/2110.11216v5"
+fetched_from = "https://arxiv.org/pdf/2110.11216v5"
+fetched_at = "2026-11-20T16:52:26Z"
+sha256 = "299e8fc1e53dcdf122102d7de60f9cc041bb89dc2b6e64aebdac028127affe56"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v5"
+cited_for = ["3"]
+
+[[source]]
+id = "catoni2007"
+authors = "Olivier Catoni"
+title = "Pac-Bayesian Supervised Classification: The Thermodynamics of Statistical Learning"
+year = 2007
+venue = "IMS Lecture Notes Monograph Series 2007, Vol. 56, i-xii, 1-163"
+doi = "10.1214/074921707000000391"
+arxiv = "0712.0248v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.2.6"
+url = "https://arxiv.org/abs/0712.0248v1"
+fetched_from = "https://arxiv.org/pdf/0712.0248v1"
+fetched_at = "2026-11-20T16:52:34Z"
+sha256 = "f934a363c32c2fbb3af7205297d83b7e8ce236249408bee6d474a82a6019c539"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["3"]
+
+[[source]]
+id = "maurer2004"
+authors = "Andreas Maurer"
+title = "A Note on the PAC Bayesian Theorem"
+year = 2004
+arxiv = "cs/0411099v1"
+locator_scheme = "theorem"
+locator = "Theorem 5"
+url = "https://arxiv.org/abs/cs/0411099v1"
+fetched_from = "https://arxiv.org/pdf/cs/0411099v1"
+fetched_at = "2026-11-20T16:52:38Z"
+sha256 = "a38ce8b3ae1d26fba4b77f1b90321f66a97095ad73b72cc927d1bd416c660e82"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["3"]
