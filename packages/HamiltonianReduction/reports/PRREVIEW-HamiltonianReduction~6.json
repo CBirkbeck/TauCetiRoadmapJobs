@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HamiltonianReduction~6",
+  "head": "6d61ae870f8621062364601ee39cd07bf9b37b28",
+  "pr": 2690,
+  "folder": "SymplecticGeometry/HamiltonianReduction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review of an unchanged head. Every Check and formula of Layers 1-5 recomputed (adversarial table of 26 rows, including all 15 sampled targets and the headline theorems). 21 source locators read at the text (Meinrenken, Cannas da Silva, Bates-Lerman, Ortega-Ratiu, Alexandrino-Bettiol); the sampled sections 3.0d, 3.0e and 5.2-5.10 carry no locator (small correction C02). Cross-roadmap citations resolved on main and, for CotangentLagrangian, at its open revision. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with the two sorry warnings only; one-tactic probe closes neither theorem. The previous review's four small corrections and one format note are unrepaired and carried. Two misprints in Meinrenken's notes recorded.",
+  "text": "c5e56facce70f29d",
+  "carried": {
+   "from": "6d61ae870f8621062364601ee39cd07bf9b37b28",
+   "head": "4ddef36eef18c74af91ab522c8ed1430c972886e",
+   "findings": 4,
+   "lines": 58,
+   "folders": [
+    "SymplecticGeometry/HamiltonianReduction"
+   ],
+   "corrections": true
+  }
+ }
+}
