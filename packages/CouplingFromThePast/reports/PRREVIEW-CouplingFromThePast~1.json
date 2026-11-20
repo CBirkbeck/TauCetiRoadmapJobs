@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CouplingFromThePast~1",
+  "head": "aa8fbf5bf0aeba7a8cbcab4dc8e8167ec8253045",
+  "pr": 2793,
+  "folder": "CouplingFromThePast",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review. Seeded sample 1.1, 1.2, 2.1, 2.2, 3.1, 3.2 and all 11 headline theorems recomputed by exact enumeration (three updates of the three-state walk, two-state chains): compositions, tails of both coalescence times, d, d-bar, mixing time, laws of backward and forward values, height bound. 14 of 14 locators into Levin-Peres read at the page; Propp-Wilson 1996 not readable (cited without locator). 15 library declarations opened at the pins; MarkovChainMixing 1.1-1.3 and 4.1, MarkovChainsAndRenewal, SimulatedAnnealing, BernoulliPercolation citations resolved. Dependency check: 0 problems. Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 11 theorems. Automatic checks all passed; none set aside. Two small corrections (the locator of Example 22.8; the constant of Theorem 22.26 counts elements, the roadmap's counts strict steps).",
+  "text": "26016dfa02154e4b"
+ }
+}
