@@ -1,0 +1,30 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "StronglyRegularAndMooreGraphs"
+
+[[source]]
+id = "ErdosRenyiSos"
+locator_scheme = "theorem"
+locator = "Theorem 6"
+url = "https://users.renyi.hu/~p_erdos/1966-06.pdf"
+fetched_from = "https://users.renyi.hu/~p_erdos/1966-06.pdf"
+fetched_at = "2026-11-20T16:42:53Z"
+sha256 = "a91462036e525a81b0ac3ea1f0716239c5cf02641554dd1efd0fff867606edba"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["2.1"]
+
+[[source]]
+id = "BrouwerHaemers"
+authors = "Brouwer"
+title = "Spectra of Graphs"
+year = 2012
+venue = "Universitext"
+doi = "10.1007/978-1-4614-1939-6"
+locator_scheme = "theorem"
+locator = "Theorem 9.1.3"
+url = "https://doi.org/10.1007/978-1-4614-1939-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.2"]
