@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CommunicationComplexity"
+
+[[source]]
+id = "Bun2019"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://cs-people.bu.edu/mbun/courses/591_F19/notes/lec5.pdf"
+fetched_from = "https://cs-people.bu.edu/mbun/courses/591_F19/notes/lec5.pdf"
+fetched_at = "2026-11-20T16:51:41Z"
+sha256 = "e69d8f4fdaedd90b43f6305f99b43cf4e0fa4b5ac064476e2df41a252077c7fc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.2"]
