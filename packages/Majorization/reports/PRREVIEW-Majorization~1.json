@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Majorization~1",
+  "head": "591e977fb671444e0da06b2a1b283baed25e0e7c",
+  "pr": 2612,
+  "folder": "OperatorTheory/Majorization",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review. Sampled targets 1.1-2.6 and all four headline theorems recomputed (adversarial table, 16 rows); all 29 Checks and the worked examples recomputed and true. 195 cited library names elaborated by #check at the pins; the 13 in two unbuilt Tau Ceti modules read in source. Suggested.lean elaborates with no error or warning. Automatic checks re-run: all pass, including the targeted build; depcheck 0 problems. Sources: none of the 5 references readable legally (Bhatia, Marshall-Olkin-Arnold, Mirsky paywalled; Fan 1949 PMC copy refused; Schur 1923 not found), so no locator was verified against its text. Main correction: the old MAJ labels are dropped with no old-to-new map, and 3 roadmaps on main plus 3 open ones cite them.",
+  "text": "fd6f6c9869bd8939"
+ }
+}
