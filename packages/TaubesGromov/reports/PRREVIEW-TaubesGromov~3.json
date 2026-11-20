@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TaubesGromov~3",
+  "head": "bf96c5c17118b934280f48d515a04e570f30ac1d",
+  "pr": 2699,
+  "folder": "TaubesGromov",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full re-review: all earlier findings repaired or answered (C05 partly). Seeded sample of 15 targets checked; 25 source locators verified at the text (Tau96SWGr 13, IP97 7, McD96 3, Bal03 2); the three JDG papers and the MRL notes have no legal copy. All 45 Checks recomputed and true; adversarial table of 22 rows. Automatic checks all passed; Suggested.lean elaborates with sorry warnings only, #check @ of 5 declarations matches the README, one-tactic probes fail; 114 cited library names resolve at the pins; dependency check 0 problems, all 18 suppliers on main; overlap check against SeibergWittenTheory, SymplecticGeometry, HeegaardFloer, InstantonFloerTheory and DGFloer finds nothing shared.",
+  "text": "ff37cfcde3c4a667"
+ }
+}
