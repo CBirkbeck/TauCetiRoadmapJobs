@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ManifoldOptimization~3",
+  "head": "1ea9f2c325820f7897da5a56abdbfcacdbd3f5c6",
+  "pr": 1506,
+  "folder": "ManifoldOptimization",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 5,
+  "notes": "Full re-review. Both findings of the previous review are repaired (Suggested.lean elaborates with sorry as the only warning; no locator placeholder remains). One P2 finding: the Frobenius nearest-point property of the polar factor is owned both here (O2.2) and by the open roadmap SpectralSteepestDescent 2.3. The seeded sampler found no targets by heading, so the sample was chosen by hand: 51 statement locators and 30 equation numbers of B23, and 20 locators of AM12, DH19, BAC19 and EAS98, checked against the texts; AMS08 could not be read. Adversarial table of 22 rows with recomputed values. 47 Tau Ceti names and 24 cross-roadmap citations resolved; dependency check 0 problems; one-tactic probes close none of the 30 admitted theorems; the one failed automatic check (target heading format) is a format note.",
+  "text": "310e387146e3919b"
+ }
+}
