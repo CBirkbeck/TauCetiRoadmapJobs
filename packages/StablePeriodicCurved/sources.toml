@@ -1,0 +1,21 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "StablePeriodicCurved"
+
+[[source]]
+id = "Orlov2004"
+authors = "Dmitri Orlov"
+title = "Triangulated categories of singularities and D-branes in Landau-Ginzburg models"
+year = 2003
+venue = "Proc. Steklov Inst. Math. 2004, no. 3 (246), 227--248"
+arxiv = "math/0302304v2"
+locator_scheme = "theorem"
+locator = "Theorem 3.9"
+url = "https://arxiv.org/abs/math/0302304v2"
+fetched_from = "https://arxiv.org/pdf/math/0302304v2"
+fetched_at = "2026-11-20T10:07:43Z"
+sha256 = "c7c7e29dab19c8ba6ff682def545f81f27e979e6419c74a62d516850a70ea25c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["7.5"]
