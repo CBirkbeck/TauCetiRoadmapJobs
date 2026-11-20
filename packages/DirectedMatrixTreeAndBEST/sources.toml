@@ -1,0 +1,30 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DirectedMatrixTreeAndBEST"
+
+[[source]]
+id = "LyonsPeres"
+locator_scheme = "section"
+locator = "§4.4"
+url = "https://rdlyons.pages.iu.edu/prbtree/book.pdf"
+fetched_from = "https://rdlyons.pages.iu.edu/prbtree/book.pdf"
+fetched_at = "2026-11-20T16:20:42Z"
+sha256 = "5c9a799b2333b58c7f8b29a608567bd1133713c934ec6cf654386dc1b01fbaf5"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.1"]
+
+[[source]]
+id = "Stanley-AlgComb"
+authors = "Richard P. Stanley"
+title = "Algebraic Combinatorics"
+year = 2013
+venue = "Undergraduate Texts in Mathematics"
+doi = "10.1007/978-1-4614-6998-8"
+locator_scheme = "theorem"
+locator = "Theorem 10.4"
+url = "https://doi.org/10.1007/978-1-4614-6998-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.1"]
