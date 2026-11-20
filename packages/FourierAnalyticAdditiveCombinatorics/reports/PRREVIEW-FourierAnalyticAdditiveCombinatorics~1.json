@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FourierAnalyticAdditiveCombinatorics~1",
+  "head": "5ee9b8731edb65364c7ba868b7f491a2ea1f11a5",
+  "pr": 2782,
+  "folder": "FourierAnalyticAdditiveCombinatorics",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Full review. All 13 sampled targets and the conventions recomputed by hand (adversarial table with values); 17 of 17 source locators read in Zhao (author's page copy), Ellenberg-Gijswijt arXiv v1 and Croot-Lev-Pach arXiv v2; 29 Mathlib declarations confirmed at the pin; 4 cross-roadmap citations resolved; Suggested.lean elaborated (12 sorry warnings only); one-tactic probe closes none of the 12 theorems; dependency check 0 problems; the worker's automatic checks all passed. One P2 finding: Layer 2 is stated for p = 3 only although its route proves 2.1 and 2.2 for every prime p with the same constants. Meshulam's 1995 paper not opened.",
+  "text": "75cb2cbe067c87ec"
+ }
+}
