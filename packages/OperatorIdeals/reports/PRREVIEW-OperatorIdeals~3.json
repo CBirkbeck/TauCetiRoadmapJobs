@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-OperatorIdeals~3",
+  "head": "548eeea6ac8350846b06982732163918f11ea6a6",
+  "pr": 2614,
+  "folder": "OperatorTheory/OperatorIdeals",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full review of an unchanged head. All 15 sampled sections recomputed on small instances and compared with the pinned Tau Ceti and Mathlib declarations; Ull24 p. 2 checked at lines 21, 35-56, 88-95; the other sources could not be read legally. One finding (P2): the last clause of OI-A55 needs the field to be R or C (false over Q_3; the cited declaration assumes RCLike). Three small corrections (two carried over). Suggested.lean elaborates with sorry as the only warning; the one stated theorem resists five one-tactic closes and keeps its three universes. Dependency check: 186 roadmaps, 2058 edges, 0 problems. All automatic checks pass; none set aside.",
+  "text": "30fc0c79834a7c6d"
+ }
+}
