@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ReflectionInvariantTheory~6",
+  "head": "e113278bab308b37a2fc2369174d8235cb799fd8",
+  "pr": 2539,
+  "folder": "ReflectionInvariantTheory",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 4 changed lines since e508575. Checked: the two added HTML anchors (README lines 207 and 659) against the three links into this README on main (LieHighestWeight lines 120 and 902, RootSystems line 57): the ids are equal as strings, so deferred finding D01 is resolved inside the folder. The previous report raised no finding; its recorded repairs stand. Adversarial rows computed for the statements the anchors are cited for (Shephard-Todd on the trivial group, S3 and {+-1}; the Coxeter number and height partition on A2 and B2). No seeded sample target falls in the changed lines. Automatic checks rerun: all pass, none set aside; dependency check 0 problems; Suggested.lean elaborates with eleven sorry warnings only; no change outside the folder. One small correction: the description still says the old heading links land at the top of the page.",
+  "text": "f0895d0c3d0fdc1b",
+  "carried": {
+   "from": "e113278bab308b37a2fc2369174d8235cb799fd8",
+   "head": "e113278bab308b37a2fc2369174d8235cb799fd8",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
