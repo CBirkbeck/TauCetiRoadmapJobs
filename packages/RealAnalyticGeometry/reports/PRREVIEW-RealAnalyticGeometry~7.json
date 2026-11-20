@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RealAnalyticGeometry~7",
+  "head": "38c4ef39a0f335ae34aca3fc808a223c44ebf251",
+  "pr": 2634,
+  "folder": "RealAnalyticGeometry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 38c4ef3; this round checked the pull request's title and description against the head: every sentence agrees (layers, renumbering, 30 Checks, 8 Tau Ceti imports, added and removed declarations, suppliers, kept anchors, Demailly VIII Theorem 4.5 p. 371 read at DemaillyAgbook line 18125, ten named library declarations opened at the pins). Previous C01 and C02 (description) repaired; N01 carried. Gate: all checks pass except one form check on the kept §3.0 anchor, set aside as a false positive; dependency check 0 problems; Suggested.lean elaborates with 8 sorry warnings and no error. Grauert1958 and the Hörmander texts are cited by locator alone and were not readable.",
+  "text": "e91396e96a44c637"
+ }
+}
