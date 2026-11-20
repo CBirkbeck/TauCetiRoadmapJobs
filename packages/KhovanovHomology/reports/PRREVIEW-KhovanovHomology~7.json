@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KhovanovHomology~7",
+  "head": "86c28669c91b6b40aa8fb8e485154805a6964699",
+  "pr": 2600,
+  "folder": "KhovanovHomology",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since 86c2866; this round checked the pull request's description against the head: section, Needs, Check, import and declaration counts (8 layers, 62 sections, 53 Checks in 40 blocks, 6 Tau Ceti imports, 5 headlines, 3 definitions), the three anchors and the mapping of the former numbering against the citing roadmaps, the supplier list against main, and the Proposition 28 correction recomputed from Kho99 equations (45) and (134) with the Hopf link; previous small correction C01 repaired; D01 stands; automatic checks all passed, depcheck rerun with 0 problems, Suggested.lean elaborates with five sorry warnings only; no change outside the folder.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The carrier of link cobordisms is owned by §7.1 here and by GeometricTopology §6.5 in the open revision #1797, with opposite boundary orientations",
+    "where": "GeometricTopology revision #1797, §6.5 and its KhovanovHomology consumer line",
+    "raised": "PRREVIEW-KhovanovHomology~1"
+   }
+  ],
+  "text": "f79de0e26f1c94f2"
+ }
+}
