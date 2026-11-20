@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SimulatedAnnealing~3",
+  "head": "90371a5db58e91552d59ca0ed343ecdc4270c852",
+  "pr": 2709,
+  "folder": "SimulatedAnnealing",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 44 changed lines since b836781. Checked: the three previous remarks (C01 repaired: Layer 1, the overview and the scope section now take the coefficient from MarkovChainMixing 1.2; C02 repaired: the description agrees with the head; N01 not repaired, kept as a format note on line lengths); the changed passages of the overview, 1.1, 1.2, 1.3, the Dependencies of Layer 1 and the scope section, with computed values (two-state kernel 3/5, 3/10 = 3/5 * 1/2, 9/25, the three-state pair with coefficient 0); MarkovChainMixing 1.2 at its open head (definition identical, range, supremum characterization and submultiplicativity along powers present, no citation back); the scopes of the six closest roadmaps (nothing shared beyond the cited suppliers); Suggested.lean elaborated (8 sorry warnings only) and a probe copy (the coefficient equals the README's maximum by simp; the contraction does not close in one tactic); dependency check 0 problems; automatic checks all passed; no change outside the folder; title and description read against the head. Seeded sample: the changed passages add no source locator; neither source is readable from a legal place (the sources service tried again), as in the previous reviews, left to the human reviewers.",
+  "text": "0c1675a3e42f72c0"
+ }
+}
