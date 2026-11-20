@@ -1,0 +1,32 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KhovanovHomology~3",
+  "head": "e66cf277aa757f678b5d84ecc6d957293acae43b",
+  "pr": 2600,
+  "folder": "KhovanovHomology",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full re-review. The previous review's R01-R03, C01 and N02 are repaired; N01 is deferred as D02; D01 and D02 stand. Seeded sample of 15 targets checked against Kho99, BarNatan05, Bar02, Jacobsson04 and KhovanovPatterns at their locators, and against the pinned Tau Ceti and Mathlib (33 locators). Adversarial table of 29 rows with values from an independent integral calculator: every Check and example, and T(2,m) for m = 2..8 against the Lean bidegree sets. Suggested.lean elaborates with five sorry warnings only; #check of all 8 declarations matches the README; one-tactic probes fail. Automatic checks: all passed. Dependency check: 0 problems. Small corrections: the section 5.9 Check fails in characteristic 2; section 6.5 restates GeometricTopology 4.8.1's adequacy without citing it; the overview's Euler headline omits 'nonempty'.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The carrier of link cobordisms is owned by §7.1 here and by GeometricTopology §6.5 in the open revision #1797, with opposite boundary orientations",
+    "where": "GeometricTopology revision #1797, §6.5 and its KhovanovHomology consumer line",
+    "raised": "PRREVIEW-KhovanovHomology~1"
+   },
+   {
+    "id": "D02",
+    "severity": "",
+    "title": "N01: Foams (main, lines 2723, 2887, 2888) and DiagrammaticCoherence (main, line 49) must point their links to `#k2-…`, `#k3-…` and `#g-plane-geometry-…` at `#layer-2-the-rank-two-frobenius-object-circ",
+    "where": "Foams and DiagrammaticCoherence READMEs, retarget links to Layers 2, 3, 8",
+    "raised": "PRREVIEW-KhovanovHomology~2"
+   }
+  ],
+  "text": "33ba71ede0df5831"
+ }
+}
