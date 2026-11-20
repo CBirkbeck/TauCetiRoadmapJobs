@@ -271,7 +271,16 @@ open-repository = ["arxiv.org", ".arxiv.org", "hal.science", ".hal.science", ".a
                    "hexagonmath.org", ".hexagonmath.org"]   # the Hexagon Mathematics Foundation archive (CC BY 4.0)
 publisher-open = ["doi.org", "www.ams.org/journals/"]   # subscription publishers are not open by default; add a host only when its content is open
 author-page = ["jmilne.org", ".jmilne.org", "users.renyi.hu"]
-institutional = ["users.renyi.hu"]   # the Rényi Institute's archive of Erdős's papers
+# Repositories run by an institution, a funder, a library or a project for its own publications. A job
+# cannot name this class for a host that is not listed here: it asks for the text instead.
+institutional = ["users.renyi.hu",   # the Rényi Institute's archive of Erdős's papers
+                 "dlmf.nist.gov", "www.lmfdb.org", "publications.ias.edu", "matwbn.icm.edu.pl",
+                 "archive.mpim-bonn.mpg.de", "pure.mpg.de", "par.nsf.gov", "cvgmt.sns.it", "library.slmath.org",
+                 "www.college-de-france.fr", "authors.library.caltech.edu", "ir.cwi.nl",
+                 "api.repository.cam.ac.uk", "ora.ox.ac.uk", "wrap.warwick.ac.uk", "kclpure.kcl.ac.uk",
+                 "research-information.bris.ac.uk", "access.archive-ouverte.unige.ch", "ir.library.osaka-u.ac.jp",
+                 "www.jstage.jst.go.jp", "d-nb.info", "oda.mfo.de", "dml.cz", "ocw.mit.edu", "www.claymath.org",
+                 "tme-emt-1f5ce3.pages.math.cnrs.fr"]
 
 [sandbox]
 # "off" (default): agents run directly on the host.
