@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TracesOnCStarAlgebras~4",
+  "head": "1d9b51d56a41ad10de7d8b5b9f1253c336fb2dd0",
+  "pr": 2464,
+  "folder": "TracesOnCStarAlgebras",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. All 13 sampled sections recomputed (adversarial table, 19 rows); 27 source locators checked against dixmier1963, thomsen-wtk, thomsen-kms, kustermans-vaes, hks, knr; 24 library declarations opened at the pins; 21 cross-roadmap citations resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 25 sorry warnings only; one-tactic probe closes none of the 25 theorems. One P2: the Summary states the K-theory isomorphism of Tr4 without the density hypothesis (false on C[0,1] with the trace f -> int f(t)/t dt). Roe's notes not opened; one licence question for a human.",
+  "text": "03144423aca83ba6"
+ }
+}
