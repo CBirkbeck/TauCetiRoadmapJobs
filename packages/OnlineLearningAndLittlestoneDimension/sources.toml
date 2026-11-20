@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "OnlineLearningAndLittlestoneDimension"
+
+[[source]]
+id = "ShalevShwartzBenDavid2014"
+locator_scheme = "theorem"
+locator = "Theorem 21.9"
+url = "https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf"
+fetched_from = "https://www.cs.huji.ac.il/~shais/UnderstandingMachineLearning/understanding-machine-learning-theory-algorithms.pdf"
+fetched_at = "2026-11-20T07:09:27Z"
+sha256 = "5ad0c69c922e47e423f6b469e8cfbaf07beae6933185af746b670911a8d163f2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["1.2"]
