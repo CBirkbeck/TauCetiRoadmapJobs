@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularInduction~1",
+  "head": "b7edb4fc522d8418d79a97296f56952b0441ffbe",
+  "pr": 2644,
+  "folder": "RepresentationTheory/ModularInduction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample of 15 sections checked against the pinned Tau Ceti statements; all 219 backticked README names resolve at the pins. Milne ADT (author's page) read for Lemmas 2.10 and 2.12; Serre GTM 42 is paywalled and the NSW PDF was not retrievable (listed as not verifiable). Every Check and worked example recomputed by hand. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with only the sorry warning; one-tactic probe negative, but a six-line proof from pinned declarations elaborates. Overlap with InductionRestriction (main and open head) and ModularCharactersAndBlocks checked: no second owner.",
+  "text": "4cc3e8075d0cda96"
+ }
+}
