@@ -1,0 +1,33 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KhovanovHomology~6",
+  "head": "86c28669c91b6b40aa8fb8e485154805a6964699",
+  "pr": 2600,
+  "folder": "KhovanovHomology",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 2 changed lines since ff26ea1: the added anchor before Layer 2 was compared with the four links of Foams and DiagrammaticCoherence on main (all resolve) and the open heads were searched for further links; previous C01 repaired, previous C02 partly repaired (the description's K2 sentence is out of date, C01); D01 stands, D02 resolved by the anchor; adversarial rows computed for the anchors and for §2.1, which the anchor lands on; the seeded sample falls in no changed passage; automatic checks all pass, dependency check 0 problems, Suggested.lean elaborates with five sorry warnings only; no change outside the folder.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The carrier of link cobordisms is owned by §7.1 here and by GeometricTopology §6.5 in the open revision #1797, with opposite boundary orientations",
+    "where": "GeometricTopology revision #1797, §6.5 and its KhovanovHomology consumer line",
+    "raised": "PRREVIEW-KhovanovHomology~1"
+   }
+  ],
+  "text": "d472958f2b3c9dc4",
+  "carried": {
+   "from": "86c28669c91b6b40aa8fb8e485154805a6964699",
+   "head": "86c28669c91b6b40aa8fb8e485154805a6964699",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
