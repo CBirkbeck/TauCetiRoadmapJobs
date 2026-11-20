@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NeronModelsAndSemistableAbelianVarieties~16",
+  "head": "a62a075ee2e851a225e288a3d0450ae0eacd7837",
+  "pr": 2708,
+  "folder": "NeronModelsAndSemistableAbelianVarieties",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 8 changed lines since ac35abe: the previous review had no findings; its small corrections C01 (Conrad locator in 5.2 and the GoodIsogeny docstring), C02 (perfect residue field in the description) and C03 (Ogg locator in 5.3e) are repaired, its format note N01 (Fontaine page range) is carried. Conrad Proposition 4.1(1) read at its locator; the locator chain through 3.1 and 3.2 and the 5.3e Checks recomputed; title and description checked against the head and the diff against main (no contradiction, nothing unstated); automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with four sorry warnings only; no change outside the folder.",
+  "text": "809352fce0e4760a"
+ }
+}
