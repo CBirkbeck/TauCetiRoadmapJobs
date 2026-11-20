@@ -72,3 +72,43 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-20"
 cited_for = ["4.3"]
+
+[[source]]
+id = "BrodzkiMathaiRosenbergSzabo2008"
+authors = "Jacek Brodzki, Varghese Mathai, Jonathan Rosenberg, Richard J. Szabo"
+title = "D-Branes, RR-Fields and Duality on Noncommutative Manifolds"
+year = 2006
+venue = "Commun.Math.Phys.277:643-706,2008"
+doi = "10.1007/s00220-007-0396-y"
+arxiv = "hep-th/0607020v3"
+locator_scheme = "theorem"
+locator = "Definition 2.2"
+url = "https://arxiv.org/abs/hep-th/0607020v3"
+fetched_from = "https://arxiv.org/pdf/hep-th/0607020v3"
+fetched_at = "2026-11-20T09:48:29Z"
+sha256 = "89fed4a8f247d1f1d29aa6c0186a7651990df7cf1a0923d7d9cf14ee8d67e6b6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v3"
+cited_for = ["9.1", "9.2", "9.3"]
+
+[[source]]
+id = "DabrowskiDossena2010"
+authors = "Ludwik Dabrowski, Giacomo Dossena"
+title = "Product of real spectral triples"
+year = 2010
+venue = "Int. J. Geom. Methods Mod. Phys. - Vol. 8, No. 8 (2011) 1833-1848"
+doi = "10.1142/S021988781100597X"
+arxiv = "1011.4456v1"
+locator_scheme = "section"
+locator = "§§2–5"
+url = "https://arxiv.org/abs/1011.4456v1"
+fetched_from = "https://arxiv.org/pdf/1011.4456v1"
+fetched_at = "2026-11-20T09:48:33Z"
+sha256 = "975ca9db50272e40a2affde901f697a63cd6fa02c735494b5a246e1a2cb64232"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["1.5", "10.2", "10.3"]
