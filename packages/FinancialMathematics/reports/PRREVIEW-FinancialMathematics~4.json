@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FinancialMathematics~4",
+  "head": "507c038a8339e31f2e6129a98a42818713cdbbf4",
+  "pr": 2557,
+  "folder": "FinancialMathematics",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Previous R01-R03, C02, N01 repaired; C01 partly (carried as a small correction); C03 deferred (D01 stands). Seeded sample 1.1-4.2 checked by computation (adversarial table, 20 rows): no target carries a source locator and none of the four references could be read legally. Library declarations opened at the pins, StochasticCalculus and PDE sections resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with three sorry warnings only; one-tactic probes close nothing; no change outside the folder.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C03: In MarketImpact's README (line 612 on main), the link `../README.md#m01-assets-and-trading` has to become `../README.md#layer-1-assets-and-trading-m01`.",
+    "where": "MarketImpact/README.md, the M0.1 link in its FinancialMathematics supplier paragraph",
+    "raised": "PRREVIEW-FinancialMathematics~3"
+   }
+  ],
+  "text": "2b261110372978b6",
+  "carried": {
+   "from": "507c038a8339e31f2e6129a98a42818713cdbbf4",
+   "head": "9653948635f71c5fb9fd7114f3f8ebc20fdb42cd",
+   "findings": 2,
+   "lines": 31,
+   "folders": [
+    "FinancialMathematics"
+   ],
+   "corrections": true
+  }
+ }
+}
