@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ContactGeometry~4",
+  "head": "71e7c7ebbe20fc893ea7894471c1042d02880aea",
+  "pr": 2684,
+  "folder": "SymplecticGeometry/ContactGeometry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 0,
+  "notes": "Full review of the same head the previous review read. Every formula, Check and example recomputed (adversarial table, 23 rows). All 21 source locators read at the text in the three cached sources, including the 15 sampled targets; four slips found in the sources. 122 cited Tau Ceti names confirmed at the pin, 11 definitions and lemmas opened. Cross-roadmap citations resolved on main and at the open CotangentLagrangian revision. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 8 sorry warnings only; one-tactic probe closes none of the 8 theorems. Six small corrections (five carried over, one new in section 2.3); one item for the human reviewers (largest-share source is unpublished course notes).",
+  "text": "0708f0a9a422ab16",
+  "carried": {
+   "from": "71e7c7ebbe20fc893ea7894471c1042d02880aea",
+   "head": "b79bb2ab18c02dcbbb6e0211238a18b4052e3424",
+   "findings": 6,
+   "lines": 74,
+   "folders": [
+    "SymplecticGeometry/ContactGeometry"
+   ],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C05: in `TauCetiRoadmap/SymplecticGeometry/README.md` (and the same clauses in the family README's open revision), \"CG1 owns the contact predicate\" and \"CG4 and CG5 consume the cosphere application\" s",
+    "where": "SymplecticGeometry family README, lines 70–75, and its open revision",
+    "raised": "PRREVIEW-ContactGeometry~4"
+   }
+  ]
+ }
+}
