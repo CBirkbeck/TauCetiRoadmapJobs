@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StablePeriodicCurved~3",
+  "head": "041f6c626ce71ff871b623699a4201e029924c29",
+  "pr": 2668,
+  "folder": "StablePeriodicCurved",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review of an unchanged head. All 15 sampled sections and the 9 headline theorems recomputed by hand (adversarial table in the report). 31 source locators read in Stai, Positselski, Buchweitz, Eisenbud, Keller 2005, Buehler, Orlov, Frenkel-Khovanov-Schiffmann, Avramov-Buchweitz-Iyengar and Keller-Vossieck (OCR); Happel not readable legally. Pinned Tau Ceti and Mathlib declarations opened for the hypotheses the README attributes to them. Automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with nine sorry warnings only; one-tactic probes fail on all nine theorems. Small corrections: a sentence in 7.5 suggesting flatness is needed where a non-zero-divisor suffices; unnamed (brutal) truncation in 4.5; Buchweitz locator in 2.6; stale line count in the description. The previous review's corrections are unrepaired because the head did not change.",
+  "text": "95d0f4237defc93f",
+  "carried": {
+   "from": "041f6c626ce71ff871b623699a4201e029924c29",
+   "head": "14176fa05c5f5ccced296d704ec8d80bf072ce20",
+   "findings": 4,
+   "lines": 24,
+   "folders": [
+    "StablePeriodicCurved"
+   ],
+   "corrections": true
+  }
+ }
+}
