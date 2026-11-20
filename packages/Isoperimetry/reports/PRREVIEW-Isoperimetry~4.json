@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Isoperimetry~4",
+  "head": "aeab290d117e49a6958c26aaf41b7928b9c87b41",
+  "pr": 2597,
+  "folder": "Isoperimetry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review of an unchanged head; the previous review had no findings. Sample: sections 1.1, 2.2, 2.3, 4.1, 4.3, 4.4, 4.6, 5.1, 5.2, 5.3, 5.5, 6.1-6.4, each recomputed with degenerate cases (adversarial table of 20 rows). Locators read in Tao, Volcic, Tropp, Cagnetti-Colombo-De Philippis-Maggi, Burchard, Bianchi-Gardner-Gronchi-Kiderlen, Fusco-Maggi-Pratelli and Wiedijk; Maggi's book only by its contents. All library names resolve at the pins and 22 statements were opened. Automatic checks all passed; supplier-order check 0 problems; Suggested.lean elaborates with nine sorry warnings only and no one-tactic probe closes a statement. One small correction (Wiedijk's entry gives one direction of the equality case) and one format note.",
+  "text": "8e9a53da8ee52e11",
+  "carried": {
+   "from": "aeab290d117e49a6958c26aaf41b7928b9c87b41",
+   "head": "313454a0cdf95c26a6ed23406599a76814b62576",
+   "findings": 1,
+   "lines": 8,
+   "folders": [
+    "Isoperimetry"
+   ],
+   "corrections": true
+  }
+ }
+}
