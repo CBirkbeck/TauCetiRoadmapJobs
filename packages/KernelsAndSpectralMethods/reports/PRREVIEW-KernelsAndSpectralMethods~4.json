@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KernelsAndSpectralMethods~4",
+  "head": "33c2e73726b68b2639093a6d735b8b8dc07a70be",
+  "pr": 2516,
+  "folder": "KernelsAndSpectralMethods",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 87 changed lines since ec81a1a. Checked: both previous findings repaired (11.3 operator form with the representability hypothesis, proof and counterexample recomputed; 10.1 unbiasedness for n >= 2, the U/V identity at n = 0, 1 and n >= 2); the five previous small corrections and four format notes repaired; of the seeded sample, 2.1 and 3.2 fall in changed passages and were read against Chung's revised chapters (equation (1.2) p. 4, Theorems 2.2 and 2.3), the 1997 printing not readable; junk values of fiedlerValue and cheegerConstant at one vertex, the Stein-kernel diagonal value, the total-variation example and the o_P(1/n) remark recomputed; OptimalTransport 12.2 and 12.8 and three Tau Ceti declarations resolved; description read against the head, no contradiction. Automatic checks: elaboration with 49 sorry warnings and no error, no set_option, single import Mathlib; dependency check 0 problems; no change outside the folder; one form check (a section comment heading the #check block) set aside as a false positive. One format note, not blocking.",
+  "text": "62576d1a1309b653"
+ }
+}
