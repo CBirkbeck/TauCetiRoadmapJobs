@@ -13,3 +13,21 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-10"
 cited_for = ["C1", "C3", "C3.1", "C4"]
+
+[[source]]
+id = "Gotay1982"
+authors = "M. J. Gotay"
+title = "On coisotropic imbeddings of presymplectic manifolds"
+year = 1982
+venue = "Proc. Amer. Math. Soc. 84 (1982), 111–114"
+doi = "10.1090/S0002-9939-1982-0633290-X"
+locator_scheme = "theorem"
+locator = "Local Uniqueness Theorem, p. 111; proof §III, p. 113"
+url = "https://www.ams.org/journals/proc/1982-084-01/S0002-9939-1982-0633290-X/S0002-9939-1982-0633290-X.pdf"
+fetched_from = "https://www.ams.org/journals/proc/1982-084-01/S0002-9939-1982-0633290-X/S0002-9939-1982-0633290-X.pdf"
+fetched_at = "2026-11-20T09:59:43Z"
+sha256 = "86aa221fdaf44cc1f7997ae9213e62f162630ed866629c826e8d3ee0ee55d5cd"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["4.8"]
