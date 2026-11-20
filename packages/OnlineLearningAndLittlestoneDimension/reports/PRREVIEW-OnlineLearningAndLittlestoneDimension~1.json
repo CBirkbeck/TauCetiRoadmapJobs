@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OnlineLearningAndLittlestoneDimension~1",
+  "head": "479a1f392e999ab92fe30491df94a57180119657",
+  "pr": 2665,
+  "folder": "OnlineLearningAndLittlestoneDimension",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All nine sampled targets (1.1 to 3.3) recomputed on degenerate and small instances, with the Lean definitions evaluated on the README's instances; 15 locators into Shalev-Shwartz and Ben-David Chapter 21 verified against the text; the locators into Mohri, Rostamizadeh and Talwalkar could not be read (not verifiable). Suggested.lean elaborates with sorry as the only warning; the one-tactic probe closes none of the seven theorems; dependency check 0 problems; all automatic checks passed; cited library declarations opened at the pin; neighbouring roadmaps read, nothing shared.",
+  "text": "23649af732d41454"
+ }
+}
