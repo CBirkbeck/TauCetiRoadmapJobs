@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StronglyRegularAndMooreGraphs~1",
+  "head": "99ef5e696cf0754c3d623fad90b2180e84dcad16",
+  "pr": 2700,
+  "folder": "StronglyRegularAndMooreGraphs",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. All 11 sampled targets (1.1-1.5, 2.1, 3.1-3.5) recomputed: every Lean statement brute-forced on all labelled graphs with at most six vertices under Mathlib's IsSRGWith convention, every printed number of the Checks recomputed by hand, mooreBound values confirmed in Lean. Suggested.lean elaborates with sorry as the only warning; #check of all 15 declarations agrees with the README; one-tactic probe closes none of the 10 theorems. 27 Mathlib declarations opened at the pin (one wrong file path, C01). Dependency check: 0 problems. Automatic checks all passed; none set aside. Sources: Erdos-Renyi-Sos Theorem 6 verified against the text; the 21 locators into Brouwer-Haemers and Brouwer-Van Maldeghem could not be read legally (paywalled publisher copies; the posted files' host was not accepted as an author page by the sources service) and are listed as not verifiable and flagged to the human reviewers, as is the untested wording and arrangement comparison. The sources service recorded ErdosRenyiSos (certified) and BrouwerHaemers (uncertified) in the package manifest while fetching.",
+  "text": "d67f6883c8356968"
+ }
+}
