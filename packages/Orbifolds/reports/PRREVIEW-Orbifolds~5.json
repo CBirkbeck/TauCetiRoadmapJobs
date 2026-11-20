@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Orbifolds~5",
+  "head": "699635e25be35858d4af340b6c38e0596e205e6e",
+  "pr": 2624,
+  "folder": "Orbifolds",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "incremental re-review of 29 changed lines since c80fb4f: the previous small correction C01 (the §3.4 stabilizer sentence) is repaired and was recomputed on the double of the quadrant with (Z/2)^2 and on a non-abelian control; the added former-label table was checked row by row against the former text on main and against every former label cited on main and at the open heads (none unmapped); Illman1983 §7 pp. 499-500 read at its locator; the three format notes of the previous review are carried; no seeded-sample target falls in the changed passages; automatic checks all pass, dependency check 0 problems, Suggested.lean unchanged and elaborates with the single sorry warning; description checked against the head; no source issue found this round.",
+  "text": "ba534b52f922c872"
+ }
+}
