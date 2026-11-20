@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KleinianGroups~6",
+  "head": "83039bbdc1fb758594dc345063ffa37f7e9afcef",
+  "pr": 432,
+  "folder": "KleinianGroups",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 66 changed lines since e85a407. Checked: the previous finding R01 (Layer 2 now cites Tau Ceti's dirichletDomain and isFundamentalDomain_dirichletDomain, opened at the pin with smul_dirichletDomain, locallyFinite_smul_dirichletDomain, properSpace_of_completeSpace, UpperHalfPlane.volume_setOf_dist_eq_dist and freeLocus) and the previous small corrections and format notes (all repaired except the chapter-only locators, kept as a format note); the new target volume_setOf_dist_eq_dist recomputed (vertical plane or sphere centred at height zero, radius squared t_p t_q |p-q|^2/(t_q-t_p)^2); the sampled target 2.1, the only one in the changed passages; elaboration of Suggested.lean (45 sorry warnings, nothing else); one-tactic probes of the two Layer 2 theorems; the dependency check (0 problems, no UPWARD or CYCLE); the automatic checks (all passed); the pull request text against the head. One small correction: the layer guide and the scope list still say this roadmap builds and owns Dirichlet domains.",
+  "text": "2f5bed4baf735912"
+ }
+}
