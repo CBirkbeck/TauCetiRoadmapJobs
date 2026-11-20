@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KestenStigumAndCriticalBranching~1",
+  "head": "c82c7858aadb822c2d30978247f9f55d0ebeffe2",
+  "pr": 2805,
+  "folder": "KestenStigumAndCriticalBranching",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. All eight sampled targets (1.1, 1.2, 2.1, 2.2, 2.3, 3.1, 4.1, 4.2) recomputed on degenerate instances and every numerical Check recomputed; 13 Lyons-Peres locators read at the page in the authors' version of 19 August 2026 and Theorems A and C of Lyons-Pemantle-Peres read in arXiv:math/0404083v1; the 2003 erratum could not be read (not verifiable). 31 library declarations opened at the pins; PopulationDynamics 1.1-1.6 resolved at its open head. Suggested.lean elaborates with seven sorry warnings only; one-tactic probe closes none; dependency check 0 problems, no change outside the folder. Automatic checks: one scanner hit (a boundary mention of PointProcesses in the scope section) set aside as a false positive.",
+  "text": "722d74933f48a2c8"
+ }
+}
