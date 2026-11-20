@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OrnsteinUhlenbeckSemigroup~1",
+  "head": "930e831df7292a0229206a4fa0b7e94f915f6cd3",
+  "pr": 2775,
+  "folder": "OrnsteinUhlenbeckSemigroup",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. All 11 sampled targets (1.1-3.4) and all 13 headline theorems instantiated and recomputed numerically, including every counterexample Check; values agree. O'Donnell (arXiv:2105.10386v1) and DLMF 18.18.28 locators read and confirmed (10 of 27); the 17 locators into van Handel's lecture notes could not be read (sources service refused the address) and are listed as not verifiable. 24 library declarations opened at the pins; 11 cross-roadmap citations resolved; dependency check clean (0 problems); Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 13 theorems; elaborated signatures agree with the README. The worker's automatic checks all passed. Two small corrections (Tau Ceti already has lower semicontinuity of klDiv; the comparison with OptimalTransport 11.9 is unowned) and one format note. For the humans: van Handel's notes are unpublished and unread; later Tau Ceti versions reportedly contain a one-dimensional Mehler operator.",
+  "text": "b7dfd6b5b77de805"
+ }
+}
