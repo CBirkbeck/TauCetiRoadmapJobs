@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StablePeriodicCurved~1",
+  "head": "abb27d9ce38b80e61c4872e93a576aaf5595c319",
+  "pr": 2668,
+  "folder": "StablePeriodicCurved",
+  "date": "2026-11-20",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample (0.1, 0.2, 1.2, 1.3, 2.2, 3.1, 3.4, 4.2, 5.1, 6.2, 6.3, 7.3, 7.5, 7.6, 7.7) checked against Stai arXiv v1, Positselski 2207.07063, Orlov math/0302304, Eisenbud 1980, Buchweitz 1986 manuscript, Buhler, Keller 1990 and 2005, ABI, FKS, Keller-Vossieck (OCR); Happel and Stai's published version not readable. Headline locators: Buchweitz Thm 4.4.1, Stai L3.12/T4.3 (stated for n=1), Positselski Thms 7.8-7.9, Eisenbud Thm 6.1/Cor 6.3. Automatic checks all passed; depcheck 0 problems; lake env lean on Suggested.lean: sorry warnings only; 12 signatures compared; one-tactic probes run. Findings: false compression/unfolding statement in 4.5 (and 8.2 wording); odd-element curved example in 5.5.",
+  "text": "95d0f4237defc93f"
+ }
+}
