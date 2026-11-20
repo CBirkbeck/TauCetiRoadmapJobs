@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SimulatedAnnealing~1",
+  "head": "f3f4259cc3fddb4b4c8bb0e2a5c8d07ca7a6b36c",
+  "pr": 2709,
+  "folder": "SimulatedAnnealing",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. All 12 sampled targets and every Check recomputed by hand; the numerical Checks of 4.3 and the block bound of 4.2 recomputed numerically (8745 random instances, no violation). 24 library declarations opened at the pins; both supplier sections read on main; MarkovChainMixing and HiddenMarkovModels read at their open heads; PACBayesBounds found nowhere. Dependency check: 0 problems. Automatic checks all passed; Suggested.lean elaborates with sorry only, and no theorem closes with one tactic. Neither cited source could be read from a legal place through the sources service, so no source locator was verified against the text.",
+  "text": "fac89f9e3931ce7b"
+ }
+}
