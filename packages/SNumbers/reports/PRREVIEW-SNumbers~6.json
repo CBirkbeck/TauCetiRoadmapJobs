@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SNumbers~6",
+  "head": "8c8ec43d9bab42c800a6c9621c79920693e2512e",
+  "pr": 2648,
+  "folder": "SNumbers",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "incremental re-review of 134 changed lines since 2322e11. Checked: the six small corrections of the previous review (all repaired) and its two format notes (not repaired, written again); 17 new or changed locators read at the text (Pietsch 1974, Ullrich 2026, Lean-SNumbers blueprint), among them the sampled target 1.24, the only sampled target in a changed passage; the corrected route of 3.7 recomputed on id and diag(1,t); 2.2 and 2.3 recomputed with an incomplete target; five library declarations opened at the pins; BanachSpaceTheory B4, B6, B7 resolved on main; the pull request description compared with the head, with #check of every declaration on base and head (64 types equal up to renaming, the rest as described). Automatic checks all pass, dependency check 0 problems, Suggested.lean elaborates with 56 sorry warnings only, one-tactic probe closes neither changed theorem. Pietsch 1980, Pietsch 1987 and Carl-Stephani 1990 unread.",
+  "text": "3d6a18b89d78f6a5"
+ }
+}
