@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RealAnalyticGeometry~3",
+  "head": "d0c01bfff988fea34d10a8def48c2545db87e975",
+  "pr": 2634,
+  "folder": "RealAnalyticGeometry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full re-review. Previous R01, R02, C01-C05 and N01 repaired; C06 carried as C01; D01 stands. Seeded sample of 15 targets checked: Lojasiewicz1964 text and page images (pp. 452, 457, 458, 464-466, 468), WhitneyBruhat1959 Prop. 1, DemaillyAgbook VIII Th. 3.2/4.5, Forstneric2018 Th. 2.1/Prop. 2.2; Grauert1958 and Hormander 1965/1990 uncertified, not read. Automatic checks re-run: all pass; dependency check 0 problems. Suggested.lean elaborates with 8 sorry warnings; #check of all 23 declarations matches the README; one-tactic probe closes none of the 8 theorems; Cartan B's HasExt hypothesis is met by Mathlib's Grothendieck instance. Adversarial table of 25 rows; overlap check against AffineMorseLefschetz, ComplexKahlerGeometry, RealAlgebraicGeometry, StratifiedSpacesAndTameTopology, Hyperfunctions and ComplexComparisonPartII found no shared ownership.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C05: ComplexComparisonPartII's link (README line 245 on main, line 4744 at the head of its open revision) should point at `../RealAnalyticGeometry/README.md#31-weighted-estimates-stein-criteria-and-ap",
+    "where": "ComplexComparisonPartII README's link to RealAnalyticGeometry §3.1 anchor",
+    "raised": "PRREVIEW-RealAnalyticGeometry~1"
+   }
+  ],
+  "text": "1de1679bd66c0be6"
+ }
+}
