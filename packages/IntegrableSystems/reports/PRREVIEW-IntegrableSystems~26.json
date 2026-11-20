@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IntegrableSystems~26",
+  "head": "bf1b893aa89b38e56dd50ce1db1b4d9212d6f950",
+  "pr": 2691,
+  "folder": "SymplecticGeometry/IntegrableSystems",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full independent review of the head the previous review read (no change in the folder). Seeded sample 1.1-1.4, 2.0, 2.1, 2.3-2.7, 3.1, 5.1-5.3 and all other sections: every Check recomputed, adversarial table with values. 17 locators read in 9 sources (lmv, miranda-zung, cds, sjamaar2011, zung2003, gramain1973, smale1959, lecalvez-wang, egms), all correct; Arnold, Marsden-Ratiu, Conley-Zehnder, Epstein, Spanier uncertified. Tau Ceti and Mathlib declarations opened at the pins; cross-roadmap citations resolved on main and at the heads of #2687 and #2690. Automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with four sorry warnings; one-tactic probe closes nothing. Two small corrections (Hausdorff in 1.2 and 2.6; cut-off profile in 5.1) and three format notes, none blocking. D01 resolved: the generated blocks now list #2687 and #2690.",
+  "text": "6b6f18362961e607",
+  "carried": {
+   "from": "bf1b893aa89b38e56dd50ce1db1b4d9212d6f950",
+   "head": "b06cb2728dbb01f4a0868d830e8cee39e6456610",
+   "findings": 2,
+   "lines": 45,
+   "folders": [
+    "SymplecticGeometry/IntegrableSystems"
+   ],
+   "corrections": true
+  }
+ }
+}
