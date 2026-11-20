@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IntegrableSystems~23",
+  "head": "59bce2ebbd6c759db09c31a9ab417bf0ef409915",
+  "pr": 2691,
+  "folder": "SymplecticGeometry/IntegrableSystems",
+  "date": "2026-11-20",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 7,
+  "format_notes": 1,
+  "notes": "Full review. Previous review (PR 1651 at 4347340) had no findings. Seeded sample of 15 targets (1.2-1.4, 2.0-2.2, 2.7, 3.1-3.3, 4.3, 5.0-5.3) plus the headline theorems; sources read at their locators: cds Thm 18.12 and Lemma 18.11, lecalvez-wang Thm 1 p.704, smale1959 Thm B p.621, gramain1973 Thm 1 pp.53-54, egms II.A-C and III.B; the uncertified ones are listed as not verifiable. 139 library names resolved at the pins and key statements opened (Hamiltonian and Cartan sign conventions, Liouville-Arnold hypotheses, central-force regularity, moment map). Cross-roadmap citations resolved on main and at the heads of 2687 and 2690. Automatic checks: all pass (own run identical); depcheck 0 problems. Suggested.lean elaborates with exactly 4 sorry warnings; #check @ of all six declarations matches the README; one-tactic probe closed nothing. Findings: R01 (P1) the 2.5 uniqueness formula is not symplectic for A != 1; R02 (P2) supplier ids CotangentLagrangian C3/C3.1 and HamiltonianReduction R1/R3 are renumbered without a map by open revisions 2687 and 2690.",
+  "text": "c1cc102f6e9a6ed6"
+ }
+}

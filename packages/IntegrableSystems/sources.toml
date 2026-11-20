@@ -195,3 +195,41 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["I2"]
+
+[[source]]
+id = "lmv"
+authors = "Camille Laurent-Gengoux, Eva Miranda, Pol Vanhaecke"
+title = "Action-angle coordinates for integrable systems on Poisson manifolds"
+year = 2008
+venue = "final version at Int Math Res Notices, no. 8, 1839-1869, 2011"
+arxiv = "0805.1679v2"
+locator_scheme = "theorem"
+locator = "Theorem 2.1, Remark 2.2"
+url = "https://arxiv.org/abs/0805.1679v2"
+fetched_from = "https://arxiv.org/pdf/0805.1679v2"
+fetched_at = "2026-11-20T10:04:20Z"
+sha256 = "920ad59e58c0f74295da4fb36466fe8bd4223529ed38dc4aa9e94a39a43b5a03"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["1.3"]
+
+[[source]]
+id = "miranda-zung"
+authors = "Eva Miranda, Nguyen Tien Zung"
+title = "Equivariant normal form for nondegenerate singular orbits of integrable Hamiltonian systems"
+year = 2003
+venue = "Ann. Sci. Ecole Norm. Sup.,37 (2004), no. 6, 819--839"
+arxiv = "math/0302287v4"
+locator_scheme = "section"
+locator = "§§2.1–2.3"
+url = "https://arxiv.org/abs/math/0302287v4"
+fetched_from = "https://arxiv.org/pdf/math/0302287v4"
+fetched_at = "2026-11-20T10:04:32Z"
+sha256 = "fe5ca584ecadb69aebdc8eb26687264f066b29c68ec6bec99c7b0f7e5f2971e4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v4"
+cited_for = ["1.4"]
