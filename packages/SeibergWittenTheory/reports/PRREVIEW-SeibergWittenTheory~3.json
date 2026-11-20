@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SeibergWittenTheory~3",
+  "head": "83f8b330795205fb556950248407fa94ace92479",
+  "pr": 2651,
+  "folder": "SeibergWittenTheory",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 3,
+  "notes": "Full review of an unchanged head. Earlier findings R02 and R03 repaired, R01 partly (remainder is small correction C06). All 15 sampled targets and the 4 headline theorems recomputed (adversarial table with values in the report); 32 source locators checked against the text (OkonekTeleman1996 22, Witten1994 6, BBMW2002 4); Taubes 1995 not readable (HTTP 403), listed under Not verifiable. Every backticked library name resolves at the pins; all 14 suppliers and their cited sections resolved on main and at the open heads that revise them. Automatic checks all passed, none set aside; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with no message and declares nothing (no headline statable at the pins). Small corrections: reversed Sobolev orders of the inverse in 4.4; FourManifolds 4.1 credited with U(2) lifts in 11.1; restatements of SpinGeometry 6.1 and IndexTheory 6.3; Mathlib DividedPowers unnamed and the description's claim; thirteen sections without locators. Two source issues recorded.",
+  "text": "a36c0c0348a00946",
+  "carried": {
+   "from": "83f8b330795205fb556950248407fa94ace92479",
+   "head": "e8d937f4bd1e1d021bce9d7114905423d131abee",
+   "findings": 6,
+   "lines": 106,
+   "folders": [
+    "SeibergWittenTheory"
+   ],
+   "corrections": true
+  }
+ }
+}
