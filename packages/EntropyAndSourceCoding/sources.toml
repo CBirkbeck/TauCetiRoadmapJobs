@@ -1,0 +1,46 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EntropyAndSourceCoding"
+
+[[source]]
+id = "Galvin"
+authors = "David Galvin"
+title = "Three tutorial lectures on entropy and counting"
+year = 2014
+arxiv = "1406.7872v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.8"
+url = "https://arxiv.org/abs/1406.7872v1"
+fetched_from = "https://arxiv.org/pdf/1406.7872v1"
+fetched_at = "2026-11-20T13:26:45Z"
+sha256 = "e4bb6110ed418b92eb4bf6fb99b3021677d83219dace3cfd847534d7b5404919"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["1.2"]
+
+[[source]]
+id = "Gallager"
+locator_scheme = "theorem"
+locator = "Theorem 2.3.1"
+url = "https://ocw.mit.edu/courses/6-450-principles-of-digital-communications-i-fall-2006/resources/book_2/"
+fetched_from = "https://ocw.mit.edu/courses/6-450-principles-of-digital-communications-i-fall-2006/5fd6b5c839a76dd0c52d8480c3dad224_book_2.pdf"
+fetched_at = "2026-11-20T13:27:05Z"
+sha256 = "5f0ac0f0d1e3489e9dd6bf658f4dafea65723dbd632337a8c54b72bb5ef84378"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["2.1"]
+
+[[source]]
+id = "MacKay"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://www.inference.org.uk/mackay/itprnn/book.pdf"
+fetched_from = "https://www.inference.org.uk/mackay/itprnn/book.pdf"
+fetched_at = "2026-11-20T13:27:34Z"
+sha256 = "868adc5f0ef6630366b122d88d691acfbe8339978b4ec3f38fca5e231f135791"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.2"]

@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EntropyAndSourceCoding~1",
+  "head": "f4d0f55d5ada53f37eb84978d2f20b3b7dcd8ec1",
+  "pr": 2719,
+  "folder": "EntropyAndSourceCoding",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review. All ten sampled targets and all 15 Lean theorems recomputed (adversarial table in the report). Sources: 15 of 21 locators read (Gallager 6.450 Chapter 2, MacKay, Galvin arXiv:1406.7872v1); the 6 Polyanskiy-Wu locators not readable, text requested. 22 library declarations opened at the pins; 7 cross-roadmap citations resolved. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 15 theorems. One P2 finding (false step in the route of 2.4 when a value has probability zero), two small corrections (ClassicalErgodicTheory 4.6 Shearer inequality not named in the scope; attribution of the uncrossing route in 1.2).",
+  "text": "b53311c34e7ed147"
+ }
+}
