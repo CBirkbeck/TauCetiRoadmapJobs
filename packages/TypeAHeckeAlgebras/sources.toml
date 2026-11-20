@@ -91,3 +91,41 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-20"
 cited_for = ["1.7"]
+
+[[source]]
+id = "AndersenStroppelTubbenhauer2017"
+authors = "Henning Haahr Andersen, Catharina Stroppel, Daniel Tubbenhauer"
+title = "Semisimplicity of Hecke and (walled) Brauer algebras"
+year = 2015
+venue = "J. Aust. Math. Soc. 103 (2017), no. 1, 1-44"
+doi = "10.1017/S1446788716000392"
+arxiv = "1507.07676v3"
+locator_scheme = "theorem"
+locator = "Theorem 5.1"
+url = "https://arxiv.org/abs/1507.07676v3"
+fetched_from = "https://arxiv.org/pdf/1507.07676v3"
+fetched_at = "2026-11-20T17:05:19Z"
+sha256 = "17cfaa27bd466f501eea62a743885df59f76759340a87683d8c59cc7461adfe7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v3"
+cited_for = ["1.2"]
+
+[[source]]
+id = "Mathas2008"
+authors = "Andrew Mathas, Marcos Soriano"
+title = "Seminormal forms and Gram determinants for cellular algebras"
+year = 2006
+arxiv = "math/0604108v4"
+locator_scheme = "theorem"
+locator = "Example 2.15"
+url = "https://arxiv.org/abs/math/0604108v4"
+fetched_from = "https://arxiv.org/pdf/math/0604108v4"
+fetched_at = "2026-11-20T17:05:25Z"
+sha256 = "a2cd21ced7f35dee695388304c26804ef8ac9c54b661a5d624501c80864698a1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v4"
+cited_for = ["1.2", "1.6"]
