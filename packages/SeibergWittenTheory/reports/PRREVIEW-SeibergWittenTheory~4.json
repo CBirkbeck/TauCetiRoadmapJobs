@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SeibergWittenTheory~4",
+  "head": "e8d937f4bd1e1d021bce9d7114905423d131abee",
+  "pr": 2651,
+  "folder": "SeibergWittenTheory",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "incremental re-review of 106 changed lines since 83f8b33. Checked: the six small corrections of the previous review, all repaired; the twelve Okonek-Teleman locators the change adds, each read at its page (seeded sample covered where it falls in the change: 3.1, 4.2, 7.2, 8.2, 11.1); the attributions to SpinGeometry 6.1, IndexTheory 6.3 and FourManifolds 4.1 on main; Mathlib DividedPowers at the pin; the pull request's description against the head (one sentence short of four sections, a small correction). Automatic checks all pass, dependency check 0 problems, Suggested.lean elaborates with no message and declares nothing.",
+  "text": "83be6446d6c5a60c",
+  "carried": {
+   "from": "e8d937f4bd1e1d021bce9d7114905423d131abee",
+   "head": "e8d937f4bd1e1d021bce9d7114905423d131abee",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
