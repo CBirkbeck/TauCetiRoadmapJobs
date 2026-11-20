@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PositiveDefiniteSequencesAndToeplitzForms~1",
+  "head": "7c5fbeaac94f810d8f69181a91bd5e96650f6bcc",
+  "pr": 2784,
+  "folder": "PositiveDefiniteSequencesAndToeplitzForms",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. All 11 sampled targets (1.1, 1.2, 2.1, 3.1-3.4, 4.1, 5.1-5.3) recomputed on degenerate and small instances, every README Check recomputed; adversarial table with values in the report. Sources read through the sources service (arXiv): Lu Theorem 3.17 printed p. 77, Dritschel-Rovnyak section 1 p. 2, Theorem 2.1 p. 4 and remark p. 7, Yang-Xie Theorem 1 p. 4 and proof pp. 4-5; all locators agree. The service recorded these three texts in the package's sources.toml (it did not exist before); the review itself edited no manifest. About 30 library declarations opened at the pins; 7 cross-roadmap citations resolved; no duplicate of the targets in Mathlib, Tau Ceti or other roadmaps. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 11 sorry warnings only; one-tactic probe closes none; elaborated types compared with the README, no binder lost. Two small corrections (inputs of the route of 5.1 not in its Needs line; the description's 'same route' sentence), two format notes, two facts for the human reviewers (arXiv-only source for 1.1; eight targets without a source locator).",
+  "text": "798b1227be4a80ee"
+ }
+}

@@ -1,0 +1,56 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PositiveDefiniteSequencesAndToeplitzForms"
+
+[[source]]
+id = "lu-matrix-decomposition"
+authors = "Jun Lu"
+title = "Numerical Matrix Decomposition"
+year = 2021
+arxiv = "2107.02579v7"
+locator_scheme = "theorem"
+locator = "Theorem 3.17"
+url = "https://arxiv.org/abs/2107.02579v7"
+fetched_from = "https://arxiv.org/pdf/2107.02579v7"
+fetched_at = "2026-11-20T20:15:10Z"
+sha256 = "7f8486a93ba57f35e83ff7c8b50018b5f78096683d0bddcf0e8b50de60da62b8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v7"
+cited_for = ["1.1"]
+
+[[source]]
+id = "dritschel-rovnyak-fejer-riesz"
+authors = "Michael A. Dritschel, James Rovnyak"
+title = "The operator Fejer-Riesz theorem"
+year = 2009
+arxiv = "0903.3639v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.1"
+url = "https://arxiv.org/abs/0903.3639v1"
+fetched_from = "https://arxiv.org/pdf/0903.3639v1"
+fetched_at = "2026-11-20T20:15:15Z"
+sha256 = "2460c366cf8972546c8db0b606f82d904abc38b795ca1933ea34ee6dc1c3969e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["4.1"]
+
+[[source]]
+id = "yang-xie-vandermonde"
+authors = "Zai Yang, Lihua Xie"
+title = "Frequency-Selective Vandermonde Decomposition of Toeplitz Matrices with Applications"
+year = 2016
+arxiv = "1605.02431v3"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1605.02431v3"
+fetched_from = "https://arxiv.org/pdf/1605.02431v3"
+fetched_at = "2026-11-20T20:15:21Z"
+sha256 = "5d9a5eeca9bce7eb39edb10b38592745810cd74e8f0551f480fc2da0e899b4db"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v3"
+cited_for = ["5.1"]
