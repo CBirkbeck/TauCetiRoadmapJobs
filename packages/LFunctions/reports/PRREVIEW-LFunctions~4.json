@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LFunctions~4",
+  "head": "3ef2fae9b3bdb2878a578c09fd720b20a369a0cd",
+  "pr": 2626,
+  "folder": "LFunctions",
+  "date": "2026-11-20",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 8,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample of 15 sections checked by computation; Lebacque Theorem 5 (NF) and Propositions 2-3 checked against the arXiv text; Neukirch (57 of 66 source mentions) paywalled and not readable, so wording and arrangement were not compared against it. Worker's automatic checks all passed; dependency check: 200 roadmaps, 2195 edges, 0 problems. Elaboration: 120 sorry warnings, no other message; #check @ for all 179 declarations, binders intact; one-tactic probe closed 7 sorries plus 2 congrArg corollaries. Findings: R01 Grossencharacter.unitaryCancelling has no planned input for infinite-order characters (or for K = Q twists), on which the unconditional angular-character nonvanishing of section 7.4 rests; R02 the overview, section 6.6 and a Lean docstring say the full completion reflects about 1/2 + sigma against the inverse, refuted by N over Q at s = 5. Previous review: R02 repaired; R01, R03 and R04 partly repaired.",
+  "text": "b000ce0bf0a5ab36"
+ }
+}
