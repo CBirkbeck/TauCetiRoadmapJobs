@@ -1,0 +1,104 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ManifoldOptimization"
+
+[[source]]
+id = "BAC19"
+authors = "Nicolas Boumal, P. -A. Absil, Coralia Cartis"
+title = "Global rates of convergence for nonconvex optimization on manifolds"
+year = 2016
+doi = "10.1093/imanum/drx080"
+arxiv = "1605.08101v2"
+locator_scheme = "theorem"
+locator = "Theorem 12"
+url = "https://arxiv.org/abs/1605.08101v2"
+fetched_from = "https://arxiv.org/pdf/1605.08101v2"
+fetched_at = "2026-11-20T13:03:06Z"
+sha256 = "9957d7ebd08f03d2eaa90022c2b81748bdbcf505731c95077c211377e22e3420"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["O4.5"]
+
+[[source]]
+id = "DH19"
+authors = "Ahmed Douik, Babak Hassibi"
+title = "Manifold Optimization Over the Set of Doubly Stochastic Matrices: A Second-Order Geometry"
+year = 2018
+doi = "10.1109/TSP.2019.2946024"
+arxiv = "1802.02628v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1802.02628v1"
+fetched_from = "https://arxiv.org/pdf/1802.02628v1"
+fetched_at = "2026-11-20T13:03:13Z"
+sha256 = "c3c31e0387bffdb4c8aa786212dcebbfe56d80890a1ca41c398c1cf5b2ef1039"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["O0.3"]
+
+[[source]]
+id = "EAS98"
+authors = "Alan Edelman, T. A. Arias, Steven T. Smith"
+title = "The Geometry of Algorithms with Orthogonality Constraints"
+year = 1998
+arxiv = "physics/9806030v1"
+locator_scheme = "equation"
+locator = "(2.39)"
+url = "https://arxiv.org/abs/physics/9806030v1"
+fetched_from = "https://arxiv.org/pdf/physics/9806030v1"
+fetched_at = "2026-11-20T13:03:19Z"
+sha256 = "6cea55b0c5b3d69e4a5710a8eab9d9abd4c1b60b952d4f1c91a0e738bf224895"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["References"]
+
+[[source]]
+id = "B23"
+locator_scheme = "theorem"
+locator = "Proposition 4.8"
+url = "https://www.nicolasboumal.net/book/IntroOptimManifolds_Boumal_2023.pdf"
+fetched_from = "https://www.nicolasboumal.net/book/IntroOptimManifolds_Boumal_2023.pdf"
+fetched_at = "2026-11-20T13:03:33Z"
+sha256 = "95e9c219298bcf718493885ba6f00cbcc95474e34fa8e4b0bf363e6e07f1b71b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["O4.1"]
+
+[[source]]
+id = "ABG07"
+authors = "P.-A. Absil, C.G. Baker, K.A. Gallivan"
+title = "Trust-Region Methods on Riemannian Manifolds"
+year = 2006
+venue = "Foundations of Computational Mathematics 7"
+doi = "10.1007/s10208-005-0179-9"
+locator_scheme = "theorem"
+locator = "Theorems 4.12, 4.13"
+url = "https://doi.org/10.1007/s10208-005-0179-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["O5.3"]
+
+[[source]]
+id = "AM12"
+authors = "P.-A. Absil, Jérôme Malick"
+title = "Projection-like Retractions on Matrix Manifolds"
+year = 2012
+venue = "SIAM Journal on Optimization 22"
+doi = "10.1137/100802529"
+locator_scheme = "theorem"
+locator = "Lemma 4, Proposition 5"
+url = "https://hal.science/hal-00651608v2"
+fetched_from = "https://hal.science/hal-00651608/document"
+fetched_at = "2026-11-20T13:05:00Z"
+sha256 = "134864d0e06790e7436b96edcfd0ee64bcec609e261b86b20e881abe11c859e0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["O2.2"]
