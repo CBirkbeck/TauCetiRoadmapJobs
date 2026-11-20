@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SteinsMethodForNormalApproximation~1",
+  "head": "b3fd34ec2f9e1574f917cfade2eaaa4e514d16d3",
+  "pr": 2790,
+  "folder": "SteinsMethodForNormalApproximation",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample 1.1, 1.2, 2.1, 2.2, 3.1, 4.1, 4.2: all 11 Ross locators read at the text (arXiv:1109.1880v1) and correct; the 8 Daly (EJP 2008) locators could not be read (no legal copy fetched; request recorded) and are listed as not verifiable, with the mathematics of 2.1 and 2.2 re-derived by hand (k = 0) and checked numerically (k = 1, 2). Adversarial pass: every route identity re-derived, 34 printed numbers recomputed and all agree. 14 library declarations opened at the pins; supplier sections RandomMatrices 2.5, MathematicalStatisticsFoundations 4.4, SpecialFunctionsEiLiErfIncompleteGamma 12.2, OptimalTransport 3.7-3.8 resolved on main. Dependency check: 0 problems. Suggested.lean elaborates with sorry warnings only; one-tactic probe closes none of the 9 theorems; all headlines stated. Automatic checks all passed; none set aside. One small correction (indepFun_finset needs Measurable; the AEMeasurable variant applies), two format notes. One source issue recorded (gap in Ross's proof of Theorem 3.5, which the README already avoids).",
+  "text": "3603ecc2407693a0"
+ }
+}
