@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ContactGeometry~2",
+  "head": "dade1f806ce6670d447e80f0bc40e4b3c7b1434e",
+  "pr": 2684,
+  "folder": "SymplecticGeometry/ContactGeometry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full re-review. Previous findings R01-R04 repaired; C01, C02, C03, C05, C07, N01 repaired; C04 partly (residual raised as C02); C06 deferred as D01, which stands. Seeded sample of 15 targets (1.1, 1.4, 2.1, 2.2, 2.3, 3.2, 3.4, 4.2, 4.3, 5.3, 5.4, 6.1, 6.2, 6.3, 6.4), plus every headline, computed in a 27-row adversarial table. All 21 README locators verified in the cached texts (Courte-Guillermou pp. 33-38, Geiges arXiv math/0307242v2 pp. 4-7, 14-21, 37-39, Kriegl-Michor 43.15-43.19). Automatic checks all passed; depcheck 184 roadmaps, 2065 edges, 0 problems; Suggested.lean elaborates with 8 sorry warnings and no error; 9 elaborated signatures match the README; one-tactic probe closes nothing. Small corrections: two-way CotangentLagrangian supply wording (C01), no locator for the Jacobi-bracket headline (C02), LieGroupoidsPoisson G0.1 not cited for frame completion (C03).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C06: `TauCetiRoadmap/SymplecticGeometry/README.md`, lines 70–76, must point its `#cg1--…`, `#cg4--…`, `#cg5--…` and `#cg6--…` links at the Layer 1, 4, 5 and 6 headings of this README.",
+    "where": "SymplecticGeometry family README links to removed CGk heading anchors",
+    "raised": "PRREVIEW-ContactGeometry~1"
+   }
+  ],
+  "text": "0708f0a9a422ab16"
+ }
+}
