@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeometricTopology~92",
+  "head": "3c18d43401670f832e9340cb338569e86b3d265c",
+  "pr": 1797,
+  "folder": "GeometricTopology",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 5 changed lines since 6b9e684. Checked: the previous R01 (unlink of 4.1 as great circles) is repaired, with n = 0, 1, 2 and the Hopf and Whitehead links computed against the new definition and every later use of the unlink read against it; the e^n bound questioned before is removed from 4.14, and the three remaining lower bounds were evaluated at n = 4, 6, 8 against the small knot counts; the previous format note on a Hatcher section number in 5.2 is carried over. None of the seeded sample falls in the changed passages. Automatic checks all passed; dependency check rerun, 0 problems; Suggested.lean (unchanged) elaborates with 34 sorry warnings only; pull request text read against the head, nothing contradicted; nothing changed outside the folder.",
+  "text": "4120dd25587d1fb7"
+ }
+}
