@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NeronModelsAndSemistableAbelianVarieties~18",
+  "head": "9cfa99824eb72bc82a90ce3f0147b51c4f40d530",
+  "pr": 2708,
+  "folder": "NeronModelsAndSemistableAbelianVarieties",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 5,
+  "notes": "Full review of the folder at this head. All 15 sampled targets examined: 41 source locators read in 13 sources (Deligne-Mumford, Conrad, Stacks, Raynaud, Fontaine, Coleman-Iovita, Liu, Serre, Brumer-Kramer, Mazur, Milne, Ribet-Stein), 2 page slips; Bosch-Luetkebohmert-Raynaud, SGA 7 I, Serre-Tate, Tate and Saito could not be read and are listed as not verifiable. Every Check and worked example recomputed. Automatic checks all passed, none set aside. Dependency check: 0 problems. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the four theorems; 24 library declarations opened at the pins. No other roadmap, on main or open, states the curve-Jacobian criterion. One small correction (unused perfect-residue hypothesis in the route of 3.9a), five format notes, two questions for the author, four facts for the human reviewers.",
+  "text": "3c78d99707047fff",
+  "carried": {
+   "from": "9cfa99824eb72bc82a90ce3f0147b51c4f40d530",
+   "head": "6fa0baed156082fb9009c1983e1065f90730f475",
+   "findings": 1,
+   "lines": 3,
+   "folders": [
+    "NeronModelsAndSemistableAbelianVarieties"
+   ],
+   "corrections": true
+  }
+ }
+}
