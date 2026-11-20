@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FinancialMathematics~3",
+  "head": "4a9abde676d59a419c3990712e51b6613d2abd08",
+  "pr": 2557,
+  "folder": "FinancialMathematics",
+  "date": "2026-11-20",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review at an unchanged head. Seeded sample (all eleven sections 1.1-4.2) has no source locators and no readable source, so each statement was checked by computation (adversarial table). All 107 cited library names resolved at the pins; StochasticCalculus and PDE sections resolved on main. R01: section 3.3 is statable on the pinned ParabolicC2HolderSpace (probe statement elaborated), contrary to the Suggested.lean docstring. R02, R03: an example and a Check false in their declared generality. Automatic checks all pass; depcheck 0 problems; Suggested.lean elaborates with two sorry warnings; one-tactic probes close nothing.",
+  "text": "845261b03c211574",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C03: In MarketImpact's README (line 612 on main), the link `../README.md#m01-assets-and-trading` has to become `../README.md#layer-1-assets-and-trading-m01`.",
+    "where": "MarketImpact/README.md, the M0.1 link in its FinancialMathematics supplier paragraph",
+    "raised": "PRREVIEW-FinancialMathematics~3"
+   }
+  ]
+ }
+}
