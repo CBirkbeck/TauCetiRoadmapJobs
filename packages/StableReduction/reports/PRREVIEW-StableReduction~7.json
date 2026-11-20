@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StableReduction~7",
+  "head": "4b23caab7a19b2913a369ee396d8f208f51e9aae",
+  "pr": 2669,
+  "folder": "StableReduction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 53 changed lines since efe1819. Checked: the four small corrections of the previous review (all repaired: §2.2 and §5.2 hypotheses, §11.7 criterion, §2.5 affine comparison cited at the pin, characteristic in two §2.2 Checks); the changed passages with computed instances; Stacks Lemmas 55.10.1-55.10.2 at their locators (seeded sample target 5.2, the only one in a changed passage); six Tau Ceti declarations opened at the pin; SchemeAndStackFoundations §0.3 on main; the pull request description against this head (no contradiction, counts 73 Checks in 47 blocks confirmed). Automatic checks all pass; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with three sorry warnings only; no change outside the folder. Deferred D01 stands. Two items for the human reviewers.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "The review's second item for the human reviewers (it has no F, C or N number): NeronModelsAndSemistableAbelianVarieties on main (§6.14, README lines 4524–4531, and the consumer entry at line 4600) cit",
+    "where": "NeronModelsAndSemistableAbelianVarieties README, §6.14 and its StableReduction consumer entry",
+    "raised": "PRREVIEW-StableReduction~4"
+   }
+  ],
+  "text": "2b733df67780841e"
+ }
+}
