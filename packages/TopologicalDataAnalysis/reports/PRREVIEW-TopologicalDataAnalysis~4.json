@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TopologicalDataAnalysis~4",
+  "head": "91b88cb44e46bb0f509f568673ebdc8add6781ee",
+  "pr": 2525,
+  "folder": "TopologicalDataAnalysis",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review of the repaired head. Previous R01, C01-C05 and N01-N04 all repaired. Adversarial pass over every statement with computed values (34 table rows); all 15 sampled targets checked, their locators against DeyWang2022, ChazalDeSilvaGlisseOudot2016, ChazalGlisseLabruereMichel2015 and CrawleyBoevey2015 where readable (36 passages); Oudot2015, EdelsbrunnerHarer2010 and CarlssonVejdemoJohansson2022 could not be read. Automatic checks all passed; Suggested.lean elaborates with 44 sorry warnings only; one-tactic probe closes none; dependency check 0 problems; 14 cross-roadmap citations resolved; no change outside the folder. Three small corrections (route of 3.4, Crawley-Boevey route of 1.3, docstring reason for intrinsic Cech stability) and three format notes, none blocking.",
+  "text": "b4f43c6f3c1b2b94"
+ }
+}
