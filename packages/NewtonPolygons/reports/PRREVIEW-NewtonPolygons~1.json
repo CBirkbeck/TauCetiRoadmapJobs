@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NewtonPolygons~1",
+  "head": "cfeb3c3f84ca1450621e4d63009c038302523e4e",
+  "pr": 2609,
+  "folder": "NewtonPolygons",
+  "date": "2026-11-19",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Seeded sample: all 15 sections. Read Lazard (1962) at (1.7)-(1.11), Propositions 1-4 and (4.11)-(4.13); Kedlaya's Newton-polygon notes at Corollary 3 and Theorem 7; KedlayaNumerical at Theorem 16. Koblitz, BGR, Neukirch and Washington are paywalled (uncertified). For NSW the service returned only the authors' landing page. Automatic checks all passed; the dependency check reports 0 problems. Suggested.lean elaborates with sorry as the only warning, and its six signatures match the README. All 333 README names resolve at the pins with #check. None of the six Lean targets is proved at the pin, and a one-tactic probe closes none. The 18 Checks and 28 examples were recomputed and are true. Finding R01: the radius formula is stated without the infinite-support hypothesis (false for polynomials) in the Suggested.lean docstring, the README overview and the Layer 5 introduction.",
+  "text": "a15796835831f078"
+ }
+}
