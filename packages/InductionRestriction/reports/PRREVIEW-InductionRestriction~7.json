@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InductionRestriction~7",
+  "head": "67fee23e268d47eaefff570e643a7846386b8b50",
+  "pr": 2639,
+  "folder": "RepresentationTheory/InductionRestriction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 67fee23; this round read the pull request's description against the head and the base: previous C01 (anchors) repaired, one omission (two removed top-level sections not mentioned, C01), no sentence contradicted. Checked: 28 Checks in 16 sections counted; Checks cited by the description recomputed (C4 over Q, S4 over V4, pairing over F2 and R, crossed product M2(Q)); removed and added Lean names compared between base and head; two sorry data definitions at base, none at head; PolynomialGaloisGroupsPartIII citations resolved on main. Elaboration: 13 sorry warnings only. Dependency check: 0 problems. Automatic checks all passed; no change outside the folder. Paywalled sources (Isaacs, Curtis-Reiner, Serre, Mackey) not read.",
+  "text": "8a7aa22ceacdffb3",
+  "carried": {
+   "from": "67fee23e268d47eaefff570e643a7846386b8b50",
+   "head": "67fee23e268d47eaefff570e643a7846386b8b50",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
