@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaSeries~4",
+  "head": "047e91a988ef012001267a025fd8b93d04ff475e",
+  "pr": 2725,
+  "folder": "ThetaSeries",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 125 changed lines since c969dbd: R01 (second owner of the partial Fourier transforms) repaired by ceding former §1.2 to AnalyticNumberTheoryPartII §5.3g, read on main with the normalisation comparison recomputed; C01 repaired; the new non-coprime reciprocity Checks of §6.2 recomputed exactly and numerically (sqrt2 Z^2 at (2,2), A2 at (3,3)); table rows for Layers 1 and 4 checked; no other roadmap cites the removed section; pull request description checked against the head (39 Checks counted); automatic checks all passed, dependency check 0 problems, Suggested.lean (unchanged) elaborates with only its 10 sorry warnings; no cited source readable legally, seeded sample recomputed only where it falls in changed passages; one format note (coarse locators) carried.",
+  "text": "96431b84482ed68d"
+ }
+}
