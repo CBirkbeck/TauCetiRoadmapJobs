@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KakutaniFixedPointAndContinuousGames~1",
+  "head": "5bf7ab1aaf39009a33e56cbe6e104fc8867af834",
+  "pr": 2761,
+  "folder": "KakutaniFixedPointAndContinuousGames",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample (1.1, 2.1, 2.2, 3.1, 4.1, 4.2, 4.3, 5.1, 5.2): every statement, Check and example recomputed; all 18 source locators read in the texts (Border's two sets of notes from the author's page, Ozdaglar's Lecture 5 slides and Lecture 6 notes from MIT OpenCourseWare); 24 library declarations opened at the pins; 3 cross-roadmap citations resolved; no duplicate owner on main or at the open heads. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with seven sorry warnings only; one-tactic probe closes none of the seven theorems. The sources service created the package manifest with five entries; the entry OzdaglarLec6 is the Lecture 6 slides, which the README does not cite (the cited notes are OzdaglarLec6Notes). No text is missing.",
+  "text": "18bd2fe30dda88a0"
+ }
+}
