@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ThetaSeries~3",
+  "head": "c969dbd0f7dfbc8483d0466f901b194c2cb02bfd",
+  "pr": 2725,
+  "folder": "ThetaSeries",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review at the head the previous review read (no change in the folder). R01 (P2): the partial Fourier transforms of section 1.2, which the scope says this roadmap owns and no later layer uses, are also owned by AnalyticNumberTheoryPartII 5.3g on main (README lines 684-686), with no citation either way. C01: the scope sentence that no other roadmap states a modularity theorem for a theta series is contradicted by QuaternionArithmetic 7.7 on main. N01 coarse locators, N02 no non-coprime Check in 6.2. Seeded sample (1.2, 2.9, 3.4, 5.3, 6.2, 6.3, 6.5, 6.6, 7.1, 7.3, 7.4, 7.5, 7.6, 8.6): no source locator could be verified, since none of the nine cited works has a legal copy the sources service could read; the mathematics of each was recomputed: reciprocity at 46 pairs on seven even lattices including non-coprime pairs, Milgram on seven lattices, the closed form at c = N and 2N with a = 1, 3, 5, 7 and off its hypotheses, the Gamma0(N) law and the Gamma(N) coset law numerically at sample matrices for A2, sqrt2 Z^2 and D4, the A2 and D4 representation numbers by enumeration, the constants of the 6.2 and 7.3 routes by hand. Route inputs opened at the pinned Tau Ceti with file and line; no target is already proved at the pins. Automatic checks all passed; depcheck 0 problems; lake env lean gives only the 10 sorry warnings; one-tactic probe closes none of the 10 theorems; nothing changes outside the folder; the pull request description agrees with the head.",
+  "text": "af8da140d84e3f5d"
+ }
+}
