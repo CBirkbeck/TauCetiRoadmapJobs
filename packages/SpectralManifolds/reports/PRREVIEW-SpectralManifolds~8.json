@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpectralManifolds~8",
+  "head": "898e0832b57f239fd521a10f75c1a6f3f39e4bd6",
+  "pr": 2657,
+  "folder": "SpectralManifolds",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review of an unchanged head. Seeded sample 1.1, 1.5, 1.7, 2.2, 2.6, 3.3, 4.5, 5.2, 5.4, 6.4, 6.5, 7.4, 7.7, 8.1, 10.5 checked against Connes 2008, Cacic 2011 and 2012, Dabrowski-Dossena, Plymen, Voiculescu and Swan (31 locators); books (Rudin, Nestruev, Loday, Treves) not readable. Recomputed: KO table and J-gamma signs, all 64 real-product sign pairs, swap phases, orientation dictionary, circle and torus Weyl and Dixmier constants, noncommutative-torus cycle. All 40 cited Tau Ceti declarations and the Mathlib ones opened at the pins; cross-roadmap citations resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with two sorry warnings, both signatures keep all binders, one-tactic probe fails on both. The previous review's four small corrections and two format notes stand (same commit); one question on the zigzag sign of 9.2.",
+  "text": "c7e5dcc0124a0315",
+  "carried": {
+   "from": "898e0832b57f239fd521a10f75c1a6f3f39e4bd6",
+   "head": "061e40af54a153b1a6f0ddd5e6959ef8ca524405",
+   "findings": 4,
+   "lines": 58,
+   "folders": [
+    "SpectralManifolds"
+   ],
+   "corrections": true
+  }
+ }
+}
