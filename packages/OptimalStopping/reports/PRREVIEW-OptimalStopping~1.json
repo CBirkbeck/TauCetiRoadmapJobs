@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OptimalStopping~1",
+  "head": "b64cca264ce77ad574809358bc6b43d4b88cd062",
+  "pr": 2714,
+  "folder": "OptimalStopping",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review. Every statement, Check and worked value recomputed by hand or in exact rationals (envelope examples, threshold probabilities and optimal thresholds for n <= 10, values at n = 100, 1000, 10^6, prophet examples and proof route, sharpness family). Suggested.lean elaborates with sorry as the only warning; simp closes none of the 11 theorems. 36 Mathlib declarations opened at the pin. Dependency check: 0 problems. Automatic checks all passed. Sources: Kleinberg-Weinberg (arXiv:1201.4764v1) read at its locator; Ferguson and Bingham could not be fetched by the sources service (author-page URLs it does not recognise), so 17 of 18 locators are not verified against the text and the contents comparison with Ferguson was not made; both are reported to the human reviewers.",
+  "text": "4fa9951870e95f37"
+ }
+}

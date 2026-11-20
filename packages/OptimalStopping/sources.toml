@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "OptimalStopping"
+
+[[source]]
+id = "KleinbergWeinberg2012"
+authors = "Robert Kleinberg, S. Matthew Weinberg"
+title = "Matroid Prophet Inequalities"
+year = 2012
+arxiv = "1201.4764v1"
+locator_scheme = "section"
+locator = "§1"
+url = "https://arxiv.org/abs/1201.4764v1"
+fetched_from = "https://arxiv.org/pdf/1201.4764v1"
+fetched_at = "2026-11-20T13:06:08Z"
+sha256 = "64d5a6daf051e8db5650328d9577e90605e8eaa6d70174d1f1fca5c4f7e93a1c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["3.1"]
