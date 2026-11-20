@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HamiltonianReduction~5",
+  "head": "2aba5a6ee3a3c58f6aeace6ab62dd0a0c27e7a70",
+  "pr": 2696,
+  "folder": "SymplecticGeometry/HamiltonianReduction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review of an unchanged head (main's text plus a ten-line Lean patch). Recomputed 21 adversarial rows over R1-R5 (cocycle, flux lattice, cylinder, KKS signs, root-plane Hessian, index formula, Heisenberg, Spin(7), reduction dimensions, normal-form tensor, cotangent shift, gauge moment map, moduli dimensions): no false statement. Both README locators read at the text (Cannas da Silva 22-25, Huebschmann 2.18-2.32). Cross-roadmap citations resolved on main; HamiltonianSystems and RootSystems Layer 4 do not hold as cited, both in main's text and replaced by the open revision #2690, which the description orders first, so not raised as findings. Pinned Tau Ceti opened for six counterparts of the file's declarations (C03). Elaboration: five sorry warnings only; #check of all 13 declarations; one-tactic probe closes equivariantMoment_infinitesimal only (C01). Dependency check: 182 roadmaps, 2074 edges, 0 problems. Automatic check hits (TeX, pull-request numbers, dropped roadmap name, imports) are real, in main's text or N01; none set aside as false positive.",
+  "text": "6df492f3469bea18",
+  "carried": {
+   "from": "2aba5a6ee3a3c58f6aeace6ab62dd0a0c27e7a70",
+   "head": "1e5af0fc9bc96e8b97cf234d457614de836aa086",
+   "findings": 3,
+   "lines": 99,
+   "folders": [
+    "SymplecticGeometry/HamiltonianReduction"
+   ],
+   "corrections": true
+  }
+ }
+}
