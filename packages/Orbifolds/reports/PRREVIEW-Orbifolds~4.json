@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Orbifolds~4",
+  "head": "c80fb4f5e3cd6dc26b8572714d3b3cc3ffc50b74",
+  "pr": 2624,
+  "folder": "Orbifolds",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full re-review. Previous R01 (stratified triangulation) and C01-C03 repaired; N01 partly. Seeded sample of 15 sections checked by computation and against Verona1980, Illman1983, Yang1963, Moerdijk2002, MoerdijkPronk1999, vandenBergMoerdijk2018 and GurerIglesiasZemmour2019 (17 locators); AdemLeidaRuan2007 not readable. Adversarial table of 23 rows with computed values. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning; one-tactic probes fail (no padding); the overlap listing's dropped id O4.2 set aside (mapped in the numbering paragraph). Cross-roadmap citations resolved on main, including the new supplier AlgebraicTopologyPartII 16.1a-16.1b.",
+  "text": "ba534b52f922c872",
+  "carried": {
+   "from": "c80fb4f5e3cd6dc26b8572714d3b3cc3ffc50b74",
+   "head": "78eb1725aabf68f74cbc591116302bda56a5c3f5",
+   "findings": 1,
+   "lines": 14,
+   "folders": [
+    "Orbifolds"
+   ],
+   "corrections": true
+  }
+ }
+}
