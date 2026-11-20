@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DirectedMatrixTreeAndBEST~1",
+  "head": "209b2642b77ba4a9d9b4702c81b57711f38117d2",
+  "pr": 2698,
+  "folder": "DirectedMatrixTreeAndBEST",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. Sample: all ten sampled targets recomputed by brute force (matrix-tree and adjugate forms on random integer weights up to five vertices, balanced weights, Markov chain tree theorem on random rational chains, Euler's criterion on 5448 multidigraphs, BEST on 308 balanced multidigraphs and the bidirected 3x3 grid, de Bruijn counts from the Lean definition, reduced determinants of de Bruijn graphs). Lyons-Peres locators read at the text; Stanley locators not verifiable (the sources service could not fetch the draft), flagged to the human reviewers. Library declarations opened at the pins; cross-roadmap citations resolved on main and at open heads; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; one-tactic probe closes nothing; automatic checks all passed, none set aside.",
+  "text": "135b17c53c69c39d"
+ }
+}
