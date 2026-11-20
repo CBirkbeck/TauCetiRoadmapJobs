@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HamiltonianReduction~7",
+  "head": "4ddef36eef18c74af91ab522c8ed1430c972886e",
+  "pr": 2690,
+  "folder": "SymplecticGeometry/HamiltonianReduction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "incremental re-review of 58 changed lines since 6d61ae8. Checked: the five previous remarks (three repaired, one partly, one format note carried); the changed passages of sections 2.6, 3.0c, 3.0e, 3.2, 5.5, 5.7, 5.9, 5.10 and the Tau Ceti contract, with 8 source locators read at the text (Meinrenken Theorem 8.2; Cannas da Silva 24.3, 24.5; Bates-Lerman Theorems 7, 15, Corollary 14; Huebschmann 1.2, p. 8, Theorem 2.33) and TauCeti.Nil opened at the pin; the seeded sample where it falls in the change (3.0c, 3.2); the description against this head (no sentence contradicted); automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with the two sorry warnings only; no change outside the folder.",
+  "text": "e3ab66b37c80c243",
+  "carried": {
+   "from": "4ddef36eef18c74af91ab522c8ed1430c972886e",
+   "head": "3a351d61875ddd8f785ddb0668c81ad46ed24eb5",
+   "findings": 2,
+   "lines": 28,
+   "folders": [
+    "SymplecticGeometry/HamiltonianReduction"
+   ],
+   "corrections": true
+  }
+ }
+}
