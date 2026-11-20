@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpectralManifolds~9",
+  "head": "061e40af54a153b1a6f0ddd5e6959ef8ca524405",
+  "pr": 2657,
+  "folder": "SpectralManifolds",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "incremental re-review of 58 changed lines since 898e083. Checked: the four previous small corrections (all repaired) and two format notes (not repaired, repeated); the new locators read at the text (Brodzki-Mathai-Rosenberg-Szabo section 2.3, Definition 2.2, the text after (2.25), Example 2.5, section 2.5, Definition 2.11; Voiculescu 1979 section 1, pp. 5-6; Dabrowski-Dossena section 4); the sampled targets that fall in the change (9.1, 10.3, 11.6); the sign of the restated duality axiom of 9.2 against the cited definition; the title and description against the head (one sentence corrected); the automatic checks (all passed), the dependency check (0 problems) and the elaboration of Suggested.lean (two sorry warnings only).",
+  "text": "990326d14efc7073",
+  "carried": {
+   "from": "061e40af54a153b1a6f0ddd5e6959ef8ca524405",
+   "head": "e9f8775127158711a317eb0df6e2811591b88587",
+   "findings": 2,
+   "lines": 4,
+   "folders": [
+    "SpectralManifolds"
+   ],
+   "corrections": true
+  }
+ }
+}
