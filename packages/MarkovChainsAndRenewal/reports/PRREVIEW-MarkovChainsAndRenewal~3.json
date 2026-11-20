@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MarkovChainsAndRenewal~3",
+  "head": "710d7e5b1c9861679ce43b23a3e45117acd3d1b2",
+  "pr": 2605,
+  "folder": "MarkovChainsAndRenewal",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "incremental re-review of 141 changed lines since 1508422. Checked: all 30 Tassion citations of the head against the notes (56 numbered statements, 35 read in full this round, covering the 15 sampled sections); the restated isReversible_iff_singletons computed on finite, infinite and zero measures and probed with one tactic (does not close); the lazy-walk Check of 3.5 recomputed; the pinned declarations newly cited in 1.4 and 2.4 opened; 7.3 against StochasticCalculus 0.6 on main and at its open revision; the pull request description against the head and against the README on main (one omission, C01). Elaboration: 12 sorry warnings, no error. Dependency check: 0 problems, no UPWARD or CYCLE. Automatic checks all passed; none set aside. The previous report had no finding; of its 8 small corrections 7 are repaired and 1 partly (C02 here), its 2 format notes stand. Norris, Feller and Last-Penrose could not be read.",
+  "text": "ba392a13a1d05e04",
+  "carried": {
+   "from": "710d7e5b1c9861679ce43b23a3e45117acd3d1b2",
+   "head": "90852455e32c7a7f0beb68309bd6c68d9393b2d8",
+   "findings": 2,
+   "lines": 9,
+   "folders": [
+    "MarkovChainsAndRenewal"
+   ],
+   "corrections": true
+  }
+ }
+}
