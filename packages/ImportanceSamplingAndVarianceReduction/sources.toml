@@ -1,0 +1,43 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ImportanceSamplingAndVarianceReduction"
+
+[[source]]
+id = "ChatterjeeDiaconis2018"
+arxiv = "1511.01437v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1511.01437v3"
+fetched_from = "https://arxiv.org/pdf/1511.01437v3"
+fetched_at = "2026-11-20T16:01:16Z"
+sha256 = "7e5ae39ce358b9440f4d02b9d64d7813f5718506d4418b85e00d53e6bdccd9ba"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v3"
+cited_for = ["1.5"]
+
+[[source]]
+id = "OwenMCIS"
+locator_scheme = "equation"
+locator = "(9.2)"
+url = "https://artowen.su.domains/mc/Ch-var-is.pdf"
+fetched_from = "https://artowen.su.domains/mc/Ch-var-is.pdf"
+fetched_at = "2026-11-20T16:01:20Z"
+sha256 = "dca6fb244e9e1434faef928ed57d4c9afa259a9b379e24779c7d6f35973e8c41"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["1.1"]
+
+[[source]]
+id = "OwenMCVarBasic"
+locator_scheme = "equation"
+locator = "(8.31)"
+url = "https://artowen.su.domains/mc/Ch-var-basic.pdf"
+fetched_from = "https://artowen.su.domains/mc/Ch-var-basic.pdf"
+fetched_at = "2026-11-20T16:01:22Z"
+sha256 = "26b03406aefdcf64fcd2e19532a9c6fd4d60947273bdbafcc3aa7bd67f683f9e"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.1"]
