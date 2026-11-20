@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ConditioningAndPerturbation~1",
+  "head": "e32b1a17b9b5721e47cc54fb5589ff917a0a042d",
+  "pr": 2807,
+  "folder": "ConditioningAndPerturbation",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 4,
+  "notes": "Full review. Seeded sample 1.1, 1.2, 2.1, 2.2, 3.1, 3.2, 3.3, 4.1, 4.2 all recomputed (adversarial table, 17 rows); 12 of 13 source locators read at the text (Saad's two books and Demmel's Lecture 3 notes from the authors' pages), Demmel 1987 Theorem 1 not readable (paywalled) and listed as not verifiable; 50 library declarations opened at the pins; cross-roadmap citations resolved on main; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning, 0 of 9 statements close with one tactic, 9 of 9 signatures agree with the README; automatic checks all passed, none set aside; ownership searched across main and the open heads, nothing shared.",
+  "text": "a0fb9424ef393570"
+ }
+}
