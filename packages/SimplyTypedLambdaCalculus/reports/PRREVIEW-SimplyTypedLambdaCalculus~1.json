@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SimplyTypedLambdaCalculus~1",
+  "head": "f3f68692555448a65acd6107b36acc40e4a40255",
+  "pr": 2727,
+  "folder": "SimplyTypedLambdaCalculus",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All 15 sampled targets and every locator of the README read in the two cited texts (Selinger arXiv:0804.3434v2; Girard-Lafont-Taylor, web reprint): pages, numbers and hypotheses agree. Adversarial pass computed: substitution lemma and shift identities by exhaustive enumeration (989830 instances; 463284 failures once i > j), substAll identities, ParRed u (develop t) on 27851 pairs, local beta-eta joinability, weakening/substitution/strengthening at positions beyond the context length, subject reduction for beta and eta, and every value printed in a Check. Library declarations opened at the pins (Mathlib Logic/Relation.lean, Order/WellFounded.lean; Lean core InsertIdx.lean). Suggested.lean elaborates with 15 sorry warnings only; one-tactic probe closes none of the 15 theorems. Dependency check: 0 problems. Automatic checks all passed. No lambda-calculus object found in Mathlib, Tau Ceti, main or the open heads.",
+  "text": "4744401792a3fb9f"
+ }
+}
