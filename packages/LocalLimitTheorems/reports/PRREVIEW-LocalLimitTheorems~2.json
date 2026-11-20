@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalLimitTheorems~2",
+  "head": "ff0b1ae739f8fba68f4f9dd3b1e019605c6ec1e7",
+  "pr": 2683,
+  "folder": "LocalLimitTheorems",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 87 changed lines since 98e4695. Previous R01, C01, C02, C03, N01 all repaired. Checked the new target 1.5 and localLimit_lattice_real: read Durrett Theorem 3.5.3 and the definitions of section 3.5 at the locator (seeded sample item 1.5; the other sampled items are untouched), recomputed the affine change of variable from 1.4, the Rademacher values 0.398693 and 0.797386 against 0.398942, the point-mass, wrong-span, non-zero-mean and infinite-second-moment cases, compared the elaborated signature with the README, ran the one-tactic probe (nothing closes), resolved the neighbouring roadmap's section 3.1 at its open head, read the pull request's title and description against the head. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with five sorry warnings only; no change outside the folder. Two small corrections (the letter k in the first Check of 1.5; the boundary paragraph does not mention 1.5) and one format note (line length).",
+  "text": "22fbf421020ca9d0"
+ }
+}
