@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SeibergWittenTheory~6",
+  "head": "8312f644c9c1b914178f810d0ab4a70fb56f7dd9",
+  "pr": 2651,
+  "folder": "SeibergWittenTheory",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "incremental re-review of 5 changed lines since a831557: the five rows added to the table of former labels (SW5.2, SW6.3, SW7.3, SW8.2, SW11.3) checked against the old README on main, the headings at this head and every label cited on main and at the open heads of TaubesGromov and DGFloer (all covered); previous C01 and C02 repaired, N01-N03 carried; the description read against the head (counts of Checks, sections, suppliers, locators by section, removed Lean declarations, 14 pinned declarations opened) with no contradiction; 4 source locators opened for the sections the rows cite (Witten eq. (3.1); Okonek-Teleman Lemma 5, Definition 6 and the paragraph before it); gate all checks pass; depcheck 0 problems; lake env lean on Suggested.lean exits 0 with no message",
+  "text": "214634aa4958faf9"
+ }
+}
