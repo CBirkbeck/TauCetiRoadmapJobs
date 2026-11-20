@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RestrictedPowerSeries~4",
+  "head": "fe06f84cbc0706470e0aa4fe2db6fc21f64c6d62",
+  "pr": 2656,
+  "folder": "RestrictedPowerSeries",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 128 changed lines since c995602. Previous R01-R04, C01-C03 and N01 all repaired: AdicSpacesPartIV no longer a supplier (it consumes 0.1, 1.1, 5.4 on main and at its open head), unit-radius noetherianity credited to AdicSpaces 0.5, completeness added in 2.1 and 7.1 translation, 7.1 non-surjectivity qualified to Q_p, 6.1 attribution corrected against wedhorn lines 1686-1689 and 2050, glue targets marked, exponent renamed. Changed passages checked by computation (adversarial table, 10 rows) and against 13 declarations at the pins (6 by #check, 2 read in source). Gate: every check passed; dependency check 200 roadmaps, 2200 edges, 0 problems; Suggested.lean unchanged, elaborates with no message. Description read against the head: up to date. Seeded sample: only 2.1, 3.2, 5.2 and 6.1 fall in changed text; bgr, coleman and huber uncertified and not cited by the changes.",
+  "text": "add503ac5b62e332"
+ }
+}
