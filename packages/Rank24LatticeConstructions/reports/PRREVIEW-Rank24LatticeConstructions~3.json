@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Rank24LatticeConstructions~3",
+  "head": "4e0bd8dc7813a75527c2f003b605f2d4ae0bc74b",
+  "pr": 2632,
+  "folder": "Rank24LatticeConstructions",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review at an unchanged head; the previous review had no findings to repair. All 23 glue subgroups rebuilt from the printed patterns (orders, isotropy, |H|^2=|A_R|, shortest norm >= 4, root counts) and all 15 Checks recomputed; the A1^24, A2^12 and D4^6 code identifications verified against the pinned generators; Layer 6 and the K^v/K statements computed. Sample: sections 2.1-2.3, 3.1-3.3, 4.1, 5.1, 5.2, 6.1. Sources read: Conway-Sloane 1982 section 2, section 4 and Table V; Chenevier 2020 sections 5.1 (a), (c) and 5.3. SPLAG, Niemeier 1973, Wilson 2009 and Ebeling 2013 not readable (uncertified). All backticked library names resolve at the pins; none of the eight targets exists there. Suggested.lean elaborates with eight sorry warnings only; one-tactic probes close none. Dependency check: 0 problems. Automatic checks all passed on re-run. Two small corrections (a sentence in 4.1 that reads as false; 5.2 ternary half stated for permutations only) and one format note. For the humans: reuse of the Table V generator column, SPLAG unread, six row-index theorems are case analyses over pinned row theorems.",
+  "text": "386719b6f7350b23",
+  "carried": {
+   "from": "4e0bd8dc7813a75527c2f003b605f2d4ae0bc74b",
+   "head": "18f250af1dbd57fe4b4f9d05ec9516b9340531a1",
+   "findings": 2,
+   "lines": 20,
+   "folders": [
+    "Rank24LatticeConstructions"
+   ],
+   "corrections": true
+  }
+ }
+}
