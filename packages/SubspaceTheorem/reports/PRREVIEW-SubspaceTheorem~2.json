@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SubspaceTheorem~2",
+  "head": "c0ff5887035c68ad5442faf2ac7c61dd70b62066",
+  "pr": 2678,
+  "folder": "SubspaceTheorem",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 96 changed lines since 3d741a9. All earlier remarks (R01-R03, C01-C06) are repaired and the repairs add no new problem. Checked: the changed passages (overview route sentence, Convention 2, 1.3/7.2/7.3/8.7 Checks, the 2.1 hypothesis, the 6.2 and 8.4 sentences, the Layer 2 opening, References, removal of the Thue-Mahler declaration), each recomputed (stammering lengths j<=9, complexity p(n)<=2n for n<=400, random tests of the subclass rounding); 6.2 elaborated as 6.3 at F = K, w = id; DiophantineApproximationAndTranscendence 2.3 finite_thueMahler resolved on main. Seeded sample in changed text: 2.1 and 6.2 locators in Bombieri-Gubler not readable; the Schlickewei 1977 attribution in 6.2 is supported via Evertse1984 Theorem 4. Gate passed; depcheck 191 roadmaps, 0 problems; lake env lean gives 38 sorry warnings only. The pull request's description matches the head.",
+  "text": "fd71358cc2f25f97"
+ }
+}
