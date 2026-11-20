@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NilpotentOrbits~1",
+  "head": "6b6f99a61bc2a3635d3c73745d193da391da93b5",
+  "pr": 2628,
+  "folder": "NilpotentOrbits",
+  "date": "2026-11-20",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample: §§0.3, 0.4, 1.2, 2.1, 2.3, 2.4, 3.2, 5.0, 5.1, 6.1, 7.1, 7.2, 7.3, 8.3, 9.2. Source locators verified in MIY22 (§2.1, Prop. 2.3), LNS10 (introduction, §2) and GHR06 (§2.2); the other sampled sections carry no source locator (R04). Every README Check and worked example was recomputed, and all five Suggested.lean theorems were tested on degenerate cases. All automatic checks passed. Dependency check: 0 problems. Suggested.lean elaborates, with sorry the only warning. A probe elaborated the two missing headline statements (R03). Findings: field generality beyond the ℂ routes, a passage owned by SpringerResolutionAndCharacteristicCycles §6.1 (R01); duplicate of LieHighestWeightPartII §0.2 (R02); missing statable headlines (R03); no source locators for the headline theorems (R04).",
+  "text": "b03972cec2df68d9"
+ }
+}
