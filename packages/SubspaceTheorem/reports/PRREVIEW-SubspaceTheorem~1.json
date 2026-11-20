@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SubspaceTheorem~1",
+  "head": "3d741a9c24e98626f5ee5c9190f0b10eadf9d29b",
+  "pr": 2678,
+  "folder": "SubspaceTheorem",
+  "date": "2026-11-20",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 6,
+  "format_notes": 0,
+  "notes": "Full review. Seeded sample of 15 targets: locators checked in the text of Evertse 2010 (Theorem A, (2.4), Proposition 4.1, proof of Theorem 2.2), Evertse 1984 (Theorem 1), Adamczewski-Bugeaud 2007 (Theorem 1, Condition (*)_w) and Evertse 1996 (Lemmas 18, 27); Bombieri-Gubler, Bugeaud and the paywalled papers not legally readable (listed as not verifiable). Every automatic check passed; the dependency check reports 0 problems; Suggested.lean elaborates with 39 sorry warnings only; the one-tactic probe closed none. Findings: a false Check in 7.2 (j = 3), the 8.7 subclass lemma false for an empty index set, and Thue-Mahler over Z restated from DiophantineApproximationAndTranscendence 2.3.",
+  "text": "fe68994d7360f907"
+ }
+}
