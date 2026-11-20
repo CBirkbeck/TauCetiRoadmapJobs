@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MathematicalStatisticsHigherOrderAndResampling~3",
+  "head": "294a0d211efe0803edf87d602436eb2dff545c44",
+  "pr": 2504,
+  "folder": "MathematicalStatisticsHigherOrderAndResampling",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review at 294a0d2. Previous R01 (analytic instead of smooth g in Layer 8) and C01 (two Dependencies lines) are repaired; the rest of the change since 9af2fe3 is a pure reordering of the README. All fifteen sampled targets (2.2, 3.1, 4.1, 4.3, 4.5, 4.7, 5.1, 5.2, 6.1, 6.4, 7.2, 7.3, 8.2, 8.3, 9.1) and every other statement, Check and worked example were recomputed, including the numerical examples of Layers 4-6; none failed. No cited book could be read legally through the sources service, so no locator was checked against a text (listed under Not verifiable and for the human reviewers). Automatic checks all passed; Suggested.lean elaborates with 50 sorry warnings and no other; dependency check 0 problems, no UPWARD or CYCLE; supplier citations (ArithmeticStatisticsPartVIII 5.14 at its open head, Foundations and Asymptotic on main) resolved; local copies agree with their owners; one-tactic probe closes only the declaration already marked as a check. Two small corrections (superfluous continuity and almost-sure quantifier in the 6.5 inconsistency statement; a Check of 7.2 at the wrong scale) and one format note.",
+  "text": "72f673abca295919"
+ }
+}
