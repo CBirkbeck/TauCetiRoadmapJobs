@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NonlinearProgrammingOptimality~1",
+  "head": "b55d057ad52661081f979c73c9229f92d0681cda",
+  "pr": 2675,
+  "folder": "NonlinearProgrammingOptimality",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample 1.1, 1.2, 2.1-2.4, 3.1-3.3: every statement and Check recomputed by hand (table in the report); 12 locators read in Pacaud arXiv:2504.15851v1, Bertsekas-Ozdaglar (author's copy) and Nemirovski's notes; the 18 locators into the Andreasson-Evgrafov-Patriksson 2005 draft are not verifiable (no legal copy found) and are flagged to the human reviewers. 17 library declarations opened at the pins, 7 cross-roadmap citations resolved, no duplication or shared object. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with six sorry warnings only; one-tactic probe closes none of the six theorems; elaborated signatures agree with the README.",
+  "text": "8d7c6eec6282f218"
+ }
+}
