@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdoIwasawa~2",
+  "head": "66e340d5eae15c02d0ab12de35cdddbb61378fcc",
+  "pr": 2633,
+  "folder": "RepresentationTheory/AdoIwasawa",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 143 changed lines since b536bae. All eight points of the previous review (R01, R02, C01-C03, N01-N03) and its question are repaired: §5.6 cites the pinned LieIdeal.isNilpotent_ad_right_of_isCompl (opened at AdNilpotent.lean:80) and is dropped from the target list; the §3.6 semisimple remark was recomputed on sl2 (U+ and the standard kernel) and against the conclusion of the pinned cofinite-refinement theorem; §7.4 cites span_range_prod_quotient_span_pow_eq_top (Finite.lean:81). The one new remark is C01: the sl2 counterexample needs characteristic not 2. Sample: §9.1 checked against Hochschild1966 Theorem 1; the new Hochschild, Jacobson-as-cited and Zariski-Samuel locators checked at Hochschild1966 lines 16-95. Suggested.lean elaborates its 12 #checks with no warning, and each import hosts a pinned declaration. Gate OK, every check zero; depcheck 0 problems; no change outside the folder; the description matches the head.",
+  "text": "cec12f8e18d9bb40"
+ }
+}
