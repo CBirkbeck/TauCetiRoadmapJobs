@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdoIwasawa~4",
+  "head": "39e7e4d2bf0e50ec9eb3774c35730dbce4ddf796",
+  "pr": 2633,
+  "folder": "RepresentationTheory/AdoIwasawa",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 28 changed lines since 66e340d. Checked: the previous R01 (three sl2 statements, now restricted to characteristic != 2, with the characteristic-2 Heisenberg case as a negative control) recomputed in characteristic 0, 3 and 2 and found repaired; the other sl2 mentions reread; LieAlgebra.isFaithful_self_iff opened at the pin; the seeded sample falls in the change only at the remark of 3.6, which cites no source; automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with twelve #checks and no warning; pull request description consistent with the head; nothing changed outside the folder.",
+  "text": "cec12f8e18d9bb40"
+ }
+}
