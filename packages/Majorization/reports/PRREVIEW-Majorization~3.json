@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Majorization~3",
+  "head": "c754e3c1b2d6946f02ca88ecee11c27f7c49e190",
+  "pr": 2612,
+  "folder": "OperatorTheory/Majorization",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 51 changed lines since 591e977. Checked: the former-labels table against every MAJ- label of the README on main by subsection (agrees; no roadmap cites a label outside its ranges); the new block-sum Check of 2.4 recomputed (1<=2, 2<=2sqrt2, 4<=4, separate bounds 4); the private theorem exists_robinHood_card_lt at the pinned Tau Ceti (hypotheses, conclusion and choice of coordinates as the README says); the Suggested.lean docstring; the pull request description against the head (29 Checks, imports, removed statements, label table: no contradiction). Previous C01, C02, C03, C05 repaired; C04, N01, N02 not repaired and carried as one small correction and two format notes. Automatic checks rerun: all passed; depcheck 0 problems; Suggested.lean elaborates with no error or warning. No source locator falls in the changed passages; no reference is legally readable.",
+  "text": "48751a6238f8d62d",
+  "carried": {
+   "from": "c754e3c1b2d6946f02ca88ecee11c27f7c49e190",
+   "head": "c754e3c1b2d6946f02ca88ecee11c27f7c49e190",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
