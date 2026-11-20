@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ScatteringDiagrams~8",
+  "head": "de3257f2b789df574bab3df2c560b25b01afab2a",
+  "pr": 2650,
+  "folder": "ScatteringDiagrams",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review of an unchanged head. Sample: sections 0.1, 0.2, 0.5, 1.4, 2.3, 3.2, 3.3, 3.4, 4.2, 5.3, 5.5, 6.2, 6.3, 7.1, 7.5; 49 locators read at the statement in 10 sources fetched from arXiv, about 40 more located by number (ZIE and SCH not readable legally). Every Check and example recomputed, the rank-two wall and theta coefficients of 7.3 by an independent exact computation. Automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with five sorry warnings only; one-tactic probe closes none of the five statements; 17 library declarations checked at the pins. The previous review's two small corrections and one format note stand; two small corrections and two format notes are new.",
+  "text": "941c834382bda571",
+  "carried": {
+   "from": "de3257f2b789df574bab3df2c560b25b01afab2a",
+   "head": "77c1a4182543be9f68e57645a98196cb6ab7cc11",
+   "findings": 4,
+   "lines": 48,
+   "folders": [
+    "ScatteringDiagrams"
+   ],
+   "corrections": true
+  }
+ }
+}
