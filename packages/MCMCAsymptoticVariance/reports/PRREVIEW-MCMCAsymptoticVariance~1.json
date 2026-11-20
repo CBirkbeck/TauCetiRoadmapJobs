@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MCMCAsymptoticVariance~1",
+  "head": "1aeaf3be46e56a46346f57b41577a7a84cda060a",
+  "pr": 2741,
+  "folder": "MCMCAsymptoticVariance",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Sample: all 13 seeded targets (1.1-4.3) and all 13 source locators read in Aldous-Fill (web edition, Chapters 2, 3, 4, 11) and Andrieu-Livingstone arXiv:1906.06197v1. Every Check recomputed exactly in rational arithmetic with Mathlib's junk values modelled; 3.1 and the spectral bound tested on 3000 random stationary chains including reducible ones, Peskun and Dirichlet orderings on 1500 pairs with a non-reversible dominating chain, the variational formula on 1500 reversible chains, the variance limit by exact moment recursion on a periodic chain. 24 library declarations opened at the pins; supplier citations resolved in MarkovChainsAndRenewal and MathematicalStatisticsFoundations on main and MarkovChainMixing at its open head. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with only the 12 sorry warnings; one-tactic probe closes none of the 12 theorems. One small correction (two Checks need p + q < 2), one format note. Peskun 1973, Tierney 1998, Caracciolo-Pelissetto-Sokal 1990 and Kemeny-Snell 1960 are cited in prose only and were not read.",
+  "text": "24e04cc670a7bd75"
+ }
+}
