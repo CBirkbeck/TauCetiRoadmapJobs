@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HamiltonianReduction~3",
+  "head": "1d8f3a71a59ec7d3daa2526c8d11b0f49deb535e",
+  "pr": 2690,
+  "folder": "SymplecticGeometry/HamiltonianReduction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "Full re-review. Earlier R01 and R02 repaired, earlier C02 and C03 repaired, earlier C01 partly repaired (section ids mapped, two heading anchors linked from main missing: C01). Seeded sample of 15 sections checked; 32 of 33 README locators and both Lean docstring locators verified against the cached texts (Cannas da Silva, Meinrenken, Banyaga OCR, Bott, Alexandrino-Bettiol, Bates-Lerman, Ortega-Ratiu). Adversarial pass recomputed every Check (KKS signs and areas, root-plane Hessians and indices, flux signs, shifting and cotangent signs, gauge generator, dimension counts, Spin(7) subgroup): all agree. Automatic checks all passed; depcheck 182 roadmaps, 2075 edges, 0 problems; Suggested.lean elaborates with two sorry warnings only; #check @ binders match the README; one-tactic probes (simp_all, exact?, rfl, infer_instance) fail on both theorems. Small corrections: missing anchors, section 3.2 narrower than Bates-Lerman, missing locators for 3.0e and Layer 5, HeisenbergGroup without Lie structure at the pin.",
+  "text": "c5e56facce70f29d"
+ }
+}
