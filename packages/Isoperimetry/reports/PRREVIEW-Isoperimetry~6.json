@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Isoperimetry~6",
+  "head": "ec70c4707a4327b8a08e28991ea1658102479f78",
+  "pr": 2597,
+  "folder": "Isoperimetry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 2 changed lines since 313454a: the added anchor before the Layer 6 heading was compared with the fragment of the former I6 heading and with RiemannianGeometry's two links to it (main and open head), which now resolve; no other fragment link into this README exists. The previous report had no finding to carry. Automatic checks all passed; depcheck 0 problems (no UPWARD, no CYCLE); nothing changed outside the folder; Suggested.lean elaborates with nine sorry warnings only. Adversarial rows computed for §6.3 (circle, square, rectangle) and for the anchor. One small correction: the description still says the RiemannianGeometry link is broken. The seeded sample does not fall in the changed lines.",
+  "text": "e14fb4298caf9c86",
+  "carried": {
+   "from": "ec70c4707a4327b8a08e28991ea1658102479f78",
+   "head": "ec70c4707a4327b8a08e28991ea1658102479f78",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
