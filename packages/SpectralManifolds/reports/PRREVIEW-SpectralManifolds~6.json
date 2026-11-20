@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpectralManifolds~6",
+  "head": "5b80b17f11386d1250e68b0b6b0d4da9a4ea7be9",
+  "pr": 2657,
+  "folder": "SpectralManifolds",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 7,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample of 15 sections checked: Connes 2008, Voiculescu 1979 (OCR), Plymen 1986 (OCR), Caćić 2011/2012 and Dąbrowski–Dossena read at their locators (25 locators). Loday §4.2 and Trèves Ch. 51 have no legal copy, so their sections' mathematics was recomputed instead. All 110 Checks recomputed by hand; 64 KO real-product sign pairs, 4 swap phases and 36 orientation-table entries computed by script. Gate: every check passes; depcheck 0 problems; elaboration exit 0 with 2 sorry warnings; #check confirms every binder; docstring claims verified at the pins. Finding R01 (P2): the §9.2 Check gives the cap-product degrees as K1 to K^1 for an odd class; the correct maps are K0 to K^1 and K1 to K^0. Ownership: no object with two owners; two citation points raised (HilbertModules H5, SeibergWittenTheory SW1.1).",
+  "text": "bec76269f09040a5"
+ }
+}
