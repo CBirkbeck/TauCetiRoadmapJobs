@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SimulatedAnnealing~2",
+  "head": "b836781b079f87c0d705734f06cae33a803e2e1d",
+  "pr": 2709,
+  "folder": "SimulatedAnnealing",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 63 changed lines since f3f4259. Checked: the five previous remarks (R01 partly repaired, the residue a small correction: Layer 1 and the scope sentence still say the coefficient is defined and owned here; C01, C02, N01 repaired; C03 partly); the changed passages of 1.1, 3.1, the scope section and the contracts; MarkovChainMixing 1.2 at its open head (definition identical, range and supremum characterization present, no citation back); Mathlib's Measure.tilted, tilted_const', isProbabilityMeasure_tilted and the Kernel monoid at the pin; Suggested.lean elaborated (8 sorry warnings only) with a probe copy (dobrushinCoeff equals the README's maximum by simp; the Gibbs measure against the tilt; neither Layer 1 theorem closes in one tactic); dependency check 0 problems; automatic checks all passed; no change outside the folder; pull-request description read against the head (three stale statements, one small correction). Seeded sample: the changed passages carry no source locator; neither source is readable from a legal place, as in the previous review, left to the human reviewers.",
+  "text": "a5a2797119f26771"
+ }
+}
