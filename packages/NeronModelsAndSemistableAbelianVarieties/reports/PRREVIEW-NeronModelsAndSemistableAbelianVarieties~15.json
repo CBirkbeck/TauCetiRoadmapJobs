@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NeronModelsAndSemistableAbelianVarieties~15",
+  "head": "ac35abe69359608405c967184d75a9e87322a018",
+  "pr": 2708,
+  "folder": "NeronModelsAndSemistableAbelianVarieties",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review of an unchanged head. Seeded sample of 15 targets (1.8, 3.1, 3.2, 3.6, 3.13, 4.6, 4.11, 5.0b, 5.1a, 5.3, 5.3e, 5.3i, 6.0, 6.2, 6.5) plus 3.9a, 2.9, 4.5, 4.7, 5.2, 5.3g-5.3h and the headline theorems: every Check recomputed, 43 locators read in 16 sources, ten library declarations opened at the pins, supplier citations of the sampled sections resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with four sorry warnings only; one-tactic probe closes nothing. The previous review's two small corrections are unrepaired and repeated; one new small correction (the remark cited for Ogg's formula in 5.3e does not state it) and one format note. Not readable: Bosch-Luetkebohmert-Raynaud, SGA 7 IX, Faltings-Chai, Serre-Tate, Saito 1988, the Yuan-Zhang erratum.",
+  "text": "d59a8ed2829ae042",
+  "carried": {
+   "from": "ac35abe69359608405c967184d75a9e87322a018",
+   "head": "a62a075ee2e851a225e288a3d0450ae0eacd7837",
+   "findings": 3,
+   "lines": 8,
+   "folders": [
+    "NeronModelsAndSemistableAbelianVarieties"
+   ],
+   "corrections": true
+  }
+ }
+}
