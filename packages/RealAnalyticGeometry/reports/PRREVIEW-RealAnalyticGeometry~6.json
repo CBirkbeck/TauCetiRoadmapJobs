@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RealAnalyticGeometry~6",
+  "head": "38c4ef39a0f335ae34aca3fc808a223c44ebf251",
+  "pr": 2634,
+  "folder": "RealAnalyticGeometry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 17 changed lines since 0ba0889. Checked: the previous small correction (Grauert 1958 locators for the p-function and the Stein criterion, now given; the paper is cited by locator alone and could not be read) and format note (carried); the two explicit anchors kept before sections 3.0 and 3.1 against the inbound links of ComplexComparisonPartII and Hyperfunctions (D01 resolved); the Stein criterion and p-function recomputed on degenerate instances; no Lean statement changed. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with eight sorry warnings and no error; nothing changed outside the folder. Two small corrections on the description (anchor paragraph out of date, new Grauert locators unstated), one format note.",
+  "text": "dc55c1fb8d706c97",
+  "carried": {
+   "from": "38c4ef39a0f335ae34aca3fc808a223c44ebf251",
+   "head": "38c4ef39a0f335ae34aca3fc808a223c44ebf251",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
