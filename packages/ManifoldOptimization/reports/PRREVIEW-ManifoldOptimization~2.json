@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ManifoldOptimization~2",
+  "head": "7b473d93b8a70d7e081ffb031fb95cbb7041ac49",
+  "pr": 1506,
+  "folder": "ManifoldOptimization",
+  "date": "2026-11-20",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 4,
+  "notes": "Full re-review. Previous findings: 10 of 12 repaired, R08 partly, R06 not followed (left to the human reviewers). Elaboration of Suggested.lean at the pins fails with one error at line 509 (Decidable (g = 0) in tcg); with 'open Classical in' on a copy, sorry is the only warning. README has 45 unfilled locator placeholders. Adversarial pass over every statement with computed values (25 table rows); all Checks and worked examples recomputed and correct. Sources read: B23 (author's page), BAC19, DH19, EAS98 (arXiv), AM12 (HAL); 21 locators checked, 4 corrected; the seeded sample found no targets by heading, so every explicit locator was checked instead. AMS08, ABG07, Ste83 not read. 50 Tau Ceti declarations and 26 cross-roadmap citations resolved; dependency check: 0 problems. No change outside the folder. The automatic checks' two failures are real: the build (R01) and the heading numbering (a format note).",
+  "text": "310e387146e3919b"
+ }
+}
