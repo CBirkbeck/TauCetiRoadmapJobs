@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ModularCurves~37",
+  "head": "271d965c5361fdd960d2c1ea3d12e1a601ad9582",
+  "pr": 2627,
+  "folder": "ModularCurves",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 63 changed lines since 7ee0648. Checked: previous R01, C01-C03 and N01 all repaired (new §3.3 rigidity sentence checked against the pinned IsRigid.of_hom and the §6.2 criterion; the new [Γ₀(N)] rank clause computed at N = 1, 4, 6, 12, p; JacobianChallenge §§C.1-C.2 resolved on main and at its open revision). Sample, where it falls in the changed openings: Mazur 1977 II Table 1 and Cor. 2.3 (Numdam), SGA 3 VIIA Prop. 3.3.1, Loeffler §§3.6 and 3.8 read; KM, Katz Serre-Tate, Deligne-Rapoport not readable. Description counts verified (65 Needs lines, 132 Checks in 48 lists). Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 32 sorry warnings only; one-tactic probe fails on the changed theorem; no change outside the folder.",
+  "text": "a9e6b7f3ab0af8bd"
+ }
+}
