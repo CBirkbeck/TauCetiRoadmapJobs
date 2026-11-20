@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TemperleyLieb~5",
+  "head": "c13610ba1b6951fadf34206cf24820ad5b6b28cd",
+  "pr": 2711,
+  "folder": "TemperleyLieb",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 22 changed lines since 6459425: both earlier small corrections (the square root in §3.6, idempotent completeness in §7.3) are repaired and the new sentences recomputed (cap and cup factors −A and −A⁻¹ at q = −A², the factor (−A)^((n−m)/2), kernels and split idempotents in §7.3 without idempotent completeness); the pull request's description read against the head and the change from main (Check counts, removed, added and kept declarations, pinned names), nothing contradicted; no seeded-sample target falls in a changed passage; automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with five sorry warnings only; two format notes carried (locators for Westbury, Wenzl, Kauffman–Lins; StarModule in §4.1).",
+  "text": "8d1fcc07b33873d9"
+ }
+}
