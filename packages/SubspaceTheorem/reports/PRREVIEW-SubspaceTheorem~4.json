@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SubspaceTheorem~4",
+  "head": "52838c7a98ed3645f930a87a8efc2e95da5eb111",
+  "pr": 2678,
+  "folder": "SubspaceTheorem",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 23 changed lines since c0ff588. Checked: the previous R01 (3.5 factor, recomputed at (3,2,2), (3,2,3), (3,2,1), (5,2,1)), C01 (6.2 old name, against HeightsRationalPointsAndObstructions' open head), C02 (9.1 positivity, against Evertse2010 (2.4)), C03 (two reference entries, E19-ch7 Theorems 7.7 and 7.8 read), N01 (8.8 totalDegree, Mathlib at the pin): all repaired, no new problem. Seeded sample where it falls in the change: 3.5 and 9.2. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 38 sorry warnings only; pull request description agrees with the head. One carried question on 9.5; Mahler 1957, Bombieri-Gubler and Schlickewei 1990 not readable.",
+  "text": "dc73f514fe88a090"
+ }
+}
