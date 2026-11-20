@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DiffusionODESamplerGuarantee"
+
+[[source]]
+id = "BentonDeligiannidisDoucet2024"
+authors = "Joe Benton, George Deligiannidis, Arnaud Doucet"
+title = "Error Bounds for Flow Matching Methods"
+year = 2023
+arxiv = "2305.16860v2"
+locator_scheme = "theorem"
+locator = "Theorem 4"
+url = "https://arxiv.org/abs/2305.16860v2"
+fetched_from = "https://arxiv.org/pdf/2305.16860v2"
+fetched_at = "2026-11-20T19:03:37Z"
+sha256 = "507c441bc918b1a556b4b2a9bbb3634d14ee4dddda4aff868ec37c2016dc14ea"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["2.1"]

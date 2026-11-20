@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiffusionODESamplerGuarantee~1",
+  "head": "caeda0dce168741e7b6671933c71dc38fb494fdd",
+  "pr": 2773,
+  "folder": "DiffusionODESamplerGuarantee",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample 1.1-1.5, 2.1, 3.1, 4.1, 4.2: every statement recomputed, all Check values reproduced numerically; 4 of 4 source locators (Benton-Deligiannidis-Doucet, arXiv:2305.16860v2, Theorems 1-4) read against the text; 25 library declarations opened at the pins; supplier citations resolved at the heads of FlowMatching, ScoreBasedDiffusion, OneStepMethodsForODEs and on main for DenoisingDiffusion and DiracScatteringAndNonlinearFourierTransform; 17 copied definitions identical to the owners'. Automatic checks all passed; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 9 theorems; dependency check 0 problems. One small correction (supplier contract drops an integrability clause), three format notes. One source misprint recorded.",
+  "text": "607e72689e4c7bcd"
+ }
+}
