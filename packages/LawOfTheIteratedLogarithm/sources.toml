@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LawOfTheIteratedLogarithm"
+
+[[source]]
+id = "Durrett2019"
+locator_scheme = "theorem"
+locator = "Theorem 8.5.2"
+url = "https://sites.math.duke.edu/~rtd/PTE/PTE5_011119.pdf"
+fetched_from = "https://sites.math.duke.edu/~rtd/PTE/PTE5_011119.pdf"
+fetched_at = "2026-11-20T09:42:36Z"
+sha256 = "aeac36cbf5e44c53d69fa60a2d29a393e2d0e8c955ee103bd845d925fd910886"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.1"]
+
+[[source]]
+id = "Kolmogorov1929"
+locator_scheme = "page"
+locator = "p. 128"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0101/LOG_0009.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0101/LOG_0009.pdf"
+fetched_at = "2026-11-20T09:51:38Z"
+sha256 = "9ace33ac5f1d11b6d7d739ff2c78f502ac3cde4aeedc5b74365aa7ee310f8e1e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["1.1"]
