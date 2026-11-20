@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LieGroups~8",
+  "head": "244e7821d8c031013ab0cd5c062c931070eb7a90",
+  "pr": 2642,
+  "folder": "RepresentationTheory/LieGroups",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 7,
+  "format_notes": 1,
+  "notes": "Full review of the same head the previous review read (no change in the folder). Every Check and convention witness of the README recomputed; all 15 seeded sample targets treated: 7 read against kirillov2008, knapp2002, heins2025 and neeb2015 (25 locators), 8 rest on uncertified books (Hall, Brocker-tom Dieck, Bump) and are listed as not verifiable with their mathematics recomputed. Suggested.lean elaborates (exit 0, 22 sorry warnings only); one-tactic probe closes none of the 22 theorems; exists_holomorphic_extension is closed by its own universal-property hypothesis at equal universes (small correction). 16 pinned declarations opened, 365 identifier spans resolved at the pins, 38 cited sections of 17 roadmaps resolved on main. Automatic checks all passed; dependency check: 199 roadmaps, 2201 edges, 0 problems; nothing changed outside the folder. Overlap check read LieGroupsPartII, RealSemisimpleLieGroups, ReductiveGroups, LieGroupoidsPoisson, AdoIwasawa (main) and CompactGroupsPartII (open head): single owners throughout. Small corrections: padding statement, two results wrongly called not statable (with a warning that KAK uniqueness holds only modulo N_K(a)), an assumed IwasawaData field, three Kirillov theorem numbers, uncited pinned matrix Iwasawa/KAK theorems, an out-of-date consumer sentence, a section with no source. One format note (two uncited references).",
+  "text": "f24530ffb0e5497b",
+  "carried": {
+   "from": "244e7821d8c031013ab0cd5c062c931070eb7a90",
+   "head": "618e56bb5cdd72d90c3f70e559af6eafda577818",
+   "findings": 7,
+   "lines": 121,
+   "folders": [
+    "RepresentationTheory/LieGroups"
+   ],
+   "corrections": true
+  }
+ }
+}
