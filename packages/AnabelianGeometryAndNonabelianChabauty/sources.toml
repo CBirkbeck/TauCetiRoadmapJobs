@@ -456,13 +456,9 @@ title = "Towards non-abelian p-adic Hodge theory"
 year = 2008
 locator_scheme = "section"
 locator = "§1.1, pp. 1–2"
-url = "https://drive.google.com/file/d/1oKDHVwLEl1xvwZ23l49R6qJrXjjCVNSg/view"
-fetched_from = "https://drive.google.com/file/d/1oKDHVwLEl1xvwZ23l49R6qJrXjjCVNSg/view"
-fetched_at = "2026-11-03T11:24:42Z"
-sha256 = "f5596efd6f7f0c494abe159acf9dfff22cfcc2a927072c6ccd85c073b973d7c3"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-11-03"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["2.12", "2.6", "2.7"]
 
 [[source]]
@@ -767,13 +763,9 @@ title = "Nonabelian level structures, Nielsen equivalence, and Markoff triples"
 year = 2024
 locator_scheme = "theorem"
 locator = "§4.2, the functor R_x and Definitions 4.2.1–4.2.2, pp. 363–364, Proposition 4.2.3"
-url = "https://static1.squarespace.com/static/60d92f4398f4bb6a7b5a99c6/t/65dcfcb3b69a510efa7037dd/1708981427968/Chen+-+Nonabelian+level+structures%2C+Nielsen+equivalence%2C+and+Markoff+triples.pdf"
-fetched_from = "https://static1.squarespace.com/static/60d92f4398f4bb6a7b5a99c6/t/65dcfcb3b69a510efa7037dd/1708981427968/Chen+-+Nonabelian+level+structures%2C+Nielsen+equivalence%2C+and+Markoff+triples.pdf"
-fetched_at = "2026-11-03T11:30:30Z"
-sha256 = "9386db34c31671966440f18bccfefe11bd806aa221010e0e3336fecf8ff920ac"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-11-03"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["1.1", "1.2"]
 
 [[source]]

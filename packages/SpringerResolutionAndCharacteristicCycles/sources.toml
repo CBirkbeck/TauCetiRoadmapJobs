@@ -56,13 +56,9 @@ title = "Lectures on D-modules"
 year = 1998
 locator_scheme = "section"
 locator = "1.1, pp. 4–6; 2.1, pp. 23–24; 4.1, pp. 60–61"
-url = "https://math.berkeley.edu/~nadler/ginzburg.dmodules.pdf"
-fetched_from = "https://math.berkeley.edu/~nadler/ginzburg.dmodules.pdf"
-fetched_at = "2026-10-25T11:38:15Z"
-sha256 = "7534f51335536c322c9c6d25dad991d7cabdb35029b010cf1a2fb179f7ae7aaa"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-10-25"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["Layers 8–9"]
 
 [[source]]
@@ -72,14 +68,9 @@ title = "Notes on Localisation of g-modules"
 year = 2014
 locator_scheme = "theorem"
 locator = "Theorems 1–3, §§3–4, pp. 5–10"
-url = "https://www.ihes.fr/~celliott/Beilinson_Bernstein_talk.pdf"
-fetched_from = "https://www.ihes.fr/~celliott/Beilinson_Bernstein_talk.pdf"
-fetched_at = "2026-10-25T11:58:54Z"
-sha256 = "6ed2f33cb1463a109dc7f7f8b969561c38d370731e3e2b16a7642e42a55acd73"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-10-25"
-version_note = "Title page: Aron Heleodoro, January 12, 2014; hosted on Chris Elliott’s institutional page. Only Theorems 1–2 and the sections/global-generation route are used; parameter conventions are fixed independently."
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["10.1–10.4"]
 
 [[source]]

@@ -432,13 +432,10 @@ venue = "Algebraic & Geometric Topology 8"
 doi = "10.2140/agt.2008.8.2401"
 locator_scheme = "section"
 locator = "Section 2"
-url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Hovey-bpbp1.pdf"
-fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Hovey-bpbp1.pdf"
-fetched_at = "2026-11-08T17:10:33Z"
-sha256 = "96c034f1b899eaccbab0c8332456d3aab4882778c4475aad8a99b18815004eb0"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-08"
+url = "https://doi.org/10.2140/agt.2008.8.2401"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["F3"]
 
 [[source]]

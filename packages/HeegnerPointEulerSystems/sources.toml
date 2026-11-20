@@ -27,13 +27,9 @@ title = "Kolyvagin’s work on modular elliptic curves"
 authors = "Benedict H. Gross"
 locator_scheme = "section"
 locator = "§§1–12, pp.236–256; Proposition 2.1, Proposition 3.7, Lemma 4.3, Proposition 4.7, Proposition 5.4, Proposition 6.2, Proposition 8.2, Proposition 9.1, Proposition 9.3, Claims 10.1 and 10.3"
-url = "https://www.wstein.org/papers/bib/gross-kolyvagins_work_on_modular_elliptic_curves.pdf"
-fetched_from = "https://www.wstein.org/papers/bib/gross-kolyvagins_work_on_modular_elliptic_curves.pdf"
-fetched_at = "2026-10-22T11:35:19Z"
-sha256 = "60b310c58a3494860c5967a03569a7d30033e9074d9d3d9a0d5bc2dfedd46b32"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-10-22"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["0.5 Ring-class tower and finite Galois quotients", "0.6 Dihedral action on the tower", "1.6 Parametrization choice, degree and torsion", "2.2 Inert Heegner norm relation", "2.6 Heegner reduction congruence", "3.2 Good-place Kummer condition", "3.3 Component obstruction at bad places", "3.6 Archimedean Tate correction", "4.3 Vanishing of ring-class torsion invariants", "4.4 Descended Heegner derivative class", "4.5 Explicit cocycle and divisibility criterion", "4.6 Bottom class is the trace Kummer class", "4.9 Parity of the Heegner derivative class", "5.6 Residual Kummer field and detection pairing", "5.7 Heegner class detection by auxiliary primes", "6.2 Opposite Selmer eigenspace vanishing", "6.3 Same Selmer eigenspace generation", "6.4 Gross’s clean mod-p descent", "7.1 Prime divisibility of the non-torsion Heegner point", "7.2 Non-CM open-image application", "7.10 Almost-all primary Sha vanishing", "7.11 Classical full Sha finiteness", "7.13 Classical square-index bound"]
 
 [[source]]
@@ -95,13 +91,9 @@ title = "On the structure of Shafarevich–Tate groups"
 authors = "V. A. Kolyvagin"
 locator_scheme = "section"
 locator = "Theorem A, p.95; introduction, pp.94–97"
-url = "https://www.wstein.org/papers/bib/kolyvagin-structure_of_sha.pdf"
-fetched_from = "https://www.wstein.org/papers/bib/kolyvagin-structure_of_sha.pdf"
-fetched_at = "2026-10-22T11:35:38Z"
-sha256 = "ab9126cb2e0147753ca3f1a354f591b516b84f48c5b0882b9a55e87a60edefc9"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-10-22"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["7.13 Classical square-index bound"]
 
 [[source]]

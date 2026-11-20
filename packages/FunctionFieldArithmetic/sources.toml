@@ -426,13 +426,9 @@ title = "Chevalley groups over function fields and automorphic forms"
 year = 1974
 locator_scheme = "section"
 locator = "1.1–1.2"
-url = "https://campuscore.ariel.ac.il/wp/yuval-flicker/wp-content/uploads/sites/316/2026/03/HarderChevalleyGpsFunFields1974.pdf"
-fetched_from = "https://campuscore.ariel.ac.il/wp/yuval-flicker/wp-content/uploads/sites/316/2026/03/HarderChevalleyGpsFunFields1974.pdf"
-fetched_at = "2026-10-22T17:20:26Z"
-sha256 = "a6e654188e504f21a2caa11888160499e7c86fa9b7f0e4bfd92535835d423bfa"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-10-22"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["6.3–6.5"]
 
 [[source]]
@@ -442,14 +438,9 @@ title = "Schémas en groupes III, SGA 3"
 year = 1970
 locator_scheme = "section"
 locator = "Exposé XXVI, Proposition 2.1"
-url = "https://wstein.org/sga/SGA3/Expo26.pdf"
-fetched_from = "https://wstein.org/sga/SGA3/Expo26.pdf"
-fetched_at = "2026-10-22T17:20:28Z"
-sha256 = "45acf965a0e3ad5995a334a67862f98026535276c42ea15297df89f44d91fd7e"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-10-22"
-version_note = "Gille–Polo re-edition, Exposé XXVI (May 2009); proposition numbering as cited"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["6.3"]
 
 [[source]]

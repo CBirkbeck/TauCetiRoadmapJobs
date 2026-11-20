@@ -387,13 +387,9 @@ title = "L-functions and Tamagawa numbers of motives"
 year = 1990
 locator_scheme = "section"
 locator = "§3.7, equations (3.7.1)–(3.7.3), Proposition 3.8 and Corollary 3.8.4, pp. 353–355; Corollary 3.8.4 and equation (3.8.5), pp. 355–356; §3.7, equations (3.7.1)–(3.7.3), Proposition 3.8 and Corollary 3.8.4, pp. 353–355.; Proposition 3.8 and its proof, pp. 354–359"
-url = "https://virtualmath1.stanford.edu/~conrad/BSDseminar/refs/BKTamagawa.pdf"
-fetched_from = "https://virtualmath1.stanford.edu/~conrad/BSDseminar/refs/BKTamagawa.pdf"
-fetched_at = "2026-10-22T21:28:25Z"
-sha256 = "ec89c6436c7e16580791eddd562c8c04a12442d8a8484f8ac75c5ea8dc04f5e5"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-10-22"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["1.1 The Bloch–Kato local conditions H¹_e, H¹_f, H¹_g", "1.2 Exact sequences and normalization of the supplied exponential", "1.5 Dimensions of the Bloch–Kato subspaces", "1.6 Local duality of the Bloch–Kato conditions"]
 
 [[source]]

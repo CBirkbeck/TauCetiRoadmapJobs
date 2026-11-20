@@ -169,13 +169,9 @@ year = 1979
 venue = "Doklady Akademii Nauk SSSR 247:2"
 locator_scheme = "theorem"
 locator = "Theorem 1"
-url = "https://uva.theopenscholar.com/files/ixqrlw/files/doklady_r_247_8.pdf"
-fetched_from = "https://uva.theopenscholar.com/files/ixqrlw/files/doklady_r_247_8.pdf"
-fetched_at = "2026-11-05T20:03:37Z"
-sha256 = "383739c32a4df0c626923f989acd050ad68f588250f823effcd450cdd72a2b50"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-11-05"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["7.7"]
 
 [[source]]

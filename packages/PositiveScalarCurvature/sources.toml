@@ -56,26 +56,18 @@ cited_for = ["1–6"]
 id = "adams"
 locator_scheme = "theorem"
 locator = "Theorems 5.3(v), 7.2, 11.1, 12.13; Lemma 12.5"
-url = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Adams-JX4.pdf"
-fetched_from = "https://www.sas.rochester.edu/mth/sites/doug-ravenel/otherpapers/Adams-JX4.pdf"
-fetched_at = "2026-11-03T08:29:10Z"
-sha256 = "a54d081e14b56cd89f050ac061ef6850c44ba9afc8e9431c9e666b00d1f9f1f4"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-03"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["6"]
 
 [[source]]
 id = "hitchin"
 locator_scheme = "theorem"
 locator = "sections 4.1–4.2, pp. 37–44"
-url = "https://users.math.msu.edu/users/parker/GT/Harmonic%20Spinors.pdf"
-fetched_from = "https://users.math.msu.edu/users/parker/GT/Harmonic%20Spinors.pdf"
-fetched_at = "2026-11-03T08:29:13Z"
-sha256 = "5dd6d10a89a81c419208f75c86224bfe71fef2d704a51f6b0fcd3e8fe7dea761"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-03"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["5–6"]
 
 [[source]]
@@ -95,13 +87,9 @@ cited_for = ["6"]
 id = "milnor"
 locator_scheme = "theorem"
 locator = "Theorems 5.4, 6.6, 7.6, 7.8 and 8.1"
-url = "https://www.math.auckland.ac.nz/~hekmati/Books/Milnor2.pdf"
-fetched_from = "https://www.math.auckland.ac.nz/~hekmati/Books/Milnor2.pdf"
-fetched_at = "2026-11-03T08:31:47Z"
-sha256 = "ad179436219871b2cfa8d6026525346ef6c60680e8e761a1b30a730ebd710291"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-03"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["4"]
 
 [[source]]

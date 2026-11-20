@@ -64,13 +64,9 @@ cited_for = ["4.5"]
 id = "milnor1959"
 locator_scheme = "theorem"
 locator = "Theorems 3 and 4"
-url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/milnorcw.pdf"
-fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/milnorcw.pdf"
-fetched_at = "2026-11-03T23:26:12Z"
-sha256 = "8fce3a88dfe5d1dcafa9e6f33ceb1b6fa36468270733e33487e3fd8bd1ae671b"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-03"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["8.11a"]
 
 [[source]]

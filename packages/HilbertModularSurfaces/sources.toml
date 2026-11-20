@@ -104,13 +104,9 @@ title = "Hilbert modular surfaces"
 year = 1973
 locator_scheme = "section"
 locator = "§§2.4–2.6"
-url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/hirzhilb.pdf"
-fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/hirzhilb.pdf"
-fetched_at = "2026-11-03T07:57:53Z"
-sha256 = "53efdc1a5a5bf52f1abd2e21a0859379ed6e1d263dc6043ba573ed8839185590"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-03"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["References"]
 
 [[source]]

@@ -317,26 +317,18 @@ cited_for = ["Layer 6 item 5"]
 id = "hutchings-morse-notes"
 locator_scheme = "section"
 locator = "7.5"
-url = "https://web.ma.utexas.edu/users/dafr/M392C-2018-MorseTheory/Readings/Hutchings.pdf"
-fetched_from = "https://web.ma.utexas.edu/users/dafr/M392C-2018-MorseTheory/Readings/Hutchings.pdf"
-fetched_at = "2026-11-05T02:18:38Z"
-sha256 = "3db44993c56d4dfac48aa5f3d3180e61f2c4900901229682e31b68f3020642d1"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-05"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["Layer 7.T"]
 
 [[source]]
 id = "salamon-lectures"
 locator_scheme = "section"
 locator = "3.1"
-url = "https://www.math.utoronto.ca/mgualt/Morse%20Theory/Salamon%20floer.pdf"
-fetched_from = "https://www.math.utoronto.ca/mgualt/Morse%20Theory/Salamon%20floer.pdf"
-fetched_at = "2026-11-05T02:22:00Z"
-sha256 = "91e22c2aebec9a8fc1424d0dc7f11320c38b125750c912a74876a3cb575131fd"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-05"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["Layer 7.C"]
 
 [[source]]

@@ -24,13 +24,9 @@ title = "Logarithmic structures of Fontaine–Illusie"
 year = 1989
 locator_scheme = "theorem"
 locator = "Theorem 6.2 and Theorem 6.4, pp. 218–219"
-url = "https://math.uchicago.edu/~drinfeld/p-adic_periods/Kato_log-structures.pdf"
-fetched_from = "https://math.uchicago.edu/~drinfeld/p-adic_periods/Kato_log-structures.pdf"
-fetched_at = "2026-11-15T02:38:02Z"
-sha256 = "e68947e38accef5a9f43a5eba47ee4c8ae9cbc660cd0fb1ee8fcbcd72e3ba595"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-15"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["CR.5.3–CR.5.4"]
 
 [[source]]

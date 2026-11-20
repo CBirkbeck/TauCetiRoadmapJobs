@@ -218,13 +218,9 @@ title = "Characteristic Classes"
 year = 1974
 locator_scheme = "theorem"
 locator = "Theorem 11.14, pp.132–133; Corollary 11.12, p.130"
-url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/milnstas.pdf"
-fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/milnstas.pdf"
-fetched_at = "2026-10-25T04:15:44Z"
-sha256 = "e5a712237dd7959acfbac914fb51b8395f656a1edee86b77d72b2cc8595b3868"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-10-25"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["12.3"]
 
 [[source]]

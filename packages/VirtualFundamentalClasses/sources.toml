@@ -306,13 +306,10 @@ venue = "J. reine angew. Math. 603, 55–112"
 doi = "10.1515/CRELLE.2007.012"
 locator_scheme = "theorem"
 locator = "Theorem 8.1"
-url = "https://drive.usercontent.google.com/download?id=1lFjebGL5Wmj7SXL8uvzqrTmRzrdynfuD&export=download"
-fetched_from = "https://drive.usercontent.google.com/download?id=1lFjebGL5Wmj7SXL8uvzqrTmRzrdynfuD&export=download"
-fetched_at = "2026-11-05T20:03:16Z"
-sha256 = "e2e8b8aa042defc6144b9b9989f934d6c5cb4cac5e1e9a6122ceba8f3abe98e2"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-11-05"
+url = "https://doi.org/10.1515/CRELLE.2007.012"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["8.2–8.3 the full cotangent complex of a morphism of algebraic stacks, functoriality and flat base change"]
 
 [[source]]

@@ -24,13 +24,9 @@ title = "Lectures on K-Theory and Operator Algebras"
 year = 2017
 locator_scheme = "theorem"
 locator = "Lemma 19.1"
-url = "https://bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/1/4020/files/2017/12/KTheoryNotes-1uvuwyz.pdf"
-fetched_from = "https://bpb-us-e1.wpmucdn.com/sites.psu.edu/dist/1/4020/files/2017/12/KTheoryNotes-1uvuwyz.pdf"
-fetched_at = "2026-11-07T11:59:34Z"
-sha256 = "82deb304bd1e5600579e73f36ab31a87dbfc2ccd8c6e695cb6034d3668f2d97f"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-07"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["7.7", "K2"]
 
 [[source]]

@@ -132,13 +132,9 @@ year = 1972
 venue = "Lecture Notes in Math. 269, 270, 305; retyped edition"
 locator_scheme = "theorem"
 locator = "Exposé XVI, Théorème 4.1"
-url = "https://www.normalesup.org/~forgogozo/SGA4/tomes/SGA4.pdf"
-fetched_from = "https://www.normalesup.org/~forgogozo/SGA4/tomes/SGA4.pdf"
-fetched_at = "2026-11-07T12:14:46Z"
-sha256 = "872f57995f67e6dc1dfe29f043d31fa145f42389143b692d1c9d7241e3165b46"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-11-07"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["C6.3", "C6.4", "C6.5"]
 
 [[source]]

@@ -93,19 +93,14 @@ cited_for = ["Layers 0–6"]
 
 [[source]]
 id = "bfh-1990"
-version_note = "Scanned published version; printed pp.543–544 are PDF pages 2–3; OCR labels part (ii) as a second (i), checked visually; final proof §9 pp.614–617."
 authors = "Daniel Bump, Solomon Friedberg and Jeffrey Hoffstein"
 title = "Nonvanishing theorems for L-functions of modular forms and their derivatives"
 year = 1990
 locator_scheme = "section"
 locator = "Introduction, unnumbered Theorem (i)–(ii), pp.543–544; §9 pp.614–617; scan checked against OCR"
-url = "https://wstein.org/papers/bib/bump-friedberg-hoffstein-nonvanishing.pdf"
-fetched_from = "https://wstein.org/papers/bib/bump-friedberg-hoffstein-nonvanishing.pdf"
-fetched_at = "2026-10-25T14:45:52Z"
-sha256 = "d50ad2f11c992591de90f2cea59489ac436cce455e140e6eebf5053f49819f2c"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-10-25"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["Layers 0–6"]
 
 [[source]]

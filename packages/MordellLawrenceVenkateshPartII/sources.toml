@@ -26,16 +26,12 @@ title = "Diophantine problems and p-adic period mappings"
 year = 2020
 doi = "10.1007/s00222-020-00966-7"
 arxiv = "1807.02721v3"
-version_note = "Locators use the printed pages 893-999 of Invent. Math. 221 (2020); the cached publisher-formatted copy has page marker k on printed page 892 + k. Numbering agrees with arXiv v3 (fetched 2026-10-26, sha256 e3013516c1123635f0373cd5b623eafa3d816f043ee54760dec724d329bc6b9b), whose first numerical inequalities are stricter than the published ones."
 locator_scheme = "theorem"
 locator = "Theorem 10.1"
-url = "https://bimsa.net/doc/publication/2578.pdf"
-fetched_from = "https://bimsa.net/doc/publication/2578.pdf"
-fetched_at = "2026-10-26T17:59:54Z"
-sha256 = "588e450aa571e2c81686940cda08c63e094c39176e0f956bd94d4306c8db43bd"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-10-26"
+url = "https://doi.org/10.1007/s00222-020-00966-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["2.3", "2.7", "3.3-3.4", "5.1-5.3", "5.9-5.11", "7.1-7.8", "8.2-8.9", "9.1-9.3", "Source corrections"]
 
 [[source]]

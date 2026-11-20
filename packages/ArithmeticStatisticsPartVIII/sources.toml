@@ -132,13 +132,9 @@ cited_for = ["5.12"]
 id = "ref-52"
 locator_scheme = "section"
 locator = "Section 9"
-url = "https://web.math.princeton.edu/~jonhanke/Web-02/Mass-Formula-of-Shimura/shimura-mass.pdf"
-fetched_from = "https://web.math.princeton.edu/~jonhanke/Web-02/Mass-Formula-of-Shimura/shimura-mass.pdf"
-fetched_at = "2026-11-03T08:50:07Z"
-sha256 = "c33ff4ff8d334a6d14b45320e831650ce3e8878e79e57c8a748684be1fe13285"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-11-03"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["GN-d"]
 
 [[source]]

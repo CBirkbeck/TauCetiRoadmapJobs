@@ -929,13 +929,9 @@ title = "Hilbert’s tenth problem is unsolvable"
 year = "1973"
 locator_scheme = "section"
 locator = "Theorem 8.1, p.264"
-url = "https://www.math.umd.edu/~laskow/Pubs/713/Diophantine.pdf"
-fetched_from = "https://www.math.umd.edu/~laskow/Pubs/713/Diophantine.pdf"
-fetched_at = "2026-11-13T15:41:41Z"
-sha256 = "f4079091f2f6c3d6f1bd863df0f38f28c90b370bc946e5068c162ae401c62d1b"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-13"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["4.15"]
 
 [[source]]

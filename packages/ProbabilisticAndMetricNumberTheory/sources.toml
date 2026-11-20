@@ -200,14 +200,9 @@ title = "Ergodic Theory with Applications to Continued Fractions"
 year = 2020
 locator_scheme = "section"
 locator = "Theorem 21, p.46; Lesson 10 Theorems 25,27,29 and Exercise 2.20, physical p.55 (printed Lesson 10, p.52); continued fractions and logarithmic limits"
-url = "https://uncg.edu/~cdsmyth/UNCG_Ergodic_Theory_Summer_School_2020_Final_Lecture_Notes.pdf"
-fetched_from = "https://uncg.edu/~cdsmyth/UNCG_Ergodic_Theory_Summer_School_2020_Final_Lecture_Notes.pdf"
-fetched_at = "2026-10-22T09:31:49Z"
-sha256 = "74a84b7ba741728055e9cc0da7b3c2b14e99b645ea79ac2f3b72d98034a9cf1f"
-licence_class = "author-page"
-status = "certified"
-accessed = "2026-10-22"
-version_note = "Version linked in README bibliography; printed locators unless stated otherwise."
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["README bibliography Smyth2020 and its explicit section locators"]
 
 [[source]]

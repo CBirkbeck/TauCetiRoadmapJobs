@@ -62,13 +62,10 @@ venue = "J. K-Theory 5 (2010), 105-165"
 doi = "10.1017/is009010017jkt075"
 locator_scheme = "page"
 locator = "pp.109-110, 113, 123-124"
-url = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/schlicht.pdf"
-fetched_from = "https://webhomes.maths.ed.ac.uk/~v1ranick/papers/schlicht.pdf"
-fetched_at = "2026-11-07T13:20:46Z"
-sha256 = "fdcf61c0e9e41550b7aaf8d34f2e9deb3276b0a6f8e59f9fb3262018b7052f0e"
-licence_class = "institutional"
-status = "certified"
-accessed = "2026-11-07"
+url = "https://doi.org/10.1017/is009010017jkt075"
+licence_class = "none"
+status = "uncertified"
+version_note = "cited by its locator; no text is held"
 cited_for = ["6.2-6.7"]
 
 [[source]]
