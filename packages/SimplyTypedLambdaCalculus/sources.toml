@@ -1,0 +1,30 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SimplyTypedLambdaCalculus"
+
+[[source]]
+id = "Selinger"
+arxiv = "0804.3434v2"
+locator_scheme = "section"
+locator = "§4.4"
+url = "https://arxiv.org/abs/0804.3434v2"
+fetched_from = "https://arxiv.org/pdf/0804.3434v2"
+fetched_at = "2026-11-20T14:36:15Z"
+sha256 = "9c4ad820d6a48e7d926996f04100830b86f4131bca0cab4bf1d6349a2182481f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["2.2"]
+
+[[source]]
+id = "GirardLafontTaylor"
+locator_scheme = "section"
+locator = "§6.2"
+url = "https://www.paultaylor.eu/stable/prot.pdf"
+fetched_from = "https://www.paultaylor.eu/stable/prot.pdf"
+fetched_at = "2026-11-20T14:36:19Z"
+sha256 = "909424159082d3f31d190c20b1a9b4dd39355b527bc1c680fb0aa763913f56dc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["5.1"]
