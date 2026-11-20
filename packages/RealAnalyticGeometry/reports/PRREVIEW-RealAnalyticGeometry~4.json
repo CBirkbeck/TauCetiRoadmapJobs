@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RealAnalyticGeometry~4",
+  "head": "d0c01bfff988fea34d10a8def48c2545db87e975",
+  "pr": 2634,
+  "folder": "RealAnalyticGeometry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review of the unchanged head. Previous review had no finding; its two small corrections are carried (C01 Grauert locators, C02 input of 5.3). New: C03 (section 4 of Lojasiewicz has five steps), C04 (weighted theorem narrowed to positive definite curvature against Demailly VIII 4.5), N01 (wording of a Check in 2.1). D01 stands. Seeded sample of 15 targets and all 30 Checks recomputed; 27 locators read in Lojasiewicz1964 (text and page images), WhitneyBruhat1959, DemaillyAgbook, Forstneric2018; Grauert1958, Hormander1965, Hormander1990 uncertified and not readable. 36 library declarations located at the pins, nine read in full; cross-roadmap citations resolved on main; depcheck 0 problems; automatic checks all pass; Suggested.lean elaborates with eight sorry warnings only; one-tactic probe closes none of the eight theorems; no binder lost (no variable block). Seven source issues recorded for Lojasiewicz1964.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C05: ComplexComparisonPartII's link (README line 245 on main, line 4744 at the head of its open revision) should point at `../RealAnalyticGeometry/README.md#31-weighted-estimates-stein-criteria-and-ap",
+    "where": "ComplexComparisonPartII README's link to RealAnalyticGeometry §3.1 anchor",
+    "raised": "PRREVIEW-RealAnalyticGeometry~1"
+   }
+  ],
+  "text": "1de1679bd66c0be6",
+  "carried": {
+   "from": "d0c01bfff988fea34d10a8def48c2545db87e975",
+   "head": "0ba0889852619de47f3e78f4dfd58fcf02f37537",
+   "findings": 4,
+   "lines": 48,
+   "folders": [
+    "RealAnalyticGeometry"
+   ],
+   "corrections": true
+  }
+ }
+}
