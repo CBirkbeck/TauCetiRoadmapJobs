@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OrthogonalGeometry~2",
+  "head": "fbb2cb59e481d3a7902fa828c43ba38e28f77d48",
+  "pr": 2615,
+  "folder": "OperatorTheory/OrthogonalGeometry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 129 changed lines since dd6c846. Previous R01, C01 and C02 repaired. Sample checked: §1.1 by computation; §2.1 at the pinned Tau Ceti (Orthonormal/Family.lean 40, 59, 69), with the sanity check familyIsometry = synthesisMapIsometry elaborated on a scratch copy (closes by ext; simp) and the name-clash premise verified (SquareRoot.lean 68, PolarDecomposition Suggested.lean 91, Majorization and PrincipalAngles imports); §3.1 routes elaborated (criterion one term, Parseval three lines). Chien-Waldron Thm 2.2(1) and (1.1) read at ChienWaldron2016 lines 128-137 and 44-46. Automatic checks all passed (rerun at this head: every scanner 0); dependency check 0 problems; Suggested.lean elaborates with no warnings. PR description consistent with the head. One small correction: Convention 8 out of date.",
+  "text": "bfb592fc390bdfe9"
+ }
+}
