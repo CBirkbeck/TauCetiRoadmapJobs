@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StableReduction~6",
+  "head": "efe18191d8cbef6dc8f3739228f8772df91bfc61",
+  "pr": 2669,
+  "folder": "StableReduction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "Full review of the unchanged head efe1819. Read the whole README (Layers 0-11, scope, contracts) and Suggested.lean. Seeded sample (1.2, 2.4, 3.1, 3.6, 3.8, 3.9, 3.10, 7.1, 7.4, 8.5, 9.1, 9.2, 9.5, 11.3, 11.7) verified; 60 source locators read against the text (Stacks Ch. 27, 31, 48, 53, 54, 55, 109; Knudsen II; Behrend-Manin; Fulton-Pandharipande; Deligne-Mumford), all agreeing. Ten Tau Ceti declarations opened at the pin; cross-roadmap citations to JacobianChallenge, NeronModelsAndSemistableAbelianVarieties, SchemeAndStackFoundations, EllipticCurves and AlgebraicVectorBundles resolved on main. Automatic checks all passed when rerun; dependency check 0 problems, no UPWARD or CYCLE; elaboration gives three sorry warnings only; one-tactic probe closes none of the three theorems. Previous review (same head) had no finding; its two small corrections stand as C03 and C04. New small corrections: hypotheses left to context in 2.2 and 5.2 (C01), the unstated criterion of 11.7 (C02). D01 stands. For the human reviewers: licence class of the Knudsen II copy; relative Proj statements still planned in SchemeAndStackFoundations 0.3 on main. Not opened: Liu, Artin-Winters (paywalled), SGA 1.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "The review's second item for the human reviewers (it has no F, C or N number): NeronModelsAndSemistableAbelianVarieties on main (§6.14, README lines 4524–4531, and the consumer entry at line 4600) cit",
+    "where": "NeronModelsAndSemistableAbelianVarieties README, §6.14 and its StableReduction consumer entry",
+    "raised": "PRREVIEW-StableReduction~4"
+   }
+  ],
+  "text": "641e176d74d02b41",
+  "carried": {
+   "from": "efe18191d8cbef6dc8f3739228f8772df91bfc61",
+   "head": "4b23caab7a19b2913a369ee396d8f208f51e9aae",
+   "findings": 4,
+   "lines": 53,
+   "folders": [
+    "StableReduction"
+   ],
+   "corrections": true
+  }
+ }
+}
