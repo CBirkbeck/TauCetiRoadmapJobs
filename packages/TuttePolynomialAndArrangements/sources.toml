@@ -1,0 +1,38 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TuttePolynomialAndArrangements"
+
+[[source]]
+id = "Ardila2015"
+authors = "Federico Ardila"
+title = "Algebraic and geometric methods in enumerative combinatorics"
+year = 2014
+arxiv = "1409.2562v2"
+locator_scheme = "theorem"
+locator = "Theorem 7.6.1"
+url = "https://arxiv.org/abs/1409.2562v2"
+fetched_from = "https://arxiv.org/pdf/1409.2562v2"
+fetched_at = "2026-11-20T14:39:13Z"
+sha256 = "87686343429062f10fbcc7af38070238f82c54a076857c7a171c22e036b1b0e8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["1.2"]
+
+[[source]]
+id = "EllisMonaghanMerino2008"
+authors = "Joanna Ellis-Monaghan, Criel Merino"
+title = "Graph polynomials and their applications I: The Tutte polynomial"
+year = 2008
+arxiv = "0803.3079v2"
+locator_scheme = "theorem"
+locator = "Theorem 14"
+url = "https://arxiv.org/abs/0803.3079v2"
+fetched_from = "https://arxiv.org/pdf/0803.3079v2"
+fetched_at = "2026-11-20T14:39:19Z"
+sha256 = "ca41e6f829026eb272980e0bf2fdbbbbf433429961876b4df7abfaf90786a820"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v2"
+cited_for = ["4.5"]
