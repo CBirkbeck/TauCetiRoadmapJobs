@@ -1,0 +1,40 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KhovanovHomology~5",
+  "head": "ff26ea1eeb29290eeeadd0d58587cda3bf1d35f3",
+  "pr": 2600,
+  "folder": "KhovanovHomology",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "incremental re-review of 40 changed lines since e66cf27. Checked: the three small corrections of the previous review are repaired (the §5.9 Check recomputed over Z, F_2, Z/4 and the zero ring; §6.5 against GeometricTopology §4.8.1 on main and TauCeti.PDCode.card_circlesAt_eq_two_iff at the pin; the overview and the Suggested.lean docstring against the pinned Euler-characteristic theorem and the empty diagram). The two anchors added before Layers 3 and 8 match three of the four links of Foams and DiagrammaticCoherence on main; the k2 anchor is missing (C01) and the description is out of date on anchors (C02). D01 stands; D02 raised as C01. The seeded sample falls in no changed passage. Automatic checks all passed on a rerun; depcheck 0 problems; lake env lean on Suggested.lean gives five sorry warnings only; no change outside the folder.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The carrier of link cobordisms is owned by §7.1 here and by GeometricTopology §6.5 in the open revision #1797, with opposite boundary orientations",
+    "where": "GeometricTopology revision #1797, §6.5 and its KhovanovHomology consumer line",
+    "raised": "PRREVIEW-KhovanovHomology~1"
+   },
+   {
+    "id": "D02",
+    "severity": "",
+    "title": "C01: in Foams, the reference definition `[khovanov]: …/KhovanovHomology/README.md#k2-the-rank-two-frobenius-object-and-circle-tensors` (Foams on main line 2887, used in its supplier table at line 291;",
+    "where": "Foams README: point the `[khovanov]` reference link at the Layer 2 heading",
+    "raised": "PRREVIEW-KhovanovHomology~5"
+   }
+  ],
+  "text": "33ba71ede0df5831",
+  "carried": {
+   "from": "ff26ea1eeb29290eeeadd0d58587cda3bf1d35f3",
+   "head": "906bf9ac9e2e946fcaf62f5ba724c2022f26f3d9",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
