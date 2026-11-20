@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RealAnalyticGeometry~1",
+  "head": "4f3110d734479e53bfd3c1d71982fd014a43481e",
+  "pr": 2634,
+  "folder": "RealAnalyticGeometry",
+  "date": "2026-11-20",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 7,
+  "format_notes": 1,
+  "notes": "Seeded sample of 15 targets checked: Łojasiewicz 1964 (Numdam; Theorems 1-4 pp. 463-464, Lemmas 1-15, §1.V-VI, §4 steps I-IV read on the page images), Whitney-Bruhat 1959 §1 Proposition 1 and remark (GDZ), Forstnerič §2.1 Theorem 2.1 and Proposition 2.2 (arXiv), Demailly VIII Theorems 3.2 and 4.5 (author page). Grauert 1958 and Hörmander 1965 are paywalled; the numbered results of §3.2 name no text. Automatic checks all passed; dependency check: 0 problems. Suggested.lean elaborates with sorry warnings only; #check of every declaration matches the README; one-tactic probes (simp, infer_instance) close nothing. Written statements show that Theorem 2 and the Stein criterion are statable at the pins.",
+  "text": "2d4a417542a5e3a6",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C05: ComplexComparisonPartII's link (README line 245 on main, line 4744 at the head of its open revision) should point at `../RealAnalyticGeometry/README.md#31-weighted-estimates-stein-criteria-and-ap",
+    "where": "ComplexComparisonPartII README's link to RealAnalyticGeometry §3.1 anchor",
+    "raised": "PRREVIEW-RealAnalyticGeometry~1"
+   }
+  ]
+ }
+}
