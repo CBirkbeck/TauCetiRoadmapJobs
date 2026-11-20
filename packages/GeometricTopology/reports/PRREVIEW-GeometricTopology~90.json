@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GeometricTopology~90",
+  "head": "a8416b397fb14b77da23aa87f49f0d6dfe42b2a5",
+  "pr": 1797,
+  "folder": "GeometricTopology",
+  "date": "2026-11-19",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample of 15 sections recomputed by hand (1.1, 2.3, 3.2, 4.3.4, 4.4.1, 4.4.7, 4.6.1, 4.7.7, 4.10.3, 4.10.4, 4.13, 4.14, 5.2, 8.5.2, 11.5) plus the new text of 6.5 and 10.3-10.5; 19 source locators read in the cached or fetched texts; 14 pinned declarations opened; all 34 headline statements elaborated (34 sorry warnings only), #check on each, one-tactic probe closes none. Automatic checks all passed; dependency check 0 problems, but it does not report cycles between roadmaps both on main. Findings: two-way supply with AlgebraicTopology introduced by this revision (R01); Layer 10.3 duplicates CharacteristicClasses C2 and misreports it (R02). Previous review had no finding.",
+  "text": "5076c9df5bba1374"
+ }
+}
