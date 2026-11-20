@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TemperleyLieb~4",
+  "head": "6459425fb38fab0ddc29d25e6a78773526a9c4b1",
+  "pr": 2711,
+  "folder": "TemperleyLieb",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review of an unchanged head; the previous review had no findings, and its small correction and format note are carried over. Seeded sample (2.1, 2.5, 4.2, 4.4, 4.6, 4.7, 5.1, 5.2, 5.3, 5.4, 5.6, 6.1, 6.8, 7.3, 7.4) verified: 34 locators reread in chen-tl-categories, ridout-saint-aubin, goodman-wenzl-ideals, morrison-jw-formula and tingley-minus-sign; Graham-Lehrer, Westbury, Wenzl and Kauffman-Lins not readable. Adversarial table of 39 rows with computed values, including the delta = 0 case of the tensor-ideal theorem and the pinned rotation, reflection, Markov-trace and cellular-basis conventions. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with five sorry warnings only; one-tactic probes fail on all five; pull-request text agrees with the head. Overlap check and source-independence comparison done; one licence/scope fact for the human reviewers (the most-cited source is an honours thesis on arXiv).",
+  "text": "a58a3202f6986e83",
+  "carried": {
+   "from": "6459425fb38fab0ddc29d25e6a78773526a9c4b1",
+   "head": "c13610ba1b6951fadf34206cf24820ad5b6b28cd",
+   "findings": 2,
+   "lines": 22,
+   "folders": [
+    "TemperleyLieb"
+   ],
+   "corrections": true
+  }
+ }
+}
