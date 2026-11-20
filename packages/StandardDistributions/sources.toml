@@ -1,0 +1,36 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "StandardDistributions"
+
+[[source]]
+id = "Nolan2020"
+authors = "John P. Nolan"
+title = "Univariate Stable Distributions: Models for Heavy Tailed Data"
+year = 2020
+doi = "10.1007/978-3-030-52915-4"
+locator_scheme = "theorem"
+locator = "Definition 1.7; (1.7); Lemma 1.10; Theorem 1.12 (pp. 14-15); p. 15 and Problem 1.11 (p. 23); Proposition 1.13 and p. 16"
+url = "https://edspace.american.edu/jpnolan/wp-content/uploads/sites/1720/2020/09/Chap1.pdf"
+fetched_from = "https://edspace.american.edu/jpnolan/wp-content/uploads/sites/1720/2020/09/Chap1.pdf"
+fetched_at = "2026-11-20T08:39:18Z"
+sha256 = "14363302967080699492aca87692b98f21b13f696968d7fe3b6d5889482bad01"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "Locators follow the author's text of chapter 1 at the URL (processed 30 January 2018); its numbering was not compared with the published 2020 book."
+cited_for = ["15.1", "15.4", "15.5"]
+
+[[source]]
+id = "RNoncentralBetaDoc"
+authors = "R Core Team"
+title = "The Beta Distribution (R documentation, stats package, noncentral Beta)"
+year = 2026
+locator_scheme = "section"
+locator = "Details"
+url = "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Beta.html"
+fetched_from = "https://stat.ethz.ch/R-manual/R-devel/library/stats/html/Beta.html"
+fetched_at = "2026-11-20T08:40:48Z"
+sha256 = "acc9f719fee2e239847566e1120a4c9ccb0cb885619649d96cf91dce8219b174"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["10.17"]
