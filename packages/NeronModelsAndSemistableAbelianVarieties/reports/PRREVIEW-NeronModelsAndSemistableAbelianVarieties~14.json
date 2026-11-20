@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NeronModelsAndSemistableAbelianVarieties~14",
+  "head": "ac35abe69359608405c967184d75a9e87322a018",
+  "pr": 2708,
+  "folder": "NeronModelsAndSemistableAbelianVarieties",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review of the revision (README only, 131+/35-). New section 3.9a checked against Deligne-Mumford (Thm 1.13, Lemmas 1.14-1.17, Prop 2.3, Thm 2.4 and proof, Numdam text) and Stacks 0CEK and 04XV; both Checks and the smooth-case faithfulness argument recomputed. Seeded sample of 15 targets: 44 locators read in 11 legal sources (Conrad L13 notes, Liu-Tong, BGW, Raynaud 1994, Serre 1970, Brumer-Kramer, Ribet-Stein, Fontaine VIII, Yuan-Zhang, Stacks, DM). BLR, SGA 7 IX and Faltings-Chai not verifiable (paywalled or uncertified). Automatic checks: all passed, none set aside. Depcheck: 0 problems. lake env lean: four sorry warnings only; #check probe of all five declarations matches the README. Corrections: C01 Conrad pp. 9-10 locator in 5.2 and GoodIsogeny docstring; C02 description omits perfect residue field. One question: perfectness unused in the converse route.",
+  "text": "d59a8ed2829ae042"
+ }
+}
