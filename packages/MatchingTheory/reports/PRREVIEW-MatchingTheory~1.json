@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MatchingTheory~1",
+  "head": "e039b8a07375c4b3c03703fa680c52d997f51f7f",
+  "pr": 2706,
+  "folder": "MatchingTheory",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review. All 13 sampled targets recomputed on degenerate and small graphs (adversarial table in the report); proof routes of 1.2, 3.2, 4.2, 4.3, 4.4, 5.1, 5.2 checked. Source locators: 5 read in Goemans' Lecture 3, all agree; Schrijver's notes and Diestel's Chapter 2 could not be read from a legal place (listed under Not verifiable, texts requested), so their locators and the arrangement comparison are unchecked and flagged to the human reviewers. 20 Mathlib declarations opened at the pin; no duplicate at the pins or in open roadmaps; GraphConnectivityAndFlows 6.7 resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 9 theorems.",
+  "text": "3e5ab2fa8f0bf7b3"
+ }
+}
