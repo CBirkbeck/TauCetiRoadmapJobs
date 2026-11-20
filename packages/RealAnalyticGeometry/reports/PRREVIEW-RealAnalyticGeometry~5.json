@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RealAnalyticGeometry~5",
+  "head": "0ba0889852619de47f3e78f4dfd58fcf02f37537",
+  "pr": 2634,
+  "folder": "RealAnalyticGeometry",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 48 changed lines since d0c01bf. Checked: the four small corrections and one format note of the previous review (C02, C03, C04 repaired; C01 partly, carried; N01 carried); Demailly VIII Theorem 4.5 p. 371, Lojasiewicz p. 463 and step V p. 473 read at their locators; the three Tau Ceti declarations added to section 5.3 opened at the pin; the sampled target 5.3 where the diff touches it; the pull request description against the head (no contradiction); automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry as its only warning; nothing changed outside the folder. Grauert 1958 is uncertified, so its new locator (Theorem 3, p. 470) is not verified. D01 stands.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C05: ComplexComparisonPartII's link (README line 245 on main, line 4744 at the head of its open revision) should point at `../RealAnalyticGeometry/README.md#31-weighted-estimates-stein-criteria-and-ap",
+    "where": "ComplexComparisonPartII README's link to RealAnalyticGeometry §3.1 anchor",
+    "raised": "PRREVIEW-RealAnalyticGeometry~1"
+   }
+  ],
+  "text": "dc55c1fb8d706c97",
+  "carried": {
+   "from": "0ba0889852619de47f3e78f4dfd58fcf02f37537",
+   "head": "a285b893c204f62c9b0a0308219b70bea2f3a528",
+   "findings": 1,
+   "lines": 13,
+   "folders": [
+    "RealAnalyticGeometry"
+   ],
+   "corrections": true
+  }
+ }
+}
