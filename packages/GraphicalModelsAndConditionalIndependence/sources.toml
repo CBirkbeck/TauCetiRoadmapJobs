@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GraphicalModelsAndConditionalIndependence"
+
+[[source]]
+id = "Evans2018"
+locator_scheme = "theorem"
+locator = "Theorem 4.11"
+url = "https://www.stats.ox.ac.uk/~evans/gms/lecturenotes_18.pdf"
+fetched_from = "https://www.stats.ox.ac.uk/~evans/gms/lecturenotes_18.pdf"
+fetched_at = "2026-11-20T06:47:52Z"
+sha256 = "f0266fc6bd76e74b88b6eac3bb8fbd0971327e1cdce193fa0e3ae9d998fdae3a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.1"]

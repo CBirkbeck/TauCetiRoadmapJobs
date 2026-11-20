@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GraphicalModelsAndConditionalIndependence~1",
+  "head": "4d18205141d31c21b58dd0583f1801862208d119",
+  "pr": 2660,
+  "folder": "GraphicalModelsAndConditionalIndependence",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review. Sample: all 15 targets 1.1-4.4; all 26 Evans2018 locators read at their pages. Every statement recomputed in exact arithmetic on the literal Lean definitions (chain rule and intersection with overlapping sets, agreement with the vector form, undirected implications, Hammersley-Clifford on positive laws, Moussouris, d-separation vs moral separation on all DAGs with at most 4 vertices, directed TFAE with zeros); no failure. 19 library declarations opened at the pins. Elaboration: sorry only; one-tactic probe closes nothing. Dependency check: 0 problems. Automatic checks all passed. Lauritzen 1996, Moussouris 1974, Pearl-Paz 1987 not readable (no locators given). Side effect: the sources service, run as the brief gives it, recorded Evans2018 in packages/GraphicalModelsAndConditionalIndependence/sources.toml.",
+  "text": "ce47f7f76d8679f7"
+ }
+}
