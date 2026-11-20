@@ -69,3 +69,56 @@ status = "certified"
 accessed = "2026-11-20"
 version_note = "arXiv v1"
 cited_for = ["3.2"]
+
+[[source]]
+id = "Verona1980"
+authors = "Andrei Verona"
+title = "Triangulation of stratified fibre bundles"
+year = 1980
+venue = "Manuscripta Mathematica 30"
+doi = "10.1007/BF01301261"
+locator_scheme = "theorem"
+locator = "Definition 3.1, Lemma 3.4, Theorem 3.5, Corollaries 3.7–3.8 (pp. 437–443); p. 426"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN365956996_0030/LOG_0028.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN365956996_0030/LOG_0028.pdf"
+fetched_at = "2026-11-20T04:54:19Z"
+sha256 = "d94ad760d335272b10fc5d7d7de0decfc7fa77a372ae4ce8fadf3c26a265b140"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.1"]
+
+[[source]]
+id = "Illman1983"
+authors = "Sören Illman"
+title = "The equivariant triangulation theorem for actions of compact Lie groups"
+year = 1983
+venue = "Mathematische Annalen 262"
+locator_scheme = "page"
+locator = "p. 488; §7, pp. 499–500"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0262/LOG_0073.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0262/LOG_0073.pdf"
+fetched_at = "2026-11-20T04:55:02Z"
+sha256 = "9c7d02929b69eec277917942e2f7f4926559f9c7e50b4e5dd0aff859e51432c6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.1", "3.4"]
+
+[[source]]
+id = "GurerIglesiasZemmour2019"
+authors = "Serap Gürer, Patrick Iglesias-Zemmour"
+title = "Differential forms on manifolds with boundary and corners"
+year = 2019
+venue = "Indagationes Mathematicae 30"
+doi = "10.1016/j.indag.2019.07.004"
+locator_scheme = "theorem"
+locator = "§2, Theorem 1; §3, Theorem"
+url = "https://hal.science/hal-03488215v1"
+fetched_from = "https://hal.science/hal-03488215/document"
+fetched_at = "2026-11-20T04:55:03Z"
+sha256 = "351eac7493c5103f904d9d58a6f968534f8eccb79aefb01a8110301c09218100"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.4"]
