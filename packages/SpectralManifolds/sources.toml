@@ -1,0 +1,74 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SpectralManifolds"
+
+[[source]]
+id = "Connes2008"
+authors = "Alain Connes"
+title = "On the spectral characterization of manifolds"
+year = 2008
+arxiv = "0810.2088v1"
+locator_scheme = "theorem"
+locator = "Theorems 11.3–11.5"
+url = "https://arxiv.org/abs/0810.2088v1"
+fetched_from = "https://arxiv.org/pdf/0810.2088v1"
+fetched_at = "2026-11-20T07:01:47Z"
+sha256 = "50981b73078009f4bd5dd9b26e366bd63a9fd02093b7e916c016a71751f5b8e0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["6.7"]
+
+[[source]]
+id = "Cacic2011"
+authors = "Branimir Ćaćić"
+title = "A reconstruction theorem for almost-commutative spectral triples"
+year = 2011
+venue = "Lett. Math. Phys. 100 (2012), no. 2, 181-202"
+doi = "10.1007/s11005-011-0534-5"
+arxiv = "1101.5908v4"
+locator_scheme = "theorem"
+locator = "Corollary 2.19"
+url = "https://arxiv.org/abs/1101.5908v4"
+fetched_from = "https://arxiv.org/pdf/1101.5908v4"
+fetched_at = "2026-11-20T07:01:55Z"
+sha256 = "6c5ef49c7ae7d6eaeddc6d98696f2874d18e6e5b7fc15089ab48b2d936d3efb6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v4"
+cited_for = ["2.6", "7.8"]
+
+[[source]]
+id = "Plymen1986"
+authors = "R. J. Plymen"
+title = "Strong Morita equivalence, spinors and symplectic spinors"
+year = 1986
+venue = "J. Operator Theory 16 (1986), no. 2, 305-324"
+locator_scheme = "theorem"
+locator = "Theorem 2.11"
+url = "https://jot.theta.ro/jot/archive/1986-016-002/1986-016-002-008.pdf"
+fetched_from = "https://jot.theta.ro/jot/archive/1986-016-002/1986-016-002-008.pdf"
+fetched_at = "2026-11-20T07:06:54Z"
+sha256 = "1e0db0f6f4d82fc51e4bf9bfda13121028ce84209391d4e1b1fdf2a9950ef486"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["8.2", "8.3"]
+
+[[source]]
+id = "Voiculescu1979"
+authors = "Dan Voiculescu"
+title = "Some results on norm-ideal perturbations of Hilbert space operators"
+year = 1979
+venue = "J. Operator Theory 2 (1979), no. 1, 3-37"
+locator_scheme = "theorem"
+locator = "Theorem 4.5"
+url = "https://jot.theta.ro/jot/archive/1979-002-001/1979-002-001-001.pdf"
+fetched_from = "https://jot.theta.ro/jot/archive/1979-002-001/1979-002-001-001.pdf"
+fetched_at = "2026-11-20T07:07:55Z"
+sha256 = "beecdcafbca36b9ed602b17a45d27ebfeaaa8a4b0b1bd48157fc0f8ee63a5c98"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["4.3"]
