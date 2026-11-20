@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HamiltonianReduction~4",
+  "head": "6d61ae870f8621062364601ee39cd07bf9b37b28",
+  "pr": 2690,
+  "folder": "SymplecticGeometry/HamiltonianReduction",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "incremental re-review of 17 changed lines since 1d8f3a7. Checked: the two restored heading anchors against the three links on main (CotangentLagrangian, IntegrableSystems, ConvexityToric), earlier C01 repaired; the former-label table against main's R-numbering and every R-label citation on main and at open heads (all resolve; table partial, a format note); earlier C02-C04 unchanged and carried as small corrections (C03 restated: Tau Ceti's Nil has analytic charts and a group isomorphism to HeisenbergGroup, but no LieGroup instance); the description against the head (anchors and table unstated, a small correction); §3.1 against Bates-Lerman §2 pp. 11-13 and §3.2 against Theorem 15 p. 15; adversarial rows for the changed and cited statements. Automatic checks rerun: all passed; depcheck 182 roadmaps, 2075 edges, 0 problems; lake env lean on Suggested.lean: two sorry warnings only; #check @ of both declarations unchanged; no change outside the folder.",
+  "text": "c5e56facce70f29d"
+ }
+}
