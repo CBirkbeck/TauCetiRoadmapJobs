@@ -1,0 +1,51 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DecisionTreeComplexity"
+
+[[source]]
+id = "Huang2019"
+authors = "Hao Huang"
+title = "Induced subgraphs of hypercubes and a proof of the Sensitivity Conjecture"
+year = 2019
+arxiv = "1907.00847v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1907.00847v1"
+fetched_from = "https://arxiv.org/pdf/1907.00847v1"
+fetched_at = "2026-11-20T16:37:23Z"
+sha256 = "9eaabbf4ab7962655e85ab184136bc22442fa51fbdec1dad80a44e212a93496b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v1"
+cited_for = ["5.1"]
+
+[[source]]
+id = "BBCMW2001"
+authors = "Robert Beals, Harry Buhrman, Richard Cleve, Michele Mosca, Ronald de Wolf"
+title = "Quantum Lower Bounds by Polynomials"
+year = 1998
+arxiv = "quant-ph/9802049v3"
+locator_scheme = "theorem"
+locator = "Lemma 5.3"
+url = "https://arxiv.org/abs/quant-ph/9802049v3"
+fetched_from = "https://arxiv.org/pdf/quant-ph/9802049v3"
+fetched_at = "2026-11-20T16:35:10Z"
+sha256 = "afec116657493976b70df7dcb8b174c8c0be55a9337d9e035afd5f1fc4d9cd4c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-20"
+version_note = "arXiv v3"
+cited_for = ["3.2"]
+
+[[source]]
+id = "BuhrmanDeWolf2002"
+locator_scheme = "theorem"
+locator = "Theorem 11"
+url = "https://homepages.cwi.nl/~rdewolf/publ/qc/dectree.pdf"
+fetched_from = "https://homepages.cwi.nl/~rdewolf/publ/qc/dectree.pdf"
+fetched_at = "2026-11-20T16:36:18Z"
+sha256 = "7002019660c498b652611acf5cdbe264ea9c4a139f8f4da6e82e12822e5d9122"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-20"
+cited_for = ["3.2"]
