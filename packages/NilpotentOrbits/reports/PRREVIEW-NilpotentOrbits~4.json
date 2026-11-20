@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NilpotentOrbits~4",
+  "head": "a982a9cad201b11b00af4b2e23edbcf11f5fefb8",
+  "pr": 2628,
+  "folder": "NilpotentOrbits",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review. The previous review's R01, R02 and C01 are repaired. Seeded sample of 15 sections checked: every Check recomputed by hand, 17 source locators read at their lines in Yun16, BMIY22, LNS10 and GHR06 (Slo80 settled as uncertified, not read), 36 library declarations located at the pins and the key ones read. Adversarial table with computed values for the sample and all nine sorried theorems. Automatic checks all passed; dependency check 0 problems, every supplier on main; Suggested.lean elaborates with nine sorry warnings only; no padding; no change outside the folder. One small correction: the open orbit in degree two of section 2.2 is already proved at the Tau Ceti pin.",
+  "text": "413c54c8b77b54c2",
+  "carried": {
+   "from": "a982a9cad201b11b00af4b2e23edbcf11f5fefb8",
+   "head": "a91852e9ac3fe22f9647fead13500afd9e599311",
+   "findings": 1,
+   "lines": 41,
+   "folders": [
+    "NilpotentOrbits"
+   ],
+   "corrections": true
+  }
+ }
+}
