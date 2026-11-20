@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TaubesGromov~2",
+  "head": "51f70da69c30a006cbcf5990fa71a2179e5f00cf",
+  "pr": 2699,
+  "folder": "TaubesGromov",
+  "date": "2026-11-20",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample of 15 sections: 2.2, 5.1, 5.9, 6.1b and 11.1 checked against open sources (Taubes SW=>Gr from the AMS open archive, McDuff's lectures and Ionel-Parker on arXiv) or by direct computation; 3.1, 4.4, 7.4, 7.5, 7.6, 7.13, 7.18, 7.20, 7.30 and 9.1 cite JDG papers with no legal open copy and were checked for internal consistency only. The README gives no locators anywhere (R01). All 44 Checks recomputed and true; one Layer 2 Example is false (R02). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry-only warnings; #check of the 5 declarations matches the README; one-tactic probes fail on all three theorems. Ownership checked against SeibergWittenTheory, SymplecticGeometry, HeegaardFloer, InstantonFloerTheory and DGFloer: nothing shared.",
+  "text": "0402110399039fc5"
+ }
+}
