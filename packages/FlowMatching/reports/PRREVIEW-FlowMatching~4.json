@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FlowMatching~4",
+  "head": "c639a570ce5575a1edb37f9f4549fd60ae6eb98c",
+  "pr": 2501,
+  "folder": "FlowMatching",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 20 changed lines since 09a99b6 (README only). The previous report had no finding; its four small corrections and two format notes are all repaired. Checked: the four values of the Check of 5.2 recomputed (0.2113, 0.3159, 0.3330, 0.4715); dist_le_of_trajectories_ODE_of_mem opened at the pinned Mathlib (Gronwall.lean line 208) and its hypotheses set beside the Conventions; the joint continuity of the score on s > 0 verified by dominated convergence; the reworded Check of 1.1; the description against the head (1.7 now named). One small correction: the sentence added to 3.1 calls the schedule continuous where the bullet assumes it measurable. Seeded sample checked where it falls in the changed passages (1.1, 1.2, 3.1, 5.2). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only (16); nothing changed outside the folder.",
+  "text": "99f5b8af55281956"
+ }
+}
