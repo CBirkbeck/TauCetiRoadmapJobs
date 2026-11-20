@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TypeAHeckeAlgebras~2",
+  "head": "a231751c7bba61e409c03038f19d321bc065ef15",
+  "pr": 2716,
+  "folder": "TypeAHeckeAlgebras",
+  "date": "2026-11-20",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full re-review. Previous findings R01-R04 repaired; C01, C04-C07 and N01 repaired; C02 and C03 partly repaired (carried as C01, C03). Seeded sample of 15 targets checked: 15 source locators verified against Wenzl1988, Neretin2021, Ram1991, HOMFLY1985 and FerayMeliot2012; Jones1987, Sawin1995 (paywalled) and Kerov (unidentified) not verifiable. Automatic checks all passed; depcheck 182 roadmaps, 2073 edges, 0 problems. Suggested.lean elaborates with only sorry warnings; #check @ of all declarations matches the README; star instances confirmed; a statable product-model headline was elaborated in scratch (R02). Ownership: the Graham-Lehrer cellular theorems are owned by TemperleyLieb Layer 5 and Tau Ceti's CellularBasis, uncited (R01). 33-row adversarial table with computed values.",
+  "text": "4cb9ec28f6c66374"
+ }
+}
