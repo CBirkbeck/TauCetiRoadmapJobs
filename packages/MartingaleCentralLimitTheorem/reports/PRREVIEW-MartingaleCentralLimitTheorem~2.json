@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MartingaleCentralLimitTheorem~2",
+  "head": "985ee7cdbce2e666aa8d5b6ec85be05b9f3a3995",
+  "pr": 2685,
+  "folder": "MartingaleCentralLimitTheorem",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 41 changed lines since 062c1b4. Checked: each previous remark against this head (R01, C01, N01, N02, N03 repaired; C02 not repaired, carried as a small correction); the three MarkovChainsAndRenewal citations on main and at the head of its open revision; the new irreducibility sentence against Kernel.IsIrreducible at the pin, with the flip chain and the reducible chain computed; the reworded gloss of Ergodic.ae_eq_const_of_ae_eq_comp_ae at the pin; Durrett-PTE5 Lemma 8.2.7 and Example 8.3.4 for the changed passages; the pull request text against the head. Automatic checks all pass, dependency check 0 problems, Suggested.lean elaborates with sorry as the only warning; no Lean statement changed.",
+  "text": "0403b2a337f7f8d9"
+ }
+}
