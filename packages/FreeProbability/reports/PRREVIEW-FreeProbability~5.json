@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FreeProbability~5",
+  "head": "e462df372165f32679a3f9a6b1941ccf10f171b0",
+  "pr": 2575,
+  "folder": "FreeProbability",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 7,
+  "notes": "incremental re-review of 13 changed lines since 37bca01: the added table of former labels F1-F8 -> Layers 1-8 was checked against the headings of the roadmap on main and against every citation of those labels by other roadmaps on main (six roadmaps, all resolve); no statement, locator or declaration changed, so the seeded sample has nothing in the changed passage; the previous review had no findings or small corrections, its seven format notes are carried; automatic checks rerun, all pass; dependency check 0 problems; Suggested.lean elaborates with eight sorry warnings only; pull request text agrees with the head; Nica-Speicher not readable (for the human reviewers).",
+  "text": "3f503bb25bfba4b2"
+ }
+}
