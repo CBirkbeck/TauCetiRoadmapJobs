@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FourierAnalyticAdditiveCombinatorics~3",
+  "head": "f165242b26e9fe062df6507503635933e1ab8158",
+  "pr": 2782,
+  "folder": "FourierAnalyticAdditiveCombinatorics",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since f165242; this round read the pull request's title and description against the head (every claim agrees; the previous C01, Remark 6.2.2 in the list of locators, is repaired). Checked: the description's Zhao locators at their lines, the cross-roadmap citations (FourierDeligneTransform 0.2 on main; SamplingAndDiscreteFourierAnalysis 1.1, BooleanFunctionAnalysis 1.3, LinearAlgebraMethodInCombinatorics at open heads; none a supplier), recomputed 1.1-1.4 on all subsets of Z/N for N <= 9, the constants of 2.2, the monomial counts and the base 2.7551, the Z/7 Check of 4.1. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 12 sorry warnings only; no file changed outside the folder.",
+  "text": "4181aca9e6bdee76"
+ }
+}
