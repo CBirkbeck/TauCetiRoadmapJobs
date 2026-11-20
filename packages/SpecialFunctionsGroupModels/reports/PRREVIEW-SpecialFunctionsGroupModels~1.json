@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsGroupModels~1",
+  "head": "fe9003468b432db1e16e89464f0e20d006d55d3e",
+  "pr": 2694,
+  "folder": "SpecialFunctionsGroupModels",
+  "date": "2026-11-20",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 6,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample (0.1, 0.2, 0.3, 1.1, 1.2, 1.3, 1.4, 2.2, 2.5, 2.6, 3.2, 4.1, 4.2, 5.1, 5.3) and every other subsection recomputed by hand and numerically; no source locator verified, since none of the six cited books is readable from a legal copy (three paywalled, three with no legal copy found). Suggested.lean elaborates with 78 sorry warnings and no error; dependency check clean (0 problems); no change outside the folder. One-tactic probe on a copy: five of ten candidates close. Library and cross-roadmap citations resolved at the pins, on main and at the open heads; the Tau Ceti file cited for the GNS theorem is absent at the pin (R01). Automatic check on sorried instances set aside: the four instances are of proposition-valued classes.",
+  "text": "bdf307e565995745"
+ }
+}
