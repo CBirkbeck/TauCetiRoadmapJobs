@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RandomWalksOnFiniteGroups~1",
+  "head": "c5737252792bed7e8ae10c0d71685a6465dcf881",
+  "pr": 2758,
+  "folder": "RandomWalksOnFiniteGroups",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Full review. All 12 sampled targets recomputed (degenerate cases, S_3, Q_8, Z/3, n = 0, 1, 2, junk values) and every numerical Check reproduced by an independent script; 14 Levin-Peres locators verified against the authors' text; Saloff-Coste 2004 not readable from a legal place, its locators unverified and flagged to the human reviewers. Cited Mathlib and Tau Ceti declarations resolved at the pins; MarkovChainsAndRenewal (main) and MarkovChainMixing (open head) citations resolved, copied definitions identical. Dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 10 theorems.",
+  "text": "82f8cd594350c478"
+ }
+}
