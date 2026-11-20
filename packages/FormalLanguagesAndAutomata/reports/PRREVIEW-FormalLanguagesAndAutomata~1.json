@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FormalLanguagesAndAutomata~1",
+  "head": "05c0d0ef0725e42a4189d709fe0307f70701fc7c",
+  "pr": 2712,
+  "folder": "FormalLanguagesAndAutomata",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Sample: all 13 sections 1.1-4.4; 12 of 12 Watrous locators read at the text (statement, printed page, hypotheses); the 11 Gallier-Quaintance locators not verifiable (no legal copy readable). Adversarial pass with computed values on every statement: brute force over all automata with at most 3 states over 0, 1, 2 letters (2, 18, 1054 languages; 1028 pairs), left quotients 2^k for k<=4, pumping splits of 0^p 1^p 2^p for p<=6, pumping constants of a^n b^n. every Mathlib declaration of the supplier contracts opened at the pin; duplication searched by object in Mathlib, Tau Ceti, main and open heads: none. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry only; one-tactic probe closes 0 of 19 theorems. One P2 finding: a Check of 3.3 asserts strict inclusion of regular in context-free languages over every finite alphabet, false for at most one letter.",
+  "text": "e3a76c6a8c26a6ff"
+ }
+}
