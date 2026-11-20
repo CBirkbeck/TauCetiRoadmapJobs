@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OperatorIdeals~2",
+  "head": "548eeea6ac8350846b06982732163918f11ea6a6",
+  "pr": 2614,
+  "folder": "OperatorTheory/OperatorIdeals",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "incremental re-review of 145 changed lines since 9869dd1. Checked: R01-R04, C01-C03 and N01 of the previous report (all repaired except C01, partly repaired and carried as a small correction). The new universe construction for OI-B72 was checked against Mathlib at the pin (RCLike ring and isometry equivalences, no inner product on ULift or Shrink). The field hypotheses of OI-A24 and OI-A26-A27 were checked in Tau Ceti. The Majorization section titles resolve on main and at its open head c754e3c. Opened in Tau Ceti: opNorm, nuclear, schatten_top and schatten_one. tsum_comm checked at the pin. The new Ullrich locators were checked against Ull24 lines 21-95, and the journal reference against arXiv. Adversarial rows cover every changed statement. The gate passes (rerun) and the dependency check reports 0 problems. Suggested.lean elaborates with sorry as the only warning, and the one-tactic probe fails. Nothing outside the folder changed. The PR description matches the head.",
+  "text": "30fc0c79834a7c6d"
+ }
+}
