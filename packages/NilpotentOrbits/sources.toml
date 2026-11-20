@@ -91,3 +91,18 @@ status = "certified"
 accessed = "2026-11-20"
 version_note = "arXiv v1"
 cited_for = ["2.3", "3.1", "7.1", "7.3", "8.1", "8.2", "8.3"]
+
+[[source]]
+id = "Slo80"
+authors = "Peter Slodowy"
+title = "Simple Singularities and Simple Algebraic Groups"
+year = 1980
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0090294"
+locator_scheme = "section"
+locator = "§6"
+url = "https://doi.org/10.1007/BFb0090294"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.3", "8.2"]
