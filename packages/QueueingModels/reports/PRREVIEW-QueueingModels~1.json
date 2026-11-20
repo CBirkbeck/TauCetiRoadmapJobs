@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QueueingModels~1",
+  "head": "b933ac183602c0351fb329843657c74176717c76",
+  "pr": 2809,
+  "folder": "QueueingModels",
+  "date": "2026-11-20",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. All 13 sampled sections and every other statement and Check recomputed (exact rational checks of the identities, the numerical Checks to the printed digits); 20 locators of Zukerman (arXiv:1307.2968v27) and 6 of Adan-Resing read at their places, all supporting the statements; 16 Mathlib and 3 Tau Ceti declarations opened at the pins (two file paths wrong, C02); cross-roadmap citations resolved on main and at the open heads (C03: StandardDistributions numbers 1.2-1.4 exist only in its open revision); dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry as the only warning, six headline theorems all stated, none closes with one tactic; automatic checks all passed. C01: the route of 3.4 is that of the source's guide. Two scope points and one licence point for the human reviewers.",
+  "text": "15e4c2e97f1bd437"
+ }
+}
