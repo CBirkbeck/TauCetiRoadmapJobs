@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-Regularity~2",
+  "head": "4d44900fd98019fdc95995407717efbb4f0f0ec5",
+  "pr": 2631,
+  "folder": "Regularity",
+  "date": "2026-11-20",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Seeded sample §0.1, §8.1, §8.2, §9.4 verified at their locators: Lovász–Szegedy (arXiv), Rödl–Schacht regularity and counting preprints, Nagle–Rödl–Schacht and Terry (author page, arXiv OCR). All automatic checks passed; depcheck 0 problems. Suggested.lean elaborates with only the sorry warning, and #check types match the README. All 265 cited library names resolve at the pins. Every Check and worked example was recomputed. One finding: the first Check of §8.2 is false at t0 = 0 and for an empty palette.",
+  "text": "71ec94db8f8e72f6"
+ }
+}
