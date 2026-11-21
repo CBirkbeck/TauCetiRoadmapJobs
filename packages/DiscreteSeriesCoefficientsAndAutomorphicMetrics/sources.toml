@@ -1,0 +1,157 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DiscreteSeriesCoefficientsAndAutomorphicMetrics"
+
+[[source]]
+id = "hc-1953"
+authors = "Harish-Chandra"
+title = "Representations of a semisimple Lie group on a Banach space. I"
+year = 1953
+venue = "Transactions of the American Mathematical Society 75"
+doi = "10.1090/S0002-9947-1953-0056610-2"
+locator_scheme = "theorem"
+locator = "§7, p. 209; Lemma 34, p. 228; Theorem 5, p. 228; Theorem 8, p. 231"
+url = "https://www.ams.org/journals/tran/1953-075-02/S0002-9947-1953-0056610-2/S0002-9947-1953-0056610-2.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1953-075-02/S0002-9947-1953-0056610-2/S0002-9947-1953-0056610-2.pdf"
+fetched_at = "2026-11-21T17:31:23Z"
+sha256 = "e296eafb28773e2d18afe149de75d6f7da729757c9e5c79fe2541c9156fd694b"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["8.1", "8.2"]
+
+[[source]]
+id = "hc-1966"
+authors = "Harish-Chandra"
+title = "Discrete series for semisimple Lie groups. II: Explicit determination of the characters"
+year = 1966
+venue = "Acta Mathematica 116"
+doi = "10.1007/BF02392813"
+locator_scheme = "page"
+locator = "whole"
+url = "https://doi.org/10.1007/BF02392813"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.3"]
+
+[[source]]
+id = "gross-1999"
+authors = "B. H. Gross"
+title = "Algebraic modular forms"
+year = 1999
+venue = "Israel Journal of Mathematics 113"
+doi = "10.1007/BF02780173"
+locator_scheme = "section"
+locator = "§§4–8"
+url = "https://doi.org/10.1007/BF02780173"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.5a"]
+
+[[source]]
+id = "thorne-2012"
+authors = "J. Thorne"
+title = "On the automorphy of l-adic Galois representations with small residual image"
+year = 2012
+venue = "Journal of the Institute of Mathematics of Jussieu 11 (2012)"
+arxiv = "1107.5989v1"
+locator_scheme = "theorem"
+locator = "Lemma 6.4 (its proof)"
+url = "https://arxiv.org/abs/1107.5989v1"
+fetched_from = "https://arxiv.org/pdf/1107.5989v1"
+fetched_at = "2026-11-21T17:37:32Z"
+sha256 = "537af0053745f4206157c0441365218285624d95a25ae408149f287372d9ba55"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1 (2011); cited in the numbering of arXiv v1"
+cited_for = ["7.5a"]
+
+[[source]]
+id = "hecht-schmid-1975"
+authors = "H. Hecht; W. Schmid"
+title = "A proof of Blattner's conjecture"
+year = 1975
+venue = "Inventiones Mathematicae 31"
+doi = "10.1007/BF01404112"
+locator_scheme = "theorem"
+locator = "Theorem (1.3), p. 130; Theorem (1.4) and Corollary (1.5), p. 131"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0031/LOG_0013.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0031/LOG_0013.pdf"
+fetched_at = "2026-11-21T17:41:20Z"
+sha256 = "4344950eb42a97096148ea918079e69acd901f363a35d606908bd08816e50089"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "GDZ scan of the Inventiones article, pp. 129-154 (dated 1975 on the article, issue of 1976); text recognised by OCR"
+cited_for = ["Conventions", "2.4a", "2.4b"]
+
+[[source]]
+id = "muller-1989"
+authors = "W. Müller"
+title = "The trace class conjecture in the theory of automorphic forms"
+year = 1989
+venue = "Annals of Mathematics 130"
+doi = "10.2307/1971453"
+locator_scheme = "theorem"
+locator = "Corollary 0.2, p. 2; Corollary 8.8, p. 84 (preprint numbering)"
+url = "https://archive.mpim-bonn.mpg.de/295/1/preprint_1988_31.pdf"
+fetched_from = "https://archive.mpim-bonn.mpg.de/id/eprint/295/1/preprint_1988_31.pdf"
+fetched_at = "2026-11-21T17:35:12Z"
+sha256 = "531925cab6e39fc76b00046b4d61c4e736784de09bdc1800fd14a957d8dc15a4"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "read in its preprint MPI 88-31 (Max-Planck-Institut für Mathematik, 1988); cited in the preprint's numbering"
+cited_for = ["9.1"]
+
+[[source]]
+id = "muller-1998"
+authors = "W. Müller"
+title = "The trace class conjecture in the theory of automorphic forms. II"
+year = 1998
+venue = "Geometric And Functional Analysis 8"
+doi = "10.1007/s000390050059"
+locator_scheme = "page"
+locator = "whole"
+url = "https://doi.org/10.1007/s000390050059"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.1"]
+
+[[source]]
+id = "mumford-1977"
+authors = "D. Mumford"
+title = "Hirzebruch's proportionality theorem in the non-compact case"
+year = 1977
+venue = "Inventiones Mathematicae 42"
+doi = "10.1007/bf01389790"
+locator_scheme = "theorem"
+locator = "Theorem 1.4, p. 242; Main Theorem 3.1, p. 256; Proportionality Theorem 3.2, p. 262; Proposition 3.4 a), p. 264"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0042/LOG_0014.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0042/LOG_0014.pdf"
+fetched_at = "2026-11-21T17:34:05Z"
+sha256 = "254e382c97cd76f3de3d059a35fa2dbe822f746941f2ebbebb714e2971760a7d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "GDZ scan of the Inventiones article, pp. 239-272; text recognised by OCR"
+cited_for = ["10.1", "10.2"]
+
+[[source]]
+id = "Announcement"
+authors = "Levent Alpöge"
+title = "Announcement of the formal proof of the Riemann hypothesis (remark.pdf)"
+year = 2026
+locator_scheme = "page"
+locator = "1 (footnote 1: the Lean archive in fourteen parts)"
+url = "https://alpo.ge/remark.pdf"
+fetched_from = "https://alpo.ge/remark.pdf"
+fetched_at = "2026-11-21T17:36:26Z"
+sha256 = "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.4a", "2.4b", "References"]
