@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~102",
+  "head": "de90162fc7802ec799140dd78c4d48030b41114a",
+  "pr": 2489,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 30 changed lines since 6c65b01. Checked: both small corrections of the previous review repaired (the two Mathlib lemmas of the §0.9 route opened at the pin; the Needs line of §1.22a); the new comodule identification for BG via QCoh.presentationEquiv recomputed (trivial group, mu_2, Z/p over F_p) and Stacks tags 06WV, 06WT, 03GN read; the request of StackPointsAndResidualGerbes to §1.22 resolved on main; automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with sorry as its only warning (48); no change outside the folder. Remaining: two small corrections (§1.22a depends on an abelian-category statement its own §1.22 owns and does not make; the description does not say so) and one format note.",
+  "text": "323aa09504789e50",
+  "carried": {
+   "from": "de90162fc7802ec799140dd78c4d48030b41114a",
+   "head": "764265dd8dc377159ead691d22c9d174f4e8451f",
+   "findings": 2,
+   "lines": 22,
+   "folders": [
+    "SchemeAndStackFoundations"
+   ],
+   "corrections": true
+  }
+ }
+}
