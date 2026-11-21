@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EvolutionaryGameTheory~1",
+  "head": "eec2672ecb8cc65b2e9879994980b7613d59ef63",
+  "pr": 2928,
+  "folder": "EvolutionaryGameTheory",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All 15 sampled targets and all 12 headline theorems recomputed (hand computation and numerical integration of every printed number); 24 locators read in Hofbauer-Sigmund 2003, Miekisz 2007 and Prazak 2022; van Strien's notes and Sandholm's survey could not be read through the sources service and are listed as not verifiable and flagged to the human reviewers. 27 Mathlib names and one Tau Ceti name opened at the pins; supplier sections of RegretMinimizationAndEquilibria (main), LyapunovStabilityOfODEs and PopulationDynamics (open heads) resolved. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 12 sorry warnings only; one-tactic probe closes no theorem. One small correction (scope sentence about PotentialGamesAndPriceOfAnarchy), one format note; two source issues in Prazak 2022.",
+  "text": "83374d87eed1b9ae"
+ }
+}
