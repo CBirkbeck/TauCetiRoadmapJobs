@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AdelicHeightsAndSuccessiveMinima"
+
+[[source]]
+id = "BombieriVaaler1983"
+authors = "Enrico Bombieri, Jeffrey D. Vaaler"
+title = "On Siegel's lemma"
+year = 1983
+venue = "Inventiones Mathematicae 73 (1983), 11-32"
+doi = "10.1007/BF01393823"
+locator_scheme = "theorem"
+locator = "Theorem 3 (p. 18), Theorem 6 and condition (3.16) (p. 23)"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0073/LOG_0008.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0073/LOG_0008.pdf"
+fetched_at = "2026-11-21T15:30:32Z"
+sha256 = "1c35ab7edfe18d6f552ccc1abd395e327e3589346bdc930662e506d2a24e993e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["3.1"]
