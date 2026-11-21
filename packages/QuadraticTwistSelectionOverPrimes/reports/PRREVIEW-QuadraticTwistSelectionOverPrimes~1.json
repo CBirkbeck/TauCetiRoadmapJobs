@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuadraticTwistSelectionOverPrimes~1",
+  "head": "e73c24fd06ec18e6d42c68d308c17c7c71f737c2",
+  "pr": 2878,
+  "folder": "RiemannHypothesisForDirichletLFunctions/QuadraticTwistSelectionOverPrimes",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Seeded sample 2.7a-2.7d: the README gives no source locators, and [FormalProof] (github.com), [Announcement] (alpo.ge) and Gallagher 1970 (paywalled) are not legally readable through the sources service, so nothing could be checked against a source (R01). Adversarial pass over every statement of 2.7a-2.7d and the three Lean headlines, with computed values (22 table rows); no mathematical error found. Cross-roadmap citations resolved: AnalyticNumberTheoryPartI on main, RieszSumsOverPrimesAndExceptionalZeros at its open head, SieveMethodsAndPrimePatterns on main; ThetaChainsAndFrobeniusPrimeSums not found anywhere. 11 Mathlib/Tau Ceti declarations opened at the pins. Automatic checks all passed; depcheck 0 problems; lake env lean on Suggested.lean gives only three sorry warnings, and a #check probe matches the README.",
+  "text": "a28a88bbb83e7e2b"
+ }
+}
