@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CongruenceModulesOfThetaLifts"
+
+[[source]]
+id = "GanQiuTakeda2014"
+authors = "Wee Teck Gan, Yannan Qiu, Shuichiro Takeda"
+title = "The Regularized Siegel-Weil Formula (The Second Term Identity) and the Rallis Inner Product Formula"
+year = 2012
+arxiv = "1207.4709v3"
+locator_scheme = "theorem"
+locator = "Theorem 7.3 (i)"
+url = "https://arxiv.org/abs/1207.4709v3"
+fetched_at = "2026-11-21T18:58:11Z"
+sha256 = "cde6b7ad22b974d4159f8cedd1e14a00bf4b05ec977ab750b54fdceb067adac5"
+licence_class = "operator-local"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["7.5a"]
