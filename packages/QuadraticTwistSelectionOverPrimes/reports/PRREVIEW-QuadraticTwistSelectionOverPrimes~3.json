@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuadraticTwistSelectionOverPrimes~3",
+  "head": "d64cc31d6291f38b2bbbb6004b0cf856986edc47",
+  "pr": 2878,
+  "folder": "RiemannHypothesisForDirichletLFunctions/QuadraticTwistSelectionOverPrimes",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Seeded sample 2.7a-2.7d: no target carries a locator. [Announcement] was read in full as the author's own page and states none of the targets; [FormalProof] is unreadable (unclassified repository host; the author-page archive is not a document); Gallagher 1970 is uncertified (paywalled). R01 re-raises the earlier missing-locator finding, because the stated reason for omitting locators fails. Adversarial pass: 27 table rows with computed values, including numerical tests of 2.7a (i) on six classes and of the 2.7b (i) inequality on random data; no mathematical error found. Automatic checks all passed; depcheck reports 0 problems; lake env lean gives only three sorry warnings; a #check probe matches the README. The family index is identical in 37 of 39 family heads (C01).",
+  "text": "10985d842fd15999"
+ }
+}
