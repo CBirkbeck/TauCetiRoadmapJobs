@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FieldOfNorms~7",
+  "head": "2f82b82158e2189d516867994010404fe91ddc92",
+  "pr": 1812,
+  "folder": "FieldOfNorms",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review. Previous findings R01-R03 and C01-C06, N01-N02 all repaired. Seeded sample of 15 targets (0.0, 0.1, 0.3, 0.4, 0.6, 1.2, 1.4, 1.5, 1.6, 2.3, 3.3, 3.4, 4.1, 5.0, 5.1) checked against Wintenberger 1983 (Numdam text), Wintenberger 2004, Keating 2009 and Abrashkin 2010; adversarial table of 26 rows with computed values; 17 library declarations opened at the pins; 15 cross-roadmap citations resolved. Automatic checks all pass; Suggested.lean elaborates with three sorry warnings only; one-tactic probe closes nothing; dependency check 0 problems; no change outside the folder. Small corrections: Kummer example's justification of its elementary tower, 'strictly' missing in the summary's tilt sentence, the monotone function named in 0.3, the base field in 4.1's X(i). Not verifiable: Tate 1967, Sen 1972, Serre, Wintenberger 1980, the 1979 notes, Abrashkin 2000, Scholze 2012.",
+  "text": "d2809593d8ec4c66"
+ }
+}
