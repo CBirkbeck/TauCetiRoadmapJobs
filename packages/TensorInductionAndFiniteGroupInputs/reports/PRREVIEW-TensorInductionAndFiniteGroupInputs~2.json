@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TensorInductionAndFiniteGroupInputs~2",
+  "head": "469aed5e474079c1b64152fcd8d5df0d592d35e7",
+  "pr": 2908,
+  "folder": "RiemannHypothesisForDirichletLFunctions/TensorInductionAndFiniteGroupInputs",
+  "date": "2026-11-21",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample: 6.1, 6.2 and 9.1 carry no source locator; 7.1 (Howe 1989, Howe 1995 section 2.1) and 8.1 (Wielandt Theorems 9.4, 13.2) cite texts with no legal copy found, so 0 of 4 locators were read. Adversarial pass: 6.1 and 6.2 routes and Checks recomputed by hand; 9.1 (a)-(i) checked by exact rational computation in a differential-operator realisation (n <= 3, and n = 4 for (h), (i)) with negative controls; 9.1 (j) not settled (fusion scalar z(z-2) computed; no counterexample found in small families). Automatic checks all passed; depcheck 0 problems; lake env lean on Suggested.lean gives only three sorry warnings. Findings: 9.1 (j) has neither route nor source; 8.1 is already TauCeti.alternatingGroup_le_of_isPreprimitive_of_isCycle_mem; 6.1 (a) restates ArithmeticGaloisRepresentations section 7.1 (main) in prime index without citation.",
+  "text": "c8bbce5fc49f4f9b",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Jordan's theorem 8.1 is already a theorem of the pinned Tau Ceti, yet the roadmap owns it and plans its proof.",
+    "where": "CongruenceModulesOfThetaLifts README citations of §8.1 (its pull request)",
+    "raised": "PRREVIEW-TensorInductionAndFiniteGroupInputs~2"
+   }
+  ]
+ }
+}

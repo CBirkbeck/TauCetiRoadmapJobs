@@ -1,0 +1,21 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TensorInductionAndFiniteGroupInputs"
+
+[[source]]
+id = "MolevNazarovOlshanski1996"
+authors = "A. Molev, M. Nazarov, G. Olshanskii"
+title = "Yangians and Classical Lie Algebras"
+year = 1994
+venue = "Russ.Math.Surveys 51 (1996) 205"
+arxiv = "hep-th/9409025v2"
+locator_scheme = "theorem"
+locator = "Propositions 2.4, 2.5 and 2.7 (formula 2.7.3), Theorem 2.10 and Remark 2.11 (numbering of arXiv v2)"
+url = "https://arxiv.org/abs/hep-th/9409025v2"
+fetched_from = "https://arxiv.org/pdf/hep-th/9409025v2"
+fetched_at = "2026-11-21T17:32:26Z"
+sha256 = "e72418fe66b5c0699891e35a626cbddb20de3bd5d49a19883a1be0641de783d0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v2"
+cited_for = ["9.1 (c)", "9.1 (j)"]
