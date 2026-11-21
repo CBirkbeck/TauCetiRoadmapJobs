@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FinancialMathematics"
+
+[[source]]
+id = "Shr04"
+authors = "Steven E. Shreve"
+title = "Stochastic Calculus for Finance II: Continuous-Time Models"
+year = 2004
+locator_scheme = "section"
+locator = "4.5, 5.2.4, 5.3.2, 5.4.3"
+url = "https://link.springer.com/book/9780387401010"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.2", "2.3", "3.1", "4.1"]
