@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AxKochenErshov~3",
+  "head": "dfd0d50e5ca263ac28f98391459ba3903b1ff83a",
+  "pr": 2868,
+  "folder": "AxKochenErshov",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full re-review. All five findings and all corrections of the previous review are repaired. One new finding (P2): the Hensel configuration of 3.1 is not stated and its displayed inequality is insufficient for polynomials over K (counterexample computed over Q_p). Adversarial table of 24 rows over the 15 sampled targets and the headline theorems. Sources: only Kuhlmann 2010 readable (1 locator checked); van den Dries 2014 (about 71 of 86 locators), Basarab 1978, Ax-Kochen and Ershov not readable legally; three van den Dries locators corroborated through Anscombe-Jahnke. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes only the declared sanity check; cross-roadmap citations and library names resolved at main, open heads and the pins.",
+  "text": "7ffecbf0c111c491"
+ }
+}
