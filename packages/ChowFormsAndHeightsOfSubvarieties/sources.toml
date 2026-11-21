@@ -1,0 +1,35 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ChowFormsAndHeightsOfSubvarieties"
+
+[[source]]
+id = "Philippon91"
+authors = "Patrice Philippon"
+title = "Sur des hauteurs alternatives. I"
+year = 1991
+doi = "10.1007/BF01446571"
+locator_scheme = "theorem"
+locator = "Théorème 2 (p. 256); Corollaire 4 (p. 272)"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0289/LOG_0023.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0289/LOG_0023.pdf"
+fetched_at = "2026-11-21T16:19:11Z"
+sha256 = "0001d47e4346648edde51be58f004fbdb5a85d6f39222c7f7c62cbbb45ffc9ce"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["6.1 (iii)"]
+
+[[source]]
+id = "GS90"
+authors = "Henri Gillet; Christophe Soulé"
+title = "Arithmetic intersection theory"
+year = 1990
+locator_scheme = "theorem"
+locator = "Theorem 4.2.3 (p. 138)"
+url = "https://www.numdam.org/item/PMIHES_1990__72__93_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1990__72__93_0.pdf"
+fetched_at = "2026-11-21T16:19:13Z"
+sha256 = "fa663fadd299576dcaaa5ba54efd10cf6a7f52ae02ff53d787956816b92f169f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["References: arithmetic intersection numbers"]

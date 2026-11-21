@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ChowFormsAndHeightsOfSubvarieties~2",
+  "head": "6ac76a4c860826c8c4c810a2b2809e669c48cfd1",
+  "pr": 2891,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ChowFormsAndHeightsOfSubvarieties",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. Sampled targets 5.17a, 6.1 and 6.2: the README gives no locators. Bost-Gillet-Soule 1994 and Philippon 1991 could not be read legally (AMS host unclassified; Springer paywall); Gillet-Soule 1990 read on Numdam. Every Check of 5.17a, 6.1 and 6.2 recomputed (closed forms, quadrature, Monte Carlo); all agree. Suggested.lean elaborates with no message and declares nothing, justified because no carrier exists at the pins. Dependency check: 0 problems. Automatic checks all passed; none set aside. One P2: the height of P(J^dual) is owned both here (6.2 (a7)) and by HeightsForLogSingularMetrics 4.3b (a), which does not cite this roadmap.",
+  "text": "1ebd139e01623cea",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The height of `ℙ(J^∨)` for a Hermitian vector bundle has two owners: 6.2 (a7) here and HeightsForLogSingularMetrics §4.3b (a)",
+    "where": "HeightsForLogSingularMetrics §4.3b (a), its Needs line and ownership paragraph",
+    "raised": "PRREVIEW-ChowFormsAndHeightsOfSubvarieties~2"
+   }
+  ]
+ }
+}
