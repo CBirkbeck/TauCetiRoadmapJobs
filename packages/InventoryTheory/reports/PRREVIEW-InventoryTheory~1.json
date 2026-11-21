@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InventoryTheory~1",
+  "head": "0df58d710d8a195c1453f3f75b878d00654b4a8b",
+  "pr": 2932,
+  "folder": "InventoryTheory",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review. All nine sampled targets and six headline theorems recomputed by hand; every numerical Check reproduced in exact arithmetic (252 recursion stages for 7 laws x 9 settings x 4 periods, 9156 newsvendor cases, 153 ordering rules, 3504 lot-sizing instances). Source locators: 17 of 26 read at the text (Russo Lecture 2A, Feinberg-Lewis); the 9 into Gallego's notes were not readable through the sources service and are listed as not verifiable. 14 Mathlib and 4 Tau Ceti declarations opened at the pins; 3 cross-roadmap citations resolved (RiskMeasures 4.1 at its open head). Dependency check: 0 problems. Suggested.lean elaborates with six sorry warnings only; signatures compared with the README; one-tactic probe closes none. Automatic checks all passed; none set aside. Small corrections: IsMinOn gloss, description silent that RiskMeasures is an open pull request, a miscounted Check. Two source gaps recorded for Russo's Lemma 1.",
+  "text": "c45ef16c98e4e534"
+ }
+}
