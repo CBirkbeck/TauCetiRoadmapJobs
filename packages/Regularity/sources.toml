@@ -1,0 +1,52 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "Regularity"
+
+[[source]]
+id = "Tao2006"
+authors = "Terence Tao"
+title = "Szemerédi's regularity lemma revisited"
+year = 2005
+arxiv = "math/0504472v2"
+locator_scheme = "theorem"
+locator = "Theorem 2.11 (p. 8); §3"
+url = "https://arxiv.org/abs/math/0504472v2"
+fetched_from = "https://arxiv.org/pdf/math/0504472v2"
+fetched_at = "2026-11-21T10:47:56Z"
+sha256 = "30be94b27109d0fdc3e2a5f0926a580464e182502d65dde5c9314ee44afb6d2c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v2 (16 Nov 2005); published in Contrib. Discrete Math. 1 (2006); numbers are those of arXiv v2"
+cited_for = ["4.2"]
+
+[[source]]
+id = "FriezeKannan1999"
+authors = "Alan Frieze; Ravi Kannan"
+title = "Quick approximation to matrices and applications"
+year = 1999
+venue = "Combinatorica 19"
+doi = "10.1007/s004930050052"
+locator_scheme = "page"
+locator = "175–220"
+url = "https://doi.org/10.1007/s004930050052"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.2"]
+
+[[source]]
+id = "Zhao2023"
+authors = "Yufei Zhao"
+title = "Graph Theory and Additive Combinatorics: Exploring Structure and Randomness"
+year = 2023
+locator_scheme = "theorem"
+locator = "Theorem 2.8.3, Remark 2.8.6, Theorem 4.6.3"
+url = "https://yufeizhao.com/gtacbook/gtacbook.pdf"
+fetched_from = "https://yufeizhao.com/gtacbook/gtacbook.pdf"
+fetched_at = "2026-11-20T21:31:36Z"
+sha256 = "51bc7423e358a1bd0f327d63633b81061ca45cc7ec481c876374ba3f08592b50"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "author's version posted on the book's web page; theorem numbers as there, pagination differs from the Cambridge University Press edition"
+cited_for = ["3.2", "4.2"]
