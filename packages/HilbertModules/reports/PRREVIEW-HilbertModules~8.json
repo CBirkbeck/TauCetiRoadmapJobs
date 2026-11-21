@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HilbertModules~8",
+  "head": "5b7542cd7e8a071ea095c4d1d51f2083b4375aec",
+  "pr": 2625,
+  "folder": "HilbertModules",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 75 changed lines since 14016f0. Checked: the three earlier small corrections (repaired) and the format note (not repaired, raised again); the changed passages of sections 3.4, 3.5 and 5.10 with computed instances and the six library declarations they name at the pins; VonNeumannAlgebras V0 and OperatorAlgebraDynamics on main; the pull request's description against the head (one sentence too narrow, a small correction); the automatic checks (all passed), the dependency check (0 problems), the elaboration of Suggested.lean (sorry the only warning). Sample target 5.10 falls in the change and was checked; Raeburn-Williams could not be read.",
+  "text": "9a9dbecf85b989ee",
+  "carried": {
+   "from": "5b7542cd7e8a071ea095c4d1d51f2083b4375aec",
+   "head": "5b7542cd7e8a071ea095c4d1d51f2083b4375aec",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
