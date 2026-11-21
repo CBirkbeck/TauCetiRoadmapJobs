@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AxKochenErshov~1",
+  "head": "968572effb1a7df47cb14f26a3d01112ed966f22",
+  "pr": 2868,
+  "folder": "AxKochenErshov",
+  "date": "2026-11-21",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 9,
+  "format_notes": 4,
+  "notes": "Full review. Sample: the 15 seeded targets (0.1, 2.1-2.3, 3.1, 3.2, 3.4, 3.5, 5.2-5.5, 5.7, 6.1, 6.2) plus every Lean declaration; each statement recomputed on degenerate instances (table in the report). Sources: only Kuhlmann 2010 (arXiv) was readable; van den Dries 2014 (61 of 71 locators), Basarab 1978, Ax-Kochen II/III and Ershov 1965 could not be read legally, so their locators are listed as not verifiable. Findings: ACVF quantifier elimination already owned by RigidAnalyticGeometry 8.2 on main; false description of the pseudolimit set in 2.1; missing unramified hypothesis in 5.6; 5.8 statable but absent from Suggested.lean; constant polynomials in 2.1. Library declarations checked at the pins; supplier citations resolved on main and at open heads; dependency check 0 problems; scratch copy of Suggested.lean with probes elaborates with sorry the only warning. Automatic check hits (letI in signatures) judged real and raised as a small correction.",
+  "text": "bcf7424ee94b8c8c"
+ }
+}
