@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsMathieu~6",
+  "head": "7e94e57024344581399d800bcf1580eb8e7d60a8",
+  "pr": 2538,
+  "folder": "SpecialFunctionsMathieu",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 28 changed lines since c287391. Previous R01 (singular point at infinity of DLMF 28.2.2 at q = 0) and N01 are repaired. Checked: the expansions of f and g at infinity and the q = 0 Check of 1.4 recomputed (ratio -1.0375464 - 0.9848784i at both points, equal to 2^(sqrt a - 1) e^(-i pi sqrt a / 2)); DLMF 28.2(i) and 2.7(ii) reread online; AsymptoticExpansions 10.3-10.4 resolved on main (10.4 needs distinct characteristic roots; no singular-point predicate in its Suggested.lean); the diff changes no Lean statement and no sampled target; Suggested.lean elaborates with 48 sorry warnings and no error; dependency check 0 problems; nothing changed outside the folder; the description lists the ninth DLMF correction and agrees with the head. One automatic form check set aside as a false positive (the heading over the #check lines). The eight cited books remain unread (no legal copy).",
+  "text": "db35fb1961216601"
+ }
+}
