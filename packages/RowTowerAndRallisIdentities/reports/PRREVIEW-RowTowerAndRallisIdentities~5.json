@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RowTowerAndRallisIdentities~5",
+  "head": "ad4ea9198e3502016547ebda61b01abc8712c15e",
+  "pr": 2919,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RowTowerAndRallisIdentities",
+  "date": "2026-11-21",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review of the whole README (1856 lines) and Suggested.lean. Seeded sample of 15 sections (5.2, 5.2a, 5.3, 5.4, 5.6, 5.7, 5.8a-5.8e, 5.8, 5.9, 5.10, 5.10a) checked by computation and against the supplier sections they cite (BaseChange 13.8a; ThetaKernels 5.6a, 5.7a, 6.13a, 6.13b; ThetaLifts 6.1, 6.11, 6.12; DiscreteSeriesCoefficients 2.4a, 9.1; LocalFactorsOfTwistsAndTypes 7.2; ThetaChains 2.1, 2.2, 2.3, 2.3c, 2.5, 2.9c; MetaplecticAutomorphicForms 5.7, 5.8); 150 cited section headings resolved at the heads of 15 open roadmaps and 13 on main; nine FormalProof declarations opened in the linked repository; Announcement read. R01: 5.9 and headline (3) lack the host-of-the-chain hypothesis of BaseChange 13.8a. R02: Size_square clause (o), (L1), (L5) and the measures of 5.8e are 'not given here'. R03: FormalProof cited with no file or declaration. Automatic checks all passed; depcheck 171 roadmaps, 2006 edges, 0 problems; lake env lean of Suggested.lean exits 0 with no messages (no declarations, so no #check pass or one-tactic probe). No previous report on the board.",
+  "text": "c3f27e7f6368c033"
+ }
+}
