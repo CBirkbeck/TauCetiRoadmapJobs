@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HodgeTateLatticesAndLubinTateLogarithms~3",
+  "head": "9127baacee5bb3dadb5c97e40f87335e89685c05",
+  "pr": 2904,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HodgeTateLatticesAndLubinTateLogarithms",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 80 changed lines since 9f0abc7. Previous findings: R01-R03, C01-C04, N02 repaired; R04 partly repaired (0.18a (a)-(b) and 0.5h (4') now routed and checked step by step; 0.5d, 0.5e, 0.5f still without locator or complete route, carried as R01 P2; remaining locators as C01); N01 not repaired (format note). Changed passages checked with computed instances: 0.17b (d) sign convention, nefness route and new Check; 0.17a (c); headline 3; 0.5e remark and new Check (p=3, Q3(zeta9): 15/2 vs 6); 0.5h (4') route; 0.18a (a)-(b) route; 2.4 route against HodgeTateAndCanonicalSubgroups 2.4 at its open head; 3.1 left inverse against the Lean statement; Suggested.lean docstring against Tau Ceti. Sample locator SchneiderTeitelbaum2001 Appendix Thm (c) checked against the text. New citations resolved: AbelianSchemesAndArithmeticModuli A2.3/A2.5/A3.3, PadicDifferentialEquationsAndRigidCohomology RD.5.116, SchemeAndStackFoundations 0.14, HodgeTateAndCanonicalSubgroups 0.13/0.18/2.4, Mathlib Scheme.Hom.toNormalization with its ZMT open-immersion instance. Automatic checks passed; depcheck 0 problems; lake env lean: two sorry warnings only; no change outside the folder; pull request description consistent with the head.",
+  "text": "4842510f6c93dcba"
+ }
+}
