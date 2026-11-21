@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsHigherSpheres~1",
+  "head": "3d3cd4cc4591bb1e6e139c0e766798e3209ba5a0",
+  "pr": 2931,
+  "folder": "SpecialFunctionsHigherSpheres",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 8,
+  "format_notes": 2,
+  "notes": "Full review. R01 (P1): the Gel'fand-Tsetlin factor of 5.2 has dimension index j+2l_{j-1} where 5.1 and the Check of 5.2 give j+1+2l_{j-1}; at n=3, l=3, m=1 the stated function has Laplacian -2x1/3. R02 (P2): five global instances in Suggested.lean duplicate instances the pinned Mathlib already provides (Submonoid.mulAction, Subtype.instMeasurableSpace, Subtype.borelSpace); the file elaborates unchanged without them. Sample: the 15 seeded targets were all recomputed (exact rational arithmetic for the polynomial identities and dimensions, quadrature for the integral identities, the Lean bodies transcribed); every stated value agrees. No book locator could be checked against its text: no legal copy of Vilenkin-Klimyk Vol. 2, Klimyk-Vilenkin, Wawrzynczyk or Dieudonne; DLMF 18.18.8 was read. Elaboration: no error, 59 sorry warnings. Dependency check: 0 problems. 20 cross-roadmap citations resolved, 8 local copies identical to their owners. One automatic form check set aside as a false positive (a section comment followed only by #check pins). Left to humans: reuse of names from the author's own formalization, and the untested wording and arrangement against the unread books.",
+  "text": "4c91110ab41cabde"
+ }
+}
