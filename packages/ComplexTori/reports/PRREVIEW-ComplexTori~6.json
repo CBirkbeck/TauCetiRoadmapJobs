@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexTori~6",
+  "head": "be6e50593d567ead8997dfa2dd00415bb6f0e46f",
+  "pr": 2550,
+  "folder": "ComplexTori",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 3 changed lines since 6916a61: the change is confined to the module docstring of Suggested.lean and repairs the previous C01 (the gluing claim is gone; the remaining clause, that the headlines of 6.4-6.6 need Q, was checked at the pin: the rotated disc has no atlas, and the gluing declarations exist in TauCeti/Geometry/Manifold/Gluing/GlueData.lean). The seeded sample falls wholly in untouched README sections. The pull request's description was read against the head and the change from main: no sentence contradicted, no change unstated. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with the single sorry warning. Two format notes carried over (N01, N02). Adversarial table with computed values in the report.",
+  "text": "b8d64e9d69027918"
+ }
+}
