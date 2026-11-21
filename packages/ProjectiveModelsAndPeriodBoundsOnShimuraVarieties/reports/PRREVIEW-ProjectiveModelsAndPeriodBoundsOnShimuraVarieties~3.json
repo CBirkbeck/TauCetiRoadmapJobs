@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ProjectiveModelsAndPeriodBoundsOnShimuraVarieties~3",
+  "head": "092ae89493dbdbe6f1919a4625c52ec4aa3e6e92",
+  "pr": 2910,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ProjectiveModelsAndPeriodBoundsOnShimuraVarieties",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review. Sample: 6.2a, 6.7a, 6.9a, 7.12a, 7.17a, 7.31a, 9.1. Sources read: DN Theoreme 2.3 (HAL copy), Faltings 1983 sections 3-4 (GDZ), Stacks 0C4K. Lan 2016 and 2017 were unreadable (author page HTTP 403). The FormalProof forms were not located because the README gives no file or declaration. All automatic checks passed. The dependency check reported 0 problems. Suggested.lean elaborates cleanly and declares nothing, which is consistent with the absence of semi-abelian carriers at the pins. 34 cross-roadmap citations resolved, with one supplier drift (SchemeAndStackFoundations Layer 2). The adversarial table has 22 rows. Findings: 6.7a does not tie P to the period lattice (R01); statements without proofs lack locators (R02).",
+  "text": "9e5d9908b51d17b9"
+ }
+}

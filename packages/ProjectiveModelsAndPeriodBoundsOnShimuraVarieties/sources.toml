@@ -1,0 +1,37 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ProjectiveModelsAndPeriodBoundsOnShimuraVarieties"
+
+[[source]]
+id = "DN"
+authors = "Jean-Marc Drezet; Mudumbai S. Narasimhan"
+title = "Groupe de Picard des variétés de modules de fibrés semi-stables sur les courbes algébriques"
+year = 1989
+venue = "Inventiones Mathematicae 97"
+version_note = "read in the HAL deposit hal-01158986; Théorème 2.3 is in §2 of that copy (DN line 408)"
+locator_scheme = "theorem"
+locator = "Théorème 2.3"
+url = "https://hal.science/hal-01158986"
+fetched_from = "https://hal.science/hal-01158986/document"
+fetched_at = "2026-11-21T19:12:18Z"
+sha256 = "ad6913afa69081d975b39189e9c64f73cb81d22432d2de657a1b37a27fb1beb1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["9.1"]
+
+[[source]]
+id = "Stacks"
+authors = "The Stacks project authors"
+title = "The Stacks project, Chapter 29: Morphisms of schemes"
+year = 2026
+version_note = "Lemma 29.38.8 (Tag 0C4K) and Lemma 29.38.9 (Tag 0893), version ed88ff78 of the chapter"
+locator_scheme = "tag"
+locator = "0C4K, 0893"
+url = "https://stacks.math.columbia.edu/tag/0C4K"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=0C4K"
+fetched_at = "2026-11-21T19:12:25Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["7.17a"]
