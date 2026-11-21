@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TensorInductionAndFiniteGroupInputs~5",
+  "head": "5e8e41b623f73dbf9510f843e19726a80cf16ebb",
+  "pr": 2908,
+  "folder": "RiemannHypothesisForDirichletLFunctions/TensorInductionAndFiniteGroupInputs",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full review. Sample 6.1, 6.2, 7.1, 9.1: every statement recomputed (Layers 6 and 7 by hand; 9.1 (a)-(h), (j) by exact computation with differential operators, n <= 4, including a faithful three-variable-set model at n = 3), no failure. MNO locators (Props 2.4, 2.5, 2.7, Thm 2.10, Rem 2.11) verified in the text; the 32 FormalProof locators and Howe 1989/1995 could not be read and are listed as not verifiable and flagged to the human reviewers (scope, licence, not tested). Supplier citations resolved on main; depcheck 0 problems; automatic checks all passed; elaboration: sorry the only warning; one-tactic probe closes nothing.",
+  "text": "987ec1a8e802db22",
+  "carried": {
+   "from": "5e8e41b623f73dbf9510f843e19726a80cf16ebb",
+   "head": "5e8e41b623f73dbf9510f843e19726a80cf16ebb",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
