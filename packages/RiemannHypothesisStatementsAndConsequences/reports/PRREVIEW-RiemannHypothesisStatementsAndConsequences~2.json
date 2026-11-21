@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RiemannHypothesisStatementsAndConsequences~2",
+  "head": "885d46b2ad39a4a95ff8557b1c1571711637d377",
+  "pr": 2885,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RiemannHypothesisStatementsAndConsequences",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 8,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample: 15 targets. None could be checked against a source text, because the five cited books have no legal copy and most sample targets carry no locator, so they were checked by computation: every Check and numerical value was recomputed. The automatic checks all pass. The dependency check reports 171 roadmaps, 1990 edges and 0 problems. Suggested.lean, elaborated again at this head, gives 14 sorry warnings and nothing else, and all 14 theorems survive the one-tactic probe. 106 library declarations were checked by #check at the pins, and the cross-roadmap citations resolve on main. The single P2 finding: ZeroFreeRightOf and its API (9.2) duplicate QuasiRiemannHypothesis §1.1 at its open head 3817fa7, which is earlier in the merge order and is not cited.",
+  "text": "04581fd827b7c539"
+ }
+}
