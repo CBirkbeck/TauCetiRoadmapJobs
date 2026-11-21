@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SlopesOfHermitianVectorBundles~7",
+  "head": "13d7bb0b1e86ba78dd53e82ff990bb7e014b450f",
+  "pr": 2880,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SlopesOfHermitianVectorBundles",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 29 changed lines since bad8bca. Checked: the five small corrections of the previous review (all repaired); the changed passages (3.4a route against the pinned TauCeti.GaloisDescent.span_invariants_eq_top, the paragraph and route added to 4.3 with computed constants and against HeightsForLogSingularMetrics 4.3b at its open head, the 6.1 and 6.7 routes, the supplier contracts, Downstream consumers and Scope); the description against the head; the family index as the only change outside the folder. Seeded sample: 3.4a falls in the changed passages and was checked. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no message. One P2 finding: the single-vector bound added to 4.3 rests on a lemma the README says is not given and names no owner for, while a later roadmap of the family states it.",
+  "text": "47a84754832c1d2b"
+ }
+}
