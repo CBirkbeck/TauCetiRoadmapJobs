@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsRankOneSymmetricSpaces~2",
+  "head": "7ad98a7301963941eaaaec9a35ef99a8b5d7f529",
+  "pr": 2935,
+  "folder": "SpecialFunctionsRankOneSymmetricSpaces",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full re-review. All five findings and six minor remarks of the previous review are repaired. New findings: the involution of 2.5 as written is the identity on SO0(n,1) (its Check is false); the proof route of the Paley-Wiener theorem of 1.3 does not reach beta = -1/2 and is circular with 4.2 for even n. Sample: all fifteen seeded targets recomputed numerically or by hand (table in the report), including the new inversion with discrete terms at three parameter pairs; DLMF 15.9.11-15.9.14, 15.4.11, 15.4.15 read at their locators; the four books, Koornwinder (1984, 1975) and Flensted-Jensen (1972) are paywalled and not verifiable. All cross-roadmap citations resolved on main or at the open heads. Automatic checks: dependency check 0 problems; Suggested.lean elaborates with sorry the only warning; one-tactic probe on 11 statements closes only the three marked sanity checks; the empty-section-header report and the unresolved-name lead set aside as false positives.",
+  "text": "16339d3f67640e2c"
+ }
+}
