@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsOnDefiniteUnitaryGroups~3",
+  "head": "a226a26175757a9ea4403331f7f8c753ef0dccb1",
+  "pr": 2918,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsOnDefiniteUnitaryGroups",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full re-review. Previous findings: R01, R03 and C01-C04 repaired; R02 partly repaired (carried as R02); C05 not repaired (C01); C06 moot. Seeded sample of 15 sections (2.1, 2.2a, 2.3b, 2.6, 2.7, 2.8, 2.9, 2.9a, 2.9c, 3.1a, 3.3, 3.4, 3.5, 3.9, 3.10) checked by computation and against the supplier sections they cite (FrobeniusRestrictedRieszSums 0.1/0.3/0.4, RieszSumsOverPrimesAndExceptionalZeros 1.7b(iii)/2.9b(iv)(c'), ThetaLifts 0.3/2.5, ThetaKernels 3.46a, IntegralWeylModules 1.1, FiniteReductiveGroups 2.7(b), HermitianFormsAndLattices 5.2, SeesawForThetaChains 6.7, GanGrossPrasad 4.1); Announcement read in full; FormalProof not readable (kernel export). Automatic checks all passed; depcheck 171 roadmaps, 1996 edges, 0 problems; lake env lean of Suggested.lean exits 0 with no messages (no declarations). New finding R01: 3.1d stated for all d = 7 mod 8 while line 254 and the routes leave it unproved outside the d = 7 mod 16 hosts.",
+  "text": "8087fd5210dfe162"
+ }
+}
