@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TypeAHeckeAlgebras~6",
+  "head": "3bcc7c30f489c201bba663b46eed2a9ccc7ab7e4",
+  "pr": 2716,
+  "folder": "TypeAHeckeAlgebras",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 65 changed lines since e249524. Checked: the previous small correction (repaired); the changed passages of sections 1.2, 1.3, 2.2, 4.6, 4.15, the Layer 1 examples and the supplier contracts, each recomputed (Murphy basis side at lambda=(3,1) and ranks 2, 6, 24, 120 at q=1; the F_2 branching counterexample; the Z/8 trace-radical example; strong density of balanced matrix units for J=N); the seeded sample where it falls in the change (1.2 against Mathas2008 Example 2.15; 2.2 has no source locator); Tau Ceti relabel, relabelPerm, relabel_relabelPerm, rowSuperstandard, parabolicEigenSum opened at the pin; automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with five sorry warnings only; description read against the head (Check count 87 is now 89).",
+  "text": "05a491322201117b",
+  "carried": {
+   "from": "3bcc7c30f489c201bba663b46eed2a9ccc7ab7e4",
+   "head": "3bcc7c30f489c201bba663b46eed2a9ccc7ab7e4",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
