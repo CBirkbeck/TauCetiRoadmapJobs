@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~3",
+  "head": "10640e9b360bf9be449fce7faff65a1e22fbefd1",
+  "pr": 2923,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full re-review. Previous R01, R02, C01-C04, C06, N01 repaired; C05 and N02 partly. Sample: Chowla-Selberg 1967 (§12 (1) p.109, §6 (39) p.97, (2) p.110) and Damerell 1970 (§2 Thm 1 p.290) read at their locators; the other sampled targets (8.11-8.19c) carry no source locator and were checked against their supplier sections and by computation (adversarial table, 30 rows; Chowla-Selberg class means to 3.4e-9 for D=7..47; 8.19b CM values exact). Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry only, #check matches README, one-tactic probe closes nothing. Finding R01: setting of 8.11-8.19 narrowed to the chain's host fields (d prime = 7 mod 16, E/E+ unramified), unused by the routes of 8.11-8.17 and not needed by ProjectiveModels §7.31a (b).",
+  "text": "600d491b8358f95a"
+ }
+}
