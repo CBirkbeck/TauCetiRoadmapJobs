@@ -1,0 +1,35 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GluedTargetAndDivisionInequality"
+
+[[source]]
+id = "Bost1996"
+authors = "Jean-Benoît Bost"
+title = "Périodes et isogénies des variétés abéliennes sur les corps de nombres (d'après D. Masser et G. Wüstholz), Séminaire Bourbaki exp. 795, Astérisque 237, 115–161"
+year = 1996
+locator_scheme = "theorem"
+locator = "Prop. 4.3 (1), p. 131; App. A.2, pp. 146–147"
+url = "http://www.numdam.org/item/SB_1994-1995__37__115_0/"
+fetched_from = "https://www.numdam.org/item/SB_1994-1995__37__115_0.pdf"
+fetched_at = "2026-11-21T17:49:05Z"
+sha256 = "13d2911a3b4460552d2ba649609f626a0342beae85966929940ab7df205b0edb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["Conventions", "8.24"]
+
+[[source]]
+id = "GaudronRemond2014"
+authors = "Éric Gaudron; Gaël Rémond"
+title = "Théorème des périodes et degrés minimaux d'isogénies, Comment. Math. Helv. 89 (2014)"
+year = 2014
+locator_scheme = "theorem"
+locator = "§3.2, Lemme 3.9 (HAL version hal-00590958v1)"
+version_note = "read in the HAL preprint hal-00590958v1 (2011); the README cites the numbering of the version read"
+url = "https://hal.science/hal-00590958/document"
+fetched_from = "https://hal.science/hal-00590958/document"
+fetched_at = "2026-11-21T17:56:39Z"
+sha256 = "4a77a4805daa5030ee07557771473a2bed4d46dcb7631cb307bec625aa83f0f9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["8.24"]
