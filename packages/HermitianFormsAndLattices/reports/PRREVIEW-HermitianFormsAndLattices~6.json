@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HermitianFormsAndLattices~6",
+  "head": "3c0b86f0aed2f054317bdbf447b8c1c0c019c79d",
+  "pr": 2882,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HermitianFormsAndLattices",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 4,
+  "notes": "incremental re-review of 40 changed lines since 4e39735; checked: the five small corrections of the previous review (four repaired, one partly: four statements still lack a locator), the new route of 6.2(c) recomputed (differential 2HZ on i*u(p,q), fibre measure = beta_infty times the compact-dual measure, quotient equals mass(O_E^n)), the new locator Rapinchuk Theorem 2.3 p. 12 read at its lines 565-571, the F5.7 sentence against F5.7 at its open head, the README and docstring sentences on the CM corollary, and the pull request's title and description against the head (no sentence contradicted). No sampled target falls in a changed passage. Automatic checks all pass; depcheck 171 roadmaps, 1995 edges, 0 problems; Suggested.lean elaborates with two sorry warnings only; no change outside the folder and the family index.",
+  "text": "61c261931bf511dc",
+  "carried": {
+   "from": "3c0b86f0aed2f054317bdbf447b8c1c0c019c79d",
+   "head": "030281fdb1ad291f050f25538dd75dd2d7b1f9cd",
+   "findings": 1,
+   "lines": 6,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/HermitianFormsAndLattices"
+   ],
+   "corrections": true
+  }
+ }
+}
