@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FilteredLocalGaloisGroups~3",
+  "head": "c56e72fa2cb010ab4afb6e95110ddeba154be209",
+  "pr": 1795,
+  "folder": "FilteredLocalGaloisGroups",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 110 changed lines since c05d10f. The previous review had no findings; its four small corrections and two format notes are repaired. Checked: the three changed Lean statements (0.3 without T2, 0.5 for any subgroup, the new range equality of 2.0) on computed instances; 8 library declarations opened at the pins; the pull request text against the head; automatic checks all passed; dependency check 0 problems; elaboration with sorry as the only warning; one-tactic probe closed none of the three changed theorems. The seeded sample falls in the changed passages at 0.3 and 2.0, which carry no source locator.",
+  "text": "b086ca9c92175a4c"
+ }
+}
