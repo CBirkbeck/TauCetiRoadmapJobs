@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiscriminantAnalysisAndLogisticRegression~1",
+  "head": "723ec622e4d2dc87436c7a2bc75e35cf9646f620",
+  "pr": 2952,
+  "folder": "DiscriminantAnalysisAndLogisticRegression",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. All eleven sampled targets (1.1-1.4, 2.1-2.2, 3.1-3.5) recomputed with degenerate cases; adversarial table in the report. Source locators: Candes-Sur section 1.1 (1)-(2) p. 2 verified against the arXiv text; Bishop (12 of 17 locators) and Shalev-Shwartz-Ben-David not readable through a legal copy, listed under Not verifiable and for the human reviewers. 40 Mathlib and 6 Tau Ceti declarations opened at the pins; supplier citations resolved on main (MathematicalStatisticsFoundations 3.1, 3.3, 3.6, 9.5) and at the open head of StatisticalLearningTheory (copied definitions identical). Dependency check: 0 problems. Suggested.lean elaborates with ten sorry warnings only; one-tactic probe closes none of the ten theorems. Automatic checks all passed; none set aside.",
+  "text": "38945c00c6bd5ce4"
+ }
+}

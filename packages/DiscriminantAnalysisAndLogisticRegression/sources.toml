@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DiscriminantAnalysisAndLogisticRegression"
+
+[[source]]
+id = "CandesSur"
+authors = "Emmanuel J. Candes, Pragya Sur"
+title = "The phase transition for the existence of the maximum likelihood estimate in high-dimensional logistic regression"
+year = 2018
+arxiv = "1804.09753v1"
+locator_scheme = "section"
+locator = "§1.1, (1)–(2), p. 2"
+url = "https://arxiv.org/abs/1804.09753v1"
+fetched_from = "https://arxiv.org/pdf/1804.09753v1"
+fetched_at = "2026-11-21T23:29:11Z"
+sha256 = "64ccb81ddf15b126555f13bbc559c5cead0e8b411217ed1bc66722dfa23078d4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["3.3"]
