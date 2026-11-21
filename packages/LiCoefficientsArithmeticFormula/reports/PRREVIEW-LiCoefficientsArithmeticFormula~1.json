@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LiCoefficientsArithmeticFormula~1",
+  "head": "f2afb5d7727959a92622e4b7606e02db5f6c66ef",
+  "pr": 2858,
+  "folder": "LiCoefficientsArithmeticFormula",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Sample: 1.1, 2.1, 3.1 read against Lagarias arXiv:math/0404394v4 at (1.1)-(1.3), (4.5)-(4.13), Lemma 4.2, Lemma 4.3 and its remark (all locators and pages agree; the sign misprint in (4.13) confirmed). 4.1: Bombieri 2000 could not be read from a classified host (EuDML has the record only; full text at bdim.eu), so its locators are not verified; the statement, the uniformity of C and each inequality of the route were rederived independently. Recomputed in double precision: eta_0..eta_9, lambda_1..lambda_8 from the closed form and from Li's derivative formula (agree to 1e-7), the printed-sign variant, the sieve values to 1e6 for j=0,1,2, the archimedean side of Weil's form for the bump at a=0.1,0.3,0.6. Zero-side sums over 600 zeros not recomputed. All supplier citations resolved (WeilPositivityAndLiCriterion at its open head; ZerosOfLFunctions, AnalyticNumberTheoryPartI and PartIII, ExplicitPrimeCounting, ExplicitMultiplicativeFunctions on main); 22 Mathlib declarations opened at the pin; dependency check: 0 problems; automatic checks all passed; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the three theorems.",
+  "text": "446374fb41bfc2d2"
+ }
+}
