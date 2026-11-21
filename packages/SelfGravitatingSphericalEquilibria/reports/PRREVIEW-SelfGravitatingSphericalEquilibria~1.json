@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SelfGravitatingSphericalEquilibria~1",
+  "head": "4ccad93652f7d1f28fdec15b51ca3e2837165175",
+  "pr": 2948,
+  "folder": "SelfGravitatingSphericalEquilibria",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "Full review. Every statement, Check and route recomputed (adversarial table in the report); one finding: 3.1 and 4.2 stop at n < 3 although a zero exists for n < 5 and follows from the roadmap's own virial computation. Sources: Ramming-Rein and Andreasson read at their locators (7 locators agree); Pols and Reall could not be fetched through the sources service (author pages not recognised), so 16 locators and the sampled targets resting on them are under Not verifiable. 18 Mathlib declarations opened at the pin; PDE 3.4 citation resolved; automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry only; one-tactic probe closes nothing; no duplication in the pinned libraries, on main or in open pull requests.",
+  "text": "553f24683cde8724"
+ }
+}
