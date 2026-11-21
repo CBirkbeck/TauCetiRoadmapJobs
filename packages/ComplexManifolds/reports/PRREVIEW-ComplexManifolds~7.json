@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexManifolds~7",
+  "head": "704d32cb249b27f9d60d57d9af9c07917ad21915",
+  "pr": 2549,
+  "folder": "ComplexManifolds",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review of the rewritten head. Previous small correction (description omitted the change to 6.3 and 4.4) is repaired. README on main compared with the head milestone by milestone and item by item: all 35 items and the acceptance checks kept under their ids. Seeded sample of 15 targets checked by computation and against pinned declarations; the 4 Demailly locators and the Mathlib pull request's names read in the cached texts; the 11 chapter-level locators into seven commercially published textbooks are not verifiable. 256 library names checked at the pins (#check for built modules, source lines for 16 unbuilt Tau Ceti modules). Dependency check: 0 problems. Automatic checks all passed; Suggested.lean elaborates with no output and declares nothing. One small correction (the Needs clause of 7.4 pointing at an orientation convention 7.5 does not state), one carried question on SmoothBundlesConnections B2.1.",
+  "text": "cd74a0cd7190d39a",
+  "carried": {
+   "from": "704d32cb249b27f9d60d57d9af9c07917ad21915",
+   "head": "3b21fc4d55ba4e46a18aab44fdfe439ec1faedc2",
+   "findings": 1,
+   "lines": 8,
+   "folders": [
+    "ComplexManifolds"
+   ],
+   "corrections": true
+  }
+ }
+}
