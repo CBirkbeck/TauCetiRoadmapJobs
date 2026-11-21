@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PolynomialMethodInCombinatorics~3",
+  "head": "cbda202cf6fbd943124401def7076b8d26c56ca9",
+  "pr": 2848,
+  "folder": "PolynomialMethodInCombinatorics",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 62 changed lines since 194d963: R01 (joints theorem restricted to characteristic zero) is repaired in the README and in Suggested.lean; the new route of 5.1 (least-degree polynomial, p-th root over an algebraic closure, rank argument) was re-derived; the 4 new Carbery-Iliopoulou locators (Theorem 1.1, Lemma 2.4, Proposition 3.1, p. 5) agree with the text; the statement was recomputed for every set of lines of F_2^2 and F_3^2 and the 28 lines of F_2^3, and the least-degree step for every nonempty point set of F_2^2, F_3^2, F_2^3 (it fails for the empty set: C01); automatic checks all passed; Suggested.lean elaborates with 12 sorry warnings only; dependency check 0 problems; no change outside the folder; title and description agree with the head. Two small corrections, one format note.",
+  "text": "6c5843dac51027d8"
+ }
+}
