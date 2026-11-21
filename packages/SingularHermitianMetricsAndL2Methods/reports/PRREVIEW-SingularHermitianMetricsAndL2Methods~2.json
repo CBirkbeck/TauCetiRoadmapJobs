@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SingularHermitianMetricsAndL2Methods~2",
+  "head": "13a1d615e33946b23e2b45dc74e70447e71b80ec",
+  "pr": 2884,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SingularHermitianMetricsAndL2Methods",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 8,
+  "format_notes": 0,
+  "notes": "Full review of README (60 subsections) and Suggested.lean (no declarations; elaborates with no output). Seeded sample checked at the text in Demailly's Complex Analytic and Differential Geometry and Analytic Methods (author's pages), Demailly 1982 (Numdam) and Berman 2004 (arXiv): 0.3, 0.4, 0.5, 2.2, 2.3, 3.3, 6.3, 7.2, 8.4, 9.3, 9.5 verified; 7.7, 7.8, 9.4, 9.6 not verifiable (Demailly 1992, the formal proof, Ma-Marinescu unavailable). One P2 finding: 3.3(a) states the global complete Kahler metric on X minus Z for weakly pseudoconvex X, which Demailly 1982 proves only on sublevel sets or for compact/Stein X; used by 4.2's route. Adversarial pass recomputed the Checks of every layer (all correct except one Check with unreproducible numbers). Automatic checks all passed; dependency check 0 problems; overlap audit against eight closest roadmaps and 163 open pull requests found no second owner beyond a restated Nakano positivity definition.",
+  "text": "c9769bb46e223052",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C08: the family index `TauCetiRoadmap/RiemannHypothesisForDirichletLFunctions/README.md` should list, in each pull request's copy, only the sub-roadmaps on main or in that pull request, with each late",
+    "where": "the family index text carried identically by every family pull request",
+    "raised": "PRREVIEW-SingularHermitianMetricsAndL2Methods~2"
+   }
+  ]
+ }
+}
