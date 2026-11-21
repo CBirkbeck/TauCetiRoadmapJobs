@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RiemannHypothesisStatementsAndConsequences~4",
+  "head": "36e4c71e9a041dd680bedce5ce5680e5bfca00a4",
+  "pr": 2885,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RiemannHypothesisStatementsAndConsequences",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review at 36e4c71. Previous R01 (meromorphy in the converse product clause of 9.2) repaired; D01 resolved (the sibling no longer names the dropped theorem). Seeded sample of 15 targets and all 13 Suggested.lean theorems checked by computation, with an adversarial table of values; numerics recomputed. Source locators: 0 of 9 verified, no legal copy of Titchmarsh-Heath-Brown, Iwaniec-Kowalski, Ingham, Littlewood 1928 (Davenport uncertified). Library declarations opened at the pins; cross-roadmap citations resolved on main and at the open heads of QuasiRiemannHypothesis and ExplicitNumberFields. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 13 sorry warnings only; one-tactic probe: all 13 survive; signatures of 19 declarations match the README. One small correction (redundant hypothesis chi != 1 in the Littlewood statement), one format note (chapter-level locators).",
+  "text": "ac9a48111b4fb68d",
+  "carried": {
+   "from": "36e4c71e9a041dd680bedce5ce5680e5bfca00a4",
+   "head": "8516bd32bd7fcdd55ce58c3649cf6f8e050b56d8",
+   "findings": 1,
+   "lines": 5,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/RiemannHypothesisStatementsAndConsequences"
+   ],
+   "corrections": true
+  }
+ }
+}
