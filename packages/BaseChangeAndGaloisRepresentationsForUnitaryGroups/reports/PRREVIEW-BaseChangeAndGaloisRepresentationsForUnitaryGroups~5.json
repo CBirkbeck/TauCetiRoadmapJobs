@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BaseChangeAndGaloisRepresentationsForUnitaryGroups~5",
+  "head": "650e4a72839a4aaed2e3b0ccfec947240ca8b421",
+  "pr": 2890,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BaseChangeAndGaloisRepresentationsForUnitaryGroups",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review of the folder. Seeded sample: all 15 targets checked by computation (6.3a, 10.27, 10.29a, 10.30, 10.33a, 10.33b, 10.33c, 10.33d, 10.34, 13.8a, 14.1, 14.2, 15.1, 15.2, 16.1). 10.27 read against Deligne-Henniart Theoreme 4.6 and Lemme 4.7; 10.33c against Kottwitz 1986; Caraiani-Scholze only in arXiv v1. Kudla 1994, Harris-Kudla-Sweet 1996 and Labesse 2011 not readable. Gauss-sum Checks in ranks 5, 6, 8 recomputed through pure Gauss sums. About 75 supplier citations resolved on main and at six open heads; two Mathlib names opened at the pin. depcheck: 171 roadmaps, 2002 edges, 0 problems. Suggested.lean elaborates with no output and declares nothing. The worker's automatic checks all passed. Finding R01: the weight a in the de Rham clause of 16.1 is undefined, and the supplier's base change of weights gives the dual of the true weights (rank one: -m and m).",
+  "text": "f7cbd2fc0955bc80"
+ }
+}
