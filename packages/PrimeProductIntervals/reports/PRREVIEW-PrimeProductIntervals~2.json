@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PrimeProductIntervals~2",
+  "head": "37a574a19ac4e127a147ab5a3ee4d456568a3f80",
+  "pr": 2865,
+  "folder": "PrimeProductIntervals",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample (Endpoint check) recomputed; every constant of Layers 1-3 recomputed (table in the report); Chirre-Hagen Theorem 3 and Zhang section 1.1 read at their locators in the arXiv versions; Erdos-Graham, Tao's comment and Henriksson not readable. Five Mathlib declarations opened at the pin. Elaboration fails at Suggested.lean 38:4 (missing noncomputable), confirmed by hand and repaired on a scratch copy; dependency check 0 problems; the LaTeX and import-form flags are real and are format notes; no automatic check set aside.",
+  "text": "e123dd2d13f659a9"
+ }
+}
