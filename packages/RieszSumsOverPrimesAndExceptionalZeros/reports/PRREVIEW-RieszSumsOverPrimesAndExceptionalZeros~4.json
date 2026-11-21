@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RieszSumsOverPrimesAndExceptionalZeros~4",
+  "head": "cf3acf2a93169a4e6c4c3beef21651a1a58ba0a8",
+  "pr": 2877,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RieszSumsOverPrimesAndExceptionalZeros",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample 0.30b, 1.4e, 1.4f, 1.4g, 1.4h, 1.4i, 1.7a, 1.7b, 2.9b, 2.41a recomputed (25-row adversarial table); 11 source locators read in Gallagher1970, Linnik1944a/b, Bombieri1987, BennettSiksek2020 (two on the page image); 19 library declarations opened at the pins; 63 cross-roadmap section citations resolved on main and at open heads (QuasiRiemannHypothesis, RiemannHypothesisStatementsAndConsequences, ExplicitNumberFields). Suggested.lean elaborates with seven sorry warnings only; one-tactic probe closes none; 1.4i (c') follows from (c) in two lines (C03). Dependency check: 0 problems; the worker's automatic checks all passed. Previous C01 not repaired (kept as C01), previous C02 partly (in C02). Not read: [FormalProof], [Announcement], Iwaniec-Kowalski, Davenport, Stark, Lagarias-Odlyzko, Knapowski.",
+  "text": "a4c8f927e6664deb",
+  "carried": {
+   "from": "cf3acf2a93169a4e6c4c3beef21651a1a58ba0a8",
+   "head": "7297de1ec960b29dd0b9e7d4e9d4472b6dcf3860",
+   "findings": 3,
+   "lines": 16,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/RieszSumsOverPrimesAndExceptionalZeros"
+   ],
+   "corrections": true
+  }
+ }
+}
