@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BesselPoincareSeriesAndGramBounds~3",
+  "head": "fd2b3857e7ce567c484d26c71280a265d31b4de2",
+  "pr": 2916,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds",
+  "date": "2026-11-21",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 7,
+  "format_notes": 0,
+  "notes": "Full re-review. Earlier findings: R01 (5.15a Check), R02 (GGP 2.6/3.9 citations), R03 (overview hypotheses) and C01-C04 repaired; R04 (locators) partly, carried on as R03. Sample: all fifteen seeded targets plus the headlines 5.15a, 5.16, 5.20, 5.21, checked by computation (table in the report); source locators verified at SunZhu2012 Thm B, JiangSunZhu2010 Thm A, He2017 Thm 0.1 and Def. 1, BeuzartPlessis2020 Thm 12.4.1, Xue2023 Thm 2.2 and Cor. 2.5; [FormalProof] not verifiable (kernel export only). New findings: 5.20a (b) critical-level bound false off the top places (numerical witness, repair a_eff := 2Sc); 5.13 Check 1 false (interlacing does not prevent blocked steps); unlocated formal-proof steps; volume identity owned twice (5.20a (a) and ThetaChainsAndFrobeniusPrimeSums 9.4 (a)). Automatic checks all passed, none set aside; dependency check: 21 roadmaps, 217 edges, 0 problems; Suggested.lean elaborates with no output and declares nothing.",
+  "text": "b6c6eedafa03183f"
+ }
+}
