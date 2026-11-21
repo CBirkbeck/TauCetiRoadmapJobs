@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalFactorsOfTwistsAndTypes~5",
+  "head": "d6f67f57aef817819a9c428b9e98272b3cafc01d",
+  "pr": 2889,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalFactorsOfTwistsAndTypes",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review of README.md and Suggested.lean. Seeded sample 1.1, 3.1-3.4, 4.1, 4.2, 5.1, 6.1-6.5, 7.1, 7.2 checked by exact computation (3.3 series coefficients, c(alpha) formulas for n = 2, 3, cell-lemma generating function, GL4 and G4 counterexamples, Steinberg determinant, 7.1 shifts). Sources read: Zelevinsky 1980, Henniart 2002, Jacquet-Liu, Chai (15 locators) and the formal proof's source (21 locators, all files and declarations exist, statements read); Henniart 1993, JPSS 1983, Moy-Prasad, Morris, Bushnell-Kutzko, HKS not readable. Automatic checks all passed; depcheck rerun 0 problems; Suggested.lean elaborates with only the sorry warning; #check of the declarations compared with README 3.4 (i); one-tactic probe does not close the headline. Finding R01 (P2): the paragraph added to 4.1 calls Bernstein's irreducibility of products of unitarisable representations a case of clause (ii), which it is not (u(St,2) x chi). Corrections: downstream consumers that do not cite and consumers omitted; Henniart 1993 attribution in 6.4 (the form is the formal proof's LocalConverseGL); two formal-proof locators naming the wrong declaration (Heis, EulerRight) and two unnamed forms; three published locators still missing; description out of date (validation sentence, supplier SmoothRepresentationsOfLocalGroupsPartII added, ArithmeticGaloisRepresentations dropped). Cross-roadmap citations resolved on main and at open heads; ownership against open pull requests checked.",
+  "text": "adb77abd98c46484"
+ }
+}
