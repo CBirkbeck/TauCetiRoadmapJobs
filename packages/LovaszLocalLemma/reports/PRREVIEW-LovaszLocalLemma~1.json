@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LovaszLocalLemma~1",
+  "head": "b77ca3862947057419682245fbed4e8c034a71fb",
+  "pr": 2857,
+  "folder": "LovaszLocalLemma",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full review. Sample: all nine targets (1.1, 1.2, 1.3, 2.1, 3.1, 3.2, 4.1, 4.2, 5.1); 17 locators read in Zhao's notes and 4 in Moser-Tardos, all agree. Every numerical Check recomputed (552960/62145 and 15360/1488 exhaustive tests, Spencer against Erdos ranges, neighbour counts). Copied definitions identical to PropositionalSatisfiability 1.1 and RamseyNumbers 1.1 at their heads. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; one-tactic probe closes none of the nine theorems. No form of the local lemma at the pins or in another roadmap.",
+  "text": "5b2a771a99bfd9c0"
+ }
+}
