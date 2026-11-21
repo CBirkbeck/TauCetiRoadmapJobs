@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EquiangularLinesAndTwoGraphs~2",
+  "head": "617387c19c9639a57703809306d1176e5809f83d",
+  "pr": 2938,
+  "folder": "EquiangularLinesAndTwoGraphs",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 61 changed lines since 8892685: all seven previous remarks (R01, C01-C03, N01-N03) verified repaired; every changed sentence recomputed (alpha = 1 over R and C, D(J-I)D on the edgeless 4-vertex graph, class sizes 2^(n-1), simplex equality for d >= 2, alpha > 0 in the Summary, isInteger_of_is_root_of_monic opened at the pin); automatic checks all passed; depcheck 0 problems; Suggested.lean unchanged and elaborates with 14 sorry warnings only; pull request text agrees with the head; no change outside the folder. The single source (Brouwer-Haemers) could not be read through the sources service, so its 13 locators remain unverified and are reported to the human reviewers; none is in a changed passage.",
+  "text": "3602aaba0793bed3"
+ }
+}
