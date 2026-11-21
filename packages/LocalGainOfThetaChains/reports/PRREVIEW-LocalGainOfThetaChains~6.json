@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalGainOfThetaChains~6",
+  "head": "fa7ef96bbcf8b33baf416e017d0e4e235c394ddc",
+  "pr": 2915,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample of 15 targets (4.14c, 4.14c', 4.14e, 4.14f', 4.15c, 4.15d, 4.15f, 4.15a, 4.16, 4.16b, 4.16c, 4.17, 4.17b, 4.17d, 4.17c): 16 statements of the formal proof compared with the README in detail on the operator's copy (commit e50d098; the README pins ab0b752), about 40 cited files and more than 44 cited declarations confirmed present; 4.9c, 4.9d and 4.17d cite no declaration (C02, one question on 4.17d). Adversarial pass: 33 rows with computed values (Checks of 4.9c, 4.9f, 4.12, 4.14a, 4.14c, 4.14f', 4.15a, 4.17 recomputed; headline exponents of 4.14, 4.15c, 4.16, 4.16b, 4.16c, 4.17a-4.17d recomputed); no false statement found. All cross-roadmap section ids resolved on main or at open heads; depcheck 0 problems; the worker's automatic checks all passed; Suggested.lean elaborates with no message and declares nothing (no headline statable at the pins). Overlap: five closest open roadmaps read, nothing shared. For humans: single unrefereed source published without a licence.",
+  "text": "e124bb04a59a599b",
+  "carried": {
+   "from": "fa7ef96bbcf8b33baf416e017d0e4e235c394ddc",
+   "head": "8e10391bee03eab29e8237c527773243061edd9f",
+   "findings": 5,
+   "lines": 35,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains"
+   ],
+   "corrections": true
+  }
+ }
+}
