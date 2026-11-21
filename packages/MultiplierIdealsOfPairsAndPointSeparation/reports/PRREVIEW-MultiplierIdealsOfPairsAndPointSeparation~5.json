@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MultiplierIdealsOfPairsAndPointSeparation~5",
+  "head": "afb1edc7b8f5e41af55a2d7a3f651518b04be800",
+  "pr": 2911,
+  "folder": "RiemannHypothesisForDirichletLFunctions/MultiplierIdealsOfPairsAndPointSeparation",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. Sample: all eleven targets 9.10a-9.10d, 9.12-9.12c, 9.13-9.13b; 15 source locators read in KOL97, ESVI92 and the two Stacks chapters; 14 formal-proof statements read in the public repository; 25 cross-roadmap citations resolved on main or at the open heads; 11 library declarations opened at the pin. Adversarial table with computed values for every target, the three Lean declarations and the Conventions. One finding (P2): 9.12 is false for dim X = 0 and the text presents n >= 1 as a restriction of the formal proof only. Automatic checks all passed at this head; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; the one-tactic probe leaves the headline open. Not verifiable: Lazarsfeld, Angehrn-Siu (uncertified) and Kollar-Mori locators. Four items for the human reviewers (scope of 9.13-9.13b, licence of the formal proof repository, texts not read, overlap with AbundanceStatement).",
+  "text": "624b71d8f09dba03"
+ }
+}
