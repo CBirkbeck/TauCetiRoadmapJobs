@@ -1,0 +1,50 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RieszSumsOverPrimesAndExceptionalZeros"
+
+[[source]]
+id = "BennettSiksek2020"
+authors = "Michael A. Bennett, Samir Siksek"
+title = "A conjecture of Erdos, supersingular primes and short character sums"
+year = 2017
+arxiv = "1709.01022v1"
+locator_scheme = "theorem"
+locator = "Theorem 5, (26) (arXiv v1, p. 17)"
+url = "https://arxiv.org/abs/1709.01022v1"
+fetched_from = "https://arxiv.org/pdf/1709.01022v1"
+fetched_at = "2026-11-21T14:47:47Z"
+sha256 = "6998123fab2c8cd4b9da9aa90478461de883222782f879fcfe18d8cd9b91d56f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["1.4g"]
+
+[[source]]
+id = "Stark1974"
+authors = "H. M. Stark"
+title = "Some effective cases of the Brauer-Siegel Theorem"
+year = 1974
+venue = "Inventiones Mathematicae 23"
+doi = "10.1007/BF01405166"
+locator_scheme = "theorem"
+locator = "Lemma 8, pp. 145-146"
+url = "https://doi.org/10.1007/BF01405166"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.9b"]
+
+[[source]]
+id = "Davenport1980"
+authors = "Harold Davenport"
+title = "Multiplicative Number Theory"
+year = 1980
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4757-5927-3"
+locator_scheme = "chapter"
+locator = "Chapters 18-20"
+url = "https://doi.org/10.1007/978-1-4757-5927-3"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.4i"]
