@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ChowFormsAndHeightsOfSubvarieties~6",
+  "head": "d8ade8a437152f9d2de151209c2369d2e0b6ad63",
+  "pr": 2891,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ChowFormsAndHeightsOfSubvarieties",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review of the repaired head. Seeded sample 5.1, 6.1, 6.2: Philippon91 Theoreme 2 (p. 256) and Corollaire 4 (p. 272) read on the page images, GS90 Theorem 4.2.3 (p. 138) in the text; 5.1 and 6.2 cite no published statement except the value of the height of projective space; Bost-Gillet-Soule not readable legally (not verifiable). The 11 files and 20 declarations of the formal proof named in the README were found in the operator's copy and seven statements read (sign and constants agree). Checks of 5.1, 6.1, 6.2 recomputed (exact values, quadrature for the conic heights, Monte Carlo for spherical means); the new bound (N/2) log N and the identity for the height of projective space verified exactly for N < 40. 24 supplier sections resolved on main and at the open heads; dependency check 0 problems; the worker's automatic checks all passed; Suggested.lean elaborates with no message and declares nothing. Five small corrections (no locator of the formal proof at (a7); no locator for Bost-Gillet-Soule; a parenthesis in a Check true on P^1 only; two description sentences out of date; a consumer bullet omitting the use of 5.1) and one format note.",
+  "text": "8b3e77c677c38b9d",
+  "carried": {
+   "from": "d8ade8a437152f9d2de151209c2369d2e0b6ad63",
+   "head": "431383ec300b942edc90ec2a7b357de84a37ea64",
+   "findings": 5,
+   "lines": 23,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ChowFormsAndHeightsOfSubvarieties"
+   ],
+   "corrections": true
+  }
+ }
+}
