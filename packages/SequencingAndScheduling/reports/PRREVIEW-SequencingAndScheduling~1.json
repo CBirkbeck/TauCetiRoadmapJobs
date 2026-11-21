@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SequencingAndScheduling~1",
+  "head": "0f6b9b382a3d7f8419e311476705a8a9f725d259",
+  "pr": 2917,
+  "folder": "SequencingAndScheduling",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Full review. All 12 seeded targets and all 17 source locators read in the four cited texts (Lenstra-Shmoys arXiv:2001.06005v1, Karger-Stein-Wein author's copy, Erickson chapter E, Cheriyan-Ravi-Skutella arXiv:2104.06210v1). Every theorem, route and Check recomputed with degenerate cases; adversarial table in the report. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 12 theorems; 23 elaborated signatures compared with the README. Dependency check: 0 problems. Automatic checks all passed; none set aside. Overlap read against ApproximationGuarantees, MatroidOptimization, TuttePolynomialAndArrangements: nothing shared. One scope question for the human reviewers.",
+  "text": "8c4eac0e089af1a8"
+ }
+}
