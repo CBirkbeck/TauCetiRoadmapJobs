@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticIntegrals~5",
+  "head": "08023ccafb60e9203e72c6d46e4b3934e473d288",
+  "pr": 2556,
+  "folder": "EllipticIntegrals",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 4,
+  "notes": "Full review. README on main compared item by item (8 milestones, 42 items, all kept). All 279 Tau Ceti and 40 Mathlib names opened at the pins and signatures compared with the items. Numerical claims of every milestone recomputed (quadrature, AGM, 40-digit Gauss-Brent-Salamin sums); duplication theorem tested on 60 complex triples. 38 source locators read (DLMF 19 and 22, Salamin, Carlson 1995, Cremona); 3 DLMF numbers point at the wrong equation (C01). Sampled targets: 1.1, 1.5, 1.6, 1.7, 2.5, 3.2, 4.4, 5.2, 6.2, 6.3, 6.5, 7.1, 7.2, 7.7, 8.3. Suggested.lean elaborates with 11 sorry warnings only; one-tactic probe closes none. Dependency check: 0 problems. Automatic checks all passed; none set aside. Not verifiable: Carlson 1977 ch. 9, Byrd-Friedman 236.00/239.00, the Zulip agreement.",
+  "text": "644df4a316948c2f",
+  "carried": {
+   "from": "08023ccafb60e9203e72c6d46e4b3934e473d288",
+   "head": "e37e4dbe3683b7ac23130854b91873370f06eac9",
+   "findings": 4,
+   "lines": 22,
+   "folders": [
+    "EllipticIntegrals"
+   ],
+   "corrections": true
+  }
+ }
+}
