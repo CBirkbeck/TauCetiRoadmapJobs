@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InfiniteGamesAndDeterminacy~2",
+  "head": "dfa76d8b283cf0d6cfce660fe2efc2cdd4aa4a87",
+  "pr": 2875,
+  "folder": "InfiniteGamesAndDeterminacy",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 13 changed lines since ca04e29. Checked: R01 of the previous review is repaired; the rewritten Pointclasses item of the Conventions was recomputed by hand and in a Lean probe at the pin (the sets F_n are clopen with union U for every discrete X; 3.1 and 3.2 each give closed and open determinacy; cylinders of length 1 are disjoint); the cited routes and Needs lines of 1.3, 3.1, 3.2 agree with it; the pull request text is not contradicted; automatic checks all pass, dependency check 0 problems, Suggested.lean elaborates with only sorry warnings. Not verifiable: the two new citations of Moschovakis p. 220 (text not legally readable through the sources service); left to the human reviewers.",
+  "text": "ab148abfec9cfbb5"
+ }
+}
