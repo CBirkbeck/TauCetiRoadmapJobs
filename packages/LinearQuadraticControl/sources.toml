@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LinearQuadraticControl"
+
+[[source]]
+id = "Sontag1998"
+locator_scheme = "theorem"
+locator = "Proposition 5.5.6"
+url = "https://sontaglab.org/FTPDIR/sontag_mathematical_control_theory_springer98.pdf"
+fetched_from = "https://sontaglab.org/FTPDIR/sontag_mathematical_control_theory_springer98.pdf"
+fetched_at = "2026-11-21T06:39:42Z"
+sha256 = "dc0efa0cdd14f4e2b1abc48d71ec3fdf943d6949e7f05d29db9a65afea4ee001"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.1"]
