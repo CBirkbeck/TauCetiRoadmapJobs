@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GluedTargetAndDivisionInequality~7",
+  "head": "54c521b1ca911c24987c3327db3986585e2b8fc2",
+  "pr": 2922,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review of README and Suggested.lean at this head. No finding; the two findings of the earlier review are repaired (8.24c (i) states the denominators of the test values, linear in b; 0 <= D^-_j in 8.23). Seeded sample (7.12, 7.13, 8.3, 8.6, 8.7, 8.8, 8.9, 8.10, 8.19e, 8.20a, 8.22, 8.23, 8.24b, 8.24c, 8.24) and 8.1, 8.2, 8.4, 8.20, 8.20b, 8.21, 8.24a recomputed by hand and against the cited supplier sections read at their open heads (RowTower 5.8a, Seesaw 6.14-6.15, LocalGain 4.9f and 4.16, ThetaChains 2.1, 2.5, 3.9, FiniteReductiveGroups 2.8, Slopes 2.4, IntegralWeyl 1.1 and 3.3, FrobeniusRestrictedRieszSums 0.4 (g), ArithmeticVolumes 8.19, Congruence 7.11). Bost 1996 (Prop. 4.3 p. 131, App. A.2 pp. 146-147), Gaudron-Remond (Lemme 3.9) and the announcement read at their locators; the formal proof, which carries 112 of 115 locators, is on a host with no licence class and was not readable. Depcheck 170 roadmaps, 0 problems; automatic checks all passed; Suggested.lean elaborates with the sorry warning only; one-tactic probe (simp, simp_all) fails. Two small corrections (the linear bound for the branching integer behind t_u in 8.7 (b) has no route and no locator; one sentence of the description is behind the head), one format note, one question. Human decision: scope and licence of the formal proof announced 20 November 2026.",
+  "text": "672a34de104d769f",
+  "carried": {
+   "from": "54c521b1ca911c24987c3327db3986585e2b8fc2",
+   "head": "5cb15baf016ec19cea92f27bf0fe14ee4ce93194",
+   "findings": 2,
+   "lines": 15,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality"
+   ],
+   "corrections": true
+  }
+ }
+}
