@@ -1,0 +1,86 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "WachLatticesOverTheCyclotomicTower"
+
+[[source]]
+id = "Berger-Wach-2004"
+authors = "Laurent Berger"
+title = "Limites de représentations cristallines"
+year = 2002
+locator_scheme = "theorem"
+locator = "Proposition II.1.1"
+url = "https://perso.ens-lyon.fr/laurent.berger/articles/article06.pdf"
+fetched_from = "https://perso.ens-lyon.fr/laurent.berger/articles/article06.pdf"
+fetched_at = "2026-11-21T18:58:37Z"
+sha256 = "52e188211dfba449a92e5a8a66cc65379fe17688e6384a8eb6ece3a19a932110"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["6.4"]
+
+[[source]]
+id = "Wach-1996"
+authors = "Nathalie Wach"
+title = "Représentations $p$-adiques potentiellement cristallines"
+year = 1996
+venue = "Bulletin de la Soci&amp;#233;t&amp;#233; math&amp;#233;matique de France 124"
+doi = "10.24033/bsmf.2285"
+locator_scheme = "page"
+locator = "p. 380"
+url = "https://doi.org/10.24033/bsmf.2285"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.2285.pdf"
+fetched_at = "2026-11-21T18:56:53Z"
+sha256 = "a34483d356998edb48aa26305d0a708135d56f8d762de4fc6db21a051eae835c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["6.4"]
+
+[[source]]
+id = "Herr-1998"
+authors = "Laurent Herr"
+title = "Sur la cohomologie galoisienne des corps $p$-adiques"
+year = 1998
+venue = "Bulletin de la Soci&amp;#233;t&amp;#233; math&amp;#233;matique de France 126"
+doi = "10.24033/bsmf.2337"
+locator_scheme = "theorem"
+locator = "Théorème 3.8"
+url = "https://doi.org/10.24033/bsmf.2337"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.2337.pdf"
+fetched_at = "2026-11-21T18:56:58Z"
+sha256 = "e1a3162581ed6737ca61c1a2edc5b73db4d9b7bdbdaeb03fb20a751a819c7373"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["6.7"]
+
+[[source]]
+id = "Announcement"
+locator_scheme = "page"
+locator = "p. 1"
+url = "https://alpo.ge/remark.pdf"
+fetched_from = "https://alpo.ge/remark.pdf"
+fetched_at = "2026-11-21T18:58:04Z"
+sha256 = "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["References"]
+
+[[source]]
+id = "Berger-2008"
+authors = "Laurent Berger"
+title = "Équations différentielles p-adiques et (φ,N)-modules filtrés"
+year = 2008
+venue = "Astérisque 319"
+arxiv = "math/0406601"
+version_note = "read in the author's post-referee copy; Proposition II.2.5 and Théorème V.2.3 (Théorème C of the introduction) carry the same numbers in arXiv v1"
+locator_scheme = "theorem"
+locator = "Proposition II.2.5"
+url = "https://perso.ens-lyon.fr/laurent.berger/articles/article10.pdf"
+fetched_from = "https://perso.ens-lyon.fr/laurent.berger/articles/article10.pdf"
+fetched_at = "2026-11-21T19:10:25Z"
+sha256 = "d0b6024fdfa0858220cd8b2a75b9c2be24649a37bf687594058a1c2d93779f04"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["6.4"]
