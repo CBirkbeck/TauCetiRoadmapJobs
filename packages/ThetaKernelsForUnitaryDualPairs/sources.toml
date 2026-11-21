@@ -1,0 +1,312 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ThetaKernelsForUnitaryDualPairs"
+
+[[source]]
+id = "GQT"
+authors = "Wee Teck Gan, Yannan Qiu, Shuichiro Takeda"
+title = "The Regularized Siegel-Weil Formula (The Second Term Identity) and the Rallis Inner Product Formula"
+year = 2012
+arxiv = "1207.4709v3"
+locator_scheme = "theorem"
+locator = "Theorem 7.1"
+url = "https://arxiv.org/abs/1207.4709v3"
+fetched_at = "2026-11-21T17:27:50Z"
+sha256 = "cde6b7ad22b974d4159f8cedd1e14a00bf4b05ec977ab750b54fdceb067adac5"
+licence_class = "operator-local"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["6.4a", "6.13a"]
+
+[[source]]
+id = "GanIchino"
+authors = "Wee Teck Gan, Atsushi Ichino"
+title = "The Gross-Prasad conjecture and local theta correspondence"
+year = 2014
+arxiv = "1409.6824v2"
+locator_scheme = "section"
+locator = "§7.4"
+url = "https://arxiv.org/abs/1409.6824v2"
+fetched_from = "https://arxiv.org/pdf/1409.6824v2"
+fetched_at = "2026-11-21T17:27:56Z"
+sha256 = "4aaf7bd6281dd8726cdfca2de32b6f515924a8277865684fc9e011770ec0be5e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v2"
+cited_for = ["3.3b", "4.4a"]
+
+[[source]]
+id = "Kudla96"
+authors = "Stephen S. Kudla"
+title = "Notes on the local theta correspondence"
+year = 1996
+locator_scheme = "section"
+locator = "III.4, Propositions 4.1, 4.3-4.5"
+url = "https://www.math.toronto.edu/skudla/castle.pdf"
+fetched_from = "https://www.math.toronto.edu/skudla/castle.pdf"
+fetched_at = "2026-11-21T17:34:26Z"
+sha256 = "800ed01b22fa6104a3292a8b2ef124cd69781a6904f626f71fcf2a30a9af8cdd"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["3.9a"]
+
+[[source]]
+id = "Ichino20"
+authors = "Atsushi Ichino"
+title = "Theta lifting for discrete series representations of real unitary groups"
+year = 2020
+arxiv = "2002.09148v1"
+locator_scheme = "theorem"
+locator = "Theorem 4.1, Remark 4.2"
+url = "https://arxiv.org/abs/2002.09148v1"
+fetched_from = "https://arxiv.org/pdf/2002.09148v1"
+fetched_at = "2026-11-21T17:34:30Z"
+sha256 = "125116449574cabbaada88624c8c563ceb766ceca2e3ba447663946fe34524c7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["3.46a"]
+
+[[source]]
+id = "LiLiu21"
+authors = "Chao Li, Yifeng Liu"
+title = "Chow groups and $L$-derivatives of automorphic motives for unitary groups"
+year = 2020
+arxiv = "2006.06139v5"
+locator_scheme = "section"
+url = "https://arxiv.org/abs/2006.06139v5"
+fetched_from = "https://arxiv.org/pdf/2006.06139v5"
+fetched_at = "2026-11-21T17:34:37Z"
+sha256 = "b3705e15817c142a2319660f12b07bf3871e13389d6d5557397c776809cec289"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v5"
+cited_for = ["3.21a"]
+
+[[source]]
+id = "Weil65"
+authors = "André Weil"
+title = "Sur la formule de Siegel dans la théorie des groupes classiques"
+year = 1965
+venue = "Acta Mathematica 113"
+doi = "10.1007/BF02391774"
+locator_scheme = "section"
+locator = "§§V-VI"
+url = "https://doi.org/10.1007/BF02391774"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.7a"]
+
+[[source]]
+id = "KV78"
+authors = "M. Kashiwara, M. Vergne"
+title = "On the Segal-Shale-Weil representations and harmonic polynomials"
+year = 1978
+venue = "Inventiones Mathematicae 44"
+doi = "10.1007/BF01389900"
+locator_scheme = "section"
+url = "https://doi.org/10.1007/BF01389900"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.45"]
+
+[[source]]
+id = "Li89"
+authors = "Jian-Shu Li"
+title = "Singular unitary representations of classical groups"
+year = 1989
+venue = "Inventiones Mathematicae 97"
+doi = "10.1007/BF01389041"
+locator_scheme = "theorem"
+url = "https://doi.org/10.1007/BF01389041"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.9a"]
+
+[[source]]
+id = "Zelevinsky80"
+authors = "Andrei V. Zelevinsky"
+title = "Induced representations of reductive p-adic groups II. On irreducible representations of GL(n)"
+year = 1980
+venue = "Annales scientifiques de l'École normale supérieure 13"
+doi = "10.24033/asens.1379"
+locator_scheme = "theorem"
+url = "https://doi.org/10.24033/asens.1379"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1379.pdf"
+fetched_at = "2026-11-21T17:34:59Z"
+sha256 = "663c79f2ee236626385d242d83107410c1a3291ba5584d4b8abee9cf8af428ac"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["3.47"]
+
+[[source]]
+id = "Minguez08"
+authors = "Alberto Minguez"
+title = "Correspondance de Howe explicite: paires duales de type II"
+year = 2008
+venue = "Annales scientifiques de l'École normale supérieure 41"
+doi = "10.24033/asens.2080"
+locator_scheme = "theorem"
+url = "https://doi.org/10.24033/asens.2080"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.2080.pdf"
+fetched_at = "2026-11-21T17:35:12Z"
+sha256 = "b379de638b8f3be2932ccf68485078ac00d776f7e6a244e9cb602a29958575ab"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["3.21a"]
+
+[[source]]
+id = "Paul98"
+authors = "Annegret Paul"
+title = "Howe correspondence for real unitary groups"
+year = 1998
+venue = "Journal of Functional Analysis 159"
+doi = "10.1006/jfan.1998.3330"
+locator_scheme = "theorem"
+url = "https://doi.org/10.1006/jfan.1998.3330"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.46"]
+
+[[source]]
+id = "Yamana14"
+authors = "Shunsuke Yamana"
+title = "L-functions and theta correspondence for classical groups"
+year = 2014
+venue = "Inventiones mathematicae 196"
+doi = "10.1007/s00222-013-0476-x"
+locator_scheme = "theorem"
+url = "https://doi.org/10.1007/s00222-013-0476-x"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.13b"]
+
+[[source]]
+id = "Kudla94"
+authors = "Stephen S. Kudla"
+title = "Splitting metaplectic covers of dual reductive pairs"
+year = 1994
+venue = "Israel Journal of Mathematics 87"
+doi = "10.1007/bf02773003"
+locator_scheme = "section"
+url = "https://doi.org/10.1007/bf02773003"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.3b"]
+
+[[source]]
+id = "GJ72"
+authors = "Roger Godement, Hervé Jacquet"
+title = "Zeta Functions of Simple Algebras"
+year = 1972
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0070263"
+locator_scheme = "theorem"
+url = "https://doi.org/10.1007/BFb0070263"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.47"]
+
+[[source]]
+id = "Rallis87"
+authors = "Stephen Rallis"
+title = "L-Functions and the Oscillator Representation"
+year = 1987
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0077894"
+locator_scheme = "section"
+url = "https://doi.org/10.1007/BFb0077894"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.7c"]
+
+[[source]]
+id = "PSR87"
+authors = "Stephen Gelbart, Ilya Piatetski-Shapiro, Stephen Rallis"
+title = "Explicit Constructions of Automorphic L-Functions"
+year = 1987
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0078125"
+locator_scheme = "section"
+url = "https://doi.org/10.1007/BFb0078125"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.13a"]
+
+[[source]]
+id = "VZ84"
+locator_scheme = "theorem"
+url = "http://www.numdam.org/item/CM_1984__53_1_51_0/"
+fetched_from = "https://www.numdam.org/item/CM_1984__53_1_51_0.pdf"
+fetched_at = "2026-11-21T17:40:03Z"
+sha256 = "ccaaf5ad243ccb85d3db629ff7677ca5b80b7e2d71e502d21fa1b773863b78a4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["3.47b"]
+
+[[source]]
+id = "Rallis84a"
+locator_scheme = "theorem"
+url = "http://www.numdam.org/item/CM_1984__51_3_333_0/"
+fetched_from = "https://www.numdam.org/item/CM_1984__51_3_333_0.pdf"
+fetched_at = "2026-11-21T17:40:04Z"
+sha256 = "1314569a6f1972aea916e4f3a110d26017b95f413671b0e64f4afa0e6c22653c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["5.6a"]
+
+[[source]]
+id = "Rallis84b"
+locator_scheme = "theorem"
+url = "http://www.numdam.org/item/CM_1984__52_2_139_0/"
+fetched_from = "https://www.numdam.org/item/CM_1984__52_2_139_0.pdf"
+fetched_at = "2026-11-21T17:40:05Z"
+sha256 = "af1412a50a22428237260a32d233c246d8a2ad5e395963953f4da6f3384af28b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["6.13a"]
+
+[[source]]
+id = "Ichino07"
+authors = "Atsushi Ichino"
+title = "On the Siegel-Weil formula for unitary groups"
+year = 2007
+venue = "Mathematische Zeitschrift 255"
+doi = "10.1007/s00209-006-0045-8"
+locator_scheme = "theorem"
+url = "https://doi.org/10.1007/s00209-006-0045-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.4a"]
+
+[[source]]
+id = "Ichino04"
+authors = "Atsushi Ichino"
+title = "A regularized Siegel-Weil formula for unitary groups"
+year = 2004
+venue = "Mathematische Zeitschrift 247"
+doi = "10.1007/s00209-003-0580-5"
+locator_scheme = "theorem"
+url = "https://doi.org/10.1007/s00209-003-0580-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.13b"]

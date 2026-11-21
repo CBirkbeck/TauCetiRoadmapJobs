@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ThetaKernelsForUnitaryDualPairs~2",
+  "head": "621fa2e14067f348decb8868110020eb4b487030",
+  "pr": 2907,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaKernelsForUnitaryDualPairs",
+  "date": "2026-11-21",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 7,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample of 15 targets: Checks and formulas recomputed (all consistent except the 3.47c Check); GQT (Thm 7.1, Props 11.1-11.2, Thm 11.4) and Gan-Ichino (sections 4.1, 7.4) read; Harris-Kudla-Sweet unreadable (host unclassified); the other sources carry no locators. Worker's automatic checks all passed; depcheck rerun: 0 problems; Suggested.lean elaborates with no output (no declarations). Findings: 3.46a gap hypothesis is route-specific; locators missing throughout; false Check in 3.47c for half-integral eps0.",
+  "text": "e2b39b366db5bf53"
+ }
+}
