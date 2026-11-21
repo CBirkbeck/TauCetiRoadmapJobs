@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsForLogSingularMetrics~7",
+  "head": "ab8344f8e0afefa95e5035a34059366602c30112",
+  "pr": 2894,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample 0.4, 4.3a, 4.3b, 14.1, 14.2, 16.1: all seven published locators verified at the text (moriwaki-2009 Thm 6.2, Ex 6.1(2), Cor 6.4; zhang-1995 Thm (5.2), Lemma (5.4); roy-thunder-1996 Thm 2.2, Thm 8.1; moret-bailly-1990 Thm 3.3; bost-1996 p. 130); the formal proof (44 of 51 locators) could not be read from a legal place and is listed as not verifiable. Mathematics recomputed: every Check and worked example of the four layers, the rate constants 10.8 and 2.2, the Poincare-weight masses, the conic example, the heights of P^1 and P^2, the N=3 flag numbers from two fibrations, the reflection formula on P^1, over Spec O_K (against 4.3b) and on Fl_3 (-8 both ways), the kappa values, the Hodge inner product against Deligne's metric, the reduction (b1) from (a) and the Cauchy/product-formula count of 16.1. Every cited section of 13 supplier and consumer roadmaps resolved on main or at the open heads. Dependency check: 0 problems. Suggested.lean elaborates with no message and declares nothing; the four library names in its docstring exist at the pins. The worker's automatic checks all passed. Five small corrections (g = 0 in 16.1; unbounded loss in 0.4 (c); targets without provenance; two sentences of the description) and one format note. For humans: no refereed source for 16.1 (a), 0.4 (b), 14.1; licence status of the formal proof's repository; the formal proof's text and arrangement not compared.",
+  "text": "445d57ae35503073",
+  "carried": {
+   "from": "ab8344f8e0afefa95e5035a34059366602c30112",
+   "head": "b34d4ea6621db374c34c23ebca286abf4217c8e2",
+   "findings": 5,
+   "lines": 14,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics"
+   ],
+   "corrections": true
+  }
+ }
+}
