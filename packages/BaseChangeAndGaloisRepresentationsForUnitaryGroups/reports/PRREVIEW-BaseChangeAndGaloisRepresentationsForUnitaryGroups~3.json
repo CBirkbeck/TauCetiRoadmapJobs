@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BaseChangeAndGaloisRepresentationsForUnitaryGroups~3",
+  "head": "3c2271c12ac1945da4728af03012085772831559",
+  "pr": 2890,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BaseChangeAndGaloisRepresentationsForUnitaryGroups",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review of the folder. Seeded sample: all 15 targets checked mathematically (6.3a, 10.27, 10.29a, 10.30, 10.33a, 10.33b, 10.33d, 10.34, 10.35, 13.8a, 14.1, 14.2, 15.1, 15.2, 16.1). 10.27 was checked against Deligne-Henniart Thm 4.6 and Lemma 4.7 (IAS copy) and 10.33c against Kottwitz 1986 (Numdam). Caraiani-Scholze was read in arXiv v1 only. Kudla, HKS, BH, Green, Henniart, HT and Labesse were not readable. Twisted Gauss sums for (q,n) = (4,5), (3,6), (2,8) were recomputed and the Checks hold. Supplier citations were resolved on main and at the open family heads. depcheck: 0 problems. Suggested.lean elaborates with no output and declares nothing. The worker's gate passed. My own gate run flagged only the family-index outside-folder files and the not-yet-in-order note, both set aside. Finding R01: 16.1 duplicates PotentialAutomorphyInfrastructurePartII section 3.6 (open, earlier in merge order) without citing it.",
+  "text": "85cf8d91240f5ab0"
+ }
+}
