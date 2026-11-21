@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RieszSumsOverPrimesAndExceptionalZeros~5",
+  "head": "7297de1ec960b29dd0b9e7d4e9d4472b6dcf3860",
+  "pr": 2877,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RieszSumsOverPrimesAndExceptionalZeros",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 16 changed lines since cf3acf2. Checked: the new Effectivity sentence of 1.7b against Bombieri1987 (Landau-Page lemma p. 39, Theoremes 13, 14, 16, pp. 39-41; lines 1176-1260), including the derivation of 1.7b (i) from Theoreme 16 at T = e^L and the vacuous cases; the new References entry; the two docstring changes of Suggested.lean; the previous C01-C03 (repaired) and N01 (not repaired, raised again as a format note); the title and description against the head (one omission, C01). Seeded sample checked where it falls in the change (1.7b). Elaboration: seven sorry warnings only; depcheck 0 problems; the worker's automatic checks all passed; no change outside the folder and the family index.",
+  "text": "a286b99d7e63ae7b",
+  "carried": {
+   "from": "7297de1ec960b29dd0b9e7d4e9d4472b6dcf3860",
+   "head": "7297de1ec960b29dd0b9e7d4e9d4472b6dcf3860",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
