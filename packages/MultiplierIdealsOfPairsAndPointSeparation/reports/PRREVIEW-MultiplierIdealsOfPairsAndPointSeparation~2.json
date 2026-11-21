@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MultiplierIdealsOfPairsAndPointSeparation~2",
+  "head": "46f6b1a91de43f8c63a6d8fe8633410dd22849ff",
+  "pr": 2911,
+  "folder": "RiemannHypothesisForDirichletLFunctions/MultiplierIdealsOfPairsAndPointSeparation",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "Full re-review at 46f6b1a. Earlier R01-R04, C02-C05 and N01 repaired; C01 partly (Angehrn-Siu locator still missing, now C03); N02 not taken. Seeded sample (9.10a-9.10d, 9.12-9.12c, 9.13-9.13b) checked against KOL97 (2.16, 3.3-3.8, 5.5, 5.8-5.10, 6.4-6.11, 7.8), ESVI92 5.4 d) p. 44, Stacks 01WV/02OO/0BEP/0BJ8; ANGSIU95 and LAZ04 uncertified, Kollar-Mori not in manifest and unread. Automatic checks all passed; depcheck 171 roadmaps, 1993 edges, 0 problems; Suggested.lean elaborates with sorry as the only warning, #check of all three declarations matches the README, simp probe leaves the headline open. 25-row adversarial table. Corrections: 9.10d (a) overlaps ArakelovGeometryAndAbelianHeightsPartII 0.3 (1'); description ownership sentence out of date; 9.12c lacks Angehrn-Siu theorem number; 9.13a (i) range understated (route gives j >= D-1).",
+  "text": "7321bd788761f7aa"
+ }
+}
