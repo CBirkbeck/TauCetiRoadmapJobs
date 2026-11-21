@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IharaZetaFunction~1",
+  "head": "3ea6068127a148502ce5eeba5df6dc0c2900a911",
+  "pr": 2946,
+  "folder": "IharaZetaFunction",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample 1.1, 1.2, 2.1, 3.1, 4.1, 4.2, 5.1, 5.2, 5.3: all 19 Terras locators read in the text (author's-page draft, partly through OCR; four displayed formulas matched by structure only). Exact recomputation of the trace formula, determinant formula, Bass, Horton, regular-case factorization and functional equation on ten small graphs and six regular graphs, and of every number in a Check; irreducibility criterion and Ramanujan/RH equivalence checked by hand at boundary cases. 48 Mathlib names and one Tau Ceti name opened at the pins; DeligneWeightsAndPurity 0.10 (ii) resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with eight sorry warnings only; one-tactic probe closes none of the eight theorems. Overlap: nothing shared with the five closest open roadmaps or DiscreteQuantumWalks. Three misprints of the source recorded. The sources service recorded the Terras entry in the package manifest when the text was fetched.",
+  "text": "b77699d4ace11fa5"
+ }
+}

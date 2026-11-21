@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "IharaZetaFunction"
+
+[[source]]
+id = "Terras"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://mathweb.ucsd.edu/~aterras/newbook.pdf"
+fetched_from = "https://mathweb.ucsd.edu/~aterras/newbook.pdf"
+fetched_at = "2026-11-21T21:54:16Z"
+sha256 = "3c27f2c08692e089dee3debd08dd0b626e210f1fcc734f8a8c2896345186c459"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["3.1"]
