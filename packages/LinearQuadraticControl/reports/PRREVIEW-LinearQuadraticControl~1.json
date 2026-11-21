@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LinearQuadraticControl~1",
+  "head": "4997902b4f3dd24e26cfe86a3725ed591cee0791",
+  "pr": 2861,
+  "folder": "LinearQuadraticControl",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review. All 12 sampled targets and every Check recomputed by hand; Layers 1, 4, 5 also numerically (136 random time-varying instances of the completion of the square, a 2x2 stabilizable and detectable pair that is neither controllable nor observable). Sontag read at 7 locators, all correct; the two Anderson-Moore books (12 locators) could not be read from a legal place the sources service accepts and are requested, so their locators are unverified. 16 Mathlib declarations opened at the pin; supplier citations resolved at the heads of KalmanFiltering, LinearSystemsAndControl, IterativeMethodsForLinearSystems. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 14 theorems. One small correction (Needs line of 3.1 lacks IterativeMethodsForLinearSystems 1.2). Human reviewers: status of the Anderson-Moore scans.",
+  "text": "a9e807edcc7f3f83"
+ }
+}
