@@ -1,0 +1,148 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ReducibilityIdealsAndUltrafilterPatching"
+
+[[source]]
+id = "Stacks"
+authors = "The Stacks project authors"
+title = "The Stacks project, Chapter Commutative Algebra"
+year = 2026
+version_note = "Chapter Commutative Algebra, version ed88ff78 compiled 14 July 2026; tags are stable"
+locator_scheme = "tag"
+locator = "00LN, 061R, 061S, 00IQ, 09B8, 05GG, 031D"
+url = "https://stacks.math.columbia.edu/tag/061S"
+fetched_from = "https://stacks.math.columbia.edu/download/algebra.pdf#nameddest=061S"
+fetched_at = "2026-11-21T17:16:40Z"
+sha256 = "b035a1f02104906a1820636cd332a0d7962fef3318d207a056634cb14dc86947"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["6.13"]
+
+[[source]]
+id = "Announcement"
+authors = "Levent Alpöge"
+title = "Announcement of a proof of the Riemann hypothesis and of its Lean formalization"
+year = 2026
+locator_scheme = "page"
+locator = "1"
+url = "https://alpo.ge/remark.pdf"
+fetched_from = "https://alpo.ge/remark.pdf"
+fetched_at = "2026-11-21T17:19:16Z"
+sha256 = "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["References"]
+
+[[source]]
+id = "Teissier1973"
+authors = "Bernard Teissier"
+title = "Cycles évanescents, sections planes et conditions de Whitney"
+year = 1973
+locator_scheme = "chapter"
+locator = "Chapter I"
+url = "http://www.numdam.org/item/AST_1973__7-8__285_0/"
+fetched_from = "https://www.numdam.org/item/AST_1973__7-8__285_0.pdf"
+fetched_at = "2026-11-21T17:25:01Z"
+sha256 = "cb61f9c1cf3186446c15907742b3909ee07cd01c34be9e8ca54fce69c7f02aa8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["3.16"]
+
+[[source]]
+id = "SkinnerWiles1999"
+authors = "Christopher Skinner, Andrew Wiles"
+title = "Residually reducible representations and modular forms"
+year = 1999
+locator_scheme = "section"
+locator = "Section 2"
+url = "http://www.numdam.org/item/PMIHES_1999__89__5_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1999__89__5_0.pdf"
+fetched_at = "2026-11-21T17:25:04Z"
+sha256 = "ec0697b3e9c9fa68063b19688f10347d204a8b7b86526384c9ccd6e7fe30e6f3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["6.12", "6.13"]
+
+[[source]]
+id = "AllenNewtonThorne2020"
+authors = "Patrick B. Allen, James Newton, Jack A. Thorne"
+title = "Automorphy lifting for residually reducible $l$-adic Galois representations, II"
+year = 2019
+arxiv = "1912.11269v2"
+locator_scheme = "section"
+locator = "Section 1"
+url = "https://arxiv.org/abs/1912.11269v2"
+fetched_from = "https://arxiv.org/pdf/1912.11269v2"
+fetched_at = "2026-11-21T17:25:16Z"
+sha256 = "077a344352c80389ce75d5c61a69fba90413303aca911a616fe46dbeb8514bfa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v2"
+cited_for = ["6.12", "6.13"]
+
+[[source]]
+id = "IyengarKhareManning"
+authors = "Srikanth B. Iyengar, Chandrashekhar B. Khare, Jeffrey Manning"
+title = "Congruence modules and the Wiles-Lenstra-Diamond numerical criterion in higher codimensions"
+year = 2022
+arxiv = "2206.08212v3"
+locator_scheme = "section"
+locator = "Introduction"
+url = "https://arxiv.org/abs/2206.08212v3"
+fetched_from = "https://arxiv.org/pdf/2206.08212v3"
+fetched_at = "2026-11-21T17:25:27Z"
+sha256 = "8f061724a1800af6319492108835f4db0fd640b93750c213fd1bb313bb8c9d7b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v3"
+cited_for = ["4.9"]
+
+[[source]]
+id = "SGA2"
+authors = "Alexander Grothendieck, Michele Raynaud"
+title = "Cohomologie locale des faisceaux cohérents et théorèmes de Lefschetz locaux et globaux (SGA 2)"
+year = 2005
+arxiv = "math/0511279v1"
+locator_scheme = "chapter"
+locator = "Exposé XIII"
+url = "https://arxiv.org/abs/math/0511279v1"
+fetched_from = "https://arxiv.org/pdf/math/0511279v1"
+fetched_at = "2026-11-21T17:25:37Z"
+sha256 = "41ad02c57321a8d2200ff32a929bc93adbc3de0d59dcd5a284d28d859fb87a90"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["6.10"]
+
+[[source]]
+id = "Serre1965"
+authors = "Jean-Pierre Serre"
+title = "Algèbre locale. Multiplicités"
+year = 1965
+venue = "Lecture Notes in Mathematics 11, Springer"
+locator_scheme = "chapter"
+locator = "Chapter IV"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.16"]
+
+[[source]]
+id = "Fulton1984"
+authors = "William Fulton"
+title = "Intersection Theory"
+year = 1984
+doi = "10.1007/978-3-662-02421-8"
+locator_scheme = "chapter"
+locator = "Appendix A; Chapter 6"
+url = "https://doi.org/10.1007/978-3-662-02421-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.16", "3.17"]
