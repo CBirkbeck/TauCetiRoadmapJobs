@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaSeries~7",
+  "head": "e7d0eeb6c6e8b161c2b85447c690f1178c727ace",
+  "pr": 2725,
+  "folder": "ThetaSeries",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since e7d0eeb. Checked: the pull request's description, sentence by sentence, against the head and the README at the merge base (form paragraph, the lists of realised and open sections against the In Tau Ceti lines, each bullet of the changed-statements list, the additions, the Suggested.lean paragraph); the previous C01 is repaired, verified against the two limit theorems at the pin; the previous N01 (coarse locators) is carried as a format note. Adversarial row recomputed for reciprocity at the non-coprime pair (2,2) on sqrt2 Z^2 (4 = 4). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 10 sorry warnings only; nothing changes outside the folder. No cited source could be read legally (flagged to the human reviewers).",
+  "text": "5ca5ccfc81e8c2ae"
+ }
+}
