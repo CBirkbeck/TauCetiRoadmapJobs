@@ -1,0 +1,64 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HeckeIdealsAndTaylorWilesRelations"
+
+[[source]]
+id = "NT23"
+authors = "James Newton, Jack A. Thorne"
+title = "Adjoint Selmer groups of automorphic Galois representations of unitary type"
+year = 2019
+arxiv = "1912.11265v3"
+locator_scheme = "theorem"
+locator = "Theorem A (p. 2), Definition 2.23 (p. 20), Lemmas 2.25 and 2.28 (pp. 21, 23); numbering and pages of arXiv v3"
+url = "https://arxiv.org/abs/1912.11265v3"
+fetched_from = "https://arxiv.org/pdf/1912.11265v3"
+fetched_at = "2026-11-21T19:37:16Z"
+sha256 = "286597946a3efcac15b1f1d610370ca0cb52619b20954f3c5bd7f224c12bcf5f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v3"
+cited_for = ["9.9"]
+
+[[source]]
+id = "Che14"
+authors = "Gaetan Chenevier"
+title = "The p-adic analytic space of pseudocharacters of a profinite group and pseudorepresentations over arbitrary rings"
+year = 2008
+arxiv = "0809.0415v2"
+locator_scheme = "theorem"
+locator = "Proposition 3.7 and Example 3.6 (p. 43); numbering and pages of arXiv v2"
+url = "https://arxiv.org/abs/0809.0415v2"
+fetched_from = "https://arxiv.org/pdf/0809.0415v2"
+fetched_at = "2026-11-21T19:36:41Z"
+sha256 = "f3c0e0d86e803301c617d3023d425752e30da46673ed5af932647eb284286953"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v2"
+cited_for = ["3.13a"]
+
+[[source]]
+id = "BZ77"
+locator_scheme = "theorem"
+locator = "Geometrical Lemma 2.12"
+url = "http://archive.numdam.org/article/ASENS_1977_4_10_4_441_0.pdf"
+fetched_from = "https://www.numdam.org/article/ASENS_1977_4_10_4_441_0.pdf"
+fetched_at = "2026-11-21T19:37:41Z"
+sha256 = "8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["4.2a"]
+
+[[source]]
+id = "Announcement"
+locator_scheme = "page"
+locator = "pp. 1-2 (lines 45-53: the formalization and the location of its source)"
+url = "https://alpo.ge/remark.pdf"
+fetched_from = "https://alpo.ge/remark.pdf"
+fetched_at = "2026-11-21T19:37:41Z"
+sha256 = "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["References"]
