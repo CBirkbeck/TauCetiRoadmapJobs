@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MinimalSurfaces~16",
+  "head": "6b081a347d9c490cdb061fd3dc3356abd86095f7",
+  "pr": 2491,
+  "folder": "RiemannianGeometry/MinimalSurfaces",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 12 changed lines since 7583884. Checked: the repair of C02 against Simon23 (Theorem 1.1 and 1.2, arXiv:2101.06401v2, read at the locator: the hypersurface is oriented and the inequality is the Euclidean case of 7.8); the repair of C01 and every sentence of the title and description against the head (all hold); the passages citing 7.8; no seeded sample target falls in the changed passage; the automatic checks all pass; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged and elaborated with five sorry warnings only; nothing changed outside the folder. Two format notes carried (N01, N02).",
+  "text": "3837ef20fc281178"
+ }
+}
