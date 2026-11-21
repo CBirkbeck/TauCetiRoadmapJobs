@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ProjectiveModelsAndPeriodBoundsOnShimuraVarieties~8",
+  "head": "6f151940d2603149748d89bb051913cd3e880ab7",
+  "pr": 2910,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ProjectiveModelsAndPeriodBoundsOnShimuraVarieties",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 65 changed lines since 39bcc3d. Checked: each of the six previous remarks against this head (R01, C01, C02, C03, N01 repaired; N02 partly, carried as one format note); the changed passages of 6.9a, 7.12a, 7.31a (b), (b′), Scope and References; the level conditions of (b′) against the formal proof's source (Level.GoodAt, Idx, N1ab, N2, N6, all read); the DOI of Lan 2017 against its Crossref record; the title and description against the head. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no output (it declares nothing). Lan's two papers could not be read.",
+  "text": "9e3049fd47f9c641"
+ }
+}
