@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HeckeIdealsAndTaylorWilesRelations~6",
+  "head": "2d3c8b8b2ff58a242d2ba71b0034f6d03c4ce7d7",
+  "pr": 2893,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeckeIdealsAndTaylorWilesRelations",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample 3.13a, 4.2a, 9.9, 10.1 checked against NT23 (Theorem A, Definition 2.23, Lemmas 2.25 and 2.28, Example 2.29, Theorem 5.2), Che14 (Proposition 3.7, Example 3.6), BZ77 (2.12), the announcement, and the source of the formal proof: all 42 file-and-declaration locators resolve, and 14 formal statements were read and compared (4.2a, 9.9 (d), the rank-four form of 9.9 (d'), 3.13a (f) agree with the README); the formal instance of 10.1 has no locator and was not found. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with exit 0 and declares nothing. 82 section ids in 20 roadmaps resolved on main or at open heads. Finding: 9.9 (a) and (c) are stated for conjugate self-dual representations only, narrower than Newton-Thorne Theorem 5.2 and the route, and the consumer's use of (c) falls outside the hypothesis (R01). Corrections: splitting hypothesis for enormous images in the route of 9.9 (a), (b); missing declarations for four formal-proof statements; the description's list. One question on the hypothesis mu_l not in L in the formal statements behind 3.13a.",
+  "text": "bfa29ca1cbec190a"
+ }
+}
