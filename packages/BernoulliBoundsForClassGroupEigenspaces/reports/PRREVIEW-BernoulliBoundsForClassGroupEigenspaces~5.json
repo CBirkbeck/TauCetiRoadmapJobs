@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BernoulliBoundsForClassGroupEigenspaces~5",
+  "head": "5ac6d6dcf6ffd723c2f3d9084959a83475d5f732",
+  "pr": 2896,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BernoulliBoundsForClassGroupEigenspaces",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample (6.17, 6.18, 9.1-9.8, 10.1, 11.1, 12.1, 13.1, 14.1) checked with computed values. Formal proof read at commit ab0b752: 54 cited files fetched, 80 cited declarations each found in the file named, about 40 statements compared with the README. Soule1999 (7 locators) and BFEH2014 (5 locators) checked against the cached texts, all correct; Arlettaz 1991 Thm 1.5 uncertified, not read. About 60 cross-roadmap section ids in 25 roadmaps resolved on main or at open heads. Automatic checks: all passed; depcheck 0 problems; Suggested.lean elaborates with sorry as its only warning; one-tactic probe (simp, rfl, infer_instance, exact, aesop) does not close the theorem. Small corrections: Lean theorem restricted to totally complex L against the general headline; hypotheses BOdd, LitCoh, ZetaUr of cited formal-proof declarations not mentioned; wording of the route of 9.1; unused hypothesis in 11.1; description lists 3 of about 20 suppliers on main; family index entry names Stickelberger-type annihilation. For humans: scope (source is a formal proof announced 2026-11-20) and the licence of its repository.",
+  "text": "8961c928336877d3",
+  "carried": {
+   "from": "5ac6d6dcf6ffd723c2f3d9084959a83475d5f732",
+   "head": "b5db91760c466b26e6cdfaf6c10f1ca9ac6f652d",
+   "findings": 6,
+   "lines": 33,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/BernoulliBoundsForClassGroupEigenspaces"
+   ],
+   "corrections": true,
+   "outside": true
+  }
+ }
+}
