@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ProjectionsSlicesAndKakeya"
+
+[[source]]
+id = "BishopPeres"
+locator_scheme = "theorem"
+locator = "Theorem 3.5.1"
+url = "https://www.math.stonybrook.edu/~bishop/classes/math324.F15/book1Dec15.pdf"
+fetched_from = "https://www.math.stonybrook.edu/~bishop/classes/math324.F15/book1Dec15.pdf"
+fetched_at = "2026-11-21T20:45:44Z"
+sha256 = "28afe87201b37aec6c1f286819e097097cea0f2b2397809540b1f10cf1a375d8"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.3"]
+
+[[source]]
+id = "Hochman"
+locator_scheme = "theorem"
+locator = "Theorem 7.2"
+url = "https://math.huji.ac.il/~mhochman/courses/fractals-2012/course-notes.june-26.pdf"
+fetched_from = "https://math.huji.ac.il/~mhochman/courses/fractals-2012/course-notes.june-26.pdf"
+fetched_at = "2026-11-21T20:45:45Z"
+sha256 = "3b58bb2bcf2bed179078f087357d8c6d76dbb83de6159887a1e02d3f3804e9aa"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.4"]
