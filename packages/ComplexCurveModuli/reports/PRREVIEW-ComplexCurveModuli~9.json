@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexCurveModuli~9",
+  "head": "7797601618d86cc279be200f54a85de93dbbdcb0",
+  "pr": 2548,
+  "folder": "ComplexCurveModuli",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 62 changed lines since a105758. Checked: the six changed README passages (§§1.2, 2.0, 3.5, 4.3, 6.1, 6.2) recomputed by hand, each correct; §4.3 compared with TauCeti.CircleSobolev.neckGraph and exists_analyticAt_hardyGraph at the pin; §6.2 strict cutoff confirmed with the punctured torus of traces (2√2, 2√2, 4) and against RobbinSalamon2006 Theorem 17.5 (a source error recorded); seeded sample has no changed locator; Suggested.lean unchanged and elaborates with seven sorry warnings only; dependency check 0 problems; automatic checks all passed; nothing changed outside the folder. Two small corrections (the description is out of date on §6.2 and §3.5) and one carried format note; previous review had no finding.",
+  "text": "f01f66b2ae7ff36b",
+  "carried": {
+   "from": "7797601618d86cc279be200f54a85de93dbbdcb0",
+   "head": "7797601618d86cc279be200f54a85de93dbbdcb0",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
