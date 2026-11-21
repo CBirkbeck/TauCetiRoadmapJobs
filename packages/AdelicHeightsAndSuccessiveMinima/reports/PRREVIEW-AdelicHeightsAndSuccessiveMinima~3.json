@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdelicHeightsAndSuccessiveMinima~3",
+  "head": "66a59faf6043dc8445f6136f86a61d644e0bb19a",
+  "pr": 2883,
+  "folder": "RiemannHypothesisForDirichletLFunctions/AdelicHeightsAndSuccessiveMinima",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "incremental re-review of 58 changed lines since 3fc2cd2. Checked: the three previous remarks (C01 description not repaired, C02 family index partly repaired, N01 not repaired); every changed passage of README 2.5a, 3.1, Downstream consumers, Scope and supplier contracts, and the Suggested.lean docstring; new citations resolved on main or at open heads (DAT 0.0, 2.5, 2.8; SubspaceTheorem 4.2; ArakelovGeometryAndAbelianHeights 1.12, 1.14; GlobalNumberFields Layers 6, 8; SlopesOfHermitianVectorBundles at #2880); pinned Tau Ceti deltaL, normAbs, twistedHeight, Minkowski halves, extraction lemma, adeleExtension, ideleNorm opened. Computed: Arakelov comparison, deltaL = |det A|, the 2.8 selection, the fixed-field estimate remark, and the seeded samples 2.5a (Check 1) and 3.1 (closed disc, Bombieri-Vaaler Thm 3 p.18, (3.16) p.22, Thm 6 p.23). Gate: worker run all passed; own run flags only the family index files as outside the folder (set aside). Depcheck 0 problems; elaboration 4 sorry warnings only. Family index compared across 40 family heads: 6 texts.",
+  "text": "dd6ae51fa08524d9"
+ }
+}
