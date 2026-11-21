@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ColemanIntegration~9",
+  "head": "3aafbcfca48bf600b0d246c30d46db73bb13131d",
+  "pr": 2864,
+  "folder": "ColemanIntegration",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review of an unchanged head. One P2 finding: L3.Fd.1 and L3.Fd.2(a) cite AdelicAlgebraicGroups §2.4 for general finite-image Artin L-functions, which that section does not state (owner on main: AnalyticNumberTheoryPartI §2.18a). Sample: 24 source locators in RJW, BBdJR, F, BBK, BHYY, GSWZ, DJ, BDJ-preprint (two pages off by one); adversarial table of 24 rows with computed values over L0.8, L0.10, L0.12, L0.15, L0.21, L0.22, L1.6, L1.8, L1.18, L1.19, L2.9-L2.12, L2.18, L2.69-L2.70, L3.13, L3.28-L3.30, L3.36; 14 library declarations opened at the pins; supplier sections resolved on main for 24 roadmaps. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with five sorry warnings only; one-tactic probe closes none. Previous review's three small corrections and format note re-verified and carried.",
+  "text": "675179074e4a455d"
+ }
+}
