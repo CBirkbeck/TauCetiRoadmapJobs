@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ExtensiveFormGames~1",
+  "head": "7a8bb899313be199c9cbbc2d46cd03829332d26c",
+  "pr": 2886,
+  "folder": "ExtensiveFormGames",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Sample: all twelve sections 1.1-5.2, every theorem, Check and worked value recomputed by hand (adversarial table of 13 rows). Sources: Karlin-Peres Chapter 6 and both Manea slide decks read at every cited locator from legal copies; all locators agree. Library: 16 cited declarations elaborated at the pins; supplier citations resolved on main (RegretMinimizationAndEquilibria 1.1, 3.1, 4.1; MarkovDecisionProcesses 2.1) and at the open head of InfiniteGamesAndDeterminacy. Suggested.lean elaborates with eight sorry warnings only; one-tactic probe closes none of the 8 theorems; all 34 signatures compared with the README. Dependency check: 0 problems. Automatic checks all passed, none set aside. One small correction (slides cited at 3.1 do not state existence), one format note (instance binders). Three points for the human reviewers (textbook and slide sources, own routes, OpenCourseWare terms).",
+  "text": "c1238ba29d2cf75f"
+ }
+}

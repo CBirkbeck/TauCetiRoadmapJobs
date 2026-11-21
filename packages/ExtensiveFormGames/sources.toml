@@ -1,0 +1,41 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ExtensiveFormGames"
+
+[[source]]
+id = "KarlinPeres"
+locator_scheme = "theorem"
+locator = "Theorem 6.2.8"
+url = "https://homes.cs.washington.edu/~karlin/GameTheoryBook.pdf"
+fetched_from = "https://homes.cs.washington.edu/~karlin/GameTheoryBook.pdf"
+fetched_at = "2026-11-21T14:29:52Z"
+sha256 = "1937bf727b67bce604d8a140b571365adc3330864a80036f5ff9a667855ee3cc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.2"]
+
+[[source]]
+id = "ManeaExtensive"
+locator_scheme = "page"
+locator = "slide 12"
+url = "https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/resources/mit14_126s16_extensive/"
+fetched_from = "https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/ecc1948438ed71a5e77eb29f123a4eef_MIT14_126S16_Extensive.pdf"
+fetched_at = "2026-11-21T14:29:53Z"
+sha256 = "c4dd639f687ee3fdabd5dd689e4ff1fafdf478c7e21ce985a26ab58658fd2a5d"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.1"]
+
+[[source]]
+id = "ManeaBargaining"
+locator_scheme = "page"
+locator = "slide 5"
+url = "https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/resources/mit14_126s16_bargaining/"
+fetched_from = "https://ocw.mit.edu/courses/14-126-game-theory-spring-2016/0c31bb15a0fb73c568f12d3d855b6c22_MIT14_126S16_bargaining.pdf"
+fetched_at = "2026-11-21T14:29:53Z"
+sha256 = "5f11267b4f91a94e826af8ec69fcddb16a9e32c697b933bd2505035329b6f99f"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["5.2"]
