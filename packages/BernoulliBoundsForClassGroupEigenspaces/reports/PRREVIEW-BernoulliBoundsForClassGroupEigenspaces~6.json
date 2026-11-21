@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BernoulliBoundsForClassGroupEigenspaces~6",
+  "head": "e41e82f6a50258ef321dc9a9986116d302f72017",
+  "pr": 2896,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BernoulliBoundsForClassGroupEigenspaces",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 41 changed lines since 5ac6d6d. Checked: each of the six small corrections and the format note of the previous report against this head (five repaired, the family-index line and the format note not); the changed passages of 9.1, 9.4, 9.5, 9.7, 11.1, 14.1, Downstream consumers and Suggested.lean; the eleven formal-proof declarations the new text cites, each read in its file at the cited commit (BOdd, SChain, sChain, bOdd, SUpper, SUpperOf, lemmaK, LitCoh, ZetaUr, vanishOrdL_of_zetaUr, LevelAway/LevelAt/Level) and the structure Used that carries the downstream hypotheses of 14.1; the family index change (licence sentence read against the repository's README); the pull request's title and description against the head. Seeded sample checked where it falls in the changed passages (9.1, 9.4, 9.5, 9.7, 11.1, 14.1). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning.",
+  "text": "2a792022b47e8e98",
+  "carried": {
+   "from": "e41e82f6a50258ef321dc9a9986116d302f72017",
+   "head": "8ab3d97f1ae1d7de1e6191244909da28c72027e9",
+   "findings": 2,
+   "lines": 11,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/BernoulliBoundsForClassGroupEigenspaces"
+   ],
+   "corrections": true,
+   "outside": true
+  }
+ }
+}
