@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ReducibilityIdealsAndUltrafilterPatching~2",
+  "head": "5103bbaebbe9233cd0fa2dc9613b4193ea533882",
+  "pr": 2900,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ReducibilityIdealsAndUltrafilterPatching",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. Sample 3.16, 3.17, 4.8, 4.9, 6.10-6.16: adversarial values computed for every target. [FormalProof] (GitHub host in no licence class), Fulton, Serre, Bhattacharya and Thorne 2015 were not readable; the Announcement, Teissier1973, SkinnerWiles1999, ANT2020 and Stacks tags 061S, 00IQ, 00LN, 09B8, 031D were read. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with two sorry warnings only; one-tactic simp probe fails on both declarations; a scratch Lean statement of 6.13 (2) using IsWeaklyRegular elaborates at the pin (R01). Supplier citations resolved on main and at the head of UniformWildKernelBounds; no double ownership found.",
+  "text": "fb12696a44ae5ba7"
+ }
+}
