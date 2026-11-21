@@ -1,0 +1,54 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "BernoulliBoundsForClassGroupEigenspaces"
+
+[[source]]
+id = "Soule1999"
+authors = "Christophe Soulé"
+title = "Perfect forms and the Vandiver conjecture"
+year = 1998
+arxiv = "math/9812171v1"
+locator_scheme = "theorem"
+locator = "Propositions 1-2 (pp. 3-4), Lemma 1 (p. 5), Proposition 3 (p. 6), Theorem 1 (p. 7), Theorem 2 (p. 9); numbering and pages of arXiv v1"
+url = "https://arxiv.org/abs/math/9812171v1"
+fetched_from = "https://arxiv.org/pdf/math/9812171v1"
+fetched_at = "2026-11-21T16:45:26Z"
+sha256 = "1e1acc3e9e375379fd863606a81943b616195cd6432081383826bf38c2ce57dd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["9.1", "9.2", "9.3", "9.4", "9.8"]
+
+[[source]]
+id = "BFEH2014"
+authors = "Eva Bayer-Fluckiger, Vincent Emery, Julien Houriet"
+title = "Hermitian lattices and bounds in K-theory of algebraic integers"
+year = 2014
+venue = "Documenta Math. Extra Volume: Merkurjev (2015) 71--83"
+arxiv = "1406.5953v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.1 and Corollary 1.2 (pp. 1-2), Theorem 2.2 (p. 4), Corollary 2.3 and Section 3 (pp. 4-6); numbering and pages of arXiv v3"
+url = "https://arxiv.org/abs/1406.5953v3"
+fetched_from = "https://arxiv.org/pdf/1406.5953v3"
+fetched_at = "2026-11-21T16:45:35Z"
+sha256 = "829f1ae7fabb2e05ce1ae27674f37c735193d227ffbd2f8c4baf0b1a97482e1e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v3"
+cited_for = ["9.3", "9.4", "9.8"]
+
+[[source]]
+id = "Arlettaz1991"
+authors = "Dominique Arlettaz"
+title = "The Hurewicz homomorphism in algebraic K-theory"
+year = 1991
+venue = "Journal of Pure and Applied Algebra 71"
+doi = "10.1016/0022-4049(91)90036-2"
+locator_scheme = "theorem"
+locator = "Theorem 1.5"
+url = "https://doi.org/10.1016/0022-4049(91)90036-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.8"]

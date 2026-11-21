@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BernoulliBoundsForClassGroupEigenspaces~2",
+  "head": "6b5fd75b3216e75a246631b4f259805bdae92f71",
+  "pr": 2896,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BernoulliBoundsForClassGroupEigenspaces",
+  "date": "2026-11-21",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 3,
+  "format_notes": 4,
+  "notes": "Full review of the README and Suggested.lean. Sampled targets 6.17, 6.18, 9.1-9.8, 10.1, 11.1, 12.1, 13.1, 14.1: the README gives no locators; Soule 1999 (arXiv) read; Soule 2003 unreadable (EMIS mirror HTTP 503, EMS Press host unclassified), its content taken from Bayer-Fluckiger-Emery-Houriet (arXiv:1406.5953); Soule 1979, Arlettaz 1991 and Rubin 1991 paywalled; Ash 1984 has no open PDF. Adversarial table of 28 rows with computed values. About 50 cross-roadmap ids resolved on main and at the heads of #2893 and #1804; one supplier drift (AlgebraicTopology Stage 8). Dependency check: 7 roadmaps, 120 edges, 0 problems. The worker's automatic checks all passed. lake env lean on Suggested.lean: sorry the only warning; elaborated signature matches the README; one-tactic probe closes nothing. Overlap check: read UniformWildKernelBounds, KatoEulerSystems, ArithmeticKTheoryPartII, ModularIwasawaMainConjecturesPartII, HeckeIdealsAndTaylorWilesRelations, ArithmeticKTheory, EulerSystemsCyclotomicMainConjecture and IntegralIwasawaTheory.",
+  "text": "b0479cb745f61af4"
+ }
+}
