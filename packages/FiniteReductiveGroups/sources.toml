@@ -1,0 +1,34 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FiniteReductiveGroups"
+
+[[source]]
+id = "Steinberg1965"
+authors = "Robert Steinberg"
+title = "Regular elements of semisimple algebraic groups"
+year = 1965
+venue = "Publications Mathématiques de l'IHÉS 25"
+locator_scheme = "theorem"
+locator = "2.7 (a), 2.11 (p. 53); Lemma 3.2, Theorem 3.3 (pp. 54-55)"
+url = "https://www.numdam.org/item/PMIHES_1965__25__49_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1965__25__49_0.pdf"
+fetched_at = "2026-11-21T22:37:28Z"
+sha256 = "bda20c4a4b3cf4a7e9e5b17a4eacd0147d0c9370063ab3a3778114a53c8349b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["0.3", "0.5"]
+
+[[source]]
+id = "Zelevinsky1981"
+authors = "Andrey V. Zelevinsky"
+title = "Representations of Finite Classical Groups"
+year = 1981
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0090287"
+locator_scheme = "chapter"
+locator = "Ch. III"
+url = "https://doi.org/10.1007/BFb0090287"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.4", "2.6"]

@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FiniteReductiveGroups~6",
+  "head": "5305798e60ca7c92bacbe4f1f21d0226a04dd922",
+  "pr": 2881,
+  "folder": "RiemannHypothesisForDirichletLFunctions/FiniteReductiveGroups",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 7,
+  "format_notes": 5,
+  "notes": "Full review of the whole README (2511 lines) and Suggested.lean. Sample: 0.3, 0.4, 0.5, 1.0, 1.4, 2.4, 2.6, 4.1, 4.3, 4.6, 4.10, 5.1, 5.2, 5.5, 6.3; Steinberg 1965 read at its locators (0.5, and the facts of 0.3); 18 declarations of the formal proof opened in 17 files of its repository; Deligne-Lusztig 1976, Green 1955, Digne-Michel, Carter, Macdonald, Zelevinsky, Moy-Prasad, Howlett-Lehrer, Solomon, Curtis, Shintani and Kondo could not be read legally and are listed as not verifiable. Adversarial pass: 31 rows with computed values; the Lean statement bessel_pairing_eq recomputed numerically on GL_n(F_q) for (n,q) = (2,2),(2,3),(2,5),(3,2),(3,3),(4,2),(4,3),(5,2) and every (k,i); HasCuspidalValues checked on GL_2(F_2), GL_2 and GL_3 class values and n = 1. Automatic checks: all passed; dependency check 0 problems; lake env lean gives three sorry warnings only; 11 library names confirmed by #check at the pins; one-tactic probe (simp, rfl, infer_instance, simp_all, aesop) closes none of the three theorems; about 70 cross-roadmap citations resolved on main or at the open heads; family index compared with eleven sibling heads (two differ). No finding; seven small corrections (6.5 narrowed to prime residue fields without need, three formal-proof locators naming Prop definitions, missing theorem-level locators, LocalGaloisDeformationRings listed as consumer, an unclear parenthesis in 6.0, two out-of-date sentences of the description and References) and five format notes. For the humans: status and licence of the formal proof the family is built around; main published sources not read.",
+  "text": "3a4dca55629623ae",
+  "carried": {
+   "from": "5305798e60ca7c92bacbe4f1f21d0226a04dd922",
+   "head": "0aeadde8c688b62835421a90a4ea0aed54fa4240",
+   "findings": 7,
+   "lines": 51,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/FiniteReductiveGroups"
+   ],
+   "corrections": true
+  }
+ }
+}
