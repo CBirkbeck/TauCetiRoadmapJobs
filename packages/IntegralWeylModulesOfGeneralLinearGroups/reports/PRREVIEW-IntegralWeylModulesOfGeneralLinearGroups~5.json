@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IntegralWeylModulesOfGeneralLinearGroups~5",
+  "head": "2aa27fa91cbffe9a9898fd7810d0674074940d53",
+  "pr": 2888,
+  "folder": "RiemannHypothesisForDirichletLFunctions/IntegralWeylModulesOfGeneralLinearGroups",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 6,
+  "format_notes": 0,
+  "notes": "Full review. Seeded sample (0.1, 0.3a, 0.3, 0.2, 1.1, 2.1, 2.2, 3.1-3.4): 36 README locators and 11 docstring locators opened in the operator-held Lean source of the formal proof (commit e50d098; the README names 8c90877ce), all resolve and match except as in C03, C04. Independent recomputation of the polynomial-model lattices for 10 weights (ranks, indices, exponents at p <= 7, Fischer norms), 491 branching pairs, Pieri denominators, 1611 block-first cases, block cuts, hook bounds on 792 partitions: no violation, every recomputed Check holds. R01: the Capelli identity (3.1, 3.2) and the extremal-projector factorisation (2.1 (b)) are route inputs that nothing owns. Automatic checks all passed; depcheck 171 roadmaps, 1992 edges, 0 problems; Suggested.lean elaborates with 9 sorry warnings only; one-tactic probe closes nothing. Previous findings repaired; the note on the family index stands.",
+  "text": "4147aa789fb610d4"
+ }
+}
