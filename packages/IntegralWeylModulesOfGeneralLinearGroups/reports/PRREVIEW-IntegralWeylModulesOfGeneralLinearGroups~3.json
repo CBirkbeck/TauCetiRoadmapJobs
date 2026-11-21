@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IntegralWeylModulesOfGeneralLinearGroups~3",
+  "head": "1554ab57bd9ba58421a23ba1d67c30c4688f3dae",
+  "pr": 2888,
+  "folder": "RiemannHypothesisForDirichletLFunctions/IntegralWeylModulesOfGeneralLinearGroups",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full re-review. Previous R01-R03 repaired; D01 stands. Seeded sample (0.1, 0.3a, 0.3, 0.2, 1.1, 2.1, 2.2, 3.1-3.4): formal-proof locators checked against the operator-held build (28/28 modules, 31/36 statement names; statements compiled only); classical attributions carry no locators. Independent computations of the polynomial-model lattices: sandwich 228 cases, block cut 924, graded Pieri 656751, 2.2 (c) 3157572, duality 215 weight spaces, bideterminant saturation 176 weight spaces, Fischer norms 40 weights, c_Br 506 pairs; no violation; every Check recomputed holds. Automatic checks all passed; depcheck 171 roadmaps, 1991 edges, 0 problems; Suggested.lean elaborates with 7 sorry warnings only; one-tactic probe closes nothing; a probe copy states integral branching 1.1 (a) at the pins (R01). R02: Summary drops the binomials from the hypothesis of 0.3a.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "Unnumbered note: the sentence that the family \"follows the formal Lean proof\" is in the family index's own introduction, which this job may not change; it has to be rephrased there, in the family inde",
+    "where": "the family's own text, RiemannHypothesisForDirichletLFunctions/README.md lines 9–14",
+    "raised": "PRREVIEW-IntegralWeylModulesOfGeneralLinearGroups~2"
+   }
+  ],
+  "text": "a582190289301f55"
+ }
+}
