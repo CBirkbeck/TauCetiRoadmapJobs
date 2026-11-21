@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GeneralizedRiemannHypothesisFromWindowBounds~2",
+  "head": "5a61ad4927abc90c48c600fc0df87547bdd0993e",
+  "pr": 2887,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GeneralizedRiemannHypothesisFromWindowBounds",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full review. Seeded sample checked against supplier text at the cited sections: 0.4, 1.2, 2.2, 2.3, 2.4, 3.3 (RiemannHypothesisStatementsAndConsequences 8.4a, 9.2-9.6; PositivityOfDirichletSeriesWithKernels 6.4, 6.8, 6.9), 6.1, 6.3, 6.14, 6.16, 6.19, 6.22, 6.28, 6.29, 6.32, plus ThetaChainsAndFrobeniusPrimeSums 10.10-10.11, QuasiRiemannHypothesis 5.5, AnalyticNumberTheoryPartI 1.9, 2.41, 2.42, 2.49, RieszSumsOverPrimesAndExceptionalZeros 2.41a, and the announcement text. Findings: 6.5 and 6.6 cite AnalyticNumberTheoryPartI 1.9 clauses that do not state the claims. Suggested.lean elaborates with sorry warnings only; 11 signatures match the README; 45 library names resolve at the pins; depcheck 0 problems; all automatic checks passed. Scope and licence of the announced formal proof are flagged for the human reviewers.",
+  "text": "9ea897c92bd9c886",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C03: the dependency task list and the merge-order paragraph are generated blocks of the description.",
+    "where": "the generated \"Depends on\" block of the pull-request description",
+    "raised": "PRREVIEW-GeneralizedRiemannHypothesisFromWindowBounds~2"
+   }
+  ]
+ }
+}
