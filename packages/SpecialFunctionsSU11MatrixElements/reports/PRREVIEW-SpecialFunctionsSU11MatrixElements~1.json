@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsSU11MatrixElements~1",
+  "head": "e88a77c6ca6df72017c3abd01729a431ba9b57ae",
+  "pr": 2934,
+  "folder": "SpecialFunctionsSU11MatrixElements",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review. All 15 sampled sections (1.1-5.3) and every Lean-named target were recomputed numerically from the circle integral (closed forms, symmetries at and off the Gamma poles, unitarity and complementary sums, discrete series, addition and multiplication, generating functions, recurrences, other subgroups, Mehler-Fock Parseval of orders 0, 1, 2); all agree. No source locator could be checked against a text: VK and W are paywalled, no legal copy of D or M was found. Suggested.lean elaborates with 44 sorry warnings only; the one-tactic probe closes none of the 44 theorems; the 20 supplier definitions are verbatim copies of SpecialFunctionsGroupModels' file. Dependency check: 0 problems. Cross-roadmap citations all resolve on main or at the open heads. One automatic form check (a section comment heading the #check pins) set aside as a false positive. Small corrections: ContRepresentation is Mathlib's and the Tau Ceti import is unused; the unitarity relations of 2.1 hold for every real n; the inversion route of 5.2 omits the decay of the transform.",
+  "text": "0a5f35315b369b65"
+ }
+}
