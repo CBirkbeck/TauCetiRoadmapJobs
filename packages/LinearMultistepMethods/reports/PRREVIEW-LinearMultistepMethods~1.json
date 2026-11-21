@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LinearMultistepMethods~1",
+  "head": "eff77dde6acb86d804f46b4609a6e6006c7434d7",
+  "pr": 2859,
+  "folder": "LinearMultistepMethods",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. All 12 sampled targets and all 14 headline theorems recomputed (degenerate cases k=0, h=0, alpha_k=0, rho=0, zero space, p=0; every printed number; Adams and BDF coefficients, orders and root moduli in exact arithmetic for k up to 9; the positivity claims of the BDF root-condition route; the routes of 2.2, 3.1, 5.1 and 5.2 step by step). 32 source locators read at their place in Suli2022 and Mirzaei2024; two attributions imprecise (small corrections). 21 Mathlib declarations opened at the pin; 11 cross-roadmap citations resolved. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 14 sorry warnings only; one-tactic probe closes nothing. Not read: Dahlquist 1956 and 1963, Cryer 1972, Hairer-Wanner 1983, Wanner 2006 (no locators into them).",
+  "text": "568ae4fe20012b1e"
+ }
+}
