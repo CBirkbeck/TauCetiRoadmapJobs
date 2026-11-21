@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NBodyProblemAndCentralConfigurations~2",
+  "head": "2b185672fea2bf795eece1b5b36ae676a5c64ff1",
+  "pr": 2951,
+  "folder": "NBodyProblemAndCentralConfigurations",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review. All 15 sampled targets and every other statement recomputed (adversarial table, 21 rows with values); 28 source locators read in the six cited texts (all fetched legally); 17 library declarations opened at the pins; supplier citations of LyapunovStabilityOfODEs 1.1, 1.2, 5.3, SymplecticGeometry IntegrableSystems I4 and RestrictedThreeBody resolved; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 21 theorems. One automatic check (a retired roadmap name in the scope section) set aside as a false positive.",
+  "text": "d09a5b1ea2623b58"
+ }
+}
