@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdelicHeightsAndSuccessiveMinima~2",
+  "head": "3fc2cd21cf9b5672a63418bfceaaa74fe730397a",
+  "pr": 2883,
+  "folder": "RiemannHypothesisForDirichletLFunctions/AdelicHeightsAndSuccessiveMinima",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full re-review at 3fc2cd2. Earlier R01, R02, C01, C02 and N02 repaired; earlier C03 and C04 not repaired (now C01 and C02); earlier N01 dropped (numbering explained at README line 11). Seeded sample: 2.5a (no source locator; checked against DAT 2.5 on main and computed) and 3.1 (Bombieri-Vaaler Theorem 3 p. 18, condition (3.16) p. 22 and Theorem 6 p. 23, verified in the text). Adversarial table: 29 rows with computed values, including a new real-place negative control over Q(sqrt 2). Automatic checks all passed, none set aside; dependency check 0 problems; Suggested.lean elaborates with four sorry warnings only; elaborated types of all 8 declarations match the README; one-tactic probes fail on all 4 theorems. Overlap with SubspaceTheorem, DAT, SuccessiveMinima, GlobalNumberFields, SlopesOfHermitianVectorBundles, HeightsForLogSingularMetrics and HeightsAndUnits resolved by citation. Roy-Thunder and Bombieri-Gubler not readable.",
+  "text": "dd6ae51fa08524d9"
+ }
+}
