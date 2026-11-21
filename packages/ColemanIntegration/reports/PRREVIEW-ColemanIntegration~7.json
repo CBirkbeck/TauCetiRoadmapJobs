@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ColemanIntegration~7",
+  "head": "2e623b02fbdf00fd8cdc0a413f2b8bb67f6097d8",
+  "pr": 2864,
+  "folder": "ColemanIntegration",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full review. Changed contract line checked by #check at the Tau Ceti pin 2fd255d9 (OnOpenDisc, evalAt, OnOpenDisc.evalAtHom exist and say what the line says; absent at the README's stated pin a91d3aaf). R01: stated pins stale; four NormedSpace.logOneAdd names and TauCeti.indClassFun_indClassFun_subgroupOf unknown at the pin (135 library names #checked). Sample: 13 locators read in RJW, BHYY, BBdJR, DJ, BF, Furusho, Besser (Heidelberg), Lazard; all hold. Adversarial table of 28 rows with computed values, including the 5-adic Coleman value for chi_-3, k=2 (2 mod 5) and log 4 in Q_3 mod 3^12. Gate OK; depcheck 0 problems; lake env lean: five sorry warnings only. Overlap: PadicHodgeRegulators, ColemanIntegrationPartII, PolylogarithmFunctions, PadicDifferentialEquationsAndRigidCohomology, ZagierConjecturePolylogarithms, BorelRegulators; nothing shared beyond the Borel-lattice question put to the author.",
+  "text": "7ef1c2936b1ddf45"
+ }
+}
