@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalAnabelianGeometryPartII~3",
+  "head": "1a52af277b895a533dcbd877a62bb74436132837",
+  "pr": 2867,
+  "folder": "LocalAnabelianGeometryPartII",
+  "date": "2026-11-21",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 5,
+  "format_notes": 3,
+  "notes": "Full re-review. The four findings of the previous review are repaired. Sample chosen by hand (the targets are bold list items, so the seeded sampler found none): 31 targets checked against the journal text of Abrashkin 2010 (Numdam), all locators agree; Abrashkin 2000, Abrashkin 1998 and Deligne 1984 could not be read legally (Layers 7-11 not verifiable against the text). Adversarial table of 33 rows with computed values. Findings: the absolute theorem follows for every p from 5.4-5.5, so Theorem A' with p != 2 narrows the headline (P2); F_{gamma,-N} mod C_3 depends on N (P2); the bracket sum of F_gamma is finite, not infinite (P2). Automatic checks: dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with three sorry warnings only; one-tactic probes close nothing; two TeX-syntax hits and the dropped-binder lead set aside as false positives; the target-numbering check is a format note. Cross-roadmap citations all resolve. No change outside the folder. The pull request description is out of date about Suggested.lean and GeometricTopology (small correction). A first DOI guess for Abrashkin 2000 resolved to an unrelated paper; that manifest entry was removed and nothing in the review relies on it.",
+  "text": "ec25c5eed5bef9b9"
+ }
+}
