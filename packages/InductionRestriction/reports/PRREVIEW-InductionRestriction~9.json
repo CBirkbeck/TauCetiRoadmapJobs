@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InductionRestriction~9",
+  "head": "3595e3b084ec45b6e400a083837b695a8f18aa1a",
+  "pr": 2639,
+  "folder": "RepresentationTheory/InductionRestriction",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 36 changed lines since d4b968d. Checked: the three README repairs (Layer 4 simplicity criterion, Layer 2 coset models, the two corollaries of section 7.5) against the five Tau Ceti declarations they rest on, opened at the pin, with computed instances (FDRep Q C3, C2 over Z and Z over Z, Q8 over its centre); the previous report's five small corrections (all repaired) and two format notes (carried over); the description sentence by sentence against the head and the README at the merge base (one small correction: the Suggested.lean paragraph omits the two proved corollaries). No seeded-sample target falls in the changed passages. Elaboration of Suggested.lean: 13 sorry warnings only, no set_option. Dependency check: 171 roadmaps, 1999 edges, 0 problems. The worker's automatic checks all passed; no change outside the folder. Serre, Isaacs, Curtis-Reiner and Mackey not readable legally.",
+  "text": "73d0642ba25628c6",
+  "carried": {
+   "from": "3595e3b084ec45b6e400a083837b695a8f18aa1a",
+   "head": "3595e3b084ec45b6e400a083837b695a8f18aa1a",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
