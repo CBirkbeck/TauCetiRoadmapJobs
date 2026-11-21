@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SelmerLengthBoundsAndLocalLifting~3",
+  "head": "ca6159709050339a11b3c5b3f4c05d91e029ebe5",
+  "pr": 2901,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SelmerLengthBoundsAndLocalLifting",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full re-review. Previous findings: R01 (4.9a vs AnabelianGeometryAndNonabelianChabauty 4.6), R02 (Suggested docstring), C01-C06 and N01 repaired; R03 (no locators into the formal proof) not repaired, re-raised as R01; N02 unchanged (form). Sample of 15 targets (3.22-3.26, 4.9a-4.9d, 4.10a-4.10g) plus 4 headlines: Checks, examples and round bounds recomputed, no false mathematics. Sources: BS23 Theorem 1.2 checked at BS23-FCRYS line 65; announcement read (operator copy); formal proof read only through module names; Bloch-Kato paywalled. Worker gate passed; rerun flags only family index and merge order (set aside); depcheck 171 roadmaps, 1997 edges, 0 problems; Suggested.lean elaborates with no output (declares nothing).",
+  "text": "8a70a6c9267659e4"
+ }
+}
