@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-UniformWildKernelBounds~9",
+  "head": "8f4ea0c9182c45ae8e7215bb905fe988612c76fc",
+  "pr": 2892,
+  "folder": "RiemannHypothesisForDirichletLFunctions/UniformWildKernelBounds",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review of the README (3744 lines) and Suggested.lean (no declarations; lake env lean ends with no message). The seeded sample of 15 targets (0.4, 1.2, 2.3, 3.1, 3.5, 3.12, 3.16, 3.21, 3.22, 4.6, 4.7, 4.8, 7.3, 7.5, 7.6) was checked against the routes, the supplier sections at main or at the open heads, and computed instances; headlines 7.3-7.6 recomputed; numerical probe of 3.5 (all eight primitive characters modulo 64 over F_17), the identities of 3.22 and the Checks of 0.3, 3.2, 3.20, 5.1, 5.6, 6.5 recomputed. Every sampled locator points into [FormalProof], whose text could not be read from a legal place: not verifiable, flagged to the human reviewers (scope, licence, not tested). Published locators read: the announcement (footnote 1, the Vandiver sentence) and Barnet-Lamb-Gee-Geraghty-Taylor Theorem 5.5.2; Kato Theorem 14.2 and Deligne-Serre Lemme 6.11 not found legally in this run. Automatic checks all passed; dependency check: 170 roadmaps, 2012 edges, 0 problems. Corrections: the contract of ModularityAndLanglandsExtensions 2.43 and the References entry for Theorem 5.5.2 omit the hypothesis of extremely regular weight; the description omits 4.2(c) from the clauses given without a route. Format notes: the wording 'follows the formal Lean proof' in the family index; the range e != 0 of 1.1 against the definition for e >= 1. One question for the author on the Check of 4.3.",
+  "text": "e1d35888b4c10743",
+  "carried": {
+   "from": "8f4ea0c9182c45ae8e7215bb905fe988612c76fc",
+   "head": "112cb9d30fc444be0a2ec9120e634c95ed9a0684",
+   "findings": 2,
+   "lines": 5,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/UniformWildKernelBounds"
+   ],
+   "corrections": true
+  }
+ }
+}
