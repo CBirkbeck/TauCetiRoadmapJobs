@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LaplacianEigenvaluesOfGraphs~1",
+  "head": "3b3ffa36ca220ce89372bcc8d3e2e2a18eed44b4",
+  "pr": 2941,
+  "folder": "LaplacianEigenvaluesOfGraphs",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Seeded sample 1.1-8.2 plus 9.1: every statement recomputed on all 1100 labelled graphs with at most five vertices (nodal theorems on 34244 eigenvectors), all Check values recomputed, negative controls confirmed. Locators read in Spielman, Davies-Leydold-Stadler and both Trevisan texts (12, all agree); Brouwer-Haemers could not be read legally (uncertified), its locators are listed as not verifiable and flagged to the human reviewers. 52 library declarations opened at the pins; cross-roadmap citations resolved at the open heads; copied network definitions identical to ElectricalNetworksAndRandomWalks. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 15 theorems.",
+  "text": "1bcfee9a3d08ee5a"
+ }
+}
