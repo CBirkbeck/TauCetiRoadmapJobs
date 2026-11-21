@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsAndFrobeniusPrimeSums~7",
+  "head": "c07a7dc7907d1438d3449549b7444bf32bc2d936",
+  "pr": 2924,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsAndFrobeniusPrimeSums",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample (9.1-9.5, 10.1-10.3, 10.5, 10.6, 10.6b-10.6d, 10.8, 10.10) plus 9.6, 10.4, 10.7, 10.9, 10.11: recomputed and compared with the supplier sections at their heads and with the formal proof's Lean source held locally (all 51 locators resolve; 27 declarations opened). Small corrections: two locators of 10.9 point at the wrong declaration; 9.6, 10.4, 10.10 lack locators while the proof's forms differ; one description sentence is out of date. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with two sorry warnings; one-tactic probes close nothing. Scope and licence of the formal proof left to the human reviewers.",
+  "text": "bef4772eb893a8aa",
+  "carried": {
+   "from": "c07a7dc7907d1438d3449549b7444bf32bc2d936",
+   "head": "bb48791816d6088de76f3c4a6d2c59cdebb9b51b",
+   "findings": 4,
+   "lines": 8,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ThetaChainsAndFrobeniusPrimeSums"
+   ],
+   "corrections": true
+  }
+ }
+}
