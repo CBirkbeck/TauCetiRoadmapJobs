@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsRankOneSymmetricSpaces~1",
+  "head": "4d6f1a42c3ef68bb67c13e5c96ae075d3b941341",
+  "pr": 2935,
+  "folder": "SpecialFunctionsRankOneSymmetricSpaces",
+  "date": "2026-11-21",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. All 15 sampled targets and every Suggested.lean statement recomputed by hand and numerically (README Checks reproduced; bounds grid-tested). Sources: only DLMF readable (10 equations checked, one misquoted in the README: R02); Vilenkin-Klimyk, Klimyk-Vilenkin, Wawrzynczyk, Koornwinder paywalled and Heckman-Schlichtkrull not found, listed under Not verifiable. Cross-roadmap citations all resolved on main and at the open heads of SpecialFunctionsGroupModels and SpecialFunctionsSU11MatrixElements; local copies verbatim. Dependency check: 0 problems. Suggested.lean elaborates with sorry the only warning; one-tactic probe closes 3 of 6 tried. Findings: non-integrable complementary-series kernel in 3.4; false identity in the proof route of 0.2; Paley-Wiener and Carlson attributed to Mathlib but absent at the pin; hyperboloid model owned by RiemannianGeometry R4.7 and not cited; Paley-Wiener theorem of 1.3 and discrete-term inversion statable but absent from Suggested.lean. Two automatic-check leads set aside as false positives.",
+  "text": "ce5108f4782619d2"
+ }
+}
