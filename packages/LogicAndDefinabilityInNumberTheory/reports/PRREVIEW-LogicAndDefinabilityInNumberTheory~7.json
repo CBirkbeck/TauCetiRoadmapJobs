@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LogicAndDefinabilityInNumberTheory~7",
+  "head": "bc597bde85dcfb6b0c06dc9f2ba315336013e741",
+  "pr": 2276,
+  "folder": "LogicAndDefinabilityInNumberTheory",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 50 changed lines since f1d1e63. Checked: the previous R01 (model completeness now imported from SaturationAndQuantifierElimination 2.5, read at its open head) and C01-C04, N01, all repaired; the rewritten 4.31 and the new contract, scope bullet and Needs lines; the new preservation criterion on degenerate cases (false for an empty smaller model, elaborated at the pin: one P2 finding); Koenigsmann p.91-92 read for the locator (one small correction); no sampled section lies in the changed passages; the pull request's text against the head; automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with 11 sorry warnings only; no change outside the folder.",
+  "text": "57e20b7ee97d0abe"
+ }
+}
