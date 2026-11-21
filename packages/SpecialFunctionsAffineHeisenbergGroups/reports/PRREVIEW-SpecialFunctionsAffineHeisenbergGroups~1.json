@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsAffineHeisenbergGroups~1",
+  "head": "8d5db04b3a1e0f4d4560c3c2c4c87dbdcc7c08f4",
+  "pr": 2936,
+  "folder": "SpecialFunctionsAffineHeisenbergGroups",
+  "date": "2026-11-21",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. Sources: none of the six cited books could be read legally, so the seeded sample (0.1-3.4, 5.1) was not checked against the texts; all are listed under Not verifiable. Adversarial pass: every identity and every numerical Check of Layers 0-5 recomputed independently (group laws, cocycles, Gamma and Whittaker kernels, Hermite/Laguerre/Charlier matrix elements, Bargmann intertwining, oscillator and Miller matrix elements); all agree with the text. Findings: 1.3 restates SpecialFunctionsHypergeometric 6.3 on main (R01); the Fock space and Bargmann transform are also owned by ThetaKernelsForUnitaryDualPairs 3.45, open pull request 2907 (R02); the kernel composition law of 2.6 has no hypotheses and its stated derivation does not cover its use (R03). Checks: dependency check 0 problems; Suggested.lean elaborates with 48 sorry warnings only; one-tactic probe closes 4 of 48 statements; supplier citations resolved on main and at the open heads; pinned library declarations opened. Two automatic checks set aside (choice in the copied supplier definition of the multiplier representation; the heading over the library #check block).",
+  "text": "1801a1380ce39cf9"
+ }
+}
