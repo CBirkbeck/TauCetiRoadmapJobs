@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~103",
+  "head": "764265dd8dc377159ead691d22c9d174f4e8451f",
+  "pr": 2489,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 22 changed lines since de90162. Checked: the previous review's two small corrections (both repaired: §1.22 now states that Stacks.QCoh of an algebraic stack is abelian; the description says so) and its format note (not repaired, kept as N01); the new §1.22 sentence against Stacks tags 06WV and 06VZ read at the Stacks Project site, with degenerate instances computed; §1.22's new dependence on §1.20 (no cycle); the title and description against the head and the diff from the merge base (no discrepancy). The seeded sample falls outside the changed passages. Automatic checks all pass; depcheck 0 problems; Suggested.lean elaborates with 48 sorry warnings only. One licence question (Knudsen 1983 link) left to the human reviewers.",
+  "text": "ccf41eedbea1c746"
+ }
+}
