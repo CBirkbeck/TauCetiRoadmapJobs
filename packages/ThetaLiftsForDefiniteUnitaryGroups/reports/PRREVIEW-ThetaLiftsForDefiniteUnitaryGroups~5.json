@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaLiftsForDefiniteUnitaryGroups~5",
+  "head": "112186a0b61d905653da19e8957b9e608e806da9",
+  "pr": 2897,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaLiftsForDefiniteUnitaryGroups",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review of README.md (2771 lines) and Suggested.lean. Seeded sample (0.2, 0.3, 1.3, 1.7, 1.9, 2.2, 2.3, 2.4, 2.5, 3.4, 6.1, 6.3a, 6.5, 6.6, 6.10) and all four headline groups recomputed; adversarial table of 35 rows with values. 13 theorem-or-page locators checked against HarrisKudlaSweet1996, GQT, Rallis1984Injectivity, Minguez2008, Zelevinsky1980, Howe1989, Serre2007: all agree. Cited sections resolved in 24 roadmaps, 9 compared in content. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no message and declares nothing (no headline statable at the pins). Not verifiable: statements attributed to the formal proof (not read), Li 1992 and Finis 2006 (no legal copy found), and the other literature entries without locators. Three small corrections (existence of the auxiliary place in 6.3; no locator for the published theorem of 4.2-4.3; a vacuous case in 6.11) and two format notes.",
+  "text": "966f1dd683e1d9cc",
+  "carried": {
+   "from": "112186a0b61d905653da19e8957b9e608e806da9",
+   "head": "6ee5cbcbe3a8a754fcefc0749ad6fff786ff9f42",
+   "findings": 3,
+   "lines": 29,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ThetaLiftsForDefiniteUnitaryGroups"
+   ],
+   "corrections": true
+  }
+ }
+}
