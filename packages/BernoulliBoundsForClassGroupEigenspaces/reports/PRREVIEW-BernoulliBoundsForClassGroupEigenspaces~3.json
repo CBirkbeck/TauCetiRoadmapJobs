@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BernoulliBoundsForClassGroupEigenspaces~3",
+  "head": "88fe0c84c06d7fe8506db896bbc57e60674d83b9",
+  "pr": 2896,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BernoulliBoundsForClassGroupEigenspaces",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 94 changed lines since 6b5fd75. Checked the previous R01-R04, C01-C03 and N01-N04: R02, R03, R04 and all corrections and notes are repaired; R01 is partly repaired (the statements credited to the formal proof cite only the repository, with no commit, file or declaration) and is carried as P2. Read the new Soule1999 and BFEH2014 locators of 9.1-9.4, 9.8, the References and the Lean docstring against the cached texts (14 locators, all correct); Arlettaz 1991 Thm 1.5 is uncertified. Resolved the new supplier citations: StableHomotopyKTheory 3.12, 3.18, 3.20, 3.35, 4.21-4.24, AlgebraicTopology 8.3, GeneralAlgebraicKTheory 13.8b-c (main), HeckeIdealsAndTaylorWilesRelations 10.1(f) (open head). New small correction: the route of 9.8(a) uses Eilenberg-MacLane spectra, owned by GeneralizedCohomology G2.7, which it does not cite. Seeded-sample targets in the changed passages checked (6.17, 9.1-9.4, 9.6, 9.8). Gate run: two false positives set aside (not yet in the merge order; the family-index files counted as outside the folder). Depcheck: 0 problems. Suggested.lean elaborates with sorry as its only warning, and #check gives the same type as the previous head.",
+  "text": "7927ce587665b74c"
+ }
+}
