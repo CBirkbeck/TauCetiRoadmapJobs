@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Regularity~7",
+  "head": "55e57c2d455a3bafe8c894ff9b4f6612aabc368f",
+  "pr": 2631,
+  "folder": "Regularity",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 47 changed lines since ed0a541. Checked: the repair of R01 (Layer 7 diagonal-box example, recomputed on two- and three-vertex cells against the pinned definitions of pair-color density and pair regularity), of C01 (description against the change to Suggested.lean), of C02 (antitone sign against the pinned lemma) and of N01 (new locators Zhao Theorems 4.6.3 and 2.8.3, Remark 2.8.6, Tao Theorem 2.11 and its section 3, each read at its locator; sampled targets 3.2 and 4.2 fall in the changed passages). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as its only warning; nothing changed outside the folder. Frieze-Kannan is cited by locator only (uncertified).",
+  "text": "8edd778c5eadadd1"
+ }
+}
