@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PositivityOfDirichletSeriesWithKernels~2",
+  "head": "3ff7b08950ff2aa8bf4de9d8787513e6f62c25f4",
+  "pr": 2903,
+  "folder": "RiemannHypothesisForDirichletLFunctions/PositivityOfDirichletSeriesWithKernels",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review. Sample 6.1-6.10, 7.1, 8.1, 8.2 checked by computation (every Check and worked example recomputed; the 8.1 (c) numerical Check reproduced at 1.402|t|^2 and 0.554|t|^2). Sources: only the Announcement (author page) was readable; FormalProof (GitHub, host in no licence class), Landau 1905, Widder 1941, Montgomery-Vaughan 2007 and Kaczorowski-Pintz could not be read legally. Library: 28 Mathlib and 2 Tau Ceti declarations opened at the pins. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only, and #check @name of the five declarations matches the README. Findings: 8.2 (a) re-plans the Weil index of MetaplecticAutomorphicForms section 2.1 (main) as a 'Gauss factor'; Layer 8 has no source and its routes omit the steps carrying 8.1 (c) and 8.2 (b)-(d).",
+  "text": "e4b81448f88d97d2"
+ }
+}
