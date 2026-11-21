@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SeesawForThetaChains~2",
+  "head": "035d1d257c8dc7cb84f57c2dba161baf82d7e344",
+  "pr": 2913,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SeesawForThetaChains",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 7,
+  "format_notes": 1,
+  "notes": "Full review of README and Suggested.lean. Findings: R01 (P2) the remark closing 6.4 gives the Bessel vector at T(u) the norm -T(u_*) of the base word, false for other words (suppliers and 6.6 use z_{m,u} of norm -T(u)); R02 (P2) no target has a source locator (10 NEW cite the formal proof as a whole, 9 KNOWN cite authors without works or theorems). Seeded sample (6.1, 6.2b-6.2d, 6.3-6.6, 6.8-6.11, 6.13-6.15) checked by computation against the README and the supplier sections; source texts not verifiable: the formal proof is held only as a kernel export (module list read), Kudla 1984 not found, Gross 1999 paywalled; announcement read. All cross-roadmap section ids resolved (open heads and main). Dependency check: 171 roadmaps, 1991 edges, 0 problems. Suggested.lean elaborates with no messages (no declarations; no headline statable at the pins, confirmed). Automatic checks all passed at the worker; outside-folder files are the family index owned by this pull request.",
+  "text": "853a608137b9e373"
+ }
+}

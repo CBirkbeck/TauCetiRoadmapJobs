@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SeesawForThetaChains"
+
+[[source]]
+id = "Announcement"
+authors = "Levent Alpöge"
+title = "Announcement of a formal proof of the Riemann hypothesis and of the Riemann hypothesis for Dirichlet L-functions"
+year = 2026
+locator_scheme = "page"
+locator = "1 (footnote 1)"
+url = "https://alpo.ge/remark.pdf"
+fetched_from = "https://alpo.ge/remark.pdf"
+fetched_at = "2026-11-21T17:38:57Z"
+sha256 = "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["References"]
