@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MassFormula~4",
+  "head": "17099cd999370758501d13ae3d5ed43898e22bac",
+  "pr": 1819,
+  "folder": "MassFormula",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 3,
+  "notes": "Full re-review. Previous R01 and C01-C04, N01-N02 repaired. README at the merge base compared with the head item by item: no layer or item lost, ids kept. Adversarial table of 22 rows with computed values. All 44 Tau Ceti names of 'From Tau Ceti', 25 supplier-table names (one, localDiscriminantIdeal, not in Tau Ceti: C01) and 17 Mathlib names opened at the pins. Suggested.lean elaborates with exit 0, no sorry, no warning. Dependency check: 0 problems. Seeded sample: the ten targets without a source locator checked against the library statements and by computation; the five with Serre 1978 locators (3.2, 3.6, 3.7, 4.3, 4.4) not verifiable, text unreadable (two secondary arXiv statements of the formulas agree). Automatic check on letI/haveI in the fibre-count signature set aside as a false positive.",
+  "text": "effc13f2d3da4817"
+ }
+}
