@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RateDistortionTheory~1",
+  "head": "420b650119be310077559a60129d7725b56a610c",
+  "pr": 2862,
+  "folder": "RateDistortionTheory",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review. All 13 sampled targets and 12 headline theorems recomputed (degenerate cases, junk values, numerical values of every Check by Blahut-Arimoto and exact codebook averages). El Gamal-Kim locators 7 of 7 verified against the text; Polyanskiy-Wu (14 locators) not readable legally, listed as not verifiable. 29 library declarations opened at the pins; supplier citations resolved at ChannelCoding and EntropyAndSourceCoding heads and on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry only; one-tactic probe closes none of the 12 theorems.",
+  "text": "8c973ae3d1536363"
+ }
+}
