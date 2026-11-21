@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CombinatoricsOfWords~1",
+  "head": "8677be689915f3182275b48a72ef0a375b54bbab",
+  "pr": 2949,
+  "folder": "CombinatoricsOfWords",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Seeded sample 1.1, 1.2, 2.1, 2.2, 2.3, 3.1, 4.1, 5.1: every statement, Check and proof-route step recomputed by brute force (words of length <= 7 on <= 3 letters; Fredricksen-Maiorana word for k=2 n<=10, k=3 n<=6, k=4 n<=4), no failure. Grinberg-Reiner locators (13) read at the text with pages; Erickson and Sawada-Williams-Wong not readable through the sources service, listed as not verifiable and for the human reviewers. Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 9 theorems; Mathlib contracts opened at the pin; dependency check 0 problems; the worker's automatic checks all passed. Two small corrections (docstring claim about the Moebius headline; ArithmeticDynamics 3.15/3.34 not named in the scope section).",
+  "text": "c6d9075fe9d0ddef"
+ }
+}
