@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalFactorsOfTwistsAndTypes~3",
+  "head": "8f2fbf2a20280209e63bfc67fe0889c0495b7438",
+  "pr": 2889,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalFactorsOfTwistsAndTypes",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full re-review. Previous findings R01-R03 repaired (uncentred segment rules checked on St and against Henniart 2002 sections 2.3, 2.6-2.7; satake_bound_gl stated; 6.2 cites EndoscopicTransfer 10.29); previous C04 partly repaired. Seeded sample: 1.1, 2.1, 3.1, 3.2, 3.4, 4.1, 4.2, 6.1-6.6, 7.1, 7.2; 18 locators read in Zelevinsky 1980, Henniart 2002, Jacquet-Liu, Chai; JPSS 1983, Henniart 1993, Moy-Prasad, Morris, Bushnell-Kutzko, HKS not readable. Automatic checks all passed; depcheck rerun 0 problems; Suggested.lean elaborates with only the sorry warning, #check of all four declarations compared with README 3.4 (i), probe T_0 = identity coset proved. Adversarial table with computed values (3.3 series coefficients, GL4 counterexample, Steinberg determinant checks). Corrections: downstream consumers that do not cite, Art_F attribution in 6.5, missing locators (3.2, L-form of 4.1 (i), Morris/BK), out-of-date validation sentence in the description.",
+  "text": "adb77abd98c46484"
+ }
+}
