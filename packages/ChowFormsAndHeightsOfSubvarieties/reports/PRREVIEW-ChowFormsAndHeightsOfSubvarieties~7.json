@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ChowFormsAndHeightsOfSubvarieties~7",
+  "head": "431383ec300b942edc90ec2a7b357de84a37ea64",
+  "pr": 2891,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ChowFormsAndHeightsOfSubvarieties",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 23 changed lines since d8ade8a. Checked: the five small corrections and the format note of the previous report (C01-C05 repaired, N01 not repaired and written again as a format note); the changed passages of 6.1 (first Check), 6.2 (a7) statement and route, and the Downstream consumers bullet, with the seeded sample (5.1, 6.1, 6.2) where it falls in them; the new [FormalProof] locators of (a7) (three files, five declarations, opened and read in the operator's copy; constants and signs agree with the README); the exact value of the height of projective space recomputed for N = 1..4 against the recursion and the bound; the consumer's citations of 5.1 at its open head; the pull request's title and description against this head (no sentence contradicted; the plain gate run reproduces its validation sentence). Automatic checks: the worker's run passed every check; dependency check 0 problems, no UPWARD or CYCLE line; Suggested.lean elaborates with exit 0 and no message (no declaration). For the human reviewers: Bost-Gillet-Soule not readable, statements with no published source, standing and licence of the formal proof.",
+  "text": "50bcc2e230f05e33"
+ }
+}
