@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaKernelsForUnitaryDualPairs~5",
+  "head": "04e65346b89bd807a5824570df83108d0c2d1b11",
+  "pr": 2907,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaKernelsForUnitaryDualPairs",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 4,
+  "notes": "Full review of README.md (2052 lines) and Suggested.lean. Seeded sample of 15 targets: 21 locators read in 9 cached sources (Gan-Ichino, Kudla96, Ichino20, Minguez08, Zelevinsky80, VZ84, Rallis84a, Rallis84b, GQT; Li-Liu located only); 3.45, 3.46, 3.47a, 5.7a, 6.13b rest on uncertified texts and 3.47c, 5.7b, 5.7c on no readable text, so they were checked by computation. Adversarial table of 24 rows with computed values. Cross-roadmap citations resolved at main and at the open heads of the three family suppliers; four library declarations opened at the pins. Dependency check: 0 problems, no UPWARD or CYCLE. Suggested.lean elaborates with no error or warning and declares nothing; no headline is statable at the pins. Automatic checks all passed. Not verifiable: the 23 lines describing the formal proof the family names, which was not readable; flagged to the human reviewers.",
+  "text": "34b18e2ae7123112",
+  "carried": {
+   "from": "04e65346b89bd807a5824570df83108d0c2d1b11",
+   "head": "571a835094a8e28fe6b54a898f74f1b3c3cd39f9",
+   "findings": 3,
+   "lines": 90,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ThetaKernelsForUnitaryDualPairs"
+   ],
+   "corrections": true
+  }
+ }
+}
