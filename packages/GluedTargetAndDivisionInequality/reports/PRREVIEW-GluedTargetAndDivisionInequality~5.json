@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GluedTargetAndDivisionInequality~5",
+  "head": "51011abdae1a9330752570cf2e32432e3dacc3f4",
+  "pr": 2922,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review of README and Suggested.lean. Two P2 findings: 8.24 (a) uses a bound for the denominators d_F of the test values that is stated nowhere (its linearity in b is needed for the conclusion); the route of 8.23 asserts 0 < D^-_j, false at j = m. Seeded sample (7.12, 8.2, 8.3, 8.4, 8.5c, 8.8, 8.9, 8.10, 8.20, 8.20b, 8.21, 8.22, 8.23, 8.24a, 8.24) recomputed by hand and against the cited supplier sections; Bost 1996 (Prop. 4.3 p. 131, App. A.2 pp. 146-147) and Gaudron-Remond (Lemme 3.9) read at their locators; the formal proof the targets follow is on a host with no licence class and was not readable. All cited sections of 28 roadmaps resolve; depcheck 0 problems; automatic checks all passed; Suggested.lean elaborates with the sorry warning only; one-tactic probe fails. Four small corrections (route count in 8.24a (d), missing formal-proof locators, sub-mean-value inequality attributed to Mathlib but in Tau Ceti, symbols in 8.21 (c)) and two format notes. Human decision: scope and licence of the formal proof announced 20 November 2026.",
+  "text": "672a34de104d769f"
+ }
+}
