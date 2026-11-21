@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EuclideanJordanAlgebras~1",
+  "head": "ec51968aa57890deff45ad522e56c3f04227323e",
+  "pr": 2834,
+  "folder": "EuclideanJordanAlgebras",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 6,
+  "format_notes": 2,
+  "notes": "Full review. Every Check, worked example and stated identity of the README recomputed (adversarial table, 23 rows); all hold. R01 (P1): sqrt and spectralTrace are sorry'd definitions, and sqrt elaborates to {J : Type} -> J -> J, so sqrt_spec is refutable (R with products xy and xy/2). R02 (P2): the Tau Ceti modules Algebra/Jordan/Basic, Peirce, TraceForm and AlbertAlgebra/Compact cited as existing are absent at the pinned Tau Ceti 2fd255d. Sources read at their locators: Baez, Lourenco, Westerbaan-Westerbaan-van de Wetering, van de Wetering (6 locators, all support the statements; Baez only sketches Hurwitz). Not readable: Faraut-Koranyi (19 of 29 locators, chapter-level only), Jordan-von Neumann-Wigner; paywalled: McCrimmon, Foulis-Bennett, Gudder-Greechie. Cross-roadmap citations (CompactQuantumMetricSpaces 0.1-0.3, LieHighestWeight Layer 8, LieGroups Layer 2) resolved on main. Dependency check: 0 problems. Elaboration: sorry the only warning. One-tactic probe closes none of the 25 theorems. Automatic checks: the sorry'd-definition failures are R01, the import failures a format note; none set aside. Overlap with open QuantumFoundations 1.6 recorded as a small correction (different carriers).",
+  "text": "f7a594c9bd344294"
+ }
+}
