@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GeneralizedRiemannHypothesisFromWindowBounds"
+
+[[source]]
+id = "Announcement"
+authors = ["Levent Alpöge"]
+title = "Announcement of a proof of the Riemann hypothesis"
+year = 2026
+locator_scheme = "page"
+locator = "p. 1, with footnote 1"
+url = "https://alpo.ge/remark.pdf"
+fetched_from = "https://alpo.ge/remark.pdf"
+fetched_at = "2026-11-21T17:47:30Z"
+sha256 = "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["Layer 5", "References (location of the Lean source of FormalProof)"]

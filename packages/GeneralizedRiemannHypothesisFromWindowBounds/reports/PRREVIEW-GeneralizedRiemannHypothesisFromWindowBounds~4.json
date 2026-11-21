@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GeneralizedRiemannHypothesisFromWindowBounds~4",
+  "head": "fb611915c87bc4f25a64c1313a20e659ca50d3c6",
+  "pr": 2887,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GeneralizedRiemannHypothesisFromWindowBounds",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. Sample: 1.1, 2.1, 3.3, 3.5, 4.1, 4.2, 5.1, 5.3, 5.4, 6.2, 6.3, 6.8, 6.14, 6.15, 6.24, each against its supplier section on main or at the open head, with the numerical Checks recomputed (including the sieve behind the gap record of 6.24). R01: four Layer 6 routes and the ExplicitZetaBounds contract cite implications that ExplicitZetaBounds 0.4b, 2.9, 7.9 and AnalyticNumberTheoryPartI 0.16 do not state. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one declaration closes in one tactic from a sibling. Sources read: the announcement (author's page) and Kadiri-Lumley (arXiv). Not verifiable: the formal proof [FormalProof] (host not readable through the sources service), so every attribution to it is unchecked; the truth of the headline (RiemannHypothesis) is not confirmed by this review and is flagged for the human reviewers together with the licence of the formalisation.",
+  "text": "9ea897c92bd9c886"
+ }
+}
