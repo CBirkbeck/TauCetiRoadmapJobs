@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RowTowerAndRallisIdentities~7",
+  "head": "0b439f3180243cd283bac6bcd901be50b606193d",
+  "pr": 2919,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RowTowerAndRallisIdentities",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review of the whole README (2053 lines) and Suggested.lean. Seeded sample of 15 sections (5.2, 5.4, 5.5, 5.6, 5.7, 5.8a, 5.8b, 5.8d, 5.8e, 5.8, 5.9, 5.10, 5.10a, 5.11, 5.12) recomputed and checked against the supplier sections they cite at their heads (BaseChange 13.8a; ThetaLifts 6.5, 6.11, 6.12; ThetaKernels 3.46a, 5.6a, 6.13c; DiscreteSeriesCoefficients 2.4a (d); ThetaChains 2.1, 2.3 (h), 2.3c, 2.9c; FrobeniusRestrictedRieszSums 0.4, 0.9; MetaplecticAutomorphicForms 5.7, 6.13, 6.14; GanGrossPrasadUnitaryGroups 2.6). Seven classical locators verified in the four cached texts (Rallis 1984 twice, Bernstein-Zelevinsky 1977, Gan-Gross-Prasad). 21 files of the formal proof fetched from the linked repository and 25 cited declarations found; proofs not read. C01: 5.9 quotes BaseChange 13.8a with a host restriction the supplier no longer has. C02: 'host of the chain' is not a term of FrobeniusRestrictedRieszSums 0.4. C03: clause (o) of the grid size predicate is a pointer to the formal proof's 23 bounds. C04: the identity of 5.8 has no declaration and the References omit 5.2, 5.7, 5.8a, 5.8. Automatic checks all passed; depcheck 171 roadmaps, 2006 edges, 0 problems; lake env lean of Suggested.lean exits 0 with no messages (no declarations, so no #check pass and no one-tactic probe). Scope and licence of the formal proof left to the human reviewers.",
+  "text": "c3f27e7f6368c033",
+  "carried": {
+   "from": "0b439f3180243cd283bac6bcd901be50b606193d",
+   "head": "0582de1f98cd18be9629914ebba1019f8cf3c09e",
+   "findings": 4,
+   "lines": 49,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/RowTowerAndRallisIdentities"
+   ],
+   "corrections": true
+  }
+ }
+}
