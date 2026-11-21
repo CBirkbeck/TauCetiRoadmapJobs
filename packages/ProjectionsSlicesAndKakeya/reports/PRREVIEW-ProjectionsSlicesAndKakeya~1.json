@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ProjectionsSlicesAndKakeya~1",
+  "head": "d4f5286c2ec5f629e408f8608305cd817cd70a42",
+  "pr": 2943,
+  "folder": "ProjectionsSlicesAndKakeya",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All 15 sampled targets recomputed on degenerate instances (adversarial table in the report); 16 Bishop-Peres and 8 Hochman locators read in the texts fetched from the authors' pages; 31 Mathlib names elaborated with #check and the two Tau Ceti Eilenberg declarations read at the pin; FractalGeometry 3.2, 3.3, 5.1-5.5 resolved at its open head; dependency check 0 problems; Suggested.lean elaborates with 13 sorry warnings only; one-tactic probe closes none of the 13 theorems; automatic checks all passed, none set aside. One small correction (the Sierpinski-triangle example of Layer 4 needs its vertices) and one format note.",
+  "text": "05e10115cd8ddc4f"
+ }
+}
