@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelmerLengthBoundsAndLocalLifting~6",
+  "head": "3dce36edaef4d84ada48488460a1cc795d254a44",
+  "pr": 2901,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SelmerLengthBoundsAndLocalLifting",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Sample of 15 targets (3.22-3.26, 3.25b, 4.9a-4.9c, 4.10a-4.10d, 4.10f, 4.10g) plus 4.9d, 4.10e and the 4 headlines: Checks, examples and round bounds recomputed, no false mathematics. Sources: all 72 file-and-declaration locators into the formal proof and the 15 name-only ones exist in the operator's copy of its source; 31 statements opened and compared (hypotheses and constants agree); the copy states another commit than the README (question to the author); Bloch-Kato paywalled, BS23 not opened this round. Supplier sections resolved on main and at the open heads of PadicHodgeRegulators and WachLatticesOverTheCyclotomicTower. Worker's automatic checks all passed; depcheck 170 roadmaps, 1992 edges, 0 problems; Suggested.lean elaborates with no output (declares nothing). C01: 4.10c (3) names no declaration of the formal proof. N01: some declarations cited without a file.",
+  "text": "61c92682f8db630d",
+  "carried": {
+   "from": "3dce36edaef4d84ada48488460a1cc795d254a44",
+   "head": "b0028d19dc3217011ed66e03dc6bfb243d430aca",
+   "findings": 1,
+   "lines": 8,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/SelmerLengthBoundsAndLocalLifting"
+   ],
+   "corrections": true
+  }
+ }
+}
