@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AdelicHeightsAndSuccessiveMinima~1",
+  "head": "088f604f894858a9785d381b1ef07613b46be2b9",
+  "pr": 2883,
+  "folder": "RiemannHypothesisForDirichletLFunctions/AdelicHeightsAndSuccessiveMinima",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Seeded sample 2.5a and 3.1: neither carries a locator; 3.1 checked against Bombieri-Vaaler 1983 Theorems 3 (p. 18) and 6 (p. 23) via GDZ; Roy-Thunder 1996 (GDZ cover sheet only) and Bombieri-Gubler App. C.2 (paywalled) not readable. Adversarial pass over all 10 declarations and 6 Checks with computed instances: all true. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with only sorry warnings; #check signatures agree with README; one-tactic probes fail on all 6 theorems. Blocking: Layer 3 duplicates SubspaceTheorem section 4.2 on main (same K-minimum, comparisons, bounds and proposed names); Layer 2 double-owns DAT section 2.5's height H_A and its extension invariance. Human reviewers: family index claims a complete formal proof of RH for Dirichlet L-functions.",
+  "text": "457b6a2d3498c334"
+ }
+}
