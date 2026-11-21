@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CongruenceModulesOfThetaLifts~3",
+  "head": "a56fc013d8cf261879eee60cc4c765d60eb9655d",
+  "pr": 2921,
+  "folder": "RiemannHypothesisForDirichletLFunctions/CongruenceModulesOfThetaLifts",
+  "date": "2026-11-21",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. All 15 sampled targets (7.1, 7.4, 7.5, 7.5a, 7.5b, 7.6, 7.7a, 7.7b, 7.7d, 7.8, 7.10a, 7.11, 7.15, 7.16, 7.16a) checked by computation and against their supplier sections. [FormalProof] is held only as a Lean kernel export and the README gives no locator into it, so no sampled target was checked against it. Gan-Qiu-Takeda (arXiv 1207.4709v3) read at Theorems 1.2-1.4, 7.1, 7.3, 7.4 and lines 299-305; this gives R02 (Theorem 7.3(i) proves 7.5a (a)(i)) and supports R01 (the archimedean clause (a)(ii) is left open in the literature). The announcement was read in full. 43 citations to roadmaps on main resolved; supplier statements read at the open heads (LengthBoundsInPadicFamilies 1.7a, 1.8e; SelmerLengthBoundsAndLocalLifting 3.26, 4.10d(4); UniformWildKernelBounds 7.6). Dependency check against the candidate order: 0 problems. Suggested.lean elaborates with no output; the headline carriers (crystalline representations, Bloch-Kato H1_f, algebraic modular forms) were confirmed absent at both pins. The worker's automatic checks all passed; my own gate run flagged only the family-index files (owned by this pull request) and the merge-order placement, both set aside. Findings: R01 7.5a(a) has no route and no locator into [FormalProof]; R02 the 7.5a route's reason for leaving (a)(i) open is false; R03 the Check of 7.7a calls ell > t+1 necessary when ell > t suffices.",
+  "text": "8f428380ea3f9605"
+ }
+}
