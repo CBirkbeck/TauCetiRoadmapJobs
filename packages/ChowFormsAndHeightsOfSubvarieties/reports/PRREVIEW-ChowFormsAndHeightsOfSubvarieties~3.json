@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ChowFormsAndHeightsOfSubvarieties~3",
+  "head": "d23022b63e70be9d7280557694cc4b73b84bd59c",
+  "pr": 2891,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ChowFormsAndHeightsOfSubvarieties",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "incremental re-review of 50 changed lines since 6ac76a4. Checked: every previous remark (R01 repaired outside the folder, so D01 resolved; C02, C03, C04 and N01 repaired; C01 and C05 partly repaired and carried as small corrections); the seeded sample 5.1, 6.1 and 6.2, with Philippon91 Theoreme 2 (p. 256) and Corollaire 4 (p. 272) read on the page images and agreeing with 6.1 (iii) in constant and normalisation, GS90 Theorem 4.2.3 (p. 138) verified, Bost-Gillet-Soule again unreadable; the new supplier ComplexComparisonPartII C5.4 resolved on main with its normalisation; the consumer lines against the heads of ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties and HeightsForLogSingularMetrics; no citation of the former id 5.17a anywhere; dependency check 0 problems; the gate rerun clean apart from the family-index files and not-yet-in-order, both set aside; Suggested.lean elaborates with no message; adversarial table recomputed for the changed and cited statements.",
+  "text": "6650947d860c8d63"
+ }
+}
