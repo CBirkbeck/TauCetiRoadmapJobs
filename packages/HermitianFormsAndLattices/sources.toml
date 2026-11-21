@@ -55,3 +55,21 @@ status = "certified"
 accessed = "2026-11-21"
 version_note = "arXiv v1"
 cited_for = ["2.5"]
+
+[[source]]
+id = "Jacobson"
+authors = "N. Jacobson"
+title = "A note on hermitian forms"
+year = 1940
+venue = "Bull. Amer. Math. Soc. 46 (1940) 264-268"
+doi = "10.1090/S0002-9904-1940-07187-3"
+locator_scheme = "theorem"
+locator = "§2, the Theorem and formula (7), p. 267"
+url = "https://www.ams.org/journals/bull/1940-46-04/S0002-9904-1940-07187-3/S0002-9904-1940-07187-3.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1940-46-04/S0002-9904-1940-07187-3/S0002-9904-1940-07187-3.pdf"
+fetched_at = "2026-11-21T20:45:36Z"
+sha256 = "3fad341c8759f5584b5cbe7f6877a8c5f238e8ee223fe0b14d6354a92705352a"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["1.3"]
