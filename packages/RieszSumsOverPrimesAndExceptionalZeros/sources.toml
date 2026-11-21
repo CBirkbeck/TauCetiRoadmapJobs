@@ -48,3 +48,72 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["1.4i"]
+
+[[source]]
+id = "Gallagher1970"
+authors = "P. X. Gallagher"
+title = "A large sieve density estimate near sigma = 1"
+year = 1970
+venue = "Inventiones Mathematicae 11, 329-339"
+doi = "10.1007/BF01403187"
+locator_scheme = "theorem"
+locator = "Theorem 7, (29), p. 337; (26)-(27), p. 336"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0011/LOG_0035.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0011/LOG_0035.pdf"
+fetched_at = "2026-11-21T16:21:03Z"
+sha256 = "9baeb2b3caf6e5def93f0aa928204d6de1334efdd87125bfc56d87c0682fba14"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["1.7b"]
+
+[[source]]
+id = "Linnik1944a"
+authors = "U. V. Linnik"
+title = "On the least prime in an arithmetic progression. I. The basic theorem"
+year = 1944
+venue = "Rec. Math. (Mat. Sbornik) N.S. 15(57), 139-178"
+locator_scheme = "equation"
+locator = "(2), p. 139"
+url = "https://www.mathnet.ru/php/getFT.phtml?jrnid=sm&paperid=6196&what=fullt&option_lang=eng"
+fetched_from = "https://www.mathnet.ru/links/e5678aeded888e03cdb9182d71a15626/sm6196.pdf"
+fetched_at = "2026-11-21T16:21:06Z"
+sha256 = "4761400bd94105226ff715cf9e21e1a0b732e58d2f533aa7133f0bd0b790f524"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["1.7b"]
+
+[[source]]
+id = "Linnik1944b"
+authors = "U. V. Linnik"
+title = "On the least prime in an arithmetic progression. II. The Deuring-Heilbronn phenomenon"
+year = 1944
+venue = "Rec. Math. (Mat. Sbornik) N.S. 15(57), 347-368"
+locator_scheme = "theorem"
+locator = "Theorem, p. 347; Section 3, second basic theorem, p. 348"
+url = "https://www.mathnet.ru/php/getFT.phtml?jrnid=sm&paperid=6202&what=fullt&option_lang=eng"
+fetched_from = "https://www.mathnet.ru/links/e71f0771b3d7a863401e325518cce0cb/sm6202.pdf"
+fetched_at = "2026-11-21T16:21:08Z"
+sha256 = "f813943a5759f562984690d458574bee93dc36f07d1b6e18fa60557737004b3f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["1.7b"]
+
+[[source]]
+id = "Bombieri1987"
+authors = "Enrico Bombieri"
+title = "Le grand crible dans la theorie analytique des nombres"
+year = 1987
+venue = "Asterisque 18, second edition"
+locator_scheme = "theorem"
+locator = "Section 6, Theoreme 13, p. 39; Theoreme 16, p. 41"
+url = "https://www.numdam.org/item/AST_1987__18__1_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_1987__18__1_0.pdf"
+fetched_at = "2026-11-21T16:21:10Z"
+sha256 = "c1969cbf67bd01678a607fab403e206ec9bf979d15ff8ea9908a21492081622a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["1.7b"]
