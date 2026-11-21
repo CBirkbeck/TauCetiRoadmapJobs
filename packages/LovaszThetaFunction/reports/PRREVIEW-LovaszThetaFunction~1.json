@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LovaszThetaFunction~1",
+  "head": "6863bb8940a5157ac61454f99070b30f23f4eea9",
+  "pr": 2940,
+  "folder": "LovaszThetaFunction",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full review. All 14 sampled targets recomputed (degenerate cases, pentagon certificates, route identities); every Knuth locator of the README read against the arXiv text (Knuth1994); Lovasz 1979 and Shannon 1956 could not be read legally and the README gives no locator into them (Layer 5 is proved from the roadmap's own targets). 21 library declarations located at the pins, 6 cross-roadmap citations resolved at the open heads, dependency check 0 problems, automatic checks all passed, Suggested.lean elaborates with sorry the only warning, one-tactic probe closes none of the 14 theorems. One error found in the source (Knuth F6), already repaired in the README's route 1.4.",
+  "text": "26a13e5a0dc7fd17"
+ }
+}
