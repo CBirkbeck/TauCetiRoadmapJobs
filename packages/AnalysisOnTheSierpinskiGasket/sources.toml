@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AnalysisOnTheSierpinskiGasket"
+
+[[source]]
+id = "Kig93"
+locator_scheme = "theorem"
+locator = "Theorem 6.9"
+url = "https://www.ams.org/journals/tran/1993-335-02/S0002-9947-1993-1076617-1/S0002-9947-1993-1076617-1.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1993-335-02/S0002-9947-1993-1076617-1/S0002-9947-1993-1076617-1.pdf"
+fetched_at = "2026-11-21T21:23:18Z"
+sha256 = "4ec3e3aa8f7dcc677e8df7608911ad48a4e2a119a1dc27e435cca62c6cdd48b8"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["5.3"]
+
+[[source]]
+id = "Str99"
+locator_scheme = "page"
+locator = "p. 1201"
+url = "https://www.ams.org/journals/notices/199910/fea-strichartz.pdf"
+fetched_from = "https://www.ams.org/journals/notices/199910/fea-strichartz.pdf"
+fetched_at = "2026-11-21T21:23:38Z"
+sha256 = "464f23a20d5a4fc0e64b34fcb890c8dd07129ff89996989bc0a306600f631b27"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.3"]
