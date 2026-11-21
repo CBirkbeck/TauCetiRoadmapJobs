@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RepeatedGamesAndBargaining~1",
+  "head": "3bfe3ddebd4876806113030b482f1e217f7d620c",
+  "pr": 2939,
+  "folder": "RepeatedGamesAndBargaining",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. All 11 sampled targets and all four headline theorems recomputed (adversarial table in the report); 24 source locators read at their places in Karlin-Peres and Manea's two slide sets, fetched from the author page and MIT OpenCourseWare; 31 library declarations opened at the pins; supplier citations resolved against ExtensiveFormGames at its open head and RegretMinimizationAndEquilibria and MarkovDecisionProcesses on main; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the six theorems; automatic checks all passed, none set aside. Three questions for the human reviewers (secondary sources, routes proved in the roadmap, licences of the copies read).",
+  "text": "0492aee5a2c19603"
+ }
+}
