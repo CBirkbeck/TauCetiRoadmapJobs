@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DeligneWeightsAndPurityPartII~9",
+  "head": "678712f97d4e454dcafcba71e35a5bc2949cadb9",
+  "pr": 1760,
+  "folder": "DeligneWeightsAndPurityPartII",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 47 changed lines since cdacab3. Checked: the previous finding R01 (repaired: equivariance of the proper algebraic-adic comparison now cited from GaloisActionOnEtaleCohomology 0.2 and 4.2 on main, read there with 1.2 and 1.4; fourth gap withdrawn; three declared gaps unchanged and matching the plan), the previous C01-C04 and N01-N02 (all repaired); the changed passages of 0.2, 0.5, 0.8, 1.1, 4.1, 4.2, scope and supplier contracts; SCH12 lines 2604 and 2612 for the changed paragraph of 4.2; pinned IsPerfectoidField, uniformTilt and Mathlib Perfectoid.Tilt for the changed docstring; dependency check 0 problems; automatic checks all pass; Suggested.lean elaborates with no output and declares nothing; title and description hold at this head; nothing changed outside the folder.",
+  "text": "614dbaade76c9541"
+ }
+}
