@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RuinTheory~1",
+  "head": "fe4f1040f6b5e0372ef2e302ac463a833a6c687c",
+  "pr": 2906,
+  "folder": "RuinTheory",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All nine sampled targets (1.1-4.2) verified against Kevei's notes (12 locators, author's page) and Durrett (2 exercises, author's page); every statement recomputed on degenerate and two-term instances, numerical Checks recomputed (quadrature, root finding, simulation). 36 Mathlib and 10 Tau Ceti declarations opened at the pins. Dependency check: 0 problems. Suggested.lean elaborates with 11 sorry warnings only; one-tactic probe closes none of the 11 theorems. Automatic checks: one scanner hit (mentions of PointProcesses as a non-supplier) set aside as a false positive. One small correction (contract wording for two Mathlib convergence lemmas), one format note. For the human reviewers: main source is unpublished lecture notes; Durrett's page identified by initials.",
+  "text": "3916eb418e26b14e"
+ }
+}
