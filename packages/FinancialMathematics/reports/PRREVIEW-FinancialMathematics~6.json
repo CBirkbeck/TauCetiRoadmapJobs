@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FinancialMathematics~6",
+  "head": "15537346972e18216e3e1df2253b043f8035c789",
+  "pr": 2557,
+  "folder": "FinancialMathematics",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 18 changed lines since 9196a42: four section locators into Shreve 2004 added to 2.2, 2.3, 3.1 and 4.1, no statement changed. Checked: the statements the locators attach to, by computation (five rows with values); the previous small correction (repaired) and format note (carried); the description against this head and the folder's change (agrees); the dependency check (0 problems); the automatic checks (all passed); elaboration of Suggested.lean (three sorry warnings only). The seeded sample in the changed passages could not be compared with the text of Shreve 2004, which is paywalled; this is reported to the human reviewers.",
+  "text": "b6e5305c6cc440b3"
+ }
+}
