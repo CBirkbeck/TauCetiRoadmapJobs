@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IntegralWeylModulesOfGeneralLinearGroups~2",
+  "head": "9ceb4eed6f0f5a8fd16d744846c1ac7f2dfa20fb",
+  "pr": 2888,
+  "folder": "RiemannHypothesisForDirichletLFunctions/IntegralWeylModulesOfGeneralLinearGroups",
+  "date": "2026-11-21",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review of README and Suggested.lean, plus the family index files. Sample 0.1, 0.3a, 0.3, 0.2, 1.1, 2.1, 2.2, 3.1-3.4: every numerical Check recomputed in the polynomial model (Smith forms, Gram determinants, c_Br, Fischer norms), with further adversarial tests of 0.3 (112 cases), 1.1 (1815 pairs, 50 integrality cases), 2.1 (b) (1148), 2.2 (a)/(b) (24456) and 2.2 (c) (678424); one false Check sentence found (R03). Source locators: the formal proof is cited with no locator; the announcement was read on the author's page; Jantzen not available. Automatic checks: all passed; depcheck 0 problems; Suggested.lean elaborates with sorry only; #check of all 7 declarations matches the README; one-tactic probes close nothing. A scratch file shows the sandwich and block-cut headlines are statable at the pins (R01). Supplier citations resolved on main and at the open heads of SlopesOfHermitianVectorBundles and HermitianFormsAndLattices.",
+  "text": "31d00b50873254f3",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "Unnumbered note: the sentence that the family \"follows the formal Lean proof\" is in the family index's own introduction, which this job may not change; it has to be rephrased there, in the family inde",
+    "where": "the family's own text, RiemannHypothesisForDirichletLFunctions/README.md lines 9–14",
+    "raised": "PRREVIEW-IntegralWeylModulesOfGeneralLinearGroups~2"
+   }
+  ]
+ }
+}
