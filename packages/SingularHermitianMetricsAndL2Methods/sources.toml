@@ -175,3 +175,21 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["5.3", "5.4"]
+
+[[source]]
+id = "Demailly2015"
+authors = "Jean-Pierre Demailly"
+title = "Extension of holomorphic functions defined on non reduced analytic subvarieties"
+year = 2015
+arxiv = "1510.05230v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.8"
+url = "https://arxiv.org/abs/1510.05230v1"
+fetched_from = "https://arxiv.org/pdf/1510.05230v1"
+fetched_at = "2026-11-21T21:53:11Z"
+sha256 = "c9895bb3b09301af6030a0e192309b752c2413c3f009b79934ae53d3dd7118d7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["4.2"]
