@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IntegerPolyhedraAndTotalUnimodularity~1",
+  "head": "653449f174f5cb88e44bb31812cd56df4383b35d",
+  "pr": 2956,
+  "folder": "IntegerPolyhedraAndTotalUnimodularity",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "All ten sampled targets (1.1-4.2) checked mathematically: every statement and route recomputed by hand, degenerate shapes instantiated, and the enumeration Checks of 1.2, 2.1, 2.2 and 2.3 (3x3) recomputed with exact arithmetic (11350, 4123, 8612, 19683 confirmed). Schrijver's notes could not be read through the sources service, so no locator, wording or arrangement was checked against the text (Not verifiable; flagged to the human reviewers). 33 library declarations opened at the pins, all present; 13 cross-roadmap section citations resolved on main or at open heads. Suggested.lean elaborates with sorry as the only warning; no theorem closes with rfl, simp, simp_all or infer_instance. Dependency check: 0 problems. Automatic checks all passed. No change outside the folder.",
+  "text": "2249899c23a4e391"
+ }
+}
