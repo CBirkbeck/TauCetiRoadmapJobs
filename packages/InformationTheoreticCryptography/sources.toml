@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "InformationTheoreticCryptography"
+
+[[source]]
+id = "Beimel"
+locator_scheme = "theorem"
+locator = "Claim 2"
+url = "https://www.cs.bgu.ac.il/~beimel/Papers/Survey.pdf"
+fetched_from = "https://www.cs.bgu.ac.il/~beimel/Papers/Survey.pdf"
+fetched_at = "2026-11-21T22:37:52Z"
+sha256 = "36907bebf42488248ba68c6b223cd5154aec5d6a056483db50b5cd48362a9b57"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["3.2"]
