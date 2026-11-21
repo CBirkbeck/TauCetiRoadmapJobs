@@ -1,0 +1,36 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HeightsForLogSingularMetrics"
+
+[[source]]
+id = "moriwaki-2009"
+authors = "Atsushi Moriwaki"
+title = "Continuity of volumes on arithmetic varieties"
+year = 2006
+arxiv = "math/0612269v2"
+locator_scheme = "theorem"
+locator = "Theorem 6.2, Example 6.1 (2)"
+url = "https://arxiv.org/abs/math/0612269v2"
+fetched_from = "https://arxiv.org/pdf/math/0612269v2"
+fetched_at = "2026-11-21T16:27:15Z"
+sha256 = "cbc3cf83dacad86d65a7d69a95affb866e0ada9cf585b695e7753b7480551d98"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v2"
+cited_for = ["4.3a"]
+
+[[source]]
+id = "Announcement"
+authors = "Levent Alpöge"
+title = "Announcement of a proof of the Riemann hypothesis and of its Lean formalization"
+year = 2026
+locator_scheme = "page"
+locator = "1"
+url = "https://alpo.ge/remark.pdf"
+fetched_from = "https://alpo.ge/remark.pdf"
+fetched_at = "2026-11-21T16:36:50Z"
+sha256 = "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["16.1"]

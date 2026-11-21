@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HeightsForLogSingularMetrics~2",
+  "head": "25e5ace378e96c0ec57cfa18de6976ade9254199",
+  "pr": 2894,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample 0.4, 4.3a, 4.3b, 14.1, 14.2, 16.1 checked: no locators flagged as unverified. Moriwaki 2009 Thm 6.2/Ex 6.1(2) and Yuan-Zhang §2.4 read at the text; the announcement read; the FormalProof repository has no locator to follow (16.1, 0.4(c)(iii), 14.1(c) not verifiable at the source). Mathematics recomputed independently: Fubini-Study heights of P^n, the N=3 flag numbers (H1^2H2^2 = 7/4 by Cartier recursion), the reflection formula on P^1 and Fl3, the 0.4(c) constants, the Poincare/convolution/conic/u_b Checks, the 16.1 metric normalisation. One P2: 4.3b(a) duplicates ChowFormsAndHeightsOfSubvarieties 6.2(a7) (open PR 2891, earlier in the family order). Dependency check: 0 problems. Suggested.lean elaborates cleanly and declares nothing; all four headlines are named as not statable. Automatic checks: outside-folder (family index files) and not-in-merge-order set aside as false positives.",
+  "text": "26903a50c1674a88"
+ }
+}
