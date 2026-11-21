@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuadraticTwistSelectionOverPrimes~6",
+  "head": "8e342bd38314f7620270ec958597ba17a56c5d7f",
+  "pr": 2878,
+  "folder": "RiemannHypothesisForDirichletLFunctions/QuadraticTwistSelectionOverPrimes",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample 2.7a-2.7d checked against the cited supplier sections at main or at their open heads (22 citations resolved) and by computation: reciprocity on 300 random classes, the mean-square inequality on 147 random data sets, the Li bound at three sizes, the identity for G_chi, the deduction of every form with box width 1/400 from the general statement, the instance of 2.7d (ii') and the worked example. Sources: the announcement read in full (states no target); the formal proof and Gallagher 1970 not readable, so attributions to the formal proof are unverified and left to the human reviewers. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with five sorry warnings only; #check of all 10 declarations matches the README; one-tactic probe closes none; 10 library declarations opened at the pins. Corrections: provenance wording (published theorems), attribution of 2.7d (ii') to the formal proof, stale description (3/4 against 5/5 declarations, two suppliers omitted).",
+  "text": "05231de3597beac5",
+  "carried": {
+   "from": "8e342bd38314f7620270ec958597ba17a56c5d7f",
+   "head": "c876b1e2db6bc1757a590637732a77a61cd1531d",
+   "findings": 3,
+   "lines": 34,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/QuadraticTwistSelectionOverPrimes"
+   ],
+   "corrections": true
+  }
+ }
+}
