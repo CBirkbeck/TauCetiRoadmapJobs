@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OrbitMeasuresOnAdelicGroups~6",
+  "head": "f97ba47ff8aac1bab295b5db2bb635918b348ddf",
+  "pr": 2879,
+  "folder": "RiemannHypothesisForDirichletLFunctions/OrbitMeasuresOnAdelicGroups",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 42 changed lines since b444955. Checked: the four earlier small corrections (all repaired); the recorded forms of the formal proof's statements against its files, with the constant (2^{-r_2}|d_F|^{1/2})^{j^2} recomputed at j = 1 (general totally complex F and Q(i)); the product-Haar form on a two-element and an empty index set; the pull request's title and description against the head (one stale validation sentence, C01). Seeded sample: 2.6 and 3.4a checked where the change falls (new Tate and Weil 1965 locators not readable; Weil 1965 uncertified), 4.1 untouched. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged and elaborates with the two sorry warnings only.",
+  "text": "26fe55ac448e8c28",
+  "carried": {
+   "from": "f97ba47ff8aac1bab295b5db2bb635918b348ddf",
+   "head": "f97ba47ff8aac1bab295b5db2bb635918b348ddf",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
