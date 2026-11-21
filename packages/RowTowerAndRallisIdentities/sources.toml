@@ -1,0 +1,68 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RowTowerAndRallisIdentities"
+
+[[source]]
+id = "Rallis84Injectivity"
+authors = "Stephen Rallis"
+title = "Injectivity properties of liftings associated to Weil representations"
+year = 1984
+locator_scheme = "theorem"
+locator = "Proposition 1.1, pp. 149–150"
+url = "https://www.numdam.org/item/CM_1984__52_2_139_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1984__52_2_139_0.pdf"
+fetched_at = "2026-11-21T20:54:47Z"
+sha256 = "af1412a50a22428237260a32d233c246d8a2ad5e395963953f4da6f3384af28b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["References (5.5–5.7)"]
+
+[[source]]
+id = "Rallis84Howe"
+authors = "Stephen Rallis"
+title = "On the Howe duality conjecture"
+year = 1984
+locator_scheme = "theorem"
+locator = "Theorem 1.1.1, p. 345; Corollary to Theorem 1.1.1, p. 351"
+url = "https://www.numdam.org/item/CM_1984__51_3_333_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1984__51_3_333_0.pdf"
+fetched_at = "2026-11-21T20:54:48Z"
+sha256 = "1314569a6f1972aea916e4f3a110d26017b95f413671b0e64f4afa0e6c22653c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["References (5.2)"]
+
+[[source]]
+id = "BernsteinZelevinsky77"
+authors = "I. N. Bernstein, A. V. Zelevinsky"
+title = "Induced representations of reductive p-adic groups. I"
+year = 1977
+locator_scheme = "section"
+locator = "2.12 (geometrical lemma), p. 448"
+url = "https://www.numdam.org/article/ASENS_1977_4_10_4_441_0.pdf"
+fetched_from = "https://www.numdam.org/article/ASENS_1977_4_10_4_441_0.pdf"
+fetched_at = "2026-11-21T20:54:49Z"
+sha256 = "8424600228ab72c5937e45edceefcae410a2a0b8f5ebf282185691542aa89092"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["References (5.9)"]
+
+[[source]]
+id = "GanGrossPrasad12"
+authors = "Wee Teck Gan, Benedict H. Gross, Dipendra Prasad"
+title = "Symplectic local root numbers, central critical L-values, and restriction problems in the representation theory of classical groups"
+year = 2009
+arxiv = "0909.2999v1"
+locator_scheme = "section"
+locator = "arXiv:0909.2999v1: §12, p. 43; Corollary 15.2, p. 63; §23, p. 86"
+url = "https://arxiv.org/abs/0909.2999v1"
+fetched_from = "https://arxiv.org/pdf/0909.2999v1"
+fetched_at = "2026-11-21T20:54:54Z"
+sha256 = "97c28b21ece4cec640a43dc8c7136ec925001d46e9555e413df1b3f9865daae7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["References (5.8e)"]
