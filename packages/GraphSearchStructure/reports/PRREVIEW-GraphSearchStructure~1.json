@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GraphSearchStructure~1",
+  "head": "950242d48b87985c6f3025fadcbe73e7162ab87a",
+  "pr": 2950,
+  "folder": "GraphSearchStructure",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Every statement, Check and route recomputed by hand; all fifteen theorems and the two README counts (32632, 27360) reproduced by an independent enumeration over every relation on at most 4 vertices and every simple graph on at most 5 vertices with every structure satisfying the axioms; the axioms compared with simulated depth-first search on the same range. Suggested.lean elaborates with sorry as the only warning; no theorem closes under a one-tactic probe; 20 elaborated signatures compared with the README. 31 library declarations opened at the pins. Dependency check: 0 problems. Automatic checks all passed. The sampled source locators could not be verified: Erickson's chapter was not obtainable through the sources service and Diestel's preview PDF asks for a password; both are listed as not verifiable and flagged to the human reviewers. One P2 finding: a sentence in 4.2 asserting normal spanning trees for all connected graphs.",
+  "text": "5062e5b9fd912679"
+ }
+}
