@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsMotionGroupsBessel~1",
+  "head": "5f032bea7e37aba35cacb35b198263a984232cfa",
+  "pr": 2933,
+  "folder": "SpecialFunctionsMotionGroupsBessel",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 6,
+  "format_notes": 2,
+  "notes": "Full review. Findings: R01 (P2) the zonal form 10.23.9 in 6.3 is stated for n >= 2 but is degenerate at n = 2; R02 (P2) the dictionary to Vilenkin-Klimyk's T_R in 1.3 and 5.1 has the wrong sign against Conventions. Every numerical Check of Layers 0-7 and the worked examples was recomputed and agrees; each headline was tested on degenerate and complex instances (table in the report). Suggested.lean elaborates with 58 sorry warnings only; one-tactic probe on 15 statements closed none; local copies of 15 supplier definitions are identical to their owners'. Dependency check: 0 problems. Cross-roadmap citations resolved at main and at the open heads (one drift, C01). Sources: ten DLMF locators verified; the five books (VK1, VK2, KV, M, D) could not be read legally, so the seeded sample's book locators and the README's nine reported misprints are unverified and are listed under Not verifiable and for the human reviewers. Automatic checks: two hits, both real and minor (C05, N02); none set aside.",
+  "text": "cd201131aa8be429"
+ }
+}
