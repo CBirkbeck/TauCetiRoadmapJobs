@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ConsumerTheoryDuality~1",
+  "head": "6a66a171241625eb62de2a2223a3652818a2f216",
+  "pr": 2871,
+  "folder": "ConsumerTheoryDuality",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full review. All 12 sampled targets and every Check recomputed by hand (junk values of sSup, sInf and fderiv, l = 0 and 1, both inclusions of each set equality); 20 source locators read in Border's four notes on the author's page; 22 library declarations opened at the pins; 5 cross-roadmap citations resolved; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 15 theorems; automatic checks all passed; dependency check 0 problems.",
+  "text": "d4fe046f1ce08b8f"
+ }
+}
