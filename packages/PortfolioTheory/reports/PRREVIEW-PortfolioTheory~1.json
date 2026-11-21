@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PortfolioTheory~1",
+  "head": "1eec69c0ee17427cdb4ffab928f20c455b2bcab4",
+  "pr": 2902,
+  "folder": "PortfolioTheory",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All 13 sampled targets (1.1-1.5, 2.1, 2.2, 3.1, 3.2, 4.1-4.4) recomputed at degenerate inputs, every number in a Check recomputed. Locators read in Algoet-Cover (12) and in Cover's published article (3); Breiman, Blum-Kalai, Haugh and Cover's typescript could not be read and are listed as not verifiable. 32 library declarations opened at the pins, 6 cross-roadmap citations resolved, duplication searched by object across main and open roadmaps. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 13 sorry warnings only; one-tactic probe closes none of the 13 theorems.",
+  "text": "7c8c6343f061e26f"
+ }
+}
