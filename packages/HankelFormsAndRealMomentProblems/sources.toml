@@ -1,0 +1,47 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HankelFormsAndRealMomentProblems"
+
+[[source]]
+id = "Schmudgen2020TenLectures"
+arxiv = "2008.12698v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.12"
+url = "https://arxiv.org/abs/2008.12698v1"
+fetched_from = "https://arxiv.org/pdf/2008.12698v1"
+fetched_at = "2026-11-21T04:58:36Z"
+sha256 = "abdd49944b034df12096b9e925ec633f5218ad0e9b2770e2b40dd7d93df06f5a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["1.1"]
+
+[[source]]
+id = "Simon1998ClassicalMoment"
+arxiv = "math-ph/9906008"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/math-ph/9906008"
+fetched_from = "https://arxiv.org/pdf/math-ph/9906008"
+fetched_at = "2026-11-21T04:59:41Z"
+sha256 = "a8099f113ccb4d76bc9206afb7f5500730d07163d556411b0901e3a9331149ee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv, latest version"
+cited_for = ["3.1"]
+
+[[source]]
+id = "Zalar2022StrongTruncated"
+arxiv = "2101.00486v2"
+locator_scheme = "theorem"
+locator = "Theorem 2.4"
+url = "https://arxiv.org/abs/2101.00486v2"
+fetched_from = "https://arxiv.org/pdf/2101.00486v2"
+fetched_at = "2026-11-21T05:00:13Z"
+sha256 = "5335c442969369658bb78a46790ad936b487880db34b7ec6a5faa54301664755"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v2"
+cited_for = ["4.1"]
