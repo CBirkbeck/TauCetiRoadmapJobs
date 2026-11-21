@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IntegralWeylModulesOfGeneralLinearGroups~6",
+  "head": "ae3760711e85d2c72b2605977d06595d412f13d1",
+  "pr": 2888,
+  "folder": "RiemannHypothesisForDirichletLFunctions/IntegralWeylModulesOfGeneralLinearGroups",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 66 changed lines since 2aa27fa. Checked: the previous finding R01 (Capelli identity now a target of 3.1, invariance of the ordered product of root projectors now a step of 2.1 (b)) and the six previous small corrections, all repaired; the Capelli identity recomputed for K = 1, 2, 3 and its new Check; the invariance of S0(T) recomputed on six cuts with N <= 4 (z*S0(T) = 1 in each; the opposite order of factors fails, hence one small correction asking which factor acts first); 14 formal-proof statements opened at the commit the README names; GroebnerGeometry G5 and ClassicalGroups 6.6 resolved on main; ownership of the two new statements searched across main and the open heads; the pull request's description read against the head. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 9 sorry warnings only, no statement changed (docstrings only). Seeded sample checked where it falls in the changed passages (0.1, 0.3a, 0.3, 1.1, 2.1, 3.1, 3.2).",
+  "text": "7c4c44bef1b0fee3",
+  "carried": {
+   "from": "ae3760711e85d2c72b2605977d06595d412f13d1",
+   "head": "642703e7bd08f467415693062688f1ea0119e51b",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/IntegralWeylModulesOfGeneralLinearGroups"
+   ],
+   "corrections": true
+  }
+ }
+}
