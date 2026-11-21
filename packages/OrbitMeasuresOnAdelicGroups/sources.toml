@@ -1,0 +1,38 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "OrbitMeasuresOnAdelicGroups"
+
+[[source]]
+id = "Oesterle1984"
+authors = "Joseph Oesterlé"
+title = "Nombres de Tamagawa et groupes unipotents en caractéristique p"
+year = 1984
+venue = "Inventiones Mathematicae 78 (1984), 13-88"
+doi = "10.1007/BF01388714"
+locator_scheme = "section"
+locator = "Ch. I, 4.7, 5.3, 5.9, 5.12, 5.14; Ch. III, 3.3, 5.3; Ch. IV, 3.3 (pp. 22-56)"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0078/LOG_0008.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0078/LOG_0008.pdf"
+fetched_at = "2026-11-21T15:04:44Z"
+sha256 = "669fbb0efdb50f834b1f04c6079f8886cbedd388fb04a3aebe7fdd68a197bead"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.6", "3.4a"]
+
+[[source]]
+id = "Sansuc1981"
+authors = "Jean-Jacques Sansuc"
+title = "Groupe de Brauer et arithmétique des groupes algébriques linéaires sur un corps de nombres"
+year = 1981
+venue = "Journal für die reine und angewandte Mathematik 327 (1981), 12-80"
+doi = "10.1515/crll.1981.327.12"
+locator_scheme = "theorem"
+locator = "Corollaire 10.5, p. 77"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0327/LOG_0005.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0327/LOG_0005.pdf"
+fetched_at = "2026-11-21T15:07:08Z"
+sha256 = "3da0346ffbb3fd7173a361e2188ea48efb8a2b00226377f4c2e6dfda868ef01a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["3.4a"]
