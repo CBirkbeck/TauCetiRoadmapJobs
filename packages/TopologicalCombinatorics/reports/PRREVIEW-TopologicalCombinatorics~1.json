@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TopologicalCombinatorics~1",
+  "head": "83b2e5f402460691c658c3015087e28313c98ca1",
+  "pr": 2872,
+  "folder": "TopologicalCombinatorics",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Sample: all ten sampled targets (1.1-1.3, 2.1, 2.2, 3.1-3.3, 4.1, 5.1); locators checked against Ziegler (arXiv:math/0103146), Prescott-Su (arXiv:math/0310444v1) and Roldan-Pensado-Soberon (arXiv:2010.00478v3); Su's Monthly article and Matousek's preprint could not be read legally and are listed as not verifiable. Adversarial pass with brute-force recomputation of the Sperner, Tucker and Kneser checks. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes no theorem. One P2 finding (Layer 2 route rests on incidence counts that are not targets), one small correction (Borsuk-Ulam hypothesis excludes infinite-dimensional E), one format note.",
+  "text": "c2342c61e89b6f7a"
+ }
+}

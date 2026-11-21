@@ -1,0 +1,73 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TopologicalCombinatorics"
+
+[[source]]
+id = "ziegler-kneser"
+authors = "Günter M. Ziegler"
+title = "Generalized Kneser coloring theorems with combinatorial proofs"
+year = 2001
+doi = "10.1007/s002220100188"
+arxiv = "math/0103146v1"
+locator_scheme = "theorem"
+locator = "Lemma 4.1"
+url = "https://arxiv.org/abs/math/0103146v1"
+fetched_from = "https://arxiv.org/pdf/math/0103146v1"
+fetched_at = "2026-11-21T13:36:51Z"
+sha256 = "5e6448e05da1d4f0c1c120211df988eb64c49cbdff480cca1356541f5448667b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["2.1"]
+
+[[source]]
+id = "prescott-su"
+authors = "Timothy Prescott, Francis Edward Su"
+title = "A Constructive Proof of Ky Fan's Generalization of Tucker's Lemma"
+year = 2003
+venue = "J. Combin. Theory Ser. A 111 (2005), 257--265"
+arxiv = "math/0310444v1"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://arxiv.org/abs/math/0310444v1"
+fetched_from = "https://arxiv.org/pdf/math/0310444v1"
+fetched_at = "2026-11-21T13:36:57Z"
+sha256 = "2faf7d9d7cb7089e585623cf0d6e142419fda5ae0bf0cb435065d29692d451d4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["2.2"]
+
+[[source]]
+id = "roldan-soberon"
+authors = "Edgardo Roldán-Pensado, Pablo Soberón"
+title = "A survey of mass partitions"
+year = 2020
+arxiv = "2010.00478v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.2.2"
+url = "https://arxiv.org/abs/2010.00478v3"
+fetched_from = "https://arxiv.org/pdf/2010.00478v3"
+fetched_at = "2026-11-21T13:37:03Z"
+sha256 = "c6095a14d25000e5fe59ff3e81c01e8031b8618609e1427800ebc73830636d02"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v3"
+cited_for = ["5.1"]
+
+[[source]]
+id = "matousek-kneser"
+authors = "Jiří Matoušek"
+title = "A Combinatorial Proof of Kneser’s Conjecture*"
+year = 2004
+venue = "COMBINATORICA 24"
+doi = "10.1007/s00493-004-0011-1"
+locator_scheme = "theorem"
+locator = "Lemma 2.1"
+url = "https://doi.org/10.1007/s00493-004-0011-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.3"]
