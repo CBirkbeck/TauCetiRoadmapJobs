@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsSU11MatrixElements~2",
+  "head": "91866567d053abd9f4b6c172e88f8251531e3e37",
+  "pr": 2934,
+  "folder": "SpecialFunctionsSU11MatrixElements",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 136 changed lines since e88a77c. Checked: the three small corrections and three format notes of the previous report (all repaired); the generalized row and column sums and bound of 2.1 for real n recomputed at eleven parameter sets including the Gamma poles, with the new proof route (modulus of the integrand, Gamma moduli) verified by hand; the new Checks of 2.1, 3.3 and 5.2 recomputed; the decay identities added to 5.2 and 5.3 recomputed for m = 0, 1, 2; the dependency summary against every Needs line; the pull request's text against the head. Automatic checks: dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 44 sorry warnings and no error; one-tactic probe closes none of the three changed theorems; one form check (section comment heading the #check pins) set aside as a false positive. No source text could be read legally (VK, W, D, M), so no locator or wording was compared: left to the human reviewers.",
+  "text": "ace5ac2e5fb856a1"
+ }
+}
