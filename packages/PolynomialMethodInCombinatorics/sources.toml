@@ -1,0 +1,70 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PolynomialMethodInCombinatorics"
+
+[[source]]
+id = "Dvir09"
+authors = "Zeev Dvir"
+title = "On the size of Kakeya sets in finite fields"
+year = 2008
+doi = "10.1090/S0894-0347-08-00607-3"
+arxiv = "0803.2336v3"
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://arxiv.org/abs/0803.2336v3"
+fetched_from = "https://arxiv.org/pdf/0803.2336v3"
+fetched_at = "2026-11-21T04:39:09Z"
+sha256 = "8e4e47edff1685b6cfb9f1ab0b6a4f87e11b22d4f2aab66c30232b391db9840d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v3"
+cited_for = ["4.1"]
+
+[[source]]
+id = "KSS10"
+authors = "Haim Kaplan, Micha Sharir, Eugenii Shustin"
+title = "On lines and Joints"
+year = 2009
+arxiv = "0906.0558v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/0906.0558v1"
+fetched_from = "https://arxiv.org/pdf/0906.0558v1"
+fetched_at = "2026-11-21T04:39:14Z"
+sha256 = "447244da33f3894f9880cf044253f0e1e34ecbaf3a155428e9c517382820e299"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["5.1"]
+
+[[source]]
+id = "Alon99"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://web.math.princeton.edu/~nalon/PDFS/null2.pdf"
+fetched_from = "https://web.math.princeton.edu/~nalon/PDFS/null2.pdf"
+fetched_at = "2026-11-21T04:39:26Z"
+sha256 = "5933068242b0ecc6bba6944bf6d396492bb31c630d4cd7616e477b0a3e1646b7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["1.1"]
+
+[[source]]
+id = "CarberyIliopoulou14"
+authors = "Anthony Carbery, Marina Iliopoulou"
+title = "Counting joints in vector spaces over arbitrary fields"
+year = 2014
+arxiv = "1403.6438v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/1403.6438v2"
+fetched_from = "https://arxiv.org/pdf/1403.6438v2"
+fetched_at = "2026-11-21T04:41:31Z"
+sha256 = "279dd1bc57ccb3e1adf4f2040a6ed34d35a1496f621339ac6ffdfb5d5206c56b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v2"
+cited_for = ["5.1"]
