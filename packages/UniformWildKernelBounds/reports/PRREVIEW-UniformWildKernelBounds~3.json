@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-UniformWildKernelBounds~3",
+  "head": "4706cbc44a6854b72d773d504d3c6153cef2c106",
+  "pr": 2892,
+  "folder": "RiemannHypothesisForDirichletLFunctions/UniformWildKernelBounds",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "incremental re-review of 87 changed lines since b4b63e8. Checked: the ten previous remarks (R01 and N01 not repaired, the other eight repaired); the new 3.20(f) and its route; the new trace argument of 3.16(b), computed for n = 2, 3 with a negative control; the trimmed 4.4 (irreducibility) and its consumers 4.6, 4.7 and 5.7; the reworded contracts with BernoulliBoundsForClassGroupEigenspaces 6.17 (at its open head) and AlgebraicModularFormsAndSerreWeights 5.10 (on main, and against Deligne-Serre Lemme 6.11); the 7.3(b) pointer; the Soule reference; the pull-request description. Sample targets in the changed text: 4.4; 4.3, 5.3 and 7.5 changed only by a space. Automatic checks pass (two false positives in my own run: merge-order placement and the family-index files). Dependency check: 0 problems. Suggested.lean is unchanged, declares nothing and elaborates with no messages. Blocking: R01, the statements resting only on [FormalProof], which still have no locator into it.",
+  "text": "ad2e8cf0f883b9b4"
+ }
+}
