@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HousingMarketsAndAssignmentGames~1",
+  "head": "9d4ec258dba9fcecff420b5c46482e6fecf29da0",
+  "pr": 2912,
+  "folder": "HousingMarketsAndAssignmentGames",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. All ten sampled targets (1.1-1.4, 2.1-2.3, 3.1-3.3) and all 19 locators into Karlin-Peres read at the text on the author's page (fetched through the sources service, which recorded the entry KarlinPeres2017 in the package manifest). Adversarial pass computed: all housing markets on at most three agents for uniqueness, the round description and strategy-proofness; the two extreme-point formulas on 51861 (matrix, largest-weight matching) pairs with entries in {-1..3} up to 2x3 and 3x2, empty sides included; every worked Check by hand. 16 Mathlib declarations opened at the pin; supplier citations resolved at the open heads of MinimumCostFlowsAndWeightedBipartiteMatching, CooperativeGames and MechanismDesign. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; no theorem closes under the one-tactic probe. Primary papers not read (no locators given). Three questions left for the human reviewers: single textbook source, the AMS notice on the PDF, the open-pull-request supplier.",
+  "text": "13f36258c5b9abe5"
+ }
+}
