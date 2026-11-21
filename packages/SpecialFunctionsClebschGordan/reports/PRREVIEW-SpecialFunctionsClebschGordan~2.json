@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsClebschGordan~2",
+  "head": "6a9b08ddc09cc9c26a1e533d0193422e83ede706",
+  "pr": 2930,
+  "folder": "SpecialFunctionsClebschGordan",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full re-review. All eight remarks of the previous review are repaired. Every one of the 51 statements of Suggested.lean and every formula the README displays in prose (Regge symmetries of the 3-j and 6-j symbols, the 3F2 and 4F3 forms, the recursions DLMF 34.3.13-14, the values at j3 = 1, the dual Hahn orthogonality) was recomputed on a transcription of the Lean definitions (junk values included) and on the pinned unitary model; no failure. Sample: all 15 seeded sections; 43 DLMF equations and table rows read at their locators and found in agreement; the locators into the four books (Edmonds, Vilenkin-Klimyk, Klimyk-Vilenkin, Wawrzynczyk) could not be read legally and are listed as not verifiable. 20 cross-roadmap citations resolved; the five local copies are identical to their owners' declarations; no duplication in the pinned libraries or other roadmaps. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 51 sorry warnings only; the one-tactic probe closes exactly the four statements already labelled as sanity checks. One small correction (a 0/0 in the closed form of the dual-orthogonality norm at n = 0, alpha + beta = -1) and three format notes.",
+  "text": "2f27b578a0c7dc29"
+ }
+}
