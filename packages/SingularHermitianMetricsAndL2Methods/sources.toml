@@ -121,3 +121,57 @@ status = "certified"
 accessed = "2026-11-21"
 version_note = "arXiv v2"
 cited_for = ["0.4"]
+
+[[source]]
+id = "Demailly1992"
+authors = "Jean-Pierre Demailly"
+title = "Regularization of closed positive currents and intersection theory"
+year = 1992
+venue = "Journal of Algebraic Geometry 1"
+version_note = "author's manuscript on the author's page; locators are located in it"
+locator_scheme = "theorem"
+locator = "Proposition 3.7"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/regularization.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/regularization.pdf"
+fetched_at = "2026-11-21T19:52:32Z"
+sha256 = "3dbc4cb1d915168cfc00d23da74acf1a53fdc1c0ed4a2d7ede85e2b6d159dc90"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["7.3", "7.7"]
+
+[[source]]
+id = "Demailly1994"
+authors = "Jean-Pierre Demailly"
+title = "Regularization of closed positive currents of type (1,1) by the flow of a Chern connection"
+year = 1994
+venue = "Aspects of Mathematics E26 (proceedings of the colloquium in honour of P. Dolbeault)"
+version_note = "author's manuscript on the author's page; locators are located in it"
+locator_scheme = "theorem"
+locator = "Theorem 4.1"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/regularization_flow.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/regularization_flow.pdf"
+fetched_at = "2026-11-21T19:52:33Z"
+sha256 = "c2f6c33a5e02518a76991a2fe86558ace8b8bf874d3e24348e27ba447884cded"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["7.4", "7.7"]
+
+[[source]]
+id = "Mumford1977"
+authors = "David Mumford"
+title = "Hirzebruch's proportionality theorem in the non-compact case"
+year = 1977
+venue = "Inventiones Mathematicae 42"
+doi = "10.1007/BF01389790"
+locator_scheme = "theorem"
+locator = "Theorem 1.4"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0042/LOG_0014.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0042/LOG_0014.pdf"
+fetched_at = "2026-11-21T19:53:54Z"
+sha256 = "254e382c97cd76f3de3d059a35fa2dbe822f746941f2ebbebb714e2971760a7d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["5.3", "5.4"]

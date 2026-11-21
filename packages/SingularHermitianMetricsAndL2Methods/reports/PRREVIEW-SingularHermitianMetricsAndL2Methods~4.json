@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SingularHermitianMetricsAndL2Methods~4",
+  "head": "fb5186a1bbd07a87d5ed76a8d9c44554d6304960",
+  "pr": 2884,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SingularHermitianMetricsAndL2Methods",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review of an unchanged head. Whole README read and its Checks recomputed (32 rows in the adversarial table, the 15 sampled targets and the 4 headlines among them). 11 sampled locators verified in DemaillyCADG and DemaillyAMAG; Layer 5 (Mumford 1977, paywalled) and 3.8a (Berndtsson, Donnelly-Fefferman) checked by computation only. One finding (P2): 9.2 duplicates bergmanDensity_uniform of HeightsRationalPointsAndObstructions 5.17c (open pull request 1017, earlier in the merge order), which the README lists as a consumer. The three small corrections of the previous review stand (head unchanged); two new ones (3.2a(b) hypothesis against its Hodge gloss; 8.3 compactness). Dependency check: 0 problems. Suggested.lean elaborates with no output and declares nothing. Worker's automatic checks all passed; own gate run flagged only the family index files and 'not in order', both set aside. Deferred D01 stands. A fetch attempt for Mumford 1977 added a manifest entry, which was reverted: the manifest is unchanged.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C08: the family index `TauCetiRoadmap/RiemannHypothesisForDirichletLFunctions/README.md` should list, in each pull request's copy, only the sub-roadmaps on main or in that pull request, with each late",
+    "where": "the family index text carried identically by every family pull request",
+    "raised": "PRREVIEW-SingularHermitianMetricsAndL2Methods~2"
+   }
+  ],
+  "text": "edac5a4f0aa80557"
+ }
+}
