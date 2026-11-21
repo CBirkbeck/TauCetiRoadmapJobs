@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticIntegrals~6",
+  "head": "e37e4dbe3683b7ac23130854b91873370f06eac9",
+  "pr": 2556,
+  "folder": "EllipticIntegrals",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 4,
+  "notes": "incremental re-review of 22 changed lines since 08023cc. Checked: the four small corrections of the previous review (all repaired) and its four format notes (carried); the DLMF equations the changed locator lines cite (19.6.2, 19.6.3, 19.6.12, 19.6.13, 19.2.18, 19.4.1, 19.4.2, 19.25.5, 19.25.9, 19.25.14) read at NIST; the values of 1.6, 2.2, 4.7 and 6.6 recomputed; the Lean section comments against the README's milestone titles; the pull request's description against this head (holds, no omission). Automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with eleven sorry warnings only; nothing changed outside the folder. None of the seeded sample's targets lies in a changed passage.",
+  "text": "00dc7469afa0f332"
+ }
+}
