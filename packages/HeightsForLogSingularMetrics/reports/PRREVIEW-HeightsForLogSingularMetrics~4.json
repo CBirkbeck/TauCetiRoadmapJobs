@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsForLogSingularMetrics~4",
+  "head": "2c30dcc97b8689f7a2fea27d22ed5dd3c20e2869",
+  "pr": 2894,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review of the head the previous review read (no change). All six sampled targets (0.4, 4.3a, 4.3b, 14.1, 14.2, 16.1) and the four headlines recomputed: every Check and numerical witness, the Fl_3 polynomial, the reflection identity, the rate constants, the conic example. Moriwaki Theorem 6.2, Example 6.1 (2), Corollary 6.4 verified at moriwaki-2009 lines 2385-2471; Bost's expose read on Numdam; Zhang 1995, Bost-Gillet-Soule 1994, Roy-Thunder 1996 and the formal proof not verifiable. All cited sections of thirteen roadmaps opened. Dependency check: 0 problems, no UPWARD or CYCLE. Worker's automatic checks all passed; Suggested.lean elaborates with no message and declares nothing (no headline statable at the pins). Four small corrections (missing locators; description's identical-index sentence; conventions imported from a later roadmap with another height normalisation; attribution of the key degree identity), one format note (ZLattice is a namespace), one question on the error term of 16.1 step (3). For the humans: 16.1 and two other results rest on an unpublished formalisation published without a licence.",
+  "text": "da0818da5c0880f5",
+  "carried": {
+   "from": "2c30dcc97b8689f7a2fea27d22ed5dd3c20e2869",
+   "head": "a0fc317df5ae63d6a2b0d76ee31492edea33425c",
+   "findings": 4,
+   "lines": 10,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics"
+   ],
+   "corrections": true
+  }
+ }
+}
