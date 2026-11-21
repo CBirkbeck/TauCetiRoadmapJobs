@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-WachLatticesOverTheCyclotomicTower~5",
+  "head": "2a190e3fda2019c70d3f0cd98be93b2490b5f366",
+  "pr": 2899,
+  "folder": "RiemannHypothesisForDirichletLFunctions/WachLatticesOverTheCyclotomicTower",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. Every statement, route and Check of the eight sampled targets 6.4-6.11 and the four headlines recomputed (adversarial table with values in the report). Source locators read at the text: Berger 2004 (II.1.1, II.2.1, II.3.1, III.2.1, III.2.2, III.4.4, IV.1.3, alpha(r)), Berger 2008 (II.2.5, V.2.3), Wach 1996 (Theoreme p. 380, Remark a), Herr 1998 (Theoremes 2.1, 3.8), the announcement; the formal-proof repository (50 file locators, the only source of 6.6, 6.8, 6.9, 6.11) could not be read: not verifiable, flagged to the human reviewers with scope and licence. 33 supplier and comparison sections resolved on main, 11 consumer sections at the open heads of the family; no object with two owners. Dependency check with the candidate order: 0 problems. Suggested.lean elaborates with no message and declares nothing; no headline is statable at the pins. The worker's automatic checks all passed; none set aside. Two small corrections (the description's hypothesis on E and its list of suppliers; a mislabelled element in a Check of 6.8) and two format notes.",
+  "text": "2a5ce4e35f0771de",
+  "carried": {
+   "from": "2a190e3fda2019c70d3f0cd98be93b2490b5f366",
+   "head": "c3d93869b2240f63b7751cfe5861e0af5637ce3f",
+   "findings": 2,
+   "lines": 2,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/WachLatticesOverTheCyclotomicTower"
+   ],
+   "corrections": true
+  }
+ }
+}
