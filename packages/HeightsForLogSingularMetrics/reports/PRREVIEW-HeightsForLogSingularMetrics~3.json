@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsForLogSingularMetrics~3",
+  "head": "2c30dcc97b8689f7a2fea27d22ed5dd3c20e2869",
+  "pr": 2894,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Incremental re-review of 56 changed lines since 25e5ace. Previous findings: R01 repaired (4.3b (a) now cites ChowFormsAndHeightsOfSubvarieties 6.2 (a7) for the dual bundle; model, Fubini-Study metric, constant sum H_m = nH_n - n and rescaling sign recomputed against ChowForms (a4), (a7) at its head), C01 repaired (ArithmeticVolumes 8.15 (a3), 8.15b, 8.15c, 8.16 (a) resolved), C02 partly repaired (Moriwaki Thm 6.2, Ex 6.1(2), Cor 6.4, pp. 40-42 verified at moriwaki-2009 lines 2393-2470; FormalProof, Zhang and Roy-Thunder still without locators: small correction), N01 repaired. Changed passages checked: 4.3b (a) identification and route, the 4.3b (b) class-number step, the 16.1 jet step (column independence, minor, rate shape), the summary, layer guide, scope, new ChowForms contract and the Suggested.lean bullet. The description's claim of an identical family index across the family's pull requests is false (it differs at the heads of 2880, 2923 and 2891): small correction. Automatic checks: the worker's checks passed; the full gate flagged only the family index files and the merge-order placement (set aside); depcheck 171 roadmaps, 1994 edges, 0 problems. lake env lean on Suggested.lean: exit 0, no messages; nothing declared.",
+  "text": "da0818da5c0880f5"
+ }
+}
