@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexTori~5",
+  "head": "6916a612041edb64d74d3b562617e92184b88668",
+  "pr": 2550,
+  "folder": "ComplexTori",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. README at the merge base compared with the head item by item: all six milestones and their items kept under their ids. Seeded sample of 15 sections checked by computation and against pinned declarations; 8 source locators read (MilneCFT Example 1.20, Remark 1.21, Proposition 3.4; BogomolovTschinkel2003 section 3, pp. 3-4); Birkenhake-Lange and Barth-Hulek-Peters-Van de Ven not readable (uncertified). 137 In Tau Ceti names found at the pin, 14 further names elaborated, 10 signatures compared. Suggested.lean elaborates with the single sorry warning; one-tactic probe fails (no padding). Dependency check: 0 problems. All automatic checks passed. One small correction (docstring says the pins lack open gluing of complex manifolds; TopCat.GlueData.IsCompatible.isManifold exists at the pin) and two format notes carried over.",
+  "text": "d107386db74dd3c9",
+  "carried": {
+   "from": "6916a612041edb64d74d3b562617e92184b88668",
+   "head": "be6e50593d567ead8997dfa2dd00415bb6f0e46f",
+   "findings": 1,
+   "lines": 3,
+   "folders": [
+    "ComplexTori"
+   ],
+   "corrections": true
+  }
+ }
+}
