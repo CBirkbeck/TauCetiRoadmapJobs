@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TaylorBoundsAndDepthsOnHeightTwoFormalGroups~6",
+  "head": "ef74e2f7e8b9832d445f3600b6ce967a3c848e76",
+  "pr": 2914,
+  "folder": "RiemannHypothesisForDirichletLFunctions/TaylorBoundsAndDepthsOnHeightTwoFormalGroups",
+  "date": "2026-11-21",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Findings (all P2): 4.8c drops the principal polarisation its supplier section assumes; a Check of 4.4a asserts the sign -1 for every CM curve at an inert prime (refuted by a quadratic twist at 7); 4.8b' (1) is stated beyond what the formal proof or the written route supports. Sample of 15 targets: every Check, identity and constant recomputed (values in the table), but none of the 21 formal-proof locators could be verified: the cited repository is on a host with no legal class and the author's archive is not a readable document; only the announcement was read. 30 cross-roadmap citations resolved in 16 roadmaps; Mathlib declarations opened at the pin; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes nothing; automatic checks all passed. Scope, licence and the untested source are flagged for the human reviewers.",
+  "text": "78d77b356072e82e"
+ }
+}
