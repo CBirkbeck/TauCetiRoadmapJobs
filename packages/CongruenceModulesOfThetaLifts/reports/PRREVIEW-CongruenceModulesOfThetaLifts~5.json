@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CongruenceModulesOfThetaLifts~5",
+  "head": "2d0d9beb78112d943ec5a6b3c7e3544bb30f4d93",
+  "pr": 2921,
+  "folder": "RiemannHypothesisForDirichletLFunctions/CongruenceModulesOfThetaLifts",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 4,
+  "notes": "Full review. All 15 sampled targets (7.1, 7.5, 7.5b, 7.9, 7.6, 7.7b, 7.7c, 7.8a, 7.10a, 7.10b, 7.10c, 7.11, 7.15, 7.16, 7.16a) checked by computation, against [FormalProof] at their locators (94 of 94 file-and-declaration locators exist in the Lean source; statements compared for 7.1, 7.6, 7.7a-7.7c, 7.8a, 7.10a-7.10c, 7.15, 7.16, 7.16a) and against the supplier sections at their open heads (LengthBoundsInPadicFamilies 1.8e, SelmerLengthBoundsAndLocalLifting 3.26 and 4.10d (4), UniformWildKernelBounds 7.6, HermitianFormsAndLattices 4.0a and 5.2, IntegralWeylModulesOfGeneralLinearGroups 2.2 (c), BernoulliBoundsForClassGroupEigenspaces 6.17, WachLatticesOverTheCyclotomicTower 6.11, RowTowerAndRallisIdentities 5.3 (iii), ThetaChainsOnDefiniteUnitaryGroups 2.3c and 2.7). Gan-Qiu-Takeda Theorem 7.3 (i) read at its locator. No locator is flagged unverified by the README. Dependency check: 0 problems. Automatic checks: all passed; none set aside. Suggested.lean elaborates with no output and declares nothing; the missing carriers were confirmed absent at both pins. Finding R01 (P2): 7.16 gives the block characters the weight h - bot - s at the conjugate embedding, while the chain's characters chi_1 chi_cyc^{-(c-1)} and [FormalProof] (Labels.Refl, LatticeLink) have h - bot - (t-1) + s, so 7.16a cannot apply 7.16 as stated. One small correction (7.10c misdescribes the form of the formal statement and gives no locator for it) and four format notes. For the humans: scope and licence of [FormalProof].",
+  "text": "8f428380ea3f9605"
+ }
+}

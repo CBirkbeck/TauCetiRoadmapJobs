@@ -16,3 +16,19 @@ licence_class = "operator-local"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["7.5a"]
+
+[[source]]
+id = "Announcement"
+authors = "Levent Alpöge"
+title = "Announcement of a proof of the Riemann hypothesis and of its Lean formalization"
+year = 2026
+locator_scheme = "page"
+locator = "1 (footnote 1: the archives of the formalization)"
+url = "https://alpo.ge/remark.pdf"
+fetched_from = "https://alpo.ge/remark.pdf"
+fetched_at = "2026-11-21T22:36:06Z"
+sha256 = "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["References ([Announcement], [FormalProof])"]
