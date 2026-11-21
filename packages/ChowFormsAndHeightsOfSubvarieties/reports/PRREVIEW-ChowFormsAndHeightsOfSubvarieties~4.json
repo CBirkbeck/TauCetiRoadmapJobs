@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ChowFormsAndHeightsOfSubvarieties~4",
+  "head": "d23022b63e70be9d7280557694cc4b73b84bd59c",
+  "pr": 2891,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ChowFormsAndHeightsOfSubvarieties",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full review of an unchanged head. Seeded sample 5.1, 6.1, 6.2: Philippon91 Theoreme 2 (p. 256) and Corollaire 4 (p. 272) read on the page images, GS90 Theorem 4.2.3 (p. 138) in the text; 5.1 and 6.2 cite no published statement; Bost-Gillet-Soule not readable legally (not verifiable). All Checks of 5.1, 6.1, 6.2 recomputed (exact values, Monte Carlo for the spherical means, quadrature for the conic heights). Supplier sections resolved at main and at the open heads; dependency check 0 problems; worker's automatic checks all passed (a rerun without the candidate merge order shows two false positives: family-index files outside the folder, roadmap not yet in the merge order); Suggested.lean elaborates with no message and declares nothing. Three small corrections: no locator for Bost-Gillet-Soule, an out-of-date consumer bullet, one description sentence about the family-index copies.",
+  "text": "6650947d860c8d63",
+  "carried": {
+   "from": "d23022b63e70be9d7280557694cc4b73b84bd59c",
+   "head": "bf564173d0b15fb8a5c323f2b285cbc7997889a0",
+   "findings": 3,
+   "lines": 5,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ChowFormsAndHeightsOfSubvarieties"
+   ],
+   "corrections": true
+  }
+ }
+}
