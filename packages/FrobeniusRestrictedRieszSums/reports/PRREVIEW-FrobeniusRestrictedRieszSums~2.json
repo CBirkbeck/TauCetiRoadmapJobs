@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FrobeniusRestrictedRieszSums~2",
+  "head": "ebd2fa08153a1ef70c0f6d4d21aaa118a6012e7a",
+  "pr": 2920,
+  "folder": "RiemannHypothesisForDirichletLFunctions/FrobeniusRestrictedRieszSums",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. Sampled targets 0.1-0.9 (with 0.8a), 1.1, 1.2, 1.5, 1.8, 1.9 and the three headlines checked by computation; every numerical Check recomputed. Sources: the Announcement read on the author's page; [FormalProof] (GitHub host unclassified), Behrend 1946, Ruzsa 1993 and the textbooks not readable, listed as not verifiable. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with three sorry warnings only. Cross-roadmap citations resolved on main and at open heads; no shared ownership.",
+  "text": "730386af5449c0e6"
+ }
+}
