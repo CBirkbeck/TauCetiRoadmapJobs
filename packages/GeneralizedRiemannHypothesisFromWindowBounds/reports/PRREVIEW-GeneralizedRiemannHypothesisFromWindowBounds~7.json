@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeneralizedRiemannHypothesisFromWindowBounds~7",
+  "head": "cfcb276f12b749c42fd06d30d26ec2a509d429ed",
+  "pr": 2887,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GeneralizedRiemannHypothesisFromWindowBounds",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review of the repaired head. The three findings of the previous review (6.20 statements, 6.31 unsupported bound, 4.2 not stated) are repaired. Sample: 1.3, 2.2, 3.1, 3.3, 3.4, 5.4, 6.2, 6.4, 6.5, 6.7, 6.8, 6.9, 6.13, 6.15, 6.26, each read against its supplier section on main or at the open head; the three new definitions of Suggested.lean compared with the owning roadmaps' definitions. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 11 sorry warnings only; one-tactic probes close nothing. The formal proof's source could not be read: its 31 locators, the licence and the scope (the headline is the Riemann hypothesis, resting on ThetaChainsAndFrobeniusPrimeSums 10.11 and an unrefereed announcement) are left to the human reviewers. Two small corrections (the restatement of linnik_exceptional in 6.26; the description against pull request #2954) and one format note.",
+  "text": "fd34861574a87e96",
+  "carried": {
+   "from": "cfcb276f12b749c42fd06d30d26ec2a509d429ed",
+   "head": "885e6251e9374a5c23619c9f0163c8d36851eee0",
+   "findings": 2,
+   "lines": 7,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/GeneralizedRiemannHypothesisFromWindowBounds"
+   ],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C02: the FrobeniusRestrictedRieszSums entry has to stand in one place in every copy of `TauCetiRoadmap/RiemannHypothesisForDirichletLFunctions/README.md` across the family's pull requests.",
+    "where": "order of the FrobeniusRestrictedRieszSums entry across the family index copies",
+    "raised": "PRREVIEW-GeneralizedRiemannHypothesisFromWindowBounds~7"
+   }
+  ]
+ }
+}
