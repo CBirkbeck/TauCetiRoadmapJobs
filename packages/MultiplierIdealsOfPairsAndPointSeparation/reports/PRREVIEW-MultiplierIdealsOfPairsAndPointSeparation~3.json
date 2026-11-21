@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MultiplierIdealsOfPairsAndPointSeparation~3",
+  "head": "66165d12c6b42bf2051c9b6b774e8e985997b201",
+  "pr": 2911,
+  "folder": "RiemannHypothesisForDirichletLFunctions/MultiplierIdealsOfPairsAndPointSeparation",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 6,
+  "format_notes": 0,
+  "notes": "incremental re-review of 99 changed lines since 46f6b1a. Checked: the previous report's four small corrections (none repaired) and its question (partly repaired: 9.12-9.12b moved to C, 9.12c left over every algebraically closed field of characteristic zero, R01); all 19 formal-proof declarations in 12 files, opened in the operator's copy of the repository, with statements compared for 9.10a, 9.10b, 9.10c, 9.12a and 9.13b (C05, C06); new supplier citations on main (SchemeAndStackFoundations 2.2, 2.6, 3.4, 4.13, 5.3, 5.6; AlgebraicModuliForArithmeticGeometry 9.10; AlgebraicModuliForArithmeticGeometryPartII 1.7 (v), 3.3); the unowned length step of 9.13 (R02); the base field in KOL97 1.1.4 and 7.8; the description against the head; the family index changes. Dependency check: 0 problems. Worker's automatic checks all passed; own run's outside-folder and merge-order flags were false positives. Suggested.lean elaborates with only the sorry warning. Adversarial table with computed values for every changed statement.",
+  "text": "7321bd788761f7aa",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C03: The Angehrn–Siu theorem number and printed page can only be added once an operator supplies the text of Invent.",
+    "where": "ANGSIU95 sources record; a theorem locator needs the paper's text from an operator",
+    "raised": "PRREVIEW-MultiplierIdealsOfPairsAndPointSeparation~3"
+   }
+  ]
+ }
+}
