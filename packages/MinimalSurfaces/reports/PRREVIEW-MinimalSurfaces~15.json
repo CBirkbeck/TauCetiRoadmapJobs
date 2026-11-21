@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MinimalSurfaces~15",
+  "head": "75838846f00bb5c1961e7e43be2233f189570161",
+  "pr": 2491,
+  "folder": "RiemannianGeometry/MinimalSurfaces",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "incremental re-review of 41 changed lines since cd32a39. Checked: the changed passages of 7.8 (definitions without two-sidedness, the variational meaning restricted to two-sided hypersurfaces, the one-sided Check) with computed values, against 6.3, 6.5 and the scope sections; Simon23 Theorem 1.1, 1.2 and 4.12 read at the text; no seeded sample target falls in the change; the previous report had no finding to repair, its format note is carried; automatic checks all pass; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged and elaborates with five sorry warnings only; description read against the head (one out-of-date sentence, a small correction); ownership searched across main and open roadmaps.",
+  "text": "f9414966a5ade948",
+  "carried": {
+   "from": "75838846f00bb5c1961e7e43be2233f189570161",
+   "head": "6b081a347d9c490cdb061fd3dc3356abd86095f7",
+   "findings": 2,
+   "lines": 12,
+   "folders": [
+    "RiemannianGeometry/MinimalSurfaces"
+   ],
+   "corrections": true
+  }
+ }
+}
