@@ -1,0 +1,30 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SocialChoice"
+
+[[source]]
+id = "Endriss2011"
+locator_scheme = "page"
+locator = "pp. 4-15"
+url = "https://staff.science.uva.nl/u.endriss/pubs/files/EndrissLPT2011.pdf"
+fetched_from = "https://staff.science.uva.nl/u.endriss/pubs/files/EndrissLPT2011.pdf"
+fetched_at = "2026-11-21T05:02:59Z"
+sha256 = "2360b48bdcdf50e8eb914e0f1dcfe91b26ab80159803097a6f60ab6d6fbcffb9"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.1"]
+
+[[source]]
+id = "ElkindLacknerPeters"
+arxiv = "2205.09092v2"
+locator_scheme = "theorem"
+locator = "Proposition 3.4"
+url = "https://arxiv.org/abs/2205.09092v2"
+fetched_from = "https://arxiv.org/pdf/2205.09092v2"
+fetched_at = "2026-11-21T05:03:49Z"
+sha256 = "5b8f6d735ccb9643a1e18dd2868ac2bb23c1a2f4f16fd0d1f3388a5d285f3503"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v2"
+cited_for = ["5.1"]

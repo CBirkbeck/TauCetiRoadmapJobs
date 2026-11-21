@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SocialChoice~1",
+  "head": "e9d67337b14dfbfcb58e4d68d03af36a051e7d73",
+  "pr": 2855,
+  "folder": "SocialChoice",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All 13 sampled targets recomputed on degenerate cases (no voters, one voter, two alternatives, infinite voters and alternatives); adversarial table in the report. 28 locators read in Endriss2011 and ElkindLacknerPeters, all agree; Geanakoplos1996 (2 locators, 2.1 and 2.4) not readable from a recognised legal place. Mathlib declarations opened at the pin. Suggested.lean elaborates with 11 sorry warnings only; no theorem closes under the one-tactic probe; #check of all 31 declarations shows no lost binder. Dependency check: 0 problems, no roadmap supplier. Automatic checks all passed. Overlap read against MechanismDesign, BooleanFunctionAnalysis, CooperativeGames: nothing shared. One small correction (Layer 4 with infinite range is a non-existence statement), one format note.",
+  "text": "0d3bba233977efe1"
+ }
+}
