@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MultiplierIdealsOfPairsAndPointSeparation~1",
+  "head": "04a1d1c2407241a0c7932733f0b441e851682d2f",
+  "pr": 2911,
+  "folder": "RiemannHypothesisForDirichletLFunctions/MultiplierIdealsOfPairsAndPointSeparation",
+  "date": "2026-11-21",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review of the README and Suggested.lean. Seeded sample 9.10a-9.13b: Kollar, Singularities of pairs (arXiv alg-geom/9601026) checked at 2.16, 3.3-3.5, 5.7-5.10, 6.1, 6.4-6.11. Lazarsfeld 2004, Kollar-Mori 1998 and Angehrn-Siu 1995 are paywalled and were not verifiable. Suppliers checked on main: AlgebraicModuli 1.6 and 9.10-9.11, AlgebraicModuliPartII 0.7 and 1.5-1.7, SchemeAndStackFoundations Layers 2 and 5 and 4.17, ResolutionOfSingularities 5.1, 5.5, 5.6, 7.7. Every automatic check passed. Depcheck: 0 problems. Suggested.lean elaborates cleanly (no declarations). A probe statement of headline 9.12c at the pins elaborates (R04). Findings: R01 a missing effectivity hypothesis makes 9.12b and Summary items (2) and (4) false (counterexample on P^1); R02 supplier drift, with asymptotic Riemann-Roch for nef divisors, Kodaira's lemma and the divisorial Q-Cartier pullback owned by no roadmap; R03 9.13 and 9.13a restricted to number fields; R04 headline 9.12c statable but absent.",
+  "text": "31eda8119a490c37"
+ }
+}
