@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaKernelsForUnitaryDualPairs~7",
+  "head": "ac490dec4f1147a79defe10c9e3a082a331440d8",
+  "pr": 2907,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaKernelsForUnitaryDualPairs",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 7,
+  "notes": "Full review of the whole folder. Sample: all 15 seeded targets (3.3b, 3.9a, 3.21a, 3.46a, 3.47, 3.47a, 3.47b, 4.4a, 5.6a, 5.7a, 5.7d, 6.4a, 6.11, 6.13a, 6.13c) plus 3.45, 3.46, 3.47c, 5.7b, 5.7c, 5.7e, 6.13b; 22 rows of computed values in the adversarial table. 21 source passages read in 11 cached texts; 3 of 78 formal-proof locators opened at the cited commit (one gave C01); uncertified and unrecorded sources listed as not verifiable. All cited supplier sections resolved on main or at the open heads; dependency check: 170 roadmaps, 1996 edges, 0 problems. Automatic checks all passed; Suggested.lean elaborates with no message and declares nothing (no headline statable at the pins, docstring says which carriers are missing). Overlap read against ThetaLiftsForDefiniteUnitaryGroups, RowTowerAndRallisIdentities, SeesawForThetaChains, LocalFactorsOfTwistsAndTypes, MetaplecticAutomorphicForms, AutomorphicLFunctionsAndLocalFactorsPartII, AutomorphicSpectralTheory: no second owner. Five points for the human reviewers (unpublished formal proof as organising source, targets with no publication, licence of the formal-proof repository, naming of an extension of MetaplecticAutomorphicForms, wording not tested against the formal proof).",
+  "text": "34b18e2ae7123112",
+  "carried": {
+   "from": "ac490dec4f1147a79defe10c9e3a082a331440d8",
+   "head": "b12be43f120cf3e4c305c315baedb32c17f801a6",
+   "findings": 3,
+   "lines": 26,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ThetaKernelsForUnitaryDualPairs"
+   ],
+   "corrections": true
+  }
+ }
+}
