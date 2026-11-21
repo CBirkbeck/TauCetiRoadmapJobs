@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OrbitMeasuresOnAdelicGroups~5",
+  "head": "b4449558780f94840938d2444167c201e39a7860",
+  "pr": 2879,
+  "folder": "RiemannHypothesisForDirichletLFunctions/OrbitMeasuresOnAdelicGroups",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "incremental re-review of 116 changed lines since 413804c. Checked: the previous report had no finding, and its one small correction (Tate and Weil 1965 without locators) is not repaired and is carried as C01; the changed passages recomputed (fibre measures and their uniqueness on x^2, the unimodular case of M ⋉ N, the z-extension sentence, the SL_n/mu_2 and GL_n Checks); every new citation resolved on main or at the open head (AdelicAlgebraicGroups 3.1 and 5.1, ReductiveGroups 3A, 3A.5d, 3A.5f, 6A, ReductiveGroupsPartII RG2.1.5, AdicSpacesPartV 6.5, GeometryOfNumbersAndQuadraticArithmetic 3.3, HeightsRationalPointsAndObstructions 3.18b); the six cited files of the formal proof opened in its public repository and the declarations found; seeded sample (2.6, 3.4a, 4.1) checked where it falls in the changed passages; automatic checks all passed; dependency check 0 problems; Suggested.lean unchanged and elaborates with sorry as the only warning; the description checked against the head (one small correction). For the humans: the family premise, the licence of the formal proof's repository, six unread texts.",
+  "text": "da70c6cff269c68f",
+  "carried": {
+   "from": "b4449558780f94840938d2444167c201e39a7860",
+   "head": "f97ba47ff8aac1bab295b5db2bb635918b348ddf",
+   "findings": 4,
+   "lines": 42,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/OrbitMeasuresOnAdelicGroups"
+   ],
+   "corrections": true
+  }
+ }
+}
