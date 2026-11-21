@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RiemannHypothesisStatementsAndConsequences~6",
+  "head": "893348bbf5eee8709e3ed474f3ac5744828496e4",
+  "pr": 2885,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RiemannHypothesisStatementsAndConsequences",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 90 changed lines since 7b3fdcb. Previous R01, C01 and N01 repaired, N02 carried as a format note. Every changed sentence about the formal proof was read against the cited declaration (15 declarations in 9 files of the operator's copy of its src/ directory): all agree. No Lean statement changed (docstrings only); Suggested.lean elaborates with 13 sorry warnings only. Automatic checks all passed; dependency check 0 problems. Pull request text read against the head: nothing to correct. Seeded sample checked where it falls in the changed passages (8.4a, 9.4, 10.3); books remain unread (no legal copy).",
+  "text": "ac9a48111b4fb68d"
+ }
+}
