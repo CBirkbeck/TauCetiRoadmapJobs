@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsMotionGroupsBessel~2",
+  "head": "f3fd2c310dad40a4f9de0540a627bb614426baf4",
+  "pr": 2933,
+  "folder": "SpecialFunctionsMotionGroupsBessel",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full re-review. Both earlier findings and all six earlier small corrections are repaired. All 58 statements of Suggested.lean and about 70 printed Check values recomputed numerically (one digit wrong, C03); elaboration gives 58 sorry warnings and nothing else; one-tactic probe closes none; 15 local definition copies identical to their owners; every cross-roadmap citation resolved (one out of the supplier's stated range, C02); dependency check 0 problems. Thirteen DLMF formulas read at their locators; the five books (VK1, VK2, KV, Miller, Dieudonne) could not be read legally, and DLMF 10.23 returned only its figure, so all fifteen sampled sections are verified by computation and DLMF only. One automatic check (section comment over #check pins) set aside as a false positive.",
+  "text": "e5432963ebbed060"
+ }
+}
