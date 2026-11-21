@@ -1,0 +1,21 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LovaszThetaFunction"
+
+[[source]]
+id = "Knuth1994"
+authors = "Donald E. Knuth"
+title = "The sandwich theorem"
+year = 1993
+venue = "Electron. J. Combin. 1 (1994), #A1"
+arxiv = "math/9312214v1"
+locator_scheme = "theorem"
+locator = "Theorem 12"
+url = "https://arxiv.org/abs/math/9312214v1"
+fetched_from = "https://arxiv.org/pdf/math/9312214v1"
+fetched_at = "2026-11-21T20:08:40Z"
+sha256 = "b0ac4c3f6431641a2ff8a3e614c71cfb5038c4654109f7aa04fd6a29272c99fa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["1.2"]
