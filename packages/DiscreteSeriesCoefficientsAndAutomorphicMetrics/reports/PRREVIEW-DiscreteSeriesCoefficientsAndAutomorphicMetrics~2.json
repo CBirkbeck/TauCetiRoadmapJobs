@@ -1,0 +1,16 @@
+{
+  "review": {
+    "status": "needs_changes",
+    "reviewer": "independent-review-PRREVIEW-DiscreteSeriesCoefficientsAndAutomorphicMetrics~2",
+    "head": "021930a9952d66e1fbf66f03f214b9b0fd04a572",
+    "pr": 2909,
+    "folder": "RiemannHypothesisForDirichletLFunctions/DiscreteSeriesCoefficientsAndAutomorphicMetrics",
+    "date": "2026-11-21",
+    "findings": 2,
+    "blocking": 2,
+    "corrections": 6,
+    "format_notes": 2,
+    "notes": "Full review of all 13 sampled targets (2.4a, 2.4b, 6.8, 6.8a, 7.5a-c, 8.1-8.3, 9.1, 10.1, 10.2) with an adversarial table. Of the cited sources only Thorne 2012 (arXiv v1, Lemma 6.4) was legally readable; Gross, Mumford, Harish-Chandra 1953/1966, Muller, Harris and Knapp are listed as not verifiable. Numerical checks: the kernel bound 2.4a (a) on random U(2,2), U(2,1) and U(3,2) samples; the formula 2.4a (b) in the U(1,1) and scalar U(2,1) cases; the 8.3 measure constants. Gate re-run: only the check that nothing outside the roadmap folder changes (it lists the family index files, which this pull request owns) and the not-yet-in-order dependency line fail, both false positives. Dependency check against the candidate order: 0 problems. Suggested.lean elaborates cleanly with no declarations, and the library names in its docstring were checked with #check. Supplier citations were resolved on main and at the open heads (AutomorphicBundles, SingularHermitianMetricsAndL2Methods). The overlap check read 8 closest roadmaps and found nothing shared.",
+    "text": "b6610a7607143054"
+  }
+}
