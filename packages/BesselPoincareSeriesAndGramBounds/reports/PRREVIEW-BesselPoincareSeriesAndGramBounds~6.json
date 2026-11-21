@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BesselPoincareSeriesAndGramBounds~6",
+  "head": "d9dfbbfb41836993c5b411f11081a1594e81d1d8",
+  "pr": 2916,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. Sample: all fifteen seeded targets and the headlines 5.15a, 5.16, 5.20, 5.21, checked by computation (table in the report). Sources: 7 locators in the five papers verified at their pages; [FormalProof] read in the operator's local copy of its Lean source: all 87 file-and-declaration pairs resolve, more than forty statements compared with the README (hypotheses and constants agree); proofs not replayed; the public repository is not readable through the sources service. Cross-roadmap citations: 89 section ids resolved at the suppliers' heads and on main. Automatic checks all passed, none set aside; dependency check: 171 roadmaps, 2000 edges, 0 problems; Suggested.lean elaborates with no output and declares nothing (no headline statable at the pins, each named in the docstring). Small corrections: 'size' used for two notions in 5.17b/5.17c; no named declaration at 5.16, 5.20 and six further targets (locators supplied for the two headlines); validation paragraph of the description out of date. For the humans: scope (most of the 28 targets rest on a formal proof announced 20 November 2026), licence of that repository, order of merge with another open pull request that changes the family index (reported conflict in the index README, its head not readable here).",
+  "text": "de9024cca5e44f3a",
+  "carried": {
+   "from": "d9dfbbfb41836993c5b411f11081a1594e81d1d8",
+   "head": "a6f6af221293fd757f7fd6fb54580dd18d1fb793",
+   "findings": 3,
+   "lines": 51,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds"
+   ],
+   "corrections": true
+  }
+ }
+}
