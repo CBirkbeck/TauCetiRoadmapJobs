@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InteriorPointMethods~1",
+  "head": "2753be4e73313939010a730538ec4cda33bb5367",
+  "pr": 2860,
+  "folder": "InteriorPointMethods",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Every statement of Layers 1-5 re-derived or recomputed (adversarial table, 17 rows with values); all numerical Checks recomputed. Sources: all 16 Boyd-Vandenberghe locators read in the authors' PDF and correct; the 13 locators into Nemirovski's 1996 lecture notes could not be read (the sources service did not accept the address as an author's page), listed under Not verifiable and for the human reviewers. 24 Mathlib declarations opened at the pin; 4 cross-roadmap citations resolved (NewtonAndQuasiNewtonMethods 1.1 at its open head, NonlinearProgrammingOptimality, ConvexAnalysisAndDuality, MathematicalStatisticsHighDimensional 7.4). Dependency check: 0 problems. Suggested.lean elaborates with 15 sorry warnings only; one-tactic probe closes none; #check of the declarations shows no lost hypothesis. Automatic checks all passed; none set aside. The sources fetch wrote a sources.toml for this package on the board, which was removed again because this review edits no manifest.",
+  "text": "f6dc8a5de95c2a33"
+ }
+}
