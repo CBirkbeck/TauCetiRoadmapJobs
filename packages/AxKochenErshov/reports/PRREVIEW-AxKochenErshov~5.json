@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AxKochenErshov~5",
+  "head": "0c305d67a6d7fd1658f9c3542d9c81f1c12b4594",
+  "pr": 2868,
+  "folder": "AxKochenErshov",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 87 changed lines since 95fc24d. Checked: the previous finding R01 (3.1, Hensel configuration) is repaired; the definition, the route (including the non-monic polynomial, via its reversal) and both Checks were recomputed, the counterexample for all p. The previous small corrections C01-C04 and format notes N01-N02 are repaired; the changed passages of Layer 1, 2.2, 3.5, 5.2, 0.2, Boundaries and the new supplier contract were recomputed or resolved against RandomGraphs, PadicallyClosedFields and LogicAndDefinabilityInNumberTheory at the heads of their pull requests. One small correction (the description does not name RandomGraphs as a supplier) and two format notes. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry the only warning (11), only its module docstring changed; nothing changed outside the folder. Seeded sample in the changed passages: Kuhlmann 2010 read in its arXiv version (Example 4.17 there); van den Dries 2014 not readable (paywalled), so its locators and pages are unchecked and flagged to the human reviewers.",
+  "text": "7ffecbf0c111c491"
+ }
+}
