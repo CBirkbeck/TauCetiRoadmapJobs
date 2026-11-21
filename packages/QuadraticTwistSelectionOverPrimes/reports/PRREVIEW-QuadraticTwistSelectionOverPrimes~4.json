@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuadraticTwistSelectionOverPrimes~4",
+  "head": "8da6fc090d5b2e827255b1ae005804b9604bb353",
+  "pr": 2878,
+  "folder": "RiemannHypothesisForDirichletLFunctions/QuadraticTwistSelectionOverPrimes",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Earlier findings: R01 (no source locators) partly repaired and no longer blocking, its remainder is C01; earlier C01 and N01 repaired. Seeded sample 2.7a-2.7d checked against the cited supplier sections (RieszSumsOverPrimesAndExceptionalZeros 1.4e, 1.4f, 1.7b; RiemannHypothesisStatementsAndConsequences 8.4a (b); AnalyticNumberTheoryPartI 0.2, 0.11, 0.12, 0.17, 0.34, 0.34a, 1.7) and by computation (reciprocity on classes, the mean-square inequality on random data, the Li bound, the identity for G_chi, the worked example of 2.7d); no source text states the targets: the announcement was read in full, the formal proof and Gallagher 1970 could not be read. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with three sorry warnings only; #check probe of all 7 declarations matches the README; one-tactic probe finds no padding; 11 library declarations opened at the pins. Left to the human reviewers: scope and licence of the formal proof as a source, sources not tested, and the dependence of 2.7a (iv) on AnalyticNumberTheoryPartI 0.34.",
+  "text": "6cbe2a6f6af9e7f0",
+  "carried": {
+   "from": "8da6fc090d5b2e827255b1ae005804b9604bb353",
+   "head": "59257a4f6a0d7338716b1ee2b32c830c6d13d7b4",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/QuadraticTwistSelectionOverPrimes"
+   ],
+   "corrections": true
+  }
+ }
+}
