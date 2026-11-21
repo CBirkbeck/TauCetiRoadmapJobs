@@ -1,0 +1,39 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HermitianFormsAndLattices"
+
+[[source]]
+id = "Kirschmer"
+authors = "Markus Kirschmer"
+title = "Definite quadratic and hermitian forms with small class number"
+year = 2016
+venue = "Habilitationsschrift, RWTH Aachen University"
+locator_scheme = "theorem"
+locator = "Theorems 2.4.1, 3.2.3, 3.3.3, 3.3.18, 4.2.3, 4.2.4, 5.4.14; Proposition 4.2.7; Lemma 3.5.2; Remark 3.4.2"
+url = "https://www.math.rwth-aachen.de/~Markus.Kirschmer/papers/herm.pdf"
+fetched_from = "https://www.math.rwth-aachen.de/~Markus.Kirschmer/papers/herm.pdf"
+fetched_at = "2026-11-21T16:27:28Z"
+sha256 = "aef562cc9ea0cfcd7d82a6e325a3885c3527d367811eb39a8e8e7d544596e183"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.1", "3.1", "3.2", "4.1", "4.3", "4.4", "5.3", "5.4", "6.0b", "6.1", "6.1a", "6.2", "6.3"]
+
+[[source]]
+id = "Cho"
+authors = "Sungmun Cho"
+title = "Group schemes and local densities of ramified hermitian lattices in residue characteristic 2 Part I"
+year = 2012
+venue = "Algebra Number Theory 10 (2016) 451-532"
+doi = "10.2140/ant.2016.10.451"
+arxiv = "1210.7894v5"
+locator_scheme = "section"
+locator = "§1.1"
+url = "https://arxiv.org/abs/1210.7894v5"
+fetched_from = "https://arxiv.org/pdf/1210.7894v5"
+fetched_at = "2026-11-21T16:27:35Z"
+sha256 = "8ef29d00f02baa9bdde2a80c66b506e8a58947c434cfa1ba88b98fc2a2579d0a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v5"
+cited_for = ["4.3", "6.1"]
