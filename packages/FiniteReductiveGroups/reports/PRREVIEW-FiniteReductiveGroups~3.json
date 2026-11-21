@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FiniteReductiveGroups~3",
+  "head": "49427a0b8392dd6df9f7db7f2145709b0d04228b",
+  "pr": 2881,
+  "folder": "RiemannHypothesisForDirichletLFunctions/FiniteReductiveGroups",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "incremental re-review of 4 changed lines since 7472476: the new convention on statements of the formal proof (it selects no target as written; 2.7(b) and 2.8, which the References tie to the formal proof, were recomputed and use every restriction) and the updated family index (order unchanged, compared with ten sibling heads); previous C01 and N01 not repaired, C02 partly repaired, all carried as non-blocking; the seeded sample does not fall in the changed passages; automatic checks rerun (the family index files outside the folder and the not-yet-placed merge order set aside as false positives), dependency check with 0 problems, lake env lean gives three sorry warnings only, seven #check probes match the recorded signatures.",
+  "text": "3a4dca55629623ae"
+ }
+}
