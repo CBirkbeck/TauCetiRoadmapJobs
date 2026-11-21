@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SaturationAndQuantifierElimination~2",
+  "head": "c42887692f160145baf8daa99a604b5b068933ec",
+  "pr": 2866,
+  "folder": "SaturationAndQuantifierElimination",
+  "date": "2026-11-21",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 4,
+  "format_notes": 4,
+  "notes": "Full review. Sample: 0.1-0.4, 1.1, 1.2, 2.2, 2.3, 2.5, 2.7, 3.1, 3.2, 3.4, 4.3, 4.4, each computed on degenerate instances (table in the report). Sources: Robinson-Zakon 1960 read from the publisher's open archive, 3 locators correct; Tent-Ziegler, Marker, Chang-Keisler, Keisler 1964, Presburger 1929 not readable legally, 22 locators unverified against the text. Lean: Suggested.lean elaborates with sorry as the only warning; #check of all 33 declarations compared with the README; one-tactic probe closes IsSaturated.mono; a sorry-free proof that dlo is not model complete in the file's sense elaborated on a probe copy (R01). Dependency check: 172 roadmaps, 2000 edges, 0 problems. Automatic checks: the letI in a signature and four undeclared proposed names became format notes; one identifier hit set aside as a false positive (a Tau Ceti declaration). Citations into SequentCalculusAndCutElimination (#2724) resolved at its head. Overlaps found with RandomGraphs 5.2 (formula coding, R03) and InfinitaryModelExistence 2.4 (chain lemma for direct limits, R04).",
+  "text": "e6b7f3e15f19ebe7"
+ }
+}
