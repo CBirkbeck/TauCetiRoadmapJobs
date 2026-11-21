@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ThetaSeries~5",
+  "head": "3b3196fe4683f958b33225ed9f2b06c51938649f",
+  "pr": 2725,
+  "folder": "ThetaSeries",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review. One finding (P1, the record): the item ids 1A-8E of the README on main are replaced by a mapping table while roadmaps on main cite them. Mathematics: every section's statements, Checks and worked examples recomputed (33 table rows with values), all correct. Seeded sample of 15 sections checked on the mathematical side; source side not verifiable (no cited source has a legal copy; five DOIs asked of the sources service). 21 library declarations opened at the pin; cross-roadmap citations resolved on main (AnalyticNumberTheoryPartII 5.3g, ModularForms 0.1 and Layer 6, IntegralLattices 6D, completed IntegralLattices Layer 3, five consumers). Merge-base README compared with the head item by item: all 8 layers and 44 items kept with statements. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 10 sorry warnings only; one-tactic probe closes none of the 10 theorems; no change outside the folder.",
+  "text": "9cffde7eba3b86d0"
+ }
+}
