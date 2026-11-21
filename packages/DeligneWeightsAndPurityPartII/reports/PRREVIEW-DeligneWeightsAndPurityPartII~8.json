@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DeligneWeightsAndPurityPartII~8",
+  "head": "cdacab303c150745acbae6c0830189206da17e42",
+  "pr": 1760,
+  "folder": "DeligneWeightsAndPurityPartII",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample (0.1, 0.4-0.7, 0.9, 0.10, 2.5, 3.1, 3.4, 4.2, 4.4-4.7) read against SCH12, ITO20, RAM05, DEL80, DJ96 at the cited lines: all locators hold. Adversarial table computed for every sampled target and headline. Automatic checks rerun and pass; dependency check 0 problems; Suggested.lean elaborates with no output and declares nothing. Supplier citations resolved on main (17 roadmaps); pinned Mathlib and Tau Ceti declarations opened. One P2: gap:analytic-comparison-automorphisms asks ClassicalAdicEtaleCohomology for the Galois-equivariant proper algebraic-adic comparison that GaloisActionOnEtaleCohomology 4.2 on main already states. Three source issues recorded (one a gap in the proof of ITO20 Theorem 6.2). LUT93, HUB96, HUB98 uncertified.",
+  "text": "614dbaade76c9541"
+ }
+}
