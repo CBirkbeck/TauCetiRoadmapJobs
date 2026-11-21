@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~9",
+  "head": "264fef4a33d30c987c342e105ec6c17fe3030baa",
+  "pr": 2923,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 55 changed lines since a690df7. Checked: R01 repaired (8.19d (i)-(ii) now for every CM field unramified over its real subfield, compared with the cited formal declaration; the unit argument and the local factor recomputed); C01, C02, C03, N01 repaired (8.5 (b) credit against the two cited declarations and the definition of the Lie norm; the route sentences of 8.19b and 8.19d; five supplier citations resolved at main or the open heads). Sampled targets 8.5, 8.19b, 8.19d checked where they fall in the change. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged and elaborates with the sorry warning only; pull request text read against the head, nothing contradicted. One question for the author carried over; scope and licence questions left to the human reviewers.",
+  "text": "e303a9708ddf4463"
+ }
+}
