@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BaseChangeAndGaloisRepresentationsForUnitaryGroups~8",
+  "head": "02705f8a4da066939d0880a67e31672ee6b19085",
+  "pr": 2890,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BaseChangeAndGaloisRepresentationsForUnitaryGroups",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 30 changed lines since 99329a9. Checked: the previous R01 (13.8a restored to every CM extension unramified at every finite place), C01, C02 and N01, all repaired; the three [FormalProof] locators of 13.8a (TRCusp', GapG, HasTypeVec) opened and their statements compared with the README; the sigma rewrite of the weight sentence of 16.1 recomputed; of the seeded sample, 13.8a and 16.1 fall in changed passages; citations of FrobeniusRestrictedRieszSums 0.4 and from RowTowerAndRallisIdentities resolved at their open heads; pull request text read against the head; automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with no output (no declaration). Two questions left for the human reviewers (scope, licence).",
+  "text": "f5b756d94567fb8c"
+ }
+}
