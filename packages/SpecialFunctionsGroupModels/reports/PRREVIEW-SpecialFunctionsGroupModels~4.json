@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsGroupModels~4",
+  "head": "d7697fa1892b894ef901988607c53feaea61ed19",
+  "pr": 2694,
+  "folder": "SpecialFunctionsGroupModels",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 100 changed lines since 6d84140. Previous R01, R02, C01-C03, N01 verified repaired at this head; N02 unchanged and not raised. Changed passages recomputed: the left-regular weight sign, the split weight decomposition and weight law (degenerate cases, both hypotheses), the Cayley relation with VonNeumannAlgebras Layer 9 (pointwise identity numerically at k=5, norm factor at k=2), the invariants of the restriction at the pins (Mathlib Basic.lean:446,477; Tau Ceti Invariants.lean:105). Elaboration: 80 sorry warnings, no error; one-tactic probe on the two changed theorems, neither closes. Dependency check: 0 problems, no UPWARD or CYCLE; no change outside the folder. Automatic checks: four Prop-valued sorry instances set aside as false positives, the choice in multiplierRep not a defect. Seeded sample: no source text readable legally (as in the previous round), 0 locators verified; left to the human reviewers. Description checked against the head: counts 76+4 and 62 agree.",
+  "text": "45f1c20becd1fd91"
+ }
+}
