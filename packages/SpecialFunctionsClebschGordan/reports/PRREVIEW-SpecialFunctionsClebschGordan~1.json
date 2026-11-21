@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsClebschGordan~1",
+  "head": "9d5091f35c9c56250c0b2ff0bb82cc43b912477d",
+  "pr": 2930,
+  "folder": "SpecialFunctionsClebschGordan",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review. All 51 sorried statements of Suggested.lean recomputed on small parameters from a transcription of the Lean definitions (junk values included) and, for the representation statements, on the pinned unitary model with exact Haar integration: no failure. All 15 sampled targets covered; 29 DLMF locators checked against the text and agree; Edmonds, Vilenkin-Klimyk, Klimyk-Vilenkin and Wawrzynczyk could not be read legally, and DLMF 34.2 and 34.4 were not returned by the sources service. One finding (P2): the Regge-symmetry sentence of 2.1 asserts invariance where the sign (-1)^(j1+j2+j3) occurs. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes 4 theorems (small correction). 20 cross-roadmap citations resolved; no second owner of the 3-j, 6-j, Hahn or Racah objects.",
+  "text": "3edea6ddda47766f"
+ }
+}
