@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexManifolds~8",
+  "head": "3b21fc4d55ba4e46a18aab44fdfe439ec1faedc2",
+  "pr": 2549,
+  "folder": "ComplexManifolds",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 8 changed lines since 704d32c. Checked: the previous small correction C01 (Milestone 2 in the Needs line of 7.4) is repaired in the build guide, the Needs line and the Dependencies of Milestone 7, and no sentence of Milestone 7 or of main's items 7.4-7.5 uses an orientation; the three Demailly locators of 7.4-7.5 (sampled 7.5 among them) read at the text; the pull request's description read sentence by sentence against the head and the diff against main, nothing contradicted or left unstated; the record against the merge base (7 of 7 milestones, 35 items); the dependency check (0 problems, no UPWARD or CYCLE); all automatic checks passed; Suggested.lean elaborates with no output and declares nothing. One question for the author carried over; seven textbooks not readable (for the human reviewers).",
+  "text": "235e2e058e60b7d5"
+ }
+}
