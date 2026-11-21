@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuadraticTwistSelectionOverPrimes~7",
+  "head": "c876b1e2db6bc1757a590637732a77a61cd1531d",
+  "pr": 2878,
+  "folder": "RiemannHypothesisForDirichletLFunctions/QuadraticTwistSelectionOverPrimes",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 34 changed lines since 8e342bd. Checked: the three small corrections of the previous review (all repaired) and its format note (carried over); the changed attribution sentences against the Needs lines and the supplier sections at their heads; the deduction of 2.7d (ii') from 2.7c (a')-(c') and its instance, recomputed; the title and description against the head (they agree); the seeded sample 2.7a-2.7d where it falls in the changed passages (no source locator changed). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with five sorry warnings only. The formal proof and Gallagher 1970 could not be read.",
+  "text": "f6521a991191a72d"
+ }
+}
