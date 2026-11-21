@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HeightsForLogSingularMetrics~5",
+  "head": "0a7189575f663adab564d9cea766b9cc51ad8cc4",
+  "pr": 2894,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 129 changed lines since 2c30dcc. Checked: the five earlier remarks (four repaired, the format note not); every changed passage of the README and the Suggested.lean docstring; the new locators against zhang-1995, roy-thunder-1996, moret-bailly-1990 and bost-1996; three files of the formal proof's public repository (SlopeBoundSt, LieSlope, LineOfLargeDegree.Statement); the new and changed supplier citations (HeightsRationalPointsAndObstructions 5.9b, ChowFormsAndHeightsOfSubvarieties 5.1, AlgebraicModuliForArithmeticGeometry 1.1 and 1.3, ArakelovGeometryAndAbelianHeightsPartII 0.3, 4.3, 4.8, FaltingsFinitenessAndIsogenyTheoremsPartII 2.3); the constants of 4.3b recomputed for n up to 4; the family index against three sibling heads; the description against the head. One finding (P2): 16.1 is restricted to the CM fields of the family with hypotheses its route does not use, while the cited proof also has the general bound with a constant depending on g. Dependency check 0 problems; lake env lean on Suggested.lean exits 0 with no message; the worker's automatic checks all passed.",
+  "text": "5ccc1673c374e56f"
+ }
+}
