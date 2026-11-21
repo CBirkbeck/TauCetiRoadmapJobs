@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HeckeIdealsAndTaylorWilesRelations~2",
+  "head": "a03d85a829e5ae595b77708fd0250bcc5a0ec464",
+  "pr": 2893,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeckeIdealsAndTaylorWilesRelations",
+  "date": "2026-11-21",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 6,
+  "format_notes": 4,
+  "notes": "Full review. Seeded sample: 3.13a, 4.2a, 9.9, 10.1, checked against NT23 (Thm A, Def 2.23, Lemma 2.28, Ex 2.29, Thm 5.2), Che14 (Prop 3.7, Ex 3.6), BZ77 (Lemma 2.12) and the announcement; 4.2a level modules and 9.9(d) not verifiable against the formal proof (no locator; the operator-held copy has no readable statements). Automatic checks: all passed; dependency check 0 problems; Suggested.lean elaborates with exit 0 and no declarations. Supplier sections resolved on main and at the heads of PotentialAutomorphyInfrastructurePartII, ModularityAndLanglandsExtensions and BaseChangeAndGaloisRepresentationsForUnitaryGroups. Findings: Frobenius direction (R01), no locator for the formal-proof targets (R02), 3.13a(f) rank range (R03), two false Checks (R04).",
+  "text": "0a74d0e0bf66460b",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C05: In `TauCetiRoadmap/RiemannHypothesisForDirichletLFunctions/README.md`, lines 9–14, the family's shared introduction (carried identically by every pull request of the family) should replace \"The f",
+    "where": "the family's own text in the RiemannHypothesisForDirichletLFunctions index",
+    "raised": "PRREVIEW-HeckeIdealsAndTaylorWilesRelations~2"
+   }
+  ]
+ }
+}
