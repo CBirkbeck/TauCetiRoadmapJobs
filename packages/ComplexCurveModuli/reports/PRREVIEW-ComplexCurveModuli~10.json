@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexCurveModuli~10",
+  "head": "871cd825ca68a90db8aa763f4c8baea3c62086e5",
+  "pr": 2548,
+  "folder": "ComplexCurveModuli",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 2 changed lines since 7797601: the removed last sentence of the Check of §6.1 (the remaining Check recomputed, with |a| = 1e-4, r = 0.1); the pull request's description read in full against this head (previous C01 and C02 repaired, N01 carried, one out-of-date line number as a new small correction); no seeded-sample section or source locator falls in the change; automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with seven sorry warnings only.",
+  "text": "a1d00769ab70e8b7",
+  "carried": {
+   "from": "871cd825ca68a90db8aa763f4c8baea3c62086e5",
+   "head": "871cd825ca68a90db8aa763f4c8baea3c62086e5",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
