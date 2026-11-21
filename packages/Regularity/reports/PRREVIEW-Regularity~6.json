@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-Regularity~6",
+  "head": "ed0a541ebcd29e4a3c696cffe9fc9108f255dd0b",
+  "pr": 2631,
+  "folder": "Regularity",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. One P2 finding: a Layer 7 example asserts that pair regularity of a small cell with itself fails whenever a color has positive density (counterexample: two-vertex cell, two colors swapped by the reversal, parameter 1/2). Previous review's small correction is repaired. All 15 sampled targets (0.1, 0.2, 0.3, 1.1, 1.4, 2.1, 4.1, 4.3, 5.1, 5.2, 6.1, 6.3, 7.2, 9.2, 9.4) and both headlines recomputed and compared with the pinned Tau Ceti declarations; 13 source locators read in Rödl–Schacht (both papers), Nagle–Rödl–Schacht, Terry and Lovász–Szegedy; README on main compared layer by layer (ids 0–9 kept); 326 library names resolved at the pins; dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with only the sorry warning.",
+  "text": "8da286b516f491d5"
+ }
+}
