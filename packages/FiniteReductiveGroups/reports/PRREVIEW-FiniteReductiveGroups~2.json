@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FiniteReductiveGroups~2",
+  "head": "7472476d1acb1b8865eb55fcb99e3a164d24db2d",
+  "pr": 2881,
+  "folder": "RiemannHypothesisForDirichletLFunctions/FiniteReductiveGroups",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 125 changed lines since bddcb9a. Checked: the nine previous remarks (R01-R03 repaired: 3.2(d) now states and proves perfectness of RΓ_c over Λ[Γ] for a free action on any quasi-projective X, tested on free and non-free C2 actions, μ2 on G_m and an étale double cover of a genus-2 curve, with the route compared against Stacks 03TV; the family index orders Local factors before this roadmap at this head and at five sibling heads; 6.5 now requires that {α} does not occur in f, tested for a=b=1 and a=2, b=1, and its consumer CongruenceModulesOfThetaLifts agrees; C02-C04, N01, N02 repaired; C01 not repaired and carried). Seeded sample where it falls in the changed text (3.3, 4.5(d), 5.7 labels, 6.5): no source locators there except Mumford §7, a book not fetched. Cross-roadmap citations resolved: EtaleCohomologyFoundations F.0.2, F.3, F.10.4, F.10.5; TypeAHeckeAlgebras 1.1, 1.2; SR.5.2; LocalFactorsOfTwistsAndTypes 2.1. Automatic checks all passed; depcheck 0 problems; lake env lean gives 3 sorry warnings only; #check of all 7 declarations unchanged.",
+  "text": "3a4dca55629623ae"
+ }
+}
