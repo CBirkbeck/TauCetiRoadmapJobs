@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HopfieldNetworks~1",
+  "head": "163f10d3b9a83d6a91084ac77f03dfb0086da28c",
+  "pr": 2955,
+  "folder": "HopfieldNetworks",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Full review. All 14 sampled targets (1.1 to 5.6) and all 20 source locators checked against the texts of Ramsauer et al. (arXiv:2008.02217v3) and MacKay (version 7.2, author's page); every theorem, definition and Check recomputed by hand, with the brute-force Checks of 1.3, 2.1, 3.1, 4.1 and 4.2 rerun in exact integer arithmetic. Two false sentences in Checks (2.1: bound said not attained, attained for n = 1 and n = 2; 1.3: sign of the energy drop). 15 library declarations opened at the pins; 8 cross-roadmap citations resolved at the open heads; dependency check 0 problems; Suggested.lean elaborates with 12 sorry warnings only; one-tactic probe closes none of the 12 theorems. The worker's automatic checks all passed; none set aside. Ownership checked against the open pull requests and main: no second owner.",
+  "text": "be350d8efbd0ac1e"
+ }
+}
