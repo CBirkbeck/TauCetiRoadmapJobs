@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalGainOfThetaChains~2",
+  "head": "e3878a8ce035a1fa2d041fbb6f2c79bf47d59e62",
+  "pr": 2915,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review of the whole folder at e3878a8. Seeded sample of 15 targets: none could be checked against [FormalProof], because the README names only the repository and no file or declaration (R01); the Announcement was read from the author's page. Adversarial pass recomputed the 4.9c CM values (1/4, 2/3, 2, 12, 38, 724), the 4.9f diagram example, the 4.17 GL2 sandwich formula (0 mismatches for n < 800, p <= 7), the 4.14f', 4.15a and 4.14a examples, 4.15c units and length, and 4.15d/4.17d probabilities. Found a false inequality in the 4.14 route (R02). Supplier citations were resolved at the open heads and on main; the overlap check found no object owned twice. Dependency check: 0 problems. Suggested.lean elaborates cleanly and declares nothing. Gate flags set aside: family-index files outside the folder, not yet in the merge order, and the signature parser reading 'sets' as a declaration.",
+  "text": "e124bb04a59a599b"
+ }
+}
