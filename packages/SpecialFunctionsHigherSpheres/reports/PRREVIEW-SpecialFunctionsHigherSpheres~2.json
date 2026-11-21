@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsHigherSpheres~2",
+  "head": "c063187479ee8fb3312ff2b929c90ee95b5a8fa5",
+  "pr": 2931,
+  "folder": "SpecialFunctionsHigherSpheres",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full re-review. Both findings and all eight corrections of the previous review are repaired at this head. One new finding (P2): the second target of 2.2 has no bound on n and fails for n = 1 and for n = 2 over C. Every theorem of Suggested.lean and every numerical Check was recomputed (exact rational arithmetic for the one-variable identities, dimensions and Laplacians; quadrature for the integral identities); all agree. Sample: the 15 seeded targets; DLMF 18.18.8 read at its page; the four books were not legally readable, so 0 of 60 book locators were checked against the text. 22 cross-roadmap citations resolved on main and at the open heads; 7 local copies compared with their owners. Elaboration: no error, 60 sorry warnings; one-tactic probe closes none of the 60 theorems. Dependency check: 0 problems. Automatic checks: all passed except one form check, set aside as a false positive (a section comment followed by #check lines).",
+  "text": "7ca3933fbcfcf3c0"
+ }
+}
