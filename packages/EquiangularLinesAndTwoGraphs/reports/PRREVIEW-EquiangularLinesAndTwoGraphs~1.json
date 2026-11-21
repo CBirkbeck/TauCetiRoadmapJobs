@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EquiangularLinesAndTwoGraphs~1",
+  "head": "8892685923705f6b0bd6fc7f6f5eeda5bda547e7",
+  "pr": 2938,
+  "folder": "EquiangularLinesAndTwoGraphs",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review. Adversarial pass recomputed all 14 theorems, the conventions and every Check (degenerate n, d, alpha, junk values); one false sentence in the Conventions (alpha = 1 over C). Seeded sample 1.1-5.3: the mathematics verified, but none of the 13 Brouwer-Haemers locators could be checked because the sources service could not read the text (listed under Not verifiable and for the human reviewers). 24 library declarations opened at the pins; duplication search by object over Mathlib, Tau Ceti, main and open heads found no second owner. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 14 theorems; pull request text agrees with the head.",
+  "text": "3602aaba0793bed3"
+ }
+}
