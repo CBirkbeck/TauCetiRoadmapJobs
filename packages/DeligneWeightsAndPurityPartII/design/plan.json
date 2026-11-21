@@ -2336,12 +2336,6 @@
     "section": "4.5, 5.2, 8.3–8.4"
   },
   {
-    "slug": "analytic-comparison-automorphisms",
-    "needs": "For a proper variety defined over a complete field K, the algebraic–adic cohomology comparison over its completed algebraic closure C commutes with every continuous K-automorphism of C, with cup products and coefficient reductions.",
-    "supplier": "ClassicalAdicEtaleCohomology",
-    "section": "8.2, 11.1"
-  },
-  {
     "slug": "adapted-plurinodal-alteration",
     "needs": "For a proper surjective morphism of Noetherian excellent integral schemes with irreducible geometric generic fibre and a dense open of the source, integral alterations of source and base and a factorization of the altered map into nodal curves adapted to dense opens at every stage (smooth over the lower open, with an étale marked boundary in the smooth locus), whose top open lies in the inverse image of the given open (de Jong, Theorem 5.9; ITO20 Theorem 3.3).",
     "supplier": "ClassicalAdicEtaleCohomology",
