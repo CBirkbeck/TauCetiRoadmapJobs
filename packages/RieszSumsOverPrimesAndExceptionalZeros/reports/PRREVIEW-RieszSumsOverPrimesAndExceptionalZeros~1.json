@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RieszSumsOverPrimesAndExceptionalZeros~1",
+  "head": "370c7eed01f72d4eb2cdcef5e1965989b2616643",
+  "pr": 2877,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RieszSumsOverPrimesAndExceptionalZeros",
+  "date": "2026-11-21",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample: 0.30b, 1.4e, 1.4f, 1.4g, 1.4h, 1.4i, 1.7a, 1.7b, 2.9b and 2.41a. None of them carries a theorem-level locator, and none of the nine cited works could be read legally, so they are listed as not verifiable. Adversarial table: 17 rows with computed values. The worker's automatic checks all passed; the dependency check was rerun (0 problems). Suggested.lean elaborates with only sorry warnings, and the one-tactic probe closes none of the four declarations. Two headline theorems were derived in Lean from AnalyticNumberTheoryPartI's character_psi_le and landau_siegel_exclusion (on main). Supplier citations were resolved on main and at the open head of RiemannHypothesisStatementsAndConsequences.",
+  "text": "7a3b9880fe25cb9e"
+ }
+}
