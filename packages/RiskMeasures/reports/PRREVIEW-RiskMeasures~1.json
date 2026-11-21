@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RiskMeasures~1",
+  "head": "0a124d70efaa3b28222a1e31c1a2e9e56dd629d1",
+  "pr": 2895,
+  "folder": "RiskMeasures",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Sample: all 11 sections (1.1-4.3) checked against Föllmer-Schied (survey of 2008), Artzner-Delbaen-Eber-Heath (preprint of 1998) and Acerbi-Tasche (arXiv v5) at their locators; Rockafellar-Uryasev could not be read legally (3 locators not verified). Every statement and Check recomputed by hand; the exact-arithmetic Checks of 4.1, 4.2, 4.3 recomputed by script (9680, 2916, 1280 cases, no failure). 24 library declarations opened at the pins; 8 cross-roadmap citations resolved; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning; none of the 12 theorems closes under the one-tactic probe; automatic checks all passed.",
+  "text": "f566b5a6d9d8b9e4"
+ }
+}
