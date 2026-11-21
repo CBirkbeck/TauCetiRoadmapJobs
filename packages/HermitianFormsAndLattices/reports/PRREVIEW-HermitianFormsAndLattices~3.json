@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HermitianFormsAndLattices~3",
+  "head": "b74b836bc517534d14ec4656547676331fce7560",
+  "pr": 2882,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HermitianFormsAndLattices",
+  "date": "2026-11-21",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Read the whole README and Suggested.lean. Seeded sample of 15 sections: none carries a source locator, so each was checked by computation (masses of O_E^n over Q(sqrt-3) in ranks 1-8, mass ratios, brute-force local-density counts for 6.1, 6.1a and 7.2, every Check of the sampled sections). Sources service: GHY and Hashimoto-Koseki have no legal copy; Feit is paywalled. Automatic checks: all passed; dependency check 0 problems; Suggested.lean elaborates with only sorry warnings; one-tactic probe fails on both theorems; #check signatures match README 3.1 and 3.2. About 60 supplier anchors resolved; one phantom name (C01). Ownership audit found MetaplecticAutomorphicForms 3.2a (main) and AbelianSchemesAndArithmeticModuliPartII F5.7 (open) owning objects this roadmap also owns.",
+  "text": "d563a7277c93b5b5"
+ }
+}
