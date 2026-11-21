@@ -1,0 +1,30 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LovaszLocalLemma"
+
+[[source]]
+id = "MoserTardos"
+arxiv = "0903.0544"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/0903.0544"
+fetched_from = "https://arxiv.org/pdf/0903.0544"
+fetched_at = "2026-11-21T05:35:04Z"
+sha256 = "394a21143451acad99ae93e934dc12a5d7df4da68659b8060786fdd8a9665a0c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv, latest version"
+cited_for = ["1.2"]
+
+[[source]]
+id = "Zhao"
+locator_scheme = "theorem"
+locator = "Theorem 6.1.9"
+url = "https://yufeizhao.com/pm/probmethod_notes.pdf"
+fetched_from = "https://yufeizhao.com/pm/probmethod_notes.pdf"
+fetched_at = "2026-11-21T05:39:41Z"
+sha256 = "a68da010caffe812685356c4c61a2be249ebc46995bff9d4f47b1716607b60d3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["1.2"]
