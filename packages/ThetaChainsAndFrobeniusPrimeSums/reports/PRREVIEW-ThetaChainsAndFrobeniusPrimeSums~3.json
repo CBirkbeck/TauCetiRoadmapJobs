@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsAndFrobeniusPrimeSums~3",
+  "head": "f3ac2c8d6db11f98dee9c8488e197c5f6a8573fd",
+  "pr": 2924,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsAndFrobeniusPrimeSums",
+  "date": "2026-11-21",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample (9.1, 9.2, 9.3, 9.5, 9.6, 10.1, 10.2, 10.3, 10.6, 10.6a, 10.6d, 10.7, 10.8, 10.10, 10.11) checked against the cited sibling sections at their open heads (about 45 sections read; every cited id resolves) and the roadmaps on main. [FormalProof] not verifiable: no locators, and only a kernel export is readable. [Announcement] read. Automatic checks: the worker's gate passed; my gate run flagged only the family-index files and merge-order placement (false positives); depcheck 0 problems; Suggested.lean elaborates with only sorry warnings; #check matches the README; one-tactic probes fail. Findings: R01 (P1) the 10.6 weight datum is not adapted per ThetaChainsOnDefiniteUnitaryGroups 2.3b/2.3a although 10.6b, 10.6d and 10.9 say it is; R02 (P2) the letter-step exponent is chosen after eps, while SizeSc and the range in 2.3 fix it before eps; R03 (P2) no locators for any claim about [FormalProof].",
+  "text": "d4116c7f122fdc37"
+ }
+}
