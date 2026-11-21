@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PadicExtensionFamilies~11",
+  "head": "bfaaef411ff249cf9e32cec1f8cee573bdd26c1a",
+  "pr": 2942,
+  "folder": "PadicExtensionFamilies",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review of a one-line revision of a roadmap on main (the published reference of Pagano, confirmed against the Crossref record of the DOI). Merge-base comparison: no layer, item or declaration removed; nothing outside the folder. Seeded sample of 15 targets: 27 locators read in Greve-Pauli, Pauli-Sinclair, Heiermann, Pauli-Roblot, Monge 2011 and 2014, Pagano, and six LMFDB knowls; Serre, Deligne, Jones-Roberts 2007 and Miki could not be read and are listed as not verifiable. Adversarial table with computed values for every sampled target and all 18 statements of Suggested.lean. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 18 sorry warnings only; one-tactic probe closes none. Four small corrections (order against the open draft #2944, a scope line against 6.7, two pointers in 3.5) and two format notes. One source issue recorded (LMFDB knowl lf.eisenstein_diagram).",
+  "text": "1550e8bfa355b71c"
+ }
+}
