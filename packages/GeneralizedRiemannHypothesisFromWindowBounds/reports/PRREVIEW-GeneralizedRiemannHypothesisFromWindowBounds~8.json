@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeneralizedRiemannHypothesisFromWindowBounds~8",
+  "head": "885e6251e9374a5c23619c9f0163c8d36851eee0",
+  "pr": 2887,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GeneralizedRiemannHypothesisFromWindowBounds",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 7 changed lines since cfcb276: the restatement of linnik_exceptional in 6.26 compared with SieveMethodsAndPrimePatterns §2.9 on main and both consequences derived from the least-nonresidue bound with computed values (odd primes up to 10^6); previous C01 repaired, C02 deferred (D01 stands), N01 carried as a format note; title and description read against the head (declaration counts and names, index positions across 40 other copies, suppliers), nothing contradicted; automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with 11 sorry warnings only; the seeded sample does not fall in the changed passage; the formal proof's source remains unreadable (for the human reviewers).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C02: the FrobeniusRestrictedRieszSums entry has to stand in one place in every copy of `TauCetiRoadmap/RiemannHypothesisForDirichletLFunctions/README.md` across the family's pull requests.",
+    "where": "order of the FrobeniusRestrictedRieszSums entry across the family index copies",
+    "raised": "PRREVIEW-GeneralizedRiemannHypothesisFromWindowBounds~7"
+   }
+  ],
+  "text": "27c25f47a05c9d13"
+ }
+}
