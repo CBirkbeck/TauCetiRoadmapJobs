@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalFactorsOfTwistsAndTypes~2",
+  "head": "3cac20ea6e53b683feec61e77fd07a7fb75efa1c",
+  "pr": 2889,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalFactorsOfTwistsAndTypes",
+  "date": "2026-11-21",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 6,
+  "format_notes": 2,
+  "notes": "Full review of README.md and Suggested.lean. Seeded sample 1.1, 2.1, 3.1, 3.2, 4.1, 4.2, 5.1, 6.1-6.6, 7.1, 7.2 (plus 3.3, 3.4) checked by computation; sources read: Zelevinsky 1980, Emerton-Helm 2014, Henniart 2002, Jacquet-Liu 2018, Chai 2019 (17 locators); JPSS 1983, Henniart 1993, Moy-Prasad 1996, Morris 1993, Bushnell-Kutzko 1998, HKS 1996 not readable. Automatic checks all passed; depcheck rerun 0 problems; Suggested.lean elaborates (no declarations); a probe statement of the GL_n Satake bound elaborates at the pins. Findings: R01 (P1) segment rule of 4.2/6.5 inconsistent with the uncentred Sp(b) and the determinant property; R02 (P2) statable headline absent from Suggested.lean; R03 (P2) 6.2 overlaps EndoscopicTransferAndUnitaryTraceComparison 10.29 on main. All supplier and downstream citations resolved at main and open heads; ownership against open pull requests checked.",
+  "text": "a7d961a2dd451e89"
+ }
+}
