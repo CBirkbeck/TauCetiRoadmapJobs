@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AxKochenErshov~4",
+  "head": "95fc24dcca9664679881929bc199b702e7881a79",
+  "pr": 2868,
+  "folder": "AxKochenErshov",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "incremental re-review of 18 changed lines since dfd0d50. Checked: the previous finding R01 (3.1, Hensel configuration) is not repaired, the passage is unchanged, counterexample recomputed; the previous small corrections C01-C03 and format notes N01-N02 are unchanged and carried. The changed passages (Summary, Downstream consumers, Boundaries) were read against PadicallyClosedFields at the head of pull request #2905 and LogicAndDefinabilityInNumberTheory at the head of #2276: consistent, one new small correction (two owners named for Macintyre's theorem). Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry the only warning (11), unchanged since dfd0d50; nothing changed outside the folder. Seeded sample: no changed passage cites a source; van den Dries 2014 again not readable (paywalled, author's page timed out).",
+  "text": "7ffecbf0c111c491"
+ }
+}
