@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-UniformWildKernelBounds~2",
+  "head": "b4b63e8152fb749f8b96aeddc0f9ef41c5d9e00b",
+  "pr": 2892,
+  "folder": "RiemannHypothesisForDirichletLFunctions/UniformWildKernelBounds",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 6,
+  "format_notes": 3,
+  "notes": "Full review of README (3231 lines) and Suggested.lean (no declarations; lake env lean exit 0, no messages). Seeded sample of 15 targets (1.2, 1.5, 2.4, 3.14, 3.18, 3.22, 4.1, 4.4, 5.5, 5.6, 5.7, 6.3, 6.4, 7.2, 7.3) checked against their routes, suppliers and computed instances; [FormalProof] could not be checked (repository host refused by the sources service; operator copy is a kernel export without locators). Published locators verified: Deligne-Serre Lemme 6.11 (p. 522), BLGGT Theorem 5.5.2, announcement line 181. Headlines 7.3-7.6 recomputed; about 25 Checks recomputed, including a numerical probe of the 3.5 Bernoulli units for 8 primes. Automatic checks all passed; depcheck: 170 roadmaps, 2009 edges, 0 problems. About 65 cross-roadmap sections resolved (2 dangling). Overlap check against 8 closest roadmaps: nothing shared. One P2 finding: statements resting only on [FormalProof] have no locator into it.",
+  "text": "1ba367655974aee1"
+ }
+}
