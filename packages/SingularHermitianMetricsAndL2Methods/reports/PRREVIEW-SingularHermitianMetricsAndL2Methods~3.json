@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SingularHermitianMetricsAndL2Methods~3",
+  "head": "fb5186a1bbd07a87d5ed76a8d9c44554d6304960",
+  "pr": 2884,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SingularHermitianMetricsAndL2Methods",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "incremental re-review of 146 changed lines since 13a1d61. Checked: R01 repaired (new global route for 3.3(a) verified step by step, including a case outside Demailly 1982's hypotheses); C02-C07 repaired, C01 partly (7.4 still cites Demailly 1992 whole), C08 deferred as D01; all 28 new locators read at the text (CADG, AMAG, Demailly1982, Skoda1972, GuedjZeriahi2005, GuanZhou2015, Berman2004), covering the sampled targets in changed passages (0.4, 1.2, 2.3, 3.2a, 7.1, 9.3, 9.5); continuous-epsilon forms of 3.5, 8.1, 8.2 and the 7.4 Check value recomputed; cross-roadmap citations K6.0, C1.4, R3.1 (main) and MultiplierIdealsOfPairsAndPointSeparation 9.10b-c (open head) resolved; worker's automatic checks all passed (own gate run: family-index and merge-order flags set aside as false positives); depcheck 0 problems; Suggested.lean elaborates with no output.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C08: the family index `TauCetiRoadmap/RiemannHypothesisForDirichletLFunctions/README.md` should list, in each pull request's copy, only the sub-roadmaps on main or in that pull request, with each late",
+    "where": "the family index text carried identically by every family pull request",
+    "raised": "PRREVIEW-SingularHermitianMetricsAndL2Methods~2"
+   }
+  ],
+  "text": "edac5a4f0aa80557"
+ }
+}
