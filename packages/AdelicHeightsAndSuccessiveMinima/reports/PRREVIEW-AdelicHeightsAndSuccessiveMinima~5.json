@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdelicHeightsAndSuccessiveMinima~5",
+  "head": "70287a7980494d956f924e38c94a4e4fd4bb12df",
+  "pr": 2883,
+  "folder": "RiemannHypothesisForDirichletLFunctions/AdelicHeightsAndSuccessiveMinima",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample: 2.5a (definition and three Checks recomputed; Lean body compared with the display) and 3.1 (three Checks recomputed; Bombieri-Vaaler Theorem 3 p. 18, condition (3.16) p. 22, Theorem 6 p. 23 read in the text). All four Suggested.lean theorems tested on degenerate instances (empty index type, zero subspace, whole space, body with empty interior, non-balanced rectangle) and the three comparisons with the real minima rederived for a general balanced body. Pinned Tau Ceti and Mathlib declarations opened; cross-roadmap citations resolved on main and at open heads. Automatic checks all passed; dependency check 0 problems; elaboration gives four sorry warnings only; one-tactic probe (simp, rfl) closes nothing. Not verifiable: Roy-Thunder 1996, Bombieri-Gubler 2006, the formal proof the family follows.",
+  "text": "dd6ae51fa08524d9",
+  "carried": {
+   "from": "70287a7980494d956f924e38c94a4e4fd4bb12df",
+   "head": "097dc6d50a4ac9204674608812fa824cadfb0a5a",
+   "findings": 4,
+   "lines": 32,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/AdelicHeightsAndSuccessiveMinima"
+   ],
+   "corrections": true,
+   "outside": true
+  }
+ }
+}
