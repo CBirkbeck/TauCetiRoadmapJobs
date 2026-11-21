@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RestrictedPowerSeries~6",
+  "head": "d4364d2abc867ef51b7817ed0080b82e5ee5cbf9",
+  "pr": 2656,
+  "folder": "RestrictedPowerSeries",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 29 changed lines since fe06f84. Checked: the previous small correction (the §5.2 sentence, repaired); the four changed passages (§0.1 algebra instance direction, §0.2 lifting bound as a sufficient condition and its new Check, §2.1 necessity of ‖1‖ = 1 and the algebra-map bound of the one-variable target, §5.2 split), each recomputed and compared with the pinned Tau Ceti declarations; passages citing them; the description against the head (one small correction: 25 Checks, not 24, and two §2.1 changes unstated). No source locator lies in a changed passage, so no seeded-sample locator was re-read. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no message and declares nothing; no change outside the folder.",
+  "text": "add503ac5b62e332",
+  "carried": {
+   "from": "d4364d2abc867ef51b7817ed0080b82e5ee5cbf9",
+   "head": "d4364d2abc867ef51b7817ed0080b82e5ee5cbf9",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
