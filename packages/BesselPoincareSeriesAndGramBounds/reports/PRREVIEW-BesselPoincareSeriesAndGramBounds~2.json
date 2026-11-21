@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BesselPoincareSeriesAndGramBounds~2",
+  "head": "2e29c07eeb763916ed12f29639a05393bec4cfb1",
+  "pr": 2916,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds",
+  "date": "2026-11-21",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "Full review. Sample: all fifteen seeded targets plus the three headlines (5.15a, 5.16, 5.20/5.21), checked by computation because the README gives no locators; the formal proof was searched by declaration name in the operator's kernel export, with no statement decoded. Findings: the 5.15a Check uses test functions that R(e_sigma) does not fix (computed on U(1)); 5.13c(d)/5.13d(e) restate GanGrossPrasadUnitaryGroups 2.6/3.9 without citing them; the overview states the Gram bounds with hypotheses missing; no exact locators. Automatic checks all passed; dependency check: 171 roadmaps, 1998 edges, 0 problems; Suggested.lean elaborates with no output and declares nothing.",
+  "text": "b6ecce6a771d77c0"
+ }
+}
