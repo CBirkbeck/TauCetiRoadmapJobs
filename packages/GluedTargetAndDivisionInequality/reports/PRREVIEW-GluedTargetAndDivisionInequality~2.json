@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GluedTargetAndDivisionInequality~2",
+  "head": "9aad1e22b1cd87ab1cc29b46a40725d57ac59771",
+  "pr": 2922,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review of README and Suggested.lean. Two P2 findings: 7.13/7.14 and 8.9 apply SeesawForThetaChains 6.14-6.15 without its hypothesis that P_u is nonzero on M_u; 8.9 omits the bound on (L'/L)(1, chi_K) that 8.6 assumes. Seeded sample (7.13, 7.14, 8.1, 8.3, 8.4, 8.5c, 8.8, 8.9, 8.10, 8.19e, 8.20, 8.22, 8.23, 8.24b, 8.24): no external locators; content rests on [FormalProof] (GitHub, host in no licence class, not readable), so checked by computation and against cited supplier sections. Bost 1996 fetched from Numdam (Prop. 4.3 p. 131, App. A.2; formulas missing from text layer). All cited supplier sections of 19 roadmaps resolve. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with only the sorry warning; one-tactic probe fails. Human decision: scope rests on a formal RH proof announced 20 Nov 2026.",
+  "text": "fb03c846fe7b0475"
+ }
+}
