@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HigherLocalClassFieldTheory~5",
+  "head": "ec903fa42297e23bfcd2f570900eec2d3d90805e",
+  "pr": 1813,
+  "folder": "HigherLocalClassFieldTheory",
+  "date": "2026-11-21",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 7,
+  "format_notes": 2,
+  "notes": "Full review of a repaired head. The twelve findings of the previous review are repaired (the Vostokov sign partly). Sample: the 15 seeded targets (0.2, 0.3, 0.5, 0.6, 1.2, 2.1, 2.2, 2.3, 2.4, 3.2, 4.1, 4.4, 5.1, 5.2, 5.6) plus 2.2a, 4.7, 5.5 and the three Lean theorems, checked against six texts (Invitation sections 1, 6, 7, 8, 10 and Bloch-Kato 1986 from Numdam); 61 locators. Fesenko 1991a, 1991b, 2001 not readable. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with three sorry warnings only; one-tactic probes close nothing; 18 cross-roadmap citations and 9 library declarations resolved. Findings: build-order cycle in mixed characteristic (3.2(b), 2.4, 2.5 need 5.4a and the explicit pairings); 5.2 length-r formula through ghost components; 5.2 annihilators without finite index; Teichmuller representatives called a field in mixed characteristic; supplier section 3a.1 covers Galois extensions only.",
+  "text": "086f4b88b36b3381"
+ }
+}
