@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PrimeProductIntervals~4",
+  "head": "35753e0cc1f1acbda1eec8d615485b14b3a664a4",
+  "pr": 2865,
+  "folder": "PrimeProductIntervals",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 109 changed lines since 37a574a. Previous R01 and R02 repaired (C01-C03, N01-N03 also). Seeded sample: Endpoint check recomputed; Two scales recomputed (Henriksson manuscript not readable from a classed source, locators unverified); Global estimate checked against Chirre-Hagen Theorem 3 in arXiv:2512.23534v1 and its parameter check recomputed. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe on volume_pairStarts_le does not close it; elaborated signatures compared with the README; pull request text agrees with the head.",
+  "text": "9cd75e519120798d"
+ }
+}
