@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LengthBoundsInPadicFamilies"
+
+[[source]]
+id = "Hida"
+authors = ["Haruzo Hida"]
+title = "Iwasawa modules attached to congruences of cusp forms"
+year = 1986
+locator_scheme = "section"
+locator = "§0, §3 (3.9a), (3.11), §6"
+url = "http://www.numdam.org/item/ASENS_1986_4_19_2_231_0/"
+fetched_from = "https://www.numdam.org/item/ASENS_1986_4_19_2_231_0.pdf"
+fetched_at = "2026-11-21T20:12:24Z"
+sha256 = "a52ea23bc8b2357746cb2191335c7af394d96c752f6e1926d3e15b995504e5a6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["1.7a"]
