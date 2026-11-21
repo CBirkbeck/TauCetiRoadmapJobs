@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PeriodicNonnegativeMatrices~1",
+  "head": "60d7b1867a693b1877727b58658e67c6d9048b04",
+  "pr": 2925,
+  "folder": "PeriodicNonnegativeMatrices",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample: all nine sections 1.1-3.3 put through the adversarial pass with computed values (13 theorems and the definition; every numerical Check recomputed exactly; layers 1 and 2.1 rechecked on all 25845 irreducible 0-1 patterns with at most 4 indices). Sources: the 6 locators into Boyle's notes verified against the text; the 8 locators into Brouwer-Haemers not verifiable (the sources service did not accept the cited host, the book is paywalled; text requested). 33 library declarations opened at the pins, 5 cross-roadmap citations resolved. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 13 theorems. One finding (P2): the docstring of period equates the definition with the quiver closed-walk gcd for every real matrix, false for the 1x1 matrix (-1). One small correction, one format note. Four points for the human reviewers (unread main source, its host, an unpublished second source, the d >= 2 restriction made for ownership).",
+  "text": "06d7fcdafa53fa47"
+ }
+}
