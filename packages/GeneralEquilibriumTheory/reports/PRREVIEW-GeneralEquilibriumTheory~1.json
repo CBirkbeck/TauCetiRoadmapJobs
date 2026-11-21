@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeneralEquilibriumTheory~1",
+  "head": "156c3fa81acd79ecbc7bf161fec8614d43bf466d",
+  "pr": 2927,
+  "folder": "GeneralEquilibriumTheory",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample: all 13 targets (1.1-1.3, 2.1, 3.1, 3.2, 4.1-4.3, 5.1-5.4) recomputed by hand, with every Check and worked example; adversarial table in the report. 23 of 23 locators read in Border's seven notes (fetched from the author's page). 19 Mathlib declarations opened at the pin; 9 cross-roadmap citations resolved (ConsumerTheoryDuality and KakutaniFixedPointAndContinuousGames at their open heads, RegretMinimizationAndEquilibria on main); copied definitions identical to their owners'. Automatic checks all passed, none set aside; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; one-tactic probe closes none of the 9 theorems. Two source issues recorded (a gap in the proof of Border-Core Theorem 5, a misprint in Border-SecondWelfare). For the humans: sources are unpublished lecture notes of one author; 5.2 and 5.4 are stated more generally than the cited source.",
+  "text": "a7ba7f16d562eca7"
+ }
+}
