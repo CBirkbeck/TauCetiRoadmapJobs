@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-InfiniteGamesAndDeterminacy~1",
+  "head": "ca04e29d91e33756b5f73a909d7b18c8988c7645",
+  "pr": 2875,
+  "folder": "InfiniteGamesAndDeterminacy",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "Full review. All ten sampled targets and every Check recomputed (degenerate X, the Bool counts, the routes of 2.1, 4.2 and 4.4); one false sentence in the Conventions (open sets are countable unions of clopen sets for every discrete X), confirmed in Lean at the pin. 12 Marker locators verified against the text; the 25 Moschovakis locators are not verifiable (text refused by the sources service, requested). 22 Mathlib declarations opened at the pin; Suggested.lean elaborates with sorry warnings only; one-tactic probe closes nothing; dependency check 0 problems; automatic checks all passed, none set aside; no overlap with main or open roadmaps.",
+  "text": "ab148abfec9cfbb5"
+ }
+}

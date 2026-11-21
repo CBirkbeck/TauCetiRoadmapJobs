@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "InfiniteGamesAndDeterminacy"
+
+[[source]]
+id = "Marker2002"
+locator_scheme = "theorem"
+locator = "Theorem 6.4"
+url = "https://homepages.math.uic.edu/~marker/math512/dst.pdf"
+fetched_from = "https://homepages.math.uic.edu/~marker/math512/dst.pdf"
+fetched_at = "2026-11-21T13:57:24Z"
+sha256 = "b67ccda708a8e985c37e1b6efcb0dbce1927bd766f0f1f714c515c40534507f4"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["1.2"]
