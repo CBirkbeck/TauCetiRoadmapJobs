@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MinimumCostFlowsAndWeightedBipartiteMatching~1",
+  "head": "fc2d10293ebcf5c694bd953e22dd826f765fb872",
+  "pr": 2869,
+  "folder": "MinimumCostFlowsAndWeightedBipartiteMatching",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Sampled targets 1.1-1.6, 2.1, 2.2: every Check recomputed by hand; exact-rational brute force of the seven headline statements (7535 assignments on 400 random networks, 15705 augmentations, 4000 Egervary matrices, 600 transportation instances), all agree. 27 Tau Ceti and 8 Mathlib declarations opened at the pins; all cross-roadmap citations resolved on main or at open heads. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 7 theorems. Dependency check: 0 problems. Automatic checks all passed. Not verifiable: the 7 locators into Schrijver's lecture notes (the only source), which the legal-source tool declined to fetch from the author's page; wording and arrangement were therefore not compared, and this is flagged to the human reviewers together with the single unpublished source.",
+  "text": "a40dd888cf4a6a91"
+ }
+}
