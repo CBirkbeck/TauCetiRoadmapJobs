@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MassFormula~2",
+  "head": "5980bc8aded5700c8d7c4193ee60b52e419ceb31",
+  "pr": 1819,
+  "folder": "MassFormula",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. Previous findings R01-R03 repaired. One finding (P2): the pinned Tau Ceti (2fd255d) already proves every target on its own carriers and the folder restates them without citing it; probed with one exact per target on a scratch copy (card_quotient_range closes, five others fail only on the parallel definitions). Adversarial table of 21 rows with computed values, no statement false. Elaboration exit 0 with 22 sorry warnings; dependency check 0 problems; no change outside the folder; 15 Mathlib and 21 supplier declarations opened at the pins; 3 cross-roadmap citations resolved on main. Sources: Serre 1978, Serre 1979, Bhargava 2007 and Krasner 1966 could not be read legally (0 of 9 locators verified against text). Automatic checks: the letI/haveI signature hits set aside as false positives; the missing numbered target subsections recorded as a format note. For humans: closeout of a roadmap complete at the pin, unread primary source, the proposer's external formalisation.",
+  "text": "7c95e2bab7647113"
+ }
+}
