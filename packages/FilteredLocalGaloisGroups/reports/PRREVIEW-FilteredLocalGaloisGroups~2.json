@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FilteredLocalGaloisGroups~2",
+  "head": "c05d10fa06fc00cda91bc44f52811d3d311d6ffa",
+  "pr": 1795,
+  "folder": "FilteredLocalGaloisGroups",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full re-review. All ten findings of the review at f235b83 are repaired. Seeded sample of 15 targets read against hyeon2025, mochizuki1997 and saidi-tamagawa2022 (14 locators; Serre uncertified, Ladkani not read). Adversarial table of 25 rows with computed values. 38 library declarations opened at the pins; supplier citations to ClassFieldTheory Layers 7-8, RamificationOfCompleteDiscretelyValuedFields 4a.1-4a.2 and AnabelianGeometryAndNonabelianChabauty 3.5 resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closed none of the 17 sorried theorems. Small corrections: injective_artinMap is implemented at the pin under CharZero; three unneeded hypotheses in Layer 0; absoluteGaloisGroupExtendEquiv already gives most of 2.0; the pull-request description describes the earlier head.",
+  "text": "a481cd7571efff5c"
+ }
+}
