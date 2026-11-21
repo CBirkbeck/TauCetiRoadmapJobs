@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BaseChangeAndGaloisRepresentationsForUnitaryGroups~6",
+  "head": "284e52056756aa4b4ce46eed2cb3bdb4d2a15132",
+  "pr": 2890,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BaseChangeAndGaloisRepresentationsForUnitaryGroups",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 85 changed lines since 650e4a7. Checked: R01 repaired (weight a of 16.1 defined as -w0 lambda; Hodge-Tate weights recomputed in general rank, in rank one, in the trivial rank-two example and against PotentialAutomorphyInfrastructurePartII 3.6 and AutomorphicGaloisRepresentationsPartII AG2.0); C01 repaired (13.8a step (6) recomputed from Harish-Chandra's formula of EndoscopicTransferAndUnitaryTraceComparison 2.3(c); orbital integrals of one pseudo-coefficient listed as not given); C02, C03, N01 repaired. Seeded sample: 13.8a and 16.1 fall in the changed passages. Four supplier citations resolved on main and at the open head. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with exit 0 and no output (no declarations). Pull-request text agrees with the head. Two questions for the human reviewers carried over (scope and licence of the family's unpublished source).",
+  "text": "f5b756d94567fb8c"
+ }
+}
