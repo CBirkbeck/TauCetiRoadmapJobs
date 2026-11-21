@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TaylorBoundsAndDepthsOnHeightTwoFormalGroups~2",
+  "head": "6f00aad4c76442b0acd601311b457a3b1d3a2c8b",
+  "pr": 2914,
+  "folder": "RiemannHypothesisForDirichletLFunctions/TaylorBoundsAndDepthsOnHeightTwoFormalGroups",
+  "date": "2026-11-21",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full review. Seeded sample (4.2, 4.4, 4.5a, 4.6, 4.8a, 4.8b, 4.8b', 4.8c, 4.18, 4.19, 4.19a-d, 4.19f) checked by computation; none could be checked against [FormalProof], which no NEW target locates (R04). Findings: Mathlib gaussNorm junk value falsifies 4.1 (a), (b), (d) (R01); 4.8b' (1) false for E = Q(i) (R02); block depth level unbound (R03). Gate: the worker's run passed; my rerun showed only expected items (not yet in merge order; family index files). Dependency check: 0 problems. lake env lean: sorry warnings only; signatures match the README; 27 one-tactic probes fail. Supplier citations (HodgeTate 0.5d, 3.1-3.5; LubinTate 4.3; IntegralWeyl 0.1; PELModuli M1.3, M1.7; ShimuraCompactifications 6.1; AbelianSchemes A2.3) and consumer citations resolve; no shared ownership.",
+  "text": "78d77b356072e82e"
+ }
+}
