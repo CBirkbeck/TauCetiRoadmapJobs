@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HeckeIdealsAndTaylorWilesRelations~4",
+  "head": "e54b1e049256ffcac0abfc8e1dea9fa4dcbbb637",
+  "pr": 2893,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeckeIdealsAndTaylorWilesRelations",
+  "date": "2026-11-21",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample 3.13a, 4.2a, 9.9, 10.1 checked against NT23 (Theorem A, Definition 2.23, Lemmas 2.25 and 2.28, Example 2.29, Theorem 5.2), Che14 (Proposition 3.7, Example 3.6), BZ77 (2.12) and the announcement; the statements attributed to the formal proof (4.2a level modules, 9.9 (d), the range of 3.13a (f), the instance of 10.1) are not verifiable: no commit, file or declaration is given and the operator-held copy has no readable statements. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with exit 0 and declares nothing. 46 supplier and consumer section ids resolved on main or at open heads. Findings: absolute irreducibility missing in 9.9 (a)-(c) (R01), no locator into the formal proof and inconsistent attribution (R02), 3.13a (f) narrowed to 2<=n<=4 and (w1),(w2) against its own route (R03), false sentence on normalized lengths in 10.1 (R04).",
+  "text": "d14b47bb4770ff12",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "N03: the sentence \"The family follows the formal Lean proof …\" in `TauCetiRoadmap/RiemannHypothesisForDirichletLFunctions/README.md` (line 9) is the family's own text, not this roadmap's entry, so it ",
+    "where": "the family index's own text, carried identically by every family pull request",
+    "raised": "PRREVIEW-HeckeIdealsAndTaylorWilesRelations~4"
+   }
+  ]
+ }
+}
