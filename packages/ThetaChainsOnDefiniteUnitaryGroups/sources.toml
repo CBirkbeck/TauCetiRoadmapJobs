@@ -1,0 +1,48 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ThetaChainsOnDefiniteUnitaryGroups"
+
+[[source]]
+id = "Gross1999"
+authors = "Benedict H. Gross"
+title = "Algebraic modular forms"
+year = 1999
+venue = "Israel Journal of Mathematics 113"
+doi = "10.1007/BF02780173"
+url = "https://doi.org/10.1007/BF02780173"
+licence_class = "none"
+locator_scheme = "section"
+locator = "whole"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.1"]
+
+[[source]]
+id = "KashiwaraVergne1978"
+authors = "M. Kashiwara, M. Vergne"
+title = "On the Segal-Shale-Weil representations and harmonic polynomials"
+year = 1978
+venue = "Inventiones Mathematicae 44"
+doi = "10.1007/BF01389900"
+url = "https://doi.org/10.1007/BF01389900"
+licence_class = "none"
+locator_scheme = "section"
+locator = "whole"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.3", "3.4"]
+
+[[source]]
+id = "Announcement"
+authors = "Levent Alpöge"
+title = "Announcement of the formal proof of the Riemann hypothesis (remark.pdf)"
+year = 2026
+locator_scheme = "section"
+locator = "whole"
+url = "https://alpo.ge/remark.pdf"
+fetched_from = "https://alpo.ge/remark.pdf"
+fetched_at = "2026-11-21T18:04:31Z"
+sha256 = "3fc97784b71ddd44ff8aa0a177e99622a1c61b13cfa843a0989ee4a7a0cfeb8d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["References"]
