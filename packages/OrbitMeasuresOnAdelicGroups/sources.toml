@@ -36,3 +36,18 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["3.4a"]
+
+[[source]]
+id = "Weil1965"
+authors = "André Weil"
+title = "Sur la formule de Siegel dans la théorie des groupes classiques"
+year = 1965
+venue = "Acta Mathematica 113"
+doi = "10.1007/BF02391774"
+locator_scheme = "section"
+locator = "residue form dx/dQ"
+url = "https://doi.org/10.1007/BF02391774"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.6"]

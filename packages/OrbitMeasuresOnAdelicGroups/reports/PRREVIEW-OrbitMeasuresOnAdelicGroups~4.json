@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OrbitMeasuresOnAdelicGroups~4",
+  "head": "413804cd1cde5b740a103c6a91b07d0600212eb5",
+  "pr": 2879,
+  "folder": "RiemannHypothesisForDirichletLFunctions/OrbitMeasuresOnAdelicGroups",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review. Previous R01 (4.1 against EndoscopicTransferAndUnitaryTraceComparison §1.3) repaired; earlier C02-C04 repaired, C01 partly (Tate and Weil 1965 still without locators). Seeded sample 2.6, 3.4a, 4.1: 13 Oesterle1984 locators and Sansuc1981 Cor. 10.5 read at the text, all support the statements. Every Check, worked example and route constant recomputed (adversarial table in the report). Supplier citations resolved on main and at the open head of LogicAndDefinabilityInNumberTheory; dependency check 0 problems, no UPWARD or CYCLE. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes neither theorem; signatures agree with 4.1 (a), (c). Automatic checks all passed. Six cited texts could not be read legally (Weil 1961, Platonov-Rapinchuk-Rapinchuk, Tate, Weil 1965, Steinberg, Humphreys); the family premise is left to the human reviewers.",
+  "text": "da70c6cff269c68f",
+  "carried": {
+   "from": "413804cd1cde5b740a103c6a91b07d0600212eb5",
+   "head": "413804cd1cde5b740a103c6a91b07d0600212eb5",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
