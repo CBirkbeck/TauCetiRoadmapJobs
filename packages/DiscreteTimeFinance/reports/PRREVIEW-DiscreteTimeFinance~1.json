@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiscreteTimeFinance~1",
+  "head": "918cdfb60037defa4035c59779117911b3a5f12c",
+  "pr": 2876,
+  "folder": "DiscreteTimeFinance",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Adversarial pass over all 18 statements (the 15 sampled targets plus 2.2, 3.4, 4.2) with computed values, including every numerical Check recomputed exactly (tree prices 1252/135, 7.985099, 5.992873, 15.289925, 110 vs 108.638376, 3.295751 vs 2.358620). 14 Tau Ceti and 22 Mathlib declarations opened at the pins; OptimalStopping 1.1, 1.3, 1.4 and ConvexAnalysisAndDuality 1.4, 5.3 resolved at their open heads; the two copied definitions agree with OptimalStopping's. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 13 theorems; elaborated types compared with the README. Dependency check: 0 problems. The worker's automatic checks all passed; none set aside. Sources: no legal copy of Cuchiero, Grasselli or Kevei was found, so 0 of 32 locators were checked against the text and wording and arrangement were not compared; reported under Not verifiable and to the human reviewers.",
+  "text": "fb5144319db88892"
+ }
+}
