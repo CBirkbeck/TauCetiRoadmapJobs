@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GravitationalLensing~1",
+  "head": "22655aa89397181802484cecb62b5827da6317b0",
+  "pr": 2953,
+  "folder": "GravitationalLensing",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full review. All 12 seeded targets (1.1-4.3) and the design note recomputed; 25 source locators read at the text in five arXiv sources (one imprecise, C01); 14 Tau Ceti and 13 Mathlib declarations opened at the pins; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 12 theorems; dependency check reports 0 problems; no change outside the folder. One P2 finding: a false sentence in D.3 (degenerate minima have Jacobian 0), refuted by the section's own Einstein-ring Check. The automatic check that flagged a roadmap name not on main is taken up as small correction C03.",
+  "text": "d409c0786078b681"
+ }
+}
