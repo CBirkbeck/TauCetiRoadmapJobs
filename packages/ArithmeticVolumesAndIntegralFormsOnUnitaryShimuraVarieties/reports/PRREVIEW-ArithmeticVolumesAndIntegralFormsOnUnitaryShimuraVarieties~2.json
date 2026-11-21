@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~2",
+  "head": "7e196653af53f6d52949bb1ca138afea694c7774",
+  "pr": 2923,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 6,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample (8.12, 8.14b, 8.15, 8.15b-d, 8.17, 8.17a, 8.18, 8.18c, 8.18e, 8.19a'', 8.19a''', 8.19b, 8.19c) read against the cited supplier sections at main or at the open heads; all section ids cited from 45 roadmaps resolve. 8.5 (Chowla-Selberg) verified numerically for 12 fields; 8.19b Checks (D = 7, 11) and the isogeny formula verified numerically; 8.19d Euler factor and 8.19a''' derivation checked by hand. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with only the sorry warning; #check signatures match; one-tactic probe closes nothing. [FormalProof] and [Announcement] not read (no locators; announcement host in no licence class). Findings: p >= 1 missing in 8.15-8.17; AlgebraicModuliForArithmeticGeometry 1.6 cited for nef-bundle facts it does not state.",
+  "text": "b3c2cb420ed292fb"
+ }
+}
