@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalAnabelianGeometry~5",
+  "head": "039fbee7d2b37ad25d5eb80e5629cbdd0840a4a0",
+  "pr": 1811,
+  "folder": "LocalAnabelianGeometry",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "Full review. All seven findings of the previous review are repaired. Both cached sources (hyeon2025, mochizuki1997) read at every sampled locator (0.1, 0.2, 0.4, 0.5, 0.6, 2.1, 2.2, 3.1, 4.1, 5.1, 6.2, 6.3, 7.1, 7.4, 8.4) and at the headline locators; all support the statements. Suggested.lean elaborates with ten sorry warnings and nothing else; one-tactic probe on all ten theorems: none closes. Automatic checks all passed; dependency check: 0 problems. Findings: the homomorphism property of the logarithm on principal units is already a target of ColemanIntegration L0.13 on main (P2); one false sentence in the proof sketch of 0.6 (P2).",
+  "text": "da3adc31085e31e0"
+ }
+}
