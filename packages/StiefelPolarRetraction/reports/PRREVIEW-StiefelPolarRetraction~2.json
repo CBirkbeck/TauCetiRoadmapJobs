@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StiefelPolarRetraction~2",
+  "head": "65e5fe1b78e6f0e752ebcfe15ae167a9b8e1cde7",
+  "pr": 2815,
+  "folder": "StiefelPolarRetraction",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 19 changed lines since 6e228cc. Checked: R01, C01, N01, N02 of the previous review, all repaired; the new quintic sentence recomputed (1 - q(t) = (1-t)^3 (3t^2+9t+8)/8, q(t) > 1 for t > 1, six values); SpectralSteepestDescent 4.2 and FirstOrderOptimization 2.1 read at their open heads, SSP-B09 on main, Matrix.IsHermitian.eigenvalues at the pinned Mathlib (Spectrum.lean:67). No sampled target lies in a changed passage; Suggested.lean unchanged. Automatic checks all pass; depcheck 0 problems; elaboration gives 12 sorry warnings only. Pull request text agrees with the head. Li1994 remains unread (not verifiable); three points left to the human reviewers.",
+  "text": "8f2b4fcc3e10eee4"
+ }
+}
