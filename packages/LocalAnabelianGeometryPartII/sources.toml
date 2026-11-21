@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LocalAnabelianGeometryPartII"
+
+[[source]]
+id = "Abrashkin2010"
+authors = "Victor Abrashkin"
+title = "Modified proof of a local analogue of the Grothendieck conjecture"
+year = 2009
+arxiv = "0907.3035v1"
+locator_scheme = "theorem"
+locator = "Theorem A"
+url = "https://arxiv.org/abs/0907.3035v1"
+fetched_from = "https://arxiv.org/pdf/0907.3035v1"
+fetched_at = "2026-11-21T14:40:24Z"
+sha256 = "2e9d7f84445b7fa18f04a8437fb3874f0dbd81d6bc51041f7f6322da5ae285e4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["5.4"]
