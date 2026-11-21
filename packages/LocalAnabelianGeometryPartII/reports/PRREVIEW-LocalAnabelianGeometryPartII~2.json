@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalAnabelianGeometryPartII~2",
+  "head": "feff4d8ab2287000996172dfcf11827efc90b31f",
+  "pr": 2867,
+  "folder": "LocalAnabelianGeometryPartII",
+  "date": "2026-11-21",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review. The sampler found no targets by heading, so 17 targets were chosen by hand and checked against the published text of Abrashkin 2010 (Numdam); Abrashkin 2000, Deligne 1984 and Abrashkin 1998 could not be read legally and are listed as not verifiable. Adversarial table of 25 rows with computed values. Findings (all P2): the annihilator criterion in the route of 2.2 is wrong (counterexample v = 1, y = t^-1); 1.6 (b) has the wrong sign for the README's psi_f; Theorem A' and Theorem A elaborate at the pins with one short definition and are absent from Suggested.lean; the finite-level truncated Magnus algebra is GeometricTopology 4.12.1's object. Dependency check: 0 problems. Suggested.lean elaborates with sorry warnings only; one-tactic probe closes classTwoMul_assoc. All cross-roadmap citations resolve. Three automatic-check hits set aside as false positives. No change outside the folder; the description agrees with the head.",
+  "text": "ec25c5eed5bef9b9"
+ }
+}
