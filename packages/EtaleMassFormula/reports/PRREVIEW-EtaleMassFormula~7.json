@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EtaleMassFormula~7",
+  "head": "3be13a59b6103b56f4e4741494a7797b7ff39d81",
+  "pr": 1820,
+  "folder": "EtaleMassFormula",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 3,
+  "notes": "Full review. Previous findings R01-R06 repaired. Seeded sample: all fifteen subsections 0.1-3.3, 4.1, 4.5 (and 4.2-4.4) computed on instances, adversarial table in the report; Kedlaya 2007 (arXiv v4) and Wood 2008 (arXiv v1) read at every cited locator; Bhargava 2007 not readable (Not verifiable), confirmed through the other two. Library declarations opened at the pins (Tau Ceti 2fd255d, Mathlib 1b1ccf4). Suggested.lean elaborates with 23 sorry warnings only; one-tactic probe closes none, the 1.3 orbit count closes by one exact from the pinned theorem (C02). Dependency check: 0 problems, no UPWARD or CYCLE. Automatic checks: only the letI note, taken as a format note. Small corrections: stale LocalFieldsRamification layer labels, a statement and two definitions the pin already provides, an uncited pinned Galois equivalence, a Check needing n >= 1.",
+  "text": "1702d083a9f70d19"
+ }
+}
