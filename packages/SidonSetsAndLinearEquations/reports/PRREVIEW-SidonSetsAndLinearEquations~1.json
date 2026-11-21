@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SidonSetsAndLinearEquations~1",
+  "head": "09f5b3a4d3534f8ed561a81e877f546dcfbb6007",
+  "pr": 2847,
+  "folder": "SidonSetsAndLinearEquations",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "Full review. Adversarial pass over all 15 theorems and 6 definitions with computed values (degenerate cases N = 0, 1, empty set, trivial group, k = 0, b = 1, theta = 1, non-prime p; small instances recomputed by brute force); proof routes of 1.4 and 4.2 rederived. Seeded sample 1.1-4.3: all 21 source locators read at the text in 6 sources (O'Bryant in its arXiv version, page numbers agree). 25 Mathlib and 2 Tau Ceti declarations opened at the pins. Dependency check: 0 problems; no change outside the folder. Automatic checks all passed; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 15 theorems. Closest roadmaps FourierAnalyticAdditiveCombinatorics and RamseyNumbers read: nothing shared. Two source issues recorded. One item for the human reviewers (survey version read).",
+  "text": "334ff2344ce5b450"
+ }
+}
