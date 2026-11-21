@@ -34,3 +34,69 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["16.1"]
+
+[[source]]
+id = "zhang-1995"
+authors = "Shouwu Zhang"
+title = "Positive line bundles on arithmetic varieties"
+year = 1995
+doi = "10.1090/S0894-0347-1995-1254133-7"
+locator_scheme = "theorem"
+locator = "Theorem (5.2), p. 208; Lemma (5.4), p. 209"
+url = "https://www.ams.org/journals/jams/1995-08-01/S0894-0347-1995-1254133-7/S0894-0347-1995-1254133-7.pdf"
+fetched_from = "https://www.ams.org/journals/jams/1995-08-01/S0894-0347-1995-1254133-7/S0894-0347-1995-1254133-7.pdf"
+fetched_at = "2026-11-21T19:47:23Z"
+sha256 = "cdd8a9a8fa275febca8c06b92847000b3c60e0d520669791291e8ebea08629b8"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["4.3b"]
+
+[[source]]
+id = "roy-thunder-1996"
+authors = "Damien Roy; Jeffrey Lin Thunder"
+title = "An absolute Siegel's lemma"
+year = 1996
+doi = "10.1515/crll.1996.476.1"
+locator_scheme = "theorem"
+locator = "Theorem 2.2, p. 6; Theorem 8.1, p. 21"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0476/LOG_0004.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0476/LOG_0004.pdf"
+fetched_at = "2026-11-21T19:48:27Z"
+sha256 = "76353c4a0061fb98c8ae19c335c524cbd59c51d30af8bf2ae79ec14ef7159deb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["4.3b"]
+
+[[source]]
+id = "moret-bailly-1990"
+authors = "Laurent Moret-Bailly"
+title = "Sur l'équation fonctionnelle de la fonction thêta de Riemann"
+year = 1990
+locator_scheme = "theorem"
+locator = "Théorème 3.3, p. 216; Théorème 0.5, p. 206"
+url = "https://www.numdam.org/item/CM_1990__75_2_203_0.pdf"
+fetched_from = "https://www.numdam.org/item/CM_1990__75_2_203_0.pdf"
+fetched_at = "2026-11-21T19:48:27Z"
+sha256 = "b5d7ff907fc30da527e83cf62c3ab2cd5774a9d1de10e6eac83e2270eae2cdab"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["16.1"]
+
+[[source]]
+id = "bost-1996"
+authors = "Jean-Benoît Bost"
+title = "Périodes et isogénies des variétés abéliennes sur les corps de nombres (d'après D. Masser et G. Wüstholz)"
+year = 1996
+locator_scheme = "page"
+locator = "Théorème 4.2 and the remarks after it, pp. 129–130"
+url = "https://www.numdam.org/item/SB_1994-1995__37__115_0.pdf"
+fetched_from = "https://www.numdam.org/item/SB_1994-1995__37__115_0.pdf"
+fetched_at = "2026-11-21T19:48:28Z"
+sha256 = "13d2911a3b4460552d2ba649609f626a0342beae85966929940ab7df205b0edb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["16.1"]
