@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-UtilityRepresentationTheorems~1",
+  "head": "2b6147533f5e71a3d48e3374ce29291a1068d218",
+  "pr": 2870,
+  "folder": "UtilityRepresentationTheorems",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All 14 sampled targets (1.1-4.4) and the 12 headline theorems recomputed at degenerate cases, with the adversarial table. 24 source locators verified against the text in 6 texts (Bosi-Estevan, Border's four notes, Rubinstein); Debreu 1954, Herstein-Milnor 1953 and Ouwehand 2010 could not be read legally and are listed as not verifiable. 30 Mathlib declarations opened at the pin; 4 cross-roadmap citations resolved; dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 12 theorems; four conventions confirmed in Lean on a scratch copy.",
+  "text": "b450192e085ec9ab"
+ }
+}
