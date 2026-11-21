@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HodgeTateLatticesAndLubinTateLogarithms~5",
+  "head": "dd1edbb68cbeb24f3cd669e0d99e10b8d8f38ff6",
+  "pr": 2904,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HodgeTateLatticesAndLubinTateLogarithms",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review of the folder. Adversarial pass computed on every target (0.5a-0.5h, 0.17a, 0.17b, 0.18a, 2.4, 3.1-3.6) and on the three Lean declarations; the route of 0.5b (a) checked step by step at p = 2. One false Check found (0.5d, ordinary case: S = 1/(p-1) for an ordinary elliptic curve with O = Z). Seeded sample: all 15 targets read and computed; their locators are into [FormalProof], which could not be read from a legal copy, and into Hazewinkel (3.2), also not readable: listed under Not verifiable. SchneiderTeitelbaum2001 Appendix Theorem (c) verified at lines 1230-1234. 39 cross-roadmap section ids in 12 roadmaps resolved on main or at open heads and read against their use; downstream ids exist. Library names opened at the pins (Tau Ceti cotangent module, Mathlib GroupLike, IsCocomm, gaussNorm, toNormalization). Automatic checks all passed; depcheck 171 roadmaps, 1997 edges, 0 problems; lake env lean: two sorry warnings only; one-tactic probe closes neither theorem; no change outside the folder and the family index; description agrees with the head. Overlap: HodgeTateAndCanonicalSubgroups owns the odd-p cokernel bound, this roadmap the extension to p = 2; nothing else shared. Scope and licence of [FormalProof] left to the human reviewers.",
+  "text": "f2f713a9a3d213b7"
+ }
+}
