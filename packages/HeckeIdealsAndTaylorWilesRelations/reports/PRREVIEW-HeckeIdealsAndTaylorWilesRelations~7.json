@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeckeIdealsAndTaylorWilesRelations~7",
+  "head": "210cbc9206c8b8e51d512c501bf1fb8b31c5f3e7",
+  "pr": 2893,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeckeIdealsAndTaylorWilesRelations",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 89 changed lines since 2d3c8b8. Previous R01 (9.9 (a), (c) for polarized pairs) repaired and checked against NT23 Theorem 5.2 (p. 40), its definition of polarized, Example 2.29 and the Introduction, and against AutomorphicGaloisRepresentationsPartII AG2.0, AG2.2, ArithmeticGaloisRepresentations 7.10, ModularityAndLanglandsExtensions 4.1 and the consumer UniformWildKernelBounds 4.1, 4.3; the new Check computed (determinants give eps^-2 = 1, false). Previous C01-C03, N01-N03 repaired. Nine added formal-proof locators opened at commit e50d098 and statements compared (seeded sample 3.13a, 4.2a, 9.9, 10.1 where the diff touches them). Pull request text read against the head. Automatic checks all passed; lake env lean Suggested.lean exit 0 with no output (no declarations); depcheck 170 roadmaps, 1996 edges, 0 problems; no change outside the folder. One question to the author carried over; human reviewers: scope of targets resting on the unpublished formal proof, and its licence.",
+  "text": "4e395374a3a05030"
+ }
+}
