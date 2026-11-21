@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CongruenceModulesOfThetaLifts~6",
+  "head": "72ec95e5f203d8702b5881d23c16f51a8efd03f3",
+  "pr": 2921,
+  "folder": "RiemannHypothesisForDirichletLFunctions/CongruenceModulesOfThetaLifts",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 41 changed lines since 2d0d9be. Checked: R01 (7.16 block weights at the conjugate embedding, recomputed against 7.5 (1), Check (ii) and 7.16a), C01 (7.10c against the declaration aux₃ of the formal proof, read at its file) and N01-N04 of the previous review, all repaired; sampled targets 7.10c, 7.11, 7.16 in the changed passages; UniformWildKernelBounds §7.6 and ThetaChainsOnDefiniteUnitaryGroups §2.1 read at their open heads; automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no output (no declarations); no change outside the folder; pull request text still accurate. One format note (a locator for the formal bound quoted in the route of 7.11).",
+  "text": "8f428380ea3f9605"
+ }
+}
