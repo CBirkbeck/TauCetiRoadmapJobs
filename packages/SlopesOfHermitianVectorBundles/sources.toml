@@ -1,0 +1,222 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SlopesOfHermitianVectorBundles"
+
+[[source]]
+id = "Bost1996"
+authors = "Jean-Benoît Bost"
+title = "Périodes et isogénies des variétés abéliennes sur les corps de nombres (d'après D. Masser et G. Wüstholz)"
+year = 1996
+venue = "Séminaire Bourbaki 795, Astérisque 237, 115–161"
+locator_scheme = "theorem"
+locator = "Prop. 4.3, p. 131; Prop. 4.4, p. 132; App. A.3, p. 147; Prop. A.1, p. 148; Prop. A.2, pp. 148–149; Prop. A.4, p. 149"
+url = "http://www.numdam.org/item/SB_1994-1995__37__115_0/"
+fetched_from = "https://www.numdam.org/item/SB_1994-1995__37__115_0.pdf"
+fetched_at = "2026-11-21T14:49:17Z"
+sha256 = "13d2911a3b4460552d2ba649609f626a0342beae85966929940ab7df205b0edb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.4", "2.5", "3.2", "3.3", "3.5", "4.5"]
+
+[[source]]
+id = "Gaudron2008"
+authors = "Éric Gaudron"
+title = "Pentes des fibrés vectoriels adéliques sur un corps global"
+year = 2008
+venue = "Rendiconti del Seminario Matematico della Università di Padova 119, 21–95"
+locator_scheme = "theorem"
+locator = "(22), p. 47; Lemme 4.5, p. 49; Prop. 4.23, p. 61; Prop. 5.3, Déf. 5.4, p. 64; Rem. 5.5, Lemme 5.6, p. 65; §5.2, Lemme 5.10, pp. 68–69; Prop. 5.13, Propriétés 5.14, p. 70; Thm 5.20, p. 76; Déf. 6.1, Lemme 6.2, p. 77; Lemmes 6.3–6.4, p. 78; Prop. 6.6, p. 79; Thm 7.1, p. 82; Lemme 7.3, p. 83; monomial norms, p. 84"
+url = "http://www.numdam.org/item/RSMUP_2008__119__21_0/"
+fetched_from = "https://www.numdam.org/item/RSMUP_2008__119__21_0.pdf"
+fetched_at = "2026-11-21T14:52:16Z"
+sha256 = "716ed1cde7222ccbaea836086afe4dfa32801a82a154dc0f28fe2d4e65d77320"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["1.1", "1.3", "1.3a", "1.4", "1.5", "1.6", "1.7", "2.1", "2.2", "2.4", "2.5", "3.2", "3.3", "4.2", "4.5"]
+
+[[source]]
+id = "Grayson1984"
+authors = "Daniel R. Grayson"
+title = "Reduction theory using semistability"
+year = 1984
+venue = "Commentarii Mathematici Helvetici 59"
+doi = "10.1007/BF02566369"
+locator_scheme = "page"
+locator = "600–634"
+url = "https://doi.org/10.1007/BF02566369"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled at the publisher; the EuDML record (eudml.org/doc/139993) carries the metadata only; cited as an article, with locators given in Bost 1996 and Gaudron 2008"
+cited_for = ["3.2"]
+
+[[source]]
+id = "Bost2001"
+authors = "Jean-Benoît Bost"
+title = "Algebraic leaves of algebraic foliations over number fields"
+year = 2001
+venue = "Publications Mathématiques de l'IHÉS 93, 161–221"
+locator_scheme = "theorem"
+locator = "§4.1.1 and (4.2), p. 195; Lemmas 4.1–4.2 and (4.6), p. 196; (4.10) and Prop. 4.5, p. 199; Prop. 4.6, p. 200"
+url = "http://www.numdam.org/item/PMIHES_2001__93__161_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_2001__93__161_0.pdf"
+fetched_at = "2026-11-21T14:52:18Z"
+sha256 = "2102c7b7fac0595499f9d6d89b90b71042e0752ca1305efa537c404b2ea353ee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["1.3", "1.4", "2.1", "2.2", "2.4", "2.5", "3.4", "4.5"]
+
+[[source]]
+id = "Stuhler1976"
+authors = "Ulrich Stuhler"
+title = "Eine Bemerkung zur Reduktionstheorie quadratischer Formen"
+year = 1976
+venue = "Archiv der Mathematik 27"
+doi = "10.1007/bf01224726"
+locator_scheme = "page"
+locator = "604–610"
+url = "https://doi.org/10.1007/bf01224726"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.2"]
+
+[[source]]
+id = "BostKunnemann2010"
+authors = "Jean-Benoît Bost, Klaus Künnemann"
+title = "Hermitian vector bundles and extension groups on arithmetic schemes. I. Geometry of numbers"
+year = 2010
+venue = "Advances in Mathematics 223, 987–1106"
+doi = "10.1016/j.aim.2009.09.005"
+arxiv = "math/0701343v1"
+locator_scheme = "theorem"
+locator = "Prop. 3.3.1, p. 37; (3.37)–(3.38), p. 40 (numbering of arXiv v1)"
+url = "https://arxiv.org/abs/math/0701343v1"
+fetched_from = "https://arxiv.org/pdf/math/0701343v1"
+fetched_at = "2026-11-21T14:53:38Z"
+sha256 = "adfc9ccd414c80b9a665c92841472399c1c6985065d17b07fe17ada66e6daa89"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "read in arXiv v1; the README cites the arXiv v1 numbering"
+cited_for = ["4.2", "4.4"]
+
+[[source]]
+id = "Borek2005"
+authors = "Thomas Borek"
+title = "Successive minima and slopes of hermitian vector bundles over number fields"
+year = 2005
+venue = "Journal of Number Theory 113"
+doi = "10.1016/j.jnt.2004.12.003"
+locator_scheme = "page"
+locator = "380–388"
+url = "https://doi.org/10.1016/j.jnt.2004.12.003"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.2"]
+
+[[source]]
+id = "Philippon1991"
+authors = "Patrice Philippon"
+title = "Sur des hauteurs alternatives. I"
+year = 1991
+venue = "Mathematische Annalen 289"
+doi = "10.1007/bf01446571"
+locator_scheme = "page"
+locator = "255–283"
+url = "https://doi.org/10.1007/bf01446571"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.6"]
+
+[[source]]
+id = "DeBruijnErdos1952"
+authors = "Nicolaas G. de Bruijn, Paul Erdős"
+title = "Some linear and some quadratic recursion formulas. II"
+year = 1952
+venue = "Indagationes Mathematicae (Proceedings) 55"
+doi = "10.1016/s1385-7258(52)50021-0"
+locator_scheme = "page"
+locator = "152–163"
+url = "https://doi.org/10.1016/s1385-7258(52)50021-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.3a"]
+
+[[source]]
+id = "StruppeckVaaler1990"
+authors = "Thomas Struppeck, Jeffrey D. Vaaler"
+title = "Inequalities for Heights Of Algebraic Subspaces And the Thue-Siegel Principle"
+year = 1990
+venue = "Analytic Number Theory (Allerton Park, 1989), Progress in Mathematics 85, Birkhäuser, 493–528"
+doi = "10.1007/978-1-4612-3464-7_31"
+locator_scheme = "page"
+locator = "493–528"
+url = "https://doi.org/10.1007/978-1-4612-3464-7_31"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.5"]
+
+[[source]]
+id = "Chen2010"
+authors = "Huayi Chen"
+title = "Convergence des polygones de Harder–Narasimhan (preprint: Convergence of Harder–Narasimhan polygons)"
+year = 2010
+venue = "Mémoires de la Société Mathématique de France (N.S.) 120"
+doi = "10.24033/msmf.432"
+arxiv = "0706.2649v1"
+locator_scheme = "theorem"
+locator = "Prop. 3.1, Cor. 3.2, pp. 12–13; Prop. 9.1, Cor. 9.2, p. 37; Lemma 9.7, p. 39; Prop. 9.11, p. 41 (numbering of arXiv v1)"
+url = "https://arxiv.org/abs/0706.2649v1"
+fetched_from = "https://arxiv.org/pdf/0706.2649v1"
+fetched_at = "2026-11-21T14:55:32Z"
+sha256 = "c1103faf803b6a8a2f94ad53747997f1599aa7060432e01e24315c4b29d0cd64"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "read in arXiv v1 (English preprint); the README cites the arXiv v1 numbering"
+cited_for = ["3.4", "6.3", "6.3a", "6.4"]
+
+[[source]]
+id = "GaudronRemond2014"
+authors = "Éric Gaudron, Gaël Rémond"
+title = "Théorème des périodes et degrés minimaux d'isogénies"
+year = 2014
+venue = "Commentarii Mathematici Helvetici 89, 343–403"
+doi = "10.4171/CMH/322"
+arxiv = "1105.1230v1"
+locator_scheme = "theorem"
+locator = "§6.8, p. 22 (numbering of arXiv v1)"
+url = "https://arxiv.org/abs/1105.1230v1"
+fetched_from = "https://arxiv.org/pdf/1105.1230v1"
+fetched_at = "2026-11-21T14:55:37Z"
+sha256 = "d0eefd98c2be51e655bea147341c642b7a568b0709ae801fa9ed845ddbb91ef2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "read in arXiv v1; the README cites the arXiv v1 numbering"
+cited_for = ["4.5"]
+
+[[source]]
+id = "BostGilletSoule1994"
+authors = "Jean-Benoît Bost, Henri Gillet, Christophe Soulé"
+title = "Heights of projective varieties and positive Green forms"
+year = 1994
+venue = "Journal of the American Mathematical Society 7, 903–1027"
+doi = "10.1090/S0894-0347-1994-1260106-X"
+locator_scheme = "page"
+locator = "903–1027"
+url = "https://www.ams.org/journals/jams/1994-07-04/S0894-0347-1994-1260106-X/S0894-0347-1994-1260106-X.pdf"
+fetched_from = "https://www.ams.org/journals/jams/1994-07-04/S0894-0347-1994-1260106-X/S0894-0347-1994-1260106-X.pdf"
+fetched_at = "2026-11-21T14:57:37Z"
+sha256 = "851f153b00da9f75be749c28eda0d2bd36892bd83dab56ee8d5554a0cbddcfb5"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "the PDF was fetched but its text could not be extracted on this worker; cited as an article"
+cited_for = ["6.6"]
