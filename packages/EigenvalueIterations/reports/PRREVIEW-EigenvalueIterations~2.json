@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EigenvalueIterations~2",
+  "head": "cc2273b9b49b05dbe5f1170f66bde0e9d965d02b",
+  "pr": 2816,
+  "folder": "EigenvalueIterations",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 32 changed lines since 9a98a8e. Checked: the five previous remarks (R01, C01, C02, N01, N02) all repaired; the new 2.2 Check recomputed (invertible case and diag(1,0)), the scaling convention against every statement, the new 3.1 Check (T = i on C: i versus -i); the two cross-roadmap section numbers resolved on main and at the open revisions; the pull request's text against the head; dependency check 0 problems; Suggested.lean elaborates with 8 sorry warnings only; automatic checks all passed; no change outside the folder. Source issues of the previous review are not repeated; no locator changed.",
+  "text": "76dd2f004d8a4248"
+ }
+}
