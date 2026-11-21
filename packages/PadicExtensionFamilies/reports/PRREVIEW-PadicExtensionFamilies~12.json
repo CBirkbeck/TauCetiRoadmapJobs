@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PadicExtensionFamilies~12",
+  "head": "3f4c3d28fb830eb6de6a62b139f237b3e881e404",
+  "pr": 2944,
+  "folder": "PadicExtensionFamilies",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review of a revision that adds section 4.3 (Pagano's mass formula) and one Lean theorem. Sample: 1.2, 2.6, 2.7, 3.3, 3.6, 4.1, 4.3, 5.2, 5.3, 6.2, 6.5, 6.6, 6.7, 7.2, 7.3, each checked against its source at the locator (Pagano arXiv v1, Heiermann MPIM preprint, Greve-Pauli author preprint, Pauli-Roblot HAL, Monge arXiv x2, Jones-Roberts author copy, seven LMFDB knowls) or recomputed. Two P2 findings in 4.3: the fibre of filtOrd over the empty jump set is not open; the records of a path with non-increasing positions do not form a jump set. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning (19); one-tactic probe closes none of the 19 theorems; the new theorem's elaborated type keeps every binder. Revision audit: no layer or item removed. Not obtained: Deligne, Serre Local Fields, Krasner 1966, Ore 1928, Fried 1974, Serre 1978; knowl lf.means behind a browser check.",
+  "text": "d650740b60f8f556"
+ }
+}

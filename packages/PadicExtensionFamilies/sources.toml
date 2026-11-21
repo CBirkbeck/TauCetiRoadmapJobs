@@ -1,0 +1,258 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PadicExtensionFamilies"
+
+[[source]]
+id = "pagano"
+authors = "Carlo Pagano"
+title = "Jump sets in local fields"
+year = 2018
+arxiv = "1810.09975v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.7"
+url = "https://arxiv.org/abs/1810.09975v1"
+fetched_from = "https://arxiv.org/pdf/1810.09975v1"
+fetched_at = "2026-11-21T20:55:32Z"
+sha256 = "cae0cccedbe74d77d44c7d0dd8f81875dee0e1c489391267a4b749a5f0c534ba"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["4.3"]
+
+[[source]]
+id = "monge-eisenstein"
+authors = "Maurizio Monge"
+title = "A family of Eisenstein polynomials generating totally ramified extensions, identification of extensions and construction of class fields"
+year = 2011
+arxiv = "1109.4617v2"
+locator_scheme = "theorem"
+locator = "Lemma 3"
+url = "https://arxiv.org/abs/1109.4617v2"
+fetched_from = "https://arxiv.org/pdf/1109.4617v2"
+fetched_at = "2026-11-21T20:59:07Z"
+sha256 = "b5a37e10fa90a93379c20ca7ecb529d71bafb0ea6fca69cbccb787436904aa2b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v2"
+cited_for = ["6.5"]
+
+[[source]]
+id = "monge-count"
+authors = "Maurizio Monge"
+title = "Determination of the number of isomorphism classes of extensions of a $\\kp$-adic field"
+year = 2010
+arxiv = "1011.0357v3"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1011.0357v3"
+fetched_from = "https://arxiv.org/pdf/1011.0357v3"
+fetched_at = "2026-11-21T20:59:12Z"
+sha256 = "67aac3fd1a82598680fb1e804ab603583c38c76a8b6cf5709aa42f3ee2865513"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v3"
+cited_for = ["6.7"]
+
+[[source]]
+id = "jones-roberts-database"
+authors = "John W. Jones, David P. Roberts"
+title = "A Database of Local Fields"
+year = 2003
+venue = "J. Symbolic Comput., 41, 80-97 (2006)"
+arxiv = "math/0309309v1"
+locator_scheme = "section"
+locator = "§3"
+url = "https://arxiv.org/abs/math/0309309v1"
+fetched_from = "https://arxiv.org/pdf/math/0309309v1"
+fetched_at = "2026-11-21T20:59:18Z"
+sha256 = "c985fee9730d83fc574680290f4453f6c63dda1ac07a31a6541a813d31f5b6f9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["3.3"]
+
+[[source]]
+id = "pauli-sinclair"
+authors = "Sebastian Pauli, Brian Sinclair"
+title = "Enumerating Extensions of $(π)$-Adic Fields with Given Invariants"
+year = 2015
+arxiv = "1504.06671v1"
+locator_scheme = "theorem"
+locator = "Lemma 4.7"
+url = "https://arxiv.org/abs/1504.06671v1"
+fetched_from = "https://arxiv.org/pdf/1504.06671v1"
+fetched_at = "2026-11-21T20:59:25Z"
+sha256 = "e2b7cc3bd17e3b5cfe809a459dc629b5b6343b122db8cb231521d663f5f8d072"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["1.4"]
+
+[[source]]
+id = "lmfdb-lf.herbrand_invariant"
+locator_scheme = "section"
+locator = "lf.herbrand_invariant"
+url = "https://www.lmfdb.org/knowledge/show/lf.herbrand_invariant"
+fetched_from = "https://www.lmfdb.org/knowledge/show/lf.herbrand_invariant"
+fetched_at = "2026-11-21T20:59:25Z"
+sha256 = "2316e1be66d0e5b044ed30acc5e58c1328117600e1bd17d6e6b7208eb397c319"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.6"]
+
+[[source]]
+id = "lmfdb-lf.rams"
+locator_scheme = "section"
+locator = "lf.rams"
+url = "https://www.lmfdb.org/knowledge/show/lf.rams"
+fetched_from = "https://www.lmfdb.org/knowledge/show/lf.rams"
+fetched_at = "2026-11-21T20:59:26Z"
+sha256 = "1f65df7cd19f82812828221e73cd511de691207339042fdce7315eeb60d89bd5"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.6"]
+
+[[source]]
+id = "lmfdb-lf.top_slope"
+locator_scheme = "section"
+locator = "lf.top_slope"
+url = "https://www.lmfdb.org/knowledge/show/lf.top_slope"
+fetched_from = "https://www.lmfdb.org/knowledge/show/lf.top_slope"
+fetched_at = "2026-11-21T20:59:26Z"
+sha256 = "37857094ddb61a7331821fc37513f774d30d02a148924dae90d3c835861e3b46"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.6"]
+
+[[source]]
+id = "lmfdb-lf.galois_mean_slope"
+locator_scheme = "section"
+locator = "lf.galois_mean_slope"
+url = "https://www.lmfdb.org/knowledge/show/lf.galois_mean_slope"
+fetched_from = "https://www.lmfdb.org/knowledge/show/lf.galois_mean_slope"
+fetched_at = "2026-11-21T20:59:27Z"
+sha256 = "3ba0303198e85f263f8f38e4dc2eb599d35f94319dde3c3b078193dfcede4ad9"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.6"]
+
+[[source]]
+id = "lmfdb-lf.family_mass"
+locator_scheme = "section"
+locator = "lf.family_mass"
+url = "https://www.lmfdb.org/knowledge/show/lf.family_mass"
+fetched_from = "https://www.lmfdb.org/knowledge/show/lf.family_mass"
+fetched_at = "2026-11-21T20:59:27Z"
+sha256 = "586e2e65a2e0001df4a52b141b1a5aa4da9eb0167183377c9ba9f70fdec639ef"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.6"]
+
+[[source]]
+id = "lmfdb-lf.packet"
+locator_scheme = "section"
+locator = "lf.packet"
+url = "https://www.lmfdb.org/knowledge/show/lf.packet"
+fetched_from = "https://www.lmfdb.org/knowledge/show/lf.packet"
+fetched_at = "2026-11-21T20:59:28Z"
+sha256 = "d4b05c24d259be36f6469d6bdc57875b334f4357e10fadfc5e64eaa59b0fa7ea"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.6"]
+
+[[source]]
+id = "lmfdb-lf.subfamily"
+locator_scheme = "section"
+locator = "lf.subfamily"
+url = "https://www.lmfdb.org/knowledge/show/lf.subfamily"
+fetched_from = "https://www.lmfdb.org/knowledge/show/lf.subfamily"
+fetched_at = "2026-11-21T20:59:28Z"
+sha256 = "68b56d73dacd80a6457fda93782725cf0bad9181c5670c525bf1ec3452d91c2f"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.6"]
+
+[[source]]
+id = "lmfdb-nf.galois_root_discriminant"
+locator_scheme = "section"
+locator = "nf.galois_root_discriminant"
+url = "https://www.lmfdb.org/knowledge/show/nf.galois_root_discriminant"
+fetched_from = "https://www.lmfdb.org/knowledge/show/nf.galois_root_discriminant"
+fetched_at = "2026-11-21T20:59:29Z"
+sha256 = "cd2aa0271fc3d292ede087206b258cb2f654ea9cd3d3c80340e8bbec008a17da"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.6"]
+
+[[source]]
+id = "lmfdb-lf.means"
+locator_scheme = "section"
+locator = "lf.means"
+url = "https://www.lmfdb.org/knowledge/show/lf.means"
+fetched_from = "https://www.lmfdb.org/knowledge/show/lf.means"
+fetched_at = "2026-11-21T20:59:29Z"
+sha256 = "8db231db6b8529214a17d22513837def87d64391369185238fcec13875013c09"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.6"]
+
+[[source]]
+id = "pauli-roblot"
+authors = "Sebastian Pauli, Xavier-François Roblot"
+title = "On the computation of all extensions of a 𝑝-adic field of a given degree"
+year = 2001
+venue = "Mathematics of Computation 70"
+doi = "10.1090/S0025-5718-01-01306-0"
+locator_scheme = "theorem"
+locator = "Theorem 6.1"
+url = "https://hal.science/hal-00863052v1"
+fetched_from = "https://hal.science/hal-00863052/document"
+fetched_at = "2026-11-21T21:00:25Z"
+sha256 = "d6472ff393fb27b2625f0c7e65197888079d55c0eb41488f8a731a03f65a96c9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["5.3"]
+
+[[source]]
+id = "heiermann"
+authors = "Heiermann"
+title = "De nouveaux invariants numériques pour les extensions totalement ramifiées de corps locaux"
+year = 1996
+venue = "Journal of Number Theory 59"
+doi = "10.1006/jnth.1996.0092"
+locator_scheme = "theorem"
+locator = "Definition 3.13"
+url = "https://doi.org/10.1006/jnth.1996.0092"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.1"]
+
+[[source]]
+id = "jones-roberts-grd"
+authors = "John W. Jones, David P. Roberts"
+title = "Galois number fields with small root discriminant"
+year = 2007
+venue = "Journal of Number Theory 122"
+doi = "10.1016/j.jnt.2006.05.001"
+locator_scheme = "section"
+locator = "§2"
+url = "https://doi.org/10.1016/j.jnt.2006.05.001"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.2"]
