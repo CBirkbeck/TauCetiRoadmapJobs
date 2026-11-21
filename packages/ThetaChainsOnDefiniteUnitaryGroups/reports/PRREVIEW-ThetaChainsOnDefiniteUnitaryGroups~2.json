@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsOnDefiniteUnitaryGroups~2",
+  "head": "1ab85780617b98744efe2bcf71d9262036db2a41",
+  "pr": 2918,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsOnDefiniteUnitaryGroups",
+  "date": "2026-11-21",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "Full read of README (2249 lines) and Suggested.lean (no declarations; module docstring names the missing carriers). Seeded sample of 15 sections (2.1, 2.2, 2.3a, 2.4, 2.6, 2.7, 2.8, 2.9c, 3.1a, 3.1c, 3.3, 3.4, 3.5, 3.6, 3.9): no locator into a readable text ([FormalProof] held only as a kernel export; [Announcement] read in full), so each was checked by computation: CM constants sqrt(-d)*s2 for d=7..163, theta0''(0), the quasi-period identity, Chowla-Selberg log Omega_K, exceptional sets B(3,11), B(3,19), Hecke-character criterion and counterexamples, branching integer, index and window computations. About 70 cross-roadmap anchors resolved on main and at sibling heads; all present. Automatic checks: all passed; depcheck 0 problems; lake env lean on Suggested.lean exits 0 with no messages. Findings: Summary overclaims (explicit constant; period bound for twisted tuples), open routes resting on [FormalProof] without locators, false implication about ramification in the Summary.",
+  "text": "37f33c48724a24a1"
+ }
+}
