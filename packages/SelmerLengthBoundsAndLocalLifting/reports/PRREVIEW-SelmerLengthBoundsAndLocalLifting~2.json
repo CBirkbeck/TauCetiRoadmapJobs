@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SelmerLengthBoundsAndLocalLifting~2",
+  "head": "3c9746d0ca3ed2e9d419e3a6c965e6f3ac8f44de",
+  "pr": 2901,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SelmerLengthBoundsAndLocalLifting",
+  "date": "2026-11-21",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 6,
+  "format_notes": 2,
+  "notes": "Full review. Sample of 15 targets (3.22, 3.25a, 3.25b, 3.26, 4.9a-4.9d, 4.10a-4.10g): all Checks recomputed, 4.10d(4) exponent arithmetic verified symbolically and on 78,204 parameter points, round bounds of 4.9c(2), 4.9d(2), 4.10c(3), 4.10e recomputed, 4.10a and 4.10c Checks recomputed against WachLatticesOverTheCyclotomicTower 6.9-6.10; no false mathematics found. Findings: 4.9a duplicates AnabelianGeometryAndNonabelianChabauty 4.6 on main; Suggested.lean wrongly declares headline (1) unstatable (Tau Ceti SelmerStructure; a 45-line probe elaborates); no declaration-level locators into the formal proof. Sources: Bhatt-Scholze Thm 1.2 checked; announcement read (operator-local); formal proof (kernel export only) and Bloch-Kato (paywalled) not verifiable. Worker gate passed; rerun flags only family index and merge order (set aside); depcheck 0 problems; Suggested.lean elaborates with no output.",
+  "text": "44ec391ab2134b84"
+ }
+}
