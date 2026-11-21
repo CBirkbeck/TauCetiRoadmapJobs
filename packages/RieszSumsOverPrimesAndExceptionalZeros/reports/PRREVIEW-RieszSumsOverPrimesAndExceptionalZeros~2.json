@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RieszSumsOverPrimesAndExceptionalZeros~2",
+  "head": "833bd0cbee9ab57c5efe72a2763894e5cc219683",
+  "pr": 2877,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RieszSumsOverPrimesAndExceptionalZeros",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "Full re-review. Previous findings: R01-R03, C01, N01, N02 repaired; R04 (locators) partly repaired, re-raised as R01 for 1.7b (i)-(iii). Seeded sample (0.30b, 1.4e-1.4i, 1.7a, 1.7b, 2.9b, 2.41a) recomputed in the adversarial table; the only readable source, BennettSiksek2020 Theorem 5 (26), was checked at lines 793-807 against 1.4g (b). Gallagher 1970 paywalled, Lagarias-Odlyzko not found, IK/Linnik/Knapowski/Bombieri/FormalProof not readable. Automatic checks all passed; dependency check rerun: 0 problems; Suggested.lean elaborates with three sorry warnings only; #check of all three declarations matches the README; one-tactic probe closes none. Numerics recomputed (least prime D, S_Lambda, max psi(n)/n, log 2 ratio, Fejer sums). Citations resolved on main and at the RiemannHypothesisStatementsAndConsequences head; overlap read for eight closest roadmaps.",
+  "text": "70ba304f904ef7aa"
+ }
+}
