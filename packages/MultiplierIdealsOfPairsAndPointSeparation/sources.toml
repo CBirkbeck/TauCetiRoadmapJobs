@@ -1,0 +1,98 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MultiplierIdealsOfPairsAndPointSeparation"
+
+[[source]]
+id = "KOL97"
+authors = "János Kollár"
+title = "Singularities of Pairs"
+year = 1996
+arxiv = "alg-geom/9601026v2"
+locator_scheme = "theorem"
+locator = "Theorems 5.8, 5.9, 6.4"
+url = "https://arxiv.org/abs/alg-geom/9601026v2"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9601026v2"
+fetched_at = "2026-11-21T18:29:07Z"
+sha256 = "a7cb696d003c6eb64212a23796ae5dffdea4250ec7fe58f35924180c704e4883"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v2"
+cited_for = ["9.12", "9.12a", "9.12b"]
+
+[[source]]
+id = "ESVI92"
+authors = "Hélène Esnault, Eckart Viehweg"
+title = "Lectures on Vanishing Theorems"
+year = 1992
+version_note = "the authors' web edition; its page layout may differ from the printed DMV Seminar volume"
+locator_scheme = "theorem"
+locator = "Properties 5.4 d)"
+url = "https://page.mi.fu-berlin.de/esnault/books/esvibuch.pdf"
+fetched_from = "https://page.mi.fu-berlin.de/esnault/books/esvibuch.pdf"
+fetched_at = "2026-11-21T18:47:48Z"
+sha256 = "b871e99d74e48df662e4652de284393fef6a4a12b99348ba2ff1b55aab2c5135"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["9.10d"]
+
+[[source]]
+id = "STACKS-DIVISORS"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter Divisors"
+year = 2026
+locator_scheme = "tag"
+locator = "01WV, 02OO"
+url = "https://stacks.math.columbia.edu/download/divisors.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/divisors.pdf"
+fetched_at = "2026-11-21T18:47:51Z"
+sha256 = "0527740ac9877baff00aaad784e66aae83ff541dad40d4939028059f9f28a493"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["9.10a"]
+
+[[source]]
+id = "STACKS-VARIETIES"
+authors = "The Stacks Project Authors"
+title = "The Stacks Project, Chapter Varieties"
+year = 2026
+locator_scheme = "tag"
+locator = "0BEP, 0BJ8"
+url = "https://stacks.math.columbia.edu/download/varieties.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/varieties.pdf"
+fetched_at = "2026-11-21T18:47:55Z"
+sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["Conventions", "9.10d"]
+
+[[source]]
+id = "ANGSIU95"
+authors = "Urban Angehrn, Yum-Tong Siu"
+title = "Effective freeness and point separation for adjoint bundles"
+year = 1995
+venue = "Inventiones Mathematicae 122"
+doi = "10.1007/BF01231446"
+locator_scheme = "page"
+locator = "pp. 291-308"
+url = "https://doi.org/10.1007/BF01231446"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.12c"]
+
+[[source]]
+id = "LAZ04"
+authors = "Robert Lazarsfeld"
+title = "Positivity in Algebraic Geometry II"
+year = 2004
+doi = "10.1007/978-3-642-18810-7"
+locator_scheme = "theorem"
+locator = "Theorems 9.1.22, 9.2.19, 9.4.17"
+url = "https://doi.org/10.1007/978-3-642-18810-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.10b", "9.10c"]
