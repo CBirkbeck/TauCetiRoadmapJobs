@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelfGravitatingSphericalEquilibria~2",
+  "head": "c55f9f85d520eece1538a56a7a886e7d41ce561a",
+  "pr": 2948,
+  "folder": "SelfGravitatingSphericalEquilibria",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 103 changed lines since 4ccad93. R01 of the previous review is repaired: 3.1 and 4.2 and their Lean statements now have n < 5. The new route of 3.1 for 1 < n < 5 was recomputed step by step (limit, identity with boundary terms, the two estimates, the exponent (n-5)/(n-1)), with the n = 5 control and the reduction to 3.2 at a zero; the new n = 3 Check of 4.2 was recomputed. Five Mathlib declarations named by the changed passages were opened at the pin. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning (15 theorems); the one-tactic probe was not re-run (hypotheses only weakened). Seeded sample: only 3.1 falls in the changed passages; its Ramming-Rein locator was read in the previous review and the change adds no locator. Pull request title and description agree with this head. Pols and Reall remain unreadable through the sources service (reported to the human reviewers).",
+  "text": "f048871d3a363007"
+ }
+}
