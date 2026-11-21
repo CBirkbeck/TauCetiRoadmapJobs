@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BaseChangeAndGaloisRepresentationsForUnitaryGroups~7",
+  "head": "99329a9664bbf4a417f03aceabd6bd93ba6d7c1e",
+  "pr": 2890,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BaseChangeAndGaloisRepresentationsForUnitaryGroups",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 85 changed lines since 284e520. Checked: the five previous points (all stand repaired); all 19 new locators into the formal proof (file and declaration exist; statements read for 16) against the scope sentences of 10.29a, 10.33c, 10.33d, 10.35, 13.8a, 14.2, 15.1, 16.1; the new weight formula of 16.1 recomputed against the weight a, the rank-one and trivial Checks and the formal weight law; the rec conventions in rank one; the new supplier FrobeniusRestrictedRieszSums 0.4 at its open head (no cycle); the seeded sample where it falls in changed passages; the description against the head. Finding R01 (P2): 13.8a narrowed to the cyclic hosts although its route does not use them. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with no output (no declarations).",
+  "text": "f5b756d94567fb8c"
+ }
+}
