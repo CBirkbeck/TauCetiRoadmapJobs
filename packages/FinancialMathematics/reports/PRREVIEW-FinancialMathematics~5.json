@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FinancialMathematics~5",
+  "head": "9196a420fe429e8e515f1025a6e7402d8ffee80b",
+  "pr": 2557,
+  "folder": "FinancialMathematics",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 33 changed lines since 507c038. Checked: the weakened hypotheses of eq_callValue_of_pde and eq_putValue_of_pde against the pinned whole-space uniqueness theorem (no joint continuity needed) with the transformed equation recomputed; README overview and section 4.2 against the elaborated Lean types; the new anchor m01-assets-and-trading against MarketImpact's link (D01 resolved inside the folder); previous C02 repaired, C01 and N01 carried. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with three sorry warnings only; one-tactic probes close neither changed theorem; description agrees with the head. Seeded sample: no locator in the changed passages, no source readable.",
+  "text": "d7cc7d1d5e034a19",
+  "carried": {
+   "from": "9196a420fe429e8e515f1025a6e7402d8ffee80b",
+   "head": "15537346972e18216e3e1df2253b043f8035c789",
+   "findings": 1,
+   "lines": 18,
+   "folders": [
+    "FinancialMathematics"
+   ],
+   "corrections": true
+  }
+ }
+}
