@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PositivityOfDirichletSeriesWithKernels~8",
+  "head": "01b98d45d6c2d6c67b559539f224b839401ddd58",
+  "pr": 2903,
+  "folder": "RiemannHypothesisForDirichletLFunctions/PositivityOfDirichletSeriesWithKernels",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Sample 6.1-6.10, 7.1, 8.1, 8.2 checked by computation: every Check and worked example recomputed, the route of 6.8 in both forms, the numerical Check of 8.1 (c) reproduced at 1.402|t|^2 and 0.554|t|^2, the 3-adic Checks of 8.2 recomputed. Sources: 50 declarations of the formal proof read at their files (operator's local copy) and compared with the README; DabrowskiFisher1997 (7 locators); Announcement skimmed; Hormander1990 and KaczorowskiPintz1986 uncertified, three classical references not cached. Library: 29 Mathlib and 2 Tau Ceti declarations opened at the pins; 16 cross-roadmap citations resolved. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only (8 theorems); one-tactic probe closes none. Small correction: 7.1 (a), (c), the consequence of 6.5 (c) and det H != 0 in 8.1 (c) are attributed to formal-proof declarations that do not state them. Format note: HasWindows is an equivalent form of the formal predicate. For humans: scope (main source is an unrefereed formal proof) and licence of that repository.",
+  "text": "d278be723bea4b57",
+  "carried": {
+   "from": "01b98d45d6c2d6c67b559539f224b839401ddd58",
+   "head": "62a3b85a42437fc83d11e7c2637529eb689ec6e2",
+   "findings": 1,
+   "lines": 24,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/PositivityOfDirichletSeriesWithKernels"
+   ],
+   "corrections": true
+  }
+ }
+}
