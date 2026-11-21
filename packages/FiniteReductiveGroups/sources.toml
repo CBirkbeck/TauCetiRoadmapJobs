@@ -32,3 +32,57 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["2.4", "2.6"]
+
+[[source]]
+id = "HowlettLehrer1980"
+authors = "R. B. Howlett; G. I. Lehrer"
+title = "Induced cuspidal representations and generalised Hecke rings"
+year = 1980
+venue = "Inventiones Mathematicae 58, 37-64"
+locator_scheme = "theorem"
+locator = "Theorem 3.18 (p. 48), Theorem 4.14 (pp. 56-57), Example 4.15 (pp. 57-58)"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0058/LOG_0008.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0058/LOG_0008.pdf"
+fetched_at = "2026-11-21T23:30:34Z"
+sha256 = "d79905930f47d129f6a80d08677dae1fd6ad3e53deadec9622e700d3eb3446fa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["1.4"]
+
+[[source]]
+id = "MoyPrasad1996"
+authors = "Allen Moy; Gopal Prasad"
+title = "Jacquet functors and unrefined minimal K-types"
+year = 1996
+venue = "Commentarii Mathematici Helvetici 71, 98-121"
+doi = "10.1007/BF02566411"
+locator_scheme = "theorem"
+locator = "Theorem 5.2 (1) (p. 110)"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0071/LOG_0009.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN358147735_0071/LOG_0009.pdf"
+fetched_at = "2026-11-21T23:38:16Z"
+sha256 = "5fb6fbfdd3f15bbd484f098e9d104cc4b300945199903e07eacec75c5f109f20"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["6.3"]
+
+[[source]]
+id = "Gelfand1970"
+authors = "S. I. Gelfand"
+title = "Representations of the full linear group over a finite field"
+year = 1970
+venue = "Matematicheskii Sbornik 83(125), 15-41; English translation Math. USSR Sbornik 12, 13-39"
+doi = "10.1070/SM1970v012n01ABEH000907"
+locator_scheme = "theorem"
+locator = "Proposition 1.3, Theorem 2.3 and its Corollary 1, Theorem 3.3 (pp. 20-23 of the Russian original)"
+version_note = "read in the Russian original; the theorem numbers are cited, the pages are those of the original"
+url = "https://www.mathnet.ru/php/getFT.phtml?jrnid=sm&paperid=3499&what=fullt&option_lang=rus"
+fetched_from = "https://www.mathnet.ru/links/f85747538d5d66a01709e6c2edb74a25/sm3499.pdf"
+fetched_at = "2026-11-21T23:39:09Z"
+sha256 = "308cfe643eb1f7402faa44586178b391fb8626786adf0da56fb6eba8c679561f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["2.4"]
