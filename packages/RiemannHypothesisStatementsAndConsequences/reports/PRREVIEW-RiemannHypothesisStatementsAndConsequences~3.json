@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RiemannHypothesisStatementsAndConsequences~3",
+  "head": "3361ea7d5d3396680433052351e85fdc57124652",
+  "pr": 2885,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RiemannHypothesisStatementsAndConsequences",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full re-review (684 changed lines since 885d46b). Previous findings: R01 and C01-C05, C07, C08, N01-N03 repaired; C06 (chapter-level locators) not repaired. Seeded sample of 15 targets recomputed (3.2a, 8.4a, 8.4b, 8.8, 8.8a, 9.2-9.5, 9.7-9.9, 10.2, 10.3, 11.1); none of the five cited works has a legal copy (Davenport settled uncertified; Titchmarsh and Littlewood retried, no legal source). Automatic checks: all passed at this head; depcheck 171 roadmaps, 1994 edges, 0 problems. Suggested.lean elaborates with 13 sorry warnings only; #check of all 19 declarations compared with README; one-tactic probe: all 13 theorems survive. 122 cited library names resolved at the pins; cross-roadmap sections resolved on main and at open heads (QuasiRiemannHypothesis, ExplicitNumberFields, RieszSumsOverPrimesAndExceptionalZeros). Finding: global form of 9.2's converse product clause lost its meromorphy hypothesis in the repair (counterexample with nowhere-meromorphic factors).",
+  "text": "02e4cc263638afa8",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C02: the dangling name is in the sibling's own text, not here.",
+    "where": "GeneralizedRiemannHypothesisFromWindowBounds §5.2 route and its §9.4 contract",
+    "raised": "PRREVIEW-RiemannHypothesisStatementsAndConsequences~3"
+   }
+  ]
+ }
+}
