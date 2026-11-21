@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaSeries~6",
+  "head": "e7d0eeb6c6e8b161c2b85447c690f1178c727ace",
+  "pr": 2725,
+  "folder": "ThetaSeries",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review of the repaired head. The previous review's finding (lettered ids 1A-8E) and its three small corrections are repaired; its format note on coarse locators stands as N01. Seeded sample of 15 targets (1.6, 2.4, 2.7, 2.9, 3.2, 3.5, 5.2, 6.1, 6.2, 6.6, 7.2, 7.3, 8.1, 8.3, 8.6) and every headline recomputed with values in the adversarial table; no cited source could be read legally (0 of 19 locators checked against text). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 10 sorry warnings only; one-tactic probe closes none of the 10 theorems; none is proved at the pinned Tau Ceti; 261 In-Tau-Ceti names resolved at the pin; cross-roadmap citations resolved on main; overlap read against 8 closest roadmaps, nothing shared. One small correction (a description sentence says section 6.2 is in the form the pinned library proves; it is an open target).",
+  "text": "66cabe13f45b822e",
+  "carried": {
+   "from": "e7d0eeb6c6e8b161c2b85447c690f1178c727ace",
+   "head": "e7d0eeb6c6e8b161c2b85447c690f1178c727ace",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
