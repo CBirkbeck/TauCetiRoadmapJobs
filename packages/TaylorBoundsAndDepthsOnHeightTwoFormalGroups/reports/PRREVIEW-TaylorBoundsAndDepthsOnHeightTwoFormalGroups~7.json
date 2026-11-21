@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TaylorBoundsAndDepthsOnHeightTwoFormalGroups~7",
+  "head": "59432734649e3e05a384232370a05bf35b82b61d",
+  "pr": 2914,
+  "folder": "RiemannHypothesisForDirichletLFunctions/TaylorBoundsAndDepthsOnHeightTwoFormalGroups",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 82 changed lines since ef74e2f. Checked: R01-R03 and C01-C03 of the previous report repaired, N01 partly; the new route of 4.8b' (1) recomputed (cocycle identities, antisymmetry, the derivation and symmetry steps, units of a semi-abelian model); 4.6 (f) recomputed for p = 3; 4.4a twist recomputed; supplier sections 0.5d and Lubin-Tate 4.4 re-read at their open heads; the two Farkas declarations opened at the pinned Mathlib; three [FormalProof] locators of the changed passages read in the operator's local copy; pull request text read against the head. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with three sorry warnings only (file unchanged).",
+  "text": "287d7648a1b77331",
+  "carried": {
+   "from": "59432734649e3e05a384232370a05bf35b82b61d",
+   "head": "917ac5458063a7894ab3fc600230015a10534ba4",
+   "findings": 1,
+   "lines": 19,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/TaylorBoundsAndDepthsOnHeightTwoFormalGroups"
+   ],
+   "corrections": true
+  }
+ }
+}
