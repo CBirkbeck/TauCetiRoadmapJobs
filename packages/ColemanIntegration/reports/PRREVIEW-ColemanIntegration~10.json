@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ColemanIntegration~10",
+  "head": "cc29686235911ce38099e03eb40a5f646030c5bb",
+  "pr": 2864,
+  "folder": "ColemanIntegration",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Full review of a repaired head. Previous finding R01 (Artin L-function supplier) and corrections C01-C03 are repaired; N01 partly (carried as a format note). Fresh sample recomputed in all four layers (L0.2, L0.5-L0.8, L0.12, L0.15, L0.21, L0.22, L1.6-L1.11, L1.18-L1.20, L2.3-L2.10, L2.18, L2.Fb, L2.69-L2.71, L3.9-L3.15, L3.28-L3.30, L3.36-L3.37); 68 source locators checked against the text in BBK, BT, F, BF, RJW, BBdJR, BDJ (preprint and version of record), BHYY, GSWZ, all correct; 55 library declarations opened at the pins; AnalyticNumberTheoryPartI 2.18a read on main. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with five sorry warnings only; one-tactic probe closes none of the five theorems. One source issue recorded (RJW Thm 6.7(ii) prints no Teichmuller twist). Not recomputed this round: L1.21-L1.44, L2.12-L2.17, L2.19-L2.68, L3.Fa-L3.Fc, L3.Fd.2(b)-(d), L3.1-L3.8, L3.17-L3.27, L3.32-L3.35; sources BH, MP, W, FPZ, DJ, Lazard, Kedlaya, Serre, Weibel, Quillen, Feliu, BC not opened.",
+  "text": "db4c17b23f0da1d7"
+ }
+}
