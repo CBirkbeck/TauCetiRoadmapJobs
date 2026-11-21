@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InformationTheoreticCryptography~1",
+  "head": "0886d8d078da44061d8b497c74398c5a9e384223",
+  "pr": 2947,
+  "folder": "InformationTheoreticCryptography",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. All 11 sampled targets recomputed by hand (degenerate cases, every Check, both directions of each iff). Beimel's survey read at all 12 locators (author's page); Boneh-Shoup v0.6 could not be fetched from a place the sources service accepts, so the 10 Layer 1 locators are listed as not verifiable. 30 Mathlib declarations opened at the pin; the two supplier citations (ProbabilisticAndMetricNumberTheory 5.1a on main, EntropyAndSourceCoding 1.1 at its open head) resolved. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probes close none of the 11 theorems.",
+  "text": "fc9ad199c7963b1d"
+ }
+}
