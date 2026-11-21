@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~8",
+  "head": "a690df72a38341b1375ab14558ab777365d5e34d",
+  "pr": 2923,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Sample: Chowla-Selberg 1967 (§6 (39) p.97; §12 (1) p.109, (2) p.110) and Damerell 1970 (§2 Thm 1 p.290; §6 p.300) read at their locators; all 40 cited files and 46 cited declarations of the formal proof found in the operator's local copy, statements read for 8.5, 8.14a, 8.14b, 8.15c, 8.15d, 8.17, 8.18 (c), 8.18e, 8.19d; sampled targets without a source locator (8.13, 8.18c, 8.18f, 8.19a', 8.19a'', 8.19a''') checked by computation and against their supplier sections. Adversarial table of 31 rows; Chowla-Selberg class means equal to 9 decimals for D = 7, 8, 23, 47 (and 3, 4). Automatic checks all passed; depcheck 170 roadmaps, 2009 edges, 0 problems; Suggested.lean elaborates with the sorry warning only, #check matches README 8.5 (a), one-tactic probe closes nothing. Finding R01 (P2): 8.19d (i)-(ii) restricted to the fields of 8.19b although the cited formal-proof declaration and the route hold for every CM field unramified over its real subfield. Corrections: credit of 8.5 (b) wider than the cited declarations; a route sentence of 8.19d (i) with the Euler factors on the wrong side; unowned inputs of 8.19b-c described as having owners. Format note: Needs-cited roadmaps without supplier-contract entries.",
+  "text": "e303a9708ddf4463"
+ }
+}
