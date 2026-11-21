@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ProjectiveModelsAndPeriodBoundsOnShimuraVarieties~7",
+  "head": "39bcc3d43d77e4139a7baf2d700eed09e04984ba",
+  "pr": 2910,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ProjectiveModelsAndPeriodBoundsOnShimuraVarieties",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. Sample: 6.2a, 6.7a, 6.9a, 7.12a, 7.17a, 7.31a, 9.1, each checked against the text: 35 FormalProof declarations in 30 files read in the operator's local copy of the repository's src directory, DN Theoreme 2.3, Stacks Tags 0C4K and 0893. Lan 2016 and Lan 2017 could not be read (no legal copy). All automatic checks passed; the dependency check reports 0 problems; Suggested.lean elaborates with no output and declares nothing, its docstring naming the three headlines and the missing carriers, which were confirmed absent at the pins. 50 cross-roadmap citations resolved. Adversarial table: 20 rows with computed values. Finding: the cubical line bundle clause of 7.31a (b) has no proof of the extension of the line bundle over a normal base and no source (R01, P2). Corrections: two Checks of 6.9a are not instances of the theorem; 7.31a (b') narrower than its source in (i) and (iii); the description omits the supplier EquivariantIntersectionTheory.",
+  "text": "559c4755c421b080"
+ }
+}
