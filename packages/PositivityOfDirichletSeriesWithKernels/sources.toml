@@ -49,3 +49,18 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["References"]
+
+[[source]]
+id = "KaczorowskiPintz1986"
+authors = "Jerzy Kaczorowski; János Pintz"
+title = "Oscillatory properties of arithmetical functions I"
+year = 1986
+venue = "Acta Mathematica Hungarica 49"
+doi = "10.1007/bf01951008"
+locator_scheme = "section"
+locator = "whole paper"
+url = "https://doi.org/10.1007/bf01951008"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.8"]
