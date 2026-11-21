@@ -37,3 +37,21 @@ status = "certified"
 accessed = "2026-11-21"
 version_note = "arXiv v5"
 cited_for = ["4.3", "6.1"]
+
+[[source]]
+id = "Rapinchuk"
+authors = "Andrei S. Rapinchuk"
+title = "On strong approximation for algebraic groups"
+year = 2012
+arxiv = "1207.4425v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.3"
+url = "https://arxiv.org/abs/1207.4425v1"
+fetched_from = "https://arxiv.org/pdf/1207.4425v1"
+fetched_at = "2026-11-21T18:44:00Z"
+sha256 = "43f6a45ceb9e51e1ca959c0d0574474cb1c20ea5a4e13852eee1886aceadab97"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["2.5"]
