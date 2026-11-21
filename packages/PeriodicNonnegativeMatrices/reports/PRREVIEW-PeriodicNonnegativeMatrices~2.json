@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PeriodicNonnegativeMatrices~2",
+  "head": "9542da7defce5c0d9467cbd912b1e26067ba2d8c",
+  "pr": 2925,
+  "folder": "PeriodicNonnegativeMatrices",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 51 changed lines since 60d7b18. Checked: the three previous remarks (R01, C01, N01), all repaired; the changed passages (Conventions, 1.1 definition and new Check with A = (-1), new ZMod 2 Check of 1.3, both docstrings, References line) recomputed, with Matrix.pow_apply_pos_iff_nonempty_path opened at the pin; Boyle Definitions 3.1-3.2 and Proposition 3.3 reread for the changed passages; Brouwer-Haemers still not readable (8 of 14 locators unverified, left to the human reviewers). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 13 sorry warnings and no error; title and description agree with the head; no change outside the folder.",
+  "text": "cda5a200bea771a6"
+ }
+}
