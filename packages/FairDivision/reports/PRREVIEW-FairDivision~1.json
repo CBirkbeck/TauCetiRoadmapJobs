@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FairDivision~1",
+  "head": "cb980778f737bf3e3e049eaeb98c93eb7e65f368",
+  "pr": 2929,
+  "folder": "FairDivision",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All 11 seeded targets recomputed (adversarial table with values); numerical Checks of 3.2, 4.4, 5.1-5.3 reproduced by script. Source sample: 11 of 11 Karlin-Peres locators verified against the text; Su 1999, Caragiannis et al. 2019 and the Handbook chapter (targets 3.1, 4.1-4.4) had no copy the sources service accepts and are listed under Not verifiable. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 8 theorems. Dependency check: 0 problems. Automatic checks all passed; none set aside. 21 Mathlib declarations opened at the pin; 4 cross-roadmap citations resolved. One mistaken fetch (a wrong arXiv identifier tried for Su 1999) was removed from the sources manifest again; the manifest now records only Karlin-Peres.",
+  "text": "ae06c4d73ec29299"
+ }
+}
