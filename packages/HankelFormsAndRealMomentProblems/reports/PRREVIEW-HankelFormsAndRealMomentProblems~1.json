@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HankelFormsAndRealMomentProblems~1",
+  "head": "c82f35dfbd0fd5bebe6c5e8e7c70ce283f754050",
+  "pr": 2851,
+  "folder": "HankelFormsAndRealMomentProblems",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All nine sampled sections (1.1, 1.2, 2.1, 2.2, 3.1, 3.2, 3.3, 4.1, 4.2) read against Schmüdgen (arXiv:2008.12698v1), Simon (arXiv:math-ph/9906008) and Zalar (arXiv:2101.00486v2) at their locators, fetched through the sources service; Curto-Fialkow 1991 not opened. Every Check recomputed by hand; every cited Mathlib and Tau Ceti declaration opened at the pins; supplier sections 2.4, 5.3, 7.3, 7.4 of SpecialFunctionsOrthogonalPolynomialsGeneral read on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 12 sorry warnings only; one-tactic probe closes none of the 12 theorems.",
+  "text": "bd408dba63598f33"
+ }
+}
