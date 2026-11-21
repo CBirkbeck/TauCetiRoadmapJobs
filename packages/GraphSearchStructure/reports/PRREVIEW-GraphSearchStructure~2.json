@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GraphSearchStructure~2",
+  "head": "fea80d5efca66cee1d2a451a8011a8c6a6e90f1f",
+  "pr": 2950,
+  "folder": "GraphSearchStructure",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 71 changed lines since 950242d. Checked: the four previous points (R01, C01, N01, N02), all repaired; the changed passages recomputed (the six interval assignments of one arc in 1.2, the loop sentence and edge bound in 3.1, the uncountable complete graph in 4.2, the Needs lines of 4.2 and 4.4, the 5-cycle example of Layer 5, the scope sentence); automatic checks all passed; dependency check 0 problems; Suggested.lean unchanged and elaborates with 15 sorry warnings only; cross-roadmap citations resolved again; pull request text compared with the head (one small correction). Seeded sample: no source locator could be checked against its text, since neither Erickson nor Diestel could be read legally here; the five locators the change adds are listed as not verifiable and as questions.",
+  "text": "8ed4f9a8605a3ed7"
+ }
+}
