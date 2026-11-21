@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DiscreteSeriesCoefficientsAndAutomorphicMetrics~5",
+  "head": "6d1a84ad0c93e881eb5205ba8a9b912e87475f15",
+  "pr": 2909,
+  "folder": "RiemannHypothesisForDirichletLFunctions/DiscreteSeriesCoefficientsAndAutomorphicMetrics",
+  "date": "2026-11-21",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. One finding (P2): the compact dual of 8.3 is defined by its Lie algebra only, so the measure and the formal-degree formula of headline (1) are not determined (SL2(R): k-1 with SU(2), (k-1)/2 with SO(3), computed). Sample: all 13 seeded targets (2.4a, 2.4b, 6.8, 6.8a, 7.5a, 7.5b, 7.5c, 8.1, 8.2, 8.3, 9.1, 10.1, 10.2) recomputed and their locators read: 14 classical locators in hc-1953, hecht-schmid-1975, muller-1989, mumford-1977, thorne-2012 and the Announcement; all 37 module and declaration locators into the formal proof resolved in its public repository, with thresholds and constants compared for 2.4a, 2.4b, 6.8a and 8.3. Not read: hc-1966, gross-1999, muller-1998 (uncertified), Harris 1989, Zuckerman 1977, Knapp 1986. Cross-roadmap citations resolved on main and at open heads; library names opened at the pins. Automatic checks: all passed; depcheck against the candidate order 0 problems; lake env lean on Suggested.lean exit 0 with no output (the file declares nothing).",
+  "text": "7be71792db6f06a9"
+ }
+}
