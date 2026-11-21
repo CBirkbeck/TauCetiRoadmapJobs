@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalAnabelianGeometryPartII~5",
+  "head": "bcc9e15605576ec670ae4999833ac3ababfa23e4",
+  "pr": 2867,
+  "folder": "LocalAnabelianGeometryPartII",
+  "date": "2026-11-21",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample: 1.3, 1.6, 2.4, 2.5, 3.1, 4.4, 5.4 and the p. 2 claim of 6.5 checked against the journal text of Abrashkin 2010 (Numdam, fetched through the sources service; printed page = file page - 1), 24 locators in all, all agree; 5.0, 5.2 and 6.5 are the README's own arguments and were recomputed; 7.1, 7.3, 7.4, 9.2 (Abrashkin 2000) and 10.1 (Deligne 1984) are not verifiable: no legal copy found, nor of Abrashkin 1998. Findings: the sign of pi_{K-infinity} on the generators in 4.1 contradicts the README's generator convention (P2); Props. 3.5, 5.3, 2.5-2.7 and 5.7 are quoted without hypotheses of the source (P2). The three findings of the review of 1a52af2 are repaired; the new target 6.5 is sound. Adversarial table of 30 rows with computed values. Automatic checks: dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with three sorry warnings only; one-tactic probes (simp, rfl, infer_instance, exact?, aesop) close nothing; the TeX-syntax hits, the dropped-binder lead and the unknown-name lead are set aside as false positives. Cross-roadmap citations all resolve at main or at the open heads. No change outside the folder; the pull request description agrees with the head. No manifest was edited. A guessed arXiv identifier for Abrashkin 2000 fetched an unrelated paper into the sources cache (no manifest entry); nothing in the review relies on it.",
+  "text": "e8e8aafefbeb5100"
+ }
+}
