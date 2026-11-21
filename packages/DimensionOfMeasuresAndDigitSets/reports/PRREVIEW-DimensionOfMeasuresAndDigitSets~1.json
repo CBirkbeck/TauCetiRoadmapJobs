@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DimensionOfMeasuresAndDigitSets~1",
+  "head": "75b7dc648b6e1e9a3003d7f4177ecc7c86da4b27",
+  "pr": 2937,
+  "folder": "DimensionOfMeasuresAndDigitSets",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All 12 sampled targets (1.1-1.4, 2.1-2.2, 3.1-3.4, 4.1-4.2) recomputed in degenerate cases and checked against the text of the three sources (23 locators read: Bishop-Peres draft, Hochman notes, arXiv:1601.01948v1); 6 source issues recorded. 30 library declarations opened at the pins; FractalGeometry citations resolved at its open head, ProbabilisticAndMetricNumberTheory and DiophantineApproximationAndTranscendence on main. Dependency check: 0 problems. Suggested.lean elaborates with sorry the only warning; #check on all 14 declarations; one-tactic probe closes none of the 8 theorems. Automatic checks all passed. Jarnik 1928 and the published Bishop-Peres edition not read.",
+  "text": "2e191928aed8ab1d"
+ }
+}
