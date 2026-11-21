@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MultiplierIdealsOfPairsAndPointSeparation~6",
+  "head": "8adc7fb9d33c9875f1077e0882575a1bdb0baf47",
+  "pr": 2911,
+  "folder": "RiemannHypothesisForDirichletLFunctions/MultiplierIdealsOfPairsAndPointSeparation",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 57 changed lines since afb1edc. Checked: R01 (9.12 now n >= 1; n = 0 cases of the 9.12b and 9.12c routes computed), C01 (etale and field-extension form of 9.10a (c), computed on an open immersion, a double cover of G_m and a non-geometrically-integral line), C02, C03, N01, N02 all repaired; new Kollar locators (Theorem 2.16 p. 13, Lemmas 3.10, 3.11, Corollary 3.12 pp. 18-19) read in KOL97; kappa-form of the Angehrn-Siu hypothesis shown equivalent to the strict form; two-point case from Kollar 5.8 with 5.9; Tau Ceti InvertibleSheaf.canonicalBundle opened at the pin; pull request text read against the head. Angehrn-Siu Theorem 0.3 (paywalled) not verifiable: one question. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning; no change outside the folder. One format note (g^*Delta for a non-Q-Cartier Weil divisor is not defined).",
+  "text": "00f53c1d687fe4bd"
+ }
+}
