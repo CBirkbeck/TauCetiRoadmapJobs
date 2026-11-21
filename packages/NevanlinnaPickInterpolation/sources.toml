@@ -1,0 +1,33 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "NevanlinnaPickInterpolation"
+
+[[source]]
+id = "Simon2005"
+authors = "Barry Simon"
+title = "OPUC on One Foot"
+year = 2005
+arxiv = "math/0502485v1"
+locator_scheme = "equation"
+locator = "(3.1)"
+url = "https://arxiv.org/abs/math/0502485v1"
+fetched_from = "https://arxiv.org/pdf/math/0502485v1"
+fetched_at = "2026-11-21T04:02:29Z"
+sha256 = "3e8fe4d8bac316512d977b8ef58e12cc5b2694163bc276f67c1c14bc8da3e0d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["1.2"]
+
+[[source]]
+id = "Sarason1967"
+locator_scheme = "section"
+locator = "§4"
+url = "https://www.ams.org/journals/tran/1967-127-02/S0002-9947-1967-0208383-8/S0002-9947-1967-0208383-8.pdf"
+fetched_from = "https://www.ams.org/journals/tran/1967-127-02/S0002-9947-1967-0208383-8/S0002-9947-1967-0208383-8.pdf"
+fetched_at = "2026-11-21T04:03:22Z"
+sha256 = "97d91e9a6e8907f1d4f238f089b4ab81ec0082c41985431bfd4129c63a4edb19"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["3.1"]
