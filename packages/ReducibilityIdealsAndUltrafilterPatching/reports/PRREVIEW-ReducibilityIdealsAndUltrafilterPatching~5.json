@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ReducibilityIdealsAndUltrafilterPatching~5",
+  "head": "a30b281f81fea07f458c3d122154b74ccd76563a",
+  "pr": 2900,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ReducibilityIdealsAndUltrafilterPatching",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. Sample: all eleven seeded targets (3.16, 3.17, 4.8, 4.9, 6.10-6.16) recomputed by hand with degenerate instances and the README's Checks; the adversarial table has a row for each and for the three Lean headlines. Sources: Stacks tags 00IQ, 00LN, 061R, 061S, 05GG, 031D, 09B8, SGA2 XIII 2.1, Skinner-Wiles Prop. 4.1, Allen-Newton-Thorne, Teissier and Iyengar-Khare-Manning read in the cache; [FormalProof] (27 of 38 locators) could not be read (host in no licence class); Serre and Fulton uncertified. Library declarations opened at the pins, including Tau Ceti's Matrix.length_quotient_range_mulVecLin_eq_ord_det, the free case of 3.17 (C03). Cross-roadmap citations resolved on main and at open heads; overlap read against UniformWildKernelBounds, HeckeIdealsAndTaylorWilesRelations, LengthBoundsInPadicFamilies and DeformationAndDerivedPatchingAlgebra: nothing shared. Automatic checks: all passed; dependency check 0 problems; Suggested.lean elaborates with three sorry warnings only; one-tactic probe closes none of the three theorems. 4.9 (1) in general and the unrouted 6.15-6.16 rest on the unread formalization and were checked by hand and on examples only.",
+  "text": "e8d5285e12aa10f1",
+  "carried": {
+   "from": "a30b281f81fea07f458c3d122154b74ccd76563a",
+   "head": "b0506e1e3ce97a4ab2b2490cffefc41c819e4ca5",
+   "findings": 5,
+   "lines": 23,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ReducibilityIdealsAndUltrafilterPatching"
+   ],
+   "corrections": true
+  }
+ }
+}
