@@ -1,0 +1,79 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LaplacianEigenvaluesOfGraphs"
+
+[[source]]
+id = "DLS"
+authors = "E. Brian Davies, Josef Leydold, Peter F. Stadler"
+title = "Discrete Nodal Domain Theorems"
+year = 2000
+arxiv = "math/0009120v1"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://arxiv.org/abs/math/0009120v1"
+fetched_from = "https://arxiv.org/pdf/math/0009120v1"
+fetched_at = "2026-11-21T20:12:42Z"
+sha256 = "81ca7d5e46f931b93f9fae60d676f7eae361504322fb7278ffcefd900b67a40e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["6.2"]
+
+[[source]]
+id = "TrevisanMaxCut"
+authors = "Luca Trevisan"
+title = "Max Cut and the Smallest Eigenvalue"
+year = 2008
+arxiv = "0806.1978v5"
+locator_scheme = "theorem"
+locator = "Lemma 3"
+url = "https://arxiv.org/abs/0806.1978v5"
+fetched_from = "https://arxiv.org/pdf/0806.1978v5"
+fetched_at = "2026-11-21T20:12:48Z"
+sha256 = "3b4fc10c361a4ce809a69e6b2706cc65d1282d49a13f024e7d4f2f47d6a79ae3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v5"
+cited_for = ["8.2"]
+
+[[source]]
+id = "BH"
+authors = "Brouwer"
+title = "Spectra of Graphs"
+year = 2012
+venue = "Universitext"
+doi = "10.1007/978-1-4614-1939-6"
+locator_scheme = "theorem"
+locator = "Proposition 1.7.1"
+url = "https://doi.org/10.1007/978-1-4614-1939-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.1"]
+
+[[source]]
+id = "Spielman"
+locator_scheme = "theorem"
+locator = "Theorem 24.5.1"
+url = "http://cs-www.cs.yale.edu/homes/spielman/sagt/sagt.pdf"
+fetched_from = "http://cs-www.cs.yale.edu/homes/spielman/sagt/sagt.pdf"
+fetched_at = "2026-11-21T20:13:08Z"
+sha256 = "6b70ebd45e3369754ae597a42fda8531a8cb35407d16afef65dfff509369861c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["6.1"]
+
+[[source]]
+id = "TrevisanNotes"
+locator_scheme = "section"
+locator = "6.1"
+url = "https://lucatrevisan.github.io/books/expanders-2016.pdf"
+fetched_from = "https://lucatrevisan.github.io/books/expanders-2016.pdf"
+fetched_at = "2026-11-21T20:13:10Z"
+sha256 = "ebf060d2947b7a2f0ee7266247f16d65559279280bf9df0f9ea4224081098053"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["8.1"]
