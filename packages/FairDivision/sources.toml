@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FairDivision"
+
+[[source]]
+id = "KarlinPeres2017"
+locator_scheme = "theorem"
+locator = "Theorem 11.2.3"
+url = "https://homes.cs.washington.edu/~karlin/GameTheoryBook.pdf"
+fetched_from = "https://homes.cs.washington.edu/~karlin/GameTheoryBook.pdf"
+fetched_at = "2026-11-21T17:18:38Z"
+sha256 = "1937bf727b67bce604d8a140b571365adc3330864a80036f5ff9a667855ee3cc"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-21"
+cited_for = ["5.2"]
