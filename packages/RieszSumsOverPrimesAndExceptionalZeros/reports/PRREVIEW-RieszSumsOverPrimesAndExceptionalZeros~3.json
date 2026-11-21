@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RieszSumsOverPrimesAndExceptionalZeros~3",
+  "head": "df7d2be6b489223448d37a8786a84bfd8b081812",
+  "pr": 2877,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RieszSumsOverPrimesAndExceptionalZeros",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "incremental re-review of 78 changed lines since 833bd0c. Checked: the five earlier remarks (R01, C02, C04 and the C01 effectivity claims repaired; C03 partly repaired, carried as C02); the new 1.7b locators against Gallagher1970 ((26)-(27) p. 336, Theorem 7 (29) p. 337), Linnik1944a ((2) p. 139), Linnik1944b (Theorem p. 347, section 3 p. 348) and Bombieri1987 (Theoremes 13, 14, 16, pp. 39-41), with page images; 1.4g (b) against BennettSiksek2020 lines 805-806; the Landau-lemma route of 0.30b against AnalyticNumberTheoryPartIII 8.3 on main (R = 15/4, r2 = 4/5, r1 = 2/3); the 2.9b saving Check recomputed; the family index compared at 17 sibling heads; ownership of Linnik's theorem and the repulsion against SieveMethodsAndPrimePatterns 2.9 and ExplicitZetaBounds 8.4. Automatic checks: all content checks pass; depcheck 171 roadmaps, 1991 edges, 0 problems; elaboration gives only the three sorry warnings and #check matches the README. Small corrections: the effectivity of 1.7b (i) rests on a 0.30b constant stated only as existing; the description's family-index comparison is out of date.",
+  "text": "a4c8f927e6664deb"
+ }
+}
