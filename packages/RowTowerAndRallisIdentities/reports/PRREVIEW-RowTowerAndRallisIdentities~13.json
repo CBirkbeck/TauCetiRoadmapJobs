@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RowTowerAndRallisIdentities~13",
+  "head": "63a93cfe16d5612be2f9d35dab40fa4449cee833",
+  "pr": 2919,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RowTowerAndRallisIdentities",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "incremental re-review of 64 changed lines since ccd8860. Checked: the previous small correction (repaired: the [FormalProof] reference names the commit 40e56bab, the family index reworded to match) and three format notes (carried over); the new normalisation of the rational lift in 5.10a and 5.11 (scalings of the lift, of the rational subspace and of the phase computed; existence of a phase-one pair); the 11 declarations of [FormalProof] newly cited, opened in the operator's copy with their statements; GluedTargetAndDivisionInequality 8.19e, 8.20, 8.20b at its open head; the family index change; the pull request text. Seeded sample: 5.10a and 5.11 fall in the change. Automatic checks all passed; depcheck 0 problems; Suggested.lean (unchanged, declares nothing) elaborates with no message. Not verified: that the cited paths are the same at the first commit (the local copy is of a later commit).",
+  "text": "5c46d20448ef6e70"
+ }
+}
