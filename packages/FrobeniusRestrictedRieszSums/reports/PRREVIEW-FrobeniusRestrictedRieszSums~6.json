@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FrobeniusRestrictedRieszSums~6",
+  "head": "801a05bc2e626ddbd7b216f05de526ec276a3880",
+  "pr": 2920,
+  "folder": "RiemannHypothesisForDirichletLFunctions/FrobeniusRestrictedRieszSums",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 67 changed lines since cebce56. Checked: the previous report's seven small corrections (all repaired) and two format notes (carried); the widened identity 1.2 and frobRieszSum_sub_main recomputed on a host outside split ramification, with a modulus larger than the conductor, at scales below 1 and at the junk values; the new sentence of 0.9 (index 2^(v2(q+1)-1) of the closure of <q> in Z_2^x) and its citation of UniformWildKernelBounds 2.3 at the open head; the rewording of 1.4 (a); the family index entry; the title and description against this head (3 theorems, 25 definitions). Automatic checks passed; dependency check 0 problems, no upward or cyclic edge; Suggested.lean elaborates with three sorry warnings only; one-tactic probe and #check on the restated theorem. The locators into the formal proof added at this head could not be opened (hosts not classified by the sources service): listed as not verifiable and for the human reviewers.",
+  "text": "773449c81f1568f1"
+ }
+}
