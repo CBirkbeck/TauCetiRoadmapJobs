@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalAnabelianGeometryPartII~6",
+  "head": "731514269e008a36320a0d5ea7f79cd6496caf93",
+  "pr": 2867,
+  "folder": "LocalAnabelianGeometryPartII",
+  "date": "2026-11-22",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since bcc9e15: the folder is identical to the one previously reviewed, so both previous findings (R01 the sign of pi_{K-infinity} in 4.1, R02 missing hypotheses of Props. 2.5-2.7, 3.5, 5.3, 5.7) were re-verified against the README at this head and the arXiv text of Abrashkin 2010 and stand unrepaired, as do the three small corrections and two format notes. No sampled target lies in a changed passage. Automatic checks rerun: all pass except the TeX scan (false positives: a fenced display and wrapped code spans); dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with three sorry warnings only; nothing changed outside the folder against main; the pull request's title and description agree with the head. Abrashkin 2000, Abrashkin 1998 and Deligne 1984 remain unreadable legally (Layers 7-11 not checked against them).",
+  "text": "e8e8aafefbeb5100"
+ }
+}
