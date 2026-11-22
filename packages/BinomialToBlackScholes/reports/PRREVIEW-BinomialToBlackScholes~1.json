@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BinomialToBlackScholes~1",
+  "head": "22c09ae193bb75a32af829dda10ec390454327be",
+  "pr": 2961,
+  "folder": "BinomialToBlackScholes",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review. Every statement and Check recomputed (series of the risk-neutral probability by hand, limits of mean and variance, numeric convergence of put and call prices against the closed forms, all negative controls); adversarial table in the report. Seeded sample 1.1, 1.2, 2.1, 3.1, 3.2: mathematics verified; the five source locators (Bingham's lecture notes) could not be read through the sources service and are listed as not verifiable. 30 library names resolved at the pins; DiscreteTimeFinance (open head), MathematicalStatisticsAsymptotic 1.2 and FinancialMathematics M0.4 citations resolved. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; one-tactic probes close nothing. One small correction (summary bullet lacks T > 0). Four points for the human reviewers (source unread, unpublished notes as the only located source, author-page status, single refinement).",
+  "text": "e74113d288ef1293"
+ }
+}
