@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~10",
+  "head": "f72fba37166c47432f355c193d0a335fefaa05af",
+  "pr": 2923,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review of the README and Suggested.lean. Sample: all 15 seeded targets, the four headlines, and the passages changed since 264fef4; every Check and worked identity recomputed. Sources: Chowla-Selberg 1967 (section 6 (39), section 12) and Damerell 1970 (Theorem 1, section 6) read at their locators; 20 file and declaration pairs of the formal proof found at its first commit, 5 read. Suppliers: all 97 cited family section ids resolved (seven suppliers only at the head of pull request 2954, their own pull requests being closed), 43 section ids of other roadmaps resolved, 14 read. Finding R01 (P1): the theta basis by translates used in 8.19a' (b) and 8.19a'' (b) is cited to AbelianSchemesAndArithmeticModuli A5.3-A5.4, which state Appell-Humbert and polarisation types over the complex numbers; no roadmap owns it. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE line; lake env lean gives the sorry warning only; the one-tactic probe does not close the headline. The previous review had no finding to recheck.",
+  "text": "e303a9708ddf4463"
+ }
+}
