@@ -1,0 +1,48 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CompetitiveAnalysisOfPagingAndListUpdate"
+
+[[source]]
+id = "SleatorTarjan1985"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://www.cs.cmu.edu/~sleator/papers/amortized-efficiency.pdf"
+fetched_from = "https://www.cs.cmu.edu/~sleator/papers/amortized-efficiency.pdf"
+fetched_at = "2026-11-22T19:22:48Z"
+sha256 = "c5669e50994bf823e0d6c1b001707feb105dd9bc5c3909f8f693d93df872096a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["1.2"]
+
+[[source]]
+id = "FiatEtAl1991"
+authors = "Amos Fiat, Richard Karp, Mike Luby, Lyle McGeoch, Daniel Sleator, Neal E. Young"
+title = "Competitive Paging Algorithms"
+year = 2002
+venue = "Journal of Algorithms 12:685-699 (1991)"
+doi = "10.1016/0196-6774(91)90041-V"
+arxiv = "cs/0205038v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/cs/0205038v1"
+fetched_from = "https://arxiv.org/pdf/cs/0205038v1"
+fetched_at = "2026-11-22T19:22:51Z"
+sha256 = "10741349d541a560e613dc43ec3b1b1b6a826c6cd795056687264d30676ae6be"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v1"
+cited_for = ["4.2"]
+
+[[source]]
+id = "LeeEtAl2016"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://hal.science/hal-01199424v1"
+fetched_from = "https://inria.hal.science/hal-01199424/document"
+fetched_at = "2026-11-22T19:22:52Z"
+sha256 = "c086b1fabb027f51676abe5305261bfa830ee4b289604e674246c70d846bb529"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["2.2"]

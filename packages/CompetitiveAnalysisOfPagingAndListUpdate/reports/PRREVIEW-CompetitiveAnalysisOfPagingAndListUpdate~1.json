@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CompetitiveAnalysisOfPagingAndListUpdate~1",
+  "head": "c64e4ffce92c9c839d23198f61b338d52ec1da72",
+  "pr": 2996,
+  "folder": "CompetitiveAnalysisOfPagingAndListUpdate",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample: all eleven sections 1.1-4.3; 19 of 19 locators read in Sleator-Tarjan 1985 (author's page), Fiat et al. 1991 (arXiv cs/0205038v1) and Lee et al. 2016 (HAL). Every Check and all eight theorems recomputed from the Lean definitions by independent scripts (1.2 on 12.5 million cases; Belady, 3.2, 3.3 bound and 4.2 exhaustively in exact arithmetic on up to five pages); routes of 3.2, 3.3, 4.2, 4.3 read step by step. Automatic checks all passed, none set aside; dependency check 0 problems; Suggested.lean elaborates with 8 sorry warnings only; one-tactic probe closes nothing. Duplication searched by object in pinned Mathlib, Tau Ceti, main and open roadmaps: none. The sources service recorded the three fetched texts in the package's sources.toml (it had none). Not verified: displayed formulas of Sleator-Tarjan Theorems 5 and 6 (lost in extraction, read from proofs), published paginations, the Karp-Raghavan attribution of 1.3.",
+  "text": "a2f04ce2cdb3ac30"
+ }
+}
