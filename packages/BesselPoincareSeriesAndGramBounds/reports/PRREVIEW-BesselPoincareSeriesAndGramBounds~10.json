@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BesselPoincareSeriesAndGramBounds~10",
+  "head": "a140c301fbaa6c17f701eed8f6554407067689a7",
+  "pr": 2916,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review of the whole README (2286 lines) and Suggested.lean. No finding: adversarial table of 26 rows with computed values; all fifteen seeded targets and the headlines 5.15a, 5.16, 5.20, 5.21 checked by computation and, where a locator exists, against the text. Sources: 7 locators in the five papers verified at their pages; 158 cited declarations of the formal proof in 94 files all resolve, statements compared for the changed passage of 5.20c (a) (JointNormBoundRotatedUniform, turnPt, orbSqO_le_turn) and for 5.13a, 5.13d, 5.17a, 5.17b, 5.18c, 5.20a; proofs not replayed. Cross-roadmap citations: 62 section ids resolved in the nine supplier sub-roadmaps at their open heads (five with pull requests of their own, four in the family's aggregate pull request), and those on main. One small correction: the docstring of Suggested.lean says Tau Ceti integrates representations of additive monoids only and lacks the integrated action for a non-commutative group, which the pin contradicts (integrated forms for AddMonoid and for Group); the headline stays not statable for lack of a formal degree and of quotient measures on S\\G. One format note (wording of the local datum in 5.17b). Automatic checks all passed, none set aside; dependency check: 133 roadmaps, 1485 edges, 0 problems; Suggested.lean elaborates with no output and declares nothing. For the humans: scope (most targets rest on a formal proof announced 20 November 2026), licence of that repository, and the nine suppliers still in open pull requests.",
+  "text": "654f91fcb01c1a8e",
+  "carried": {
+   "from": "a140c301fbaa6c17f701eed8f6554407067689a7",
+   "head": "8701f7b467d84152725e534bc32413ac170fa9f9",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds"
+   ],
+   "corrections": true
+  }
+ }
+}
