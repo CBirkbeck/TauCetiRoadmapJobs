@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HypothesisTestingExponents~1",
+  "head": "618a29c9ed5e84441cbf3203ee3560a64bf60449",
+  "pr": 2993,
+  "folder": "HypothesisTestingExponents",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full review. All eight sampled targets (1.1-1.5, 2.1-2.3) recomputed: exact rational recomputation of every numeric Check (least type II errors n<=6, weak-converse and finite strong-converse inequalities, Bayes errors n<=6), degenerate priors and laws by hand, the lower-bound route of 2.3 re-derived. Suggested.lean elaborates with sorry as the only warning; no headline closes under the one-tactic probe; elaborated signatures match the README. Dependency check: 0 problems. Suppliers resolved on main (MathematicalStatisticsFoundations 1.3, 6.2; MathematicalStatisticsNonparametric 1.1, 1.3, 1.4) and at the open head of RenyiDivergenceAndPrivacy (1.1, 1.2, 2.1, 2.2, 3.1, 3.2); 30 library declarations opened at the pins. Automatic checks all passed. One P2: a Check of 2.1 asserts that the infimum over the closed interval of orders differs from the one over the open interval; it does not. The only source (Polyanskiy-Wu) could not be read through the sources service, so no source locator was verified and wording and arrangement were not compared with it: recorded under Not verifiable and for the human reviewers.",
+  "text": "8d3f503f6a6156b3"
+ }
+}
