@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FrobeniusRestrictedRieszSums~8",
+  "head": "2d95aff2095fa4794fe7a300f04666e4599701c2",
+  "pr": 2920,
+  "folder": "RiemannHypothesisForDirichletLFunctions/FrobeniusRestrictedRieszSums",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 4,
+  "notes": "incremental re-review of 5 changed lines since 763038a: the [FormalProof] reference now names the first commit and the directory src/, consistent with the family index; the index entry for 1.9 is again an implication to the square-root bound (previous C01-C03 repaired); title and description read in full against the head, no sentence contradicted; no sampled target falls in the changed passage; adversarial rows computed for 1.1 (iii), frobRieszSum, 1.9 and the reference; automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates with three sorry warnings only; [FormalProof] itself could not be read.",
+  "text": "17907c318616de32"
+ }
+}
