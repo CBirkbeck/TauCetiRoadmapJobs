@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalFactorsOfTwistsAndTypes~9",
+  "head": "4be1f720672312f1ef1687013dfd0867d526a82c",
+  "pr": 2889,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalFactorsOfTwistsAndTypes",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 7 changed lines since 28366cf: the two formal-proof locators added to 2.1 (fixed_inj_smooth, DepthZeroJacquetInjective) opened and compared with the README's sentences, with the derivation from the bijectivity and admissibility; previous C01 (description) repaired, N01 carried; the family index's two changed passages read (one small correction: the roadmap's reference does not name the commit); description read against the head; automatic checks all passed; depcheck 0 problems; lake env lean on Suggested.lean gives only the sorry warning; adversarial rows with computed values for 2.1 (d) and a negative control.",
+  "text": "3dd54e3730ef8419",
+  "carried": {
+   "from": "4be1f720672312f1ef1687013dfd0867d526a82c",
+   "head": "47159450a9d9b6a86a1a4aa28a760abbde8331f0",
+   "findings": 2,
+   "lines": 2,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/LocalFactorsOfTwistsAndTypes"
+   ],
+   "corrections": true
+  }
+ }
+}
