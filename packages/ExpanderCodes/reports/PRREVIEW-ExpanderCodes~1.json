@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ExpanderCodes~1",
+  "head": "ac5ef44341d75310f744318175180a907cd6b0ac",
+  "pr": 2965,
+  "folder": "ExpanderCodes",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample 1.1-1.4, 2.1, 2.2, 3.1, 3.2, 4.1: every statement, Check and route recomputed (adversarial table in the report). 18 source locators read in Spielman's draft and Zhao's book (both from the authors' pages); 30 Mathlib and Tau Ceti declarations opened at the pins; SpectralGraphBounds and ExpanderConstructions resolved at their open heads, the 11 copied declarations identical. Dependency check: 0 problems. Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 7 theorems. Automatic checks all passed. Ownership searched across main and the open heads: no second owner.",
+  "text": "0d0b821badf20056"
+ }
+}
