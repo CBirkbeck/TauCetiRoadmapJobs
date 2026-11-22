@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CohomologyComparisons~5",
+  "head": "b62daf624f3eefb5628e8bd0d8132963e94674da",
+  "pr": 1064,
+  "folder": "CohomologyComparisons",
+  "date": "2026-11-21",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample of 15 targets (1.10, 2.21, 2.24, 3.7, 4.8, 5.3, 5.4, 5.6, 5.9, 5.10, 5.13, 6.2, 6.4a, 6.10, 6.13) read at their locators in the arXiv and author-page texts of Bhatt-Morrow-Scholze, Cesnavicius-Koshikawa, Guo-Reinecke, Antieau-Mathew-Morrow-Nikolaus, Colmez-Niziol II, Betts-Stix, Pan I and II and Scholze (arXiv version; Annals pagination not verifiable); the new overview and the restated section 6.3 checked against the layers and the sources; 75 locators read, one page range off by one. Adversarial table of 27 rows with computed values. Automatic checks rerun: all scanners 0, dependency check 0 problems, Suggested.lean elaborates with no output and declares nothing (no headline statable at the pins). Cross-roadmap citations resolved on main; one supplier name in code font not found (small correction). Overlap check against four roadmaps on main and five open ones: nothing shared. One new source issue (Guo-Reinecke Theorem 10.13). One wording observation left to the human reviewers.",
+  "text": "570d99591f8901f7",
+  "carried": {
+   "from": "b62daf624f3eefb5628e8bd0d8132963e94674da",
+   "head": "e526243029b03f5a678b7aa54f15e61f7d8ae74d",
+   "findings": 2,
+   "lines": 12,
+   "folders": [
+    "CohomologyComparisons"
+   ],
+   "corrections": true
+  }
+ }
+}
