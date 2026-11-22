@@ -1,0 +1,38 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ZeroDimensionalIdeals"
+
+[[source]]
+id = "Cox2020"
+authors = "David A. Cox"
+title = "Stickelberger and the Eigenvalue Theorem"
+year = 2020
+arxiv = "2007.12573v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/2007.12573v3"
+fetched_from = "https://arxiv.org/pdf/2007.12573v3"
+fetched_at = "2026-11-22T16:00:49Z"
+sha256 = "c9e185c8b49474d6e17bb681c9544eaa0b2715840736eedecf891b5f37a4910e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v3"
+cited_for = ["2.3"]
+
+[[source]]
+id = "CoxDAndrea2023"
+authors = "David A. Cox, Carlos D'Andrea"
+title = "Subresultants and the Shape Lemma"
+year = 2021
+arxiv = "2112.10306v2"
+locator_scheme = "theorem"
+locator = "Lemma 2.2"
+url = "https://arxiv.org/abs/2112.10306v2"
+fetched_from = "https://arxiv.org/pdf/2112.10306v2"
+fetched_at = "2026-11-22T16:00:56Z"
+sha256 = "37dfc8707aed83a8aae8f2c7424cc248182794d077aee42fcafa5fb9b19384c5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v2"
+cited_for = ["5.1"]
