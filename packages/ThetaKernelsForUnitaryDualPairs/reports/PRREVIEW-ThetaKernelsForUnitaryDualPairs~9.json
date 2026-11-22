@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaKernelsForUnitaryDualPairs~9",
+  "head": "54e111fd953b68061e89ce3b72e163747f583c35",
+  "pr": 2907,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaKernelsForUnitaryDualPairs",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 13 changed lines since 3ccfcd4: the previous small correction (5.7a, seminorm bound of the formal proof on the absolute theta sum) and format note (commit of the formal proof in the References) are repaired; GlobalTheory.Published.WeilThetaConvergence and the first clause of GlobalTheory.Published.WeilSiegelFormulaUnitary opened at the first commit 40e56bab of the formal-proof repository and compared with the changed sentences (hypotheses 1 <= n, r = 0 or n + r < m; finiteness; bound by a basis-dependent seminorm continuous in the archimedean component); the pointer to 6.4a resolves; family index change read; dependency check 0 problems; automatic checks all passed; Suggested.lean unchanged, elaborates with no message, declares nothing; pull request text agrees with the head; one format note carries the seven earlier format notes on untouched text; six points for the human reviewers.",
+  "text": "34b18e2ae7123112"
+ }
+}
