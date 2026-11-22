@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsRankOneSymmetricSpaces~3",
+  "head": "71569a26fc4b69fb9c5549be9133ade9245b4a81",
+  "pr": 2935,
+  "folder": "SpecialFunctionsRankOneSymmetricSpaces",
+  "date": "2026-11-22",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 131 changed lines since 7ad98a7. Both previous findings (the involution of 2.5; the Paley-Wiener route at beta = -1/2 and its circularity with 4.2) are repaired, as are C01 and N01; N02 partly. Recomputed every changed formula: Euler's relation and the transport of the transform under beta -> -beta in 1.2, the kernel, constant K_alpha and inverse of the Abel transform at beta = -1/2, the cases alpha = beta and alpha = beta = -1/2, the agreement of 1.3 with 4.2, and the two new numerical Checks of 1.3 (both reproduced to ten digits) and the value in 4.2. Two findings in text the repair added: the new negative control of 2.5 says G != KP for the identity map, false for n >= 2 (a_t = (a_t J') J' with a_t J' an involution); the new surjectivity route of 1.2 uses a Sturm-Liouville expansion theorem with no target, supplier or pinned declaration (OperatorTheory/UnboundedOperators 4.8 on main owns the endpoint theory only). One small correction (limit-circle at 0 for alpha < 1, not alpha < 0), two format notes. Sample targets in the changed passages (1.3, 2.5, 4.2) checked by computation; their book and paper sources are paywalled and listed as not verifiable. Automatic checks: dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry the only warning (58), no set_option; the one failed form check (a section header carrying only #check lines) set aside as a false positive; no change outside the folder; pull request text not contradicted by the head.",
+  "text": "16339d3f67640e2c"
+ }
+}
