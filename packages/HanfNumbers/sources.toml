@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HanfNumbers"
+
+[[source]]
+id = "MarkerNotes2013"
+locator_scheme = "theorem"
+locator = "Theorem 5.2"
+url = "https://homepages.math.uic.edu/~marker/math512-F13/inf.pdf"
+fetched_from = "https://homepages.math.uic.edu/~marker/math512-F13/inf.pdf"
+fetched_at = "2026-11-22T17:27:57Z"
+sha256 = "05dcf4be09e155851a2841da9adcaf6ea4fcfd83ea25cabf8201d513cb1456b1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["3.4"]
+
+[[source]]
+id = "KeislerKnight2004"
+locator_scheme = "theorem"
+locator = "Theorem 1.6.2"
+url = "https://people.math.wisc.edu/~hkeisler/kk2.pdf"
+fetched_from = "https://people.math.wisc.edu/~hkeisler/kk2.pdf"
+fetched_at = "2026-11-22T17:28:01Z"
+sha256 = "eb2e0edfa1be0caa0c6dbeff5d88f57e69baac99167cdceba49c425eb5f90269"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["4.3"]
