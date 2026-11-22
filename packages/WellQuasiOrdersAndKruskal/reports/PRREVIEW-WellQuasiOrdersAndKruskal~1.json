@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-WellQuasiOrdersAndKruskal~1",
+  "head": "6f940c9e9b876c3d4fe5e98e3ad9d16c224097b6",
+  "pr": 2994,
+  "folder": "WellQuasiOrdersAndKruskal",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Adversarial pass over every statement, route and Check, with the numerical Checks recomputed exhaustively (tree counts, 690 embedded pairs, bad-sequence lengths 1/2/5, path orders on 159 and 1875 terms, Ackermann, associativity and free-group rules). Suggested.lean elaborated: sorry the only warning; #check of all 8 theorems matches the README; one-tactic probe closes none. 24 Mathlib declarations opened at the pin. Dependency check: 0 problems. Automatic checks all passed. Seeded sample 1.1-4.5: mathematics verified; none of the 33 source locators (Gallier 1991, Dershowitz 1987) could be checked against the text, both recorded as uncertified, listed under Not verifiable and flagged to the human reviewers.",
+  "text": "07ed74a0731c6904"
+ }
+}

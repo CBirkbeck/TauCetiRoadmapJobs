@@ -1,0 +1,32 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "WellQuasiOrdersAndKruskal"
+
+[[source]]
+id = "Gallier1991"
+authors = "Jean H. Gallier"
+title = "What's so special about Kruskal's theorem and the ordinal Γo? A survey of some results in proof theory"
+year = 1991
+venue = "Annals of Pure and Applied Logic 53"
+doi = "10.1016/0168-0072(91)90022-E"
+locator_scheme = "theorem"
+locator = "Theorem 4.5"
+url = "https://doi.org/10.1016/0168-0072(91)90022-E"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.1"]
+
+[[source]]
+id = "Dershowitz1987"
+authors = "Nachum Dershowitz"
+title = "Termination of rewriting"
+year = 1987
+venue = "Journal of Symbolic Computation 3"
+doi = "10.1016/S0747-7171(87)80022-6"
+locator_scheme = "theorem"
+locator = "Theorem 8"
+url = "https://doi.org/10.1016/S0747-7171(87)80022-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.2"]
