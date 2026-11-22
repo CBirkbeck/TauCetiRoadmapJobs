@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AmitsurLevitzki~1",
+  "head": "c7267ab947e4e4cfd57ca5859e6da7aea9248c34",
+  "pr": 2989,
+  "folder": "AmitsurLevitzki",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "Full review. Sources: all 15 sampled targets; 16 locators read in the text (Bezrukavnikov 18.706 notes pp. 63-66, Procesi arXiv:1308.2421v1), all agree; Rosset 1976 and Amitsur-Levitzki 1950 not read (attributed only). Adversarial pass computed for every statement, with every numerical Check recomputed in exact arithmetic. 74 library names checked at the pins, 3 supplier citations resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; one-tactic probe closes none of the 14 theorems. Three source issues recorded. The sources service created sources.toml for this package with two entries; its first fetch for the lecture notes returned an unrelated arXiv paper and was replaced by the OpenCourseWare PDF under the same key (that entry still lacks authors and title).",
+  "text": "e9594ce9d29c3337"
+ }
+}

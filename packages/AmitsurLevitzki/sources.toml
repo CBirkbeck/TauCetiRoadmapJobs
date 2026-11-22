@@ -1,0 +1,33 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AmitsurLevitzki"
+
+[[source]]
+id = "Procesi2013"
+authors = "Claudio Procesi"
+title = "On the theorem of Amitsur--Levitzki"
+year = 2013
+arxiv = "1308.2421v1"
+locator_scheme = "theorem"
+locator = "Proposition 2.1"
+url = "https://arxiv.org/abs/1308.2421v1"
+fetched_from = "https://arxiv.org/pdf/1308.2421v1"
+fetched_at = "2026-11-22T18:06:41Z"
+sha256 = "2b13b9dce4f89f58a2bbddabd71c9c831ef8580e90a383cf390fe673b3e0dff8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v1"
+cited_for = ["2.2"]
+
+[[source]]
+id = "Bezrukavnikov18706"
+locator_scheme = "theorem"
+locator = "Theorem 22.9"
+url = "https://ocw.mit.edu/courses/18-706-noncommutative-algebra-spring-2023/mit18_706_s23_full_lec.pdf"
+fetched_from = "https://ocw.mit.edu/courses/18-706-noncommutative-algebra-spring-2023/mit18_706_s23_full_lec.pdf"
+fetched_at = "2026-11-22T18:07:48Z"
+sha256 = "6a810b7c7e6cd3caebd59c9c21a285550d218ea4143f988cc9e3b5b4b4c792be"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["3.2"]
