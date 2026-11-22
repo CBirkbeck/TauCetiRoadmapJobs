@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PaleyGraphsAndCharacterSums~1",
+  "head": "927899456bb68970b6e022140a4597d15076ef79",
+  "pr": 2962,
+  "folder": "PaleyGraphsAndCharacterSums",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample 1.1-4.4 (all 13 targets) read against Bonato, Brouwer-Haemers, Godsil, Spielman and Zhao at their locators (22 locators, all supported). Every statement recomputed: SRG parameters for q up to 81, Gauss-sum signs against paleySign, spectrum multiplicities, Hoffman and mixing-lemma arithmetic, the pattern count 4.1 by exhaustive search for small q, 2- and 3-e.c. for Paley graphs up to 113 vertices and tournaments up to 31. Supplier sections resolved on main (CharacterSumsOverFiniteFields 0.1, 3.3, 4.7) and at open heads (StronglyRegularAndMooreGraphs 1.2-1.4, SpectralGraphBounds 1.1, 3.1, 3.2, 4.1). 41 Mathlib names checked at the pin. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 12 theorems. Two format notes (a page range; naming the owner of the general bounded extension property).",
+  "text": "2a13475b76138de2"
+ }
+}
