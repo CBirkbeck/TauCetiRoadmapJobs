@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GibbsMeasuresAndTheIsingModel~1",
+  "head": "4e2bf572281f1b91d63498d1d00bfd45a7665717",
+  "pr": 2976,
+  "folder": "GibbsMeasuresAndTheIsingModel",
+  "date": "2026-11-22",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review. All 13 sampled sections checked against Friedli-Velenik (authors' revised version; 34 locators, printed pages not verifiable); Ruelle, Koralov-Sinai, Ellis, Grimmett not readable. Adversarial pass with computed values on every section; Lean scratch proofs confirm R01 (coefficient >= 1 for the zero potential) and the d = 0 invariance behind R02. Suggested.lean elaborates with sorry warnings only; one-tactic probe closes none of 32 theorems; dependency check 0 problems; DimerModelsAndLozengeTilings 4.1-4.6 and six open roadmaps read for ownership (R03: BernoulliPercolation 6.1-6.2). Two automatic checks set aside as false positives; the empty section header is a format note.",
+  "text": "2a0d2a8848703885"
+ }
+}
