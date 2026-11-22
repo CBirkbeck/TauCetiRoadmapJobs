@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EigenvalueAndSingularValueInequalities~1",
+  "head": "421f95066ae434f004e8036d9105b45e8578c678",
+  "pr": 2969,
+  "folder": "EigenvalueAndSingularValueInequalities",
+  "date": "2026-11-22",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 8,
+  "format_notes": 3,
+  "notes": "Full review. Adversarial pass over every README statement and every Suggested.lean declaration, with computed instances (27 table rows). Seeded sample of 15 targets: no locator could be checked against its text, since none of the five cited books is legally readable (two paywalled, three with no legal copy); Layer 7 statements cross-checked against a cached author's-page survey. Library declarations opened at the pins; nine cross-roadmap ids resolved on main. Targeted build succeeded; dependency check reported 0 problems. Duplication audit by object found two open roadmaps owning the same objects (PerfectAndChordalGraphs, SpectralSteepestDescent). One-tactic probe closed one declaration. One automatic form check and three citation leads set aside as false positives.",
+  "text": "71c72cb4bc3aa861"
+ }
+}
