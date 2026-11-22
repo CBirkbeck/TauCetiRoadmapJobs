@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HopfieldNetworks"
+
+[[source]]
+id = "RAMSAUER20"
+authors = "Hubert Ramsauer, Bernhard Schäfl, Johannes Lehner, Philipp Seidl, Michael Widrich, Thomas Adler, Lukas Gruber, Markus Holzleitner, Milena Pavlović, Geir Kjetil Sandve, Victor Greiff, David Kreil, Michael Kopp, Günter Klambauer, Johannes Brandstetter, Sepp Hochreiter"
+title = "Hopfield Networks is All You Need"
+year = 2020
+arxiv = "2008.02217v3"
+locator_scheme = "page"
+locator = "p. 2"
+url = "https://arxiv.org/abs/2008.02217v3"
+fetched_from = "https://arxiv.org/pdf/2008.02217v3"
+fetched_at = "2026-11-22T00:09:26Z"
+sha256 = "48cecc1d10cea553538fe8d1e2f1bf7378bed6b1233b2857384f5081ac2f7579"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v3"
+cited_for = ["1.3"]
