@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NonabsoluteIntegration~1",
+  "head": "b976dcadd15b622c7866800f7aabdc729e06b964",
+  "pr": 2977,
+  "folder": "NonabsoluteIntegration",
+  "date": "2026-11-22",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. All eleven sampled sections and every Suggested.lean statement went through the degenerate-case pass; 19 numerical Check values recomputed and agree. Findings: the headlines are stated on local copies of three Tau Ceti definitions that import at the pin (verified by elaborating a copy with the import); a false group count in the proof route of 3.1. No cited source could be read legally (four paywalled, Saks not found), so no locator was checked against its text. Dependency check: 0 problems. One-tactic probe on all 34 sorried theorems: none closes. One automatic form check set aside as a false positive (a section comment over the #check block).",
+  "text": "32ba9ad19bf0e516"
+ }
+}
