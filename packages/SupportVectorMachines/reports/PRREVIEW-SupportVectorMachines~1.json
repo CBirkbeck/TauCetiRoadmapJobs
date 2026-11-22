@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SupportVectorMachines~1",
+  "head": "99deb4c9551fe91d7229c3db2c5c1b796079e061",
+  "pr": 3002,
+  "folder": "SupportVectorMachines",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All nine sampled targets (1.1-1.3, 2.1, 2.2, 3.1, 3.2, 4.1, 4.2) recomputed by hand, including every numerical Check (dual values, soft-margin minimizers at lambda = 1, 1/2, 0, -1, both sides of the leave-one-out bound in the four Checks of 4.2). Nine Shalev-Shwartz-Ben-David locators read in the authors' PDF and all correct; the Mohri-Rostamizadeh-Talwalkar text could not be fetched from a classified host, so its locators are listed as not verifiable. 28 Mathlib declarations, 5 supplier declarations (ThresholdFunctionsAndMargins 4.1, 4.2; NonlinearProgrammingOptimality 1.1, 2.2) and MathematicalStatisticsNonparametric 5.8 resolved at the pin, the open heads and main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; none of the 7 theorems closes under a one-tactic probe.",
+  "text": "4efa8b13e2c752ee"
+ }
+}
