@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsAndFrobeniusPrimeSums~8",
+  "head": "bb48791816d6088de76f3c4a6d2c59cdebb9b51b",
+  "pr": 2924,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsAndFrobeniusPrimeSums",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 8 changed lines since c07a7dc: the 10 declarations of the formal proof named by the four changed README lines (9.6, 10.4, 10.9, 10.10) opened and compared with the README; previous corrections C01-C04 repaired, N01 carried; title and description read against the head (one out-of-date parenthesis on the letter-step exponent, C01); dependency check 0 problems; Suggested.lean elaborates with two sorry warnings only; automatic checks all passed; no change outside the folder.",
+  "text": "2538928f45d34345",
+  "carried": {
+   "from": "bb48791816d6088de76f3c4a6d2c59cdebb9b51b",
+   "head": "bb48791816d6088de76f3c4a6d2c59cdebb9b51b",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
