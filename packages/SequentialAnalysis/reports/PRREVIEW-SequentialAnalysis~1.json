@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SequentialAnalysis~1",
+  "head": "a6d0f09cd57644e80e657acc65b87173e7db20f8",
+  "pr": 3001,
+  "folder": "SequentialAnalysis",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample 1.1-3.5: all nine statements and every Check recomputed at degenerate parameters (values in the report's table); Durrett's six locators verified against the text; Ferguson's and Polyanskiy-Wu's locators not verifiable (no legal copy readable through the sources service), listed under Not verifiable and for the human reviewers. 40 library declarations opened at the pins (one file attribution off, format note). RuinTheory 2.2, MathematicalStatisticsNonparametric 1.3 and StochasticCalculus 2.3 citations resolved. Dependency check: 0 problems, no UPWARD or CYCLE. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the nine theorems; all headlines stated. Automatic checks all passed; none set aside. PR text agrees with the head.",
+  "text": "850fcbc9b26559c2"
+ }
+}
