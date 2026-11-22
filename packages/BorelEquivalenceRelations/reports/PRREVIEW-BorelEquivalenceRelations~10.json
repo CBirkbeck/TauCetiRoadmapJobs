@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BorelEquivalenceRelations~10",
+  "head": "ab52752908b42330d3d558fa15744fa4761c50b6",
+  "pr": 1616,
+  "folder": "BorelEquivalenceRelations",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Previous finding (description on the Alexandrov converse) repaired. All 15 sampled targets checked: the two source locators (Miller Lecture I Ex. 16 p. 8; Harrington-Kechris-Louveau 1990 Cor. 1.2 p. 905) read in the text, the other 13 against their pinned declarations. 192 library names of the README elaborated at the pins, none missing; 14 definitions printed. Suggested.lean elaborates with two sorry warnings only; six one-tactic probes fail on both targets. README on main compared with the head layer by layer: nothing removed or renumbered. Automatic checks all passed; dependency check 0 problems. Overlap check against six nearest roadmaps: nothing shared.",
+  "text": "43a19ee8f945f1af"
+ }
+}
