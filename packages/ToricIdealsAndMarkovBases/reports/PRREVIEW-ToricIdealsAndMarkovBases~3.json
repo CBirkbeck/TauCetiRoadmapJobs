@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ToricIdealsAndMarkovBases~3",
+  "head": "ebb3a7d42bb2895bf025afe61f13b34813e02953",
+  "pr": 2985,
+  "folder": "ToricIdealsAndMarkovBases",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 117 changed lines since 0cc63a0. Checked: R01 (theorem 3.4 restated for rank d, d chosen rows and a common minor value) and N01 repaired; every changed Check of 3.4 recomputed exactly (120 row choices of the 2x3 margin matrix, the reduced matrix A', 64 matrices B with their 66 maximal minors, Graver bases and circuits of six small matrices); the reduction step of the route read against Mathlib's Cramer and rank lemmas at the pin; the supplier statement IntegerPolyhedraAndTotalUnimodularity 2.1 at its open head; Conca2024 p. 6 and AlmendraDeLoeraPetrovic2023 p. 13 at their locators; automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates with nine sorry warnings only, one-tactic probe of the changed theorem closes nothing; pull request text agrees with the head. Drton-Sturmfels-Sullivant still not readable (for the human reviewers).",
+  "text": "d584aca73262e35b"
+ }
+}
