@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HigherLocalClassFieldTheory~9",
+  "head": "26008d34b6eba3203413008016f90c9a9be4a9ae",
+  "pr": 1813,
+  "folder": "HigherLocalClassFieldTheory",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since d1a62ff. The folder is identical to the head previously reviewed, so R01 (mixed characteristic restricted to odd p from 2.7 on, p = 2 unowned, dimension one over Q_2 excluded) is not repaired and is carried; C01, C02, N01 carried. Re-read the README passages each remark quotes and Fesenko 2001 (author's copy) at lines 229, 486-496, 576-582, 614-623. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with three sorry warnings only; no change outside the folder against the base; no sampled target in a changed passage.",
+  "text": "c84c752795c9a50b"
+ }
+}
