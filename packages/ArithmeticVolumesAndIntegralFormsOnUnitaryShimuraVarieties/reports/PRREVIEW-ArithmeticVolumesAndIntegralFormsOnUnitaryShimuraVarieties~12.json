@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~12",
+  "head": "045bf11dbe9575dd6560452365a660dcc185542f",
+  "pr": 2923,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 11 changed lines since 175fb90. Checked: the four small corrections and the format note of the previous review (four repaired, the format note carried); the changed hypothesis of 8.19a″ (b) against the credited formal theorem and its input (b₀); the six hypotheses of the theorem credited for 8.17; MvPolynomial.rename and Equiv.Perm.sign at the Mathlib pin; the pull request's title and description against the head (one sentence wrong: ProjectiveModelsAndPeriodBoundsOnShimuraVarieties has its own pull request). Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with the sorry warning only. Of the seeded sample only 8.17 falls in a changed passage.",
+  "text": "98276204eb5b1832",
+  "carried": {
+   "from": "045bf11dbe9575dd6560452365a660dcc185542f",
+   "head": "6c1c3be743222f798f7c60e72df131d7e1bcf5b8",
+   "findings": 2,
+   "lines": 2,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties"
+   ],
+   "corrections": true
+  }
+ }
+}
