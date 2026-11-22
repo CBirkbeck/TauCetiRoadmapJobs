@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ScoreMatchingAndContrastiveEstimation~1",
+  "head": "7131e42ecdf6cb4b94758ff05b5525d9484b88ff",
+  "pr": 3003,
+  "folder": "ScoreMatchingAndContrastiveEstimation",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample (1.1, 1.2, 1.3, 2.1, 3.1, 3.2, 3.3, 4.1) and every other locator read in the three sources (Hyvärinen 2005, Hyvärinen 2007, Gutmann–Hyvärinen 2012, from an author's page): 24 locators, all agree. Adversarial pass with computed values for every statement and Check (exact arithmetic for Layers 2 and 3). 26 Mathlib declarations checked at the pin, 12 cross-roadmap citations resolved. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the seven theorems. Two small corrections (owner of the optimal discriminator not named; an ambiguous sentence in a Check of 4.1) and one format note.",
+  "text": "bb4e54aed8718b3d"
+ }
+}
