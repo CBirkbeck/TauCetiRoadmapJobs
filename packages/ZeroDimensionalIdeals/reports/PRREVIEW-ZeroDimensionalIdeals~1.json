@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ZeroDimensionalIdeals~1",
+  "head": "ab3bb21de397ad5a6359a8393b5117b811fe6071",
+  "pr": 2983,
+  "folder": "ZeroDimensionalIdeals",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. All 13 sampled targets and the conventions recomputed by hand at degenerate cases (unit ideal, empty variable type, imperfect, non-closed and finite fields, infinite dimension); every Check and route re-derived. 14 locators read in Cox (arXiv:2007.12573v3) and Cox-D'Andrea (arXiv:2112.10306v2); Sturmfels's book could not be read legally and its locators are listed as not verifiable and flagged to the human reviewers. 52 cited Mathlib and Tau Ceti declarations opened at the pins. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 12 theorems. Dependency check: 0 problems. Ownership searched by object on main and at the open heads: nothing shared. All automatic checks passed; none set aside.",
+  "text": "64a3302ec3c4dd3a"
+ }
+}
