@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsOnDefiniteUnitaryGroups~7",
+  "head": "7f27c46b4ebb5ed705aeab4eaf97d55d20cf662a",
+  "pr": 2918,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsOnDefiniteUnitaryGroups",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 6 changed lines since 10adbd0: the sentence added to 2.2a (c) on the kernel of the row up-lift was recomputed (adjoint of the descent, inverse character on the level group, the value c_v(det g)^-2 at a twist place of the first step, c_v^2 nontrivial at the auxiliary places) and checked against 2.9 Check, 2.9c, 2.5 and 2.4 (b), which it cites; of the seeded sample 2.9c and 2.5 fall in the change. The family index change was read against the proof's repository (first commit, licence statement). Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with no messages and is unchanged. Title and description agree with the head. Two format notes carried from the previous review.",
+  "text": "dea22138a18f8c93"
+ }
+}
