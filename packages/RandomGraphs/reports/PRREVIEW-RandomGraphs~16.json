@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RandomGraphs~16",
+  "head": "1481b8d5e6ee7902d213c0d23150fe0dfd9ca088",
+  "pr": 1223,
+  "folder": "RandomGraphs",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 9 changed lines since 0c208ea. Checked: the previous C01 (the sentence on SaturationAndQuantifierElimination under Downstream consumers) is repaired and agrees with that roadmap's Layer 2.1, its section From RandomGraphs and its Suggested.lean at its open head; the AxKochenErshov sentence agrees with that roadmap's head; the previous N01 and N02 are carried unchanged as format notes. The diff touches no locator, no statement and no layer, so the seeded sample does not fall in it; the adversarial table has three rows with computed values for the statements the changed text cites. Automatic checks all passed; dependency check 133 roadmaps, 1473 edges, 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with exit 0 and 75 sorry warnings only; no change outside the folder; pull request text agrees with the head. Spencer, Hodges, Bollobas and Fagin remain unread (reported to the human reviewers).",
+  "text": "7bcd4674f1996b52"
+ }
+}
