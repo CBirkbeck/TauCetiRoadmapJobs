@@ -34,3 +34,20 @@ licence_class = "institutional"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["8.19b", "8.19c"]
+
+[[source]]
+id = "Mumford1966"
+authors = "D. Mumford"
+title = "On the equations defining abelian varieties. I"
+year = 1966
+doi = "10.1007/BF01389737"
+locator_scheme = "theorem"
+locator = "§1: Proposition 1, p. 291; Proposition 3 and its proof, pp. 295–296; Theorem 2, p. 297"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0001/LOG_0036.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0001/LOG_0036.pdf"
+fetched_at = "2026-11-22T16:47:47Z"
+sha256 = "144ae79bcb2bb18d6b7a01d5618d974edcb16d926617dde9599ad840bee04040"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["8.19a′"]
