@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BernoulliBoundsForClassGroupEigenspaces~7",
+  "head": "72a1913398badc630fdc95003dd80061bd122643",
+  "pr": 2896,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BernoulliBoundsForClassGroupEigenspaces",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "incremental re-review of 40 changed lines since e41e82f. Checked: the new statement of the formal Euler system in 14.1 against the formal proof's declarations (Nf, SrcUr, ES, Tame, ZetaUr, zetaUr, kato_eulerSystem_integrality, vanishOrdL_of_zetaUr, LitCoh) and the full list Used/KatoTwo; one hypothesis is misstated (R01, P2: the quotient character of the twist is chi_p^(-2e) on inertia, not trivial). Previous C01 repaired; previous C02 (family index line) and N01 carried. Seeded sample checked where it falls in the changed text (14.1). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; family index change read.",
+  "text": "2a792022b47e8e98"
+ }
+}
