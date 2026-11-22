@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThresholdFunctionsAndMargins~1",
+  "head": "d077c99073abfd6a27ef75d8b260773d4d69b061",
+  "pr": 2992,
+  "folder": "ThresholdFunctionsAndMargins",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Full review. All 11 sampled targets recomputed (degenerate cases, both directions, Checks re-evaluated; the counts 2/4/14/104 and 254 recomputed by script). All 13 source locators read in the texts (Bun-Thaler, authors' version of May 16 2023; O'Donnell arXiv:2105.10386v1). 17 Mathlib and 5 Tau Ceti declarations opened at the pins; 12 cross-roadmap citations resolved at the suppliers' open heads. Suggested.lean elaborates with sorry as the only warning; no theorem closes under the one-tactic probe; dependency check: 0 problems. Automatic checks all passed.",
+  "text": "1a02c8dbec76fa34"
+ }
+}
