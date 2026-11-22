@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CombinatorialDiscrepancy~1",
+  "head": "348ff421487272724bf8bbe05e8e1fef58ba0321",
+  "pr": 2999,
+  "folder": "CombinatorialDiscrepancy",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "Full review. Sources: all ten sampled targets (1.1-4.2) checked; Bansal-Nikolov arXiv:2608.00140v1 read at §1.1, Thm 1.4, Thm 2.2 with Lemma 2.3, Lemma 7.10, Exercise 7.12; Fox-Xu-Zhou p. 1 and Li-Nikolov p. 2 read; Nikolov's Prague lecture notes could not be fetched (not verifiable). Every route recomputed by hand; the README's exhaustive Checks recomputed by script (progression discrepancies n<=14, the family against all progressions n<=12, Roth's numeric inequality 24<=n<=200000, the 9427 Beck-Fiala families). 23 Mathlib declarations opened at the pin. Suggested.lean elaborates with sorry as the only warning; one-tactic probe (simp, rfl, positivity, infer_instance, unfolding simp, nonnegativity lemma) closes none of the 6 theorems. Dependency check: 0 problems. Automatic checks all passed. Conditional on nothing: no supplier roadmap.",
+  "text": "c8441c8c243583bb"
+ }
+}
