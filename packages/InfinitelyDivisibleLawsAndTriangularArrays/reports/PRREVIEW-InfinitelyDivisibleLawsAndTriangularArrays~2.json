@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-InfinitelyDivisibleLawsAndTriangularArrays~2",
+  "head": "c1471551556dbecce2bdd586cee91c17c8a07e88",
+  "pr": 2970,
+  "folder": "InfinitelyDivisibleLawsAndTriangularArrays",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full re-review. All 3 findings and 9 small corrections of the previous review are repaired. One new P2 finding: the route of 5.3 asserts that the squared truncated means sum to 0 in the limit, false for X n j = (-1)^j/sqrt(n), j < 2n (sum is 2). Adversarial pass computed on every statement, all 15 sampled targets and every numeric Check (values in the report table). Automatic checks all passed; elaboration exit 0 with 51 sorry warnings only; #check of all 73 signatures; ten one-tactic probes, none closes; dependency check 0 problems; cross-roadmap citations resolved on main; duplication searched by object in the pinned Mathlib and Tau Ceti and in all roadmaps. No cited source could be read legally in this round (five paywalled, three with no legal copy found), so 0 of 101 locators were verified against the text.",
+  "text": "4f676b2c54f26655"
+ }
+}
