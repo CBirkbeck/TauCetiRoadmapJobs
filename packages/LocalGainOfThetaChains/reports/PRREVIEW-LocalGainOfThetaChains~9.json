@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalGainOfThetaChains~9",
+  "head": "513e0b84af5e1437bcb9bc0225ae1d49d0a30dcf",
+  "pr": 2915,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 24 changed lines since 288fa8c. Checked: R01 of the previous review (Summary on Drop) repaired and consistent with 4.17 (a)-(b) and 4.17c; its small corrections C01-C04 and format note N01 repaired; the new hypotheses on the ring of 4.15e' compared clause by clause with UnramifiedQuadraticSetting and Conclusion2 of the formal proof, and the note on AdmB with its thirteen clauses; the bound q <= 4^(-3r) of 4.15d recomputed numerically; the clause letters of 4.9-4.9f located; sampled targets 4.9e, 4.15d, 4.15e', 4.17 read where the change falls in them. Pull request text agrees with the head (folder identical at the head of #2954). Automatic checks rerun: all pass except outside-folder (the three family-index files, the pull request's own) and not-yet-in-merge-order; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with no message and declares nothing. One format note (a leftover item on a Needs line).",
+  "text": "d8ab6ee9a9c3617b"
+ }
+}
