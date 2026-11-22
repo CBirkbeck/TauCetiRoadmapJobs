@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BaseChangeAndGaloisRepresentationsForUnitaryGroups~10",
+  "head": "210ed5d9f573f39fa7c647c662932c12cc7e242f",
+  "pr": 2890,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BaseChangeAndGaloisRepresentationsForUnitaryGroups",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "incremental re-review of 113 changed lines since fd447f4. Checked: the three new statements 10.0a, 13.0a, 14.0a (computed on small cases and read against the formal declarations), the theorem on units in the route of 10.29a against GL2AutomorphicRepresentationsAndTransfer R16.1.7 on main, the existence sentence of the conventions against AutomorphicGaloisRepresentationsPartII AG2.0, AG2.2, AG2.3, AG2.6, and the forms added at 14.1, 15.1, 15.2, 16.1 against 12 files of the formal proof at its first commit; seeded sample targets 10.0a, 14.0a, 14.1, 15.1, 15.2, 16.1 fall in the change and were verified, the others are untouched; ownership of the new statements searched on main, at the open heads and in the pinned libraries; dependency check 0 problems; Suggested.lean elaborates with no output and declares nothing; automatic checks all passed; the previous small correction is partly repaired (carried as C04); the pull request text omits the additions (C03); the family index's new section is reported to the human reviewers.",
+  "text": "f5b756d94567fb8c",
+  "carried": {
+   "from": "210ed5d9f573f39fa7c647c662932c12cc7e242f",
+   "head": "67426680fe5266483ee542859cda53740507245c",
+   "findings": 4,
+   "lines": 44,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/BaseChangeAndGaloisRepresentationsForUnitaryGroups"
+   ],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C04: in `TauCetiRoadmap/RiemannHypothesisForDirichletLFunctions/README.md` (line 19), the family-level sentence \"so they are to be looked up at that first commit\" needs \"under its directory `src/`\".",
+    "where": "family index's own text, shared by every pull request of the family",
+    "raised": "PRREVIEW-BaseChangeAndGaloisRepresentationsForUnitaryGroups~10"
+   }
+  ]
+ }
+}

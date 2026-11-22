@@ -1,0 +1,70 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "BaseChangeAndGaloisRepresentationsForUnitaryGroups"
+
+[[source]]
+id = "Del73"
+authors = "Pierre Deligne"
+title = "Les constantes des équations fonctionnelles des fonctions L"
+year = 1973
+venue = "Modular Functions of One Variable II, Lecture Notes in Mathematics 349 (1973), 501-597"
+locator_scheme = "theorem"
+locator = "Proposition 1.5"
+url = "https://publications.ias.edu/sites/default/files/Number20.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/Number20.pdf"
+fetched_at = "2026-11-22T15:24:30Z"
+sha256 = "b03f483c4eeca79b75e34b88f41406fe4c9e16ba621480ce859697c93e8d5844"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["10.0a"]
+
+[[source]]
+id = "Hof99"
+authors = "Michael E. Hoffman"
+title = "Quasi-shuffle products"
+year = 1999
+venue = "J. Algebraic Combin. 11 (2000), 49-68."
+arxiv = "math/9907173v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://arxiv.org/abs/math/9907173v1"
+fetched_from = "https://arxiv.org/pdf/math/9907173v1"
+fetched_at = "2026-11-22T15:24:34Z"
+sha256 = "c0673b812a91ba50de985dc3a9887033ca076445e9c1e856d361bc9548b5ffbd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v1"
+cited_for = ["13.0a"]
+
+[[source]]
+id = "Cog04"
+authors = "James W. Cogdell"
+title = "Lectures on L-functions, converse theorems, and functoriality for GL(n)"
+year = 2004
+version_note = "author's notes of the Fields Institute lectures; page numbers are those printed in this copy"
+locator_scheme = "theorem"
+locator = "Lecture 5, Proposition 5.3 (iii) and the remark after Proposition 5.1, pp. 38-39"
+url = "https://people.math.osu.edu/cogdell.1/fields-www.pdf"
+fetched_from = "https://people.math.osu.edu/cogdell.1/fields-www.pdf"
+fetched_at = "2026-11-22T15:24:37Z"
+sha256 = "2c5ec050a6db216dcd2104b7fe266ddc03e4db7c7d300239e60d6ee9c40618a7"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["14.0a"]
+
+[[source]]
+id = "Rad79"
+authors = "David E Radford"
+title = "A natural ring basis for the shuffle algebra and an application to group schemes"
+year = 1979
+venue = "Journal of Algebra 58"
+doi = "10.1016/0021-8693(79)90171-6"
+locator_scheme = "page"
+locator = "432-454"
+url = "https://doi.org/10.1016/0021-8693(79)90171-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["13.0a"]
