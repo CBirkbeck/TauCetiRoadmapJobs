@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IntegralWeylModulesOfGeneralLinearGroups~7",
+  "head": "a356b2a7cf6df4e0e5d16a890aabae8f12dc5777",
+  "pr": 2888,
+  "folder": "RiemannHypothesisForDirichletLFunctions/IntegralWeylModulesOfGeneralLinearGroups",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 4 changed lines since ae37607. Checked: the previous small correction C01 (order of the product S0 in 2.1 (b)) is repaired; the new sentence of 0.2 on the closed-alcove simplicity of the induced module was read against the formal proof's statement InducedSimpleLowestAlcove at the commit the README names (hypotheses and conclusion match; a proof of it is in the source) and tested on GL_1 and GL_2 at p = 2, 3; PotentialAutomorphyInfrastructure 0.4 and 0.6 resolved on main; the family index diff read; the pull request's description read against the head. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 9 sorry warnings and nothing else. One small correction (the ownership paragraph still says the closed-alcove form is not stated here).",
+  "text": "7c4c44bef1b0fee3",
+  "carried": {
+   "from": "a356b2a7cf6df4e0e5d16a890aabae8f12dc5777",
+   "head": "4172616c2a2113c7bb48f970785c532f12bfd621",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/IntegralWeylModulesOfGeneralLinearGroups"
+   ],
+   "corrections": true
+  }
+ }
+}
