@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-WachLatticesOverTheCyclotomicTower~8",
+  "head": "fb73fd9b19311323a5a737593bd52b3f4b13d70f",
+  "pr": 2899,
+  "folder": "RiemannHypothesisForDirichletLFunctions/WachLatticesOverTheCyclotomicTower",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 31 changed lines since da69b99. Previous R01 (6.4, dependence on the choice of trace or norm coordinate) repaired: the ideal equalities, the value -1 of the unit, the sign of the Sen operator and weights, and the equivalence of the two gamma conditions were recomputed. N01 and N03 repaired; N02 deferred (D01 stands). Six new source locators (Wach 1996; Herr 1998; Cherbonnier-Colmez 1999) read at their pages and found to support the citations. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no message and declares nothing. Title and description agree with the head. Human reviewers: scope, licence of the formal proof, formal proof text not readable, review policy in the family index.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "N02: the sentence \"The family follows the formal Lean proof …\" (family index `README.md`, line 10) is the family's own text, not this roadmap's entry, and every pull request of the family carries the ",
+    "where": "family index's shared text, carried identically by every family pull request",
+    "raised": "PRREVIEW-WachLatticesOverTheCyclotomicTower~7"
+   }
+  ],
+  "text": "b7b228fe19ab3919"
+ }
+}
