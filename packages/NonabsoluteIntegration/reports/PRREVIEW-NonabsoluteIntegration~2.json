@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NonabsoluteIntegration~2",
+  "head": "c1711a2fd8f9567d7e21852fc7f3bbb6ee1ee273",
+  "pr": 2977,
+  "folder": "NonabsoluteIntegration",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 93 changed lines since b976dca. Checked: all six previous remarks (R01, R02, C01, C02, N01, N02) repaired; the import of TauCeti.Analysis.BoxIntegral.Oriented.Basic, with rfl probes on a scratch copy that the unqualified names are the library's; the corrected greedy group count of 3.1 recomputed on two instances; the reworded Needs line and Check; the pull request text against the head. Elaboration: 34 sorry warnings and nothing else. Dependency check: 0 problems. One automatic form check set aside as a false positive (a section comment heading only #check lines). No seeded-sample locator falls in a changed passage and no cited source is readable legally, as in the previous review; left to the human reviewers.",
+  "text": "af059c45f29b2b8d"
+ }
+}
