@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-InfinitelyDivisibleLawsAndTriangularArrays~1",
+  "head": "eef493e151fcae238dac2138e3774a2880d84e61",
+  "pr": 2970,
+  "folder": "InfinitelyDivisibleLawsAndTriangularArrays",
+  "date": "2026-11-22",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 9,
+  "format_notes": 3,
+  "notes": "Full review. Adversarial pass computed for every stated theorem (31 table rows). Sources: only Durrett (5th ed., author's posted copy) was legally readable; its 9 locators agree by theorem number and statement, printed pages unchecked; all locators into Kallenberg, Klenke, Petrov, Billingsley, Loeve and Resnick are not verifiable (paywalled), which covers most of the seeded sample. Suggested.lean elaborates at the pins with 52 sorry warnings and no error; ten signatures compared with the README; one-tactic probe closes only charFun_iidSumLaw. Dependency check: 0 problems, both suppliers on main. Duplication by object in Mathlib, Tau Ceti, main and the closest open roadmaps: nothing shared. The automatic check on an empty section header is a format note; the 21 names reported as found nowhere are the roadmap's own declarations (set aside).",
+  "text": "2795a9707040fc47"
+ }
+}
