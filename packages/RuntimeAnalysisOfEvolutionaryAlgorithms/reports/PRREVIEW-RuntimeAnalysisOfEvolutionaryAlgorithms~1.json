@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RuntimeAnalysisOfEvolutionaryAlgorithms~1",
+  "head": "83828511569251e067827b2901a5537800a54a8d",
+  "pr": 2982,
+  "folder": "RuntimeAnalysisOfEvolutionaryAlgorithms",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. All 15 sampled targets (1.1-1.5, 2.1-2.2, 3.1-3.5, 4.1-4.3) recomputed: routes re-derived, every Check re-evaluated, exact rational linear algebra for n <= 5 (OneMax, random local search, LeadingOnes under five mask laws, 2310 lower-tail cases). 21 source locators read in the four arXiv texts (one mismatch: Lengler Thm 18 has a ceiling, C01). 28 library declarations opened at the pins; HittingAndCoverTimes 1.1-1.3 resolved at its open head, MarkovChainsAndRenewal on main. Suggested.lean elaborates with 14 sorry warnings only; one-tactic probe closes none. Automatic checks all passed; depcheck 0 problems; no change outside the folder. Five source issues recorded. For humans: scope of the subject; supplier HittingAndCoverTimes still an open pull request.",
+  "text": "505f0707fcdc7478"
+ }
+}
