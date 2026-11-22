@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SturmianWordsAndThreeDistances"
+
+[[source]]
+id = "AlessandriBerthe1998"
+locator_scheme = "section"
+locator = "§2.1"
+url = "https://www.irif.fr/~berthe/Articles/3d.pdf"
+fetched_from = "https://www.irif.fr/~berthe/Articles/3d.pdf"
+fetched_at = "2026-11-22T00:54:15Z"
+sha256 = "f0ad88b5383e065d475cacab0581a591610c9a18d3b8dd85cf2e9b02cb59ff14"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["2.1"]
