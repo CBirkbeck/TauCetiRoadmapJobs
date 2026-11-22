@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RandomGraphs~17",
+  "head": "99192ce14a13c1971bdb258f4a7914568c84f227",
+  "pr": 1223,
+  "folder": "RandomGraphs",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 9 changed lines since 1481b8d: both previous format notes (N01 section comment placement, N02 docstring universe) verified repaired in Suggested.lean; the changed docstring and the moved definitions checked against README 5.2 and its Checks with computed instances; no statement, locator or citation changed, so no source was reopened (sample section 5.2 touched in a docstring only); automatic checks all passed; elaboration exit 0 with 75 sorry warnings only; depcheck 0 problems, no UPWARD or CYCLE; no file outside the folder; pull request text agrees with the head; one new format note on the README's 'every formula' wording.",
+  "text": "7bcd4674f1996b52"
+ }
+}
