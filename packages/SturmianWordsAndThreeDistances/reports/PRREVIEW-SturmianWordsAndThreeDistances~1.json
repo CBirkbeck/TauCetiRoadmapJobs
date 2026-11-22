@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SturmianWordsAndThreeDistances~1",
+  "head": "149f1f3a3be2eeea2a2db6a25234d7416ff19b23",
+  "pr": 2959,
+  "folder": "SturmianWordsAndThreeDistances",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. Sample 1.1, 1.2, 2.1, 3.1, 3.2, 4.1, 4.2 checked against Alessandri-Berthe (author-page copy, 11 locators); all three headline theorems and every Check recomputed (360 irrational and all rational p/q with |p|<=7, q<=5 cases); 15 Mathlib declarations opened at the pin; supplier citations of Equidistribution, SubspaceTheorem and ProbabilisticAndMetricNumberTheory resolved on main; dependency check 0 problems; automatic checks all passed; elaboration gives only the three sorry warnings; one-tactic probe closes nothing. One P2: a false identity in the Conventions for rational slopes. Lothaire not read.",
+  "text": "57a9a3be3dad7d6e"
+ }
+}
