@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FrobeniusRestrictedRieszSums~7",
+  "head": "763038a7daa2c81bf93cd8a1bb345b8df3b8582e",
+  "pr": 2920,
+  "folder": "RiemannHypothesisForDirichletLFunctions/FrobeniusRestrictedRieszSums",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "incremental re-review of 6 changed lines since 801a05b: the two formal-proof locators added to 1.4 (no statement changed; the source could not be read, so they are unverified), 1.4 (b) and its Check recomputed, 1.9 read against the rewritten family index (its entry again says 'equivalence ... window bound': C01; description sentence contradicted: C02; References do not name the commit the index says they name: C03). Previous report had no findings; its two format notes are carried. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with three sorry warnings only. Seven points for the human reviewers, two new (source published without a license; review-policy section in the index).",
+  "text": "773449c81f1568f1",
+  "carried": {
+   "from": "763038a7daa2c81bf93cd8a1bb345b8df3b8582e",
+   "head": "2d95aff2095fa4794fe7a300f04666e4599701c2",
+   "findings": 3,
+   "lines": 5,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/FrobeniusRestrictedRieszSums"
+   ],
+   "corrections": true,
+   "outside": true
+  }
+ }
+}
