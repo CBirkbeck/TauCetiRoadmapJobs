@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BorelEquivalenceRelations~11",
+  "head": "6577aa7c0e23db49fd24235c85404e850e5626fb",
+  "pr": 1616,
+  "folder": "BorelEquivalenceRelations",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 15 changed lines since ab52752. Checked: the previous report had no finding; its two small corrections (four reversed above/below pointers, description silent on the reordering) and its format note (0.1 consequence clause) are all repaired. The five changed README passages were read at this head; the two link anchors resolve; the restored 0.1 clause was proved in a scratch probe at the pins from Perfect.mk_eq_continuum and Perfect.exists_nat_bool_injection applied to the whole space, and compared with the merge-base README. Sampled target 0.4 checked where the change cites it. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean gives two sorry warnings only; no file outside the folder changed; description read against the head.",
+  "text": "244ac0920cd4dce4"
+ }
+}
