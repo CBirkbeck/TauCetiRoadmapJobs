@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SphericalCodesAndKissingNumbers~1",
+  "head": "d78083c9d865b8dfb0d6d985bda189c6707ae94a",
+  "pr": 3000,
+  "folder": "SphericalCodesAndKissingNumbers",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample 1.1, 1.2, 2.1, 2.2, 3.1, 3.2, 3.3, 4.1, 4.2: all 8 locators into Cohn (arXiv:1603.05202v1) read at their place; every printed expansion, zonal and Gegenbauer coefficient, quotient (6, 240, 196560), Layer 4 matrix, determinant and solution, and the control values 720/143, 14359/3596, 20/9 recomputed in exact rational arithmetic and found to agree; the 240 E8 roots enumerated. Supplier SpecialFunctionsHigherSpheres (open, #2931) read at its head: cited sections and declarations exist with the hypotheses assumed, zonalPolynomial identical. 27 library declarations checked at the pins (two Leech declarations read in source, module not built). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 8 theorems. Not opened: Delsarte-Goethals-Seidel, Odlyzko-Sloane, Levenshtein (no locators cited into them). The Leech enumeration Check of 4.2 was not re-enumerated.",
+  "text": "e3ae7069625fc318"
+ }
+}
