@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CurieWeissModel~1",
+  "head": "50313aeffdcccfdce8065240954e12412386520a",
+  "pr": 2981,
+  "folder": "CurieWeissModel",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample (1.1, 1.2, 2.1, 2.2, 3.1, 3.2, 4.1, 4.2, 4.3, 5.1) and every other statement, Check and example recomputed; 21 locators into Friedli-Velenik and 5 into Levin-Peres read at their pages in the authors' copies; 22 library declarations opened at the pins; supplier citations (MarkovChainMixing, SimulatedAnnealing, QuantumOptimization) resolved at their open heads and the six copied definitions compared; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes nothing; N = 2 mixing times 3, 6, 11 recomputed exactly. The automatic checks all passed. One small correction (scope does not name GlauberDynamicsOfTheIsingModel 3.2 for the high-temperature half of LPW Theorem 15.4), one format note.",
+  "text": "f2126efe120cce23"
+ }
+}
