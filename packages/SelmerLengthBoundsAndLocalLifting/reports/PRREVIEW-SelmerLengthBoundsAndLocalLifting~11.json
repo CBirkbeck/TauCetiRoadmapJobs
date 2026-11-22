@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelmerLengthBoundsAndLocalLifting~11",
+  "head": "adae11f88787104920ae49ceabd56a254d73a65d",
+  "pr": 2901,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SelmerLengthBoundsAndLocalLifting",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "incremental re-review of 14 changed lines since a640387. Checked: the three small corrections of the previous review (4.9d (2) attribution against the formal declaration InvariantsKilledOverCyclotomic at its first commit; the new supplier contract, Needs line and Dependencies entry for EulerSystemsAndKolyvaginSystems against its sections 0.2 and 1.1 on main; the commit named in the description), all repaired; three earlier format notes not repaired and carried. Title and description read against the head: nothing contradicted or unstated. Seeded sample: 3.25a falls in the change (its Needs line), checked. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no output and declares nothing; no change outside the folder since a640387.",
+  "text": "9a31170d03329984"
+ }
+}
