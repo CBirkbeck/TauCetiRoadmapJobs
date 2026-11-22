@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GluedTargetAndDivisionInequality~9",
+  "head": "788bbfbedbcede2be513eefd03af379a8c6d1bcc",
+  "pr": 2922,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "full review of the head: whole README read, every Check and the numerical steps of the routes recomputed (22 rows of computed values); the 15 sampled targets (8.1, 8.2, 8.3, 8.5c, 8.7, 8.8, 8.9, 8.20, 8.20a, 8.21, 8.22, 8.23, 8.24c, 8.24e, 8.24) and the three headlines checked; all 153 file-and-declaration locators into the formal proof resolved in a locally held copy of the public repository and 31 declarations read against their targets; Bost1996 and GaudronRemond2014 locators read in the cache; 1070 section citations of 18 family roadmaps resolved at their open heads (three suppliers at the head of #2954, their own pull requests being closed) and the citations of 13 roadmaps on main; previous small correction on 8.7 (b) repaired; automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates with sorry the only warning, one-tactic probe does not close it. Two small corrections (three locators naming a declaration that states something else; description silent on #2954), two format notes, one question carried.",
+  "text": "ff89dbb83bb0a11c",
+  "carried": {
+   "from": "788bbfbedbcede2be513eefd03af379a8c6d1bcc",
+   "head": "4eb14df54d0731c480cad0254b9fe67ab2b79a56",
+   "findings": 2,
+   "lines": 14,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality"
+   ],
+   "corrections": true
+  }
+ }
+}
