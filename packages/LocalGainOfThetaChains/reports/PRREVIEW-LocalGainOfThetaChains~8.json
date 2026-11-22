@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalGainOfThetaChains~8",
+  "head": "288fa8c96c46ee898f9e93f9d73b312de88510de",
+  "pr": 2915,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review of the head. One finding (P2): the Summary says Drop contains every prime with a power in the band, while 4.17 (b) and the formal proof's NoGain require p >= p0. Sample: all fifteen seeded targets (4.9a-4.9f, 4.10, 4.10a, 4.11, 4.14c, 4.14c', 4.15e, 4.15f, 4.17a, 4.17d) read against the cited declarations of the formal proof at the first commit 40e56bab; the new plane count 4.15e' compared clause by clause with SelectionLemmas.Conclusion2; 60 cited paths and 147 declaration names located; numeric Checks recomputed (the six values of sqrt(d)|s2|, the diagrams of 4.9f, the lattice count of 4.12, 4.14a, 4.15a, 4.15d, 4.17b-d). Cross-roadmap citations resolved on main and at the heads of #2954, #2918, #2888. Dependency check: 0 problems. Automatic checks rerun: all pass except the family-index files counted outside the folder and the roadmap not yet placed in the merge order. Suggested.lean elaborates with no message and declares nothing. The previous correction on the Kostant form is withdrawn (TauCeti.UniversalEnvelopingAlgebra.kostantForm exists at the pin). Four small corrections (the ring of 4.15e', q in the Route of 4.15d, 'inputs of 4.14', the description and #2954) and one format note.",
+  "text": "d090ba7934198778"
+ }
+}
