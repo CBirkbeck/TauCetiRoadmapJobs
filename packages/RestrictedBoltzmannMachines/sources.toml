@@ -1,0 +1,38 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RestrictedBoltzmannMachines"
+
+[[source]]
+id = "MontufarAy2010"
+authors = "Guido Montufar, Nihat Ay"
+title = "Refinements of Universal Approximation Results for Deep Belief Networks and Restricted Boltzmann Machines"
+year = 2010
+arxiv = "1005.1593v2"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1005.1593v2"
+fetched_from = "https://arxiv.org/pdf/1005.1593v2"
+fetched_at = "2026-11-22T13:55:34Z"
+sha256 = "2661e4e274ff96ea4fb47dee7d885b83f8e158e01ac4c963bfe03c4839e30e47"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v2"
+cited_for = ["5.2"]
+
+[[source]]
+id = "FischerIgel2014"
+authors = "Asja Fischer, Christian Igel"
+title = "Training restricted Boltzmann machines: An introduction"
+year = 2014
+venue = "Pattern Recognition 47"
+doi = "10.1016/j.patcog.2013.05.025"
+locator_scheme = "equation"
+locator = "eq. (20)"
+url = "https://christian-igel.github.io/paper/TRBMAI.pdf"
+fetched_from = "https://christian-igel.github.io/paper/TRBMAI.pdf"
+fetched_at = "2026-11-22T13:55:50Z"
+sha256 = "1c3ca290773623ee49a14b23f0391a9df0d56315b0248847a2de66421ea9c39c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["1.3"]
