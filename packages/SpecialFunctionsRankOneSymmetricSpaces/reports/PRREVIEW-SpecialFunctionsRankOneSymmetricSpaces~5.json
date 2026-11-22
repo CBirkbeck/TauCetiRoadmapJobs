@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsRankOneSymmetricSpaces~5",
+  "head": "9e03432665796c29c855803c1065b67a613eca78",
+  "pr": 2935,
+  "folder": "SpecialFunctionsRankOneSymmetricSpaces",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "incremental re-review of 88 changed lines since 71569a2. Checked: the five previous remarks (R01, R02, C01, N02 repaired; N01 partly, carried as a format note); the new spectral-representation target and route of 1.2 recomputed (Sturm-Liouville class, limit point at infinity, limit circle at 0 exactly for -1<alpha<1, boundary condition, self-adjointness of the closure, resolvent argument for surjectivity, explicit case (1/2,-1/2)); the supplier contract against OperatorTheory/UnboundedOperators 1.7, 4.5, 4.8 on main; the pinned Tau Ceti uniqueness of the resolvent transform (C01); the negative control of 2.5. Automatic checks: dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry the only warning (58), unchanged since 71569a2; two scanner reports set aside as false positives. No source text of the changed passages was readable (listed under Not verifiable). Pull request text agrees with the head.",
+  "text": "a7a1ed77cd5204ef"
+ }
+}
