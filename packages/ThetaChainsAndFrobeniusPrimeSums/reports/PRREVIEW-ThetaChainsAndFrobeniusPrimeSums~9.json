@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsAndFrobeniusPrimeSums~9",
+  "head": "73ab875104d81ffcc031fc6f70e8aeef48f6e6e6",
+  "pr": 2924,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsAndFrobeniusPrimeSums",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 129 changed lines since bb48791. Checked: the previous small correction (repaired) and format note (not repaired, carried); the 21 declarations of the formal proof that the changed lines newly name, opened in 16 files and compared with the README (C_T = 25 and 46, the thresholds of C_F, the gap hypotheses with exponent 1610, the page constants and windows, the ten statements and the 46-field record, e_D = 2 and e_L = 0 giving exponent 9, window exponent 3/2); the gap hypotheses recomputed at the parameters of 10.6; the cited sections of RowTowerAndRallisIdentities 5.8, GluedTargetAndDivisionInequality 8.24/8.24a/8.24c, ThetaChainsOnDefiniteUnitaryGroups 2.3/2.6/2.6a, CongruenceModulesOfThetaLifts 7.8 and BesselPoincareSeriesAndGramBounds 5.20a at their open heads; the family index changed outside the folder; the description against the head. Automatic checks all passed; dependency check 23 roadmaps, 106 edges, 0 problems; Suggested.lean elaborates with two sorry warnings only. Adversarial table: 9 rows with computed values. One small correction (description silent on the new section of the family index), two format notes.",
+  "text": "2538928f45d34345",
+  "carried": {
+   "from": "73ab875104d81ffcc031fc6f70e8aeef48f6e6e6",
+   "head": "73ab875104d81ffcc031fc6f70e8aeef48f6e6e6",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
