@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GlauberDynamicsOfTheIsingModel~1",
+  "head": "3b52933f4c8dcbafcd3dfc09c18a3baea3da98cb",
+  "pr": 2979,
+  "folder": "GlauberDynamicsOfTheIsingModel",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Full review. All 11 sampled targets and all 17 README locators checked against Levin-Peres 2nd ed. (authors' page) at the cited pages; none unverifiable. Adversarial pass computed on every statement: empty vertex set, one vertex, one edge, beta = 0, beta < 0, cycle n = 2..5, tree b = 0, 1, 2; every numerical Check of the README reproduced (tree mixing times, cycle gaps, d(1) = 9/20, d(2) = 81/200, 36/61, 33/34, 83/102). Theorems 3.1, 4.1, 4.2, 4.3 tested numerically on ten small graphs with no violation. Suppliers MarkovChainMixing, QuantumOptimization, SimulatedAnnealing, CouplingFromThePast resolved at their open heads; the 12 copied definitions are identical to their owners'. 24 library declarations opened at the pins; no Ising or Glauber object in pinned Mathlib or Tau Ceti. Dependency check: 0 problems. Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 13 theorems. Automatic checks all passed; none set aside. Five source issues recorded for LPW. For humans: single-source roadmap whose sections 3.1-4.3 follow LPW 15.1-15.4 in order; four suppliers still open.",
+  "text": "e09c0ca102f84110"
+ }
+}

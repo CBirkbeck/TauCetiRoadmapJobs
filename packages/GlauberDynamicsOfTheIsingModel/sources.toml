@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GlauberDynamicsOfTheIsingModel"
+
+[[source]]
+id = "LPW"
+locator_scheme = "theorem"
+locator = "Theorem 15.1"
+url = "https://pages.uoregon.edu/dlevin/MARKOV/mcmt2e.pdf"
+fetched_from = "https://pages.uoregon.edu/dlevin/MARKOV/mcmt2e.pdf"
+fetched_at = "2026-11-22T13:04:56Z"
+sha256 = "9ef39f9467d9647ff3f5e8747b9ce24b7a90d13be2f8156fbd827b95b661a772"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["3.1"]
