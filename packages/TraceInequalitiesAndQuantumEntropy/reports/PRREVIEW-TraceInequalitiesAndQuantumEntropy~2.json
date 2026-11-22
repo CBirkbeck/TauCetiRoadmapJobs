@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-TraceInequalitiesAndQuantumEntropy~2",
+  "head": "db6ea072c7709353631eebfd5fe12295bcac17f6",
+  "pr": 2975,
+  "folder": "TraceInequalitiesAndQuantumEntropy",
+  "date": "2026-11-22",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review. Sample: all 15 seeded sections; every Watrous locator (20) and the Tropp locators read at the text, Hiai's arXiv paper read for the standard f-divergence; Bhatia, Simon, Hiai's book, Bengtsson-Zyczkowski and Bratteli-Robinson not readable legally. Adversarial pass computed on every statement (table in the report), with numeric 2x2 checks. Suggested.lean elaborates with sorry the only warning (36); one-tactic probe closes none; signatures compared. Pinned Tau Ceti entropy and partial-trace modules import at the pin (R04). Dependency check: 0 problems, no UPWARD or CYCLE. 14 cross-roadmap citations resolved; compound matrices found owned by PadicMeasuresIwasawaAlgebras 6.4 on main (R05). One automatic form check set aside as a false positive.",
+  "text": "ce0e8896c247a4b4"
+ }
+}
