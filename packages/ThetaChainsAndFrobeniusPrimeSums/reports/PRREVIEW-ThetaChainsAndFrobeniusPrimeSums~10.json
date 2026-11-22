@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsAndFrobeniusPrimeSums~10",
+  "head": "73ab875104d81ffcc031fc6f70e8aeef48f6e6e6",
+  "pr": 2924,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsAndFrobeniusPrimeSums",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 73ab875. Checked: the pull request's title and description against the head (the Summary paragraph, the order of the exponent c_Δ after ε and c_H and before the node gap, the 2 theorems and 5 definitions of Suggested.lean and its docstring, the family index with its merge-order list, first-commit sentence and section on wrong roadmaps); the previous small correction (repaired in the description) and the two format notes (not repaired, carried); the cited sections of ThetaChainsOnDefiniteUnitaryGroups 2.3/2.3a, FrobeniusRestrictedRieszSums 0.5, PositivityOfDirichletSeriesWithKernels 6.9, RiemannHypothesisStatementsAndConsequences 8.4a and GeneralizedRiemannHypothesisFromWindowBounds 4.2/5.1 at their open heads. Automatic checks all passed; dependency check 133 roadmaps, 1479 edges, 0 problems; Suggested.lean elaborates with two sorry warnings only; changes outside the folder are the family index only. Adversarial table: 5 rows with computed values (weights 1/(3o+1) at ω₀ = 3/4, the consumer form from the uniform form). No finding, no small correction, two format notes.",
+  "text": "9627332d8e4b2e1e"
+ }
+}
