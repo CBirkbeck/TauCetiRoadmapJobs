@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RandomGraphs~15",
+  "head": "0c208eadd95d45d999a0a9e2f3e1556363e32db5",
+  "pr": 1223,
+  "folder": "RandomGraphs",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review of the repaired head. All eight remarks of the previous review (C01-C04, N01-N04) are repaired. Every Check, worked example and displayed formula of Layers 0-11 recomputed (adversarial table, 30 rows); all 112 elaborated signatures compared with the README. Seeded sample: 15 targets; 9 Cameron locators and 1 Erdos-Renyi locator read in the text; Spencer, Hodges, Bollobas and Fagin not readable legally (listed under Not verifiable). Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 75 sorry warnings only; one-tactic probe of nine statements closes none. Overlap audit: the two quantifier-elimination definitions are also stated by the open SaturationAndQuantifierElimination (owner RandomGraphs, earlier; small correction C01 on one sentence). Two format notes on Suggested.lean. Four items for the human reviewers (executable-definition requirement, Fagin link, provenance repositories, unread sources).",
+  "text": "7bcd4674f1996b52"
+ }
+}
