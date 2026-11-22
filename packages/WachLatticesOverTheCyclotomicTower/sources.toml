@@ -84,3 +84,22 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["6.4"]
+
+[[source]]
+id = "Cherbonnier-Colmez-1999"
+authors = "Frédéric Cherbonnier; Pierre Colmez"
+title = "Théorie d'Iwasawa des représentations p-adiques d'un corps local"
+year = 1999
+venue = "Journal of the American Mathematical Society 12"
+doi = "10.1090/S0894-0347-99-00281-7"
+version_note = "read in the copy on the page of Pierre Colmez (28 pages, numbered 1-28); cited by statement number, Proposition I.5.1 (§I.5)"
+locator_scheme = "theorem"
+locator = "Proposition I.5.1"
+url = "https://webusers.imj-prg.fr/~pierre.colmez/CCjams.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~pierre.colmez/CCjams.pdf"
+fetched_at = "2026-11-22T15:40:01Z"
+sha256 = "d8f422d1f02a116ad3387826ec1947f8fa1afcac4ed8b89b6564e0e9f245f395"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["6.7"]
