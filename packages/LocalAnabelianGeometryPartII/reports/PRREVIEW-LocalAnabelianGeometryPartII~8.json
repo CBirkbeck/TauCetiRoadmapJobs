@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LocalAnabelianGeometryPartII~8",
+  "head": "7f997207365001dc265d7c1f128b883fa1a15fdb",
+  "pr": 2867,
+  "folder": "LocalAnabelianGeometryPartII",
+  "date": "2026-11-22",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample: 0.1, 0.2, 1.0, 1.3, 1.6, 2.1, 2.4, 2.5, 3.3, 4.1, 5.5, 6.4 verified against Abrashkin 2010 (arXiv text, with printed pages checked on the journal's open Numdam copy) and Lazard 1965 II (3.1.4); 7.1, 7.4, 10.2 not verifiable (Abrashkin 2000 and Deligne 1984 unreadable legally), their Checks recomputed. R01 (P2): Props. 5.6 and 3.3 lack the range 0 <= m < N and are false at m = N for the identity; the criterion of 2.4 drops r* < v0. R02 (P2): b_K in 11.2 defined by the reversed Herbrand relation (p = 3, M = 2, e_K = 6: needed 18, written gives 378 > a_K = 21). Automatic checks: all pass except the TeX scan (false positives: a fenced display and wrapped code spans); dependency check 168 roadmaps, 1962 edges, 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with three sorry warnings only; one-tactic probe closes none of the sorried theorems; all supplier citations resolve on main or at the open heads; nothing changed outside the folder.",
+  "text": "e8e8aafefbeb5100"
+ }
+}
