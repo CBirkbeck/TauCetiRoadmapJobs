@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuasirandomGraphs~1",
+  "head": "406f09438323425b71045b59642c48e17cebd104",
+  "pr": 2966,
+  "folder": "QuasirandomGraphs",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review. Sample: all 12 seeded targets (1.1-1.3, 2.1, 2.2, 3.1, 3.2, 4.1-4.3, 5.1, 5.2) recomputed with their tolerances and Checks; 14 locators into Zhao's book read at the cited pages (author's-page copy, OCR text), all correct; 33 Tau Ceti and 31 Mathlib declarations resolved at the pins; SpectralGraphBounds 1.1, 1.2, 4.1 resolved at its open head. Automatic checks all passed; targeted build succeeds with sorry the only warning; #check signature pass on 14 declarations, no lost binder; one-tactic probe closes none of the 9 theorems; dependency check 0 problems. Two small corrections: the overview's DISC => COUNT bullet omits the nonempty vertex type; a scope remark on the expander mixing lemma fails at n = 1 with negative beta. For humans: single textbook source; adjEigenvalues copied from the open SpectralGraphBounds roadmap.",
+  "text": "fd5f7e35bbb3ec61"
+ }
+}
