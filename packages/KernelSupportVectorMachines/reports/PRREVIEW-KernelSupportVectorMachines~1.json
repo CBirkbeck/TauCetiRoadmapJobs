@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KernelSupportVectorMachines~1",
+  "head": "15050a5cd96f61f52a4d913a0baff385d6bae7b8",
+  "pr": 3008,
+  "folder": "KernelSupportVectorMachines",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample (1.1, 1.2, 1.3, 2.1, 2.2, 3.1, 3.2, 3.3, 4.1): every statement recomputed at degenerate parameters and every proof route re-derived; the Checks of 1.2, 1.3, 2.1, 2.2, 3.1 and 4.1 recomputed exactly. Ten source locators verified in three texts (Bartlett-Jordan-McAuliffe preprint, Jaakkola-Haussler, Shalev-Shwartz-Ben-David); Mohri-Rostamizadeh-Talwalkar (largest share of locators), Steinwart and Bousquet-Elisseeff could not be read from a legal copy and are listed as not verifiable and for the human reviewers. 35 library declarations opened at the pins, 19 supplier citations resolved in seven roadmaps, the 11 copied definitions compared with their owners. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 11 theorems; all headline theorems stated. Overlap check found nothing shared. Three small corrections (a Conventions sentence on normalisation, the space of a Check in 2.2, the description of Jaakkola-Haussler's Def. 1) and one format note.",
+  "text": "9de5eff8b28e813a"
+ }
+}
