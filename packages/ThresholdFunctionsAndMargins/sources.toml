@@ -1,0 +1,33 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ThresholdFunctionsAndMargins"
+
+[[source]]
+id = "ODonnell2021"
+authors = "Ryan O'Donnell"
+title = "Analysis of Boolean Functions"
+year = 2021
+arxiv = "2105.10386v1"
+locator_scheme = "theorem"
+locator = "Theorem 5.1"
+url = "https://arxiv.org/abs/2105.10386v1"
+fetched_from = "https://arxiv.org/pdf/2105.10386v1"
+fetched_at = "2026-11-22T18:45:07Z"
+sha256 = "624b33577351086b7d8140d288af81ea9d60150ee1e56c5645060a45b4c9acb6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v1"
+cited_for = ["3.3"]
+
+[[source]]
+id = "BunThaler2022"
+locator_scheme = "page"
+locator = "p. 7"
+url = "https://people.cs.georgetown.edu/jthaler/adegFnT.pdf"
+fetched_from = "https://people.cs.georgetown.edu/jthaler/adegFnT.pdf"
+fetched_at = "2026-11-22T18:45:10Z"
+sha256 = "623574f624864646581fc1f351c234d86e46afa95dd2283f36738b9b3c5e375a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["1.2"]
