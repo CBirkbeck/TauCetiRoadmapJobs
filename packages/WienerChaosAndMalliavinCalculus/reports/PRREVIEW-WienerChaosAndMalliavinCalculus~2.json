@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-WienerChaosAndMalliavinCalculus~2",
+  "head": "653e8453dd79d1a05c2452b98a670861e06e8001",
+  "pr": 2972,
+  "folder": "WienerChaosAndMalliavinCalculus",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full re-review. Previous finding R01 and corrections C01-C05 repaired. New finding: four theorems of Layers 4 and 6 (mem_sobolev12_iff, mem_ouGeneratorDom_iff, integral_mul_comp, malliavinDeriv_ouSemigroup) are false for an incomplete H and their signatures lack CompleteSpace H; counterexample computed. Adversarial pass over every statement with computed values. Sample: all fifteen seeded sections; no locator could be checked against a text (none of the five books is legally readable). Automatic checks: targeted elaboration clean (sorry the only warning), dependency check 0 problems, no change outside the folder; one form check set aside as a false positive. Library claims checked at the pins by object; signatures of all 74 declarations elaborated in a probe copy; one-tactic probe on the changed statements.",
+  "text": "e7421a298dd2a398"
+ }
+}
