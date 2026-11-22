@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~11",
+  "head": "175fb9049b1a97248b2c0672e6855e0646e6ea22",
+  "pr": 2923,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full re-review. Previous finding R01 (owner of the theta basis by translates) and the two corrections and one note are repaired at this head. Whole README read; sample of 15 targets (8.5, 8.11, 8.12, 8.14c, 8.17, 8.18a, 8.18b, 8.18c, 8.18e, 8.18f, 8.19, 8.19a'', 8.19a''', 8.19c, 8.19d) and the four headlines recomputed, with the new canonical weight of 8.18 and the peak sections of 8.18a (f) compared with the formal proof. Locators: 8 in Chowla-Selberg 1967, Damerell 1970 and Mumford 1966 read at the text; all 132 file and declaration pairs of the formal proof found, 11 read for their statements. All cited supplier section ids resolve; 13 read for the statement. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with the sorry warning only; one-tactic probe closes nothing; signatures match the README. Small corrections: the description's account of 8.19a' (d); the hypothesis of 8.19a'' (b) against its source; Mathlib cited for antisymmetric polynomials; the credit of 8.17 omits six hypotheses. Format note: the reference to the formal proof does not name the commit. Not verified: the announcement, the unlocated published references, the hypotheses of two formal theorems.",
+  "text": "67cd796a943eb1d8",
+  "carried": {
+   "from": "175fb9049b1a97248b2c0672e6855e0646e6ea22",
+   "head": "045bf11dbe9575dd6560452365a660dcc185542f",
+   "findings": 4,
+   "lines": 11,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties"
+   ],
+   "corrections": true
+  }
+ }
+}
