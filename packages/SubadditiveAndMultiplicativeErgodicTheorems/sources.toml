@@ -1,0 +1,32 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SubadditiveAndMultiplicativeErgodicTheorems"
+
+[[source]]
+id = "BenoistQuint2016"
+authors = "Y. Benoist, J.-F. Quint"
+title = "Random Walks on Reductive Groups"
+year = 2016
+venue = "Random Walks on Reductive Groups"
+doi = "10.1007/978-3-319-47721-3_10"
+locator_scheme = "theorem"
+locator = "Theorem 4.31"
+url = "https://doi.org/10.1007/978-3-319-47721-3_10"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.3"]
+
+[[source]]
+id = "Kallenberg2021"
+authors = "O. Kallenberg"
+title = "Foundations of Modern Probability"
+year = 2021
+venue = "Probability Theory and Stochastic Modelling"
+doi = "10.1007/978-3-030-61871-1"
+locator_scheme = "theorem"
+locator = "Theorem 25.20"
+url = "https://doi.org/10.1007/978-3-030-61871-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.3"]

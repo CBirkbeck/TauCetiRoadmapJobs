@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SubadditiveAndMultiplicativeErgodicTheorems~1",
+  "head": "303f7839b2029cfaf59d01d4f89adcf2c6e2734e",
+  "pr": 2973,
+  "folder": "SubadditiveAndMultiplicativeErgodicTheorems",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 3,
+  "notes": "Full review. Adversarial pass over every statement with computed instances (table in the report); one P2: the 7.2 moment condition is false for d = 1. Suggested.lean elaborates (33 sorry warnings, no error); one-tactic probe closes 0 of 33; dependency check 0 problems; suppliers ProbabilisticAndMetricNumberTheory 4.1 (main) and EigenvalueAndSingularValueInequalities 2.4 (open head) resolved. Seeded source sample NOT verified: none of the six cited books is readable from a legal place (four listed in the job's request for references; Benoist-Quint and Kallenberg recorded as uncertified by the sources service, which wrote packages/SubadditiveAndMultiplicativeErgodicTheorems/sources.toml). Both automatic check failures (pull-request numbers in the README, a section header with only #check lines) are real and are format notes; none set aside.",
+  "text": "7502890fb811d1d0"
+ }
+}
