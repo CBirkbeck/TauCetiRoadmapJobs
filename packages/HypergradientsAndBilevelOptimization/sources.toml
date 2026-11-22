@@ -1,0 +1,92 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HypergradientsAndBilevelOptimization"
+
+[[source]]
+id = "Grazzi2020"
+authors = "Riccardo Grazzi, Luca Franceschi, Massimiliano Pontil, Saverio Salzo"
+title = "On the Iteration Complexity of Hypergradient Computation"
+year = 2020
+arxiv = "2006.16218v2"
+locator_scheme = "theorem"
+locator = "Theorem 2.1"
+url = "https://arxiv.org/abs/2006.16218v2"
+fetched_from = "https://arxiv.org/pdf/2006.16218v2"
+fetched_at = "2026-11-22T18:41:45Z"
+sha256 = "d8dd347974d11003eb9b49ec19f3f915ebf8d2f1c2a47e4f2d277379ddbe71d2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v2"
+cited_for = ["3.2"]
+
+[[source]]
+id = "GhadimiWang2018"
+authors = "Saeed Ghadimi, Mengdi Wang"
+title = "Approximation Methods for Bilevel Programming"
+year = 2018
+arxiv = "1802.02246v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.2"
+url = "https://arxiv.org/abs/1802.02246v1"
+fetched_from = "https://arxiv.org/pdf/1802.02246v1"
+fetched_at = "2026-11-22T18:41:50Z"
+sha256 = "a4e7eff0369409377e11c95ca69cb2621ab60728f16c7ae6d7fe23a4a9babc33"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v1"
+cited_for = ["2.1"]
+
+[[source]]
+id = "Lorraine2019"
+authors = "Jonathan Lorraine, Paul Vicol, David Duvenaud"
+title = "Optimizing Millions of Hyperparameters by Implicit Differentiation"
+year = 2019
+arxiv = "1911.02590v1"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://arxiv.org/abs/1911.02590v1"
+fetched_from = "https://arxiv.org/pdf/1911.02590v1"
+fetched_at = "2026-11-22T18:41:58Z"
+sha256 = "711da861c838165d68c603173c03fcc035c04f8c7ef1b57a1504899e305286ef"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v1"
+cited_for = ["3.4"]
+
+[[source]]
+id = "DARTS2019"
+authors = "Hanxiao Liu, Karen Simonyan, Yiming Yang"
+title = "DARTS: Differentiable Architecture Search"
+year = 2018
+arxiv = "1806.09055v2"
+locator_scheme = "theorem"
+locator = "Section 2.3"
+url = "https://arxiv.org/abs/1806.09055v2"
+fetched_from = "https://arxiv.org/pdf/1806.09055v2"
+fetched_at = "2026-11-22T18:42:02Z"
+sha256 = "81a65f80be6c954280a0eea679f6202eaf28d3d520d027c4857a770b8c12fdcf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v2"
+cited_for = ["3.5"]
+
+[[source]]
+id = "Franceschi2018"
+authors = "Luca Franceschi, Paolo Frasconi, Saverio Salzo, Riccardo Grazzi, Massimilano Pontil"
+title = "Bilevel Programming for Hyperparameter Optimization and Meta-Learning"
+year = 2018
+arxiv = "1806.04910v2"
+locator_scheme = "theorem"
+locator = "Theorems 3.1-3.2"
+url = "https://arxiv.org/abs/1806.04910v2"
+fetched_from = "https://arxiv.org/pdf/1806.04910v2"
+fetched_at = "2026-11-22T18:45:14Z"
+sha256 = "d6bea96aa61b56ab76e6b7cd2b8955480348853cb6174110f581f959ea7cbbe0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v2"
+cited_for = ["Scope"]
