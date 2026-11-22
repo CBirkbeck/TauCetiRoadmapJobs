@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RowTowerAndRallisIdentities~12",
+  "head": "ccd8860e6383f694f3ad927fc250acd7a2bf5d26",
+  "pr": 2919,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RowTowerAndRallisIdentities",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "incremental re-review of 49 changed lines since df851c3. Checked: the previous small correction (repaired) and three format notes (carried); the five changed passages (5.7 split-place variable computed, 5.8e (A) against the Definitions and 5.2, 5.8 file pointers, 5.10a Hecke statements, 5.11 adelic point) against the formal proof's declarations in the operator's copy, ThetaChainsOnDefiniteUnitaryGroups 2.2a at its open head and ShimuraVarieties 4.11 and AutomorphicBundles 6.1, 6.4 on main; the seeded sample where it falls in the change (5.8e, 5.8, 5.10a, 5.11); the family index change (one small correction: its new clause on the commit is not true of this README); the pull request text; deferred D01 resolved at the open head of CongruenceModulesOfThetaLifts. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no message and is unchanged.",
+  "text": "5c46d20448ef6e70",
+  "carried": {
+   "from": "ccd8860e6383f694f3ad927fc250acd7a2bf5d26",
+   "head": "edac51f16f2695eff76e50a51bcebb5b559be75e",
+   "findings": 1,
+   "lines": 5,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/RowTowerAndRallisIdentities"
+   ],
+   "corrections": true
+  }
+ }
+}
