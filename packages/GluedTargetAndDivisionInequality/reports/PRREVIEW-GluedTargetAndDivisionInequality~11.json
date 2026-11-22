@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GluedTargetAndDivisionInequality~11",
+  "head": "b7135ca5f39ce49f23fbe66980ff1aa89d78b134",
+  "pr": 2922,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "incremental re-review of 60 changed lines since 3cb4be1. Previous C01 (8.19e (c3): Omega algebraic over Frac T, T' in Omega, unit rescaling of the section) and C02 (the FormalProof reference names its first commit and src/) are repaired; N01-N03 are carried. The new phase-one normalisation of 8.19e, 8.20 and 8.20b was read against RowTowerAndRallisIdentities 5.10a and 5.11 at its open head and against seven declarations of the formal proof (the phase theorem, IsRatPhase, RatHyp, toCx3, seriesSet, PhaseTie, the statement supplying PhaseTie), with the 8.20b clause statement read again; all 114 cited file paths exist under src/ at the named first commit. Of the seeded sample, 8.19e falls in the changed passages. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged and elaborates with sorry the only warning. Pull request text and the family index change read against the head. One small correction (standing hypotheses of the phase theorem unstated), three format notes.",
+  "text": "32bc20ae91de9e6f",
+  "carried": {
+   "from": "b7135ca5f39ce49f23fbe66980ff1aa89d78b134",
+   "head": "ba9796131a1b8f38ea806e8c9fcc8447df792532",
+   "findings": 1,
+   "lines": 8,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality"
+   ],
+   "corrections": true
+  }
+ }
+}
