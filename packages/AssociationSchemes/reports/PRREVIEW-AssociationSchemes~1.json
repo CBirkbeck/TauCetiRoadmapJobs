@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AssociationSchemes~1",
+  "head": "d4cc304f517fc12aeae2799244f21625d1079622",
+  "pr": 2997,
+  "folder": "AssociationSchemes",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. All 13 sampled targets recomputed (adversarial table in the report); 21 Godsil and 4 Ellis locators read at the text; Brouwer-Haemers could not be read legally and its locators are listed as not verifiable. 30 Mathlib declarations and TauCeti.krawtchouk opened at the pins; supplier declarations of SpectralGraphBounds 1.1, 3.2 and TopologicalCombinatorics 3.1 resolved at their open heads. Dependency check: 0 problems. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 12 theorems. Automatic checks all passed; none set aside.",
+  "text": "fb5d1b2f57eb6a99"
+ }
+}
