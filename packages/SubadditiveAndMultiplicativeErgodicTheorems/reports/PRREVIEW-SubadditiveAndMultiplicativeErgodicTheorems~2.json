@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SubadditiveAndMultiplicativeErgodicTheorems~2",
+  "head": "6cc86f7096a0e71c68b4a6088de3b301d9ee677b",
+  "pr": 2973,
+  "folder": "SubadditiveAndMultiplicativeErgodicTheorems",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 82 changed lines since 303f783. Checked: each of the nine previous remarks against this head (R01 and C01-C05, N03 repaired; N01, N02 partly, kept as format notes); the changed passages of 2.1, 5.1, 6.3, 7.2, Scope and the supplier contracts, with computed instances (d = 1 tail t^(-2/3): E tau infinite, E min = 4; Borel-Cantelli for the converse clause; 2d edge-disjoint paths for d >= 2); Projectivization.instTopologicalSpace, Projectivization.map and borel opened at the pin, no measurable structure on Projectivization there; BernoulliPercolation 1.3 and EigenvalueAndSingularValueInequalities 2.4 resolved at their open heads; the pull request text against the head. Automatic checks: all pass except pull-request numbers in the README (format note); dependency check 0 problems; Suggested.lean elaborates with 33 sorry warnings and no error. Seeded sample: no source text readable from a legal place, so 0 locators verified (listed under Not verifiable and for the human reviewers).",
+  "text": "e2af68a9d6766c5c"
+ }
+}
