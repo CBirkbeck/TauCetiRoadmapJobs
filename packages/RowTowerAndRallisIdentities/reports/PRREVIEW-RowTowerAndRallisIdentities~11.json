@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RowTowerAndRallisIdentities~11",
+  "head": "df851c3cb22f42508584021602d87b44f59986a9",
+  "pr": 2919,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RowTowerAndRallisIdentities",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "incremental re-review of 71 changed lines since 51a5443. Checked: the extremal-vector argument of 5.7 (recomputed) and its formal counterpart (IoExt, IsExtVec, ioExt_core); the gap hypothesis of 5.9 against ThetaChainsOnDefiniteUnitaryGroups 2.3c (recomputed: 4*Delta_w > 4k^4f^4 > 100r^4) and against HostHyp / hostHyp_of_gaps; the rational lift of 5.11 against SeriesRat, OneMapRowR, PhRat, oneMapRowR_of_core_of_size (rank condition 8fr+4 <= r+t, twist-place condition); the new citations of 5.8d (NormBig) and 5.8 (phases_core, BotExT); all 8 files and 10 declarations newly cited exist; the new sentence on ThetaChainsAndFrobeniusPrimeSums 10.0, 10.6, 10.6b. Seeded sample checked where it falls in the change (5.8d, 5.8, 5.11). Previous review had no finding; its format note is carried. Automatic checks all passed; dependency check 0 problems; Suggested.lean unchanged and elaborates with no message (it declares nothing). One small correction (an ambiguous file pointer in 5.8) and three format notes, none blocking. Change outside the folder: the family index only. Pull request text: nothing contradicted.",
+  "text": "5c46d20448ef6e70",
+  "carried": {
+   "from": "df851c3cb22f42508584021602d87b44f59986a9",
+   "head": "05d5bba84c736d52de47cfbfdbd8963197b40b27",
+   "findings": 1,
+   "lines": 8,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/RowTowerAndRallisIdentities"
+   ],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "Second question: yes.",
+    "where": "CongruenceModulesOfThetaLifts Layer 7, its parenthesis on the highest weight of `𝒲_j`",
+    "raised": "PRREVIEW-RowTowerAndRallisIdentities~11"
+   }
+  ]
+ }
+}
