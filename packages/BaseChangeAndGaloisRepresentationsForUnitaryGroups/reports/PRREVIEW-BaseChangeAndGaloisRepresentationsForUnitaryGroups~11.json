@@ -1,0 +1,33 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BaseChangeAndGaloisRepresentationsForUnitaryGroups~11",
+  "head": "67426680fe5266483ee542859cda53740507245c",
+  "pr": 2890,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BaseChangeAndGaloisRepresentationsForUnitaryGroups",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 44 changed lines since 210ed5d, and the title and description read against this head. Checked: the repairs of the previous C01-C03 (C04 is deferred, D01 stands); the three new source locators read in the text (Deligne 1973 Prop. 1.5 p. 510; Hoffman Thm 2.2; Cogdell Lecture 5 Prop. 5.3 (iii) and the remark after Prop. 5.1, pp. 38-39); the routes of 10.0a and 14.0a computed step by step (n = 1, 2; G = 1, S3); the two Tau Ceti declarations opened at the pin; AL.3.4.3, AL.3.7.1 and InductionRestriction Layer 6 resolved on main; seeded sample where it falls in changed passages (10.0a, 14.0a). Dependency check: 0 problems, no UPWARD or CYCLE. Elaboration of Suggested.lean: exit 0, no output (no declaration). Automatic checks all passed. One small correction: the description counts four cited family sub-roadmaps, the README cites a fifth (FrobeniusRestrictedRieszSums 0.4, descriptive only).",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C04: in `TauCetiRoadmap/RiemannHypothesisForDirichletLFunctions/README.md` (line 19), the family-level sentence \"so they are to be looked up at that first commit\" needs \"under its directory `src/`\".",
+    "where": "family index's own text, shared by every pull request of the family",
+    "raised": "PRREVIEW-BaseChangeAndGaloisRepresentationsForUnitaryGroups~10"
+   }
+  ],
+  "text": "ab0da473401def3d",
+  "carried": {
+   "from": "67426680fe5266483ee542859cda53740507245c",
+   "head": "67426680fe5266483ee542859cda53740507245c",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
