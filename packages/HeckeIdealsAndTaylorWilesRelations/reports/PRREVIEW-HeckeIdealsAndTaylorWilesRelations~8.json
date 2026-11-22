@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeckeIdealsAndTaylorWilesRelations~8",
+  "head": "57d7134b74974881350e1fa34b675f9d73c9e7a7",
+  "pr": 2893,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeckeIdealsAndTaylorWilesRelations",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "incremental re-review of 117 changed lines since 210cbc9. Checked: the new level-module statement (L) of 4.2a and its derivation of the patching data, the new 9.9 (d0) and (d0'), and the descent form added to the supplier contracts, each against the declarations of the formal proof it cites (sixteen statements and two proofs read at commit e50d098; the fourteen added locators resolve); the seeded sample where it falls in the changed passages (4.2a, 9.9, route of 3.13a (d); 10.1 unchanged); the changed cross-roadmap citations (BaseChangeAndGaloisRepresentationsForUnitaryGroups 16.1 at its open head, PotentialAutomorphyInfrastructurePartII 3.4, 3.5, 4.2 on main); the family index change, with the public repository's notice read; the pull request text. Dependency check: 0 problems, no UPWARD or CYCLE. Automatic checks all passed; lake env lean on Suggested.lean exit 0, no output (the file declares nothing). The previous report had no open point. Four small corrections: 9.9 (d0') should state hypothesis (ii); the descent form has no locator; the family index and the README name different commits of the formal proof; the description does not mention (L), (d0), (d0'). For the humans: targets resting on the unpublished formal proof alone, its missing licence, and the review-policy section added to the family index.",
+  "text": "4e395374a3a05030",
+  "carried": {
+   "from": "57d7134b74974881350e1fa34b675f9d73c9e7a7",
+   "head": "bab51e31e962a34cce96b175c19fadca5995fbc6",
+   "findings": 4,
+   "lines": 9,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/HeckeIdealsAndTaylorWilesRelations"
+   ],
+   "corrections": true
+  }
+ }
+}
