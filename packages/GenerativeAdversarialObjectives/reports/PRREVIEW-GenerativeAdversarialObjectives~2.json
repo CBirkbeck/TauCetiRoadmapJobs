@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GenerativeAdversarialObjectives~2",
+  "head": "c32c5c8eff61cad8d448c02c15877e55c245cc8d",
+  "pr": 3004,
+  "folder": "GenerativeAdversarialObjectives",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full re-review. Previous findings R01-R03 and corrections C01-C02 repaired; previous format note N01 (pull-request number in the README) not repaired and kept as a format note. Seeded sample 1.1-1.3, 2.1-2.2, 3.1-3.4: every statement, Check and route recomputed (gap identity, Jensen-Shannon bounds and GAN divergence on 2000 random finite laws; conjugates and Check values by hand). 19 locators read in Goodfellow2014, ACB2017, Gulrajani2017, Nowozin2016, NWJ2008; Polyanskiy-Wu could not be read from a legal copy (not verifiable, flagged to the human reviewers). 59 cited library declarations resolved at the pins; Suggested.lean elaborates with 15 sorry warnings only; one-tactic probe closes none; dependency check 0 problems; automatic checks all passed; no overlap with the closest roadmaps.",
+  "text": "7194cfe698121be3"
+ }
+}
