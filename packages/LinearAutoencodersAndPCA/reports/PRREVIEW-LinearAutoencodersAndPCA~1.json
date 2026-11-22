@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LinearAutoencodersAndPCA~1",
+  "head": "cc108fa2d4d0810b6457dd0cb4854fb6659e6e3a",
+  "pr": 2986,
+  "folder": "LinearAutoencodersAndPCA",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Sample: 1.1-1.4, 2.1-2.3, 3.1, all read against ZhouLiang2017 (arXiv:1710.11205v1) and MarchettiEtAl2025 (arXiv:2501.18915v2) at the cited pages; both texts were fetched through the sources service, which recorded them in the package manifest. Baldi-Hornik 1989 not readable (paywalled), cited for attribution only. Every route and every Check recomputed by hand, including degenerate sizes. Suppliers fpca_optimal and leading_eigenvector_perturbation read on main; 30 Tau Ceti and 16 Mathlib declarations opened at the pins. Elaboration: sorry warnings only; one-tactic probe closes none of the 10 theorems. Dependency check: 0 problems. Automatic checks all passed; none set aside. One source error recorded for ZhouLiang2017 (case division after Proposition 2).",
+  "text": "282cef2bae724367"
+ }
+}

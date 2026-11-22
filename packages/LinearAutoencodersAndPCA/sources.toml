@@ -1,0 +1,38 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LinearAutoencodersAndPCA"
+
+[[source]]
+id = "ZhouLiang2017"
+authors = "Yi Zhou, Yingbin Liang"
+title = "Critical Points of Neural Networks: Analytical Forms and Landscape Properties"
+year = 2017
+arxiv = "1710.11205v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1710.11205v1"
+fetched_from = "https://arxiv.org/pdf/1710.11205v1"
+fetched_at = "2026-11-22T17:25:22Z"
+sha256 = "b34dd3bbd19d54b3b7673a2725e1bf0e57631dcb6db0851bdbbb77865da60128"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v1"
+cited_for = ["2.1"]
+
+[[source]]
+id = "MarchettiEtAl2025"
+authors = "Giovanni Luca Marchetti, Vahid Shahverdi, Stefano Mereta, Matthew Trager, Kathlén Kohn"
+title = "Algebra Unveils Deep Learning -- An Invitation to Neuroalgebraic Geometry"
+year = 2025
+arxiv = "2501.18915v2"
+locator_scheme = "section"
+locator = "§4.3"
+url = "https://arxiv.org/abs/2501.18915v2"
+fetched_from = "https://arxiv.org/pdf/2501.18915v2"
+fetched_at = "2026-11-22T17:25:28Z"
+sha256 = "793e7fa353f4c312be06454cd6f1fa8d0f905936758d67afbdfe474520298830"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v2"
+cited_for = ["1.3"]
