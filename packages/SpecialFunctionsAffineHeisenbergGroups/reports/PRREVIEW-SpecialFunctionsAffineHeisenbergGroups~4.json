@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsAffineHeisenbergGroups~4",
+  "head": "b1d73826b0f27c20c5df66dc928ab75ddd3ef448",
+  "pr": 2936,
+  "folder": "SpecialFunctionsAffineHeisenbergGroups",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 11 changed lines since 27aadbb. Checked: previous R01 (4.1 orthogonality Check) repaired and recomputed (alpha-integral 2π, w-integral 0 at both new index sets); previous C01 (0.2 matrix realization) repaired in README and docstring, law compared with SpecialFunctionsGroupModels §0.2 at its open head and numerically (defect 1.2e-16). Elaboration: 47 sorry warnings, nothing else. Dependency check: 0 problems, no UPWARD or CYCLE. Automatic checks: three scanner hits and two citation leads set aside as false positives. One small correction: the description names the closed #2907 for ThetaKernelsForUnitaryDualPairs, now carried by #2954, where §3.45 was read. No cited book readable legally (as before); seeded sample sections 0.2 and 4.1 fall in the change but it adds no locator.",
+  "text": "e030f0b54fe6e10d"
+ }
+}
