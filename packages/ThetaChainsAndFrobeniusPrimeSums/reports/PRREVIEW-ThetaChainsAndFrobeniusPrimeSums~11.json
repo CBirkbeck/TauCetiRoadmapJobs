@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsAndFrobeniusPrimeSums~11",
+  "head": "75ae60f23ba186c7d5c3063c28ac2f5085ac642c",
+  "pr": 2924,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsAndFrobeniusPrimeSums",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 4 changed lines since 73ab875. Checked: the new provenance lines of 10.3 and 10.4 against the formal proof at their locators (key_identity, Main, logOm, PointwiseBoundVariant with Lo5, ErrX5at and QuotientSlopeBoundsWith, each_unit_bound_statement), the key identity numerically in both forms, the error terms of the pointwise bound against E1..E9; the family index change (re-wrapped paragraph); the pull request text against the head; the dependency check (0 problems, no UPWARD or CYCLE); the elaboration of Suggested.lean (two sorry warnings only); the worker's automatic checks all passed. One small correction (the cited bound has eleven hypotheses, not the seven ledger lines) and two carried format notes; no previous finding was open.",
+  "text": "9627332d8e4b2e1e",
+  "carried": {
+   "from": "75ae60f23ba186c7d5c3063c28ac2f5085ac642c",
+   "head": "4aa8eedefd3b0b867cddfc0a51446c852e2109c9",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ThetaChainsAndFrobeniusPrimeSums"
+   ],
+   "corrections": true
+  }
+ }
+}
