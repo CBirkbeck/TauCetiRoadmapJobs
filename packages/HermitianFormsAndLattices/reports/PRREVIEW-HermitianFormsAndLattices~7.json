@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HermitianFormsAndLattices~7",
+  "head": "c9d890753d92a3ab474f1bf4d7571c034dc34ca4",
+  "pr": 2882,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HermitianFormsAndLattices",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "incremental re-review of 35 changed lines since 3c0b86f. Checked: the Jacobson locator of 1.3 against the source (Theorem and formula (7), p. 267); the seven formal-proof declarations named in 6.0b, 6.2, 6.3, 6.4 against the operator's local copy of the formal proof (all found, statements agree; restrictions to CM extensions and to the proof's own data unrecorded: C02); the new Conventions paragraph and References entries; the family index diff; title and description against the head (C03). None of the seeded sample falls in a changed passage. Automatic checks: all passed on the worker's run; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with two sorry warnings only and is unchanged. Previous C01 partly repaired (carried as C01), N04 repaired, N01-N03 carried. Not verified: the pinned commit 40e56ba of the formal proof (copy read is at e50d098).",
+  "text": "61c261931bf511dc",
+  "carried": {
+   "from": "c9d890753d92a3ab474f1bf4d7571c034dc34ca4",
+   "head": "0c604cad08e52692851e1e3fcb5c68c76aa600ca",
+   "findings": 3,
+   "lines": 9,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/HermitianFormsAndLattices"
+   ],
+   "corrections": true
+  }
+ }
+}
