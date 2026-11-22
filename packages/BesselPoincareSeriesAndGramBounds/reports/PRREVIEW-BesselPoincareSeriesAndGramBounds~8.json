@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BesselPoincareSeriesAndGramBounds~8",
+  "head": "ed4e8d84518a09212ad0e96b5a144df5a2503ad3",
+  "pr": 2916,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review of the whole README (2275 lines) and Suggested.lean. One finding (P1): seven supplier roadmaps the README cites (FrobeniusRestrictedRieszSums, HermitianFormsAndLattices, DiscreteSeriesCoefficientsAndAutomorphicMetrics, PositivityOfDirichletSeriesWithKernels, TensorInductionAndFiniteGroupInputs, SlopesOfHermitianVectorBundles, FiniteReductiveGroups; named 133 times) are neither on main nor in any open pull request of the index of 2026-11-22T16:09Z. No false mathematics found: adversarial table of 21 rows with computed values; seeded sample of 15 targets checked (5.20d, 5.21, 5.23, 5.17, 5.13a read against the formal proof's statements; the others recomputed and, where unchanged, as read in the previous review); 157 cited declarations of the formal proof in 92 files all resolve; five paper locators verified; supplier citations into ThetaChainsOnDefiniteUnitaryGroups, RowTowerAndRallisIdentities and the roadmaps on main resolved. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no output and declares nothing (no headline statable at the pins, each named in the docstring). Previous review: C01 repaired, N01 and N02 not repaired (kept as format notes).",
+  "text": "36f53640a434377a"
+ }
+}
