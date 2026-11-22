@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RestrictedBoltzmannMachines~2",
+  "head": "5e944460c2cceb804a5d9e9777ce0f8018729205",
+  "pr": 2980,
+  "folder": "RestrictedBoltzmannMachines",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 15 changed lines since ba40f7b: R01 (route of 1.2) repaired and recomputed on five machine shapes and the b = log 2 instance; the earlier small correction on cdGradient taken up and checked against FischerIgel2014 eq. (32), Algorithm 1 and Theorem 2; pull request text read against the head; automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 10 sorry warnings only; no change outside the folder. Le Roux-Bengio (2008) remains unread.",
+  "text": "ba228cf2f1d5d1e5"
+ }
+}
