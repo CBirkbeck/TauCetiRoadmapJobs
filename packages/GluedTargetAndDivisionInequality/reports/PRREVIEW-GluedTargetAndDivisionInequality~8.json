@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GluedTargetAndDivisionInequality~8",
+  "head": "5cb15baf016ec19cea92f27bf0fe14ee4ce93194",
+  "pr": 2922,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 15 changed lines since 54c521b: the new route of the linear branching-integer bound in 8.7 (b) recomputed step by step (gap count of the highest weight, D1 <= 3 D0 + Sc + theta + 1, spread = u_0 + w_m + t/2 + 1) against ThetaChainsOnDefiniteUnitaryGroups 2.1, 2.3, 2.3b, 3.9 and IntegralWeylModulesOfGeneralLinearGroups 1.1 at their open heads; the sampled target 8.7 checked, its formal-proof locator resolved; title and description read against the head (earlier correction repaired); automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates with sorry the only warning. One small correction (hypotheses of 2.3b (f) not named in the statement of 8.7 (b)), one format note carried.",
+  "text": "ff89dbb83bb0a11c",
+  "carried": {
+   "from": "5cb15baf016ec19cea92f27bf0fe14ee4ce93194",
+   "head": "9d4bc6f046e66b05a1b1c1d436599257042e9e52",
+   "findings": 1,
+   "lines": 8,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality"
+   ],
+   "corrections": true
+  }
+ }
+}
