@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SturmianWordsAndThreeDistances~2",
+  "head": "d3a01d426e3b55423d6494b2738b666bf1d931cf",
+  "pr": 2959,
+  "folder": "SturmianWordsAndThreeDistances",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 92 changed lines since 149f1f3. Checked: the six previous remarks (R01, C01-C03, N01, N02), all repaired; the repaired identities recomputed (1458 and 40128 rational cases, no exception); the new uniform-distribution route against ProbabilisticAndMetricNumberTheory on main (linear_equidistribution_tfae, weyl_criterion, uniformDistribution_mod_one_tfae, TorusIrrational; one section number off, a small correction); 4 Mathlib declarations at the pin; 5 changed source locators against AlessandriBerthe1998; the pull request's text. Automatic checks all passed; dependency check 0 problems; elaboration gives three sorry warnings only; no change outside the folder.",
+  "text": "b5c399586f2fe072"
+ }
+}
