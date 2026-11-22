@@ -1,0 +1,51 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SpectralSparsification"
+
+[[source]]
+id = "BSS"
+authors = "Joshua Batson, Daniel A. Spielman, Nikhil Srivastava"
+title = "Twice-Ramanujan Sparsifiers"
+year = 2008
+arxiv = "0808.0163v3"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://arxiv.org/abs/0808.0163v3"
+fetched_from = "https://arxiv.org/pdf/0808.0163v3"
+fetched_at = "2026-11-22T01:41:01Z"
+sha256 = "700f084810399f14bba0fb644b912d394a3a39be87c3b5cd4122d895243897f9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v3"
+cited_for = ["3.5"]
+
+[[source]]
+id = "SS"
+authors = "Daniel A. Spielman, Nikhil Srivastava"
+title = "Graph Sparsification by Effective Resistances"
+year = 2008
+arxiv = "0803.0929v4"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/0803.0929v4"
+fetched_from = "https://arxiv.org/pdf/0803.0929v4"
+fetched_at = "2026-11-22T01:41:06Z"
+sha256 = "bcfe853bde290bf6318beb5425feaf758e5c6f191bbccbf383447266a85b58b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v4"
+cited_for = ["2.2"]
+
+[[source]]
+id = "Sp"
+locator_scheme = "section"
+locator = "§32.2"
+url = "http://cs-www.cs.yale.edu/homes/spielman/sagt/sagt.pdf"
+fetched_from = "http://cs-www.cs.yale.edu/homes/spielman/sagt/sagt.pdf"
+fetched_at = "2026-11-22T01:41:16Z"
+sha256 = "6b70ebd45e3369754ae597a42fda8531a8cb35407d16afef65dfff509369861c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["1.1"]
