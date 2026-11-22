@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-UniformWildKernelBounds~13",
+  "head": "bb1b42e19efc0c09ee83a0b46d166f661aaa8645",
+  "pr": 2892,
+  "folder": "RiemannHypothesisForDirichletLFunctions/UniformWildKernelBounds",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 28 changed lines since dbea552. Checked: the two small corrections of the previous review (both repaired) and its format note (carried); the changed passages of 3.22 (Hecke action on Fourier coefficients and constant terms recomputed from the adelic expansion, the decomposition of GL2 of the adeles over the narrow class group recomputed from strong approximation for SL2); the new supplier AdelicAlgebraicGroups 4.2 read on main; the pull request's title and description read against the head, no discrepancy; of the seeded sample only 3.22 lies in the changed text and it gains no source locator; dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with no message and declares nothing.",
+  "text": "76e1c0136bad00fa"
+ }
+}
