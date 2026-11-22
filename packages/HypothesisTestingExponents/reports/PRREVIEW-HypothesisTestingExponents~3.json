@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HypothesisTestingExponents~3",
+  "head": "d9d5da84b9424fa0f41b6eb34e013e179207529a",
+  "pr": 2993,
+  "folder": "HypothesisTestingExponents",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 83 changed lines since 618a29c. Checked: R01 and C01-C03 of the previous report, all repaired; the rewritten passages (Conventions on the endpoint values of the Hellinger integral, second Check of 1.2, Range and Products bullets and two Checks of 2.1, one Check of 2.3, scope paragraph, supplier contract, References) recomputed with values in the adversarial table; the five citations of RenyiDivergenceAndPrivacy 1.1, 1.2, 3.2 resolved at its open head; the author's publications page read for the link and terms the References state; pull request text against the head. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with six sorry warnings only (no Lean change). Seeded sample (1.1-2.3): source locators not verifiable, the sources service refused the prepublication URL and the publisher's page; left to the human reviewers. One format note.",
+  "text": "cc9ab142d1352cf2"
+ }
+}
