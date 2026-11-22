@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RandomGraphs~14",
+  "head": "bcde5d418d9fd8fe24459bcaa1dfdc5b51ff5f91",
+  "pr": 1223,
+  "folder": "RandomGraphs",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 4,
+  "notes": "Full review. Seeded sample of 15 sections: Cameron (9 locators) and Erdős–Rényi (Theorem 3a) read at their locators; Spencer, Hodges, Bollobás and Fagin not readable legally and listed as not verifiable. Adversarial table of 30 rows with computed values (extension-error values, rank indexing at d = 0, graphon covariance 7/48, isolated-vertex mean, Poisson examples). 34 library declarations opened at the pins; all cross-roadmap citations resolve on main. Dependency check: 0 problems, no UPWARD or CYCLE. Elaboration: exit 0, 75 sorry warnings only. Automatic checks all passed; two tool leads set aside as false positives. Overlap: two definitions shared with the open SaturationAndQuantifierElimination (this roadmap is the earlier owner) and one sentence restating CountableStructureSpaces, both small corrections. Three questions left to the human reviewers.",
+  "text": "3154fb40e85c19fc"
+ }
+}
