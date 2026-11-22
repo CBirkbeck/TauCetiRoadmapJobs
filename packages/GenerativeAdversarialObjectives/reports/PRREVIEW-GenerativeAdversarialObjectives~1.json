@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GenerativeAdversarialObjectives~1",
+  "head": "1eb0641a38c1413dca37f5d27ee8ef72973a91bf",
+  "pr": 3004,
+  "folder": "GenerativeAdversarialObjectives",
+  "date": "2026-11-22",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Sampled targets 1.1-1.3, 2.1-2.2, 3.1-3.4 all recomputed (adversarial table, 22 rows). R01 (P1): the 3.1 bound W1 <= R*delta is false with an arbitrary sigma-algebra; counterexample ([0,1], trivial sigma-algebra, P = Q) proved in Lean at the pins. R02 (P2): 3.3 lacks the separability its route needs for W1 <= R. R03 (P2): the 3.1 bound is also stated by the open roadmap KernelsAndSpectralMethods 9.2. Locators read in the text for Goodfellow et al., Arjovsky-Chintala-Bottou, Gulrajani et al., Nowozin et al., Nguyen-Wainwright-Jordan (14 passages); Polyanskiy-Wu could not be read from a legal copy (not verifiable). 54 cited library declarations resolved at the pins; dependency check 0 problems; Suggested.lean elaborates with 16 sorry warnings only; one-tactic probe closes none; automatic checks all passed.",
+  "text": "90f7f0c6f1a2885a"
+ }
+}
