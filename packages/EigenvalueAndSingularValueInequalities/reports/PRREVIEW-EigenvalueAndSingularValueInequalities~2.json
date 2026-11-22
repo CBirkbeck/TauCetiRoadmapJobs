@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EigenvalueAndSingularValueInequalities~2",
+  "head": "4e66ae1200c1c9b4afae1b73221d385c0b53c703",
+  "pr": 2969,
+  "folder": "EigenvalueAndSingularValueInequalities",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full re-review. All five findings of the previous review are repaired. One new finding (P2): the determinant identity of 2.3 is already in the pinned Mathlib (LinearMap.normDet_eq_norm_det with LinearMap.normDet_eq_prod_singularValues), confirmed by a one-line probe. Adversarial pass over every statement with computed values (26 rows). Suggested.lean elaborates: exit 0, 34 sorry warnings, no error. Dependency check: 0 problems; both open suppliers resolved at their heads. Seeded sample of 15 targets: no locator could be checked, since none of the five cited books is legally readable (two paywalled, three with no legal copy). One automatic check (a section header over the #check lines) set aside as a false positive.",
+  "text": "6530a1926ac68b5b"
+ }
+}

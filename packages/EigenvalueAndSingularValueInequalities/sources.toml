@@ -1,0 +1,32 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EigenvalueAndSingularValueInequalities"
+
+[[source]]
+id = "Bhatia1997"
+authors = "Rajendra Bhatia"
+title = "Matrix Analysis"
+year = 1997
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-0653-8"
+locator_scheme = "theorem"
+locator = "Theorem III.4.1"
+url = "https://doi.org/10.1007/978-1-4612-0653-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.2"]
+
+[[source]]
+id = "MarshallOlkinArnold2011"
+authors = "Albert W. Marshall, Ingram Olkin, Barry C. Arnold"
+title = "Inequalities: Theory of Majorization and Its Applications"
+year = 2011
+venue = "Springer Series in Statistics"
+doi = "10.1007/978-0-387-68276-1"
+locator_scheme = "theorem"
+locator = "9.G.1"
+url = "https://doi.org/10.1007/978-0-387-68276-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.1"]
