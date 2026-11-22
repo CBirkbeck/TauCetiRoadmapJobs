@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaKernelsForUnitaryDualPairs~8",
+  "head": "3ccfcd4d86d8cf10932136f6c837a9baa11ba052",
+  "pr": 2907,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaKernelsForUnitaryDualPairs",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 41 changed lines since ac490de: the three small corrections of the previous review are repaired (3.3b, 3.21a, GQT 1.7 moved to 6.13a); the changed passages were checked against GQT lines 137-142, 1617-1630, 2605 and against four formal-proof declarations opened at the cited commit (SiegelRule, WeilThetaConvergence, WeilSiegelFormulaUnitary, SiegelWeilStd); seeded sample checked where it falls in the changed passages (3.21a, 5.7a, 6.13a); one new small correction (5.7a: the formal proof has the seminorm bound for split W at h = 1) and two format notes; automatic checks all passed, dependency check 0 problems, Suggested.lean unchanged and elaborates with no message; family index change read.",
+  "text": "34b18e2ae7123112",
+  "carried": {
+   "from": "3ccfcd4d86d8cf10932136f6c837a9baa11ba052",
+   "head": "08a6a7944e0ba2590ad7a63800a1ffbc3575d915",
+   "findings": 1,
+   "lines": 11,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ThetaKernelsForUnitaryDualPairs"
+   ],
+   "corrections": true
+  }
+ }
+}
