@@ -1,0 +1,71 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "BestArmIdentification"
+
+[[source]]
+id = "JamiesonTalwalkar2016"
+authors = "Kevin Jamieson, Ameet Talwalkar"
+title = "Non-stochastic Best Arm Identification and Hyperparameter Optimization"
+year = 2015
+arxiv = "1502.07943v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1502.07943v1"
+fetched_from = "https://arxiv.org/pdf/1502.07943v1"
+fetched_at = "2026-11-22T17:44:17Z"
+sha256 = "52133bcd5f21b68964983cf77d15d51f10fc62fa67a22b5a2a8af4bbc82a91fa"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v1"
+cited_for = ["3.1"]
+
+[[source]]
+id = "LiHyperband2018"
+authors = "Lisha Li, Kevin Jamieson, Giulia DeSalvo, Afshin Rostamizadeh, Ameet Talwalkar"
+title = "Hyperband: A Novel Bandit-Based Approach to Hyperparameter Optimization"
+year = 2016
+venue = "Journal of Machine Learning Research 18 (2018) 1-52"
+arxiv = "1603.06560v4"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1603.06560v4"
+fetched_from = "https://arxiv.org/pdf/1603.06560v4"
+fetched_at = "2026-11-22T17:44:23Z"
+sha256 = "81b7aa7f62d5bdaf0636c938fa726b92b748e24053aca76adb13bd6cc0681c70"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v4"
+cited_for = ["3.1"]
+
+[[source]]
+id = "KaufmannCappeGarivier2016"
+authors = "Emilie Kaufmann, Olivier Cappé, Aurélien Garivier"
+title = "On the Complexity of Best Arm Identification in Multi-Armed Bandit Models"
+year = 2014
+venue = "Journal of Machine Learning Research, Journal of Machine Learning Research, 2016, 17, pp.1-42"
+arxiv = "1407.4443v2"
+locator_scheme = "theorem"
+locator = "Lemma 1"
+url = "https://arxiv.org/abs/1407.4443v2"
+fetched_from = "https://arxiv.org/pdf/1407.4443v2"
+fetched_at = "2026-11-22T17:44:29Z"
+sha256 = "d6f06647161e63108693678696fbdd370ad27d75296b29c80c2b15d19c89a9a8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v2"
+cited_for = ["5.1"]
+
+[[source]]
+id = "LattimoreSzepesvari2020"
+locator_scheme = "theorem"
+locator = "Theorem 33.10"
+url = "https://tor-lattimore.com/downloads/book/book.pdf"
+fetched_from = "https://tor-lattimore.com/downloads/book/book.pdf"
+fetched_at = "2026-11-22T17:44:39Z"
+sha256 = "b71acb03034d73ca0ea148c9c6a91c34a88dd8c7ab8471af38035b34399bad9f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-22"
+cited_for = ["2.2"]
