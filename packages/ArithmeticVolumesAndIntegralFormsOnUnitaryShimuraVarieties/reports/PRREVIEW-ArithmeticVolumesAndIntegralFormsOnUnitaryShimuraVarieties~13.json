@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~13",
+  "head": "dc0d3edfc555d9efe75acf73ff1eea5ce0f94356",
+  "pr": 2923,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 10 changed lines since 045bf11: the previous C01, C02 and N01 are repaired; the new citation of RowTowerAndRallisIdentities §5.10a in 8.19 (c) and its Needs line was read at that roadmap's open head and agrees (identification at the extremal vector, normalisation of §5.11); the family index change outside the folder was read; no target of the seeded sample falls in a changed passage; automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with the sorry warning only; description read against the head. One small correction: the supplier contract and the Dependencies paragraph do not list §5.10a.",
+  "text": "98276204eb5b1832",
+  "carried": {
+   "from": "dc0d3edfc555d9efe75acf73ff1eea5ce0f94356",
+   "head": "8132b6111ef7871cbd5ec13c9a7319025e49c363",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties"
+   ],
+   "corrections": true
+  }
+ }
+}
