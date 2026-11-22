@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsForLogSingularMetrics~9",
+  "head": "46d8e6e122f01d3706eb085e6b373f3c1a7cad9a",
+  "pr": 2894,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 14 changed lines since b34d4ea. Checked: the previous small correction (Conventions sentence and 4.3b (a)) is repaired; the four new [FormalProof] locators (CmpSt, VolGe, VolNef, good_tower_antisymmetry) were opened in the operator's local copy of the source and support the text; ChowFormsAndHeightsOfSubvarieties 6.2 (a7) resolved at the head of #2954 and ArakelovGeometryAndAbelianHeightsPartII sections on main; adversarial table with computed values for 0.4 (b), 4.3a (b), the Conventions sentence and the References locator; the worker's automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with no message and declares nothing; title and description read against the head. Two small corrections (Conventions instance list still names 0.4 (b); description's family-index paragraph out of date, sibling pull requests closed in favour of #2954) and one format note (generated supplier blocks). For humans: scope, licence, relation to #2954, the new policy section of the family index.",
+  "text": "c19cb0e2c202b025",
+  "carried": {
+   "from": "46d8e6e122f01d3706eb085e6b373f3c1a7cad9a",
+   "head": "1648df6a3d36887c9c4110633cfa1106303f2c59",
+   "findings": 2,
+   "lines": 3,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics"
+   ],
+   "corrections": true
+  }
+ }
+}
