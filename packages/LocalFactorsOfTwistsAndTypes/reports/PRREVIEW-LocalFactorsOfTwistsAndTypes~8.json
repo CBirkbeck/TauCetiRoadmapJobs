@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalFactorsOfTwistsAndTypes~8",
+  "head": "28366cf7a05a99398a961c36e4af8c88ecf7d2a9",
+  "pr": 2889,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalFactorsOfTwistsAndTypes",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 2 changed lines since 900d1b4: the changed [FormalProof] reference entry compared item by item with the README's citations of the formal proof in 1.1, 2.1, 3.4, 4.1, 6.3, 6.4 (all agree, with the stated generality); previous C01 and C02 repaired, N01 carried as a format note; title and description read against the head and main (one sentence behind main: SmoothRepresentationsOfLocalGroupsPartII is on main, C01); adversarial rows computed for 2.1 (d), 1.1, 4.1 (i), 4.1 (vii); automatic checks all passed; dependency check rerun, 0 problems; Suggested.lean elaborates with the sorry warning only. The seeded sample's published locators were not re-read (no locator changed); two family suppliers could not be resolved on main or at an open head (a question for the author).",
+  "text": "3dd54e3730ef8419",
+  "carried": {
+   "from": "28366cf7a05a99398a961c36e4af8c88ecf7d2a9",
+   "head": "28366cf7a05a99398a961c36e4af8c88ecf7d2a9",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
