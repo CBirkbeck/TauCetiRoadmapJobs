@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GluedTargetAndDivisionInequality~10",
+  "head": "3cb4be13f5267baa53135ed992b27f1b3dfa96fe",
+  "pr": 2922,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "incremental re-review of 75 changed lines since 788bbfb. Checked: the repairs of the previous small corrections C01 (locators of 8.20 (vi), 8.20b, 8.22, 8.23 (b), each read against the declaration of the formal proof it names; LinkDIV_at clauses counted) and C02 (description names #2954), both repaired; the new statements 8.19e (c1)-(c3) clause by clause against SeriesRat, SerInt, HeckeInt, heckeOperator_preserves_supLattice_realSide and HkSupAt with the definitions they unfold; the cited sections RowTowerAndRallisIdentities 5.10a, 5.11 and ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties 8.19a at their open heads; of the seeded sample, 8.19e and 8.23 fall in the changed passages. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged and elaborates with sorry the only warning. Adversarial table: seven rows with computed values for the changed statements. New small corrections: (c3) omits that the algebraically closed field is algebraic over Frac T; the family index says each roadmap's reference names the commit of the formal proof, and this one's does not. Format notes: two carried, one new (S(1) undefined here). Scope and licence of the formal proof left to the human reviewers.",
+  "text": "32bc20ae91de9e6f",
+  "carried": {
+   "from": "3cb4be13f5267baa53135ed992b27f1b3dfa96fe",
+   "head": "8eb30f1bafe48795f8576dc6b6979d7c275249a3",
+   "findings": 2,
+   "lines": 11,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality"
+   ],
+   "corrections": true
+  }
+ }
+}
