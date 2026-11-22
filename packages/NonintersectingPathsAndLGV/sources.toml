@@ -1,0 +1,74 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "NonintersectingPathsAndLGV"
+
+[[source]]
+id = "KrLPE"
+authors = "C. Krattenthaler"
+title = "Lattice Path Enumeration"
+year = 2015
+venue = "Handbook of Enumerative Combinatorics, M. Bóna (ed.), Discrete Math. and Its Appl., CRC Press, Boca Raton-London-New York, 2015, pp. 589-678"
+arxiv = "1503.05930v3"
+locator_scheme = "theorem"
+locator = "Theorem 10.13.1"
+url = "https://arxiv.org/abs/1503.05930v3"
+fetched_from = "https://arxiv.org/pdf/1503.05930v3"
+fetched_at = "2026-11-22T19:20:09Z"
+sha256 = "34a56044642417a8364737b5dc730ec3980529efb2289b533e504b403ab2b632"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v3"
+cited_for = ["1.2"]
+
+[[source]]
+id = "KrCat"
+authors = "Christian Krattenthaler"
+title = "Determinants of (generalised) Catalan numbers"
+year = 2007
+venue = "J. Statist. Plann. Inference 140 (2010), 2260-2270"
+arxiv = "0709.3044v2"
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://arxiv.org/abs/0709.3044v2"
+fetched_from = "https://arxiv.org/pdf/0709.3044v2"
+fetched_at = "2026-11-22T19:20:14Z"
+sha256 = "8f16832eb584f852364ebfc8e34d8af0f183b10951b1311bb080002d3a75904f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v2"
+cited_for = ["3.1"]
+
+[[source]]
+id = "KrADC"
+authors = "Christian Krattenthaler"
+title = "Advanced Determinant Calculus"
+year = 1999
+venue = "Séminaire Lotharingien Combin. 42 (1999) (The Andrews Festschrift), paper B42q, 67 pp"
+arxiv = "math/9902004v3"
+locator_scheme = "theorem"
+locator = "Lemma 3"
+url = "https://arxiv.org/abs/math/9902004v3"
+fetched_from = "https://arxiv.org/pdf/math/9902004v3"
+fetched_at = "2026-11-22T19:20:21Z"
+sha256 = "d185dc9aa4c264170246938a291bac726198c217289c2e2e63b386554c4b62d0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v3"
+cited_for = ["3.1"]
+
+[[source]]
+id = "GesselViennot1985"
+authors = "Ira Gessel, Gérard Viennot"
+title = "Binomial determinants, paths, and hook length formulae"
+year = 1985
+venue = "Advances in Mathematics 58"
+doi = "10.1016/0001-8708(85)90121-5"
+locator_scheme = "theorem"
+locator = "Corollary 2"
+url = "https://doi.org/10.1016/0001-8708(85)90121-5"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.2"]

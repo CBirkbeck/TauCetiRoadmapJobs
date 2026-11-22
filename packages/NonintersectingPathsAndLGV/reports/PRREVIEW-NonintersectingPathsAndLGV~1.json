@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NonintersectingPathsAndLGV~1",
+  "head": "e6deaab29f8e5ef8f32a3c64450307e144b22dda",
+  "pr": 2995,
+  "folder": "NonintersectingPathsAndLGV",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Seeded sample 1.1, 1.2, 2.1, 2.2, 3.1, 3.2, 4.1 all checked. Sources read at their locators: Krattenthaler, Lattice path enumeration (Thm 10.13.1 with proof, Cor 10.13.2, Thm 10.13.3), Determinants of (generalised) Catalan numbers ((1.1)-(1.3), Lemma 1, Thm 3, Remarks a, d), Advanced determinant calculus (Lemma 3, (2.17), box formula); Stanley EC1 not readable legally, Gessel-Viennot 1985 paywalled. Exact recomputation: involution and the survey's printed rule on the three-path example, both finiteness controls, 3985 Pascal minors, Theorem 3 on 2801 tuples, determinant lemma, Hankel values n<=9, 1324 flagged skew tableau instances and every dropped-hypothesis Check, MacMahon values. 31 library declarations opened at the pins; hankelDet identical to the supplier on main; no owner of these objects elsewhere. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the six theorems.",
+  "text": "e8addd2907d0273c"
+ }
+}
