@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RowTowerAndRallisIdentities~10",
+  "head": "51a5443e242c6fd66ea1311159edd709d74ec5a2",
+  "pr": 2919,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RowTowerAndRallisIdentities",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample 5.1, 5.2, 5.4, 5.5, 5.6, 5.7, 5.8b-5.8h, 5.9, 5.11 plus 5.3, 5.8a, 5.8, 5.10, 5.12, 5.2a recomputed (adversarial table with values); the new weight formulas of 5.7 and the hypotheses of 5.8 checked against the formal proof's HostHyp, HidaSetting and Big. 7 classical locators read at the text (Rallis 1984 twice, Bernstein-Zelevinsky 1977, Gan-Gross-Prasad); all 81 files and 109 declarations of the formal proof cited exist where cited. 145 supplier section ids resolved (main, and the family suppliers at the head of #2954, whose copy of this README is identical). Dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with no message and declares nothing (no headline statable at the pins). One format note carried over, two questions; scope, licence and the route to main left to the human reviewers.",
+  "text": "5c46d20448ef6e70"
+ }
+}
