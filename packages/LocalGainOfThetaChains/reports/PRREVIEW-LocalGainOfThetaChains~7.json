@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalGainOfThetaChains~7",
+  "head": "8e10391bee03eab29e8237c527773243061edd9f",
+  "pr": 2915,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 35 changed lines since fa7ef96. Checked: the five changed passages (notes on the formal proof at 4.9c, 4.9d, 4.15d, 4.17d; the citation of IntegralWeylModulesOfGeneralLinearGroups §0.3 (b′), (c) in 4.9e (f)) against 6 files and 11 declarations of the formal proof (operator's copy at e50d098) and against the two supplier sections at their open heads, with computed rows; of the seeded sample, 4.9c, 4.9d and 4.9e fall in the changed passages. Previous small corrections C01, C02, C03, C05 and the question on 4.17d are repaired; C04 (Kostant form in the docstring of Suggested.lean) and the two format notes are carried. Title and description read against this head: no correction. Automatic checks rerun: all pass except the family-index files outside the folder (the pull request's own) and the roadmap not yet placed in the merge order; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with no message and the targeted build succeeds.",
+  "text": "d090ba7934198778",
+  "carried": {
+   "from": "8e10391bee03eab29e8237c527773243061edd9f",
+   "head": "8e10391bee03eab29e8237c527773243061edd9f",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
