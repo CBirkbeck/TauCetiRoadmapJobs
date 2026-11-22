@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HopfieldModelThermodynamics~2",
+  "head": "af6708ecb5e10718001af97a6fa34583e3d2af4c",
+  "pr": 3007,
+  "folder": "HopfieldModelThermodynamics",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 20 changed lines since e04586d. Checked: previous R01 (Layer 2 random-pattern Example, now with P >= 1 and a true P = 0 sentence; recomputed log 2 = 0.69315 against pressure 1.5 0 = 0.80834 and the P = 1 finite-N free energy) and C01 (no metric on Bool in pinned Mathlib; Hamming instances opened) are both repaired; the Layer 4 Example agrees with the 1 <= P binder of 4.1. Suggested.lean unchanged and elaborates with sorry the only warning; automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; no change outside the folder; pull request text not contradicted by the head. The seeded sample does not fall in the changed passages.",
+  "text": "138661a573dee310"
+ }
+}
