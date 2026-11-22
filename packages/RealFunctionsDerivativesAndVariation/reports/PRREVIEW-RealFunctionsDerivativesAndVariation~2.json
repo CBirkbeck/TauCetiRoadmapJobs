@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RealFunctionsDerivativesAndVariation~2",
+  "head": "c41aba944a54e5a0b15c18a4b662f3cefa790c7b",
+  "pr": 2971,
+  "folder": "RealFunctionsDerivativesAndVariation",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full re-review. Previous findings R01, R02 and C01-C05 repaired. Adversarial pass over every statement with computed values (22 rows); one false sentence in the proof route of 3.2 (R01, P2), witnessed by a continuous function on a fat Cantor set. Source sample: none of the nine cited books readable legally, 0 locators verified, all fifteen sampled targets under Not verifiable. Library declarations opened at the pins (16); cross-roadmap citations resolved; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning (50); one-tactic probe closes nothing; one automatic form check set aside as a false positive.",
+  "text": "b03211734b4b8d84"
+ }
+}

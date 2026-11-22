@@ -1,0 +1,90 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RealFunctionsDerivativesAndVariation"
+
+[[source]]
+id = "Bruckner1978"
+authors = "Bruckner"
+title = "Differentiation of Real Functions"
+year = 1978
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/bfb0069821"
+locator_scheme = "theorem"
+locator = "Chapter II, Theorem 6.4"
+url = "https://doi.org/10.1007/bfb0069821"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.2"]
+
+[[source]]
+id = "Thomson1985"
+authors = "Thomson"
+title = "Real Functions"
+year = 1985
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/bfb0074380"
+locator_scheme = "section"
+locator = "§70"
+url = "https://doi.org/10.1007/bfb0074380"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.2"]
+
+[[source]]
+id = "HewittStromberg1975"
+authors = "Hewitt"
+title = "Real and Abstract Analysis"
+year = 1975
+doi = "10.1007/978-3-642-88047-6"
+locator_scheme = "theorem"
+locator = "(17.8)"
+url = "https://doi.org/10.1007/978-3-642-88047-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6"]
+
+[[source]]
+id = "BenedettoCzaja2009"
+authors = "Benedetto"
+title = "Integration and Modern Analysis"
+year = 2009
+doi = "10.1007/978-0-8176-4656-1"
+locator_scheme = "theorem"
+locator = "Theorem 4.6.2"
+url = "https://doi.org/10.1007/978-0-8176-4656-1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["4.3"]
+
+[[source]]
+id = "Kechris1995"
+authors = "Kechris"
+title = "Classical Descriptive Set Theory"
+year = 1995
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4612-4190-4"
+locator_scheme = "theorem"
+locator = "Theorem 24.10"
+url = "https://doi.org/10.1007/978-1-4612-4190-4"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.2"]
+
+[[source]]
+id = "Kharazishvili2009"
+authors = "Kharazishvili"
+title = "Topics in Measure Theory and Real Analysis"
+year = 2009
+venue = "Atlantis Studies in Mathematics"
+doi = "10.2991/978-94-91216-36-7"
+locator_scheme = "page"
+locator = "p. 408"
+url = "https://doi.org/10.2991/978-94-91216-36-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["7.3"]
