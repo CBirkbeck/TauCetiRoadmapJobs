@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GravitationalLensing~3",
+  "head": "3ee6020bd9644c6f73b826d4c4570301e7d7a443",
+  "pr": 2953,
+  "folder": "GravitationalLensing",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 38 changed lines since 22655aa: R01 and C01-C03 of the previous review all repaired; D.3 sentence and new ring Check recomputed (Hessians at three critical points, the degenerate minimum on the ring); the three changed Narayan-Bartelmann locators of 2.4 read at the text (equations (46), (47), (20)); ConformalMapping 5.4-5.5 and the four cited declarations resolved on main; the added sentence of 3.2 checked against the route and on a point-mass lens map; pull request text read against the head; automatic checks all passed, dependency check 0 problems, Suggested.lean unchanged and elaborates with sorry as the only warning. One small correction (a ConformalMapping theorem listed as using the continuous index is stated with the integral winding number).",
+  "text": "95163fa57d85a1fc"
+ }
+}
