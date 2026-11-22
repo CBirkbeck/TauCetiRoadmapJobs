@@ -1,0 +1,33 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RiemannHypothesisStatementsAndConsequences~7",
+  "head": "9574a3f5ab76cfb24d17c0591306663e9c768fa9",
+  "pr": 2885,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RiemannHypothesisStatementsAndConsequences",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 6 changed lines since 893348b: the reference to the formal proof now names the repository's first commit 40e56bab; the 15 cited files were compared by git blob hash between that commit (public repository) and the copy read in the previous review, all equal, and 11 cited declarations were reopened; the repository's README was read for the first-commit and licence statements of the family index. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 13 sorry warnings only. The previous report had no finding; its format note on chapter-level book locators is carried. One small correction on the family index (the repository's notes do not list the changes). Books and Littlewood 1928 not readable legally.",
+  "text": "ac9a48111b4fb68d",
+  "carried": {
+   "from": "9574a3f5ab76cfb24d17c0591306663e9c768fa9",
+   "head": "9574a3f5ab76cfb24d17c0591306663e9c768fa9",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C01: In `TauCetiRoadmap/RiemannHypothesisForDirichletLFunctions/README.md` lines 17–18, the clause \"and with the changes listed in its notes since\" should read \"and changed since, as its notes describ",
+    "where": "the family index's opening paragraph, which every family pull request carries identically",
+    "raised": "PRREVIEW-RiemannHypothesisStatementsAndConsequences~7"
+   }
+  ]
+ }
+}
