@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelmerLengthBoundsAndLocalLifting~10",
+  "head": "a640387dd8a4dec172300744368ff9b83f702e9d",
+  "pr": 2901,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SelmerLengthBoundsAndLocalLifting",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review of the whole folder. Seeded sample of 15 targets (3.22-3.26, 4.9a, 4.9c, 4.9d, 4.10a-4.10g) plus 3.25, 3.25b, 4.9b and the 4 headlines: Checks, examples and round bounds recomputed (numeric sweeps for 4.9c, 4.9d, 4.10c, 4.10d (4), 4.10e, 4.10f, 0 failures), no false mathematics. Sources: all 74 file-and-declaration locators and 30 name-only declarations of the formal proof exist at its first commit; 26 declarations opened and compared (hypotheses and constants agree; 4.9d (2) is wider than the declaration it names: C01); BS23-FCRYS Theorem 1.2 read; announcement read; Bloch-Kato not readable. 17 suppliers resolved (16 on main, WachLatticesOverTheCyclotomicTower at its open head); EulerSystemsAndKolyvaginSystems used but not listed (C02). 19 library declarations elaborated at the pins. Description against the head: one sentence names another commit than the README (C03). Automatic checks all passed; depcheck 133 roadmaps, 1482 edges, 0 problems; Suggested.lean elaborates with no output and declares nothing. For the humans: standing and licence of the formal proof as main source.",
+  "text": "aa68a2a8852995f5",
+  "carried": {
+   "from": "a640387dd8a4dec172300744368ff9b83f702e9d",
+   "head": "adae11f88787104920ae49ceabd56a254d73a65d",
+   "findings": 3,
+   "lines": 14,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/SelmerLengthBoundsAndLocalLifting"
+   ],
+   "corrections": true
+  }
+ }
+}
