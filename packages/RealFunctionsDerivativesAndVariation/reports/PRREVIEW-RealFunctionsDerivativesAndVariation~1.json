@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RealFunctionsDerivativesAndVariation~1",
+  "head": "a05a8bf6655b5e1d68dbf14737d5f821d81ce6da",
+  "pr": 2971,
+  "folder": "RealFunctionsDerivativesAndVariation",
+  "date": "2026-11-22",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 5,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample of 15 targets and all headline statements put through the computed adversarial pass (table in the report); no false theorem found. R01: density at a point and Lebesgue's density theorem duplicate the pinned Tau Ceti (TauCeti.HasDensityAt, TauCeti.ae_hasDensityAt_indicator), confirmed by a scratch elaboration. R02: a false Check in Layer 2. No source locator could be verified: all nine cited books are paywalled or have no legal copy. Automatic checks: build clean (sorry the only warning), dependency check 0 problems, one-tactic probe closes none of the 51 statements; pull-request numbers in the README raised as a format note; the empty-section-header report set aside as a false positive.",
+  "text": "caac4eba748d6eed"
+ }
+}
