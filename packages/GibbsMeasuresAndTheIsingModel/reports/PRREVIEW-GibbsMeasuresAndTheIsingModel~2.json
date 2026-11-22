@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GibbsMeasuresAndTheIsingModel~2",
+  "head": "888dbadb224ae61cba1da92ccc7f6bcee2ecf10d",
+  "pr": 2976,
+  "folder": "GibbsMeasuresAndTheIsingModel",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full re-review. The three findings, four corrections and three format notes of the previous review are repaired. One finding (P2): the route of 3.2 calls the interval kernels for two boundary conditions mutually absolutely continuous; they are mutually singular, and the source's Lemma 6.43 is a bound on cylinder events. Checked: all 13 sampled sections against Friedli-Velenik (41 locators, authors' revised version; printed pages not verifiable); Ruelle, Koralov-Sinai, Ellis and Grimmett not readable. Adversarial table with computed values for every section and headline. Supplier citations resolved on main (DimerModelsAndLozengeTilings 4.1-4.6) and at the open head of BernoulliPercolation (5.1, 6.1, 6.2); dependency check 0 problems. Suggested.lean elaborates with sorry as the only warning (33); signatures compared; one-tactic probe closes none. Automatic checks: two scanner hits set aside as false positives (a code span wrapping a line; a roadmap named as a different notion, not a supplier).",
+  "text": "b131226e00cb66b2"
+ }
+}
