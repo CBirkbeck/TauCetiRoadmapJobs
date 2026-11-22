@@ -1,0 +1,57 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CombinatorialDiscrepancy"
+
+[[source]]
+id = "BansalNikolov"
+authors = "Nikhil Bansal, Aleksandar Nikolov"
+title = "Discrepancy Theory: An Algorithmic and Geometric Perspective"
+year = 2026
+arxiv = "2608.00140v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://arxiv.org/abs/2608.00140v1"
+fetched_from = "https://arxiv.org/pdf/2608.00140v1"
+fetched_at = "2026-11-22T20:30:58Z"
+sha256 = "81473b6d5e533168e00192a28604c121e7c4802280ff160c7d6a86d1d1f7bdc7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v1"
+cited_for = ["2.2"]
+
+[[source]]
+id = "FoxXuZhou"
+authors = "Jacob Fox, Max Wenqiang Xu, Yunkun Zhou"
+title = "Discrepancy in modular arithmetic progressions"
+year = 2021
+doi = "10.1112/S0010437X22007758"
+arxiv = "2104.03929v1"
+locator_scheme = "page"
+locator = "p. 1"
+url = "https://arxiv.org/abs/2104.03929v1"
+fetched_from = "https://arxiv.org/pdf/2104.03929v1"
+fetched_at = "2026-11-22T20:31:02Z"
+sha256 = "5a43d1009aa0204658d02a2dd7cdf3813861588a1da5a98aad14b235b1377806"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v1"
+cited_for = ["4.2"]
+
+[[source]]
+id = "LiNikolov"
+authors = "Lily Li, Aleksandar Nikolov"
+title = "Discrepancy of Arithmetic Progressions in Boxes and Convex Bodies"
+year = 2025
+arxiv = "2504.12598v2"
+locator_scheme = "page"
+locator = "p. 2"
+url = "https://arxiv.org/abs/2504.12598v2"
+fetched_from = "https://arxiv.org/pdf/2504.12598v2"
+fetched_at = "2026-11-22T20:31:51Z"
+sha256 = "65c679845b5e6dec5d606733ce4ee266d189e997e1c4b262f2df8858c640fde0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v2"
+cited_for = ["4.2"]
