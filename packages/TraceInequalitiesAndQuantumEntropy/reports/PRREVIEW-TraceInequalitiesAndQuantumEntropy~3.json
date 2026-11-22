@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TraceInequalitiesAndQuantumEntropy~3",
+  "head": "121a07ac64ec9a6ea284d069f7bfc7f1cc801363",
+  "pr": 2975,
+  "folder": "TraceInequalitiesAndQuantumEntropy",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full re-review. The five findings of the previous review are repaired. Sources: 21 Watrous locators and 3 Tropp locators (arXiv version) read at the text, Hiai's arXiv paper for the Renyi range; Bhatia, Simon, Hiai's book, Bengtsson-Zyczkowski and Bratteli-Robinson not readable. Adversarial pass on all 15 sampled sections and 4.2 with computed values, plus a numerical test of every headline on 3000 random instances. Suggested.lean elaborates (36 sorry warnings only); simp and rfl close none of the 36 theorems; signatures compared with the README. Dependency check: 0 problems. 17 cross-roadmap citations resolved. Automatic check on the #check section header set aside as a false positive.",
+  "text": "9701779a1f3ac686"
+ }
+}
