@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DelsarteTheoryOfCodesAndDesigns~1",
+  "head": "77a9ff4c8282280b2a38306ce251f458bf6bdb8a",
+  "pr": 3009,
+  "folder": "DelsarteTheoryOfCodesAndDesigns",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Sample: all nine targets (1.1, 1.2, 2.1, 2.2, 3.1, 4.1, 4.2, 4.3, 5.1); 20 of 20 source locators read in the texts (Martin-Tanaka arXiv:0811.2475v1, Godsil 2010 notes, Bachoc-Gijswijt-Schrijver-Vallentin arXiv:1007.2905v2, Vallentin arXiv:0809.2017v1, Boyvalenkov et al. arXiv:1509.07837v1). Every numerical Check recomputed in exact rational arithmetic (both linear programs and the dual, Krein parameters and cometric orders, Hahn identity for 2k <= n <= 8, design transforms). 15 copied definitions identical to their owners' at the current heads; all cross-roadmap citations and 21 library declarations resolved. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 13 sorry warnings only; one-tactic probe closes none of the 13 theorems. Two source misprints recorded. Two small corrections (missing locator for the few-distance bound of 5.1; a Martin-Tanaka citation in 1.2 attached to the wrong program), one format note.",
+  "text": "92d4eb858425988d"
+ }
+}
