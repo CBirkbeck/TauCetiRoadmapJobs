@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsOnDefiniteUnitaryGroups~8",
+  "head": "8dc180ee5070b028c3a2e60d7e7e974679716990",
+  "pr": 2918,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsOnDefiniteUnitaryGroups",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 89 changed lines since 7f27c46. Checked: every statement of the new section 2.6a recomputed (weights, index under base change, weighted sum, fibres over a field of definition, transport of twisting data and characters, both Checks); 2.5 Lemma (iv) against it; all 12 new [FormalProof] locators opened in the source as published (files and declarations exist, statements read); Mathlib Ideal.sum_ramification_inertia_eq_finrank opened at the pin; SlopesOfHermitianVectorBundles 3.5 resolved at the head of the open family pull request; seeded sample where it falls in the change (2.5, 2.6); automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no messages (declares nothing); title and description agree with the head. Two format notes carried from the previous review; none blocking.",
+  "text": "dea22138a18f8c93"
+ }
+}
