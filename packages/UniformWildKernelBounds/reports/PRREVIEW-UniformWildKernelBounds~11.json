@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-UniformWildKernelBounds~11",
+  "head": "a598d4f1a7a60709196cf6d79ee3f7f0b7f1bec6",
+  "pr": 2892,
+  "folder": "RiemannHypothesisForDirichletLFunctions/UniformWildKernelBounds",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full review of a repaired head. Sample: 1.3, 3.1, 3.6, 3.11, 3.14, 3.21, 3.23, 4.4, 4.7, 4.8, 5.1, 5.2, 5.3, 5.7, 6.5, each recomputed or compared with the cited declaration of the formal proof at its first commit; all 206 cited file paths and 274 declaration-file pairs resolve there, 22 declarations opened. New clauses of 3.15, 3.20, 3.22 and 4.5 read against the formal statements. One finding (P2): the Hilbert modular forms of 3.22(e)-(h) are defined a second time and the route of (g) uses an integral Hecke-stable lattice with no owner, while GL2AutomorphicRepresentationsAndTransfer R16.1.6 and IntegralIwasawaTheory 9.3 on main and the open HilbertModularForms state these objects. One small correction (description predates the head), three format notes (two carried). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no message and declares nothing. Scope and licence of the formal proof left to the human reviewers.",
+  "text": "703db79288b90786",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "N01: the sentence \"The family follows the formal Lean proof\" (index line 10) is the family's own text, not this roadmap's entry.",
+    "where": "the family index's own text, synced from the family pull request",
+    "raised": "PRREVIEW-UniformWildKernelBounds~11"
+   }
+  ]
+ }
+}
