@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EquivariantLayersAndConvolutionalNetworks~1",
+  "head": "f197d0545d39e66887cdf10572c4da7d7fe95d3c",
+  "pr": 3006,
+  "folder": "EquivariantLayersAndConvolutionalNetworks",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All eight sampled targets (1.1, 1.2, 2.1, 2.2, 2.3, 2.4, 3.1, 3.2) read against the arXiv texts of the seven cited sources at their locators (38 locators, all correct up to one page slip in a remark); every statement recomputed at degenerate parameters (values in the adversarial table); 35 Mathlib and 17 Tau Ceti declarations opened at the pins; Suggested.lean elaborates with sorry the only warning; no sorried theorem closes with rfl, simp or infer_instance; dependency check 0 problems; the worker's automatic checks all passed; no overlap with Neuromanifolds or the other closest roadmaps.",
+  "text": "717fddd51eb2e486"
+ }
+}
