@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ToricIdealsAndMarkovBases~1",
+  "head": "0cc63a00544c09ea6b39a0f2e39144ec221b0879",
+  "pr": 2985,
+  "folder": "ToricIdealsAndMarkovBases",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample 1.1, 1.2, 2.1, 2.2, 3.1-3.5: every statement, Check and route recomputed by hand (twisted cubic, 2x3 tables, A=(1 2 3), degenerate cases r=0, empty move set, zero ring); adversarial table in the report. 17 locators checked against the texts of Sturmfels (arXiv:math/0310194), Almendra-Hernandez-De Loera-Petrovic (arXiv:2306.06270), Aoki (arXiv:1607.07600) and Conca (arXiv:2403.07098); the 7 locators into Drton-Sturmfels-Sullivant could not be checked (the sources service refused the coauthor-page copy). Supplier citations resolved on main and at the open heads of LangevinAndHamiltonianMonteCarlo and IntegerPolyhedraAndTotalUnimodularity; copied definitions agree. Library declarations opened at the pins. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with nine sorry warnings only; one-tactic probe closes none of the nine theorems. One finding (P2): theorem 3.4 is narrower than the cited theorem (full row rank and minors in {0, 1, -1} only). One format note.",
+  "text": "2c6a45ddc4274a85"
+ }
+}

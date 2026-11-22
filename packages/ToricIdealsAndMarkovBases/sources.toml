@@ -1,0 +1,74 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ToricIdealsAndMarkovBases"
+
+[[source]]
+id = "Sturmfels2003Recipes"
+authors = "Bernd Sturmfels"
+title = "Algebraic Recipes for Integer Programming"
+year = 2003
+arxiv = "math/0310194v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.4"
+url = "https://arxiv.org/abs/math/0310194v1"
+fetched_from = "https://arxiv.org/pdf/math/0310194v1"
+fetched_at = "2026-11-22T17:12:13Z"
+sha256 = "2f194ef8c57e73a54e89c196ef5ca9b4d9fbee66f2adbc94111ea339d0de0ba9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v1"
+cited_for = ["3.5"]
+
+[[source]]
+id = "AlmendraDeLoeraPetrovic2023"
+authors = "Félix Almendra-Hernández, Jesús A. De Loera, Sonja Petrović"
+title = "Markov bases: a 25 year update"
+year = 2023
+arxiv = "2306.06270v3"
+locator_scheme = "theorem"
+locator = "Theorem 2.6"
+url = "https://arxiv.org/abs/2306.06270v3"
+fetched_from = "https://arxiv.org/pdf/2306.06270v3"
+fetched_at = "2026-11-22T17:12:19Z"
+sha256 = "b6c019d9b8c85dfa03e4fcdc048a217fb4730f9284dac1e5ce220afc8cf89598"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v3"
+cited_for = ["1.1"]
+
+[[source]]
+id = "Aoki2016"
+authors = "Satoshi Aoki"
+title = "An introduction to computational algebraic statistics"
+year = 2016
+arxiv = "1607.07600v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.3"
+url = "https://arxiv.org/abs/1607.07600v1"
+fetched_from = "https://arxiv.org/pdf/1607.07600v1"
+fetched_at = "2026-11-22T17:12:25Z"
+sha256 = "f8976075ba8b5214439e5cbfda1d6aab06fcce7f3cc2d7726256a7942c584f32"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v1"
+cited_for = ["1.1"]
+
+[[source]]
+id = "Conca2024"
+authors = "Aldo Conca"
+title = "A universal tale of determinants and Gröbner bases"
+year = 2024
+arxiv = "2403.07098v1"
+locator_scheme = "equation"
+locator = "(7)-(8)"
+url = "https://arxiv.org/abs/2403.07098v1"
+fetched_from = "https://arxiv.org/pdf/2403.07098v1"
+fetched_at = "2026-11-22T17:12:31Z"
+sha256 = "e696d044bdec7872eccc883f43c4e4867d2a57e8619d86364f51f9fe3b300bbf"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-22"
+version_note = "arXiv v1"
+cited_for = ["3.2"]
