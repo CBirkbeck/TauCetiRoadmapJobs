@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalFactorsOfTwistsAndTypes~7",
+  "head": "900d1b407f26f66fbcfe4a501c98e919467f33b3",
+  "pr": 2889,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalFactorsOfTwistsAndTypes",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 30 changed lines since f835aed. Checked: the subquotient clause added to 4.1 (i), computed on GL2 and derived from the standard-module argument; the nine formal-proof locators added in 1.1, 2.1 and 4.1, each opened (file, declaration, hypotheses, characteristic), one also at the first commit of the repository; the family index's statements about that repository against its README; the pull request's text against this head. The previous report had no open point. Automatic checks all passed; dependency check rerun with 0 problems; Suggested.lean unchanged and elaborates with the sorry warning only. Two small corrections (the [FormalProof] reference entry and the description are behind the change) and one format note (a route for the subquotient clause over every field). Not checked: whether the cited Props are proved in the formal proof, eight of the nine files at the first commit, the identity of the family index across sibling pull requests, six paywalled sources as before.",
+  "text": "f0ea3064befa175e",
+  "carried": {
+   "from": "900d1b407f26f66fbcfe4a501c98e919467f33b3",
+   "head": "28366cf7a05a99398a961c36e4af8c88ecf7d2a9",
+   "findings": 2,
+   "lines": 2,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/LocalFactorsOfTwistsAndTypes"
+   ],
+   "corrections": true
+  }
+ }
+}
