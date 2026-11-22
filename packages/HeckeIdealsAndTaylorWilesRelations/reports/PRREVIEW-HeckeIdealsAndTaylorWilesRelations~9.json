@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeckeIdealsAndTaylorWilesRelations~9",
+  "head": "bab51e31e962a34cce96b175c19fadca5995fbc6",
+  "pr": 2893,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeckeIdealsAndTaylorWilesRelations",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "incremental re-review of 9 changed lines since 57d7134. Checked: the four small corrections of the previous report (all repaired); 9.9 (d0') against adL_triv and bkOrd of the formal proof at its first commit; the new descent locator (DescWeak, descWeak) opened and compared; all 48 cited formal-proof paths exist at the first commit 40e56bab with blobs identical to e50d098; the seeded sample where it falls in the change (9.9); the title and description against the head (two small corrections: family index not identical across the family's pull requests, aggregate #2954 not named); automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with no output and declares nothing.",
+  "text": "653191f6896a2e97",
+  "carried": {
+   "from": "bab51e31e962a34cce96b175c19fadca5995fbc6",
+   "head": "bab51e31e962a34cce96b175c19fadca5995fbc6",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
