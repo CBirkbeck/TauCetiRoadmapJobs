@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BestArmIdentification~1",
+  "head": "759aec5d582baa4271fbe46824190deedc85f5bd",
+  "pr": 2987,
+  "folder": "BestArmIdentification",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review. All nine sampled targets (1.1, 1.2, 1.3, 2.1, 2.2, 3.1, 4.1, 5.1, 5.2) recomputed: every README Check in exact rational arithmetic, the proof routes step by step, theorem 3.1 by brute force over all tie-breakings on 3000 random loss families with three budgets each. Locators read at the text in Lattimore-Szepesvari (author's online edition), Li et al. 2018, Jamieson-Talwalkar 2016 and Kaufmann-Cappe-Garivier 2016; Karnin-Koren-Somekh 2013 and Even-Dar-Mannor-Mansour 2006 could not be read through the sources service (hosts unclassified) and are listed as not verifiable. Supplier citations resolved against MultiArmedBandits at its open head and MathematicalStatisticsNonparametric and MathematicalStatisticsFoundations on main; 13 library declarations opened at the pins. Dependency check: 0 problems. Suggested.lean elaborates with 7 sorry warnings only; one-tactic probe closes none of the 7 theorems. Automatic checks all passed; none set aside. Two small corrections (the convention on ties overstates what the halving schedule allows; 'the source' in 3.1 is Li et al., not Jamieson-Talwalkar) and three format notes.",
+  "text": "7abef2523fd88aac"
+ }
+}
