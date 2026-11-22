@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EvidenceLowerBound~1",
+  "head": "2f93844b26243958bccda9a37e3caa042c01d5b9",
+  "pr": 2988,
+  "folder": "EvidenceLowerBound",
+  "date": "2026-11-22",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. All 14 sampled targets (1.1-5.1) recomputed by hand, with every Check; 21 source locators read in the five cited texts (all correct); 31 library declarations opened at the pins; 9 cross-roadmap citations resolved and the 17 copied definitions compared with their owners. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; one-tactic probe closes none of the 12 theorems. One P2 finding: the third Check of 2.3 claims p << q is needed for an equivalence that holds without it. Two source issues recorded for Burda-Grosse-Salakhutdinov Theorem 1 part 3.",
+  "text": "190c92fa70b8bc92"
+ }
+}
