@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HermitianFormsAndLattices~8",
+  "head": "0c604cad08e52692851e1e3fcb5c68c76aa600ca",
+  "pr": 2882,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HermitianFormsAndLattices",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "incremental re-review of 9 changed lines since c9d8907. Checked: the new Conventions sentence and the two changed sentences of 6.0b against 7 declarations of the formal proof (and the 3 definitions they rest on), each file unchanged since the pinned commit 40e56bab; the previous C02 and C03 are repaired, C01 and N01-N03 stand. The title and description were read sentence by sentence against the head: one sentence contradicted (the family index is not identical to the copy in #2954) and one fact unstated (#2954 carries the folder and the supplier OrbitMeasuresOnAdelicGroups), both small corrections. None of the seeded sample falls in a changed passage. Automatic checks: text scanners clean; dependency check against the candidate order 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with two sorry warnings only; the not-in-order and outside-folder lines are set aside (family index is the pull request's own).",
+  "text": "c3ede29b3a797f3c",
+  "carried": {
+   "from": "0c604cad08e52692851e1e3fcb5c68c76aa600ca",
+   "head": "0c604cad08e52692851e1e3fcb5c68c76aa600ca",
+   "findings": 3,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
