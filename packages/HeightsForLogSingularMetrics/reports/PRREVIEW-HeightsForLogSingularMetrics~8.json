@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsForLogSingularMetrics~8",
+  "head": "b34d4ea6621db374c34c23ebca286abf4217c8e2",
+  "pr": 2894,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 14 changed lines since ab8344f: the repairs of the previous small corrections C01-C05 and format note N01 verified at this head (16.1 for g >= 1 in README and docstring; bounded losses before choosing m in 0.4 (c) and the route of (b), with computed instances; Conventions sentence on targets without a locator checked against each such target); title and description read against the head, the family-index sentence checked by diffing the index at ten sibling heads; seeded sample falls in the changed passages only at 0.4 (c) and 16.1 (a), which cite no source there; automatic checks all passed; depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean exits 0 with no message (no declarations); one small correction (Conventions sentence too wide for 4.3b (a)) and one format note (generated depends-on block).",
+  "text": "c19cb0e2c202b025",
+  "carried": {
+   "from": "b34d4ea6621db374c34c23ebca286abf4217c8e2",
+   "head": "35e7c7c2d99d2a9072f4ee4008ff56612f0c2e60",
+   "findings": 1,
+   "lines": 8,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics"
+   ],
+   "corrections": true
+  }
+ }
+}
