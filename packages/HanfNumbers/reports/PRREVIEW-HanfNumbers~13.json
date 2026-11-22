@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HanfNumbers~13",
+  "head": "5def5c2bb8ad13b87e85ef36df4160b87a974d7a",
+  "pr": 1319,
+  "folder": "HanfNumbers",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample of 15 targets and all other Marker and Keisler-Knight locators (24) read against the texts on the authors' pages; every Check and worked example recomputed by hand (adversarial table of 29 rows); 26 Mathlib and 48 Tau Ceti names opened at the pins; cross-roadmap citations resolved on main; elaboration rerun (24 sorry warnings only); one-step probes of two specialisations and a four-line derivation of morley_hanf elaborated on a scratch copy; dependency check 0 problems; all automatic checks passed, none set aside. Previous findings: series status repaired; the two padding items are now small correction C02 and format note N01; the Checks quota is no longer held. Not opened: Marker's 2016 book, Keisler 1971, Morley 1965, Hanf 1964, Erdos-Rado 1956, Kanamori, the external formalization and the fork's integration run.",
+  "text": "ad560b6ad4d612e6"
+ }
+}
