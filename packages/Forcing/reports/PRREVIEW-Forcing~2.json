@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Forcing~2",
+  "head": "855a650dd69cf322d43bf66f2d8ac775df4df9dc",
+  "pr": 2998,
+  "folder": "Forcing",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 81 changed lines since 2fe4929. Checked: each previous remark against this head (R01 and C01-C04 repaired, N01 and N03 repaired, N02 partly, carried as a format note); the new statement pullTest_isCoinitial (proved on a scratch copy, negative control computed, one-tactic probe fails, so not padding); the changed body of regularCondition; the Layer 8 measure-algebra passage recomputed on two small measures; the VonNeumannAlgebras Layer 2 citation resolved on main; two changed source locators read in the texts (Hamkins-Seabold section 8 p. 19, Karagila Theorem 4.16). The seeded sample found no target by heading. Automatic checks: one form hit (targets are list items), the not-in-merge-order note is not a defect; dependency check 0 problems, no UPWARD or CYCLE; elaboration gives 20 sorry warnings and nothing else. Pull request text agrees with the head. Not verified: claims about the external repository cameronfreer/forcing.",
+  "text": "4902aed51f757620"
+ }
+}
