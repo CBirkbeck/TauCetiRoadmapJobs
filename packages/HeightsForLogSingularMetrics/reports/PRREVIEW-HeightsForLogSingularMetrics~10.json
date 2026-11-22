@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsForLogSingularMetrics~10",
+  "head": "1648df6a3d36887c9c4110633cfa1106303f2c59",
+  "pr": 2894,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 3 changed lines since 46d8e6e: the Conventions instance list was checked target by target against the README (0.4 (a), (b), 14.1 (a), (b), 14.2 (a)-(c), 4.3b (a)); the cited clause of 0.4 (b) was recomputed on three instances; ChowFormsAndHeightsOfSubvarieties 6.2 (a7) resolved at the head of #2954; title and description read against this head and against the heads of #2954 and the 18 other open family pull requests (one small correction: the comparison of heads is out of date; one format note: the generated merge-order block); automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates with no message and declares nothing; previous C01 repaired, C02 and N01 partly repaired.",
+  "text": "3c75e66ef960315e",
+  "carried": {
+   "from": "1648df6a3d36887c9c4110633cfa1106303f2c59",
+   "head": "1648df6a3d36887c9c4110633cfa1106303f2c59",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
