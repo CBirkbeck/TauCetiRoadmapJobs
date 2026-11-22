@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ProjectiveModelsAndPeriodBoundsOnShimuraVarieties~9",
+  "head": "c2b2d8aa82e2bd472f0c55fc1ef3b2eb7fdfdc0e",
+  "pr": 2910,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ProjectiveModelsAndPeriodBoundsOnShimuraVarieties",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 17 changed lines since 6f15194. Checked: the new sentence of 7.31a (b') on semistable reduction against three [FormalProof] files (statement, proof, use in partI_holds) and against NeronModelsAndSemistableAbelianVarieties 3.1, 3.3, 3.10 on main; the new Dependencies entry and supplier contract; the family index change; the pull request's description (one supplier unstated: C01); the previous report had no finding. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with no output (it declares nothing). Seeded sample checked where it falls in the change (7.31a).",
+  "text": "9e3049fd47f9c641",
+  "carried": {
+   "from": "c2b2d8aa82e2bd472f0c55fc1ef3b2eb7fdfdc0e",
+   "head": "01e6690e940e26385bf41b8ebdb20e646316743b",
+   "findings": 2,
+   "lines": 2,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ProjectiveModelsAndPeriodBoundsOnShimuraVarieties"
+   ],
+   "corrections": true
+  }
+ }
+}
