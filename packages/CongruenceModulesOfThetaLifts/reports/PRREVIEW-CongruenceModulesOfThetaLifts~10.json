@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CongruenceModulesOfThetaLifts~10",
+  "head": "632cb0aec942c09a71f551587d1cce1fb8571bd4",
+  "pr": 2921,
+  "folder": "RiemannHypothesisForDirichletLFunctions/CongruenceModulesOfThetaLifts",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 5,
+  "notes": "full review of the folder: all 126 locators into [FormalProof] resolved at its first commit (25 statements read), Gan-Qiu-Takeda Theorem 7.3 (i) read in the cached text; the fifteen sampled targets (7.1, 7.4, 7.5, 7.5a, 7.9, 7.7a, 7.7c, 7.8, 7.10a, 7.10b, 7.10c, 7.11, 7.15, 7.16, 7.16a) compared with the source and with the supplier sections at their open heads; Checks of 7.1, 7.7a, 7.15, 7.16 recomputed; the changed sentence of 7.4 (4) verified against RowTowerAndRallisIdentities 5.7; two pinned Tau Ceti declarations opened; dependency check 0 problems; automatic checks pass; Suggested.lean elaborates with no output and declares nothing; pull request text and family index compared with the head and with #2954. Three small corrections (a downstream-consumer sentence, the [FormalProof] entry without the commit the family index promises, the description's 'identical content') and five format notes.",
+  "text": "8f428380ea3f9605",
+  "carried": {
+   "from": "632cb0aec942c09a71f551587d1cce1fb8571bd4",
+   "head": "88b60bdd77438603c44a1136855eb10287de273e",
+   "findings": 3,
+   "lines": 5,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/CongruenceModulesOfThetaLifts"
+   ],
+   "corrections": true
+  }
+ }
+}
