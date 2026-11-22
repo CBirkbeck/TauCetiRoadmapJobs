@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HypergradientsAndBilevelOptimization~1",
+  "head": "56dfb9e762d8155c6916b97552f15e439333f3da",
+  "pr": 2991,
+  "folder": "HypergradientsAndBilevelOptimization",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. All 11 sampled targets (1.1-1.3, 2.1-2.3, 3.1-3.5) checked against the arXiv texts of Grazzi et al. (2006.16218v2), Ghadimi-Wang (1802.02246v1), Lorraine et al. (1911.02590v1), Liu et al. (1806.09055v2) and Franceschi et al. (1806.04910v2) at their locators; every bound re-derived by hand and every README Check recomputed (exact rational arithmetic plus numerical maxima); 26 pinned Mathlib and Tau Ceti declarations opened; supplier citations resolved at the heads of FirstOrderOptimization and NonlinearProgrammingOptimality; Suggested.lean elaborates with sorry as the only warning, no theorem closes under a one-tactic probe; dependency check 0 problems; automatic checks all passed, none set aside.",
+  "text": "b642d9c72ed1b831"
+ }
+}
