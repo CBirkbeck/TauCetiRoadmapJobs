@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CohomologyComparisons"
+
+[[source]]
+id = "bettsstix"
+authors = "L. Alexander Betts, Jakob Stix"
+title = "Galois sections and $p$-adic period mappings"
+year = 2022
+arxiv = "2204.13674v1"
+locator_scheme = "theorem"
+locator = "Propositions 3.19–3.20"
+url = "https://arxiv.org/abs/2204.13674v1"
+fetched_from = "https://arxiv.org/pdf/2204.13674v1"
+fetched_at = "2026-11-21T23:53:15Z"
+sha256 = "7d4b7d49c09b979ce4485251ea6f77527fcdb7c516ed7296d20c42e947ef0c18"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-21"
+version_note = "arXiv v1"
+cited_for = ["6.4", "6.4a", "6.5", "6.6", "6.7", "6.8"]
