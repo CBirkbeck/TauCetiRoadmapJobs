@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelmerLengthBoundsAndLocalLifting~8",
+  "head": "6c8cd8866790ef5f1225eab91226707b037a394a",
+  "pr": 2901,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SelmerLengthBoundsAndLocalLifting",
+  "date": "2026-11-22",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 6c8cd88. Checked: the pull request's title and description sentence by sentence against the head (suppliers on main, the three cited supplier sections, the Tau Ceti declarations at the pin, the quoted declarations, exponent and commit of the formal proof, Suggested.lean declaring nothing); previous remarks C01 and C02 repaired in the text, N01 and N02 carried. One small correction (prose and generated blocks name different pull requests for the Wach supplier), one question (#2954's head was not readable). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no output. Adversarial rows computed for 4.10f's exponent, the balanced condition with 4.9b, and the suppliers of 4.9a. The seeded sample was not read again: no sampled section changed.",
+  "text": "aa68a2a8852995f5",
+  "carried": {
+   "from": "6c8cd8866790ef5f1225eab91226707b037a394a",
+   "head": "6c8cd8866790ef5f1225eab91226707b037a394a",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
