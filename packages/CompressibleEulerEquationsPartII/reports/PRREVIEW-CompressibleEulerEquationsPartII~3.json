@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CompressibleEulerEquationsPartII~3",
+  "head": "bcc85352bd208e18837c9fd7d4e34f902d1177bd",
+  "pr": 3010,
+  "folder": "CompressibleEulerEquationsPartII",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "incremental re-review of 54 changed lines since 084ef25. Checked: the previous R01-R04, C01-C03 and N01 (all repaired except the Rendall locators, carried as C01); recomputed the new Chaplygin Check of 2.3, the Riccati coefficient and compressive sign of 3.4, the integer rescalings and chart of 4.1, and the non-injectivity of Psi_t; the seeded sample where it falls in the changed passages (2.3 against LuoYu2025a section 2 p. 24; 4.1 against LuoYu2025b Definition 2.13 and Remark 2.14 p. 24); supplier citations at CompressibleEulerEquations 4ae1090 and LorentzianGeometry 6e0c85c; dependency check 0 problems; gate all pass (merge-order line set aside); elaboration with sorry as the only warning. Small corrections: Rendall 1990 without locators, the 2.3 boundary equality without the restriction below the top of the slab, the time orientation cited to LorentzianGeometry 7.3 instead of 8.1.",
+  "text": "bc55cf222b136c33"
+ }
+}
