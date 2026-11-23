@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CompressibleEulerEquations~5",
+  "head": "4ae1090a37c8aabf133b675ded83447f5856d10c",
+  "pr": 2442,
+  "folder": "CompressibleEulerEquations",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 31 changed lines since a16a9e6. Checked: the five changed passages of README.md (Conventions, §3.1, the Needs line of §3.2, Scope and ownership, the supplier contract for LorentzianGeometry §7.3) against LorentzianGeometry §7.3, §8.1 and §12.6 at its open head, with g(B, X) = -c^2 tau and the witnesses recomputed; the previous review had no finding, and its two small corrections (real Sobolev orders in the description; the orientation by [B] attributed to §7.3) are repaired. Title and description read against the head: one sentence out of date (MathematicalStatisticsNonparametric is on main, not open), a small correction. One format note (§8.1 named but absent from the supplier contracts). No sampled target or source locator lies in a changed passage. Automatic checks all pass; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean, unchanged, elaborates with 14 sorry warnings only; no change outside the folder. Human reviewers: Majda1984 unreadable (largest locator share), LukNotes unpublished.",
+  "text": "afdbb86a12a652e6",
+  "carried": {
+   "from": "4ae1090a37c8aabf133b675ded83447f5856d10c",
+   "head": "4ae1090a37c8aabf133b675ded83447f5856d10c",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
