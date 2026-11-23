@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KernelSupportVectorMachines~2",
+  "head": "4032736815c2801cc3aecc2ac765bba8d38ead6f",
+  "pr": 3008,
+  "folder": "KernelSupportVectorMachines",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 80 changed lines since 15050a5 (README only). Checked: the four earlier remarks (C01-C03, N01), all repaired; the new instance of the duality identity in 1.2 recomputed exactly (both sides 25/36); the new Conventions paragraph on SupportVectorMachines misclassRisk against that roadmap's open head and against marginError here; Shalev-Shwartz-Ben-David (15.5)-(15.6) and Jaakkola-Haussler Def. 1 and Lemma 1 reread in the cached texts; the two new bibliography entries checked on Crossref; the pull request's description against the head. Automatic checks all passed; dependency check 0 problems; Suggested.lean (unchanged) elaborates with 11 sorry warnings only; nothing changed outside the folder. Mohri-Rostamizadeh-Talwalkar, Steinwart 2001 and Bousquet-Elisseeff remain unread, as in the previous review.",
+  "text": "60400331516f3175"
+ }
+}
