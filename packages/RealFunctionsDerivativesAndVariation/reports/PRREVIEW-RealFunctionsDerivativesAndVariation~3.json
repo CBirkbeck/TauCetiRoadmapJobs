@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RealFunctionsDerivativesAndVariation~3",
+  "head": "b0fe75ebc07a4c24cc88281dfb2efaa47119aebd",
+  "pr": 2971,
+  "folder": "RealFunctionsDerivativesAndVariation",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 23 changed lines since c41aba9: the previous R01 (proof route of 3.2), C01 (proof route of 2.2) and C02 (Jordan decomposition pointer) are repaired, each recomputed (the four null sets against the four Denjoy-Young-Saks alternatives; the last-point argument for g = f + eps t; the Mathlib declarations opened at the pin in Topology/EMetricSpace/VariationOnFromTo.lean); N01 (no locator for non-normality in 7.3) carried as a format note. No statement and no line of Suggested.lean changed. Automatic checks: one form hit set aside as a false positive (closing #check block); dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 50 sorry warnings and no other. Pull request text agrees with the head. No source locator could be verified: all cited books are paywalled (settled as uncertified); the seeded sample is under Not verifiable.",
+  "text": "b03211734b4b8d84"
+ }
+}
