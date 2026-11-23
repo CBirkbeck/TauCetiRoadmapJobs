@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompressibleEulerEquationsPartII~1",
+  "head": "2283f36a6a69f65ac28361f3b1ac4c63dcefa144",
+  "pr": 3010,
+  "folder": "CompressibleEulerEquationsPartII",
+  "date": "2026-11-23",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 5,
+  "format_notes": 3,
+  "notes": "Full review. Sample: all 13 sections 1.1-4.2; locators checked against Luo-Yu I and II (arXiv v2) and Christodoulou-Miao (arXiv v2); Rendall 1990, Hormander I, Hawking-Ellis and Christodoulou 2007 not readable legally. Automatic checks: the two import checks and the targeted build failed, all real (R01); dependency check 0 problems. Elaboration: head fails at the imports; a copy with the supplier definitions from CompressibleEulerEquations d30bd0f and LorentzianGeometry 6e0c85c elaborates with sorry only; #check of all six declarations compared with the README; one-tactic probe closes nothing. Findings: R01 (P1) Suggested.lean imports roadmap modules of two open pull requests and does not build; R02 (P2) sections 2.1 (third bullet), 2.2 and the Summary fail on the top face of a finite slab; R03 (P2) the acoustical-function headline is statable but absent. Supplier citations resolved at their heads; overlap check against CompressibleEulerEquations, LorentzianGeometry, HamiltonJacobiAndConservationLaws, RiemannianManifoldsWithConvexBoundary found no double ownership.",
+  "text": "c8aee01c67d81b88",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "For the human reviewers, first item: CompressibleEulerEquations must stop assigning well-posedness at real Sobolev orders `s > n/2 + 1` to \"Compressible Euler equations, Part II\" (its Scope, \"Fraction",
+    "where": "CompressibleEulerEquations Scope (\"Fractional orders\") and Downstream consumers",
+    "raised": "PRREVIEW-CompressibleEulerEquationsPartII~1"
+   }
+  ]
+ }
+}
