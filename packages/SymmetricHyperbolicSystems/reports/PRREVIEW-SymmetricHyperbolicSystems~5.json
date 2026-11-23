@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SymmetricHyperbolicSystems~5",
+  "head": "3c07b5d2ba1f7c81981b19d331fdfa08ea5c0c04",
+  "pr": 2246,
+  "folder": "SymmetricHyperbolicSystems",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review. Previous finding (description's Layer 7 line) repaired; the change since is a pure reordering. All 15 sampled targets and every headline recomputed on instances (adversarial table, 22 rows). Locators read: Metivier Def 4.1.1, Lemma 4.2.1, Prop 4.2.3 and Courant-Friedrichs-Lewy 1928 Part II section 2; John 1982, Lax 2006, Friedrichs 1954, Rudin 1976 not readable (listed under Not verifiable and for the human reviewers). 30 library declarations opened at the pins. Automatic checks all passed; Suggested.lean elaborates with 14 sorry warnings only; one-tactic probe closes nothing; depcheck 0 problems.",
+  "text": "0ebdbe54d2ab1670"
+ }
+}
