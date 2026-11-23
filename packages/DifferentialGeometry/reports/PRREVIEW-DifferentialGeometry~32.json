@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DifferentialGeometry~32",
+  "head": "6ddd288dde803726f6916e2029b51b89b143c252",
+  "pr": 3011,
+  "folder": "DifferentialGeometry",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "Full review. Previous review (729e951) accepted with no open finding. Gate re-run: every counter 0. Depcheck: 133 roadmaps, 1475 edges, 0 problems. lake env lean on Suggested.lean: exit 0, 36 sorry warnings only. Record check against merge base f83a3b8: no layer, heading or declaration removed. Seeded sample (Smooth 2-forms, Canonical interfaces, Layer 4 and 5.6 acceptance examples, 5.6 conventions, Henstock-Kurzweil, flat punctured-plane family, Ownership and ordering) verified against 48 pinned Tau Ceti/Mathlib declarations; punctured-plane curl and circle integral recomputed. One-tactic probe on 7 declarations (21 attempts): none closes. Nine dropped-binder leads checked. Lee's contents read from the author's front matter: arrangement independent. Lee, Bott-Tu, Milnor, Tu and AFP Green texts not readable legally. Corrections: unstated sign of 5.4's cylinder Stokes; 'not 5.3' vs the slice route's boundaryless Stokes; 'following [Lee]' sentence; no merge order stated against #334.",
+  "text": "9db48401a24a00a2"
+ }
+}
