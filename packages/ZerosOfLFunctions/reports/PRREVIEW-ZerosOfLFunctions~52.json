@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ZerosOfLFunctions~52",
+  "head": "8cc0030004a90d36f1d3d33cd0403dd67c3beede",
+  "pr": 3012,
+  "folder": "ZerosOfLFunctions",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review. Previous review raised no findings. Seeded sample of 15 targets (1.2, 1.4, 2.2, 3.4, 4.3, 4.5, 4.6, 5.2, 5.5, 6.2, 6.4, 6.5, 7.6, 8.6, 8.7): 20 locators checked against DLMF, Kadiri, Hasanalizade-Shen-Wong, Bennett et al., Trudgian and Montgomery-Vaughan; Davenport, Titchmarsh, Iwaniec-Kowalski, LMO and Lang not readable (mathematics computed instead). The diff's L-functions layer attributions were checked on main and at the open L-functions revision. 230 cited names #checked (219 resolve; the rest are fields, an unbuilt module, expressions, an external name). Automatic checks all passed; depcheck 0 problems; elaboration exit 0 with 23 sorry warnings; one-tactic probe 0 of 23. Overlap check: six closest roadmaps read, nothing shared. Two source issues recorded.",
+  "text": "65439f1a97d88726"
+ }
+}
