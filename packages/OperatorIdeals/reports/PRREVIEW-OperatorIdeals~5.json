@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-OperatorIdeals~5",
+  "head": "3cb0a1440e2b3dea1edc60ee3727226d8d6773fe",
+  "pr": 2614,
+  "folder": "OperatorTheory/OperatorIdeals",
+  "date": "2026-11-23",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. One P2: OI-A40 lacks the normed-source hypothesis (counterexample on a seminormed source computed; pinned lemma assumes it). Record against main: 169 of 169 item ids kept with statements. All 250 In-Tau-Ceti names and the Mathlib supplier names resolved at the pins; about 60 signatures compared with their items. Seeded sample (This roadmap owns; Already in Mathlib; Owned elsewhere and consumed here) verified against the pins and the cited roadmaps. Ull24 locators checked at lines 21, 38-40, 48, 52-56, 93-95; the classical books could not be read. Dependency check: 0 problems. Suggested.lean elaborates with the single sorry warning; one-tactic probe does not close the stated theorem. Automatic checks all pass. Previous review's C01 repaired in the main.",
+  "text": "245c7e08ec311bbc"
+ }
+}
