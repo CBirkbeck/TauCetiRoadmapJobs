@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QDifferenceIsomonodromy~2",
+  "head": "fb4945283b05b2015eba6aa66c796892ea3c069b",
+  "pr": 3020,
+  "folder": "QDifferenceIsomonodromy",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 2,
+  "notes": "Full review. All 15 sampled targets checked: locators read in S00, S03, VPR07, S09, RSZ13, B04, K16, M19, three Stacks Project tags, and S24 in its arXiv version (published numbering not confirmed; A57 unread). Every displayed identity and worked example recomputed; the rank-two Schlesinger example verified by exact arithmetic (right factor, both step equations, both Schlesinger relations, commutation). Suggested.lean elaborates with two sorry warnings; one-tactic probes fail on both theorems; a scratch proof shows the hypothesis q ≠ 0 of the gauge identity is unused. 13 supplier roadmaps and 69 cited sections resolved on main; library declarations opened at the pins; dependency check 0 problems. Automatic checks: the import-form failures are real (format note); two leads set aside as false positives. Overlap: nothing shared with the closest roadmaps.",
+  "text": "27e44b9ea1212675"
+ }
+}
