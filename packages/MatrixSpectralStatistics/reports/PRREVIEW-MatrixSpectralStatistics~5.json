@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MatrixSpectralStatistics~5",
+  "head": "f88116b262926e12caed0ec854f4126765576aa7",
+  "pr": 2611,
+  "folder": "OperatorTheory/MatrixSpectralStatistics",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Record compared item by item with the README at the merge base: every id kept, MSS-B20 new. All 15 seeded targets and the seven headline declarations checked against the Tau Ceti and Mathlib declarations at the pins (66 Tau Ceti declarations located and compared); every Check and worked example recomputed. Seven Vershynin2018 locators read at their printed pages; Horn-Johnson, Bhatia and Cox-Cox not readable. Suggested.lean elaborates with no error or warning. Automatic checks all passed; dependency check 0 problems. Overlap searched by object on main and in open pull requests: nothing shared.",
+  "text": "b4ba40e260fb3021",
+  "carried": {
+   "from": "f88116b262926e12caed0ec854f4126765576aa7",
+   "head": "6f785a34ec7289281a6aca9c0a6e8d3f8199ea07",
+   "findings": 3,
+   "lines": 17,
+   "folders": [
+    "OperatorTheory/MatrixSpectralStatistics"
+   ],
+   "corrections": true
+  }
+ }
+}
