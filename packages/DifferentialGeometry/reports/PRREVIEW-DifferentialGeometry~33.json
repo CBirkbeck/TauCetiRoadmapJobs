@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DifferentialGeometry~33",
+  "head": "6ddd288dde803726f6916e2029b51b89b143c252",
+  "pr": 3011,
+  "folder": "DifferentialGeometry",
+  "date": "2026-11-23",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "Full review at an unchanged head. One P2 finding: 10.2's Sard target in all dimensions is stated without a boundaryless hypothesis while the flat theorem it names (TauCeti.addHaar_image_criticalPoints_eq_zero) needs ContDiffAt, so the chart route stops at boundary points when dim M > dim N. Four small corrections carried over from the previous review (cylinder Stokes unstated and its sign; Needs line excludes 5.3; 'following [Lee]'; no order against #334). Seeded sample of eight targets verified against the pinned Tau Ceti and Mathlib (about 55 declarations opened); adversarial table of 30 rows with computed values; pentagonal-cone Check recomputed exactly. Automatic checks all pass; depcheck 133 roadmaps, 1475 edges, 0 problems; Suggested.lean elaborates with 36 sorry warnings only; one-tactic probe on twelve theorems closes none. [Lee] readable only as far as its contents pages; other sources not readable legally.",
+  "text": "9db48401a24a00a2"
+ }
+}
