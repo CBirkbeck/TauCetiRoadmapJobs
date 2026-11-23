@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-WienerChaosAndMalliavinCalculus~3",
+  "head": "cec201e3f8c5fc2bc71bae03e285da1ca92debd3",
+  "pr": 2972,
+  "folder": "WienerChaosAndMalliavinCalculus",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 55 changed lines since 653e845. Previous R01 (CompleteSpace H missing on four theorems of Layers 4 and 6), C01, C02 and N01 all repaired; no new problem from the repairs. Checked: elaborated signatures of twelve Layer 4-6 declarations in a probe copy (CompleteSpace H present where 𝔻¹,² occurs, absent on the chaos-only Layer 6 theorems, which stay true for incomplete H); the new negative-control Check recomputed (π²/6, non-membership argument); changed statements recomputed on H = ℓ². Automatic checks: elaboration clean (sorry the only warning), dependency check 0 problems, no change outside the folder, one form check set aside as a false positive. Seeded sample: no locator in the changed passages; none of the five cited books is legally readable, so no locator was checked against a text. Pull request text agrees with the head. One format note.",
+  "text": "8628625c79f66d5f"
+ }
+}
