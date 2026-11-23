@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompressibleEulerEquationsPartII~5",
+  "head": "43babcee203fc5ef3cc83104b8c16a3762ae37e3",
+  "pr": 3010,
+  "folder": "CompressibleEulerEquationsPartII",
+  "date": "2026-11-23",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Previous C01-C03 checked: repaired (Rendall cited by abstract p. 221 and through Luk 2012 Theorem 3). Sample: all 13 sections 1.1-4.2 recomputed by hand; 14 locators checked against LuoYu2025a, LuoYu2025b (arXiv v2), ChristodoulouMiao2014, Luk2012, Cabet-Chrusciel-Tagne Wafo and the Crossref record of Rendall 1990; Rendall's text, Hormander, Hawking-Ellis and Christodoulou 2007 not readable legally. Automatic checks all passed; dependency check 0 problems; no change outside the folder. Suggested.lean elaborates with sorry as the only warning; elaborated types compared with the README; one-tactic probe closes none of the six theorems. Suppliers resolved at CompressibleEulerEquations 4ae1090 and LorentzianGeometry 6e0c85c. Finding R01 (P2): the characteristic data set of 3.2 does not require S0 to be a one-sided neighbourhood of the edge nor C to issue from the edge, and the existence statement of 3.4 is false for two explicit one-dimensional data sets it admits. C01: the description's LorentzianGeometry section list omits 8.1. N01: process wording in the Rendall reference entry.",
+  "text": "bc55cf222b136c33"
+ }
+}
