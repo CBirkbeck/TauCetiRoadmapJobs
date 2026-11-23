@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HolderMapsBetweenManifolds~4",
+  "head": "1db40502ae9d7caf8666706967a002fe0a0184ae",
+  "pr": 3015,
+  "folder": "HolderMapsBetweenManifolds",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review of an unchanged head. All 15 sampled targets and every headline recomputed (adversarial table, 21 rows with values). DKRH locators 4 of 4 verified against the text; dLO (5 of 9 locators) not readable legally, its statements checked by computation. 16 library declarations opened at the pins, 8 cross-roadmap citations resolved. Dependency check: 0 problems, no UPWARD or CYCLE. Suggested.lean elaborates with sorry as the only warning; #check of all 21 declarations compared with the README; the one-tactic probe closes nothing. Automatic checks all pass. One small correction (two negative remarks need positive dimension), two format notes carried over. For the humans: dLO not tested; licence class of the mp_arc archive.",
+  "text": "6c694147c751f124",
+  "carried": {
+   "from": "1db40502ae9d7caf8666706967a002fe0a0184ae",
+   "head": "b5192d16399da9131f05fca918ab8e51746fc390",
+   "findings": 1,
+   "lines": 10,
+   "folders": [
+    "HolderMapsBetweenManifolds"
+   ],
+   "corrections": true
+  }
+ }
+}
