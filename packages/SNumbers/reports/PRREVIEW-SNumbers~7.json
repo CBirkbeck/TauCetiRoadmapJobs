@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SNumbers~7",
+  "head": "dbdedbab2234957b244bd4bfe94d13a873ed634d",
+  "pr": 2648,
+  "folder": "SNumbers",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review. Checked: every statement of Parts A-E recomputed on degenerate and small instances (table of 34 rows), including the seeded sample (Milestones A1-A4, B1, B2, C2-C4, D1, D2, E1-E3, 'This roadmap owns'); 43 locators read at the text in Pietsch 1974, Ullrich 2026, Ullrich 2024, Pietsch 2008 and the Lean-SNumbers blueprint; 41 Tau Ceti and 30 Mathlib declarations opened at the pins; BanachSpaceTheory B1, B4, B6, B7 resolved on main; the README on main compared with the head item by item (86 labels, 15 milestones, 8 Checks, 7 worked examples kept); the description compared with the head. Automatic checks all pass, dependency check 0 problems, Suggested.lean elaborates with 56 sorry warnings only, one-tactic probe closes none of the 56 theorems. Previous review had no findings; of its three format notes one no longer applies and two are written again. Pietsch 1980, Pietsch 1987 and Carl-Stephani 1990 unread.",
+  "text": "5b8a1b7acfe42477",
+  "carried": {
+   "from": "dbdedbab2234957b244bd4bfe94d13a873ed634d",
+   "head": "9faebb605010a95588b65419be3d4da799cfc63a",
+   "findings": 3,
+   "lines": 54,
+   "folders": [
+    "SNumbers"
+   ],
+   "corrections": true
+  }
+ }
+}
