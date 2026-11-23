@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComputabilityTheory~7",
+  "head": "ad928d083b2aefd0cb1b9f460d666f19e30b1178",
+  "pr": 2554,
+  "folder": "ComputabilityTheory",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since ad928d0; this round read the pull request's description against main (merge base 1b7b481) and the head, sentence by sentence: the Suggested.lean counts (187 declarations on main, 28 at the head, 162 removed, 3 added, 13 examples, 8 submodule imports and a set_option dropped, 11 Tau Ceti imports), the headings and section tokens, the five statements said to have changed content. Two sentences of the description are small corrections (the stage machine of Sacks splitting listed as added although main has it; main's L7 restraint described as the raw-run use although main's own Lean stageUse is Soare's stage evaluation). Previous C01 repaired; previous N01 and N02 carried over as format notes. Automatic checks rerun: all passed; dependency check 0 problems; Suggested.lean elaborates with exit 0 and 15 sorry warnings only. No source locator could be checked: Soare 1987 has no legal copy (reported to the human reviewers); the seeded sample falls in no changed passage.",
+  "text": "d0824beb5bfdefaa",
+  "carried": {
+   "from": "ad928d083b2aefd0cb1b9f460d666f19e30b1178",
+   "head": "ad928d083b2aefd0cb1b9f460d666f19e30b1178",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
