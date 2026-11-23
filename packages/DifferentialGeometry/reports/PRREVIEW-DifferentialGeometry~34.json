@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DifferentialGeometry~34",
+  "head": "da2fad05bb3fffc74b60ecfbbd87f99f7740eab4",
+  "pr": 3011,
+  "folder": "DifferentialGeometry",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 64 changed lines since 6ddd288. Checked: R01 (10.2 Sard now for boundaryless sources) and the four small corrections of the previous review, all repaired; the cylinder Stokes sign of 5.4 recomputed (M = R, n = 0, and against 5.5b's product boundary sign); 10.5's display; six library declarations opened or probed at the pin; TangentialBordism 2.1 on main read for the ownership of Sard on sources with boundary; the pull request's title and description against the head; no seeded-sample target lies in a changed passage. Automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with 36 sorry warnings only. [Lee] readable only as far as its contents pages (for the human reviewers).",
+  "text": "9801d7fca1c81d93"
+ }
+}
