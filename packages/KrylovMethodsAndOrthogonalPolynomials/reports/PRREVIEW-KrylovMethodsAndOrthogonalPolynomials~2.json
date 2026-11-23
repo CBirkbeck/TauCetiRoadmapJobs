@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KrylovMethodsAndOrthogonalPolynomials~2",
+  "head": "774a6ab8db829be01c5dafc1c957cb8347e69201",
+  "pr": 3019,
+  "folder": "KrylovMethodsAndOrthogonalPolynomials",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 126 changed lines since 527de8b. Checked: the previous R01 (repaired: Tau Ceti diagMeasure and SelfAdjointSpectralTheory SA-B21/SA-B31 cited, comparison theorem added), C01, N01, N02 (all repaired); the new statement spectralMeasure_eq_map_diagMeasure recomputed on three examples plus b = 0 and empty index, its Lean form elaborated, measurability of the map and derivability of the normality instance confirmed in a probe copy, one-tactic probes do not close it; k = 0 cases of 2.4 and 3.1 computed (convs 0 = 0 by simp); 4.3 outlier factors incl. t = 0 and negative t; 16 library declarations opened by #check at the pins; SA-B21, SA-B31 and SFOPG 5.1, 5.3, 9.2 resolved on main; automatic checks rerun, all pass; depcheck 0 problems; Suggested.lean elaborates with 17 sorry warnings only; pull request text agrees with the head; no file outside the folder. No source locator falls in the changed passages; Hestenes-Stiefel remains unread (host not classified).",
+  "text": "ecc5a33c01bbd1c0"
+ }
+}
