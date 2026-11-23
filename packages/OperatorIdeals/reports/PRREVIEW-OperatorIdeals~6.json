@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-OperatorIdeals~6",
+  "head": "5d7b59dbf4f20c2587050534a2b4f0d637ae7cc3",
+  "pr": 2614,
+  "folder": "OperatorTheory/OperatorIdeals",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 46 changed lines since 3cb0a14. Checked: the previous R01, C01-C03 and N01 are all repaired; the six changed items (OI-A40, OI-B55, OI-B90, OI-B91, OI-C15, OI-C18) and two Checks against the pinned Tau Ceti declarations they name, with computed instances; the description against the head; no change outside the folder. The seeded sample does not fall in the changed passages. Automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning. Pietsch and Gohberg-Krein locators remain unverifiable (no legal copy).",
+  "text": "220d9356a2065849"
+ }
+}
