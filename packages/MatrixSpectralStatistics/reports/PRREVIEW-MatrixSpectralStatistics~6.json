@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MatrixSpectralStatistics~6",
+  "head": "6f785a34ec7289281a6aca9c0a6e8d3f8199ea07",
+  "pr": 2611,
+  "folder": "OperatorTheory/MatrixSpectralStatistics",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 17 changed lines since f88116b. Checked: the three changed passages (MSS-B09 attribution, the B4 sentence on MSS-B16 to MSS-B18, the supplier-contract entry) against ContinuousOn.cfc_of_mem_nhdsSet, continuousOn_cfc, TauCeti.continuousOn_matrix_cfc and MeasureTheory.Measure.one_sub_measure_compl_le at the pins; the previous small corrections C01 to C03 repaired, N01 carried; the seeded sample where it falls in the change (MSS-B10, MSS-B16); the pull request's description sentence by sentence against the head and main's README (two small corrections: sections of main absorbed or dropped are not named; the list of changed statements omits MSS-C09 to MSS-C14 and the index type of MSS-C02 to MSS-C05); Suggested.lean elaborates with no error or warning (seven #check lines, no sorry); automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; no change outside the folder; adversarial table with computed values for MSS-B09, MSS-B10, MSS-B16, MSS-C09.",
+  "text": "500b39efe7199575",
+  "carried": {
+   "from": "6f785a34ec7289281a6aca9c0a6e8d3f8199ea07",
+   "head": "6f785a34ec7289281a6aca9c0a6e8d3f8199ea07",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
