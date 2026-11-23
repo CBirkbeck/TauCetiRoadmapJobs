@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FinancialMathematics~8",
+  "head": "e5111e530070c20f265fb4ffe9d92b225296e41b",
+  "pr": 2557,
+  "folder": "FinancialMathematics",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample of 14 sections recomputed (adversarial table, 16 rows); record compared with the README at the merge base (M0.1-M0.4 and every item kept); 144 library names resolved at the pins and 31 declarations opened; StochasticCalculus, PDE, StandardDistributions and MarketImpact citations resolved on main; depcheck 0 problems; Suggested.lean elaborates with three sorry warnings only, types compared with the README, one-tactic probes close nothing; automatic checks all passed. 0 of 12 source locators verified against a text: Shreve 2004 is paywalled (reported under Not verifiable and to the human reviewers).",
+  "text": "364a1321a7f230a7",
+  "carried": {
+   "from": "e5111e530070c20f265fb4ffe9d92b225296e41b",
+   "head": "56ba65f3b488bfbc10021d133c3d844440b5ce66",
+   "findings": 2,
+   "lines": 21,
+   "folders": [
+    "FinancialMathematics"
+   ],
+   "corrections": true
+  }
+ }
+}
