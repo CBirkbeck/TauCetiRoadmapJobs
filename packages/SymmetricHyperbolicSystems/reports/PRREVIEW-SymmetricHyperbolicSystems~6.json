@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SymmetricHyperbolicSystems~6",
+  "head": "b986579796cb57525cb207b2e91d1d46ac565a30",
+  "pr": 2246,
+  "folder": "SymmetricHyperbolicSystems",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 59 changed lines since 3c07b5d. Checked: the previous report had no finding; its four small corrections and three format notes are all repaired (Layer 6 time range, Layer 3 dependency lines, the note on the constant of 7.1, hFc dropped in 2.3, dotProduct, the letters J and q, the source-following phrases and the Metivier citations removed). The two changed theorems of 2.3 were recomputed on instances without the continuity hypothesis on F and hold; one loose clause in the new sentence of 2.3 is a small correction. Automatic checks all passed when rerun; lake env lean on Suggested.lean gives 14 sorry warnings and nothing else; one-tactic probe closes neither changed theorem; depcheck 0 problems; nothing changed outside the folder; title and description agree with the head. Seeded sample: the changed passages of 1.2, 2.1, 2.3, 5.1 and 7.1 cite John 1982, Lax 2006 and Friedrichs 1954 only, whose texts could not be read (listed under Not verifiable).",
+  "text": "0ebdbe54d2ab1670"
+ }
+}
