@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RamanujanGraphs~1",
+  "head": "9dfb3f5e613e7ddde9d1f2633e784ec8a4c16811",
+  "pr": 3018,
+  "folder": "RamanujanGraphs",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "Full review. All 12 sampled targets checked: locators read in Marcus-Spielman-Srivastava (arXiv v2), Bilu-Linial (arXiv v3), Hoory-Linial-Wigderson (publisher open copy) and the Terras draft (cached OCR); McKay 1981 could not be read legally and is listed as not verifiable (its formula and theorem corroborated through Hoory-Linial-Wigderson Lemma 7.3 and Thm 7.2). Checks recomputed with exact rational arithmetic and Sturm counts (good-signing counts, Godsil-Gutman sums, 750 pairs of 1.2, Ihara error terms, tree numbers, Kesten-McKay moments by quadrature). Suggested.lean elaborates with sorry as the only warning (15); one-tactic probe closes none of the 15 theorems; 31 cited library declarations opened at the pins; all supplier citations resolved at the suppliers' open heads and on main; dependency check 0 problems; automatic checks all passed; no change outside the folder.",
+  "text": "249b1fdd578229dd"
+ }
+}
