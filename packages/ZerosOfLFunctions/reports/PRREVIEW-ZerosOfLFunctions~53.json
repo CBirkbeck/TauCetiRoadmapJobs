@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ZerosOfLFunctions~53",
+  "head": "8cc0030004a90d36f1d3d33cd0403dd67c3beede",
+  "pr": 3012,
+  "folder": "ZerosOfLFunctions",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "Full review of an unchanged head (the previous review read the same commit; it had no findings, and its one small correction is repeated as C01). Every section of the README was read and its Checks and worked values recomputed. Seeded sample 0.1, 1.3, 1.4, 1.5, 1.6, 2.4, 3.4, 4.4, 5.3, 5.6, 6.4, 7.2, 7.4, 8.1, 8.2: DLMF, Kadiri, Hasanalizade-Shen-Wong, Bennett et al., Trudgian and Montgomery-Vaughan read at their locators (19 locators); Davenport, Titchmarsh, Iwaniec-Kowalski, Lagarias-Montgomery-Odlyzko and Lang not readable and listed. 45 cited library declarations located at the pins, 9 read in full. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 23 sorry warnings only; one-tactic probe closes 0 of 23. One question (the lemma number for the whole-strip Hecke region), one source issue (Kadiri (1.6)), two items for the human reviewers (PrimeNumberTheoremAnd licence, Davenport unread).",
+  "text": "65439f1a97d88726",
+  "carried": {
+   "from": "8cc0030004a90d36f1d3d33cd0403dd67c3beede",
+   "head": "354ccb36cf3cebaaa3aa79fa23a271011fe62662",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "ZerosOfLFunctions"
+   ],
+   "corrections": true
+  }
+ }
+}
