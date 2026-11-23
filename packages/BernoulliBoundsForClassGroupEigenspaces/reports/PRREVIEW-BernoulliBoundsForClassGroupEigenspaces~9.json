@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BernoulliBoundsForClassGroupEigenspaces~9",
+  "head": "0d7bb188e4ec1c964024a84de415d8cabe86d74e",
+  "pr": 2896,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BernoulliBoundsForClassGroupEigenspaces",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample 6.17, 6.18, 9.1-9.8, 10.1, 11.1, 12.1, 13.1, 14.1 recomputed (table in the report). The new clause 10.1 (c) and the route of 10.1 (a) compared with 31 statements and 22 definitions of the formal proof at its first commit; all 94 cited paths exist there; distribution relation, Jacobi-sum exponents and the Bernoulli congruence tested numerically (2032 cases). 11 locators into Soule1999 and BFEH2014 read; Arlettaz 1991 uncertified, not read. Dependency check: 0 problems. Automatic checks all passed; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes nothing. One small correction (description omits the suppliers EulerSystemsAndKolyvaginSystems and ClassicalArithmeticCompletion and the new clause), one format note.",
+  "text": "5ebac586f7fe9beb",
+  "carried": {
+   "from": "0d7bb188e4ec1c964024a84de415d8cabe86d74e",
+   "head": "0d7bb188e4ec1c964024a84de415d8cabe86d74e",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
