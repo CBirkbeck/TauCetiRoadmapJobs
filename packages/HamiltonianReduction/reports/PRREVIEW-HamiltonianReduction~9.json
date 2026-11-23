@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HamiltonianReduction~9",
+  "head": "b9dc79ae804421e9baf643f3cd3d7439bb5e4051",
+  "pr": 2690,
+  "folder": "SymplecticGeometry/HamiltonianReduction",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 35 changed lines since 34c2afa. Checked: the three small corrections of the previous review (all repaired) and its format note (carried); the Weyl-relatedness statement of R2.4 without connectedness, recomputed on finite groups, O(2), a torus extended by a swap and SU(2), with IsMaximalTorus opened at the pin; the exponent range of the Feehan citation in R5.3 against the source; the seeded sample where it falls in the changed passages; the description against the head (layer ids, subsection numbers, dropped and new suppliers, removed Lean declarations); automatic checks all passed, dependency check 0 problems, elaboration with sorry as the only warning, one-tactic probe does not close the changed theorem; no change outside the folder.",
+  "text": "cd9054c5cb8a5478"
+ }
+}
