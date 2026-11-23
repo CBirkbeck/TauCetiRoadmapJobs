@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InfinitelyDivisibleLawsAndTriangularArrays~3",
+  "head": "76f335991edfb48517a00001568d85e364dcf988",
+  "pr": 2970,
+  "folder": "InfinitelyDivisibleLawsAndTriangularArrays",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 108 changed lines since c147155. Checked: the previous R01 (route of 5.3) repaired, identity recomputed and tested on two arrays; C01-C03 and N01-N03 repaired; the changed routes of 1.3, 5.3, 7.1 and the new prose target of 5.4 computed; the rename to IsStableLaw checked by #check of the ten touched declarations and by search of the pins and all roadmaps; six Durrett theorem numbers confirmed in the author's online copy (sampled target 1.3), the other seven books unreadable; automatic checks all pass, depcheck 0 problems, Suggested.lean elaborates with 51 sorry warnings only; pull request text still describes the head.",
+  "text": "4f676b2c54f26655"
+ }
+}
