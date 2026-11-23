@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EigenvalueAndSingularValueInequalities~3",
+  "head": "5325990211fb112f3d529515ba0d5ed4cf05e85f",
+  "pr": 2969,
+  "folder": "EigenvalueAndSingularValueInequalities",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 106 changed lines since 4e66ae1. Checked: each previous remark (R01, C01-C05, N01) against this head, all repaired; the new Lean statement of Thompson's product majorization (computed instances, elaborated type against README 5.2, one-tactic probe fails so it is not padding); the rewritten routes of Rotfel'd's inequality and Fan-Hoffman, recomputed; the Mathlib determinant lemmas and the Tau Ceti Ky Fan and eigenvalue-monotonicity lemmas at the pins; the NoncommutativeIntegration 1.1, 1.4, 3.3 citations on main; the revised layer dependencies against the routes; the pull request text against the head. Elaboration: exit 0, 34 sorry warnings only. Dependency check: 0 problems. Automatic checks: one form hit (a section header over #check lines) set aside as a false positive. Seeded sample: no cited book readable legally (settled as uncertified), so no locator was compared with its text; listed under Not verifiable and for the human reviewers.",
+  "text": "3bb58eca2cd3f829"
+ }
+}
