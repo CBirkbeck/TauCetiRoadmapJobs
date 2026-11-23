@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HolderMapsBetweenManifolds~1",
+  "head": "f720b133e44e7bbebe79d736846944008b08b179",
+  "pr": 3015,
+  "folder": "HolderMapsBetweenManifolds",
+  "date": "2026-11-23",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 7,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample (1.2, 2.2-2.4, 3.1-3.4, 4.1-4.3, 5.1-5.4) checked mathematically; DKRH locators (1.1)/Thm 1.1, (2.2), Lemma B.1 verified against arXiv:2106.03147v1; dLO (5 locators) not legally readable. Suggested.lean elaborates with 7 sorry warnings only; dependency check 0 problems; one automatic hit (sorry in HolderDiff body) is real (R03). 21 cited Tau Ceti names absent at the pin (R01). One-tactic probe: no padding. #check @ of 11 declarations: dropped FiniteDimensional/IsManifold binders harmless.",
+  "text": "c0a6c732037413e3"
+ }
+}

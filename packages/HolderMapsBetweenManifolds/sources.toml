@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HolderMapsBetweenManifolds"
+
+[[source]]
+id = "DKRH"
+authors = "Dmitry Dolgopyat, Adam Kanigowski, Federico Rodriguez-Hertz"
+title = "Exponential mixing implies Bernoulli"
+year = 2021
+arxiv = "2106.03147v1"
+locator_scheme = "equation"
+locator = "§1.1, (1.1), Theorem 1.1; §2.1, (2.2); Appendix B, Lemma B.1"
+url = "https://arxiv.org/abs/2106.03147v1"
+fetched_from = "https://arxiv.org/pdf/2106.03147v1"
+fetched_at = "2026-11-23T21:14:18Z"
+sha256 = "e8116ac99103ee7d1d94c49cda48dad55f7cb0cc05fc6f8739ed1575fc91a582"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-23"
+version_note = "arXiv v1"
+cited_for = ["3.4 Hölder estimate in exponential charts, (2.2)", "5.4 smoothing, Lemma B.1 and its proof", "Downstream consumers: Theorem 1.1, (1.1)"]
