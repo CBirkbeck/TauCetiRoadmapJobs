@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CompressibleEulerEquations~4",
+  "head": "a16a9e60e6a3a53aa139d0cfe09ad744813c432f",
+  "pr": 2442,
+  "folder": "CompressibleEulerEquations",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review of README.md and Suggested.lean at a16a9e6 (the previous review had no findings; Suggested.lean is unchanged since 59271f0). Seeded sample of 15 targets (1.1, 1.2, 2.1, 3.3, 4.2, 4.3, 4.4, 5.1, 5.3, 5.4, 6.1, 7.1, 7.2, 8.2, 8.4) and all 14 headline theorems recomputed, with values in the adversarial table; the new opening overview compared with sections 6.2, 7.2, 8.2, 8.4. 61 source locators checked in 12 cached texts; Majda1984, Kato1975, Dafermos2016 uncertified and four waived sources not verifiable. 45 pinned declarations opened at their cited file and line. Supplier citations resolved at the open heads of LorentzianGeometry and SymmetricHyperbolicSystems; scope compared with CompressibleEulerEquationsPartII. Automatic checks all pass; depcheck 132 roadmaps, 1473 edges, 0 problems; elaboration gives 14 sorry warnings only; one-tactic probe closes none of the 14 theorems; #check of all 35 declarations shows no lost binder. Two small corrections: the description's sentence on real Sobolev orders is out of date; the time orientation by [B] is attributed to LorentzianGeometry 7.3 instead of its 8.1. One source issue recorded (ChristodoulouMiao2014 section 2.1.2). Two notes for the human reviewers (Majda1984 not tested; LukNotes licence).",
+  "text": "ebb8fbe5ec85b7e7",
+  "carried": {
+   "from": "a16a9e60e6a3a53aa139d0cfe09ad744813c432f",
+   "head": "4ae1090a37c8aabf133b675ded83447f5856d10c",
+   "findings": 2,
+   "lines": 31,
+   "folders": [
+    "CompressibleEulerEquations"
+   ],
+   "corrections": true
+  }
+ }
+}
