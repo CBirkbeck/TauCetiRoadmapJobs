@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Majorization~5",
+  "head": "26b053c16cba911763c09240b1ed9b3c63a91e54",
+  "pr": 2612,
+  "folder": "OperatorTheory/Majorization",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 83 changed lines since 624ab6c. Checked: the previous C01-C03 (repaired) and N01 (carried); the new supplier citations PD-A50 and OG-07 against PolarDecomposition and OrthogonalGeometry on main and against the pinned Tau Ceti declarations and their call sites (CourantFischer 152, Gram/Rigidity 142, DiagonalSum 118, KyFan 498, FanDominance 116, Gauge 102), with computed instances; the pull request description against the head (one small correction); automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with no error or warning. The seeded source sample and the new Bhatia section locators could not be verified: no cited source is readable.",
+  "text": "9df7d17ae81d74eb",
+  "carried": {
+   "from": "26b053c16cba911763c09240b1ed9b3c63a91e54",
+   "head": "26b053c16cba911763c09240b1ed9b3c63a91e54",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
