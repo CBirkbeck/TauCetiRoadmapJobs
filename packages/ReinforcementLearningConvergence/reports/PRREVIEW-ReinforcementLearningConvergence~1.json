@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ReinforcementLearningConvergence~1",
+  "head": "bb19b188f6850bb23a7275bf7e485d7ef92679b2",
+  "pr": 3016,
+  "folder": "ReinforcementLearningConvergence",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample 1.1, 1.2, 2.1, 2.2, 2.3, 3.1, 4.1, 4.2: locators checked against the texts of Tsitsiklis-Van Roy (author's page), Bhandari-Russo-Singal arXiv v1 and Mei et al. arXiv v3; the Singh et al. locators could be checked only against the 1998 preprint (other numbering), listed as not verifiable. Every README Check with numbers recomputed exactly (three-state chain for 9 (gamma, lambda) pairs and 3 feature matrices, the off-policy example, the 2.2 moment recursion for three chains). All 20 copied definitions compared verbatim with their owners; 17 supplier citations and 20 library declarations resolved at main, the open heads and the pins. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 10 sorry warnings only; one-tactic probe closes none of the 10 theorems. Two small corrections (comparison remarks with Mei et al. Theorem 4 and with Bhandari-Russo-Singal's proof) and one format note (a pull-request number in the README).",
+  "text": "d8ecb7944dcaed5e"
+ }
+}
