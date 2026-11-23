@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CompressibleEulerEquationsPartII~6",
+  "head": "8e9f9010509ea9ac137bc589c0b294d48d973127",
+  "pr": 3010,
+  "folder": "CompressibleEulerEquationsPartII",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 45 changed lines since 43babce. Previous R01 (P2), C01 and N01 all repaired. Recomputed: the equivalence of the two forms of the new condition on S0 at the edge; that it excludes the punctured S0 instance; that the new condition 5 (C swept by past causal curves from the edge) excludes the edgeless instance; the two new negative-control Checks of 3.2 (the second for an arbitrary solution, by uniqueness of integral curves); the earlier Checks of 3.2 and 3.3 against condition 5; the existence statement of 3.4 against the new definition (compactness of C near the edge, distance from the complement of W). New citation CompressibleEulerEquations 3.3 resolved at its head 4ae1090. Sample: 3.2 falls in the change; it adds no source locator and no source text was reopened. Automatic checks all passed in the worker's run; dependency check 0 problems; no change outside the folder; Suggested.lean (unchanged) elaborates with sorry as the only warning on its six theorems. Pull request text agrees with the head. Left to humans: supplier order (LorentzianGeometry not in the merge-order file), the restated supplier definitions in Suggested.lean, Rendall 1990 unread beyond its abstract.",
+  "text": "0d3dcbb69c909db9"
+ }
+}
