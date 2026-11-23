@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Majorization~4",
+  "head": "624ab6cf68ddee057b1f4beeb0dd81db52abd2bf",
+  "pr": 2612,
+  "folder": "OperatorTheory/Majorization",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Record: all 79 MAJ labels, both Parts, milestones and D1 of the README on main kept with statements. Adversarial pass over every section 1.1-1.5 and 2.1-2.6 (the seeded sample), all Checks and examples recomputed; all 153 In-Tau-Ceti names resolved at the pinned Tau Ceti and the key statements read; Mathlib and cross-roadmap citations resolved. Suggested.lean elaborates with no error or warning (no sorried declaration, so no one-tactic probe). Automatic checks all passed; dependency check: 133 roadmaps, 1473 edges, 0 problems. Sources: none of the five references could be read legally (paywalled or refused), so 0 of 13 locators were checked against the text and the wording and arrangement were not compared; this is flagged to the human reviewers.",
+  "text": "981ab9bdab4a41a7",
+  "carried": {
+   "from": "624ab6cf68ddee057b1f4beeb0dd81db52abd2bf",
+   "head": "26b053c16cba911763c09240b1ed9b3c63a91e54",
+   "findings": 3,
+   "lines": 83,
+   "folders": [
+    "OperatorTheory/Majorization"
+   ],
+   "corrections": true
+  }
+ }
+}
