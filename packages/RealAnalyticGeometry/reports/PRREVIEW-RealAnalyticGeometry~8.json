@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RealAnalyticGeometry~8",
+  "head": "9cd6998996eca18d45df686ff158af7fbbf93e7e",
+  "pr": 2634,
+  "folder": "RealAnalyticGeometry",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review of the repaired head. Previous review had no finding; its one format note is carried. Record comparison with the README at the merge base: every layer id and item kept with its statement. Seeded sample of 15 sections: 12 verified against Lojasiewicz1964, Forstneric2018, DemaillyAgbook and WhitneyBruhat1959 (39 locators); sections 3.2 and 4.2 rest on Hormander1990 and Grauert1958, cited by locator alone and not readable; section 0.2 has no locator. 63 Tau Ceti declarations behind the In Tau Ceti lines opened at the pin and compared with the items; all 203 Tau Ceti names located. Cross-roadmap citations resolved on main for all seven suppliers. Dependency check: 0 problems, no UPWARD or CYCLE. Automatic checks all pass. Suggested.lean elaborates with eight sorry warnings and no error; one-tactic probe closes none of the eight theorems. Small corrections: two sentences of the description (Suggested.lean said unchanged; main's L2 hypothesis said omitted) and one word in a Check of 2.0b. Two source issues recorded for Lojasiewicz1964.",
+  "text": "221738213a856748",
+  "carried": {
+   "from": "9cd6998996eca18d45df686ff158af7fbbf93e7e",
+   "head": "b6a8442a4bf0f5bf692674b20b6c6f7f4e681a20",
+   "findings": 3,
+   "lines": 2,
+   "folders": [
+    "RealAnalyticGeometry"
+   ],
+   "corrections": true
+  }
+ }
+}
