@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CFSGBasicProperties~10",
+  "head": "bf9088a42aa340d72f11f4e038f7389046368a0a",
+  "pr": 2541,
+  "folder": "CFSGBasicProperties",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review of the repaired head. Previous review had no findings; its three questions are carried over. Record check against the README at the merge base: every label (E0, F0, F1, T0-T3, P0 items 1-5, P1, P2-N/L/G/M/D/R, P2M, A0) kept with its statement. Seeded sample (2.1, 3.2, 4.1, 7.1, 7.9, 7.11, 8.1, 8.4, 9.3, 9.4, 9.5, 10.2, 10.3, 11.1, 11.3): 14 source locators read in hohnseysen, bmw-monster, bmw-baby and conrad-tits; Ivanov 1994/1999, Havas-Sims, Griess, Steinberg and Bourbaki not readable legally (listed under Not verifiable). 31 pinned Tau Ceti and Mathlib declarations opened and compared with the README statements; all order identities and Checks recomputed. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with ten sorry warnings only; one-tactic probe closes none of the ten theorems. Four small corrections (layer Dependencies against the milestone graph, the orbit in the Check of 2.4, the A1(q) Example of F1, the missing Co1 simplicity input of 9.3) and one format note (References).",
+  "text": "39924d2c7b12fff1",
+  "carried": {
+   "from": "bf9088a42aa340d72f11f4e038f7389046368a0a",
+   "head": "6a6a0a5b03340345728c6ec7ea516fb5ef2c63bf",
+   "findings": 4,
+   "lines": 41,
+   "folders": [
+    "CFSGBasicProperties"
+   ],
+   "corrections": true
+  }
+ }
+}
