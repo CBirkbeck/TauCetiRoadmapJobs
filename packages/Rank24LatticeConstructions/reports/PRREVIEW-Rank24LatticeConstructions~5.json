@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-Rank24LatticeConstructions~5",
+  "head": "d1269aa0ae1f7434a3f928bd32b23fa6e96816a5",
+  "pr": 2632,
+  "folder": "Rank24LatticeConstructions",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All 23 rows recomputed by enumeration (orders, isotropy, shortest norms, root counts, pattern symmetries, the D4^6 additive and F4 spans, the A5^4 D4 rotation with triality); K^v/K classes and the Leech congruence cases recomputed. All 15 seeded targets checked: those citing Conway-Sloane 1982 and Chenevier 2020 against the text (9 locators), those citing SPLAG, Niemeier, Wilson and Ebeling (not readable) by computation and against the pinned library. README on main compared layer by layer and item by item: nothing removed. All names on the In Tau Ceti and Needs lines exist at the pin. Suggested.lean elaborates with eight sorry warnings only; one-tactic probe closes none. Dependency check: 0 problems. Automatic checks all passed. One small correction: the description says Suggested.lean is unchanged, but the pull request replaces it.",
+  "text": "01e5cb0756d8ef8c",
+  "carried": {
+   "from": "d1269aa0ae1f7434a3f928bd32b23fa6e96816a5",
+   "head": "d1269aa0ae1f7434a3f928bd32b23fa6e96816a5",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
