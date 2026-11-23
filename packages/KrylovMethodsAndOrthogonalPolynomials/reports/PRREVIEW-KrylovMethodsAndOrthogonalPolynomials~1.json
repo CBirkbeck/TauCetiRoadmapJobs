@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KrylovMethodsAndOrthogonalPolynomials~1",
+  "head": "527de8b6e119329f172c3e1a90d04d494c5002f4",
+  "pr": 3019,
+  "folder": "KrylovMethodsAndOrthogonalPolynomials",
+  "date": "2026-11-23",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Sources: all 14 seeded targets; 14 locators read in Meurant-Strakos, Liesen-Tichy and both Saad books (all agree); Hestenes-Stiefel not readable (host unclassified). Adversarial pass: every theorem and Check recomputed in exact rational arithmetic at degenerate parameters, no false statement. 28 supplier citations resolved on main and at open heads; 25 Mathlib names and two Tau Ceti files opened at the pin. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 16 theorems. One finding (P2): the spectral measure of 1.1 is the object of Tau Ceti ContinuousLinearMap.diagMeasure and SelfAdjointSpectralTheory SA-B21/SA-B31, uncited and unrelated.",
+  "text": "6d07bab921514ad0"
+ }
+}
