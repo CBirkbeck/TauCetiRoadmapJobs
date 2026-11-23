@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompressibleEulerEquationsPartII~2",
+  "head": "084ef25dc0cd6c49451979a8e87efb9b458a55e5",
+  "pr": 3010,
+  "folder": "CompressibleEulerEquationsPartII",
+  "date": "2026-11-23",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full re-review. All 13 seeded sections sampled. 15 locators verified against LuoYu2025a/b (arXiv v2) and ChristodoulouMiao2014 (arXiv v2). Rendall 1990, Hormander, Hawking-Ellis and Christodoulou 2007/2019 not readable. Automatic checks all passed. Suggested.lean elaborates with sorry as the only warning; #check @ matches the README; the one-tactic probe closes nothing. Depcheck: 0 problems. Suppliers resolved at CompressibleEulerEquations a16a9e6 and LorentzianGeometry 6e0c85c. Previous findings: all repaired except the Rendall locators. D01 resolved by the supplier's new Scope. Findings: the first statement of 2.3 lacks the bound on c and |v| (Chaplygin counterexample); the rescaling claim of 4.1 fails on the cylinder; the Check of 3.4 has the compressive sign reversed; the second Check of 2.3 misstates when Psi_t stops being injective.",
+  "text": "11b5d40d3f40de48"
+ }
+}
