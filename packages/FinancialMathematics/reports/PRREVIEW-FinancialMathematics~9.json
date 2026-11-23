@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FinancialMathematics~9",
+  "head": "56ba65f3b488bfbc10021d133c3d844440b5ce66",
+  "pr": 2557,
+  "folder": "FinancialMathematics",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 21 changed lines since e5111e5: the previous report had no finding; its small corrections C01 (M0.3 domain at t = 0, §3.3 starts from t₀ = 0) and C02 (description names the dropped supplier StandardDistributions) are repaired, its format note N01 (Layer 3/4 comments in Suggested.lean) is carried. Changed passages recomputed (right time derivative at t = 0, U open in D, growth adapter with h(s) = s, maximal moment from t₀ = 0) and the claim about the time derivative of TauCeti.ParabolicC2HolderSpace opened at the pin. Title and description checked against the head and the merge base: no contradiction, no omission. Automatic checks all pass, dependency check 0 problems, Suggested.lean elaborates with three sorry warnings only, no change outside the folder. Seeded sample not verifiable: Shr04 is paywalled (uncertified) and the changed passages cite no source.",
+  "text": "e92a79be34f92377"
+ }
+}
