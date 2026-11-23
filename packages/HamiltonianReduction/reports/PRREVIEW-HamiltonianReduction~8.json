@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HamiltonianReduction~8",
+  "head": "34c2afac1b63b9b2c29ba24ff4dd75ec4260969e",
+  "pr": 2690,
+  "folder": "SymplecticGeometry/HamiltonianReduction",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Every statement and Check recomputed (adversarial table of 23 rows with values). 43 source locators checked at the text in 10 sources (34 statements read in full); the seeded sample of the four scope paragraphs verified; cited library declarations opened at the pins; 65 cross-roadmap citations resolved (61 on main, 4 at CotangentLagrangian's open revision). Merge-base comparison: every layer and item of main kept under its id. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes neither theorem. Not confirmed: the end of the Banyaga III.6 page range (OCR), and Huebschmann 2.18-2.32 step by step.",
+  "text": "de0e247f265c8bdc",
+  "carried": {
+   "from": "34c2afac1b63b9b2c29ba24ff4dd75ec4260969e",
+   "head": "b9dc79ae804421e9baf643f3cd3d7439bb5e4051",
+   "findings": 3,
+   "lines": 35,
+   "folders": [
+    "SymplecticGeometry/HamiltonianReduction"
+   ],
+   "corrections": true
+  }
+ }
+}
