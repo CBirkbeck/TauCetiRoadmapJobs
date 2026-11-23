@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FormalLaurentPuiseux~8",
+  "head": "32d88de3a9f158a2161e913de64e02002abcfeaa",
+  "pr": 2558,
+  "folder": "FormalLaurentPuiseux",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review of the rewritten folder. Base README compared with the head layer by layer and item by item: L1-L7 and every item kept. All 15 sampled targets and every other section recomputed (adversarial table, 29 rows with values). 11 distinct source locators (FrenkelLoop 7, MannaaCoquand2013 4) read in the texts; all agree. 8 pinned declarations elaborated and 16 more opened at the pins. Cross-roadmap citations resolved (AlgebraicCurves, NewtonPolygons, ProfiniteArithmetic). Automatic checks all pass; Suggested.lean elaborates with no warning; dependency check 0 problems; no change outside the folder. Small corrections: a Check of 2.3, the Lemma 1.7 locator in 5.2, two sentences of the description. Not verifiable: Cureton's repository, the Zulip thread.",
+  "text": "d70f2badbabeb9a9",
+  "carried": {
+   "from": "32d88de3a9f158a2161e913de64e02002abcfeaa",
+   "head": "f8230557041e6404ad98b0be011beee305403548",
+   "findings": 4,
+   "lines": 16,
+   "folders": [
+    "FormalLaurentPuiseux"
+   ],
+   "corrections": true
+  }
+ }
+}
