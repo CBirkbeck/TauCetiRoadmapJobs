@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeegaardFloer~16",
+  "head": "4b56aac8396edfa79e87577c0dc90c332016119b",
+  "pr": 2477,
+  "folder": "HeegaardFloer",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 12 changed lines since 935a631. Checked: the previous finding R01 (stray TauCetiRoadmap/.DS_Store) is repaired, the diff against main outside the folder is empty; C01, N01, N02 repaired (docstring, three pull-request numbers, two unused imports). Suggested.lean elaborates with six sorry warnings only; dependency check 0 problems; HamiltonianSystems Layer 1 resolved at its open head as a consumer; the seeded sample does not fall in the changed lines. One small correction: a sentence of the description now out of date. The dropped-name scanner hits are set aside as false positives (consumer mentions).",
+  "text": "c1f656978425459f"
+ }
+}
