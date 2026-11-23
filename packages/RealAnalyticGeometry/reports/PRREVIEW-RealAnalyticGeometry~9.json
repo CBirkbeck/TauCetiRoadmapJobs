@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RealAnalyticGeometry~9",
+  "head": "b6a8442a4bf0f5bf692674b20b6c6f7f4e681a20",
+  "pr": 2634,
+  "folder": "RealAnalyticGeometry",
+  "date": "2026-11-23",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 2 changed lines since 9cd6998: the changed Check of §2.0b computed and read against Lojasiewicz1964 lines 335-341 (property (P), Lemma 7); the previous small corrections C01-C03 repaired, format note N01 carried; the pull request description read sentence by sentence against the head and the folder on main (Suggested.lean counts 17/17/1, Theorem 3 and Grauert statements identical to main, the seven suppliers unchanged, the In Tau Ceti lines by layer, the removed declarations located at the pins); automatic checks rerun, all pass; dependency check 0 problems; Suggested.lean elaborates with eight sorry warnings only. Seeded sample: only §2.0b falls in the changed passage.",
+  "text": "2fdc9fdf8518a8cf"
+ }
+}
