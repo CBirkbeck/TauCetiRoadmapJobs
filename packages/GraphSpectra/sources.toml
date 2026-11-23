@@ -1,0 +1,32 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GraphSpectra"
+
+[[source]]
+id = "BH"
+authors = "Brouwer"
+title = "Spectra of Graphs"
+year = 2012
+venue = "Universitext"
+doi = "10.1007/978-1-4614-1939-6"
+locator_scheme = "section"
+locator = "§1.1"
+url = "https://doi.org/10.1007/978-1-4614-1939-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.1"]
+
+[[source]]
+id = "Ba"
+authors = "Bapat"
+title = "Graphs and Matrices"
+year = 2014
+venue = "Universitext"
+doi = "10.1007/978-1-4471-6569-9"
+locator_scheme = "theorem"
+locator = "Lemma 7.7"
+url = "https://doi.org/10.1007/978-1-4471-6569-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.1"]

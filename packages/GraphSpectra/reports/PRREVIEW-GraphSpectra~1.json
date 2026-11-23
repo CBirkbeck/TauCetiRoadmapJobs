@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GraphSpectra~1",
+  "head": "7c5d696e65fc60e7566672688a46d5c76cdbf710",
+  "pr": 3014,
+  "folder": "GraphSpectra",
+  "date": "2026-11-23",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review. Every statement recomputed on small and degenerate instances (25-row table); none found false. One P2 finding: the routes of 3.4 and 3.5 use two unowned theorems (minimality of the path among trees, with an equality case the cited source does not give; Motzkin-Straus). Suggested.lean elaborates with 93 sorry warnings and nothing else; one-tactic probe on 19 declarations, 9 closed. Dependency check: 0 problems. 15 cross-roadmap citations resolved at the suppliers' heads; copied definitions agree with the suppliers. Seeded sample of 15 sections: source side not verifiable, since none of the five cited books (BH, CRS, B, Ba, St) could be read legally; mathematics of each checked by computation. Automatic checks: the import form and an empty section header are format notes; two Mathlib names ending in a prime flagged as undeclared were set aside as false positives.",
+  "text": "b7cf92e18eb2143c"
+ }
+}
