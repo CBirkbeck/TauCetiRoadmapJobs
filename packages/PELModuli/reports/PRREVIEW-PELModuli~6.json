@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PELModuli~6",
+  "head": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+  "pr": 3027,
+  "folder": "PELModuli",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 2 changed lines since b8f3652. Checked the one changed line (M2.5 Needs, adding SchemeAndStackFoundations §4.3) against §§4.2, 4.3, 4.4, 4.6 of that roadmap on main, the affected dependency and scope lines, and the description; adversarial table with computed values for the changed citation and the three headline theorems. Seeded sample lies outside the changed passages. Automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only. One small correction in untouched text (the name ArtinLocalAlg is not the supplier's); one licence fact for the human reviewers.",
+  "text": "996e426ae2fd4be5"
+ }
+}
