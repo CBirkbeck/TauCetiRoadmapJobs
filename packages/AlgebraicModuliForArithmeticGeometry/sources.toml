@@ -98,3 +98,55 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-24"
 cited_for = ["9.10d", "9.12c"]
+
+[[source]]
+id = "ein_lazarsfeld_nullstellensatz"
+authors = "Lawrence Ein, Robert Lazarsfeld"
+title = "A Geometric Effective Nullstellensatz"
+year = 1998
+doi = "10.1007/s002220050332"
+arxiv = "math/9810004v3"
+locator_scheme = "theorem"
+locator = "Proposition 1.2"
+url = "https://arxiv.org/abs/math/9810004v3"
+fetched_from = "https://arxiv.org/pdf/math/9810004v3"
+fetched_at = "2026-11-24T05:53:37Z"
+sha256 = "08225cc13dca53c58cbaa631d35ea9f9342d5e5afd76673191609d6c218fe9ba"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v3"
+cited_for = ["9.12"]
+
+[[source]]
+id = "els_symbolic_powers"
+authors = "Lawrence Ein, Robert Lazarsfeld, Karen E. Smith"
+title = "Uniform Bounds and Symbolic Powers on Smooth Varieties"
+year = 2000
+doi = "10.1007/s002220100121"
+arxiv = "math/0005098v3"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://arxiv.org/abs/math/0005098v3"
+fetched_from = "https://arxiv.org/pdf/math/0005098v3"
+fetched_at = "2026-11-24T05:53:43Z"
+sha256 = "c2b995fc93d315566e7399141b94af79a8af07f271158bda8bda26faee43ada9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v3"
+cited_for = ["9.12"]
+
+[[source]]
+id = "lazarsfeld_positivity_ii"
+authors = "Robert Lazarsfeld"
+title = "Positivity in Algebraic Geometry II"
+year = 2004
+doi = "10.1007/978-3-642-18810-7"
+locator_scheme = "section"
+locator = "§9.6"
+url = "https://doi.org/10.1007/978-3-642-18810-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["9.12"]
