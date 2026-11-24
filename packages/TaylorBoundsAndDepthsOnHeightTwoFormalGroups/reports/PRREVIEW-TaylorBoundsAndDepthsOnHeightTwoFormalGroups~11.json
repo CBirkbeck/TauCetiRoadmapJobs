@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TaylorBoundsAndDepthsOnHeightTwoFormalGroups~11",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/TaylorBoundsAndDepthsOnHeightTwoFormalGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 326 changed lines since b8f3652. Checked: the 42 new Origin and Method labels and every changed In [FormalProof] line against the formal proof's Lean source and the kernel export of its five main theorems (three cited names lie outside the export: ThmB and thmB in 4.8a, Plan.Ok in 4.19; C01); the new clause of 4.6 (f) (duality, (b), (c), (d1)-(d3) on odd cycles), computed on Z/3 with p = 3 and p = 5; the new RestrictedPowerSeries supplier against §§1.1, 1.2, 2.2 on main; the consumers ThetaChainsAndFrobeniusPrimeSums §10.9 and LocalGainOfThetaChains 4.9f; the README on main compared item by item with the head (nothing removed or renumbered); the seeded sample of 15 sections against the proof's declarations. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only, and the diff changes its docstrings only. Bosch-Guntzer-Remmert §5.1, Mumford 1969 and Hazewinkel 1978 not verifiable (no legal copy).",
+  "text": "cdb52b915f25ebb5"
+ }
+}
