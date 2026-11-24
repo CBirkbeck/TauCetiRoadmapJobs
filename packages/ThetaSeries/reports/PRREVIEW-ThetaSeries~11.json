@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaSeries~11",
+  "head": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+  "pr": 3027,
+  "folder": "ThetaSeries",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 98 changed lines since b8f3652. Checked: Layer 9 (Setting, 9.1, 9.2, Examples) rederived by hand and numerically (r=1, s=1 and s=2 at general Z; wrong exponent and constant excluded); the normalisation comparison with Cohen-Resnikoff verified internally; seeded sample where affected (3.1, 4.2) against the pinned Tau Ceti; merge base against head (54 headings kept, 3 added); HermitianFormsAndLattices 7.1 citation resolved; dependency check 0 problems; automatic checks all passed; Suggested.lean unchanged, elaborates with 10 sorry warnings only. Not verifiable: Cohen-Resnikoff 1978 and Resnikoff 1975 texts (0 of 3 locators read). Two small corrections (carrier of the form 2 Re h; description omits Layer 9), two format notes.",
+  "text": "42515038758c433e",
+  "carried": {
+   "from": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+   "head": "d46b26f79973b1eb99d2b3b4ed2330dfe6e2a4f1",
+   "findings": 2,
+   "lines": 16,
+   "folders": [
+    "ThetaSeries"
+   ],
+   "corrections": true,
+   "onto": "2899581178834dfb5955a6397cf27f8633e88c00"
+  }
+ }
+}
