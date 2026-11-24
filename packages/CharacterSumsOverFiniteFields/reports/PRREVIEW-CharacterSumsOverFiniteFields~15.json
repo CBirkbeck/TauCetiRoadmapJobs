@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CharacterSumsOverFiniteFields~15",
+  "head": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+  "pr": 3027,
+  "folder": "CharacterSumsOverFiniteFields",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "review of the change against main: 59 changed lines since 74a09b7. Checked the new section 3.1a (Gauss's formula, the lower bound, the two-sided form), its Checks, the rewritten dependency lines of Layers 3-5, the scope bullet, the supplier contract and the two reference entries; recomputed the formula and bounds at q=2 (n=1,2,3,4,6) and q=3 (n=2); read Proposition 8.1 of arXiv:2007.14567v3 at its locator; resolved SieveMethodsAndPrimePatterns 0.10 on main; record comparison with the merge base (no layer or item removed); automatic checks all passed; dependency check 0 problems; Suggested.lean unchanged, elaborates with sorry the only warning. Of the seeded sample only the dependency summaries of 4.5, 4.7 and 5.4 fall in the change. Not verifiable: Rosen GTM 210 Chapter 2 (paywalled). Previous review's small correction (description does not name the new section and supplier) not repaired, raised again as C01.",
+  "text": "28878c9aed255c7f",
+  "carried": {
+   "from": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+   "head": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
