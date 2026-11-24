@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SlopesOfHermitianVectorBundles~14",
+  "head": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SlopesOfHermitianVectorBundles",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "review of the change against main: 412 changed lines since b8f3652. Checked: the Origin, Method and Corollary labels on all 45 sections; the narrowed statements of 1.3, 4.3 and 6.2 with their wider forms; the routes of 1.3a, 6.1 and 6.4 now cited from other roadmaps; the seeded sample (1.3, 1.3a, 1.7, 2.2, 3.1, 3.2, 3.5, 4.1, 4.2, 4.3, 4.5, 5.7, 6.1, 6.6, 6.7b) with 41 source locators read in Gaudron 2008, Gaudron-Remond 2013, Chen 2010, Bost 1996, Bost 2001 and Bost-Kunnemann 2010; the cited sections of ArakelovGeometryAndAbelianHeights, DiophantineApproximationAndTranscendence, HeightsRationalPointsAndObstructions, BanachSpaceTheory, GeometryOfNumbersAndQuadraticArithmetic and ArithmeticGaloisRepresentations at this head; the record (6 layers and 45 sections kept, no statement lost); the adversarial table with computed values. The folder is unchanged since the previous review's head, so its four small corrections stand (Chen section 9.1 locator, Gaudron-Remond Lemme 6.2 attribution, the invariant choice of 6.1, the description's silence on the new supplier); its format note on Massold's title is withdrawn. Automatic checks: all passed for the worker; my rerun passed except the outside-folder count (128 files, all in the pull request's other roadmap folders: set aside); dependency check 0 problems; Suggested.lean elaborates with no output and declares nothing. The human reviewers' decision on sections moved to general roadmaps was applied. Not verified: Bost-Gillet-Soule 1994 (empty cached text), the uncertified sources, and the formal proof's Lean repository.",
+  "text": "41eb68cd3555e116",
+  "carried": {
+   "from": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+   "head": "bc4e916011287e7f98a22919671ef524cc3f137a",
+   "findings": 4,
+   "lines": 20,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/SlopesOfHermitianVectorBundles"
+   ],
+   "corrections": true,
+   "onto": "1ed4fa2eeb7eeb5dce98f9f2816e6e3e801e1a50"
+  }
+ }
+}

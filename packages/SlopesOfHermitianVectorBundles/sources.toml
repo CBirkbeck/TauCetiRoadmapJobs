@@ -220,3 +220,22 @@ status = "certified"
 accessed = "2026-11-21"
 version_note = "the PDF was fetched but its text could not be extracted on this worker; cited as an article"
 cited_for = ["6.6"]
+
+[[source]]
+id = "GaudronRemond2013"
+authors = "Éric Gaudron, Gaël Rémond"
+title = "Minima, pentes et algèbre tensorielle"
+year = 2013
+venue = "Israel Journal of Mathematics 195, 565–591"
+arxiv = "1109.2812v1"
+locator_scheme = "theorem"
+locator = "§2.7; Théorème 1.1; Corollaire 1.4 (2); Lemme 3.2; Théorème 6.1, Lemme 6.2 and its proof, pp. 11–12 (numbering of arXiv v1)"
+url = "https://arxiv.org/abs/1109.2812v1"
+fetched_from = "https://arxiv.org/pdf/1109.2812v1"
+fetched_at = "2026-11-24T21:14:09Z"
+sha256 = "5905e78a50a39dc339ba4f6dc54a355ffc94e9e3ad54cf8e04030e452c5db317"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "read in arXiv v1 (2011); the README cites the arXiv v1 numbering"
+cited_for = ["1.7", "3.5", "4.3", "4.4", "4.5"]
