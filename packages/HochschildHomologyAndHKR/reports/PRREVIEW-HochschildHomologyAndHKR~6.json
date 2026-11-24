@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HochschildHomologyAndHKR~6",
+  "head": "d18fb7af049579d6636b70ef29360a275a5f8b9b",
+  "pr": 2447,
+  "folder": "HochschildHomologyAndHKR",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 4 changed lines since d5f6490: the scope sentence on quasi-free algebras (owner pointer to a non-existent roadmap removed) checked for truth on k, k[x], k[x,y], dual numbers, and against §3.6 and §4.4 (Z/4 -> Z/2 over Z); no owner of quasi-free algebras on main or at open heads; the seeded sample does not fall in the changed lines; pull request text checked against the head (one small correction); automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 10 sorry warnings only; previous report had no finding, its format note carried.",
+  "text": "ba333ba148850a97",
+  "carried": {
+   "from": "d18fb7af049579d6636b70ef29360a275a5f8b9b",
+   "head": "d18fb7af049579d6636b70ef29360a275a5f8b9b",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
