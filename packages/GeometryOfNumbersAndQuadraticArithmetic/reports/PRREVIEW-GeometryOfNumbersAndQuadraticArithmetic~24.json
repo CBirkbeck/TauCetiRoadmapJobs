@@ -1,0 +1,33 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeometryOfNumbersAndQuadraticArithmetic~24",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "GeometryOfNumbersAndQuadraticArithmetic",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 8 changed lines since 094da69: 2.4.7 (c) and 2.4.8 (b) without 'totally definite' recomputed (definite, indefinite, n = 1) and read against Kirschmer 2016 Theorem 5.1.3, Corollaries 5.1.4 and 5.2.8; the 3.3 Needs citation of ReductiveGroups 9B and 9B.6 resolved on main and at the head; previous C01 repaired, N01 carried; none of the seeded targets has a source locator in the changed lines (only 3.3 is touched, by a supplier citation); automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with 23 sorry warnings and no error; no change outside roadmap folders against the base; pull request text still agrees with the head.",
+  "text": "9aedd0e947327cc2",
+  "carried": {
+   "from": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C01: In `TauCetiRoadmap/RiemannHypothesisForDirichletLFunctions/HermitianFormsAndLattices/README.md`, two quotations of this roadmap should drop \"totally definite\": - line 2423, in §5.3's quotation of",
+    "where": "RiemannHypothesisForDirichletLFunctions/HermitianFormsAndLattices/README.md, lines 2423 and 2459",
+    "raised": "PRREVIEW-GeometryOfNumbersAndQuadraticArithmetic~24"
+   }
+  ]
+ }
+}
