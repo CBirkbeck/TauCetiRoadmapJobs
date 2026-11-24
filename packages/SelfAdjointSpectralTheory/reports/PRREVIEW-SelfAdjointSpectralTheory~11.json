@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SelfAdjointSpectralTheory~11",
+  "head": "2f1f33bbe564635b504a8e9d164d8d990cc9e39c",
+  "pr": 1854,
+  "folder": "OperatorTheory/SelfAdjointSpectralTheory",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 4306 changed lines since 2c2bcf5. Checked: the README at the merge base against the head item by item (274 of 274 SA- ids kept with their statements, Parts A-E and milestones A1-E3 kept); the two findings of the previous review (both repaired); the 15 sampled milestones and the 6 headline theorems with computed instances; all 31 Teschl2009 locators against the text (Conway1990 and Schmudgen2012 uncertified, not readable); all 301 library names at the pins, 22 opened; the supplier sections of VonNeumannAlgebras, BanachAlgebras and BanachSpaceTheory; the pull request description against the head. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; the one-tactic probe closes nothing. Findings: R01 (P2) SA-C39/SA-C40 identify the sequential graph core with Mathlib's LinearPMap.HasCore, which differs for non-closed operators; R02 (P2) SA-B64 is marked as supplied by VonNeumannAlgebras V2.BorelCalculus, which does not state it.",
+  "text": "a47e5b9bd3eccd28"
+ }
+}
