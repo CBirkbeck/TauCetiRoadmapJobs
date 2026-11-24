@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StronglyRegularGraphsAndDesigns~1",
+  "head": "be20d40410ea2e9b2a35043383217fb0167c29bf",
+  "pr": 3061,
+  "folder": "StronglyRegularGraphsAndDesigns",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. All 15 sampled sections and all 40 Lean statements checked by computation (families enumerated for small parameters, the Hoffman-Singleton relation enumerated on 50 vertices, Krein, complement, design and Bruck-Ryser-Chowla examples recomputed); every stated theorem holds. Findings: a false sentence in the overview (projective planes as the symmetric designs with lambda = 1; the triangle) and a false step in the proof route of 2.1 (parameters (10,6,4,2)). Sources: only Nica readable (arXiv version), 3 locators verified; Brouwer-Haemers, Brouwer-Van Maldeghem, Godsil-Royle, CRS, BCN, Biggs not readable legally, 59 locators unverified. Library: 33 Mathlib and 7 Tau Ceti declarations checked at the pins. 25 cross-roadmap citations resolved at open heads or main. Elaboration: 40 sorry warnings, no error. Dependency check: 0 problems. One-tactic padding probe: nine statements, none closed. The one automatic check that failed (a section header without a declaration) is real and is a format note.",
+  "text": "c2031c63e2d0e91d"
+ }
+}
