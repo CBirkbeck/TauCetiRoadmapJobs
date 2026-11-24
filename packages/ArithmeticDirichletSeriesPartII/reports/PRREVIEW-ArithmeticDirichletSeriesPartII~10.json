@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticDirichletSeriesPartII~10",
+  "head": "4a2d22fe8cbc27e34f076618602c288115ccba78",
+  "pr": 3027,
+  "folder": "ArithmeticDirichletSeriesPartII",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "review of the change against main: 129 changed lines since 592bdb1; new sections 0.1b (Landau's theorem, Mellin form) and 4.1a (counting-function transform for coefficients of any sign) recomputed with their Checks and the 0.1b proof sketch, all correct; seeded sample checked where it falls in changed or affected text: Landau 1905 read on GDZ (OCR) at p. 548, pp. 547-548 and pp. 536-537, all confirmed; Delange p. 213 footnote 1 and Theorem III p. 235 for 4.1; Montgomery-Vaughan and Ingham not legally readable; record kept (6 layers, no id dropped); depcheck 0 problems; Suggested.lean elaborates with sorry warnings only (unchanged by the pull request); a probe statement of Landau's theorem elaborates at the pins, so R01 (P2): the overview's new headline is absent from Suggested.lean; Mathlib LSeries_eq_mul_integral and Tau Ceti TauCeti.LSeries.landau compared, neither a duplicate; overlap with the closest roadmaps and the family consumers checked, single owner; the outside-folder check flags the pull request's own folders when run without their list (false positive).",
+  "text": "1ba319c5b7d82c96"
+ }
+}
