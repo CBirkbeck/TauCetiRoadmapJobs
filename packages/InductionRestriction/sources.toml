@@ -18,3 +18,18 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-20"
 cited_for = ["7.1"]
+
+[[source]]
+id = "Deligne1973"
+authors = "P. Deligne"
+title = "Les Constantes des Equations Fonctionnelles des Fonctions L"
+year = 1973
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0066719"
+locator_scheme = "theorem"
+locator = "Proposition 1.5, Scholie 1.6, p. 510"
+url = "https://doi.org/10.1007/BFb0066719"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.2"]
