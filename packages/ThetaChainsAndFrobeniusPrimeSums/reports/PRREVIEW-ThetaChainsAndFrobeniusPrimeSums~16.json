@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsAndFrobeniusPrimeSums~16",
+  "head": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsAndFrobeniusPrimeSums",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "review of the change against main: 299 changed lines since b8f3652. Checked: the origin, method and corollary labels of sections 9.1-10.11 (adversarial table with computed values, 18 rows); the new supplier ArakelovGeometryAndAbelianHeights §§1A.4, 1A.5 (b) and the narrowed contracts of FiniteReductiveGroups §5.7 and SeesawForThetaChains §6.15, resolved at the head; Bost 1996 Proposition 4.3, Bufetov-Gorin Theorem 1.6 and Sun §7 read at their locators; all 69 file locators and 80 declaration names of Layers 9-10 resolved in the source of the formal proof; the README at the merge base against the head (no layer, item or declaration removed); Suggested.lean unchanged and elaborating with only its two sorry warnings; every automatic check passed and the dependency check shows 0 problems. Four small corrections (9.3's claim that the formal proof has the formal-degree formula at every parameter, the gloss of Bufetov-Gorin Theorem 1.6, the example bound of 10.6d, a supplier the description omits) and one format note; none blocking.",
+  "text": "9499954b966b9384",
+  "carried": {
+   "from": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+   "head": "8790f32fca6ed52fd0a857b22a15d82a1ec9213f",
+   "findings": 4,
+   "lines": 15,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ThetaChainsAndFrobeniusPrimeSums"
+   ],
+   "corrections": true,
+   "onto": "4224e68deab480a5261306282c069fcd3893be71"
+  }
+ }
+}

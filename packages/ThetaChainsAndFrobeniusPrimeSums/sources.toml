@@ -1,0 +1,54 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ThetaChainsAndFrobeniusPrimeSums"
+
+[[source]]
+id = "BufetovGorin"
+authors = "Alexey Bufetov, Vadim Gorin"
+title = "Representations of classical Lie groups and quantized free convolution"
+year = 2013
+venue = "Geometric and Functional Analysis (GAFA), 25, no. 3 (2015), 763-814"
+arxiv = "1311.5780v3"
+locator_scheme = "theorem"
+locator = "Theorem 1.6"
+url = "https://arxiv.org/abs/1311.5780v3"
+fetched_from = "https://arxiv.org/pdf/1311.5780v3"
+fetched_at = "2026-11-24T21:33:21Z"
+sha256 = "c351aa394bea4481ca64c34fb884158de9d2f136dfb09269f253b895bd734368"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v3"
+cited_for = ["9.3"]
+
+[[source]]
+id = "Sun2007"
+authors = "Sun Binyong"
+title = "Eisenstein integrals for theta stable parabolic subalgebras"
+year = 2004
+venue = "Compositio Math. 143 (2007) 201-221"
+doi = "10.1112/S0010437X06002508"
+arxiv = "math/0403440v2"
+locator_scheme = "section"
+locator = "§7"
+url = "https://arxiv.org/abs/math/0403440v2"
+fetched_from = "https://arxiv.org/pdf/math/0403440v2"
+fetched_at = "2026-11-24T21:33:27Z"
+sha256 = "ac64f96d1589e2323f91ba7008a8648bd863d66ebf1d358566be6920b0433158"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2"
+cited_for = ["9.3"]
+
+[[source]]
+id = "Bost1996"
+locator_scheme = "theorem"
+locator = "Proposition 4.3"
+url = "https://www.numdam.org/item/SB_1994-1995__37__115_0/"
+fetched_from = "https://www.numdam.org/item/SB_1994-1995__37__115_0.pdf"
+fetched_at = "2026-11-24T21:33:28Z"
+sha256 = "13d2911a3b4460552d2ba649609f626a0342beae85966929940ab7df205b0edb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["9.1"]
