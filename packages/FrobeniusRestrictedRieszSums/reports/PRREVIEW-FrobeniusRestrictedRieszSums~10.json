@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FrobeniusRestrictedRieszSums~10",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/FrobeniusRestrictedRieszSums",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 246 changed lines since aecb53a; the change adds Origin, Method and Corollary labels, two supplier contracts (AnalyticNumberTheoryPartI 1.4e, ZerosOfLFunctions 8.6a) and reworded attributions, and changes no statement, heading or Lean declaration; the corollary claims of 0.2 and 1.4 and the contracts were checked against the suppliers at this head, and the method labels of 0.2, 0.4, 0.7, 0.8, 0.8a and 0.8b against the formal proof's Lean source (operator copy at e50d098); seeded sample checked where it falls in the changed text, its external sources (Ihara-Murty-Shimura, Davenport, Washington, Behrend, Ruzsa) unreadable this round; README at the merge base against the head: nothing removed or retitled; automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates with three sorry warnings only; C01 a sentence of the description contradicted by 0.1, 0.3, 0.5, 0.6, 0.9; C02 the 1.4 Check makes AnalyticNumberTheoryPartI 0.34 conditional; N01 the 0.7 method label has no formal-proof locator.",
+  "text": "ff219996314cf4bd"
+ }
+}
