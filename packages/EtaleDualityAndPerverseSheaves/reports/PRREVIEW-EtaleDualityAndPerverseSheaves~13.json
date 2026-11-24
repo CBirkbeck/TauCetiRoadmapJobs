@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EtaleDualityAndPerverseSheaves~13",
+  "head": "a4d9b5d29eaf3a5dd49728378e400211c29d4aa4",
+  "pr": 3027,
+  "folder": "EtaleDualityAndPerverseSheaves",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "review of the change against main: 248 changed lines since 74a09b7. Checked: every statement, route and Check of the new section 7.6 recomputed (adversarial table, 15 rows); seeded sample target 7.6 with 12 locators read in Dudas-Michel-2015, Serre-1977 and Illusie-Zheng-2013 (Deligne-Lusztig-1976 not readable, checked through those); 3 library declarations at the pins; 21 cross-roadmap citations resolved; no layer removed or retitled, Suggested.lean unchanged and elaborating with sorry warnings only; dependency check 0 problems; automatic checks all passed; description read against the head. Deferred finding D02 stands.",
+  "deferred": [
+   {
+    "id": "D02",
+    "severity": "P2",
+    "title": "§7.6 and FiniteReductiveGroups 3.4 both own the stabilizer lemma and part (a) for every connected algebraic group",
+    "where": "RiemannHypothesisForDirichletLFunctions/FiniteReductiveGroups 3.4 (a), (d): cite EtaleDualityAndPerverseSheaves §7.6",
+    "raised": "PRREVIEW-EtaleDualityAndPerverseSheaves~11"
+   }
+  ],
+  "text": "faa1a157b4f8bed0"
+ }
+}
