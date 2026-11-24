@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~16",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 462 changed lines since aecb53a. Checked against their statements and routes: the origin and method labels of all 30 sections, the Corollary-of line of 8.5 (against ComplexMultiplicationAndExplicitReciprocityPartII §4.6), the DiscreteSeriesCoefficientsAndAutomorphicMetrics §§10.1-10.2 citations and the added references. Seeded sample read in the open texts: ChowlaSelberg1967, Damerell1970, Mumford1966, Pazuki2012, Fargues2011, Bost1996, Yuan2021, Yang2025. Not readable: Goldstein 1982, Böcherer 2006, Weissauer, Katz. 8.5 (a) recomputed for D = 4, 7, 8, 15, 20, 23. Record intact: no heading, statement or Check removed. Automatic checks all passed; dependency check 0 problems; Suggested.lean (unchanged) elaborates with only the sorry warning. Two small corrections: the 8.14a attribution to Yuan, and the description omits the 8.16 (d) formal-proof reversal. One format note: leftover qualifiers in the Sources lines.",
+  "text": "2f5de7ff568da9f5"
+ }
+}
