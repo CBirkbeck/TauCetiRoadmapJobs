@@ -146,3 +146,20 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["3.16", "3.17"]
+
+[[source]]
+id = "Pinkham1974"
+authors = "Henry C. Pinkham"
+title = "Deformations of algebraic varieties with G_m action"
+year = 1974
+venue = "Astérisque 20, Société mathématique de France"
+locator_scheme = "section"
+locator = "Section 2, Propositions 2.2–2.3"
+url = "https://www.numdam.org/item/AST_1974__20__1_0"
+fetched_from = "https://www.numdam.org/item/AST_1974__20__1_0.pdf"
+fetched_at = "2026-11-24T21:29:18Z"
+sha256 = "0fd47261a0eb321be0eece5cd3394291c887ac22a7b76fed70d3ab30284bfccb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["6.14"]
