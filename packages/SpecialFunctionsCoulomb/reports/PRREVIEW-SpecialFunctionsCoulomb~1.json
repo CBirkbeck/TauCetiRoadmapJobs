@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsCoulomb~1",
+  "head": "c554ebc9069c9b387170577a6d6103ed9082afb1",
+  "pr": 3074,
+  "folder": "SpecialFunctionsCoulomb",
+  "date": "2026-11-24",
+  "findings": 6,
+  "blocking": 6,
+  "corrections": 7,
+  "format_notes": 2,
+  "notes": "Full review. All 15 sampled targets and all 30 Suggested.lean theorems recomputed numerically from the Lean definitions (own multiprecision code); the seven corrections to DLMF Chapter 33 confirmed. The 73 DLMF locators and the errata page read in the online edition; the five cited books could not be read legally (listed under Not verifiable). Supplier citations resolved on main and at the open head of SpecialFunctionsConfluent; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 30 theorems; three absent headlines shown statable by elaboration. The two failed automatic checks (a pull-request number in a heading, a section comment without declarations) are format notes.",
+  "text": "f9fd10ee0a5734d9"
+ }
+}
