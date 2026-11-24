@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ChowFormsAndHeightsOfSubvarieties~12",
+  "head": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ChowFormsAndHeightsOfSubvarieties",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 128 changed lines since 74a09b7. The folder is unchanged since the previous review (c832fa9), which had no finding; its two small corrections and format note are carried, and one small correction on the pull request's description is added (new supplier DiophantineApproximationAndTranscendence §1.3a not named). Seeded sample 5.1, 6.1, 6.2: 14 locators checked in Philippon91, Soule91, CL10, CLT09, Sombra05; BGS94 not readable. Cross-roadmap citations resolved at this head, including ComplexComparisonPartII C5.4 and ComplexKahlerGeometry K7.2, changed since the previous review. Adversarial table with computed values for 5.1, 6.1, 6.2 (a4), (a5), (a7), (b). Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with no message and declares nothing.",
+  "text": "9028563cdf770d3e",
+  "carried": {
+   "from": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+   "head": "04fcb6d497868a55da30ea58cfb7e4eb256a7b82",
+   "findings": 3,
+   "lines": 12,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ChowFormsAndHeightsOfSubvarieties"
+   ],
+   "corrections": true,
+   "onto": "ea76882d16ceb1f3257448377080bd462dbbe31b"
+  }
+ }
+}
