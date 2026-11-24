@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ExpanderGraphs~1",
+  "head": "faf24d8e7fdfb6eee20778903b0f695ccafe9123",
+  "pr": 3069,
+  "folder": "ExpanderGraphs",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. Sources read at their locators: Nica (arXiv v1) for 1.1 and 2.1, Spielman's manuscript for 5.2 and the Friedman remark; Davidoff-Sarnak-Valette, Krebs-Shaheen, Lubotzky, Brouwer-Haemers and Van Mieghem could not be read legally, so 12 of the 15 sampled targets have their locators unverified and their statements checked by independent computation only. Adversarial pass over all 26 Lean statements and the README Checks, with numerical recomputation (tree balls, Margulis second eigenvalues, five LPS graphs, non-backtracking counts). All 15 supplier sections resolved on main or at the open heads; dependency check 0 problems; Suggested.lean elaborates with 26 sorry warnings only; one-tactic probe closes none of the 26. One automatic form check set aside as a false positive.",
+  "text": "f7cbcaccf50a4730"
+ }
+}

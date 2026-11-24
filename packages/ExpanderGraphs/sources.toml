@@ -1,0 +1,65 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ExpanderGraphs"
+
+[[source]]
+id = "Ni"
+authors = "Bogdan Nica"
+title = "A brief introduction to Spectral Graph Theory"
+year = 2016
+venue = "EMS Textbooks in Mathematics (2018)"
+doi = "10.4171/188"
+arxiv = "1609.08072v1"
+locator_scheme = "theorem"
+locator = "Theorem 11.7"
+url = "https://arxiv.org/abs/1609.08072v1"
+fetched_from = "https://arxiv.org/pdf/1609.08072v1"
+fetched_at = "2026-11-24T14:53:45Z"
+sha256 = "64a96deb5fb37963d17bf16e5f8a57e75539570b04a5813ef0a53cd14e5e76dd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["2.1"]
+
+[[source]]
+id = "Lu"
+authors = "Lubotzky"
+title = "Expanding Graphs"
+year = 1994
+venue = "Discrete Groups, Expanding Graphs and Invariant Measures"
+doi = "10.1007/978-3-0346-0332-4_1"
+locator_scheme = "theorem"
+locator = "Proposition 3.3.1"
+url = "https://doi.org/10.1007/978-3-0346-0332-4_1"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["8.1"]
+
+[[source]]
+id = "BH"
+authors = "Brouwer"
+title = "Spectra of Graphs"
+year = 2012
+venue = "Universitext"
+doi = "10.1007/978-1-4614-1939-6"
+locator_scheme = "theorem"
+locator = "§6.4"
+url = "https://doi.org/10.1007/978-1-4614-1939-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.1"]
+
+[[source]]
+id = "Sp"
+locator_scheme = "section"
+locator = "§44.2"
+url = "http://cs-www.cs.yale.edu/homes/spielman/sagt/sagt.pdf"
+fetched_from = "http://cs-www.cs.yale.edu/homes/spielman/sagt/sagt.pdf"
+fetched_at = "2026-11-24T14:54:33Z"
+sha256 = "6b70ebd45e3369754ae597a42fda8531a8cb35407d16afef65dfff509369861c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["5.2"]
