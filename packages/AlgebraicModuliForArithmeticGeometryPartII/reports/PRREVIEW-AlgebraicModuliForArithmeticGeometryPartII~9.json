@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicModuliForArithmeticGeometryPartII~9",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "AlgebraicModuliForArithmeticGeometryPartII",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 4,
+  "notes": "review of the change against main: 522 changed lines since aecb53a. Checked the repairs of the last review (R01, C01, C02 and N01 repaired; C03 partly), sections 1.6a and 1.7a, the new Layer 6 (6.1-6.8) with adversarial computations for every statement, and the three new Lean declarations. Seeded sample: 1.6a, 1.7a, 6.5 and 6.6 verified at their locators (WIT22, EV92, STACKS 0BJ8, Kollar 1997 Theorems 5.8 and 6.4); the untouched sample was spot-checked (KLE05 line 2701, BMP23 line 825, SCH23 lines 167 and 262). 40 locators checked in all, including 27 in Kollar 1997 and the Angehrn-Siu Theorem 0.3. Automatic checks all passed; dependency check: 0 problems. lake env lean exits 0 with 17 sorry warnings; the one-tactic probe fails on angehrnSiuPointSeparation. R01 (P2): Nakai-Moishezon is statable with the new selfIntersection (probe elaborates) but the docstring lists it as not statable. Kollar-Mori 1998 and Lazarsfeld 2004 vol. II are paywalled and not verified.",
+  "text": "cc51ecce1091bb2f"
+ }
+}
