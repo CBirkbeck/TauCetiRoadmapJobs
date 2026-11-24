@@ -1,0 +1,32 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GraphSymmetryAndCayleyGraphs"
+
+[[source]]
+id = "BH"
+authors = "Brouwer"
+title = "Spectra of Graphs"
+year = 2012
+venue = "Universitext"
+doi = "10.1007/978-1-4614-1939-6"
+locator_scheme = "section"
+locator = "§1.6"
+url = "https://doi.org/10.1007/978-1-4614-1939-6"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.2"]
+
+[[source]]
+id = "GR"
+authors = "Godsil"
+title = "Algebraic Graph Theory"
+year = 2001
+venue = "Graduate Texts in Mathematics"
+doi = "10.1007/978-1-4613-0163-9"
+locator_scheme = "theorem"
+locator = "Lemma 3.2.1"
+url = "https://doi.org/10.1007/978-1-4613-0163-9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.1"]
