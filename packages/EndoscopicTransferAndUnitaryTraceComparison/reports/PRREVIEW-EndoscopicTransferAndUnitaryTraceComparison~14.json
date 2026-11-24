@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EndoscopicTransferAndUnitaryTraceComparison~14",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "EndoscopicTransferAndUnitaryTraceComparison",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 56 changed lines since 7c341e7: the change is a merge of main bringing 28 section-level Needs lines, identical to main's, with this pull request's §10.26a kept in the Needs line of §10.27 (previous C01 repaired). Every section id the 28 lines cite was resolved at this head; AutomorphicSpectralTheory §6.9, DeligneWeightsAndPurity §§8.9 and 8.12, AutomorphicLFunctionsAndLocalFactors §AL.3.3.2 and ArithmeticGaloisRepresentations §1.2 were read against the consuming sections. Seeded sample: only §10.28 lies in a changed passage; Scholze Theorem 14.1 and footnote 9 read on the author's page. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no output and declares nothing. Two small corrections and one format note carried from the previous review, in untouched text.",
+  "text": "9aedd0e947327cc2",
+  "carried": {
+   "from": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "head": "79f8df89720825f6cfef1e46075737fe9d9f4611",
+   "findings": 2,
+   "lines": 24,
+   "folders": [
+    "EndoscopicTransferAndUnitaryTraceComparison"
+   ],
+   "corrections": true,
+   "onto": "82cf18b431a5cd4cc80bd95177a4dfc018780180"
+  }
+ }
+}
