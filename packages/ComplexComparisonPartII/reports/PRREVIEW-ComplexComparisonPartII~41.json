@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexComparisonPartII~41",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "ComplexComparisonPartII",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 50 changed lines since 4b01d78. Checked: the C7.9 generalisation (bounded open B, upper semicontinuous weight, every z), recomputed on the punctured disc with weight -2log|z|, on the punctured ball of C^2 and on the zero space; the 17 changed Needs lines (main's text, merged) resolved section by section and declaration by declaration against SchemeAndStackFoundations, DerivedDeRhamCohomology, ResolutionOfSingularitiesCharacteristicZero and AlgebraicModuliForArithmeticGeometry, one imprecise (C3.2d.3 cites a DVR criterion that needs a locally Noetherian target: small correction); previous C01 repaired, previous N01 carried; the earlier question on Blocki-Kolodziej Theorems 1-2 answered from the text; sampled targets riemannExistence (SGA 1 XII 5.1 read) and artinDeRhamBetti (supplier sections resolved); automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with ten sorry warnings only; pull request text agrees with the head.",
+  "text": "9aedd0e947327cc2",
+  "carried": {
+   "from": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "ComplexComparisonPartII"
+   ],
+   "corrections": true,
+   "onto": "d170a9f77c0f5aa4d0108a6fdf5c773fd00eb3a8"
+  }
+ }
+}
