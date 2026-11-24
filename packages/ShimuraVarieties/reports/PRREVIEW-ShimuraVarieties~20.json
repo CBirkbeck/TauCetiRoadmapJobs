@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ShimuraVarieties~20",
+  "head": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+  "pr": 3027,
+  "folder": "ShimuraVarieties",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "review of the change against main: 6 changed lines since b8f3652. Checked the one changed passage (the Needs line of 7.3, which now names 7.5) against milne-1983a Theorem 1.1, Remarks 1.4-1.5, Lemma 1.6, section 4 and the reductions in sections 5-6; acyclicity of 7.3 -> 7.5 by the closure of 7.5's Needs lines; the Checks of 7.5 recomputed for SL2; seeded target 7.2 read against the source, the other seeded targets lie outside the changed and affected text; the description's sentences on this roadmap against the diff. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 27 sorry warnings only. Milne-Shih 1982 not read this round. No previous finding to carry over.",
+  "text": "9499954b966b9384"
+ }
+}
