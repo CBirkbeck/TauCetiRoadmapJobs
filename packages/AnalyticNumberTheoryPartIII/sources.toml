@@ -344,3 +344,21 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "Apache-2.0 Lean project github.com/teorth/IEANTN; the file at commit 466b41b28ecc224398cf53a99c5fe9618131398b (2026-11-02); line numbers are those of the cached text of this file"
 cited_for = ["13.2"]
+
+[[source]]
+id = "robinson1944"
+authors = "R. M. Robinson"
+title = "Hadamard's three circles theorem"
+year = 1944
+venue = "Bulletin of the American Mathematical Society 50 (1944), 795-802"
+doi = "10.1090/S0002-9904-1944-08205-0"
+locator_scheme = "page"
+locator = "p. 795 (the classical theorem, stated in the opening paragraph)"
+url = "https://www.ams.org/journals/bull/1944-50-11/S0002-9904-1944-08205-0/S0002-9904-1944-08205-0.pdf"
+fetched_from = "https://www.ams.org/journals/bull/1944-50-11/S0002-9904-1944-08205-0/S0002-9904-1944-08205-0.pdf"
+fetched_at = "2026-11-24T04:10:19Z"
+sha256 = "fc3ef38476190cd0d6951369af281f1b9d0d3f593d40925bb8df4e1e698d9981"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["8.2a"]
