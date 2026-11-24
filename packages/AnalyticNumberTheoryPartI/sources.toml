@@ -261,3 +261,38 @@ status = "certified"
 accessed = "2026-11-08"
 version_note = "arXiv v3 read; the README cites its page numbers (§1 p.3, §4.1 pp.12–13, §8 pp.22–24), which are the printed numbers of that PDF; the published pagination was not read"
 cited_for = ["3.13", "3.14", "3.15", "3.16", "3.31"]
+
+[[source]]
+id = "bombieri1987"
+authors = "Enrico Bombieri"
+title = "Le grand crible dans la théorie analytique des nombres"
+year = 1987
+venue = "Astérisque 18, second edition"
+locator_scheme = "theorem"
+locator = "Théorème 16, p. 41"
+url = "https://www.numdam.org/item/AST_1987__18__1_0/"
+fetched_from = "https://www.numdam.org/item/AST_1987__18__1_0.pdf"
+fetched_at = "2026-11-24T04:37:36Z"
+sha256 = "c1969cbf67bd01678a607fab403e206ec9bf979d15ff8ea9908a21492081622a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["1.7", "1.7a", "1.7b"]
+
+[[source]]
+id = "bennettsiksek2020"
+authors = "Michael A. Bennett, Samir Siksek"
+title = "A conjecture of Erdos, supersingular primes and short character sums"
+year = 2017
+arxiv = "1709.01022v1"
+locator_scheme = "theorem"
+locator = "Theorem 5, (26)"
+url = "https://arxiv.org/abs/1709.01022v1"
+fetched_from = "https://arxiv.org/pdf/1709.01022v1"
+fetched_at = "2026-11-24T04:42:49Z"
+sha256 = "6998123fab2c8cd4b9da9aa90478461de883222782f879fcfe18d8cd9b91d56f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1; Theorem 5 and (26) are on p. 17 of v1, while the README cites the printed pages of Ann. of Math. 191 (2020)"
+cited_for = ["1.4e", "0.18"]
