@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeometricCurrents~6",
+  "head": "6ca5f0ee7c52b93aba9033be857a678ae36b842e",
+  "pr": 2490,
+  "folder": "GeometricCurrents",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 6ca5f0e. Checked: the pull request's title and description against the head and the diff from main (G3a, 25 declarations removed and 2 added, sorry-bodied definitions on main, supplier rows dropped, citations to ComplexKahlerGeometry 5.1, PDE 5.6/5.7, GeometricTopology Layer 11.3, CalibratedGeometry Layer 2 resolved on main, three library pull-request links replaced, no other roadmap citing removed names): no sentence contradicted. Seeded sample (Lipschitz chains, volume and mass, filling volume) verified against RiedwegSchaeppi2009 and LeuzingerYoung2017 at their locators. Gate rerun: all checks pass; depcheck 0 problems; Suggested.lean elaborates with sorry the only warning. Two format notes carried from the previous review.",
+  "text": "de4f0872399089bc"
+ }
+}
