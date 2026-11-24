@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RiemannHypothesisStatementsAndConsequences~12",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RiemannHypothesisStatementsAndConsequences",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 439 changed lines since b8f3652; checked every added Origin/Method/Corollary line; checked the passages of 3.2a, 8.4a(b), 8.4b, 8.8, 9.5 and 9.9 that now cite other roadmaps against AnalyticNumberTheoryPartIII 8.2a, ZerosOfLFunctions 8.4a-8.7a and 9.1, and AnalyticNumberTheoryPartI 1.6a and 2.42a at this head; checked the downstream bullets against GeneralizedRiemannHypothesisFromWindowBounds and ConsequencesOfTheRiemannHypothesisForDirichletLFunctions; sample: Milne (8.8, 11.1), Carneiro-Chandee-Milinovich (9.8) and Belabas-Diaz y Diaz-Friedman (9.5) read at their locators, and Deduction.ch_balance opened in the formal proof (8.8a); Robinson, Ihara, Ihara-Murty-Shimura, Bach and Lagarias-Odlyzko not readable; automatic checks all passed; depcheck 0 problems; Suggested.lean unchanged and elaborates with sorry warnings only; human reviewers' decision applied to the route and Checks of 3.2a, the route of 8.8 and the Euler-Kronecker definition",
+  "text": "7982fd725646cb13"
+ }
+}
