@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GraphSymmetryAndCayleyGraphs~1",
+  "head": "9460fd7731ea7b7fd825609fa196629579d744a0",
+  "pr": 3060,
+  "folder": "GraphSymmetryAndCayleyGraphs",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review. Sample: 15 seeded targets; only the Brouwer-Haemers locators (1.2, 3.1, 5.1, 5.3, 2.3) could be read in the text (6 locators, all agree); Godsil-Royle, Biggs, Cvetkovic-Rowlinson-Simic, Godsil, Knauer-Knauer, Krebs-Shaheen and Beineke-Wilson are not legally readable and are listed as not verifiable. Adversarial table: 27 rows with computed values. Suggested.lean elaborates (45 sorry warnings only); 65 signatures compared; one-tactic probes on 10 statements, 3 close. Dependency check: 0 problems. Automatic checks: one form check (section header followed only by #check lines) set aside as a false positive. Findings: a false Check in 1.2 (P2); orbit partitions as equitable partitions owned both here and by the open roadmap EquitableOperatorReduction (P2).",
+  "text": "7743b27428e6e9f7"
+ }
+}
