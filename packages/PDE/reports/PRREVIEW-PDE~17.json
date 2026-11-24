@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PDE~17",
+  "head": "0b5086d93fa8e450c86bf7bec6afab0949229b41",
+  "pr": 3027,
+  "folder": "PDE",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "review of the change against main: 133 changed lines since aecb53a; checked the new sections 3.2a and 3.4a (the sample target 3.2a, and the cited 3.1 and 3.4) against Demailly, Complex Analytic and Differential Geometry, Ch. I 4.12-4.22 (8 locators, author's page), with computed instances, and against Tau Ceti and Mathlib at the pins and the consumers ComplexComparisonPartII and SingularHermitianMetricsAndL2Methods; Hormander ALPDO I Thm 4.1.9 not readable; automatic checks all passed; depcheck 0 problems; lake env lean on Suggested.lean: sorry warnings only; overlap with open revision #1614 simulated (2 conflict hunks). One P2 finding: the third Check of 3.4a gives a pointwise-convergent sequence as a witness against pointwise convergence.",
+  "text": "ef6cff53f2fbab1c"
+ }
+}
