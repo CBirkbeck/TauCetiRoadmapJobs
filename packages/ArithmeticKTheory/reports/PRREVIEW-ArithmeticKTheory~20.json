@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticKTheory~20",
+  "head": "e7914b5c68ad72646db1009572ad061c097a6312",
+  "pr": 3027,
+  "folder": "ArithmeticKTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 67 changed lines since aecb53a. Checked: the new Layer 9 (9.1, Gabber's lemma) against Soulé arXiv v1 Lemma 1 p. 5 and Proposition 3 p. 6, with its route and both Checks recomputed (adversarial table of 12 rows); the seeded sample does not fall in the changed text; layer record against the merge base (Layers 1-8 kept, Layer 9 added); supplier SuccessiveMinima §0.1 on main and the pinned Tau Ceti declaration OrthonormalBasis.norm_det_le_prod_norm; dependency check 0 problems; automatic checks all passed; Suggested.lean unchanged and elaborates with sorry warnings only. The previous review's three small corrections and one format note are unrepaired and restated; none blocks.",
+  "text": "52370820c859def5",
+  "carried": {
+   "from": "e7914b5c68ad72646db1009572ad061c097a6312",
+   "head": "5f1baabe57547ee1231b962f6609062f417f4277",
+   "findings": 3,
+   "lines": 22,
+   "folders": [
+    "ArithmeticKTheory"
+   ],
+   "corrections": true,
+   "onto": "1a5ed0ff959818120c2bfa82388c1c01fe6966a1"
+  }
+ }
+}
