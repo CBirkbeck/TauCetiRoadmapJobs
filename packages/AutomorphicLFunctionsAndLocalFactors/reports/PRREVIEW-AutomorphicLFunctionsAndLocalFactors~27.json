@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicLFunctionsAndLocalFactors~27",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "AutomorphicLFunctionsAndLocalFactors",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 33 changed lines since 71bbefa. Checked: the three small corrections of the previous review (all repaired; it had no finding); AL.3.3.8a in every characteristic against Zelevinsky 1980 §1.1, Theorem 9.7 (b), 9.10 and SR.5.2a, SR.5.1 at this head; the completeness lemma of AL.3.9.7 against Jacquet-Liu Lemma 2.4 (proof, j=0) and computed in rank one; the seeded sample (theta-Mellin Check: 60 against 30, Cogdell Columbia §1.1.3); the Needs lines brought in from main, citations resolved; the pull request's text. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 14 sorry warnings only. Four paywalled sources not readable (JPSS 1983, Henniart 1993, Bernstein 1984, Jacquet-Shalika 1981).",
+  "text": "9aedd0e947327cc2"
+ }
+}
