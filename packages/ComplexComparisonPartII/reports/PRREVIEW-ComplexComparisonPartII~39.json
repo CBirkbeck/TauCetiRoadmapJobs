@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexComparisonPartII~39",
+  "head": "3b77a6add516e54a95fecc9173cad43b7c24c8e1",
+  "pr": 3027,
+  "folder": "ComplexComparisonPartII",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "review of the change against main: 1614 changed lines since 74a09b7. Previous R01 (C7.15 strict inequality) and C01 (C7.1 (b) smooth-weight citation) both repaired; the new Check of C7.15 on P^1 and the convolution step of C7.1's route recomputed; 7 source locators read (Analytic Methods Th. 14.2, 14.12 and proof; Demailly agbook VIII.6.5, VIII.6.9, I 2.D.3, I (3.20), III (1.21)); adversarial table of 11 rows with computed values; automatic checks all passed; Suggested.lean elaborates with sorry as the only warning; #check and one-tactic probe on hormanderL2_strict; depcheck 0 problems; seeded sample: 13 of 15 targets in untouched text, CurrentCalculus locators rechecked. One question to the author (Blocki-Kolodziej 2007 theorem numbers, not readable).",
+  "text": "b452986b8f3fe306"
+ }
+}
