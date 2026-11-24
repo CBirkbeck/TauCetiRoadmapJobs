@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HolderMapsBetweenManifolds~5",
+  "head": "b5192d16399da9131f05fca918ab8e51746fc390",
+  "pr": 3015,
+  "folder": "HolderMapsBetweenManifolds",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "incremental re-review of 10 changed lines since 1db4050: the two repaired sentences (README §3.3 on k = 0, §5.1 item 2 on 'not onto') recomputed with their degenerate cases (M a point, F = 0, E = 0, k = 0 and 1); previous C01 repaired, N01 and N02 carried as format notes, one new format note on the wording of the §5.1 example; title and description read against the head, no correction; all automatic checks pass, depcheck 0 problems, Suggested.lean elaborates with 12 sorry warnings only; dLO still unreadable (for the human reviewers).",
+  "text": "c0573e417c734847"
+ }
+}
