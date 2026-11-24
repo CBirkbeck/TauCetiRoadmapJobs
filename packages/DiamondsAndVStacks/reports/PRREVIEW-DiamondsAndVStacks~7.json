@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiamondsAndVStacks~7",
+  "head": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+  "pr": 3027,
+  "folder": "DiamondsAndVStacks",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "review of the change against main: 3 changed lines since b8f3652. The change adds PerfectoidSpaces §P2.5 to the Needs line of D2.7; the section was read on main (title, hypotheses, the canonical map to the completed residue field) and matches D2.7's separatedness step, with computed instances in the adversarial table. Dependency check: 0 problems, no UPWARD or CYCLE. Suggested.lean (unchanged) elaborates with 21 sorry warnings only. All automatic checks passed. No layer, section or declaration removed; the description states the change correctly. The seeded sample lies outside the changed and affected text and was not reopened. One format note on untouched text (undeclared own names in code font), for a separate pull request.",
+  "text": "6bad368cb6f2fb16"
+ }
+}
