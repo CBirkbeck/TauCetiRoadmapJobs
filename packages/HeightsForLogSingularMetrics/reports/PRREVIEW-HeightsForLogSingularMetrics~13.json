@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HeightsForLogSingularMetrics~13",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "review of the change against main: 90 changed lines since 74a09b7. Checked the new Origin, Method and Corollary-of labels of 0.4, 4.3a, 4.3b, 14.1, 14.2 and 16.1, the 4.3b (c) rewrite, and the scope, contracts and References edits. Seeded sample read at its locators: Yuan-Zhang v9 Thm 3.6.6; Zhang 1995 Thm 5.2 and Lemma 5.4; Moriwaki Cor 6.4; Gaudron-Remond 2017 sections 1 and 5.2; Roy-Thunder Thms 2.2 and 8.1; Mourougane Main thm, Thm 4 and 8.2; Bost Prop 5.3; Gaudron 2019 Prop 4.2 and Cor 4.5. Cited supplier sections exist at the head: AGAHPartII 0.3a, HRPO 5.17f.1, Slopes 4.3. Formal-proof IsRegFamily opened. Depcheck clean; Suggested.lean unchanged and elaborates with no messages; the worker's automatic checks passed; no layer or item removed. One P2: the 4.3b (c) bound has two owners (this scope and SlopesOfHermitianVectorBundles 4.3).",
+  "text": "dda9acd9cf88f1ae"
+ }
+}
