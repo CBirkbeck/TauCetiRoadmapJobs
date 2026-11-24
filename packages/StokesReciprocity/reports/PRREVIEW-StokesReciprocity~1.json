@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-StokesReciprocity~1",
+  "head": "07e667c51b2946ddc9bf228a0202895b95eeaef9",
+  "pr": 3049,
+  "folder": "StokesReciprocity",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review. Recomputed every displayed identity and acceptance example (15 table rows, including Examples 4, 5, 6 and the d=1 and n=0 cases); one-tactic probe of the three algebraic statements elaborated on a scratch copy; 8 Mathlib declarations opened at the pin; supplier sections GeometricMeasureTheory G2/G6 and PDE 1.6 read on main; dependency check 0 problems; automatic checks failed only on import form. Both cited books are paywalled: 0 of 4 source locators verified. One P2: S4 headlines statable but absent from Suggested.lean and S5 not named as not statable.",
+  "text": "e9c577f9f18846be"
+ }
+}
