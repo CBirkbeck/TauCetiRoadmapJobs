@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArakelovGeometryAndAbelianHeightsPartII~8",
+  "head": "4a2d22fe8cbc27e34f076618602c288115ccba78",
+  "pr": 3027,
+  "folder": "ArakelovGeometryAndAbelianHeightsPartII",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 14 changed lines since 592bdb1. Checked the new section 0.3a (Moriwaki's inequality) and the moriwaki-2009 reference against arXiv math/0612269v2: Theorem 6.2, Example 6.1 (1)-(2), Corollaries 6.3-6.4, Theorem 4.2, Proposition 2.1 (1), all agree with the text and locators. Adversarial rows computed on Spec Z and P^1_Z. Supplier ids HeightsRationalPointsAndObstructions 5.17a and 5.17d resolved at the merge base, on main and at the head. Dependency check: 0 problems. Suggested.lean elaborates cleanly and is unchanged. Gate run by hand: every check zero except outside-folder, which lists only the pull request's own folders (false positive). The seeded sample lies outside the changed text. Overlap: no other owner of the changed object. Corrections: the Needs line omits the ampleness and lattice-count inputs; the surface case (Corollary 6.3) is not stated. moriwaki-2009 is not yet in the package's source manifest.",
+  "text": "1ba319c5b7d82c96"
+ }
+}
