@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PELModuli~5",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "PELModuli",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 2 changed lines since b8f3652. Checked: the M2.5 Needs line against SchemeAndStackFoundations sections 4.2, 4.3, 4.4 and 4.6 on main (4.3 does define deformation functors and their tangent spaces, which M2.5 uses); affected text (Layer M2 dependencies, scope bullet) consistent; the description sentence on PELModuli exact; no file changed outside the pull request's own folders. Automatic checks all pass; depcheck 0 problems; Suggested.lean elaborates with three sorry warnings only, and #check of its 4 declarations matches the README; headline rows recomputed. Seeded sample lies outside the changed passages. One small correction on untouched text (ArtinLocalAlg is not a name SchemeAndStackFoundations section 4.2 uses); one licence fact for the human reviewers.",
+  "text": "9aedd0e947327cc2"
+ }
+}
