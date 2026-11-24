@@ -1,0 +1,28 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdelicHeightsAndSuccessiveMinima~12",
+  "head": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/AdelicHeightsAndSuccessiveMinima",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 7,
+  "format_notes": 0,
+  "notes": "review of the change against main: 366 changed lines since 74a09b7. The folder is unchanged since the previous review's head; its seven small corrections are unrepaired and carried. Checked: the seeded sample (2.5a, 2.5b, 3.1) with Bombieri-Vaaler Theorems 3 and 6 read at their locators and five formal-proof statements opened in the operator's local copy; an adversarial table of 16 rows with computed values; the supplier sections of DiophantineApproximationAndTranscendence, ArakelovGeometryAndAbelianHeights, ShimuraVarieties and SubspaceTheorem resolved at this head; the layers and items of the README at the merge base all kept; Tau Ceti and Mathlib declarations opened at the pins; the dependency check (0 problems); the automatic checks (all passed); elaboration of Suggested.lean (four sorry warnings only) and the one-tactic probe (nothing closes). Roy-Thunder 1996 and Bombieri-Gubler Appendix C.2 were not read. Three questions for the human reviewers: policy, licence, scope.",
+  "text": "ad52851870018fda",
+  "carried": {
+   "from": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+   "head": "fc02cdde8e0c3f4d987053ffbef660bac09bd6c5",
+   "findings": 7,
+   "lines": 25,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/AdelicHeightsAndSuccessiveMinima"
+   ],
+   "corrections": true,
+   "outside": true,
+   "onto": "adb8521b5105a738893eaf84c0eaa0665a28038c"
+  }
+ }
+}
