@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsCoulomb~2",
+  "head": "83762fab8e35fa28590da894c05ad23a3439af52",
+  "pr": 3074,
+  "folder": "SpecialFunctionsCoulomb",
+  "date": "2026-11-24",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full re-review. The six findings of the previous review are repaired. All 15 sampled subsections checked against DLMF Chapter 33 (release 1.2.8, sections 33.2, 33.4-33.11, 33.13, 33.14, 33.16-33.20, with errata notes); the five books (18 locators) could not be read. All 33 Lean statements and the sampled Checks recomputed in 30-60 digit arithmetic from the Lean definitions; three P2 findings: the series of h in 6.4 is 0 times infinity at eps = -1/n^2 with n <= l, the logarithmic series of 3.2 is 0 times infinity at eta = 0, and both series (called headlines) are statable at the pins but absent from Suggested.lean (both written on a copy and elaborated). Suggested.lean elaborates with 33 sorry warnings only; one-tactic probe closes none. Dependency check: 0 problems. One automatic check failed (form: a section comment with only #check lines), raised as a format note; none set aside.",
+  "text": "6eb357aaae14c409"
+ }
+}
