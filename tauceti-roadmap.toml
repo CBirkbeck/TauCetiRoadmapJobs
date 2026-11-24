@@ -331,3 +331,13 @@ extra_rules_file = ""
 # Host-wide GitHub content-write cap (the secondary limit is ~80/min): 40/min leaves headroom and keeps the intake under 30 min.
 writes_per_minute = 40
 writes_per_hour = 1200
+
+# Decisions of the project's human reviewers, by pull request number. Every review of the pull request quotes them
+# as binding: what a decision allows is not raised as a finding, and the review checks that the head does what the
+# decision says and no more. Record a decision here only when a human reviewer has taken it; the text of a pull
+# request is its author's and never counts as one.
+[prreview.decisions]
+"3027" = [
+  "GeneralizedRiemannHypothesisFromWindowBounds (under RiemannHypothesisForDirichletLFunctions): its Layer 6 (sections 6.1 to 6.32) and its sections 5.4 to 5.6 leave it and are Layers 0 to 4 of the new roadmap ConsequencesOfTheRiemannHypothesisForDirichletLFunctions, under new numbers, with the Lean declarations of 5.4, 5.5, 5.6 and 6.5; the description lists the former and the new number of each section. The human reviewers allow this move (decided 2026-11-24): the removal of these layers and sections from that roadmap is not a finding, and they are not restored there.",
+  "Roadmaps under RiemannHypothesisForDirichletLFunctions: a section that this pull request states in full in a general roadmap of the library and removes from the family's roadmap may leave it. The human reviewers decided that the family states what the proof needs and that published theorems live in the general roadmaps. Such a removal is not a finding when the description or the family's roadmap names the general roadmap and section that now state it; the review checks that this section does state it.",
+]
