@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IntegralIwasawaTheory~15",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "IntegralIwasawaTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 10 changed lines since 9ea672c. Checked: the previous small correction (downstream sentence, now 'for i≥2') is repaired against ArithmeticKTheory §§6.1, 6.9 at this head; the four *Needs:* lines that arrive with the merge of main (§§3.5, 5.5, 5.6, 7.1) resolve section by section (internal §§0.1–0.4, 2.1–2.8, 3.3–3.5, 5.4–5.5; PadicMeasuresIwasawaAlgebras §§2.2, 2.4, 4.2, 4.3; LocalFieldsRamification via its former-layer table; LocalGaloisGroups Layer 0; Mathlib Algebra.norm, Algebra.trace, CyclotomicField, PowerSeries at the pin). Seeded sample: only §3.5 falls in a changed passage; Sharifi Theorem 1.3.16, p. 19 read from the author's page (the sources service recorded the entry in the manifest) and Chevalley's formula computed on Q(i) and Q(sqrt(-5)). Adversarial table: 7 rows with values. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with six sorry warnings only; no statement or Lean declaration changed; 13 layers of the merge-base README kept. Two format notes (one carried), one question carried; Kolster 2009 still unread (note to the human reviewers). The description copy was truncated; its visible sentences on this roadmap agree with the head.",
+  "text": "9aedd0e947327cc2"
+ }
+}
