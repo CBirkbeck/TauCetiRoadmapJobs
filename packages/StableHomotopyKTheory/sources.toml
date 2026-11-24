@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "StableHomotopyKTheory"
+
+[[source]]
+id = "WeibelKbookIV"
+authors = "Charles A. Weibel"
+title = "The K-book: an introduction to algebraic K-theory, Chapter IV: Definitions of higher K-theory"
+year = "2013"
+locator_scheme = "theorem"
+locator = "Remark 4.11.2"
+url = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.IV.pdf"
+fetched_from = "https://sites.math.rutgers.edu/~weibel/Kbook/Kbook.IV.pdf"
+fetched_at = "2026-11-24T16:13:09Z"
+sha256 = "9f1c1b8cccfe19d547c27dd04c61f198fd7a0cddd0018a0b84442b00fa575248"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["4.24a"]
