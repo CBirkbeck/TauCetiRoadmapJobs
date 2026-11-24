@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CharacterSumsOverFiniteFields~14",
+  "head": "e7914b5c68ad72646db1009572ad061c097a6312",
+  "pr": 3027,
+  "folder": "CharacterSumsOverFiniteFields",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 59 changed lines since aecb53a. Checked the new 3.1a (Gauss's formula, the lower bound and its geometric-sum step, the two-sided form, both Checks) with values recomputed at q = 2, n = 1..6 and q = 3, n = 2; the 3.1 Check S_n(1) = q^n it cites; Bary-Soroker-Koukoulopoulos-Kozma Proposition 8.1 p. 39 (arXiv v3) read at its locator; Rosen Ch. 2 not verifiable (paywalled); supplier SieveMethodsAndPrimePatterns 0.10 on main and earlier in the merge order; the rewritten dependency lines of Layers 3-5 against the Needs lines of 4.5-4.9 and 5.4 (the only part of the seeded sample in the change); no layer or item removed against aecb53a; ownership against the pinned Mathlib and Tau Ceti, FunctionFieldArithmetic 5.1 and the closest roadmaps (nothing shared). Automatic checks all passed; depcheck 0 problems; Suggested.lean (unchanged) elaborates with sorry warnings only. One small correction (the description does not name the new supplier), one format note (name Mathlib's Moebius inversion lemma).",
+  "text": "55e47cf81849e984"
+ }
+}
