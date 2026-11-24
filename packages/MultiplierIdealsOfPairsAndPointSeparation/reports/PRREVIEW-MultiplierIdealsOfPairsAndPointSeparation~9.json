@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MultiplierIdealsOfPairsAndPointSeparation~9",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/MultiplierIdealsOfPairsAndPointSeparation",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "review of the change against main: 289 changed lines since 74a09b7. Checked the added Origin, Method and Corollary-of lines of all eleven sampled sections against KOL97 (2.16, 3.3-3.12, 5.7-5.10, 6.4-6.8), ESVI92 5.4 d), Stacks 0BJ8, Ein-Lazarsfeld 1999 Prop. 1.2 (ii) and Ein-Lazarsfeld-Smith 2001 Thm 2.2; every corollary claim checked against AlgebraicModuliForArithmeticGeometryPartII 1.6a, 1.7a, 6.1-6.8 and AlgebraicModuliForArithmeticGeometry 9.12 at this head; the new two-point statement of 9.12c and the 9.13a deduction computed; record against the merge-base README kept (9.12c's former statement is its wider form). Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with only the sorry warning and its #check types match the README. Six small corrections (definitions of 9.10a-9.10b not identified with AMAG-II 6.1-6.2, 'the remark of 9.12c' in Lean, a Kollar locator, missing locators and a reference, the FormalProof coverage of 9.10d, the description's list of exceptions) and one format note.",
+  "text": "dda9acd9cf88f1ae"
+ }
+}
