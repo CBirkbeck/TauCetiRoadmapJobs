@@ -170,7 +170,8 @@ fixed_title_prefixes = ["Template update: "]   # a series the maintainers find b
 # and Lean targets (RiemannianGeometry carries Surfaces/ and MinimalSurfaces/, FinancialMathematics MarketImpact/,
 # HilbertModules HeisenbergImprimitivity/). A family index (OperatorTheory, RepresentationTheory) is not listed.
 parent_roadmaps = ["RiemannianGeometry", "FinancialMathematics", "HilbertModules"]
-max_folders = 20   # a pull request that repairs the dependency loops of main touches 16 roadmaps and is no chore (2026-11-04)
+max_folders = 100   # a pull request that repairs the dependency loops of main touches 16 roadmaps and is no chore (2026-11-04); 100: one pull request revises the 41 roadmaps of a family and the general roadmaps they cite (2026-11-24)
+review_changes_of_merged = true   # a folder that is on the base branch is reviewed for its change, not in full: the text on the base branch was reviewed when it merged (2026-11-24)
 # A changes-needed review of a pool author's pull request is repaired in the same job; the repaired head is re-reviewed by another worker.
 repair_pool = true
 # Fable reviews, Opus repairs (user 2026-11-11): a worker that reviews with fable runs the repair with Opus.
