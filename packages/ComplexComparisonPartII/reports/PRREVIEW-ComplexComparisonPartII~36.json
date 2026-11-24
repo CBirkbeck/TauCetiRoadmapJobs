@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComplexComparisonPartII~36",
+  "head": "477bb488d18581c2236603e5c71afdbb473fd376",
+  "pr": 3027,
+  "folder": "ComplexComparisonPartII",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 1278 changed lines since aecb53a. Checked: every new statement of C0.1a, C5.4a-C5.4j and Layer C7 (C7.1-C7.18, C7.15a) with computed instances; the record against the merge-base README (no layer or item removed, ids kept); about 78 locators in ten open sources (Demailly's book and Analytic Methods, Demailly 1982, Skoda 1972 Ann. and Bull., Guedj-Zeriahi, Guan-Zhou, Demailly 2015, Demailly-Kollar, Dinew-Kolodziej), all as cited; supplier sections in PDE, ComplexHessianEquations, ComplexKahlerGeometry, AlgebraicModuliForArithmeticGeometry, ResolutionOfSingularitiesCharacteristicZero and RealAnalyticGeometry, all present with no cycle; overlap with SingularHermitianMetricsAndL2Methods, ComplexKahlerGeometry, RealAnalyticGeometry, Hyperfunctions and three etale roadmaps; dependency check 0 problems; automatic checks all passed; Suggested.lean (unchanged) elaborates with 4 sorry warnings; two C7 headlines elaborated as test statements. Seeded sample lies in untouched text except analyticSetLocalFiniteMass (checked). Findings: R01 (P1) C7.12's curve selection lemma has no owner; R02 (P2) Suggested.lean silent on C7 headlines, two statable at the pins.",
+  "text": "55e47cf81849e984"
+ }
+}
