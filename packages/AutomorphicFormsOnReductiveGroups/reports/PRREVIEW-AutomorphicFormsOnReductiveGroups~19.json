@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicFormsOnReductiveGroups~19",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "AutomorphicFormsOnReductiveGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 82 changed lines since e7914b5: the 40 added *Needs:* lines and the changed §2.2 line (merged from main) resolved section by section against the suppliers on main; the reworded Layer 6 Dependencies sentence checked against §6.8a and LieGroups Layer 7; previous C01 and C03 repaired, C02 and N01 carried, C04/D01 resolved (the other pull request is merged). Seeded sample: ten targets gained only a *Needs:* line, checked; no source locator changed. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with the single sorry warning; description checked against the head.",
+  "text": "9aedd0e947327cc2",
+  "carried": {
+   "from": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "head": "8ca4f95f7d5d36d1f3f0bd78e5d2afc568c22428",
+   "findings": 1,
+   "lines": 9,
+   "folders": [
+    "AutomorphicFormsOnReductiveGroups"
+   ],
+   "corrections": true,
+   "onto": "0fec348455a021be209e71894638b6693f8ce936"
+  }
+ }
+}
