@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FiniteReductiveGroups~15",
+  "head": "45a486516685460fece73a8acfdf15b47bdf0282",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/FiniteReductiveGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 73 changed lines since 094da69. Checked: the previous R01 and C01, both repaired (3.4, the scope, the Needs line and the supplier table now cite EtaleDualityAndPerverseSheaves §7.6 lefschetzGroupActions and finitelyManyStabilizers, read at this head); the seeded sample where it falls in the change (3.4): Dudas–Michel 13.7–13.9, Chan–Ivanov Proposition 4.4 for Digne–Michel 10.15, Deligne–Lusztig 6.4 through Serre's exposé 487; the Checks of 3.4 recomputed; the family index sentence changed outside the folder; the description against the head. Automatic checks all passed; depcheck 0 problems; lake env lean on Suggested.lean gives three sorry warnings only (file unchanged since 094da69).",
+  "text": "faa1a157b4f8bed0"
+ }
+}
