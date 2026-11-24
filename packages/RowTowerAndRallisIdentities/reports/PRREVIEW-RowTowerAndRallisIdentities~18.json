@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RowTowerAndRallisIdentities~18",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RowTowerAndRallisIdentities",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 403 changed lines since b8f3652. Checked: the Origin, Method and Corollary-of labels of 5.1-5.12, the corrected supplier lines and the new references; 13 published locators read at their place (Rallis 1984a/b, Gan-Qiu-Takeda, Wu, Muic, Gan-Ichino, Gan-Gross-Prasad) plus Bernstein-Zelevinsky 2.12 from the seeded sample; the ranges of the Rallis inner product formula recomputed for the chain and the core column; supplier sections resolved at this head; README at the merge base compared with the head (nothing removed or renumbered); dependency check 0 problems; Suggested.lean elaborates with no message and declares nothing; the worker's automatic checks all passed. Folder unchanged since the previous review; its two small corrections and two format notes stand. Not read: Barnes (1980) and the formal proof (the main source).",
+  "text": "f7e2f8464edf0344",
+  "carried": {
+   "from": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+   "head": "23a54c46d51e34903ce85bbfd9d5852e455f7907",
+   "findings": 2,
+   "lines": 18,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/RowTowerAndRallisIdentities"
+   ],
+   "corrections": true,
+   "onto": "8790f32fca6ed52fd0a857b22a15d82a1ec9213f"
+  }
+ }
+}
