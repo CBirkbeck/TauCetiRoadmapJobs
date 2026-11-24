@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StochasticOrders~2",
+  "head": "a1cdb77c9952c522d773519832d8afd9378b8125",
+  "pr": 3055,
+  "folder": "StochasticOrders",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 57 changed lines since 23ac071. Checked: R01, C01 and N01 of the previous report are repaired; the Check of 5.4 recomputed (mean difference 1/3, Gini 1/2); the endpoint conjuncts of convexOn_lorenzCurve computed from the definition; the new duality route of 2.2 recomputed step by step and its two Tau Ceti declarations opened at the pin; OptimalTransport 1.5, 2.4, 3.7 resolved on main; the pull request text read against the head. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning. The seeded sample falls in the changed passages only at the Check of 5.4, which has no locator; no source text was readable, so no locator was checked and the attribution of the 2.2 route to Rachev-Rueschendorf is unverified.",
+  "text": "3e0ac6d685089455"
+ }
+}
