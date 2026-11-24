@@ -365,3 +365,38 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-10-25"
 cited_for = ["4.1"]
+
+[[source]]
+id = "BrownGhate2003"
+authors = "Alexander F. Brown, Eknath P. Ghate"
+title = "Endomorphism algebras of motives attached to elliptic modular forms"
+year = 2003
+venue = "Annales de l'Institut Fourier 53"
+doi = "10.5802/aif.1989"
+locator_scheme = "theorem"
+locator = "Theorem 3.3.1"
+url = "https://www.numdam.org/item/AIF_2003__53_6_1615_0.pdf"
+fetched_from = "https://www.numdam.org/item/AIF_2003__53_6_1615_0.pdf"
+fetched_at = "2026-11-24T12:58:31Z"
+sha256 = "6dc7472d95ae4a48a0933d92a237cdb933d33019a83269d24468c58ba7cd1a95"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["4.1a"]
+
+[[source]]
+id = "RibetParis1981"
+authors = "Kenneth A. Ribet"
+title = "Endomorphism algebras of abelian varieties attached to newforms of weight 2"
+year = 1981
+venue = "Seminar on Number Theory, Paris 1979–80, Progress in Mathematics 12"
+locator_scheme = "theorem"
+locator = "Theorem 6"
+url = "https://math.berkeley.edu/~ribet/Articles/dpp1.pdf"
+fetched_from = "https://math.berkeley.edu/~ribet/Articles/dpp1.pdf"
+fetched_at = "2026-11-24T13:09:23Z"
+sha256 = "5ead22de0e51de04ec4081de6e586121f81e0b4f323659b61561749ef12c4a1f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["4.1a"]
