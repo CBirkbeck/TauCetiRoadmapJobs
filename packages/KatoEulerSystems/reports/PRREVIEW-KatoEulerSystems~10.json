@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KatoEulerSystems~10",
+  "head": "9ea672ce1f16b1c2c00336d4c7b7a6451af53baf",
+  "pr": 3027,
+  "folder": "KatoEulerSystems",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 55 changed lines since 0b5086d. Previous R01, C01, C02 and N01 repaired; N02 (code-font proposed name, untouched text) carried as a format note. The new commutant proof of 4.1a was checked from 4.1 and AutomorphicGaloisRepresentations 5.1 (main), including t odd, p = 2 and k = 2. The Checks for S3(38, chi_-19) and S2(57, chi_57) were recomputed against LMFDB 38.3.b.a and 57.2.d.a and Brown-Ghate Ex. 4.3.2/4.3.4. Eight locators read in the cached texts (Brown-Ghate 2.3.6, 2.3.8, 3.3.1, Ex. 4.3.2, 4.3.4; Ribet 1981 Thm 6 p. 274; Ribet 1985 section 3 pp. 190-191). Layer 4 Dependencies change verified. The 15 seeded targets are in untouched text. Gate: all checks pass except outside-folder, a false positive (other folders of this pull request). depcheck 0 problems. lake env lean on Suggested.lean: only the two sorry warnings. Pull-request text consistent with the head.",
+  "text": "ef6cff53f2fbab1c"
+ }
+}
