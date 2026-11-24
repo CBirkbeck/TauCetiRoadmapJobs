@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-QuasiregularMaps~9",
+  "head": "40bc9b04fa71e02427f1355c561a489996125561",
+  "pr": 3034,
+  "folder": "QuasiregularMaps",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "review of the change against main: 595 changed lines since de93025. Checked every changed passage and every untouched passage the change affects; the nine new Lean declarations, elaborated (nine sorry warnings, nothing else), with #check @ signatures compared with the README and degenerate cases computed (n = 0, 1, empty M, zero map, fold, projection, reflection); scratch probes (flat-metric continuity instance, tangent-space norm, redundancy of hf, statability of 7.6); the 26 rewritten locators into MartioRickmanVaisala1969, HeikkilaPankka2025 and Prywes2019 read at their pages (one off by a page); the seeded sample of 15 targets; the supplier names in SobolevMapsBetweenManifolds, TeichmullerGeometry and RiemannianGeometry resolved on main; record against the merge base (no layer, id or item removed); gate on this head (only the import rule fails, a format note); depcheck 127 roadmaps, 1405 edges, 0 problems. One P2 finding: 2.10 and the TeichmullerGeometry contract identify weak and classical Wirtinger derivatives pointwise at points of differentiability, true only almost everywhere.",
+  "text": "fb4480966751c614"
+ }
+}
