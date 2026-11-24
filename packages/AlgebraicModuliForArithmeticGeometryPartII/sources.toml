@@ -302,3 +302,53 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-24"
 cited_for = ["1.6a"]
+
+[[source]]
+id = "KOL97"
+authors = "János Kollár"
+title = "Singularities of Pairs"
+year = 1996
+arxiv = "alg-geom/9601026v2"
+locator_scheme = "theorem"
+locator = "Theorems 2.16, 4.8, 5.8, 5.9, 6.4, 6.5, 7.4, 7.5; Definitions 3.3-3.5, 5.7; Lemmas 3.10, 3.11; Corollaries 3.12, 3.13, 7.6, 7.8; Propositions 7.3, 7.7"
+url = "https://arxiv.org/abs/alg-geom/9601026v2"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9601026v2"
+fetched_at = "2026-11-24T06:11:24Z"
+sha256 = "a7cb696d003c6eb64212a23796ae5dffdea4250ec7fe58f35924180c704e4883"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2 of 6 November 1996; published in Proc. Sympos. Pure Math. 62, Part 1 (1997), 221-287; numbers and pages cited are those of the arXiv version"
+cited_for = ["6.1", "6.2", "6.3", "6.4", "6.5", "6.6", "6.7", "6.8"]
+
+[[source]]
+id = "AS95"
+authors = "Urban Angehrn; Yum-Tong Siu"
+title = "Effective freeness and point separation for adjoint bundles"
+year = 1995
+doi = "10.1007/BF01231446"
+locator_scheme = "theorem"
+locator = "Theorem 0.3"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0122/LOG_0023.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0122/LOG_0023.pdf"
+fetched_at = "2026-11-24T06:12:35Z"
+sha256 = "c4ed2a3b1cc3d094df42c90cffa6643dce7a62aea51775ba14159a2810f51f71"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "Inventiones mathematicae 122 (1995), 291-308; GDZ scan of the published article"
+cited_for = ["6.5", "6.6", "6.8"]
+
+[[source]]
+id = "LAZ04-II"
+authors = "Robert Lazarsfeld"
+title = "Positivity in Algebraic Geometry II"
+year = 2004
+doi = "10.1007/978-3-642-18810-7"
+locator_scheme = "theorem"
+locator = "9.1.22, 9.2.19, 9.4.17; Section 9.3"
+url = "https://doi.org/10.1007/978-3-642-18810-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.1", "6.2", "6.3"]
