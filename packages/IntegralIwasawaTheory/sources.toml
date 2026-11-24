@@ -26,3 +26,16 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-24"
 cited_for = ["10.5a"]
+
+[[source]]
+id = "Sharifi"
+locator_scheme = "theorem"
+locator = "Theorem 1.3.16"
+url = "https://www.math.ucla.edu/~sharifi/iwasawa.pdf"
+fetched_from = "https://www.math.ucla.edu/~sharifi/notes/iwasawa.pdf"
+fetched_at = "2026-11-24T17:38:41Z"
+sha256 = "cf4aa93fb12933b806052173ee1091959700b3b181516214e3470bde73c732de"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["3.5"]
