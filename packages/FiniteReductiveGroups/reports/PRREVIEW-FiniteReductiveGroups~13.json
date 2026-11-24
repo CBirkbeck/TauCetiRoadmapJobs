@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FiniteReductiveGroups~13",
+  "head": "3b77a6add516e54a95fecc9173cad43b7c24c8e1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/FiniteReductiveGroups",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 2208 changed lines since 74a09b7. The folder is unchanged since the head the previous review accepted (7c341e7); the previous review had no finding to repair. One P2: EtaleDualityAndPerverseSheaves §7.6, changed in this pull request since then, now states and proves the finiteness of stabilisers of a diagonalisable group and the trivial action of every connected algebraic group, which 3.4 and the scope still claim as this roadmap's own. One small correction: the Origin of 3.4 cites Dudas-Michel 13.7-13.9 for the torus formula, which is not there. Checked: the whole README read and its Checks recomputed; the seeded sample of 15 sections, with 14 locators read in Dudas-Michel 2015, Moy-Prasad 1996, Dat and Bary-Soroker-Koukoulopoulos-Kozma (Green 1955, Deligne-Lusztig 1976 and others not readable); all supplier sections resolved at this head; headings compared with the merge base (no layer or section removed or renumbered); the worker's automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with three sorry warnings only; the pull request's text agrees with the head and orders #3036 first.",
+  "text": "b452986b8f3fe306"
+ }
+}
