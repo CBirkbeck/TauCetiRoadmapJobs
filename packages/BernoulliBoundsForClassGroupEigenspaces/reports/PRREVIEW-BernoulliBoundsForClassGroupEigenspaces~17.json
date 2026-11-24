@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BernoulliBoundsForClassGroupEigenspaces~17",
+  "head": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BernoulliBoundsForClassGroupEigenspaces",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "review of the change against main: 322 changed lines since 74a09b7. The folder is unchanged since the previous review's head; the family index changed. Checked: every changed passage (labels, Corollary-of lines, supplier citations, References) with a computed row per section 6.17-14.1; the six cited supplier sections at this head (ArithmeticGaloisDuality D7.6a, ArithmeticKTheory 9.1, IntegralIwasawaTheory 12.3a, KatoEulerSystems 4.1a and 7.9, StableHomotopyKTheory 4.24a); the seeded sample against Soule1999 and BFEH2014 at their locators (9 locators, all as cited; the other sources are not in the cache and are listed as not verifiable); the README at the merge base against the head (7 layers kept, no item removed); the family index against 9.8 and 14.1. New small correction: the label of 9.8 says the statement is not in the formal proof, while the cited source file declares the proposition KHurewicz and the family index says the source states it. Four small corrections and one format note carried unrepaired (9.4 Origin on Soule 2003; Labels against Origin of 12.1 and 13.1; 9.1 lacks a Corollary-of line; the description omits this roadmap's supplier changes; locators of 9.3 and 9.4). Automatic checks: all passed; elaboration: only the sorry warning; dependency check: 0 problems, no UPWARD or CYCLE line. Three items for the human reviewers (an unrefereed preprint called published; lecture notes with no legal copy found; the formal proof, the source with the largest share of locators, not compared for wording).",
+  "text": "9b2c987c93f5a7f5",
+  "carried": {
+   "from": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+   "head": "b9abc7b8bb46ec01921bcd2f1bd822fa104e70cc",
+   "findings": 5,
+   "lines": 32,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/BernoulliBoundsForClassGroupEigenspaces"
+   ],
+   "corrections": true,
+   "onto": "0d0633e80f2f2c7efa0c77902de1de4230c54b5e"
+  }
+ }
+}
