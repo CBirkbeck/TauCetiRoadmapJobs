@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HardSphereDynamicsAndKineticLimits~6",
+  "head": "621c77c74d5bbf54068cb3d1f896e03d07bc6ac6",
+  "pr": 2448,
+  "folder": "HardSphereDynamicsAndKineticLimits",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 10 changed lines since 5619cb5: the five changed README passages (overview, §10.4, the d = 0 Check, Downstream consumers, Scope and ownership) read against the sources and the cited sections; 3 locators checked in the texts (BGSS2023 line 119 and §3.1, GST2013 Chapters 5-7 and Part IV); the d = 0 counterexample recomputed (F_1 = 1/2 against f = 1); ClassicalErgodicTheory §3.5 item 1 resolved at its open head; automatic checks all passed, depcheck 0 problems, elaboration gives 11 sorry warnings only; the previous review had no finding; one small correction: the description still names BoltzmannGradLimitAndLanford, which the README no longer names and which is not an open pull request.",
+  "text": "d2f4060b793e4097",
+  "carried": {
+   "from": "621c77c74d5bbf54068cb3d1f896e03d07bc6ac6",
+   "head": "621c77c74d5bbf54068cb3d1f896e03d07bc6ac6",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
