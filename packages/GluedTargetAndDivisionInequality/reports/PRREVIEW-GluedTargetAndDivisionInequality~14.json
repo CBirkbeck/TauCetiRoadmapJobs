@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GluedTargetAndDivisionInequality~14",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "incremental re-review of 15 changed lines since 71bbefa: the rewritten Corollary-of convention (Conventions) checked against 8.5c (its Corollary line, route and Needs), ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties 8.5 (a)-(c) at this head, ComplexMultiplicationAndExplicitReciprocityPartII 4.6 and 0.2 on main, ThetaChainsOnDefiniteUnitaryGroups 3.1a (unit discriminant of Lambda_K) and the family index's convention; 8.5c recomputed (Q(i) Chowla-Selberg value -1.657107 and class mean 1.476336; transport term for Q(sqrt-7) in Q(i, sqrt7): N(d)=16, log 2) and its formal-proof locators (HtNums clause i1, logOm, v) resolved in the local copy; seeded sample checked where it meets the change (8.5c); previous report had no finding, its C01, C02, N01, N02 not repaired and carried; PR text read against the head; automatic checks all passed; depcheck 0 problems; lake env lean of Suggested.lean: only the sorry warning; #check signature unchanged; nothing changed outside the pull request's own folders.",
+  "text": "1df1dd94c7facd00"
+ }
+}
