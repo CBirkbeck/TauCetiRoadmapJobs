@@ -32,3 +32,21 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["References ([Announcement], [FormalProof])"]
+
+[[source]]
+id = "HoreshKarasik2023"
+authors = "Tal Horesh; Yakov Karasik"
+title = "Equidistribution of primitive lattices in R^n"
+year = 2023
+arxiv = "2012.04508v2"
+locator_scheme = "theorem"
+locator = "Proposition B.5"
+url = "https://arxiv.org/abs/2012.04508v2"
+fetched_from = "https://arxiv.org/pdf/2012.04508v2"
+fetched_at = "2026-11-24T10:16:21Z"
+sha256 = "f52ef00f945cfec330e68be260d6f83af27fe2067ac91e361de5afba94927aa5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2"
+cited_for = ["7.15"]

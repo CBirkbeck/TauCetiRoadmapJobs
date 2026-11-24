@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CongruenceModulesOfThetaLifts~16",
+  "head": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/CongruenceModulesOfThetaLifts",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 369 changed lines since 74a09b7. Checked: the Origin and Method labels of all 20 sections and the Corollary-of line of 7.7d against the open sources (Gan-Qiu-Takeda Thm 7.3 (i), Dieulefait-Wiese Prop 6.1, Horesh-Karasik Prop B.5, Emerton-Gee-Herzig Lemma 4.5.1 and 7.4, Hida 1986, six abstracts); the revised route of 7.4 and the narrowed 7.16a (2) against BaseChangeAndGaloisRepresentationsForUnitaryGroups 16.1 at this head; the new supplier citations (PadicFamilies 1.7a, PadicHodgeRegulators 1.5, GeometryOfNumbersAndQuadraticArithmetic 0.2.5, MetaplecticAutomorphicForms 3.14); the adversarial table with computed values for the sampled targets and headlines; the record against the merge base (no section removed or renumbered). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no output and declares nothing. Not verifiable: Yamana Thm 10.1 (2), Bloch-Kato Cor 3.8.4, Iovita-Marmora, and the formal proof (128 of 139 locators, not readable). Three small corrections (status of the general form of 7.16a (2); one sentence of the description; the generality attributed to Horesh-Karasik B.5) and two format notes, none blocking.",
+  "text": "28878c9aed255c7f",
+  "carried": {
+   "from": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+   "head": "801404ebf83dadf04bef9ff0a73bf4ac1013ebbc",
+   "findings": 3,
+   "lines": 18,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/CongruenceModulesOfThetaLifts"
+   ],
+   "corrections": true,
+   "onto": "797f2b41d3645a9d471232bc600d46f41947488b"
+  }
+ }
+}
