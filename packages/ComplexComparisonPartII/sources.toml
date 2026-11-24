@@ -169,3 +169,37 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["C4.5", "C0.6", "C4.1", "C5.4"]
+
+[[source]]
+id = "guan-zhou-strong-openness"
+authors = "Qi'an Guan, Xiangyu Zhou"
+title = "Strong openness conjecture for plurisubharmonic functions"
+year = 2013
+arxiv = "1311.3781v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1; Lemma 2.11"
+url = "https://arxiv.org/abs/1311.3781v1"
+fetched_from = "https://arxiv.org/pdf/1311.3781v1"
+fetched_at = "2026-11-24T09:35:42Z"
+sha256 = "7fc07acfc780779e37bcfba270b6a5462dd0c4da385ab7c5181ed5fe082d18b8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1, titled as above; published as 'A proof of Demailly's strong openness conjecture', Ann. of Math. 182 (2015), 605–616. The README's locators are those of arXiv v1."
+cited_for = ["C7.12", "C-1.5"]
+
+[[source]]
+id = "demailly-analytic-methods"
+authors = "Jean-Pierre Demailly"
+title = "Analytic Methods in Algebraic Geometry"
+year = 2012
+locator_scheme = "equation"
+locator = "(12.20)"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/analmeth_book.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/analmeth_book.pdf"
+fetched_at = "2026-11-24T09:35:51Z"
+sha256 = "6f4682f322d6ae0c0ce3feae4964792c473a3d9051fe01288ef9017ca341d009"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["C-1.5", "C7.12"]
