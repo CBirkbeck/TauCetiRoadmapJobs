@@ -48,3 +48,53 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["9.10"]
+
+[[source]]
+id = "kollar_pairs"
+authors = ["János Kollár"]
+title = "Singularities of Pairs"
+year = 1996
+arxiv = "alg-geom/9601026v2"
+locator_scheme = "theorem"
+locator = "Theorem 6.4"
+url = "https://arxiv.org/abs/alg-geom/9601026v2"
+fetched_from = "https://arxiv.org/pdf/alg-geom/9601026v2"
+fetched_at = "2026-11-24T04:17:51Z"
+sha256 = "a7cb696d003c6eb64212a23796ae5dffdea4250ec7fe58f35924180c704e4883"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2; published in Proc. Sympos. Pure Math. 62, Part 1, AMS, 1997, 221-287; numbers and pages cited are those of the arXiv version"
+cited_for = ["9.10a", "9.10b", "9.10c", "9.10d", "9.12", "9.12a", "9.12b", "9.12c"]
+
+[[source]]
+id = "angehrn_siu"
+authors = ["Urban Angehrn", "Yum-Tong Siu"]
+title = "Effective freeness and point separation for adjoint bundles"
+year = 1995
+locator_scheme = "theorem"
+locator = "Theorem 0.3"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0122/LOG_0023.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0122/LOG_0023.pdf"
+fetched_at = "2026-11-24T04:27:52Z"
+sha256 = "c4ed2a3b1cc3d094df42c90cffa6643dce7a62aea51775ba14159a2810f51f71"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["9.12c"]
+
+[[source]]
+id = "stacks_varieties"
+authors = ["The Stacks Project Authors"]
+title = "The Stacks Project, Varieties"
+year = 2026
+locator_scheme = "tag"
+locator = "0G47"
+url = "https://stacks.math.columbia.edu/download/varieties.pdf"
+fetched_from = "https://stacks.math.columbia.edu/download/varieties.pdf"
+fetched_at = "2026-11-24T04:39:06Z"
+sha256 = "ed339c312c86721e3f830876da14cabe89a96e83e454a78b7cd355555f4bca45"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["9.10d", "9.12c"]
