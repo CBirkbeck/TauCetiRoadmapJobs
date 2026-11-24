@@ -1,0 +1,36 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchurWeyl~11",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "RepresentationTheory/SchurWeyl",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 51 changed lines since b8f3652. Checked: the new section 8.4 (the (GL_n, GL_m)-duality on polynomials in n x m matrices) recomputed under both actions, with its highest weight vectors and its three Checks; its inputs from 8.1, Layer 6 and ClassicalGroups; the three roadmaps that cite it; the merge-base comparison (no layer or heading removed, Suggested.lean unchanged). The fifteen seeded sample targets lie in untouched, unaffected text. Dependency check: 0 problems. Elaboration: sorry warnings only. Automatic checks: the four Nonempty naming hits and the unresolved Lean name are real and in untouched text (a format note and a small correction). Not verifiable: the Howe-Umeda locators and wording, since no legal copy was readable this round (flagged to the human reviewers).",
+  "text": "7982fd725646cb13",
+  "carried": {
+   "from": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "head": "1a8d3f01402e5ff28879b7fbe92d172597b9e9d1",
+   "findings": 2,
+   "lines": 29,
+   "folders": [
+    "RepresentationTheory/SchurWeyl"
+   ],
+   "corrections": true,
+   "onto": "92eeeaec28af143142fe3738f3860bdbb617cdea"
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C02: AutomorphicLFunctionsAndLocalFactorsPartII §4.4 should cite SchurWeyl §8.4 for the decomposition over `ℂ`, and keep as its own only the field-rational form (rational projectors, compatibility wit",
+    "where": "AutomorphicLFunctionsAndLocalFactorsPartII §4.4, to cite SchurWeyl §8.4 for the complex case",
+    "raised": "PRREVIEW-SchurWeyl~11"
+   }
+  ]
+ }
+}
