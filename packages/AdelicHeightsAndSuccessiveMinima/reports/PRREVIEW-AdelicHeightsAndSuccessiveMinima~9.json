@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdelicHeightsAndSuccessiveMinima~9",
+  "head": "644c332c1967a11b54bc8fedf1633861bbda5f1e",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/AdelicHeightsAndSuccessiveMinima",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 0,
+  "notes": "review of the change against main: 363 changed lines since 74a09b7. The previous review's R01, R02, C01 and N01 are repaired and its C02 is moot. Seeded sample: 2.5a checked against Roy-Thunder 1996 section 1, p. 5 and Prop. 4.2/(4.1) in the GDZ open copy; 2.5b and its four Lean declarations checked by computed instances over Q(i) and Q(sqrt -5), including negative controls for the CM type and g(Lambda) = Lambda; 3.1 labels checked against Bombieri-Vaaler Thm 3 (p. 18), (3.16) and Thm 6 (p. 23). The seven formal-proof names were opened in the source and found in the kernel export. Elaboration: four sorry warnings only. One-tactic probe: nothing closes. Depcheck: 0 problems. Automatic checks: the worker's run passed; on rerun the outside-folder check was set aside, since every file lies in a folder the pull request owns. Small corrections: Corollary-of line of 2.5b incomplete, 2.5a origin label, unused hypotheses, the description, the family index entry.",
+  "text": "68ef976c0bfed16c"
+ }
+}
