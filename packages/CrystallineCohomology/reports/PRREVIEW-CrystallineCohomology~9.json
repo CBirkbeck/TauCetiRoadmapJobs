@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CrystallineCohomology~9",
+  "head": "66a2f7dd230c3b7e2a7ffc4955b13377164c3b78",
+  "pr": 2532,
+  "folder": "CrystallineCohomology",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 66a2f7d. This round checked the pull request's title and description against the head and the diff from the base (58 lines, README only): the six targets and their section ids, the Illusie locators, the base-change notation, the scope sentence against CrystallineCohomologyPartII on main, and the non-integral pushout example (recomputed) all agree; no sentence is contradicted and no change is unstated. No sampled target lies in a changed passage. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry the only warning. #3036 also changes the folder (Needs lines only), disjoint from this change, merges cleanly, order stated. Two format notes carried (doubled chapter name at line 3058; BMS Theorem 2.10 page range).",
+  "text": "0dd5d32042ed6d06"
+ }
+}
