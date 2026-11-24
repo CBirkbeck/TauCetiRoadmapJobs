@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LubinTateFormalModulesAndQuasiCanonicalLifts~7",
+  "head": "0b5086d93fa8e450c86bf7bec6afab0949229b41",
+  "pr": 3027,
+  "folder": "LubinTateFormalModulesAndQuasiCanonicalLifts",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 206 changed lines since aecb53a; checked the new sections 4.2a, 4.2b and 4.3a in full (adversarial table with computed values) and the changed Conventions, layer guide, scope, supplier contracts and references; sample where it falls in the change: 4.2b (Haz79 section 2, KR11 Lemma 1 and section 4) and 4.3 (H70 Lemmas 2.4 and 4.2, Theorem 3, Proposition 3.3); BW16 Definition 2.3, Proposition 2.4, Lemma 2.5; FiniteFlatGroupsAndIntegralPadicHodgeTheory sections R07.1.7 and R07.1.12-R07.1.15 on main; HodgeTateLatticesAndLubinTateLogarithms 3.2-3.4 at this head; pinned Mathlib and Tau Ceti searched by object; worker's automatic checks all passed, depcheck 0 problems, no change outside the pull request's own folders, Suggested.lean unchanged and elaborates with sorry warnings only; K81, HG94, Haz78 and Lan80 not legally readable. Findings: 4.3a (ii) and 4.2b state special cases below the generality of their sources.",
+  "text": "b452986b8f3fe306"
+ }
+}
