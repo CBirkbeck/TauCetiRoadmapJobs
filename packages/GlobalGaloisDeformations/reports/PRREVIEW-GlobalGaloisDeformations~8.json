@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GlobalGaloisDeformations~8",
+  "head": "3b77a6add516e54a95fecc9173cad43b7c24c8e1",
+  "pr": 3027,
+  "folder": "GlobalGaloisDeformations",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "review of the change against main: 93 changed lines since 74a09b7. Checked the new section 3.6a in full: DDT section 2.6 read at its 5 locators (Theorem 2.36, Lemmas 2.39 and 2.40 with proofs, authors' PDF); statement, proof route and three Checks recomputed (m = 1, 2; n = 1; p = 2 = n; p dividing n); 9 cross-roadmap citations resolved on main and at the head; TauCeti.ContCohomology.H1 opened at the pin. The previous review had no finding; its two small corrections (the Phi_p pointer F.2.2 for F.2.1, the DDT page range 1-107 for 1-157) are not repaired and are carried as C01 and C02. The seeded sample lies wholly in untouched, unaffected text and was not re-checked. Automatic checks all passed; dependency check 0 problems; Suggested.lean (unchanged) elaborates with only its two sorry warnings. Not read: Wiles 1995 (credit only, no locator), the cut-off tail of the description, the head of the other open pull request touching this roadmap.",
+  "text": "b452986b8f3fe306",
+  "carried": {
+   "from": "3b77a6add516e54a95fecc9173cad43b7c24c8e1",
+   "head": "9ea672ce1f16b1c2c00336d4c7b7a6451af53baf",
+   "findings": 2,
+   "lines": 10,
+   "folders": [
+    "GlobalGaloisDeformations"
+   ],
+   "corrections": true,
+   "onto": "86df0d382c82c60112a1d83bf6c18a7666ded146"
+  }
+ }
+}

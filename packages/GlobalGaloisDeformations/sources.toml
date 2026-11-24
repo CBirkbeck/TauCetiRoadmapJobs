@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GlobalGaloisDeformations"
+
+[[source]]
+id = "DDT"
+locator_scheme = "theorem"
+locator = "Lemma 2.40"
+url = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_from = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_at = "2026-11-24T13:15:00Z"
+sha256 = "254f6e29957f95219eff046c29478f5ee584615bee12c8aa8357f499c8cbe8b3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["3.6a"]
