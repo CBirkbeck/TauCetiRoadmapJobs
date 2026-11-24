@@ -1,0 +1,33 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AutomorphicBundles"
+
+[[source]]
+id = "Milne90"
+locator_scheme = "theorem"
+locator = "V Theorem 6.1"
+url = "https://www.jmilne.org/math/xnotes/AA.pdf"
+fetched_from = "https://www.jmilne.org/math/xnotes/AA.pdf"
+fetched_at = "2026-11-24T17:04:40Z"
+sha256 = "f4a36ecc28ae2439c6270c4e0075ce4ab8a839f56bcaa3026cb6eaeb6d46805e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["5.3a"]
+
+[[source]]
+id = "Mumford77"
+authors = "D. Mumford"
+title = "Hirzebruch’s Proportionality Theorem in the Non-Compact Case"
+year = 1977
+venue = "Selected Papers"
+doi = "10.1007/978-1-4757-4265-7_20"
+locator_scheme = "theorem"
+locator = "Main Theorem 3.1, p. 256; Theorem 3.2, p. 262"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0042/LOG_0014.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN356556735_0042/LOG_0014.pdf"
+fetched_at = "2026-11-24T17:06:18Z"
+sha256 = "254e382c97cd76f3de3d059a35fa2dbe822f746941f2ebbebb714e2971760a7d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["5.3a"]
