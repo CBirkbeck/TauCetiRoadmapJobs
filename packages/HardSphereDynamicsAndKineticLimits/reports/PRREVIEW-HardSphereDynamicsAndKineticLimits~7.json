@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HardSphereDynamicsAndKineticLimits~7",
+  "head": "621c77c74d5bbf54068cb3d1f896e03d07bc6ac6",
+  "pr": 2448,
+  "folder": "HardSphereDynamicsAndKineticLimits",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since 621c77c: the folder is unchanged; the pull request's title and description were read sentence by sentence against the head and agree with it (the previous small correction C01, the description naming BoltzmannGradLimitAndLanford, is repaired). Cross-roadmap citations of the description resolved on main and at the open head of ClassicalErgodicTheory; four adversarial rows recomputed (law of large numbers variance, d = 0 instance of LanfordStatement, head-on collision witness, Boltzmann-Grad scaling). Seeded sample falls in no changed passage. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 11 sorry warnings only.",
+  "text": "ae9b298368674183"
+ }
+}
