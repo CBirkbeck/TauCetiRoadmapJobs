@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdelicHeightsAndSuccessiveMinima~11",
+  "head": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/AdelicHeightsAndSuccessiveMinima",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 7,
+  "format_notes": 0,
+  "notes": "incremental re-review of 9 changed lines since 644c332. Checked: the rewritten convention on Corollary-of lines against 2.5b (its Corollary line, method label, route and Needs line), DiophantineApproximationAndTranscendence §2.5a at this head, and the formal proof's statements gramDet_div_index_eq_of_span_eq and heightSup_invariant_under_hermitianLattice_aut (with IsUStab); seeded sample 2.5a, 2.5b and 3.1 recomputed on new instances, Bombieri-Vaaler Theorem 3 (p. 18) re-read; the previous review's five small corrections (none repaired, carried); the family index text naming this roadmap; the description against this head. Automatic checks: the worker's run passed every check; my rerun flagged only outside-folder (117 files, all in folders the pull request owns), set aside. Dependency check: 0 problems. Elaboration: four sorry warnings only; Suggested.lean unchanged since 644c332. Two new small corrections (2.5b method label lacks the narrower form the convention promises; the family index row on Minkowski over number fields contradicts 3.1), five carried.",
+  "text": "28878c9aed255c7f"
+ }
+}
