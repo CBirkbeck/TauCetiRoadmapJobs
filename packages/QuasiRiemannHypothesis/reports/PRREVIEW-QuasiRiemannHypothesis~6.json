@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuasiRiemannHypothesis~6",
+  "head": "8d0b5731912cd17cd062c13ea42cd6b7b25fdf2a",
+  "pr": 3027,
+  "folder": "QuasiRiemannHypothesis",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 81 changed lines since 592bdb1. Checked: the new section 5.4a (statements (a) and (b), the route, four Checks, recomputed on Q(i), Q(zeta_12), Q(sqrt 5) and Q(sqrt -3)); Milne V Example 3.2 and Proposition 3.3 p. 157 read at the locator; openai2026quasiRH Proposition 11.3 p. 84 for the sampled 5.5, the only sampled target beside the change; 9 Tau Ceti declarations opened at the pin; ClassFieldTheory C.6, Layer 12, 13.1 and LFunctions Layer 5 resolved on main; layers compared with the merge base (11, none removed or retitled); automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only and the one-tactic probe closes nothing. heilbronn1967 not readable. Three small corrections (of_induced credited to LFunctions Layer 5, a Check that names no character, one sentence of the description) and one format note.",
+  "text": "0cdff8b4f0ee948b",
+  "carried": {
+   "from": "8d0b5731912cd17cd062c13ea42cd6b7b25fdf2a",
+   "head": "fb2b84f686de49bed9a505831354cf72e22247d6",
+   "findings": 3,
+   "lines": 20,
+   "folders": [
+    "QuasiRiemannHypothesis"
+   ],
+   "corrections": true,
+   "onto": "bfddd125a8d6484b98332fbb841b03de1c18d453"
+  }
+ }
+}
