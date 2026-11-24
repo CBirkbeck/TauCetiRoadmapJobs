@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EquivariantIntersectionTheory~15",
+  "head": "477bb488d18581c2236603e5c71afdbb473fd376",
+  "pr": 3027,
+  "folder": "EquivariantIntersectionTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 69 changed lines since aecb53a (new 1.5 descent of linearised invertible sheaves to the quotient by a finite group of invertible order; Convention 1, Dependencies, scope sentence and table row, supplier contracts, two references). Sample: 1.5 checked against Alper 2013 (published Numdam text and arXiv v3: Remark 4.2 p. 2362, Example 8.1 p. 2380, Theorem 10.3 p. 2386, all match) and Drezet-Narasimhan 1989 Theoreme 2.3 (HAL text: statement and Kempf attribution match; printed p. 63 not verifiable); both Checks recomputed, inertia vs stabiliser and the wild Z/p case on P1 computed; the other 14 sampled targets lie in untouched text, values recomputed in the table. SchemeAndStackFoundations 1.17 finiteGroupQuotient_projective, 1.22 QCoh.pushforward/presentationEquiv, 1.23 finite_quotient_coarse/IsTame/.geometric_fibres resolved on main and at both open SSF revision heads; consumer ProjectiveModelsAndPeriodBoundsOnShimuraVarieties 9.1 is a case of 1.5. Automatic checks re-run: every scanner 0 except outside-folder (lists only the PR's own other folders: false positive); depcheck 124 roadmaps, 1377 edges, 0 problems; lake env lean: 9 sorry warnings, no error; Suggested.lean unchanged, one-tactic probe closes none. Overlap: AMFAG 5.3 uses Alper 10.3 for finite flat algebras (different object); no second owner. Corrections: PR description's 'generality of its source' vs 1.5; Suggested.lean docstring omits 1.5; untouched Downstream consumers sentence false on main. Board manifest has no keys for Alper 2013 and Drezet-Narasimhan 1989 (legal copies: Numdam, arXiv 0804.2242, HAL hal-01158986).",
+  "text": "28878c9aed255c7f"
+ }
+}
