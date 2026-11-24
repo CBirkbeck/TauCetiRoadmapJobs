@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PhiGammaModulesAndIwasawaCohomology~9",
+  "head": "0b5086d93fa8e450c86bf7bec6afab0949229b41",
+  "pr": 3027,
+  "folder": "PhiGammaModulesAndIwasawaCohomology",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 141 changed lines since aecb53a; new sections 6.4-6.6, their Checks, the Examples, Dependencies, overview and scope sentences checked in full; 14 locators verified in Berger 2004 (author manuscript and errata) and Wach 1996 (Numdam); seeded targets 6.4 and 6.0 checked where the change affects them; 20 adversarial rows with computed values (including the [F:Q_p]=2 divisor example and p=2 in 6.5); gate rerun clean apart from the pull request's own folders, depcheck 132 roadmaps 1470 edges 0 problems, Suggested.lean unchanged and elaborates with sorry the only warning, one-tactic probes fail; no finding, three small corrections (build order 6.0/6.4, unnamed Robba-realization input of 6.4, description omits this roadmap), two format notes",
+  "text": "97804fc7a31e1636"
+ }
+}
