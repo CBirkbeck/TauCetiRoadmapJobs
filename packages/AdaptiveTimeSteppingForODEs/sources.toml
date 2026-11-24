@@ -1,0 +1,50 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AdaptiveTimeSteppingForODEs"
+
+[[source]]
+id = "RanochaGiesselmann2024"
+authors = "Hendrik Ranocha, Jan Giesselmann"
+title = "Stability of step size control based on a posteriori error estimates"
+year = 2023
+venue = "Computational Science and Engineering, 2024"
+doi = "10.1007/s44207-024-00001-0"
+arxiv = "2307.12677v3"
+locator_scheme = "section"
+locator = "§2, §2.1"
+url = "https://arxiv.org/abs/2307.12677v3"
+fetched_from = "https://arxiv.org/pdf/2307.12677v3"
+fetched_at = "2026-11-24T16:46:07Z"
+sha256 = "a35a239893b7ba49d2acfae26c6454927b372b49b1e6f9a51478df158fff8d64"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v3"
+cited_for = ["2.1"]
+
+[[source]]
+id = "Suli2022"
+locator_scheme = "page"
+locator = "§5, pp. 56–57, (94)–(96)"
+url = "https://people.maths.ox.ac.uk/suli/nsde.pdf"
+fetched_from = "https://people.maths.ox.ac.uk/suli/nsde.pdf"
+fetched_at = "2026-11-24T16:46:09Z"
+sha256 = "6c6ad885b75d80f99c9d7e425517c6c6471a7d66ef15d8db66ddaf2bb942dd26"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["1.2"]
+
+[[source]]
+id = "BogackiShampine1989"
+authors = "P. Bogacki, L. F. Shampine"
+title = "A 3(2) pair of Runge - Kutta formulas"
+year = 1989
+venue = "Applied Mathematics Letters 2"
+doi = "10.1016/0893-9659(89)90079-7"
+locator_scheme = "page"
+locator = "pp. 321–325"
+url = "https://doi.org/10.1016/0893-9659(89)90079-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.1"]
