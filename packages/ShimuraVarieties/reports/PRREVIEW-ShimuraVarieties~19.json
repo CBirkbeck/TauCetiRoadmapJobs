@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ShimuraVarieties~19",
+  "head": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+  "pr": 3027,
+  "folder": "ShimuraVarieties",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "review of the change against main: 6 changed lines since b8f3652 (the Needs line of 7.3 now names 7.5). Checked that 7.3 really uses 7.5 (Milne 1983 Remark 1.4 and Theorem 1.1 applied to the A1 datum) and that the dependency is acyclic (the closure of 7.5's Needs excludes 7.3); seeded target 7.5 read against milne-1983a Remark 1.4, Prop. 5.2 and the Appendix, and against Milne-Shih 1982 p.281; the rest of the sample falls outside the changed and affected passages. Description sentences on this roadmap true at the head; the merge-base layers and items are all kept; no change outside the pull request's folders; the overlap check found no second owner; depcheck 0 problems; worker's automatic checks all passed; lake env lean exits 0 with 27 sorry warnings only. One format note: the link line of 7.3 lacks 7.5.",
+  "text": "462159594e32a68f"
+ }
+}
