@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TensorInductionAndFiniteGroupInputs~11",
+  "head": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/TensorInductionAndFiniteGroupInputs",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 119 changed lines since b8f3652. Checked: the new Origin, Method and Corollary-of labels of 6.1, 6.2, 7.1 and 9.1 (the four sampled targets) against SchurWeyl 8.4, ClassicalGroups 6.6b and InductionRestriction 5.3 at this head, with computed instances (Z/2, S3, n=2 quantum minors, dimension count 21); 11 locators in MNO and Molev 2003 read at the text; the method labels of 6.1, 6.2, 7.1 and 9.1 (e) read against 7 files of the formal proof at its cited commit; the downstream-consumers sentence against FiniteReductiveGroups 5.11; the record (3 layers, none removed or retitled, Suggested.lean unchanged); the description against the head. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with three sorry warnings only. Shintani 1976, Gluck-Isaacs 1983, Isaacs 1976, Howe 1989/1995 and Molev 2007 could not be read legally. No findings; 2 small corrections (missing locators in three Origin attributions; the description omits the corrected attribution of the highest weight line in 7.1) and 1 format note, all carried over unrepaired from the previous review.",
+  "text": "bc63622d9226cf76",
+  "carried": {
+   "from": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+   "head": "c6992716c5c17daf103aa62479f0875b6b845c37",
+   "findings": 2,
+   "lines": 19,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/TensorInductionAndFiniteGroupInputs"
+   ],
+   "corrections": true,
+   "onto": "bc4e916011287e7f98a22919671ef524cc3f137a"
+  }
+ }
+}

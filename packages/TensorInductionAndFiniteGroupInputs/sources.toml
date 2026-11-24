@@ -19,3 +19,22 @@ status = "certified"
 accessed = "2026-11-21"
 version_note = "arXiv v2"
 cited_for = ["9.1 (c)", "9.1 (j)"]
+
+[[source]]
+id = "Molev2003"
+authors = "A. I. Molev"
+title = "Yangians and their applications"
+year = 2002
+venue = "in ``Handbook of Algebra\", Vol. 3, (M. Hazewinkel, Ed.), Elsevier, 2003, pp. 907-959."
+arxiv = "math/0211288v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.36"
+url = "https://arxiv.org/abs/math/0211288v1"
+fetched_from = "https://arxiv.org/pdf/math/0211288v1"
+fetched_at = "2026-11-24T21:20:28Z"
+sha256 = "f2b172564de646ee85f391af18c346c06ed6968d9a36ac07518f8a90a6552424"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["9.1"]
