@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AnalyticNumberTheoryPartI~17",
+  "head": "8d0b5731912cd17cd062c13ea42cd6b7b25fdf2a",
+  "pr": 3027,
+  "folder": "AnalyticNumberTheoryPartI",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "review of the change against main: 138 changed lines since 592bdb1. Checked the five new sections (1.4e, 1.6a, 1.7a, 1.7b, 2.42a) and the edited sentences (overview, Layer 0 introduction, 0.18, Layer 1 dependencies, scope, references) against every section they cite. Every Check and route inequality was recomputed. Locators were checked in Bombieri, Asterisque 18 (Numdam copy: pp. 31, 39-42, 41-54, 77), Bennett-Siksek Theorem 5 (26) (arXiv v1) and Kedlaya 10.3. Seeded sample: 1.7 checked for its Bombieri half; the other targets lie outside the change. Gate at this head: all checks 0 except files outside the folder, all of them in this pull request's own folders. Depcheck: 0 problems. Suggested.lean is unchanged and elaborates with 62 sorry warnings only. One P2: the signature names given in 1.7a and 1.7b are not declared in this roadmap's Suggested.lean, only in RieszSumsOverPrimesAndExceptionalZeros. Not verifiable: Iwaniec-Kowalski, Linnik 1944, Knapowski 1962, Gallagher 1970, Bach 1990, Belabas-Diaz y Diaz-Friedman 2008, Jutila 1977.",
+  "text": "0cdff8b4f0ee948b"
+ }
+}
