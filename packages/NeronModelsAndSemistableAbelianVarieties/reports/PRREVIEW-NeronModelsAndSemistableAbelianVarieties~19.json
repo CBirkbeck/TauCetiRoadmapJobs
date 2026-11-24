@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NeronModelsAndSemistableAbelianVarieties~19",
+  "head": "6fa0baed156082fb9009c1983e1065f90730f475",
+  "pr": 2708,
+  "folder": "NeronModelsAndSemistableAbelianVarieties",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 4,
+  "notes": "incremental re-review of 3 changed lines since 9cfa998: the sentence added to 3.9a (the converse route does not use a perfect residue field) checked against every input of the route (StableReduction end goals and Layers 7-8 on main, SchemeAndStackFoundations 4.15, sections 3.3, 3.8, 3.9); previous C01 repaired, N01-N04 carried as format notes, N05 repaired; the pull request's title and description read bullet by bullet against the head and the diff against main, no contradiction; no seeded-sample target lies in the changed passage; automatic checks rerun, all pass; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; no change outside the folder.",
+  "text": "5aaffe9d1b253356"
+ }
+}
