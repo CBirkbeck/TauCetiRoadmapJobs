@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GraphSpectra~2",
+  "head": "c5eacf06c337ba423562643b1d133a20ad506f6f",
+  "pr": 3014,
+  "folder": "GraphSpectra",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full re-review. Previous findings: R01 repaired for the two theorems it named (tree lower bound, Motzkin-Straus), but the new grafting route of 3.4 uses two characteristic-polynomial lemmas that nothing owns (this round's R01, P2); C01, C02, C04, N02 repaired, C03 moot, N01 and N03 repaired but for one header and one heading. Every statement recomputed on small and degenerate instances (27-row table), none false. Sample of 15 sections: 0 of 99 locators checked against a text, since none of the five cited books (BH, CRS, St, B, Ba) could be read legally; the sources service refused all. Suggested.lean elaborates with 87 sorry warnings and nothing else; no set_option, no sorried data; 113 elaborated signatures compared with the README. One-tactic probe: 18 tried, 1 closed (C01). Dependency check: 132 roadmaps, 1464 edges, 0 problems. Supplier citations resolved on main (RandomMatrices 1.2) and at the open heads of SpectralGraphBounds, LaplacianEigenvaluesOfGraphs, PeriodicNonnegativeMatrices, AssociationSchemes, TopologicalCombinatorics, QuasirandomGraphs; copied definitions agree verbatim. Automatic checks: two primed Mathlib names set aside as false positives; the header with only #check lines is a format note. No change outside the folder.",
+  "text": "55210464a68659e5"
+ }
+}
