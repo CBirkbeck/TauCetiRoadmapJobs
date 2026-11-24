@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicModuliForArithmeticGeometry~15",
+  "head": "644c332c1967a11b54bc8fedf1633861bbda5f1e",
+  "pr": 3027,
+  "folder": "AlgebraicModuliForArithmeticGeometry",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "review of the change against main: 78 changed lines since 74a09b7. Checked: the new §9.12 (statement against Ein-Lazarsfeld 1999 Prop. 1.2 (ii) at its locator, proof route recomputed, three Checks evaluated, Ein-Lazarsfeld-Smith locator of Check 3), the two Tau Ceti Koszul declarations and the docstring's claims at the pins, the sentences citing §9.12, the record against the merge base (no heading or declaration removed), ownership of global division against ComplexComparisonPartII and Part II, the pull request text. Of the seeded sample only §9.12 lies in changed text. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with five sorry warnings only. Lazarsfeld 2004 §9.6 not read (uncertified).",
+  "text": "68ef976c0bfed16c"
+ }
+}
