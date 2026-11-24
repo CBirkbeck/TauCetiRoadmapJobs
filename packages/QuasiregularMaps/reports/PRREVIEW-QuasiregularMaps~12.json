@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuasiregularMaps~12",
+  "head": "d774e3d952bb9235e365983dfd3f60eea6c7d252",
+  "pr": 3034,
+  "folder": "QuasiregularMaps",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 4 changed lines since 7c7b748. Checked: the changed Conventions bullet on smooth metrics against §7.6, §2.7 and the pinned TauCeti.IsLocalRiemannianIsometry, Bundle.ContMDiffRiemannianMetric.quotient and isLocalRiemannianIsometry_descend (previous C01 repaired; the previous report had no finding); the pull request's title and description item by item against the head and the diff from main (nothing contradicted or unstated); automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with five sorry warnings only. The seeded sample falls in no changed passage; no source locator changed.",
+  "text": "1600932a460bfd49"
+ }
+}
