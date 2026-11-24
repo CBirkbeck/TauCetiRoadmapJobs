@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicModuliForArithmeticGeometry~12",
+  "head": "8d0b5731912cd17cd062c13ea42cd6b7b25fdf2a",
+  "pr": 3027,
+  "folder": "AlgebraicModuliForArithmeticGeometry",
+  "date": "2026-11-24",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review of the revision adding Layer 9 sections 9.10a-9.10c, 9.12-9.12c and 9.13. Seeded sample of 15 sections checked against the sources at their locators (Kollar 1997, Angehrn-Siu 1995, Ein-Lazarsfeld 1999, Ein-Lazarsfeld-Smith 2001, ten Stacks chapters, Milne v3.00, Borne-Vistoli 2012/2019, Johnson-Yau, Bresciani, GWZ20). Not readable: Olsson Math 274 notes (host not classified), Lazarsfeld 2004, Kollar-Mori 1998, Matsumura, the published numbering of Bierstone-Milman 1997. Every automatic check passed; dependency check 0 problems (it does not see the two-way supply with Part II because both roadmaps are on main). Suggested.lean elaborates with five sorry warnings only and is unchanged. The family Suggested.lean was elaborated to confirm that Angehrn-Siu can be stated at the pins. Record kept: no layer or item removed. Adversarial table recorded with computed values for every new statement and Check.",
+  "text": "0cdff8b4f0ee948b",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The new sections make this roadmap and its Part II supply each other",
+    "where": "move §§9.10a–9.12c into a new layer of AlgebraicModuliForArithmeticGeometryPartII",
+    "raised": "PRREVIEW-AlgebraicModuliForArithmeticGeometry~12"
+   }
+  ]
+ }
+}
