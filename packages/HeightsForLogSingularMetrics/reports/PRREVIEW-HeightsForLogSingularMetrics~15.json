@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsForLogSingularMetrics~15",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 92 changed lines since b8f3652. Checked: the previous finding R01 (two owners of the bound of 4.3b (c)) is repaired; the new Origin, Method and Corollary-of labels, the route of 4.3b (c), the scope and the supplier contracts against the cited sections at this head (12 citations resolved) and against 7 sources at 13 locators (Yuan-Zhang, Moriwaki, Zhang, Roy-Thunder, Mourougane, Bost, Moret-Bailly); adversarial table with 13 rows of computed values; no heading, layer or item of the merge-base README removed; dependency check 0 problems; Suggested.lean elaborates with no message and declares nothing; the worker's automatic checks all passed. One small correction to the description (three folders it says are changed are not). Not read this round: Gaudron-Remond 2017, Gaudron 2019, the formal proof's source.",
+  "text": "cdb52b915f25ebb5",
+  "carried": {
+   "from": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
