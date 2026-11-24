@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-WachLatticesOverTheCyclotomicTower~12",
+  "head": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/WachLatticesOverTheCyclotomicTower",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 141 changed lines since b8f3652. Checked the new Origin, Method and Corollary-of labels of 6.4-6.11, the rewritten 6.4 sources paragraph, scope, supplier contract and references. The three corollary claims (6.4 (6) from PhiGamma §6.4, 6.4 (8) from §6.6 by twist, 6.5 (1) s=1 rational from §6.5) were verified by computation. The seeded sample 6.4-6.11 was read against Berger-Wach-2004, Berger-2008, Wach-1996, Herr-1998, Cherbonnier-Colmez-1999, Caruso-Liu (arXiv 0709.2118) and Gee-Liu-Savitt (arXiv 1203.2552): 24 locators. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates cleanly (no declarations). Small corrections: stale Layer 8 / §§8.1, 8.3 pointers (overview, Dependencies); 6.4 Origin calls (5) and the integral (2) particular although Berger 2004 Déf. III.4.1 and Prop. III.4.2 state them. Method labels not verifiable (formal-proof repository not read).",
+  "text": "462159594e32a68f"
+ }
+}
