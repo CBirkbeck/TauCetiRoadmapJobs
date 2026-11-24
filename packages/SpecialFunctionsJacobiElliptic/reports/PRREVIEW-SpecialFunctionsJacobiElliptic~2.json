@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsJacobiElliptic~2",
+  "head": "2e8dbd8dd3296caafdc9410dcd06faf9e0ace99d",
+  "pr": 3075,
+  "folder": "SpecialFunctionsJacobiElliptic",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 137 changed lines since eb82a19. Checked: all eleven remarks of the previous report (nine small corrections, two format notes) are repaired; the rewritten sketches of 4.4 and 4.5, the Landen statement without its third hypothesis, the Gauss modulus form, the new Checks of 1.1, 3.3, 4.4, 4.5, 7.4 and the contour of 6.1 were recomputed in double precision at three values of tau and at moduli on and off the cuts. One finding (P2): at k = 0 the modulus forms of 4.4 (third law) and 4.5 (second and third laws) have right sides 0/0; the tau forms and the Lean statements are correct. Sample targets in the changed passages (4.4, 4.5, 5.2, 7.4, 8.1) checked against Whittaker-Watson (3rd ed. text) and DLMF; Lawden, Armitage-Eberlein and Magnus-Oberhettinger-Soni not readable. Supplier sections resolved on main (SpecialFunctionsTheta 2.4, 4.4; EllipticIntegrals 3.2, 7.5-7.7); TauCeti.Real.legendre_relation opened at the pin. Dependency check: 0 problems. Elaboration: 33 sorry warnings only. Automatic checks: one form hit (a section comment holding only #check lines) set aside as a false positive. Pull request text agrees with the head.",
+  "text": "4125462b072294ef"
+ }
+}
