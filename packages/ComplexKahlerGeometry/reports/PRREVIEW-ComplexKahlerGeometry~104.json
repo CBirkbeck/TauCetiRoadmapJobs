@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexKahlerGeometry~104",
+  "head": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+  "pr": 3027,
+  "folder": "ComplexKahlerGeometry",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "review of the change against main: 153 changed lines since 74a09b7. Checked the two added sections (3.5a, 4.2a), the changed K6.0 sentence and the dependency, scope and reference lines, with the sections they rely on (3.3, 3.4, 3.5, 4.2, 7.2) where the seeded sample falls in them; recomputed signs, block curvature formulas and the Checks; 16 locators read in Demailly's book, Demailly 1982, Skoda 1972 and Griffiths 1970 (Griffiths 1969 not readable, no result rests on it). Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 27 sorry warnings only and is unchanged. Previous review had no finding; its three small corrections and one format note are unrepaired and repeated, plus one new small correction (conflict with open pull request #2536 in Layer 4's Dependencies paragraph, no stated order).",
+  "text": "28878c9aed255c7f",
+  "carried": {
+   "from": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+   "head": "797f2b41d3645a9d471232bc600d46f41947488b",
+   "findings": 4,
+   "lines": 11,
+   "folders": [
+    "ComplexKahlerGeometry"
+   ],
+   "corrections": true,
+   "onto": "f5962309d479d79dfe3ffaa4510d0c700a748686"
+  }
+ }
+}
