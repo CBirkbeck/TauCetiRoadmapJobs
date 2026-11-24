@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ThetaKernelsForUnitaryDualPairs~13",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaKernelsForUnitaryDualPairs",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "review of the change against main: 222 changed lines since b8f3652. Checked: all 22 new Origin/Method labels, the six Corollary-of lines against MetaplecticAutomorphicForms sections 1.5, 2.5a, 3.3d, 3.7a, 3.9a, 3.22a, 5.6a, 6.4a, 6.10a, 6.11, 6.13 at this head (and #2772's head for id collisions: none), the revised attributions in 3.21a, 3.47, 3.47b, new citations, Needs and scope lines; record of the README at b8f3652 intact (no heading, statement or Check removed). Seeded sample of 15 targets checked where the change falls, with 15 source locators read (GQT, Ichino20, Gan-Ichino, Kudla96, Minguez08, Liu21 arXiv:2105.14223, Wu arXiv:1409.0770), three arXiv ids resolved, one formal-proof declaration (LiftSatU) opened at 40e56bab; adversarial table of 27 rows with computed values. Automatic checks all passed; depcheck rerun 0 problems; Suggested.lean (unchanged, no declarations) elaborates with no output. Finding R01 (P2): 3.3b calls clause (a) of orthogonal sums for a non-split acting space its own while MetaplecticAutomorphicForms 3.3d at this head states it. Corrections: 6.4a Origin misses Kudla-Rallis 1988; 3.46a Method overstates Ichino20 section 7; three untouched sentences (5.7b, 3.47c, 3.47b Status) contradict the new labels; PR description for this folder. Format note: two Status paragraphs in 3.47b.",
+  "text": "1d3d35d463c2fc3d"
+ }
+}

@@ -326,3 +326,54 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["References"]
+
+[[source]]
+id = "HKS96"
+authors = "Michael Harris; Stephen S. Kudla; William J. Sweet"
+title = "Theta dichotomy for unitary groups"
+year = 1996
+venue = "Journal of the American Mathematical Society 9"
+doi = "10.1090/S0894-0347-96-00198-1"
+locator_scheme = "theorem"
+locator = "Appendix, (a.22)-(a.24), p. 997; Corollary A.3, p. 998"
+url = "https://www.ams.org/journals/jams/1996-9-04/S0894-0347-96-00198-1/S0894-0347-96-00198-1.pdf"
+fetched_from = "https://www.ams.org/journals/jams/1996-9-04/S0894-0347-96-00198-1/S0894-0347-96-00198-1.pdf"
+fetched_at = "2026-11-24T19:18:50Z"
+sha256 = "f13260802da23f873517c7a2b8960f41a7c502bba56265e4a99f934e7dd36f33"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["3.3b"]
+
+[[source]]
+id = "KS97"
+authors = "Stephen S. Kudla; W. Jay Sweet"
+title = "Degenerate principal series representations for U(n, n)"
+year = 1997
+venue = "Israel Journal of Mathematics 98"
+doi = "10.1007/BF02937337"
+locator_scheme = "page"
+locator = "pp. 253-306"
+url = "https://doi.org/10.1007/BF02937337"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.47", "3.47a"]
+
+[[source]]
+id = "KR88b"
+authors = "Stephen S. Kudla; Stephen Rallis"
+title = "On the Weil-Siegel formula II: the isotropic convergent case"
+year = 1988
+venue = "Journal für die reine und angewandte Mathematik 391"
+doi = "10.1515/crll.1988.391.65"
+locator_scheme = "theorem"
+locator = "Theorem, p. 66"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0391/LOG_0006.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN243919689_0391/LOG_0006.pdf"
+fetched_at = "2026-11-24T19:22:23Z"
+sha256 = "3e01dace2888604df323f3ae4a142b2698f9e67a751856898882ba2b43e17bc4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["6.4a"]
