@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DeformationAndDerivedPatchingAlgebra~11",
+  "head": "7c341e760700d163c2204c12a65613b8af9ffbae",
+  "pr": 3027,
+  "folder": "DeformationAndDerivedPatchingAlgebra",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 35 changed lines since 74a09b7. Checked: section 3.12a (statement, both Checks and the route recomputed on eight instances, including nonreduced, larger residue field, rank 0, unit and characteristic 2 cases), the Layer 3 dependencies, the scope sentence and the two supplier contracts; Stacks Lemma 10.121.7 (tag 02MI) read at its locator; five library declarations opened at the pins; none of the 15 seeded-sample targets lies in changed or affected text; the 9 layers of the merge base are kept; Suggested.lean identical to the merge base and elaborates with 18 sorry warnings only; automatic checks all passed; dependency check 0 problems. One small correction, in untouched text (line 522), carried from the previous review.",
+  "text": "5204b89c9c3fb111"
+ }
+}
