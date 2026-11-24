@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisDuality~8",
+  "head": "4a2d22fe8cbc27e34f076618602c288115ccba78",
+  "pr": 3027,
+  "folder": "ArithmeticGaloisDuality",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 86 changed lines since 592bdb1; checked the new section D7.6a in full (definitions, statements (a)-(d), proof sketch, both Checks) with computed instances over Q, Q(sqrt-31) and a rank-two elliptic curve; locators Milne ADT I.4.10(a), Lim Theorem 4.2.6 (arXiv v3) and Kolster-Movahhedi section 1 p. 41 read in the text; Nekovar Prop. 5.4.3(i) only as quoted by Lim (author page returned 403); the edited overview and scope sentences; layer record (8 layers kept, new id D7.6a); ownership and the closest roadmaps; seeded sample lies outside the changed text; dependency check 0 problems; worker's automatic checks passed; Suggested.lean (unchanged) elaborates with sorry warnings only.",
+  "text": "1ba319c5b7d82c96"
+ }
+}
