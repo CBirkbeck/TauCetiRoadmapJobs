@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PositivityOfDirichletSeriesWithKernels~11",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/PositivityOfDirichletSeriesWithKernels",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 248 changed lines since 74a09b7. Checked: the deduction of 6.3 from ArithmeticDirichletSeriesPartII 0.1b; the Corollary-of lines of 6.1, 6.6 and 6.9 against AsymptoticExpansions 4.1a and 13.6a and ArithmeticDirichletSeriesPartII 4.1a at this head; the Origin and Method labels of the 13 sampled sections (6.1-6.10, 7.1, 8.1, 8.2), against Pintz 1980, Kaczorowski 1984, Mahatab-Mukhopadhyay, Cluckers-Herremans, Adamski, Dabrowski-Fisher and Landau 1905 (15 locators), and against the formal proof's Lean source (14 files and declarations); the changed Downstream line against GeneralizedRiemannHypothesisFromWindowBounds. The record is kept: no layer or section removed or renumbered. Adversarial table computed for every changed statement and every headline. Automatic checks all passed; dependency check 0 problems; Suggested.lean unchanged and elaborates with sorry warnings only. Small corrections: the description omits the new supplier AsymptoticExpansions and the new route of 6.3; the 6.1 origin label assigns the bound of Phi in (c) to both the formal proof and the roadmap. Format note: four new references lack titles. Not verifiable: Widder, Montgomery-Vaughan, Wong, Hormander (uncertified).",
+  "text": "03949dd9109d9e4f"
+ }
+}
