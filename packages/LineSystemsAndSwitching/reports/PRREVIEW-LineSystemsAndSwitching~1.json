@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LineSystemsAndSwitching~1",
+  "head": "fe56537855d3ae3f05b36930e447eba15878948d",
+  "pr": 3070,
+  "folder": "LineSystemsAndSwitching",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full review. Every statement and worked example recomputed (adversarial table, 24 rows); one P2: the Summary states the regular two-graph equivalences without the hypothesis excluding the trivial switching classes, refuted by K5. Suggested.lean elaborates (exit 0, 40 sorry warnings only); one-tactic probe closes none of the 40 theorems; elaborated types compared with the README. 14 library declarations opened at the pin; 24 cross-roadmap sections resolved at main or the open heads; dependency check 0 problems; no change outside the folder. Sources: none of the sampled locators could be checked, because no cited text (Brouwer-Haemers, Cvetkovic-Rowlinson-Simic, Godsil-Royle, Biggs) was readable from a legal place; listed under Not verifiable and requested. Automatic checks: haveI in a signature became a format note; the empty-section-header hit set aside as a false positive.",
+  "text": "49456d2091eb1f36"
+ }
+}
