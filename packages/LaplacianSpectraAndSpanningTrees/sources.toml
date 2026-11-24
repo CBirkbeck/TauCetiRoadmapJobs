@@ -1,0 +1,25 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LaplacianSpectraAndSpanningTrees"
+
+[[source]]
+id = "Sp"
+locator_scheme = "theorem"
+locator = "Theorem 13.5.1"
+url = "http://cs-www.cs.yale.edu/homes/spielman/sagt/sagt.pdf"
+fetched_from = "http://cs-www.cs.yale.edu/homes/spielman/sagt/sagt.pdf"
+fetched_at = "2026-11-24T13:44:12Z"
+sha256 = "6b70ebd45e3369754ae597a42fda8531a8cb35407d16afef65dfff509369861c"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["3.2"]
+
+[[source]]
+id = "Ku"
+locator_scheme = "theorem"
+locator = "Theorem 24.1"
+url = "https://link.springer.com/content/pdf/10.1007/978-3-662-67872-5.pdf"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["12.2"]
