@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FiniteReductiveGroups~11",
+  "head": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/FiniteReductiveGroups",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 2192 changed lines since 74a09b7. Every changed passage was checked against the merge base and the earlier findings: R01, R02, R04, C01-C03, C05 and N01 are repaired; C04 (the supplier change in the description) is not; D01 is resolved by the corollary convention and the widened 4.8, 5.4 and 5.7. Seeded sample: Steinberg 1965 (0.3, 0.5), Stacks Tag 0F14 (3.2) and Carayol 1984 Thm 4.2 (6.1) were checked in the text; Green 1955, Deligne-Lusztig 1976, Dudas-Michel 2015, Kondo 1963 and Bushnell-Henniart 2005 are not readable. Supplier sections were resolved at this head (EtaleCohomologyFoundations F.2.7/F.4.5, CharacterTheory 9a, ReductiveGroups 7h/7i/9F, SR.7). Automatic checks all passed; depcheck: 0 problems; the elaboration gives only the three sorry warnings; #check of the 7 declarations is unchanged. Finding: 2.1 duplicates ReductiveGroups 7i.1 (b) without citing it.",
+  "text": "2b28eec5b3b6590a"
+ }
+}
