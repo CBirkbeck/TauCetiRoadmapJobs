@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicModuliForArithmeticGeometryPartII~11",
+  "head": "f3b4ab14a05b6b0b8f75246cddd04477c719addf",
+  "pr": 3027,
+  "folder": "AlgebraicModuliForArithmeticGeometryPartII",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 586 changed lines since 74a09b7. Checked: sections 1.6a, 1.7, 1.7a and Layer 6 (6.1-6.8) with their Checks recomputed; the three new Suggested.lean theorems and two definitions; 31 source locators (KOL97, AS95, WIT22, EV92, STACKS), of the seeded sample 6.8 (the only target in changed text); cross-roadmap citations on main and at this head; the record against the README at the merge base (nothing removed or renumbered); automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 19 sorry warnings only; one-tactic probe closes none of the new theorems. Previous review's small correction on the description is repaired. One small correction (projective versus proper in 6.3, 6.6, 6.7 against the cited theorems), not blocking.",
+  "text": "55e47cf81849e984",
+  "carried": {
+   "from": "f3b4ab14a05b6b0b8f75246cddd04477c719addf",
+   "head": "f1ab46c915edc35cfb3dc3ba3d360ba822aa7819",
+   "findings": 1,
+   "lines": 11,
+   "folders": [
+    "AlgebraicModuliForArithmeticGeometryPartII"
+   ],
+   "corrections": true,
+   "onto": "374b9ce2406497896092210ae227acf52a3eb3f1"
+  }
+ }
+}
