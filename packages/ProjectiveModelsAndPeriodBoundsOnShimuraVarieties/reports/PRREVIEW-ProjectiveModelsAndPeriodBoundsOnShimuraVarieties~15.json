@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ProjectiveModelsAndPeriodBoundsOnShimuraVarieties~15",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ProjectiveModelsAndPeriodBoundsOnShimuraVarieties",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 178 changed lines since b8f3652. Checked: the seeded sample (6.2a, 6.7a, 6.9a, 7.12a, 7.17a, 7.31a, 9.1), their Origin and Method labels against 12 source locators read in the text (DN, Alper, Stacks, Deligne twice, Goldring-Koskivirta, Ekedahl-van der Geer, Moret-Bailly) and against the formal proof's declarations; 9.1 as a corollary of EquivariantIntersectionTheory 1.5; all cross-roadmap citations resolved at this head; dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with no output and declares nothing. Not readable legally: Bost 2004, Lan 2016/2017, Faltings-Chai, Chai. The folder is unchanged since the previous review, whose three small corrections and one format note are raised again; one format note added.",
+  "text": "41eb68cd3555e116",
+  "carried": {
+   "from": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+   "head": "1ed4fa2eeb7eeb5dce98f9f2816e6e3e801e1a50",
+   "findings": 3,
+   "lines": 8,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ProjectiveModelsAndPeriodBoundsOnShimuraVarieties"
+   ],
+   "corrections": true,
+   "onto": "40b82a5146e991fcb0d4e34b5489a502377f491f"
+  }
+ }
+}
