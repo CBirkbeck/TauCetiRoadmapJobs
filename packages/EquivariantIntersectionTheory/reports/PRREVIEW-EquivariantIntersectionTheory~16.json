@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EquivariantIntersectionTheory~16",
+  "head": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+  "pr": 3027,
+  "folder": "EquivariantIntersectionTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 69 changed lines since 74a09b7. Checked the new section 1.5 (descent of linearised invertible sheaves to the quotient by a finite group of invertible order): statement, route and both Checks recomputed, with a characteristic-p counterexample to the statement without the order hypothesis and the inertia-versus-stabiliser case; locators read in Alper 2013 (published text: Remark 4.2 p. 2362, Example 8.1 p. 2380, Theorem 10.3 p. 2386) and Drezet-Narasimhan 1989 (HAL text, Theoreme 2.3; printed page not readable). SchemeAndStackFoundations 1.17, 1.22, 1.23 resolved on main. Automatic checks all pass; dependency check 0 problems; Suggested.lean unchanged since the merge base, elaborates with nine sorry warnings and no error, one-tactic probe closes none. The folder is unchanged since the previous review: its three small corrections (the description's generality sentence, the Suggested.lean docstring omitting 1.5, an untouched downstream-consumers sentence) and one format note stand. Seeded sample checked where it falls in the changed and affected passages (1.4, Convention 1).",
+  "text": "b82ae6d76a4fc3cf",
+  "carried": {
+   "from": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+   "head": "7c341e760700d163c2204c12a65613b8af9ffbae",
+   "findings": 2,
+   "lines": 9,
+   "folders": [
+    "EquivariantIntersectionTheory"
+   ],
+   "corrections": true,
+   "onto": "47f8341002b8d742544ac098e9c88db041004c87"
+  }
+ }
+}
