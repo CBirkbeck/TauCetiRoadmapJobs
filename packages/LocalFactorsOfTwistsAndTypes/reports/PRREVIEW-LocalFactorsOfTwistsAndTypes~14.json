@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalFactorsOfTwistsAndTypes~14",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalFactorsOfTwistsAndTypes",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 420 changed lines since b8f3652. Checked: every changed passage (Origin, Method and Corollary-of labels, the narrowed 6.2, the restated 7.1, the corrected Henniart and Zelevinsky attributions) with an adversarial table of 15 rows with computed values; 15 cross-roadmap citations resolved at this head (SR.7.1, SR.4.3a, SR.5.2a, AL.3.2.4, AL.3.3.2a, AL.3.3.8a, AL.3.9.7, ETUTC 2.16 and 10.29, and the family consumers); 21 source locators read in 7 open sources (Zelevinsky 1980, Tadic 1986, Henniart 2002, Dat 2009 preprint, Haines-Kottwitz-Prasad, Jacquet-Liu, Chai); Henniart 1993 and the other paywalled sources not readable, listed as not verifiable; [FormalProof] not read. Base against head: no layer or item removed. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry as the only warning; one-tactic probe (simp, rfl) does not close the theorem. The folder's text is unchanged since the previous review, which had no finding; its three small corrections (6.3 and 4.1 (i) restricted to characteristic zero although the general sections cover every characteristic; the description) and two format notes are restated. One human decision applied (general multiplicativity of 6.2 now AL.3.3.2a).",
+  "text": "1d3d35d463c2fc3d",
+  "carried": {
+   "from": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+   "head": "f14487b4a708ddbe4b68e13659aba502d15a969d",
+   "findings": 3,
+   "lines": 16,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/LocalFactorsOfTwistsAndTypes"
+   ],
+   "corrections": true,
+   "onto": "d43312d8d1f8e1c6fa6da95267724524848f37ce"
+  }
+ }
+}

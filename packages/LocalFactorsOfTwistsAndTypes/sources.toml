@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LocalFactorsOfTwistsAndTypes"
+
+[[source]]
+id = "Tad86"
+authors = "Marko Tadić"
+title = "Classification of unitary representations in irreducible representations of general linear group (non-Archimedean case)"
+year = 1986
+venue = "Annales scientifiques de l'École normale supérieure 19"
+doi = "10.24033/asens.1510"
+locator_scheme = "theorem"
+locator = "Proposition A.4"
+url = "https://doi.org/10.24033/asens.1510"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1510.pdf"
+fetched_at = "2026-11-24T18:57:30Z"
+sha256 = "15ab6a6dbb045332ce5bd15e9531635d2e9fe28a015b52b128917f7fdad3c40a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["4.1"]
