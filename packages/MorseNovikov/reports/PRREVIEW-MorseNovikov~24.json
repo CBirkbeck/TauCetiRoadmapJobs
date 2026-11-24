@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MorseNovikov~24",
+  "head": "2f1f33bbe564635b504a8e9d164d8d990cc9e39c",
+  "pr": 1854,
+  "folder": "MorseNovikov",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 1417 changed lines since 2c2bcf5. Checked: the README at the merge base against the head layer by layer and item by item (no layer, section, API fact or Check lost; one supplier heading renamed); both findings of the previous review repaired; the 15 seeded targets with 34 source locators read in the cached texts (rt3, rt2, Hat02, Gra72); the adversarial table with computed values for the changed statements and both headline theorems; all 129 declarations of the 18 In Tau Ceti lines found at the pin, 19 opened; cross-roadmap citations resolved on main; depcheck 0 problems; Suggested.lean elaborates with sorry the only warning, signatures match the README, one-tactic probes fail on both theorems; the description agrees with the head. The gate's only failure, changes outside the folder, lists the pull request's own folders and was set aside. One small correction (the Needs lines of 4.2 and 4.4 name each other) and one format note. Milnor's two texts and Hopf 1929 could not be read; one licence question for a human.",
+  "text": "d45560efedd0a59f",
+  "carried": {
+   "from": "2f1f33bbe564635b504a8e9d164d8d990cc9e39c",
+   "head": "9360c7e86b18c66a1978f4c561ea3c93a9a24a82",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "MorseNovikov"
+   ],
+   "corrections": true,
+   "onto": "187b64d506837b9d1facc5b44f8dd1bd1a3353e2"
+  }
+ }
+}
