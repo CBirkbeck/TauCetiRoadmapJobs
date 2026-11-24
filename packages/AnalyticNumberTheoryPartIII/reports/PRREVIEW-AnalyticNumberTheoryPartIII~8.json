@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticNumberTheoryPartIII~8",
+  "head": "8d0b5731912cd17cd062c13ea42cd6b7b25fdf2a",
+  "pr": 3027,
+  "folder": "AnalyticNumberTheoryPartIII",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 71 changed lines since 592bdb1. Checked the new section 8.2a (Hadamard's three-circles theorem): inequality recomputed on five functions and nine radius triples, endpoint and zero cases, positivity and convexity clause, all four Checks, the route against Mathlib's three-lines theorem at the pin (Hadamard.lean:611), robinson1944 p. 795 read at the AMS open archive; titchmarsh1986 Ch. XIV uncertified, not opened. The seeded sample falls in the change only at 8.2a. No duplicate in Mathlib, Tau Ceti or another roadmap; the consumer RiemannHypothesisStatementsAndConsequences 3.2a agrees. Automatic checks all passed; dependency check 0 problems; Suggested.lean (unchanged) elaborates with sorry warnings only. Two small corrections (Suggested.lean docstring does not account for 8.2a; untouched text: stale ToeplitzOperators T1 id) and one format note (Robinson's page).",
+  "text": "0cdff8b4f0ee948b",
+  "carried": {
+   "from": "8d0b5731912cd17cd062c13ea42cd6b7b25fdf2a",
+   "head": "4a2d22fe8cbc27e34f076618602c288115ccba78",
+   "findings": 1,
+   "lines": 3,
+   "folders": [
+    "AnalyticNumberTheoryPartIII"
+   ],
+   "corrections": true
+  }
+ }
+}
