@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BernoulliBoundsForClassGroupEigenspaces~16",
+  "head": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BernoulliBoundsForClassGroupEigenspaces",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "incremental re-review of 17 changed lines since 71bbefa. The rewritten convention on Corollary-of lines was checked against the three sections that carry one (6.17, 10.1 and 14.1: their routes, Needs lines, layer Dependencies and supplier contracts) and against the family index; the adversarial rows computed instances for each, for the §12.3a formula and for 9.1 as a case of ArithmeticKTheory §9.1. Eleven supplier sections were resolved at this head. The previous review raised no finding; its corrections C01-C04 and format note N01 are not repaired and are carried. The description was re-read: it agrees with the new convention, but it still omits this roadmap's supplier changes (C04). The seeded sample falls outside the changed passage, except that the Corollary-of lines of 6.17, 10.1 and 14.1 were re-checked; its locators stand as in the previous review. Automatic checks: all passed. Depcheck: 0 problems. Suggested.lean elaborates with only the sorry warning. No change outside the folders the pull request names.",
+  "text": "b5663d133e64a5bd"
+ }
+}
