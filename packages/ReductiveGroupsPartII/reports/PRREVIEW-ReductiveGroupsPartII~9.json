@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ReductiveGroupsPartII~9",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "ReductiveGroupsPartII",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 54 changed lines since 855180d. Checked: the repaired route of RG2.3.5a (b) (differential, Jacobian criterion, both fibres, residue characteristic 2 computed on F_2/F_4); the four Mathlib smoothness declarations at the pin; the citations of ReductiveGroups 9B, 9B.1-9B.3, Layer 9D and 9D.1 at this head; the four restated Lean statements (Lang over Finite F, Haar statements with Borel binders) with computed instances; the one sampled target in a changed passage (unramified-combinatorial-comparison), its 4 locators read in the sources; the description against the head. Previous C01, C02, N02 repaired, N01 not (format note). Automatic checks all passed; depcheck 0 problems; elaboration 11 sorry warnings only. Not verifiable: Tits (Corvallis) locators; the end of the description, cut off in the copy given.",
+  "text": "9aedd0e947327cc2"
+ }
+}
