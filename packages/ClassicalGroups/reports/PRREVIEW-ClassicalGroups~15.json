@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassicalGroups~15",
+  "head": "855180da66cd42ed862a05c038358759f29d889e",
+  "pr": 3027,
+  "folder": "RepresentationTheory/ClassicalGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "review of the change against main: 107 changed lines since 74a09b7. Checked the two added sections, 6.6a (Capelli identity) and 6.6b (quantum minors of u + E), by hand for n = 2 and by exact computation for k = n = 3 with negative controls; the seeded sample where it falls in the change (6.6b); 10 of 12 source locators against molev2003yangians, mno1996 and css2009 (Howe-Umeda 1991 paywalled, Capelli 1887 not opened); three Mathlib declarations at the pin; the README at the merge base as the record (10 layers kept, 2 headings added, none removed); ownership against main and the open heads; automatic checks all passed; depcheck 0 problems; Suggested.lean unchanged and elaborates with sorry warnings only. Two small corrections (description does not mention the revision; untouched-text remark on three Tau Ceti names absent at the pin), no format notes. One decision of the human reviewers applied.",
+  "text": "540fd914341cada4",
+  "carried": {
+   "from": "855180da66cd42ed862a05c038358759f29d889e",
+   "head": "855180da66cd42ed862a05c038358759f29d889e",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
