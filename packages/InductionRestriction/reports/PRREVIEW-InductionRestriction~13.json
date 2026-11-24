@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InductionRestriction~13",
+  "head": "45a486516685460fece73a8acfdf15b47bdf0282",
+  "pr": 3027,
+  "folder": "RepresentationTheory/InductionRestriction",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "review of the change against main: 81 changed lines since 74a09b7. Checked the new section 6.2 (Brauer's theorem in degree zero over fields of characteristic zero with a primitive root of unity of order the exponent): statement, route and both Checks computed on the trivial group, C3, S3 and Q8; the descent from an algebraic closure; nine library declarations opened at the pins; a probe of the statement elaborates. Previous R01, C01, C02 and N01 repaired. Automatic checks all passed; dependency check 0 problems; Suggested.lean (unchanged) elaborates with 13 sorry warnings only. README at the merge base compared: 12 layer ids kept, one section added. Seeded sample: 6.2 is the only target in changed text. Deligne 1973 is paywalled: locator unverified, left to the human reviewers.",
+  "text": "faa1a157b4f8bed0"
+ }
+}
