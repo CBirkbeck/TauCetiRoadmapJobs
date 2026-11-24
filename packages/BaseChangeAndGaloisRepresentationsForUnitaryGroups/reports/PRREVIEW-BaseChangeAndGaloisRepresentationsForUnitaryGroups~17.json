@@ -1,0 +1,33 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BaseChangeAndGaloisRepresentationsForUnitaryGroups~17",
+  "head": "4b01d78f351640e8165b4ad852c22f2644bf71a4",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BaseChangeAndGaloisRepresentationsForUnitaryGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 37 changed lines since cd123f8. Checked: the six small corrections of the previous report (five repaired, one repaired in the roadmap but not in the family index); the new Corollary-of line of 10.29a against EndoscopicTransferAndUnitaryTraceComparison 10.20-10.30 and this roadmap's 10.34 (iii), 10.35 (d), with no circular deduction; the repointed citations DeligneLusztigTheory 2.6 (d) and 2.9, read in full at this head, with two computed instances for GL_2; the sampled targets 10.29a, 10.33d, 10.35, 16.1 where the diff touches them; the pull request's title and description against the head. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with no message (no declaration). [FormalProof] could not be read.",
+  "text": "97804fc7a31e1636",
+  "carried": {
+   "from": "4b01d78f351640e8165b4ad852c22f2644bf71a4",
+   "head": "4b01d78f351640e8165b4ad852c22f2644bf71a4",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C01: in `TauCetiRoadmap/RiemannHypothesisForDirichletLFunctions/README.md`, line 203, the phrase \"needs only that case, not the general theorem in full\" has to become \"needs no more of the general the",
+    "where": "the family's own `*Corollary of:*` paragraph, RiemannHypothesisForDirichletLFunctions/README.md line 203",
+    "raised": "PRREVIEW-BaseChangeAndGaloisRepresentationsForUnitaryGroups~17"
+   }
+  ]
+ }
+}
