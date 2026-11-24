@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisDuality~10",
+  "head": "e7914b5c68ad72646db1009572ad061c097a6312",
+  "pr": 3027,
+  "folder": "ArithmeticGaloisDuality",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 86 changed lines since aecb53a. Checked: the new section D7.6a in full (definitions, statements (a)-(d), proof sketch, both Checks, with computed instances over Q, Q(sqrt(-31)) and a rank-two elliptic curve); its locators read in Milne ADT I.4.10, Lim Theorem 4.2.6 (arXiv v3) and Kolster-Movahhedi p. 41; the two edited overview sentences; the layer record against the merge base (8 layers kept, D7.6a new); consumers of D7.6a at the head; overlap with the closest roadmaps (nothing shared). Seeded sample: none of the fifteen targets lies in changed or affected text. Automatic checks: all passed; dependency check 0 problems; Suggested.lean (unchanged) elaborates with 12 sorry warnings only. The folder is unchanged since the previous review: its two small corrections and one format note are not repaired and are restated; none blocks. Nekovar Proposition 5.4.3 (i) checked only through Lim's quotation.",
+  "text": "52370820c859def5",
+  "carried": {
+   "from": "e7914b5c68ad72646db1009572ad061c097a6312",
+   "head": "4da5b4cc00de4a362b5c5d35287ce1baf798b761",
+   "findings": 2,
+   "lines": 15,
+   "folders": [
+    "ArithmeticGaloisDuality"
+   ],
+   "corrections": true,
+   "onto": "f3e2eb3b05df26beb3386f6226a200beeb918da7"
+  }
+ }
+}

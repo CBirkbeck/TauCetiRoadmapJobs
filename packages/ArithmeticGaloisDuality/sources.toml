@@ -1,0 +1,48 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ArithmeticGaloisDuality"
+
+[[source]]
+id = "KolsterMovahhedi2000"
+locator_scheme = "page"
+locator = "§1, p. 41"
+url = "https://www.numdam.org/article/AIF_2000__50_1_35_0.pdf"
+fetched_from = "https://www.numdam.org/article/AIF_2000__50_1_35_0.pdf"
+fetched_at = "2026-11-24T07:19:23Z"
+sha256 = "9cbd9bf56bf133dc6581a3403d81566880840fc574f6b3cc748e6ec7a0afe6b5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["D7.6a"]
+
+[[source]]
+id = "Lim2012"
+authors = "Meng Fai Lim"
+title = "Poitou-Tate duality over extensions of global fields"
+year = 2011
+venue = "Journal of Number Theory 132, 2012, 2636-2672"
+doi = "10.1016/j.jnt.2012.05.007"
+arxiv = "1104.1484v3"
+locator_scheme = "theorem"
+locator = "Theorem 4.2.6"
+url = "https://arxiv.org/abs/1104.1484v3"
+fetched_from = "https://arxiv.org/pdf/1104.1484v3"
+fetched_at = "2026-11-24T07:19:27Z"
+sha256 = "ec83b04bc44eaa4885bc1b718d4bb778bf2f65b48d054625ed2b55b33ab47029"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v3"
+cited_for = ["D7.6a"]
+
+[[source]]
+id = "MilneADT"
+locator_scheme = "theorem"
+locator = "Chapter I, Theorem 4.10"
+url = "https://www.jmilne.org/math/Books/ADTnot.pdf"
+fetched_from = "https://www.jmilne.org/math/Books/ADTnot.pdf"
+fetched_at = "2026-11-24T07:19:42Z"
+sha256 = "2c6195ec76a974f3f336c77cb71cc3845b018aad2d43136716b3477a3bc5fb31"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["D7.6a"]
