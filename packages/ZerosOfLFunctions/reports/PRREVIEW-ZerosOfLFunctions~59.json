@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ZerosOfLFunctions~59",
+  "head": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+  "pr": 3027,
+  "folder": "ZerosOfLFunctions",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 537 changed lines since b8f3652. Checked the five added sections (8.4a, 8.5a, 8.6a, 8.7a, 9.1), the two added Lean statements of 8.6a and the rewritten routes of 8.5a and 8.7a: residues, archimedean series, constants and Checks recomputed (adversarial table with values); 24 library declarations opened at the pins; cross-roadmap citations of the new sections resolved. Seeded sample: only 8.6a and 8.8 fall in changed or affected text; Ihara-Murty-Shimura could not be fetched (HTTP 502), Milne checked at pp. 9 and 165. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 25 sorry warnings only; signature sweep and one-tactic probes clean. Previous R02, C01, C02 repaired; D01 resolved in RiemannHypothesisStatementsAndConsequences 8.4a(b). One small correction (module docstring does not place 8.4a, 8.5a, 8.7a); two questions for the author.",
+  "text": "42515038758c433e",
+  "carried": {
+   "from": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+   "head": "2899581178834dfb5955a6397cf27f8633e88c00",
+   "findings": 1,
+   "lines": 7,
+   "folders": [
+    "ZerosOfLFunctions"
+   ],
+   "corrections": true,
+   "onto": "03b2b5208b41ff0f22da039ba44f059c4f07d051"
+  }
+ }
+}
