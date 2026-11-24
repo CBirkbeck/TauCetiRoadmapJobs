@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdelicAlgebraicGroups~25",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "AdelicAlgebraicGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 0,
+  "notes": "review of the change against main: 653 changed lines since aecb53a. Checked: the six added subsections (1.5a, 2.6, 3.4a, 4.1a, 4.2a, 4.5a) recomputed statement by statement, with an adversarial table of 13 rows; the seeded targets that fall in the change (1.5a, 2.6, 3.4a, 4.1a, and the changed sentence of 2.5); locators read at the text in Oesterle (21), Borel (2), Rapinchuk (1), Arthur (1); Weil, Tate, Ono, Gross, Kneser and Platonov-Rapinchuk-Rapinchuk not readable. Library declarations named by the new text opened at the pins; cross-roadmap citations resolved on main and at the head; no layer, heading or Lean declaration removed; Suggested.lean identical to main's. Automatic checks all passed; dependency check 0 problems; elaboration exit 0 with 19 sorry warnings only. Five small corrections (the description omits this roadmap; 2.6 (iii) narrower than Oesterle III 3.3 while 4.1a needs the general case; missing locators; 4.5a against GeometryOfNumbersAndQuadraticArithmetic 3.3.4; one in untouched text, the Borel 5.5 locator of 1.5), none blocking; one question for the author; nothing for the human reviewers.",
+  "text": "cc51ecce1091bb2f",
+  "carried": {
+   "from": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+   "head": "644c332c1967a11b54bc8fedf1633861bbda5f1e",
+   "findings": 4,
+   "lines": 38,
+   "folders": [
+    "AdelicAlgebraicGroups"
+   ],
+   "corrections": true,
+   "onto": "82fec75ff49c328fa0572302ab970203e006a244"
+  }
+ }
+}
