@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ConsequencesOfTheRiemannHypothesisForDirichletLFunctions~3",
+  "head": "477bb488d18581c2236603e5c71afdbb473fd376",
+  "pr": 3027,
+  "folder": "ConsequencesOfTheRiemannHypothesisForDirichletLFunctions",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "All 15 seeded targets were verified against the cited supplier sections (at the head for suppliers this pull request changes, on main otherwise). 12 source locators were read in LZZ26, KL14, GM17, LN23 and Milne CFT v4.03. The README's numerical Checks were recomputed: the nine central values, the Johnston initial ranges, the Schoenfeld small range, the 2.4 thresholds and quotients, and the 3.3 least primes for q up to 1000; RamareSaouterGapRange was confirmed by a sieve (226229823 primes, maximum gap 354). Suggested.lean elaborates with only sorry warnings, #check shows no lost binders, and the one-tactic probe fails. Five omitted headlines (Lindelof, Littlewood, von Koch pi-Li, least nonresidue, class number) elaborate at the pins (R01). Dependency check: 0 problems. The worker's automatic checks all passed and none was set aside. Not verifiable: Davenport, Heilbronn and Schoenfeld 1976 (not readable legally through the service).",
+  "text": "55e47cf81849e984"
+ }
+}
