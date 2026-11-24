@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PDE~19",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "PDE",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 143 changed lines since b8f3652. Checked: the new sections 3.2a and 3.4a statement by statement with computed instances (n = 1, 2, 3; log|x|, |x|, |x|^2, dense-pole sum, disconnected domains); the sample target 3.4a and all 8 Demailly locators against the text (Hormander Theorem 4.1.9 not readable); the Tau Ceti and Mathlib declarations cited, at the pins; the two consumers; the previous review's findings (R01, C01-C05, N01 repaired; C06 is untouched text, kept as a small correction); the README record at the merge base (no layer or heading removed); automatic checks all passed; depcheck 0 problems; Suggested.lean unchanged and elaborates with sorry warnings only.",
+  "text": "7982fd725646cb13"
+ }
+}
