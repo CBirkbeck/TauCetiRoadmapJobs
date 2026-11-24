@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnabelianGeometryAndNonabelianChabauty~12",
+  "head": "e7914b5c68ad72646db1009572ad061c097a6312",
+  "pr": 3027,
+  "folder": "AnabelianGeometryAndNonabelianChabauty",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 29 changed lines since aecb53a. Checked: the new section 2.0a in full (lexicographic order and Lyndon words on small words; Radford's theorem on the empty, one-letter and two-letter alphabets in degrees 1-3; both Checks recomputed, including the characteristic-p control; the reduction to finite subalphabets and extension of scalars) against Hoffman, arXiv:math/9907173v1, section 2 and Theorem 2.2, read at the text; consistency with the word algebra of 2.0; no Lyndon-word or shuffle-algebra statement in the pinned Mathlib or Tau Ceti; the citations of 2.0a from BaseChangeAndGaloisRepresentationsForUnitaryGroups resolve. None of the seeded sample targets lies in the changed passage. Previous report: no findings; its three small corrections and one format note are not repaired (one concerns the change, C01; the others are in untouched text, C02, C03, N01, with the three locators re-read in bdii, stacks and kim2005). Merge base keeps all 8 layers, 0 deletions; Suggested.lean unchanged, lake env lean gives only the sorry warning, elaborated types compared with the README. Automatic checks all passed; depcheck 132 roadmaps, 1490 edges, 0 problems. Pull-request description consistent with this folder. Radford 1979 is paywalled and not read (flagged to the human reviewers, with the overlap of the Lyndon-word definition with the open CombinatoricsOfWords).",
+  "text": "2f5de7ff568da9f5",
+  "carried": {
+   "from": "e7914b5c68ad72646db1009572ad061c097a6312",
+   "head": "82fec75ff49c328fa0572302ab970203e006a244",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "AnabelianGeometryAndNonabelianChabauty"
+   ],
+   "corrections": true,
+   "onto": "5bd50e30b9a7e8923509b8ca22ada232e86e8cc2"
+  }
+ }
+}
