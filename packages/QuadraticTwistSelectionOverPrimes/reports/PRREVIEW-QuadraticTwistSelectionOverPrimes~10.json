@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuadraticTwistSelectionOverPrimes~10",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/QuadraticTwistSelectionOverPrimes",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "review of the change against main: 89 changed lines since 74a09b7 (README only: origin and method labels on 2.7a-2.7d, convention on corollaries, Corollary-of line in 2.7c, Jutila reference, rewritten Gallagher reference). Seeded sample 2.7a-2.7d checked: Gallagher 1970 Theorem 7, (29), p. 337 and its remark read in the open GDZ copy and agree; Jutila 1977 Theorem 1 not readable (host unclassified), consistent with AnalyticNumberTheoryPartI section 1.7; every new method claim checked against the formal proof (zero count C*Q^(1/4) at width 1/400, pair bound 2*q*q'*(1+|w|), PNT range C log M log(log M+2), window identity). Cited sections of AnalyticNumberTheoryPartI and RieszSumsOverPrimesAndExceptionalZeros resolved at this head. Automatic checks all passed; dependency check 0 problems; Suggested.lean unchanged, elaborates with sorry warnings only. Two format notes (Corollary-of line names a step, not a clause; 2.7b origin names no source).",
+  "text": "540fd914341cada4"
+ }
+}
