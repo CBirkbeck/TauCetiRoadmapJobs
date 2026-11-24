@@ -1,0 +1,68 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AlgebraicCircuitsAndValiantsClasses"
+
+[[source]]
+id = "Buergisser2024"
+authors = "Peter Bürgisser"
+title = "Completeness classes in algebraic complexity theory"
+year = 2024
+arxiv = "2406.06217v1"
+locator_scheme = "theorem"
+locator = "Def. 2.1"
+url = "https://arxiv.org/abs/2406.06217v1"
+fetched_from = "https://arxiv.org/pdf/2406.06217v1"
+fetched_at = "2026-11-24T01:29:26Z"
+sha256 = "099dc677b3bb60a579b5bd813f99308a18ac9a6494d72cd182d9f66fd3918cbb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["1.1"]
+
+[[source]]
+id = "ChabaudDeshpandeMehraban2022"
+authors = "Ulysse Chabaud, Abhinav Deshpande, Saeed Mehraban"
+title = "Quantum-inspired permanent identities"
+year = 2022
+venue = "Quantum 6, 877 (2022)"
+doi = "10.22331/q-2022-12-19-877"
+arxiv = "2208.00327v3"
+locator_scheme = "equation"
+locator = "(33)-(34)"
+url = "https://arxiv.org/abs/2208.00327v3"
+fetched_from = "https://arxiv.org/pdf/2208.00327v3"
+fetched_at = "2026-11-24T01:29:31Z"
+sha256 = "888aeca5b88de4a142087f3f5487395aad1f0ebba7d56711f680c7840c7fc3f6"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v3"
+cited_for = ["3.2"]
+
+[[source]]
+id = "ShpilkaYehudayoff2010"
+locator_scheme = "theorem"
+locator = "Thm 2.2"
+url = "https://www.cs.tau.ac.il/~shpilka/publications/SY10.pdf"
+fetched_from = "https://www.cs.tau.ac.il/~shpilka/publications/SY10.pdf"
+fetched_at = "2026-11-24T01:30:00Z"
+sha256 = "68e88d3878c19d38d26f1f1e91e632d0cb4f4bbc758da5265cded23c6880e4b2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["2.1"]
+
+[[source]]
+id = "CaiChenLi2010"
+authors = "Cai"
+title = "Quadratic Lower Bound for Permanent Vs. Determinant in any Characteristic"
+year = 2010
+venue = "computational complexity 19"
+doi = "10.1007/s00037-009-0284-2"
+locator_scheme = "theorem"
+locator = "Thm 2.2"
+url = "https://doi.org/10.1007/s00037-009-0284-2"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.1"]
