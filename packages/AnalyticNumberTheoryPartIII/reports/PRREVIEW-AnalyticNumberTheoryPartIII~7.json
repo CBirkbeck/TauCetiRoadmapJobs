@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticNumberTheoryPartIII~7",
+  "head": "8d0b5731912cd17cd062c13ea42cd6b7b25fdf2a",
+  "pr": 3027,
+  "folder": "AnalyticNumberTheoryPartIII",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review of the revision (one section added, 8.2a Hadamard's three-circles theorem; record against merge base 592bdb1 intact: 7 layers kept, 0 headings removed). Seeded sample 7.3, 7.4, 8.1, 8.1a, 8.2, 8.2a, 8.3, 9.3, 9.4, 10.2, 11.1, 11.3, 11.4, 13.1, 13.2: 51 locators checked in 11 cached sources. robinson1944 was read at the AMS Bulletin open archive (p. 795 states the theorem); it is missing from the package's sources manifest and was recorded only in a probe copy of the manifest. titchmarsh1986, montgomeryvaughan2007, brown1967 and the other book sources are settled as uncertified, and the dlmf-ch6 equations are not in the cache. Adversarial pass: 27 rows with recomputed values (Layer 11 series by Euler-product and zeta sums, 8.1b and 9.4 by quadrature, 13.1 by exhaustive search). Automatic checks all passed; depcheck 132 roadmaps, 1470 edges, 0 problems; diff outside the pull request's own folders empty; Suggested.lean elaborates with 27 sorry warnings only; a #check probe of all 35 declarations elaborates cleanly. Small corrections: stale citation 'ToeplitzOperators T1' (now §1.2), and the Suggested.lean docstring does not account for 8.2a. Format note: give robinson1944 p. 795. Overlap: the three-circles theorem is owned here and cited by RiemannHypothesisStatementsAndConsequences §3.2a; nothing else shared.",
+  "text": "0cdff8b4f0ee948b"
+ }
+}
