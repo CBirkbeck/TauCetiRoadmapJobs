@@ -96,3 +96,73 @@ status = "certified"
 accessed = "2026-11-21"
 version_note = "published Duke Math. J. pagination in the institutional copy; text recognised by OCR"
 cited_for = ["5.13d"]
+
+[[source]]
+id = "GerasimovKharchevLebedev2002"
+authors = "A. Gerasimov, S. Kharchev, D. Lebedev"
+title = "Representation Theory and the Quantum Inverse Scattering Method: The Open Toda Chain and the Hyperbolic Sutherland Model"
+year = 2002
+arxiv = "math/0204206v3"
+locator_scheme = "section"
+locator = "§§2, 4, 6"
+url = "https://arxiv.org/abs/math/0204206v3"
+fetched_from = "https://arxiv.org/pdf/math/0204206v3"
+fetched_at = "2026-11-24T10:12:56Z"
+sha256 = "911812e6068f384edb82fee9f23ed8f1f03e98c754c0fab86eb24663bfc7f93b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v3"
+cited_for = ["5.18a"]
+
+[[source]]
+id = "Godement1958"
+authors = "Roger Godement"
+title = "Série de Poincaré et Spitzenformen"
+year = 1958
+venue = "Séminaire Henri Cartan 10 (1957-1958), no. 1, exposé 10"
+locator_scheme = "section"
+locator = "§4, Théorèmes 5 and 5 bis"
+url = "https://www.numdam.org/item/SHC_1957-1958__10_1_A11_0/"
+fetched_from = "https://www.numdam.org/item/SHC_1957-1958__10_1_A11_0.pdf"
+fetched_at = "2026-11-24T10:13:43Z"
+sha256 = "8b190ae235db74d20325af7d5db9cacbc2c8c71b24febb752d082e75d2bd9763"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["5.14"]
+
+[[source]]
+id = "Jacquet1986"
+authors = "Hervé Jacquet"
+title = "Sur un résultat de Waldspurger"
+year = 1986
+venue = "Annales scientifiques de l'École normale supérieure 19"
+doi = "10.24033/asens.1506"
+locator_scheme = "section"
+locator = "§§1, 7, 9"
+url = "https://doi.org/10.24033/asens.1506"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1506.pdf"
+fetched_at = "2026-11-24T10:13:47Z"
+sha256 = "de1e37429acb87d161b224b6827a322006bcc8f3d46d766e14212e66e17fb547"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["5.15"]
+
+[[source]]
+id = "FlajoletSedgewick2009"
+authors = "Philippe Flajolet, Robert Sedgewick"
+title = "Analytic Combinatorics"
+year = 2009
+venue = "Cambridge University Press"
+locator_scheme = "section"
+locator = "Example I.20 and Note I.66, pp. 90-91; Example VII.4, pp. 449-450"
+url = "https://algo.inria.fr/flajolet/Publications/book.pdf"
+fetched_from = "https://algo.inria.fr/flajolet/Publications/book.pdf"
+fetched_at = "2026-11-24T10:17:28Z"
+sha256 = "f7bc98dfbfbc99716e19a0a0aa6f1750fb62acbf50b58d65731aabf161dccace"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["5.23"]
