@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ReductiveGroupsPartII~8",
+  "head": "855180da66cd42ed862a05c038358759f29d889e",
+  "pr": 3027,
+  "folder": "ReductiveGroupsPartII",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 86 changed lines since 74a09b7. Checked the added RG2.3.5a (statements (a) and (b), route, two Checks), the clause added to the RG2.3 introduction and the new reference, with computed instances (split, inert, unramified dyadic, ramified non-example); 2 of the section's 7 source locators read in Bruhat-Tits 1987, the 5 Tits (Corvallis) locators not readable legally; the 15 seeded sample targets lie in untouched, unaffected text; record comparison: 7 layers kept, no item removed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 11 sorry warnings only (file unchanged); automatic checks: four form hits in untouched Suggested.lean, none set aside; the folder's text is unchanged since the previous review, whose two small corrections and two format notes stand.",
+  "text": "dda9acd9cf88f1ae",
+  "carried": {
+   "from": "855180da66cd42ed862a05c038358759f29d889e",
+   "head": "7dfbeb7df1746d532d982742004fa26cd476136c",
+   "findings": 2,
+   "lines": 35,
+   "folders": [
+    "ReductiveGroupsPartII"
+   ],
+   "corrections": true,
+   "onto": "1373b5e897a1a3ca3c0de8b281e4aad52aa20224"
+  }
+ }
+}
