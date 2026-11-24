@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComplexComparisonPartII~37",
+  "head": "f5962309d479d79dfe3ffaa4510d0c700a748686",
+  "pr": 3027,
+  "folder": "ComplexComparisonPartII",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "review of the change against main: 1490 changed lines since 74a09b7. Checked: the repairs since 477bb48 (curve selection C-1.5 with its Checks and route, C7.9 closedness of weighted Bergman spaces, the C5.4e Check, Levi-form carriers, the five new Suggested.lean declarations) with computed instances, and a recheck of C7.13, C7.14 and C7.17; all six earlier remarks repaired; 13 locators (Demailly VIII.10.7, II.4.27, I.5.1, III.2.3, III.2.5-2.6 and the CurrentCalculus locators; Analytic Methods (12.20); Guan-Zhou Lemma 2.11), all as cited; 15 library declarations at the pins; record kept (8 layers, no id removed); dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with 7 sorry warnings; #check of the new declarations matches the README. Seeded sample: CurrentCalculus and analyticSetLocalFiniteMass checked, the rest untouched. Finding: R01 (P2) Hormander's theorem C7.1 is statable at the pins with Mathlib's Distribution.lineDerivCLM (test statement elaborated) but is listed as not statable and absent.",
+  "text": "2b28eec5b3b6590a"
+ }
+}
