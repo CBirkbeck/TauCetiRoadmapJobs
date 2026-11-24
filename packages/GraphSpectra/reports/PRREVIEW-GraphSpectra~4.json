@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GraphSpectra~4",
+  "head": "4dcfaf892e431be55cb48eb085729e0650f2a77f",
+  "pr": 3014,
+  "folder": "GraphSpectra",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full re-review. The previous finding (unowned lemmas on the grafting route of 3.4) is repaired and the route was recomputed. Adversarial table over every section with computed values; all 15 sampled targets covered. 57 of 106 source locators read against the text (all of Brouwer-Haemers, in the two versions on Brouwer's pages; one misplaced locator, C01); the 49 locators into CRS, Stanic, Biggs and Bapat were not readable. Elaboration: exit 0, 93 sorry warnings, nothing else; no set_option, no sorried data. One-tactic probe on all 93 theorems: none closes by rfl/simp; IsTree.le_largestEigenvalue follows in one term from Connected.largestEigenvalue_bounds (C02). Dependency check: 0 problems, no UPWARD or CYCLE. Cross-roadmap citations resolved on main and at open heads; overlap check found no second owner. Automatic check set aside: three Mathlib names ending in a prime taken for this roadmap's own.",
+  "text": "71885615fd95776b"
+ }
+}
