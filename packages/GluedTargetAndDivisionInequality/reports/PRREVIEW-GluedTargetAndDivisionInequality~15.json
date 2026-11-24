@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GluedTargetAndDivisionInequality~15",
+  "head": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 407 changed lines since 74a09b7. Checked: the Origin, Method and Corollary-of labels of the sampled sections (7.12, 8.1, 8.2, 8.3, 8.4, 8.5c, 8.7, 8.10, 8.20, 8.24, 8.24d, 8.24e) against the formal proof's declarations in the operator's local copy and its kernel export, against Bannai-Kobayashi, Gaudron-Remond and Bost at their locators, and against ten cited roadmap sections; adversarial table with computed values; the record (no heading or declaration removed); automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with only the sorry warning; one-tactic probes do not close the headline. No finding. Two small corrections (8.2 (c) not labelled as the roadmap's own form; the description omits the new suppliers) and two format notes carried from the previous review, unrepaired. One question for the author on the 8.3 Method label. Not verifiable: Bargmann 1961, Gillet-Soule 1992, Chowla-Selberg 1967 (no legal open copy); the local copy of the formal proof is at another commit than the cited one.",
+  "text": "c67e1c6d4ff20686",
+  "carried": {
+   "from": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+   "head": "adb8521b5105a738893eaf84c0eaa0665a28038c",
+   "findings": 2,
+   "lines": 7,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/GluedTargetAndDivisionInequality"
+   ],
+   "corrections": true,
+   "onto": "c4d2f89441b1436eb3bdd1fc51982f7b26a6c189"
+  }
+ }
+}
