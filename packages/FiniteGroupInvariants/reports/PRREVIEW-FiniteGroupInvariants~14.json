@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FiniteGroupInvariants~14",
+  "head": "477bb488d18581c2236603e5c71afdbb473fd376",
+  "pr": 3027,
+  "folder": "FiniteGroupInvariants",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 17 changed lines since aecb53a. Checked the new section 10.2a and its serre-bounds References entry. Theorem 2′ was read at its locator (serre-bounds lines 436-470, page 9 also on the PDF image). The statement was tested on n = 0, Q, Q(sqrt5), Q(sqrt-3) and Q(sqrt2) with l = 5. Check 1 was computed for odd l <= 43 and n < 40; Check 2 for the companion matrices at l = 3, 5, 7. The consumer HermitianFormsAndLattices 5.2 was resolved at this head. R01 (P2): the route takes Schur's bound over number fields from a citation only, and the Needs line's 10.2 cannot supply it (counterexample Q(sqrt2), l = 5, n = 2). C01: the description's generality sentence. N01: Downstream consumers. Seeded sample: 10.1 and 10.2 checked; the other 13 targets lie in untouched, unaffected text. Automatic checks all passed. depcheck: 132 roadmaps, 1472 edges, 0 problems. lake env lean on Suggested.lean (unchanged) exits 0 with 53 sorry warnings only. README at aecb53a against the head: no layer or item removed, retitled or renumbered. Nothing outside the pull request's own folders.",
+  "text": "f673a06258b6d31c"
+ }
+}
