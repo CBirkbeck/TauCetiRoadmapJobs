@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SeesawForThetaChains~12",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SeesawForThetaChains",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 157 changed lines since 74a09b7 (README only; Suggested.lean unchanged; no heading, layer id or section removed). Checked: the new origin labels against Wang 2311.14234v1 Thm 4.5, footnote 2 and §5.2, Furusawa-Morimoto 2205.09471v2 Prop 3.1 and Haan-Kwon 2605.04389v2 Thm 4.1; the method labels of 6.3, 6.5, 6.6, 6.7, 6.9, 6.10 and 6.12 against the formal proof in the operator's local copy; the Corollary-of lines of 6.9 and 6.10 against MetaplecticAutomorphicForms §§1.5, 2.5a, 3.7a and AdelicAlgebraicGroups §4.5a at this head, with computed instances; the changed 6.2c route against ThetaKernelsForUnitaryDualPairs §3.3b. Seeded sample checked where the change touches it (labels of 6.1, 6.2a-6.2d, 6.5-6.10, 6.13-6.15). Corrections: the 6.13 origin label contradicts the family's definition; the §3.7a (iii) contract drops the partition-length bound; the Haan-Kwon citation gives no setting. Automatic checks pass except the outside-folder check (false positive: the pull request's own folders); depcheck 132 roadmaps, 1472 edges, 0 problems; Suggested.lean elaborates with no message (no declarations). Pull request text: nothing about this folder contradicted.",
+  "text": "faa1a157b4f8bed0"
+ }
+}
