@@ -1,0 +1,203 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SelmerLengthBoundsAndLocalLifting"
+
+[[source]]
+id = "Pham 2023"
+authors = "Dat Pham"
+title = "Prismatic $F$-crystals and $E$-crystalline Galois representations"
+year = 2023
+arxiv = "2306.13205v2"
+locator_scheme = "section"
+locator = "§4.5, Definition 4.17, Proposition 4.18"
+url = "https://arxiv.org/abs/2306.13205v2"
+fetched_from = "https://arxiv.org/pdf/2306.13205v2"
+fetched_at = "2026-11-24T22:25:44Z"
+sha256 = "d77bb3831f09b377d721a218db1432203165659c7e882ded5b81de23ac8af1e4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2"
+cited_for = ["4.10e"]
+
+[[source]]
+id = "Abhinandan 2024b"
+authors = "Abhinandan"
+title = "Prismatic $F$-crystals and Wach modules"
+year = 2024
+doi = "10.1112/plms.70173"
+arxiv = "2405.18245v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/2405.18245v2"
+fetched_from = "https://arxiv.org/pdf/2405.18245v2"
+fetched_at = "2026-11-24T22:25:53Z"
+sha256 = "68e910850bf2916c71c4528aae4ffa6de4456f32ad310a9aa4e7d910cb0d1787"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2"
+cited_for = ["4.10e"]
+
+[[source]]
+id = "Gee–Liu–Savitt 2015"
+authors = "Toby Gee, Tong Liu, David Savitt"
+title = "The weight part of Serre's conjecture for GL(2)"
+year = 2015
+venue = "Forum of Mathematics, Pi 3 (2015), e2"
+doi = "10.1017/fmp.2015.1"
+arxiv = "1309.0527v2"
+locator_scheme = "theorem"
+locator = "proof of Theorem 5.4.1 (arXiv v2 numbering)"
+url = "https://arxiv.org/abs/1309.0527v2"
+fetched_from = "https://arxiv.org/pdf/1309.0527v2"
+fetched_at = "2026-11-24T22:40:04Z"
+sha256 = "25ba5f0e8feabc06e3c5652b8fe2dd020f3b2195dcb8c697bee078d4d848e5b8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2 read; its numbering is the one cited, the published numbering was not compared"
+cited_for = ["4.10a"]
+
+[[source]]
+id = "Chang–Diamond 2011"
+authors = "Seunghwan Chang, Fred Diamond"
+title = "Extensions of rank one (phi, Gamma)-modules and crystalline representations"
+year = 2011
+venue = "Compositio Math. 147 (2011), 375-427"
+doi = "10.1112/S0010437X1000504X"
+arxiv = "0910.2371v2"
+locator_scheme = "theorem"
+locator = "Theorem 7.8, Theorems 7.12 and 7.15 (arXiv v2 numbering)"
+url = "https://arxiv.org/abs/0910.2371v2"
+fetched_from = "https://arxiv.org/pdf/0910.2371v2"
+fetched_at = "2026-11-24T22:40:10Z"
+sha256 = "7a91dc705b2741434f49274914c86040ccd051cd05aa73db7cfbbb25f15ffa02"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2 read; its numbering is the one cited, the published numbering was not compared"
+cited_for = ["4.10a"]
+
+[[source]]
+id = "Min 2026"
+authors = "Yu Min"
+title = "Congruences of first syntomic cohomology groups"
+year = 2026
+arxiv = "2605.09987v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1, Theorem 1.10"
+url = "https://arxiv.org/abs/2605.09987v1"
+fetched_from = "https://arxiv.org/pdf/2605.09987v1"
+fetched_at = "2026-11-24T22:40:15Z"
+sha256 = "793597235f048c7d4be396e1764c362de56e80c12f2925007d33736bbc1869cb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["4.10e"]
+
+[[source]]
+id = "Fontaine–Laffaille 1982"
+authors = "Jean-Marc Fontaine, Guy Laffaille"
+title = "Construction de représentations $p$-adiques"
+year = 1982
+venue = "Annales scientifiques de l'École normale supérieure 15"
+doi = "10.24033/asens.1437"
+locator_scheme = "theorem"
+locator = "Théorèmes 3.3 and 6.1"
+url = "https://doi.org/10.24033/asens.1437"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.1437.pdf"
+fetched_at = "2026-11-24T22:40:18Z"
+sha256 = "c049a7bff113a45f8bbcffc93118bd2e651e84f8b4a38305f7cb24b34c2011a2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["4.10g"]
+
+[[source]]
+id = "Nekovář 2006"
+authors = "Jan Nekovář"
+title = "Selmer complexes"
+year = 2006
+venue = "Astérisque 310"
+locator_scheme = "section"
+locator = "§6.1, Theorem 7.8.6"
+url = "https://www.numdam.org/issues/AST_2006__310__R1_0/"
+fetched_from = "https://www.numdam.org/item/AST_2006__310__R1_0.pdf"
+fetched_at = "2026-11-24T22:40:35Z"
+sha256 = "61c84e5ad3252a2e520747215ac57a282addc2b58c824a3637bcd77bbe02153f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["3.22"]
+
+[[source]]
+id = "Benois–Nguyen Quang Do 2002"
+authors = "Denis Benois, Thong Nguyen Quang Do"
+title = "Les nombres de Tamagawa locaux et la conjecture de Bloch et Kato pour les motifs Q(m) sur un corps abélien"
+year = 2002
+venue = "Annales scientifiques de l'École normale supérieure 35"
+doi = "10.1016/s0012-9593(02)01104-7"
+locator_scheme = "theorem"
+locator = "Théorème 2.1"
+url = "https://www.numdam.org/item/ASENS_2002_4_35_5_641_0"
+fetched_from = "https://www.numdam.org/item/ASENS_2002_4_35_5_641_0.pdf"
+fetched_at = "2026-11-24T22:40:36Z"
+sha256 = "757be21a665557482f3d5ca812b005cb1a85fa312a7b6eec431ab302329b9ce9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["4.9c"]
+
+[[source]]
+id = "Iovita–Marmora 2015"
+authors = "Adrian Iovita, Adriano Marmora"
+title = "On the continuity of the finite Bloch–Kato cohomology"
+year = 2015
+venue = "Rendiconti del Seminario Matematico della Università di Padova 134"
+doi = "10.4171/RSMUP/134-6"
+version_note = "Numdam scan, text recognised by OCR"
+locator_scheme = "theorem"
+locator = "Theorem 4.1.6, Corollary 4.1.12"
+url = "https://numdam.org/item/RSMUP_2015__134__239_0/"
+fetched_from = "https://www.numdam.org/item/RSMUP_2015__134__239_0.pdf"
+fetched_at = "2026-11-24T22:42:05Z"
+sha256 = "16835b8f3a7eb364216d2be2165dbacb09c0e054e88b10d69254d46d29907c16"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["4.9c"]
+
+[[source]]
+id = "Bertolini–Darmon 1994"
+authors = "Massimo Bertolini, Henri Darmon"
+title = "Derived heights and generalized Mazur-Tate regulators"
+year = 1994
+venue = "Duke Mathematical Journal 76"
+doi = "10.1215/S0012-7094-94-07604-7"
+version_note = "copy on the page of one of the authors, retypeset and dated 2007; numbering as cited in the README"
+locator_scheme = "theorem"
+locator = "Lemma 2.21, Definition 2.22, Lemma 2.23; Theorems 3.18 and 3.21"
+url = "https://www.math.mcgill.ca/darmon/pub/Articles/Research/11.Derived-heights/paper.pdf"
+fetched_from = "https://www.math.mcgill.ca/darmon/pub/Articles/Research/11.Derived-heights/paper.pdf"
+fetched_at = "2026-11-24T22:42:06Z"
+sha256 = "1b124113675e8e7886d8f07c17ea4a167634366fe4644c3ccce5c3b78f1ba873"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["3.24", "3.25"]
+
+[[source]]
+id = "Bloch–Kato"
+authors = "Spencer Bloch, Kazuya Kato"
+title = "L-Functions and Tamagawa Numbers of Motives"
+year = 1990
+venue = "Progress in Mathematics"
+doi = "10.1007/978-0-8176-4574-8_9"
+locator_scheme = "theorem"
+locator = "Lemmas 4.4 and 4.5"
+url = "https://doi.org/10.1007/978-0-8176-4574-8_9"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled (the Grothendieck Festschrift I, 1990; the DOI is of the 2007 reprint); locator as attributed in Iovita–Marmora 2015, Remark 1.1.4 (1)(a)"
+cited_for = ["4.10c", "4.10g"]
