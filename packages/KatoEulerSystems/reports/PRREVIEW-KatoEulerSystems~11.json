@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KatoEulerSystems~11",
+  "head": "dd70a50443cd193d5736ffd90613d202e83d1488",
+  "pr": 3027,
+  "folder": "KatoEulerSystems",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "review of the change against main: 56 changed lines since 74a09b7. Checked: the new section 4.1a (statement, commutant route, three Checks) against Brown-Ghate 2003 and Ribet 1981/1985 at their locators (8 locators) and the LMFDB (38.3.b.a, a_5 = -1); the supplier citation AutomorphicGaloisRepresentations 5.1 on main; the record against the merge base (8 layers kept, one new id); ownership search over open heads and main (nothing shared); the dependency check (0 problems); the automatic checks (all passed); elaboration of Suggested.lean (sorry the only warning); the pull-request text. The seeded sample lies wholly in untouched, unaffected text. One format note on untouched text (a code-font name not declared at the pins), not blocking.",
+  "text": "faa1a157b4f8bed0"
+ }
+}
