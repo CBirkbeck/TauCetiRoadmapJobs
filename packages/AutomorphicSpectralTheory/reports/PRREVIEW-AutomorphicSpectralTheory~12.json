@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicSpectralTheory~12",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "AutomorphicSpectralTheory",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 4a2d22f. The folder is unchanged, so the previous findings were re-verified against the sources rather than against a repair: R01 (discrete clause of 6.4a omits Muller's eigenvalue-counting bound, Mul89 Theorem 0.1 with Clozel-Delorme giving Corollary 0.2, lines 78-85; README 4.9 covers only SL2(Z); the bound is stated only in the open AutomorphicSpectralTheoryPartII 4.5a, which consumes this roadmap) and R02 (Mul89 (8.6)-(8.7) and Corollary 8.8, pp. 83-84, work modulo Z(R)^0, so restriction of scalars misses [G]^1; GL1 over Q(sqrt 2) witness recomputed) not repaired; C01 (Dixmier-Malliavin factor class, AutomorphicFormsOnReductiveGroups 2.7 identical on main and head) and N01 (Mul98 locator) not repaired. FLM11 Remark 3 p. 10 re-read. Consumer DiscreteSeriesCoefficientsAndAutomorphicMetrics 9.1 cites 6.4a consistently. Seeded sample outside changed text (none), not re-checked. Automatic checks all passed; dependency check 132 roadmaps, 1479 edges, 0 problems; Suggested.lean unchanged, elaborates with two sorry warnings only; files changed outside the folder since 4a2d22f come from the merge of main, none outside the pull request's own folders against the base; PR text consistent with this folder.",
+  "text": "cc51ecce1091bb2f"
+ }
+}
