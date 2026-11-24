@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdelicAlgebraicGroups~24",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "AdelicAlgebraicGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "Incremental re-review of 0 changed lines since 4a2d22f. The folder diff is empty and main has not changed the folder since the merge base aecb53a. Of the folders changed since 4a2d22f, only AnalyticNumberTheoryPartI is cited, and only its unchanged §2.18a, re-read against 2.4 convergence-factors and 2.5 base change. Previous corrections C01-C03 are carried; C01 is updated, since the description now also names AlgebraicModuliForArithmeticGeometryPartII (444 lines inserted, against AdelicAlgebraicGroups' 621). New C04: the volume identity of 4.5a contains GeometryOfNumbersAndQuadraticArithmetic §3.3.4 with no citation either way. Borel Lemma 5.5 was re-read for C02. The external Lean-name citations resolve at this head. Dependency check: 0 problems, no UPWARD or CYCLE line. Gate: all checks pass except the outside-folder check, set aside as a false positive (115 files, all in the pull request's own folders). lake env lean on Suggested.lean exits 0 with 19 sorry warnings only; the 5 flagged binder drops are on definitions that do not use them. The adversarial table has 7 rows with computed values.",
+  "text": "cc51ecce1091bb2f"
+ }
+}
