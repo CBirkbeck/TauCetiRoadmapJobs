@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FrobeniusRestrictedRieszSums~13",
+  "head": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/FrobeniusRestrictedRieszSums",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "review of the change against main: 247 changed lines since 74a09b7. Checked: the Origin, Method and Corollary labels the change adds (sampled sections 0.1-0.9, 1.2, 1.4, 1.6, 1.7, 1.9) by computation and against the formal proof's source at commit 40e56ba (22 cited files exist, 23 declarations found, 7 statements read); the two corollary deductions (0.2 from QuasiRiemannHypothesis 5.4, 1.4 (b) from AnalyticNumberTheoryPartI 1.4e); the supplier sections cited at this head; the README at the merge base against the head (no layer, item or heading removed or retitled; Suggested.lean unchanged). Automatic checks all passed; depcheck 0 problems; lake env lean gives three sorry warnings only. Not readable legally: Ihara-Murty-Shimura 2009, Behrend 1946, Ruzsa 1993, Davenport, Washington. One small correction (the conditional Check of 1.4) and two format notes (no formal-proof locator in 0.7; label convention of the family index against this README), none blocking.",
+  "text": "43fe11c57def5b9b",
+  "carried": {
+   "from": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+   "head": "c3d5a4ce4a1abb881d0b7974d32496b411405f34",
+   "findings": 1,
+   "lines": 8,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/FrobeniusRestrictedRieszSums"
+   ],
+   "corrections": true,
+   "onto": "e26dccac666a846a455bff34b2105a4c046d3c85"
+  }
+ }
+}
