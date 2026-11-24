@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ChowFormsAndHeightsOfSubvarieties~11",
+  "head": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ChowFormsAndHeightsOfSubvarieties",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 62 changed lines since 71bbefa. Checked: the six remarks of the previous review (R01, C01, C03, C04 repaired; C02 partly repaired; N01 not repaired); the seeded sample where the change touches it, 5.1 against HeightsRationalPointsAndObstructions 5.17a.1, the new origin of 6.1 (i) against Philippon91 section 2, p. 266, the Soule91 Theoreme 3 and 3.7 wording, and 6.2 (a), (a7) against 5.9b.2; the DiophantineApproximationAndTranscendence 1.3a and Slopes 6.6 contracts; ownership of the Crofton formula, 6.1 (i) and 6.2 (b) across all READMEs; the pull request's text. Automatic checks: the worker's run passed; a rerun flags only the pull request's other folders (set aside). Dependency check: 0 problems. Elaboration of Suggested.lean: exit 0, no messages. BGS94 not readable (unclassified AMS host).",
+  "text": "b5663d133e64a5bd"
+ }
+}
