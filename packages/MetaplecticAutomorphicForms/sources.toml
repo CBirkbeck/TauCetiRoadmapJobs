@@ -158,3 +158,33 @@ status = "certified"
 accessed = "2026-11-24"
 version_note = "arXiv v1"
 cited_for = ["5.6a"]
+
+[[source]]
+id = "MVW87"
+authors = "Colette Mœglin, Marie-France Vignéras, Jean-Loup Waldspurger"
+title = "Correspondances de Howe sur un corps p-adique"
+year = 1987
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0082712"
+locator_scheme = "theorem"
+locator = "Chap. 3, IV, Théorème 5, p. 70; pp. 91-92"
+url = "https://doi.org/10.1007/BFb0082712"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["3.9a", "3.15", "5.6b"]
+
+[[source]]
+id = "Ichino07"
+authors = "Atsushi Ichino"
+title = "On the Siegel–Weil formula for unitary groups"
+year = 2007
+venue = "Mathematische Zeitschrift 255"
+doi = "10.1007/s00209-006-0045-8"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://doi.org/10.1007/s00209-006-0045-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.4a"]

@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MetaplecticAutomorphicForms~9",
+  "head": "a4d9b5d29eaf3a5dd49728378e400211c29d4aa4",
+  "pr": 3027,
+  "folder": "MetaplecticAutomorphicForms",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 252 changed lines since 74a09b7. Checked the repair of the previous round: R01 (5.6b Check) and R02 (3.3d (a) for any acting space, by doubling; the step recomputed) are repaired, as are four of the five small corrections; missing locators are partly repaired (C01). Recomputed the ten added sections (1.5, 2.5a, 3.3d, 3.7a, 3.9a, 3.22a, 5.6a, 5.6b, 6.4a, 6.4b) and the restated 6.13; the adversarial table has 17 rows with computed values. 15 locators read against the texts (HKS96, KV78, Howe89a, Howe89b, Li89, Kudla96). Seeded sample: only 1.5 lies in the changed text; 1.1 spot-checked. Nine cross-roadmap citations resolved at the head. No layer or item of the README at the merge base removed or renumbered. Dependency check 0 problems; automatic checks all pass; Suggested.lean unchanged, elaborates with four sorry warnings only; no file changed outside the roadmap folders. Not verifiable: Kudla94, Weil65, Ichino07, the unlocated classical sources, and the cut part of the description. One question for the author (the hypotheses of Ichino07 in 6.4a).",
+  "text": "faa1a157b4f8bed0"
+ }
+}
