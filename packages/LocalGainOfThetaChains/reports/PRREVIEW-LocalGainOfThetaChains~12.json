@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalGainOfThetaChains~12",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 530 changed lines since 74a09b7. Checked: every changed formal-proof attribution (4.11, 4.15c, 4.15d, 4.17d, 4.14f') against the declarations at the cited commit and the kernel export (the ten removed names absent from the export, the new ones present; all 148 names and 62 paths of the README resolve); Origin and method labels of the seeded sample (4.9d, 4.10a, 4.11, 4.12, 4.13, 4.14, 4.14b, 4.14f', 4.15b, 4.15c, 4.15d, 4.15f, 4.16, 4.17, 4.17b) against the formal proof and against Tange, Minguez, Bannai-Kobayashi and Dipper-Doty-Stoll (Finis, Rallis, Knapp, Mumford not readable); the Labels paragraph counted over all 40 sections; no statement, Check or item removed against the merge base. Automatic checks rerun: all pass except the outside-folder count, whose 118 files all lie in folders the pull request owns; depcheck 0 problems; Suggested.lean unchanged, elaborates with no message, declares nothing. Three small corrections (4.15a names no formal declaration; Origin citations without theorem numbers; the description's DeligneLusztigTheory paragraph describes an earlier head) and one format note.",
+  "text": "dda9acd9cf88f1ae"
+ }
+}
