@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicModuliForArithmeticGeometry~17",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "AlgebraicModuliForArithmeticGeometry",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 110 changed lines since 644c332. The change is 55 *Needs:* lines (42 rewritten from whole layers to sections, 13 new), all but two merged from main; no statement, Check, locator or Lean declaration changed. Resolved every cited section on main (SchemeAndStackFoundations 48 sections, AdicSpacesPartII 9, ResolutionOfSingularitiesCharacteristicZero 9, CrystallineCohomology CR.5.1, StableReduction Layer 2, ModularCurves 0E), every internal name and 8 library declarations at the pins. Seeded sample: the five targets in changed lines (1.5, 3.5, 7.6.1, 7.7, 9.4) checked; the other ten are untouched. Previous review had no findings. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with five sorry warnings only. Small corrections: three Needs glosses name what the cited section does not state (nef in SSF 5.3, quotients in SSF 1.14); the description does not say this roadmap gains 9.12. Format note: a namespace cited as a declaration.",
+  "text": "7982fd725646cb13",
+  "carried": {
+   "from": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+   "head": "92eeeaec28af143142fe3738f3860bdbb617cdea",
+   "findings": 2,
+   "lines": 8,
+   "folders": [
+    "AlgebraicModuliForArithmeticGeometry"
+   ],
+   "corrections": true,
+   "onto": "330c2235982426ae10c93cd06b6616c11daa3955"
+  }
+ }
+}
