@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchrodingerOperatorsAndSpectralTypes~5",
+  "head": "df223836f73ac646e03fd5fc36b35cdd4480291d",
+  "pr": 2424,
+  "folder": "SchrodingerOperatorsAndSpectralTypes",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 24 changed lines since 9ffa805: the change only rewraps six over-long lines of Suggested.lean (token-identical to 9ffa805 after collapsing whitespace, apart from a split `open scoped`); previous format note N01 repaired, no previous finding; adversarial rows computed for 1.2, 4.4 and the three rewrapped manifold signatures; title and description agree with the head; automatic checks all passed; dependency check 0 problems; elaboration gives 13 sorry warnings only; nothing changed outside the folder. Accepted conditional on the declared gaps weyl-criterion and spectral-integral-resolvent (UnboundedOperators UO-C02, UO-A02).",
+  "text": "6d83591919d6ca3b"
+ }
+}
