@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ComplexComparisonPartII~38",
+  "head": "c4d2f89441b1436eb3bdd1fc51982f7b26a6c189",
+  "pr": 3027,
+  "folder": "ComplexComparisonPartII",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 1603 changed lines since 74a09b7. Previous finding (C7.1 statable but absent) repaired: hormanderL2, hormanderL2_strict and hormanderL2_leviNorm elaborate at the pins and keep their binders, with signs and normalisations checked against Mathlib's Distribution.lineDerivCLM and Tau Ceti's leviForm and sharp on phi = c|z|^2. New statements of C-1.5, C0.1a, C5.4a-C5.4j and C7 rechecked by computed instances. 24 locators verified, including Demailly 1982 and Skoda 1972 read from Numdam for the first time. One finding (P1): C7.15 requires phi < phi_m everywhere, false where the Lelong number exceeds 2n/m (same slip in Analytic Methods Th. 14.12 (a)). One small correction: the C7.1 (b) citation covers only smooth weights. Seeded sample: 13 of 15 targets in untouched, unaffected text; CurrentCalculus locators checked. Automatic checks all passed; lake env lean gives ten sorry warnings only; depcheck 0 problems; overlap with SingularHermitianMetricsAndL2Methods runs one way (it cites this roadmap).",
+  "text": "240c8fcfb06a7e61"
+ }
+}
