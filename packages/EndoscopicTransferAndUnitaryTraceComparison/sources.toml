@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "EndoscopicTransferAndUnitaryTraceComparison"
+
+[[source]]
+id = "DeligneHenniart1981"
+locator_scheme = "theorem"
+locator = "Theorem 4.6"
+url = "https://publications.ias.edu/sites/default/files/Number43.pdf"
+fetched_from = "https://publications.ias.edu/sites/default/files/Number43.pdf"
+fetched_at = "2026-11-24T12:46:40Z"
+sha256 = "54fe3348af12263a8d3774a0353fff352cb041728f446fb0cccc4b0f97803a3e"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["10.26a"]
