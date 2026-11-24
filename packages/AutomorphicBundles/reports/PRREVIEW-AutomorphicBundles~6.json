@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicBundles~6",
+  "head": "4a2d22fe8cbc27e34f076618602c288115ccba78",
+  "pr": 3027,
+  "folder": "AutomorphicBundles",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "review of the change against main: 139 changed lines since 592bdb1. Checked the new sections 5.3a (goodness of invariant metrics relative to the canonical extension) and 5.3b (Hirzebruch-Mumford proportionality) and the five rewritten passages. Seeded-sample target 5.3a verified against Mumford77 (open GDZ scan): Main Theorem 3.1 p.256, Proposition 3.4 a) p.264, Theorem 3.2 pp.262-263, Theorem 1.4 pp.242-243, Proposition 1.2 p.241. The other sample targets lie outside the change. Harris89 not readable (publisher refused access). Adversarial values computed on X(N) and X(3), on a ball quotient (c1^2 = 3c2) and for the normalisation of v. 15 cross-roadmap citations resolved; record kept (13 layers, new ids 5.3a and 5.3b). Ownership: DiscreteSeriesCoefficientsAndAutomorphicMetrics 10.1-10.2 cite 5.3a-5.3b as corollaries. All automatic checks passed; dependency check 0 problems; Suggested.lean (unchanged) elaborates with only a sorry warning. Five small corrections (wording of the 5.3a proof sketch, the simple-normal-crossings hypothesis, Harris89 locator, the Suggested.lean docstring, the PR description) and one format note.",
+  "text": "d6f91f2b3d3b4c78"
+ }
+}
