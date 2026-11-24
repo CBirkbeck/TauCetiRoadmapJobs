@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsRationalPointsAndObstructions~16",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "HeightsRationalPointsAndObstructions",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 256 changed lines since b8f3652. Read in full: the thirteen added sections (5.9b.1-5.9b.2, 5.17a.1, 5.17c.1-5.17c.7, 5.17d.1, 5.17f.1-5.17f.2), the changed scope and supplier-contract sentences, the added references. Adversarial table: 20 rows with computed values, one per added statement. Seeded sample: 3 of 15 targets lie in the change (5.9b.1 recomputed, sources unreadable; 5.17c.2 and 5.17f.1 checked against Hsiao-Marinescu and Gaudron-Remond). 14 locators checked in 7 sources; 43 supplier section citations resolved at this head in 6 roadmaps. No heading, layer or Lean declaration removed. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 7 sorry warnings and no error (unchanged by the pull request). One small correction (description's summary of this roadmap's additions), one format note (proposed names in code font). Not readable: BGS 1994 (host unclassified), Philippon 1991 (paywalled).",
+  "text": "ff41d0f7d595e35f",
+  "carried": {
+   "from": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
