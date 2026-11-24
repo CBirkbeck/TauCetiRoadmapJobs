@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsLame~1",
+  "head": "956d5319a5c906b01378c3da8a24cbf2910877a9",
+  "pr": 3081,
+  "folder": "SpecialFunctionsLame",
+  "date": "2026-11-24",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. Sources: DLMF 29.1, 29.2, 29.3, 29.5, 29.6, 29.8, 29.9, 29.10, 29.12, 29.14, 29.15, 29.17 read at every cited equation (all correct); Whittaker-Watson Ch. XXIII read in the 3rd edition (13 locators, 2 wrong); Dassios, Gesztesy-Holden, Ronveaux, Kristensson not readable. All 15 sampled targets checked; eigenvalues, duality, coexistence signs, k->1 limits, double orthogonality and Whittaker's ratio recomputed by independent shooting; Hermite's invariant recomputed exactly for n = 0..5. Findings: ratio limit of 3.2 false at nu = -2n-1 (hypothesis nu >= -1/2 dropped, also in lameEc_even_fourier); wrong zero count in the proof sketch of 4.4; Mathieu 7.3 cited for a continued fraction it does not supply. Targeted build passes (22 sorry warnings); depcheck 0 problems; one-tactic probe closes none; the two automatic-check hits (choice in lameHermitePoly, header over #check lines) set aside with reasons.",
+  "text": "199a6b8ffaecee78"
+ }
+}
