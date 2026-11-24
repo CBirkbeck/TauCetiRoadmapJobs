@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicSpectralTheory~11",
+  "head": "4a2d22fe8cbc27e34f076618602c288115ccba78",
+  "pr": 3027,
+  "folder": "AutomorphicSpectralTheory",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 23 changed lines since 592bdb1. Checked the new section 6.4a (statement, cuspidal and discrete routes, Checks, locators, Needs line), the extended Layer 6 Dependencies sentence and the three new references. Mul89 (MPI preprint 88-31) read at Theorem 0.1 and Corollary 0.2 (p. 2) and at (8.6)-(8.7) and Corollary 8.8 (pp. 83-84); FLM11 authors' copy read at Remark 3 (p. 10); Tes09 6.3 locators of 0.8-0.9 checked; Mul98 is paywalled and was not read. Cited sections resolved: AutomorphicFormsOnReductiveGroups 2.7 dixmierMalliavin, OperatorIdeals OI-B30 and OI-B41, internal 0.8, 0.9, 3.4, 4.4, 4.5, 6.4, 6.17; consumer DiscreteSeriesCoefficientsAndAutomorphicMetrics 9.1 consistent. The seeded sample lies outside the changed text except 0.9 (checked). R01: the discrete clause's route omits Muller's eigenvalue-counting bound (Mul89 Theorem 0.1), stated only in the open AutomorphicSpectralTheoryPartII 4.5a, which consumes this roadmap. R02: Corollary 8.8 is on the quotient by Z(R)^0, so restriction of scalars does not reach [G]^1 (witness GL1 over Q(sqrt 2)). Automatic checks all passed; dependency check 0 problems; Suggested.lean unchanged and elaborates with sorry warnings only; all layer ids kept; nothing outside the pull request's folders.",
+  "text": "cc51ecce1091bb2f"
+ }
+}
