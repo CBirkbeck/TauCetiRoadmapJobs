@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelfAdjointSpectralTheory~13",
+  "head": "9288deef9a1151220c2c9016b92f92035ab63e26",
+  "pr": 1854,
+  "folder": "OperatorTheory/SelfAdjointSpectralTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 9288dee; this round read the pull request's title and description against the head: item counts (274 items, 154 In Tau Ceti, 29 Supplied by as stated; In Mathlib is 11, not 10: C01), suppliers against the merge base, references, Suggested.lean declarations and docstring, the OperatorTheory index paragraph; Part C ends with C.9, not the compact normal theorem (C02); the previous format note on SA-E37 is carried (N01). No seeded-sample target lies in a changed passage. Automatic checks all passed; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry warnings only. Adversarial rows computed for SA-E27/SA-E16, SA-E43 and SA-E37.",
+  "text": "cbf78205bfcad375",
+  "carried": {
+   "from": "9288deef9a1151220c2c9016b92f92035ab63e26",
+   "head": "9288deef9a1151220c2c9016b92f92035ab63e26",
+   "findings": 2,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
