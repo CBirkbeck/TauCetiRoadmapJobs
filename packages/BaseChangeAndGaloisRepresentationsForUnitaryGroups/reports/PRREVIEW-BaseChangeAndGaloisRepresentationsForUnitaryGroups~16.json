@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BaseChangeAndGaloisRepresentationsForUnitaryGroups~16",
+  "head": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BaseChangeAndGaloisRepresentationsForUnitaryGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "review of the change against main: 487 changed lines since 74a09b7. The folder's files are unchanged since the previously reviewed head c832fa9; the family index and EndoscopicTransferAndUnitaryTraceComparison §10.26a changed since and still agree with this roadmap. Recomputed every changed statement and Check (adversarial table, 17 rows, including the rank-5 twisted Gauss sums over F_4 by enumeration); six source locators read (Del73 Prop. 1.5, Hof99 Thm 2.2, Cog04 Lecture 5, Scholze Thm 1.2, BLGGT Thm 2.1.1, Guerberoff Thms 2.2-2.3); six library declarations opened at the pins; supplier sections resolved at this head; no layer or section removed or renumbered against the merge base. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no message (docstring only, no headline statable at the pins). No finding; small corrections C01-C05 and format note N01 carried from the previous review, C06 new (description omits two added suppliers). [FormalProof], the source with the largest share of locators, could not be read: left to the human reviewers.",
+  "text": "ad52851870018fda",
+  "carried": {
+   "from": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+   "head": "45eb2c268fd2f6951fcc93da52f0191dd1c97dc7",
+   "findings": 6,
+   "lines": 17,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/BaseChangeAndGaloisRepresentationsForUnitaryGroups"
+   ],
+   "corrections": true,
+   "onto": "fc02cdde8e0c3f4d987053ffbef660bac09bd6c5"
+  }
+ }
+}
