@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsJacobiElliptic~1",
+  "head": "eb82a198c7b0346596b3e2af4fcacec6ddca4c53",
+  "pr": 3075,
+  "folder": "SpecialFunctionsJacobiElliptic",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 9,
+  "format_notes": 2,
+  "notes": "Full review. All 33 sorried statements of Suggested.lean and the main README Check values recomputed numerically from the Lean definitions (three values of tau, moduli on and off the cuts, 44 points for arcsn); all hold. Seeded sample of 15 targets checked: 16 Whittaker-Watson locators (3rd ed. text) and about 40 DLMF equations read; nine paywalled books not readable (listed under Not verifiable and for the human reviewers). Supplier sections of SpecialFunctionsTheta resolved on main, local copies agree; pinned Tau Ceti and Mathlib declarations opened. Dependency check: 0 problems. Suggested.lean elaborates with sorry warnings only; one-tactic probe closes only a statement already marked a sanity check. One automatic form check set aside as a false positive (section comment holding the #check pins).",
+  "text": "5e6a7bf8517f1b66"
+ }
+}
