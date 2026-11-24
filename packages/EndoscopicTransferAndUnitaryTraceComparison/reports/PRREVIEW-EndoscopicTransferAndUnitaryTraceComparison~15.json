@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EndoscopicTransferAndUnitaryTraceComparison~15",
+  "head": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+  "pr": 3027,
+  "folder": "EndoscopicTransferAndUnitaryTraceComparison",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 30 changed lines since e47c8ec. Checked: the two earlier small corrections (10.1 local constant, CohCorr names) are repaired and the format note on 10.26a is carried; every supplier section the changed lines name was opened (ReductiveGroups 7.1 (a),(c),(d),(e) at this head; EtaleDualityAndPerverseSheaves 6.1-6.4; GL2AutomorphicRepresentationsAndTransfer R16.0.1, ClassicalArithmeticCompletion 7.12b and ArithmeticGaloisRepresentations 2.5, 2.7 on main); the Weil-Deligne constant of 10.1 computed on Sp(2); seeded target 1.3 checked against Labesse 2.3 (pp. 52-53); dependency check 0 problems; Suggested.lean elaborates with no output and declares nothing; the worker's automatic checks all passed. One small correction (the description does not state the 1.3 handover to ReductiveGroups 7.1), one format note, two bullets for the human reviewers.",
+  "text": "462159594e32a68f",
+  "carried": {
+   "from": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+   "head": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
