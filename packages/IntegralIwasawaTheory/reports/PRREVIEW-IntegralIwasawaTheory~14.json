@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IntegralIwasawaTheory~14",
+  "head": "9ea672ce1f16b1c2c00336d4c7b7a6451af53baf",
+  "pr": 3027,
+  "folder": "IntegralIwasawaTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 50 changed lines since 74a09b7. Folder identical to the head the previous review read (no findings then). Recomputed §10.5a and §12.3a with their routes and four Checks (adversarial table, 15 rows); read Schneider 1979 (§2 Satz 5, §6 Lemma 1) and Kolster–Movahhedi 2000 (pp. 41, 60) at the locators; Kolster 2009 not readable from a legal source (3 of 7 locators, question for the author and note to the human reviewers). Seeded sample: no target in changed or affected text. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; 13 layers of the merge-base README kept. One small correction (downstream sentence exact only for i≥2) and one format note, both carried over, not blocking.",
+  "text": "ef6cff53f2fbab1c",
+  "carried": {
+   "from": "9ea672ce1f16b1c2c00336d4c7b7a6451af53baf",
+   "head": "12f53c5fceefe368f4a7f264b0821521cacefe86",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "IntegralIwasawaTheory"
+   ],
+   "corrections": true,
+   "onto": "094da693be77c279419dce305d25388f6c40541a"
+  }
+ }
+}

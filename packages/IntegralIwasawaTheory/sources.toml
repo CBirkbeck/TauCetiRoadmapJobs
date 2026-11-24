@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "IntegralIwasawaTheory"
+
+[[source]]
+id = "Schneider1979"
+locator_scheme = "theorem"
+locator = "§2 Satz 5; §6 Lemma 1"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN266833020_0168/LOG_0020.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN266833020_0168/LOG_0020.pdf"
+fetched_at = "2026-11-24T13:58:41Z"
+sha256 = "231b18a272eaac14418dd371aed5e5a8e7c46144a0fd7c47b78e3e74e71bddd4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["10.5a"]
+
+[[source]]
+id = "KolsterMovahhedi2000"
+locator_scheme = "page"
+locator = "§1 p. 41; §3 p. 60"
+url = "https://www.numdam.org/article/AIF_2000__50_1_35_0.pdf"
+fetched_from = "https://www.numdam.org/article/AIF_2000__50_1_35_0.pdf"
+fetched_at = "2026-11-24T13:58:42Z"
+sha256 = "9cbd9bf56bf133dc6581a3403d81566880840fc574f6b3cc748e6ec7a0afe6b5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["10.5a"]
