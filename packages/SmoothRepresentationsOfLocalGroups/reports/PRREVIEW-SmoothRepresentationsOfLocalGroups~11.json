@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SmoothRepresentationsOfLocalGroups~11",
+  "head": "f3b4ab14a05b6b0b8f75246cddd04477c719addf",
+  "pr": 3027,
+  "folder": "SmoothRepresentationsOfLocalGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "review of the change against main: 306 changed lines since 74a09b7; checked the added SR.4.3a, SR.5.2a and Layer SR.7 and the edited overview, build order, conventions, scope and supplier contracts. Adversarial pass with computed instances on every added statement (Macdonald at n=2, lambda=(2,0); Zelevinsky clauses on GL_2 segments; depth-zero comparison on GL_1/GL_2; depth-zero supercuspidals at n=1 and GL_2(F_2)). 31 locators verified in Zel80, Hen02, Tad86, MP96, Dat09 (both numberings), HKP, BH-eff; Ber84, Mac, BK93, BH06 not readable. The seeded sample lies in untouched text. Record kept (no layer or item removed); RG2 and ReductiveGroups 7c/7e citations resolve on main; depcheck 0 problems; worker checks all passed; Suggested.lean unchanged and elaborates with sorry warnings only. Decision on published theorems leaving the family applied (LocalFactorsOfTwistsAndTypes and FiniteReductiveGroups cite the new sections).",
+  "text": "05cbf1fd43d77422"
+ }
+}
