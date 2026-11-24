@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StronglyRegularGraphsAndDesigns~2",
+  "head": "7dac2a2c3f77cc480e5d2c067092a5b663d71a80",
+  "pr": 3061,
+  "folder": "StronglyRegularGraphsAndDesigns",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 97 changed lines since be20d40. Checked: each previous remark (R01, R02, C01-C04, N02 repaired; N01 stands as a format note); the changed passages of the overview, 1.2, 1.3, 2.1, 3.2, 5.1, 5.4, 6.3, Downstream consumers, Scope and References, with computed instances for the changed statement IsSRGWith.param_eq_real (0 < n; empty-type control -5 != -4) and the new route of 2.1 (union counts; (10,6,4,2)); four Mathlib declarations opened at the pin; Nica's connectivity convention read in the arXiv version; the two downstream consumers resolved at their open heads; Suggested.lean elaborates with 40 sorry warnings and no error; one-tactic probe of the changed statement did not close; dependency check 0 problems; pull request text agrees with the head. BH and BVM locators remain unread (for the human reviewers).",
+  "text": "99efda472a95a528"
+ }
+}
