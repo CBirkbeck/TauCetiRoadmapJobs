@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelmerLengthBoundsAndLocalLifting~14",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SelmerLengthBoundsAndLocalLifting",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 296 changed lines since 74a09b7. The diff adds Origin and Method labels to all 18 sections, Corollary-of lines in 4.9a, 4.9b and 4.10b, a PadicHodgeRegulators 1.6 contract and 19 references; no statement changes. Seeded sample of 15 targets checked where the labels fall. Readable sources opened at their locators: Pham 4.5, GLS 2014 Lemma 9.3, Cherbonnier-Colmez IV.2.1, Abhinandan Thm 1.2, CGM Cor 3.16, Bertolini-Darmon 3.18, 3.21 and 2.21, Ozeki 2.3, CEGS 3.1, Chang-Diamond 7.8, GLS 2015 5.4, Abhinandan 2024b, Min, Fontaine-Laffaille. Formal proof read at 40e56bab: the 3.24 and 4.9a Method labels agree with it; all Layer 3 statements over D7 are in odd rank (C02). Not readable: Bloch-Kato, Kisin-Ren, Gras-Munnier, Mazur-Rubin, Nekovar, Kurihara, Iovita-Marmora, BNQD, Tate. Supplier sections AGNC 4.6, PHR 1.5-1.6, AGD D7.7.1 resolved. Automatic checks: all pass except the outside-folder check, whose 118 files are the pull request's own folders. Depcheck 0 problems; Suggested.lean unchanged and elaborates with no output.",
+  "text": "faa1a157b4f8bed0"
+ }
+}
