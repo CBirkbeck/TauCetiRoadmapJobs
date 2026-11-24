@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchurWeyl~9",
+  "head": "644c332c1967a11b54bc8fedf1633861bbda5f1e",
+  "pr": 3027,
+  "folder": "RepresentationTheory/SchurWeyl",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 51 changed lines since 74a09b7; checked the new section 8.4 ((GL_n, GL_m)-duality) by recomputing the decomposition, both action conventions, the highest weight lines and the three Checks; Howe-Umeda locators read in the open GDZ scan (pp. 565-619, (1.3'), (1.13)-(1.16), 11.1); ClassicalGroups 2.2/2.3/3.1/3.3, AutomorphicLFunctionsAndLocalFactorsPartII 4.4 and the consumers citing 8.4 resolved; dependency check 0 problems; Suggested.lean unchanged and elaborates with sorry warnings only; the seeded sample lies outside changed or affected text (6.1 Checks recomputed as an input of 8.4); automatic checks: the four Nonempty naming hits and the unresolved Lean name are real but in untouched text, raised as remarks",
+  "text": "05cbf1fd43d77422"
+ }
+}
