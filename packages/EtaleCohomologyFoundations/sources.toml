@@ -574,3 +574,39 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["F.1"]
+
+[[source]]
+id = "illusie-zheng-odds-and-ends"
+authors = "Luc Illusie, Weizhe Zheng"
+title = "Odds and ends on finite group actions and traces"
+year = 2013
+venue = "Int. Math. Res. Not. 2013, 1-62"
+doi = "10.1093/imrn/rnr226"
+arxiv = "1001.1982v3"
+locator_scheme = "theorem"
+locator = "Theorem 3.2"
+url = "https://arxiv.org/abs/1001.1982v3"
+fetched_from = "https://arxiv.org/pdf/1001.1982v3"
+fetched_at = "2026-11-24T11:52:37Z"
+sha256 = "61843a71cbcd814ee1b36c3844908522733d66ce7de5eb4a016d06f6a5558709"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "read in arXiv v3 (2010); the published version is paywalled and its numbering was not compared"
+cited_for = ["F.10.4a"]
+
+[[source]]
+id = "dudas-michel-2015"
+authors = "Olivier Dudas, Jean Michel"
+title = "Lectures on finite reductive groups and their representations"
+year = 2015
+locator_scheme = "theorem"
+locator = "Proposition 13.6"
+url = "https://webusers.imj-prg.fr/~jean.michel/papiers/lectures_beijing_2015.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~jean.michel/papiers/lectures_beijing_2015.pdf"
+fetched_at = "2026-11-24T11:52:45Z"
+sha256 = "843c1774f1dcb2e692e28a609f588c373ad04622cb40f5b04049e5bee20e377f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["F.2.5a"]
