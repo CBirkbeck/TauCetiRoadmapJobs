@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LaplacianSpectraAndSpanningTrees~1",
+  "head": "44fe428e5c8e1419f2487721dd4b72559d178492",
+  "pr": 3063,
+  "folder": "LaplacianSpectraAndSpanningTrees",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. One finding (P2): the minors of 11.3 are consumed from SurfaceTopology, which may not be cited as a supplier. Adversarial pass over all 30 subsections with computed values, the 15 sampled targets included; no stated result found false. Suggested.lean elaborates with sorry as the only warning (46); one-tactic probe on a copy closed none; elaborated types read against the README. Dependency check: 0 problems. All cross-roadmap citations resolved on main or at the open heads; the 22 copied declarations match their owners. Sources: only Spielman's manuscript was readable (3 locators confirmed); Bapat, Brouwer-Haemers, Biggs, Chung, Cvetkovic-Rowlinson-Simic, Godsil-Royle, Kurasov, Mohar and Naderi-Pankrashkin are listed as not verifiable. The sources service recorded Sp and Ku in the package manifest and BH and Ch as missing while fetching. Automatic checks: the supplier-name check is real (the finding); the process-word hits are part of the same finding; two primed Mathlib names flagged as undeclared were set aside as false positives; the empty section header is a format note.",
+  "text": "936db3efda2ed461"
+ }
+}
