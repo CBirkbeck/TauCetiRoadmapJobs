@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EntropyMethodAndProductConcentration~2",
+  "head": "67e34319779457e1900ac3f0d7bb3ed33bfab5d6",
+  "pr": 3057,
+  "folder": "EntropyMethodAndProductConcentration",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 104 changed lines since ffd3ac5. Checked: R01 and R02 of the previous review, both repaired (the route of 4.4 with f = t/(1 - a t/2) and step 7 of 6.3 recomputed, the new Checks recomputed numerically; SeriesOfIndependentRandomVariables 2.2 read at its open head); C01-C03, N02, N03 repaired, N01 withdrawn; the Fubini route of 3.2 re-derived; pull request description read against the head. Seeded sample: the targets falling in changed passages (3.2, 6.3, 7.1, 7.2) cite books that could not be read legally, so no new locator was checked. Automatic checks: one form hit set aside as a false positive (heading over the #check pins); dependency check 0 problems; Suggested.lean elaborates with sorry the only warning; no change outside the folder.",
+  "text": "def73ddffa183a80"
+ }
+}
