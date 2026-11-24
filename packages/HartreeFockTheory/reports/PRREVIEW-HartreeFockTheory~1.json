@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HartreeFockTheory~1",
+  "head": "ef64bcc90b0ba2b4967ae8f88f6b5859c12bb0ca",
+  "pr": 3042,
+  "folder": "HartreeFockTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review. Sample: all twelve targets 1.0-2.6; 21 locators read in the four cited open texts (Bach 2022, Bach-Lieb-Loss-Solovej 1993, Bach-Lieb-Solovej 1993, Cances-Le Bris 2000), all supporting the statements; Lieb 1981 and Coleman 1963 not readable (attributed without locators). Adversarial pass on every statement, with the many-body statements recomputed numerically from the Lean definitions. 34 library declarations and 5 cross-roadmap citations resolved. Automatic checks all passed; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes nothing; dependency check 0 problems.",
+  "text": "12107c911b3a146f"
+ }
+}
