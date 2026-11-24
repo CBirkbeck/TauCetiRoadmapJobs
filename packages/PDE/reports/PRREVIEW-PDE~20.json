@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PDE~20",
+  "head": "18a262ec35ea0eebff27db3c123178119987af68",
+  "pr": 3027,
+  "folder": "PDE",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "review of the change against main: 144 changed lines since 192ed92. The added sections 3.2a and 3.4a (the pull request's own change, identical to the previously reviewed text up to line wrapping) were recomputed on degenerate and sign-test cases in dimensions 1, 2, 3; the seeded sample target 3.4a and all eight Demailly locators were read in the source; Hormander Theorem 4.1.9 could not be read (not verifiable); the cited Tau Ceti and Mathlib names were opened at the pins; the record against the merge base keeps every heading; dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with sorry warnings only and is not changed by the pull request. Two small corrections (a proof-route justification in 3.4a (b); untouched text citing four names absent from the pins), no format note.",
+  "text": "8a98188c180a53ea",
+  "carried": {
+   "from": "18a262ec35ea0eebff27db3c123178119987af68",
+   "head": "6ff5aef021dc0124c2c55cc23e2c7b84f47271ba",
+   "findings": 1,
+   "lines": 5,
+   "folders": [
+    "PDE"
+   ],
+   "corrections": true
+  }
+ }
+}
