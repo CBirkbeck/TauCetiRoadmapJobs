@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MinimalSurfaces~19",
+  "head": "18e5a168295a890b3a9077c8f03ccd1c58eb716c",
+  "pr": 2491,
+  "folder": "RiemannianGeometry/MinimalSurfaces",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 18e5a16. Checked the pull request's title and description (opening summary, four bullets, prose) sentence by sentence against the head and the change from the base: none contradicted, no change unstated. Recomputed the statements of 7.8 the description cites (cone criterion at n = 3..8, weighted Hardy inequality, reduction constant, half-plane kappa = 1/5, RP^2 in RP^3, dilation scaling). Automatic checks all pass; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with five sorry warnings only. No source locator reopened this round. One format note carried (T2Space in the Lean statements of 4.2 and 5.1).",
+  "text": "94dcc44c035432b4"
+ }
+}
