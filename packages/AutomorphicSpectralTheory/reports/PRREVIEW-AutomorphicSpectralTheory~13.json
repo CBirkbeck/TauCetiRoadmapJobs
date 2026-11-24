@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicSpectralTheory~13",
+  "head": "644c332c1967a11b54bc8fedf1633861bbda5f1e",
+  "pr": 3027,
+  "folder": "AutomorphicSpectralTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "incremental re-review of 32 changed lines since 71bbefa. Checked: previous R01, R02, C01 and N01, all repaired. New §4.5a (Müller's discrete-spectrum bound): statement, Casimir signs, the μ comparison and the SL₂ Check thresholds recomputed; locators checked against Mül89 (Thm 0.1, remark on p. 3, §8, Prop. 8.5, Thms 5.10, 6.8, 7.1, 7.5) and FLM11 (end of §5.1, p. 14). Rewritten §6.4a: open subgroup, compact Dixmier–Malliavin, the Δ^{-2k} trace-class route, and the Cor. 8.8 and FLM11 Remark 3 locators. Seeded sample where the changed text cites it: §1.5 (Lan66 Lemma 3) and §2.4 (Art05 Thm 7.2(a)). New suppliers PseudodifferentialOperators §6.1 and SmoothBanachRepresentations §6.1 checked on main; Mathlib AnalyticOnNhd.sum_divisor_le checked at the pin. Overlap with AutomorphicSpectralTheoryPartII §4.5a: owner here. Automatic checks all passed; depcheck 0 problems; lake env lean shows only two sorry warnings. Three small corrections: Jensen vs Hadamard in §4.5a's route, the odd-τ quantifier in a Check, two suppliers missing from the description.",
+  "text": "68ef976c0bfed16c"
+ }
+}
