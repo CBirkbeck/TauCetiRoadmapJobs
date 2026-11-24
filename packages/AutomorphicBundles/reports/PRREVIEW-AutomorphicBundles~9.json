@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicBundles~9",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "AutomorphicBundles",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 143 changed lines since b8f3652. Checked the new sections 5.3a and 5.3b, the passages rewritten around them and the docstring of Suggested.lean; 9 source locators read in Mumford77 (GDZ scan) and Milne90 (author's page); 15 cross-roadmap citations resolved; repairs of the previous review's remarks confirmed (5 of 6 small corrections repaired, the deferred one resolved by the merge of main, the format note kept). Seeded sample: no target changed; 5.2's locator read. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probes fail on the headline. One small correction (the K_∞-unitarity hypothesis excludes ω on a modular curve) and one format note; one placement point for the human reviewers.",
+  "text": "9aedd0e947327cc2",
+  "carried": {
+   "from": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "head": "d170a9f77c0f5aa4d0108a6fdf5c773fd00eb3a8",
+   "findings": 1,
+   "lines": 22,
+   "folders": [
+    "AutomorphicBundles"
+   ],
+   "corrections": true,
+   "onto": "8ca4f95f7d5d36d1f3f0bd78e5d2afc568c22428"
+  }
+ }
+}
