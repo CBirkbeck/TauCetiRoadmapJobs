@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MinimalSurfaces~17",
+  "head": "f414bf7eaf2d02a570bda587fc0e75f12444c090",
+  "pr": 2491,
+  "folder": "RiemannianGeometry/MinimalSurfaces",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 7 changed lines since 6b081a3: the new item of 7.8 (stability in U implies the stability of 6.3, not necessarily two-sided) checked step by step (Kato equality for |V|, W^(1,2) approximation on a compact set, extension to ambient test functions because an embedded hypersurface is locally closed) and on RP^2 in RP^3 (4π > 0, converse fails) and the equatorial S^2 in S^3 (8π > 0, μ1 = -2); 6.1-6.3 and the rest of 7.8 read against it; Chodosh Theorem 23.4, §24 and Proposition 26.1 read in the cache for the seeded target 6.3; previous N01 repaired, N02 carried; title and description read against the head (one unstated change, C02); automatic checks all pass, depcheck 0 problems with no UPWARD or CYCLE line, Suggested.lean unchanged and elaborates with five sorry warnings only; nothing changed outside the folder.",
+  "text": "3837ef20fc281178",
+  "carried": {
+   "from": "f414bf7eaf2d02a570bda587fc0e75f12444c090",
+   "head": "18e5a168295a890b3a9077c8f03ccd1c58eb716c",
+   "findings": 2,
+   "lines": 8,
+   "folders": [
+    "RiemannianGeometry/MinimalSurfaces"
+   ],
+   "corrections": true
+  }
+ }
+}
