@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsAndFrobeniusPrimeSums~15",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsAndFrobeniusPrimeSums",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 299 changed lines since b8f3652; checked the Origin, Method and Corollary labels of 9.1-10.11, the new supplier ArakelovGeometryAndAbelianHeights 1A.4 and 1A.5 (b) against its text at the head (normalisation mu = 2 mu-hat consistent), the revised contracts with FiniteReductiveGroups 5.7 and SeesawForThetaChains 6.15 (a), the new 9.3 references (Bost 1996 Prop. 4.3, Sun arXiv math/0403440v2 section 7, Bufetov-Gorin arXiv:1311.5780v3 Thm 1.6 read; Harish-Chandra 1966 and Atiyah-Schmid 1977 paywalled), all 63 formal-proof locators of the sampled sections resolved in its source; the record against the merge base (no layer or item removed); automatic checks passed, dependency check 0 problems, Suggested.lean unchanged and elaborates with sorry warnings only; adversarial table of 21 rows; 3 small corrections, 1 format note, 1 question.",
+  "text": "1d3d35d463c2fc3d"
+ }
+}
