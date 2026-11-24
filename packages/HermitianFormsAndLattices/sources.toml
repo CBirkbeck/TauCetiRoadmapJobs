@@ -73,3 +73,20 @@ licence_class = "publisher-open"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["1.3"]
+
+[[source]]
+id = "Borel"
+authors = "Armand Borel"
+title = "Some finiteness properties of adele groups over number fields"
+year = 1963
+venue = "Publications mathématiques de l'IHÉS 16 (1963) 5-30"
+locator_scheme = "section"
+locator = "§2.1, Proposition 2.3, Theorem 5.1"
+url = "http://www.numdam.org/item/PMIHES_1963__16__5_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1963__16__5_0.pdf"
+fetched_at = "2026-11-24T15:28:29Z"
+sha256 = "678a378a947a25edd682942539cc9d22de47e8e141db0a19dd124e5138d2fedc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["4.5", "5.1", "5.2"]
