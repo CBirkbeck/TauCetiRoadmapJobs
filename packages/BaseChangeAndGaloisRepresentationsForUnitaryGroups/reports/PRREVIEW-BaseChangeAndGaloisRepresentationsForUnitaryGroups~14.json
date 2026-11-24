@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BaseChangeAndGaloisRepresentationsForUnitaryGroups~14",
+  "head": "f3b4ab14a05b6b0b8f75246cddd04477c719addf",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BaseChangeAndGaloisRepresentationsForUnitaryGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "incremental re-review of 8 changed lines since 71bbefa. The change repoints the citation of Brauer's theorem in degree zero (10.0a Corollary-of line, scope paragraphs, supplier contracts) from InductionRestriction Layer 6.1 to §6.2; checked against InductionRestriction at this head (after main's layout was merged, §6.1 is the virtual-character lattice and §6.2 the degree-zero theorem with H elementary), with 10.0a computed on S_3, Q_8 and the trivial group, and the sampled locator Del73 Prop. 1.5 / Scholie 1.6, p. 510 read in the text. Cited sections of suppliers changed since 71bbefa (AutomorphicLFunctionsAndLocalFactors, AutomorphicSpectralTheory, AnabelianGeometryAndNonabelianChabauty, ArithmeticGaloisDuality, AutomorphicFormsOnReductiveGroups) resolve with unchanged statements. The previous review had no findings; its corrections C01-C04 and note N01 are untouched and carried. Automatic checks all passed; depcheck 127 roadmaps, 1420 edges, 0 problems; Suggested.lean (unchanged, docstring only) elaborates with no messages; diff outside the pull request's own folders is empty.",
+  "text": "d02d8c799420be4c"
+ }
+}
