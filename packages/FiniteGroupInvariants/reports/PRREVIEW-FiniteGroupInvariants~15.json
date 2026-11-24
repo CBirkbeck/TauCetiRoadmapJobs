@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FiniteGroupInvariants~15",
+  "head": "7e87b98668ab8728ef06ededf1f75dc838f31fc1",
+  "pr": 3027,
+  "folder": "FiniteGroupInvariants",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 16 changed lines since 477bb48. Checked: R01 (route of 10.2a now by the minimal polynomial, verified step by step and on F = Q(sqrt5), Q(sqrt2), Q with l = 5, 7), C01 (description now names the 10.2a vanishing case) and N01 (HermitianFormsAndLattices consumer line, resolved against its 5.2 (c), (e) and contract) all repaired; the six Mathlib names of the new Needs line and contracts row elaborated with #check at the pin; seeded sample 10.1, 10.2, 10.2a against serre-bounds lines 100-192 and 426-465; automatic checks all passed; depcheck 0 problems; lake env lean on Suggested.lean exits 0 with 53 sorry warnings only; no layer removed or retitled; no change outside the pull request's own folders. One format note: the Needs line of 10.2a omits isRoot_cyclotomic_iff and the coprimality of X - 1 and Phi_l.",
+  "text": "b452986b8f3fe306"
+ }
+}
