@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuasiregularMaps~10",
+  "head": "7c7b748e8399fc2d913ff8e0204272fc70e283da",
+  "pr": 3034,
+  "folder": "QuasiregularMaps",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 315 changed lines since de93025; checked every changed passage and the passages it affects; previous review's R01, C01, C02, C04, N01 repaired, C03 and N02 no longer apply; seeded sample of 15 targets (1.5, 2.4-2.6, 3.1-3.3, 4.1, 4.4, 5.2, 5.3, 6.2, 7.2, 7.5, 7.6) computed, 22 locators into MartioRickmanVaisala1969, HeikkilaPankka2025 and Prywes2019 verified at their printed pages; 18 SobolevMapsBetweenManifolds names, TeichmullerGeometry 7.4 and RiemannianGeometry killingHopf_euclidean resolved on main; gate OK, depcheck 0 problems; Suggested.lean elaborates with five sorry warnings only, signatures match the README, no one-tactic closures; README record against main intact; one small correction (smooth-metrics convention narrows 7.6)",
+  "text": "e8a7bf659fb49db9"
+ }
+}
