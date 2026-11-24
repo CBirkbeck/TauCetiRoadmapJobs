@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-UniformWildKernelBounds~17",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/UniformWildKernelBounds",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 650 changed lines since b8f3652; checked every new origin, method and corollary label (the seeded sample of 15 sections in full: 0.2, 1.2, 3.14, 3.23, 4.1, 4.2, 4.6, 4.7, 4.8, 5.3, 6.1, 6.4, 6.5, 7.1, 7.5), the revised route of 1.1, the new supplier citations (IntegralIwasawaTheory 10.5a, GlobalGaloisDeformations 3.6a, ArithmeticKTheory 7.5, ExplicitNumberFields 5.3, BaseChange 16.1) and the new references; 11 source locators read, 235 of 235 formal-proof locators resolve; automatic checks all passed; dependency check 0 problems; Suggested.lean unchanged and elaborates with no messages; one small correction (origin label 'own formulation' on statements the formal proof has), one format note, one question; scope and licence of the formal proof left to the human reviewers",
+  "text": "462159594e32a68f"
+ }
+}
