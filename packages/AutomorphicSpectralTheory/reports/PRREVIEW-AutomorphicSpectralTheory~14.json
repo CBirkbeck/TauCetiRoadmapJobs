@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicSpectralTheory~14",
+  "head": "f3b4ab14a05b6b0b8f75246cddd04477c719addf",
+  "pr": 3027,
+  "folder": "AutomorphicSpectralTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 45 changed lines since 74a09b7. Checked: the two added sections (4.5a, 6.4a), the two Dependencies paragraphs, two supplier rows, one Mathlib bullet and three reference entries; every statement, inequality and Check recomputed (SL2 over Q, GL1 over Q(sqrt 2), trivial group); 7 locators read in Mül89 and FLM11; suppliers PseudodifferentialOperators 6.1, SmoothBanachRepresentations 6.1, OperatorIdeals OI-B30/OI-B41 resolved on main; Mathlib AnalyticOnNhd.sum_divisor_le opened at the pin; dependency check 0 problems; Suggested.lean elaborates with two sorry warnings only; automatic checks all passed. The seeded sample does not fall in the changed passages. The folder is unchanged since the previous review, whose three small corrections remain open; none blocks.",
+  "text": "55e47cf81849e984",
+  "carried": {
+   "from": "f3b4ab14a05b6b0b8f75246cddd04477c719addf",
+   "head": "a7f1bcc13a04ce4a6b84a54596045d890b1bc09e",
+   "findings": 3,
+   "lines": 9,
+   "folders": [
+    "AutomorphicSpectralTheory"
+   ],
+   "corrections": true,
+   "onto": "f1ab46c915edc35cfb3dc3ba3d360ba822aa7819"
+  }
+ }
+}
