@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CharacteristicPolynomialsAndStarComplements~2",
+  "head": "87fae501c3fb1ec4dabea72fa484eafd41aa03b1",
+  "pr": 3059,
+  "folder": "CharacteristicPolynomialsAndStarComplements",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full re-review. The previous review's finding R01 (two owners of Huang's theorem) and its corrections C01-C04 and notes N01-N02 are repaired at this head. Seeded sample 1.1-4.4: every statement recomputed on small and degenerate cases (adversarial table in the report); source locators read for Huang (Theorem 1.1, Lemmas 2.2, 2.3, proof) and Brouwer-Haemers (1.4.2, 1.4.6, 1.4.7, 2.5, Theorem 2.5.1, Corollary 2.5.4, the energy exercise); CRS Theorem 5.1.7 and the Bell-Rowlinson bound checked through arXiv restatements only; CRS itself, Biggs, Bapat, Naderi-Pankrashkin and Stanic not readable. Supplier citations resolved at the open heads and on main; dependency check 0 problems; Suggested.lean elaborates with 26 sorry warnings only; one-tactic probe closes none of the 26 statements; no library duplicate. One automatic check set aside as a false positive (a Mathlib lemma name read as the roadmap's own).",
+  "text": "bd8df174f9b2d64d"
+ }
+}
