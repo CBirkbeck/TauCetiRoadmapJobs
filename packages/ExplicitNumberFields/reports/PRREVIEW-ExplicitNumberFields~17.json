@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ExplicitNumberFields~17",
+  "head": "4a2d22fe8cbc27e34f076618602c288115ccba78",
+  "pr": 3027,
+  "folder": "ExplicitNumberFields",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 50 changed lines since 592bdb1. Checked: the new section 0.7 (statement, root-discriminant form, route, four Checks) recomputed and read against serre1981 lines 221-288 (fetched from Numdam through the sources service, which recorded the entry serre1981 in the package's sources.toml); the supplier sections Completed/NumberFieldArithmetic 4.2 and 6.4 opened on main; the consumer ThetaChainsOnDefiniteUnitaryGroups 2.6 read; library declarations opened at the pins; ownership searched on main and at the open heads (no second owner); README at the merge base against the head (nothing removed or renumbered); dependency check 0 problems; Suggested.lean unchanged and elaborates with sorry warnings only; automatic checks all passed. Of the seeded sample only 0.7 lies in changed text; the other fourteen targets are untouched and were not re-read. One small correction (the description does not name the new supplier) and one format note.",
+  "text": "1ba319c5b7d82c96",
+  "carried": {
+   "from": "4a2d22fe8cbc27e34f076618602c288115ccba78",
+   "head": "4a2d22fe8cbc27e34f076618602c288115ccba78",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
