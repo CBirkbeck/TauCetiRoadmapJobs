@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EtaleCohomologyFoundations~20",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "EtaleCohomologyFoundations",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 10 changed lines since 4b01d78: four *Needs:* lines (F.0.1 topological invariance, F.0.A1, F.0.A0, F.6) now cite sections instead of layers; all 12 cited sections of SchemeAndStackFoundations, AlgebraicCurves and BelyiMaps resolved on main and match what the lines say; the lines equal main's text. No statement changed; adversarial rows computed for the three statements whose Needs lines changed. Seeded sample: no target in the changed lines. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with six sorry warnings only. Previous format note N01 carried.",
+  "text": "9aedd0e947327cc2"
+ }
+}
