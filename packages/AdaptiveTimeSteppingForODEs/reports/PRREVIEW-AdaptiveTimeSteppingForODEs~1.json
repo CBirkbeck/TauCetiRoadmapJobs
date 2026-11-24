@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AdaptiveTimeSteppingForODEs~1",
+  "head": "a5c8d554aba463ab18fe1b8a4eef17765d84539d",
+  "pr": 3078,
+  "folder": "AdaptiveTimeSteppingForODEs",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 4,
+  "notes": "Full review. All 12 sampled targets and the headline theorems recomputed by hand (adversarial table in the report); Bogacki-Shampine coefficients and orders checked algebraically. Sources: Suli2022 and RanochaGiesselmann2024 read at their locators through the sources service (which recorded them in the package's sources manifest); BogackiShampine1989 paywalled, uncertified. Seven Mathlib declarations opened at the pin; supplier citations resolved on main; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning; unused-hypothesis and one-tactic probes run on a scratch copy. The one automatic check that failed (TeX-style subscript in the display of 2.1) is raised as a format note. Ownership searched against main and the open heads: no other owner.",
+  "text": "c2a4d23689637955"
+ }
+}
