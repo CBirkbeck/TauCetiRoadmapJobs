@@ -33,3 +33,76 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["References: arithmetic intersection numbers"]
+
+[[source]]
+id = "Soule91"
+authors = "Christophe Soulé"
+title = "Géométrie d'Arakelov et théorie des nombres transcendants"
+year = 1991
+venue = "Astérisque 198-200 (1991), 355-371"
+locator_scheme = "theorem"
+locator = "Théorème 3 (p. 366); 3.7 (p. 369)"
+url = "https://www.numdam.org/item/AST_1991__198-199-200__355_0.pdf"
+fetched_from = "https://www.numdam.org/item/AST_1991__198-199-200__355_0.pdf"
+fetched_at = "2026-11-24T07:29:01Z"
+sha256 = "43274a46e2846aa1e10aaaa19079d5109bd99fec3db5abdd2ac5d6227fc11d42"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["6.1"]
+
+[[source]]
+id = "CLT09"
+authors = "Antoine Chambert-Loir, Amaury Thuillier"
+title = "Mesures de Mahler et équidistribution logarithmique"
+year = 2006
+venue = "Ann. Inst. Fourier (Grenoble) 59 (2009), no. 3, 977-1014"
+arxiv = "math/0612556v2"
+locator_scheme = "theorem"
+locator = "Théorème 1.4"
+url = "https://arxiv.org/abs/math/0612556v2"
+fetched_from = "https://arxiv.org/pdf/math/0612556v2"
+fetched_at = "2026-11-24T07:34:27Z"
+sha256 = "16259f1cd06f5e1de5ccbbb5417d724d3018c2f5614a2d06bd07aa2e17d05ec5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2"
+cited_for = ["5.1"]
+
+[[source]]
+id = "CL10"
+authors = "Antoine Chambert-Loir"
+title = "Heights and measures on analytic spaces. A survey of recent results, and some remarks"
+year = 2010
+venue = "Motivic Integration and its Interaction with Model Theory and Non-Archimedean Geometry, vol. 2, p. 1-50, Cambridge University Press (2011)"
+arxiv = "1001.2517v2"
+locator_scheme = "section"
+locator = "1.2.5"
+url = "https://arxiv.org/abs/1001.2517v2"
+fetched_from = "https://arxiv.org/pdf/1001.2517v2"
+fetched_at = "2026-11-24T07:34:33Z"
+sha256 = "6ce81d57eda575a98b091af9335cd051fd69d756814cdcaf44483849c6658480"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2"
+cited_for = ["5.1"]
+
+[[source]]
+id = "Sombra05"
+authors = "Martin Sombra"
+title = "Successive minima of projective toric varieties"
+year = 2002
+arxiv = "math/0209195v2"
+locator_scheme = "theorem"
+locator = "Théorème 0.1"
+url = "https://arxiv.org/abs/math/0209195v2"
+fetched_from = "https://arxiv.org/pdf/math/0209195v2"
+fetched_at = "2026-11-24T07:36:17Z"
+sha256 = "c68e93d8f90b64948bb03099705a62787a94ecbee00250c0a950a84822619792"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2"
+cited_for = ["6.2 (a7)"]
