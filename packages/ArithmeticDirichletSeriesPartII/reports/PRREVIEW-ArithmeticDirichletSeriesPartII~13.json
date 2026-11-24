@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticDirichletSeriesPartII~13",
+  "head": "644c332c1967a11b54bc8fedf1633861bbda5f1e",
+  "pr": 3027,
+  "folder": "ArithmeticDirichletSeriesPartII",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "review of the change against main: 175 changed lines since 74a09b7. The folder is unchanged since the previously reviewed head 477bb48. Checked: the added sections 0.1b and 4.1a and hasLaplace_landau, recomputed in an adversarial table of 13 rows; Landau (1905) read at pp. 536-537 and 547-548; nine cited Mathlib and Tau Ceti declarations opened at the pins; elaboration (20 sorry warnings, nothing else) and a one-tactic probe; the dependency check (0 problems); the worker's automatic checks (all passed); the pull request's text and its changes outside the folder; overlaps with the eight closest roadmaps (nothing shared). The previous format note on the LSeries_eq_mul_integral bullet is not applied and is carried, non-blocking. Montgomery-Vaughan Lemma 15.1 could not be read (no open copy).",
+  "text": "68ef976c0bfed16c"
+ }
+}
