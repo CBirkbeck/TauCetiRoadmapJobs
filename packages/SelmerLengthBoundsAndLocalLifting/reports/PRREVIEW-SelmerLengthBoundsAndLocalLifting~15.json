@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelmerLengthBoundsAndLocalLifting~15",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SelmerLengthBoundsAndLocalLifting",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 296 changed lines since b8f3652. The folder is unchanged since the previously reviewed head. Checked: the Origin, Method and Corollary labels of all 18 sections; 9 source locators read at the text (Pham, Ozeki, Abhinandan 2024 and 2024b, Coupek-Gazaki-Marmora, Gee-Liu-Savitt 2014, Caraiani-Emerton-Gee-Savitt, Min, Fontaine-Laffaille), 11 sources not readable legally and the formal proof's files not opened; supplier sections resolved at the head (AnabelianGeometryAndNonabelianChabauty 4.6, PadicHodgeRegulators 1.5-1.6, ArithmeticGaloisDuality D7.7.1, NewtonPolygons 2.1-2.3, WachLattices 6.10); dependency check 0 problems; all automatic checks pass; Suggested.lean elaborates with no output and declares nothing; adversarial table of 18 rows with computed values.",
+  "text": "6bad368cb6f2fb16",
+  "carried": {
+   "from": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+   "head": "42ad97a244a6b8906052786c79574628c8496eeb",
+   "findings": 3,
+   "lines": 43,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/SelmerLengthBoundsAndLocalLifting"
+   ],
+   "corrections": true,
+   "onto": "3c4e23c75d9a1248a9e8708608318c6dfafff1d1"
+  }
+ }
+}
