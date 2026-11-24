@@ -16,3 +16,23 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["1.7a"]
+
+[[source]]
+id = "Berger09"
+authors = "Tobias Berger"
+title = "An Eisenstein ideal for imaginary quadratic fields and the Bloch-Kato conjecture for Hecke characters"
+year = 2007
+venue = "Compos. Math. 145 (2009), no. 3, 603--632"
+doi = "10.1112/S0010437X09003984"
+arxiv = "math/0701177v1"
+locator_scheme = "theorem"
+locator = "Theorem 7; proof of Theorem 6, steps (i) and (ii)"
+url = "https://arxiv.org/abs/math/0701177v1"
+fetched_from = "https://arxiv.org/pdf/math/0701177v1"
+fetched_at = "2026-11-24T20:28:06Z"
+sha256 = "7b839429cb89e3409c4126d5753bf10ff6605a4cb9c63d71ab5aa1b80176882d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["1.8c", "1.8d"]

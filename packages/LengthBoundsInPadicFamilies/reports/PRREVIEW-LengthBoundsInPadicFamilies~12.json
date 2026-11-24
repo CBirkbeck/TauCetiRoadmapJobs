@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LengthBoundsInPadicFamilies~12",
+  "head": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LengthBoundsInPadicFamilies",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "review of the change against main: 105 changed lines since b8f3652. Checked: the five Origin labels against Hida, JN13, Berger09, Dasgupta23 and OW24 (11 locators read); the five Method labels against the formal proof at its cited commit (8 declarations opened), one sentence of the 1.7a label wrong (C01: the proof does state 1.7a (4)); PadicFamilies 1.7a compared clause by clause; the seeded sample 1.7a, 1.8b-1.8e; adversarial table with computed values; record of the roadmap intact; Suggested.lean unchanged, elaborates with four sorry warnings, one-tactic probe open 4 of 4; automatic checks all passed; depcheck 0 problems. The two small corrections of the previous review are unrepaired and repeated (C02, C03). Urban01 not readable (paywalled).",
+  "text": "d5b7a9bc86463640",
+  "carried": {
+   "from": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+   "head": "59f60707e52a40afaa5ec3fd8e019208a138170f",
+   "findings": 3,
+   "lines": 15,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/LengthBoundsInPadicFamilies"
+   ],
+   "corrections": true,
+   "onto": "966100633e6db861345a1b5c06261ae30cfa7ce2"
+  }
+ }
+}
