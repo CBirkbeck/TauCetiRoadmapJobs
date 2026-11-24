@@ -17,3 +17,160 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["3.8e", "3.8f"]
+
+[[source]]
+id = "gaudronremond2013"
+authors = "Éric Gaudron, Gaël Rémond"
+title = "Minima, pentes et algèbre tensorielle"
+year = 2011
+arxiv = "1109.2812v1"
+locator_scheme = "theorem"
+locator = "Lemme 3.2"
+url = "https://arxiv.org/abs/1109.2812v1"
+fetched_from = "https://arxiv.org/pdf/1109.2812v1"
+fetched_at = "2026-11-24T18:00:45Z"
+sha256 = "5905e78a50a39dc339ba4f6dc54a355ffc94e9e3ad54cf8e04030e452c5db317"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["5.17f.1"]
+
+[[source]]
+id = "hsiaomarinescu2014"
+authors = "Chin-Yu Hsiao, George Marinescu"
+title = "Asymptotics of spectral function of lower energy forms and Bergman kernel of semi-positive and big line bundles"
+year = 2011
+venue = "Commun. Anal. Geom. 22 (2014), No. 1, 1-108"
+doi = "10.4310/CAG.2014.v22.n1.a1"
+arxiv = "1112.5464v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.8"
+url = "https://arxiv.org/abs/1112.5464v2"
+fetched_from = "https://arxiv.org/pdf/1112.5464v2"
+fetched_at = "2026-11-24T18:04:44Z"
+sha256 = "19bd24ef6fc3c8a3fc7292d913aad0f19a56b0f29de47e6c5ec5e4657855a100"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2"
+cited_for = ["5.17c.2"]
+
+[[source]]
+id = "chen2010"
+authors = "Huayi Chen"
+title = "Convergence of Harder-Narasimhan polygons"
+year = 2007
+arxiv = "0706.2649v1"
+locator_scheme = "theorem"
+locator = "Proposition 9.11"
+url = "https://arxiv.org/abs/0706.2649v1"
+fetched_from = "https://arxiv.org/pdf/0706.2649v1"
+fetched_at = "2026-11-24T18:04:58Z"
+sha256 = "c1103faf803b6a8a2f94ad53747997f1599aa7060432e01e24315c4b29d0cd64"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["5.17d.1"]
+
+[[source]]
+id = "berman2004"
+authors = "Robert Berman"
+title = "Bergman kernels and local holomorphic Morse inequalities"
+year = 2002
+arxiv = "math/0211235v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/math/0211235v1"
+fetched_from = "https://arxiv.org/pdf/math/0211235v1"
+fetched_at = "2026-11-24T18:05:57Z"
+sha256 = "4bacdaa73a823b2bd05ae1f215286e5afa933fb662e81ecba32e00000e7e21b2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["5.17c.4"]
+
+[[source]]
+id = "bbwn2011"
+authors = "Robert J. Berman, Sebastien Boucksom, David Witt Nystrom"
+title = "Fekete points and convergence towards equilibrium measures on complex manifolds"
+year = 2009
+arxiv = "0907.2820v1"
+locator_scheme = "theorem"
+locator = "0.3"
+url = "https://arxiv.org/abs/0907.2820v1"
+fetched_from = "https://arxiv.org/pdf/0907.2820v1"
+fetched_at = "2026-11-24T18:06:02Z"
+sha256 = "414d9f9bf8915af852a4aa682c86b2e11e6287f6243d3d27d745234b4c2a45e2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["5.17c.1"]
+
+[[source]]
+id = "gaudron2008"
+locator_scheme = "theorem"
+locator = "Théorème 7.1"
+url = "http://www.numdam.org/item/RSMUP_2008__119__21_0/"
+fetched_from = "https://www.numdam.org/item/RSMUP_2008__119__21_0.pdf"
+fetched_at = "2026-11-24T18:09:24Z"
+sha256 = "716ed1cde7222ccbaea836086afe4dfa32801a82a154dc0f28fe2d4e65d77320"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["5.17f.2"]
+
+[[source]]
+id = "chambertloirthuillier2009"
+authors = "Antoine Chambert-Loir, Amaury Thuillier"
+title = "Mesures de Mahler et équidistribution logarithmique"
+year = 2006
+venue = "Ann. Inst. Fourier (Grenoble) 59 (2009), no. 3, 977-1014"
+arxiv = "math/0612556v2"
+locator_scheme = "theorem"
+locator = "Théorème 1.4"
+url = "https://arxiv.org/abs/math/0612556v2"
+fetched_from = "https://arxiv.org/pdf/math/0612556v2"
+fetched_at = "2026-11-24T18:09:28Z"
+sha256 = "16259f1cd06f5e1de5ccbbb5417d724d3018c2f5614a2d06bd07aa2e17d05ec5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2"
+cited_for = ["5.17a.1"]
+
+[[source]]
+id = "sombra2005"
+authors = "Martin Sombra"
+title = "Successive minima of projective toric varieties"
+year = 2002
+arxiv = "math/0209195v2"
+locator_scheme = "theorem"
+locator = "§3"
+url = "https://arxiv.org/abs/math/0209195v2"
+fetched_from = "https://arxiv.org/pdf/math/0209195v2"
+fetched_at = "2026-11-24T18:11:02Z"
+sha256 = "c68e93d8f90b64948bb03099705a62787a94ecbee00250c0a950a84822619792"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2"
+cited_for = ["5.9b.2"]
+
+[[source]]
+id = "philippon1991"
+authors = "Patrice Philippon"
+title = "Sur des hauteurs alternatives. I"
+year = 1991
+venue = "Mathematische Annalen 289"
+doi = "10.1007/BF01446571"
+locator_scheme = "theorem"
+locator = "Théorème 2"
+url = "https://doi.org/10.1007/BF01446571"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.9b.1"]
