@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SmoothRepresentationsOfLocalGroups~13",
+  "head": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+  "pr": 3027,
+  "folder": "SmoothRepresentationsOfLocalGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 306 changed lines since b8f3652. Checked the new SR.4.3a, SR.5.2a and Layer SR.7 and the edited overview, scope and supplier contracts: 17 adversarial rows with computed values; 32 source locators read in Zel80, Tad86, Hen02, MP96, Dat09, HKP, BH-eff (Ber84, Mac, BK93, BH06 not readable); 10 supplier citations resolved on main and at the head; merge-base record kept (0 headings removed, 7 added); dependency check 0 problems; automatic checks all passed; Suggested.lean unchanged, elaborates with 12 sorry warnings only. The seeded sample lies in untouched text. One decision of the human reviewers applied. Previous review had no findings; its C01, N01, N02 stand.",
+  "text": "42515038758c433e",
+  "carried": {
+   "from": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+   "head": "966100633e6db861345a1b5c06261ae30cfa7ce2",
+   "findings": 2,
+   "lines": 8,
+   "folders": [
+    "SmoothRepresentationsOfLocalGroups"
+   ],
+   "corrections": true,
+   "onto": "d46b26f79973b1eb99d2b3b4ed2330dfe6e2a4f1"
+  }
+ }
+}
