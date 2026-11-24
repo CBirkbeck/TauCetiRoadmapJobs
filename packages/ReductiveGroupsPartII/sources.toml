@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ReductiveGroupsPartII"
+
+[[source]]
+id = "BruhatTits1987"
+locator_scheme = "section"
+locator = "3.9; §5 Théorème"
+url = "http://www.numdam.org/item/10.24033/bsmf.2073.pdf"
+fetched_from = "https://www.numdam.org/item/10.24033/bsmf.2073.pdf"
+fetched_at = "2026-11-24T15:40:27Z"
+sha256 = "56d7bbde274c3d1ab0aea3a655a133ab61af74f86ddcfa541d65ced46128e16a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["RG2.3.5a"]
