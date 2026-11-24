@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BanachSpaceTheory~19",
+  "head": "2f1f33bbe564635b504a8e9d164d8d990cc9e39c",
+  "pr": 1854,
+  "folder": "BanachSpaceTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 0,
+  "notes": "review of the change against main: 3925 changed lines since 2c2bcf5. Checked: the whole revised README against the README at the merge base (no layer or item removed, ids kept; trace duality narrowed as the description states); the previous review's three findings (all repaired); the seeded sample of 15 sections, with 17 locators read in the cached texts (van Neerven, Garrido-Jaramillo, Yosida-Hewitt, Heil) and 3 more (Pisier, AFJS, Bekka-de la Harpe-Valette); 31 pinned Tau Ceti declarations opened; cross-roadmap citations resolved on main and at this head; the adversarial table with computed values for 31 statements; the automatic checks (all pass), the dependency check (0 problems, no UPWARD or CYCLE) and the elaboration of Suggested.lean (24 sorry warnings only). Megginson, Albiac-Kalton, Conway, Ryan, Hewitt-Ross, Garling-Gordon, Pietsch, Enflo and Pisier's CBMS notes could not be read. Five small corrections (two stale pointers in B7, the build guide's omission of B4.0's use of 5.4 and 7.1, no stated order with pull request 3027, an incomplete list of changed statements in the description, an unneeded hypothesis in dvoretzky), none blocking.",
+  "text": "d45560efedd0a59f",
+  "carried": {
+   "from": "2f1f33bbe564635b504a8e9d164d8d990cc9e39c",
+   "head": "187b64d506837b9d1facc5b44f8dd1bd1a3353e2",
+   "findings": 5,
+   "lines": 12,
+   "folders": [
+    "BanachSpaceTheory"
+   ],
+   "corrections": true
+  }
+ }
+}
