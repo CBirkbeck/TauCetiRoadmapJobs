@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RiemannHypothesisStatementsAndConsequences~13",
+  "head": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RiemannHypothesisStatementsAndConsequences",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 439 changed lines since b8f3652. Checked every added Origin, Method and Corollary line and the passages of 3.2a, 8.4a (b), 8.4b, 8.8, 9.5 and 9.9 that now cite AnalyticNumberTheoryPartIII 8.2a, ZerosOfLFunctions 8.4a-8.7a and 9.1, and AnalyticNumberTheoryPartI 1.6a and 2.42a, each read at this head; the sample against Milne (2 places) and Carneiro-Chandee-Milinovich (2 places), the paywalled sources listed as not verifiable; the record against the README at the merge base (no layer or section removed; the human reviewers' decision applied to the route and Checks of 3.2a, the route of 8.8 and the Euler-Kronecker definition); the automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 13 sorry warnings only and no theorem closes under the one-tactic probe. The folder is unchanged since the previous review's head, so its two small corrections (description silent on the new supplier; 9.2 labelled as definitions) and one format note are repeated; none blocks.",
+  "text": "41eb68cd3555e116",
+  "carried": {
+   "from": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+   "head": "40b82a5146e991fcb0d4e34b5489a502377f491f",
+   "findings": 2,
+   "lines": 16,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/RiemannHypothesisStatementsAndConsequences"
+   ],
+   "corrections": true,
+   "onto": "4d4c8509ad30625103d67a4a8342af4837aea3ed"
+  }
+ }
+}
