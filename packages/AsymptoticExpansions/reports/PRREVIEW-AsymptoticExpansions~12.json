@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AsymptoticExpansions~12",
+  "head": "e7914b5c68ad72646db1009572ad061c097a6312",
+  "pr": 3027,
+  "folder": "AsymptoticExpansions",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "review of the change against main: 113 changed lines since aecb53a. Checked the new 4.1a and 13.6a (statements, routes, five Checks, with computed instances), the edited 4.4 bullet, the Layer 4 and 13 dependency lines, scope items 4 and 13, supplier contracts and references, against DLMF 1.14(iii) and Flajolet-Sedgewick Theorem IV.10 in the text and 13 library declarations at the pins; no seeded-sample target falls in the change; Widder 1941 not readable. Automatic checks all passed; depcheck 0 problems; Suggested.lean (unchanged) elaborates with 39 sorry warnings only. Three small corrections carried over from the previous review (unrepaired, folder unchanged): Mathlib complexMGF not cited in 4.1a, scope boundary sentence out of date, locators can name the exact statements.",
+  "text": "52370820c859def5",
+  "carried": {
+   "from": "e7914b5c68ad72646db1009572ad061c097a6312",
+   "head": "37e390255c32f56e63ff0f72a1130293652e3d4c",
+   "findings": 3,
+   "lines": 38,
+   "folders": [
+    "AsymptoticExpansions"
+   ],
+   "corrections": true,
+   "onto": "4da5b4cc00de4a362b5c5d35287ce1baf798b761"
+  }
+ }
+}
