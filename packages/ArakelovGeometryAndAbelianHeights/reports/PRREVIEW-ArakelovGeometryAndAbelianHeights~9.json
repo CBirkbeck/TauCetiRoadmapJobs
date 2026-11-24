@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArakelovGeometryAndAbelianHeights~9",
+  "head": "8d0b5731912cd17cd062c13ea42cd6b7b25fdf2a",
+  "pr": 3027,
+  "folder": "ArakelovGeometryAndAbelianHeights",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 666 changed lines since 592bdb1; checked every added section (1.2a, 1.5a, 1.5b, 1.6a, Layers 1A-1B, 5.1a-5.1d, conventions, supplier contracts, downstream consumers) with computed Checks; seeded targets 1.5b and 5.1a verified against Gaudron 2008 and Mumford 1977; all 105 new locators read in seven open sources (Gaudron, Bost 2001, Bost 1996, Chen, Chen-Moriwaki, Gaudron-Remond, Mumford); merge-base layers kept with ids; supplier sections and Tau Ceti/Mathlib declarations resolved at the pins; ownership against main and open heads (only the family's SlopesOfHermitianVectorBundles restates 1A.3-1A.5 under its Corollary-of convention, flagged for humans); worker gate passed; own gate clean except outside-folder for the PR's own folders; depcheck 0 problems; Suggested.lean unchanged, elaborates with no output",
+  "text": "0cdff8b4f0ee948b"
+ }
+}
