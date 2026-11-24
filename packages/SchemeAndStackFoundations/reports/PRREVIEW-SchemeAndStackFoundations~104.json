@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~104",
+  "head": "764265dd8dc377159ead691d22c9d174f4e8451f",
+  "pr": 2489,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 764265d. Checked: the pull request's title and description, sentence by sentence, against the folder's change from the merge base (13 README hunks, 4 docstring lines of Suggested.lean) and against the head, none contradicted and no change left unstated; the description's two claims about StackPointsAndResidualGerbes resolved on main; the previous format note (not repaired, carried as N01); the automatic checks rerun, all passing; the dependency check (0 problems, no UPWARD or CYCLE); elaboration of Suggested.lean (exit 0, 48 warnings, all sorry). The seeded sample falls in no changed passage and was not checked; adversarial table has six rows with computed values for the statements the description cites.",
+  "text": "c78a2faa582183bc"
+ }
+}
