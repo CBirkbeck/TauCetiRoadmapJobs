@@ -117,3 +117,40 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["1.7b"]
+
+[[source]]
+id = "KadiriNgWong2019"
+authors = "Habiba Kadiri, Nathan Ng, Peng-Jie Wong"
+title = "The least prime ideal in the Chebotarev Density Theorem"
+year = 2019
+arxiv = "1902.08640v1"
+locator_scheme = "theorem"
+locator = "Lemma 2.1 (i)–(ii), p. 3; (2.2) in the proof of Theorem 2.2, p. 4"
+url = "https://arxiv.org/abs/1902.08640v1"
+fetched_from = "https://arxiv.org/pdf/1902.08640v1"
+fetched_at = "2026-11-24T21:43:05Z"
+sha256 = "fbba23943375def124adaac94ac2060e9fd763cd105a1458246c3c31ef28578b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["1.7a"]
+
+[[source]]
+id = "ChirreHagenSimonic2022"
+authors = "Andrés Chirre, Markus Valås Hagen, Aleksander Simonič"
+title = "Conditional estimates for the logarithmic derivative of Dirichlet $L$-functions"
+year = 2022
+doi = "10.1016/j.indag.2023.07.005"
+arxiv = "2206.00819v2"
+locator_scheme = "section"
+locator = "Introduction"
+url = "https://arxiv.org/abs/2206.00819v2"
+fetched_from = "https://arxiv.org/pdf/2206.00819v2"
+fetched_at = "2026-11-24T21:43:11Z"
+sha256 = "8fe6a964da162d4d2de1d7e3db0b3804fda2ba67edf2154cde6c063a53dab6e0"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2"
+cited_for = ["1.4f"]
