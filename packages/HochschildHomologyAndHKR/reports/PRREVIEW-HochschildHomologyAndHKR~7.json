@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HochschildHomologyAndHKR~7",
+  "head": "d18fb7af049579d6636b70ef29360a275a5f8b9b",
+  "pr": 2447,
+  "folder": "HochschildHomologyAndHKR",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since d18fb7a; this round checked the pull request's title and description against the head: summary block, layer list, folder contents, supplier list and the paragraph on RefinedTraceMethods §1.8, each sentence against README and Suggested.lean. Previous C01 (description named a roadmap the README no longer names) repaired; new C01: the description's RefinedTraceMethods sections omit §1.10, cited in a Check of §6.3. Cross-roadmap citations resolved again on main and at the open RefinedTraceMethods head; no other roadmap cites this one. Adversarial rows computed for homological_hkr, cohomological_hkr, the §1.8 map and the §6.3 Check. Automatic checks all passed; depcheck 0 problems; elaboration gives 10 sorry warnings only. Seeded sample falls in no changed passage. N01 (three long lines) carried.",
+  "text": "e18a4468db2eab3a",
+  "carried": {
+   "from": "d18fb7af049579d6636b70ef29360a275a5f8b9b",
+   "head": "d18fb7af049579d6636b70ef29360a275a5f8b9b",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
