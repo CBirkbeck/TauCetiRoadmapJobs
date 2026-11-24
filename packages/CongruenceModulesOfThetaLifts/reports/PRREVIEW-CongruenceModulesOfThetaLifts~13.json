@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CongruenceModulesOfThetaLifts~13",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/CongruenceModulesOfThetaLifts",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 368 changed lines since aecb53a; checked the new Origin, Method and Corollary-of labels of all 20 sections (seeded sample 7.4, 7.5, 7.5a, 7.5b, 7.9, 7.6, 7.7a, 7.7c, 7.7d, 7.8, 7.10a, 7.10c, 7.15, 7.16, 7.16a) against GQT Thm 7.3(i), Dieulefait-Wiese Prop 6.1, Horesh-Karasik Prop B.5, Emerton-Gee-Herzig Lemma 4.5.1 and 7.4, and the BGK, Bartlett and CGM preprints; Yamana Thm 10.1(2) and Bloch-Kato Cor 3.8.4 not readable (paywalled); the revised 7.4 route and the narrowed 7.16a (2) against BaseChange 16.1 at the head and their consumers; new supplier citations PadicHodgeRegulators 1.5, GeometryOfNumbersAndQuadraticArithmetic 0.2.5, PadicFamilies 1.7a; automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates without warnings; no layer or item removed.",
+  "text": "52370820c859def5"
+ }
+}
