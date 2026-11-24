@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsOnDefiniteUnitaryGroups~13",
+  "head": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsOnDefiniteUnitaryGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 439 changed lines since b8f3652. Checked the Origin, Method and Corollary-of labels of the 31 sections, the seven general sections they name at this head, the five new supplier contracts, the rewritten descriptions in 3.3 and Downstream consumers, and the seeded sample; four published locators read at the text (Serre 1981, Bost, BLGGT, Serre Bounds), 56 formal-proof files and 81 declaration names resolved; adversarial table of 23 rows with computed values. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with no message and declares nothing. The folder is unchanged since the previous accepted review, whose three small corrections and one format note stand unrepaired. Gras-Munnier, Green, Shimura, Mumford, Howe, Weil, Gross 1999 and Kashiwara-Vergne not readable.",
+  "text": "f7e2f8464edf0344",
+  "carried": {
+   "from": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+   "head": "b9247da768a7e81b4047a384b0a6a03b815c8a4f",
+   "findings": 3,
+   "lines": 18,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ThetaChainsOnDefiniteUnitaryGroups"
+   ],
+   "corrections": true,
+   "onto": "23a54c46d51e34903ce85bbfd9d5852e455f7907"
+  }
+ }
+}
