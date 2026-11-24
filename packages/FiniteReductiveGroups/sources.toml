@@ -103,3 +103,38 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-24"
 cited_for = ["6.1"]
+
+[[source]]
+id = "ChanIvanov2019"
+authors = "Charlotte Chan, Alexander B. Ivanov"
+title = "On loop Deligne–Lusztig varieties of Coxeter-type for inner forms of GL_n"
+year = 2019
+venue = "Cambridge Journal of Mathematics, 11(2023), No. 2, 441-505"
+arxiv = "1911.03412v2"
+locator_scheme = "theorem"
+locator = "Proposition 4.4"
+url = "https://arxiv.org/abs/1911.03412v2"
+fetched_from = "https://arxiv.org/pdf/1911.03412v2"
+fetched_at = "2026-11-24T14:48:26Z"
+sha256 = "40f2d7f2c4de7c17e3deafc514cfaf6a6fd41de6b0b7591621771de75a8e3fcc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2, cited in that numbering; restates Digne–Michel (1991), Proposition 10.15"
+cited_for = ["3.4"]
+
+[[source]]
+id = "DudasMichel2015"
+authors = "Olivier Dudas, Jean Michel"
+title = "Lectures on finite reductive groups and their representations"
+year = 2015
+locator_scheme = "theorem"
+locator = "Propositions 13.7-13.9"
+url = "https://webusers.imj-prg.fr/~jean.michel/papiers/lectures_beijing_2015.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~jean.michel/papiers/lectures_beijing_2015.pdf"
+fetched_at = "2026-11-24T14:48:28Z"
+sha256 = "843c1774f1dcb2e692e28a609f588c373ad04622cb40f5b04049e5bee20e377f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["3.4"]
