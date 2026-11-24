@@ -1765,8 +1765,7 @@
             "tauceti:Bundle.ContMDiffRiemannianMetric.quotient",
             "tauceti:Bundle.ContMDiffRiemannianMetric.isLocalRiemannianIsometry_descend",
             "tauceti:TauCeti.isLocalDiffeomorph_quotientMk",
-            "roadmap:RiemannianGeometry R4 item 7",
-            "gap:orientation-descent"
+            "roadmap:RiemannianGeometry R4 item 7"
           ],
           "api": [],
           "tests": [
@@ -1989,17 +1988,6 @@
       "neededBy": [
         "2.8",
         "2.9"
-      ]
-    },
-    {
-      "slug": "orientation-descent",
-      "title": "Descent of orientations to orbit spaces",
-      "detail": "For a group acting freely, properly discontinuously by smooth orientation-preserving diffeomorphisms on an oriented connected manifold X, X/Γ has a unique orientation for which the orbit projection is orientation preserving at every point. DifferentialGeometry Layer 2 plans pullback orientations and the orientation double cover, not this descent; proposed for DifferentialGeometry, Part II.",
-      "needs": "For a group `Γ` acting freely, properly discontinuously and by smooth orientation-preserving diffeomorphisms on an oriented manifold `X`, the unique orientation of the orbit space `X/Γ` for which the orbit projection is orientation preserving at every point.",
-      "supplier": "DifferentialGeometry",
-      "section": "Layer 2 (missing section; proposed DifferentialGeometry, Part II)",
-      "neededBy": [
-        "7.5"
       ]
     }
   ]
