@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EtaleCohomologyFoundations~16",
+  "head": "477bb488d18581c2236603e5c71afdbb473fd376",
+  "pr": 3027,
+  "folder": "EtaleCohomologyFoundations",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 85 changed lines since aecb53a; checked the added sections F.2.5a and F.10.4a, the edited guide, scope paragraph, SchemeAndStackFoundations supplier row and references against dudas-michel-2015 Proposition 13.6, illusie-zheng-odds-and-ends Theorem 3.2, sga1 V section 1, SchemeAndStackFoundations section 1.17 on main and the pinned Tau Ceti finite-group quotient files, with computed examples; seeded sample lies outside the change except the two F.4.4 targets, both checked; automatic checks all passed; dependency check 0 problems; Suggested.lean unchanged and elaborates with sorry warnings only; finding: F.10.4a restricted to an algebraic closure of a finite field, narrower than Illusie-Zheng and unused by the route",
+  "text": "c67e1c6d4ff20686"
+ }
+}
