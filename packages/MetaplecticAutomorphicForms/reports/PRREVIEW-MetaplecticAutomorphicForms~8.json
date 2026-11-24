@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MetaplecticAutomorphicForms~8",
+  "head": "0b5086d93fa8e450c86bf7bec6afab0949229b41",
+  "pr": 3027,
+  "folder": "MetaplecticAutomorphicForms",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 5,
+  "format_notes": 0,
+  "notes": "review of the change against main: 254 changed lines since aecb53a. Read in full: the ten added sections (1.5, 2.5a, 3.3d, 3.7a, 3.9a, 3.22a, 5.6a, 5.6b, 6.4a, 6.4b), the restated 6.13 and the changed dependency, scope and contract paragraphs. The adversarial table has 23 rows with computed values (Bargmann kernel and norms at N=1, sign of the K-tilde action, the complex structure of 3.7a, Liu's segment, the ranges of 6.4a, unfolding in 6.4b). Locators checked against the text: Liu21, Wu13, Rallis84a (Numdam), GQT, Kudla96. Seeded sample: only 3.3d is in the changed text (checked through Wu13); 1.1 spot-checked. Findings: R01, a 5.6b Check wrongly says the lift convention matters for O(V) (Kudla96 IV Thm 1.6(i)); R02, 5.6a needs 3.3d (a) for a non-split acting space, which 3.3d does not state. The README at the merge base is kept (additions only). Dependency check 0 problems. Automatic checks all pass. Suggested.lean is unchanged and elaborates with four sorry warnings only. No file changed outside the folder. Not verifiable: HKS96, Kudla94, Weil65, Ichino07 and the unlocated classical sources.",
+  "text": "b452986b8f3fe306"
+ }
+}
