@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexComparisonPartII~40",
+  "head": "4b01d78f351640e8165b4ad852c22f2644bf71a4",
+  "pr": 3027,
+  "folder": "ComplexComparisonPartII",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 14 changed lines since 3b77a6a. Checked: the addition to C7.9 (separability of H(B, phi) and the diagonal kernel identity), recomputed on the unit disc with weights 0 and 2 log|z| and on the zero space; the changed Needs lines of C7.9 and C7.13; the citing sections of HeightsRationalPointsAndObstructions and SingularHermitianMetricsAndL2Methods; Mathlib Lp.SecondCountableTopology and HilbertBasis.hasSum_inner_mul_inner at the pin; the pull request text. The previous review had no finding. None of the 15 seeded sample targets lies in the changed passages. Automatic checks all passed; Suggested.lean elaborates with ten sorry warnings only; depcheck 0 problems. One small correction (unused hypotheses in the C7.9 addition), one format note.",
+  "text": "ef6cff53f2fbab1c",
+  "carried": {
+   "from": "4b01d78f351640e8165b4ad852c22f2644bf71a4",
+   "head": "14c6b44effbd005fb895ff79ee3c10ef4399c263",
+   "findings": 1,
+   "lines": 8,
+   "folders": [
+    "ComplexComparisonPartII"
+   ],
+   "corrections": true,
+   "onto": "12f53c5fceefe368f4a7f264b0821521cacefe86"
+  }
+ }
+}

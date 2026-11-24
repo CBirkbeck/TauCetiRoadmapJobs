@@ -203,3 +203,21 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-24"
 cited_for = ["C-1.5", "C7.12"]
+
+[[source]]
+id = "blocki-kolodziej-regularization"
+authors = "Zbigniew Błocki, Sławomir Kołodziej"
+title = "On regularization of plurisubharmonic functions on manifolds"
+year = 2007
+venue = "Proc. Amer. Math. Soc. 135 (2007), 2089–2093"
+doi = "10.1090/S0002-9939-07-08858-2"
+locator_scheme = "theorem"
+locator = "Theorems 1 and 2"
+url = "https://gamma.im.uj.edu.pl/~blocki/publ/appr.pdf"
+fetched_from = "https://gamma.im.uj.edu.pl/~blocki/publ/appr.pdf"
+fetched_at = "2026-11-24T14:01:48Z"
+sha256 = "052b776a4368fce0c598991ebbdeb7b6074ccdf248cfc765e89ab6b490e74529"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["C5.4j"]
