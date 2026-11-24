@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TensorInductionAndFiniteGroupInputs~10",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/TensorInductionAndFiniteGroupInputs",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 119 changed lines since b8f3652. Checked: the new Origin, Method and Corollary-of labels of 6.1, 6.2, 7.1 and 9.1 against SchurWeyl 8.4, ClassicalGroups 6.6b, InductionRestriction 5.3 and FiniteReductiveGroups 5.11 at this head; the seeded sample 6.1, 6.2, 7.1, 9.1 (Molev 2003 2.6, Def 2.26, Prop 2.27, Prop 2.35, Thm 2.36, 4.1 (4.1) and MNO 2.4-2.11 read; Shintani 1976, Gluck-Isaacs 1983, Isaacs 1976, Howe 1989/1995 and Molev 2007 not readable legally); two formal-proof files for 7.1; the record (no layer or item removed); automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry warnings only. The pull request head has moved to 2f58cc1, which does not change this folder.",
+  "text": "cdb52b915f25ebb5"
+ }
+}
