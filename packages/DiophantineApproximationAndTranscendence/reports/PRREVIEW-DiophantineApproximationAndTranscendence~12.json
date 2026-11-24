@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiophantineApproximationAndTranscendence~12",
+  "head": "477bb488d18581c2236603e5c71afdbb473fd376",
+  "pr": 3027,
+  "folder": "DiophantineApproximationAndTranscendence",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 136 changed lines since aecb53a. Checked the new §1.3a (spherical heights) and §§2.5a-2.5c (adelic heights H_A, submodularity, Northcott) with every Check recomputed; 17 new locators read in Philippon 1991, Roy-Thunder, Gaudron and Bost 2001 (BGS94 only through Bost's quotation); the two new definitions and two theorems of Suggested.lean compared with Tau Ceti height2, subspaceHeight, plucker, adeleExtension and ideleNorm at the pin; one-tactic probe fails on both theorems; seeded sample targets 1.3a and 2.5 in the change, the other thirteen untouched. Automatic checks all passed; dependency check 0 problems; elaboration 48 sorry warnings, no error. Small corrections: the two new theorems are definition checks, not headlines; README lacks the new Lean names and the Tau Ceti adeleExtension/ideleNorm contract; description omits the BanachSpaceTheory B7 supplier. One format note (two pages).",
+  "text": "1df1dd94c7facd00"
+ }
+}
