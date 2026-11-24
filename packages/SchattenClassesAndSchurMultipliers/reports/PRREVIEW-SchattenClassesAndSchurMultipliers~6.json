@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchattenClassesAndSchurMultipliers~6",
+  "head": "5e643e981430e83cd6fe5ef5f861cda913927de9",
+  "pr": 2421,
+  "folder": "SchattenClassesAndSchurMultipliers",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 52 changed lines since 7a68d30: the previous report had no finding; its format note N02 (§2.1 Needs §1.1) is repaired and N01 (§7.3 Check, Conjecture 1.8 wording) is carried as a format note. Checked the changed passages (build guide, §2.1 route and Needs, §3.5 definition sentence and Needs, §5.2 route and Needs, Layer 5 Dependencies) against every Needs line of Layers 2, 3 and 5 and the sections they name; five adversarial rows with computed values; three source locators in lafforgue-delasalle-2011 for the changed sections (the seeded sample falls in no changed passage, the diff adds no locator); schurCbNorm read against the new §3.5 sentence. Automatic checks all pass; depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean: 11 sorry warnings only, file unchanged since the previous head; nothing changed outside the folder; pull request text agrees with the head.",
+  "text": "d7f55fa23fd10d43"
+ }
+}
