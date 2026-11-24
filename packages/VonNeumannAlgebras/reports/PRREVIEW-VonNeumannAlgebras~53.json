@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-VonNeumannAlgebras~53",
+  "head": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+  "pr": 3027,
+  "folder": "VonNeumannAlgebras",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 44 changed lines since b8f3652. Checked: the added item V9.IntegrableDiscreteSeries (statement, conjugation convention and every step of the route recomputed from Schur orthogonality and on C2, C3, S3, SL2(R)); the BanachAlgebras 7.2-7.3 citations against that README; the record (14 layers, no heading or item removed); the seeded sample 13.1 and 13.2 (9 locators read in Hiai, Peterson, Anantharaman-Popa, Haagerup 2016; it lies outside the change); the automatic checks (all passed), the dependency check (0 problems) and the elaboration of Suggested.lean (33 sorry warnings only). Folder unchanged since the previous review, which had no findings; its small correction (second-countability narrower than source, supplier and consumer) and format note still apply. Barnes 1980 has no legal copy: not verifiable, flagged to the human reviewers.",
+  "text": "42515038758c433e",
+  "carried": {
+   "from": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+   "head": "03b2b5208b41ff0f22da039ba44f059c4f07d051",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "VonNeumannAlgebras"
+   ],
+   "corrections": true,
+   "onto": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9"
+  }
+ }
+}
