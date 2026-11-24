@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArakelovGeometryAndAbelianHeights~11",
+  "head": "e7914b5c68ad72646db1009572ad061c097a6312",
+  "pr": 3027,
+  "folder": "ArakelovGeometryAndAbelianHeights",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 666 changed lines since aecb53a. The folder is identical to the head the previous review accepted. Re-read every added section (1.2a, 1.5a, 1.5b, 1.6a, Layers 1A-1B, 5.1a-5.1d) and recomputed its Checks (adversarial table in the report); seeded sample checked where it falls in the change (1.2a, 1.5a, 5.1d) with 23 locators read in Gaudron 2008, Bost 2001, Bost 1996, Mumford 1977 and Faltings 1983; all new supplier citations resolved at this head; Tau Ceti and Mathlib declarations opened at the pins. Automatic checks all passed; depcheck 0 problems (no UPWARD or CYCLE); Suggested.lean elaborates with no output and has no declarations. Three small corrections (description omits 5.1a-5.1d and the new suppliers; Suggested.lean docstring does not name Layers 1A-1B; one locator in untouched 1.14) and two format notes, none blocking. One question for the human reviewers: the family's Corollary-of restatements of these sections.",
+  "text": "2f5de7ff568da9f5",
+  "carried": {
+   "from": "e7914b5c68ad72646db1009572ad061c097a6312",
+   "head": "1a5ed0ff959818120c2bfa82388c1c01fe6966a1",
+   "findings": 2,
+   "lines": 11,
+   "folders": [
+    "ArakelovGeometryAndAbelianHeights"
+   ],
+   "corrections": true,
+   "onto": "644c332c1967a11b54bc8fedf1633861bbda5f1e"
+  }
+ }
+}
