@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuasiregularMaps~11",
+  "head": "7c7b748e8399fc2d913ff8e0204272fc70e283da",
+  "pr": 3034,
+  "folder": "QuasiregularMaps",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 315 changed lines since de93025. Checked every changed passage: 24 rewritten locators against MartioRickmanVaisala1969, HeikkilaPankka2025 and Prywes2019 at their printed pages; the Wirtinger formulas of 1.5 and 2.10 and the restated 2.3 by computation; the seeded sample (1.4, 2.3, 2.7, 2.10, 3.3, 4.1-4.4, 5.1, 6.3, 7.1, 7.3, 7.5, 7.6); the 18 SobolevMapsBetweenManifolds declarations and the TeichmullerGeometry, RiemannianGeometry and SobolevDifferentialForms citations on main; library names at the pins. Automatic checks all passed; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry the only warning, signatures unchanged from main, one-tactic probe closes none of the five theorems. README keeps all seven layers and every item. One small correction (the smooth-metrics Conventions bullet narrows the local-isometry statement of 7.6), carried over from the previous review of this same head. Uncertified sources (Rickman1993, Vaisala1971, Ahlfors2006, Lee2012 and others) not read; their locators are unchanged.",
+  "text": "e8a7bf659fb49db9",
+  "carried": {
+   "from": "7c7b748e8399fc2d913ff8e0204272fc70e283da",
+   "head": "d774e3d952bb9235e365983dfd3f60eea6c7d252",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "QuasiregularMaps"
+   ],
+   "corrections": true
+  }
+ }
+}
