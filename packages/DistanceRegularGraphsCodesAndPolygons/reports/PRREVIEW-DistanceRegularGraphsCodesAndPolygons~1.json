@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DistanceRegularGraphsCodesAndPolygons~1",
+  "head": "b93bceaee6318a96422d9850bc4c8c80ed566117",
+  "pr": 3067,
+  "folder": "DistanceRegularGraphsCodesAndPolygons",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review. Two P2 findings, both false sentences outside the stated results: the Check of 6.2 gives (aQ)_2 = 4 where the value is 6, and the proof sketch of 7.2 takes radius < t-1 where t-1 inclusive is needed. Every theorem of the 15 sampled targets and of all nine layers was instantiated and computed (exact arithmetic for the predistance polynomials, the Lloyd counts 66/8/11/10, the Krawtchouk transforms and Lloyd zeros, the cometric and Q-polynomial order counts); all hold. Suggested.lean elaborates with 42 sorry warnings only; one-tactic probe closes none; 27 copied definitions identical to their owners; 33 supplier sections resolved at the open heads; dependency check 0 problems; pull-request text agrees with the head. No source locator was checked against its text: none of the six cited books could be read from a legal copy (listed under Not verifiable), so the wording and arrangement checks were not run; the printing of Brouwer-Haemers behind the page numbers is a question for the author. Automatic checks: the empty-section report is a false positive (the heading covers #check pins); the choice-in-a-definition report is raised as a small correction.",
+  "text": "926a0c35d0f8146e"
+ }
+}
