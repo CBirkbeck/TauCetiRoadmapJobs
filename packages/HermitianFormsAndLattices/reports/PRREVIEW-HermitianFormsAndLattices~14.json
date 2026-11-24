@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HermitianFormsAndLattices~14",
+  "head": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HermitianFormsAndLattices",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 1217 changed lines since b8f3652. Checked: the previous finding (0.2 and 7.2 targets restored, repaired), the previous small correction on 5.1 (repaired, Borel 2.1 and Proposition 2.3 read) and format note (repaired); the passages changed since the previous head (0.2, 2.5, 5.1, 5.3 (c), 5.4, 6.5, 7.2, scope, supplier contract); the fifteen seeded sections (1.1, 2.1, 2.2, 2.3, 2.5, 3.3, 4.0, 4.4, 4.11, 4.13, 5.2, 5.9, 6.1a, 6.4c, 7.2) by computation and against Kirschmer, Borel, Rapinchuk and Serre (12 locators) and the cited sections of GeometryOfNumbersAndQuadraticArithmetic, ReductiveGroups, MetaplecticAutomorphicForms, FiniteGroupInvariants, AdelicAlgebraicGroups and ThetaSeries at this head. Automatic checks: all passed; dependency check 0 problems; Suggested.lean elaborates with two sorry warnings only. One small correction (0.2 describes ReductiveGroups 9D.1 as restricted to characteristic not 2, which it no longer is). One question: the description could be read only in part, so the previous small correction on it was not re-checked. Decision of the human reviewers on published theorems applied to 3.4 and 5.3.",
+  "text": "d5b7a9bc86463640",
+  "carried": {
+   "from": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+   "head": "01ca9ebe702b1a5fb5c9ca04a4857093775c15ec",
+   "findings": 1,
+   "lines": 12,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/HermitianFormsAndLattices"
+   ],
+   "corrections": true,
+   "onto": "59f60707e52a40afaa5ec3fd8e019208a138170f"
+  }
+ }
+}
