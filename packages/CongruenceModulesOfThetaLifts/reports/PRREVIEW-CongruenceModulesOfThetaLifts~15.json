@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CongruenceModulesOfThetaLifts~15",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/CongruenceModulesOfThetaLifts",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "incremental re-review of 11 changed lines since 71bbefa. Checked: the rewritten convention on Corollary-of lines, against the family index at this head and against 7.7d, its only Corollary-of section. The bounds j_u <= n_u*m and dim H^1_f(E_u-bar, W*(1)) <= n_u*m were recomputed from PadicHodgeRegulators section 1.5 on main (with instances where H^0 is nonzero and a negative control), and the section's place in the Dependencies, the Scope and the supplier contracts was confirmed. The previous review raised no finding; its C01, C02, N01 and N02 are untouched and carried. The pull request's title and description were read against this head. The seeded sample lies outside the changed passage and stands as verified at 71bbefa. Automatic checks: all passed; depcheck reports 0 problems; Suggested.lean elaborates with exit 0 and no warnings (no declarations). No files changed outside the pull request's own folders.",
+  "text": "1df1dd94c7facd00"
+ }
+}
