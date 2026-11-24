@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ComplexKahlerGeometry~103",
+  "head": "477bb488d18581c2236603e5c71afdbb473fd376",
+  "pr": 3027,
+  "folder": "ComplexKahlerGeometry",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 153 changed lines since aecb53a; checked the new sections 3.5a (extension of dbar-equations across nowhere-dense analytic sets) and 4.2a (curvature of sub-bundles and quotient bundles, Griffiths' flat indefinite case), the K6.0 Nakano sentence and the changed dependency, scope and reference lines, with computed signs, degenerate and indefinite examples; 15 locators read in Demailly's book, Demailly 1982, Skoda 1972 and Griffiths 1970; seeded sample checked where it falls in affected text (3.5, 6.1); dependency check 0 problems; worker's automatic checks all passed; Suggested.lean unchanged and elaborates with sorry warnings only; no layer or item removed; overlap and ownership checked against open pull requests and main.",
+  "text": "55e47cf81849e984"
+ }
+}
