@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IntegralIwasawaTheory~13",
+  "head": "0b5086d93fa8e450c86bf7bec6afab0949229b41",
+  "pr": 3027,
+  "folder": "IntegralIwasawaTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 50 changed lines since aecb53a. Checked the added sections 10.5a and 12.3a, the added downstream sentence and the two added references. Statements, routes and all four Checks were recomputed: the Sha/coinvariant duality, the S-range and parity of 12.3a, and the p=7 Check. Locators verified: Schneider 1979 Satz 5 p.186 and section 6 Lemma 1 pp.199-200; Kolster-Movahhedi 2000 p.41 and p.60. Kolster 2009 not verifiable (host in no licence class). None of the seeded sample falls in the changed text. Merge-base layers kept. Automatic checks all passed; depcheck 0 problems; Suggested.lean unchanged and elaborates with sorry warnings only. Overlap and ownership checked against the closest roadmaps and the consumers BernoulliBoundsForClassGroupEigenspaces and UniformWildKernelBounds.",
+  "text": "5204b89c9c3fb111"
+ }
+}
