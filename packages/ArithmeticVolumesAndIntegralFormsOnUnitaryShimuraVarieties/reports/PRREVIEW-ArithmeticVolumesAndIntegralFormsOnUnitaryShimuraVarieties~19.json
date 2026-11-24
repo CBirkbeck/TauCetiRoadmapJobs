@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~19",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 15 changed lines since 374b9ce. Checked: the new Sources entry of 8.17a against the two formal-proof theorems it names (threshold 8N+4 on both sides, level and deeper-level hypotheses item by item, the one shared named premise; files present at the first commit, names in the kernel export); the seven supplier sections newly cited in the Needs lines of 8.14 and 8.19a, opened at the head and on main; previous C01 repaired, N01 carried; one new small correction (supplier contract for AutomorphicBundles lacks section 12.15). Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning; description read against the head, nothing contradicted. Seeded sample: 8.14, 8.17a and 8.19a fall in the changed passages and were checked there.",
+  "text": "ff41d0f7d595e35f",
+  "carried": {
+   "from": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "head": "330c2235982426ae10c93cd06b6616c11daa3955",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties"
+   ],
+   "corrections": true,
+   "onto": "54b402eb69f1197c137cd88701b622456dcc82dc"
+  }
+ }
+}
