@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ColemanIntegration~11",
+  "head": "cc29686235911ce38099e03eb40a5f646030c5bb",
+  "pr": 2864,
+  "folder": "ColemanIntegration",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since cc29686; this round checked the pull request's title and description against the head, claim by claim (pins, one-file diffstat, unchanged layers and Suggested.lean, supplier dropped and added, L0.1-L0.5 In Tau Ceti lines, L0.10 on Mathlib's logarithm with the ContinuousSMul hypothesis of the Tau Ceti theorems opened at the pin, induction, open-disc and evaluation declarations, namespaces): one small correction (the summary places the zeta-series correction in the contracts; it is in L2.30). The previous report had no finding; its two format notes are carried. The seeded sample falls in no changed passage. Automatic checks all passed on a rerun; depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean gives only five sorry warnings. Adversarial table has computed rows for L0.10 and the statements the description cites.",
+  "text": "c173b31e071142ab",
+  "carried": {
+   "from": "cc29686235911ce38099e03eb40a5f646030c5bb",
+   "head": "cc29686235911ce38099e03eb40a5f646030c5bb",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
