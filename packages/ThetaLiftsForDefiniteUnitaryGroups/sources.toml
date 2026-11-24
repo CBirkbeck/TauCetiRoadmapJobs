@@ -134,3 +134,54 @@ licence_class = "operator-local"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["References"]
+
+[[source]]
+id = "Rallis1984Howe"
+authors = "Stephen Rallis"
+title = "On the Howe duality conjecture"
+year = 1984
+venue = "Compositio Mathematica 51 (1984), 333-399"
+locator_scheme = "theorem"
+locator = "Theorem I.2.2 and its proof, pp. 355-356; Theorem I.1.1, p. 345, and its corollary, p. 351"
+url = "http://www.numdam.org/item/CM_1984__51_3_333_0/"
+fetched_from = "https://www.numdam.org/item/CM_1984__51_3_333_0.pdf"
+fetched_at = "2026-11-24T22:08:15Z"
+sha256 = "1314569a6f1972aea916e4f3a110d26017b95f413671b0e64f4afa0e6c22653c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["2.4", "6.6"]
+
+[[source]]
+id = "AtobeGan2017"
+authors = "Hiraku Atobe, Wee Teck Gan"
+title = "Local Theta correspondence of Tempered Representations and Langlands parameters"
+year = 2016
+doi = "10.1007/s00222-017-0730-8"
+arxiv = "1602.01299v1"
+locator_scheme = "theorem"
+locator = "Theorems 4.1, 4.3 and 4.5, section 4, pp. 11-14 (numbering of arXiv:1602.01299v1)"
+url = "https://arxiv.org/abs/1602.01299v1"
+fetched_from = "https://arxiv.org/pdf/1602.01299v1"
+fetched_at = "2026-11-24T22:08:20Z"
+sha256 = "c3d060e1f7514bb9a59f462d07655c68d09134c2d8dabedc20b403f2a894183b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["2.3"]
+
+[[source]]
+id = "Braun1941"
+authors = "Hel Braun"
+title = "Zur Theorie der hermitischen Formen"
+year = 1941
+venue = "Abhandlungen aus dem Mathematischen Seminar der Universität Hamburg 14"
+doi = "10.1007/bf02940742"
+locator_scheme = "theorem"
+locator = "Satz V"
+url = "https://doi.org/10.1007/bf02940742"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.4"]

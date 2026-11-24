@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaLiftsForDefiniteUnitaryGroups~12",
+  "head": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaLiftsForDefiniteUnitaryGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 8,
+  "format_notes": 0,
+  "notes": "review of the change against main: 680 changed lines since b8f3652. The folder is unchanged since the previous review's head; four supplier roadmaps changed (locators and attributions only), so 21 cross-roadmap citations were resolved again at this head. Seeded sample of 15 sections checked with computed values (adversarial table of 33 rows), the new statements of 1.6 and 3.4 recomputed, 11 source locators read in GQT, Rallis 1984, HKS and Minguez, LiftSatU read in the formal proof at the cited commit and 14 cited names found in its export index. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no messages and declares nothing. No finding; eight small corrections (seven carried from the previous review, its eighth narrowed), none blocking.",
+  "text": "f7e2f8464edf0344",
+  "carried": {
+   "from": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+   "head": "1f6e53ad798e159ee1f3cca10bc6045b2a46934a",
+   "findings": 8,
+   "lines": 99,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ThetaLiftsForDefiniteUnitaryGroups"
+   ],
+   "corrections": true,
+   "onto": "b9247da768a7e81b4047a384b0a6a03b815c8a4f"
+  }
+ }
+}
