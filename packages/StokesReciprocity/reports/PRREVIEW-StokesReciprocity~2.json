@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StokesReciprocity~2",
+  "head": "36462c9d2d3a853464b1f097153968d28ae509ef",
+  "pr": 3049,
+  "folder": "StokesReciprocity",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full re-review. Previous R01, C01-C03, N01-N03 all repaired. No numbered targets for the seeded sample, so all ten sorried statements and every displayed identity and worked example were recomputed (23 table rows). Suggested.lean elaborated: ten sorry warnings only; 25 signatures compared with the README; one-tactic probe closes none. 12 library declarations opened at the pins; 4 supplier citations (GeometricMeasureTheory Layer 6, 6.1, 6.2; PDE 1.6) resolved on main. Dependency check: 0 problems. Automatic checks: only the missing numbered subsections failed (format note N01); none set aside. Both cited books unreadable legally: 0 of 4 locators verified. Scope left to the human reviewers.",
+  "text": "e9c577f9f18846be"
+ }
+}
