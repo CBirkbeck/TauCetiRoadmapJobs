@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdelicAlgebraicGroups~22",
+  "head": "8d0b5731912cd17cd062c13ea42cd6b7b25fdf2a",
+  "pr": 3027,
+  "folder": "AdelicAlgebraicGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full review of the revision on main (six new subsections 1.5a, 2.6, 3.4a, 4.1a, 4.2a, 4.5a; no id removed; Suggested.lean unchanged). Seeded sample checked at the text: 0.3, 1.1, 1.5, 1.5a, 2.2-2.5, 3.2, 3.4a, 3.5, 3.7, 4.4, 4.6, 5.1 (about 70 locators across Borel, Arthur, Conrad, Milne, Rosengarten, Gordon, Dudas-Michel, BKT and erratum, Orr, BGST, LT, Khayutin, CG, Borel-Tits, Witte Morris, Oesterle via GDZ, Rapinchuk). Every Check of the new sections recomputed; adversarial table with 37 rows. Not verifiable: Platonov-Rapinchuk-Rapinchuk, Weil, Tate, Ono, Gross, Kneser, Orr-Schnell, BHC. Automatic checks: all passed; depcheck 132 roadmaps, 1470 edges, 0 problems; lake env lean exit 0, 19 sorry warnings; one-tactic probes (simp, rfl, infer_instance, trivial) close nothing; five dropped-binder leads harmless. Small corrections: description omits this roadmap from its largest additions; Borel 5.5 locator does not cover reductive unimodularity; missing locators for Ono, Gross, Kneser, Platonov, Platonov-Rapinchuk. One question on the torus duality inputs of the Ono route.",
+  "text": "0cdff8b4f0ee948b"
+ }
+}
