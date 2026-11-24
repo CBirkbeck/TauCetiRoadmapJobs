@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ProjectiveModelsAndPeriodBoundsOnShimuraVarieties~13",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ProjectiveModelsAndPeriodBoundsOnShimuraVarieties",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 178 changed lines since 74a09b7. Checked: the new Origin, Method and Corollary-of labels of the seeded sample (6.2a, 6.7a, 6.9a, 7.12a, 7.17a, 7.31a, 9.1) against DN Theoreme 2.3, Alper Theorem 10.3, Deligne's Bourbaki Lemme 1.18, Goldring-Koskivirta 6.1.2-6.1.4 and Theorem 6.2.1, Ekedahl-van der Geer section 5, Deligne's Le lemme de Gabber 1.4 and 1.7(b), Moret-Bailly chapter II, and Stacks 0C4K and 0893. Bost 2004, Lan 2016 and 2017, Faltings-Chai and Chai 1985 could not be read. The 7.17a paragraph on the formal proof was read against four declarations in the published source. The deduction of 9.1 from EquivariantIntersectionTheory 1.5 was checked, and ArakelovGeometryAndAbelianHeights 5.0a and 5.3 were resolved. The record is intact: no id or declaration is removed or renamed. Automatic checks: all passed in the worker's run; the folder-scope hits of a run by hand are the pull request's own folders. The dependency check reports 0 problems, and Suggested.lean elaborates with no output (it declares nothing). Small corrections: the Labels paragraph versus 9.1's Origin, the Ekedahl-van der Geer locator, and 9.1's missing Needs line. Format note: the Candilera-Cristante reference has no title.",
+  "text": "03949dd9109d9e4f"
+ }
+}
