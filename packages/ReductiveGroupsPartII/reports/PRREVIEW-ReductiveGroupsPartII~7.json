@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ReductiveGroupsPartII~7",
+  "head": "0b5086d93fa8e450c86bf7bec6afab0949229b41",
+  "pr": 3027,
+  "folder": "ReductiveGroupsPartII",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 86 changed lines since aecb53a. Checked the added RG2.3.5a in full: (a) and (b) computed in the split (p = 5), inert (p = 3) and dyadic unramified (Q2(zeta3)) cases, the ramified non-example over Q3(sqrt -3) and the ramified dyadic Q2(i); the route's differential and the trace surjectivity; Bruhat-Tits 1987 3.9 (pp. 180-181) and the Theoreme of section 5 (p. 194) read at the text; the five [Tits] Corvallis locators not readable from a legal copy. Citations resolved: RG2.0a, RG2.3.1, AdelicAlgebraicGroups AA.1.1 (main and head), ReductiveGroups section 9D.1. Mathlib declarations opened at the pin. No layer or item removed against the merge base. The seeded sample falls outside the changed passages. Dependency check: 0 problems. Elaboration: 11 sorry warnings only. The four automatic form hits are in untouched Suggested.lean (format note). Duplication and overlap checked by object on main and in the open checkouts.",
+  "text": "97804fc7a31e1636"
+ }
+}
