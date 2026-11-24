@@ -84,3 +84,20 @@ status = "certified"
 accessed = "2026-11-18"
 version_note = "arXiv, latest version"
 cited_for = ["5.4"]
+
+[[source]]
+id = "demailly-agbook"
+authors = "Jean-Pierre Demailly"
+title = "Complex Analytic and Differential Geometry"
+year = 2012
+locator_scheme = "theorem"
+locator = "Chapter I, §4: Theorem-Definition (4.12), Lemma (4.13), (4.14), (4.15), Theorems (4.17)-(4.18), Corollary (4.19), Propositions (4.21)-(4.22), pp. 33-37 (author's version of 21 June 2012)"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_at = "2026-11-24T14:18:57Z"
+sha256 = "d7c7654a7417e8322e5dcf8fe8ec818b4c1a18cf280b41f2df5a871b776d89a1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "author's online version of 21 June 2012; page numbers are those of that version"
+cited_for = ["3.2a", "3.4a"]
