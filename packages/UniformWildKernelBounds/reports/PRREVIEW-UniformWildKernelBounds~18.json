@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-UniformWildKernelBounds~18",
+  "head": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/UniformWildKernelBounds",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 650 changed lines since b8f3652. Read every added label, the revised route of 1.1, the new supplier citations and references; recomputed the mathematics of the labels (adversarial table, 22 rows); seeded sample of 15 sections checked against the formal proof's declarations (236 of 236 locators resolve) and 7 published locators; 14 cross-roadmap citations resolved; automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with no messages and declares nothing; all layers and headings of the merge base kept. One small correction (own-formulation label against the family index), one format note, one question; scope and licence of the formal proof left to the human reviewers.",
+  "text": "31db20d735dd6669",
+  "carried": {
+   "from": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+   "head": "45975a9e88ac70a3a441706a0418e4e628d33dc4",
+   "findings": 1,
+   "lines": 21,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/UniformWildKernelBounds"
+   ],
+   "corrections": true,
+   "onto": "88c9f9121b426792b7c691054500c7f5178063d4"
+  }
+ }
+}

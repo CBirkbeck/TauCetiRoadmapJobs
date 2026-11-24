@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "UniformWildKernelBounds"
+
+[[source]]
+id = "Schneider1979"
+authors = ["Peter Schneider"]
+title = "Über gewisse Galoiscohomologiegruppen"
+year = 1979
+locator_scheme = "section"
+locator = "§6, Lemma 1"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN266833020_0168/LOG_0020.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN266833020_0168/LOG_0020.pdf"
+fetched_at = "2026-11-24T22:12:52Z"
+sha256 = "231b18a272eaac14418dd371aed5e5a8e7c46144a0fd7c47b78e3e74e71bddd4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["1.1"]
