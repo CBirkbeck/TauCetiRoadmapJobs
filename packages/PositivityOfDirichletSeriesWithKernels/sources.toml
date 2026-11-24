@@ -64,3 +64,58 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["6.8"]
+
+[[source]]
+id = "MahatabMukhopadhyay2015"
+authors = "Kamalakshya Mahatab, Anirban Mukhopadhyay"
+title = "Measure Theoretic Aspects of Oscillations of Error Terms"
+year = 2015
+arxiv = "1512.03144v4"
+locator_scheme = "theorem"
+locator = "Theorem 3.2"
+url = "https://arxiv.org/abs/1512.03144v4"
+fetched_from = "https://arxiv.org/pdf/1512.03144v4"
+fetched_at = "2026-11-24T19:26:49Z"
+sha256 = "daad39f875648001336403341b5b6960d992d55ea966b13bfff9ac92bf5eff42"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v4"
+cited_for = ["6.5"]
+
+[[source]]
+id = "CluckersHerremans2007"
+authors = "Raf Cluckers, Adriaan Herremans"
+title = "The Fundamental Theorem of prehomogeneous vector spaces modulo $p^m$. With an appendix \"L-functions of prehomogeneous vector spaces\" by Fumihiro Sato"
+year = 2004
+arxiv = "math/0408139v2"
+locator_scheme = "theorem"
+locator = "Lemma 3.3"
+url = "https://arxiv.org/abs/math/0408139v2"
+fetched_from = "https://arxiv.org/pdf/math/0408139v2"
+fetched_at = "2026-11-24T19:26:55Z"
+sha256 = "7be82604e977ab2af8149e5f5e618d25e8fefc2b740f649bb37ed76bb67a2185"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2"
+cited_for = ["8.2"]
+
+[[source]]
+id = "Adamski2026"
+authors = "Téofil Adamski"
+title = "Non-Archimedean and motivic stationary phase formulas"
+year = 2025
+venue = "Confluentes Mathematici 18 (2026), p. 1-24"
+arxiv = "2502.04881v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.5"
+url = "https://arxiv.org/abs/2502.04881v2"
+fetched_from = "https://arxiv.org/pdf/2502.04881v2"
+fetched_at = "2026-11-24T19:27:01Z"
+sha256 = "7e34f583f8964949ad8e4f4861b491204c4f2e51631a6fb748fe262771215185"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v2"
+cited_for = ["8.2"]

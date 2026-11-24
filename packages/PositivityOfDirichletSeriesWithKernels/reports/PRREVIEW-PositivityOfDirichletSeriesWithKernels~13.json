@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PositivityOfDirichletSeriesWithKernels~13",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/PositivityOfDirichletSeriesWithKernels",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 248 changed lines since b8f3652. Checked: the deduction of 6.3 from ArithmeticDirichletSeriesPartII 0.1b; the Corollary-of lines of 6.1, 6.6 and 6.9 against AsymptoticExpansions 4.1a, 13.6a and ArithmeticDirichletSeriesPartII 4.1a, with computed instances; the method labels of Layer 6 against the formal proof's Lean source at its cited commit; the origin labels of 6.5 and 8.2 against three arXiv papers and Dabrowski-Fisher. Seeded sample 6.1-6.10, 7.1, 8.1, 8.2: one table row each. Pintz 1980, Kaczorowski 1984 and the paywalled books could not be read. Automatic checks all passed; dependency check 0 problems; Suggested.lean (unchanged) elaborates with 8 sorry warnings only. Two small corrections and one format note carried over from the previous review, none blocking.",
+  "text": "427e94c6913db183",
+  "carried": {
+   "from": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+   "head": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+   "findings": 2,
+   "lines": 6,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/PositivityOfDirichletSeriesWithKernels"
+   ],
+   "corrections": true,
+   "onto": "fea8dcac90456dc09a86127f1452a811d38427b4"
+  }
+ }
+}
