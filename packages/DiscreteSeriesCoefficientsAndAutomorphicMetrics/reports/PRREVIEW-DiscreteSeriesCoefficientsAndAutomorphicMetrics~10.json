@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DiscreteSeriesCoefficientsAndAutomorphicMetrics~10",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/DiscreteSeriesCoefficientsAndAutomorphicMetrics",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "review of the change against main: 251 changed lines since aecb53a; checked every added origin, method and corollary label and the revised 10.1, 10.2 and headline (4) against the cited supplier sections at this head (AdelicAlgebraicGroups 4.5a; AutomorphicFormsOnReductiveGroups 6.8a, 7.5, 7.5a; AutomorphicSpectralTheory 6.4a; AutomorphicBundles 0.5, 5.3a, 5.3b; NoncompactQuantumSymmetry Layer 3 item 3 on main), against the seeded sample's locators in mumford-1977, hc-1953, thorne-2012, hecht-schmid-1975, muller-1989 and two fetched arXiv texts (16 locators), and by computation (invariant metrics on the adjoint bundle of X(N); central characters of the bundles giving omega and Lie_sigma); automatic checks all pass except the check for files changed outside the roadmap folder, a false positive (the pull request's own folders); dependency check 0 problems; Suggested.lean elaborates with no warnings and declares nothing. One finding (P2): the kept hypothesis 'unitary on K_inf' excludes the Hodge-bundle summands that the new labels, the 10.2 Check and the downstream paragraph apply 10.1/10.2 to. Not verifiable: Sun 2007, Zuckerman 1977, Gould 1980/1985, Atiyah-Schmid 1977, Harris 1989, Dixmier-Malliavin 1978, and the uncertified Gross 1999, Harish-Chandra 1966, Muller 1998.",
+  "text": "68ef976c0bfed16c"
+ }
+}
