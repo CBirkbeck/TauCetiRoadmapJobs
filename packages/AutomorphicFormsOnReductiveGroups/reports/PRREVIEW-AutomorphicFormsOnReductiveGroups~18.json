@@ -1,0 +1,36 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicFormsOnReductiveGroups~18",
+  "head": "e7914b5c68ad72646db1009572ad061c097a6312",
+  "pr": 3027,
+  "folder": "AutomorphicFormsOnReductiveGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "review of the change against main: 52 changed lines since aecb53a. Checked: the two added sections 6.8a and 7.5a (statements, routes, Checks recomputed on SL2, Sp4, compact G, C2 stabilizers, GL1/Q; adversarial table of 16 rows), the changed dependency, scope and supplier sentences, and the sections they rely on (2.4, 2.6, 6.1, 6.8, 7.4, 7.5). Thorne Lemma 6.4 verified at its locator (arXiv v1 pp.33-34); Knapp 1986 Ch. VI and Harish-Chandra IV-VI not readable legally (not verifiable, flagged to the human reviewers). The 15 seeded sample targets lie in untouched, unaffected text. Six cross-roadmap citations resolved (LieGroups Layer 7, LieHighestWeight Layers 3, 7, 9, AdelicAlgebraicGroups 3.4 and 4.5a). Record check: 8 layers kept, no item or id removed. Automatic checks all passed; dependency check rerun with 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe fails as it should. The previous review had no findings; its three small corrections and one format note are unrepaired (text unchanged) and repeated, plus one small correction on the unstated order with pull request 3036.",
+  "text": "68ef976c0bfed16c",
+  "carried": {
+   "from": "e7914b5c68ad72646db1009572ad061c097a6312",
+   "head": "2af285be263031f8e24684ef10cb505e00c30738",
+   "findings": 4,
+   "lines": 2,
+   "folders": [
+    "AutomorphicFormsOnReductiveGroups"
+   ],
+   "corrections": true,
+   "onto": "08a8e8c1aaf847122558ccd92e8135ecaa0b1783"
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C04: The \"Shared folders\" list is part of the generated merge-order block, which the generator must extend with the line `AutomorphicFormsOnReductiveGroups`: also changed by #3036.",
+    "where": "the generated merge-order block of the pull-request description",
+    "raised": "PRREVIEW-AutomorphicFormsOnReductiveGroups~18"
+   }
+  ]
+ }
+}
