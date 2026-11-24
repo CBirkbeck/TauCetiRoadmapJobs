@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AsymptoticExpansions~10",
+  "head": "4a2d22fe8cbc27e34f076618602c288115ccba78",
+  "pr": 3027,
+  "folder": "AsymptoticExpansions",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 113 changed lines since 592bdb1. Checked: the new 4.1a (holomorphy of the Laplace integral and the moment formula) and 13.6a (coefficient asymptotics of meromorphic functions) with their routes and five Checks, the 4.4 edit, the Layer 4 and 13 dependency lines, scope items 4 and 13, the ContourIntegration and Tau Ceti contract sentences, the references, and the affected scope-boundary sentence; README at 592bdb1 compared hunk by hunk, no layer, item or id removed or retitled. Sources: DLMF 1.14(iii) (1.14.18-1.14.19, 1.14.23) and Flajolet-Sedgewick Theorem IV.10 p. 258 read and support the statements; Widder 1941 not readable. 12 library declarations opened at the pins, including Mathlib's complexMGF API, which proves 4.1a for nonnegative kernels (C01). Adversarial table of 20 rows with computed values; no statement false. No seeded sample target falls in the changed passages. Worker's checks all pass; own gate run fails only on the pull request's own other folders; depcheck 132 roadmaps, 1465 edges, 0 problems; lake env lean exit 0 with 39 sorry warnings; #check sweep of 52 declarations exit 0. Corrections: cite Mathlib complexMGF in 4.1a; scope-boundary sentence out of date; exact locators (F&S Thm IV.10, DLMF 1.14.18-19, 1.14.23). Format note: stale Tau Ceti file in Layer 4 dependencies.",
+  "text": "1ba319c5b7d82c96"
+ }
+}
