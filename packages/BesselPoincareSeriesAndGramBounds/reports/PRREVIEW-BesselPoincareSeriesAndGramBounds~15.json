@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BesselPoincareSeriesAndGramBounds~15",
+  "head": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "review of the change against main: 432 changed lines since 74a09b7. Checked: the Origin and Method labels of the 29 sections 5.13a-5.23 against their routes; the two new Conventions paragraphs; the changed ownership sentence of 5.22 (a) with computed values; 11 source locators read in 7 sources (Beuzart-Plessis 2020, Xue 2023, He 2017, Sun-Zhu 2012, Jiang-Sun-Zhu 2010, Molev 2002, Gerasimov-Kharchev-Lebedev 2002); the new citations of GanGrossPrasadUnitaryGroups and FiniteReductiveGroups resolved; the merge-base record (no heading, layer or item removed); the pull request's text against the head; the previous review (no finding; four small corrections, one format note and one question carried, none repaired, the folder being identical); the worker's automatic checks (all passed); dependency check (0 problems, no UPWARD or CYCLE); elaboration of Suggested.lean (exit 0, no declaration). Not opened: the formal proof's Lean source and ten paywalled references.",
+  "text": "28878c9aed255c7f",
+  "carried": {
+   "from": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+   "head": "f59c90a4dc9c1f2b357dc69e38c45a60c8ae6cca",
+   "findings": 4,
+   "lines": 39,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds"
+   ],
+   "corrections": true,
+   "onto": "801404ebf83dadf04bef9ff0a73bf4ac1013ebbc"
+  }
+ }
+}
