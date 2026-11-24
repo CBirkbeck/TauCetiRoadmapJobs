@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicFormsOnReductiveGroups~16",
+  "head": "4a2d22fe8cbc27e34f076618602c288115ccba78",
+  "pr": 3027,
+  "folder": "AutomorphicFormsOnReductiveGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 52 changed lines since 592bdb1. Checked: new sections 6.8a (holomorphic discrete series as lowest-weight modules) and 7.5a (class-set inner product and perfect pairing) by computation (SL2 weight formulas of 2.6, Sp4 k=3 K-types, GL1/Q mass 1/2, C2/S3 stabilizers at l=2,3,5); the four extended sentences (Layer 6 and 7 Dependencies, scope, AdelicAlgebraicGroups contract) and the three references. Seeded sample: 7.5a verified against Thorne arXiv v1 Lemma 6.4 pp.33-34; 7.4/7.5 context against BCGP25 5.7 pp.130-131 and Def. 5.7.2; Knapp Ch. VI and Harish-Chandra IV-VI not legally readable. Record: no layer or item removed, renumbered or retitled. Supplier citations resolved (LieGroups Layer 7, LieHighestWeight 3/7/9, AdelicAlgebraicGroups 3.4 on main and 4.5a in this pull request). Automatic checks all pass; gate rerun passes except the check for changes outside the folder, which lists only the pull request's own folders (false positive); dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged, elaborates with sorry only. Overlap scan of 7 closest roadmaps: nothing shared. Corrections: description's source-generality claim vs 7.5a; 6.8a citation lacks theorem/page; Harish-Chandra decomposition and bounded realization claimed constructed in 6.8a but unstated. Format note: letter E reused in 7.5a.",
+  "text": "d6f91f2b3d3b4c78"
+ }
+}
