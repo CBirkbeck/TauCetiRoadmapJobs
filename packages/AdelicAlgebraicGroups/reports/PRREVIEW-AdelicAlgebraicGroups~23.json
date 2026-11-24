@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdelicAlgebraicGroups~23",
+  "head": "4a2d22fe8cbc27e34f076618602c288115ccba78",
+  "pr": 3027,
+  "folder": "AdelicAlgebraicGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since 8d0b573. Checked: the folder diff since 8d0b573 is empty and the one commit since then touches only AnalyticNumberTheoryPartIII/Suggested.lean, a folder of this pull request that this README does not cite. The previous report had no findings; its small corrections C01-C03 are unrepaired and carried, and its question for the author stands. Re-read Borel Lemma 5.5 for C02. The adversarial table has computed rows for the targets the corrections touch (1.5, 4.1a, 4.2a, 4.5a) and fresh rows for 4.1 and 5.3. The 50 citation leads all resolve. Ownership was re-searched over the open heads: unchanged. The worker's gate passed every check. Depcheck: 0 problems, no UPWARD or CYCLE. lake env lean on Suggested.lean exits 0 with only the 19 sorry warnings. No change outside the pull request's own folders.",
+  "text": "1ba319c5b7d82c96"
+ }
+}
