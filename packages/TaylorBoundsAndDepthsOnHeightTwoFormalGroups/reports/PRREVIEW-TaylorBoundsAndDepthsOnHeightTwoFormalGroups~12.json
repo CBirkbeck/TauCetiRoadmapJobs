@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TaylorBoundsAndDepthsOnHeightTwoFormalGroups~12",
+  "head": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/TaylorBoundsAndDepthsOnHeightTwoFormalGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 326 changed lines since b8f3652. Checked: the Origin and Method labels and every changed In [FormalProof] line against the formal proof's source (18 statements opened) and the kernel export of its five main theorems (100 names resolved; ThmB, thmB, Plan.Ok outside it; LemmaFb, LemmaFd, TopRadius in the source but outside it); the new clause of 4.6 (f) computed on Z/3; the seeded sample where it falls in changed text; RestrictedPowerSeries 1.1, 1.2, 2.2 on main; README on main against head item by item (nothing removed); automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with sorry warnings only, one-tactic probe closes nothing. Folder unchanged since the previous review's head; its corrections stand.",
+  "text": "bc63622d9226cf76",
+  "carried": {
+   "from": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+   "head": "34db15b7b94134aae43b7d753d387054cc325805",
+   "findings": 3,
+   "lines": 25,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/TaylorBoundsAndDepthsOnHeightTwoFormalGroups"
+   ],
+   "corrections": true,
+   "onto": "76ade77cffe4329e36f776bb7d896352cb34959b"
+  }
+ }
+}
