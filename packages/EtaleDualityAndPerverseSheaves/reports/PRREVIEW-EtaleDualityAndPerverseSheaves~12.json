@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EtaleDualityAndPerverseSheaves~12",
+  "head": "094da693be77c279419dce305d25388f6c40541a",
+  "pr": 3027,
+  "folder": "EtaleDualityAndPerverseSheaves",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "Incremental re-review of 17 changed lines since 3b77a6a. Checked: the repaired generic-flatness step of §7.6 finitelyManyStabilizers against Tau Ceti AlgebraicGeometry.Scheme.Hom.exists_dense_open_flat at the pin (name, namespace and hypotheses met by S -> Z1; mu_p and weight-(1,2) G_m instances computed); the new Tau Ceti contract row; the consumer sentence against DeligneLusztigTheory Layer 1 at head; no stale citation of SchemeAndStackFoundations §4.12 or ReductiveGroups Layer 9F. Previous R01 deferred as D02 (stands); C01 and C02 repaired; D01 resolved (ReductiveGroups no longer cites this roadmap). None of the 15 seeded targets lies in the changed text. Automatic checks: the worker's run passed; depcheck 129 roadmaps, 1437 edges, 0 problems; lake env lean on Suggested.lean: 7 sorry warnings, no errors; diff outside the pull request's own folders empty; description read against this head.",
+  "deferred": [
+   {
+    "id": "D02",
+    "severity": "P2",
+    "title": "§7.6 and FiniteReductiveGroups 3.4 both own the stabilizer lemma and part (a) for every connected algebraic group",
+    "where": "RiemannHypothesisForDirichletLFunctions/FiniteReductiveGroups 3.4 (a), (d): cite EtaleDualityAndPerverseSheaves §7.6",
+    "raised": "PRREVIEW-EtaleDualityAndPerverseSheaves~11"
+   }
+  ],
+  "text": "97804fc7a31e1636"
+ }
+}
