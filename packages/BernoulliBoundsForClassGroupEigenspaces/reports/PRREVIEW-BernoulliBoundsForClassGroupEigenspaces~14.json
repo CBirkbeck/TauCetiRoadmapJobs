@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BernoulliBoundsForClassGroupEigenspaces~14",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BernoulliBoundsForClassGroupEigenspaces",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "review of the change against main: 321 changed lines since aecb53a. Checked the Origin, Method and Corollary-of labels of all 15 sections, the rewritten 9.8 (a), 12.1 and 13.1, and the five new supplier sections (ArithmeticGaloisDuality D7.6a, ArithmeticKTheory 9.1, StableHomotopyKTheory 4.24a, IntegralIwasawaTheory 12.3a, KatoEulerSystems 4.1a), all resolved at this head. Seeded sample 6.17, 6.18, 9.1-9.8, 10.1, 11.1, 12.1, 13.1, 14.1 checked against Soule1999, BFEH2014, Emery 2014, de la Torre Duran 2026, BCNS 2015, Brown-Ghate 2003 and Kolster-Movahhedi 2000 (21 locators); Soule 2003, Kolster 2009, Kato 2004, Schneider 1979, Brown 1982, Koecher 1960 and Arlettaz 1991 not readable. Record against aecb53a: no layer or item lost. Automatic checks all passed; depcheck 0 problems; Suggested.lean (unchanged) elaborates with only the sorry warning. One question on 12.1 when p divides [E:F], with a computed example (Q(zeta_11)^+, p = 5).",
+  "text": "2f5de7ff568da9f5"
+ }
+}
