@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DifferentialGeometry~35",
+  "head": "a01a8ad481a3b7c75205ead4fd04965530b28a6f",
+  "pr": 334,
+  "folder": "DifferentialGeometry",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "Second copy of a roadmap on main, confirmed: main's TauCetiRoadmap/DifferentialGeometry/README.md has 3253 lines and layers 0-12; this head (branched at 27ffe09, before main gained the roadmap) adds a 482-line README sharing no content line with it, and a 154-line Suggested.lean against main's 1097. As the rules for a second copy require, this is the round's only finding and the remaining steps (seeded source sample, adversarial pass on the statements, padding probe, wording comparison) were not carried out. Compared main's layers 0, 1 and 3 with this text's wedge, pullback, exterior derivative and flow proposals; checked the named declarations in the library pinned here and in the one main pins. Automatic checks looked at: the build failure (Suggested.lean line 89) and the sorried definition wedgeWith are real but not raised separately, because the text cannot merge as it stands. Dependency check: 0 problems. The previous review on file read another pull request's text (main's README); its findings do not concern this head.",
+  "text": "e74ae5ac309a6985"
+ }
+}
