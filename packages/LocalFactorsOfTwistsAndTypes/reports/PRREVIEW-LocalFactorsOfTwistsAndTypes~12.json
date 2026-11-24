@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalFactorsOfTwistsAndTypes~12",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalFactorsOfTwistsAndTypes",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 420 changed lines since 74a09b7. Checked every changed passage: the Origin, Method and Corollary-of labels, the narrowed 6.2 (general form now AL 3.3.2a, which states it in full), the restated 7.1 (mu∘det kept as a Remark), the corrected attributions in 4.1 and 6.4, and the 6.5 uses list. The seeded sample was checked at its locators where a legal text exists: Henniart 1993 (GDZ) and 2002, Zelevinsky 1980 and Tadic 1986 (Numdam), Dat 2009 (HAL), Haines-Kottwitz-Prasad, Jacquet-Liu and Chai (arXiv); Moy-Prasad, Macdonald, Shimura, JPSS, Bernstein, HKS, Borel and the formal proof could not be read. Resolved 14 cross-roadmap citations at the head (SR 7.1, 4.3a, 5.2a; AL 3.2.4, 3.3.2a, 3.3.8a, 3.9.7; ETUTC 2.16; consumers), found no cycle, and compared the base with the head item by item (nothing removed). Automatic checks all passed; dependency check 0 problems; lake env lean on Suggested.lean gives only the sorry warning (docstring-only change). The adversarial table has computed values for all 15 sampled sections and the Lean headline. Decision on general roadmaps applied to 6.2. Three small corrections (6.3 and 4.1 (i) characteristic-zero restrictions; description) and two format notes.",
+  "text": "dda9acd9cf88f1ae"
+ }
+}
