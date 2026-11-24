@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnabelianGeometryAndNonabelianChabauty~11",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "AnabelianGeometryAndNonabelianChabauty",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 8d0b573. Checked: the previous report's three small corrections at this head (all three not repaired, carried as C01-C03); citations of AlgebraicModuliForArithmeticGeometry, the supplier this pull request revised since 8d0b573 (only its §2.1 Hom/Isom and §§7.3-7.6 are cited, both unchanged, none of the moved Layer 9 ids); §3.9 recomputed (Riemann-Hurwitz bound, tangent-space vanishing, constant and genus-1 controls) with m96 Lemma 8.3 pp. 610-611 and m99 p. 76 read at the text; §4.6 Bloch-Kato Checks recomputed; headline anabelian_isom recomputed and its #check type unchanged. Automatic checks: the worker's all passed; my gate run passed except the files-outside-folder check, which listed only the pull request's own folders (set aside); depcheck 128 roadmaps, 1429 edges, 0 problems; lake env lean on Suggested.lean gives only the sorry warning. Merge base keeps all 8 layers (29 insertions, 0 deletions). Pull-request description consistent with this folder. One new format note (code spans in §4.6 and line 9028).",
+  "text": "cc51ecce1091bb2f"
+ }
+}
