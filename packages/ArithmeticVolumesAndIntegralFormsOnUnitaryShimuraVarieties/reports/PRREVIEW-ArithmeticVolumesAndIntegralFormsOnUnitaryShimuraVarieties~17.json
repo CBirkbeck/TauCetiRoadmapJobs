@@ -1,0 +1,36 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~17",
+  "head": "644c332c1967a11b54bc8fedf1633861bbda5f1e",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "review of the change against main: 462 changed lines since 74a09b7. Checked: the fifteen sampled sections (8.11, 8.12, 8.14, 8.14c, 8.15, 8.15d, 8.15e, 8.16, 8.18, 8.18b, 8.18c, 8.18e, 8.19, 8.19a, 8.19a''') against the Lean source of the formal proof (105 cited files and 124 declaration names present; 20 statements opened and compared with the README), with computed instances in the adversarial table; Yuan 2021 at Theorem 2.9 and Lemma 2.4; the cross-roadmap citations the change alters; the record against main (no heading, statement or Check removed; 30 sections carry both labels). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; the one-tactic probe does not close the headline. No finding. Four small corrections (the Yuan attribution in 8.14a, the description's omission of the reversed claim in 8.16 (d), three sections that name no declaration of the formal proof, no stated order with #3036 for two Needs lines) and one format note; the first, second and the note are carried over from the previous review, the folder being unchanged. Not verifiable: Goldstein, Boecherer, Weissauer, Katz (no legal copy).",
+  "text": "68ef976c0bfed16c",
+  "carried": {
+   "from": "644c332c1967a11b54bc8fedf1633861bbda5f1e",
+   "head": "07118a1df589840f897abf97204e70d2d2e1ce87",
+   "findings": 4,
+   "lines": 23,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties"
+   ],
+   "corrections": true,
+   "onto": "2af285be263031f8e24684ef10cb505e00c30738"
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C04: the claim is correct, but the \"Shared folders\" list it asks to extend is the generated merge-order block, so a line for this folder belongs in that block's computation.",
+    "where": "the generated merge-order block of the pull-request description",
+    "raised": "PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~17"
+   }
+  ]
+ }
+}
