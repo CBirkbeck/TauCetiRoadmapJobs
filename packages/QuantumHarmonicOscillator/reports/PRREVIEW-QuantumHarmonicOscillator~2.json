@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuantumHarmonicOscillator~2",
+  "head": "09527e1e98fd4f3d5fbf1683bab5258f40bab735",
+  "pr": 3033,
+  "folder": "QuantumHarmonicOscillator",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 58 changed lines since 98724fc. R01 (second Example of Layer 1) repaired and recomputed: isometry, surjectivity and intertwining of the map from ker a tensor F, the kernel criterion in both directions, the tower criterion with the l2 and c00 controls, consistency with step 3 of 2.1. C01 (Teschl pages, second edition) and N01 (verification narrative) repaired. Seeded sample checked where it falls in the diff: 1.1 and 2.1 (Teschl locators, against the previous review's reading; the text could not be fetched again), 1.2 and 3.1 (rewritten Checks recomputed). Suggested.lean unchanged; elaborates with sorry the only warning. Automatic checks all passed; depcheck 0 problems, no UPWARD or CYCLE. Pull request text agrees with the head; no change outside the folder.",
+  "text": "57f6427d3d48db84"
+ }
+}
