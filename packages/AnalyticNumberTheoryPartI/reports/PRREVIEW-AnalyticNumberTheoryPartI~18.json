@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticNumberTheoryPartI~18",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "AnalyticNumberTheoryPartI",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "incremental re-review of 48 changed lines since 8d0b573. Checked: R01 and C01-C03 of the previous report are repaired; C04, C05 and N01 are in untouched text and are carried as small corrections C02, C03 and format note N01. Recomputed: the new Lean statements deuring_heilbronn_repulsion and exists_prime_modEq_le against README sections 1.7a-1.7b (elaborated types, junk value at rho=1, monotonicity in the parameter L, small moduli); section 1.7a(i) (Turan's lemma, any labelling); the local zero count of 1.7a(ii); the repaired zero-free-region step of 1.7b. Bombieri locators read: pp. 24, 31, 39-42, 50, 53, 54, 82. New small correction C01: Theoreme 11 is not the large-sieve input of section 1.7. Seeded sample: only 0.11 touches the change, through 0.11b. Elaboration exits 0 with 64 sorry warnings and nothing else; depcheck reports 0 problems; the gate run by hand flags only files in the pull request's own folders (false positive).",
+  "text": "cc51ecce1091bb2f"
+ }
+}
