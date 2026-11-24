@@ -86,3 +86,20 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-21"
 cited_for = ["2.4"]
+
+[[source]]
+id = "Carayol1984"
+authors = "Henri Carayol"
+title = "Représentations cuspidales du groupe linéaire"
+year = 1984
+venue = "Annales scientifiques de l'École Normale Supérieure (4) 17, 191-225"
+locator_scheme = "theorem"
+locator = "Théorème 4.2; Définition 4.1"
+url = "http://www.numdam.org/item/ASENS_1984_4_17_2_191_0/"
+fetched_from = "https://www.numdam.org/item/ASENS_1984_4_17_2_191_0.pdf"
+fetched_at = "2026-11-24T07:59:27Z"
+sha256 = "5fa5cba427059d779832ec717944c6bdd1967996300d93956b770373dce7609e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["6.1"]
