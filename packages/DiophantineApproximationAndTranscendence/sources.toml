@@ -286,8 +286,8 @@ sha256 = "ac82a38059a5d0d9fd23a40a3896fb58d8525b14ef44c42199df9582bd9a0fb4"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-09"
-cited_for = ["1.7", "2.6"]
 version_note = "author's preprint; lemma and equation numbers agree with the Compositio version (Numdam CM_1996__101_3_225_0), page locators are preprint pages"
+cited_for = ["1.7", "2.6"]
 
 [[source]]
 id = "BMS06"
@@ -306,3 +306,29 @@ status = "certified"
 accessed = "2026-11-10"
 version_note = "arXiv v1"
 cited_for = ["3.6"]
+
+[[source]]
+id = "Bost2001"
+locator_scheme = "page"
+locator = "p. 207"
+url = "http://www.numdam.org/item/PMIHES_2001__93__161_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_2001__93__161_0.pdf"
+fetched_at = "2026-11-24T11:23:56Z"
+sha256 = "2102c7b7fac0595499f9d6d89b90b71042e0752ca1305efa537c404b2ea353ee"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["1.3a"]
+
+[[source]]
+id = "Gaudron"
+locator_scheme = "theorem"
+locator = "Prop. 4.23"
+url = "http://www.numdam.org/item/RSMUP_2008__119__21_0/"
+fetched_from = "https://www.numdam.org/item/RSMUP_2008__119__21_0.pdf"
+fetched_at = "2026-11-24T11:26:43Z"
+sha256 = "716ed1cde7222ccbaea836086afe4dfa32801a82a154dc0f28fe2d4e65d77320"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["2.5b"]

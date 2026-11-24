@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiophantineApproximationAndTranscendence~13",
+  "head": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+  "pr": 3027,
+  "folder": "DiophantineApproximationAndTranscendence",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 136 changed lines since 74a09b7. The folder is unchanged since the previous review; the previous review had no finding, and its three small corrections and one format note are not taken up and are repeated. Checked: every statement, route and Check of the new sections 1.3a and 2.5a-2.5c recomputed on explicit and degenerate cases (adversarial table with values); the seeded sample where it falls in the change (1.3a, 2.5b); 16 of 17 new locators read in Philippon 1991, Bost 2001, Roy-Thunder and Gaudron (BGS94 not read, checked through Bost's quotation); Mathlib and Tau Ceti declarations opened at the pins; the four new Lean declarations compared with the README and with the pinned Tau Ceti heights and idele norm, one-tactic probe on both theorems (neither closes); automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; no layer or item of the README at the merge base removed; pull request text read against the head.",
+  "text": "2b28eec5b3b6590a",
+  "carried": {
+   "from": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+   "head": "c70ef6d679fa44217dff58d289efc017960a5e68",
+   "findings": 3,
+   "lines": 12,
+   "folders": [
+    "DiophantineApproximationAndTranscendence"
+   ],
+   "corrections": true,
+   "onto": "7c341e760700d163c2204c12a65613b8af9ffbae"
+  }
+ }
+}
