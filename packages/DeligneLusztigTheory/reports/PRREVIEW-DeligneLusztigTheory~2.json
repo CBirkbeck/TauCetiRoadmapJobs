@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DeligneLusztigTheory~2",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "DeligneLusztigTheory",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review. Sample: 1.2-1.5, 1.7-1.11 checked against DudasMichel2015 (author page; 22 locators); 2.1, 2.10 against FulmanGuralnick2012 Prop 3.5(2); 2.1/2.8 against Geck2017 Ex 2.13; DeligneLusztig1976, Carter, Digne-Michel, Green1955, Kondo1963, Shintani1976, Howlett-Lehrer, Fong-Srinivasan, S.I. Gelfand, BDK not legally readable (Not verifiable). Adversarial table: 33 rows with computed values (class numbers c_n(q) for q<=11, n<=6; GL2 degree sums; J_n recursion n=2,3; Kondo n=2; Shintani fibres GL2(F2) in GL2(F4)). Automatic checks: all passed; depcheck 0 problems; Suggested.lean elaborates with 14 sorry warnings only; #check signatures compared; one-tactic probe: 0 of 14 close. Findings: R01 split Steinberg case owned on main by SmoothRepresentationsOfLocalGroupsPartII 4.1/4.9, README calls it a consumer; R02 Green's classification (2.4, 2.7) statable at the pins (degree formula statement elaborated separately; FiniteReductiveGroups states 2.4) but absent and called unstatable.",
+  "text": "9aedd0e947327cc2"
+ }
+}
