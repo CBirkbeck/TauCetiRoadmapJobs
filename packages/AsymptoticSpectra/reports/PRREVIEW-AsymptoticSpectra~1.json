@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AsymptoticSpectra~1",
+  "head": "69d0c08239af9e887ec14ee8a151a48aef46e10c",
+  "pr": 3023,
+  "folder": "AsymptoticSpectra",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. Sample: all ten sections 1.1-3.3; 46 locators read in the thesis (author's-page copy), the survey (5 August 2025 copy), Zuiddam 2019 (arXiv v2) and Knuth (arXiv v1); two numbering/page questions for the author since the cited copies of the thesis and survey could not be fetched. Adversarial table of 24 rows with computed values. Supplier citations resolved at the open heads of LovaszThetaFunction, ConvexAnalysisAndDuality, ApproximationGuarantees; copied definitions agree. Dependency check: 0 problems. Suggested.lean elaborates with 21 sorry warnings only; one-tactic probe closes none. All automatic checks passed. Strassen 1969/1988 and McEliece-Posner 1971 not read.",
+  "text": "37cd4c82f68a3683"
+ }
+}
