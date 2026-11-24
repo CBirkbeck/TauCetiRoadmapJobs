@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ZerosOfLFunctions~56",
+  "head": "f3b4ab14a05b6b0b8f75246cddd04477c719addf",
+  "pr": 3027,
+  "folder": "ZerosOfLFunctions",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "review of the change against main: 443 changed lines since 74a09b7. Checked the five added sections 8.4a, 8.5a, 8.6a, 8.7a and 9.1, the changed 8.8 Needs line, the overview and the scope, dependency, contract and reference edits. Residues, series identities and every numerical Check recomputed: Selberg s=2, x=2; psi, pi, Li at 10^6; Ihara-Murty-Shimura at Q and Q(i); dictionary examples over Q(i). Sampled targets in changed text: 8.4a and 8.6a (Titchmarsh and Ihara-Murty-Shimura not legally readable) and 8.8; Milne locators verified (Theorem 0.8 p. 9; p. 165 before Theorem 3.27). Library names opened at the pins. Record: 10 layers kept, no item removed. Automatic checks all passed; depcheck 0 problems; Suggested.lean (unchanged) elaborates with sorry warnings only. Findings: the Euler-Kronecker constant is defined both here and in RiemannHypothesisStatementsAndConsequences 8.4a(b); 8.6a is named in the overview but absent from Suggested.lean.",
+  "text": "d53f9de8a54863f0",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The Euler–Kronecker constant now has two owners: 8.6a defines it, and RiemannHypothesisStatementsAndConsequences §8.4a(b) still defines it.",
+    "where": "RiemannHypothesisStatementsAndConsequences §8.4a (b) must cite §8.6a's constant",
+    "raised": "PRREVIEW-ZerosOfLFunctions~56"
+   }
+  ]
+ }
+}
