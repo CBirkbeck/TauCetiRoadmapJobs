@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticKTheory~18",
+  "head": "4a2d22fe8cbc27e34f076618602c288115ccba78",
+  "pr": 3027,
+  "folder": "ArithmeticKTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 67 changed lines since 592bdb1. Checked the added Layer 9 (9.1, Gabber's lemma) against Soule's arXiv v1 (Lemma 1 p. 5, Proposition 3 p. 6), and recomputed its statement, route and both Checks with degenerate and higher-degree instances. The seeded sample falls in the change only at 9.1. Layer record against the merge base: 8 layers kept, Layer 9 added. Dependency check clean (0 problems). The worker's automatic checks all passed. Suggested.lean is unchanged and elaborates with only sorry warnings. Overlap with the closest roadmaps: nothing shared, and no other owner of Gabber's lemma. Corrections: cite Tau Ceti's proved OrthonormalBasis.norm_det_le_prod_norm instead of the sorry'd SuccessiveMinima statement; fix the stale 'last layer' sentence in the overview; the description should mention the new layer and supplier.",
+  "text": "1ba319c5b7d82c96"
+ }
+}
