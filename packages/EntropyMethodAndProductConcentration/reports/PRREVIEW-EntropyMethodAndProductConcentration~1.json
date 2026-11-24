@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EntropyMethodAndProductConcentration~1",
+  "head": "ffd3ac577d2d66779af3baed7b9f89e8ff343242",
+  "pr": 3057,
+  "folder": "EntropyMethodAndProductConcentration",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Full review. All 15 sampled targets and every other statement recomputed (adversarial table); van Handel's notes read at 7 locators, all correct; Boucheron-Lugosi-Massart, Ledoux, Ledoux-Talagrand, Massart and Bercu-Delyon-Rio could not be read legally (listed as not verifiable). Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 45 theorems; dependency check 0 problems; no change outside the folder. Findings: two misstated applications of the comparison lemma in the routes of 4.4 and 6.3 (P2); Levy's inequality of 7.2 duplicates, for real summands, a target of the open roadmap SeriesOfIndependentRandomVariables 2.2 (P2). One automatic form check set aside as a false positive.",
+  "text": "0a4c5d07e20e64d1"
+ }
+}
