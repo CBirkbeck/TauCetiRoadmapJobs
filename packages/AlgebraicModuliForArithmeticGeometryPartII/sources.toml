@@ -289,3 +289,16 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled (JSTOR); cited by its locator without the text"
 cited_for = ["1.7"]
+
+[[source]]
+id = "EV92"
+locator_scheme = "theorem"
+locator = "Properties 5.4 d)"
+url = "https://page.mi.fu-berlin.de/esnault/books/esvibuch.pdf"
+fetched_from = "https://page.mi.fu-berlin.de/esnault/books/esvibuch.pdf"
+fetched_at = "2026-11-24T04:06:47Z"
+sha256 = "b871e99d74e48df662e4652de284393fef6a4a12b99348ba2ff1b55aab2c5135"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["1.6a"]
