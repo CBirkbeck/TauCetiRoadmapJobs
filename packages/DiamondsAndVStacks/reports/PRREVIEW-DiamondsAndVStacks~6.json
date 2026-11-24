@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiamondsAndVStacks~6",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "DiamondsAndVStacks",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "review of the change against main: 3 changed lines since b8f3652. Checked: the one added citation (PerfectoidSpaces §P2.5, completed residue fields, in D2.7's Needs line), resolved on main with its subject and hypotheses and set against D2.7's separatedness step with computed instances; the supply direction of the new edge; the two earlier P3 notes (R02 repaired, R01 partly repaired, carried as an untouched-text format note); the description's sentence on this folder; the overlap with the closest roadmaps. Automatic checks: all pass except the outside-folder check, which flags only the pull request's own other folders (false positive); dependency check 0 problems; Suggested.lean elaborates with 21 sorry warnings only. The seeded sample lies outside the changed and affected text and was not reopened.",
+  "text": "9aedd0e947327cc2"
+ }
+}
