@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-VonNeumannAlgebras~51",
+  "head": "f3b4ab14a05b6b0b8f75246cddd04477c719addf",
+  "pr": 3027,
+  "folder": "VonNeumannAlgebras",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 44 changed lines since 74a09b7. Checked: the added V9.IntegrableDiscreteSeries (statement, convention, route, compact and SL2 remarks) by computation on C2, C3, S3 and SL2(R); its BanachAlgebras 7.2-7.3 supplier citations against main; the record against the merge base (nothing removed); duplication and overlap (no second owner). Seeded sample 13.1-13.2 lies outside the change; 9 of its locators spot-checked, all correct. Barnes 1980 unreadable (no legal copy). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only. One small correction (unneeded second-countability hypothesis) and one format note, neither blocking.",
+  "text": "d53f9de8a54863f0"
+ }
+}
