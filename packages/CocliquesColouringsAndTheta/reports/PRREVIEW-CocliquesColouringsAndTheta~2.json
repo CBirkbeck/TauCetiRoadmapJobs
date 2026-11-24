@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CocliquesColouringsAndTheta~2",
+  "head": "24091c9f454887021552a8da7bdf576d24edd3af",
+  "pr": 3068,
+  "folder": "CocliquesColouringsAndTheta",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 123 changed lines since d272d0b. Checked: previous findings R01, R02 repaired (new biclique-partition definition tested in Lean on the C6, K3 and C5 families; the identity of 5.1 with AsymptoticSpectra 2.3 compared clause by clause at that roadmap's open head), C02, N01, N02 repaired, C01 (two Brouwer-Haemers locators) not repaired and carried as a small correction; the cycle formula at n = 2, 3, 4 and its induction; the pull request's description against the head; automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 32 sorry warnings only. Seeded sample in the changed passages (2.2, 3.2, 5.2): mathematics computed; no source text readable this round (Godsil-Royle, Biggs not open; Brouwer-Haemers not re-read).",
+  "text": "d2bd06263924d053"
+ }
+}
