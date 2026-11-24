@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CATZeroSpaces~1",
+  "head": "e17c26f2601c97064f13136354958e739026e28d",
+  "pr": 3021,
+  "folder": "CATZeroSpaces",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. All 15 sampled targets and 4.1 recomputed by hand (adversarial table with values); 24 locators checked against Sturm (author's page), Bruhat-Tits (Numdam) and Poulsen (arXiv); Sato not readable (paywall, unclassified preprint host), listed under Not verifiable. 37 library declarations checked at the pins by #check; Suggested.lean elaborates with 20 sorry warnings only; one-tactic probe closes none of the 20 theorems; the 3.1 comparison proved in a scratch file in twelve lines (C02). Supplier OperatorMonotoneFunctionsAndMatrixMeans read at its open head: seven copied definitions identical, five cited declarations present. Dependency check: 0 problems, no UPWARD or CYCLE. Automatic checks all passed. Pull request text agrees with the head. Four points for the human reviewers.",
+  "text": "40f4e132ded28cad"
+ }
+}
