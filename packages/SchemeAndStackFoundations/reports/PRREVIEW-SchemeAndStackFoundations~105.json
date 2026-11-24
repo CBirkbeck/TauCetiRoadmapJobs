@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~105",
+  "head": "3e72c55812dde12c0864f61059c2cd4b122a8ae2",
+  "pr": 2531,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 2278 changed lines since 890b66d. Checked: the four added subsections (0.2a, 1.1a, 1.9a, 2.9a), the restated 0.7 clause and the edited citations, with an adversarial table of 31 rows; 55 Stacks tags matched to their cited numbers in the chapter texts, 31 read through their hypotheses; more than 30 library declarations opened at the pins with file and line; ModularCurves 0C and 0E resolved on main; the 1772 lines changed since 2fdb6a3 are a pure move of the scope and supplier contracts (sorted lines identical). The seeded sample does not fall in changed or affected text. Automatic checks all passed; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean (unchanged against main) elaborates with 48 sorry warnings only. Small corrections: the description omits the move and wrongly says the two pull requests merge without conflict; its paragraph on PurityForFlatCohomology is out of date; NeronModelsAndSemistableAbelianVarietiesPartII 1.9 on main also states Stacks 03XX. Format note carried over (1.1a affine bullet). Deferred D01 resolved at the head of PurityForFlatCohomology. Not verifiable: Grothendieck, Brauer III, Theoreme 11.7.",
+  "text": "7e88255ca01dfcbf",
+  "carried": {
+   "from": "3e72c55812dde12c0864f61059c2cd4b122a8ae2",
+   "head": "5a768544299755f7d897efa6aa764081af217ae1",
+   "findings": 3,
+   "lines": 4,
+   "folders": [
+    "SchemeAndStackFoundations"
+   ],
+   "corrections": true
+  }
+ }
+}
