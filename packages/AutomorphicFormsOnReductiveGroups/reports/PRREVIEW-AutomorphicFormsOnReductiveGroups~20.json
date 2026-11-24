@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicFormsOnReductiveGroups~20",
+  "head": "18a262ec35ea0eebff27db3c123178119987af68",
+  "pr": 3027,
+  "folder": "AutomorphicFormsOnReductiveGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 60 changed lines since e47c8ec. Checked: the new locators of §6.8a against the cached texts (Knapp, Lie Groups Beyond an Introduction, Thms 7.117 and 7.129, pp.502 and 506; Taïbi arXiv:1406.4247v1 §5.1 pp.54-55, restating Harish-Chandra V Lemma 12 p.20 and VI Lemma 29 p.608; Knapp 1986 Thm 6.6 through Chenevier-Lannes), with the nonvanishing criterion recomputed against §6.8a's holomorphic chamber (general G, SL2, scalar Sp2n); the two DOIs through Crossref; the previous small correction (repaired) and format note (carried); the folder against main (README only; STATUS.md and PROGRESS.md are main's); the pull request text; no seeded-sample target lies in a changed passage. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning. Harish-Chandra V, VI and Knapp 1986 were read only through restatements (left to the human reviewers).",
+  "text": "8a98188c180a53ea"
+ }
+}
