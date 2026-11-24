@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicLFunctionsAndLocalFactors~26",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "AutomorphicLFunctionsAndLocalFactors",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "review of the change against main: 126 changed lines since aecb53a. Checked the five added sections of Layer AL.3 (AL.3.2.4, AL.3.3.2a, AL.3.3.8a, AL.3.7.1a, AL.3.9.7) with computed instances, the edited Conventions, scope and supplier text, 13 cross-roadmap citations at this head, 14 source locators in the cached texts, and the seeded sample (the theta-Mellin Check of AL.3.5.1: 60 against 30, Cogdell Columbia section 1.1.3). The folder is unchanged since the previously reviewed head, whose review had no finding; its three small corrections are repeated. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 14 sorry warnings only. Four paywalled sources (JPSS 1983, Henniart 1993, Bernstein 1984, Jacquet-Shalika 1981) could not be read.",
+  "text": "2f5de7ff568da9f5",
+  "carried": {
+   "from": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+   "head": "5d50191977a99d4101c33212631bdb6bc2f49284",
+   "findings": 3,
+   "lines": 21,
+   "folders": [
+    "AutomorphicLFunctionsAndLocalFactors"
+   ],
+   "corrections": true,
+   "onto": "0b5086d93fa8e450c86bf7bec6afab0949229b41"
+  }
+ }
+}
