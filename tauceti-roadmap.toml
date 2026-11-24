@@ -194,7 +194,7 @@ defer_outside = true
 # Passes before the final review (owner decision 2026-11-15): the first rounds of a new roadmap folder of a pull request
 # the pool repairs run on Opus, each ending with its repair. After three, or when one leaves the head where it was, a
 # review on the lane's review model follows, and that review alone decides ai-found-no-errors.
-pre_passes = 3
+pre_passes = 1
 pre_agent = "claude"
 pre_model = "claude-opus-5-5"
 
