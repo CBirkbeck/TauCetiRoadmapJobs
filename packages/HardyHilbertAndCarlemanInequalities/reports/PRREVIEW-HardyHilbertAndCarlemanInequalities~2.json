@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HardyHilbertAndCarlemanInequalities~2",
+  "head": "9e8362af7e300279ed5c5772b6de6a82498757bb",
+  "pr": 3056,
+  "folder": "HardyHilbertAndCarlemanInequalities",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 148 changed lines since b63a396. Checked: the three previous findings and three small corrections, all repaired (reversed series inequality of 2.1 rederived from Theorem 337 and its sharpness computed; the new non-strict weighted Hardy targets of 2.2 and their Lean statements on degenerate cases; the Schur-test kernel of 1.2 against the pinned statement; the exponent count of the 3.3 route; the changed Checks recomputed); the Gronwall declaration opened at the pin; duplication by object in Mathlib, Tau Ceti and the other roadmaps; the pull request text against the head. Automatic checks all passed, dependency check 0 problems, elaboration clean (45 sorry warnings only), one-tactic probe leaves the two new theorems open. Seeded sample: no cited book could be read legally, so no locator was checked against its text (listed under Not verifiable and for the human reviewers).",
+  "text": "351f65178d8cec56"
+ }
+}
