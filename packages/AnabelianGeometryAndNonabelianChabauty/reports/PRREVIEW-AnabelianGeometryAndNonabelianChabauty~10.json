@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnabelianGeometryAndNonabelianChabauty~10",
+  "head": "8d0b5731912cd17cd062c13ea42cd6b7b25fdf2a",
+  "pr": 3027,
+  "folder": "AnabelianGeometryAndNonabelianChabauty",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "Full review of the revision (one added section, 2.0a Radford's theorem on Lyndon words, and two references; no deletions, layers unchanged). Previous review left no open finding. Section 2.0a: statement, reduction to Hoffman's Theorem 2.2 (read at arXiv v1) and both Checks recomputed and correct; Radford 1979 classed paywalled by the sources service. Seeded sample 0.1, 0.12, 0.14, 0.22, 0.24, 0.29, 0.31, 0.35, 2.1, 2.2, 2.5, 3.3, 6.3, 6.6, 7.3: 66 locators read in kim2005, kim2009, poonen, deligne-milne, besser, bdmtv, cls, t97, bd1, bdii, kt, stacks, hoffman; three locator slips and one unparseable hypothesis line (small corrections); bdmtv (19) sign error and Def A.1 misprint recorded as source issues. Automatic checks all passed; depcheck 132 roadmaps, 1490 edges, 0 problems; Suggested.lean elaborates with sorry as the only warning and #check types unchanged. No Lyndon/shuffle duplication in pinned Mathlib or Tau Ceti; Lyndon words also defined by open CombinatoricsOfWords (this roadmap, on main, is the owner).",
+  "text": "0cdff8b4f0ee948b"
+ }
+}
