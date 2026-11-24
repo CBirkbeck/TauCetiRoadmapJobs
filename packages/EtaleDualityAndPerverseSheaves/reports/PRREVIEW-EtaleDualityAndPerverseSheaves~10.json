@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EtaleDualityAndPerverseSheaves~10",
+  "head": "477bb488d18581c2236603e5c71afdbb473fd376",
+  "pr": 3027,
+  "folder": "EtaleDualityAndPerverseSheaves",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "review of the change against main: 197 changed lines since aecb53a; checked the new §7.6 and the five passages citing it (adversarial pass with computed values for every statement and Check), 13 locators in Dudas-Michel-2015 §13, Serre-1977 and Illusie-Zheng-2013 (Deligne-Lusztig-1976 not legally readable), 20 cross-roadmap citations at the head, the merge-base record (no layer or item removed), the dependency check (0 problems; it does not see the ReductiveGroups loop of R02), the automatic checks (all passed) and elaboration of Suggested.lean (unchanged; sorry warnings only); seeded sample: no target lies in the changed or affected text.",
+  "text": "c67e1c6d4ff20686",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The pull request makes ReductiveGroups and this roadmap suppliers of each other",
+    "where": "ReductiveGroups Layer 9F must stop citing EtaleDualityAndPerverseSheaves §7.6",
+    "raised": "PRREVIEW-EtaleDualityAndPerverseSheaves~10"
+   }
+  ]
+ }
+}
