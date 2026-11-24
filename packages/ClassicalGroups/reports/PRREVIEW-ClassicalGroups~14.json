@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassicalGroups~14",
+  "head": "644c332c1967a11b54bc8fedf1633861bbda5f1e",
+  "pr": 3027,
+  "folder": "RepresentationTheory/ClassicalGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "review of the change against main: 107 changed lines since 74a09b7. Checked the added §6.6a (Capelli identity) and §6.6b (quantum minors of u + E) clause by clause, by hand for n = 2 and by an exact symbolic computation for k = n = 3, with their Checks and routes; 10 of 11 locators verified in Molev's Yangian survey (arXiv math/0211288v1), Molev-Nazarov-Olshanski (hep-th/9409025v2) and Caracciolo-Sokal-Sportiello (0809.3516v2), Howe-Umeda paywalled; merge-base README as record (no layer or heading removed); ownership against main and open pull requests (family roadmaps cite §§6.6a-6.6b); Mathlib names at the pin; dependency check 0 problems; Suggested.lean (unchanged) elaborates with sorry warnings only; automatic checks all passed. The seeded sample lies outside the changed text. Two small corrections: the description does not mention this revision; untouched text names three Tau Ceti declarations absent at the pin.",
+  "text": "97804fc7a31e1636"
+ }
+}
