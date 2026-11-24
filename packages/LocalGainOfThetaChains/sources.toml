@@ -1,0 +1,40 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "LocalGainOfThetaChains"
+
+[[source]]
+id = "BannaiKobayashi2010"
+authors = "Kenichi Bannai, Shinichi Kobayashi"
+title = "Algebraic theta functions and p-adic interpolation of Eisenstein-Kronecker numbers"
+year = 2006
+venue = "Duke Math. J. 153, no. 2 (2010), 229-295"
+doi = "10.1215/00127094-2010-024"
+arxiv = "math/0610163v4"
+locator_scheme = "theorem"
+locator = "Corollary 2.16"
+url = "https://arxiv.org/abs/math/0610163v4"
+fetched_from = "https://arxiv.org/pdf/math/0610163v4"
+fetched_at = "2026-11-24T19:06:31Z"
+sha256 = "eea5e9a0d75d4a5b6ab7a801d5a9d861c0d2591bc360bed64cfa121bbe79267e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v4"
+cited_for = ["4.9a"]
+
+[[source]]
+id = "Minguez2008"
+authors = "Alberto Minguez"
+title = "Correspondance de Howe: paires duales de type II"
+year = 2008
+arxiv = "0709.4384v1"
+locator_scheme = "theorem"
+locator = "Théorème 1"
+url = "https://arxiv.org/abs/0709.4384v1"
+fetched_from = "https://arxiv.org/pdf/0709.4384v1"
+fetched_at = "2026-11-24T19:08:41Z"
+sha256 = "2a5b66081d0a226ef63f67c03b4ce1291daa58b2b22afbbca12132d7ccad3ffe"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["4.12"]

@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalGainOfThetaChains~14",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 530 changed lines since b8f3652. Checked: every changed formal-proof attribution (4.11, 4.15c, 4.15d, 4.17d, 4.14f′) against the declaration it names, with computed instances; all 62 cited file paths and 136 of 147 declaration names resolved in the source; Tange Theorem 3.2, Bannai–Kobayashi Corollary 2.16 and the Dipper–Doty–Stoll abstract read; method labels of the sampled sections 4.13, 4.15a, 4.15b, 4.17a, 4.17b, 4.10a computed or compared; the Labels paragraph counted (5 Origin-only, 35 both, 0 Corollary-of); no layer, heading, statement or Lean declaration removed against the merge base; dependency check 0 problems; Suggested.lean elaborates with no message and declares nothing; automatic checks pass. The folder is unchanged since the previous review, whose remark on the description is repaired at this head; its other three remarks stand as two small corrections and one format note. Not read: Finis, Rallis, Mínguez, Mumford, Knapp.",
+  "text": "462159594e32a68f",
+  "carried": {
+   "from": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+   "head": "9542b7b319656c6631c0dfad47c9dbb6a366f8b0",
+   "findings": 2,
+   "lines": 18,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains"
+   ],
+   "corrections": true,
+   "onto": "f14487b4a708ddbe4b68e13659aba502d15a969d"
+  }
+ }
+}
