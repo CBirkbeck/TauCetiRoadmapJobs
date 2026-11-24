@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GlobalGaloisDeformations~7",
+  "head": "0b5086d93fa8e450c86bf7bec6afab0949229b41",
+  "pr": 3027,
+  "folder": "GlobalGaloisDeformations",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "review of the change against main: 93 changed lines since aecb53a; checked: the new section 3.6a in full against DDT §2.6 (Theorem 2.36 p. 73, Lemmas 2.39-2.40 pp. 75-76, authors' PDF from Darmon's page), its mathematics recomputed including p | n, its three Checks computed; supplier citations resolved on main (LocalGaloisDeformationRings F.1.3, F.1.7, F.2.1, F.2.2, F.2.9, 8.6; ArithmeticGaloisDuality D8.1; SelmerIwasawaCohomology 2A.4) and TauCeti.ContCohomology.H1 at the pin; record against the merge-base README (no layer or item removed, 3.6a a new id); ownership by object across the closest roadmaps; pull-request text; automatic checks all passed; depcheck 0 problems; Suggested.lean (unchanged) elaborates with sorry warnings only. The other 14 sampled targets lie in untouched, unaffected text. Corrections: C01 Needs pointer F.2.2 -> F.2.1; C02 DDT page range.",
+  "text": "15717a678429c784"
+ }
+}
