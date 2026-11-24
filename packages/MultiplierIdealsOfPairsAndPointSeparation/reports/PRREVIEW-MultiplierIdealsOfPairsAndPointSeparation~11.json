@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MultiplierIdealsOfPairsAndPointSeparation~11",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/MultiplierIdealsOfPairsAndPointSeparation",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "review of the change against main: 289 changed lines since b8f3652. Checked: the Origin, Method and Corollary-of lines, the two-point statement of 9.12c with its wider form, the deduction of 9.13a (i) and the section-level Needs lines, against KOL97 (2.16, 3.3, 3.5, 3.10-3.12, 5.7-5.10, 6.4-6.9), ESVI92 5.4 d), Stacks 0BEP/0BES/0BJ8/01WV/02OO, Ein-Lazarsfeld 1999 Prop. 1.2 (ii) and Ein-Lazarsfeld-Smith 2001 Thm 2.2; against AlgebraicModuliForArithmeticGeometryPartII 1.6a, 1.7a, 6.1-6.8 and AlgebraicModuliForArithmeticGeometry 9.12 at this head; and against the README at the merge base (no heading or declaration removed; 9.12c's former statement kept as its wider form). All eleven sampled sections have a row with computed values. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning and the elaborated types match the README. The previous review's six small corrections and one format note are unrepaired and carried over; none blocks. ANGSIU95 and LAZ04 uncertified; Chow-van der Waerden, Jouanolou, Kollar-Matsusaka and the formal proof's repository not read. The human reviewers' decision on moved material applied to the route of 9.12c's wider form.",
+  "text": "462159594e32a68f",
+  "carried": {
+   "from": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+   "head": "fea8dcac90456dc09a86127f1452a811d38427b4",
+   "findings": 6,
+   "lines": 30,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/MultiplierIdealsOfPairsAndPointSeparation"
+   ],
+   "corrections": true,
+   "onto": "cfff612b2956a0b427fa877c6dae346b73572ee5"
+  }
+ }
+}

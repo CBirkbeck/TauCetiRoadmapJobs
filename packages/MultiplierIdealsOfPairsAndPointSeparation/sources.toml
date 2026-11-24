@@ -24,7 +24,6 @@ id = "ESVI92"
 authors = "Hélène Esnault, Eckart Viehweg"
 title = "Lectures on Vanishing Theorems"
 year = 1992
-version_note = "the authors' web edition; its page layout may differ from the printed DMV Seminar volume"
 locator_scheme = "theorem"
 locator = "Properties 5.4 d)"
 url = "https://page.mi.fu-berlin.de/esnault/books/esvibuch.pdf"
@@ -34,6 +33,7 @@ sha256 = "b871e99d74e48df662e4652de284393fef6a4a12b99348ba2ff1b55aab2c5135"
 licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-21"
+version_note = "the authors' web edition; its page layout may differ from the printed DMV Seminar volume"
 cited_for = ["9.10d"]
 
 [[source]]
@@ -96,3 +96,22 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["9.10b", "9.10c"]
+
+[[source]]
+id = "CHOWVDW37"
+authors = "Wei-Liang Chow, B. L. van der Waerden"
+title = "Zur algebraischen Geometrie. IX. Über zugeordnete Formen und algebraische Systeme von algebraischen Mannigfaltigkeiten"
+year = 1937
+venue = "Mathematische Annalen 113, 692–704"
+doi = "10.1007/BF01571660"
+version_note = "GDZ scan of the published article; text recognised by OCR"
+locator_scheme = "section"
+locator = "§1, p. 693 (the associated form); Satz 1, p. 695"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0113/LOG_0048.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN235181684_0113/LOG_0048.pdf"
+fetched_at = "2026-11-24T19:21:21Z"
+sha256 = "c6412b111c5d90ba66cec441de03ae83fa75ec9a9fd618d7c3057a1b7a173ad7"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["9.13"]
