@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HeightsRationalPointsAndObstructions~12",
+  "head": "0b5086d93fa8e450c86bf7bec6afab0949229b41",
+  "pr": 3027,
+  "folder": "HeightsRationalPointsAndObstructions",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 256 changed lines since aecb53a. Checked the 13 added sections (5.9b.1-5.9b.2, 5.17a.1, 5.17c.1-5.17c.7, 5.17d.1, 5.17f.1-5.17f.2) and 7 extended paragraphs: every identity and bound recomputed on test cases (adversarial table, 21 rows); about 45 locators read in 16 open sources; supplier sections resolved at head (ArakelovGeometryAndAbelianHeights, DiophantineApproximationAndTranscendence, ComplexComparisonPartII, AlgebraicModuliForArithmeticGeometry, BanachSpaceTheory, ClassicalArithmeticCompletion); record kept (no layer or item removed). Seeded sample: none of the 15 targets lies in changed text. Automatic checks all passed; depcheck 0 problems; Suggested.lean unchanged and elaborates with sorry warnings only. One P2 finding: 5.17c.2 case (iii) duplicates ComplexComparisonPartII's H(Omega, phi) (C7.9, C7.13). bgs1994 could not be read (image-only scan).",
+  "text": "15717a678429c784",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "Case (iii) of 5.17c.2 defines again the Bergman space `H(Ω, φ)` that ComplexComparisonPartII C7.9 and C7.13 already define and use, so the space has two owners",
+    "where": "ComplexComparisonPartII C7.9: H(Ω, φ) Hilbert, continuous evaluations, kernel diagonal as supremum",
+    "raised": "PRREVIEW-HeightsRationalPointsAndObstructions~12"
+   }
+  ]
+ }
+}
