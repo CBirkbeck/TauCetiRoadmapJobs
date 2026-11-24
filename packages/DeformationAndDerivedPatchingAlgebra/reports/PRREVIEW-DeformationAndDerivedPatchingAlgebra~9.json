@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DeformationAndDerivedPatchingAlgebra~9",
+  "head": "477bb488d18581c2236603e5c71afdbb473fd376",
+  "pr": 3027,
+  "folder": "DeformationAndDerivedPatchingAlgebra",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 34 changed lines since aecb53a. Checked the new section 3.12a (statement, sum over primes, both Checks, route), the changed Layer 3 dependencies, scope and Mathlib-contract sentences and the Fulton reference; Stacks tag 02MI read at its locator (Fulton Appendix A paywalled, not verifiable); adversarial table with computed values on 13 rows (free, zero, unit, nonreduced, inseparable and non-Artinian cases); seeded sample: only 3.12a falls in the change. R01 (P2): the determinant form of 3.12a is Tau Ceti's Matrix.length_quotient_range_mulVecLin_eq_ord_det at the pin and is also planned in GeometryOfNumbersAndQuadraticArithmetic 2.5.7 of this pull request; cite it and keep the sum over primes as the target. Automatic checks all passed; depcheck 0 problems; lake env lean on Suggested.lean exits 0 with 18 sorry warnings only; Suggested.lean unchanged; all 9 layers and every id of the merge base kept; #3036 edits other lines of the README with a stated order.",
+  "text": "1df1dd94c7facd00"
+ }
+}
