@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsOnDefiniteUnitaryGroups~12",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsOnDefiniteUnitaryGroups",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 439 changed lines since b8f3652. Checked the new Origin, Method and Corollary-of labels of all 31 sections; the seven general sections they name (ExplicitNumberFields 0.7, ArakelovGeometryAndAbelianHeights 1B.5, AnalyticNumberTheoryPartI 1.7b, SchurWeyl 8.4, FiniteGroupInvariants 10.2, FourierDeligneTransform 0.2, AutomorphicFormsOnReductiveGroups 7.5a); the rewritten citations of ThetaKernelsForUnitaryDualPairs 4.4a and SeesawForThetaChains 6.14. Seeded sample: 2.1, 2.2, 2.3, 2.3b, 2.3c, 2.3a, 2.6a, 2.9, 2.9a, 2.9b, 3.1b, 3.2, 3.5, 3.7, 3.8; locators checked in Serre 1981, Bost 1996, BLGGT, Serre Bounds, Bannai-Kobayashi, Amir-Khosravi; method labels checked against the formal proof's source and kernel export. Automatic checks all passed; dependency check 0 problems; Suggested.lean unchanged and elaborates with no message. Three small corrections, one format note.",
+  "text": "1d3d35d463c2fc3d"
+ }
+}
