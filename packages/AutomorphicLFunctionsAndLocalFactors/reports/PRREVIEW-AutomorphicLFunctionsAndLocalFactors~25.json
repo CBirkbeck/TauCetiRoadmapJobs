@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AutomorphicLFunctionsAndLocalFactors~25",
+  "head": "4a2d22fe8cbc27e34f076618602c288115ccba78",
+  "pr": 3027,
+  "folder": "AutomorphicLFunctionsAndLocalFactors",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "review of the change against main: 126 changed lines since 592bdb1; checked the five added AL.3 sections (AL.3.2.4, AL.3.3.2a, AL.3.3.8a, AL.3.7.1a, AL.3.9.7) and the edited Conventions, scope and supplier text, with computed Checks; 15 source locators verified (Cogdell-Piatetski-Shapiro, Henniart 2002, Jacquet-Liu, Chai, Tadic, Cogdell Fields and Columbia lectures), plus Zelevinsky 1980 Thm 9.7; seeded sample (Check for the theta-Mellin formula, untouched) verified at 60; JPSS 1983, Henniart 1993, Bernstein 1984 and Jacquet-Shalika 1981 paywalled and not verifiable; 14 SR and AdelicAlgebraicGroups citations resolved at the head; layer record intact; depcheck 0 problems; Suggested.lean (unchanged) elaborates with sorry warnings only; automatic checks all passed; no change outside the pull request's folders",
+  "text": "cc51ecce1091bb2f"
+ }
+}
