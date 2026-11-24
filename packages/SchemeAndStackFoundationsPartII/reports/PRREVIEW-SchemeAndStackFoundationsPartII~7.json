@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundationsPartII~7",
+  "head": "e4fc20075dddc57e66eaf277b5e3a51644010757",
+  "pr": 2272,
+  "folder": "SchemeAndStackFoundationsPartII",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 22 changed lines since de80147; checked: the previous report's three small corrections (C01 and C03 repaired in the folder, C02 settled in the description's blocks, D01 resolved) and two format notes (carried); the changed Checks recomputed (Frobenius cokernels for alpha_p over F_p[t] and F_p[[t]], the non-finitary functor Hom_A(Z_p,-) in 2.1); locators BC22 Lemma 2.1.3, BC22 2.1.1 and CS24 Corollary 5.6.9 read in the sources; the new carrier sentence of 2.0 and the Needs lines of 2.5 and 2.6 against the comparisons 2.0 states; automatic checks all pass, dependency check 0 problems, Suggested.lean (unchanged) elaborates with sorry the only warning; pull request text read against the head. Acceptance conditional on the twenty declared supplier gaps and on the SchemeAndStackFoundations revision adding 2.9a.",
+  "text": "6bf5ae1564f22214"
+ }
+}
