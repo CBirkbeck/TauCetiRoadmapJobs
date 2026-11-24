@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HodgeTateLatticesAndLubinTateLogarithms~13",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HodgeTateLatticesAndLubinTateLogarithms",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "review of the change against main: 156 changed lines since b8f3652. Checked: the new Corollary-of line of 3.3 against LubinTateFormalModulesAndQuasiCanonicalLifts §4.2b at this head (first statement and last clause recomputed; the §4.2b route via §4.2a recomputed at p = 2), the other five Corollary-of lines against their supplier sections, 8 source locators against the texts (Fargues 2011, Pilloni-Stroh 2016, Krattenthaler-Rivoal), the headings against the merge base (identical), the previous review's three small corrections (one repaired, two kept). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with two sorry warnings only and is unchanged. The Method labels were not compared with the formal proof's repository.",
+  "text": "cdb52b915f25ebb5",
+  "carried": {
+   "from": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+   "head": "0715d5e4c0fbc7c7dfb32815db8e38f4d9ef6916",
+   "findings": 2,
+   "lines": 8,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/HodgeTateLatticesAndLubinTateLogarithms"
+   ],
+   "corrections": true,
+   "onto": "bd1c54bdaa6293052e3b8cf8aec65d05d4316dd5"
+  }
+ }
+}
