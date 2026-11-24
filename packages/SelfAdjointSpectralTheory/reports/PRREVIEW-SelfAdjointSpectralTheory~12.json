@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelfAdjointSpectralTheory~12",
+  "head": "9288deef9a1151220c2c9016b92f92035ab63e26",
+  "pr": 1854,
+  "folder": "OperatorTheory/SelfAdjointSpectralTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 94 changed lines since 2f1f33b. Previous R01 (graph core vs LinearPMap.HasCore) and R02 (SA-B64 ownership) repaired, as are C01, C02 and N01. Checked: the changed passages SA-B64, SA-C20, SA-C34, SA-C39, SA-C40, SA-C42, SA-C87, SA-E12, SA-E13, SA-E37, SA-E39, SA-E40, the two dependency sentences, Scope and supplier contracts; 8 new Teschl2009 locators on the stated pages; Mathlib closure/HasCore/closureHasCore and the four VectorMeasure names at the pin; seeded sample where it falls in the diff (milestones B1, C5, E3); pull request text against the head. Automatic checks all passed; depcheck 0 problems; Suggested.lean (unchanged) elaborates with sorry as the only warning. One format note (wording of SA-E37).",
+  "text": "7c0366cee0336d77"
+ }
+}
