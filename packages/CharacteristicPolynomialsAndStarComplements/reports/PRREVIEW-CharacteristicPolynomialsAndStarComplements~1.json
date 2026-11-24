@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CharacteristicPolynomialsAndStarComplements~1",
+  "head": "e50d4a0a8f31037fcdde05a680411177ed80b60c",
+  "pr": 3059,
+  "folder": "CharacteristicPolynomialsAndStarComplements",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. Adversarial pass computed on every statement (21 table rows, no false statement found). Seeded sample 1.1-4.4: mathematics recomputed; only Huang's paper (arXiv:1907.00847) could be read, Theorem 1.1 and Lemmas 2.1-2.3 checked; the six textbooks (CRS, BH, B, Ba, N-P, St) were not readable legally and their 48 locators are unverified. Elaboration: 28 sorry warnings, no error; one-tactic probe closes none of the 28 statements; 55 elaborated signatures compared with the README. Dependency check: 0 problems, no UPWARD or CYCLE. All cross-roadmap citations resolved at the suppliers' open heads or on main; copied definitions agree with their owners. Finding R01 (P2): Huang's theorem is also owned by the open roadmap DecisionTreeComplexity 5.1. Two automatic checks set aside as false positives (a Mathlib lemma name read as the roadmap's own; the heading over the #check block).",
+  "text": "21570d69d4db1202"
+ }
+}

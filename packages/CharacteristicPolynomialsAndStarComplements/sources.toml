@@ -1,0 +1,17 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CharacteristicPolynomialsAndStarComplements"
+
+[[source]]
+id = "H"
+arxiv = "1907.00847"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/1907.00847"
+fetched_from = "https://arxiv.org/pdf/1907.00847"
+fetched_at = "2026-11-24T13:11:24Z"
+sha256 = "9193d2dac7b3f6b6a84270884c6143913ae5a0ba9bf3db19273f9703db0ed6a2"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv, latest version"
+cited_for = ["4.4"]
