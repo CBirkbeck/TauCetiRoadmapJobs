@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ExpanderGraphs~2",
+  "head": "d4bb48c68491dc51d713bf9aa6ee1d858d7fa5e8",
+  "pr": 3069,
+  "folder": "ExpanderGraphs",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 23 changed lines since faf24d8. Checked: the previous C01-C03 and N01-N02 are all repaired (library claims re-opened at the pinned Tau Ceti, FactorRigidity 3.2 on main, tree-ball eigenvalues 2.628596/2.803970/2.826449 recomputed, Margulis second eigenvalues recomputed for m = 2, 3, 4, 8, 16, Sp section 43.2 read at its locator); the pull request text agrees with the head; dependency check 0 problems; Suggested.lean elaborates with 26 sorry warnings and no error; the one automatic check that failed (a section heading followed only by #check lines) is a false positive. One question on the numbering of [Ni] stays open; DSV, the source cited most, remains unread and is flagged to the human reviewers.",
+  "text": "e1ebfe9e80b09a50"
+ }
+}
