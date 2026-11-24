@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StableHomotopyKTheory~11",
+  "head": "45a486516685460fece73a8acfdf15b47bdf0282",
+  "pr": 3027,
+  "folder": "StableHomotopyKTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 0,
+  "notes": "review of the change against main: 24 changed lines since 74a09b7. Checked the new section 4.24a (statement, three clauses, route steps (i)-(iv)), the changed Dependencies and AlgebraicKTheory contract sentences and the two new references. Recomputed L_k and R_j for k, j up to 14 and the prime criterion; verified steps (ii)-(iv) by computation and settled the earlier question on step (iii) (the universal-coefficient sum splits, so the bound is R_m). Source locators read: Weibel K-book IV Thm 4.4.3, Cor 4.11.1, Rem 4.11.2; Hatcher Thm 4.69; Cartan expose 11 Theoreme 2; Banaszak's quotation of Arlettaz Cor 7.19. Arlettaz's survey and 1991 paper could not be read (not verifiable). Sample: 4.24a and 3.20 checked; the other sampled targets lie in untouched, unaffected text. Suppliers AlgebraicKTheory 5.1, AlgebraicTopology 8.3 and GeneralizedCohomology G2.8 resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean unchanged and elaborates with sorry warnings only. Four small corrections (one in untouched text), none blocking; the folder is unchanged since the previous review.",
+  "text": "675573ce45f23588"
+ }
+}
