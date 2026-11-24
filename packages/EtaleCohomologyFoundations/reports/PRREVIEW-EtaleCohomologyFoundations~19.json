@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EtaleCohomologyFoundations~19",
+  "head": "4b01d78f351640e8165b4ad852c22f2644bf71a4",
+  "pr": 3027,
+  "folder": "EtaleCohomologyFoundations",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 2 changed lines since 7e87b98: the consumer bullet for F.2.5a/F.10.4a now names DeligneLusztigTheory Layer 1 instead of ReductiveGroups Layer 9F; checked against DeligneLusztigTheory, ReductiveGroups, FiniteReductiveGroups and EtaleDualityAndPerverseSheaves at this head (4 citations resolved). Previous report had no remarks. No seeded-sample target lies in the changed line. Automatic checks all passed; depcheck 0 problems; Suggested.lean (unchanged) elaborates with six sorry warnings only; pull-request text agrees with the head. One format note (consumer list omits DeligneLusztigTheory).",
+  "text": "97804fc7a31e1636"
+ }
+}
