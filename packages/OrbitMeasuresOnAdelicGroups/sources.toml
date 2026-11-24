@@ -51,3 +51,20 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["2.6"]
+
+[[source]]
+id = "Steinberg1965"
+authors = "Robert Steinberg"
+title = "Regular elements of semi-simple algebraic groups"
+year = 1965
+venue = "Publications mathématiques de l'IHÉS 25 (1965), 49-80"
+locator_scheme = "section"
+locator = "2.7 (a), 2.8 and 2.11, pp. 53-54"
+url = "http://www.numdam.org/item/PMIHES_1965__25__49_0/"
+fetched_from = "https://www.numdam.org/item/PMIHES_1965__25__49_0.pdf"
+fetched_at = "2026-11-24T18:25:58Z"
+sha256 = "bda20c4a4b3cf4a7e9e5b17a4eacd0147d0c9370063ab3a3778114a53c8349b9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["4.1"]
