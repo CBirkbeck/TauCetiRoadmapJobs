@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicModuliForArithmeticGeometry~14",
+  "head": "e7914b5c68ad72646db1009572ad061c097a6312",
+  "pr": 3027,
+  "folder": "AlgebraicModuliForArithmeticGeometry",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 37 changed lines since 71bbefa. Checked the rewritten proof route of section 9.12 (Koszul chase with H^{p-1} vanishing for 2 <= p <= min(m, n+1) and dimension for p >= n+2; iteration from k-1 to k) against Ein-Lazarsfeld 1999 Props. 1.1(ii) and 1.2(ii) (arXiv v3, lines 404-494), with computed instances on P^1 including a negative control below the bound; the Tau Ceti declarations koszulComplex and koszulComplex.smul_homology_eq_zero at the pin (Basic.lean:219, :346); the guide sentence, Dependencies and supplier-contract lines; seeded target 9.10 as the route uses it (Esnault-Viehweg Cor. 5.12(c), Demailly (1.2) and (1.4)); the pull request text. Previous R01, C01, C02 repaired. Other seeded targets lie in untouched, uncited text. Automatic checks all passed (a standalone outside-folder hit lists only the PR's own folders); depcheck 132 roadmaps, 1467 edges, 0 problems; elaboration five sorry warnings only.",
+  "text": "2f5de7ff568da9f5"
+ }
+}
