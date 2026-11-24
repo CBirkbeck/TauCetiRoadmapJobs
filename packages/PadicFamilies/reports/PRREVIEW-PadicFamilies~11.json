@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PadicFamilies~11",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "PadicFamilies",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "review of the change against main: 33 changed lines since b8f3652. Checked the new section 1.7a (every identity and its four Checks recomputed, on the two-point congruence algebra and degenerate idempotents), the widened ownership sentence and the new Hida81 reference; three Hida 1986 locators read at the text and supporting the statements; Hida81 not readable (cited without a locator: a small correction). The seeded sample lies in untouched, unaffected text. Automatic checks all passed, dependency check 0 problems, Suggested.lean (unchanged) elaborates with sorry warnings only. The previous review had no findings; its three small corrections are unrepaired and repeated.",
+  "text": "9aedd0e947327cc2",
+  "carried": {
+   "from": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "head": "e50b3fc271177ca6d183bdfbbdda466ca53750eb",
+   "findings": 3,
+   "lines": 8,
+   "folders": [
+    "PadicFamilies"
+   ],
+   "corrections": true,
+   "onto": "2d654fdf5d97594fe528cb2d9ade9311cd47d143"
+  }
+ }
+}
