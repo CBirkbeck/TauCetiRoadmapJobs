@@ -1,0 +1,36 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticNumberTheoryPartI~19",
+  "head": "e7914b5c68ad72646db1009572ad061c097a6312",
+  "pr": 3027,
+  "folder": "AnalyticNumberTheoryPartI",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "review of the change against main: 178 changed lines since aecb53a. Checked: the five new sections (1.4e, 1.6a, 1.7a with sub-targets (i) and (ii), 1.7b, 2.42a), the two new Lean statements deuring_heilbronn_repulsion and exists_prime_modEq_le, and the edited sentences of the overview, Layer 0, 0.18, the Layer 1 dependencies, scope and references, each against the sections, suppliers, Mathlib declarations and sources it cites. Recomputed: conjugation and reflection for the quartic character modulo 5, the half-plane form, the Checks of 1.7a, Turan's lemma from the second main theorem for N<=K<=400, the local zero count, least primes for 3<=q<=300, the route inequalities of 1.4e and 1.7b, the norm-power Check of 2.42a. Sources read: Bombieri pp. 31, 39-42, 50, 53, 82; Bennett-Siksek Theorem 5; Kedlaya 7.3 and 10.3. The folder is unchanged since the previous review: its C01 (Theoreme 11 is not the large-sieve input of 1.7) is not repaired and is carried; its two untouched-text corrections and one format note are carried; one new small correction (the description's merge-order block gives no order against the other open pull request that conflicts in this README). Seeded sample: no target lies in a changed passage; 1.6 and 0.2, which the change cites, were checked. Automatic checks all passed; depcheck 0 problems; elaboration exits 0 with 64 sorry warnings and nothing else; one-tactic probe closes neither new theorem; no layer or item of the README at the merge base is removed or retitled.",
+  "text": "2f5de7ff568da9f5",
+  "carried": {
+   "from": "e7914b5c68ad72646db1009572ad061c097a6312",
+   "head": "5bd50e30b9a7e8923509b8ca22ada232e86e8cc2",
+   "findings": 2,
+   "lines": 2,
+   "folders": [
+    "AnalyticNumberTheoryPartI"
+   ],
+   "corrections": true,
+   "onto": "71debf1ea026e6f5e1abda84bf3d619325ee68d0"
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C02: the `merge-order` block is generated, so its content has to change in the generator.",
+    "where": "generated merge-order block of the pull request description (worker tooling)",
+    "raised": "PRREVIEW-AnalyticNumberTheoryPartI~19"
+   }
+  ]
+ }
+}
