@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GeneralizedRiemannHypothesisFromWindowBounds~11",
+  "head": "c832fa94782ffd85153cdb09dde4a48f39baa698",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GeneralizedRiemannHypothesisFromWindowBounds",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "incremental re-review of 15 changed lines since 71bbefa. Checked: the rewritten Corollary-of convention (README lines 152-161) against the family index and against the two sections carrying the line, 0.6 (ZerosOfLFunctions 8.6a, normalisation recomputed at x = 2 over Q with 30 zeros) and 3.4 (AnalyticNumberTheoryPartI 1.6, also at its other open head); supplier sections resolved at this head (ZerosOfLFunctions 6.5, 8.6a; RiemannHypothesisStatementsAndConsequences 8.4a, 9.4). Previous findings: R01 (Layer 6 and 5.4-5.6 of main removed) not repaired, carried as R01 (P1); C01 and C02 not repaired, carried. New small correction C03 (dependency records omit the deduction's suppliers). Automatic checks all passed; depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean: 7 sorry warnings only, file unchanged; nothing changed outside the pull request's own folders. Seeded sample: no seeded locator falls in the changed passage; untouched rows stand as in the review of 71bbefa.",
+  "text": "2b28eec5b3b6590a"
+ }
+}
