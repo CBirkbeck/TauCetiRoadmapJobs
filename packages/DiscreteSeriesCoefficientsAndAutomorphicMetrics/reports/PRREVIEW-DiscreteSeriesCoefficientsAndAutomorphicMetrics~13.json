@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiscreteSeriesCoefficientsAndAutomorphicMetrics~13",
+  "head": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/DiscreteSeriesCoefficientsAndAutomorphicMetrics",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 258 changed lines since 74a09b7. Checked: the K_inf^1 hypothesis of 10.1-10.2 and its Conventions paragraph, the origin, method and corollary labels of all 13 sampled sections, and the new supplier citations, with computed values (22 table rows); 14 source locators read in mumford-1977, muller-1989, hc-1953, hecht-schmid-1975, thorne-2012 and arXiv:2412.18382; two declarations of the formal proof opened; the cited sections of AutomorphicBundles, AutomorphicSpectralTheory, AutomorphicFormsOnReductiveGroups, AdelicAlgebraicGroups, SingularHermitianMetricsAndL2Methods and NoncompactQuantumSymmetry resolved at this head; merge-base README compared heading by heading (none removed, one supplier subsection added). Automatic checks all pass; depcheck 0 problems; Suggested.lean elaborates with no output and declares nothing. The folder is unchanged since the previous accepted review; its three small corrections (origin labels of 10.1 and 9.1, one sentence of the description) and one format note are repeated. Sun 2007 could not be read legally.",
+  "text": "240c8fcfb06a7e61",
+  "carried": {
+   "from": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+   "head": "e26dccac666a846a455bff34b2105a4c046d3c85",
+   "findings": 3,
+   "lines": 21,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/DiscreteSeriesCoefficientsAndAutomorphicMetrics"
+   ],
+   "corrections": true,
+   "onto": "7e87b98668ab8728ef06ededf1f75dc838f31fc1"
+  }
+ }
+}
