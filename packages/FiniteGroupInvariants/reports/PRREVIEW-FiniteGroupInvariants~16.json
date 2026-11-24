@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FiniteGroupInvariants~16",
+  "head": "9ea672ce1f16b1c2c00336d4c7b7a6451af53baf",
+  "pr": 3027,
+  "folder": "FiniteGroupInvariants",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "review of the change against main: 27 changed lines since 74a09b7. Checked: the new section 10.2a (statement, minimal-polynomial route, both Checks, with computed instances), its locator serre-bounds §2.2 Theorem 2′ p. 9 against the text, the six Mathlib declarations by #check at the pin, the consumer line against HermitianFormsAndLattices §5.2 (c), (e) at this head, the description sentence on §10.2a, the 11 layers against the merge base (none removed or retitled). Seeded sample: none of its sections lies in or is affected by the changed passages. Automatic checks all passed; dependency check 0 problems; Suggested.lean (unchanged) elaborates with sorry warnings only. One format note (the Needs line of 10.2a omits two Mathlib facts the route uses), carried over from the previous review.",
+  "text": "ef6cff53f2fbab1c"
+ }
+}
