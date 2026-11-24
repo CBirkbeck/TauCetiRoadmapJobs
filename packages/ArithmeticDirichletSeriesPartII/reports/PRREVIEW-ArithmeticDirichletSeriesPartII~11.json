@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticDirichletSeriesPartII~11",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "ArithmeticDirichletSeriesPartII",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 4a2d22f. The folder is unchanged, so every previous point stands: R01 (P2, Landau's theorem of section 0.1b is named in the overview but neither stated in Suggested.lean nor named in its docstring, although statable) is not repaired, and neither are C01-C04 or N01. Re-elaborated Suggested.lean at the head (19 sorry warnings only) and the R01 probe statement (elaborates, type matches 0.1b). Recomputed 0.1b, 4.1a and the overview sentence on fresh instances. Re-opened the cited Mathlib and Tau Ceti declarations at the unchanged pins. Dependency check: 0 problems. Gate rerun: all checks pass except edits-outside-folder, a false positive (every flagged file is in one of this pull request's own folders). Consumer citations of 0.1b and 4.1a resolved. Overlap check: nothing shared. PR text checked against the head for this folder: no contradiction. Seeded sample not re-checked, since no passage changed; the previous locator checks stand.",
+  "text": "cc51ecce1091bb2f"
+ }
+}
