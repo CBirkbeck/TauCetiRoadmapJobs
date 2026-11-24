@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DeformationAndDerivedPatchingAlgebra~12",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "DeformationAndDerivedPatchingAlgebra",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 14 changed lines since 7c341e7: the seven *Needs:* lines of sections 2.1-2.7 (main's rewording, merged in) were read against the sections they name (1.6, 1.7, 1.9, 1.11, 2.1-2.4, 2.6; SchemeAndStackFoundations 4.3-4.4 on main), with computed rows for each; the seeded target 2.7 was checked against Kisin's Lecture 1 (Proposition 1.2.1(1), Remark 1.1.2(1)); the folder's difference from main is unchanged (3.12a); automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates with 18 sorry warnings only; previous C01 carried, one format note.",
+  "text": "9aedd0e947327cc2",
+  "carried": {
+   "from": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "head": "90ee69c3df736dd2b4e2c61bfb0dae0f52ea89b2",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "DeformationAndDerivedPatchingAlgebra"
+   ],
+   "corrections": true,
+   "onto": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee"
+  }
+ }
+}
