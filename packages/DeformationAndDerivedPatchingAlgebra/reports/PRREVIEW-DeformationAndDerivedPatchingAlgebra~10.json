@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DeformationAndDerivedPatchingAlgebra~10",
+  "head": "cd123f845522a36a862d65e4fce6da6edf7965b3",
+  "pr": 3027,
+  "folder": "DeformationAndDerivedPatchingAlgebra",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 17 changed lines since 477bb48. Checked: previous R01 repaired (3.12a determinant form now cited from Tau Ceti Matrix.length_quotient_range_mulVecLin_eq_ord_det, TauCeti/LinearAlgebra/Matrix/SmithNormalForm/Length.lean:58, with Mathlib Ring.ord_eq_addVal, OrderOfVanishing/Noetherian.lean:89; route, Needs, Mathlib and Tau Ceti contracts, scope and Layer 3 dependencies match the pins), previous C01 and N01 repaired, previous C02 not repaired (untouched line 522, carried as a small correction). Stacks Lemma 10.121.7 (02MI) and Definition 10.121.5 read at their locators. No seeded-sample target lies in the change. Adversarial rows computed for the determinant form (non-diagonal matrix, rank 0, units, equal characteristic, det = 0 case), the sum over primes and both contracts. Consumers of 3.12a in ReducibilityIdealsAndUltrafilterPatching resolved. Automatic checks all passed; depcheck 0 problems; lake env lean on Suggested.lean exits 0 with 18 sorry warnings only; Suggested.lean unchanged.",
+  "text": "2b28eec5b3b6590a"
+ }
+}
