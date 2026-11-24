@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EtaleCohomologyFoundations~17",
+  "head": "7e87b98668ab8728ef06ededf1f75dc838f31fc1",
+  "pr": 3027,
+  "folder": "EtaleCohomologyFoundations",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 58 changed lines since 477bb48. All five previous points (R01, C01, C02, C03, N01) repaired: §§F.2.5a and F.10.4a now over every algebraically closed field; Illusie–Zheng locator checked at lines 790–818; SGA 1 V 1.1, 1.8, 2.3, 2.6 checked; the five Tau Ceti AffineInvariantQuotient declarations opened at pin 2fd255d with their hypotheses; consumer citations resolved at this head; description checked against the head. Seeded sample: §F.10.4a and §F.3 finiteness, the two targets under the change. Adversarial rows computed for every changed statement. Automatic checks all passed; depcheck 0 problems; no change outside the pull request's own folders; lake env lean of Suggested.lean gives six sorry warnings only.",
+  "text": "e995e35502c5eb0b"
+ }
+}
