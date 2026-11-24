@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StableHomotopyKTheory~10",
+  "head": "f3b4ab14a05b6b0b8f75246cddd04477c719addf",
+  "pr": 3027,
+  "folder": "StableHomotopyKTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "review of the change against main: 24 changed lines since 74a09b7. Checked the new section 4.24a: the integers L_k and R_j and the three clauses recomputed and correct; route steps (i), (ii) and (iv) derived; step (iii) agrees for m <= 5 (a question at m = 6). Also checked the Layer 4 Dependencies line, the AlgebraicKTheory 5.1 contract and the two references. Supplier sections resolved on main: AlgebraicKTheory 5.1, AlgebraicTopology 8.3, GeneralizedCohomology G2.8. Sample targets 1.32, 3.20 and 4.21, which the new section cites, checked against Weibel IV and Hatcher; the other twelve lie in untouched, unaffected text. Cartan's exposé 11, Théorème 2 read. Arlettaz 2000 could not be read (hosts unclassified, EuDML certificate expired); Arlettaz 1991 is paywalled. Automatic checks all passed; dependency check found 0 problems; Suggested.lean (unchanged) elaborates with only sorry warnings. Small corrections: a missing locator in 4.24a, a scope sentence that does not account for 4.24a, and one in untouched text (a consumer roadmap that does not exist).",
+  "text": "d53f9de8a54863f0"
+ }
+}
