@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-WachLatticesOverTheCyclotomicTower~13",
+  "head": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/WachLatticesOverTheCyclotomicTower",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 141 changed lines since b8f3652. Checked the new Origin, Method and Corollary-of labels of 6.4-6.11, the rewritten sources paragraph of 6.4, the scope sentence, supplier contract and references against PhiGammaModulesAndIwasawaCohomology 6.4-6.6 at this head and against the source texts (19 locators in Berger 2004, Berger 2008, Wach 1996, Herr 1998, Cherbonnier-Colmez 1999; Caruso-Liu read). Adversarial table with computed values for every changed label, the three corollary claims and the four headlines. Dependency check: 0 problems; automatic checks all passed; Suggested.lean elaborates with no output (no declarations). The folder is unchanged since the previous review, whose two small corrections (pointers to a nonexistent Layer 8 of the supplier; the label of 6.4 calling clause (5) and the heights of N(T) particular to this proof) and one format note are carried over. The formal proof repository and Gee-Liu-Savitt were not read.",
+  "text": "8a98188c180a53ea",
+  "carried": {
+   "from": "7b5fe439abfe4abcfe1c4250fea8273ca56fc1a9",
+   "head": "1f38d84177c6153ddc9c10d48caeb8df08c51666",
+   "findings": 2,
+   "lines": 15,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/WachLatticesOverTheCyclotomicTower"
+   ],
+   "corrections": true,
+   "onto": "45975a9e88ac70a3a441706a0418e4e628d33dc4"
+  }
+ }
+}
