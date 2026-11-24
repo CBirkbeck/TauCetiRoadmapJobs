@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BanachSpaceTheory~18",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "BanachSpaceTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 39 changed lines since 74a09b7. Checked: the added item B7.HermitianNorms and the scope sentence against Chen-Moriwaki Theorem 1.2.54 and Gaudron 2008 (Def.-Thm 2.4, (12), Def. 4.6); bounds, uniqueness, tau-invariance and both Checks recomputed; seeded sample B5.LocalHaarDual (bdlhv08 C.5), B6.Cotype2 (pisier12gt Def. 9.6), B7.HermitianNorms; two consumers resolved; no other owner of John-Loewner ellipsoids; automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry warnings only. One correction on the change (least-volume norm narrowed to C), two on untouched text, one format note. John 1948 and Hewitt-Ross not readable.",
+  "text": "1df1dd94c7facd00",
+  "carried": {
+   "from": "374b9ce2406497896092210ae227acf52a3eb3f1",
+   "head": "41bfe5a1b820f770cf9eecdeb4b7d36972f148fb",
+   "findings": 1,
+   "lines": 13,
+   "folders": [
+    "BanachSpaceTheory"
+   ],
+   "corrections": true,
+   "onto": "eff63265becc3b3ab7ff4d28c668d3c5afe1f229"
+  }
+ }
+}
