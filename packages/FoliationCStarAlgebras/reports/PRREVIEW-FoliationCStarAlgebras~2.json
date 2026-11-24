@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FoliationCStarAlgebras~2",
+  "head": "c231df05d23c0f9e2c3a1d372b9a1708b758e4b8",
+  "pr": 3079,
+  "folder": "FoliationCStarAlgebras",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 112 changed lines since d70f7f8. Checked: R01, R02, C01-C04 and N01 of the previous review, all repaired; the changed passages of Fo3.2, Fo5.2, Fo5.3 and the Conventions recomputed (cylinder example, flat-shift transversal, full-algebra stability against Hilsum-Skandalis Remarque 5 p. 206 read at its page, circle-fibre projection); supplier sections D6, G3.5, H4 resolved on main; Suggested.lean elaborated (5 sorry warnings only, six statements now proved, no set_option); automatic checks all passed; depcheck 0 problems. One small correction: the description still says 11 sorrys.",
+  "text": "df83c53beddacc7b"
+ }
+}
