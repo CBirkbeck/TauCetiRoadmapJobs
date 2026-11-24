@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GlobalGaloisDeformations~9",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "GlobalGaloisDeformations",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 12 changed lines since 3b77a6a. Checked: both small corrections of the previous review are repaired (3.6a Needs cites LocalGaloisDeformationRings F.2.1 for Phi_p, resolved on main; DDT printed range no longer 1-107); the third changed line (8.4 Needs, sections 1.1 and 1.4 of LocalGaloisDeformationRings) is main's text taken in by the merge and both sections exist on main. Seeded sample: only 3.6a lies in a changed passage; its DDT locators (Theorem 2.36 p. 73, Lemma 2.39 p. 75, Lemma 2.40 p. 76) re-read. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with two sorry warnings only. Adversarial table with computed values for the changed citations.",
+  "text": "9aedd0e947327cc2"
+ }
+}
