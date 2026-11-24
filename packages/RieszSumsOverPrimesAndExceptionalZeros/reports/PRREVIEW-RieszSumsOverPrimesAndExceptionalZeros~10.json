@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RieszSumsOverPrimesAndExceptionalZeros~10",
+  "head": "23a54c46d51e34903ce85bbfd9d5852e455f7907",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RieszSumsOverPrimesAndExceptionalZeros",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 86 changed lines since 3bddf73. Previous R01, R02 (1.4i attributions) and C01-C04, N01 all repaired. Recomputed the new sentences of 1.4i against the formal proof's QH.thin (exponents 3/5, 3/8; (b') at alpha = 31/50 implies it) and GzPNT/gzPNT (bound for G_1 and its method); 1.7a (a) rederived from Kadiri-Ng-Wong Lemma 2.1 (i)-(ii) and display (2.2), pages 3 and 4 confirmed; docstring claims about AnalyticNumberTheoryPartI Suggested.lean confirmed. Seeded sample checked where it falls in the changed passages (1.4i, 1.7a). Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with seven sorry warnings only. Description checked against the live text. One format note.",
+  "text": "6bad368cb6f2fb16"
+ }
+}
