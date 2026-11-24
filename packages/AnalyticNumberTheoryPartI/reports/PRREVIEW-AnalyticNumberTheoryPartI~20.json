@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticNumberTheoryPartI~20",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "AnalyticNumberTheoryPartI",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "incremental re-review of 52 changed lines since e7914b5: the one line of the pull request's own (the Needs line of 1.7a(ii), read against Bombieri Theoreme 11 and tested numerically for primitive and all characters, sieved and unsieved coefficients) and the 51 lines of Needs rewrites merged from main (expansions of B1, B3, B4 compared item by item; cited sections of ClassFieldTheory, InductionRestriction, ZerosOfLFunctions and the Completed roadmaps resolved; 8 library declarations opened at the pins). Previous C01 repaired; the deferred merge-order point D01 is resolved by the merge; two corrections and one format note in untouched text carried. Seeded sample: only 2.49 lies in the change. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry warnings only (64); nothing changed outside the pull request's roadmap folders.",
+  "text": "9aedd0e947327cc2",
+  "carried": {
+   "from": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+   "head": "0fec348455a021be209e71894638b6693f8ce936",
+   "findings": 3,
+   "lines": 6,
+   "folders": [
+    "AnalyticNumberTheoryPartI"
+   ],
+   "corrections": true,
+   "onto": "91a563b96c512e20de8cd28402e2cc392312e2d1"
+  }
+ }
+}
