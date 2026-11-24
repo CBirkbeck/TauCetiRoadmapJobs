@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeckeIdealsAndTaylorWilesRelations~12",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeckeIdealsAndTaylorWilesRelations",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "review of the change against main: 90 changed lines since 74a09b7. Checked: the new origin and method labels of 3.13a, 4.2a, 9.9 and 10.1 and the two convention paragraphs; 10.1's Corollary-of line against ArithmeticGaloisDuality D7.6a at the head (covers 10.1 (b), (c) and (a) at Sigma = S, as stated); the rewritten BaseChange 16.1 contract against 16.1 at the head and PAIP2 3.1; the new references against their texts: Thorne 2022 Theorem A = 6.1 (9.9 origin correct; its 3 and 5 contain 4.2a's comparison maps and n! relations, so 4.2a's 'particular to this proof' label is inaccurate, C01), WWE17 Theorem 4.2.8 (needs X_theta = 0, C02), Milne ADT I.4.10; the 10.1 method label against the formal proof's PTShaAt statement and counting file (agree); the seeded sample (3.13a, 4.2a, 9.9, 10.1) with Che14 Prop 3.7, NT23 Theorem A, Example 2.29, Theorem 5.2 and BZ77 2.12; the description against the head (C03); one untouched-text remark on 9.9 (a) (C04). Automatic checks all passed, none set aside; depcheck 0 problems; Suggested.lean unchanged, elaborates with no output, declares nothing; no change outside the declared folders. Not verifiable: Geraghty 2019 (paywalled), Tho22 journal details, method labels of 3.13a, 4.2a, 9.9 against the formal proof.",
+  "text": "dda9acd9cf88f1ae"
+ }
+}
