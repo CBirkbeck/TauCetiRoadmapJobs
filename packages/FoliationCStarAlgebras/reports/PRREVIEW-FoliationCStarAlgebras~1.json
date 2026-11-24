@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FoliationCStarAlgebras~1",
+  "head": "d70f7f8096fc89d755c4fc95cc34bdd43a876acd",
+  "pr": 3079,
+  "folder": "FoliationCStarAlgebras",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review. The 15 sampled targets and every other locator into Connes 1982, Connes 1994, Kordyukov, Crainic-Moerdijk, Hilsum-Skandalis, Laca-Neshveyev and Neshveyev were read against the texts (all at the cited pages); Muhly-Williams and Sims-Williams were not reopened. Both findings are in Fo3.2: a Check that denies a Morita equivalence which exists, and a Hausdorffness equivalence missing the hypothesis that the transversal is complete. Automatic checks all passed; dependency check 0 problems; targeted build succeeds with 11 sorry warnings; one-tactic probe and #check signature pass run on a scratch copy; supplier sections resolved on main and at the open head of TracesOnCStarAlgebras; no overlap with another roadmap.",
+  "text": "df83c53beddacc7b"
+ }
+}
