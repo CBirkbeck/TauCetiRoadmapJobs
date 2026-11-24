@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeneralizedCohomology~69",
+  "head": "8d8d4110a9d1666ccdec725e7788259559f88307",
+  "pr": 2535,
+  "folder": "GeneralizedCohomology",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since 8d8d411; this round checked the pull request's title and description against the head and the change from main (G3.9's pointer to BordismFormalGroups F2.2, the formulas supplied to TangentialBordism, rationalHurewicz in universe u, the five layers, no heading or declaration added or removed): all agree. Previous review had no finding. F2.2 and TangentialBordism's G3.9 citations resolved on main; automatic checks pass; depcheck 0 problems; Suggested.lean elaborates with seven sorry warnings only. One ownership question (G2.11 against #2269/#2270) left for the human reviewers.",
+  "text": "99e5ebd4920eacef"
+ }
+}
