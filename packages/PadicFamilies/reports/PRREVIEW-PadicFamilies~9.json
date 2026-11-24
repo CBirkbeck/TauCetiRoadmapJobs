@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PadicFamilies~9",
+  "head": "0b5086d93fa8e450c86bf7bec6afab0949229b41",
+  "pr": 3027,
+  "folder": "PadicFamilies",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "review of the change against main: 33 changed lines since aecb53a. Checked: the new section 1.7a (Hida's module of congruences along an idempotent), every identity and its four Checks recomputed (congruence ring A_n, three-point ring, O[t]/(t^2), ramified O, residue characteristic 2 for Check 4); seeded target 1.7a against hida (Numdam) at p. 232 lines 59-62 and p. 254 lines 906-909, 925-927, all supporting; the other seeded targets lie in untouched, unaffected text. The widened scope sentence and the hida81 reference were also checked. hida81 is not readable (EuDML certificate expired, publisher paywalled). Six citations of PadicFamilies 1.7a in LengthBoundsInPadicFamilies and CongruenceModulesOfThetaLifts were resolved against what 1.7a states. Merge-base record kept (8 layers, no heading removed). Gate: every check passed. depcheck: 132 roadmaps, 1482 edges, 0 problems. lake env lean on the unchanged Suggested.lean: three sorry warnings only. Mathlib names checked at the pin: IsIdempotentElem, Module.length, Module.annihilator, Submodule.torsionBySet. Overlap check over 7 closest roadmaps found no second owner. Three small corrections, none blocking: hida81 cited without a locator; the description's claim that every addition keeps its source's generality; a scope sentence narrower than 1.7a.",
+  "text": "0379c585488d2402"
+ }
+}
