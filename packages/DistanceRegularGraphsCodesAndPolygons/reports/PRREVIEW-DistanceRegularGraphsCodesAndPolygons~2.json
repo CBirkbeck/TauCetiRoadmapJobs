@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DistanceRegularGraphsCodesAndPolygons~2",
+  "head": "d9e09520eea1dfbb4efe7d0884d15b4e42c69d8b",
+  "pr": 3067,
+  "folder": "DistanceRegularGraphsCodesAndPolygons",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 101 changed lines since b93bcea. Checked: both previous findings (repaired; values recomputed); the new target of 6.3 on every perfect code with t <= n of seven small Hamming spaces, its Checks and proof route; the new maximum-based intersectionCount on the prism, Petersen graph and 2K_2; the repaired sketch of 7.2; the BH page numbers against the publisher's chapter page ranges. One finding: the summary states the count of zeros without t <= n. Elaboration: 43 sorry warnings only; one-tactic probe of the new theorem closes nothing; dependency check 0 problems; one automatic check set aside (a section header over #check lines). BCN Proposition 2.5.5 not readable.",
+  "text": "714dbab1e34a9b5a"
+ }
+}
