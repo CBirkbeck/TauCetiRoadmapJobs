@@ -1,0 +1,66 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DeligneLusztigTheory"
+
+[[source]]
+id = "DudasMichel2015"
+locator_scheme = "theorem"
+locator = "Definition 14.2"
+url = "https://webusers.imj-prg.fr/~jean.michel/papiers/lectures_beijing_2015.pdf"
+fetched_from = "https://webusers.imj-prg.fr/~jean.michel/papiers/lectures_beijing_2015.pdf"
+fetched_at = "2026-11-24T22:24:36Z"
+sha256 = "843c1774f1dcb2e692e28a609f588c373ad04622cb40f5b04049e5bee20e377f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["1.1"]
+
+[[source]]
+id = "FulmanGuralnick2012"
+authors = "Jason Fulman, Robert Guralnick"
+title = "Bounds on the number and sizes of conjugacy classes in finite Chevalley groups with Applications to Derangements"
+year = 2009
+arxiv = "0902.2238v1"
+locator_scheme = "theorem"
+locator = "Proposition 3.5"
+url = "https://arxiv.org/abs/0902.2238v1"
+fetched_from = "https://arxiv.org/pdf/0902.2238v1"
+fetched_at = "2026-11-24T22:24:41Z"
+sha256 = "609f991eb1d0f4b9c60522a8ccecf5f059a47c599546a3d716ffab0867c30ba5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["2.10"]
+
+[[source]]
+id = "Geck2017"
+authors = "Meinolf Geck"
+title = "A first guide to the character theory of finite groups of Lie type"
+year = 2017
+arxiv = "1705.05083v4"
+locator_scheme = "theorem"
+locator = "Example 2.13"
+url = "https://arxiv.org/abs/1705.05083v4"
+fetched_from = "https://arxiv.org/pdf/1705.05083v4"
+fetched_at = "2026-11-24T22:24:46Z"
+sha256 = "1146d28e0526feeee7e0f033c299b21204cd74413ff5738d266f775e1f8f0743"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v4"
+cited_for = ["2.1"]
+
+[[source]]
+id = "HowlettLehrer1980"
+authors = "R. B. Howlett, G. I. Lehrer"
+title = "Induced cuspidal representations and generalised Hecke rings"
+year = 1980
+venue = "Inventiones Mathematicae 58"
+doi = "10.1007/BF01402273"
+locator_scheme = "theorem"
+locator = "Theorem 4.14"
+url = "https://doi.org/10.1007/BF01402273"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.5"]

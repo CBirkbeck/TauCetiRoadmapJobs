@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DeligneLusztigTheory~3",
+  "head": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+  "pr": 3027,
+  "folder": "DeligneLusztigTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Previous R01, R02, C01, C02, N01-N03 all repaired. Seeded sample (1.1-1.5, 1.10, 1.11, 2.1, 2.2, 2.4, 2.5, 2.8, 2.10, 2.11, 2.12) recomputed; 27 locators read in DudasMichel2015, FulmanGuralnick2012 and Geck2017; DeligneLusztig1976, Green1955, Kondo1963, Shintani1976 and HowlettLehrer1980 not readable legally. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 19 sorry warnings only; one-tactic probe closes none of the 19 theorems; signatures compared with the README. One small correction (the docstring says the type-A Hecke algebras are not at the pins; Tau Ceti has them) and one format note (a page range).",
+  "text": "6bad368cb6f2fb16",
+  "carried": {
+   "from": "6f088b95e3dfe355ff79780ee66a1349c5b2aa4a",
+   "head": "3c4e23c75d9a1248a9e8708608318c6dfafff1d1",
+   "findings": 1,
+   "lines": 5,
+   "folders": [
+    "DeligneLusztigTheory"
+   ],
+   "corrections": true,
+   "onto": "226b565c5db7b3932b9e18b4992fdd4bcccdb0ef"
+  }
+ }
+}
