@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PhiGammaModulesAndIwasawaCohomology~10",
+  "head": "855180da66cd42ed862a05c038358759f29d889e",
+  "pr": 3027,
+  "folder": "PhiGammaModulesAndIwasawaCohomology",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 141 changed lines since 74a09b7. New sections 6.4-6.6 (the sampled 6.5 among them) checked at 14 locators against Berger's Limites de representations cristallines, its errata and Wach 1996; sign and weight conventions and every Check recomputed; adversarial table with computed values. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean (unchanged) elaborates with sorry as the only warning. No previous finding to repair; the previous three small corrections and two format notes stand, the folder being unchanged. Sampled sections outside the change were not re-read.",
+  "text": "dda9acd9cf88f1ae",
+  "carried": {
+   "from": "855180da66cd42ed862a05c038358759f29d889e",
+   "head": "1373b5e897a1a3ca3c0de8b281e4aad52aa20224",
+   "findings": 3,
+   "lines": 14,
+   "folders": [
+    "PhiGammaModulesAndIwasawaCohomology"
+   ],
+   "corrections": true,
+   "onto": "8038c576ec4338db1908035b2e21e964bc861294"
+  }
+ }
+}
