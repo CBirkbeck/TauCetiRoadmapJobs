@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GeometryOfNumbersAndQuadraticArithmetic~21",
+  "head": "0b5086d93fa8e450c86bf7bec6afab0949229b41",
+  "pr": 3027,
+  "folder": "GeometryOfNumbersAndQuadraticArithmetic",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 303 changed lines since aecb53a. Read in full every added or changed section (2.2.6, 2.4.7-2.4.8, 2.5.7, 2.7.4-2.7.7, 2.9 head, 2.9.2-2.9.4b, Layer 2a, 3.2.8-3.2.9, scope, supplier contracts, references) against the merge-base README; no layer, item or id removed or renumbered. Adversarial table with computed values for every changed statement; claimed point counts of 3.2.8-3.2.9 reproduced by enumeration (ramified Q3(sqrt-3), unramified Q2(sqrt-3), split q=3). Locators verified in the text: Kirschmer 2016 (27), Voight2026 (4), Stacks 10.121.5-7, Jacobson 1940, Gan-Hanke-Yu 2001; the seeded sample falls in the change only at 3.3 finiteOrthogonalOrder, consistent. Supplier citations resolved on main (GlobalQuadraticForms 4.1/4.3/6.1/6.3, AdelicAlgebraicGroups AA.3.4/AA.4.2, ClassFieldTheory 6.1, QuadraticFormInvariants Layer 0) and at the head (ReductiveGroups 9D.1). Automatic checks pass (rerun flags only the pull request's own other folders); dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; a probe of the 2a.1 Gram-matrix statement in this namespace elaborates. One P2: Landherr's theorem (2a.1, 2a.2) Lean names given in the README are declared only in HermitianFormsAndLattices/Suggested.lean, not here, although statable.",
+  "text": "240c8fcfb06a7e61"
+ }
+}

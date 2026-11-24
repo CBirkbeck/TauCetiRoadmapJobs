@@ -274,3 +274,20 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["3.3.5"]
+
+[[source]]
+id = "Kirschmer2016"
+authors = "Markus Kirschmer"
+title = "Definite quadratic and hermitian forms with small class number"
+year = 2016
+locator_scheme = "theorem"
+locator = "Theorem 2.4.1, p. 20; Algorithm 3.3.2 and Theorem 3.3.3, pp. 31–32; Proposition 3.3.5, pp. 32–33; Remark 3.4.2 (3), p. 40"
+url = "https://www.math.rwth-aachen.de/~Markus.Kirschmer/papers/herm.pdf"
+fetched_from = "https://www.math.rwth-aachen.de/~Markus.Kirschmer/papers/herm.pdf"
+fetched_at = "2026-11-24T12:51:06Z"
+sha256 = "aef562cc9ea0cfcd7d82a6e325a3885c3527d367811eb39a8e8e7d544596e183"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["2.2.6", "2.4.7", "2.4.8", "2.7.4", "2.7.5", "2.7.6", "2.7.7", "2.9.2", "2.9.3a", "2.9.4a", "2.9.4b", "2a", "3.2.8", "3.2.9"]
+version_note = "Habilitationsschrift, RWTH Aachen, 2016, as hosted on the author's page; page numbers are those printed in it"
