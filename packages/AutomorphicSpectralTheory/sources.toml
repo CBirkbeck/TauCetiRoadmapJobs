@@ -626,3 +626,55 @@ licence_class = "author-page"
 status = "certified"
 accessed = "2026-11-15"
 cited_for = ["0.5"]
+
+[[source]]
+id = "Mül89"
+authors = "Werner Müller"
+title = "The trace class conjecture in the theory of automorphic forms"
+year = 1989
+venue = "Annals of Mathematics 130"
+doi = "10.2307/1971453"
+locator_scheme = "theorem"
+locator = "Theorem 0.1 and Corollary 0.2, p. 2; Corollary 8.8, p. 84 (numbering and pagination of the preprint MPI 88-31)"
+url = "https://archive.mpim-bonn.mpg.de/id/eprint/295/1/preprint_1988_31.pdf"
+fetched_from = "https://archive.mpim-bonn.mpg.de/id/eprint/295/1/preprint_1988_31.pdf"
+fetched_at = "2026-11-24T05:43:05Z"
+sha256 = "531925cab6e39fc76b00046b4d61c4e736784de09bdc1800fd14a957d8dc15a4"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "read in its preprint MPI 88-31 (Max-Planck-Institut für Mathematik, 1988); cited in the preprint's numbering and pagination"
+cited_for = ["6.4a"]
+
+[[source]]
+id = "Mül98"
+authors = "Werner Müller"
+title = "The trace class conjecture in the theory of automorphic forms. II"
+year = 1998
+venue = "Geometric And Functional Analysis 8"
+doi = "10.1007/s000390050059"
+locator_scheme = "theorem"
+locator = "Corollary 0.3 (located through its use in FLM11, §5.1, p. 14)"
+url = "https://doi.org/10.1007/s000390050059"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.4a"]
+
+[[source]]
+id = "FLM11"
+authors = "Tobias Finis; Erez Lapid; Werner Müller"
+title = "On the spectral side of Arthur's trace formula — absolute convergence"
+year = 2011
+venue = "Annals of Mathematics 174"
+locator_scheme = "theorem"
+locator = "Remark 3, p. 10; §5.1 and inequality (5), p. 14 (numbering and pagination of the authors' copy)"
+url = "https://www.math.uni-bonn.de/people/mueller/papers/specpaper060311.pdf"
+fetched_from = "https://www.math.uni-bonn.de/people/mueller/papers/specpaper060311.pdf"
+fetched_at = "2026-11-24T05:43:21Z"
+sha256 = "f4382c6e7e260e91d9322c1689bff6975955e1ecc925e1ae29390bb843e70f7a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "authors' copy on Werner Müller's page; cited in its numbering and pagination"
+cited_for = ["6.4a"]
