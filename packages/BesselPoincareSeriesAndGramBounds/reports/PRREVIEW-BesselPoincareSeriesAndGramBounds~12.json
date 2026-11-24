@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BesselPoincareSeriesAndGramBounds~12",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "review of the change against main: 431 changed lines since aecb53a; checked the new Origin and Method labels of all 29 sections against their statements and routes, the seeded sample of 15 sections with an adversarial table, 23 new source locators in 12 sources (Beuzart-Plessis 2020, Xue, He, Jiang-Sun-Zhu, Sun-Zhu, Kobayashi-Speh, Harris-Kobayashi-Speh, Beuzart-Plessis 2018, Ichino-Lapid-Mao, Molev, Gerasimov-Kharchev-Lebedev), the README at the merge base item by item (nothing removed or renumbered), 91 cross-roadmap ids at this head (all present); automatic checks all passed, dependency check 0 problems, Suggested.lean (unchanged) elaborates cleanly; small corrections: 5.13c labelled published but adapted, two imprecise locators, attributions naming no work",
+  "text": "52370820c859def5"
+ }
+}
