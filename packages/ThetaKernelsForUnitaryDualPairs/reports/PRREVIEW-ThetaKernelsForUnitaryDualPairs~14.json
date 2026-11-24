@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaKernelsForUnitaryDualPairs~14",
+  "head": "2899581178834dfb5955a6397cf27f8633e88c00",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaKernelsForUnitaryDualPairs",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 230 changed lines since b8f3652. Checked: the repairs of the previous review (R01 3.3b ownership against MetaplecticAutomorphicForms 3.3d; 6.4a against Kudla-Rallis 1988 p. 66 and GQT p. 53; 3.46a against Ichino20 7.4; 3.47b lemma (o) against three declarations of the formal proof), the new Origin, Method and Corollary-of labels against the supplier sections at this head, 14 source locators of the seeded sample in changed text, the record of the README on main (nothing removed), the automatic checks (all passed), the dependency check (0 problems) and the elaboration of Suggested.lean (exit 0, no declarations). One small correction (three older sentences contradict the new labels); one question on Kudla-Sweet 1997 at split places.",
+  "text": "8a98188c180a53ea",
+  "carried": {
+   "from": "2899581178834dfb5955a6397cf27f8633e88c00",
+   "head": "226b565c5db7b3932b9e18b4992fdd4bcccdb0ef",
+   "findings": 1,
+   "lines": 10,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ThetaKernelsForUnitaryDualPairs"
+   ],
+   "corrections": true,
+   "onto": "1f38d84177c6153ddc9c10d48caeb8df08c51666"
+  }
+ }
+}
