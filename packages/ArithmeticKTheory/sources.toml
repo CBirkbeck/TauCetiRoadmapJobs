@@ -502,3 +502,21 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-08"
 cited_for = ["6.15"]
+
+[[source]]
+id = "soule-perfect-forms"
+authors = "Christophe Soulé"
+title = "Perfect forms and the Vandiver conjecture"
+year = 1998
+arxiv = "math/9812171v1"
+locator_scheme = "theorem"
+locator = "Proposition 3"
+url = "https://arxiv.org/abs/math/9812171v1"
+fetched_from = "https://arxiv.org/pdf/math/9812171v1"
+fetched_at = "2026-11-24T07:06:58Z"
+sha256 = "1e1acc3e9e375379fd863606a81943b616195cd6432081383826bf38c2ce57dd"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["9.1"]
