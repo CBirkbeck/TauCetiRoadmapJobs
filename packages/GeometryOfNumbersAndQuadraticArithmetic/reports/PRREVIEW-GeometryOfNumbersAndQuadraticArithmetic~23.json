@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeometryOfNumbersAndQuadraticArithmetic~23",
+  "head": "094da693be77c279419dce305d25388f6c40541a",
+  "pr": 3027,
+  "folder": "GeometryOfNumbersAndQuadraticArithmetic",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 369 changed lines since 74a09b7. Checked: every added or changed statement (2.2.6, 2.4.7-2.4.8, 2.5.7, 2.7.4-2.7.7, 2.9.2, 2.9.3a-c, 2.9.4a-b, Layer 2a, 3.2.8-3.2.9, the two new Lean declarations) recomputed on instances, with the density values of the 3.2.9 Checks reproduced by brute force; 31 source locators read (Kirschmer 2016, Voight, Stacks Project), including those of the seeded targets 2.2 and 2.5 that fall in the change; supplier citations resolved on main and at this head; the README at the merge base compared layer by layer (nothing removed, Layer 2a added); the automatic checks all passed, the dependency check shows 0 problems, and Suggested.lean elaborates with 23 sorry warnings and no error; the one-tactic probe leaves both new theorems open. One small correction (totally definite is unused in 2.4.7 (c) and 2.4.8 (b)) and one format note; paywalled primary sources listed as not verifiable.",
+  "text": "d53f9de8a54863f0",
+  "carried": {
+   "from": "094da693be77c279419dce305d25388f6c40541a",
+   "head": "45a486516685460fece73a8acfdf15b47bdf0282",
+   "findings": 1,
+   "lines": 6,
+   "folders": [
+    "GeometryOfNumbersAndQuadraticArithmetic"
+   ],
+   "corrections": true,
+   "onto": "2564a30627bc3e270c291d11361d27efa5172380"
+  }
+ }
+}
