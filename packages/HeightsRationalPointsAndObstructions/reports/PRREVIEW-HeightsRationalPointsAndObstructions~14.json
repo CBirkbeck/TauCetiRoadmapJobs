@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsRationalPointsAndObstructions~14",
+  "head": "4b01d78f351640e8165b4ad852c22f2644bf71a4",
+  "pr": 3027,
+  "folder": "HeightsRationalPointsAndObstructions",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 14 changed lines since 0b5086d. Checked: R01 (deferred D01) repaired, since 5.17c.2 case (iii) now uses ComplexComparisonPartII's H(Omega, phi) and C7.9 states its Hilbert-space structure and kernel identity (resolved at this head; no cycle); C02 and C03 repaired and recomputed against ArakelovGeometryAndAbelianHeights 1.2a (v) and gaudron2008 pp. 84-86; C01 partly repaired (description summary, carried as a small correction); N01 carried. Seeded sample: no target in the changed lines. Automatic checks passed; depcheck 0 problems; Suggested.lean (unchanged) elaborates with 7 sorry warnings and no errors.",
+  "text": "0379c585488d2402"
+ }
+}
