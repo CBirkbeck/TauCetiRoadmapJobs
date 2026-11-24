@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticStableMaps~14",
+  "head": "21cf625cc2b38f294695e4d49eb3826c20ad9631",
+  "pr": 2529,
+  "folder": "AnalyticStableMaps",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 306 changed lines since 890b66d. The commit since the previous review (509fbfd) moves Scope and ownership and Exact supplier contracts to the end of the README verbatim (96 lines removed, the same 96 added). Recomputed every statement and Check of the new 0.6-0.8 and 2.24, the restated 7.3 and the 2.9 conic Check; 14 locators read in wendl10, wendl23 and pardon13 (sampled targets 0.8 and 7.3 fall in changed text); 11 library declarations opened at the pins; supplier citations resolved on main; no layer or item of the merge-base README removed. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with three sorry warnings only. One small correction (description omits the move), one format note (a 'below' that should now read 'above').",
+  "text": "1c493a8b2e3d6843",
+  "carried": {
+   "from": "21cf625cc2b38f294695e4d49eb3826c20ad9631",
+   "head": "21cf625cc2b38f294695e4d49eb3826c20ad9631",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
