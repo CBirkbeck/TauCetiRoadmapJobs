@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArakelovGeometryAndAbelianHeightsPartII~10",
+  "head": "e7914b5c68ad72646db1009572ad061c097a6312",
+  "pr": 3027,
+  "folder": "ArakelovGeometryAndAbelianHeightsPartII",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 14 changed lines since aecb53a. Checked the new §0.3a (Moriwaki's inequality) and its reference entry against moriwaki-2009 (Corollaries 6.3, 6.4, Theorem 6.2, Example 6.1, Theorem 4.2, Proposition 2.1): statement, hypotheses and locators agree; route and Check hold. Folder text identical to the previous review's head; its two small corrections and one format note stand. Seeded sample: no target in the changed text. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with no output; merge-base layers all kept.",
+  "text": "52370820c859def5",
+  "carried": {
+   "from": "e7914b5c68ad72646db1009572ad061c097a6312",
+   "head": "f3e2eb3b05df26beb3386f6226a200beeb918da7",
+   "findings": 2,
+   "lines": 12,
+   "folders": [
+    "ArakelovGeometryAndAbelianHeightsPartII"
+   ],
+   "corrections": true,
+   "onto": "5f1baabe57547ee1231b962f6609062f417f4277"
+  }
+ }
+}
