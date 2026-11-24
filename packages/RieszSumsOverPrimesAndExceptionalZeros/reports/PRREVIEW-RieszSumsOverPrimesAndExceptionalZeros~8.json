@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RieszSumsOverPrimesAndExceptionalZeros~8",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RieszSumsOverPrimesAndExceptionalZeros",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "review of the change against main: 297 changed lines since 74a09b7. Checked: every changed passage (Origin, Method and Corollary-of labels of 0.30b, 1.4e-1.4i, 1.7a, 1.7b, 2.9b, 2.41a; the new 0.30b route; the restructured 2.9b; summary, scope, contracts, references; the four changed docstrings of Suggested.lean) and the untouched 1.4i (b') heading that the change affects. The seeded sample was checked where readable: Granville-Soundararajan Lemma 2.1, Ihara-Murty-Shimura Cor. 3.3.2 (as quoted by Chirre et al.), Kadiri-Ng-Wong Lemma 2.1 and Th. 2.2, Kadiri-Wong Th. 7, Thorner-Zaman Th. 1.4, Bennett-Siksek Th. 5 (26), Gallagher Th. 7. Koukoulopoulos, Iwaniec-Kowalski, LMO, Fogels, Landau, Knapowski, Turan and [FormalProof] could not be read. The Corollary-of lines were checked against AnalyticNumberTheoryPartI 1.4e, 1.7a, 1.7b at this head. Elaboration: seven sorry warnings only; #check of all seven declarations; probe (c) => (c') elaborates; exact? finds no library proof of Linnik. Automatic checks all passed; depcheck 0 problems; no change outside the pull request's folders. One P2 finding: the formal proof is still credited with 1.4i (b') for every alpha after (c') was withdrawn.",
+  "text": "faa1a157b4f8bed0"
+ }
+}
