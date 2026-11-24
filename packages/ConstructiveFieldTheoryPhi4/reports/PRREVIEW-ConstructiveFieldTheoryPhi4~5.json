@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ConstructiveFieldTheoryPhi4~5",
+  "head": "3a2e7f14c6be475ec3e44cc1cf41f2d3f6a62385",
+  "pr": 2432,
+  "folder": "ConstructiveFieldTheoryPhi4",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 6 changed lines since f40ac5a. Checked: the three small corrections of the previous review (all repaired: description's list of owner roadmaps; Layer 7's use of 3.2 in the overview and build guide; Potts scope of Duminil-Copin Corollary 1.9); the changed passages against Layer 7's Needs lines and against the sources at their locators (duminilcopin-2017-lectures Corollary 1.9, sokal-1982 p. 327, peled-spinka-2017 Theorem 2.3; of the seeded sample, 4.2 and 3.2 fall in or are cited by the change); the pull request's title and description against the head (no sentence contradicted, nothing unstated); adversarial rows with computed values for 3.2, 7.1, 4.2. Automatic checks all passed; depcheck 0 problems; lake env lean on Suggested.lean exits 0 with 29 sorry warnings only; nothing changed outside the folder. Two format notes carried from the previous review.",
+  "text": "5cf2952c6be7a92e"
+ }
+}
