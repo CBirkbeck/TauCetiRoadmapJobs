@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FiniteReductiveGroups~9",
+  "head": "71bbefa3472ec8ab1b1331a5f03461eec4305842",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/FiniteReductiveGroups",
+  "date": "2026-11-24",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "review of the change against main: 2151 changed lines since aecb53a. Checked: every changed section of README.md against the merge base (no layer or heading removed; 123 Checks on main, 113 at head) and the docstring change of Suggested.lean. Seeded sample (1.1, 2.2, 2.4, 3.1, 3.3, 4.1-4.3, 4.7, 5.1, 5.4, 6.0, 6.2, 6.4, 6.5): 22 locators read in Moy-Prasad 1996, Dat 2009 (HAL v1), Carayol 1984, S. I. Gelfand 1970, Steinberg 1965, Bary-Soroker-Koukoulopoulos-Kozma and Grinberg-Reiner. Green 1955, Deligne-Lusztig 1976, Dudas-Michel 2015, Digne-Lehrer-Michel 1992, Lang 1956 and Bushnell-Henniart 2005 not legally readable. New supplier sections (ReductiveGroups 7.1, 7a-7c, 7C.6, 7h, 7i, 9F; CharacterTheory 9a; EtaleDualityAndPerverseSheaves 7.6; CharacterSums 3.1a; SR.7) resolved at this head. Adversarial table: 36 rows with computed values. Automatic checks all passed; depcheck 132 roadmaps, 1471 edges, 0 problems; lake env lean: three sorry warnings only; seven #check unchanged; one-tactic probe closes none. Findings: R01 (P1) items of main removed (definition of ch_m in 5.4 with clauses of (a), (d); a clause of 1.1; ten Checks); R02 (P2) 3.2 Kunneth under unnamed hypotheses; R03 (P2) interim-proof convention and p >= 5 narrowing of 4.8, 5.4, 5.7; R04 (P2) double ownership with CharacterTheory 9a and SR.7.2.",
+  "text": "68ef976c0bfed16c",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The convention \"Corollaries of general theorems\" plans an interim proof of each special case by the formal proof's route, to be deleted later, and with it cuts 4.8, 5.4 and 5.7 down to `p ≥ 5`",
+    "where": "the family index's convention paragraph and the other family roadmaps",
+    "raised": "PRREVIEW-FiniteReductiveGroups~9"
+   }
+  ]
+ }
+}
