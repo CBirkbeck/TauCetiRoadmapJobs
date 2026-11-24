@@ -17,3 +17,38 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-04"
 cited_for = ["2.3a"]
+
+[[source]]
+id = "knapp-lie-groups-beyond"
+authors = "Anthony W. Knapp"
+title = "Lie Groups Beyond an Introduction"
+year = 2002
+venue = "Progress in Mathematics 140, Birkhäuser, second edition; the author's digital second edition keeps pages vii–xviii and 1–812"
+locator_scheme = "theorem"
+locator = "Ch. VI, §§4–5; Ch. VII, §§2 and 7; Theorems 7.117 and 7.129, pp.502 and 506"
+url = "https://www.math.stonybrook.edu/~aknapp/download/Beyond2.pdf"
+fetched_from = "https://www.math.stonybrook.edu/~aknapp/download/Beyond2.pdf"
+fetched_at = "2026-11-24T17:14:52Z"
+sha256 = "5ba1b91db9174613716a8421caa8899a169e154312df1df94182d60a7929df70"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-24"
+cited_for = ["2.3a", "6.8a"]
+
+[[source]]
+id = "taibi-level-one-dimensions"
+authors = "Olivier Taïbi"
+title = "Dimensions of spaces of level one automorphic forms for split classical groups using the trace formula"
+year = 2014
+arxiv = "1406.4247v1"
+locator_scheme = "section"
+locator = "§5.1, pp.54–55"
+url = "https://arxiv.org/abs/1406.4247v1"
+fetched_from = "https://arxiv.org/pdf/1406.4247v1"
+fetched_at = "2026-11-24T17:14:58Z"
+sha256 = "ee10fae68b370dc1d845ba28a87050d2f6a75cde22a0f05edcf357c287c7c546"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-24"
+version_note = "arXiv v1"
+cited_for = ["6.8a"]
