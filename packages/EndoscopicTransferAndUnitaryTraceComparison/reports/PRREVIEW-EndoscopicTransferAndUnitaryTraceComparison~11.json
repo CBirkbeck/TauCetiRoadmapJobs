@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EndoscopicTransferAndUnitaryTraceComparison~11",
+  "head": "477bb488d18581c2236603e5c71afdbb473fd376",
+  "pr": 3027,
+  "folder": "EndoscopicTransferAndUnitaryTraceComparison",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 0,
+  "notes": "review of the change against main: 26 changed lines since aecb53a. Checked the new section 10.26a against Deligne-Henniart Proposition 1.1 (p. 93), Theorem 4.6 and Lemma 4.7 (pp. 110-111): statement, valuation and uniqueness of c_chi, threshold and all three Checks hold, with computed instances over Q_3. Also checked the rewritten Weil paragraph and Needs line of 10.27, the Layer 10 dependencies, and the consumer BaseChangeAndGaloisRepresentationsForUnitaryGroups 10.27. Sample target 10.27: Scholze Theorem 14.1 and Lemma 14.2 verified; Jacquet-Shalika not readable (host not confirmed as an author page). The other 14 sample targets are in untouched text. Automatic checks all passed; depcheck 0 problems; Suggested.lean (unchanged, no declarations) elaborates cleanly. Finding R01 (P2): the Needs line of 10.26a cites ArithmeticGaloisRepresentations 2.7, which owns only rank-one local constants; the owner of higher-rank Weil local constants on main is ClassicalArithmeticCompletion 7.12b.",
+  "text": "28878c9aed255c7f"
+ }
+}
