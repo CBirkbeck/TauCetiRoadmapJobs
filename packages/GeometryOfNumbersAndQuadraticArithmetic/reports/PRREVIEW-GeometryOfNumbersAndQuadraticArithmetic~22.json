@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeometryOfNumbersAndQuadraticArithmetic~22",
+  "head": "cd99c75b3ae49933303bed269a1ba49611d1fe2b",
+  "pr": 3027,
+  "folder": "GeometryOfNumbersAndQuadraticArithmetic",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 76 changed lines since 0b5086d. Checked: the five points of the previous review (R01, C01, C02, C03, N01), all repaired; the two new Suggested.lean statements of Landherr's theorem (2a.1, 2a.2), compared with the README through their elaborated types and tested on computed instances over Q(i) and Q(sqrt(-3)), at real and split places, at n = 0 and against the ncard junk value; 2.7.5 (a)-(b) widened to every F, against Kirschmer 2016 Algorithm 3.3.2 and Theorem 3.3.3; the 2.7.6 (b) step modulo the prime of F; 3.2.9 (b) at n = 0; the locators Kirschmer 2016 Theorem 2.4.1 and Remark 3.4.2 (3); the pull request's description against this head. None of the 15 seeded targets is in the changed passages. Automatic checks: the worker's gate passed; the elaboration gives 23 sorry warnings and no errors; the dependency check reports 0 problems; all 122 changed files lie in the pull request's own folders.",
+  "text": "b452986b8f3fe306"
+ }
+}
