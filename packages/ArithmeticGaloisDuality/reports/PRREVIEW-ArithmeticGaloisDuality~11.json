@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisDuality~11",
+  "head": "e47c8ec1498b00bab27bf9fb2d5402412dd3c7f5",
+  "pr": 3027,
+  "folder": "ArithmeticGaloisDuality",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 41 changed lines since e7914b5. Checked: the previous C01 and C02 (both repaired in the proof sketch of D7.6a (b) and (c), recomputed with Matlis duality over Z_p, DerivedModuleAlgebra 1.M.1) and N01 (page number, carried as a format note); the seven Needs lines changed from layer to section citations, 13 cited sections resolved at the head and on main with the names cited from them; the two seeded-sample targets with a changed Needs line (Grothendieck local duality: Stacks 47.18.3, 47.16.4, 47.18.1, 47.9.1, 47.10.1; Abelian-variety Ext: Milne I.0.16-0.17, I.3.1, II.5.7, Stacks 59.99.1, Groechenig-Wyss-Ziegler 3.8 and 3.11); the description against the head; layer record (8 layers kept); depcheck 0 problems; all automatic checks passed; Suggested.lean elaborates with 12 sorry warnings only.",
+  "text": "9aedd0e947327cc2"
+ }
+}
