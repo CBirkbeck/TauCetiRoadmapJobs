@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BanachSpaceTheory~17",
+  "head": "e7914b5c68ad72646db1009572ad061c097a6312",
+  "pr": 3027,
+  "folder": "BanachSpaceTheory",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 39 changed lines since aecb53a. Checked the new B7.HermitianNorms against Chen-Moriwaki Theorem 1.2.54 (arXiv:1903.10798v1, p. 84) and Gaudron 2008 (Definition-Theorem 2.4, the complex case with (12), Definition 4.6); recomputed the H-norm bounds, the least-volume norm, the involution argument and both Checks on l^1 and l^infty. Seeded sample: B7.HermitianNorms verified; B5.LocalHaarDual (BdlHV C.5) and B6.Cotype2 (Pisier Def. 9.6) spot-checked as untouched text. Merge base and head have the same layers and items. Overlap and ownership checked against the closest roadmaps and both consumers. Automatic checks all passed; depcheck 0 problems; Suggested.lean (unchanged) elaborates with sorry warnings only. Corrections: C01 the uniqueness statement is narrowed to C although its source holds over k; C02 and C03 concern untouched text.",
+  "text": "d02d8c799420be4c"
+ }
+}
