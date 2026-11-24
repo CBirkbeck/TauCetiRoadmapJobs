@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CocliquesColouringsAndTheta~1",
+  "head": "d272d0bcab44366393d3bbf2923da16962896cfd",
+  "pr": 3068,
+  "folder": "CocliquesColouringsAndTheta",
+  "date": "2026-11-24",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. Adversarial pass over all 34 theorems and 11 definitions with computed instances; the biclique-partition definition of 2.2 admits the 6-cycle with two bicliques (confirmed in Lean against the built module), which refutes IsBicliquePartition.card_le (R01, P1). Fractional chromatic number with attainment and duality is also owned by the open roadmap AsymptoticSpectra 2.3 (R02, P2). Seeded sample: 1.1, 2.1, 2.2, 6.1, 6.2 checked against Brouwer-Haemers at their locators (10 locators, 2 corrected in C01); 1.2, 3.1-3.3, 4.1-4.2, 5.1-5.4 cite Godsil-Royle and Biggs, which could not be read legally (not verifiable; mathematics checked). 31 supplier citations resolved at the open heads and on main; copied definitions agree verbatim. Dependency check clean (0 problems). Targeted build passes; the one automatic check that failed (a section comment with no declaration under it) is a format note. Pull-request text agrees with the head.",
+  "text": "4516ee14cfeba852"
+ }
+}
