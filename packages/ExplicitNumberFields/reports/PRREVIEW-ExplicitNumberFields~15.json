@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ExplicitNumberFields~15",
+  "head": "8d0b5731912cd17cd062c13ea42cd6b7b25fdf2a",
+  "pr": 3027,
+  "folder": "ExplicitNumberFields",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. The change adds 0.7 (Serre's bound, serre1981 Prop. 5, fetched from Numdam and read at lines 146-288; Checks and route recomputed; Completed/NumberFieldArithmetic 4.2 and 6.4 and the Tau Ceti declarations opened). Sample of 15 targets: 0.3, 0.4, 0.4a, 0.7, 1.1, 1.1a, 3.5, 4.1, 4.3, 5.1 (louboutin2005 by OCR), 5.3, 6.5 and 7.5 verified against their sources; 4.10 and 5.7 rest on uncertified sources and were checked for consistency only. Adversarial table with computed values for every sampled target and headline. Automatic checks passed; depcheck 0 problems; Suggested.lean (unchanged) elaborates with 16 sorry warnings only, and the one-tactic probe closes none. No id dropped; nothing outside the pull request's folders. Seven source issues recorded (louboutin2015ijnt, louboutin2017, kerrmcgowntrudgian2020, debaene2019).",
+  "text": "0cdff8b4f0ee948b"
+ }
+}
