@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LineSystemsAndSwitching~2",
+  "head": "e8c1cbbccecf01b991a688227c920947b83c61fa",
+  "pr": 3070,
+  "folder": "LineSystemsAndSwitching",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 119 changed lines since fe56537. Checked: every previous remark (R01, C01-C05, N01) against this head, all repaired; the changed passages (Summary, 1.1, 2.4, 3.1, 4.1, 5.1, 5.4, scope and supplier contracts) recomputed, with adversarial rows for the seven statements touched; the seeded sample where it falls in them (1.1, 4.1, 5.1): Brouwer-Haemers Figure 1.1, Lemma 14.4.3, Proposition 14.4.1 and the remark after 14.4.5 read in a draft from the first author's page, CRS not readable; the changed citations resolved at the heads of GraphSpectra and SpectralGraphBounds and on main; four library declarations opened at the pin; Suggested.lean elaborates with 39 sorry warnings only; dependency check 0 problems, no UPWARD or CYCLE; automatic checks: one form check set aside as a false positive (the heading over the #check pins); title and description agree with the head; no change outside the folder.",
+  "text": "522db53d413f32d7"
+ }
+}
