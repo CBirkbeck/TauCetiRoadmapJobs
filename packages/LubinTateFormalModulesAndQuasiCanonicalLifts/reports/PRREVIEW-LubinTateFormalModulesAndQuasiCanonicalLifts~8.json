@@ -1,0 +1,33 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LubinTateFormalModulesAndQuasiCanonicalLifts~8",
+  "head": "dd70a50443cd193d5736ffd90613d202e83d1488",
+  "pr": 3027,
+  "folder": "LubinTateFormalModulesAndQuasiCanonicalLifts",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 232 changed lines since 74a09b7. Checked: the added sections 4.2a, 4.2b, 4.3a and the passages that mention them, recomputed (adversarial table with values, including p = 2 and the negative control for the Frobenius lift) and read against Haz79, KR11 and BW16 (10 locators); seeded sample where it falls in the change (4.3a, 4.2); previous findings R01, R02 and C01 repaired; supplier sections of FiniteFlatGroupsAndIntegralPadicHodgeTheory and RamificationOfCompleteDiscretelyValuedFields resolved on main; dependency check 0 problems; automatic checks all passed; Suggested.lean unchanged and elaborates with 8 sorry warnings only. One small correction (the consumer HodgeTateLatticesAndLubinTateLogarithms 3.3 describes 4.2b by its former Z_p form). K81, HG94, Haz78 and Lan80 could not be read; the status of the K81 link is left to the human reviewers.",
+  "text": "dda9acd9cf88f1ae",
+  "carried": {
+   "from": "dd70a50443cd193d5736ffd90613d202e83d1488",
+   "head": "dd70a50443cd193d5736ffd90613d202e83d1488",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C01: `TauCetiRoadmap/RiemannHypothesisForDirichletLFunctions/HodgeTateLatticesAndLubinTateLogarithms/README.md` describes LubinTateFormalModulesAndQuasiCanonicalLifts §4.2b as \"over `ℤ_p`, the case `K",
+    "where": "RiemannHypothesisForDirichletLFunctions/HodgeTateLatticesAndLubinTateLogarithms/README.md, lines 12, 699, 843, 858, 890",
+    "raised": "PRREVIEW-LubinTateFormalModulesAndQuasiCanonicalLifts~8"
+   }
+  ]
+ }
+}
