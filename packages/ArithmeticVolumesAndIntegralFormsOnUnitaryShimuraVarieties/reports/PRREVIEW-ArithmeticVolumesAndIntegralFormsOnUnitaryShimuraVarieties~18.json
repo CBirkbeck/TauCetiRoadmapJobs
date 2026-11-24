@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~18",
+  "head": "374b9ce2406497896092210ae227acf52a3eb3f1",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 34 changed lines since 644c332. Checked: the rewritten Conventions paragraph on corollaries against 8.5 and the family index; the 8.14a attribution against Yuan (arXiv:1808.03960v1, Lemma 2.4, Theorems 2.6 and 2.9); the new Sources lines of 8.14c, 8.18b and 8.19a''' against the seven declarations of the formal proof they cite (opened, statements compared, names present in the kernel export). Sampled targets falling in the change: 8.14a, 8.14c, 8.19a'''. Previous remarks: C01, C02 repaired, C03 partly (8.17a remains, a small correction), C04 settled outside the folder (D01 resolved), N01 carried. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with only the sorry warning; description agrees with the head.",
+  "text": "55e47cf81849e984",
+  "carried": {
+   "from": "374b9ce2406497896092210ae227acf52a3eb3f1",
+   "head": "eff63265becc3b3ab7ff4d28c668d3c5afe1f229",
+   "findings": 1,
+   "lines": 11,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties"
+   ],
+   "corrections": true,
+   "onto": "a7f1bcc13a04ce4a6b84a54596045d890b1bc09e"
+  }
+ }
+}
