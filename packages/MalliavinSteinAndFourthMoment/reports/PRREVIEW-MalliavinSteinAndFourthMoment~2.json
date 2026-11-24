@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MalliavinSteinAndFourthMoment~2",
+  "head": "8d6453ae261c139dab99a347cef838d0b2ee5c4d",
+  "pr": 3054,
+  "folder": "MalliavinSteinAndFourthMoment",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full re-review. Previous R01 (Young's inequality unowned) and C01-C04, N01-N03 are repaired. Adversarial pass over all 38 theorems and 7 owned definitions with recomputed values (numeric Checks of Layers 1, 2, 4, 6, 7 recomputed, including the eigenvalue and Toeplitz Checks). Sample: all 15 seeded targets cite Nourdin-Peccati 2012 and Nualart-Nualart 2018, which cannot be read legally; statements cross-checked against 17 passages of Nourdin2012Lectures, NualartPeccati2005, HuNualart2005, NourdinPeccatiReinert2009 and Chatterjee2009. Elaboration exits 0 with 38 sorry warnings only; #check of every theorem compared with the README; one-tactic probe closes none. Dependency check: 0 problems. The 25 copied supplier definitions and one instance are identical to the suppliers' heads. Automatic checks: one form hit (section comment over #check lines) set aside as a false positive. Two small corrections (Hermite expansion unowned though in pinned Tau Ceti; wording of the §5.2 route), two format notes, one question (H = 1 in the route of §6.3).",
+  "text": "f0b24bb39a1c9ba5"
+ }
+}
