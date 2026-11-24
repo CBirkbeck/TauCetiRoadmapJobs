@@ -1,0 +1,32 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EtaleDualityAndPerverseSheaves~11",
+  "head": "3b77a6add516e54a95fecc9173cad43b7c24c8e1",
+  "pr": 3027,
+  "folder": "EtaleDualityAndPerverseSheaves",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "incremental re-review of 84 changed lines since 477bb48. Checked: the new finitelyManyStabilizers lemma, its route and Checks (recomputed on weight-(1,2) and mu_p actions and the G_a^2 counterexample); lefschetzGroupActions (a) widened to all connected groups (elliptic-curve translations) and the rewritten route of (b) (swap on A^2, p = 2); the new locators Serre-1977 Proposition 3 and Dudas-Michel-2015 Propositions 13.7-13.9; Mathlib linearIndepOn_isGroupLikeElem and Module.Flat.torsion_eq_bot and Tau Ceti exists_dense_open_flat at the pins; SchemeAndStackFoundations section 4.12 and ReductiveGroups Layer 4. Previous R01, C01 and C02 repaired; C03 not repaired (C01); R02 deferred as D01, which stands. New P2: FiniteReductiveGroups 3.4 still owns the stabilizer lemma and (a) for every connected group (repair in that folder). The seeded sample does not fall in the changed text. Dependency check: 0 problems. The worker's automatic checks passed; a hand run flagged only the pull request's own folders. Suggested.lean is unchanged and elaborates with 7 sorry warnings and no errors.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "P2",
+    "title": "The pull request makes ReductiveGroups and this roadmap suppliers of each other",
+    "where": "ReductiveGroups Layer 9F must stop citing EtaleDualityAndPerverseSheaves §7.6",
+    "raised": "PRREVIEW-EtaleDualityAndPerverseSheaves~10"
+   },
+   {
+    "id": "D02",
+    "severity": "P2",
+    "title": "§7.6 and FiniteReductiveGroups 3.4 both own the stabilizer lemma and part (a) for every connected algebraic group",
+    "where": "RiemannHypothesisForDirichletLFunctions/FiniteReductiveGroups 3.4 (a), (d): cite EtaleDualityAndPerverseSheaves §7.6",
+    "raised": "PRREVIEW-EtaleDualityAndPerverseSheaves~11"
+   }
+  ],
+  "text": "b452986b8f3fe306"
+ }
+}
