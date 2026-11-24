@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-KatoEulerSystems~9",
+  "head": "0b5086d93fa8e450c86bf7bec6afab0949229b41",
+  "pr": 3027,
+  "folder": "KatoEulerSystems",
+  "date": "2026-11-24",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 35 changed lines since aecb53a. Checked the new section 4.1a against Brown–Ghate (Thm 2.3.8 p. 1630, Thm 3.3.1 p. 1656, Ex. 4.3.3–4.3.4 p. 1674), Ribet 1985 §3 pp. 190–191, Ghate–González-Jiménez–Quer pp. 703, 711, 714 and Loeffler Thm 2.2.2 p. 6, and its Check against the LMFDB newform 38.3.b.a (a5 = −1, a3 = 2√−2: the Check's a5² = −8 is false, R01). AutomorphicGaloisRepresentations §§5.1–5.2 resolved on main. The seeded sample lies outside the change except 4.1, which 4.1a cites. Record against the merge base kept (8 layers, no id removed or reused). Automatic checks: all pass except outside-folder (the pull request's own folders, set aside); depcheck 0 problems; lake env lean on the unchanged Suggested.lean: sorry warnings only.",
+  "text": "5204b89c9c3fb111"
+ }
+}
