@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SeesawForThetaChains~13",
+  "head": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/SeesawForThetaChains",
+  "date": "2026-11-24",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 157 changed lines since b8f3652. Checked: the origin, method and corollary labels of the 19 sections; Wang Theorem 4.5, footnote 2 and section 5.2, Furusawa-Morimoto Proposition 3.1 and Haan-Kwon Theorem 4.1 at their locators (arXiv versions); the formal proof's ratio relation behind 6.12; the supplier sections MetaplecticAutomorphicForms 1.5, 2.5a, 3.7a, AdelicAlgebraicGroups 4.5a and ThetaKernelsForUnitaryDualPairs 3.3b at this head; headings identical to the merge base, Suggested.lean unchanged and elaborating with no message (it declares nothing; the three headlines are named as not statable); dependency check 0 problems; all automatic checks passed. The folder is unchanged since the previous review's head, so its three small corrections (origin label of 6.13, the partition bound in the 3.7a contract, the setting of Haan-Kwon) and two format notes stand, none blocking.",
+  "text": "31db20d735dd6669",
+  "carried": {
+   "from": "3bddf73dceb2725b3ab4fb15c84bf39a1d293cee",
+   "head": "88c9f9121b426792b7c691054500c7f5178063d4",
+   "findings": 3,
+   "lines": 10,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/SeesawForThetaChains"
+   ],
+   "corrections": true,
+   "onto": "1f6e53ad798e159ee1f3cca10bc6045b2a46934a"
+  }
+ }
+}
