@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GraphReconstruction~2",
+  "head": "0e17b7ea8837cd79392326fdb44b8f8da083c4a5",
+  "pr": 3130,
+  "folder": "GraphReconstruction",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 5 changed lines since b373666. Checked: R01 repaired (route of 2.2 now ends with e(X) − e(F) = e(G) − e(F) at X = G; recomputed Nash-Williams' lemma and the terms of the inclusion–exclusion sum on P3+K1 vs 2K2 for every F ≤ G: 10−8=2, 6−8=−2, 2−0=2, only the X = G term nonzero); N01 repaired (SimpleGraph.card_injective_hom_eq_labelledCopyCount opened at the pin, Counting.lean 116). Seeded sample where it falls in the change: 2.2 against GardnerBM27Slides lines 640–696. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 7 sorry warnings only; nothing changed outside the folder; pull request text agrees with the head. Human-reviewer points of the previous review carried over.",
+  "text": "9a20c1f748f43344"
+ }
+}
