@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TaylorBoundsAndDepthsOnHeightTwoFormalGroups~14",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/TaylorBoundsAndDepthsOnHeightTwoFormalGroups",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 18 changed lines since 3f8c596. Checked: the new attributions of the case of 4.5 without cocycle (summary, layer introduction, Origin label of 4.5, two reference entries) against Katz (1977) section V Corollary 2 (read on Numdam) and Bannai-Kobayashi (2016) Propositions 3.5 and 5.3 (read as arXiv v3); Katz (1981) Main Theorem 3.11 could not be read (not verifiable, a question to the author). Computed the specialisation of 4.5 to beta = 0 and compared it with the published bounds (p = 3). Seeded sample: only 4.5 falls in the change. The family index and the description agree with the head. Automatic checks passed; depcheck 0 problems; Suggested.lean elaborates with three sorry warnings only. One small correction (what Proposition 5.3 states), two format notes carried over, one source misprint recorded.",
+  "text": "b1423969c135eda5",
+  "carried": {
+   "from": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "head": "6b5609439a7cd831bcb1a4c1158d0df5f9658990",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/TaylorBoundsAndDepthsOnHeightTwoFormalGroups"
+   ],
+   "corrections": true,
+   "onto": "1da33b5854d63f8a9a1b9cf83910ef1ad1b25abc"
+  }
+ }
+}
