@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuadraticTwistSelectionOverPrimes~12",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/QuadraticTwistSelectionOverPrimes",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 4 changed lines since 3bddf73: the sentence added to the method label of 2.7a (Siegel's bound in the formal proof's prime number theorem in progressions and in the lower bound of (iii')) checked against the formal proof's statements ExcBound, SiegelLower, count_a, twist_bound and the proof of its progression theorem, and against RieszSumsOverPrimesAndExceptionalZeros, Scope and ownership, at this head; seeded sample 2.7a checked at the changed passage, 2.7b-2.7d untouched; automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with five sorry warnings only; no change outside the pull request's own folders; pull request text consistent with the head for this folder.",
+  "text": "53fae81af7ab6977"
+ }
+}
