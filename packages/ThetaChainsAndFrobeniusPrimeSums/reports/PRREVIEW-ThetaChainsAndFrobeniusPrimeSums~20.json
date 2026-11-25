@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsAndFrobeniusPrimeSums~20",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsAndFrobeniusPrimeSums",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "incremental re-review of 22 changed lines since 2ac59b9. Checked: the two insertions in the method paragraph of 9.3 and the new level-prime locators of 10.9 (b) against the formal proof at its first commit (six files, eight declaration names, the moment argument, the ray, the fields of the structure of a point), all as written; the seeded sample where it falls in the change (10.9); the automatic checks (all passed), the dependency check (0 problems, no UPWARD or CYCLE), the elaboration of Suggested.lean (two sorry warnings only, file unchanged); the description against the head (C01 carried: the corrected spread bound of 10.4 is not mentioned). Three format notes carried.",
+  "text": "b1423969c135eda5",
+  "carried": {
+   "from": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
