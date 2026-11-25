@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GraphReconstruction~1",
+  "head": "b37366653a456ef9b32821ac01bc14e98a9218f2",
+  "pr": 3130,
+  "folder": "GraphReconstruction",
+  "date": "2026-11-25",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. One P2 finding: the last sentence of the route of 2.2 states a false exponent identity (one-symbol repair); no stated result is affected. Sample: all nine targets 1.0-2.4 checked against Gardner's notes and slides (11 locators, all agree); Kelly 1957 not readable (text requested), Bondy-Murty read only as reproduced in the notes, Lovasz 1972 and Muller 1977 uncertified. Adversarial pass by hand and by an independent script (decks of all graphs on at most 6 vertices, Nash-Williams' lemma, criteria counts 159 and 76, 196 regular graphs, 72 triples): all README values reproduced. Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 7 theorems. Dependency check: 0 problems. Automatic checks all passed, none set aside. The sources service recorded four entries in the package's sources.toml during this review (two certified author-page texts, two uncertified journal articles with Crossref-resolved DOIs) and one request for Kelly 1957.",
+  "text": "9a20c1f748f43344"
+ }
+}
