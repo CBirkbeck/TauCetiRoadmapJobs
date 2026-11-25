@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HeightsForLogSingularMetrics~16",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HeightsForLogSingularMetrics",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 4 changed lines since e47c8ec. Checked: the two rewritten sentences of 4.3a (b) and (d) against the formal proof's source at the cited commit (5 files, 8 declarations) and against the dependency closure of its main theorems (membership of 14 names, direct users of 10); the degenerate case Spec Z, O(c) for (b), the nef equality and both halves of (d); the 5 cross-roadmap citations of the changed sentences; the pull request's description against this head (the earlier small correction no longer applies). Seeded sample: only 4.3a falls in the change. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with no message and declares nothing. The previous report had no finding.",
+  "text": "7b892d1ce5b74ccf"
+ }
+}
