@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RowTowerAndRallisIdentities~19",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RowTowerAndRallisIdentities",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 30 changed lines since 3bddf73. Checked: the reworded J.-S. Li ranges of 5.5, 5.6, 5.8g against the chain's ranks (computed); the corrected 5.8f credit against the formal proof at commit 40e56bab (three files, five declarations, both hypothesis bundles and where they are supplied); the 5.2a lines against VonNeumannAlgebras V9.IntegrableDiscreteSeries at this head, which was widened to every unimodular locally compact group in the same range (C01: three lines now understate the supplier). Previous C02 repaired, C01 partly, N01 and N02 carried. Automatic checks: all text checks 0, only the pull request's own other folders counted outside the folder; depcheck 0 problems; Suggested.lean elaborates with no message (no declaration). Seeded sample checked where it falls in the changed passages (5.6 Origin, 5.8f).",
+  "text": "53fae81af7ab6977",
+  "carried": {
+   "from": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "head": "1da33b5854d63f8a9a1b9cf83910ef1ad1b25abc",
+   "findings": 1,
+   "lines": 10,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/RowTowerAndRallisIdentities"
+   ],
+   "corrections": true,
+   "onto": "99d4614c9c7464d8547cfddb663611fd849f72fb"
+  }
+ }
+}
