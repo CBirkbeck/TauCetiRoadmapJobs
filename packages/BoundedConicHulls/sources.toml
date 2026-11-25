@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "BoundedConicHulls"
+
+[[source]]
+id = "BG21"
+authors = "David E. Bernal Neira, Ignacio E. Grossmann"
+title = "Convex Mixed-Integer Nonlinear Programs Derived from Generalized Disjunctive Programming using Cones"
+year = 2021
+arxiv = "2109.09657v3"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/2109.09657v3"
+fetched_from = "https://arxiv.org/pdf/2109.09657v3"
+fetched_at = "2026-11-25T15:07:24Z"
+sha256 = "9d243ca9fe13b58bf69526b8b5dc3d575c793db1320ca4f3ad7e47c69b6ca531"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-25"
+version_note = "arXiv v3"
+cited_for = ["2.1"]
