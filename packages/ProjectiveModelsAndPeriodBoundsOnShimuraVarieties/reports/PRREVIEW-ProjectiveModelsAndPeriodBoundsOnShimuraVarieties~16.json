@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ProjectiveModelsAndPeriodBoundsOnShimuraVarieties~16",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ProjectiveModelsAndPeriodBoundsOnShimuraVarieties",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 15 changed lines since 3bddf73: the three small corrections of the previous report are made (Labels paragraph on 9.1, the Ekedahl-van der Geer locator, the Needs line of 9.1); the new sentence of 6.2a (b) agrees with its Method label; the re-pointed formal-proof citation in 7.31a was read in the published source at its commit; SchemeAndStackFoundations 1.17 and EquivariantIntersectionTheory 1.1, 1.5 resolved; automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates with no output; the seeded sample falls in no changed statement; pull request text still agrees with the folder.",
+  "text": "7b892d1ce5b74ccf"
+ }
+}
