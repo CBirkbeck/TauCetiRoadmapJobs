@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RieszSumsOverPrimesAndExceptionalZeros~11",
+  "head": "3f8c596c191324ffe5d43b0de33fdc7bad9a06d5",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RieszSumsOverPrimesAndExceptionalZeros",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 5 changed lines since 23a54c4. Checked: B = 4dM² in headline (3) and 2.9b (iv) (c′) against the formal proof's declaration (4*d*M^2, X ≥ 1, d ≥ 100, M ≥ 3); the claimed equivalence with dM² computed in both directions (least case d = 103, M = 3, exponent 1.21); the route from (iv) (c); the citing roadmaps; the seeded sample where it falls in the change (2.9b). Suggested.lean elaborates with seven sorry warnings only; automatic checks all passed; depcheck 0 problems. Previous report had no finding; its format note N01 is carried. One small correction: the Lean docstring calls B = dM² the form of the formal proof.",
+  "text": "05fa0e169089bdb0",
+  "carried": {
+   "from": "3f8c596c191324ffe5d43b0de33fdc7bad9a06d5",
+   "head": "c40f18174c94d73bad835fce2ee5d0e9666f96e2",
+   "findings": 1,
+   "lines": 8,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/RieszSumsOverPrimesAndExceptionalZeros"
+   ],
+   "corrections": true,
+   "onto": "25401a671892290e5172db07ea8edf4767e8fa79"
+  }
+ }
+}
