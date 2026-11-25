@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BilinearComplexityAndBorderRank~1",
+  "head": "046e6744d16e95ae15745ac5b61f68c376cefbc7",
+  "pr": 3124,
+  "folder": "BilinearComplexityAndBorderRank",
+  "date": "2026-11-25",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All nine sampled sections and all 10 Lean theorems recomputed at degenerate parameters (zero dimensions, no party, f = 0, p = 0, characteristic 2, numerical consequences); one false sentence found in the supplier contract for abstractRank_restrictLE (P2). Sources: Shpilka-Yehudayoff Thm 3.23 and Wigderson-Zuiddam Thm 4.12 read at their locators (page 51, not 53); Blaeser 2013, which carries 28 of 31 citations, could not be obtained through the legal-source service, so its locators, wording and contents are not verified and are flagged to the human reviewers. Copies of 13 declarations checked verbatim against AsymptoticSpectra's open head and AlgebraicCircuitsAndValiantsClasses on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 10 theorems; 24 library declarations opened at the pins.",
+  "text": "a70cec2eeec2940f"
+ }
+}

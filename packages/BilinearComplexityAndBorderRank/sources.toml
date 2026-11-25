@@ -1,0 +1,28 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "BilinearComplexityAndBorderRank"
+
+[[source]]
+id = "ShpilkaYehudayoff2010"
+locator_scheme = "theorem"
+locator = "Theorem 3.23"
+url = "https://www.cs.tau.ac.il/~shpilka/publications/SY10.pdf"
+fetched_from = "https://www.cs.tau.ac.il/~shpilka/publications/SY10.pdf"
+fetched_at = "2026-11-25T15:34:07Z"
+sha256 = "68e88d3878c19d38d26f1f1e91e632d0cb4f4bbc758da5265cded23c6880e4b2"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-25"
+cited_for = ["1.2"]
+
+[[source]]
+id = "WigdersonZuiddam2025"
+locator_scheme = "theorem"
+locator = "Theorem 4.12"
+url = "https://staff.fnwi.uva.nl/j.zuiddam/papers/convexity.pdf"
+fetched_from = "https://staff.fnwi.uva.nl/j.zuiddam/papers/convexity.pdf"
+fetched_at = "2026-11-25T15:34:37Z"
+sha256 = "8d4ccae38d685e2de6cefcaf725365be821c9be7c1932497af01e37f87a5684d"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-25"
+cited_for = ["3.3"]
