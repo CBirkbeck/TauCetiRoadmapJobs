@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HodgeTateLatticesAndLubinTateLogarithms~14",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/HodgeTateLatticesAndLubinTateLogarithms",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 19 changed lines since 3bddf73: both earlier small corrections repaired (0.5h Method chain; Pilloni-Stroh at p = 2, read at PS16 Theoreme 1.9 and Remarque 1.10); the new attributions of 2.4 (first assertion of (a) only; the frame A_inf[X]/(pX - ([eps] - 1), X^2) with x^p in p.ker theta, recomputed at p = 2 and odd p) and of 3.3 (DworkMv has no completeness hypothesis) checked against the formal proof's Lean source; automatic checks passed, dependency check 0 problems, Suggested.lean elaborates with two sorry warnings only; adversarial table has 6 rows with computed values.",
+  "text": "7b892d1ce5b74ccf"
+ }
+}
