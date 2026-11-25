@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiracScatteringAndNonlinearFourierTransform~4",
+  "head": "eccde1905f529d66a247f363a3a5ba2fbeeb39f8",
+  "pr": 3099,
+  "folder": "DiracScatteringAndNonlinearFourierTransform",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 20 changed lines since 293502c; checked the wider-cone bullet and new Check of 2.3 and the all-apertures statement and route of 2.4 (constant max(2, 1 + 2a^2) against the true supremum over a in (0,4], the counterexample, Fatou examples), the cited cone definitions in poltoratski2024 line 615-622 and mauth2022 line 404-436, Tau Ceti halfSpacePoissonKernel_le_mul and maximalFunction at the pin, the description against the head; no seeded target falls in the changed or affected text; gate OK, depcheck 0 problems, Suggested.lean elaborates with 9 sorry warnings only; previous review raised no findings",
+  "text": "d485473398774fd5"
+ }
+}
