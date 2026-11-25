@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LieGroups~11",
+  "head": "080c300c9942be1aa68126defecf60c9af5afb52",
+  "pr": 3119,
+  "folder": "RepresentationTheory/LieGroups",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 4,
+  "notes": "review of the change against main: 164 changed lines since 3496bd2. Checked: repair of the previous review's R01 and R02 (both repaired) and its corrections and notes; the new §4.3 adjunction paragraph, all of §4.4, the corrected §4.1 Check and the four new Lean statements, each with computed instances (adversarial table); 7 source locators in kirillov2008, knapp2002, neeb2015; 12 pinned declarations opened; elaboration (25 sorry warnings only), #check comparison, one-tactic probe (no padding), a universe-polymorphic probe (C01) and a no-T2 probe; dependency check 0 problems; automatic checks all passed; seeded targets 4.1, 4.2, 4.3 checked where they fall in the change, the other seeded targets untouched and not re-read.",
+  "text": "385194758d37df4d",
+  "carried": {
+   "from": "080c300c9942be1aa68126defecf60c9af5afb52",
+   "head": "1d4c079bb3658da15f46ee0a97701ab7d803f616",
+   "findings": 1,
+   "lines": 12,
+   "folders": [
+    "RepresentationTheory/LieGroups"
+   ],
+   "corrections": true
+  }
+ }
+}
