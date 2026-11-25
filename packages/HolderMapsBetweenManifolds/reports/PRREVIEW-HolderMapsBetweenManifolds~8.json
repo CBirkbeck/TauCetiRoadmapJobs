@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HolderMapsBetweenManifolds~8",
+  "head": "6c5a9efbc45005bb48ef295f48b1abd33a73859d",
+  "pr": 3015,
+  "folder": "HolderMapsBetweenManifolds",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 6c5a9ef. This round read the pull request's title and description against the head: every sentence agrees with README.md and Suggested.lean (new roadmap, five layer bullets, suppliers all on main, 12 theorems and 9 definitions, the not-statable paragraph, the Hirsch sentence of §4.2 now up to date), so the earlier small correction C01 is repaired; format note N01 (targets without locators) carried over. Adversarial table: 5 rows with computed values for statements the description cites. 11 library declarations opened at the pins, 7 cross-roadmap citations resolved. Dependency check: 0 problems, no UPWARD or CYCLE. Elaboration: 12 sorry warnings only. All automatic checks pass. The seeded sample falls on no changed passage; dLO (7 of 12 locators) and Hirsch could not be read legally, reported to the human reviewers.",
+  "text": "c37ce6b84cb80aba"
+ }
+}
