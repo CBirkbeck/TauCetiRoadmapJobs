@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticNumberTheoryPartI~25",
+  "head": "7633b39fbb3f5b31f3db59885758efd9c152670b",
+  "pr": 3027,
+  "folder": "AnalyticNumberTheoryPartI",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 6ff5aef. Checked: the folder diff is empty; the pull request's title and the readable part of its description against this head (its sentence on sections 1.4e, 1.7a, 1.7b holds; the description is cut, so whether it names 1.6a, 2.42a and the two added Lean declarations is a question for the author); the citations of this roadmap added elsewhere in the pull request since 6ff5aef (sections 0.12, 0.34a, 2.15, 2.15a) resolve and state what they are cited for; one computed adversarial row for Linnik's theorem (q up to 1000, max log p/log q = 1.829); automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 64 sorry warnings only. Two format notes carried from the previous review, in untouched text. The seeded sample lies in untouched text and stands as reviewed.",
+  "text": "b1423969c135eda5"
+ }
+}
