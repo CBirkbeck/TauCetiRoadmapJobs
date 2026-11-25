@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsLame~3",
+  "head": "81ab41b277695e06bb7634e2c7c3dd28a168a428",
+  "pr": 3081,
+  "folder": "SpecialFunctionsLame",
+  "date": "2026-11-25",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full re-review. The three findings, three corrections and two format notes of the previous review are repaired. One new finding (P2): Weierstrass's sigma function is planned as an owned target in 5.1 although ModularCurvesPartII 1.4a on main owns it. Sample: all fifteen seeded sections; about 55 DLMF equation and table numbers and Whittaker-Watson 23.7 (pp. 570-572) read at their locators; Dassios, Gesztesy-Holden, Ronveaux and Kristensson not readable. Recomputed: the zeros and Stieltjes residuals of 4.3, the discriminant values of 5.4, the Fourier ratio of 3.2, the order-k^4 splitting of a^2 - b^2 in 5.3, the one-dimensional orthogonality relations of 6.2, the reduction of the double orthogonality to SpecialFunctionsHeun 6.2. Suppliers resolved at their heads; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning (22); one-tactic probe closes none. Two automatic checks set aside as false positives (choice in lameHermitePoly; the header over the #check lines).",
+  "text": "4bc302f7a09025a4"
+ }
+}
