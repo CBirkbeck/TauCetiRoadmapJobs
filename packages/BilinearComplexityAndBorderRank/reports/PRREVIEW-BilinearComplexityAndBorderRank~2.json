@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BilinearComplexityAndBorderRank~2",
+  "head": "49ed0866b184ebff56e7751b2d662d65a37e3ee9",
+  "pr": 3124,
+  "folder": "BilinearComplexityAndBorderRank",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 17 changed lines since 046e674. Checked: R01 repaired (the abstractRank_restrictLE contract now matches AsymptoticSpectra 3.1 at its open head, README line 587 and Suggested.lean line 392; recomputed with no party over Q and F_2 and with three parties); C01 repaired by naming the dated copy (its p. 53 not verifiable, that copy unread); N01 repaired (Fin.divNat, Fin.modNat in Batteries/Data/Fin/Basic.lean lines 133 and 137, Real.logb in Mathlib/Analysis/SpecialFunctions/Log/Base.lean line 47, opened at the pins). Automatic checks rerun: all pass; depcheck 122 roadmaps, 1385 edges, 0 problems; Suggested.lean elaborates with 10 sorry warnings only. Pull request text agrees with the head; no change outside the folder. Overlap: GroupTheoreticMatrixMultiplication, AsymptoticSpectra, InformationTheoreticCryptography, AlgebraicCircuitsAndValiantsClasses read, nothing shared. Blaeser 2013 (28 of 31 citations) remains unread: flagged to the human reviewers.",
+  "text": "a70cec2eeec2940f"
+ }
+}
