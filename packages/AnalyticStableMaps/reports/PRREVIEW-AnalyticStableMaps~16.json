@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticStableMaps~16",
+  "head": "dc68c958ad59a4c54b26d6ecc228f119a76b70ca",
+  "pr": 2529,
+  "folder": "AnalyticStableMaps",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since dc68c95; this round checked the pull request's title and description against the change from main and this head: headings and Lean declarations added and removed, the three moved sections compared word by word with the merge base, the cross-roadmap citations of the description resolved on main (ComplexKahlerGeometry 4.1-4.2, HeegaardFloer F2.6e, CharacteristicClasses C2 item 3, PseudoholomorphicCurveAnalysis PH6.2, ImplicitAtlases 1.1, TaubesGromov Layers 1-2), six library declarations opened at the pins, Wendl's arXiv versions and nine locators checked in the cached texts, four statements the description cites recomputed. Previous small correction C01 repaired. Seeded sample: no target falls in a changed passage. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with three sorry warnings only; no change outside the folder.",
+  "text": "fd724301d01cef65"
+ }
+}
