@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ExactPenalties~6",
+  "head": "46ad0b3d9169407eee33aa7497e02069b477acb6",
+  "pr": 2193,
+  "folder": "ExactPenalties",
+  "date": "2026-11-25",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since 46ad0b3; the rewritten title and description were read sentence by sentence against the head (they agree; previous C01 repaired). Previous R01 (hypotheses narrower than the theorem; exact-cover Check of QuantumOptimization 1.4 excluded, energies recomputed) and R02 (one lemma with a complete proof at the pins) are not repaired and are carried as P2. General ordered-ring form proved at the pins and the present statement derived from it without hB. Suggested.lean elaborates with the sorry warning only; automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE. Sampled locators 1.1-1.3 not re-read (no passage changed). Scope decision flagged to the human reviewers.",
+  "text": "cc0f082b69f32048"
+ }
+}
