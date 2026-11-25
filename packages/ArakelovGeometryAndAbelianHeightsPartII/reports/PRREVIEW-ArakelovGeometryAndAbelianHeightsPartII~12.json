@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArakelovGeometryAndAbelianHeightsPartII~12",
+  "head": "7633b39fbb3f5b31f3db59885758efd9c152670b",
+  "pr": 3027,
+  "folder": "ArakelovGeometryAndAbelianHeightsPartII",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 12 changed lines since e7914b5: the repairs of the previous C01 and C02 in section 0.3a were checked against moriwaki-2009 (Corollary 6.3, Example 6.1 (1), Theorem 6.2, Claim 6.2.1, Proposition 2.1 (1), Conventions 6, Theorem 4.2) and against AlgebraicModuliForArithmeticGeometryPartII 1.7 and 3.8 on main and at the head; of the seeded sample only 0.3a lies in the changed text; adversarial rows computed for the d = 2 case on a blown-up P^1 over Z; the title and live description were read against the head (one small correction: the folder's new section and new supplier are unstated); previous N01 carried as a format note; automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with no output.",
+  "text": "f78bd14093adb7fd",
+  "carried": {
+   "from": "7633b39fbb3f5b31f3db59885758efd9c152670b",
+   "head": "7633b39fbb3f5b31f3db59885758efd9c152670b",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
