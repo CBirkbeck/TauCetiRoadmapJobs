@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiracScatteringAndNonlinearFourierTransform~7",
+  "head": "48477d5b08f09ee87a3bc89f578506f5b023ffc8",
+  "pr": 3099,
+  "folder": "DiracScatteringAndNonlinearFourierTransform",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 6 changed lines since eccde19: the reworded last sentence of the wider-cone bullet of §2.3 (previous C01, repaired) and the §2.4 sentence naming mauth2022 and poltoratski2024 as the sources that fix aperture 1 (previous question, settled). Checked: the third Check's values against the new sentence, Poisson limits through cones of aperture 1, 5, 20, the cone definitions at poltoratski2024 line 615-616 and mauth2022 line 411-412, the pull request's title and description against the head. No seeded target lies in the changed passages. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 9 sorry warnings only; nothing changed outside the folder.",
+  "text": "d485473398774fd5"
+ }
+}
