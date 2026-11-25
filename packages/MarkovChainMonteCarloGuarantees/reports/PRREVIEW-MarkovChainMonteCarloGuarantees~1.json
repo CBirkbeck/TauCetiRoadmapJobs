@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MarkovChainMonteCarloGuarantees~1",
+  "head": "f51e4ab69bce36d4a97fc25f736af48020c3691c",
+  "pr": 3121,
+  "folder": "MarkovChainMonteCarloGuarantees",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample 1.1, 1.2, 1.3, 2.1, 2.2, 3.1, 3.2, 3.3: every statement and every numerical Check recomputed with exact rational arithmetic; the bounds of 1.2, 2.1 and 2.2 tested on 341 random chains with a finite mixing time (every start, burn-in up to 3, length up to 4); no failure. Source locators checked in the text: Rudolf arXiv:1108.3201v2 (Theorems 2.20 and 3.34), Flegal-Jones arXiv:0811.1729v5 (pp. 2, 7, 8, 9), Levin-Peres 2nd ed. p. 178, Aldous-Fill (2.6); Fan-Jiang-Sun read only in arXiv:1802.00211v4, so its JMLR theorem numbers and pages are not verified. 27 library declarations opened at the pins; supplier citations resolved on main (MarkovChainMixing, MarkovChainsAndRenewal, MathematicalStatisticsFoundations, RandomMatrices) and at the open heads of MCMCAsymptoticVariance and MartingaleCentralLimitTheorem; the eight copied definitions agree with their owners. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 8 theorems; elaborated signatures compared with the README. Two small corrections (pointers into MarkovChainMixing 1.2 and MCMCAsymptoticVariance 2.1), two format notes; scope question (targets marked 'proved here') left to the human reviewers.",
+  "text": "2737993a166d759c"
+ }
+}
