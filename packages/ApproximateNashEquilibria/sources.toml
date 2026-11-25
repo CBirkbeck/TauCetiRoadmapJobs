@@ -1,0 +1,55 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ApproximateNashEquilibria"
+
+[[source]]
+id = "ChenDengTeng2006"
+authors = "Xi Chen, Xiaotie Deng, Shang-Hua Teng"
+title = "Computing Nash Equilibria: Approximation and Smoothed Complexity"
+year = 2006
+arxiv = "cs/0602043v2"
+locator_scheme = "theorem"
+locator = "Lemma 5"
+url = "https://arxiv.org/abs/cs/0602043v2"
+fetched_from = "https://arxiv.org/pdf/cs/0602043v2"
+fetched_at = "2026-11-25T19:28:16Z"
+sha256 = "471c6f3446eb6498c653e4182746138b8bf7d08d05daee03db0e8c1b8a2c3f5c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-25"
+version_note = "arXiv v2"
+cited_for = ["2.1"]
+
+[[source]]
+id = "LiptonYoung1994"
+authors = "Richard Lipton, Neal E. Young"
+title = "Simple Strategies for Large Zero-Sum Games with Applications to Complexity Theory"
+year = 2002
+venue = "ACM Symposium on Theory of Computing (1994)"
+doi = "10.1145/195058.195447"
+arxiv = "cs/0205035v1"
+locator_scheme = "theorem"
+locator = "Theorem 2"
+url = "https://arxiv.org/abs/cs/0205035v1"
+fetched_from = "https://arxiv.org/pdf/cs/0205035v1"
+fetched_at = "2026-11-25T19:28:21Z"
+sha256 = "448bc8dfa4d0f7fe831705313f00be18e3f14836ee3ddffb01f135f7399eaea3"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-25"
+version_note = "arXiv v1"
+cited_for = ["3.1"]
+
+[[source]]
+id = "DaskalakisMehtaPapadimitriou2006"
+authors = "Constantinos Daskalakis, Aranyak Mehta, Christos Papadimitriou"
+title = "A Note on Approximate Nash Equilibria"
+year = 2006
+venue = "Lecture Notes in Computer Science"
+doi = "10.1007/11944874_27"
+locator_scheme = "theorem"
+locator = "Section 3, Theorem 1"
+url = "https://doi.org/10.1007/11944874_27"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.2"]
