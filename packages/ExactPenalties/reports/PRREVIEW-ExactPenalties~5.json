@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ExactPenalties~5",
+  "head": "46ad0b3d9169407eee33aa7497e02069b477acb6",
+  "pr": 2193,
+  "folder": "ExactPenalties",
+  "date": "2026-11-25",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since 46ad0b3; the files are unchanged and only the title and description were rewritten. Checked: both previous findings against the files (R01, R02 not repaired; the description declines them); every sentence of the rewritten description against the head (one small correction); the R01 counterexample recomputed (exact-cover Check of QuantumOptimization 1.4 on main, all eight energies) and the general form and the stated theorem proved again at the pins; one-tactic probe fails; Suggested.lean elaborates with sorry as the only warning; automatic checks all passed; dependency check 0 problems; overlap check on five closest roadmaps, nothing shared. Sampled locators 1.1-1.3 not reopened (no passage changed); CI and process claims of the description not verifiable from the files.",
+  "text": "a8e50ccba530d10a"
+ }
+}
