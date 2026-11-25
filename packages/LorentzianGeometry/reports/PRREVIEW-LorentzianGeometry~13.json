@@ -1,0 +1,25 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LorentzianGeometry~13",
+  "head": "36705e840ada9137d56128daeadace8c11518c8c",
+  "pr": 2232,
+  "folder": "LorentzianGeometry",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 24 changed lines since 9fead05: the previous finding R01 (C1 endpoint dependence in 3.4), small corrections C01-C03 and format note N01 are all repaired, each read at this head; the new locators (Minguzzi 2019b Definition 2.13 and Theorem 2.29, p. 40; Minguzzi 2019 Theorem 2.4 and the proof of Definition 4.117; Barzen-Leymann Lemma 35) were read in the sources and the sign claim recomputed on two warped products; the seeded sample falls in the changed passages at 2.6, 3.3 and 3.4. Dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean (unchanged) elaborates with 8 sorry warnings and nothing else; every automatic check passed; pull request text agrees with the head. D01 stands (outside this folder). One format note.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C03: the RiemannianGeometry README on main (R1.3, lines 289–292) cites Barzen–Leymann \"Lemma 35 and Lemma 36, pp.",
+    "where": "RiemannianGeometry README, R1.3 warped-product paragraph (Barzen–Leymann sign phrase)",
+    "raised": "PRREVIEW-LorentzianGeometry~12"
+   }
+  ],
+  "text": "34072383b976b906"
+ }
+}
