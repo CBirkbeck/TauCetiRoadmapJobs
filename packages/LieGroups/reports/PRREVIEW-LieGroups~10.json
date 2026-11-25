@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LieGroups~10",
+  "head": "19032d84c9e1eec76927c00e40054ea2e64a8039",
+  "pr": 3119,
+  "folder": "RepresentationTheory/LieGroups",
+  "date": "2026-11-25",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 5,
+  "notes": "review of the change against main: 149 changed lines since 3496bd2; checked the new §4.3 coreflection paragraph, all of §4.4 (Galois connection, joins and meets, naturality, range formula, normal subgroups, seven Checks), the corrected §4.1 Check and the three new Suggested.lean statements, each recomputed on examples; seeded targets 4.3 and 4.4 (the rest untouched); every Tau Ceti and Mathlib name in the changed text searched at the pins (eleven absent: R01 on the §4.3 categories, functor and bijection, R02 on four §4.4 lemmas and the second-countability reason); elaboration gives 24 sorry warnings only; #check and the one-tactic probe on the new theorems; dependency check 0 problems, no change outside the folder; automatic checks: one haveI hit, a format note; previous review's remarks: C01 repaired by CotangentLagrangian's former-numbering paragraph, C02 not applicable, N01 carried as an untouched-text note",
+  "text": "5f69188595602a9c"
+ }
+}
