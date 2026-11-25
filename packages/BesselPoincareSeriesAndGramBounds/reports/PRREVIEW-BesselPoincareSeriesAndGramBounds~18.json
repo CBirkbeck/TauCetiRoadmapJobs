@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BesselPoincareSeriesAndGramBounds~18",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 72 changed lines since c40f181. Checked: the previous small corrections C01-C03 (all repaired) and format note N01 (carried); the 17 formal-proof declarations and 13 files named in the changed credits of 5.13c, 5.18a, 5.18b, 5.18d, 5.20b, opened in the formal proof's source, with the three statements said to lie outside the main theorems; Shin-Templier Theorems 9.16, 9.19 and Dalal Theorem 9.1.1 read in the cited arXiv versions; the class-number and ideal counts of 5.16a recomputed against AnalyticNumberTheoryPartI 2.15a and the pinned Mathlib lemma; seeded sample within the change (5.13c, 5.16a, 5.18d, 5.20b); the pull request's text; automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates with no message.",
+  "text": "7b892d1ce5b74ccf",
+  "carried": {
+   "from": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "head": "bd0c2aed22b85a30e2fdc2c0b2ccd0bc3c3189be",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds"
+   ],
+   "corrections": true
+  }
+ }
+}
