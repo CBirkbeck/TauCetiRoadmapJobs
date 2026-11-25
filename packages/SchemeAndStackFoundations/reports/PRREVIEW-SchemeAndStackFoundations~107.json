@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~107",
+  "head": "cea30e1d1b1c4fdfb4b092db8d854ec8fff2e42e",
+  "pr": 2531,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since cea30e1; this round checked the pull request's title and description against the head: every sentence read against the README, the pinned Tau Ceti (5 declarations opened), the open heads of PurityForFlatCohomology and SchemeAndStackFoundationsPartII and NeronModelsAndSemistableAbelianVarietiesPartII on main; previous C01 repaired; no previous finding. Seeded sample not re-read (no changed passage). Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 48 sorry warnings only. One question to the author carried over (Brauer III, Théorème 11.7, text not readable).",
+  "text": "c43504ad7c11e301"
+ }
+}
