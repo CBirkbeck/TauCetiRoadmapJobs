@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FictitiousPlay~1",
+  "head": "3b0b403362d927f63f7f813ab00168c6c9d6c990",
+  "pr": 3133,
+  "folder": "FictitiousPlay",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Sample: all eight targets 1.1-3.3 read against Levin, Daskalakis, Cloud-Wang-Kerr, Li et al. and Dan at their locators (22 of 24 locators; Berger's two not readable). Every route re-derived by hand, including Robinson's induction and constants and the summation argument of 3.3; Shapley, dominance, zero-sum-gap and w1=0 Checks recomputed with exact arithmetic. 18 Mathlib names checked at the pin; 19 signatures read; one-tactic probes close nothing. Automatic checks all passed; targeted build succeeds with sorry as the only warning; dependency check 0 problems. Overlap read against ApproximateNashEquilibria, PotentialGamesAndPriceOfAnarchy, RegretMinimizationAndEquilibria: nothing shared.",
+  "text": "1c9a1a6935c7699f"
+ }
+}
