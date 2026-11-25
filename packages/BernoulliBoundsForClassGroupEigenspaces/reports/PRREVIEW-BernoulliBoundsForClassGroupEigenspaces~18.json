@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BernoulliBoundsForClassGroupEigenspaces~18",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BernoulliBoundsForClassGroupEigenspaces",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 42 changed lines since cd123f8. Checked: the five small corrections and the format note of the previous review (four corrections repaired; the description and the Koecher locator carried); the new 9.1 Corollary line against ArithmeticKTheory 9.1 and Soule1999 lines 175, 240; the new sentences of 9.4 and 9.8 against seven declarations of the formal proof's Lean source (torsAll, sTors, kBound, tors_le, torsBound, TorsBound, KHurewicz); BFEH2014 lines 43-49 for the 9.4 Origin line; the family index against Layers 9 and 10; the description against the head. Sample targets in changed passages: 9.1, 9.4, 9.8. Automatic checks all passed; depcheck 0 problems; Suggested.lean unchanged and elaborates with only the sorry warning; no change outside the named folders.",
+  "text": "7b892d1ce5b74ccf",
+  "carried": {
+   "from": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
