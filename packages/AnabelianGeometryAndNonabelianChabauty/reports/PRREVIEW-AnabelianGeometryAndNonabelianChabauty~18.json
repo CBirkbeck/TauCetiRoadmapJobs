@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnabelianGeometryAndNonabelianChabauty~18",
+  "head": "7633b39fbb3f5b31f3db59885758efd9c152670b",
+  "pr": 3027,
+  "folder": "AnabelianGeometryAndNonabelianChabauty",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 8 changed lines since 59b3c66: the four changed sentences of README.md (hypothesis line of 0.31 against (H20), (H22), (H25); locators kim2005 pp. 4-7 and 9, bdii sections 3.2-3.3 pp. 12-14, Stacks Lemma 59.97.9 Tag 0F1P) each checked against the source text and correct; previous C01 and C02 repaired, N01 carried as a format note; the orbit-fibre statement of 0.31 computed on S3 -> C2; title and description checked against the head (the one statement about this roadmap, section 2.0a, is true; nothing unstated); automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with the sorry warning only; none of the seeded sample statements lies in the changed passages.",
+  "text": "b1423969c135eda5"
+ }
+}
