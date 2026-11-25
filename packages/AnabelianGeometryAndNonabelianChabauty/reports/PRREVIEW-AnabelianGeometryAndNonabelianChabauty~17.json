@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnabelianGeometryAndNonabelianChabauty~17",
+  "head": "59b3c6648ea8066afba52e1d99c61e7544fc62df",
+  "pr": 3027,
+  "folder": "AnabelianGeometryAndNonabelianChabauty",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 4 changed lines since e7914b5: the two changed sentences (Layer 2 dependencies and Scope and ownership, both recording section 2.0a) read against section 2.0a and its Needs line; Radford's theorem recomputed in degree 4 on a two-letter alphabet (16 monomials, 16 words) and in characteristic p; the three Mathlib names opened at the pin; the pull request's title and description (as quoted, cut in part 3) read against the head, nothing to correct for this folder; no seeded sample target lies in the changed passages; automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with the sorry warning only; earlier C01 repaired, the earlier untouched-text points (three locators, one unparsable hypothesis line, code spans) carried as two small corrections and one format note.",
+  "text": "6770491b97f59ed2",
+  "carried": {
+   "from": "59b3c6648ea8066afba52e1d99c61e7544fc62df",
+   "head": "37a7d56600409fbc05f9e86ddd9900315d912fce",
+   "findings": 2,
+   "lines": 8,
+   "folders": [
+    "AnabelianGeometryAndNonabelianChabauty"
+   ],
+   "corrections": true
+  }
+ }
+}
