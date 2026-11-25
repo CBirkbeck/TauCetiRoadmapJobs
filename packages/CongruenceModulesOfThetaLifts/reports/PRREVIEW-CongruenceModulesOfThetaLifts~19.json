@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CongruenceModulesOfThetaLifts~19",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/CongruenceModulesOfThetaLifts",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 2 changed lines since 2ac59b9. Checked: the one changed sentence (route of 7.4, item (6): the Jacquet-Shalika bound now cited for unitary generic unramified local components) against AutomorphicLFunctionsAndLocalFactors AL.3.3.8 at this head, with the hypotheses recomputed for the cuspidal constituents and two controls (a Speh block, Steinberg); all six citations of AL.3.3.8 in the README; no seeded-sample target falls in the change. The previous review had no finding; its two format notes are carried. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with exit 0 and declares nothing. Pull request text not contradicted by the head.",
+  "text": "7b892d1ce5b74ccf"
+ }
+}
