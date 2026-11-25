@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~21",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 46 changed lines since 3f8c596. Checked: the five changed credits to the formal proof (8.5, 8.12, 8.19b, 8.19c and its method line) against its Lean source, 6 theorems and 8 definitions opened; the new comparison with Bruinier-Howard (arXiv:2105.11274v3, Theorem A = Theorem 8.6.1) in 8.15d, 8.16, 8.17 and the References, read at the theorem, with the case n = 1 computed; seeded-sample targets 8.12, 8.15d, 8.16, 8.19b, 8.19c fall in changed passages. Previous small correction on 8.12 repaired; the format note on Sources qualifiers carried. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with only the sorry warning. Description read as far as supplied.",
+  "text": "7b892d1ce5b74ccf"
+ }
+}
