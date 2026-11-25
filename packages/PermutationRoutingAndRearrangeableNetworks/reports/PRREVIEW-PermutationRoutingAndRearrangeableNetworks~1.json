@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PermutationRoutingAndRearrangeableNetworks~1",
+  "head": "aa82f128e75630e28c48e32a730dff35dacf6347",
+  "pr": 3126,
+  "folder": "PermutationRoutingAndRearrangeableNetworks",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample 1.1, 1.2, 2.1, 2.2, 3.1: each statement recomputed by exhaustive search on small and degenerate cases against the Lean definitions and each route read; Lehman-Leighton-Meyer checked in the 2015 revision on an author's page (2018 numbering not readable), Giaccone's slides not readable, Waksman/Benes/Clos bibliographic data on Crossref. Supplier citations resolved on main; dependency check 0 problems; Suggested.lean elaborates with sorry the only warning; one-tactic probe closes nothing; automatic checks all passed.",
+  "text": "341e695479698f6b"
+ }
+}
