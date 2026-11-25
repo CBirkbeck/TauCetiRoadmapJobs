@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SymmetricHyperbolicSystems~7",
+  "head": "5594d868f176a65b133bb8d5ff20863d091024a9",
+  "pr": 2246,
+  "folder": "SymmetricHyperbolicSystems",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 5 changed lines since b986579: the one changed sentence of README 2.3 (where F = S.apply u vanishes) was recomputed on u = x chi(x) and in general and is true; the previous small correction C01 is repaired; Suggested.lean unchanged and elaborates with 14 sorry warnings and nothing else; automatic checks all pass; dependency check 0 problems; pull-request text agrees with the head; seeded sample 2.3 falls in the change but its sources (John 1982, Lax 2006, Friedrichs 1954) could not be read, listed under Not verifiable and for the human reviewers.",
+  "text": "0ebdbe54d2ab1670"
+ }
+}
