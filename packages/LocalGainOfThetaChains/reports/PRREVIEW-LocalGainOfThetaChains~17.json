@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalGainOfThetaChains~17",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "incremental re-review of 23 changed lines since 2ac59b9. Checked: the three changed passages (4.9a Origin and Sources, 4.12 Origin, References) against Bannai-Kobayashi Corollary 2.16 and section 4, Kudla Chapter VI Proposition 3.2, and six declarations of the formal proof at the cited commit (CM2, CM3, cm3 and the Artin-reciprocity derivation); of the seeded sample only 4.12 lies in a changed passage. Automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with no message and declares nothing. Two small corrections (4.9b label without locator, carried; linear term c*T in 4.9a (i)) and three carried format notes.",
+  "text": "7b892d1ce5b74ccf",
+  "carried": {
+   "from": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "head": "4d826752ac496b20612025c1fd73cf4b676eefa5",
+   "findings": 2,
+   "lines": 2,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains"
+   ],
+   "corrections": true,
+   "onto": "b2761f8f2515247a25a460ee2df1c024b4c32f8d"
+  }
+ }
+}
