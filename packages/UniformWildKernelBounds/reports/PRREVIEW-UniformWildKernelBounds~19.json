@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-UniformWildKernelBounds~19",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/UniformWildKernelBounds",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 67 changed lines since 7b5fe43. Checked: the previous small correction (origin labels of 2.3, 3.1, 3.17, 3.23, 5.2) is repaired and agrees with the family index; the format note on 0.2 and 0.3 is carried; the earlier question on Schneider (1979) §6 Lemma 1 is answered from the cached text (every n ≠ 0, p odd). Changed passages: the definition of V against BernoulliBoundsForClassGroupEigenspaces §6.17 (e); the form of the formal proof in 3.1 (CardK: CM, n ≥ 2, conjugate self-dual) and 2.3 (FerreroWashington: field containing μ_ℓ, μ₄ at 2) against its declarations; the comparison with Soulé (2003) and Bayer-Fluckiger–Emery–Houriet (2015) in 1.6, 6.1, 7.4 recomputed (excluded primes, triple against double exponential), Soulé through the restatement in BFEH only, his text being unreadable. Of the seeded sample only 7.3 falls in the change. Automatic checks all passed; depcheck 0 problems; Suggested.lean unchanged, elaborates with exit 0 and declares nothing; the description's label counts recounted and agree.",
+  "text": "b1423969c135eda5"
+ }
+}
