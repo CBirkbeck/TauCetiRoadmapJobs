@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LieGroups~13",
+  "head": "5f2bc3069ad650f9a913c290278cc23de9bec01c",
+  "pr": 3119,
+  "folder": "RepresentationTheory/LieGroups",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 62 changed lines since 080c300. Checked: the repair of the previous small correction (four §4.4 Lean statements now universe-polymorphic, confirmed with #check on a copy of the file) and of format notes N01–N03 (repaired; N04 on untouched References text carried as a format note); the reworded §4.3 paragraph and docstring bullet; the §5.1 Needs line with its seeded locator (kirillov2008 Thm. 2.5, line 216); the five library names added to the supplier contracts, opened at the pins; one-tactic probes on the order statements (not padding); elaboration (25 sorry warnings only); the dependency check (0 problems, no UPWARD or CYCLE); the pull request's title and description against this head; no change outside the folder. All automatic checks passed.",
+  "text": "2a9c7b0433d235f6"
+ }
+}
