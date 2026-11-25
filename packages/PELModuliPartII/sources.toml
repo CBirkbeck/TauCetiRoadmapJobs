@@ -345,3 +345,18 @@ status = "certified"
 accessed = "2026-11-16"
 version_note = "arXiv v1; its subsections are lettered (§5.c is the even case of special parahorics, cited as §5.3 of the published version by RSZ17); locators use the arXiv numbering and pagination"
 cited_for = ["§3.4", "§7.7"]
+
+[[source]]
+id = "ACZ16"
+authors = "Tobias Ahsendorf, Chuangxun Cheng, Thomas Zink"
+title = "O-displays and π-divisible formal O-modules"
+year = 2016
+venue = "Journal of Algebra 457"
+doi = "10.1016/j.jalgebra.2016.03.002"
+locator_scheme = "section"
+locator = "§3 (O-frames and windows, as cited by Mih19 §11.1, p. 41)"
+url = "https://doi.org/10.1016/j.jalgebra.2016.03.002"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["§0.1"]
