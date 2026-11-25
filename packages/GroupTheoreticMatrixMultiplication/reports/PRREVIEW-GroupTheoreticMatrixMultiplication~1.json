@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GroupTheoreticMatrixMultiplication~1",
+  "head": "bfce385c8b1a94605df54b6d7f706c5e6232862b",
+  "pr": 3129,
+  "folder": "GroupTheoreticMatrixMultiplication",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review. Sample: all nine sections 1.1-3.2; 18 locators into Cohn-Umans (arXiv:math/0307321v2) and Cohn-Kleinberg-Szegedy-Umans (arXiv:math/0511460v1) read at the text and correct; 10 locators into Blaser's survey not readable through the sources service (not verifiable). Adversarial pass computed: S3 exhaustive counts (10648 triples, 6301 with the property, laws hold), right/left quotient Check, triangle construction n<=4, CKSU sets n<=5 with negative control, arithmetic of 3.2 and its remark, degenerate parameters (n=0, empty sets, zero blocks, q=0, junk sInf). 35 library names #checked at the pins; AsymptoticSpectra 3.1/3.3 resolved at its open head and the nine copied declarations compared; dependency check 0 problems; Suggested.lean elaborates with 9 sorry warnings only; one-tactic probe closes none; automatic checks all passed. Two small corrections (form of Cohn-Umans Theorem 4.1; IsAlgClosed unnecessary in Layer 3 by base change), three format notes. One source error recorded (proof of Cohn-Umans Lemma 3.1). For humans: Blaser unread; unpublished preprint named in the scope section.",
+  "text": "1fa1fdaab1d45fc2"
+ }
+}
