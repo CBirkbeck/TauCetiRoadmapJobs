@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicModuliForArithmeticGeometry~23",
+  "head": "7633b39fbb3f5b31f3db59885758efd9c152670b",
+  "pr": 3027,
+  "folder": "AlgebraicModuliForArithmeticGeometry",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 59b3c66. Checked the pull request's title and the quoted part of its description against the folder's change against main and against the head: the sentences about this roadmap (projection formula repointed to SchemeAndStackFoundations §2.18 in §9.10, three corrected glosses, the nefness sentence, additions not mentioning the family) all hold. No seeded-sample target lies in a changed passage. Automatic checks passed; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with five sorry warnings only. One format note carried over (§7.6a cites a Mathlib namespace).",
+  "text": "b1423969c135eda5"
+ }
+}
