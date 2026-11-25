@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LengthBoundsInPadicFamilies~14",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LengthBoundsInPadicFamilies",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 35 changed lines since 3f8c596. Checked: every new sentence about the formal proof in headline 3, 1.7a (Method) and 1.8c (Origin, form of the formal proof, Sources) against 9 declarations of the formal proof at its first commit (the seeded sample where it falls in the changed passages: 1.7a, 1.8c); the claim that the main theorems do not depend on StatCongBound/congBound against the kernel export's declaration list; the previous review had no findings; automatic checks all passed; depcheck 0 problems; Suggested.lean unchanged and elaborates with sorry warnings only; pull request text and family index read against the head. One small correction: the Suggested.lean module docstring still says without exception that the formal proof assumes a large residue field.",
+  "text": "7b892d1ce5b74ccf",
+  "carried": {
+   "from": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "head": "b2761f8f2515247a25a460ee2df1c024b4c32f8d",
+   "findings": 1,
+   "lines": 3,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/LengthBoundsInPadicFamilies"
+   ],
+   "corrections": true,
+   "onto": "2f2bfc804f663792988fb8c9306fa960f09b5508"
+  }
+ }
+}
