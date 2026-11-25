@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisDuality~12",
+  "head": "7633b39fbb3f5b31f3db59885758efd9c152670b",
+  "pr": 3027,
+  "folder": "ArithmeticGaloisDuality",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since e47c8ec. Checked the pull request's title and quoted description against the head (D7.6a, its sources, its consumers HeckeIdealsAndTaylorWilesRelations 10.1 and BernoulliBoundsForClassGroupEigenspaces 6.17; no new supplier, no heading removed, Suggested.lean unchanged); the description was cut in the quotation and the remainder was not read (one question for the author). Adversarial rows computed for D7.6a (d) and its second Check. Automatic checks passed; depcheck 0 problems; elaboration gives 12 sorry warnings only; no change outside the pull request's own folders. Seeded sample: no target lies in a changed passage. One format note carried over (Milne page number).",
+  "text": "b1423969c135eda5"
+ }
+}
