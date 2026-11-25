@@ -15,3 +15,39 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["9.9"]
+
+[[source]]
+id = "belabas2008"
+authors = "Karim Belabas; Francisco Diaz y Diaz; Eduardo Friedman"
+title = "Small generators of the ideal class group"
+year = 2008
+venue = "Mathematics of Computation 77 (2008), 1185–1197"
+doi = "10.1090/S0025-5718-07-02003-0"
+locator_scheme = "page"
+locator = "§2, pp. 1187–1188"
+url = "https://www.ams.org/journals/mcom/2008-77-262/S0025-5718-07-02003-0/S0025-5718-07-02003-0.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/2008-77-262/S0025-5718-07-02003-0/S0025-5718-07-02003-0.pdf"
+fetched_at = "2026-11-25T14:24:30Z"
+sha256 = "b462d31c81c74c00c6e557f29ab1aa7ef353794b3c73c2817c3ece8340fe97cd"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-25"
+cited_for = ["9.5"]
+
+[[source]]
+id = "bach1990"
+authors = "Eric Bach"
+title = "Explicit bounds for primality testing and related problems"
+year = 1990
+venue = "Mathematics of Computation 55 (1990), 355–380"
+doi = "10.1090/S0025-5718-1990-1023756-8"
+locator_scheme = "page"
+locator = "§3, p. 360"
+url = "https://www.ams.org/journals/mcom/1990-55-191/S0025-5718-1990-1023756-8/S0025-5718-1990-1023756-8.pdf"
+fetched_from = "https://www.ams.org/journals/mcom/1990-55-191/S0025-5718-1990-1023756-8/S0025-5718-1990-1023756-8.pdf"
+fetched_at = "2026-11-25T14:24:38Z"
+sha256 = "a550983a9758ea38548a73ac33b4d45c9ffd7c900beda7a41cf706951b6fed30"
+licence_class = "publisher-open"
+status = "certified"
+accessed = "2026-11-25"
+cited_for = ["9.5"]

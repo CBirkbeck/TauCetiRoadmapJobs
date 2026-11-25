@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RiemannHypothesisStatementsAndConsequences~14",
+  "head": "2ac59b980b5edab937f08299b877fa1e8807840a",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/RiemannHypothesisStatementsAndConsequences",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 32 changed lines since 7b5fe43. Checked: the size clause and new remark of 8.4a (b) (values at K = Q, y = 1, 2, 3; termwise bound; the linear bound from the explicit formula) and its method, corollary and route lines; the new origin and method labels of 9.2 and the Labels paragraph; the three formal-proof declarations the change cites, read at the cited files (GzLipschitz, zetaPrimeSumErrorLipschitz, zeros_eq_zeros_primitiveCharacter); the consumers of the size clause; the previous C01 (partly repaired), C02 (repaired), N01 (not repaired); the description against this head. Seeded sample: only 8.4a and 9.2 fall in the changed passages. Automatic checks all passed; depcheck 0 problems; Suggested.lean unchanged and elaborates with 13 sorry warnings only; no change outside the pull request's roadmap folders.",
+  "text": "40a13d000babdc3c",
+  "carried": {
+   "from": "2ac59b980b5edab937f08299b877fa1e8807840a",
+   "head": "59b3c6648ea8066afba52e1d99c61e7544fc62df",
+   "findings": 2,
+   "lines": 2,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/RiemannHypothesisStatementsAndConsequences"
+   ],
+   "corrections": true,
+   "onto": "67fe9177e07a914ee47756588b7561482e5732ac"
+  }
+ }
+}
