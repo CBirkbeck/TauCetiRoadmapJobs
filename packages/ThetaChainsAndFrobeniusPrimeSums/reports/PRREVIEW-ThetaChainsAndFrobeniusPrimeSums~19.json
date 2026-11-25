@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsAndFrobeniusPrimeSums~19",
+  "head": "2ac59b980b5edab937f08299b877fa1e8807840a",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsAndFrobeniusPrimeSums",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "incremental re-review of 43 changed lines since f89b300. Checked: the new statement of 10.5 (exponent e_D+e_L+3 <= 5, the remark with exponent 3) against its route and against the formal proof's CErr, CErr7, errX5at_le, ErrorFormsExponentThree, ChainTied and link_gl, read at the first commit; C = 5 through 10.6, 10.9 and 10.10 against FrobeniusRestrictedRieszSums 1.9 (5 + 4 = 9 = e_W); the new clause of 10.6d against CongruenceModulesOfThetaLifts 7.6 (a) and ThetaChainsOnDefiniteUnitaryGroups 2.3b-2.3c; the seeded sample where it falls in changed passages (10.5, 10.10-10.11). Automatic checks all passed; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with the two sorry warnings only (docstring change only). One small correction (the description omits the corrected U_F of 10.4), three format notes carried; no finding of the previous review to repair.",
+  "text": "40a13d000babdc3c",
+  "carried": {
+   "from": "2ac59b980b5edab937f08299b877fa1e8807840a",
+   "head": "2ac59b980b5edab937f08299b877fa1e8807840a",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
