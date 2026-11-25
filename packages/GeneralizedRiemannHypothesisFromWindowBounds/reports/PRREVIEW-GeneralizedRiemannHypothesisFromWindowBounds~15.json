@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeneralizedRiemannHypothesisFromWindowBounds~15",
+  "head": "2ac59b980b5edab937f08299b877fa1e8807840a",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/GeneralizedRiemannHypothesisFromWindowBounds",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 38 changed lines since 094da69: section 0.4 (bound C y² as the statement, C′ y as a remark, new route for the integrability on σ > 1) and its supplier contracts. Checked the new route by computation, the cited clauses of RiemannHypothesisStatementsAndConsequences §8.4a(a)–(b) at this head, the two Mathlib declarations at the pin, the two new FormalProof locators, and that no later section uses C′ y. No seeded-sample target lies in a changed passage. The previous report had no finding; R01 stays settled by the human reviewers' decision. Automatic checks passed; depcheck 0 problems; Suggested.lean elaborates with 7 sorry warnings only; description agrees with the head.",
+  "text": "40a13d000babdc3c"
+ }
+}
