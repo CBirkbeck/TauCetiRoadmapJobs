@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdelicAlgebraicGroups~27",
+  "head": "6ff5aef021dc0124c2c55cc23e2c7b84f47271ba",
+  "pr": 3027,
+  "folder": "AdelicAlgebraicGroups",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 38 changed lines since 71bbefa. Checked: the general case added to 2.6 (iii) against Oesterle III 3.1-3.3, I 3.6 and A.1.4, recomputed on the norm sequence of a quadratic extension; the new Needs of 4.1a; the added locators (Oesterle IV Cor. 3.3 p. 56, Loeffler 3.1.2 and 3.1.6 p. 15, Rapinchuk Thm 2.3); the ownership clause against GeometryOfNumbersAndQuadraticArithmetic 3.3.4; ReductiveGroupsPartII RG2.3.7 on main; the title and description against the head (previous C01 repaired). Previous small corrections C01-C04 repaired, C05 (untouched text) carried. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry warnings only (19). Platonov-Rapinchuk 7.4 and Gross 1.4 not readable (paywalled).",
+  "text": "8a98188c180a53ea",
+  "carried": {
+   "from": "6ff5aef021dc0124c2c55cc23e2c7b84f47271ba",
+   "head": "f93f55409f3ab6203d1cf4b12429bbcf2580b138",
+   "findings": 1,
+   "lines": 7,
+   "folders": [
+    "AdelicAlgebraicGroups"
+   ],
+   "corrections": true
+  }
+ }
+}
