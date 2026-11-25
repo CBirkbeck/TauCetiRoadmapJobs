@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsCoulomb~4",
+  "head": "7773289ff64dc63cefd4b490be1243dd682a69dd",
+  "pr": 3074,
+  "folder": "SpecialFunctionsCoulomb",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "Full re-review. The three findings of the previous review (R01-R03) are repaired. All 35 Lean statements and the sampled Checks of the fifteen sampled subsections recomputed at 50 digits from the Lean-shaped definitions; 77 DLMF Chapter 33 locators read at release 1.2.8 with its errata notes; five books (14 locators) not legally readable. Suggested.lean elaborates at the pins with 35 sorry warnings only; one-tactic probe closes none. Dependency check: 0 problems; automatic checks all passed. Cross-roadmap citations resolved on main (SpecialFunctionsConfluent is now on main).",
+  "text": "14a6c3027d6400a4"
+ }
+}
