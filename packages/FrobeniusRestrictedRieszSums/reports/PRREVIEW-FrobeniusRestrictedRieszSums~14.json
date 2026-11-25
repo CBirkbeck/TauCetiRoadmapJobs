@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FrobeniusRestrictedRieszSums~14",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/FrobeniusRestrictedRieszSums",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 16 changed lines since cd123f8. Checked: the reworded third Check of 1.4 (computed; AnalyticNumberTheoryPartI 0.34 is a theorem at this head), the five declaration names the new Sources line of 1.4 cites and the one it drops, read in three files of the formal proof at commit 40e56ba; the supplier sections 1.4 cites; previous C01 repaired, N01 and N02 carried as format notes. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with three sorry warnings only and is unchanged. The seeded sample falls in the change at 1.4 only; external books not readable.",
+  "text": "7b892d1ce5b74ccf"
+ }
+}
