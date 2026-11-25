@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CongruenceModulesOfThetaLifts~17",
+  "head": "3f8c596c191324ffe5d43b0de33fdc7bad9a06d5",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/CongruenceModulesOfThetaLifts",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 26 changed lines since c832fa9. Checked: the three small corrections of the previous review (all repaired: 7.16a (2) status, the description's sentence, the Origin of 7.15 against Horesh-Karasik Proposition B.5 and Remark B.7 and GeometryOfNumbersAndQuadraticArithmetic 0.2.5); the new wording of the formal proof's form in 7.10c against 7.8a and 7.11 (values computed; the two formal-proof locators not readable); the two format notes (not repaired, written again); the pull request's text; changes outside the folder; automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with no output and is unchanged.",
+  "text": "05fa0e169089bdb0"
+ }
+}
