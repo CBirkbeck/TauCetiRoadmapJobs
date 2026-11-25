@@ -159,7 +159,7 @@ per_run = 40   # eight Fable loops served reviews; 20 per sync left the newest p
 text_per_run = 5   #of per_run: checks of an accepted head's text; ten a run filled the review queue faster than the reviewers could clear it. A head a human has approved gets none (a repair's push would dismiss the approval)
 authors = []
 skip_authors = ["bwangpj"]   # #196 is abandoned (user 2026-10-28): not tracked, not reviewed
-operator_prs = [617, 986, 1215, 1411, 1520, 1797, 1807, 1808, 2954, 3027]   # many-folder pull requests reviewed by the operator's serial chains: the chain files their rounds, the intake files none (and #986, which #763 supersedes: no review until it is closed; #1411: both folders are settled, and each folder's check of the description rewrites the text the other's check read, so no more rounds are filed for it; #1520: rounds held by the operator)
+operator_prs = [617, 986, 1215, 1411, 1520, 1797, 1807, 1808, 2954]   # many-folder pull requests reviewed by the operator's serial chains: the chain files their rounds, the intake files none (and #986, which #763 supersedes: no review until it is closed; #1411: both folders are settled, and each folder's check of the description rewrites the text the other's check read, so no more rounds are filed for it; #1520: rounds held by the operator)
 # An aggregate pull request carries, to merge in one piece, roadmap folders that other open pull requests (its members)
 # add and are reviewed in: no review round is filed for it and it is left out of the per-roadmap listings; its label
 # follows its members. #2954 carries the family RiemannHypothesisForDirichletLFunctions (members #2877 to #2924).
