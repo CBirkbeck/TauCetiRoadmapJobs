@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ChowFormsAndHeightsOfSubvarieties~13",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ChowFormsAndHeightsOfSubvarieties",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "incremental re-review of 42 changed lines since cd123f8. Checked: the previous report's three small corrections and format note (two repaired, the description's missing supplier and the code-font name carried); the changed passages of the overview, 5.1, 6.1 and 6.2, with the new [FormalProof] locators opened in its Lean source (statements, hypotheses, the constant of formHeight) and its kernel export scanned for which form the main theorems reach; HeightsRationalPointsAndObstructions 5.17a.1 and 5.9b.2 at this head; the seeded sample (5.1, 6.1, 6.2) where it falls in the changed passages; the values of (a7) for N = 1..4 and the constant of 6.2 (b). Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with no message and declares nothing. BGS94 not readable.",
+  "text": "7b892d1ce5b74ccf",
+  "carried": {
+   "from": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "head": "2f2bfc804f663792988fb8c9306fa960f09b5508",
+   "findings": 3,
+   "lines": 10,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ChowFormsAndHeightsOfSubvarieties"
+   ],
+   "corrections": true,
+   "onto": "bd0c2aed22b85a30e2fdc2c0b2ccd0bc3c3189be"
+  }
+ }
+}
