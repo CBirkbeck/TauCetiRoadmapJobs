@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsOnDefiniteUnitaryGroups~15",
+  "head": "f89b300ef03683372114d915df81ed4fd5f98ba5",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsOnDefiniteUnitaryGroups",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 148 changed lines since 7b5fe43. Checked: the new sections 3.1e and 3.1f (proved by hand, tested numerically on lattices in C, compared with the formal proof's statements InterInv, TripleFormula, XiExpandS, XiExpandL, GoodLat); the extended origin labels of 2.2, 2.2a, 2.9a and the Labels paragraph; the route sentence of 3.1a; B = 4dM^2 in 2.7 and the supplier contract against RieszSumsOverPrimesAndExceptionalZeros 2.9b (iv) (c') at this head; sampled targets 2.2, 3.1a, 3.1f where the change falls; the three earlier small corrections repaired, the format note carried; the description against the head. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with no message and declares nothing.",
+  "text": "05fa0e169089bdb0",
+  "carried": {
+   "from": "f89b300ef03683372114d915df81ed4fd5f98ba5",
+   "head": "1d61aefc731cd2e3971a15e04ef7a807fb4bcf33",
+   "findings": 1,
+   "lines": 3,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ThetaChainsOnDefiniteUnitaryGroups"
+   ],
+   "corrections": true,
+   "onto": "37a52c6587eefe44c5cd0a79392c9c3e11ce1922"
+  }
+ }
+}
