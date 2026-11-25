@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ExactPenalties~4",
+  "head": "46ad0b3d9169407eee33aa7497e02069b477acb6",
+  "pr": 2193,
+  "folder": "ExactPenalties",
+  "date": "2026-11-25",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 64 changed lines since 4729ee9. The change is a pure reordering of README sections (How to read the build moved up; Scope and ownership and Exact supplier contracts moved after the layers; one phrase changed); no statement, locator or Lean line changed. Previous findings R01 (narrow hypotheses: global oscillation bound, unit gap, real scalars, redundant 0 <= B) and R02 (the roadmap is one elementary lemma with a complete proof at the pins) are not repaired and are carried as R01 and R02, both P2. New witness for R01: the exact-cover Check of QuantumOptimization 1.4 on main (alpha={1,2}, three sets, A=3, B=1) is exact but fails the global-bound hypothesis. The generalised form was proved at the pins and the present statement derived from it. Seeded sample: 1.1, 1.2, 1.3 checked against H21 Appendix B Prop. 1 (PDF pp. 16-17) and against Prop. 10.B.1 in the author's corrected 2026 edition of the thesis B21 (content matches; the 2021 printed pages 414-416 not verifiable); G22 not readable. Automatic checks: all passed. Depcheck: 0 problems. Elaboration: only the sorry warning; signature matches README 1.3. One-tactic probes (simp_all, grind) fail on 1.3. Pull request text consistent with the head. The author's request for a human decision on the deliberately small scope is recorded for the human reviewers.",
+  "text": "bc046dd954a3679f"
+ }
+}
