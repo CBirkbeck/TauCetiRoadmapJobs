@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DiracScatteringAndNonlinearFourierTransform~5",
+  "head": "eccde1905f529d66a247f363a3a5ba2fbeeb39f8",
+  "pr": 3099,
+  "folder": "DiracScatteringAndNonlinearFourierTransform",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 20 changed lines since 293502c. Checked the wider-cone bullet and third Check of §2.3 and the aperture statement and route of §2.4 by computation (kernel-ratio supremum against A² for six apertures, the counterexample, Poisson integrals through a cone of aperture 5, the delta measure); 3 source locators read (poltoratski2024, mauth2022); 2 Tau Ceti declarations opened at the pin; none of the 15 seeded targets lies in changed or affected text; automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with 9 sorry warnings only; no change outside the folder; pull request text agrees with the head. One small correction (wording 'need not agree'), one question (garnett2007, uncertified, unread).",
+  "text": "d485473398774fd5",
+  "carried": {
+   "from": "eccde1905f529d66a247f363a3a5ba2fbeeb39f8",
+   "head": "c06762c5cded0fc2c55b4fb571d7194d5d2339a0",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "DiracScatteringAndNonlinearFourierTransform"
+   ],
+   "corrections": true
+  }
+ }
+}
