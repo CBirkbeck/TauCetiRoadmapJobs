@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaLiftsForDefiniteUnitaryGroups~13",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaLiftsForDefiniteUnitaryGroups",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 103 changed lines since 7b5fe43. Checked: the eight small corrections of the previous report (seven repaired, one partly: three origin citations still without locator); the new locators read in the cached sources (Rallis 1984 Injectivity formula (1-1) pp. 146-147; Rallis 1984 Howe duality Theorems I.1.1 p. 345 with corollary p. 351 and I.2.2 pp. 355-356; Atobe-Gan arXiv v1 Theorems 4.1, 4.3, 4.5 pp. 11-14); the changed labels of 1.6, 2.3, 3.4, 4.3, 5.3 recomputed (adversarial table, 10 rows); the description read against the head (now states the changes to 3.4 and 1.6). Seeded sample checked where it falls in the changed passages (1.1, 2.3, 3.4, 4.3, 5.1). Automatic checks all passed; dependency check 0 problems; lake env lean on Suggested.lean exit 0 with no messages; no file changed outside the named folders. Not verified: the formal proof's use of the Siegel-Weil formula claimed in the method label of 4.3 (statement file only was read).",
+  "text": "b1423969c135eda5",
+  "carried": {
+   "from": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "head": "7633b39fbb3f5b31f3db59885758efd9c152670b",
+   "findings": 1,
+   "lines": 47,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ThetaLiftsForDefiniteUnitaryGroups"
+   ],
+   "corrections": true,
+   "onto": "6b5609439a7cd831bcb1a4c1158d0df5f9658990"
+  }
+ }
+}
