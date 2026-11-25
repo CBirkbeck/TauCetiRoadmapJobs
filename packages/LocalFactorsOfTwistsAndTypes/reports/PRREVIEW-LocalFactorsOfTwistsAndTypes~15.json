@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalFactorsOfTwistsAndTypes~15",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalFactorsOfTwistsAndTypes",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 33 changed lines since 3bddf73. Checked: the previous report's three small corrections (all repaired) and two format notes (carried); the changed passages of 3.3 (b), 4.1 (i), 4.2 and 6.3 with their scope, dependency and contract lines; the two reworded credits against the formal proof's source (hasSum_spherical and its eleven premises, unramDoublingInert, the construction of the proof's map on supercuspidals); Tadić Proposition A.4 at its locator; AutomorphicLFunctionsAndLocalFactors §AL.3.3.8a and SmoothRepresentationsOfLocalGroups §SR.5.2a at this head; the description against the head (one small correction). Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with sorry as the only warning. Of the seeded sample, 3.3, 4.1 and 6.3 fall in the changed passages and were checked; the rest stands as in the previous review.",
+  "text": "7b892d1ce5b74ccf",
+  "carried": {
+   "from": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
