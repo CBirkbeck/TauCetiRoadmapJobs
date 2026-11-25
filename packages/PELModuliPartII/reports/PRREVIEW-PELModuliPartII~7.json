@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PELModuliPartII~7",
+  "head": "92c108f06e2a73cbe637ea5739d62edbb6ec99df",
+  "pr": 2453,
+  "folder": "PELModuliPartII",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 19 changed lines since 8ec1479: the previous C01, C02 and N01 are repaired; the changed passages of §0.1 (window with normal decomposition, Lubin–Tate duality clause conditioned on the unit ε, two new Checks recomputed), §0.4, the Zink display supplier contract and the ACZ16 reference were checked against Mih19 at 14 locators and against PELModuli §M2.15 and FiniteFlatGroupsAndIntegralPadicHodgeTheoryPartII §0.13 on main; the seeded sample has no target in the changed passages; automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with no message; one misprint in Mih19 recorded; ACZ16 not read (uncertified).",
+  "text": "244cd6896a7e1c5c"
+ }
+}
