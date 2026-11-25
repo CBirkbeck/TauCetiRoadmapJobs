@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties~20",
+  "head": "3f8c596c191324ffe5d43b0de33fdc7bad9a06d5",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 11 changed lines since e47c8ec. Checked: the new Sources entry of 8.12 (b) against three declarations of the formal proof (twSec_of_flat, degOn_add_rank_mul_degLo_le, flat_root_twist) and nine definitions, with the degree identity recomputed in general and at (p,q)=(0,1), E=K; the new supplier-contract entry for AutomorphicBundles 12.15 against that section (previous C01 repaired). Of the seeded sample only 8.12 falls in a changed passage. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; description not contradicted. One small correction (the flat_root_twist credit omits its named premise and its parameter m) and one carried format note.",
+  "text": "8a98188c180a53ea",
+  "carried": {
+   "from": "3f8c596c191324ffe5d43b0de33fdc7bad9a06d5",
+   "head": "25401a671892290e5172db07ea8edf4767e8fa79",
+   "findings": 1,
+   "lines": 5,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/ArithmeticVolumesAndIntegralFormsOnUnitaryShimuraVarieties"
+   ],
+   "corrections": true,
+   "onto": "f89b300ef03683372114d915df81ed4fd5f98ba5"
+  }
+ }
+}
