@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BoundedConicHulls~5",
+  "head": "ccbb1818d77c82a3c53ef5c095598f8a6e84e815",
+  "pr": 2215,
+  "folder": "BoundedConicHulls",
+  "date": "2026-11-25",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 74 changed lines since 3edf06d. Checked: the change is a pure move of three README sections (sorted-line comparison identical; no wording, id or statement changed) and the positional pointers it could break; the description against this head (C01: it names 3edf06d as the current head and omits the reordering). R02 and R03 stay repaired; R01 (P2, the sources' unboxed conic-union theorem excluded, hull_exact its boxed special case) not repaired and carried, with BG21 arXiv v3 Theorem 1 read at lines 349-385 and the general statement, the box-augmentation step and the unboxed negative control checked in a scratch Lean probe. No seeded target falls in a changed passage. Automatic checks rerun at ccbb181: every check 0; depcheck 0 problems; lake env lean on Suggested.lean: 5 sorry warnings only. Overlap check: ExactPenalties, InteriorPointMethods, ExponentialCone, ConvexLifting, FiniteAffineBoundTightening, nothing shared.",
+  "text": "8fa5c66cb32d44f0"
+ }
+}
