@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaKernelsForUnitaryDualPairs~15",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaKernelsForUnitaryDualPairs",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 39 changed lines since 2899581: the four changed passages (3.46a, 3.47b, 3.47c, 5.7b) checked against the formal proof's source (17 declarations opened, 7 files, kernel export for the dependency claim); previous small correction C01 repaired; no statement, heading or Lean declaration changed; seeded sample checked where it falls in changed text (3.46a, 3.47c, 5.7b); automatic checks pass, dependency check 0 problems, Suggested.lean elaborates with no output; pull request text agrees with the head; one format note, one carried question",
+  "text": "b1423969c135eda5"
+ }
+}
