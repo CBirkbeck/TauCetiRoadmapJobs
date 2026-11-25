@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalGainOfThetaChains~16",
+  "head": "2ac59b980b5edab937f08299b877fa1e8807840a",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 3,
+  "notes": "incremental re-review of 130 changed lines since 3f8c596. Checked: the new price of 4.9e (b) and the lemma P^ex <= P_j recomputed from the windows of ThetaChainsOnDefiniteUnitaryGroups 2.3b and FrobeniusRestrictedRieszSums 0.6, with a negative control at a thick place; its use in 4.14 and 4.17/4.17a; the recombination form of DepthBound in 4.15 and the equivalence claimed in its remark; the exponent of 4.14f' (iii) and its use in 4.14g; the repaired sentence of 4.12; 27 declarations of the formal proof opened at the cited commit. Seeded sample: 4.13, 4.14, 4.14g and 4.15 fall in changed passages. Previous remarks: C01 repaired, C02 carried as C01, N01 carried, N02 moot. Automatic checks all pass; dependency check 0 problems; Suggested.lean (unchanged, no declaration) elaborates with exit 0 and no message. Pull request text agrees with the head.",
+  "text": "40a13d000babdc3c",
+  "carried": {
+   "from": "2ac59b980b5edab937f08299b877fa1e8807840a",
+   "head": "67fe9177e07a914ee47756588b7561482e5732ac",
+   "findings": 1,
+   "lines": 5,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains"
+   ],
+   "corrections": true
+  }
+ }
+}

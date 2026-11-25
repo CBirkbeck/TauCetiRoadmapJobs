@@ -38,3 +38,19 @@ status = "certified"
 accessed = "2026-11-24"
 version_note = "arXiv v1"
 cited_for = ["4.12"]
+
+[[source]]
+id = "Kudla96"
+authors = "Stephen S. Kudla"
+title = "Notes on the local theta correspondence"
+year = 1996
+locator_scheme = "theorem"
+locator = "Chapter VI, Proposition 3.2"
+url = "https://www.math.toronto.edu/skudla/castle.pdf"
+fetched_from = "https://www.math.toronto.edu/skudla/castle.pdf"
+fetched_at = "2026-11-25T14:22:17Z"
+sha256 = "800ed01b22fa6104a3292a8b2ef124cd69781a6904f626f71fcf2a30a9af8cdd"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-25"
+cited_for = ["4.12"]
