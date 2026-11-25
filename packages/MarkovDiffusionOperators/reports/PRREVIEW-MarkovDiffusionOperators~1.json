@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MarkovDiffusionOperators~1",
+  "head": "44066cc24613859c2e5e97642d44970c965367ec",
+  "pr": 3148,
+  "folder": "MarkovDiffusionOperators",
+  "date": "2026-11-25",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 2,
+  "format_notes": 4,
+  "notes": "Full review. Seeded sample (1.1, 1.2, 2.1, 2.2, 2.3, 4.1, 4.2): mathematics recomputed, but no BGL locator could be checked because the book is paywalled and not cached (listed under Not verifiable). Adversarial pass over every layer with computed values: no false statement found. Suggested.lean elaborates with five sorry warnings only; all 14 signatures checked with #check; one-tactic probe closes none of the five theorems; a probe copy shows the Brascamp-Lieb headline is statable at the pins and that the cross-roadmap import can be replaced by a local definition. Dependency check: 0 problems. The one automatic check that failed (imports) is real and is raised as a format note; none set aside. Findings: a statable headline absent from Suggested.lean; a second owner on main (OptimalTransport 11.9) and second owners in open pull requests 2778 and 2775 not named in Scope; a scope subsection organised by the source's chapters. Human reviewers: BGL not tested for wording and arrangement; licence of the author's external formalisation not compared.",
+  "text": "3248bcae72d9f24a"
+ }
+}
