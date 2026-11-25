@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TaylorBoundsAndDepthsOnHeightTwoFormalGroups~13",
+  "head": "3f8c596c191324ffe5d43b0de33fdc7bad9a06d5",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/TaylorBoundsAndDepthsOnHeightTwoFormalGroups",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 27 changed lines since 7b5fe43. Checked: the three small corrections of the previous review (all repaired: the rule for statements of the formal proof and its use in 4.6, 4.8a, 4.19; the Isserlis and Wick references; the description's new supplier); the new attribution of 4.8 (J3) to GaussBK via EntryB and the explicit loss deLoss/lgN, read in the formal proof's source at the cited commit and compared with the README's loss term; 22 names looked up in the kernel export of the main theorems; the seeded sample where it falls in the change (4.6, 4.8, 4.19); the description against the head. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with three sorry warnings only. Two format notes carried over.",
+  "text": "05fa0e169089bdb0"
+ }
+}
