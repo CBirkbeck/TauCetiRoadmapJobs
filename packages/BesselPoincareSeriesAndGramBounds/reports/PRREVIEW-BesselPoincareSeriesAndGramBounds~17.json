@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BesselPoincareSeriesAndGramBounds~17",
+  "head": "c40f18174c94d73bad835fce2ee5d0e9666f96e2",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "incremental re-review of 90 changed lines since 3f8c596: the new sections 5.16a and 5.16b (both in the seeded sample) recomputed (product of the counts, volume of U(n) for the Hilbert-Schmidt metric, comparison with the compact-dual measure, telescoped mass ratios, exponent n^2/2+24 <= n^2, example Q(zeta_12)); six citations of HermitianFormsAndLattices resolved at this head; previous C01 and N01 not repaired and carried, two new small corrections (owner of the class-number bound in 5.16a; q^2 <= n unused by the route of 5.16b); automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with no messages; [FormalProof] not read.",
+  "text": "05fa0e169089bdb0",
+  "carried": {
+   "from": "c40f18174c94d73bad835fce2ee5d0e9666f96e2",
+   "head": "37a52c6587eefe44c5cd0a79392c9c3e11ce1922",
+   "findings": 3,
+   "lines": 14,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds"
+   ],
+   "corrections": true,
+   "onto": "04085df28acf3054146dee6283ac38244c383b25"
+  }
+ }
+}
