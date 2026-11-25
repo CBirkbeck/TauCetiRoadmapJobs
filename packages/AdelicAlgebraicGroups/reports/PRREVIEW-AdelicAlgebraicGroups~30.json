@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdelicAlgebraicGroups~30",
+  "head": "7633b39fbb3f5b31f3db59885758efd9c152670b",
+  "pr": 3027,
+  "folder": "AdelicAlgebraicGroups",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since 59b3c66; this round checked the pull request's title and description (read in full) against the head: one small correction (the description does not state that the source cited in 1.5, a section on main, is replaced: Borel 5.5 by Oesterle I 5.3-5.4; both read at the text). Record against the merge base: no layer, heading or Lean declaration removed, 6 headings added, same supplier roadmaps, Suggested.lean identical to main. Adversarial rows computed for 4.1a (tau(G_m)=1, tau of the quadratic norm-one torus = 2) and 1.5 (GL_2, Borel subgroup control). Seeded sample: no sampled section falls in a changed passage. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 19 sorry warnings only.",
+  "text": "b1423969c135eda5",
+  "carried": {
+   "from": "7633b39fbb3f5b31f3db59885758efd9c152670b",
+   "head": "7633b39fbb3f5b31f3db59885758efd9c152670b",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
