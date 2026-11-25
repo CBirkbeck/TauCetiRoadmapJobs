@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AdelicAlgebraicGroups~29",
+  "head": "59b3c6648ea8066afba52e1d99c61e7544fc62df",
+  "pr": 3027,
+  "folder": "AdelicAlgebraicGroups",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 7 changed lines since 6ff5aef. Checked: the previous small correction (Borel 5.5 cited for unimodularity) is repaired, the new locator Oesterle I 5.3-5.4, p. 23 read at the text and recomputed on GL2, a torus and a Borel subgroup as control; no sampled section falls in the change; title and quoted description read against the head, nothing contradicted; dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with sorry warnings only (19) and is unchanged from main. One question for the author carried.",
+  "text": "6770491b97f59ed2"
+ }
+}
