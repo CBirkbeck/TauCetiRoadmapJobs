@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsJacobiElliptic~3",
+  "head": "fb11859dc6590cfcd6277c832eed82318a958799",
+  "pr": 3075,
+  "folder": "SpecialFunctionsJacobiElliptic",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 31 changed lines since 2e8dbd8: R01 of the previous report (0/0 at k = 0 in the modulus forms of 4.4 and 4.5) is repaired; the changed passages of 4.4 and 4.5 (both in the seeded sample) were recomputed in double precision at five moduli and both roots, at k = 0 and k = 1, and the alternative third law of 4.4 checked algebraically and numerically; DLMF 22.7.1-22.7.8 and 22.17(ii) read at their locators; one small correction (the sketch's 'different lambda(2 tau)' fails at k^2 = 2) and one format note. Dependency check 0 problems, no change outside the folder, Suggested.lean unchanged and elaborating with 33 sorry warnings only; one automatic form check set aside as a false positive; pull request text agrees with the head.",
+  "text": "4125462b072294ef"
+ }
+}
