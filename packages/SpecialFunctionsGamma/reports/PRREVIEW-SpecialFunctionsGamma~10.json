@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsGamma~10",
+  "head": "2fcfdb58e68bb8f625767338fc6706ff276ffeae",
+  "pr": 2191,
+  "folder": "SpecialFunctionsGamma",
+  "date": "2026-11-25",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 6,
+  "format_notes": 2,
+  "notes": "Full review. Every statement of the README and of Suggested.lean recomputed (adversarial table with values, 30 rows); two false sentences outside the stated results (a Check of 5.1, a route sentence of 9.1). Seeded sample of 15 targets: 41 DLMF and Whittaker-Watson locators read against the text; nine books unreadable (Not verifiable). 21 cross-roadmap citations resolved on main; dependency check 0 problems; worker's automatic checks all passed; elaboration gives 81 sorry warnings only; one-tactic probe closes none of the 81 theorems.",
+  "text": "f6d36925920bb48c"
+ }
+}
