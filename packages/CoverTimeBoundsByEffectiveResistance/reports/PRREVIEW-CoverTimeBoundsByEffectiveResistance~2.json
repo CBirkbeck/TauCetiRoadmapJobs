@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CoverTimeBoundsByEffectiveResistance~2",
+  "head": "e01fdca3a3dc9116f3e57ea525160d2940e1cb03",
+  "pr": 3122,
+  "folder": "CoverTimeBoundsByEffectiveResistance",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 96 changed lines since fe91f9d. Previous R01 (P2), N01, N02 all repaired. Checked: the new step 3 of the route of 1.1 (a) recomputed exactly (35248 triples on 400 random weighted networks, K3 and the path by hand); SpectralSparsification 2.1 resolved at its open head (README and Suggested.lean line 127), no cycle; copied definitions identical to the supplier's; Mathlib Matrix.IsSymm.submatrix, Matrix.IsSymm.inv, Matrix.nonsing_inv_apply_not_isUnit, Matrix.exists_mulVec_eq_zero_iff opened at the pin; LP Exercises 2.62 and 2.68 read in the version of 19 August 2026 (p. 65). Seeded sample: 1.1 falls in the changed passage and was checked; 1.2, 2.1, 2.2 are untouched and stand as in the previous review. Suggested.lean elaborates with six sorry warnings only; dependency check 0 problems; automatic checks all passed; pull request text agrees with the head.",
+  "text": "c3cf20f058553cc4"
+ }
+}
