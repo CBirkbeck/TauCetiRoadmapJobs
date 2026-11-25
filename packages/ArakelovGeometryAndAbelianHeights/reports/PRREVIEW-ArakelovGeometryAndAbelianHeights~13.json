@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArakelovGeometryAndAbelianHeights~13",
+  "head": "7633b39fbb3f5b31f3db59885758efd9c152670b",
+  "pr": 3027,
+  "folder": "ArakelovGeometryAndAbelianHeights",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 2 changed lines since f93f554: the changed locator of 1.14 (Faltings 1983, section 3, p. 354) read in the GDZ scan and found right; the title and the description read against the head (what the folder gains, no section removed or renumbered, five new suppliers, the cited sections 1A.4, 1A.5 (b), 1B.5, 2.9, 4.6), all holding; previous C01 and C02 repaired, N01 and N02 carried; automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with exit 0 and no output (0 declarations).",
+  "text": "b1423969c135eda5"
+ }
+}
