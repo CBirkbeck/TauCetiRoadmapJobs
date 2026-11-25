@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CongruenceModulesOfThetaLifts~18",
+  "head": "2ac59b980b5edab937f08299b877fa1e8807840a",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/CongruenceModulesOfThetaLifts",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 32 changed lines since 3f8c596. Checked: the restated exceptional set of 7.6 (a) (window recomputed against (P5) of WachLatticesOverTheCyclotomicTower 6.9, the floor at the top places with the new hypothesis, the count, positivity, the bound 3b), the new Remark, the hypothesis added to 7.10a and its supply by ThetaChainsAndFrobeniusPrimeSums 10.x, the use of #Exc in 7.10c; the two format notes of the previous review (not repaired, written again); the description against the head. Seeded sample: only 7.6 falls in the changed passages, its locators are into the formal proof, which could not be read. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with no output (it declares nothing).",
+  "text": "40a13d000babdc3c"
+ }
+}
