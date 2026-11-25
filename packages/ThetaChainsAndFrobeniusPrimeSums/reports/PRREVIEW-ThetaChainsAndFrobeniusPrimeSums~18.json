@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ThetaChainsAndFrobeniusPrimeSums~18",
+  "head": "f89b300ef03683372114d915df81ed4fd5f98ba5",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/ThetaChainsAndFrobeniusPrimeSums",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "incremental re-review of 82 changed lines since 7b5fe43. Checked: the new section 9.4a (hypotheses and conclusion against the formal proof's VandPlace and PlaceData, the route recomputed, a numerical instance); the corrected U_F of 10.4 against the brackets of its route and against UBar5 and Vvar, and its use in 10.5; the new formal-proof sentences of 9.2 and 9.6 against SlopesN_at, slopesN_at_of and ramification_condition_holds; the repairs of the previous small corrections C01-C04 (all repaired; the format note on the Sources lines is carried); Bufetov-Gorin Theorem 1.6 against its text. Seeded sample checked where it falls in changed passages (9.3, 9.4, 10.4, 10.5, 10.6d). Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged and elaborates with only the two sorry warnings. One question for the author on the description (read only in part).",
+  "text": "05fa0e169089bdb0"
+ }
+}
