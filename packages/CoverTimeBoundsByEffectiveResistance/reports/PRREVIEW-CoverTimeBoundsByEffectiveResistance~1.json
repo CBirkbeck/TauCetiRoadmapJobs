@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CoverTimeBoundsByEffectiveResistance~1",
+  "head": "fe91f9d45730b26fedb4829ca6624a24b277e6e4",
+  "pr": 3122,
+  "folder": "CoverTimeBoundsByEffectiveResistance",
+  "date": "2026-11-25",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample 1.1, 1.2, 2.1, 2.2: every LP and LPW locator read in the text (LP corrected edition of 19 August 2026; LPW second edition), all agree. Every statement, route and Check recomputed in exact rational arithmetic (three-point identity on 136658 triples including disconnected networks, Tetali on 19498 pairs, edge bound on 4448 edges, spanning tree bound on 3022 trees, c_G(n-1) and 3n^2 bounds, every number printed in a Check): no discrepancy. Suggested.lean elaborates with sorry the only warning; one-tactic probe closes none of the 6 theorems; 19 cited library declarations opened at the pins; all cross-roadmap citations resolved (ElectricalNetworksAndRandomWalks on main, HittingAndCoverTimes at its open head, GeometricTopology 4.4.5). Dependency check: 0 problems. Automatic checks all passed. One finding (P2): 1.1(a) on connected networks is the theorem SpectralSparsification 2.1 already plans, by the same route.",
+  "text": "5afb217b88b407bb"
+ }
+}
