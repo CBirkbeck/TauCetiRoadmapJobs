@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PositivityOfDirichletSeriesWithKernels~14",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/PositivityOfDirichletSeriesWithKernels",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 56 changed lines since 3bddf73. Checked: the three previous remarks (one repaired, two carried); the new method label of 6.3 and the labels of 6.1 and 6.2 against five declarations of the formal proof at its cited commit, and that its main theorems do not reach its Landau lemma; the deduction of the formal proof's windowed theorem from Kaczorowski-Pintz (1986) as the README renders it, recomputed (the paper itself is uncertified and was not read); the seeded sample where it falls in the changed passages (6.1, 6.2, 6.3, 6.8, 6.9); citations into and out of the changed passages; the description against the head. Automatic checks all passed; depcheck 0 problems; Suggested.lean, unchanged, elaborates with 8 sorry warnings only.",
+  "text": "7b892d1ce5b74ccf",
+  "carried": {
+   "from": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "head": "99d4614c9c7464d8547cfddb663611fd849f72fb",
+   "findings": 2,
+   "lines": 2,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/PositivityOfDirichletSeriesWithKernels"
+   ],
+   "corrections": true,
+   "onto": "4d826752ac496b20612025c1fd73cf4b676eefa5"
+  }
+ }
+}
