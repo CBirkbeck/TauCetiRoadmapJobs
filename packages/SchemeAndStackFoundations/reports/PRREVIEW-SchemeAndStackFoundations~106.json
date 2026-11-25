@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundations~106",
+  "head": "cea30e1d1b1c4fdfb4b092db8d854ec8fff2e42e",
+  "pr": 2531,
+  "folder": "SchemeAndStackFoundations",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 9 changed lines since 3e72c55. Checked: the sentence added to §1.1a's affine bullet against TauCeti.DescentDatum.exists_isAffine_baseChange_hom_isIso at the pin (Descent/Affine.lean:532, hypotheses and conclusion, four instances computed); the Downstream consumers sentence against NeronModelsAndSemistableAbelianVarietiesPartII §1.9 on main; the previous report's three small corrections and one format note, all repaired; the pull request's text against the head (one out-of-date sentence, C01). Seeded sample: no target lies in a changed passage. Automatic checks all passed; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 48 sorry warnings only and is unchanged. Brauer III Thm 11.7 remains not verifiable (carried question).",
+  "text": "7e88255ca01dfcbf",
+  "carried": {
+   "from": "cea30e1d1b1c4fdfb4b092db8d854ec8fff2e42e",
+   "head": "cea30e1d1b1c4fdfb4b092db8d854ec8fff2e42e",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
