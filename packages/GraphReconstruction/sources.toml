@@ -1,0 +1,58 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "GraphReconstruction"
+
+[[source]]
+id = "GardnerBM27Notes"
+locator_scheme = "page"
+locator = "p. 4"
+url = "https://faculty.etsu.edu/gardnerr/5340/notes-Bondy-Murty-GT/Bondy-Murty-GT-2-7.pdf"
+fetched_from = "https://faculty.etsu.edu/gardnerr/5340/notes-Bondy-Murty-GT/Bondy-Murty-GT-2-7.pdf"
+fetched_at = "2026-11-25T17:07:18Z"
+sha256 = "446c619352e0617e84da7862af70dcd18a95a14743ef19c850a96ffd9bae9ec6"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-25"
+cited_for = ["1.1"]
+
+[[source]]
+id = "GardnerBM27Slides"
+locator_scheme = "page"
+locator = "slide 3"
+url = "https://faculty.etsu.edu/gardnerr/5340/Beamer-Bondy-Murty-GT/Proofs-BM-GT-2-7.pdf"
+fetched_from = "https://faculty.etsu.edu/gardnerr/5340/Beamer-Bondy-Murty-GT/Proofs-BM-GT-2-7.pdf"
+fetched_at = "2026-11-25T17:07:19Z"
+sha256 = "f0edbc814fb255e88a098f1d5e6691bff0c3020976276c2ec889fbe547dc94db"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-25"
+cited_for = ["1.1"]
+
+[[source]]
+id = "Muller1977"
+authors = "V. Müller"
+title = "The edge reconstruction hypothesis is true for graphs with more than n · log2n edges"
+year = 1977
+venue = "Journal of Combinatorial Theory, Series B 22"
+doi = "10.1016/0095-8956(77)90074-0"
+locator_scheme = "page"
+locator = "p. 281"
+url = "https://doi.org/10.1016/0095-8956(77)90074-0"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.4"]
+
+[[source]]
+id = "Lovasz1972"
+authors = "L. Lovász"
+title = "A note on the line reconstruction problem"
+year = 1972
+venue = "Journal of Combinatorial Theory, Series B 13"
+doi = "10.1016/0095-8956(72)90068-8"
+locator_scheme = "page"
+locator = "p. 309"
+url = "https://doi.org/10.1016/0095-8956(72)90068-8"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.4"]
