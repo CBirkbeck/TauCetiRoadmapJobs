@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LocalGainOfThetaChains~15",
+  "head": "3f8c596c191324ffe5d43b0de33fdc7bad9a06d5",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "incremental re-review of 44 changed lines since 3bddf73: the 13 newly cited [FormalProof] declarations opened and compared with 4.9 (b), 4.10, 4.12 and 4.15a; Mínguez Théorème 1 and Bannai–Kobayashi Corollary 2.16 read; Finis Lemmas 3.8–3.9 not readable legally; none of the seeded sample lies in a changed passage; automatic checks pass, depcheck 0 problems, Suggested.lean elaborates with no message; previous small correction on 4.15a repaired, the one on Origin locators partly",
+  "text": "05fa0e169089bdb0",
+  "carried": {
+   "from": "3f8c596c191324ffe5d43b0de33fdc7bad9a06d5",
+   "head": "04085df28acf3054146dee6283ac38244c383b25",
+   "findings": 2,
+   "lines": 4,
+   "folders": [
+    "RiemannHypothesisForDirichletLFunctions/LocalGainOfThetaChains"
+   ],
+   "corrections": true,
+   "onto": "c40f18174c94d73bad835fce2ee5d0e9666f96e2"
+  }
+ }
+}
