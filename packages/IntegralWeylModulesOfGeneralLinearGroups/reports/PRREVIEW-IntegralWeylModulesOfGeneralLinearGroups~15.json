@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IntegralWeylModulesOfGeneralLinearGroups~15",
+  "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/IntegralWeylModulesOfGeneralLinearGroups",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 8 changed lines since 3bddf73. Checked: the new method-label and route sentences of 0.2 against the formal proof's source at commit 40e56bab (ExIntervalLt, InducedSimpleLowestAlcove, exists_smul_mem_delSq_of_simple, weylDualWeylLatticesAgree_of_lowest_alcove, NablaMemDeltaLocallyAtLargePrime: names, namespaces, hypotheses, the Nakayama step), with GL_2 instances computed; the References entries (2.1 (c) added; journal reference of Hara-Miyazaki-Namikawa confirmed). Previous small corrections: two repaired, one (description does not name the new supplier ArakelovGeometryAndAbelianHeights) carried as C01. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with nine sorry warnings only. The seeded sample falls in the changed passages only at 0.2. Decisions of the human reviewers: neither applies to this folder.",
+  "text": "7b892d1ce5b74ccf",
+  "carried": {
+   "from": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "head": "f0da4ff1cf73cccb0c7dd79f49f62041f13ceb29",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
