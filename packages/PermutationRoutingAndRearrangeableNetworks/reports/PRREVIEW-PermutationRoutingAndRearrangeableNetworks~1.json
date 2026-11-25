@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PermutationRoutingAndRearrangeableNetworks~1",
+  "head": "aa82f128e75630e28c48e32a730dff35dacf6347",
+  "pr": 3126,
+  "folder": "PermutationRoutingAndRearrangeableNetworks",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample 1.1, 1.2, 2.1, 2.2, 3.1: every statement, Check and example recomputed by exhaustive search (Clos and Slepian-Duguid for small r, n, m; Benes on 2, 4 wires and Waksman settings on 8; butterfly on 2, 4, 8 wires; all sorting networks of lengths 3, 4, 5 on 2, 3, 4 wires) and the routes read by hand. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the five theorems; two definitions evaluated in Lean against hand values. 14 library declarations opened at the pins; 4 supplier citations resolved on main; dependency check 0 problems; automatic checks all passed. Sources: only the 2015 revision of Lehman-Leighton-Meyer could be read (content supports 2.1 and 2.2; the cited 2018 numbering unchecked); Giaccone's notes and Waksman's abstract not readable from a legal place, listed under Not verifiable and for the human reviewers.",
+  "text": "341e695479698f6b"
+ }
+}
