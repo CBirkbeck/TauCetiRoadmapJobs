@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DistanceRegularGraphsCodesAndPolygons~3",
+  "head": "b77dc6b1c4e23ee9d8e272572af7a5dc21cc15e7",
+  "pr": 3067,
+  "folder": "DistanceRegularGraphsCodesAndPolygons",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 11 changed lines since d9e0952: the previous R01 (summary lacked t ≤ n), C01 (c_0 on disconnected graphs) and N01 (Layer 6 dependencies) are repaired; the three changed passages recomputed (Lloyd zeros on five instances, c_0 from the Lean definition on connected, empty and 2K_2 graphs); Suggested.lean unchanged and elaborates with 43 sorry warnings only; dependency check 0 problems; no change outside the folder; one automatic check (a section header over #check lines) set aside as a false positive; one small correction to the pull-request description (BoundsOnCodes and SpectralGraphBounds are on main); no source locator in the changed passages, the cited books remain unreadable legally.",
+  "text": "714dbab1e34a9b5a"
+ }
+}
