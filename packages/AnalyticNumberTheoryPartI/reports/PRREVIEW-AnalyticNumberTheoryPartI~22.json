@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticNumberTheoryPartI~22",
+  "head": "6ff5aef021dc0124c2c55cc23e2c7b84f47271ba",
+  "pr": 3027,
+  "folder": "AnalyticNumberTheoryPartI",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 6 changed lines since e47c8ec, and a check of the pull request's title and description against this head. Checked: the three changed README lines (the hybrid large sieve of 1.7a(ii) against Bombieri Theoremes 10-11 and a computed instance; the effectivity sentence of 0.1 against Bennett-Siksek Proposition 7.1; the sign of the norm power in 2.3a against LFunctions' shift convention and the instance zeta(s-1)); the previous C01-C03 are repaired, N01-N02 carried as format notes in untouched text. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean (unchanged) elaborates with 64 sorry warnings only. Of the seeded sample no target lies in a changed passage. The description's visible part agrees with the head; its end was cut and one question to the author asks whether it names sections 1.6a and 2.42a and the two added declarations.",
+  "text": "8a98188c180a53ea"
+ }
+}
