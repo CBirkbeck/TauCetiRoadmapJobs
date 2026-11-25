@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BesselPoincareSeriesAndGramBounds~16",
+  "head": "3f8c596c191324ffe5d43b0de33fdc7bad9a06d5",
+  "pr": 3027,
+  "folder": "RiemannHypothesisForDirichletLFunctions/BesselPoincareSeriesAndGramBounds",
+  "date": "2026-11-25",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 41 changed lines since c832fa9. Checked: the repairs of the previous small corrections C01-C04 (all repaired) and format note N01 (not repaired, carried); the new source locators read at the text (Beuzart-Plessis 2020 Thm 7.2.1 with the following paragraph and Lemma 7.3.1 (i); Godement 1958 §4 Thms 5, 5 bis; Jacquet 1986 §§1, 7, 9; Flajolet-Sedgewick 2009 Example I.20, Note I.66, Example VII.4 with pages); the new exponent 11 q_V of the threshold in the route of 5.16 for consistency with steps (d) and (f); the pull request's text (one omission, a small correction); seeded sample where it falls in the changed passages (5.13c, 5.18a, 5.18d). Automatic checks all passed; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean unchanged, elaborates with no messages and declares nothing. Jacquet-Ye 1999 and the formal proof's source not opened.",
+  "text": "8a98188c180a53ea"
+ }
+}
