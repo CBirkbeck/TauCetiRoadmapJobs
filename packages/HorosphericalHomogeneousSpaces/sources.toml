@@ -1,0 +1,33 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "HorosphericalHomogeneousSpaces"
+
+[[source]]
+id = "Pas06"
+locator_scheme = "theorem"
+locator = "Proposition 1.6"
+url = "https://theses.hal.science/tel-00111912"
+fetched_from = "https://theses.hal.science/tel-00111912/document"
+fetched_at = "2026-11-25T21:27:46Z"
+sha256 = "d2e0fe43e03660e51497344a1a35e5cf2897be9f8640d95dade0faca5afb7040"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-25"
+cited_for = ["Layers 3, 4"]
+
+[[source]]
+id = "MT26"
+authors = "Matilde Maccan, Ronan Terpereau"
+title = "Horospherical subgroups in positive characteristic"
+year = 2026
+venue = "Canadian Mathematical Bulletin"
+doi = "10.4153/S0008439526102288"
+locator_scheme = "section"
+locator = "structure theorem"
+url = "https://hal.science/hal-05711865v1"
+fetched_from = "https://hal.science/hal-05711865/document"
+fetched_at = "2026-11-25T21:28:11Z"
+sha256 = "5a5ce4206ab34c72f4ca13ea9786f9d3e2c0bcc7d3cb76fe392084d54666b7cb"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-25"
+cited_for = ["2.1"]

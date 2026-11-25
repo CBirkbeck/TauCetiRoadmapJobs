@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-HorosphericalHomogeneousSpaces~1",
+  "head": "817f2c681b1daeee6576d8d6ac5fac46e21cbb52",
+  "pr": 3141,
+  "folder": "HorosphericalHomogeneousSpaces",
+  "date": "2026-11-25",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample 0.1, 0.2, 0.3, 2.1, 2.2: Pas06 (HAL thesis) and MT26 (HAL deposit) read at their locators, all supported; Milne, Humphreys and Borel not read (not verifiable). Adversarial pass computed by hand on SL2, GL2, PGL2, G_m with mu_n; no false statement found. Pinned Tau Ceti: 17 declarations and 20 files opened, one declaration and five files absent (small correction). Suppliers ReductiveGroups and FlagVarieties resolved on main; dependency check 0 problems. The one automatic failure (no Suggested.lean in the folder) is real and is the single finding; no elaboration or one-tactic probe was possible without the file.",
+  "text": "cb56c29dda353030"
+ }
+}
