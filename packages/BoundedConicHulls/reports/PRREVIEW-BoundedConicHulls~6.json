@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BoundedConicHulls~6",
+  "head": "ccbb1818d77c82a3c53ef5c095598f8a6e84e815",
+  "pr": 2215,
+  "folder": "BoundedConicHulls",
+  "date": "2026-11-25",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since ccbb181; the rewritten title and description were checked claim by claim against the head (headline names, comment-only Lean diff against a24ef8d, the reordering, pins, the CI run for this head): all agree, previous C01 repaired. Previous R01 (unboxed conic-union hull theorem excluded) not repaired, files unchanged; BG21 Theorem 1 re-read at lines 349-385; unboxed statement and controls probed in a scratch Lean file. Automatic checks all pass, depcheck 0 problems, Suggested.lean elaborates with 5 sorry warnings only. Scope decision flagged to the human reviewers.",
+  "text": "81b6d358d7b0cd54"
+ }
+}
