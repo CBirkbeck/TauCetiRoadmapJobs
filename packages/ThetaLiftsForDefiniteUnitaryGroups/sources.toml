@@ -185,3 +185,64 @@ licence_class = "none"
 status = "uncertified"
 version_note = "paywalled; cited by its locator without the text"
 cited_for = ["5.4"]
+
+[[source]]
+id = "Weil1965"
+authors = "André Weil"
+title = "Sur la formule de Siegel dans la théorie des groupes classiques"
+year = 1965
+venue = "Acta Mathematica 113"
+doi = "10.1007/BF02391774"
+locator_scheme = "section"
+locator = "restated in GQT, sections 3.1 and 7.1"
+url = "https://doi.org/10.1007/BF02391774"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["5.1", "5.4", "6.3"]
+
+[[source]]
+id = "Kudla96"
+authors = "Stephen S. Kudla"
+title = "Notes on the local theta correspondence"
+year = 1996
+locator_scheme = "theorem"
+locator = "Chapter VI, Proposition 3.2"
+url = "https://www.math.toronto.edu/skudla/castle.pdf"
+fetched_from = "https://www.math.toronto.edu/skudla/castle.pdf"
+fetched_at = "2026-11-25T19:21:52Z"
+sha256 = "800ed01b22fa6104a3292a8b2ef124cd69781a6904f626f71fcf2a30a9af8cdd"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-25"
+cited_for = ["2.2"]
+
+[[source]]
+id = "KudlaRallis1994"
+authors = "Stephen S. Kudla, Stephen Rallis"
+title = "A regularized Siegel-Weil formula: the first term identity"
+year = 1994
+venue = "Annals of Mathematics 140"
+doi = "10.2307/2118540"
+locator_scheme = "theorem"
+locator = "Corollary 7.1.3; complementary spaces and first term identity restated in GQT, section 2.6 and Theorem 7.3"
+url = "https://doi.org/10.2307/2118540"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["6.1", "6.3a", "6.7", "6.11"]
+
+[[source]]
+id = "Rallis1982"
+authors = "Stephen Rallis"
+title = "Langlands' functoriality and the Weil representation"
+year = 1982
+venue = "American Journal of Mathematics 104"
+doi = "10.2307/2374151"
+locator_scheme = "theorem"
+locator = "restated in Kudla96, Chapter VI, Proposition 3.2"
+url = "https://doi.org/10.2307/2374151"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.2"]
