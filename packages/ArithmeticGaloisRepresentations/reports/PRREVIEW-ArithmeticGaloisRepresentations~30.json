@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisRepresentations~30",
+  "head": "4157143ee66d469ae0d22344959210294fafcfdf",
+  "pr": 3178,
+  "folder": "ArithmeticGaloisRepresentations",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 1,
+  "notes": "incremental re-review of 11 changed lines since 6c07fb0: the two sentences added to §2.1 Absolute-value places (valuation of a finite place; valuation subring of the absolute value of a valuation) and three names added to its Needs line. The three statements computed on examples with a negative control for strict monotonicity; Valuation.absoluteValue, Valuation.RankLeOne (Mathlib) and Valuation.toAbsoluteValue (Tau Ceti, not Mathlib: C01) opened at the pins; AbsoluteValue.toValuation is in neither library (C02). Previous review had no finding; its two corrections and format note are carried (C03, C04, N01); description omits the new comparison (C05). Seeded sample: no sampled target in the changed passage, no new source locator. Automatic checks all passed; depcheck 0 problems; lake env lean on Suggested.lean exit 0 with 20 sorry warnings only. Neukirch Ch. II not readable (for the human reviewers).",
+  "text": "dc2360e57af28a4d"
+ }
+}
