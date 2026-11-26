@@ -1,0 +1,36 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SelmerBoundsForAnticyclotomicTwists"
+
+[[source]]
+id = "CEGS2022"
+authors = "Ana Caraiani, Matthew Emerton, Toby Gee, David Savitt"
+title = "Components of moduli stacks of two-dimensional Galois representations"
+year = 2022
+venue = "Forum of Mathematics, Sigma 12 (2024) e31"
+arxiv = "2207.05237v2"
+locator_scheme = "section"
+locator = "§3.1"
+url = "https://arxiv.org/abs/2207.05237v2"
+fetched_from = "https://arxiv.org/pdf/2207.05237v2"
+fetched_at = "2026-11-26T03:03:31Z"
+sha256 = "f3a95d0c19278d73892e075d425f933cc557afa526a3a295482a0caca8c0cca1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v2"
+cited_for = ["3.7"]
+
+[[source]]
+id = "MazurRubin2005"
+authors = "Barry Mazur, Karl Rubin"
+title = "Organizing the arithmetic of elliptic curves"
+year = 2005
+venue = "Advances in Mathematics 198 (2005), no. 2, 504–546"
+doi = "10.1016/j.aim.2005.05.024"
+locator_scheme = "page"
+locator = "504–546 (the article as a whole: Selmer modules presented by a matrix)"
+url = "https://doi.org/10.1016/j.aim.2005.05.024"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.1"]
