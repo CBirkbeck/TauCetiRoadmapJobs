@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticToricGeometryPartII~7",
+  "head": "9552dbc264775829fa797bda1d8c4cf0dda62e66",
+  "pr": 3170,
+  "folder": "AnalyticToricGeometryPartII",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 0c3be17. Checked: the folder is byte-identical to the head the previous review accepted (the only change since is in BelyiMaps/README.md, another folder of the pull request); the pull request's title and description against this head and against the folder's change from main (one heading, §0.7, and one declaration added; no layer, heading or declaration removed; no supplier roadmap added); the four pinned Tau Ceti declarations §0.7 names, at the pin; Suggested.lean elaborated (one sorry warning only); automatic checks all pass; dependency check 0 problems; nothing changed outside the pull request's sixteen folders. No source locator lies in a changed passage, so the seeded sample was not re-read. One format note carried (two books cited in §0.7 absent from References).",
+  "text": "0256e2a6d5fa0e50"
+ }
+}
