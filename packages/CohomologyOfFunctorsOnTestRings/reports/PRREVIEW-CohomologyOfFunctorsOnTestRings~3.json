@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CohomologyOfFunctorsOnTestRings~3",
+  "head": "d9a72b048b137f66cbf649b659f71424eb90ae9e",
+  "pr": 3175,
+  "folder": "ShortGRH/CohomologyOfFunctorsOnTestRings",
+  "date": "2026-11-26",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 4,
+  "format_notes": 1,
+  "notes": "Full review, first round. Sample: the 15 seeded sections (1.1, 1.2, 2.1, 2.4, 2.7, 3.2, 3.3, 4.2, 4.3, 5.1, 5.5, 6.1, 6.4, 6.6, 7.3) read against the declarations of the formal proof at commit 72fead1, about 90 declarations opened; all agree. Adversarial table with computed values for 22 rows, including the five headlines; no stated result found false. Findings: the theory is a stand-in for etale and Hodge cohomology with no comparison, bypassing EtaleCohomologyFoundations and IndexTheory (P1); two-way supply with PadicComparisonForFunctorCohomology (P2); proper base change is statable at the pins (scratch probe elaborates) but Suggested.lean states nothing and names no headline (P2); six method sketches reuse the formal proof's comments (P2); sections follow its files (P2). Corrections: five Tau Ceti names absent at the pin; Origin lines without the published sources the formal proof's index gives; headline (4) missing hypotheses on W; description says references are recorded. Automatic checks: the out-of-folder files set aside as false positives (roadmap list required by the repository's check, umbrella generated); dependency check 0 problems (the sibling is not in the merge order); Suggested.lean elaborates with no message. Published texts read: Scholze 2024 Thm 4.1, Bhatt-Mathew 2021 Thm 5.4.",
+  "text": "5dd83bddd48243b6"
+ }
+}
