@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicVectorBundles~14",
+  "head": "0c3be17dbfaad2e597c4349b4720ff970228eace",
+  "pr": 3170,
+  "folder": "AlgebraicVectorBundles",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 2 changed lines since 4aaba98: the diff deletes the kept anchor line before the retitled Layer 4 heading and changes no statement; no roadmap on main or at an open head links to that anchor (format note). Title and description read against the head: the general paragraph now describes the §4.2 definitions correctly, the folder's bullet still omits the five Suggested.lean declarations, the affineness criterion and the retitled layer (small correction, previous C01 partly repaired). Automatic checks all pass; depcheck 0 problems, no UPWARD or CYCLE; lake env lean on Suggested.lean gives seven sorry warnings only; adversarial rows computed for §4.2 on new instances (identity, doubled-origin line); no change outside the pull request's own folders.",
+  "text": "0fae8ff774cbb179",
+  "carried": {
+   "from": "0c3be17dbfaad2e597c4349b4720ff970228eace",
+   "head": "0c3be17dbfaad2e597c4349b4720ff970228eace",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
