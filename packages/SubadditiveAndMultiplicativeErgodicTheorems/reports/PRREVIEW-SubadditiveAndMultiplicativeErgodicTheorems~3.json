@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SubadditiveAndMultiplicativeErgodicTheorems~3",
+  "head": "4cb7ac2d8ec49aa23ddb92038c3ae146f4a2f4c2",
+  "pr": 2973,
+  "folder": "SubadditiveAndMultiplicativeErgodicTheorems",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 66 changed lines since 6cc86f7: both previous format notes (N01, N02) repaired; the four new roadmap links and the cited sections (EigenvalueAndSingularValueInequalities 2.4, BernoulliPercolation 1.3, ProbabilisticAndMetricNumberTheory 4.1) resolved on main; the docstring claim that Mathlib has no measurable structure on Projectivization checked at the pin; adversarial rows computed for Furstenberg's inequality in 6.3 and the exterior-power norm contract; dependency check 0 problems; Suggested.lean elaborates with 33 sorry warnings and no error; one automatic check (Mathlib pull-request numbers in Prior formalization) set aside; pull request text agrees with the head. No source text readable (Benoist-Quint and Kallenberg uncertified, four books unread): locators unverified, reported under Not verifiable and to the human reviewers.",
+  "text": "beba79acdb61184a"
+ }
+}
