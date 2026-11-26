@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FreeGroupsAndLimitGroups~14",
+  "head": "9552dbc264775829fa797bda1d8c4cf0dda62e66",
+  "pr": 3170,
+  "folder": "FreeGroupsAndLimitGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "incremental re-review of 150 changed lines since f17d28c. Checked: the restated coordGroup_iso_iff_wordMap_iso on Tau Ceti carriers (elaborated type, three instances), graphPresentation_free and graphPresentation_abelianization as bijectivity (rose, parallel edges, trivial graph), the filled proof fields (vertexLink, boundary, rose, polygon, prod, restrict), the four nonempty_ renames, the new Tau Ceti scope and contract bullets (#check of every cited name at pin 2fd255d), and the pull request's title and description against this head (no contradiction). Previous report had no findings; its C01-C03 repaired, N01 partly, N02 not. Seeded sample: only 1.6 touched by the change, checked against TauCeti MaximalRoot.lean. Elaboration exit 0, 73 sorry warnings, no error; dependency check 0 problems; automatic checks all passed; one-tactic probes run on a scratch copy. Two small corrections (pin proves more of 1.4-1.8 than the new bullet says; stale comment in Suggested.lean), two format notes.",
+  "text": "2b5ac1eefa4d01f1",
+  "carried": {
+   "from": "9552dbc264775829fa797bda1d8c4cf0dda62e66",
+   "head": "198459f9ae6a605a4cb62e10c064b88a475d9402",
+   "findings": 2,
+   "lines": 8,
+   "folders": [
+    "FreeGroupsAndLimitGroups"
+   ],
+   "corrections": true
+  }
+ }
+}
