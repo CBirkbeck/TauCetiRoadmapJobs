@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CongruencesOfTwistedThetaLifts~8",
+  "head": "958132c1af287d1869d377e3a9140ceafab71e71",
+  "pr": 3182,
+  "folder": "ShortGRH/CongruencesOfTwistedThetaLifts",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "review of the change against main: 5 changed lines since 5c8f654. Checked the changed Conventions sentence (places of Ω as absolute-value places, finite ones as valuation subrings) against IdelicReciprocityCountsAndCyclotomicClassGroups §1.1 and ArithmeticGaloisRepresentations §2.1 at this head, against every passage quantifying over places of Ω (1.1, 1.2, 2.1, 2.5, 6.3), and against the formal proof at commit 72fead1 (eight names of the sampled target 1.1 found; places are ValuationSubring Ω). The other sampled targets lie in untouched, unaffected text. Dependency check: 0 problems. Suggested.lean elaborates with no message and declares nothing. Layers 7 of 7 kept. The outside-folder check on the two generated umbrella files was set aside as a false positive (in sync with the generator at this head); noted for the human reviewers. Two format notes, one on untouched text.",
+  "text": "c2a4f4a037c2e10c"
+ }
+}
