@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StochasticOrders~3",
+  "head": "1dbbdb264cae4f63ae4f69cabc2854d322b6a630",
+  "pr": 3055,
+  "folder": "StochasticOrders",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 51 changed lines since a1cdb77: the change only adds relative links to five roadmaps (README only; no statement, locator, section number or supplier changed). Checked: the previous report had no open remark; all five link targets and the cited sections (MeansMajorizationAndDiscreteInequalities 4.1, 6.1, 6.2; StandardDistributions 7.9, 7.13; MathematicalStatisticsFoundations 6.3, 7.5; OptimalTransport 1.5, 2.4, 3.7; GibbsMeasuresAndTheIsingModel) resolve on main; the three copied definitions agree with the owner's Suggested.lean on main; adversarial rows with computed values for the cited stop-loss characterisation and the copies; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 50 sorry warnings only; automatic checks all passed; pull request text agrees with the head; nothing changed outside the folder. The seeded sample falls in no changed passage; the four cited books could not be read legally, so locators and source independence against Shaked-Shanthikumar are left to the human reviewers.",
+  "text": "11c881bf322035a7"
+ }
+}
