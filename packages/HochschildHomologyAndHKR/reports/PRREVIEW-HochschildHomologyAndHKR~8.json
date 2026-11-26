@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HochschildHomologyAndHKR~8",
+  "head": "07afb868ca6a804c3efe435aec93a3e8debf430d",
+  "pr": 2447,
+  "folder": "HochschildHomologyAndHKR",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 4 changed lines since d18fb7a: the one changed sentence (scope section, quasi-free algebras characterised over a field by vanishing of Ext² over the enveloping algebra for every bimodule) computed on k, k[x], k[x,y] and checked against §§3.6, 4.4 and Ginz05 §19; previous C01 (description omitted RefinedTraceMethods §1.10) repaired; description read against the head; seeded sample falls in no changed passage; automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 10 sorry warnings only; nothing changed outside the folder.",
+  "text": "e18a4468db2eab3a"
+ }
+}
