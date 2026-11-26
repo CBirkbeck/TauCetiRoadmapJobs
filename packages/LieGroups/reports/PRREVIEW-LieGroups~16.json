@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LieGroups~16",
+  "head": "198459f9ae6a605a4cb62e10c064b88a475d9402",
+  "pr": 3170,
+  "folder": "RepresentationTheory/LieGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 16 changed lines since f17d28c: the three previous small corrections (C01 ConvexityToric T1 boundary, C02 Knapp locators, C03 the lieMap f = L route step) verified repaired, with Knapp Cor. 1.103(c) and Prop. 4.58 and Kirillov Prop. 3.1 read at their locators and the cited Tau Ceti declarations opened at the pin; previous format notes N01 and N02 not repaired and restated; of the seeded sample only 0.3 falls in the affected passages; pull request title and description checked against the head and found consistent; automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with 26 sorry warnings only.",
+  "text": "2b5ac1eefa4d01f1"
+ }
+}
