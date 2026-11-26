@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CompressibleEulerEquationsPartII~10",
+  "head": "028ca673fbf3b8f1f3509cd19a5d436905f9c8c6",
+  "pr": 3010,
+  "folder": "CompressibleEulerEquationsPartII",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since 028ca67; this round read the pull request's title and description against the head: layers, supplier section lists and the six Lean statements agree; supplier sections resolved at the open heads (CompressibleEulerEquations 26699db, LorentzianGeometry f783f7d, SemiRiemannianFoundations f9c2742); one small correction (the description's LorentzianGeometry hash 43acb00 is stale). Adversarial rows computed for the plane rarefaction wave (gamma = 3) and the time-parametrised domain of dependence. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry as the only warning. No source locator opened (no passage changed).",
+  "text": "169691880dc9ed4f",
+  "carried": {
+   "from": "028ca673fbf3b8f1f3509cd19a5d436905f9c8c6",
+   "head": "028ca673fbf3b8f1f3509cd19a5d436905f9c8c6",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
