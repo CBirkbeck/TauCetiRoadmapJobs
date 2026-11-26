@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BelyiMaps~12",
+  "head": "0c3be17dbfaad2e597c4349b4720ff970228eace",
+  "pr": 3170,
+  "folder": "BelyiMaps",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since f17d28c. Checked the pull request's title and description against the head and the folder's change against the base: the BelyiMaps bullet, the count of sixteen roadmaps, the pin 2fd255d and the statement on Suggested.lean files all agree with the head; the previous correction on the description is repaired. Recomputed bijOn_balancedProduct_lift on three small instances. Suggested.lean elaborates with two sorry warnings only; dependency check 0 problems; automatic checks pass (the outside-folder flag lists the pull request's own other folders and is set aside). Six small corrections and two format notes of the previous review are carried, none blocking. Lando-Zvonkin and Girondo-Gonzalez-Diez could not be read.",
+  "text": "0fae8ff774cbb179",
+  "carried": {
+   "from": "0c3be17dbfaad2e597c4349b4720ff970228eace",
+   "head": "9552dbc264775829fa797bda1d8c4cf0dda62e66",
+   "findings": 6,
+   "lines": 27,
+   "folders": [
+    "BelyiMaps"
+   ],
+   "corrections": true
+  },
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C01: the claim is right.",
+    "where": "Completed/PeripheralActions README and Suggested.lean, which consume both names",
+    "raised": "PRREVIEW-BelyiMaps~12"
+   }
+  ]
+ }
+}
