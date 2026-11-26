@@ -1,0 +1,50 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "DeterminantsOfThetaLiftChains"
+
+[[source]]
+id = "GanQiuTakeda2014"
+authors = "Wee Teck Gan, Yannan Qiu, Shuichiro Takeda"
+title = "The Regularized Siegel-Weil Formula (The Second Term Identity) and the Rallis Inner Product Formula"
+year = 2012
+arxiv = "1207.4709v3"
+locator_scheme = "theorem"
+locator = "Theorem 7.3; Propositions 11.1, 11.2"
+url = "https://arxiv.org/abs/1207.4709v3"
+fetched_at = "2026-11-26T01:03:08Z"
+sha256 = "cde6b7ad22b974d4159f8cedd1e14a00bf4b05ec977ab750b54fdceb067adac5"
+licence_class = "operator-local"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["3.9", "3.10", "3.12", "4.2", "4.4", "5.6"]
+
+[[source]]
+id = "Rallis1984"
+authors = "Stephen Rallis"
+title = "Injectivity properties of liftings associated to Weil representations"
+year = 1984
+locator_scheme = "theorem"
+locator = "Proposition 1.1, p. 149"
+url = "http://www.numdam.org/item/CM_1984__52_2_139_0/"
+fetched_from = "https://www.numdam.org/item/CM_1984__52_2_139_0.pdf"
+fetched_at = "2026-11-26T01:03:24Z"
+sha256 = "af1412a50a22428237260a32d233c246d8a2ad5e395963953f4da6f3384af28b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["2.2", "4.2", "4.4", "5.6"]
+
+[[source]]
+id = "ShortProof"
+authors = "lsernau (repository owner); proof credited to Levent Alpöge"
+title = "grh-lean, folder grh: a formal Lean proof of the Riemann hypothesis for Dirichlet L-functions (commit 72fead102f663d5c7a407964a13dc0cf9d977207)"
+year = 2026
+locator_scheme = "section"
+locator = "grh/src/New/Determinant"
+url = "https://raw.githubusercontent.com/lsernau/grh-lean/72fead102f663d5c7a407964a13dc0cf9d977207/grh/README.md"
+fetched_from = "https://raw.githubusercontent.com/lsernau/grh-lean/72fead102f663d5c7a407964a13dc0cf9d977207/grh/README.md"
+fetched_at = "2026-11-26T01:04:10Z"
+sha256 = "2b4950f6495cd801359292328c932a0cb8aaf3e6deafd67460e85825e5de6a7a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["Layers 1-6"]

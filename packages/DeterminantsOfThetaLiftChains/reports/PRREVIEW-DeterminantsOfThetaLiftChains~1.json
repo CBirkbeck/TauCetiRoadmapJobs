@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DeterminantsOfThetaLiftChains~1",
+  "head": "c12c8993361e4ee9fe467ed7686d026870186335",
+  "pr": 3160,
+  "folder": "ShortGRH/DeterminantsOfThetaLiftChains",
+  "date": "2026-11-26",
+  "findings": 8,
+  "blocking": 8,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Seeded sample (1.2, 1.3, 1.4, 3.1, 3.7, 3.8, 3.9, 3.12, 4.1, 4.4, 5.2, 5.3, 5.5, 5.10, 6.3) checked against the [ShortProof] files at commit 72fead1 (TriangleNorms.lean unreadable by the sources service; 4.1 checked by computation), Gan-Qiu-Takeda arXiv 1207.4709 Thm 7.3 and Props 11.1-11.2, and Rallis 1984 Prop 1.1 (Numdam). All match except 6.2 (j-th power applied twice). Arrangement compared with ShortProof CONTENTS.md; wording compared in 19 passages. Suggested.lean elaborates with no output and has no declarations. Depcheck: 43 roadmaps, 319 edges, 0 problems; it does not see citations written in words. The worker's outside-folder hit (umbrellas/GRH.toml, umbrellas/GRH-targets.md) is real. P1: NormsOfThetaLiftsAndExchangeIdentities exists nowhere; 27 'ShortGRH background' prerequisites have no owner.",
+  "text": "60d2fcb9581d2aaf"
+ }
+}
