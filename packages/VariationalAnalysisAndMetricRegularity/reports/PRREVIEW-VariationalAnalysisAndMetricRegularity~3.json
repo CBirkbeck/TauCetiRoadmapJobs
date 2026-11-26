@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-VariationalAnalysisAndMetricRegularity~3",
+  "head": "9f89fd24bd5724156ec5cbd1e219292bf4a79258",
+  "pr": 2978,
+  "folder": "VariationalAnalysisAndMetricRegularity",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "incremental re-review of 142 changed lines since c928486 (README only). Checked: the previous report's C01-C03 and N01 (all repaired) and its three questions (two settled, one open); the changed passages of 2.4, 3.3, 3.4 and 5.4, with the new sufficiency route of the Mordukhovich criterion redone by hand; 46 Rockafellar-Wets locators against the text cached from the first author's page (45 agree, one page off by one), Clarke, Mordukhovich, Dontchev-Rockafellar, Ioffe and Hoffman unread; ConvexAnalysisAndDuality 4.4 and FirstOrderOptimization 3.2 resolved on main; the pull request text against the head; automatic checks all passed; depcheck 0 problems; elaboration 38 sorry warnings, no error. Adversarial table: 6 rows with computed values for the changed statements.",
+  "text": "5141d5f188f717a6"
+ }
+}
