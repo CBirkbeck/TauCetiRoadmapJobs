@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IlluminationAndCoveringByHomothets~2",
+  "head": "f265608ffaa6d0af3f1f6e0b3c7a404467901dc8",
+  "pr": 3190,
+  "folder": "IlluminationAndCoveringByHomothets",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 102 changed lines since 94e67a2: R01, C01, C02 and N01 all repaired; the rewritten routes of 1.2 (3 => 2, 4 => 3), 4.1 and 4.2 recomputed on instances and read beside the preprint (no longer its proofs); 8 Mathlib declarations opened at the pin; Glazyrin locator re-read; dependency check 0 problems; Suggested.lean elaborates with 11 sorry warnings only; automatic checks all passed; title and description still describe the head.",
+  "text": "963ea40cb0fe2cbb"
+ }
+}
