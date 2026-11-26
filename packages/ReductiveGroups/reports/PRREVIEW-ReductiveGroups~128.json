@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ReductiveGroups~128",
+  "head": "198459f9ae6a605a4cb62e10c064b88a475d9402",
+  "pr": 3170,
+  "folder": "ReductiveGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 31 changed lines since f17d28c: the three small corrections of the previous review (C01 faithful flatness over every Hopf subalgebra, C02 pinned partial cases named, C03 Takeuchi locators) are repaired, the format note on namespaces is repeated; the four Takeuchi 1972 locators (Thm 3.1 p. 253, Cor 3.10 p. 259, Lemma 4.4 and Thm 4.3 p. 261) were read in the paper and agree; the two pinned declarations newly cited were opened at the Tau Ceti pin; adversarial table with computed values for both touched theorems and the changed citations; Suggested.lean elaborates with 13 sorry warnings only; one-tactic probe closes neither theorem; automatic checks all passed; depcheck 0 problems, no UPWARD or CYCLE; no change outside the pull request's own folders; title and description checked against the head and the change against the base, nothing contradicted or unstated; seeded sample 1.1, 8.1, 8.2 lies outside the changed passages and was not reviewed.",
+  "text": "2b5ac1eefa4d01f1"
+ }
+}
