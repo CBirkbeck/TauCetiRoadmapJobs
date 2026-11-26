@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicTopology~137",
+  "head": "9552dbc264775829fa797bda1d8c4cf0dda62e66",
+  "pr": 3170,
+  "folder": "AlgebraicTopology",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 0c3be17. Checked: the folder is identical to the head previously reviewed (the only change since is in BelyiMaps); the pull request's title and description against the folder's change and this head (the AlgebraicTopology bullet, the general paragraph, the closing paragraph: all agree; new §5.8, three declarations added, nothing removed or renumbered, no roadmap supplier added); the previous format note N01 (not repaired, carried, not blocking); adversarial rows computed for the two §5.8 statements (F2 with n=2, Z with n=3, n=0; S1 covers); hatcher locators of §5.8 re-opened (Theorem 1.38, Proposition 1.32); no seeded target in a changed passage; dependency check 0 problems, no UPWARD or CYCLE; automatic checks all passed; elaboration gives 22 sorry warnings only; no change outside the pull request's sixteen folders.",
+  "text": "0256e2a6d5fa0e50"
+ }
+}
