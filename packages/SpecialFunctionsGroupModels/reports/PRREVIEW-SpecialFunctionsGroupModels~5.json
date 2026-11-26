@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsGroupModels~5",
+  "head": "e7f3c3136517c958a985ca6a7f08d4362d6b7a46",
+  "pr": 2694,
+  "folder": "SpecialFunctionsGroupModels",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 6 changed lines since d7697fa: the rename of the multiplicity-one theorem of 5.3 to rank_invariants_restrict_le_one, checked in README and Suggested.lean (old name gone from the folder, main and open roadmaps; no clash at the pins); the previous format note N01 is repaired; the statement recomputed on the trivial group, the zero space, the circle, S3 and the non-Gel'fand control (SU(2), 1); CStarAlgebras 2.2 resolved on main; consumers of 5.3 cite by section; lake env lean on Suggested.lean gives 80 sorry warnings and no error; dependency check 0 problems, no UPWARD or CYCLE; pull-request text not contradicted; automatic checks: four Prop-class instances with sorry and one choice in multiplierRep set aside as false positives; no source text readable legally, 0 locators verified (for the human reviewers).",
+  "text": "45f1c20becd1fd91"
+ }
+}
