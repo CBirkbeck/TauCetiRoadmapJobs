@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IlluminationAndCoveringByHomothets~1",
+  "head": "94e67a2cff5da9426a1c3977f3d8b4169097bd47",
+  "pr": 3190,
+  "folder": "IlluminationAndCoveringByHomothets",
+  "date": "2026-11-26",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. All 12 sampled targets (1.0-5.2) recomputed with degenerate cases, Levi's six-lemma route checked step by step; no false statement found. 14 source locators read in the four arXiv texts (all at the stated pages, one misdescribed); Levi 1955 and Boltyanski-Martini-Soltan not read. 41 library declarations opened at the pins. Suggested.lean elaborates with 11 sorry warnings only; one-tactic probe closes none. Dependency check: 0 problems. Automatic checks all passed. The one finding (P2) is that the routes of 1.2, 4.1 and 4.2 follow the proofs of the Aiger-Har-Peled-Zuzic preprint clause by clause in its notation; alternative routes are given.",
+  "text": "963ea40cb0fe2cbb"
+ }
+}
