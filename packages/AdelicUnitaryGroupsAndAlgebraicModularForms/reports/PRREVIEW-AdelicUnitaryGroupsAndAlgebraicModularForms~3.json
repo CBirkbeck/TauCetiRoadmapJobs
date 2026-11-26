@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AdelicUnitaryGroupsAndAlgebraicModularForms~3",
+  "head": "d9a72b048b137f66cbf649b659f71424eb90ae9e",
+  "pr": 3175,
+  "folder": "ShortGRH/AdelicUnitaryGroupsAndAlgebraicModularForms",
+  "date": "2026-11-26",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample (2.4, 3.3, 3.5, 3.7, 6.1-6.6, 7.2, 7.3, 7.10-7.12) checked against Kirschmer 2016 (Thm 2.4.1, 3.3.3, Prop 3.3.5, Thm 3.3.6) and against twenty declarations of the cited formal proof at its pinned commit, plus direct computation (adversarial table, 23 rows); Gross 1999, Green 1955, Scharlau 1985 and Knus 1991 not readable legally. Automatic checks: one failure (changes outside the folder: top-level README list, umbrellas/GRH), raised as R05; dependency check 0 problems but misses the cycles with five sibling roadmaps not in the merge order (R01). Suggested.lean elaborates with no declarations; a probe of 3.4 (a) and 7.12 (a) elaborates at the pins (R04). Duplication audit against HermitianFormsAndLattices, DiscreteSeriesCoefficientsAndAutomorphicMetrics, AutomorphicFormsOnReductiveGroups, AdelicAlgebraicGroups, AnalyticNumberTheoryPartII on main (R02); 7.9 supplier repointed to HermitianFormsAndLattices 3.2 (R03).",
+  "text": "5dd83bddd48243b6"
+ }
+}
