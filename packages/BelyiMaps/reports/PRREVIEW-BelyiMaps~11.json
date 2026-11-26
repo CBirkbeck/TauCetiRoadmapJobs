@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BelyiMaps~11",
+  "head": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+  "pr": 3170,
+  "folder": "BelyiMaps",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 7,
+  "format_notes": 2,
+  "notes": "review of the change against main: 95 changed lines since 87e7f72. Checked the 2.4 equivalence of ribbon graphs with finite FreeGroup (Fin 2)-sets, the 6.2 induction item and the new Lean target bijOn_balancedProduct_lift (proved in full on a copy of the file at the pins; simp and aesop do not close it). Previous R01, C01, N01 repaired, N02 addressed; six small corrections and one format note carried in untouched text; one new small correction (the description names a declaration the head no longer has) and one format note (long lines). None of the fifteen seeded targets lies in changed or affected text. Automatic checks all passed; Suggested.lean elaborates with two sorry warnings only; dependency check 0 problems. Lando-Zvonkin sections 1.3 and 1.5 not readable (not verifiable).",
+  "text": "3cb6bac311c3efb6",
+  "carried": {
+   "from": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+   "head": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
