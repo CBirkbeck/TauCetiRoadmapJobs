@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RealFunctionsDerivativesAndVariation~4",
+  "head": "56cdcad901a3f5b12927be7aeccfe57e56bc3adf",
+  "pr": 2971,
+  "folder": "RealFunctionsDerivativesAndVariation",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 16 changed lines since b0fe75e. Checked: the previous format note N01 (locator for non-normality of the density topology, 7.3) is repaired; the proof route of non-normality recomputed against the Lean statement; the new citation of YoungIntegrationAndRoughPaths Layer 1 resolved on main; pull request text read against the head; dependency check 0 problems; Suggested.lean elaborates with 50 sorry warnings only; automatic checks pass except one form check set aside as a false positive (the closing #check block). Seeded sample: only 7.3 falls in the changed passages; no source text readable legally, so no locator verified (listed under Not verifiable).",
+  "text": "f0caa6eb97a03a9e"
+ }
+}
