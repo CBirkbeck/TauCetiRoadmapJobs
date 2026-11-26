@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FreeGroupsAndLimitGroups~12",
+  "head": "57376f9e5a4ab3c24791ba2195281d1bff0c1025",
+  "pr": 3170,
+  "folder": "FreeGroupsAndLimitGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 22 changed lines since 87e7f72; checked §5.12 (4), its route, new Check and Needs entries, and the new target coordGroup_iso_iff_wordMap_iso; truth computed on ten instances (both or one system inconsistent, trivial coefficient map, x -> x a on V([x,a]), a free-versus-non-free negative control, the X-empty terminal object, the inconsistent initial object); cited Tau Ceti declarations opened at the pin 2fd255d (WordMap.lean 36, 64; AlgebraicSet.lean 522, 575) with no nonemptiness or injectivity hypotheses; no Tau Ceti declaration already proves the criterion; one-tactic probe fails (not padding); Suggested.lean elaborates, exit 0, 87 sorry warnings only; dependency check 0 problems; seeded sample outside the changed passage, IFT §2.4 lines 214-253 read; no layer or item removed; overlap with #2205 and #2221 has a stated order; the untouched sorry proof fields, Nonempty isomorphism conclusions and Mathlib pull-request link are removed by #2205 and were not raised; one automatic check set aside as a false positive (Tau Ceti names read as this roadmap's own); ALG not readable through the sources service.",
+  "text": "99b991a6d1a065fe"
+ }
+}
