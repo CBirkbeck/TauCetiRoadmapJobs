@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MarkovDiffusionOperators~2",
+  "head": "5e13b1a8d45626d1cbcadf9023e2833678da3091",
+  "pr": 3148,
+  "folder": "MarkovDiffusionOperators",
+  "date": "2026-11-26",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 5,
+  "notes": "Full re-review. The previous review's four findings are repaired (R04 as far as it can be checked without the book). One finding (P2): Layer 11 plans and owns Prekopa's theorem, which the pinned Tau Ceti proves more generally (TauCeti.LogConcave.lintegral_prod_right with TauCeti.hasPrekopaLeindler_volume). Adversarial table of 22 rows with computed values; every identity, Check and example recomputed is correct. Suggested.lean elaborates with ten sorry warnings only; no set_option, no sorried data; one-tactic probe closes none of the ten theorems. Dependency check: 0 problems, no upward or cyclic line; no change outside the folder. Seeded sample (1.1, 1.2, 2.1, 2.2, 2.3, 4.1, 4.2): all cite BGL, which is paywalled, so no locator was checked against the book; two formulas were confirmed against the authors' errata. Automatic checks: the pull-request numbers in the README are a format note; the four undeclared identifiers are library names and were set aside. Tau Ceti declarations the README cites that are absent at the pin were opened on a newer checkout of the library and agree with the README; the pin question, the unread main source and a licence question are left to the human reviewers.",
+  "text": "3248bcae72d9f24a"
+ }
+}
