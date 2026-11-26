@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CocliquesColouringsAndTheta~3",
+  "head": "db42b12d7adbd335839ec75d476db6279230471b",
+  "pr": 3068,
+  "folder": "CocliquesColouringsAndTheta",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 106 changed lines since 24091c9: the diff adds relative links to ten supplier READMEs (all resolve on main) and writes SimpleGraph without _root_ in the two local Kneser definitions (elaborated types unchanged, text now identical to TopologicalCombinatorics on main); cited section ids resolved on main, five supplier sections read; the seeded sample falls in no changed passage; C01 of the previous review (two Brouwer-Haemers locators) is not repaired and is carried, re-read in two versions of the text; automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with 32 sorry warnings only; title and description agree with the head.",
+  "text": "41d96f6afb1f0d49"
+ }
+}
