@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SubspaceTheorem~6",
+  "head": "f813c69c0348b9cd2818343ff1c005e76bdb38fc",
+  "pr": 3182,
+  "folder": "SubspaceTheorem",
+  "date": "2026-11-26",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "review of the change against main: 17 changed lines since 5c8f654. Checked the rewritten action paragraph of 0.2 and the 0.2 row of the Scope table by computation and against the pinned Tau Ceti (2fd255d997) and Tau Ceti main: the pin has AbsoluteValue.instMulActionAlgEquiv for F ≃ₐ[R] F only, not AbsoluteValue.instMulAction for MulSemiringAction G F nor under_smul under SMulCommClass (those are on Tau Ceti main since 3b47ef09ee), so one P2 finding. Previous C01 repaired. No seeded sample target falls in changed text. Dependency check: 0 problems. Elaboration of Suggested.lean: 38 sorry warnings only. The outside-folder check on the generated GRH umbrella files set aside as a false positive. Bombieri-Gubler not readable.",
+  "text": "f0c28b49ea534679"
+ }
+}
