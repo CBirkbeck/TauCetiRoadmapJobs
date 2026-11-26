@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AbelianSchemesWithThetaStructuresAndTheirCohomology~3",
+  "head": "d9a72b048b137f66cbf649b659f71424eb90ae9e",
+  "pr": 3175,
+  "folder": "ShortGRH/AbelianSchemesWithThetaStructuresAndTheirCohomology",
+  "date": "2026-11-26",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Sample: 15 seeded sections (1.1, 1.2, 1.4, 2.1, 3.1, 3.2, 3.4, 3.6, 4.1, 6.1, 6.3, 6.5, 9.2, 9.6, 9.8) checked against [ShortProof] at 72fead10, 58 declarations in 17 files; all agree. Adversarial table: 25 rows with computed values. Dependency check: 115 roadmaps, 1309 edges, 0 problems; the two-way citations with GaloisRepresentationsOfUnitaryEigenforms and WeilRepresentationsOnBanachSpacesOfData were found by reading, because those roadmaps are not in the merge order. Suggested.lean elaborates (it declares nothing); a scratch probe shows Frobenius' dimension formula can be stated at the pins. Three cited library names are absent at the pins. The only failed automatic check (changes outside the roadmap folders) is real. Overlap read against AbelianSchemesAndArithmeticModuli, PELModuli, AutomorphicGaloisRepresentations and SpecialFunctionsTheta on main.",
+  "text": "5dd83bddd48243b6"
+ }
+}
