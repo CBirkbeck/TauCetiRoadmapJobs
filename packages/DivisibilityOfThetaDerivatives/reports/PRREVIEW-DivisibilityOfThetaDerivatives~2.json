@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DivisibilityOfThetaDerivatives~2",
+  "head": "8c6c8b85d39d25766aff805e37cfd64958ad3644",
+  "pr": 3160,
+  "folder": "ShortGRH/DivisibilityOfThetaDerivatives",
+  "date": "2026-11-26",
+  "findings": 7,
+  "blocking": 7,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full second review. Previous findings: R01, R03, R07 and C01-C04, N02 repaired; R04 and R06 partly; R02, R05, R08 not. Sample: the 15 seeded sections (1.2, 1.5, 1.6, 1.7, 2.2, 2.4, 4.2, 4.3, 4.3a, 4.4, 4.7, 4.11, 5.1, 5.3, 5.4) compared with the statements of [ShortProof] at commit 72fead1; 384 cited declaration names found in their files; one missing hypothesis found (5.3 (a), with a computed counterexample). Cross-roadmap citations resolved on main and in the sibling folders; two-way supply with OneSidedPrimeSumBoundsAndAdmissibleData and a doubled statement (1.7 (b)) found by reading. Dependency check: 0 problems. Automatic checks: TeX-syntax hits a false positive, change outside the folders real. Suggested.lean elaborates with no output and declares nothing; a scratch statement of 3.3 (a) elaborates at the pins. Published references not read (not verifiable).",
+  "text": "fe11c79a122f3cf6"
+ }
+}
