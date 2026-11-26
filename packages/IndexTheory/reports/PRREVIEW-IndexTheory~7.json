@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IndexTheory~7",
+  "head": "57376f9e5a4ab3c24791ba2195281d1bff0c1025",
+  "pr": 3170,
+  "folder": "IndexTheory",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 22 changed lines since 87e7f72. Checked the new §1.6 paragraph (the component monoid of FredholmLocus E E is isomorphic to Multiplicative ℤ for infinite-dimensional E), its two Checks, the extended Needs line and the new not-statable docstring bullet. Each was checked against the Mathlib pin 1b1ccf4b: IsFredholm.comp :544, IsFredholm.id :420, IsFredholm.index_comp :613, ZerothHomotopy :117, Joined.mul :91, Path.mul :518; no Monoid instance on ZerothHomotopy in Mathlib or Tau Ceti 2fd255d9. Probe file: composition respects Joined, index additivity, index of id and of finite-dimensional endomorphisms is 0. Seeded sample: only I1.6 falls in the change; Freed (3.13) p.13 verified, Freed Thm 4.18 for I5.5; the other sampled targets are untouched and their rows are carried. Merge-base README against head: 8 layers, nothing removed or retitled. Automatic checks rerun: all pass except outside-folder, a false positive (the 29 files are the PR's own 15 folders). Depcheck: 122 roadmaps, 1393 edges, 0 problems. lake env lean Suggested.lean: sorry warnings only; #check @ signatures unchanged. Overlap: no other owner of the π₀ monoid. C01 asks to cite Joined.mul and IsFredholm.id; N01 asks to list the new Mathlib inputs in the supplier contract.",
+  "text": "99b991a6d1a065fe"
+ }
+}
