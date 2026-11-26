@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SelmerIwasawaCohomology"
+
+[[source]]
+id = "MazurRubin2013"
+authors = "Barry Mazur, Karl Rubin"
+title = "Controlling Selmer groups in the higher core rank case"
+year = 2013
+arxiv = "1312.4052v1"
+locator_scheme = "theorem"
+locator = "Definition 1.1; Definition 2.1"
+url = "https://arxiv.org/abs/1312.4052v1"
+fetched_from = "https://arxiv.org/pdf/1312.4052v1"
+fetched_at = "2026-11-26T09:53:57Z"
+sha256 = "15ec72e48fab1790e5b96e7172b4af88c974b0d487a515cdbd9dd0ced3ea4ee8"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v1"
+cited_for = ["2.1"]

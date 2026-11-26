@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelmerIwasawaCohomology~6",
+  "head": "5a08539b8c2b3877a5643c6c5b2fcc0dff50d420",
+  "pr": 3177,
+  "folder": "SelmerIwasawaCohomology",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "review of the change against main: 2 changed lines since 7e8e228. Checked: the one sentence added to §2.1 against the two ProfiniteCohomology conventions it cites (present at this head), the pinned continuousCohomology (TopModuleCat-valued) and Tau Ceti restriction-of-scalars declarations, ArithmeticGaloisDuality's cohomology convention and the rest of this README; adversarial table of 10 rows with computed values; 4 Mazur-Rubin locators read in the arXiv v1 text (Definitions 1.1, 2.1, 2.3, display (2.4)); of the seeded sample only §§2.2 and 2.3 touch the change, the rest not reopened; automatic checks all passed; Suggested.lean unchanged and elaborates with 6 sorry warnings only; depcheck 0 problems; no change outside the pull request's own four folders; pull request text agrees with the head. One licence question on untouched text for the human reviewers.",
+  "text": "222c7e836bfab3f2"
+ }
+}
