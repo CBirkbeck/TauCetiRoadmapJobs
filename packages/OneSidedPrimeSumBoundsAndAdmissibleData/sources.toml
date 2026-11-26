@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "OneSidedPrimeSumBoundsAndAdmissibleData"
+
+[[source]]
+id = "Jutila1975"
+authors = "Matti Jutila"
+title = "On mean values of Dirichlet polynomials with real characters"
+year = 1975
+locator_scheme = "theorem"
+locator = "Theorem 2, p. 193"
+url = "https://matwbn.icm.edu.pl/ksiazki/aa/aa27/aa27116.pdf"
+fetched_from = "https://matwbn.icm.edu.pl/ksiazki/aa/aa27/aa27116.pdf"
+fetched_at = "2026-11-26T04:19:04Z"
+sha256 = "a2bb1b4b57ad60f569f0ae55a6c92c5abfb5c2e235df4654c67a7c798f0fb4c3"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["0.1a"]

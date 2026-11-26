@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-OneSidedPrimeSumBoundsAndAdmissibleData~6",
+  "head": "8e155d46eaabaf8ba0307047dbd84e5a27bd40f6",
+  "pr": 3160,
+  "folder": "ShortGRH/OneSidedPrimeSumBoundsAndAdmissibleData",
+  "date": "2026-11-26",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 6,
+  "format_notes": 3,
+  "notes": "Full review. Earlier findings: background entries partly repaired (R01, six remain), two-way supply partly repaired (R02, Theorem C now stated once), end theorems not repaired (R03), Suggested.lean repaired, files outside the family settled by a recorded human decision. New: five passages follow docstrings of the formal proof (R04). Sample: the 15 seeded sections plus 3.3, 3.5, 4.1, 6.1 read against the formal proof at commit 72fead1 and recomputed; all agree. 19 library declarations opened at the pins; 29 sibling sections and 10 sections on main resolved; ArithmeticDirichletSeriesPartII 0.1b exists only at pull request 3027. Dependency check: 0 problems. Suggested.lean elaborates with three sorry warnings only; one-tactic probes close nothing; #check of the five definitions shows no lost binder. Automatic checks set aside: TeX hits inside a code span over a line break; resolver names that are declarations of the external formalization. Landau 1905, Behrend 1946, Ruzsa 1993, Washington 1997 not opened.",
+  "text": "ce8d691c0ba6b985"
+ }
+}
