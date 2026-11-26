@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AlmostPeriodicityAndBohrSets~1",
+  "head": "eb7df91bd780670787fc36f9fefe3ced9f9774ce",
+  "pr": 3191,
+  "folder": "AlmostPeriodicityAndBohrSets",
+  "date": "2026-11-26",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 7,
+  "format_notes": 3,
+  "notes": "Full review. Seeded sample of 15 targets checked by computation; source locators read in Green-Ruzsa 2007, Sanders 2012, Sanders 2013, Tao 2008 and Croot-Sisask 2010 (arXiv texts); nine other sources not readable legally and listed as not verifiable. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 16 sorry warnings only; one-tactic probe closes no theorem. About 50 library declarations opened at the pins (one cited name absent), 11 cross-roadmap citations resolved. Findings: 7.3 modelling lemma unsupported by its cited source (P1); Layer 5.1 duplicates CompactGroupsPartII 5.1 (P2); multiplication formula of the Bohr compactification in 8.2 wrong (P2).",
+  "text": "0b6115fee5a580ab"
+ }
+}
