@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LineSystemsAndSwitching~3",
+  "head": "05574adc74c119589d0b07b52464542b293e77c1",
+  "pr": 3070,
+  "folder": "LineSystemsAndSwitching",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 81 changed lines since e8c1cbb. Checked: the previous format note N01 (repaired; the previous report had no finding); the changed passages of 1.3, 3.2, 4.4 and 5.1 recomputed (seeded sample targets 1.3, 4.4, 5.1 where the change falls); the three library lemmas newly cited opened at the pins; SpectralGraphBounds 1.1 and 1.2 and the five new links resolved on main; the three Lean copies whose `_root_.` prefix was dropped compared with their owners on main and by elaborated type; elaboration exit 0 with 39 sorry warnings only; dependency check 0 problems, no UPWARD or CYCLE; one form check (a section header over #check lines) set aside as a false positive; the pull request's description agrees with the head. Not verifiable: the note on a misprint at BH p. 112 against the printed edition (no legal copy this round).",
+  "text": "dc4e6fb0869f7049"
+ }
+}
