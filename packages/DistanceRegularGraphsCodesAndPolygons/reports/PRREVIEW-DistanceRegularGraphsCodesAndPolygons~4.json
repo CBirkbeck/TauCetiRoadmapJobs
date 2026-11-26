@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DistanceRegularGraphsCodesAndPolygons~4",
+  "head": "fe2e6e3372fb7824b8ec9a8b13cb66621f21172a",
+  "pr": 3067,
+  "folder": "DistanceRegularGraphsCodesAndPolygons",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 57 changed lines since b77dc6b: the change adds 14 links to the READMEs of five suppliers on main and alters no statement; every link target and every cited section resolved on main (and at the open heads for the two open suppliers); four copied definitions compared with main and their values computed; previous small correction to the description taken up; Suggested.lean elaborates with 43 sorry warnings only; dependency check 0 problems; no source locator falls in the changed passages and the cited books are not legally readable; one automatic form check set aside as a false positive.",
+  "text": "e7faf145426f4f1a"
+ }
+}
