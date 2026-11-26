@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-FreeGroupsAndLimitGroups~13",
+  "head": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+  "pr": 3170,
+  "folder": "FreeGroupsAndLimitGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 22 changed lines since 87e7f72. Checked §5.12 (4), its route, Check and Needs entries, and the new target coordGroup_iso_iff_wordMap_iso (five computed instances, one-tactic probe leaves the goal open, signature via #check); the four cited Tau Ceti declarations opened and #checked at pin 2fd255d; IFT §2.4 read at lines 214-235; no seeded sample target lies in the changed passage; ALG §3.5 not readable. Elaboration exit 0 with 87 sorry warnings; depcheck 113 roadmaps, 1292 edges, 0 problems. Folder unchanged since the previous review's head; its three small corrections and format note stand. Gate hits in untouched text (sorry proof fields, Nonempty conclusions, Mathlib PR link) not raised; backticked-name hits set aside as Tau Ceti names.",
+  "text": "ac57d3a733abb973",
+  "carried": {
+   "from": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+   "head": "5ca81d2947519ee1409b8b6d1fd64ffdbc63a03f",
+   "findings": 3,
+   "lines": 150,
+   "folders": [
+    "FreeGroupsAndLimitGroups"
+   ],
+   "corrections": true,
+   "onto": "76c4afe396b2f38200fa55053ed629f09c7eaa6c"
+  }
+ }
+}
