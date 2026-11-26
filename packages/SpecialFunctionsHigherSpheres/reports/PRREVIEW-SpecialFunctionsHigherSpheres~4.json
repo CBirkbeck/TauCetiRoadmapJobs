@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsHigherSpheres~4",
+  "head": "0b0f99461b344f1d6808e8a740a974f17134b933",
+  "pr": 2931,
+  "folder": "SpecialFunctionsHigherSpheres",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 26 changed lines since 52cd1a7. Checked: the previous small correction (3.1 route, DLMF 18.5.8 to 18.5.7 by Chu-Vandermonde) is repaired and was recomputed in exact rationals (630 polynomial values and 840 coefficient identities agree); DLMF 18.5.7 and 18.5.8 read at their locators; the added link to SpecialFunctionsLegendre and its sections 3.2 and 3.4 resolve on main; LaguerreJacobi 3.2 read on main; Mathlib Ring.add_choose_eq opened at the pin. No statement and no line of Suggested.lean changed; it elaborates with 60 sorry warnings and no error. Dependency check: 0 problems. No seeded-sample target falls in a changed passage; the four books remain unreadable (not verifiable). One format note (the list of an external repository's proved targets). One automatic form check set aside as a false positive. Pull request text unaffected by the change.",
+  "text": "d3ed225a5d9433b5"
+ }
+}
