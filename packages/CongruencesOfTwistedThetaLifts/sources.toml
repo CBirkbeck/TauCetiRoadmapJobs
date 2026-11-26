@@ -54,3 +54,74 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-26"
 cited_for = ["2.8"]
+
+[[source]]
+id = "Greither1992"
+authors = "Cornelius Greither"
+title = "Class groups of abelian fields, and the main conjecture"
+year = 1992
+venue = "Annales de l'Institut Fourier 42"
+locator_scheme = "theorem"
+locator = "Theorem 3.2 (p. 469) and Theorem 4.1 (p. 482)"
+url = "https://www.numdam.org/item/AIF_1992__42_3_449_0/"
+fetched_from = "https://www.numdam.org/item/AIF_1992__42_3_449_0.pdf"
+fetched_at = "2026-11-26T03:04:18Z"
+sha256 = "8e4db974556923a9532151657039d50b34028254f13fc2f1541f449bb50623da"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["6.1"]
+
+[[source]]
+id = "DasguptaKakdeSillimanWang2023"
+authors = "Samit Dasgupta, Mahesh Kakde, Jesse Silliman, Jiuya Wang"
+title = "The Residually Indistinguishable Case of Ribet's Method for GL2"
+year = 2023
+arxiv = "2310.16396v2"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2310.16396v2"
+fetched_from = "https://arxiv.org/pdf/2310.16396v2"
+fetched_at = "2026-11-26T03:04:24Z"
+sha256 = "d12c8702d137ad587e0f89e462092f701c524c1e02cc7486bdb77801dbfe88fe"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v2"
+cited_for = ["3.7"]
+
+[[source]]
+id = "Shin2011"
+authors = "Sug Woo Shin"
+title = "Galois representations arising from some compact Shimura varieties"
+year = 2011
+venue = "Annals of Mathematics 173"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://math.berkeley.edu/~swshin/StableGal.pdf"
+fetched_from = "https://math.berkeley.edu/~swshin/StableGal.pdf"
+fetched_at = "2026-11-26T03:04:27Z"
+sha256 = "93f4fe322200a646f337ae8d4aa9a036a866df1bb59ad5fe7bf09373324da75b"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "author's version; the README cites its numbering"
+cited_for = ["2.1"]
+
+[[source]]
+id = "DarmonDiamondTaylor1995"
+authors = "Henri Darmon, Fred Diamond, Richard Taylor"
+title = "Fermat's Last Theorem"
+year = 1995
+doi = "10.4310/cdm.1995.v1995.n1.a1"
+locator_scheme = "theorem"
+locator = "Theorem 2.19"
+url = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_from = "https://www.math.mcgill.ca/darmon/pub/Articles/Expository/05.DDT/paper.pdf"
+fetched_at = "2026-11-26T03:04:30Z"
+sha256 = "254f6e29957f95219eff046c29478f5ee584615bee12c8aa8357f499c8cbe8b3"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "authors' revision of 9 September 2007; Theorem 2.19 is on p. 62 there; the README cites this revision"
+cited_for = ["4.2"]

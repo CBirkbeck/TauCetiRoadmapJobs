@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CongruencesOfTwistedThetaLifts~3",
+  "head": "8c6c8b85d39d25766aff805e37cfd64958ad3644",
+  "pr": 3160,
+  "folder": "ShortGRH/CongruencesOfTwistedThetaLifts",
+  "date": "2026-11-26",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 6,
+  "format_notes": 3,
+  "notes": "Full review at 8c6c8b8. Previous findings: R03 (Hecke polynomial) and R05 (restated objects) repaired; R01 (no Suggested.lean), R04 (two-way supply) and R06 (changes outside the folder) not repaired; R02 (unowned background prerequisites) partly. Seeded sample of 15 targets: all recomputed for internal consistency and against the cited sibling sections (27 table rows with values); 3 published locators opened in the cached texts (Bellaiche-Chenevier Theorem 1.5.5, Urban Theorem 1.1, Minguez Theoreme 1); the formal proof [ShortProof] (41 of 42 locators) and Darmon-Diamond-Taylor Theorem 2.19 could not be read legally and are under Not verifiable. 38 cross-roadmap citations resolved, 2 Tau Ceti declarations opened at the pin. Automatic checks: the one failure (missing Suggested.lean) is real; dependency check 0 problems, no UPWARD or CYCLE line; no elaboration possible (no Lean file). No checks set aside.",
+  "text": "fe11c79a122f3cf6"
+ }
+}
