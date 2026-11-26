@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DynamicalDegreesOfRationalMaps~5",
+  "head": "57376f9e5a4ab3c24791ba2195281d1bff0c1025",
+  "pr": 3170,
+  "folder": "DynamicalDegreesOfRationalMaps",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "review of the change against main: 1 changed lines since 87e7f72. Checked the added item of README §1.1 (category of varieties with dominant K-rational maps, function-field functor fully faithful onto finitely generated extensions): adversarial pass with computed instances, the Mathlib composition laws opened at the pin (Composition.lean 155-217, RationalMap.lean 391), duplication against both pins and all roadmaps (none), stacks-varieties Theorem 4.1 (0BXN) read; seeded sample lies outside the changed text. Automatic checks rerun: all clean apart from the outside-folder flag on the pull request's own fifteen folders (set aside); dependency check 0 problems; Suggested.lean (unchanged) elaborates with 18 sorry warnings only. Previous review had no findings. Three small corrections: description says integral schemes; Needs line of the item incomplete; Hartshorne citation where stacks-varieties 0BXN states it over every field.",
+  "text": "99b991a6d1a065fe"
+ }
+}
