@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IdelicReciprocityCountsAndCyclotomicClassGroups~4",
+  "head": "958132c1af287d1869d377e3a9140ceafab71e71",
+  "pr": 3182,
+  "folder": "ShortGRH/IdelicReciprocityCountsAndCyclotomicClassGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "review of the change against main: 48 changed lines since 5c8f654. Checked items 1, 2 and 4 of 1.1, the comparison paragraph and the Needs line clause by clause against the Absolute-value places target of ArithmeticGaloisRepresentations 2.1 at this head, with computed instances (Q(i) above 5 and infinity, the henselian datum over Q_p, the trivial valuation subring); reread the untouched passages that use places of the closure (1.2 (a), 1.4, 4.1, Summary, table of symbols). No seeded sample target falls in the changed or affected text. Record: 10 layers kept, no item removed. Dependency check: 0 problems. Suggested.lean elaborates with no warning and states nothing (unchanged). Automatic checks: two TeX-syntax hits and the outside-folder hit (generated umbrella files, in sync with the generator) set aside as false positives. Three small corrections (stale wording on places as valuation subrings; item 4 not saying its valuation subring is a place; closedness attribution), none blocking.",
+  "text": "c2a4f4a037c2e10c"
+ }
+}
