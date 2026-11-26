@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicVectorBundles~12",
+  "head": "57376f9e5a4ab3c24791ba2195281d1bff0c1025",
+  "pr": 3170,
+  "folder": "AlgebraicVectorBundles",
+  "date": "2026-11-26",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 48 changed lines since 87e7f72; checked the new section 4.2 and every passage citing it, the Tau Ceti and Mathlib declarations it names at the pins, the seeded sample where it falls in the change (4.2, which cites no locator; Stacks 01LW, 01LX, 01LY, 01LC, 01S7, 01S8 read for it; 1.1-4.1 untouched), the dependency check (0 problems), elaboration of Suggested.lean (five sorry warnings only), a test file showing the 4.2 adjunction is statable at the pins (R01), and the automatic checks (one outside-folder false positive on rerun: the pull request's own folders).",
+  "text": "fbc4557c6e14eb49"
+ }
+}

@@ -366,3 +366,99 @@ licence_class = "open-repository"
 status = "certified"
 accessed = "2026-11-09"
 cited_for = ["3.2"]
+
+[[source]]
+id = "stacks-01S8"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Morphisms of Schemes, Lemma 29.11.3"
+year = 2026
+locator_scheme = "tag"
+locator = "01S8"
+url = "https://stacks.math.columbia.edu/tag/01S8"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=01S8"
+fetched_at = "2026-11-26T03:59:58Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["4.2"]
+
+[[source]]
+id = "stacks-01S7"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Morphisms of Schemes, Lemma 29.11.2"
+year = 2026
+locator_scheme = "tag"
+locator = "01S7"
+url = "https://stacks.math.columbia.edu/tag/01S7"
+fetched_from = "https://stacks.math.columbia.edu/download/morphisms.pdf#nameddest=01S7"
+fetched_at = "2026-11-26T04:00:32Z"
+sha256 = "0bebe1d93baa7e4e99cb4f36fe50c7bcb6094772b8a2f760885a492892eca75f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["4.2"]
+
+[[source]]
+id = "stacks-01LW"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Constructions of Schemes, Definition 27.4.5"
+year = 2026
+locator_scheme = "tag"
+locator = "01LW"
+url = "https://stacks.math.columbia.edu/tag/01LW"
+fetched_from = "https://stacks.math.columbia.edu/download/constructions.pdf#nameddest=01LW"
+fetched_at = "2026-11-26T04:00:34Z"
+sha256 = "8f70bb66f5bec27649fd70e68e60266fa97e7b56d043410c0c8fbc35c1f2ff4d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["4.2"]
+
+[[source]]
+id = "stacks-01LX"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Constructions of Schemes, Lemma 27.4.6"
+year = 2026
+locator_scheme = "tag"
+locator = "01LX"
+url = "https://stacks.math.columbia.edu/tag/01LX"
+fetched_from = "https://stacks.math.columbia.edu/download/constructions.pdf#nameddest=01LX"
+fetched_at = "2026-11-26T04:00:37Z"
+sha256 = "8f70bb66f5bec27649fd70e68e60266fa97e7b56d043410c0c8fbc35c1f2ff4d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["4.2"]
+
+[[source]]
+id = "stacks-01LY"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Constructions of Schemes, Lemma 27.4.7"
+year = 2026
+locator_scheme = "tag"
+locator = "01LY"
+url = "https://stacks.math.columbia.edu/tag/01LY"
+fetched_from = "https://stacks.math.columbia.edu/download/constructions.pdf#nameddest=01LY"
+fetched_at = "2026-11-26T04:00:39Z"
+sha256 = "8f70bb66f5bec27649fd70e68e60266fa97e7b56d043410c0c8fbc35c1f2ff4d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["4.2"]
+
+[[source]]
+id = "stacks-01LC"
+authors = "The Stacks project authors"
+title = "The Stacks Project, Schemes, Lemma 26.24.1"
+year = 2026
+locator_scheme = "tag"
+locator = "01LC"
+url = "https://stacks.math.columbia.edu/tag/01LC"
+fetched_from = "https://stacks.math.columbia.edu/download/schemes.pdf#nameddest=01LC"
+fetched_at = "2026-11-26T04:00:41Z"
+sha256 = "fa2b63e8fd245fcd24998767887cd5f993188eabcfb849f21be19519d58fb803"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["4.2"]
