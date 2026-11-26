@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EulerSystemsAndKolyvaginSystems~8",
+  "head": "acd50062e900751ac908e101c9e24fe15f6326cf",
+  "pr": 3188,
+  "folder": "EulerSystemsAndKolyvaginSystems",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "review of the change against main: 28 changed lines since 94e80af. The four added passages (Layers 0.1, 0.4, 0.7, 0.9) and the new supplier-contract subsection were proved by hand and compared with SelmerIwasawaCohomology sections 2.22a, 2.23a and 2A.8 at the head of the open revision named in the description; adversarial table of nine rows with computed values. None of the fifteen seeded targets lies in changed or affected text; three Mazur-Rubin 2016 locators checked against the cached text; Mazur-Rubin 2004 Lemma 3.7.1 not readable. Automatic checks all pass, dependency check 0 problems, Suggested.lean elaborates with sorry the only warning. Two small corrections (description; untouched labels in Layers 0.8-0.9), one question, no findings.",
+  "text": "b86045f399964184",
+  "carried": {
+   "from": "acd50062e900751ac908e101c9e24fe15f6326cf",
+   "head": "acd50062e900751ac908e101c9e24fe15f6326cf",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
