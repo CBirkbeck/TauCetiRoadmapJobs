@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsCoulomb~5",
+  "head": "ee37fe546bac68eb1fa82261eba4553324acaf82",
+  "pr": 3074,
+  "folder": "SpecialFunctionsCoulomb",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 74 changed lines since 7773289. The previous report had no finding; its five small corrections and one format note are all repaired. Checked: h at the poles of Gamma(l+1+kappa) for r<0 and the corrected digit of c in 6.3, recomputed from the definition at 60 and 90 digits; DLMF 13.2.9 read at its locator (sampled 3.2 and 6.4); the new citations of QuantumFoundations 9.4 and SpecialFunctionsConfluent 1.4, 2.1 resolved on main; all Needs lines against the new build-order sentence; the pull request's description against the head. Automatic checks all pass, dependency check 0 problems, Suggested.lean (unchanged) elaborates with 35 sorry warnings only.",
+  "text": "f8041bc4b4af8255"
+ }
+}
