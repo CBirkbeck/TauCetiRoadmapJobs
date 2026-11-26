@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AuxiliaryAlgebraAndAnalysisForThetaLifts~3",
+  "head": "d9a72b048b137f66cbf649b659f71424eb90ae9e",
+  "pr": 3175,
+  "folder": "ShortGRH/AuxiliaryAlgebraAndAnalysisForThetaLifts",
+  "date": "2026-11-26",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "Seeded sample 1.1-3.2: no locators in the README, so none verifiable against a source; every statement checked directly on degenerate and small cases (all true; #kappa >= 7 in 3.2 (b) shown sharp). 66 library names looked up at the pins (10 absent); 14 cross-roadmap sections on main resolved; 14 consumer citations in 7 sibling READMEs read (8 point to nothing stated here). Dependency check: 0 problems. Automatic checks: only the outside-folder check fails (top-level README.md, umbrellas/GRH.toml, umbrellas/GRH-targets.md). Suggested.lean elaborates cleanly and declares nothing; a probe of seven headline statements elaborates at the pinned Mathlib with sorry warnings only. Wording compared with three [ShortProof] files: no copying.",
+  "text": "5dd83bddd48243b6"
+ }
+}
