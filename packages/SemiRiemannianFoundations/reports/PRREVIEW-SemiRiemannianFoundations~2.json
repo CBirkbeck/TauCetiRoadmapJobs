@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SemiRiemannianFoundations~2",
+  "head": "f9c2742059000b73f1cdc4928048cf8c2de15593",
+  "pr": 3176,
+  "folder": "SemiRiemannianFoundations",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review at f9c2742. Previous review: R01 and C01-C04, C06, C07, N01, N02 repaired; C05 not taken up and not re-raised. Sample: all 15 seeded sections (1.1-5.2) plus the 3.4 headline, every Check and convention witness recomputed; 20 source locators read in 6 sources (Bruveris2018, KunzingerSteinbauerStojkovic2014, Minguzzi2013Convex, Minguzzi 2019, Barzen-Leymann, Gourgoulhon); O'Neill and Kobayashi-Nomizu not verifiable. Library: cited Mathlib and Tau Ceti declarations opened at the pins. Suggested.lean elaborates with two sorry warnings only; #check of all 10 declarations matches the README; one-tactic probes fail on both theorems; a uniqueness statement for the Levi-Civita connection elaborates (C01). Dependency check: 0 problems; automatic checks all passed; no change outside the folder. Two small corrections, three format notes.",
+  "text": "4030dff1d1bf00c2",
+  "carried": {
+   "from": "f9c2742059000b73f1cdc4928048cf8c2de15593",
+   "head": "fd6bf88c9d79ea3d403ede01c920d0777d5d15fb",
+   "findings": 2,
+   "lines": 60,
+   "folders": [
+    "SemiRiemannianFoundations"
+   ],
+   "corrections": true
+  }
+ }
+}
