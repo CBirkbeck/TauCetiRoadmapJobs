@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EulerSystemsAndKolyvaginSystems~9",
+  "head": "acd50062e900751ac908e101c9e24fe15f6326cf",
+  "pr": 3188,
+  "folder": "EulerSystemsAndKolyvaginSystems",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 0 changed lines since acd5006. Checked: the pull request's title and description against the head and the 28-line change against the merge base (no sentence contradicted, nothing unstated; the previous correction on the description is repaired); SelmerIwasawaCohomology §§2.22a, 2.23a, 2A.8 re-read at the new head 8989684 of its open revision, titles and consumed statements unchanged; two added passages (0.4, 0.9) recomputed on fresh instances; seeded sample: all fifteen targets in text unchanged since the last review, no source locator opened; automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with only the two sorry warnings. One small correction carried on untouched text (undefined labels in Layers 0.8-0.9), one question for the author.",
+  "text": "bf72fdd33bd1e77e",
+  "carried": {
+   "from": "acd50062e900751ac908e101c9e24fe15f6326cf",
+   "head": "8529f5b1c5b4d14e3f92a0e4289eddf8975a4c10",
+   "findings": 1,
+   "lines": 6,
+   "folders": [
+    "EulerSystemsAndKolyvaginSystems"
+   ],
+   "corrections": true
+  }
+ }
+}
