@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SteinFunctionAlgebras~1",
+  "head": "7c419baca01e115219942c6c9619c9003fb4092f",
+  "pr": 3185,
+  "folder": "SteinFunctionAlgebras",
+  "date": "2026-11-26",
+  "findings": 7,
+  "blocking": 7,
+  "corrections": 6,
+  "format_notes": 4,
+  "notes": "Full review. Sample: all 15 seeded targets plus the headline theorems, each with computed instances in the adversarial table. Sources read: Forstneric arXiv:1709.05630v5 (Theorem 2.1, Proposition 2.2) and Demailly's book from the author's page (I (6.16), II (8.7)-(8.8), V (8.2), (9.2), (9.5), VI (9.1)); Hormander, Grauert-Remmert and Gunning-Rossi could not be read and are listed as not verifiable. Pins: structure-sheaf API and the manifold inverse function theorem opened in Tau Ceti; Mathlib LocalDiffeomorph checked. Suppliers resolved on main: RealAnalyticGeometry 3.0-3.2 and 4.1, ComplexKahlerGeometry 3.4 and 4.5, ComplexManifolds 7.3, ComplexComparisonPartII C4.1. Dependency check: 0 problems. Automatic checks: the sorried definition is real (R01); the process-word and undeclared-name hits were set aside as false positives. Elaboration of a scratch copy: a real body for pullbackAlgHom elaborates; no sorried theorem closes in one tactic. The sources service recorded the two fetched texts and one uncertified entry in the package manifest while fetching.",
+  "text": "4084c69e921d0c6b"
+ }
+}
