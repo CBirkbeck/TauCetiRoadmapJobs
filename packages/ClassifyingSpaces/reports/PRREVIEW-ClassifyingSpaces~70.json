@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassifyingSpaces~70",
+  "head": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+  "pr": 3170,
+  "folder": "ClassifyingSpaces",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 40 changed lines since 87e7f72. Checked new item 1.4 (adjunction of the fundamental group with B) against the pinned PointedHomotopyCat, classifyingSpaceHomotopyFunctor and its counit isomorphism, with computed instances (S1 and S3, S2, G = 1, Warsaw circle); the seeded sample of seven Hatcher locators (1B.8, 1B.9, section 2.2, section 3.H, Example 3H.1) read at the text; the README at the merge base against the head (no layer or item removed); dependency check 0 problems; Suggested.lean elaborates with four sorry warnings only; all automatic checks passed; folder unchanged since the previous review, which left no finding. Two small corrections (docstring misnames the headlines giving the hom-set bijection; supplier contracts and Needs line omit inputs of 1.4) and two format notes.",
+  "text": "3cb6bac311c3efb6",
+  "carried": {
+   "from": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+   "head": "9dfeb10fc9beb0866cae80594d9ef1caf3f98089",
+   "findings": 2,
+   "lines": 27,
+   "folders": [
+    "ClassifyingSpaces"
+   ],
+   "corrections": true,
+   "onto": "9f0c6f9c11dccdaa2265a83411c026ba6b440092"
+  }
+ }
+}
