@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassifyingSpaces~69",
+  "head": "57376f9e5a4ab3c24791ba2195281d1bff0c1025",
+  "pr": 3170,
+  "folder": "ClassifyingSpaces",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 40 changed lines since 87e7f72. Checked the new item 1.4 (pi_1 left adjoint to B on path-connected Hausdorff CW complexes) against the pinned PointedHomotopyCat, classifyingSpaceHomotopyFunctor and the counit iso; computed the hom-equivalence, counit, naturality and full faithfulness, and both Checks; elaborated the Prop form of the adjunction at the pins. Sample: Hatcher 1B.8/1B.9 p. 90, section 2.2 p. 148, section 3.H pp. 328-329 verified; Brown, Milnor, Schwamberger-Vogt uncertified. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with four sorry warnings only. Corrections: docstring names the wrong headlines for the hom-set bijection; supplier contracts and Needs line omit item 1.4's inputs.",
+  "text": "99b991a6d1a065fe"
+ }
+}
