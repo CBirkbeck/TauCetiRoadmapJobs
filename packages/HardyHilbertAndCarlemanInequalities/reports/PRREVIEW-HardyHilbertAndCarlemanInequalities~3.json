@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-HardyHilbertAndCarlemanInequalities~3",
+  "head": "a5e9b22aba42757dcf569052206e73ebff270072",
+  "pr": 3056,
+  "folder": "HardyHilbertAndCarlemanInequalities",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 3 changed lines since 9e8362a: the previous report's only remark (format note N01, a predictive sentence in Scope and ownership) is repaired and the new sentence is true (no Hardy inequality in the folder is stated with the measure dt/t); adversarial rows computed for hardy_rpow_weight_le, which the changed sentence cites (2 <= 4 and 1.3714 <= 7.8994) and for the sentence itself; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 45 sorry warnings and nothing else; automatic checks all passed, none set aside; no file changed outside the folder; pull request text agrees with the head; no sampled target lies in the changed passage and no cited book could be read legally (listed under Not verifiable and for the human reviewers).",
+  "text": "43a419754fa91333"
+ }
+}
