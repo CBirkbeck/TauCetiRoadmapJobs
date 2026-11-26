@@ -1,0 +1,94 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MeanWidthAndCauchyFormulas"
+
+[[source]]
+id = "Ghomi2016"
+authors = "Mohammad Ghomi"
+title = "The length, width, and inradius of space curves"
+year = 2016
+arxiv = "1605.01144v3"
+locator_scheme = "theorem"
+locator = "Lemma 2.3"
+url = "https://arxiv.org/abs/1605.01144v3"
+fetched_from = "https://arxiv.org/pdf/1605.01144v3"
+fetched_at = "2026-11-26T18:42:08Z"
+sha256 = "f92ebd82d86287e69576e92028bb03c5b5963c05dc63833e47f9119fb10b77c4"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v3"
+cited_for = ["4.1"]
+
+[[source]]
+id = "Resnikoff2015"
+authors = "Howard L. Resnikoff"
+title = "On Curves and Surfaces of Constant Width"
+year = 2015
+arxiv = "1504.06733v1"
+locator_scheme = "section"
+locator = "§2.2.2"
+url = "https://arxiv.org/abs/1504.06733v1"
+fetched_from = "https://arxiv.org/pdf/1504.06733v1"
+fetched_at = "2026-11-26T18:42:15Z"
+sha256 = "274d63e1b858a359198a8a970570251cdb75a413f76289003f06a86faa39188b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v1"
+cited_for = ["4.3"]
+
+[[source]]
+id = "BoroczkyFodorHug2024"
+authors = "Károly J. Böröczky, Ferenc Fodor, Daniel Hug"
+title = "Strengthened inequalities for the mean width and the $\\ell$-norm of origin symmetric convex bodies"
+year = 2024
+venue = "Math. Ann. 393 (2025), 271-316"
+doi = "10.1007/s00208-025-03228-0"
+arxiv = "2410.11460v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.1"
+url = "https://arxiv.org/abs/2410.11460v1"
+fetched_from = "https://arxiv.org/pdf/2410.11460v1"
+fetched_at = "2026-11-26T18:42:21Z"
+sha256 = "58ee9e95985a32b8c893a76959fb8c9b21253fe57e7ede58e28fdec62159387c"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v1"
+cited_for = ["5.1"]
+
+[[source]]
+id = "Colesanti2005"
+authors = "Andrea Colesanti"
+title = "Functional inequalities related to the Rogers-Shephard inequality"
+year = 2005
+arxiv = "math/0512098v1"
+locator_scheme = "page"
+locator = "p. 3"
+url = "https://arxiv.org/abs/math/0512098v1"
+fetched_from = "https://arxiv.org/pdf/math/0512098v1"
+fetched_at = "2026-11-26T18:42:27Z"
+sha256 = "3a0470a7cd1829edc3aa4456dae55b723910a278642a8de8cbe7638474260eda"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v1"
+cited_for = ["2.2"]
+
+[[source]]
+id = "AigerHarPeledZuzic2026"
+authors = "Dror Aiger, Sariel Har-Peled, Goran Žužić"
+title = "Hadwigerś Covering Conjecture in Three Dimensions"
+year = 2026
+arxiv = "2611.32334v2"
+locator_scheme = "section"
+locator = "abstract"
+url = "https://arxiv.org/abs/2611.32334v2"
+fetched_from = "https://arxiv.org/pdf/2611.32334v2"
+fetched_at = "2026-11-26T18:42:41Z"
+sha256 = "22c0f626d9a786b92eaaed2d3cf8a5d174347cce72e81898181b683e218bd219"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v2"
+cited_for = ["Scope"]
