@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelmerIwasawaCohomology~10",
+  "head": "8989684a9d1709f03a0c7bcf9d0cbf10ad6109bb",
+  "pr": 3187,
+  "folder": "SelmerIwasawaCohomology",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 4 changed lines since 494ecd3. Checked: the two changed lines (the Needs line of §2.23a and the ArithmeticGaloisDuality contract sentence on the truncated cup product), recomputed (truncated product zero, untruncated not nullhomotopic for F_3 at Q_7) and read against Nekovar2006 6.2.1.2, p. 138; ArithmeticGaloisDuality §§D7.7.3-D7.7.4 resolved on main and at the heads of #3184, #3177, #3027; the title and description read against the head (one small correction: a sentence on sources); previous C01 and C02 repaired, N01 and N02 carried as format notes; no seeded target falls in the change; automatic checks all pass, depcheck 0 problems, lake env lean gives six sorry warnings only; nothing changed outside the folder.",
+  "text": "b6257e897053cd81",
+  "carried": {
+   "from": "8989684a9d1709f03a0c7bcf9d0cbf10ad6109bb",
+   "head": "8989684a9d1709f03a0c7bcf9d0cbf10ad6109bb",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
