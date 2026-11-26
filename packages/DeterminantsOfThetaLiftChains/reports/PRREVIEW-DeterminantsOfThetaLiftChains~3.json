@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DeterminantsOfThetaLiftChains~3",
+  "head": "8c6c8b85d39d25766aff805e37cfd64958ad3644",
+  "pr": 3160,
+  "folder": "ShortGRH/DeterminantsOfThetaLiftChains",
+  "date": "2026-11-26",
+  "findings": 6,
+  "blocking": 6,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review at 8c6c8b8. Seeded sample (1.3, 1.4, 3.1, 3.4, 3.7, 3.10, 4.2, 4.4, 5.1, 5.3, 5.7, 5.8, 5.9, 5.11, 6.2) and 6.1, 6.3 compared with 31 statements of ShortProof at commit 72fead1; Gan-Qiu-Takeda Thm 7.3, Props 11.1-11.2 and Rallis Prop 1.1 opened. One mathematical finding: 5.11 (a) drops the bound on the path datum. Earlier findings: missing supplier roadmap, 6.2, second owner of Theorem C, uncited complementary-space identity and four small corrections repaired; background ownership (P1), mutual supply with five siblings, arrangement after the source's contents, wording of 5.6/5.9/3.7 and changes outside the folders remain. 49 cross-roadmap section citations resolved. Automatic checks: dependency check 0 problems (does not see edges between family members); Suggested.lean elaborates with no output and has no declarations; the TeX report in 2.1 (d) set aside as a false positive; the outside-folder change is real (R06).",
+  "text": "fe11c79a122f3cf6"
+ }
+}
