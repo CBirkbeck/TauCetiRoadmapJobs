@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LevyProcesses~1",
+  "head": "460b7dec0aff284aec4978a77bd3f798e18525cc",
+  "pr": 3156,
+  "folder": "LevyProcesses",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All eleven sampled targets (1.1-1.4, 2.1, 2.2, 3.1, 3.2, 4.1, 5.1, 5.2) recomputed on degenerate and explicit instances with values in the adversarial table; routes read step by step. Sources: 7 of 17 locators verified against Papapantoleon (arXiv:0804.0482v2) and Bretagnolle-Ouwehand (arXiv:1506.06624v1); the 10 Sato locators are not verifiable (no legal copy). Supplier InfinitelyDivisibleLawsAndTriangularArrays read at its open head, statements and the four copied definitions compared. About 40 Mathlib and 7 Tau Ceti declarations opened at the pins. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes 0 of 10 theorems. One small correction (two citations narrower than the statements they are attached to), two format notes.",
+  "text": "a52249fcb2b7d6f1"
+ }
+}
