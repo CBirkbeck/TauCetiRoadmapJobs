@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InductionRestriction~16",
+  "head": "198459f9ae6a605a4cb62e10c064b88a475d9402",
+  "pr": 3170,
+  "folder": "RepresentationTheory/InductionRestriction",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 11 changed lines since f17d28c: the repaired §5.2 bullet (translation step stated first; two pinned lemmas added to its Needs line and to the Layer 5 contracts) checked on S3/A3 over C and Q, Q8/centre (multiplicity two), S4/V4 and the degenerate normal subgroups; both added names opened and #check-ed at the pins, and a probe proves the stabilizer and equivariance statements from them with no sorry. Previous C01 and C02 repaired, N01 carried over. Title and description read against this head: nothing contradicted or unstated for this folder. Seeded sample: no sampled target lies in the changed passages. Automatic checks all passed; dependency check 93 roadmaps, 1054 edges, 0 problems; Suggested.lean elaborates with 13 sorry warnings only; no change outside the named folders.",
+  "text": "2b5ac1eefa4d01f1"
+ }
+}
