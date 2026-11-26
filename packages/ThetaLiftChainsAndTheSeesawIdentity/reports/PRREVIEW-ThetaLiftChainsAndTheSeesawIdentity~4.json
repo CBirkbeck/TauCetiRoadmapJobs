@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ThetaLiftChainsAndTheSeesawIdentity~4",
+  "head": "8c6c8b85d39d25766aff805e37cfd64958ad3644",
+  "pr": 3160,
+  "folder": "ShortGRH/ThetaLiftChainsAndTheSeesawIdentity",
+  "date": "2026-11-26",
+  "findings": 6,
+  "blocking": 6,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Sample of 15 sections (1.1, 1.4, 1.5, 1.7, 2.1, 2.6, 2.8, 2.10, 2.12, 2.15, 2.16, 2.18, 3.14, 3.15, 3.16) plus 2.2, 3.17, 3.19 and 3.20 checked against [ShortProof] (grh-lean, commit 72fead1): all statements agree. Adversarial table of 25 rows. Automatic checks: dependency check 0 problems (the family is not in the merge order; two-way supply found by reading, R02); TeX and process-word hits set aside as false positives; changes outside the folders confirmed (R06). Suggested.lean elaborates with no output and states nothing; its library names checked at the pins. Published sources of the Origin lines not opened (disk full, not in the sample).",
+  "text": "fe11c79a122f3cf6"
+ }
+}

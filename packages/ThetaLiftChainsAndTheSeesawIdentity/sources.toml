@@ -1,0 +1,18 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ThetaLiftChainsAndTheSeesawIdentity"
+
+[[source]]
+id = "ShortProof"
+authors = "lsernau (repository owner); proof credited to Levent Alpöge"
+title = "grh-lean, folder grh: a formal Lean proof of the Riemann hypothesis for Dirichlet L-functions (commit 72fead102f663d5c7a407964a13dc0cf9d977207)"
+year = 2026
+locator_scheme = "section"
+locator = "grh/src/New/UpperBound"
+url = "https://raw.githubusercontent.com/lsernau/grh-lean/72fead102f663d5c7a407964a13dc0cf9d977207/grh/README.md"
+fetched_from = "https://raw.githubusercontent.com/lsernau/grh-lean/72fead102f663d5c7a407964a13dc0cf9d977207/grh/README.md"
+fetched_at = "2026-11-26T03:24:01Z"
+sha256 = "2b4950f6495cd801359292328c932a0cb8aaf3e6deafd67460e85825e5de6a7a"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["Layers 1-3"]
