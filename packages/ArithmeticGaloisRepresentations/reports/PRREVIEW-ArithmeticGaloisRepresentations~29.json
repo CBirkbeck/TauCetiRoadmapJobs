@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisRepresentations~29",
+  "head": "6c07fb07d24c353b1ddc9322102bc394a8c8f940",
+  "pr": 3178,
+  "folder": "ArithmeticGaloisRepresentations",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 116 changed lines since 0a7b524. Checked: every statement of the new target Absolute-value places of §2.1, the Conventions sentence and the local-embedding sentence, with computed instances (adversarial table, 11 rows); 13 library declarations opened at the pins (4 cited Tau Ceti names are newer than the pin: C01); SubspaceTheorem §§0.1-0.2 resolved on main and at the head; dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with sorry warnings only; no seeded-sample target in the changed text; Neukirch Ch. II not readable (not verifiable).",
+  "text": "dc2360e57af28a4d"
+ }
+}
