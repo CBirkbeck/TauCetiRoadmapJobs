@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SelmerBoundsForAnticyclotomicTwists~4",
+  "head": "8c6c8b85d39d25766aff805e37cfd64958ad3644",
+  "pr": 3160,
+  "folder": "ShortGRH/SelmerBoundsForAnticyclotomicTwists",
+  "date": "2026-11-26",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 6,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample: [ShortProof] declarations of 1.1-1.5, 2.2, 2.4, 2.5, 3.5, 3.7, 4.1, 4.2, 4.7, 5.2, 5.3 (plus 2.3, 3.6(a), 4.3, 4.4) read at the pinned commit through a short-quote fetcher; all agree with the README. Published Origins: Gras-Munnier 1998 not verifiable (image scan, host has no licence class); Bertolini-Darmon 1994 unidentified (no title); CEGS 2022 contents checked on arXiv 2207.05237. Automatic checks: the missing Suggested.lean is real (R01); the targeted build fails with the module's file missing. Dependency check: 122 roadmaps, 1385 edges, 0 problems, but it is blind to the cycle with CongruencesOfTwistedThetaLifts (R02) because the siblings are not in the merge order. Duplication audit against main: owners found for most ShortGRH background entries (R03) and SelmerLengthBoundsAndLocalLifting owns twist selection and the local bounds (R04). Arrangement follows the source's file division (R05). The root filesystem was full during part of the run, so the sources service could not cache the texts.",
+  "text": "fe11c79a122f3cf6"
+ }
+}
