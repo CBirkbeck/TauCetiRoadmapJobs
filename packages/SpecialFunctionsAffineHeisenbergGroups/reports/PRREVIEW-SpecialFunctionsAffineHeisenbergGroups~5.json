@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsAffineHeisenbergGroups~5",
+  "head": "0eca0501d95a374e7eb2424c5db5e5ebae4a56c9",
+  "pr": 2936,
+  "folder": "SpecialFunctionsAffineHeisenbergGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 18 changed lines since b1d7382: the six changed passages only add links to SpecialFunctionsConfluent and ThetaKernelsForUnitaryDualPairs, both now on main; link targets and cited sections (Confluent 1.4, 1.6, 2.4, 4.2; Theta 3.45(i)-(ii); LaguerreJacobi, Hypergeometric 6.3, AsymptoticExpansions 4.1, Metaplectic 0.15) resolved on main; previous C01 (description's closed pull request number) repaired; N=1 Hermitian form and Fock unitarity recomputed; dependency check 0 problems; Suggested.lean elaborates with 47 sorry warnings only; three automatic checks set aside as false positives, the TeX one kept as a format note; no cited book readable legally (for the human reviewers).",
+  "text": "b965bb25b3ceccc5"
+ }
+}
