@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StronglyRegularGraphsAndDesigns~3",
+  "head": "39cd770c91617ac2701b0ff0ae0f8e225682869a",
+  "pr": 3061,
+  "folder": "StronglyRegularGraphsAndDesigns",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 66 changed lines since 7dac2a2. Checked: the one previous remark (format note N01, repaired: the header over the #check list is now a plain comment); the eight README link targets and the supplier sections named in the changed passages, on main; the two respelled Kneser-graph definitions against their owner on main (identical) and by four elaborated probes (type ascription to _root_.SimpleGraph, rfl against kneserGraphOf, two adjacency computations); Suggested.lean elaborates with 40 sorry warnings and no error; depcheck 0 problems, no UPWARD or CYCLE; the worker's automatic checks all passed; no file outside the folder changed; title and description agree with the head. The seeded sample falls in untouched text; BH and BVM remain unread (left to the human reviewers).",
+  "text": "1d59c3584017a15c"
+ }
+}
