@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisRepresentations~31",
+  "head": "958132c1af287d1869d377e3a9140ceafab71e71",
+  "pr": 3182,
+  "folder": "ArithmeticGaloisRepresentations",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 16 changed lines since 5c8f654. Checked the rewritten sentence of §2.1 Absolute-value places and its Needs line against the pinned Tau Ceti (Valuation.toAbsoluteValue, RingTheory/Valuation/AbsoluteValue.lean:32) and Mathlib (Valuation.absoluteValue, Valuation.RankLeOne), with computed instances (5-adic, trivial valuation, non-strict control); the previous review's correction on that name is repaired. No sampled source target lies in the changed passage; no locator changed. Dependency check: 0 problems. Suggested.lean unchanged, elaborates with 20 sorry warnings only. Automatic check on files outside the folder (two regenerated GRH umbrella files) set aside as a false positive and noted for the human reviewers. Three small corrections and one format note concern untouched text; one format note on the changed sentence.",
+  "text": "c2a4f4a037c2e10c"
+ }
+}
