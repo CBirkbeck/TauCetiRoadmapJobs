@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsHeun~5",
+  "head": "20f6bc143375351064e5903f63f7ac43a6346196",
+  "pr": 2540,
+  "folder": "SpecialFunctionsHeun",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 53 changed lines since 0274267. The previous small correction (the spheroidal example of Layer 7) and both format notes (the docstring's list of prose headlines, two slips of form) are repaired. Checked: the new statement 31.7.4 in README 8.2 and in Suggested.lean against DLMF 31.7.4 and numerically at five points and a second parameter set (differences at most 2.3e-15), its radius bound (0.9411 at r = 1/7), its negative control (0.0579309) and its hypothesis on gamma; the Mathieu and spheroidal reductions to 31.12.1 by hand; the Check of 2.3 against the closing sentence of DLMF 31.3(iii). Sample: of the seeded targets only 8.2 and the Layer 7 Examples fall in the changed passages; DLMF 31.3, 31.7 and 31.12 were read, Kristensson 8.6.2 could not be (paywalled). Elaboration of Suggested.lean: exit 0, 37 sorry warnings only; simp and rfl fail on the new theorem; its elaborated type agrees with the README. Dependency check: 0 problems, no UPWARD or CYCLE. No change outside the folder. The pull request's description agrees with this head. One automatic check (a section comment over the #check pins) set aside as a false positive. Overlap read against SpecialFunctionsLame, which consumes this roadmap one way. For the humans: the declared reuse of the author's lean-DLMF design, and Ronveaux not readable.",
+  "text": "b1a1c863221ccb53"
+ }
+}
