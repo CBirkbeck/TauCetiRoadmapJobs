@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-NormsOfThetaLiftsAndExchangeIdentities~4",
+  "head": "8e155d46eaabaf8ba0307047dbd84e5a27bd40f6",
+  "pr": 3160,
+  "folder": "ShortGRH/NormsOfThetaLiftsAndExchangeIdentities",
+  "date": "2026-11-26",
+  "findings": 8,
+  "blocking": 8,
+  "corrections": 7,
+  "format_notes": 3,
+  "notes": "Full review. Earlier findings: the factor 2 in the sketch of 6.5 is repaired; no Suggested.lean, six unowned background prerequisites, two-way supply with DeterminantsOfThetaLiftChains, Layer 2 against ThetaLiftsForDefiniteUnitaryGroups 5.1-5.2 and the files outside the family stand. New: 5.2 (a) drops the hypothesis that V is definite; wording taken from the docstrings of the formal proof; sections follow its files. Sample: the 15 seeded sections and 7.4, 7.5 read against 13 of the 24 files of the formal proof (readable this round) and Wu 2021 Proposition 3.1; all agree except 5.2 (a). Automatic checks: the one failing check (no Suggested.lean) is real; dependency check 0 problems; no elaboration possible (no Lean file). Rallis 1984b and Harris-Li-Skinner 2005 could not be read.",
+  "text": "ce8d691c0ba6b985"
+ }
+}
