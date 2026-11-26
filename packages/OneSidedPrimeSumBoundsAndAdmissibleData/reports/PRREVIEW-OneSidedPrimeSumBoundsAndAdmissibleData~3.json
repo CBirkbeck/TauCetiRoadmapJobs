@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-OneSidedPrimeSumBoundsAndAdmissibleData~3",
+  "head": "f612a555de49ebce151b1655f5085b3d06c4ae02",
+  "pr": 3160,
+  "folder": "ShortGRH/OneSidedPrimeSumBoundsAndAdmissibleData",
+  "date": "2026-11-26",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample of 15 sections all verified against [ShortProof] (lsernau/grh-lean at 72fead1, read as the author's page: 13 files through the sources service, Heights and AdmissibleData read directly); adversarial table of 25 rows with recomputed values (R_q transform and residues, total remainder identity, sizes, main inequality, 6.2-6.3 arithmetic, 9239 prime). Automatic checks: missing Suggested.lean is real (R04); dependency check 0 problems but the family is cyclic at roadmap level (R01). A test file stating 0.2, 6.2 (c), 6.3 elaborated at the pin with sorry warnings only. Findings: R01 mutual citations with six siblings and Theorem C stated twice (P1); R02 eight unowned 'ShortGRH background' prerequisites (P1); R03 6.3-6.4 duplicate main GeneralizedRiemannHypothesisFromWindowBounds 5.1-5.3 (P2); R04 no Suggested.lean although headlines statable (P2); R05 umbrella and root README edits outside the family (P2).",
+  "text": "6dc5cf641e5f0649"
+ }
+}
