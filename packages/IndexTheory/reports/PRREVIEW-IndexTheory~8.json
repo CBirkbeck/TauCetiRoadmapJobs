@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IndexTheory~8",
+  "head": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+  "pr": 3170,
+  "folder": "IndexTheory",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "review of the change against main: 22 changed lines since 87e7f72. Checked: the new §1.6 component-monoid paragraph, its Check, the Needs clause and the Suggested.lean docstring bullet, each recomputed on examples (adversarial table with values); Freed display (3.13) read at its locator; pinned Mathlib and Tau Ceti declarations opened; a scratch Lean probe of the new claims; Suggested.lean elaborates with sorry warnings only; automatic checks pass except the outside-folder check, set aside as a false positive (the pull request's own other folders); dependency check 0 problems; merge-base comparison keeps all 8 layers; the fifteen sampled targets lie in untouched, unaffected text and were not re-read.",
+  "text": "f87a9c4596684726",
+  "carried": {
+   "from": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+   "head": "a00cd0c779af6235bed801438a81c371524d5865",
+   "findings": 1,
+   "lines": 4,
+   "folders": [
+    "IndexTheory"
+   ],
+   "corrections": true,
+   "onto": "ae3c1ba07d9f6c2a315690c8546e0ee7c6361430"
+  }
+ }
+}
