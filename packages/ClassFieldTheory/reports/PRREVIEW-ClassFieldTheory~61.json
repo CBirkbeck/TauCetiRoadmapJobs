@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassFieldTheory~61",
+  "head": "5a08539b8c2b3877a5643c6c5b2fcc0dff50d420",
+  "pr": 3177,
+  "folder": "ClassFieldTheory",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "review of the change against main: 7 changed lines since 7e8e228. Checked the two sentences added to 5.1 (Coefficients): the cited declaration TauCeti.ContCohomology.ofDiscreteModuleRestrictScalarsIntEquiv at the pin, the cited ProfiniteCohomology convention at this head, and the finiteness, duality and Euler-characteristic statements they refer to (computed at A = F_p over Q_p, p = 2 and odd; n = 0, 1); milne-adt I Thm 2.1, Cor. 2.3, Thm 2.8 read at the text. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry warnings only. Previous report read #3170 and had no finding; its remarks concern text not in this head. One format note on the description.",
+  "text": "222c7e836bfab3f2"
+ }
+}
