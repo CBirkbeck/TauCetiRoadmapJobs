@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelmerIwasawaCohomology~9",
+  "head": "494ecd355173a8353ed552c4f30410f447fa0ee9",
+  "pr": 3187,
+  "folder": "SelmerIwasawaCohomology",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 392 changed lines since 94e80af. Checked: every statement, proof step and Check of the new sections 2.22a, 2.23a, 2A.6-2A.8 and the edited overview, dependency, scope and contract lines, recomputed (adversarial table of 28 rows with values); the seeded sample where it falls in changed or affected text (2.23a, 2.21, 2.22), the other seeded targets being untouched and unaffected; 7 Kings-Loeffler-Zerbes (arXiv v6) and 5 Nekovar (Numdam) locators read in the texts; every supplier citation resolved on main, one statement of ArithmeticGaloisDuality D7.3 only at the head of #3184, which the description names; record comparison with the merge base (nothing removed or renumbered); dependency check 0 problems, no UPWARD or CYCLE; automatic checks all pass; Suggested.lean unchanged, elaborates with sorry warnings only. Previous review had no finding; its three remarks stand (same head). No finding; 2 small corrections (the Needs line of 2.23a omits ArithmeticGaloisDuality D7.7.3-D7.7.4 and the truncated cup product; three sentences of the description), 2 format notes (2A.7 has no locator; 'dual Selmer module' names two objects). One source error recorded (Kings-Loeffler-Zerbes Definition 11.2.3). One merge-order point for the human reviewers.",
+  "text": "2046e91abee6e7f1",
+  "carried": {
+   "from": "494ecd355173a8353ed552c4f30410f447fa0ee9",
+   "head": "8989684a9d1709f03a0c7bcf9d0cbf10ad6109bb",
+   "findings": 2,
+   "lines": 4,
+   "folders": [
+    "SelmerIwasawaCohomology"
+   ],
+   "corrections": true
+  }
+ }
+}
