@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassFieldTheory~60",
+  "head": "ae3c1ba07d9f6c2a315690c8546e0ee7c6361430",
+  "pr": 3170,
+  "folder": "ClassFieldTheory",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 28 changed lines since 57376f9: the previous report had no finding; its corrections C01-C03 are repaired, C04 partly (the pull request description is unchanged), N01 and N02 not repaired (carried as format notes). Checked the new overview sentence and the 8.1 field-level statement on Q_5(zeta_3, 5^(1/3)) against three norm subgroups; the new Milne locator at the text (milne-cft lines 1209-1214, 1277, 4901; pages 20, 22, 108); the docstring claim that neither Layer 8 theorem is at the pin; the pinned declarations the passage names. Seeded sample: 8.1 only, where the change falls. Automatic checks pass (the rerun's list of files outside the folder is the pull request's other named folders); dependency check 0 problems; Suggested.lean elaborates with eight sorry warnings only; no change outside the named folders.",
+  "text": "ac57d3a733abb973",
+  "carried": {
+   "from": "ae3c1ba07d9f6c2a315690c8546e0ee7c6361430",
+   "head": "ae3c1ba07d9f6c2a315690c8546e0ee7c6361430",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
