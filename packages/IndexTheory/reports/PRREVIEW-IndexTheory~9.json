@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-IndexTheory~9",
+  "head": "9552dbc264775829fa797bda1d8c4cf0dda62e66",
+  "pr": 3170,
+  "folder": "IndexTheory",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 4 changed lines since f17d28c: the §1.6 Needs line now names Joined.mul and ContinuousLinearMap.IsFredholm.id (previous C01 repaired); all five Mathlib names of the clause elaborated at the pin, with Lean probes for the product of joined pairs and index of the identity; previous format notes N01 and N02 carried, not blocking. Title and description checked against the head: no contradiction, no unstated change. Automatic checks all pass; depcheck 0 problems; Suggested.lean elaborates with only the two sorry warnings; no change outside the pull request's sixteen folders. The seeded sample falls outside the changed text.",
+  "text": "2b5ac1eefa4d01f1"
+ }
+}
