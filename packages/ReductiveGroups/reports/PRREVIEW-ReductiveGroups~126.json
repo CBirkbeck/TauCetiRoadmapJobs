@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ReductiveGroups~126",
+  "head": "57376f9e5a4ab3c24791ba2195281d1bff0c1025",
+  "pr": 3170,
+  "folder": "ReductiveGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 48 changed lines since 87e7f72. Checked: the added Layer 3 Takeuchi item and the two new Suggested.lean theorems (truth recomputed on I = 0, A+, mu_p in mu_{p^2}, S3 with A3 and <(12)>, alpha_p; Galois-connection direction; README and Lean at the same generality); Milne Theorem 3.31, Propositions 5.18 and 8.34 and Exercise 3-8 read at their locators; 9 pinned Tau Ceti declarations opened, including the pinned geometrically reduced case and descent step (C02); one-tactic probe: no padding; lake env lean exit 0 with 13 sorry warnings only; depcheck 0 problems; all automatic checks passed; record kept (nothing removed); overlap: none. Takeuchi 1972 is paywalled and was not read. The seeded targets 1.1, 8.1 and 8.2 lie in untouched text and were not reviewed.",
+  "text": "99b991a6d1a065fe"
+ }
+}
