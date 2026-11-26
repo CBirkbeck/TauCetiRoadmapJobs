@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisDuality~13",
+  "head": "5a08539b8c2b3877a5643c6c5b2fcc0dff50d420",
+  "pr": 3177,
+  "folder": "ArithmeticGaloisDuality",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "review of the change against main: 34 changed lines since 7e8e228. Checked: the three sentences added to Conventions (Cohomology) and the corollary 'Cocycle form' of the Greenberg-Wiles formula in R02.5.1 with its two Checks, recomputed (derivation from the class formula and ProfiniteCohomology 2.1; F = Q, M = F_p gives 1/p on both sides; complex place; M = 0); the cited ProfiniteCohomology conventions and target at this head; pinned declarations continuousCohomology, H1pi, restrictScalarsIntIso, ofDiscreteModuleRestrictScalarsIntEquiv; layer record (8 layers kept, no heading removed); description against the head (accurate); overlap with open pull requests (nothing shared); dependency check 0 problems; automatic checks all passed; elaboration 12 sorry warnings only. No seeded sample target lies in the changed or affected text. One format note (Layer R02.5 Dependencies omits ProfiniteCohomology Layer 2). Previous review was of another pull request and had no finding.",
+  "text": "222c7e836bfab3f2"
+ }
+}
