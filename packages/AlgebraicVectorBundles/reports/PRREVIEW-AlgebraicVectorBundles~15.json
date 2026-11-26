@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicVectorBundles~15",
+  "head": "9552dbc264775829fa797bda1d8c4cf0dda62e66",
+  "pr": 3170,
+  "folder": "AlgebraicVectorBundles",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 0c3be17. Checked: the folder is identical to 0c3be17; the pull request's title and description read against the head and the diff against the base (the previous small correction on the folder's bullet is repaired; every sentence about this folder agrees with the head); the record against the merge base (four layer ids kept, Layer 4 retitled, no item removed); new adversarial instances for section 4.2 (empty scheme, punctured plane, independence of the chosen adjunction); automatic checks all pass; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with seven sorry warnings only; the two repository check scripts pass; no change outside the pull request's folders. One format note carried (old Layer 4 heading anchor).",
+  "text": "0256e2a6d5fa0e50"
+ }
+}
