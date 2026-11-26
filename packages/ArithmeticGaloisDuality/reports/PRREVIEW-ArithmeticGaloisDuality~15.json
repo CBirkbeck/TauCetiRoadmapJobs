@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisDuality~15",
+  "head": "f9dd6d65bdad316caa7ee9e541a3765cac989636",
+  "pr": 3184,
+  "folder": "ArithmeticGaloisDuality",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 192 changed lines since 94e80af; checked the two new statements (uniform vanishing of cocycles of bounded exponent in R02.4.4, cochain tensor comparison for profinite groups in D7.3) and the revised Nakamura paragraph, recomputing every Check, and every new Needs edge; Nekovar Selmer complexes 3.4.1 and Prop. 3.4.4 read at their locators; seeded sample targets in or cited by the change (uniform vanishing; restricted ramification over a global function field) checked, the other thirteen untouched; overlap by object with main and open heads: nothing shared; automatic checks all passed; depcheck 0 problems; Suggested.lean unchanged, elaborates with 12 sorry warnings only",
+  "text": "2a8d6e0bfaec0eff"
+ }
+}
