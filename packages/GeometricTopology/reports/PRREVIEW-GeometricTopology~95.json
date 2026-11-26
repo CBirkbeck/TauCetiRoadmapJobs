@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GeometricTopology~95",
+  "head": "9552dbc264775829fa797bda1d8c4cf0dda62e66",
+  "pr": 3170,
+  "folder": "GeometricTopology",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "incremental re-review of 0 changed lines since f17d28c; this round checked the pull request's title and description against the head (seven claims, all hold: sixteen folders, the one folder with untouched Suggested.lean, pin 2fd255d, the GeometricTopology bullet, data listed as not statable, elaboration, stated order with the other open revision). Recomputed slopeEquivStd_congr on three instances and the shift case against the pinned value_shiftLongitude; 8 library declarations reopened at the pin. Elaboration: 27 sorry warnings, no error. Automatic checks all passed; depcheck 0 problems, no UPWARD or CYCLE. Seeded sample: no target in a changed passage. The previous review had no findings; its three format notes stand.",
+  "text": "2b5ac1eefa4d01f1"
+ }
+}
