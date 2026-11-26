@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TopologicalKTheory~65",
+  "head": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+  "pr": 3170,
+  "folder": "TopologicalKTheory",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 27 changed lines since 87e7f72. Checked: the new T1.6a representability paragraph (bijection, naturality, descent to the homotopy quotient, universes) and its Check on [0,1] and S^1, recomputed; the Suggested.lean docstring bullet against the pins; seeded sample T2.0 (Hatcher 2.1, pp. 39-40, read) and T7.0 (recomputed; Sibson uncertified); 6 Hatcher locators, 8 library declarations, the AlgebraicTopology Stage 4.7 citation on main and at head; no layer, item or declaration removed. Automatic checks all pass; depcheck 0 problems; Suggested.lean elaborates with the one sorry warning. The earlier review had no findings; its 3 small corrections and 2 format notes are in unchanged text and are restated.",
+  "text": "6b079cf449dad743",
+  "carried": {
+   "from": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+   "head": "9524327f4065e2f8b67b39ebe1097217299ad7d0",
+   "findings": 3,
+   "lines": 11,
+   "folders": [
+    "TopologicalKTheory"
+   ],
+   "corrections": true,
+   "onto": "5ca81d2947519ee1409b8b6d1fd64ffdbc63a03f"
+  }
+ }
+}
