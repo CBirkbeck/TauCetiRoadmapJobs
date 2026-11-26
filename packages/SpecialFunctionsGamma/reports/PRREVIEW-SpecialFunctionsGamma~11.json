@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsGamma~11",
+  "head": "2d59dd5552f2722fbb05b820189f1d63783c9d5b",
+  "pr": 2191,
+  "folder": "SpecialFunctionsGamma",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "Full review of the repaired head. The previous review's two findings, six small corrections and two format notes are all repaired. All 15 sampled targets and every headline recomputed at fresh complex parameters (series, real and contour integrals, Selberg-type integrals at n = 2); 63 DLMF and Whittaker-Watson locators read against the text (DLMF 5.9 online); eleven books unreadable. 22 cross-roadmap citations resolved on main; dependency check 0 problems; the worker's automatic checks all passed; Suggested.lean elaborates with 81 sorry warnings only; one-tactic probe closes none of the 81 theorems; signatures read for coercions and truncated subtraction. Two small corrections: Prym's decomposition is the case z = 1 of SpecialFunctionsEiLiErfIncompleteGamma 1.1 and 1.3 (unnamed relative); four tsum statements carry no summability.",
+  "text": "5a103b2f29e51352"
+ }
+}
