@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SubspaceTheorem~5",
+  "head": "6c07fb07d24c353b1ddc9322102bc394a8c8f940",
+  "pr": 3178,
+  "folder": "SubspaceTheorem",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 6 changed lines since 0a7b524. Checked the one added sentence of 0.2 (the action of a group with MulSemiringAction on absolute values and the invariance of the restriction): computed the action law and the convention on a non-abelian group, proved the instance and the under lemma against the pins in a scratch probe, opened 6 library declarations, resolved the consumer citation in ArithmeticGaloisRepresentations 2.1, searched main and the open heads for a second owner (none). No seeded-sample target falls in changed or affected text. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 38 sorry warnings only and is unchanged. One small correction: the invariance is worded for a subring, narrower than AbsoluteValue.under and the consumer's use. Bombieri-Gubler not readable.",
+  "text": "dc2360e57af28a4d"
+ }
+}
