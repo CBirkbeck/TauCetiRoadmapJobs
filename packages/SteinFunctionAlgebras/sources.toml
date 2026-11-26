@@ -1,0 +1,49 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SteinFunctionAlgebras"
+
+[[source]]
+id = "Forstneric2018"
+authors = "Franc Forstneric"
+title = "Holomorphic embeddings and immersions of Stein manifolds: a survey"
+year = 2017
+venue = "In: Geometric Complex Analysis (In Honor of Kang-Tae Kim's 60th Birthday, Gyeongju, Korea, 2017), 145-169. Springer Proceedings in Mathematics and Statistics, 2018"
+arxiv = "1709.05630v5"
+locator_scheme = "theorem"
+locator = "Theorem 2.1"
+url = "https://arxiv.org/abs/1709.05630v5"
+fetched_from = "https://arxiv.org/pdf/1709.05630v5"
+fetched_at = "2026-11-26T17:38:06Z"
+sha256 = "9fdb9ba487f9644a0fc55691bf96ae1ca7aadaebee42ffc8da4f917c2a55f651"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v5"
+cited_for = ["1.1"]
+
+[[source]]
+id = "DemaillyAG"
+locator_scheme = "section"
+locator = "Chapter I, §6"
+url = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_from = "https://www-fourier.univ-grenoble-alpes.fr/~demailly/manuscripts/agbook.pdf"
+fetched_at = "2026-11-26T17:38:21Z"
+sha256 = "d7c7654a7417e8322e5dcf8fe8ec818b4c1a18cf280b41f2df5a871b776d89a1"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["0.2"]
+
+[[source]]
+id = "GrauertRemmert1984"
+authors = "H. Grauert, R. Remmert"
+title = "Coherent Analytic Sheaves"
+year = 1984
+venue = "Grundlehren der mathematischen Wissenschaften"
+doi = "10.1007/978-3-642-69582-7"
+locator_scheme = "chapter"
+locator = "Chapters V–VI"
+url = "https://doi.org/10.1007/978-3-642-69582-7"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["2.3"]
