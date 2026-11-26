@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchattenClassesAndSchurMultipliers~7",
+  "head": "1bd556505e38fa9d7d33ec38da153c401d267b68",
+  "pr": 2421,
+  "folder": "SchattenClassesAndSchurMultipliers",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 43 changed lines since 5e643e9: the new proof route of Sierpinski's theorem in §7.1 checked step by step with computed instances (Lebesgue t = 1/3, boundary cases, negative controls); BochnerSpaces §4.2, §7.4, §7.5 read on main (§7.5 there states no divisibility, so dropping the citation is right); 2 source locators and 4 pinned declarations opened; ownership of the theorem searched on main and at the open heads (no other owner); automatic checks all pass, dependency check 0 problems, Suggested.lean elaborates with 11 sorry warnings only; pull request text read against the head (one small correction: BochnerSpaces called open, §7.5 called consumed); one format note carried.",
+  "text": "d7f55fa23fd10d43",
+  "carried": {
+   "from": "1bd556505e38fa9d7d33ec38da153c401d267b68",
+   "head": "1bd556505e38fa9d7d33ec38da153c401d267b68",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
