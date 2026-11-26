@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CongruencesOfTwistedThetaLifts~1",
+  "head": "c12c8993361e4ee9fe467ed7686d026870186335",
+  "pr": 3160,
+  "folder": "ShortGRH/CongruencesOfTwistedThetaLifts",
+  "date": "2026-11-26",
+  "findings": 6,
+  "blocking": 6,
+  "corrections": 5,
+  "format_notes": 5,
+  "notes": "Full review. Seeded sample (1.5, 2.1, 2.7, 3.1, 3.2, 3.7, 4.2, 4.3, 5.1, 5.4, 6.1, 6.5, 6.6, 7.2, 7.3) checked by computation and internal consistency; the formal-proof locators ([ShortProof], github lsernau/grh-lean) were not readable (host not classified), the published attributions were checked against BellaicheChenevier2009, Urban2001, Minguez2008 (arXiv). Automatic checks: missing Suggested.lean is real (R01); dependency check 0 problems, two-way sibling supply found by reading (R04). No Lean file to elaborate. Main findings: 2.1 (a) false under the README's Hecke-polynomial convention; 15 unowned prerequisites; restated LengthBoundsInPadicFamilies 1.8b and Tau Ceti fittingIdeal; umbrella change outside the folder.",
+  "text": "60d2fcb9581d2aaf"
+ }
+}

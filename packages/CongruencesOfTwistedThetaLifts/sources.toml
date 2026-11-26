@@ -1,0 +1,56 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CongruencesOfTwistedThetaLifts"
+
+[[source]]
+id = "BellaicheChenevier2009"
+authors = "Joel Bellaiche, Gaetan Chenevier"
+title = "p-adic families of Galois representations and higher rank Selmer groups"
+year = 2006
+arxiv = "math/0602340v2"
+locator_scheme = "theorem"
+locator = "§1.5, Theorem 1.5.5"
+url = "https://arxiv.org/abs/math/0602340v2"
+fetched_from = "https://arxiv.org/pdf/math/0602340v2"
+fetched_at = "2026-11-26T00:49:36Z"
+sha256 = "f593756809df6c39ee5cf83b7cce82965cebec55a075bd4c84430203394e1c34"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v2; published as Families of Galois representations and Selmer groups, Astérisque 324 (2009); the README cites the arXiv v2 numbering"
+cited_for = ["3.2", "3.7", "6.5"]
+
+[[source]]
+id = "Urban2001"
+authors = "Eric Urban"
+title = "Selmer groups and the Eisenstein-Klingen ideal"
+year = 2001
+arxiv = "math/9803171v1"
+locator_scheme = "theorem"
+locator = "Theorems 1.1 and 3.5"
+url = "https://arxiv.org/abs/math/9803171v1"
+fetched_from = "https://arxiv.org/pdf/math/9803171v1"
+fetched_at = "2026-11-26T00:49:53Z"
+sha256 = "04e8e6fb8d239108bb72d87007940662c845052da8c0527869b736ab0eebfb44"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v1 (1998 preprint of Duke Math. J. 106 (2001)); the README cites the arXiv numbering"
+cited_for = ["3.7", "6.5"]
+
+[[source]]
+id = "Minguez2008"
+authors = "Alberto Mínguez"
+title = "Correspondance de Howe explicite: paires duales de type II"
+year = 2008
+venue = "Annales scientifiques de l'École normale supérieure 41"
+doi = "10.24033/asens.2080"
+locator_scheme = "theorem"
+locator = "Théorème 1 (Corollaire 6.3)"
+url = "https://doi.org/10.24033/asens.2080"
+fetched_from = "https://www.numdam.org/item/10.24033/asens.2080.pdf"
+fetched_at = "2026-11-26T00:50:00Z"
+sha256 = "b379de638b8f3be2932ccf68485078ac00d776f7e6a244e9cb602a29958575ab"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["2.8"]
