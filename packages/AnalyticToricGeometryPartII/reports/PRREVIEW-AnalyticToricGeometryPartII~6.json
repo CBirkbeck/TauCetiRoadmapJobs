@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticToricGeometryPartII~6",
+  "head": "0c3be17dbfaad2e597c4349b4720ff970228eace",
+  "pr": 3170,
+  "folder": "AnalyticToricGeometryPartII",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 9 changed lines since f17d28c: the two changed passages (README §0.7 line 168, Suggested.lean module docstring) checked by a compiled probe at the pins (closure order = specializationPreorder on the orbit space, direction included; antisymmetry equivalent to T0Space; specializationOrder opened); previous C01 repaired, previous N01 (two books missing from References) carried as a format note; title and description checked against the head for this folder and agree; Suggested.lean elaborates with the one sorry warning; automatic checks all pass; depcheck 0 problems; no seeded-sample target lies in the changed passages; adversarial table of 5 rows with computed values.",
+  "text": "0fae8ff774cbb179"
+ }
+}
