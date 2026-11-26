@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RandomGraphs~20",
+  "head": "198459f9ae6a605a4cb62e10c064b88a475d9402",
+  "pr": 3170,
+  "folder": "RandomGraphs",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 47 changed lines since f17d28c. Checked: the rewritten Needs line and routes of 9.5 (13 library names by #check at the pins, five instance-synthesis probes, the Moebius-inversion step computed at p = 1/2 for k = 2, 3), the two ownership sentences, the changed docstring; previous C01 and C02 repaired, N01 and N02 carried as format notes. Title and description checked against the head: agree. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 78 sorry warnings only; one-tactic probes do not close measurable_deFinettiEquiv. Sampled targets outside the changed text not reopened; 9.5 has no locator.",
+  "text": "2b5ac1eefa4d01f1"
+ }
+}
