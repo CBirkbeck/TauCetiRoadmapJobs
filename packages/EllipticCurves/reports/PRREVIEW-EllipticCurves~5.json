@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurves~5",
+  "head": "a37cbe85a029d626b8ee0d6843d10bb46c22e7ee",
+  "pr": 3181,
+  "folder": "EllipticCurves",
+  "date": "2026-11-26",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 48 changed lines since 13a2ad8. Checked: the new Layer 7 cohomology expression elaborated in a one-off probe file against the pins; ForcedDiscrete, continuousSMul_iff, ofDiscreteModule and continuousCohomology opened at the pins; ProfiniteCohomology Layers 2, 3, 4, 10 resolved on main; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; no seeded-sample target falls in changed text; pull-request text read against the head. One P2: the changed Layer 7 notes still make this layer the builder of the finite-level comparison and inflation-restriction that the changed head assigns to ProfiniteCohomology. Automatic checks: TODO and TeX hits set aside as false positives; sorry'd definitions and pull-request numbers lie in untouched text and are remarks for a separate pull request.",
+  "text": "345f4bdb74ac4220"
+ }
+}
