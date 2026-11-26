@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QDifferenceIsomonodromy~4",
+  "head": "61d3245b69c33d2c9acb2d5b31822de00827ae2f",
+  "pr": 3020,
+  "folder": "QDifferenceIsomonodromy",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 6,
+  "format_notes": 3,
+  "notes": "Full re-review after the change of analytic convention to 0 < |q| < 1. Previous remarks checked one by one: C01-C06 and N01-N03 are not repaired (none blocking; C04 restated for the new theta function). Adversarial pass over all layers with computed values: slope sign and endpoint conventions, theta/character/q-logarithm identities, coefficient recurrences of 2.4, 3.5, 4.2, 4.3, Birkhoff-Guenther window, Stokes block equation, extension of local maps, the q = 1/2 examples of Layers 0, 2, 5, 6, and the rank-two Schlesinger example of Layer 7 in exact arithmetic (both orders, step equation, q-Schlesinger relations). Seeded sample 0.1, 0.4, 1.8, 2.2, 2.3, 2.5, 4.3, 4.5, 5.2, 5.4, 5.6, 6.1, 6.2, 6.3, 6.4: 31 locators read in KL15, S00, S03, VPR07, RSZ13, S24 (published text, readable this round) and B04; A57 not readable. One error found in a source (S24, proof of Proposition 3.11). Automatic checks: only the import form failed (format note N01); targeted elaboration gives two sorry warnings only; one-tactic probes do not close the two theorems; a copy of rightFactorGauge_horizontal without q != 0 elaborates (C03). Dependency check: 0 problems, no UPWARD or CYCLE; all 14 supplier roadmaps on main; nothing changed outside the folder. Overlap check done against the five closest roadmaps and by object search over open heads and main: nothing shared. Pull request text agrees with the head. Three points for the human reviewers (A57 link, unread A57, scope notes on B04 and M19).",
+  "text": "3f6eccc59351b102"
+ }
+}
