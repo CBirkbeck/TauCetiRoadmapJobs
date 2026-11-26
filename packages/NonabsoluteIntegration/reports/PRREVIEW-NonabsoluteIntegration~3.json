@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-NonabsoluteIntegration~3",
+  "head": "57c12da61e67b8126497a30ca5e07d74da2fb962",
+  "pr": 2977,
+  "folder": "NonabsoluteIntegration",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 13 changed lines since c1711a2: the previous format note N01 (wording of the prose target of 3.1) is repaired; the changed claims (restricted variation nondecreasing in E, the four classes pass to subsets) were computed on an instance and the monotonicity proved on a scratch copy; Suggested.lean unchanged and elaborates with 34 sorry warnings only; dependency check 0 problems; automatic checks pass except one form check set aside as a false positive (a section comment heading #check lines); pull request text agrees with the head; no cited source readable legally, so no locator of the seeded sample was checked (reported to the human reviewers).",
+  "text": "af059c45f29b2b8d"
+ }
+}
