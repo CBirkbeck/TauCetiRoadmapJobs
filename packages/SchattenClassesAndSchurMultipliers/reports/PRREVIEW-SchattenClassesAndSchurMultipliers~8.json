@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchattenClassesAndSchurMultipliers~8",
+  "head": "1bd556505e38fa9d7d33ec38da153c401d267b68",
+  "pr": 2421,
+  "folder": "SchattenClassesAndSchurMultipliers",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 1bd5565. Checked: the pull request's title and description sentence by sentence against the head (supplier list equal to the README's supplier contracts, sections named exist, no supplier gap, all seven suppliers on main); the previous small correction C01 is repaired in the description, the previous format note N01 stands and is carried. Cross-roadmap citations resolved against main; dependency check 0 problems, no UPWARD or CYCLE; automatic checks all pass; lake env lean on Suggested.lean gives 11 sorry warnings only; nothing changed outside the folder. Adversarial rows computed for four statements the description cites (triangular truncation 1 vs 2/sqrt 3, Schur product theorem on [[2,1],[1,1]], cos(x-y) factorisation and transference, supplier list); rows for untouched statements stand as in the review of 1bd5565. The seeded sample falls in no changed passage.",
+  "text": "f9cd58d0bb15ca44"
+ }
+}
