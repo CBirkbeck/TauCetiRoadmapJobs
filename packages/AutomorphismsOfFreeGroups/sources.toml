@@ -1,0 +1,22 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "AutomorphismsOfFreeGroups"
+
+[[source]]
+id = "breitner11"
+authors = "Joachim Breitner"
+title = "Loop subgroups of F_r and the image of their stabilizer subgroups in GL_r(Z)"
+year = 2010
+venue = "Israel Journal of Mathematics, 2011"
+doi = "10.1007/s11856-011-0213-3"
+arxiv = "1012.2729v2"
+locator_scheme = "theorem"
+locator = "Definition 9"
+url = "https://arxiv.org/abs/1012.2729v2"
+fetched_from = "https://arxiv.org/pdf/1012.2729v2"
+fetched_at = "2026-11-26T13:26:09Z"
+sha256 = "809a8d05f2a1601d2a8e0e02f9b9c7bd2cf7faf62774732b7f56aaeb68475a3d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v2"
+cited_for = ["2.2"]
