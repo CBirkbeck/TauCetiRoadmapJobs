@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "TraceInequalitiesAndQuantumEntropy"
+
+[[source]]
+id = "tropp2015"
+authors = "Joel A. Tropp"
+title = "An Introduction to Matrix Concentration Inequalities"
+year = 2015
+arxiv = "1501.01571v1"
+locator_scheme = "theorem"
+locator = "Proposition 8.3.5"
+url = "https://arxiv.org/abs/1501.01571v1"
+fetched_from = "https://arxiv.org/pdf/1501.01571v1"
+fetched_at = "2026-11-26T08:42:45Z"
+sha256 = "8989dc217ae3c603fcf91adab0dd6a05e26497dbe05976c4613cfc325b0561f9"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v1"
+cited_for = ["1.2"]
