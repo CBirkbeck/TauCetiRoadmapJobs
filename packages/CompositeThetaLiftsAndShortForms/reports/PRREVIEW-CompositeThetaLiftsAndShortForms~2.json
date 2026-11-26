@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompositeThetaLiftsAndShortForms~2",
+  "head": "f612a555de49ebce151b1655f5085b3d06c4ae02",
+  "pr": 3160,
+  "folder": "ShortGRH/CompositeThetaLiftsAndShortForms",
+  "date": "2026-11-26",
+  "findings": 6,
+  "blocking": 6,
+  "corrections": 4,
+  "format_notes": 4,
+  "notes": "Full review at f612a55 after the review at c12c899. Earlier findings: R01 and R02 partly repaired, R03, R04, R05 not; one new finding (scalings and ramified source forms defined here and in ThetaLiftChainsAndTheSeesawIdentity 2.8). Seeded sample of 15 targets: none of the 48 [ShortProof] pointers could be read (the sources service refuses the repository), so each sampled target was checked by computation against the README's definitions and the cited supplier sections (26 table rows with values). Supplier sections and four owners on main resolved; Mathlib declarations opened at the pin. Suggested.lean elaborates with no message and declares nothing. Dependency check: 0 problems (sibling edges not tested). Automatic checks: TeX-syntax hits set aside as false positives; out-of-folder changes are a finding.",
+  "text": "6dc5cf641e5f0649"
+ }
+}
