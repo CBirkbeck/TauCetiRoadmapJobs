@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompositeThetaLiftsAndShortForms~1",
+  "head": "c12c8993361e4ee9fe467ed7686d026870186335",
+  "pr": 3160,
+  "folder": "ShortGRH/CompositeThetaLiftsAndShortForms",
+  "date": "2026-11-26",
+  "findings": 5,
+  "blocking": 5,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Seeded sample of 15 targets plus the three headlines (4.9, 5.4, 5.7) checked by internal computation (degenerate cases, exponent bookkeeping, consistency between sections). No [ShortProof] locator could be checked: the sources service refuses the GitHub host (no licence class). Suggested.lean elaborates cleanly with lake env lean (no declarations). The dependency check reports 0 problems, but this misses three supply cycles with sibling roadmaps that are not yet in the merge order (R01). Of the automatic checks, the TeX hits at lines 343 and 490 are false positives (code spans that wrap a line); the out-of-folder change to umbrellas/ is real (R05). Cross-roadmap citations resolved against the siblings at head and against main; library names checked at the Mathlib and Tau Ceti pins.",
+  "text": "60d2fcb9581d2aaf"
+ }
+}

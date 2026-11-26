@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CompositeThetaLiftsAndShortForms"
+
+[[source]]
+id = "DKSS"
+authors = "Zeev Dvir; Swastik Kopparty; Shubhangi Saraf; Madhu Sudan"
+title = "Extensions to the method of multiplicities, with applications to Kakeya sets and mergers"
+year = 2009
+arxiv = "0901.2529"
+locator_scheme = "theorem"
+locator = "Lemma 8"
+url = "https://arxiv.org/abs/0901.2529"
+fetched_from = "https://arxiv.org/pdf/0901.2529"
+fetched_at = "2026-11-26T01:04:57Z"
+sha256 = "ab1f8fe04a64eec182b64ebdfa2c451eb2838a02787c31b4633b9e8fc7ad33fc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v2 (13 May 2009); the strengthened Schwartz-Zippel lemma is Lemma 8 of section 2.4, p. 9; cited in this numbering"
+cited_for = ["1.4"]
