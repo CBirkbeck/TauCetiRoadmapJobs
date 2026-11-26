@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InductionRestriction~15",
+  "head": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+  "pr": 3170,
+  "folder": "RepresentationTheory/InductionRestriction",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 21 changed lines since 87e7f72. Checked the new §5.2 bullet (action on N-subrepresentations and on isotypic components, transitivity, stabilizer = inertia, equivariance, the S3/A3 Check) by computation on S3/A3 over C and Q, S4/V4 and N = G, N = 1, and by a probe at the pins that proves the action laws, the stabilizer statement and the equivariance on translates; 12 Tau Ceti and 1 Mathlib declarations opened at the pins. Suggested.lean elaborates with 13 sorry warnings only; no declaration changed. Automatic checks all passed; dependency check 0 problems. README at the merge base against the head: insertions only, 12 layer ids kept. No seeded-sample target lies in changed text. Previous review's two small corrections and one format note stand unrepaired (folder unchanged) and are restated; none blocks.",
+  "text": "0cd4560db6d6402d",
+  "carried": {
+   "from": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+   "head": "f862ad6f05fa0f6778757b2ec01d358c0f3cddcd",
+   "findings": 2,
+   "lines": 11,
+   "folders": [
+    "RepresentationTheory/InductionRestriction"
+   ],
+   "corrections": true,
+   "onto": "9dfeb10fc9beb0866cae80594d9ef1caf3f98089"
+  }
+ }
+}
