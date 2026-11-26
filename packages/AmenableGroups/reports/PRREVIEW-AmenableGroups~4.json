@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AmenableGroups~4",
+  "head": "57376f9e5a4ab3c24791ba2195281d1bff0c1025",
+  "pr": 3170,
+  "folder": "AmenableGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 4,
+  "notes": "review of the change against main: 47 changed lines since 87e7f72. Checked the new section 7.6 paragraph (additivity and order of the L-infinity functional-content correspondence), its route and two Checks with computed degenerate and two-point cases, the scope sentence, and the two new Suggested.lean theorems: elaboration at the pins gives only sorry warnings, #check binders match the README, one-tactic probe (additivity closes by unfolding: small correction). Pinned AddContent and PositiveLinearMap instances opened. Earlier review's corrections repaired on main; one untouched format note re-raised. Dependency check 0 problems; all automatic checks passed; overlap with BanachSpaceTheory 5.8 resolved (it consumes this roadmap). Seeded sample lies outside the changed text and was not rechecked; the change cites no source.",
+  "text": "fbc4557c6e14eb49"
+ }
+}
