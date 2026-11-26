@@ -1,0 +1,33 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BelyiMaps~13",
+  "head": "9552dbc264775829fa797bda1d8c4cf0dda62e66",
+  "pr": 3170,
+  "folder": "BelyiMaps",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 27 changed lines since 0c3be17. Checked: the five repaired small corrections (van Kampen file at the pin, 8.6 genus formula computed on the torus and cyclic triples, 14.2 trueOrbitSize carrier against 11.7 and the pinned definition, 11.6 local constancy against 11.4 and 10.7, 10.7 source line against Köck (2.2) and (3.3) read on arXiv); the deferred D01 stands; the pull request's title and description against the head (one small correction: the corrections to text on main are unstated); the automatic checks (all pass; the outside-folder flag is the pull request's fifteen other folders, set aside), the dependency check (0 problems) and the elaboration of Suggested.lean (two sorry warnings only). Two format notes carried.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C01: the claim is right.",
+    "where": "Completed/PeripheralActions README and Suggested.lean, which consume both names",
+    "raised": "PRREVIEW-BelyiMaps~12"
+   }
+  ],
+  "text": "2b5ac1eefa4d01f1",
+  "carried": {
+   "from": "9552dbc264775829fa797bda1d8c4cf0dda62e66",
+   "head": "9552dbc264775829fa797bda1d8c4cf0dda62e66",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
