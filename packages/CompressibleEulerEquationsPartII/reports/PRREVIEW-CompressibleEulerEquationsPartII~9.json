@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CompressibleEulerEquationsPartII~9",
+  "head": "028ca673fbf3b8f1f3509cd19a5d436905f9c8c6",
+  "pr": 3010,
+  "folder": "CompressibleEulerEquationsPartII",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 93 changed lines since 8e9f901: the change repoints supplier citations (LorentzianGeometry renumbered to §§2.3, 3.1, 4.2-4.3, 7.6, 7.7; SemiRiemannianFoundations §§3.1-3.3 for reparametrization and the geodesic flow); all 9 cited sections read at the suppliers' open heads (43acb00, f9c2742) and found to state what is cited; no former number remains; CompressibleEulerEquations citations resolved again at 26699db; previous N01 repaired; adversarial table of six rows with computed values for the statements the changed text cites; pull request text read against the head (one small correction: two stale supplier head hashes); automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; no source locator in the changed passages, seeded sample stands from earlier rounds.",
+  "text": "b0c6503a1a8abfb3",
+  "carried": {
+   "from": "028ca673fbf3b8f1f3509cd19a5d436905f9c8c6",
+   "head": "028ca673fbf3b8f1f3509cd19a5d436905f9c8c6",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
