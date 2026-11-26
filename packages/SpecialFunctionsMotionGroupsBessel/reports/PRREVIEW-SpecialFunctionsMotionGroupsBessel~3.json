@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsMotionGroupsBessel~3",
+  "head": "699011dafd588526497adbdbbf9e11459cb0790e",
+  "pr": 2933,
+  "folder": "SpecialFunctionsMotionGroupsBessel",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 58 changed lines since f3fd2c3. Checked: the four small corrections and two format notes of the previous review (all repaired); the new theorem IsCircleRealization.nonempty_intertwiner_iff (both directions computed, true also at R = 0, one-tactic probe closes nothing, no duplicate owner); the changed Checks of 3.3 and 5.2 recomputed; DLMF 10.7.1, 10.7.3-10.7.5 and 10.23.1 re-read; SpecialFunctionsBessel 2.2 and 4.2 and SpecialFunctionsLegendre 3.2 resolved on main; the pull request's text against the head. Elaboration: sorry the only warning (59). Dependency check: 0 problems. One automatic form check set aside as a false positive. The five books were not readable legally; left to the human reviewers.",
+  "text": "9591eacf78b8b623"
+ }
+}
