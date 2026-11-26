@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-CompositeThetaLiftsAndShortForms~5",
+  "head": "8e155d46eaabaf8ba0307047dbd84e5a27bd40f6",
+  "pr": 3160,
+  "folder": "ShortGRH/CompositeThetaLiftsAndShortForms",
+  "date": "2026-11-26",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review of a repaired head. Sample: the 15 seeded sections (1.1, 1.5-1.10, 1.12, 2.2, 2.4, 2.5, 3.5, 3.6, 4.8, 4.9) read against the declarations of the formal proof at the cited commit, all agreeing; all 230 pointers resolve; three published works read at their locators. Adversarial table with computed values for 27 rows; no stated result is false. Findings: two-way supply with OneSidedPrimeSumBoundsAndAdmissibleData (P1, carried over, reduced), six unowned background entries, one stated on main (P1, carried over, reduced), Layers 1, 4, 5 follow the source's files (P2, new), eight sketches follow the source's comments (P2, new). Earlier R03, R04, R06 repaired; the changes outside the folder are left to the human reviewers after a maintainer's note on the pull request. Automatic checks: TeX hits set aside as false positives (multi-line code spans); dependency check 0 problems; Suggested.lean elaborates with no message and declares nothing.",
+  "text": "ce8d691c0ba6b985"
+ }
+}

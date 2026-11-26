@@ -18,3 +18,71 @@ status = "certified"
 accessed = "2026-11-26"
 version_note = "arXiv v2 (13 May 2009); the strengthened Schwartz-Zippel lemma is Lemma 8 of section 2.4, p. 9; cited in this numbering"
 cited_for = ["1.4"]
+
+[[source]]
+id = "BensonDoty2009"
+authors = "David Benson; Stephen Doty"
+title = "Schur-Weyl duality over finite fields"
+year = 2009
+venue = "Arch. Math. 93 (2009), 425-435"
+arxiv = "0805.1235v2"
+locator_scheme = "theorem"
+locator = "Theorem 4.3, Corollary 4.4"
+url = "https://arxiv.org/abs/0805.1235v2"
+fetched_from = "https://arxiv.org/pdf/0805.1235v2"
+fetched_at = "2026-11-26T03:59:38Z"
+sha256 = "a89a46d61b2ba011e18a8a48149ca1b4f5537d49cfadb508f254620e81650379"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v2 (30 June 2009), published in Arch. Math. 93 (2009), 425-435; Theorem 4.3 and Corollary 4.4 are cited in the arXiv numbering"
+cited_for = ["1.10"]
+
+[[source]]
+id = "Bombieri1973"
+authors = "Enrico Bombieri"
+title = "Counting points on curves over finite fields (d'apres S. A. Stepanov)"
+year = 1973
+venue = "Seminaire Bourbaki 25 (1972/73), expose 430, 234-241"
+locator_scheme = "page"
+locator = "p. 235"
+url = "https://www.numdam.org/item/SB_1972-1973__15__234_0.pdf"
+fetched_from = "https://www.numdam.org/item/SB_1972-1973__15__234_0.pdf"
+fetched_at = "2026-11-26T03:59:43Z"
+sha256 = "cea9cb6ce192d7e8260239b6eabed718fee1c5c7d5204796b5f71aa5782ad358"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["1.1"]
+
+[[source]]
+id = "Borel1963"
+authors = "Armand Borel"
+title = "Some finiteness properties of adele groups over number fields"
+year = 1963
+venue = "Publ. Math. IHES 16 (1963), 5-30"
+locator_scheme = "theorem"
+locator = "Theorem 5.1"
+url = "https://www.numdam.org/item/PMIHES_1963__16__5_0.pdf"
+fetched_from = "https://www.numdam.org/item/PMIHES_1963__16__5_0.pdf"
+fetched_at = "2026-11-26T03:59:44Z"
+sha256 = "678a378a947a25edd682942539cc9d22de47e8e141db0a19dd124e5138d2fedc"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["5.1"]
+
+[[source]]
+id = "Green1980"
+authors = "James A. Green"
+title = "Polynomial Representations of GLn"
+year = 1980
+venue = "Lecture Notes in Mathematics"
+doi = "10.1007/BFb0092296"
+locator_scheme = "equation"
+locator = "(2.4b), (2.6c)"
+url = "https://doi.org/10.1007/BFb0092296"
+licence_class = "none"
+status = "uncertified"
+version_note = "paywalled; cited by its locator without the text"
+cited_for = ["1.10"]
