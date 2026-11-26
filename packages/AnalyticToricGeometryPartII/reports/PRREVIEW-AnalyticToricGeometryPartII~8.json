@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticToricGeometryPartII~8",
+  "head": "9552dbc264775829fa797bda1d8c4cf0dda62e66",
+  "pr": 3170,
+  "folder": "AnalyticToricGeometryPartII",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 0 changed lines since 9552dbc. Checked the pull request's title and description against the folder's change and the head (new section 0.7, one added declaration, nothing removed, no supplier added, sixteen folders, pin 2fd255d): accurate for this folder. Previous format note N01 (two books missing from References) not repaired, carried. No seeded-sample target lies in a changed passage. Four pinned Tau Ceti declarations of section 0.7 reopened. Automatic checks pass; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; the signature of its one declaration compared with the README. One placement question for the human reviewers.",
+  "text": "2b5ac1eefa4d01f1"
+ }
+}
