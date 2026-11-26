@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AmenableGroups~6",
+  "head": "0c3be17dbfaad2e597c4349b4720ff970228eace",
+  "pr": 3170,
+  "folder": "AmenableGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 4,
+  "notes": "incremental re-review of 24 changed lines since dc6cd7c. Checked: the previous small correction C01 (additivity statement removed from Suggested.lean, kept in README prose) is repaired and the docstring's claim that additivity follows from two pinned evaluation lemmas closes in Lean on a scratch copy; the kept order statement computed on mu = 0, a two-point counting measure and a nonmeasurable set, and it resists simp and Iff.rfl; Suggested.lean elaborates with only the two sorry warnings; dependency check 0 problems; all automatic checks passed; no change outside the pull request's sixteen folders; the pull request's title and description agree with this head for this folder. The seeded source sample lies in untouched passages and no source was read. Four format notes carried over (N01-N04), none blocking.",
+  "text": "0fae8ff774cbb179"
+ }
+}
