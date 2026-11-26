@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-TraceInequalitiesAndQuantumEntropy~4",
+  "head": "0c9fa0cf06639f23d707fcc916f09c8de36a7290",
+  "pr": 2975,
+  "folder": "TraceInequalitiesAndQuantumEntropy",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 100 changed lines since 121a07a. The previous review had no finding; its three small corrections and three format notes are all repaired. Checked: Matrix.charpoly_mul_comm' at the pin against the formula of 4.1; OperatorMonotoneFunctionsAndMatrixMeans 2.1, 2.4, 2.6 on main; mutualInformation_kraus_le without the trace hypothesis (explicit unnormalised example, 20000 random commuting instances, scaling argument for the route); Tropp's arXiv numbering and pages at four locators (the sources service recorded tropp2015 in the package manifest when it fetched the text); absence of compound matrices and of a log-majorization predicate at the pins; the pull request's description against the head. Automatic checks: all pass except the section-header check, set aside as a false positive (the header precedes the #check lines); dependency check 0 problems; elaboration exit 0 with 36 sorry warnings only; one-tactic probe does not close the changed theorem. Five of seven books unread (paywalled), reported to the human reviewers.",
+  "text": "a585fb08f3c07f1b"
+ }
+}
