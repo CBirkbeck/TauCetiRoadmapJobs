@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassFieldTheory~58",
+  "head": "57376f9e5a4ab3c24791ba2195281d1bff0c1025",
+  "pr": 3170,
+  "folder": "ClassFieldTheory",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "review of the change against main: 40 changed lines since 87e7f72. Checked: the new 8.1 paragraph (Galois connection, insertion, closure operator, the S3 Check) against the pinned Tau Ceti LocalExistence files and milne-cft I Cor 1.2/1.5, III Thm 3.5 and 5.1; the two new Suggested.lean theorems (elaboration: sorry warnings only; signatures; one-tactic probe); affected untouched passages (overview, Owned here item 4, headline table, supplier row); ownership sweep over closest roadmaps; gate rerun (only outside-folder hits, all in the pull request's named folders); depcheck 0 problems; pull-request text. Seeded sample: 8.1 checked where the change falls; other targets untouched. No previous findings to re-check.",
+  "text": "99b991a6d1a065fe"
+ }
+}
