@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RandomGraphs~18",
+  "head": "57376f9e5a4ab3c24791ba2195281d1bff0c1025",
+  "pr": 3170,
+  "folder": "RandomGraphs",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 69 changed lines since 87e7f72. Checked the new subsection 9.5 (two routes, two Checks), its three Suggested.lean theorems (all true as stated; #check types match the README; one-tactic probe closes none; the forward measurability has a five-line proof from pinned lemmas), and the edits to the build table, the Layer 9 dependencies and the supplier table. Seeded sample: 9.5 has no locator; the other sampled targets are in untouched, unaffected text. Automatic checks all passed; dependency check 0 problems; elaboration exit 0 with 78 sorry warnings only; no change outside the pull request's folders; the earlier note on 5.2 is unrepaired untouched text. Ownership searched on main and the 113 open heads given: nothing shared. Corrections: the routes re-plan pinned results; the ownership sentence is out of date. One placement question for the human reviewers.",
+  "text": "99b991a6d1a065fe"
+ }
+}
