@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticToricGeometryPartII~4",
+  "head": "57376f9e5a4ab3c24791ba2195281d1bff0c1025",
+  "pr": 3170,
+  "folder": "AnalyticToricGeometryPartII",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 45 changed lines since 87e7f72. Checked the new section 0.7, its two Checks and two routes, the new Suggested.lean theorem and the changed overview, scope and AnalyticToricGeometry contract sentences, against the pinned Tau Ceti orbit-cone file, AnalyticToricGeometry Layer 4 item 2 on main, and the description. Probes at the pins prove the theorem from three pinned lemmas, show it is equivalent to T0 of the orbit space, and build the order isomorphism from Mathlib's specialization preorder (C01). The record of the merge-base layers is kept. The seeded sample falls in no changed passage. Automatic checks pass on the folder; the outside-folder report lists only the pull request's own folders. Dependency check: 0 problems. Elaboration: only the sorry warning. The two book locators in 0.7 could not be opened.",
+  "text": "99b991a6d1a065fe"
+ }
+}
