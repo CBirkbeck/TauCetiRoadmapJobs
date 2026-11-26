@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsClebschGordan~3",
+  "head": "a672a0cd9fd04ce828d6fc9823069651540a6fa3",
+  "pr": 2930,
+  "folder": "SpecialFunctionsClebschGordan",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 36 changed lines since 6a9b08d. The previous review had no finding; its small correction C01 (dual Hahn norm 0/0 at n = 0, alpha + beta = -1) and format notes N01-N03 are repaired. Recomputed exactly: h_0 = (alpha+beta+2)_N/N! (42 instances), the quotient form of h_n where the divisor is nonzero (129), the dual orthogonality (637 sums), sum_hahn_mul_hahn (637), the new Check at alpha = beta = -1/2 and the Check at (-5/2, 7/3). DLMF Table 18.19.1 Hahn row read again; the running text of DLMF 34.2 could not be read (figure only). Seeded sample checked where it falls in the change (1.1, 4.2). Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 51 sorry warnings and no error; no change outside the folder; pull-request text agrees with the head.",
+  "text": "47a5faf1d70f62d1"
+ }
+}
