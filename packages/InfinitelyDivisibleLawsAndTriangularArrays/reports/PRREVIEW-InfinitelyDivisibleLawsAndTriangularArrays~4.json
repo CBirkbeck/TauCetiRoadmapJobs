@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InfinitelyDivisibleLawsAndTriangularArrays~4",
+  "head": "cc69036d9e9e722129e62831ca4b56be2c69b95e",
+  "pr": 2970,
+  "folder": "InfinitelyDivisibleLawsAndTriangularArrays",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 12 changed lines since 76f3359: one bullet of Scope and ownership. Checked: the previous report had no open remark; the 7 cross-roadmap citations of the changed bullet resolved (PoissonApproximation Layers 2-3, LocalLimitTheorems, MathematicalStatisticsHigherOrderAndResampling 1.1, 2.1, 2.3 on main; SeriesOfIndependentRandomVariables 3.2 at its open head), none a supplier; the claim that none of them states interval inversion read against each; inversion formula recomputed on a point mass; pull request description agrees with the head; automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 51 sorry warnings only. No sampled target falls in the changed passage; book locators remain unverified as before (for the human reviewers).",
+  "text": "f7e91d57435be8ef"
+ }
+}
