@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DivisibilityOfThetaDerivatives~1",
+  "head": "c12c8993361e4ee9fe467ed7686d026870186335",
+  "pr": 3160,
+  "folder": "ShortGRH/DivisibilityOfThetaDerivatives",
+  "date": "2026-11-26",
+  "findings": 8,
+  "blocking": 8,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Seeded sample of 15 sections (1.4, 1.5, 1.6, 2.1, 2.2, 2.5, 3.3, 3.4, 4.2, 4.7, 4.8, 4.9, 4.11, 5.3, 5.5) checked against the formal proof [ShortProof] at commit 72fead1: all 293 pointer declarations of the 43 sections resolve in their cited files, and the sampled statements agree with the source, hypotheses included. Adversarial pass with computed values: 2.1 defines theta with the classical Weierstrass sigma, which makes 2.2 (a) false (the source uses the theta-normalised sigma). Automatic checks: the TeX-syntax hits are a false positive (inside a code span that runs over a line break); the change outside the folders (umbrellas/GRH.toml, umbrellas/GRH-targets.md) is real; Suggested.lean elaborates with no output; dependency check 0 problems, but it sees no sibling edges, and the two cycles were found by reading. A probe shows that the count 3.3 (a) is statable at the pins in about 60 lines. Wording and contents were compared with the source's docstrings and CONTENTS.md.",
+  "text": "60d2fcb9581d2aaf"
+ }
+}
