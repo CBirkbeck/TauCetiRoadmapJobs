@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LieGroups~15",
+  "head": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+  "pr": 3170,
+  "folder": "RepresentationTheory/LieGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 65 changed lines since 87e7f72. Checked the new §6.1 tori-lattice equivalence, its three Checks, the Lean statement existsUnique_continuousMonoidHom_lieMap_ker (instances Circle, point, Z/2, R; elaborated type; one-tactic probe), the Layer 6 dependency line and the scope sentence against the pinned Tau Ceti and Mathlib and §4.3. Elaboration: 26 sorry warnings only. Dependency check: 0 problems. Worker's automatic checks all passed. No seeded target lies in the changed or affected passages. Folder text is unchanged since the previous review; its three small corrections and two format notes are carried.",
+  "text": "6b079cf449dad743",
+  "carried": {
+   "from": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+   "head": "0c3be17dbfaad2e597c4349b4720ff970228eace",
+   "findings": 3,
+   "lines": 16,
+   "folders": [
+    "RepresentationTheory/LieGroups"
+   ],
+   "corrections": true,
+   "onto": "9524327f4065e2f8b67b39ebe1097217299ad7d0"
+  }
+ }
+}
