@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisDuality~14",
+  "head": "6c07fb07d24c353b1ddc9322102bc394a8c8f940",
+  "pr": 3178,
+  "folder": "ArithmeticGaloisDuality",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "review of the change against main: 6 changed lines since 0a7b524. Checked: the one sentence added to Conventions (image of G_v in G_K as the decomposition group of the Q-normalised place) recomputed at a finite, a real and a complex place and against ArithmeticGaloisRepresentations 2.1 at this head and MilneADT lines 550-552, 1830-1833; no seeded-sample target lies in changed or affected text; layers unchanged (8 ids), Suggested.lean unchanged and elaborates with 12 sorry warnings only; depcheck 0 problems; all automatic checks passed; pull request text agrees with the head.",
+  "text": "dc2360e57af28a4d"
+ }
+}
