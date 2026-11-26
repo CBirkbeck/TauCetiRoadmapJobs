@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-AlmostPeriodicityAndBohrSets~2",
+  "head": "4d9521e173099bbf7766c1a100c3d0ea7c04d392",
+  "pr": 3191,
+  "folder": "AlmostPeriodicityAndBohrSets",
+  "date": "2026-11-26",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full re-review. Previous findings R01-R03 and all corrections repaired. New finding: exists_linearMap_isAddFreimanIso lacks 1 <= s and is false at s = 0 (False derived on a copy). Seeded sample of 15 targets checked: 17 locators read in Sanders 2012, Sanders 2013, Croot-Sisask 2010, Tao 2008, Green-Ruzsa 2007; targets without readable sources checked by computation. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 19 sorry warnings only; one-tactic probe closes nothing; 52 library declarations opened at the pins.",
+  "text": "ff4bb7b5db172f92"
+ }
+}
