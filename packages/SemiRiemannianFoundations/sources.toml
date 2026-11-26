@@ -1,0 +1,59 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "SemiRiemannianFoundations"
+
+[[source]]
+id = "Bruveris2018"
+authors = "Martins Bruveris"
+title = "Riemannian geometry for shape analysis and computational anatomy"
+year = 2018
+arxiv = "1807.11290v1"
+locator_scheme = "section"
+locator = "§2.3, formula (1), pp. 8-9; §2.5, p. 9"
+url = "https://arxiv.org/abs/1807.11290v1"
+fetched_from = "https://arxiv.org/pdf/1807.11290v1"
+fetched_at = "2026-11-26T07:10:05Z"
+sha256 = "c704783dc6a02aca15a014c3f743b58002e277dab086c8ba680a8d5a0a8235ae"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v1"
+cited_for = ["2.4", "3.2"]
+
+[[source]]
+id = "KunzingerSteinbauerStojkovic2014"
+authors = "Michael Kunzinger, Roland Steinbauer, Milena Stojkovic"
+title = "The exponential map of a $C^{1,1}$-metric"
+year = 2013
+venue = "Differential Geom. Appl. 34, 14-24, 2014"
+arxiv = "1306.4776v3"
+locator_scheme = "theorem"
+locator = "Theorems 2.1, 4.1"
+url = "https://arxiv.org/abs/1306.4776v3"
+fetched_from = "https://arxiv.org/pdf/1306.4776v3"
+fetched_at = "2026-11-26T07:10:10Z"
+sha256 = "6244a74f81cba31e2d655b17842c16aa4db815b2080ec0b8b97fb4f0e62b54b1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v3"
+cited_for = ["3.4"]
+
+[[source]]
+id = "Minguzzi2013Convex"
+authors = "E. Minguzzi"
+title = "Convex neighborhoods for Lipschitz connections and sprays"
+year = 2013
+venue = "Monatsh. Math. 177, 569-625 (2015)"
+doi = "10.1007/s00605-014-0699-y"
+arxiv = "1308.6675v2"
+locator_scheme = "theorem"
+locator = "Theorems 3, 4, 5"
+url = "https://arxiv.org/abs/1308.6675v2"
+fetched_from = "https://arxiv.org/pdf/1308.6675v2"
+fetched_at = "2026-11-26T07:10:17Z"
+sha256 = "f5f12120f25106013c5019ca25e95a7c708d47b0c771e5371e1eb6332527eb82"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+version_note = "arXiv v2"
+cited_for = ["3.4"]
