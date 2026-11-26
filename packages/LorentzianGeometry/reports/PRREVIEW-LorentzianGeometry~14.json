@@ -1,0 +1,35 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LorentzianGeometry~14",
+  "head": "43acb00af51bfce58afec6976b97df3dd6071091",
+  "pr": 2232,
+  "folder": "LorentzianGeometry",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review of the renumbered head. Every Check and worked example recomputed (adversarial table of 27 rows: the 15 sampled sections, the eight sorry statements of Suggested.lean, the two targets the corrections touch). About 90 source locators opened in 13 cached sources; one wrong section number (C01). Supplier citations resolved on main and at the open heads of SemiRiemannianFoundations, CompressibleEulerEquations, CompressibleEulerEquationsPartII and SymmetricHyperbolicSystems; dependency check 0 problems; no change outside the folder. Suggested.lean elaborates with 8 sorry warnings and nothing else; one-tactic probe closes none. Automatic checks all passed. Previous format note N01 not repaired and raised again; deferred D01 stands. Uncertified texts (O'Neill, Hawking-Ellis) and uncached primary papers listed under Not verifiable.",
+  "deferred": [
+   {
+    "id": "D01",
+    "severity": "",
+    "title": "C03: the RiemannianGeometry README on main (R1.3, lines 289–292) cites Barzen–Leymann \"Lemma 35 and Lemma 36, pp.",
+    "where": "RiemannianGeometry README, R1.3 warped-product paragraph (Barzen–Leymann sign phrase)",
+    "raised": "PRREVIEW-LorentzianGeometry~12"
+   }
+  ],
+  "text": "d095bb204f0b940a",
+  "carried": {
+   "from": "43acb00af51bfce58afec6976b97df3dd6071091",
+   "head": "f783f7dcb724fe994edc64cec054d77b17409cf0",
+   "findings": 2,
+   "lines": 4,
+   "folders": [
+    "LorentzianGeometry"
+   ],
+   "corrections": true
+  }
+ }
+}
