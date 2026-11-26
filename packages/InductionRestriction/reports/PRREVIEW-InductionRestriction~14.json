@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-InductionRestriction~14",
+  "head": "57376f9e5a4ab3c24791ba2195281d1bff0c1025",
+  "pr": 3170,
+  "folder": "RepresentationTheory/InductionRestriction",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "review of the change against main: 21 changed lines since 87e7f72; checked the new §5.2 bullet (translation action on N-subrepresentations and isotypic components, transitivity, stabilizer, equivariance) and its Check against the pinned Tau Ceti and Mathlib on S3/A3, C4/C2 and S4/V4, with a probe that packages the action and states the claims (elaborates); the new Suggested.lean docstring paragraph, the new contract names, the merge-base README (no layer removed or retitled) and the description; seeded sample: §5.2 only falls in changed text, its sources (Curtis-Reiner, Isaacs) not legally readable; automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 13 sorry warnings only",
+  "text": "99b991a6d1a065fe"
+ }
+}
