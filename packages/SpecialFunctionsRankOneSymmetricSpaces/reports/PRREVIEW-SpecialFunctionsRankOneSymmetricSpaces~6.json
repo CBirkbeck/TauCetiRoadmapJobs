@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsRankOneSymmetricSpaces~6",
+  "head": "7d84ea8d0f0812982dbe940eee4b6a300531edb7",
+  "pr": 2935,
+  "folder": "SpecialFunctionsRankOneSymmetricSpaces",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 47 changed lines since 9e03432. Checked: the previous small correction and three format notes (C01, N02, N03 repaired; N01 carried as a format note); the new Stieltjes reduction and mollification clause of 1.2 recomputed; Tau Ceti MeasureTheory.Measure.ext_of_resolventTransform opened at the pin and its elaborated type compared with the README; OperatorTheory/UnboundedOperators 4.8 resolved on main; dependency check 0 problems; Suggested.lean elaborates with 58 sorry warnings only; pull request text agrees with the head; no change outside the folder. The sampled section 1.2 adds no source locator; book sources unreadable as before.",
+  "text": "162c959711c49a41"
+ }
+}
