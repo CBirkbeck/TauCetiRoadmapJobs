@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SemiRiemannianFoundations~1",
+  "head": "58748763dd0802c8e511509c3b33edd3822af093",
+  "pr": 3176,
+  "folder": "SemiRiemannianFoundations",
+  "date": "2026-11-26",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 7,
+  "format_notes": 2,
+  "notes": "Sample: all 15 seeded sections. 18 locators verified in 5 sources (Minguzzi2019, BarzenLeymann2026, Minguzzi2013Convex, KunzingerSteinbauerStojkovic2014, Gourgoulhon2007); O'Neill and Kobayashi-Nomizu not verifiable (books). Every Check recomputed (24-row table). Automatic checks: the gate passed; depcheck reported 0 problems (113 roadmaps, 1289 edges); Suggested.lean elaborates with two sorry warnings only; #check of all 10 declarations matches the README. Probes on a scratch copy: isStrong_of_finiteDimensional closes in one term (C01), and a finite-regularity Levi-Civita statement elaborates at the pins (R01). Overlap: LorentzianGeometry, RiemannianGeometry, HopfRinow, HolderMapsBetweenManifolds (partial, C05) and three more read. Citation-resolver lead on toSmoothMetric set aside as a false positive.",
+  "text": "54f0cc2b6ba8ea25"
+ }
+}
