@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SecondMomentsOfPoincareSeries~4",
+  "head": "8c6c8b85d39d25766aff805e37cfd64958ad3644",
+  "pr": 3160,
+  "folder": "ShortGRH/SecondMomentsOfPoincareSeries",
+  "date": "2026-11-26",
+  "findings": 6,
+  "blocking": 6,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Sample: all 15 seeded targets (1.2, 1.3, 2.1, 2.3, 3.4, 3.13, 4.5, 4.6, 4.7, 4.9, 4.11, 4.15, 5.2, 5.5, 5.7) checked against 36 declarations of [ShortProof] (grh-lean, commit 72fead1); all agree except 4.7 (c), which omits the order-5040 root of unity (C02). Origins of 4.9 and 5.1 checked in Jacquet 1986 (§§1, 7, 9) and Godement 1958 (§4, Théorèmes 5, 5 bis). Arrangement compared with [ShortProof] CONTENTS.md (R03). Adversarial pass with computed values on 28 rows; Layer 1 re-proved by hand; 3.2 (d) checked numerically. Dependency check: 0 problems, but supply runs both ways with four siblings that are not in the merge order (R02). Automatic checks: the only failure is the change outside the folders, held as R06. Suggested.lean elaborates (it declares nothing); a probe stating 1.2 (c) and 1.3 (a) elaborates with sorry only (R04). Findings: R01 P1 unowned background prerequisites, R02 P1 two-way supply, R03 P2 arrangement, R04 P2 Suggested.lean, R05 P2 GGP §1.2 Bessel datum restated, R06 P2 outside-folder edits.",
+  "text": "fe11c79a122f3cf6"
+ }
+}
