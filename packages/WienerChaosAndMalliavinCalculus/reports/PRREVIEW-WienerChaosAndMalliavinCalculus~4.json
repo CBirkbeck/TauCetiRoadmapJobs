@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-WienerChaosAndMalliavinCalculus~4",
+  "head": "9b2032896677ed5512ffbc53dc79d5e8feae6b4d",
+  "pr": 2972,
+  "folder": "WienerChaosAndMalliavinCalculus",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 68 changed lines since cec201e. Checked: the previous format note (repaired); the changed passages (inner product space wording against the Lean signature of exists_isIsonormal, computed on c00, 0 and R; three added roadmap links resolve on main); the pull request text against the head; elaboration (no error, 45 sorry warnings only, no set_option); dependency check (0 problems, no UPWARD or CYCLE); overlap with MalliavinSteinAndFourthMoment (a consumer, nothing shared). Automatic checks: one form hit set aside as a false positive (section comment over the #check lines). No source locator checked: none of the five cited books is legally readable, and no sampled section falls in a changed passage.",
+  "text": "e93d691f179ac327"
+ }
+}
