@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RandomGraphs~19",
+  "head": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+  "pr": 3170,
+  "folder": "RandomGraphs",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "review of the change against main: 69 changed lines since 87e7f72. Checked the new subsection 9.5 (two statements, two Checks, routes and Needs names opened at the pins), its three Suggested.lean theorems (elaboration exit 0, 78 sorry warnings only; one-tactic probes close none; the forward half has a five-line proof from pinned lemmas), and the edits to the build table, Layer 9 dependencies and supplier table. Automatic checks all passed; dependency check 0 problems. The sampled target 9.5 carries no locator; the other sampled targets are untouched and unaffected. The previous review's two small corrections and two format notes are unrepaired (folder unchanged) and repeated. One placement question for the human reviewers.",
+  "text": "0cd4560db6d6402d",
+  "carried": {
+   "from": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+   "head": "46b2408f2eed4fccfe2779adfbca6e06cd1074fc",
+   "findings": 2,
+   "lines": 47,
+   "folders": [
+    "RandomGraphs"
+   ],
+   "corrections": true,
+   "onto": "f862ad6f05fa0f6778757b2ec01d358c0f3cddcd"
+  }
+ }
+}
