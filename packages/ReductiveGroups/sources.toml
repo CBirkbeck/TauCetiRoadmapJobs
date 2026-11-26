@@ -605,3 +605,21 @@ status = "certified"
 accessed = "2026-11-19"
 version_note = "arXiv v2 of Mem. Amer. Math. Soc. 243 (2016); the published numbering was not checked, the README cites the arXiv numbering"
 cited_for = ["9B.7", "9B.8"]
+
+[[source]]
+id = "takeuchi"
+authors = "Mitsuhiro Takeuchi"
+title = "A correspondence between Hopf ideals and sub-Hopf algebras"
+year = 1972
+venue = "Manuscripta Mathematica 7 (1972), 251–270"
+doi = "10.1007/BF01579722"
+locator_scheme = "theorem"
+locator = "Theorem 4.3"
+url = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN365956996_0007/LOG_0022.pdf"
+fetched_from = "https://gdz.sub.uni-goettingen.de/download/pdf/PPN365956996_0007/LOG_0022.pdf"
+fetched_at = "2026-11-26T06:39:26Z"
+sha256 = "27c1a3a72d6fc87c85feb5f7454c2e7e820044018eddc9581ad8d528e758a2f1"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-26"
+cited_for = ["3"]

@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ReductiveGroups~127",
+  "head": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+  "pr": 3170,
+  "folder": "ReductiveGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "review of the change against main: 48 changed lines since 87e7f72. Checked: the Layer 3 Takeuchi item and the two new Suggested.lean theorems (adversarial table with computed values: I = 0, I = A+, mu_p in mu_{p^2}, constant S3; direction of the Galois connection against the pinned iff); 10 pinned Tau Ceti declarations opened; Milne Theorem 3.31, Proposition 8.34, Exercise 3-8 read at their locators; one-tactic probe (no padding); elaboration (13 sorry warnings only); automatic checks all passed; dependency check 0 problems; record against the merge base intact; overlap with AlgebraicModuliForArithmeticGeometry 4.22 read, nothing shared. Previous review's three small corrections and one format note are unrepaired and repeated. Seeded sample 1.1, 8.1, 8.2 lies in untouched text. Takeuchi 1972 not readable (paywalled).",
+  "text": "0cd4560db6d6402d",
+  "carried": {
+   "from": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+   "head": "76c4afe396b2f38200fa55053ed629f09c7eaa6c",
+   "findings": 3,
+   "lines": 31,
+   "folders": [
+    "ReductiveGroups"
+   ],
+   "corrections": true,
+   "onto": "46b2408f2eed4fccfe2779adfbca6e06cd1074fc"
+  }
+ }
+}
