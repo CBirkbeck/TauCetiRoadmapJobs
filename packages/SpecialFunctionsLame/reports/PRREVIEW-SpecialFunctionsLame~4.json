@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsLame~4",
+  "head": "d5115ddd254f77e55724ea4f03ba81e32e13e665",
+  "pr": 3081,
+  "folder": "SpecialFunctionsLame",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 98 changed lines since 81ab41b. Checked: previous R01 (sigma now cited from ModularCurvesPartII 1.4a on main, read at line 225), C01 and C02 repaired; the auxiliary result sigma'/sigma = zeta against Tau Ceti hasDerivAt_weierstrassZeta and weierstrassZeta_neg at the pin; SpecialFunctionsHeun 6.2 at its open head against the new contract; the change of variables and the 6.2 integrals recomputed numerically (new negative control 0.05982, 0.14153, combination 6e-17; norms pi, 0.09022, 17.50). Seeded sample: only 5.1 falls in a changed passage. Automatic checks: two hits set aside as false positives (choice in lameHermitePoly, header over #check lines); dependency check 0 problems; Suggested.lean elaborates with 22 sorry warnings only; no change outside the folder; pull request text agrees with the head. Dassios, Gesztesy-Holden, Ronveaux, Kristensson not readable (for the human reviewers).",
+  "text": "6689ba006afc451f"
+ }
+}
