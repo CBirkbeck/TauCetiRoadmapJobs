@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AmenableGroups~8",
+  "head": "9552dbc264775829fa797bda1d8c4cf0dda62e66",
+  "pr": 3170,
+  "folder": "AmenableGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 4,
+  "notes": "incremental re-review of 0 changed lines since 9552dbc. Checked: the folder is unchanged since the accepted head; the pull request's title and description read sentence by sentence against this head for this folder (sixteen folders, the AmenableGroups bullet against the 38-insertion change to section 7.6, the scope sentence and Suggested.lean, the pin 2fd255d), nothing to correct; Suggested.lean elaborated at the pins (two sorry warnings only); the two-point and zero-measure instances of the section 7.6 order and additivity statements recomputed; four library declarations reopened at the pin; dependency check 0 problems, no UPWARD or CYCLE; every automatic check passed; no change outside the pull request's own folders. Four format notes carried over; the seeded source sample lies in untouched passages and no source was read; the one-tactic probe was not rerun on the unchanged file.",
+  "text": "2b5ac1eefa4d01f1"
+ }
+}
