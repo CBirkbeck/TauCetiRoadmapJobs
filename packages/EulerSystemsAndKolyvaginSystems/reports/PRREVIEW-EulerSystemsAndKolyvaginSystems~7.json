@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EulerSystemsAndKolyvaginSystems~7",
+  "head": "acd50062e900751ac908e101c9e24fe15f6326cf",
+  "pr": 3188,
+  "folder": "EulerSystemsAndKolyvaginSystems",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "review of the change against main: 28 changed lines since 94e80af. Re-derived the four added passages (0.1 bijection F to Delta(F) with H1 = H1_F; 0.4 reduction mod pi^k simple iff torsion-free local quotient, cone computed by hand, cartesian property proved directly; 0.7 torsion-free quotients of F_can and F_ur including p = 2; 0.9 kernel, cokernel and exact sequence, with a worked Z_p example), checked them against SelmerIwasawaCohomology sections 2.22a, 2.23a and 2A.8 at the head of the revision the description names (that revision must merge first). Seeded sample: only 0.1 falls in changed text; its Mazur-Rubin 2016 locators verified; Mazur-Rubin 2004 Lemma 3.7.1 not legally readable. Automatic checks all pass; depcheck 0 problems; Suggested.lean elaborates with sorry warnings only and is unchanged. Two small corrections (description sentences; untouched slug pointers in Layers 0.8-0.9), one question for the author.",
+  "text": "b86045f399964184"
+ }
+}
