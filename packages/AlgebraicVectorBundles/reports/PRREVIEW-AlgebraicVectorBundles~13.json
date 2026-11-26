@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AlgebraicVectorBundles~13",
+  "head": "4aaba98a087f25bdef8256a90f1774fe862ce6ce",
+  "pr": 3170,
+  "folder": "AlgebraicVectorBundles",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 95 changed lines since 87e7f72. Checked: the previous review's finding (the §4.2 adjunction is now stated in Suggested.lean) and its corrections and notes, all repaired; the new §4.2, its two Checks and five Lean declarations, with an adversarial table of computed instances; the seeded sample where it falls in the change (§4.2: six Stacks locators read at the text, all supporting); Tau Ceti and Mathlib declarations opened at the pins; the layer record (four ids kept, Layer 4 retitled with its anchor); ownership against main and open heads; dependency check 0 problems; Suggested.lean elaborates with seven sorry warnings only; one-tactic probe closes neither new theorem. Automatic checks: two flags set aside as false positives (the kept anchor line; the pull request's own other folders). One small correction: the description is out of date for this folder.",
+  "text": "72b8c403b255ac27",
+  "carried": {
+   "from": "4aaba98a087f25bdef8256a90f1774fe862ce6ce",
+   "head": "93cef98aee4f2fc457a7986f15de24f5caf31c5d",
+   "findings": 1,
+   "lines": 2,
+   "folders": [
+    "AlgebraicVectorBundles"
+   ],
+   "corrections": true,
+   "onto": "af52fe5b624084b016ea29741bb721efa59f2413"
+  }
+ }
+}
