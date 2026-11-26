@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AmenableGroups~5",
+  "head": "dc6cd7c1058b1ad1e55056b1823de469e1782690",
+  "pr": 3170,
+  "folder": "AmenableGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 4,
+  "notes": "review of the change against main: 47 changed lines since 87e7f72. Checked the two new §7.6 statements (additivity and order of the functional-content correspondence) on degenerate measures, the two-point counting measure and nonmeasurable sets; the converse route against pinned continuity and indicator extensionality; the claim that pinned AddContent has no addition or order; elaboration (sorry warnings only), one-tactic probe (additivity closes by case split and simp: C01), dependency check (0 problems), automatic checks (all passed), the description's AmenableGroups bullet. The earlier small correction on the description's count is repaired. No source read: the change cites none and the seeded sample lies in untouched text.",
+  "text": "99b991a6d1a065fe",
+  "carried": {
+   "from": "dc6cd7c1058b1ad1e55056b1823de469e1782690",
+   "head": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+   "findings": 1,
+   "lines": 24,
+   "folders": [
+    "AmenableGroups"
+   ],
+   "corrections": true,
+   "onto": "4aaba98a087f25bdef8256a90f1774fe862ce6ce"
+  }
+ }
+}
