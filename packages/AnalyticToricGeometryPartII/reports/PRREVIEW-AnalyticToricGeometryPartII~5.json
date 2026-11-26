@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AnalyticToricGeometryPartII~5",
+  "head": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+  "pr": 3170,
+  "folder": "AnalyticToricGeometryPartII",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 45 changed lines since 87e7f72. Folder unchanged since the previous review's head. Checked the new section 0.7, its two Checks and two routes, the new Suggested.lean theorem (proved in a probe from three pinned lemmas; one-tactic probes fail; equivalent to T0Space of the orbit space), the added overview, scope and contract sentences, and the description. Seeded sample: no target lies in changed or affected text. Automatic checks all pass; elaboration gives the one sorry warning; depcheck 0 problems. Previous C01 and N01 not taken up, repeated; the two cited books could not be opened.",
+  "text": "f87a9c4596684726",
+  "carried": {
+   "from": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba",
+   "head": "9f0c6f9c11dccdaa2265a83411c026ba6b440092",
+   "findings": 1,
+   "lines": 9,
+   "folders": [
+    "AnalyticToricGeometryPartII"
+   ],
+   "corrections": true,
+   "onto": "a00cd0c779af6235bed801438a81c371524d5865"
+  }
+ }
+}
