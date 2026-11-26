@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DynamicalDegreesOfRationalMaps~6",
+  "head": "4aaba98a087f25bdef8256a90f1774fe862ce6ce",
+  "pr": 3170,
+  "folder": "DynamicalDegreesOfRationalMaps",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 0,
+  "notes": "review of the change against main: 1 changed lines since 87e7f72. Checked the added item of §1.1 (category of varieties with dominant K-rational maps, fully faithful function-field functor, essential image) by computed instances, against stacks-varieties Theorem 4.1 (lines 133-146) and against 13 pinned Mathlib and Tau Ceti declarations; of the seeded sample only §1.1 meets the change (stacks-morphisms line 6046, dinhsibony2005 lines 69-70 read), the rest lies in untouched text. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 18 sorry warnings only. Three small corrections (description says integral schemes; Needs line incomplete; Hartshorne citation narrower than the statement and not in References). Hartshorne not readable.",
+  "text": "72b8c403b255ac27",
+  "carried": {
+   "from": "4aaba98a087f25bdef8256a90f1774fe862ce6ce",
+   "head": "af52fe5b624084b016ea29741bb721efa59f2413",
+   "findings": 3,
+   "lines": 8,
+   "folders": [
+    "DynamicalDegreesOfRationalMaps"
+   ],
+   "corrections": true,
+   "onto": "f17d28cd84c43de1ff3e131c2a9d0826bc804dba"
+  }
+ }
+}
