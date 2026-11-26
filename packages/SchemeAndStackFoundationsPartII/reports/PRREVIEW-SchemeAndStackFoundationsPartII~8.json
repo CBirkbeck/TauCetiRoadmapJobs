@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SchemeAndStackFoundationsPartII~8",
+  "head": "7fca6d306a27354e5c6e2ab0e06074d427ec37ce",
+  "pr": 2272,
+  "folder": "SchemeAndStackFoundationsPartII",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 2 changed lines since e4fc200: the changed Conventions sentence checked against SchemeAndStackFoundations §2.9a at the head of its open revision (supported groups, values at Z empty and Z everything, long exact sequence) and PurityForFlatCohomology §3.2 at its open head, and against the README's lines that cite §2.9a; previous report had no finding, its two format notes carried; the seeded sample does not fall in the changed passage; automatic checks all pass, dependency check 0 problems, Suggested.lean elaborates with sorry as the only warning; title and description read against the head. Acceptance conditional on the twenty declared supplier gaps.",
+  "text": "6bf5ae1564f22214"
+ }
+}
