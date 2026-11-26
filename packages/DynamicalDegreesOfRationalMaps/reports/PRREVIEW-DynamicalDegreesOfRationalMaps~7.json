@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-DynamicalDegreesOfRationalMaps~7",
+  "head": "0c3be17dbfaad2e597c4349b4720ff970228eace",
+  "pr": 3170,
+  "folder": "DynamicalDegreesOfRationalMaps",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 8 changed lines since 4aaba98; the three small corrections of the previous review (description wording, Needs line, citation) are repaired; checked: stacks-varieties Theorem 4.1 (tag 0BXN) at lines 133-146, five library declarations at the pins with their line numbers, the title and description against the head, no change outside the pull request's own folders; automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates with 18 sorry warnings only (file unchanged).",
+  "text": "0256e2a6d5fa0e50"
+ }
+}
