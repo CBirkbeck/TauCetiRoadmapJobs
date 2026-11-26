@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LieGroups~14",
+  "head": "57376f9e5a4ab3c24791ba2195281d1bff0c1025",
+  "pr": 3170,
+  "folder": "RepresentationTheory/LieGroups",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "review of the change against main: 65 changed lines since 87e7f72. Checked the new §6.1 torus-lattice equivalence (statement, route, three Checks), its Lean full-faithfulness theorem (elaborated type, degenerate and hypothesis-dropping instances, one-tactic probe), the Layer 6 dependency line and the scope sentence against the pinned Tau Ceti and Mathlib declarations, and against §4.3. Seeded sample where it falls in the change: §4.3's kirillov2008 Thm 3.38 and Cors 3.49-3.50 were read; §6.1's Bröcker-tom Dieck locator is uncertified and was not read. Automatic checks: the worker's run passed every check; on my rerun the check for files outside the folder flagged the pull request's own fifteen other folders (false positive). lake env lean: 26 sorry warnings only. depcheck: 0 problems. Overlap: ConvexityToric T1's character duality is the case G' = Circle (C01). No finding; 3 small corrections (ConvexityToric boundary, missing locator, Lie-map step of the existence route); 2 format notes (supplier contracts, untouched References).",
+  "text": "72b8c403b255ac27"
+ }
+}
