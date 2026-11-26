@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GlobalGaloisDeformations~10",
+  "head": "a37cbe85a029d626b8ee0d6843d10bb46c22e7ee",
+  "pr": 3181,
+  "folder": "GlobalGaloisDeformations",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "review of the change against main: 50 changed lines since 13a2ad8. Checked: the four changed passages (Scope and ownership, Mathlib and Tau Ceti supplier contracts); 12 library declarations opened and #check-ed at the pins, with an elaborated probe of finrank and Submodule on continuousCohomology of ofDiscreteModule; agreement with ArithmeticGaloisDuality Conventions and D8.1 on main; Kisin Lemma (1.3.1) and Gee 3.11-3.12 re-read; the seeded sample lies outside the changed passages; automatic checks all passed, depcheck 0 problems, Suggested.lean elaborates with two sorry warnings only; adversarial table with computed values. One small correction: k-linearity of the class map also needs continuousCohomologyFunctor_linear.",
+  "text": "345f4bdb74ac4220"
+ }
+}
