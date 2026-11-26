@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpecialFunctionsJacobiElliptic~4",
+  "head": "1c67be06a724eb9841ea8c32c2c9048f77d7f85a",
+  "pr": 3075,
+  "folder": "SpecialFunctionsJacobiElliptic",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 12 changed lines since fb11859: the previous report had no finding; its small correction (4.4 sketch, the two roots k' at k^2 = 2) and its format note (rows of 3.4 at k = 0, k^2 = 1, in 4.4 and 4.5) are repaired. Recomputed in double precision via theta quotients: k1 and 1/k1 for the two roots, lambda(2 tau) = k1^2 and 1/k1^2 at two tau with the same lambda, equality only at k^2 = 2, the new Check at k = sqrt 2 (w values exact, residuals <= 6.3e-16), the k = 0 and k = 1 rows of 4.4 and 4.5. Seeded sample: 4.4 falls in the change; its locators are untouched. Automatic checks: one form hit set aside as a false positive (the section comment holding the #check lines); dependency check 0 problems; Suggested.lean elaborates with 33 sorry warnings only; no change outside the folder; pull request text agrees with the head. One format note (indentation of one line in 4.5).",
+  "text": "4125462b072294ef"
+ }
+}
