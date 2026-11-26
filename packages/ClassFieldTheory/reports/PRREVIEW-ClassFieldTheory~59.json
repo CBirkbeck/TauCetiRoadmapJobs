@@ -1,0 +1,27 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassFieldTheory~59",
+  "head": "4aaba98a087f25bdef8256a90f1774fe862ce6ce",
+  "pr": 3170,
+  "folder": "ClassFieldTheory",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "review of the change against main: 40 changed lines since 87e7f72. Checked the new 8.1 paragraph (Galois connection, insertion, closure equation, S3 Check, prime-to-p form) with computed instances and against the pinned Tau Ceti lemmas; 4 milne-cft locators; Suggested.lean elaborates with sorry warnings only; one-tactic probes and the README route on a scratch copy; dependency check 0 problems; automatic checks all pass (only the pull request's other named folders outside this one); ownership against 8 closest roadmaps; the pull request's text. The folder is unchanged since the previous review; its 4 small corrections and 2 format notes stand, none blocking.",
+  "text": "72b8c403b255ac27",
+  "carried": {
+   "from": "4aaba98a087f25bdef8256a90f1774fe862ce6ce",
+   "head": "ae3c1ba07d9f6c2a315690c8546e0ee7c6361430",
+   "findings": 4,
+   "lines": 28,
+   "folders": [
+    "ClassFieldTheory"
+   ],
+   "corrections": true,
+   "onto": "93cef98aee4f2fc457a7986f15de24f5caf31c5d"
+  }
+ }
+}
