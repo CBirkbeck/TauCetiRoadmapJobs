@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisDuality~16",
+  "head": "f9dd6d65bdad316caa7ee9e541a3765cac989636",
+  "pr": 3184,
+  "folder": "ArithmeticGaloisDuality",
+  "date": "2026-11-26",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "review of the change against main: 192 changed lines since 94e80af. Both new statements (uniform vanishing of cocycles of bounded exponent, R02.4.4; cochain tensor comparison for profinite groups, D7.3) proved again and all eight Checks recomputed; the revised Nakamura paragraph and all new Needs edges resolved; Nekovar 3.4.1 and 3.4.4 and Milne ADT Lemmas 4.1 and 4.9 read at their locators; of the seeded sample one target is cited by the change and was checked, fourteen lie in untouched unaffected text; NSW VIII not readable. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with 12 sorry warnings only and is unchanged. One small correction (description sentence) and one format note (missing locator), none blocking.",
+  "text": "2a8d6e0bfaec0eff",
+  "carried": {
+   "from": "f9dd6d65bdad316caa7ee9e541a3765cac989636",
+   "head": "f9dd6d65bdad316caa7ee9e541a3765cac989636",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
