@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-BelyiMaps~10",
+  "head": "57376f9e5a4ab3c24791ba2195281d1bff0c1025",
+  "pr": 3170,
+  "folder": "BelyiMaps",
+  "date": "2026-11-26",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 7,
+  "format_notes": 3,
+  "notes": "review of the change against main: 71 changed lines since 87e7f72. Checked the new 2.4 equivalence of ribbon graphs with finite FreeGroup (Fin 2)-sets (faithful, full, essentially surjective, both Checks recomputed against the pinned Tau Ceti), the new 6.2 induction item (hom-equivalence and the three Checks recomputed), and the new Lean target isRightAdjoint_res_subtype: the one-tactic probe fails, but a nine-line Mathlib proof by left Kan extension closes it without the balanced product, so the Lean statement is weaker than the README claims (R01, P2). The seeded sample was checked where it falls in the change (four targets); the earlier review's open points in untouched text were rechecked and carried as six small corrections and one format note. Suggested.lean elaborates with two sorry warnings only; dependency check 122 roadmaps, 1389 edges, 0 problems; the gate's out-of-folder failures are the pull request's own sibling folders (false positives); no layer, item or id removed; ownership checked against eight neighbouring roadmaps.",
+  "text": "99b991a6d1a065fe"
+ }
+}
