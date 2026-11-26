@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PairsOfFramesAtOnePlace~1",
+  "head": "f612a555de49ebce151b1655f5085b3d06c4ae02",
+  "pr": 3160,
+  "folder": "ShortGRH/PairsOfFramesAtOnePlace",
+  "date": "2026-11-26",
+  "findings": 7,
+  "blocking": 7,
+  "corrections": 7,
+  "format_notes": 2,
+  "notes": "Seeded sample of 15 sections (2.1, 2.2, 2.5, 3.1, 3.2, 4.2, 5.2, 5.3, 5.4, 6.1, 6.3, 8.1, 8.2, 8.4, 8.6) checked against [ShortProof] (grh-lean 72fead10, Apache-2.0) at the cited files and declarations, plus 1.2, 4.3 and 7.x; all 267 cited source declarations resolve in their files. Automatic checks: one real failure (no Suggested.lean, R05); dependency check 0 problems but blind to the sibling suppliers, which are in no merge order (R04). No Lean file, so nothing elaborated. Wording compared mechanically with the docstrings of 31 source files (45 runs of 12+ words; R06); contents compared with the source's CONTENTS.md (R07). Published works in the Origin lines not read (no locators, no open copies).",
+  "text": "6dc5cf641e5f0649"
+ }
+}
