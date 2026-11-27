@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ApproximationSpaces~2",
+  "head": "c9ff56f9abf7f9bc0f0f16bd1d0420bf5da017c9",
+  "pr": 3203,
+  "folder": "ApproximationSpaces",
+  "date": "2026-11-27",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "Full review. Sample: milestones A1-A4 and B1-B3, 'This roadmap owns', 'Owned elsewhere and consumed here'; every statement recomputed on degenerate cases (table in the report). Sources read at their locators: DeVore-Popov 1988 (Theorem 5.1, Corollary 5.3, section 5, Theorem 7.1), Kerkyacharian-Petrushev (Proposition 6.14, arXiv v2), Day 1940; Pietsch 1981, DeVore 1998, Bergh-Lofstrom, Holmstedt 1970, Kalton-Peck-Roberts, Ditzian-Prymak and LNM 1302 could not be read legally. Library: 15 declarations opened at the pins, 13 Mathlib names resolved with #check; the Tau Ceti K-method declarations cited are absent at the pin (small correction). Suggested.lean elaborates with sorry as the only warning (11 theorems, 3 definitions with sorry proof fields: finding); one-tactic probe closes none of the 11 theorems. Dependency check: 0 problems, no UPWARD or CYCLE. Automatic checks: the sorry-in-definition check is real (R02); the undeclared-name check is a format note (N01); the TeX check is a false positive (formula inside a two-line code span).",
+  "text": "ef4b1e3b3a1a919a"
+ }
+}
