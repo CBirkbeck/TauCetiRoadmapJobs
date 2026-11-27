@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisDuality~20",
+  "head": "4ea5e62492a6be5902c23413b2b22ed56a6dd1bd",
+  "pr": 3184,
+  "folder": "ArithmeticGaloisDuality",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 4ea5e62; this round read the pull request's title and description against the head and the 261-line diff from main: every sentence checked, one out of date (C01: the SelmerIwasawaCohomology revision citing D7.3 is open, not to follow); previous C01 repaired, N01 and N02 carried. Citations of the description resolved (ShortGRH/SelmerBoundsForAnticyclotomicTwists 2.1 on main, SelmerIwasawaCohomology 2.23a at its open revision, PerfectoidTowers P9.0 on main). Adversarial rows computed for the two statements the description cites (C4 with m = 2; C2 over F2[eps]/(eps^2)). Seeded sample: no target in a changed passage. Automatic checks all pass; depcheck 0 problems; Suggested.lean elaborates with 12 sorry warnings only.",
+  "text": "f02f04831fbe1c8f",
+  "carried": {
+   "from": "4ea5e62492a6be5902c23413b2b22ed56a6dd1bd",
+   "head": "4ea5e62492a6be5902c23413b2b22ed56a6dd1bd",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
