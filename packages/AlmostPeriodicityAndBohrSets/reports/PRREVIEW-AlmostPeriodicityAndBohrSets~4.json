@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AlmostPeriodicityAndBohrSets~4",
+  "head": "5b8ff517bfb8912ad116d35e0bdee8df48e29cb6",
+  "pr": 3191,
+  "folder": "AlmostPeriodicityAndBohrSets",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 8 changed lines since 2e0cc0a: the rewritten step 1 of the proof of 5.5 (W = -A, K <= 2/alpha) recomputed against 2.1-2.3 (value 1 at 0, support in 2A - 2A, k = O(L^3), measure of T e^{-O(L^4)}); previous C01 repaired; seeded sample checked where it falls in the change (5.5, with 2.2 and 2.3 as cited); no source reopened; automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with 20 sorry warnings only; pull request text agrees with the head; no change outside the folder",
+  "text": "ff4bb7b5db172f92"
+ }
+}
