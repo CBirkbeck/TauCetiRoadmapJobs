@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CongruencesOfTwistedThetaLifts~9",
+  "head": "96d24f3cd71e40933cbccc1f02a50f3d12a4ca1e",
+  "pr": 3182,
+  "folder": "ShortGRH/CongruencesOfTwistedThetaLifts",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "incremental re-review of 0 changed lines since 958132c. Checked: the title and description sentence by sentence against the diff of the four folders and the umbrella files against main (accurate for this folder; C01: two changes to other folders unstated); IdelicReciprocityCountsAndCyclotomicClassGroups §1.1 at this head, which the Conventions cite (items 1, 2, 4 and the changed comparison paragraph), with computed rows; pinned Tau Ceti declarations named by the description. The seeded sample lies in untouched text and was not reread. Dependency check: 0 problems, no UPWARD or CYCLE. Suggested.lean elaborates, exit 0, no message (no declarations). The outside-folder check flagged the two generated umbrella files, set aside: the generator reports them in sync. Previous report had no finding; its two format notes are carried as N01, N02.",
+  "text": "512c3d38d77ba72d"
+ }
+}
