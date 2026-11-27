@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EulerSystemsAndKolyvaginSystems~13",
+  "head": "c6c0accb945ce6be6fffd1fb6bb737015a8cf774",
+  "pr": 3188,
+  "folder": "EulerSystemsAndKolyvaginSystems",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 62 changed lines since 10ffe54 (README only, citations of Mazur-Rubin 2004 and 2016). Checked: every changed citation of the 2016 paper against arXiv v1 at its locator (14 items, pages, hypotheses p>2, p>3, F cartesian, attribution to the proof of Lemma 5.2); the prime-selection citation against BSS II Remark 6.19; the Layer 0.10 (a) hypotheses line against the statement and against MR16 Corollary 5.8 and Proposition 5.9 on three instances; the pull request title and description against the diff. The changed citations of the 2004 memoir could not be read legally (listed under Not verifiable). No seeded-sample target lies in a changed passage. Automatic checks all pass; dependency check 0 problems; Suggested.lean unchanged, elaborates with two sorry warnings only. Previous report had no finding; its format note is carried.",
+  "text": "700737c303f96a39"
+ }
+}
