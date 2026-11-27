@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ApproximationSpaces~4",
+  "head": "bf314fd9225b2518087e57da63ae0235e7405df0",
+  "pr": 3203,
+  "folder": "ApproximationSpaces",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 3,
+  "notes": "incremental re-review of 119 changed lines since c9ff56f. Checked: the three previous findings (R01 linear iota and homogeneous modulus, R02 no sorry in definitions, R03 AS-A13 and AS-B07 stated), all repaired; the two new Lean statements recomputed on degenerate instances (rows with values in the report); Kerkyacharian-Petrushev Proposition 6.14 read at its locator for the added qualification r < infinity; PDE 7.1-7.2 and NoncommutativeIntegration 2.2, 2.4 resolved on main; dependency check 0 problems; Suggested.lean elaborates with 13 sorry warnings on theorems only, #print axioms of the two repaired definitions clean; one-tactic probe on the two new theorems closes neither. Automatic checks: the TeX scan (an indented code block) and the own-name scan (three names the Provenance section attributes to the external repository) set aside as false positives. Three small corrections and three format notes carried from the previous review.",
+  "text": "ef4b1e3b3a1a919a"
+ }
+}
