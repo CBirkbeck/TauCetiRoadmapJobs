@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MatrixFactorizationsAndSparseElimination~1",
+  "head": "2d712c561d75a4520ba11b2a29c8184c6a7036ec",
+  "pr": 3235,
+  "folder": "MatrixFactorizationsAndSparseElimination",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 4,
+  "notes": "Full review. All seeded targets (1.1, 2.1, 2.2, 3.1, 4.2-4.5, 5.1, 5.2, 6.1, 6.2, 7.1-7.3) and every other headline recomputed on degenerate and random instances (12,000 pivoting runs, exhaustive 80,294 dominant matrices, 3,000 graphs, 9,000 reorderings, 3,830 sparse factorizations); every README Check recomputed. Suggested.lean elaborates at the pins with sorry as the only warning; 76 signatures compared; one-tactic probe on all 44 sorried theorems (none closes; one is three steps from a Mathlib lemma). Dependency check: 0 problems. Supplier citations resolved on main; duplication searched by object in Mathlib, Tau Ceti and all roadmaps. No cited source could be read legally: 0 of 64 locators verified, wording and arrangement not compared (reported to the human reviewers). Two automatic checks set aside as false positives.",
+  "text": "f721f55b653a97fc"
+ }
+}
