@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ClassicalApproximationSpaces~1",
+  "head": "c9ff56f9abf7f9bc0f0f16bd1d0420bf5da017c9",
+  "pr": 3203,
+  "folder": "ClassicalApproximationSpaces",
+  "date": "2026-11-27",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. Sample: all eleven milestones (A1-E3), 'This roadmap owns' and 'Owned elsewhere and consumed here', with a computed adversarial row for each and for the headline theorems. Findings: R01 (P1) the Lean subadditivity of the modulus is false without measurability (Bernstein-set instance); R02 (P2) torusTrigScheme has five sorry'd fields (proofs supplied, elaborated against the head); R03 (P2) CA-C08 lacks s > 0 and fails at s = 0. Sources read at their locators: Kolomoitsev-Tikhonov 2020 and arXiv:1711.08163, Nguyen-Sickel, Oswald 2018 and 2021 (19 locators); DeVore-Popov 1988 and the books and older papers were not readable from a permitted host. Suggested.lean elaborates with sorry warnings only; #check on all 16 declarations; one-tactic probe closes none of the eight theorems. Dependency check: 0 problems, no UPWARD or CYCLE. Duplication searched in the pinned Mathlib and Tau Ceti, on main and at the open heads: none. 18 Tau Ceti names cited in the README are absent at the pin (small correction C01). Automatic checks: the sorry-in-definition check is real (R02); the import check is real and form (N01); the TeX check is a false positive (multi-line code span).",
+  "text": "ef4b1e3b3a1a919a"
+ }
+}

@@ -1,0 +1,93 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "ClassicalApproximationSpaces"
+
+[[source]]
+id = "KolomoitsevTikhonov2020"
+authors = "Yurii Kolomoitsev, Sergey Tikhonov"
+title = "Properties of moduli of smoothness in $L_p(\\mathbb{R}^d)$"
+year = 2019
+arxiv = "1907.12788v3"
+locator_scheme = "theorem"
+locator = "Property 7"
+url = "https://arxiv.org/abs/1907.12788v3"
+fetched_from = "https://arxiv.org/pdf/1907.12788v3"
+fetched_at = "2026-11-27T03:00:01Z"
+sha256 = "74aa83d59818a8cc1fbea03e44594ad0528f65c909ee5b26afb521fa1abcc640"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-27"
+version_note = "arXiv v3"
+cited_for = ["CA-A05"]
+
+[[source]]
+id = "KolomoitsevTikhonov2017"
+authors = "Yurii Kolomoitsev, Sergey Tikhonov"
+title = "Hardy-Littlewood and Ulyanov inequalities"
+year = 2017
+arxiv = "1711.08163v1"
+locator_scheme = "theorem"
+locator = "Proposition 4.2"
+url = "https://arxiv.org/abs/1711.08163v1"
+fetched_from = "https://arxiv.org/pdf/1711.08163v1"
+fetched_at = "2026-11-27T03:00:12Z"
+sha256 = "2566b3e6372264dca99d439ffc4917b6071fde232cbb68aaf3d698b78edd7a5d"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-27"
+version_note = "arXiv v1"
+cited_for = ["CA-C05"]
+
+[[source]]
+id = "Oswald2018"
+authors = "Peter Oswald"
+title = "Haar system as Schauder basis in Besov spaces: The limiting cases for 0 < p <= 1"
+year = 2018
+arxiv = "1808.08156v1"
+locator_scheme = "theorem"
+locator = "Theorem 1"
+url = "https://arxiv.org/abs/1808.08156v1"
+fetched_from = "https://arxiv.org/pdf/1808.08156v1"
+fetched_at = "2026-11-27T03:00:19Z"
+sha256 = "af09ec39576260a3c28cb7f4e619244db65b4648191990a0d9ec0487ae74a045"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-27"
+version_note = "arXiv v1"
+cited_for = ["CA-E07"]
+
+[[source]]
+id = "Oswald2021"
+authors = "Peter Oswald"
+title = "Multivariate Haar systems in Besov function spaces"
+year = 2020
+doi = "10.1070/SM9398"
+arxiv = "2002.12917v1"
+locator_scheme = "theorem"
+locator = "Theorem 3.1"
+url = "https://arxiv.org/abs/2002.12917v1"
+fetched_from = "https://arxiv.org/pdf/2002.12917v1"
+fetched_at = "2026-11-27T03:00:28Z"
+sha256 = "3be6496a629aa69f35c6d31e88c5d42a72bfd4fa5b3081b867b8de3ad837d27f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-27"
+version_note = "arXiv v1"
+cited_for = ["CA-E13"]
+
+[[source]]
+id = "NguyenSickel2017"
+authors = "Van Kien Nguyen, Winfried Sickel"
+title = "On a Problem of Jaak Peetre Concerning Pointwise Multipliers of Besov Spaces"
+year = 2017
+arxiv = "1703.03246v1"
+locator_scheme = "theorem"
+locator = "Proposition 2.4"
+url = "https://arxiv.org/abs/1703.03246v1"
+fetched_from = "https://arxiv.org/pdf/1703.03246v1"
+fetched_at = "2026-11-27T03:00:34Z"
+sha256 = "1cc32ba261370504c9216411b3976806fec999c97cca37f638998198a266a07a"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-27"
+version_note = "arXiv v1"
+cited_for = ["CA-B09"]
