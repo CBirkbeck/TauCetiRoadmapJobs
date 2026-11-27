@@ -1,0 +1,17 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "MetrizationTheorems"
+
+[[source]]
+id = "Dydak"
+arxiv = "math/0210379v2"
+locator_scheme = "theorem"
+locator = "Corollary 5.5"
+url = "https://arxiv.org/abs/math/0210379v2"
+fetched_from = "https://arxiv.org/pdf/math/0210379v2"
+fetched_at = "2026-11-27T06:17:17Z"
+sha256 = "0cbb5a8d1d2784bd7d0e50392eb3d1887508cc590ea5d5a196c0ba8727f75319"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-27"
+version_note = "arXiv v2"
+cited_for = ["1.2"]
