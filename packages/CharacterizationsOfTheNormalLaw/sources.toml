@@ -1,0 +1,38 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "CharacterizationsOfTheNormalLaw"
+
+[[source]]
+id = "GerMisiewiczWesolowski2012"
+authors = "Roman Ger, Jolanta Misiewicz, Jacek Wesolowski"
+title = "The Lukacs theorem and the Olkin-Baker equation"
+year = 2011
+arxiv = "1112.1226v2"
+locator_scheme = "section"
+locator = "§1, p. 1"
+url = "https://arxiv.org/abs/1112.1226v2"
+fetched_from = "https://arxiv.org/pdf/1112.1226v2"
+fetched_at = "2026-11-27T01:18:21Z"
+sha256 = "4b7e395d301a14dd2d292780ef5a6a005d027ec29063f714dbfbe45c79b13c3e"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-27"
+version_note = "arXiv v2"
+cited_for = ["5.2"]
+
+[[source]]
+id = "Bryc1995"
+authors = "W. Bryc"
+title = "The Normal Distribution"
+year = 1995
+venue = "Lecture Notes in Statistics"
+doi = "10.1007/978-1-4612-2560-7"
+locator_scheme = "theorem"
+locator = "Theorem 2.5.2"
+url = "https://homepages.uc.edu/~brycwz/probab/charakt/charakt.pdf"
+fetched_from = "https://homepages.uc.edu/~brycwz/probab/charakt/charakt.pdf"
+fetched_at = "2026-11-27T01:18:48Z"
+sha256 = "1a4e3135a9b99766d9f6a040ad96e7eaee9fd5b5c75076cfd7d0f3f668b9094f"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-27"
+cited_for = ["1.1"]

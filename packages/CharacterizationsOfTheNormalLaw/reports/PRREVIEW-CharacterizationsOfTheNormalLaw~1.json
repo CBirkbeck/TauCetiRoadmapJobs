@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CharacterizationsOfTheNormalLaw~1",
+  "head": "e2bebaffb138a031dd63f966652cb2284e7b052a",
+  "pr": 3197,
+  "folder": "CharacterizationsOfTheNormalLaw",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample: all eleven targets 1.1-5.2 checked against Bryc (author's page, revised 2008) and Ger-Misiewicz-Wesolowski arXiv:1112.1226v2; 12 locators read, all match. Adversarial table computed for all eleven statements. 34 cited library declarations resolved at the pins; 2 roadmap citations resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only. Padding decided by reading, not by a one-tactic run.",
+  "text": "7d873ebd697abd1b"
+ }
+}
