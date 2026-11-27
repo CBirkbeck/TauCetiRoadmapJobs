@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EllipticCurves~7",
+  "head": "bd50e0d56cfb69575f23cbe3e792afa62c5958cf",
+  "pr": 3181,
+  "folder": "EllipticCurves",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 24 changed lines since a37cbe8. Checked: previous R01 (repaired in README 1364-1366 and Suggested.lean 1011-1012), C01 and N01 repaired, C02, C03, N02 carried as non-blocking; the ProfiniteCohomology citation (Layers 4, 10, sections 9.4, 5.4) resolved on main and at the pinned Tau Ceti; Mathlib authors read at the pin; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only (50); pull-request text agrees with the head; no seeded-sample target falls in the changed text; no source cited by the changed passages.",
+  "text": "629126070ca80780"
+ }
+}
