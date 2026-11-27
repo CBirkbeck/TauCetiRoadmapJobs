@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticRamseyTheory~1",
+  "head": "131ee1a4b88907e5e49f5847864543f3cfdd7fd5",
+  "pr": 3218,
+  "folder": "ArithmeticRamseyTheory",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 5,
+  "format_notes": 3,
+  "notes": "Full review. All 22 source locators checked against the texts (19 Chua notes, 3 Sanders arXiv:1712.03620), covering the whole seeded sample; Alweiss claim checked. Adversarial pass over every statement with degenerate cases; numerical Checks recomputed by exhaustive search (vdW(3,2)=9, row-mono (2,1,1)=9, Folkman 2 colours=9, Schur=5, mpc(2,1,1)=17). Suggested.lean elaborates with sorry warnings only; one-tactic probe closes nothing. Dependency check: 0 problems. Automatic checks: one form failure (undeclared names in code font), kept as a format note. Not verifiable: GRS, Rado, Deuber, Brauer, van der Waerden (no locators given); openai/math provenance file not readable.",
+  "text": "8edaa319728bcc75"
+ }
+}
