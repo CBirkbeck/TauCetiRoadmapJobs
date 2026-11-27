@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ShotNoiseAndCampbellTheorem~1",
+  "head": "313730ad7125d615eab9bcf8ab4b0d48137dd732",
+  "pr": 3204,
+  "folder": "ShotNoiseAndCampbellTheorem",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "Full review. Sample: all eleven seeded targets (1.1-1.5, 2.1-2.3, 3.1, 3.2, 4.1); 11 source locators read at the text (Last-Penrose authors' version, ten results, pages as cited; Popov arXiv:2406.03517v2 p. 3). Adversarial table of 15 rows with computed values. 20 library declarations opened at the pins. Suggested.lean elaborates with sorry as the only warning; elaborated types compared with the README for all 15 declarations; simp and rfl fail on all 10 theorems. Dependency check: 0 problems; no change outside the folder. Automatic checks: one hit (the Scope paragraph names PointProcesses) set aside as a false positive, since it is a boundary statement and not a supplier citation. Three items for the human reviewers (overlap in subject with the open PointProcesses roadmap; status of the two sources).",
+  "text": "074b80f23d89f9a7"
+ }
+}
