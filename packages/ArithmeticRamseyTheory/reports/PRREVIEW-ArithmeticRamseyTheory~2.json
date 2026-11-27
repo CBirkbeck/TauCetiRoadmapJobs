@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticRamseyTheory~2",
+  "head": "790347877f3d57f0f556ef43eeb512272496b81f",
+  "pr": 3218,
+  "folder": "ArithmeticRamseyTheory",
+  "date": "2026-11-27",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 46 changed lines since 131ee1a. Checked: each of the previous report's five small corrections and three format notes against this head (C01, C02, C04, C05, N03 repaired; C03 repaired in the statement but its added clause is false at k = 0, raised as R01; N01, N02 partly repaired, kept as format notes); the five changed or new Lean statements at their degenerate cases (k = 0, 1; no columns; empty and infinite colour types; Schur's matrix); elaboration of Suggested.lean (34 sorry warnings only); one-tactic probe of the five statements (none closes); dependency check (0 problems, no UPWARD or CYCLE); title and description against the head (no contradiction); no change outside the folder. The seeded sample falls in the changed passages only at 3.4 and 5.3, whose locators are unchanged. One automatic check failed (undeclared names in code font), real, a format note.",
+  "text": "8edaa319728bcc75"
+ }
+}
