@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-AlmostPeriodicityAndBohrSets~3",
+  "head": "2e0cc0ab20935e48a94a7bc0a6aaec11af1b82d5",
+  "pr": 3191,
+  "folder": "AlmostPeriodicityAndBohrSets",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 0,
+  "notes": "incremental re-review of 40 changed lines since 4d9521e. Checked: the previous R01 (1 ≤ s added, elaborated type compared with README 7.3), C01-C03 and N01-N02, all repaired; one residual slip in the rewritten step 1 of 5.5 (W = A for W = -A) raised as a small correction. New Lean statement exists_isAlmostPeriodic_add checked against 10.5 with instances and a one-tactic probe. Seeded sample where it falls in the diff: 1.1 (Sanders2013 Theorems 7.2, 7.3), 4.2 Check recomputed, 7.3 (Sanders2012 Lemma 11.2). Automatic checks all passed; depcheck 0 problems, no UPWARD or CYCLE; Suggested.lean elaborates with 20 sorry warnings only; no change outside the folder; pull request text consistent with the head.",
+  "text": "ff4bb7b5db172f92"
+ }
+}
