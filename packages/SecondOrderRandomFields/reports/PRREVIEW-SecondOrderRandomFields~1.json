@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SecondOrderRandomFields~1",
+  "head": "a3b63cc3904d030eb00953835867fef1f360dcd7",
+  "pr": 3226,
+  "folder": "SecondOrderRandomFields",
+  "date": "2026-11-27",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. Every statement of Suggested.lean read against the README and tested on instances (24-row table); over 30 Check values recomputed, one false (R01). Sources: only Gneiting (2013) legally readable (arXiv v5), 14 locators checked, four source issues recorded; the ten other sources are paywalled and their locators unverified. Suppliers: 16 cited sections resolved on main and at the open heads, three local copies verbatim, dependency check 0 problems. Ownership: overlap with PowerSpectraAndWienerKhinchin (open), MathematicalStatisticsFoundations 9.6 and InfinitelyDivisibleLawsAndTriangularArrays 3.2 (main) not stated in the scope (R02). Elaboration passes with sorry the only warning; one-tactic probe closes none of the 75 targets. Automatic checks: the lemma keyword is a format note; the heading over #check lines set aside as a false positive.",
+  "text": "4028f0497caf162f"
+ }
+}
