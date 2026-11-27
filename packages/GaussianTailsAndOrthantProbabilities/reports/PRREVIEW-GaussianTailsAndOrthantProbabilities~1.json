@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GaussianTailsAndOrthantProbabilities~1",
+  "head": "1c5d8453980d93feb1824641b530af776e34ad48",
+  "pr": 3194,
+  "folder": "GaussianTailsAndOrthantProbabilities",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All ten sampled targets (1.0-1.2, 2.0-2.6) recomputed by hand and numerically (quadrature, finite differences, simulation), including the singular and non-unit-diagonal instances of 2.5, n = 0 of 2.6 and the junk-value cases at rho = 1 and rho = 2. Locators read in Duembgen arXiv:1012.2063v3, Koch-Lapidoth arXiv:1008.5393v2, Meyer arXiv:0912.2816v1, DLMF 7.8 and Gasull-Utzet arXiv:1307.3433v1 (the README's own preprint address is on an unclassified host). 23 library declarations opened at the pins; 6 cross-roadmap citations resolved on main; no duplicate owner on main or in open pull requests (GaussianComparisonInequalities, StochasticOrders read). Dependency check: 0 problems. Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none of the 8 theorems. Automatic checks all passed. One small correction (Gasull-Utzet 'Section 5' is item 5 of Subsection 3.4 in the arXiv version), two format notes.",
+  "text": "ecf6a97879b975e2"
+ }
+}
