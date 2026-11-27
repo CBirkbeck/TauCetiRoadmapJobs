@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ApproximationSpaces~3",
+  "head": "8f70654386b63e523f05edf3ee42004859393947",
+  "pr": 3202,
+  "folder": "ApproximationSpaces",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 119 changed lines since 9e69b58. Checked: the ten previous remarks (R01-R03, C01-C03, N01, N02, N04 repaired; N03 carried as a format note); the changed README passages (AS-A09, AS-A16, AS-B01, AS-B02, AS-B03, AS-B10, Provenance, scope, Tau Ceti contract) and the changed Lean (lpQuasiENorm, approxSpace, embeddingCouple, the new AS-A13 and AS-B07 theorems) with computed instances; elaboration of Suggested.lean (sorry on 13 theorems the only warnings, none in a definition); one-tactic probe on the two new theorems (none closes); dependency check 0 problems; PDE 7.1-7.2 and NoncommutativeIntegration 2.2, 2.4 resolved on main; Tau Ceti CompatibleCouple names absent at the pin as the README now states. Two automatic checks set aside as false positives (TeX scanner inside an indented code block; repository names in the Provenance section). Sources unreadable as in the previous review (Pietsch 1981, DeVore-Popov 1988, Holmstedt 1970).",
+  "text": "ce44480e97752acf"
+ }
+}
