@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DeterminantalPointProcesses~1",
+  "head": "1dcedf133fab9254b65e617c14d812549483c064",
+  "pr": 3230,
+  "folder": "DeterminantalPointProcesses",
+  "date": "2026-11-27",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 8,
+  "format_notes": 4,
+  "notes": "Full review. Sample: 1.1, 1.3, 1.4, 2.1, 2.2, 3.1, 3.2, 3.3, 4.1, 4.2, 4.3, 5.1, 6.1, 7.1, 7.3, with every statement computed in the adversarial table. Sources: 23 BBK locators read in hal-02460214v2 (4 wrong, C03); LMR read in arXiv:1205.4818v5 only (numbering differs, C08); HKPV not readable legally (Not verifiable). Automatic checks: targeted build passes with 40 sorry warnings and no error; dependency check 0 problems; TeX-syntax hits kept as a format note; the dropped-name hits set aside as file paths of an external repository; all 31 local copies agree with the suppliers at their open heads. Findings: missing measurability in exists_ae_eq_spectralForm (R01), wrong carrier in 3.3 (R02), a false Check in 3.1 (R03), a false sentence in 2.3 (R04).",
+  "text": "f9701347072cf83a"
+ }
+}
