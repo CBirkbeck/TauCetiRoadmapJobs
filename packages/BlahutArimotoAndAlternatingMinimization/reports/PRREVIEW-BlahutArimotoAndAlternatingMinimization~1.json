@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-BlahutArimotoAndAlternatingMinimization~1",
+  "head": "b80a27c7ee054e2e07e70c2a9ded2062976af1f3",
+  "pr": 3222,
+  "folder": "BlahutArimotoAndAlternatingMinimization",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "Full review. All 14 sampled targets and all 11 headline theorems recomputed (statements, routes, every Check and counterexample); adversarial table with values in the report. 13 of 20 source locators checked against Csiszar-Shields, Nakagawa-Takei-Hara and Fasoulakis-Varsos-Traganitis; the 7 locators into Polyanskiy-Wu could not be read legally and are listed as not verifiable. 15 Mathlib and 5 Tau Ceti declarations opened at the pins; ChannelCoding's definitions compared at its open head (identical). Suggested.lean elaborates with sorry as the only warning; simp and rfl close none of the 11 theorems. Dependency check: 0 problems. The worker's automatic checks all passed; none set aside.",
+  "text": "507c72ff0cec653c"
+ }
+}
