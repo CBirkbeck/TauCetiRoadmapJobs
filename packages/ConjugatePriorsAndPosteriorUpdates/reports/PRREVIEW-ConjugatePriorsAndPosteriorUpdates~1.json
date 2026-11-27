@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ConjugatePriorsAndPosteriorUpdates~1",
+  "head": "2eea20c1f8c021752b54d886d530276f04a65c3b",
+  "pr": 3201,
+  "folder": "ConjugatePriorsAndPosteriorUpdates",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample 1.1-1.5 and 2.1-2.6: every statement recomputed on degenerate and numerical instances (adversarial table in the report). Source locators: Gelman et al. (4) and Murphy 2007 (3) verified against the text; Diaconis-Ylvisaker 1979 (all Layer 2 locators) not readable from a legal place and requested, listed under Not verifiable and flagged to the human reviewers. 28 Mathlib and 18 Tau Ceti declarations opened at the pins; 8 cross-roadmap citations resolved on main; dependency check 0 problems; automatic checks all passed; Suggested.lean elaborates with ten sorry warnings only; one-tactic probe closes none of the ten theorems; pull request text agrees with the head.",
+  "text": "de0522e3254ecf9b"
+ }
+}
