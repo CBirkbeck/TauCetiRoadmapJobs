@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RandomTelegraphProcess~1",
+  "head": "d4f7455426bc5a6f4885d94feab5575e5b59c361",
+  "pr": 3206,
+  "folder": "RandomTelegraphProcess",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. All nine sampled targets recomputed by hand (matrix exponential, Laplace transform of the alternating process, both moments, atoms and density on {N_t=1}, first-switch equation, first-order system, telegraph equation for f=y^2, characteristic function and its initial values, diffusive limit, every negative-control Check). Kolesnik arXiv:1402.6866v1 and Iacus-Yoshida arXiv:math/0612784v1 read at every cited locator; Durrett's text could not be read through the sources service (two attribution locators not verified, text requested). 23 library declarations opened at the pins; 3 cross-roadmap citations resolved on main; dependency check 0 problems; Suggested.lean elaborates with 9 sorry warnings only; one-tactic probe closes none of the 9 theorems; the worker's automatic checks all passed. No duplication with Mathlib, Tau Ceti, main or open roadmaps.",
+  "text": "3302d6014d06d551"
+ }
+}
