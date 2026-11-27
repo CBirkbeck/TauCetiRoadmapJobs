@@ -1,0 +1,39 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "RandomTelegraphProcess"
+
+[[source]]
+id = "Kolesnik2014"
+authors = "Alexander D. Kolesnik"
+title = "The explicit probability distribution of the sum of two telegraph processes"
+year = 2014
+venue = "Stochastics and Dynamics, 2015, vol. 15, no. 2, ID 1550013, 32 pp"
+arxiv = "1402.6866v1"
+locator_scheme = "equation"
+locator = "(2.1)-(2.5), (2.12)"
+url = "https://arxiv.org/abs/1402.6866v1"
+fetched_from = "https://arxiv.org/pdf/1402.6866v1"
+fetched_at = "2026-11-27T03:25:44Z"
+sha256 = "53892dc0c952f428dc00de6a5a87bec5f31957774086f9ff77464197cfbbf639"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-27"
+version_note = "arXiv v1"
+cited_for = ["2.3, 3.3, 3.4, 3.5"]
+
+[[source]]
+id = "IacusYoshida2006"
+authors = "stefano m. iacus, nakahiro yoshida"
+title = "Estimation for the discretely observed telegraph process"
+year = 2006
+arxiv = "math/0612784v1"
+locator_scheme = "equation"
+locator = "(2.1), (2.2)"
+url = "https://arxiv.org/abs/math/0612784v1"
+fetched_from = "https://arxiv.org/pdf/math/0612784v1"
+fetched_at = "2026-11-27T03:25:50Z"
+sha256 = "04d20a5305864f1ab8f88dd2e280b355de4c641250207a1ddbed2da947236c36"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-27"
+version_note = "arXiv v1"
+cited_for = ["2.2"]
