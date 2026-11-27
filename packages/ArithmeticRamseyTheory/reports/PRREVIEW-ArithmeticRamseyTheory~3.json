@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticRamseyTheory~3",
+  "head": "d950df06721030acaab835919c8c4153a83e8066",
+  "pr": 3218,
+  "folder": "ArithmeticRamseyTheory",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 2 changed lines since 7903478: the previous finding R01 (the clause of 3.4 on the Brauer bound) is repaired, the clause now reads 'for every k >= 1' and was computed at k = 0, 1 and general k; the Lean statement exists_mono_ap_and_diff is unchanged and agrees with the README; Suggested.lean elaborates with 34 sorry warnings only; dependency check 0 problems, no UPWARD or CYCLE; one automatic check failed (five undeclared names in code font), real and form only (format note N01); pull request text agrees with the head; no change outside the folder; of the seeded sample only 3.4 falls in the changed passage and its locator (Chua p. 27) could not be read again at this round (listed under Not verifiable); two format notes carried, four points for the human reviewers stand.",
+  "text": "8edaa319728bcc75"
+ }
+}
