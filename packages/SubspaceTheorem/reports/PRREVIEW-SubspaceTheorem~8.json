@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SubspaceTheorem~8",
+  "head": "96d24f3cd71e40933cbccc1f02a50f3d12a4ca1e",
+  "pr": 3182,
+  "folder": "SubspaceTheorem",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 19 changed lines since f813c69: the action paragraph of 0.2 and the 0.2 row of the Scope table. R01 of the previous review is repaired (the general MulSemiringAction action is a target again; the pinned Tau Ceti 2fd255d997 has AbsoluteValue.instMulActionAlgEquiv, under_smul and liesOver_smul_iff for algebra automorphisms, Action.lean lines 41-62; all nine names of the table row found at the pin). The claim about Tau Ceti's main branch checked against that branch today. Seeded sample: only 0.2 falls in the changed text; its Bombieri-Gubler locator is unreadable (paywalled), the mathematics checked by computation (S3 composition, restriction invariance on Q(i) with a control). Dependency check 0 problems; elaboration of Suggested.lean 38 sorry warnings only, file identical to main. One automatic check (changes outside the folder: the two regenerated GRH umbrella files) set aside as a false positive. Pull request description agrees with the head. One format note (a time-bound sentence about Tau Ceti's main branch).",
+  "text": "512c3d38d77ba72d"
+ }
+}
