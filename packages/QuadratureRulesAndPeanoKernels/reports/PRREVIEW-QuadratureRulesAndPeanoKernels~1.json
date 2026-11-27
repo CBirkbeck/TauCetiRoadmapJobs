@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuadratureRulesAndPeanoKernels~1",
+  "head": "244ea2d90aeaf556ea2306777e1e1bd4cf08c7a3",
+  "pr": 3216,
+  "folder": "QuadratureRulesAndPeanoKernels",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "Full review. All 11 sampled targets recomputed (exact rational Newton-Cotes weights for n <= 10, Peano kernels and their integrals, composite constants on x^2 and x^4, every negative-control Check). Sources read at their locators: Trefethen-Weideman Theorem 3.2 (pp. 396-397) and the sharpness example (p. 393), Embree Theorem 3.1 (p. 121), DLMF 24.9.1; Abramowitz-Stegun and Polya 1933 not readable legally (not verifiable). 41 Mathlib declarations of the supplier contracts found at the pin; 6 cross-roadmap citations resolved on main. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; one-tactic probe closes none of the 11 theorems. One small correction (unneeded n >= 1 in 2.4), two format notes.",
+  "text": "a62f9da852c1d083"
+ }
+}
