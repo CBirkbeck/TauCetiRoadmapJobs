@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SelmerIwasawaCohomology~11",
+  "head": "c673f1131ada48a274e6fe9deb2864d18d00ae9c",
+  "pr": 3187,
+  "folder": "SelmerIwasawaCohomology",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "review of the change against main: 516 changed lines since 94e80af. Recomputed every statement, proof step and Check of the added sections 2.22a, 2.23a, 2A.6, 2A.7, 2A.8 (16 table rows with values); read 13 source locators in Kings-Loeffler-Zerbes (arXiv v6) and Nekovar; resolved the citations of ArithmeticGaloisDuality (main and head of #3184), DerivedModuleAlgebra (main) and PadicMeasuresIwasawaAlgebras 6.5a (head of #3183); opened TopSelmerStructure at Tau Ceti 2a9233e5 (newer than the pin); seeded sample checked where it falls in the change (2.22a, and the locator of 2.22). Automatic checks all pass; depcheck 0 problems; Suggested.lean elaborates with six sorry warnings only and is unchanged. The three remarks of the previous review are repaired. Three merge-order and pin facts are left for the human reviewers.",
+  "text": "b1322bc50710dbbb"
+ }
+}
