@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LumpabilityAndKemenyConstant~1",
+  "head": "920f50916d81bb09a2980726c07ddcb1093940fd",
+  "pr": 3196,
+  "folder": "LumpabilityAndKemenyConstant",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review. Sample: all ten targets 1.1-3.4, each recomputed on degenerate and small cases (values in the adversarial table); all 13 body locators read in LPW, CGRW, GT, Hunter and BHLMT; 16 Mathlib and 9 Tau Ceti declarations opened at the pins; 6 cross-roadmap citations resolved (two at open heads); dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes nothing; the automatic checks all passed. Kemeny-Snell 1960 and Burke-Rosenblatt 1958 not readable (no locators into them).",
+  "text": "7cf5d5dd37f3117a"
+ }
+}
