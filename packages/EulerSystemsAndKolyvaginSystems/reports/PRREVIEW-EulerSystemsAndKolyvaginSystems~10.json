@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EulerSystemsAndKolyvaginSystems~10",
+  "head": "10ffe5488fdb3cfc8fbc5349a4f20fe2d79b4f02",
+  "pr": 3188,
+  "folder": "EulerSystemsAndKolyvaginSystems",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 22 changed lines since acd5006. Checked: the previous report's small correction (repaired: Layers 0.8 and 0.9 now name Layers 0.9, 0.8 and 0.6) and its question (settled by the supplier's head); the new Selmer-module formula of Layer 0.1 against Mazur-Rubin 2016 Definition 2.1 (read on arXiv) and on computed examples; the Layer 0.9 bounded-cokernel argument on a computed example where the bound is attained and at p = 2; every cited section of SelmerIwasawaCohomology (open revision head c673f11) and ArithmeticGaloisDuality (main and open revision head 4ea5e62); the two supplier-contract paragraphs; the pull request's description against the head (one small correction: second supplier subsection unstated). Seeded sample: only 0.9 lies in changed text. Automatic checks all pass; dependency check 0 problems; Suggested.lean elaborates with sorry as the only warning. Mazur-Rubin 2004 not readable legally (cited only by unchanged sentences).",
+  "text": "da7e86aa3ae8b2a5",
+  "carried": {
+   "from": "10ffe5488fdb3cfc8fbc5349a4f20fe2d79b4f02",
+   "head": "10ffe5488fdb3cfc8fbc5349a4f20fe2d79b4f02",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
