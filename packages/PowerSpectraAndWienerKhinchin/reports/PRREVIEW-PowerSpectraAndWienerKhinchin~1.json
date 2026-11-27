@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-PowerSpectraAndWienerKhinchin~1",
+  "head": "fab5baf3bb67b4897ab10d29bf403f3bd50f5f89",
+  "pr": 3207,
+  "folder": "PowerSpectraAndWienerKhinchin",
+  "date": "2026-11-27",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. All ten sampled targets and every Check recomputed; 15 locators read in Lindgren 2006 and Hajek 2015 (both fetched from the authors' pages); 31 library names checked at the pins; five cross-roadmap citations resolved on main; signatures compared by #check; one-tactic probe closes nothing; automatic checks all passed; dependency check 0 problems. One P2: the overview states the differentiability criterion without completeness, which the README's own Check of 3.2 refutes.",
+  "text": "ffd984ac115064b1"
+ }
+}
