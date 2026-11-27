@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ClassicalApproximationSpaces~3",
+  "head": "ad8e9d5cfbbc48dcbd6f8343a0a81e21b98dcd54",
+  "pr": 3203,
+  "folder": "ClassicalApproximationSpaces",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 2,
+  "notes": "incremental re-review of 111 changed lines since c9ff56f. Checked: each previous finding against this head (R02, R03, C01-C04, N02 repaired; N01 carried as a format note; R01 withdrawn: at the pinned Mathlib eLpNorm is infinite off a.e. strongly measurable functions, and the unchanged statement was proved in Lean from the supplier's rho-triangle inequality); the changed passages CA-A03, CA-A09, CA-B08, CA-C08, CA-E10, the Tau Ceti contracts and the Oswald 2021 locators (six checked against the arXiv v1 text); the pull request's description against the head; elaboration of Suggested.lean (eight sorry warnings only, torusTrigScheme without sorry); the dependency check (0 problems, no UPWARD or CYCLE); one automatic check (TeX syntax inside a two-line code span) set aside as a false positive, the import of the ApproximationSpaces file kept as a format note.",
+  "text": "b96cd51550030e66"
+ }
+}
