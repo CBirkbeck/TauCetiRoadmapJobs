@@ -1,0 +1,33 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "FirstDirichletEigenvalueAndFaberKrahn"
+
+[[source]]
+id = "Brasco2018"
+authors = "Lorenzo Brasco"
+title = "On principal frequencies and inradius in convex sets"
+year = 2018
+arxiv = "1808.09684v1"
+locator_scheme = "theorem"
+locator = "Theorem 1.2"
+url = "https://arxiv.org/abs/1808.09684v1"
+fetched_from = "https://arxiv.org/pdf/1808.09684v1"
+fetched_at = "2026-11-27T06:48:49Z"
+sha256 = "411583b525ebd2c4de544293e412dcc5c490ac03be35eeb8e377f80d1aaacd8f"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-27"
+version_note = "arXiv v1"
+cited_for = ["3.4"]
+
+[[source]]
+id = "KawohlFridman2003"
+locator_scheme = "theorem"
+locator = "Theorem 3"
+url = "https://dml.cz/handle/10338.dmlcz/119420"
+fetched_from = "https://dml.cz/bitstream/handle/10338.dmlcz/119420/CommentatMathUnivCarolRetro_44-2003-4_10.pdf"
+fetched_at = "2026-11-27T06:53:01Z"
+sha256 = "9e49c24d8cf6497ed226136a86faca1c4d6e4ac7f8ba88f7d52c43f2b9034dd8"
+licence_class = "institutional"
+status = "certified"
+accessed = "2026-11-27"
+cited_for = ["3.2"]
