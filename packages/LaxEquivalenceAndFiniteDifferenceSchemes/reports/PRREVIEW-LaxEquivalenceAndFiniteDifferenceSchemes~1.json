@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-LaxEquivalenceAndFiniteDifferenceSchemes~1",
+  "head": "4759bb5c0118338e472906f6a8799b70303f90ff",
+  "pr": 3214,
+  "folder": "LaxEquivalenceAndFiniteDifferenceSchemes",
+  "date": "2026-11-27",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample 1.1-1.5 and 2.1-2.5 all recomputed (routes, thresholds, degenerate grids N = 1, 2, both directions of each iff); 14 source locators read in Trefethen ch. 3-4 and Chern 2018 (author pages); Lax-Richtmyer 1956 not readable (attribution only). Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry the only warning; one-tactic probe closed none of the 8 theorems; 13 signatures compared with the README. One P2: the Check of 1.1 on the exact scheme is false without completeness (explicit semigroup on an incomplete space with unbounded norms near 0).",
+  "text": "7b243585f48ff306"
+ }
+}
