@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-GaussianChannelsAndWaterFilling~3",
+  "head": "93bff321741c9449e7c0bebf367fd685c834abdb",
+  "pr": 3212,
+  "folder": "GaussianChannelsAndWaterFilling",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 94 changed lines since d33acd9. R01 (golden formula stated only for additive channels) and N01 are repaired. Checked: the general statement of 1.1 against Polyanskiy-Wu Theorem 4.1 p. 67 in the text; each step of its route against the hypotheses of the pinned declarations (TauCeti.klDiv_compProd_right, klDiv_compProd_eq_add, Measure.fst_compProd, snd_compProd, compProd_const, condKernel); the new non-additive Check recomputed ((log 2)/2 on both sides); the scope sentence on MathematicalStatisticsNonparametric 2.4 against main; the count of eleven theorems; the title and description against the head. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with sorry as its only warning (11); #check of the new theorem shows all binders; one-tactic probe closes nothing. No change outside the folder.",
+  "text": "861f2d594b668811"
+ }
+}
