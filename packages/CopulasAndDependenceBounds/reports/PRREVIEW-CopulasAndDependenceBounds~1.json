@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-CopulasAndDependenceBounds~1",
+  "head": "d0b28da5f73cae545a31e242d0a1745694c2c7f8",
+  "pr": 3200,
+  "folder": "CopulasAndDependenceBounds",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. All ten sampled targets (1.1-1.3, 2.1-2.5, 3.1, 3.2) recomputed by hand, including d = 0, 1, 2, 3 and every Check with a stated value; no false statement found. 16 source locators read at their printed pages in the three cited texts (two author-page preprints, one arXiv paper); published version of the first confirmed through Crossref. 30 cited library declarations opened at the pins. Suggested.lean elaborates with 11 sorry warnings only; one-tactic probe on seven theorems closes none. Dependency check: 0 problems. Worker's automatic checks all passed. Overlap read against five closest roadmaps: nothing shared. A public Lean formalisation of the same subject (formal-mathfin) is reported to the human reviewers and asked about; Lehmann 1966 not readable.",
+  "text": "18b4ea0910de78a5"
+ }
+}
