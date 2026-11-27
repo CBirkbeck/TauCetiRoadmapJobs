@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SymmetricHyperbolicSystems~8",
+  "head": "c65921ff4fe225f899ce7f00eda951c82a824d68",
+  "pr": 2246,
+  "folder": "SymmetricHyperbolicSystems",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 2 changed lines since 5594d86: the parenthesized right-hand side of integral_dotProduct_A0_le was checked against README 2.3 and computed on instances (it repairs a statement whose x-integral absorbed the source term; parse confirmed by an elaborated probe); the previous report had no finding to carry; automatic checks all pass; Suggested.lean elaborates with 14 sorry warnings only; dependency check 0 problems; pull request text agrees with the head; scope of the newly listed neighbour LaxEquivalenceAndFiniteDifferenceSchemes read, nothing shared; source texts (John 1982, Lax 2006, Friedrichs 1954, Rudin 1976) not readable, flagged to the human reviewers.",
+  "text": "0ebdbe54d2ab1670"
+ }
+}
