@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MonteCarloMultilevelAndSDESchemes~1",
+  "head": "5b3eb8e570f6ca31d04928e6868197c663560de6",
+  "pr": 3236,
+  "folder": "MonteCarloMultilevelAndSDESchemes",
+  "date": "2026-11-27",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. Seeded sample of 15 targets and all 22 Lean theorems put through the adversarial pass with computed values; two prose targets found false as written (several-noise Milstein order without hypotheses, witness arXiv:0905.0273v3 Theorem 1; stability equivalence at u0 = 0). Sources read: Giles (author page, 9 locators confirmed, one misprint registered) and Caflisch (author page, 3 locators, 2 misplaced); Kloeden-Platen, Lord-Powell-Shardlow, Asmussen-Glynn and Dick-Kuo-Sloan could not be read legally. Suggested.lean elaborates with sorry warnings only; one-tactic probe closes none of the 22; signatures compared with the README. Dependency check: 0 problems; 15 cross-roadmap citations resolved; local copies identical to StochasticCalculus. Automatic checks: TeX-style subscripts outside code spans (format note); section comment without declaration set aside as a false positive (it heads the #check pins).",
+  "text": "b9d8edd7759fd7f9"
+ }
+}
