@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-StationaryTimeSeriesAndLinearPrediction~1",
+  "head": "4cb00d7f3c2dd7f8c8a52c9257dbc0a199997c57",
+  "pr": 3198,
+  "folder": "StationaryTimeSeriesAndLinearPrediction",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 4,
+  "notes": "Full review. All 13 sampled targets (1.0-1.3, 2.0-2.4, 3.1-3.4) recomputed by hand with degenerate and non-stationary instances; every Check re-evaluated. 8 Wang locators verified against the text; the 10 Grandell locators are not verifiable (no legal copy; text requested in needs-references.toml). 20 Mathlib declarations opened at the pin; Tau Ceti and Mathlib searched by object for duplicates (none). Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes 0 of 11 theorems. Dependency check: 0 problems. Automatic checks: all passed, none set aside. The sources service recorded the Wang entry in the package manifest when fetching.",
+  "text": "792ae7b28c16ef79"
+ }
+}

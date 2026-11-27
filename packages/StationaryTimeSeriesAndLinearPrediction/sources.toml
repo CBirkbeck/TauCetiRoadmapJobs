@@ -1,0 +1,15 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "StationaryTimeSeriesAndLinearPrediction"
+
+[[source]]
+id = "wang-stat720"
+locator_scheme = "theorem"
+locator = "Proposition 5.3"
+url = "https://people.stat.sc.edu/wang528/Stat%20720/STAT720%20Notes.pdf"
+fetched_from = "https://people.stat.sc.edu/wang528/Stat%20720/STAT720%20Notes.pdf"
+fetched_at = "2026-11-27T01:28:30Z"
+sha256 = "38231699290fcf695e635e5bca31f19bedfdd7d2466afd1bb75aa8f93762a1ad"
+licence_class = "author-page"
+status = "certified"
+accessed = "2026-11-27"
+cited_for = ["2.1"]
