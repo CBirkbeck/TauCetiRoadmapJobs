@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisDuality~21",
+  "head": "5d66223b64f2316259422e66f6c4e94b59a243ce",
+  "pr": 3177,
+  "folder": "ArithmeticGaloisDuality",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 0,
+  "notes": "incremental re-review of 1 changed lines since 5a08539. Checked: the added Dependencies line of Layer R02.5 (ProfiniteCohomology Layer 2) against the Needs line of the corollary Cocycle form and against ProfiniteCohomology 2.1 as reworded at this head; the corollary's two counts and its Check at F = Q, M = F_p recomputed against the reworded supplier target (1/p on both sides); the conventions Coefficient rings and Counting still present in ProfiniteCohomology; the pull request's title and description against the head; no seeded-sample target falls in the changed line. Automatic checks all passed; dependency check 0 problems, no UPWARD or CYCLE; Suggested.lean (unchanged) elaborates with 12 sorry warnings and nothing else. The previous review had no finding; its one format note is repaired.",
+  "text": "222c7e836bfab3f2"
+ }
+}
