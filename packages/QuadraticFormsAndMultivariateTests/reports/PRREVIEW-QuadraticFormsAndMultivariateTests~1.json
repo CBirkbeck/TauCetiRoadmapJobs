@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-QuadraticFormsAndMultivariateTests~1",
+  "head": "5213fe7e1d8077a3830d87469edaba37e8dbd8c6",
+  "pr": 3199,
+  "folder": "QuadraticFormsAndMultivariateTests",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. All ten sampled targets (1.1, 2.1-2.4, 3.1-3.3, 4.1, 4.2) re-derived and every README Check recomputed exactly; adversarial table with values in the report. Locators checked against the text for von Luxburg-Franz (arXiv:0711.0198v1) and Wilkinson's MATH3030 notes (8 locators); Ogawa-Olkin 2008 (paywalled) and Styan 1969 (host unclassified, HTTP 403) could not be read and are listed as not verifiable. 18 Tau Ceti and 12 Mathlib declarations opened at the pins; 4 cross-roadmap citations resolved on main. Dependency check: 0 problems. Suggested.lean elaborates with sorry as the only warning; one-tactic probes (simp, rfl) close none of the 10 theorems. The worker's automatic checks all passed; none set aside. Small corrections: Tau Ceti's covariance_trace_mul_wishartGramMeasure already gives the centred case of 2.4; the theorem cited for 4.1 is a neighbouring model, not a case of it; MathematicalStatisticsFoundations 5.2 owns the univariate case of 3.1/3.3 and is not named in the scope.",
+  "text": "4d680e734b343a02"
+ }
+}
