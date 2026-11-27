@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SpatialPointProcessFoundations~4",
+  "head": "2ffc9e8093474f5f17353b2a855a87b26d626a30",
+  "pr": 3223,
+  "folder": "SpatialPointProcessFoundations",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "incremental re-review of 80 changed lines since 83b48de. Previous R01 (zero-infinity law needs d >= 1) and R02 (uniqueness of Palm kernels without hypotheses) repaired; previous C01 repaired, N01 partly (one heading), both questions settled. Changed passages recomputed with values: uniqueness route in 3.2, window form without disjointness, aemeasurable_factorialMeasure and the thinning statement under sigma-finite intensity, IsMarking.intensity_eq without the integer-valued hypothesis (bounds on markExponent checked numerically), the d >= 1 controls of 8.2 and 8.3, the w# sentence of 1.2. Suggested.lean elaborates with 57 sorry warnings only; #check and one-tactic probe on the four changed theorems (none closes). Dependency check: 0 problems. Seeded sample: no source text could be read (LP requested again, no legal copy), locators unverified. Two automatic-check hits set aside as false positives. One small correction (stale docstring), one format note. Overlap with the open PointProcesses roadmap left to the human reviewers.",
+  "text": "f7599cf46dc6e220"
+ }
+}
