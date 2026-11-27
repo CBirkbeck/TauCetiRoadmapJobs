@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-RegularSplittingsAndMMatrices~1",
+  "head": "ea62f875d9bbc88c25a46f78ed27f318e12018ef",
+  "pr": 3211,
+  "folder": "RegularSplittingsAndMMatrices",
+  "date": "2026-11-27",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. Seeded sample: all eleven targets 1.1-4.2. Saad's 8 locators read at the text and correct; the Auzinger-Melenk and Fawzi notes (6 locators, Layer 4) could not be read through the sources service. Every statement and README Check recomputed on small and degenerate cases; one false sentence in the route of 2.3 (K = -D^-1 L should be K = -omega D^-1 L). 30 library declarations checked at the pins; cross-roadmap citations resolved on main; no duplication found. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with sorry warnings only; one-tactic probe closes none of the eleven theorems.",
+  "text": "d67946f6bacb8592"
+ }
+}
