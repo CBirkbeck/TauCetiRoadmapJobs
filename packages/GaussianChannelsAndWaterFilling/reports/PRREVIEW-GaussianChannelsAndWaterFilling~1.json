@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GaussianChannelsAndWaterFilling~1",
+  "head": "d33acd9eb109309d6ca468face6cfded579dea41",
+  "pr": 3212,
+  "folder": "GaussianChannelsAndWaterFilling",
+  "date": "2026-11-27",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "Full review. All ten sampled targets (1.1-1.3, 2.1-2.3, 3.1-3.4) recomputed with degenerate cases and their Checks; 12 locators read in Polyanskiy-Wu (author's page) and Boyd-Vandenberghe, all agree; cited library declarations found at the pins; cross-roadmap citations resolved on main; dependency check 0 problems; Suggested.lean elaborates with sorry only, one-tactic probe closes nothing; automatic checks all passed. One finding (P2): the golden formula 1.1 is stated for additive channels only, below its source and its own route; the kernel form elaborates at the pins.",
+  "text": "f38916812565a857"
+ }
+}
