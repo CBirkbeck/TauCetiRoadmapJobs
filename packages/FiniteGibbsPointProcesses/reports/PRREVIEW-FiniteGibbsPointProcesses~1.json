@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-FiniteGibbsPointProcesses~1",
+  "head": "f8aa5c505669bb90481fde73eda4c4b078c437b1",
+  "pr": 3229,
+  "folder": "FiniteGibbsPointProcesses",
+  "date": "2026-11-27",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 5,
+  "format_notes": 2,
+  "notes": "Full review. One P2 finding: densities, Papangelou intensity, GNZ and hard core are owned both here (1.3, 4.1) and by Layer 5 of the open PointProcesses roadmap (#417), which the text never names. Adversarial pass over all 8 layers with degenerate instances; every numerical Check recomputed and reproduced. Seeded sample (15 targets): mathematics verified for all; source text read only for Dereudre (arXiv:1701.08105v2), which supports 5.1-5.5; Moller-Waagepetersen 2004 and 2007, van Lieshout 2000 and 2019, Gaetan-Guyon and Ripley are paywalled and listed as not verifiable. Pins: Mathlib tvDist, klDiv, Kernel.IsIrreducible, IsReversible, Invariant opened; pinned Tau Ceti lacks expNeg, IsIntegerValued, IsPoissonRandomMeasure (small correction). Elaboration: 54 sorry warnings only; 105 elaborated signatures compared; 6 one-tactic probes, 1 closed. Dependency check: 0 problems. One automatic form check set aside as a false positive (a section comment heading #check pins).",
+  "text": "7b08024cdae124a2"
+ }
+}
