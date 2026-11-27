@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PolyaUrnsAndExchangeableSequences~1",
+  "head": "0d47d46ee14865f14350f9ef17e179da40c5dd4f",
+  "pr": 3195,
+  "folder": "PolyaUrnsAndExchangeableSequences",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All nine sampled targets (1.1-3.4) recomputed: 1.1 on 8128 exact rational cases including vanishing denominators, the one-step martingale identity, the bound |M_n - S_n/n| <= (2a+b)/(a+b+n), every Check. Sources read at their locators: Pemantle2007 (Theorem 2.1, Lemma 2.5, eq. (2.5) and the paragraph after), WagenmakersZabellGronau2024 (eq. (1) and the paragraph after), Polya1930 (pp. 135-136). Durrett2019 could not be read from a legal place: its locators are not verified. 26 Mathlib and 22 Tau Ceti declarations opened or #checked at the pins, all present in the files named. Suggested.lean elaborates with sorry as the only warning; no one-tactic probe closes any theorem. Dependency check: 0 problems; no change outside the folder. Automatic checks all passed. One small correction (four targets without an in-layer locator), one format note (two pinned Tau Ceti lemmas the routes re-derive).",
+  "text": "2dca5c5cd253e4c4"
+ }
+}

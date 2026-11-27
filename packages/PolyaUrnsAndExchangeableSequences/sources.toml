@@ -1,0 +1,53 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "PolyaUrnsAndExchangeableSequences"
+
+[[source]]
+id = "Pemantle2007"
+authors = "Robin Pemantle"
+title = "A survey of random processes with reinforcement"
+year = 2006
+venue = "Probability Surveys 2007, Vol. 4, 1-79"
+doi = "10.1214/07-PS094"
+arxiv = "math/0610076v2"
+locator_scheme = "theorem"
+locator = "Theorem 2.1"
+url = "https://arxiv.org/abs/math/0610076v2"
+fetched_from = "https://arxiv.org/pdf/math/0610076v2"
+fetched_at = "2026-11-27T00:47:11Z"
+sha256 = "406e3559e5e408032e6e47fedbbd8ed5ee94773d38dc33d976507633c692e5c5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-27"
+version_note = "arXiv v2"
+cited_for = ["3.2"]
+
+[[source]]
+id = "WagenmakersZabellGronau2024"
+authors = "Eric-Jan Wagenmakers, Sandy Zabell, Quentin F. Gronau"
+title = "J. B. S. Haldane's Rule of Succession"
+year = 2023
+arxiv = "2307.09489v1"
+locator_scheme = "equation"
+locator = "(1)"
+url = "https://arxiv.org/abs/2307.09489v1"
+fetched_from = "https://arxiv.org/pdf/2307.09489v1"
+fetched_at = "2026-11-27T00:47:16Z"
+sha256 = "d62001c9fcb97fad234e5da85934ae44eb3898a0ef1d2ff6371115c86e2ffe58"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-27"
+version_note = "arXiv v1"
+cited_for = ["2.2"]
+
+[[source]]
+id = "Polya1930"
+locator_scheme = "page"
+locator = "135-136"
+url = "http://www.numdam.org/item/AIHP_1930__1_2_117_0.pdf"
+fetched_from = "https://www.numdam.org/item/AIHP_1930__1_2_117_0.pdf"
+fetched_at = "2026-11-27T00:47:33Z"
+sha256 = "aa1346631172e7a0a3bb1621f4c691e2faba7a99c05b33231df84c9711fa9f8b"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-27"
+cited_for = ["Summary"]
