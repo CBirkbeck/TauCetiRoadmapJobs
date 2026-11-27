@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-MarkovRandomFieldsAndAutoModels~1",
+  "head": "3c088ad1bebb27dbaeb4744092af0aa71e46bc00",
+  "pr": 3228,
+  "folder": "MarkovRandomFieldsAndAutoModels",
+  "date": "2026-11-27",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "Full review. All 37 statements of Suggested.lean and every Check were recomputed by hand or numerically (adversarial table in the report); Suggested.lean elaborates at the pins with only the 37 sorry warnings; eight one-tactic padding probes, none closes; the dependency check shows no UPWARD or CYCLE line; supplier citations (GraphicalModelsAndConditionalIndependence 1.1, 2.2, 2.3-2.4, 3.1-3.3; MarkovChainMixing 1.2, 6.1) resolved on main and the five local copies compared with their owners; pinned Mathlib and Tau Ceti declarations opened. The worker's automatic checks all passed. None of the eight cited sources could be read legally (all paywalled), so no source locator of the seeded sample was verified and wording and arrangement were not compared: see Not verifiable and For the human reviewers.",
+  "text": "3b8d659599df17bb"
+ }
+}
