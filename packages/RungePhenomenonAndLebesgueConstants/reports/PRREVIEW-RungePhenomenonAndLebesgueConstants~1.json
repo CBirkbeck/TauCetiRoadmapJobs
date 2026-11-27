@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-RungePhenomenonAndLebesgueConstants~1",
+  "head": "04b9762c150de1f452c78dc5deba5d02de6b4041",
+  "pr": 3210,
+  "folder": "RungePhenomenonAndLebesgueConstants",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 2,
+  "notes": "Full review. All ten sampled targets (1.1-1.2, 2.1-2.5, 3.1-3.3) rederived by hand and every numerical value of the README recomputed (exact rationals for 3.2 up to n = 120, grids for 2.3 and 3.3). The three sources read at their locators (Trefethen-Weideman and Sun from the authors' pages, Bossoney-Troyanov from arXiv): 8 of 8 locators agree. All cited Mathlib and Tau Ceti declarations opened at the pins; cross-roadmap citations resolved on main. Suggested.lean elaborates with sorry as the only warning; the one-tactic probe closes none of the 10 theorems. Dependency check: 0 problems. The worker's automatic checks all passed; none set aside. One error recorded in Sun's notes (p. 46), not used by the roadmap.",
+  "text": "114aea4f9612bf8c"
+ }
+}
