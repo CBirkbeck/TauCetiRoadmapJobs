@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-PowerSpectraAndWienerKhinchin~2",
+  "head": "37641f9ed91b9ed7a5efe2d4efeff3435f24c06a",
+  "pr": 3207,
+  "folder": "PowerSpectraAndWienerKhinchin",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 9 changed lines since fab5baf: the previous finding R01 (overview stated the differentiability criterion without completeness of E) is repaired in both places the review offered; the changed overview sentences were compared with Layer 3.2, its Checks, 3.3 and the Lean binders of exists_hasDerivAt_iff and spectralMeasure_deriv, with the Gaussian and Lorentzian values recomputed; no locator, citation or Lean declaration changed, so the seeded sample falls outside the change and the source locators stand as verified at fab5baf (sources not reopened); automatic checks all passed, dependency check 0 problems, Suggested.lean elaborates with sorry the only warning; pull request text read against the head; one format note carried (2.0 has no Needs line).",
+  "text": "ffd984ac115064b1"
+ }
+}
