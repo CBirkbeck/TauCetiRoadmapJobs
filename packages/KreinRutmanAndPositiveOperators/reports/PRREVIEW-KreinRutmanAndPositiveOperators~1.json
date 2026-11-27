@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-KreinRutmanAndPositiveOperators~1",
+  "head": "3aac32d95971cb64dfceb23cbf7bfba5c84f303d",
+  "pr": 3219,
+  "folder": "KreinRutmanAndPositiveOperators",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 3,
+  "notes": "Full review. All ten sampled targets (1.1-1.3, 2.1, 3.1-3.4, 4.1, 4.2), their routes, Checks and worked examples recomputed by hand; adversarial table with values in the report. Source locators: 3 Intissar locators verified against the arXiv text; the 11 Gerhat locators are not verifiable (TU Wien repository host in no licence class; request filed). 27 library declarations opened at the pins; 4 cross-roadmap citations resolved on main; dependency check 0 problems; Suggested.lean elaborates with only sorry warnings; one-tactic probe closes none of the ten theorems; elaborated signatures agree with the README. The automatic checks all passed. Left to humans: Gerhat thesis unread (largest share of locators), its host's licence class, and the sources being a thesis and a preprint.",
+  "text": "1e0ada9d141fd8c4"
+ }
+}
