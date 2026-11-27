@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MarkovDiffusionOperators~4",
+  "head": "23492cbd482322741792715546d393b595e58a46",
+  "pr": 3148,
+  "folder": "MarkovDiffusionOperators",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 3,
+  "format_notes": 2,
+  "notes": "incremental re-review of 77 changed lines since 5e13b1a. Checked: every finding, correction and note of the previous report against this head (R01 repaired: Prékopa's theorem cited from the pinned Tau Ceti, Layer 11 keeps the second-order bound); the changed passages recomputed (L-infinity extension by duality in 2.3, the integration by parts and the CD(rho, n) route of Layer 8, the Ornstein-Uhlenbeck identification, the regularisation of the local Bobkov inequality, outer measure in the isoperimetric statements, the quantitative Prékopa inequality on a quadratic example); the two changed Lean definitions against Mathlib's tilted measure and Tau Ceti's hessianOperator at the pin, with a scratch probe; the cited sections of OrnsteinUhlenbeckSemigroup and LogConcaveFunctionalInequalities at their open heads; the pull request's description against the head. Automatic checks all passed; dependency check 0 problems; Suggested.lean elaborates with ten sorry warnings only. The sampled 2.3 and all [BGL] locators could not be read (paywalled). Three small corrections, two format notes.",
+  "text": "cf4809b53c4263ba"
+ }
+}
