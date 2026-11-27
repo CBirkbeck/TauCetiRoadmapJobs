@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-ApproximationSpaces~1",
+  "head": "9e69b58a3e5199937f3e4fd2e7ff59ca4d9bd5ec",
+  "pr": 3202,
+  "folder": "ApproximationSpaces",
+  "date": "2026-11-27",
+  "findings": 3,
+  "blocking": 3,
+  "corrections": 3,
+  "format_notes": 4,
+  "notes": "Full review. Sources: 10 locators read in Bergh-Lofstrom (author's page copy), DeVore 1998 (author's page), Ditzian-Prymak (arXiv 1409.5397v2), Kerkyacharian-Petrushev (arXiv 1210.6237v2); Pietsch 1981, DeVore-Popov 1988 (both papers), Holmstedt 1970, Kalton-Peck-Roberts and Day 1940 not readable. Adversarial pass on every target with computed values (21 rows). Suggested.lean elaborates with sorry as the only warning; signature pass on 28 declarations; one-tactic probes close nothing; proof fields of lpQuasiENorm and two missing headline signatures elaborated on a scratch copy. Dependency check: 0 problems. Automatic checks: sorry inside three definitions (R02), TeX in a two-line code span (N01), three undeclared names (N02). Tau Ceti K-method names are absent at the pin and present on the library's main branch (C01).",
+  "text": "ce44480e97752acf"
+ }
+}
