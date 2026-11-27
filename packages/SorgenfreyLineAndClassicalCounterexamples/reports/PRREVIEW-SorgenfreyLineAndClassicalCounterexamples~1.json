@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-SorgenfreyLineAndClassicalCounterexamples~1",
+  "head": "011fcad835dab29e1aa73b617908b54af879cfb2",
+  "pr": 3209,
+  "folder": "SorgenfreyLineAndClassicalCounterexamples",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 1,
+  "notes": "Full review. All 12 sampled targets and all 10 headline theorems recomputed (topologies, key identities, orbit bounds; the finite counts of the Checks re-enumerated for n <= 4). 18 of 18 source locators read at the text (Bowron arXiv:2210.10928v4, Chodounsky 2007, Gardner notes 30/31/41, Jones 1937, Kalemba-Plewik, Sorgenfrey 1947). 22 Mathlib names checked at the pin; Suggested.lean elaborates with sorry as the only warning; one-tactic probe closes none; dependency check 0 problems; automatic checks all passed; no overlap with main or open pull requests.",
+  "text": "97be3034c7f36c62"
+ }
+}
