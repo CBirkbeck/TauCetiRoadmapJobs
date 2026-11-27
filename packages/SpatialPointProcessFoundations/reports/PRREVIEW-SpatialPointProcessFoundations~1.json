@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-SpatialPointProcessFoundations~1",
+  "head": "45509e976ccd6796fbe501145481eb3e0b6f8981",
+  "pr": 3223,
+  "folder": "SpatialPointProcessFoundations",
+  "date": "2026-11-27",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 3,
+  "format_notes": 1,
+  "notes": "Full review. Adversarial pass over every statement of the README and Suggested.lean with computed instances (30 table rows); two findings: the Lean Slivnyak-Mecke iff of 5.5 fails on a countable/co-countable sigma-algebra, and a Check of 1.2 gives a total-variation distance 2 instead of 1. Suggested.lean elaborates at the pins (exit 0, 58 sorry warnings only); one-tactic probe on all 58 statements, one closes (Campbell's formula by Measure.lintegral_bind). Dependency check: 0 problems, both suppliers on main; five cross-roadmap citations resolved. Seeded sample of 15 targets: mathematics checked, source locators NOT verified, since no source text could be read (the sources service returned nothing for the two open texts; the others are paywalled). Overlap with the open PointProcesses roadmap, library definitions newer than the pin copied at library names, and the unread sources are left to the human reviewers. Two automatic-check hits set aside as false positives.",
+  "text": "ab3d91d6d8bfd48a"
+ }
+}
