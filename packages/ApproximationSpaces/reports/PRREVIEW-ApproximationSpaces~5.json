@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ApproximationSpaces~5",
+  "head": "ad8e9d5cfbbc48dcbd6f8343a0a81e21b98dcd54",
+  "pr": 3203,
+  "folder": "ApproximationSpaces",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 4,
+  "format_notes": 3,
+  "notes": "incremental re-review of 0 changed lines since bf314fd: the folder is identical to bf314fd and to the head of the pull request that adds it; the title and description were read against the head (one small correction, the count of commits); 9 locators of Bergh-Löfström and DeVore 1998, unreadable in earlier rounds, were checked against the cached texts; one adversarial row computed for AS-A16; dependency check 0 problems; Suggested.lean elaborates with 13 sorry warnings on theorems only; two scanner hits set aside as false positives; three small corrections and three format notes carried.",
+  "text": "b96cd51550030e66"
+ }
+}
