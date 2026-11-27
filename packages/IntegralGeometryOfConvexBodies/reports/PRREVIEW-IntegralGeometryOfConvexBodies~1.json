@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-IntegralGeometryOfConvexBodies~1",
+  "head": "a4fedbe4dbd48a9e31e81e9ee3d6a18d485b2487",
+  "pr": 3227,
+  "folder": "IntegralGeometryOfConvexBodies",
+  "date": "2026-11-27",
+  "findings": 4,
+  "blocking": 4,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. All 15 sampled targets and every Lean statement recomputed on degenerate cases (table in the report); Crofton constants checked on the ball for all j <= k <= d <= 6. None of the four cited books is legally readable (three paywalled, one refused), so no locator was verified against a text and wording/arrangement were not compared: listed under Not verifiable and for the human reviewers. Library declarations opened at Mathlib 1b1ccf4 and Tau Ceti 2fd255d; 5 of 5 cross-roadmap citations resolved; dependency check 0 problems; Suggested.lean elaborates with 44 sorry warnings only. One automatic check (section comment over the #check pins) set aside as a false positive. Findings: Cauchy formula constant (P1), two false Checks (P2), mean width owned twice with MeanWidthAndCauchyFormulas (P2).",
+  "text": "52fcd486aede89e4"
+ }
+}
