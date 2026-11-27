@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-DescentSplittingAndPathFollowingMethods~1",
+  "head": "da2570971796937ef376f956135c3475ac425229",
+  "pr": 3231,
+  "folder": "DescentSplittingAndPathFollowingMethods",
+  "date": "2026-11-27",
+  "findings": 2,
+  "blocking": 2,
+  "corrections": 2,
+  "format_notes": 4,
+  "notes": "Full review. Adversarial pass over every statement with computed values; the two lower bounds of 4.2 are vacuous (Lean proof of the first with f = 0 elaborated at the pins), one Check of 1.1 false for c1 > 1. Sources: Chambolle-Pock (HAL) and Boumal (author page) read, 9 locators checked, 1 wrong; Nocedal-Wright, Nesterov 2018 and Bauschke-Combettes paywalled, listed as not verifiable. Dependency check 0 problems; Suggested.lean elaborates with 38 sorry warnings only; supplier copies and sections resolved on main; automatic checks on TeX-style syntax and pull-request numbers kept as format notes.",
+  "text": "377ff52fc2ed6d1f"
+ }
+}
