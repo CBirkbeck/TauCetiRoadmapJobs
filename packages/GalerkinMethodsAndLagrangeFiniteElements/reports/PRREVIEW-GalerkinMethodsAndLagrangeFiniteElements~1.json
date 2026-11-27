@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "needs_changes",
+  "reviewer": "independent-review-PRREVIEW-GalerkinMethodsAndLagrangeFiniteElements~1",
+  "head": "6e7cadb9d35e3e6ffd095d52dd0eb8b0e5334011",
+  "pr": 3234,
+  "folder": "GalerkinMethodsAndLagrangeFiniteElements",
+  "date": "2026-11-27",
+  "findings": 1,
+  "blocking": 1,
+  "corrections": 4,
+  "format_notes": 2,
+  "notes": "Full review. Adversarial pass over all 49 theorems and the definitions, with degenerate cases and all numerical Checks recomputed. Sources: 34 Ern-Guermond locators (volumes I and II, authors' open deposit) read at their theorem numbers for all 15 sampled sections; printed pages, Brenner-Scott, Han-Atkinson, Boffi-Brezzi-Fortin and Di Pietro-Ern not readable (paywalled). Elaboration: 42 sorry warnings, no error; one-tactic probe closes none. Dependency check: 0 problems. Automatic checks: one form hit (a section comment over #check lines only), recorded as a format note; none set aside. Overlap: SobolevPolynomialApproximation, VariationalMethods, PolynomialInterpolationAndBestApproximation read, nothing shared.",
+  "text": "18024213125b61c3"
+ }
+}
