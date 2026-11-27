@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ProfiniteCohomology~23",
+  "head": "5d66223b64f2316259422e66f6c4e94b59a243ce",
+  "pr": 3177,
+  "folder": "ProfiniteCohomology",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 0,
+  "notes": "incremental re-review of 66 changed lines since 5a08539. The previous review had no finding; its four small corrections and one format note are repaired. Checked: every changed sentence of README.md (Conventions Cohomology objects and Coefficient rings, 1.7 coefficient-ring action and its new Check, 2.1 cocycle counts, 3.4) against 7 declarations of the pinned Tau Ceti; the four counting equations recomputed on finite and infinite modules with Nat.card junk values; the Z[i] Check computed. Seeded sample checked where it meets the diff (1.7, 2.1, 3.x: no locator changed). Automatic checks all passed; depcheck 0 problems; Suggested.lean (unchanged) elaborates with sorry the only warning. Two small corrections: 'replaces them' in 3.4, and a description bullet left behind ('for finite M').",
+  "text": "222c7e836bfab3f2"
+ }
+}
