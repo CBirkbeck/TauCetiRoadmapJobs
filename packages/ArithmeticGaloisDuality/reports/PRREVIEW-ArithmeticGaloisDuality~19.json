@@ -1,0 +1,24 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-ArithmeticGaloisDuality~19",
+  "head": "4ea5e62492a6be5902c23413b2b22ed56a6dd1bd",
+  "pr": 3184,
+  "folder": "ArithmeticGaloisDuality",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 1,
+  "format_notes": 2,
+  "notes": "review of the change against main: 261 changed lines since 94e80af. Every added or changed passage recomputed (uniform vanishing of cocycles of bounded exponent with both instances and four Checks, tested on S3; cochain tensor comparison with naturality in the group and four Checks; the D7.7.3 clause); 5 Nekovar locators read in the text (3.4.1, 3.4.1.6, 3.4.4, 6.2.1.2-6.2.1.3, 5.2.1.3); the three Tau Ceti theorems of the In Tau Ceti note read at 2a9233e5 (absent at the pin, format note); sampled target in affected text: Cohomological finiteness and perfect amplitude, consistent; internal and supplier citations resolved; same 8 layers as the merge base, nothing removed; depcheck 0 problems; automatic checks all pass; Suggested.lean unchanged, elaborates with 12 sorry warnings only; description: one sentence cites a section only an open revision has (small correction). NSW VIII not readable (untouched statements).",
+  "text": "05294ca37fb461ec",
+  "carried": {
+   "from": "4ea5e62492a6be5902c23413b2b22ed56a6dd1bd",
+   "head": "4ea5e62492a6be5902c23413b2b22ed56a6dd1bd",
+   "findings": 1,
+   "lines": 0,
+   "folders": [],
+   "corrections": true
+  }
+ }
+}
