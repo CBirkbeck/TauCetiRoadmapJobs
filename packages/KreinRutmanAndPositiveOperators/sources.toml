@@ -1,0 +1,20 @@
+schema = "tauceti-roadmap-sources/v1"
+roadmap = "KreinRutmanAndPositiveOperators"
+
+[[source]]
+id = "Intissar2019"
+authors = "Abdelkader Intissar"
+title = "Elementary Proof of a generalization of the Perron-Frobenius theorem in an ordered Banach space"
+year = 2019
+arxiv = "1910.01120v1"
+locator_scheme = "theorem"
+locator = "Theorem 2.2"
+url = "https://arxiv.org/abs/1910.01120v1"
+fetched_from = "https://arxiv.org/pdf/1910.01120v1"
+fetched_at = "2026-11-27T06:33:47Z"
+sha256 = "6309a3882a697e658c90603127dc47dcd9343edec5ad692a7bb6f27cb0a6f7a5"
+licence_class = "open-repository"
+status = "certified"
+accessed = "2026-11-27"
+version_note = "arXiv v1"
+cited_for = ["2.1"]
