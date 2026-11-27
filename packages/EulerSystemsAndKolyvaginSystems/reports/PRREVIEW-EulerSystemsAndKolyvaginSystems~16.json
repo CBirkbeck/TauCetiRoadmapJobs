@@ -1,0 +1,26 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-EulerSystemsAndKolyvaginSystems~16",
+  "head": "32082bb8026fd522caaa2f13225b1620e28b6d64",
+  "pr": 3188,
+  "folder": "EulerSystemsAndKolyvaginSystems",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 2,
+  "format_notes": 1,
+  "notes": "incremental re-review of 32 changed lines since e209bb2: the sixteen rewritten cross-references were each resolved to a heading (ten layers of this README; SelmerIwasawaCohomology 2.13, 2.14, 3.5 on main and at its open revision; PadicMeasuresIwasawaAlgebras 4.2 on main) and checked by computation against what the citing sentence uses; fifteen are right, the pointer of Layer 8.5 to SelmerIwasawaCohomology 2.13 does not cover the ring Lambda (small correction C01); the description's count of sixteen is off by one (C02); two label-style references remain (format note). Seeded sample: 2.6, 3.8, 3.20, 8.30 fall in changed passages (cross-references only, no locator changed); no source opened. Automatic checks all pass; dependency check 0 problems; Suggested.lean unchanged and elaborates with only the two sorry warnings; nothing changed outside the folder.",
+  "text": "2fbfe9e436f15908",
+  "carried": {
+   "from": "32082bb8026fd522caaa2f13225b1620e28b6d64",
+   "head": "5711c1e5308e07a713ba8c5334fc250a2b9ff8f8",
+   "findings": 2,
+   "lines": 4,
+   "folders": [
+    "EulerSystemsAndKolyvaginSystems"
+   ],
+   "corrections": true
+  }
+ }
+}
