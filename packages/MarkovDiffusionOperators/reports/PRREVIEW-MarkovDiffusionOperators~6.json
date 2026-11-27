@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-MarkovDiffusionOperators~6",
+  "head": "e8ab4247ce11a1edfe9647d03eeaadaba47b115c",
+  "pr": 3148,
+  "folder": "MarkovDiffusionOperators",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 3,
+  "notes": "incremental re-review of 16 changed lines since 23492cb. Checked: the three small corrections and two format notes of the previous review (C01-C03 and N02 repaired, N01 carried); the changed Layer 8 integration by parts recomputed; the Layer 9 Ornstein-Uhlenbeck citations resolved against OrnsteinUhlenbeckSemigroup 1.1, 1.3, 2.1 at its open head; the gibbsMeasure docstring checked with a scratch probe (non-integrable case closes by simp, 0 <= 0); the pinned Tau Ceti searched for the files the README cites. The seeded sample (1.1, 1.2, 2.1-2.3, 4.1, 4.2) lies outside the changed passages and its BGL locators remain unreadable. Automatic checks all passed; depcheck 0 problems; Suggested.lean elaborates with ten sorry warnings only; nothing changed outside the folder; title and description agree with the head.",
+  "text": "6c15fb64ad964d92"
+ }
+}
