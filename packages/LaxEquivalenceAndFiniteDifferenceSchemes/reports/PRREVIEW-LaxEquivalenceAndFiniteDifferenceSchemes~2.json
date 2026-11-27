@@ -1,0 +1,16 @@
+{
+ "review": {
+  "status": "accepted",
+  "reviewer": "independent-review-PRREVIEW-LaxEquivalenceAndFiniteDifferenceSchemes~2",
+  "head": "34ccdce9313913eb9c3ddb8080bf8fe537de2311",
+  "pr": 3214,
+  "folder": "LaxEquivalenceAndFiniteDifferenceSchemes",
+  "date": "2026-11-27",
+  "findings": 0,
+  "blocking": 0,
+  "corrections": 0,
+  "format_notes": 1,
+  "notes": "incremental re-review of 20 changed lines since 4759bb5. Checked: R01, C01, C02 repaired, N01 carried as a format note; the four changed README passages recomputed (exact scheme and the two forms of consistency on a Banach space, the comparison with Trefethen (4.2.7)-(4.2.8) reread in the chapter text, the convention on the singular implicit matrix against 2.4 with w = -1/4, mu = 1 on ZMod 2 and ZMod 3); existsGrowthBound and map_natCast_mul opened at the pin; pull request text read against the head; automatic checks all passed; dependency check 0 problems; Suggested.lean (unchanged) elaborates with eight sorry warnings only; no change outside the folder.",
+  "text": "7b243585f48ff306"
+ }
+}
